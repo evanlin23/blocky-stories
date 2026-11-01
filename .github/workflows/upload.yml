@@ -4,6 +4,7 @@ name: upload
 on:
   schedule:
     - cron: "23 15 * * *"   # 15:23 UTC daily
+    - cron: "47 21 * * *"   # backup run: GitHub sometimes skips a schedule; upload.py posts at most one a day
   workflow_dispatch:
     inputs:
       story: {description: "story folder (blank = the next ready one)", default: ""}

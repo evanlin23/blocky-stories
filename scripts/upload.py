@@ -59,9 +59,8 @@ def youtube():
     from googleapiclient.discovery import build
 
     creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"], client_id=os.environ["YT_CLIENT_ID"],
-                        client_secret=os.environ["YT_CLIENT_SECRET"], token_uri="https://oauth2.googleapis.com/token",
-                        scopes=["https://www.googleapis.com/auth/youtube.upload",
-                                "https://www.googleapis.com/auth/youtube.readonly"])
+                        client_secret=os.environ["YT_CLIENT_SECRET"], token_uri="https://oauth2.googleapis.com/token")
+    # no scopes here: the refresh token carries whatever it was granted (upload, readonly, analytics)
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
@@ -108,6 +107,10 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     done = uploads()
+    today = dt.date.today().isoformat()
+    if not a.story and any(today in (e.get("uploaded"), e.get("issued")) for e in done.values()):
+        print("already posted one today")   # the backup run found the first one worked
+        return
     story = a.story or next_story(done)
     if not story:
         print("nothing ready to upload today")
@@ -125,7 +128,6 @@ def main() -> None:
         if a.dry_run:
             print(desc)
             return
-        today = dt.date.today().isoformat()
         pin = pkg.get("pin", "")
         # API uploads only once the audit is approved (repo variable YT_AUDITED=true): before that, YouTube locks
         # every API upload as private for good, so the owner uploads by hand from the issue instead

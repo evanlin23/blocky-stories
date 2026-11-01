@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches: [main]
-    paths-ignore: [uploads.json]
+    paths-ignore: [uploads.json, "metrics/**"]
 jobs:
   test:
     runs-on: ubuntu-latest
