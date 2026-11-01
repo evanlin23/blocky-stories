@@ -13,7 +13,7 @@ You're the orchestrator. Keep your own context small: you read reports and verdi
 ## 0. Preflight (no agents)
 - `git config user.name evanlin23 && git config user.email 113861384+evanlin23@users.noreply.github.com`, then work on a branch, never `main`.
 - **Health check:** list the repo's releases (GitHub MCP `list_releases`) and open issues. A `render-*` prerelease means a final failed the flash bar. Fix it first, with the builder redrawing the named shots and a `workflow_dispatch` of `render` for that story. Count the stories that are ready but not uploaded (gate open, not in `uploads.json`). If there are 7 or more, make fewer this week.
-- **Numbers:** read `metrics/summary.md` (the weekly `metrics` workflow writes it). Pick out at most 5 lessons (what held viewers, where they dropped, what got shares and comments) and hand them to the writer in step 1.
+- **Numbers:** read `metrics/summary.md` (the weekly `metrics` workflow writes it). If its date is more than 3 days old, the schedule didn't fire: start the `metrics` workflow yourself (GitHub MCP `actions_run_trigger`, `metrics.yml` on `main`), wait for it, and pull. Pick out at most 5 lessons (what held viewers, where they dropped, what got shares and comments) and hand them to the writer in step 1.
 - If `BLOCKY_BPY` or `BLOCKY_TTS` is unset: `bash blocky/setup.sh` and export what it prints.
 - A container can be reclaimed at any time, so commit and push `WIP` checkpoints to the branch after each story's build.
 

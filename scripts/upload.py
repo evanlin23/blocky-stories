@@ -107,6 +107,10 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     done = uploads()
+    today = dt.date.today().isoformat()
+    if not a.story and any(today in (e.get("uploaded"), e.get("issued")) for e in done.values()):
+        print("already posted one today")   # the backup run found the first one worked
+        return
     story = a.story or next_story(done)
     if not story:
         print("nothing ready to upload today")
@@ -124,7 +128,6 @@ def main() -> None:
         if a.dry_run:
             print(desc)
             return
-        today = dt.date.today().isoformat()
         pin = pkg.get("pin", "")
         # API uploads only once the audit is approved (repo variable YT_AUDITED=true): before that, YouTube locks
         # every API upload as private for good, so the owner uploads by hand from the issue instead
