@@ -142,6 +142,14 @@ def fmt(x, pct=False):
     return f"{x:.0f}%" if pct else f"{x:,.0f}"
 
 
+def status(r: dict) -> str:
+    """Views, or why there are none: not public yet, or public but Analytics hasn't caught up (2 to 3 days)."""
+    if r.get("privacy") != "public":
+        return f"not public ({r.get('privacy') or 'unknown'})"
+    views = (r.get("totals") or {}).get("views")
+    return f"{float(views):,.0f} views" if views not in (None, "") else "no data yet (Analytics runs 2 to 3 days behind)"
+
+
 def summary(rows: list[dict], end: str) -> str:
     out = [f"# Channel numbers (through {end})", "",
            "YouTube's analytics run 2 to 3 days behind. Viewed vs swiped away is Studio-only: paste it here by hand if you have it.", "",
@@ -149,6 +157,10 @@ def summary(rows: list[dict], end: str) -> str:
            "|---|---|---|---|---|---|---|---|---|---|---|"]
     for r in rows:
         t, tr = r.get("totals", {}), r.get("traffic", {})
+        if not t:   # nothing back yet: say why instead of a row of question marks
+            out.append(f"| {r['story'] or r['title'][:40]} | {r['published']} | {r.get('length_s') or '?'} s | "
+                       f"{status(r)} |||||||| ")
+            continue
         out.append(f"| {r['story'] or r['title'][:40]} | {r['published']} | {r.get('length_s') or '?'} s | {fmt(t.get('views'))} | "
                    f"{fmt(t.get('engagedViews'))} | {fmt(t.get('averageViewPercentage'), True)} | {fmt(t.get('likes'))} | "
                    f"{fmt(t.get('comments'))} | {fmt(t.get('shares'))} | {fmt(t.get('subscribersGained'))} | "
@@ -175,7 +187,7 @@ def main() -> None:
         if v.get("privacy") == "public":
             r["totals"], r["retention"], r["traffic"] = totals(ya, v, end), retention(ya, v, end), traffic(ya, v, end)
         rows.append(r)
-        print(f"{v['published']} {v['id']} {r['story'] or '-'}: {r.get('totals', {}).get('views', 'not public')}")
+        print(f"{v['published']} {v['id']} {r['story'] or '-'}: {status(r)}")
     OUT.mkdir(exist_ok=True)
     (OUT / "videos.json").write_text(json.dumps({"through": end, "videos": rows}, indent=1) + "\n")
     (OUT / "summary.md").write_text(summary(rows, end))
