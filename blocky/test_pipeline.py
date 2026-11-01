@@ -60,6 +60,10 @@ def test_voice_verify(tmp_path):
     (tmp_path / "k.json").write_text(json.dumps(kept))
     (tmp_path / "n.json").write_text(json.dumps(kept))
     assert verify_voice(tmp_path / "n.json", tmp_path / "k.json") == 0
+    stale = json.loads(json.dumps(kept))
+    stale["lines"]["L999"] = stale["lines"][next(iter(kept["lines"]))]   # a line cut in revision: ignored
+    (tmp_path / "k.json").write_text(json.dumps(stale))
+    assert verify_voice(tmp_path / "n.json", tmp_path / "k.json") == 0
     lid = next(iter(kept["lines"]))
     kept["lines"][lid]["chunks"][0][1] += 0.1
     (tmp_path / "n.json").write_text(json.dumps(kept))
