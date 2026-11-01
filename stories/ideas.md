@@ -11,7 +11,9 @@ The writer takes the next ideas from here, and adds new ones. When a story is ma
 
 The premise and twist of each are in its `story.json`; `check` compares every new story against them.
 
-## Next (batch 2 pitches, 2026-10-31)
+## Next (batch 2 pitches, 2026-10-31): in production elsewhere (ep14 to ep17)
+All four rows below are in production elsewhere (ep14 to ep17). Don't use them, their settings, creatures or kinds of warmth.
+
 Four stories for PandaNanoAdventures. The writer reads all four so none drifts into another's lane.
 
 ## Same in every story
@@ -21,10 +23,10 @@ Four stories for PandaNanoAdventures. The writer reads all four so none drifts i
 
 | # | Story (name for the story folder) | Setting | Creature | First line is... | Kind of warmth |
 |---|---|---|---|---|---|
-| 1 | `floor-thirteen` | apartment-tower lift | the Attendant, a button-panel face | a sound | two strangers become friends |
-| 2 | `mirror-maze` | an end-of-season fairground mirror maze | the copy, my best friend gone slightly wrong | an inside joke | loyalty: I go back in for my friend |
-| 3 | `lookout` | a forest fire-lookout tower, alone, in autumn | the Walker, a huge giant of logs and moss | a question | I'm the one who helps: I guide it home |
-| 4 | `moving-day` | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes | mid-scare | home: Mum laughs again |
+| 1 | `floor-thirteen` (in production elsewhere, ep14 to ep17) | apartment-tower lift | the Attendant, a button-panel face | a sound | two strangers become friends |
+| 2 | `mirror-maze` (in production elsewhere, ep14 to ep17) | an end-of-season fairground mirror maze | the copy, my best friend gone slightly wrong | an inside joke | loyalty: I go back in for my friend |
+| 3 | `lookout` (in production elsewhere, ep14 to ep17) | a forest fire-lookout tower, alone, in autumn | the Walker, a huge giant of logs and moss | a question | I'm the one who helps: I guide it home |
+| 4 | `moving-day` (in production elsewhere, ep14 to ep17) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes | mid-scare | home: Mum laughs again |
 
 Settings already used (never reuse): a night bus, a farmhouse kitchen, an aquarium.
 
