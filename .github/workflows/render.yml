@@ -1,0 +1,99 @@
+# Final render on GitHub's free runners (public repo). On every push to main, each story whose gate is open and
+# that has no render release yet is drawn in 16 parallel shards, then assembled: finish, narration, mix and the
+# flash measure. The film goes to a release `render-<story>`; the daily upload takes it from there.
+name: render
+on:
+  push:
+    branches: [main]
+    paths: ["stories/**"]
+  workflow_dispatch:
+    inputs:
+      story: {description: "story folder (blank = every story that's ready)", default: ""}
+concurrency: {group: render, cancel-in-progress: false}
+permissions: {contents: write}
+env:
+  SHARDS: 16
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.p.outputs.matrix }}
+      stories: ${{ steps.p.outputs.stories }}
+      any: ${{ steps.p.outputs.any }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: pip install -r requirements.txt
+      - id: p
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: python scripts/plan_renders.py --story "${{ inputs.story }}" --shards $SHARDS >> "$GITHUB_OUTPUT"
+
+  draw:
+    needs: plan
+    if: needs.plan.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: sudo apt-get update -q && sudo apt-get install -yq libegl1 libgl1 libxi6 libxxf86vm1 libxfixes3 libxrender1 libxkbcommon0 libsm6
+      - run: pip install -r requirements.txt -r requirements-bpy.txt
+      - name: draw shard ${{ matrix.shard }}
+        run: |
+          export BLOCKY_BPY=$(which python)
+          python -m blocky timeline ${{ matrix.story }}
+          python -m blocky render ${{ matrix.story }} --shard ${{ matrix.shard }}/$SHARDS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: frames-${{ matrix.story }}-${{ matrix.shard }}
+          path: out/work/${{ matrix.story }}/frames/*.png
+          retention-days: 5
+          compression-level: 0
+
+  assemble:
+    needs: [plan, draw]
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        story: ${{ fromJSON(needs.plan.outputs.stories) }}
+    env: {GH_TOKEN: "${{ github.token }}"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: sudo apt-get update -q && sudo apt-get install -yq ffmpeg espeak-ng
+      - run: pip install -r requirements.txt -r requirements-tts.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - uses: actions/cache@v4
+        with: {path: ~/.cache/huggingface, key: hf-kokoro-v1}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: frames-${{ matrix.story }}-*
+          path: out/work/${{ matrix.story }}/frames
+          merge-multiple: true
+      - name: finish, narrate, mix
+        run: |
+          export BLOCKY_TTS=$(which python)
+          S=${{ matrix.story }}
+          python -m blocky timeline $S
+          python -m blocky voice $S --verify
+          python -m blocky finish $S
+          python -m blocky mix $S
+      - name: flash measure and release
+        run: |
+          S=${{ matrix.story }}
+          SLUG=$(python -c "import json;print(json.load(open('stories/$S/story.json')).get('slug','$S'))")
+          set +e; python -m blocky flash $S; FLASH=$?; set -e
+          cp out/work/$S/mix.json out/$SLUG.mix.json
+          PRE=""; [ $FLASH -eq 0 ] || PRE="--prerelease"
+          { echo "Final render of \`$S\` at ${GITHUB_SHA::7}."; echo
+            [ $FLASH -eq 0 ] && echo "Flash bar: pass. Queued for the daily upload." || echo "Flash bar: **FAIL**. Not uploaded; see the flash report and redraw the named shots."; } > notes.md
+          gh release create render-$S out/$SLUG.mp4 out/$SLUG.contact.png out/$SLUG.flash.json out/$SLUG.mix.json \
+            --title "$SLUG" --notes-file notes.md --target "$GITHUB_SHA" $PRE
+          exit $FLASH

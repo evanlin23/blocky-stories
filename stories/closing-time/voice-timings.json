@@ -1,0 +1,1897 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "At the aquarium, the night shift waves goodbye to the big tank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.155,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.802,
+     1.259
+    ],
+    [
+     1.259,
+     1.87
+    ],
+    [
+     1.87,
+     2.586
+    ]
+   ]
+  },
+  "L02": {
+   "text": "I'm the new cleaner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     1.017
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Our shift is three people in one long dark hall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     1.0
+    ],
+    [
+     1.0,
+     1.534
+    ],
+    [
+     1.534,
+     2.259
+    ]
+   ]
+  },
+  "L04": {
+   "text": "One whole side is glass. Behind it, just blue, forever.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.155
+    ],
+    [
+     1.224,
+     1.517
+    ],
+    [
+     1.552,
+     2.552
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Rosa runs the shift. She waves like she means it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.19,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     1.052
+    ],
+    [
+     1.129,
+     1.492
+    ],
+    [
+     1.492,
+     1.724
+    ],
+    [
+     1.724,
+     2.328
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Dev waves like it's a joke.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.87
+    ],
+    [
+     0.87,
+     1.414
+    ]
+   ]
+  },
+  "L09": {
+   "text": "And the fish don't swim.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.259
+    ]
+   ]
+  },
+  "L10": {
+   "text": "They just hang there, all pointed at us, waiting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.724
+    ],
+    [
+     0.759,
+     1.207
+    ],
+    [
+     1.207,
+     2.0
+    ]
+   ]
+  },
+  "L12": {
+   "text": "And way out in the blue hangs something huge. A wide, pale diamond.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.138,
+   "onset": 0.155,
+   "end": 2.948,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     0.56
+    ],
+    [
+     0.56,
+     0.776
+    ],
+    [
+     0.776,
+     1.155
+    ],
+    [
+     1.155,
+     1.586
+    ],
+    [
+     1.698,
+     2.069
+    ],
+    [
+     2.112,
+     2.948
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Rosa calls it the Regular.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.19,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.19,
+     0.793
+    ],
+    [
+     0.793,
+     1.483
+    ]
+   ]
+  },
+  "L17": {
+   "text": "My first week, I looked down into the tank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.707,
+     1.129
+    ],
+    [
+     1.129,
+     1.81
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Way down on the tank floor sat benches.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.621
+    ],
+    [
+     0.621,
+     1.034
+    ],
+    [
+     1.034,
+     1.845
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Wooden ones, just like ours. Facing us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     1.103
+    ],
+    [
+     1.164,
+     1.845
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Who puts benches in a tank?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.793
+    ],
+    [
+     0.793,
+     1.414
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Then I noticed the hatch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.741
+    ],
+    [
+     0.741,
+     1.224
+    ]
+   ]
+  },
+  "L22": {
+   "text": "A steel square in the ceiling. No handle on our side.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.224
+    ],
+    [
+     1.301,
+     1.698
+    ],
+    [
+     1.698,
+     2.414
+    ]
+   ]
+  },
+  "L23": {
+   "text": "I asked Rosa where it goes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.448
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Rosa said, That one isn't ours.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     0.931
+    ],
+    [
+     0.931,
+     1.655
+    ]
+   ]
+  },
+  "L26": {
+   "text": "And each morning, the blue got more crowded.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     1.052
+    ],
+    [
+     1.052,
+     1.776
+    ]
+   ]
+  },
+  "L27": {
+   "text": "The Regular drifted a little closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     0.957
+    ],
+    [
+     0.957,
+     1.707
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Close enough to see the slits.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.784
+    ],
+    [
+     0.784,
+     1.431
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Two rows, like eyelids, shut tight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.931
+    ],
+    [
+     0.966,
+     1.603
+    ]
+   ]
+  },
+  "L30": {
+   "text": "They never opened.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.121
+    ]
+   ]
+  },
+  "L32": {
+   "text": "She never once turned her back on that tank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.19,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.043
+    ],
+    [
+     1.043,
+     1.759
+    ]
+   ]
+  },
+  "L33": {
+   "text": "On a friday, we lined up to wave.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.664,
+     1.017
+    ],
+    [
+     1.017,
+     1.621
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Dev dropped his hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.241
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Dev laughed. It's a fish tank. They can't see us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     0.776
+    ],
+    [
+     0.776,
+     1.121
+    ],
+    [
+     1.164,
+     1.439
+    ],
+    [
+     1.439,
+     2.017
+    ]
+   ]
+  },
+  "L36": {
+   "text": "He grinned and walked out. The steel door swung shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.0
+    ],
+    [
+     1.069,
+     1.543
+    ],
+    [
+     1.543,
+     2.293
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Rosa kept waving way too long.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     0.879
+    ],
+    [
+     0.879,
+     1.655
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Her smirk was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.155,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.155
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Behind the glass, the Regular came right up to it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.802,
+     1.155
+    ],
+    [
+     1.155,
+     1.603
+    ],
+    [
+     1.603,
+     2.069
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Two slits cracked open, then shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.948
+    ],
+    [
+     0.974,
+     1.569
+    ]
+   ]
+  },
+  "L42": {
+   "text": "It didn't drift back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.155,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     1.052
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Saturday, the hall lights were still on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9064,
+   "dur": 2.052,
+   "onset": 0.207,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.207,
+     0.552
+    ],
+    [
+     0.578,
+     1.043
+    ],
+    [
+     1.043,
+     1.845
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Too bright. Like a stage.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     1.241
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Rosa hit the switch. Nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.948
+    ],
+    [
+     1.026,
+     1.586
+    ]
+   ]
+  },
+  "L46": {
+   "text": "The glass was packed edge to edge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.741
+    ],
+    [
+     0.741,
+     1.466
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Shapes on top of shapes, all facing us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.19,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.19,
+     0.595
+    ],
+    [
+     0.595,
+     0.914
+    ],
+    [
+     0.948,
+     1.776
+    ]
+   ]
+  },
+  "L48": {
+   "text": "And the Regular was pressed flat on the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.595
+    ],
+    [
+     0.595,
+     0.922
+    ],
+    [
+     0.922,
+     1.147
+    ],
+    [
+     1.147,
+     1.845
+    ]
+   ]
+  },
+  "L49": {
+   "text": "It covered half the wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.69
+    ],
+    [
+     0.69,
+     1.259
+    ]
+   ]
+  },
+  "L50": {
+   "text": "Its slits opened, one after another,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9373,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.897
+    ],
+    [
+     0.966,
+     1.337
+    ],
+    [
+     1.337,
+     1.897
+    ]
+   ]
+  },
+  "L51": {
+   "text": "top to bottom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.983
+    ]
+   ]
+  },
+  "L52": {
+   "text": "Its skin squeaked on the acrylic, and the glass fogged.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.716
+    ],
+    [
+     0.716,
+     1.224
+    ],
+    [
+     1.276,
+     1.698
+    ],
+    [
+     1.698,
+     2.259
+    ]
+   ]
+  },
+  "L53": {
+   "text": "They weren't slits. They were eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.927,
+   "dur": 1.81,
+   "onset": 0.19,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.19,
+     0.439
+    ],
+    [
+     0.439,
+     0.741
+    ],
+    [
+     0.793,
+     1.603
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Real ones, wet and brown, like a person's. Not drawn like ours.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.138,
+   "onset": 0.19,
+   "end": 2.948,
+   "chunks": [
+    [
+     0.19,
+     0.621
+    ],
+    [
+     0.655,
+     1.103
+    ],
+    [
+     1.129,
+     1.776
+    ],
+    [
+     1.845,
+     2.215
+    ],
+    [
+     2.215,
+     2.948
+    ]
+   ]
+  },
+  "L55": {
+   "text": "And they were looking right at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.647
+    ],
+    [
+     0.647,
+     1.293
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Dev was back, frozen, holding a mop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8652,
+   "dur": 2.19,
+   "onset": 0.207,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.207,
+     0.724
+    ],
+    [
+     0.768,
+     1.121
+    ],
+    [
+     1.155,
+     1.966
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Then its whole pale front dragged down the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.905
+    ],
+    [
+     0.905,
+     1.172
+    ],
+    [
+     1.172,
+     1.914
+    ]
+   ]
+  },
+  "L58": {
+   "text": "Rosa didn't flinch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.19,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.19,
+     0.629
+    ],
+    [
+     0.629,
+     1.155
+    ]
+   ]
+  },
+  "L59": {
+   "text": "Show's not over, she said. Nobody ended it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.19,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.19,
+     0.379
+    ],
+    [
+     0.379,
+     0.724
+    ],
+    [
+     0.759,
+     1.172
+    ],
+    [
+     1.267,
+     1.534
+    ],
+    [
+     1.534,
+     2.103
+    ]
+   ]
+  },
+  "L60": {
+   "text": "From out in the water, the hall was a bright box in a rock wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.927,
+   "dur": 2.931,
+   "onset": 0.19,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.19,
+     0.423
+    ],
+    [
+     0.423,
+     0.534
+    ],
+    [
+     0.534,
+     0.845
+    ],
+    [
+     0.87,
+     1.215
+    ],
+    [
+     1.215,
+     1.819
+    ],
+    [
+     1.819,
+     1.931
+    ],
+    [
+     1.931,
+     2.724
+    ]
+   ]
+  },
+  "L62": {
+   "text": "A rail out front. Benches facing it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.845
+    ],
+    [
+     0.914,
+     1.207
+    ],
+    [
+     1.207,
+     1.845
+    ]
+   ]
+  },
+  "L63": {
+   "text": "A hatch on the roof for the keepers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.836
+    ],
+    [
+     0.836,
+     1.5
+    ]
+   ]
+  },
+  "L64": {
+   "text": "And three little figures inside, in matching aprons.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.155,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.862
+    ],
+    [
+     0.862,
+     1.362
+    ],
+    [
+     1.431,
+     1.828
+    ],
+    [
+     1.828,
+     2.448
+    ]
+   ]
+  },
+  "L65": {
+   "text": "We were the exhibit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     1.034
+    ]
+   ]
+  },
+  "L66": {
+   "text": "And the wave was never goodbye.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.983
+    ],
+    [
+     0.983,
+     1.603
+    ]
+   ]
+  },
+  "L67": {
+   "text": "It was the curtain call.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     1.224
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Rosa lined all three of us up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.992
+    ],
+    [
+     0.992,
+     1.534
+    ]
+   ]
+  },
+  "L69": {
+   "text": "Dev too. He wasn't grinning now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     0.879
+    ],
+    [
+     0.879,
+     1.586
+    ]
+   ]
+  },
+  "L70": {
+   "text": "She said, wave. Then bow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.448,
+     0.707
+    ],
+    [
+     0.741,
+     1.362
+    ]
+   ]
+  },
+  "L71": {
+   "text": "So we waved. Then we bowed, low and slow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9064,
+   "dur": 2.362,
+   "onset": 0.207,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.207,
+     0.776
+    ],
+    [
+     0.828,
+     1.259
+    ],
+    [
+     1.293,
+     1.474
+    ],
+    [
+     1.474,
+     2.138
+    ]
+   ]
+  },
+  "L72": {
+   "text": "Bubbles rolled along the glass, like applause.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.836
+    ],
+    [
+     0.836,
+     1.19
+    ],
+    [
+     1.215,
+     1.983
+    ]
+   ]
+  },
+  "L73": {
+   "text": "Its eyes closed, one after another.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.81
+    ],
+    [
+     0.862,
+     1.199
+    ],
+    [
+     1.199,
+     1.724
+    ]
+   ]
+  },
+  "L74": {
+   "text": "The last one closed on me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.854
+    ],
+    [
+     0.854,
+     1.345
+    ]
+   ]
+  },
+  "L75": {
+   "text": "And it glided back into the blue.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.802
+    ],
+    [
+     0.802,
+     1.466
+    ]
+   ]
+  },
+  "L76": {
+   "text": "The house lights went down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.31
+    ]
+   ]
+  },
+  "L78": {
+   "text": "The Regular came back, out of the blue.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.966
+    ],
+    [
+     1.0,
+     1.147
+    ],
+    [
+     1.147,
+     1.69
+    ]
+   ]
+  },
+  "L79": {
+   "text": "It had a tiny pup with it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.655
+    ],
+    [
+     0.655,
+     1.293
+    ]
+   ]
+  },
+  "L80": {
+   "text": "It nudged the pup up to the glass to show it something.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.155,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.698
+    ],
+    [
+     0.698,
+     0.87
+    ],
+    [
+     0.87,
+     1.224
+    ],
+    [
+     1.224,
+     1.474
+    ],
+    [
+     1.474,
+     2.138
+    ]
+   ]
+  },
+  "L82": {
+   "text": "Right up against my face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.19,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.672,
+     1.328
+    ]
+   ]
+  },
+  "L83": {
+   "text": "Its eyes opened, every one on me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.828
+    ],
+    [
+     0.897,
+     1.233
+    ],
+    [
+     1.233,
+     1.741
+    ]
+   ]
+  },
+  "L83c": {
+   "text": "It brought its pup to see the people who bowed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.672
+    ],
+    [
+     0.672,
+     0.888
+    ],
+    [
+     0.888,
+     1.164
+    ],
+    [
+     1.164,
+     1.793
+    ]
+   ]
+  },
+  "L84": {
+   "text": "I waved. Its eyes followed my hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     0.931
+    ],
+    [
+     0.931,
+     1.793
+    ]
+   ]
+  },
+  "L85": {
+   "text": "It drifted into the blue, still watching me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8240000000000001,
+   "dur": 2.534,
+   "onset": 0.207,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.207,
+     0.578
+    ],
+    [
+     0.578,
+     1.172
+    ],
+    [
+     1.267,
+     2.31
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,2309 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "At my uncle's farmhouse, when the floor knocks, you knock back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.155,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     1.034
+    ],
+    [
+     1.061,
+     1.414
+    ],
+    [
+     1.414,
+     1.655
+    ],
+    [
+     1.69,
+     2.448
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Same rhythm. Every time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.655,
+     1.397
+    ]
+   ]
+  },
+  "L03": {
+   "text": "His cellar door is set into the kitchen floor.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.094
+    ],
+    [
+     1.094,
+     1.966
+    ]
+   ]
+  },
+  "L04": {
+   "text": "The bolt is underneath.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.259
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Whatever's down there locks itself in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.879
+    ],
+    [
+     0.879,
+     1.81
+    ]
+   ]
+  },
+  "L06": {
+   "text": "I spent one summer helping him on the farm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.845
+    ],
+    [
+     0.845,
+     1.147
+    ],
+    [
+     1.147,
+     1.845
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Uncle Ray is a talker.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.345
+    ]
+   ]
+  },
+  "L08": {
+   "text": "He'd talk to a fence post.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.569
+    ],
+    [
+     0.569,
+     1.259
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Right by the cellar door, one board is worn pale.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.966
+    ],
+    [
+     1.017,
+     1.371
+    ],
+    [
+     1.371,
+     2.259
+    ]
+   ]
+  },
+  "L10": {
+   "text": "It's dipped in the middle, from years of knuckles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.862
+    ],
+    [
+     0.914,
+     1.25
+    ],
+    [
+     1.25,
+     1.879
+    ]
+   ]
+  },
+  "L11": {
+   "text": "So I asked what lives down there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.862
+    ],
+    [
+     0.862,
+     1.5
+    ]
+   ]
+  },
+  "L12": {
+   "text": "He said, Something with manners. Somebody knocks, you answer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.155,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.448,
+     0.629
+    ],
+    [
+     0.629,
+     1.172
+    ],
+    [
+     1.25,
+     1.69
+    ],
+    [
+     1.724,
+     2.397
+    ]
+   ]
+  },
+  "L13": {
+   "text": "He laughed so hard his hat came off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.75
+    ],
+    [
+     0.75,
+     1.017
+    ],
+    [
+     1.017,
+     1.603
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Then he said, This house has manners. Somebody knocks, you answer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.155,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.509,
+     0.819
+    ],
+    [
+     0.819,
+     1.379
+    ],
+    [
+     1.457,
+     1.897
+    ],
+    [
+     1.931,
+     2.603
+    ]
+   ]
+  },
+  "L15": {
+   "text": "My first night, the crickets were loud.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.698,
+     1.026
+    ],
+    [
+     1.026,
+     1.621
+    ]
+   ]
+  },
+  "L16": {
+   "text": "We were eating supper. Then the crickets just quit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.31,
+     0.862
+    ],
+    [
+     0.931,
+     1.362
+    ],
+    [
+     1.362,
+     2.034
+    ]
+   ]
+  },
+  "L17": {
+   "text": "All of them, at once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.19,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.19,
+     0.517
+    ],
+    [
+     0.543,
+     1.103
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The bulb hung still.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.121
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Ray kept his eyes on his plate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.87
+    ],
+    [
+     0.87,
+     1.552
+    ]
+   ]
+  },
+  "L20": {
+   "text": "And outside, the crickets came back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.629,
+     0.966
+    ],
+    [
+     0.966,
+     1.603
+    ]
+   ]
+  },
+  "L21": {
+   "text": "My second night, the floor did a longer one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.716,
+     1.008
+    ],
+    [
+     1.008,
+     1.138
+    ],
+    [
+     1.138,
+     1.879
+    ]
+   ]
+  },
+  "L22": {
+   "text": "It went like this.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.155,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.966
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Knock... Knock-knock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8034,
+   "dur": 1.672,
+   "onset": 0.259,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.259,
+     0.517
+    ],
+    [
+     0.586,
+     1.397
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Ray copied it with a grin, like a song he knew.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.19,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.19,
+     0.612
+    ],
+    [
+     0.612,
+     1.052
+    ],
+    [
+     1.121,
+     1.517
+    ],
+    [
+     1.517,
+     2.052
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Every morning there was a trail in the dust.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     0.784
+    ],
+    [
+     0.784,
+     1.147
+    ],
+    [
+     1.147,
+     1.776
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Wide as the kitchen table. Totally smooth. Not one handprint.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.19,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     1.155
+    ],
+    [
+     1.233,
+     1.845
+    ],
+    [
+     1.897,
+     2.172
+    ],
+    [
+     2.172,
+     2.776
+    ]
+   ]
+  },
+  "L27": {
+   "text": "It went all the way around the house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.69
+    ],
+    [
+     0.69,
+     1.466
+    ]
+   ]
+  },
+  "L28": {
+   "text": "And it ended under the kitchen window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.793
+    ],
+    [
+     0.793,
+     1.603
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Ray raked it over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.19,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     1.121
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Ray said, Snakes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     1.086
+    ]
+   ]
+  },
+  "L31": {
+   "text": "That's a big snake, Ray.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.81
+    ],
+    [
+     0.845,
+     1.276
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Late one night, I came down for water.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.138
+    ],
+    [
+     1.138,
+     1.724
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Under the bulb, through a gap in the boards,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.008
+    ],
+    [
+     1.008,
+     1.707
+    ]
+   ]
+  },
+  "L34": {
+   "text": "something faded red slid past.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.854
+    ],
+    [
+     0.854,
+     1.638
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Then One, eye looked up. Upside down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.948
+    ],
+    [
+     1.017,
+     1.862
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Then nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.172,
+   "end": 0.862,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ]
+   ]
+  },
+  "L37": {
+   "text": "In August, Ray drove two towns over for a truck part.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.621,
+     1.026
+    ],
+    [
+     1.026,
+     1.552
+    ],
+    [
+     1.552,
+     1.672
+    ],
+    [
+     1.672,
+     2.345
+    ]
+   ]
+  },
+  "L38": {
+   "text": "The only shop was two towns over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.155
+    ],
+    [
+     1.155,
+     1.638
+    ]
+   ]
+  },
+  "L39": {
+   "text": "He wouldn't be back till sunrise.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.69
+    ],
+    [
+     0.69,
+     1.483
+    ]
+   ]
+  },
+  "L40": {
+   "text": "At the door, he stopped grinning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.526,
+     0.862
+    ],
+    [
+     0.862,
+     1.431
+    ]
+   ]
+  },
+  "L41": {
+   "text": "He said, If it knocks, you answer. Don't think. Just answer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.423,
+     0.793
+    ],
+    [
+     0.819,
+     1.155
+    ],
+    [
+     1.207,
+     1.534
+    ],
+    [
+     1.569,
+     2.293
+    ]
+   ]
+  },
+  "L42": {
+   "text": "His tail lights went red into the fog.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     0.992
+    ],
+    [
+     0.992,
+     1.724
+    ]
+   ]
+  },
+  "L43": {
+   "text": "The crickets were so loud.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     1.259
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I'd never been so glad to hear bugs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.966
+    ],
+    [
+     0.966,
+     1.724
+    ]
+   ]
+  },
+  "L45": {
+   "text": "At midnight, the crickets went silent.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.56,
+     0.914
+    ],
+    [
+     0.914,
+     1.621
+    ]
+   ]
+  },
+  "L46": {
+   "text": "I knelt by the pale board.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.638
+    ],
+    [
+     0.638,
+     1.345
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Then the floor went crazy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.276
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Fast. Hard. Way too fast to follow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.397,
+     0.621
+    ],
+    [
+     0.655,
+     0.94
+    ],
+    [
+     0.94,
+     1.724
+    ]
+   ]
+  },
+  "L49": {
+   "text": "The bulb swung so hard it hit a beam.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.957
+    ],
+    [
+     0.957,
+     1.112
+    ],
+    [
+     1.112,
+     1.672
+    ]
+   ]
+  },
+  "L50": {
+   "text": "Dust sifted down. The board jumped under my knees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.19,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.19,
+     0.397
+    ],
+    [
+     0.397,
+     0.966
+    ],
+    [
+     1.034,
+     1.543
+    ],
+    [
+     1.543,
+     2.345
+    ]
+   ]
+  },
+  "L51": {
+   "text": "My fist was up. I couldn't move it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.81
+    ],
+    [
+     0.862,
+     1.121
+    ],
+    [
+     1.121,
+     1.672
+    ]
+   ]
+  },
+  "L52": {
+   "text": "I never answered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.069
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Then, quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.034,
+   "onset": 0.172,
+   "end": 0.845,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Then, from the front door,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.207
+    ]
+   ]
+  },
+  "L55": {
+   "text": "Three knocks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.19,
+   "end": 0.845,
+   "chunks": [
+    [
+     0.19,
+     0.845
+    ]
+   ]
+  },
+  "L56": {
+   "text": "It was the rhythm from my second night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9682,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.741
+    ],
+    [
+     0.741,
+     0.974
+    ],
+    [
+     0.974,
+     1.69
+    ]
+   ]
+  },
+  "L57": {
+   "text": "On the frosted glass, a dark shape slid across.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.931
+    ],
+    [
+     0.983,
+     1.466
+    ],
+    [
+     1.466,
+     2.19
+    ]
+   ]
+  },
+  "L58": {
+   "text": "All smooth, no edges, feeling for the handle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.017
+    ],
+    [
+     1.069,
+     1.371
+    ],
+    [
+     1.371,
+     2.0
+    ]
+   ]
+  },
+  "L59": {
+   "text": "And under my boots, that eye looked up. Not blinking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.724
+    ],
+    [
+     0.75,
+     1.0
+    ],
+    [
+     1.0,
+     1.431
+    ],
+    [
+     1.526,
+     2.328
+    ]
+   ]
+  },
+  "L60": {
+   "text": "The bolt slid back. From below.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.927,
+   "dur": 1.931,
+   "onset": 0.19,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     0.914
+    ],
+    [
+     0.983,
+     1.707
+    ]
+   ]
+  },
+  "L61": {
+   "text": "The cellar door lifted on four pale knuckles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.819
+    ],
+    [
+     0.819,
+     1.155
+    ],
+    [
+     1.155,
+     1.948
+    ]
+   ]
+  },
+  "L62": {
+   "text": "It came up on its back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.155,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.121
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Arms and legs like a crab.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.19,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.19,
+     0.784
+    ],
+    [
+     0.784,
+     1.431
+    ]
+   ]
+  },
+  "L64": {
+   "text": "It was built like a person, but far too wide and flat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.56
+    ],
+    [
+     0.56,
+     1.017
+    ],
+    [
+     1.069,
+     1.543
+    ],
+    [
+     1.543,
+     2.397
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Wearing old red long johns.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.552
+    ]
+   ]
+  },
+  "L66": {
+   "text": "Its head hung back, its face upside down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     0.759
+    ],
+    [
+     0.784,
+     1.121
+    ],
+    [
+     1.121,
+     1.966
+    ]
+   ]
+  },
+  "L67": {
+   "text": "That face never moved. Never blinked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.034
+    ],
+    [
+     1.112,
+     1.845
+    ]
+   ]
+  },
+  "L68": {
+   "text": "I shut my eyes. I pressed into the stove.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.81
+    ],
+    [
+     0.862,
+     1.164
+    ],
+    [
+     1.164,
+     1.897
+    ]
+   ]
+  },
+  "L69": {
+   "text": "It crawled right past me. It didn't touch me. Not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     1.069
+    ],
+    [
+     1.138,
+     1.362
+    ],
+    [
+     1.362,
+     1.655
+    ],
+    [
+     1.69,
+     2.379
+    ]
+   ]
+  },
+  "L70": {
+   "text": "It went up the front door, head first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.845
+    ],
+    [
+     0.879,
+     1.586
+    ]
+   ]
+  },
+  "L71": {
+   "text": "It pressed flat to the frame, holding it shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.052
+    ],
+    [
+     1.086,
+     1.439
+    ],
+    [
+     1.439,
+     1.914
+    ]
+   ]
+  },
+  "L72": {
+   "text": "Outside, the knocking stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.879
+    ],
+    [
+     0.879,
+     1.397
+    ]
+   ]
+  },
+  "L73": {
+   "text": "The shape on the glass slid away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.802
+    ],
+    [
+     0.802,
+     1.5
+    ]
+   ]
+  },
+  "L74": {
+   "text": "Then, one by one, the crickets started up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.845
+    ],
+    [
+     0.888,
+     1.224
+    ],
+    [
+     1.224,
+     1.879
+    ]
+   ]
+  },
+  "L75": {
+   "text": "Its hand came down by my boot, knuckles first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.776
+    ],
+    [
+     0.776,
+     1.241
+    ],
+    [
+     1.293,
+     2.086
+    ]
+   ]
+  },
+  "L76": {
+   "text": "Softly. Like a question.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 1.534,
+   "onset": 0.207,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.207,
+     0.5
+    ],
+    [
+     0.534,
+     0.707
+    ],
+    [
+     0.707,
+     1.328
+    ]
+   ]
+  },
+  "L77": {
+   "text": "I knocked twice back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.155
+    ]
+   ]
+  },
+  "L78": {
+   "text": "It crawled back down, its face still on me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.862
+    ],
+    [
+     0.897,
+     1.207
+    ],
+    [
+     1.207,
+     1.931
+    ]
+   ]
+  },
+  "L79": {
+   "text": "The bolt slid shut. From below.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.927,
+   "dur": 2.017,
+   "onset": 0.19,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.19,
+     0.457
+    ],
+    [
+     0.457,
+     1.0
+    ],
+    [
+     1.069,
+     1.793
+    ]
+   ]
+  },
+  "L80": {
+   "text": "Ray got home at sunrise.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.31
+    ]
+   ]
+  },
+  "L81": {
+   "text": "The trail was back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.086
+    ]
+   ]
+  },
+  "L82": {
+   "text": "This time it came up the steps to the front door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.698
+    ],
+    [
+     0.698,
+     1.086
+    ],
+    [
+     1.086,
+     1.207
+    ],
+    [
+     1.207,
+     1.879
+    ]
+   ]
+  },
+  "L83": {
+   "text": "Ray stared at it a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.647
+    ],
+    [
+     0.647,
+     1.466
+    ]
+   ]
+  },
+  "L84": {
+   "text": "Then he said, You didn't open it. Good.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.741
+    ],
+    [
+     0.741,
+     1.103
+    ],
+    [
+     1.181,
+     1.672
+    ]
+   ]
+  },
+  "L85": {
+   "text": "He said the one outside has been listening for years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.974
+    ],
+    [
+     0.974,
+     1.224
+    ],
+    [
+     1.224,
+     1.5
+    ],
+    [
+     1.5,
+     2.207
+    ]
+   ]
+  },
+  "L86": {
+   "text": "Trying to learn our knock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.629
+    ],
+    [
+     0.629,
+     1.207
+    ]
+   ]
+  },
+  "L86a": {
+   "text": "The one below has knocked for this family since his grandpa's time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 3.121,
+   "onset": 0.19,
+   "end": 2.914,
+   "chunks": [
+    [
+     0.19,
+     0.69
+    ],
+    [
+     0.69,
+     1.034
+    ],
+    [
+     1.034,
+     1.621
+    ],
+    [
+     1.621,
+     1.862
+    ],
+    [
+     1.862,
+     2.914
+    ]
+   ]
+  },
+  "L86b": {
+   "text": "It knocks to check we're still here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.819
+    ],
+    [
+     0.819,
+     1.586
+    ]
+   ]
+  },
+  "L86c": {
+   "text": "That night, I knocked first. It answered soft.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 2.362,
+   "onset": 0.19,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.439,
+     1.086
+    ],
+    [
+     1.155,
+     1.578
+    ],
+    [
+     1.578,
+     2.155
+    ]
+   ]
+  },
+  "L87": {
+   "text": "Last night, the floor knocked first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     0.759
+    ],
+    [
+     0.759,
+     1.5
+    ]
+   ]
+  },
+  "L88": {
+   "text": "I knocked back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ]
+   ]
+  },
+  "L89": {
+   "text": "And from the front door, very softly, something knocked back too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9064,
+   "dur": 3.069,
+   "onset": 0.19,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.19,
+     0.353
+    ],
+    [
+     0.353,
+     0.793
+    ],
+    [
+     0.828,
+     1.5
+    ],
+    [
+     1.594,
+     1.862
+    ],
+    [
+     1.862,
+     2.845
+    ]
+   ]
+  }
+ }
+}

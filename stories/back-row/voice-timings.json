@@ -1,0 +1,2153 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "On the night bus, you never sit in the back row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.741
+    ],
+    [
+     0.793,
+     1.061
+    ],
+    [
+     1.061,
+     1.328
+    ],
+    [
+     1.328,
+     1.983
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Even if it's the only seat left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.888
+    ],
+    [
+     0.888,
+     1.552
+    ]
+   ]
+  },
+  "L03": {
+   "text": "I took the last bus home every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     0.828
+    ],
+    [
+     0.828,
+     1.741
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Same driver. Big guy, knit cap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.19,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.19,
+     0.69
+    ],
+    [
+     0.741,
+     1.034
+    ],
+    [
+     1.061,
+     1.621
+    ]
+   ]
+  },
+  "L05": {
+   "text": "He never said hello. He never said anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.914
+    ],
+    [
+     0.983,
+     1.388
+    ],
+    [
+     1.388,
+     1.983
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Except at every stop, he looked up in his mirror and said a number.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.086
+    ],
+    [
+     1.155,
+     1.509
+    ],
+    [
+     1.509,
+     1.931
+    ],
+    [
+     1.931,
+     2.146
+    ],
+    [
+     2.146,
+     2.724
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Six,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.621,
+   "onset": 0.19,
+   "end": 0.483,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ]
+   ]
+  },
+  "L08": {
+   "text": "he'd say. I'd count. Five of us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.793
+    ],
+    [
+     0.854,
+     1.5
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Every single night, he counted one too many.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     0.897
+    ],
+    [
+     0.948,
+     1.345
+    ],
+    [
+     1.345,
+     2.138
+    ]
+   ]
+  },
+  "L10": {
+   "text": "The back row stayed empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.362
+    ]
+   ]
+  },
+  "L11": {
+   "text": "The light over it never stopped flickering.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.741
+    ],
+    [
+     0.741,
+     1.172
+    ],
+    [
+     1.172,
+     1.776
+    ]
+   ]
+  },
+  "L12": {
+   "text": "The woman in the green coat told me not to look at it too long.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.129
+    ],
+    [
+     1.129,
+     1.379
+    ],
+    [
+     1.379,
+     1.741
+    ],
+    [
+     1.741,
+     1.862
+    ],
+    [
+     1.862,
+     2.517
+    ]
+   ]
+  },
+  "L13": {
+   "text": "She'd ridden this bus for years. She never sat past the middle door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.759
+    ],
+    [
+     0.759,
+     1.241
+    ],
+    [
+     1.319,
+     1.733
+    ],
+    [
+     1.733,
+     2.017
+    ],
+    [
+     2.017,
+     2.69
+    ]
+   ]
+  },
+  "L14": {
+   "text": "The middle seat back there always had a dent in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.888
+    ],
+    [
+     0.888,
+     1.285
+    ],
+    [
+     1.285,
+     1.569
+    ],
+    [
+     1.569,
+     2.017
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Like somebody heavy had just stood up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.75
+    ],
+    [
+     0.75,
+     0.948
+    ],
+    [
+     0.948,
+     1.517
+    ]
+   ]
+  },
+  "L16": {
+   "text": "The hand strap over it swung. Every other strap hung still.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     0.862
+    ],
+    [
+     0.862,
+     1.224
+    ],
+    [
+     1.319,
+     1.879
+    ],
+    [
+     1.879,
+     2.586
+    ]
+   ]
+  },
+  "L17": {
+   "text": "One night, a guy with long hair walked to the back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.914
+    ],
+    [
+     0.914,
+     1.293
+    ],
+    [
+     1.293,
+     1.543
+    ],
+    [
+     1.543,
+     2.086
+    ]
+   ]
+  },
+  "L18": {
+   "text": "He stopped. He turned around. He stood by the door the whole ride.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.155,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.543,
+     1.241
+    ],
+    [
+     1.328,
+     1.681
+    ],
+    [
+     1.681,
+     1.906
+    ],
+    [
+     1.906,
+     2.655
+    ]
+   ]
+  },
+  "L19": {
+   "text": "I asked him why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.052
+    ]
+   ]
+  },
+  "L20": {
+   "text": "He just said, It's taken.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.155,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.543,
+     1.207
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Another night, the back window fogged up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.147
+    ],
+    [
+     1.147,
+     1.793
+    ]
+   ]
+  },
+  "L22": {
+   "text": "There was a handprint on it. From the inside.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.681
+    ],
+    [
+     0.681,
+     0.966
+    ],
+    [
+     1.034,
+     1.241
+    ],
+    [
+     1.241,
+     1.914
+    ]
+   ]
+  },
+  "L23": {
+   "text": "It was square, and way too big for a person.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.621
+    ],
+    [
+     0.647,
+     0.87
+    ],
+    [
+     0.87,
+     1.19
+    ],
+    [
+     1.19,
+     1.897
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Then came the night I was the only rider.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.81
+    ],
+    [
+     0.81,
+     1.112
+    ],
+    [
+     1.112,
+     1.862
+    ]
+   ]
+  },
+  "L25": {
+   "text": "The driver looked up in his mirror.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.784
+    ],
+    [
+     0.784,
+     1.448
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Two, he said.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.172,
+   "end": 0.862,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.345,
+     0.862
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Then something in the back row said it too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.603
+    ],
+    [
+     0.603,
+     1.008
+    ],
+    [
+     1.008,
+     1.707
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Two. In his voice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.362,
+     0.552
+    ],
+    [
+     0.552,
+     1.069
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Then one night it poured.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.224
+    ]
+   ]
+  },
+  "L30": {
+   "text": "The roof leaked. Every seat was soaked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.672
+    ],
+    [
+     0.724,
+     1.094
+    ],
+    [
+     1.094,
+     1.69
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Every seat except the back row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.784
+    ],
+    [
+     0.784,
+     1.483
+    ]
+   ]
+  },
+  "L32": {
+   "text": "I'd been on my feet for nine hours. So I sat down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.707
+    ],
+    [
+     0.707,
+     1.328
+    ],
+    [
+     1.406,
+     1.612
+    ],
+    [
+     1.612,
+     2.362
+    ]
+   ]
+  },
+  "L33": {
+   "text": "The woman in the green coat closed her eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.966
+    ],
+    [
+     0.966,
+     1.215
+    ],
+    [
+     1.215,
+     1.81
+    ]
+   ]
+  },
+  "L34": {
+   "text": "The light over me flickered once. Twice. Then it stayed on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.647
+    ],
+    [
+     0.647,
+     1.172
+    ],
+    [
+     1.233,
+     1.621
+    ],
+    [
+     1.707,
+     1.879
+    ],
+    [
+     1.879,
+     2.569
+    ]
+   ]
+  },
+  "L35": {
+   "text": "At the next stop, he looked in his mirror.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.741
+    ],
+    [
+     0.776,
+     1.026
+    ],
+    [
+     1.026,
+     1.707
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Six, he said.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.19,
+   "end": 0.879,
+   "chunks": [
+    [
+     0.19,
+     0.345
+    ],
+    [
+     0.37,
+     0.879
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I counted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.172,
+   "end": 0.845,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.707,
+   "onset": 0.19,
+   "end": 0.534,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ]
+   ]
+  },
+  "L39": {
+   "text": "The sixth one was sitting right next to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     0.948
+    ],
+    [
+     0.948,
+     1.285
+    ],
+    [
+     1.285,
+     1.724
+    ]
+   ]
+  },
+  "L40": {
+   "text": "A tall thing in a grey coat, folded up tight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.638
+    ],
+    [
+     0.638,
+     1.103
+    ],
+    [
+     1.164,
+     1.552
+    ],
+    [
+     1.552,
+     2.034
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Its pale head had no face. Just a thin seam for a mouth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.155,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.259
+    ],
+    [
+     1.328,
+     1.526
+    ],
+    [
+     1.526,
+     1.948
+    ],
+    [
+     1.948,
+     2.569
+    ]
+   ]
+  },
+  "L42": {
+   "text": "That dent was it. Every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.793
+    ],
+    [
+     0.854,
+     1.552
+    ]
+   ]
+  },
+  "L43": {
+   "text": "The lights blinked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.0
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Then its head was facing me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.397
+    ]
+   ]
+  },
+  "L45": {
+   "text": "They blinked again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.052
+    ]
+   ]
+  },
+  "L46": {
+   "text": "It had kept turning. Way past where a neck should stop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.914
+    ],
+    [
+     0.992,
+     1.422
+    ],
+    [
+     1.422,
+     1.707
+    ],
+    [
+     1.707,
+     2.293
+    ]
+   ]
+  },
+  "L47": {
+   "text": "I ran to the front, right behind the driver.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.914
+    ],
+    [
+     0.992,
+     1.439
+    ],
+    [
+     1.439,
+     2.103
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Then every light on the bus went out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.069
+    ],
+    [
+     1.069,
+     1.621
+    ]
+   ]
+  },
+  "L49": {
+   "text": "When they came back, it was standing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.741
+    ],
+    [
+     0.768,
+     1.534
+    ]
+   ]
+  },
+  "L50": {
+   "text": "Bent double under the ceiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     0.819
+    ],
+    [
+     0.819,
+     1.397
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Out again. It was one row closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.75
+    ],
+    [
+     0.75,
+     1.086
+    ],
+    [
+     1.086,
+     1.707
+    ]
+   ]
+  },
+  "L52": {
+   "text": "Its arms were wrong.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.155,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     1.172
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Same as anyone's. Just far too long.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.19,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.19,
+     0.414
+    ],
+    [
+     0.414,
+     0.776
+    ],
+    [
+     0.828,
+     1.172
+    ],
+    [
+     1.172,
+     1.793
+    ]
+   ]
+  },
+  "L54": {
+   "text": "They reached halfway down the aisle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.81
+    ],
+    [
+     0.81,
+     1.5
+    ]
+   ]
+  },
+  "L55": {
+   "text": "Out. Its hands were on the next pole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.345
+    ],
+    [
+     0.37,
+     0.716
+    ],
+    [
+     0.716,
+     0.854
+    ],
+    [
+     0.854,
+     1.638
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Out. They'd come down the poles, toward me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.19,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.19,
+     0.345
+    ],
+    [
+     0.379,
+     0.638
+    ],
+    [
+     0.638,
+     0.768
+    ],
+    [
+     0.768,
+     1.086
+    ],
+    [
+     1.121,
+     1.724
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Each hand was that big square one from the window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.776
+    ],
+    [
+     0.776,
+     1.345
+    ],
+    [
+     1.345,
+     2.052
+    ]
+   ]
+  },
+  "L58": {
+   "text": "One hand tapped the driver's mirror.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     0.819
+    ],
+    [
+     0.819,
+     1.707
+    ]
+   ]
+  },
+  "L59": {
+   "text": "He didn't even look. He just said, six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.741
+    ],
+    [
+     0.793,
+     1.155
+    ],
+    [
+     1.19,
+     1.69
+    ]
+   ]
+  },
+  "L60": {
+   "text": "Out. And it was right behind me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.19,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.19,
+     0.379
+    ],
+    [
+     0.406,
+     0.655
+    ],
+    [
+     0.655,
+     0.828
+    ],
+    [
+     0.828,
+     1.5
+    ]
+   ]
+  },
+  "L61": {
+   "text": "Its head came down beside mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.784
+    ],
+    [
+     0.784,
+     1.586
+    ]
+   ]
+  },
+  "L62": {
+   "text": "In the dark, I heard a slow, wet click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     0.681
+    ],
+    [
+     0.681,
+     1.017
+    ],
+    [
+     1.069,
+     1.724
+    ]
+   ]
+  },
+  "L63": {
+   "text": "When the lights came back, the thin seam was open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.879
+    ],
+    [
+     0.905,
+     1.422
+    ],
+    [
+     1.422,
+     2.052
+    ]
+   ]
+  },
+  "L64": {
+   "text": "It was dark in there, all the way down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.741
+    ],
+    [
+     0.776,
+     1.103
+    ],
+    [
+     1.103,
+     1.638
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Then it spoke. In my voice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.31,
+     0.552
+    ],
+    [
+     0.586,
+     0.776
+    ],
+    [
+     0.776,
+     1.293
+    ]
+   ]
+  },
+  "L66": {
+   "text": "It said, Will you sit with me?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.509,
+     0.724
+    ],
+    [
+     0.724,
+     1.397
+    ]
+   ]
+  },
+  "L67": {
+   "text": "That handprint on the window was a wave.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.086
+    ],
+    [
+     1.086,
+     1.81
+    ]
+   ]
+  },
+  "L68": {
+   "text": "It was trying to say hi.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.629
+    ],
+    [
+     0.629,
+     1.293
+    ]
+   ]
+  },
+  "L69": {
+   "text": "Nobody had sat with it in years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.19,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.19,
+     0.543
+    ],
+    [
+     0.543,
+     0.914
+    ],
+    [
+     0.914,
+     1.586
+    ]
+   ]
+  },
+  "L70": {
+   "text": "So I went back and sat with it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.302
+    ],
+    [
+     0.302,
+     0.612
+    ],
+    [
+     0.612,
+     0.87
+    ],
+    [
+     0.87,
+     1.345
+    ]
+   ]
+  },
+  "L71": {
+   "text": "In the dark, I heard the seat beside me creak.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     0.836
+    ],
+    [
+     0.836,
+     1.069
+    ],
+    [
+     1.069,
+     1.422
+    ],
+    [
+     1.422,
+     1.931
+    ]
+   ]
+  },
+  "L72": {
+   "text": "It sat a little closer. Like it was cold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.552
+    ],
+    [
+     0.552,
+     0.948
+    ],
+    [
+     1.017,
+     1.199
+    ],
+    [
+     1.199,
+     1.914
+    ]
+   ]
+  },
+  "L73": {
+   "text": "Then the bell rang for my stop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.784
+    ],
+    [
+     0.784,
+     1.379
+    ]
+   ]
+  },
+  "L74": {
+   "text": "As I got off, it waved that big square hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.672
+    ],
+    [
+     0.707,
+     1.017
+    ],
+    [
+     1.017,
+     1.328
+    ],
+    [
+     1.328,
+     2.086
+    ]
+   ]
+  },
+  "L75": {
+   "text": "The next night, the door hissed open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.56,
+     0.81
+    ],
+    [
+     0.81,
+     1.517
+    ]
+   ]
+  },
+  "L76": {
+   "text": "One long arm lay across the seat beside it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.103
+    ],
+    [
+     1.103,
+     1.362
+    ],
+    [
+     1.362,
+     2.0
+    ]
+   ]
+  },
+  "L77": {
+   "text": "Saving it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.966,
+   "onset": 0.19,
+   "end": 0.776,
+   "chunks": [
+    [
+     0.19,
+     0.776
+    ]
+   ]
+  },
+  "L78": {
+   "text": "The woman in the green coat just said, It missed you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.931
+    ],
+    [
+     0.931,
+     1.328
+    ],
+    [
+     1.397,
+     2.069
+    ]
+   ]
+  },
+  "L79": {
+   "text": "These days, on the night bus, I always sit in the back row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     0.741
+    ],
+    [
+     0.741,
+     1.224
+    ],
+    [
+     1.276,
+     1.629
+    ],
+    [
+     1.629,
+     1.897
+    ],
+    [
+     1.897,
+     2.552
+    ]
+   ]
+  },
+  "L80": {
+   "text": "The driver says six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.19
+    ]
+   ]
+  },
+  "L81": {
+   "text": "And I count six too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.155,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.517
+    ],
+    [
+     0.517,
+     1.19
+    ]
+   ]
+  }
+ }
+}

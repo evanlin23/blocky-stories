@@ -1,0 +1,1725 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "On the",
+    "On the"
+   ],
+   [
+    "NIGHT BUS,",
+    "night bus,"
+   ],
+   [
+    "you NEVER",
+    "you never"
+   ],
+   [
+    "sit in the",
+    "sit in the"
+   ],
+   [
+    "BACK ROW.",
+    "back row."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Even if",
+    "Even if"
+   ],
+   [
+    "it's the ONLY",
+    "it's the only"
+   ],
+   [
+    "seat LEFT.",
+    "seat left."
+   ]
+  ],
+  "gap": 0.15
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I took the",
+    "I took the"
+   ],
+   [
+    "LAST BUS",
+    "last bus"
+   ],
+   [
+    "home every NIGHT.",
+    "home every night."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Same DRIVER.",
+    "Same driver."
+   ],
+   [
+    "Big guy,",
+    "Big guy,"
+   ],
+   [
+    "KNIT CAP.",
+    "knit cap."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He never",
+    "He never"
+   ],
+   [
+    "said HELLO.",
+    "said hello."
+   ],
+   [
+    "He never said",
+    "He never said"
+   ],
+   [
+    "ANYTHING.",
+    "anything."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Except at",
+    "Except at"
+   ],
+   [
+    "every STOP,",
+    "every stop,"
+   ],
+   [
+    "he looked up",
+    "he looked up"
+   ],
+   [
+    "in his MIRROR",
+    "in his mirror"
+   ],
+   [
+    "and said",
+    "and said"
+   ],
+   [
+    "a NUMBER.",
+    "a number."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"SIX,\"",
+    "Six,"
+   ]
+  ],
+  "gap": 0.05
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "he'd say.",
+    "he'd say."
+   ],
+   [
+    "I'd COUNT.",
+    "I'd count."
+   ],
+   [
+    "FIVE of us.",
+    "Five of us."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every single",
+    "Every single"
+   ],
+   [
+    "NIGHT,",
+    "night,"
+   ],
+   [
+    "he counted",
+    "he counted"
+   ],
+   [
+    "ONE too MANY.",
+    "one too many."
+   ]
+  ],
+  "gap": 0.12
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The BACK ROW",
+    "The back row"
+   ],
+   [
+    "stayed EMPTY.",
+    "stayed empty."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The light",
+    "The light"
+   ],
+   [
+    "over it",
+    "over it"
+   ],
+   [
+    "never STOPPED",
+    "never stopped"
+   ],
+   [
+    "FLICKERING.",
+    "flickering."
+   ]
+  ],
+  "gap": 0.15
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The woman in",
+    "The woman in"
+   ],
+   [
+    "the GREEN COAT",
+    "the green coat"
+   ],
+   [
+    "told me",
+    "told me"
+   ],
+   [
+    "NOT to look",
+    "not to look"
+   ],
+   [
+    "at it",
+    "at it"
+   ],
+   [
+    "too LONG.",
+    "too long."
+   ]
+  ],
+  "gap": 0.14
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She'd ridden",
+    "She'd ridden"
+   ],
+   [
+    "this bus",
+    "this bus"
+   ],
+   [
+    "for YEARS.",
+    "for years."
+   ],
+   [
+    "She never sat",
+    "She never sat"
+   ],
+   [
+    "past the",
+    "past the"
+   ],
+   [
+    "MIDDLE DOOR.",
+    "middle door."
+   ]
+  ],
+  "gap": 0.16
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The middle seat",
+    "The middle seat"
+   ],
+   [
+    "back there",
+    "back there"
+   ],
+   [
+    "always had",
+    "always had"
+   ],
+   [
+    "a DENT",
+    "a dent"
+   ],
+   [
+    "in it.",
+    "in it."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Like somebody",
+    "Like somebody"
+   ],
+   [
+    "HEAVY",
+    "heavy"
+   ],
+   [
+    "had just",
+    "had just"
+   ],
+   [
+    "STOOD UP.",
+    "stood up."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The HAND STRAP",
+    "The hand strap"
+   ],
+   [
+    "over it",
+    "over it"
+   ],
+   [
+    "SWUNG.",
+    "swung."
+   ],
+   [
+    "Every other strap",
+    "Every other strap"
+   ],
+   [
+    "hung STILL.",
+    "hung still."
+   ]
+  ],
+  "gap": 0.16
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "One night,",
+    "One night,"
+   ],
+   [
+    "a guy with",
+    "a guy with"
+   ],
+   [
+    "LONG HAIR",
+    "long hair"
+   ],
+   [
+    "walked to",
+    "walked to"
+   ],
+   [
+    "the BACK.",
+    "the back."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He STOPPED.",
+    "He stopped."
+   ],
+   [
+    "He turned AROUND.",
+    "He turned around."
+   ],
+   [
+    "He stood by",
+    "He stood by"
+   ],
+   [
+    "the DOOR",
+    "the door"
+   ],
+   [
+    "the whole RIDE.",
+    "the whole ride."
+   ]
+  ],
+  "gap": 0.14
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I asked him",
+    "I asked him"
+   ],
+   [
+    "WHY.",
+    "why."
+   ]
+  ],
+  "gap": 0.1
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He just said,",
+    "He just said,"
+   ],
+   [
+    "\"It's TAKEN.\"",
+    "It's taken."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Another night,",
+    "Another night,"
+   ],
+   [
+    "the BACK WINDOW",
+    "the back window"
+   ],
+   [
+    "FOGGED UP.",
+    "fogged up."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "There was",
+    "There was"
+   ],
+   [
+    "a HANDPRINT",
+    "a handprint"
+   ],
+   [
+    "on it.",
+    "on it."
+   ],
+   [
+    "From the",
+    "From the"
+   ],
+   [
+    "INSIDE.",
+    "inside."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It was",
+    "It was"
+   ],
+   [
+    "SQUARE,",
+    "square,"
+   ],
+   [
+    "and way",
+    "and way"
+   ],
+   [
+    "too BIG",
+    "too big"
+   ],
+   [
+    "for a PERSON.",
+    "for a person."
+   ]
+  ],
+  "gap": 0.25
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then came",
+    "Then came"
+   ],
+   [
+    "the night",
+    "the night"
+   ],
+   [
+    "I was the",
+    "I was the"
+   ],
+   [
+    "ONLY RIDER.",
+    "only rider."
+   ]
+  ],
+  "gap": 0.14
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The driver",
+    "The driver"
+   ],
+   [
+    "looked up",
+    "looked up"
+   ],
+   [
+    "in his MIRROR.",
+    "in his mirror."
+   ]
+  ],
+  "gap": 0.1
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"TWO,\"",
+    "Two,"
+   ],
+   [
+    "he said.",
+    "he said."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then something",
+    "Then something"
+   ],
+   [
+    "in the",
+    "in the"
+   ],
+   [
+    "BACK ROW",
+    "back row"
+   ],
+   [
+    "said it TOO.",
+    "said it too."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"TWO.\"",
+    "Two."
+   ],
+   [
+    "In HIS",
+    "In his"
+   ],
+   [
+    "VOICE.",
+    "voice."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then one NIGHT",
+    "Then one night"
+   ],
+   [
+    "it POURED.",
+    "it poured."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The roof",
+    "The roof"
+   ],
+   [
+    "LEAKED.",
+    "leaked."
+   ],
+   [
+    "Every seat",
+    "Every seat"
+   ],
+   [
+    "was SOAKED.",
+    "was soaked."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every seat",
+    "Every seat"
+   ],
+   [
+    "EXCEPT",
+    "except"
+   ],
+   [
+    "the BACK ROW.",
+    "the back row."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I'd been on",
+    "I'd been on"
+   ],
+   [
+    "my FEET",
+    "my feet"
+   ],
+   [
+    "for NINE HOURS.",
+    "for nine hours."
+   ],
+   [
+    "So I",
+    "So I"
+   ],
+   [
+    "SAT DOWN.",
+    "sat down."
+   ]
+  ],
+  "gap": 0.18
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The woman in",
+    "The woman in"
+   ],
+   [
+    "the green coat",
+    "the green coat"
+   ],
+   [
+    "CLOSED",
+    "closed"
+   ],
+   [
+    "her EYES.",
+    "her eyes."
+   ]
+  ],
+  "gap": 0.15
+ },
+ {
+  "id": "L34",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The light",
+    "The light"
+   ],
+   [
+    "over me",
+    "over me"
+   ],
+   [
+    "flickered ONCE.",
+    "flickered once."
+   ],
+   [
+    "TWICE.",
+    "Twice."
+   ],
+   [
+    "Then it",
+    "Then it"
+   ],
+   [
+    "STAYED ON.",
+    "stayed on."
+   ]
+  ],
+  "gap": 0.25
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At the",
+    "At the"
+   ],
+   [
+    "NEXT STOP,",
+    "next stop,"
+   ],
+   [
+    "he looked",
+    "he looked"
+   ],
+   [
+    "in his MIRROR.",
+    "in his mirror."
+   ]
+  ],
+  "gap": 0.1
+ },
+ {
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   [
+    "\"SIX,\"",
+    "Six,"
+   ],
+   [
+    "he said.",
+    "he said."
+   ]
+  ],
+  "gap": 0.22
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I COUNTED.",
+    "I counted."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L38",
+  "who": "narrator",
+  "chunks": [
+   [
+    "SIX.",
+    "Six."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L39",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The SIXTH one",
+    "The sixth one"
+   ],
+   [
+    "was sitting",
+    "was sitting"
+   ],
+   [
+    "right NEXT",
+    "right next"
+   ],
+   [
+    "to ME.",
+    "to me."
+   ]
+  ],
+  "gap": 0.15
+ },
+ {
+  "id": "L40",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A tall thing",
+    "A tall thing"
+   ],
+   [
+    "in a",
+    "in a"
+   ],
+   [
+    "GREY COAT,",
+    "grey coat,"
+   ],
+   [
+    "FOLDED UP",
+    "folded up"
+   ],
+   [
+    "TIGHT.",
+    "tight."
+   ]
+  ],
+  "gap": 0.14
+ },
+ {
+  "id": "L41",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its PALE HEAD",
+    "Its pale head"
+   ],
+   [
+    "had no FACE.",
+    "had no face."
+   ],
+   [
+    "Just a",
+    "Just a"
+   ],
+   [
+    "THIN SEAM",
+    "thin seam"
+   ],
+   [
+    "for a MOUTH.",
+    "for a mouth."
+   ]
+  ],
+  "gap": 0.18
+ },
+ {
+  "id": "L42",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That DENT",
+    "That dent"
+   ],
+   [
+    "was IT.",
+    "was it."
+   ],
+   [
+    "Every NIGHT.",
+    "Every night."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L43",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The lights",
+    "The lights"
+   ],
+   [
+    "BLINKED.",
+    "blinked."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L44",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then its HEAD",
+    "Then its head"
+   ],
+   [
+    "was FACING me.",
+    "was facing me."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L45",
+  "who": "narrator",
+  "chunks": [
+   [
+    "They BLINKED",
+    "They blinked"
+   ],
+   [
+    "again.",
+    "again."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L46",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It had",
+    "It had"
+   ],
+   [
+    "KEPT turning.",
+    "kept turning."
+   ],
+   [
+    "Way past",
+    "Way past"
+   ],
+   [
+    "where a NECK",
+    "where a neck"
+   ],
+   [
+    "should STOP.",
+    "should stop."
+   ]
+  ],
+  "gap": 0.25
+ },
+ {
+  "id": "L47",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I RAN",
+    "I ran"
+   ],
+   [
+    "to the FRONT,",
+    "to the front,"
+   ],
+   [
+    "right behind",
+    "right behind"
+   ],
+   [
+    "the DRIVER.",
+    "the driver."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then EVERY light",
+    "Then every light"
+   ],
+   [
+    "on the bus",
+    "on the bus"
+   ],
+   [
+    "went OUT.",
+    "went out."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L49",
+  "who": "narrator",
+  "chunks": [
+   [
+    "When they",
+    "When they"
+   ],
+   [
+    "came BACK,",
+    "came back,"
+   ],
+   [
+    "it was STANDING.",
+    "it was standing."
+   ]
+  ],
+  "gap": 0.12
+ },
+ {
+  "id": "L50",
+  "who": "narrator",
+  "chunks": [
+   [
+    "BENT DOUBLE",
+    "Bent double"
+   ],
+   [
+    "under the",
+    "under the"
+   ],
+   [
+    "CEILING.",
+    "ceiling."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L51",
+  "who": "narrator",
+  "chunks": [
+   [
+    "OUT again.",
+    "Out again."
+   ],
+   [
+    "It was",
+    "It was"
+   ],
+   [
+    "one row",
+    "one row"
+   ],
+   [
+    "CLOSER.",
+    "closer."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L52",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its ARMS",
+    "Its arms"
+   ],
+   [
+    "were WRONG.",
+    "were wrong."
+   ]
+  ],
+  "gap": 0.14
+ },
+ {
+  "id": "L53",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Same as",
+    "Same as"
+   ],
+   [
+    "ANYONE'S.",
+    "anyone's."
+   ],
+   [
+    "Just far",
+    "Just far"
+   ],
+   [
+    "too LONG.",
+    "too long."
+   ]
+  ],
+  "gap": 0.12
+ },
+ {
+  "id": "L54",
+  "who": "narrator",
+  "chunks": [
+   [
+    "They reached",
+    "They reached"
+   ],
+   [
+    "halfway",
+    "halfway"
+   ],
+   [
+    "down the AISLE.",
+    "down the aisle."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L55",
+  "who": "narrator",
+  "chunks": [
+   [
+    "OUT.",
+    "Out."
+   ],
+   [
+    "Its HANDS",
+    "Its hands"
+   ],
+   [
+    "were on",
+    "were on"
+   ],
+   [
+    "the next POLE.",
+    "the next pole."
+   ]
+  ],
+  "gap": 0.25
+ },
+ {
+  "id": "L56",
+  "who": "narrator",
+  "chunks": [
+   [
+    "OUT.",
+    "Out."
+   ],
+   [
+    "They'd come",
+    "They'd come"
+   ],
+   [
+    "DOWN",
+    "down"
+   ],
+   [
+    "the POLES,",
+    "the poles,"
+   ],
+   [
+    "toward ME.",
+    "toward me."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L57",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Each HAND",
+    "Each hand"
+   ],
+   [
+    "was that",
+    "was that"
+   ],
+   [
+    "BIG SQUARE one",
+    "big square one"
+   ],
+   [
+    "from the WINDOW.",
+    "from the window."
+   ]
+  ],
+  "gap": 0.25
+ },
+ {
+  "id": "L58",
+  "who": "narrator",
+  "chunks": [
+   [
+    "One HAND",
+    "One hand"
+   ],
+   [
+    "TAPPED",
+    "tapped"
+   ],
+   [
+    "the driver's MIRROR.",
+    "the driver's mirror."
+   ]
+  ],
+  "gap": 0.15
+ },
+ {
+  "id": "L59",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He didn't",
+    "He didn't"
+   ],
+   [
+    "even LOOK.",
+    "even look."
+   ],
+   [
+    "He just said,",
+    "He just said,"
+   ],
+   [
+    "\"SIX.\"",
+    "six."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L60",
+  "who": "narrator",
+  "chunks": [
+   [
+    "OUT.",
+    "Out."
+   ],
+   [
+    "And it was",
+    "And it was"
+   ],
+   [
+    "RIGHT",
+    "right"
+   ],
+   [
+    "BEHIND me.",
+    "behind me."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L61",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its head",
+    "Its head"
+   ],
+   [
+    "came down",
+    "came down"
+   ],
+   [
+    "BESIDE mine.",
+    "beside mine."
+   ]
+  ],
+  "gap": 0.25
+ },
+ {
+  "id": "L62",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In the DARK,",
+    "In the dark,"
+   ],
+   [
+    "I heard",
+    "I heard"
+   ],
+   [
+    "a slow,",
+    "a slow,"
+   ],
+   [
+    "WET CLICK.",
+    "wet click."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L63",
+  "who": "narrator",
+  "chunks": [
+   [
+    "When the",
+    "When the"
+   ],
+   [
+    "lights came back,",
+    "lights came back,"
+   ],
+   [
+    "the thin seam",
+    "the thin seam"
+   ],
+   [
+    "was OPEN.",
+    "was open."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L64",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It was DARK",
+    "It was dark"
+   ],
+   [
+    "in there,",
+    "in there,"
+   ],
+   [
+    "all the way",
+    "all the way"
+   ],
+   [
+    "DOWN.",
+    "down."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L65",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then it",
+    "Then it"
+   ],
+   [
+    "SPOKE.",
+    "spoke."
+   ],
+   [
+    "In MY",
+    "In my"
+   ],
+   [
+    "VOICE.",
+    "voice."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L66",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It said,",
+    "It said,"
+   ],
+   [
+    "\"Will you",
+    "Will you"
+   ],
+   [
+    "SIT with me?\"",
+    "sit with me?"
+   ]
+  ],
+  "gap": 0.5
+ },
+ {
+  "id": "L67",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That HANDPRINT",
+    "That handprint"
+   ],
+   [
+    "on the window",
+    "on the window"
+   ],
+   [
+    "was a WAVE.",
+    "was a wave."
+   ]
+  ],
+  "gap": 0.15
+ },
+ {
+  "id": "L68",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It was",
+    "It was"
+   ],
+   [
+    "trying to",
+    "trying to"
+   ],
+   [
+    "say HI.",
+    "say hi."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L69",
+  "who": "narrator",
+  "chunks": [
+   [
+    "NOBODY had",
+    "Nobody had"
+   ],
+   [
+    "sat with it",
+    "sat with it"
+   ],
+   [
+    "in YEARS.",
+    "in years."
+   ]
+  ],
+  "gap": 0.25
+ },
+ {
+  "id": "L70",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I",
+    "So I"
+   ],
+   [
+    "went BACK",
+    "went back"
+   ],
+   [
+    "and SAT",
+    "and sat"
+   ],
+   [
+    "WITH it.",
+    "with it."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L71",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In the DARK,",
+    "In the dark,"
+   ],
+   [
+    "I heard",
+    "I heard"
+   ],
+   [
+    "the seat",
+    "the seat"
+   ],
+   [
+    "beside me",
+    "beside me"
+   ],
+   [
+    "CREAK.",
+    "creak."
+   ]
+  ],
+  "gap": 0.25
+ },
+ {
+  "id": "L72",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It sat",
+    "It sat"
+   ],
+   [
+    "a little",
+    "a little"
+   ],
+   [
+    "CLOSER.",
+    "closer."
+   ],
+   [
+    "Like it",
+    "Like it"
+   ],
+   [
+    "was COLD.",
+    "was cold."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L73",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then the BELL",
+    "Then the bell"
+   ],
+   [
+    "rang for",
+    "rang for"
+   ],
+   [
+    "my STOP.",
+    "my stop."
+   ]
+  ],
+  "gap": 0.18
+ },
+ {
+  "id": "L74",
+  "who": "narrator",
+  "chunks": [
+   [
+    "As I",
+    "As I"
+   ],
+   [
+    "got OFF,",
+    "got off,"
+   ],
+   [
+    "it WAVED",
+    "it waved"
+   ],
+   [
+    "that big",
+    "that big"
+   ],
+   [
+    "SQUARE HAND.",
+    "square hand."
+   ]
+  ],
+  "gap": 0.35
+ },
+ {
+  "id": "L75",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The NEXT NIGHT,",
+    "The next night,"
+   ],
+   [
+    "the door",
+    "the door"
+   ],
+   [
+    "HISSED OPEN.",
+    "hissed open."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L76",
+  "who": "narrator",
+  "chunks": [
+   [
+    "One LONG ARM",
+    "One long arm"
+   ],
+   [
+    "lay across",
+    "lay across"
+   ],
+   [
+    "the seat",
+    "the seat"
+   ],
+   [
+    "BESIDE it.",
+    "beside it."
+   ]
+  ],
+  "gap": 0.12
+ },
+ {
+  "id": "L77",
+  "who": "narrator",
+  "chunks": [
+   [
+    "SAVING it.",
+    "Saving it."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L78",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The woman in",
+    "The woman in"
+   ],
+   [
+    "the green coat",
+    "the green coat"
+   ],
+   [
+    "just said,",
+    "just said,"
+   ],
+   [
+    "\"It MISSED you.\"",
+    "It missed you."
+   ]
+  ],
+  "gap": 0.3
+ },
+ {
+  "id": "L79",
+  "who": "narrator",
+  "chunks": [
+   [
+    "These DAYS,",
+    "These days,"
+   ],
+   [
+    "on the",
+    "on the"
+   ],
+   [
+    "NIGHT BUS,",
+    "night bus,"
+   ],
+   [
+    "I ALWAYS",
+    "I always"
+   ],
+   [
+    "sit in the",
+    "sit in the"
+   ],
+   [
+    "BACK ROW.",
+    "back row."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L80",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The driver",
+    "The driver"
+   ],
+   [
+    "says SIX.",
+    "says six."
+   ]
+  ],
+  "gap": 0.2
+ },
+ {
+  "id": "L81",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And I",
+    "And I"
+   ],
+   [
+    "count",
+    "count"
+   ],
+   [
+    "SIX too.",
+    "six too."
+   ]
+  ]
+ }
+]
