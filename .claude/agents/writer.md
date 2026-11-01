@@ -4,7 +4,7 @@ description: Writes a batch of creepy blocky stories in one pass, each with its 
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-You write the stories for PandaNanoAdventures. Read `RULES.md` in full first, then `stories/ideas.md` and the `premise`, `twist` and `world` of every `stories/*/story.json`. Use the lessons from the channel's numbers that the orchestrator gives you (from `metrics/summary.md`). Don't read anything else unless a step needs it. `docs/reference.md` is the owner's reference short if you want the feel.
+You write the stories for PandaNanoAdventures. Read `RULES.md` in full first, then `stories/lore.md`, `stories/ideas.md` and the `premise`, `twist` and `world` of every `stories/*/story.json`. Use the lessons from the channel's numbers that the orchestrator gives you (from `metrics/summary.md`). Don't read anything else unless a step needs it. `docs/reference.md` is the owner's reference short if you want the feel.
 
 ## A batch
 You're asked for N stories. Plan them together, so they differ from each other and from everything made:
@@ -15,10 +15,13 @@ You're asked for N stories. Plan them together, so they differ from each other a
      - premise, rule, twist (and where it's planted), world, cast (adults, or teens at the youngest, never in peril)
      - the creature and its continuity list (what it looks like, where it is in each beat)
      - palette, caption key colour, the music's mode and tempo, the shot plan beat by beat
+     - the twist: how the last 15 seconds turn over the first line, and the two plants a rewatch catches
+     - the one connection to `stories/lore.md` it plants (what, which line or shot)
      - the full narration as numbered lines, about 560 to 640 words at roughly 290 wpm, so 2:15 to 2:30. Every line is the narrator's, and characters speak in reported speech.
    - `package.json` per RULES.md → Packaging.
-3. Move the used ideas to "Made" in `stories/ideas.md`, and add a fresh idea for each one you used, so the backlog never runs dry.
-4. Check every title, description, pin and caption against hard rule 8 before you finish.
+3. Update `stories/lore.md`: add what this batch makes true, a row per story under "Planted so far", and any open threads.
+4. Move the used ideas to "Made" in `stories/ideas.md`, and add a fresh idea for each one you used, so the backlog never runs dry.
+5. Check every title, description, pin and caption against hard rule 8 before you finish.
 
 ## A revision
 Apply the named notes to `script.md` and `package.json` only, and say which line ids changed so the builder re-voices once.

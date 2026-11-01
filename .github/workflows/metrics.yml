@@ -2,7 +2,7 @@
 name: metrics
 on:
   schedule:
-    - cron: "37 20 * * 1"   # Mondays 20:37 UTC (2:37 pm Central)
+    - cron: "37 20 * * 1"   # Mondays 20:37 UTC = 2:37 pm Central (3:37 pm in summer)
   workflow_dispatch:
 concurrency: {group: metrics, cancel-in-progress: false}
 permissions: {contents: write}
