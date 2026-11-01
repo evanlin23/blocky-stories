@@ -5,7 +5,7 @@ name: render
 on:
   push:
     branches: [main]
-    paths: ["stories/**"]
+    paths: ["stories/*/**"]   # files inside a story folder only (not stories/lore.md or ideas.md)
   workflow_dispatch:
     inputs:
       story: {description: "story folder (blank = every story that's ready)", default: ""}
