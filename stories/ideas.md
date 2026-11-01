@@ -8,6 +8,7 @@ The writer takes the next ideas from here, and adds new ones. When a story is ma
 | ep11 `back-row` | a night bus | a pale grey blank-faced figure in the back row, a driver who explains in cryptic quotes, the creature lonely all along |
 | ep12 `knock-back` | a farmhouse kitchen, one summer | the keeper under the cellar floor, an uncle who knows, the ritual done back |
 | ep13 `closing-time` | an aquarium on the night shift | the watchers behind the big tank, a curtain-call bow, kind all along |
+| ep20 `ep20-photo-strip` | a coin photo booth in an old hotel hall at a wedding | the Third, a far-too-tall paper-flat sepia figure with a slot smile; a whispered line as the first line ("It's getting CLOSER."); the "it never moved, we moved apart" twist; ending on a strip torn in half and shared, looping on a whisper; warmth: two estranged grown siblings make up; the tally mark on the back of a photo |
 
 The premise and twist of each are in its `story.json`; `check` compares every new story against them.
 
@@ -28,7 +29,7 @@ Four stories for PandaNanoAdventures. The writer reads all four so none drifts i
 | 3 | `lookout` (in production elsewhere, ep14 to ep17) | a forest fire-lookout tower, alone, in autumn | the Walker, a huge giant of logs and moss | a question | I'm the one who helps: I guide it home |
 | 4 | `moving-day` (in production elsewhere, ep14 to ep17) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes | mid-scare | home: Mum laughs again |
 
-Settings already used (never reuse): a night bus, a farmhouse kitchen, an aquarium.
+Settings already used (never reuse): a night bus, a farmhouse kitchen, an aquarium, a hotel photo booth at a wedding.
 
 These are pitches. The scriptwriter writes each one in full and may change details, but keeps its setting, its creature, its kind of warmth and its first-line type. If a creature fails its test still, redesign it within its own row, never by borrowing another row's idea.
 
@@ -158,6 +159,16 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - **The bed scare:** standards checks that nothing reads as harm to Mum. The reveal of the tucking has to be clear.
   - **Box text:** brand names or real moving-company names on the boxes. Only plain boxes and marker drawings, no words.
   - **The scraping sound:** it must not be a sample. Everything is synthesized.
+
+---
+
+## Fresh ideas (added 2026-11-01 with ep20)
+
+| # | Story (name for the story folder) | Setting | Creature | First line is... | Kind of warmth |
+|---|---|---|---|---|---|
+| 5 | `snow-plough` | a snowed-in mountain road and a plough driver's cab at dawn (not a night shift: a one-off trip to fetch a neighbour's medicine) | the Marker, a road post built far too wide and short, its reflector eyes catching the headlights, one post closer to the road each pass | a count ("Forty-one posts. On the way up there were FORTY.") | a promise kept: I get the medicine there |
+
+Notes for `snow-plough`: the posts can carry a Keeper tally (scratched strokes) as its one lore plant. The twist must turn the first line over, and must not reuse ep11's "the count was right" shape: the extra post is marking the edge where the road has slid, so the narrator was counting the wrong side. Keep the snow light soft (flash pre-check on headlight sweeps). No real road or mountain names.
 
 ---
 
