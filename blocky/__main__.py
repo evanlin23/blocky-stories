@@ -72,10 +72,11 @@ def cmd_voice(a):
 def verify_voice(new: Path, kept: Path, tol: float = 1 / 30) -> int:
     n, k = json.loads(new.read_text())["lines"], json.loads(kept.read_text())["lines"]
     bad = []
-    for lid, kv in k.items():
-        nv = n.get(lid)
-        if nv is None:
-            bad.append(f"{lid}: missing")
+    # compare the lines the story has now (the new run); the kept file may still hold lines cut in revisions
+    for lid, nv in n.items():
+        kv = k.get(lid)
+        if kv is None:
+            bad.append(f"{lid}: not in the kept timings")
             continue
         pairs = [(nv["dur"], kv["dur"])] + [(x, y) for a_, b_ in zip(nv["chunks"], kv["chunks"]) for x, y in zip(a_, b_)]
         worst = max(abs(x - y) for x, y in pairs)
