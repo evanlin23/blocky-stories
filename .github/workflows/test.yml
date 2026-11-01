@@ -14,4 +14,9 @@ jobs:
       - run: pip install -r requirements.txt pytest
       - run: python -m pytest -q
       - name: check every story
-        run: for s in $(ls stories); do [ -f stories/$s/story.json ] && { python -m blocky timeline $s >/dev/null && python -m blocky check $s || exit 1; }; done
+        run: |
+          for f in stories/*/story.json; do
+            s=$(basename "$(dirname "$f")")
+            python -m blocky timeline "$s" >/dev/null
+            python -m blocky check "$s"
+          done

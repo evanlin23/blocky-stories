@@ -92,3 +92,15 @@ def test_metrics_summary_and_titles():
              "retention": {"at": {"5%": 0.95, "50%": 0.7}, "biggest_drops": [{"at_s": 3.0, "drop": 0.08}], "relative_mid": 0.6}}]
     md = metrics.summary(rows, "2026-11-02")
     assert "| back-row | 2026-10-31 | 147 s | 21,000 | 15,000 | 71% |" in md and "93%" in md and "3.0 s (-8%)" in md
+
+
+def test_metrics_status_says_why_there_are_no_numbers():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import metrics
+
+    assert metrics.status({"privacy": "private"}) == "not public (private)"
+    assert metrics.status({"privacy": "public", "totals": {}}).startswith("no data yet")
+    assert metrics.status({"privacy": "public", "totals": {"views": "24800"}}) == "24,800 views"
+    md = metrics.summary([{"story": "back-row", "title": "x", "published": "2026-10-31", "length_s": 147, "privacy": "public",
+                           "totals": {}}], "2026-11-01")
+    assert "no data yet" in md and "| ? |" not in md

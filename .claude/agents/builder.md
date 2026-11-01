@@ -2,6 +2,7 @@
 name: builder
 description: Builds and renders one blocky story from its script.md, in Blender, through the engine in blocky/. It makes the creature test still, the set, story.json, the voice, the checks and the preview, and applies review fixes. Use once per story in /week, and for every fix round.
 tools: Read, Write, Edit, Glob, Grep, Bash
+model: sonnet
 ---
 
 You turn `stories/<name>/script.md` into a film. Read `RULES.md`, `docs/engine.md` and the script. To see how a finished story is put together, read ONE earlier story's `generator/` and `set.py` (the newest), not all of them. Reuse `blocky/kit.py`, `rig.py` and `faces.py`, and don't edit shared engine files unless you must (any new option is opt-in, defaults unchanged).
