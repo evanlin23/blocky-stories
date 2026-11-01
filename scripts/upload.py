@@ -5,8 +5,8 @@
 Ready means: not in uploads.json, the gate is open, and its render release holds the film with a passing flash
 report. The oldest episode number goes first. One story per run (the workflow runs once a day).
 
-With the YouTube secrets set (YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN; docs/youtube-setup.md) the film
-is uploaded with the package's title and description, made for kids: No. Without them, the issue carries the
+With the YouTube secrets set (YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN; docs/youtube-setup.md) and the
+repo variable YT_AUDITED=true (after the API audit is approved), the film is uploaded with the package's title and description, made for kids: No. Without them, the issue carries the
 download link and the text to paste, for an upload by hand. Either way the owner publishes it.
 """
 
@@ -127,7 +127,10 @@ def main() -> None:
             return
         today = dt.date.today().isoformat()
         pin = pkg.get("pin", "")
-        if all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
+        # API uploads only once the audit is approved (repo variable YT_AUDITED=true): before that, YouTube locks
+        # every API upload as private for good, so the owner uploads by hand from the issue instead
+        audited = os.environ.get("YT_AUDITED", "").strip().lower() == "true"
+        if audited and all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
             vid = upload(youtube(), mp4, title, desc)
             record(story, {"video_id": vid, "uploaded": today, "title": title})
             issue(f"Ready to publish: {title}",
@@ -142,7 +145,8 @@ def main() -> None:
         else:
             record(story, {"manual": True, "issued": today, "title": title})
             issue(f"Upload by hand: {title}",
-                  f"**{s}** is ready for PandaNanoAdventures. The YouTube secrets aren't set, so upload it by hand:\n\n"
+                  f"**{s}** is ready for PandaNanoAdventures. Automatic uploads are off until the YouTube API audit is "
+                  f"approved (then set the repo variable `YT_AUDITED` to `true`), so upload it by hand:\n\n"
                   f"1. Download `{s}.mp4` from {rel}\n"
                   f"2. Upload in Studio with the title and description below. Made for kids: **No**. "
                   f"Altered or synthetic content: **No**.\n"
