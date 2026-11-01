@@ -59,9 +59,8 @@ def youtube():
     from googleapiclient.discovery import build
 
     creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"], client_id=os.environ["YT_CLIENT_ID"],
-                        client_secret=os.environ["YT_CLIENT_SECRET"], token_uri="https://oauth2.googleapis.com/token",
-                        scopes=["https://www.googleapis.com/auth/youtube.upload",
-                                "https://www.googleapis.com/auth/youtube.readonly"])
+                        client_secret=os.environ["YT_CLIENT_SECRET"], token_uri="https://oauth2.googleapis.com/token")
+    # no scopes here: the refresh token carries whatever it was granted (upload, readonly, analytics)
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 

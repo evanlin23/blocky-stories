@@ -73,3 +73,18 @@ def test_upload_description_adds_flash_line():
     d = upload.description(GOOD, {"description_line": "Flashing lights and fast cuts from 0:02 to 2:13."})
     assert d.startswith("Flashing lights and fast cuts from 0:02 to 2:13.\n\nA short scary story")
     assert upload.description(GOOD, {"description_line": None}).startswith("A short scary")
+
+
+def test_metrics_summary_and_titles():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import metrics
+
+    assert metrics.norm("The driver on my night bus counted 6. I counted 5.") == "the driver on my night bus counted 6 i counted 5"
+    assert metrics.story_titles()[metrics.norm("The driver on my night bus counted 6. I counted 5.")] == "back-row"
+    rows = [{"story": "back-row", "title": "x", "published": "2026-10-31", "length_s": 147,
+             "totals": {"views": 21000, "engagedViews": 15000, "averageViewPercentage": 71.2, "likes": 900,
+                        "comments": 40, "shares": 12, "subscribersGained": 30},
+             "traffic": {"SHORTS": 0.93, "YT_CHANNEL": 0.07},
+             "retention": {"at": {"5%": 0.95, "50%": 0.7}, "biggest_drops": [{"at_s": 3.0, "drop": 0.08}], "relative_mid": 0.6}}]
+    md = metrics.summary(rows, "2026-11-02")
+    assert "| back-row | 2026-10-31 | 147 s | 21,000 | 15,000 | 71% |" in md and "93%" in md and "3.0 s (-8%)" in md
