@@ -1,5 +1,7 @@
 # blocky-stories
 
+[Privacy Policy](PRIVACY.md) · [Terms of Service](TERMS.md)
+
 Made-up creepy stories told by a fast narrator over blocky characters built in Blender, for PandaNanoAdventures.
 
 ```
@@ -23,3 +25,5 @@ python -m pytest -q
 The final render, flash measure and upload happen on GitHub Actions after merge.
 
 Font: Schibsted Grotesk (SIL OFL 1.1, `blocky/fonts/OFL.txt`). Narrator: Kokoro-82M (Apache 2.0).
+
+**Policies:** [Privacy Policy](PRIVACY.md) · [Terms of Service](TERMS.md). The uploader acts only on the owner's own channel through the YouTube API Services.
