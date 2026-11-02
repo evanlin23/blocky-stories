@@ -182,7 +182,7 @@ S("L31", "running the row", c([0, [-1.2, -2.6, 1.35], [0.8, 0, 1.2], 26]), 2, fo
 S("L31.2", "the row from the end", still((26, -4.5, 1.7), (9, -1.0, 1.3), 22))
 S("L32", "mint window", still((5.0, -1.7, 1.45), (5.0, 0, 1.45), 28), 2, **NSTAGE(6, r_remi="stage"))
 S("L32.2", "lilac window", still((9.0, -1.7, 1.45), (9.0, 0, 1.45), 28), 2, **NSTAGE(7, r_remi="stage"))
-S("L33", "coral window: no me", still((13.0, -1.8, 1.45), (13.0, 0, 1.4), 28), 2, **NSTAGE(8))
+S("L33", "coral window: no me", still((13.0, -6.8, 1.6), (13.0, 0, 1.4), 40), 2, **NSTAGE(8))
 S("L34", "the last window: a dot", still((25.0, -1.5, 1.45), (25.0, 0, 1.45), 28), 2, **NSTAGE(11, r_remi="stage"))
 S("L34.2", "the row at blue dusk", still((31, -6.5, 2.4), (11, -1, 1.5), 20))
 S("L35", "walking back", c([0, [-1.6, -2.6, 1.4], [0.6, 0, 1.3], 28]), 2, follow="me")
@@ -247,8 +247,8 @@ S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4)
   refl={"r_me": "sand", "r_remi": "sand"})
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L75", "mine, smiling", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage"))
-S("L76", "this morning: already out there", move(((0.9, -3.0, 1.5), (1.0, 0, 1.4)), ((-2.0, -8.0, 1.4), (14.0, -10.0, 0.7)), 26),
-  1, **NSTAGE(5, r_me="sand"))
+S("L76", "this morning: our window, the empty chair", still((0.6, -4.2, 1.5), (0.9, -0.8, 1.0), 24), 1, **NSTAGE(5))
+S("L76.2", "far down the sand, the rust figure alone", still((9.0, -6.0, 1.3), (18.0, -9.5, 0.7), 22), 1, refl={"r_me": "sand"})
 
 shots = []
 shotx = {}
@@ -613,7 +613,7 @@ story = {
     "acting": acting,
     "cues": cues,
     "fx": [],
-    "music": {"root": 43, "mode": "mixolydian", "bpm": 76, "seed": 50,
+    "music": {"root": 43, "mode": "dorian", "bpm": 76, "seed": 50,
               "sections": [
                   {"at": 0, "voices": ["pulse", "pad"], "energy": 0.22},
                   {"at": "L10", "voices": ["pulse", "pad"], "energy": 0.28},
