@@ -1,0 +1,1789 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Forty-one posts. on the way up, there were forty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.862
+    ],
+    [
+     0.914,
+     1.328
+    ],
+    [
+     1.353,
+     2.069
+    ]
+   ]
+  },
+  "L02": {
+   "text": "I counted them twice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.241
+    ]
+   ]
+  },
+  "L03": {
+   "text": "The new one was shorter than the rest, and as wide as a car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.802
+    ],
+    [
+     0.802,
+     1.31
+    ],
+    [
+     1.379,
+     1.801
+    ],
+    [
+     1.801,
+     2.5
+    ]
+   ]
+  },
+  "L04": {
+   "text": "And it had two reflectors. posts only have one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.155,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.103
+    ],
+    [
+     1.172,
+     1.638
+    ],
+    [
+     1.638,
+     2.293
+    ]
+   ]
+  },
+  "L05": {
+   "text": "It started with Odile next door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.897
+    ],
+    [
+     0.897,
+     1.586
+    ]
+   ]
+  },
+  "L06": {
+   "text": "She ploughed the pass road for forty winters.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.966
+    ],
+    [
+     0.966,
+     1.293
+    ],
+    [
+     1.293,
+     1.828
+    ]
+   ]
+  },
+  "L07": {
+   "text": "This winter her chest got bad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.845
+    ],
+    [
+     0.845,
+     1.483
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Her tablets were on the chemist's van, and the van was stuck at the top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.155,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     1.5
+    ],
+    [
+     1.569,
+     1.948
+    ],
+    [
+     1.948,
+     2.232
+    ],
+    [
+     2.232,
+     2.862
+    ]
+   ]
+  },
+  "L09": {
+   "text": "So she put her plough keys on the table and said, bring them by morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.94
+    ],
+    [
+     0.94,
+     1.319
+    ],
+    [
+     1.319,
+     1.707
+    ],
+    [
+     1.793,
+     2.034
+    ],
+    [
+     2.034,
+     2.759
+    ]
+   ]
+  },
+  "L10": {
+   "text": "I promised.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.034,
+   "onset": 0.172,
+   "end": 0.828,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Then she said, forty posts to the top. count them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     1.052
+    ],
+    [
+     1.052,
+     1.483
+    ],
+    [
+     1.561,
+     2.19
+    ]
+   ]
+  },
+  "L12": {
+   "text": "If you can't see the next one, you stop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     0.983
+    ],
+    [
+     1.008,
+     1.569
+    ]
+   ]
+  },
+  "L13": {
+   "text": "The plough is a yellow box on wheels, with a blade like a wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.155,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     1.043
+    ],
+    [
+     1.043,
+     1.586
+    ],
+    [
+     1.655,
+     2.078
+    ],
+    [
+     2.078,
+     2.81
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Up there the snow hides the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.759
+    ],
+    [
+     0.759,
+     1.534
+    ]
+   ]
+  },
+  "L15": {
+   "text": "All you can see are the posts.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.345
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Thin and orange, with a black cap and one amber eye.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.19,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ],
+    [
+     0.81,
+     1.388
+    ],
+    [
+     1.388,
+     2.293
+    ]
+   ]
+  },
+  "L17": {
+   "text": "You steer from glint to glint.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.845
+    ],
+    [
+     0.845,
+     1.448
+    ]
+   ]
+  },
+  "L18": {
+   "text": "I counted them out loud.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.31
+    ]
+   ]
+  },
+  "L19": {
+   "text": "At twenty-three, the whole cab shook.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.647,
+     1.112
+    ],
+    [
+     1.112,
+     1.552
+    ]
+   ]
+  },
+  "L20": {
+   "text": "A long groan came up from the drop side, like ice on a pond.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     0.922
+    ],
+    [
+     0.922,
+     1.655
+    ],
+    [
+     1.724,
+     2.06
+    ],
+    [
+     2.06,
+     2.759
+    ]
+   ]
+  },
+  "L21": {
+   "text": "I told myself it was the blade on a rock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.741,
+     1.285
+    ],
+    [
+     1.285,
+     1.914
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Forty at the top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.19,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     1.034
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Bram, the van driver, was in the hut with a stove and a flask.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.172,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.439,
+     1.103
+    ],
+    [
+     1.172,
+     1.526
+    ],
+    [
+     1.526,
+     1.957
+    ],
+    [
+     1.957,
+     2.638
+    ]
+   ]
+  },
+  "L24": {
+   "text": "He handed me a little white bag.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.448
+    ]
+   ]
+  },
+  "L25": {
+   "text": "I set it on the seat beside me, where I could see it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.776
+    ],
+    [
+     0.776,
+     1.259
+    ],
+    [
+     1.328,
+     2.155
+    ]
+   ]
+  },
+  "L26": {
+   "text": "He'd follow me down in his van, in my tracks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.19
+    ],
+    [
+     1.215,
+     1.966
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Going down, the posts were on my left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     0.922
+    ],
+    [
+     0.922,
+     1.69
+    ]
+   ]
+  },
+  "L28": {
+   "text": "I counted from one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.172
+    ]
+   ]
+  },
+  "L29": {
+   "text": "At twelve, one of them was wrong.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.56,
+     0.828
+    ],
+    [
+     0.828,
+     1.5
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Short. wide. snow on its shoulders.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.207,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.207,
+     0.379
+    ],
+    [
+     0.414,
+     0.655
+    ],
+    [
+     0.698,
+     1.638
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Posts don't have shoulders.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.31
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Its two eyes caught my headlights like a pair of coins.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.285
+    ],
+    [
+     1.285,
+     1.561
+    ],
+    [
+     1.561,
+     2.224
+    ]
+   ]
+  },
+  "L33": {
+   "text": "I kept counting. thirteen. fourteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.759,
+     1.086
+    ],
+    [
+     1.147,
+     1.81
+    ]
+   ]
+  },
+  "L34": {
+   "text": "At seventeen, it was there again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.793,
+     1.621
+    ]
+   ]
+  },
+  "L35": {
+   "text": "One step out of the line, on the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.966
+    ],
+    [
+     0.992,
+     1.655
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Snow was heaped against its front, like it had stood there for hours.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.19,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.19,
+     0.698
+    ],
+    [
+     0.698,
+     1.362
+    ],
+    [
+     1.431,
+     2.017
+    ],
+    [
+     2.017,
+     2.741
+    ]
+   ]
+  },
+  "L37": {
+   "text": "The next post along was sitting low, like it was kneeling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     0.836
+    ],
+    [
+     0.836,
+     1.414
+    ],
+    [
+     1.5,
+     2.362
+    ]
+   ]
+  },
+  "L38": {
+   "text": "At twenty, it was at the edge of my lane.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.638,
+     1.112
+    ],
+    [
+     1.112,
+     1.828
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Under the orange paint were the lines of two arms, flat against its sides.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.224,
+   "onset": 0.172,
+   "end": 3.034,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     1.215
+    ],
+    [
+     1.215,
+     1.862
+    ],
+    [
+     1.939,
+     2.354
+    ],
+    [
+     2.354,
+     3.034
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Like somebody built a person out of a post and squashed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.034
+    ],
+    [
+     1.034,
+     1.517
+    ],
+    [
+     1.517,
+     2.31
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Then post twenty-one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.241
+    ]
+   ]
+  },
+  "L42": {
+   "text": "And the headlights started to sink.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.431
+    ]
+   ]
+  },
+  "L43": {
+   "text": "The engine coughed. the beams went brown.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.931,
+     1.948
+    ]
+   ]
+  },
+  "L44": {
+   "text": "All I could hear was the wiper and my breath.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.19
+    ],
+    [
+     1.19,
+     1.897
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Then they climbed back up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.207
+    ]
+   ]
+  },
+  "L46": {
+   "text": "It was in the middle of the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.784
+    ],
+    [
+     0.784,
+     1.431
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Right in front of the blade.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.19,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.19,
+     0.629
+    ],
+    [
+     0.629,
+     1.276
+    ]
+   ]
+  },
+  "L48": {
+   "text": "I stamped the brake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.052
+    ]
+   ]
+  },
+  "L49": {
+   "text": "The plough slid, and slid, and stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.664,
+     0.983
+    ],
+    [
+     1.008,
+     1.621
+    ]
+   ]
+  },
+  "L50": {
+   "text": "A foot from its face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     1.121
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Behind me, Bram's van stopped too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.5,
+     0.931
+    ],
+    [
+     0.931,
+     1.638
+    ]
+   ]
+  },
+  "L52": {
+   "text": "It didn't move. I didn't move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.672,
+     1.431
+    ]
+   ]
+  },
+  "L53": {
+   "text": "We sat like that till the sky went grey.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.052
+    ],
+    [
+     1.052,
+     1.672
+    ]
+   ]
+  },
+  "L54": {
+   "text": "And in the grey, I could see past it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.672,
+     1.008
+    ],
+    [
+     1.008,
+     1.621
+    ]
+   ]
+  },
+  "L55": {
+   "text": "The road wasn't there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.19
+    ]
+   ]
+  },
+  "L56": {
+   "text": "The outside half had slid away down the slope.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.698
+    ],
+    [
+     0.698,
+     1.121
+    ],
+    [
+     1.121,
+     1.828
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Right where the cab shook on the way up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.905
+    ],
+    [
+     0.905,
+     1.586
+    ]
+   ]
+  },
+  "L58": {
+   "text": "Down on a slab of old road stood post twenty-three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.155
+    ],
+    [
+     1.155,
+     1.569
+    ],
+    [
+     1.569,
+     2.241
+    ]
+   ]
+  },
+  "L59": {
+   "text": "Still standing. still glinting. right in line with the rest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.293
+    ],
+    [
+     1.388,
+     1.87
+    ],
+    [
+     1.87,
+     2.5
+    ]
+   ]
+  },
+  "L60": {
+   "text": "I'd been steering straight for it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.379
+    ]
+   ]
+  },
+  "L61": {
+   "text": "I'd been counting the wrong side of the edge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.181
+    ],
+    [
+     1.181,
+     1.828
+    ]
+   ]
+  },
+  "L62": {
+   "text": "The forty-first post was standing right where the road ends now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.87
+    ],
+    [
+     0.87,
+     1.207
+    ],
+    [
+     1.207,
+     1.509
+    ],
+    [
+     1.509,
+     2.483
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Bram knocked on my door, and I turned to look.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.983
+    ],
+    [
+     1.008,
+     1.914
+    ]
+   ]
+  },
+  "L64": {
+   "text": "When I looked back, it was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.698,
+     1.397
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Just a wide square pressed in the snow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.862,
+     1.061
+    ],
+    [
+     1.061,
+     1.724
+    ]
+   ]
+  },
+  "L66": {
+   "text": "I hugged the mountain at walking pace, with Bram in my tracks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.414
+    ],
+    [
+     1.483,
+     1.837
+    ],
+    [
+     1.837,
+     2.586
+    ]
+   ]
+  },
+  "L67": {
+   "text": "The sun was up by the village.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.362
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Odile's lamp was still on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.698
+    ],
+    [
+     0.698,
+     1.397
+    ]
+   ]
+  },
+  "L69": {
+   "text": "I put the white bag on her table, next to the keys and a glass of water.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.103,
+   "onset": 0.155,
+   "end": 2.897,
+   "chunks": [
+    [
+     0.155,
+     0.768
+    ],
+    [
+     0.768,
+     1.276
+    ],
+    [
+     1.345,
+     1.966
+    ],
+    [
+     1.966,
+     2.319
+    ],
+    [
+     2.319,
+     2.897
+    ]
+   ]
+  },
+  "L70": {
+   "text": "She didn't say thank you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.138
+    ]
+   ]
+  },
+  "L71": {
+   "text": "She poured two cups and slid one across to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ],
+    [
+     0.931,
+     1.301
+    ],
+    [
+     1.301,
+     1.569
+    ],
+    [
+     1.569,
+     2.017
+    ]
+   ]
+  },
+  "L72": {
+   "text": "That spring, we set a new post at the new edge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.233
+    ],
+    [
+     1.233,
+     1.983
+    ]
+   ]
+  },
+  "L73": {
+   "text": "Forty-one posts. on the way up, too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.759
+    ],
+    [
+     0.793,
+     1.207
+    ],
+    [
+     1.25,
+     1.707
+    ]
+   ]
+  }
+ }
+}
