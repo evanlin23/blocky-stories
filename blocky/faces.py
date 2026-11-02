@@ -27,7 +27,9 @@ FX0, FX1 = int(TEX_W * (0.5 - 50 / 360)), int(TEX_W * (0.5 + 50 / 360))
 FY0, FY1 = int(TEX_H * 0.08), int(TEX_H * 0.92)
 
 EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blank", "wide", "shut", "grin",
-               "terrified", "squeeze", "soft", "asleep", "fish")
+               "terrified", "squeeze", "soft", "asleep", "fish", "smile", "laugh", "hopeful")
+# smile / laugh / hopeful: opt-in (ep46). smile: open eyes and a wide curved smile. laugh: eyes shut in up-arcs and a
+# big open mouth. hopeful: raised inner brows over a small smile.
 # fish: opt-in (ep20): lips pushed out into a small pursed pout, cheeks sucked in (two slanted hollows beside the
 # mouth), eyes open and a little wide. It never opens the mouth: the pout is the joke.
 # terrified: the widest eyes with pin pupils, brows high and pulled up in the middle, the wavy worried mouth.
@@ -152,6 +154,12 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
             x = cx - ww / 2 + k * ww / 10
             d.line([(x, cy - w * 0.18), (x, cy + w * 0.26)], fill=ink, width=max(4, th // 3))
         d.line([(cx - ww / 2, cy + w * 0.04), (cx + ww / 2, cy + w * 0.04)], fill=ink, width=max(4, th // 3))
+    elif expr == "smile":
+        _stroke(d, _curve(cx, cy - 0.01 * s, w * 0.95, 0.05 * s), ink, th)
+    elif expr == "hopeful":
+        _stroke(d, _curve(cx, cy - 0.006 * s, w * 0.6, 0.03 * s), ink, th)
+    elif expr == "laugh":
+        _ellipse(d, cx, cy, w * 0.34, w * 0.3, fill=inside, outline=ink, width=th)
     elif expr == "soft":   # a small closed smile
         _stroke(d, _curve(cx, cy - 0.006 * s, w * 0.6, 0.026 * s), ink, th)
     elif expr == "blank" or expr == "shut" or expr == "asleep":
@@ -173,7 +181,7 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
     ex = 0.22 * s
     th = max(12, int(0.04 * s))
     lx, ly = look
-    shut = expr in ("shut", "squeeze", "soft") or blink > 0.8
+    shut = expr in ("shut", "squeeze", "soft", "laugh") or blink > 0.8
     for side in (-1, 1):
         cx = _fx(0.5) + side * ex
         if eyes == "none":
@@ -251,7 +259,7 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
                 _ellipse(d, cx + qx * r * 0.35, ey + qy * r * 0.35, r * 0.12, r * 0.12, fill=(230, 225, 215))
         if brows and eyes not in ("hollow", "none"):
             tilt = {"worried": 0.9, "crying": 1.0, "scared": 0.7, "angry": -0.9, "wide": 0.4, "smirk": -0.25,
-                    "grin": -0.4, "terrified": 1.0}.get(expr, 0.0)
+                    "grin": -0.4, "terrified": 1.0, "hopeful": 0.55, "smile": 0.1}.get(expr, 0.0)
             by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide") else 0)
             _brow(d, cx, by, 0.16 * s, tilt, inkc, th, side)
     if expr == "crying" and not shut:
