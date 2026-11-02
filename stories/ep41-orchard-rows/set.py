@@ -113,7 +113,7 @@ TOD = {
 ROOM = {"dusk": (0.75, 1.0, 0.3, 0.3), "night": (1.0, 0.35, 1.0, 0.8), "dawn": (0.1, 0.45, 0.3, 0.3),
         "day": (0.0, 0.6, 0.3, 0.3), "sunrise": (0.1, 0.5, 0.3, 0.3), "silver": (0.4, 0.0, 0.0, 0.0)}
 # the Rough One's key (low, from the side) and rim, per time of day
-RLIGHT = {"dusk": 0.5, "night": 1.0, "dawn": 0.7, "day": 0.3, "sunrise": 0.3, "silver": 1.0}
+RLIGHT = {"dusk": 0.5, "night": 1.8, "dawn": 0.8, "day": 0.3, "sunrise": 0.3, "silver": 1.0}
 
 
 def hexrgb(h):
@@ -164,14 +164,19 @@ def mats(kit):
     M["quilt"] = kit.checker("#8a3b44", "#d8c9a8", 5.0, name="quilt")
     M["quilt2"] = kit.plastic("#8a3b44", 0.95, name="quilt red")
     M["sheet"] = kit.plastic("#ece6d8", 0.95, name="sheet")
-    M["slipper"] = kit.plastic("#5a4630", 0.95, name="slipper wet")
-    M["wool"] = kit.plastic("#8a7456", 0.98, name="wool wet")
+    M["slipper"] = kit.plastic("#b8996a", 0.95, name="slipper tan")
+    M["wool"] = kit.plastic("#e2d3b0", 0.98, name="sheepskin")
+    M["boot"] = kit.plastic("#5a3a22", 0.7, name="boot leather")
+    M["bootsole"] = kit.plastic("#1e1a16", 0.9, name="boot sole")
+    M["lace"] = kit.plastic("#d8c9a0", 0.8, name="lace")
+    M["wire"] = kit.metal("#9aa0a8", 0.35, name="wire")
     M["puddle"] = kit.plastic("#2b3640", 0.04, name="puddle", spec=0.9)
     M["mat"] = kit.plastic("#4a3a2c", 0.98, name="doormat")
     M["dark"] = kit.plastic("#05060a", 1.0, name="cut black")
     M["clay"] = kit.grime("#7a4535", 0.55, 9.0, name="clay rough", rough=1.0)
     M["sack"] = kit.checker("#5e4529", "#503a22", 80.0, name="sack weave", rough=1.0)
-    M["glint"] = kit.emit("#cfe4ff", 12.0, name="glint")
+    M["glint"] = kit.emit("#bcd4ff", 4.0, name="glint")
+    M["cutblack"] = kit.emit("#000000", 0.0, name="cut unlit")
     M["mist"] = kit.emit("#8a98a6", 0.05, name="mist in the cut")
     M["sqdark"] = kit.plastic("#18200f", 0.95, name="wet dark")
     M["sunk"] = kit.plastic("#16200f", 1.0, name="pressed")
@@ -227,6 +232,14 @@ def build_orchard(kit, ctx, M):
     # the gate at the start of the rows
     for sx in (-1, 1):
         kit.box("gatepost", (0.22, 0.22, 1.5), (sx * 1.4, OY + 9.8, 0.75), M["wood"])
+    # the gate, wide open: each leaf swung back and hooked against its post
+    for sx in (-1, 1):
+        gx = sx * 1.62
+        kit.box("gate rail", (0.07, 1.3, 0.07), (gx, OY + 10.5, 0.95), M["wood"])
+        kit.box("gate rail", (0.07, 1.3, 0.07), (gx, OY + 10.5, 0.55), M["wood"])
+        kit.box("gate rail", (0.07, 1.3, 0.07), (gx, OY + 10.5, 0.2), M["wood"])
+        kit.box("gate stile", (0.09, 0.09, 1.1), (gx, OY + 11.1, 0.55), M["wood"])
+        kit.box("gate hook", (0.05, 0.25, 0.04), (sx * 1.5, OY + 9.95, 0.75), M["iron"])
     # crates and the odd ladder
     for (x, y) in [(-4.2, 12.4), (4.6, 20.0), (-6.0, 28.0), (6.2, 44.0), (-4.8, 52.0)]:
         kit.box("crate", (0.7, 0.5, 0.4), (x, OY + y, 0.2), M["crate"], rot=(0, 0, 0.3))
@@ -277,7 +290,7 @@ def build_house(kit, ctx, M):
         kit.box("post", (0.08, 0.08, 0.95), (1.0, ry, F + 0.48), M["rail"])
     kit.box("rail", (0.07, 1.0, 0.07), (1.0, OY + 0.75, F + 0.95), M["rail"])
     kit.box("lamp bracket", (0.06, 0.3, 0.05), (1.05, OY + 0.2, F + 2.55), M["iron"])
-    ctx["lamp_mat"] = kit.emit("#ffcf94", 3.5, name="porch lamp")
+    ctx["lamp_mat"] = kit.emit("#ffcf94", 2.2, name="porch lamp")
     kit.box("lamp", (0.2, 0.2, 0.28), (1.05, OY + 0.4, F + 2.48), ctx["lamp_mat"])
     # the back door, hinged on the left, opening in
     hinge = kit.empty("door hinge", (geo.DOOR_X + 0.5, OY, F))
@@ -297,10 +310,9 @@ def build_house(kit, ctx, M):
             kit.box("table leg", (0.07, 0.07, 0.75), (tx, OY + ty, F + 0.375), M["woodlight"])
     kit.box("shelf", (1.4, 0.25, 0.04), (-1.8, OY - 7.3, F + 1.7), M["woodlight"])
     # the slippers by the stove, soaked, with a small puddle
-    for sx in (-1.15, -0.95):
+    for sx in (-1.15, -0.95):   # tan sheepskin, dry
         kit.box("slipper", (0.14, 0.32, 0.09), (sx, OY - 6.5, F + 0.05), M["slipper"], bevel=0.03)
         kit.box("slipper wool", (0.12, 0.2, 0.05), (sx, OY - 6.58, F + 0.1), M["wool"], bevel=0.02)
-    kit.plane("puddle", (0.7, 0.5), (-1.05, OY - 6.4, F + 0.022), M["puddle"])
     # beds
     kit.box("bed frame", (1.5, 2.1, 0.4), (4.0, OY - 5.7, F + 0.2), M["wood"])
     kit.box("mattress", (1.4, 2.0, 0.18), (4.0, OY - 5.7, F + 0.49), M["sheet"], bevel=0.03)
@@ -409,24 +421,42 @@ def build_rough(kit, ctx, M):
         hp("band c", (0.2, 0.4, 0.07), (cx, -0.25, -0.22))
     # the cuts: black inside, set back, with one cold glint deep in each eye hole
     for ex, ez, ew, eh in ((-0.2, 0.1, 0.2, 0.2), (0.2, 0.08, 0.2, 0.2)):
-        hp("eye cut", (ew, 0.3, eh), (ex, -0.1, ez), M["dark"])
-        hp("glint", (0.05, 0.02, 0.05), (ex + 0.02, -0.255, ez + 0.01), M["glint"])
-    hp("mouth cut", (0.5, 0.3, 0.07), (0, -0.1, -0.22), M["dark"])
+        hp("eye cut", (ew, 0.3, eh), (ex, -0.1, ez), M["cutblack"])
+        hp("glint", (0.03, 0.02, 0.03), (ex + 0.03, -0.252, ez - 0.015), M["glint"])
+    hp("mouth cut", (0.5, 0.3, 0.07), (0, -0.1, -0.22), M["cutblack"])
     head.rotation_euler = (0.10, 0.0, 0.035)
     ctx["rough"] = root
     ctx["rough_parts"] = [root] + list(root.children_recursive)
 
 
+def link_rough_lights(kit, ctx):
+    """Light linking: the sun and the moon never touch the Rough One (its own key and rim do), so it is side-lit
+    from low down with a cool rim and never front-lit by the sky."""
+    parts = [o for o in ctx["rough_parts"] if o.type == "MESH"]
+    ex = bpy.data.collections.new("rough excluded")
+    inc = bpy.data.collections.new("rough only")
+    for o in parts:
+        ex.objects.link(o)
+        inc.objects.link(o)
+    for co in ex.collection_objects:
+        co.light_linking.link_state = "EXCLUDE"
+    kit.LIGHTS["sun"]["obj"].light_linking.receiver_collection = ex
+    kit.LIGHTS["daywin"]["obj"].light_linking.receiver_collection = ex
+    for n in ("rkey", "rrim"):
+        kit.LIGHTS[n]["obj"].light_linking.receiver_collection = inc
+
+
 def build_lights(kit, ctx):
     kit.light("sun", "SUN", (0, 0, 50), 1.0, "#ffffff", size=0.2)
-    kit.light("porch", "POINT", (1.0, OY + 0.6, F + 2.55), 320, "#ffc27a", size=0.2)
+    kit.light("porch", "POINT", (1.0, OY + 0.6, F + 2.55), 150, "#ffc27a", size=0.2)
     kit.light("kitchen", "POINT", (-0.4, OY - 3.4, F + 2.4), 260, "#ffd29a", size=0.3)
     kit.light("myroom", "POINT", (-4.8, OY - 1.6, F + 2.3), 90, "#aac0ff", size=0.3)
     kit.light("bedroom", "POINT", (3.9, OY - 3.0, F + 2.3), 110, "#ffd29a", size=0.3)
-    kit.light("daywin", "AREA", (geo.WIN_X0 / 2 + geo.WIN_X1 / 2, OY + 0.9, F + 1.6), 900, "#fff0d8", rot=(-math.pi / 2, 0, 0), size=1.4)
+    kit.light("daywin", "AREA", (geo.WIN_X0 / 2 + geo.WIN_X1 / 2, OY + 0.9, F + 1.6), 520, "#fff0d8", rot=(-math.pi / 2, 0, 0), size=1.4)
     kit.light("benchl", "POINT", (0.0, OY + 66.5, 3.4), 420, "#a8bce8", size=0.6)
-    kit.light("rkey", "POINT", (0, 0, -60), 120, "#ffd4b8", size=0.25)
-    kit.light("rrim", "POINT", (0, 0, -60), 160, "#7ea8ff", size=0.3)
+    kit.light("pairl", "POINT", (0, 0, -60), 260, "#ffd9a8", size=0.4)
+    kit.light("rkey", "POINT", (0, 0, -60), 150, "#b8c8ea", size=0.25)
+    kit.light("rrim", "POINT", (0, 0, -60), 480, "#8fb4ff", size=0.3)
 
 
 def build_extras(kit, ctx, M):
@@ -450,6 +480,20 @@ def build_extras(kit, ctx, M):
     for dy in (-0.25, 0.25):
         kit.cyl("mug", 0.06, 0.1, (0, dy, 0.05), M["mug"], mugs)
     groups["mugs"] = [mugs] + list(mugs.children)
+    # my boots by the back door: laced tight, double knots, an apple leaf caught in one lace
+    bt = kit.empty("boots", (-0.75, OY - 0.7, F))
+    for i, bx in enumerate((-0.17, 0.17)):
+        kit.box("bsole", (0.22, 0.46, 0.04), (bx, 0.0, 0.02), M["bootsole"], bt)
+        kit.box("bshaft", (0.2, 0.2, 0.3), (bx, 0.1, 0.19), M["boot"], bt, bevel=0.02)
+        kit.box("btoe", (0.2, 0.22, 0.13), (bx, -0.1, 0.105), M["boot"], bt, bevel=0.025)
+        kit.box("blace", (0.15, 0.14, 0.015), (bx, -0.0, 0.2), M["lace"], bt, rot=(0.5, 0, 0))
+        kit.box("blace", (0.15, 0.015, 0.14), (bx, 0.0, 0.26), M["lace"], bt)
+        for kx in (-0.03, 0.03):
+            kit.box("knot", (0.05, 0.05, 0.05), (bx + kx, -0.03, 0.31), M["lace"], bt, rot=(0.3, 0.4, 0.2))
+    kit.box("blaceloop", (0.12, 0.012, 0.03), (-0.17, -0.06, 0.33), M["lace"], bt, rot=(0, 0, 0.5))
+    kit.box("blaceloop", (0.12, 0.012, 0.03), (0.17, -0.06, 0.33), M["lace"], bt, rot=(0, 0, -0.5))
+    kit.box("apple leaf", (0.16, 0.1, 0.012), (0.13, -0.09, 0.345), M["leafg"], bt, rot=(0.35, 0.2, 0.7))
+    groups["boots"] = [bt] + list(bt.children)
     # falling leaves
     lv = kit.empty("leaves", (0, 0, -60))
     leaves = [kit.box("leaf", (0.12, 0.09, 0.012), (0, 0, 0), M["leaf"], lv) for _ in range(16)]
@@ -620,6 +664,7 @@ def build(kit, story, tl):
     build_garden(kit, ctx, M)
     build_rough(kit, ctx, M)
     build_lights(kit, ctx)
+    link_rough_lights(kit, ctx)
     build_extras(kit, ctx, M)
     build_trails(kit, ctx, tl)
     ctx["inited"] = False
@@ -634,12 +679,23 @@ def init_chars(kit, story, ctx):
         g = spec.get("glow")
         if not g:
             continue
-        sole = kit.emit(g, 7.0, name=f"sole {g}")
+        sole = kit.emit(g, 4.5, name=f"sole {g}")
         for sx in (-1, 1):
             leg = bpy.data.objects.get(f"{name}.leg{sx}")
             if leg:
                 bw = float(spec.get("body_width", 1.0))
                 kit.box(f"{name}.sole{sx}", (1.1 * bw, 1.16, 0.1), (0, 0.0, -2.0), sole, leg)
+    # Nan's round wire glasses: thin silver rims over the eyes, no lenses
+    hg = bpy.data.objects.get("nan.headg")
+    if hg:
+        R_ = 0.62
+        for sx in (-1, 1):
+            cx_, cz_ = sx * 0.25, 0.0
+            kit.box("nan.rimt", (0.4, 0.03, 0.03), (cx_, -R_ - 0.04, cz_ + 0.2), M["wire"], hg)
+            kit.box("nan.rimb", (0.4, 0.03, 0.03), (cx_, -R_ - 0.04, cz_ - 0.2), M["wire"], hg)
+            for ex_ in (-0.2, 0.2):
+                kit.box("nan.rims", (0.03, 0.03, 0.43), (cx_ + ex_, -R_ - 0.04, cz_), M["wire"], hg)
+        kit.box("nan.rimbr", (0.1, 0.03, 0.03), (0, -R_ - 0.04, 0.12), M["wire"], hg)
     # my bag (shown by cue)
     torso = bpy.data.objects.get("me.torso")
     if torso:
@@ -684,17 +740,29 @@ def animate(kit, story, tl, t, ctx):
     fl = (*lin(hexrgb(fcol)), 1)
     for n in ctx["fog_nodes"]:
         n.inputs["Color"].default_value = fl
-    sc.view_settings.exposure = expo
+    ec = last_cue(cues_of(tl, "expo"), t)
+    sc.view_settings.exposure = expo + (ec["ev"] if ec else 0.0)
     lamps, kit_g, my_g, bed_g = ROOM[tod]
     for nm in ctx.get("lamp_names", []):
         over[nm] = lamps
     over["benchl"] = 1.0 if tod in ("night", "silver") else 0.0
     over["kitchen"], over["myroom"], over["bedroom"] = kit_g, my_g, bed_g
     over["tkit"] = 1.0
+    # --- the pair light: a soft lantern glow that follows the two walkers (the sneaky pair, then Nan and me)
+    pl = ramp_val(cues_of(tl, "pairlight"), "to", t, 0.0)
+    over["pairl"] = pl
+    if pl > 0:
+        who = ("front", "follow") if t < 20 else ("me", "nan")
+        pts = [acting.state(tl, w, t) for w in who]
+        pts = [p_ for p_ in pts if p_ and not p_.get("hidden")]
+        if pts:
+            ax_ = sum(p_["x"] for p_ in pts) / len(pts)
+            ay_ = sum(p_["y"] for p_ in pts) / len(pts)
+            kit.LIGHTS["pairl"]["obj"].location = (ax_ - 0.9, ay_ - 0.8, 2.3)
     # --- cued ramps
     lamp = ramp_val(cues_of(tl, "lamp"), "to", t, 1.0)
     over["porch"] = lamp
-    ctx["lamp_mat"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 3.5 * lamp
+    ctx["lamp_mat"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 2.2 * lamp
     over["daywin"] = ramp_val(cues_of(tl, "daywin"), "to", t, 0.0)
     over["fridge"] = ramp_val([{**c, "to": c["on"]} for c in cues_of(tl, "fridge")], "to", t, 0.0)
     blind = ramp_val(cues_of(tl, "blind"), "to", t, 0.0)
@@ -705,7 +773,7 @@ def animate(kit, story, tl, t, ctx):
     door = ramp_val(cues_of(tl, "door"), "to", t, 0.0)
     ctx["door"].rotation_euler = (0, 0, 1.75 * door)
     # --- prop groups
-    for g in ("keys", "basket", "ladder", "mugs", "bag"):
+    for g in ("keys", "basket", "ladder", "mugs", "bag", "boots"):
         vis = False
         for c in cues_of(tl, "vis"):
             if c["t"] <= t + 1e-9:
@@ -713,6 +781,13 @@ def animate(kit, story, tl, t, ctx):
                     vis = True
                 if g in c.get("hide", []):
                     vis = False
+        if g == "bag":
+            mk = None
+            for kk in tl["acting"].get("me", []):
+                if kk["t"] <= t + 1e-9:
+                    mk = kk
+            if mk is None or mk.get("hidden"):
+                vis = False
         for ob in ctx["groups"].get(g, []):
             ob.hide_render = not vis
     # --- the Rough One
@@ -724,13 +799,13 @@ def animate(kit, story, tl, t, ctx):
     if on:
         root.location = (rc["pos"][0], rc["pos"][1], 0.0)
         root.rotation_euler = (0, 0, math.radians(rc.get("yaw", 0)))
-    rk = RLIGHT[tod] if on else 0.0
+    rk = (RLIGHT[tod] * rc.get("lights", 1.0)) if on else 0.0
     px, py = (rc["pos"][0], rc["pos"][1]) if on else (0, -400)
     yawr = math.radians(rc.get("yaw", 0)) if on else 0
     # key: low and to its side, rim: cool, high and behind
     fx_, fy_ = math.sin(yawr), -math.cos(yawr)
-    kit.LIGHTS["rkey"]["obj"].location = (px + 1.3 * math.cos(yawr) + fx_ * 1.2, py + 1.3 * math.sin(yawr) + fy_ * 1.2, 0.25)
-    kit.LIGHTS["rrim"]["obj"].location = (px - 0.9 * math.cos(yawr) - fx_ * 1.6, py - 0.9 * math.sin(yawr) - fy_ * 1.6, 2.9)
+    kit.LIGHTS["rkey"]["obj"].location = (px + 1.5 * math.cos(yawr) + fx_ * 0.9, py + 1.5 * math.sin(yawr) + fy_ * 0.9, 0.9)
+    kit.LIGHTS["rrim"]["obj"].location = (px - 1.3 * math.cos(yawr) - fx_ * 1.5, py - 1.3 * math.sin(yawr) - fy_ * 1.5, 3.0)
     over["rkey"] = rk
     over["rrim"] = rk
     # --- falling leaves
