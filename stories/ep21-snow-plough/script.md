@@ -2,7 +2,7 @@
 
 - **Slug:** `ep21-snow-plough` (folder `stories/ep21-snow-plough/`), from pitch #5 in `stories/ideas.md`.
 - **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 608 spoken words in 73 lines, all `narrator` in voice A, plus 2 pause beats (1.5 s).
+- **Word count:** 612 spoken words in 73 lines, all `narrator` in voice A, plus 2 pause beats (1.5 s).
 - **Estimated length:** about 2:18 to 2:24. Speech at 290 wpm is about 2:07, the 0.12 s line gaps add about 9 s, the pauses 1.5 s, the loop tail 0.25 s. If it lands under 2:15, add "The wipers kept / TICKING." after L53. If over 2:30, L36 goes first.
 
 ## Variety (against everything made)
@@ -20,7 +20,7 @@ Count the posts. In deep snow the road is invisible and the posts are the road. 
 
 ## The twist (and where it's planted)
 While I was at the top, the outer half of the road at post twenty-three slid away down the slope. Post twenty-three went down with its slab of road and is still standing down there, upright and glinting, exactly in line with the rest. On the way down I was steering straight for it. I was counting a post on the wrong side of the edge. The forty-first post, the Marker, was standing on the new edge, where the road ends now. It was keeping the road's count true by standing in the gap, and it stood in front of my blade because that's where the gap was.
-- **How the last 15 seconds turn the first line over:** "Forty-one posts. On the way up there were forty" opens as an intruder in the line. At the end the extra one is the only post that was on the right side of the edge, and the last line makes the count deliberate: we set a new post at the new edge, so now it's forty-one on the way up too. The number that scared me is the number the road needs.
+- **How the last 15 seconds turn the first line over:** "Forty-one posts. On the way up there were forty" opens as an intruder in the line. At the end the extra one is the only post that was on the right side of the edge, and the last line makes the count deliberate: we put twenty-three back and set a new post where the Marker stood, so now it's forty-one on the way up too. The number that scared me is the number the road needs.
 - **Plant 1 (L19 to L21):** at post twenty-three on the way up, the whole cab shakes and a long groan comes up from the drop side. I tell myself it's the blade on a rock. It's the slide starting.
 - **Plant 2 (S36 under L35, then L37):** on the way down, the post beyond the Marker's second sighting sits lower than the others, its glint a little below the line, "like it was KNEELING". Rewatch: counting down from forty, the low one is twenty-three, already sinking down the slope. And a third, for sharp eyes: the Marker always stands on the road side of the line, never the drop side, and each sighting is one post nearer twenty-three. I count down from forty on the way down, so every post keeps its number from the way up: 29, 26, 25, 24, then the gap at 23.
 
@@ -241,8 +241,8 @@ Format: the line id, then the caption chunks split with ` / `. Spoken text is th
   - [S72: Odile in her chair, `tired`, looking from the bag to me]
 - `L71` narrator: She poured TWO cups / and slid one / ACROSS / to me.
   - [S73: two cups on the table, Odile `smile`]
-- `L72` narrator: That SPRING, / we set a new POST / at the new EDGE.
-  - [S74: green slopes, the road mended, a fresh narrow orange post at the edge, me beside it in a light jacket]
+- `L72` narrator: That SPRING, / we put / TWENTY-THREE BACK, / and set / a new POST / where IT / had stood.
+  - [S74: green slopes, the road mended, post twenty-three back in the line, and a fresh narrow orange post where the Marker stood, me beside it in a light jacket]
 - `L73` narrator: FORTY-ONE / POSTS. / On the way UP, / TOO.
   - [S75: the new post's reflector catching the low sun on a slow ramp. 0.25 s, then the loop cut to S1's wiper tick]
 
