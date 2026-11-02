@@ -448,17 +448,17 @@ key("c9", "L47.3", yaw=180, expr="blank", blend=0.4)
 key("c8", "L47.3+0.3", yaw=180, expr="blank", blend=0.4)
 cue("L47", "hall", level=0.12, dur=1.2)
 HALLLV["v"] = 0.12
-shot("L47.3-0.45", "hall", C([0.2, -8.2, 6.8], [-0.2, -4.8, 0.4], 14), {
+shot("L47.3-0.45", "hall", C([0.0, -9.4, 7.0], [-0.3, -5.6, 0.5], 10), {
     "abe": ABE_B, **{n: P(x, y, 180, expr="blank") for n, (x, y) in CROWD_POS.items() if n not in ("c12", "c14", "c3", "c4", "c10")}},
      "the crowd's glow from high up: a dark gap in it, right beside Grandad's light", hall=0.3)
-shot("L48", "hall", C([-1.0, -8.4, 1.8], [-0.3, -3.4, 0.9], 20), {
-    "me": P(-1.9, -7.4, 180, expr="scared"), "c2": P(-2.7, -5.5, 180, expr="blank"), "c8": P(-5.4, -4.2, 180, expr="blank"),
-    "c1": P(-4.4, -6.9, 180, expr="blank"), "c4": P(1.4, -5.6, 180, expr="blank"), "c5": P(2.5, -6.4, 180, expr="blank"),
+shot("L48", "hall", C([-0.7, -8.6, 1.7], [-0.5, -3.4, 0.9], 12), {
+    "me": P(-1.8, -7.3, 180, expr="scared"), "c2": P(-2.0, -5.6, 180, expr="blank"), "c8": P(-5.4, -4.2, 180, expr="blank"),
+    "c1": P(-4.4, -6.9, 180, expr="blank"), "c4": P(0.8, -5.7, 180, expr="blank"), "c5": P(1.9, -6.8, 180, expr="blank"),
     "abe": ABE_B}, "over my shoulder: the crowd parts and the bench's end is in shadow")
 shot("P02", "hall", C([-3.2, -6.0, 1.0], [-0.69, -3.7, 0.9], 24), {"abe": ABE_B}, "hold; the drone only, then one slow creak")
 shot("L49", "hall", C([-2.0, -1.0, 0.5], [-0.69, -3.3, 1.0], 26), {"abe": ABE_B}, "the reveal, three-quarter front and low: the Stooped bent over my seat")
 stooped("L49")
-shot("L50", "hall", C([-0.6, -2.4, 0.3], [-0.69, -3.7, 0.95], 36), {"abe": ABE_B}, "close on the hanging coat front and its four brass buttons")
+shot("L50", "hall", C([-1.4, -1.7, 0.9], [-0.69, -3.0, 1.0], 24), {"abe": ABE_B}, "close on the hanging coat front and its four brass buttons")
 shot("L51", "hall", C([-3.6, -4.0, 0.55], [-0.69, -3.8, 0.8], 28), {"abe": ABE_B}, "low side profile: the right angle at its hips")
 shot("L52", "hall", C([-0.69, -5.5, 1.62], [-0.69, -3.0, 1.1], 28), {"abe": ABE_B}, "along the flat of its back, level as a table")
 shot("L53", "hall", C([-1.9, -1.8, 0.4], [-0.69, -2.9, 0.34], 36), {"abe": ABE_B}, "close, low: the head hanging upside down at knee height")

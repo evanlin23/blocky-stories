@@ -452,7 +452,7 @@ def stooped_face(path_face, path_mask):
     """Its own drawn face on the head texture: two small round white eyes a little too far apart in dark hollows, pin
     pupils, no brows, a short straight mouth. The mask marks the eyes (they are the one thing that is lightly self-lit)."""
     W, H = faces.TEX_W, faces.TEX_H
-    skin = (176, 164, 142)
+    skin = (112, 102, 88)
     im = Image.new("RGB", (W, H), skin)
     mk = Image.new("L", (W, H), 0)
     d, dm = ImageDraw.Draw(im), ImageDraw.Draw(mk)
@@ -461,18 +461,21 @@ def stooped_face(path_face, path_mask):
     ink = (20, 14, 12)
     for side in (-1, 1):
         x = cx + side * 0.33 * s
-        hx, hy = 0.11 * s, 0.13 * s
-        d.ellipse([x - hx, ey - hy * 0.9, x + hx, ey + hy * 1.15], fill=(46, 34, 26))
-        r = 0.036 * s
+        hx, hy = 0.15 * s, 0.17 * s
+        d.ellipse([x - hx, ey - hy * 0.9, x + hx, ey + hy * 1.15], fill=(26, 18, 14))
+        r = 0.03 * s
         d.ellipse([x - r, ey - r, x + r, ey + r], fill=(246, 244, 236), outline=ink, width=int(0.012 * s))
         dm.ellipse([x - r, ey - r, x + r, ey + r], fill=255)
         pr = 0.012 * s
         d.ellipse([x - pr, ey - pr, x + pr, ey + pr], fill=(6, 5, 5))
     my = faces._fy(0.80)
-    d.ellipse([cx - 0.2 * s, my - 0.11 * s, cx + 0.2 * s, my + 0.13 * s], fill=(18, 10, 8))
-    for k in range(-3, 4):
-        d.polygon([(cx + k * 0.055 * s - 0.018 * s, my - 0.1 * s), (cx + k * 0.055 * s + 0.018 * s, my - 0.1 * s),
-                   (cx + k * 0.055 * s, my - 0.04 * s)], fill=(200, 192, 170))
+    # a wide dark slit of a gape, much wider than tall, ragged top and bottom (not a round O)
+    d.polygon([(cx - 0.36 * s, my), (cx - 0.2 * s, my - 0.045 * s), (cx + 0.2 * s, my - 0.045 * s), (cx + 0.36 * s, my),
+               (cx + 0.2 * s, my + 0.055 * s), (cx - 0.2 * s, my + 0.055 * s)], fill=(14, 8, 6))
+    for k in range(-4, 5):
+        x0 = cx + k * 0.07 * s
+        d.polygon([(x0 - 0.015 * s, my - 0.045 * s), (x0 + 0.015 * s, my - 0.045 * s), (x0, my - 0.005 * s)], fill=(190, 182, 160))
+        d.polygon([(x0 - 0.015 * s, my + 0.055 * s), (x0 + 0.015 * s, my + 0.055 * s), (x0, my + 0.02 * s)], fill=(190, 182, 160))
     im.save(path_face)
     mk.save(path_mask)
 
@@ -497,7 +500,7 @@ def build_stooped(kit, M, ctx):
     B(kit, "st pin", (0.07, 0.07, 0.02), (0.12, -0.95, 1.105), M["brass"], root)
     # the neck hangs from the shoulders' front end and swings; the head hangs from it, upside down
     neck = kit.empty("st neck", (0, -1.14, 1.2), root)
-    B(kit, "st neck box", (0.17, 0.17, 0.6), (0, 0, -0.29), M["hand"], neck, bevel=0.03)
+    B(kit, "st neck box", (0.12, 0.12, 0.6), (0, 0, -0.29), M["coat"], neck, bevel=0.03)
     headr = kit.empty("st headroll", (0, 0, -0.6), neck)
     path = bpy.app.tempdir or "/tmp/"
     pf, pm = path + "stooped-face.png", path + "stooped-mask.png"
