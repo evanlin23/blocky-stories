@@ -473,7 +473,7 @@ story = {
     "tail": 0,
     "look": {"fog": "#0d1528", "fog_density": 0.02, "fog_start": 14.0, "sky": "#8ec9f0", "sky_strength": 1.2,
              "exposure": 0.0, "flash_safe": True},
-    "grade": {"shadows": [-0.015, 0.0, 0.035], "highlights": [0.02, 0.008, -0.01], "saturation": 1.0, "contrast": 1.06,
+    "grade": {"shadows": [-0.015, 0.0, 0.035], "highlights": [0.02, 0.008, -0.01], "saturation": 0.88, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.3, "grain": 0.012},
     "phonemes": {"Mum": "mˈʌm"},
     "cast": cast,

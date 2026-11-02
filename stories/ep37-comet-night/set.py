@@ -290,8 +290,8 @@ def materials(kit, wd: Path):
     M["verd"] = kit.plastic("#3f7f6a", 0.5, name="verdigris")
     M["verd_dome"] = kit.grime("#3f7f6a", 0.62, 6.0, name="dome green")
     M["leather"] = kit.plastic("#5a1f22", 0.45, name="oxblood leather")
-    M["woodA"] = kit.planks("#7a5a3a", "#563c26", 1.4, "X", name="oak floor")
-    M["woodB"] = kit.planks("#6a4a2e", "#4a3220", 1.6, "Y", name="oak dark")
+    M["woodA"] = kit.planks("#6e5c4a", "#4a3e32", 1.4, "X", name="oak floor")
+    M["woodB"] = kit.planks("#5e4a38", "#3e3226", 1.6, "Y", name="oak dark")
     M["wall"] = kit.planks("#d4cebd", "#b6b09e", 1.5, "Z", name="whitewash boards", rough=0.85)
     M["dome_in"] = kit.grime("#b3ae9c", 0.7, 2.0, name="dome inside")
     M["dust"] = kit.plastic("#8d887e", 0.98, name="dust")
@@ -611,11 +611,11 @@ def build_dome(kit, ctx, M):
             box(kit, f"cage{i}{cxo}{cyo}", (0.014, 0.014, 0.27), D(bxx + cxo * 0.1, byy + cyo * 0.1, 2.3), M["brass"])
         for zz in (2.17, 2.43):
             box(kit, f"cagering{i}{zz}", (0.23, 0.23, 0.012), D(bxx, byy, zz), M["brass"])
-        L = kit.light(f"bulb{i}", "POINT", D((R - 0.45) * math.cos(ar), (R - 0.45) * math.sin(ar), 2.3), 140, "#ffb86a", size=0.2)
+        L = kit.light(f"bulb{i}", "POINT", D((R - 0.45) * math.cos(ar), (R - 0.45) * math.sin(ar), 2.3), 140, "#ffcf9a", size=0.2)
         ctx["bulbs"].append(f"bulb{i}")
     kit.sphere("red lens", 0.05, D(px + 0.22, py - 0.1, 0.5), M["redlens"], seg=10)
-    kit.light("red", "POINT", D(px + 0.26, py - 0.12, 0.5), 45, "#a02c22", size=0.08)
-    kit.light("red2", "POINT", D(1.3, 0.2, 0.3), 38, "#9a2a22", size=0.1)
+    kit.light("red", "POINT", D(px + 0.26, py - 0.12, 0.5), 45, "#b84a3e", size=0.08)
+    kit.light("red2", "POINT", D(1.3, 0.2, 0.3), 38, "#b04438", size=0.1)
     # a cold starlight rim from the slit, a soft one, so a silhouette keeps an edge
     kit.light("rim", "AREA", D(-0.35, 1.6, 6.4), 380, "#7d9dff", rot=(0, 0, 0), size=2.4)
     kit.light("fill", "POINT", D(0.6, -0.4, 2.6), 30, "#ffd9a8", size=0.5)
@@ -793,7 +793,7 @@ SCENES = {
     "memory": ("#e0c38a", 0.9, "#f0cf9a", "#c89868", "#c8a878", -0.1),
     "dusk":   ("#b0707a", 0.7, "#e08a6e", "#4a4a78", "#7a5a6c", -0.2),
     "night":  ("#0f1a33", 0.5, "#16224a", "#070c1c", "#0d1528", 0.2),
-    "dome":   ("#080c1a", 0.12, "#0b1226", "#0b1226", "#06080f", 0.95),
+    "dome":   ("#1a2a50", 0.4, "#0b1226", "#0b1226", "#06080f", 0.95),
 }
 LIGHT_SCENES = {
     "sun_day": {"day": 1.0}, "sun_dusk": {"dusk": 1.0}, "sun_mem": {"memory": 1.0}, "moon": {"night": 1.0},
@@ -885,10 +885,10 @@ def animate(kit, story, tl, t, ctx):
         gains[nm] = d.get(sc, 0.0)
     for i in range(4):
         gains[f"bulb{i}"] = (bulbs * 0.6 + 0.03) if sc == "dome" else 0.0
-    gains["red"] = (1.0 + 3.0 * (1.0 - bulbs)) if sc == "dome" else 0.0
-    gains["red2"] = (1.0 + 3.5 * (1.0 - bulbs)) if sc == "dome" else 0.0
+    gains["red"] = (1.0 + 1.2 * (1.0 - bulbs)) if sc == "dome" else 0.0
+    gains["red2"] = (1.0 + 1.4 * (1.0 - bulbs)) if sc == "dome" else 0.0
     kit.LIGHTS["rim"]["light"].color = tuple(V((0.49, 0.62, 1.0)).lerp(V((1.0, 0.7, 0.72)), pink))
-    gains["rim"] = (0.55 + 0.2 * (1.0 - bulbs)) if sc == "dome" else 0.0
+    gains["rim"] = (0.55 + 1.1 * (1.0 - bulbs)) if sc == "dome" else 0.0
     gains["fill"] = (0.5 * bulbs) if sc == "dome" else 0.0
     # shooting stars (rare) over the slit
     # the doors, the bag
