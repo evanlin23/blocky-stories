@@ -282,34 +282,34 @@
    ]
   },
   "L12": {
-   "text": "every friday, we sat on the bench facing the big skeleton.",
+   "text": "every friday, we sit on the bench facing the big skeleton.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.81,
+   "dur": 2.776,
    "onset": 0.172,
-   "end": 2.621,
+   "end": 2.586,
    "chunks": [
     [
      0.172,
-     0.759
+     0.776
     ],
     [
-     0.793,
-     1.061
+     0.828,
+     1.043
     ],
     [
-     1.061,
-     1.457
+     1.043,
+     1.431
     ],
     [
-     1.457,
-     1.733
+     1.431,
+     1.698
     ],
     [
-     1.733,
-     2.621
+     1.698,
+     2.586
     ]
    ]
   },
@@ -418,58 +418,66 @@
    ]
   },
   "L17": {
-   "text": "people cross the road when he passes.",
+   "text": "people cross the road, sure he's hiding something.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
+   "dur": 2.224,
    "onset": 0.155,
-   "end": 1.69,
+   "end": 2.034,
    "chunks": [
     [
      0.155,
-     0.603
-    ],
-    [
-     0.603,
-     0.905
-    ],
-    [
-     0.905,
-     1.69
-    ]
-   ]
-  },
-  "L18": {
-   "text": "the museum puts him into the dark galleries to save bulbs.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.172,
-   "end": 2.466,
-   "chunks": [
-    [
-     0.172,
      0.586
     ],
     [
      0.586,
+     0.948
+    ],
+    [
+     1.0,
+     1.448
+    ],
+    [
+     1.448,
+     2.034
+    ]
+   ]
+  },
+  "L18": {
+   "text": "the museum hides him in the dark galleries. his job is next.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.155,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
      0.802
     ],
     [
      0.802,
-     1.207
+     1.121
     ],
     [
-     1.207,
-     1.569
+     1.121,
+     1.638
     ],
     [
-     1.569,
-     2.466
+     1.707,
+     2.121
+    ],
+    [
+     2.121,
+     2.759
     ]
    ]
   },
