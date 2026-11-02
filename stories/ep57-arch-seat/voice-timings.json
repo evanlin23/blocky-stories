@@ -1,0 +1,1881 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this town, every favour you owe sits on your head as a gold block.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.259
+    ],
+    [
+     1.259,
+     1.664
+    ],
+    [
+     1.664,
+     2.043
+    ],
+    [
+     2.043,
+     2.879
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Hold a door for someone. click. A block lands on their head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.879
+    ],
+    [
+     0.94,
+     1.276
+    ],
+    [
+     1.371,
+     1.923
+    ],
+    [
+     1.923,
+     2.586
+    ]
+   ]
+  },
+  "L03": {
+   "text": "It lands the second they say thanks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     0.94
+    ],
+    [
+     0.94,
+     1.638
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Do them a favour back, and it drops off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.845
+    ],
+    [
+     0.87,
+     1.0
+    ],
+    [
+     1.0,
+     1.707
+    ]
+   ]
+  },
+  "L05": {
+   "text": "This man's street helped him move house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.0
+    ],
+    [
+     1.0,
+     1.707
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Now he has to duck under the bus shelter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.19,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.569,
+     0.992
+    ],
+    [
+     0.992,
+     1.828
+    ]
+   ]
+  },
+  "L07": {
+   "text": "These two neighbours have passed the same block over the fence for ten years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.172,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.147
+    ],
+    [
+     1.147,
+     1.715
+    ],
+    [
+     1.715,
+     2.129
+    ],
+    [
+     2.129,
+     2.845
+    ]
+   ]
+  },
+  "L08": {
+   "text": "And the best man at a wedding never fits in the photo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.741
+    ],
+    [
+     0.741,
+     1.474
+    ],
+    [
+     1.474,
+     2.19
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Then there's me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ]
+   ]
+  },
+  "L10": {
+   "text": "My head is bare. Always has been.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.724
+    ],
+    [
+     0.776,
+     1.638
+    ]
+   ]
+  },
+  "L11": {
+   "text": "I don't say thanks. I've never needed to.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.793
+    ],
+    [
+     0.845,
+     1.121
+    ],
+    [
+     1.121,
+     1.638
+    ]
+   ]
+  },
+  "L12": {
+   "text": "My cousin Ilan has the tallest stack in town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.224
+    ],
+    [
+     1.224,
+     2.086
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Every Saturday since we were fifteen, we had lunch in the arch seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.888
+    ],
+    [
+     0.888,
+     1.517
+    ],
+    [
+     1.586,
+     2.026
+    ],
+    [
+     2.026,
+     2.155
+    ],
+    [
+     2.155,
+     2.81
+    ]
+   ]
+  },
+  "L14": {
+   "text": "It's a stone seat cut into the old clock arch. Room for two.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     0.957
+    ],
+    [
+     0.957,
+     1.431
+    ],
+    [
+     1.431,
+     1.776
+    ],
+    [
+     1.888,
+     2.672
+    ]
+   ]
+  },
+  "L15": {
+   "text": "This summer, I stopped going.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.397
+    ]
+   ]
+  },
+  "L16": {
+   "text": "People had started to whisper about him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.759,
+     1.121
+    ],
+    [
+     1.121,
+     1.741
+    ]
+   ]
+  },
+  "L17": {
+   "text": "They said he owed the whole town and never paid it back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.87
+    ],
+    [
+     0.87,
+     1.534
+    ],
+    [
+     1.534,
+     2.241
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The first Saturday of summer, his stack was taller than the awnings.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.155,
+     0.698
+    ],
+    [
+     0.698,
+     1.138
+    ],
+    [
+     1.207,
+     1.681
+    ],
+    [
+     1.681,
+     2.009
+    ],
+    [
+     2.009,
+     2.69
+    ]
+   ]
+  },
+  "L19": {
+   "text": "It swayed when he walked. He couldn't look up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.069
+    ],
+    [
+     1.121,
+     1.362
+    ],
+    [
+     1.362,
+     1.897
+    ]
+   ]
+  },
+  "L20": {
+   "text": "People stepped around him like a puddle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.819
+    ],
+    [
+     0.819,
+     1.077
+    ],
+    [
+     1.077,
+     1.655
+    ]
+   ]
+  },
+  "L21": {
+   "text": "I walked past the arch without looking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.664
+    ],
+    [
+     0.664,
+     0.957
+    ],
+    [
+     0.957,
+     1.672
+    ]
+   ]
+  },
+  "L22": {
+   "text": "But I saw the cobbles under the empty half of the seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     1.043
+    ],
+    [
+     1.043,
+     1.561
+    ],
+    [
+     1.561,
+     2.172
+    ]
+   ]
+  },
+  "L23": {
+   "text": "There was a shadow on them, with shoulders as wide as the arch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.966
+    ],
+    [
+     1.017,
+     1.594
+    ],
+    [
+     1.594,
+     1.888
+    ],
+    [
+     1.888,
+     2.5
+    ]
+   ]
+  },
+  "L24": {
+   "text": "And nobody there to cast it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.776,
+     1.466
+    ]
+   ]
+  },
+  "L25": {
+   "text": "My summer was going weirdly well.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.621
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Missus Varga started giving me my bread for nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     0.948,
+     1.319
+    ],
+    [
+     1.319,
+     2.19
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Mister Ode fixed my bike and waved me off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.207
+    ],
+    [
+     1.207,
+     1.931
+    ]
+   ]
+  },
+  "L28": {
+   "text": "My landlady said the rent could wait.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     1.086
+    ],
+    [
+     1.086,
+     1.69
+    ]
+   ]
+  },
+  "L29": {
+   "text": "I called it luck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.966
+    ]
+   ]
+  },
+  "L30": {
+   "text": "The next Saturday, Ilan's stack was taller again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.776,
+     1.345
+    ],
+    [
+     1.345,
+     2.086
+    ]
+   ]
+  },
+  "L31": {
+   "text": "And the arch seat was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.448
+    ]
+   ]
+  },
+  "L32": {
+   "text": "His cap was on his half. His bun was still in its bag.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.155,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.069
+    ],
+    [
+     1.138,
+     1.534
+    ],
+    [
+     1.534,
+     1.784
+    ],
+    [
+     1.784,
+     2.414
+    ]
+   ]
+  },
+  "L33": {
+   "text": "On my half, the shadow was sitting up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.595,
+     1.008
+    ],
+    [
+     1.008,
+     1.569
+    ]
+   ]
+  },
+  "L34": {
+   "text": "I searched the cafe tables and around the fountain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     1.233
+    ],
+    [
+     1.233,
+     2.086
+    ]
+   ]
+  },
+  "L35": {
+   "text": "His phone was ringing on the stone beside his cap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     0.948
+    ],
+    [
+     0.948,
+     1.603
+    ],
+    [
+     1.603,
+     2.086
+    ]
+   ]
+  },
+  "L36": {
+   "text": "It was me calling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.155,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     1.069
+    ]
+   ]
+  },
+  "L37": {
+   "text": "He came back at dusk. He said he'd been doing favours back all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 3.138,
+   "onset": 0.172,
+   "end": 2.914,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.052
+    ],
+    [
+     1.138,
+     1.439
+    ],
+    [
+     1.439,
+     2.086
+    ],
+    [
+     2.086,
+     2.914
+    ]
+   ]
+  },
+  "L38": {
+   "text": "His stack hadn't dropped a single block.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.008
+    ],
+    [
+     1.008,
+     1.759
+    ]
+   ]
+  },
+  "L39": {
+   "text": "The third Saturday it rained. The square was nearly empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.155,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.155,
+     0.784
+    ],
+    [
+     0.784,
+     1.207
+    ],
+    [
+     1.276,
+     1.724
+    ],
+    [
+     1.724,
+     2.534
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Ilan was in the arch seat, bent almost double.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.034
+    ],
+    [
+     1.103,
+     2.086
+    ]
+   ]
+  },
+  "L41": {
+   "text": "And in my half, something sat up straight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.284
+    ],
+    [
+     0.284,
+     0.621
+    ],
+    [
+     0.655,
+     1.026
+    ],
+    [
+     1.026,
+     1.672
+    ]
+   ]
+  },
+  "L42": {
+   "text": "It was built like a person. Rose jumper. Cream trousers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.155,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     1.086
+    ],
+    [
+     1.181,
+     1.69
+    ],
+    [
+     1.733,
+     2.638
+    ]
+   ]
+  },
+  "L43": {
+   "text": "But its shoulders were as wide as the whole seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.094
+    ],
+    [
+     1.094,
+     1.422
+    ],
+    [
+     1.422,
+     1.897
+    ]
+   ]
+  },
+  "L44": {
+   "text": "One ordinary head, right in the middle, looking at him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.19,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.19,
+     1.052
+    ],
+    [
+     1.138,
+     1.353
+    ],
+    [
+     1.353,
+     1.586
+    ],
+    [
+     1.621,
+     2.362
+    ]
+   ]
+  },
+  "L45": {
+   "text": "And there wasn't a single block on it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.121
+    ],
+    [
+     1.121,
+     1.603
+    ]
+   ]
+  },
+  "L46": {
+   "text": "My eyes shut, and it was standing over him, one step closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9991,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.845,
+     1.043
+    ],
+    [
+     1.043,
+     1.655
+    ],
+    [
+     1.707,
+     2.69
+    ]
+   ]
+  },
+  "L47": {
+   "text": "It bent its head down to his, until they nearly touched.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.828
+    ],
+    [
+     0.828,
+     1.241
+    ],
+    [
+     1.31,
+     1.569
+    ],
+    [
+     1.569,
+     2.362
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Then Ilan mumbled into his collar.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.922
+    ],
+    [
+     0.922,
+     1.724
+    ]
+   ]
+  },
+  "L49": {
+   "text": "He said, \"Thanks for his bread, Missus varga.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.586,
+     0.836
+    ],
+    [
+     0.836,
+     1.155
+    ],
+    [
+     1.181,
+     1.914
+    ]
+   ]
+  },
+  "L50": {
+   "text": "\"Thanks for fixing his bike, Mister ode.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.19,
+     0.647
+    ],
+    [
+     0.647,
+     0.966
+    ],
+    [
+     0.992,
+     1.672
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Every time anyone helped me, Ilan went around after and said thanks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.155
+    ],
+    [
+     1.241,
+     1.81
+    ],
+    [
+     1.81,
+     2.155
+    ],
+    [
+     2.155,
+     2.879
+    ]
+   ]
+  },
+  "L52": {
+   "text": "For me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.897,
+   "onset": 0.172,
+   "end": 0.672,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Every block on his head was mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     0.966
+    ],
+    [
+     0.966,
+     1.621
+    ]
+   ]
+  },
+  "L54": {
+   "text": "And a block lands on whoever says thanks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.052
+    ],
+    [
+     1.052,
+     1.741
+    ]
+   ]
+  },
+  "L55": {
+   "text": "One favour, one block. It can't sit on two heads.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     1.069
+    ],
+    [
+     1.138,
+     1.474
+    ],
+    [
+     1.474,
+     2.241
+    ]
+   ]
+  },
+  "L56": {
+   "text": "So I walked into the arch and sat in my half.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.948
+    ],
+    [
+     0.948,
+     1.267
+    ],
+    [
+     1.267,
+     1.879
+    ]
+   ]
+  },
+  "L57": {
+   "text": "The wide thing was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.293
+    ]
+   ]
+  },
+  "L58": {
+   "text": "Then I stood on the seat and told the whole square.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.922
+    ],
+    [
+     0.922,
+     1.259
+    ],
+    [
+     1.259,
+     1.966
+    ]
+   ]
+  },
+  "L59": {
+   "text": "\"Thanks for the bread, Missus varga.\" A block lifted off his stack onto mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.345,
+   "onset": 0.172,
+   "end": 3.155,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.672
+    ],
+    [
+     0.698,
+     1.328
+    ],
+    [
+     1.466,
+     2.0
+    ],
+    [
+     2.0,
+     2.423
+    ],
+    [
+     2.423,
+     3.155
+    ]
+   ]
+  },
+  "L60": {
+   "text": "\"Thanks for the bike, Mister ode.\" click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.603
+    ],
+    [
+     0.629,
+     1.121
+    ],
+    [
+     1.224,
+     1.655
+    ]
+   ]
+  },
+  "L61": {
+   "text": "\"Thanks for waiting on the rent.\" click.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 1.931,
+   "onset": 0.207,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.207,
+     0.698
+    ],
+    [
+     0.698,
+     1.138
+    ],
+    [
+     1.233,
+     1.707
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Doors opened around the square, and I kept going.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 2.466,
+   "onset": 0.19,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.19,
+     0.836
+    ],
+    [
+     0.836,
+     1.259
+    ],
+    [
+     1.328,
+     1.5
+    ],
+    [
+     1.5,
+     2.276
+    ]
+   ]
+  },
+  "L63": {
+   "text": "By the end, Ilan could look up again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.655,
+     1.164
+    ],
+    [
+     1.164,
+     1.793
+    ]
+   ]
+  },
+  "L64": {
+   "text": "He said his neck hadn't felt this good since june.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.026
+    ],
+    [
+     1.026,
+     1.474
+    ],
+    [
+     1.474,
+     1.983
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Mine was the tallest stack in town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.19,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.483,
+     0.974
+    ],
+    [
+     0.974,
+     1.621
+    ]
+   ]
+  },
+  "L66": {
+   "text": "We sat there until the rain stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     0.793
+    ],
+    [
+     0.793,
+     1.552
+    ]
+   ]
+  },
+  "L67": {
+   "text": "I'm there every Saturday now. I haven't missed one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.224
+    ],
+    [
+     1.293,
+     1.586
+    ],
+    [
+     1.586,
+     2.19
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Our stacks clunk together under the arch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9991,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.199
+    ],
+    [
+     1.199,
+     1.776
+    ]
+   ]
+  },
+  "L69": {
+   "text": "And I'm paying them back, one at a time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.897
+    ],
+    [
+     0.948,
+     1.164
+    ],
+    [
+     1.164,
+     1.759
+    ]
+   ]
+  },
+  "L70": {
+   "text": "In this town, every favour you owe sits on your head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.672,
+     1.25
+    ],
+    [
+     1.25,
+     1.715
+    ],
+    [
+     1.715,
+     2.259
+    ]
+   ]
+  },
+  "L71": {
+   "text": "Something kept my seat for me all summer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.034
+    ],
+    [
+     1.034,
+     1.69
+    ]
+   ]
+  },
+  "L72": {
+   "text": "I'm never saying thanks for that one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.094
+    ],
+    [
+     1.094,
+     1.655
+    ]
+   ]
+  }
+ }
+}
