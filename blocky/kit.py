@@ -322,13 +322,46 @@ def hash01(*xs) -> float:
     return (h & 0xFFFF) / 65535
 
 
+# Flash-safe flicker (opt-in per story with look.flash_safe, set by bl_story, or per light with flicker.safe).
+# The default failing-bulb flicker drops to near black for a frame or three, which reads as a strobe and failed the
+# house flash bar on most stories built on 2026-11-01. Safe mode keeps the shimmer slow and shallow, and turns
+# dropouts into smooth dips (ramped down and up, never to black), at most one per SAFE_DIP_SLOT seconds. Off by
+# default, so every earlier film draws exactly as before.
+FLASH_SAFE = False
+SAFE_MAX_RATE = 6.0     # noise1's frequency: its fastest part stays under ~3 Hz
+SAFE_MAX_DEPTH = 0.15
+SAFE_DIP_SLOT = 1.5     # seconds
+SAFE_DIP_RAMP = 0.3     # seconds down, the same up
+SAFE_DIP_HOLD = 0.2
+SAFE_DIP_DEPTH = 0.6    # a dip to 40%, never a blackout
+
+
+def _dip(u: float) -> float:
+    """A smooth trapezoid 0..1..0 over ramp, hold, ramp (u in seconds from the dip's start)."""
+    r, h = SAFE_DIP_RAMP, SAFE_DIP_HOLD
+    if u <= 0 or u >= 2 * r + h:
+        return 0.0
+    x = min(1.0, u / r, (2 * r + h - u) / r)
+    return x * x * (3 - 2 * x)
+
+
 def flicker_gain(t, fl) -> float:
-    """A failing bulb: a quick shimmer, plus random dropouts that last a frame or three."""
+    """A failing bulb: a quick shimmer, plus random dropouts that last a frame or three. In flash-safe mode (above), a
+    slow shallow shimmer and smooth, spaced dips instead."""
     if not fl:
         return 1.0
-    g = 1.0 - fl.get("depth", 0.2) * (0.5 + 0.5 * noise1(t, fl.get("seed", 1), fl.get("rate", 9.0)))
+    safe = FLASH_SAFE or fl.get("safe", False)
+    rate, depth = fl.get("rate", 9.0), fl.get("depth", 0.2)
+    if safe:
+        rate, depth = min(rate, SAFE_MAX_RATE), min(depth, SAFE_MAX_DEPTH)
+    g = 1.0 - depth * (0.5 + 0.5 * noise1(t, fl.get("seed", 1), rate))
     drop = fl.get("dropouts", 0.0)
-    if drop:
+    if drop and safe:
+        slot = math.floor(t / SAFE_DIP_SLOT)
+        if hash01(slot, fl.get("seed", 1)) < min(1.0, drop * SAFE_DIP_SLOT):
+            start = slot * SAFE_DIP_SLOT + 0.1 + 0.4 * hash01(slot, fl.get("seed", 1) + 7)
+            g *= 1.0 - SAFE_DIP_DEPTH * _dip(t - start)
+    elif drop:
         slot = math.floor(t * 10)
         if hash01(slot, fl.get("seed", 1)) < drop / 10:
             g *= 0.06

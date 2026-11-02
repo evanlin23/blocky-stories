@@ -1,4 +1,4 @@
-# floor-thirteen: critic, round 2b (confirmation)
+# floor-thirteen: critic, round 3 (confirmation of the round-2 must-fixes)
 
 Verdict: approve
 

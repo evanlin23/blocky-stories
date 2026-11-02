@@ -168,6 +168,11 @@ def _pulse(dur):
     return synth.thump(min(dur, 0.35), 90.0, 40.0)
 
 
+def _tick(seed=0):
+    """Opt-in score voice "tick" (ep23): one soft wooden tick, like an old stage clock."""
+    return synth.click(0.03, 1500.0, seed) * 0.9
+
+
 def _blip(f, dur=0.16):
     """A bubbling note: a short sine that drops in pitch as it starts, like a drop into water. Not a pluck."""
     t = np.arange(synth.n_samples(dur)) / SR
@@ -239,6 +244,8 @@ def score(tl: dict, spec: dict) -> np.ndarray:
             steps = int(round(seg / beat))
             for q in range(steps):
                 tq = t + q * beat
+                if "tick" in voices:   # opt-in (ep23): a soft wooden tick on every beat
+                    put(_tick(q), tq, 0.35 + 0.2 * e)
                 if "pulse" in voices and (q % 2 == 0 or e > 0.7):
                     put(_pulse(beat), tq, 0.5 + 0.4 * e)
                 if "musicbox" in voices and rng.random() < 0.35 + 0.5 * e:
@@ -344,6 +351,16 @@ def amb(kind: str, dur: float, seed: int = 0) -> np.ndarray:
         return _drone(55.0, dur, seed)
     if kind == "static":
         return fft_filter(synth.noise(dur, seed), "high", 1500) * 0.5
+    if kind == "fire":   # ep35, opt-in: a low soft roar with small pops and spark ticks
+        rng = np.random.default_rng(seed + 11)
+        roar = fft_filter(synth.noise(dur, seed), "band", 90, 900) * (0.55 + 0.45 * synth.one_pole_smooth(synth.noise(dur, seed + 2), 0.4))
+        ticks = _crackle(dur, seed + 5, 22, 1800, 8000)
+        pops = np.zeros(len(roar))
+        for at in rng.uniform(0, max(0.1, dur - 0.1), int(dur * 1.6)):
+            i = int(at * SR)
+            k = synth.thump(0.05, 220, 90, int(at * 100)) * rng.uniform(0.2, 0.6)
+            pops[i:i + len(k)] += k[: len(pops) - i]
+        return roar * 0.6 + ticks * 0.9 + pops * 0.5
     raise ValueError(f"no ambience {kind!r}")
 
 
@@ -534,9 +551,54 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
+    if kind == "curlew":      # ep35, opt-in: a far, long falling whistle that ends in a bubbling trill
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        f = 1900 - 650 * np.clip(t / (dur * 0.55), 0, 1) ** 0.6
+        trill = np.clip((t - dur * 0.55) / (dur * 0.45), 0, 1)
+        f = f * (1 + 0.07 * trill * np.sin(2 * np.pi * 14 * t)) - 250 * trill
+        ph = 2 * np.pi * np.cumsum(f) / SR
+        env = np.clip(t / 0.12, 0, 1) * np.clip((dur - t) / 0.2, 0, 1) * (0.7 + 0.3 * trill * np.sin(2 * np.pi * 14 * t) ** 2)
+        return (np.sin(ph) + 0.2 * np.sin(2 * ph)) * env * 0.5
+    if kind == "rasp":        # ep35, opt-in: two huge dry palms rubbing, slow strokes of sandpaper grain
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        grain = fft_filter(synth.noise(dur, seed), "band", 1400, 7500)[:n]
+        low = fft_filter(synth.noise(dur, seed + 1), "band", 180, 900)[:n] * 0.45
+        stroke = np.abs(np.sin(np.pi * 1.7 * t + 0.4)) ** 0.7
+        flutter = 0.65 + 0.35 * np.clip(np.sin(2 * np.pi * (24 + 8 * np.sin(2 * np.pi * 0.7 * t)) * t), -1, 1)
+        env = np.clip(t / 0.25, 0, 1) * np.clip((dur - t) / 0.3, 0, 1)
+        y = (grain * flutter + low) * stroke * env
+        return y / (np.abs(y).max() + 1e-9)
+    if kind == "logsettle":   # ep35, opt-in: a log settling in a fire, a soft woody thump and a bright crackle of sparks
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        y = np.zeros(n)
+        th = synth.thump(0.45, 105, 38, seed)[: n] * 0.9
+        y[: len(th)] += th
+        wood = fft_filter(synth.noise(0.2, seed + 2), "band", 250, 1400) * np.exp(-np.arange(synth.n_samples(0.2)) / SR / 0.05)
+        y[: len(wood)] += wood[: n] * 0.5
+        sp = _crackle(dur, seed + 3, 55, 2200, 9000)[:n] * np.exp(-t / (dur * 0.55)) * (t > 0.06)
+        y += sp * 1.4
+        return y / (np.abs(y).max() + 1e-9)
+    if kind == "clap":   # opt-in (ep23): one hand clap in an empty hall, a short room tail after it
+        return _clap(dur, seed)
     if kind == "silence":
         return np.zeros(1)
     raise ValueError(f"no sfx {kind!r}")
+
+
+def _clap(dur: float, seed: int) -> np.ndarray:
+    """A single clap: three close noise bursts (the palms), then a dark room tail that keeps going for `dur`."""
+    d = max(dur, 0.8)
+    y = np.zeros(synth.n_samples(d))
+    for k, (t0, g) in enumerate(((0.0, 1.0), (0.011, 0.7), (0.021, 0.45))):
+        b = fft_filter(synth.noise(0.09, seed + k), "band", 900, 3800) * synth.decay(0.09, 0.016, 0.0006)[: synth.n_samples(0.09)]
+        i = int(t0 * SR)
+        y[i:i + len(b)] += b * g
+    tail = fft_filter(synth.noise(d, seed + 9), "band", 300, 1800) * synth.decay(d, d / 3.2, 0.012)[: len(y)]
+    y += tail * 0.3
+    return y / max(1e-9, np.abs(y).max()) * 0.9
 
 
 def _crackle(dur: float, seed: int, rate: float, lo: float, hi: float) -> np.ndarray:
