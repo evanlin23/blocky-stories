@@ -1,0 +1,1805 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this town, a little silhouette over your head shows who you miss most.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.199
+    ],
+    [
+     1.199,
+     1.594
+    ],
+    [
+     1.594,
+     2.017
+    ],
+    [
+     2.017,
+     2.707
+    ]
+   ]
+  },
+  "L02": {
+   "text": "A black cut-out, in a thin gold ring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.784,
+     1.103
+    ],
+    [
+     1.103,
+     1.81
+    ]
+   ]
+  },
+  "L03": {
+   "text": "At his stag night, Dev's silhouette was his bride, and his mates all groaned.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.207,
+   "onset": 0.155,
+   "end": 3.017,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.966
+    ],
+    [
+     0.966,
+     1.337
+    ],
+    [
+     1.337,
+     1.81
+    ],
+    [
+     1.862,
+     2.276
+    ],
+    [
+     2.276,
+     3.017
+    ]
+   ]
+  },
+  "L04": {
+   "text": "A sailor came home with his dog floating over him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.147
+    ],
+    [
+     1.147,
+     1.664
+    ],
+    [
+     1.664,
+     2.241
+    ]
+   ]
+  },
+  "L05": {
+   "text": "A woman on a first date had her ex, and her date noticed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.897
+    ],
+    [
+     0.897,
+     1.414
+    ],
+    [
+     1.466,
+     1.638
+    ],
+    [
+     1.638,
+     2.431
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Couples far apart compare theirs on video calls.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.362
+    ],
+    [
+     1.362,
+     2.121
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Mine is the only one in town that's just me. Little cap and all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.19,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.19,
+     0.517
+    ],
+    [
+     0.517,
+     0.879
+    ],
+    [
+     0.879,
+     1.293
+    ],
+    [
+     1.293,
+     1.759
+    ],
+    [
+     1.862,
+     2.268
+    ],
+    [
+     2.268,
+     2.81
+    ]
+   ]
+  },
+  "L08": {
+   "text": "I tell everyone it means I'm fine on my own.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.077
+    ],
+    [
+     1.077,
+     1.362
+    ],
+    [
+     1.362,
+     1.966
+    ]
+   ]
+  },
+  "L09": {
+   "text": "My husband Theo's silhouette has been me for nine years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.337
+    ],
+    [
+     1.337,
+     1.534
+    ],
+    [
+     1.534,
+     2.276
+    ]
+   ]
+  },
+  "L10": {
+   "text": "His hair sticks up at the back. It has since the day I met him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.155,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     0.802
+    ],
+    [
+     0.802,
+     1.207
+    ],
+    [
+     1.276,
+     1.707
+    ],
+    [
+     1.707,
+     2.017
+    ],
+    [
+     2.017,
+     2.586
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Every Friday we went to the drive-in, one popcorn between the seats.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.172,
+   "end": 2.966,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     0.94
+    ],
+    [
+     0.94,
+     1.483
+    ],
+    [
+     1.578,
+     2.354
+    ],
+    [
+     2.354,
+     2.966
+    ]
+   ]
+  },
+  "L12": {
+   "text": "This year, I chose to stay late at work on fridays.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     0.897
+    ],
+    [
+     0.897,
+     1.31
+    ],
+    [
+     1.31,
+     2.328
+    ]
+   ]
+  },
+  "L13": {
+   "text": "So Theo kept going alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.448
+    ]
+   ]
+  },
+  "L14": {
+   "text": "And over his head, I started getting lighter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.793
+    ],
+    [
+     0.845,
+     1.207
+    ],
+    [
+     1.207,
+     1.983
+    ]
+   ]
+  },
+  "L15": {
+   "text": "A shade fainter every week, like he was letting me go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.793,
+     1.328
+    ],
+    [
+     1.397,
+     1.638
+    ],
+    [
+     1.638,
+     2.397
+    ]
+   ]
+  },
+  "L16": {
+   "text": "One Friday, I drove there after work and parked three rows behind him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.19,
+   "onset": 0.172,
+   "end": 3.0,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.776,
+     1.19
+    ],
+    [
+     1.19,
+     1.638
+    ],
+    [
+     1.638,
+     2.31
+    ],
+    [
+     2.31,
+     3.0
+    ]
+   ]
+  },
+  "L17": {
+   "text": "The beam came on over the cars, and the screen filled with slow colour.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.138,
+   "onset": 0.172,
+   "end": 2.948,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.819
+    ],
+    [
+     0.819,
+     1.328
+    ],
+    [
+     1.397,
+     1.819
+    ],
+    [
+     1.819,
+     2.164
+    ],
+    [
+     2.164,
+     2.948
+    ]
+   ]
+  },
+  "L18": {
+   "text": "His silhouette of me was as grey as dust.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.992
+    ],
+    [
+     0.992,
+     1.81
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Something stood at the very back, a head taller than the roofs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.19
+    ],
+    [
+     1.259,
+     1.733
+    ],
+    [
+     1.733,
+     2.379
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Only its edges showed, a thin rim and two glints.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.017
+    ],
+    [
+     1.086,
+     1.526
+    ],
+    [
+     1.526,
+     2.293
+    ]
+   ]
+  },
+  "L21": {
+   "text": "No light landed on it at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.19,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.19,
+     0.802
+    ],
+    [
+     0.802,
+     0.94
+    ],
+    [
+     0.94,
+     1.466
+    ]
+   ]
+  },
+  "L22": {
+   "text": "And over its head, there was nothing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.81
+    ],
+    [
+     0.862,
+     1.603
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Next Friday, his silhouette of me was paler still.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.741,
+     1.199
+    ],
+    [
+     1.199,
+     1.422
+    ],
+    [
+     1.422,
+     2.224
+    ]
+   ]
+  },
+  "L24": {
+   "text": "And the tall thing was three rows nearer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.948
+    ],
+    [
+     0.948,
+     1.69
+    ]
+   ]
+  },
+  "L25": {
+   "text": "It stood right in the path of the projector beam.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.008
+    ],
+    [
+     1.008,
+     1.121
+    ],
+    [
+     1.121,
+     2.034
+    ]
+   ]
+  },
+  "L26": {
+   "text": "The light crossed it, and nothing showed on the screen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.828
+    ],
+    [
+     0.879,
+     1.439
+    ],
+    [
+     1.439,
+     2.138
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Not even a shadow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.086
+    ]
+   ]
+  },
+  "L28": {
+   "text": "The Friday after, it was beside the car next to Theo's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.155,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.155,
+     0.828
+    ],
+    [
+     0.854,
+     1.25
+    ],
+    [
+     1.25,
+     1.715
+    ],
+    [
+     1.715,
+     2.431
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Facing his passenger door. The door I used to open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.19
+    ],
+    [
+     1.259,
+     1.638
+    ],
+    [
+     1.638,
+     2.379
+    ]
+   ]
+  },
+  "L30": {
+   "text": "And its glints had turned, toward my car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.862
+    ],
+    [
+     0.914,
+     1.759
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Fourth Friday. His silhouette of me was a faint line in the ring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.828,
+   "onset": 0.172,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.845,
+     1.31
+    ],
+    [
+     1.31,
+     1.586
+    ],
+    [
+     1.586,
+     2.095
+    ],
+    [
+     2.095,
+     2.638
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Halfway through, the reel ran out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.741,
+     1.017
+    ],
+    [
+     1.017,
+     1.603
+    ]
+   ]
+  },
+  "L33": {
+   "text": "The screen faded slowly to black.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.75
+    ],
+    [
+     0.75,
+     1.655
+    ]
+   ]
+  },
+  "L34": {
+   "text": "My speaker box hissed on the window. Then the hiss stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.008
+    ],
+    [
+     1.008,
+     1.448
+    ],
+    [
+     1.534,
+     1.724
+    ],
+    [
+     1.724,
+     2.397
+    ]
+   ]
+  },
+  "L35": {
+   "text": "The beam came back up, slow and silver.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.914
+    ],
+    [
+     0.992,
+     1.931
+    ]
+   ]
+  },
+  "L36": {
+   "text": "It was in Theo's passenger seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     1.586
+    ]
+   ]
+  },
+  "L37": {
+   "text": "My seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.914,
+   "onset": 0.172,
+   "end": 0.707,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Its head was bent against the roof. It didn't fit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.922
+    ],
+    [
+     0.922,
+     1.328
+    ],
+    [
+     1.397,
+     2.103
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Its glints were turned round, through his back window, at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.207
+    ],
+    [
+     1.276,
+     1.5
+    ],
+    [
+     1.5,
+     1.948
+    ],
+    [
+     1.992,
+     2.483
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Theo just kept watching the screen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.621
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Over his head, the gold ring was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.698,
+     1.155
+    ],
+    [
+     1.155,
+     1.862
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I couldn't walk up to his window. I didn't know what I'd say.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.155,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.716
+    ],
+    [
+     0.716,
+     1.19
+    ],
+    [
+     1.276,
+     1.621
+    ],
+    [
+     1.621,
+     2.345
+    ]
+   ]
+  },
+  "L43": {
+   "text": "And a silhouette is only the size of a hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.061
+    ],
+    [
+     1.061,
+     1.388
+    ],
+    [
+     1.388,
+     1.983
+    ]
+   ]
+  },
+  "L44": {
+   "text": "From three rows back, he'd never even seen mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.897
+    ],
+    [
+     0.922,
+     1.371
+    ],
+    [
+     1.371,
+     2.103
+    ]
+   ]
+  },
+  "L45": {
+   "text": "But at a drive-in, everybody looks at the same one thing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.776
+    ],
+    [
+     0.845,
+     1.371
+    ],
+    [
+     1.371,
+     1.69
+    ],
+    [
+     1.69,
+     2.362
+    ]
+   ]
+  },
+  "L46": {
+   "text": "I got out and walked into the beam.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.026
+    ],
+    [
+     1.026,
+     1.603
+    ]
+   ]
+  },
+  "L47": {
+   "text": "My shadow went up the screen as tall as a house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.052
+    ],
+    [
+     1.052,
+     1.422
+    ],
+    [
+     1.422,
+     1.983
+    ]
+   ]
+  },
+  "L48": {
+   "text": "And over its head, in a ring as wide as a barn door, my silhouette.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.155,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.862
+    ],
+    [
+     0.931,
+     1.224
+    ],
+    [
+     1.224,
+     1.629
+    ],
+    [
+     1.629,
+     2.103
+    ],
+    [
+     2.129,
+     2.879
+    ]
+   ]
+  },
+  "L49": {
+   "text": "It had a cap on. And a tuft of hair sticking up out the back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.155,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.879
+    ],
+    [
+     0.948,
+     1.267
+    ],
+    [
+     1.267,
+     1.733
+    ],
+    [
+     1.733,
+     1.939
+    ],
+    [
+     1.939,
+     2.466
+    ]
+   ]
+  },
+  "L50": {
+   "text": "It was theo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.155,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.155,
+     0.897
+    ]
+   ]
+  },
+  "L51": {
+   "text": "I'd worn his old cap so long, I forgot whose it was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.879
+    ],
+    [
+     0.879,
+     1.31
+    ],
+    [
+     1.379,
+     1.828
+    ],
+    [
+     1.828,
+     2.414
+    ]
+   ]
+  },
+  "L52": {
+   "text": "Every late Friday at my desk, I'd been missing the man I married.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.172,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     1.362
+    ],
+    [
+     1.448,
+     1.87
+    ],
+    [
+     1.87,
+     2.129
+    ],
+    [
+     2.129,
+     2.793
+    ]
+   ]
+  },
+  "L53": {
+   "text": "The one I missed most was parked three rows ahead.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.914
+    ],
+    [
+     0.914,
+     1.328
+    ],
+    [
+     1.328,
+     2.052
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Nobody honked. The whole drive-in just looked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.19,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.19,
+     0.741
+    ],
+    [
+     0.81,
+     1.362
+    ],
+    [
+     1.362,
+     2.034
+    ]
+   ]
+  },
+  "L55": {
+   "text": "Then Theo's car door swung open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.603
+    ]
+   ]
+  },
+  "L56": {
+   "text": "He walked into the beam and stood right beside me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.966
+    ],
+    [
+     0.966,
+     1.362
+    ],
+    [
+     1.362,
+     2.103
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Over his giant shadow, his ring filled in, darker than in years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.172,
+   "end": 2.897,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.966
+    ],
+    [
+     1.017,
+     1.353
+    ],
+    [
+     1.353,
+     1.776
+    ],
+    [
+     1.845,
+     2.207
+    ],
+    [
+     2.207,
+     2.897
+    ]
+   ]
+  },
+  "L58": {
+   "text": "two shadows as big as houses, and over each of them, the other one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.052,
+   "onset": 0.172,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.983
+    ],
+    [
+     0.983,
+     1.793
+    ],
+    [
+     1.793,
+     2.121
+    ],
+    [
+     2.146,
+     2.862
+    ]
+   ]
+  },
+  "L59": {
+   "text": "Up on the screen, we turned to face each other.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.776
+    ],
+    [
+     0.828,
+     1.19
+    ],
+    [
+     1.19,
+     2.0
+    ]
+   ]
+  },
+  "L60": {
+   "text": "Back at his car, the passenger seat was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.759
+    ],
+    [
+     0.784,
+     1.337
+    ],
+    [
+     1.337,
+     2.034
+    ]
+   ]
+  },
+  "L61": {
+   "text": "I got in, and it was just the two of us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     0.897
+    ],
+    [
+     0.897,
+     1.276
+    ],
+    [
+     1.276,
+     1.776
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Theo slid the popcorn over without looking, like he used to.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.077
+    ],
+    [
+     1.077,
+     1.621
+    ],
+    [
+     1.672,
+     1.879
+    ],
+    [
+     1.879,
+     2.31
+    ]
+   ]
+  },
+  "L63": {
+   "text": "I've left work at five every Friday since.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.147
+    ],
+    [
+     1.147,
+     1.966
+    ]
+   ]
+  },
+  "L64": {
+   "text": "In this town, your silhouette shows who you miss.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.061
+    ],
+    [
+     1.061,
+     1.362
+    ],
+    [
+     1.362,
+     1.931
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Mine wears his cap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.19,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     1.121
+    ]
+   ]
+  }
+ }
+}
