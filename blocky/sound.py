@@ -168,6 +168,11 @@ def _pulse(dur):
     return synth.thump(min(dur, 0.35), 90.0, 40.0)
 
 
+def _tick(seed=0):
+    """Opt-in score voice "tick" (ep23): one soft wooden tick, like an old stage clock."""
+    return synth.click(0.03, 1500.0, seed) * 0.9
+
+
 def _blip(f, dur=0.16):
     """A bubbling note: a short sine that drops in pitch as it starts, like a drop into water. Not a pluck."""
     t = np.arange(synth.n_samples(dur)) / SR
@@ -249,6 +254,8 @@ def score(tl: dict, spec: dict) -> np.ndarray:
             steps = int(round(seg / beat))
             for q in range(steps):
                 tq = t + q * beat
+                if "tick" in voices:   # opt-in (ep23): a soft wooden tick on every beat
+                    put(_tick(q), tq, 0.35 + 0.2 * e)
                 if "pulse" in voices and (q % 2 == 0 or e > 0.7):
                     put(_pulse(beat), tq, 0.5 + 0.4 * e)
                 if "musicbox" in voices and rng.random() < 0.35 + 0.5 * e:
@@ -593,9 +600,24 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
+    if kind == "clap":   # opt-in (ep23): one hand clap in an empty hall, a short room tail after it
+        return _clap(dur, seed)
     if kind == "silence":
         return np.zeros(1)
     raise ValueError(f"no sfx {kind!r}")
+
+
+def _clap(dur: float, seed: int) -> np.ndarray:
+    """A single clap: three close noise bursts (the palms), then a dark room tail that keeps going for `dur`."""
+    d = max(dur, 0.8)
+    y = np.zeros(synth.n_samples(d))
+    for k, (t0, g) in enumerate(((0.0, 1.0), (0.011, 0.7), (0.021, 0.45))):
+        b = fft_filter(synth.noise(0.09, seed + k), "band", 900, 3800) * synth.decay(0.09, 0.016, 0.0006)[: synth.n_samples(0.09)]
+        i = int(t0 * SR)
+        y[i:i + len(b)] += b * g
+    tail = fft_filter(synth.noise(d, seed + 9), "band", 300, 1800) * synth.decay(d, d / 3.2, 0.012)[: len(y)]
+    y += tail * 0.3
+    return y / max(1e-9, np.abs(y).max()) * 0.9
 
 
 def _crackle(dur: float, seed: int, rate: float, lo: float, hi: float) -> np.ndarray:
