@@ -49,12 +49,12 @@ LOOKS = {
     # Dad's empty room, moonlight in the window
     "dadroom": _L(sun=0.0, sky="#202845", sky_str=0.12, dadroom=1.0, hall=0.5, myshadow=0.0),
     # the course at midnight: cool moon, the lamp post on, string lights off
-    "midnight": _L(sun=0.0, moon=2.0, sky="#202c52", sky_str=0.35, lamp=1.0, strings=0.0, fill=0.0),
+    "midnight": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, lamp=1.0, strings=0.0, fill=0.0),
     "kitchen": _L(sun=0.0, sky="#26304f", sky_str=0.18, kitchen=1.0, myshadow=0.0),
     "dawn": _L(sun=3.0, sun_col="#b8ccff", el=14, az=100, fill=0.6, sky="#9db4e8", sky_str=0.7, hall=0.7),
     "dawn2": _L(sun=3.8, sun_col="#ffd8b0", el=16, az=100, fill=0.7, sky="#c0c4e4", sky_str=0.8, hall=0.0),
-    "win_lit": _L(sun=0.0, moon=2.0, sky="#202c52", sky_str=0.35, win=1.0, lamp=0.0),
-    "win_dark": _L(sun=0.0, moon=2.0, sky="#202c52", sky_str=0.35, win=0.0, lamp=0.0),
+    "win_lit": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, win=1.0, lamp=0.0),
+    "win_dark": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, win=0.0, lamp=0.0),
     # Friday and Saturday dusk: low gold sun, sinking
     "dusk": _L(sun=3.8, sun_col="#ffc070", el=17, az=-78, fill=0.45, sky="#8a78a8", sky_str=0.6, lamp=0.5),
     "dusk2": _L(sun=3.2, sun_col="#ff9e5a", el=13, az=-78, fill=0.3, sky="#6b5a8a", sky_str=0.55, lamp=0.8, rim=1.0),
@@ -567,11 +567,12 @@ def build(kit, story, tl):
     kit.box("lamparm", (0.3, 0.06, 0.06), (lx - 0.1, ly, 3.0), iron)
     # string lights round the last hole's fence: bulbs on the fence line, fading on by cue
     W["bulbs"] = []
+    W["bulb_objs"] = []
     for i, (sx, sy) in enumerate([(x, 31.2) for x in (-3.0, -1.5, 0.0, 1.5, 3.0)] +
                                  [(x1 + 0.5, y) for y in (21, 23, 25, 27, 29)] +
                                  [(x0 - 0.5, y) for y in (21, 23, 25, 27, 29)]):
         mat = kit.emit("#ffc070", 0.0, f"bulb{i}")
-        kit.sphere(f"bulb{i}", 0.06, (sx, sy, 2.2), mat, seg=8)
+        W["bulb_objs"].append(kit.sphere(f"bulb{i}", 0.06, (sx, sy, 2.2), mat, seg=8))
         W["bulbs"].append(mat)
     # last-hole fence (appears Friday): panels round the lot, with the gap by the tees
     W["lastfence"] = []
@@ -801,15 +802,17 @@ def animate(kit, story, tl, t, ctx):
     gains["rim"] = look["rim"] * 160.0
     gains["bed"] = look["bed"] * 140.0
     gains["hall"] = look["hall"] * 110.0
-    gains["dadroom"] = look["dadroom"] * 140.0
-    gains["hallB"] = look["dadroom"] * 40.0
-    gains["kitchen"] = look["kitchen"] * 140.0
+    gains["dadroom"] = look["dadroom"] * 320.0
+    gains["hallB"] = look["dadroom"] * 90.0
+    gains["kitchen"] = look["kitchen"] * 220.0
     # the world
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*look["sky"], 1.0)
     bg.inputs["Strength"].default_value = look["sky_str"]
     # string bulbs glow
+    for ob in W["bulb_objs"]:
+        ob.hide_render = look["strings"] < 0.02
     for m in W["bulbs"]:
         for n in m.node_tree.nodes:
             if n.type == "EMISSION":

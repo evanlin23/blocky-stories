@@ -19,7 +19,7 @@
   "fog_start": 14.0,
   "sky": "#9bb6d8",
   "sky_strength": 1.0,
-  "exposure": 0.0,
+  "exposure": 0.35,
   "flash_safe": true
  },
  "grade": {
@@ -3048,16 +3048,16 @@
     [
      0,
      [
-      147.8,
-      26.4,
+      148.4,
+      26.5,
       1.4
      ],
      [
-      149.2,
+      149.1,
       28.3,
       1.0
      ],
-     24,
+     22,
      0.0
     ]
    ],
@@ -3505,14 +3505,14 @@
      [
       3.6,
       19.9,
-      1.0
+      1.3
      ],
      [
       0.9,
       19.9,
-      1.0
+      1.15
      ],
-     30,
+     20,
      0.0
     ]
    ],
@@ -3569,16 +3569,16 @@
     [
      0,
      [
-      9.5,
-      14.0,
-      1.8
+      3.0,
+      8.0,
+      4.6
      ],
      [
-      -3.5,
-      23.0,
+      -3.0,
+      21.0,
       1.8
      ],
-     20,
+     22,
      0.0
     ]
    ],
@@ -3591,9 +3591,9 @@
     [
      0,
      [
-      6.0,
-      23.0,
-      0.35
+      3.5,
+      23.5,
+      0.4
      ],
      [
       0.9,
@@ -4548,7 +4548,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L12",
@@ -4578,7 +4578,7 @@
      5.7,
      25.6
     ],
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L20",
@@ -4919,7 +4919,7 @@
      -1.0,
      26.0
     ],
-    "expr": "grin",
+    "expr": "soft",
     "yaw": 50
    },
    {
@@ -5023,7 +5023,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin",
+    "expr": "soft",
     "arms": [
      0,
      0
@@ -5056,7 +5056,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L74",
@@ -5110,7 +5110,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": -90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L11",
@@ -5122,7 +5122,7 @@
      0,
      150
     ],
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L12",
@@ -5134,7 +5134,7 @@
      0,
      0
     ],
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L16",
@@ -5421,7 +5421,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 120,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L69",
@@ -5439,7 +5439,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L69.3",
@@ -5468,7 +5468,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 0,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L71",
@@ -5486,7 +5486,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 0,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L73",
@@ -5508,7 +5508,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": -90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L74",
@@ -5562,7 +5562,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -5620,7 +5620,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -5652,7 +5652,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 0,
-    "expr": "grin",
+    "expr": "soft",
     "arms": [
      0,
      150
@@ -5678,7 +5678,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -5906,7 +5906,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -5928,7 +5928,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L73",
@@ -5988,7 +5988,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L71",
@@ -6006,7 +6006,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 20,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -6028,7 +6028,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": -90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L73",
@@ -6130,7 +6130,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -6152,7 +6152,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": -90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L73",
@@ -6212,7 +6212,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L71",
@@ -6230,7 +6230,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 20,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -6301,7 +6301,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -6333,7 +6333,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin",
+    "expr": "soft",
     "arms": [
      0,
      100
@@ -6359,7 +6359,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L71",
@@ -6377,7 +6377,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 20,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -6409,7 +6409,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",
@@ -6441,7 +6441,7 @@
     "blend": 0.0,
     "hidden": false,
     "yaw": 20,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L72",

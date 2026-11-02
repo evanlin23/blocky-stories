@@ -258,7 +258,7 @@ shot("L02.2", mv([0.0, -9.0, 12.0], [0.0, -28.0, 0.0], 28, [0.0, -10.0, 11.5], [
 hide("c3", "L03")
 hide("c4", "L03")
 hide("c5", "L03")
-put("c6", "L03", [-7.9, -21.0], 180, expr="grin", arms=[0, 100])
+put("c6", "L03", [-7.9, -21.0], 180, expr="soft", arms=[0, 100])
 sit("c6", "L03", True, 0.06)
 obj("fig_str", 0, [-7.0, -21.0, 0.0], 90)
 shot("L03", mv([-7.7, -17.9, 1.0], [-7.9, -21.0, 0.75], 34))
@@ -273,7 +273,7 @@ shot("L04.2", mv([-18.6, -2.3, 1.45], [-22.1, -2.0, 1.35], 30))
 # L05, L06
 hide("gordon", "L05")
 hide("gordon_wife", "L05")
-put("footballer", "L05", [34.0, -18.7], 0, expr="grin", arms=[0, 150])
+put("footballer", "L05", [34.0, -18.7], 0, expr="soft", arms=[0, 150])
 obj("fig_ft", 0, [34.0, -25.6, 0.0], 0)
 obj("fig_ft", "L06+0.5", hide=True)
 obj("fig_ft2", "L06+0.5", [34.0, -25.6, 0.0], 0)
@@ -292,7 +292,7 @@ shot("L08", mv([-6.0, -21.4, 1.4], [-6.0, -24.0, 1.32], 38))
 
 # ===== 02 the last week (L09 to L22): the course in warm sun
 hide("me", "L09")
-put("dad", "L09.1", [2.9, 1.7], -90, expr="grin")
+put("dad", "L09.1", [2.9, 1.7], -90, expr="soft")
 shot("L09", mv([-5.5, -5.5, 1.7], [1.5, 6.0, 2.4], 24, [-5.0, -5.2, 1.7], [1.5, 6.0, 2.4], 24))
 shot("L09.1", mv([0.2, 0.2, 1.7], [2.9, 1.7, 1.65], 40))
 put("builder_a", "L10", [-7.6, 1.9], 90, expr="neutral", arms=[40, 40])
@@ -300,14 +300,14 @@ obj("survey", "L10", [-6.9, 1.9, 0.0])
 shot("L10", mv([-5.2, -1.6, 1.4], [-7.3, 1.9, 0.9], 35))
 obj("survey", "L11", hide=True)
 hide("builder_a", "L11")
-put("me", "L11", [0.0, -0.8], 180, expr="grin")
-hold("dad", "L11", arms=[0, 150], expr="grin")
+put("me", "L11", [0.0, -0.8], 180, expr="soft")
+hold("dad", "L11", arms=[0, 150], expr="soft")
 shot("L11", mv([-3.0, -3.6, 1.6], [1.3, 0.8, 1.4], 26))
 # L12: builders lift a mesh panel; high wide with three holes fenced
 hide("me", "L12")
 put("builder_a", "L12", [-9.2, 1.9], 180, arms=[100, 100], expr="neutral")
 put("builder_b", "L12", [-10.8, 1.9], 180, arms=[100, 100], expr="neutral")
-hold("dad", "L12", arms=[0, 0], expr="grin")
+hold("dad", "L12", arms=[0, 0], expr="soft")
 obj("panel_a", "L12", [-10.0, 2.45, 0.0], 0)
 cue("L12", "fenced", n=1)
 shot("L12", mv([-7.4, -0.6, 1.6], [-10.0, 2.2, 1.2], 28))
@@ -354,7 +354,7 @@ shot("L17", mv([1.8, 22.2, 1.25], [4.2, 24.3, 0.8], 30))
 put("me", "L18", [5.7, 25.6], -90, expr="neutral")
 shot("L18", mv([7.8, 22.0, 1.5], [5.7, 25.4, 1.4], 30))
 shot("L19", mv([2.6, 27.5, 1.1], [2.6, 25.6, 0.05], 40))
-hold("me", "L19.1", expr="grin")
+hold("me", "L19.1", expr="soft")
 shot("L19.1", mv([4.4, 21.9, 1.4], [4.4, 24.3, 1.4], 45))
 # L20: the sails turn backwards
 hide("me", "L20")
@@ -411,7 +411,7 @@ shot("L31.2", mv([-2.0, 19.9, 1.55], [-2.0, 17.6, 1.5], 38))
 look("L32", "kitchen", 0.5)
 put("me", "L32", [cx - 1.0, cy + 0.2], 90, expr="worried")
 sit("me", "L32", True, 0.46)
-shot("L32", mv([cx - 2.2, cy - 1.6, 1.4], [cx - 0.8, cy + 0.3, 1.0], 24))
+shot("L32", mv([cx - 1.6, cy - 1.5, 1.4], [cx - 0.9, cy + 0.3, 1.0], 22))
 # L33: the front door opens onto dawn
 hide("me", "L33")
 sit("me", "L33", False)
@@ -482,11 +482,11 @@ shot("L43", mv([0.2, 17.2, 1.2], [0.9, 19.9, 0.95], 28))
 shot("L44", mv([0.0, 16.3, 1.1], [0.0, 19.9, 1.0], 20))
 shot("L45", mv([1.3, 17.9, 0.15], [0.9, 19.9, 0.35], 28, [1.2, 17.9, 0.5], [0.9, 19.9, 1.65], 28))
 shot("L46", mv([0.9, 18.7, 0.35], [0.9, 19.9, 0.1], 36))
-shot("L47", mv([3.6, 19.9, 1.0], [0.9, 19.9, 1.0], 30))
+shot("L47", mv([3.6, 19.9, 1.3], [0.9, 19.9, 1.15], 20))
 shot("L47.2", mv([1.9, 19.2, 1.3], [0.9, 19.9, 1.3], 55))
 shot("L48", mv([0.5, 17.4, 1.6], [0.9, 19.9, 1.6], 32))
-shot("L49", mv([9.5, 14.0, 1.8], [-3.5, 23.0, 1.8], 20))
-shot("L50", mv([6.0, 23.0, 0.35], [0.9, 19.9, 0.5], 24))
+shot("L49", mv([3.0, 8.0, 4.6], [-3.0, 21.0, 1.8], 22))
+shot("L50", mv([3.5, 23.5, 0.4], [0.9, 19.9, 0.5], 24))
 # L51: the string lights fade on
 look("L51", "dusk_str", 1.5)
 hold("dad", "L51", arms=[40, 40])
@@ -529,7 +529,7 @@ put("me", "L61.2", [-1.0, 26.0], 90, expr="worried")
 shot("L61.2", mv([2.9, 22.2, 1.4], [2.9, 25.6, 1.3], 34, [2.9, 23.3, 1.4], [2.9, 25.6, 1.3], 34))
 put("dad", "L62", [0.9, 25.6], -90, expr="neutral")
 shot("L62", mv([-0.1, 22.4, 1.2], [-0.1, 25.8, 0.8], 30))
-hold("me", "L63", expr="grin", yaw=50)
+hold("me", "L63", expr="soft", yaw=50)
 shot("L63", mv([0.8, 23.2, 1.55], [-1.0, 26.0, 1.5], 34))
 # L64: Thursday night under my window, then the pavement shadows
 hide("me", "L64")
@@ -567,12 +567,12 @@ obj("putter2", "L68", [0.39, 19.95, 0.0])
 obj("ball2", "L68", [0.9, 20.7, 0.125])
 obj("ball2", "L68+0.35", [0.9, 23.4, 0.125], dur=1.4)
 shot("L68", mv([-1.4, 18.4, 1.0], [0.9, 20.0, 0.5], 30))
-put("dad", "L68.1", [G.TEE_L[0], 19.95], 120, expr="grin")
+put("dad", "L68.1", [G.TEE_L[0], 19.95], 120, expr="soft")
 shot("L68.1", mv([0.0, 17.9, 1.4], [0.0, 19.9, 1.35], 24))
 # L69: the last hole together
-put("dad", "L69", [-0.8, 23.0], 180, expr="grin")
+put("dad", "L69", [-0.8, 23.0], 180, expr="soft")
 walk("dad", "L69.2", [-0.6, 25.8])
-put("me", "L69", [0.8, 23.0], 180, expr="grin", arms=[0, 0])
+put("me", "L69", [0.8, 23.0], 180, expr="soft", arms=[0, 0])
 walk("me", "L69.2", [0.6, 25.8])
 obj("putter2", "L69", hide=True)
 obj("ball1", "L69", [-0.9, 24.5, 0.125])
@@ -591,8 +591,8 @@ cue("L70", "fenced", n=0)
 cue("L70", "gate", open=1.0, dur=1.0)
 cue("L70", "sails", rate=10.0)
 for i, who in enumerate(["c1", "c2", "c3", "c4", "c5", "c6"]):
-    put(who, "L70", [-3.5 + i * 1.4, -2.6 - (i % 2) * 0.8], 180, expr="grin" if i % 2 else "neutral")
-put("dad", "L70", [1.9, 0.9], 0, expr="grin")
+    put(who, "L70", [-3.5 + i * 1.4, -2.6 - (i % 2) * 0.8], 180, expr="soft" if i % 2 else "neutral")
+put("dad", "L70", [1.9, 0.9], 0, expr="soft")
 for i in range(1, 7):
     obj(f"fig_v{i}", "L70", [SIT_X[i - 1], -0.5, 0.01], 180)
 shot("L70", mv([-1.0, -7.0, 1.6], [0.0, 0.8, 1.3], 24))
@@ -600,11 +600,11 @@ shot("L70", mv([-1.0, -7.0, 1.6], [0.0, 0.8, 1.3], 24))
 spots = {"c1": (-9.6, 5.0), "c2": (-5.6, 10.4), "c3": (6.4, 4.6), "c4": (9.8, 10.2), "c5": (-3.6, 15.0),
          "c6": (0.2, 14.8), "c7": (4.0, 14.6), "c8": (8.2, 14.2)}
 for who, (x, y) in spots.items():
-    put(who, "L71", [x, y], 180 if who in ("c1", "c3", "c5", "c7") else 20, expr="grin")
-put("gordon", "L71", [-2.5, 4.8], 90, expr="grin")
-put("gordon_wife", "L71", [-1.6, 4.9], 90, expr="grin")
-put("footballer", "L71", [-7.0, 23.5], 90, expr="grin")
-put("dad", "L71", [1.9, 0.9], 0, expr="grin")
+    put(who, "L71", [x, y], 180 if who in ("c1", "c3", "c5", "c7") else 20, expr="soft")
+put("gordon", "L71", [-2.5, 4.8], 90, expr="soft")
+put("gordon_wife", "L71", [-1.6, 4.9], 90, expr="soft")
+put("footballer", "L71", [-7.0, 23.5], 90, expr="soft")
+put("dad", "L71", [1.9, 0.9], 0, expr="soft")
 shot("L71", mv([0.0, -5.0, 12.0], [0.0, 16.0, 0.0], 26))
 # L72: the shadows slide back in
 for who in ("c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "gordon", "gordon_wife", "footballer"):
@@ -613,9 +613,9 @@ INSIDE = {1: (-6.5, 6.4), 2: (-3.0, 11.0), 3: (3.0, 6.0), 4: (7.0, 11.2), 5: (-2
 for i in range(1, 7):
     obj(f"fig_v{i}", "L72+0.05", [INSIDE[i][0], INSIDE[i][1], 0.03], 180, dur=1.6)
 shot("L72", mv([0.6, -3.2, 0.7], [0.0, 0.0, 0.3], 28))
-put("c1", "L72.2", [INSIDE[1][0] - 1.0, INSIDE[1][1] - 0.4], 90, expr="grin")
-put("c3", "L72.2", [INSIDE[3][0] + 1.0, INSIDE[3][1] - 0.4], -90, expr="grin")
-put("c2", "L72.2", [INSIDE[2][0] + 1.1, INSIDE[2][1]], -90, expr="grin")
+put("c1", "L72.2", [INSIDE[1][0] - 1.0, INSIDE[1][1] - 0.4], 90, expr="soft")
+put("c3", "L72.2", [INSIDE[3][0] + 1.0, INSIDE[3][1] - 0.4], -90, expr="soft")
+put("c2", "L72.2", [INSIDE[2][0] + 1.1, INSIDE[2][1]], -90, expr="soft")
 shot("L72.2", mv([-4.0, 8.5, 0.6], [-1.0, 8.2, 0.3], 28))
 # L73: Dad's shadow runs from my feet to his
 look("L73", "gold", 0.8)
@@ -623,8 +623,8 @@ for who in ("c1", "c2", "c3", "dad"):
     hide(who, "L73")
 for i in range(1, 7):
     obj(f"fig_v{i}", "L73", hide=True)
-put("dad", "L73", [0.9, 25.6], -90, expr="grin")
-put("me", "L73", [-1.0, 26.0], 90, expr="grin")
+put("dad", "L73", [0.9, 25.6], -90, expr="soft")
+put("me", "L73", [-1.0, 26.0], 90, expr="soft")
 shot("L73", mv([-0.1, 21.8, 1.3], [-0.1, 25.8, 0.9], 28))
 shot("L73.2", mv([0.0, 22.0, 4.6], [0.0, 26.0, 0.0], 26))
 # L74 to L76: late gold, the bun shadow alone, then the cold line
@@ -725,7 +725,7 @@ story = {
     "gap": 0.12,
     "tail": 0.25,
     "look": {"fog": "#8c88a8", "fog_density": 0.012, "fog_start": 14.0, "sky": "#9bb6d8", "sky_strength": 1.0,
-             "exposure": 0.0, "flash_safe": True},
+             "exposure": 0.35, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.04, 0.015, -0.03], "saturation": 1.0, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.012, "red_line": 0.79},
     "phonemes": {},
