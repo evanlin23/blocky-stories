@@ -165,7 +165,7 @@ def tag_image():
 
 def materials(kit):
     M = {}
-    M["tile"] = kit.checker(CREAM, "#3b3a38", 1.6, name="arcade tile", rough=0.5)
+    M["tile"] = kit.checker("#d6cab2", "#5a5855", 1.6, name="arcade tile", rough=0.5)
     M["stone"] = pbr(kit, "stone", CREAM, 0.9)
     M["stone_d"] = pbr(kit, "stone dark", "#b9ad94", 0.9)
     M["green"] = pbr(kit, "bottle green", GREEN, 0.45, spec=0.5)
@@ -528,8 +528,8 @@ def build_shop(kit, M, ctx):
     # the fitting room: a partition, the hook, the curtain on its rail
     B(kit, "fit partition", (1.8, 0.07, CEIL), (-15.1, -0.87, CEIL / 2), M["plaster"])
     B(kit, "fit floor", (1.7, 1.7, 0.01), (-15.15, -1.75, 0.012), M["oak_x"])
-    B(kit, "fit hook plate", (0.03, 0.12, 0.2), (SHOP_X0 + 0.02, HANG_AT[1], 2.0), M["brass"])
-    B(kit, "fit hook", (0.2, 0.03, 0.03), (SHOP_X0 + 0.12, HANG_AT[1], 2.0), M["brass"])
+    B(kit, "fit hook plate", (0.03, 0.12, 0.2), (SHOP_X0 + 0.02, HANG_AT[1], 2.2), M["brass"])
+    B(kit, "fit hook", (0.2, 0.03, 0.03), (SHOP_X0 + 0.12, HANG_AT[1], 2.2), M["brass"])
     B(kit, "curtain rail", (0.04, 1.75, 0.04), (CURTAIN_X, -1.73, 2.5), M["brass"])
     cur = kit.empty("curtain", (CURTAIN_X, -2.58, 0))     # gathered toward y = -2.6 when open (scale y)
     ctx["curtain"] = cur
@@ -538,7 +538,7 @@ def build_shop(kit, M, ctx):
         B(kit, f"fold{k}", (0.07 + d, 1.72 / 9 + 0.01, 2.3), ((d / 2), 0.1 + k * 1.72 / 9 + 0.0, 1.35), M["ochre"], cur)
         kit.cyl(f"ring{k}", 0.04, 0.012, (0, 0.1 + k * 1.72 / 9, 2.5), M["brass"], cur, n=10, rot=(math.radians(90), 0, 0))
     # the hanger: a wooden hanger on the hook (shown while the suit hangs; swings a little at L43)
-    hang = kit.empty("hanger", (SHOP_X0 + 0.32, HANG_AT[1], 2.0))
+    hang = kit.empty("hanger", (SHOP_X0 + 0.32, HANG_AT[1], 2.2))
     ctx["hanger"] = hang
     B(kit, "hanger.bar", (0.04, 0.6, 0.035), (0.0, 0.0, -0.3), M["oak"], hang)
     B(kit, "hanger.a", (0.04, 0.4, 0.035), (0.0, -0.15, -0.14), M["oak"], hang, rot=(math.radians(35), 0, 0))
@@ -600,11 +600,11 @@ def build_shop(kit, M, ctx):
     ctx["lights"] = {}
     L = kit.light("sun", "SUN", (14, 8, 16), 3.2, "#ffe2a8", size=0.08)
     kit.aim(L, (0, 0, 0))
-    L = kit.light("sun_eve", "SUN", (16, -3, 7), 1.3, "#ffb064", size=0.1)
+    L = kit.light("sun_eve", "SUN", (16, -3, 7), 1.0, "#ffd8a8", size=0.1)
     kit.aim(L, (0, 0, 0))
     L = kit.light("shop_front", "AREA", (-4.7, -0.5, 2.5), 260.0, "#fff1d6", size=3.0)
     kit.aim(L, (-9.5, 0.2, 1.0))
-    L = kit.light("shop_front_eve", "AREA", (-4.7, -0.5, 2.5), 140.0, "#ffb15e", size=3.0)
+    L = kit.light("shop_front_eve", "AREA", (-4.7, -0.5, 2.5), 110.0, "#ffd9a8", size=3.0)
     kit.aim(L, (-9.5, 0.2, 1.0))
     L = kit.light("shop_mid", "POINT", (-9.0, 0.5, 2.9), 240.0, "#ffe6bf", size=0.5)
     L = kit.light("shop_work", "POINT", (-12.6, 0.0, 2.9), 220.0, "#ffe6bf", size=0.5)
@@ -614,7 +614,7 @@ def build_shop(kit, M, ctx):
     L = kit.light("stair_spill", "POINT", (-15.4, 2.2, 2.3), 160.0, "#ffbd78", size=0.2)
     L = kit.light("fit_light", "POINT", (-14.8, -1.7, 2.6), 160.0, "#dfe6f0", size=0.2)
     kit.light("porch", "POINT", (-4.9, 1.2, 2.5), 160.0, "#ffd29a", size=0.2)
-    L = kit.light("tally", "SPOT", (-10.9, 0.1, 0.9), 90.0, "#ffc890", spot=50, blend=0.5, size=0.05)
+    L = kit.light("tally", "SPOT", (-10.9, 0.1, 0.9), 60.0, "#fff0e0", spot=50, blend=0.5, size=0.05)
     kit.aim(L, (FOOT[0], FOOT[1], 0.15))
     L = kit.light("arcade_fill", "AREA", (0, -6, 4.8), 500.0, "#e8f0ff", size=6.0)
     kit.aim(L, (0, -6, 0))
@@ -731,7 +731,7 @@ def tube_mesh(kit, name, r_out, r_in, z0, h_back, dip, mat_out, mat_in, parent, 
 
 
 def build_empty(kit, M, ctx):
-    sc = S * 1.05
+    sc = S * 1.2
     root = kit.empty("empty", (0, 0, 0))
     root.scale = (sc, sc, sc)
     e = {"root": root}
@@ -755,16 +755,18 @@ def build_empty(kit, M, ctx):
         kit.box(f"empty.cuffb{sx}", (1.02, 1.04, 0.16), (0, 0, -1.67), M["pin_arm"], arm, bevel=0.04)
         kit.box(f"empty.cuffin{sx}", (0.72, 0.72, 0.02), (0, 0, -1.76), M["void"], arm)
         arms.append(arm)
-    # the open collar: a deep tube with nothing in it, black to the bottom, two small glints far down
+    # the head is a tall raised collar: an open tube (black inside) with a dark gape on its front and two glints in it
     neck = kit.empty("empty.neck", (0, 0, 2.0), torso)
-    tube_mesh(kit, "empty.collar", 0.56, 0.45, 0.0, 1.0, 0.0, M["shirt"], M["lining"], neck)
-    tube_mesh(kit, "empty.void", 0.46, 0.42, -0.02, 1.0, 0.0, M["void"], M["void"], neck)
-    floor_ = kit.cyl("empty.voidfloor", 0.47, 0.02, (0, 0, 0.03), M["void"], neck, n=24)
+    tube_mesh(kit, "empty.collar", 0.62, 0.52, 0.0, 1.35, 0.0, M["shirt"], M["lining"], neck)
+    tube_mesh(kit, "empty.void", 0.53, 0.5, -0.02, 1.34, 0.0, M["void"], M["void"], neck)
+    floor_ = kit.cyl("empty.voidfloor", 0.54, 0.02, (0, 0, 0.03), M["void"], neck, n=24)
+    gape = kit.sphere("empty.gape", 1.0, (0, -0.60, 0.66), M["void"], neck, seg=16)
+    gape.scale = (0.3, 0.05, 0.5)
     glints = []
-    gm = kit.emit("#f4f0e2", 10.0, name="glint")
+    gm = kit.emit("#f4f0e2", 12.0, name="glint")
     for sx in (-1, 1):
-        glints.append(kit.sphere(f"empty.glint{sx}", 0.04, (sx * 0.15, 0.0, 0.1), gm, neck, seg=10))
-    e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=glints + [floor_], glints=glints)
+        glints.append(kit.sphere(f"empty.glint{sx}", 0.045, (sx * 0.13, -0.655, 0.8), gm, neck, seg=10))
+    e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=glints + [floor_, gape], glints=glints)
     ctx["empty"] = e
 
 
@@ -1015,7 +1017,7 @@ MODES = {
              "shop_work": 0.6, "passage": 0.8, "stair_spill": 0.5, "fit_light": 1.0, "arcade_fill": 0.5, "cafe_in": 0.8},
     "friday": {"world": (0.85, "#d4e4f4"), "sun": 1.0, "sun_eve": 0, "shop_front": 1.0, "shop_front_eve": 0, "shop_mid": 0.5,
                "shop_work": 0.3, "passage": 0.55, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 1.0, "cafe_in": 1.0},
-    "eve": {"tally": 1.0, "world": (0.55, "#f0c890"), "sun": 0, "sun_eve": 1.0, "shop_front": 0, "shop_front_eve": 1.0, "shop_mid": 0.35,
+    "eve": {"tally": 1.0, "world": (0.5, "#e6d6c0"), "sun": 0, "sun_eve": 1.0, "shop_front": 0, "shop_front_eve": 1.0, "shop_mid": 0.35,
             "shop_work": 0.25, "passage": 0.3, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 0.5, "cafe_in": 1.0},
     "sat": {"world": (0.95, "#dbe9f6"), "sun": 1.0, "sun_eve": 0, "shop_front": 1.0, "shop_front_eve": 0, "shop_mid": 0.55,
             "shop_work": 0.5, "passage": 0.35, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 1.0, "cafe_in": 1.0},

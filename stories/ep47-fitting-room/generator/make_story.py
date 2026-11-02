@@ -177,9 +177,9 @@ SHOTS = [
     ("L45.2", "his collar, another", 2, still((-6.3, -0.8, 1.6), (UN[0], UN[1], 1.5), 60)),
     ("L46", "tags to his chin", 2, still((-5.9, -0.6, 1.55), (UN[0], UN[1], 1.5), 45)),
     ("L47", "something standing", 1, move(((-8.6, 0.3, 1.65), (-12.6, 2.6, 1.2)), ((-8.9, 0.4, 1.65), (-12.6, 2.7, 1.2)), 26)),
-    ("L48", "it's the suit", 1, still((-9.4, 2.5, 1.5), (EM[0], EM[1], 1.35), 40)),
-    ("L49", "standing, nobody inside", 1, still((-10.4, 2.2, 0.7), (EM[0], EM[1], 1.0), 34)),
-    ("L50", "the open collar", 1, still((-12.6, 2.45, 2.25), (EM[0], EM[1], 1.5), 48)),
+    ("L48", "it's the suit", 1, still((-9.4, 2.5, 1.5), (EM[0], EM[1], 1.6), 40)),
+    ("L49", "standing, nobody inside", 1, still((-10.4, 2.2, 0.7), (EM[0], EM[1], 1.2), 36)),
+    ("L50", "the open collar", 1, still((-12.0, 1.4, 1.6), (EM[0], EM[1], 1.7), 40)),
     ("L51", "wide: both of us bare", 1, still((-7.4, 0.2, 1.55), (-12.0, 1.8, 1.3), 32)),
     ("L52", "sleeves lift", 1, still((-10.6, 1.4, 1.5), (EM[0], 2.3, 1.2), 40)),
     ("L52.3", "the space between its cuffs", 1, still((-11.6, 1.0, 1.4), (EM[0], 2.1, 1.1), 45)),
@@ -209,7 +209,8 @@ SHOTS = [
     ("L68.1", "the tally on the foot", 2, move(((-10.7, -0.1, 0.4), (FOOT[0], FOOT[1], 0.13)), ((-10.9, 0.05, 0.35), (FOOT[0], FOOT[1], 0.13)), 45)),
     ("L69.1", "two aprons", 2, still((-13.0, -0.3, 1.5), (-15.9, -0.3, 1.3), 34)),
     ("L69.3", "turn the sign", 2, still((-6.0, 1.9, 1.6), (-4.3, 1.9, 1.7), 40)),
-    ("L70", "Saturday, push in", 2, move(((0.4, 7.0, 1.6), (0, -20, 1.9)), ((-1.5, -0.2, 1.45), (-4.9, -0.4, 1.45)), 26, 34)),
+    ("L70", "Saturday, the arcade", 2, still((0.4, 7.0, 1.6), (0, -20, 1.9), 26)),
+    ("L70.2", "our shop window", 2, still((-1.5, -0.2, 1.45), (-4.9, -0.4, 1.45), 34)),
     ("L71", "me at my bench", 2, still((-12.6, 0.2, 1.6), (ST[0], ST[1], 1.45), 44)),
     ("L72", "the fitting room, empty", 2, still((-11.0, -0.9, 1.55), (-15.4, -1.75, 1.3), 30)),
     ("L73", "my sleeve", 4, still((-12.0, 0.2, 1.45), (-12.5, ST[1], 1.25), 40)),
@@ -490,10 +491,10 @@ cue("L31", "empty", pose="hang", pos=[-15.55, -1.75], yaw=90)
 cue("L43", "empty", hidden=True)
 cue("L47", "empty", pose="stand", pos=list(EM), yaw=90)
 cue("L52", "empty", pose="sleeves_up", pos=list(EM), yaw=0)
-cue("L53", "empty", pose="lean", pos=list(EM), yaw=0, lean=12, tilt=22)
-cue("L53.2", "empty", pose="lean", pos=list(EM), yaw=0, lean=24, tilt=40)
-cue("L53.3", "empty", pose="lean", pos=list(EM), yaw=0, lean=35, tilt=58)
-cue("L62", "empty", pose="lean", pos=list(EM), yaw=0, lean=35, tilt=58)
+cue("L53", "empty", pose="lean", pos=list(EM), yaw=0, lean=12)
+cue("L53.2", "empty", pose="lean", pos=list(EM), yaw=0, lean=24)
+cue("L53.3", "empty", pose="lean", pos=list(EM), yaw=0, lean=40)
+cue("L62", "empty", pose="lean", pos=list(EM), yaw=0, lean=40)
 cue("L62.2", "empty", pose="heap", pos=[-11.35, 1.75], yaw=-40)
 cue("L63", "empty", hidden=True)
 cue(0, "hanger", on=False)
@@ -545,7 +546,9 @@ sfx = [
     {"at": "L01+1.0", "kind": "click", "db": -26},
     {"at": "L03.2+0.5", "kind": "click", "db": -26},
     {"at": "L05.2+0.1", "kind": "whoosh", "db": -30, "dur": 1.0},
-    {"at": "L06+0.2", "kind": "bubble", "db": -24},
+    {"at": "L06+0.2", "kind": "clap", "db": -22},
+    {"at": "L06+0.55", "kind": "clap", "db": -22},
+    {"at": "L06+0.9", "kind": "clap", "db": -22},
     {"at": "L19.3+0.25", "kind": "click", "db": -26},
     {"at": "L22+0.5", "kind": "bell", "db": -22},
     {"at": "L28", "kind": "click", "db": -16},
