@@ -394,34 +394,34 @@
    ]
   },
   "L15": {
-   "text": "by wednesday, one shadow is left inside, on the last green.",
+   "text": "before long, one shadow is left inside, on the last green.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.879,
-   "onset": 0.172,
-   "end": 2.69,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.707,
    "chunks": [
     [
-     0.172,
-     0.569
+     0.155,
+     0.552
     ],
     [
-     0.603,
-     1.103
+     0.586,
+     1.069
     ],
     [
-     1.103,
-     1.724
+     1.069,
+     1.707
     ],
     [
-     1.776,
+     1.759,
      1.914
     ],
     [
      1.914,
-     2.69
+     2.707
     ]
    ]
   },

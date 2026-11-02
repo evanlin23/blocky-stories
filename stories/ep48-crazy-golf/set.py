@@ -34,7 +34,7 @@ def noshadow(ob):
 def _L(**kw):
     base = dict(sun=0.0, sun_col="#ffe2b0", el=20.0, az=-70.0, fill=0.0, sky="#9bb6d8", sky_str=0.5, moon=0.0,
                 lamp=0.0, strings=0.0, rim=0.0, bed=0.0, hall=0.0, dadroom=0.0, kitchen=0.0, win=0.0, myshadow=1.0,
-                tee=0.0)
+                tee=0.0, bfill=0.0)
     base.update(kw)
     return base
 
@@ -53,8 +53,8 @@ LOOKS = {
     "kitchen": _L(sun=0.0, sky="#26304f", sky_str=0.18, kitchen=1.0, myshadow=0.0),
     "dawn": _L(sun=3.0, sun_col="#b8ccff", el=14, az=100, fill=0.6, sky="#9db4e8", sky_str=0.7, hall=0.7),
     "dawn2": _L(sun=3.8, sun_col="#ffd8b0", el=16, az=100, fill=0.7, sky="#c0c4e4", sky_str=0.8, hall=0.0),
-    "win_lit": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, win=1.0, lamp=0.0),
-    "win_dark": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, win=0.0, lamp=0.0),
+    "win_lit": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, win=0.3, lamp=0.0, bfill=1.0),
+    "win_dark": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, win=0.0, lamp=0.0, bfill=1.0),
     # Friday and Saturday dusk: low gold sun, sinking
     "dusk": _L(sun=3.8, sun_col="#ffc070", el=17, az=-78, fill=0.45, sky="#8a78a8", sky_str=0.6, lamp=0.5),
     "dusk2": _L(sun=3.2, sun_col="#ff9e5a", el=13, az=-78, fill=0.3, sky="#6b5a8a", sky_str=0.55, lamp=0.8, rim=1.0),
@@ -78,7 +78,8 @@ def look_at(tl, t):
             break
         prev = cur
         cur = LOOKS[c["id"]]
-        dur = max(0.35, c.get("dur", 0.5))        # house bar: no switch faster than 0.3 s
+        dur = c.get("dur", 0.5)
+        dur = 0.0 if dur <= 0 else max(0.35, dur)    # house bar: no switch faster than 0.3 s, unless set on a cut
         if t < c["t"] + dur:
             u = ss((t - c["t"]) / dur)
             out = {}
@@ -241,26 +242,36 @@ def bench(kit, name, loc, yaw, mat, wood):
 
 def putter(kit, name, mat_shaft, mat_head):
     e = kit.empty(name, (0, 0, -50))
-    kit.box(f"{name}.shaft", (0.025, 0.025, 0.95), (0, 0, 0.475), mat_shaft, e, bevel=0.008)
-    kit.box(f"{name}.head", (0.06, 0.17, 0.045), (0, -0.06, 0.02), mat_head, e, bevel=0.01)
+    kit.box(f"{name}.shaft", (0.04, 0.04, 0.95), (0, 0, 0.475), mat_shaft, e, bevel=0.01)
+    kit.box(f"{name}.grip", (0.06, 0.06, 0.28), (0, 0, 0.82), mat_head, e, bevel=0.015)
+    kit.box(f"{name}.head", (0.09, 0.26, 0.07), (0, -0.09, 0.035), mat_head, e, bevel=0.015)
     noshadow_off = None  # (putters are objects: they cast ordinary shadows)
     return e
 
 
 # ---------------------------------------------------------------------------------------------- flat shadows
 HEAD_R = 0.21
+SH_COL = "#2f3a4a"          # the scripted shadow colour
+SH_ALPHA = 0.55             # about 55% opacity
+SH_BLUR = 0.06              # edge blur, metres
+SH_PPM = 160                # texture pixels per metre
+SH_X = (-1.0, 1.0)          # the texture plane's extent in the figure's own frame
+SH_Y = (-0.55, 2.35)
+_SH_IMG = {}
 
 
 def _parts(pose):
     """Boxes (cx, cy, w, h, rot_deg) of a person lying flat on the ground, feet at y = 0, head toward +y, plus
     the head circle's centre. R6 sizes: torso 0.68 wide, limbs 0.34, head 0.42 across."""
     P = []
-    if pose in ("stand", "lie", "wave"):
+    if pose in ("stand", "lie", "wave", "wave1"):
         P += [(-0.17, 0.34, 0.34, 0.68, 0), (0.17, 0.34, 0.34, 0.68, 0)]           # legs
         P += [(0.0, 1.02, 0.68, 0.68, 0)]                                            # torso
         P += [(-0.51, 1.02, 0.34, 0.68, 0)]                                          # arms
         if pose == "wave":
-            P += [(0.82, 1.18, 0.34, 0.68, -52)]
+            P += [(0.74, 1.40, 0.34, 0.80, -38)]                                     # the arm raised and out
+        elif pose == "wave1":
+            P += [(0.70, 1.10, 0.34, 0.80, -75)]                                     # the arm just lifting
         else:
             P += [(0.51, 1.02, 0.34, 0.68, 0)]
         head = (0.0, 1.57)
@@ -278,22 +289,87 @@ def _parts(pose):
     return P, head
 
 
-def flat_fig(kit, name, pose="stand", bun=False, scale=1.0):
-    """A flat soft-edged silhouette: three stacked layers, each a little bigger and fainter. Returns its empty."""
-    e = kit.empty(name, (0, 0, -50))
+def _shadow_image(pose, bun):
+    """One flat silhouette drawn with PIL, blurred, as an in-memory RGBA image (alpha = the shadow)."""
+    key = (pose, bun)
+    if key in _SH_IMG:
+        return _SH_IMG[key]
+    import numpy as np
+    from PIL import Image, ImageDraw, ImageFilter
+    w = int((SH_X[1] - SH_X[0]) * SH_PPM)
+    h = int((SH_Y[1] - SH_Y[0]) * SH_PPM)
+    im = Image.new("L", (w, h), 0)
+    dr = ImageDraw.Draw(im)
+
+    def px(x, y):
+        return ((x - SH_X[0]) * SH_PPM, (SH_Y[1] - y) * SH_PPM)
+
     parts, head = _parts(pose)
-    grow = [0.07, 0.035, 0.0]
-    alpha = [0.14, 0.17, 0.22]
-    for L in range(3):
-        m = shadow_mat(kit, alpha[L], f"shadow{L}")
-        z = 0.012 + 0.003 * L
-        g = grow[L]
-        for i, (cx, cy, w, h, rot) in enumerate(parts):
-            kit.box(f"{name}.p{L}{i}", (w + 2 * g, h + 2 * g, 0.004), (cx * scale, cy * scale, z), m, e,
-                    rot=(0, 0, rot * D2R))
-        hd = kit.cyl(f"{name}.h{L}", (HEAD_R + g) * scale, 0.004, (head[0] * scale, head[1] * scale, z), m, e, n=20)
-        if bun:
-            kit.cyl(f"{name}.b{L}", (0.11 + g) * scale, 0.004, (0.0, (head[1] + 0.27) * scale, z), m, e, n=14)
+    for (cx, cy, bw, bh, rot) in parts:
+        a = rot * D2R
+        pts = []
+        for (ux, uy) in ((-bw / 2, -bh / 2), (bw / 2, -bh / 2), (bw / 2, bh / 2), (-bw / 2, bh / 2)):
+            pts.append(px(cx + ux * math.cos(a) - uy * math.sin(a), cy + ux * math.sin(a) + uy * math.cos(a)))
+        dr.polygon(pts, fill=255)
+    if pose in ("stand", "lie", "wave", "wave1"):
+        dr.polygon([px(-0.14, 1.3), px(0.14, 1.3), px(0.14, 1.5), px(-0.14, 1.5)], fill=255)      # the neck
+    hx, hy = px(*head)
+    r = HEAD_R * SH_PPM
+    dr.ellipse((hx - r, hy - r, hx + r, hy + r), fill=255)
+    if bun:
+        bx_, by_ = px(0.0, head[1] + 0.32)
+        rb = 0.15 * SH_PPM
+        dr.ellipse((bx_ - rb, by_ - rb, bx_ + rb, by_ + rb), fill=255)
+    im = im.filter(ImageFilter.GaussianBlur(SH_BLUR * SH_PPM * 0.5))
+    import os
+    import tempfile
+    d = Path(tempfile.gettempdir()) / "ep48-shadows"
+    d.mkdir(exist_ok=True)
+    path = d / f"{pose}-{int(bun)}-{SH_PPM}-{int(SH_BLUR * 1000)}.png"
+    if not path.exists():
+        tmp = d / f"{os.getpid()}-{path.name}"
+        im.convert("RGB").save(tmp)
+        os.replace(tmp, path)
+    img = bpy.data.images.load(str(path))
+    img.colorspace_settings.name = "Non-Color"
+    _SH_IMG[key] = img
+    return img
+
+
+def shadow_mat(kit, pose, bun):
+    name = f"shadowtex {pose} {int(bun)}"
+    if name in kit.MATS:
+        return kit.MATS[name]
+    m = kit._new(name)
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    tex = nt.nodes.new("ShaderNodeTexImage")
+    tex.image = _shadow_image(pose, bun)
+    tex.extension = "CLIP"
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    nt.links.new(tc.outputs["Generated"], tex.inputs["Vector"])
+    sc = nt.nodes.new("ShaderNodeMath")
+    sc.operation = "MULTIPLY"
+    sc.inputs[1].default_value = SH_ALPHA
+    nt.links.new(tex.outputs["Color"], sc.inputs[0])      # a grey ramp; the mask is the red channel
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Color"].default_value = kit.col(SH_COL)
+    em.inputs["Strength"].default_value = 1.0
+    mix = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(sc.outputs[0], mix.inputs[0])
+    nt.links.new(tr.outputs[0], mix.inputs[1])
+    nt.links.new(em.outputs[0], mix.inputs[2])
+    kit._fogged(m, mix.outputs[0])
+    return m
+
+
+def flat_fig(kit, name, pose="stand", bun=False, scale=1.0):
+    """A flat soft-edged silhouette on one textured plane (colour #2f3a4a, 55%, 6 cm blur). Returns its empty."""
+    e = kit.empty(name, (0, 0, -50))
+    m = shadow_mat(kit, pose, bun)
+    pl = kit.plane(f"{name}.p", (SH_X[1] - SH_X[0], SH_Y[1] - SH_Y[0]),
+                   ((SH_X[0] + SH_X[1]) / 2, (SH_Y[0] + SH_Y[1]) / 2, 0.012), m, e)
     for c in [e] + list(e.children_recursive):
         if hasattr(c, "visible_shadow"):
             c.visible_shadow = False
@@ -309,10 +385,10 @@ class Wrung:
         white = kit.plastic("#d4d0c4", 0.75, spec=0.1)
         green = kit.plastic("#3f7d6a", 0.75, spec=0.1)
         pants = kit.plastic("#3a7664", 0.8, spec=0.05)
-        black = kit.plastic("#050507", 0.2, spec=0.6)
+        black = kit.plastic("#08080a", 0.95, spec=0.0)
         hi = kit.emit("#ffffff", 22.0, "wrung eye light")
         self.root = kit.empty("wrung", (0, 0, -50))
-        self.root.scale = (1.15, 1.15, 1.15)      # clearly taller than the cast (about 2.2 m)
+        self.root.scale = (1.3, 1.3, 1.3)      # clearly taller than the cast (about 2.5 m)
         r = self.root
         for sx in (-1, 1):
             kit.box(f"wrung.leg{sx}", (0.22, 0.24, 0.74), (sx * 0.13, 0, 0.39), pants, r, bevel=0.025)
@@ -325,18 +401,19 @@ class Wrung:
         kit.box("wrung.chestb", (0.56, 0.3, 0.38), (0, 0, 0.19), white, self.chest, bevel=0.03)
         self._stripes(kit, self.chest, 0.56, 0.3, 0.38, 0.19, green)
         self.shoulders = kit.empty("wrung.shoulders", (0, 0, 0.38), self.chest)
-        kit.box("wrung.neckb", (0.13, 0.13, 0.16), (0, 0, 0.06), white, self.shoulders, bevel=0.02)
+        kit.box("wrung.neckb", (0.3, 0.26, 0.26), (0, 0, 0.05), white, self.shoulders, bevel=0.03)
+        kit.box("wrung.yoke", (0.84, 0.3, 0.12), (0, 0, -0.04), white, self.shoulders, bevel=0.03)
         for sx in (-1, 1):
             kit.box(f"wrung.arm{sx}", (0.2, 0.2, 0.96), (sx * 0.44, 0, -0.48), white, self.shoulders, bevel=0.025)
             kit.box(f"wrung.armg{sx}", (0.04, 0.21, 0.96), (sx * (0.44 + (0.1 if sx > 0 else -0.1)), 0, -0.48),
                     green, self.shoulders, bevel=0.005)
             kit.box(f"wrung.hand{sx}", (0.19, 0.19, 0.1), (sx * 0.44, 0, -1.0), white, self.shoulders, bevel=0.03)
-        self.head = kit.empty("wrung.head", (0, 0, 0.14), self.shoulders)
+        self.head = kit.empty("wrung.head", (0, 0, 0.1), self.shoulders)
         kit.box("wrung.headb", (0.34, 0.34, 0.44), (0, 0, 0.22), white, self.head, bevel=0.08, seg=3)
         for sx in (-1, 1):
-            e = kit.sphere(f"wrung.eye{sx}", 0.05, (sx * 0.085, -0.165, 0.24), black, self.head, seg=14)
-            e.scale = (1.0, 0.5, 1.9)
-            kit.sphere(f"wrung.hi{sx}", 0.012, (sx * 0.085 + 0.012, -0.192, 0.285), hi, self.head, seg=8)
+            e = kit.sphere(f"wrung.eye{sx}", 0.034, (sx * 0.085, -0.165, 0.24), black, self.head, seg=14)
+            e.scale = (1.0, 0.4, 1.5)
+            kit.sphere(f"wrung.hi{sx}", 0.008, (sx * 0.085 + 0.01, -0.184, 0.265), hi, self.head, seg=8)
             kit.box(f"wrung.brow{sx}", (0.1, 0.012, 0.014), (sx * 0.085, -0.172, 0.39), black, self.head, bevel=0.004)
         noshadow(self.root)
 
@@ -346,16 +423,25 @@ class Wrung:
         for k, y in enumerate((-d * 0.25, d * 0.25)):
             kit.box(f"{parent.name}.ss{k}", (w + 0.012, 0.07, h + 0.004), (0, y, z), mat, parent, bevel=0.004)
 
+    # absolute turns (degrees) of hips, chest, shoulders and head at wring 180 and at 360; never 90 or 180
+    T180 = (25.0, 55.0, 110.0, 160.0)
+    T360 = (55.0, 120.0, 235.0, 345.0)
+
     def pose(self, pos, yaw, wring, lean=(0.0, 0.0), hidden=False, head_extra=0.0):
         r = self.root
         r.location = (pos[0], pos[1], 0.0 if not hidden else -50)
         r.rotation_euler = (0, 0, yaw * D2R)
-        w = wring * D2R
-        self.hips.rotation_euler = (0, 0, 0.25 * w)
+        if wring <= 180.0:
+            u = wring / 180.0
+            a = [v * u for v in self.T180]
+        else:
+            u = (wring - 180.0) / 180.0
+            a = [p + (q - p) * u for p, q in zip(self.T180, self.T360)]
+        self.hips.rotation_euler = (0, 0, a[0] * D2R)
         self.lean.rotation_euler = (lean[0] * D2R, lean[1] * D2R, 0.0)
-        self.chest.rotation_euler = (0, 0, 0.5 * w)
-        self.shoulders.rotation_euler = (0, 0, 0.25 * w)
-        self.head.rotation_euler = (0, 0, 0.25 * w + head_extra * D2R)
+        self.chest.rotation_euler = (0, 0, a[1] * D2R)
+        self.shoulders.rotation_euler = (0, 0, (a[2] - a[1]) * D2R)
+        self.head.rotation_euler = (0, 0, (a[3] - a[2]) * D2R + head_extra * D2R)
 
 
 # ---------------------------------------------------------------------------------------------- the world
@@ -402,7 +488,9 @@ def build(kit, story, tl):
     kit.light("bed", "POINT", (ax - 1.0, ay + 0.8, 1.5), 1.0, "#ffbb70", size=0.2)
     kit.light("hall", "POINT", (G.HOUSE[0], G.HOUSE[1] + 2.0, 2.2), 1.0, "#ffc890", size=0.3)
     kit.light("dadroom", "POINT", (bx + 1.2, by + 1.6, 1.8), 1.0, "#9ab4ff", size=0.3)
-    kit.light("hallB", "POINT", (bx, by - 2.4, 2.2), 1.0, "#9ab4ff", size=0.3)
+    kit.light("hallB", "POINT", (bx - 0.3, by - 0.9, 1.9), 1.0, "#9ab4ff", size=0.3, shadow=False)
+    kit.light("bfill", "POINT", (G.BENCH_HOUSE[0] + 1.2, G.BENCH_HOUSE[1] - 2.2, 1.9), 1.0, "#ffd0a0", size=0.4,
+              shadow=False)
     kit.light("kitchen", "POINT", (cx, cy, 2.2), 1.0, "#ffbf80", size=0.2)
 
     # ------------------------------------------------------------------------------------ ground
@@ -411,7 +499,7 @@ def build(kit, story, tl):
     kit.plane("road", (200, 6.0), (0, -9.0, 0.005), asphalt)
     kit.plane("kerb", (80, 0.3), (0, -6.05, 0.04), plastic("#8c8f92", 0.7))
     kit.plane("course", (28.0, 33.0), (0, 16.0, 0.02), turf)
-    kit.plane("yard", (28.0, 4.0), (0, 1.5, 0.025), worn)     # worn ground by the gate
+    kit.plane("yard", (28.0, 4.0), (0, 1.5, 0.03), worn)     # worn ground by the gate
 
     # railings along y = 0 with the gate gap at -1.3..1.3
     for side, (x0, x1) in (("w", (-13.6, -1.3)), ("e", (1.3, 13.6))):
@@ -597,11 +685,11 @@ def build(kit, story, tl):
     for nm in ("putter1", "putter2", "putter3"):
         W["props"][nm] = putter(kit, nm, plastic("#b8bcc0", 0.3, spec=0.8), plastic("#3a3d44", 0.4))
     fl = kit.empty("flask", (0, 0, -50))
-    kit.cyl("flask.b", 0.05, 0.16, (0, 0, 0.08), kit.metal("#b8bcc0", 0.3), fl, n=12)
-    kit.cyl("flask.n", 0.025, 0.03, (0, 0, 0.175), kit.metal("#b8bcc0", 0.3), fl, n=10)
+    kit.cyl("flask.b", 0.07, 0.22, (0, 0, 0.11), plastic("#b8433c", 0.35, spec=0.4), fl, n=14)
+    kit.cyl("flask.n", 0.035, 0.05, (0, 0, 0.245), kit.metal("#b8bcc0", 0.3), fl, n=10)
     W["props"]["flask"] = fl
     fll = kit.empty("flask_lid", (0, 0, -50))
-    kit.cyl("flask.lid", 0.03, 0.03, (0, 0, 0.015), plastic("#2a2a30", 0.5), fll, n=10)
+    kit.cyl("flask.lid", 0.045, 0.04, (0, 0, 0.02), plastic("#2a2a30", 0.5), fll, n=10)
     W["props"]["flask_lid"] = fll
     for nm in ("ball1", "ball2", "ball3"):
         b = kit.sphere(nm, 0.045, (0, 0, -50), plastic("#fafafa", 0.35, spec=0.7), seg=10)
@@ -803,9 +891,10 @@ def animate(kit, story, tl, t, ctx):
     gains["rim"] = look["rim"] * 160.0
     gains["bed"] = look["bed"] * 140.0
     gains["hall"] = look["hall"] * 110.0
-    gains["dadroom"] = look["dadroom"] * 320.0
-    gains["hallB"] = look["dadroom"] * 90.0
+    gains["dadroom"] = look["dadroom"] * 520.0
+    gains["hallB"] = look["dadroom"] * 200.0
     gains["kitchen"] = look["kitchen"] * 220.0
+    gains["bfill"] = look["bfill"] * 60.0
     # the world
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
@@ -889,7 +978,7 @@ def animate(kit, story, tl, t, ctx):
     if shown:
         away = Vector((-d.x, -d.y, 0)).normalized() if (d.x or d.y) else Vector((0, -1, 0))
         ang = math.atan2(away.x, -away.y)           # rotate the +y-pointing figure to point along `away`
-        ms.location = (st["x"], st["y"], st["z"])
+        ms.location = (st["x"], st["y"], st["z"] + _ground(st["x"], st["y"]))
         ms.rotation_euler = (0, 0, math.atan2(-away.x, away.y))
         ms.scale = (1.0, 1.0, 1.0)
     else:
@@ -915,6 +1004,28 @@ def animate(kit, story, tl, t, ctx):
                 if leg:
                     leg.rotation_euler = (-math.pi / 2 * 0.97, 0, 0)
     return gains
+
+
+def _ground(x, y):
+    """Height of the ground under (x, y): the last green's turf, the small greens, the course, the yard, the pavement."""
+    if G.LAST["x0"] - 0.1 <= x <= G.LAST["x1"] + 0.1 and G.LAST["y0"] - 0.1 <= y <= G.LAST["y1"] + 0.1:
+        return 0.085
+    for _n, hx, hy in G.HOLES:
+        if abs(x - hx) < 1.7 and abs(y - hy) < 1.7:
+            return 0.08
+    if -14 <= x <= 14 and 3.5 <= y <= 32.5:
+        return 0.02
+    if -14 <= x <= 14 and -0.5 < y < 3.5:
+        return 0.03
+    if -6.0 <= y <= 0.0 and abs(x) < 40:
+        return 0.01
+    if pitch_hit(x, y):
+        return 0.02
+    return 0.0
+
+
+def pitch_hit(x, y):
+    return abs(x - G.PITCH[0]) < 12 and abs(y - G.PITCH[1]) < 7
 
 
 def _gate(tl, t):
