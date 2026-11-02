@@ -161,9 +161,19 @@ def asr(wav: Path, timeline: Path) -> int:
 SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # British and American spellings
 # homophones: the same sound, and Whisper picks the spelling from the words around it ("under the bulb threw"), so
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
-HOMOPHONES = {"threw": "through"}
+# homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
+# (ep17), Wren said "ren" (ep20)
+HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
+              "wren": "ren", "wrens": "rens"}
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
+
+
+def _under100(n: int) -> str:
+    tens = {2: "twenty", 3: "thirty", 4: "forty", 5: "fifty", 6: "sixty", 7: "seventy", 8: "eighty", 9: "ninety"}
+    if n in NUMBERS:
+        return NUMBERS[n]
+    return tens[n // 10] + (NUMBERS[n % 10] if n % 10 else "")
 
 
 def same_spoken(script: str, heard: str) -> bool:
@@ -175,6 +185,9 @@ def same_spoken(script: str, heard: str) -> bool:
         for w in t.split():
             w = w.replace("'", "")
             w = NUMBERS.get(int(w), w) if w.isdigit() and int(w) in NUMBERS else w
+            if w.isdigit() and 100 <= int(w) < 1000:   # "112" as "a hundred and twelve" (ep14)
+                h, r = divmod(int(w), 100)
+                w = ("a" if h == 1 else NUMBERS.get(h, str(h))) + "hundred" + ("and" + _under100(r) if r else "")
             w = SPELLINGS.get(w, w)
             out.append(HOMOPHONES.get(w, w))
         return "".join(out)

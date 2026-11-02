@@ -11,7 +11,10 @@ The writer takes the next ideas from here, and adds new ones. When a story is ma
 
 The premise and twist of each are in its `story.json`; `check` compares every new story against them.
 
-## Next (batch 2 pitches, 2026-10-31)
+## In production here (batch 2, moved from evanlin23/content on 2026-11-02)
+Begun in the old repo and moved here to finish: `stories/floor-thirteen` (ep14, script, brief and creature only), `stories/mirror-maze` (ep15, story.json and voice, shots not planned yet), `stories/lookout` (ep16, built and voiced) and `stories/moving-day` (ep17, built, voiced, stills made). Their pitches stay below for the record. Never pitch these settings, creatures or kinds of warmth again.
+
+## Batch 2 pitches (2026-10-31)
 Four stories for PandaNanoAdventures. The writer reads all four so none drifts into another's lane.
 
 ## Same in every story
