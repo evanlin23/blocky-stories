@@ -30,6 +30,13 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
   7. **The twist is planted early and the last line echoes the first** (as above).
   8. **The first 2 s read clearly on a phone:** lit to read, the rule and a face in frame. Darkness and fog come after the hook.
   9. **Cut often:** a new shot every 1.2 to 2.3 s on average (`check` warns over 2.3 s).
+- **The creepy lane** (`docs/research/2026-11-02-creepy-lane-notes.md`: the 10 most-viewed creepy rule Shorts, 5.7M to 16.4M views, against 2 flops):
+  - **Wonder first, then the turn.** The rule's opening image is odd or funny, not scary. The first real scare lands about a quarter to two-fifths in (about 35 to 55 s for us), usually the first person taken. Before that, the montage can be played for laughs.
+  - **Show the creature little and late:** shadows, sounds and **what it leaves behind** ("Only the cone was left") until about 55 to 70% through, then clearly. It's tall and slow, leans in face to face, and never chases. That's our "never seen moving, only closer", now with a timing. Taken means gone, never shown hurt (hard rule 2).
+  - **Light it so it reads when it's shown.** A creature too dark to make out was one flop's problem. The other flop never showed it at all.
+  - **Keep the warm turn, but end on a sting.** Most hits resolve warm, then the last line bites: a horror loop back to the first line, or a short in-voice threat. Our loop-back last line does this. Make the final beat land cold.
+  - **The music builds:** thin at first, then a heavy low drone enters at the first taking and holds to the end. A short drop before a reveal is still fine. The flops never built.
+  - **Avoid the genre's tired template.** Viewers now call out "we moved in, nobody told us the rule, the mayor sends him to the square at midnight". Never use a newcomer-to-town opener, a mayor, or a midnight square summons. Our rule-breaker and our stakes are personal.
 - **Our own numbers so far** (ep11, `docs/research/2026-11-02-our-channel-analysis.md`): 82.6% stayed to watch and the average view was 84% of 2:18. The hook and the length work. Reach is held back by shares (3) and comments (7), so the pin question and loophole-worthy rules matter. The one dip, 0:18 to 0:26, was a character explaining the rule. **Seconds 15 to 30 escalate or show the rule at work; nobody explains it.**
 - **What we keep from the owner's own calls** (the research doesn't override them): the same R6 body type, the 2:15 to 2:30 length (owner, 2026-11-01: "keep a similar length target"; YouTube's narrated hits run 54 to 162 s, so we're on the long side and `metrics` will tell), our one narrator voice and our two-or-three-word captions with a key colour (YouTube's hits mostly use phrase blocks with a coloured key word too). And no child narrators: the hits often use one, but a teen or an adult looking back is our line, because kid-styled videos with mature themes get removed.
 - **Telling:** about 290 wpm while speaking, one short sentence per beat, a new shot on almost every beat. Every line is `who: narrator`, and characters are quoted inside the narration ("He looked at me and said, "Six.""). Nobody gets a voice of their own (owner, 2026-10-30).
@@ -68,12 +75,13 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
 
 ## Packaging (`stories/<story>/package.json`)
 ```json
-{"title": "...", "description": "...", "pin": "...", "made_for_kids": false}
+{"title": "...", "description": "...", "pin": "...", "made_for_kids": false, "cover_s": 107.0}
 ```
 - **Title:** under 100 characters, by the rules above.
 - **Description:** two or three short paragraphs. It sets up the story without spoiling it, says "It's made up.", and can say it's "built with code and Blender". The upload adds the measured flashing line on top by itself. Never: game or toy names, true, real, based on, kid, teen, child, baby, school, AI voice, no AI, made by hand, Kokoro, another franchise's monster.
 - **Title:** state the world's rule, the way the hits do ("In this town, everyone has a price"). It's a statement, never an imperative, and it never spoils the twist.
 - **Pin:** a question the viewer answers about themselves under the rule ("How many lies would your number show?"), or one about a detail planted early ("would you have sat back there?"). The owner posts it as their own first comment and pins it: on YouTube, the creator's own question sits in the top comments of 8 of the 15 Shorts studied.
+- **Cover (`cover_s`):** the second of the frame that becomes the thumbnail. Pick the creature or the rule marker clearly lit, with a face if possible and the caption tying back to the title (ep20: 1:47, "stood in the MIDDLE."). Without it, the render picks 78% of the way in. The upload issue shows the cover, and the owner picks that moment in the YouTube app.
 - No hashtags or tags for now. Altered or synthetic content: No (it's animated fiction).
 
 ## Budget and craft
