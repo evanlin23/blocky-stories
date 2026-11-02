@@ -1570,26 +1570,30 @@
    ]
   },
   "L60": {
-   "text": "his last load sat finished in the end machine.",
+   "text": "his wash from night three sat in the end machine.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.259,
+   "dur": 2.224,
    "onset": 0.155,
-   "end": 2.069,
+   "end": 2.034,
    "chunks": [
     [
      0.155,
-     0.75
+     0.483
     ],
     [
-     0.75,
-     1.199
+     0.483,
+     0.992
     ],
     [
-     1.199,
-     2.069
+     0.992,
+     1.31
+    ],
+    [
+     1.31,
+     2.034
     ]
    ]
   },

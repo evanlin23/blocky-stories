@@ -45,11 +45,12 @@ BLUE, ORANGE, GREEN = "#3f7fd0", "#e2742b", "#2f5d43"
 TUBE_STRENGTH = 3.0
 TUBE_W = 62.0
 EYE_GLOW = 3.2
-NECK_LEN = 1.5                               # a bare neck between its shoulders and the scalp of its upside-down head
-NECK_RISE = 1.5
-TURNED_HEAD_H = faces.HEAD_H * 1.24 + 0.05 + NECK_LEN
-HEAD_ROLL = 150.0                              # degrees: the face hangs upside down
-TIP_BACK = 0.0                                 # degrees extra, before the roll
+# The Turned's head is thrown back over the chair back: pitched 150 degrees (past the vertical by 60), so its own
+# front face hangs upside down behind the shoulders, chin up, looking at whoever sits at the table. The pivot (the
+# base of its head) is up and back from its shoulders, so the head clears the torso. No hair shows under the face.
+import os
+HEAD_TILT = float(os.environ.get("WC_TILT", "150"))
+HEAD_P = (0.0, 0.8, 2.95)                      # torso-local units: the head's pivot
 
 
 def _ss(x):
@@ -497,9 +498,23 @@ def dress(kit, ctx, story):
         nt.links.new(ramp.outputs["Color"], bsdf.inputs["Emission Color"])
         bsdf.inputs["Emission Strength"].default_value = EYE_GLOW
         bpy.data.objects["turned.head"].scale = (1.0, 1.0, 1.24)
-        # a bare neck, so the head is plainly on upside down: the neck runs into its HAIR, the chin points at the ceiling
-        B(kit, "turned.neckblock", (0.62, 0.62, NECK_LEN + 0.1), (0, 0, 2.0 + NECK_LEN / 2 + 0.03),
-          kit.plastic("#cdb59c", 0.7, "wc turned neck"), tor, bevel=0.08)
+        skin_t = kit.plastic("#d4cdc0", 0.7, "wc turned neck")
+        # a thick neck bent back from the shoulders to the pivot at the base of the head
+        nl = math.hypot(HEAD_P[1], HEAD_P[2] - 2.0)
+        na = math.atan2(HEAD_P[1], HEAD_P[2] - 2.0)
+        nb = kit.empty("turned.neckvis", (0, 0, 2.0), tor, rot=(-na, 0, 0))
+        B(kit, "turned.neckblock", (0.7, 0.7, nl), (0, 0, nl / 2 - 0.15), skin_t, nb, bevel=0.1)
+        # wrong-way elbows: the forearm bends BACK (the way an elbow can't)
+        ctx["forearm"] = {}
+        for sx in (-1, 1):
+            old = bpy.data.objects[f"turned.skinarm{sx}"]
+            old.hide_render = True
+            old.name = f"turned.skinarm_old{sx}"
+            arm = bpy.data.objects[f"turned.arm{sx}"]
+            B(kit, f"turned.upper{sx}", (0.96, 0.98, 0.55), (0, 0, -0.725), kit.plastic("#d4cdc0", 0.5), arm, bevel=0.08)
+            el = kit.empty(f"turned.elbow{sx}", (0, 0, -0.99), arm)
+            B(kit, f"turned.fore{sx}", (0.96, 0.98, 0.95), (0, 0, -0.42), kit.plastic("#d4cdc0", 0.5), el, bevel=0.08)
+            ctx["forearm"][sx] = el
     if "me" in cast:
         tor = bpy.data.objects["me.torso"]
         g = kit.plastic(cast["me"]["shirt"], 0.9)
@@ -532,12 +547,12 @@ def people(kit, ctx, story, tl, t):
         for ob in ctx["shins"].get(who, []):
             ob.hide_render = not sit
         if who == "turned":
-            # its head hangs over the back of the chair: rolled right round on the neck, so the face on the back of
-            # its head reads upside down (chin to the ceiling, the neat haircut down at the collar)
             nk = bpy.data.objects.get("turned.neck")
             if nk is not None:
-                nk.location = (0, 0, 2.0 + NECK_RISE)
-                nk.rotation_euler = (s["head_pitch"] + math.radians(TIP_BACK), math.radians(HEAD_ROLL), s["head_yaw"])
+                nk.location = HEAD_P
+                nk.rotation_euler = (math.radians(HEAD_TILT) - s["head_pitch"], 0, s["head_yaw"])
+            for sx, el in ctx.get("forearm", {}).items():
+                el.rotation_euler = (math.radians(55), 0, 0)
         tor = bpy.data.objects.get(f"{who}.torso")
         if tor is not None:
             tor.rotation_euler = (math.radians(AC._held(keys, "bend", t, 0.0)), 0, 0)
@@ -571,7 +586,7 @@ def lights_follow_turned(kit, tl, t, over):
     r.location = (x - 0.2, y + 1.6, 1.9)
     kit.aim(r, (x, y - 0.15, 1.35))
     g = float(_ramp(_cues(tl, "tubes"), t, 1.0))
-    over["t key"] = 0.12 + 0.88 * g
+    over["t key"] = (0.12 + 0.88 * g) * 2.2
     over["t rim"] = 0.0          # lit from below only (the tubes' own light does the rest)
 
 

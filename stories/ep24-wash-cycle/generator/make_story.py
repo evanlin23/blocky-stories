@@ -23,7 +23,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 CHX = [round(-3.6 + 1.45 * i, 3) for i in range(6)]
 SIT_Z = -0.045
 STOOL = [-3.6, -2.45, SIT_Z]
-ME_CHEAT = [-3.3, -1.0, -0.62]          # close-ups only: my face a hand's width from its face
+ME_CHEAT = [-3.6, -0.95, -0.64]          # close-ups only: my face a hand's width from its face
 ST = (-40.0, 0.0)
 TOP = 0.19 * 12
 LY = ST[1] + 0.28 * 12 + 1.5
@@ -71,9 +71,9 @@ cast = {
     "arthur": {"age": "adult", "skin": "#e6bc9c", "shirt": "#8c9096", "pattern": "knit", "pattern_c": "#6a6e74",
                "pants": "#5b4331", "shoes": "#43301f", "sleeves": "long", "hair": "cap", "hair_c": "#ecebe6",
                "face": {"eyes": "tired", "brows": True, "ink": "#1a1416", "cheeks": "#eba094"}},
-    "turned": {"age": "adult", "skin": "#cdb59c", "shirt": "#efece4", "pattern": "solid", "pants": "#3f7fd0",
-               "shoes": "#1c1a1c", "sleeves": "short", "hair": "cap", "hair_c": "#3a2618", "width": 1.1,
-               "face": {"eyes": "round", "brows": False, "ink": "#0a0707", "mouth": "line"}},
+    "turned": {"age": "adult", "skin": "#d4cdc0", "shirt": "#efece4", "pattern": "solid", "pants": "#3f7fd0",
+               "shoes": "#1c1a1c", "sleeves": "short", "hair": "none", "hair_c": "#3a2618", "width": 1.1,
+               "face": {"eyes": "tired", "brows": False, "ink": "#0a0707", "mouth": "line"}},
 }
 
 # ---------------------------------------------------------------------------------------------------- shots
@@ -134,7 +134,7 @@ shot("L42", mv([-1.0, -1.2, 1.45], [3.65, -0.1, 1.4], 30, [-0.8, -1.2, 1.45], [3
 shot("L43", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S45 small, far
 shot("L44", front(ME_F, 180, 1.5, 0.0, 34), hand=0.003)                                          # S46 breath
 shot("L45", mv([-4.4, -1.0, 1.4], [3.65, -0.1, 1.2], 20), hand=0)                                # S47 the stutter, one held shot
-shot("L48.3", c([0, [-4.9, -2.1, 1.3], [-3.6, -0.3, 1.2], 33], [1, [-4.85, -2.05, 1.3], [-3.6, -0.3, 1.2], 34.5]), hand=0.002)   # S48 its face an inch from mine (the test still)
+shot("L48.3", c([0, [-1.9, -0.8, 1.15], [-3.5, -0.75, 1.15], 40], [1, [-1.95, -0.8, 1.15], [-3.5, -0.75, 1.15], 41]), hand=0.002)   # S48 its face an inch from mine (the test still)
 shot("L49", c([0, [-3.45, -1.0, 1.5], [-3.6, -0.18, 1.52], 40], [1, [-3.48, -0.96, 1.5], [-3.6, -0.18, 1.52], 42]), hand=0)  # S49 its eyes
 shot("L50", c([0, [-2.1, 0.4, 1.58], [-3.22, -0.92, 1.5], 34], [1, [-2.15, 0.35, 1.58], [-3.22, -0.92, 1.5], 35]), hand=0.002)   # S50 me, frozen
 shot("L51", c([0, [-3.78, -1.85, 1.5], [-3.6, -0.3, 1.45], 32, -3]), hand=0.002)   # S51 its eyes to the coat
@@ -232,7 +232,7 @@ me.jump("L40", STOOL, **P(SIT, expr="worried", head=[0, 18], look=[0, -1.0]))
 me.set("L41", expr="neutral", head=[0, 0], look=[0, 0])
 me.set("L44", expr="worried")
 me.set("L44+0.3", expr="neutral", tremble=0.0)
-me.jump("L48.3", ME_CHEAT, **P(SIT, expr="terrified", tremble=1.6, head=[80, 6], look=[0, 0], arms=[6, 6]))
+me.jump("L48.3", ME_CHEAT, **P(SIT, yaw=0, expr="terrified", tremble=1.6, head=[0, -4], look=[0, 0], arms=[6, 6]))
 me.set("L50", expr="terrified", tremble=0.5)
 me.set("L54", expr="wide", tremble=0.0)
 me.set("L55", hidden=True)
@@ -304,7 +304,7 @@ ar.jump("L76", [2.3, -2.55, 0.0], hidden=True)
 me0.jump("L76", [1.3, -2.55, 0.0], hidden=True)
 
 # --- the Turned: head turned right round (so its face looks at me and the haircut faces the dryers), arms hung back
-TURN = dict(yaw=180, head=[180, 4], arms=[-42, -42], side=[4, 4], expr="terrified", look=[0, 0], sit=True, bend=0,
+TURN = dict(yaw=180, head=[0, 0], arms=[-20, -20], side=[10, 10], expr="neutral", look=[0, 0], sit=True, bend=0,
             lean=0, tremble=0.0)
 tu = Actor(seat(4))
 tu.set(0, pos=seat(4), hidden=True, **TURN)
@@ -313,7 +313,7 @@ tu.jump("L30", seat(3), **TURN)
 tu.jump("L41", seat(3), hidden=True)
 tu.jump("L42", seat(5), hidden=False, **TURN)
 tu.jump("P01+0.3", seat(5), hidden=True)
-tu.jump("L48.3", seat(0), hidden=False, **{**TURN, "lean": 7, "look": [0, 0.0]})
+tu.jump("L48.3", seat(0), hidden=False, **{**TURN, "lean": 7, "look": [0, 0.0], "head": [0, 0]})
 tu.set("L49", look=[0, 0])
 tu.set("L51", look=[0, 1.0])
 tu.set("L52.1", look=[1.0, 0.0])
@@ -426,7 +426,7 @@ story = {
     "hook_lamp_shots": [SID["L72"], SID["L76"]],
     "stair_fill_shots": [SID["L62"], SID["L65"], SID["L68"]],
     "phonemes": {"Arthur": "ˈɑɹθəɹ", "turned": "tˈɜɹnd", "drums": "dɹˈʌmz"},
-    "creature_dim": {"S21": 0.6, "S22": 0.6, "S23": 0.6, "S24": 0.6, "S25": 0.6, "S47": 0.5, "S48": 0.5, "S49": 0.5, "S50": 0.5, "S51": 0.5, "S52": 0.5},
+    "creature_dim": {"S21": 0.6, "S22": 0.6, "S23": 0.6, "S24": 0.6, "S25": 0.6, "S47": 0.2, "S48": 0.5, "S49": 0.5, "S50": 0.5, "S51": 0.5, "S52": 0.5},
     "cast": cast,
     "lines": lines,
     "shots": shots,
