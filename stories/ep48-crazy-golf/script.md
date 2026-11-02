@@ -115,7 +115,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the park lawns and the town in bright late sun.
 - **Shots:** 12. Funny and odd, not scary.
 
-- `L01` narrator: In this TOWN, / your SHADOW stays / wherever you were HAPPIEST.
+- `L01` narrator: In this TOWN, / your SHADOW stays / where you're HAPPIEST.
   - [mid shot, bright sun: me walking toward camera across a park lawn, face large in frame, framed above the knees. Behind me two strollers with nothing under their feet, and on the grass beside them three loose shadows: one sitting, one lying, one standing with nobody there]
   - [low wide across the lawn: people crossing it with no shadows under them, lone shadows dotted over the grass]
 - `L02` narrator: Nobody has a shadow / UNDER them. / They're all / out on the GRASS.
@@ -141,7 +141,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the crazy-golf course across the closing week, late-afternoon to early-evening sun. The rule works and nobody explains it.
 - **Shots:** 21.
 
-- `L09` narrator: Dad has run / the CRAZY GOLF / in the park / for THIRTY years.
+- `L09` narrator: Dad has run / the CRAZY GOLF / in the park / for DECADES.
   - [the iron gate and the cream kiosk, the white windmill behind, pond-green sails turning slowly]
   - [Dad in the kiosk hatch, `smile`, bald head shining a little in the sun]
 - `L10` narrator: It's SOLD. / On SUNDAY, / it becomes a CAR PARK.
@@ -159,18 +159,18 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L15` narrator: By WEDNESDAY, / one shadow is left INSIDE, / on the LAST GREEN.
   - [high wide: seventeen holes fenced. The last green open, and on it one small dark shape]
   - [closer: the shadow sitting on the last green, hugging its knees, its back to us]
-- `L16` narrator: Every EVENING, / Dad putts round ALONE.
+- `L16` narrator: Every EVENING, / Dad putts around ALONE.
   - [Dad on the last green, `neutral`, putting. Tick and roll]
 - `L17` narrator: Then he sits / by that SHADOW / with two PUTTERS / till NINE.
   - [Dad on the pond-green bench beside the green, two putters leaning on the arm, the shadow on the turf at his feet]
 - `L18` narrator: I think / it's HIS.
   - [me at the fence, `neutral`, watching him]
-- `L19` narrator: It has a BUN. / Dad must have had HAIR / back THEN.
+- `L19` narrator: It has a BUN. / Dad must have had / a MOP of HAIR / back THEN.
   - [close, high: the shadow's head on the turf, a clear block bun on top. Plant 1]
   - [Dad's bald head in profile, catching the low sun. Me in the background, `smile`]
-- `L20` narrator: On MONDAY, / the windmill's SAILS / are wound BACKWARDS.
+- `L20` narrator: On MONDAY, / the windmill SAILS / are wound BACKWARDS.
   - [the windmill, its sails creaking slowly round the wrong way, wind sound under them]
-- `L21` narrator: On TUESDAY, / every FLAG / is twisted round its POLE.
+- `L21` narrator: On TUESDAY, / every FLAG / is twisted around its POLE.
   - [close on a pond-green flag wound tight round its pole like a sweet wrapper]
   - [a row of three flags down the course, all wound]
 - `L22` narrator: On WEDNESDAY, / there's a second BALL / in the last CUP.
@@ -196,13 +196,13 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L27` narrator: His FLASK is on the bench, / with the lid OFF.
   - [close on the flask on the bench slats, its lid beside it]
   - [me at the bench, `scared`, looking round]
-- `L28` narrator: Every FLAG on the course / is wrung TIGHT.
+- `L28` narrator: Every FLAG on the course / is wound TIGHT.
   - [high wide in moonlight: every flag on every hole wound to its pole, down the whole course]
 - `L29` narrator: And the shadow / on the green / sits there ALONE.
   - [the bun shadow on the last green, hugging its knees, facing the second tee. Lamp light across it]
-- `L30` narrator: I call his name / at every HOLE.
+- `L30` narrator: I shout his name / at every HOLE.
   - [me walking along the mesh fences, `scared`, calling, moonlit]
-- `L31` narrator: Behind the FENCES, / something CREAKS, / like a CLOTH / being WRUNG.
+- `L31` narrator: Behind the FENCES, / something CREAKS, / like a CLOTH / being TWISTED.
   - [through the mesh: the dark windmill, nothing moving]
   - [my face against the night, `scared`, listening. The creak, slow and fibrous]
 - `L32` narrator: I wait up / in the KITCHEN, / at the BACK.
@@ -221,7 +221,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the course at Friday dusk, then Saturday dusk. The Wrung One is shown clearly from L43.
 - **Shots:** 26.
 
-- `L37` narrator: On FRIDAY, / the fence goes round / the LAST HOLE.
+- `L37` narrator: On FRIDAY, / the fence goes around / the LAST HOLE.
   - [the builders closing the last mesh panel round the last green, clank, low gold sun]
 - `L38` narrator: Dad still squeezes / through the GAP / to PUTT.
   - [Dad edging sideways through a gap between two panels, `neutral`, a putter in each hand]
@@ -243,7 +243,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [mid shot: the Wrung One on the second tee, whole body in frame, side-lit gold, rim from the string lights behind. Wring 180]
 - `L44` narrator: It's standing / on the SECOND tee.
   - [wide: Dad on the left tee, the Wrung One a body's width to his right on the right tee. Dad doesn't look]
-- `L45` narrator: A PERSON, / wrung like a CLOTH.
+- `L45` narrator: A PERSON, / twisted like a CLOTH.
   - [slow tilt up its body, the pond-green stripes spiralling across the blocks]
 - `L46` narrator: Its FEET / face the HOLE.
   - [low close on its feet on the mat, square to the hole]
@@ -258,7 +258,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [low wide: the windmill's long shadow and the flagpole's lie across the turf, and nothing at all under the Wrung One]
 - `L51` narrator: Dad lines up / his PUTT.
   - [Dad over his ball, `neutral`. Behind him the string lights fade on over 1.5 s]
-- `L52` narrator: Each time I BLINK, / it's turned / a little further ROUND.
+- `L52` narrator: Each time I BLINK, / it's turned / a little further AROUND.
   - [the Wrung One from the hole end: wring 240, its face coming round past its shoulder]
   - [the same framing after a cut: wring 300. The creak]
 - `L53` narrator: Until its FACE / looks straight / at DAD.
@@ -287,7 +287,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L61` narrator: The shadow on the green / is MINE, / from the summers / he taught me the COURSE.
   - [the bun shadow on the turf, warm light on it]
   - [a slow push in on Dad at the hole, `neutral`, the second putter on the bench behind him]
-- `L62` narrator: The one under me / is DAD'S.
+- `L62` narrator: The one under me / belongs to DAD.
   - [side-on: Dad and me on the green, the bald shadow stretched from my feet]
 - `L63` narrator: Wherever I AM / is where / he's HAPPIEST.
   - [me, `worried` softening to `smile`, looking at him]
@@ -298,7 +298,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the bench: one putter left leaning on its arm. Cut away before any grip, then the putter is in my sleeve end]
 - `L66` narrator: I step onto / the SECOND tee.
   - [low: my trainers stepping onto the right tee mat, right beside the Wrung One's feet]
-- `L67` narrator: It leans its wrung FACE / right down / to MINE.
+- `L67` narrator: It leans its twisted FACE / right down / to MINE.
   - [two-shot close: its face, turned toward me and leaning down, a hand's width from mine. Me `scared`. Its eye highlights the brightest thing in frame]
 - `L68` narrator: I PUTT. / When I look UP, / the tee / is just ME.
   - [my putt, tick and roll down the long green]
@@ -316,7 +316,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L70` narrator: On SUNDAY, / Dad opens the gate / for FREE.
   - [the iron gate swinging open, Dad `smile` beside it, people waiting]
-- `L71` narrator: The whole TOWN / comes for a last ROUND.
+- `L71` narrator: The whole TOWN / comes for a last GAME.
   - [high wide: the fences down, people on every hole, Gordon and his wife on the bridge, the footballer at the windmill]
 - `L72` narrator: The shadows on the PAVEMENT / slide back IN, / onto the GRASS.
   - [the gate from outside: the row of shadows sliding in under the bottom bar]
@@ -324,9 +324,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L73` narrator: At the last HOLE, / his shadow stretches / from my FEET / to HIS.
   - [side-on wide: Dad and me on the last green, low sun, the bald shadow lying from my trainers to his shoes]
   - [high, looking down the green: the long shadow between our feet, both of us `smile`]
-- `L74` narrator: In this TOWN, / your SHADOW stays / where you were HAPPIEST.
+- `L74` narrator: In this TOWN, / your SHADOW stays / where you're HAPPIEST.
   - [late gold light: the bun shadow sitting alone on the last green, the people gone home]
-- `L75` narrator: Dad's stays / with ME.
+- `L75` narrator: Dad's SHADOW / stays with ME.
   - [me at the gate, my shadow trailing round-headed behind me]
 - `L76` narrator: Mine's under / the new CAR PARK.
   - [a slow push in on the bun shadow on the turf, the bare survey post beside it, light cooling. The low note falls. Cut to L01 0.25 s after "PARK"]

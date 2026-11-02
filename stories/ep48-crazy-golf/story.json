@@ -441,12 +441,8 @@
      "your shadow stays"
     ],
     [
-     "wherever you",
-     "wherever you"
-    ],
-    [
-     "were HAPPIEST.",
-     "were happiest."
+     "where you're HAPPIEST.",
+     "where you're happiest."
     ]
    ]
   },
@@ -621,8 +617,8 @@
      "in the park"
     ],
     [
-     "for THIRTY years.",
-     "for thirty years."
+     "for DECADES.",
+     "for decades."
     ]
    ]
   },
@@ -775,8 +771,8 @@
      "dad putts"
     ],
     [
-     "round ALONE.",
-     "round alone."
+     "around ALONE.",
+     "around alone."
     ]
    ]
   },
@@ -829,12 +825,20 @@
      "a bun."
     ],
     [
-     "Dad must have",
-     "dad must have"
+     "Dad must",
+     "dad must"
     ],
     [
-     "had HAIR",
-     "had hair"
+     "have had",
+     "have had"
+    ],
+    [
+     "a MOP",
+     "a mop"
+    ],
+    [
+     "of HAIR",
+     "of hair"
     ],
     [
      "back THEN.",
@@ -851,8 +855,8 @@
      "on monday,"
     ],
     [
-     "the windmill's SAILS",
-     "the windmill's sails"
+     "the windmill SAILS",
+     "the windmill sails"
     ],
     [
      "are wound BACKWARDS.",
@@ -873,8 +877,8 @@
      "every flag"
     ],
     [
-     "is twisted round",
-     "is twisted round"
+     "is twisted around",
+     "is twisted around"
     ],
     [
      "its POLE.",
@@ -1020,8 +1024,8 @@
      "the course"
     ],
     [
-     "is wrung TIGHT.",
-     "is wrung tight."
+     "is wound TIGHT.",
+     "is wound tight."
     ]
    ]
   },
@@ -1048,8 +1052,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "I call",
-     "i call"
+     "I shout",
+     "i shout"
     ],
     [
      "his name",
@@ -1078,8 +1082,8 @@
      "like a cloth"
     ],
     [
-     "being WRUNG.",
-     "being wrung."
+     "being TWISTED.",
+     "being twisted."
     ]
    ]
   },
@@ -1182,8 +1186,8 @@
      "the fence"
     ],
     [
-     "goes round",
-     "goes round"
+     "goes around",
+     "goes around"
     ],
     [
      "the LAST HOLE.",
@@ -1347,8 +1351,8 @@
      "a person,"
     ],
     [
-     "wrung like",
-     "wrung like"
+     "twisted like",
+     "twisted like"
     ],
     [
      "a CLOTH.",
@@ -1489,8 +1493,8 @@
      "a little"
     ],
     [
-     "further ROUND.",
-     "further round."
+     "further AROUND.",
+     "further around."
     ]
    ]
   },
@@ -1677,8 +1681,8 @@
      "under me"
     ],
     [
-     "is DAD'S.",
-     "is dad's."
+     "belongs to DAD.",
+     "belongs to dad."
     ]
    ]
   },
@@ -1775,8 +1779,8 @@
      "it leans its"
     ],
     [
-     "wrung FACE",
-     "wrung face"
+     "twisted FACE",
+     "twisted face"
     ],
     [
      "right down",
@@ -1880,8 +1884,8 @@
      "comes for a"
     ],
     [
-     "last ROUND.",
-     "last round."
+     "last GAME.",
+     "last game."
     ]
    ]
   },
@@ -1946,12 +1950,8 @@
      "your shadow stays"
     ],
     [
-     "where you",
-     "where you"
-    ],
-    [
-     "were HAPPIEST.",
-     "were happiest."
+     "where you're HAPPIEST.",
+     "where you're happiest."
     ]
    ]
   },
@@ -1960,12 +1960,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad's stays",
-     "dad's stays"
+     "Dad's SHADOW",
+     "dad's shadow"
     ],
     [
-     "with ME.",
-     "with me."
+     "stays with ME.",
+     "stays with me."
     ]
    ]
   },
@@ -4105,16 +4105,16 @@
     [
      0,
      [
-      3.0,
-      19.45,
-      1.5
+      3.2,
+      19.5,
+      1.55
      ],
      [
       0.9,
-      19.45,
-      1.5
+      19.55,
+      1.55
      ],
-     36,
+     24,
      0.0
     ]
    ],

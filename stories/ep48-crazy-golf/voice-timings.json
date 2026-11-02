@@ -6,30 +6,26 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "in this town, your shadow stays wherever you were happiest.",
+   "text": "in this town, your shadow stays where you're happiest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.517,
+   "dur": 2.241,
    "onset": 0.172,
-   "end": 2.31,
+   "end": 2.034,
    "chunks": [
     [
      0.172,
-     0.638
+     0.603
     ],
     [
-     0.672,
-     1.362
+     0.629,
+     1.25
     ],
     [
-     1.362,
-     1.612
-    ],
-    [
-     1.612,
-     2.31
+     1.25,
+     2.034
     ]
    ]
   },
@@ -230,14 +226,14 @@
    ]
   },
   "L09": {
-   "text": "dad has run the crazy golf in the park for thirty years.",
+   "text": "dad has run the crazy golf in the park for decades.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.552,
+   "dur": 2.448,
    "onset": 0.172,
-   "end": 2.362,
+   "end": 2.259,
    "chunks": [
     [
      0.172,
@@ -253,7 +249,7 @@
     ],
     [
      1.483,
-     2.362
+     2.259
     ]
    ]
   },
@@ -430,14 +426,14 @@
    ]
   },
   "L16": {
-   "text": "every evening, dad putts round alone.",
+   "text": "every evening, dad putts around alone.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 2.086,
    "onset": 0.172,
-   "end": 1.862,
+   "end": 1.897,
    "chunks": [
     [
      0.172,
@@ -445,11 +441,11 @@
     ],
     [
      0.707,
-     1.138
+     1.129
     ],
     [
-     1.138,
-     1.862
+     1.129,
+     1.897
     ]
    ]
   },
@@ -502,46 +498,54 @@
    ]
   },
   "L19": {
-   "text": "it has a bun. dad must have had hair back then.",
+   "text": "it has a bun. dad must have had a mop of hair back then.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.328,
+   "dur": 2.655,
    "onset": 0.172,
-   "end": 2.121,
+   "end": 2.448,
    "chunks": [
     [
      0.172,
-     0.353
+     0.37
     ],
     [
-     0.353,
-     0.707
+     0.37,
+     0.793
     ],
     [
-     0.784,
-     1.172
+     0.888,
+     1.215
     ],
     [
-     1.172,
-     1.466
+     1.215,
+     1.371
     ],
     [
-     1.466,
-     2.121
+     1.371,
+     1.561
+    ],
+    [
+     1.561,
+     1.776
+    ],
+    [
+     1.776,
+     2.448
     ]
    ]
   },
   "L20": {
-   "text": "on monday, the windmill's sails are wound backwards.",
+   "text": "on monday, the windmill sails are wound backwards.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.431,
+   "dur": 2.414,
    "onset": 0.155,
-   "end": 2.241,
+   "end": 2.224,
    "chunks": [
     [
      0.155,
@@ -549,23 +553,23 @@
     ],
     [
      0.595,
-     1.241
+     1.224
     ],
     [
-     1.241,
-     2.241
+     1.224,
+     2.224
     ]
    ]
   },
   "L21": {
-   "text": "on tuesday, every flag is twisted round its pole.",
+   "text": "on tuesday, every flag is twisted around its pole.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.552,
+   "dur": 2.569,
    "onset": 0.155,
-   "end": 2.362,
+   "end": 2.379,
    "chunks": [
     [
      0.155,
@@ -577,11 +581,11 @@
     ],
     [
      1.164,
-     1.715
+     1.733
     ],
     [
-     1.715,
-     2.362
+     1.733,
+     2.379
     ]
    ]
   },
@@ -742,7 +746,7 @@
    ]
   },
   "L28": {
-   "text": "every flag on the course is wrung tight.",
+   "text": "every flag on the course is wound tight.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -757,10 +761,10 @@
     ],
     [
      0.664,
-     0.983
+     0.948
     ],
     [
-     0.983,
+     0.948,
      1.828
     ]
    ]
@@ -790,7 +794,7 @@
    ]
   },
   "L30": {
-   "text": "i call his name at every hole.",
+   "text": "i shout his name at every hole.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -801,10 +805,10 @@
    "chunks": [
     [
      0.172,
-     0.423
+     0.439
     ],
     [
-     0.423,
+     0.439,
      0.732
     ],
     [
@@ -814,30 +818,30 @@
    ]
   },
   "L31": {
-   "text": "behind the fences, something creaks, like a cloth being wrung.",
+   "text": "behind the fences, something creaks, like a cloth being twisted.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.741,
+   "dur": 2.862,
    "onset": 0.155,
-   "end": 2.552,
+   "end": 2.655,
    "chunks": [
     [
      0.155,
-     0.759
+     0.776
     ],
     [
-     0.793,
-     1.397
+     0.81,
+     1.431
     ],
     [
-     1.466,
-     1.862
+     1.5,
+     1.897
     ],
     [
-     1.862,
-     2.552
+     1.897,
+     2.655
     ]
    ]
   },
@@ -958,14 +962,14 @@
    ]
   },
   "L37": {
-   "text": "on friday, the fence goes round the last hole.",
+   "text": "on friday, the fence goes around the last hole.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.293,
+   "dur": 2.328,
    "onset": 0.155,
-   "end": 2.103,
+   "end": 2.138,
    "chunks": [
     [
      0.155,
@@ -977,11 +981,11 @@
     ],
     [
      0.966,
-     1.301
+     1.371
     ],
     [
-     1.301,
-     2.103
+     1.371,
+     2.138
     ]
    ]
   },
@@ -1170,26 +1174,26 @@
    ]
   },
   "L45": {
-   "text": "a person, wrung like a cloth.",
+   "text": "a person, twisted like a cloth.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.621,
+   "dur": 1.793,
    "onset": 0.172,
-   "end": 1.414,
+   "end": 1.586,
    "chunks": [
     [
      0.172,
      0.552
     ],
     [
-     0.586,
-     0.854
+     0.595,
+     1.026
     ],
     [
-     0.854,
-     1.414
+     1.026,
+     1.586
     ]
    ]
   },
@@ -1342,14 +1346,14 @@
    ]
   },
   "L52": {
-   "text": "each time i blink, it's turned a little further round.",
+   "text": "each time i blink, it's turned a little further around.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.466,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 2.276,
    "chunks": [
     [
      0.172,
@@ -1369,7 +1373,7 @@
     ],
     [
      1.457,
-     2.259
+     2.276
     ]
    ]
   },
@@ -1598,26 +1602,26 @@
    ]
   },
   "L62": {
-   "text": "the one under me is dad's.",
+   "text": "the one under me belongs to dad.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
-   "onset": 0.172,
-   "end": 1.31,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.552,
    "chunks": [
     [
-     0.172,
-     0.362
+     0.155,
+     0.345
     ],
     [
-     0.362,
-     0.638
+     0.345,
+     0.603
     ],
     [
-     0.638,
-     1.31
+     0.603,
+     1.552
     ]
    ]
   },
@@ -1730,14 +1734,14 @@
    ]
   },
   "L67": {
-   "text": "it leans its wrung face right down to mine.",
+   "text": "it leans its twisted face right down to mine.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
+   "dur": 2.138,
    "onset": 0.172,
-   "end": 1.897,
+   "end": 1.948,
    "chunks": [
     [
      0.172,
@@ -1745,15 +1749,15 @@
     ],
     [
      0.5,
-     0.948
+     1.017
     ],
     [
-     0.948,
-     1.31
+     1.017,
+     1.362
     ],
     [
-     1.31,
-     1.897
+     1.362,
+     1.948
     ]
    ]
   },
@@ -1850,12 +1854,12 @@
    ]
   },
   "L71": {
-   "text": "the whole town comes for a last round.",
+   "text": "the whole town comes for a last game.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
+   "dur": 1.879,
    "onset": 0.155,
    "end": 1.69,
    "chunks": [
@@ -1934,50 +1938,46 @@
    ]
   },
   "L74": {
-   "text": "in this town, your shadow stays where you were happiest.",
+   "text": "in this town, your shadow stays where you're happiest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.362,
+   "dur": 2.241,
    "onset": 0.172,
-   "end": 2.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.25
+    ],
+    [
+     1.25,
+     2.034
+    ]
+   ]
+  },
+  "L75": {
+   "text": "dad's shadow stays with me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
    "chunks": [
     [
      0.172,
      0.638
     ],
     [
-     0.672,
-     1.319
-    ],
-    [
-     1.319,
-     1.457
-    ],
-    [
-     1.457,
-     2.155
-    ]
-   ]
-  },
-  "L75": {
-   "text": "dad's stays with me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.379,
-   "onset": 0.172,
-   "end": 1.19,
-   "chunks": [
-    [
-     0.172,
-     0.672
-    ],
-    [
-     0.672,
-     1.19
+     0.638,
+     1.379
     ]
    ]
   },

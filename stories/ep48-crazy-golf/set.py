@@ -312,6 +312,7 @@ class Wrung:
         black = kit.plastic("#050507", 0.2, spec=0.6)
         hi = kit.emit("#ffffff", 22.0, "wrung eye light")
         self.root = kit.empty("wrung", (0, 0, -50))
+        self.root.scale = (1.15, 1.15, 1.15)      # clearly taller than the cast (about 2.2 m)
         r = self.root
         for sx in (-1, 1):
             kit.box(f"wrung.leg{sx}", (0.22, 0.24, 0.74), (sx * 0.13, 0, 0.39), pants, r, bevel=0.025)
