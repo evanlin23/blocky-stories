@@ -2,8 +2,8 @@
  "slug": "ep52-ferry-crossing",
  "title": "In this town, everything you lose finds its way back to you",
  "made_for_kids": false,
- "premise": "In a harbour town, everything you lose hops home after you, except for me. I throw a glove in a bin on purpose, and on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and my scarf hop off toward her island, and damp hop-dots start at my own door. Each evening I follow them a little further, until her door is open, her glasses are on the mat and she is gone.",
- "twist": "The rule never said to its owner. Lost things find their way to where they belong, and people count too. Everything of mine went to Gran's because I still belong there, and the pull all week, the streets that end at the slipway and the dots that start at my own door, was me, a lost thing, hopping my way back. On the late crossing a passenger in life jacket orange sits in my place beside her, and when I stop fighting it and sit down in my old seat, it is gone.",
+ "premise": "In a harbour town, everything you lose hops home after you, except for me. I throw a glove in a bin on purpose, and on Sunday's call Gran is pulling it on. Then my evenings go blank, and each time I come to I am further along the way to her island: the slipway, the ferry's window seat, her lane, her open door, her glasses on the mat.",
+ "twist": "The rule never said to its owner. Lost things find their way to where they belong, and people count too. Everything of mine went to Gran's because I still belong there, and the blank evenings were me, a lost thing, finding my way back. On the late crossing a passenger in life jacket orange sits in my place beside her, and when I stop fighting it and sit down in my old seat, it is gone.",
  "world": "a small white car ferry with a rust-streaked hull on flat grey water between a harbour town and an island in late autumn: a concrete slipway, a rust-red ticket hut, a lounge with teal vinyl and a window bench, a stone lane between dry-stone walls, a white cottage with a green door, and a back room hung with every glove and key I ever lost",
  "voice": {
   "voice": "am_adam",
@@ -543,12 +543,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then my EVENINGS",
-     "Then my evenings"
+     "Then every STREET",
+     "then every street"
     ],
     [
-     "go BLANK.",
-     "go blank."
+     "I take",
+     "I take"
+    ],
+    [
+     "ends at",
+     "ends at"
+    ],
+    [
+     "the SLIPWAY.",
+     "the slipway."
     ]
    ]
   },
@@ -557,24 +565,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "And every TIME",
-     "and every time"
+     "I turn LEFT,",
+     "I turn left,"
     ],
     [
-     "I come to,",
-     "i come to,"
+     "I turn RIGHT,",
+     "I turn right,"
     ],
     [
-     "I'm a",
-     "i'm a"
+     "it's always",
+     "it's always"
     ],
     [
-     "little CLOSER",
-     "little closer"
-    ],
-    [
-     "to GRAN.",
-     "to gran."
+     "the WATER.",
+     "the water."
     ]
    ]
   },
@@ -587,12 +591,20 @@
      "monday,"
     ],
     [
-     "I come to",
-     "I come to"
+     "my KEYS hop",
+     "my keys hop"
     ],
     [
-     "on a SLIPWAY.",
-     "on a slipway."
+     "out my DOOR,",
+     "out my door,"
+    ],
+    [
+     "down to",
+     "down to"
+    ],
+    [
+     "the SEA.",
+     "the sea."
     ]
    ]
   },
@@ -601,12 +613,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "I don't remember",
-     "I don't remember"
+     "And damp",
+     "and damp"
     ],
     [
-     "the WALK.",
-     "the walk."
+     "little DOTS",
+     "little dots"
+    ],
+    [
+     "start at",
+     "start at"
+    ],
+    [
+     "my DOOR,",
+     "my door,"
+    ],
+    [
+     "under my FEET.",
+     "under my feet."
     ]
    ],
    "gap": 0.45,
@@ -621,12 +645,20 @@
      "tuesday,"
     ],
     [
-     "I come to",
-     "I come to"
+     "I chase",
+     "I chase"
     ],
     [
-     "in the FERRY'S",
-     "in the ferry's"
+     "my KEYS",
+     "my keys"
+    ],
+    [
+     "onto the FERRY,",
+     "onto the ferry,"
+    ],
+    [
+     "right to the",
+     "right to the"
     ],
     [
      "window SEAT.",
@@ -687,33 +719,48 @@
      "wednesday,"
     ],
     [
-     "halfway up",
-     "halfway up"
+     "my SCARF",
+     "my scarf"
     ],
     [
-     "Gran's LANE.",
-     "Gran's lane."
+     "hops up",
+     "hops up"
+    ],
+    [
+     "Gran's LANE,",
+     "Gran's lane,"
+    ],
+    [
+     "and I follow",
+     "and I follow"
+    ],
+    [
+     "it HALFWAY.",
+     "it halfway."
     ]
    ]
   },
   {
-   "id": "L24b",
+   "id": "L24a",
    "who": "narrator",
    "chunks": [
     [
-     "Every EVENING,",
-     "Every evening,"
+     "Then I",
+     "then I"
     ],
     [
-     "I end up",
-     "I end up"
+     "turn BACK,",
+     "turn back,"
     ],
     [
-     "a little CLOSER.",
-     "a little closer."
+     "before she",
+     "before she"
+    ],
+    [
+     "SEES me.",
+     "sees me."
     ]
-   ],
-   "gap": 0.5
+   ]
   },
   {
    "id": "L25",
@@ -724,16 +771,20 @@
      "thursday,"
     ],
     [
-     "I come to",
-     "I come to"
+     "the DOTS",
+     "the dots"
     ],
     [
-     "at Gran's DOOR,",
-     "at Gran's door,"
+     "lead me all",
+     "lead me all"
     ],
     [
-     "in the DARK.",
-     "in the dark."
+     "the way",
+     "the way"
+    ],
+    [
+     "to Gran's DOOR.",
+     "to Gran's door."
     ]
    ]
   },
@@ -1396,12 +1447,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "All those EVENINGS,",
-     "All those evenings,"
+     "All WEEK,",
+     "all week,"
     ],
     [
-     "I was finding",
-     "I was finding"
+     "I was HOPPING",
+     "I was hopping"
     ],
     [
      "my way BACK.",

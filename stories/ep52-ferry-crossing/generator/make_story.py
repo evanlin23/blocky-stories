@@ -19,18 +19,13 @@ GR_SEAT = [F + 1.7, 3.25, 3.91]
 SH_SEAT = [F + 1.7, 4.85, 3.75]
 
 PAUSES = {"L26": ("P01", 0.6), "L44": ("P02", 0.7)}
-HOLDS = {"L08": 0.5, "L14": 0.45, "L17": 0.45, "L20": 0.45, "L24b": 0.5, "L28": 0.45, "L33": 0.45, "L39": 0.5,
+HOLDS = {"L08": 0.5, "L14": 0.45, "L17": 0.45, "L20": 0.45, "L28": 0.45, "L33": 0.45, "L39": 0.5,
          "L43": 0.4, "L48": 0.4, "L52": 0.4, "L56": 0.4, "L59": 0.45, "L62": 0.4, "L65": 0.5, "L66": 0.45, "L31": 0.4, "L36": 0.4, "L55": 0.4}
-EXTRA = {"id": "L24b", "who": "narrator", "chunks": [["Every EVENING,", "Every evening,"], ["I end up", "I end up"],
-                                                      ["a little CLOSER.", "a little closer."]]}
 full = []
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
     full.append(ln)
-    if ln["id"] == "L24":
-        EXTRA["gap"] = HOLDS["L24b"]
-        full.append(EXTRA)
     if ln["id"] in PAUSES:
         pid, dur = PAUSES[ln["id"]]
         full.append({"id": pid, "pause": dur, "chunks": []})
