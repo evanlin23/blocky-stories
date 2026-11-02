@@ -21,7 +21,7 @@ LF = TURNS * RISE + 2.4
 KX = 40.0
 Z4, Z5, Z6, Z7 = 4 * RISE, 5 * RISE, 6 * RISE, 7 * RISE
 LOOP = 0.25   # a hard cut 0.25 s after the last word, into L01 (no fade at either end)
-HOLDS = {"L59": 0.5, "L45": 0.4, "L66": 0.4}   # a breath after the quiet beats (keeps the film over 2:15)
+HOLDS = {"L59": 0.5, "L45": 0.4, "L66": 0.4, "L76": 0.0}   # a breath after the quiet beats (keeps the film over 2:15)
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
@@ -60,8 +60,12 @@ lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
 # (the captions don't change)
 TEMPO = {"L68": 0.8, "L32": 0.85}
 SPOKEN = {("L51", "Its flat face"): "Its, flat face",
-          ("L68", "ASLEEP,"): "Fast asleep,", ("L16", "torch in"): "torch, in"}
+          ("L68", "FAST ASLEEP,"): "Fast asleep,", ("L16", "torch in"): "torch, in"}
+CAPTION = {("L68", "ASLEEP,"): "FAST ASLEEP,"}
 for ln in lines:
+    for ch in ln.get("chunks", []):
+        if (ln["id"], ch[0]) in CAPTION:
+            ch[0] = CAPTION[(ln["id"], ch[0])]
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
     for ch in ln.get("chunks", []):
@@ -175,7 +179,7 @@ shot("L07.2", "the camp bed beside the lens", still([0.6, -2.3, LF + 1.4], [-1.1
 shot("L08", "me at the lamp room glass, my back to camera", still([-0.9, -0.6, LF + 1.7], [0.2, 2.1, LF + 1.45], 30))
 shot("L09", "close on me, worried, glancing down the stairs", RF(7, d=2.0, lens=30))
 shot("L10", "Ines on the phone in the kitchen", still([KX + 2.15, 0.4, 1.5], [KX - 1.0, 0.4, 1.35], 26))
-shot("L11", "Ines looks up the stairwell", still([0.5, 1.6, 0.9], [0.0, -1.7, 1.3], 30))
+shot("L11", "Ines looks up the stairwell", still([0.0, 2.1, 1.55], [0.0, 0.0, 1.7], 30))
 shot("L12", "the stair foot by day: empty, sand under the door", still([0.0, -0.4, 1.0], [0.0, 2.0, 0.7], 20))
 shot("L13", "the oak door from the landing", still([0.2, -0.9, 16.9], [2.3, 0.15, 16.3], 30))
 shot("L13>-0.35", "the bolt plate: two strokes", PLATE_CAM, hand=0)
@@ -196,14 +200,12 @@ shot("L22", "my face lit by the phone, scared", COT_FACE)
 shot("L23", "the glow fades", COT_FACE)
 # 04 morning one
 shot("L24", "my socks on the clean boards, sand", SOCKS, hand=0.003)
-shot("L25", "through the glass: the beach far below", still([0.0, 1.8, LF + 1.7], [0.0, 61.8, -7.2], 34))
+shot("L25", "through the glass: the beach far below", still([0.0, 2.2, LF + 1.5], [0.0, 52.0, -30.0], 55))
 shot("L26", "kitchen: toast", still([KX + 2.15, 0.1, 1.5], [KX, 0.1, 1.0], 24))
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
-shot("L27.1", "insert: my socks under the table", still([KX + 1.3, -0.04, 0.6], [KX, -0.1, 0.6], 36), hand=0.003)
-shot("L27.1+0.7", "close on Ines, the look", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
 shot("L28", "close on me, misreading", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30))
 shot("L29", "me looking past her", still([KX + 0.9, 0.3, 1.5], [KX, -0.75, 1.38], 30))
-shot("L29.2", "the stair foot through the doorway: empty", still([KX + 1.2, -1.3, 1.35], [KX + 3.4, -1.3, 0.8], 24))
+shot("L29.2", "the stair foot through the doorway: empty", still([KX + 1.4, -1.3, 1.4], [KX + 3.4, -1.3, 0.7], 20))
 shot("L30", "the two of us, silence", still([KX + 2.15, -1.5, 1.9], [KX, 0.1, 1.0], 20))
 # 05 night two
 shot("L31", "the tower in heavier rain", move(([-3, -27, 6], [0, 0, 10]), ([-2.2, -24, 8], [0, 0, 10]), 18), rain=True)
@@ -265,7 +267,7 @@ shot("L61", "wider: me slumped on a step in the sun", still(local(SEAT_ME, YAW_M
 shot("L62", "below her door, open, the room empty", still([-1.5, -0.2, 8.4], [2.3, 0.6, 9.6], 24))
 shot("L63", "Ines asleep two steps down in the blanket",
      still(local(SEAT_IN, YAW_IN, 2.0, -0.35, 1.4), local(SEAT_IN, YAW_IN, 0, 0, 0.85), 30))
-shot("L64", "her coat over my feet", still(local(SEAT_ME, YAW_ME, 0.9, 0.9, 0.9), local(SEAT_ME, YAW_ME, 0.55, 0, 0.1), 30), hand=0.004)
+shot("L64", "her coat over my feet", still(local(SEAT_ME, YAW_ME, 0.8, 0.7, 1.35), local(SEAT_ME, YAW_ME, 0.55, 0, 0.1), 30), hand=0.004)
 shot("L65", "high: me, Ines, the stair winding down", still([-0.2, -0.4, 10.4], [-1.9, 1.2, 6.8], 22))
 shot("L66", "POV down the sunlit well: empty", still([-0.8, -0.9, 8.7], [0.0, 1.8, 0.2], 24), hand=0.004)
 shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 1.7, -0.3, 1.3), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 32))
@@ -277,7 +279,7 @@ shot("L68", "memory: me walking down asleep, eyes shut, toward camera",
      c([0, up(tread(39.2, 1.3), 1.55), up(tread(42.9, 1.6), 1.4), 26], [1, up(tread(39.2, 1.3), 1.55), up(tread(41.3, 1.6), 1.4), 28]),
      hand=0.004)
 shot("L69", "memory: the Upward's crown face below the sleeping me",
-     still([0.3, 0.5, 11.4], [-1.15, 1.15, 8.7], 20), hand=0.004)
+     still([0.0, -1.0, 9.8], [-0.85, 1.4, 7.9], 15), hand=0.004)
 shot("L70", "memory: me walking past her blue door, eyes shut",
      still(up(tread(45.0, 1.5), 1.55), up(tread(48.2, 1.7), 1.4), 24), hand=0.004)
 shot("L71", "memory: Ines frightened, phone glow", still([0.1, 0.55, Z4 + 1.55], [2.0, 0.55, Z4 + 1.4], 30))
@@ -395,10 +397,10 @@ def arc(who, at, i0, i1, dur, r=1.8, n=4, **kw):
 
 put("me", "L54", tread(48, 1.8), yaw=yaw_to(tread(48), tread(49)), expr="terrified")
 arc("me", "L54", 48, 49.2, 0.35, n=2)
-put("me", "L54.1", tread(61, 1.8), yaw=yaw_to(tread(61), tread(62)), expr="terrified")
-arc("me", "L54.1", 61, 62.8, 0.8)
-put("me", "L54.2", tread(73, 1.8), yaw=yaw_to(tread(73), tread(74)), expr="terrified")
-arc("me", "L54.2", 73, 74.8, 0.76)
+put("me", "L54.1", tread(61.6, 1.8), yaw=yaw_to(tread(61.6), tread(62.6)), expr="terrified")
+arc("me", "L54.1", 61.6, 62.8, 0.8)
+put("me", "L54.2", tread(73.6, 1.8), yaw=yaw_to(tread(73.6), tread(74.6)), expr="terrified")
+arc("me", "L54.2", 73.6, 74.8, 0.76)
 hide("me", "L54.3")
 put("me", "L55", SEAT_K(-0.75), yaw=180, sit=True, expr="worried", head=[0, 8])
 key("me", "L56", head=[0, 8])
@@ -411,7 +413,7 @@ key("me", "L61", expr="worried", blend=0.2)
 key("me", "L67", expr="wide", head=[24, 26], blend=0.4)
 put("me", "L68", tread(43.0, 1.7), yaw=yaw_to(tread(43), tread(42)), arms=[38, 38], expr="shut", blink=False)
 arc("me", "L68", 43.0, 41.2, 3.5, r=1.7, n=5, arms=[38, 38])
-put("me", "L69", tread(41, 1.7), yaw=yaw_to(tread(41), tread(40)), arms=[78, 78], expr="shut", blink=False)
+put("me", "L69", tread(41, 1.7), yaw=yaw_to(tread(41), tread(40)), arms=[12, 12], expr="shut", blink=False)
 put("me", "L70", tread(50, 1.7), yaw=yaw_to(tread(50), tread(49)), arms=[38, 38], expr="shut", blink=False)
 arc("me", "L70", 50, 46.5, 1.67, r=1.7, n=4, arms=[38, 38])
 put("me", "L72", tread(47, 1.55), yaw=FACE_IN - 20, expr="shut", blink=False, lean=8, head=[0, 20])
@@ -427,7 +429,7 @@ hide("ines", "L05")
 put("ines", "L07", [1.9, 0.0, Z4], yaw=FACE_IN, expr="smirk", head=[0, 4])
 hide("ines", "L07.2")
 put("ines", "L10", [KX - 1.3, 0.4, 0], yaw=90, arms=[0, 150], head=[0, 8], expr="neutral")
-put("ines", "L11", [0.0, -1.7, 0], yaw=180, head=[0, -38], expr="worried")
+put("ines", "L11", [0.0, -0.2, 0], yaw=180, head=[0, -38], expr="worried")
 hide("ines", "L12")
 put("ines", "L26", SEAT_K(0.95), yaw=0, sit=True, expr="neutral", arms=[28, 28], head=[0, 4])
 talk("ines", "L26.1", "L26>")
@@ -541,13 +543,13 @@ cues = [
     {"at": "L50", "name": "up", "pos": FIG(3), "face": 0, "mouth": 2},
     {"at": "L51", "name": "up", "pos": FIG(3), "face": 0, "mouth": 3},
     {"at": "L54", "name": "up", "hidden": True},
-    {"at": "L69", "name": "up", "pos": tread(40, 1.7), "face": 156, "mouth": 1, "rim": 0.0},
+    {"at": "L69", "name": "up", "pos": tread(39, 1.7), "face": 109, "mouth": 1, "rim": 0.0},
     {"at": "L70", "name": "up", "hidden": True},
     # the treads the view down the well needs gone
     {"at": 0, "name": "clear", "az": None},
     {"at": "L13>-0.35", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L14>-0.3", "name": "clear", "az": None},
-    {"at": "L17", "name": "clear", "az": 60, "span": 100, "z0": 2.0, "z1": 15.6, "rails": [Z7 - 0.2, Z7 + 1.7], "rail_az": 60, "rail_span": 110},
+    {"at": "L17", "name": "clear", "az": 60, "span": 100, "z0": -1.0, "z1": 15.6, "rails": [-1.0, Z7 + 1.7], "rail_az": 60, "rail_span": 110},
     {"at": "L21", "name": "clear", "az": None},
     {"at": "L21.1", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L22", "name": "clear", "az": None},
@@ -599,7 +601,7 @@ cues = [
     {"at": 0, "name": "coat", "where": "off"},
     {"at": "L57", "name": "coat", "where": "worn"},
     {"at": "L58", "name": "coat", "where": "off"},
-    {"at": "L64-0.2", "name": "coat", "where": "feet", "pos": local(SEAT_ME, YAW_ME, 0.2, 0.0, 0.27), "yaw": YAW_ME},
+    {"at": "L64-0.2", "name": "coat", "where": "feet", "pos": local(SEAT_ME, YAW_ME, 0.55, 0.0, 0.3), "yaw": YAW_ME},
     {"at": 0, "name": "blanket", "state": "none"},
     {"at": "L57", "name": "blanket", "state": "arm"},
     {"at": "L58", "name": "blanket", "state": "none"},

@@ -140,12 +140,16 @@ def materials(kit):
     M["beach"], M["beach_node"] = glow(kit, "beach glow", "#cdbd92")
     M["sea"], M["sea_node"] = glow(kit, "sea glow", "#587d94")
     M["surf"], M["surf_node"] = glow(kit, "surf glow", "#e8eef0")
+    # the beach's detail: dry dunes, wet sand, tufts, rocks, driftwood (all lit like the beach)
+    for k_, c_ in (("bdune", "#a8905e"), ("bwet", "#8f8468"), ("btuft", "#566a3a"), ("brock", "#3e3b38"), ("bwood", "#5f4a32")):
+        M[k_], M[k_ + "_node"] = glow(kit, k_ + " glow", c_)
     M["dark"] = pbr(kit, "dark room", "#07090c", 0.9)
     M["rope"] = pbr(kit, "rope", "#b59a6a", 0.9, noise=(30.0, 0.6))
     M["wool"] = pbr(kit, "cot blanket", "#5c6b5a", 0.9, noise=(15.0, 0.7))
     M["cotf"] = pbr(kit, "cot frame", "#3a3f46", 0.5, metal=0.5)
     M["lens"] = pbr(kit, "lens glass", "#a9bfbd", 0.15, spec=0.7)
     M["camel"] = pbr(kit, "camel coat", "#b5865a", 0.8, noise=(20.0, 0.8))
+    M["camel2"] = pbr(kit, "camel coat feet", "#8e6034", 0.95, spec=0.1, noise=(20.0, 0.8))
     M["wood"] = kit.planks("#7a5a3a", "#5a4028", 1.2, "X", name="kitchen wood")
     M["plate"] = pbr(kit, "plate", "#d9d6cf", 0.4)
     M["toast"] = pbr(kit, "toast", "#b98a4e", 0.8)
@@ -154,7 +158,7 @@ def materials(kit):
     M["bag2"] = pbr(kit, "bag two", "#6a3a32", 0.8)
     M["roof"] = pbr(kit, "lamp roof", "#26303a", 0.6)
     M["chair"] = pbr(kit, "chair", "#8a6a48", 0.7)
-    M["sock"] = pbr(kit, "cream sock", "#efe6d0", 0.95)
+    M["sock"] = pbr(kit, "cream sock", "#c9bd9f", 0.95)
     # the Upward
     M["oil"] = pbr(kit, "oilskin", "#d9a92a", 0.5, spec=0.5, noise=(14.0, 0.82))
     M["rust"] = pbr(kit, "rust trousers", "#7a3f22", 0.7)
@@ -455,13 +459,26 @@ def build_lamp_room(kit, ctx, M):
 
 def build_ground(kit, ctx, M):
     # the cliff top (grass), the cliff to the north, the beach far below and the sea beyond
-    kit.plane("grass", (160, 90), (0, -21, -0.02), M["grass"])
-    kit.box("cliff", (160, 0.5, 30), (0, 24.2, -15), M["rock"])
-    kit.plane("beach", (400, 46), (0, 47.5, -30.2), M["beach"])
+    kit.plane("grass", (160, 78), (0, -27, -0.02), M["grass"])
+    kit.box("cliff", (160, 0.5, 30), (0, 12.2, -15), M["rock"])
+    kit.plane("beach", (400, 58.4), (0, 41.3, -30.2), M["beach"])
     kit.plane("sea", (800, 500), (0, 320, -30.4), M["sea"])
     kit.plane("surf", (400, 2.6), (0, 112.6, -30.1), M["surf"])
+    # the beach seen from the lamp room: dunes under the cliff, a wet band and a foam line at the water, rocks, driftwood
+    kit.plane("beach wet", (400, 9), (0, 65.0, -30.17), M["bwet"])
+    kit.plane("beach foam", (400, 1.4), (0, 70.6, -30.12), M["surf"])
+    kit.plane("beach foam2", (400, 0.7), (0, 74.5, -30.12), M["surf"])
+    for k in range(9):   # dunes along the cliff foot
+        ob = kit.sphere(f"dune{k}", 1.0, (-36 + 9.0 * k + (k % 3) * 1.5, 24.0 + 3.0 * (k % 2), -30.2), M["bdune"], seg=10)
+        ob.scale = (6.0 + k % 3, 3.2, 1.3)
+    for k in range(14):  # grass tufts on the dunes
+        kit.box(f"tuft{k}", (0.9, 0.9, 1.6), (-30 + 4.7 * k + (k % 4), 23.0 + 4.0 * (k % 3), -29.6), M["btuft"], bevel=0.1)
+    for k in range(10):  # rocks
+        kit.box(f"brock{k}", (2.6 - 0.2 * (k % 4), 2.0, 1.8), (-27 + 6.1 * k, 47.0 + 5.0 * (k % 3), -29.4), M["brock"], rot=(0, 0, 0.3 * k), bevel=0.2)
+    for k in range(5):   # driftwood
+        kit.box(f"drift{k}", (7.0, 0.5, 0.5), (-12 + 8.0 * k, 55.0 + 2.0 * (k % 2), -29.9), M["bwood"], rot=(0, 0, 0.5 * k - 0.6))
     # a gravel path from the foot door
-    kit.plane("path", (2.2, 12), (0, 8, 0.0), pbr(kit, "path", "#6b665c", 0.95), rot=(0, 0, 0))
+    kit.plane("path", (2.2, 10), (0, 7, 0.0), pbr(kit, "path", "#6b665c", 0.95), rot=(0, 0, 0))
     # two bags for the arrival (S04)
     kit.box("bag A", (0.7, 0.3, 0.35), (-1.3, 4.6, 0.18), M["bag"], None, rot=(0, 0, 0.5), bevel=0.07)
     kit.box("bag B", (0.5, 0.3, 0.5), (1.4, 4.3, 0.25), M["bag2"], None, rot=(0, 0, -0.3), bevel=0.07)
@@ -475,7 +492,10 @@ def build_kitchen(kit, ctx, M):
     kit.plane("k ceiling", (W, D), P(0, 0, H), M["white"], rot=(math.pi, 0, 0))
     wall = M["white"]
     kit.box("k wall S", (W, 0.1, H), P(0, -D / 2, H / 2), wall)
-    kit.box("k wall E", (0.1, D, H), P(W / 2, 0, H / 2), wall)
+    # the east wall has a doorway (y -1.9 to -0.7) onto the vestibule
+    kit.box("k wall E s", (0.1, 0.2, H), P(W / 2, -2.0, H / 2), wall)
+    kit.box("k wall E n", (0.1, 2.8, H), P(W / 2, 0.7, H / 2), wall)
+    kit.box("k wall E top", (0.1, 1.2, H - 2.1), P(W / 2, -1.3, 2.1 + (H - 2.1) / 2), wall)
     kit.box("k wall W", (0.1, D, H), P(-W / 2, 0, H / 2), wall)
     # north wall with a big window onto the grey sea
     kit.box("k wall N a", (W, 0.1, 0.9), P(0, D / 2, 0.45), wall)
@@ -694,7 +714,7 @@ def build_lights(kit, ctx):
     add_light(kit, "kit", "kitfill", "POINT", (kx, ky - 0.2, 2.3), 60.0, "#e6ecef", size=0.6)
     add_light(kit, "kit", "kitfill2", "POINT", (kx + 0.3, ky - 1.7, 1.6), 25.0, "#f1efe6", size=0.6)
     add_light(kit, "kit", "kitlow", "POINT", (kx + 1.0, ky - 0.1, 0.5), 45.0, "#f1efe6", size=0.4)
-    add_light(kit, "kit", "kitvest", "POINT", (kx + 3.3, ky - 1.3, 2.0), 40.0, "#cfd8e0", size=0.5)
+    add_light(kit, "kit", "kitvest", "POINT", (kx + 3.5, ky - 1.3, 1.9), 400.0, "#cfd8e0", size=0.5)
     add_light(kit, "mefill", "me fill", "POINT", (0, 0, -40), 30.0, "#9db4e0", size=0.5, shadow=False)
     add_light(kit, "mefill", "ines fill", "POINT", (0, 0, -40), 30.0, "#9db4e0", size=0.5, shadow=False)
     # the camp-bed fill that keeps faces readable in the lamp room at night
@@ -703,7 +723,7 @@ def build_lights(kit, ctx):
 
 # mode -> {group: (gain, colour or None)}, "exp" the scene exposure, "pane": (colour, strength), "world": strength
 MODES = {
-    "run": {"win": (1.2, "#7c9ad0"), "shaft": (3.0, "#8aa4d0"), "foot": (0.4, None), "lroom": (0.0, None), "lamp": (0.5, None),
+    "run": {"win": (1.2, "#7c9ad0"), "shaft": (1.8, "#8aa4d0"), "foot": (0.4, None), "lroom": (0.0, None), "lamp": (0.5, None),
             "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
             "cot": (1.0, None), "exp": 0.5, "pane": ("#1e2c40", 0.5), "world": 0.4},
     "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (4.0, None),
@@ -798,7 +818,7 @@ def apply_mode(kit, ctx, tl, t):
     node.inputs["Color"].default_value = (*(kit.srgb(c) for c in col), 1.0)
     pst = pa[1] + (pb[1] - pa[1]) * u
     node.inputs["Strength"].default_value = pst
-    for k_, g_ in (("beach_node", 0.8), ("sea_node", 0.6), ("surf_node", 1.0)):
+    for k_, g_ in (("beach_node", 0.8), ("sea_node", 0.6), ("surf_node", 1.0), ("bdune_node", 0.8), ("bwet_node", 0.8), ("btuft_node", 0.8), ("brock_node", 0.8), ("bwood_node", 0.8)):
         ctx["M"][k_].inputs["Strength"].default_value = max(0.02, (pst - 0.5) * g_)
     w = a["world"] + (b["world"] - a["world"]) * u
     bg = bpy.context.scene.world.node_tree.nodes["Background"]
@@ -881,7 +901,10 @@ def _dress(kit, story, ctx):
         ctx["blanket_arm"] = [arm, bundle]
         ctx["blanket_wrap"] = wrap
     # the coat laid over my feet, a prop in the world
-    ctx["coat_feet"] = [kit.box("coat feet", (0.9, 0.5, 0.14), (0, 0, -80), M["camel"], None, bevel=0.05)]
+    cf = kit.box("coat feet", (1.0, 0.62, 0.16), (0, 0, -80), M["camel2"], None, bevel=0.05)
+    kit.box("coat feet sleeve", (0.7, 0.24, 0.15), (0.2, 0.42, 0.04), M["camel2"], cf, rot=(0, 0, 0.5), bevel=0.05)
+    kit.box("coat feet lapel", (0.3, 0.64, 0.06), (-0.3, 0.0, 0.1), pbr(kit, "coat lining", "#4a3320", 0.9), cf, bevel=0.02)
+    ctx["coat_feet"] = [cf]
 
 
 def _show(obs, on):
