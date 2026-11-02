@@ -8734,10 +8734,10 @@
    "arrow": "up"
   },
   {
-   "at": "L94.2",
+   "at": "L94.1+0.4",
    "name": "indicator",
    "floor": "20",
-   "arrow": null
+   "arrow": "up"
   },
   {
    "at": "L94.2+0.25",

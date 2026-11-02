@@ -251,11 +251,11 @@ def button_mat(kit, name, radius, glow=GLOW, style="ring"):
     m = kit._new(name)
     N, L = m.node_tree.nodes, m.node_tree.links
     b = N["Principled BSDF"]
-    b.inputs["Base Color"].default_value = kit.col("#0b0e12")
-    b.inputs["Roughness"].default_value = 0.32   # frosted: the side lights don't glint in it like a second eye
+    b.inputs["Base Color"].default_value = kit.col("#040508")
+    b.inputs["Roughness"].default_value = 0.7   # frosted: the side lights don't glint in it like a second eye or a lit button
     for k in ("Specular IOR Level", "Specular"):
         if k in b.inputs:
-            b.inputs[k].default_value = 0.6
+            b.inputs[k].default_value = 0.0
             break
     b.inputs["Emission Color"].default_value = kit.col(glow)
     tc = N.new("ShaderNodeTexCoord")
@@ -1253,7 +1253,7 @@ def animate(kit, story, tl, t, ctx):
             press *= kit_ss((t - fc["t"]) / fc["dur"])
         y0 = CAR_Y0 + 0.02 + 0.035 - 0.012 * press
         if fc.get("tomato"):
-            ctx["tom_ins"].location = (x, y0 + 0.045 - 0.04 * (1 - press), z)
+            ctx["tom_ins"].location = (x, y0 + 0.045 - 0.04 * (1 - press), z - 0.078)   # on the lower edge: the lit ring shows above it
         else:
             ctx["finger"][0].location = (x, y0, z)
             ctx["finger"][1].location = (x + 0.02, y0 + 0.035 + 0.2, z - 0.03)

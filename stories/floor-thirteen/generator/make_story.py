@@ -559,7 +559,7 @@ cue("L83", "indicator", floor="12", arrow=None)
 cue("L90", "indicator", floor="12", arrow=None)
 cue("L93+0.3", "indicator", floor="12", arrow="up")
 # 12, 14 ... 20 and back, never 13; two a second or slower, or jumping across the cuts
-for at, fl, ar in (("L94", "12", "up"), ("L94.1", "16", "up"), ("L94.2", "20", None), ("L94.2+0.25", "17", "down"),
+for at, fl, ar in (("L94", "12", "up"), ("L94.1", "16", "up"), ("L94.1+0.4", "20", "up"), ("L94.2+0.25", "17", "down"),
                    ("L94.3", "12", None)):
     cue(at, "indicator", floor=fl, arrow=ar)
 
