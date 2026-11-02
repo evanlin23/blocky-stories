@@ -212,7 +212,7 @@ shot("P02", "the canal and the towpath; the fog begins to ease",
      still([1.0, -1.1, 1.8], [6.0, -25, 1.2], 24))
 shot("L72", "the towpath alongside the boat, the grass flattened in one long line",
      move(([2.0, 3.0, 1.35], [8.0, 0.1, 0.55]), ([4.0, 3.0, 1.35], [10.0, 0.1, 0.55]), 28))
-shot("P03", "the lore plant: the back ring, two strokes", still([5.0, 0.62, 1.05], [5.0, -0.02, 0.66], 42))
+shot("P03", "the lore plant: the back ring, two strokes", still([5.0, 0.62, 1.05], [5.0, -0.02, 0.58], 42))
 # 08 her pace
 shot("L73", "me at the open hatch in a clear morning, smirk", still([4.7, -1.4, 0.35], [2.85, -1.05, 2.15], 30))
 shot("L74", "low in front of us on the towpath: me bent beside Moss, my sleeve on her back, the boat behind",
@@ -224,7 +224,7 @@ shot("L76", "the first shot again, lighter: the boat, and us walking back toward
 
 # camera fixes: character shots framed on the face heights (standing: pos z + 1.55)
 FIX = {
- 0: move(([-10.5, 1.5, 1.0], [6, -0.2, 1.0]), ([-8.5, 1.4, 1.0], [6, -0.2, 1.0]), 28),
+ 0: move(([-9.6, 1.45, 1.4], [-5.4, 1.2, 1.65]), ([-8.6, 1.45, 1.4], [-5.4, 1.2, 1.65]), 30),
  "L02": still([6, -17, 1.4], [6, -0.15, 1.1], 18),
  "L04": still([4.6, -1.05, 1.25], [2.6, -1.05, 2.05], 32),
  "L05": still([3.5, -1.3, 1.2], [1.8, -1.05, 1.5], 28),
@@ -264,14 +264,59 @@ FIX = {
  "L70": still([1.9, -3.3, 1.1], [1.9, -1.2, 0.95], 34),
  "L74": still([-5.5, 2.5, 1.5], [-2.0, 1.1, 1.3], 32),
 }
+# second camera pass (builder round 2): character shots framed head-and-shoulders or better, the wides readable
+FIX.update({
+ "L02": still([6, -9.5, 1.2], [6, -0.15, 1.2], 11),
+ "L03": still([2.7, -1.5, 0.7], [4.05, -1.05, 0.25], 22),
+ "L05": still([1.9, -3.4, 1.5], [1.85, -1.05, 1.35], 22),
+ "L08": still([4.9, -1.05, 1.2], [2.6, -1.05, 2.3], 22),
+ "L09": still([6.6, -1.0, 1.0], [4.4, -1.35, 1.2], 20),
+ "L10": still([4.0, -1.5, 1.35], [5.55, -0.62, 1.2], 22),
+ "L13": still([5.0, -1.35, 0.5], [3.5, -1.05, 0.95], 20),
+ "L17": still([-1.5, 1.0, 1.8], [24, 0.3, 0.6], 26),
+ "L18": still([-1.5, 1.0, 1.8], [26, 0.3, 0.6], 50),
+ "L19": still([-1.6, -0.9, 1.6], [1.7, -0.75, 1.6], 18),
+ "L20": still([-1.5, 1.0, 1.8], [26, 0.3, 0.6], 50),
+ "L21": still([4.4, -1.0, 0.7], [2.9, -1.05, 0.55], 20),
+ "L24": still([17.4, -0.7, 1.3], [19.0, 0.3, 0.75], 30),
+ "L26": still([-1.0, 6.0, 3.6], [19.0, -0.2, 0.7], 16),
+ "L50": still([-3.0, 5.5, 3.4], [9.0, 0.0, 0.8], 15),
+ "L63": still([-3.0, 5.5, 3.4], [9.0, 0.0, 0.8], 15),
+ "L24": still([18.4, -1.3, 1.9], [19.0, 0.3, 0.7], 30),
+ "L41": still([14.6, -3.8, 2.8], [12.4, 0.3, 0.7], 26),
+ "L42": still([12.5, -1.7, 1.35], [12.2, 0.3, 0.75], 30),
+ "L56": still([2.4, -1.25, 1.0], [3.3, -1.05, 0.85], 20),
+ "L02": still([6, -9.5, 1.2], [6, -0.15, 1.2], 11),
+ "L08": still([4.9, -1.05, 1.0], [2.6, -1.05, 2.5], 22),
+ "L09": still([6.6, -1.0, 1.0], [4.4, -1.35, 1.5], 17),
+ "L29": still([18.92, 0.12, 2.0], [18.92, 0.12, 0.95], 70),
+ "L30": still([-0.5, -1.5, 1.3], [1.7, -0.5, 1.0], 20),
+ "L31": still([1.2, -3.4, 1.6], [1.2, -0.8, 1.5], 18),
+ "L32": still([4.0, -1.5, 1.35], [5.55, -0.62, 1.2], 22),
+ "L33": still([5.0, -0.8, 1.4], [3.3, -1.05, 1.6], 24),
+ "L34": still([5.0, -0.8, 1.4], [3.3, -1.05, 1.6], 28),
+ "L35": still([5.0, -0.8, 1.45], [3.3, -1.05, 1.65], 30),
+ "L40": still([4.4, -1.7, 1.1], [2.7, -1.05, 1.2], 17),
+ "L43.2": still([5.2, -1.0, 1.5], [3.6, -0.85, 1.4], 22),
+ "L52": still([6.8, -1.4, 1.45], [5.0, -0.55, 1.45], 28),
+ "L53": still([3.6, -1.7, 1.5], [5.2, -0.6, 1.45], 22),
+ "L61": still([3.5, -1.55, 1.55], [5.3, -0.7, 1.5], 22),
+ "L62": still([0.5, -1.05, 1.7], [3.3, -1.05, 1.65], 24),
+ "L66": still([6.2, -0.5, 1.2], [4.4, -1.5, 1.0], 17),
+ "L68": still([1.7, -3.8, 1.6], [1.7, -1.2, 1.5], 22),
+ "L70": still([1.9, -3.3, 1.1], [1.9, -1.2, 0.95], 24),
+})
 S[:] = [(at, what, step, FIX.get(at, cam)) for at, what, step, cam in S]
 S[-1] = (S[-1][0], S[-1][1], S[-1][2], FIX[0])
 
+LAMP = {"L27.2": 300, "L56": 200, "L60": 120, "L55": 150, "L64": 150}
 shots = []
 for i, (at, what, step, cam) in enumerate(S):
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.004, "step": step, "what": what}
     if i:
         s["at"] = at
+    if at in LAMP:
+        s["lamp"] = LAMP[at]
     shots.append(s)
 
 # ---------------------------------------------------------------------------------------------- acting
@@ -303,15 +348,15 @@ def talk(who, a, b):
     acting[who].append({"from": a, "to": b, "mouth": [0.55, 0.55], "flap": True})
 
 
-STEP0, STEP1 = [2.6, -1.05, 0.54], [2.95, -1.05, 0.36]
+STEP0, STEP1, STEP2 = [2.6, -1.05, 0.54], [2.95, -1.05, 0.36], [3.3, -1.05, 0.2]
 BUNK = [5.55, -0.62, -0.06]
 FLAT = [0.0, 0.0]
 
 # me
-put("me", 0, [0, -1.05, 0.72], hidden=True)
-hide("me", 0)
+put("me", 0, [-5.4, 1.35, 0.5], yaw=-90, expr="neutral", head=[0, 4])
+hide("me", "L03")
 put("me", "L04", STEP0, yaw=90, head=[0, 22], expr="smirk")
-put("me", "L05", [1.2, -1.05, 0.72], yaw=90, lean=18, arms=[35, 35], head=[0, 14], expr="smirk")
+put("me", "L05", [1.2, -1.05, 0.72], yaw=90, lean=6, arms=[12, 12], head=[0, 8], expr="smirk")
 hide("me", "L06")
 put("me", "L08", STEP0, yaw=-90, head=[0, 0], expr="neutral")
 put("me", "L09", [5.3, -1.62, 0.05], yaw=-90, expr="neutral")
@@ -331,17 +376,17 @@ put("me", "L31", [0.7, -0.85, 0.72], yaw=90, expr="scared", arms=[10, 10])
 talk("me", "L31", "L31.1")
 hide("me", "L32")
 put("me", "L32", BUNK, yaw=-90, expr="worried")
-put("me", "L33", STEP1, yaw=-90, expr="neutral", head=[0, -22])
-put("me", "L34", STEP1, yaw=-90, expr="worried", head=[0, -8])
-key("me", "L34.2", head=[70, 0], blend=0.4)
-put("me", "L35", STEP1, yaw=-90, expr="worried", arms=[0, 100], head=[0, 0])
+put("me", "L33", STEP2, yaw=90, expr="neutral", head=[0, -6])
+put("me", "L34", STEP2, yaw=90, expr="worried", head=[0, 0])
+key("me", "L34.2", head=[0, 6], blend=0.4)
+put("me", "L35", STEP2, yaw=90, expr="worried", arms=[0, 100], head=[0, 0])
 put("me", "L36", STEP0, yaw=90, expr="worried", head=[0, 0])
 talk("me", "L36", "L36>")
 put("me", "L38", STEP0, yaw=90, expr="scared", head=[0, 0])
 talk("me", "L38", "L38>")
 put("me", "L40", STEP1, yaw=90, expr="scared")
 hide("me", "L41")
-put("me", "L43.2", [3.55, -0.85, 0.05], yaw=-90, expr="worried", arms=[150, 0])
+put("me", "L43.2", [3.55, -0.85, 0.05], yaw=90, expr="worried", arms=[150, 0])
 hide("me", "L44")
 put("me", "L45", [5.95, -0.7, 0.8], yaw=0, expr="worried", lie=[-88, 0, 90])
 put("me", "L47", BUNK, yaw=-90, expr="worried", head=[-5, 0], lean=0)
@@ -355,7 +400,7 @@ hide("me", "L54")
 put("me", "L59", [4.6, -1.35, 0.05], yaw=-90, expr="worried", head=[-20, 0])
 key("me", "L59.2", head=[40, 0], expr="worried", blend=0.5)
 put("me", "L61", [5.3, -0.7, 0.05], yaw=-100, expr="neutral", head=[0, 0])
-put("me", "L62", STEP0, yaw=-90, expr="neutral")
+put("me", "L62", STEP2, yaw=-90, expr="neutral")
 hide("me", "L63")
 hide("me", "L65")
 put("me", "L66", [4.7, -1.6, 0.05], yaw=-90, expr="neutral", arms=[70, 70], lean=18, head=[0, 22])
@@ -387,23 +432,31 @@ def cue(at, name, **kw):
 
 
 # time of day: ramps only inside shots
-cue(0, "time", set="grey1")
+cue(0, "time", set="dawn")
 cue("L04", "time", set="past")
 cue("L06", "time", set="grey1")
 cue("L16", "time", set="grey1")
+cue("L17", "time", set="far")
 cue("L20", "time", set="clear1", dur=1.8)
 cue("L21", "time", set="grey2")
+cue("L26", "time", set="wide3")
+cue("L27", "time", set="grey2")
 cue("L32", "time", set="night")
 cue("L34", "time", set="grey3")
 cue("L43", "time", set="night")
 cue("L44", "time", set="thick")
+cue("L50", "time", set="wide2")
+cue("L51", "time", set="thick")
 cue("L57", "time", set="past")
 cue("L59", "time", set="thick")
+cue("L63", "time", set="wide2")
+cue("L64", "time", set="thick")
 cue("L66", "time", set="clear1")
 cue("P02", "time", set="clear2", dur=2.9)
 cue("L73", "time", set="morning")
 # Moss
-cue(0, "moss", hidden=True)
+cue(0, "moss", hidden=False, pos=[-5.2, 0.75, 0.5], yaw=-90, pose="stand", head=[0, 6], ears=0.6, tail=20, wag=0)
+cue("L02", "moss", hidden=True)
 cue("L03", "moss", hidden=False, pos=[4.15, -1.05, 0.12], yaw=-90, pose="lie", head=[0, 0], ears=0.2, tail=30, wag=0)
 cue("L04", "moss", hidden=True)
 cue("L05", "moss", hidden=False, pos=[2.45, -1.05, 0.54], yaw=-90, pose="stand", ears=0.9, tail=-40, wag=1.0)

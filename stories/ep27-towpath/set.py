@@ -49,12 +49,20 @@ STATES = {
     "grey1":  dict(fog="#c2cac9", dens=0.030, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "grey2":  dict(fog="#c2cac9", dens=0.024, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "grey3":  dict(fog="#b4bec2", dens=0.026, ws=0.90, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
+    "dawn":   dict(fog="#c8d0cf", dens=0.026, ws=1.00, exp=-0.05, key=0.9, rim=0.7, fill=1.00, eye=0.5, warm=0.0),
+    "far":    dict(fog="#c2cac9", dens=0.012, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
+    "wide":   dict(fog="#c6cecd", dens=0.006, ws=1.00, exp=-0.20, key=0.7, rim=0.6, fill=1.00, eye=1.0, warm=0.0),
+    "wide3":  dict(fog="#a9b5ba", dens=0.003, ws=0.85, exp=-0.15, key=1.0, rim=1.0, fill=0.9, eye=1.0, warm=0.0),
+    "wide2":  dict(fog="#aab6bb", dens=0.012, ws=0.85, exp=-0.20, key=1.0, rim=1.0, fill=0.85, eye=1.0, warm=0.0),
     "night":  dict(fog="#7f8f99", dens=0.026, ws=0.75, exp=-0.15, key=0.5, rim=0.4, fill=0.90, eye=0.5, warm=0.0),
     "thick":  dict(fog="#a3aeb3", dens=0.055, ws=0.55, exp=-0.25, key=1.0, rim=1.0, fill=0.85, eye=1.0, warm=0.0),
     "clear1": dict(fog="#c2cac9", dens=0.030, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "clear2": dict(fog="#cad3d1", dens=0.012, ws=1.00, exp=-0.30, key=0.5, rim=0.4, fill=1.00, eye=0.5, warm=0.4),
-    "morning": dict(fog="#d4dcd8", dens=0.006, ws=1.00, exp=-0.30, key=0.4, rim=0.3, fill=1.00, eye=0.0, warm=0.6),
+    "morning": dict(fog="#d4dcd8", dens=0.014, ws=1.00, exp=-0.08, key=0.4, rim=0.3, fill=1.00, eye=0.0, warm=0.6),
 }
+for _k, _v in STATES.items():           # the water's mirror (specular level, roughness): the high wides turn it matte so they don't white out
+    _v.setdefault("wsp", 0.15 if _k in ("wide", "wide2", "wide3") else 0.9)
+    _v.setdefault("wr", 0.55 if _k in ("wide", "wide2", "wide3") else 0.12)
 LIGHT_BASE = {            # name -> (kind, loc, aim, power, colour, size)
     "sky": ("AREA", (8, -6, 14), (8, 0, 0), 1500, "#dfe6ea", 22),
     "warm": ("AREA", (8, -24, 5), (8, 0, 1), 9000, "#ffd9a0", 14),
@@ -70,6 +78,7 @@ LIGHT_BASE = {            # name -> (kind, loc, aim, power, colour, size)
     "cab c": ("AREA", (5.6, -1.0, 1.0), (4.5, -0.3, 0.8), 90, "#b4c4d0", 1.0),
     "porch": ("AREA", (1.0, -1.05, 2.6), (2.4, -1.05, 0.5), 700, "#d4dde2", 2.5),
     "hatch": ("AREA", (3.0, -1.05, 2.6), (3.0, -1.05, 0.2), 0, "#e0e8ec", 1.4),
+    "lamp": ("AREA", (0, 0, 3), (0, 0, 0), 1, "#dfe8ea", 3.0),
 }
 
 
@@ -362,39 +371,45 @@ def build_lights(kit_, ctx):
 
 # --------------------------------------------------------------------------------------------------- Moss
 class Moss:
-    COAT, TAN, WHITE, DARK = "#6e4a2c", "#b98a57", "#d7d3c8", "#1a1512"
+    COAT, TAN, WHITE, DARK, GREY = "#6e4a2c", "#b98a57", "#d7d3c8", "#1a1512", "#a9a79d"
 
     def __init__(self, kit_):
         c, t, w = kit_.plastic(self.COAT, 0.9, "moss coat"), kit_.plastic(self.TAN, 0.9, "moss tan"), \
             kit_.plastic(self.WHITE, 0.9, "moss white")
+        gr = kit_.plastic(self.GREY, 0.9, "moss grey")
         dk = kit_.plastic(self.DARK, 0.5, "moss dark")
+        sad = kit_.plastic("#4f3320", 0.9, "moss back")
         hi = kit_.emit("#ffffff", 4.0, "moss glint")
         self.root = kit_.empty("moss")
+        self.root.scale = (1.25, 1.25, 1.25)
         self.body = kit_.empty("moss.body", (0, 0, 0.3), self.root)
-        kit_.box("moss.torso", (0.30, 0.60, 0.28), (0, 0, 0.0), c, self.body, bevel=0.05)
-        kit_.box("moss.chest", (0.27, 0.18, 0.25), (0, -0.25, -0.01), w, self.body, bevel=0.05)
-        kit_.box("moss.saddle", (0.31, 0.32, 0.10), (0, 0.04, 0.09), kit_.plastic("#5a3b22", 0.9, "moss back"), self.body,
-                 bevel=0.04)
+        kit_.box("moss.torso", (0.30, 0.62, 0.28), (0, 0.02, 0.0), t, self.body, bevel=0.06)          # tan belly and flanks
+        kit_.box("moss.saddle", (0.28, 0.52, 0.14), (0, 0.04, 0.10), sad, self.body, bevel=0.05)        # dark back
+        kit_.box("moss.chest", (0.28, 0.16, 0.30), (0, -0.25, -0.005), w, self.body, bevel=0.06)
+        kit_.box("moss.rump", (0.29, 0.14, 0.26), (0, 0.30, 0.0), c, self.body, bevel=0.06)
+        kit_.box("moss.neck", (0.19, 0.16, 0.24), (0, -0.33, 0.16), c, self.body, bevel=0.05)
         self.legs = {}
-        for name, (x, y) in {"fl": (-0.095, -0.2), "fr": (0.095, -0.2), "bl": (-0.095, 0.2), "br": (0.095, 0.2)}.items():
+        for name, (x, y) in {"fl": (-0.10, -0.24), "fr": (0.10, -0.24), "bl": (-0.10, 0.24), "br": (0.10, 0.24)}.items():
             piv = kit_.empty(f"moss.{name}", (x, y, 0.14), self.body)
-            kit_.box(f"moss.{name}m", (0.095, 0.10, 0.22), (0, 0, -0.1), t, piv, bevel=0.03)
+            kit_.box(f"moss.{name}m", (0.105, 0.115, 0.24), (0, 0, -0.10), t, piv, bevel=0.035)
+            kit_.box(f"moss.{name}p", (0.115, 0.15, 0.07), (0, -0.02, -0.2), w, piv, bevel=0.03)     # white sock
             self.legs[name] = piv
-        self.head = kit_.empty("moss.head", (0, -0.34, 0.2), self.body)
-        kit_.box("moss.skull", (0.25, 0.23, 0.23), (0, -0.0, 0.03), t, self.head, bevel=0.05)
-        kit_.box("moss.muzzle", (0.14, 0.15, 0.11), (0, -0.17, -0.03), w, self.head, bevel=0.035)
-        kit_.box("moss.nose", (0.06, 0.035, 0.045), (0, -0.255, 0.0), dk, self.head, bevel=0.01)
+        self.head = kit_.empty("moss.head", (0, -0.40, 0.24), self.body)
+        kit_.box("moss.skull", (0.24, 0.22, 0.22), (0, 0.0, 0.03), t, self.head, bevel=0.05)
+        kit_.box("moss.brow", (0.20, 0.07, 0.06), (0, -0.09, 0.11), c, self.head, bevel=0.02)
+        kit_.box("moss.muzzle", (0.15, 0.20, 0.11), (0, -0.19, -0.04), gr, self.head, bevel=0.04)       # greying muzzle
+        kit_.box("moss.chin", (0.12, 0.12, 0.05), (0, -0.17, -0.10), w, self.head, bevel=0.02)
+        kit_.box("moss.nose", (0.075, 0.04, 0.055), (0, -0.30, -0.005), dk, self.head, bevel=0.015)
         self.ears = []
         for sx in (-1, 1):
-            piv = kit_.empty(f"moss.ear{sx}", (sx * 0.125, 0.02, 0.1), self.head)
-            kit_.box(f"moss.earm{sx}", (0.05, 0.1, 0.15), (sx * 0.015, 0.0, -0.06), c, piv, bevel=0.02)
+            piv = kit_.empty(f"moss.ear{sx}", (sx * 0.125, 0.02, 0.12), self.head)
+            kit_.box(f"moss.earm{sx}", (0.055, 0.13, 0.24), (sx * 0.02, 0.0, -0.11), sad, piv, bevel=0.025)
             self.ears.append((piv, sx))
-            kit_.sphere(f"moss.eye{sx}", 0.021, (sx * 0.07, -0.118, 0.07), dk, self.head, seg=10)
-            kit_.sphere(f"moss.glint{sx}", 0.0075, (sx * 0.07 - sx * 0.006, -0.136, 0.083), hi, self.head, seg=6)
-        self.tail = kit_.empty("moss.tail", (0, 0.3, 0.07), self.body)
-        kit_.box("moss.tailm", (0.065, 0.065, 0.27), (0, 0.0, 0.135), c, self.tail, bevel=0.025)
-        for piece in [self.root] + list(self.root.children_recursive):
-            pass
+            kit_.sphere(f"moss.eye{sx}", 0.024, (sx * 0.072, -0.113, 0.07), dk, self.head, seg=10)
+            kit_.sphere(f"moss.glint{sx}", 0.0085, (sx * 0.072 - sx * 0.006, -0.133, 0.083), hi, self.head, seg=6)
+        self.tail = kit_.empty("moss.tail", (0, 0.40, 0.13), self.body)
+        kit_.box("moss.tailm", (0.075, 0.075, 0.26), (0, 0.0, -0.13), c, self.tail, bevel=0.03)
+        kit_.box("moss.tailtip", (0.08, 0.08, 0.09), (0, 0.0, -0.29), w, self.tail, bevel=0.03)
 
     def pose(self, st, t, pos, yaw):
         r = self.root
@@ -436,12 +451,12 @@ class Moss:
         self.head.rotation_euler = (math.radians(hpitch), 0, math.radians(hy))
         e = st.get("ears", 0.5)
         for piv, sx in self.ears:   # 0 flat and down, 1 pricked and forward
-            piv.rotation_euler = (math.radians(-30 + 80 * (1 - e) * 0 - 50 * e + 36 * (1 - e)), 0,
-                                  math.radians(sx * (4 + 32 * (1 - e))))
+            piv.rotation_euler = (math.radians(12 - 50 * e), 0, math.radians(sx * (8 + 22 * (1 - e))))
         wag = st.get("wag", 0.0)
         base = st.get("tail", 20)
-        base = -75 if base > 0 else base            # a tail hangs back and down (negative leans it back over the rump)
-        self.tail.rotation_euler = (math.radians(base), 0, math.radians(32 * wag * math.sin(2 * math.pi * 1.9 * t)))
+        # the tail is built hanging down from the rump: tail > 0 lets it hang, tail < 0 lifts it (-45 nearly level)
+        lift = 0 if base > 0 else min(1.0, -base / 45.0)
+        self.tail.rotation_euler = (math.radians(80 * lift), 0, math.radians(32 * wag * math.sin(2 * math.pi * 1.9 * t)))
 
 
 # ----------------------------------------------------------------------------------------- the Long Man
@@ -545,6 +560,7 @@ def build(kit_, story, tl):
     build_lights(kit_, ctx)
     ctx["moss"] = Moss(kit_)
     ctx["fog_em"], ctx["fog_dn"] = collect_fog(kit_)
+    ctx["wnode"] = M["water"].node_tree.nodes["Principled BSDF"]
     ctx["wd"] = workdir(tl)
     return ctx
 
@@ -622,14 +638,6 @@ def animate_moss(tl, t, ctx):
 
 
 def animate(kit_, story, tl, t, ctx):
-    dbg = __import__("os").environ.get("EP27_CAM")   # look-dev only: "x,y,z,tx,ty,tz,lens[,roll]" replaces every shot
-    if dbg:
-        v = [float(x) for x in dbg.split(",")]
-        for sh in story["shots"]:
-            sh["cam"] = [[0, v[0:3], v[3:6], v[6], v[7] if len(v) > 7 else 0]]
-    for nm in (__import__("os").environ.get("EP27_HIDE") or "").split(","):
-        if nm and bpy.data.objects.get(nm) is not None:
-            bpy.data.objects[nm].hide_render = True
     animate_people(tl, t)
     animate_moss(tl, t, ctx)
     place_long(tl, t, ctx)
@@ -644,7 +652,7 @@ def animate(kit_, story, tl, t, ctx):
     b0 = ctx["bolt0"]
     ctx["bolt"].location = (b0[0], b0[1] + 0.07 * bon, b0[2])
     ctx["bolt"].hide_render = False
-    w = 1.0 if __import__("os").environ.get("EP27_NOVEIL") else _eased(_cues(tl, "wipe"), "to", t, 0.0)
+    w = _eased(_cues(tl, "wipe"), "to", t, 0.0)
     ctx["fog_node"].inputs[0].default_value = 0.93 * (1.0 - w)
     cuff = ctx["cuff"]
     cuff.location = (WIN_X - 0.42 + 0.84 * w, SKIN_P - 0.25, WIN_Z - 0.05)
@@ -663,6 +671,12 @@ def animate(kit_, story, tl, t, ctx):
         n.inputs["Color"].default_value = (*fogc, 1)
     for n in ctx["fog_dn"]:
         n.inputs[1].default_value = -s["dens"]
+    wn = ctx["wnode"]
+    wn.inputs["Roughness"].default_value = s["wr"]
+    for k in ("Specular IOR Level", "Specular"):
+        if k in wn.inputs:
+            wn.inputs[k].default_value = s["wsp"]
+            break
     bg = bpy.context.scene.world.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (*fogc, 1)
     bg.inputs["Strength"].default_value = s["ws"]
@@ -684,6 +698,18 @@ def animate(kit_, story, tl, t, ctx):
         "hatch": 0.0,
     }
     # the open hatch lets the day in, eased with the slide
+    # a soft daylight fill for shots whose subject sits away from every other light (shot key "lamp": its power)
+    lamp = 0.0
+    for sh, ts in zip(story["shots"], tl["shots"]):
+        if ts["start"] - 1e-6 <= t < ts["end"] and sh.get("lamp"):
+            cam = sh["cam"][0]
+            tgt, loc = V(cam[2]), V(cam[1])
+            d = (loc - tgt)
+            d.normalize()
+            kit.LIGHTS["lamp"]["obj"].location = tgt + d * 1.2 + V((0, 0, 0.6))
+            kit.aim(kit.LIGHTS["lamp"]["obj"], tuple(tgt))
+            lamp = float(sh["lamp"])
+    over["lamp"] = lamp
     over["cab a"] *= 1.0 + 0.35 * h
     over["hatch"] = h
     return over
