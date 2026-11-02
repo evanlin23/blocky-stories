@@ -24,6 +24,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep12 `knock-back` | none (before the canon), but the knock fits the roll call | |
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S59, under L59 ("Wren tore it in half"), held 1.5 s, not narrated |
+| ep31 `dawn-flight` | a plain tally: four slate-blue strokes stamped into the leather rim of the balloon basket's fourth corner, four for a basket built for four (no extra stroke). The Loose One is the basket's Keeper, standing in the corner I left empty, and it leaves once Callum is coming | S19, under L19 ("The RIM / was old LEATHER, / worn SMOOTH / by HANDS."), held 1.6 s in the upper third, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
