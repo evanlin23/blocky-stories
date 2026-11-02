@@ -465,11 +465,11 @@ def build_car(kit, ctx):
 def build_ribbons(kit, ctx):
     """The rule marker: one short cherry ribbon loop tied between the near wrists of each couple (and, from L67, of
     Pop and Nan). Our own prop, no text. The Skater and the singles never wear one."""
-    rb = kit.plastic("#b0404c", 0.5)
+    rb = kit.emit("#ff2e5a", 3.0)
     ctx["ribbons"] = []
-    for key in (("c1a", "c1b"), ("c2a", "c2b"), ("pop", "nan")):
-        strip = kit.box(f"ribbon {key[0]}", (1.0, 0.03, 0.07), (0, 0, -9), rb)
-        knots = [kit.box(f"ribbon knot {key[0]}{k}", (0.08, 0.08, 0.1), (0, 0, -9), rb, bevel=0.02) for k in (0, 1)]
+    for key in (("c1a", "c1b"), ("c2a", "c2b"), ("c3a", "c3b"), ("pop", "nan")):
+        strip = kit.box(f"ribbon {key[0]}", (1.0, 0.16, 0.16), (0, 0, -9), rb)
+        knots = [kit.box(f"ribbon knot {key[0]}{k}", (0.3, 0.3, 0.5), (0, 0, -9), rb, bevel=0.02) for k in (0, 1)]
         ctx["ribbons"].append((key, strip, knots))
 
 
@@ -808,8 +808,9 @@ def animate(kit, story, tl, t, ctx):
         if ok:
             d, pa, pb = best
             mid = (pa + pb) / 2
-            strip.location = mid
+            lift = Vector((0, 0, 0.26))        # the loop stands up above the joined wrists so it shows
+            strip.location = mid + lift
             strip.scale = (max(d, 0.05), 1, 1)
             strip.rotation_euler = (pb - pa).to_track_quat("X", "Z").to_euler()
-            knots[0].location, knots[1].location = pa, pb
+            knots[0].location, knots[1].location = pa + lift * 0.5, pb + lift * 0.5
     return over

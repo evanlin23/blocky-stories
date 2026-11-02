@@ -64,6 +64,11 @@ cast = {
     "c2b": {"age": "adult", "skin": "#b87850", "shirt": "#7d4f8e", "pattern": "solid", "pants": "#2c3040",
             "shoes": "#e8dcc2", "sleeves": "short", "hair": "bun", "hair_c": "#241812", "hat": "none",
             "face": {"eyes": "round", "brows": True, "ink": "#1c1210", "bags": False}},
+    "c3a": {"age": "adult", "skin": "#c68a62", "shirt": "#a8505e", "pattern": "solid", "pants": "#30343f", "shoes": "#e8dcc2",
+            "sleeves": "short", "hair": "cap", "hair_c": "#20150f", "hat": "none", "face": dict(FACE)},
+    "c3b": {"age": "adult", "skin": "#e8b894", "shirt": "#4a7f9a", "pattern": "solid", "pants": "#3a3a4c", "shoes": "#e8dcc2",
+            "sleeves": "short", "hair": "long", "hair_c": "#6a4020", "hat": "none",
+            "face": {"eyes": "lashes", "brows": True, "ink": "#18100e"}},
     # the singles at the rail in shot 1: bare wrists, no ribbon
     "s1": {"age": "adult", "skin": "#d9a27a", "shirt": "#6a7f9c", "pattern": "solid", "pants": "#35384a", "shoes": "#e8dcc2",
            "sleeves": "short", "hair": "buzz", "hair_c": "#2a1d17", "hat": "none", "face": dict(FACE)},
@@ -120,7 +125,7 @@ MESEAT = [ME_X, SEAT_Y, 1.25]
 SHOTS = [
     # 01 the rule (warm, readable from frame 1): couples joined by a cherry ribbon at the wrist, singles at the rail
     (0, "shot 1, warm: Nan's face at the rail, bare wrist, ribbon-joined couples gliding behind her", 2,
-     C([3.1, -6.6, 1.7], [3.4, -3.4, 1.3], 3.4)),
+     C([3.1, -6.3, 2.8], [3.4, -2.8, 1.0], 4.0)),
     ("L01.3", "a slow track along the line of singles at the rail", 2,
      C([5.4, -6.5, 1.45], [5.4, -3.75, 1.3], 4.4)),
     ("L02", "the rink from outside at dusk", 2, move(([-15.0, -5.6, 1.2], [-8.0, -7.0, 0.7]), ([-13.4, -6.2, 1.2], [-8.0, -7.0, 0.7]), 25)),
@@ -128,9 +133,9 @@ SHOTS = [
     ("L04", "in the car at dusk, windows down: me driving, Nan's arm through Pop's in the back", 2,
      C([-10.0, -8.2, 2.2], [-13.2, -4.4, 1.25], 3.2)),
     ("L04.4", "Nan holds Pop's arm at the doors", 2, C([-3.4, -5.0, 1.4], [-6.2, -6.9, 1.3], 2.6)),
-    ("L08", "under the ceiling fans, then down to the shine of the floor", 2,
-     move(([-1.0, -5.3, 1.0], [0.0, 2.7, 4.4]), ([-1.0, -5.3, 1.0], [0.5, 0.5, 0.0]), 24)),
-    ("L09", "the painted stripes, locked off", 4, still([5.6, 0.2, 1.4], [8.0, 0.8, 1.5], 30)),
+    ("L08", "ribbon couples gliding under the slow fans", 2, still([0.5, -7.0, 1.3], [1.0, 0.5, 2.2], 30)),
+    ("L08.2", "low on the shining floor: the couples' skates gliding", 2, still([-3.0, -4.8, 0.3], [0.5, -1.8, 0.15], 28)),
+    ("L09", "couples gliding past the painted stripes", 2, C([-1.5, -4.6, 1.3], [4.2, -0.4, 1.3], 3.6)),
     ("L10", "Nan at the hire counter, the cubby wall behind", 2, C([3.6, -4.9, 1.7], [4.5, -8.4, 1.8], 3.6)),
     ("L10.2", "the lore shot: the bottom-row end cubby, the far-too-long cherry skates, the tally on the near heel", 2,
      C([6.5, -6.0, 1.15], [6.5, -8.05, 1.12], 0.9)),
@@ -144,7 +149,7 @@ SHOTS = [
     ("L17", "couples gliding past, seen at the elbows", 2, still([-6.4, -3.6, 1.3], [-1.0, 0.0, 1.0], 24)),
     ("L18", "high wide: the pool travelling round the floor", 2, HIGH),
     ("L19", "Nan alone at the rail, the couples beyond", 2, C([3.8, -6.6, 1.4], [3.0, -3.5, 1.2], 2.8)),
-    ("L19b", "Nan at the rail in the pool's edge, looking toward the snack bar", 2, C([3.0, -1.4, 1.3], [3.0, -3.75, 1.25], 1.5)),
+    ("L19b", "Nan at the rail, bare wrist, soft, looking toward the snack bar (from the concourse side)", 2, C([0.6, -5.7, 1.35], [3.0, -3.75, 1.3], 1.9)),
     ("L20", "me and Pop at the snack bar, the tub between us", 2, C([-1.7, -4.8, 1.55], [-4.4, -6.4, 1.2], 3.0)),
     ("L21", "the pool sliding along the far rail, then onto a tall striped shape", 2, FARCAM),
     ("L22", "medium on the Skater at the far rail, face toward the floor", 2,
@@ -174,7 +179,7 @@ SHOTS = [
     ("L39", "Nan's face, looking past camera toward us", 2, C([3.4, -5.3, 1.4], [3.0, -3.75, 1.3], 1.7)),
     ("L40", "the pool slides off it, and back again", 2, RAIL34),
     ("P01+0.55", "THE REVEAL: its head turned all the way round, over its back, looking at me", 1,
-     still([3.7, -5.7, 1.0], [1.7, -3.75, 1.8], 30)),
+     still([-0.9, -5.0, 1.4], [1.7, -3.75, 1.8], 32)),
     ("L42", "my face, terrified", 2, C([-2.8, -4.4, 1.6], [ME_X, SEAT_Y, 1.4], 2.5)),
     ("L43", "the chrome stool beside me, empty, the amber lamp over it", 2, C([-1.5, -4.4, 1.5], [POP_X, SEAT_Y, 0.9], 3.0)),
     ("L44", "close on the tub, steam faint and slow", 2, C([-3.6, -4.9, 1.6], [-4.4, -5.98, 1.3], 0.9)),
@@ -217,7 +222,7 @@ SHOTS = [
 
 # per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
 # flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
-EXPO = {"L04": 2.6, "L04.4": 0.8, "L13": 1.9, "L14": 0.8, "L15": 0.7, "L08": 0.55, "L17": 1.4, "L18": 1.18, "L19": 1.03, "L20": 1.53, "L21": 1.09, "L22": 0.77, "L23": 0.87, "L24": 1.49, "L27.5": 0.55, "L28": 0.77, "L29": 1.18, "L30": 0.81, "L31": 0.77, "L31.2": 1.08, "L32": 1.51, "L33": 1.04, "L34": 1.17, "L35": 0.92, "L36": 1.13, "L37": 1.42, "L38": 2.5, "L39": 0.99, "L40": 1.19, "P01+0.55": 1.5, "L42": 1.7, "L43": 0.93, "L44": 0.96, "L45": 0.72, "L46": 1.34, "L47": 2.49, "L48": 2.13, "L49": 1.26, "L50": 1.21, "L51": 0.79, "L52": 1.13, "L53": 2.1, "L54": 0.89, "L55": 1.28, "L56": 1.05, "L57": 0.75, "L58": 0.8, "L59": 0.84, "L60": 1.86, "L61": 1.47, "L62": 1.04, "L63": 0.99, "L64": 1.32, "L65": 0.89, "L66": 0.95, "L67": 0.8, "L68": 0.87, "L69": 0.7, "L70": 1.33, "L71": 1.49, "L72": 0.7, "L73": 0.76}
+EXPO = {"L25.3": 0.55, "L04": 2.6, "L04.4": 0.8, "L13": 1.9, "L14": 0.8, "L15": 0.7, "L08": 1.0, "L17": 1.4, "L18": 1.18, "L19": 1.03, "L20": 1.53, "L21": 1.09, "L22": 0.77, "L23": 0.87, "L24": 1.49, "L27.5": 0.55, "L28": 0.77, "L29": 1.18, "L30": 0.81, "L31": 0.77, "L31.2": 1.08, "L32": 1.51, "L33": 1.04, "L34": 1.17, "L35": 0.92, "L36": 1.13, "L37": 1.42, "L38": 2.5, "L39": 0.99, "L40": 1.19, "P01+0.55": 1.6, "L42": 1.7, "L43": 0.93, "L44": 0.96, "L45": 0.72, "L46": 1.34, "L47": 2.49, "L48": 2.13, "L49": 1.26, "L50": 1.21, "L51": 0.79, "L52": 1.13, "L53": 2.1, "L54": 0.89, "L55": 1.28, "L56": 1.05, "L57": 0.75, "L58": 0.8, "L59": 0.84, "L60": 1.86, "L61": 1.47, "L62": 1.04, "L63": 0.99, "L64": 1.32, "L65": 0.89, "L66": 0.95, "L67": 0.8, "L68": 0.87, "L69": 0.7, "L70": 1.33, "L71": 1.49, "L72": 0.7, "L73": 0.76}
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
@@ -358,8 +363,8 @@ walk("nan", "L15", [-2.7, -6.2])
 walk("nan", "L15+0.4", [-0.3, -4.6], skate=True)
 walk("nan", "L15>", [NAN[0], NAN[1]], skate=True)
 put("nan", "L16", list(NAN), yaw=180, expr="soft", skate=False)
-key("nan", "L19b", head=[62, 0], blend=0.3)
-key("nan", "L20", head=[0, 0], blend=0.3)
+key("nan", "L19b", yaw=-70, head=[0, 0], blend=0)
+key("nan", "L20", yaw=180, head=[0, 0], blend=0)
 put("nan", "L34", list(NAN), yaw=0, head=[-30, 0], expr="soft")
 key("nan", "L39", head=[-45, 0], blend=0.3)
 put("nan", "L48", list(NAN), yaw=0, head=[-30, 0], expr="soft")
@@ -410,13 +415,27 @@ def orbit(anchor, secs, th0, a, b, off=0.45, hide_at=None):
         hide(who, f"{anchor}+{secs + 0.1:.1f}")
 
 
-for w in ("c1a", "c1b", "c2a", "c2b"):
+for w in ("c1a", "c1b", "c2a", "c2b", "c3a", "c3b"):
     hide(w, 0)
 for w, x in (("s1", 4.2), ("s2", 5.4), ("s3", 6.6)):
     put(w, 0, [x, -3.75], yaw=0, expr="neutral")
     hide(w, "L02")
-orbit("L01", 4.5, 4.7, "c1a", "c1b")
-orbit("L01", 4.5, 5.7, "c2a", "c2b")
+# shot 1: three ribbon-joined couples glide south toward the rail behind Nan, side by side across the frame
+def glide(anchor, secs, cx, y0, speed, a, b, off=0.45):
+    for who, dx in ((a, -off), (b, off)):
+        put(who, anchor, [cx + dx, y0], yaw=0, skate=True, expr="grin", arms=[18, 18], side=[8, 8])
+        for k in range(1, int(secs / 0.5) + 1):
+            walk(who, f"{anchor}+{k * 0.5:.1f}", [cx + dx, round(y0 - speed * k * 0.5, 3)], skate=True, arms=[18, 18], side=[8, 8])
+        hide(who, f"{anchor}+{secs + 0.1:.1f}")
+
+
+glide("L01", 2.9, 2.9, -0.7, 0.4, "c1a", "c1b")
+glide("L01", 2.9, 4.05, -0.2, 0.4, "c2a", "c2b")
+glide("L01", 2.9, 3.45, 0.9, 0.4, "c3a", "c3b")
+# L08 to L09: three couples glide round under the fans, then past the stripes
+orbit("L08", 3.8, 4.8, "c1a", "c1b")
+orbit("L08", 3.8, 5.5, "c2a", "c2b")
+orbit("L08", 3.8, 4.2, "c3a", "c3b")
 orbit("L16", 23.0, 0.98, "c1a", "c1b")
 orbit("L16", 23.0, 6.06, "c2a", "c2b")
 orbit("L28", 11.4, 3.4, "c1a", "c1b")
@@ -436,7 +455,7 @@ for who, dx, p0, lag in (("c1a", -0.4, (-0.8, 0.0), 0.0), ("c1b", 0.4, (-0.8, 0.
     hide(who, f"L47+{4.8 + lag:.1f}")
 
 # ---------------------------------------------------------------------------------------------------- cues
-cues = [{"at": 0, "name": "skates", "who": w, "on": True} for w in ("c1a", "c1b", "c2a", "c2b")]
+cues = [{"at": 0, "name": "skates", "who": w, "on": True} for w in ("c1a", "c1b", "c2a", "c2b", "c3a", "c3b")]
 cues += [
     {"at": 0, "name": "skates", "who": "s1", "on": True},
     {"at": 0, "name": "skates", "who": "s2", "on": True},
@@ -448,8 +467,8 @@ cues += [
     # the room's level: dim (0.2) for the dedication, full for the fast songs, 0.3 for a slow song, lower for the last
     # skate, then warm and a little up for Pop. Every change is a slow ramp.
     {"at": "L16", "name": "dim", "level": 0.3, "dur": 1.2},
-    {"at": "L25", "name": "dim", "level": 1.0, "dur": 1.5},
-    {"at": "L28", "name": "dim", "level": 0.3, "dur": 1.2},
+    {"at": "L25", "name": "dim", "level": 1.0, "dur": 1.0},
+    {"at": "L28+0.4", "name": "dim", "level": 0.3, "dur": 1.2},
     {"at": "L33>", "name": "dim", "level": 0.8, "dur": 1.5},
     {"at": "L34", "name": "dim", "level": 0.3, "dur": 1.5},
     {"at": "L46", "name": "dim", "level": 0.07, "dur": 2.0},
