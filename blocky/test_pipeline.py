@@ -172,6 +172,21 @@ def test_comments_wait_for_public_and_post_once():
     assert comment.due(done, {"v1": "public", "v2": "private", "v3": "public"}) == ["a"]
 
 
+def test_compilation_chapters_and_pick():
+    import datetime as dt
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import compile as comp
+
+    assert comp.chapters([("A", 135.2), ("B", 140.0), ("C", 3400)]) == "0:00 A\n2:15 B\n4:35 C"
+    assert comp.stamp(3725) == "1:02:05"
+    stories = [(f"s{i}", 140.0) for i in range(12)]
+    got = comp.pick(stories, 20)
+    assert len(got) == 9 and got[0] == "s0"                    # 9 x 140 s = 21 min
+    assert comp.pick(stories[:4], 20) == []                    # too few for a compilation
+    noon = comp.publish_at(dt.datetime(2026, 11, 8, 13, 0, tzinfo=dt.timezone.utc))   # 7 am Central
+    assert noon == "2026-11-08T18:00:00Z"
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics
