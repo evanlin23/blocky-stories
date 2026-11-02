@@ -183,9 +183,9 @@ for i, (at, cam, opt) in enumerate(SH):
     shots.append(s)
 SID = {at: s["id"] for (at, _, _), s in zip(SH, shots)}
 # the room's top light in each close-up of the creature, set to match its neighbours' exposure across the cut
-DIM = {"L20": 0.6, "L21": 0.6, "L22": 0.6, "L23": 0.6, "L24": 0.6, "L48.3": 0.45, "L49": 0.5, "L50": 0.4, "L51": 0.6,
-       "L51.2+0.45": 0.6, "L52.2+0.1": 0.6, "L53.3": 0.6,
-       "L54": 0.4, "L58": 0.5}
+DIM = {"L20": 0.6, "L21": 0.6, "L22": 0.6, "L23": 0.6, "L24": 0.6, "L48.3": 0.45, "L49": 0.8, "L50": 0.15, "L51": 1.0,
+       "L51.2+0.45": 1.0, "L52.1+0.1": 0.45, "L52.2+0.1": 1.0, "L53.1": 0.45, "L53.3": 1.0,
+       "L54": 0.2, "L55": 0.55, "L58": 0.5}
 RAIN = [SID[k] for k in ("L03", "L04", "L28", "L29", "L34", "L72", "L76")]
 
 # ---------------------------------------------------------------------------------------------------- acting
@@ -444,6 +444,7 @@ story = {
     "shoe_shots": [SID["L23"]],
     "hide_wall_shots": [SID["L68"]],
     "stair_fill_shots": [SID["L62"], SID["L65"], SID["L68"]],
+    "coat_shots": [SID["L51.2"], SID["L53"], SID["L53.2"]],
     "cool_shots": [SID["L66"]],
     "phonemes": {"Arthur": "ˈɑɹθəɹ", "turned": "tˈɜɹnd", "drums": "dɹˈʌmz"},
     "creature_dim": {SID[k]: v for k, v in DIM.items()},

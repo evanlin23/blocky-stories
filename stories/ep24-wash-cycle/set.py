@@ -443,6 +443,9 @@ def build(kit, story, tl):
     # his door, shot L66: a cool white fill from the camera side, so his white hair stays white (the warm bulb is dimmed)
     kit.light("door cool", "AREA", (ST[0] + 0.4, 3.26, 4.6), 130.0, "#dbe8ff", size=1.4)
     kit.aim(kit.LIGHTS["door cool"]["obj"], (ST[0], 5.1, 3.7))
+    # the coat close-ups (L51.2, L53): a soft light on my coat's front, so the three cuts match the faces' exposure
+    kit.light("coat lamp", "AREA", (-2.5, -0.35, 1.5), 30.0, "#e8e2d4", size=0.8)
+    kit.aim(kit.LIGHTS["coat lamp"]["obj"], (-3.62, -0.86, 0.84))
     kit.light("t rim", "SPOT", (0, 2.2, 1.6), 150.0, "#9fc4ff", size=0.15, spot=38, blend=0.7)
     kit.light("t key", "SPOT", (0, -1.2, 0.35), 260.0, "#d79a52", size=0.12, spot=34, blend=0.7)
     return ctx
@@ -632,6 +635,7 @@ def animate(kit, story, tl, t, ctx):
     over["me lamp"] = 1.0 if sid in story.get("lamp_shots", []) else 0.0
     over["hook lamp"] = 1.0 if sid in story.get("hook_lamp_shots", []) else 0.0
     over["stair fill"] = 1.0 if sid in story.get("stair_fill_shots", []) else 0.0
+    over["coat lamp"] = 1.0 if sid in story.get("coat_shots", []) else 0.0
     cool = sid in story.get("cool_shots", [])
     over["door cool"] = 1.0 if cool else 0.0
     if cool:
