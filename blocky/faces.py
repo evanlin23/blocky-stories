@@ -260,6 +260,8 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
         elif eyes == "dot":
             ry = 0.07 * s * (1.0 - 0.85 * blink)
             _ellipse(d, cx + lx * 0.015 * s, ey, 0.045 * s, max(2, ry), fill=pup)
+            if glow and ry > 0.03 * s:   # opt-in (ep36): one tiny cold highlight in each dot
+                _ellipse(d, cx + lx * 0.015 * s - 0.012 * s, ey - ry * 0.38, 0.015 * s, 0.017 * s, fill=hexrgb(glow))
         elif eyes == "pin":
             r = 0.068 * s
             _ellipse(d, cx + lx * 0.01 * s, ey, r, r * (1.0 - 0.9 * blink), fill=(6, 5, 8))
