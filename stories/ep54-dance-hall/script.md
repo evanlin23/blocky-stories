@@ -14,7 +14,7 @@
 
 - **Premise:** In a town where everyone is born with half a glowing glyph on the back of one hand and a match out there with the rest, I play the records for Aunt Ros's Tuesday ballroom class in the old upstairs dance hall, in white gloves, and never dance. Ros has looked for her other half for forty years. This autumn her half is fading, she dances every demonstration with her arms round nobody, and the floor starts creaking behind her in a stride far too long.
 - **Rule:** "In this town, you're born with half a mark. Your match has the rest." Halves glow gold on the back of a hand, and when two halves touch they glow whole.
-- **Twist:** the rule never says which side of the hand. My half is on my palm, hidden every Tuesday under my record gloves, and Ros's match has been carrying her records for years. A match was never only a love match. It's whoever you fit with. The first line turns over: "your match has the rest" first reads as romance and by the end means family.
+- **Twist:** the rule never says which side of the hand. My half is on my palm, hidden every Tuesday under my record gloves, and Ros's match has been carrying her records for years. A match can be family. It's whoever you fit with. The first line turns over: "your match has the rest" first reads as romance and by the end means family.
 - **Where the twist is planted:**
   - Plant 1, the gloves: L09 ("I play the RECORDS / in my record GLOVES. / I NEVER dance."), and the careful wording at L06 ("The backs / of MY hands / are BLANK.").
   - Plant 2, the collar: L18 to L19, when Ros straightens my collar after class her half glows bright for a second. She blames the lighting (L20).
@@ -47,7 +47,7 @@ Every word is the narrator's. Ros's one quote (L37) is reported in my line, and 
 
 - Each person has half a glyph on the back of one hand, glowing soft gold (`#ffcf66`), our own shapes: a split ring with a notch, a forked hook, a stepped arc. Each pair's halves fit along a straight cut like two pieces of a coin. No letters, no numbers, nothing that reads as a real symbol.
 - Ros's half is the left half of a ring with a three-toothed comb inside it. Mine is the right half, on my right palm. Same gold.
-- When two halves touch (hand on hand in hold), they read as one whole glyph, brighter, with a soft bloom. The change ramps over 0.6 s or more.
+- When two halves touch (back of hand to back of hand in hold), they read as one whole glyph, brighter, with a soft bloom. The change ramps over 0.6 s or more.
 - Ros's half dims across the story: 100% in L07, 70% in L14, 50% at L19 (brief rise to 90% and back), 25% at L36, 10% at L52. Every change is a slow ramp across a cut or over 1 s or more, never a step on screen.
 - Visible by 2 s: L01's first shot is two strangers at a bus stop holding up the backs of their hands toward each other, both halves glowing, faces in frame.
 
@@ -139,7 +139,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the hall on Tuesday nights, a run of weeks.
 - **Shots:** 11.
 
-- `L10` narrator: Every couple / waltzes HAND / on HAND.
+- `L10` narrator: Every couple / waltzes, hand-BACKS / TOUCHING.
   - [the class in hold, circling the worn ring, warm light]
 - `L11` narrator: Where the halves MEET, / they glow WHOLE.
   - [close on a hand resting on a partner's hand, two halves meeting, the glow blooming to one whole glyph over 0.6 s]
@@ -290,7 +290,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the same night, then the next Tuesday, lights full. The music turns to E major.
 - **Shots:** 10.
 
-- `L64` narrator: A match / was never only / for LOVE.
+- `L64` narrator: A match / can be FAMILY.
   - [Ros, `smile`, eyes wet but nothing running, looking at our hands]
 - `L65` narrator: It's whoever / you FIT with.
   - [the whole glyph, close]
