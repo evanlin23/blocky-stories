@@ -187,7 +187,7 @@ def build_room(kit, ctx, M):
     for k, x in enumerate((-2.2, 1.2, 4.0)):
         kit.light(f"dryer glow{k}", "AREA", (x, 2.35, 0.65), 12.0, "#e8a45a", size=1.6)
         kit.aim(kit.LIGHTS[f"dryer glow{k}"]["obj"], (x, -0.5, 0.9))
-    kit.light("end glow", "AREA", (-2.3, -2.6, 1.0), 10.0, "#e8a45a", size=0.7)
+    kit.light("end glow", "AREA", (-2.3, -2.6, 1.0), 3.0, "#e8a45a", size=0.7)
     kit.aim(kit.LIGHTS["end glow"]["obj"], (-2.3, -1.2, 1.0))
     ctx["tube_mat"] = M["tube"]
 
@@ -291,13 +291,14 @@ def build_machines(kit, ctx, M):
     B(kit, "dryer7", (1.3, 0.9, 1.85), (x7, y7 - 0.1, 0.925), kit.plastic("#9ea3a8", 0.34, "wc dryer7 body"), bevel=0.02)
     B(kit, "dryer7 panel", (0.9, 0.04, 0.2), (x7, y7 + 0.37, 1.62), M["steel2"])
     ctx["d7_hinge"] = kit.empty("d7 hinge", (x7 - 0.4, y7 + 0.36, 1.0))
-    kit.cyl("d7 ring", 0.4, 0.08, (0.4, 0.0, 0), M["steel"], ctx["d7_hinge"], rot=(math.pi / 2, 0, 0), n=32)
+    kit.cyl("d7 ring", 0.4, 0.08, (0.4, 0.0, 0), M["steel2"], ctx["d7_hinge"], rot=(math.pi / 2, 0, 0), n=32)
     ctx["d7_glass_mat"] = kit.emit("#d79a52", 1.7, "wc d7 glass")
-    kit.cyl("d7 glass", 0.31, 0.04, (0.4, 0.045, 0), ctx["d7_glass_mat"], ctx["d7_hinge"], rot=(math.pi / 2, 0, 0), n=32)
+    # a clear pane (not an emissive disc), so the coat behind it reads as a coat, with its collar and buttons
+    kit.cyl("d7 glass", 0.31, 0.04, (0.4, 0.045, 0), kit.glass("#d6e4ea", "wc d7 pane"), ctx["d7_hinge"], rot=(math.pi / 2, 0, 0), n=32)
     kit.cyl("d7 drum", 0.31, 0.5, (x7, y7 + 0.1, 1.0), M["black"], rot=(math.pi / 2, 0, 0), n=32)
-    ctx["d7_coat"] = kit.empty("d7 coat", (x7, y7 + 0.41, 1.0))
+    ctx["d7_coat"] = kit.empty("d7 coat", (x7, y7 + 0.375, 1.0))
     kit.cyl("d7 hole", 0.33, 0.01, (x7, y7 + 0.355, 1.0), M["black"], rot=(math.pi / 2, 0, 0), n=32)
-    coat_loose(kit, "d7c", M, ctx["d7_coat"], 1.0)
+    coat_loose(kit, "d7c", M, ctx["d7_coat"], 1.4)
     ctx["d7_loadfloor"] = kit.empty("d7 floor coat", (x7, y7 + 0.45, 0.8))
     fl_ = ctx["d7_loadfloor"]
     B(kit, "d7f body", (0.46, 0.34, 0.12), (0, 0.02, 0.0), M["coat"], fl_, bevel=0.05)
@@ -429,6 +430,9 @@ def build(kit, story, tl):
     # its head, and a low warm key from the table side, below
     # lights that serve one shot only (so its brightness matches its neighbours across the cut)
     kit.light("tally lamp", "POINT", (CHX[3], -0.35, 0.12), 3.0, "#dfe6f2", size=0.1)
+    kit.light("shoe lamp", "POINT", (2.9, -0.8, 0.7), 10.0, "#ffd9a8", size=0.2)
+    kit.light("two fill", "AREA", (ST[0] + 2.2, 4.4 + 0.4, 3.9), 60.0, "#ffe2bc", size=1.5)
+    kit.aim(kit.LIGHTS["two fill"]["obj"], (ST[0], 4.4 + 0.4, 2.7))
     kit.light("me lamp", "AREA", (-2.5, -0.9, 2.0), 45.0, "#e8e2d4", size=1.2)
     kit.aim(kit.LIGHTS["me lamp"]["obj"], (-3.6, -2.3, 1.4))
     kit.light("hook lamp", "AREA", (2.8, -1.6, 2.4), 45.0, "#e8e2d4", size=1.0)
@@ -498,7 +502,7 @@ def dress(kit, ctx, story):
         nt.links.new(ramp.outputs["Color"], bsdf.inputs["Emission Color"])
         bsdf.inputs["Emission Strength"].default_value = EYE_GLOW
         bpy.data.objects["turned.head"].scale = (1.0, 1.0, 1.24)
-        skin_t = kit.plastic("#d4cdc0", 0.7, "wc turned neck")
+        skin_t = kit.plastic("#b3aa9a", 0.7, "wc turned neck")
         # a thick neck bent back from the shoulders to the pivot at the base of the head
         nl = math.hypot(HEAD_P[1], HEAD_P[2] - 2.0)
         na = math.atan2(HEAD_P[1], HEAD_P[2] - 2.0)
@@ -511,9 +515,9 @@ def dress(kit, ctx, story):
             old.hide_render = True
             old.name = f"turned.skinarm_old{sx}"
             arm = bpy.data.objects[f"turned.arm{sx}"]
-            B(kit, f"turned.upper{sx}", (0.96, 0.98, 0.55), (0, 0, -0.725), kit.plastic("#d4cdc0", 0.5), arm, bevel=0.08)
+            B(kit, f"turned.upper{sx}", (0.96, 0.98, 0.55), (0, 0, -0.725), kit.plastic("#b3aa9a", 0.5), arm, bevel=0.08)
             el = kit.empty(f"turned.elbow{sx}", (0, 0, -0.99), arm)
-            B(kit, f"turned.fore{sx}", (0.96, 0.98, 0.95), (0, 0, -0.42), kit.plastic("#d4cdc0", 0.5), el, bevel=0.08)
+            B(kit, f"turned.fore{sx}", (0.96, 0.98, 0.95), (0, 0, -0.42), kit.plastic("#b3aa9a", 0.5), el, bevel=0.08)
             ctx["forearm"][sx] = el
     if "me" in cast:
         tor = bpy.data.objects["me.torso"]
@@ -573,7 +577,7 @@ def people(kit, ctx, story, tl, t):
             ob.hide_render = (not on) or s["hidden"]
 
 
-def lights_follow_turned(kit, tl, t, over):
+def lights_follow_turned(kit, tl, t, over, story, sid):
     s = AC.state(tl, "turned", t) if "turned" in tl["acting"] else None
     k, r = kit.LIGHTS["t key"]["obj"], kit.LIGHTS["t rim"]["obj"]
     if s is None or s["hidden"]:
@@ -586,7 +590,7 @@ def lights_follow_turned(kit, tl, t, over):
     r.location = (x - 0.2, y + 1.6, 1.9)
     kit.aim(r, (x, y - 0.15, 1.35))
     g = float(_ramp(_cues(tl, "tubes"), t, 1.0))
-    over["t key"] = (0.12 + 0.88 * g) * 2.2
+    over["t key"] = (0.12 + 0.88 * g) * (1.3 if str(sid) in story.get("scare_shots", []) else 0.4)
     over["t rim"] = 0.0          # lit from below only (the tubes' own light does the rest)
 
 
@@ -613,10 +617,19 @@ def animate(kit, story, tl, t, ctx):
     for k in range(3):
         over[f"dryer glow{k}"] = 0.45 + 0.55 * g
     over["tally lamp"] = 1.0 if sid in story.get("tally_shots", []) else 0.0
+    over["shoe lamp"] = 1.0 if sid in story.get("shoe_shots", []) else 0.0
+    over["two fill"] = 1.0 if sid in story.get("hide_wall_shots", []) else 0.0
     over["me lamp"] = 1.0 if sid in story.get("lamp_shots", []) else 0.0
     over["hook lamp"] = 1.0 if sid in story.get("hook_lamp_shots", []) else 0.0
     over["stair fill"] = 1.0 if sid in story.get("stair_fill_shots", []) else 0.0
-    lights_follow_turned(kit, tl, t, over)
+    for sx in (-1, 1):   # the near stair wall comes away for the doorway two-shot
+        w = bpy.data.objects.get(f"stair wall{sx}")
+        if w is not None and sx == 1:
+            w.hide_render = sid in story.get("hide_wall_shots", [])
+        dp = bpy.data.objects.get(f"door post{sx}")
+        if dp is not None and sx == 1:
+            dp.hide_render = sid in story.get("hide_wall_shots", [])
+    lights_follow_turned(kit, tl, t, over, story, sid)
     # drums: turn while "on" (washers, and the dryers)
     ang, last, on = 0.0, 0.0, True
     for c in sorted(_cues(tl, "drums"), key=lambda c: c["t"]):
@@ -638,7 +651,7 @@ def animate(kit, story, tl, t, ctx):
         if n.type == "EMISSION":
             n.inputs["Strength"].default_value = 0.05 + 1.65 * d7
     over["d7 inner"] = d7
-    ctx["d7_coat"].rotation_euler = (0, ang * 0.7, 0)
+    ctx["d7_coat"].rotation_euler = (0, math.sin(ang * 0.5) * 0.35, math.pi)
     op = _ramp([{"t": c["t"], "to": float(c.get("open", 0.0)), "dur": c.get("dur", 0.5)} for c in _cues(tl, "d7door")], t, 0.0)
     ctx["d7_hinge"].rotation_euler = (0, 0, -math.radians(100) * op)
     coat7 = _switch(_cues(tl, "coat7"), "on", t, False)
