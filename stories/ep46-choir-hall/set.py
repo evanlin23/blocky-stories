@@ -234,7 +234,7 @@ def materials(kit):
 
 BEAD_AMBER = "#ffb648"
 BEAD_SMOKE = "#3a3430"
-BEAD_LIT_S = 2.6
+BEAD_LIT_S = 1.5
 
 
 def bead_mat(kit, name, lit):
@@ -378,7 +378,7 @@ def build_kitchen(kit, M, ctx):
     kit.box("k.top", (3.3, 0.66, 0.05), (x0 + 0.3, y0 - 1.95, 0.92), M["white"])
     kit.cyl("k.cup", 0.06, 0.09, (x0 - 0.45, y0 - 0.25, 0.86), M["cup"], None, n=14)
     kit.cyl("k.tea", 0.05, 0.01, (x0 - 0.45, y0 - 0.25, 0.9), M["tea"], None, n=14)
-    kit.light("kitchen_day", "AREA", (x0, y0 + 3.4, 1.6), 380.0, "#cfe0f4", (math.pi / 2, 0, math.pi), size=1.4)
+    kit.light("kitchen_day", "AREA", (x0, y0 + 3.4, 1.6), 90.0, "#cfe0f4", (math.pi / 2, 0, math.pi), size=1.4)
     kit.light("kitchen_lamp", "POINT", (x0 - 0.2, y0 - 0.3, 2.1), 150.0, "#ffd49a", size=0.3)
     # the table lamp shade, hanging
     kit.cyl("k.shade", 0.22, 0.2, (x0 - 0.2, y0 - 0.3, 2.15), M["lampshade"], None, n=20, r2=0.1)

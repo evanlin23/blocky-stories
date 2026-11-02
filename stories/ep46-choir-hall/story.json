@@ -36,7 +36,7 @@
   "saturation": 1.0,
   "contrast": 1.06,
   "vignette": 0.34,
-  "bloom": 0.3,
+  "bloom": 0.2,
   "grain": 0.012
  },
  "phonemes": {},
@@ -617,8 +617,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Every word you SAY,",
-     "every word you say,"
+     "Every word",
+     "every word"
+    ],
+    [
+     "you SAY,",
+     "you say,"
     ],
     [
      "one bead",
@@ -733,8 +737,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And the village CHOIR",
-     "and the village choir"
+     "And the",
+     "and the"
+    ],
+    [
+     "village CHOIR",
+     "village choir"
     ],
     [
      "only sings",
@@ -779,8 +787,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "All TEN of my beads",
-     "all ten of my beads"
+     "All TEN of",
+     "all ten of"
+    ],
+    [
+     "my beads",
+     "my beads"
     ],
     [
      "are LIT",
@@ -837,8 +849,12 @@
      "his cord"
     ],
     [
-     "goes round his NECK",
-     "goes round his neck"
+     "goes round",
+     "goes round"
+    ],
+    [
+     "his NECK",
+     "his neck"
     ],
     [
      "THREE TIMES.",
@@ -1029,12 +1045,20 @@
      "i listen"
     ],
     [
-     "at the hall WINDOW",
-     "at the hall window"
+     "at the",
+     "at the"
     ],
     [
-     "on my way HOME.",
-     "on my way home."
+     "hall WINDOW",
+     "hall window"
+    ],
+    [
+     "on my",
+     "on my"
+    ],
+    [
+     "way HOME.",
+     "way home."
     ]
    ]
   },
@@ -1105,8 +1129,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The hall is DARK.",
-     "the hall is dark."
+     "The hall",
+     "the hall"
+    ],
+    [
+     "is DARK.",
+     "is dark."
     ],
     [
      "The door",
@@ -1154,8 +1182,12 @@
      "eleven chairs"
     ],
     [
-     "have all been TURNED",
-     "have all been turned"
+     "have all",
+     "have all"
+    ],
+    [
+     "been TURNED",
+     "been turned"
     ],
     [
      "to FACE it.",
@@ -1168,8 +1200,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I walk the VILLAGE",
-     "i walk the village"
+     "I walk",
+     "i walk"
+    ],
+    [
+     "the VILLAGE",
+     "the village"
     ],
     [
      "all NIGHT.",
@@ -1190,8 +1226,12 @@
      "her name."
     ],
     [
-     "I have the WORDS.",
-     "i have the words."
+     "I have",
+     "i have"
+    ],
+    [
+     "the WORDS.",
+     "the words."
     ]
    ]
   },
@@ -1204,8 +1244,12 @@
      "my mouth"
     ],
     [
-     "just won't DO it.",
-     "just won't do it."
+     "just won't",
+     "just won't"
+    ],
+    [
+     "DO it.",
+     "do it."
     ]
    ]
   },
@@ -1222,8 +1266,12 @@
      "mum is home,"
     ],
     [
-     "asleep in her COAT.",
-     "asleep in her coat."
+     "asleep in",
+     "asleep in"
+    ],
+    [
+     "her COAT.",
+     "her coat."
     ]
    ]
   },
@@ -1236,8 +1284,12 @@
      "old ron"
     ],
     [
-     "is at our GATE.",
-     "is at our gate."
+     "is at",
+     "is at"
+    ],
+    [
+     "our GATE.",
+     "our gate."
     ]
    ]
   },
@@ -1246,8 +1298,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He spends SEVEN words,",
-     "he spends seven words,"
+     "He spends",
+     "he spends"
+    ],
+    [
+     "SEVEN words,",
+     "seven words,"
     ],
     [
      "his first",
@@ -1308,8 +1364,12 @@
      "has one verse"
     ],
     [
-     "with WORDS in it.",
-     "with words in it."
+     "with WORDS",
+     "with words"
+    ],
+    [
+     "in it.",
+     "in it."
     ]
    ]
   },
@@ -1460,8 +1520,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And in the twelfth CHAIR,",
-     "and in the twelfth chair,"
+     "And in the",
+     "and in the"
+    ],
+    [
+     "twelfth CHAIR,",
+     "twelfth chair,"
     ],
     [
      "someone in MAROON",
@@ -1514,8 +1578,12 @@
      "its grin"
     ],
     [
-     "goes all the way",
-     "goes all the way"
+     "goes all",
+     "goes all"
+    ],
+    [
+     "the way",
+     "the way"
     ],
     [
      "ROUND.",
@@ -1528,16 +1596,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Right round the BACK",
-     "right round the back"
+     "Right round",
+     "right round"
+    ],
+    [
+     "the BACK",
+     "the back"
     ],
     [
      "of its head,",
      "of its head,"
     ],
     [
-     "where the two ENDS",
-     "where the two ends"
+     "where the",
+     "where the"
+    ],
+    [
+     "two ENDS",
+     "two ends"
     ],
     [
      "MEET.",
@@ -1676,8 +1752,12 @@
      "that grin"
     ],
     [
-     "is at her EAR.",
-     "is at her ear."
+     "is at",
+     "is at"
+    ],
+    [
+     "her EAR.",
+     "her ear."
     ]
    ]
   },
@@ -1701,8 +1781,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Words you don't SPEND",
-     "words you don't spend"
+     "Words you",
+     "words you"
+    ],
+    [
+     "don't SPEND",
+     "don't spend"
     ],
     [
      "never go AWAY.",
@@ -1741,8 +1825,12 @@
      "the aisle"
     ],
     [
-     "to the twelfth CHAIR.",
-     "to the twelfth chair."
+     "to the",
+     "to the"
+    ],
+    [
+     "twelfth CHAIR.",
+     "twelfth chair."
     ]
    ]
   },
@@ -2029,8 +2117,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And when I'm LATE,",
-     "and when i'm late,"
+     "And when",
+     "and when"
+    ],
+    [
+     "I'm LATE,",
+     "i'm late,"
     ],
     [
      "the choir",
@@ -2459,8 +2551,8 @@
     [
      0,
      [
-      1.6532731788489269e-16,
-      -10.65,
+      2.0665914735611586e-16,
+      -10.3125,
       1.2
      ],
      [
@@ -2482,8 +2574,8 @@
     [
      0,
      [
-      2.4492935982947064e-16,
-      -10.0,
+      3.061616997868383e-16,
+      -9.5,
       1.45
      ],
      [
@@ -2969,7 +3061,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "me, scared",
-   "at": "L31.2",
+   "at": "L31.4",
    "fill": [
     90,
     "#a8bce8"
@@ -3008,8 +3100,8 @@
     [
      0,
      [
-      1.6532731788489269e-16,
-      -10.65,
+      2.0665914735611586e-16,
+      -10.3125,
       1.2
      ],
      [
@@ -3035,8 +3127,8 @@
     [
      0,
      [
-      2.2043642384652358e-16,
-      -10.2,
+      2.755455298081545e-16,
+      -9.75,
       1.45
      ],
      [
@@ -3131,8 +3223,8 @@
     [
      0,
      [
-      -1.7194638625168595,
-      -17.22165379807987,
+      -1.2243298281460744,
+      -17.152067247599838,
       1.5
      ],
      [
@@ -3154,7 +3246,7 @@
     [
      0,
      [
-      -4.0,
+      -4.5,
       -17.5,
       1.5
      ],
@@ -3628,8 +3720,8 @@
     [
      0,
      [
-      96.85496778744626,
-      -6.79151955860577,
+      96.75620973430782,
+      -6.326899448257212,
       2.55
      ],
      [
@@ -3651,8 +3743,8 @@
     [
      0,
      [
-      97.14536528938382,
-      -7.153653924610264,
+      97.11920661172977,
+      -6.77956740576283,
       2.3
      ],
      [
@@ -3720,8 +3812,8 @@
     [
      0,
      [
-      97.14536528938382,
-      -7.153653924610264,
+      97.11920661172977,
+      -6.77956740576283,
       2.3
      ],
      [
@@ -3743,8 +3835,8 @@
     [
      0,
      [
-      96.79034839836063,
-      -6.806438120075607,
+      96.67543549795079,
+      -6.345547650094509,
       2.6
      ],
      [
@@ -3789,8 +3881,8 @@
     [
      0,
      [
-      97.08275445877176,
-      -7.058764967410763,
+      97.04094307346469,
+      -6.660956209263453,
       2.6
      ],
      [
@@ -3927,8 +4019,8 @@
     [
      0,
      [
-      98.04381917788785,
-      -6.471410248768546,
+      97.96727397235982,
+      -5.926762810960682,
       2.4
      ],
      [
@@ -4010,8 +4102,8 @@
     [
      0,
      [
-      96.83417661836448,
-      -6.693704798532389,
+      96.7302207729556,
+      -6.204630998165486,
       2.6
      ],
      [
@@ -4056,8 +4148,8 @@
     [
      0,
      [
-      98.08557110817587,
-      -6.768490669391017,
+      98.01946388521984,
+      -6.298113336738771,
       2.4
      ],
      [
@@ -4152,8 +4244,8 @@
     [
      0,
      [
-      -0.29999999999999977,
-      -15.8,
+      -0.2999999999999997,
+      -15.375,
       1.5
      ],
      [
@@ -4206,8 +4298,8 @@
     [
      0,
      [
-      -3.597477455336044,
-      -18.081434243653636,
+      -3.996846819170055,
+      -18.226792804567047,
       1.5
      ],
      [
@@ -4233,8 +4325,8 @@
     [
      0,
      [
-      1.097477455336044,
-      -18.081434243653636,
+      1.4968468191700552,
+      -18.226792804567047,
       1.5
      ],
      [
@@ -4310,8 +4402,8 @@
     [
      0,
      [
-      -2.147526837958406,
-      -17.88707503295947,
+      -1.7594085474480072,
+      -17.983843791199334,
       1.5
      ],
      [
@@ -4743,14 +4835,14 @@
     "blend": 0
    },
    {
-    "at": "L31.2",
+    "at": "L31.4",
     "pos": [
      97.4,
      10.1
     ]
    },
    {
-    "at": "L31.2",
+    "at": "L31.4",
     "pos": [
      97.4,
      9.7

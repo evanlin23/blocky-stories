@@ -27,11 +27,22 @@ TEMPO = {}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
-SPOKEN = {("L19", 0): "night, love.", ("L40", 1): "has one verse"}
+def split_long(chs):
+    out = []
+    for cap, sp in chs:
+        cw, sw = cap.split(), sp.split()
+        if len(cw) <= 3 or len(cw) != len(sw):
+            out.append([cap, sp])
+            continue
+        k = len(cw) // 2 if len(cw) == 4 else 3
+        out.append([" ".join(cw[:k]), " ".join(sw[:k])])
+        out.append([" ".join(cw[k:]), " ".join(sw[k:])])
+    return out
+
+
 for ln in lines:
-    for k, ch in enumerate(ln.get("chunks", [])):
-        if (ln["id"], k) in SPOKEN:
-            ch[1] = SPOKEN[(ln["id"], k)]
+    if ln.get("chunks"):
+        ln["chunks"] = split_long(ln["chunks"])
 
 # ------------------------------------------------------------------------------------------------ cast
 FACE = {"eyes": "round", "brows": True, "ink": "#1a1214"}
@@ -114,6 +125,7 @@ def yaw_to(a, b):
 
 
 def front(pos, yaw, dist, h=1.5, tz=1.4, lens=30, side=0.0, dz=0.0):
+    dist = dist * 1.25 if dist < 2.5 else dist
     """A camera `dist` metres in front of someone (along their facing), turned `side` degrees round them."""
     a = math.radians(yaw + side)
     loc = (pos[0] + math.sin(a) * dist, pos[1] - math.cos(a) * dist, h)
@@ -327,7 +339,7 @@ shot("L30", "her scarf on the twelfth chair, in the wedge of streetlight",
      still((HX - 0.8, -3.6, 1.7), (TWELFTH[0], TWELFTH[1], 1.35), 38), {})
 shot("L31", "the other eleven chairs are turned to face it",
      still((HX - 2.4, 8.0, 1.8), (HX - 0.6, -7.0, 1.1), 20), {}, step=4)
-shot("L31.2", "me, scared",
+shot("L31.4", "me, scared",
      still((HX - 2.3, 7.0, 1.55), (HX - 2.6, 10.1, 1.5), 30),
      {"me": P((HX - 2.6, 9.7), 0, "scared")}, fill=[90, "#a8bce8"])
 shot("L32", "me on the lane in the dark, wind",
@@ -729,7 +741,7 @@ story = {
     "look": {"fog": "#c8d4de", "fog_density": 0.01, "fog_start": 6.0, "sky": "#b6cde0", "sky_strength": 1.0,
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.05], "highlights": [0.04, 0.015, -0.03], "saturation": 1.0, "contrast": 1.06,
-              "vignette": 0.34, "bloom": 0.3, "grain": 0.012},
+              "vignette": 0.34, "bloom": 0.2, "grain": 0.012},
     "phonemes": {},
     "cast": cast,
     "lines": lines,
