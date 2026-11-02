@@ -3,7 +3,7 @@
 **Slug:** `ep37-comet-night` (pitch #21, `stories/ideas.md` → Batch 4 pitches)
 
 ## Premise
-In my town, every promise you make ties a small glowing knot onto a cord that floats over your head, and it stays until you keep the promise. I'm the only one with no knots, because I don't make promises. My dad has the oldest knot in town, grey and hard, ten years old, and I always took it for a promise he broke to me the year he moved out. This August Mum says it has started pulling tight and he's sleeping in his observatory on the hill, so in shooting-star week I go up for the first time since he left. Every night his knot creaks a turn tighter, and a man with a square hole through his chest stands a little nearer the empty second chair by the eyepiece.
+In my town, every promise you make ties a small glowing knot onto a cord that floats over your head, and it stays until you keep the promise. I'm the only one with no knots, because I don't make promises. My dad has the oldest knot in town, grey and hard, ten years old, and I always took it for a promise he broke to me the year he moved out. This August Mum says it has started pulling tight and he's sleeping in his observatory on the hill, so in falling-star week I go up for the first time since he left. Every night his knot creaks a turn tighter, and a man with a square hole through his chest stands a little nearer the empty second chair by the eyepiece.
 
 ## Rule
 The world's rule (L01): every promise ties a knot over your head, and a kept promise slips loose in a puff of light (L06). Nobody explains it after L07. The house rule I live by: I don't make promises (L09). I break it at the very end (L67).
@@ -50,7 +50,7 @@ Over every head except mine and the creature's: a short pale cord, about 30 cm, 
 - **Palette:** sunny square cream stone #e8dcc0, sky #8ec9f0, terracotta #c46a3c, dome verdigris #3f7f6a, brass #c8963c, night navy #0f1a33, whitewash #d9d4c6 (dimmed at night), bulb warm #ffb86a, red working lamp #8a2a22 (dim and low saturation), knot rose #ff8fb0, Dad's knot grey #8a8a86, my rust jacket #b5532c, dawn cloud pink #e9a3a8.
 - **Caption key colour:** knot rose `#ff7aa8` (taken: lime, red, aqua, brass gold, amber, raincoat yellow, lilac).
 - **Music:** A Aeolian, 80 bpm in slow 4/4. A low bowed drone, a soft plucked-sine arpeggio and a breathy pad (our own melody, nothing borrowed, no music box). Light and bright under the montage (L01 to L09), thinning on the hill. Drops of 0.6 s before L25 (first sight), L42 (the scare) and L53 (the final night's reveal). From L61 the drone goes and the arpeggio resolves into A major, warm and open, through to the loop.
-- **Sound:** square murmur, a soft synthesized clap swell for L07, a breathy rising "puff" for each kept knot (filtered noise swell with a faint high sine, never a chime box), the knot creak (pitched-down stretched-rope sound made from filtered noise and a slow pitch bend), crickets and hill wind (synthesized), the dome's low motor hum, a tiny cool whoosh for each shooting star, a soft tick of the eyepiece cap on wood (S72).
+- **Sound:** square murmur, a soft synthesized clap swell for L07, a breathy rising "puff" for each kept knot (filtered noise swell with a faint high sine, never a chime box), the knot creak (pitched-down stretched-rope sound made from filtered noise and a slow pitch bend), crickets and hill wind (synthesized), the dome's low motor hum, a tiny cool whoosh for each falling star, a soft tick of the eyepiece cap on wood (S72).
 - **look.flash_safe: true.**
 
 ## Flash plan (hard rule 7)
@@ -182,7 +182,7 @@ L12. I always figured it was one he BROKE.
 L13. Something he promised me when he moved OUT.
 L14. This August, Mum said it had started pulling TIGHT.
 L15. And Dad was sleeping up at his observatory on the HILL.
-L16. It was shooting-star week. He'd be up there all NIGHT.
+L16. It was falling-star week. He'd be up there all NIGHT.
 L17. So I climbed the hill, first time since he LEFT.
 L18. Dad looked up from the telescope and just said my NAME.
 L19. Then went back to the SKY.
@@ -216,7 +216,7 @@ L46. When the lights crept back, he was gone. Dad's knot was TIGHTER.
 L47. I watched that door till DAWN.
 L48. The final night, CLOUD rolled in.
 L49. Thick and grey, right across the SLIT.
-L50. Not one shooting star got THROUGH.
+L50. Not one falling star got THROUGH.
 L51. Dad just stared up. His knot creaked so hard I heard it from the WALL.
 L52. I thought that was IT. Whatever he'd waited for wasn't COMING.
 L53. Then the red light faded down, and the man was THERE.
