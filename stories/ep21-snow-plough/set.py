@@ -470,7 +470,7 @@ def build_plough(kit, ctx):
     vd.visible_camera = False
     dg = kit.light("dash glow", "POINT", (0.0, 1.3, 2.6), 3.5, "#6dffb0", size=0.08, parent=PL)
     dg.visible_camera = False
-    fl = kit.light("cab fill", "POINT", (0.0, 0.9, 3.5), 12.0, "#8aa4d0", size=0.2, parent=PL)
+    fl = kit.light("cab fill", "POINT", (0.0, 0.9, 3.5), 22.0, "#8aa4d0", size=0.2, parent=PL)
     fl.visible_camera = False
 
 

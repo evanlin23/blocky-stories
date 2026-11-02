@@ -256,7 +256,8 @@ cues += [
 # (at, what, step, camera, extra). step 1 on ones (the scare), 4 on fours (locked), else 2
 SHOTS = [
     # 01 the count
-    (0, "POV through the windscreen, wipers sweeping, a glint slides past", 2, POV, {}),
+    (0, "my face in the green dash light, then the road", 2, FACE, {}),
+    ("L01.2", "POV through the windscreen, wipers sweeping, a glint slides past", 2, POV, {}),
     ("L02", "my face in green dash light", 2, FACE, {}),
     ("L03", "the Marker glimpse at the edge of the beams", 2,
      still(EYE, W2P((3.0, 1005, 1.1), 1040, 180), 30), {}),
@@ -398,6 +399,7 @@ DRIVE = {"yaw": 180, "hide_parts": LEGS, "arms": [62, 62], "side": [-8, -8]}
 # me: in the cab for the hook, in Odile's room for one shot, back in the cab, then spring
 put("me", 0, ME_CAB, expr="worried", **DRIVE)
 talk("me", "L02", "L02>")
+key("me", 0, expr="worried")
 hide("me", "L05")
 put("me", "L10", [O_BASE[0] + 1.0, 0.9], yaw=-90, expr="neutral", head=[0, 6])
 hide("me", "L11")
@@ -490,7 +492,7 @@ sound = {"floor": "wood", "steps_db": -26,
              {"at": "L48", "kind": "whoosh", "db": -12, "dur": 1.8},
              {"at": "L57", "kind": "creak", "db": -10, "dur": 3.4},
              {"at": ref("L63", 1), "kind": "knock", "pattern": [0, 0.28, 0.56], "tone": "glass_soft", "db": -10},
-             {"at": "L73>", "kind": "click", "db": -10},
+             {"at": "L73>", "kind": "click", "db": -2},
          ],
          "music_drops": [{"from": "L44>", "to": "L45"},
                          {"from": "P02", "to": "L52", "keep": ["hit"]}]}
