@@ -195,7 +195,7 @@ def materials(kit):
     M["pin_arm"] = pinstripe(kit, "pinstripe arm", PIN, STRIPE)
     M["trouser"] = pinstripe(kit, "pinstripe trouser", PIN, STRIPE)
     M["shoe"] = pbr(kit, "empty shoes", "#5a3a22", 0.4, spec=0.5)
-    M["shirt"] = pbr(kit, "empty shirt", "#d9d6cc", 0.8)
+    M["shirt"] = pbr(kit, "empty shirt", "#b4b4b8", 0.85)
     M["glow"] = kit.emit("#fff1d0", 6.0, name="bulb glow")
     M["screen"] = kit.emit("#d8e8ff", 1.2, name="phone screen")
     M["warm_panel"] = kit.emit("#ffd9a0", 1.1, name="warm panel")
@@ -213,9 +213,11 @@ def materials(kit):
     M["coin_dark"] = pbr(kit, "charcoal stroke", "#2c2b2a", 0.9)
     M["dust"] = pbr(kit, "dust", "#efeae0", 1.0, spec=0.0)
     # the tag: card with the glyph, matte
-    img = bpy.data.images.new("tag glyph", 128, 180)
-    pil = tag_image().convert("RGBA").transpose(1)   # flip top-bottom: Blender's pixels start at the bottom
-    img.pixels = (np.asarray(pil, dtype=np.float32) / 255.0).flatten().tolist()
+    import tempfile
+    from pathlib import Path
+    tp = Path(tempfile.gettempdir()) / f"ep47-tag-glyph-{__import__('os').getpid()}.png"
+    tag_image().save(tp)
+    img = bpy.data.images.load(str(tp))
     img.colorspace_settings.name = "sRGB"
     m = kit._new("tag card")
     nt = m.node_tree
@@ -503,7 +505,7 @@ def build_shop(kit, M, ctx):
     # the two benches, lamps
     bench(kit, M, "bench U", -1.0)
     bench(kit, M, "bench M", 1.0)
-    ctx["lamp_m"] = lamp(kit, M, "lamp m", -11.9, 1.2, 1.55, -12.6, 2.6, 1.0, 330.0, spot=80)
+    ctx["lamp_m"] = lamp(kit, M, "lamp m", -13.45, 1.2, 1.55, -12.6, 2.7, 1.2, 330.0, spot=80)
     ctx["lamp_u"] = lamp(kit, M, "lamp u", -11.9, -1.15, 1.5, -12.6, -1.0, 0.95, 140.0, spot=80)
     # the pendant light over the workroom
     kit.cyl("pendant cord", 0.01, 0.35, (-12.6, 0.2, CEIL - 0.17), M["iron"], n=6)
@@ -749,17 +751,16 @@ def build_empty(kit, M, ctx):
         kit.box(f"empty.cuffb{sx}", (1.02, 1.04, 0.16), (0, 0, -1.67), M["pin_arm"], arm, bevel=0.04)
         kit.box(f"empty.cuffin{sx}", (0.72, 0.72, 0.02), (0, 0, -1.76), M["void"], arm)
         arms.append(arm)
-    # the open collar: no head, a dark inside much deeper than a jacket, two glints far down
+    # the open collar: a deep tube with nothing in it, black to the bottom, two small glints far down
     neck = kit.empty("empty.neck", (0, 0, 2.0), torso)
-    tube_mesh(kit, "empty.collar", 0.66, 0.56, 0.0, 0.85, 0.62, M["shirt"], M["lining"], neck)
-    liner = tube_mesh(kit, "empty.void", 0.57, 0.52, 0.0, 0.84, 0.62, M["void"], M["void"], neck)
-    floor_ = kit.cyl("empty.voidfloor", 0.58, 0.02, (0, 0, 0.02), M["void"], neck, n=24)
-    back = kit.box("empty.voidback", (1.1, 0.04, 0.84), (0, 0.4, 0.42), M["void"], neck)
+    tube_mesh(kit, "empty.collar", 0.56, 0.45, 0.0, 1.0, 0.0, M["shirt"], M["lining"], neck)
+    tube_mesh(kit, "empty.void", 0.46, 0.42, -0.02, 1.0, 0.0, M["void"], M["void"], neck)
+    floor_ = kit.cyl("empty.voidfloor", 0.47, 0.02, (0, 0, 0.03), M["void"], neck, n=24)
     glints = []
-    gm = kit.emit("#f4f0e2", 14.0, name="glint")
+    gm = kit.emit("#f4f0e2", 10.0, name="glint")
     for sx in (-1, 1):
-        glints.append(kit.sphere(f"empty.glint{sx}", 0.065, (sx * 0.2, 0.36, 0.5), gm, neck, seg=10))
-    e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=[liner, floor_, back] + glints, glints=glints)
+        glints.append(kit.sphere(f"empty.glint{sx}", 0.04, (sx * 0.15, 0.0, 0.1), gm, neck, seg=10))
+    e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=glints + [floor_], glints=glints)
     ctx["empty"] = e
 
 
