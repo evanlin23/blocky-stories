@@ -475,7 +475,7 @@ def build_hall(kit, M, ctx):
     wall_x(kit, "h.wall_s", M["hallwall"], ylo - 0.15, HX - 5.3, HX + 5.3, 5.0, [(HX - 3.4, HX + 1.9, 1.7, 4.4)])
     for i, bxo in enumerate((-3.4, -2.2, -0.5, 0.7, 1.9)):
         kit.box(f"h.sb{i}", (0.05, 0.1, 2.7), (HX + bxo, ylo - 0.05, 3.05), M["white"])
-    kit.box("h.sbh", (5.3, 0.1, 0.05), (HX - 0.75, ylo - 0.05, 2.6), M["white"])
+    kit.box("h.sbh", (5.3, 0.1, 0.05), (HX - 0.75, ylo - 0.05, 3.7), M["white"])
     # the back wall (y = +9): a door (x HX-3.3 .. HX-1.7) and a window (x HX+1.9 .. HX+3.7, z 1.5 .. 3.2)
     wall_x(kit, "h.wall_n", M["hallwall"], yhi + 0.15, HX - 5.3, HX + 5.3, 5.0,
            [(HX - 3.3, HX - 1.7, 0.0, 2.4), (HX + 1.9, HX + 3.7, 1.5, 3.2)])
@@ -816,7 +816,7 @@ def decorate(kit, story, ctx):
     gh = bpy.data.objects.get("grin.headg")
     if gh is not None:
         # the seam where the grin's line meets itself: a black strip down the back of the head, so it reads from far off
-        bx(kit, "grin.seam", (0.11, 0.05, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
+        bx(kit, "grin.seam", (0.07, 0.04, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
            pbr(kit, "grin seam", "#050304", 0.9), gh, bevel=0.012)
     ctx["grin_tex"] = None
     mat = bpy.data.materials.get("head grin")
@@ -958,6 +958,10 @@ def animate(kit, story, tl, t, ctx):
         else:
             g.rotation_euler = (0, 0, math.radians(180))
     show(ctx["curwin"], shot_id != tl["shots"][-1]["id"])
+    # the last shot is far off: a thicker seam so it reads at phone size
+    _sm = bpy.data.objects.get("grin.seam")
+    if _sm is not None:
+        _sm.scale = (1.7, 1.4, 1.0) if shot_id == tl["shots"][-1]["id"] else (1.0, 1.0, 1.0)
     show(ctx["rows"], bool((_last(_cues(tl, "rows"), t) or {}).get("on")))
     show(ctx["people"], bool((_last(_cues(tl, "audience"), t) or {}).get("on")))
     show(ctx["bunting"], bool((_last(_cues(tl, "bunting"), t) or {}).get("on")))

@@ -547,9 +547,9 @@ shot("L83", "close on Mum's ten lit beads",
      front((-3.7, -17.5), 90, 1.6, 1.5, 1.35, 34, -14),
      {"mum": P((-3.7, -17.5), 90, "smile")})
 shot("L84", "night, through the hall's high window: twelve heads in maroon",
-     still((HX - 1.5, -17.0, 2.4), (HX - 2.7, -7.0, 1.9), 26),
+     still((HX - 1.5, -17.0, 2.4), (HX - 2.5, -7.0, 1.95), 32),
      {**choir(), "grin": G(),
-      "me": P((HX - 0.5, -9.0), 180, "worried", walks=[("L84>", (HX - 0.5, -8.9))])}, fill=[150, "#a8bce8"])
+      "me": P((HX - 2.75, -13.9), 180, "worried", walks=[("L84>", (HX - 2.65, -13.0))])}, fill=[150, "#a8bce8"])
 
 # ------------------------------------------------------------------------------------------------ build the shots
 shots = []
@@ -664,8 +664,8 @@ lt("L73-0.3", "back_wash", 0.0, 0.3)
 lt("L84-0.3", "back_wash", 1.0, 0.3)
 lt("L84-0.3", "hall_house", 0.34, 0.3)
 lt("L84-0.3", "riser", 0.9, 0.3)
-lt("L84-0.3", "grin_key", 0.4, 0.3)
-lt("L84-0.3", "grin_rim", 0.7, 0.3)
+lt("L84-0.3", "grin_key", 0.6, 0.3)
+lt("L84-0.3", "grin_rim", 1.0, 0.3)
 # props and rows
 cue(0, "rows", on=False)
 cue("L39", "rows", on=True)
