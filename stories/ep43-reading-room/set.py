@@ -248,9 +248,9 @@ def banker_lamp(kit, ctx, M, tid, x, y, with_tally=False):
     for sx in (-1, 1):
         kit.cyl(f"lamp {tid} cap{sx}", 0.09, 0.015, (x + sx * 0.18, y, z0 + 0.43), M["brass"], rot=(0, math.pi / 2, 0), n=16)
     if with_tally:
-        # the Keeper's tally: two short upright library-green strokes scratched in the brass base, facing -y (not narrated)
+        # the Keeper's tally: two short upright library-green strokes scratched in the brass base, facing the old seat, +y (not narrated)
         for sx in (-1, 1):
-            kit.box(f"lamp tally {sx}", (0.014, 0.01, 0.05), (x + sx * 0.032, y - 0.118, z0 + 0.035), M["green"])
+            kit.box(f"lamp tally {sx}", (0.014, 0.01, 0.05), (x + sx * 0.032, y + 0.118, z0 + 0.035), M["green"])
     name = f"lamp.{tid}"
     if tid == "W":   # the window table's lamp throws its light down the table at Tam's page, never across to the far seat
         kit.light(name, "SPOT", (x, y, z0 + 0.5), 28.0, "#ffc77a", size=0.06, spot=75, blend=0.6)
@@ -411,7 +411,7 @@ def build_room(kit, ctx, M, story):
     leaf.scale = (1, 1, 1)
     ctx["page"] = piv
     # the Negative's key (cold, from the side) and rim (cool, behind it); its table lamp is dead
-    kit.light("seatglow", "POINT", (-7.0, 0.55, 1.5), 30.0, "#ffc77a", size=0.2, shadow=False)
+    kit.light("seatglow", "POINT", (-7.0, 0.55, 1.5), 110.0, "#ffc77a", size=0.2, shadow=False)
     kit.light("neg_key", "SPOT", (0, 0, 3), 0.0, "#a9c4e8", size=0.12, spot=34, blend=0.6)
     kit.light("neg_rim", "SPOT", (0, 0, 3), 0.0, "#8fb0e0", size=0.1, spot=40, blend=0.5)
 
@@ -561,17 +561,17 @@ def scene_street(kit, ctx, M, O):
 def scene_flat(kit, ctx, M, O):
     ox, oy = O
     room_box(kit, M, O, -3.0, 3.0, -3.0, 3.0, 2.6, M["cream"], M["floorlight"])
-    kit.box("sofa seat", (2.0, 0.9, 0.45), (ox - 0.5, oy - 2.2, 0.225), M["sofa"], bevel=0.05)
-    kit.box("sofa back", (2.0, 0.22, 0.62), (ox - 0.5, oy - 2.62, 0.78), M["sofa"], bevel=0.05)
+    kit.box("sofa seat", (2.0, 0.9, 0.45), (ox + 1.2, oy - 2.2, 0.225), M["sofa"], bevel=0.05)
+    kit.box("sofa back", (2.0, 0.22, 0.62), (ox + 1.2, oy - 2.62, 0.78), M["sofa"], bevel=0.05)
     for sx in (-1, 1):
-        kit.box(f"sofa arm{sx}", (0.22, 0.9, 0.62), (ox - 0.5 + sx * 1.1, oy - 2.2, 0.31), M["sofa"], bevel=0.05)
+        kit.box(f"sofa arm{sx}", (0.22, 0.9, 0.62), (ox + 1.2 + sx * 1.1, oy - 2.2, 0.31), M["sofa"], bevel=0.05)
     kit.box("counter", (0.7, 2.4, 0.9), (ox + 2.65, oy + 1.0, 0.45), M["oak"])
     kit.box("counter top", (0.76, 2.46, 0.05), (ox + 2.65, oy + 1.0, 0.925), M["oakd"])
     kit.cyl("kettle", 0.1, 0.17, (ox + 2.65, oy + 1.0, 1.05), M["steel"], n=18)
     kit.cyl("kettle lid", 0.07, 0.04, (ox + 2.65, oy + 1.0, 1.15), M["steel"], n=18)
     kit.box("kettle spout", (0.12, 0.04, 0.05), (ox + 2.53, oy + 1.0, 1.08), M["steel"], rot=(0, 0, 0))
     kit.box("kettle handle", (0.03, 0.04, 0.14), (ox + 2.76, oy + 1.0, 1.1), M["dark"])
-    ctx["steam"] = [kit.sphere(f"steam{k}", 0.035, (ox + 2.53, oy + 1.0, 1.2), M["steam"], seg=8) for k in range(6)]
+    ctx["steam"] = [kit.sphere(f"steam{k}", 0.035, (ox + 2.53, oy + 1.0, 1.2), M["steam"], seg=12) for k in range(6)]
     # the standing lamp and the rainy window
     kit.cyl("floor lamp pole", 0.025, 1.5, (ox - 2.4, oy - 1.4, 0.75), M["iron"], n=8)
     kit.cyl("floor lamp shade", 0.2, 0.32, (ox - 2.4, oy - 1.4, 1.62), M["fshade"], n=16, r2=0.15)
@@ -585,9 +585,9 @@ def scene_flat(kit, ctx, M, O):
     kit.light("fwin", "AREA", (ox - 2.8, oy + 0.4, 1.6), 140.0, "#9bb4dc", size=1.6)
     kit.aim(kit.LIGHTS["fwin"]["obj"], (ox, oy + 0.4, 1.0))
     kit.light("ffill", "AREA", (ox + 1.5, oy + 2.5, 2.4), 120.0, "#ffe2c0", size=3.0)
-    kit.aim(kit.LIGHTS["ffill"]["obj"], (ox - 0.5, oy - 1.5, 1.0))
+    kit.aim(kit.LIGHTS["ffill"]["obj"], (ox + 1.2, oy - 1.5, 1.0))
     kit.light("ffront", "AREA", (ox + 0.5, oy - 0.5, 2.5), 90.0, "#ffe2c0", size=3.0)
-    kit.aim(kit.LIGHTS["ffront"]["obj"], (ox - 0.5, oy - 2.2, 1.2))
+    kit.aim(kit.LIGHTS["ffront"]["obj"], (ox + 1.2, oy - 2.2, 1.2))
 
 
 # ------------------------------------------------------------------------------------------------ the numbers
@@ -667,7 +667,8 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
         n = d["n"]
         sc, sp = _fmt(cur, n), _fmt(prev, n)
         st = states[who]
-        base = V((st["x"], st["y"], st["z"] + 2.12))
+        nzc = _last([c for c in cues_by.get("_numz_" + who, [])], t)
+        base = V((st["x"], st["y"], st["z"] + 2.12 + (nzc["v"] if nzc else 0.0)))
         shift_c = -(n - len(str(cur or ""))) * NUM_PITCH / 2 if cur is not None else 0.0
         shift_p = -(n - len(str(prev or ""))) * NUM_PITCH / 2 if prev is not None else 0.0
         shift = shift_c if u is None else shift_p + (shift_c - shift_p) * u
@@ -774,6 +775,9 @@ def animate(kit, story, tl, t, ctx):
         for c in tl["cues"]:
             if c["name"] == "num":
                 by.setdefault(c["who"], []).append(c)
+        for c in tl["cues"]:
+            if c["name"] == "numz":
+                by.setdefault("_numz_" + c["who"], []).append(c)
         for v in by.values():
             v.sort(key=lambda c: c["t"])
         ctx["numcues"] = by
