@@ -140,7 +140,7 @@ def asr(wav: Path, timeline: Path) -> int:
     segs, _ = m.transcribe(np.frombuffer(pcm, np.float32), beam_size=5, language="en")
     heard = " ".join(s.text for s in segs)
     num = {str(i): w for i, w in enumerate("zero one two three four five six seven eight nine ten".split())}
-    words = lambda t: [num.get(w, w) for w in re.sub(r"[^a-z0-9' ]", " ", t.lower().replace("-", " ")).split()]
+    words = lambda t: [num.get(w, w) for w in re.sub(r"[^a-z0-9' ]", " ", t.lower().replace("-", " ").replace("granddad", "grandad")).split()]
     a, b = words(want), words(heard)
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
     print(f"script {len(a)} words, heard {len(b)}, match {sm.ratio():.3f}")
@@ -175,7 +175,8 @@ HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "h
               "pair": "pear", "mom": "mum", "palate": "palette", "wanna": "wantto",   # pair/pear, mom/mum, palate/palette, wanna (ep32)
               "okoffor": "okafor", "okoffors": "okafors", "ocoffor": "okafor", "ocoffors": "okafors",
               "okofor": "okafor", "okofors": "okafors",   # ep14: Okafor
-              # ep57 (opt-in: only these words are affected): British spellings, Whisper's Elon for Ilan, Mrs Varga
+              "ossie": "ozzy",   # ossie/ozzy (ep43)
+              # ep57: British spellings, Whisper's Elon for Ilan, Mrs Varga
               "favour": "favor", "favours": "favors", "neighbours": "neighbors", "elon": "ilan", "elons": "ilans",
               "vargas": "varga", "missus": "mrs", "mister": "mr", "caffay": "cafe"}
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
