@@ -28,8 +28,8 @@ ST = (-40.0, 0.0)
 TOP = 0.19 * 12
 LY = ST[1] + 0.28 * 12 + 1.5
 DOOR_X = 4.4
-SIDE_X = 7.2
-CHANGE = [-4.35, -0.9, 0.0]
+SIDE_X = 8.3
+CHANGE = [-4.35, -1.45, 0.0]
 
 
 def c(*keys):
@@ -86,7 +86,7 @@ def shot(at, cam, **opt):
 
 # 01 the coat (night one)
 shot(0, front(ME_F, 180, 1.9, 0.0, 36, push=0.22), hand=0.004)                                  # S01 me, collar up
-shot("L02", mv([-2.3, -1.5, 1.05], [-2.3, -3.0, 1.02], 19, [-2.3, -1.75, 1.05], [-2.3, -3.0, 1.02], 19), hand=0.003)   # S02 the door
+shot("L02", mv([-2.3, -0.95, 1.15], [-2.3, -3.0, 1.0], 22, [-2.3, -1.1, 1.15], [-2.3, -3.0, 1.0], 22), hand=0.003)   # S02 the door
 shot("L03", mv([1.0, -2.3, 1.55], [0.9, -5.5, 1.4], 30, [1.0, -2.4, 1.55], [0.9, -5.5, 1.4], 30), hand=0.004)          # S03 rain on glass
 shot("L04", mv([-2.2, -10.2, 1.5], [1.6, -3.6, 1.2], 22), hand=0.01)                            # S04 outside
 shot("L05", mv([-4.4, -0.9, 1.3], [3.5, 0.4, 1.0], 16, [-4.3, -0.9, 1.3], [3.5, 0.4, 1.0], 16), hand=0.002)            # S05 the row
@@ -94,13 +94,13 @@ shot("L06", mv([-1.6, -0.55, 1.5], [-3.5, -2.45, 1.25], 24, [-1.75, -0.55, 1.5],
 shot("L07", mv([2.7, -0.6, 1.4], [4.4, -3.0, 1.3], 24, [2.9, -0.7, 1.4], [4.4, -3.0, 1.3], 26), hand=0.004)           # S07 in at the door
 shot("L08", mv([-0.5, -1.0, 1.35], [3.65, 0.0, 1.2], 30, [-0.1, -1.0, 1.35], [3.65, 0.0, 1.2], 32), hand=0.003)       # S08 old man small
 shot("L09", mv([1.9, -1.55, 1.5], [3.45, 0.0, 1.2], 24, [2.05, -1.5, 1.5], [3.45, 0.0, 1.2], 25), hand=0.003)         # S09 grey jumper
-shot("L10", mv([2.75, -0.95, 1.5], [3.65, 0.1, 1.5], 36, [2.8, -0.9, 1.5], [3.65, 0.1, 1.5], 38), hand=0.003)         # S10 profile
+shot("L10", mv([2.35, -1.4, 1.5], [3.65, 0.0, 1.5], 28, [2.4, -1.35, 1.5], [3.65, 0.0, 1.5], 29), hand=0.003)   # S10 profile
 shot("L11", front(ME_F, 180, 1.5, 0.0, 34), hand=0.005)                                          # S11 me, cold
-shot("L12", mv([-2.4, -0.1, 1.3], [-5.1, -0.9, 1.1], 24, [-2.6, -0.1, 1.3], [-5.1, -0.9, 1.1], 25), hand=0.003)      # S12 the change machine
-shot("L13", mv([-2.3, -1.35, 1.1], [-2.3, -3.0, 1.0], 22), hand=0.002)                           # S13 the buzz
+shot("L12", mv([-2.6, 0.2, 1.35], [-5.0, -1.1, 1.1], 24, [-2.8, 0.2, 1.35], [-5.0, -1.1, 1.1], 25), hand=0.003)   # S12 the change machine
+shot("L13", mv([-2.3, -0.95, 1.15], [-2.3, -3.0, 1.0], 22), hand=0.002)   # S13 the buzz
 shot("L13.2", mv([-4.4, -1.0, 1.45], [3.2, -2.5, 1.2], 17), hand=0.003)                          # S14 wide, he walks back
-shot("L14.1", mv([1.6, -1.05, 1.5], [2.8, -2.55, 1.3], 22, [1.7, -1.05, 1.5], [2.8, -2.55, 1.3], 23), hand=0.003)    # S15 him folding
-shot("L15", mv([-2.3, -1.5, 1.35], [-2.3, -3.0, 0.95], 20, [-2.3, -1.65, 1.35], [-2.3, -3.0, 0.95], 21), hand=0.003)  # S16 the coat inside
+shot("L14.2", mv([0.9, -1.1, 1.55], [2.8, -2.55, 1.3], 22, [1.0, -1.1, 1.55], [2.8, -2.55, 1.3], 23), hand=0.003)   # S15 him folding
+shot("L15", mv([-2.0, -0.95, 1.45], [-2.3, -2.95, 0.9], 22, [-2.1, -1.0, 1.45], [-2.3, -2.95, 0.9], 22), hand=0.003)   # S16 the coat inside
 shot("L16", front([-2.3, -2.2, FH], 180, 1.6, 0.0, 34), hand=0.004)                              # S17 holding it up
 shot("L17", mv([-4.3, -1.15, 1.45], [2.4, -2.5, 1.25], 18, [-4.2, -1.15, 1.45], [2.4, -2.5, 1.25], 18), hand=0.003)  # S18 down the table
 shot("L18", front([-2.3, -2.2, FH], 180, 1.4, 0.0, 36, push=0.2), hand=0.004)                    # S19 in the coat
@@ -109,13 +109,13 @@ shot("L19", mv(*ROW[:2], ROW[2]), hand=0.002)                                   
 shot("L20", mv([0.6, -1.7, 1.35], [2.9, 0.1, 1.15], 22, [0.8, -1.7, 1.35], [2.9, 0.1, 1.15], 23), hand=0.003)       # S21 two backs
 shot("L21", mv([1.7, -1.7, 1.4], [2.2, 0.0, 1.15], 24, [1.85, -1.55, 1.4], [2.2, 0.0, 1.15], 25), hand=0.003)        # S22 the figure from behind
 shot("L22", mv([2.2, -0.95, 1.12], [2.2, -0.15, 1.12], 17, [2.2, -0.85, 1.12], [2.2, -0.15, 1.12], 17), hand=0.002)  # S23 the bib on its back
-shot("L23", mv([2.9, 1.9, 0.2], [2.9, 0.4, 0.28], 21, [2.9, 1.7, 0.2], [2.9, 0.4, 0.28], 21), hand=0.002)            # S24 shoes
+shot("L23", mv([2.9, 1.5, 0.2], [2.9, 0.3, 0.24], 14), hand=0.002)   # S24 shoes
 shot("L24", mv([2.5, -1.0, 1.0], [2.2, -0.2, 1.1], 28, [2.35, -1.5, 1.4], [2.2, -0.15, 1.5], 34))                     # S25 tilt up to the face
 shot("L25", front(F(4), 0, 1.95, -0.1, 36, push=0.06), hand=0.002)                               # S26 its face
 shot("L26", front(ME_F, 180, 1.6, 0.0, 34), hand=0.003)                                          # S27 me, still
 shot("L27", mv([4.6, -1.5, 1.5], [3.1, -0.1, 1.45], 30, [4.5, -1.4, 1.5], [3.1, -0.1, 1.45], 31), hand=0.003)        # S28 his profile
-shot("L28", mv([3.0, -14.0, 1.7], [2.8, -3.5, 1.4], 12.5), hand=0.004)                           # S29 outside, the side door
-shot("L29", mv([-0.4, -9.8, 1.5], [-2.4, -5.8, 1.35], 24), hand=0.01)                            # S30 walking off
+shot("L28", mv([3.9, -14.0, 1.7], [3.9, -3.5, 1.4], 12.5), hand=0.004)   # S29 outside, the side door
+shot("L29", mv([0.6, -10.8, 1.5], [2.4, -5.8, 1.35], 24), hand=0.01)   # S30 walking off
 # 03 one chair nearer (night three)
 shot("L30", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S31 four
 shot("L31", mv([CHX[3], -0.5, 0.05], [CHX[3], 0.02, 0.41], 18), hand=0)                          # S32 the tally
@@ -124,8 +124,8 @@ shot("L32", front(F(3), 0, 1.5, -0.1, 36, push=0.08), hand=0.002)               
 shot("L33", front(ME_F, 180, 1.5, 0.0, 36), hand=0.004)                                          # S35 it wants the coat back
 shot("L34", mv([3.0, -1.5, 1.5], [3.3, -3.3, 1.4], 24, [3.05, -1.5, 1.5], [3.3, -3.3, 1.4], 25), hand=0.003)       # S36 the hook
 shot("L35", front(F(3), 0, 1.5, -0.1, 36), hand=0.002)                                           # S37 its eyes
-shot("L36", mv([2.9, -1.35, 1.55], [3.65, 0.0, 1.45], 26, [3.0, -1.3, 1.55], [3.65, 0.0, 1.45], 27), hand=0.003)     # S38 he coughs
-shot("L37", mv([1.9, -1.6, 1.4], [3.0, -0.8, 1.35], 26, [2.2, -1.6, 1.4], [3.2, -0.8, 1.35], 26), hand=0.004)        # S39 past his chair
+shot("L36", mv([2.7, -1.6, 1.55], [3.65, 0.0, 1.45], 20, [2.8, -1.55, 1.55], [3.65, 0.0, 1.45], 21), hand=0.003)   # S38 he coughs
+shot("L37", mv([0.4, -1.9, 1.5], [2.4, -0.8, 1.3], 20, [0.7, -1.9, 1.5], [2.7, -0.8, 1.3], 20), hand=0.004)   # S39 past his chair
 shot("L38", front([3.1, -0.85, FH], 90, 1.5, 0.0, 34), hand=0.003)                               # S40 lavender
 shot("L39", mv([-3.6, 1.0, 1.3], [-4.8, 1.0, 1.25], 24, [-3.5, 1.0, 1.3], [-4.8, 1.0, 1.25], 25), hand=0.002)       # S41 soap machine
 shot("L40", front(ME_F, 180, 1.6, 0.1, 34, aim_dz=-0.1), hand=0.004)                             # S42 eyes down
@@ -135,21 +135,21 @@ shot("L42", mv([-1.0, -1.2, 1.45], [3.65, -0.1, 1.4], 30, [-0.8, -1.2, 1.45], [3
 shot("L43", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S45 small, far
 shot("L44", front(ME_F, 180, 1.5, 0.0, 34), hand=0.003)                                          # S46 breath
 shot("L45", mv([-4.4, -1.0, 1.4], [3.65, -0.1, 1.2], 20), hand=0)                                # S47 the stutter, one held shot
-shot("L48.1", c([0, [-3.66, -1.95, 1.62], [-3.6, -0.3, 1.5], 28, 7], [1, [-3.65, -1.85, 1.6], [-3.6, -0.3, 1.5], 30, 7]), hand=0.002)   # S48 its face an inch from mine (the test still)
+shot("L48.2", c([0, [-3.66, -1.95, 1.62], [-3.6, -0.3, 1.5], 28, 7], [1, [-3.65, -1.85, 1.6], [-3.6, -0.3, 1.5], 30, 7]), hand=0.002)   # S48 its face an inch from mine (the test still)
 shot("L49", c([0, [-3.45, -1.0, 1.5], [-3.6, -0.18, 1.52], 40], [1, [-3.48, -0.96, 1.5], [-3.6, -0.18, 1.52], 42]), hand=0)  # S49 its eyes
-shot("L50", c([0, [-2.55, -0.35, 1.6], [-3.6, -0.95, 1.5], 30], [1, [-2.6, -0.4, 1.6], [-3.6, -0.95, 1.5], 31]), hand=0.002)  # S50 me, frozen
-shot("L51", c([0, [-3.15, -1.5, 1.55], [-3.6, -0.3, 1.45], 34]), hand=0.002)                    # S51 its eyes to the coat
-shot("L52", c([0, [-3.05, -1.55, 1.38], [-3.55, -0.45, 1.5], 32]), hand=0.002)                  # S52 to the far end
-shot("L53", c([0, [-3.0, -1.6, 1.4], [-3.55, -0.5, 1.48], 32], [1, [-3.05, -1.55, 1.4], [-3.55, -0.5, 1.48], 33]), hand=0.002)  # S53 counting (held)
+shot("L50", c([0, [-2.1, 0.4, 1.58], [-3.22, -0.92, 1.5], 34], [1, [-2.15, 0.35, 1.58], [-3.22, -0.92, 1.5], 35]), hand=0.002)   # S50 me, frozen
+shot("L51", c([0, [-3.78, -1.85, 1.5], [-3.6, -0.3, 1.45], 32, -3]), hand=0.002)   # S51 its eyes to the coat
+shot("L52", c([0, [-3.5, -1.9, 1.72], [-3.6, -0.3, 1.5], 30, 5]), hand=0.002)   # S52 to the far end
+shot("L53", c([0, [-3.66, -1.95, 1.62], [-3.6, -0.3, 1.5], 28, 7], [1, [-3.65, -1.88, 1.6], [-3.6, -0.3, 1.5], 29, 7]), hand=0.002)   # S53 counting (held)
 # 05 the coat was his
-shot("L54", c([0, [-2.55, -0.35, 1.6], [-3.6, -0.95, 1.5], 30]), hand=0.002)                    # S54 I knew
+shot("L54", c([0, [-2.1, 0.35, 1.58], [-3.22, -0.92, 1.5], 40]), hand=0.002)   # S54 I knew
 shot("L55", mv([-4.4, -1.0, 1.45], [3.2, -2.5, 1.2], 17), hand=0.003)                            # S55 replay of the wide
 shot("L56", mv([-5.15, -0.15, 1.5], [-2.5, -2.7, 1.2], 22, [-5.0, -0.2, 1.5], [-2.5, -2.7, 1.2], 22), hand=0.003)    # S56 the dryer, door closing
 shot("L57", mv([3.0, -0.95, 1.0], [3.65, 0.0, 0.7], 26, [3.05, -0.9, 1.0], [3.65, 0.0, 0.7], 27), hand=0.002)         # S57 his empty chair
-shot("L58", c([0, [-3.05, -1.55, 1.38], [-3.6, -0.45, 1.5], 32], [1, [-3.1, -1.5, 1.38], [-3.6, -0.45, 1.5], 33]), hand=0.002)   # S58 its face
+shot("L58", c([0, [-3.66, -1.95, 1.62], [-3.6, -0.3, 1.5], 28, 7], [1, [-3.65, -1.88, 1.6], [-3.6, -0.3, 1.5], 30, 7]), hand=0.002)   # S58 its face
 # 06 gratitude
-shot("L59", c([0, [-2.7, -1.9, 1.45], [-3.6, -0.5, 1.45], 22], [1, [-2.75, -1.85, 1.45], [-3.6, -0.5, 1.45], 23]), hand=0.002)   # S59 I stand
-shot("L60", mv([3.4, 1.8, 0.75], [4.45, 2.75, 0.5], 24, [3.5, 1.9, 0.75], [4.45, 2.75, 0.5], 25), hand=0.002)        # S60 machine six
+shot("L59", c([0, [-4.5, -1.9, 1.55], [-3.5, -0.5, 1.45], 24], [1, [-4.45, -1.85, 1.55], [-3.5, -0.5, 1.45], 25]), hand=0.002)   # S59 I stand
+shot("L60", mv([3.6, 2.3, 0.85], [5.25, 3.1, 0.5], 24, [3.7, 2.35, 0.85], [5.25, 3.1, 0.5], 25), hand=0.002)   # S60 machine six
 shot("L61", front([-3.6, -2.45, FH], 180, 1.9, 0.1, 30, push=0.3, aim_dz=-0.25), hand=0.003)     # S61 folding
 shot("L62", mv([ST[0] + 0.45, ST[1] + 0.3, 1.3], [ST[0], ST[1] + 2.9, 2.0], 22, [ST[0] + 0.45, ST[1] + 1.3, 1.9], [ST[0], ST[1] + 3.6, 2.4], 22), hand=0.004)  # S62 up the stair
 shot("L63", front([ST[0], LY + 0.1, TOP + FH], 0, 1.4, 0.0, 34), hand=0.003)                     # S63 his door
@@ -219,7 +219,9 @@ me.set("L18+0.9", expr="neutral")
 me.jump("L19", STOOL, **{**SIT, "arms": [68, 68]}, expr="neutral")
 me.set("L25", expr="worried", head=[0, 4])
 me.set("L26", expr="worried", tremble=0.0)
-me.set("L29", expr="neutral")
+me.jump("L29", [3.2, -5.2, 0.0], **{**STAND, "yaw": 0}, expr="neutral")
+me.walk("L29>", [1.4, -6.4, 0.0])
+me.jump("L30", STOOL, **P(SIT, expr="neutral", head=[0, 0], look=[0, 0]))
 me.set("L31b", head=[0, 18], look=[0, -1.0], expr="worried")
 me.set("L33", head=[0, 0], look=[0, 0], expr="worried")
 me.set("L34", expr="neutral")
@@ -230,7 +232,7 @@ me.jump("L40", STOOL, **P(SIT, expr="worried", head=[0, 18], look=[0, -1.0]))
 me.set("L41", expr="neutral", head=[0, 0], look=[0, 0])
 me.set("L44", expr="worried")
 me.set("L44+0.3", expr="neutral", tremble=0.0)
-me.jump("L48.1", ME_CHEAT, **P(SIT, expr="terrified", tremble=1.6))
+me.jump("L48.2", ME_CHEAT, **P(SIT, expr="terrified", tremble=1.6))
 me.set("L50", expr="terrified", tremble=0.5)
 me.set("L54", expr="wide", tremble=0.0)
 me.set("L55", hidden=True)
@@ -267,20 +269,20 @@ me0.jump("L74", [1.3, -2.55, 0.0], **{**STAND, "arms": [68, 68], "yaw": 180}, ex
 # --- arthur
 ar = Actor(seat(5))
 ar.set(0, pos=seat(5), hidden=True, expr="neutral", **P(SIT))
-ar.jump("L08", seat(5), hidden=False, expr="neutral", arms=[58, 58], look=[0, -0.4])
+ar.jump("L08", seat(5), hidden=False, expr="neutral", arms=[22, 22], look=[0, -0.4])
 ar.set("L10", look=[0, -0.4])
 ar.jump("L12", seat(5), hidden=True)
 ar.jump("L13.2", [-1.4, -2.7, 0.0], hidden=False, **{**STAND, "yaw": 180}, expr="neutral")
-ar.walk("L14.1+0.5", [2.8, -2.55, 0.0], yaw=180)
-ar.set("L14.1+1.0", arms=[68, 68], yaw=180)
-ar.jump("L19", seat(5), **P(SIT, arms=[58, 58], look=[0, -0.4]))
-ar.jump("L28", [DOOR_X, -4.4, 0.0], **{**STAND, "yaw": 0})
+ar.walk("L14.2+0.5", [2.8, -2.55, 0.0], yaw=180)
+ar.set("L14.2+1.0", arms=[68, 68], yaw=180)
+ar.jump("L19", seat(5), **P(SIT, arms=[22, 22], look=[0, -0.4]))
+ar.jump("L28", [4.9, -4.4, 0.0], **{**STAND, "yaw": 0})
 ar.walk("L28>", [SIDE_X, -3.8, 0.0])
 ar.jump("L29", seat(5), hidden=True)
-ar.jump("L30", seat(5), hidden=False, **P(SIT, arms=[58, 58], look=[0, -0.4]))
-ar.set("L36", arms=[58, 138], tremble=1.8)
-ar.set("L36.0>", tremble=0.0)
-ar.set("L36.1", arms=[58, 58], tremble=0.0)
+ar.jump("L30", seat(5), hidden=False, **P(SIT, arms=[22, 22], look=[0, -0.4]))
+ar.set("L36", arms=[22, 130], tremble=1.8)
+ar.set("L36.1>", tremble=0.0)
+ar.set("L36.2", arms=[22, 22], tremble=0.0)
 ar.jump("L41", seat(5), hidden=True)
 ar.jump("L55", [0.2, -2.7, 0.0], hidden=False, **{**STAND, "yaw": 180}, expr="neutral")
 ar.walk("L55+1.8", [2.8, -2.55, 0.0], yaw=180)
@@ -289,7 +291,7 @@ ar.jump("L57", [-2.3, -2.5, 0.0], hidden=True)
 ar.jump("L63", [ST[0], LY + 0.25, TOP], hidden=False, **{**STAND, "yaw": 0}, expr="neutral")
 ar.set("L66", head=[0, 24], expr="soft")
 ar.set("L68", head=[0, 0], expr="soft")
-ar.jump("L69", seat(5), hidden=False, **P(SIT, arms=[58, 58], expr="neutral"))
+ar.jump("L69", seat(5), hidden=False, **P(SIT, arms=[22, 22], expr="neutral"))
 ar.jump("L74", [2.3, -2.55, 0.0], **{**STAND, "arms": [68, 68], "yaw": 180}, expr="soft")
 
 # --- the Turned: head turned right round (so its face looks at me and the haircut faces the dryers), arms hung back
@@ -302,7 +304,7 @@ tu.jump("L30", seat(3), **TURN)
 tu.jump("L41", seat(3), hidden=True)
 tu.jump("L42", seat(5), hidden=False, **TURN)
 tu.jump("P01+0.3", seat(5), hidden=True)
-tu.jump("L48.1", seat(0), hidden=False, **{**TURN, "lean": 7, "look": [0, 0.0]})
+tu.jump("L48.2", seat(0), hidden=False, **{**TURN, "lean": 7, "look": [0, 0.0]})
 tu.set("L49", look=[0, 0])
 tu.set("L51", look=[0, 1.0])
 tu.set("L52.1", look=[1.0, 0.0])
@@ -322,19 +324,19 @@ acting = {"me": me.keys, "me0": me0.keys, "arthur": ar.keys, "turned": tu.keys}
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [
     {"at": 0, "name": "coat7", "on": True, "floor": True},
-    {"at": "L14.1", "name": "d7door", "open": 1.0, "dur": 0.35},
+    {"at": "L14.2", "name": "d7door", "open": 1.0, "dur": 0.35},
     {"at": "L13.1", "name": "d7glow", "to": 0.03, "dur": 0.4},
     {"at": "L16", "name": "coat7", "on": False},
     {"at": "L16", "name": "held", "on": True},
     {"at": "L18", "name": "held", "on": False},
-    {"at": "L34.1", "name": "hook", "a": True},
+    {"at": "L34.2", "name": "hook", "a": True},
     {"at": "L40", "name": "hook", "a": False},
     {"at": "L72", "name": "hook", "a": True, "b": True},
     # the stutter: one held shot (S47), the tubes ramp down over 1.0 s, hold through P01, ramp back over 1.0 s
     {"at": "L45", "name": "tubes", "to": 0.2, "dur": 1.0},
     {"at": "P01>-0.35", "name": "tubes", "to": 1.0, "dur": 0.9},
     {"at": "L47", "name": "drums", "on": False},
-    {"at": "L48.1", "name": "drums", "on": True},
+    {"at": "L48.2", "name": "drums", "on": True},
     {"at": "L56", "name": "coat7", "on": False, "floor": False},
     {"at": "L56", "name": "d7door", "open": 1.0, "dur": 0.01},
     {"at": "L56+0.4", "name": "coat7", "on": True, "floor": True},
@@ -351,13 +353,13 @@ cues = [
 ]
 
 fx = [
-    {"at": "L48.2", "kind": "shake", "dur": 0.35, "amp": 0.45},
+    {"at": "L48.3", "kind": "shake", "dur": 0.35, "amp": 0.45},
 ]
 
 sfx = [
     {"at": "L13.1", "kind": "buzzer", "db": -12, "dur": 0.45},
     {"at": "L13.1+0.6", "kind": "click", "db": -16},
-    {"at": "L14.1", "kind": "door", "db": -26},
+    {"at": "L14.2", "kind": "door", "db": -26},
     {"at": "L12", "kind": "click", "db": -22},
     {"at": "L12+0.35", "kind": "click", "db": -22},
     {"at": "L12+0.6", "kind": "click", "db": -23},
@@ -367,12 +369,12 @@ sfx = [
     {"at": "L24", "kind": "creak", "db": -26, "dur": 0.7},
     {"at": "L31", "kind": "thud", "db": -26},
     {"at": "L35", "kind": "creak", "db": -27, "dur": 0.6},
-    {"at": "L36.0>", "kind": "click", "db": -30},
+    {"at": "L36.1>", "kind": "click", "db": -30},
     {"at": "L41", "kind": "door", "db": -22},
     {"at": "L45", "kind": "hum_sweep", "db": -13, "dur": 1.2},
     {"at": "L45+0.1", "kind": "glitch", "db": -28, "dur": 0.7},
-        {"at": "L48.2", "kind": "hit", "db": -8, "keep": True},
-    {"at": "L48.2+0.03", "kind": "sting", "db": -14, "dur": 2.4, "keep": True},
+        {"at": "L48.3", "kind": "hit", "db": -8, "keep": True},
+    {"at": "L48.3+0.03", "kind": "sting", "db": -14, "dur": 2.4, "keep": True},
     {"at": "L57", "kind": "creak", "db": -34, "dur": 0.6},
     {"at": "L63", "kind": "door", "db": -22},
     {"at": "L76>-0.05", "kind": "glide", "db": -12, "dur": 1.2},
@@ -388,7 +390,7 @@ sections = [
     {"at": "L30", "voices": ["drone", "pad", "pulse"], "energy": 0.55},
     {"at": "L41", "voices": ["drone", "pulse"], "energy": 0.6},
     {"at": "L45", "voices": ["drone", "pad"], "energy": 0.4},
-    {"at": "L48.1", "voices": ["drone", "pad", "pulse"], "energy": 0.8},
+    {"at": "L48.2", "voices": ["drone", "pad", "pulse"], "energy": 0.8},
     {"at": "L54", "voices": ["drone", "pad"], "energy": 0.5},
     {"at": "L59", "voices": ["pad", "drone"], "energy": 0.4, "mode": "major", "root": 48},
     {"at": "L69", "voices": ["pad", "drone"], "energy": 0.4, "mode": "major", "root": 48},
@@ -423,7 +425,7 @@ story = {
         "ambience": [
             {"kind": "hum", "from": 0, "to": "end", "lufs": -34},
             {"kind": "water", "from": 0, "to": "L45", "lufs": -40},
-            {"kind": "water", "from": "L48.1", "to": "end", "lufs": -40},
+            {"kind": "water", "from": "L48.2", "to": "end", "lufs": -40},
             {"kind": "rain", "from": 0, "to": "end", "lufs": -40},
             {"kind": "rain", "from": "L28", "to": "L30", "lufs": -32},
             {"kind": "rain", "from": "L03", "to": "L05", "lufs": -33},
@@ -431,7 +433,7 @@ story = {
         ],
         "sfx": sfx,
         "music_drops": [
-            {"from": "L47", "to": "L48.1", "keep": ["hit", "sting"]},
+            {"from": "L47", "to": "L48.2", "keep": ["hit", "sting"]},
         ],
     },
 }

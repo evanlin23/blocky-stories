@@ -176,8 +176,12 @@
      "My washer broke"
     ],
     [
-     "in the first FREEZE",
-     "in the first freeze"
+     "in the first",
+     "in the first"
+    ],
+    [
+     "FREEZE",
+     "freeze"
     ],
     [
      "of the year.",
@@ -194,8 +198,12 @@
      "So I went"
     ],
     [
-     "to the all-night LAUNDROMAT.",
-     "to the all-night laundromat."
+     "to the all-night",
+     "to the all-night"
+    ],
+    [
+     "LAUNDROMAT.",
+     "laundromat."
     ]
    ]
   },
@@ -218,12 +226,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I sat BEHIND them",
-     "I sat behind them"
+     "I sat",
+     "I sat"
     ],
     [
-     "at the FOLDING TABLE.",
-     "at the folding table."
+     "BEHIND them",
+     "behind them"
+    ],
+    [
+     "at the",
+     "at the"
+    ],
+    [
+     "FOLDING TABLE.",
+     "folding table."
     ]
    ]
   },
@@ -236,8 +252,12 @@
      "That first night,"
     ],
     [
-     "I came in SOAKED",
-     "I came in soaked"
+     "I came",
+     "I came"
+    ],
+    [
+     "in SOAKED",
+     "in soaked"
     ],
     [
      "to the SKIN.",
@@ -250,8 +270,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "There was ONE other person,",
-     "There was one other person,"
+     "There was ONE",
+     "There was one"
+    ],
+    [
+     "other person,",
+     "other person,"
     ],
     [
      "an OLD MAN",
@@ -268,16 +292,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "He had a grey JUMPER on.",
-     "He had a grey jumper on."
+     "He had a",
+     "He had a"
+    ],
+    [
+     "grey JUMPER on.",
+     "grey jumper on."
     ],
     [
      "That was ALL.",
      "that was all."
     ],
     [
-     "On a FREEZING NIGHT.",
-     "on a freezing night."
+     "On a",
+     "on a"
+    ],
+    [
+     "FREEZING NIGHT.",
+     "freezing night."
     ]
    ]
   },
@@ -286,8 +318,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He never LOOKED UP.",
-     "He never looked up."
+     "He never",
+     "He never"
+    ],
+    [
+     "LOOKED UP.",
+     "looked up."
     ],
     [
      "He never SAID",
@@ -304,12 +340,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I sat there SHIVERING,",
-     "I sat there shivering,"
+     "I sat",
+     "I sat"
     ],
     [
-     "my teeth going like a DRUM.",
-     "my teeth going like a drum."
+     "there SHIVERING,",
+     "there shivering,"
+    ],
+    [
+     "my teeth going",
+     "my teeth going"
+    ],
+    [
+     "like a DRUM.",
+     "like a drum."
     ]
    ]
   },
@@ -318,8 +362,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'd only got UP once,",
-     "I'd only got up once,"
+     "I'd only got",
+     "I'd only got"
+    ],
+    [
+     "UP once,",
+     "up once,"
     ],
     [
      "for CHANGE.",
@@ -350,8 +398,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I hadn't USED it.",
-     "I hadn't used it."
+     "I hadn't",
+     "I hadn't"
+    ],
+    [
+     "USED it.",
+     "used it."
     ],
     [
      "The old man",
@@ -368,8 +420,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Inside was a COAT.",
-     "Inside was a coat."
+     "Inside",
+     "Inside"
+    ],
+    [
+     "was a COAT.",
+     "was a coat."
     ],
     [
      "Dark GREEN WOOL,",
@@ -386,8 +442,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I held it UP.",
-     "I held it up."
+     "I held",
+     "I held"
+    ],
+    [
+     "it UP.",
+     "it up."
     ],
     [
      "It was EXACTLY",
@@ -404,8 +464,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I asked the room",
-     "I asked the room"
+     "I asked",
+     "I asked"
+    ],
+    [
+     "the room",
+     "the room"
     ],
     [
      "whose it WAS.",
@@ -426,12 +490,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "So I put it ON.",
-     "So I put it on."
+     "So I put",
+     "So I put"
     ],
     [
-     "It smelled of LAVENDER SOAP.",
-     "it smelled of lavender soap."
+     "it ON.",
+     "it on."
+    ],
+    [
+     "It smelled",
+     "it smelled"
+    ],
+    [
+     "of LAVENDER SOAP.",
+     "of lavender soap."
     ]
    ]
   },
@@ -448,8 +520,12 @@
      "somebody else"
     ],
     [
-     "was in the CHAIRS.",
-     "was in the chairs."
+     "was in",
+     "was in"
+    ],
+    [
+     "the CHAIRS.",
+     "the chairs."
     ]
    ]
   },
@@ -462,8 +538,12 @@
      "Chair five,"
     ],
     [
-     "right next to the OLD MAN.",
-     "right next to the old man."
+     "right next to",
+     "right next to"
+    ],
+    [
+     "the OLD MAN.",
+     "the old man."
     ]
    ]
   },
@@ -480,8 +560,12 @@
      "broad shoulders."
     ],
     [
-     "A neat brown HAIRCUT.",
-     "a neat brown haircut."
+     "A neat",
+     "a neat"
+    ],
+    [
+     "brown HAIRCUT.",
+     "brown haircut."
     ]
    ]
   },
@@ -498,8 +582,12 @@
      "of its overalls"
     ],
     [
-     "was on its BACK.",
-     "was on its back."
+     "was on",
+     "was on"
+    ],
+    [
+     "its BACK.",
+     "its back."
     ]
    ]
   },
@@ -512,12 +600,20 @@
      "Its shoes"
     ],
     [
-     "pointed the WRONG WAY,",
-     "pointed the wrong way,"
+     "pointed the",
+     "pointed the"
     ],
     [
-     "HEELS to the DRYERS.",
-     "heels to the dryers."
+     "WRONG WAY,",
+     "wrong way,"
+    ],
+    [
+     "HEELS",
+     "heels"
+    ],
+    [
+     "to the DRYERS.",
+     "to the dryers."
     ]
    ]
   },
@@ -526,8 +622,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And on the BACK",
-     "And on the back"
+     "And on",
+     "And on"
+    ],
+    [
+     "the BACK",
+     "the back"
     ],
     [
      "of its HEAD",
@@ -544,8 +644,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It was LOOKING at me.",
-     "It was looking at me."
+     "It was LOOKING",
+     "It was looking"
+    ],
+    [
+     "at me.",
+     "at me."
     ],
     [
      "Over the back",
@@ -580,8 +684,12 @@
      "The old man"
     ],
     [
-     "just watched his DRUM.",
-     "just watched his drum."
+     "just watched",
+     "just watched"
+    ],
+    [
+     "his DRUM.",
+     "his drum."
     ]
    ]
   },
@@ -594,8 +702,12 @@
      "When I left,"
     ],
     [
-     "he went out the SIDE DOOR,",
-     "he went out the side door,"
+     "he went out",
+     "he went out"
+    ],
+    [
+     "the SIDE DOOR,",
+     "the side door,"
     ],
     [
      "and UPSTAIRS.",
@@ -608,12 +720,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I BUTTONED the coat",
-     "I buttoned the coat"
+     "I BUTTONED",
+     "I buttoned"
     ],
     [
-     "up to my CHIN.",
-     "up to my chin."
+     "the coat",
+     "the coat"
+    ],
+    [
+     "up to",
+     "up to"
+    ],
+    [
+     "my CHIN.",
+     "my chin."
     ]
    ]
   },
@@ -626,8 +746,12 @@
      "Night three,"
     ],
     [
-     "it was in chair FOUR.",
-     "it was in chair four."
+     "it was",
+     "it was"
+    ],
+    [
+     "in chair FOUR.",
+     "in chair four."
     ]
    ]
   },
@@ -650,8 +774,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I read the same PAGE",
-     "I read the same page"
+     "I read",
+     "I read"
+    ],
+    [
+     "the same PAGE",
+     "the same page"
     ],
     [
      "TEN TIMES.",
@@ -668,8 +796,12 @@
      "One chair nearer."
     ],
     [
-     "I never SAW it move.",
-     "I never saw it move."
+     "I never",
+     "I never"
+    ],
+    [
+     "SAW it move.",
+     "saw it move."
     ]
    ]
   },
@@ -682,8 +814,12 @@
      "I thought,"
     ],
     [
-     "it wants the COAT BACK.",
-     "it wants the coat back."
+     "it wants",
+     "it wants"
+    ],
+    [
+     "the COAT BACK.",
+     "the coat back."
     ]
    ]
   },
@@ -692,8 +828,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "So I hung it",
-     "So I hung it"
+     "So I hung",
+     "So I hung"
+    ],
+    [
+     "it",
+     "it"
     ],
     [
      "on the HOOK",
@@ -714,8 +854,12 @@
      "Its eyes"
     ],
     [
-     "went to the HOOK.",
-     "went to the hook."
+     "went",
+     "went"
+    ],
+    [
+     "to the HOOK.",
+     "to the hook."
     ]
    ]
   },
@@ -724,16 +868,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "The old man COUGHED.",
-     "The old man coughed."
+     "The old",
+     "The old"
+    ],
+    [
+     "man COUGHED.",
+     "man coughed."
     ],
     [
      "He was STILL",
      "he was still"
     ],
     [
-     "in just the JUMPER.",
-     "in just the jumper."
+     "in just",
+     "in just"
+    ],
+    [
+     "the JUMPER.",
+     "the jumper."
     ]
    ]
   },
@@ -742,8 +894,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I went past his chair",
-     "I went past his chair"
+     "I went",
+     "I went"
+    ],
+    [
+     "past his chair",
+     "past his chair"
     ],
     [
      "for my COAT.",
@@ -756,8 +912,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And I smelled it AGAIN.",
-     "And I smelled it again."
+     "And I smelled",
+     "And I smelled"
+    ],
+    [
+     "it AGAIN.",
+     "it again."
     ],
     [
      "LAVENDER.",
@@ -774,8 +934,12 @@
      "I thought"
     ],
     [
-     "it had to be the SOAP",
-     "it had to be the soap"
+     "it had to",
+     "it had to"
+    ],
+    [
+     "be the SOAP",
+     "be the soap"
     ],
     [
      "the shop SELLS.",
@@ -788,12 +952,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "I put the coat back ON",
-     "I put the coat back on"
+     "I put",
+     "I put"
     ],
     [
-     "and kept my eyes DOWN.",
-     "and kept my eyes down."
+     "the coat",
+     "the coat"
+    ],
+    [
+     "back ON",
+     "back on"
+    ],
+    [
+     "and kept",
+     "and kept"
+    ],
+    [
+     "my eyes DOWN.",
+     "my eyes down."
     ]
    ]
   },
@@ -824,8 +1000,12 @@
      "The turned"
     ],
     [
-     "was in HIS chair.",
-     "was in his chair."
+     "was in",
+     "was in"
+    ],
+    [
+     "HIS chair.",
+     "his chair."
     ]
    ]
   },
@@ -834,12 +1014,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "As FAR from me",
-     "As far from me"
+     "As FAR",
+     "As far"
     ],
     [
-     "as it had EVER been.",
-     "as it had ever been."
+     "from me",
+     "from me"
+    ],
+    [
+     "as it had",
+     "as it had"
+    ],
+    [
+     "EVER been.",
+     "ever been."
     ]
    ]
   },
@@ -848,8 +1036,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I let out a BREATH.",
-     "I let out a breath."
+     "I let",
+     "I let"
+    ],
+    [
+     "out a BREATH.",
+     "out a breath."
     ]
    ]
   },
@@ -877,8 +1069,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Down to a brown GLOW.",
-     "Down to a brown glow."
+     "Down to",
+     "Down to"
+    ],
+    [
+     "a brown GLOW.",
+     "a brown glow."
     ]
    ]
   },
@@ -906,8 +1102,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "When they came BACK,",
-     "When they came back,"
+     "When they",
+     "When they"
+    ],
+    [
+     "came BACK,",
+     "came back,"
     ],
     [
      "its FACE",
@@ -1004,8 +1204,12 @@
      "coat."
     ],
     [
-     "Like it was COUNTING.",
-     "like it was counting."
+     "Like",
+     "like"
+    ],
+    [
+     "it was COUNTING.",
+     "it was counting."
     ]
    ],
    "tempo": 0.95
@@ -1034,12 +1238,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "He was the ONLY one",
-     "He was the only one"
+     "He was the",
+     "He was the"
     ],
     [
-     "here that first NIGHT.",
-     "here that first night."
+     "ONLY one",
+     "only one"
+    ],
+    [
+     "here that first",
+     "here that first"
+    ],
+    [
+     "NIGHT.",
+     "night."
     ]
    ]
   },
@@ -1048,12 +1260,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "While I was at the CHANGE MACHINE,",
-     "While I was at the change machine,"
+     "While",
+     "While"
     ],
     [
-     "he put his COAT",
-     "he put his coat"
+     "I was at",
+     "I was at"
+    ],
+    [
+     "the CHANGE MACHINE,",
+     "the change machine,"
+    ],
+    [
+     "he put",
+     "he put"
+    ],
+    [
+     "his COAT",
+     "his coat"
     ],
     [
      "in that DRYER.",
@@ -1078,8 +1302,12 @@
      "for a week,"
     ],
     [
-     "so I wouldn't ASK.",
-     "so I wouldn't ask."
+     "so I",
+     "so I"
+    ],
+    [
+     "wouldn't ASK.",
+     "wouldn't ask."
     ]
    ]
   },
@@ -1088,8 +1316,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And now he had a COLD,",
-     "And now he had a cold,"
+     "And now he",
+     "And now he"
+    ],
+    [
+     "had a COLD,",
+     "had a cold,"
     ],
     [
      "and his chair",
@@ -1150,8 +1382,12 @@
      "I folded it"
     ],
     [
-     "the way he DOES,",
-     "the way he does,"
+     "the way",
+     "the way"
+    ],
+    [
+     "he DOES,",
+     "he does,"
     ],
     [
      "CORNERS FIRST.",
@@ -1182,8 +1418,12 @@
      "He opened up"
     ],
     [
-     "in a plaid SCARF,",
-     "in a plaid scarf,"
+     "in a plaid",
+     "in a plaid"
+    ],
+    [
+     "SCARF,",
+     "scarf,"
     ],
     [
      "with a cold.",
@@ -1196,8 +1436,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I held out his WASH,",
-     "I held out his wash,"
+     "I held",
+     "I held"
+    ],
+    [
+     "out his WASH,",
+     "out his wash,"
     ],
     [
      "with his COAT",
@@ -1214,12 +1458,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I said, \"THANK you.\"",
-     "I said, thank you."
+     "I said,",
+     "I said,"
     ],
     [
-     "Then I said it AGAIN.",
-     "then I said it again."
+     "\"THANK you.\"",
+     "thank you."
+    ],
+    [
+     "Then I said",
+     "then I said"
+    ],
+    [
+     "it AGAIN.",
+     "it again."
     ]
    ]
   },
@@ -1260,12 +1512,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then he told me",
-     "Then he told me"
+     "Then he told",
+     "Then he told"
     ],
     [
-     "his name was ARTHUR.",
-     "his name was Arthur."
+     "me",
+     "me"
+    ],
+    [
+     "his name",
+     "his name"
+    ],
+    [
+     "was ARTHUR.",
+     "was Arthur."
     ]
    ]
   },
@@ -1278,8 +1538,12 @@
      "Two nights later,"
     ],
     [
-     "he was back in chair SIX.",
-     "he was back in chair six."
+     "he was back",
+     "he was back"
+    ],
+    [
+     "in chair SIX.",
+     "in chair six."
     ]
    ]
   },
@@ -1292,8 +1556,12 @@
      "Chair five"
     ],
     [
-     "is just a CHAIR now.",
-     "is just a chair now."
+     "is just",
+     "is just"
+    ],
+    [
+     "a CHAIR now.",
+     "a chair now."
     ]
    ]
   },
@@ -1316,8 +1584,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "There are TWO COATS",
-     "There are two coats"
+     "There are",
+     "There are"
+    ],
+    [
+     "TWO COATS",
+     "two coats"
     ],
     [
      "on the HOOK",
@@ -1338,8 +1610,12 @@
      "His,"
     ],
     [
-     "and a new one",
-     "and a new one"
+     "and a new",
+     "and a new"
+    ],
+    [
+     "one",
+     "one"
     ],
     [
      "of MINE.",
@@ -1356,8 +1632,12 @@
      "For a week,"
     ],
     [
-     "I didn't even know",
-     "I didn't even know"
+     "I didn't even",
+     "I didn't even"
+    ],
+    [
+     "know",
+     "know"
     ],
     [
      "his NAME.",
@@ -1370,8 +1650,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "But the whole TIME,",
-     "But the whole time,"
+     "But the whole",
+     "But the whole"
+    ],
+    [
+     "TIME,",
+     "time,"
     ]
    ]
   },
@@ -1433,29 +1717,29 @@
      0,
      [
       -2.3,
-      -1.5,
-      1.05
+      -0.95,
+      1.15
      ],
      [
       -2.3,
       -3.0,
-      1.02
+      1.0
      ],
-     19
+     22
     ],
     [
      1,
      [
       -2.3,
-      -1.75,
-      1.05
+      -1.1,
+      1.15
      ],
      [
       -2.3,
       -3.0,
-      1.02
+      1.0
      ],
-     19
+     22
     ]
    ],
    "step": 2,
@@ -1705,30 +1989,30 @@
     [
      0,
      [
-      2.75,
-      -0.95,
+      2.35,
+      -1.4,
       1.5
      ],
      [
       3.65,
-      0.1,
+      0.0,
       1.5
      ],
-     36
+     28
     ],
     [
      1,
      [
-      2.8,
-      -0.9,
+      2.4,
+      -1.35,
       1.5
      ],
      [
       3.65,
-      0.1,
+      0.0,
       1.5
      ],
-     38
+     29
     ]
    ],
    "step": 2,
@@ -1763,13 +2047,13 @@
     [
      0,
      [
-      -2.4,
-      -0.1,
-      1.3
+      -2.6,
+      0.2,
+      1.35
      ],
      [
-      -5.1,
-      -0.9,
+      -5.0,
+      -1.1,
       1.1
      ],
      24
@@ -1777,13 +2061,13 @@
     [
      1,
      [
-      -2.6,
-      -0.1,
-      1.3
+      -2.8,
+      0.2,
+      1.35
      ],
      [
-      -5.1,
-      -0.9,
+      -5.0,
+      -1.1,
       1.1
      ],
      25
@@ -1800,8 +2084,8 @@
      0,
      [
       -2.3,
-      -1.35,
-      1.1
+      -0.95,
+      1.15
      ],
      [
       -2.3,
@@ -1843,9 +2127,9 @@
     [
      0,
      [
-      1.6,
-      -1.05,
-      1.5
+      0.9,
+      -1.1,
+      1.55
      ],
      [
       2.8,
@@ -1857,9 +2141,9 @@
     [
      1,
      [
-      1.7,
-      -1.05,
-      1.5
+      1.0,
+      -1.1,
+      1.55
      ],
      [
       2.8,
@@ -1870,7 +2154,7 @@
     ]
    ],
    "step": 2,
-   "at": "L14.1",
+   "at": "L14.2",
    "hand": 0.003
   },
   {
@@ -1879,30 +2163,30 @@
     [
      0,
      [
-      -2.3,
-      -1.5,
-      1.35
+      -2.0,
+      -0.95,
+      1.45
      ],
      [
       -2.3,
-      -3.0,
-      0.95
+      -2.95,
+      0.9
      ],
-     20
+     22
     ],
     [
      1,
      [
-      -2.3,
-      -1.65,
-      1.35
+      -2.1,
+      -1.0,
+      1.45
      ],
      [
       -2.3,
-      -3.0,
-      0.95
+      -2.95,
+      0.9
      ],
-     21
+     22
     ]
    ],
    "step": 2,
@@ -2140,29 +2424,15 @@
      0,
      [
       2.9,
-      1.9,
+      1.5,
       0.2
      ],
      [
       2.9,
-      0.4,
-      0.28
+      0.3,
+      0.24
      ],
-     21
-    ],
-    [
-     1,
-     [
-      2.9,
-      1.7,
-      0.2
-     ],
-     [
-      2.9,
-      0.4,
-      0.28
-     ],
-     21
+     14
     ]
    ],
    "step": 2,
@@ -2304,12 +2574,12 @@
     [
      0,
      [
-      3.0,
+      3.9,
       -14.0,
       1.7
      ],
      [
-      2.8,
+      3.9,
       -3.5,
       1.4
      ],
@@ -2326,12 +2596,12 @@
     [
      0,
      [
-      -0.4,
-      -9.8,
+      0.6,
+      -10.8,
       1.5
      ],
      [
-      -2.4,
+      2.4,
       -5.8,
       1.35
      ],
@@ -2530,8 +2800,8 @@
     [
      0,
      [
-      2.9,
-      -1.35,
+      2.7,
+      -1.6,
       1.55
      ],
      [
@@ -2539,13 +2809,13 @@
       0.0,
       1.45
      ],
-     26
+     20
     ],
     [
      1,
      [
-      3.0,
-      -1.3,
+      2.8,
+      -1.55,
       1.55
      ],
      [
@@ -2553,7 +2823,7 @@
       0.0,
       1.45
      ],
-     27
+     21
     ]
    ],
    "step": 2,
@@ -2566,30 +2836,30 @@
     [
      0,
      [
-      1.9,
-      -1.6,
-      1.4
+      0.4,
+      -1.9,
+      1.5
      ],
      [
-      3.0,
+      2.4,
       -0.8,
-      1.35
+      1.3
      ],
-     26
+     20
     ],
     [
      1,
      [
-      2.2,
-      -1.6,
-      1.4
+      0.7,
+      -1.9,
+      1.5
      ],
      [
-      3.2,
+      2.7,
       -0.8,
-      1.35
+      1.3
      ],
-     26
+     20
     ]
    ],
    "step": 2,
@@ -2849,7 +3119,7 @@
     ]
    ],
    "step": 2,
-   "at": "L48.1",
+   "at": "L48.2",
    "hand": 0.002
   },
   {
@@ -2894,30 +3164,30 @@
     [
      0,
      [
-      -2.55,
-      -0.35,
-      1.6
+      -2.1,
+      0.4,
+      1.58
      ],
      [
-      -3.6,
-      -0.95,
+      -3.22,
+      -0.92,
       1.5
      ],
-     30
+     34
     ],
     [
      1,
      [
-      -2.6,
-      -0.4,
-      1.6
+      -2.15,
+      0.35,
+      1.58
      ],
      [
-      -3.6,
-      -0.95,
+      -3.22,
+      -0.92,
       1.5
      ],
-     31
+     35
     ]
    ],
    "step": 2,
@@ -2930,16 +3200,17 @@
     [
      0,
      [
-      -3.15,
-      -1.5,
-      1.55
+      -3.78,
+      -1.85,
+      1.5
      ],
      [
       -3.6,
       -0.3,
       1.45
      ],
-     34
+     32,
+     -3
     ]
    ],
    "step": 2,
@@ -2952,16 +3223,17 @@
     [
      0,
      [
-      -3.05,
-      -1.55,
-      1.38
+      -3.5,
+      -1.9,
+      1.72
      ],
      [
-      -3.55,
-      -0.45,
+      -3.6,
+      -0.3,
       1.5
      ],
-     32
+     30,
+     5
     ]
    ],
    "step": 2,
@@ -2974,30 +3246,32 @@
     [
      0,
      [
-      -3.0,
-      -1.6,
-      1.4
+      -3.66,
+      -1.95,
+      1.62
      ],
      [
-      -3.55,
-      -0.5,
-      1.48
+      -3.6,
+      -0.3,
+      1.5
      ],
-     32
+     28,
+     7
     ],
     [
      1,
      [
-      -3.05,
-      -1.55,
-      1.4
+      -3.65,
+      -1.88,
+      1.6
      ],
      [
-      -3.55,
-      -0.5,
-      1.48
+      -3.6,
+      -0.3,
+      1.5
      ],
-     33
+     29,
+     7
     ]
    ],
    "step": 2,
@@ -3010,16 +3284,16 @@
     [
      0,
      [
-      -2.55,
-      -0.35,
-      1.6
+      -2.1,
+      0.35,
+      1.58
      ],
      [
-      -3.6,
-      -0.95,
+      -3.22,
+      -0.92,
       1.5
      ],
-     30
+     40
     ]
    ],
    "step": 2,
@@ -3126,30 +3400,32 @@
     [
      0,
      [
-      -3.05,
-      -1.55,
-      1.38
+      -3.66,
+      -1.95,
+      1.62
      ],
      [
       -3.6,
-      -0.45,
+      -0.3,
       1.5
      ],
-     32
+     28,
+     7
     ],
     [
      1,
      [
-      -3.1,
-      -1.5,
-      1.38
+      -3.65,
+      -1.88,
+      1.6
      ],
      [
       -3.6,
-      -0.45,
+      -0.3,
       1.5
      ],
-     33
+     30,
+     7
     ]
    ],
    "step": 2,
@@ -3162,30 +3438,30 @@
     [
      0,
      [
-      -2.7,
+      -4.5,
       -1.9,
-      1.45
+      1.55
      ],
      [
-      -3.6,
+      -3.5,
       -0.5,
       1.45
      ],
-     22
+     24
     ],
     [
      1,
      [
-      -2.75,
+      -4.45,
       -1.85,
-      1.45
+      1.55
      ],
      [
-      -3.6,
+      -3.5,
       -0.5,
       1.45
      ],
-     23
+     25
     ]
    ],
    "step": 2,
@@ -3198,13 +3474,13 @@
     [
      0,
      [
-      3.4,
-      1.8,
-      0.75
+      3.6,
+      2.3,
+      0.85
      ],
      [
-      4.45,
-      2.75,
+      5.25,
+      3.1,
       0.5
      ],
      24
@@ -3212,13 +3488,13 @@
     [
      1,
      [
-      3.5,
-      1.9,
-      0.75
+      3.7,
+      2.35,
+      0.85
      ],
      [
-      4.45,
-      2.75,
+      5.25,
+      3.1,
       0.5
      ],
      25
@@ -3706,7 +3982,79 @@
    },
    {
     "at": "L29",
+    "pos": [
+     -3.6,
+     -2.45,
+     -0.045
+    ]
+   },
+   {
+    "at": "L29",
+    "pos": [
+     3.2,
+     -5.2,
+     0.0
+    ],
+    "blend": 0.0,
+    "sit": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "bend": 0,
+    "lean": 0,
+    "yaw": 0,
     "expr": "neutral"
+   },
+   {
+    "at": "L29>",
+    "pos": [
+     1.4,
+     -6.4,
+     0.0
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     1.4,
+     -6.4,
+     0.0
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     -3.6,
+     -2.45,
+     -0.045
+    ],
+    "blend": 0.0,
+    "sit": true,
+    "yaw": 180,
+    "arms": [
+     68,
+     68
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "bend": 0,
+    "lean": 0,
+    "expr": "neutral",
+    "head": [
+     0,
+     0
+    ],
+    "look": [
+     0,
+     0
+    ]
    },
    {
     "at": "L31b",
@@ -3842,7 +4190,7 @@
     "tremble": 0.0
    },
    {
-    "at": "L48.1",
+    "at": "L48.2",
     "pos": [
      -3.6,
      -2.45,
@@ -3850,7 +4198,7 @@
     ]
    },
    {
-    "at": "L48.1",
+    "at": "L48.2",
     "pos": [
      -3.22,
      -1.0,
@@ -4128,7 +4476,7 @@
     "at": "L12",
     "pos": [
      -4.35,
-     -0.9,
+     -1.45,
      0.0
     ],
     "blend": 0.0,
@@ -4150,7 +4498,7 @@
     "at": "L13",
     "pos": [
      -4.35,
-     -0.9,
+     -1.45,
      0.0
     ]
    },
@@ -4284,7 +4632,7 @@
     "at": "L56",
     "pos": [
      -4.35,
-     -0.9,
+     -1.45,
      0.0
     ],
     "blend": 0.0,
@@ -4307,7 +4655,7 @@
     "at": "L57",
     "pos": [
      -4.35,
-     -0.9,
+     -1.45,
      0.0
     ]
    },
@@ -4525,8 +4873,8 @@
     "hidden": false,
     "expr": "neutral",
     "arms": [
-     58,
-     58
+     22,
+     22
     ],
     "look": [
      0,
@@ -4590,7 +4938,7 @@
     "expr": "neutral"
    },
    {
-    "at": "L14.1+0.5",
+    "at": "L14.2+0.5",
     "pos": [
      2.8,
      -2.55,
@@ -4599,7 +4947,7 @@
     "yaw": 180
    },
    {
-    "at": "L14.1+1.0",
+    "at": "L14.2+1.0",
     "arms": [
      68,
      68
@@ -4625,8 +4973,8 @@
     "sit": true,
     "yaw": 180,
     "arms": [
-     58,
-     58
+     22,
+     22
     ],
     "side": [
      0,
@@ -4650,7 +4998,7 @@
    {
     "at": "L28",
     "pos": [
-     4.4,
+     4.9,
      -4.4,
      0.0
     ],
@@ -4671,7 +5019,7 @@
    {
     "at": "L28>",
     "pos": [
-     7.2,
+     8.3,
      -3.8,
      0.0
     ]
@@ -4679,7 +5027,7 @@
    {
     "at": "L29",
     "pos": [
-     7.2,
+     8.3,
      -3.8,
      0.0
     ]
@@ -4714,8 +5062,8 @@
     "sit": true,
     "yaw": 180,
     "arms": [
-     58,
-     58
+     22,
+     22
     ],
     "side": [
      0,
@@ -4731,20 +5079,20 @@
    {
     "at": "L36",
     "arms": [
-     58,
-     138
+     22,
+     130
     ],
     "tremble": 1.8
    },
    {
-    "at": "L36.0>",
+    "at": "L36.1>",
     "tremble": 0.0
    },
    {
-    "at": "L36.1",
+    "at": "L36.2",
     "arms": [
-     58,
-     58
+     22,
+     22
     ],
     "tremble": 0.0
    },
@@ -4920,8 +5268,8 @@
     "sit": true,
     "yaw": 180,
     "arms": [
-     58,
-     58
+     22,
+     22
     ],
     "side": [
      0,
@@ -5150,7 +5498,7 @@
     "hidden": true
    },
    {
-    "at": "L48.1",
+    "at": "L48.2",
     "pos": [
      3.65,
      0.0,
@@ -5158,7 +5506,7 @@
     ]
    },
    {
-    "at": "L48.1",
+    "at": "L48.2",
     "pos": [
      -3.6,
      0.0,
@@ -5379,7 +5727,7 @@
    "floor": true
   },
   {
-   "at": "L14.1",
+   "at": "L14.2",
    "name": "d7door",
    "open": 1.0,
    "dur": 0.35
@@ -5406,7 +5754,7 @@
    "on": false
   },
   {
-   "at": "L34.1",
+   "at": "L34.2",
    "name": "hook",
    "a": true
   },
@@ -5439,7 +5787,7 @@
    "on": false
   },
   {
-   "at": "L48.1",
+   "at": "L48.2",
    "name": "drums",
    "on": true
   },
@@ -5523,7 +5871,7 @@
  ],
  "fx": [
   {
-   "at": "L48.2",
+   "at": "L48.3",
    "kind": "shake",
    "dur": 0.35,
    "amp": 0.45
@@ -5604,7 +5952,7 @@
     "energy": 0.4
    },
    {
-    "at": "L48.1",
+    "at": "L48.2",
     "voices": [
      "drone",
      "pad",
@@ -5660,7 +6008,7 @@
    },
    {
     "kind": "water",
-    "from": "L48.1",
+    "from": "L48.2",
     "to": "end",
     "lufs": -40
    },
@@ -5702,7 +6050,7 @@
     "db": -16
    },
    {
-    "at": "L14.1",
+    "at": "L14.2",
     "kind": "door",
     "db": -26
    },
@@ -5754,7 +6102,7 @@
     "dur": 0.6
    },
    {
-    "at": "L36.0>",
+    "at": "L36.1>",
     "kind": "click",
     "db": -30
    },
@@ -5776,13 +6124,13 @@
     "dur": 0.7
    },
    {
-    "at": "L48.2",
+    "at": "L48.3",
     "kind": "hit",
     "db": -8,
     "keep": true
    },
    {
-    "at": "L48.2+0.03",
+    "at": "L48.3+0.03",
     "kind": "sting",
     "db": -14,
     "dur": 2.4,
@@ -5814,7 +6162,7 @@
   "music_drops": [
    {
     "from": "L47",
-    "to": "L48.1",
+    "to": "L48.2",
     "keep": [
      "hit",
      "sting"

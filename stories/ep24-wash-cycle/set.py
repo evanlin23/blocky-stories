@@ -35,7 +35,7 @@ from blocky import acting as AC
 from blocky import faces, rig
 
 S = rig.S
-XL, XR, YF, YB, CEIL = -5.4, 5.4, -3.4, 3.6, 2.8
+XL, XR, YF, YB, CEIL = -5.4, 6.2, -3.4, 3.6, 2.8
 CHX = [round(-3.6 + 1.45 * i, 3) for i in range(6)]
 SEAT = 0.465
 SIT_Z = -0.045
@@ -43,7 +43,7 @@ TB_Y0, TB_Y1, TB_Z = -2.05, -1.25, 0.9
 ST = (-40.0, 0.0)
 BLUE, ORANGE, GREEN = "#3f7fd0", "#e2742b", "#2f5d43"
 TUBE_STRENGTH = 3.0
-TUBE_W = 38.0
+TUBE_W = 62.0
 EYE_GLOW = 3.2
 
 
@@ -89,8 +89,8 @@ def B(kit, name, size, loc, mat, parent=None, bevel=0.0, rot=(0, 0, 0)):
 def materials(kit):
     M = {}
     M["floor"] = kit.checker("#8c8e93", "#666870", 2.5, "wc floor", 0.28)
-    M["tile"] = kit.checker("#eadfc2", "#e0d4b4", 5.0, "wc tile", 0.35)
-    M["ceil"] = kit.plastic("#d9d3c2", 0.9, "wc ceiling")
+    M["tile"] = kit.checker("#d9d6ca", "#cfccc0", 5.0, "wc tile", 0.35)
+    M["ceil"] = kit.plastic("#c4c8cc", 0.9, "wc ceiling")
     M["steel"] = kit.metal("#a3a9ae", 0.32, "wc steel")
     M["steel2"] = kit.metal("#7e848a", 0.4, "wc steel dark")
     M["dryer"] = kit.plastic("#c7cbcf", 0.34, "wc dryer body")
@@ -105,7 +105,7 @@ def materials(kit):
     M["lamp"] = kit.emit("#bcd0ff", 6.0, "wc street lamp")
     M["panel"] = kit.emit("#c9e6cf", 1.1, "wc change panel")
     M["black"] = kit.plastic("#0d0f13", 0.6, "wc black")
-    M["blue"] = kit.plastic(BLUE, 0.5, "wc tally blue")
+    M["blue"] = kit.emit(BLUE, 1.6, "wc tally blue")
     M["wet"] = kit.plastic("#171b21", 0.22, "wc wet road")
     M["walk"] = kit.plastic("#3a3f47", 0.3, "wc sidewalk")
     M["brick"] = kit.bricks("#5e3a30", "#4a2c26", "#3a3532", 1.0, "wc brick")
@@ -138,7 +138,7 @@ def build_room(kit, ctx, M):
     for nm, z0, z1 in (("sill", 0.0, 0.7), ("header", 2.4, CEIL)):
         B(kit, f"front {nm} out", (W + 0.2, 0.1, z1 - z0), ((XL + XR) / 2, YF - 0.15, (z0 + z1) / 2), M["tealout"])
         B(kit, f"front {nm} in", (W, 0.1, z1 - z0), ((XL + XR) / 2, YF - 0.05, (z0 + z1) / 2), M["tile"])
-    for k, x in enumerate((-5.3, -3.0, -0.8, 1.6, 5.3)):
+    for k, x in enumerate((-5.3, -3.0, -0.8, 1.6, 5.3, 6.1)):
         B(kit, f"pillar{k}", (0.2, 0.3, CEIL), (x, YF - 0.1, CEIL / 2), M["steel2"])
     B(kit, "hook panel out", (0.7, 0.1, CEIL), (3.35, YF - 0.15, CEIL / 2), M["tealout"])
     B(kit, "hook panel", (0.7, 0.1, CEIL), (3.35, YF - 0.05, CEIL / 2), M["tile"])
@@ -156,7 +156,7 @@ def build_room(kit, ctx, M):
         for y in (-1.5, 1.4):
             B(kit, f"tube {k}{y}", (1.6, 0.12, 0.06), (x, y, CEIL - 0.05), M["tube"])
             B(kit, f"tube cap {k}{y}", (1.7, 0.2, 0.03), (x, y, CEIL - 0.01), M["steel"])
-        kit.light(f"tube{k}", "AREA", (x, -0.1, CEIL - 0.12), TUBE_W, "#f3ecda", size=2.4)
+        kit.light(f"tube{k}", "AREA", (x, -0.1, CEIL - 0.12), TUBE_W, "#e8eef6", size=2.4)
     for k in range(4):
         kit.LIGHTS[f"tube{k}"]["obj"].scale = (1.0, 1.5, 1.0)
     # a soft fill from the table side, so a face turned toward the table is never black
@@ -164,9 +164,9 @@ def build_room(kit, ctx, M):
     kit.aim(kit.LIGHTS["table lamp"]["obj"], (0.0, 0.0, 0.8))
     # the dryers' warm glow (steady), low in front of the dryer wall
     for k, x in enumerate((-2.2, 1.2, 4.0)):
-        kit.light(f"dryer glow{k}", "AREA", (x, 2.35, 0.65), 55.0, "#e8a45a", size=1.6)
+        kit.light(f"dryer glow{k}", "AREA", (x, 2.35, 0.65), 12.0, "#e8a45a", size=1.6)
         kit.aim(kit.LIGHTS[f"dryer glow{k}"]["obj"], (x, -0.5, 0.9))
-    kit.light("end glow", "AREA", (-2.3, -2.6, 1.0), 30.0, "#e8a45a", size=0.7)
+    kit.light("end glow", "AREA", (-2.3, -2.6, 1.0), 10.0, "#e8a45a", size=0.7)
     kit.aim(kit.LIGHTS["end glow"]["obj"], (-2.3, -1.2, 1.0))
     ctx["tube_mat"] = M["tube"]
 
@@ -253,9 +253,9 @@ def build_machines(kit, ctx, M):
     ctx["wash"] = []
     for r_ in range(2):
         for c_ in range(6):
-            y = -2.75 + 1.1 * c_
+            y = -1.9 + 1.0 * c_
             z0 = r_ * 0.98
-            B(kit, f"wash{r_}{c_}", (0.9, 1.0, 0.95), (XR - 0.45, y, z0 + 0.475), M["dryer"], bevel=0.02)
+            B(kit, f"wash{r_}{c_}", (0.9, 0.96, 0.95), (XR - 0.45, y, z0 + 0.475), M["dryer"], bevel=0.02)
             kit.cyl(f"wash ring{r_}{c_}", 0.33, 0.07, (XR - 0.93, y, z0 + 0.5), M["steel"], rot=(0, math.pi / 2, 0), n=28)
             kit.cyl(f"wash glass{r_}{c_}", 0.26, 0.02, (XR - 0.96, y, z0 + 0.5), M["washglass"], rot=(0, math.pi / 2, 0), n=28)
             e = kit.empty(f"wash load{r_}{c_}", (XR - 0.99, y, z0 + 0.5))
@@ -283,11 +283,11 @@ def build_machines(kit, ctx, M):
 
 def build_outside(kit, ctx, M):
     # the facade (to the left, with the side door and its lit stair), the sidewalk, the wet road, a street lamp
-    SD = 7.2
-    for nm, x0, x1 in (("a", 5.5, 6.7), ("b", 7.7, 10.2)):
+    SD = 8.3
+    for nm, x0, x1 in (("a", 6.3, 7.8), ("b", 8.8, 11.4)):
         B(kit, f"facade {nm}", (x1 - x0, 0.3, 3.6), ((x0 + x1) / 2, YF - 0.2, 1.8), M["tealout"])
     B(kit, "facade lintel", (1.0, 0.3, 1.5), (SD, YF - 0.2, 2.85), M["tealout"])
-    B(kit, "facade left", (3.0, 0.3, 3.6), (-9.0, YF - 0.2, 1.8), M["tealout"])
+    B(kit, "facade left", (3.0, 0.3, 3.6), (-7.0, YF - 0.2, 1.8), M["tealout"])
     B(kit, "roof", (22, 3, 0.3), (0.5, YF + 1.0, 3.7), M["tealout"])
     B(kit, "door recess", (1.0, 0.04, 2.1), (SD, YF + 0.45, 1.05), M["warm2"])
     for k in range(4):
@@ -299,7 +299,14 @@ def build_outside(kit, ctx, M):
     # a street lamp and cold light across the street
     B(kit, "lamp pole", (0.12, 0.12, 4.4), (-3.6, -7.2, 2.2), M["steel2"])
     B(kit, "lamp head", (0.5, 0.3, 0.12), (-3.4, -7.2, 4.45), M["lamp"])
-    kit.light("street", "POINT", (-3.2, -7.2, 4.2), 380.0, "#9db4ff", size=0.3)
+    kit.light("street", "POINT", (-3.2, -7.2, 4.2), 1100.0, "#9db4ff", size=0.3)
+    B(kit, "lamp pole2", (0.12, 0.12, 4.4), (7.0, -7.2, 2.2), M["steel2"])
+    B(kit, "lamp head2", (0.5, 0.3, 0.12), (6.8, -7.2, 4.45), M["lamp"])
+    kit.light("street2", "POINT", (6.6, -7.2, 4.2), 900.0, "#9db4ff", size=0.3)
+    # blurs of cold light in the rain, across the street
+    for k, (x, y, z, r, m) in enumerate(((1.4, -11.0, 2.2, 0.35, "lamp"), (-1.0, -13.0, 3.0, 0.5, "warm2"), (3.2, -9.0, 1.2, 0.25, "warm2"),
+                                         (0.2, -15.5, 1.6, 0.6, "lamp"), (2.6, -12.0, 3.4, 0.4, "lamp"))):
+        kit.sphere(f"bokeh{k}", r, (x, y, z), M[m])
     # far windows across the street (a blur of cold light from inside the shop)
     for k, (x, z, w) in enumerate(((-9, 3.2, 0.9), (-5, 2.2, 0.7), (1, 3.6, 1.1), (6, 2.6, 0.8), (10, 3.0, 0.9))):
         B(kit, f"far win{k}", (w, 0.05, w * 1.3), (x, -16.0, z), M["lamp"] if k % 2 else M["warm2"])
@@ -552,7 +559,7 @@ def animate(kit, story, tl, t, ctx):
     if hd:
         s = AC.state(tl, "me0", t)
         fx, fy = math.sin(s["yaw"]), -math.cos(s["yaw"])
-        ctx["held"].location = (s["x"] + fx * 0.5, s["y"] + fy * 0.5, s["z"] + 1.25)
+        ctx["held"].location = (s["x"] + fx * 0.36, s["y"] + fy * 0.36, s["z"] + 0.98)
         ctx["held"].rotation_euler = (0, 0, s["yaw"])
     else:
         ctx["held"].location = (0, 0, -9)
