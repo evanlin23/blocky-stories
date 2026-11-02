@@ -173,7 +173,13 @@ def glyph_mat(kit, name, path):
     tex.extension = "CLIP"
     em = nt.nodes.new("ShaderNodeEmission")
     em.inputs["Strength"].default_value = 0.0
-    nt.links.new(tex.outputs["Color"], em.inputs["Color"])
+    tint = nt.nodes.new("ShaderNodeMixRGB")
+    tint.name = "tint"
+    tint.blend_type = "MULTIPLY"
+    tint.inputs[0].default_value = 1.0
+    tint.inputs[2].default_value = (1, 1, 1, 1)
+    nt.links.new(tex.outputs["Color"], tint.inputs[1])
+    nt.links.new(tint.outputs[0], em.inputs["Color"])
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mix = nt.nodes.new("ShaderNodeMixShader")
     nt.links.new(tex.outputs["Alpha"], mix.inputs[0])
@@ -789,6 +795,9 @@ def animate(kit, story, tl, t, ctx):
         _billboard(pl, p + (cam - p).normalized() * off, cam)
         sc_ = 1.8 if who == "me" and (lv > 0.5 or gloved) else 1.5
         pl.scale = (sc_, 1, sc_)
+        _l52 = tl.get("lines", {}).get("L52")
+        _dim = who == "ros" and _l52 is not None and _l52["onset"] - 0.05 <= t <= _l52["end"] + 0.05
+        em.id_data.nodes["tint"].inputs[2].default_value = (0.30, 0.13, 0.05, 1) if _dim else (1, 1, 1, 1)
         em.inputs["Strength"].default_value = ((3.2 if not gloved else 4.5) if who == "me" else 6.0) * lv * (1.0 - w) * (0.6 if (who == "ros" and lv < 0.3) else 1.0)
         if who == "me" and lv > 0.5 and (1.0 - w) > 0.5 and glow < 0.2 and not gloved:
             glow = 0.2
