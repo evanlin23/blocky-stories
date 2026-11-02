@@ -567,8 +567,7 @@ def stretch_long(kit_, ctx):
                                         (rnd.uniform(-0.85, 0.85), -0.53, 2.0 - rnd.uniform(0.3, 2 * kt - 0.5)), bead, tor, seg=8))
     # a man's face: a nose, two ears, a heavy brow, a neck and a collar, so the head isn't a bare cylinder
     R = faces.HEAD_R
-    kit_.box("longman.nose", (0.18, 0.26, 0.38), (0, -R - 0.04, -0.04), skin, head, bevel=0.06)
-    kit_.box("longman.nosetip", (0.24, 0.12, 0.14), (0, -R - 0.13, -0.16), skin, head, bevel=0.05)
+    kit_.box("longman.nose", (0.1, 0.12, 0.2), (0, -R - 0.01, -0.06), skin, head, bevel=0.04)
     for sx in (-1, 1):
         kit_.box(f"longman.ear{sx}", (0.1, 0.24, 0.4), (sx * (R + 0.02), 0.05, -0.02), skin, head, bevel=0.04)
     kit_.box("longman.brow", (1.0, 0.08, 0.07), (0, -R + 0.01, 0.3), kit_.plastic("#1f2a18", 0.8, "ln brow"), head, bevel=0.03)
@@ -626,7 +625,7 @@ def collect_fog(kit_):
                 for lk in n.outputs[0].links:
                     if lk.to_node.type == "MIX_SHADER" and lk.to_socket == lk.to_node.inputs[2]:
                         ems.append(n)
-            if n.type == "MATH" and n.operation == "MULTIPLY" and abs(n.inputs[1].default_value + kit_.FOG["density"]) < 1e-9:
+            if n.type == "MATH" and n.operation == "MULTIPLY" and abs(n.inputs[1].default_value + kit_.FOG["density"]) < 1e-6:
                 dens.append(n)
     return ems, dens
 
@@ -714,6 +713,8 @@ def animate_moss(tl, t, ctx):
             pos = [loc.x, loc.y, loc.z + 0.62]
             yaw = math.degrees(my) + 90
     m.pose(state, t, tuple(pos), yaw)
+    sc = 1.25 * float(state.get("scale", 1.0))
+    m.root.scale = (sc, sc, sc)
 
 
 def animate(kit_, story, tl, t, ctx):
@@ -756,7 +757,14 @@ def animate(kit_, story, tl, t, ctx):
     for o in ctx["tally"]:
         o.hide_render = not (tc and tc.get("on"))
     # light, fog, exposure
-    s = _state_at(tl, t)
+    s = dict(_state_at(tl, t))
+    cur_sh = None
+    for sh, ts in zip(story["shots"], tl["shots"]):
+        if ts["start"] - 1e-6 <= t < ts["end"]:
+            cur_sh = sh
+    # the fog nodes only matched by the story's own density before (the states' "dens" never reached them), so the
+    # film's fog stayed constant at the look's density; keep that, and let a shot thin it with "fogx"
+    s["dens"] = story["look"]["fog_density"] * float(cur_sh.get("fogx", 1.0) if cur_sh else 1.0)
     fogc = s["fog"] if isinstance(s["fog"], tuple) else kit.col(s["fog"])[:3]
     for n in ctx["fog_em"]:
         n.inputs["Color"].default_value = (*fogc, 1)
@@ -784,8 +792,8 @@ def animate(kit_, story, tl, t, ctx):
         ob.location = (hx + off[0], ly + off[1], GROUND + 0.30 + off[2])
         kit.aim(ob, (hx + aim[0], ly + aim[1], GROUND + 0.30 + aim[2]))
     over = {
-        "faceside": s["eye"] * 0.85 * ((1.0 - turn) + 0.06 * turn), "winglow": 0.0,
-        "sky": 1.0, "warm": s["warm"], "key": s["key"], "rim": s["rim"], "eyes": s["eye"] * 0.4,
+        "faceside": s["eye"] * 0.3 * ((1.0 - turn) + 0.06 * turn), "winglow": 0.0,
+        "sky": 1.0, "warm": s["warm"], "key": s["key"], "rim": s["rim"], "eyes": s["eye"] * 0.12,
         "cab a": s["fill"], "cab b": s["fill"], "cab c": s["fill"], "cab d": s["fill"], "cab e": s["fill"], "porch": s["fill"],
         "hatch": 0.0,
     }
@@ -802,6 +810,18 @@ def animate(kit_, story, tl, t, ctx):
             kit.aim(kit.LIGHTS["lamp"]["obj"], tuple(tgt))
             lamp = float(sh["lamp"])
     over["lamp"] = lamp
+    # a long soft light straight above the Long Man's whole length (shot key "toplit": its power): the rim that
+    # lets the green coat read from head to boots beside the boat
+    lob = kit.LIGHTS["lamp"]["obj"]
+    top = float(cur_sh.get("toplit", 0)) if cur_sh else 0.0
+    lob.data.shape = "RECTANGLE" if top else "SQUARE"
+    if top:
+        lob.data.size, lob.data.size_y = 2.0, 14.0
+        lob.location = (hx + 6.0, ly + 0.4, GROUND + 3.2)
+        kit.aim(lob, (hx + 6.0, ly, GROUND))
+        over["lamp"] = top
+    else:
+        lob.data.size = 3.0
     over["cab a"] *= 1.0 + 0.35 * h
     over["hatch"] = h
     return over

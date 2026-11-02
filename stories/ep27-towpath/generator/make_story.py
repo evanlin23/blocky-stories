@@ -84,7 +84,7 @@ cast = {
     "longman": {"age": "adult", "skin": "#6f7352", "shirt": "#4d6638", "pattern": "solid", "pattern_c": "#34472a",
                 "pants": "#6a4f33", "pants_pattern": "stripes", "pants_pattern_c": "#58402a", "shoes": "#6a4f33",
                 "sleeves": "long", "hair": "cap", "hair_c": "#25321d", "hat": "none", "height": 1.0,
-                "face": {"eyes": "round", "brows": True, "mouth": "line", "ink": "#0a0a0a", "pupil": "#050505", "bags": True}},
+                "face": {"eyes": "round", "brows": False, "mouth": "line", "ink": "#0a0a0a", "pupil": "#050505"}},
 }
 
 
@@ -105,14 +105,19 @@ S = []
 LAMP = {}
 
 
-def shot(at, what, cam, step=2, lamp=None):
+EXTRA = {}
+
+
+def shot(at, what, cam, step=2, lamp=None, **extra):
     S.append((at, what, step, cam))
+    if extra:
+        EXTRA[at] = extra
     if lamp:
         LAMP[at] = round(lamp * 0.4)
 
 
-HOOK = move(([-11.5, -5.8, 4.3], [1.4, -0.2, 1.9]), ([-10.9, -5.8, 4.3], [1.4, -0.2, 1.9]), 75, 80)
-HOOK_END = still([-10.9, -5.8, 4.3], [1.4, -0.2, 1.9], 80)
+HOOK = move(([-11.5, -5.8, 4.3], [1.4, 0.7, 1.9]), ([-10.9, -5.8, 4.3], [1.4, 0.7, 1.9]), 75, 80)
+HOOK_END = still([-10.9, -5.8, 4.3], [1.4, 0.7, 1.9], 80)
 LONGSIDE = still([40.0, 3.0, 1.4], [14.0, -1.4, 0.6], 14)
 WIDE_BOAT = still([-3.0, 5.5, 3.4], [9.0, 0.0, 0.8], 15)
 RING_CAM = still([3.3, 2.3, 0.78], [5.0, 0.45, 0.8], 26)
@@ -120,7 +125,7 @@ WINDOW = still([5.0, -1.5, 1.06], [5.0, -0.1, 0.70], 30)
 
 # 01 good morning
 shot(0, "the hook: me at the hatch, face lit, the long dark line far up the towpath, empty grass by the back ring",
-     HOOK, 2, 60)
+     HOOK, 2, 60, fogx=0.3)
 shot("L02", "Moss's head at the low round window", still([8.5, -4.2, 1.0], [8.5, -1.95, 0.95], 26), 2, 350)
 shot("L02.2", "side wide of the whole boat on still water", still([6, -9.5, 1.2], [6, -0.15, 1.2], 11))
 shot("L03", "the past: me at the open hatch from below, smirk", still([4.6, -1.05, 1.25], [2.6, -1.05, 2.05], 32), 2, 300)
@@ -132,7 +137,7 @@ shot("L07", "Moss in her bed, white muzzle on her paws", still([2.7, -1.5, 0.7],
 shot("L08", "the three steps from Moss's eye level, empty, the hatch above", still([3.9, -1.05, 0.26], [2.3, -1.05, 0.6], 30))
 shot("L09", "Moss in her bed looking up at me, tail up, me at the top step",
      still([5.2, -1.4, 0.55], [3.4, -1.05, 1.0], 20), 2, 150)
-shot("L10", "high angle: my boots past her bed", still([6.2, -0.9, 1.6], [4.4, -1.4, 0.3], 15))
+shot("L10", "high angle: my boots past her bed", still([6.6, -0.79, 1.89], [4.4, -1.4, 0.3], 15))
 shot("L10.1", "me striding alone on the hedge side, upright", still([-6.5, 3.4, 1.2], [-1.0, 3.7, 1.35], 26), 2, 200)
 shot("L11", "plant 2: the back ring under my bunk window, the grass grown in", still([4.0, 2.2, 0.95], [5.0, 0.35, 0.62], 30), 2, 500)
 
@@ -149,7 +154,7 @@ shot("L18", "from the front of the boat: two rings, then its head", still([11.0,
 shot("L19", "me crouched at the bow, scared", still([13.5, -1.0, 1.7], [10.8, -1.05, 2.1], 32), 2, 380)
 shot("L20", "its head and shoulders, face up, eyes open", still([18.4, -1.3, 1.9], [19.0, 0.3, 0.7], 30))
 shot("L21", "a slow pan along it", move(([16.6, -1.0, 1.2], [19.8, 0.3, 0.7]), ([16.6, -1.0, 1.2], [30, 0.3, 0.7]), 30))
-shot("L22", "low along the towpath from its feet: the Long Man end to end and the boat beyond", still([33.5, 2.2, 1.5], [14.0, -0.2, 0.5], 18))
+shot("L22", "low along the towpath from its feet: the Long Man end to end and the boat beyond", still([34.0, 1.3, 2.0], [14.0, 0.0, 0.45], 18), 2, None, fogx=0.3, toplit=2500)
 shot("L23", "the weed-green coat", still([21.5, -0.5, 1.25], [21.8, 0.3, 0.7], 34))
 shot("L23.2", "the rope-brown trousers and a boot", still([26.0, -1.7, 1.5], [26.8, 0.3, 0.7], 26))
 shot("L24", "straight down over its face", still([19.0, 0.3, 2.3], [19.0, 0.3, 0.7], 30))
@@ -180,10 +185,10 @@ shot("L42", "close on the round window, white", still([5.0, -1.5, 0.98], [5.0, -
 shot("L43", "my sleeve crossing the glass in a one second wipe", WINDOW)
 shot("P01", "the wiped glass, white fog behind it", WINDOW, 1)
 shot("L44", "two round eyes right behind the glass (the creature test)", WINDOW, 1)
-shot("L45", "low along the towpath from its feet: it lies along the whole boat", still([23.0, 2.0, 1.5], [3.0, -0.2, 0.6], 18), 1)
+shot("L45", "low along the towpath from its feet: it lies along the whole boat", still([24.0, 1.3, 2.0], [3.0, 0.0, 0.5], 18), 1, None, fogx=0.3, toplit=2500)
 shot("L46", "its head by the back ring, face at the round window", still([2.2, 0.9, 1.15], [5.0, 0.1, 0.85], 30), 1)
-shot("L47", "tight on me by the glass, its eyes beyond", still([5.1, -1.6, 1.0], [5.0, -0.2, 0.9], 26), 1, 250)
-shot("L48", "its eyes through the glass, close", still([5.0, -1.5, 0.98], [5.0, -0.1, 0.84], 70), 1)
+shot("L47", "tight on me by the glass, its eyes beyond", still([5.7, -1.55, 1.0], [4.9, -0.2, 0.95], 30), 1, 250)
+shot("L48", "its eyes through the glass, close", still([5.0, -1.5, 0.98], [5.0, -0.1, 0.84], 70, 90), 1)
 shot("L49", "me turning from the window, two faint points behind me", still([3.6, -1.7, 1.5], [5.2, -0.6, 1.45], 22), 1, 250)
 shot("L50", "Moss climbing", still([4.3, -1.25, 0.5], [3.4, -1.05, 0.25], 28), 1, 150)
 shot("L51", "Moss on the first step, the bolted hatch above", still([4.5, -1.05, 0.5], [3.0, -1.05, 1.5], 28), 1, 150)
@@ -204,7 +209,7 @@ shot("L60.1", "the hatch sliding open, the grey light easing in", still([5.2, -1
 shot("L61", "me crouched at the foot of the steps by Moss", still([6.2, -0.5, 1.2], [4.4, -1.5, 1.0], 17), 2, 200)
 shot("L61.2", "me rising out of the hatch with Moss against my chest", still([0.3, -1.05, 1.9], [2.45, -1.05, 2.0], 32), 2, 420)
 shot("L62", "the back deck: me with Moss, and its face on the grass by the back ring",
-     still([3.0, 1.7, 1.9], [5.0, 0.5, 0.8], 24), 2, 150)
+     still([3.8, 4.6, 4.2], [3.7, -0.3, 0.8], 12), 2, 150)
 shot("L63", "my face, Moss's head at my chin", still([1.5, -3.3, 2.25], [1.5, -1.3, 2.25], 34), 2, 350)
 shot("P02", "wide over the canal: the fog thins, the willows come clear", still([-0.3, -1.0, 1.9], [6.0, -25, 1.2], 24))
 shot("L64", "the towpath alongside the boat, the fog easing",
@@ -224,7 +229,7 @@ shot("L69", "low from behind: me upright beside Moss on the hedge side, very slo
 shot("L70", "side wide from the hedge: the two of us small on the long towpath",
      still([3.0, 6.8, 1.5], [3.0, 2.0, 1.0], 20))
 shot("L71", "Moss's face, ears soft, looking ahead", still([5.0, 4.4, 1.15], [3.1, 3.1, 1.1], 34), 2, 200)
-shot("L72", "the last shot: me on the stern deck, Moss rolled in the grass by the back ring", still([-7.5, 4.6, 2.4], [1.9, -0.4, 1.4], 32), 2, 80)
+shot("L72", "the last shot: S01's camera, me on the stern deck, Moss rolled chin-up in the grass by the back ring", HOOK, 2, 80, fogx=0.3)
 
 S[:] = [(at, what, step, cam) for at, what, step, cam in S]
 
@@ -233,6 +238,8 @@ for i, (at, what, step, cam) in enumerate(S):
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.004, "step": step, "what": what}
     if i:
         s["at"] = at
+    if at in EXTRA:
+        s.update(EXTRA[at])
     if at in LAMP:
         s["lamp"] = LAMP[at]
     shots.append(s)
@@ -307,7 +314,8 @@ put("me", "L41", [5.95, -0.7, 0.8], yaw=0, expr="worried", lie=[-88, 0, 90])
 put("me", "L43", [5.35, -0.55, -0.06], yaw=-90, expr="worried", head=[-40, 0])
 hide("me", "P01>")
 put("me", "L46", [5.35, -0.55, -0.06], yaw=-90, expr="scared", head=[-60, 0])
-put("me", "L47", [4.55, -0.85, -0.6], yaw=25, expr="wide", head=[0, 0])
+put("me", "L47", [4.7, -0.55, -0.5], yaw=110, expr="wide", head=[0, 0])
+hide("me", "L48")
 put("me", "L49", [5.0, -0.7, -0.06], yaw=-20, expr="wide", head=[0, 0])
 walk("me", "L49+0.6", [4.6, -0.9, 0.05], expr="wide")
 hide("me", "L50")
@@ -333,7 +341,7 @@ walk("me", "L69+2.5", [2.2, 3.5, 0.5], expr="smirk", head=[0, 14])
 put("me", "L70", [2.2, 3.5, 0.5], yaw=90, expr="smirk", head=[0, 14])
 walk("me", "L70+1.5", [3.6, 3.5, 0.5], expr="smirk", head=[0, 14])
 hide("me", "L71")
-put("me", "L72", [0.6, -0.5, 0.72], yaw=-123, expr="smirk", head=[0, 6])
+put("me", "L72", [0.6, -0.5, 0.72], yaw=-60, expr="smirk", head=[0, 6])
 
 # the Long Man: eyes open, never blinking, a hairline mouth
 put("longman", 0, [0, 0, 0], expr="neutral", blink=False)
@@ -422,10 +430,10 @@ cue("L69+2.5", "moss", pos=[2.1, 3.0, 0.5], dur=2.5)
 cue("L70", "moss", pos=[2.1, 3.0, 0.5], dur=0.01)
 cue("L70+1.5", "moss", pos=[3.5, 3.0, 0.5], dur=2.0)
 cue("L71", "moss", pos=[2.6, 3.1, 0.5], yaw=90, head=[0, 4], ears=0.5, tail=-20, wag=0.2, walk=False, dur=0.01)
-cue("L72", "moss", pos=[5.15, 0.5, 0.5], yaw=-90, pose="roll", head=[0, 0], ears=0.4, tail=-10, wag=0.0, walk=False)
+cue("L72", "moss", pos=[3.4, 3.3, 0.5], yaw=-90, pose="roll", head=[0, 0], ears=0.4, tail=-10, wag=0.0, walk=False, scale=2.2)
 
 # the Long Man (head x, y; body runs away up the towpath)
-cue(0, "long", x=-2.0, y=0.6, turn=0, hidden=False)
+cue(0, "long", x=5.0, y=5.0, turn=0, hidden=False)
 cue("L02", "long", hidden=True)
 cue("L13", "long", x=22.5, y=0.3, turn=0, hidden=False)
 cue("L17", "long", hidden=True)
@@ -478,7 +486,7 @@ cue("L31.1", "wipe", to=0.0)
 cue("L32", "wipe", to=0.0)
 cue("L40", "wipe", to=0.0)
 cue("L43+0.15", "wipe", to=1.0, dur=1.0)
-cue("L48", "wipe", to=0.6, dur=0.25)
+cue("L48-0.3", "wipe", to=0.6, dur=0.25)
 cue("L49", "wipe", to=0.55)
 cue("L53", "wipe", to=0.0)
 cue(0, "flat", on=False)
