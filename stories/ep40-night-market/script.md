@@ -164,11 +164,11 @@ L08. Every coin lands. Except MINE.
 L09. Mine stands on its EDGE.
 L10. My big sister Bea and I started a dumpling stall at the night MARKET.
 L11. We painted the sign together. I did the SUN half, and Bea did the MOON.
-L12. A month ago, I quit to take a job in an OFFICE.
-L13. Bea kept the stall, and never said a WORD.
-L14. Since that night, her coin has landed on the MOON. Twenty nights in a ROW.
+L12. A month ago, I got a job in an OFFICE, and Bea threw me a PARTY.
+L13. She kept the stall, and I still came every Friday to EAT.
+L14. Since that night, her coin has landed on the MOON. THIRTY nights in a ROW.
 L15. And mine has stood on its edge exactly as LONG.
-L16. On Friday, I stood across the car park with my hood UP.
+L16. On Friday, I came straight from work, still in my TIE.
 L17. The noodle queue next door ran right back to the lantern ARCH.
 L18. When it reached Bea's stall, it bent AROUND it, like water around a STONE.
 L19. A man looked up at her coin and kept WALKING.
@@ -179,7 +179,7 @@ L23. Then I noticed a customer under the ARCH.
 L24. From the side, it looked like anyone ELSE.
 L25. But there was no coin over its HEAD.
 L26. When we closed, Bea said one more Friday, and then she'd SELL.
-L27. The next Friday, I came back. For the dumplings, I told MYSELF.
+L27. The next Friday, I brought her a flask of TEA.
 L28. The customer with no coin was three stalls NEARER.
 L29. Still side on to me. Still facing OUR stall.
 L30. Its shadow on the tarmac was only half as WIDE.
@@ -204,18 +204,18 @@ L48. I looked at our sign. A sun half and a moon HALF.
 L49. I looked up at her coin. Only ever the MOON.
 L50. Then up at mine. Only ever the EDGE.
 L51. Her moon and my sun were the two sides of ONE coin.
-L52. When I walked out, I took the SUN with ME.
-L53. She was left with a coin that could only land on the MOON.
-L54. And mine had nothing to land ON.
+L52. The STALL'S coin. And it only lands with two of us behind the COUNTER.
+L53. With only Bea back there, it could only ever show the MOON.
+L54. And out front, my side had nothing to land ON.
 L55. So I walked around and stepped into my old SPOT.
 L56. Right where the flat side had BEEN.
 L57. And there was nobody next to Bea but ME.
 L58. Then every coin in the market FLIPPED.
-L59. Ours drifted together over our heads and clicked into ONE.
-L60. SUN side up.
+L59. Hers and mine spun in step and landed at the same MOMENT.
+L60. Both SUN side up.
 L61. Bea dug my old apron out from under the COUNTER.
 L62. We folded side by side, and she bumped my elbow on every second DUMPLING.
 L63. Next door, the noodle man got a MOON. He went home for SOUP.
-L64. The next Friday, our queue reached all the way to the ARCH.
+L64. The next Friday, our queue reached the ARCH. And at the very back stood a customer with no COIN.
 L65. In this town, a COIN over your head decides your LUCK.
-L66. Ours is SHARED.
+L66. Ours takes two heads. It doesn't care WHOSE.
