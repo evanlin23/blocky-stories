@@ -1,9 +1,9 @@
 {
  "slug": "ep31-dawn-flight",
- "title": "The pilot said there was zero wind, so why was our balloon basket tilting?",
+ "title": "Our pilot said the wind was zero, but the balloon basket leaned the whole way up",
  "made_for_kids": false,
  "premise": "On Dad's sixtieth birthday we fly a hot-air balloon at dawn over a sea of mist. The pilot says the wind is zero, but the basket keeps leaning toward its empty fourth corner, and each time the burner roars a figure made of loose copper and slate-blue blocks is nearer and more put together.",
- "twist": "I told Dad my brother couldn't come but never asked him. The basket was built for four and I left a corner empty on purpose, so the figure was the corner's Keeper standing in the gap I made. When I confess and my brother comes the next dawn, the basket flies level.",
+ "twist": "I forgot to ask my brother Callum along, and was too ashamed to tell Dad, so I blamed Callum's work. His corner stayed empty because of my lie, and the figure was the corner's Keeper standing in the gap I made. When I confess and my brother comes the next dawn, the basket flies level.",
  "world": "a hot-air balloon basket at sunrise over a valley of thick white mist, a cold dark launch field before it, a kitchen table the night before",
  "voice": {
   "voice": "am_adam",
@@ -2018,7 +2018,7 @@
    "hand": 0.005,
    "step": 2,
    "what": "the mist below, the scatter far off",
-   "at": "L05.1",
+   "at": "L05.2",
    "key": 0
   },
   {
@@ -5494,11 +5494,11 @@
    "down": 1.0
   },
   {
-   "at": "L49.3",
+   "at": "L49.1",
    "name": "roar",
    "peak": 1.0,
-   "up": 0.8,
-   "hold": 9.3,
+   "up": 1.5,
+   "hold": 8.7,
    "down": 0.8
   },
   {
@@ -5531,7 +5531,7 @@
    "pose": "hidden"
   },
   {
-   "at": "L05.1",
+   "at": "L05.2",
    "name": "cre",
    "pose": "scatter",
    "on": "L",

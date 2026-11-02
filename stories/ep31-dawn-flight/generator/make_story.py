@@ -130,7 +130,7 @@ SHOTS = [
     ("L04", "low on the fourth corner, the floor tipping", still([0.3, -0.15, 0.95], [0.72, 0.85, 0.22], 22), 2,
      {"key": 110}),
     ("L05", "the burner roaring overhead", FLAME, 2, {"key": 0}),
-    ("L05.1", "the mist below, the scatter far off", still([0.5, 0.5, 2.05], [27.0, 27.0, -11.0], 38), 2, {"key": 0}),
+    ("L05.2", "the mist below, the scatter far off", still([0.5, 0.5, 2.05], [27.0, 27.0, -11.0], 38), 2, {"key": 0}),
     # 02 before
     ("L06", "Dad on the launch field, grinning", face_cam((FIELD_DAD[0], FIELD_DAD[1]), 0, 1.9, 22, 30, h=1.5, z0=FG), 2,
      {"key": 40, "frame": "world"}),
@@ -425,13 +425,13 @@ cue("L11+0.4", "roar", peak=0.8, up=1.0, hold=1.6, down=0.9)
 cue("L25.1", "roar", peak=1.0, up=0.6, hold=8.4, down=1.0)
 cue("L33", "roar", peak=1.0, up=0.6, hold=9.0, down=1.0)
 cue("L41", "roar", peak=1.0, up=0.6, hold=8.7, down=1.0)
-cue("L49.3", "roar", peak=1.0, up=0.8, hold=9.3, down=0.8)
+cue("L49.1", "roar", peak=1.0, up=1.5, hold=8.7, down=0.8)   # a slow ramp: Rosa's hat takes the glow over 1.5 s
 cue("L56", "roar", peak=0.9, up=0.5, hold=0.6, down=1.0)
 cue("L66", "roar", peak=0.8, up=0.5, hold=0.8, down=0.8)
 cue("end-1.2", "roar", peak=0.45, up=0.3, hold=0.1, down=0.75)
 # the Loose One
 cue(0, "cre", pose="hidden")
-cue("L05.1", "cre", pose="scatter", on="L", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
+cue("L05.2", "cre", pose="scatter", on="L", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
 cue("L06", "cre", pose="hidden")
 cue("L27", "cre", pose="scatter", on="L", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
 cue("L31", "cre", pose="hidden")
@@ -488,10 +488,10 @@ sfx = [
 ]
 story = {
     "slug": "ep31-dawn-flight",
-    "title": "The pilot said there was zero wind, so why was our balloon basket tilting?",
+    "title": json.loads((HERE.parent / "package.json").read_text())["title"],   # one title, from the package
     "made_for_kids": False,
     "premise": "On Dad's sixtieth birthday we fly a hot-air balloon at dawn over a sea of mist. The pilot says the wind is zero, but the basket keeps leaning toward its empty fourth corner, and each time the burner roars a figure made of loose copper and slate-blue blocks is nearer and more put together.",
-    "twist": "I told Dad my brother couldn't come but never asked him. The basket was built for four and I left a corner empty on purpose, so the figure was the corner's Keeper standing in the gap I made. When I confess and my brother comes the next dawn, the basket flies level.",
+    "twist": "I forgot to ask my brother Callum along, and was too ashamed to tell Dad, so I blamed Callum's work. His corner stayed empty because of my lie, and the figure was the corner's Keeper standing in the gap I made. When I confess and my brother comes the next dawn, the basket flies level.",
     "world": "a hot-air balloon basket at sunrise over a valley of thick white mist, a cold dark launch field before it, a kitchen table the night before",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff7e6b",
