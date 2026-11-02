@@ -13,67 +13,77 @@ from blocky import rig
 
 OCHRE, PEAT, TAN, CLAY = "#8a6424", "#2b2420", "#b39a78", "#c49a74"
 REACH_SPEC = {
-    "age": "adult", "skin": CLAY, "shirt": OCHRE, "pattern": "solid", "collar": PEAT, "pants": PEAT, "shoes": TAN,
+    "age": "adult", "skin": CLAY, "shirt": OCHRE, "pattern": "solid", "collar": "#4a3c30", "pants": PEAT, "shoes": TAN,
     "sleeves": "none", "hair": "cap", "hair_c": "#3a2e26", "hat": "none", "body_width": 0.78,
     "face": {"eyes": "pin", "mouth": "flat", "brows": False, "ink": "#161012"},
 }
 
 
+COAT, RIM = "#a07a4c", "#8fb4d8"
+PALE = "#dcb894"
+
+
 def seg(kit, name, a, b, t, mat, up_t=None):
     a, b = V(a), V(b)
     d = b - a
-    ob = kit.box(name, (t, up_t or t, d.length), tuple((a + b) / 2), mat, rot=d.to_track_quat("Z", "Y").to_euler(),
-                 bevel=0.03)
-    return ob
+    return kit.box(name, (t, up_t or t, d.length), tuple((a + b) / 2), mat, rot=d.to_track_quat("Z", "Y").to_euler(),
+                   bevel=0.03)
 
 
-def long_arm(kit, name, shoulder, rail_pt, end, t=0.26, fold=1.5):
-    """Shoulder -> drop to the rail's top chord -> straight along it to the hand. Sleeve blocks laid end to end,
-    each join with a small fold of cloth (a slightly fatter, shorter collar), a cool rim strip on top, a clay hand."""
-    sl = kit.plastic(PEAT, 0.9)
-    rim = kit.emit("#6f8ca6", 0.55)
-    skin = kit.plastic(CLAY, 0.5)
-    seg(kit, f"{name}.drop", shoulder, rail_pt, t * 1.05, sl)
-    a, e = V(rail_pt), V(end)
-    d = (e - a)
-    n = max(2, int(d.length // fold))
-    pts = [a + d * (i / n) for i in range(n + 1)]
-    for i in range(n):
-        seg(kit, f"{name}.s{i}", pts[i], pts[i + 1] - d.normalized() * 0.02, t, sl)
-        # rim: a thin lighter line along the top of the sleeve
-        up = V((0, 0, 1))
-        seg(kit, f"{name}.r{i}", pts[i] + up * (t / 2 + 0.004), pts[i + 1] + up * (t / 2 + 0.004), 0.035, rim, 0.01)
-    for i in range(1, n):   # folds
-        c = pts[i]
-        kit.box(f"{name}.f{i}", (t * 1.12, t * 1.14, 0.1), tuple(c), sl, rot=d.to_track_quat("Z", "Y").to_euler(),
-                bevel=0.05)
-    # hand: ordinary size, flat, palm down, fingers together, no glow
-    hand_c = e + d.normalized() * 0.1 - V((0, 0, t / 2 - 0.035))
-    kit.box(f"{name}.hand", (0.09, 0.19, 0.075), tuple(hand_c), skin, rot=(0, 0, math.atan2(d.y, d.x)), bevel=0.02)
-    kit.box(f"{name}.cuff", (t * 1.2, t * 1.2, 0.07), tuple(e - d.normalized() * 0.0), sl,
-            rot=d.to_track_quat("Z", "Y").to_euler(), bevel=0.03)
+def long_arm(kit, name, pts, t=0.19, fold=1.4, hand=True):
+    """One continuous sleeve through pts (shoulder first, hand end last): blocks <= fold long laid end to end,
+    a fold of cloth at each join, a cool rim along the top, a visible cuff, a big pale hand with spread blocky
+    fingers lying flat along the last direction."""
+    sl = kit.plastic(COAT, 0.85)
+    cuffm = kit.plastic("#3a2c20", 0.8)
+    rim = kit.emit(RIM, 0.9)
+    skin = kit.plastic(PALE, 0.5)
+    P = [V(p) for p in pts]
+    joints = [P[0]]
+    for i in range(len(P) - 1):
+        d = P[i + 1] - P[i]
+        n = max(1, int(math.ceil(d.length / fold)))
+        for k in range(1, n + 1):
+            joints.append(P[i] + d * (k / n))
+    up = V((0, 0, 1))
+    for i in range(len(joints) - 1):
+        a, b = joints[i], joints[i + 1]
+        seg(kit, f"{name}.s{i}", a, b, t, sl)
+        seg(kit, f"{name}.r{i}", a + up * (t / 2 + 0.006), b + up * (t / 2 + 0.006), 0.045, rim, 0.012)
+    for i in range(1, len(joints) - 1):
+        d = joints[i + 1] - joints[i - 1]
+        kit.box(f"{name}.f{i}", (t * 1.18, t * 1.18, 0.12), tuple(joints[i]), sl,
+                rot=d.to_track_quat("Z", "Y").to_euler(), bevel=0.05)
+    if hand:
+        e, d = joints[-1], (joints[-1] - joints[-2]).normalized()
+        yaw = math.atan2(d.y, d.x)
+        kit.box(f"{name}.cuff", (t * 1.2, t * 1.2, 0.1), tuple(e), cuffm, rot=d.to_track_quat("Z", "Y").to_euler(), bevel=0.03)
+        c = e + d * 0.14
+        kit.box(f"{name}.palm", (0.17, 0.2, 0.07), tuple(c - up * (t / 2 - 0.05)), skin, rot=(0, 0, yaw), bevel=0.02)
+        perp = V((-d.y, d.x, 0))
+        for k in range(4):   # four blocky fingers, fingers together
+            fc = e + d * 0.34 + perp * (-0.075 + 0.05 * k) - up * (t / 2 - 0.05)
+            kit.box(f"{name}.fing{k}", (0.15, 0.045, 0.06), tuple(fc), skin, rot=(0, 0, yaw), bevel=0.015)
+        kit.box(f"{name}.thumb", (0.1, 0.05, 0.06), tuple(e + d * 0.15 - perp * 0.12 - up * (t / 2 - 0.05)), skin,
+                rot=(0, 0, yaw + 0.5), bevel=0.015)
 
 
-def make_reach(kit, workdir, pos, yaw=0.0, lean=0.0, head_pitch=0.0, rail_pts=None, hands=None):
-    """One Reach: a man, plus two straight sleeves from his shoulders to rail_pts (where each arm meets the rail)
-    and on to hands (far ends)."""
+def make_reach(kit, workdir, pos, yaw=0.0, lean=0.0, head_pitch=0.0, head_yaw=0.0, paths=None, shirt=None):
+    """One Reach: a man, plus two continuous sleeves. paths(shoulderL, shoulderR) -> two point lists."""
     ch = rig.Character("reach", REACH_SPEC, workdir)
-    ch.pose(pos[0], pos[1], pos[2], yaw, lean=lean, head_pitch=head_pitch, expr="neutral")
-    for sx in (-1, 1):   # the rig's own arms are replaced by the long sleeves
+    ch.pose(pos[0], pos[1], pos[2], yaw, lean=lean, head_pitch=head_pitch, head_yaw=head_yaw, expr="neutral")
+    for sx in (-1, 1):
         for ob in ch.P[f"arm{sx}"].children_recursive:
             ob.hide_render = True
     bpy.context.view_layer.update()
-    sh = []
-    for sx in (-1, 1):
-        w = ch.torso.matrix_world @ V((sx * 1.5 * REACH_SPEC["body_width"], 0, 1.75))
-        sh.append(w)
-    for i, name in enumerate(("armL", "armR")):
-        long_arm(kit, name, sh[i], rail_pts[i], hands[i])
+    sh = [ch.torso.matrix_world @ V((sx * 1.5 * REACH_SPEC["body_width"], 0, 1.75)) for sx in (-1, 1)]
+    for name, pts in zip(("armL", "armR"), paths(*sh)):
+        long_arm(kit, name, pts)
     return ch
 
 
 def bridge(kit, length, rail_y=0.0, rail_z=0.98, dirv=(1, 0), origin=(0, 0)):
-    green = kit.plastic("#6f9a84", 0.6)
+    green = kit.plastic("#5f8a74", 0.6)
     dark = kit.plastic("#2f4a3e", 0.7)
     deck = kit.plastic("#5a4a3a", 0.9)
     d = V((*dirv, 0)).normalized()
@@ -85,7 +95,7 @@ def bridge(kit, length, rail_y=0.0, rail_z=0.98, dirv=(1, 0), origin=(0, 0)):
     perp = V((-d.y, d.x, 0))
     for side in (0,):
         base = o + perp * rail_y
-        kit.box("topchord", (length, 0.5, 0.07), (mid.x + perp.x * rail_y, mid.y + perp.y * rail_y, rail_z - 0.035), green,
+        kit.box("topchord", (length, 0.12, 0.07), (mid.x + perp.x * rail_y, mid.y + perp.y * rail_y, rail_z - 0.035), green,
                 rot=(0, 0, ang))
         kit.box("lowchord", (length, 0.05, 0.05), (mid.x + perp.x * rail_y, mid.y + perp.y * rail_y, 0.3), green, rot=(0, 0, ang))
         for i in range(n + 1):
