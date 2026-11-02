@@ -30,7 +30,7 @@ LOOP = 0.25
 # ---------------------------------------------------------------------------------------------------- the words
 # Word-check pins and the script's own holds are all in lines.json (gap) and here (pauses)
 TEMPO = {"L16": 0.95, "L81": 0.92}
-SPOKEN = {("L16", 1): "Tasha's"}
+SPOKEN = {("L16", 1): "Tasha's", ("L77", 1): "back, too,"}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -622,7 +622,7 @@ story = {
               "vignette": 0.5, "bloom": 0.35, "grain": 0.012, "red_line": 0.78},
     "rain_shots": rain_shots,
     "rain_gain": 1.2,
-    "phonemes": {"Tasha's": "tˈɑʃəz"},
+    "phonemes": {"Tasha's": "tˈɑʃəz", "too": "tˈuːː"},
     "cast": cast,
     "lines": lines,
     "shots": out_shots,

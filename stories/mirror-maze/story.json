@@ -130,7 +130,8 @@
  ],
  "rain_gain": 1.2,
  "phonemes": {
-  "Tasha's": "tˈɑʃəz"
+  "Tasha's": "tˈɑʃəz",
+  "too": "tˈuːː"
  },
  "cast": {
   "me": {
@@ -1626,7 +1627,7 @@
     ],
     [
      "back TOO,",
-     "back too,"
+     "back, too,"
     ],
     [
      "HALF a beat",

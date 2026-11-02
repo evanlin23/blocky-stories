@@ -1858,14 +1858,14 @@
    ]
   },
   "L77": {
-   "text": "It stepped back too, half a beat late.",
+   "text": "It stepped back, too, half a beat late.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
+   "dur": 1.81,
    "onset": 0.155,
-   "end": 1.586,
+   "end": 1.621,
    "chunks": [
     [
      0.155,
@@ -1873,15 +1873,15 @@
     ],
     [
      0.414,
-     0.776
+     0.81
     ],
     [
-     0.81,
-     1.155
+     0.845,
+     1.19
     ],
     [
-     1.155,
-     1.586
+     1.19,
+     1.621
     ]
    ]
   },

@@ -182,6 +182,7 @@ def test_asr_spellings_are_not_wrong_words():
 
     assert voice.same_spoken("grey", "gray") and voice.same_spoken("handprint", "hand print")
     assert voice.same_spoken("eleven", "11") and voice.same_spoken("mannequin's", "mannequins")
+    assert voice.same_spoken("back too", "back to")
     assert not voice.same_spoken("collar", "color") and not voice.same_spoken("six", "sex")
 
 
