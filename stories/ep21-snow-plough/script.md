@@ -2,7 +2,7 @@
 
 - **Slug:** `ep21-snow-plough` (folder `stories/ep21-snow-plough/`), from pitch #5 in `stories/ideas.md`.
 - **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 615 spoken words in 73 lines, all `narrator` in voice A, plus 2 pause beats (1.5 s).
+- **Word count:** 608 spoken words in 73 lines, all `narrator` in voice A, plus 2 pause beats (1.5 s).
 - **Estimated length:** about 2:18 to 2:24. Speech at 290 wpm is about 2:07, the 0.12 s line gaps add about 9 s, the pauses 1.5 s, the loop tail 0.25 s. If it lands under 2:15, add "The wipers kept / TICKING." after L53. If over 2:30, L36 goes first.
 
 ## Variety (against everything made)
@@ -22,7 +22,7 @@ Count the posts. In deep snow the road is invisible and the posts are the road. 
 While I was at the top, the outer half of the road at post twenty-three slid away down the slope. Post twenty-three went down with its slab of road and is still standing down there, upright and glinting, exactly in line with the rest. On the way down I was steering straight for it. I was counting a post on the wrong side of the edge. The forty-first post, the Marker, was standing on the new edge, where the road ends now. It was keeping the road's count true by standing in the gap, and it stood in front of my blade because that's where the gap was.
 - **How the last 15 seconds turn the first line over:** "Forty-one posts. On the way up there were forty" opens as an intruder in the line. At the end the extra one is the only post that was on the right side of the edge, and the last line makes the count deliberate: we set a new post at the new edge, so now it's forty-one on the way up too. The number that scared me is the number the road needs.
 - **Plant 1 (L19 to L21):** at post twenty-three on the way up, the whole cab shakes and a long groan comes up from the drop side. I tell myself it's the blade on a rock. It's the slide starting.
-- **Plant 2 (S36 under L35, then L37):** on the way down, the post beyond the Marker's second sighting sits lower than the others, its glint a little below the line, "like it was KNEELING". Rewatch: that's twenty-three's line already bending down the slope. And a third, for sharp eyes: the Marker always stands on the road side of the line, never the drop side, and each sighting is one post nearer twenty-three.
+- **Plant 2 (S36 under L35, then L37):** on the way down, the post beyond the Marker's second sighting sits lower than the others, its glint a little below the line, "like it was KNEELING". Rewatch: counting down from forty, the low one is twenty-three, already sinking down the slope. And a third, for sharp eyes: the Marker always stands on the road side of the line, never the drop side, and each sighting is one post nearer twenty-three. I count down from forty on the way down, so every post keeps its number from the way up: 29, 26, 25, 24, then the gap at 23.
 
 ## World
 A single-lane mountain pass road above a small village, in a heavy snowfall that thins toward dawn. Deep blue-white snow banks on the mountain side, a soft lip of snow on the drop side, a line of thin rust-orange snow posts (2.0 m, black cap, one round amber reflector each, about 30 m apart) along the drop edge. Dark pines below, a stone hut with a stove at the top of the pass, and the chemist's small white van parked beside it. The plough: a tall boxy yellow truck with a wide angled blade, a two-seat cab, windscreen wipers, a dash with soft green gauges. Its roof beacon is broken and stays off for the whole story (no rotating light anywhere). The village at the foot: stone cottages, Odile's front window lit warm. No text anywhere: no road signs, no lettering on the van or plough, no numbers on the posts.
@@ -40,12 +40,12 @@ One model, built once in `set.py` and posed per shot.
 - **Never seen moving.** Each sighting it's simply further on and further onto the road. It never turns. It faces up the road, toward me, every time.
 - **Light it:** headlights from slightly above (the plough's lamps are high) for the key, snow bounce soft from below, a cold blue rim from the sky. The reflectors catch the headlights. No front fill.
 - **Continuity, beat by beat:**
-  - L01 to L04 (hook): seen once, a glimpse at the edge of the headlights, in the post line, eyes catching. Snow on its shoulders.
+  - L01 to L04 (hook): S1 opens on its two eyes in the post line, then S3 a glimpse at the edge of the headlights, in the post line, eyes catching. Snow on its shoulders.
   - Section 03 (up): not there. All forty posts are thin and normal. Count them on screen for anyone checking: the shots show posts only.
-  - L29 to L33 (post twelve): in the post line on the drop edge, square to the road, snow 5 cm on its shoulders.
-  - L35 to L37 (post seventeen): one step (about 0.8 m) out of the line onto the road, snow piled against its front as if it has stood there a long time.
-  - L38 to L40 (post twenty): at the outer edge of my lane, its eyes level with my headlights. The arm lines under the paint read for the first time.
-  - L41 to L44 and P01 (the lights sink): not visible, the dim beams don't reach it.
+  - L29 to L33 (post twenty-nine): in the post line on the drop edge, square to the road, snow 5 cm on its shoulders.
+  - L35 to L37 (post twenty-six): one step (about 0.8 m) out of the line onto the road, snow piled against its front as if it has stood there a long time.
+  - L38 to L40 (post twenty-five): at the outer edge of my lane, its eyes level with my headlights. The arm lines under the paint read for the first time.
+  - L41 to L44 and P01 (post twenty-four, the lights sink): not visible, the dim beams don't reach it.
   - L45 to L51 (the scare): in the centre of the road, 0.3 m in front of the blade, filling the lower windscreen from inside the cab. This is the test still.
   - L52 to L63 (dawn): same place, unmoved, now in grey light, standing exactly on the new edge. Beyond and below it, the slid slab and post twenty-three.
   - L64 to L65: gone. A wide square pressed into the snow where it stood, 1.8 m across, and the tally on the blade.
@@ -86,9 +86,9 @@ Format: the line id, then the caption chunks split with ` / `. Spoken text is th
 
 ### 01 The count
 - `L01` narrator: FORTY-ONE / POSTS. / On the way UP, / there were FORTY.
-  - [S1: POV through the windscreen before dawn, wipers sweeping, a post glint fades up and slides past on the left]
+  - [S1: opens on the Marker's two eyes in the post line, fading up in the beams through the windscreen before dawn, wipers sweeping, posts on the left]
 - `L02` narrator: I counted them / TWICE.
-  - [S2: my face in green dash light, `worried`, lips moving]
+  - [S2: my face moves here: green dash light, `worried`, lips moving]
 - `L03` narrator: The new one / was SHORTER / than the rest, / and as WIDE / as a CAR.
   - [S3: the Marker glimpse at the edge of the beams, in the post line, eyes catching, snow on its shoulders]
 - `L04` narrator: And it had TWO / REFLECTORS. / Posts only / have ONE.
@@ -145,9 +145,9 @@ Format: the line id, then the caption chunks split with ` / `. Spoken text is th
 ### 04 Down
 - `L27` narrator: Going DOWN, / the posts / were on my LEFT.
   - [S28: POV, the line now on the left]
-- `L28` narrator: I counted / from ONE.
+- `L28` narrator: I counted / DOWN / from FORTY.
   - [S29: my face, lips moving]
-- `L29` narrator: At TWELVE, / one of them / was WRONG.
+- `L29` narrator: At TWENTY-NINE, / one of them / was WRONG.
   - [S30: POV, a wide glint pair fading up in the line]
 - `L30` narrator: SHORT. / WIDE. / Snow on its SHOULDERS.
   - [S31: the Marker in the post line, square to the road]
@@ -155,23 +155,23 @@ Format: the line id, then the caption chunks split with ` / `. Spoken text is th
   - [S32: my face, `scared`]
 - `L32` narrator: Its two EYES / caught my HEADLIGHTS / like a pair / of COINS.
   - [S33: side view from my window as the plough passes it, eyes ramping up then down. It never turns]
-- `L33` narrator: I kept COUNTING. / THIRTEEN. / FOURTEEN.
+- `L33` narrator: I kept COUNTING. / TWENTY-EIGHT. / TWENTY-SEVEN.
   - [S34: POV, normal glints]
-- `L34` narrator: At SEVENTEEN, / it was there AGAIN.
+- `L34` narrator: At TWENTY-SIX, / it was there AGAIN.
   - [S35: POV, the Marker ahead in the beams]
 - `L35` narrator: One step / OUT of the LINE, / on the ROAD.
   - [S36: closer. Beyond it, far down the line, one glint sits lower than the rest. Not narrated (plant 2)]
 - `L36` narrator: Snow was HEAPED / against its FRONT, / like it had stood there / for HOURS.
   - [S37: close on the snow drift against the Marker's front]
-- `L37` narrator: The next post / along / was sitting LOW, / like it was KNEELING.
+- `L37` narrator: A post / further DOWN / was sitting LOW, / like it was KNEELING.
   - [S38: POV, the low glint, the beams sweeping slowly round the bend]
-- `L38` narrator: At TWENTY, / it was at the edge / of my LANE.
+- `L38` narrator: At TWENTY-FIVE, / it was at the edge / of my LANE.
   - [S39: POV, the Marker on the lane edge, eyes level with the beams]
 - `L39` narrator: Under the orange PAINT / were the LINES / of two ARMS, / flat against / its SIDES.
   - [S40: close on the raised arm lines and blunt block hands]
 - `L40` narrator: Like somebody / built a PERSON / out of a POST / and SQUASHED it.
   - [S41: my face, `scared`]
-- `L41` narrator: Then post / TWENTY-ONE.
+- `L41` narrator: Then post / TWENTY-FOUR.
   - [S42: a normal glint fading past]
 - `L42` narrator: And the HEADLIGHTS / started to SINK.
   - [S43: POV, the beams fading slowly down (1.2 s ramp, not to black)]
@@ -235,8 +235,8 @@ Format: the line id, then the caption chunks split with ` / `. Spoken text is th
   - [S69: sunrise over the stone cottages]
 - `L68` narrator: Odile's LAMP / was still ON.
   - [S70: her window, warm and steady]
-- `L69` narrator: I put the white BAG / on her TABLE, / next to the KEYS / and a glass / of WATER.
-  - [S71: the bag on the table, the glass beside it]
+- `L69` narrator: I put / her KEYS / and the / white BAG / on her TABLE.
+  - [S71: the keys and the bag on the table, a glass of water beside them]
 - `L70` narrator: She didn't say / THANK you.
   - [S72: Odile in her chair, `tired`, looking from the bag to me]
 - `L71` narrator: She poured TWO cups / and slid one / ACROSS / to me.

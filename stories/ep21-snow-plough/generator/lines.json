@@ -538,8 +538,12 @@
     "I counted"
    ],
    [
-    "from ONE.",
-    "from one."
+    "DOWN",
+    "down"
+   ],
+   [
+    "from FORTY.",
+    "from forty."
    ]
   ]
  },
@@ -548,8 +552,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "At TWELVE,",
-    "At twelve,"
+    "At TWENTY-NINE,",
+    "At 29,"
    ],
    [
     "one of them",
@@ -624,12 +628,12 @@
     "I kept counting."
    ],
    [
-    "THIRTEEN.",
-    "thirteen."
+    "TWENTY-EIGHT.",
+    "28."
    ],
    [
-    "FOURTEEN.",
-    "fourteen."
+    "TWENTY-SEVEN.",
+    "27."
    ]
   ]
  },
@@ -638,12 +642,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "At SEVENTEEN,",
-    "At seventeen,"
+    "At TWENTY-SIX,",
+    "At 26,"
    ],
    [
-    "it was there AGAIN.",
-    "it was there again."
+    "it was",
+    "it was"
+   ],
+   [
+    "there AGAIN.",
+    "there again."
    ]
   ]
  },
@@ -692,20 +700,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "The next post",
-    "The next post"
+    "A post",
+    "A post"
    ],
    [
-    "along",
-    "along"
+    "further DOWN",
+    "further down"
    ],
    [
     "was sitting LOW,",
     "was sitting low,"
    ],
    [
-    "like it was KNEELING.",
-    "like it was kneeling."
+    "like it",
+    "like it"
+   ],
+   [
+    "was KNEELING.",
+    "was kneeling."
    ]
   ]
  },
@@ -714,12 +726,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "At TWENTY,",
-    "At twenty,"
+    "At TWENTY-FIVE,",
+    "At 25,"
    ],
    [
-    "it was at the edge",
-    "it was at the edge"
+    "it was at",
+    "it was at"
+   ],
+   [
+    "the edge",
+    "the edge"
    ],
    [
     "of my LANE.",
@@ -784,8 +800,8 @@
     "Then post"
    ],
    [
-    "TWENTY-ONE.",
-    "twenty-one."
+    "TWENTY-FOUR.",
+    "24."
    ]
   ]
  },
@@ -1254,24 +1270,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "I put the white BAG",
-    "I put the white bag"
+    "I put",
+    "I put"
    ],
    [
-    "on her TABLE,",
-    "on her table,"
+    "her KEYS",
+    "her keys"
    ],
    [
-    "next to the KEYS",
-    "next to the keys"
+    "and the",
+    "and the"
    ],
    [
-    "and a glass",
-    "and a glass"
+    "white BAG",
+    "white bag"
    ],
    [
-    "of WATER.",
-    "of water."
+    "on her TABLE.",
+    "on her table."
    ]
   ]
  },
