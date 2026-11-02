@@ -24,6 +24,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep12 `knock-back` | none (before the canon), but the knock fits the roll call | |
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S59, under L59 ("Wren tore it in half"), held 1.5 s, not narrated |
+| ep27 `towpath` | a plain two-stroke tally pressed into the iron mooring ring where the Long Man's head last lay, in its canal-weed green: one stroke for me, one for Moss (on a boat everyone aboard is crew, a dog included). No extra stroke, because I'm calling the morning roll again. The Long Man is the boat's Keeper, and the morning greeting at the hatch is the roll call it kept for me while I didn't | P03, after L72 ("The towpath / was EMPTY."), held 1.5 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
