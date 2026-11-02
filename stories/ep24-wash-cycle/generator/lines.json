@@ -84,8 +84,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "A row of orange CHAIRS",
-    "a row of orange chairs"
+    "A row of",
+    "a row of"
+   ],
+   [
+    "orange CHAIRS",
+    "orange chairs"
    ],
    [
     "faces the DRYERS.",
@@ -154,8 +158,12 @@
     "an old man"
    ],
    [
-    "in the END chair.",
-    "in the end chair."
+    "in the",
+    "in the"
+   ],
+   [
+    "END chair.",
+    "end chair."
    ]
   ]
  },
@@ -164,20 +172,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "He had a grey",
-    "he had a grey"
+    "He had a",
+    "he had a"
    ],
    [
-    "JUMPER on.",
-    "jumper on."
+    "grey JUMPER on.",
+    "grey jumper on."
    ],
    [
     "That was ALL.",
     "that was all."
    ],
    [
-    "On a FREEZING NIGHT.",
-    "on a freezing night."
+    "On a",
+    "on a"
+   ],
+   [
+    "FREEZING NIGHT.",
+    "freezing night."
    ]
   ]
  },
@@ -678,8 +690,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I thought, it wants",
-    "i thought, it wants"
+    "I thought,",
+    "i thought,"
+   ],
+   [
+    "it wants",
+    "it wants"
    ],
    [
     "the COAT BACK.",
@@ -1166,8 +1182,12 @@
     "for days,"
    ],
    [
-    "so I wouldn't ASK.",
-    "so i wouldn't ask."
+    "so I",
+    "so i"
+   ],
+   [
+    "wouldn't ASK.",
+    "wouldn't ask."
    ]
   ]
  },
@@ -1224,8 +1244,12 @@
     "sat finished"
    ],
    [
-    "in the END MACHINE.",
-    "in the end machine."
+    "in the",
+    "in the"
+   ],
+   [
+    "END MACHINE.",
+    "end machine."
    ]
   ]
  },
@@ -1398,8 +1422,12 @@
     "arthur sat"
    ],
    [
-    "in his own CHAIR again.",
-    "in his own chair again."
+    "in his",
+    "in his"
+   ],
+   [
+    "own CHAIR again.",
+    "own chair again."
    ]
   ]
  },
@@ -1412,8 +1440,12 @@
     "the chairs"
    ],
    [
-    "are just CHAIRS now.",
-    "are just chairs now."
+    "are just",
+    "are just"
+   ],
+   [
+    "CHAIRS now.",
+    "chairs now."
    ]
   ]
  },
