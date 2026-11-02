@@ -4,7 +4,7 @@
 
 - **Slug:** `ep33-chairlift`. Folder `stories/ep33-chairlift/`.
 - **Length test:** this is one of the 60 to 90 s stories.
-- **Word count:** 314 spoken words in 37 lines, all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
+- **Word count:** 318 spoken words in 37 lines, all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
 - **Estimated length:** about 70 to 73 s. Speech is 64.6 s at 290 wpm and 67.3 s at 278 wpm. The 0.12 s gaps add 4.4 s, P01 0.7 s and the tail 0.3 s. If it lands over 85 s, cut L12 first, then L24.
 
 ## The big idea
@@ -45,7 +45,7 @@ All adults. Nobody is in peril and nobody is hurt. Nobody has an on-screen age.
 - **Removed:** the Four-Face (no creature in this version), the pass card.
 
 ## The eerie element (no creature)
-Stillness that shouldn't be: people on the ridge frozen for days, a gull that lands on Gran's hat on Tuesday and is still there on Friday, and at the scare Gran through the viewer with her eyes shut, not moving, after she misses Sunday. It turns benign at L26 (she nodded off for ten minutes). Light the viewer close at L21 in flat cool daylight, face clearly lit, not dark: she reads as asleep and too still, never hurt.
+Stillness that shouldn't be: people on the ridge frozen for days, a gull that lands on Gran's hat on Tuesday and is still there on Friday, and at the scare Gran through the viewer with her eyes shut, not moving, after she misses Sunday. It turns benign at L26 (she nodded off for half an hour). Light the viewer close at L21 in flat cool daylight, face clearly lit, not dark: she reads as asleep and too still, never hurt.
 
 ## Continuity (Gran)
 | Lines | Where | What we see |
@@ -89,7 +89,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words
   - [S07: me on the deck, arms folded, `smug`]
 - `L06` narrator: I don't want / to MISS / a single DAY.
   - [S08: me watching chairs go up, `neutral`]
-- `L07` narrator: GRAN / goes up / EVERY MORNING.
+- `L07` narrator: GRAN / LIVES / up THERE.
   - [S09: Gran at the gate rope, `happy`, turning to me]
 - `L08` narrator: She FIXES / my BEANIE, / takes a BLANKET / big enough / for TWO,
   - [S10: close on Gran's hands at my beanie (no grip, hands resting on the brim)]
@@ -136,7 +136,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words
   - [S31: high on the tiny deck: Bo still, his long shadow sweeping round him once, slowly]
 - `L25` narrator: At the TOP, / Gran OPENS / her EYES,
   - [S32: the ridge bench, in person, gold light: Gran's eyes opening, gull lifting off]
-- `L26` narrator: and says / she only NODDED OFF / for TEN MINUTES.
+- `L26` narrator: and says / she only NODDED OFF / for HALF an HOUR.
   - [S33: Gran, `happy`, a little sheepish. Me standing in front of her, `worried`]
 - `L27` narrator: I ask her / WHY / she LIVES up here.
   - [S34: me, `soft`, the valley racing small and far behind me]
@@ -152,7 +152,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words
   - [S39: Gran smiling up at me. The pad lifts to major]
 
 ### The turn and the sting (58 to 66 s)
-- `L33` narrator: So I SIT DOWN / BESIDE her,
+- `L33` narrator: So every SUNDAY, / I ride UP / and SIT beside her,
   - [S40: me sitting on the bench beside her, both facing the town]
 - `L34` narrator: and she shakes OUT / the BLANKET / for TWO.
   - [S41: the blanket over both our laps, the cut before any grip: it's already laid]
