@@ -143,7 +143,7 @@ U_ME = {"L64": (0.050, 0.062), "L65": (0.062, 0.078), "L66": (0.078, 0.090), "L6
 LAG = 0.03                                # its lag behind me down the road (7.7 m)
 
 # the giant's places (set.py CLEAR keeps the forest off them)
-FAR = [-25.0, 60.0, 0.0]                  # L01, far back behind the cab in fog
+FAR = [-25.0, 57.0, 0.0]                  # L01, far back behind the cab in fog
 WALK_UP = ([-31.5, -11.0], [-16.0, 1.0])  # 03: up the ridge toward the tower (the scale wide at L30)
 LEAN = [5.6, -7.6, -2.6]                  # L37 to L41: low, its right stone on the frame below the cab
 FEAR = [2.45, -8.0, 0.0]                  # L42 on: its hollow 1.3 m past the south rail
@@ -157,7 +157,7 @@ WINDOW_CLOSE = mv([0.25, 0.0, 21.4], [0.25, -6.0, 20.6], 17, roll=-3.0)
 SH = [
     # ---- 01 the question. The lit cab from outside on a pearl-fog morning, me at the glass; far back in the fog a
     # dark mass with two faint points (never mentioned). Slow push in
-    (0, mv([16.0, -22.0, 21.0], [-1.0, 3.0, 21.6], 30, [14.2, -19.6, 21.0], [-1.0, 3.0, 21.6], 34), {"hand": 0.005}),
+    (0, mv([10.5, -14.0, 19.8], [0.0, 0.0, 21.2], 30, [8.2, -11.0, 20.2], [0.0, 0.0, 21.4], 32), {"hand": 0.004}),
     ("L02", mv([1.65, 1.6, 21.1], [0.2, -0.7, 20.6], 22), {}),
     ("L03", mv([4.6, -7.6, 1.3], [0.0, 0.0, 5.0], 16, [4.6, -7.6, 1.3], [0.0, 0.0, 19.0], 16), {}),
     ("L04", mv([0.15, 1.05, 20.78], [0.3, 1.78, 20.66], 40), {"hand": 0.002}),
@@ -414,7 +414,7 @@ cues = [
     {"at": "L47", "name": "breath"}, {"at": "P04", "name": "breath"},
     # the giant (set.py giant_state). Its walks put a footfall on every beat of the score's pulse (40 bpm, from the
     # section's start), so the score walks with it
-    {"at": 0, "name": "giant", "pos": FAR, "yaw": 22.6, "pitch": 3.0, "lights": 0.5},
+    {"at": 0, "name": "giant", "pos": FAR, "yaw": 22.6, "pitch": 3.0, "lights": 0.7},
     {"at": "L02", "name": "giant", "pos": FAR, "hidden": True},
     {"at": "L28", "name": "giant", "hidden": True,
      "walk": {"from": [-80.0, -50.0], "to": [-36.0, -15.0], "until": "P02", "beat0": "P02", "stride": -12.0}},

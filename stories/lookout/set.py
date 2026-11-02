@@ -1787,10 +1787,10 @@ LOOKS = {
                       "fog.dayback": (0.0, 190.0, 140.0, 0.0)},
             "gains": DAY_GAINS, "sun": 1.0, "smudge": True},
     # the same, for the first shot: a fog bank in front of the giant's head, so only a faint mass and two points show
-    "dayfar": {"fog": "#b8bcb8", "density": 0.012, "start": 6.0, "sky": "#c3c7c3", "sky_strength": 0.5, "exposure": 0.15,
+    "dayfar": {"fog": "#b8bcb8", "density": 0.012, "start": 6.0, "sky": "#c3c7c3", "sky_strength": 0.5, "exposure": 0.5,
                "cards": {"fog.day3": (0.0, -30.0, 12.0, 0.0), "fog.day4": (0.0, 30.0, 12.0, 0.0),
                          "fog.day5": (0.0, 46.0, 26.5, 0.0), "fog.dayback": (0.0, 190.0, 140.0, 0.0)},
-               "gains": DAY_GAINS, "sun": 1.0, "smudge": True},
+               "gains": {**DAY_GAINS, "lamp": 1.2}, "sun": 1.0, "smudge": True},
     # a clear morning before the smoke spreads: the valley far below, a silver line in it (L06, L07)
     "clear": {"fog": "#c4ccd2", "density": 0.0022, "start": 40.0, "sky": "#c9d3da", "sky_strength": 0.7,
               "exposure": 0.1, "cards": {}, "gains": DAY_GAINS, "sun": 1.6, "river": 2.5, "smudge": True},
