@@ -1,6 +1,6 @@
 {
  "slug": "ep33-chairlift",
- "title": "I paid for both seats so I could ride the chairlift alone",
+ "title": "At this lake, the dawn chair is yours if you can ride it alone all week",
  "made_for_kids": false,
  "premise": "On a week's holiday I book the first chair of every dawn on an old lakeside chairlift, both seats, so I can ride up alone. A rider in a faded orange cagoule with a cube head and the same face on all four sides rides the lift alone too, a little nearer my chair each day, and on the foggy Friday it is in the seat beside me.",
  "twist": "The bet that I can't ride up alone has never been won. Every summer someone takes it and loses, and the forfeit seat is how an old couple has ridden the first chair for forty years without once buying a pass.",
@@ -127,7 +127,7 @@
   },
   "creature": {
    "age": "adult",
-   "skin": "#8f8269",
+   "skin": "#64635f",
    "shirt": "#c97c4a",
    "pattern": "solid",
    "collar": "#b06b3d",
@@ -343,12 +343,16 @@
      "Bo says,"
     ],
     [
-     "\"If you CAN'T,",
-     "\"if you can't,"
+     "\"Ride ALONE",
+     "\"ride alone"
     ],
     [
-     "your SEAT",
-     "your seat"
+     "all WEEK,",
+     "all week,"
+    ],
+    [
+     "or your SEAT",
+     "or your seat"
     ],
     [
      "goes to THEM.\"",
@@ -842,12 +846,12 @@
      "on Thursday,"
     ],
     [
-     "it isn't on",
-     "it isn't on"
+     "the DOWN CHAIRS",
+     "the down chairs"
     ],
     [
-     "the DOWN CHAIRS.",
-     "the down chairs."
+     "are all EMPTY.",
+     "are all empty."
     ]
    ]
   },
@@ -1687,7 +1691,7 @@
      0,
      [
       1.25,
-      -8.0,
+      -7.2,
       1.57
      ],
      [
@@ -1701,7 +1705,7 @@
      1,
      [
       1.25,
-      -6.5,
+      -5.8,
       1.57
      ],
      [
@@ -1713,7 +1717,8 @@
     ]
    ],
    "step": 2,
-   "hand": 0.004
+   "hand": 0.004,
+   "cfill": 2.4
   },
   {
    "id": "S02",
@@ -2153,30 +2158,30 @@
     [
      0,
      [
-      -1.3,
-      -1.6,
-      1.6
+      1.4,
+      -4.6,
+      1.5
      ],
      [
-      0.8,
-      -0.1,
-      0.95
+      1.3,
+      0.0,
+      1.2
      ],
-     30
+     19
     ],
     [
      1,
      [
-      -1.2,
-      -1.5,
-      1.6
+      1.4,
+      -4.3,
+      1.5
      ],
      [
-      0.8,
-      -0.1,
-      0.95
+      1.3,
+      0.0,
+      1.2
      ],
-     31
+     20
     ]
    ],
    "step": 2,
@@ -2441,7 +2446,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S25",
@@ -2472,7 +2478,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S26",
@@ -2503,7 +2510,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S27",
@@ -2534,7 +2542,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S28",
@@ -2565,7 +2574,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S29",
@@ -2596,7 +2606,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S30",
@@ -2705,7 +2716,8 @@
      0.0,
      0.8
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S34",
@@ -2790,7 +2802,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S37",
@@ -2799,55 +2812,13 @@
      0,
      [
       0.0,
-      -3.2,
-      2.0
+      -3.0,
+      3.0
      ],
      [
       0.0,
       0.0,
-      1.55
-     ],
-     30
-    ],
-    [
-     0.34,
-     [
-      -3.2,
-      0.0,
-      2.0
-     ],
-     [
-      0.0,
-      0.0,
-      1.55
-     ],
-     30
-    ],
-    [
-     0.67,
-     [
-      0.0,
-      3.2,
-      2.0
-     ],
-     [
-      0.0,
-      0.0,
-      1.55
-     ],
-     30
-    ],
-    [
-     1.0,
-     [
-      3.2,
-      0.0,
-      2.0
-     ],
-     [
-      0.0,
-      0.0,
-      1.55
+      1.6
      ],
      30
     ]
@@ -2855,7 +2826,17 @@
    "step": 2,
    "at": "L35",
    "hand": 0.0,
-   "follow": "creature"
+   "follow": "creature",
+   "cfill": 0.35,
+   "ckey": 0.55,
+   "orbit": {
+    "who": "creature",
+    "r": 3.0,
+    "z": 3.0,
+    "tz": 1.6,
+    "a0": -135,
+    "a1": 45
+   }
   },
   {
    "id": "S38",
@@ -2931,7 +2912,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S41",
@@ -2962,7 +2944,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S42",
@@ -2993,7 +2976,8 @@
      0.0,
      1.57
     ]
-   }
+   },
+   "cfill": 0.2
   },
   {
    "id": "S43",
@@ -3365,36 +3349,37 @@
     [
      0,
      [
-      -0.95,
-      3.7,
+      1.4,
+      3.03,
       1.9
      ],
      [
-      -0.95,
+      -0.72,
       0.0,
-      1.45
+      1.25
      ],
-     22
+     23
     ],
     [
      1,
      [
-      -0.95,
-      3.7,
+      1.4,
+      3.03,
       1.9
      ],
      [
-      -0.95,
+      -0.72,
       0.0,
-      1.45
+      1.25
      ],
-     25
+     24
     ]
    ],
    "step": 2,
    "at": "L53",
    "hand": 0.002,
-   "follow": "me"
+   "follow": "me",
+   "cfill": 0.2
   },
   {
    "id": "S57",
@@ -3417,7 +3402,8 @@
    "step": 2,
    "at": "L54",
    "hand": 0.002,
-   "follow": "me"
+   "follow": "me",
+   "cfill": 0.2
   },
   {
    "id": "S58",
@@ -3454,7 +3440,8 @@
    "step": 2,
    "at": "L55",
    "hand": 0.002,
-   "follow": "me"
+   "follow": "me",
+   "cfill": 0.2
   },
   {
    "id": "S59",
@@ -3477,7 +3464,8 @@
    "step": 2,
    "at": "L56",
    "hand": 0.003,
-   "follow": "me"
+   "follow": "me",
+   "cfill": 0.2
   },
   {
    "id": "S60",
@@ -3514,7 +3502,8 @@
    "step": 2,
    "at": "L57",
    "hand": 0.002,
-   "follow": "me"
+   "follow": "me",
+   "cfill": 0.2
   },
   {
    "id": "S61",
@@ -3551,7 +3540,8 @@
    "step": 2,
    "at": "L58",
    "hand": 0.002,
-   "follow": "me"
+   "follow": "me",
+   "cfill": 0.2
   },
   {
    "id": "S62",
@@ -5811,8 +5801,8 @@
     "at": "L33",
     "pos": [
      -1.08,
-     10.05,
-     2.243
+     12.55,
+     2.94
     ],
     "yaw": 0.0,
     "sit": true,
@@ -5822,8 +5812,8 @@
     "at": "L34",
     "pos": [
      -1.08,
-     4.05,
-     0.569
+     10.55,
+     2.382
     ],
     "yaw": 0.0,
     "sit": true,
@@ -5833,8 +5823,8 @@
     "at": "L35",
     "pos": [
      -1.08,
-     2.05,
-     0.207
+     8.55,
+     1.824
     ],
     "yaw": 0.0,
     "sit": true,
@@ -5844,8 +5834,8 @@
     "at": "L36",
     "pos": [
      -1.08,
-     0.55,
-     0.082
+     6.55,
+     1.266
     ],
     "yaw": 0.0,
     "sit": true,
@@ -5855,8 +5845,8 @@
     "at": "L37",
     "pos": [
      -1.08,
-     0.55,
-     0.082
+     6.55,
+     1.266
     ]
    },
    {
@@ -6187,6 +6177,18 @@
    "name": "light",
    "look": "warm2",
    "ramp": 9.0
+  },
+  {
+   "at": "L36",
+   "name": "open",
+   "from": 0.55,
+   "dur": 0.5
+  },
+  {
+   "at": "L32",
+   "name": "open",
+   "from": 0.9,
+   "dur": 0.4
   },
   {
    "at": 0,
@@ -6562,7 +6564,7 @@
     "dur": 1.2
    },
    {
-    "at": "P01+0.55",
+    "at": "L53",
     "kind": "hit",
     "db": -6,
     "keep": true
@@ -6592,8 +6594,8 @@
   ],
   "music_drops": [
    {
-    "from": "P01",
-    "to": "L52",
+    "from": "L51>",
+    "to": "L53",
     "keep": [
      "hit",
      "sting"

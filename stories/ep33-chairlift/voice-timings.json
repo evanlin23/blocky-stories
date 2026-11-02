@@ -250,30 +250,34 @@
    ]
   },
   "L10": {
-   "text": "Bo says, \"if you can't, your seat goes to them.\"",
+   "text": "Bo says, \"ride alone all week, or your seat goes to them.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.172,
-   "end": 1.914,
+   "dur": 2.552,
+   "onset": 0.155,
+   "end": 2.362,
    "chunks": [
     [
-     0.172,
+     0.155,
      0.534
     ],
     [
      0.586,
-     0.897
+     0.931
     ],
     [
      0.931,
-     1.224
+     1.276
     ],
     [
-     1.224,
-     1.914
+     1.31,
+     1.655
+    ],
+    [
+     1.655,
+     2.362
     ]
    ]
   },
@@ -906,26 +910,26 @@
    ]
   },
   "L37": {
-   "text": "on Thursday, it isn't on the down chairs.",
+   "text": "on Thursday, the down chairs are all empty.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
+   "dur": 2.138,
    "onset": 0.155,
-   "end": 1.897,
+   "end": 1.948,
    "chunks": [
     [
      0.155,
-     0.69
+     0.586
     ],
     [
-     0.716,
-     1.026
+     0.612,
+     1.172
     ],
     [
-     1.026,
-     1.897
+     1.172,
+     1.948
     ]
    ]
   },

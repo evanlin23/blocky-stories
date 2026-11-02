@@ -60,7 +60,7 @@ LOOKS = {
                  cam=0.06, cam_c="#f1e6e6"),
 }
 
-CREATURE_ORANGE, PUTTY = "#c97c4a", "#8f8269"
+CREATURE_ORANGE, PUTTY = "#c97c4a", "#64635f"
 GLINT = 7.0
 HANG = G.HANG
 SPACING = 22.0
@@ -352,23 +352,21 @@ def build_sky(kit, ctx, M):
 
 
 def face_png():
+    """Two small black dots set wide and high with a pinpoint glint, and one long low dark slot of a mouth."""
     from PIL import Image, ImageDraw
 
     W = 512
     im = Image.new("RGB", (W, W), faces.hexrgb(PUTTY))
     d = ImageDraw.Draw(im)
-    ink = (14, 12, 12)
+    ink = (10, 9, 9)
     for sx in (-1, 1):
-        cx, cy, r = W * (0.5 + sx * 0.235), W * 0.40, W * 0.14
+        cx, cy, r = W * (0.5 + sx * 0.31), W * 0.30, W * 0.042
         d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=ink)
-        g = W * 0.05
-        gx, gy = cx + r * 0.32, cy - r * 0.34
+        g = W * 0.011
+        gx, gy = cx + r * 0.35, cy - r * 0.38
         d.ellipse([gx - g, gy - g, gx + g, gy + g], fill=(255, 251, 238))
-    th = W * 0.045
-    x0, x1, y = W * 0.12, W * 0.88, W * 0.77
-    d.line([(x0, y), (x1, y)], fill=ink, width=int(th))
-    for x in (x0, x1):
-        d.ellipse([x - th / 2, y - th / 2, x + th / 2, y + th / 2], fill=ink)
+    x0, x1, y, h = W * 0.07, W * 0.93, W * 0.80, W * 0.05
+    d.rounded_rectangle([x0, y - h / 2, x1, y + h / 2], radius=h / 2, fill=ink)
     return im
 
 
@@ -456,6 +454,13 @@ def build(kit, story, tl):
 
         def cam_at2(spec, shot, t, chars, tl_):
             loc, tgt, lens, roll = orig(spec, shot, t, chars, tl_)
+            orb = spec.get("orbit")
+            if orb:   # opt-in: a circle round the creature's head at an even speed, outside everything
+                u = (t - shot["start"]) / max(1e-6, shot["end"] - shot["start"])
+                st_ = _a.state(tl_, orb["who"], t)
+                ang = math.radians(orb["a0"] + (orb["a1"] - orb["a0"]) * min(1.0, max(0.0, u)))
+                loc = (st_["x"] + orb["r"] * math.sin(ang), st_["y"] - orb["r"] * math.cos(ang), st_["z"] + orb["z"])
+                tgt = (st_["x"], st_["y"], st_["z"] + orb["tz"])
             aim = spec.get("aim")
             if aim:
                 st = _a.state(tl_, aim["who"], t)
@@ -585,7 +590,15 @@ def animate(kit, story, tl, t, ctx):
     cf["obj"].rotation_euler = fwd.to_track_quat("-Z", "Y").to_euler()
     cf["light"].color = _lin(L["cam_c"])
     cf["light"].size = 1.5
-    cf["base"] = 7.0 * min(dist, 12.0) ** 2 * L["cam"]
+    # `open` cue (opt-in): sky and fill start at `from` of their level and ease up to it over `dur` s
+    opn = 1.0
+    for c in _cues(tl, "open"):
+        if c["t"] <= t:
+            opn = c.get("from", 0.6) + (1.0 - c.get("from", 0.6)) * _ss((t - c["t"]) / max(0.01, c.get("dur", 0.5)))
+            if t - c["t"] > c.get("dur", 0.5) + 0.1:
+                opn = 1.0
+    w.inputs["Strength"].default_value = L["sky_s"] * opn
+    cf["base"] = 7.0 * min(dist, 12.0) ** 2 * L["cam"] * spec.get("cfill", 1.0) * opn
     # ---- the lift clock and the chairs
     P = clock(ctx, t)
     riders = []
@@ -735,7 +748,7 @@ def animate(kit, story, tl, t, ctx):
     on_screen = cr is not None and not cr.hide_render
     if ctx.get("creature_head_rig") is not None:
         ctx["creature_head_rig"].hide_render = True
-    ck = _switch(_cues(tl, "ckey"), "gain", t, 1.0)
+    ck = spec.get("ckey", _switch(_cues(tl, "ckey"), "gain", t, 1.0))
     for nm in ("ckey", "crim"):
         over[nm] = 0.0
     if on_screen:
@@ -748,16 +761,16 @@ def animate(kit, story, tl, t, ctx):
             to_cam = V((0, -1, 0))
         to_cam.normalize()
         side = to_cam.cross(V((0, 0, 1)))
-        kd = max(1.5, min(dist, 6.0))
         key = K.LIGHTS["ckey"]
-        key["obj"].location = head + side * 1.7 + to_cam * 0.1 + V((0, 0, -0.45))
+        # from below, on the camera's side: a cold under-light that throws the brow and the dots into shadow
+        key["obj"].location = head + to_cam * 1.5 + side * 0.25 + V((0, 0, -1.35))
         K.aim(key["obj"], tuple(head))
-        key["base"] = 380.0 * ck * (key["obj"].location - head).length ** 2 / 2.2 * min(1.0, max(0.3, (cam - head).length / 3.9) ** 1.4)
-        key["light"].color = _lin(L.get("cam_c", "#d9e4ff")) if False else (0.7, 0.8, 1.0)
+        key["base"] = 300.0 * ck * (key["obj"].location - head).length ** 2 / 2.2 * min(1.0, max(0.3, (cam - head).length / 3.9) ** 1.4)
+        key["light"].color = (0.72, 0.84, 0.95)
         over["ckey"] = 1.0
         rim = K.LIGHTS["crim"]
         rim["obj"].location = head - to_cam * 1.5 + V((0, 0, 0.8)) - side * 1.0
         K.aim(rim["obj"], tuple(head))
-        rim["base"] = 520.0 * ck * (rim["obj"].location - head).length ** 2 / 2.5
+        rim["base"] = 220.0 * ck * (rim["obj"].location - head).length ** 2 / 2.5
         over["crim"] = 1.0
     return over

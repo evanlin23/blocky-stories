@@ -60,7 +60,7 @@ cast = {
                    "collar": "#3d5f8f", "pants": "#4a4f58", "shoes": "#2c4a35", "sleeves": "long", "hair": "bun",
                    "hair_c": "#a9a8a6", "hat": "none", "height": 0.93,
                    "face": {"eyes": "lashes", "brows": True, "cheeks": "#e49a8a", "ink": "#2a2420"}},
-    "creature": {"age": "adult", "skin": "#8f8269", "shirt": "#c97c4a", "pattern": "solid", "collar": "#b06b3d",
+    "creature": {"age": "adult", "skin": "#64635f", "shirt": "#c97c4a", "pattern": "solid", "collar": "#b06b3d",
                  "pants": "#3a3d42", "shoes": "#7b7f84", "sleeves": "long", "hair": "none", "hat": "none",
                                   "face": {"eyes": "dot", "brows": False, "ink": "#0e0c0c"}},
 }
@@ -169,7 +169,7 @@ def shot(at, cam, **opt):
 P0 = (0.0, 0.75, 1.88)   # my point of view: just ahead of my beanie, over the lap bar
 CR = {"who": "creature", "off": [0.0, 0.0, 1.57]}      # aim at the Four-Face's head
 BOH = hd(BO)
-shot(0, front(BOH, 0, 0, 5.4, 0.0, 36, push=1.5, lens2=40), hand=0.004)
+shot(0, front(BOH, 0, 0, 4.6, 0.0, 36, push=1.4, lens2=40), hand=0.004, cfill=2.4)
 shot("L02", mv((-7.5, -13.0, 9.5), (0, 40, 8.0), 20, (-5.5, -13.0, 10.0), (0, 40, 8.5), 20), hand=0.0)
 shot("L03", front(hd(ME0), 180, 18, 3.0, 0.0, 32, push=0.15))
 shot("L04", mv((-0.1, -7.0, 1.5), (0.2, -1.2, 1.4), 30, (-0.1, -7.0, 1.5), (0.4, -1.2, 1.4), 30), hand=0.003)
@@ -183,7 +183,8 @@ shot("L11", front(hd(MRS, 1.47), 180, -10, 2.7, 0.0, 34, push=0.1))
 shot("L11.1", front(hd(ME0), 180, 14, 2.6, 0.0, 34))
 shot("L12", mv((3.9, -5.6, 0.6), (1.2, -1.2, 1.0), 30, (3.6, -5.2, 0.7), (1.4, -1.0, 1.0), 30), hand=0.003)
 shot("L13", mv((0.5, -2.1, 2.3), (1.1, -0.1, 0.65), 30, (0.55, -2.0, 2.25), (1.1, -0.1, 0.65), 31), hand=0.002)
-shot("L14", mv((-1.3, -1.6, 1.6), (0.8, -0.1, 0.95), 30, (-1.2, -1.5, 1.6), (0.8, -0.1, 0.95), 31))
+# wider, from the deck in front: Bo at the chair's side looking at the empty seat, me in my half
+shot("L14", mv((1.4, -4.6, 1.5), (1.3, 0.0, 1.2), 19, (1.4, -4.3, 1.5), (1.3, 0.0, 1.2), 20))
 # the lore plant: top-down on the footrest between my boots, the two orange strokes centred, held the whole line
 shot("L15", ride_cam(-0.72, 0.30, 1.42, -0.72, 0.60, 0.17, 15), follow=FL, hand=0.0)
 shot("L16", ride_cam(-1.0, 1.4, 1.4, -5.0, 1.4, 1.0, 20), follow=FL, hand=0.004)
@@ -196,28 +197,28 @@ shot("L21", ride_cam(0.9, -2.9, 1.9, 13.0, 90.0, 31.0, 38, 0.9, -2.9, 1.9, 13.0,
 # ---- 02 Tuesday and Wednesday
 Y22, Y25 = 18.0, 34.0
 shot("L22", ride_cam(*P0, 0, 0, 0, 45), follow=FL, aim=CR, hand=0.003)
-shot("L23", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 90), follow=FL, aim=CR, hand=0.002)
-shot("L23.1", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 100), follow=FL, aim=CR, hand=0.002)
-shot("L24", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 75), follow=FL, aim=CR, hand=0.002)
-shot("L25", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 36), follow=FL, aim=CR, hand=0.003)
-shot("L26", ride_cam(0.0, -1.0, 1.95, 0, 0, 0, 55), follow=FL, aim=CR, hand=0.003)
-shot("L27", ride_cam(0.0, -1.0, 1.95, 0, 0, 0, 120), follow=FL, aim=CR, hand=0.002)
+shot("L23", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 90), follow=FL, aim=CR, hand=0.002, cfill=0.2)
+shot("L23.1", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 100), follow=FL, aim=CR, hand=0.002, cfill=0.2)
+shot("L24", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 75), follow=FL, aim=CR, hand=0.002, cfill=0.2)
+shot("L25", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 36), follow=FL, aim=CR, hand=0.003, cfill=0.2)
+shot("L26", ride_cam(0.0, -1.0, 1.95, 0, 0, 0, 55), follow=FL, aim=CR, hand=0.003, cfill=0.2)
+shot("L27", ride_cam(0.0, -1.0, 1.95, 0, 0, 0, 120), follow=FL, aim=CR, hand=0.002, cfill=0.2)
 shot("L28", front(hd(BO), 0, -18, 2.6, 0.0, 32, push=0.1))
 shot("L29", front(hd(ME0), 180, -16, 2.7, 0.0, 32))
 shot("L30", front(hd(MR, 1.62), 180, 0, 2.2, -0.15, 26, aim_dz=-0.6), hand=0.002)
 # Wednesday over the lake: two chairs about to pass; footrests level; I twist round; the side face; the orbit
-shot("L31", ride_cam(3.0, -5.0, 2.4, 0, 0, 0, 30), follow=FL, aim={"who": "creature", "off": [1.5, 0.0, 0.8]}, hand=0.004)
+shot("L31", ride_cam(3.0, -5.0, 2.4, 0, 0, 0, 30), follow=FL, aim={"who": "creature", "off": [1.5, 0.0, 0.8]}, hand=0.004, cfill=0.2)
 shot("L32", ride_cam(-2.5, 0.6, 0.12, 0, 0, 0, 30), follow=FL, aim={"who": "creature", "off": [-0.72, -0.6, 0.2]}, hand=0.002)
 shot("L33", ride_cam(0.3, 2.3, 1.8, 0.0, 0.0, HEAD, 32), follow=FL, hand=0.004)
-shot("L34", ride_cam(0.9, -0.9, 1.95, 0, 0, 0, 90), follow=FL, aim=CR, hand=0.003)
+shot("L34", ride_cam(0.9, -0.9, 1.95, 0, 0, 0, 90), follow=FL, aim=CR, hand=0.003, cfill=0.2)
 shot("L35", mv((0.0, 0.0, 0.0), (0, 0, 0), 30), follow="creature", hand=0.0)   # replaced below
 shot("L36", ride_cam(0.2, 2.4, 1.75, 0.0, 0.0, HEAD, 34), follow=FL)
 
 # ---- 03 Thursday: ahead
 shot("L37", ride_cam(-0.3, 0.8, 1.85, -4.6, 6.0, 4.5, 36), follow=FL, hand=0.004)
-shot("L38", ride_cam(*P0, 0, 0, 0, 60), follow=FL, aim=CR, hand=0.003)
-shot("L39", ride_cam(*P0, 0, 0, 0, 120), follow=FL, aim=CR, hand=0.003)
-shot("L40", ride_cam(*P0, 0, 0, 0, 180), follow=FL, aim=CR, hand=0.002)
+shot("L38", ride_cam(*P0, 0, 0, 0, 60), follow=FL, aim=CR, hand=0.003, cfill=0.2)
+shot("L39", ride_cam(*P0, 0, 0, 0, 120), follow=FL, aim=CR, hand=0.003, cfill=0.2)
+shot("L40", ride_cam(*P0, 0, 0, 0, 180), follow=FL, aim=CR, hand=0.002, cfill=0.2)
 shot("L41", ride_cam(0.4, 2.5, 1.8, 0.0, 0.0, HEAD, 34), follow=FL, hand=0.004)
 shot("L42", mv((7.0, 118.0, 41.5), (0.0, 128.0, 43.0), 24, (7.0, 118.0, 41.5), (0.0, 129.0, 42.2), 25), hand=0.002)
 
@@ -234,12 +235,12 @@ shot("L51", ride_cam(0.5, 2.0, 1.7, -0.2, 0.0, HEAD, 34), follow=FL, hand=0.003)
 shot("P01", ride_cam(0.5, 2.0, 1.7, -0.2, 0.0, HEAD, 34, lens2=36), follow=FL, hand=0.003)
 shot("L52", ride_cam(-0.7, 4.0, 1.7, -0.7, 0.0, 1.5, 26), follow=FL, hand=0.003)
 # the reveal: from in front, the two of us in one frame, its cube toward me, the glints the brightest thing
-shot("L53", ride_cam(-0.95, 3.7, 1.9, -0.95, 0.0, 1.45, 22, lens2=25), follow=FL, hand=0.002)
-shot("L54", ride_cam(-0.1, 1.7, 1.2, -0.75, 0.0, 0.95, 40), follow=FL, hand=0.002)
-shot("L55", ride_cam(1.3, 1.1, 1.7, -1.44, 0.0, HEAD, 32, lens2=36), follow=FL, hand=0.002)
-shot("L56", ride_cam(-0.6, 2.2, 1.7, -0.1, 0.1, HEAD, 34), follow=FL, hand=0.003)
-shot("L57", ride_cam(-2.2, -2.2, 1.9, -1.44, -0.1, HEAD, 36, lens2=40), follow=FL, hand=0.002)
-shot("L58", ride_cam(-3.1, 1.8, 2.4, -1.44, -0.1, 1.55, 40, lens2=48), follow=FL, hand=0.002)
+shot("L53", ride_cam(1.40, 3.03, 1.9, -0.72, 0.0, 1.25, 23, lens2=24), follow=FL, hand=0.002, cfill=0.2)
+shot("L54", ride_cam(-0.1, 1.7, 1.2, -0.75, 0.0, 0.95, 40), follow=FL, hand=0.002, cfill=0.2)
+shot("L55", ride_cam(1.3, 1.1, 1.7, -1.44, 0.0, HEAD, 32, lens2=36), follow=FL, hand=0.002, cfill=0.2)
+shot("L56", ride_cam(-0.6, 2.2, 1.7, -0.1, 0.1, HEAD, 34), follow=FL, hand=0.003, cfill=0.2)
+shot("L57", ride_cam(-2.2, -2.2, 1.9, -1.44, -0.1, HEAD, 36, lens2=40), follow=FL, hand=0.002, cfill=0.2)
+shot("L58", ride_cam(-3.1, 1.8, 2.4, -1.44, -0.1, 1.55, 40, lens2=48), follow=FL, hand=0.002, cfill=0.2)
 shot("L59", ride_cam(0.2, 1.4, 1.65, 0.0, 0.0, HEAD, 38), follow=FL, hand=0.003)
 shot("L60", ride_cam(-3.0, -4.5, 1.6, -0.7, 3.0, 2.3, 28), follow=FL, hand=0.003)
 shot("L61", mv((-2.6, 112.0, 40.8), (1.6, 125.0, 40.6), 30, (-2.5, 114.0, 40.8), (1.7, 127.0, 40.8), 30), hand=0.003)
@@ -268,11 +269,13 @@ shot("L80", mv((2.9, 0.3, 1.75), (0.5, 46.0, 13.5), 30, (2.9, 0.3, 1.75), (0.5, 
 shot("L81", mv((-8.5, -11.5, 6.0), (1.5, 48.0, 15.0), 22, (-7.5, -11.5, 6.0), (1.5, 49.0, 15.5), 22), hand=0.002)
 
 # ---- the orbit round the cube (L35): follow the creature, four keys
-ORB = [(0, (0.0, -3.2, 2.0)), (0.34, (-3.2, 0.0, 2.0)), (0.67, (0.0, 3.2, 2.0)), (1.0, (3.2, 0.0, 2.0))]
-orbit_cam = [[u, list(p), [0.0, 0.0, 1.55], 30] for u, p in ORB]
+# set.py draws a true circle at an even speed (r 3.0 m, 3.0 m up, outside the wheel, the chair and the ropes): 180
+# degrees in all, from a back corner to a front corner, so every face shows (two at a time at the ends)
+ORBIT = {"who": "creature", "r": 3.0, "z": 3.0, "tz": 1.6, "a0": -135, "a1": 45}
 for i, (at, cam, opt) in enumerate(SH):
     if at == "L35":
-        SH[i] = (at, orbit_cam, {"follow": "creature", "hand": 0.0})
+        SH[i] = (at, [[0, [0.0, -3.0, 3.0], [0.0, 0.0, 1.6], 30]], {"follow": "creature", "hand": 0.0, "orbit": ORBIT,
+                                                                   "ckey": 0.55, "cfill": 0.35})
 
 shots, SID = [], {}
 for i, (at, cam, opt) in enumerate(SH):
@@ -286,6 +289,9 @@ for i, (at, cam, opt) in enumerate(SH):
         s["follow"] = opt["follow"]
     if "aim" in opt:
         s["aim"] = opt["aim"]
+    for k_ in ("cfill", "ckey", "orbit"):   # read by set.py: the follow-fill gain, the creature key gain, an even orbit
+        if k_ in opt:
+            s[k_] = opt[k_]
     shots.append(s)
     SID[at] = sid
 
@@ -467,10 +473,10 @@ C_.ride("L28", "down", Y25 - 8.0, 1, hidden=True)
 # Wednesday: over the lake, passing so close
 C_.ride("L31", "down", 26.0, 1, jump=True, hidden=False)
 C_.ride("L32", "down", 16.0, 1)
-C_.ride("L33", "down", 10.0, 1)
-C_.ride("L34", "down", 4.0, 1)
-C_.ride("L35", "down", 2.0, 1)
-C_.ride("L36", "down", 0.5, 1)
+C_.ride("L33", "down", 12.5, 1)
+C_.ride("L34", "down", 10.5, 1)
+C_.ride("L35", "down", 8.5, 1)
+C_.ride("L36", "down", 6.5, 1)
 # Thursday: the chair right ahead, going up, its back to me (alone on it, on the side nearer the line)
 C_.ride("L37", "up", 77.0, -1, jump=True, hidden=True)
 C_.ride("L38", "up", 83.0, -1, hidden=False)
@@ -511,6 +517,8 @@ cues = [
     {"at": "L60", "name": "light", "look": "gold", "ramp": 7.0},
     {"at": "L64", "name": "light", "look": "warm1", "ramp": 0.01},
     {"at": "L72", "name": "light", "look": "warm2", "ramp": 9.0},
+    {"at": "L36", "name": "open", "from": 0.55, "dur": 0.5},   # S38 opens on a half-second brightness ease
+    {"at": "L32", "name": "open", "from": 0.9, "dur": 0.4},
     {"at": 0, "name": "card", "me": True, "mr": False},
     {"at": "L68", "name": "card", "me": False, "mr": True},
     {"at": 0, "name": "cup", "on": False},
@@ -552,7 +560,7 @@ sfx += [
     {"at": "L46", "kind": "thud", "db": -12},
     {"at": "L47", "kind": "creak", "db": -18, "dur": 1.6},
     {"at": "L50", "kind": "creak", "db": -14, "dur": 1.2},
-    {"at": "P01+0.55", "kind": "hit", "db": -6, "keep": True},
+    {"at": "L53", "kind": "hit", "db": -6, "keep": True},
     {"at": "L53-0.04", "kind": "sting", "db": -11, "dur": 2.2, "keep": True},
     {"at": "L60", "kind": "thud", "db": -16},
     {"at": "L72", "kind": "bell", "db": -26},
@@ -561,7 +569,7 @@ sfx += [
 
 story = {
     "slug": "ep33-chairlift",
-    "title": "I paid for both seats so I could ride the chairlift alone",
+    "title": "At this lake, the dawn chair is yours if you can ride it alone all week",
     "made_for_kids": False,
     "premise": "On a week's holiday I book the first chair of every dawn on an old lakeside chairlift, both seats, so I can ride up alone. A rider in a faded orange cagoule with a cube head and the same face on all four sides rides the lift alone too, a little nearer my chair each day, and on the foggy Friday it is in the seat beside me.",
     "twist": "The bet that I can't ride up alone has never been won. Every summer someone takes it and loses, and the forfeit seat is how an old couple has ridden the first chair for forty years without once buying a pass.",
@@ -602,7 +610,7 @@ story = {
                   {"kind": "wind", "from": "L43", "to": "L60", "lufs": -40},
               ],
               "sfx": sfx,
-              "music_drops": [{"from": "P01", "to": "L52", "keep": ["hit", "sting"]}]},
+              "music_drops": [{"from": "L51>", "to": "L53", "keep": ["hit", "sting"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")
