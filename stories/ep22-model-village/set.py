@@ -382,7 +382,7 @@ def room_tea(kit, M):
         chair(kit, M, f"tea.c{k}", x, y + 0.047, zf, wood, 0)
     kit.box("tea.counter", (0.34, 0.05, 0.034), (cx - 0.1, yf + 0.58, zf + 0.017), wood)
     kit.box("tea.urn", (0.03, 0.03, 0.05), (cx - 0.2, yf + 0.58, zf + 0.06), M["metal"])
-    room_light(kit, "light tea", "tea", 0.075, 0.025, 0.004, 0.45, "#ffc08a", size=0.004)
+    room_light(kit, "light tea", "tea", 0.075, 0.03, 0.004, 0.3, "#ffb676", size=0.004)
     room_light(kit, "light tea back", "tea", 0.1, 0.4, 0.1, 0.5, "#ffcf9a", size=0.02)
     return ctx
 

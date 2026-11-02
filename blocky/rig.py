@@ -350,6 +350,11 @@ class Character:
         if "scarf" in ex:
             kit.box(f"{n}.scarf", (2.1, 1.12, 0.36), (0, 0, 1.85), ec, self.torso, bevel=0.1)
             kit.box(f"{n}.scarft", (0.36, 0.1, 0.9), (0.45, -0.55, 1.35), ec, self.torso, bevel=0.06)
+        if "backscarf" in ex:   # opt-in (ep22): a scarf tail down the back and a coat seam, so a back reads as a back
+            kit.box(f"{n}.scarfb", (0.4, 0.1, 1.2), (-0.4, 0.57, 1.25), ec, self.torso, bevel=0.06)
+            seam = kit.plastic(spec.get("seam_c", "#33426e"), 0.5)
+            kit.box(f"{n}.seam", (0.1, 0.03, 1.5), (0.1, 0.51, 0.85), seam, self.torso, bevel=0.012)
+            kit.box(f"{n}.belt", (2.02, 0.05, 0.16), (0, 0.5, 0.45), seam, self.torso, bevel=0.02)
         if "tie" in ex:
             kit.box(f"{n}.tie", (0.22, 0.06, 1.1), (0, -0.52, 1.35), ec, self.torso, bevel=0.03)
         if "apron" in ex:

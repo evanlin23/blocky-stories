@@ -199,7 +199,8 @@
    "height": 0.0257,
    "extras": [
     "coat",
-    "scarf"
+    "scarf",
+    "backscarf"
    ],
    "extra_c": "#cc9a1c",
    "face": {
@@ -6853,10 +6854,10 @@
     ],
     "blend": 0,
     "hidden": false,
-    "yaw": 180,
+    "yaw": 162,
     "head": [
-     172,
-     9
+     190,
+     -10
     ],
     "expr": "blank"
    },
@@ -6901,10 +6902,10 @@
     ],
     "blend": 0,
     "hidden": false,
-    "yaw": 180,
+    "yaw": 162,
     "head": [
-     172,
-     9
+     190,
+     -10
     ],
     "expr": "blank"
    },

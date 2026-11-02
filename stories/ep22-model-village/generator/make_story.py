@@ -40,7 +40,7 @@ cast = {
            "hat": "none", "height": 0.96, "face": {"eyes": "round", "brows": True, "ink": "#1d1416"}},
     "resident": {"age": "adult", "skin": "#e8b98f", "shirt": "#1f2e52", "pattern": "solid", "collar": "#1a2644",
                  "pants": "#1e2230", "shoes": "#14161c", "sleeves": "long", "hair": "cap", "hair_c": "#2b1d14",
-                 "hat": "none", "height": 0.0257, "extras": ["coat", "scarf"], "extra_c": "#cc9a1c",
+                 "hat": "none", "height": 0.0257, "extras": ["coat", "scarf", "backscarf"], "extra_c": "#cc9a1c",
                  "face": {"eyes": "round", "brows": False, "mouth": "line", "ink": "#120d0e", "pupil": "#0a0708"}},
 }
 
@@ -151,7 +151,7 @@ def res(at, room, face="away", **kw):
     elif face == "glass":
         put("resident", at, [x - 0.02, y, z], yaw=0, head=[0, 0], hidden=False, expr="blank", **kw)
     elif face == "turned":
-        put("resident", at, [x, y, z], yaw=180, head=[172, 9], hidden=False, expr="blank", **kw)
+        put("resident", at, [x, y, z], yaw=162, head=[190, -10], hidden=False, expr="blank", **kw)
     elif face == "over":
         put("resident", at, [x, y, z], yaw=180, head=[142, 4], hidden=False, expr="blank", **kw)
     elif face == "profile":
