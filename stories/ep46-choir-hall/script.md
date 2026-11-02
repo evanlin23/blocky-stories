@@ -8,13 +8,14 @@
   - Mum keeps one bead at the climax (her ninth goes dark, I take over), so she has one word left for the walk home. The walk home is me talking and Mum laughing, "which is free", then her last word. This keeps the bead count true on screen.
   - Ron gets one quote (seven words, his first in years). It's reported in my line, and it tells me where Mum was without her spending a word.
   - Rows end "by bedtime", not "on the stroke of midnight", so nobody wonders whether midnight is the refill.
+  - **Round 1 (standards, hard rule 5):** the twist no longer reads as "something kept my place" (too close to ep23-only-line and ep32-sitter). No twelfth note in the chord, Mum's goodnight no longer names "your chair", the choir is eleven "for YEARS", and at the climax I never take the twelfth chair: I walk to Mum and sing her last line, and the turn is the bead arithmetic. Changed lines: L19, L23, L26, L66, L67, L68, L69.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 608 spoken words in 84 lines, all `narrator`, plus 2 drops (1.3 s in all).
-- **Estimated length:** about 2:18. At 290 wpm the speech is 2:06, the 0.12 s gaps add about 10 s, the drops 1.3 s and the loop tail 0.25 s. If it lands under 2:15, add "The postman / just WAVES / at his DOG." after L07. If it lands over 2:30, cut L41 first, then L25.
+- **Word count:** 615 spoken words in 84 lines, all `narrator`, plus 2 drops (1.3 s in all).
+- **Estimated length:** about 2:20. At 290 wpm the speech is 2:06, the 0.12 s gaps add about 10 s, the drops 1.3 s and the loop tail 0.25 s. If it lands under 2:15, add "The postman / just WAVES / at his DOG." after L07. If it lands over 2:30, cut L41 first, then L25.
 
 ## The story
 
-- **Premise:** In this world everyone gets ten words a day, worn as ten glass beads round the neck that go dark one per word. Mum leads the village choir and spends all ten of hers at my door every night, inviting me back to the twelfth chair. I haven't spent a word in three years, and people call me the careful one. The week before the winter concert, the empty twelfth chair keeps turning toward her.
+- **Premise:** In this world everyone gets ten words a day, worn as ten glass beads round the neck that go dark one per word. Mum leads the village choir and spends all ten of hers at my door every night, asking me to come and sing. I haven't spent a word in three years, and people call me the careful one. The week before the winter concert, the empty twelfth chair keeps turning toward her.
 - **The rule (first line, L01):** "In this WORLD, / everyone gets / TEN WORDS / a DAY." (9 words)
 - **The marker, on screen by 0.5 s:** a cord of ten chunky glass beads round every neck, hanging to mid-chest over the clothes. A lit bead glows soft amber. A spent bead is dark smoky glass. Every bead change is a slow fade (0.4 s or more). Beads are oversized (about 6 cm across at character scale) so ten read as ten at phone size. No writing anywhere.
 - **The montage (L03 to L09, first 15 s), played for laughs:**
@@ -29,11 +30,11 @@
 
 ## The twist
 
-- **What it is:** I was never careful. Three years ago I stopped talking to Mum, and every word I didn't say piled up. The lump under my jumper is three years of beads. The twelfth chair is mine, and while I stayed away, something kept my place.
+- **What it is:** I was never careful. Three years ago I stopped talking to Mum, and every word I didn't say piled up. The lump under my jumper is three years of beads, the only purse in the village big enough to pay for the verse Mum can't finish. The thing in the twelfth chair was never about me: it turns toward whoever is running out of words.
 - **How the last 15 seconds turn over the first line:** the first time, "everyone gets ten words a day" is a quirky world rule and I'm the thrifty exception. By L73 to L75 it reads as a measure of what I withheld: Mum spent all ten of hers on me every single night, and I spent none on her. The last line repeats the rule and adds "Mum spent hers on ME", then the sting: when I'm late, the choir is still twelve.
 - **Plant 1 (L14 to L15, montage):** old Ron, who hasn't spoken in years, wears his cord wound three times round his neck. Unspent words pile up. Shots S16 and S17 hold on the triple loop with dozens of lit beads.
 - **Plant 2 (L16):** "I keep MINE / tucked under / my JUMPER." The shot shows my collar with ten lit beads, the cord running on down under the knit into a big lumpy bulge at my belly. Paid off at L70 to L71.
-- **Rewatch extras, not narrated:** Mum's goodnight (L19) names "your chair", and L23 says the choir "has been ELEVEN / since I LEFT". The twelfth chair is mine all along.
+- **Rewatch extras, not narrated:** the chair turns furthest in the week Mum's beads are dark by supper (L21, L27), and at L59 it leans in a word at a time as her beads go dark. It sits back the moment someone pays for her line (L68).
 
 ## World
 
@@ -44,7 +45,7 @@ A hillside village in early winter, the week before the choir's winter concert.
 - **The village hall:** a long, plain wooden hall with a sprung pine floor, cream walls, high windows with small square panes, maroon stage curtains (closed), rows of stacking chairs for the audience. At the front, a three-step pine riser with twelve wooden chairs in a slight curve, four per step, the twelfth chair at the far right end of the top step. A bare back rail runs behind the top step. One enamel hall lamp hangs over the riser on a long flex. A music stand for Mum at the front, left.
 - **Outside the hall:** a gravel path, a lamppost, one high window that I look in through.
 - **No text anywhere.** No hymn boards, no posters, no music on the stands (the stands are bare), no numbers on chairs, no signs on the hall. Bunting at the concert is plain coloured triangles.
-- **What's true underneath (never said):** the choir and its riser were built for twelve. When I left, the count went short by one, and the hall's Keeper sits in the gap: the Grin. It hasn't taken anyone and never will. Mum's night out was her own doing, knocking on doors for a twelfth voice. When I sit in the twelfth chair, the count is made true by a person and it's gone. It carries none of the town's markers, so it has no cord and no beads.
+- **What's true underneath (never said):** the Grin has sat in the riser's twelfth chair for as long as the hall has stood. It has no words of its own, so it has no cord and no beads, and it turns toward whoever is spending their last ones, and leans in close when a song is about to run out of words before it ends. It hasn't taken anyone and never will. Mum's night out was her own doing, knocking on doors for a twelfth voice. When I sing her last line, nobody is running out, so it sits back and faces front. It never goes away, and it's no stand-in for me: I stand at the front with Mum, not on the riser.
 
 ## Cast
 
@@ -71,14 +72,14 @@ Every word is the narrator's. Mum's goodnight (L19), the proposal (L04), Ron's q
   | Beat | Lines | Where it is | What shows |
   |---|---|---|---|
   | The street, home | L01 to L22 | not there | |
-  | Through the window | L23 to L27 | not seen. The twelfth chair is empty, and across L23 to L27 it's angled a little further toward Mum's music stand | a twelfth note in the chord (sound only) |
+  | Through the window | L23 to L27 | not seen. The twelfth chair is empty, and across L23 to L27 it's angled a little further toward Mum's music stand | the chair's angle only. No extra voice or note |
   | Thursday, dark hall | L28 to L31 | not seen | the twelfth chair, Mum's scarf on it, the other eleven chairs turned to face it |
   | Ron, the week | L32 to L45 | not seen | |
   | Concert, lights down | L46 to L49 | not seen | the twelfth chair at the lamp's edge, in shadow |
   | First sight | L50 to L52 | seated in the twelfth chair, facing forward, head slightly down | long lens from the back, then mid shot. Readable as a singer. The bare neck shows |
   | The grin | L53 to L55 | same chair, head turned toward the hall (cut, never the turn itself) | front, the grin wraps the sides. From behind, the seam meets at the back. Then the bare neck |
   | The verse | L56 to L62 | leaning out of the chair toward Mum, more each shot | the head tilted, then the face beside Mum's, then the grin at her ear, never touching |
-  | I sit | L67 | gone | the empty chair, then me in it |
+  | I sing her line | L66 to L69 | in the twelfth chair. At L66 and L67 still leaning toward Mum. At L68 (cut) sat back upright, facing front, head slightly down | from the back of the hall over my shoulder, then a wide of the riser with it upright at the lamp's edge. Out of focus behind Mum from L69 to L72 |
   | The sting | L84 | in the twelfth chair again, seen from behind through the hall window | only the back of a maroon head with a black line round it |
 
 ## Palette and light
@@ -99,7 +100,7 @@ Every word is the narrator's. Mum's goodnight (L19), the proposal (L04), Ron's q
 - **Music:** A aeolian, 74 bpm. Our own synthesized score, no samples, no borrowed melody, no music box.
   - **L01 to L29 and P01, thin and light:** a breathy vowel pad shaped like a choir "ah" (formant-filtered saw, three voices), a sparse plucked sine on the off-beats, a light high tick like glass on glass on some bead fades.
   - **From L30 to the end, the drone:** a heavy low drone (A1 with a fifth above, slow beating) enters on "Her SCARF" after P01 and holds under everything to the last word.
-  - **The verse (L56 to L72):** a plain rising melody of our own on the vowel pad, eleven voices then twelve from L68 (a fuller chord), over the drone. No lyrics on screen, no sung words, the narration carries it.
+  - **The verse (L56 to L72):** a plain rising melody of our own on the vowel pad, Mum's voice alone, then mine joining her from L67 (two voices on the melody, never an extra choir voice), over the drone. No lyrics on screen, no sung words, the narration carries it.
   - **The warm turn (L73 to L81):** the harmony lifts to A major over the drone, the pluck comes back.
   - **The sting (L82 to L84):** the major pad drops out on L82, leaving the drone alone. One low, slow glass tick under "TWELVE".
 - **Drops:** P01 (0.7 s, before L30): everything out but the voice tail, one soft wooden creak of a chair, then the drone enters. P02 (0.6 s, before L63): the verse melody cuts out, only a single held note and the hit.
@@ -162,7 +163,7 @@ Shot ids S01 onward are given in the brackets. Very short lines share a shot wit
   - [S20, Mum at her music stand in the hall, maroon robe, mustard scarf, conducting, `smile`]
 - `L18` narrator: Every NIGHT, / she stops / at my DOOR / and spends / her whole TEN.
   - [S21, the dim landing: Mum at my half-open door, my bedside lamp light on her face, `hopeful`, ten beads lit]
-- `L19` narrator: "Night, LOVE. / Thursday's CHOIR. / Your chair / is still THERE. / ALWAYS."
+- `L19` narrator: "Night, LOVE. / Thursday's CHOIR. / Come and SING / with us. / PLEASE."
   - [S22, close on Mum speaking, `smile`, her beads fading one by one, ten fades across the line. S23, her last bead going dark]
 - `L20` narrator: I never ANSWER.
   - [S24, me on the bed with my back to the door, `guarded`, my ten beads lit]
@@ -170,14 +171,14 @@ Shot ids S01 onward are given in the brackets. Very short lines share a shot wit
   - [S25, the kitchen, early evening: Mum at the round table, `tired`, all ten dark, a cold cup of tea]
 - `L22` narrator: She conducts / with just / her HANDS.
   - [S26, the hall through the window: Mum conducting, mouth shut, all dark, the singers watching her hands]
-- `L23` narrator: The choir / has been ELEVEN / since I LEFT.
+- `L23` narrator: The choir / has been ELEVEN / for YEARS.
   - [S27, wide through the window: the riser, eleven singers, and at the far right end of the top step, one empty chair]
 - `L24` narrator: The twelfth CHAIR / sits EMPTY / at the end / of the RISER.
   - [S28, closer, still through the glass: the empty twelfth chair, a folded maroon robe on its seat]
 - `L25` narrator: I listen / at the hall WINDOW / on my way HOME.
   - [S29, outside at night: me on the gravel path under the lamppost, looking up at the high window, `neutral`]
-- `L26` narrator: Eleven MOUTHS. / But TWELVE notes / in the CHORD.
-  - [S30, close through the glass on three singing mouths. S31, the empty chair, and the twelfth note joins the chord]
+- `L26` narrator: Eleven MOUTHS / on one long "AH."
+  - [S30, close through the glass on three singing mouths. S31, the empty chair, still. The sound stays eleven voices, nothing joins]
 - `L27` narrator: And every week, / the chair / has turned / a little FURTHER / toward MUM.
   - [S32, high through the glass: the twelfth chair angled toward Mum's music stand, more than at S27. S33, me at the window, `worried`]
 
@@ -277,13 +278,14 @@ Shot ids S01 onward are given in the brackets. Very short lines share a shot wit
 - **Where:** the hall.
 - **Shots:** 11.
 
-- `L66` narrator: I walk up / the AISLE / to the twelfth CHAIR.
-  - [S77, low behind me walking up the aisle between the dark rows, the lamp ahead]
-- `L67` narrator: When I SIT, / it's EMPTY.
-  - [S78, the twelfth chair, empty in the lamp light. Then S79, me in it, `neutral`]
-- `L68` narrator: And I SING.
-  - [S80, me singing, `smile`. Shares a shot with L69]
-- `L69` narrator: The whole VERSE, / right BESIDE her.
+- `L66` narrator: I walk up / the AISLE / to MUM.
+  - [S77, low behind me walking up the aisle between the dark rows toward Mum in the lamp light, the Grin still leaning toward her in the background]
+- `L67` narrator: I sing her / last LINE / for HER.
+  - [S78, me stepping into the lamp light beside Mum at her stand, singing, `neutral`, my ten collar beads fading. S79, close on Mum's one lit bead, still lit]
+- `L68` narrator: The grin / sits BACK / in its CHAIR.
+  - [S80, wide of the riser: the Grin sat upright in the twelfth chair, facing front, head slightly down, at the lamp's edge. Never seen moving]
+- `L69` narrator: Then I sing / the whole VERSE / AGAIN, / right BESIDE her.
+  - [Shares S81 with L70: me and Mum side by side at the stand in the lamp light, me singing, `smile`, as my cord starts to come out]
 - `L70` narrator: My cord / comes OUT / from my JUMPER.
   - [S81, the long cord slides out of my collar and spills down my front in coils, hundreds of lit beads. Cut away from hands]
 - `L71` narrator: Bead after BEAD / goes DARK, / all the way / to my KNEES.
