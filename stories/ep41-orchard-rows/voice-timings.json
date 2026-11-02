@@ -1,0 +1,1761 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this town, every footprint you leave glows until the next sunrise.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.276
+    ],
+    [
+     1.276,
+     1.939
+    ],
+    [
+     1.939,
+     2.879
+    ]
+   ]
+  },
+  "L02": {
+   "text": "We each glow our own colour.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.379
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Lose your keys after dark, and you follow your glow back to them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.19,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.724,
+     1.293
+    ],
+    [
+     1.362,
+     1.75
+    ],
+    [
+     1.75,
+     2.207
+    ],
+    [
+     2.207,
+     2.69
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Sneak to the fridge at two in the morning, and the floor tells on you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.19,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.19,
+     0.526
+    ],
+    [
+     0.526,
+     0.974
+    ],
+    [
+     0.974,
+     1.483
+    ],
+    [
+     1.552,
+     1.931
+    ],
+    [
+     1.931,
+     2.655
+    ]
+   ]
+  },
+  "L05": {
+   "text": "So the sneaky ones step inside somebody else's prints.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.927,
+   "dur": 2.638,
+   "onset": 0.19,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.586,
+     1.362
+    ],
+    [
+     1.362,
+     2.431
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Their prints get one more night. Yours never show.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.138
+    ],
+    [
+     1.215,
+     2.207
+    ]
+   ]
+  },
+  "L07": {
+   "text": "By sunrise, everybody's trail is gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.707,
+     1.337
+    ],
+    [
+     1.337,
+     1.948
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Except mine. At Nan's, my prints never fade.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.81,
+     1.19
+    ],
+    [
+     1.215,
+     1.5
+    ],
+    [
+     1.5,
+     2.207
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Nan raised me in the orchard house, out past the last street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.017
+    ],
+    [
+     1.017,
+     1.801
+    ],
+    [
+     1.801,
+     2.586
+    ]
+   ]
+  },
+  "L10": {
+   "text": "I moved into town last year. This week I came back for the harvest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.172,
+   "end": 2.948,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.431
+    ],
+    [
+     1.5,
+     1.862
+    ],
+    [
+     1.862,
+     2.301
+    ],
+    [
+     2.301,
+     2.948
+    ]
+   ]
+  },
+  "L11": {
+   "text": "The orchard was still criss-crossed with my glowing pink paths.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8755,
+   "dur": 3.0,
+   "onset": 0.207,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.207,
+     0.629
+    ],
+    [
+     0.629,
+     1.345
+    ],
+    [
+     1.345,
+     1.845
+    ],
+    [
+     1.845,
+     2.776
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Every row I ever walked, still lit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.966
+    ],
+    [
+     1.0,
+     1.621
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Nan said, her knees don't do the rows after dark anymore.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8755,
+   "dur": 3.138,
+   "onset": 0.224,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.224,
+     0.879
+    ],
+    [
+     0.879,
+     1.431
+    ],
+    [
+     1.431,
+     2.052
+    ],
+    [
+     2.052,
+     2.931
+    ]
+   ]
+  },
+  "L14": {
+   "text": "The first morning, a new trail ran down the far row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.759,
+     1.224
+    ],
+    [
+     1.224,
+     1.621
+    ],
+    [
+     1.621,
+     2.276
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Huge square prints, pressed dark into the dew.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.931,
+     1.457
+    ],
+    [
+     1.457,
+     1.983
+    ]
+   ]
+  },
+  "L16": {
+   "text": "The only prints in town that didn't glow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.138
+    ],
+    [
+     1.138,
+     1.81
+    ]
+   ]
+  },
+  "L17": {
+   "text": "They ran right beside my old path, one stride to the left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.147
+    ],
+    [
+     1.147,
+     2.017
+    ],
+    [
+     2.017,
+     2.655
+    ]
+   ]
+  },
+  "L18": {
+   "text": "And where they stopped, at the end of the far row, something stood.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.931
+    ],
+    [
+     0.931,
+     1.164
+    ],
+    [
+     1.164,
+     1.621
+    ],
+    [
+     1.69,
+     2.517
+    ]
+   ]
+  },
+  "L19": {
+   "text": "It was built like a person, out of far too few blocks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     1.052
+    ],
+    [
+     1.121,
+     1.492
+    ],
+    [
+     1.492,
+     2.397
+    ]
+   ]
+  },
+  "L20": {
+   "text": "One huge cube for a head, with a face cut right into it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.155
+    ],
+    [
+     1.224,
+     1.629
+    ],
+    [
+     1.629,
+     1.974
+    ],
+    [
+     1.974,
+     2.534
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Clay red and sack brown, as still as the trees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.103
+    ],
+    [
+     1.172,
+     1.526
+    ],
+    [
+     1.526,
+     2.172
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Nan didn't look up. She just handed me a basket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.19,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.672,
+     1.207
+    ],
+    [
+     1.207,
+     1.492
+    ],
+    [
+     1.492,
+     2.138
+    ]
+   ]
+  },
+  "L23": {
+   "text": "By the stove, her slippers were soaked right through.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.664,
+     1.147
+    ],
+    [
+     1.147,
+     2.017
+    ]
+   ]
+  },
+  "L24": {
+   "text": "The second morning, the square trail stopped three rows nearer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     1.19
+    ],
+    [
+     1.19,
+     1.621
+    ],
+    [
+     1.621,
+     2.345
+    ]
+   ]
+  },
+  "L25": {
+   "text": "It stood between two trees, facing the house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.052
+    ],
+    [
+     1.103,
+     1.948
+    ]
+   ]
+  },
+  "L26": {
+   "text": "I picked that whole row with my back to it, and never once saw it move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.155,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.94
+    ],
+    [
+     0.94,
+     1.345
+    ],
+    [
+     1.345,
+     1.897
+    ],
+    [
+     1.897,
+     2.224
+    ],
+    [
+     2.224,
+     2.845
+    ]
+   ]
+  },
+  "L27": {
+   "text": "The third morning, I pulled up the kitchen blind.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.776,
+     1.129
+    ],
+    [
+     1.129,
+     2.034
+    ]
+   ]
+  },
+  "L28": {
+   "text": "The square trail ended right under the window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.267
+    ],
+    [
+     1.267,
+     1.879
+    ]
+   ]
+  },
+  "L29": {
+   "text": "And so did it. That cube head filled the bottom of the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.155,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     1.224
+    ],
+    [
+     1.224,
+     1.638
+    ],
+    [
+     1.638,
+     1.923
+    ],
+    [
+     1.923,
+     2.569
+    ]
+   ]
+  },
+  "L30": {
+   "text": "That night, the fog came right up to the porch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.948
+    ],
+    [
+     0.948,
+     1.25
+    ],
+    [
+     1.25,
+     1.845
+    ]
+   ]
+  },
+  "L31": {
+   "text": "I woke at three, and Nan's bed was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.155
+    ],
+    [
+     1.155,
+     2.017
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Her blue prints went from the bed, across the kitchen, to the back door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.155,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     0.914
+    ],
+    [
+     0.914,
+     1.672
+    ],
+    [
+     1.672,
+     2.103
+    ],
+    [
+     2.103,
+     2.81
+    ]
+   ]
+  },
+  "L33": {
+   "text": "And stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.0,
+   "onset": 0.172,
+   "end": 0.81,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ]
+   ]
+  },
+  "L34": {
+   "text": "I opened the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.069
+    ]
+   ]
+  },
+  "L35": {
+   "text": "The porch lamp faded slowly down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.724
+    ]
+   ]
+  },
+  "L36": {
+   "text": "It was on the step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.155,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     1.0
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Its cut-in face was level with mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.845
+    ],
+    [
+     0.845,
+     1.164
+    ],
+    [
+     1.164,
+     1.81
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Fog sat in the cuts of its eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.19,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.19,
+     0.647
+    ],
+    [
+     0.647,
+     0.94
+    ],
+    [
+     0.94,
+     1.552
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Past it, one of my trails was burning brighter than all the rest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.802
+    ],
+    [
+     0.802,
+     1.543
+    ],
+    [
+     1.543,
+     1.992
+    ],
+    [
+     1.992,
+     2.586
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Fresh. Lit tonight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.19,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.19,
+     1.034
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Somebody had walked in my prints and never left one of their own.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.19,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.31
+    ],
+    [
+     1.31,
+     1.828
+    ],
+    [
+     1.828,
+     1.983
+    ],
+    [
+     1.983,
+     2.621
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I stepped down past that face and followed my own trail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.155,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.31
+    ],
+    [
+     1.31,
+     1.741
+    ],
+    [
+     1.741,
+     2.448
+    ]
+   ]
+  },
+  "L43": {
+   "text": "At the second row, I looked back. It was standing in the first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.948
+    ],
+    [
+     0.948,
+     1.534
+    ],
+    [
+     1.534,
+     1.888
+    ],
+    [
+     1.888,
+     2.5
+    ]
+   ]
+  },
+  "L44": {
+   "text": "At the fifth row, I looked again. It was standing in the fourth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.94
+    ],
+    [
+     0.94,
+     1.534
+    ],
+    [
+     1.534,
+     1.888
+    ],
+    [
+     1.888,
+     2.483
+    ]
+   ]
+  },
+  "L45": {
+   "text": "One stride to my left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.259
+    ]
+   ]
+  },
+  "L46": {
+   "text": "I didn't look back again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.259
+    ]
+   ]
+  },
+  "L47": {
+   "text": "My trail ran to the bench at the end of the far row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.121
+    ],
+    [
+     1.121,
+     1.439
+    ],
+    [
+     1.439,
+     1.561
+    ],
+    [
+     1.561,
+     2.241
+    ]
+   ]
+  },
+  "L48": {
+   "text": "The bench, where Nan and I sat every single evening.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.927,
+   "dur": 2.638,
+   "onset": 0.19,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.724,
+     1.094
+    ],
+    [
+     1.094,
+     1.534
+    ],
+    [
+     1.534,
+     2.431
+    ]
+   ]
+  },
+  "L49": {
+   "text": "She was sitting on it, in her soaking wet slippers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.19,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ],
+    [
+     0.552,
+     0.793
+    ],
+    [
+     0.828,
+     1.259
+    ],
+    [
+     1.259,
+     2.017
+    ]
+   ]
+  },
+  "L50": {
+   "text": "She said she walks it every night. In case.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.19,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     0.931
+    ],
+    [
+     0.931,
+     1.914
+    ]
+   ]
+  },
+  "L51": {
+   "text": "My prints never faded on their own.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.129
+    ],
+    [
+     1.129,
+     1.741
+    ]
+   ]
+  },
+  "L52": {
+   "text": "Every night since I left, Nan walked my old paths, step for step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     0.966
+    ],
+    [
+     1.034,
+     1.526
+    ],
+    [
+     1.526,
+     1.983
+    ],
+    [
+     2.017,
+     2.776
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Right inside my prints, so hers never showed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.293
+    ],
+    [
+     1.293,
+     2.052
+    ]
+   ]
+  },
+  "L54": {
+   "text": "And the square trail was walking the empty place beside her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.164
+    ],
+    [
+     1.164,
+     1.672
+    ],
+    [
+     1.672,
+     2.362
+    ]
+   ]
+  },
+  "L55": {
+   "text": "I sat down next to her, in my old spot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.966
+    ],
+    [
+     1.017,
+     1.19
+    ],
+    [
+     1.19,
+     1.914
+    ]
+   ]
+  },
+  "L56": {
+   "text": "When I looked back down the row, there was only fog.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.828
+    ],
+    [
+     0.828,
+     1.328
+    ],
+    [
+     1.328,
+     2.103
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Nan said I always did walk too fast.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.155
+    ],
+    [
+     1.155,
+     1.845
+    ]
+   ]
+  },
+  "L58": {
+   "text": "So we walked home at her pace.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.784
+    ],
+    [
+     0.784,
+     1.379
+    ]
+   ]
+  },
+  "L59": {
+   "text": "Me beside her for the first time, instead of out in front.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.931
+    ],
+    [
+     0.931,
+     1.638
+    ],
+    [
+     1.638,
+     2.448
+    ]
+   ]
+  },
+  "L60": {
+   "text": "She leaned on my arm all the way up the porch steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.19,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     0.922
+    ],
+    [
+     0.922,
+     1.199
+    ],
+    [
+     1.199,
+     2.017
+    ]
+   ]
+  },
+  "L61": {
+   "text": "At sunrise, I stood at the kitchen window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.724,
+     1.043
+    ],
+    [
+     1.043,
+     1.914
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Down the far row ran a new pair of trails, side by side.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.879
+    ],
+    [
+     0.879,
+     1.207
+    ],
+    [
+     1.207,
+     1.879
+    ],
+    [
+     1.879,
+     2.569
+    ]
+   ]
+  },
+  "L63": {
+   "text": "One pink and patient. One blue and slow, for the first time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.517
+    ],
+    [
+     1.517,
+     1.862
+    ],
+    [
+     1.897,
+     2.034
+    ],
+    [
+     2.034,
+     2.776
+    ]
+   ]
+  },
+  "L64": {
+   "text": "The square trail ended at the bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     0.992
+    ],
+    [
+     0.992,
+     1.552
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Everyone else's prints fade at sunrise.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8755,
+   "dur": 2.31,
+   "onset": 0.207,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.207,
+     1.069
+    ],
+    [
+     1.069,
+     2.086
+    ]
+   ]
+  },
+  "L66": {
+   "text": "Mine never fade. Nan sees to it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8652,
+   "dur": 2.19,
+   "onset": 0.224,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.224,
+     0.948
+    ],
+    [
+     1.008,
+     1.466
+    ],
+    [
+     1.466,
+     1.966
+    ]
+   ]
+  }
+ }
+}

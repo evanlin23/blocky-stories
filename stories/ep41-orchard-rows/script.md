@@ -169,7 +169,7 @@ L02. We each glow our own COLOUR.
 L03. Lose your keys after dark, and you follow your glow back to THEM.
 L04. Sneak to the fridge at two in the morning, and the floor tells on YOU.
 L05. So the sneaky ones step inside somebody else's PRINTS.
-L06. Theirs get one more night. Yours never SHOW.
+L06. Their prints get one more night. Yours never SHOW.
 L07. By sunrise, everybody's trail is GONE.
 L08. Except mine. At Nan's, my prints never FADE.
 L09. Nan raised me in the orchard house, out past the last STREET.
