@@ -24,6 +24,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep12 `knock-back` | none (before the canon), but the knock fits the roll call | |
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S59, under L59 ("Wren tore it in half"), held 1.5 s, not narrated |
+| ep26 `last-skate` | a plain tally of two short upright strokes in dark cherry, pressed into the heel leather of a pair of far-too-long cherry-red skates in the end cubby of the rink's hire counter (one stroke per partner in a couples skate). No extra stroke, touches no thread | the lore shot under L10 (Nan at the hire counter), held 1.2 s, not narrated. The pin asks about it |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
