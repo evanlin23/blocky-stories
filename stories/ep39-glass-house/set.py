@@ -533,8 +533,8 @@ def build_garden(kit, ctx, M):
     kit.light("ga_backdoor", "POINT", (x0, 1.2, 1.5), 90.0, "#ffbe78", size=0.2)
     # the creature's own lights (cool rim from the moon side, a low warm light from the lamps), set in animate
     kit.light("ga_rim", "SPOT", (x0 + 5, 22, 6.0), 900.0, "#a8c4ff", size=0.3, spot=40, blend=0.6)
-    kit.light("ga_under", "SPOT", (x0 + 0.9, 18.7, 0.8), 50.0, "#ffa860", size=0.15, spot=60, blend=0.7)
-    kit.light("ga_undr2", "SPOT", (x0 + 1.5, 18.2, 0.7), 40.0, "#ffa860", size=0.15, spot=60, blend=0.7)
+    kit.light("ga_under", "SPOT", (x0 + 0.9, 18.7, 0.8), 50.0, "#ffc890", size=0.15, spot=60, blend=0.7)
+    kit.light("ga_undr2", "SPOT", (x0 + 1.5, 18.2, 0.7), 40.0, "#ffc890", size=0.15, spot=60, blend=0.7)
     kit.aim(kit.LIGHTS["ga_rim"]["obj"], (x0 + 2.4, 19.5, 2.0))
     kit.aim(kit.LIGHTS["ga_under"]["obj"], (x0 + 1.55, 19.5, 1.35))
     kit.aim(kit.LIGHTS["ga_undr2"]["obj"], (x0 + 1.55, 19.5, 1.35))
@@ -696,8 +696,9 @@ def build_glasshouse(kit, ctx, M):
         lm = kit.emit("#ffbe78", 3.0, f"lampbulb{i}")
         kit.sphere(f"gh_bulb{i}", 0.07, (x0, yy, 2.4), lm)
         ctx["lamp_mats"].append(lm)
-        kit.light(f"ga_lamp{i}", "POINT", (x0, yy, 2.3), 55.0, "#ffbe78", size=0.15)
-    kit.light("ga_lampfill", "AREA", (x0, 19.0, 2.2), 25.0, "#ffbe78", size=3.0, rot=(math.pi, 0, 0))
+        kit.light(f"ga_lamp{i}", "POINT", (x0, yy, 2.3), 55.0, "#ffd6a8", size=0.15)
+    kit.light("ga_lampfill", "AREA", (x0, 19.0, 2.2), 25.0, "#ffd6a8", size=3.0, rot=(math.pi, 0, 0))
+    kit.light("ga_cool", "AREA", (x0, 19.0, 2.9), 45.0, "#a8c0ff", size=4.0, rot=(math.pi, 0, 0))
     # the torn-off wrapper and its paper band on the floor, and the drops that fall through the open vent
     w1 = kit.cyl("gh_wrap", 0.075, 0.9, (x0 + 0.2, 18.1, 0.075), M["wrap"], n=14, rot=(math.pi / 2, 0, 0.25))
     w2 = kit.cyl("gh_wrapband", 0.078, 0.1, (x0 + 0.17, 17.85, 0.078), M["band"], n=14, rot=(math.pi / 2, 0, 0.25))
@@ -1125,6 +1126,7 @@ def animate(kit, story, tl, t, ctx):
         for st in ctx["stars"]:
             st.hide_render = td["stars"] < 0.5
         lamps = _level(_cues(tl, "lamps"), "to", t, 1.0)
+        over["ga_cool"] = td["ga_moon"]
         over["ga_lamp0"] = lamps
         over["ga_lamp1"] = lamps
         over["ga_lampfill"] = lamps
