@@ -156,9 +156,9 @@ Every line is `who: narrator`. CAPS are the caption key words. Planned silent be
 L01. In this town, a COIN over your head flips at MIDNIGHT and decides your LUCK.
 L02. Sun face up, and tomorrow goes your WAY.
 L03. Moon face up, and it really, really DOESN'T.
-L04. On a sun day, people PROPOSE and ask for RAISES.
-L05. On a moon day, they stay home in dressing gowns with SOUP.
-L06. The noodle man next door has had a HUNDRED suns in a row. Nobody can STAND him.
+L04. On a sunny day, people PROPOSE and ask for RAISES.
+L05. On a moon day, they stay home in ROBES with SOUP.
+L06. The noodle man next door has had a SUN every day since SPRING. Nobody can STAND him.
 L07. And first dates only happen when BOTH coins say SUN.
 L08. Every coin lands. Except MINE.
 L09. Mine stands on its EDGE.
@@ -166,11 +166,11 @@ L10. My big sister Bea and I started a dumpling stall at the night MARKET.
 L11. We painted the sign together. I did the SUN half, and Bea did the MOON.
 L12. A month ago, I quit to take a job in an OFFICE.
 L13. Bea kept the stall, and never said a WORD.
-L14. Since that night, her coin has landed on the MOON. Thirty nights in a ROW.
+L14. Since that night, her coin has landed on the MOON. Twenty nights in a ROW.
 L15. And mine has stood on its edge exactly as LONG.
 L16. On Friday, I stood across the car park with my hood UP.
 L17. The noodle queue next door ran right back to the lantern ARCH.
-L18. When it reached Bea's stall, it bent AROUND it, like water round a STONE.
+L18. When it reached Bea's stall, it bent AROUND it, like water around a STONE.
 L19. A man looked up at her coin and kept WALKING.
 L20. Bea folded dumplings for nobody, steam in her FACE.
 L21. Her moon turned slowly over her HEAD.
@@ -178,7 +178,7 @@ L22. Mine hung over me, a thin gold LINE.
 L23. Then I noticed a customer under the ARCH.
 L24. From the side, it looked like anyone ELSE.
 L25. But there was no coin over its HEAD.
-L26. At closing, Bea said one more Friday, and then she'd SELL.
+L26. When we closed, Bea said one more Friday, and then she'd SELL.
 L27. The next Friday, I came back. For the dumplings, I told MYSELF.
 L28. The customer with no coin was three stalls NEARER.
 L29. Still side on to me. Still facing OUR stall.
@@ -193,7 +193,7 @@ L37. The other side was flat and smooth, like a TABLETOP.
 L38. And its one eye was fixed on the empty space beside BEA.
 L39. Then the midnight BELL rang.
 L40. The lanterns faded slowly down, like they do before every FLIP.
-L41. In the dark, I heard Bea's knife on the chopping BOARD.
+L41. In the dark, I heard Bea tapping the chopping BOARD.
 L42. Then it STOPPED.
 L43. The lanterns came slowly back UP.
 L44. It was behind our COUNTER.
@@ -204,10 +204,10 @@ L48. I looked at our sign. A sun half and a moon HALF.
 L49. I looked up at her coin. Only ever the MOON.
 L50. Then up at mine. Only ever the EDGE.
 L51. Her moon and my sun were the two sides of ONE coin.
-L52. When I walked out, I took the sun side with ME.
+L52. When I walked out, I took the SUN with ME.
 L53. She was left with a coin that could only land on the MOON.
 L54. And mine had nothing to land ON.
-L55. So I walked round and stepped into my old SPOT.
+L55. So I walked around and stepped into my old SPOT.
 L56. Right where the flat side had BEEN.
 L57. And there was nobody next to Bea but ME.
 L58. Then every coin in the market FLIPPED.

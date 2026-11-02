@@ -1,0 +1,6641 @@
+{
+ "slug": "ep40-night-market",
+ "title": "In this town, a coin over your head decides your luck",
+ "made_for_kids": false,
+ "premise": "In a town where a gold coin floats over every head and flips at midnight to decide your luck, my sister Bea keeps our dumpling stall at the Friday night market alone since I quit for an office job. Her coin lands on the moon every night, the queues bend round her stall, and mine stands on its edge. Over three Fridays a customer with no coin comes one stall nearer, until it stands behind our counter, beside Bea.",
+ "twist": "Bea's coin and mine were never two coins: they were the two sides of one that split the night I walked out. She kept only the moon side, and I took the sun side, which has nothing to land on.",
+ "world": "an open-air car park night market on a wet Friday: two facing rows of striped-awning food stalls under strings of paper lanterns, and an arch of lanterns where the market begins",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#b49cff",
+ "caption": {
+  "ink": "#08090d",
+  "stroke_add": 2,
+  "shadow": 0.8
+ },
+ "key_stroke": 2,
+ "gap": 0.12,
+ "tail": 0,
+ "look": {
+  "fog": "#1a2030",
+  "fog_density": 0.04,
+  "fog_start": 5.0,
+  "sky": "#0e1220",
+  "sky_strength": 1.0,
+  "exposure": 1.2,
+  "flash_safe": true
+ },
+ "grade": {
+  "shadows": [
+   -0.01,
+   0.0,
+   0.05
+  ],
+  "highlights": [
+   0.04,
+   0.012,
+   -0.03
+  ],
+  "saturation": 1.0,
+  "contrast": 1.06,
+  "vignette": 0.35,
+  "bloom": 0.3,
+  "grain": 0.012
+ },
+ "phonemes": {
+  "Bea": "bˈiːɐ",
+  "queue": "kjˈu"
+ },
+ "equal_coins": [
+  "S58"
+ ],
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#e0b48a",
+   "shirt": "#4a5d7a",
+   "pattern": "solid",
+   "pants": "#2c2f3a",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2e2018",
+   "hat": "beanie",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   },
+   "hat_c": "#4a5d7a",
+   "extras": [
+    "hooddown"
+   ],
+   "body_width": 0.85
+  },
+  "me_office": {
+   "age": "adult",
+   "skin": "#e0b48a",
+   "shirt": "#f1f1ee",
+   "pattern": "solid",
+   "pants": "#34363e",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2e2018",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   },
+   "collar": "#d9d9d6",
+   "extras": [
+    "tie"
+   ],
+   "extra_c": "#1f2a4a",
+   "body_width": 0.85
+  },
+  "me_apron": {
+   "age": "adult",
+   "skin": "#e0b48a",
+   "shirt": "#f1f1ee",
+   "pattern": "solid",
+   "pants": "#34363e",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2e2018",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   },
+   "collar": "#d9d9d6",
+   "extras": [
+    "apron"
+   ],
+   "extra_c": "#d5a32b",
+   "body_width": 0.85
+  },
+  "bea": {
+   "age": "adult",
+   "skin": "#c98f6a",
+   "shirt": "#2d7f7a",
+   "pattern": "knit",
+   "pants": "#2c2f3a",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#16141a",
+   "hat": "none",
+   "face": {
+    "eyes": "tired",
+    "brows": true,
+    "ink": "#161012",
+    "bags": true
+   },
+   "pattern_c": "#25706c",
+   "extras": [
+    "apron"
+   ],
+   "extra_c": "#d5a32b",
+   "body_width": 0.85
+  },
+  "noodle": {
+   "age": "adult",
+   "skin": "#e8b98e",
+   "shirt": "#f2f0ea",
+   "pattern": "solid",
+   "pants": "#3b4a5c",
+   "shoes": "#25262b",
+   "sleeves": "short",
+   "hair": "buzz",
+   "hair_c": "#2a2420",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   },
+   "width": 1.3
+  },
+  "ca": {
+   "age": "adult",
+   "skin": "#8c5a3c",
+   "shirt": "#5f7f45",
+   "pattern": "plaid",
+   "pants": "#3a3a40",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#1c1512",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   },
+   "pattern_c": "#3f5a2e"
+  },
+  "cb": {
+   "age": "adult",
+   "skin": "#f0c8a0",
+   "shirt": "#8a5a8f",
+   "pattern": "solid",
+   "pants": "#303342",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#4a2a1a",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   }
+  },
+  "cw": {
+   "age": "adult",
+   "skin": "#b07a55",
+   "shirt": "#3d6ea6",
+   "pattern": "solid",
+   "pants": "#2a2c34",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#251a14",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   },
+   "extras": [
+    "apron"
+   ],
+   "extra_c": "#e8e4d8"
+  },
+  "co": {
+   "age": "adult",
+   "skin": "#d9a67a",
+   "shirt": "#a33c3c",
+   "pattern": "solid",
+   "pants": "#2a2c34",
+   "shoes": "#25262b",
+   "sleeves": "short",
+   "hair": "spiky",
+   "hair_c": "#6b6b70",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   }
+  },
+  "g1": {
+   "age": "adult",
+   "skin": "#f0c8a0",
+   "shirt": "#6a3d6e",
+   "pattern": "solid",
+   "pants": "#6a3d6e",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#3a2a22",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   },
+   "pants_pattern": "solid"
+  },
+  "g2": {
+   "age": "adult",
+   "skin": "#c98f6a",
+   "shirt": "#8a8c92",
+   "pattern": "solid",
+   "pants": "#8a8c92",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#2a2420",
+   "hat": "none",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In this town,",
+     "In this town,"
+    ],
+    [
+     "a COIN over",
+     "a coin over"
+    ],
+    [
+     "your head flips",
+     "your head flips"
+    ],
+    [
+     "at MIDNIGHT and",
+     "at midnight and"
+    ],
+    [
+     "decides your LUCK.",
+     "decides your luck."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Sun face up,",
+     "Sun face up,"
+    ],
+    [
+     "and tomorrow goes",
+     "and tomorrow goes"
+    ],
+    [
+     "your WAY.",
+     "your way."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Moon face up,",
+     "Moon face up,"
+    ],
+    [
+     "and it really,",
+     "and it really,"
+    ],
+    [
+     "really DOESN'T.",
+     "really doesn't."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "On a",
+     "On a"
+    ],
+    [
+     "sunny day,",
+     "sunny day,"
+    ],
+    [
+     "people PROPOSE and",
+     "people propose and"
+    ],
+    [
+     "ask for RAISES.",
+     "ask for raises."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "On a",
+     "On a"
+    ],
+    [
+     "moon day,",
+     "moon day,"
+    ],
+    [
+     "they stay home",
+     "they stay home"
+    ],
+    [
+     "in ROBES",
+     "in robes"
+    ],
+    [
+     "with SOUP.",
+     "with soup."
+    ]
+   ],
+   "tempo": 0.93
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The noodle man",
+     "The noodle man"
+    ],
+    [
+     "next door has",
+     "next door has"
+    ],
+    [
+     "had a SUN",
+     "had a sun"
+    ],
+    [
+     "every day since",
+     "every day since"
+    ],
+    [
+     "SPRING.",
+     "spring."
+    ],
+    [
+     "Nobody can",
+     "Nobody can"
+    ],
+    [
+     "STAND him.",
+     "stand him."
+    ]
+   ],
+   "tempo": 0.95
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And first dates",
+     "And first dates"
+    ],
+    [
+     "only happen when",
+     "only happen when"
+    ],
+    [
+     "BOTH coins",
+     "both coins"
+    ],
+    [
+     "say SUN.",
+     "say sun."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every coin lands.",
+     "Every coin lands."
+    ],
+    [
+     "Except MINE.",
+     "Except mine."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mine stands on",
+     "Mine stands on"
+    ],
+    [
+     "its EDGE.",
+     "its edge."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My big sister",
+     "My big sister"
+    ],
+    [
+     "Bea and I",
+     "Bea and I"
+    ],
+    [
+     "started a dumpling",
+     "started a dumpling"
+    ],
+    [
+     "stall at the",
+     "stall at the"
+    ],
+    [
+     "night MARKET.",
+     "night market."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We painted the",
+     "We painted the"
+    ],
+    [
+     "sign together.",
+     "sign together."
+    ],
+    [
+     "I did the",
+     "I did the"
+    ],
+    [
+     "SUN half,",
+     "sun half,"
+    ],
+    [
+     "and Bea did",
+     "and Bea did"
+    ],
+    [
+     "the MOON.",
+     "the moon."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A month ago,",
+     "A month ago,"
+    ],
+    [
+     "I quit to",
+     "I quit to"
+    ],
+    [
+     "take a job",
+     "take a job"
+    ],
+    [
+     "in an OFFICE.",
+     "in an office."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Bea kept",
+     "Bea kept"
+    ],
+    [
+     "the stall,",
+     "the stall,"
+    ],
+    [
+     "and never said",
+     "and never said"
+    ],
+    [
+     "a WORD.",
+     "a word."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Since that night,",
+     "Since that night,"
+    ],
+    [
+     "her coin has",
+     "her coin has"
+    ],
+    [
+     "landed on",
+     "landed on"
+    ],
+    [
+     "the MOON.",
+     "the moon."
+    ],
+    [
+     "Twenty nights in",
+     "Twenty nights in"
+    ],
+    [
+     "a ROW.",
+     "a row."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And mine has",
+     "And mine has"
+    ],
+    [
+     "stood on its",
+     "stood on its"
+    ],
+    [
+     "edge exactly",
+     "edge exactly"
+    ],
+    [
+     "as LONG.",
+     "as long."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "On Friday,",
+     "On Friday,"
+    ],
+    [
+     "I stood across",
+     "I stood across"
+    ],
+    [
+     "the car park",
+     "the car park"
+    ],
+    [
+     "with my",
+     "with my"
+    ],
+    [
+     "hood UP.",
+     "hood up."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The noodle queue",
+     "The noodle queue"
+    ],
+    [
+     "next door ran",
+     "next door ran"
+    ],
+    [
+     "right back to",
+     "right back to"
+    ],
+    [
+     "the lantern ARCH.",
+     "the lantern arch."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "When it reached",
+     "When it reached"
+    ],
+    [
+     "Bea's stall,",
+     "Bea's stall,"
+    ],
+    [
+     "it bent",
+     "it bent"
+    ],
+    [
+     "AROUND it,",
+     "around it,"
+    ],
+    [
+     "like water around",
+     "like water around"
+    ],
+    [
+     "a STONE.",
+     "a stone."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A man looked",
+     "A man looked"
+    ],
+    [
+     "up at her",
+     "up at her"
+    ],
+    [
+     "coin and",
+     "coin and"
+    ],
+    [
+     "kept WALKING.",
+     "kept walking."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Bea folded dumplings",
+     "Bea folded dumplings"
+    ],
+    [
+     "for nobody,",
+     "for nobody,"
+    ],
+    [
+     "steam in",
+     "steam in"
+    ],
+    [
+     "her FACE.",
+     "her face."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her moon turned",
+     "Her moon turned"
+    ],
+    [
+     "slowly over",
+     "slowly over"
+    ],
+    [
+     "her HEAD.",
+     "her head."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mine hung",
+     "Mine hung"
+    ],
+    [
+     "over me,",
+     "over me,"
+    ],
+    [
+     "a thin",
+     "a thin"
+    ],
+    [
+     "gold LINE.",
+     "gold line."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I noticed",
+     "Then I noticed"
+    ],
+    [
+     "a customer under",
+     "a customer under"
+    ],
+    [
+     "the ARCH.",
+     "the arch."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "From the side,",
+     "From the side,"
+    ],
+    [
+     "it looked like",
+     "it looked like"
+    ],
+    [
+     "anyone ELSE.",
+     "anyone else."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But there was",
+     "But there was"
+    ],
+    [
+     "no coin over",
+     "no coin over"
+    ],
+    [
+     "its HEAD.",
+     "its head."
+    ]
+   ],
+   "gap": 0.4
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "When we closed,",
+     "When we closed,"
+    ],
+    [
+     "Bea said one",
+     "Bea said one"
+    ],
+    [
+     "more Friday,",
+     "more Friday,"
+    ],
+    [
+     "and then",
+     "and then"
+    ],
+    [
+     "she'd SELL.",
+     "she'd sell."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The next Friday,",
+     "The next Friday,"
+    ],
+    [
+     "I came back.",
+     "I came back."
+    ],
+    [
+     "For the dumplings,",
+     "For the dumplings,"
+    ],
+    [
+     "I told MYSELF.",
+     "I told myself."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The customer with",
+     "The customer with"
+    ],
+    [
+     "no coin was",
+     "no coin was"
+    ],
+    [
+     "three stalls NEARER.",
+     "three stalls nearer."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Still side on",
+     "Still side on"
+    ],
+    [
+     "to me.",
+     "to me."
+    ],
+    [
+     "Still facing",
+     "Still facing"
+    ],
+    [
+     "OUR stall.",
+     "our stall."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its shadow on",
+     "Its shadow on"
+    ],
+    [
+     "the tarmac was",
+     "the tarmac was"
+    ],
+    [
+     "only half",
+     "only half"
+    ],
+    [
+     "as WIDE.",
+     "as wide."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The noodle man",
+     "The noodle man"
+    ],
+    [
+     "shouted that tonight",
+     "shouted that tonight"
+    ],
+    [
+     "would be his",
+     "would be his"
+    ],
+    [
+     "hundred and EIGHTH.",
+     "hundred and eighth."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The Friday after,",
+     "The Friday after,"
+    ],
+    [
+     "I was the",
+     "I was the"
+    ],
+    [
+     "only one in",
+     "only one in"
+    ],
+    [
+     "Bea's QUEUE.",
+     "Bea's queue."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Behind me,",
+     "Behind me,"
+    ],
+    [
+     "at the stall",
+     "at the stall"
+    ],
+    [
+     "right OPPOSITE,",
+     "right opposite,"
+    ],
+    [
+     "it was WAITING.",
+     "it was waiting."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Facing me",
+     "Facing me"
+    ],
+    [
+     "FRONT on,",
+     "front on,"
+    ],
+    [
+     "this time.",
+     "this time."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There was only",
+     "There was only"
+    ],
+    [
+     "HALF of it.",
+     "half of it."
+    ]
+   ],
+   "gap": 0.6
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The LEFT half.",
+     "The left half."
+    ],
+    [
+     "One eye and",
+     "One eye and"
+    ],
+    [
+     "half a SMILE.",
+     "half a smile."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The other side",
+     "The other side"
+    ],
+    [
+     "was flat",
+     "was flat"
+    ],
+    [
+     "and smooth,",
+     "and smooth,"
+    ],
+    [
+     "like a TABLETOP.",
+     "like a tabletop."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And its one",
+     "And its one"
+    ],
+    [
+     "eye was fixed",
+     "eye was fixed"
+    ],
+    [
+     "on the empty",
+     "on the empty"
+    ],
+    [
+     "space beside BEA.",
+     "space beside Bea."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the midnight",
+     "Then the midnight"
+    ],
+    [
+     "BELL rang.",
+     "bell rang."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The lanterns faded",
+     "The lanterns faded"
+    ],
+    [
+     "slowly down,",
+     "slowly down,"
+    ],
+    [
+     "like they do",
+     "like they do"
+    ],
+    [
+     "before every FLIP.",
+     "before every flip."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the dark,",
+     "In the dark,"
+    ],
+    [
+     "I heard Bea",
+     "I heard Bea"
+    ],
+    [
+     "tapping the",
+     "tapping the"
+    ],
+    [
+     "chopping BOARD.",
+     "chopping board."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then it STOPPED.",
+     "Then it stopped."
+    ]
+   ],
+   "gap": 0.6
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The lanterns came",
+     "The lanterns came"
+    ],
+    [
+     "slowly back UP.",
+     "slowly back up."
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was behind",
+     "It was behind"
+    ],
+    [
+     "our COUNTER.",
+     "our counter."
+    ]
+   ],
+   "gap": 0.5
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its flat side",
+     "Its flat side"
+    ],
+    [
+     "a hand's width",
+     "a hand's width"
+    ],
+    [
+     "from Bea's SHOULDER.",
+     "from Bea's shoulder."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Standing exactly where",
+     "Standing exactly where"
+    ],
+    [
+     "I used",
+     "I used"
+    ],
+    [
+     "to STAND.",
+     "to stand."
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Bea had",
+     "Bea had"
+    ],
+    [
+     "gone still.",
+     "gone still."
+    ],
+    [
+     "She said",
+     "She said"
+    ],
+    [
+     "my name,",
+     "my name,"
+    ],
+    [
+     "very QUIETLY.",
+     "very quietly."
+    ]
+   ]
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I looked at",
+     "I looked at"
+    ],
+    [
+     "our sign.",
+     "our sign."
+    ],
+    [
+     "A sun half",
+     "A sun half"
+    ],
+    [
+     "and a",
+     "and a"
+    ],
+    [
+     "moon HALF.",
+     "moon half."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I looked up",
+     "I looked up"
+    ],
+    [
+     "at her coin.",
+     "at her coin."
+    ],
+    [
+     "Only ever",
+     "Only ever"
+    ],
+    [
+     "the MOON.",
+     "the moon."
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then up",
+     "Then up"
+    ],
+    [
+     "at mine.",
+     "at mine."
+    ],
+    [
+     "Only ever",
+     "Only ever"
+    ],
+    [
+     "the EDGE.",
+     "the edge."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her moon and",
+     "Her moon and"
+    ],
+    [
+     "my sun were",
+     "my sun were"
+    ],
+    [
+     "the two sides",
+     "the two sides"
+    ],
+    [
+     "of ONE coin.",
+     "of one coin."
+    ]
+   ]
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "When I",
+     "When I"
+    ],
+    [
+     "walked out,",
+     "walked out,"
+    ],
+    [
+     "I took the",
+     "I took the"
+    ],
+    [
+     "SUN with ME.",
+     "sun with me."
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She was left",
+     "She was left"
+    ],
+    [
+     "with a coin",
+     "with a coin"
+    ],
+    [
+     "that could only",
+     "that could only"
+    ],
+    [
+     "land on",
+     "land on"
+    ],
+    [
+     "the MOON.",
+     "the moon."
+    ]
+   ]
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And mine had",
+     "And mine had"
+    ],
+    [
+     "nothing to",
+     "nothing to"
+    ],
+    [
+     "land ON.",
+     "land on."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I walked",
+     "So I walked"
+    ],
+    [
+     "around and stepped",
+     "around and stepped"
+    ],
+    [
+     "into my",
+     "into my"
+    ],
+    [
+     "old SPOT.",
+     "old spot."
+    ]
+   ]
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Right where the",
+     "Right where the"
+    ],
+    [
+     "flat side",
+     "flat side"
+    ],
+    [
+     "had BEEN.",
+     "had been."
+    ]
+   ]
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And there was",
+     "And there was"
+    ],
+    [
+     "nobody next to",
+     "nobody next to"
+    ],
+    [
+     "Bea but ME.",
+     "Bea but me."
+    ]
+   ],
+   "gap": 0.4
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then every coin",
+     "Then every coin"
+    ],
+    [
+     "in the",
+     "in the"
+    ],
+    [
+     "market FLIPPED.",
+     "market flipped."
+    ]
+   ]
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Ours drifted together",
+     "Ours drifted together"
+    ],
+    [
+     "over our heads",
+     "over our heads"
+    ],
+    [
+     "and clicked",
+     "and clicked"
+    ],
+    [
+     "into ONE.",
+     "into one."
+    ]
+   ]
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "SUN side up.",
+     "sun side up."
+    ]
+   ],
+   "gap": 0.4
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Bea dug my",
+     "Bea dug my"
+    ],
+    [
+     "old apron out",
+     "old apron out"
+    ],
+    [
+     "from under",
+     "from under"
+    ],
+    [
+     "the COUNTER.",
+     "the counter."
+    ]
+   ],
+   "gap": 1.0
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We folded side",
+     "We folded side"
+    ],
+    [
+     "by side,",
+     "by side,"
+    ],
+    [
+     "and she bumped",
+     "and she bumped"
+    ],
+    [
+     "my elbow on",
+     "my elbow on"
+    ],
+    [
+     "every second DUMPLING.",
+     "every second dumpling."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Next door,",
+     "Next door,"
+    ],
+    [
+     "the noodle man",
+     "the noodle man"
+    ],
+    [
+     "got a MOON.",
+     "got a moon."
+    ],
+    [
+     "He went home",
+     "He went home"
+    ],
+    [
+     "for SOUP.",
+     "for soup."
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The next Friday,",
+     "The next Friday,"
+    ],
+    [
+     "our queue reached",
+     "our queue reached"
+    ],
+    [
+     "all the way",
+     "all the way"
+    ],
+    [
+     "to the ARCH.",
+     "to the arch."
+    ]
+   ]
+  },
+  {
+   "id": "L65",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In this town,",
+     "In this town,"
+    ],
+    [
+     "a COIN over",
+     "a coin over"
+    ],
+    [
+     "your head decides",
+     "your head decides"
+    ],
+    [
+     "your LUCK.",
+     "your luck."
+    ]
+   ]
+  },
+  {
+   "id": "L66",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Ours is SHARED.",
+     "Ours is shared."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.25,
+   "chunks": []
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      1.9,
+      10.7,
+      1.4
+     ],
+     [
+      -2.4,
+      10.7,
+      1.2
+     ],
+     35
+    ],
+    [
+     1,
+     [
+      1.8,
+      10.7,
+      1.42
+     ],
+     [
+      -2.4,
+      10.7,
+      1.22
+     ],
+     36
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "Bea, the noodle man and a customer under the lanterns, all looking up, coins in frame"
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      -3.6,
+      4.6
+     ],
+     [
+      0.0,
+      8.0,
+      1.2
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      0.3,
+      -3.4,
+      4.8
+     ],
+     [
+      0.0,
+      8.0,
+      1.2
+     ],
+     20
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "wide from above the arch: every coin flips",
+   "at": "L01.3"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      1.6,
+      7.4,
+      1.55
+     ],
+     [
+      -1.0,
+      7.4,
+      1.7
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "a customer's coin settling sun, grinning",
+   "at": "L02"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      1.5,
+      6.9,
+      1.55
+     ],
+     [
+      -0.2,
+      6.9,
+      1.75
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "another settling moon, the woman sighing",
+   "at": "L03"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      5.8,
+      4.3,
+      1.5
+     ],
+     [
+      9.0,
+      6.0,
+      1.55
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "picnic table: a man holds out a small box",
+   "at": "L04"
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      -8.0,
+      6.4,
+      1.5
+     ],
+     [
+      -11.0,
+      8.0,
+      1.6
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "a worker asks the stall owner, both sun",
+   "at": "L04.3"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      22.0,
+      19.0,
+      1.45
+     ],
+     [
+      20.0,
+      22.0,
+      1.5
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the home kitchen, dressing gowns, steaming bowls, two moons",
+   "at": "L05.1"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      12.9,
+      1.55
+     ],
+     [
+      -3.35,
+      12.6,
+      1.8
+     ],
+     40
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the noodle man chest out, his sun gleaming",
+   "at": "L06"
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      -3.9,
+      12.6,
+      1.55
+     ],
+     [
+      -1.4,
+      12.2,
+      1.6
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the queue rolling their eyes",
+   "at": "L06.5"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      5.8,
+      7.7,
+      1.5
+     ],
+     [
+      9.0,
+      6.0,
+      1.55
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "two first daters at a picnic table",
+   "at": "L07"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      1.6,
+      1.65
+     ],
+     [
+      -0.5,
+      8.5,
+      2.0
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.9,
+      2.2,
+      1.65
+     ],
+     [
+      -0.5,
+      9.1,
+      2.0
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "over the shoulder of the crowd: coins landing all round",
+   "at": "L08"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      -1.1,
+      10.0,
+      1.5
+     ],
+     [
+      1.0,
+      10.0,
+      1.85
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "me in my hood, a thin gold line",
+   "at": "L09"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      1.9,
+      10.6,
+      1.45
+     ],
+     [
+      -3.0,
+      9.9,
+      1.55
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      1.5,
+      10.4,
+      1.45
+     ],
+     [
+      -3.0,
+      9.8,
+      1.55
+     ],
+     24
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "our stall front on, warm",
+   "at": "L10"
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      10.0,
+      0.75
+     ],
+     [
+      -2.2,
+      10.0,
+      0.62
+     ],
+     32
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the glyph on the front board",
+   "at": "L11"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      -19.8,
+      18.8,
+      1.55
+     ],
+     [
+      -20.0,
+      22.0,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "me at the grey desk",
+   "at": "L12"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      9.9,
+      1.45
+     ],
+     [
+      -3.0,
+      10.2,
+      1.55
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "Bea alone at the counter, the space at her left empty",
+   "at": "L13"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      9.6,
+      1.7
+     ],
+     [
+      -3.35,
+      9.45,
+      2.12
+     ],
+     50
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "close on Bea's coin, moon face",
+   "at": "L14"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      9.45,
+      1.5
+     ],
+     [
+      -3.35,
+      9.45,
+      1.62
+     ],
+     40
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "Bea looking up at it, tired",
+   "at": "L14.4"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      -1.1,
+      10.0,
+      1.95
+     ],
+     [
+      1.0,
+      10.0,
+      2.1
+     ],
+     60
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "my coin, edge-on, the ridged rim",
+   "at": "L15"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      -2.4,
+      1.7
+     ],
+     [
+      0.0,
+      17.0,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "wide across the car park: me in my hood at the far end",
+   "at": "L16"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      14.4,
+      1.75
+     ],
+     [
+      -1.2,
+      2.0,
+      1.6
+     ],
+     24
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "down the left row: the noodle queue snaking back to the arch, all suns",
+   "at": "L17"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      1.6,
+      5.0,
+      5.0
+     ],
+     [
+      -1.4,
+      10.0,
+      0.8
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "high angle: the queue bending round Bea's stall",
+   "at": "L18"
+  },
+  {
+   "id": "S23",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      8.0,
+      0.6
+     ],
+     [
+      -3.2,
+      9.6,
+      1.1
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "low angle at Bea's counter, the queue passing behind",
+   "at": "L18.4"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      7.5,
+      1.7
+     ],
+     [
+      -2.2,
+      9.6,
+      1.9
+     ],
+     32
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "a man stops at her stall, looks up at her coin, walks out",
+   "at": "L19"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      9.0,
+      1.55
+     ],
+     [
+      -3.35,
+      9.45,
+      1.9
+     ],
+     45
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "Bea folding, steam across her face",
+   "at": "L20"
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      13.0,
+      1.45
+     ],
+     [
+      -3.0,
+      12.6,
+      1.3
+     ],
+     32
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "next door the noodle man's empty pot, him whistling",
+   "at": "L20.2"
+  },
+  {
+   "id": "S27",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      10.3,
+      1.7
+     ],
+     [
+      -3.35,
+      9.45,
+      2.12
+     ],
+     55
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "Bea's moon turning slowly as it rocks",
+   "at": "L21"
+  },
+  {
+   "id": "S28",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      10.8,
+      1.8
+     ],
+     [
+      0.0,
+      17.0,
+      2.0
+     ],
+     70
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "me across the car park, the gold line",
+   "at": "L22"
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      -2.0,
+      -0.6,
+      1.5
+     ],
+     [
+      0.9,
+      -0.6,
+      1.4
+     ],
+     45
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "long lens: under the arch, a figure side on",
+   "at": "L23"
+  },
+  {
+   "id": "S30",
+   "cam": [
+    [
+     0,
+     [
+      -2.0,
+      -0.6,
+      1.55
+     ],
+     [
+      0.9,
+      -0.6,
+      1.55
+     ],
+     62
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "closer, a customer in a red jacket, it looks whole",
+   "at": "L24"
+  },
+  {
+   "id": "S31",
+   "cam": [
+    [
+     0,
+     [
+      -1.7,
+      -0.9,
+      1.1
+     ],
+     [
+      0.9,
+      -0.6,
+      1.2
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      -1.7,
+      -0.9,
+      1.1
+     ],
+     [
+      0.9,
+      -0.6,
+      2.35
+     ],
+     38
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "tilt up over its head: empty air, every head round it has a coin",
+   "at": "L25"
+  },
+  {
+   "id": "S32",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      10.3,
+      1.5
+     ],
+     [
+      -3.35,
+      9.6,
+      1.5
+     ],
+     36
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "Bea packing up steamers, talking without looking at me",
+   "at": "L26"
+  },
+  {
+   "id": "S33",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      2.2,
+      1.5
+     ],
+     [
+      -0.9,
+      -0.4,
+      1.45
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "me under the arch, hood up",
+   "at": "L27"
+  },
+  {
+   "id": "S34",
+   "cam": [
+    [
+     0,
+     [
+      -2.0,
+      7.2,
+      1.5
+     ],
+     [
+      0.9,
+      7.2,
+      1.4
+     ],
+     38
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the left row from my side: the figure three stalls nearer",
+   "at": "L28"
+  },
+  {
+   "id": "S35",
+   "cam": [
+    [
+     0,
+     [
+      -1.35,
+      7.2,
+      1.6
+     ],
+     [
+      0.9,
+      7.2,
+      1.6
+     ],
+     42
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "reverse: its side profile, its one eye toward our stall",
+   "at": "L29"
+  },
+  {
+   "id": "S36",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      4.6,
+      0.38
+     ],
+     [
+      0.9,
+      7.2,
+      0.45
+     ],
+     26
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "low insert: three shadows, the middle one half as wide",
+   "at": "L30"
+  },
+  {
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      -0.9,
+      12.7,
+      1.7
+     ],
+     [
+      -3.35,
+      12.6,
+      1.75
+     ],
+     35
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the noodle man shouting at his queue",
+   "at": "L31"
+  },
+  {
+   "id": "S38",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      8.3,
+      1.5
+     ],
+     [
+      -2.4,
+      9.55,
+      1.4
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "me at Bea's counter, the only one",
+   "at": "L32"
+  },
+  {
+   "id": "S39",
+   "cam": [
+    [
+     0,
+     [
+      -2.2,
+      9.95,
+      1.65
+     ],
+     [
+      3.0,
+      10.5,
+      1.3
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "over my shoulder to the stall opposite: the figure at its counter",
+   "at": "L33"
+  },
+  {
+   "id": "S40",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      10.55,
+      1.45
+     ],
+     [
+      1.5,
+      10.5,
+      1.4
+     ],
+     34
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "closer: it has turned front on",
+   "at": "L34"
+  },
+  {
+   "id": "S41",
+   "cam": [
+    [
+     0,
+     [
+      -1.9,
+      10.55,
+      1.2
+     ],
+     [
+      1.5,
+      10.5,
+      0.9
+     ],
+     27
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "front on, full figure: only the left half",
+   "at": "L35"
+  },
+  {
+   "id": "S42",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      10.5,
+      1.65
+     ],
+     [
+      1.5,
+      10.5,
+      1.62
+     ],
+     42
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "close on its half face: one eye, half a smile",
+   "at": "L36"
+  },
+  {
+   "id": "S43",
+   "cam": [
+    [
+     0,
+     [
+      -0.1,
+      10.1,
+      1.0
+     ],
+     [
+      1.5,
+      10.1,
+      0.85
+     ],
+     34
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "its one arm hanging at its side",
+   "at": "L36.2"
+  },
+  {
+   "id": "S44",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      12.3,
+      1.35
+     ],
+     [
+      1.5,
+      10.55,
+      1.1
+     ],
+     34
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "three-quarter on the flat indigo plane",
+   "at": "L37.2"
+  },
+  {
+   "id": "S45",
+   "cam": [
+    [
+     0,
+     [
+      1.45,
+      10.45,
+      1.55
+     ],
+     [
+      -3.35,
+      10.0,
+      1.3
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "its POV: across to our stall, Bea, the empty space",
+   "at": "L38"
+  },
+  {
+   "id": "S46",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      1.4,
+      1.9
+     ],
+     [
+      -2.6,
+      -0.8,
+      2.3
+     ],
+     38
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the iron bell on the arch pole swinging",
+   "at": "L39"
+  },
+  {
+   "id": "S47",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.6,
+      1.95
+     ],
+     [
+      0.0,
+      10.0,
+      2.1
+     ],
+     26
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "wide down the row: the lanterns fading",
+   "at": "L40"
+  },
+  {
+   "id": "S48",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      9.45,
+      1.5
+     ],
+     [
+      -3.35,
+      9.45,
+      1.58
+     ],
+     46
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "near dark: Bea's face in cool fill",
+   "at": "L41"
+  },
+  {
+   "id": "S49",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      9.45,
+      1.5
+     ],
+     [
+      -3.35,
+      9.45,
+      1.58
+     ],
+     46
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "same frame, the sound stops",
+   "at": "L42"
+  },
+  {
+   "id": "S50",
+   "cam": [
+    [
+     0,
+     [
+      1.8,
+      10.0,
+      1.5
+     ],
+     [
+      -3.0,
+      10.0,
+      1.75
+     ],
+     27
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the lanterns fading back up over our stall",
+   "at": "L43"
+  },
+  {
+   "id": "S51",
+   "cam": [
+    [
+     0,
+     [
+      1.5,
+      10.1,
+      1.5
+     ],
+     [
+      -3.2,
+      10.1,
+      1.65
+     ],
+     32
+    ]
+   ],
+   "hand": 0.004,
+   "step": 1,
+   "what": "front on our stall: the Half behind our counter. Scare",
+   "at": "L44"
+  },
+  {
+   "id": "S52",
+   "cam": [
+    [
+     0,
+     [
+      -0.5,
+      10.1,
+      1.55
+     ],
+     [
+      -3.35,
+      10.1,
+      1.5
+     ],
+     46
+    ]
+   ],
+   "hand": 0.004,
+   "step": 1,
+   "what": "close two-shot: its flat side a hand's width from Bea's shoulder",
+   "at": "L45"
+  },
+  {
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      2.0,
+      10.1,
+      1.45
+     ],
+     [
+      -3.3,
+      10.1,
+      1.35
+     ],
+     24
+    ]
+   ],
+   "hand": 0.004,
+   "step": 1,
+   "what": "wide: Bea and the Half filling the stall like two stallholders",
+   "at": "L46"
+  },
+  {
+   "id": "S54",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      9.45,
+      1.6
+     ],
+     [
+      -3.35,
+      9.45,
+      1.6
+     ],
+     46
+    ]
+   ],
+   "hand": 0.004,
+   "step": 1,
+   "what": "Bea, very still, her eyes sliding toward me",
+   "at": "L47"
+  },
+  {
+   "id": "S55",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      10.0,
+      0.75
+     ],
+     [
+      -2.2,
+      10.0,
+      0.62
+     ],
+     32
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the glyph on the front board",
+   "at": "L48"
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      9.45,
+      1.2
+     ],
+     [
+      -3.35,
+      9.45,
+      1.4
+     ],
+     42
+    ],
+    [
+     1,
+     [
+      0.2,
+      9.45,
+      1.2
+     ],
+     [
+      -3.35,
+      9.45,
+      2.2
+     ],
+     42
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "tilt up from Bea to her moon coin",
+   "at": "L49"
+  },
+  {
+   "id": "S57",
+   "cam": [
+    [
+     0,
+     [
+      -2.6,
+      7.2,
+      1.1
+     ],
+     [
+      -1.5,
+      8.5,
+      1.4
+     ],
+     38
+    ],
+    [
+     1,
+     [
+      -2.6,
+      7.2,
+      1.1
+     ],
+     [
+      -1.5,
+      8.5,
+      2.2
+     ],
+     38
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "tilt up from me to my gold line",
+   "at": "L50"
+  },
+  {
+   "id": "S58",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      9.5,
+      2.0
+     ],
+     [
+      -2.5,
+      9.0,
+      2.05
+     ],
+     38
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "both coins in one frame",
+   "at": "L51"
+  },
+  {
+   "id": "S59",
+   "cam": [
+    [
+     0,
+     [
+      -2.4,
+      7.0,
+      1.65
+     ],
+     [
+      -1.5,
+      8.5,
+      1.65
+     ],
+     26
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "me, the realisation landing",
+   "at": "L52"
+  },
+  {
+   "id": "S60",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      9.9,
+      2.3
+     ],
+     [
+      -3.35,
+      9.45,
+      2.12
+     ],
+     60
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "Bea's moon coin, alone",
+   "at": "L53"
+  },
+  {
+   "id": "S61",
+   "cam": [
+    [
+     0,
+     [
+      -3.2,
+      7.3,
+      2.2
+     ],
+     [
+      -1.5,
+      8.5,
+      2.1
+     ],
+     60
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "my coin on its edge, alone",
+   "at": "L54"
+  },
+  {
+   "id": "S62",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      13.3,
+      1.5
+     ],
+     [
+      -2.7,
+      10.9,
+      1.2
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "me walking round the end of the counter",
+   "at": "L55"
+  },
+  {
+   "id": "S63",
+   "cam": [
+    [
+     0,
+     [
+      -4.2,
+      10.0,
+      1.6
+     ],
+     [
+      -2.5,
+      10.5,
+      1.35
+     ],
+     22
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "behind the counter: I step into the spot, the Half gone",
+   "at": "L56"
+  },
+  {
+   "id": "S64",
+   "cam": [
+    [
+     0,
+     [
+      1.6,
+      10.1,
+      1.5
+     ],
+     [
+      -3.3,
+      10.1,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "front on our stall: just Bea and me",
+   "at": "L57"
+  },
+  {
+   "id": "S65",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      -3.6,
+      4.6
+     ],
+     [
+      0.0,
+      8.0,
+      1.2
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      0.3,
+      -3.4,
+      4.8
+     ],
+     [
+      0.0,
+      8.0,
+      1.2
+     ],
+     20
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "wide from above the arch: every coin flips",
+   "at": "L58"
+  },
+  {
+   "id": "S66",
+   "cam": [
+    [
+     0,
+     [
+      -1.4,
+      10.1,
+      0.8
+     ],
+     [
+      -3.35,
+      10.1,
+      1.9
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "two-shot from below: our two coins drift together",
+   "at": "L59"
+  },
+  {
+   "id": "S67",
+   "cam": [
+    [
+     0,
+     [
+      -1.6,
+      10.1,
+      2.0
+     ],
+     [
+      -3.35,
+      10.1,
+      2.1
+     ],
+     55
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "close: they close into one coin and turn",
+   "at": "L59.2"
+  },
+  {
+   "id": "S68",
+   "cam": [
+    [
+     0,
+     [
+      -0.2,
+      9.9,
+      1.65
+     ],
+     [
+      -3.35,
+      10.0,
+      1.85
+     ],
+     40
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "it stops sun side up; Bea's face lifts",
+   "at": "L60"
+  },
+  {
+   "id": "S69",
+   "cam": [
+    [
+     0,
+     [
+      -3.9,
+      9.0,
+      0.6
+     ],
+     [
+      -2.7,
+      9.6,
+      0.5
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "low under the counter, the apron off the shelf",
+   "at": "L61"
+  },
+  {
+   "id": "S70",
+   "cam": [
+    [
+     0,
+     [
+      -3.5,
+      10.2,
+      0.9
+     ],
+     [
+      -2.78,
+      10.2,
+      0.55
+     ],
+     35
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the float tin on the shelf, the two indigo strokes",
+   "at": "L61.3"
+  },
+  {
+   "id": "S71",
+   "cam": [
+    [
+     0,
+     [
+      1.4,
+      10.1,
+      1.5
+     ],
+     [
+      -3.3,
+      10.1,
+      1.4
+     ],
+     32
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "Bea and me folding side by side, she bumps my elbow",
+   "at": "L62"
+  },
+  {
+   "id": "S72",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      12.6,
+      1.55
+     ],
+     [
+      -3.35,
+      12.6,
+      1.75
+     ],
+     40
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the noodle man looking up at his moon, pulling a face",
+   "at": "L63"
+  },
+  {
+   "id": "S73",
+   "cam": [
+    [
+     0,
+     [
+      2.4,
+      12.5,
+      5.2
+     ],
+     [
+      -1.6,
+      4.0,
+      1.0
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      2.4,
+      12.5,
+      5.2
+     ],
+     [
+      -1.6,
+      4.2,
+      1.0
+     ],
+     24
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "next Friday: our queue to the arch, one coin between our heads",
+   "at": "L64"
+  },
+  {
+   "id": "S74",
+   "cam": [
+    [
+     0,
+     [
+      -1.4,
+      10.1,
+      4.7
+     ],
+     [
+      -3.35,
+      10.1,
+      1.8
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "from above the stall: two heads and one coin spinning",
+   "at": "L65"
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L09",
+    "pos": [
+     1.0,
+     10.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": -90
+   },
+   {
+    "at": "L10",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L15",
+    "pos": [
+     1.0,
+     10.0
+    ]
+   },
+   {
+    "at": "L15",
+    "pos": [
+     1.0,
+     10.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": -90
+   },
+   {
+    "at": "L16",
+    "pos": [
+     1.0,
+     10.0
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     0.0,
+     17.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 0
+   },
+   {
+    "at": "L17",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L22",
+    "pos": [
+     0.0,
+     17.0
+    ]
+   },
+   {
+    "at": "L22",
+    "pos": [
+     0.0,
+     17.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 0
+   },
+   {
+    "at": "L23",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L27",
+    "pos": [
+     0.0,
+     17.0
+    ]
+   },
+   {
+    "at": "L27",
+    "pos": [
+     -0.9,
+     -0.4
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     4
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 180
+   },
+   {
+    "at": "L28",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L32",
+    "pos": [
+     -0.9,
+     -0.4
+    ]
+   },
+   {
+    "at": "L32",
+    "pos": [
+     -1.5,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": -90
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -1.5,
+     9.45
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -1.5,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "scared",
+    "yaw": -90
+   },
+   {
+    "at": "L35",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L38",
+    "pos": [
+     -1.5,
+     9.45
+    ]
+   },
+   {
+    "at": "L38",
+    "pos": [
+     -1.5,
+     8.5
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "scared",
+    "yaw": -90
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -1.5,
+     8.5
+    ]
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -1.5,
+     8.5
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "terrified",
+    "yaw": -90
+   },
+   {
+    "at": "L49",
+    "pos": [
+     -1.5,
+     8.5
+    ]
+   },
+   {
+    "at": "L49",
+    "pos": [
+     -1.5,
+     8.5
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "wide",
+    "yaw": -90
+   },
+   {
+    "at": "L55",
+    "pos": [
+     -1.5,
+     8.5
+    ]
+   },
+   {
+    "at": "L55",
+    "pos": [
+     -1.6,
+     11.9
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "scared",
+    "yaw": -130
+   },
+   {
+    "at": "L55+0.5",
+    "pos": [
+     -2.5,
+     11.55
+    ],
+    "expr": "scared"
+   },
+   {
+    "at": "L56-0.05",
+    "pos": [
+     -3.35,
+     11.0
+    ],
+    "expr": "scared"
+   },
+   {
+    "at": "L56",
+    "pos": [
+     -3.35,
+     11.0
+    ]
+   },
+   {
+    "at": "L56",
+    "pos": [
+     -3.35,
+     10.75
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "wide",
+    "yaw": 90
+   },
+   {
+    "at": "L57",
+    "pos": [
+     -3.35,
+     10.75
+    ]
+   },
+   {
+    "at": "L57",
+    "pos": [
+     -3.35,
+     10.75
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "yaw": 90
+   },
+   {
+    "at": "L59",
+    "pos": [
+     -3.35,
+     10.75
+    ]
+   },
+   {
+    "at": "L59",
+    "pos": [
+     -3.35,
+     10.75
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "yaw": 90
+   },
+   {
+    "at": "L60",
+    "pos": [
+     -3.35,
+     10.75
+    ]
+   },
+   {
+    "at": "L60",
+    "pos": [
+     -3.35,
+     10.75
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -24
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "yaw": 90
+   },
+   {
+    "at": "L61",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "me_office": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L12",
+    "pos": [
+     -20.0,
+     22.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "blank",
+    "yaw": 0
+   },
+   {
+    "at": "L13",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "me_apron": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L62",
+    "pos": [
+     -3.35,
+     10.75
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L64",
+    "pos": [
+     -3.35,
+     10.75
+    ]
+   },
+   {
+    "at": "L64",
+    "pos": [
+     -3.35,
+     10.75
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L65",
+    "pos": [
+     -3.35,
+     10.75
+    ]
+   },
+   {
+    "at": "L65",
+    "pos": [
+     -3.35,
+     10.75
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   }
+  ],
+  "bea": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": 0,
+    "pos": [
+     -3.35,
+     9.95
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L01.3",
+    "pos": [
+     -3.35,
+     9.95
+    ]
+   },
+   {
+    "at": "L01.3",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L14",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L14",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L14.4",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L14.4",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -26
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L16",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L18",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L19",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L20",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L20",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     -6,
+     24
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L21",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L21",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L26",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L26",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     24
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "from": "L26",
+    "to": "L27",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L32",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L32",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L38",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L38",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L41",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L41",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L44",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L44",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L47+0.5",
+    "look": [
+     0.9,
+     0.0
+    ],
+    "blend": 0.6
+   },
+   {
+    "at": "L49",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L49",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L50",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L50",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L57",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L57",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "yaw": 90
+   },
+   {
+    "at": "L59",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L59",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "yaw": 90
+   },
+   {
+    "at": "L60",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L60",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -24
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L61",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L62",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L62",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L62+0.5",
+    "side": [
+     0,
+     18
+    ],
+    "blend": 0.2
+   },
+   {
+    "at": "L62+0.8",
+    "side": [
+     0,
+     0
+    ],
+    "blend": 0.25
+   },
+   {
+    "at": "L64",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L64",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L65",
+    "pos": [
+     -3.35,
+     9.45
+    ]
+   },
+   {
+    "at": "L65",
+    "pos": [
+     -3.35,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   }
+  ],
+  "noodle": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": 0,
+    "pos": [
+     -3.35,
+     11.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L01.3",
+    "pos": [
+     -3.35,
+     11.6
+    ]
+   },
+   {
+    "at": "L01.3",
+    "pos": [
+     -3.35,
+     12.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L06",
+    "pos": [
+     -3.35,
+     12.6
+    ]
+   },
+   {
+    "at": "L06",
+    "pos": [
+     -3.35,
+     12.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     20,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -8
+    ],
+    "lean": -6,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L06.5",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -3.35,
+     12.6
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -3.35,
+     12.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L20.2",
+    "pos": [
+     -3.35,
+     12.6
+    ]
+   },
+   {
+    "at": "L20.2",
+    "pos": [
+     -3.35,
+     12.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "from": "L20.2",
+    "to": "L21",
+    "mouth": [
+     0.25,
+     0.25
+    ],
+    "flap": true
+   },
+   {
+    "at": "L31",
+    "pos": [
+     -3.35,
+     12.6
+    ]
+   },
+   {
+    "at": "L31",
+    "pos": [
+     -3.35,
+     12.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     30,
+     30
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -6
+    ],
+    "lean": -8,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "from": "L31",
+    "to": "L32",
+    "mouth": [
+     0.7,
+     0.7
+    ],
+    "flap": true
+   },
+   {
+    "at": "L35",
+    "pos": [
+     -3.35,
+     12.6
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     -3.35,
+     12.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L63",
+    "pos": [
+     -3.35,
+     12.6
+    ]
+   },
+   {
+    "at": "L63",
+    "pos": [
+     -3.35,
+     12.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L63+0.7",
+    "expr": "angry",
+    "blend": 0.3
+   }
+  ],
+  "ca": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": 0,
+    "pos": [
+     -1.7,
+     10.75
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L01.3",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L02",
+    "pos": [
+     -1.7,
+     10.75
+    ]
+   },
+   {
+    "at": "L02",
+    "pos": [
+     -1.0,
+     7.4
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 90
+   },
+   {
+    "at": "L02+0.6",
+    "head": [
+     0,
+     -14
+    ]
+   },
+   {
+    "at": "L03",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L04",
+    "pos": [
+     -1.0,
+     7.4
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     9.0,
+     5.3
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     62,
+     62
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": 180
+   },
+   {
+    "at": "L04.3",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L06.5",
+    "pos": [
+     9.0,
+     5.3
+    ]
+   },
+   {
+    "at": "L06.5",
+    "pos": [
+     -1.5,
+     12.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "blank",
+    "yaw": -90
+   },
+   {
+    "at": "L07",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -1.5,
+     12.0
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     9.0,
+     5.3
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 180
+   },
+   {
+    "at": "L07+1.0",
+    "pos": [
+     7.5,
+     4.4
+    ]
+   },
+   {
+    "at": "L08",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L19",
+    "pos": [
+     7.5,
+     4.4
+    ]
+   },
+   {
+    "at": "L19",
+    "pos": [
+     -1.6,
+     9.45
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -24
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": -90
+   },
+   {
+    "at": "L19+0.9",
+    "pos": [
+     -1.2,
+     9.45
+    ],
+    "head": [
+     0,
+     -24
+    ]
+   },
+   {
+    "at": "L19+1.6",
+    "pos": [
+     -1.0,
+     13.0
+    ],
+    "head": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L20",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L30",
+    "pos": [
+     -1.0,
+     13.0
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     -0.2,
+     7.2
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 180
+   },
+   {
+    "at": "L31",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "cb": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L03",
+    "pos": [
+     -0.2,
+     6.9
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L03+0.8",
+    "head": [
+     0,
+     6
+    ],
+    "expr": "squeeze",
+    "blend": 0.5
+   },
+   {
+    "at": "L04",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L04",
+    "pos": [
+     -0.2,
+     6.9
+    ]
+   },
+   {
+    "at": "L04",
+    "pos": [
+     9.0,
+     6.7
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "wide",
+    "yaw": 0
+   },
+   {
+    "at": "L04.3",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L06.5",
+    "pos": [
+     9.0,
+     6.7
+    ]
+   },
+   {
+    "at": "L06.5",
+    "pos": [
+     -1.5,
+     12.9
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "smirk",
+    "yaw": -90
+   },
+   {
+    "at": "L07",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -1.5,
+     12.9
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     9.0,
+     6.7
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -22
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 0
+   },
+   {
+    "at": "L08",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L30",
+    "pos": [
+     9.0,
+     6.7
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     2.0,
+     7.2
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 180
+   },
+   {
+    "at": "L31",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "cw": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L04.3",
+    "pos": [
+     -11.6,
+     8.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     20,
+     20
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L05.1",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "co": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L04.3",
+    "pos": [
+     -10.4,
+     8.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "grin",
+    "yaw": -90
+   },
+   {
+    "at": "L04.3+0.9",
+    "head": [
+     0,
+     12
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L05.1",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "g1": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L05.1",
+    "pos": [
+     19.3,
+     22.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "yaw": 90
+   },
+   {
+    "at": "L06",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L06.5",
+    "pos": [
+     19.3,
+     22.0
+    ]
+   },
+   {
+    "at": "L06.5",
+    "pos": [
+     -1.5,
+     13.8
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "blank",
+    "yaw": -90
+   },
+   {
+    "at": "L07",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "g2": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L05.1",
+    "pos": [
+     20.7,
+     22.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "yaw": -90
+   },
+   {
+    "at": "L06",
+    "hidden": true,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "mood",
+   "to": 1.0,
+   "dur": 0.1
+  },
+  {
+   "at": "L22",
+   "name": "mood",
+   "to": 0.55,
+   "dur": 1.6
+  },
+  {
+   "at": "L40",
+   "name": "mood",
+   "to": 0.15,
+   "dur": 1.2
+  },
+  {
+   "at": "L43",
+   "name": "mood",
+   "to": 0.55,
+   "dur": 1.2
+  },
+  {
+   "at": "L57+0.3",
+   "name": "mood",
+   "to": 1.0,
+   "dur": 1.6
+  },
+  {
+   "at": "L01.3",
+   "name": "flip",
+   "dur": 2.2,
+   "turns": 1.5
+  },
+  {
+   "at": "L58",
+   "name": "flip",
+   "dur": 2.2,
+   "turns": 1.5,
+   "last": true
+  },
+  {
+   "at": "L59",
+   "name": "merge",
+   "dur": 1.2
+  },
+  {
+   "at": "L39",
+   "name": "bell",
+   "dur": 3.0
+  },
+  {
+   "at": 0,
+   "name": "half",
+   "on": false
+  },
+  {
+   "at": "L23",
+   "name": "half",
+   "on": true,
+   "pos": [
+    0.9,
+    -0.6
+   ],
+   "yaw": 180
+  },
+  {
+   "at": "L28",
+   "name": "half",
+   "on": true,
+   "pos": [
+    0.9,
+    7.2
+   ],
+   "yaw": 180
+  },
+  {
+   "at": "L33",
+   "name": "half",
+   "on": true,
+   "pos": [
+    1.5,
+    10.55
+   ],
+   "yaw": 180
+  },
+  {
+   "at": "L34",
+   "name": "half",
+   "on": true,
+   "pos": [
+    1.5,
+    10.55
+   ],
+   "yaw": -90
+  },
+  {
+   "at": "L38",
+   "name": "half",
+   "on": false
+  },
+  {
+   "at": "L39",
+   "name": "half",
+   "on": true,
+   "pos": [
+    1.5,
+    10.55
+   ],
+   "yaw": -90
+  },
+  {
+   "at": "L44",
+   "name": "half",
+   "on": true,
+   "pos": [
+    -3.35,
+    10.2
+   ],
+   "yaw": 90
+  },
+  {
+   "at": "L56",
+   "name": "half",
+   "on": false
+  },
+  {
+   "at": 0,
+   "name": "queue",
+   "which": "far"
+  },
+  {
+   "at": "L17",
+   "name": "queue",
+   "which": "noodle"
+  },
+  {
+   "at": "L20",
+   "name": "queue",
+   "which": "far"
+  },
+  {
+   "at": "L64",
+   "name": "queue",
+   "which": "ours"
+  },
+  {
+   "at": "L30",
+   "name": "shadow_light",
+   "on": true
+  },
+  {
+   "at": "L31",
+   "name": "shadow_light",
+   "on": false
+  }
+ ],
+ "fx": [],
+ "music": {
+  "root": 40,
+  "mode": "dorian",
+  "bpm": 100,
+  "seed": 40,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "drone",
+     "pulse",
+     "piano"
+    ],
+    "energy": 0.55
+   },
+   {
+    "at": "L12",
+    "voices": [
+     "drone",
+     "pulse"
+    ],
+    "energy": 0.4
+   },
+   {
+    "at": "L23",
+    "voices": [
+     "drone",
+     "pad"
+    ],
+    "energy": 0.35
+   },
+   {
+    "at": "L34",
+    "voices": [
+     "drone",
+     "pad",
+     "choir"
+    ],
+    "energy": 0.45
+   },
+   {
+    "at": "L44",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.25
+   },
+   {
+    "at": "L47",
+    "voices": [
+     "drone",
+     "pad",
+     "choir"
+    ],
+    "energy": 0.5
+   },
+   {
+    "at": "L58",
+    "voices": [
+     "piano",
+     "pulse",
+     "pad"
+    ],
+    "energy": 0.6,
+    "mode": "major",
+    "root": 40
+   }
+  ]
+ },
+ "sound": {
+  "floor": "stone",
+  "steps_db": -24,
+  "ambience": [
+   {
+    "kind": "room",
+    "from": 0,
+    "to": "end",
+    "lufs": -34
+   },
+   {
+    "kind": "hum",
+    "from": "L23",
+    "to": "L58",
+    "lufs": -42
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L01.3",
+    "kind": "riser",
+    "db": -22,
+    "dur": 1.6
+   },
+   {
+    "at": "L08",
+    "kind": "whoosh",
+    "db": -28,
+    "dur": 0.8
+   },
+   {
+    "at": "L25",
+    "kind": "sting",
+    "db": -26
+   },
+   {
+    "at": "L35",
+    "kind": "sting",
+    "db": -10
+   },
+   {
+    "at": "L39",
+    "kind": "bell",
+    "db": -12
+   },
+   {
+    "at": "L40",
+    "kind": "hum_sweep",
+    "db": -26,
+    "dur": 1.4
+   },
+   {
+    "at": "L41+0.3",
+    "kind": "knock",
+    "pattern": [
+     0.0,
+     0.28,
+     0.56,
+     0.84
+    ],
+    "tone": "hand",
+    "db": -18
+   },
+   {
+    "at": "L44",
+    "kind": "hit",
+    "db": -6
+   },
+   {
+    "at": "L58",
+    "kind": "riser",
+    "db": -22,
+    "dur": 1.8
+   },
+   {
+    "at": "L59+1.2",
+    "kind": "click",
+    "db": -10
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "L35-0.6",
+    "to": "L35.1",
+    "keep": [
+     "sting"
+    ]
+   },
+   {
+    "from": "L44-0.6",
+    "to": "L44.4",
+    "keep": [
+     "hit"
+    ]
+   }
+  ]
+ }
+}

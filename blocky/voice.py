@@ -166,9 +166,9 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # Bri
 # homophones: the same sound, and Whisper picks the spelling from the words around it ("under the bulb threw"), so
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
-# (ep17), Wren said "ren" (ep20)
+# (ep17), Wren said "ren" (ep20), Bea heard as Bia and ours as hours (ep40)
 HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
-              "wren": "ren", "wrens": "rens"}
+              "wren": "ren", "wrens": "rens", "bia": "bea", "bias": "beas", "cue": "queue", "hours": "ours"}
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 

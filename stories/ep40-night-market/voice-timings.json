@@ -1,0 +1,1789 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this town, a coin over your head flips at midnight and decides your luck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.276,
+   "onset": 0.172,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.061
+    ],
+    [
+     1.061,
+     1.509
+    ],
+    [
+     1.509,
+     2.146
+    ],
+    [
+     2.146,
+     3.069
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Sun face up, and tomorrow goes your way.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.19,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.19,
+     0.741
+    ],
+    [
+     0.776,
+     1.337
+    ],
+    [
+     1.337,
+     1.879
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Moon face up, and it really, really doesn't.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.19,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.19,
+     0.776
+    ],
+    [
+     0.802,
+     1.172
+    ],
+    [
+     1.207,
+     1.879
+    ]
+   ]
+  },
+  "L04": {
+   "text": "On a sunny day, people propose and ask for raises.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     0.276
+    ],
+    [
+     0.276,
+     0.707
+    ],
+    [
+     0.759,
+     1.397
+    ],
+    [
+     1.397,
+     2.31
+    ]
+   ]
+  },
+  "L05": {
+   "text": "On a moon day, they stay home in robes with soup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.707
+    ],
+    [
+     0.732,
+     1.181
+    ],
+    [
+     1.181,
+     1.543
+    ],
+    [
+     1.543,
+     2.138
+    ]
+   ]
+  },
+  "L06": {
+   "text": "The noodle man next door has had a sun every day since spring. Nobody can stand him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 4.035,
+   "onset": 0.172,
+   "end": 3.845,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.19
+    ],
+    [
+     1.19,
+     1.569
+    ],
+    [
+     1.569,
+     2.129
+    ],
+    [
+     2.129,
+     2.603
+    ],
+    [
+     2.724,
+     3.155
+    ],
+    [
+     3.155,
+     3.845
+    ]
+   ]
+  },
+  "L07": {
+   "text": "And first dates only happen when both coins say sun.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.155
+    ],
+    [
+     1.155,
+     1.603
+    ],
+    [
+     1.603,
+     2.259
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Every coin lands. Except mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.957,
+     1.741
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Mine stands on its edge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.19,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.276
+    ]
+   ]
+  },
+  "L10": {
+   "text": "My big sister Bea and I started a dumpling stall at the night market.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.293,
+   "onset": 0.172,
+   "end": 3.103,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.362
+    ],
+    [
+     1.362,
+     1.992
+    ],
+    [
+     1.992,
+     2.362
+    ],
+    [
+     2.362,
+     3.103
+    ]
+   ]
+  },
+  "L11": {
+   "text": "We painted the sign together. I did the sun half, and Bea did the moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.155,
+   "end": 2.966,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.172
+    ],
+    [
+     1.259,
+     1.509
+    ],
+    [
+     1.509,
+     1.931
+    ],
+    [
+     1.957,
+     2.371
+    ],
+    [
+     2.371,
+     2.966
+    ]
+   ]
+  },
+  "L12": {
+   "text": "A month ago, I quit to take a job in an office.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     0.914
+    ],
+    [
+     0.914,
+     1.371
+    ],
+    [
+     1.371,
+     2.052
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Bea kept the stall, and never said a word.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.914
+    ],
+    [
+     0.948,
+     1.371
+    ],
+    [
+     1.371,
+     1.931
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Since that night, her coin has landed on the moon. Twenty nights in a row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.172,
+   "onset": 0.172,
+   "end": 2.983,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.069
+    ],
+    [
+     1.069,
+     1.371
+    ],
+    [
+     1.371,
+     1.793
+    ],
+    [
+     1.888,
+     2.405
+    ],
+    [
+     2.405,
+     2.983
+    ]
+   ]
+  },
+  "L15": {
+   "text": "And mine has stood on its edge exactly as long.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     0.862
+    ],
+    [
+     0.862,
+     1.431
+    ],
+    [
+     1.431,
+     2.052
+    ]
+   ]
+  },
+  "L16": {
+   "text": "On Friday, I stood across the car park with my hood up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.155,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.741,
+     1.181
+    ],
+    [
+     1.181,
+     1.612
+    ],
+    [
+     1.612,
+     1.828
+    ],
+    [
+     1.828,
+     2.345
+    ]
+   ]
+  },
+  "L17": {
+   "text": "The noodle queue next door ran right back to the lantern arch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.259
+    ],
+    [
+     1.259,
+     1.681
+    ],
+    [
+     1.681,
+     2.534
+    ]
+   ]
+  },
+  "L18": {
+   "text": "When it reached Bea's stall, it bent around it, like water around a stone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.241,
+   "onset": 0.155,
+   "end": 3.052,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.103
+    ],
+    [
+     1.172,
+     1.431
+    ],
+    [
+     1.431,
+     1.793
+    ],
+    [
+     1.819,
+     2.423
+    ],
+    [
+     2.423,
+     3.052
+    ]
+   ]
+  },
+  "L19": {
+   "text": "A man looked up at her coin and kept walking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.819
+    ],
+    [
+     0.819,
+     1.241
+    ],
+    [
+     1.241,
+     2.034
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Bea folded dumplings for nobody, steam in her face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ],
+    [
+     0.966,
+     1.431
+    ],
+    [
+     1.509,
+     1.784
+    ],
+    [
+     1.784,
+     2.431
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Her moon turned slowly over her head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.112
+    ],
+    [
+     1.112,
+     1.655
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Mine hung over me, a thin gold line.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.759
+    ],
+    [
+     0.828,
+     1.103
+    ],
+    [
+     1.103,
+     1.828
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Then I noticed a customer under the arch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.233
+    ],
+    [
+     1.233,
+     1.845
+    ]
+   ]
+  },
+  "L24": {
+   "text": "From the side, it looked like anyone else.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     0.992
+    ],
+    [
+     0.992,
+     1.655
+    ]
+   ]
+  },
+  "L25": {
+   "text": "But there was no coin over its head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     1.008
+    ],
+    [
+     1.008,
+     1.569
+    ]
+   ]
+  },
+  "L26": {
+   "text": "When we closed, Bea said one more Friday, and then she'd sell.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.155,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.707,
+     1.129
+    ],
+    [
+     1.129,
+     1.707
+    ],
+    [
+     1.776,
+     1.966
+    ],
+    [
+     1.966,
+     2.621
+    ]
+   ]
+  },
+  "L27": {
+   "text": "The next Friday, I came back. For the dumplings, I told myself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.155,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     1.293
+    ],
+    [
+     1.379,
+     1.914
+    ],
+    [
+     1.939,
+     2.828
+    ]
+   ]
+  },
+  "L28": {
+   "text": "The customer with no coin was three stalls nearer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.199
+    ],
+    [
+     1.199,
+     2.207
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Still side on to me. Still facing our stall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.931
+    ],
+    [
+     1.026,
+     1.509
+    ],
+    [
+     1.509,
+     2.155
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Its shadow on the tarmac was only half as wide.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.086
+    ],
+    [
+     1.086,
+     1.517
+    ],
+    [
+     1.517,
+     2.155
+    ]
+   ]
+  },
+  "L31": {
+   "text": "The noodle man shouted that tonight would be his hundred and eighth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.293
+    ],
+    [
+     1.293,
+     1.629
+    ],
+    [
+     1.629,
+     2.5
+    ]
+   ]
+  },
+  "L32": {
+   "text": "The Friday after, I was the only one in Bea's queue.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.828
+    ],
+    [
+     0.879,
+     1.103
+    ],
+    [
+     1.103,
+     1.534
+    ],
+    [
+     1.534,
+     2.276
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Behind me, at the stall right opposite, it was waiting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.672,
+     1.052
+    ],
+    [
+     1.052,
+     1.534
+    ],
+    [
+     1.561,
+     2.259
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Facing me front on, this time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.828
+    ],
+    [
+     0.854,
+     1.483
+    ]
+   ]
+  },
+  "L35": {
+   "text": "There was only half of it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.155,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.207
+    ]
+   ]
+  },
+  "L36": {
+   "text": "The left half. One eye and half a smile.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.69,
+     1.0
+    ],
+    [
+     1.0,
+     1.81
+    ]
+   ]
+  },
+  "L37": {
+   "text": "The other side was flat and smooth, like a tabletop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.854
+    ],
+    [
+     0.854,
+     1.328
+    ],
+    [
+     1.397,
+     2.241
+    ]
+   ]
+  },
+  "L38": {
+   "text": "And its one eye was fixed on the empty space beside Bea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.155,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.94
+    ],
+    [
+     0.94,
+     1.293
+    ],
+    [
+     1.293,
+     2.414
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Then the midnight bell rang.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.31
+    ]
+   ]
+  },
+  "L40": {
+   "text": "The lanterns faded slowly down, like they do before every flip.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.172,
+   "end": 2.914,
+   "chunks": [
+    [
+     0.172,
+     0.836
+    ],
+    [
+     0.836,
+     1.466
+    ],
+    [
+     1.534,
+     1.948
+    ],
+    [
+     1.948,
+     2.914
+    ]
+   ]
+  },
+  "L41": {
+   "text": "In the dark, I heard Bea tapping the chopping board.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     1.094
+    ],
+    [
+     1.094,
+     1.397
+    ],
+    [
+     1.397,
+     2.19
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Then it stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L43": {
+   "text": "The lanterns came slowly back up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.603
+    ]
+   ]
+  },
+  "L44": {
+   "text": "It was behind our counter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.345
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Its flat side a hand's width from Bea's shoulder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.724,
+     1.259
+    ],
+    [
+     1.259,
+     2.224
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Standing exactly where I used to stand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.94
+    ],
+    [
+     0.94,
+     1.147
+    ],
+    [
+     1.147,
+     1.776
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Bea had gone still. She said my name, very quietly.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.914
+    ],
+    [
+     1.0,
+     1.233
+    ],
+    [
+     1.233,
+     1.534
+    ],
+    [
+     1.569,
+     2.414
+    ]
+   ]
+  },
+  "L48": {
+   "text": "I looked at our sign. A sun half and a moon half.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.914
+    ],
+    [
+     1.008,
+     1.422
+    ],
+    [
+     1.422,
+     1.534
+    ],
+    [
+     1.534,
+     2.207
+    ]
+   ]
+  },
+  "L49": {
+   "text": "I looked up at her coin. Only ever the moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.983
+    ],
+    [
+     1.077,
+     1.439
+    ],
+    [
+     1.439,
+     2.034
+    ]
+   ]
+  },
+  "L50": {
+   "text": "Then up at mine. Only ever the edge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.741
+    ],
+    [
+     0.81,
+     1.164
+    ],
+    [
+     1.164,
+     1.724
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Her moon and my sun were the two sides of one coin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.026
+    ],
+    [
+     1.026,
+     1.543
+    ],
+    [
+     1.543,
+     2.328
+    ]
+   ]
+  },
+  "L52": {
+   "text": "When I walked out, I took the sun with me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.724
+    ],
+    [
+     0.759,
+     1.061
+    ],
+    [
+     1.061,
+     1.741
+    ]
+   ]
+  },
+  "L53": {
+   "text": "She was left with a coin that could only land on the moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.0
+    ],
+    [
+     1.0,
+     1.379
+    ],
+    [
+     1.379,
+     1.664
+    ],
+    [
+     1.664,
+     2.241
+    ]
+   ]
+  },
+  "L54": {
+   "text": "And mine had nothing to land on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.0
+    ],
+    [
+     1.0,
+     1.638
+    ]
+   ]
+  },
+  "L55": {
+   "text": "So I walked around and stepped into my old spot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.112
+    ],
+    [
+     1.112,
+     1.345
+    ],
+    [
+     1.345,
+     2.086
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Right where the flat side had been.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.888
+    ],
+    [
+     0.888,
+     1.431
+    ]
+   ]
+  },
+  "L57": {
+   "text": "And there was nobody next to Bea but me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     1.121
+    ],
+    [
+     1.121,
+     1.897
+    ]
+   ]
+  },
+  "L58": {
+   "text": "Then every coin in the market flipped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     0.87
+    ],
+    [
+     0.87,
+     1.621
+    ]
+   ]
+  },
+  "L59": {
+   "text": "Ours drifted together over our heads and clicked into one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.19,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.19,
+     1.0
+    ],
+    [
+     1.0,
+     1.664
+    ],
+    [
+     1.664,
+     1.974
+    ],
+    [
+     1.974,
+     2.655
+    ]
+   ]
+  },
+  "L60": {
+   "text": "sun side up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.19,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.19,
+     0.897
+    ]
+   ]
+  },
+  "L61": {
+   "text": "Bea dug my old apron out from under the counter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.293
+    ],
+    [
+     1.293,
+     1.509
+    ],
+    [
+     1.509,
+     2.138
+    ]
+   ]
+  },
+  "L62": {
+   "text": "We folded side by side, and she bumped my elbow on every second dumpling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.552,
+   "onset": 0.155,
+   "end": 3.362,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.759,
+     1.345
+    ],
+    [
+     1.414,
+     1.759
+    ],
+    [
+     1.759,
+     2.284
+    ],
+    [
+     2.284,
+     3.362
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Next door, the noodle man got a moon. He went home for soup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.983
+    ],
+    [
+     0.983,
+     1.5
+    ],
+    [
+     1.569,
+     1.948
+    ],
+    [
+     1.948,
+     2.517
+    ]
+   ]
+  },
+  "L64": {
+   "text": "The next Friday, our queue reached all the way to the arch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.768,
+     1.259
+    ],
+    [
+     1.259,
+     1.569
+    ],
+    [
+     1.569,
+     2.224
+    ]
+   ]
+  },
+  "L65": {
+   "text": "In this town, a coin over your head decides your luck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.061
+    ],
+    [
+     1.061,
+     1.629
+    ],
+    [
+     1.629,
+     2.19
+    ]
+   ]
+  },
+  "L66": {
+   "text": "Ours is shared.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.19,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.19,
+     1.034
+    ]
+   ]
+  }
+ }
+}
