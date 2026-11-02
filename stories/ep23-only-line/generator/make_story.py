@@ -82,14 +82,14 @@ def CH(lid, start):
 # ---------------------------------------------------------------------------------------------------- holds
 # The held silence at the end is P04. The loop pause after it carries the clap's fade to black.
 # The tally shot (L16) is held 1.5 s or longer: its gap makes sure of it.
-GAPS = {"L16": 0.55}
+GAPS = {"L16": 0.55, "L59": 0.7}
 for ln in lines:
     if ln["id"] in GAPS:
         ln["gap"] = GAPS[ln["id"]]
 for ln in lines:
     if ln["id"] == "P04":
         ln["pause"] = 1.0
-lines = lines + [{"id": "P05", "pause": 0.42, "chunks": []}]
+lines = lines + [{"id": "P05", "pause": 0.6, "chunks": []}]
 
 for ln in lines:      # "around", not "round": Whisper writes the American spelling and so does the narrator
     for ch in ln.get("chunks", []):
@@ -186,8 +186,8 @@ def face(pos, d=3.0, lens=50, ang=0.0, h=1.62, tz=1.34, push=0.0, lens2=None, z0
 HOUSE_WIDE = still([0.0, -8.0, 1.45], [0.8, 3.0, 1.2], 24)
 LOW_CROSS = still([1.3, 1.5, 0.3], [YEL[0], YEL[1], 0.05], 28)
 WINGS_FROM_MARK = still([1.4, 2.0, 1.7], [4.5, 4.5, 1.4], 28)
-TRACK_L = c([0, [-0.9, -0.4, 1.5], [-0.9, 3.0, 1.35], 28], [1, [0.5, -0.4, 1.5], [0.5, 3.0, 1.35], 28])
-TRACK_R = c([0, [0.5, -0.4, 1.5], [0.5, 3.0, 1.35], 28], [1, [-0.9, -0.4, 1.5], [-0.9, 3.0, 1.35], 28])
+TRACK_L = c([0, [-0.6, -1.4, 1.5], [-0.6, 3.0, 1.35], 26], [1, [0.2, -1.4, 1.5], [0.2, 3.0, 1.35], 26])
+TRACK_R = c([0, [0.2, -1.4, 1.5], [0.2, 3.0, 1.35], 26], [1, [-0.6, -1.4, 1.5], [-0.6, 3.0, 1.35], 26])
 MARION_CAM = [-0.8 + 0.5, -1.5, 1.25]
 SEATED_MARION = [ROW3[0], ROW3[1], 1.1]
 FLAT_FACE = still([FLAT[0] - 0.15, FLAT[1] + 2.2, 1.28], [FLAT[0], FLAT[1] - 0.75, 1.0], 38)
@@ -259,7 +259,7 @@ SHOTS = [
     ("L56", "Walt in his robe asks", 2, face(KING, 3.4, 44, -6, tz=1.36)),
     ("L57", "low on the boards: my feet on the cross", 1, still([YEL[0] + 0.5, YEL[1] - 2.3, 0.28], [YEL[0], YEL[1], 0.3], 24)),
     (CH("L57", "and stepped"), "my feet are off the cross", 1, still([YEL[0] + 0.5, YEL[1] - 2.3, 0.28], [YEL[0], YEL[1] + 0.2, 0.3], 24)),
-    ("L58", "the lights sink (wide from the house)", 1, still([0.0, -8.0, 1.45], [1.2, 3.0, 1.2], 24)),
+    ("L58", "the lights sink (wide from the house)", 1, still([0.6, -5.0, 1.3], [1.2, 3.0, 1.25], 26)),
     ("L59", "my face, nearly dark", 1, face([YEL[0], YEL[1] + 0.65], 2.6, 52, 6)),
     (CH("L59", "right BESIDE"), "the dim boards at my feet", 1, still([YEL[0] + 0.2, YEL[1] - 1.1, 0.35], [YEL[0], YEL[1] + 0.4, 0.05], 36)),
     ("L61", "the lights creep back up (wide)", 1, still([0.0, -8.0, 1.45], [1.2, 3.0, 1.2], 24)),
@@ -282,9 +282,9 @@ SHOTS = [
     # 08 opening night
     ("L78", "from the back of the house over the heads", 2, still([0.0, -12.8, 2.6], [0.0, 3.0, 1.1], 27)),
     ("L79", "my knees shaking under the cloak", 2, still([YEL[0] + 0.3, YEL[1] - 2.8, 0.7], [YEL[0], YEL[1], 0.6], 30)),
-    ("L80", "me in the wings, looking up the row of legs", 2, still([4.35, 1.3, 1.95], [4.6, 5.0, 1.5], 28)),
+    ("L80", "me in the wings, looking up the row of legs", 2, still([3.2, 0.2, 1.6], [4.35, 3.0, 1.35], 22)),
     ("L82", "a slow track past the legs to the brick", 2,
-     c([0, [4.45, 2.8, 1.5], [4.45, 6.6, 1.4], 28], [1, [4.45, 5.2, 1.5], [4.45, 7.2, 1.3], 28])),
+     c([0, [3.1, 2.6, 1.5], [4.4, 6.0, 1.3], 28], [1, [3.3, 4.8, 1.5], [4.0, 7.2, 1.2], 28])),
     ("L83", "my face, a small breath", 2, face([3.2, 2.0], 3.0, 50, 6)),
     ("L84", "my feet land on the cross", 2, still([YEL[0] + 0.5, YEL[1] - 2.3, 0.28], [YEL[0], YEL[1], 0.3], 24)),
     ("L85", "Walt asks, robe and crown", 2, face(KING, 3.4, 44, 6, tz=1.36)),
@@ -297,7 +297,7 @@ SHOTS = [
     ("L92", "my shoulders rise under the cloak", 2, still([YEL[0] + 0.1, YEL[1] - 1.5, 1.5], [YEL[0], YEL[1], 1.4], 40)),
     ("L93", "my voice shook", 2, face(YEL, 2.7, 55, -4)),
     ("L94", "Walt starts to smile", 2, face(KING, 3.0, 50, -4, tz=1.4)),
-    ("L95", "wide: the curve complete, the wings empty", 2, still([0.0, -7.5, 1.4], [1.0, 3.0, 1.2], 22)),
+    ("L95", "wide: the curve complete, the wings empty", 2, still([0.0, -4.2, 1.3], [1.0, 3.0, 1.3], 26)),
     ("L96", "close on my face, mouth closing, eyes wet but steady", 2, face(YEL, 2.9, 52, 2, push=0.25, lens2=54)),
 ]
 
@@ -428,9 +428,11 @@ key("walt", "L09", head=[0, 0])
 hide("walt", "L11")
 put("walt", "L17", KING, yaw=0)
 key("walt", "L18", side=[75, 75], head=[0, -10], expr="neutral", blend=0.3)
-key("walt", "L19", side=[0, 0], head=[0, 0], blend=0.4)
+hide("walt", "L19")                                                      # out of the track
+put("walt", "L20", KING, yaw=0)
 put("walt", "L28", KING, yaw=0, head=[0, -12])
-key("walt", "L29", head=[0, 0])
+hide("walt", "L29")
+put("walt", "L30", KING, yaw=0)
 put("walt", "L34", EDGE_WALT, yaw=0, sit=True, expr="neutral")
 key("walt", "L37", expr="wide")
 key("walt", "L38", expr="neutral")
@@ -445,7 +447,8 @@ put("walt", "L71", KING, yaw=180, expr="neutral")                           # me
 put("walt", "L75", KING, yaw=0)
 put("walt", "L78", KING, yaw=0)
 put("walt", "L85", KING, yaw=0, head=[0, -14], side=[75, 75])
-key("walt", "L86", side=[0, 0], head=[0, 0], blend=0.4)
+hide("walt", "L86")
+put("walt", "L87", KING, yaw=0)
 key("walt", CH("L89", "was WAITING"), expr="neutral", head=[3, 2], blend=0.2)
 key("walt", CH("L89", "was WAITING") + "+0.5", head=[3, 7], blend=0.15)
 key("walt", CH("L89", "was WAITING") + "+0.8", head=[3, 1], blend=0.2)
@@ -578,8 +581,9 @@ sfx = [
     {"at": "L66>", "kind": "hit", "db": -8, "dur": 1.6},
     {"at": "L87", "kind": "creak", "db": -30, "dur": 0.8},
     {"at": "L93", "kind": "bell", "db": -34},
-    {"at": "P04>", "kind": "clap", "db": -9, "dur": 1.4},
-    {"at": "P04>", "kind": "thud", "db": -22},
+    {"at": "P04>", "kind": "clap", "db": -6, "dur": 1.4},
+    {"at": "P04>", "kind": "thud", "db": -16},
+    {"at": "P04>", "kind": "bell", "db": -20},
 ]
 
 story = {
@@ -600,7 +604,7 @@ story = {
               "vignette": 0.34, "bloom": 0.22, "grain": 0.012, "red_line": 0.79},
     "asr_ignore_tail_repeat": True,   # Whisper repeats the last line after the held silence; the film has no words there
     "phonemes": {},
-    "places": {"marks": MARKS, "legy": LEGY, "king": KING, "chairs": CHAIRS, "ghost": [-0.3, 2.0], "flat": list(FLAT),
+    "places": {"marks": MARKS, "legy": LEGY, "king": KING, "chairs": CHAIRS, "ghost": [-3.8, 1.8], "flat": list(FLAT),
                "car": list(CAR)},
     "cast": cast,
     "lines": lines,
@@ -640,8 +644,9 @@ story = {
                   {"kind": "hum", "from": "L76", "to": "L78", "lufs": -42},
               ],
               "sfx": sfx,
-              "music_drops": [{"from": "P01", "to": "L50", "keep": ["hit"]},
-                              {"from": "L61-0.7", "to": "L61+0.3"},
+              "music_drops": [{"from": "P04", "to": "P04>", "keep": ["clap", "thud", "bell"]},
+                              {"from": "P01", "to": "L50", "keep": ["hit"]},
+                              {"from": "L59>", "to": "L61+0.3"},
                               {"from": "P03", "to": "L67", "keep": ["hit"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

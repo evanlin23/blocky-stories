@@ -174,8 +174,8 @@ def materials(kit):
     M["car"] = kit.plastic("#38585f", 0.5, name="car body")
     M["tyre"] = kit.plastic("#0c0c0e", 0.9, name="tyre")
     M["window_night"] = kit.emit("#1c2a46", 0.5, name="window night")
-    M["head_dark"] = kit.plastic("#2d2b38", 0.9, name="aud head")
-    M["body_dark"] = kit.plastic("#34323f", 0.9, name="aud body")
+    M["head_dark"] = kit.plastic("#7a6a66", 0.9, name="aud head")
+    M["body_dark"] = kit.plastic("#3c3a52", 0.9, name="aud body")
     M["spark"] = kit.emit("#ff9a2e", 5.0, name="eye spark")
     return M
 
@@ -245,7 +245,7 @@ def build_house(kit, ctx, M):
     aud = []
     for r in range(1, ROWS):
         for i, x in enumerate(xs):
-            if kit.hash01(r, i, 5) < 0.3 or (r == 2 and abs(x + 0.58) < 0.1):
+            if kit.hash01(r, i, 5) < 0.12 or (r == 2 and abs(x + 0.58) < 0.1):
                 continue
             h = 0.02 * kit.hash01(r, i, 9)
             hd = kit.sphere(f"aud head {r} {i}", 0.12, (x, row_y(r) - 0.12, row_z(r) + 0.95 + h), M["head_dark"], seg=8)
@@ -462,8 +462,8 @@ _WARM = {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1"
 _COLD = {"wash_l": 0.7, "wash_r": 0.7, "wash_top": 0.7, "wash_back": 0.7, "run1": 1.0, "run2": 0.5, "run3": 1.0,
          "ghost": 0.4, "marion_lamp": 0.8, "wing_fill": 0.9}
 MOODS = {
-    "ghost": {"gains": {"ghost": 1.0, "ghost_fill": 1.8, "run1": 0.6, "run2": 0.3, "run3": 0.6, "wing_fill": 0.3},
-              "wash": "#ffb868", "exp": 1.5},
+    "ghost": {"gains": {"ghost": 1.0, "ghost_fill": 1.5, "run1": 0.6, "run2": 0.3, "run3": 0.6, "wing_fill": 0.3},
+              "wash": "#ffb868", "exp": 1.2},
     "work": {"gains": {"work_l": 1.0, "work_r": 1.0, "work_house": 1.0, "run1": 0.12, "run3": 0.12, "ghost": 0.2},
              "wash": "#ffb868", "exp": 0.0},
     "wing": {"gains": {"run1": 1.0, "run2": 0.6, "run3": 1.0, "ghost": 0.25, "ghost_fill": 0.3, "chalk_lit": 1.0,
@@ -471,21 +471,21 @@ MOODS = {
              "wash": "#ffb868", "exp": 0.9},
     "warm": {"gains": dict(_WARM), "wash": "#ffb868", "exp": 0.0},
     "dim": {"gains": {"wash_l": 0.07, "wash_r": 0.07, "wash_top": 0.07, "wash_back": 0.07, "run1": 1.2, "run2": 0.5,
-                      "run3": 1.2, "ghost": 0.6, "ghost_fill": 0.3, "wing_fill": 0.5},
+                      "run3": 1.2, "ghost": 0.3, "ghost_fill": 0.12, "wing_fill": 0.5},
             "wash": "#ffb868", "exp": 0.5},
     "cold": {"gains": dict(_COLD), "wash": "#a9b9e6", "exp": 0.0},
-    "open": {"gains": {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 0.8, "run2": 0.4,
-                       "run3": 0.8, "ghost": 0.3, "aud": 1.0, "wing_fill": 1.5, "wing_fill2": 2.5},
+    "open": {"gains": {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 1.8, "run2": 1.6,
+                       "run3": 1.8, "ghost": 0.3, "aud": 1.0, "aud_back": 1.0, "wing_fill": 2.0, "wing_fill2": 4.0},
              "wash": "#ffb868", "exp": 0.0},
     # the flat and the car are far from the stage: the stage keeps its light, so the next stage shot starts where it was
-    "flat": {"gains": {**_COLD, "flat_lamp": 1.0, "flat_fill": 1.0}, "wash": "#a9b9e6", "exp": 0.0},
+    "flat": {"gains": {"wash_l": 0.25, "wash_r": 0.25, "wash_top": 0.25, "wash_back": 0.25, "run1": 1.0, "run3": 1.0, "ghost": 0.3, "flat_lamp": 1.0, "flat_fill": 1.0}, "wash": "#a9b9e6", "exp": 0.0},
     "car": {"gains": {**_WARM, "car_lamp": 1.0, "car_fill": 1.0}, "wash": "#ffb868", "exp": 0.0},
 }
 
 
 def build_lights(kit, ctx):
     gx, gy = ctx["places"]["ghost"]
-    lamp(kit, "ghost", "POINT", (gx, gy, 1.78), 420.0, "#ffd7a0", size=0.08)
+    lamp(kit, "ghost", "POINT", (gx, gy, 1.78), 700.0, "#ffd7a0", size=0.08)
     lamp(kit, "ghost_fill", "AREA", (3.3, -1.6, 2.2), 160.0, "#ffd0a0", aim=(2.3, 2.8, 1.0), size=1.6)
     lamp(kit, "wash_l", "SPOT", (-3.5, -4.0, 5.4), 2600.0, "#ffb868", aim=(-0.5, 2.3, 1.0), spot=44, blend=0.5, size=0.3)
     lamp(kit, "wash_r", "SPOT", (3.5, -4.0, 5.4), 2600.0, "#ffb868", aim=(1.0, 2.3, 1.0), spot=44, blend=0.5, size=0.3)
@@ -501,6 +501,7 @@ def build_lights(kit, ctx):
     lamp(kit, "wing_fill", "POINT", (4.3, 2.2, 2.8), 110.0, "#8da0e0", size=0.2)
     lamp(kit, "wing_fill2", "POINT", (4.2, 4.8, 2.4), 90.0, "#8da0e0", size=0.2)
     lamp(kit, "marion_lamp", "SPOT", (0.2, -3.0, 2.0), 600.0, "#ffc890", aim=(-0.58, -4.5, 0.95), spot=40, blend=0.5, size=0.15)
+    lamp(kit, "aud_back", "AREA", (0, -12.5, 4.6), 900.0, "#6d82b4", aim=(0, -6.0, 0.6), size=8.0)
     lamp(kit, "aud", "AREA", (0, -2.0, 4.2), 1300.0, "#6d82b4", aim=(0, -8.0, 0.4), size=8.0)
     fx, fy = ctx["places"]["flat"]
     lamp(kit, "flat_lamp", "POINT", (fx - 0.46, fy + 0.17, 1.1), 28.0, "#ffbe74", size=0.05)
@@ -541,7 +542,7 @@ def build(kit, story, tl):
     build_lights(kit, ctx)
     objs = ctx["pr"]["objs"]
     # the stage wash doesn't reach the Prompter: its front lights are dead
-    for nm in WASH_NAMES + ("work_l", "work_r", "work_house", "ghost_fill", "aud", "wing_fill", "wing_fill2"):
+    for nm in WASH_NAMES + ("work_l", "work_r", "work_house", "ghost_fill", "aud", "aud_back", "wing_fill", "wing_fill2"):
         light_except(kit, "pr dark", nm, objs)
     ctx["costumes"] = False
     return ctx
