@@ -9,6 +9,14 @@ You turn `stories/<name>/script.md` into a film. Read `RULES.md`, `docs/engine.m
 
 Environment: `BLOCKY_BPY` and `BLOCKY_TTS` must point at the venvs. If they don't, run `bash blocky/setup.sh` and export what it prints. Run long steps (preview render) with the Bash tool's `run_in_background`, never `nohup`/`setsid`, and under `nice -n 19` if something else is rendering.
 
+## Lessons from the first 30 stories (2026-11-02)
+- Set `"flash_safe": true` in story.json's `look`, and ramp every light switch over at least 0.3 s. Strobing flicker and instant blackouts failed the flash bar on most stories and cost a whole fix round each.
+- Run `python -m blocky flash <name> --file <preview mp4>` before anyone reviews the preview, and fix the named seconds first.
+- Seconds 15 to 30 escalate or show the rule at work; nobody explains it (ep11's only retention dip).
+- Never let two surfaces share a plane (a sleeve on a sleeve, a decal on a wall): they z-fight, flipping colour between frames and between machines, so the preview can pass while the 16-shard final fails the flash bar (mirror-maze, 2026-11-02). Stand anything layered at least 1 cm proud.
+- After editing story cues or shots, run `python -m blocky timeline <name>` before the preview, and pass `--force` to `render` for shots you changed: without them the preview silently reuses old frames, and the reviewers see the old cut (ep27 lost two rounds this way).
+- A creature that's a squat box reads as an object, not a threat (ep21's road post read as a lunchbox, then a crate, and was killed after three rounds). Make it taller than the cast, with a body-like silhouette (limbs, a head, a face or a gape), posed toward the viewer. Judge the creature test still at phone size against that before step 2.
+
 ## Build, in this order
 1. **Creature test still first.** Build only the creature and a bit of set in `set.py`, then render one phone-size still of the reveal (`python -m blocky stills <name> --t <s>`). Look at it. If it reads silly rather than frightening, fix the design and lighting (RULES.md → The creature) before building anything else. Three tries at most, then report.
 2. `stories/<name>/generator/make_story.py` + `lines.json` (relative paths), which write `story.json`. Then the rest of `set.py`.

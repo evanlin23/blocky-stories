@@ -28,13 +28,49 @@ from blocky.gate import load_package
 REPO = os.environ.get("GITHUB_REPOSITORY", "evanlin23/blocky-stories")
 
 
-def next_story(done: dict) -> str | None:
-    for s in all_stories():
-        if s in done:
+def queue() -> list[str]:
+    """queue.txt: story folders to upload first, in order (blank lines and # comments ignored)."""
+    q = ROOT / "queue.txt"
+    names = [ln.strip() for ln in q.read_text().splitlines()] if q.exists() else []
+    return [n for n in names if n and not n.startswith("#") and (ROOT / "stories" / n / "story.json").exists()]
+
+
+def shape(story: str) -> str:
+    """package.json's optional `shape`: a short tag for the twist's shape (e.g. "stand-in")."""
+    try:
+        pkg = load_package(story) or {}
+    except FileNotFoundError:   # an uploaded story whose folder is gone
+        pkg = {}
+    return str(pkg.get("shape", "")).strip().lower()
+
+
+def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
+    """The oldest ready story, skipping past one whose twist shape matches the last upload's, so two in a row
+    never end the same way (a story is only held back while another ready one can go first)."""
+    last = shape(next(reversed(done))) if done else ""
+    held = None
+    for s in queue() + [x for x in all_stories() if x not in queue()]:
+        if s in done or s in skip or (load_package(s) or {}).get("hold"):   # held for a redo (RULES → Packaging)
             continue
         if film(s) and gate_open(s):
-            return s
-    return None
+            if not last or shape(s) != last:
+                return s
+            held = held or s
+    return held
+
+
+def cover(d: Path, s: str) -> tuple[str, str] | None:
+    """Commit the film's cover frame to covers/<slug>.jpg so the issue can show it; returns (url, m:ss)."""
+    jpg = next(d.rglob(f"{s}.cover.jpg"), None)
+    if jpg is None:
+        return None
+    txt = next(d.rglob(f"{s}.cover.txt"), None)
+    t = float(txt.read_text().strip()) if txt else 0.0
+    dst = ROOT / "covers" / f"{s}.jpg"
+    dst.parent.mkdir(exist_ok=True)
+    dst.write_bytes(jpg.read_bytes())
+    subprocess.run(["git", "-C", str(ROOT), "add", str(dst)], check=True)
+    return f"https://raw.githubusercontent.com/{REPO}/main/covers/{s}.jpg", f"{int(t) // 60}:{int(t) % 60:02d}"
 
 
 def fetch(story: str, d: Path) -> tuple[Path, dict]:
@@ -112,17 +148,25 @@ def main() -> None:
     if not a.story and any(today in (e.get("uploaded"), e.get("issued")) for e in done.values()):
         print("already posted one today")   # the backup run found the first one worked
         return
-    story = a.story or next_story(done)
-    if not story:
-        print("nothing ready to upload today")
-        return
+    failed: set[str] = set()
+    while True:   # a film that fails the flash bar never blocks the day: take the next one
+        story = a.story or next_story(done, frozenset(failed))
+        if not story:
+            print("nothing ready to upload today" + (f" (flash fails: {sorted(failed)})" if failed else ""))
+            return
+        td_obj = tempfile.TemporaryDirectory()
+        mp4, flash = fetch(story, Path(td_obj.name))
+        if flash.get("house_bar", {}).get("pass"):
+            break
+        print(f"{story}: the film fails the flash bar; skipping it (redraw the shots its flash report names)")
+        td_obj.cleanup()
+        if a.story:
+            sys.exit(1)
+        failed.add(story)
     pkg = load_package(story)
     s = slug(story)
     rel = film(story)["url"] + " (the `film-" + story + "` artifact, at the bottom of the run page)"
-    with tempfile.TemporaryDirectory() as td:
-        mp4, flash = fetch(story, Path(td))
-        if not flash.get("house_bar", {}).get("pass"):
-            sys.exit(f"{story}: the film fails the flash bar; not uploading")
+    with td_obj as td:
         desc = description(pkg, flash)
         title = pkg["title"]
         print(f"{story}: {title!r} ({mp4.stat().st_size / 1e6:.0f} MB)")
@@ -146,15 +190,17 @@ def main() -> None:
                   f"<details><summary>Title and description</summary>\n\n```\n{title}\n\n{desc}```\n</details>\n\n"
                   f"Close this issue once it's public.")
         else:
+            cv = cover(Path(td), s)
             record(story, {"manual": True, "issued": today, "title": title})
+            shot = (f"**Cover** (pick the {cv[1]} moment as the Short's thumbnail):\n\n![cover]({cv[0]})\n\n" if cv else "")
             issue(f"Upload by hand: {title}",
-                  f"**{s}** is ready for PandaNanoAdventures. Automatic uploads are off until the YouTube API audit is "
-                  f"approved (then set the repo variable `YT_AUDITED` to `true`), so upload it by hand:\n\n"
-                  f"1. Download `{s}.mp4` from {rel}\n"
-                  f"2. Upload in Studio with the title and description below. Made for kids: **No**. "
-                  f"Altered or synthetic content: **No**.\n"
-                  f"3. Pin this comment:\n\n> {pin}\n\n"
-                  f"```\n{title}\n\n{desc}```\n\nClose this issue once it's public.")
+                  f"**{s}** is ready for PandaNanoAdventures.\n\n"
+                  f"**Video:** open {film(story)['url']} and tap **film-{story}** under Artifacts "
+                  f"(a zip with `{s}.mp4`).\n\n"
+                  f"**Title**\n```\n{title}\n```\n**Description**\n```\n{desc}```\n"
+                  f"**Pinned comment** (post it as your own first comment)\n```\n{pin}\n```\n"
+                  f"**Settings:** Made for kids: **No**. Altered or synthetic content: **No**.\n\n"
+                  f"{shot}Close this issue once it's public.")
 
 
 if __name__ == "__main__":

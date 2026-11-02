@@ -20,6 +20,7 @@ timestamps divided by the rate.
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -139,7 +140,7 @@ def asr(wav: Path, timeline: Path) -> int:
     segs, _ = m.transcribe(np.frombuffer(pcm, np.float32), beam_size=5, language="en")
     heard = " ".join(s.text for s in segs)
     num = {str(i): w for i, w in enumerate("zero one two three four five six seven eight nine ten".split())}
-    words = lambda t: [num.get(w, w) for w in re.sub(r"[^a-z0-9' ]", " ", t.lower().replace("-", " ")).split()]
+    words = lambda t: [num.get(w, w) for w in re.sub(r"[^a-z0-9' ]", " ", t.lower().replace("-", " ").replace("granddad", "grandad")).split()]
     a, b = words(want), words(heard)
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
     print(f"script {len(a)} words, heard {len(b)}, match {sm.ratio():.3f}")
@@ -149,6 +150,9 @@ def asr(wav: Path, timeline: Path) -> int:
         if op == "equal":
             continue
         sa, sb = " ".join(a[a1:a2]), " ".join(b[b1:b2])
+        if op == "insert" and a1 == len(a) and os.environ.get("BLOCKY_ASR_TAIL"):   # opt-in (ep23): after the last line
+            print(f"  tail: Whisper repeated the end, ignored: {sb!r} (the film has no words there)")
+            continue
         if same_spoken(sa, sb):
             print(f"  spelling: script {sa!r} | heard {sb!r} (the same words, spelled another way)")
             continue
@@ -158,13 +162,21 @@ def asr(wav: Path, timeline: Path) -> int:
     return bad
 
 
-SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # British and American spellings
+SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros": "zeroes", "arrivals": "arrivals"}   # British and American spellings
 # homophones: the same sound, and Whisper picks the spelling from the words around it ("under the bulb threw"), so
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
-HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo", "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
-              "wren": "ren", "wrens": "rens"}
+HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
+              "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
+              "wren": "ren", "wrens": "rens", "too": "to",   # "too" (ep15: "back TOO,") is heard as "to"
+              "60th": "sixtieth",   # ep31
+              # ep33 (opt-in: only a story with these words is affected): made-up names Whisper spells its own way
+              "halvor": "halver", "halvors": "halvers", "cagoule": "kagool", "40": "forty",
+              "pair": "pear", "mom": "mum", "palate": "palette", "wanna": "wantto",   # pair/pear, mom/mum, palate/palette, wanna (ep32)
+              "okoffor": "okafor", "okoffors": "okafors", "ocoffor": "okafor", "ocoffors": "okafors",
+              "okofor": "okafor", "okofors": "okafors",   # ep14: Okafor
+              "ossie": "ozzy"}   # ossie/ozzy (ep43)
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 
@@ -185,6 +197,8 @@ def same_spoken(script: str, heard: str) -> bool:
         for w in t.split():
             w = w.replace("'", "")
             w = NUMBERS.get(int(w), w) if w.isdigit() and int(w) in NUMBERS else w
+            if w.isdigit() and 20 < int(w) < 100:   # "72" as "seventy two" (ep45)
+                w = _under100(int(w))
             if w.isdigit() and 100 <= int(w) < 1000:   # "112" as "a hundred and twelve" (ep14)
                 h, r = divmod(int(w), 100)
                 w = ("a" if h == 1 else NUMBERS.get(h, str(h))) + "hundred" + ("and" + _under100(r) if r else "")

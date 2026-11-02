@@ -12,10 +12,12 @@ You're asked for N stories. Plan them together, so they differ from each other a
 2. For each story, make `stories/<name>/` (name: two or three words, kebab-case) and write:
    - `script.md`:
      - the slug (`ep<NN>-<name>`, numbering on from the highest existing slug, in the order they should upload)
+     - **the big idea first** (RULES → The lore is the point): one sentence that makes someone say "wait, what", a reveal that reframes the rule and every strange detail. Pitch ten ideas for every one you keep, and keep only the ones that would hold up as a film. Never reuse the owner's example ideas (a one-way door to the past, waking from a coma)
      - premise, rule, twist (and where it's planted), world, cast (adults, or teens at the youngest, never in peril)
      - the creature and its continuity list (what it looks like, where it is in each beat)
      - palette, caption key colour, the music's mode and tempo, the shot plan beat by beat
-     - the twist: how the last 15 seconds turn over the first line, and the two plants a rewatch catches
+     - the world's rule as the first line ("In this world/town, …", under 16 words), the marker that shows it on screen by 2 s, the 3 to 5 example montage, how the narrator is the exception, the loved one at stake, and the loophole the climax turns (RULES.md → What the hits do)
+     - the twist: how the last 15 seconds turn over the first line, and the two plants a rewatch catches. Prefer a shape other than `stand-in` (a Keeper keeping a missing person's place), which more than ten stories already use (the owner allows repeats, so it isn't banned). `stories/lore.md` → "Other things a count can do" has other shapes
      - the one connection to `stories/lore.md` it plants (what, which line or shot)
      - the full narration as numbered lines, about 560 to 640 words at roughly 290 wpm, so 2:15 to 2:30. Every line is the narrator's, and characters speak in reported speech.
    - `package.json` per RULES.md → Packaging.
