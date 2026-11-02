@@ -13,6 +13,7 @@ Environment: `BLOCKY_BPY` and `BLOCKY_TTS` must point at the venvs. If they don'
 - Set `"flash_safe": true` in story.json's `look`, and ramp every light switch over at least 0.3 s. Strobing flicker and instant blackouts failed the flash bar on most stories and cost a whole fix round each.
 - Run `python -m blocky flash <name> --file <preview mp4>` before anyone reviews the preview, and fix the named seconds first.
 - Seconds 15 to 30 escalate or show the rule at work; nobody explains it (ep11's only retention dip).
+- A creature that's a squat box reads as an object, not a threat (ep21's road post read as a lunchbox, then a crate, and was killed after three rounds). Make it taller than the cast, with a body-like silhouette (limbs, a head, a face or a gape), posed toward the viewer. Judge the creature test still at phone size against that before step 2.
 
 ## Build, in this order
 1. **Creature test still first.** Build only the creature and a bit of set in `set.py`, then render one phone-size still of the reveal (`python -m blocky stills <name> --t <s>`). Look at it. If it reads silly rather than frightening, fix the design and lighting (RULES.md → The creature) before building anything else. Three tries at most, then report.
