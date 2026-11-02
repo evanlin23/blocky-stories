@@ -242,10 +242,10 @@ def wbox(kit, name, lo, hi, mat, parent=None, bevel=0.0):
 GRID = dict(x0=-6.0, x1=6.0, y0=-8.0, y1=2.0, step=0.1)      # the finely cut yard, where the hollows go
 HOLLOWS = {
     # (x, y, rx, ry, depth): knees; shin grooves are long shallow ovals behind them (toward -y)
-    "step": [(KNEEL_STEP[0] - 0.26, KNEEL_STEP[1], 0.24, 0.24, 0.13), (KNEEL_STEP[0] + 0.26, KNEEL_STEP[1], 0.24, 0.24, 0.13),
+    "step": [(KNEEL_STEP[0] - 0.26, KNEEL_STEP[1], 0.24, 0.24, 0.2), (KNEEL_STEP[0] + 0.26, KNEEL_STEP[1], 0.24, 0.24, 0.2),
              (KNEEL_STEP[0] - 0.26, KNEEL_STEP[1] - 0.55, 0.17, 0.6, 0.045),
              (KNEEL_STEP[0] + 0.26, KNEEL_STEP[1] - 0.55, 0.17, 0.6, 0.045)],
-    "chair": [(KNEEL[0] - 0.26, KNEEL[1], 0.24, 0.24, 0.15), (KNEEL[0] + 0.26, KNEEL[1], 0.24, 0.24, 0.15),
+    "chair": [(KNEEL[0] - 0.26, KNEEL[1], 0.24, 0.24, 0.2), (KNEEL[0] + 0.26, KNEEL[1], 0.24, 0.24, 0.2),
               (KNEEL[0] - 0.26, KNEEL[1] - 0.55, 0.17, 0.6, 0.05), (KNEEL[0] + 0.26, KNEEL[1] - 0.55, 0.17, 0.6, 0.05)],
 }
 
