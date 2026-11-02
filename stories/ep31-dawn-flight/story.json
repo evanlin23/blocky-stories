@@ -1,20 +1,137 @@
 {
  "slug": "ep31-dawn-flight",
- "title": "stub",
+ "title": "The pilot said there was zero wind, so why was our balloon basket tilting?",
  "made_for_kids": false,
+ "premise": "On Dad's sixtieth birthday we fly a hot-air balloon at dawn over a sea of mist. The pilot says the wind is zero, but the basket keeps leaning toward its empty fourth corner, and each time the burner roars a figure made of loose copper and slate-blue blocks is nearer and more put together.",
+ "twist": "I told Dad my brother couldn't come but never asked him. The basket was built for four and I left a corner empty on purpose, so the figure was the corner's Keeper standing in the gap I made. When I confess and my brother comes the next dawn, the basket flies level.",
+ "world": "a hot-air balloon basket at sunrise over a valley of thick white mist, a cold dark launch field before it, a kitchen table the night before",
  "voice": {
   "voice": "am_adam",
   "tempo": 1.03,
   "rate": 1.45
  },
+ "key_color": "#ff7e6b",
  "gap": 0.12,
  "tail": 0.9,
+ "look": {
+  "fog": "#9d92b4",
+  "fog_density": 0.0055,
+  "fog_start": 14.0,
+  "sky": "#8a6a92",
+  "exposure": 0.0
+ },
+ "grade": {
+  "shadows": [
+   -0.01,
+   0.0,
+   0.05
+  ],
+  "highlights": [
+   0.03,
+   0.01,
+   -0.03
+  ],
+  "saturation": 1.0,
+  "contrast": 1.04,
+  "vignette": 0.3,
+  "bloom": 0.28,
+  "grain": 0.011
+ },
+ "phonemes": {},
  "cast": {
   "me": {
    "age": "adult",
-   "skin": "#f1c9a0",
-   "shirt": "#d4a017",
-   "pants": "#222222"
+   "skin": "#d9a77f",
+   "shirt": "#d9a21b",
+   "pattern": "knit",
+   "pattern_c": "#b8860f",
+   "collar": "#caa020",
+   "pants": "#26282e",
+   "shoes": "#3a3a3c",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#1e1714",
+   "hat": "beanie",
+   "hat_c": "#8a8d92",
+   "extras": [
+    "apron"
+   ],
+   "extra_c": "#1f2c4a",
+   "width": 0.86,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   }
+  },
+  "dad": {
+   "age": "adult",
+   "skin": "#e8bf99",
+   "shirt": "#2c4a38",
+   "pattern": "solid",
+   "collar": "#243d2e",
+   "pants": "#3a3630",
+   "shoes": "#2a2420",
+   "sleeves": "long",
+   "hair": "buzz",
+   "hair_c": "#9a9a9c",
+   "hat": "none",
+   "extras": [
+    "glasses",
+    "scarf"
+   ],
+   "extra_c": "#d6c49a",
+   "width": 0.86,
+   "height": 0.97,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1a1214",
+    "bags": true
+   }
+  },
+  "rosa": {
+   "age": "adult",
+   "skin": "#8a5a44",
+   "shirt": "#e6dcc4",
+   "pattern": "knit",
+   "pattern_c": "#cfc4a8",
+   "collar": "#d4c8ac",
+   "pants": "#2b2d33",
+   "shoes": "#1c1c1e",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#1a1210",
+   "hat": "beanie",
+   "hat_c": "#7a2434",
+   "width": 0.86,
+   "height": 0.95,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#140e0e"
+   }
+  },
+  "callum": {
+   "age": "adult",
+   "skin": "#d9a77f",
+   "shirt": "#1f3d2a",
+   "pattern": "solid",
+   "collar": "#1a3323",
+   "pants": "#2c2e36",
+   "shoes": "#d8d2c4",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#3a2a20",
+   "hat": "beanie",
+   "hat_c": "#1f2c4a",
+   "width": 0.86,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012",
+    "bags": true
+   }
   }
  },
  "lines": [
@@ -1680,18 +1797,4077 @@
     [
      0,
      [
-      0,
       -3,
-      1
+      -36,
+      8.8
      ],
      [
       0,
       0,
-      1
+      7.6
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -2.2,
+      -33.5,
+      8.7
+     ],
+     [
+      0,
+      0,
+      7.6
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the hook: a wide from outside, the envelope still, the basket leaning",
+   "frame": "world"
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      -9,
+      -15,
+      4.0
+     ],
+     [
+      0.5,
+      0,
+      10.5
      ],
      30
     ]
-   ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "a close on the still envelope",
+   "at": "L03",
+   "frame": "world"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      -0.35,
+      -0.25,
+      0.6
+     ],
+     [
+      0.62,
+      0.66,
+      0.2
+     ],
+     20
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "low on the fourth corner, the floor tipping",
+   "at": "L04",
+   "key": 14
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -0.9,
+      1.3
+     ],
+     [
+      0.0,
+      0.0,
+      3.0
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the burner roaring overhead",
+   "at": "L05",
+   "key": 0
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.8
+     ],
+     [
+      35.0,
+      35.0,
+      -12.0
+     ],
+     38
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the mist below, the scatter far off",
+   "at": "L05.1",
+   "key": 0
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      -1.4882474725097674,
+      -4.361649323676896,
+      1.5
+     ],
+     [
+      -2.2,
+      -2.6,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad on the launch field, grinning",
+   "at": "L06",
+   "key": 40,
+   "frame": "world"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      -2.3,
+      -298.45
+     ],
+     [
+      0,
+      0,
+      -298.9
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the kitchen table at night",
+   "at": "L07",
+   "room": "kitchen",
+   "frame": "world"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      0.2787280664334877,
+      -0.8603646545265693,
+      -298.5
+     ],
+     [
+      -0.95,
+      0.0,
+      -298.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "me looking down at my tea",
+   "at": "L08",
+   "room": "kitchen",
+   "frame": "world",
+   "key": 20
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      -0.2787280664334877,
+      -0.8603646545265693,
+      -298.52
+     ],
+     [
+      0.95,
+      0.0,
+      -298.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad nodding",
+   "at": "L09",
+   "room": "kitchen",
+   "frame": "world",
+   "key": 20
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      4.2,
+      -7.2,
+      1.3
+     ],
+     [
+      -1.4,
+      0.0,
+      1.9
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      3.6,
+      -6.8,
+      1.35
+     ],
+     [
+      -1.4,
+      0.0,
+      1.9
+     ],
+     20
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the launch field in the dark, our breath in the lamp light",
+   "at": "L10",
+   "frame": "world",
+   "key": 12
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      1.6,
+      -2.4,
+      1.2
+     ],
+     [
+      -0.2,
+      0.0,
+      3.0
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the first flame into the mouth",
+   "at": "L11",
+   "frame": "world"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      -8.5,
+      -12.0,
+      1.0
+     ],
+     [
+      -1.0,
+      0.0,
+      8.0
+     ],
+     17
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the envelope standing up off the grass",
+   "at": "L12",
+   "frame": "world"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -1.7,
+      3.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.2
+     ],
+     15
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "top-down on the four-corner basket",
+   "at": "L13",
+   "key": 20
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      -0.2,
+      0.15,
+      1.95
+     ],
+     [
+      1.1,
+      -0.55,
+      1.15
+     ],
+     27
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad's bag open and FOUR flasks along the rim of his corner",
+   "at": "L14",
+   "key": 28
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      0.8742920471376184,
+      -0.4892663858785127,
+      1.55
+     ],
+     [
+      -0.62,
+      -0.62,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "my face",
+   "at": "L15",
+   "key": 34
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      -0.12,
+      1.3
+     ],
+     [
+      0.62,
+      0.55,
+      0.55
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad's sleeve and the fourth flask on the empty corner's floor",
+   "at": "L16",
+   "key": 32
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      0.3841814145298089,
+      -0.5490666646784671,
+      1.5
+     ],
+     [
+      -0.58,
+      0.6,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Rosa looking at the empty corner",
+   "at": "L17",
+   "key": 34
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      -0.45,
+      0.2,
+      1.4
+     ],
+     [
+      0.85,
+      0.8,
+      0.8
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the sandbag, tied by its rope into the fourth corner, Rosa's sleeve at the end",
+   "at": "L18",
+   "key": 34
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      0.55,
+      0.15,
+      2.8
+     ],
+     [
+      0.55,
+      1.48,
+      0.11
+     ],
+     28
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the lore close: four slate-blue strokes on the leather rim",
+   "at": "L19",
+   "key": 30
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      -7.5,
+      -10,
+      2.2
+     ],
+     [
+      0,
+      0,
+      3.6
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      -7.5,
+      -10,
+      2.2
+     ],
+     [
+      0,
+      0,
+      4.4
+     ],
+     20
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the ground lets go of us",
+   "at": "L20",
+   "frame": "world"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      0.4,
+      0.4,
+      1.7
+     ],
+     [
+      4.5,
+      6.5,
+      -4.0
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.4,
+      0.4,
+      1.7
+     ],
+     [
+      4.5,
+      6.5,
+      -12.0
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the fields sinking under the mist",
+   "at": "L21",
+   "key": 0
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      0.8295389311788625,
+      0.08696978501149677,
+      1.35
+     ],
+     [
+      -0.58,
+      0.6,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Rosa looking up",
+   "at": "L22",
+   "key": 32
+  },
+  {
+   "id": "S23",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      -1.0,
+      1.75
+     ],
+     [
+      1.21,
+      0.1,
+      1.2
+     ],
+     30
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad's cup sliding along the rim",
+   "at": "L23",
+   "key": 22
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      0.1,
+      1.7
+     ],
+     [
+      1.21,
+      0.78,
+      1.25
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the cup stopping at the fourth corner",
+   "at": "L24",
+   "key": 22
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      0.8688887394336026,
+      0.21177143234621887,
+      1.5
+     ],
+     [
+      -0.58,
+      0.6,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Rosa frowning",
+   "at": "L25",
+   "key": 34
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -0.9,
+      1.3
+     ],
+     [
+      0.0,
+      0.0,
+      3.0
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the flame overhead, roar one",
+   "at": "L25.1",
+   "key": 0
+  },
+  {
+   "id": "S27",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.8
+     ],
+     [
+      7.0,
+      9.0,
+      -12.0
+     ],
+     26
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the mist lit orange under us",
+   "at": "L26",
+   "key": 0
+  },
+  {
+   "id": "S28",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      39.0,
+      39.0,
+      -13.2
+     ],
+     70
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "a long lens across the mist: the scatter a field away",
+   "at": "L27",
+   "key": 0
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      39.0,
+      39.0,
+      -13.0
+     ],
+     105
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "a closer long lens on the scatter",
+   "at": "L28",
+   "key": 0
+  },
+  {
+   "id": "S30",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      39.0,
+      39.0,
+      -13.0
+     ],
+     125
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "the parts of somebody",
+   "at": "L29",
+   "key": 0
+  },
+  {
+   "id": "S31",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      39.0,
+      39.0,
+      -13.0
+     ],
+     70
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "the roar stops and they are gone",
+   "at": "L30",
+   "key": 0
+  },
+  {
+   "id": "S32",
+   "cam": [
+    [
+     0,
+     [
+      -14.0,
+      -22.0,
+      0.6
+     ],
+     [
+      0.0,
+      0.0,
+      2.4
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "a side wide: the lean a little steeper",
+   "at": "L31",
+   "frame": "world"
+  },
+  {
+   "id": "S33",
+   "cam": [
+    [
+     0,
+     [
+      2.3942920471376183,
+      -0.4807336141214872,
+      1.55
+     ],
+     [
+      0.9,
+      -0.35,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad delighted, barn roofs behind him",
+   "at": "L32",
+   "key": 32
+  },
+  {
+   "id": "S34",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -0.9,
+      1.3
+     ],
+     [
+      0.0,
+      0.0,
+      3.0
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the flame, roar two",
+   "at": "L33",
+   "key": 0
+  },
+  {
+   "id": "S35",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      28.0,
+      28.0,
+      0.9
+     ],
+     85
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "one hedge off",
+   "at": "L34",
+   "key": 0
+  },
+  {
+   "id": "S36",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      28.0,
+      28.0,
+      1.1
+     ],
+     140
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "they've come together, almost",
+   "at": "L35",
+   "key": 0
+  },
+  {
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      28.0,
+      28.0,
+      0.0
+     ],
+     150
+    ],
+    [
+     1,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      28.0,
+      28.0,
+      2.1
+     ],
+     150
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "legs, body, arms, head in slices",
+   "at": "L36",
+   "key": 0
+  },
+  {
+   "id": "S38",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      28.353553390593273,
+      27.646446609406727,
+      0.73
+     ],
+     330
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "a gap between two arm blocks with mist behind",
+   "at": "L37",
+   "key": 0
+  },
+  {
+   "id": "S39",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      28.0,
+      28.0,
+      2.2
+     ],
+     130
+    ],
+    [
+     1,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      28.0,
+      28.0,
+      0.6
+     ],
+     130
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "far taller than a person",
+   "at": "L38",
+   "key": 0
+  },
+  {
+   "id": "S40",
+   "cam": [
+    [
+     0,
+     [
+      0.8295389311788625,
+      0.08696978501149677,
+      1.5
+     ],
+     [
+      -0.58,
+      0.6,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Rosa never saw it",
+   "at": "L39",
+   "key": 32
+  },
+  {
+   "id": "S41",
+   "cam": [
+    [
+     0,
+     [
+      -0.85,
+      -0.85,
+      1.6
+     ],
+     [
+      0.5,
+      0.1,
+      1.4
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "my eyeline across the basket: three people standing still",
+   "at": "L39.2",
+   "key": 26
+  },
+  {
+   "id": "S42",
+   "cam": [
+    [
+     0,
+     [
+      0.35,
+      0.35,
+      0.95
+     ],
+     [
+      1.02,
+      1.0,
+      0.7
+     ],
+     36
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the sandbag rope, taut",
+   "at": "L40",
+   "key": 22
+  },
+  {
+   "id": "S43",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -0.9,
+      1.3
+     ],
+     [
+      0.0,
+      0.0,
+      3.0
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the flame, roar three",
+   "at": "L41",
+   "key": 0
+  },
+  {
+   "id": "S44",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      5.7,
+      5.7,
+      1.25
+     ],
+     60
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "a rope's length from the basket",
+   "at": "L42",
+   "key": 0
+  },
+  {
+   "id": "S45",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      5.7,
+      5.7,
+      1.3
+     ],
+     80
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "every piece in the right place",
+   "at": "L43",
+   "key": 0
+  },
+  {
+   "id": "S46",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      5.7,
+      5.7,
+      2.3
+     ],
+     170
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "its face in slices",
+   "at": "L44",
+   "key": 0
+  },
+  {
+   "id": "S47",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      5.7,
+      5.7,
+      2.4
+     ],
+     210
+    ],
+    [
+     1,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      5.7,
+      5.7,
+      2.05
+     ],
+     210
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "the eyes on one, the mouth two gaps below",
+   "at": "L45",
+   "key": 0
+  },
+  {
+   "id": "S48",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      5.7,
+      5.7,
+      1.35
+     ],
+     150
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "pink mist through the gaps",
+   "at": "L46",
+   "key": 0
+  },
+  {
+   "id": "S49",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.5,
+      1.75
+     ],
+     [
+      5.7,
+      5.7,
+      1.25
+     ],
+     60
+    ]
+   ],
+   "hand": 0.0,
+   "step": 4,
+   "what": "the glow fading, and it with it",
+   "at": "L47",
+   "key": 0
+  },
+  {
+   "id": "S50",
+   "cam": [
+    [
+     0,
+     [
+      -14.0,
+      -22.0,
+      0.6
+     ],
+     [
+      0.0,
+      0.0,
+      2.4
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the basket tipping hard toward the fourth corner",
+   "at": "L48",
+   "frame": "world"
+  },
+  {
+   "id": "S51",
+   "cam": [
+    [
+     0,
+     [
+      0.8295389311788625,
+      0.08696978501149677,
+      1.5
+     ],
+     [
+      -0.58,
+      0.6,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Rosa: HOLD ON",
+   "at": "L49",
+   "key": 28
+  },
+  {
+   "id": "S52",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -0.9,
+      1.3
+     ],
+     [
+      0.0,
+      0.0,
+      3.0
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "the flame ramping up, long",
+   "at": "P01",
+   "key": 0
+  },
+  {
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      -1.4,
+      -1.4,
+      1.6
+     ],
+     [
+      0.5,
+      0.5,
+      1.45
+     ],
+     17
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "the reveal from my corner across the basket",
+   "at": "L50",
+   "key": 0,
+   "amb": 0.45
+  },
+  {
+   "id": "S54",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      -0.45,
+      0.55
+     ],
+     [
+      0.62,
+      0.7,
+      0.6
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "in the fourth corner beside the sandbag",
+   "at": "L51",
+   "key": 0
+  },
+  {
+   "id": "S55",
+   "cam": [
+    [
+     0,
+     [
+      -0.4,
+      0.12,
+      0.5
+     ],
+     [
+      0.52,
+      0.55,
+      2.3
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "a low angle up its pieces into the burner glow",
+   "at": "L52",
+   "key": 0
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      -0.05,
+      1.52
+     ],
+     [
+      0.95,
+      0.3,
+      1.45
+     ],
+     42
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "a copper arm block a hand's width from Dad's shoulder",
+   "at": "L53",
+   "key": 0
+  },
+  {
+   "id": "S57",
+   "cam": [
+    [
+     0,
+     [
+      -0.55,
+      -0.3,
+      2.0
+     ],
+     [
+      0.52,
+      0.55,
+      2.15
+     ],
+     24,
+     6.0
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "its sliced face turned to Dad, three-quarter view",
+   "at": "L54",
+   "key": 0,
+   "amb": 0.45
+  },
+  {
+   "id": "S58",
+   "cam": [
+    [
+     0,
+     [
+      2.25,
+      -0.38,
+      1.6
+     ],
+     [
+      0.9,
+      -0.35,
+      1.5
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      2.2,
+      -0.38,
+      1.6
+     ],
+     [
+      0.9,
+      -0.35,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "Dad looking out at the brightening horizon",
+   "at": "L55",
+   "key": 30
+  },
+  {
+   "id": "S59",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -0.9,
+      1.3
+     ],
+     [
+      0.0,
+      0.0,
+      3.0
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "a short roar overhead",
+   "at": "L56",
+   "key": 0
+  },
+  {
+   "id": "S60",
+   "cam": [
+    [
+     0,
+     [
+      -0.62,
+      -0.62,
+      1.95
+     ],
+     [
+      0.52,
+      0.55,
+      2.15
+     ],
+     28
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "from my eyeline: its top slice has turned to me",
+   "at": "L57",
+   "key": 0
+  },
+  {
+   "id": "S61",
+   "cam": [
+    [
+     0,
+     [
+      -1.12,
+      -1.12,
+      1.7
+     ],
+     [
+      0.45,
+      0.45,
+      1.6
+     ],
+     18
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "the rest of it still faces Dad",
+   "at": "L58",
+   "key": 0
+  },
+  {
+   "id": "S62",
+   "cam": [
+    [
+     0,
+     [
+      0.8079712418677015,
+      -0.3682101423829511,
+      1.55
+     ],
+     [
+      -0.62,
+      -0.62,
+      1.5
+     ],
+     34
+    ]
+   ],
+   "hand": 0.005,
+   "step": 1,
+   "what": "hold on my face",
+   "at": "P02",
+   "key": 30
+  },
+  {
+   "id": "S63",
+   "cam": [
+    [
+     0,
+     [
+      -0.95,
+      -0.9,
+      1.65
+     ],
+     [
+      0.6,
+      0.4,
+      1.55
+     ],
+     20
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "over my shoulder: me, the fourth corner, it, Dad beside it",
+   "at": "L59",
+   "key": 12
+  },
+  {
+   "id": "S64",
+   "cam": [
+    [
+     0,
+     [
+      -14.0,
+      -22.0,
+      0.6
+     ],
+     [
+      0.0,
+      0.0,
+      2.4
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "a side wide of the lean",
+   "at": "L60",
+   "frame": "world"
+  },
+  {
+   "id": "S65",
+   "cam": [
+    [
+     0,
+     [
+      0.8742920471376184,
+      -0.4892663858785127,
+      1.55
+     ],
+     [
+      -0.62,
+      -0.62,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "my face, ashamed",
+   "at": "L61",
+   "key": 34
+  },
+  {
+   "id": "S66",
+   "cam": [
+    [
+     0,
+     [
+      -0.15,
+      -0.3,
+      1.62
+     ],
+     [
+      3.0,
+      -0.3,
+      1.45
+     ],
+     26
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad's back, the sunrise beyond",
+   "at": "L62",
+   "key": 14
+  },
+  {
+   "id": "S67",
+   "cam": [
+    [
+     0,
+     [
+      0.7300000000000001,
+      -0.6200000000000001,
+      1.55
+     ],
+     [
+      -0.62,
+      -0.62,
+      1.5
+     ],
+     36
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "my face",
+   "at": "L63",
+   "key": 34
+  },
+  {
+   "id": "S68",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.1,
+      1.7
+     ],
+     [
+      60.0,
+      -3.0,
+      1.2
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the sun breaking out of the mist, all gold",
+   "at": "L64",
+   "key": 0
+  },
+  {
+   "id": "S69",
+   "cam": [
+    [
+     0,
+     [
+      0.15,
+      -2.5,
+      1.65
+     ],
+     [
+      0.15,
+      -0.4,
+      1.5
+     ],
+     16
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "me turned to Dad, my mouth moving, Dad turning to me",
+   "at": "L65",
+   "key": 30
+  },
+  {
+   "id": "S70",
+   "cam": [
+    [
+     0,
+     [
+      -0.5482089463188377,
+      -0.7407567629639723,
+      1.5
+     ],
+     [
+      0.9,
+      -0.35,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad quiet under a short roar",
+   "at": "L66",
+   "key": 30
+  },
+  {
+   "id": "S71",
+   "cam": [
+    [
+     0,
+     [
+      -0.5989925906679844,
+      -0.4049655630598344,
+      1.5
+     ],
+     [
+      0.9,
+      -0.35,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad laughing",
+   "at": "L67",
+   "key": 30
+  },
+  {
+   "id": "S72",
+   "cam": [
+    [
+     0,
+     [
+      0.8295389311788625,
+      0.08696978501149677,
+      1.5
+     ],
+     [
+      -0.58,
+      0.6,
+      1.5
+     ],
+     32
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Rosa startled at the burner",
+   "at": "L67.2",
+   "key": 30
+  },
+  {
+   "id": "S73",
+   "cam": [
+    [
+     0,
+     [
+      -0.30448722013338847,
+      -0.8390915420811751,
+      1.5
+     ],
+     [
+      0.9,
+      -0.35,
+      1.5
+     ],
+     36
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad's face",
+   "at": "L68",
+   "key": 30
+  },
+  {
+   "id": "S74",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      -0.15,
+      1.5
+     ],
+     [
+      0.8,
+      0.2,
+      1.2
+     ],
+     24
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad nodding at the fourth flask in its corner",
+   "at": "L69",
+   "key": 22
+  },
+  {
+   "id": "S75",
+   "cam": [
+    [
+     0,
+     [
+      15.0,
+      -13.0,
+      2.4
+     ],
+     [
+      0.0,
+      0.0,
+      2.3
+     ],
+     27
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "a bright wide down the sunlit valley: the lean, the creature in its corner",
+   "at": "L70",
+   "frame": "world"
+  },
+  {
+   "id": "S76",
+   "cam": [
+    [
+     0,
+     [
+      -9.0,
+      -8.0,
+      1.2
+     ],
+     [
+      0.0,
+      0.0,
+      1.9
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the basket settling upright in a stubble field",
+   "at": "L71",
+   "frame": "world"
+  },
+  {
+   "id": "S77",
+   "cam": [
+    [
+     0,
+     [
+      -0.25,
+      0.35,
+      1.55
+     ],
+     [
+      1.21,
+      -0.05,
+      1.25
+     ],
+     30
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the phone on the rim, Dad bent toward it",
+   "at": "L72",
+   "key": 24
+  },
+  {
+   "id": "S78",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      -0.05,
+      1.62
+     ],
+     [
+      1.21,
+      -0.05,
+      1.23
+     ],
+     42
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "a close on the phone",
+   "at": "L73",
+   "key": 18
+  },
+  {
+   "id": "S79",
+   "cam": [
+    [
+     0,
+     [
+      -0.30448722013338847,
+      -0.8390915420811751,
+      1.5
+     ],
+     [
+      0.9,
+      -0.35,
+      1.5
+     ],
+     36
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad's mouth",
+   "at": "L74",
+   "key": 30
+  },
+  {
+   "id": "S80",
+   "cam": [
+    [
+     0,
+     [
+      0.15,
+      -2.5,
+      1.65
+     ],
+     [
+      0.15,
+      -0.4,
+      1.5
+     ],
+     16
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Dad and me laughing",
+   "at": "L75",
+   "key": 30
+  },
+  {
+   "id": "S81",
+   "cam": [
+    [
+     0,
+     [
+      0.8079712418677015,
+      -0.3682101423829511,
+      1.55
+     ],
+     [
+      -0.62,
+      -0.62,
+      1.5
+     ],
+     34
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "me looking across the basket",
+   "at": "L76",
+   "key": 30
+  },
+  {
+   "id": "S82",
+   "cam": [
+    [
+     0,
+     [
+      -0.25,
+      0.0,
+      1.45
+     ],
+     [
+      0.62,
+      0.72,
+      0.4
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the fourth corner in bright morning light: the sandbag and the flask",
+   "at": "L77",
+   "key": 12
+  },
+  {
+   "id": "S83",
+   "cam": [
+    [
+     0,
+     [
+      -3.6,
+      -4.0,
+      2.7
+     ],
+     [
+      0.0,
+      0.0,
+      1.35
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "the launch field the next dawn: four of us in the basket",
+   "at": "L78",
+   "frame": "world",
+   "key": 10
+  },
+  {
+   "id": "S84",
+   "cam": [
+    [
+     0,
+     [
+      0.7,
+      -3.0,
+      0.95
+     ],
+     [
+      2.1,
+      -1.3,
+      0.35
+     ],
+     28
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Rosa's sleeve and the sandbag on the grass",
+   "at": "L79",
+   "frame": "world",
+   "key": 12
+  },
+  {
+   "id": "S85",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      0.1,
+      1.75
+     ],
+     [
+      1.21,
+      0.6,
+      1.3
+     ],
+     34
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "Callum's flask on his corner's rim",
+   "at": "L80",
+   "key": 24
+  },
+  {
+   "id": "S86",
+   "cam": [
+    [
+     0,
+     [
+      -3,
+      -36,
+      8.8
+     ],
+     [
+      0,
+      0,
+      7.6
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -2.2,
+      -33.5,
+      8.7
+     ],
+     [
+      0,
+      0,
+      7.6
+     ],
+     22
+    ]
+   ],
+   "hand": 0.005,
+   "step": 2,
+   "what": "a wide from outside: the basket level against a flat gold horizon",
+   "at": "L81",
+   "frame": "world"
   }
- ]
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 135,
+    "expr": "worried"
+   },
+   {
+    "at": "L06",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -0.95,
+     0.0,
+     -300.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 90,
+    "expr": "neutral"
+   },
+   {
+    "at": "L08",
+    "head": [
+     0,
+     30
+    ],
+    "expr": "worried",
+    "blend": 0.4
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -0.95,
+     0.0,
+     -300.0
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -1.3,
+     -1.9,
+     0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 30,
+    "expr": "worried"
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -1.3,
+     -1.9,
+     0
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 135,
+    "expr": "worried"
+   },
+   {
+    "at": "L15",
+    "expr": "worried"
+   },
+   {
+    "from": "L15.1",
+    "to": "L15>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L19",
+    "expr": "worried"
+   },
+   {
+    "at": "L25",
+    "expr": "worried"
+   },
+   {
+    "at": "L39.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L40",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ]
+   },
+   {
+    "at": "L40",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 135,
+    "expr": "worried"
+   },
+   {
+    "at": "L46",
+    "expr": "scared",
+    "blend": 0.3
+   },
+   {
+    "at": "L48",
+    "expr": "scared",
+    "head": [
+     0,
+     4
+    ]
+   },
+   {
+    "at": "L50",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "P02",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ]
+   },
+   {
+    "at": "P02",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     4
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 135,
+    "expr": "terrified"
+   },
+   {
+    "at": "L61",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ]
+   },
+   {
+    "at": "L61",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     20
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 135,
+    "expr": "shut"
+   },
+   {
+    "at": "L63",
+    "expr": "shut",
+    "head": [
+     0,
+     22
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L65",
+    "yaw": 100.1,
+    "expr": "worried",
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.3
+   },
+   {
+    "from": "L65",
+    "to": "L65>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L67",
+    "expr": "soft",
+    "blend": 0.5
+   },
+   {
+    "at": "L75",
+    "expr": "grin",
+    "blend": 0.3
+   },
+   {
+    "at": "L76",
+    "yaw": 135,
+    "expr": "soft",
+    "head": [
+     0,
+     4
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L78",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ]
+   },
+   {
+    "at": "L78",
+    "pos": [
+     -0.62,
+     -0.62,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 135,
+    "expr": "grin"
+   }
+  ],
+  "dad": [
+   {
+    "at": 0,
+    "pos": [
+     0.9,
+     -0.35,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 90,
+    "expr": "soft"
+   },
+   {
+    "at": "L06",
+    "pos": [
+     0.9,
+     -0.35,
+     0.0
+    ]
+   },
+   {
+    "at": "L06",
+    "pos": [
+     -2.2,
+     -2.6,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 0,
+    "expr": "grin"
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -2.2,
+     -2.6,
+     0.0
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     0.95,
+     0.0,
+     -300.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     4
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": -90,
+    "expr": "worried"
+   },
+   {
+    "at": "L09",
+    "expr": "soft",
+    "head": [
+     0,
+     16
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L09+0.55",
+    "head": [
+     0,
+     -6
+    ],
+    "blend": 0.25
+   },
+   {
+    "at": "L09+1.0",
+    "head": [
+     0,
+     14
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L10",
+    "pos": [
+     0.95,
+     0.0,
+     -300.0
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -2.3,
+     -2.4,
+     0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 30,
+    "expr": "soft"
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -2.3,
+     -2.4,
+     0
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     0.9,
+     -0.35,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 90,
+    "expr": "grin"
+   },
+   {
+    "at": "L16",
+    "pos": [
+     0.9,
+     -0.35,
+     0.0
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     0.9,
+     -0.35,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     82
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 180,
+    "expr": "grin"
+   },
+   {
+    "from": "L16.1",
+    "to": "L16.2",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L17",
+    "yaw": 90,
+    "arms": [
+     0,
+     0
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L21",
+    "expr": "grin"
+   },
+   {
+    "at": "L32",
+    "expr": "grin",
+    "arms": [
+     0,
+     78
+    ],
+    "blend": 0.3
+   },
+   {
+    "from": "L32.3",
+    "to": "L32>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L33",
+    "arms": [
+     0,
+     0
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L50",
+    "expr": "soft"
+   },
+   {
+    "at": "L55",
+    "expr": "soft",
+    "yaw": 90
+   },
+   {
+    "at": "L59",
+    "expr": "soft"
+   },
+   {
+    "at": "L65",
+    "yaw": -79.9,
+    "expr": "neutral",
+    "blend": 0.5
+   },
+   {
+    "at": "L67",
+    "expr": "grin",
+    "blend": 0.3
+   },
+   {
+    "from": "L67.1",
+    "to": "L67>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L68",
+    "expr": "grin",
+    "yaw": -79.9
+   },
+   {
+    "from": "L68.1",
+    "to": "L68>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L69",
+    "yaw": 90,
+    "head": [
+     80,
+     10
+    ],
+    "expr": "soft",
+    "blend": 0.5
+   },
+   {
+    "at": "L70",
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L72",
+    "head": [
+     40,
+     34
+    ],
+    "yaw": 70,
+    "blend": 0.5
+   },
+   {
+    "at": "L74",
+    "head": [
+     0,
+     0
+    ],
+    "yaw": -79.9,
+    "expr": "grin",
+    "blend": 0.4
+   },
+   {
+    "from": "L74",
+    "to": "L74>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L75",
+    "expr": "squeeze"
+   },
+   {
+    "at": "L78",
+    "pos": [
+     0.9,
+     -0.35,
+     0.0
+    ]
+   },
+   {
+    "at": "L78",
+    "pos": [
+     0.9,
+     -0.35,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 90,
+    "expr": "grin"
+   }
+  ],
+  "rosa": [
+   {
+    "at": 0,
+    "pos": [
+     -0.58,
+     0.6,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 45,
+    "expr": "neutral"
+   },
+   {
+    "at": "L06",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -0.58,
+     0.6,
+     0.0
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     2.9,
+     -3.8,
+     0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": -60
+   },
+   {
+    "at": "L11",
+    "pos": [
+     2.9,
+     -3.8,
+     0
+    ]
+   },
+   {
+    "at": "L11",
+    "pos": [
+     0.4,
+     -1.9,
+     0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     40,
+     40
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 180
+   },
+   {
+    "at": "L13",
+    "pos": [
+     0.4,
+     -1.9,
+     0
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -0.58,
+     0.6,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 45
+   },
+   {
+    "at": "L17",
+    "yaw": 90,
+    "expr": "worried",
+    "blend": 0.4
+   },
+   {
+    "at": "L18",
+    "pos": [
+     -0.58,
+     0.6,
+     0.0
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     0.4,
+     1.0,
+     0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     85,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 90,
+    "expr": "neutral"
+   },
+   {
+    "from": "L18.3",
+    "to": "L18>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L20",
+    "pos": [
+     0.4,
+     1.0,
+     0
+    ]
+   },
+   {
+    "at": "L20",
+    "pos": [
+     -0.58,
+     0.6,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 45
+   },
+   {
+    "at": "L22",
+    "head": [
+     0,
+     -30
+    ],
+    "blend": 0.5
+   },
+   {
+    "from": "L22.2",
+    "to": "L22>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L23",
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L25",
+    "expr": "worried"
+   },
+   {
+    "at": "L39",
+    "expr": "neutral",
+    "yaw": 45
+   },
+   {
+    "from": "L39.2",
+    "to": "L39.3",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L48",
+    "expr": "wide",
+    "blend": 0.3
+   },
+   {
+    "from": "L49.1",
+    "to": "L49.2",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L50",
+    "expr": "neutral",
+    "blend": 0.4
+   },
+   {
+    "at": "L67",
+    "expr": "wide",
+    "blend": 0.1
+   },
+   {
+    "at": "L68",
+    "expr": "neutral",
+    "blend": 0.4
+   },
+   {
+    "at": "L79",
+    "pos": [
+     -0.58,
+     0.6,
+     0.0
+    ]
+   },
+   {
+    "at": "L79",
+    "pos": [
+     2.0,
+     -0.9,
+     0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     55,
+     55
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 200,
+    "expr": "neutral"
+   },
+   {
+    "at": "L81",
+    "pos": [
+     2.0,
+     -0.9,
+     0
+    ]
+   },
+   {
+    "at": "L81",
+    "pos": [
+     -0.58,
+     0.6,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 45
+   }
+  ],
+  "callum": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L78",
+    "pos": [
+     0.52,
+     0.55,
+     0.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 90,
+    "expr": "grin"
+   },
+   {
+    "at": "L80",
+    "expr": "soft"
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "dawn",
+   "v": 0.0
+  },
+  {
+   "at": "L55",
+   "name": "dawn",
+   "v": 0.26,
+   "dur": 2.0
+  },
+  {
+   "at": "L62",
+   "name": "dawn",
+   "v": 0.34,
+   "dur": 2.0
+  },
+  {
+   "at": "L64-0.2",
+   "name": "dawn",
+   "v": 1.0,
+   "dur": 3.6
+  },
+  {
+   "at": "L78",
+   "name": "dawn",
+   "v": 0.86,
+   "dur": 0
+  },
+  {
+   "at": 0,
+   "name": "tilt",
+   "deg": 6.0
+  },
+  {
+   "at": "L06",
+   "name": "tilt",
+   "deg": 0.0,
+   "dur": 0
+  },
+  {
+   "at": "L22.2",
+   "name": "tilt",
+   "deg": 4.0,
+   "dur": 1.2
+  },
+  {
+   "at": "L24",
+   "name": "tilt",
+   "deg": 5.5,
+   "dur": 1.2
+  },
+  {
+   "at": "L31",
+   "name": "tilt",
+   "deg": 7.5,
+   "dur": 1.6
+  },
+  {
+   "at": "L48",
+   "name": "tilt",
+   "deg": 12.0,
+   "dur": 1.2
+  },
+  {
+   "at": "L59",
+   "name": "tilt",
+   "deg": 9.0,
+   "dur": 2.0
+  },
+  {
+   "at": "L70+0.3",
+   "name": "tilt",
+   "deg": 0.0,
+   "dur": 1.7
+  },
+  {
+   "at": "L81",
+   "name": "tilt",
+   "deg": 0.0,
+   "dur": 0
+  },
+  {
+   "at": 0,
+   "name": "alt",
+   "alt": 18.0
+  },
+  {
+   "at": "L06",
+   "name": "alt",
+   "alt": 0.0,
+   "dur": 0
+  },
+  {
+   "at": "L20",
+   "name": "alt",
+   "alt": 0.0,
+   "dur": 0
+  },
+  {
+   "at": "L20+0.4",
+   "name": "alt",
+   "alt": 18.0,
+   "dur": 9.0
+  },
+  {
+   "at": "L70+0.4",
+   "name": "alt",
+   "alt": 0.0,
+   "dur": 2.3
+  },
+  {
+   "at": "L78",
+   "name": "alt",
+   "alt": 0.0,
+   "dur": 0
+  },
+  {
+   "at": "L81",
+   "name": "alt",
+   "alt": 18.0,
+   "dur": 0
+  },
+  {
+   "at": "L71",
+   "name": "field",
+   "f": 1
+  },
+  {
+   "at": "L78",
+   "name": "field",
+   "f": 0
+  },
+  {
+   "at": "L81",
+   "name": "field",
+   "f": 0
+  },
+  {
+   "at": 0,
+   "name": "env",
+   "up": 1.0
+  },
+  {
+   "at": "L06",
+   "name": "env",
+   "up": 0.0,
+   "dur": 0
+  },
+  {
+   "at": "L11+0.3",
+   "name": "env",
+   "up": 1.0,
+   "dur": 3.4
+  },
+  {
+   "at": "L78",
+   "name": "env",
+   "up": 1.0,
+   "dur": 0
+  },
+  {
+   "at": "L05",
+   "name": "roar",
+   "peak": 1.0,
+   "up": 0.6,
+   "hold": 1.6,
+   "down": 0.9
+  },
+  {
+   "at": "L11+0.4",
+   "name": "roar",
+   "peak": 0.8,
+   "up": 1.0,
+   "hold": 2.4,
+   "down": 1.0
+  },
+  {
+   "at": "L25.1",
+   "name": "roar",
+   "peak": 1.0,
+   "up": 0.6,
+   "hold": 8.4,
+   "down": 1.0
+  },
+  {
+   "at": "L33",
+   "name": "roar",
+   "peak": 1.0,
+   "up": 0.6,
+   "hold": 9.0,
+   "down": 1.0
+  },
+  {
+   "at": "L41",
+   "name": "roar",
+   "peak": 1.0,
+   "up": 0.6,
+   "hold": 8.7,
+   "down": 1.0
+  },
+  {
+   "at": "L49.3",
+   "name": "roar",
+   "peak": 1.0,
+   "up": 0.8,
+   "hold": 9.3,
+   "down": 0.8
+  },
+  {
+   "at": "L56",
+   "name": "roar",
+   "peak": 0.9,
+   "up": 0.5,
+   "hold": 0.6,
+   "down": 1.0
+  },
+  {
+   "at": "L66",
+   "name": "roar",
+   "peak": 0.8,
+   "up": 0.5,
+   "hold": 0.8,
+   "down": 0.8
+  },
+  {
+   "at": "end-1.2",
+   "name": "roar",
+   "peak": 0.45,
+   "up": 0.3,
+   "hold": 0.1,
+   "down": 0.75
+  },
+  {
+   "at": 0,
+   "name": "cre",
+   "pose": "hidden"
+  },
+  {
+   "at": "L05.1",
+   "name": "cre",
+   "pose": "scatter",
+   "pos": [
+    39.0,
+    39.0,
+    -13.2
+   ],
+   "yaw": -45,
+   "s": 1.0,
+   "alpha": "roar",
+   "key": 1500
+  },
+  {
+   "at": "L06",
+   "name": "cre",
+   "pose": "hidden"
+  },
+  {
+   "at": "L27",
+   "name": "cre",
+   "pose": "scatter",
+   "pos": [
+    39.0,
+    39.0,
+    -13.2
+   ],
+   "yaw": -45,
+   "s": 1.0,
+   "alpha": "roar",
+   "key": 1500
+  },
+  {
+   "at": "L31",
+   "name": "cre",
+   "pose": "hidden"
+  },
+  {
+   "at": "L34",
+   "name": "cre",
+   "pose": "scatter",
+   "pos": [
+    28.0,
+    28.0,
+    -0.7
+   ],
+   "yaw": -45.0,
+   "s": 0.5,
+   "alpha": "roar",
+   "key": 900
+  },
+  {
+   "at": "L35",
+   "name": "cre",
+   "pose": "off",
+   "pos": [
+    28.0,
+    28.0,
+    -0.7
+   ],
+   "yaw": -45.0,
+   "s": 0.04,
+   "alpha": "roar",
+   "key": 900
+  },
+  {
+   "at": "L40",
+   "name": "cre",
+   "pose": "hidden"
+  },
+  {
+   "at": "L42",
+   "name": "cre",
+   "pose": "exact",
+   "pos": [
+    5.7,
+    5.7,
+    -0.1
+   ],
+   "yaw": -45.0,
+   "alpha": "roar",
+   "key": 240
+  },
+  {
+   "at": "L48",
+   "name": "cre",
+   "pose": "hidden"
+  },
+  {
+   "at": "L50",
+   "name": "cre",
+   "pose": "exact",
+   "pos": [
+    0.52,
+    0.55,
+    0.0
+   ],
+   "yaw": 0,
+   "alpha": 1.0,
+   "key": 30,
+   "kfloor": 0.5,
+   "rim": 110,
+   "bounce": 260,
+   "head": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "arms": [
+    0,
+    0
+   ]
+  },
+  {
+   "at": "L57",
+   "name": "cre",
+   "pose": "exact",
+   "pos": [
+    0.52,
+    0.55,
+    0.0
+   ],
+   "yaw": 0,
+   "alpha": 1.0,
+   "key": 30,
+   "kfloor": 0.5,
+   "rim": 110,
+   "bounce": 260,
+   "head": [
+    0,
+    0,
+    0,
+    -44
+   ],
+   "arms": [
+    0,
+    0
+   ]
+  },
+  {
+   "at": "L71",
+   "name": "cre",
+   "pose": "hidden"
+  },
+  {
+   "at": 0,
+   "name": "flasks",
+   "state": "corner"
+  },
+  {
+   "at": "L13",
+   "name": "flasks",
+   "state": "none"
+  },
+  {
+   "at": "L14",
+   "name": "flasks",
+   "state": "rim"
+  },
+  {
+   "at": "L16",
+   "name": "flasks",
+   "state": "corner"
+  },
+  {
+   "at": "L78",
+   "name": "flasks",
+   "state": "end"
+  },
+  {
+   "at": 0,
+   "name": "bag",
+   "state": "tied"
+  },
+  {
+   "at": "L13",
+   "name": "bag",
+   "state": "none"
+  },
+  {
+   "at": "L18",
+   "name": "bag",
+   "state": "tied"
+  },
+  {
+   "at": "L79",
+   "name": "bag",
+   "state": "grass"
+  },
+  {
+   "at": "L81",
+   "name": "bag",
+   "state": "none"
+  },
+  {
+   "at": 0,
+   "name": "satchel",
+   "on": false
+  },
+  {
+   "at": "L14",
+   "name": "satchel",
+   "on": true
+  },
+  {
+   "at": "L78",
+   "name": "satchel",
+   "on": false
+  },
+  {
+   "at": 0,
+   "name": "cup",
+   "on": false
+  },
+  {
+   "at": "L23",
+   "name": "cup",
+   "on": true,
+   "y": -0.12
+  },
+  {
+   "at": "L23+0.3",
+   "name": "cup",
+   "y": 0.8,
+   "dur": 1.7
+  },
+  {
+   "at": "L26",
+   "name": "cup",
+   "on": false
+  },
+  {
+   "at": 0,
+   "name": "phone",
+   "on": false
+  },
+  {
+   "at": "L72",
+   "name": "phone",
+   "on": true
+  },
+  {
+   "at": "L77",
+   "name": "phone",
+   "on": false
+  }
+ ],
+ "fx": [],
+ "music": {
+  "root": 50,
+  "mode": "major",
+  "bpm": 70,
+  "seed": 31,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "pad",
+     "pulse"
+    ],
+    "energy": 0.3
+   },
+   {
+    "at": "L25",
+    "voices": [
+     "pad",
+     "drone"
+    ],
+    "energy": 0.4,
+    "mode": "minor"
+   },
+   {
+    "at": "L48",
+    "voices": [
+     "drone",
+     "choir"
+    ],
+    "energy": 0.55,
+    "mode": "minor"
+   },
+   {
+    "at": "L59",
+    "voices": [
+     "pad",
+     "drone"
+    ],
+    "energy": 0.3,
+    "mode": "minor"
+   },
+   {
+    "at": "L64",
+    "voices": [
+     "pad",
+     "piano",
+     "pulse"
+    ],
+    "energy": 0.45,
+    "mode": "major"
+   },
+   {
+    "at": "L78",
+    "voices": [
+     "pad",
+     "piano"
+    ],
+    "energy": 0.4,
+    "mode": "major"
+   }
+  ]
+ },
+ "sound": {
+  "floor": "wood",
+  "steps_db": -24,
+  "ambience": [
+   {
+    "kind": "room",
+    "from": 0,
+    "to": "end",
+    "lufs": -38
+   },
+   {
+    "kind": "wind",
+    "from": "L06",
+    "to": "L20",
+    "lufs": -44
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L05",
+    "kind": "burner",
+    "db": -13,
+    "dur": 3.0,
+    "seed": 1
+   },
+   {
+    "at": "L11+0.4",
+    "kind": "burner",
+    "db": -17,
+    "dur": 4.4
+   },
+   {
+    "at": "L25.1",
+    "kind": "burner",
+    "db": -15,
+    "dur": 10.0
+   },
+   {
+    "at": "L33",
+    "kind": "burner",
+    "db": -15,
+    "dur": 11.0
+   },
+   {
+    "at": "L41",
+    "kind": "burner",
+    "db": -15,
+    "dur": 10.6
+   },
+   {
+    "at": "L49.3",
+    "kind": "burner",
+    "db": -9,
+    "dur": 10.4,
+    "keep": true
+   },
+   {
+    "at": "L56",
+    "kind": "burner",
+    "db": -13,
+    "dur": 2.2
+   },
+   {
+    "at": "L66",
+    "kind": "burner",
+    "db": -16,
+    "dur": 2.2
+   },
+   {
+    "at": "end-1.15",
+    "kind": "burner",
+    "db": -18,
+    "dur": 1.05,
+    "fall": 7.0
+   },
+   {
+    "at": "L04",
+    "kind": "creak",
+    "db": -22,
+    "dur": 1.2
+   },
+   {
+    "at": "L16",
+    "kind": "creak",
+    "db": -26,
+    "dur": 0.8
+   },
+   {
+    "at": "L23+0.2",
+    "kind": "creak",
+    "db": -24,
+    "dur": 1.4
+   },
+   {
+    "at": "L40",
+    "kind": "creak",
+    "db": -12,
+    "dur": 1.0,
+    "keep": true
+   },
+   {
+    "at": "L48",
+    "kind": "creak",
+    "db": -16,
+    "dur": 1.6
+   },
+   {
+    "at": "L50",
+    "kind": "sting",
+    "db": -10,
+    "keep": true
+   },
+   {
+    "at": "L64",
+    "kind": "bell",
+    "db": -26
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "P01",
+    "to": "L50",
+    "keep": [
+     "sting",
+     "burner"
+    ]
+   },
+   {
+    "from": "P02-0.1",
+    "to": "L59",
+    "keep": [
+     "burner"
+    ]
+   }
+  ]
+ }
 }

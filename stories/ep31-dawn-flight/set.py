@@ -50,8 +50,9 @@ CRUISE = 18.0                       # metres the landscape sinks while we float
 KITCHEN = V((0, 0, -300))
 LAND_SHIFT = V((260, 140, 0))
 G = 0.085                           # the gap between the creature's pieces
-LH = 0.227
-SLICE = 0.11
+LH = 0.2
+TH = 0.15
+SLICE = 0.14
 ORANGE = "#ff9a3c"
 
 # ------------------------------------------------------------------------------------------------ small helpers
@@ -111,14 +112,16 @@ def _mixhex(a, b, u):
 
 
 def _lin(c):
-    """sRGB triple 0..1 to linear."""
+    """sRGB triple 0..1 (or a hex string) to linear."""
+    if isinstance(c, str):
+        c = _hex(c)
     return tuple(c[i] / 12.92 if c[i] <= 0.04045 else ((c[i] + 0.055) / 1.055) ** 2.4 for i in range(3))
 
 
 # the days: [d, horizon, zenith, fog, mist, sun colour, sun power, sun elevation (degrees), sky strength, mist glow]
 DAYS = [
-    (0.00, "#8a6a92", "#2c2f5c", "#9d92b4", "#b7bdd3", "#c8b0d8", 0.35, -6.0, 1.00, 0.34),
-    (0.35, "#f0a0a8", "#4a4f8a", "#d9b2c4", "#e2c6d0", "#ffb8a8", 1.4, -1.0, 1.10, 0.62),
+    (0.00, "#8a6a92", "#2c2f5c", "#9d92b4", "#b7bdd3", "#c8b0d8", 0.35, -6.0, 0.55, 0.34),
+    (0.35, "#f0a0a8", "#4a4f8a", "#d9b2c4", "#e2c6d0", "#ffb8a8", 1.4, -3.0, 0.85, 0.62),
     (1.00, "#ffc46b", "#86a6d6", "#ffd9a8", "#fff0d2", "#ffd9a0", 4.2, 9.0, 1.25, 1.00),
 ]
 
@@ -268,7 +271,7 @@ def new_materials(kit, ctx):
     M["flask_cap"] = kit.plastic("#d8d4c8", 0.4, name="flask cap")
     M["cup"] = kit.plastic("#d8d2c4", 0.45, name="cup")
     M["bag"] = kit.plastic("#5a4a3a", 0.9, name="satchel")
-    M["tally"] = kit.plastic("#5b7c96", 0.55, name="tally")
+    M["tally"] = kit.plastic("#46688a", 0.55, name="tally")
     M["flame"] = kit.emit(ORANGE, 7.0, name="flame")
     M["flame_core"] = kit.emit("#ffc070", 9.0, name="flame core")
     M["pilot"] = kit.emit("#ffa04c", 6.0, name="pilot")
@@ -456,19 +459,25 @@ def build_envelope(kit, ctx, M):
 def build_creature(kit, ctx, M):
     """The Loose One, built once. Every piece is an empty (its pivot at the piece's centre) with a block and two
     near-black caps on the faces that look across a gap."""
-    cop = fadeable(ctx, kit.plastic("#b8693a", 0.36, name="cre copper", spec=0.55))
-    sla = fadeable(ctx, kit.plastic("#4a6378", 0.42, name="cre slate", spec=0.45))
+    cop = kit.plastic("#b8693a", 0.5, name="cre copper", spec=0.35)
+    sla = kit.plastic("#46688a", 0.58, name="cre slate", spec=0.25)
+    for mm, hx, st in ((cop, "#b8693a", 0.18), (sla, "#46688a", 0.55)):   # a little light of their own: slate stays blue
+        b = mm.node_tree.nodes["Principled BSDF"]
+        b.inputs["Emission Color"].default_value = kit.col(hx)
+        b.inputs["Emission Strength"].default_value = st
+    fadeable(ctx, cop)
+    fadeable(ctx, sla)
     blk = fadeable(ctx, kit.plastic("#08080b", 0.9, name="cre dark", spec=0.1))
-    eye = fadeable(ctx, kit.emit("#ff9a46", 3.4, name="cre eye"))
-    glint = fadeable(ctx, kit.emit("#ffe6c4", 4.0, name="cre glint"))
+    eye = fadeable(ctx, kit.emit("#d4581a", 1.5, name="cre eye"))
+    glint = fadeable(ctx, kit.emit("#fff0d8", 3.0, name="cre glint"))
     mouth = fadeable(ctx, kit.plastic("#050507", 0.9, name="cre mouth", spec=0.0))
     root = kit.empty("cre", (0, 0, 0), ctx["V"])
     ctx["cre"] = root
     pieces = []
 
-    def piece(name, size, base, mat, group):
+    def piece(name, size, base, mat, group, bevel=0.012):
         e = kit.empty(f"cre.{name}", base, root)
-        kit.box(f"cre.{name}.b", size, (0, 0, 0), mat, e, bevel=0.028)
+        kit.box(f"cre.{name}.b", size, (0, 0, 0), mat, e, bevel=bevel)
         w, d, h = size
         for sz in (-1, 1):
             kit.box(f"cre.{name}.cap{sz}", (w * 0.97, d * 0.97, 0.006), (0, 0, sz * (h / 2 + 0.0015)), blk, e)
@@ -480,7 +489,6 @@ def build_creature(kit, ctx, M):
         for k in range(3):
             piece(f"leg{sx}{k}", (0.34, 0.34, LH), (sx * 0.17, 0, k * (LH + G) + LH / 2), sla, f"leg{sx}")
     tz0 = 3 * LH + 3 * G
-    TH = 0.17
     for k in range(4):
         piece(f"tor{k}", (0.68, 0.34, TH), (0, 0, tz0 + k * (TH + G) + TH / 2), cop, "torso")
     ttop = tz0 + 4 * TH + 3 * G
@@ -490,14 +498,14 @@ def build_creature(kit, ctx, M):
     hz0 = ttop + G
     HW = 0.40
     for k in range(4):                      # k = 0 is the bottom slice
-        e = piece(f"head{k}", (HW, HW, SLICE), (0, 0, hz0 + k * (SLICE + G) + SLICE / 2), sla, f"head{k}")
+        e = piece(f"head{k}", (HW, HW, SLICE), (0, 0, hz0 + k * (SLICE + G) + SLICE / 2), sla, f"head{k}", bevel=0.022)
         if k == 2:                          # the second slice from the top: two small round copper eyes
             for sx in (-1, 1):
-                kit.cyl(f"cre.eye{sx}", 0.034, 0.012, (sx * 0.085, -HW / 2 - 0.004, 0.0), eye, e, rot=(math.pi / 2, 0, 0),
+                kit.cyl(f"cre.eye{sx}", 0.026, 0.012, (sx * 0.09, -HW / 2 - 0.004, 0.0), eye, e, rot=(math.pi / 2, 0, 0),
                         n=20)
-                kit.sphere(f"cre.glint{sx}", 0.0085, (sx * 0.085 + 0.011, -HW / 2 - 0.012, 0.013), glint, e, seg=8)
+                kit.sphere(f"cre.glint{sx}", 0.0062, (sx * 0.09 + 0.008, -HW / 2 - 0.011, 0.009), glint, e, seg=8)
         if k == 0:                          # the fourth slice: a short flat black mouth line
-            kit.box("cre.mouth", (0.12, 0.012, 0.016), (0, -HW / 2 - 0.002, 0.0), mouth, e)
+            kit.box("cre.mouth", (0.12, 0.012, 0.018), (0, -HW / 2 - 0.002, 0.0), mouth, e)
     ctx["cre_pieces"] = pieces
     # fixed scatter for each piece (the same every time): a cloud about 4 m across, every piece at its own angle
     for i, p in enumerate(pieces):
@@ -636,7 +644,7 @@ def build(kit, story, tl):
     ctx["SUN"] = kit.empty("SUNRIG", tuple(PIVOT))
     build_basket(kit, ctx, M)
     build_envelope(kit, ctx, M)
-    ctx["cre_shoulder"] = 3 * LH + 3 * G + 4 * 0.17 + 3 * G
+    ctx["cre_shoulder"] = 3 * LH + 3 * G + 4 * TH + 3 * G
     build_creature(kit, ctx, M)
     build_landscape(kit, ctx, M)
     build_kitchen(kit, ctx, M)
@@ -646,12 +654,13 @@ def build(kit, story, tl):
     ctx["sundisc"] = disc
     kit.light("sun", "SUN", (0, 0, 0), 1.0, "#ffd9a0", size=0.2, parent=sun)
     kit.LIGHTS["sun"]["light"].angle = math.radians(2.5)
-    kit.light("flame", "POINT", (0, 0, BURN_Z + 0.55), 900.0, ORANGE, size=0.25, parent=ctx["V"])
+    kit.light("flame", "POINT", (0, 0, BURN_Z + 0.55), 380.0, ORANGE, size=0.25, parent=ctx["V"])
     kit.light("pilot", "POINT", (0.3, 0, BURN_Z + 0.1), 5.0, ORANGE, size=0.05, parent=ctx["V"], shadow=False)
     kit.light("lamp", "POINT", (-4.6, -3.55, 3.2), 520.0, "#ffe0b0", size=0.2, parent=ctx["L"])
     kit.light("fkey", "AREA", (0, 0, 2), 40.0, "#ffe6cc", size=1.0, shadow=False)
     kit.light("ckey", "POINT", (0, 0, 2), 0.0, "#ff9a50", size=0.3)
     kit.light("crim", "POINT", (0, 0, 2), 0.0, "#8a9ad8", size=0.3)
+    kit.light("cbounce", "AREA", (0, 0, 0), 0.0, "#6f95ff", size=2.0, shadow=False, rot=(math.pi, 0, 0))
     kit.light("klamp", "POINT", (0, 0, 1.85), 0.0, "#ffd29a", size=0.1, parent=ctx["K"])
     kit.light("kfill", "AREA", (0, -1.6, 2.1), 0.0, "#ffe0b8", size=2.5, parent=ctx["K"], shadow=False)
     for nm in ("fkey", "kfill"):
@@ -719,12 +728,13 @@ def animate(kit, story, tl, t, ctx):
     rm = ctx["sky_ramp"].color_ramp
     rm.elements[0].color = (*_lin(hor), 1)
     rm.elements[1].color = (*_lin(zen), 1)
-    ctx["sky_bg"].inputs["Strength"].default_value = skys
-    for nd in ctx["fog_cols"]:
-        nd.inputs["Color"].default_value = (*_lin(fog), 1)
-    sock_color(ctx["mist_col"], mistc)
+    ctx["sky_bg"].inputs["Strength"].default_value = skys * spec.get("amb", 1.0)
     # ---- the roar
     roar = roar_at(tl, t)
+    fogc = tuple(fog[i] * (1 - 0.45 * roar) + _hex("#f2a08a")[i] * 0.45 * roar for i in range(3))
+    for nd in ctx["fog_cols"]:
+        nd.inputs["Color"].default_value = (*_lin(fogc), 1)
+    sock_color(ctx["mist_col"], mistc)
     # ---- the lean and the frame
     deg = _ease_value(_cues(tl, "tilt"), "deg", t, 0.0)
     Mt = tilt_matrix(deg)
@@ -757,17 +767,15 @@ def animate(kit, story, tl, t, ctx):
     sl = K.LIGHTS["sun"]["obj"]
     sl.location = (dist * math.cos(el), 0.0, dist * math.sin(el))
     sl.rotation_euler = (V((-math.cos(el), 0, -math.sin(el)))).to_track_quat("-Z", "Y").to_euler()
-    K.LIGHTS["sun"]["base"] = sunp if not kitchen else 0.0
+    K.LIGHTS["sun"]["base"] = (sunp * _ss((sunel + 3.0) / 4.0)) if not kitchen else 0.0
     K.LIGHTS["sun"]["light"].color = _lin(suncol)
     mp = ctx["sky_map"]
-    mp.inputs["Rotation"].default_value = ME.inverted().to_euler() if False else (ME.to_3x3().inverted()).to_euler()
+    mp.inputs["Rotation"].default_value = (ME.to_3x3().inverted()).to_euler()
     # ---- the mist's glow
-    ctx["mist_emit"].default_value = mglow * 0.55 + 1.1 * roar
+    ctx["mist_emit"].default_value = mglow * 0.55 + 1.5 * roar
     sock_color(ctx["mist_emit_col"], mistc)
-    mix = _mixhex(mistc if False else "#ff9a3c", "#ff9a3c", 0)
-    glowc = _mixhex("#000000", "#ff9a3c", 0)
-    base = _hex(mistc)
-    oc = tuple(base[i] * (1 - min(1.0, roar * 1.3)) + _hex(ORANGE)[i] * min(1.0, roar * 1.3) for i in range(3))
+    u = min(1.0, roar * 1.3)
+    oc = tuple(mistc[i] * (1 - u) + _hex(ORANGE)[i] * u for i in range(3))
     ctx["mist_emit_col"].default_value = (*_lin(oc), 1)
     for s in ctx["env_glow"]:
         s.default_value = 1.35 * roar
@@ -861,17 +869,23 @@ def animate(kit, story, tl, t, ctx):
         away = (cp - V((cam_loc.x, cam_loc.y, cp.z)))
         away = away.normalized() if away.length > 1e-3 else V((0, 1, 0))
         K.LIGHTS["ckey"]["obj"].location = cp + away * 0.9 + V((0, 0, 1.5))
-        K.LIGHTS["ckey"]["base"] = ck * max(alpha, 0.0) * cur.get("kscale", 1.0)
+        K.LIGHTS["ckey"]["base"] = ck * max(roar, cur.get("kfloor", 0.0)) * (1.0 if alpha > 0.012 else 0.0)
         K.LIGHTS["ckey"]["obj"].parent = ctx["V"]
         K.LIGHTS["crim"]["obj"].location = cp + away * 1.1 + V((0, 0, 0.3))
         K.LIGHTS["crim"]["base"] = cur.get("rim", 90.0) * alpha
         K.LIGHTS["crim"]["obj"].parent = ctx["V"]
+        cb = K.LIGHTS["cbounce"]
+        cb["obj"].location = V(pos) + V((0, 0, -0.3))
+        cb["obj"].parent = ctx["V"]
+        cb["base"] = cur.get("bounce", 0.0) * alpha
         over["ckey"] = 1.0
         over["crim"] = 1.0
+        over["cbounce"] = 1.0
     else:
         hide_tree(cre, True)
         over["ckey"] = 0.0
         over["crim"] = 0.0
+        over["cbounce"] = 0.0
     # ---- the soft key light that rides the camera
     key = spec.get("key", 0.0)
     over["fkey"] = 0.0

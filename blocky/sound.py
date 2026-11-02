@@ -530,6 +530,23 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         env = np.sin(np.pi * np.clip(t / dur, 0, 1)) ** 1.5
         y = fft_filter(synth.noise(dur, seed), "band", 70, 600)[:n] * env
         return y + 0.4 * fft_filter(synth.noise(dur, seed + 1), "band", 600, 1800)[:n] * env ** 3
+    if kind == "burner":  # opt-in (ep31): a gas burner roar: band noise with a low throb, a swell in and a fade out;
+        # opts "fall": semitones the roar sinks over its length (a closing breath)
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        up, down = min(0.6, dur * 0.3), min(0.9, dur * 0.5)
+        env = np.minimum(1.0, t / up) ** 1.5 * np.minimum(1.0, (dur - t) / down) ** 1.5
+        fall = float((opts or {}).get("fall", 0.0))
+        noise = synth.noise(dur, seed)[:n]
+        body = fft_filter(noise, "band", 120, 1800)[:n]
+        if fall:
+            cutoff = 1800.0 * 2.0 ** (-fall * t / dur / 12.0) * np.ones(n)
+            body = lowpass_moving(body, np.maximum(180.0, cutoff))[:n]
+        hiss = fft_filter(synth.noise(dur, seed + 5), "band", 1800, 6000)[:n] * 0.22
+        f0 = 62.0 * (2.0 ** (-fall * t / dur / 12.0) if fall else 1.0)
+        throb = np.sin(2 * np.pi * np.cumsum(f0) / SR) * 0.35
+        flutter = 0.82 + 0.18 * np.sin(2 * np.pi * 17.0 * t + seed)
+        return (body * flutter + hiss + throb) * env
     if kind == "tape":        # ep17: packing tape peeled off board, a sticky crackle
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
