@@ -703,7 +703,7 @@ def build_lights(kit, ctx):
 
 # mode -> {group: (gain, colour or None)}, "exp" the scene exposure, "pane": (colour, strength), "world": strength
 MODES = {
-    "run": {"win": (1.2, "#7c9ad0"), "shaft": (3.0, "#8aa4d0"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (0.5, None),
+    "run": {"win": (1.2, "#7c9ad0"), "shaft": (3.0, "#8aa4d0"), "foot": (0.4, None), "lroom": (0.0, None), "lamp": (0.5, None),
             "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
             "cot": (1.0, None), "exp": 0.5, "pane": ("#1e2c40", 0.5), "world": 0.4},
     "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (4.0, None),
@@ -977,7 +977,7 @@ def animate(kit, story, tl, t, ctx):
     # the faces' fill: a soft light a metre in front of each character, toward the middle of the room
     from blocky import acting as _act
     mode_a, mode_b, u_ = mode_state(tl, t)
-    fg = {"night": 1.0, "run": 3.0, "doorlamp": 2.5, "memory": 2.5, "day": 5.0, "gold": 1.6}
+    fg = {"night": 1.0, "run": 1.2, "doorlamp": 2.5, "memory": 2.5, "day": 5.0, "gold": 1.6}
     cur = _last(_cues(tl, "mode"), t)
     gain_f = fg.get(cur["set"], 1.0) if cur else 1.0
     for who, ln in (("me", "me fill"), ("ines", "ines fill")):

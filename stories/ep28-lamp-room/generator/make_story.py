@@ -246,9 +246,9 @@ def runcam(i, az, lens=24):
     return still(loc, [round(1.8 * math.cos(a2), 3), round(1.8 * math.sin(a2), 3), round(z + 1.4, 3)], lens)
 
 
-shot("L54", "running up, one", runcam(48.6, 25), step=1)
-shot("L54.1", "running up, two", runcam(61.6, 54), step=1)
-shot("L54.2", "running up, three", runcam(73.6, 54), step=1)
+shot("L54", "running up, one", runcam(48.6, 18), step=1)
+shot("L54.1", "running up, two", runcam(61.9, 57, 20), step=1)
+shot("L54.2", "running up, three", runcam(73.9, 57, 20), step=1)
 shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
 shot("L55", "kitchen, flat bright daylight", still([KX + 2.15, 0.6, 1.5], [KX, 0.1, 1.15], 24))
@@ -394,11 +394,11 @@ def arc(who, at, i0, i1, dur, r=1.8, n=4, **kw):
 
 
 put("me", "L54", tread(48, 1.8), yaw=yaw_to(tread(48), tread(49)), expr="terrified")
-arc("me", "L54", 48, 49.7, 0.35, n=2)
-put("me", "L54.1", tread(60, 1.8), yaw=yaw_to(tread(60), tread(61)), expr="terrified")
-arc("me", "L54.1", 60, 63.6, 0.8)
-put("me", "L54.2", tread(72, 1.8), yaw=yaw_to(tread(72), tread(73)), expr="terrified")
-arc("me", "L54.2", 72, 75.5, 0.76)
+arc("me", "L54", 48, 49.2, 0.35, n=2)
+put("me", "L54.1", tread(61, 1.8), yaw=yaw_to(tread(61), tread(62)), expr="terrified")
+arc("me", "L54.1", 61, 62.8, 0.8)
+put("me", "L54.2", tread(73, 1.8), yaw=yaw_to(tread(73), tread(74)), expr="terrified")
+arc("me", "L54.2", 73, 74.8, 0.76)
 hide("me", "L54.3")
 put("me", "L55", SEAT_K(-0.75), yaw=180, sit=True, expr="worried", head=[0, 8])
 key("me", "L56", head=[0, 8])
