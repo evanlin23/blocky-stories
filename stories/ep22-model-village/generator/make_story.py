@@ -281,7 +281,7 @@ shot("S66b", "L66.3", mac("tea", 0.13, 0.11, lens=50, tz=-0.012, tx=-0.01), dof=
 shot("S67", "L67", cam((0, [TEA["win_x"] - 0.045, TEA["front_y"] + 0.075, TEA["win_z"] + 0.004], [TEA["win_x"] + 0.0, TEA["front_y"] - 1.0, TEA["win_z"] + 0.008], 22),
                        (1, [TEA["win_x"] - 0.043, TEA["front_y"] + 0.073, TEA["win_z"] + 0.004], [TEA["win_x"] + 0.0, TEA["front_y"] - 1.0, TEA["win_z"] + 0.008], 22)),
      dof=[2.6, [TEA["win_x"], TEA["front_y"] - 0.4, TEA["win_z"]]], hand=0.0012)
-shot("S68", "L68", cam((0, [-1.1, 5.82 - 0.2, 0.68], [-1.18, 5.82, 0.68], 40), (1, [-2.0, 5.82 - 0.2, 0.68], [-1.88, 5.82, 0.68], 40)), dof=[9.0, [-1.5, 5.82, 0.68]], hand=0.002)
+shot("S68", "L68", mac("cottage", 0.17, 0.14, lens=45, tz=0.0))
 shot("S69", "L69", cam((0, *win("tea", 0.11, tz=-0.012, tx=-0.012)[:2], 52), (1, *win("tea", 0.095, tz=-0.012, tx=-0.012)[:2], 54)),
      dof=[3.0, [TEA["win_x"] - 0.02, TEA["front_y"] + 0.04, TEA["floor_z"] + 0.034]], hand=0.0, step=1)
 
