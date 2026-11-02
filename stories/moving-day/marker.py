@@ -20,7 +20,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 FACES = ("none", "frown", "stare", "sideways", "many_eyes", "wide", "smile")
-MARKS = ("none", "arrows", "cross", "eye", "squiggle", "eyes")
+MARKS = ("none", "arrows", "cross", "eye", "squiggle", "eyes", "tally")
 LINE = 0.036          # the marker's width, as a fraction of the head box's front width (about 1.8 cm): every face
 INK = (17, 15, 19)    # near black, a little violet, like a fresh permanent marker
 LAY = 0.9             # how much ink one pass lays down (two passes, where strokes cross: 0.99)
@@ -249,8 +249,8 @@ def face(kind: str, w: int = 1024, h: int = 940, seed: int = 17, gaze=(-0.55, 0.
         # little, sits a little off centre and its edge is ragged where the marker shook
         gn = math.hypot(*gaze) or 1.0
         gx, gy = gaze[0] / gn, gaze[1] / gn
-        for cx, cy, r in ((0.255, 0.25, 0.115), (0.745, 0.205, 0.145)):
-            sq = 1.35
+        for cx, cy, r in ((0.235, 0.30, 0.095), (0.765, 0.24, 0.125)):
+            sq = 1.95
             p.circle(X(cx), Y(cy), X(r), squash=sq, over=22)
             k = 0.62   # how far toward the rim the pupil has slid
             p.dot(X(cx) + gx * k * X(r), Y(cy) + gy * k * X(r) * sq, X(0.028))
@@ -260,15 +260,15 @@ def face(kind: str, w: int = 1024, h: int = 940, seed: int = 17, gaze=(-0.55, 0.
         rr = np.random.default_rng(seed + 401)
         ph = rr.uniform(0, 2 * math.pi, 4)
         # its top edge pushes up a little left of centre, between the eyes, where the marker went over twice
-        key = [(0.255, 0.575), (0.30, 0.49), (0.385, 0.455), (0.45, 0.428), (0.49, 0.416), (0.54, 0.427),
-               (0.61, 0.45), (0.71, 0.49), (0.755, 0.575), (0.74, 0.75), (0.715, 0.95), (0.695, 1.14), (0.325, 1.14),
-               (0.30, 0.95), (0.272, 0.75)]
+        # a tall narrow slit between the eyes, not a round beard: pointed at the top, widest a third of the way down
+        key = [(0.49, 0.18), (0.535, 0.30), (0.585, 0.50), (0.60, 0.72), (0.585, 0.95), (0.57, 1.14), (0.43, 1.14),
+               (0.415, 0.95), (0.40, 0.72), (0.425, 0.50), (0.46, 0.30)]
         outline = []
         for (x0, y0), (x1, y1) in zip(key, key[1:] + key[:1]):
             for k in range(12):
                 u = k / 12
                 outline.append((x0 + (x1 - x0) * u, y0 + (y1 - y0) * u))
-        cx_, cy_ = 0.505, 0.76
+        cx_, cy_ = 0.50, 0.66
         tilt = math.radians(7)
         mouth = []
         for i, (x, y) in enumerate(outline):
@@ -356,6 +356,13 @@ def mark(kind: str, w: int = 1024, h: int = 768, seed: int = 5, line_w: int = 10
         for cx, cy, r in ((0.32, 0.46, 0.125), (0.68, 0.45, 0.118)):
             p.circle(cx * w, cy * h, r * w)
             p.dot(cx * w - r * w * 0.58, cy * h - r * w * 0.22, w * 0.034)
+    elif kind == "tally":
+        # four strokes and a slash through them, small, low on the left of a tall box face: the hidden mark
+        x0, y0, y1 = 0.10 * w, 0.47 * h, 0.54 * h
+        for k in range(4):
+            xk = x0 + k * 0.075 * w
+            p.line([(xk + 0.003 * w * k, y0), (xk - 0.004 * w, y1)], smooth=False)
+        p.line([(x0 - 0.04 * w, y1 - 0.006 * h), (x0 + 0.29 * w, y0 + 0.004 * h)], smooth=False)
     elif kind == "squiggle":
         p.line([(0.25 * w + k * 0.05 * w, 0.5 * h + (0.06 if k % 2 else -0.06) * h) for k in range(11)])
     return p.image()
