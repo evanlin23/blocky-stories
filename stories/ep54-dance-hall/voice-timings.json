@@ -130,7 +130,7 @@
    ]
   },
   "L05": {
-   "text": "my neighbours match. they argue every day, and love it.",
+   "text": "my neighbors match. they argue every day, and love it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -182,7 +182,7 @@
    ]
   },
   "L07": {
-   "text": "aunt ross has looked for her other half for forty years.",
+   "text": "aunt ross has looked for her other half for 40 years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1006,14 +1006,14 @@
    ]
   },
   "L38": {
-   "text": "every tuesday after that, there are scuffs in the rosin dust.",
+   "text": "every tuesday after that, there are scuffs in the chalk dust.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.845,
+   "dur": 2.707,
    "onset": 0.172,
-   "end": 2.638,
+   "end": 2.5,
    "chunks": [
     [
      0.172,
@@ -1021,19 +1021,19 @@
     ],
     [
      0.69,
-     1.138
+     1.121
     ],
     [
-     1.207,
-     1.698
+     1.172,
+     1.629
     ],
     [
-     1.698,
-     1.81
+     1.629,
+     1.75
     ],
     [
-     1.81,
-     2.638
+     1.75,
+     2.5
     ]
    ]
   },
@@ -1734,7 +1734,7 @@
    ]
   },
   "L66": {
-   "text": "forty years, and her other half was carrying her records.",
+   "text": "40 years, and her other half was carrying her records.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,

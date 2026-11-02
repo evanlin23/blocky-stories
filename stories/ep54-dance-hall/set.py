@@ -208,7 +208,7 @@ def materials(kit):
     M["dark"] = kit.plastic("#4a2f1c", 0.55)
     M["ceiling"] = kit.plastic("#8f8260", 0.9)
     M["win"] = kit.emit("#26305a", 1.1, "win")
-    M["wood"] = kit.planks("#8a5a30", "#6b4222", 1.0, "X", name="wood a")
+    M["wood"] = kit.planks("#a8926c", "#8a7656", 1.0, "X", name="wood a")
     M["drop"] = kit.emit("#f6e6c0", 0.4, "drop")
     M["bulb"] = kit.emit("#ffe6b8", 3.0, "bulb")
     M["burg"] = kit.plastic(BURG, 0.5)
@@ -334,6 +334,7 @@ def build_hall(kit, M, ctx):
     tally = [B(kit, f"tally {i}", (0.012, 0.045, 0.004), (0.255 + i * 0.03, -0.205, 0.057), M["burg"], lid) for i in (0, 1)]
     ctx["tally"] = tally
     ctx["lid"] = lid
+    kit.light("lidlight", "POINT", (T[0] + 0.9, T[1] - 0.8, 1.4), 70.0, "#fff0d0", size=0.3)
     gl = [B(kit, f"lid glove {i}", (0.2, 0.09, 0.03), (-0.12 + i * 0.1, 0.02 - i * 0.04, 0.065), M["glove"], lid, rot=(0, 0, 0.4 - i * 0.7), bevel=0.012) for i in (0, 1)]
     ctx["lidgloves"] = gl
     # the crate of plain-sleeved records

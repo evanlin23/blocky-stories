@@ -438,7 +438,7 @@
    "chunks": [
     [
      "My neighbours MATCH.",
-     "my neighbours match."
+     "my neighbors match."
     ],
     [
      "They ARGUE",
@@ -494,7 +494,7 @@
     ],
     [
      "for forty YEARS.",
-     "for forty years."
+     "for 40 years."
     ]
    ]
   },
@@ -1136,8 +1136,8 @@
      "in the"
     ],
     [
-     "rosin DUST.",
-     "rosin dust."
+     "chalk DUST.",
+     "chalk dust."
     ]
    ]
   },
@@ -1691,7 +1691,7 @@
    "chunks": [
     [
      "Forty YEARS,",
-     "forty years,"
+     "40 years,"
     ],
     [
      "and her",
