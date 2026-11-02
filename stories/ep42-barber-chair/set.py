@@ -568,7 +568,7 @@ class Ring:
 
     NM, NT = 40, 6
 
-    def __init__(self, kit, name, hexc, clear=False, lobes=3, speed=0.8, phase=0.0, amp=0.011):
+    def __init__(self, kit, name, hexc, clear=False, lobes=3, speed=0.8, phase=0.0, amp=0.011, strength=6.0):
         self.name, self.hex, self.clear = name, hexc, clear
         self.lobes, self.speed, self.phase, self.amp = lobes, speed, phase, amp
         if clear:
@@ -584,8 +584,8 @@ class Ring:
             self.em = b.inputs["Emission Strength"]
             self.mat, self.base_em = m, 0.9
         else:
-            self.mat, em = emit_mat(kit, f"ring {name}", hexc, 6.0)
-            self.em, self.base_em = em.inputs["Strength"], 6.0
+            self.mat, em = emit_mat(kit, f"ring {name}", hexc, strength)
+            self.em, self.base_em = em.inputs["Strength"], strength
         n = self.NM * self.NT
         faces = []
         for i in range(self.NM):
@@ -691,7 +691,7 @@ def build(kit, story, tl):
             ctx["rings"][who] = Ring(kit, who, hexc or "#ffffff", clear=hexc is None, lobes=3,
                                      speed=0.8 if pair else 0.6 + 0.07 * (sum(map(ord, who)) % 6),
                                      phase=0.0 if pair else (sum(map(ord, who)) % 7))
-    ctx["violet"] = Ring(kit, "violet", "#b07cff", lobes=3, speed=0.8, phase=0.7)
+    ctx["violet"] = Ring(kit, "violet", "#b07cff", lobes=3, speed=0.8, phase=0.7, strength=0.7)
     return ctx
 
 
@@ -992,6 +992,7 @@ def place_rings(K, BL, story, tl, t, ctx, shot, sid):
             thick, bright = rl
         if who == "me":
             amp = 0.0                                  # the glass ring is perfectly still
+            thick, bright = 1.0 - 0.6 * violet, 1.0 - 0.9 * violet   # the glass sinks inside the violet tube, no white patches
         if who == "sid":
             amp = 1.0 + 1.8 * wob
         ring.place(c, n, t, thick, bright, amp, hidden)

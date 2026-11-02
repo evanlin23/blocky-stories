@@ -125,6 +125,43 @@
    "grain": 0.012,
    "red_line": 0.74,
    "red_lift_blue": 0.5
+  },
+  "S73": {
+   "exposure": 0.55,
+   "bloom": 0.08
+  },
+  "S74": {
+   "exposure": 0.55,
+   "bloom": 0.08
+  },
+  "S76": {
+   "exposure": 0.55,
+   "bloom": 0.08
+  },
+  "S77": {
+   "exposure": 0.55,
+   "bloom": 0.08
+  },
+  "S78": {
+   "exposure": 0.55,
+   "bloom": 0.08
+  },
+  "S79": {
+   "exposure": 0.55,
+   "bloom": 0.08
+  },
+  "S80": {
+   "exposure": 0.55,
+   "bloom": 0.08
+  },
+  "S70": {
+   "bloom": 0.1
+  },
+  "S71": {
+   "bloom": 0.1
+  },
+  "S84": {
+   "bloom": 0.1
   }
  },
  "phonemes": {
@@ -4042,7 +4079,8 @@
     0.0
    ],
    "inside": true,
-   "k": 0.35
+   "k": 0.35,
+   "nopane": true
   },
   "S26": {},
   "S27": {
@@ -4070,7 +4108,8 @@
     -0.5,
     7.4
    ],
-   "k": 0.55
+   "k": 0.55,
+   "nopane": true
   },
   "S32": {
    "frost": true,
@@ -4082,7 +4121,8 @@
     0.0
    ],
    "inside": true,
-   "k": 0.35
+   "k": 0.35,
+   "nopane": true
   },
   "S33": {},
   "S34": {},

@@ -173,7 +173,7 @@ shot("L18", "dusk", C([-0.8, 0.5, 1.4], [1.3, 2.85, 1.2], 32), {"len": at(0.55, 
 shot("L19", "dusk", C([-0.4, 0.9, 2.4], [1.3, 2.85, 0.85], 30), {"len": at(0.55, 4.4, -90)}, {})
 shot("L20", "shop", C([-1.7, 2.85, 1.9], [1.3, 2.85, 0.8], 16), {}, {"rows": [0.3, 0.3, 0.3], "mf": 0.2, "sink": 0.2})
 shot("L21", "dusk", C([-0.4, 3.5, 1.6], [-0.4, 1.0, 1.6], 34),
-     {"me": at(-0.4, 1.0, 180, expr="worried"), "len": at(-1.15, 3.7, 90, expr="neutral")}, {"frost": False, "crowd": 14, "crowd_box": [-5, 5, -2.5, 0.0], "inside": True, "k": 0.35})
+     {"me": at(-0.4, 1.0, 180, expr="worried"), "len": at(-1.15, 3.7, 90, expr="neutral")}, {"frost": False, "crowd": 14, "crowd_box": [-5, 5, -2.5, 0.0], "inside": True, "k": 0.35, "nopane": True})
 shot("L22", "dusk", C([-0.9, 0.3, 1.5], [-0.2, 6.1, 1.05], 32), {"len": at(0.55, 4.4, -90)}, {})
 shot("L23", "dusk", M([0.8, 6.4, 0.55], [CHX - 0.3, 7.8, 0.2], [0.8, 6.6, 0.55], [CHX - 0.3, 7.8, 0.2], 26), {}, {"broom_xy": [-0.25, 7.4]}, hand=0.004)
 shot("L23.2", "dusk", C([-0.66, 7.8, 0.045], [-1.12, 7.8, 0.03], 20), {}, {"broom_xy": [-0.58, 7.42], "no_props": True}, hand=0.003)
@@ -183,11 +183,11 @@ shot("L24", "flash", C([1.3, 5.4, 1.5], [-0.1, 7.8, 1.25], 30),
 shot("L24.5", "flash", C([1.5, 4.6, 1.55], [0.3, 7.5, 1.3], 30),
      {"len": at(0.4, 7.4, -90, expr="soft", arms=[40, 10]), "mum": at(0.9, 6.8, -60, expr="soft"), "me": at(0.9, 8.5, -100, expr="neutral")}, {"k": 0.3, "world_k": 0.35})
 shot("L25", "dusk", C([1.0, 5.2, 1.5], [-0.2, 7.6, 1.2], 26),
-     {"len": at(0.3, 7.4, -90, expr="neutral", arms=[34, 34])}, {"broom_xy": [-0.5, 7.4], "k": 0.55})
+     {"len": at(0.3, 7.4, -90, expr="neutral", arms=[34, 34])}, {"broom_xy": [-0.5, 7.4], "k": 0.55, "nopane": True})
 
 # ---- Thursday and Friday (S31 to S53)
 shot("L26", "dusk", C([-0.6, 3.4, 1.55], [-0.2, 1.1, 1.6], 30),
-     {"me": at(-0.2, 1.1, 180, expr="worried"), "len": at(-1.2, 3.8, 90, expr="neutral")}, {"frost": True, "crowd": 8, "crowd_box": [-5, 5, -2.5, 0.0], "inside": True, "k": 0.35})
+     {"me": at(-0.2, 1.1, 180, expr="worried"), "len": at(-1.2, 3.8, 90, expr="neutral")}, {"frost": True, "crowd": 8, "crowd_box": [-5, 5, -2.5, 0.0], "inside": True, "k": 0.35, "nopane": True})
 shot("L27", "dusk", C([-0.9, 0.3, 1.45], [-0.2, 7.8, 1.0], 34), {"len": at(0.55, 4.4, -90)}, {})
 shot("L28", "dusk", C([1.5, 3.2, 1.8], [-0.2, 7.8, 1.0], 30), {"len": at(0.55, 4.4, -90)}, {})
 shot("L29", "shop", C([0.5, 4.6, 1.35], [-1.89, 6.9, 1.2], 32), {}, {"rows": [1, 1, 1]})
@@ -464,7 +464,10 @@ story = {
                                 "vignette": 0.22, "bloom": 0.3} for r in ("L24", "L24.5")},
                     **{SID[r]: {"shadows": [0.0, 0.0, 0.05], "highlights": [0.04, 0.012, -0.03], "saturation": 1.05, "contrast": 1.06,
                                 "vignette": 0.36, "bloom": 0.15, "grain": 0.012, "red_line": 0.74, "red_lift_blue": 0.5}
-                       for r in ("L41", "L45", "L58")}},
+                       for r in ("L41", "L45", "L58")},
+                    # fix round 2 (exposure only): the white shop and the close-ups were clipping
+                    **{f"S{n}": {"exposure": 0.55, "bloom": 0.08} for n in (73, 74, 76, 77, 78, 79, 80)},
+                    **{f"S{n}": {"bloom": 0.1} for n in (70, 71, 84)}},
     "phonemes": {"Ostrov": "ˈɑstɹɔv"},
     "cast": cast,
     "lines": lines,
