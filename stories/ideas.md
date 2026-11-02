@@ -9,7 +9,8 @@ The writer takes the next ideas from here, and adds new ones. When a story is ma
 | ep12 `knock-back` | a farmhouse kitchen, one summer | the keeper under the cellar floor, an uncle who knows, the ritual done back |
 | ep13 `closing-time` | an aquarium on the night shift | the watchers behind the big tank, a curtain-call bow, kind all along |
 | ep20 `ep20-photo-strip` | a coin photo booth in an old hotel hall at a wedding | the Third, a far-too-tall paper-flat sepia figure with a slot smile; a whispered line as the first line ("It's getting CLOSER."); the "it never moved, we moved apart" twist; ending on a strip torn in half and shared, looping on a whisper; warmth: two estranged grown siblings make up; the tally mark on the back of a photo |
-| ep21 `ep21-snow-plough` | a snowed-in mountain pass road and a plough cab, pre-dawn to sunrise, a one-off trip for a neighbour's tablets | the Marker, a rust-orange road post built far too short and wide with two reflector eyes, further onto the road each sighting; a count as the first line ("FORTY-ONE / POSTS. / On the way UP, / there were FORTY."); the "I was counting the wrong side of the edge" twist (a slid post still glinting in line); ending on a bag set on her table and a new post set at the new edge; warmth: a promise kept; a two-stroke tally scratched on a plough blade |
+
+Killed: ep21 `snow-plough` (2026-11-02), not approved by the critic after three rounds. The creature never scored above 4: the Marker, a squat wide road post, kept reading as a lunchbox, a boombox, then a crate or a wardrobe, never as a road post that is wrong. Craft, not a hard rule, so the idea can come back with a new creature design (test the silhouette at phone size first). The full build is in git history at df8fdf5 on `claude/ep21-snow-plough`.
 
 The premise and twist of each are in its `story.json`; `check` compares every new story against them.
 
