@@ -27,6 +27,7 @@ Start a **fresh builder agent for each phase** (the build, then each fix round).
 - **Critic, per story,** as each preview is done: "Review `<name>`, round 1."
 - **Standards, once for the whole batch,** when every preview is done: "Review `<name1>`, `<name2>`, ... round 1." That saves re-reading the rules and every earlier story for each one.
 - Read only each review's `Verdict:` line and its numbered must-fixes.
+- If the two reviews' must-fixes contradict each other, standards wins on rules (lore, kids, IP, fiction, flashing) and the critic wins on craft. Drop the losing note before you send the list on (ep17: the critic wanted a six-mark tally, but standards had ruled the story out of lore).
 - **revise:** send every must-fix from both reviews to the builder in one call. If any are about words or package, send them to the writer first, in one call, and pass its changed line ids on. Round 2 re-runs **only** the reviewers who said revise, with standards again batched over every story it sent back.
 - **Two rounds at most, firmly** (pilot 1 ran a third and slipped hours). If a story is still not approved after round 2, or a reviewer says kill, drop it: delete its folder, add a "killed: why" line to `stories/ideas.md`, and have the writer and builder make one replacement if the week is short. Never retry an idea killed for a hard rule.
 - Done when `python -m blocky gate <name>` says OPEN.
