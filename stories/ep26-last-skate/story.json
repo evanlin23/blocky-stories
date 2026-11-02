@@ -3327,7 +3327,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Pop coming across the floor, wobbling, the tape on his knees",
-   "expo": 0.9,
+   "expo": 0.8,
    "at": "L58"
   },
   {
@@ -4854,7 +4854,7 @@
    },
    {
     "at": "L57",
-    "wobble": 2
+    "wobble": 1.2
    },
    {
     "at": "L58",
