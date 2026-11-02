@@ -543,6 +543,14 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
     if kind == "clap":   # opt-in (ep23): one hand clap in an empty hall, a short room tail after it
         return _clap(dur, seed)
+    if kind == "hiss_fall":   # opt-in (ep38): a speaker-box hiss whose band slides down as it fades (a pitch fall)
+        n = synth.n_samples(dur)
+        hops = n // 512 + 4
+        cut = 7000.0 * (500.0 / 7000.0) ** np.linspace(0, 1, hops)
+        y = lowpass_moving(synth.noise(dur, seed), cut) * (1 - np.arange(n) / n) ** 0.8
+        t = np.arange(n) / SR
+        y = y + 0.25 * np.sin(2 * np.pi * np.cumsum(900 * (120 / 900) ** (t / dur)) / SR) * (1 - t / dur)
+        return synth.fade(y, 0.05, 0.05) * 0.8
     if kind == "silence":
         return np.zeros(1)
     raise ValueError(f"no sfx {kind!r}")
