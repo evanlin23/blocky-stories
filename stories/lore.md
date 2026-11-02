@@ -17,6 +17,16 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 - **What's under the towns.** Far below every town is the Bench: the Makers' workbench floor, flat and endless, with unfinished pieces lying on it. Keepers that come up from below (ep12's) come from there. No story has shown it, and none should show more than a glimpse.
 - **What the Keepers are to each other.** Kin, all the same first batch. They never meet, because each is tied to its own place. They're never evil. They're also never "kind all along": they're doing a job, and it's eerie because they do it without caring how it looks to us.
 
+## Other things a count can do
+(Added 2026-11-02, because most of the parallel batches used the same shape: a Keeper standing in someone's empty place until they come back. These are all true in the canon, and each makes a different twist.)
+- **The count is too high, and the extra one is us.** The narrator, or someone they love, is the stroke that shouldn't be there, and the Keeper's job is to make the number right.
+- **Leaving breaks the count.** A Keeper can't stop anyone leaving, but a place built for four goes on counting four. The empty chair is set, the coat is hung, and the person who left starts to fade from photos instead.
+- **A count kept for someone who's gone for good.** The Keeper isn't waiting. It's mourning, the only way a counter knows how.
+- **A count that's wrong on purpose.** People lie to a Keeper (a name on a list, a ticket bought for nobody) to protect someone. The twist is the lie.
+- **Two places count the same person.** Someone belongs to two places at once (two homes, two crews), and two Keepers' tallies both include them.
+- **The Keeper is the one being counted.** Something bigger than the Keeper keeps a count too, and the story ends on the Keeper's own stroke.
+- **The rule was never about the Keeper.** The town's rule protects people from something else entirely, and the Keeper is just standing nearby, counting.
+
 ## Planted so far
 | Story | The connection it plants | Where (line, shot) |
 |---|---|---|
@@ -24,8 +34,17 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep12 `knock-back` | none (before the canon), but the knock fits the roll call | |
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S63, under L59 ("Wren tore it in half"), held about 1.8 s, not narrated |
+| ep42 `barber-chair` | three teal tally strokes scratched under the footplate of the third barber chair, three for a shop built for three (the Face-Chest's cape is the same teal) | S28, under L23 ("Len was sweeping under the THIRD chair"), floor level past the broom head, held about 1.6 s, not narrated |
+| ep43 `reading-room` | two library-green tally strokes scratched into the brass base of the reading lamp on the window table, a table built for two (the Negative stands in the second stroke while my seat is empty) | S47, under L32 ("I could hear the LAMPS hum"), held about 1.8 s, not narrated |
 | ep23 `only-line` | eight pale gilt chalk strokes on the brick back wall of the stage left wings, for a cast of seven (the "one stroke too many" thread: the Prompter's own stroke, there while it stands in my gap all rehearsal week). Never tied to ep20 on screen. The pin asks about it | S16, under L16 ("Behind them, the back WALL is old BRICK."), held 1.5 s, not narrated |
 | ep25 `plot-nine` | the Bench, one glimpse: down the Digger's hole in torchlight, far below, a flat pale floor with one unfinished blocky hand lying on it, palm up. No tally. (The Digger is the allotments' Keeper. It rose in Mr. Carter's footsteps, standing in the gap he left when he gave up his plot but kept coming, and sank once he was a plot-holder again.) | under P03, after L59 ("I shine my TORCH / straight DOWN it."), held 1.6 s, not narrated |
+| ep33 `chairlift` (#17) | a plain tally of two faded-orange strokes pressed into the black rubber footrest of my chair, two for a chair built for two, in the Four-Face's colour. No extra stroke, no open thread touched | shot 15, under L15 ("My BOOTS / on the FOOTREST..."), top-down close, held 2.0 s, not narrated |
+| ep30 `top-rope` | two lilac strokes scratched into the steel anchor plate at the top of the climbing route, one for the climber and one for the belayer (the Headstander stands in as the belayer until Sam does) | S19, under L19 ("I reached toward / the ANCHOR"), held 1.6 s, not narrated |
+| ep32 `sitter` | a plain graphite tally of nine strokes on the underside of the life-room dais (eight easels and one sitter), seen when the dais is stood on its edge at the end-of-term show. The Unpainted's face lines are the same graphite | S70, under L70 ("Kofi had stood the DAIS against the WALL"), upper middle of frame, held 1.6 s, not narrated |
+| ep31 `dawn-flight` | a plain tally: four slate-blue strokes stamped into the leather rim of the balloon basket's fourth corner, four for a basket built for four (no extra stroke). The Loose One is the basket's Keeper, standing in the corner I left empty, and it leaves once Callum is coming | S19, under L19 ("The RIM / was old LEATHER, / worn SMOOTH / by HANDS."), held 1.6 s in the upper third, not narrated |
+| ep45 `bee-yard` | two honey-gold strokes scratched into the wooden board between the two veil hooks, two for a yard built for two (plain tally, no extra stroke) | S42, under L35 ("One is Lena's. The other is mine."), held about 1.8 s, not narrated |
+| ep36 `ice-huts` | two rust-red strokes scratched into the plate of the red hut's iron door latch, two for a hut built for two, in the Leaner's own rust red | S17, under L12 ("I took him a FLASK"), held about 1.8 s, not narrated |
+| ep38 `drive-in` | two soot-black tally strokes pressed into the metal face of the old speaker box hooked on Theo's car window, two for a car built for two front seats (plain tally, no extra stroke) | S70, under L62 ("Theo slid the popcorn over"), held 1.6 s, not narrated |
 | ep41 `orchard-rows` | two clay-red tally strokes pressed into the seat of the bench at the end of the far row, two for a bench built for two (Nan and me). On my sleepwalks Nan always followed inside my prints, so the place beside me on the row stayed empty and the Rough One walked it, a stride to my left. It's gone once Nan walks beside me awake | S76, under L64 ("The square trail ended at the BENCH."), held 1.8 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.

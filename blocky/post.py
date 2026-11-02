@@ -299,9 +299,11 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
         dx, dy = r.uniform(-1, 1, 2) * 0.012 * fx["shake"]
     img = to_output(_read(raw), fx["punch"], dx, dy)
     g = st.get("grade", {})
+    sid = next((s["id"] for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1]["id"])
+    if st.get("shot_grades", {}).get(sid):      # opt-in (ep42): a shot's own grade over the story's (a flashback is warmer)
+        g = {**g, **st["shot_grades"][sid]}
     img = bloom(img, g.get("bloom", 0.35))
     img = grade(img, g)
-    sid = next((s["id"] for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1]["id"])
     if rain is not None and sid in set(st.get("rain_shots", [])):
         img = 1 - (1 - img) * (1 - rain.draw(t, st.get("rain_gain", 1.0)))
     if fx["red"]:
@@ -321,7 +323,7 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
         img = img * (1 - fx["black"])
     n = tl["frames"]
     if tl.get("tail", 1.0) > 0:   # a fade in and out; a film with no tail is a loop, so neither end goes dark
-        img = img * min(1.0, (f + 1) / 4, (n - f) / 6)
+        img = img * min(1.0, (f + 1) / 4, (n - f) / 6 if tl.get("fade_out", True) else 1.0)
     rng = np.random.default_rng(grain_seed * 100003 + f)
     gr = rng.normal(0, g.get("grain", 0.012), img.shape[:2]).astype(np.float32)[..., None]
     img = img + gr * (0.4 + 0.6 * img)

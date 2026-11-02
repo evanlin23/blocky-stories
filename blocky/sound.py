@@ -10,6 +10,8 @@
   wash, or tinybubbles), a pop, squeaks and squeals (skin on acrylic), a glide, a hum sweep, castors, and (ep17,
   opt-in) a packing-tape peel (`tape`), cardboard dragged on boards (`scrape`, "distant": through a wall) and a
   papery cardboard flex (`creak` with "tone": "cardboard"; the default creak is unchanged)
+- (ep42, opt-in) `sound.hums`: steady synthesized tones that people hum, each at a fixed pitch (a note name like
+  "A2" or a frequency), with its own fades and optional level keys. No melody: each tone just sustains
 - the score can be heard through something: `music.filter` keys [{"at", "hz", "dur"}] move a low-pass over it
 
 Balance before the master: narrator -16 LUFS over its lines, music -27 under the voice and -21 where nobody
@@ -40,7 +42,7 @@ MUSIC_UNDER = -27.0
 MUSIC_FREE = -21.0
 MODES = {"minor": [0, 2, 3, 5, 7, 8, 10], "phrygian": [0, 1, 3, 5, 7, 8, 10], "dorian": [0, 2, 3, 5, 7, 9, 10],
          "harmonic": [0, 2, 3, 5, 7, 8, 11], "locrian": [0, 1, 3, 5, 6, 8, 10], "major": [0, 2, 4, 5, 7, 9, 11],
-         "whole": [0, 2, 4, 6, 8, 10]}
+         "whole": [0, 2, 4, 6, 8, 10], "mixolydian": [0, 2, 4, 5, 7, 9, 10]}
 
 
 def load_wav(path: Path) -> np.ndarray:
@@ -190,6 +192,16 @@ def _choir(f, dur, seed=0):
     return y * env
 
 
+# ep45, opt-in: a plucked tune (our own, 16 beats of scale degrees; None is a rest) and a soft ticking pulse
+TUNE = [4, 2, 0, 2, 4, 5, 4, None, 2, 0, 2, 4, 6, 5, 4, 2]
+
+
+def _tick(seed=0):
+    """A filtered click at the tempo: soft, dry, never a beat."""
+    c = fft_filter(synth.click(0.02, 1700.0, seed), "band", 800, 3600)
+    return c * 0.9
+
+
 def score(tl: dict, spec: dict) -> np.ndarray:
     """A stereo bed from the story's `music`: {"root": midi, "mode": ..., "bpm": ..., "seed": n,
     "sections": [{"at": ref, "voices": ["drone", "pad", "musicbox", "piano", "pulse", "choir", "bubble"], "energy": 0..1,
@@ -262,6 +274,27 @@ def score(tl: dict, spec: dict) -> np.ndarray:
                     m = int(rng.choice(tones)) + 12
                     put(_piano(synth.midi_hz(m), 2.0, q), tq, 0.25, pan=float(rng.uniform(-0.3, 0.3)))
             t += seg
+    # ep45's tune and tick, per section: "pluck" (soft, low), "pluck_hi" (brighter, an octave doubled), "tick"
+    for si, s in enumerate(secs):
+        a, b = starts[si], starts[si + 1]
+        voices = s.get("voices", [])
+        sc, rt = MODES[s.get("mode", spec.get("mode", "minor"))], s.get("root", root)
+        e = s.get("energy", 0.5)
+        k0 = int(math.ceil(a / beat - 1e-6))
+        tq = k0 * beat
+        while tq < b - 0.05:
+            q = int(round(tq / beat))
+            d = TUNE[q % 16]
+            if d is not None and ("pluck" in voices or "pluck_hi" in voices) and (q % 2 == 0 or e > 0.3):
+                hi = "pluck_hi" in voices
+                m = rt + 12 * (1 + d // len(sc)) + sc[d % len(sc)]
+                put(synth.pluck(synth.midi_hz(m), 1.6, brightness=0.62 if hi else 0.3, decay_s=0.9 if hi else 0.6, seed=q) * 0.8,
+                    tq, 0.2 if hi else 0.14, pan=0.15 * math.sin(q))
+                if hi:
+                    put(synth.pluck(synth.midi_hz(m + 12), 1.2, brightness=0.7, decay_s=0.7, seed=q + 5) * 0.5, tq, 0.1, pan=-0.2)
+            if "tick" in voices:
+                put(_tick(q), tq, 0.16 + 0.1 * e)
+            tq += beat
     return out
 
 
@@ -301,6 +334,62 @@ def lowpass_moving(x: np.ndarray, cutoff: np.ndarray, slope: float = 4.0) -> np.
         norm[i * hop:i * hop + nfft] += win ** 2
     out = out / np.maximum(norm, 1e-8)
     return out[nfft:nfft + len(x)]
+
+
+# ------------------------------------------------------------------------------------------------ hums
+
+_SEMI = {"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}
+
+
+def note_hz(note) -> float:
+    """A frequency from a number (Hz) or a note name like "A2", "C#4" (A4 = 440)."""
+    if isinstance(note, (int, float)):
+        return float(note)
+    import re
+
+    m = re.match(r"^([A-Ga-g])([#b]?)(-?\d+)$", str(note).strip())
+    if not m:
+        raise ValueError(f"not a note: {note!r}")
+    semi = _SEMI[m.group(1).upper()] + {"#": 1, "b": -1, "": 0}[m.group(2)]
+    return synth.midi_hz(12 * (int(m.group(3)) + 1) + semi)
+
+
+def hum_tone(f: float, dur: float, seed: int = 0) -> np.ndarray:
+    """A person's hum: one steady pitch. A sine with two soft overtones (so the low ones carry on a phone), a slow
+    shallow vibrato that never leaves the pitch, and a little breath noise. Peak about 1."""
+    n = synth.n_samples(dur)
+    t = np.arange(n) / SR
+    vib = 1.0 + 0.0035 * np.sin(2 * np.pi * (4.4 + 0.3 * (seed % 3)) * t + seed)
+    ph = 2 * np.pi * np.cumsum(f * vib) / SR
+    y = np.sin(ph) + 0.4 * np.sin(2 * ph + 0.3) + 0.18 * np.sin(3 * ph + 0.9)
+    breath = fft_filter(synth.noise(dur, seed + 11), "band", max(80.0, f * 1.5), max(400.0, f * 5)) * 0.05
+    y = (y + breath) * (0.93 + 0.07 * np.sin(2 * np.pi * 0.31 * t + seed))
+    return y / (np.abs(y).max() + 1e-9)
+
+
+def hum_track(h: dict, at, k: int, dur_total: float) -> tuple[float, np.ndarray]:
+    """One `sound.hums` entry -> (start time, mono signal) at its level. Keys: note, from, to, lufs (loudness while
+    on, default -34), fade_in / fade_out (s, default 0.6), levels [[ref, dB], ..] (dB relative to lufs, joined by
+    straight lines and held outside, so a hum can swell or sink)."""
+    t0, t1 = at(h.get("from", 0)), at(h.get("to", "end"))
+    t1 = min(t1, dur_total)
+    if t1 <= t0:
+        return t0, np.zeros(0)
+    y = hum_tone(note_hz(h["note"]), t1 - t0, h.get("seed", k + 1))
+    y = to_lufs(y, h.get("lufs", -34.0))
+    t = np.arange(len(y)) / SR
+    env = np.ones(len(y))
+    if h.get("levels"):
+        ks = sorted((at(r) - t0, db) for r, db in h["levels"])
+        env = 10 ** (np.interp(t, [a for a, _ in ks], [b for _, b in ks]) / 20)
+    fi, fo = float(h.get("fade_in", 0.6)), float(h.get("fade_out", 0.6))
+    if fi > 0:
+        u = np.clip(t / fi, 0, 1)
+        env *= u * u * (3 - 2 * u)
+    if fo > 0:
+        u = np.clip((t[-1] - t) / fo, 0, 1) if len(t) else t
+        env *= u * u * (3 - 2 * u)
+    return t0, y * env
 
 
 # ---------------------------------------------------------------------------------------------- ambience
@@ -351,6 +440,32 @@ def amb(kind: str, dur: float, seed: int = 0) -> np.ndarray:
         return _drone(55.0, dur, seed)
     if kind == "static":
         return fft_filter(synth.noise(dur, seed), "high", 1500) * 0.5
+    if kind == "beehum":   # ep45, opt-in: a soft steady bee hum, low and never loud, with a slow breathing swell
+        y = synth.saw(204, dur) * 0.5 + synth.saw(207.5, dur, 1.3) * 0.5 + synth.saw(411, dur, 0.4) * 0.22
+        y = fft_filter(y, "band", 150, 1100)
+        wob = 0.75 + 0.25 * np.sin(2 * np.pi * 0.17 * t + seed) + 0.08 * synth.one_pole_smooth(synth.noise(dur, seed + 4), 0.05)
+        return y * wob
+    if kind == "gulls":    # ep45, opt-in: far-off gulls, a few thin glides a long way apart
+        y = np.zeros(n)
+        r = np.random.default_rng(seed)
+        tt = float(r.uniform(0.3, 1.5))
+        while tt < dur - 0.6:
+            f0 = float(r.uniform(1500, 2100))
+            d = synth.chirp(f0, f0 * 0.62, 0.3) * synth.decay(0.3, 0.12)
+            i = int(tt * SR)
+            y[i:i + len(d)] += d[: n - i] * float(r.uniform(0.5, 1.0))
+            tt += float(r.uniform(2.2, 4.5))
+        return fft_filter(y, "band", 900, 3200)
+    if kind == "fire":   # ep35, opt-in: a low soft roar with small pops and spark ticks
+        rng = np.random.default_rng(seed + 11)
+        roar = fft_filter(synth.noise(dur, seed), "band", 90, 900) * (0.55 + 0.45 * synth.one_pole_smooth(synth.noise(dur, seed + 2), 0.4))
+        ticks = _crackle(dur, seed + 5, 22, 1800, 8000)
+        pops = np.zeros(len(roar))
+        for at in rng.uniform(0, max(0.1, dur - 0.1), int(dur * 1.6)):
+            i = int(at * SR)
+            k = synth.thump(0.05, 220, 90, int(at * 100)) * rng.uniform(0.2, 0.6)
+            pops[i:i + len(k)] += k[: len(pops) - i]
+        return roar * 0.6 + ticks * 0.9 + pops * 0.5
     raise ValueError(f"no ambience {kind!r}")
 
 
@@ -459,6 +574,18 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return y * synth.decay(dur, dur * 0.4)[: len(y)]
     if kind == "click":
         return synth.click(0.01, 2500.0, seed)
+    if kind == "chime":   # ep45, opt-in: a warm swell of two bell tones, rising, for each dial's zero
+        d = max(dur, 1.6)
+        t = np.arange(synth.n_samples(d)) / SR
+        rise = np.minimum(1.0, t / (d * 0.45)) ** 2 * np.minimum(1.0, (d - t) / (d * 0.4))
+        y = synth.fm_bell(440.0, d, ratio=2.0, index=0.9, tau=1.4) * 0.5 + synth.fm_bell(659.0, d, ratio=2.0, index=0.8, tau=1.2) * 0.4
+        return y * (0.35 + 0.65 * rise)
+    if kind == "puff":    # ep45, opt-in: the smoker's puff, a soft breath of noise
+        d = min(dur, 0.6)
+        t = np.arange(synth.n_samples(d)) / SR
+        return fft_filter(synth.noise(d, seed), "band", 250, 2200) * np.sin(np.pi * t / d) ** 2 * 0.7
+    if kind == "latch":   # ep45, opt-in: a wooden gate latch, a click and a small knock
+        return _layer(synth.click(0.012, 1800.0, seed) * 0.8, synth.thump(0.18, 150, 80, seed) * 0.5)
     if kind == "wetclick":  # a slow, sticky parting: a soft low pop, then small tacky ticks thinning out
         n = synth.n_samples(max(0.6, dur))
         y = np.zeros(n)
@@ -537,12 +664,72 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         env = np.sin(np.pi * np.clip(t / dur, 0, 1)) ** 1.5
         y = fft_filter(synth.noise(dur, seed), "band", 70, 600)[:n] * env
         return y + 0.4 * fft_filter(synth.noise(dur, seed + 1), "band", 600, 1800)[:n] * env ** 3
+    if kind == "burner":  # opt-in (ep31): a gas burner roar: band noise with a low throb, a swell in and a fade out;
+        # opts "fall": semitones the roar sinks over its length (a closing breath)
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        up, down = min(0.6, dur * 0.3), min(0.9, dur * 0.5)
+        if (opts or {}).get("fall"):
+            up, down = 0.12, 0.25     # a closing breath: it keeps its level to the cut
+        env = np.minimum(1.0, t / up) ** 1.5 * np.minimum(1.0, (dur - t) / down) ** 1.5
+        fall = float((opts or {}).get("fall", 0.0))
+        noise = synth.noise(dur, seed)[:n]
+        body = fft_filter(noise, "band", 120, 1800)[:n]
+        if fall:
+            cutoff = 1800.0 * 2.0 ** (-fall * t / dur / 12.0) * np.ones(n)
+            body = lowpass_moving(body, np.maximum(180.0, cutoff))[:n]
+        hiss = fft_filter(synth.noise(dur, seed + 5), "band", 1800, 6000)[:n] * 0.22
+        f0 = 62.0 * (2.0 ** (-fall * t / dur / 12.0) if fall else 1.0)
+        throb = np.sin(2 * np.pi * np.cumsum(f0) / SR) * 0.35
+        flutter = 0.82 + 0.18 * np.sin(2 * np.pi * 17.0 * t + seed)
+        y = (body * flutter + hiss + throb) * env
+        if fall:
+            y = np.tanh(y * 2.2) / 2.2 * 1.9    # a closing breath: a flatter level, no sharp peak
+        return y
     if kind == "tape":        # ep17: packing tape peeled off board, a sticky crackle
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
+    if kind == "curlew":      # ep35, opt-in: a far, long falling whistle that ends in a bubbling trill
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        f = 1900 - 650 * np.clip(t / (dur * 0.55), 0, 1) ** 0.6
+        trill = np.clip((t - dur * 0.55) / (dur * 0.45), 0, 1)
+        f = f * (1 + 0.07 * trill * np.sin(2 * np.pi * 14 * t)) - 250 * trill
+        ph = 2 * np.pi * np.cumsum(f) / SR
+        env = np.clip(t / 0.12, 0, 1) * np.clip((dur - t) / 0.2, 0, 1) * (0.7 + 0.3 * trill * np.sin(2 * np.pi * 14 * t) ** 2)
+        return (np.sin(ph) + 0.2 * np.sin(2 * ph)) * env * 0.5
+    if kind == "rasp":        # ep35, opt-in: two huge dry palms rubbing, slow strokes of sandpaper grain
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        grain = fft_filter(synth.noise(dur, seed), "band", 1400, 7500)[:n]
+        low = fft_filter(synth.noise(dur, seed + 1), "band", 180, 900)[:n] * 0.45
+        stroke = np.abs(np.sin(np.pi * 1.7 * t + 0.4)) ** 0.7
+        flutter = 0.65 + 0.35 * np.clip(np.sin(2 * np.pi * (24 + 8 * np.sin(2 * np.pi * 0.7 * t)) * t), -1, 1)
+        env = np.clip(t / 0.25, 0, 1) * np.clip((dur - t) / 0.3, 0, 1)
+        y = (grain * flutter + low) * stroke * env
+        return y / (np.abs(y).max() + 1e-9)
+    if kind == "logsettle":   # ep35, opt-in: a log settling in a fire, a soft woody thump and a bright crackle of sparks
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        y = np.zeros(n)
+        th = synth.thump(0.45, 105, 38, seed)[: n] * 0.9
+        y[: len(th)] += th
+        wood = fft_filter(synth.noise(0.2, seed + 2), "band", 250, 1400) * np.exp(-np.arange(synth.n_samples(0.2)) / SR / 0.05)
+        y[: len(wood)] += wood[: n] * 0.5
+        sp = _crackle(dur, seed + 3, 55, 2200, 9000)[:n] * np.exp(-t / (dur * 0.55)) * (t > 0.06)
+        y += sp * 1.4
+        return y / (np.abs(y).max() + 1e-9)
     if kind == "clap":   # opt-in (ep23): one hand clap in an empty hall, a short room tail after it
         return _clap(dur, seed)
+    if kind == "hiss_fall":   # opt-in (ep38): a speaker-box hiss whose band slides down as it fades (a pitch fall)
+        n = synth.n_samples(dur)
+        hops = n // 512 + 4
+        cut = 7000.0 * (500.0 / 7000.0) ** np.linspace(0, 1, hops)
+        y = lowpass_moving(synth.noise(dur, seed), cut) * (1 - np.arange(n) / n) ** 0.8
+        t = np.arange(n) / SR
+        y = y + 0.25 * np.sin(2 * np.pi * np.cumsum(900 * (120 / 900) ** (t / dur)) / SR) * (1 - t / dur)
+        return synth.fade(y, 0.05, 0.05) * 0.8
     if kind == "silence":
         return np.zeros(1)
     raise ValueError(f"no sfx {kind!r}")
@@ -674,6 +861,10 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
         y = amb(a["kind"], a1 - a0, k + 3)
         y *= np.minimum(1, np.arange(len(y)) / (0.3 * SR)) * np.minimum(1, (len(y) - np.arange(len(y))) / (0.3 * SR))
         m.add("amb", a0, to_lufs(y, a.get("lufs", -32.0)), pan=a.get("pan", 0.0))
+    for k, h in enumerate(snd.get("hums", [])):   # opt-in (ep42): people's steady hums, on the ambience bus
+        t0, y = hum_track(h, at, k, dur)
+        if len(y):
+            m.add("amb", t0, y, pan=h.get("pan", 0.0))
     surface = snd.get("floor", "stone")
     # opt-in: a floor per span of the film ("floor_spans": [{"from": ref, "to": ref, "floor": ...}]), over the
     # story's or the character's own

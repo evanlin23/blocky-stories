@@ -52,7 +52,25 @@ def film(story: str) -> dict | None:
         return None
     x = max(arts, key=lambda x: x["created_at"])
     run = x["workflow_run"]["id"]
-    return {"id": x["id"], "run_id": run, "url": f"https://github.com/{REPO}/actions/runs/{run}"}
+    return {"id": x["id"], "run_id": run, "url": f"https://github.com/{REPO}/actions/runs/{run}",
+            "created_at": x["created_at"]}
+
+
+# what changes the film: everything in the story folder but the words around it (package, reviews, notes)
+NOT_FILM = ("package.json", "reviews", "notes", "*.md")
+
+
+def changed_since(story: str, when: str) -> bool:
+    """True when a file that shapes the film (story.json, set.py, voice-timings.json, ...) has a commit after
+    `when` (ISO time), so a fix to a story with a film gets drawn again. Needs the full git history."""
+    spec = [f"stories/{story}"] + [f":(exclude)stories/{story}/{x}" for x in NOT_FILM]
+    r = subprocess.run(["git", "-C", str(ROOT), "log", "-1", "--format=%cI", "--", *spec], capture_output=True, text=True)
+    last = r.stdout.strip()
+    if not last:
+        return False
+    import datetime as dt
+    norm = lambda s: dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
+    return norm(last) > norm(when)
 
 
 def uploads() -> dict:
