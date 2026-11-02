@@ -193,7 +193,7 @@ def materials(kit, wd):
     M["steelp"] = kit.plastic("#9aa3a8", 0.5)
     M["blue"] = kit.plastic("#3d6fa8", 0.5, spec=0.5)
     M["bluedk"] = kit.plastic("#2c527e", 0.55)
-    M["stroke"] = kit.plastic("#58b6ff", 0.5, name="stroke blue")
+    M["stroke"] = kit.plastic("#2f8fe0", 0.6, name="stroke blue")
     M["brass"] = kit.plastic("#e0b64a", 0.3, name="brass", spec=0.9)
     M["pad"] = kit.plastic("#c99a38", 0.28, name="padlock", spec=0.9)
     M["dark"] = kit.plastic("#08090b", 0.9, name="dark")
@@ -341,11 +341,11 @@ def build_post(kit, ctx, M):
     kit.box("post7", (0.22, 0.04, UNIT_H), (1.01, yc - 1.0 + 0.02, UNIT_H / 2), M["steelp"])
     face = yc - 1.0 + 0.043   # the post's inside face
     for i, dx in enumerate((-0.035, 0.035)):
-        kit.box(f"stroke{i}", (0.022, 0.005, 0.15), (1.01 + dx + 0.012, face, 0.6), M["stroke"])
-    kit.box("staple", (0.1, 0.012, 0.05), (1.0, face + 0.005, 0.43), M["steelp"])
-    pb = kit.box("padlock", (0.07, 0.035, 0.08), (1.0, face + 0.03, 0.385), M["pad"], bevel=0.01)
-    torus(kit, "shackle", 0.025, 0.006, (1.0, face + 0.03, 0.43), M["steel"], rot=(math.pi / 2, 0, 0), seg=16, tube=6)
-    kit.light("plant", "SPOT", (1.0, face + 0.55, 0.62), 40, "#fff0d8", size=0.05, spot=38, blend=0.5, shadow=False)
+        kit.box(f"stroke{i}", (0.02, 0.005, 0.11), (1.01 + dx + 0.012, face, 0.6), M["stroke"])
+    kit.box("staple", (0.1, 0.012, 0.05), (1.0, face + 0.005, 0.40), M["steelp"])
+    pb = kit.box("padlock", (0.07, 0.035, 0.08), (1.0, face + 0.03, 0.345), M["pad"], bevel=0.01)
+    torus(kit, "shackle", 0.025, 0.006, (1.0, face + 0.03, 0.395), M["steel"], rot=(math.pi / 2, 0, 0), seg=16, tube=6)
+    kit.light("plant", "SPOT", (1.0, face + 0.55, 0.62), 9, "#fff0d8", size=0.05, spot=38, blend=0.5, shadow=False)
     kit.aim(bpy.data.objects["plant"], (1.0, face, 0.52))
 
 
@@ -433,7 +433,7 @@ def build_corridor_props(kit, ctx, M):
     # warm fill for the memory shots (corridor and unit seven)
     kit.light("mem fill", "AREA", (-0.1, 2.0, 2.6), 220, "#ffe2b0", size=3.0, shadow=False)
     kit.aim(bpy.data.objects["mem fill"], (-0.1, 3.0, 0.5))
-    kit.light("mem unit", "POINT", (2.0, YC[7], 2.0), 90, "#ffe2b0", size=0.4, shadow=True)
+    kit.light("mem unit", "POINT", (3.4, YC[7], 1.9), 260, "#ffe2b0", size=0.4, shadow=True)
     # distant low roofs for the dusk wide
     for i, (x, y, w, d, h) in enumerate(((-18, -22, 10, 8, 4.5), (14, -26, 12, 8, 5.5), (28, -14, 7, 7, 3.6),
                                            (-30, -9, 9, 6, 3.2))):
@@ -502,7 +502,7 @@ def build_carry(kit, ctx, M):
     kit.plane("small dec", (0.34, 0.24), (0, -0.152, 0.13), M["round1"], sm, rot=(math.pi / 2, 0, 0))
     ctx["small"] = sm
     # my phone's torch and glow
-    kit.light("torch", "SPOT", (0, 0, -30), 450, "#f4f8ff", size=0.04, spot=48, blend=0.6)
+    kit.light("torch", "SPOT", (0, 0, -30), 1600, "#f4f8ff", size=0.04, spot=48, blend=0.6)
     kit.light("phone", "POINT", (0, 0, -30), 14, "#dff0ff", size=0.05, shadow=False)
     # a phone prop for the call: a small dark slab with a lit face, hung from my head (placed in animate)
     ph = kit.empty("phone prop", (0, 0, -30))

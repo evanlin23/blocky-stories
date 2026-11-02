@@ -16,6 +16,8 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
+TEMPO = {"L64": 0.9, "L72": 0.9, "L73": 0.95, "L54": 0.93, "L57": 0.95, "L19": 0.95}
+GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.4, "L69": 0.3, "L60": 0.25}
 LOOP = 0.45          # seconds after the last word: the door's thud lands in it
 for ln in lines:
     if ln["id"] == "L42":
@@ -23,7 +25,12 @@ for ln in lines:
     if ln["id"] == "L33":
         ln["gap"] = 0.5                       # the scrape plays alone
     if ln["id"] == "P01":
-        ln["pause"] = 0.7
+        ln["pause"] = 0.9
+    # slower, softer reads where the script asks (tempo), and a breath after a few lines (gap)
+    if ln["id"] in TEMPO:
+        ln["tempo"] = TEMPO[ln["id"]]
+    if ln["id"] in GAPS:
+        ln["gap"] = GAPS[ln["id"]]
 
 YC = {7: 3.0, 8: 5.3, 9: 7.6, 10: 9.9, 11: 12.2, 12: 14.5}
 KX, KY = 60.0, 0.0     # the kitchen
@@ -64,27 +71,27 @@ AISLE_CAM = still([-1.0, 3.0, 1.45], [2.5, 3.0, 1.3], 24)          # straight do
 FACE_SIDE = lambda k: still([-0.7, YC[k] - 0.1, 1.55], [1.2, YC[k], 1.5], 36)
 SIT = (2.3, 2.25)
 SIT_Z = 0.46
-KEYCAM = still([1.62, 2.12, 1.62], [1.62, 2.27, 1.2], 38)
+KEYCAM = still([1.62, 2.14, 1.6], [1.62, 2.18, 1.2], 28)
 
 SHOTS = [
     (0, "L01 behind me down the lit corridor toward the open door seven, a slow push",
      move(([-0.25, -1.1, 0.55], [0.5, 3.0, 1.0]), ([-0.2, -0.3, 0.6], [0.7, 3.0, 1.05]), 24, 22)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
-    ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.7, 1.35], [1.0, 3.0, 1.2], 26)),
+    ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.95, 1.3], [1.0, 3.0, 1.15], 22)),
     ("L04", "Jo at the back of the aisle with a box, me at the front", AISLE_CAM),
     ("L05", "the yard by day: Jo walking to her car, me at the yard door", still([-4.2, -8.0, 1.5], [0.8, -4.5, 1.0], 24)),
-    ("L06", "the corridor at night, me at door seven", still([-0.4, 0.2, 1.5], [0.6, 3.0, 1.3], 26)),
+    ("L06", "the corridor at night, me at door seven", still([-0.45, -1.0, 1.5], [0.6, 3.0, 1.3], 26)),
     ("L07", "inside seven: the stacks and the aisle, the lamp on the floor", still([0.95, 3.0, 1.15], [3.0, 3.0, 0.85], 22)),
-    ("L08", "the two box faces, round on the right, zigzag on the left", still([0.7, 3.0, 0.78], [1.7, 3.0, 0.2], 30)),
+    ("L08", "the two box faces, round on the right, zigzag on the left", still([-1.0, 3.0, 0.85], [1.45, 3.0, -0.25], 14)),
     ("L09", "me on the round stack looking at the jagged one", still([0.95, 3.5, 1.5], [2.3, 2.5, 1.1], 22)),
-    ("L10", "knee height on the frame: the two strokes, the padlock", still([1.0, 3.05, 0.51], [1.0, 2.04, 0.51], 60)),
+    ("L10", "knee height on the frame: the two strokes, the padlock", still([1.0, 3.05, 0.5], [1.0, 2.04, 0.5], 48)),
     ("L11+0.3", "top-down on the box top: the ring and two keys", KEYCAM),
     ("L12", "my face in the lamp's light", still([2.3, 3.35, 2.0], [2.3, 2.25, 2.02], 30)),
     ("L13", "the round button, its green ring", still([0.3, 1.25, 1.3], [-1.1, 0.55, 0.98], 35)),
     ("L14", "the corridor from the entrance, lit, empty", still([-0.1, -0.9, 1.5], [-0.1, 10.0, 1.2], 24)),
     ("L15", "the lights click off: my phone's glow, the green ring ahead",
-     move(([-0.15, 6.2, 1.5], [-0.4, 0.5, 1.25]), ([-0.15, 5.4, 1.5], [-0.4, 0.5, 1.25]), 24)),
+     move(([-0.15, 7.4, 1.5], [-0.4, 0.5, 1.25]), ([-0.15, 6.6, 1.5], [-0.4, 0.5, 1.25]), 24)),
     ("L16", "long lens: unit eleven's door is up", LONG_LENS(12.0)),
     ("L17", "closer: the Deep One front-on in unit eleven's doorway", FACE_SIDE(11)),
     ("L18", "mid shot of its front, the face plain", still([-0.5, 12.15, 1.5], [1.2, 12.2, 1.4], 44)),
@@ -125,7 +132,7 @@ SHOTS = [
     ("L47", "my face, terrified, then my eyes drop", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
     ("L48", "straight down the aisle line: its front, a stack each side", AISLE_CAM),
     ("L49", "Jo's warm memory at the back of the aisle", AISLE_CAM),
-    ("L49.1", "and the same spot again, the Deep One", AISLE_CAM),
+    ("L49.2", "and the same spot again, the Deep One", AISLE_CAM),
     ("L50", "the jagged boxes beside its flank", still([0.1, 3.4, 1.1], [1.5, 3.8, 0.85], 30)),
     ("L51", "the round boxes beside its flank, the lamp at the foot", still([0.1, 2.6, 1.1], [1.5, 2.3, 0.8], 30)),
     ("L52", "memory: a round scribble on a fresh box, the kitchen table",
@@ -140,7 +147,7 @@ SHOTS = [
     ("L59", "Jo and me side by side as the door rises", still([-0.7, 1.0, 1.55], [0.7, 3.0, 1.2], 30)),
     ("L60", "straight down the aisle in daylight: the stacks and an empty aisle", AISLE_CAM),
     ("L61", "Jo with a jagged box walking toward the sun", still([-0.3, -0.9, 1.45], [0.0, 4.0, 1.2], 28)),
-    ("L61.2", "then me with another", still([-0.3, -0.9, 1.45], [0.0, 4.0, 1.2], 28)),
+    ("L61.4", "then me with another", still([-0.3, -0.9, 1.45], [0.0, 4.0, 1.2], 28)),
     ("L62", "Jo in the aisle with a round one, eyebrows up", still([0.6, 3.0, 1.55], [2.0, 3.0, 1.5], 34)),
     ("L63", "Jo: \"That one's yours, obviously\"", still([0.6, 3.0, 1.55], [2.0, 3.0, 1.5], 34)),
     ("L63.3", "and me, a small laugh", still([3.7, 3.0, 1.55], [1.4, 3.0, 1.5], 36)),
@@ -195,11 +202,11 @@ CARRY = {"arms": [80, 80], "side": [-6, -6]}
 SITTING = {"sit": True, "arms": [10, 10], "side": [-8, -8]}
 
 # me
-put("me", 0, [-0.1, -0.35], yaw=180, expr="neutral")
+put("me", 0, [-0.1, 0.55], yaw=180, expr="neutral")
 walk("me", "L01>", [0.15, 2.3], yaw=180)
 hide("me", "L02")
-put("me", "L03", [1.15, 2.7], yaw=-90, expr="grin")
-put("me", "L04", [1.7, 3.05], yaw=90, expr="neutral", arms=[20, 20])
+put("me", "L03", [1.2, 2.55], yaw=90, expr="grin")
+put("me", "L04", [1.7, 3.3], yaw=90, expr="neutral", arms=[20, 20])
 put("me", "L05", [-0.45, -1.75], yaw=0, expr="neutral")
 put("me", "L06", [0.45, 2.7], yaw=90, expr="worried")
 hide("me", "L07")
@@ -207,16 +214,16 @@ put("me", "L09", [SIT[0], SIT[1], SIT_Z], yaw=180, expr="worried", **SITTING)
 put("me", "L12", [SIT[0], SIT[1], SIT_Z], yaw=180, expr="worried", **SITTING)
 hide("me", "L13")
 put("me", "L15", [0.15, 3.3], yaw=180, expr="neutral")
-walk("me", "L15+1.2", [-0.1, 2.0])
-walk("me", "L15.1+1.2", [-0.5, 0.85])
+walk("me", "L15.2", [-0.1, 2.0])
+walk("me", "L15.3+0.1", [-0.5, 0.85])
 hide("me", "L16")
 put("me", "L19", [-0.1, 3.4], yaw=180, expr="neutral")
 key("me", "L19.1", head=[0, 10], blend=0.15)
 key("me", "L19.1+0.35", head=[0, -2], blend=0.2)
 put("me", "L19.2", [-0.1, 3.5], yaw=180)
 put("me", "L20", [0.45, 3.05], yaw=90, expr="neutral")
-walk("me", "L20.1+0.4", [0.0, 2.2], yaw=0, keep_yaw=False)
-walk("me", "L20.2+0.3", [-0.1, 0.2])
+walk("me", "L20.2+0.2", [0.0, 2.2], yaw=0, keep_yaw=False)
+walk("me", "L20.3+0.3", [-0.1, 0.2])
 hide("me", "L21")
 put("me", "L23", [-0.1, 2.0], yaw=180)
 walk("me", "L23+1.9", [-0.3, 6.4])
@@ -235,19 +242,19 @@ walk("me", "L41.2+0.5", [-0.6, 0.85])
 put("me", "L42", [-0.6, 0.62], yaw=-90, expr="worried")
 hide("me", "L43")
 put("me", "L47", [-0.2, 1.4], yaw=yaw_to([-0.2, 1.4], [1.0, 3.0]), expr="terrified")
-key("me", "L47.2", expr="worried", head=[0, 18], blend=0.3)
+key("me", "L47.3", expr="worried", head=[0, 18], blend=0.3)
 hide("me", "L48")
 put("me", "L52", [KX - 0.2, -0.25], yaw=180, expr="grin", arms=[55, 0], side=[-10, 0])
 put("me", "L53", [-0.2, 1.4], yaw=yaw_to([-0.2, 1.4], [1.0, 3.0]), expr="worried", head=[0, 10])
 hide("me", "L54")
 put("me", "L56", [KX + 1.0, 2.0], yaw=0, expr="neutral", arms=[165, 0], side=[0, 0], head=[0, 4])
 put("me", "L57", [KX + 1.0, 2.0], yaw=0, expr="worried", arms=[165, 0], head=[0, 4])
-key("me", "L57.3", expr="soft", blend=0.3)
+key("me", "L57.4", expr="soft", blend=0.3)
 hide("me", "L58")
 put("me", "L59", [0.3, 3.5], yaw=90, expr="soft")
 hide("me", "L60")
-put("me", "L61.2", [0.7, 3.0], yaw=180, expr="soft", **CARRY)
-walk("me", "L61.2+0.6", [0.0, 2.0], **CARRY)
+put("me", "L61.4", [0.7, 3.0], yaw=180, expr="soft", **CARRY)
+walk("me", "L61.4+0.6", [0.0, 2.0], **CARRY)
 walk("me", "L62-0.05", [-0.1, 0.4], **CARRY)
 hide("me", "L62")
 put("me", "L63.3", [1.5, 3.0], yaw=90, expr="grin")
@@ -264,19 +271,19 @@ walk("me", "L73+0.1", [0.0, 0.2], yaw=0)
 
 # Jo
 hide("jo", 0)
-put("jo", "L03", [2.4, 3.0], yaw=-90, expr="grin")
-put("jo", "L04", [3.45, 3.0], yaw=-90, expr="grin", **CARRY)
+put("jo", "L03", [2.4, 3.15], yaw=90, expr="grin")
+put("jo", "L04", [3.45, 2.75], yaw=-90, expr="grin", **CARRY)
 put("jo", "L05", [0.5, -2.0], yaw=0, expr="neutral")
 walk("jo", "L05+0.1", [0.5, -2.0], yaw=0)
 walk("jo", "L05>", [2.7, -7.4])
 hide("jo", "L06")
 put("jo", "L49", [3.45, 3.0], yaw=-90, expr="grin", **CARRY)
-hide("jo", "L49.1")
+hide("jo", "L49.2")
 put("jo", "L59", [0.3, 2.55], yaw=90, expr="soft")
 put("jo", "L61", [0.8, 3.0], yaw=180, expr="soft", **CARRY)
 walk("jo", "L61+0.5", [0.0, 2.0], **CARRY)
-walk("jo", "L61.2-0.05", [-0.1, 0.4], **CARRY)
-hide("jo", "L61.2")
+walk("jo", "L61.4-0.05", [-0.1, 0.4], **CARRY)
+hide("jo", "L61.4")
 put("jo", "L62", [2.5, 3.0], yaw=-90, expr="wide", **CARRY)
 key("jo", "L63", expr="grin", blend=0.2)
 hide("jo", "L63.3")
@@ -290,7 +297,7 @@ for at, unit, extra in (("L17", 11, {}), ("L22", 10, {}), ("L29", 9, {"head": [-
     hide("deep", {"L17": "L21", "L22": "L28", "L29": "L31"}[at])
 put("deep", "L43", [1.2, 3.0], yaw=-90, expr="neutral")
 hide("deep", "L49")
-put("deep", "L49.1", [1.2, 3.0], yaw=-90)
+put("deep", "L49.2", [1.2, 3.0], yaw=-90)
 hide("deep", "L52")
 put("deep", "L53", [1.2, 3.0], yaw=-90)
 hide("deep", "L55")
@@ -302,18 +309,18 @@ cues = [
     {"at": "L05", "name": "time", "set": "day", "dur": 0.01},
     {"at": "L06", "name": "time", "set": "dusk", "dur": 0.01},
     {"at": "L49", "name": "time", "set": "mem", "dur": 0.01},
-    {"at": "L49.1", "name": "time", "set": "dusk", "dur": 0.01},
+    {"at": "L49.2", "name": "time", "set": "dusk", "dur": 0.01},
     {"at": "L58", "name": "time", "set": "sun", "dur": 0.01},
     # the corridor timer: slow ramps only (1.2 s down to 12%, 1.0 s up)
-    {"at": "L15+0.9", "name": "corr", "level": 0.12, "dur": 1.2},
-    {"at": "L15.1+1.1", "name": "corr", "level": 1.0, "dur": 1.0},
-    {"at": "L40.1", "name": "corr", "level": 0.12, "dur": 1.2},
+    {"at": "L15.1", "name": "corr", "level": 0.12, "dur": 1.2},
+    {"at": "L15.3+0.4", "name": "corr", "level": 1.0, "dur": 1.0},
+    {"at": "L40.2", "name": "corr", "level": 0.12, "dur": 1.2},
     {"at": "L42+0.3", "name": "corr", "level": 0.22, "dur": 1.0},
     {"at": "L55", "name": "corr", "level": 1.0, "dur": 0.01},
     # doors
     {"at": 0, "name": "door", "unit": 7, "open": 1.0},
     {"at": "L16", "name": "door", "unit": 11, "open": 1.0},
-    {"at": "L20.1", "name": "door", "unit": 7, "open": 0.0, "dur": 1.4},
+    {"at": "L20.2", "name": "door", "unit": 7, "open": 0.0, "dur": 1.4},
     {"at": "L21", "name": "door", "unit": 11, "open": 0.0},
     {"at": "L21", "name": "door", "unit": 10, "open": 1.0},
     {"at": "L28", "name": "door", "unit": 10, "open": 0.0},
@@ -323,7 +330,7 @@ cues = [
     {"at": "L37", "name": "door", "unit": 7, "open": 0.0},
     {"at": "L39", "name": "door", "unit": 7, "open": 1.0},
     {"at": "L55", "name": "door", "unit": 7, "open": 0.0},
-    {"at": "L59.1+0.2", "name": "door", "unit": 7, "open": 1.0, "dur": 1.4},
+    {"at": "L59.3", "name": "door", "unit": 7, "open": 1.0, "dur": 1.4},
     {"at": "L71+0.2", "name": "door", "unit": 7, "open": 0.5, "dur": 2.4},
     {"at": "L73>-2.2", "name": "door", "unit": 7, "open": 0.0, "dur": 2.4},
     # unit seven's stacks (18 each when full)
@@ -331,9 +338,9 @@ cues = [
     {"at": "L03", "name": "stacks", "left": 9, "right": 9},
     {"at": "L06", "name": "stacks", "left": 18, "right": 18},
     {"at": "L49", "name": "stacks", "left": 9, "right": 9},
-    {"at": "L49.1", "name": "stacks", "left": 18, "right": 18},
+    {"at": "L49.2", "name": "stacks", "left": 18, "right": 18},
     {"at": "L61", "name": "stacks", "left": 12, "right": 18},
-    {"at": "L61.2", "name": "stacks", "left": 6, "right": 18},
+    {"at": "L61.4", "name": "stacks", "left": 6, "right": 18},
     {"at": "L62", "name": "stacks", "left": 3, "right": 18},
     {"at": "L63.3", "name": "stacks", "left": 0, "right": 18},
     {"at": "L66", "name": "stacks", "left": 0, "right": 9},
@@ -342,7 +349,7 @@ cues = [
     {"at": "L03", "name": "lamp", "on": 0.0},
     {"at": "L06", "name": "lamp", "on": 1.0},
     {"at": "L49", "name": "lamp", "on": 0.0},
-    {"at": "L49.1", "name": "lamp", "on": 1.0},
+    {"at": "L49.2", "name": "lamp", "on": 1.0},
     {"at": "L55", "name": "lamp", "on": 0.0},
     {"at": "L67", "name": "lamp", "on": 1.0},
     # my phone's glow and torch
@@ -358,9 +365,9 @@ cues = [
     {"at": "L04", "name": "carry", "who": "jo", "style": "jagged", "on": True},
     {"at": "L05", "name": "carry", "who": "jo", "style": "jagged", "on": False},
     {"at": "L49", "name": "carry", "who": "jo", "style": "jagged", "on": True},
-    {"at": "L49.1", "name": "carry", "who": "jo", "style": "jagged", "on": False},
+    {"at": "L49.2", "name": "carry", "who": "jo", "style": "jagged", "on": False},
     {"at": "L61", "name": "carry", "who": "jo", "style": "jagged", "on": True},
-    {"at": "L61.2", "name": "carry", "who": "me", "style": "jagged", "on": True},
+    {"at": "L61.4", "name": "carry", "who": "me", "style": "jagged", "on": True},
     {"at": "L62", "name": "carry", "who": "jo", "style": "round", "on": True},
     {"at": "L63.3", "name": "carry", "who": "jo", "style": "round", "on": False},
     {"at": "L66", "name": "carry", "who": "me", "style": "round", "on": True},
@@ -403,9 +410,9 @@ cues = [
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
-    {"at": "L15+0.9", "kind": "click", "db": -14},
-    {"at": "L15.1+1.1", "kind": "click", "db": -16},
-    {"at": "L40.1", "kind": "click", "db": -14},
+    {"at": "L15.1", "kind": "click", "db": -14},
+    {"at": "L15.3", "kind": "click", "db": -16},
+    {"at": "L40.2", "kind": "click", "db": -14},
     {"at": "L41.2", "kind": "click", "db": -16},
     {"at": "L34.1", "kind": "creak", "db": -12, "dur": 2.2},
     {"at": "L43", "kind": "hit", "db": -7},
@@ -453,10 +460,10 @@ story = {
               ]},
     "sound": {"floor": "stone", "steps_db": -22,
               "ambience": [
-                  {"kind": "hum", "from": 0, "to": "L15+0.9", "lufs": -34},
-                  {"kind": "hum", "from": "L15+0.9", "to": "L15.1+1.1", "lufs": -44},
-                  {"kind": "hum", "from": "L15.1+1.1", "to": "L40.1", "lufs": -34},
-                  {"kind": "hum", "from": "L40.1", "to": "L42+0.3", "lufs": -44},
+                  {"kind": "hum", "from": 0, "to": "L15.1", "lufs": -34},
+                  {"kind": "hum", "from": "L15.1", "to": "L15.3+0.4", "lufs": -44},
+                  {"kind": "hum", "from": "L15.3+0.4", "to": "L40.2", "lufs": -34},
+                  {"kind": "hum", "from": "L40.2", "to": "L42+0.3", "lufs": -44},
                   {"kind": "hum", "from": "L42+0.3", "to": "L58", "lufs": -34},
                   {"kind": "hum", "from": "L58", "to": "end", "lufs": -38},
                   {"kind": "wind", "from": "L58", "to": "end", "lufs": -38},
