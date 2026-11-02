@@ -3,8 +3,8 @@
 - **Slug:** `ep30-top-rope`. Folder `stories/ep30-top-rope/`. From pitch #14 in `stories/ideas.md`.
 - **Title (package):** Who was standing upside down on the ceiling above my climb?
 - **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 633 spoken words in 90 lines, all `narrator` in voice A, plus 3 pause beats (2.4 s in all).
-- **Estimated length:** about 2:20 to 2:27. At 290 wpm the speech is 2:11. The 0.12 s gaps add about 11 s, the pause beats 2.4 s and the loop tail 0.25 s. If the retime lands over 2:30, cut L45 ("I told myself / it was the old BEAMS.") first, then L39. If it lands under 2:15, add "Its EYES / never BLINKED." after L25.
+- **Word count:** 624 spoken words in 90 lines, all `narrator` in voice A, plus 3 pause beats (2.4 s in all).
+- **Estimated length:** about 2:18 to 2:25. At 290 wpm the speech is 2:09. The 0.12 s gaps add about 11 s, the pause beats 2.4 s and the loop tail 0.25 s. If the retime lands over 2:30, cut L45 ("I told myself / it was the old BEAMS.") first, then L83. If it lands under 2:15, add "Its EYES / never BLINKED." after L25.
 
 ## Premise, rule, twist
 
@@ -166,8 +166,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S37: me clipping in, not looking at her]
 - `L38` narrator: She looked up / PAST me, / at the BOX.
   - [S38: Sam's face tilted up. Cut to her eye-line: the box and the red tag at the top, in frame]
-- `L39` narrator: And she didn't / say a WORD.
-  - [S39: Sam's face, lips closed]
+- `L39` narrator: I clipped IN / before she could SAY it.
+  - [S39: me turning to the wall and clipping in (cut on the reach), Sam behind, her mouth just opening]
 
 ## 05 Thursday three
 
@@ -190,7 +190,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L46` narrator: The fourth Thursday / I climbed FAST.
   - [S46: me low on the wall, moving up between cuts]
-- `L47` narrator: Don't look UP. / Touch the TOP. / Go DOWN.
+- `L47` narrator: I kept my EYES / on the WALL.
   - [S47: my face, eyes fixed on the wall in front]
 - `L48` narrator: I reached / the top HOLD.
   - [S48: over my shoulder, the top hold, the box and anchor above]
@@ -245,14 +245,14 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S70: the red tag lying across Sam's open palm]
 - `L71` narrator: She said, / "That box / has been BROKEN / for WEEKS."
   - [S71: Sam's face, calm]
-- `L72` narrator: "I kept ASKING / because NOBODY / was on the other END."
+- `L72` narrator: "I kept TRYING / to TELL you."
   - [S72: Sam's face, a small look up at the roof]
 - `L73` narrator: I UNCLIPPED.
   - [S73: me from the waist up, my hand going to the harness (cut before it closes)]
 - `L74` narrator: The rope went SLACK, / and slid UP / into the dark.
   - [S74: the rope end lifting off the mat and sliding up the wall]
 - `P03` pause: 1.0 s. No word. The rope hiss fading up.
-- `L75` narrator: A climb is built / for TWO. / One on the WALL, / one on the other END.
+- `L75` narrator: Every ROPE / has two ENDS. / Mine was never / LOOSE.
   - [S75: the roof from below, the Headstander at the lip, leaning back, the rope gathered to it]
 - `L76` narrator: Every Thursday / I thought / I was ALONE.
   - [S76: me and Sam side by side on the mat, looking up]
