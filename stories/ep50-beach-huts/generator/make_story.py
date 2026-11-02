@@ -14,7 +14,36 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
+# captions are two or three words: a longer chunk is cut in two. NEWIDX maps the writer's chunk numbers (used in every
+# time reference below) to the new ones.
+NEWIDX = {}
+for ln in lines:
+    out, m = [], {}
+    for k, (cap, sp) in enumerate(ln["chunks"]):
+        m[k] = len(out)
+        cw, sw = cap.split(), sp.split()
+        wide = (len(cw) == 3 and sum(len(w) for w in cw) > 17)
+        if len(cw) > 3 or wide:
+            h = len(cw) // 2 if wide else (len(cw) + 1) // 2
+            if wide:
+                h = 2
+            out += [[" ".join(cw[:h]), " ".join(sw[:h])], [" ".join(cw[h:]), " ".join(sw[h:])]]
+        else:
+            out.append([cap, sp])
+    ln["chunks"] = out
+    NEWIDX[ln["id"]] = m
 lines = lines + [{"id": "P03", "pause": LOOP, "chunks": []}]
+
+
+def R(ref):
+    """Translate 'L12.1+0.4' (writer's chunk numbers) to the split numbering."""
+    import re
+    if not isinstance(ref, str):
+        return ref
+    m = re.match(r"^(L\d+)\.(\d+)(.*)$", ref)
+    if not m or m.group(1) not in NEWIDX:
+        return ref
+    return f"{m.group(1)}.{NEWIDX[m.group(1)][int(m.group(2))]}{m.group(3)}"
 
 # ------------------------------------------------------------------------------------------------- cast
 FACE = {"eyes": "round", "brows": True}
@@ -101,20 +130,20 @@ def S(at, what, cam, step=2, **kw):
 NSTAGE = lambda h, **r: dict(stage={"hut": h}, refl=r)
 
 # 01 the rule
-S(0, "neighbour at his window, cartwheel in the glass", still((-3.15, -2.9, 1.55), (-3.15, 0, 1.5), 30), 1,
+S(0, "neighbour at his window, cartwheel in the glass", still((-3.1, -3.6, 1.55), (-3.1, 0, 1.5), 26), 1,
   **NSTAGE(4, r_neighbour="stage"))
 S("L01.2", "high wide of the sand, figures and reflections, the rust figure", still((10, -31, 6.5), (11, -7, 0.8), 18), 2,
   refl={"r_dieter": "sand", "r_shopper": "sand", "r_date_f": "sand", "r_me": "sand"})
 S("L02", "close on the neighbour", still((-3.5, -2.5, 1.62), (-3.55, -0.8, 1.55), 40))
 S("L02.2", "the glass alone", still((-3.0, -1.7, 1.45), (-3.0, 0, 1.45), 28), 1, **NSTAGE(4, r_neighbour="stage"))
-S("L03", "office: reflections asleep in the glass top", still((OFFX, 37.4, 1.7), (OFFX, 40.3, 0.9), 26), 2,
+S("L03", "office: reflections asleep in the glass top", still((OFFX, 36.5, 1.9), (OFFX, 40.3, 0.9), 20), 2,
   refl={"r_o1": {"kind": "table", "base": 0.78}, "r_o2": {"kind": "table", "base": 0.78},
         "r_o3": {"kind": "table", "base": 0.78}})
 S("L04", "dieter passes the bakery", still((BX - 0.3, 36.8, 1.5), (BX + 0.4, 41.5, 1.35), 26))
-S("L04.2", "his reflection face down in the cake", still((BX + 0.2, 40.2, 1.45), (BX + 0.2, 43.0, 1.3), 30), 2,
+S("L04.2", "his reflection face down in the cake", still((BX + 0.2, 38.2, 1.45), (BX + 0.2, 43.0, 1.3), 28), 2,
   refl={"r_dieter": "glass"})
 S("L05", "the pale rectangle in the cubicle", still((SHOPX, 38.7, 1.45), (SHOPX, 41.4, 1.3), 28))
-S("L05.2", "shop window: she stands, her reflection walks out", still((SHOPWX - 0.6, 37.2, 1.5), (SHOPWX, 41.5, 1.4), 24),
+S("L05.2", "shop window: she stands, her reflection walks out", still((SHOPWX + 0.4, 36.2, 1.5), (SHOPWX + 0.4, 41.5, 1.4), 22),
   2, refl={"r_shopper": "glass"})
 S("L06", "the date at the cafe", still((CAFEX + 0.2, 38.2, 1.35), (CAFEX, 41.9, 1.1), 26))
 S("L06.1", "cafe window: their reflections close", still((CAFEX, 40.3, 1.35), (CAFEX, 43.0, 1.2), 28), 2,
@@ -212,9 +241,9 @@ S("L70.2", "me listening", c([0, [-0.9, -1.5, 1.45], [0.0, 0.0, 1.45], 40]), 2, 
 S("L71", "the chair is empty", still((0.4, -3.5, 1.0), (1.3, -1.5, 0.5), 30))
 S("L71.1", "we sit, the lantern between", still((0.0, -4.0, 1.3), (0.0, -1.5, 1.0), 26))
 S("L72", "the laptop shut on the shelf", still((0.6, 1.75, 1.7), (-1.4, 1.1, 1.8), 32))
-S("L73", "golden evening on the sand", still((3.0, -13.5, 1.4), (7.5, -6.5, 0.8), 26), 2,
+S("L73", "golden evening on the sand", still((5.5, -14.5, 1.3), (5.5, -6.8, 0.9), 20), 2,
   refl={"r_me": "sand", "r_remi": "sand"})
-S("L73.2", "just the two reflections", still((5.0, -9.0, 0.5), (8.0, -6.5, -0.4), 30), 2,
+S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4), 26), 2,
   refl={"r_me": "sand", "r_remi": "sand"})
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L75", "mine, smiling", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage"))
@@ -223,6 +252,7 @@ S("L76", "this morning: already out there", move(((0.9, -3.0, 1.5), (1.0, 0, 1.4
 
 shots = []
 shotx = {}
+SHOTS = [(R(a), w, c_, st, kw) for a, w, c_, st, kw in SHOTS]
 for i, (at, what, cam, step, kw) in enumerate(SHOTS):
     sid = f"S{i + 1:02d}"
     s = {"id": sid, "cam": cam, "hand": 0.006 if step == 1 else 0.004, "step": step, "what": what}
@@ -321,7 +351,7 @@ hide("r_dieter", "L05")
 # --- the shop
 put("shopper", "L05.2", [SHOPWX - 0.5, 40.1], yaw=0)
 hide("shopper", "L06")
-put("r_shopper", "L05.2", [SHOPWX - 0.5, 42.6], yaw=0)
+put("r_shopper", "L05.2", [SHOPWX + 0.3, 42.6], yaw=0)
 walk("r_shopper", "L05.2+1.2", [SHOPWX + 2.4, 42.6])
 hide("r_shopper", "L06")
 
@@ -487,6 +517,8 @@ cues = [
     {"at": "L21", "name": "tod", "set": "grey", "dur": 0.0001},
     {"at": "L24", "name": "tod", "set": "peach", "dur": 3.0},
     {"at": "L34", "name": "tod", "set": "blue", "dur": 3.0},
+    {"at": "L62", "name": "tod", "set": "bench", "dur": 0.0001},
+    {"at": "L71", "name": "tod", "set": "blue", "dur": 0.0001},
     {"at": "L73", "name": "tod", "set": "gold", "dur": 0.0001},
     {"at": "L76", "name": "tod", "set": "grey", "dur": 0.0001},
     {"at": 0, "name": "chairB", "state": "hidden"},
@@ -605,5 +637,12 @@ story = {
               "music_drops": [{"from": "P01", "to": "L25", "keep": ["thud"]},
                               {"from": "P02", "to": "L44", "keep": ["creak"]}]},
 }
+for keys in acting.values():
+    for k in keys:
+        for f in ("at", "from", "to"):
+            if f in k:
+                k[f] = R(k[f])
+for k in cues + sfx:
+    k["at"] = R(k["at"])
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")

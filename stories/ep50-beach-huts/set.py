@@ -46,7 +46,8 @@ TOD = {
     "day":   dict(se=4.2, sc="#fff1dc", el=38, az=-20, sky="#c9d3d6", ss=1.05, fog="#b4c2c8", back="#c4d2d8"),
     "grey":  dict(se=1.0, sc="#dfe8f0", el=30, az=-20, sky="#b4bfc6", ss=0.95, fog="#a6b2ba", back="#a8b6bf"),
     "peach": dict(se=2.6, sc="#ffb184", el=11, az=-35, sky="#d9a68f", ss=0.9, fog="#c39a88", back="#e6b79c"),
-    "blue":  dict(se=0.8, sc="#9db4de", el=5, az=-35, sky="#4a6684", ss=0.9, fog="#41566e", back="#5b7692"),
+    "blue":  dict(se=0.8, sc="#9db4de", el=5, az=-35, sky="#3a5470", ss=0.55, fog="#41566e", back="#5b7692"),
+    "bench": dict(se=2.4, sc="#b7c8ee", el=10, az=-30, sky="#6f8eb0", ss=1.6, fog="#5b7494", back="#7fa0c0"),
     "gold":  dict(se=3.2, sc="#ffbf6e", el=9, az=-40, sky="#f0c397", ss=0.85, fog="#d9b48c", back="#f0cfa6"),
 }
 
@@ -364,7 +365,7 @@ def build(kit, story, tl):
     wet = wetsand(kit, "wet sand", "#8f8572", 0.58)
     wp = kit.plane("wet", (400, 13.2), (0, -11.4, 0.0), wet)
     wp.visible_shadow = False
-    kit.plane("under", (400, 14), (0, -11.4, -2.4), kit.plastic("#5b6670", 0.9, name="under"))
+    kit.plane("under", (400, 14), (0, -11.4, -2.4), kit.plastic("#8a98a4", 0.9, name="under"))
     kit.plane("sea", (800, 400), (0, -218, -0.06), kit.plastic("#5f7a78", 0.25, name="sea"))
     kit.plane("foam", (400, 0.7), (0, -18.4, -0.04), kit.plastic("#e6ece8", 0.9, name="foam"))
 
@@ -441,7 +442,7 @@ def build(kit, story, tl):
     # --- lights
     sun = kit.light("sun", "SUN", (0, -20, 30), 4.0, "#fff1dc", size=0.01)
     ctx["sun"] = sun
-    kit.light("lantern", "POINT", (LANT[0], LANT[1], DECK_Z + 0.16), 80, "#f0b46a", size=0.08)
+    kit.light("lantern", "POINT", (LANT[0], LANT[1], DECK_Z + 0.16), 900, "#f0b46a", size=0.08)
     kit.light("laptop", "POINT", (0.0, -1.05, 1.0), 12, "#cfe0ff", size=0.1)
     kit.light("hutin", "POINT", (-0.4, 1.0, 2.1), 90, "#ffcf94", size=0.15)
     kit.light("rim", "AREA", (3.0, -12.0, 1.4), 400, "#7aa2e0", size=5.0)
@@ -462,10 +463,11 @@ def build_towns(kit, M, ctx):
     floorm = kit.plastic("#8d8678", 0.8, name="townfloor")
     ceil = kit.plastic("#e4e0d6", 0.9, name="townceil")
 
-    def room(nm, ox, w, d, h, wm=wallm, fm=floorm, oy=0.0):
+    def room(nm, ox, w, d, h, wm=wallm, fm=floorm, oy=0.0, back=True):
         B(kit, f"{nm}.floor", (w, d, 0.1), (ox, oy, -0.05), fm)
         B(kit, f"{nm}.ceil", (w, d, 0.1), (ox, oy, h + 0.05), ceil)
-        B(kit, f"{nm}.wb", (w, 0.1, h), (ox, oy + d / 2, h / 2), wm)
+        if back:
+            B(kit, f"{nm}.wb", (w, 0.1, h), (ox, oy + d / 2, h / 2), wm)
         B(kit, f"{nm}.wf", (w, 0.1, h), (ox, oy - d / 2, h / 2), wm)
         B(kit, f"{nm}.wl", (0.1, d, h), (ox - w / 2, oy, h / 2), wm)
         B(kit, f"{nm}.wr", (0.1, d, h), (ox + w / 2, oy, h / 2), wm)
@@ -480,7 +482,7 @@ def build_towns(kit, M, ctx):
     for sx in (-1.3, 1.3):
         for sy in (-0.45, 0.45):
             B(kit, f"table.leg{sx}{sy}", (0.06, 0.06, 0.74), (ox + sx, 40.0 + sy, 0.37), kit.plastic("#2c3036", 0.4, name="tleg"))
-    B(kit, "office.under", (3.4, 1.6, 0.02), (ox, 40.0, -0.0), kit.plastic("#2a2f36", 0.9, name="tunder"))
+    kit.light("office.u", "POINT", (ox, 40.0, 0.35), 90, "#dfe8f0", size=0.4)
     B(kit, "office.win", (4.0, 0.04, 1.2), (ox, 43.9, 1.5), kit.emit("#dfe8ee", 0.7, name="officewin"))
     kit.light("office.l", "POINT", (ox, 38.8, 2.5), 380, "#fff4e6", size=0.6)
     kit.light("office.f", "POINT", (ox, 42.0, 2.5), 220, "#fff4e6", size=0.6)
@@ -511,9 +513,9 @@ def build_towns(kit, M, ctx):
     sx0 = TOWN["shop"]
     room("shop", sx0, 4.0, 3.0, 2.6, kit.plastic("#d7d0c8", 0.9, name="shopwall"), kit.plastic("#7a6f64", 0.8, name="shopfl"),
          oy=40.0)
-    B(kit, "shop.pale", (0.7, 0.03, 1.3), (sx0, 41.45, 1.25), kit.plastic("#f2eee6", 0.9, name="pale"))
+    B(kit, "shop.pale", (0.7, 0.03, 1.3), (sx0, 41.45, 1.25), kit.plastic("#c9c4ba", 0.9, name="pale"))
     B(kit, "shop.hook", (0.05, 0.08, 0.05), (sx0 + 0.9, 41.43, 1.8), kit.metal("#9a9a9a", 0.4))
-    kit.light("shop.l", "POINT", (sx0, 40.0, 2.4), 260, "#fff2e0", size=0.5)
+    kit.light("shop.l", "POINT", (sx0, 40.0, 2.4), 140, "#fff2e0", size=0.5)
     wx = sx0 + 20.0
     kit.plane("shopw.street", (14, 14), (wx, 40.0, 0.0), kit.plastic("#8e8a84", 0.9, name="street"))
     sm = kit.plastic("#5b6b78", 0.85, name="shopwall2")
@@ -530,7 +532,7 @@ def build_towns(kit, M, ctx):
     # CAFE
     cx = TOWN["cafe"]
     room("cafe", cx, 7.0, 6.0, 2.9, kit.plastic("#7d8a6a", 0.9, name="cafewall"), kit.plastic("#7c6048", 0.8, name="cafefl"),
-         oy=40.0)
+         oy=40.0, back=False)
     cw = kit.plastic("#7d8a6a", 0.9, name="cafewall")
     # window opening on the back wall: pieces around a 2.4 x 1.3 hole at z 0.9 .. 2.2 (wall at y = 43.0)
     for nm, sz, lc in (("l", (2.3, 0.3, 2.9), (cx - 2.35, 42.9, 1.45)), ("r", (2.3, 0.3, 2.9), (cx + 2.35, 42.9, 1.45)),
@@ -548,6 +550,7 @@ def build_towns(kit, M, ctx):
     B(kit, "cafe.out", (6.5, 0.1, 2.2), (cx, 45.2, 1.3), kit.emit("#7e8d99", 0.35, name="cafeout"))
     kit.light("cafe.l", "POINT", (cx, 40.0, 2.5), 420, "#ffd9a8", size=0.6)
     kit.light("cafe.f", "POINT", (cx, 42.0, 2.0), 160, "#ffd9a8", size=0.6)
+    kit.light("cafe.b", "POINT", (cx, 43.9, 2.0), 260, "#cfdcf0", size=0.6)
 
 
 # ------------------------------------------------------------------------------------------------ first frame
