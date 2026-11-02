@@ -154,7 +154,7 @@ def shot(at, scene, camera, step=2, hand=0.004, note=""):
 SEATED_ALL = {w: seat(w) for w in WHO}
 
 # 01 night one ---------------------------------------------------------------------------------------------
-shot(0, {}, mv([SCR_X - 0.3, -5.4, 1.85], [SCR_X - 0.45, -3.4, 1.95], [SCR_X - 0.4, -4.9, 1.92], [SCR_X - 0.45, -3.4, 1.95], 26, 34),
+shot(0, {}, mv([SCR_X - 0.3, -5.4, 1.85], [SCR_X - 0.45, -3.4, 1.95], [SCR_X - 0.35, -5.2, 1.88], [SCR_X - 0.45, -3.4, 1.95], 27, 29),
      hand=0, note="S1 push in on the fifth row's empty square, scoring by itself")
 shot("L02", {"me": ([-0.3, -1.5], 0, {"expr": "smirk"})},
      mv([1.1, -4.0, 1.5], [-0.3, -1.5, 1.45], [0.8, -3.6, 1.5], [-0.3, -1.5, 1.45], 28, 30, v=0.1), note="S2 me, the screen glowing behind")
