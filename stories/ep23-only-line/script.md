@@ -1,320 +1,267 @@
-# ep23-only-line: the script (writer, 2026-11-02)
+# ep23-only-line: the script (writer, redo of 2026-11-02)
 
-- **Slug:** `ep23-only-line` (folder `stories/ep23-only-line/`). Pitch #7 in `stories/ideas.md`, written in a parallel batch of one.
-- **Working title:** see `package.json`. A statement, no imperative, and it doesn't give away why the line is said.
-- **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 607 spoken words in 88 lines, all `narrator` in voice A, plus 4 pause beats (3.6 s in all).
-- **Line ids:** L01 to L96 with gaps. L35, L36, L42, L46, L60, L63, L81 and L90 were cut while writing, and the ids were kept so every reference in this file stays right.
-- **Estimated length:** about 2:17 to 2:25, most likely 2:20. At 290 wpm the speech is about 2:06. The 0.12 s gaps add about 11 s, the pause beats 3.6 s, the loop tail 0.25 s. If the retime lands under 2:15, add back "The king was WAITING." after L89, then "I can HEAR / my own HEART / in my EARS." after L91. If it lands over 2:30, cut L31 first, then L53.
+- **Slug:** `ep23-only-line` (folder `stories/ep23-only-line/`). Redo of pitch #7, held because its first line wasn't the world's rule.
+- **Title:** see `package.json` ("In This Town The Quiet Ones FADE").
+- **Length:** 429 spoken words in 56 lines (L01 to L57, L23 cut), all `narrator` in voice A, plus 2 pause beats (1.8 s). At 290 wpm the speech is about 89 s, the 0.12 s gaps add about 7 s, so **about 1:38** (in the 60 to 100 s test band). If it lands over 1:40, cut L29 first, then L05. If under 1:25, leave it.
+- **Shape tag:** `misread` (the rule's own word, "quiet", means something other than everyone thinks).
+
+## The big idea (one sentence)
+
+In this town "quiet" means unheard: my grandad, who never stops talking, is fading because I stopped listening to him years ago, and I, the quietest person in town, have never faded because he has never once stopped listening to me.
+
+- **The test:** "oh no" (I'm the reason he's fading), then "wait, what" (I'm solid because of him). Both strange details from the first 20 s, the chatty man fading and the silent narrator solid, click at once.
+- **Said plainly** in L42 to L45 (about 1:06 to 1:14), with one picture: Grandad nearly glass, still leaning in with his hand cupped to his ear, waiting for my line (S45).
+- **Pitched and dropped** (ten for the one kept): The old twist (the Prompter kept my place, `stand-in`, too small). A gold mask that says your words when you freeze, and Grandad's says mine (muddled: whose mask, whose voice). I'm an understudy for Grandad's real grandchild (`stand-in` in disguise). Every day happens twice and the first is a rehearsal (no feeling at the end). You hear every word a day early (no loved one at stake). The playhouse rehearses next year (points at a death). A tape mark shows where you'll stand in ten years (same). Applause follows whoever is proud of you (small). The whole week is one night repeating (confusing, ep20's problem). Everyone's life has a script and mine has one line (abstract, no picture).
+
+## What changed against the old version (for the builder)
+
+Everything is re-voiced: every line is new, numbered L01 to L57 from scratch. Old line and shot ids mean nothing now.
+
+- **Kept:** the stage, the four stage left curtain legs, the brick back wall, the ghost light, the house of plum-grey seats, the yellow tape cross and the five white marks, the full-house audience silhouettes (Saturday), costumes (Walt's robe, tin crown and beard piece, my charcoal cloak). The folding chairs aren't used. Cast keys `me`, `walt`, `marion`, `p1` to `p5` stay with their looks. The caption key colour, voice and grade stay.
+- **Removed:** the Prompter (its model, cues and lights), my flat (old S69 to S77), my car (old S53), the chalk tally on the brick (no lore plant now), the dark reverb on quoted lines, the flask.
+- **Changed:** Walt is now **Grandad** (never called Walt aloud). He's in his seventies: same white hair, add the short white beard piece in every shot, not only in costume. He **fades**: a per-character transparency driven by a new `fade` cue (see "Fading" below). Marion has a small part (two shots).
+- **New set (one small one):** a sunny town street corner for the opening montage (S01 to S08) and the playhouse stage door (S09 to S12). See "World".
+- **New characters (all adults):** `stopman` (the man at the bus stop), `mime`, `wife9` and `husband9` (the arguing couple), `busker`, `walker1` and `walker2` (two passers-by, backs to camera), and the faded ones `f1` to `f4`. Each has its own hair and outfit, none copied.
+- **New props:** a green-painted wooden bus shelter (no text), a lamp post, a terrace door with a brass numeral 9, a box guitar on a strap (the busker never strums on screen), a beret (mime), white earbuds (two small white blocks at my ears, and in my palm in S44), a tall wooden throne chair (Walt, S31).
+- **Light:** a new "ghost" mood (the stage wash ramped to about 6%, the ghost light the key). The faded ones are only ever visible in the ghost mood.
 
 ## Premise, rule, twist, world
 
-- **Premise:** I'm an adult with stage fright who joined a small old playhouse's volunteer company to meet people. I have one line, in the last scene, where the old king asks who stands with him and each player answers from a tape mark. In every run of rehearsal week I freeze, and my line comes out of the dark wings in my own voice. The thing saying it, a small figure with a huge gold mask for a head, is one curtain nearer each run.
-- **The rule:** the scene doesn't move on until every mark has answered. Nobody states it as a rule. It's in the play itself: the king counts who stands with him (planted in L08 to L10, said plainly in L77).
-- **Twist:** the scene is a roll call, and a mark can't be left empty. Every time I froze, the Prompter answered for me, so the count came out right. All week it was keeping my place. "I've never said it" turns from my shame into the reason it was there.
-  - **Plant 1 (L13, about 0:18):** on day one Marion laughs that the company can't afford a prompter. So whoever answers from the wings was never hired.
-  - **Plant 2 (L24, about 0:37):** the first time my line comes from the wings, nobody on stage turns round. To them it came from my mark. Walt confirms it at L39 ("You SAID it. Right there, on your MARK."), which a rewatch reads as the count being whole.
-- **How the last 15 seconds turn the first line over:** the film opens on "I'm HERE, my LORD. That's my only LINE. I've never SAID it." which first plays as shame. It ends with the wings empty, the count one short, and me saying it for the first time (L96), into a held silence. On the loop, "I've never said it" now means "something always said it for me," and the opening line is the one I just said.
-- **World:** a small old playhouse in rehearsal week. A raked stage of dark scuffed boards, a deep proscenium painted soot-black with worn gilt edging, four tall bottle-green velvet curtain legs down each side (the wings), a cold brick back wall, a single ghost light on a stand, seven worn tape marks across the stage, and an empty house of tired plum-grey seats beyond the footlights. Nothing written anywhere: no posters, no signs, no script pages readable on screen.
-- **Ending shape:** one line into a held silence, cut to black on the first clap. No bow, no curtain call, no audience reversal (ep13 had those).
+- **Premise:** in a town where the quiet ones fade (you can see the street through them), I'm the quietest person in town and perfectly solid. My grandad, who never stops talking, is fading. This week he's the king in the playhouse play and got me one line so I'd come. Every run I freeze on it, he goes a shade fainter, and under the ghost light the people who faded all the way stand in the wings, nearer each night.
+- **The rule (L01):** "In this TOWN, / the QUIET ones / FADE." 7 words. It's the big idea seen from inside: true, but everyone reads "quiet" as "doesn't talk".
+- **The marker by 2 s:** a see-through person. S01 is the man at the bus stop in bright sun, half transparent, the brick terrace showing through his chest, his face drawn clear and looking at us.
+- **Montage (first 15 s, played for laughs):** the bus-stop man you can see the street through, mimes are basically windows, the couple at number nine argue all day and are solid as brick, the busker never stops singing and is barely there (plant 1).
+- **The narrator is the exception:** the quietest person in town, never faded a bit (S07, S08).
+- **Loved one at stake, by 0:20, in pictures:** Grandad mid-story at the stage door (S09), the brick through his cheek (S10). What I could lose: him, faded all the way, standing in the wings with the others (shown from L21 on).
+- **Seconds 15 to 30, the rule at work, nobody explains:** I put my earbuds in on his story and he goes a shade fainter (S12). He cups his ear for my mumbled line (S15).
+- **The loophole (the climax turns the rule's logic):** he's been on a stage with an audience all week and kept fading, so being louder was never the cure. "Quiet" means unheard. The fix is one listener: I sit at his feet and hear his story to the end, and he comes back a shade with every word (L46 to L51).
+- **Twist and how the last 15 s turn over the first line:** the first line plays as "shy people fade" and the narrator as the strange exception. By the end it means "people nobody hears fade", the narrator is the cause, and the sting ends on someone else in town nobody listened to. The last line, "SOMEBODY / stopped LISTENING / to HIM.", runs straight into "In this TOWN, / the QUIET ones / FADE."
+- **Plants a rewatch catches:**
+  1. **The busker** (L06, about 0:10): he never stops singing and he's barely there. That breaks the first reading, and it's said in the montage as a joke.
+  2. **"Did I ever tell you how I met your Gran?"** (L11 and L12 at about 0:18, then L27 and L28 at about 0:48): I cut him off both times, and both times he goes a shade fainter in the shot.
+  3. **He listens to me** (L15, about 0:27): he cups his ear for my mumbled line, "Say it AGAIN, LOVE." On a rewatch that's why I'm solid.
+- **World:** a small town in late spring. The opening is a sunny street corner: a brick terrace with painted doors, cobbles, a green wooden bus shelter, an iron lamp post, a corner where the busker stands. Then the old playhouse at dusk and in rehearsal week: the stage door (brick, a green door, one lamp), a raked stage of scuffed dark boards, a soot-black proscenium with worn gilt, four bottle-green velvet legs down stage left, the cold brick back wall, a ghost light on a stand, six tape marks in a curve (five white, my yellow cross last, nearest the stage left wings), an empty house of plum-grey seats. Nothing written anywhere. The only numeral is the brass 9 on the couple's door.
+- **Ending shape:** the stage empty under the ghost light, the faded back in the wings, and one new one at the back: the bus-stop man from the first shot. A cold sting after the warm turn, looping into his own first shot.
+- **Kind of warmth:** attention. I listen to Grandad's story to the end.
+- **Lore:** no plant. RULES.md → "The shared world is optional now", and a tally here would only muddy the big idea. The faded ones aren't Keepers and have nothing to do with the canon.
 
 ## Cast
 
-All adults. Nobody is ever in peril or shown hurt.
+All adults. Nobody is in peril or shown hurt. Fading never hurts anyone: it's quiet, a shade at a time.
 
-- **Me** (cast key `me`): an adult in my late twenties, quiet, short block hair in dark brown, a mustard knit jumper with a cable pattern in rehearsal, then a plain charcoal cloak over it for the dress and opening night. My tape mark is the yellow cross, last in the row, stage left.
-- **Marion** (cast key `marion`): the director, an adult in her fifties, grey block bob, round glasses drawn on the face, a teal cardigan with a diamond knit. She sits in the third row of the empty house with a flask. She's cheerful, busy and knows nothing. She never explains anything.
-- **Walt** (cast key `walt`): plays the old king, a retired adult in his sixties, white block hair and a short white beard piece, a brown corduroy shirt, then a long gold-trimmed robe and a tin crown for the dress. Kind, a bit deaf, says little.
-- **The company** (keys `p1` to `p4`): four more adult players in their twenties to forties, each with their own hair and patterned shirt (stripes, check, a polka dot, a plain green). They stand on the other marks and never speak a reported line.
-- That's seven players: the king and six on marks. Five answer before me.
+- **Me** (`me`): adult, late twenties, short dark brown block hair, the mustard cable-knit jumper, the charcoal cloak over it on Friday and Saturday. White earbuds in S12, S28, S29, S41 and S43, in my palm in S44, gone from S47 on. Always fully solid.
+- **Grandad** (`walt`): in his seventies, white block hair, short white beard piece, brown corduroy shirt, and the robe and tin crown in the play shots. Warm, talkative, hand to his ear when I speak.
+- **Marion** (`marion`): the director, fifties, grey bob, round glasses, teal cardigan. She leaves the ghost light on (only the light is seen, S20) and writes notes without looking up (S39). No quoted lines.
+- **The company** (`p1` to `p5`): five adult players on the white marks. They answer the king and look out at the seats. No quoted lines.
+- **The bus-stop man** (`stopman`): fifties, flat cap in olive, a tan raincoat, a brown scarf. Half faded in town (S01, S02, S07), fully faded in S56 and S57.
+- **The mime** (`mime`): thirties, black and white striped top, black beret, white face paint as a flat white skin colour with our own drawn face. Nearly glass.
+- **The arguing couple** (`wife9`, `husband9`): sixties, she in a cherry cardigan, he in a navy jumper and braces. Vivid, saturated, fully solid.
+- **The busker** (`busker`): twenties, long block hair, a patched denim jacket, a box guitar on a strap. Faint.
+- **Walkers** (`walker1`, `walker2`): two passers-by seen from behind, solid.
 
-## The creature: the Prompter
+## The faded ones (the eerie element, not a monster)
 
-- **Look:** an ordinary R6 body built about 0.85 times our height, in a long soot-black coat to the shins with a column of small dull gilt buttons, black hands. On it, a head about three times too big for the body, so the shoulders look tiny under it. The head is a gilt stage mask: a smooth, slightly cracked gold oval with carved brows, two round eye holes with one small warm spark deep inside each (the brightest thing in frame), and a carved closed mouth.
-- **The mouth:** closed in every shot until L50. From L50 it's open: a tall dark oval that goes back much further than the head is deep, black inside with no bottom. It stays open from then on.
-- **Wrong in one dimension:** the head's width. Never thin rods or tentacles. Never seen moving, only nearer.
-- **Colours:** worn gilt `#b8913a` with a warmer rim, soot black, a dull bronze crack line. No grey skin, no red.
-- **Light it for fear:** the front lights on it are off. A key from low in the wings (the blue running light, raised in warmth only where needed), a thin warm rim on the mask edge, eye sparks the brightest thing.
-- **Built once** in `set.py` and posed per shot.
+- **Who:** four ordinary townsfolk who faded all the way (`f1` a woman in a long plum coat, `f2` an older man in a cardigan, `f3` a young adult in a hoodie with no print, `f4` a woman in a work tabard of plain sage). Built from the normal rig, nothing wrong in their shape. What's wrong is that they're almost not there.
+- **Look:** body alpha about 0.15, so only a warm rim along the silhouette, the drawn face strokes at about 0.35, and two small warm eye glints (the brightest thing in frame). Never grey, never blank-faced: their clothes keep a ghost of their colour.
+- **Rules for them:** only visible in the ghost mood. Never seen moving, only nearer. Heads always turned toward whoever is speaking on stage, tilted in when close. They never touch anyone and never come off the stage into the house.
+- **Light them so they read:** the ghost light is a low warm key from its stand, plus a thin cool rim from the blue running light in the wings. Test still first: render S37 at phone size before anything else and iterate until the ring of glass people round Grandad reads instantly.
 
-### Continuity (where it is in each beat)
+### Continuity
 
-| Beat | Lines | Where it stands | What we see |
+| Beat | Lines | Where the faded ones are | Grandad's alpha |
 |---|---|---|---|
-| Set-up | L01 to L16 | not shown | nothing (L16's tally shot is the wall only) |
-| Monday | L17 to L27 | stage left wings, behind the 4th (upstage) curtain leg | only a gold glint at head height in the dark, L27 |
-| Tuesday | L28 to L33 | behind the 3rd leg | the edge of the mask past the velvet, one eye hole and spark |
-| Wednesday | L34 to L44 | beside the 2nd leg, half out | the whole figure, small body, huge mask, mouth closed |
-| Thursday | L45 to L53 | at the 1st leg, at the edge of the stage | the whole figure, and the mouth opens at L50 |
-| Dress rehearsal | L54 to L70 | on my yellow cross, body facing the house, head turned round to face me | mouth open, an arm's length from my face, L64 to L66 |
-| After | L67 to L68 | gone, the yellow cross empty | the mark only |
-| Opening night | L78 to L96 | nowhere, all four legs empty | the empty wings in L82 |
+| Town | L01 to L08 | not shown (`stopman` half faded at the stop, 0.45) | not shown |
+| Stage door | L09 to L12 | not shown | 0.85, ramps to 0.80 under L12 |
+| Play set-up | L13 to L15 | not shown | 0.80 |
+| Monday | L16 to L23 | `f1` to `f3` behind the 4th leg, facing the stage | 0.80, ramps to 0.72 under L19 |
+| Tuesday | L24 to L26 | `f1` to `f4` at the 3rd leg | 0.60 |
+| Wednesday | L27 to L30 | not shown (work light) | 0.55, ramps to 0.45 under L28, the crown stays fully solid |
+| Thursday | L31 to L33 | `f1` to `f4` at the 1st leg, at the lip of the stage, faces turned to Grandad on the throne | 0.35 |
+| Friday dress | L34 to L45 | in a close ring round Grandad at centre stage, heads tilted in toward him | 0.25, then 0.15 from L37 |
+| The story | L46 to L51 | still in the ring until S50, gone at the cut to S51 | 0.15, ramps to 0.50 under L50, 0.95 under L51 |
+| Saturday | L52 to L54 | not visible (full wash) | 1.0 |
+| After the show | L55 to L57 | `f1` to `f4` behind legs 2 to 4, and `stopman` (alpha 0.15) behind the 4th leg at the back | not shown |
+
+### Fading (the builder's mechanism)
+
+- A cue `fade {"who": key, "a": target, "dur": s}` sets a character's transparency, eased. ep49's `make_fade` in `stories/ep49-car-wash/set.py` is a working pattern (copy it into this set.py, never share the file).
+- Face strokes stay stronger than the body: ink alpha = min(1, body alpha x 1.6), so a face always reads at phone size.
+- Costume pieces worn over a fading body (the robe) fade with it. The **tin crown never fades**, so from Wednesday it looks like it floats (S30 is the cover candidate).
+- Every change of alpha takes at least 1.0 s. No alpha change ever coincides with a cut.
 
 ## Look and sound
 
-- **Palette:** bottle-green velvet, soot black, worn gilt, scuffed dark wood, cold brick, warm amber stage wash, a cold blue running light in the wings, the yellow tape cross. Keep red out of every frame that changes brightness.
-- **Caption key colour:** greasepaint rose `#ff8fb1` (no other story uses it).
-- **Music:** A Phrygian, 66 bpm. A low synthesized reed drone and a soft wooden tick on every beat, like an old stage clock. The tick stops under each freeze (L21, L31, L48, L59). Opening night (L78 on) the drone lifts to A major, held and very quiet under L94 to L96, then out.
-- **Sound:** the boards creak (synthesized), the velvet's low swish, the ghost light's faint hum. The voice from the wings is my own narration voice, so no new voice is needed: the builder pitches the quoted line a hair lower and puts a short dark room reverb on it in L23 and L66 only, the two lines where it's quoted.
-- **Drops** (`music_drops`): 0.7 s before L61 ("The lights CREEP back UP."), voice and hit only, and 0.6 s before L50.
-- **The clap:** one synthesized hand clap from the house after P04, -18 dB under nothing, then cut to black, then 0.25 s tail and the loop cut.
+- **Palette:** town: warm sunny brick, butter-yellow light, painted doors in teal, cherry and navy, green shelter, grey cobbles. Playhouse: bottle-green velvet, soot black, worn gilt, dark boards, cold brick, warm amber wash, cold blue running light, the yellow tape cross, the bare warm ghost light. Keep red out of any frame that changes brightness (the cherry cardigan is only in S04 and S05, steady light).
+- **Caption key colour:** greasepaint rose `#ff8fb1` (unchanged).
+- **Music:** opens light: A Dorian, 66 bpm, the soft wooden tick on every beat and a bright plucked pad, played for the montage's jokes (L01 to L15). At L16 it turns A Phrygian with a thin drone. The tick stops under each freeze (L18, L24, L35). At L22 (the first faded ones) the heavy low drone enters and holds to L49. Under L50 and L51 the pad warms to A major over the drone. L52 to L54: A major, quiet. L55 on: the drone returns, Phrygian, cold, and stops dead on the loop cut.
+- **Drops** (`music_drops`): 0.6 s before L33 ("Every FACE / turned to HIM."), and P01, the dim hold before L37, voice and hit only.
+- **Sound:** synthesized street air and a far murmur for the town, the busker's song as a soft synthesized reed line of our own (no words, no borrowed tune), board creaks, the velvet swish, the ghost light's faint hum. The couple's shouting is silent (picture only).
+- **Tail:** 0.25 s between the last word and the loop cut.
 
-### Every light change is a slow ramp (flash bar, the ep20 lesson)
+### Every light change is a slow ramp (flash bar)
 
-- No flicker anywhere. The ghost light glows steady. The stage wash and running light never pulse.
-- **Run to run:** each run starts on the warm stage wash already up. Day changes are hard picture cuts between shots of similar brightness, never a cut from dark to bright.
-- **The dress rehearsal "lights cut" (L58 to L61):** this is a ramp, never a cut. Under L58 the stage wash ramps down over 1.6 s to about 6% (the blue running light in the wings stays on at its own low level, so the frame never goes to full black). P02 holds that dim level for 1.0 s. Under L61 the wash ramps up over 1.8 s to about 70% of its earlier level, colder. Any picture cut inside this stretch is between two shots at the same dim level.
-- **The scare shots (L62 to L66)** stay at that colder 70% level. Nothing brightens for the reveal. The eye sparks do the work.
-- **Opening night:** the wash comes up over 2 s at L78 and doesn't change again. The cut to black after the clap is a 0.4 s fade from the dim close-up, measured against the loop's first frame (L01 is dim too, so the loop seam doesn't jump).
-- Flash pre-check: the L58 to L61 ramp, the L50 mouth opening, and the loop seam, at the final's frame steps.
-
-## Lore plant (one, the "one stroke too many" thread)
-
-- **What:** a chalk tally on the cold brick back wall of the stage left wings: eight short upright strokes in pale gilt chalk, the Prompter's colour, for a cast of seven.
-- **Where:** S16, under L16 ("Behind them, / the back WALL / is old BRICK."), held 1.5 s at waist height, lit by the blue running light. Not narrated, never mentioned again, never tied to ep20 on screen. The pin asks about it: "There were seven of us in the cast. Who made the eighth chalk mark?"
-- It fits the canon: a Keeper adds a stroke for itself only while it stands in a gap, and all week it has been standing in mine.
+- No flicker anywhere. The ghost light glows steady.
+- Town shots are steady daylight. The cut from S08 (sun) to S09 (dusk at the stage door) goes between two mid-bright frames: S08 is my hand against the sun but exposed down, S09 has the door lamp and a warm sky.
+- **Ghost mood (S20 to S23, S26, S31 to S33, S36 to S51, S55 to S57):** the wash ramps down over 1.6 s to about 6% (under L20, under L36, under L55). Cuts inside a ghost stretch stay at the same dim level. Coming out of it (S24, S27, S52) is a hard cut only to a wash frame of similar brightness, or a 1.8 s ramp up.
+- **P01 (1.0 s):** holds the ghost level.
+- **Saturday (L52):** the wash ramps up over 2 s.
+- **Loop seam:** no fade to black. S57 holds the dim ghost-lit close on the bus-stop man. S01 opens on the same man in daylight with a 0.4 s exposure ramp up from about S57's level, so the seam doesn't jump and the rule still reads by 2 s.
+- Flash pre-check: the three ghost ramps, the fades under L12, L19, L28, L50 and L51, and the loop seam.
 
 ## Format
 
-Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase, without quote marks. CAPS are the key words, in greasepaint rose. Every line is `narrator`. Marion and Walt are quoted inside my narration and have no voice of their own. Pause beats (`P01` ...) are sound beats with no words. Shots are numbered by the line they sit under (S01 under L01). I tell the frame in the present tense (L01 to L03) and the week in the past.
+Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase, without quote marks. CAPS are the key words, in greasepaint rose. Every line is `narrator`. Grandad and I are quoted inside the narration and have no voices of their own. Pause beats are sound only. Shots are numbered by the line they sit under, and a line longer than about 2.3 s gets a second shot (`a`, `b`). Present tense for the town (L01 to L15), past for the week.
 
 ## Narration and shot plan
 
-### 01 The line (0:00 to 0:27)
+### 01 The rule (0:00 to 0:14)
 
-- **Where:** the stage at night, the ghost light only, then the empty house, then the wings.
-- **Plants:** plant 1 at L13. The tally at S16.
+- `L01` narrator: In this TOWN, / the QUIET ones / FADE.
+  - [S01: sunny street, mid-close on the bus-stop man under the green shelter, half see-through, the brick terrace and a painted door showing through his chest, his face clear, eyes to camera, `sad`. Slow push in. 0.4 s exposure ramp from the loop seam]
+- `L02` narrator: You can see the STREET / right THROUGH / the man at the bus STOP.
+  - [S02a: wider: the shelter, the lamp post through his shoulder. S02b: low, the cobbles and a walker's legs passing behind him, seen through his coat]
+- `L03` narrator: MIMES / are basically WINDOWS.
+  - [S03: the mime doing "the box" on the pavement, nearly glass, the terrace showing through, a solid walker passing without a look. Played for the laugh]
+- `L04` narrator: The couple at number NINE / ARGUE all DAY.
+  - [S04: a terrace doorstep, the brass 9 on the door, wife9 and husband9 face to face, arms up mid-shout, `angry`]
+- `L05` narrator: They're SOLID / as BRICK.
+  - [S05: closer on the two, vivid and saturated, still mid-row, the brick wall solid behind them]
+- `L06` narrator: The BUSKER on the corner / never STOPS singing, / and he's barely THERE.
+  - [S06a: the busker on the corner, mouth open singing, the guitar on its strap, faint (0.4). S06b: walker1 and walker2 passing him, backs to us, not looking. Plant 1]
+- `L07` narrator: I'm the QUIETEST person / in TOWN.
+  - [S07: me at the bus stop beside the faint man, hands at my sides, mouth shut, `neutral`, fully solid and bright]
+- `L08` narrator: I've never faded / a BIT.
+  - [S08: my hand raised against the low sun, solid, a crisp shadow across my face. Exposed down a touch for the cut to dusk]
 
-- `L01` narrator: "I'm HERE, / my LORD."
-  - [S01: close on my face in the dim ghost light, on the yellow cross, mouth just open, `worried`. Slow push in]
-- `L02` narrator: That's my only LINE.
-  - [S02: wide from the empty house: the dark stage, one ghost light on its stand, me small on my mark]
-- `L03` narrator: I've never SAID it.
-  - [S03: low on my feet on the yellow tape cross, the scuffed boards]
-- `L04` narrator: I joined a little PLAYHOUSE / to meet PEOPLE.
-  - [S04: day, work lights: the company in a circle of folding chairs on stage, me at the edge, `nervous` smile]
-- `L05` narrator: I'm SCARED / of my own VOICE.
-  - [S05: my face, `embarrassed`]
-- `L06` narrator: So the director, MARION, / gave me ONE LINE.
-  - [S06: Marion in the third row with her flask, waving one finger, `happy`]
-- `L07` narrator: It's in the LAST SCENE.
-  - [S07: wide on the stage under warm wash: Walt as the king downstage centre, the six marks in a curve behind him]
-- `L08` narrator: The old KING / asks who STANDS / with him.
-  - [S08: Walt, chin up, `serious`]
-- `L09` narrator: The other SIX of us / stand on TAPE MARKS, / and ANSWER / one by ONE.
-  - [S09: overhead on the curve of six tape crosses, five white and one yellow at the end]
-- `L10` narrator: Mine's the YELLOW cross, / at the very END.
-  - [S10: low on the yellow cross, nearest the stage left wings]
-- `L11` narrator: On day ONE, / I asked what HAPPENS / if I FORGET it.
-  - [S11: me beside Marion's row, `worried`]
-- `L12` narrator: Marion LAUGHED.
-  - [S12: Marion, head back, `laughing`]
-- `L13` narrator: She said, / "Then you're on your OWN. / We can't AFFORD / a PROMPTER."
-  - [S13: Marion pointing her flask at the empty wings, still smiling. Plant 1]
-- `L14` narrator: The playhouse is OLD.
-  - [S14: slow pan across the soot-black proscenium and its worn gilt edge]
-- `L15` narrator: Down each SIDE, / tall green CURTAINS / hang in a ROW, / like DOORS / into the DARK.
-  - [S15: from centre stage looking stage left: four bottle-green velvet legs going back into the dark, the blue running light low behind them]
-- `L16` narrator: Behind them, / the back WALL / is old BRICK.
-  - [S16: the brick back wall of the stage left wings at waist height, lit blue. Eight pale gilt chalk strokes in a row. Held 1.5 s, not narrated. The lore plant]
+### 02 Grandad (0:14 to 0:28)
 
-### 02 Monday (0:27 to 0:42)
+- `L09` narrator: My GRANDAD / never STOPS TALKING.
+  - [S09: the playhouse stage door at dusk, one lamp, Grandad mid-story, hands wide, `happy`, the white beard piece]
+- `L10` narrator: And he's FADING.
+  - [S10: close on Grandad's face, the brick of the stage door wall faintly through his cheek (0.85). Readable at phone size]
+- `L11` narrator: At the stage DOOR, / he ASKED, / "Did I ever TELL you / how I met your GRAN?"
+  - [S11a: Grandad leaning toward me, brows up, eager. S11b: over his shoulder to me, half turned away. Plant 2]
+- `L12` narrator: I said, / "YES, Grandad," / and put my EARBUDS in.
+  - [S12a: me pushing a white earbud into my ear, looking at the door. S12b: Grandad's smile dropping, and he goes a shade fainter, 0.85 to 0.80 over 1.2 s. Plant 2]
+- `L13` narrator: This week, / he's the KING / in the playhouse PLAY.
+  - [S13: wide from the house in warm work light: Grandad in robe and tin crown downstage centre, the company on the five white marks behind him]
+- `L14` narrator: He got me ONE LINE, / so I'd COME.
+  - [S14: Grandad pointing me onto the yellow cross at the end of the curve, delighted]
+- `L15` narrator: When I MUMBLED it, / he cupped his EAR / and said, / "Say it AGAIN, LOVE."
+  - [S15a: me on the cross, mouth barely open, `embarrassed`. S15b: Grandad leaning in, hand cupped to his ear, eyes bright, all his attention on me. Plant 3]
 
-- **Where:** the stage in warm wash, the house dark, then the wings.
-- **Plants:** plant 2 at L24. The first glint at L27.
+### 03 Monday (0:28 to 0:40)
 
-- `L17` narrator: MONDAY, / we RAN / the last SCENE.
-  - [S17: wide from the house: the company on their marks, Walt downstage]
-- `L18` narrator: The king ASKED, / "Who STANDS / with me?"
-  - [S18: Walt, arms out at his sides, `serious`]
-- `L19` narrator: FIVE voices / ANSWERED.
-  - [S19: a slow track along the curve, p1 to p4 and one more player mouthing their answers, no captions for theirs]
-- `L20` narrator: Then it was ME.
-  - [S20: me on the yellow cross, the curve behind me]
-- `L21` narrator: My THROAT / just SHUT.
-  - [S21: close on my face, `scared`, the tick stops]
-- `L22` narrator: My MOUTH / OPENED, / and NOTHING / came OUT.
-  - [S22: my face, mouth open, eyes wide, held]
-- `L23` narrator: Then, from the WINGS, / in MY voice, / something SAID, / "I'm HERE, / my LORD."
-  - [S23: from behind me, the dark stage left wings past my shoulder, the four green legs. The quoted words get the dark reverb]
-- `L24` narrator: NOBODY on stage / TURNED ROUND.
-  - [S24: wide: the five players and Walt facing front, calm. Plant 2]
-- `L25` narrator: Marion CLAPPED / and said, / "LOVELY. / AGAIN tomorrow."
-  - [S25: Marion clapping in the dark house, `happy`]
-- `L26` narrator: I stared into the WINGS.
-  - [S26: me, half turned toward stage left, `worried`]
-- `L27` narrator: Behind the LAST curtain, / something GLINTED. / GOLD.
-  - [S27: slow push into the wings past legs 1 to 3. Behind the 4th leg, high, one small gold glint and a tiny warm spark. Gone at the cut]
+- `L16` narrator: MONDAY, / the king ASKED, / "Who STANDS / with me?"
+  - [S16: Walt in robe and crown, arms out, chin up, warm wash]
+- `L17` narrator: Five VOICES / ANSWERED.
+  - [S17: a quick track along p1 to p5, mouths moving, faces to the seats]
+- `L18` narrator: Then ME. / I FROZE.
+  - [S18: close on my face, `scared`. The tick stops]
+- `L19` narrator: And Grandad / went a SHADE / FAINTER.
+  - [S19: Grandad waiting on me, kind, his robe and face easing 0.80 to 0.72 over 1.2 s. The crown stays solid]
+- `L20` narrator: After the run, / Marion left the GHOST LIGHT on.
+  - [S20: the bare bulb on its stand at centre stage. The wash ramps down over 1.6 s to the ghost mood around it]
+- `L21` narrator: In the WINGS, / something CAUGHT the light.
+  - [S21: slow push from my mark past legs 1 to 3. Behind the 4th, at head height, two small warm glints and a thin rim]
+- `L22` narrator: PEOPLE. / Faded ALL the WAY.
+  - [S22a: f1 to f3 standing behind the 4th leg, glass-faint, eye glints, their clothes a ghost of colour, all facing the stage. The heavy drone enters. S22b: closer on f1's face, faint strokes, eyes steady, the brick showing through]
+- (`L23` cut while writing. The id is kept so the tables stay right.)
 
-### 03 Tuesday (0:42 to 0:51)
+### 04 Tuesday to Thursday (0:40 to 0:58)
 
-- **Where:** the same stage, the same warm wash, a slightly lower camera.
+- `L24` narrator: TUESDAY, / I FROZE again.
+  - [S24: hard cut to warm wash, my face on the cross, `scared`. Tick stops]
+- `L25` narrator: You could see the BRICK WALL / through Grandad's ROBE.
+  - [S25: wide from the house, Grandad (0.60) at centre, the back wall's brick plain through his body, the crown solid]
+- `L26` narrator: And in the ghost LIGHT, / they'd come one curtain NEARER.
+  - [S26: ghost mood: f1 to f4 at the 3rd leg, the edge of the velvet across them]
+- `L27` narrator: WEDNESDAY, / on our BREAK, / he started AGAIN.
+  - [S27: work light: the company and me sitting on the stage lip, legs over the edge, Grandad beside me mid-gesture, `happy`]
+- `L28` narrator: I said, / "You TOLD me, Grandad," / before he got to GRAN.
+  - [S28a: me with my earbuds in, not looking at him. S28b: Grandad's hand coming down, and he eases 0.55 to 0.45 over 1.2 s. Plant 2 again]
+- `L29` narrator: Nobody ELSE / even LOOKED up.
+  - [S29: the company along the lip, each looking out at the empty seats, me at the end with my earbuds in]
+- `L30` narrator: That RUN, / his CROWN / looked like it was FLOATING.
+  - [S30: the tin crown, solid and catching the wash, over a head you can barely make out (0.45). Cover candidate]
+- `L31` narrator: THURSDAY, / he stayed on his THRONE, / talking to the empty SEATS.
+  - [S31a: wide from the house, the ghost mood, Grandad (0.35) alone on the tall throne at centre, mid-sentence, hands out. S31b: the empty plum-grey rows from behind him]
+- `L32` narrator: And the faded ones / were at the EDGE / of the STAGE.
+  - [S32: f1 to f4 at the 1st leg, their feet at the stage lip line, close to him]
+- `L33` narrator: Every FACE / turned to HIM.
+  - [S33: low angle: four faint faces, all turned the same way toward Grandad, eye glints the brightest thing. First real scare]
 
-- `L28` narrator: TUESDAY, / the king ASKED again.
-  - [S28: Walt, chin up]
-- `L29` narrator: Five VOICES.
-  - [S29: the curve of players, quick track]
-- `L30` narrator: I FROZE, / and my LINE / came out of the DARK / AGAIN.
-  - [S30: my face, `scared`, eyes sliding toward stage left]
-- `L31` narrator: This TIME, / I didn't LOOK AWAY.
-  - [S31: me turning my head toward stage left, eyes wide. The tick stops]
-- `L32` narrator: It was ONE CURTAIN / NEARER.
-  - [S32: the wings from my mark: behind the 3rd leg, the curved edge of a gold mask past the velvet, one round eye hole with its spark]
-- `L33` narrator: A FACE / made of GOLD, / like an old STAGE MASK.
-  - [S33: closer on that edge, the carved brow and the crack line in the gilt]
+### 05 Friday, the dress rehearsal (0:58 to 1:16)
 
-### 04 Wednesday (0:51 to 1:05)
-
-- **Where:** first the house during a break (work lights, cool), then the run in warm wash.
-- **Plants:** Walt's "on your mark" at L39 backs plant 2.
-
-- `L34` narrator: WEDNESDAY, / I asked WALT, / our KING, / who STANDS / in the WINGS.
-  - [S34: work lights. Me and Walt on the stage edge with paper cups, legs over the side. Then Walt, a tin crown pushed up on his head, `neutral`]
-- `L37` narrator: He LOOKED at me / FUNNY.
-  - [S37: Walt's face, brows up]
-- `L38` narrator: Then he SAID, / "Nobody's BACK there."
-  - [S38: over Walt's shoulder: the empty-looking stage left wings in work light]
-- `L39` narrator: "You SAID it. / Right there, / on your MARK."
-  - [S39: Walt pointing at the yellow cross, kind and puzzled. Backs plant 2]
-- `L40` narrator: That RUN, / I FROZE again, / and WATCHED.
-  - [S40: me on the cross in warm wash, eyes to stage left, `scared`]
-- `L41` narrator: ANOTHER curtain / NEARER.
-  - [S41: from my mark: beside the 2nd leg, the whole Prompter, half out of the velvet]
-- `L43` narrator: A SMALL body / in a long black COAT.
-  - [S43: tilt up from the coat hem and gilt buttons to the tiny shoulders]
-- `L44` narrator: And on TOP, / a gold MASK / three times TOO BIG / for its BODY.
-  - [S44: the reveal still: the huge cracked gilt mask filling the top of the frame, eye sparks bright, mouth carved shut. Front light off, side key, warm rim. The test still for this story]
-
-### 05 Thursday (1:05 to 1:18)
-
-- **Where:** the stage in warm wash.
-
-- `L45` narrator: THURSDAY, / it was at the FIRST curtain, / right at the EDGE / of the STAGE.
-  - [S45: wide from the house: the Prompter at the 1st leg, the edge of the stage, its mask lit by the stage spill, its black shoe tips at the line where the wing floor meets the stage. Nobody on stage looks at it]
-- `L47` narrator: The king ASKED.
-  - [S47: Walt, arms out]
-- `L48` narrator: Five VOICES. / I FROZE.
-  - [S48: my face, `scared`. Tick stops]
-- `L49` narrator: Its EYES / were on ME.
-  - [S49: the mask, eye sparks, two metres from me now]
-- `P01` pause 0.6 s: none
-  - The drop. Voice and music out, a low velvet swish only.
-- `L50` narrator: Then its MOUTH / OPENED.
-  - [S50: close on the mask. The carved mouth is open: a tall dark oval. One cut from closed (S49) to open (S50), both at the same brightness. Never seen opening]
-- `L51` narrator: It went BACK / much further / than its HEAD.
-  - [S51: closer: the black inside the mouth, no bottom, the gilt lip catching the rim light]
-- `L52` narrator: And out of THAT dark / came MY voice.
-  - [S52: my face, `terrified`, side lit by the stage spill]
-- `L53` narrator: I sat in my CAR / for an HOUR / after.
-  - [S53: night, a small blocky car under one streetlamp, me at the wheel, still (no hands on the wheel, the rig can't grip)]
-
-### 06 Dress rehearsal, the scare (1:18 to 1:44)
-
-- **Where:** the stage in full warm wash, costumes on, then the slow ramp to dim and back.
-- **Lights:** see "Every light change is a slow ramp". The ramp down is under L58, P02 is the dim hold (S59 runs at that level), the ramp up is under L61.
-
-- `L54` narrator: FRIDAY / was the DRESS REHEARSAL.
-  - [S54: wide from the house: everyone in costume, Walt in his gold-trimmed robe and tin crown]
-- `L55` narrator: I was on my yellow CROSS, / in a borrowed CLOAK.
-  - [S55: me in the charcoal cloak, `nervous`]
-- `L56` narrator: The king asked, / "Who STANDS / with me?"
-  - [S56: Walt, chin up, robe]
-- `L57` narrator: Five VOICES. / I FROZE, / and stepped BACK / off my MARK.
-  - [S57: low on the boards: my feet stepping back off the yellow cross. Cut on the step, never shown mid-move]
-- `L58` narrator: The stage lights SANK, / SLOWLY, / all the way DOWN.
-  - [S58: wide from the house. The warm wash ramps down over 1.6 s to about 6%. The blue running light in the wings stays]
-- `P02` pause 1.0 s: none
+- `L34` narrator: FRIDAY, / the dress REHEARSAL.
+  - [S34: hard cut to warm wash: wide, everyone in costume, Grandad (0.25), the crown floating over him]
+- `L35` narrator: The king ASKED. / I FROZE.
+  - [S35: me in the charcoal cloak on the cross, `scared`. Tick stops]
+- `L36` narrator: The lights SANK / for the scene CHANGE.
+  - [S36: wide from the house, the wash ramping down over 1.6 s to the ghost mood]
+- `P01` pause 1.0 s: none
   - The dim hold. Everything out but a low drone.
-- `L59` narrator: In the DARK, / a BOARD CREAKED / right BESIDE me.
-  - [S59: my face, nearly dark, blue on one cheek, `terrified`. Same dim level as S58's end. Then the dim boards at my feet, the yellow cross a faint shape]
-- `L61` narrator: The lights CREPT back UP.
-  - [S61: wide from the house. The wash ramps up over 1.8 s to about 70%, colder. The drop lands just before it]
-- `L62` narrator: It was STANDING / on my MARK, / FACING the SEATS.
-  - [S62: the Prompter on the yellow cross, its small black body facing the empty seats, among the players, who all face front]
-- `L64` narrator: But its huge gold FACE / was turned ALL the way ROUND, / to ME.
-  - [S64: from behind it: the mask turned fully round on its tiny shoulders, facing me, mouth open. Me a step behind, `terrified`. The head turned too far]
-- `L65` narrator: An ARM'S LENGTH / from my NOSE.
-  - [S65: over my shoulder: the mask fills the frame, eye sparks the brightest thing, the dark mouth]
-- `L66` narrator: And in my OWN voice, / it SAID, / "I'm HERE, / my LORD."
-  - [S66: the open mouth close, the dark going back. The quoted words reverbed]
-- `P03` pause 0.8 s: none
-  - A low hit, then nothing.
-- `L67` narrator: Marion CALLED out, / "LOVELY! / Notes in the MORNING."
-  - [S67: Marion in the house, writing, not looking up]
-- `L68` narrator: When I looked BACK, / my MARK / was EMPTY.
-  - [S68: the yellow cross alone on the boards in the colder light]
+- `L37` narrator: In the ghost LIGHT, / they were all AROUND him.
+  - [S37: the reveal still. Centre stage, Grandad nearly glass (0.15), crown solid, and f1 to f4 in a close ring round him, heads tilted in. Me a step off my mark. Ghost light key low and warm, cool rim from the wings. Test this still first]
+- `L38` narrator: CLOSE. / Heads TILTED, / like they were LISTENING.
+  - [S38: closer: two faint faces tilted toward him, ears turned in, eye glints]
+- `L39` narrator: Grandad was still TALKING.
+  - [S39: Grandad's faint face mid-word, `happy`, in the middle of them. Behind, the company in the ghost light looking out at the seats, and Marion in the third row, head bowed over her notes]
+- `L40` narrator: The faded ones / were the only ones / LISTENING.
+  - [S40: wider: the ring of glass people round him, everyone else turned away]
+- `L41` narrator: That's when I GOT it.
+  - [S41: my face, close, earbuds in, `shocked`]
+- `L42` narrator: In this town, / QUIET means / NOBODY HEARS you.
+  - [S42: Grandad's mouth moving in the ghost light. The music drops to the drone]
+- `L43` narrator: And the one he'd been TALKING to / all WEEK / was ME.
+  - [S43: from Grandad's eye line: me, a step away, earbuds in]
+- `L44` narrator: I'd stopped LISTENING / YEARS ago.
+  - [S44: my palm opening on the two white earbuds]
+- `L45` narrator: And I've never FADED, / because he never ONCE / stopped listening to ME.
+  - [S45: the one picture. Grandad, almost glass, still turned to me, hand cupped to his ear, waiting for my line. Hold]
+- `P02` pause 0.8 s: none
+  - The ghost light's hum only.
 
-### 07 What it was doing (1:44 to 1:57)
+### 06 The story (1:16 to 1:28)
 
-- **Where:** my small flat at night, a desk lamp (steady), the script in my hands (no readable text, the pages are grey lines). Then a slow return to the empty stage in memory.
+- `L46` narrator: Then, very QUIETLY, / he asked, / "Did I ever TELL you / how I met your GRAN?"
+  - [S46a: Grandad, faint, eyes on me. S46b: the ring of faded faces turned with him]
+- `L47` narrator: I said, / "NO. / TELL me."
+  - [S47: me sitting down on the boards at his feet, legs straight out, earbuds gone, face up to him]
+- `L48` narrator: Forty years AGO, / he FROZE / on this same LINE.
+  - [S48: low on the yellow tape cross, Grandad's faint shoe beside it]
+- `L49` narrator: A YOUNG woman / in the WINGS / WHISPERED it for him.
+  - [S49: the 1st curtain leg, empty, the warm ghost light on the velvet]
+- `L50` narrator: He MARRIED her.
+  - [S50: Grandad's face, smiling at it, the colour coming back, 0.15 to 0.50 over 1.5 s. The pad turns to A major]
+- `L51` narrator: Every word I HEARD, / he came back / a SHADE.
+  - [S51: Grandad (ramping 0.50 to 0.95 over 1.8 s), the crown on a solid head again, me listening at his feet. The faded ones are gone from the frame]
 
-- `L69` narrator: I didn't SLEEP.
-  - [S69: me at a small table, a lamp, `tired`]
-- `L70` narrator: I read the last SCENE / over and OVER.
-  - [S70: the script on the table, pages of grey bars, no words]
-- `L71` narrator: The king COUNTS / who stands with HIM.
-  - [S71: memory: Walt from behind, looking along the curve of marks]
-- `L72` narrator: ONE voice / for every MARK.
-  - [S72: overhead on the six crosses again]
-- `L73` narrator: Every RUN, / I FROZE, / and the count / came up ONE SHORT.
-  - [S73: the yellow cross with nobody on it, colder light]
-- `L74` narrator: And every RUN, / something in the WINGS / made it ADD UP.
-  - [S74: the four green legs in the dark, the blue running light, nothing there]
-- `L75` narrator: It was KEEPING / my PLACE.
-  - [S75: memory: the Prompter on my cross, from the house, small and still, mask facing front this time]
-- `L76` narrator: I've NEVER / said it.
-  - [S76: my face at the table, `thoughtful`]
-- `L77` narrator: That's WHY / it was THERE.
-  - [S77: the lamp, my hand flat on the script. Hold]
+### 07 Saturday, and the sting (1:28 to 1:38)
 
-### 08 Opening night (1:57 to 2:20)
-
-- **Where:** the stage, the house full of blocky silhouettes in the dark. The warm wash comes up over 2 s at L78 and stays.
-- **The wings are empty in every shot.**
-
-- `L78` narrator: SATURDAY, / the HOUSE / was FULL.
-  - [S78: from the back of the house over rows of dim heads to the lit stage. The wash ramps up over 2 s]
-- `L79` narrator: My KNEES / were SHAKING / under my CLOAK.
-  - [S79: low on my knees in the cloak, a small shake]
-- `L80` narrator: Before the last SCENE, / I looked into the WINGS.
-  - [S80: me in the stage left wings, in costume, looking up the row of legs]
-- `L82` narrator: Every CURTAIN, / all the way BACK / to the BRICK.
-  - [S82: a slow track past the 1st to 4th legs to the back wall, nothing there. The chalk is out of frame]
-- `L83` narrator: NOTHING / was there.
-  - [S83: my face, `nervous`, then a small breath]
-- `L84` narrator: I walked out / and STOOD / on my yellow CROSS.
-  - [S84: my feet landing on the cross (cut on the landing)]
-- `L85` narrator: Walt raised his CHIN / and ASKED, / "Who STANDS / with me?"
-  - [S85: Walt, robe and crown, the warm wash on him]
-- `L86` narrator: Five VOICES.
-  - [S86: the curve, track]
-- `L87` narrator: My THROAT / SHUT, / like ALWAYS.
-  - [S87: my face, `scared`]
-- `L88` narrator: And from the WINGS, / NOTHING.
-  - [S88: past my shoulder: the empty stage left wings, still]
-- `L89` narrator: The whole HOUSE / was WAITING.
-  - [S89: from the stage over the footlights: rows of dim faces. Then Walt, eyes on me, the smallest nod]
-- `L91` narrator: Nobody was going to SAY it / for me.
-  - [S91: my face, close, breath held]
-- `L92` narrator: So I BREATHED in.
-  - [S92: my shoulders rise under the cloak]
-- `L93` narrator: My voice SHOOK.
-  - [S93: my face, mouth opening, `scared` easing toward `determined`]
-- `L94` narrator: It was MINE.
-  - [S94: Walt's face, the start of a smile]
-- `L95` narrator: I SAID it.
-  - [S95: wide from the house: me on my mark, the curve complete, the wings empty]
-- `L96` narrator: "I'm HERE, / my LORD."
-  - [S96: close on my face, dim warm light, mouth closing, eyes wet but steady. Held]
-- `P04` pause 1.2 s: none
-  - A held silence. The house doesn't breathe. Then one clap from somewhere in the dark (-18 dB, synthesized). Cut to black on the clap with a 0.4 s fade, 0.25 s tail, loop cut to L01.
+- `L52` narrator: SATURDAY, / the king ASKED, / "Who STANDS / with me?"
+  - [S52: from the back of the full house over dim heads, the wash ramping up over 2 s, Grandad solid in robe and crown]
+- `L53` narrator: I said it / to the BACK / of the HOUSE.
+  - [S53: me on the yellow cross, cloak, chin up, `determined`]
+- `L54` narrator: "I'm HERE, / my LORD."
+  - [S54: Grandad's face, fully solid, and he cups his ear anyway, grinning]
+- `L55` narrator: After, / under the ghost LIGHT, / the faded ones / stood in the WINGS.
+  - [S55a: the empty stage, the wash ramping down to the ghost mood. S55b: f1 to f4 behind legs 2 to 4, facing the empty stage. The cold drone returns]
+- `L56` narrator: There was a NEW one / at the BACK.
+  - [S56: a slow push past the legs: behind the 4th, a fifth faint shape in a flat cap and raincoat]
+- `L57` narrator: SOMEBODY / stopped LISTENING / to HIM.
+  - [S57: close on him: the bus-stop man from S01, glass-faint now, eyes on the stage. Hold, then the 0.25 s tail and the loop cut to S01 (same man, daylight, half there)]
 
 ## Checks done while writing
 
-- Every line is `narrator`. Marion and Walt are quoted inside narration.
-- No death, harm or graphic words. Avoided `checks.py` HARM words even where no child is near (no "lost", "fell", "trapped", "locked", "took").
-- Every spoken word is plain English that Whisper hears right: no invented words, no odd spellings. Names are Marion and Walt. "Sixty-eight" is spelled out for the caption and is said as two words.
-- Picture against line: the count. Seven players: Walt plus six marks. Five answer before me in every run (L19, L29, L48, L57, L86). Six crosses on screen (S09, S72). Eight chalk strokes (S16).
-- Nearer each run: 4th leg (Mon), 3rd (Tue), 2nd (Wed), 1st (Thu), my mark (Fri). L32 and L41 say "one curtain nearer" and "another curtain nearer", which matches.
-- Batch 1 echoes avoided: no "At the PLACE, rule" opener (it opens on a line from the play), no knowing elder (Marion and Walt explain nothing), no night shift or one summer, no pale grey blank face, no "pressed flat", no "Last NIGHT," opener, no age said or shown, no "it didn't touch me", no "not X, it was Y".
-- Hard rule 8 on every line, title, description and pin: no dashes, semicolons, slogans, lists in parentheses or AI words.
+- Line 1 states the world's rule in 7 words. The see-through man, lit and with a face, is the first picture.
+- Four montage examples (bus-stop man, mimes, the couple, the busker) by about 0:12, the exception at 0:12 to 0:14, the loved one fading in a picture at 0:16.
+- No backstory or flashback before 0:20. One forward timeline from the street to Saturday. Grandad's story (L48 to L50) is told in the present, over present-day shots.
+- Nobody explains the rule. The reveal is mine, from what I see (S37 to S40), said in L42 to L45 and held on S45.
+- Plants: the busker (L06), the cut-off Gran story twice (L11 to L12, L27 to L28) with a fade in each shot, the cupped ear (L15). The last line runs into the first.
+- The counts: five white marks and five players (p1 to p5), five voices in L17. Four faded ones until S56, five in S56 and S57.
+- Picture against line: "solid as brick" over vivid solid people in front of a brick wall. "Barely there" over a 0.4 busker. "The brick wall through Grandad's robe" with the back wall behind him at 0.60. The crown is the only thing that never fades.
+- Batch 1 echoes avoided: no knowing elder (Grandad never explains the rule), no night shift or one summer, no pale grey blank face (the faded keep faces and colour), no "pressed flat", no "Last NIGHT," opener, no age said or shown, no "it didn't touch me", no "not X, it was Y" (L42 states what quiet means without a contrast).
+- Hard rule 2: nobody is hurt or in danger of harm, no death words. Fading is quiet and reversible (L50, L51). The young woman in Grandad's story is an adult.
+- Hard rule 8 on every line, the title, description and pin: no dashes, semicolons, slogans, parenthetical lists or AI words.
+- Originality: the rule type (being heard) is new on the channel. ep42 and ep43 also have a loved one whose marker weakens, but here the narrator is the cause, the marker is the person, and the shape is `misread`.
