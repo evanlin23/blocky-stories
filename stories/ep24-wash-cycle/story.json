@@ -225,12 +225,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "SIX orange CHAIRS",
-     "Six orange chairs"
+     "A row of orange CHAIRS",
+     "a row of orange chairs"
     ],
     [
-     "face the DRYERS.",
-     "face the dryers."
+     "faces the DRYERS.",
+     "faces the dryers."
     ]
    ]
   },
@@ -284,7 +284,7 @@
    "chunks": [
     [
      "There was ONE",
-     "There was one"
+     "there was one"
     ],
     [
      "other person,",
@@ -295,8 +295,8 @@
      "an old man"
     ],
     [
-     "in chair SIX.",
-     "in chair six."
+     "in the END chair.",
+     "in the end chair."
     ]
    ]
   },
@@ -305,24 +305,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "He had a",
-     "He had a"
+     "He had a grey",
+     "he had a grey"
     ],
     [
-     "grey JUMPER on.",
-     "grey jumper on."
+     "JUMPER on.",
+     "jumper on."
     ],
     [
      "That was ALL.",
      "that was all."
     ],
     [
-     "On a",
-     "on a"
-    ],
-    [
-     "FREEZING NIGHT.",
-     "freezing night."
+     "On a FREEZING NIGHT.",
+     "on a freezing night."
     ]
    ]
   },
@@ -394,15 +390,15 @@
    "chunks": [
     [
      "Then a DRYER",
-     "Then a dryer"
+     "then a dryer"
     ],
     [
      "BUZZED",
      "buzzed"
     ],
     [
-     "behind me.",
-     "behind me."
+     "across the ROOM.",
+     "across the room."
     ]
    ]
   },
@@ -823,12 +819,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "I thought,",
-     "I thought,"
-    ],
-    [
-     "it wants",
-     "it wants"
+     "I thought, it wants",
+     "i thought, it wants"
     ],
     [
      "the COAT BACK.",
@@ -1188,11 +1180,11 @@
    "chunks": [
     [
      "Then over to",
-     "Then over to"
+     "then over to"
     ],
     [
-     "chair SIX,",
-     "chair six,"
+     "HIS chair,",
+     "his chair,"
     ],
     [
      "and BACK.",
@@ -1304,23 +1296,19 @@
    "chunks": [
     [
      "Then he sat",
-     "Then he sat"
+     "then he sat"
     ],
     [
      "in a JUMPER",
      "in a jumper"
     ],
     [
-     "for a WEEK,",
-     "for a week,"
+     "for DAYS,",
+     "for days,"
     ],
     [
-     "so I",
-     "so I"
-    ],
-    [
-     "wouldn't ASK.",
-     "wouldn't ask."
+     "so I wouldn't ASK.",
+     "so i wouldn't ask."
     ]
    ]
   },
@@ -1370,15 +1358,15 @@
    "chunks": [
     [
      "His last LOAD",
-     "His last load"
+     "his last load"
     ],
     [
      "sat FINISHED",
      "sat finished"
     ],
     [
-     "in machine SIX.",
-     "in machine six."
+     "in the END MACHINE.",
+     "in the end machine."
     ]
    ]
   },
@@ -1547,16 +1535,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Two nights LATER,",
-     "Two nights later,"
+     "ARTHUR sat",
+     "arthur sat"
     ],
     [
-     "he was back",
-     "he was back"
-    ],
-    [
-     "in chair SIX.",
-     "in chair six."
+     "in his own CHAIR again.",
+     "in his own chair again."
     ]
    ]
   },
@@ -1565,16 +1549,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Chair FIVE",
-     "Chair five"
+     "The chairs",
+     "the chairs"
     ],
     [
-     "is just",
-     "is just"
-    ],
-    [
-     "a CHAIR now.",
-     "a chair now."
+     "are just CHAIRS now.",
+     "are just chairs now."
     ]
    ]
   },

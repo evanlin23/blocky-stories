@@ -110,22 +110,22 @@
    ]
   },
   "L05": {
-   "text": "Six orange chairs face the dryers.",
+   "text": "a row of orange chairs faces the dryers.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.931,
-   "onset": 0.19,
-   "end": 1.741,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
    "chunks": [
     [
-     0.19,
-     0.879
+     0.172,
+     0.974
     ],
     [
-     0.879,
-     1.741
+     0.974,
+     1.948
     ]
    ]
   },
@@ -186,30 +186,30 @@
    ]
   },
   "L08": {
-   "text": "There was one other person, an old man in chair six.",
+   "text": "there was one other person, an old man in the end chair.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.5,
-   "onset": 0.155,
-   "end": 2.31,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.414,
    "chunks": [
     [
-     0.155,
-     0.439
+     0.172,
+     0.474
     ],
     [
-     0.439,
-     0.983
+     0.474,
+     1.034
     ],
     [
-     1.052,
-     1.492
+     1.103,
+     1.543
     ],
     [
-     1.492,
-     2.31
+     1.543,
+     2.414
     ]
    ]
   },
@@ -326,26 +326,26 @@
    ]
   },
   "L13": {
-   "text": "Then a dryer buzzed behind me.",
+   "text": "then a dryer buzzed across the room.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
+   "dur": 1.81,
    "onset": 0.155,
-   "end": 1.517,
+   "end": 1.621,
    "chunks": [
     [
      0.155,
-     0.578
+     0.612
     ],
     [
-     0.578,
-     0.845
+     0.612,
+     0.836
     ],
     [
-     0.845,
-     1.517
+     0.836,
+     1.621
     ]
    ]
   },
@@ -1350,26 +1350,26 @@
    ]
   },
   "L52": {
-   "text": "Then over to chair six, and back.",
+   "text": "then over to his chair, and back.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 1.638,
    "onset": 0.172,
-   "end": 1.534,
+   "end": 1.431,
    "chunks": [
     [
      0.172,
-     0.5
+     0.492
     ],
     [
-     0.5,
-     0.948
+     0.492,
+     0.845
     ],
     [
-     0.983,
-     1.534
+     0.879,
+     1.431
     ]
    ]
   },
@@ -1490,34 +1490,30 @@
    ]
   },
   "L57": {
-   "text": "Then he sat in a jumper for a week, so I wouldn't ask.",
+   "text": "then he sat in a jumper for days, so i wouldn't ask.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
-   "onset": 0.172,
-   "end": 2.155,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.207,
    "chunks": [
     [
-     0.172,
-     0.509
+     0.155,
+     0.457
     ],
     [
-     0.509,
-     0.845
+     0.457,
+     0.759
     ],
     [
-     0.845,
-     1.259
+     0.759,
+     1.224
     ],
     [
-     1.328,
-     1.517
-    ],
-    [
-     1.517,
-     2.155
+     1.293,
+     2.207
     ]
    ]
   },
@@ -1574,26 +1570,26 @@
    ]
   },
   "L60": {
-   "text": "His last load sat finished in machine six.",
+   "text": "his last load sat finished in the end machine.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.172,
+   "dur": 2.259,
    "onset": 0.155,
-   "end": 1.983,
+   "end": 2.069,
    "chunks": [
     [
      0.155,
-     0.707
+     0.75
     ],
     [
-     0.707,
-     1.129
+     0.75,
+     1.199
     ],
     [
-     1.129,
-     1.983
+     1.199,
+     2.069
     ]
    ]
   },
@@ -1806,50 +1802,42 @@
    ]
   },
   "L69": {
-   "text": "Two nights later, he was back in chair six.",
+   "text": "arthur sat in his own chair again.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.034,
+   "dur": 1.793,
    "onset": 0.172,
-   "end": 1.845,
+   "end": 1.603,
    "chunks": [
     [
      0.172,
-     0.672
+     0.578
     ],
     [
-     0.698,
-     1.043
-    ],
-    [
-     1.043,
-     1.845
+     0.578,
+     1.603
     ]
    ]
   },
   "L70": {
-   "text": "Chair five is just a chair now.",
+   "text": "the chairs are just chairs now.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 1.638,
    "onset": 0.172,
-   "end": 1.552,
+   "end": 1.431,
    "chunks": [
     [
      0.172,
-     0.603
+     0.526
     ],
     [
-     0.603,
-     0.836
-    ],
-    [
-     0.836,
-     1.552
+     0.526,
+     1.431
     ]
    ]
   },
