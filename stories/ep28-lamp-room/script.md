@@ -2,16 +2,17 @@
 
 - **Slug:** `ep28-lamp-room` (folder `stories/ep28-lamp-room/`), from pitch #12 in `stories/ideas.md`.
 - **Working title:** Who was on the lighthouse stairs every night? (`package.json` has the upload title.)
-- **Length:** 622 spoken words in 76 lines plus one pause beat, about 2:19 to 2:24. See the end.
+- **Length:** 631 spoken words in 76 lines plus one pause beat, about 2:17 to 2:20. See the end.
+- **Opening rewrite (2026-11-02, owner: "rule first is necessary"):** L01 to L11 are new. L01 states the world's rule, L02 to L09 show Ines, a month in, and what I could lose by about 0:20, in one forward timeline with no cold open and no backstory. The owner's phone call is gone (nobody explains the rule).
 
 ## Premise
 On our first trip away, a month in, Ines and I rent an old lighthouse on a sea cliff for a stormy February week. It was built for a crew of two and still sleeps two: her bedroom halfway up, my camp bed in the lamp room at the top, because I'm shy about it being so soon. Every night a text from her wakes me ("Who's that on the stairs?"), I'm at the rail with my torch, and far below at the foot of the spiral stair a figure in a yellow oilskin looks straight up at me with a face on the top of its head. Each night it's nearer.
 
 ## The rule
-The owner rings with one rule: "After dark, stay on your own floor." The stairs are steep, and the storm door at the bottom opens onto the sea. I break it every night without knowing.
+The first line states it as the world's rule: "In this lighthouse, after dark, everyone stays on their own floor." (L01; the package title says the same.) The stairs are steep, and the storm door at the bottom opens onto the sea. I break it every night without knowing.
 
 ## The twist (and where it's planted)
-The one on the stairs was me. I sleepwalk, and every night I've walked a turn further down toward the storm door, while the Upward came up a turn every time I came down (so it looked two turns nearer each night). It isn't guarding me and it isn't kind. It only counts: it keeps level with whoever is on the stairs, one turn for every turn, and the story never says why. Ines saw me pass her door and texted to wake me. "Who's that on the stairs?" turns from her fear into her watching over me, and L02 ("I was sleeping in the lamp room") turns out to be only where I fell asleep.
+The one on the stairs was me. I sleepwalk, and every night I've walked a turn further down toward the storm door, while the Upward came up a turn every time I came down (so it looked two turns nearer each night). It isn't guarding me and it isn't kind. It only counts: it keeps level with whoever is on the stairs, one turn for every turn, and the story never says why. Ines saw me pass her door and texted to wake me. "Who's that on the stairs?" turns from her fear into her watching over me, and L03 ("my camp bed in the lamp room") turns out to be only where I fell asleep. L01 turns over too: everyone kept to their own floor except me.
 - **Plant 1, sand on my socks** (L24, about 0:47, and L38, about 1:11). The lamp room floor is clean whitewashed board. The sand drifts in under the storm door and lies thickest on the bottom steps, so there's more on my socks each morning. Paid off at L68.
 - **Plant 2, Ines's look** (L27, about 0:53, and L40, about 1:14). Each breakfast her eyes drop to my socks, then come up to my face, worried and soft. I misread it as regret (L28).
 - **Plant 3, the rail is lower each night** (picture only, the rewatch catch). Each rail shot has a different wall behind me: N1 the lamp-room door and its brass bolt (L16), N2 a small round window (L34), N3 a coiled rope on a hook (L42), N4 Ines's blue bedroom door, ajar, a soft phone glow in the gap (L48). L34 ("before I knew I'd got UP") and L37 ("I ran back UP") say it in words.
@@ -22,7 +23,6 @@ An old whitewashed stone lighthouse let as a holiday cottage, on a grassy cliff 
 ## Cast (all adults, nobody in peril)
 - **me** (narrator, cast key `me`): late twenties, short dark block hair, a mustard-and-navy knit jumper, grey joggers, thick cream socks (a plant, so they read clearly in close-ups), no shoes at night.
 - **Ines** (cast key `ines`): late twenties, long black block hair tied back, a sea-green check flannel shirt, a long camel coat (the coat over my feet), dark jeans. Everything she says is a text or a question I report, so her mouth flaps only under L26 and L39 ("asked if I'd slept okay").
-- **The owner** is only a phone call (L10 to L11), never shown.
 
 ## The creature: the Upward
 An ordinary-sized blocky person (1.8 m), built from the same blocks as us, wrong in one way: its face is on the flat crown of its head, staring straight up, and the front of its head is smooth and blank. It's only ever seen from above, down the stairwell, so the face always looks up into the lens.
@@ -30,7 +30,7 @@ An ordinary-sized blocky person (1.8 m), built from the same blocks as us, wrong
 - **One model,** built once in `set.py` and posed per shot. Never seen moving, only nearer. Never touches anyone. Never seen from the side or below.
 - **Light:** front lights dead. The key is my torch from above (a cold white-yellow cone, held below clipping), with a faint blue rim from the stair windows on its shoulders.
 - **Continuity:**
-  - L01 to L16: not seen. L12 shows the stair foot by day, empty, sand under the door.
+  - L01 to L16: not seen. S01 (L01) and S12 (L12, night, faint blue) show the stair foot empty, sand under the door.
   - L17 to L20 (N1): at the very bottom, on the slate by the storm door, seven turns below me. Small in frame.
   - L35 to L36 (N2): on turn 1, five turns below me.
   - L43 to L45 (N3): on turn 2, three turns below me.
@@ -44,8 +44,8 @@ An ordinary-sized blocky person (1.8 m), built from the same blocks as us, wrong
 - **Caption key colour:** sea-glass green `#6fe3c8`.
 - **Music:** phrygian, root 45, 60 bpm, drone and pad, a slow pulse from N3 (L41). Drops: P01 to L50's first word (keep the sting on "ONE"), and L52 to L53. From L60 a section turns to major, root 48, pad and piano, energy 0.4, to the end.
 - **Ambience:** wind (-30 LUFS) and rain on glass (-32) at night, the sea under it (`water`, -34). In daytime and at dawn the wind falls to -40, the sea stays, and there's no rain from L60.
-- **Phone buzz:** a short low triple pulse (closest kind `knock`, tone `soft`, pattern [0, 0.11, 0.22], -14 dB) at L01, L15, L32, L42 and L52, and a softer one (-20 dB) at L75. It's never a flash on screen.
-- **Closing sound:** on "US" (L76.1), a two-note falling send chime (`bell`, -12 dB, pitch falling) that rings into the cut. 0.25 s from the last word to the loop cut, with the chime still audible at the cut. The loop lands on L01's buzz.
+- **Phone buzz:** a short low triple pulse (closest kind `knock`, tone `soft`, pattern [0, 0.11, 0.22], -14 dB) at L15, L32, L42 and L52 (none at L01 now), and a softer one (-20 dB) at L75. It's never a flash on screen.
+- **Closing sound:** on "US" (L76.1), a two-note falling send chime (`bell`, -12 dB, pitch falling) that rings into the cut. 0.25 s from the last word to the loop cut, with the chime still audible at the cut. The loop lands on L01's first word, "In this lighthouse", over the bright stair foot, so the dawn gold cuts to late-afternoon gold.
 - **Footsteps:** `stone`, -22 dB, only at L37 and L54 (running up).
 
 ## Light (flash safety and readability)
@@ -56,40 +56,38 @@ An ordinary-sized blocky person (1.8 m), built from the same blocks as us, wrong
 Two short upright strokes in oilskin yellow scratched into the brass bolt plate of the lamp-room door, two for a tower built for two (canon: a pair sharing one place counts as two, and the tally matches the number the place was built for, with no extra stroke). Shot S14, from L13's last word through L14: a close on the bolt plate, both strokes fully in frame, the plate centred at about 40% of frame height (clear of the caption band at 65 to 72%), held at least 1.8 s with nothing crossing it. No line, title, description or pin mentions it. It's in frame again, small, in the N1 rail shot (L16) and the bolt insert at L54.
 
 ## The twist in the last 15 seconds
-From L67 ("Every night, the one on the stairs was ME.", about 2:01) to the cut is about 20 s, and L70 to L76 (the last 14 s) turn L01 over. "Who's that on the stairs?" was Ines seeing me, and every text was her waking me. The last line repeats L01's question as a joke between us, and my answer "US" counts two, the count the tower was built for, made true by people. That's why the stair foot is empty. A rewatch catches the sand (L24, L38), Ines's look at my socks (L27, L40) and the different wall behind me at every rail (L16, L34, L42, L48).
+From L67 ("Every night, the one on the stairs was ME.", about 2:01) to the cut is about 20 s, and L70 to L76 (the last 14 s) turn L01 over: everyone stayed on their own floor except me, every night. "Who's that on the stairs?" (first heard at L33) was Ines seeing me, and every text was her waking me. L75 repeats her question as a joke between us, and my answer "US" counts two, the count the tower was built for, made true by people. That's why the stair foot is empty. The loop: "US." cuts straight into "In this lighthouse, after dark, everyone stays on their own floor.", so the rule lands on the two of us sitting on the stairs, on nobody's floor, and goes cold. A rewatch catches the sand (L24, L38), Ines's look at my socks (L27, L40) and the different wall behind me at every rail (L16, L34, L42, L48).
 
 ## Narration
-Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS are the key words in sea-glass green. Quotes are Ines's texts and the owner's words, reported by me. Brackets are the shot.
+Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS are the key words in sea-glass green. Quotes are Ines's texts and my own deleted one, reported by me. Brackets are the shot.
 
-**Pronunciation:** "Ines" (8 times) is respelled for Kokoro with `"phonemes": {"Ines": "inˈɛs"}` (ee-NESS). Whisper `small.en` may write it "Inez" or "Inés". If `asr` flags it, add the pair to `HOMOPHONES` the way ep20 added "wren"/"ren", rather than renaming her. L32 is now "Three in the MORNING" (round 1, critic: "At three" was heard as "Night three"), so the builder drops the "At" phoneme, the L32 tempo patch and the `"night": "at"` homophone. The script avoids "keepers" (lore), and "oilskin" heard as "oil skin" is already forgiven as a spacing.
+**Pronunciation:** "Ines" (8 times) is respelled for Kokoro with `"phonemes": {"Ines": "inˈɛs"}` (ee-NESS). Whisper `small.en` may write it "Inez" or "Inés". If `asr` flags it, add the pair to `HOMOPHONES` the way ep20 added "wren"/"ren", rather than renaming her. L32 is now "Three in the MORNING" (round 1, critic: "At three" was heard as "Night three"), so the builder drops the "At" phoneme, the L32 tempo patch and the `"night": "at"` homophone. The script avoids "keepers" (lore), and "oilskin" heard as "oil skin" is already forgiven as a spacing. New in the opening: "high five" (L05) may come back as "high-five" (a spacing too), and "lighthouse" (L01, L03) and "She'd" (L08) are plain words.
 
-### 01 The text (night one, cold open)
-- `L01` narrator: Ines TEXTED me / from the BEDROOM. / "Who's that / on the STAIRS?"
-  - [S01: black, then the phone glow lights my face from below in the dark (slow 0.4 s ramp). The screen faces away from camera. Buzz on the cut]
-- `L02` narrator: I was sleeping / in the LAMP room, / right at the TOP.
-  - [S02: wide of the lamp room from outside the glass at night, rain on the panes, the dead lens, my camp bed. Storm-blue light]
-- `L03` narrator: And there were only TWO of us / in the LIGHTHOUSE.
-  - [S03: the lighthouse on the cliff top in the storm, small warm window halfway up, the lamp room glass dark. Camera inland of the tower, cliff edge far off frame]
-
-### 02 Arrival (day one)
-- `L04` narrator: A MONTH together, / and our first trip AWAY.
-  - [S04: day, grey. Ines and me at the foot of the tower with bags, both smiling a bit too politely]
-- `L05` narrator: An old lighthouse / on a CLIFF, / in a February STORM.
-  - [S05: low angle up the tower, rain blowing past]
-- `L06` narrator: It was built / for a crew of TWO, / and it still / slept TWO.
-  - [S06: looking straight up the stairwell from the bottom by day: the spiral winding up seven turns to the lamp room]
-- `L07` narrator: Her BEDROOM / halfway up, / my CAMP BED / in the lamp room.
-  - [S07: Ines at her blue door, halfway up. Cut S07b: my camp bed beside the lens]
-- `L08` narrator: I said I wanted / the VIEW.
-  - [S08: me at the lamp room glass, grey sea beyond, my back to camera]
-- `L09` narrator: Really, / it was too SOON, / and I was SHY.
-  - [S09: close on me, worried, glancing down the stairs]
-- `L10` narrator: The owner rang / with ONE rule.
-  - [S10: Ines with the phone at her ear in the kitchen, screen away from camera]
-- `L11` narrator: "After DARK, / stay on your / own FLOOR."
-  - [S11: Ines looks up the stairwell toward me]
+### 01 The rule, and us (first evening, one forward timeline)
+- `L01` narrator: In this lighthouse, / after DARK, / everyone stays / on their own FLOOR.
+  - [S01: late afternoon, lit to read from the first frame. From the bottom step: Ines and me in the foreground at the stair foot with our bags, both faces lit by low gold sun through the bottom window, looking up the well. Above us the rule marker: only two warm brass wall lamps are lit on the whole stair, one beside Ines's blue door halfway up and one beside the lamp-room door at the top, two lit floors with dim stone between. Faces and both lamps in frame by 1.5 s. No buzz (the loop lands on this first word)]
+- `L02` narrator: Ines and I / were one MONTH in, / on our first trip AWAY.
+  - [S02: close two-shot at the stair foot, both smiling a bit too politely, a hand's gap between our shoulders. She glances at me, I glance away]
+- `L03` narrator: The lighthouse was built / for a crew of TWO: / her room HALFWAY up, / my camp bed / in the LAMP room.
+  - [S03: low angle up the tower outside, grey sky, rain starting. S03b: Ines at her blue door halfway up, under her lamp. S03c: my camp bed beside the dead lens]
+- `L04` narrator: So we ate dinner / at FOUR, / RACING the dark.
+  - [S04: kitchen, grey daylight going: both of us eating fast, eyes on the window, then on each other, laughing. Montage 1]
+- `L05` narrator: Date night ENDED / at sunset, / with a HIGH five / on the STAIRS.
+  - [S05: on the stairs just below her door, orange low sun through a stair window: an awkward high five (cut on the raised palms, before contact), then she steps onto her landing and I keep climbing. Montage 2]
+- `L06` narrator: We said GOODNIGHT / by TEXT, / three turns APART.
+  - [S06: Ines in bed, phone glow on her face (screen away). S06b: me in the camp bed, phone glow on mine. Montage 3]
+- `L07` narrator: I typed, / "LOVE you," / then DELETED it.
+  - [S07: close on me in the glow, thumb hovering out of frame, a wince. Screen away]
+- `L08` narrator: Too SOON. / She'd run a MILE.
+  - [S08: close on me, the glow on my face, worried. What I could lose, shown]
+- `L09` narrator: She sent back / one little KISS, / and I lay there / GRINNING.
+  - [S09: same frame, the glow brightens slowly (0.4 s) and I break into a soft smile, eyes on the ceiling]
+- `L10` narrator: Her light went OUT / halfway down the TOWER.
+  - [S10: from the top landing straight down the well: the warm lamp by her blue door fades out over 0.6 s. Storm blue takes over]
+- `L11` narrator: And the stairs between us / went DARK.
+  - [S11: the empty well in faint blue window light, turn after turn of stone stair going down into shadow]
 - `L12` narrator: The stairs were STEEP, / and the storm door / at the BOTTOM / opened onto the SEA.
-  - [S12: the stair foot by day: slate floor, the plank storm door, a drift of pale sand under it. Empty]
+  - [S12: the stair foot at night in faint blue window light, readable: slate floor, the plank storm door rattling in the wind, a drift of pale sand under it. Empty]
 - `L13` narrator: The lamp room door / had a little / brass BOLT.
   - [S13: the oak lamp-room door from the landing, my hand near the bolt (cut before any grip)]
 - `L14` narrator: I slid it SHUT / and fell asleep / to the WAVES.
@@ -238,5 +236,5 @@ Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS ar
   - [S77: two-shot from above in full sun: Ines on her step laughing, me on mine, her coat over my feet, the bright empty stair below. The send chime on "US", 0.25 s, cut]
 
 ## Word count and length
-- **Spoken words:** 622 in 76 lines (target 560 to 640), plus one pause beat (0.7 s).
-- **Estimate:** at 290 wpm the speech is about 2:09. The 0.12 s gaps add about 9 s, the pause 0.7 s and the tail 0.25 s, so about 2:19. At 278 wpm (the measured rate on short lines) it's about 2:24. If the retime lands under 2:15, add "The windows HUMMED, / and the whole tower / CREAKED." after L31 (about 2 s). If over 2:30, cut L30 first.
+- **Spoken words:** 631 in 76 lines (target 560 to 640), plus one pause beat (0.7 s).
+- **Estimate:** the last preview (622 words, old opening) ran 2:16.6, about 4.15 words a second including gaps. Nine more words add about 2 s, so about 2:18 to 2:19. New L01 to L08 are 83 words, so L08 ends near 0:20 and "LOVE you" (L07) lands at about 0:17. If the retime lands under 2:15, add "The windows HUMMED, / and the whole tower / CREAKED." after L31 (about 2 s). If over 2:30, cut L30 first.
