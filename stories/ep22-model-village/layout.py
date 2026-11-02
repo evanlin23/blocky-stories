@@ -40,10 +40,10 @@ def room(name):
     return r
 
 
-def stand(name, back=0.03):
+def stand(name, back=0.03, dx=0.0):
     """Where the Resident stands in a room: just inside its window."""
     r = room(name)
-    return [round(r["win_x"], 4), round(r["front_y"] + WALL + back, 4), round(r["floor_z"], 4)]
+    return [round(r["win_x"] + dx, 4), round(r["front_y"] + WALL + back, 4), round(r["floor_z"], 4)]
 
 
 def window_cam(name, dist, dx=0.0, dz=0.0, lens=50, tx=0.0, tz=0.0, back=0.0):
@@ -54,3 +54,8 @@ def window_cam(name, dist, dx=0.0, dz=0.0, lens=50, tx=0.0, tz=0.0, back=0.0):
     if back:
         return [[x + dx, r["front_y"] + WALL + back, z + dz], [x + tx, r["front_y"] - 1.0, z + tz], lens]
     return [[x + dx, r["front_y"] - dist, z + dz], [x + tx, r["front_y"] + 0.05, z + tz], lens]
+
+
+# the real rooms, built far off to each side of the village
+TX = -40.0      # the full-size tea shop: x -44..-36, y -3..3
+CX = 40.0       # my cottage room: x 38..42, y -2.5..2.5
