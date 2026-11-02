@@ -3,7 +3,7 @@
 **Slug:** `ep43-reading-room` (pitch #27, batch 4)
 
 ## Premise
-In this town a glowing number floats over every head: how many people know your name. Mine has said 1 for years, and I always took the 1 to be me. My little brother Tam lives with me. This year he went quiet, his friends drifted, and his number has been falling. Every wet spring afternoon he studies at the window table for two in the domed reading room, where we used to sit together. I sit at the far end now with my headphones on. A person printed in reverse, with no number at all, sits one table nearer his each afternoon.
+In this town a glowing number floats over every head: how many people know your name. Mine has said 1 for years, and since Tam stopped saying my name long ago, I took the 1 to be me. My little brother Tam lives with me. This year he went quiet, his friends drifted, and his number has been falling. Every wet spring afternoon he studies at the window table for two in the domed reading room, where we used to sit together. I sit at the far end now with my headphones on. A person printed in reverse, with no number at all, sits one table nearer his each afternoon.
 
 ## Rule
 The world's rule: the number over your head is how many people know your name (L01). It's simply how the town is. Nobody explains it, nobody made it on screen, and it has nothing to do with the creature.
@@ -13,14 +13,14 @@ The rule we break is the reading room's own, shown and never said: nobody speaks
 **You don't count yourself.** My 1 was never me. It was Tam, the only person in town who knew my name, and his last 1 was me. The first line plays one way first time ("my 1 means nobody but me") and another on the loop ("my 1 was my brother, the whole time").
 - **Plant 1 (L04 to L05, S06 to S08):** the woman off the train has a 0, though she obviously knows her own name, and it jumps to 1 the moment one man hears it. A rewatcher sees that my 1 can't be me. The same beat plants the loophole: you only have to hear a name once.
 - **Plant 2 (L27 to L28, S39 to S41):** Tam half asleep on the sofa says something. On screen his mouth shapes a short word while my back is turned at the kettle, and the 1 over my head warms slightly (a 0.5 s ramp up to 120% and back, never a flash). It's my name. I don't hear it.
-- **Bonus (L09):** "Who else would it BE?" The answer is in the next scene.
+- **Bonus (L09):** "Tam stopped saying my name years ago." He never stopped knowing it, and plant 2 shows him still saying it.
 
 ## How the climax turns the rule (the second reading)
-1. The scare hands me a reading of the rule that proves the worst. Tam's number says 1 with the thing in my old seat (L43). Because I believe you count yourself, I read it as "just himself" (L44): I'm out of his count, and the thing has taken my place (L46).
+1. The scare hands me a reading of the rule that proves the worst. Tam's number says 1 with the thing in my old seat (L43). Because I believe you count yourself, I read it as "just himself" (L44): I'm out of his count (L45), and the thing has taken my place (L46).
 2. I look at my own 1 for the first time in years (L47 to L48) and test my belief against plant 1: the woman knew her own name and still had a 0 (L50). So you don't count yourself (L51).
-3. The same number now reads the other way twice over. My 1 is Tam (L53). His 1 is me (L54). I never left his count, so the chair it sits in was never empty in the way that matters: it's still mine (L55). This is what defeats the Negative. A Keeper only stands where a person is missing, and the re-read shows the person isn't missing, only sitting at the wrong table.
+3. The same number now reads the other way twice over. My 1 is Tam, who still says my name in his sleep (L53, paying off plant 2). His 1 is me (L54). I never left his count, so the chair it sits in was never empty in the way that matters: it's still mine (L55). This is what defeats the Negative. A Keeper only stands where a person is missing, and the re-read shows the person isn't missing, only sitting at the wrong table.
 4. The re-read also tells me numbers only ever come from other people, so the fix can't be done alone behind headphones. Plant 1's second half gives the method: one hearing is enough (L56). I say both our names out loud in a silent room (L59). Every reader looks up and both numbers roll to 20 (L60 to L62).
-5. I walk to my seat and it's empty (L64). "That thing had taken my PLACE" (L46) turns into "Like it had only been holding my PLACE" (L65). It held the table's count of two until a person filled it. I sit (L66). The Negative is never seen again.
+5. I walk to my seat and it's empty (L64). The seat is still warm from the lamp (L65), one plain picture, no explanation: whatever sat there kept the table's count of two until a person filled it, and the closing beat never says "place". I sit (L66). The Negative is never seen again.
 No new magic: the climax uses only the rule as stated in L01 and the two things L04 to L05 showed.
 
 ## World
@@ -189,7 +189,7 @@ The first line opens as a cold fact that leaves me alone with a 1 that means onl
 ## Lore connection (one)
 Two short upright library-green strokes scratched into the brass base of the reading lamp on the window table, a table built for two (S47, under L32 "I could hear the LAMPS hum"), held about 1.8 s, never narrated. In the canon it's the Keeper's tally: the place's count is two, and the Negative stands in the second stroke while my seat is empty. A plain tally, no extra stroke, touching no open thread. The Negative carries none of the town's markers (no number), never touches anyone, and is gone once I fill my seat.
 
-## Narration (71 lines, 623 words, about 2:09 of speech at 290 wpm, about 2:19 with gaps)
+## Narration (71 lines, 620 words, about 2:09 of speech at 290 wpm, about 2:19 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words. Nell's L59 is narration, in her voice like every line.
 
 L01. In this town, the NUMBER over your head is how many people know your NAME.
@@ -200,7 +200,7 @@ L05. A man says hello. She tells him her name, and it jumps to ONE.
 L06. The postman's number runs past both his EARS.
 L07. My neighbour Ossie hit FIVE, and bought himself a whole CAKE.
 L08. Mine says ONE. It has for YEARS.
-L09. I always figured the one was ME. Who else would it BE?
+L09. Tam stopped saying my name years ago. So the one was ME.
 L10. So I stopped looking UP.
 L11. My little brother Tam lives with me. This year he went QUIET.
 L12. Over his head, twelve rolls down to NINE.
@@ -236,7 +236,7 @@ L41. The lamps came back UP.
 L42. It was sitting across from him, its black face a hand away from HIS.
 L43. And over Tam's head, the number said ONE.
 L44. Just HIMSELF.
-L45. I wasn't even in his number ANYMORE.
+L45. Like even I didn't count ANYMORE.
 L46. That thing had taken my PLACE.
 L47. Then I looked up at my own number, for the first time in YEARS.
 L48. ONE.
@@ -244,7 +244,7 @@ L49. And I thought about the woman off the TRAIN.
 L50. She knew her own name, and she still had a ZERO.
 L51. You don't count YOURSELF. Nobody does.
 L52. So who was my ONE?
-L53. TAM. The only person in town who ever said my NAME.
+L53. TAM. He still said my name, in his SLEEP.
 L54. And the one over his head was ME.
 L55. I'd never left his number. So that chair was still MINE.
 L56. And you only have to hear a name ONCE to know it.
@@ -256,7 +256,7 @@ L61. Over Tam's head, one rolled to TWO, then TEN, then TWENTY.
 L62. Over mine, ONE rolled to TWENTY too.
 L63. I walked to the window table.
 L64. The chair across from Tam was EMPTY.
-L65. Like it had only been holding my PLACE.
+L65. The seat was still warm from the LAMP.
 L66. I sat down in it.
 L67. A woman at the next table WAVED, and Tam waved BACK.
 L68. A man dragged his chair over. Then two MORE.
