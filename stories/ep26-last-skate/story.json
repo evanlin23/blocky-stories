@@ -1977,6 +1977,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "under the ceiling fans, then down to the shine of the floor",
+   "expo": 0.55,
    "at": "L08"
   },
   {
@@ -4805,7 +4806,7 @@
     "blink": true,
     "sit": false,
     "skate": true,
-    "wobble": 5,
+    "wobble": 3,
     "hidden": false,
     "expr": "smirk",
     "yaw": 180
@@ -15013,7 +15014,7 @@
    "at": "L55",
    "name": "door",
    "open": 1.0,
-   "dur": 1.2
+   "dur": 2.2
   },
   {
    "at": "L58",
