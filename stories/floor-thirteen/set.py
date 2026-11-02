@@ -87,8 +87,8 @@ DEFAULT_GRID = (3, 3)
 POSES = {
     "bump": {"pos": [0.0, -2.04], "yaw": 180, "lean": 0, "bend": 40, "head": [-2, 0, 0], "fold": 1.6},
     # standing on 13's floor a step from the sill, upright, facing the car (the arrivals; never seen to move)
-    "left": {"pos": [0.46, -1.68], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
-    "right": {"pos": [-0.46, -1.68], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
+    "left": {"pos": [0.36, -1.68], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
+    "right": {"pos": [-0.36, -1.68], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
     "centre": {"pos": [0.0, -1.68], "yaw": 180, "lean": 0, "bend": 0, "head": [0, 0, 0], "fold": 1.0},
 }
 LEG_H, LEG_W = 2.6, 0.84       # rig units (a person's legs are 2.0 x 1.0)
@@ -673,7 +673,7 @@ LIGHT_STATES = {   # gains on each light's base energy; the ceiling never flicke
 BEYOND = {"thirteen": "hall13", "land": "land", "lobby": "lobby"}   # which space shows past the doors
 EXTRA_LIGHTS = ("fill", "land_lamp", "lobby_day", "lobby_lamp", "balc_cool", "balc_win", "balc_sun", "balc_fill")
 ALL_LIGHTS = ("ceiling", "panel_key", "hall", "hall_rim", "backwash", "hall_far", "hall_low", "sleeve_rim-1",
-              "sleeve_rim1", "brass_ping", "face", "face_under", "face_peak", "floor13", "cast_rim") + EXTRA_LIGHTS
+              "sleeve_rim1", "brass_ping", "face", "face_under", "face_peak", "floor13", "cast_rim", "face_key") + EXTRA_LIGHTS
 
 
 def light_gains(c):
@@ -708,6 +708,9 @@ def build_lights(kit, ctx):
     # a cold rim on the cast only (cue "cast_rim": a gain, 0 when absent), from the hall behind it, for shots where
     # one of us is in the foreground: it draws the hood's outline and nothing else
     kit.light("cast_rim", "AREA", (0.0, CAR_Y0 + 0.3, 2.2), 60.0, "#a9c4e6", size=0.4)
+    # a soft key for the faces on the cast only, placed per shot by the shot's "key" ({"at", "aim", "w", "c"}): where
+    # the camera is, a little above it, so the faces we are shown are lit and the creature is not
+    kit.light("face_key", "AREA", (0.0, 0.0, 1.8), 60.0, "#e8e4dc", size=0.7)
     kit.light("hall_far", "POINT", (-0.9, SILL_Y - 7.5, 2.2), 30.0, "#a9c4e6", size=0.2)
     kit.light("hall_low", "SPOT", (0.25, SILL_Y - 3.0, 0.7), 140.0, "#a9c4e6", spot=35, blend=0.5, size=0.25)
     # 13's light off the sill, seen only in reflections: the brass buttons and piping down its jacket catch it
@@ -723,10 +726,10 @@ def build_lights(kit, ctx):
     kit.aim(kit.light("fill", "AREA", (0.0, CAR_Y0 + 0.2, 0.8), 22.0, "#9db6d6", size=0.5), (0.0, 0.4, 1.5))
     # the 12 landing's lamp, the lobby's daylight and lamp
     kit.light("land_lamp", "AREA", (0.0, SILL_Y - 2.0, 2.4), 90.0, "#f1e2c6", size=0.7)
-    kit.aim(kit.light("lobby_day", "AREA", (0.0, SILL_Y - 7.4, 2.2), 380.0, "#e6eef7", size=3.0), (0.0, SILL_Y - 2.0, 1.0))
+    kit.aim(kit.light("lobby_day", "AREA", (0.0, SILL_Y - 7.4, 2.2), 260.0, "#e6eef7", size=3.0), (0.0, SILL_Y - 2.0, 1.0))
     kit.light("lobby_lamp", "AREA", (0.0, SILL_Y - 2.5, 3.0), 120.0, "#efe6d2", size=1.2)
     # the balconies (30 m east): blue hour, then low golden sun
-    kit.aim(kit.light("balc_cool", "AREA", (BX, -3.0, 4.0), 260.0, "#8fa8d0", size=3.0), (BX, 0.9, 0.8))
+    kit.aim(kit.light("balc_cool", "AREA", (BX, -3.0, 4.0), 420.0, "#8fa8d0", size=3.0), (BX, 0.9, 0.8))
     kit.aim(kit.light("balc_win", "AREA", (BX, 1.5, 1.6), 35.0, "#ffcf8a", size=1.0), (BX, 0.0, 1.0))
     kit.aim(kit.light("balc_sun", "AREA", (BX - 2.4, -4.5, 1.5), 1400.0, "#ffb460", size=1.2), (BX, 0.9, 1.1))
     kit.aim(kit.light("balc_fill", "AREA", (BX + 0.3, -1.6, 2.4), 160.0, "#ffd9a8", size=2.5), (BX, 0.9, 1.0))
@@ -863,7 +866,10 @@ def materials2(kit):
         "lobby_floor": pbr(kit, "lobby floor", "#aaa498", 0.32, noise=(4.0, 0.75)),
         "lobby_wall": pbr(kit, "lobby wall", "#928b7e", 0.85, noise=(2.0, 0.85)),
         "steel_black": pbr(kit, "steel black", "#15161a", 0.4, metal=0.8),
-        "daylight": emit_plain(kit, "daylight", "#cfe0ef", 1.1),
+        "daylight": emit_plain(kit, "daylight", "#cfe0ef", 0.55),
+        "lobby_rug": pbr(kit, "lobby rug", "#4a2f2a", 0.95, noise=(5.0, 0.6)),
+        "lobby_desk": pbr(kit, "lobby desk", "#4b3524", 0.45),
+        "lobby_panel": emit_plain(kit, "lobby panel", "#ffe2b8", 0.8),
         "concrete": pbr(kit, "balcony concrete", "#77756f", 0.9, noise=(5.0, 0.7)),
         "stucco": pbr(kit, "stucco", "#8b867a", 0.9, noise=(3.0, 0.85)),
         "terracotta": pbr(kit, "terracotta", "#a5573a", 0.8, noise=(12.0, 0.75)),
@@ -952,6 +958,15 @@ def build_lobby(kit, ctx, M):
         _wbox(kit, f"street_post{k}", (x, yE - 0.12, 0.0), (x + 0.1, yE, hh), M["steel_black"])
     for k, z in enumerate((0.0, 1.05, 2.15, hh - 0.1)):
         _wbox(kit, f"street_rail{k}", (-hw + 0.1, yE - 0.12, z), (hw - 0.1, yE, z + 0.1), M["steel_black"])
+    # depth: a runner to the street, pillars, a reception desk along the left wall, warm ceiling panels
+    _wbox(kit, "lobby_runner", (-0.7, yE, 0.0), (0.7, y0 - 0.2, 0.012), M["lobby_rug"])
+    for k, yy in enumerate((y0 - 3.2, y0 - 6.2)):
+        for sx in (-1, 1):
+            _wbox(kit, f"lobby_pillar{k}{sx}", (sx * 2.2 - 0.25, yy - 0.25, 0.0), (sx * 2.2 + 0.25, yy + 0.25, hh), M["lobby_wall"])
+    _wbox(kit, "lobby_desk", (-3.3, y0 - 5.2, 0.0), (-2.5, y0 - 2.0, 1.05), M["lobby_desk"], bevel=0.02)
+    _wbox(kit, "lobby_desk_top", (-3.32, y0 - 5.22, 1.05), (-2.48, y0 - 1.98, 1.09), M["steel_black"])
+    for k, yy in enumerate((y0 - 1.5, y0 - 4.6, y0 - 7.7)):
+        _wbox(kit, f"lobby_panel{k}", (-0.6, yy - 0.5, hh - 0.03), (0.6, yy + 0.5, hh), M["lobby_panel"])
     for k, x in enumerate((-1.1, 0.4, 1.9, -2.6)):   # push bars
         _wbox(kit, f"street_bar{k}", (x, yE - 0.2, 1.0), (x + 0.6, yE - 0.16, 1.04), M["brass"])
 
@@ -981,7 +996,7 @@ def build_balcony(kit, ctx, M):
     _wbox(kit, "side_l", (b - 4.45, -0.1, 0.0), (b - 4.4, 1.7, 1.05), M["concrete"])
     _wbox(kit, "side_r", (b + 4.4, -0.1, 0.0), (b + 4.45, 1.7, 1.05), M["concrete"])
     # his pots and vines
-    spots = [(0.55, 0.28), (1.15, 0.26), (1.8, 0.3), (2.45, 0.25), (3.1, 0.3), (1.4, 1.35), (2.2, 1.4), (3.0, 1.35),
+    spots = [(1.15, 0.26), (1.8, 0.3), (2.45, 0.25), (3.1, 0.3), (1.4, 1.35), (2.2, 1.4), (3.0, 1.35),
              (3.7, 1.2)]
     plants = []
     for k, (px, py) in enumerate(spots):
@@ -999,12 +1014,12 @@ def build_balcony(kit, ctx, M):
             ob = kit.sphere(f"tom_plant{k}", 0.034, (b + px + 0.1, py - 0.03, h + 0.42 + 0.05 * (k % 3)), M["tomato"], seg=10)
             plants.append(ob)
     # the big old pot, on a plinth by the divider: the one that was hers (no line says so)
-    kit.box("plinth", (0.5, 0.5, 0.4), (b + 0.55, 1.15, 0.2), M["concrete"], bevel=0.01)
-    kit.cyl("bigpot", 0.27, 0.46, (b + 0.55, 1.15, 0.63), M["terra_old"], r2=0.21)
-    kit.cyl("bigsoil", 0.25, 0.02, (b + 0.55, 1.15, 0.865), M["soil"])
-    kit.cyl("bigstake", 0.014, 1.3, (b + 0.55, 1.15, 1.52), M["stake"], n=8)
+    kit.box("plinth", (0.5, 0.5, 0.4), (b + 0.95, 1.32, 0.2), M["concrete"], bevel=0.01)
+    kit.cyl("bigpot", 0.27, 0.46, (b + 0.95, 1.32, 0.63), M["terra_old"], r2=0.21)
+    kit.cyl("bigsoil", 0.25, 0.02, (b + 0.95, 1.32, 0.865), M["soil"])
+    kit.cyl("bigstake", 0.014, 1.3, (b + 0.95, 1.32, 1.52), M["stake"], n=8)
     for j in range(6):
-        kit.box(f"bigleaf{j}", (0.3, 0.24, 0.05), (b + 0.55 + 0.05 * ((j % 2) * 2 - 1), 1.15, 1.0 + j * 0.18), M["leaf"],
+        kit.box(f"bigleaf{j}", (0.3, 0.24, 0.05), (b + 0.95 + 0.05 * ((j % 2) * 2 - 1), 1.32, 1.0 + j * 0.18), M["leaf"],
                 rot=(0.2 * j, 0.0, 0.7 * j), bevel=0.01)
     # tomatoes that arrive on the divider's cap (cue "tomatoes": how many)
     ctx["wall_toms"] = [kit.sphere(f"wall_tom{k}", 0.05, (b + 0.0 + (k - 1.5) * 0.0, 0.35 + k * 0.28, 1.09 + 0.05), M["tomato"], seg=12)
@@ -1201,6 +1216,21 @@ def animate(kit, story, tl, t, ctx):
             link_light("cast_rim", cast)
             link_light("fill", cast)
             ctx["cast_rim"] = True
+    # --- the shot's own face key (cast only)
+    shots_by_id = ctx.setdefault("shot_spec", {x["id"]: x for x in story["shots"]})
+    sh = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
+    kspec = shots_by_id.get(sh["id"], {}).get("key")
+    if cast and not ctx.get("key_linked"):
+        link_light("face_key", cast)
+        ctx["key_linked"] = True
+    g["face_key"] = 0.0
+    if kspec and cast:
+        ko = bpy.data.objects["face_key"]
+        ko.location = tuple(kspec["at"])
+        ko.rotation_euler = (V(kspec["aim"]) - V(kspec["at"])).to_track_quat("-Z", "Y").to_euler()
+        ko.data.color = kit.col(kspec.get("c", "#e8e4dc"))[:3]
+        ko.data.size = kspec.get("size", 0.7)
+        g["face_key"] = float(kspec.get("w", 1.0))
     lit = sum(1 for x in gains if x > 0)
     for k in ("face", "face_under", "face_peak"):
         g[k] = g[k] * lit / len(gains) * a.get("glow", 1.0) if lit and not a.get("hidden", not a_c) else 0.0
@@ -1208,7 +1238,7 @@ def animate(kit, story, tl, t, ctx):
     for k in ("backwash", "hall", "hall_rim"):
         g[k] *= a.get("wash", 1.0)
     g["panel_key"] *= a.get("key", 1.0)
-    ctx["M"]["diffuser"].node_tree.nodes["glow"].inputs["Strength"].default_value = 3.0 * g.pop("diffuser")
+    ctx["M"]["diffuser"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.6 * g.pop("diffuser")
     ctx["M"]["segment"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.5
     pl = (_last(_cues(tl, "panel"), t) or {}).get("lit", [])
     for i, m in enumerate(ctx["panel_buttons"]):
