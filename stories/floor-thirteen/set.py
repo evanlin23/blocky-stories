@@ -598,7 +598,8 @@ def build_indicator(kit, ctx, M):
     blocks (no font), and an up and a down triangle, all in the creature's cold colour."""
     z = DOOR_H + 0.2
     y = CAR_Y0 + 0.012
-    _wbox(kit, "indicator", (-0.2, CAR_Y0, z - 0.075), (0.2, y, z + 0.075), M["glass_black"])
+    _wbox(kit, "indicator", (-0.2, CAR_Y0, z - 0.075), (0.2, y, z + 0.075),
+          pbr(kit, "indicator glass", "#050506", 0.7, spec=0.03))   # matte: the ceiling must not mirror in it as a white bar
     _wbox(kit, "indicator_rim", (-0.212, CAR_Y0, z - 0.087), (0.212, y - 0.004, z + 0.087), M["brass_dark"])
     sw, sh, th = 0.028, 0.05, 0.008   # a digit's half-width and half-height, a segment's thickness
     segs = {}
@@ -1239,7 +1240,7 @@ def animate(kit, story, tl, t, ctx):
         g[k] *= a.get("wash", 1.0)
     g["panel_key"] *= a.get("key", 1.0)
     ctx["M"]["diffuser"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.6 * g.pop("diffuser")
-    ctx["M"]["segment"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.5
+    ctx["M"]["segment"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.4
     pl = (_last(_cues(tl, "panel"), t) or {}).get("lit", [])
     for i, m in enumerate(ctx["panel_buttons"]):
         set_button(m, 2.4 if i in pl else 0.0)

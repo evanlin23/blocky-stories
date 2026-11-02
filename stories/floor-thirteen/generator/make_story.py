@@ -67,10 +67,11 @@ BACK_WIDE = still([0.0, 1.4, 1.45], [0.0, -1.9, 1.5], 22)
 BACK_WIDE_B = still([-0.1, 1.05, 1.5], [0.0, -1.9, 1.5], 22)
 BACK_WIDE_C = move([0.1, 1.4, 1.4], [0.05, 1.1, 1.42], 22) and C([0, [0.1, 1.4, 1.4], [0.0, -1.9, 1.5], 22],
                                                                 [1, [0.05, 1.15, 1.42], [0.0, -1.9, 1.5], 22])
-FIRST = still([0.14, 1.38, 1.6], [0.0, -1.9, 1.55], 19)           # over my shoulder, the doors parting
+FIRST = still([0.12, 1.1, 1.6], [0.0, -1.9, 1.55], 22)           # over my shoulder, the doors parting
 # the panel inserts (the floor panel: x -0.75, buttons z 0.7 .. 1.5; lobby star at z 0.884, close at z 0.81)
 PANEL_LOW = still([-0.74, -0.33, 0.95], [-0.745, -0.94, 0.95], 40)
 PANEL_TOP = still([-0.74, -0.33, 1.3], [-0.745, -0.94, 1.3], 40)
+PANEL_BTN = still([-0.76, 0.0, 1.44], [-0.77, -0.94, 1.47], 34)   # the top button (z 1.49) with the tomato at its face, centred
 INDICATOR = still([0.0, 0.0, 2.2], [0.0, -0.94, 2.3], 30)
 # faces: from the doors looking back into the car
 FACE_ME = still([0.32, -0.86, 1.52], [-0.1, 0.6, 1.5], 24)
@@ -81,6 +82,12 @@ HEAD_CLOSE_L = still([0.35, 0.4, 1.65], [0.46, -1.7, 1.9], 40)
 HEAD_CLOSE_R = still([-0.3, 0.4, 1.65], [-0.46, -1.7, 1.9], 40)
 HEAD_CLOSE_B = still([0.2, 0.35, 1.7], [0.0, -1.7, 1.45], 30)   # the bowed head: the panel rides high, the eye above the caption band
 HELD = still([0.05, 0.95, 1.1], [0.0, -1.9, 1.8], 18)             # the pass-3 reveal frame, locked off
+PUSH = C([0, [0.05, 0.95, 1.1], [0.0, -1.9, 1.8], 18], [1, [0.03, 0.5, 1.25], [0.0, -1.9, 1.85], 22])
+EDGE_R = still([0.2, 0.1, 1.25], [0.46, -1.15, 1.25], 30)       # the right leaf's edge against its sleeve
+EDGE_L = still([-0.2, 0.1, 1.25], [-0.46, -1.15, 1.25], 30)
+LOOM = C([0, [0.0, 0.45, 1.05], [0.0, -1.9, 2.0], 24], [1, [0.0, 0.2, 1.2], [0.0, -1.9, 1.95], 24])
+LOOM_CLOSE = C([0, [0.0, 0.35, 1.4], [0.0, -1.9, 1.6], 30], [1, [0.0, 0.1, 1.45], [0.0, -1.9, 1.6], 30])
+FACES_FEAR = still([0.3, -0.86, 1.2], [-0.35, 0.15, 1.55], 26)
 
 # ------------------------------------------------------------------------------------------------------ shots
 # (at, label, step, camera). step 1 on the scare's cut and the doors, 2 elsewhere
@@ -100,7 +107,7 @@ def lamp(cam, aim, w=1.0, up=0.45, c="#e8e4dc", size=0.7, side=0.0):
 # 01 going up
 shot(0, "first frame: over my shoulder, the doors parting on the DING, 13 above, one cold light in the gap", FIRST, 1, 0.006)
 shot("L01", "insert: my finger on the star", PANEL_LOW, 2)
-shot("L01.1", "insert: the up triangle lit", INDICATOR, 2)
+shot("L01.1", "its lit face in the gap: one button on me (a face in frame by 2 s)", HEAD_CLOSE_L, 2)
 shot("L02", "insert: the indicator reading 13", INDICATOR, 2)
 shot("L03", "my face, worried, hood up, headphones on", FACE_ME, 2)
 shot("L04", "wide: it stands just left of the gap, one button on me", BACK_WIDE, 2)
@@ -177,9 +184,17 @@ shot("L52", "me at the panel pressing close", still([0.6, 0.9, 1.45], [-0.3, -0.
 shot("L52.1", "insert: close, one click, the doors don't move", PANEL_LOW, 2)
 shot("L53", "insert: the second click", PANEL_LOW, 2)
 shot("L54", "wide from the back: I step back, the leaves slide in", still([0.0, 1.4, 1.5], [0.0, -1.8, 1.5], 20), 2, 0.003)
-shot("P06", "THE BUMP: the held centre-line frame, locked off", HELD, 1, 0)
+shot("P06", "THE BUMP: the held centre-line frame, locked off: the leaves hit its shoulders", HELD, 1, 0)
+shot("L55", "it is in the doorway: a slow push on the held frame", PUSH, 1, 0)
+shot("L56", "close on the right leaf's edge against its sleeve", EDGE_R, 1, 0.004)
+shot("L56.2", "its head tips down: looming from below", LOOM, 1, 0.004)
 shot("L57", "closer: the lit face looms over my shoulder", still([0.12, 0.65, 0.62], [0.0, -1.9, 1.95], 17), 1, 0.004)
-shot("L58", "back to the held frame: the leaves roll back", HELD, 1, 0)
+shot("L58", "back to the held frame: the leaves bounce off its shoulders", HELD, 1, 0)
+shot("L59", "our faces in fear, lit cold from beyond the doors", FACES_FEAR, 1, 0.004,
+     key=lamp(FACES_FEAR, [-0.35, 0.15, 1.55], 0.5, up=0.1, c="#bcd0ff", side=0.2))
+shot("L60", "the leaves roll back: the held frame", HELD, 1, 0)
+shot("L60.1", "the left leaf's edge comes in against its sleeve again", EDGE_L, 1, 0.004)
+shot("P07", "THUMP: the face fills the doorway", LOOM_CLOSE, 1, 0.004)
 L61C = still([0.0, 1.35, 1.7], [0.0, 0.15, 1.25], 17)
 shot("L61", "his hand finds my sleeve", L61C, 2, key=lamp(L61C, [0.0, 0.15, 1.3], 3.5, up=0.2))
 shot("L61.2", "my face lit cold from below", still([0.3, -0.86, 1.2], [-0.35, 0.15, 1.55], 26), 2)
@@ -221,11 +236,9 @@ L90C = still([0.0, -0.88, 1.5], [0.0, 0.5, 1.5], 12)
 shot("L90", "the next morning, both of us talking", L90C, 2, key=lamp(L90C, [0.0, 0.3, 1.5], 0.6, up=0.3))
 L91C = still([0.0, -0.86, 1.5], [0.42, 0.2, 1.35], 15)
 shot("L91", "a tomato on his open palm", L91C, 2, key=lamp(L91C, [0.3, 0.3, 1.4], 0.6, up=0.3))
-shot("L92", "insert: the tomato meets the top button", PANEL_TOP, 2)
+shot("L92", "insert: the tomato meets the top button", PANEL_BTN, 2)
 shot("L93", "insert: my finger on the star", PANEL_LOW, 2)
-shot("L94", "the indicator runs up", INDICATOR, 2)
-shot("L94.1", "up to twenty", INDICATOR, 2)
-shot("L94.2", "and back down", INDICATOR, 2)
+shot("L94", "the indicator runs up to twenty and back down, one shot (no cut inside the count)", INDICATOR, 2)
 shot("L94.3", "the two-shot, both still talking", L90C, 2, key=lamp(L90C, [0.0, 0.3, 1.5], 0.6, up=0.3))
 
 shots = []
@@ -344,8 +357,16 @@ put("okafor", "P06", HIM_HELD["pos"], yaw=HIM_HELD["yaw"], head=HIM_HELD["head"]
 # L57: a closer insert over my shoulder, then back to the held places
 put("me", "L57", ME_HELD["pos"], yaw=ME_HELD["yaw"], head=ME_HELD["head"], expr="terrified")
 put("okafor", "L57", HIM_HELD["pos"], yaw=HIM_HELD["yaw"], head=HIM_HELD["head"], expr="scared")
+for _id in ("L55", "L56", "L56.2"):
+    put("me", _id, ME_HELD["pos"], yaw=ME_HELD["yaw"], head=ME_HELD["head"], expr="terrified")
+    put("okafor", _id, HIM_HELD["pos"], yaw=HIM_HELD["yaw"], head=HIM_HELD["head"], expr="scared")
 put("me", "L58", ME_HELD["pos"], yaw=ME_HELD["yaw"], head=ME_HELD["head"], expr="terrified")
 put("okafor", "L58", HIM_HELD["pos"], yaw=HIM_HELD["yaw"], head=HIM_HELD["head"], expr="scared")
+put("me", "L59", [-0.35, 0.2], yaw=0, head=[0, -6], expr="terrified")
+hide("okafor", "L59")
+for _id in ("L60", "L60.1", "P07"):
+    put("me", _id, ME_HELD["pos"], yaw=ME_HELD["yaw"], head=ME_HELD["head"], expr="terrified")
+    put("okafor", _id, HIM_HELD["pos"], yaw=HIM_HELD["yaw"], head=HIM_HELD["head"], expr="scared")
 put("me", "L61", [-0.35, 0.15], yaw=80, head=[0, 0], expr="terrified")
 put("okafor", "L61", [0.33, 0.15], yaw=-80, arms=[0, 92], head=[0, 0], expr="scared")
 for k in range(6):   # a small tremble in his hand
@@ -446,7 +467,7 @@ def thirteen(at, dur=1.0, **kw):
 
 
 # 01: the first frame already stands in 13's light, the panel at 40% and dimming to 5%
-cue(0, "lights", state="thirteen", cast_dark=True, cast_rim=0.7, fill=1.0, ceiling=0.4)
+cue(0, "lights", state="thirteen", cast_dark=True, cast_rim=0.7, fill=1.0, ceiling=0.8)
 cue("L04", "lights", state="thirteen", cast_dark=True, cast_rim=0.7, fill=1.0, ceiling=0.05, dur=1.2)
 cue("L08.1", "lights", state="on", dur=1.0)
 cue("L09", "lights", state="land")
@@ -465,6 +486,8 @@ cue("P04", "lights", state="thirteen", cast_dark=True, cast_rim=0.7, fill=0.8, d
 cue("P06", "lights", state="thirteen", cast_dark=True, cast_rim=0.7, fill=0.0)
 cue("L57", "lights", state="thirteen", cast_dark=True, cast_rim=0.8, fill=0.0)
 cue("L58", "lights", state="thirteen", cast_dark=True, cast_rim=0.7, fill=0.0)
+cue("L59", "lights", state="thirteen", cast_dark=True, cast_rim=0.5, fill=1.1)
+cue("L60", "lights", state="thirteen", cast_dark=True, cast_rim=0.7, fill=0.0)
 cue("L61", "lights", state="thirteen", cast_dark=True, cast_rim=1.6, fill=0.0)
 cue("L61.2", "lights", state="thirteen", cast_dark=True, cast_rim=0.5, fill=1.1)
 cue("L62", "lights", state="on")
@@ -483,7 +506,7 @@ cue("L85", "lights", state="balc_gold")
 cue("L90", "lights", state="on")
 
 # the doors: gap in metres between the leaves (1.1 open). The hall's own doors stay open.
-cue(0, "doors", gap=0.35, hall=1.0)
+cue(0, "doors", gap=0.14, hall=1.0)
 cue(0.04, "doors", gap=DOOR_W, hall=1.0, dur=0.55)
 cue("L08.1", "doors", gap=0.0, hall=1.0, dur=1.3)
 cue("L09", "doors", gap=DOOR_W, hall=1.0)
@@ -497,11 +520,12 @@ cue("L35+0.2", "doors", gap=0.0, hall=1.0, dur=1.4)
 cue("L38", "doors", gap=0.0, hall=1.0)
 cue("L41", "doors", gap=0.0, hall=1.0)
 cue("P04", "doors", gap=DOOR_W, hall=1.0, dur=0.6)
-cue("L54.2", "doors", gap=0.8, hall=1.0, dur=2.3)
-cue("P06", "doors", gap=0.8, hall=1.0, recoil=0.022)
-cue("L58", "doors", gap=DOOR_W, hall=1.0, dur=0.7)
-cue("L60", "doors", gap=0.8, hall=1.0, dur=0.55)
-cue("P07", "doors", gap=0.8, hall=1.0, recoil=0.022)
+cue("L54.2", "doors", gap=0.8, hall=1.0, dur=1.25)       # the leaves land on its shoulders as the THUMP does
+cue("P06", "doors", gap=0.8, hall=1.0, recoil=0.05)
+cue("L58.1", "doors", gap=0.8, hall=1.0, recoil=0.06)     # BOUNCED
+cue("L60", "doors", gap=DOOR_W, hall=1.0, dur=0.7)         # rolled back
+cue("L60.1+0.15", "doors", gap=0.8, hall=1.0, dur=0.75)    # and tried again: lands on the THUMP
+cue("P07", "doors", gap=0.8, hall=1.0, recoil=0.05)
 cue("L61", "doors", gap=DOOR_W, hall=1.0, dur=0.5)
 cue("L62", "doors", gap=0.0, hall=1.0)
 cue("L64", "doors", gap=DOOR_W, hall=1.0)
@@ -535,9 +559,8 @@ cue("L83", "indicator", floor="12", arrow=None)
 cue("L90", "indicator", floor="12", arrow=None)
 cue("L93+0.3", "indicator", floor="12", arrow="up")
 # 12, 14 ... 20 and back, never 13; two a second or slower, or jumping across the cuts
-for at, fl, ar in (("L94", "12", "up"), ("L94+0.55", "14", "up"), ("L94.1", "17", "up"), ("L94.1+0.5", "19", "up"),
-                   ("L94.1+1.0", "20", None), ("L94.2", "19", "down"), ("L94.2+0.55", "16", "down"),
-                   ("L94.2+1.1", "14", "down"), ("L94.3", "12", None)):
+for at, fl, ar in (("L94", "12", "up"), ("L94.1", "16", "up"), ("L94.2", "20", None), ("L94.2+0.25", "17", "down"),
+                   ("L94.3", "12", None)):
     cue(at, "indicator", floor=fl, arrow=ar)
 
 # the floor panel's lit buttons (0 is the lobby's star; 21 is close)
@@ -562,7 +585,7 @@ cue("L52.1+0.4", "panel", lit=[])
 cue("L53", "panel", lit=[21])
 cue("L53+0.4", "panel", lit=[])
 cue("L80", "panel", lit=[])
-cue("L92+0.5", "panel", lit=[19])
+cue("L92.2", "panel", lit=[19])      # lit on BUTTON
 cue("L93", "panel", lit=[19, 0])
 cue("L94", "panel", lit=[19, 0])
 
@@ -601,7 +624,7 @@ cue("L53+0.15", "finger", on=True, button=21, press=1.0, dur=0.1)
 cue("L53+0.6", "finger", on=True, button=21, press=1.0)
 cue("L54", "finger", on=False)
 cue("L92", "finger", on=True, button=19, press=0.0, tomato=True)
-cue("L92+0.5", "finger", on=True, button=19, press=1.0, dur=0.12, tomato=True)
+cue("L92.2-0.1", "finger", on=True, button=19, press=1.0, dur=0.1, tomato=True)
 cue("L93", "finger", on=True, button=0, press=0.0)
 cue("L93+0.25", "finger", on=True, button=0, press=1.0, dur=0.1)
 cue("L94", "finger", on=False)
@@ -610,7 +633,8 @@ cue("L94", "finger", on=False)
 # viewed from the car: left is +x, so its panel's left column (3 6 0 side) faces him at the back left and the
 # right column (5 8 2) faces me at the panel. Index 3 = toward him, 4 = the middle, 5 = toward me, 8 = the bottom
 # corner nearest the car's panel.
-cue(0, "attendant", pose="left", lit=[5], glow=1.5)
+cue(0, "attendant", pose="left", lit=[5], glow=3.0, wash=3.0)
+cue("L04", "attendant", pose="left", lit=[5], glow=1.5)
 cue("L09", "attendant", hidden=True)
 cue("P02", "attendant", pose="right", lit=[5], glow=1.5)
 cue("L25.1", "attendant", pose="right", lit=[8], glow=1.5, dur=0.25)
@@ -623,7 +647,8 @@ cue("L50", "attendant", pose="centre", lit=[4], glow=1.5, dur=0.2)
 cue("L50+0.45", "attendant", pose="centre", lit=[5], glow=1.5, dur=0.2)
 BUMP = dict(pose="bump", bend=44, head=[-16, 0, 0], glow=0.75, eye=1.9, peak=0.0, key=0.3, wash=0.55)
 cue("P06", "attendant", lit="all", **BUMP)
-for at, n in (("L65.2", 8), ("L68.1", 7), ("L69.2", 6), ("L70.2", 5), ("L72.2", 4), ("L73.0>-0.2", 3), ("L75.3", 2),
+cue("L56.2", "attendant", lit="all", **{**BUMP, "head": [14, 0, 0]})    # its head tips down at us (on the cut)
+for at, n in (("L65.2", 8), ("L68>-0.3", 7), ("L69.2", 6), ("L70.2", 5), ("L72.2", 4), ("L73.0>-0.2", 3), ("L75.3", 2),
               ("L77.4", 1), ("L79.2+0.3", 0)):
     cue(at, "attendant", lit=n, dur=0.18, **BUMP)
 cue("L80", "attendant", hidden=True)
@@ -667,7 +692,8 @@ for at in ("L01+0.25", "L18+0.3", "L24+0.15", "L27+0.15", "L27.1+0.15", "L42+0.2
     sf(at, "click", -12)
 for k in range(9):
     sf(f"L34+{0.07 + 0.2 * k:.2f}", "click", -15)
-sf("L92+0.5", "thud", -22)
+sf("L92.2", "thud", -22)
+sf("L58.1", "thud", -16)
 sf("P06", "hit", -6, keep=True)
 sf("P06", "thud", -9, keep=True)
 sf("L60+0.1", "whoosh", -28, dur=0.5)
