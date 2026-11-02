@@ -772,7 +772,7 @@ def animate(kit, story, tl, t, ctx):
         p = torso.matrix_world @ V((0, -0.4, 1.0))
         L["obj"].location = (p.x, p.y, p.z + 0.1)
         L["base"] = story.get("glow_light_w", 90.0)
-        over[f"gl {who}"] = s / 3.0
+        over[f"gl {who}"] = s / 3.0 * _eased(_cues(tl, "glk"), "level", t, 1.0)
     # ---- sparks
     sk = _last(_cues(tl, "sparks"), t)
     for i, sp in enumerate(ctx["sparks"]):

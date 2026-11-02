@@ -39,7 +39,9 @@
   "bloom": 0.26,
   "grain": 0.012
  },
- "phonemes": {},
+ "phonemes": {
+  "mended": "mˈɛndɪd"
+ },
  "glow": {
   "c1": 1.0,
   "c2": 1.0,
@@ -759,7 +761,7 @@
    "chunks": [
     [
      "I tell Grandad",
-     "i tell grandad"
+     "i tell granddad"
     ],
     [
      "EVERYTHING.",
@@ -773,7 +775,7 @@
    "chunks": [
     [
      "Grandad ABE",
-     "grandad abe"
+     "granddad abe"
     ],
     [
      "guides at",
@@ -857,7 +859,7 @@
    "chunks": [
     [
      "One TAIL bone",
-     "one tail bone"
+     "one tailbone"
     ],
     [
      "is PALER,",
@@ -897,7 +899,7 @@
    "chunks": [
     [
      "and Grandad",
-     "and grandad"
+     "and granddad"
     ],
     [
      "gets BRIGHTER",
@@ -1158,7 +1160,7 @@
    "chunks": [
     [
      "Grandad's GLOW",
-     "grandad's glow"
+     "granddad's glow"
     ],
     [
      "is GONE.",
@@ -1426,7 +1428,7 @@
    "chunks": [
     [
      "Grandad's on",
-     "grandad's on"
+     "granddad's on"
     ],
     [
      "the BENCH,",
@@ -1659,7 +1661,7 @@
     ],
     [
      "is GRANDAD'S.",
-     "is grandad's."
+     "is granddad's."
     ]
    ]
   },
@@ -1699,7 +1701,7 @@
    "chunks": [
     [
      "Grandad won't",
-     "grandad won't"
+     "granddad won't"
     ],
     [
      "LOOK at me.",
@@ -1833,7 +1835,7 @@
    "chunks": [
     [
      "And Grandad",
-     "and grandad"
+     "and granddad"
     ],
     [
      "told everyone",
@@ -1895,7 +1897,7 @@
    "chunks": [
     [
      "Grandad's GLOW",
-     "grandad's glow"
+     "granddad's glow"
     ],
     [
      "is ORDINARY",
@@ -1971,7 +1973,7 @@
    "chunks": [
     [
      "Neighbours stop",
-     "neighbours stop"
+     "neighbors stop"
     ],
     [
      "crossing the ROAD.",
@@ -2077,7 +2079,7 @@
    "chunks": [
     [
      "Grandad kept MINE.",
-     "grandad kept mine."
+     "granddad kept mine."
     ]
    ]
   },
@@ -2274,7 +2276,7 @@
      0,
      [
       300.0,
-      -4.3,
+      -3.2,
       1.9
      ],
      [
@@ -2282,7 +2284,7 @@
       0,
       1.0
      ],
-     26
+     22
     ]
    ],
    "hand": 0.006,
@@ -2297,15 +2299,15 @@
      0,
      [
       300.4,
-      -3.3,
-      1.85
+      -3.1,
+      1.8
      ],
      [
       300.0,
       0.4,
       1.0
      ],
-     28
+     26
     ]
    ],
    "hand": 0.006,
@@ -2729,13 +2731,13 @@
     [
      0,
      [
-      417.8,
-      -2.4,
-      2.1
+      418.2,
+      -1.9,
+      1.9
      ],
      [
       420.0,
-      0.1,
+      0.0,
       0.7
      ],
      30
@@ -3907,16 +3909,16 @@
     [
      0,
      [
-      -4.4,
-      -2.1,
-      1.05
+      -3.8,
+      -1.9,
+      1.1
      ],
      [
       -1.0,
-      -2.0,
-      1.0
+      -1.95,
+      1.1
      ],
-     30
+     34
     ]
    ],
    "hand": 0.003,
@@ -4473,16 +4475,16 @@
     [
      0,
      [
-      -0.9,
-      -1.9,
-      1.15
+      -1.3,
+      -1.7,
+      1.05
      ],
      [
       -1.0,
-      -3.0,
-      0.62
+      -3.1,
+      0.7
      ],
-     40
+     30
     ]
    ],
    "hand": 0.006,
@@ -4520,7 +4522,7 @@
      0,
      [
       0.0,
-      -0.8,
+      -0.5,
       0.95
      ],
      [
@@ -4528,7 +4530,7 @@
       -3.4,
       0.62
      ],
-     28
+     24
     ]
    ],
    "hand": 0.006,
@@ -4543,7 +4545,7 @@
      0,
      [
       0.0,
-      -0.8,
+      -0.5,
       0.95
      ],
      [
@@ -4551,7 +4553,7 @@
       -3.4,
       0.62
      ],
-     28
+     24
     ]
    ],
    "hand": 0.006,
@@ -5740,7 +5742,7 @@
     "blend": 0,
     "hidden": false,
     "arms": [
-     62,
+     75,
      0
     ],
     "side": [
@@ -13203,6 +13205,11 @@
   },
   {
    "at": 0,
+   "name": "glk",
+   "level": 1.0
+  },
+  {
+   "at": 0,
    "name": "sun",
    "set": "steps"
   },
@@ -13824,6 +13831,11 @@
    "hyaw": 0
   },
   {
+   "at": "L58",
+   "name": "glk",
+   "level": 0.1
+  },
+  {
    "at": "L58.2",
    "name": "tailgold",
    "on": 1.0,
@@ -13836,11 +13848,31 @@
    "dur": 0.5
   },
   {
+   "at": "L59",
+   "name": "glk",
+   "level": 1.0
+  },
+  {
+   "at": "L65",
+   "name": "glk",
+   "level": 0.1
+  },
+  {
+   "at": "L66",
+   "name": "glk",
+   "level": 0.1
+  },
+  {
    "at": "L66",
    "name": "glow",
    "who": "abe",
    "s": 1.0,
    "dur": 3.0
+  },
+  {
+   "at": "L67",
+   "name": "glk",
+   "level": 1.0
   },
   {
    "at": "L67",
@@ -13876,6 +13908,11 @@
    "at": "L69",
    "name": "stooped",
    "hidden": true
+  },
+  {
+   "at": "L69",
+   "name": "glk",
+   "level": 0.1
   },
   {
    "at": "L72",
@@ -13917,6 +13954,26 @@
    "who": "me",
    "s": 1.0,
    "dur": 1.0
+  },
+  {
+   "at": "L75",
+   "name": "glk",
+   "level": 0.1
+  },
+  {
+   "at": "L76",
+   "name": "glk",
+   "level": 1.0
+  },
+  {
+   "at": "L77",
+   "name": "glk",
+   "level": 0.1
+  },
+  {
+   "at": "L78",
+   "name": "glk",
+   "level": 1.0
   },
   {
    "at": "L79.1",

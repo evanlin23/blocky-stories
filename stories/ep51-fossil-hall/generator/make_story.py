@@ -26,6 +26,18 @@ for ln in lines:
         if (ln["id"], k) in SPOKEN:
             ch[1] = SPOKEN[(ln["id"], k)]
 
+SWAP = [("grandad", "granddad"), ("neighbours", "neighbors"), ("tail bone", "tailbone")]
+changed = []
+for ln in lines:
+    for ch in ln.get("chunks", []):
+        new = ch[1]
+        for a, b in SWAP:
+            new = new.replace(a, b)
+        if new != ch[1]:
+            ch[1] = new
+            changed.append(ln["id"])
+print("spoken forms changed:", ",".join(sorted(set(changed))))
+
 # ------------------------------------------------------------------------------------------------ cast
 FACE = {"eyes": "round", "brows": True, "ink": "#1a1416"}
 
@@ -205,6 +217,7 @@ cue(0, "torch", on=0.0)
 cue(0, "tailgold", on=0.0)
 cue(0, "gal", level=1.0)
 cue(0, "sheet", on=False)
+cue(0, "glk", level=1.0)
 
 # ---- 01 the rule (L01 to L09)
 stepz = lambda y: 0.17 * min(5, max(0, int((y - 2.9) // 0.55) + 1)) if y > 2.9 else 0.0
@@ -252,10 +265,10 @@ glow("L04.2", "friend", 3.5, 1.0)
 key("friend", "L04.2", expr="wide", blend=0.1)
 cue("L04.2", "spark1", a=[PX - 0.55, 0.0, 1.3], b=[PX + 0.55, 0.0, 1.3])
 RX = 300.0
-shot("L05", "rs", C([RX, -4.3, 1.9], [RX, 0, 1.0], 26), {
+shot("L05", "rs", C([RX, -3.2, 1.9], [RX, 0, 1.0], 22), {
     "groom": SIT(RX - 1.15, 0, 90, expr="smirk"), "bride": SIT(RX + 1.15, 0, -90, expr=SMILE)},
      "the engaged couple glowing like two lamps, trying to look casual")
-shot("L05.2", "rs", C([RX + 0.4, -3.3, 1.85], [RX, 0.4, 1.0], 28), {
+shot("L05.2", "rs", C([RX + 0.4, -3.1, 1.8], [RX, 0.4, 1.0], 26), {
     "groom": SIT(RX - 1.15, 0, 90, expr="neutral"), "bride": SIT(RX + 1.15, 0, -90, expr="neutral"),
     "waiter": P(RX, 1.15, 0, lean=18, expr="neutral", head=[0, 8])}, "the waiter leans in to blow out the candles")
 shot("L06", "st", C([SXC, -0.4, 1.62], [SXC, 1.9, 1.55], 28), {
@@ -320,7 +333,7 @@ glow("L18.3+0.05", "abe", 5.0, 0.5)
 cue("L18.3", "gal", level=0.25)
 cue("L18.3+0.05", "gal", level=1.0, dur=0.5)
 BX = 420.0
-shot("L19", "bd", C([BX - 2.2, -2.4, 2.1], [BX, 0.1, 0.7], 30), {
+shot("L19", "bd", C([BX - 1.8, -1.9, 1.9], [BX, 0.0, 0.7], 30), {
     "abe": {"pos": (BX, 0.95, 0.7), "yaw": 180, "lean": -90, "expr": SLEEPY}}, "his small bedroom, a checked towel over his face")
 shot("L20", "hall", C([-2.0, -6.8, 1.35], [0.1, -3.4, 0.95], 26), {"abe": SIT(HX["abe"], BY, 180, expr=TIRED)},
      "the bench: Abe alone at his end, mine empty", hall=0.6)
@@ -457,14 +470,16 @@ shot("L54.3", "hall", C([-1.0, -1.45, 0.08], [-1.0, -2.9, 0.62], 34), {"abe": AB
 shot("L55", "hall", C([0.0, -0.3, 1.25], [0.0, BY, 0.85], 22), {"abe": ABE_B}, "Abe glowing at his end, the Stooped a dark outline at mine, no rim")
 shot("L56", "hall", C([-0.2, -1.8, 0.45], [-1.0, -2.9, 0.4], 38), {"abe": ABE_B}, "close on its face, warm light on one side only")
 stooped("L57", roll=0, neck=-80, pitch=-70)
-shot("L57", "hall", C([-4.4, -2.1, 1.05], [-1.0, -2.0, 1.0], 30), {
+shot("L57", "hall", C([-3.8, -1.9, 1.1], [-1.0, -1.95, 1.1], 34), {
     "abe": ABE_B, "me": P(-1.0, -1.7, 0, expr="scared", lean=4, head=[0, 18])}, "its face leans up to mine, a hand's width away", hand=0.003)
 # ---- 06 the loophole (L58 to L70)
+cue("L58", "glk", level=0.1)
 shot("L58", "hall", C([0.9, -1.2, 1.15], [HX["abe"], BY, 1.1], 32), {"abe": SIT(HX["abe"], BY, 180, expr=TIRED, head=[0, -32])},
      "Abe won't look at me; he's looking at the tail")
 cue("L58.2", "tailgold", on=1.0, dur=0.6)
 shot("L58.2", "hall", C([5.1, -1.5, 1.95], [6.22, 1.5, 1.65], 32), {}, "the pale block at the tail's tip, lit gold")
 cue("L59", "tailgold", on=0.0, dur=0.5)
+cue("L59", "glk", level=1.0)
 shot("L59", "hall", C([-1.0, -0.2, 1.55], [-1.0, -1.9, 1.5], 36), {
     "me": P(-1.0, -1.65, 180, expr=SHEEPISH), "abe": ABE_B}, "me thinking; behind me the Stooped's face is still turned up")
 shot("L60", "hall", C([-3.2, -1.0, 1.55], [-1.0, -1.65, 1.5], 30), {"me": P(-1.0, -1.65, 180, expr="neutral"), "abe": ABE_B},
@@ -482,11 +497,14 @@ shot("L63", "hall", MV(([0.0, -8.7, 1.55], [0.8, -6.0, 1.5]), ([0.0, -8.7, 1.55]
 walk("curator", "L63>", (0.9, -5.0))
 shot("L64", "hall", C([-3.3, -0.5, 1.7], [-1.0, -1.8, 1.5], 30), {
     "me": P(-1.0, -1.65, 0, expr=SHEEPISH, arms=[155, 0], head=[0, -22]), "abe": ABE_B}, "me pointing up at the tail")
+cue("L65", "glk", level=0.1)
 shot("L65", "hall", C([1.3, -1.5, 1.2], [HX["abe"], BY, 1.15], 34), {"abe": SIT(HX["abe"], BY, 180, expr=MOVED, head=[-42, 0])},
      "Abe finally looking at me")
+cue("L66", "glk", level=0.1)
 shot("L66", "hall", C([1.05, -1.9, 1.25], [HX["abe"], BY, 1.2], 40), {"abe": SIT(HX["abe"], BY, 180, expr=MOVED, head=[-30, 0])},
      "the glow sinks out of him like a slow sunset")
 glow("L66", "abe", 1.0, 3.0)
+cue("L67", "glk", level=1.0)
 shot("L67", "hall", C([0.0, -9.4, 6.0], [0.0, -5.0, 1.4], 22), {
     "abe": SIT(HX["abe"], BY, 180, expr=MOVED), **{n: P(x, y, 180, expr="soft") for n, (x, y) in CROWD_POS.items() if n not in ("c12", "c14")}},
      "tiny soft sparks drift up over the crowd and go out")
@@ -495,6 +513,7 @@ glow("L67", CROWD, 0.4, 1.5)
 shot("L68", "hall", C([0.0, -0.3, 1.25], [0.0, BY, 0.85], 22), {"abe": SIT(HX["abe"], BY, 180, expr=MOVED)},
      "Abe faint and ordinary at his end, the Stooped still at mine, face up")
 cue("L69", "stooped", hidden=True)
+cue("L69", "glk", level=0.1)
 shot("L69", "hall", C([1.0, -1.7, 1.3], [0.55, BY, 1.1], 40), {
     "abe": SIT(HX["abe"], BY, 180, expr=MOVED), "me": P(-0.1, -1.9, 160, expr="soft", head=[-25, 0])},
      "Abe close; I come into the edge of frame beside him, lowering. The camera stays on him through the cut")
@@ -525,21 +544,25 @@ shot("L73", "hall", C([0.0, 0.2, 1.2], [0.0, BY, 1.0], 26), {
 shot("L74", "hall", C([0.0, -0.9, 1.25], [0.0, BY, 1.15], 36), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE)}, "two faint gold rims, his and mine")
 glow("L74", "me", 1.0, 1.0)
+cue("L75", "glk", level=0.1)
 shot("L75", "hall", C([1.0, -1.6, 1.3], [1.0, BY, 1.25], 38), {"abe": SIT(HX["abe"], BY, 180, expr=SHEEPISH, head=[0, -30])},
      "Abe glances up at the mended block")
 shot("L75.3", "hall", C([5.1, -1.2, 1.75], [6.22, 1.5, 1.65], 34), {}, "the mended block, ordinary light")
+cue("L76", "glk", level=1.0)
 shot("L76", "hall", C([-1.0, -1.6, 1.3], [-1.0, BY, 1.2], 36), {"me": SIT(HX["me"], BY, 180, expr="neutral")}, "me close on the bench, faint rim")
+cue("L77", "glk", level=0.1)
 shot("L77", "hall", C([1.0, -1.6, 1.3], [1.0, BY, 1.25], 38), {"abe": SIT(HX["abe"], BY, 180, expr=SMILE, head=[0, -26])},
      "Grandad close, faint rim, looking up at the skeleton")
-shot("L78", "hall", C([-0.9, -1.9, 1.15], [-1.0, -3.0, 0.62], 40), {"me": SIT(HX["me"], BY, 180, expr="neutral", arms=[62, 0])},
+cue("L78", "glk", level=1.0)
+shot("L78", "hall", C([-1.3, -1.7, 1.05], [-1.0, -3.1, 0.7], 30), {"me": SIT(HX["me"], BY, 180, expr="neutral", arms=[75, 0])},
      "my hand on my knee, a faint gold rim round it")
 shot("L79", "hall", C([-1.0, -1.6, 1.3], [-1.0, BY, 1.2], 34), {"me": SIT(HX["me"], BY, 180, expr="neutral", look=[1, 0])},
      "the smile gone, eyes sliding to the side")
 cue("L79.1", "hall", level=0.08, dur=1.4)
-shot("L80", "hall", C([0.0, -0.8, 0.95], [0.0, BY, 0.62], 28), {
+shot("L80", "hall", C([0.0, -0.5, 0.95], [0.0, BY, 0.62], 24), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr="neutral")},
      "a cold hold on the bench's empty middle between us; the hall dimmer behind")
-shot("P03", "hall", C([0.0, -0.8, 0.95], [0.0, BY, 0.62], 28), {
+shot("P03", "hall", C([0.0, -0.5, 0.95], [0.0, BY, 0.62], 24), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr="neutral")}, "the loop beat")
 
 # ------------------------------------------------------------------------------------------------ sound
@@ -575,7 +598,7 @@ story = {
              "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.03], "saturation": 0.98, "contrast": 1.05,
               "vignette": 0.34, "bloom": 0.26, "grain": 0.012},
-    "phonemes": {},
+    "phonemes": {"mended": "mˈɛndɪd"},
     "glow": GLOW,
     "glow_later": ["me"],
     "glow_lights": ["abe", "planner", "groom", "bride"],
