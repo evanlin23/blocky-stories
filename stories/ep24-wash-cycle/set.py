@@ -42,9 +42,9 @@ SIT_Z = -0.045
 TB_Y0, TB_Y1, TB_Z = -2.05, -1.25, 0.9
 ST = (-40.0, 0.0)
 BLUE, ORANGE, GREEN = "#3f7fd0", "#e2742b", "#2f5d43"
-TUBE_STRENGTH = 4.0
-TUBE_W = 210.0
-EYE_GLOW = 2.4
+TUBE_STRENGTH = 3.0
+TUBE_W = 38.0
+EYE_GLOW = 3.2
 
 
 def _ss(x):
@@ -138,19 +138,19 @@ def build_room(kit, ctx, M):
     for nm, z0, z1 in (("sill", 0.0, 0.7), ("header", 2.4, CEIL)):
         B(kit, f"front {nm} out", (W + 0.2, 0.1, z1 - z0), ((XL + XR) / 2, YF - 0.15, (z0 + z1) / 2), M["tealout"])
         B(kit, f"front {nm} in", (W, 0.1, z1 - z0), ((XL + XR) / 2, YF - 0.05, (z0 + z1) / 2), M["tile"])
-    for k, x in enumerate((-5.3, -3.0, 2.2, 3.9, 5.3)):
+    for k, x in enumerate((-5.3, -3.0, -0.8, 1.6, 5.3)):
         B(kit, f"pillar{k}", (0.2, 0.3, CEIL), (x, YF - 0.1, CEIL / 2), M["steel2"])
-    B(kit, "hook panel out", (0.7, 0.1, CEIL), (-1.25, YF - 0.15, CEIL / 2), M["tealout"])
-    B(kit, "hook panel", (0.7, 0.1, CEIL), (-1.25, YF - 0.05, CEIL / 2), M["tile"])
-    for k, x in enumerate((-0.7, 0.3)):
+    B(kit, "hook panel out", (0.7, 0.1, CEIL), (3.35, YF - 0.15, CEIL / 2), M["tealout"])
+    B(kit, "hook panel", (0.7, 0.1, CEIL), (3.35, YF - 0.05, CEIL / 2), M["tile"])
+    for k, x in enumerate((3.9, 4.9)):
         B(kit, f"door frame{k}", (0.08, 0.3, CEIL), (x, YF - 0.1, CEIL / 2), M["steel"])
-    B(kit, "door push bar", (0.7, 0.05, 0.05), (-0.2, YF + 0.12, 1.0), M["steel"], rot=(0, 0, 0))
+    B(kit, "door push bar", (0.7, 0.05, 0.05), (4.4, YF + 0.12, 1.0), M["steel"])
     # coat hooks and the two coats
-    for k, x in enumerate((-1.45, -1.05)):
+    for k, x in enumerate((3.2, 3.5)):
         kit.cyl(f"hook{k}", 0.018, 0.12, (x, YF + 0.06, 1.7), M["steel"], rot=(math.pi / 2, 0, 0), n=10)
         kit.sphere(f"hookb{k}", 0.03, (x, YF + 0.12, 1.7), M["steel"])
-    ctx["coat_a"] = coat_prop(kit, "coat_a", M["coat"], (-1.45, YF + 0.16, 1.66))
-    ctx["coat_b"] = coat_prop(kit, "coat_b", M["navy"], (-1.05, YF + 0.16, 1.66))
+    ctx["coat_a"] = coat_prop(kit, "coat_a", M["coat"], (3.2, YF + 0.16, 1.66))
+    ctx["coat_b"] = coat_prop(kit, "coat_b", M["navy"], (3.5, YF + 0.16, 1.66))
     # tubes over the room (emissive bars, plus the area lights that really light it)
     for k, x in enumerate((-4.0, -1.35, 1.35, 4.0)):
         for y in (-1.5, 1.4):
@@ -160,7 +160,7 @@ def build_room(kit, ctx, M):
     for k in range(4):
         kit.LIGHTS[f"tube{k}"]["obj"].scale = (1.0, 1.5, 1.0)
     # a soft fill from the table side, so a face turned toward the table is never black
-    kit.light("table lamp", "AREA", (-1.0, -2.8, 2.2), 60.0, "#efe6d0", size=3.0)
+    kit.light("table lamp", "AREA", (-1.0, -2.8, 2.2), 9.0, "#efe6d0", size=3.0)
     kit.aim(kit.LIGHTS["table lamp"]["obj"], (0.0, 0.0, 0.8))
     # the dryers' warm glow (steady), low in front of the dryer wall
     for k, x in enumerate((-2.2, 1.2, 4.0)):
@@ -199,11 +199,24 @@ def build_seats(kit, ctx, M):
     kit.cyl("stool", 0.2, 0.05, (-3.6, -2.45, 0.46), M["steel"], n=20)
     kit.cyl("stool leg", 0.03, 0.44, (-3.6, -2.45, 0.22), M["steel2"], n=10)
     # the folding table
-    B(kit, "table top", (9.2, TB_Y1 - TB_Y0 if False else (TB_Y1 - TB_Y0), 0.06), (0, (TB_Y0 + TB_Y1) / 2, TB_Z - 0.03),
-      M["table"], bevel=0.01)
-    for sx in (-1, 1):
+    B(kit, "table top", (7.6, TB_Y1 - TB_Y0, 0.06), (-0.8, (TB_Y0 + TB_Y1) / 2, TB_Z - 0.03), M["table"], bevel=0.01)
+    for lx in (-4.5, 2.9):
         for sy in (TB_Y0 + 0.08, TB_Y1 - 0.08):
-            B(kit, f"table leg{sx}{sy}", (0.06, 0.06, TB_Z - 0.06), (sx * 4.4, sy, (TB_Z - 0.06) / 2), M["steel2"])
+            B(kit, f"table leg{lx}{sy}", (0.06, 0.06, TB_Z - 0.06), (lx, sy, (TB_Z - 0.06) / 2), M["steel2"])
+    # a plain open book on my end of the table (blank pages), and the jumper fluff on chair six
+    B(kit, "book l", (0.2, 0.26, 0.025), (-3.72, -1.6, TB_Z + 0.012), kit.plastic("#e8dfc8", 0.8, "wc page"), bevel=0.006)
+    B(kit, "book r", (0.2, 0.26, 0.025), (-3.5, -1.6, TB_Z + 0.012), kit.plastic("#e8dfc8", 0.8, "wc page"), bevel=0.006)
+    B(kit, "book cover", (0.44, 0.28, 0.012), (-3.61, -1.6, TB_Z + 0.002), kit.plastic("#4a3a52", 0.6, "wc cover"), bevel=0.006)
+    fl = kit.empty("fluff", (CHX[5], 0.0, SEAT))
+    gm = kit.plastic("#8b8d93", 0.98, "wc fluff")
+    for k, (dx, dy, sz) in enumerate(((-0.1, 0.0, 0.14), (0.05, 0.08, 0.1), (0.12, -0.06, 0.08))):
+        B(kit, f"fluff{k}", (sz, sz, sz * 0.5), (dx, dy, sz * 0.25), gm, fl, bevel=0.03, rot=(0, 0, dx * 5))
+    ctx["fluff"] = fl
+    hc = kit.empty("held coat", (0, 0, -9))
+    B(kit, "held body", (0.5, 0.1, 0.8), (0, 0, 0), kit.plastic(GREEN, 0.9, "wc coat green"), hc, bevel=0.04)
+    for sx in (-1, 1):
+        B(kit, f"held sl{sx}", (0.14, 0.12, 0.6), (sx * 0.32, 0, -0.1), kit.plastic(GREEN, 0.9, "wc coat green"), hc, bevel=0.04)
+    ctx["held"] = hc
 
 
 def build_machines(kit, ctx, M):
@@ -270,23 +283,23 @@ def build_machines(kit, ctx, M):
 
 def build_outside(kit, ctx, M):
     # the facade (to the left, with the side door and its lit stair), the sidewalk, the wet road, a street lamp
-    B(kit, "facade left", (4.2, 0.4, 3.6), (-7.5 - 0.0 - 0.0, YF - 0.2, 1.8), M["tealout"]) if False else None
-    for nm, x0, x1 in (("a", -9.8, -8.0), ("b", -7.0, -5.5)):
+    SD = 7.2
+    for nm, x0, x1 in (("a", 5.5, 6.7), ("b", 7.7, 10.2)):
         B(kit, f"facade {nm}", (x1 - x0, 0.3, 3.6), ((x0 + x1) / 2, YF - 0.2, 1.8), M["tealout"])
-    B(kit, "facade lintel", (3.0, 0.3, 1.5), (-7.5, YF - 0.2, 2.85), M["tealout"])
-    B(kit, "facade over", (XR + 5.4, 0.3, 0.8), ((XR - 5.4) / 2 + 2.7 - 0.0, YF - 0.2, 3.2), M["tealout"])
-    B(kit, "roof", (16, 3, 0.3), (-2.0, YF + 1.0, 3.7), M["tealout"])
-    B(kit, "door recess", (1.0, 0.04, 2.1), (-7.5, YF + 0.45, 1.05), M["warm2"])
+    B(kit, "facade lintel", (1.0, 0.3, 1.5), (SD, YF - 0.2, 2.85), M["tealout"])
+    B(kit, "facade left", (3.0, 0.3, 3.6), (-9.0, YF - 0.2, 1.8), M["tealout"])
+    B(kit, "roof", (22, 3, 0.3), (0.5, YF + 1.0, 3.7), M["tealout"])
+    B(kit, "door recess", (1.0, 0.04, 2.1), (SD, YF + 0.45, 1.05), M["warm2"])
     for k in range(4):
-        B(kit, f"outer step{k}", (0.9, 0.3, 0.19 * (k + 1)), (-7.5, YF + 0.0 + 0.3 * k, 0.095 * (k + 1)), M["wood"])
-    B(kit, "side door step", (1.2, 0.5, 0.08), (-7.5, YF - 0.6, 0.04), M["walk"])
-    kit.light("stair glow", "POINT", (-7.5, YF + 0.1, 1.9), 55.0, "#ffcf90", size=0.2)
-    B(kit, "sidewalk", (40, 3.6, 0.1), (-4, YF - 1.8 - 0.35, -0.05), M["walk"])
-    B(kit, "road", (60, 30, 0.1), (-4, YF - 3.6 - 15, -0.2), M["wet"])
+        B(kit, f"outer step{k}", (0.9, 0.3, 0.19 * (k + 1)), (SD, YF + 0.0 + 0.3 * k, 0.095 * (k + 1)), M["wood"])
+    B(kit, "side door step", (1.2, 0.5, 0.08), (SD, YF - 0.6, 0.04), M["walk"])
+    kit.light("stair glow", "POINT", (SD, YF + 0.1, 1.9), 55.0, "#ffcf90", size=0.2)
+    B(kit, "sidewalk", (40, 3.6, 0.1), (0, YF - 1.8 - 0.35, -0.05), M["walk"])
+    B(kit, "road", (60, 30, 0.1), (0, YF - 3.6 - 15, -0.2), M["wet"])
     # a street lamp and cold light across the street
-    B(kit, "lamp pole", (0.12, 0.12, 4.4), (3.6, -7.2, 2.2), M["steel2"])
-    B(kit, "lamp head", (0.5, 0.3, 0.12), (3.4, -7.2, 4.45), M["lamp"])
-    kit.light("street", "POINT", (3.2, -7.2, 4.2), 380.0, "#9db4ff", size=0.3)
+    B(kit, "lamp pole", (0.12, 0.12, 4.4), (-3.6, -7.2, 2.2), M["steel2"])
+    B(kit, "lamp head", (0.5, 0.3, 0.12), (-3.4, -7.2, 4.45), M["lamp"])
+    kit.light("street", "POINT", (-3.2, -7.2, 4.2), 380.0, "#9db4ff", size=0.3)
     # far windows across the street (a blur of cold light from inside the shop)
     for k, (x, z, w) in enumerate(((-9, 3.2, 0.9), (-5, 2.2, 0.7), (1, 3.6, 1.1), (6, 2.6, 0.8), (10, 3.0, 0.9))):
         B(kit, f"far win{k}", (w, 0.05, w * 1.3), (x, -16.0, z), M["lamp"] if k % 2 else M["warm2"])
@@ -343,8 +356,8 @@ def build(kit, story, tl):
     build_props(kit, ctx, M)
     # the Turned's own light (placed by animate on whichever chair it's in): a cool rim from the dryer glass, behind
     # its head, and a low warm key from the table side, below
-    kit.light("t rim", "AREA", (0, 2.2, 1.6), 40.0, "#9fc4ff", size=0.6)
-    kit.light("t key", "AREA", (0, -1.2, 0.35), 22.0, "#d79a52", size=0.6)
+    kit.light("t rim", "AREA", (0, 2.2, 1.6), 110.0, "#9fc4ff", size=0.6)
+    kit.light("t key", "AREA", (0, -1.2, 0.35), 150.0, "#d79a52", size=0.5)
     return ctx
 
 
@@ -405,6 +418,7 @@ def dress(kit, ctx, story):
         nt.links.new(bw.outputs["Val"], ramp.inputs["Fac"])
         nt.links.new(ramp.outputs["Color"], bsdf.inputs["Emission Color"])
         bsdf.inputs["Emission Strength"].default_value = EYE_GLOW
+        bpy.data.objects["turned.head"].scale = (1.0, 1.0, 1.24)
     if "me" in cast:
         tor = bpy.data.objects["me.torso"]
         g = kit.plastic(cast["me"]["shirt"], 0.9)
@@ -503,11 +517,12 @@ def animate(kit, story, tl, t, ctx):
     for k, (e, still) in enumerate(ctx["wash"]):
         e.rotation_euler = (0 if still else ang * 1.7 + k, 0, 0)
     # the end dryer: its coat, its door, its glow
-    d7 = _switch(_cues(tl, "d7glow"), "on", t, True)
+    d7 = float(_ramp(_cues(tl, "d7glow"), t, 1.0))
     for n in ctx["d7_glass_mat"].node_tree.nodes:
         if n.type == "EMISSION":
-            n.inputs["Strength"].default_value = 1.7 if d7 else 0.05
-    kit.LIGHTS["d7 inner"]["light"].energy = kit.LIGHTS["d7 inner"]["base"] * (1.0 if d7 else 0.0)
+            n.inputs["Strength"].default_value = 0.05 + 1.65 * d7
+    over["d7 inner"] = d7
+    ctx["d7_coat"].rotation_euler = (0, ang * 0.7, 0)
     op = _ramp([{"t": c["t"], "to": float(c.get("open", 0.0)), "dur": c.get("dur", 0.5)} for c in _cues(tl, "d7door")], t, 0.0)
     ctx["d7_hinge"].rotation_euler = (0, 0, -math.radians(100) * op)
     coat7 = _switch(_cues(tl, "coat7"), "on", t, False)
@@ -527,12 +542,22 @@ def animate(kit, story, tl, t, ctx):
     # the wash I carry, and the towels on the table
     sk = _switch(_cues(tl, "stack"), "on", t, False)
     if sk:
-        s = AC.state(tl, "me", t)
+        s = AC.state(tl, "me0", t)
         fx, fy = math.sin(s["yaw"]), -math.cos(s["yaw"])
         ctx["stack"].location = (s["x"] + fx * 0.58, s["y"] + fy * 0.58, s["z"] + 1.0 + s["bob"])
         ctx["stack"].rotation_euler = (0, 0, s["yaw"])
     else:
         ctx["stack"].location = (0, 0, -9)
+    hd = _switch(_cues(tl, "held"), "on", t, False)
+    if hd:
+        s = AC.state(tl, "me0", t)
+        fx, fy = math.sin(s["yaw"]), -math.cos(s["yaw"])
+        ctx["held"].location = (s["x"] + fx * 0.5, s["y"] + fy * 0.5, s["z"] + 1.25)
+        ctx["held"].rotation_euler = (0, 0, s["yaw"])
+    else:
+        ctx["held"].location = (0, 0, -9)
+    fo = _switch(_cues(tl, "fluff"), "on", t, False)
+    ctx["fluff"].location = (CHX[5], 0.0, SEAT if fo else -9)
     ts = _switch(_cues(tl, "tstack"), "on", t, False)
     if ts:
         p = _switch(_cues(tl, "tstack"), "pos", t, [-3.2, -1.65])
