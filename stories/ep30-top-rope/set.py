@@ -254,7 +254,7 @@ def build(kit, story, tl):
     kit.light("winB", "AREA", (0.0, -12.0, 7.0), 260.0, "#6a90d8", size=9.0)
     kit.aim(kit.LIGHTS["winB"]["obj"], (0.0, 0.0, 5.0))
     # the creature's key (from below) and its blue rim, placed each frame
-    kit.light("ckey", "SPOT", (0, 0, 0), 0.0, "#ffd0a0", size=0.2, spot=38, blend=0.6)
+    kit.light("ckey", "SPOT", (0, 0, 0), 0.0, "#ffd0a0", size=0.2, spot=60, blend=0.7)
     kit.light("crim", "SPOT", (0, 0, 0), 0.0, "#7ea6ff", size=0.2, spot=38, blend=0.6)
     kit.light("cfill", "POINT", (0, 0, 0), 0.0, "#9fb4ff", size=0.3, shadow=False)
     kit.light("hall", "AREA", (0.0, -9.0, 5.5), 900.0, "#ffd9b0", size=10.0)
@@ -280,7 +280,7 @@ def build(kit, story, tl):
         pb.inputs["Emission Strength"].default_value = 0.12
     black = kit.plastic("#141414", 0.6)
     kit.box("head.harness", (2.12, 1.12, 0.42), (0, 0, 0.32), black, c.torso, bevel=0.05)
-    ctx["knot"] = kit.box("head.knot", (0.3, 0.3, 0.3), (-0.9, -0.62, 0.32), kit.plastic("#d4cae4", 0.9), c.torso, bevel=0.06)
+    ctx["knot"] = kit.box("head.knot", (0.5, 0.45, 0.45), (-0.9, -0.62, 0.32), kit.plastic("#d4cae4", 0.9), c.torso, bevel=0.06)
     return ctx
 
 
@@ -369,12 +369,16 @@ def animate(kit, story, tl, t, ctx):
     hip_me = V((me["x"] - 0.4, me["y"], me["z"] + 0.78))
     pts = []
     hs = ctx.get("head_state")
+    kpos = None
+    if hs:
+        bpy.context.view_layer.update()
+        kpos = ctx["knot"].matrix_world.translation.copy()
     if mode in ("me", "creature"):
         pts = [hip_me, ring, roof]
         if mode == "creature" and hs:
             pose = _last(_cues(tl, "head"), t)["pose"]
             hx, hy = POSES[pose]["pos"]
-            pts += [V((hx - 0.15, hy + 0.1, ROOF_Z - 0.35)), V((hx - 0.2, hy, ROOF_Z - 0.95))]
+            pts += [V((kpos.x, kpos.y, ROOF_Z - 0.35)), kpos]
     elif mode == "sam":
         sm = acting.state(tl, "sam", t)
         hip_sam = V((sm["x"], sm["y"] + 0.15, sm["z"] + 0.8))
@@ -421,7 +425,7 @@ def animate(kit, story, tl, t, ctx):
             hx, hy, hyaw = hs
             head_c = V((hx, hy, ROOF_Z - 1.55))
             if nm == "ckey":
-                spec = [[hx - 0.9, hy - 1.4, 6.9], [hx, hy, ROOF_Z - 1.6], 150.0]
+                spec = [[hx - 0.9, hy - 1.4, 6.9], [hx, hy, ROOF_Z - 1.2], 150.0]
             else:
                 spec = [[hx + 1.2, hy + 0.8, ROOF_Z - 1.4], [hx, hy, ROOF_Z - 1.5], 110.0]
         if nm == "cfill" and hs and "cfill" in look:
