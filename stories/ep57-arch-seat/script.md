@@ -3,7 +3,7 @@
 **Slug:** `ep57-arch-seat` (batch 4 replacement for killed ep44 `sleeper-car`)
 
 ## Premise
-In this town every favour you owe sits on your head as a small gold block. It lands the moment you say thanks and drops off when you do a favour back. My head has always been bare, because I never say thanks. My cousin Ilan has the tallest stack in town, and this summer people whisper that he owes everyone and never pays it back. Every Saturday since we were fifteen we ate lunch in the arch seat, a stone seat cut into the old clock arch on the square, room for two. This summer I stopped going. Each Saturday his stack is taller, and on my empty half of the seat sits a shadow with two heads, then the thing itself.
+In this town every favour you owe sits on your head as a small gold block. It lands the moment you say thanks and drops off when you do a favour back. My head has always been bare, because I never say thanks. My cousin Ilan has the tallest stack in town, and this summer people whisper that he owes everyone and never pays it back. Every Saturday since we were fifteen we ate lunch in the arch seat, a stone seat cut into the old clock arch on the square, room for two. This summer I stopped going. Each Saturday his stack is taller, and on my empty half of the seat lies a shadow with shoulders as wide as the arch, then the thing itself, a person built exactly as wide as the seat.
 
 ## Rule
 A favour lands as a block on the head of whoever says thanks for it (L02, L03), and it drops when a favour is done back (L04). One favour is one block (L55). I'm the exception: I never say thanks, so I've never carried one (L10, L11).
@@ -36,26 +36,26 @@ One small hill town, high summer, four Saturdays.
 - Blocks are lit by the scene, never glowing. No light change when they land.
 - My head is bare until L59. The creature has no blocks, ever.
 
-## The creature: the Two-Head (never named on screen)
+## The creature: the Span (never named on screen)
 - One model, built once in `set.py`, posed per shot. An ordinary-sized adult R6 body in a faded rose knitted jumper (`#c98d8f`) and cream trousers and shoes (`#e8dcc4`). Skin a warm clay tone (`#c9a07e`), never grey or pale.
-- Wrong in one dimension, **the count of heads:** on its shoulders, two whole rounded-cylinder heads side by side, touching, each the normal size of a head, so together they're as wide as the shoulders. No hair on either. **The silhouette is the scare:** one body, two heads, readable in a backlit outline at phone size. Test still first (RULES → Test still first): a backlit silhouette against the rainy arch at phone size, then the lit reveal, before anything else is built.
-- Faces (our own, in `faces.py`): both heads wear the same face exactly, mirrored by nothing: two wide round black eyes with one pin highlight each (the brightest thing on it), no brows, a small closed straight mouth. Both faces always look at the same point (Ilan). Expression never changes.
+- Wrong in one dimension, **width:** an ordinary-height adult with ONE ordinary head, centred, but its shoulders are a whole seat apart. Its torso is stretched sideways to 1.6 m, exactly the inside width of the arch seat, so seated it fills both halves wall to wall, and its arms hang from the far ends. Depth, height, head, hands and legs stay ordinary (its two legs sit at the far ends of the torso, under each half of the seat). **The silhouette is the scare:** a small normal head on a body as wide as the arch, readable in a backlit outline at phone size. Test still first (RULES → Test still first): the backlit outline filling the rainy arch at phone size, then the lit reveal, before anything else is built. It is not squat and not huge: its head sits at the same height as Ilan's, which is what makes the width wrong.
+- Face (our own, in `faces.py`): two wide round black eyes with one pin highlight each (the brightest thing on it), no brows, a small closed straight mouth. The face always looks at Ilan. Expression never changes.
 - Arms straight at its sides, hands open. Never seen moving, only nearer. Never touches anyone. No blocks on either head.
-- Light: front fill dead on it. Key low from the side (light off the wet cobbles), a cool rim from the bright square behind the arch so its two-headed outline reads first.
+- Light: front fill dead on it. Key low from the side (light off the wet cobbles), a cool rim from the bright square behind the arch so its too-wide outline reads first.
 
 **Continuity by beat**
 | Beat | Lines | Where it is |
 |---|---|---|
-| Saturday 1 | L22 to L24 | Not seen. Only its shadow, lying across the cobbles below my empty half of the seat: one body, two round heads, cast by nothing. |
-| Saturday 2 | L33 | Not seen. Its shadow on the arch's back wall, as if sitting upright in my half. Ilan gone, his cap and bun bag on his half. |
-| Saturday 3, sitting | L41 to L45 | In my half of the arch seat, sitting upright beside bowed Ilan, both heads turned to him. |
-| Saturday 3, standing | L46 to L47 | Standing in front of Ilan, one step nearer, both heads bent down toward his, a hand's width from his face. No contact. |
+| Saturday 1 | L22 to L24 | Not seen. Only its shadow, lying across the cobbles below the seat: one small round head on shoulders as wide as the arch, cast by nothing. |
+| Saturday 2 | L33 | Not seen. Its shadow on the arch's back wall, sitting upright, filling both halves of the empty seat. Ilan gone, his cap and bun bag on the seat. |
+| Saturday 3, sitting | L41 to L45 | Sitting upright in my half, its torso running behind bowed Ilan along the back wall to the far end of the seat, so it fills the whole arch. Its far shoulder is a hand above Ilan's back, never touching. Head turned to him. |
+| Saturday 3, standing | L46 to L47 | Standing in front of the seat, one step nearer, blocking the whole arch mouth wall to wall, its one head bent down toward his, a hand's width from his face. No contact. |
 | Gone | L57 | The moment I sit in my half, it's gone. Shown as the empty arch wall beside me and the rain. Not seen again. |
 
 ## Look
 - **Palette:** cobble honey `#c9a26b`, arch stone `#a89880`, block gold `#e9b23a`, bakery mint `#9fd8c0` and cream `#f3ead6`, café terracotta `#c96f4a`, Ilan's sky blue `#7fb7e6`, his red cap `#d0473c`, my mustard `#d9a627`, my green `#3f5e3a`, creature rose `#c98d8f` and cream `#e8dcc4`, rain grey `#7d8590`, summer sky `#9fcaf0`.
 - **Caption key colour:** lavender violet `#b48cff` (lime, red, brass gold, rope teal, seed green, cerulean, sunrise coral and pink, greasepaint rose and clover pink are taken).
-- **Music:** G Lydian, 104 bpm in 4/4, light and bouncy at first: a plucked synth and a soft marimba-like tone (synthesized in `sound.py`, our own melody, no music box). The block "click" sits on the beat where it can. At L22 (the shadow) the pluck thins out. At L31 (the empty seat) a heavy low drone on D enters and holds to L65. Drops of 0.6 s before L23 ("There was a shadow on them"), before L43 ("two heads, side by SIDE") and 0.5 s before L48 (Ilan mumbles). From L59 the clicks become the rhythm, and from L64 the pluck comes back over the drone. The drone thins under L70 to L72 but does not resolve: it ends on a low held note, cold.
+- **Music:** G Lydian, 104 bpm in 4/4, light and bouncy at first: a plucked synth and a soft marimba-like tone (synthesized in `sound.py`, our own melody, no music box). The block "click" sits on the beat where it can. At L22 (the shadow) the pluck thins out. At L31 (the empty seat) a heavy low drone on D enters and holds to L65. Drops of 0.6 s before L23 ("There was a shadow on them"), before L43 ("as wide as the whole SEAT") and 0.5 s before L48 (Ilan mumbles). From L59 the clicks become the rhythm, and from L64 the pluck comes back over the drone. The drone thins under L70 to L72 but does not resolve: it ends on a low held note, cold.
 - **Sound:** cobble footsteps, a fountain trickle, a bakery door bell (a synthesized two-tone chime, -18 dB), the block click (a short wooden-metal tick), steady soft rain on Saturday 3, a phone buzz (synthesized), and a low dull "clonk" for stacks meeting under the arch (L68). No samples.
 - **Light changes (flash-safe, `look.flash_safe: true`):** there are no lamp switches or blackouts in this story. Saturday 2's afternoon goes to dusk over a 2 s grade ramp (L36 to L37). Rain light on Saturday 3 is a fixed grade. The rain stopping (L66) is a 3 s grade ramp back to low sun. Block landings change no light. Every grade change is a ramp of at least 0.3 s (most 2 s or more), never flicker. Pre-check S01 to S10 and S70 to S88 with `python -m blocky flash`.
 
@@ -66,7 +66,7 @@ One small hill town, high summer, four Saturdays.
 - **Narrator the exception:** L09 to L11, my bare head in the bright square.
 - **Loved one at stake:** Ilan, my adult cousin, bowed lower each Saturday under a stack people whisper about (L12 to L20, L30, L39, L40).
 - **15 to 30 s:** the rule at work, nobody explaining it: L15 to L20, his stack taller than the awnings, swaying, people stepping round him.
-- **Scare and creature timing:** the first scare is the two-headed shadow at about 46 s (L22 to L24). Ilan gone, his cap left behind, at about 60 s (L31 to L36): he's away for an ordinary reason (doing favours back all day) and back at dusk. The creature is shown clearly from about 81 s (L41 to L47), about 58% in, then close and lit. It never chases, never touches.
+- **Scare and creature timing:** the first scare is the too-wide shadow at about 46 s (L22 to L24). Ilan gone, his cap left behind, at about 60 s (L31 to L36): he's away for an ordinary reason (doing favours back all day) and back at dusk. The creature is shown clearly from about 81 s (L41 to L47), about 58% in, then close and lit. It never chases, never touches.
 - **Loophole (rule logic, never new magic):** a block lands on whoever says thanks, and one favour is one block (L54 to L55, set up at L02 to L04). When I say thanks for my own favours, each block has to leave Ilan's head and land on mine (L59 to L63).
 - **Warmth (loyalty, shown):** I sit back in my half beside him in front of the whole square (L56), take his load as mine (L59 to L65), and I'm there every Saturday since (L67), our stacks clonking under the arch (L68).
 - **Ending shape:** a weight handed over in public. The town watches the blocks arc from his head to mine, then a later bright Saturday with two ordinary stacks clonking under the arch, then a cold hold on the empty seat.
@@ -74,9 +74,9 @@ One small hill town, high summer, four Saturdays.
 - **Cuts:** 88 shots over about 141 s, about 1.6 s a shot. No shot is held over 2.3 s except S17 (lore plant, 1.8 s) and S88 (the last line).
 
 ## Lore plant (lore.md → Open threads → Third parallel batch)
-A plain tally: **two faded-rose strokes scratched into the stone lip of the arch seat**, between its two worn hollows, two for a seat built for two, in the Two-Head's colour. No extra stroke, no open thread touched. Seen once in S17, under L14 ("Room for TWO."), a low close on the empty seat, held 1.8 s, not narrated. Nobody names the Makers, Keepers or Bench.
+A plain tally: **two faded-rose strokes scratched into the stone lip of the arch seat**, between its two worn hollows, two for a seat built for two, in the Span's colour. No extra stroke, no open thread touched. Seen once in S17, under L14 ("Room for TWO."), a low close on the empty seat, held 1.8 s, not narrated. Nobody names the Makers, Keepers or Bench.
 
-The Two-Head is the arch seat's Keeper. When I stopped coming, my half stood empty, so it sat in it to keep the count at two. It's gone the moment I sit down in my half. It carries no blocks, never touches Ilan, and isn't the one taking his thanks: the blocks are only the town's rule.
+The Span is the arch seat's Keeper. When I stopped coming, my half stood empty, so it sat in it to keep the count at two. Built as wide as the seat, it fills the whole thing whenever any of it is empty. It's gone the moment I sit down in my half. It carries no blocks, never touches Ilan, and isn't the one taking his thanks: the blocks are only the town's rule.
 
 ## Shot plan (88 shots)
 | Shot | Line | Picture |
@@ -107,8 +107,8 @@ The Two-Head is the arch seat's Keeper. When I stopped coming, my half stood emp
 | S24 | L20 | Townsfolk parting round him, giving him space. |
 | S25 | L21 | Me passing the arch mouth, eyes forward. |
 | S26 | L22 | My eyes slide down to the cobbles (thin pluck). |
-| S27 | L23 | Low wide: under my empty half of the seat, a long shadow on the cobbles: one body, two round heads. Music drop before. |
-| S28 | L23 | Closer on the shadow's two heads. |
+| S27 | L23 | Low wide: on the cobbles below the seat, a long shadow: one small round head on shoulders as wide as the arch. Music drop before. |
+| S28 | L23 | Tilt along the shadow's shoulders, wall to wall, the head tiny in the middle. |
 | S29 | L24 | Reverse: the seat above it, my half empty, Ilan bowed in his. Nothing there to cast it. |
 | S30 | L25 | Me walking away fast through the bright square. |
 | S31 | L26 | Bakery counter: Mrs Varga handing me a loaf, waving off my coin. |
@@ -120,7 +120,7 @@ The Two-Head is the arch seat's Keeper. When I stopped coming, my half stood emp
 | S37 | L30 | Me frowning at it from across the square. |
 | S38 | L31 | The arch seat: empty. Low drone enters. |
 | S39 | L32 | Insert: his red cap on his half of the seat, a paper bun bag beside it. |
-| S40 | L33 | On the back wall of the arch, a shadow sitting upright in my half. One body, two heads. |
+| S40 | L33 | On the back wall of the arch, a shadow sitting upright, filling both halves of the seat. |
 | S41 | L34 | Me at the café tables, looking. |
 | S42 | L34 | Me at the fountain, looking. |
 | S43 | L35 | Insert: his phone on the stone beside the cap, buzzing. |
@@ -132,13 +132,13 @@ The Two-Head is the arch seat's Keeper. When I stopped coming, my half stood emp
 | S49 | L41 | Wider: beside him, in my half, a shape sitting up straight, backlit by the rainy square. |
 | S50 | L41 | Me stopping in a puddle, the arch ahead. |
 | S51 | L42 | Closer, side-lit: the rose jumper, cream trousers, hands open on its knees. |
-| S52 | L43 | The reveal (test still first): the Two-Head lit from the side and below, rim on its outline, both heads clear. Music drop before. |
-| S53 | L44 | Both faces, side by side, the same face twice, eyes on Ilan. |
+| S52 | L43 | The reveal (test still first): the Span lit from the side and below, rim on its outline, its shoulders wall to wall across the arch, its one head small in the middle. Music drop before. |
+| S53 | L44 | Its ordinary face, eyes on Ilan, its shoulder running on behind him out of frame. |
 | S54 | L44 | Ilan, bowed, not seeing it. |
-| S55 | L45 | Low angle up: its two bare heads against the dark arch roof, no blocks. |
+| S55 | L45 | Low angle up: its bare head against the dark arch roof, no blocks. |
 | S56 | L46 | Me blinking (eyes closed, open). |
 | S57 | L46 | It's standing in front of Ilan now, one step nearer. |
-| S58 | L47 | Close: both heads bent down to his, a hand's width from his face. |
+| S58 | L47 | Close: its head bent down to his, a hand's width from his face, its shoulders filling the arch behind. |
 | S59 | L47 | Over its shoulders onto Ilan's tired face. No contact. |
 | S60 | L48 | Close on Ilan's mouth by his collar, mumbling. Music drop before. |
 | S61 | L49 | Insert: a flash-back still of S32, the bakery queue, his "thanks" (soft edges, 0.5 s dissolve in). |
@@ -148,7 +148,7 @@ The Two-Head is the arch seat's Keeper. When I stopped coming, my half stood emp
 | S65 | L53 | Pan up Ilan's stack, block by block, to the arch roof. |
 | S66 | L54 | Insert: a block over a head, the click (a rerun of S04, regraded for rain). |
 | S67 | L55 | Me looking from his stack to my bare head reflected in a puddle. |
-| S68 | L56 | Wide: I walk into the arch past the Two-Head's side (a clear metre) and sit in my half. |
+| S68 | L56 | Wide: I walk into the arch mouth where it stood and sit in my half. No contact, it's simply no longer there as I reach it. |
 | S69 | L57 | The arch wall beside me: empty, only rain beyond. |
 | S70 | L58 | I stand up on the seat, facing the square. |
 | S71 | L59 | Toward the bakery: Mrs Varga at her door. A block lifts off Ilan's stack and arcs onto my head. |
@@ -170,7 +170,7 @@ The Two-Head is the arch seat's Keeper. When I stopped coming, my half stood emp
 | S87 | L72 | The cobbles under my half: no shadow. Drone holds low. |
 | S88 | L72 | Hold on the empty seat, then cut back to S01. Leave 0.25 s after the last word. |
 
-## Narration (72 lines, 636 words, about 2:12 of speech at 290 wpm, about 2:21 with gaps)
+## Narration (72 lines, 637 words, about 2:12 of speech at 290 wpm, about 2:21 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words. Ilan speaks only in reported speech (L37, L49, L50, L64).
 
 L01. In this town, every favour you owe sits on your head as a gold BLOCK.
@@ -195,7 +195,7 @@ L19. It swayed when he walked. He couldn't look UP.
 L20. People stepped round him like a PUDDLE.
 L21. I walked past the arch without LOOKING.
 L22. But I saw the cobbles under the empty half of the SEAT.
-L23. There was a shadow on them. One body. TWO heads.
+L23. There was a shadow on them, with shoulders as wide as the ARCH.
 L24. And nobody there to cast IT.
 L25. My summer was going weirdly WELL.
 L26. Mrs Varga started giving me my bread for NOTHING.
@@ -215,11 +215,11 @@ L39. The third Saturday it rained. The square was nearly EMPTY.
 L40. Ilan was in the arch seat, bent almost DOUBLE.
 L41. And in my half, something sat up STRAIGHT.
 L42. It was built like us. Rose jumper. Cream TROUSERS.
-L43. But on its shoulders sat two heads, side by SIDE.
-L44. The same face, twice. Both of them looking at HIM.
-L45. And neither head had a single block on IT.
+L43. But its shoulders were as wide as the whole SEAT.
+L44. One ordinary head, right in the middle, looking at HIM.
+L45. And there wasn't a single block on IT.
 L46. I blinked, and it was standing over him, one step CLOSER.
-L47. Both heads bent down to his, until they nearly TOUCHED.
+L47. It bent its head down to his, until they nearly TOUCHED.
 L48. Then Ilan mumbled into his COLLAR.
 L49. He said, "Thanks for his bread, Mrs VARGA."
 L50. "Thanks for fixing his bike, Mr ODE."
@@ -229,7 +229,7 @@ L53. Every block on his head was MINE.
 L54. And a block lands on whoever says THANKS.
 L55. One favour, one block. It can't sit on two HEADS.
 L56. So I walked into the arch and sat in my HALF.
-L57. The thing with two heads was GONE.
+L57. The wide thing was GONE.
 L58. Then I stood on the seat and told the whole SQUARE.
 L59. "Thanks for the bread, Mrs VARGA." A block lifted off his stack onto MINE.
 L60. "Thanks for the bike, Mr ODE." CLICK.
