@@ -43,9 +43,9 @@ def materials(kit):
     M["tar"] = kit.plastic("#2a2624", 0.85, name="tar")
     M["white"] = kit.plastic("#bfb9ab", 0.95, name="whitewash")
     M["sailw"] = kit.plastic("#e4dfd2", 0.7, name="sail_white")
-    M["flour"] = kit.plastic("#bab5a7", 0.95, name="flour_floor")
+    M["flour"] = kit.plastic("#cdc8ba", 0.95, name="flour_floor")
     M["flour_pl"] = kit.plastic("#cfcabc", 0.95, name="flour_plain")
-    M["clean"] = kit.plastic("#5a4c40", 0.9, name="clean_patch")
+    M["clean"] = kit.plastic("#2c2724", 0.9, name="clean_patch")
     M["oak"] = kit.planks("#7a5a3c", "#5a4029", scale=2.0, axis="Z", name="oak")
     M["oakh"] = kit.planks("#6e5036", "#4e3722", scale=2.0, axis="X", name="oak_h")
     M["oak_dk"] = kit.plastic("#4a3524", 0.8, name="oak_dk")
@@ -172,7 +172,7 @@ def build_street(kit, M, ctx):
 
 def build_marsh(kit, M, ctx):
     plane("marsh", (900, 900), (0, 0, -0.03), M["marsh"])
-    box("track", (3.0, 80, 0.06), (MX, 60, 0.04), M["track"])
+    box("track", (3.0, 66, 0.06), (MX, 54, 0.04), M["track"])
     box("trackb", (14, 30, 0.05), (MX, 22, 0.03), M["track"])
     for sx in (-1, 1):
         box("dyke", (3.2, 100, 0.03), (MX + sx * 6.5, 60, 0.0), M["water"])
@@ -505,21 +505,22 @@ LOOKS = {
     "aft": ("#b4cce0", 0.85, 30, 120, "#ffe2b0", 2.6, "#c8d2d8", 0.0035, {}),
     "grey": ("#b4bcc4", 0.9, 38, 160, "#e8eaee", 1.4, "#b9bfc0", 0.0060, {}),
     "dusk": ("#9a8aae", 0.85, 6, 250, "#ff9a58", 2.6, "#8a7a8c", 0.0070, {}),
-    "indark": ("#707880", 0.55, 8, 250, "#a0a8b8", 0.4, "#6c747c", 0.0100, {}),
-    "night": ("#16203e", 0.4, 40, 220, "#8aa0ff", 1.2, "#1e2844", 0.0100, {}),
-    "fog": ("#222c46", 0.45, 40, 220, "#8aa0ff", 0.9, "#2a3652", 0.0300, {}),
+    "indark": ("#8a92a0", 0.9, 8, 250, "#a0a8b8", 1.0, "#6c747c", 0.0100, {}),
+    "night": ("#1c284c", 0.6, 40, 220, "#8aa0ff", 1.4, "#1e2844", 0.0100, {}),
+    "fog": ("#26324e", 0.6, 40, 220, "#8aa0ff", 1.1, "#2a3652", 0.0300, {}),
     "dawn2": ("#e4c8b4", 0.8, 10, 110, "#ffc088", 1.8, "#e0cdbb", 0.0050, {}),
     "noon": ("#aecbe2", 0.9, 56, 170, "#fff2dc", 2.8, "#c8d6e0", 0.0030, {}),
 }
 
 # interior lights by place and mood: watts for mill_fill, mill_door (daylight through the door window), stove, moon, moon2
 MILL = {
-    "in_day": dict(mill_fill=70, mill_door=900, stove=18, moon=0, moon2=0),
+    "in_day": dict(mill_fill=120, mill_door=900, stove=18, moon=0, moon2=0),
     "in_mem": dict(mill_fill=70, mill_door=900, stove=18, moon=0, moon2=0),
     "in_dim": dict(mill_fill=14, mill_door=140, stove=14, moon=0, moon2=0),
     "in_dark": dict(mill_fill=18, mill_door=260, stove=16, moon=0, moon2=0),
-    "in_night": dict(mill_fill=7, mill_door=0, stove=16, moon=1.0, moon2=1.0),
-    "in_dawn": dict(mill_fill=130, mill_door=500, stove=16, moon=0, moon2=0),
+    "in_night": dict(mill_fill=9, mill_door=0, stove=16, moon=1.0, moon2=1.0),
+    "in_enter": dict(mill_fill=45, mill_door=0, stove=20, moon=1.0, moon2=1.0),
+    "in_dawn": dict(mill_fill=180, mill_door=500, stove=16, moon=0, moon2=0),
     "out": dict(mill_fill=0, mill_door=0, stove=0, moon=0, moon2=0),
 }
 
@@ -554,8 +555,10 @@ def look_of(sid, n):
         return "fog", "in_night"
     if 35 <= n <= 50:
         return "fog", "in_night"
-    if n in (51, 52):
-        return "fog", "in_night"
+    if n == 51:
+        return "fog", "in_enter"
+    if n == 52:
+        return "fog", "in_enter"
     if n in (53, 54, 55, 56, 57, 58):
         return "dawn2", "in_dawn"
     if n >= 59 and n <= 61:
@@ -701,7 +704,7 @@ def animate(kit, story, tl, t, ctx):
     over["mill_fill"] = ml["mill_fill"]
     over["mill_door"] = ml["mill_door"]
     over["stove"] = ml["stove"] if mood != "out" else 0.0
-    moon_v = track(_cues(tl, "moon"), t, start=1.0 if mood == "in_night" and sid not in ("S45",) else 0.15)
+    moon_v = track(_cues(tl, "moon"), t, start=1.0 if mood == "in_night" and sid not in ("S45",) else 0.3)
     if sid == "TEST":
         moon_v = 1.0
     if mood != "in_night":
@@ -720,16 +723,16 @@ def animate(kit, story, tl, t, ctx):
     over["torch"] = 900.0 if n in (29, 30, 31, 32) else 0.0
     # night-time rim for the creature: a cool light behind it, from the door side
     if n in (36, 37, 38, 39, 40, 41, 42) or sid in ("TEST", "S61", "S62"):
-        over["rim"] = 200.0
+        over["rim"] = 90.0
         over["stove"] = 70.0
-        over["lkey"] = 420.0
-        over["lfill"] = 60.0
+        over["lkey"] = 480.0
+        over["lfill"] = 90.0
     # ---- spill of light on the marsh from an open door at night
     ctx["spill"].hide_render = not (sid in ("S20", "S20b", "S59"))
     ctx["doorglow"].hide_render = not (sid in ("S11", "S20", "S20b", "S59", "S74"))
     over["spilll"] = 160.0 if sid in ("S20", "S20b", "S59") else 0.0
     over["shoplamp"] = 90.0 if sid in ("S11", "S74", "S58") else 0.0
-    over["mface"] = 260.0 if sid in ("S46", "S53", "S56", "S60", "S61", "S62", "S63", "S64") else 0.0
+    over["mface"] = 500.0 if sid in ("S46", "S53", "S56", "S60", "S61", "S62", "S63", "S64") else 0.0
     # ---- doors
     dcues = _cues(tl, "door")
     for did, (piv, ang) in ctx["doors"].items():
@@ -824,7 +827,7 @@ def animate(kit, story, tl, t, ctx):
         v = track(gl, t, "who", who, 0.0)
         for k in ("Emission Strength",):
             if k in b.inputs:
-                b.inputs[k].default_value = 2.6 * v
+                b.inputs[k].default_value = 1.5 * v
         if v > 0.01 and not st["hidden"] and (best is None or v > best[1]):
             best = (who, v, g)
     if best:
@@ -832,7 +835,7 @@ def animate(kit, story, tl, t, ctx):
         wp = best[2].matrix_world.translation
         # the glow light sits just in front of the key (toward the camera side, -y of the wearer)
         kit.LIGHTS["keyglow"]["obj"].location = (wp.x, wp.y - 0.35, wp.z + 0.25)
-        over["keyglow"] = 24.0 * best[1]
+        over["keyglow"] = 11.0 * best[1]
     else:
         over["keyglow"] = 0.0
     # ---- the Lifter: the raised arms stay upright whatever the bend, and the bend at the waist is a cue
