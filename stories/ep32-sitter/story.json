@@ -55,7 +55,6 @@
   "S53",
   "S54",
   "S55",
-  "S57",
   "S58",
   "S60"
  ],
@@ -580,6 +579,28 @@
    ]
   },
   {
+   "id": "L12b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The guide",
+     "The guide"
+    ],
+    [
+     "lines you DRAW",
+     "lines you draw"
+    ],
+    [
+     "before you draw",
+     "before you draw"
+    ],
+    [
+     "ANYTHING.",
+     "anything."
+    ]
+   ]
+  },
+  {
    "id": "P12",
    "pause": 0.5,
    "chunks": []
@@ -1022,8 +1043,8 @@
      "to her,"
     ],
     [
-     "one pine knee",
-     "one pine knee"
+     "one wooden knee",
+     "one wooden knee"
     ],
     [
      "by her PALETTE.",
@@ -1163,8 +1184,12 @@
      "And when"
     ],
     [
-     "they STEADIED,",
-     "they steadied,"
+     "I looked UP",
+     "I looked up"
+    ],
+    [
+     "from my PALETTE,",
+     "from my palette,"
     ],
     [
      "it was sitting",
@@ -1181,8 +1206,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "One pine KNEE",
-     "One pine knee"
+     "One wooden KNEE",
+     "One wooden knee"
     ],
     [
      "against my",
@@ -1199,42 +1224,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Its head",
-     "Its head"
+     "It was",
+     "It was"
     ],
     [
-     "had turned",
-     "had turned"
+     "leaning IN",
+     "leaning in"
     ],
     [
-     "ALL the",
-     "all the"
+     "to my CANVAS,",
+     "to my canvas,"
     ],
     [
-     "way ROUND,",
-     "way round,"
-    ]
-   ]
-  },
-  {
-   "id": "L44",
-   "who": "narrator",
-   "chunks": [
-    [
-     "so its",
-     "so its"
-    ],
-    [
-     "half-drawn FACE",
-     "half-drawn face"
-    ],
-    [
-     "was an inch",
-     "was an inch"
-    ],
-    [
-     "from my CANVAS.",
-     "from my canvas."
+     "like a MIRROR.",
+     "like a mirror."
     ]
    ]
   },
@@ -1435,50 +1438,6 @@
    ]
   },
   {
-   "id": "L56",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Eight EASELS",
-     "Eight easels"
-    ],
-    [
-     "and a STOOL.",
-     "and a stool."
-    ],
-    [
-     "A class",
-     "A class"
-    ],
-    [
-     "of NINE.",
-     "of nine."
-    ]
-   ]
-  },
-  {
-   "id": "L57",
-   "who": "narrator",
-   "chunks": [
-    [
-     "It was",
-     "It was"
-    ],
-    [
-     "sitting IN",
-     "sitting in"
-    ],
-    [
-     "for the one",
-     "for the one"
-    ],
-    [
-     "who LEFT.",
-     "who left."
-    ]
-   ]
-  },
-  {
    "id": "L58",
    "who": "narrator",
    "chunks": [
@@ -1643,16 +1602,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "And a mouth",
-     "And a mouth"
+     "Then a mouth",
+     "Then a mouth"
     ],
     [
      "about to say,",
-     "about to say, \"Not bad.\""
+     "about to say,"
     ],
     [
      "\"NOT BAD.\"",
-     "\"not bad.\""
+     "\"Not bad.\""
     ]
    ]
   },
@@ -1869,25 +1828,39 @@
     [
      0,
      [
-      2.693,
-      1.178,
-      1.6
-     ],
-     [
-      3.572,
-      -0.351,
+      6.907638007035929,
+      -0.9741300196612572,
       1.45
      ],
-     26
+     [
+      3.0343457298081984,
+      -0.7253911530744628,
+      1.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      6.318203783221392,
+      -0.8513811060361027,
+      1.45
+     ],
+     [
+      3.0343457298081984,
+      -0.7253911530744628,
+      1.45
+     ],
+     30
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "me at my easel, my canvas beside my face",
+   "what": "me beside my canvas: cross and ovals, my face, lit, pushing in",
    "fill": [
-    2.99,
-    0.28,
-    2.0
+    5.548540730589364,
+    -0.5553764009837205,
+    2.3
    ]
   },
   {
@@ -2104,21 +2077,21 @@
     [
      0,
      [
-      4.4,
-      -0.9,
-      1.75
+      4.0,
+      2.4,
+      1.95
      ],
      [
       0.0,
       0.0,
-      1.15
+      1.85
      ],
-     26
+     38
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "over my shoulder to the dais",
+   "what": "the dais from the north-east, its head clear",
    "at": "L09"
   },
   {
@@ -2203,6 +2176,32 @@
    "step": 2,
    "what": "its face: the cross and two ovals",
    "at": "L12"
+  },
+  {
+   "id": "S12b",
+   "cam": [
+    [
+     0,
+     [
+      4.367309997133718,
+      -0.5364301464266914,
+      1.25
+     ],
+     [
+      3.077,
+      -0.378,
+      1.25
+     ],
+     30
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "my canvas again, the same lines",
+   "hide_cast": [
+    "me"
+   ],
+   "at": "L12b"
   },
   {
    "id": "S13",
@@ -2303,29 +2302,6 @@
    "at": "L16"
   },
   {
-   "id": "S17",
-   "cam": [
-    [
-     0,
-     [
-      2.855,
-      0.807,
-      1.6
-     ],
-     [
-      3.672,
-      -0.451,
-      1.55
-     ],
-     36
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "my face, eyes wide",
-   "at": "L17"
-  },
-  {
    "id": "S17b",
    "cam": [
     [
@@ -2346,6 +2322,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "Mum at a kitchen table, years ago",
+   "ev": -1.0,
    "at": "L17.1"
   },
   {
@@ -2369,7 +2346,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "my face again",
-   "at": "L17.2"
+   "at": "L17.4"
   },
   {
    "id": "S18",
@@ -2607,6 +2584,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "Mum in her kitchen, phone to her ear",
+   "ev": -1.0,
    "at": "L23.1"
   },
   {
@@ -3077,8 +3055,8 @@
       1.5
      ],
      [
-      3.1,
-      0.1,
+      3.4,
+      0.05,
       1.5
      ],
      24
@@ -3095,13 +3073,13 @@
     [
      0,
      [
-      1.6,
+      2.2,
       1.0,
-      0.55
+      0.5
      ],
      [
-      2.7399999999999998,
-      0.04299999999999998,
+      3.4,
+      0.0,
       0.5
      ],
      32
@@ -3118,45 +3096,27 @@
     [
      0,
      [
-      4.929272848900477,
-      1.0898030392585527,
-      1.95
+      5.346513219381071,
+      1.081445179004454,
+      1.6
      ],
      [
-      3.09,
-      0.243,
-      1.7
+      3.4015,
+      0.01050000000000001,
+      1.5
      ],
      26
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "from behind: its head turned right round",
-   "at": "L43"
-  },
-  {
-   "id": "S44",
-   "cam": [
-    [
-     0,
-     [
-      3.331971379374372,
-      2.268203656811745,
-      1.6
-     ],
-     [
-      3.0835,
-      -0.0675,
-      1.6
-     ],
-     40
-    ]
+   "what": "3/4: it leans into my canvas like a mirror",
+   "fill": [
+    4.49154162636544,
+    0.6826675779079104,
+    1.0
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "profile: its face an inch from my canvas",
-   "at": "L44"
+   "at": "L43"
   },
   {
    "id": "S45",
@@ -3164,21 +3124,26 @@
     [
      0,
      [
-      5.38292079095155,
-      0.42331707190978207,
-      1.6
-     ],
-     [
-      3.0835,
-      -0.0675,
+      4.900747021362483,
+      0.7331744557099839,
       1.55
      ],
-     30
+     [
+      3.4015,
+      0.01050000000000001,
+      1.55
+     ],
+     34
     ]
    ],
    "hand": 0.0,
    "step": 2,
-   "what": "straight on: the two faces",
+   "what": "its face and my canvas, side by side",
+   "fill": [
+    4.49154162636544,
+    0.6826675779079104,
+    1.0
+   ],
    "at": "L45"
   },
   {
@@ -3187,14 +3152,14 @@
     [
      0,
      [
-      4.485690916231379,
-      0.35275821768421517,
-      1.8
+      4.609956213260351,
+      0.4162506384868079,
+      1.75
      ],
      [
-      3.09,
-      0.243,
-      1.74
+      3.481,
+      -0.037,
+      1.3
      ],
      44
     ]
@@ -3210,14 +3175,14 @@
     [
      0,
      [
-      4.286306499626896,
-      0.3370784723007559,
-      1.8
+      4.454980823343896,
+      0.38490373241551384,
+      1.75
      ],
      [
-      3.09,
-      0.243,
-      1.74
+      3.481,
+      -0.037,
+      1.3
      ],
      50
     ]
@@ -3463,53 +3428,6 @@
    "at": "L55"
   },
   {
-   "id": "S56",
-   "cam": [
-    [
-     0,
-     [
-      0.01,
-      -3.0,
-      9.4
-     ],
-     [
-      0,
-      -0.6,
-      0.5
-     ],
-     20
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "overhead: eight easels and a stool",
-   "noceil": true,
-   "at": "L56"
-  },
-  {
-   "id": "S57",
-   "cam": [
-    [
-     0,
-     [
-      0.5,
-      -8.0,
-      1.6
-     ],
-     [
-      3.09,
-      0.243,
-      1.45
-     ],
-     40
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "it sits in, seen through the glass",
-   "at": "L57"
-  },
-  {
    "id": "S58",
    "cam": [
     [
@@ -3520,8 +3438,8 @@
       1.78
      ],
      [
-      3.09,
-      0.243,
+      3.726,
+      0.399,
       1.76
      ],
      100
@@ -3538,13 +3456,13 @@
     [
      0,
      [
-      5.183536374347067,
-      0.4076373265263228,
+      5.40920703152366,
+      0.7714943991715424,
       1.55
      ],
      [
-      3.0835,
-      -0.0675,
+      3.4015,
+      0.01050000000000001,
       1.55
      ],
      30
@@ -3704,7 +3622,7 @@
       1.6
      ],
      [
-      3.1,
+      3.5,
       0.0,
       1.45
      ],
@@ -3808,6 +3726,7 @@
    "hide_cast": [
     "me"
    ],
+   "hide_unp": true,
    "at": "L66"
   },
   {
@@ -3816,13 +3735,13 @@
     [
      0,
      [
-      2.0,
-      0.9,
+      2.4,
+      1.3,
       1.1
      ],
      [
-      3.09,
-      0.243,
+      3.726,
+      0.399,
       0.45
      ],
      30
@@ -3831,11 +3750,6 @@
    "hand": 0.006,
    "step": 2,
    "what": "the spare stool, empty",
-   "fill": [
-    2.4,
-    1.0,
-    1.7
-   ],
    "at": "L67"
   },
   {
@@ -3956,6 +3870,11 @@
    "hand": 0.006,
    "step": 2,
    "what": "Mum's face",
+   "fill": [
+    -4.7,
+    -1.3,
+    1.9
+   ],
    "at": "L72"
   },
   {
@@ -3987,13 +3906,13 @@
     [
      0,
      [
-      -5.0,
+      -5.2,
       -0.1,
       1.55
      ],
      [
-      -2.8,
-      0.1,
+      -2.2,
+      0.05,
       1.5
      ],
      26
@@ -4001,7 +3920,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Kofi grinning, Mum's hand up",
+   "what": "Kofi smiling, Mum's hand up",
    "at": "L74"
   },
   {
@@ -4011,13 +3930,13 @@
      0,
      [
       41.1,
-      0.3,
+      0.5,
       1.5
      ],
      [
       39.0,
       1.4,
-      1.4
+      1.45
      ],
      18
     ]
@@ -4061,14 +3980,14 @@
    {
     "at": 0,
     "pos": [
-     3.672,
-     -0.451
+     3.581,
+     -1.196
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
      10,
-     62
+     40
     ],
     "side": [
      0,
@@ -4076,13 +3995,13 @@
     ],
     "head": [
      0,
-     8
+     4
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
     "expr": "worried",
-    "yaw": -97.0
+    "yaw": 95.8
    },
    {
     "at": "L02",
@@ -4092,8 +4011,8 @@
    {
     "at": "L04.2",
     "pos": [
-     3.672,
-     -0.451
+     3.581,
+     -1.196
     ]
    },
    {
@@ -4623,7 +4542,7 @@
    },
    {
     "at": "L72",
-    "expr": "crying",
+    "expr": "soft",
     "blend": 0.4
    },
    {
@@ -4669,7 +4588,7 @@
    {
     "at": "L74",
     "pos": [
-     -2.8,
+     -2.2,
      -0.5
     ],
     "blend": 0,
@@ -4700,7 +4619,7 @@
    {
     "at": "L75",
     "pos": [
-     -2.8,
+     -2.2,
      -0.5
     ]
    },
@@ -4728,7 +4647,7 @@
     "tremble": 0,
     "blink": true,
     "expr": "grin",
-    "yaw": -90
+    "yaw": -35
    },
    {
     "at": "L76",
@@ -4906,8 +4825,8 @@
    {
     "at": "L74",
     "pos": [
-     -2.8,
-     0.6
+     -2.2,
+     0.7
     ],
     "blend": 0,
     "hidden": false,
@@ -4926,7 +4845,7 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "expr": "grin",
+    "expr": "soft",
     "yaw": -90
    },
    {
@@ -5468,11 +5387,12 @@
    "name": "unp",
    "on": true,
    "pos": [
-    3.09,
-    0.243
+    3.726,
+    0.399
    ],
-   "yaw": -85.5,
+   "yaw": -29.3,
    "head": 0,
+   "lean": 0,
    "dais": false,
    "stage": 4
   },
@@ -5481,27 +5401,29 @@
    "name": "unp",
    "on": true,
    "pos": [
-    3.09,
-    0.243
+    3.726,
+    0.399
    ],
-   "yaw": -85.5,
-   "head": 180,
+   "yaw": -29.3,
+   "head": 0,
+   "lean": 32,
    "dais": false,
    "stage": 4
   },
   {
-   "at": "L57",
+   "at": "L58",
    "name": "unp",
    "on": true,
    "pos": [
-    3.09,
-    0.243
+    3.726,
+    0.399
    ],
-   "yaw": -85.5,
+   "yaw": -29.3,
    "look": [
     0.5,
     -8.0
    ],
+   "lean": 0,
    "dais": false,
    "stage": 4
   },
@@ -5510,11 +5432,12 @@
    "name": "unp",
    "on": true,
    "pos": [
-    3.09,
-    0.243
+    3.726,
+    0.399
    ],
-   "yaw": -85.5,
-   "head": 180,
+   "yaw": -29.3,
+   "head": 0,
+   "lean": 14,
    "dais": false,
    "stage": 4
   },
@@ -5591,11 +5514,26 @@
    "name": "unp",
    "on": true,
    "pos": [
-    3.09,
-    0.243
+    3.726,
+    0.399
    ],
-   "yaw": -85.5,
-   "head": 180,
+   "yaw": -29.3,
+   "head": 0,
+   "lean": 10,
+   "dais": false,
+   "stage": 4
+  },
+  {
+   "at": "L66",
+   "name": "unp",
+   "on": true,
+   "pos": [
+    3.726,
+    0.399
+   ],
+   "yaw": -29.3,
+   "head": 0,
+   "lean": 10,
    "dais": false,
    "stage": 4
   },
@@ -5644,10 +5582,10 @@
    "name": "stool",
    "on": true,
    "pos": [
-    3.09,
-    0.243
+    3.726,
+    0.399
    ],
-   "yaw": -85.5
+   "yaw": -29.3
   },
   {
    "at": "L61",
@@ -5689,10 +5627,10 @@
    "name": "stool",
    "on": true,
    "pos": [
-    3.09,
-    0.243
+    3.726,
+    0.399
    ],
-   "yaw": -85.5
+   "yaw": -29.3
   },
   {
    "at": "L69",
@@ -5915,7 +5853,7 @@
     "energy": 0.3
    },
    {
-    "at": "L56",
+    "at": "L55",
     "voices": [
      "drone",
      "pad",

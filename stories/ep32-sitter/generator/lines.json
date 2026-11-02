@@ -288,6 +288,28 @@
   ]
  },
  {
+  "id": "L12b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The guide",
+    "The guide"
+   ],
+   [
+    "lines you DRAW",
+    "lines you draw"
+   ],
+   [
+    "before you draw",
+    "before you draw"
+   ],
+   [
+    "ANYTHING.",
+    "anything."
+   ]
+  ]
+ },
+ {
   "id": "L13",
   "who": "narrator",
   "chunks": [
@@ -724,8 +746,8 @@
     "to her,"
    ],
    [
-    "one pine knee",
-    "one pine knee"
+    "one wooden knee",
+    "one wooden knee"
    ],
    [
     "by her PALETTE.",
@@ -860,8 +882,12 @@
     "And when"
    ],
    [
-    "they STEADIED,",
-    "they steadied,"
+    "I looked UP",
+    "I looked up"
+   ],
+   [
+    "from my PALETTE,",
+    "from my palette,"
    ],
    [
     "it was sitting",
@@ -878,8 +904,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "One pine KNEE",
-    "One pine knee"
+    "One wooden KNEE",
+    "One wooden knee"
    ],
    [
     "against my",
@@ -896,42 +922,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Its head",
-    "Its head"
+    "It was",
+    "It was"
    ],
    [
-    "had turned",
-    "had turned"
+    "leaning IN",
+    "leaning in"
    ],
    [
-    "ALL the",
-    "all the"
+    "to my CANVAS,",
+    "to my canvas,"
    ],
    [
-    "way ROUND,",
-    "way round,"
-   ]
-  ]
- },
- {
-  "id": "L44",
-  "who": "narrator",
-  "chunks": [
-   [
-    "so its",
-    "so its"
-   ],
-   [
-    "half-drawn FACE",
-    "half-drawn face"
-   ],
-   [
-    "was an inch",
-    "was an inch"
-   ],
-   [
-    "from my CANVAS.",
-    "from my canvas."
+    "like a MIRROR.",
+    "like a mirror."
    ]
   ]
  },
@@ -1126,50 +1130,6 @@
   ]
  },
  {
-  "id": "L56",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Eight EASELS",
-    "Eight easels"
-   ],
-   [
-    "and a STOOL.",
-    "and a stool."
-   ],
-   [
-    "A class",
-    "A class"
-   ],
-   [
-    "of NINE.",
-    "of nine."
-   ]
-  ]
- },
- {
-  "id": "L57",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It was",
-    "It was"
-   ],
-   [
-    "sitting IN",
-    "sitting in"
-   ],
-   [
-    "for the one",
-    "for the one"
-   ],
-   [
-    "who LEFT.",
-    "who left."
-   ]
-  ]
- },
- {
   "id": "L58",
   "who": "narrator",
   "chunks": [
@@ -1334,16 +1294,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "And a mouth",
-    "And a mouth"
+    "Then a mouth",
+    "Then a mouth"
    ],
    [
     "about to say,",
-    "about to say, \"Not bad.\""
+    "about to say,"
    ],
    [
     "\"NOT BAD.\"",
-    "\"not bad.\""
+    "\"Not bad.\""
    ]
   ]
  },

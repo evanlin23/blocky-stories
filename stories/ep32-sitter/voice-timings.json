@@ -910,30 +910,30 @@
    ]
   },
   "L33": {
-   "text": "Right next to her, one pine knee by her palette.",
+   "text": "Right next to her, one wooden knee by her palette.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.207,
+   "dur": 2.224,
    "onset": 0.172,
-   "end": 2.017,
+   "end": 2.034,
    "chunks": [
     [
      0.172,
-     0.474
+     0.509
     ],
     [
-     0.474,
-     0.741
+     0.509,
+     0.776
     ],
     [
-     0.81,
-     1.293
+     0.828,
+     1.276
     ],
     [
-     1.293,
-     2.017
+     1.276,
+     2.034
     ]
    ]
   },
@@ -1098,14 +1098,14 @@
    ]
   },
   "L41": {
-   "text": "And when they steadied, it was sitting right beside me.",
+   "text": "And when I looked up from my palette, it was sitting right beside me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.362,
+   "dur": 2.879,
    "onset": 0.155,
-   "end": 2.172,
+   "end": 2.69,
    "chunks": [
     [
      0.155,
@@ -1113,67 +1113,71 @@
     ],
     [
      0.336,
-     0.828
-    ],
-    [
-     0.897,
-     1.259
-    ],
-    [
-     1.259,
-     2.172
-    ]
-   ]
-  },
-  "L42": {
-   "text": "One pine knee against my easel leg.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.914,
-   "onset": 0.172,
-   "end": 1.707,
-   "chunks": [
-    [
-     0.172,
-     0.672
-    ],
-    [
-     0.672,
-     1.034
-    ],
-    [
-     1.034,
-     1.707
-    ]
-   ]
-  },
-  "L43": {
-   "text": "Its head had turned all the way round,",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.759,
-   "onset": 0.155,
-   "end": 1.552,
-   "chunks": [
-    [
-     0.155,
-     0.353
-    ],
-    [
-     0.353,
      0.681
     ],
     [
      0.681,
-     0.879
+     1.293
     ],
     [
-     0.879,
-     1.552
+     1.362,
+     1.733
+    ],
+    [
+     1.733,
+     2.69
+    ]
+   ]
+  },
+  "L42": {
+   "text": "One wooden knee against my easel leg.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.974
+    ],
+    [
+     0.974,
+     1.672
+    ]
+   ]
+  },
+  "L43": {
+   "text": "It was leaning in to my canvas, like a mirror.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.655
+    ],
+    [
+     0.655,
+     1.224
+    ],
+    [
+     1.276,
+     2.017
     ]
    ]
   },
@@ -1726,26 +1730,26 @@
    ]
   },
   "L66": {
-   "text": "And a mouth about to say, \"Not bad.\" \"not bad.\"",
+   "text": "Then a mouth about to say, \"Not bad.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.517,
-   "onset": 0.155,
-   "end": 2.293,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.759,
    "chunks": [
     [
-     0.155,
-     0.474
+     0.172,
+     0.492
     ],
     [
-     0.474,
-     1.483
+     0.492,
+     1.0
     ],
     [
-     1.655,
-     2.293
+     1.103,
+     1.759
     ]
    ]
   },
@@ -2006,6 +2010,34 @@
     [
      0.552,
      1.207
+    ]
+   ]
+  },
+  "L12b": {
+   "text": "The guide lines you draw before you draw anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.034
+    ],
+    [
+     1.034,
+     1.517
+    ],
+    [
+     1.517,
+     2.086
     ]
    ]
   }

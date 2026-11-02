@@ -132,7 +132,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S31: close on its face: one eyebrow]
 - `L32` narrator: And it was sitting / beside PETRA.
   - [S32: over my shoulder: Petra at easel 7 and the Unpainted beside her, one easel from me]
-- `L33` narrator: Right next to her, / one pine knee / by her PALETTE.
+- `L33` narrator: Right next to her, / one wooden knee / by her PALETTE.
   - [S33: low on its pine knee level with her palette shelf, a hand's width from her arm]
 - `L34` narrator: Petra HUMMED, / and painted / a GREEN PEAR.
   - [S34: Petra's canvas: a green pear. Plant 1]
@@ -152,7 +152,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S40: second slow ramp down. Cut while dim. Music drop 0.6 s before L51]
 - `L41` narrator: And when I looked UP / from my PALETTE, / it was sitting / RIGHT BESIDE ME.
   - [S41: lamps back up: wide from the window side, the Unpainted on a spare stool at my elbow, taller than me even seated. The hit]
-- `L42` narrator: One pine KNEE / against my EASEL LEG.
+- `L42` narrator: One wooden KNEE / against my EASEL LEG.
   - [S42: low on its knee against the easel leg]
 - `L43` narrator: It was leaning IN / to my CANVAS, / like a MIRROR.
   - [S43: a 3/4 angle, lit from below: its long body bent forward from the waist into my canvas, its half-drawn face close to the canvas face, no head turn, a hand's width clear of me. Music drop 0.5 s before L45]
@@ -198,7 +198,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S64: me painting, side on, steady. Cut away before a hand meets the canvas]
 - `L65` narrator: I painted the kindest EYES / I KNOW, / brown, with LINES / at the CORNERS.
   - [S65: my canvas: warm brown eyes with little lines at the corners, Mum's eyes]
-- `L66` narrator: And a mouth / about to say, / "NOT BAD."
+- `L66` narrator: Then a mouth / about to say, / "NOT BAD."
   - [S66: the finished portrait, an ordinary kind face, brightly lit]
 - `L67` narrator: When I looked UP, / the spare stool / was EMPTY.
   - [S67: the spare stool beside my easel, empty]

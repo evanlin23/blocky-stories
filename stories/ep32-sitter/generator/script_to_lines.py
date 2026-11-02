@@ -7,7 +7,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 NAMES = {"mum": "Mum", "kofi": "Kofi", "petra": "Petra", "ade": "Ade", "wednesday": "Wednesday", "mr": "Mr", "i": "I"}
 OUT = []
-for m in re.finditer(r"^- `(L\d+)` narrator: (.+)$", (HERE.parent / "script.md").read_text(), re.M):
+for m in re.finditer(r"^- `(L\d+b?)` narrator: (.+)$", (HERE.parent / "script.md").read_text(), re.M):
     lid, body = m.group(1), m.group(2).strip()
     chunks = [c.strip() for c in body.split(" / ")]
     prev_end = True          # the line starts a sentence
@@ -33,8 +33,8 @@ FIX = {("L17", 2): 'And I heard Mum in my head, saying, "Halfway again?"', ("L66
 for ln in OUT:
     for k, ch in enumerate(ln["chunks"]):
         pass
-for (lid, k), v in {("L17", 2): 'saying, "Halfway again?"', ("L66", 1): 'about to say, "Not bad."'}.items():
-    next(l for l in OUT if l["id"] == lid)["chunks"][k][1] = v
+l66 = next(l for l in OUT if l["id"] == "L66")
+l66["chunks"][-1][1] = '"Not bad."'          # said once
 def split3(cap, spk):
     cw, sw = cap.split(" "), spk.split(" ")
     n = len(cw)

@@ -588,17 +588,18 @@ def build_unp(kit, ctx, M, wd):
         kit.box("unp thigh", (0.33, 0.72, 0.33), (sx * 0.17, -0.34, 0), pine, hip, bevel=0.03)
         kit.box("unp shin", (0.33, 0.33, 0.62), (sx * 0.17, -0.55, -0.4), pine, hip, bevel=0.03)
         kit.box("unp foot", (0.33, 0.42, 0.13), (sx * 0.17, -0.67, -0.69), pine, hip, bevel=0.03)
-    kit.box("unp torso", (0.62, 0.32, 0.95), (0, 0, 0.305), pine, hip, bevel=0.035)
+    tp = kit.empty("unp torso pivot", (0, 0, 0), hip)
+    kit.box("unp torso", (0.62, 0.32, 0.95), (0, 0, 0.305), pine, tp, bevel=0.035)
     # two dark knots on the chest
     knot = kit.plastic("#5a3d22", 0.7, "knot")
     for (kx, kz, r) in ((-0.13, 0.55, 0.06), (0.17, 0.3, 0.045)):
-        kit.sphere("knot", r, (kx, -0.172, kz), knot, hip, seg=10).scale = (1, 0.25, 1)
+        kit.sphere("knot", r, (kx, -0.172, kz), knot, tp, seg=10).scale = (1, 0.25, 1)
     sh = 0.305 + 0.475 - 0.08
     for sx in (-1, 1):
-        arm = kit.empty(f"unp arm{sx}", (sx * 0.46, 0, sh), hip)
+        arm = kit.empty(f"unp arm{sx}", (sx * 0.46, 0, sh), tp)
         kit.box("unp arm", (0.26, 0.28, 1.08), (0, 0, -0.5), pine, arm, bevel=0.03)
         arm.rotation_euler = (math.radians(-14), 0, 0)
-    neck = kit.empty("unp neck", (0, 0, 0.305 + 0.475), hip)
+    neck = kit.empty("unp neck", (0, 0, 0.305 + 0.475), tp)
     kit.box("unp neckm", (0.2, 0.2, 0.1), (0, 0, 0.0), pine, neck)
     ns = kit.empty("unp head scale", (0, 0, 0.02), neck)
     ns.scale = (S, S, S)
@@ -617,7 +618,7 @@ def build_unp(kit, ctx, M, wd):
     hb = mat.node_tree.nodes["Principled BSDF"]
     mat.node_tree.links.new(tex.outputs["Color"], hb.inputs["Emission Color"])
     hb.inputs["Emission Strength"].default_value = 0.12
-    ctx["unp"] = {"root": root, "hip": hip, "neck": head, "tex": tex, "imgs": imgs}
+    ctx["unp"] = {"root": root, "hip": hip, "tp": tp, "neck": head, "tex": tex, "imgs": imgs}
     # lit for fear: a key from below and the side, a cold rim from behind. Front lights are dead
     key = kit.light("unp key", "SPOT", (0, 0, 0), 240.0, "#ffa060", spot=34, blend=0.6, size=0.1)
     key.parent = root
@@ -837,11 +838,11 @@ def _show(objs, on):
             c_.hide_render = not on
 
 
-def unp_state(ctx, tl, t, kit):
+def unp_state(ctx, tl, t, kit, hide=False):
     cs = _last(_cues(tl, "unp"), t)
     u = ctx["unp"]
     on = bool(cs and cs.get("on"))
-    _show([u["root"]], on)
+    _show([u["root"]], on and not hide)
     if not on:
         return
     x, y = cs["pos"]
@@ -856,6 +857,7 @@ def unp_state(ctx, tl, t, kit):
     else:
         rel = cs.get("head", 0.0)
     u["neck"].rotation_euler = (0, 0, math.radians(rel))
+    u["tp"].rotation_euler = (-math.radians(cs.get("lean", 0.0)), 0, 0)
     st = min(int(cs.get("stage", 0)), 3)
     u["tex"].image = u["imgs"][st]
     # its lights go with it
@@ -910,6 +912,7 @@ def animate(kit, story, tl, t, ctx):
         world.inputs["Color"].default_value = kit.col("#0c1018")
         world.inputs["Strength"].default_value = 1.0
         bpy.context.scene.view_settings.exposure = {"night": -0.2, "warm": 0.75, "end": 1.15}.get(state, 0.5)
+    bpy.context.scene.view_settings.exposure += float(spec.get("ev", 0.0))
     ctx["pane_mat"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 1.4 if show_on else 0.55
     # the rain runs down the north window
     if "pane" in ctx:
@@ -986,7 +989,7 @@ def animate(kit, story, tl, t, ctx):
     for k, cu in enumerate(ctx["cushions"]):
         cu.hide_render = stood or (k != (1 if dent > 0.5 else 0))
     # the Unpainted, the spare stool, my canvas, the others
-    unp_state(ctx, tl, t, kit)
+    unp_state(ctx, tl, t, kit, bool(spec.get("hide_unp")))
     sc = _last(_cues(tl, "stool"), t)
     st = ctx["stool"]
     _show([st], bool(sc and sc.get("on")))
