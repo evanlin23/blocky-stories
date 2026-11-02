@@ -502,7 +502,7 @@ story = {
     "tail": 0.28,
     "look": {"fog": "#1c1a24", "fog_density": 0.02, "fog_start": 8.0, "sky": "#0a0a10", "sky_strength": 1.0, "exposure": 0.9},
     "grade": {"shadows": [0.03, -0.01, 0.03], "highlights": [0.05, 0.015, -0.04], "saturation": 1.0, "contrast": 1.08,
-              "vignette": 0.42, "bloom": 0.3, "grain": 0.014, "red_line": 0.79, "red_lift_blue": 0.5},
+              "vignette": 0.42, "bloom": 0.3, "grain": 0.014, "red_line": 0.74, "red_lift_blue": 0.5},
     "phonemes": {"But": "bˈʌt"},
     "cast": cast,
     "lines": lines,
