@@ -149,7 +149,7 @@ def asr(wav: Path, timeline: Path) -> int:
         if op == "equal":
             continue
         sa, sb = " ".join(a[a1:a2]), " ".join(b[b1:b2])
-        if same_spoken(sa, sb):
+        if same_spoken(sa, sb, tl.get("homophones")):
             print(f"  spelling: script {sa!r} | heard {sb!r} (the same words, spelled another way)")
             continue
         bad += 1
@@ -162,7 +162,7 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # Bri
 # homophones: the same sound, and Whisper picks the spelling from the words around it ("under the bulb threw"), so
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
-# (ep17), Wren said "ren" (ep20)
+# (ep17), Wren said "ren" (ep20). A story can add its own pairs ("homophones" in story.json, opt-in: {"too": "two"}).
 HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
               "wren": "ren", "wrens": "rens"}
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
@@ -176,7 +176,7 @@ def _under100(n: int) -> str:
     return tens[n // 10] + (NUMBERS[n % 10] if n % 10 else "")
 
 
-def same_spoken(script: str, heard: str) -> bool:
+def same_spoken(script: str, heard: str, extra: dict | None = None) -> bool:
     """True when two transcripts differ only in spelling: a spacing ("hand print"), an apostrophe
     ("mannequins"), a British spelling ("gray"), digits ("11") or a homophone ("threw" for "through"). Whisper
     writes what it hears its own way, so these aren't mispronunciations."""
@@ -189,7 +189,7 @@ def same_spoken(script: str, heard: str) -> bool:
                 h, r = divmod(int(w), 100)
                 w = ("a" if h == 1 else NUMBERS.get(h, str(h))) + "hundred" + ("and" + _under100(r) if r else "")
             w = SPELLINGS.get(w, w)
-            out.append(HOMOPHONES.get(w, w))
+            out.append((extra or {}).get(w, HOMOPHONES.get(w, w)))
         return "".join(out)
     return bool(script or heard) and canon(script) == canon(heard)
 

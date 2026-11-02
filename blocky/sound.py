@@ -444,7 +444,7 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         gate = np.repeat(np.random.default_rng(seed).random(int(dur * 40) + 1) > 0.45, SR // 40)[: len(y)]
         return y * gate + synth.pulse(97.0, dur, 0.2)[: len(y)] * gate * 0.3
     if kind == "bell":
-        return synth.fm_bell(196.0, 4.0, ratio=2.76, index=2.4, tau=1.6) * 0.8
+        return synth.fm_bell(float((opts or {}).get("hz", 196.0)), 4.0, ratio=2.76, index=2.4, tau=1.6) * 0.8   # "hz": opt-in pitch (ep28)
     if kind == "thud":
         return synth.thump(0.4, 90, 35, seed)
     if kind == "sting":  # a sharp dissonant cluster: the reveal

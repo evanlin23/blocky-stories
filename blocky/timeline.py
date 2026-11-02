@@ -223,7 +223,8 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
             "tail": st.get("tail", TAIL),
             "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
             "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
-            "cues": cues, "fx": fx, "acting": acting}
+            "cues": cues, "fx": fx, "acting": acting,
+            **({"homophones": st["homophones"]} if st.get("homophones") else {})}
 
 
 def _key(k: dict, at) -> dict:
