@@ -201,7 +201,7 @@ def shot(sid, at, what, cam, step=2, **flags):
 shot("S01", 0, "my canvas: cross and two ovals", canvas_cam(8, 1.25, 1.25, 30, push=0.3), 2)
 shot("S02", "L02", "Mum's hall, then: frames edge to edge, Mum hanging one", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
 shot("S03", "L03", "the hall now: bare hooks, pale squares", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
-shot("S03b", "L03.1", "a drawer half open, brushes in a jar on their side", still([HX + 0.3, 1.9, 1.35], [HX + 0.2, 2.7, 0.5], 30))
+shot("S03b", "L03.1", "a drawer half open, brushes in a jar on their side", still([HX + 0.3, 2.15, 1.0], [HX + 0.2, 2.65, 0.5], 28))
 shot("S04", "L04", "the arts centre on its hill in rain",
      still([-15.0, -17.0, 9.0], [-1.0, -2.0, 1.6], 22), rain=True)
 shot("S04b", "L04.2", "me on the rain-dark steps with a canvas",
@@ -224,7 +224,7 @@ shot("S17b", "L17.1", "Mum at a kitchen table, years ago", still([KX + 0.4, -1.1
 shot("S17c", "L17.2", "my face again", still(front(ME, yaw_to(ME, DAIS) - 50, 1.4, 1.58), z3(ME, 1.55), 38))
 shot("S18", "L18", "the canvas: a nose stopped short", canvas_cam(8, 1.2, 1.25, 34), hide_cast=["me"])
 shot("S19", "L19", "Kofi in the doorway with a mug", still([-2.0, -3.5, 1.5], [-4.9, -3.0, 1.4], 30))
-shot("S19b", "L19.1", "the cushion under it, flat", still([1.0, -0.7, 0.95], [0.0, 0.0, 0.62], 34))
+shot("S19b", "L19.1", "the cushion under it, flat", still([1.9, -1.1, 0.95], [0.0, 0.0, 0.62], 26))
 # 03 weeks two to four
 shot("S20", "L20", "its face: the nose", still(fc(U2, yaw_to(U2, ME), 1.2, 1.7), z3(U2, 1.55), 40))
 shot("S20b", "L20.2", "my canvas: the same short nose", canvas_cam(8, 1.2, 1.25, 34), hide_cast=["me"])

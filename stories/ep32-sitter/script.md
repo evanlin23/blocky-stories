@@ -134,7 +134,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S33: low on its pine knee level with her palette shelf, a hand's width from her arm]
 - `L34` narrator: Petra HUMMED, / and painted / a GREEN PEAR.
   - [S34: Petra's canvas: a green pear. Plant 1]
-- `L35` narrator: I couldn't look at my CANVAS, / or at IT.
+- `L35` narrator: I couldn't look at my CANVAS, / or toward IT.
   - [S35: me staring at the floor between us]
 
 ### 04 Week five, the scare (about 85 to 105 s)
