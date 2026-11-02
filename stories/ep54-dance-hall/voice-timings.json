@@ -1,0 +1,1965 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "in this town, you're born with half a mark. your match has the rest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.836
+    ],
+    [
+     0.836,
+     1.061
+    ],
+    [
+     1.061,
+     1.448
+    ],
+    [
+     1.517,
+     1.828
+    ],
+    [
+     1.828,
+     2.569
+    ]
+   ]
+  },
+  "L02": {
+   "text": "speed dating is one wave down the line.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.172
+    ],
+    [
+     1.172,
+     1.862
+    ]
+   ]
+  },
+  "L03": {
+   "text": "one man's match is his postman. they've never been happier.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.793,
+     1.431
+    ],
+    [
+     1.5,
+     1.828
+    ],
+    [
+     1.828,
+     2.586
+    ]
+   ]
+  },
+  "L04": {
+   "text": "when two halves meet on a crowded bus, the whole bus cheers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.732
+    ],
+    [
+     0.732,
+     0.845
+    ],
+    [
+     0.845,
+     1.397
+    ],
+    [
+     1.448,
+     1.672
+    ],
+    [
+     1.672,
+     2.431
+    ]
+   ]
+  },
+  "L05": {
+   "text": "my neighbours match. they argue every day, and love it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.931,
+     1.276
+    ],
+    [
+     1.276,
+     1.655
+    ],
+    [
+     1.681,
+     2.328
+    ]
+   ]
+  },
+  "L06": {
+   "text": "the backs of my hands are blank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.879
+    ],
+    [
+     0.879,
+     1.5
+    ]
+   ]
+  },
+  "L07": {
+   "text": "aunt ross has looked for her other half for forty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.862
+    ],
+    [
+     0.862,
+     1.017
+    ],
+    [
+     1.017,
+     1.414
+    ],
+    [
+     1.414,
+     2.276
+    ]
+   ]
+  },
+  "L08": {
+   "text": "she teaches ballroom at the old dance hall on tuesdays.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.854
+    ],
+    [
+     0.854,
+     0.983
+    ],
+    [
+     0.983,
+     1.526
+    ],
+    [
+     1.526,
+     2.379
+    ]
+   ]
+  },
+  "L09": {
+   "text": "i play the records in my record gloves. i never dance.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.828,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.784
+    ],
+    [
+     0.784,
+     0.948
+    ],
+    [
+     0.948,
+     1.621
+    ],
+    [
+     1.715,
+     2.621
+    ]
+   ]
+  },
+  "L10": {
+   "text": "every couple waltzes hand on hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.164
+    ],
+    [
+     1.164,
+     1.81
+    ]
+   ]
+  },
+  "L11": {
+   "text": "where the halves meet, they glow whole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.724
+    ],
+    [
+     0.759,
+     1.534
+    ]
+   ]
+  },
+  "L12": {
+   "text": "ross dances every demonstration with her arms round nobody.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.561
+    ],
+    [
+     1.561,
+     2.0
+    ],
+    [
+     2.0,
+     2.828
+    ]
+   ]
+  },
+  "L13": {
+   "text": "eyes closed, the way she always does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.19,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.681,
+     0.862
+    ],
+    [
+     0.862,
+     1.741
+    ]
+   ]
+  },
+  "L14": {
+   "text": "and every week, her half is a little dimmer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.698,
+     1.034
+    ],
+    [
+     1.034,
+     1.147
+    ],
+    [
+     1.147,
+     1.828
+    ]
+   ]
+  },
+  "L15": {
+   "text": "one tuesday, the floor creaks behind her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.732,
+     1.241
+    ],
+    [
+     1.241,
+     1.879
+    ]
+   ]
+  },
+  "L16": {
+   "text": "then again, right across the room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.983
+    ],
+    [
+     0.983,
+     1.517
+    ]
+   ]
+  },
+  "L17": {
+   "text": "nobody's stride is that long.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.793,
+     1.586
+    ]
+   ]
+  },
+  "L18": {
+   "text": "after class, ross straightens my collar, like every week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.172
+    ],
+    [
+     1.172,
+     1.603
+    ],
+    [
+     1.655,
+     2.466
+    ]
+   ]
+  },
+  "L19": {
+   "text": "for a second, her half glows bright.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     0.776
+    ],
+    [
+     0.776,
+     1.569
+    ]
+   ]
+  },
+  "L20": {
+   "text": "she blames the lighting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     1.207
+    ]
+   ]
+  },
+  "L21": {
+   "text": "next tuesday, the chandelier is swaying.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.732,
+     1.147
+    ],
+    [
+     1.147,
+     1.845
+    ]
+   ]
+  },
+  "L22": {
+   "text": "the windows are shut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.138
+    ]
+   ]
+  },
+  "L23": {
+   "text": "and the record keeps skipping back to the last waltz.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.19
+    ],
+    [
+     1.19,
+     1.31
+    ],
+    [
+     1.31,
+     2.103
+    ]
+   ]
+  },
+  "L24": {
+   "text": "i pack the records, turn around, and ross is gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.828
+    ],
+    [
+     0.862,
+     1.259
+    ],
+    [
+     1.285,
+     1.586
+    ],
+    [
+     1.586,
+     2.207
+    ]
+   ]
+  },
+  "L25": {
+   "text": "her dance shoes stand side by side in the middle of the empty floor.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.155,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.121
+    ],
+    [
+     1.121,
+     1.552
+    ],
+    [
+     1.552,
+     1.837
+    ],
+    [
+     1.837,
+     1.966
+    ],
+    [
+     1.966,
+     2.741
+    ]
+   ]
+  },
+  "L26": {
+   "text": "toes pointed at where her partner would stand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     0.87
+    ],
+    [
+     0.87,
+     1.215
+    ],
+    [
+     1.215,
+     1.897
+    ]
+   ]
+  },
+  "L27": {
+   "text": "behind me, the record is still turning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.905
+    ],
+    [
+     0.905,
+     1.741
+    ]
+   ]
+  },
+  "L28": {
+   "text": "i call her name. the hall gives it back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.19,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.19,
+     0.439
+    ],
+    [
+     0.439,
+     0.81
+    ],
+    [
+     0.879,
+     1.138
+    ],
+    [
+     1.138,
+     1.793
+    ]
+   ]
+  },
+  "L29": {
+   "text": "over my head, the chandelier glass starts to chime.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.31
+    ],
+    [
+     1.31,
+     2.172
+    ]
+   ]
+  },
+  "L30": {
+   "text": "i don't look up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.19,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     0.948
+    ]
+   ]
+  },
+  "L31": {
+   "text": "across the floor, two thin shadows stand like the legs of a ladder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.172,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.802,
+     1.483
+    ],
+    [
+     1.483,
+     1.845
+    ],
+    [
+     1.845,
+     2.146
+    ],
+    [
+     2.146,
+     2.793
+    ]
+   ]
+  },
+  "L32": {
+   "text": "downstairs, the street door bangs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     0.897
+    ],
+    [
+     0.897,
+     1.603
+    ]
+   ]
+  },
+  "L33": {
+   "text": "when i look back, the shadows are gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.69
+    ],
+    [
+     0.716,
+     1.077
+    ],
+    [
+     1.077,
+     1.655
+    ]
+   ]
+  },
+  "L34": {
+   "text": "it's ross, in her outdoor coat, just before midnight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.69
+    ],
+    [
+     0.69,
+     1.224
+    ],
+    [
+     1.293,
+     2.276
+    ]
+   ]
+  },
+  "L35": {
+   "text": "she went to the station to meet a stranger whose half might match.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.19,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.19,
+     0.353
+    ],
+    [
+     0.353,
+     0.793
+    ],
+    [
+     0.793,
+     0.974
+    ],
+    [
+     0.974,
+     1.362
+    ],
+    [
+     1.362,
+     1.707
+    ],
+    [
+     1.707,
+     2.362
+    ]
+   ]
+  },
+  "L36": {
+   "text": "it didn't. her half is nearly out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.5,
+     0.784
+    ],
+    [
+     0.784,
+     1.534
+    ]
+   ]
+  },
+  "L37": {
+   "text": "she says, that's the last time i look.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.19,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.509,
+     0.724
+    ],
+    [
+     0.724,
+     1.094
+    ],
+    [
+     1.094,
+     1.603
+    ]
+   ]
+  },
+  "L38": {
+   "text": "every tuesday after that, there are scuffs in the rosin dust.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.172,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.138
+    ],
+    [
+     1.207,
+     1.698
+    ],
+    [
+     1.698,
+     1.81
+    ],
+    [
+     1.81,
+     2.638
+    ]
+   ]
+  },
+  "L39": {
+   "text": "two at a time, further apart than i can jump.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.672
+    ],
+    [
+     0.724,
+     1.147
+    ],
+    [
+     1.147,
+     1.397
+    ],
+    [
+     1.397,
+     2.017
+    ]
+   ]
+  },
+  "L40": {
+   "text": "each week, they're nearer the middle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.94
+    ],
+    [
+     0.94,
+     1.466
+    ]
+   ]
+  },
+  "L41": {
+   "text": "nearer the spot where ross dances with nobody.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.19,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.19,
+     0.741
+    ],
+    [
+     0.741,
+     1.422
+    ],
+    [
+     1.422,
+     2.121
+    ]
+   ]
+  },
+  "L42": {
+   "text": "the chandelier drops are pushed apart, as if something tall is standing in them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.31,
+   "onset": 0.172,
+   "end": 3.121,
+   "chunks": [
+    [
+     0.172,
+     0.854
+    ],
+    [
+     0.854,
+     1.5
+    ],
+    [
+     1.569,
+     1.741
+    ],
+    [
+     1.741,
+     2.224
+    ],
+    [
+     2.224,
+     2.603
+    ],
+    [
+     2.603,
+     3.121
+    ]
+   ]
+  },
+  "L43": {
+   "text": "on the last tuesday, ross dims the lights for the last waltz.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.966
+    ],
+    [
+     1.034,
+     1.474
+    ],
+    [
+     1.474,
+     1.759
+    ],
+    [
+     1.759,
+     1.897
+    ],
+    [
+     1.897,
+     2.69
+    ]
+   ]
+  },
+  "L44": {
+   "text": "she dances alone, eyes closed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.19,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.19,
+     0.81
+    ],
+    [
+     0.845,
+     1.603
+    ]
+   ]
+  },
+  "L45": {
+   "text": "and i see it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.172,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.914
+    ]
+   ]
+  },
+  "L46": {
+   "text": "two burgundy legs, three times too long, stand either side of her partner's spot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.672,
+   "onset": 0.172,
+   "end": 3.466,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.862,
+     1.276
+    ],
+    [
+     1.276,
+     1.724
+    ],
+    [
+     1.81,
+     2.457
+    ],
+    [
+     2.457,
+     2.586
+    ],
+    [
+     2.586,
+     3.466
+    ]
+   ]
+  },
+  "L47": {
+   "text": "up in the chandelier is an ordinary dancer, burgundy and gold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.759
+    ],
+    [
+     0.759,
+     0.922
+    ],
+    [
+     0.922,
+     1.707
+    ],
+    [
+     1.801,
+     2.81
+    ]
+   ]
+  },
+  "L48": {
+   "text": "it bends from the hips, slowly, all the way down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.724
+    ],
+    [
+     0.768,
+     1.086
+    ],
+    [
+     1.138,
+     1.31
+    ],
+    [
+     1.31,
+     2.0
+    ]
+   ]
+  },
+  "L49": {
+   "text": "until its face is level with hers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.759,
+     1.061
+    ],
+    [
+     1.061,
+     1.69
+    ]
+   ]
+  },
+  "L50": {
+   "text": "its arms rise into hold. the backs of its hands are blank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.345
+    ],
+    [
+     1.431,
+     1.698
+    ],
+    [
+     1.698,
+     2.078
+    ],
+    [
+     2.078,
+     2.672
+    ]
+   ]
+  },
+  "L51": {
+   "text": "just like mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L52": {
+   "text": "and ross's half is almost out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.603
+    ]
+   ]
+  },
+  "L53": {
+   "text": "the rule says your match has the rest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.914
+    ],
+    [
+     0.914,
+     1.603
+    ]
+   ]
+  },
+  "L54": {
+   "text": "it never says which side of the hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.992
+    ],
+    [
+     0.992,
+     1.638
+    ]
+   ]
+  },
+  "L55": {
+   "text": "i've only ever looked at the backs of mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.87
+    ],
+    [
+     0.87,
+     1.199
+    ],
+    [
+     1.199,
+     1.81
+    ]
+   ]
+  },
+  "L56": {
+   "text": "i pull off my record gloves.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.552
+    ]
+   ]
+  },
+  "L57": {
+   "text": "i turn my hand over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.276
+    ]
+   ]
+  },
+  "L58": {
+   "text": "on my palm, glowing gold, is the other half.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.672,
+     1.259
+    ],
+    [
+     1.31,
+     1.457
+    ],
+    [
+     1.457,
+     2.103
+    ]
+   ]
+  },
+  "L59": {
+   "text": "i walk out between those legs, into her partner's spot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.19,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     1.293
+    ],
+    [
+     1.362,
+     1.603
+    ],
+    [
+     1.603,
+     2.483
+    ]
+   ]
+  },
+  "L60": {
+   "text": "i put my palm on the back of her hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.784
+    ],
+    [
+     0.784,
+     1.077
+    ],
+    [
+     1.077,
+     1.759
+    ]
+   ]
+  },
+  "L61": {
+   "text": "the two halves glow whole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.345
+    ]
+   ]
+  },
+  "L62": {
+   "text": "ross opens her eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.19,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.19,
+     0.629
+    ],
+    [
+     0.629,
+     1.259
+    ]
+   ]
+  },
+  "L63": {
+   "text": "the chandelier goes still. the legs are gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.155,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.103
+    ],
+    [
+     1.19,
+     1.543
+    ],
+    [
+     1.543,
+     2.172
+    ]
+   ]
+  },
+  "L64": {
+   "text": "a match was never only for love.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.017
+    ],
+    [
+     1.017,
+     1.603
+    ]
+   ]
+  },
+  "L65": {
+   "text": "it's whoever you fit with.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.224
+    ]
+   ]
+  },
+  "L66": {
+   "text": "forty years, and her other half was carrying her records.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.707,
+     0.862
+    ],
+    [
+     0.862,
+     1.267
+    ],
+    [
+     1.267,
+     1.664
+    ],
+    [
+     1.664,
+     2.362
+    ]
+   ]
+  },
+  "L67": {
+   "text": "next tuesday, we dance the demonstration together.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.845,
+     1.259
+    ],
+    [
+     1.259,
+     1.81
+    ],
+    [
+     1.81,
+     2.379
+    ]
+   ]
+  },
+  "L68": {
+   "text": "i tread on her feet four times.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.759
+    ],
+    [
+     0.759,
+     1.5
+    ]
+   ]
+  },
+  "L69": {
+   "text": "the whole class laughs and claps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.854
+    ],
+    [
+     0.854,
+     1.483
+    ]
+   ]
+  },
+  "L70": {
+   "text": "ross straightens my collar. our halves glow whole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.052
+    ],
+    [
+     1.121,
+     1.431
+    ],
+    [
+     1.431,
+     2.19
+    ]
+   ]
+  },
+  "L71": {
+   "text": "in this town, you're born with half a mark. your match has the rest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.836
+    ],
+    [
+     0.836,
+     1.061
+    ],
+    [
+     1.061,
+     1.448
+    ],
+    [
+     1.517,
+     1.828
+    ],
+    [
+     1.828,
+     2.569
+    ]
+   ]
+  },
+  "L72": {
+   "text": "mine was on my palm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.19,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.19,
+     0.457
+    ],
+    [
+     0.457,
+     1.224
+    ]
+   ]
+  },
+  "L73": {
+   "text": "on the tuesdays i'm late, the floor still creaks in a stride too long.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.155,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     1.0
+    ],
+    [
+     1.052,
+     1.345
+    ],
+    [
+     1.345,
+     1.767
+    ],
+    [
+     1.767,
+     2.155
+    ],
+    [
+     2.155,
+     2.828
+    ]
+   ]
+  }
+ }
+}
