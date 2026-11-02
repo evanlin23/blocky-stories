@@ -149,7 +149,7 @@ def materials(kit):
     M["silver"] = kit.metal(SILVER, 0.32)
     M["steel"] = kit.metal("#6c6a74", 0.4)
     M["steel_d"] = kit.metal("#3a3940", 0.5)
-    M["bulb"] = kit.emit(BULB, 14.0, name="bulb")
+    M["bulb"] = kit.emit(BULB, 7.0, name="bulb")
     M["socket"] = pbr(kit, "socket", "#1a1820", 0.5, metal=0.6)
     M["inside"] = pbr(kit, "maze inside", "#120f17", 0.8)
     M["ply"] = kit.planks("#3f3229", "#2a211b", 0.7, "X", name="maze floor", rough=0.55)
@@ -425,7 +425,7 @@ PANE_Y1 = 13.0                # the corridor's end
 
 
 def tarp_mat(kit):
-    return pbr(kit, "tarp", "#1b1c24", 0.75, noise=(3.0, 0.6, 0.1))
+    return pbr(kit, "tarp", "#34364a", 0.7, noise=(3.0, 0.6, 0.1))
 
 
 def build_far(kit, ctx, M):
@@ -488,7 +488,7 @@ def build_far(kit, ctx, M):
         kit.cyl(f"van.wheel{sx}", 0.4, 0.3, (vx + 0.5 + sx * 1.3, vy + 1.1, 0.4), pbr(kit, "tyre2", "#111113", 0.8),
                 rot=(0, math.radians(90), 0), n=20)
     ctx["van_hatch_y"] = vy + 1.12
-    kit.box("van.hatch", (1.6, 0.04, 0.8), (vx - 0.3, vy + 1.12, 1.55), kit.emit("#ffb35c", 2.2, name="van glow"))
+    kit.box("van.hatch", (1.6, 0.04, 0.8), (vx - 0.3, vy + 1.12, 1.55), kit.emit("#ffb35c", 0.9, name="van glow"))
     kit.box("van.counter", (1.9, 0.5, 0.06), (vx - 0.3, vy + 1.38, 1.1), M["steel"], bevel=0.01)
     kit.box("van.awning", (2.1, 0.7, 0.05), (vx - 0.3, vy + 1.4, 2.12), vpaint, rot=(math.radians(-8), 0, 0))
     ctx["van_steel"] = kit.box("van.steel", (1.8, 0.03, 1.5), (vx + 1.75, vy + 1.12, 1.3), kit.metal("#c9ccd4", 0.07, name="polished steel"))
@@ -546,16 +546,17 @@ def build_inside(kit, ctx, M):
         kit.box(f"{nm}.top", (1.3, 0.05, 0.05), (0, 0, 2.44), M["steel"], p)
         ctx[nm] = p
     # a stack of steel frames, upright and leaning, across the corridor (the trip-2 hide)
-    st = kit.empty("framestack", (IX - 0.05, 6.3, 0.04))
+    st = kit.empty("framestack", (IX - 0.42, 6.3, 0.04))
     for i in range(5):
-        kit.box(f"fs{i}", (1.3, 0.05, 2.2), (0.0, 0.07 * i - 0.12, 1.1), M["steel_d"], st, rot=(math.radians(5), 0, 0), bevel=0.01)
+        kit.box(f"fs{i}", (0.7, 0.05, 2.2), (0.0, 0.07 * i - 0.12, 1.1), M["steel_d"], st, rot=(math.radians(5), 0, 0), bevel=0.01)
     ctx["framestack"] = st
     # its lights: two soft lilac-white panels over the corridor
-    kit.light("room", "AREA", (IX, 3.5, 3.0), 260.0, "#d8d0ff", size=3.0)
+    kit.light("room", "AREA", (IX, 3.5, 3.0), 900.0, "#d8d0ff", size=3.0)
     kit.LIGHTS["room"]["obj"].rotation_euler = (0, 0, 0)
-    kit.light("roomb", "AREA", (IX, 10.0, 3.0), 260.0, "#d8d0ff", size=3.0)
+    kit.light("roomb", "AREA", (IX, 10.0, 3.0), 900.0, "#d8d0ff", size=3.0)
     kit.LIGHTS["roomb"]["obj"].rotation_euler = (0, 0, 0)
-    kit.light("amb", "AREA", (3.0, 0.0, 12.0), 140.0, "#8d84b8", size=22.0)
+    kit.light("camfill", "POINT", (0, 0, 3), 420.0, "#a8a2d8", size=0.7, shadow=False)
+    kit.light("amb", "AREA", (3.0, 0.0, 12.0), 2200.0, "#8d84b8", size=22.0)
     kit.LIGHTS["amb"]["obj"].rotation_euler = (0, 0, 0)
     kit.light("van", "AREA", (VAN[0] - 0.3, VAN[1] + 1.5, 2.0), 0.0, "#ffb060", size=1.4)
     for nm in ("room", "roomb", "amb", "van"):
@@ -922,12 +923,12 @@ def wet_coat(kit, story):
 # ------------------------------------------------------------------------------------------------ lights
 
 SHOT_LIGHTS = ("work", "rim", "rim2", "bounce", "kick", "face", "hair", "van")
-GAINS = {"maze": 1.0, "inside": 1.0, "wash": 1.0, "amb": 1.0, "room": 0.0, "roomb": 0.0}
+GAINS = {"camfill": 0.6, "maze": 1.0, "inside": 1.0, "wash": 1.0, "amb": 1.0, "room": 0.0, "roomb": 0.0}
 
 
 def build_lights(kit, ctx):
     # the maze's own glow: a broad soft lilac light off the facade and its bulbs, and one from inside the arch
-    kit.light("maze", "AREA", (ARCH_X + 1.0, MAZE_Y - 0.6, PLAT_Z + 2.4), 900.0, GLOW, size=8.0)
+    kit.light("maze", "AREA", (ARCH_X + 1.0, MAZE_Y - 0.6, PLAT_Z + 2.4), 1500.0, GLOW, size=8.0)
     kit.LIGHTS["maze"]["light"].shape = "RECTANGLE"
     kit.LIGHTS["maze"]["light"].size_y = 4.0
     kit.LIGHTS["maze"]["obj"].rotation_euler = (math.radians(-90), 0, 0)
@@ -960,6 +961,9 @@ def shot_look(kit, story, tl, t, ctx):
 
     over = {nm: 0.0 for nm in SHOT_LIGHTS}
     look = story.get("looks", {}).get(_shot(tl, t)["id"], {})
+    wl = "work" in look   # the worklight's stand only shows in the shots that use it
+    for o in [ctx["work_root"]] + list(ctx["work_root"].children_recursive):
+        o.hide_render = not wl
     fade = cue_at(tl, "fade", t)
     fg = 1.0
     if fade and not fade.get("reset"):
@@ -987,10 +991,17 @@ def shot_look(kit, story, tl, t, ctx):
     # the lamp's head turns to where the beam is aimed
     d = K.LIGHTS["work"]["obj"].rotation_euler.to_matrix() @ V((0, 0, -1))
     ctx["work_head"].rotation_euler = (-math.atan2(d.z, math.hypot(d.x, d.y)), 0, math.atan2(d.x, -d.y))
+    bpy.context.scene.view_settings.exposure = float(look.get("exposure", story.get("look", {}).get("exposure", 0.0)))
+    from blocky import bl_story
+
+    sh = _shot(tl, t)
+    spec = next(x for x in story["shots"] if x["id"] == sh["id"])
+    cl = bl_story.cam_at(spec, sh, t, None, tl)[0]
+    K.LIGHTS["camfill"]["obj"].location = (cl[0], cl[1], cl[2] + 0.25)
     g = float(look.get("bulbs", 1.0)) * fg
     e = K.MATS["bulb"].node_tree.nodes.get("Emission")
     if e is not None:
-        e.inputs["Strength"].default_value = 14.0 * g
+        e.inputs["Strength"].default_value = 7.0 * g
     return over
 
 
