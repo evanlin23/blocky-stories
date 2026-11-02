@@ -20,6 +20,7 @@ Cues read here:
 - sway: {"amp": degrees, "bias": degrees roll, "dur": s} how far the riders' chairs rock, easing over dur
 - card: {"me": bool, "mr": bool} the pink pass card on its cord at my neck or Mr Halvor's
 - cup: {"on": bool} the coffee on the deck rail
+- open: {"from": f, "dur": s} sky, sun and fill start at f of their level and ease up over dur (a soft opening)
 - ckey: {"gain": x} the creature's side key and rim (default 1)
 """
 
@@ -81,6 +82,15 @@ def _switch(cs, attr, t, default):
         if attr in c and c["t"] <= t + 1e-9:
             v = c[attr]
     return v
+
+
+def _open(tl, t):
+    """The `open` cue's brightness factor at t: `from` at the cue, easing to 1 over `dur` s."""
+    f = 1.0
+    for c in _cues(tl, "open"):
+        if c["t"] <= t:
+            f = c.get("from", 0.6) + (1.0 - c.get("from", 0.6)) * _ss((t - c["t"]) / max(0.01, c.get("dur", 0.5)))
+    return f
 
 
 def _hexl(kit, h):
@@ -574,7 +584,7 @@ def animate(kit, story, tl, t, ctx):
     sun = K.LIGHTS["sun"]
     sun["obj"].rotation_euler = (-s).to_track_quat("-Z", "Y").to_euler()
     sun["light"].color = _lin(L["sun_c"])
-    K.LIGHTS["sun"]["base"] = max(L["sun_e"], 0.0001)
+    K.LIGHTS["sun"]["base"] = max(L["sun_e"] * _open(tl, t), 0.0001)
     ctx["disc"].location = tuple(s * 450.0)
     ctx["disc_e"].inputs["Strength"].default_value = L["disc"]
     ctx["disc_e"].inputs["Color"].default_value = (*_lin(L["sun_c"]), 1)
@@ -591,12 +601,7 @@ def animate(kit, story, tl, t, ctx):
     cf["light"].color = _lin(L["cam_c"])
     cf["light"].size = 1.5
     # `open` cue (opt-in): sky and fill start at `from` of their level and ease up to it over `dur` s
-    opn = 1.0
-    for c in _cues(tl, "open"):
-        if c["t"] <= t:
-            opn = c.get("from", 0.6) + (1.0 - c.get("from", 0.6)) * _ss((t - c["t"]) / max(0.01, c.get("dur", 0.5)))
-            if t - c["t"] > c.get("dur", 0.5) + 0.1:
-                opn = 1.0
+    opn = _open(tl, t)
     w.inputs["Strength"].default_value = L["sky_s"] * opn
     cf["base"] = 7.0 * min(dist, 12.0) ** 2 * L["cam"] * spec.get("cfill", 1.0) * opn
     # ---- the lift clock and the chairs

@@ -517,8 +517,7 @@ cues = [
     {"at": "L60", "name": "light", "look": "gold", "ramp": 7.0},
     {"at": "L64", "name": "light", "look": "warm1", "ramp": 0.01},
     {"at": "L72", "name": "light", "look": "warm2", "ramp": 9.0},
-    {"at": "L36", "name": "open", "from": 0.55, "dur": 0.5},   # S38 opens on a half-second brightness ease
-    {"at": "L32", "name": "open", "from": 0.9, "dur": 0.4},
+    {"at": "L36", "name": "open", "from": 0.25, "dur": 0.5},   # S38 opens on a half-second brightness ease
     {"at": 0, "name": "card", "me": True, "mr": False},
     {"at": "L68", "name": "card", "me": False, "mr": True},
     {"at": 0, "name": "cup", "on": False},
