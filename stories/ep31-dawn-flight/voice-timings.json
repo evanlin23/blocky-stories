@@ -6,62 +6,366 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Rosa said the wind was zero.",
+   "text": "In this valley, if your family forgets you, your body comes apart, block by block.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 3.552,
    "onset": 0.172,
-   "end": 1.534,
+   "end": 3.345,
    "chunks": [
     [
      0.172,
-     0.543
+     0.621
     ],
     [
-     0.543,
-     0.845
+     0.655,
+     1.069
     ],
     [
-     0.845,
-     1.534
+     1.069,
+     1.603
+    ],
+    [
+     1.707,
+     2.017
+    ],
+    [
+     2.017,
+     2.448
+    ],
+    [
+     2.483,
+     3.345
     ]
    ]
   },
   "L02": {
-   "text": "So why was the basket tilting?",
+   "text": "Get married, and you click tight overnight.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 1.879,
    "onset": 0.172,
-   "end": 1.552,
+   "end": 1.69,
    "chunks": [
     [
      0.172,
-     0.448
+     0.569
     ],
     [
-     0.448,
-     0.948
+     0.595,
+     0.922
     ],
     [
-     0.948,
-     1.552
+     0.922,
+     1.103
+    ],
+    [
+     1.103,
+     1.69
     ]
    ]
   },
   "L03": {
-   "text": "Not a ripple on the balloon. Still as a painting.",
+   "text": "Move to the city, and you come home rattling.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.259,
+   "dur": 2.19,
+   "onset": 0.19,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.19,
+     0.439
+    ],
+    [
+     0.439,
+     0.81
+    ],
+    [
+     0.862,
+     1.017
+    ],
+    [
+     1.017,
+     1.379
+    ],
+    [
+     1.379,
+     2.0
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Grandads with big families squeak when they walk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 2.31,
+   "onset": 0.19,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     1.172
+    ],
+    [
+     1.172,
+     1.388
+    ],
+    [
+     1.388,
+     2.103
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Me? I've been coming loose for four years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
    "onset": 0.172,
-   "end": 2.069,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.362,
+     0.586
+    ],
+    [
+     0.586,
+     0.983
+    ],
+    [
+     0.983,
+     1.776
+    ]
+   ]
+  },
+  "L06": {
+   "text": "You can see the mist through my gaps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.741
+    ],
+    [
+     0.741,
+     1.517
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Dad's all the family I've got.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.854
+    ],
+    [
+     0.854,
+     1.414
+    ]
+   ]
+  },
+  "L08": {
+   "text": "And Dad forgets.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.155,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.052
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Some mornings, he looks at me like I'm a guest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.19,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.664,
+     0.905
+    ],
+    [
+     0.905,
+     1.052
+    ],
+    [
+     1.052,
+     1.285
+    ],
+    [
+     1.285,
+     1.879
+    ]
+   ]
+  },
+  "L10": {
+   "text": "But today was his sixtieth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.397
+    ]
+   ]
+  },
+  "L11": {
+   "text": "All he'd ever wanted was a balloon at dawn, just him and me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.828,
+   "onset": 0.172,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.845
+    ],
+    [
+     0.845,
+     1.259
+    ],
+    [
+     1.259,
+     1.707
+    ],
+    [
+     1.776,
+     2.103
+    ],
+    [
+     2.103,
+     2.638
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Rosa, our pilot, filled it with fire.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.854,
+     1.077
+    ],
+    [
+     1.077,
+     1.741
+    ]
+   ]
+  },
+  "L13": {
+   "text": "She never asked our names.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.362
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Dad pinned a balloon badge to his scarf and said, \"First time up!\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.69,
    "chunks": [
     [
      0.172,
@@ -69,151 +373,31 @@
     ],
     [
      0.509,
-     1.052
+     1.086
     ],
     [
-     1.129,
-     1.422
+     1.086,
+     1.439
     ],
     [
-     1.422,
-     2.069
-    ]
-   ]
-  },
-  "L04": {
-   "text": "But the basket leaned, toward its empty corner.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.259,
-   "onset": 0.155,
-   "end": 2.052,
-   "chunks": [
-    [
-     0.155,
-     0.621
-    ],
-    [
-     0.621,
-     0.966
-    ],
-    [
-     1.034,
-     1.293
-    ],
-    [
-     1.293,
-     2.052
-    ]
-   ]
-  },
-  "L05": {
-   "text": "Then the burner roared. Down in the mist, pieces caught the light.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.759,
-   "onset": 0.172,
-   "end": 2.569,
-   "chunks": [
-    [
-     0.172,
-     0.31
-    ],
-    [
-     0.31,
-     0.931
-    ],
-    [
-     1.008,
-     1.25
-    ],
-    [
-     1.25,
-     1.517
-    ],
-    [
-     1.552,
-     1.845
-    ],
-    [
-     1.845,
-     2.569
-    ]
-   ]
-  },
-  "L06": {
-   "text": "It was Dad's sixtieth. A balloon flight at dawn.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.483,
-   "onset": 0.155,
-   "end": 2.276,
-   "chunks": [
-    [
-     0.155,
-     0.595
-    ],
-    [
-     0.595,
-     1.069
-    ],
-    [
-     1.155,
-     1.681
-    ],
-    [
-     1.681,
-     2.276
-    ]
-   ]
-  },
-  "L07": {
-   "text": "He'd wanted it for years. Me, him, and my brother Callum.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.552,
-   "onset": 0.155,
-   "end": 2.362,
-   "chunks": [
-    [
-     0.155,
-     0.483
-    ],
-    [
-     0.483,
-     1.0
-    ],
-    [
-     1.094,
-     1.448
-    ],
-    [
-     1.474,
+     1.439,
      1.81
     ],
     [
-     1.81,
-     2.362
+     1.948,
+     2.69
     ]
    ]
   },
-  "L08": {
-   "text": "Callum couldn't make it. work. That's what I told Dad.",
+  "L15": {
+   "text": "The leather rim was worn smooth in two places.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.466,
+   "dur": 2.241,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 2.052,
    "chunks": [
     [
      0.172,
@@ -221,319 +405,39 @@
     ],
     [
      0.56,
-     0.81
+     1.181
     ],
     [
-     0.862,
-     1.121
-    ],
-    [
-     1.19,
-     1.474
-    ],
-    [
-     1.474,
-     2.259
-    ]
-   ]
-  },
-  "L09": {
-   "text": "Dad just nodded. He didn't ask again.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.034,
-   "onset": 0.172,
-   "end": 1.845,
-   "chunks": [
-    [
-     0.172,
-     0.845
-    ],
-    [
-     0.914,
-     1.138
-    ],
-    [
-     1.138,
-     1.845
-    ]
-   ]
-  },
-  "L10": {
-   "text": "The launch field was dark and cold.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.879,
-   "onset": 0.172,
-   "end": 1.672,
-   "chunks": [
-    [
-     0.172,
-     0.629
-    ],
-    [
-     0.629,
-     0.983
-    ],
-    [
-     0.983,
-     1.672
-    ]
-   ]
-  },
-  "L11": {
-   "text": "Rosa, our pilot, filled the balloon with fire.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.172,
-   "end": 2.034,
-   "chunks": [
-    [
-     0.172,
-     0.81
-    ],
-    [
-     0.87,
-     1.371
-    ],
-    [
-     1.371,
-     2.034
-    ]
-   ]
-  },
-  "L12": {
-   "text": "It stood up like a giant waking.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.759,
-   "onset": 0.155,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.155,
-     0.543
-    ],
-    [
-     0.543,
-     0.983
-    ],
-    [
-     0.983,
-     1.569
-    ]
-   ]
-  },
-  "L13": {
-   "text": "The basket was built for four. A corner each.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.345,
-   "onset": 0.155,
-   "end": 2.138,
-   "chunks": [
-    [
-     0.155,
-     0.492
-    ],
-    [
-     0.492,
-     0.759
-    ],
-    [
-     0.759,
-     1.207
-    ],
-    [
-     1.301,
-     1.655
-    ],
-    [
-     1.655,
-     2.138
-    ]
-   ]
-  },
-  "L14": {
-   "text": "Dad unpacked his bag. four flasks of tea.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.397,
-   "onset": 0.172,
-   "end": 2.19,
-   "chunks": [
-    [
-     0.172,
-     0.629
-    ],
-    [
-     0.629,
-     1.052
-    ],
-    [
-     1.129,
-     1.629
-    ],
-    [
-     1.629,
-     2.19
-    ]
-   ]
-  },
-  "L15": {
-   "text": "I said, Dad, there's three of us.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.155,
-   "end": 1.414,
-   "chunks": [
-    [
-     0.155,
-     0.379
-    ],
-    [
-     0.414,
-     0.621
-    ],
-    [
-     0.647,
-     0.957
-    ],
-    [
-     0.957,
-     1.414
+     1.181,
+     2.052
     ]
    ]
   },
   "L16": {
-   "text": "He said, habit, and stood the fourth in the empty corner.",
+   "text": "Right where Dad and I put our hands.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.569,
-   "onset": 0.155,
-   "end": 2.379,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
    "chunks": [
     [
-     0.155,
+     0.172,
      0.414
     ],
     [
-     0.448,
-     0.828
+     0.414,
+     0.845
     ],
     [
-     0.897,
-     1.129
-    ],
-    [
-     1.129,
-     1.474
-    ],
-    [
-     1.474,
+     0.845,
      1.603
-    ],
-    [
-     1.603,
-     2.379
     ]
    ]
   },
   "L17": {
-   "text": "Rosa looked at that corner.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.19,
-   "end": 1.397,
-   "chunks": [
-    [
-     0.19,
-     0.612
-    ],
-    [
-     0.612,
-     1.397
-    ]
-   ]
-  },
-  "L18": {
-   "text": "She tied a sandbag in there. For balance.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.172,
-   "end": 1.931,
-   "chunks": [
-    [
-     0.172,
-     0.406
-    ],
-    [
-     0.406,
-     0.819
-    ],
-    [
-     0.819,
-     1.172
-    ],
-    [
-     1.241,
-     1.931
-    ]
-   ]
-  },
-  "L19": {
-   "text": "The rim was old leather, worn smooth by hands.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.379,
-   "onset": 0.172,
-   "end": 2.19,
-   "chunks": [
-    [
-     0.172,
-     0.37
-    ],
-    [
-     0.37,
-     0.931
-    ],
-    [
-     1.0,
-     1.5
-    ],
-    [
-     1.5,
-     2.19
-    ]
-   ]
-  },
-  "L20": {
    "text": "Then the ground let go of us.",
    "who": "narrator",
    "voice": "am_adam",
@@ -557,1028 +461,196 @@
     ]
    ]
   },
-  "L21": {
-   "text": "The fields sank under the mist.",
+  "L18": {
+   "text": "The fields, sank under the mist.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.629,
+     0.957
+    ],
+    [
+     0.957,
+     1.534
+    ]
+   ]
+  },
+  "L19": {
+   "text": "The burner roared, and my hand slid a finger's width off my sleeve.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.586,
+   "dur": 3.086,
    "onset": 0.155,
-   "end": 1.379,
+   "end": 2.879,
    "chunks": [
     [
      0.155,
-     0.517
+     0.828
     ],
     [
-     0.517,
-     0.854
+     0.897,
+     1.345
     ],
     [
-     0.854,
-     1.379
+     1.345,
+     1.474
+    ],
+    [
+     1.474,
+     2.0
+    ],
+    [
+     2.0,
+     2.879
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Dad didn't see. He pointed at every barn roof and said, \"Look at that.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.172,
+   "end": 2.897,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.897,
+     1.293
+    ],
+    [
+     1.293,
+     1.906
+    ],
+    [
+     1.906,
+     2.172
+    ],
+    [
+     2.259,
+     2.897
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Rosa mouthed it with him, like she knew the words.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     0.948
+    ],
+    [
+     0.974,
+     1.285
+    ],
+    [
+     1.285,
+     1.931
     ]
    ]
   },
   "L22": {
-   "text": "Rosa looked up and said, Wind is zero. perfect.",
+   "text": "The burner roared again.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.448,
+   "dur": 1.448,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 1.259,
    "chunks": [
     [
      0.172,
-     0.647
+     0.526
     ],
     [
-     0.647,
-     0.897
-    ],
-    [
-     0.931,
-     1.534
-    ],
-    [
-     1.629,
-     2.259
+     0.526,
+     1.259
     ]
    ]
   },
   "L23": {
-   "text": "Then Dad's cup slid along the rim.",
+   "text": "Dad looked at me, and his smile went polite.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.69
+    ],
+    [
+     0.724,
+     1.19
+    ],
+    [
+     1.19,
+     1.879
+    ]
+   ]
+  },
+  "L24": {
+   "text": "He said, \"And who's this, Rosa?\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.741,
    "onset": 0.155,
-   "end": 1.552,
-   "chunks": [
-    [
-     0.155,
-     0.647
-    ],
-    [
-     0.647,
-     0.836
-    ],
-    [
-     0.836,
-     1.552
-    ]
-   ]
-  },
-  "L24": {
-   "text": "All the way to the empty corner.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.672,
-   "onset": 0.172,
    "end": 1.466,
    "chunks": [
     [
-     0.172,
-     0.534
+     0.155,
+     0.448
     ],
     [
-     0.534,
-     0.698
+     0.5,
+     0.897
     ],
     [
-     0.698,
+     0.931,
      1.466
     ]
    ]
   },
   "L25": {
-   "text": "Rosa frowned, and gave the burner a long roar.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.328,
-   "onset": 0.172,
-   "end": 2.138,
-   "chunks": [
-    [
-     0.172,
-     0.759
-    ],
-    [
-     0.802,
-     1.008
-    ],
-    [
-     1.008,
-     1.328
-    ],
-    [
-     1.328,
-     2.138
-    ]
-   ]
-  },
-  "L26": {
-   "text": "The mist lit orange under us.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.172,
-   "end": 1.517,
-   "chunks": [
-    [
-     0.172,
-     0.466
-    ],
-    [
-     0.466,
-     0.905
-    ],
-    [
-     0.905,
-     1.517
-    ]
-   ]
-  },
-  "L27": {
-   "text": "And a field away, something hung in it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.845,
-   "onset": 0.155,
-   "end": 1.655,
-   "chunks": [
-    [
-     0.155,
-     0.284
-    ],
-    [
-     0.284,
-     0.776
-    ],
-    [
-     0.828,
-     1.052
-    ],
-    [
-     1.052,
-     1.655
-    ]
-   ]
-  },
-  "L28": {
-   "text": "blocks. copper ones, and slate blue. scattered.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.293,
-   "onset": 0.172,
-   "end": 2.086,
-   "chunks": [
-    [
-     0.172,
-     0.379
-    ],
-    [
-     0.414,
-     0.793
-    ],
-    [
-     0.819,
-     1.397
-    ],
-    [
-     1.492,
-     2.086
-    ]
-   ]
-  },
-  "L29": {
-   "text": "Like the parts of somebody, before anyone had built them.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.603,
-   "onset": 0.172,
-   "end": 2.414,
-   "chunks": [
-    [
-     0.172,
-     0.595
-    ],
-    [
-     0.595,
-     1.121
-    ],
-    [
-     1.19,
-     1.681
-    ],
-    [
-     1.681,
-     2.414
-    ]
-   ]
-  },
-  "L30": {
-   "text": "The roar stopped, and they were gone.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.621,
-   "onset": 0.172,
-   "end": 1.431,
-   "chunks": [
-    [
-     0.172,
-     0.655
-    ],
-    [
-     0.681,
-     0.836
-    ],
-    [
-     0.836,
-     1.431
-    ]
-   ]
-  },
-  "L31": {
-   "text": "The basket leaned a little further.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.724,
-   "onset": 0.155,
-   "end": 1.517,
-   "chunks": [
-    [
-     0.155,
-     0.586
-    ],
-    [
-     0.586,
-     0.784
-    ],
-    [
-     0.784,
-     0.974
-    ],
-    [
-     0.974,
-     1.517
-    ]
-   ]
-  },
-  "L32": {
-   "text": "Dad kept pointing at barn roofs, saying, look at that.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.362,
-   "onset": 0.172,
-   "end": 2.155,
-   "chunks": [
-    [
-     0.172,
-     0.698
-    ],
-    [
-     0.698,
-     1.224
-    ],
-    [
-     1.285,
-     1.517
-    ],
-    [
-     1.543,
-     2.155
-    ]
-   ]
-  },
-  "L33": {
-   "text": "The burner roared again.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.448,
-   "onset": 0.172,
-   "end": 1.259,
-   "chunks": [
-    [
-     0.172,
-     0.526
-    ],
-    [
-     0.526,
-     0.741
-    ],
-    [
-     0.741,
-     1.259
-    ]
-   ]
-  },
-  "L34": {
-   "text": "The pieces were closer. One hedge off.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.155,
-   "end": 1.862,
-   "chunks": [
-    [
-     0.155,
-     0.492
-    ],
-    [
-     0.492,
-     0.983
-    ],
-    [
-     1.061,
-     1.862
-    ]
-   ]
-  },
-  "L35": {
-   "text": "And they'd come together. almost. A shape.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.052,
-   "onset": 0.155,
-   "end": 1.845,
-   "chunks": [
-    [
-     0.155,
-     0.397
-    ],
-    [
-     0.397,
-     0.897
-    ],
-    [
-     0.966,
-     1.276
-    ],
-    [
-     1.31,
-     1.845
-    ]
-   ]
-  },
-  "L36": {
-   "text": "Two legs. A body. Two arms. A head, in slices.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 2.672,
-   "onset": 0.207,
-   "end": 2.466,
-   "chunks": [
-    [
-     0.207,
-     0.569
-    ],
-    [
-     0.595,
-     0.879
-    ],
-    [
-     0.931,
-     1.362
-    ],
-    [
-     1.397,
-     1.603
-    ],
-    [
-     1.629,
-     2.466
-    ]
-   ]
-  },
-  "L37": {
-   "text": "Every block a hand's width from the next.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.017,
-   "onset": 0.172,
-   "end": 1.81,
-   "chunks": [
-    [
-     0.172,
-     0.621
-    ],
-    [
-     0.621,
-     1.138
-    ],
-    [
-     1.138,
-     1.81
-    ]
-   ]
-  },
-  "L38": {
-   "text": "Far taller than a person, because of all the gaps.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.345,
-   "onset": 0.172,
-   "end": 2.155,
-   "chunks": [
-    [
-     0.172,
-     0.578
-    ],
-    [
-     0.578,
-     1.069
-    ],
-    [
-     1.121,
-     1.414
-    ],
-    [
-     1.414,
-     2.155
-    ]
-   ]
-  },
-  "L39": {
-   "text": "Rosa never saw it. She just said, Somebody's leaning. Nobody was.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.983,
-   "onset": 0.172,
-   "end": 2.793,
-   "chunks": [
-    [
-     0.172,
-     0.595
-    ],
-    [
-     0.595,
-     0.948
-    ],
-    [
-     1.017,
-     1.414
-    ],
-    [
-     1.448,
-     1.983
-    ],
-    [
-     2.017,
-     2.793
-    ]
-   ]
-  },
-  "L40": {
-   "text": "The sandbag rope creaked.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.155,
-   "end": 1.276,
-   "chunks": [
-    [
-     0.155,
-     0.776
-    ],
-    [
-     0.776,
-     1.276
-    ]
-   ]
-  },
-  "L41": {
-   "text": "Then the next roar.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.31,
-   "onset": 0.172,
-   "end": 1.103,
-   "chunks": [
-    [
-     0.172,
-     0.319
-    ],
-    [
-     0.319,
-     1.103
-    ]
-   ]
-  },
-  "L42": {
-   "text": "It was a rope's length from the basket.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.845,
-   "onset": 0.155,
-   "end": 1.655,
-   "chunks": [
-    [
-     0.155,
-     0.31
-    ],
-    [
-     0.31,
-     0.879
-    ],
-    [
-     0.879,
-     1.655
-    ]
-   ]
-  },
-  "L43": {
-   "text": "Every piece in the right place now.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.172,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.172,
-     0.595
-    ],
-    [
-     0.595,
-     0.707
-    ],
-    [
-     0.707,
-     1.121
-    ],
-    [
-     1.121,
-     1.569
-    ]
-   ]
-  },
-  "L44": {
-   "text": "Its face came in slices.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.155,
-   "end": 1.414,
-   "chunks": [
-    [
-     0.155,
-     0.517
-    ],
-    [
-     0.517,
-     0.759
-    ],
-    [
-     0.759,
-     1.414
-    ]
-   ]
-  },
-  "L45": {
-   "text": "The eyes on one. The mouth two gaps below.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.345,
-   "onset": 0.172,
-   "end": 2.138,
-   "chunks": [
-    [
-     0.172,
-     0.439
-    ],
-    [
-     0.439,
-     0.879
-    ],
-    [
-     0.948,
-     1.233
-    ],
-    [
-     1.233,
-     2.138
-    ]
-   ]
-  },
-  "L46": {
-   "text": "Through the gaps, I could see pink mist.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.862,
-   "onset": 0.172,
-   "end": 1.655,
-   "chunks": [
-    [
-     0.172,
-     0.638
-    ],
-    [
-     0.664,
-     0.974
-    ],
-    [
-     0.974,
-     1.655
-    ]
-   ]
-  },
-  "L47": {
-   "text": "The roar faded, and it faded with it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.172,
-   "end": 1.707,
-   "chunks": [
-    [
-     0.172,
-     0.759
-    ],
-    [
-     0.81,
-     0.974
-    ],
-    [
-     0.974,
-     1.707
-    ]
-   ]
-  },
-  "L48": {
-   "text": "Then the basket tipped, hard, toward the fourth corner.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.259,
-   "onset": 0.155,
-   "end": 2.069,
-   "chunks": [
-    [
-     0.155,
-     0.569
-    ],
-    [
-     0.569,
-     0.776
-    ],
-    [
-     0.81,
-     1.086
-    ],
-    [
-     1.138,
-     1.328
-    ],
-    [
-     1.328,
-     2.069
-    ]
-   ]
-  },
-  "L49": {
-   "text": "Rosa said, hold on, and opened the burner wide.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.431,
-   "onset": 0.172,
-   "end": 2.224,
-   "chunks": [
-    [
-     0.172,
-     0.621
-    ],
-    [
-     0.655,
-     1.069
-    ],
-    [
-     1.121,
-     1.406
-    ],
-    [
-     1.406,
-     2.224
-    ]
-   ]
-  },
-  "L50": {
-   "text": "And it was in the basket.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.414,
-   "onset": 0.172,
-   "end": 1.224,
-   "chunks": [
-    [
-     0.172,
-     0.448
-    ],
-    [
-     0.448,
-     0.526
-    ],
-    [
-     0.526,
-     1.224
-    ]
-   ]
-  },
-  "L51": {
-   "text": "In the fourth corner, right beside the sandbag.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.172,
-   "onset": 0.172,
-   "end": 1.966,
-   "chunks": [
-    [
-     0.172,
-     0.483
-    ],
-    [
-     0.483,
-     0.776
-    ],
-    [
-     0.828,
-     1.233
-    ],
-    [
-     1.233,
-     1.966
-    ]
-   ]
-  },
-  "L52": {
-   "text": "Its pieces towered over us.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.672,
-   "onset": 0.155,
-   "end": 1.483,
-   "chunks": [
-    [
-     0.155,
-     0.595
-    ],
-    [
-     0.595,
-     0.888
-    ],
-    [
-     0.888,
-     1.483
-    ]
-   ]
-  },
-  "L53": {
-   "text": "A hand's width from Dad's shoulder.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.828,
-   "onset": 0.172,
-   "end": 1.621,
-   "chunks": [
-    [
-     0.172,
-     0.69
-    ],
-    [
-     0.69,
-     1.077
-    ],
-    [
-     1.077,
-     1.621
-    ]
-   ]
-  },
-  "L54": {
-   "text": "Its sliced face was turned to Dad.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.845,
-   "onset": 0.155,
-   "end": 1.638,
-   "chunks": [
-    [
-     0.155,
-     0.75
-    ],
-    [
-     0.75,
-     1.052
-    ],
-    [
-     1.052,
-     1.638
-    ]
-   ]
-  },
-  "L55": {
-   "text": "Dad was watching the sunrise. He never turned.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.241,
-   "onset": 0.172,
-   "end": 2.034,
-   "chunks": [
-    [
-     0.172,
-     0.664
-    ],
-    [
-     0.664,
-     1.19
-    ],
-    [
-     1.241,
-     1.492
-    ],
-    [
-     1.492,
-     2.034
-    ]
-   ]
-  },
-  "L56": {
-   "text": "The burner roared again.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.448,
-   "onset": 0.172,
-   "end": 1.259,
-   "chunks": [
-    [
-     0.172,
-     0.526
-    ],
-    [
-     0.526,
-     0.741
-    ],
-    [
-     0.741,
-     1.259
-    ]
-   ]
-  },
-  "L57": {
-   "text": "And the top of its head had turned to me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.81,
-   "onset": 0.155,
-   "end": 1.621,
-   "chunks": [
-    [
-     0.155,
-     0.457
-    ],
-    [
-     0.457,
-     0.819
-    ],
-    [
-     0.819,
-     1.155
-    ],
-    [
-     1.155,
-     1.621
-    ]
-   ]
-  },
-  "L58": {
-   "text": "The rest of it still faced Dad.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.155,
-   "end": 1.448,
-   "chunks": [
-    [
-     0.155,
-     0.388
-    ],
-    [
-     0.388,
-     0.517
-    ],
-    [
-     0.517,
-     0.966
-    ],
-    [
-     0.966,
-     1.448
-    ]
-   ]
-  },
-  "L59": {
-   "text": "Its weight was on Callum's corner.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.759,
-   "onset": 0.155,
-   "end": 1.552,
-   "chunks": [
-    [
-     0.155,
-     0.492
-    ],
-    [
-     0.492,
-     0.716
-    ],
-    [
-     0.716,
-     1.017
-    ],
-    [
-     1.017,
-     1.552
-    ]
-   ]
-  },
-  "L60": {
-   "text": "The basket was leaning toward the place I'd left empty.",
+   "text": "The long roar. My hands drifted off my sleeves.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1589,103 +661,175 @@
    "chunks": [
     [
      0.172,
-     0.56
+     0.776
     ],
     [
-     0.56,
-     0.897
+     0.845,
+     1.19
     ],
     [
-     0.897,
-     1.397
+     1.19,
+     1.552
     ],
     [
-     1.397,
+     1.552,
      2.31
     ]
    ]
   },
-  "L61": {
-   "text": "Callum never said he was busy.",
+  "L26": {
+   "text": "A hand's width. Then two.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.724,
+   "dur": 1.603,
    "onset": 0.172,
-   "end": 1.517,
+   "end": 1.379,
    "chunks": [
     [
      0.172,
+     0.69
+    ],
+    [
+     0.724,
+     1.379
+    ]
+   ]
+  },
+  "L27": {
+   "text": "My head came apart in slices.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.81
+    ],
+    [
+     0.81,
+     1.569
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Through the gap in my own face, I could see Dad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
      0.655
     ],
     [
      0.655,
-     1.0
+     1.052
     ],
     [
-     1.0,
-     1.517
+     1.077,
+     1.276
+    ],
+    [
+     1.276,
+     1.914
     ]
    ]
   },
-  "L62": {
-   "text": "I forgot to ask him till it was too late.",
+  "L29": {
+   "text": "Smiling at a stranger.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.966,
-   "onset": 0.155,
-   "end": 1.776,
+   "dur": 1.414,
+   "onset": 0.19,
+   "end": 1.207,
    "chunks": [
     [
-     0.155,
-     0.483
+     0.19,
+     0.492
     ],
     [
-     0.483,
-     0.897
+     0.492,
+     1.207
+    ]
+   ]
+  },
+  "L30": {
+   "text": "I knew what to say. I say it every time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.457
     ],
     [
-     0.897,
+     0.457,
+     0.776
+    ],
+    [
+     0.845,
      1.147
     ],
     [
      1.147,
-     1.776
+     1.879
     ]
    ]
   },
-  "L63": {
-   "text": "It felt easier to blame Callum than to say I forgot.",
+  "L31": {
+   "text": "I said, \"Happy birthday, Dad. Look at the sun.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.621,
+   "dur": 2.224,
    "onset": 0.155,
-   "end": 2.414,
+   "end": 2.017,
    "chunks": [
     [
      0.155,
-     0.707
+     0.431
     ],
     [
-     0.707,
-     1.448
+     0.483,
+     1.241
     ],
     [
-     1.448,
-     1.767
+     1.293,
+     1.457
     ],
     [
-     1.767,
-     2.414
+     1.457,
+     2.017
     ]
    ]
   },
-  "L64": {
+  "L32": {
    "text": "The sun broke out of the mist, all gold.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1713,134 +857,26 @@
     ]
    ]
   },
-  "L65": {
-   "text": "So I told Dad. all of it. I couldn't look at him.",
+  "L33": {
+   "text": "Dad turned, and his whole face woke up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
+   "dur": 1.966,
    "onset": 0.172,
-   "end": 2.086,
-   "chunks": [
-    [
-     0.172,
-     0.345
-    ],
-    [
-     0.345,
-     0.828
-    ],
-    [
-     0.888,
-     1.172
-    ],
-    [
-     1.207,
-     1.466
-    ],
-    [
-     1.466,
-     2.086
-    ]
-   ]
-  },
-  "L66": {
-   "text": "He went quiet for a whole burner roar.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.81,
-   "onset": 0.155,
-   "end": 1.621,
-   "chunks": [
-    [
-     0.155,
-     0.586
-    ],
-    [
-     0.586,
-     0.879
-    ],
-    [
-     0.879,
-     1.621
-    ]
-   ]
-  },
-  "L67": {
-   "text": "Then he laughed so loud Rosa jumped.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.828,
-   "onset": 0.155,
-   "end": 1.638,
-   "chunks": [
-    [
-     0.155,
-     0.534
-    ],
-    [
-     0.534,
-     0.862
-    ],
-    [
-     0.862,
-     1.638
-    ]
-   ]
-  },
-  "L68": {
-   "text": "He said, You could have just told me you forgot.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.155,
-   "end": 1.81,
-   "chunks": [
-    [
-     0.155,
-     0.483
-    ],
-    [
-     0.509,
-     0.759
-    ],
-    [
-     0.759,
-     1.138
-    ],
-    [
-     1.138,
-     1.81
-    ]
-   ]
-  },
-  "L69": {
-   "text": "Then he said, He'll want his flask tomorrow.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.155,
    "end": 1.759,
    "chunks": [
     [
-     0.155,
-     0.552
+     0.172,
+     0.603
     ],
     [
-     0.578,
-     0.802
+     0.629,
+     0.776
     ],
     [
-     0.802,
+     0.776,
      1.19
     ],
     [
@@ -1849,351 +885,239 @@
     ]
    ]
   },
-  "L70": {
-   "text": "The pieces stayed in that corner all the way down.",
+  "L34": {
+   "text": "He said, \"There's my boy.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.224,
+   "dur": 1.534,
    "onset": 0.155,
-   "end": 2.034,
+   "end": 1.31,
    "chunks": [
     [
      0.155,
      0.466
     ],
     [
-     0.466,
-     0.732
-    ],
-    [
-     0.732,
-     1.155
-    ],
-    [
-     1.155,
-     1.328
-    ],
-    [
-     1.328,
-     2.034
+     0.517,
+     1.31
     ]
    ]
   },
-  "L71": {
-   "text": "Rosa set us down, soft, in a stubble field.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.397,
-   "onset": 0.172,
-   "end": 2.19,
-   "chunks": [
-    [
-     0.172,
-     0.621
-    ],
-    [
-     0.621,
-     0.914
-    ],
-    [
-     0.992,
-     1.241
-    ],
-    [
-     1.267,
-     1.647
-    ],
-    [
-     1.647,
-     2.19
-    ]
-   ]
-  },
-  "L72": {
-   "text": "Dad put his phone on the rim and rang Callum.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.172,
-   "onset": 0.172,
-   "end": 1.983,
-   "chunks": [
-    [
-     0.172,
-     0.423
-    ],
-    [
-     0.423,
-     0.716
-    ],
-    [
-     0.716,
-     1.069
-    ],
-    [
-     1.069,
-     1.983
-    ]
-   ]
-  },
-  "L73": {
-   "text": "He picked up on the first ring.",
+  "L35": {
+   "text": "Every piece of me clicked back.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.603,
-   "onset": 0.155,
-   "end": 1.414,
-   "chunks": [
-    [
-     0.155,
-     0.543
-    ],
-    [
-     0.543,
-     0.681
-    ],
-    [
-     0.681,
-     1.414
-    ]
-   ]
-  },
-  "L74": {
-   "text": "Dad said, balloon. tomorrow. dawn.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.931,
    "onset": 0.172,
-   "end": 1.724,
+   "end": 1.397,
    "chunks": [
     [
      0.172,
-     0.448
+     0.578
     ],
     [
-     0.474,
-     0.81
-    ],
-    [
-     0.862,
-     1.172
-    ],
-    [
-     1.207,
-     1.724
-    ]
-   ]
-  },
-  "L75": {
-   "text": "Callum said, I'll bring the biscuits.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.69,
-   "onset": 0.172,
-   "end": 1.5,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.629,
-     0.836
-    ],
-    [
-     0.836,
-     1.5
-    ]
-   ]
-  },
-  "L76": {
-   "text": "I looked at the fourth corner.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.517,
-   "onset": 0.172,
-   "end": 1.31,
-   "chunks": [
-    [
-     0.172,
-     0.439
-    ],
-    [
-     0.439,
-     0.56
-    ],
-    [
-     0.56,
-     1.31
-    ]
-   ]
-  },
-  "L77": {
-   "text": "Just a sandbag, and a flask.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.172,
-   "end": 1.431,
-   "chunks": [
-    [
-     0.172,
+     0.578,
      0.741
     ],
     [
-     0.768,
-     1.431
+     0.741,
+     1.397
     ]
    ]
   },
-  "L78": {
-   "text": "Callum came, and we had a corner each.",
+  "L36": {
+   "text": "Dad turned sixty four years ago.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
+   "dur": 1.845,
    "onset": 0.172,
-   "end": 1.672,
+   "end": 1.638,
    "chunks": [
     [
      0.172,
-     0.638
+     0.862
     ],
     [
-     0.664,
-     0.888
+     0.862,
+     1.199
     ],
     [
-     0.888,
-     1.672
+     1.199,
+     1.638
     ]
    ]
   },
-  "L79": {
-   "text": "Rosa untied the sandbag and left it on the grass.",
+  "L37": {
+   "text": "It's the last morning he remembers whole. With me in it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.517,
-   "onset": 0.172,
-   "end": 2.31,
-   "chunks": [
-    [
-     0.172,
-     0.664
-    ],
-    [
-     0.664,
-     1.276
-    ],
-    [
-     1.276,
-     1.594
-    ],
-    [
-     1.594,
-     2.31
-    ]
-   ]
-  },
-  "L80": {
-   "text": "Callum's flask stood in Callum's corner.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.017,
-   "onset": 0.172,
-   "end": 1.81,
-   "chunks": [
-    [
-     0.172,
-     0.741
-    ],
-    [
-     0.741,
-     0.905
-    ],
-    [
-     0.905,
-     1.276
-    ],
-    [
-     1.276,
-     1.81
-    ]
-   ]
-  },
-  "L81": {
-   "text": "The horizon sat flat as a shelf.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.793,
    "onset": 0.155,
-   "end": 1.603,
+   "end": 2.328,
    "chunks": [
     [
      0.155,
-     0.534
+     0.345
     ],
     [
-     0.534,
-     0.957
-    ],
-    [
-     0.957,
-     1.603
-    ]
-   ]
-  },
-  "L82": {
-   "text": "Rosa said the wind was zero. The basket flew level.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.621,
-   "onset": 0.19,
-   "end": 2.431,
-   "chunks": [
-    [
-     0.19,
-     0.56
-    ],
-    [
-     0.56,
+     0.345,
      0.784
     ],
     [
      0.784,
-     1.241
+     1.517
     ],
     [
-     1.345,
-     1.767
+     1.586,
+     1.854
     ],
     [
-     1.767,
-     2.431
+     1.854,
+     2.328
+    ]
+   ]
+  },
+  "L38": {
+   "text": "So every dawn, Rosa takes us up, and it's his sixtieth again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.793,
+     1.233
+    ],
+    [
+     1.233,
+     1.621
+    ],
+    [
+     1.69,
+     1.974
+    ],
+    [
+     1.974,
+     2.879
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Back at the trailer, she pinned his badge with the others.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.776
+    ],
+    [
+     0.828,
+     1.112
+    ],
+    [
+     1.112,
+     1.474
+    ],
+    [
+     1.474,
+     2.172
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Hundreds of them. All the same.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.69
+    ],
+    [
+     0.741,
+     1.5
+    ]
+   ]
+  },
+  "L41": {
+   "text": "By lunch, he'll ask Rosa who I am.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.492,
+     1.034
+    ],
+    [
+     1.034,
+     1.672
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Tomorrow, Dad turns sixty again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.5,
+     1.138
+    ],
+    [
+     1.138,
+     1.638
     ]
    ]
   }
