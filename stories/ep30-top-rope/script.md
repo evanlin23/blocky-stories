@@ -1,7 +1,7 @@
 # ep30-top-rope: the script (writer, 2026-11-02)
 
 - **Slug:** `ep30-top-rope`. Folder `stories/ep30-top-rope/`. From pitch #14 in `stories/ideas.md`.
-- **Title (package):** Who was standing upside down on the ceiling above my climb?
+- **Title (package):** Since my slip last year, nobody holds my rope
 - **Target length:** 2:15 to 2:30, never over 3:00.
 - **Word count:** 624 spoken words in 90 lines, all `narrator` in voice A, plus 3 pause beats (2.4 s in all).
 - **Estimated length:** about 2:18 to 2:25. At 290 wpm the speech is 2:09. The 0.12 s gaps add about 11 s, the pause beats 2.4 s and the loop tail 0.25 s. If the retime lands over 2:30, cut L45 ("I told myself / it was the old BEAMS.") first, then L83. If it lands under 2:15, add "Its EYES / never BLINKED." after L25.

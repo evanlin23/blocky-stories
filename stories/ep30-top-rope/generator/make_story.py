@@ -99,7 +99,7 @@ shot("S39", "L39", still((3.0, -2.6, 1.6), (-0.3, -2.25, 1.3), 24))
 shot("S40", "L40", still((5.4, -1.05, 8.7), (0.15, -1.05, 8.9), 28))
 shot("S41", "L41", still((0.0, -3.6, 0.8), (0.15, -1.0, 9.0), 20))
 shot("S42", "L42", still((1.3, -3.0, 4.5), (0, -0.3, 4.9), 30))
-shot("S43", "L43", still((-1.6, -3.0, 5.0), (0, -0.3, 4.9), 30))
+shot("S43", "L43", still((-3.4, -6.2, 5.0), (0, -0.3, 4.6), 22), hand=0)
 shot("S44", "L44", still((-0.9, -2.2, 6.2), (-0.5, -0.2, 7.7), 30))
 shot("S45", "L45", still((0, -8.0, 9.5), (3.5, -5.2, 11.8), 24))
 shot("S46", "L46", still((1.5, -3.8, 2.8), (0, -0.3, 2.5), 30))
@@ -208,7 +208,7 @@ me = [
     ("L39", dict(pos=[0, -1.3, 0.3], arms=[40, 40], head=[0, 0], expr="neutral")),
     ("L40", dict(pos=[0, -0.3, 6.4], arms=UP, head=[0, 0])),
     ("L42", dict(pos=[0, -0.3, 3.4], arms=[165, 150], head=[-30, 0], glide=True)),
-    ("L43", dict(pos=[0, -0.3, 3.6], arms=[175, 150], glide=True)),
+    ("L43", dict(pos=[0, -0.3, 3.6], arms=[175, 150])),
     ("L44", dict(pos=[0, -0.3, 5.0], arms=UP, head=[0, 0])),
     ("L46", dict(pos=[0, -0.3, 1.0], arms=[165, 140], glide=True)),
     ("L47", dict(pos=[0, -0.3, 3.9], arms=[140, 165], head=[-45, 0], glide=True)),
@@ -265,6 +265,8 @@ sam = [
     ("L88", dict(pos=[-1.0, -3.0, 0.3], lean=-15, head=[0, -30])),
     ("L90", dict(pos=[-1.0, -1.8, 0.3], yaw=0, lean=0, head=[0, 0], arms=[0, 0], expr="neutral")),
 ]
+sam.insert(0, ("L01", dict(hidden=True)))
+sam.insert(1, ("L15", dict(hidden=False)))
 seq("sam", sam)
 acting["sam"].append({"from": "L39.1", "to": "L39.1+0.45", "mouth": [0.0, 0.7]})
 
@@ -322,7 +324,7 @@ for sid in ("S54", "S55", "S56", "S57"):
 looks["S42"] = {"lamps": 0.2, "flood": 0.3, "fill": 0.8}
 looks["S43"] = {"lamps": 0.35}
 looks["S44"] = {"lamps": 0.5}
-looks["S45"] = {"lamps": 0.5}
+looks["S45"] = {"lamps": 0.9, "fill": 1.6}
 looks["S66"]["glow"] = [[0.0, -1.5, 8.7], 70.0]
 looks["S83"] = {"glow": [[1.0, -6.0, 10.4], 600.0]}
 looks["S03"] = {"lamps": 2.4, "flood": 1.2, "fill": 1.5, "glow": [[0.3, -2.4, 3.0], 150.0]}
