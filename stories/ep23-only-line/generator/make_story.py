@@ -109,9 +109,9 @@ MARKS = [[x, round(3.2 - 0.07 * x * x, 2)] for x in MX]     # p1..p5, then the y
 YEL = MARKS[5]
 KING = [0.0, 1.4]
 CHAIRS = [[-1.8, 3.2], [-1.0, 4.1], [0.2, 4.4], [1.3, 3.9], [1.8, 3.0], [-1.5, 2.3]]
-ROW3 = (-0.8, -4.5)           # Marion's seat (the third row)
+ROW3 = (-0.58, -4.5)           # Marion's seat (the third row)
 ME_EDGE = [2.9, 1.9]
-EDGE_ME, EDGE_WALT = [0.6, 0.45], [-0.3, 0.45]       # sitting on the stage edge
+EDGE_ME, EDGE_WALT = [0.6, 0.45, -0.51], [-0.3, 0.45, -0.51]       # sitting on the stage edge
 FLAT = (-40.0, 0.0)
 CAR = (40.0, 0.0)
 # the Prompter: where it stands each day, and how it faces
@@ -138,7 +138,7 @@ cast = {
            "pants": "#26262c", "shoes": "#2c2624", "sleeves": "short", "hair": "bun", "hair_c": "#2a1a14",
            "hat": "none", "face": {"eyes": "round", "brows": True, "ink": "#18100e"}},
     "p4": {"age": "adult", "skin": "#f0cfae", "shirt": "#3d7a4a", "pattern": "solid", "collar": "#2f6039",
-           "pants": "#34343c", "shoes": "#222", "sleeves": "long", "hair": "swoop", "hair_c": "#b8782a",
+           "pants": "#34343c", "shoes": "#222226", "sleeves": "long", "hair": "swoop", "hair_c": "#b8782a",
            "hat": "none", "face": {"eyes": "round", "brows": True, "ink": "#1c1210"}},
     "p5": {"age": "adult", "skin": "#7a4c36", "shirt": "#c8b890", "pattern": "plaid", "pattern_c": "#6a5a3a",
            "pants": "#2d3340", "shoes": "#2a2420", "sleeves": "long", "hair": "buzz", "hair_c": "#120e0c",
@@ -234,17 +234,17 @@ SHOTS = [
     ("L39", "Walt points at the yellow cross", 2, still([0.3, -2.4, 1.05], [-0.1, 0.4, 0.95], 32)),
     ("L40", "me on the cross, eyes to stage left", 2, face(YEL, 3.0, 50, -6)),
     ("L41", "from my mark: the Prompter half out of the velvet", 2,
-     still([YEL[0] + 0.1, YEL[1] + 0.1, 1.55], [PP["wed"][0], PP["wed"][1], 1.5], 30)),
+     still([YEL[0] + 0.1, YEL[1] + 0.07, 1.55], [PP["wed"][0], PP["wed"][1], 1.2], 17)),
     ("L43", "tilt up the coat to the tiny shoulders", 2,
      c([0, [2.85, 3.2, 0.4], [PP["wed"][0], PP["wed"][1], 0.35], 34], [1, [2.85, 3.2, 0.4], [PP["wed"][0], PP["wed"][1], 1.3], 34])),
-    ("L44", "the reveal: the huge cracked gilt mask", 2, still([2.6, 3.0, 1.5], [PP["wed"][0] + 0.05, PP["wed"][1], 1.55], 36)),
+    ("L44", "the reveal: the huge cracked gilt mask", 2, still([2.4, 2.9, 1.55], [PP["wed"][0] + 0.02, PP["wed"][1], 1.38], 24)),
     # 05 Thursday
     ("L45", "wide from the house: the Prompter at the 1st leg", 2, still([-0.2, -6.0, 1.35], [2.4, 3.4, 1.35], 28)),
     ("L47", "Walt asks, arms out", 2, face(KING, 3.4, 44, 6, tz=1.36)),
     ("L48", "I freeze, the tick stops", 2, face(YEL, 3.0, 50, 4)),
-    ("L49", "the mask, eye sparks, two metres from me", 1, still([YEL[0] + 0.05, YEL[1] + 0.1, 1.6], [PP["thu"][0], PP["thu"][1], 1.62], 44)),
-    ("L50", "its mouth opened", 1, still([2.62, 2.85, 1.62], [PP["thu"][0], PP["thu"][1], 1.62], 52)),
-    ("L51", "the black inside the mouth", 1, still([2.8, 3.0, 1.6], [PP["thu"][0], PP["thu"][1], 1.55], 52)),
+    ("L49", "the mask, eye sparks, two metres from me", 1, still([YEL[0], YEL[1] + 0.05, 1.62], [PP["thu"][0], PP["thu"][1], 1.6], 19)),
+    ("L50", "its mouth opened", 1, still([YEL[0], YEL[1] + 0.05, 1.62], [PP["thu"][0], PP["thu"][1], 1.62], 24)),
+    ("L51", "the black inside the mouth", 1, still([2.78, 3.2, 1.5], [PP["thu"][0], PP["thu"][1], 1.5], 30)),
     ("L52", "my face, terrified", 2, face(YEL, 2.9, 52, -10)),
     ("L53", "night: me in my car under one streetlamp", 2, still([CAR[0] - 3.2, CAR[1] - 3.4, 1.15], [CAR[0], CAR[1] + 0.2, 0.85], 32)),
     # 06 dress rehearsal
@@ -359,7 +359,7 @@ put("me", 0, YEL, yaw=0, expr="worried")                                   # the
 key("me", 0.5, mouth=0)
 acting["me"].append({"from": 0, "to": "L01>", "mouth": [0.0, 0.3]})
 put("me", "L04", ME_EDGE, yaw=0, expr="worried", arms=[0, 0])                # day: at the edge of the circle
-put("me", "L11", [-2.3, -4.5], yaw=90, expr="worried")                      # in the aisle by Marion's row
+put("me", "L11", [-2.3, -4.5, -0.41], yaw=90, expr="worried")                      # in the aisle by Marion's row
 hide("me", "L12")
 put("me", "L17", YEL, yaw=0, expr="neutral")
 put("me", "L20", YEL, yaw=0, expr="worried")
@@ -370,14 +370,17 @@ key("me", "L26", expr="worried", head=[58, 0], blend=0.3)
 put("me", "L28", YEL, yaw=0, expr="neutral")
 key("me", "L30", expr="scared", look=[0.9, 0])
 key("me", "L31", expr="scared", head=[60, 0], look=[0.9, 0], blend=0.4)
+hide("me", "L32")
 put("me", "L34", EDGE_ME, yaw=0, expr="neutral", sit=True)
 hide("me", "L40")
 put("me", "L40", YEL, yaw=0, expr="scared", look=[0.9, 0])
-put("me", "L44", YEL, yaw=0, expr="scared", look=[0.9, 0])
+hide("me", "L41")                                                          # from my mark: the camera is my eyes
+put("me", "L45", YEL, yaw=0, expr="scared", look=[0.9, 0])
 put("me", "L47", YEL, yaw=0, expr="worried")
 put("me", "L48", YEL, yaw=0, expr="scared", look=[0.9, 0])
+hide("me", "L49")
 put("me", "L52", YEL, yaw=0, expr="terrified", look=[0.9, 0])
-put("me", "L53", [CAR[0] - 0.4, CAR[1] - 0.15], yaw=0, expr="worried", sit=True)       # in the car
+put("me", "L53", [CAR[0] - 0.4, CAR[1] + 0.1, 0.01], yaw=0, expr="worried", sit=True)       # in the car
 put("me", "L54", YEL, yaw=0, expr="neutral")
 put("me", "L55", YEL, yaw=0, expr="worried")
 key("me", "L57", expr="scared")
@@ -385,11 +388,11 @@ put("me", CH("L57", "and stepped"), [YEL[0], 3.75], yaw=0, expr="scared")       
 put("me", "L59", [YEL[0], 3.75], yaw=0, expr="terrified")
 put("me", "L62", [YEL[0], 3.75], yaw=0, expr="terrified")
 hide("me", "L68")
-put("me", "L69", [FLAT[0], FLAT[1] - 0.8], yaw=180, expr="soft", sit=True)  # at the table (tired)
-put("me", "L71", [FLAT[0], FLAT[1] - 0.8], yaw=180, expr="soft", sit=True)
+put("me", "L69", [FLAT[0], FLAT[1] - 0.85, -0.06], yaw=180, expr="soft", sit=True)  # at the table (tired)
+put("me", "L71", [FLAT[0], FLAT[1] - 0.85, -0.06], yaw=180, expr="soft", sit=True)
 hide("me", "L71")
-put("me", "L76", [FLAT[0], FLAT[1] - 0.8], yaw=180, expr="worried", sit=True)
-put("me", "L77", [FLAT[0], FLAT[1] - 0.8], yaw=180, expr="soft", sit=True, arms=[52, 0])
+put("me", "L76", [FLAT[0], FLAT[1] - 0.85, -0.06], yaw=180, expr="worried", sit=True)
+put("me", "L77", [FLAT[0], FLAT[1] - 0.85, -0.06], yaw=180, expr="soft", sit=True, arms=[52, 0])
 put("me", "L78", YEL, yaw=0, expr="worried")
 put("me", "L79", YEL, yaw=0, expr="worried")
 quake("me", "L79", 11, 2.2, a=2)
@@ -411,7 +414,7 @@ key("me", "L96", expr="soft", blend=0.1)
 
 # Walt
 hide("walt", 0)
-put("walt", "L04", CHAIRS[5], yaw=yaw_to(CHAIRS[5], [0, 3.2]), expr="neutral", sit=True)
+put("walt", "L04", CHAIRS[5] + [-0.06], yaw=yaw_to(CHAIRS[5], [0, 3.2]), expr="neutral", sit=True)
 put("walt", "L07", KING, yaw=0, expr="neutral")
 key("walt", "L08", expr="neutral", head=[0, -12], blend=0.3)
 key("walt", "L09", head=[0, 0])
@@ -445,7 +448,7 @@ key("walt", "L95", expr="soft")
 # the company
 for i, p in enumerate(PLAYERS):
     hide(p, 0)
-    put(p, "L04", CHAIRS[i], yaw=yaw_to(CHAIRS[i], [0, 3.2]), sit=True)
+    put(p, "L04", CHAIRS[i] + [-0.06], yaw=yaw_to(CHAIRS[i], [0, 3.2]), sit=True)
     hide(p, "L07")
 players("L17")
 answers("L19")
@@ -467,7 +470,7 @@ answers("L86")
 
 # Marion
 hide("marion", 0)
-ROW3_POS = [ROW3[0], ROW3[1]]
+ROW3_POS = [ROW3[0], ROW3[1], -0.45]
 put("marion", "L06", ROW3_POS, yaw=180, expr="grin", sit=True, arms=[0, 85], side=[0, 5])
 key("marion", CH("L06", "gave"), arms=[0, 0], blend=0.4)
 hide("marion", "L07")
@@ -519,12 +522,12 @@ cues = [
      "key_gain": 1.0, "rim_gain": 1.0},
     {"at": "L53", "name": "prompter", "hidden": True},
     {"at": "L62", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 0, "mouth": 1, "key_gain": 0.9, "rim_gain": 0.9,
-     "key": [1.0, -0.6, 0.35]},
+     "key": [-0.9, -0.9, 0.35]},
     {"at": "L64", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 180, "mouth": 1, "key_gain": 0.9, "rim_gain": 0.9,
      "key": [1.2, 1.1, 0.4], "rim": [-0.5, -0.9, 2.6]},
     {"at": "L68", "name": "prompter", "hidden": True},
     {"at": "L75", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 0, "mouth": 0, "key_gain": 0.9, "rim_gain": 0.9,
-     "key": [1.0, -0.6, 0.35]},
+     "key": [-0.9, -0.9, 0.35]},
     {"at": "L76", "name": "prompter", "hidden": True},
     # costumes: the king's crown (a prop from Wednesday) and robe (dress rehearsal on), my cloak
     {"at": 0, "name": "costume", "who": "walt", "beard": True, "crown": False, "robe": False},
@@ -586,6 +589,8 @@ story = {
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.03], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.22, "grain": 0.012, "red_line": 0.79},
     "phonemes": {},
+    "places": {"marks": MARKS, "legy": LEGY, "king": KING, "chairs": CHAIRS, "ghost": [-0.3, 2.0], "flat": list(FLAT),
+               "car": list(CAR)},
     "cast": cast,
     "lines": lines,
     "shots": shots,
