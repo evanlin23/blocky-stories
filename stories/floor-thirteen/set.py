@@ -1167,7 +1167,7 @@ def animate(kit, story, tl, t, ctx):
     gains = gains_of(a_c) if a_c else [0.0] * len(att["buttons"])
     pc = _prev(acs, a_c) if a_c else None
     if pc is not None:
-        u = _ramp_u(a_c, t, 0.12)
+        u = _ramp_u(a_c, t, 0.3)
         if u < 1.0:
             gains = [x + (y - x) * u for x, y in zip(gains_of(pc), gains)]
     pose_attendant(att, a.get("pos", (0.0, SILL_Y - 0.4)), a.get("yaw", 180.0), a.get("lean", 0.0), a.get("bend", 0.0),
@@ -1196,12 +1196,12 @@ def animate(kit, story, tl, t, ctx):
     g = light_gains(lc)
     pl_ = _prev(lcs, lc) if lc else None
     if pl_ is not None:
-        u = _ramp_u(lc, t, 0.0)
+        u = _ramp_u(lc, t, 0.3)
         if u < 1.0:
             g = _lerp_dict(light_gains(pl_), g, u)
     state = lc.get("state", "on")
     beyond = BEYOND.get(state)
-    if pl_ is not None and _ramp_u(lc, t, 0.0) < 1.0 and BEYOND.get(pl_.get("state")):
+    if pl_ is not None and _ramp_u(lc, t, 0.3) < 1.0 and BEYOND.get(pl_.get("state")):
         beyond = beyond or BEYOND.get(pl_.get("state"))
     for name, objs in ctx["grp"].items():
         for o in objs:
@@ -1241,9 +1241,16 @@ def animate(kit, story, tl, t, ctx):
     g["panel_key"] *= a.get("key", 1.0)
     ctx["M"]["diffuser"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.6 * g.pop("diffuser")
     ctx["M"]["segment"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.4
-    pl = (_last(_cues(tl, "panel"), t) or {}).get("lit", [])
+    pcs = _cues(tl, "panel")
+    pcur = _last(pcs, t) or {}
+    pl = pcur.get("lit", [])
+    ppl = (_prev(pcs, pcur) or {}).get("lit", []) if pcur else []
+    pu = max(0.0, min(1.0, (t - pcur["t"]) / 0.3)) if pcur else 1.0
+    pu = pu * pu * (3 - 2 * pu)
     for i, m in enumerate(ctx["panel_buttons"]):
-        set_button(m, 2.4 if i in pl else 0.0)
+        a0 = 2.4 if i in ppl else 0.0
+        a1 = 2.4 if i in pl else 0.0
+        set_button(m, a0 + (a1 - a0) * pu)
     # --- the finger: on a floor-panel button, pressed in by "press" (0..1), coming in from the car
     fc = _last(_cues(tl, "finger"), t) or {}
     if fc.get("on"):

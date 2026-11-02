@@ -25,7 +25,8 @@
   "fog_start": 1.5,
   "sky": "#0b0d11",
   "sky_strength": 1.0,
-  "exposure": 1.0
+  "exposure": 1.0,
+  "flash_safe": true
  },
  "grade": {
   "shadows": [
@@ -8168,7 +8169,8 @@
    "cast_dark": true,
    "cast_rim": 0.7,
    "fill": 1.0,
-   "ceiling": 0.8
+   "ceiling": 0.8,
+   "dur": 0.3
   },
   {
    "at": "L04",
@@ -8189,27 +8191,32 @@
   {
    "at": "L09",
    "name": "lights",
-   "state": "land"
+   "state": "land",
+   "dur": 0.3
   },
   {
    "at": "L11",
    "name": "lights",
-   "state": "balc_blue"
+   "state": "balc_blue",
+   "dur": 0.3
   },
   {
    "at": "L15",
    "name": "lights",
-   "state": "on"
+   "state": "on",
+   "dur": 0.3
   },
   {
    "at": "L17",
    "name": "lights",
-   "state": "lobby"
+   "state": "lobby",
+   "dur": 0.3
   },
   {
    "at": "L18",
    "name": "lights",
-   "state": "on"
+   "state": "on",
+   "dur": 0.3
   },
   {
    "at": "P02",
@@ -8244,17 +8251,20 @@
   {
    "at": "L37",
    "name": "lights",
-   "state": "balc_blue"
+   "state": "balc_blue",
+   "dur": 0.3
   },
   {
    "at": "L38",
    "name": "lights",
-   "state": "land"
+   "state": "land",
+   "dur": 0.3
   },
   {
    "at": "L41",
    "name": "lights",
-   "state": "on"
+   "state": "on",
+   "dur": 0.3
   },
   {
    "at": "P04",
@@ -8271,7 +8281,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.7,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L57",
@@ -8279,7 +8290,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.8,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L58",
@@ -8287,7 +8299,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.7,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L59",
@@ -8295,7 +8308,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.5,
-   "fill": 1.1
+   "fill": 1.1,
+   "dur": 0.3
   },
   {
    "at": "L60",
@@ -8303,7 +8317,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.7,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L61",
@@ -8311,7 +8326,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 1.6,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L61.2",
@@ -8319,12 +8335,14 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.5,
-   "fill": 1.1
+   "fill": 1.1,
+   "dur": 0.3
   },
   {
    "at": "L62",
    "name": "lights",
-   "state": "on"
+   "state": "on",
+   "dur": 0.3
   },
   {
    "at": "L64",
@@ -8332,7 +8350,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.5,
-   "fill": 1.1
+   "fill": 1.1,
+   "dur": 0.3
   },
   {
    "at": "L67",
@@ -8340,7 +8359,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.5,
-   "fill": 1.1
+   "fill": 1.1,
+   "dur": 0.3
   },
   {
    "at": "L68",
@@ -8348,7 +8368,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.7,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L69",
@@ -8356,7 +8377,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.5,
-   "fill": 1.1
+   "fill": 1.1,
+   "dur": 0.3
   },
   {
    "at": "L70",
@@ -8364,7 +8386,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.7,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L71",
@@ -8372,7 +8395,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.5,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L72",
@@ -8380,7 +8404,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.5,
-   "fill": 1.1
+   "fill": 1.1,
+   "dur": 0.3
   },
   {
    "at": "L73",
@@ -8388,7 +8413,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.7,
-   "fill": 0.0
+   "fill": 0.0,
+   "dur": 0.3
   },
   {
    "at": "L74",
@@ -8396,7 +8422,8 @@
    "state": "thirteen",
    "cast_dark": true,
    "cast_rim": 0.5,
-   "fill": 1.1
+   "fill": 1.1,
+   "dur": 0.3
   },
   {
    "at": "L80",
@@ -8407,17 +8434,20 @@
   {
    "at": "L83",
    "name": "lights",
-   "state": "lobby"
+   "state": "lobby",
+   "dur": 0.3
   },
   {
    "at": "L85",
    "name": "lights",
-   "state": "balc_gold"
+   "state": "balc_gold",
+   "dur": 0.3
   },
   {
    "at": "L90",
    "name": "lights",
-   "state": "on"
+   "state": "on",
+   "dur": 0.3
   },
   {
    "at": 0,
@@ -9289,7 +9319,8 @@
     5
    ],
    "glow": 3.0,
-   "wash": 3.0
+   "wash": 3.0,
+   "dur": 0.3
   },
   {
    "at": "L04",
@@ -9298,12 +9329,14 @@
    "lit": [
     5
    ],
-   "glow": 1.5
+   "glow": 1.5,
+   "dur": 0.3
   },
   {
    "at": "L09",
    "name": "attendant",
-   "hidden": true
+   "hidden": true,
+   "dur": 0.3
   },
   {
    "at": "P02",
@@ -9312,7 +9345,8 @@
    "lit": [
     5
    ],
-   "glow": 1.5
+   "glow": 1.5,
+   "dur": 0.3
   },
   {
    "at": "L25.1",
@@ -9322,7 +9356,7 @@
     8
    ],
    "glow": 1.5,
-   "dur": 0.25
+   "dur": 0.3
   },
   {
    "at": "L28",
@@ -9332,7 +9366,7 @@
     5
    ],
    "glow": 1.5,
-   "dur": 0.25
+   "dur": 0.3
   },
   {
    "at": "P03",
@@ -9341,12 +9375,14 @@
    "lit": [
     5
    ],
-   "glow": 1.5
+   "glow": 1.5,
+   "dur": 0.3
   },
   {
    "at": "L36",
    "name": "attendant",
-   "hidden": true
+   "hidden": true,
+   "dur": 0.3
   },
   {
    "at": "P04",
@@ -9355,7 +9391,8 @@
    "lit": [
     5
    ],
-   "glow": 1.5
+   "glow": 1.5,
+   "dur": 0.3
   },
   {
    "at": "L49",
@@ -9365,7 +9402,7 @@
     3
    ],
    "glow": 1.5,
-   "dur": 0.2
+   "dur": 0.3
   },
   {
    "at": "L50",
@@ -9375,7 +9412,7 @@
     4
    ],
    "glow": 1.5,
-   "dur": 0.2
+   "dur": 0.3
   },
   {
    "at": "L50+0.45",
@@ -9385,7 +9422,7 @@
     5
    ],
    "glow": 1.5,
-   "dur": 0.2
+   "dur": 0.3
   },
   {
    "at": "P06",
@@ -9402,7 +9439,8 @@
    "eye": 1.9,
    "peak": 0.0,
    "key": 0.3,
-   "wash": 0.55
+   "wash": 0.55,
+   "dur": 0.3
   },
   {
    "at": "L56.2",
@@ -9419,13 +9457,14 @@
    "eye": 1.9,
    "peak": 0.0,
    "key": 0.3,
-   "wash": 0.55
+   "wash": 0.55,
+   "dur": 0.3
   },
   {
    "at": "L65.2",
    "name": "attendant",
    "lit": 8,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9443,7 +9482,7 @@
    "at": "L68>-0.3",
    "name": "attendant",
    "lit": 7,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9461,7 +9500,7 @@
    "at": "L69.2",
    "name": "attendant",
    "lit": 6,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9479,7 +9518,7 @@
    "at": "L70.2",
    "name": "attendant",
    "lit": 5,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9497,7 +9536,7 @@
    "at": "L72.2",
    "name": "attendant",
    "lit": 4,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9515,7 +9554,7 @@
    "at": "L73.0>-0.2",
    "name": "attendant",
    "lit": 3,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9533,7 +9572,7 @@
    "at": "L75.3",
    "name": "attendant",
    "lit": 2,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9551,7 +9590,7 @@
    "at": "L77.4",
    "name": "attendant",
    "lit": 1,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9569,7 +9608,7 @@
    "at": "L79.2+0.3",
    "name": "attendant",
    "lit": 0,
-   "dur": 0.18,
+   "dur": 0.3,
    "pose": "bump",
    "bend": 44,
    "head": [
@@ -9586,7 +9625,8 @@
   {
    "at": "L80",
    "name": "attendant",
-   "hidden": true
+   "hidden": true,
+   "dur": 0.3
   },
   {
    "at": 0,

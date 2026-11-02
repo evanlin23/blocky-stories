@@ -457,6 +457,8 @@ cues = []
 
 
 def cue(at, name, **kw):
+    if name in ("lights", "attendant"):
+        kw["dur"] = max(kw.get("dur", 0.3), 0.3)   # flash-safe: every light switch ramps over at least 0.3 s
     cues.append({"at": at, "name": name, **kw})
 
 
@@ -722,7 +724,7 @@ story = {
     "gap": 0.12,
     "tail": LOOP,
     "look": {"fog": "#0d1015", "fog_density": 0.02, "fog_start": 1.5, "sky": "#0b0d11", "sky_strength": 1.0,
-             "exposure": 1.0},
+             "exposure": 1.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.0, 0.005, 0.01], "saturation": 0.85, "contrast": 1.1,
               "vignette": 0.42, "bloom": 0.22, "grain": 0.014, "red_line": 0.79},
     "phonemes": {"Okafor": "ˌOkˈɑfɔɹ"},
