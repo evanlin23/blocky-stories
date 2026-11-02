@@ -176,6 +176,7 @@ def mats(kit):
     M["clay"] = kit.grime("#7a4535", 0.55, 9.0, name="clay rough", rough=1.0)
     M["sack"] = kit.checker("#5e4529", "#503a22", 80.0, name="sack weave", rough=1.0)
     M["glint"] = kit.emit("#bcd4ff", 4.0, name="glint")
+    M["rsil"] = kit.plastic("#07090d", 0.9, name="rough silhouette")
     M["cutblack"] = kit.emit("#000000", 0.0, name="cut unlit")
     M["mist"] = kit.emit("#8a98a6", 0.05, name="mist in the cut")
     M["sqdark"] = kit.plastic("#18200f", 0.95, name="wet dark")
@@ -796,6 +797,14 @@ def animate(kit, story, tl, t, ctx):
     root = ctx["rough"]
     for ob in ctx["rough_parts"]:
         ob.hide_render = not on
+    sil = bool(on and rc.get("sil"))
+    for ob in ctx["rough_parts"]:
+        if ob.type != "MESH":
+            continue
+        if "orig_mat" not in ob:
+            ob["orig_mat"] = ob.material_slots[0].material.name
+        om = bpy.data.materials[ob["orig_mat"]]
+        ob.material_slots[0].material = ctx["M"]["rsil"] if (sil and om not in (ctx["M"]["glint"], ctx["M"]["cutblack"])) else om
     if on:
         root.location = (rc["pos"][0], rc["pos"][1], 0.0)
         root.rotation_euler = (0, 0, math.radians(rc.get("yaw", 0)))

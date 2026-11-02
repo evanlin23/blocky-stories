@@ -177,8 +177,11 @@ def strength(at, tid, value, dur=0.6):
     cues.append({"at": at, "name": "trail_str", "id": tid, "value": value, "dur": dur})
 
 
-def rough(at, pos, yaw=0.0, on=True, lights=1.0, key=1.0, rim=1.0):
-    cues.append({"at": at, "name": "rough", "on": on, "pos": pos, "yaw": yaw, "lights": lights, "key": key, "rim": rim})
+def rough(at, pos, yaw=0.0, on=True, lights=1.0, key=1.0, rim=1.0, sil=False):
+    c = {"at": at, "name": "rough", "on": on, "pos": pos, "yaw": yaw, "lights": lights, "key": key, "rim": rim}
+    if sil:
+        c["sil"] = True
+    cues.append(c)
 
 
 def look(x, y):
@@ -290,12 +293,12 @@ rough("L17", O(geo.LEFT, 61.5), on=False)
 shot("S21", "L17", cam(([-0.6, 53.5, 0.35], [-0.6, 66.0, 0.3], 28), ([-0.6, 55.5, 0.35], [-0.6, 66.0, 0.3], 28)), {})
 rough("L18", O(geo.LEFT, 61.5), yaw=0, lights=0.6)
 shot("S22", "L18", cam(([-1.1, 54.0, 0.55], [-1.1, 66.0, 0.9], 30), ([-1.1, 58.0, 0.55], [-1.1, 66.0, 0.9], 30)), {})
-rough("L18.3", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.05, rim=1.5)
-shot("S23", "L18.3", cam(([0.8, 49.0, 1.2], [-1.1, 62.0, 1.3], 55), ([0.8, 49.5, 1.2], [-1.1, 62.0, 1.3], 55)), {})
-shot("S24", "L19", cam(([1.8, 36.0, 1.4], [-1.1, 61.6, 1.3], 100), ([1.8, 36.6, 1.4], [-1.1, 61.6, 1.3], 100)), {})
-rough("L19", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.05, rim=1.5)
-shot("S25", "L20", cam(([-0.4, 47.0, 2.1], [-1.1, 61.2, 2.1], 90), ([-0.45, 47.6, 2.1], [-1.1, 61.2, 2.1], 90), hand=0.004), {})
-rough("L20", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.05, rim=1.5)
+rough("L18.3", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.0, rim=1.5, sil=True)
+shot("S23", "L18.3", cam(([0.8, 49.0, 1.2], [-1.1, 66.0, 1.4], 30), ([0.8, 49.5, 1.2], [-1.1, 66.0, 1.4], 32)), {})
+shot("S24", "L19", cam(([1.8, 36.0, 1.4], [-1.1, 66.0, 1.4], 40), ([1.8, 36.6, 1.4], [-1.1, 66.0, 1.4], 42)), {})
+rough("L19", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.0, rim=1.5, sil=True)
+shot("S25", "L20", cam(([-0.4, 47.0, 2.1], [-1.1, 66.0, 1.9], 28), ([-0.45, 47.6, 2.1], [-1.1, 66.0, 1.9], 29), hand=0.004), {})
+rough("L20", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.0, rim=1.5, sil=True)
 rough("L21", O(geo.LEFT, 61.5), yaw=0, lights=0.6)
 shot("S26", "L21", cam(([0.5, 50.0, 1.4], [-1.1, 61.5, 1.5], 34), ([0.6, 50.4, 1.4], [-1.1, 61.5, 1.5], 34)), {})
 cue("L21", "leaves", on=True, at_xy=O(geo.LEFT, 61.5))
