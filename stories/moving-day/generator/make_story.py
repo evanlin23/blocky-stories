@@ -99,18 +99,30 @@ FROWN = still([-1.25, -0.82, 1.55], [-0.13, -0.75, 2.02], 26)
 STARE = still([1.75, -2.55, 1.45], [0.62, -2.94, 1.95], 26)
 SIDEWAYS = still([-2.38, -2.87, 1.16], [-2.5, -2.03, 1.97], 26)
 MANY = still([-3.98, 2.66, 1.15], [-3.86, 2.8, 2.06], 18)
-SHELF = still([0.75, -0.62, 1.55], [1.69, -0.79, 1.42], 26)
-SMILE = still([0.86, -0.77, 1.45], [1.69, -0.79, 1.42], 18)
+# the L01 close and L77 are the same frame: the box alone, its peeled tape and tally, a floor or a shelf under it
+# (set.py SOLO_FLOOR / SOLO_SHELF are 1.36 m and 1.2 m apart)
+SHIFT = (1.36, 0.0, 1.2)
+
+
+def solo(shift):
+    a = ([-1.25 + shift[0], -0.62 + shift[1], 0.40 + shift[2]], [0.3 + shift[0], -0.79 + shift[1], 0.12 + shift[2]])
+    b = ([-1.17 + shift[0], -0.64 + shift[1], 0.39 + shift[2]], a[1])
+    return move(a, b, 24, 25)
+
+
+SOLO_L01 = solo((0, 0, 0))
+SOLO_L77 = solo(SHIFT)
+SHELF = still([0.62, -0.5, 1.75], [1.66, -0.79, 1.5], 26)
 
 # (at, room, what, step, camera). step: 1 on ones (the scare), 4 on fours (the clock wides, the face and night
 # inserts, L29b's door, L34c's cores, the shelf), 2 on twos. Rooms: hall, front, kitchen, mine, mum
 SHOTS = [
     # 01 the box, L01 to L12 (morning 1, cold dawn; the Boxes in the hall, 12 boxes, the frown)
     (0, "hall", "close on the bottom box: its peeled strip, my hand at it, tape glinting in the knee's gap", 2,
-     move(([-0.3, -1.22, 0.2], [0.32, -0.95, 0.16]), ([-0.22, -1.18, 0.19], [0.32, -0.95, 0.16]), 24, 26)),
+     SOLO_L01),
     ("L02", "hall", "my flat hands on its shins", 2, still([-1.2, -0.35, 1.9], [0.05, -0.8, 0.7], 22)),
     ("L03", "hall", "a slow tilt up the Boxes to the frown at the ceiling, me beside it for scale", 2,
-     move(([-1.65, -0.42, 0.4], [0.2, -0.72, 0.55]), ([-1.65, -0.42, 0.75], [-0.1, -0.76, 2.05]), 18)),
+     move(([-2.0, -1.3, 0.55], [0.1, -0.5, 1.4]), ([-2.0, -1.3, 0.55], [0.0, -0.5, 1.55]), 14)),   # Mum's door frame, lower than the stack
     ("L04.3", "hall", "the frown, close", 4, FROWN),
     ("L05", "front", "the low ceiling: me carrying a box under the bare bulb, the ceiling just over my head", 2,
      still([-1.1, -2.3, 1.2], [-2.6, -3.3, 1.55], 18)),
@@ -217,9 +229,9 @@ SHOTS = [
     # 08 the last box, L75 to L78
     ("L75", "hall", "the folded boxes at Mum's feet, the cupboard opening", 2, still([-0.6, -1.25, 2.15], [1.45, -0.75, 1.15], 20)),
     ("L76", "hall", "the box on the shelf, its dent", 4, SHELF),
-    ("L77", "hall", "the smile", 4, SMILE),
+    ("L77", "hall", "the L01 close again: the box on the shelf, peeled tape, no face", 4, SOLO_L77),
     ("L78", "hall", "Mum swings the cupboard door shut; the smile in view till the gap closes on \"it\", then the door",
-     2, still([-0.6, -1.25, 2.15], [1.45, -0.75, 1.3], 24)),
+     2, still([-0.6, -1.25, 2.15], [1.5, -0.75, 1.45], 24)),
 ]
 
 shots = []
@@ -280,7 +292,7 @@ IN_BED = {"lie": [-88, 0, 90], "head": [-55, 0], "side": [24, 0], "expr": "aslee
 ME_IN_BED = {"lie": [-88, 0, 0], "hide_parts": ["arm1", "arm-1", "leg-1", "leg1", "torsom", "collar"]}
 
 # me
-put("me", 0, [-0.8, -0.76], yaw=90, arms=[48, 0], side=[-25, 0], lean=6)        # my hand at the bottom box
+hide("me", 0)                                                                    # the L01 close is the box alone
 put("me", "L02", [-0.75, -0.76], yaw=90, arms=[55, 55], side=[-22, -22], lean=6)
 hide("me", "L03")
 put("me", "L05", [-2.1, -2.45], yaw=-150, arms=[78, 78], side=[-10, -10], head=[0, 8])   # carrying a box
@@ -387,7 +399,8 @@ cues = [
     {"at": "L64", "name": "time", "set": "sun"},
     {"at": "L75", "name": "time", "set": "end"},
     # the Boxes: found where it already stands when a scene starts, never seen moving
-    {"at": 0, "name": "boxes", "pose": "hall", "face": "frown"},
+    {"at": 0, "name": "boxes", "pose": "solo_floor", "face": "frown"},
+    {"at": "L02", "name": "boxes", "pose": "hall", "face": "frown"},
     {"at": "L14", "name": "boxes", "hidden": True},
     {"at": "L17", "name": "boxes", "pose": "kitchen", "face": "stare"},
     {"at": "L26", "name": "boxes", "pose": "front", "face": "sideways"},
@@ -395,7 +408,7 @@ cues = [
     {"at": "L41", "name": "boxes", "hidden": True},
     {"at": "L44", "name": "boxes", "pose": "over_bed", "face": "wide"},
     {"at": "L62", "name": "boxes", "hidden": True},
-    {"at": "L75", "name": "boxes", "pose": "shelf", "face": "smile"},
+    {"at": "L75", "name": "boxes", "pose": "solo_shelf", "face": "none"},
     # the stack by the door (the clock): 24, 18, 12, 4 with eyes, 0 with clean squares in the dust, 24 again
     {"at": 0, "name": "stack", "count": 24},
     {"at": "L15", "name": "stack", "count": 18},
@@ -458,6 +471,9 @@ cues = [
     {"at": "L44", "name": "door", "door": "mum", "open": 1.0},
     {"at": "L75.2", "name": "door", "door": "cupboard", "open": 1.0, "dur": 0.9},
     {"at": "L78.2-0.85", "name": "door", "door": "cupboard", "open": 0.0, "dur": 1.1},
+    # the relights ("xfill": one soft light, placed and aimed per beat, off between)
+    {"at": "L31", "name": "xfill", "pos": [-0.1, -3.7, 1.9], "aim": [-1.3, -3.0, 1.2], "gain": 1.6},
+    {"at": "L32", "name": "xfill", "gain": 0},
     # Mum's room at 3 a.m.
     {"at": 0, "name": "nightlight", "on": False},
     {"at": "L44", "name": "nightlight", "on": True},
