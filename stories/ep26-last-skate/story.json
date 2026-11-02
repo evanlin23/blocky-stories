@@ -29,16 +29,16 @@
  },
  "grade": {
   "shadows": [
-   0.02,
-   -0.01,
-   0.0
+   0.0,
+   0.0,
+   0.012
   ],
   "highlights": [
-   0.03,
+   0.025,
    0.01,
-   -0.03
+   -0.02
   ],
-  "saturation": 1.0,
+  "saturation": 0.88,
   "contrast": 1.06,
   "vignette": 0.38,
   "bloom": 0.3,
@@ -1756,7 +1756,8 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "the booth lamp, Lenny's shape at the mic"
+   "what": "the booth lamp, Lenny's shape at the mic",
+   "expo": 1.1
   },
   {
    "id": "S02",
@@ -1793,6 +1794,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the pool slides along the south rail from the west",
+   "expo": 1.4,
    "at": "L01.2"
   },
   {

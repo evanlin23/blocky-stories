@@ -316,7 +316,7 @@ def build_snack(kit, ctx):
         s.scale = (1.0, 1.0, 2.6)
         ctx["steam"].append((s, mix, i))
     # lights
-    kit.light("amber", "POINT", (STOOLS["pop"], STOOL_Y, 2.0), 170, "#ffa845", size=0.1)
+    kit.light("amber", "POINT", (STOOLS["pop"], STOOL_Y, 2.0), 170, "#ffbf70", size=0.1)
 
 
 def build_hire(kit, ctx):
