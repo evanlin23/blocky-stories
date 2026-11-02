@@ -462,8 +462,8 @@ _WARM = {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1"
 _COLD = {"wash_l": 0.7, "wash_r": 0.7, "wash_top": 0.7, "wash_back": 0.7, "run1": 1.0, "run2": 0.5, "run3": 1.0,
          "ghost": 0.4, "marion_lamp": 0.8, "wing_fill": 0.9}
 MOODS = {
-    "ghost": {"gains": {"ghost": 1.0, "ghost_fill": 1.0, "run1": 0.6, "run2": 0.3, "run3": 0.6, "wing_fill": 0.3},
-              "wash": "#ffb868", "exp": 1.0},
+    "ghost": {"gains": {"ghost": 1.0, "ghost_fill": 1.8, "run1": 0.6, "run2": 0.3, "run3": 0.6, "wing_fill": 0.3},
+              "wash": "#ffb868", "exp": 1.5},
     "work": {"gains": {"work_l": 1.0, "work_r": 1.0, "work_house": 1.0, "run1": 0.12, "run3": 0.12, "ghost": 0.2},
              "wash": "#ffb868", "exp": 0.0},
     "wing": {"gains": {"run1": 1.0, "run2": 0.6, "run3": 1.0, "ghost": 0.25, "ghost_fill": 0.3, "chalk_lit": 1.0,
