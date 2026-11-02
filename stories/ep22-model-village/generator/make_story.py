@@ -186,7 +186,7 @@ def mac(room, d0, d1=None, lens=55, tz=-0.012, dx=0.0, tx=0.0):
 
 # 01 the sight, L01 to L17
 shot("S01", None, mac("bakery", 0.14, 0.105), dof=[2.8, BAKFOC])
-shot("S02", "L01.2", cam((0, [1.2, -0.9, 0.62], [2.0, 0.5, 0.42], 32), (1, [0.1, -3.2, 1.35], [1.9, -0.1, 0.62], 28)), hand=0.01)
+shot("S02", "L01.3", cam((0, [1.2, -0.9, 0.62], [2.0, 0.5, 0.42], 32), (1, [0.1, -3.2, 1.35], [1.9, -0.1, 0.62], 28)), hand=0.01)
 shot("S03", "L03", cam((0, [-2.8, 0.22, 0.36], [3.0, 0.5, 0.40], 22), (1, [-2.5, 0.22, 0.36], [3.2, 0.5, 0.42], 22)), hand=0.004)
 shot("S04", "L04", cam((0, [1.3, 1.0, 0.95], [-1.4, -2.3, 1.0], 30), (1, [1.3, 1.0, 0.95], [-1.1, -2.0, 1.0], 30)))
 shot("S05", "L05", still([0.6, 1.0, 1.3], [0.5, -2.3, 1.1], 24))
@@ -227,7 +227,7 @@ shot("S30", "L30", still([R("chapel")["win_x"] + 1.1, R("chapel")["front_y"] - 0
 shot("S31", "L31", mac("chapel", 0.1, 0.085, lens=70), dof=[2.2, CHAFOC])
 # 04 next door, L32 to L34
 shot("S32a", "L32", cam((0, [-1.55, 4.55, 0.95], [-1.55, 5.82, 0.62], 24), (1, [-1.55, 4.9, 0.8], [-1.55, 5.82, 0.62], 24)))
-shot("S32b", "L32.2", mac("next", 0.12, 0.09, lens=65), dof=[2.4, NEXFOC])
+shot("S32b", "L32.3", mac("next", 0.12, 0.09, lens=65), dof=[2.4, NEXFOC])
 shot("S33", "L33", cam((0, [CX - 0.4, -2.3, 1.5], [CX + 2.0, 0.2, 1.3], 26), (1, [CX - 0.2, -2.3, 1.5], [CX + 2.0, 0.2, 1.3], 26)))
 shot("S34", "L34", cam((0, [CX - 1.3, -1.9, 1.5], [CX - 1.7, -0.9, 0.65], 30), (1, [CX - 1.5, -1.6, 1.5], [CX - 1.7, -0.9, 0.65], 30)))
 # 05 the scare, L35 to L48
@@ -277,7 +277,7 @@ shot("S63b", "L63.2", cam((0, [CX + 0.6, 1.05, 0.9], [CX + 0.6, 1.45, 0.8], 58),
 shot("S64", "L64", cam((0, [0.2, 1.3, 0.5], [0.2, -1.05, 0.42], 22), (1, [0.2, 1.1, 0.5], [0.2, -1.05, 0.42], 22)), hand=0.004)
 shot("S65", "L65", cam((0, [0.2, 6.65, 1.4], [0.35, 7.45, 0.74], 28), (1, [0.35, 6.8, 1.3], [0.35, 7.45, 0.74], 30)), hand=0.002)
 shot("S66a", "L66", mac("tea", 0.13, 0.11, lens=50, tz=-0.012, tx=-0.01), dof=[3.2, [TEA["win_x"] - 0.02, TEA["front_y"] + 0.07, TEA["floor_z"] + 0.02]])
-shot("S66b", "L66.2", mac("tea", 0.13, 0.11, lens=50, tz=-0.012, tx=-0.01), dof=[3.2, [TEA["win_x"] - 0.02, TEA["front_y"] + 0.07, TEA["floor_z"] + 0.02]])
+shot("S66b", "L66.3", mac("tea", 0.13, 0.11, lens=50, tz=-0.012, tx=-0.01), dof=[3.2, [TEA["win_x"] - 0.02, TEA["front_y"] + 0.07, TEA["floor_z"] + 0.02]])
 shot("S67", "L67", cam((0, [TEA["win_x"] - 0.045, TEA["front_y"] + 0.075, TEA["win_z"] + 0.004], [TEA["win_x"] + 0.0, TEA["front_y"] - 1.0, TEA["win_z"] + 0.008], 22),
                        (1, [TEA["win_x"] - 0.043, TEA["front_y"] + 0.073, TEA["win_z"] + 0.004], [TEA["win_x"] + 0.0, TEA["front_y"] - 1.0, TEA["win_z"] + 0.008], 22)),
      dof=[2.6, [TEA["win_x"], TEA["front_y"] - 0.4, TEA["win_z"]]], hand=0.0012)
@@ -288,7 +288,7 @@ shot("S69", "L69", cam((0, *win("tea", 0.11, tz=-0.012, tx=-0.012)[:2], 52), (1,
 # ---------------------------------------------------------------------------------------------- acting
 # me
 me_expr = "worried"
-put("me", "L01.2", [1.95, -0.9, -0.5], yaw=180, lean=55, head=[0, 0], hidden=False, expr="neutral", arms=[0, 0])
+put("me", "L01.3", [1.95, -0.9, -0.5], yaw=180, lean=55, head=[0, 0], hidden=False, expr="neutral", arms=[0, 0])
 walk("me", "L03", [1.95, -0.9, -0.5], lean=55)
 put("me", "L04", [-3.3, -3.0, 0], hidden=False, expr="neutral", lean=0, head=[0, 0], arms=[0, 0])
 walk("me", "L04+1.5", [-0.2, -1.2, 0])
@@ -350,7 +350,7 @@ walk("maggie", "L59", [TX + 0.8, 1.7, 0], arms=[88, 88], head=[0, 8])
 walk("maggie", "L59+1.6", [TX + 0.2, -1.5, 0])
 key("maggie", "L59+1.7", arms=[88, 88], yaw=0)
 key("maggie", "L60", yaw=0, head=[0, 4])
-acting["maggie"].append({"from": "L60.1", "to": "L60.3>", "mouth": [0.8, 0.8], "flap": True})
+acting["maggie"].append({"from": "L60.1", "to": "L60.4>", "mouth": [0.8, 0.8], "flap": True})
 acting["maggie"].append({"from": "L61", "to": "L61>", "mouth": [0.8, 0.8], "flap": True})
 key("maggie", "L61>", arms=[88, 88])
 gone("maggie", "L62")
@@ -376,7 +376,7 @@ res("L19", "blue", "away")
 gone("resident", "L24")
 res("L25", "chapel", "away")
 gone("resident", "L32")
-res("L32.2", "next", "away")
+res("L32.3", "next", "away")
 gone("resident", "L35")
 res("L42", "tea", "turned")
 res("L43", "tea", "away")
@@ -415,7 +415,7 @@ cues = [
     {"at": "L63.3", "name": "myfig", "where": "desk", "stage": 2},
     {"at": "L63.4", "name": "myfig", "where": "desk", "stage": 3},
     {"at": "L64", "name": "myfig", "where": "none"},
-    {"at": "L66.2", "name": "myfig", "where": "seat", "stage": 3},
+    {"at": "L66.3", "name": "myfig", "where": "seat", "stage": 3},
     {"at": "L65", "name": "tearoof", "on": True},
     {"at": "L66", "name": "tearoof", "on": False},
 ]
@@ -429,9 +429,9 @@ sfx = [
     {"at": "L50", "kind": "hit", "db": -16},
     {"at": "L51", "kind": "breath", "db": -22, "dur": 2.4},
     {"at": "L52", "kind": "thud", "db": -16},
-    {"at": "L57.2", "kind": "door", "db": -20},
-    {"at": "L66.2", "kind": "click", "db": -22},
-    {"at": "L69.4", "kind": "glide", "db": -12, "dur": 1.8},
+    {"at": "L57.3", "kind": "door", "db": -20},
+    {"at": "L66.3", "kind": "click", "db": -22},
+    {"at": "L69.6", "kind": "glide", "db": -12, "dur": 1.8},
 ]
 
 story = {

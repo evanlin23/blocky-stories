@@ -4,8 +4,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "There's a little MAN",
-    "There's a little man"
+    "There's a",
+    "There's a"
+   ],
+   [
+    "little MAN",
+    "little man"
    ],
    [
     "in the WINDOW.",
@@ -26,16 +30,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "He's in the BAKERY",
-    "He's in the bakery"
+    "He's in",
+    "He's in"
    ],
    [
-    "of the model VILLAGE",
-    "of the model village"
+    "the BAKERY",
+    "the bakery"
    ],
    [
-    "down by the SEA.",
-    "down by the sea."
+    "of the",
+    "of the"
+   ],
+   [
+    "model VILLAGE",
+    "model village"
+   ],
+   [
+    "down by",
+    "down by"
+   ],
+   [
+    "the SEA.",
+    "the sea."
    ]
   ]
  },
@@ -44,8 +60,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every HOUSE in town",
-    "Every house in town"
+    "Every HOUSE",
+    "Every house"
+   ],
+   [
+    "in town",
+    "in town"
    ],
    [
     "is down there,",
@@ -74,8 +94,12 @@
     "a month ago,"
    ],
    [
-    "and got the job",
-    "and got the job"
+    "and got",
+    "and got"
+   ],
+   [
+    "the job",
+    "the job"
    ],
    [
     "REPAINTING it.",
@@ -118,8 +142,12 @@
     "my afternoons"
    ],
    [
-    "over the little STREETS",
-    "over the little streets"
+    "over the",
+    "over the"
+   ],
+   [
+    "little STREETS",
+    "little streets"
    ],
    [
     "with a BRUSH.",
@@ -154,20 +182,36 @@
   "who": "narrator",
   "chunks": [
    [
-    "There are tiny PEOPLE",
-    "There are tiny people"
+    "There are",
+    "There are"
    ],
    [
-    "all over the village.",
-    "all over the village."
+    "tiny PEOPLE",
+    "tiny people"
    ],
    [
-    "A man with a DOG.",
-    "A man with a dog."
+    "all over",
+    "all over"
    ],
    [
-    "A woman at a GATE.",
-    "A woman at a gate."
+    "the village.",
+    "the village."
+   ],
+   [
+    "A man with",
+    "A man with"
+   ],
+   [
+    "a DOG.",
+    "a dog."
+   ],
+   [
+    "A woman at",
+    "A woman at"
+   ],
+   [
+    "a GATE.",
+    "a gate."
    ]
   ]
  },
@@ -236,16 +280,24 @@
     "He's made"
    ],
    [
-    "BETTER than the others.",
-    "better than the others."
+    "BETTER than",
+    "better than"
+   ],
+   [
+    "the others.",
+    "the others."
    ],
    [
     "A MUSTARD scarf.",
     "A mustard scarf."
    ],
    [
-    "A neat little FACE.",
-    "A neat little face."
+    "A neat",
+    "A neat"
+   ],
+   [
+    "little FACE.",
+    "little face."
    ]
   ]
  },
@@ -268,8 +320,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I leaned in CLOSE",
-    "I leaned in close"
+    "I leaned",
+    "I leaned"
+   ],
+   [
+    "in CLOSE",
+    "in close"
    ],
    [
     "to the GLASS.",
@@ -286,8 +342,12 @@
     "He stood"
    ],
    [
-    "with his BACK to me.",
-    "with his back to me."
+    "with his BACK",
+    "with his back"
+   ],
+   [
+    "to me.",
+    "to me."
    ]
   ]
  },
@@ -300,8 +360,12 @@
     "Then I started"
    ],
    [
-    "SANDING the old GREEN",
-    "sanding the old green"
+    "SANDING the",
+    "sanding the"
+   ],
+   [
+    "old GREEN",
+    "old green"
    ],
    [
     "off the GROUND.",
@@ -340,10 +404,15 @@
     "in the house"
    ],
    [
-    "with the BLUE DOOR.",
-    "with the blue door."
+    "with the",
+    "with the"
+   ],
+   [
+    "BLUE DOOR.",
+    "blue door."
    ]
-  ]
+  ],
+  "tempo": 0.9
  },
  {
   "id": "L20",
@@ -376,8 +445,12 @@
     "on my knees"
    ],
    [
-    "and leaned RIGHT IN.",
-    "and leaned right in."
+    "and leaned",
+    "and leaned"
+   ],
+   [
+    "RIGHT IN.",
+    "right in."
    ]
   ]
  },
@@ -398,8 +471,12 @@
     "sat a cup"
    ],
    [
-    "the size of a SEED.",
-    "the size of a seed."
+    "the size of",
+    "the size of"
+   ],
+   [
+    "a SEED.",
+    "a seed."
    ]
   ]
  },
@@ -444,8 +521,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Halfway up the HILL,",
-    "Halfway up the hill,"
+    "Halfway up",
+    "Halfway up"
+   ],
+   [
+    "the HILL,",
+    "the hill,"
    ],
    [
     "in the window",
@@ -462,12 +543,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "That's when I SAW",
-    "That's when I saw"
+    "That's when",
+    "That's when"
    ],
    [
-    "where he was HEADING.",
-    "where he was heading."
+    "I SAW",
+    "I saw"
+   ],
+   [
+    "where he",
+    "where he"
+   ],
+   [
+    "was HEADING.",
+    "was heading."
    ]
   ]
  },
@@ -480,12 +569,20 @@
     "My cottage"
    ],
    [
-    "is on that hill.",
-    "is on that hill."
+    "is on",
+    "is on"
    ],
    [
-    "It's in the MODEL too.",
-    "It's in the model too."
+    "that hill.",
+    "that hill."
+   ],
+   [
+    "It's in the",
+    "It's in the"
+   ],
+   [
+    "MODEL too.",
+    "model too."
    ]
   ]
  },
@@ -556,8 +653,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "He didn't TURN round.",
-    "He didn't turn round."
+    "He didn't",
+    "He didn't"
+   ],
+   [
+    "TURN round.",
+    "turn round."
    ]
   ]
  },
@@ -570,8 +671,12 @@
     "On friday,"
    ],
    [
-    "he was in the house",
-    "he was in the house"
+    "he was in",
+    "he was in"
+   ],
+   [
+    "the house",
+    "the house"
    ],
    [
     "NEXT DOOR",
@@ -592,12 +697,20 @@
     "That night,"
    ],
    [
-    "in my REAL cottage,",
-    "in my real cottage,"
+    "in my",
+    "in my"
    ],
    [
-    "I shut every CURTAIN.",
-    "I shut every curtain."
+    "REAL cottage,",
+    "real cottage,"
+   ],
+   [
+    "I shut",
+    "I shut"
+   ],
+   [
+    "every CURTAIN.",
+    "every curtain."
    ]
   ]
  },
@@ -632,8 +745,12 @@
     "I went straight"
    ],
    [
-    "to my little COTTAGE.",
-    "to my little cottage."
+    "to my",
+    "to my"
+   ],
+   [
+    "little COTTAGE.",
+    "little cottage."
    ]
   ]
  },
@@ -692,8 +809,12 @@
     "at the top"
    ],
    [
-    "is the TEA SHOP.",
-    "is the tea shop."
+    "is the",
+    "is the"
+   ],
+   [
+    "TEA SHOP.",
+    "tea shop."
    ]
   ]
  },
@@ -702,8 +823,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Where the tiny TOWNSFOLK",
-    "Where the tiny townsfolk"
+    "Where the",
+    "Where the"
+   ],
+   [
+    "tiny TOWNSFOLK",
+    "tiny townsfolk"
    ],
    [
     "SIT.",
@@ -716,8 +841,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I put my FACE",
-    "I put my face"
+    "I put",
+    "I put"
+   ],
+   [
+    "my FACE",
+    "my face"
    ],
    [
     "right up",
@@ -743,8 +872,12 @@
     "His face"
    ],
    [
-    "was RIGHT behind it.",
-    "was right behind it."
+    "was RIGHT",
+    "was right"
+   ],
+   [
+    "behind it.",
+    "behind it."
    ]
   ]
  },
@@ -757,8 +890,12 @@
     "His body"
    ],
    [
-    "faced into the ROOM.",
-    "faced into the room."
+    "faced into",
+    "faced into"
+   ],
+   [
+    "the ROOM.",
+    "the room."
    ]
   ]
  },
@@ -775,12 +912,20 @@
     "had turned"
    ],
    [
-    "all the way ROUND",
-    "all the way round"
+    "all the",
+    "all the"
    ],
    [
-    "to look at ME.",
-    "to look at me."
+    "way ROUND",
+    "way around"
+   ],
+   [
+    "to look",
+    "to look"
+   ],
+   [
+    "at ME.",
+    "at me."
    ]
   ]
  },
@@ -797,8 +942,12 @@
     "and kicked"
    ],
    [
-    "my paint POT over.",
-    "my paint pot over."
+    "my paint",
+    "my paint"
+   ],
+   [
+    "POT over.",
+    "pot over."
    ]
   ]
  },
@@ -825,8 +974,12 @@
     "Every tiny person"
    ],
    [
-    "in the whole VILLAGE",
-    "in the whole village"
+    "in the",
+    "in the"
+   ],
+   [
+    "whole VILLAGE",
+    "whole village"
    ],
    [
     "had its BACK",
@@ -847,8 +1000,12 @@
     "All facing away"
    ],
    [
-    "from where I STAND.",
-    "from where I stand."
+    "from where",
+    "from where"
+   ],
+   [
+    "I STAND.",
+    "I stand."
    ]
   ]
  },
@@ -912,7 +1069,7 @@
   "chunks": [
    [
     "MINE.",
-    "Mine."
+    "Mine"
    ]
   ]
  },
@@ -947,8 +1104,12 @@
     "at a time,"
    ],
    [
-    "up to the tea shop",
-    "up to the tea shop"
+    "up to the",
+    "up to the"
+   ],
+   [
+    "tea shop",
+    "tea shop"
    ],
    [
     "and the OTHERS.",
@@ -961,8 +1122,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "There was a little MAN",
-    "There was a little man"
+    "There was a",
+    "There was a"
+   ],
+   [
+    "little MAN",
+    "little man"
    ],
    [
     "in the WINDOW,",
@@ -1001,16 +1166,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "I put the BRUSH down",
-    "I put the brush down"
+    "I put the",
+    "I put the"
+   ],
+   [
+    "BRUSH down",
+    "brush down"
    ],
    [
     "and walked into",
     "and walked into"
    ],
    [
-    "the REAL tea shop.",
-    "the real tea shop."
+    "the REAL",
+    "the real"
+   ],
+   [
+    "tea shop.",
+    "tea shop."
    ]
   ]
  },
@@ -1041,8 +1214,12 @@
     "came over"
    ],
    [
-    "with a little BOX.",
-    "with a little box."
+    "with a",
+    "with a"
+   ],
+   [
+    "little BOX.",
+    "little box."
    ]
   ]
  },
@@ -1063,8 +1240,12 @@
     "has a figure"
    ],
    [
-    "in that tea shop.\"",
-    "in that tea shop.\""
+    "in that",
+    "in that"
+   ],
+   [
+    "tea shop.\"",
+    "tea shop.\""
    ]
   ]
  },
@@ -1095,12 +1276,20 @@
     "Inside the box"
    ],
    [
-    "was a BLANK one,",
-    "was a blank one,"
+    "was a",
+    "was a"
    ],
    [
-    "waiting for a FACE.",
-    "waiting for a face."
+    "BLANK one,",
+    "blank one,"
+   ],
+   [
+    "waiting for",
+    "waiting for"
+   ],
+   [
+    "a FACE.",
+    "a face."
    ]
   ]
  },
@@ -1147,8 +1336,12 @@
     "came down"
    ],
    [
-    "to the MODEL with me.",
-    "to the model with me."
+    "to the MODEL",
+    "to the model"
+   ],
+   [
+    "with me.",
+    "with me."
    ]
   ]
  },
@@ -1183,8 +1376,12 @@
     "I set mine"
    ],
    [
-    "at the WINDOW TABLE,",
-    "at the window table,"
+    "at the",
+    "at the"
+   ],
+   [
+    "WINDOW TABLE,",
+    "window table,"
    ],
    [
     "in the one",
@@ -1205,8 +1402,12 @@
     "From inside,"
    ],
    [
-    "the faces in the window",
-    "the faces in the window"
+    "the faces in",
+    "the faces in"
+   ],
+   [
+    "the window",
+    "the window"
    ],
    [
     "were all SMILING.",
@@ -1219,8 +1420,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The man in the SCARF",
-    "The man in the scarf"
+    "The man in",
+    "The man in"
+   ],
+   [
+    "the SCARF",
+    "the scarf"
    ],
    [
     "hasn't been",
@@ -1241,12 +1446,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "There's a little MAN",
-    "There's a little man"
+    "There's a",
+    "There's a"
    ],
    [
-    "in the tea shop WINDOW.",
-    "in the tea shop window."
+    "little MAN",
+    "little man"
+   ],
+   [
+    "in the tea",
+    "in the tea"
+   ],
+   [
+    "shop WINDOW.",
+    "shop window."
    ],
    [
     "He's the size",
