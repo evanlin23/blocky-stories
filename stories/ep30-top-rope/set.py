@@ -224,7 +224,7 @@ def build(kit, story, tl):
     kit.cyl("coil2", 0.2, 0.15, (-4.6, -4.4, 0.08), kit.plastic("#222222", 0.9), n=16)
     coil = []
     for k in range(5):
-        o = kit.cyl(f"coilend{k}", 0.026, 1.0, (0, 0, -9), kit.plastic(LILAC, 0.95, spec=0.05), n=8)
+        o = kit.cyl(f"coilend{k}", 0.026, 1.0, (0, 0, -9), kit.emit("#a48fcb", 0.6), n=8)
         coil.append(o)
     ctx["coil"] = coil
     kit.box("phone", (0.075, 0.155, 0.012), (1.9, -3.55, 0.306), kit.emit("#bfe0ff", 2.2), rot=(0, 0, 0.4))
@@ -257,6 +257,8 @@ def build(kit, story, tl):
     kit.light("ckey", "SPOT", (0, 0, 0), 0.0, "#ffd0a0", size=0.2, spot=38, blend=0.6)
     kit.light("crim", "SPOT", (0, 0, 0), 0.0, "#7ea6ff", size=0.2, spot=38, blend=0.6)
     kit.light("cfill", "POINT", (0, 0, 0), 0.0, "#9fb4ff", size=0.3, shadow=False)
+    kit.light("hall", "AREA", (0.0, -9.0, 5.5), 900.0, "#ffd9b0", size=10.0)
+    kit.aim(kit.LIGHTS["hall"]["obj"], (0.0, 0.0, 4.5))
     kit.light("glow", "POINT", (0, -1.4, 9.0), 0.0, "#ffd7a0", size=0.4)
 
     # --- the Headstander
@@ -393,7 +395,7 @@ def animate(kit, story, tl, t, ctx):
 
     # the lilac-dusted rope end on the mat
     on = (_last(_cues(tl, "coil"), t) or {}).get("on", False)
-    cpts = [(-1.2, -1.2), (-0.8, -1.5), (-0.35, -1.45), (0.05, -1.2), (0.3, -0.8), (0.5, -0.5)]
+    cpts = [(-1.4, -2.4), (-1.0, -2.1), (-0.5, -2.2), (-0.1, -2.0), (0.3, -2.3), (0.7, -2.1)]
     for k, ob in enumerate(ctx["coil"]):
         if on and k < len(cpts) - 1:
             seg_between(ob, (cpts[k][0], cpts[k][1], 0.33), (cpts[k + 1][0], cpts[k + 1][1], 0.33))
@@ -405,6 +407,8 @@ def animate(kit, story, tl, t, ctx):
     flood = level(_cues(tl, "flood"), t, 1.0) * look.get("flood", 1.0)
     over = {k: lamps for k in kit.LIGHTS if k.startswith("lamp")}
     over["flood0"] = over["flood1"] = flood
+    warm = level(_cues(tl, "warm"), t, 0.0)
+    over["hall"] = lamps * (0.35 + 0.9 * warm)
     over["winL"] = over["winR"] = over["winB"] = look.get("fill", 1.0)
     for nm, key in (("ckey", "key"), ("crim", "rim"), ("cfill", "cfill")):
         L = kit.LIGHTS[nm]
