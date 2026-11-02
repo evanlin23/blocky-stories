@@ -1384,6 +1384,10 @@ def build_lights(kit, ctx):
     link_lights(kit, "stump and limbs only", ["lampkey"], [o for o in gi if o not in stones], "INCLUDE")
     me = [o for o in bpy.data.objects if o.type == "MESH" and o.name.startswith("me.")]
     link_lights(kit, "not the giant", ["fill"], gi, "EXCLUDE")
+    # a warm light for the giant's foot only: it lights the toes in my pool and nothing of mine (L65)
+    toe = kit.light("toelight", "POINT", (0, 0, 3), 2500.0, "#ffd9a0", size=0.6)
+    toe.visible_glossy = False
+    link_lights(kit, "toes only", ["toelight"], [o for o in gi if ".toe_" in o.name or ".leg_" in o.name], "INCLUDE")
     ctx["need_me_links"] = True
     # the lantern's own frame isn't lit by the flame inside it (it would blow out at 10 cm), and the lamp never
     # lights the stones (they stay part of the dark mass)
@@ -1701,7 +1705,7 @@ def build_prints(kit, ctx, M):
         (rx, ry, _z), (dx, dy) = road_pos(min(1.0, max(0.0, (-y - 6) / 270.0)))
         h = math.atan2(-dx, dy) + math.pi
         root = print_parts(kit, f"print{k}", M, x, y, h)
-        tree = place_pine(kit, ctx["sapling"], f"print{k}.sapling", (0.0, 0.2, 0.04), 3.0, 0.7 * k, root)
+        tree = place_pine(kit, ctx["sapling"], f"print{k}.sapling", (0.0, 0.0, 0.04), 3.6, 0.7 * k, root)
         prints.append((root, tree))
     ctx["prints"] = prints
 
@@ -1822,7 +1826,7 @@ LOOKS = {
     # the fire road at night: fog to its waist (L63 to L67)
     # (the giant's cold rim is off: it made the stump pale; a dim olive light shows the moss on its stones instead)
     "nightroad": {"fog": "#2a3238", "density": 0.03, "start": 4.0, "sky": "#2c353c", "sky_strength": 1.0,
-                  "exposure": 1.6, "gains": {**NIGHT_GAINS, "rim": 0.0, "lamp": 14.0}, "moss": 1.0, "waist": True,
+                  "exposure": 1.6, "gains": {**NIGHT_GAINS, "rim": 0.0, "lamp": 14.0, "lampkey": 25.0}, "moss": 1.0, "waist": True,
                   "cards": {"fog.tower": (0.0, -14.0, 9.5, 0.0), "fog.behind": (0.0, -70.0, 8.0, 0.0),
                             "fog.far": (0.0, -140.0, 60.0, 0.0)}},
     # the high wide down the road (L67): a pale bank behind the giant so it stands out, none over the lamp
@@ -2207,6 +2211,9 @@ def animate(kit, story, tl, t, ctx):
         fd = (m.to_3x3() @ V((0, -1, 0))).normalized()
         c = m.translation
         kit.LIGHTS["facekey"]["obj"].location = (c.x + fd.x * 0.6, c.y + fd.y * 0.6, c.z - 0.45)
+    toe_w = g["leg_l"].matrix_world @ V((0.0, -LEG[1] / 2 - 2.6, -HIP_Z + 0.5))
+    kit.LIGHTS["toelight"]["obj"].location = (toe_w.x, toe_w.y - 1.0, toe_w.z + 2.2)
+    over["toelight"] = _switch(_cues(tl, "footlit"), "gain", t, 0.0)
     over["facekey"] = over.get("facekey", 1.0) * _switch(_cues(tl, "facekey"), "gain", t, 1.0)
     hd = g["head"].matrix_world.translation
     aim_at(ctx["rim_obj"], (hd.x, hd.y, hd.z + 2.0))
