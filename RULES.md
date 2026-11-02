@@ -9,7 +9,7 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
 - The owner's reference is "In this town touching the ground is forbidden" (`docs/reference.md`).
 
 ## Hard rules (break one and the story doesn't ship)
-1. **Fiction, never claimed as true.** No "true story", "this happened", "based on", "real". No real people, crimes, places, routes or street names, and that includes text and signs in the set. Keep the set free of text, or use made-up words checked against real places.
+1. **Fiction, never claimed as true.** No "true story", "this happened", "based on", "real". No real people, crimes, places, routes or street names, and that includes text and signs in the set. Keep the set free of real words: rule markers of our own design (numbers, glyphs, made-up words checked against real places) are fine.
 2. **Creepy, not graphic.** Suspense and the uncanny only. No gore, killing, death words, weapons, sexual content or self-harm. No child in the cast (adults, or teens at the youngest), nobody young in peril, and nobody shown hurt.
 3. **Not made for kids, every time.** The art draws young viewers, and YouTube removes kid-styled videos with mature themes. `made_for_kids` is false, and nothing in the title, description or pin aims at kids.
 4. **Nothing of Roblox's own.** No assets, meshes, textures, catalogue faces, decals, UI, fonts, logo or name. Every face, pattern and mesh is made in `blocky/`. Titles, descriptions and pins never say Roblox or any other game or toy brand, not even to deny it. No character copies a specific avatar or item.
@@ -20,6 +20,17 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
 
 ## The story
 - **Shape:** the strange rule or hook in the first two seconds. Three or four strange nights or visits, each adding one concrete picture. The rule broken. A real scare in the middle. A twist planted early. Then a warm turn, shown and not told, and a last line that loops back into the first.
+- **What the hits do** (owner, 2026-11-02: "Please update everything based on the stuff we've seen"). Patterns seen on at least 3 different channels across 27 hits on YouTube Shorts and Instagram (9.6M to 36M views; `docs/research/`). They're the default shape now. The critic checks each one:
+  1. **The first line states one rule that touches everyone:** "In this world/town, …" plus a concrete rule, under 16 words ("In this town, you get 1,000,000 steps."). It's the genre's signature and viewers recognise it. Our creepy lane: a rule that starts as wonder or everyday life and turns eerie.
+  2. **The rule is visible by 2 s,** ideally as a marker of our own design on or above every character: a number, a glyph, a glow, an object (counters, tags, bells, strings). Both format flops we studied hid the rule.
+  3. **A 3 to 5 example montage in the first 15 s** shows how the rule shapes daily life, and it can be funny ("Date night is just two people walking sideways").
+  4. **The narrator is the exception** to the rule (300 steps left, the one with no number, the bell that never rang).
+  5. **A loved one is at stake** (a parent, grandparent, sibling or partner, always adult or teen).
+  6. **The climax turns the rule's own logic against itself:** a loophole or a second reading, never new magic.
+  7. **The twist is planted early and the last line echoes the first** (as above).
+  8. **The first 2 s read clearly on a phone:** lit to read, the rule and a face in frame. Darkness and fog come after the hook.
+  9. **Cut often:** a new shot every 1.2 to 2.3 s on average (`check` warns over 2.3 s).
+- **What we keep from the owner's own calls** (the research doesn't override them): the same R6 body type, the 2:15 to 2:30 length (owner, 2026-11-01: "keep a similar length target"; YouTube's narrated hits run 54 to 162 s, so we're on the long side and `metrics` will tell), our one narrator voice and our two-or-three-word captions with a key colour (YouTube's hits mostly use phrase blocks with a coloured key word too). And no child narrators: the hits often use one, but a teen or an adult looking back is our line, because kid-styled videos with mature themes get removed.
 - **Telling:** about 290 wpm while speaking, one short sentence per beat, a new shot on almost every beat. Every line is `who: narrator`, and characters are quoted inside the narration ("He looked at me and said, "Six.""). Nobody gets a voice of their own (owner, 2026-10-30).
 - **The middle must actually scare** (owner: "I low-key don't think the story is like creepy enough"). Escalate, don't describe: something a row closer each time the lights come back, a voice copied, a head turned too far.
 - **Deep lore and a real twist** (owner, 2026-11-01: "something I think is interesting is having deep story and lore, or like a twist. I think that sort of stuff is doing quite well on instagram and youtube should be right behind").
@@ -28,8 +39,8 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
   - **The pin can invite theories** ("what was on the back of the ticket?"). The answer is in the canon, never in the comments.
   - The lore never makes two stories alike: rule 5 still holds for setting, creature, twist and ending shape.
 - **Vary the warmth** (owner, 2026-10-31: "We can have other heartwarming endings"): friendship, loyalty, helping, home. Never again "the monster was kind/lonely all along" or the ritual done back.
-- **Never reuse what batch 1 shared:** the "At the PLACE, rule" first line (start mid-scare, on a sound, a question or dialogue instead). A knowing elder who explains in cryptic quotes. A night-shift or one-summer narrator. A pale grey blank-faced creature. "Pressed FLAT" against glass. A closing-section opener like "Last NIGHT,". An on-screen age. "It didn't touch me". "Not X, it was Y" cadences.
-- **Within a batch** no two stories share a setting, creature type, first-line type or kind of warmth (ending shapes may repeat, owner 2026-11-02). `stories/ideas.md` lists what's been used.
+- **Never reuse what batch 1 shared:** a knowing elder who explains in cryptic quotes. A night-shift or one-summer narrator. A pale grey blank-faced creature. "Pressed FLAT" against glass. A closing-section opener like "Last NIGHT,". An on-screen age. "It didn't touch me". "Not X, it was Y" cadences.
+- **Within a batch** no two stories share a setting, creature type, rule type (what the world's rule is about) or kind of warmth (ending shapes may repeat, owner 2026-11-02). `stories/ideas.md` lists what's been used.
 - **Read every line against the picture under it.** Watch for self-contradictions ("TALL... WIDER than it's TALL"), a count that doesn't match the knocks we hear, and a line about skin landing on a character it doesn't fit.
 - **Titles** are a question or a statement, never an imperative rule ("When the floor knocks, knock back" was wrong). They don't spoil the reveal or reuse an earlier title's shape.
 - **Volume** (owner, 2026-11-02: "we should just be trying to pump out as many as possible right now and then I'll just rate limit and upload once per day manually"): make as many stories as we can in parallel sessions. Similar ending shapes across a batch are fine (owner, same day: "We don't need to limit how many are like that"), but the hard rules and the originality check still apply. The owner paces the uploads, one a day.
@@ -60,7 +71,8 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
 ```
 - **Title:** under 100 characters, by the rules above.
 - **Description:** two or three short paragraphs. It sets up the story without spoiling it, says "It's made up.", and can say it's "built with code and Blender". The upload adds the measured flashing line on top by itself. Never: game or toy names, true, real, based on, kid, teen, child, baby, school, AI voice, no AI, made by hand, Kokoro, another franchise's monster.
-- **Pin:** a question about a detail planted early ("would you have sat back there?").
+- **Title:** state the world's rule, the way the hits do ("In this town, everyone has a price"). It's a statement, never an imperative, and it never spoils the twist.
+- **Pin:** a question the viewer answers about themselves under the rule ("How many lies would your number show?"), or one about a detail planted early ("would you have sat back there?"). The owner posts it as their own first comment and pins it: on YouTube, the creator's own question sits in the top comments of 8 of the 15 Shorts studied.
 - No hashtags or tags for now. Altered or synthetic content: No (it's animated fiction).
 
 ## Budget and craft
