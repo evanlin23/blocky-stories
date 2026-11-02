@@ -1030,38 +1030,38 @@
    ]
   },
   "L37": {
-   "text": "Its head was up by the roof, turned all the way around to me.",
+   "text": "Its head was up by the roof, bent all the way down to me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.707,
+   "dur": 2.621,
    "onset": 0.155,
-   "end": 2.517,
+   "end": 2.431,
    "chunks": [
     [
      0.155,
-     0.423
+     0.439
     ],
     [
-     0.423,
-     0.603
+     0.439,
+     0.638
     ],
     [
-     0.603,
-     1.086
+     0.638,
+     1.138
     ],
     [
-     1.155,
-     1.578
+     1.207,
+     1.543
     ],
     [
-     1.578,
-     2.052
+     1.543,
+     1.966
     ],
     [
-     2.052,
-     2.517
+     1.966,
+     2.431
     ]
    ]
   },

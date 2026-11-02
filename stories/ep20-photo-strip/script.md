@@ -34,7 +34,7 @@ One old hotel on a wedding night. A long hall with bottle-green plain wallpaper,
 | Hook, strip 1 | L01 to L04, L12 to L15 | Behind the bench at the seam. Only the hand shows in the strip, between our heads. Not visible in the room. |
 | Strip 2 | L17 to L20 | Same spot. In the strip: hand, forearm, sleeve and one shoulder, because we sit further out. |
 | Strip 3 | L21 to L26 | Same spot. In the strip: whole body from the mouth down, the frame top cuts it at the smile. Frame 4: the smile slot drawn wider (a face swap, same model). |
-| Scare, booth dark | L31 to L40 | Same spot, now seen in the room at the second glow. Hand on the seam. Head up in the roof cavity, turned about 150 degrees to face me (the head is the only re-posed part). S38 side view: a dark line between us. |
+| Scare, booth dark | L31 to L40 | Same spot, now seen in the room at the second glow. Hand on the seam. Head up in the roof cavity, bent down toward me (the head is the only re-posed part). S38 side view: a dark line between us. |
 | Hall | L48 to L52 | Standing in the dark midpoint of the hall between Wren and me, flat, face-on to camera. Each step shot (S50 to S52) the dark pool around it is smaller, it never moves. Gone by S53. |
 | Last strip | L58 | Not in the strip: no space between us. |
 
@@ -86,7 +86,7 @@ The booth lamp is the risk. Every glow is a 0.3 s warm ramp to about 70% (never 
 | S34 | L34 | The glow ramps up from below. |
 | S35 | L35 | The reveal (test still first): from my end, the Third standing behind the bench in the middle, lit from below, rim from the curtain gap. Music drop before. |
 | S36 | L36 | Close on its hand on the seam. |
-| S37 | L37 | Low angle up past my shoulder: its head in the roof, turned round too far, dot eyes and slot smile on me. |
+| S37 | L37 | Low angle up past my shoulder: its head in the roof, bent down toward me, dot eyes and slot smile on me. |
 | S38 | L38 | Me leaning, eyes wide. |
 | S39 | L39 | Side view along the bench: between Wren and me a single dark line, floor to roof. |
 | S40 | L40 | Dark again. Curtain thrown open from outside (cut on the swing, no grip). |
@@ -156,7 +156,7 @@ L33. And in the MIDDLE, a sound like a page being TURNED.
 L34. The second glow lit the booth.
 L35. It was THERE. Right between us.
 L36. Its hand on the seam, exactly where every picture SAID.
-L37. Its head was up by the roof, turned all the way around to ME.
+L37. Its head was up by the roof, bent all the way DOWN to me.
 L38. I leaned to see it from the SIDE.
 L39. From the side, it was a LINE. As thin as a sheet of PAPER.
 L40. The lamp went dark again, and we both RAN.

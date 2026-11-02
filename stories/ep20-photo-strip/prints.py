@@ -20,7 +20,7 @@ HALF_X, Z_TOP, Z_BOT = 1.1, 2.33, 0.41     # the frame's field: x from -1.1 to 1
 FW, FH = int(2 * HALF_X * PPM), int(round((Z_TOP - Z_BOT) * PPM))
 PAD = 44
 SW, SH = FW + 2 * PAD, 4 * FH + 5 * PAD
-PAPER = (236, 230, 216)
+PAPER = (200, 195, 183)
 
 VELVET, VELVET_D = (84, 34, 66), (46, 18, 38)
 SUIT, SUIT2, SKIN3, SHIRT3, INK3 = (84, 60, 40), (112, 82, 56), (150, 118, 84), (150, 128, 98), (18, 12, 9)

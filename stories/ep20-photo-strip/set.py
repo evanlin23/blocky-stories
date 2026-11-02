@@ -199,7 +199,7 @@ def third_face(wide):
     as a dark slot that runs wider than the head should allow (it wraps past the face box, to the head's edges)."""
     rng = np.random.default_rng(5)
     s = faces.FX1 - faces.FX0
-    skin = (158, 128, 96)
+    skin = (112, 88, 64)
     im = Image.new("RGB", (faces.TEX_W, faces.TEX_H), skin)
     a = np.asarray(im).astype(np.float32) + rng.normal(0, 7, (faces.TEX_H, faces.TEX_W, 3))
     im = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
