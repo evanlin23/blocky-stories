@@ -145,7 +145,7 @@ def glass_pane(kit, name="ep44 pane", refl=0.2):
 
 
 # ------------------------------------------------------------------------------------------------- moons
-LEVELS = [0.015, 0.03, 0.06, 0.08, 0.1, 0.12, 0.15, 0.2, 0.3, 0.4, 0.5, 0.7, 0.85, 1.0]
+LEVELS = [0.015, 0.025, 0.03, 0.04, 0.06, 0.08, 0.1, 0.12, 0.15, 0.2, 0.3, 0.4, 0.5, 0.7, 0.85, 1.0]
 
 
 def moon_image(f, px=256):
@@ -214,24 +214,25 @@ def near_level(f):
 FIXED_MOON = {"me": 1.0, "t1": 1.0, "t2": 0.3, "t3": 0.5, "cand": 0.2, "napper": 1.0, "co1": 0.15, "co2": 0.2,
               "cA": 1.0, "cB": 0.15, "c1": 0.2, "c2": 0.15, "c3": 0.3, "c4": 0.2, "att": 0.7, "intv": 0.85,
               "ash2": 1.0}
-MOON_SCALE = {"napper": 1.5, "t1": 1.4}
+MOON_SCALE = {"napper": 1.5, "t1": 1.4, "ash": 1.25}
 # Ash's moon by shot: (from, to), a change over the shot's own length (at least 1 s in every ramp)
 ASH_PHASE = {}
 
 
 def _ash_table():
+    """Ash's moon in clear steps: 0.15 (a crescent) -> eyelash 0.10 (S26) -> a nap makes it fuller (S33 ramps
+    0.08 -> 0.3) -> thread 0.05 (S40) -> barely there 0.03 (S47) -> one line 0.015 (S58)."""
     def put(a, b, v):
         for i in range(a, b + 1):
             ASH_PHASE[f"S{i:02d}"] = v
     put(1, 25, (0.15, 0.15))
-    put(26, 30, (0.08, 0.08))
-    put(31, 32, (0.12, 0.12))
-    ASH_PHASE["S33"] = (0.12, 0.2)
+    put(26, 32, (0.1, 0.1))
+    ASH_PHASE["S33"] = (0.1, 0.3)
     put(34, 37, (0.06, 0.06))
-    put(38, 45, (0.06, 0.06))
-    put(46, 57, (0.03, 0.03))
+    put(38, 45, (0.04, 0.04))
+    put(46, 57, (0.025, 0.025))
     ASH_PHASE["S58"] = (0.015, 0.015)
-    ASH_PHASE["S59"] = (0.03, 0.03)
+    ASH_PHASE["S59"] = (0.025, 0.025)
     ASH_PHASE["S64b"] = (0.015, 0.015)
     ASH_PHASE["S60"] = (0.2, 0.2)
     ASH_PHASE["S61"] = (0.06, 0.06)
@@ -273,9 +274,21 @@ def glass_mats(kit):
     # a faint cool veil on the pane (never a glow): a clear sheet still reads as a sheet of glass
     veil = nt.nodes.new("ShaderNodeEmission")
     veil.inputs["Color"].default_value = (0.55, 0.8, 0.7, 1)
-    veil.inputs["Strength"].default_value = 0.07
+    veil.inputs["Strength"].default_value = 0.0
+    # a faint fresnel: the veil is strongest toward the glancing edges (a rim), faint face-on; it never glows
+    fz = nt.nodes.new("ShaderNodeLayerWeight")
+    fz.inputs["Blend"].default_value = 0.5
+    fs = nt.nodes.new("ShaderNodeMath")
+    fs.operation = "MULTIPLY"
+    fs.inputs[1].default_value = 0.9
+    fa = nt.nodes.new("ShaderNodeMath")
+    fa.operation = "ADD"
+    fa.inputs[1].default_value = 0.09
+    nt.links.new(fz.outputs["Fresnel"], fs.inputs[0])
+    nt.links.new(fs.outputs[0], fa.inputs[0])
+    nt.links.new(fa.outputs[0], veil.inputs["Strength"])
     tm = nt.nodes.new("ShaderNodeMixShader")
-    tm.inputs[0].default_value = 0.35
+    tm.inputs[0].default_value = 0.5
     nt.links.new(tr.outputs[0], tm.inputs[1])
     nt.links.new(veil.outputs[0], tm.inputs[2])
     nt.links.new(tm.outputs[0], mix.inputs[1])
@@ -317,6 +330,14 @@ def build_glass(kit, ctx):
         G[f"leg{sx}"] = leg
     torso = kit.empty("glass.torso", (0, 0, 2.0), root)
     glass_part(kit, "glass.torso", (2.0, 1.0, 2.0), (0, 0, 1.0), torso, gm, em)
+    # the chest cue (the FRONT is -y): a thick bottle-green V collar notch and a centre seam, so you can tell which
+    # way the body faces while the face is on the back of the head
+    T = EDGE * 1.9
+    for sx in (-1, 1):
+        kit.box(f"glass.collar{sx}", (1.0, T, T), (sx * 0.5, -0.5, 1.62), em, torso,
+                rot=(0, sx * math.radians(-32), 0))
+    kit.box("glass.seam", (T * 0.8, T * 0.8, 1.0), (0, -0.5, 0.78), em, torso)
+    kit.box("glass.belt", (2.0, T * 0.7, T * 0.7), (0, -0.5, 0.2), em, torso)
     G["torso"] = torso
     for sx in (-1, 1):
         arm = kit.empty(f"glass.arm{sx}", (sx * 1.5, 0, 1.75), torso)
@@ -359,6 +380,18 @@ def pose_glass(tl, t, ctx):
     G["arm-1"].rotation_euler = (-s["arms"][0], s["arms_side"][0], 0)
     G["arm1"].rotation_euler = (-s["arms"][1], -s["arms_side"][1], 0)
     G["neck"].rotation_euler = (s["head_pitch"], 0, s["head_yaw"])
+    nks = [k for k in keys if "nk" in k or "nkm" in k]
+    if nks and t >= nks[0]["t"] and not hide:   # a direct neck pose (degrees x, y, z), for the head hung over the bunk edge
+        from mathutils import Matrix
+
+        nm = ac._held(keys, "nkm", t, None)
+        if nm is not None:   # a full rotation matrix (row-major), when angles are awkward
+            G["neck"].rotation_euler = Matrix([nm[0:3], nm[3:6], nm[6:9]]).to_euler()
+            return V((G["root"].location.x, G["root"].location.y, G["root"].location.z + 1.75))
+        nk = ac._held(keys, "nk", t, [0.0, 0.0, 0.0])
+        a, b, c = (math.radians(v) for v in nk)
+        G["neck"].rotation_euler = (Matrix.Rotation(a, 3, "X") @ Matrix.Rotation(b, 3, "Y")
+                                    @ Matrix.Rotation(c, 3, "Z")).to_euler()
     pr = G["root"].location
     return V((pr.x, pr.y, pr.z + 1.75))
 
@@ -538,8 +571,10 @@ def build_cabin(kit, ctx, M):
     for tx in (-0.5, 0.45):
         E(kit, ox, f"cab.tleg{tx}", tx - 0.015, tx + 0.015, 1.5, 1.56, 0.0, 0.72, M["brass"])
     ctx["blank_lo"] = E(kit, ox, "cab.blanket_lo", 0.05, 1.15, -1.45, -0.35, 0.62, 0.68, M["blanket"], bevel=0.03)
-    ctx["blank_hi"] = E(kit, ox, "cab.blanket_hi", 0.05, 1.15, -1.45, -0.35, ZH + 0.37, ZH + 0.43, M["blanket"], bevel=0.03)
-    ctx["blank_lump"] = E(kit, ox, "cab.blanket_lump", 0.08, 1.12, -1.45, -0.3, ZH + 0.37, ZH + 0.9, M["blanket"], bevel=0.14)
+    ctx["blank_hi"] = E(kit, ox, "cab.blanket_hi", 0.05, 1.15, -1.45, -0.15, ZH + 0.37, ZH + 0.46, M["blanket"], bevel=0.03)
+    ctx["blank_lump"] = E(kit, ox, "cab.blanket_lump", -0.05, 0.62, -1.45, -0.04, ZH + 0.37, ZH + 1.14, M["blanket"], bevel=0.15)
+    # a rounded bump at the shoulder, so the lump reads as a body (and a head on the pillow beyond it)
+    ctx["blank_lump2"] = E(kit, ox, "cab.blanket_lump2", -0.05, 0.56, -0.5, -0.04, ZH + 0.37, ZH + 1.2, M["blanket"], bevel=0.17)
     # the reading lamp (dim amber, lit only before sleep), a ceiling fill, the moonlit window, the stub's amber
     E(kit, ox, "cab.readlamp", -0.06, -0.02, 0.05, 0.2, 1.3, 1.4, M["brass"], bevel=0.01)
     kit.light("cab:read", "POINT", (ox - 0.15, 0.1, 1.5), 9.0, "#e3a35c", size=0.06)
@@ -550,6 +585,7 @@ def build_cabin(kit, ctx, M):
     kit.aim(kit.LIGHTS["cab:win"]["obj"], (ox, 0.2, 1.2))
     kit.light("cab:win2", "AREA", (ox + 0.4, -1.55, 2.9), 26.0, "#9db0d4", size=0.9)
     kit.aim(kit.LIGHTS["cab:win2"]["obj"], (ox + 0.5, 0.3, 1.2))
+    kit.light("cab:glow", "POINT", (ox - 0.9, 0.25, 1.75), 4.0, "#8fe0b8", size=0.15)
     landscape(kit, ctx, ox, +1, "cab")
     ctx["land"][-1]["grp"].rotation_euler = (0, 0, math.pi / 2)   # the window looks along +y
     ctx["land"][-1]["grp"].location = (ox, 2.0, 0)
@@ -784,6 +820,8 @@ def build(kit, story, tl):
         m = kit.plane(f"moon.{name}", (1, 1), (0, 0, -200), mm[1.0])
         ctx["moons"][name] = m
     ctx["spec"] = {s["id"]: s for s in story["shots"]}
+    ctx["ladder_objs"] = [o for o in bpy.data.objects if o.name.startswith("cab.ladder") or o.name.startswith("cab.rung")]
+    ctx["start"] = {s["id"]: s["start"] for s in tl["shots"]}
     ctx["lamp_node"] = [n for n in kit.MATS["ep44 corridor lamp shade"].node_tree.nodes if n.type == "EMISSION"][0]
     ctx["lamp_node"].inputs["Strength"].default_value = 1.6
     return ctx
@@ -918,10 +956,15 @@ def animate(kit, story, tl, t, ctx):
         if name == "cab:read":
             sid = shot["id"]
             g *= (1.0 if sid == "S14" else (1.0 - _ss((t - (shot["end"] - 0.4)) / 0.4)) if sid == "S15" else 0.0)
+        if name == "cab:glow":
+            t0 = ctx["start"].get("S54", 1e9)
+            g *= _ss((t - t0) / 0.5) if t >= t0 else 0.0
+        if name.startswith("cor:") and spec.get("dim"):
+            g *= spec["dim"]
         if name.startswith("cab:stub"):
             g *= 0.5 + 0.5 * _open_amt(_cues(tl, "door_cab"), t)
         over[name] = g
-    ctx["lamp_node"].inputs["Strength"].default_value = 1.6 * lg
+    ctx["lamp_node"].inputs["Strength"].default_value = 1.6 * lg * (spec.get("dim") or 1.0)
     # the view outside slides by very slowly (no light moves; only soft shapes)
     for L in ctx["land"]:
         g = L["grp"]
@@ -939,7 +982,9 @@ def animate(kit, story, tl, t, ctx):
     ls = [c for c in _cues(tl, "lump") if c["t"] <= t]
     lump = bool(ls and ls[-1]["on"])
     ctx["blank_lump"].hide_render = not lump
-    ctx["blank_hi"].hide_render = lump
+    ctx["blank_lump2"].hide_render = not lump
+    for o in ctx["ladder_objs"]:
+        o.hide_render = shot["id"] == "S57"
     for o in ctx["tally"]:
         o.hide_render = shot["id"] != "S66"
     # people: sitting, bending; then their moons

@@ -119,7 +119,7 @@ def lying_head(pos):
 # the cabin
 BOT = [OX["cab"] + 0.6, -1.3, 0.79]      # Ash lying on the bottom bunk, head to +y
 TOP = [OX["cab"] + 0.6, -1.3, 2.09]      # me on the top bunk: mattress top 1.92 + 0.17
-GL_TOP = [OX["cab"] + 0.15, -1.22, 1.92 + 0.36]   # the Glass One on its side in my bunk
+GL_TOP = [OX["cab"] + 0.27, -1.22, 1.92 + 0.36]   # the Glass One on its side in my bunk
 # the corridor
 CX = OX["cor"]
 GL1 = [CX, 19.3, 0.0]
@@ -176,10 +176,10 @@ shot("L16", lie(HT, 1.75, 20, 0.15))                                            
 shot("L16.3", mv([CX + 0.15, 0.1, 1.55], [CX, 9.0, 1.3], 32, [CX + 0.15, 0.7, 1.55], [CX, 9.0, 1.3], 32))   # S17
 shot("L17", mv([CX, 4.3, 1.55], [CX, 19.3, 1.5], 42, [CX, 4.3, 1.55], [CX, 19.3, 1.5], 46), hand=0.002)  # S18
 shot("L18", mv([CX + 0.1, 10.5, 1.4], [CX, 19.3, 1.3], 50))                                              # S19
-shot("L19", mv([CX + 0.12, 14.3, 1.5], [CX, 19.3, 1.45], 52, [CX + 0.1, 13.6, 1.5], [CX, 19.3, 1.45], 54), hand=0.002)  # S20
-shot("L20", mv([CX + 0.35, 13.2, 1.3], [CX, 19.3, 1.2], 40, [CX + 0.3, 12.6, 1.3], [CX, 19.3, 1.2], 40))   # S21
-shot("L21-0.4", mv([CX + 0.05, 16.5, 1.75], [CX, 19.3, 1.62], 50, [CX + 0.04, 16.2, 1.75], [CX, 19.3, 1.62], 52))  # S22
-shot("L21.2", mv([CX + 0.05, 16.4, 1.5], [CX, 19.3, 1.7], 45, [CX + 0.04, 16.3, 1.5], [CX, 19.3, 2.35], 45))      # S23
+shot("L19", mv([CX + 0.12, 12.4, 1.5], [CX, 19.3, 1.4], 34, [CX + 0.1, 11.9, 1.5], [CX, 19.3, 1.4], 34), hand=0.002, dim=0.7)  # S20
+shot("L20", mv([CX + 0.55, 13.0, 1.35], [CX, 19.3, 1.25], 30, [CX + 0.5, 12.5, 1.35], [CX, 19.3, 1.25], 30), dim=0.7)   # S21
+shot("L21-0.4", mv([CX + 0.05, 14.6, 1.7], [CX, 19.3, 1.75], 32, [CX + 0.04, 14.3, 1.7], [CX, 19.3, 1.75], 32), dim=0.7)  # S22
+shot("L21.2", mv([CX + 0.05, 15.4, 1.5], [CX, 19.3, 1.7], 38, [CX + 0.04, 15.3, 1.5], [CX, 19.3, 2.3], 38), dim=0.7)      # S23
 ME_C1 = [CX, 4.4, 0.0]
 shot("L22.2", face_cam(hd(ME_C1), 180, 2.6, 0, 34, dz=0.05))                                             # S24
 shot("L23", lie(HT, 1.75, 20, 0.15), tod=["night", "grey"])                                              # S25
@@ -225,13 +225,13 @@ shot("L42", face_cam(hd(ME_CAB_DOOR), 90, 1.05, 0, 14, dz=-0.1))                
 shot("L43", mv([CX, 3.0, 1.5], [CX, 14.0, 1.5], 32, [CX, 3.2, 1.5], [CX, 14.0, 1.5], 32))                 # S49
 shot("L44", mv([CX + 0.2, 1.0, 1.7], [CX, 14.0, 1.3], 30))                                                # S50
 shot("L45", mv([CX + 0.2, 1.0, 1.7], [CX, 14.0, 1.3], 30))                                                # S51
-shot("L46", mv([CX + 0.1, 5.0, 1.55], [CX, 14.0, 1.4], 32))                                               # S52
+shot("L46-0.2", mv([CX + 0.1, 5.0, 1.55], [CX, 14.0, 1.4], 32))                                               # S52
 ME_STUB = [CAB - 2.0, 0.0, 0.0]
 shot("L46.3", face_cam(hd(ME_STUB), 90, 1.8, 0, 20))                                                      # S53
 shot("L47", mv([CAB - 2.7, 0.0, 1.7], [CAB + 0.3, -0.4, 2.3], 26))                                       # S54
-shot("L48", mv([CAB - 1.15, -0.2, 2.1], [CAB + 0.15, -0.4, 2.4], 30))                                      # S55
-shot("L49", mv([CAB - 0.5, 1.25, 2.8], [CAB + 0.15, 0.0, 2.3], 22))                                       # S56
-shot("L50.1", mv([CAB - 0.2, 0.35, 1.1], [CAB - 0.05, 0.35, 2.35], 24, [CAB - 0.2, 0.35, 1.1], [CAB - 0.02, 0.35, 2.3], 24))                                     # S57
+shot("L48", mv([CAB - 0.95, -1.3, 2.9], [CAB + 0.3, -0.3, 2.0], 22, [CAB - 0.85, -1.2, 2.85], [CAB + 0.3, -0.3, 2.0], 22))                                      # S55
+shot("L49", mv([CAB + 0.3, -1.55, 2.95], [CAB + 0.3, 0.3, 2.1], 16, [CAB + 0.3, -1.5, 2.85], [CAB + 0.3, 0.3, 2.1], 16))                                       # S56
+shot("L50.1", mv([CAB - 1.15, 0.05, 1.1], [CAB + 0.05, 0.3, 1.68], 20, [CAB - 1.05, 0.08, 1.12], [CAB + 0.05, 0.3, 1.68], 20))                                     # S57
 shot("L51", lie(HB, 1.7, 22, 0.35))                                                                      # S58
 # ---- the turn
 shot("L52", face_cam(hd(ME_BOOTH), -90, 2.6, 0, 24), tod="grey")                                         # S59
@@ -244,7 +244,7 @@ shot("L56", mv([CAB - 2.6, 0.5, 1.6], [CAB - 1.25, -0.35, 2.15], 22, [CAB - 2.6,
 shot("L56.4", mv([CAB - 2.3, 0.5, 1.4], [CAB + 0.6, 0.27, 1.3], 36), sid="S64b")
 shot("L57", face_cam(hd(ME_CAB_DOOR), 90, 1.05, 0, 14, dz=-0.1))                                         # S65
 shot("L58", mv([CAB - 0.55, 0.0, 1.15], [CAB - 0.07, -0.05, 1.15], 50), hand=0.0015)                     # S66
-shot("L59", lie(HT, 1.9, 20, 0.2))                                                                       # S67
+shot("L59", mv([CAB - 1.15, -1.0, 2.5], [CAB + 0.6, -0.8, 1.95], 22, [CAB - 1.05, -0.95, 2.45], [CAB + 0.6, -0.8, 1.95], 22))                                                                       # S67
 shot("L60", lie(HT, 1.75, 20, 0.15))                                                                     # S68
 shot("L61", mv([CAB - 1.1, -1.3, 1.6], [CAB + 0.6, 0.4, 1.75], 17), tod=["night", "dawn"])                # S69
 shot("L62", mv([CAB - 1.0, -0.6, 2.7], [CAB + 0.1, 0.1, 2.2], 26), tod="dawn")                           # S70
@@ -368,6 +368,8 @@ def gput(at, pos=None, **kw):
 
 glass.append({"at": 0, "pos": [0, 0, -100], "hidden": True})
 gput(AT["S18"], GL1, hidden=False, yaw=180, lean=0, roll=0, arms=[0, 0], side=[0, 0], head=[0, 0])
+gput(AT["S21"], yaw=205)       # 3/4: the chest (collar notch) is read through the glass beside the face
+gput(AT["S22"], yaw=180)
 gput(NX["S24"], hidden=True)
 # S25: me awake in the top bunk (Ash still asleep below); the window goes grey
 put("me", AT["S25"], TOP, hidden=False, yaw=0, lean=-90, expr="neutral", blink=False, head=[-40, 0])
@@ -430,6 +432,7 @@ gone("me", NX["S51"])
 put("me", AT["S53"], ME_STUB, hidden=False, yaw=90, expr="worried", head=[0, 0], look=[0.3, 0.2], arms=[0, 0], blink=True)
 # S54 to S58: the Glass One in my bunk
 gput(AT["S54"], GL_TOP, hidden=False, yaw=0, lean=-90, roll=90, head=[-65, 0], arms=[0, 0], side=[0, 0])
+gput(AT["S57"], [GL_TOP[0] - 0.12, GL_TOP[1], GL_TOP[2] - 0.04], nkm=[0, 0.7071, -0.7071, 0, 0.7071, 0.7071, 1, 0, 0])   # head hung over the bunk edge, face down at Ash
 gone("me", AT["S54"])
 put("ash", AT["S54"], BOT, hidden=False, expr="asleep")
 gone("ash", NX["S58"])
@@ -450,8 +453,8 @@ gone("ash", NX["S64b"])
 put("me", AT["S65"], ME_CAB_DOOR, expr="crying", head=[0, 0])
 act["me"].append({"at": plus(AT["S65"], 0.9), "expr": "soft", "blend": 0.0})
 gone("me", NX["S65"])
-put("me", AT["S67"], TOP, hidden=False, yaw=0, lean=-90, expr="neutral", blink=False, head=[-40, 0], arms=[0, 0])
-put("me", AT["S68"], TOP, expr="neutral", blink=False)
+# S67: the empty bunk, plain cream blanket (nobody there); I lie down in it at S68
+put("me", AT["S68"], TOP, hidden=False, yaw=0, lean=-90, expr="neutral", blink=False, head=[-40, 0], arms=[0, 0])
 act["me"].append({"at": plus(AT["S68"], 0.3), "expr": "soft", "blend": 0.0})
 put("ash2", AT["S69"], BOT, hidden=False, yaw=0, lean=-90, expr="asleep", head=[-40, 0])
 put("me", AT["S69"], TOP, expr="asleep", head=[-40, 0])
@@ -494,6 +497,7 @@ sfx = [
     {"at": "L46.3+0.05", "kind": "door", "db": -14},
     {"at": "L50.1", "kind": "hit", "db": -10},
     {"at": "L35", "kind": "creak", "db": -30, "dur": 0.9},
+    {"at": "L66+0.55", "kind": "glide", "db": -18, "dur": 1.0},   # the closing sound: a low fall in pitch under "while I do"
 ]
 amb = [
     {"kind": "hum", "from": "L13", "to": "end", "lufs": -34},
@@ -520,7 +524,7 @@ sections = [
 drops = [
     {"from": "L17-0.6", "to": "L17+0.5"},
     {"from": "L31-0.6", "to": "L31+0.6"},
-    {"from": "L47-0.7", "to": "L47+0.6"},
+    {"from": "L47-0.6", "to": "L47+0.6"},
     {"from": "L44", "to": "L45", "keep": []},
 ]
 
@@ -529,7 +533,7 @@ for i, (sid, at, cam, opt) in enumerate(SH):
     s = {"id": sid, "cam": cam, "step": opt.get("step", 2)}
     if i:
         s["at"] = at
-    for k in ("hand", "tod", "tod_dur"):
+    for k in ("hand", "tod", "tod_dur", "dim"):
         if k in opt:
             s[k] = opt[k]
     shots.append(s)
