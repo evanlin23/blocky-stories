@@ -24,6 +24,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep12 `knock-back` | none (before the canon), but the knock fits the roll call | |
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S59, under L59 ("Wren tore it in half"), held 1.5 s, not narrated |
+| ep28 `lamp-room` | two short oilskin-yellow strokes scratched into the brass bolt plate of the lamp-room door, two for a lighthouse built for two (no extra stroke) | S14, from L13's last word through L14 ("I slid it SHUT"), held 1.8 s, not narrated; seen small again at L16 and L54 |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
