@@ -46,11 +46,14 @@ TOD = {
     "fog":    dict(sun=3.0, sunc="#e8ecfa", az=80, el=9, fill=2.6, fillc="#c0cae8", sky=1.7, hor="#b8bece", zen="#98a6c0", fogd=0.055, fogb=1.0),
     "sil":    dict(sun=4.0, sunc="#e8ecfa", az=80, el=9, fill=0.3, fillc="#c0cae8", sky=1.8, hor="#c4c9d6", zen="#98a6c0", fogd=0.055, fogb=1.0),
     "fogmid": dict(sun=1.0, sunc="#cdd7f2", az=200, el=12, fill=1.7, fillc="#b4c0e0", sky=0.95, hor="#aab0bf", zen="#8794b0", fogd=0.035, fogb=0.8),
-    "gold":   dict(sun=8.5, sunc="#ffbd6e", az=215, el=11, fill=0.55, fillc="#8fa6e0", sky=1.0, hor="#f0c496", zen="#8aa4c8", fogd=0.004, fogb=1.0),
+    "gold":   dict(sun=8.5, sunc="#ffbd6e", az=180, el=11, fill=0.4, fillc="#8fa6e0", sky=1.0, hor="#f0c496", zen="#8aa4c8", fogd=0.004, fogb=1.0, rim=5.5),
+    "goldb":  dict(sun=8.5, sunc="#ffbd6e", az=0, el=11, fill=0.4, fillc="#8fa6e0", sky=1.0, hor="#f0c496", zen="#8aa4c8", fogd=0.004, fogb=1.0, rim=5.5),
     "morn":   dict(sun=7.5, sunc="#ffd49a", az=-40, el=30, fill=1.4, fillc="#a5b8e6", sky=1.1, hor="#e8c9a8", zen="#86a8d4", fogd=0.004, fogb=1.0),
     "house":  dict(sun=3.0, sunc="#b8c8ff", az=-70, el=10, fill=1.6, fillc="#8fa6e0", sky=1.4, hor="#aeb6d8", zen="#5f78b0", fogd=0.01, fogb=0.8),
     "inside": dict(sun=0.0, sunc="#ffffff", az=-50, el=48, fill=0.0, fillc="#b4c6ea", sky=0.3, hor="#cfd6e0", zen="#7fa6dc", fogd=0.002, fogb=1.0),
 }
+for _v in TOD.values():
+    _v.setdefault("rim", 0.0)   # a back-light on the characters only (the Tilted's rim)
 ROOMS = {"kitchen": 100.0, "bedroom": 130.0}
 
 
@@ -253,6 +256,8 @@ def build_shelter(kit, M):
     for sgn in (-1, 1):
         kit.box(f"sh.bleg{sgn}", (0.4, 0.08, 0.5), (0.45, sgn * 1.0, 0.25), M.woodd, root)
     kit.light("shelter lamp", "POINT", (-14.0, -28.0, 1.9), 420, "#ffe8c8", size=0.5)
+    kit.light("strip fill", "POINT", (-1.0, 0.25, 1.4), 1.0, "#c8d4f0", size=0.6)
+    kit.light("shelter fill", "POINT", (-14.6, -27.2, 1.5), 1.0, "#ffe2bc", size=1.0)
     return root
 
 
@@ -463,10 +468,19 @@ def build_stall(kit, M, ctx):
     # Pip's coat laid flat on the table, and on a bench/arm: one object, moved by the "pipflat" cue
     flat = kit.empty("pipflat", (0, 0, -40.0))
     cm = kit.plastic("#8a8d90", 0.9, "pipflat")
-    kit.box("pf.body", (0.55, 0.62, 0.1), (0, 0, 0.05), cm, flat, bevel=0.03)
-    for sx in (-1, 1):
-        kit.box(f"pf.arm{sx}", (0.5, 0.17, 0.09), (sx * 0.5, -0.1, 0.045), cm, flat, rot=(0, 0, sx * 0.4), bevel=0.03)
-    kit.box("pf.hood", (0.3, 0.2, 0.08), (0, 0.4, 0.04), cm, flat, bevel=0.03)
+    kit.box("pf.body", (0.56, 0.7, 0.1), (0, -0.02, 0.05), cm, flat, bevel=0.03)
+    for sx in (-1, 1):   # sleeves straight out to each side, a cuff at each end
+        kit.box(f"pf.arm{sx}", (0.5, 0.17, 0.09), (sx * 0.5, 0.08, 0.045), cm, flat, rot=(0, 0, sx * -0.1), bevel=0.03)
+        kit.box(f"pf.cuff{sx}", (0.07, 0.19, 0.1), (sx * 0.77, 0.06, 0.05), kit.plastic("#5e6063", 0.9), flat, bevel=0.02)
+    # the hood lying open above the collar: a rim round a dark inside
+    kit.box("pf.hood", (0.34, 0.26, 0.08), (0, 0.46, 0.04), cm, flat, bevel=0.04)
+    kit.box("pf.hoodin", (0.2, 0.15, 0.02), (0, 0.46, 0.085), kit.plastic("#2a2b2d", 0.9), flat)
+    # four toggles down the front, each on a short cord loop, in pale horn so they read from above
+    horn = kit.plastic("#efe4c4", 0.5)
+    for k, ty in enumerate((-0.25, -0.1, 0.05, 0.2)):
+        kit.box(f"pf.tog{k}", (0.1, 0.045, 0.05), (0, ty, 0.12), horn, flat, bevel=0.015)
+        kit.box(f"pf.loop{k}", (0.2, 0.012, 0.012), (0, ty, 0.102), kit.plastic("#3a3b3d", 0.9), flat)
+    kit.box("pf.zip", (0.012, 0.64, 0.012), (0, -0.02, 0.102), kit.plastic("#3a3b3d", 0.9), flat)
     ctx["pipflat"] = flat
     bag = kit.empty("holdall", (0, 0, -40.0))
     kit.box("hb.body", (0.6, 0.28, 0.34), (0, 0, 0.17), M.bag, bag, bevel=0.07)
@@ -563,17 +577,26 @@ def build_tilted_clothes(kit, M):
     tor = bpy.data.objects.get("tilted.torso")
     if tor is None:
         return
-    kit.box("tilted.bib", (1.2, 0.08, 1.15), (0, -0.54, 0.95), M.rust, tor, bevel=0.03)
+    K = 0.82   # the Tilted's body_width: a narrower, taller trunk than the cast's
+    kit.box("tilted.bib", (1.2 * K, 0.08, 1.15), (0, -0.54, 0.95), M.rust, tor, bevel=0.03)
     for sx in (-1, 1):
-        kit.box(f"tilted.strap{sx}", (0.22, 0.09, 0.55), (sx * 0.48, -0.54, 1.72), M.rust, tor, bevel=0.02)
-        kit.box(f"tilted.pocket{sx}", (0.4, 0.09, 0.4), (sx * 0.38, -0.55, 0.5), M.rust, tor, bevel=0.02)
-    # the tarp: a shoulder cape, a back panel hanging behind, a cord and a knot at the chest
-    kit.box("tilted.cape", (2.36, 1.24, 0.4), (0, 0.0, 1.88), M.tarp, tor, bevel=0.1)
-    kit.box("tilted.capeb", (2.2, 0.12, 1.9), (0, 0.6, 0.98), M.tarp, tor, rot=(math.radians(-4), 0, 0), bevel=0.05)
+        kit.box(f"tilted.strap{sx}", (0.22, 0.09, 0.55), (sx * 0.48 * K, -0.54, 1.72), M.rust, tor, bevel=0.02)
+        kit.box(f"tilted.pocket{sx}", (0.4 * K, 0.09, 0.4), (sx * 0.38 * K, -0.55, 0.5), M.rust, tor, bevel=0.02)
+    cord = kit.plastic("#d4c7a0", 0.8)
+    # the tarp, draped: thin sheets that slope off each shoulder, a hanging front flap each side of the bib, a back
+    # panel and thin ridges for folds. Nothing here is a thick roll.
     for sx in (-1, 1):
-        kit.box(f"tilted.capes{sx}", (0.12, 1.1, 1.35), (sx * 1.1, 0.04, 1.28), M.tarp, tor, bevel=0.05)
-    kit.box("tilted.cord", (1.9, 0.07, 0.07), (0, -0.55, 1.62), kit.plastic("#d4c7a0", 0.8), tor)
-    kit.box("tilted.knot", (0.24, 0.1, 0.24), (0.1, -0.58, 1.58), kit.plastic("#d4c7a0", 0.8), tor, bevel=0.03)
+        kit.box(f"tilted.shoulder{sx}", (1.2 * K, 1.2, 0.09), (sx * 0.9 * K, 0.02, 1.93), M.tarp, tor,
+                rot=(0, math.radians(sx * 12), 0), bevel=0.03)
+        kit.box(f"tilted.flap{sx}", (0.46 * K, 0.1, 1.15), (sx * 0.76 * K, -0.58, 1.2), M.tarp, tor,
+                rot=(math.radians(-5), 0, math.radians(sx * -4)), bevel=0.03)
+        kit.box(f"tilted.capes{sx}", (0.1, 1.15, 1.0), (sx * 1.42 * K, 0.04, 1.4), M.tarp, tor,
+                rot=(0, math.radians(sx * 6), 0), bevel=0.03)
+    kit.box("tilted.capeb", (2.4 * K, 0.12, 2.0), (0, 0.58, 1.0), M.tarp, tor, rot=(math.radians(-4), 0, 0), bevel=0.05)
+    kit.box("tilted.cord", (1.7 * K, 0.07, 0.07), (0, -0.56, 1.66), cord, tor)
+    kit.box("tilted.knot", (0.24, 0.1, 0.24), (0.1, -0.6, 1.62), cord, tor, bevel=0.03)
+    # a neck block between the shoulders and the hanging head, placed every frame in animate()
+    kit.box("tilted.nk", (0.55, 0.55, 1.0), (0, 0, 2.0), kit.plastic("#8a7556", 0.5), tor, bevel=0.1)
 
 
 # ------------------------------------------------------------------------------------------------ build
@@ -621,6 +644,9 @@ def build(kit, story, tl):
     fill = kit.light("char fill", "SUN", (-20, -24, 22), 1.0, "#b4c6ea", size=0.02)
     kit.aim(fill, (0, 0, 0))
     ctx["fill"] = fill
+    rim = kit.light("rim", "SUN", (-10, 25, 12), 1.0, "#ffc88a", size=0.02)
+    kit.aim(rim, (0, 0, 0))
+    ctx["rim"] = rim
     for nm in ("bus", "coach"):
         b = kit.light(f"{nm} beam", "SPOT", (0, 0, -60), 1.0, "#ffd9a0", size=0.3, spot=50, blend=0.6)
         ctx[f"{nm}_beam"] = b
@@ -659,8 +685,12 @@ def decorate(kit, story, ctx):
         r = bpy.data.objects.get(who)
         if r is not None:
             chars += [o for o in r.children_recursive if o.type == "MESH"]
+    ts_ = bpy.data.objects.get("tarpstrip")
+    if ts_ is not None:
+        chars.append(ts_)   # the strip on the chair arm takes the same fog daylight as the cast (S42)
     if chars:
         light_only(kit, "chars", "char fill", chars)
+        light_only(kit, "chars2", "rim", chars)
     d0 = story["look"]["fog_density"]
     fc = _lin(_hex(FOGC))
     dens, ems = [], []
@@ -781,7 +811,10 @@ def animate(kit, story, tl, t, ctx):
         n.inputs[1].default_value = -s["fogd"]
     for n in ctx["fog_ems"]:
         n.inputs["Strength"].default_value = s["fogb"] * (0.75 + 0.25 * s["sky"] / 1.5)
-    over = {"sun": s["sun"], "char fill": s["fill"]}
+    rd = V((math.cos(math.radians(62)) * math.cos(math.radians(24)), math.sin(math.radians(62)) * math.cos(math.radians(24)), math.sin(math.radians(24))))
+    ctx["rim"].location = tuple(rd * 40)
+    kit.aim(ctx["rim"], (0, 0, 0))
+    over = {"sun": s["sun"], "char fill": s["fill"], "rim": s["rim"]}
     # ---------------------------------------------------------------- coats
     for who, mat in ctx["cloth"].items():
         if mat is None:
@@ -810,7 +843,12 @@ def animate(kit, story, tl, t, ctx):
                 if leg is not None:
                     leg.rotation_euler = (-math.pi / 2, 0, 0)
     # ---------------------------------------------------------------- the Tilted
-    tc = _last(_cues(tl, "tilted"), t) or {}
+    tcs = [c for c in _cues(tl, "tilted") if c["t"] <= t + 1e-9]
+    tc = dict(tcs[-1]) if tcs else {}
+    if len(tcs) > 1 and float(tc.get("dur", 0)) > 0:   # a slow change: ease every number from the last pose (the lean)
+        u = _ss((t - tcs[-1]["t"]) / float(tc["dur"]))
+        for k in ("roll", "lift", "side", "pitch", "yawh", "lean", "fwd"):
+            tc[k] = tcs[-2].get(k, 0.0) + (tc.get(k, 0.0) - tcs[-2].get(k, 0.0)) * u
     neck = bpy.data.objects.get("tilted.neck")
     tors = bpy.data.objects.get("tilted.torso")
     if neck is not None and tors is not None:
@@ -819,9 +857,26 @@ def animate(kit, story, tl, t, ctx):
         sgn = -1 if roll < 0 else 1
         neck.location = (sgn * tc.get("side", 0.38), tc.get("fwd", 0.0), 2.0 + tc.get("lift", 0.62))
         tors.rotation_euler = (math.radians(tc.get("lean", 0.0)), 0, 0)
+        nk = bpy.data.objects.get("tilted.nk")
+        if nk is not None:
+            a0, b0 = V((0, 0, 1.85)), V(neck.location)
+            dd = b0 - a0
+            nk.location = tuple((a0 + b0) / 2)
+            nk.rotation_euler = dd.to_track_quat("Z", "Y").to_euler()
+            nk.scale = (1, 1, max(0.2, dd.length))
+    # the fog glimpse (S39, S40): the Tilted is a flat dark shape, no face and no colour
+    if "tsil_orig" not in ctx:
+        ctx["tsil_orig"] = {o: list(o.data.materials) for o in bpy.data.objects
+                            if o.name.startswith("tilted.") and o.type == "MESH"}
+        ctx["tsil_mat"] = kit.plastic("#0b0b0d", 0.95, "tsil")
+    sil = bool((_last(_cues(tl, "tsil"), t) or {}).get("on"))
+    for o, mats in ctx["tsil_orig"].items():
+        for i, m in enumerate(mats):
+            o.data.materials[i] = ctx["tsil_mat"] if sil else m
     # ---------------------------------------------------------------- goods turned toward Pip's chair
     gc = _last(_cues(tl, "goods"), t) or {"mode": "straight"}
     for k, (nm, (root, gx, gy)) in enumerate(ctx["goods"].items()):
+        root.location.z = -40.0 if gc["mode"] == "away" else 0.785
         if gc["mode"] == "turned":
             yaw = yaw_to((gx, gy), CHAIR_P)
         elif gc["mode"] == "chaos":
@@ -908,10 +963,12 @@ def animate(kit, story, tl, t, ctx):
             beam.location = (x + fwd.x * (L + 0.1), y + fwd.y * (L + 0.1), z + 0.8)
             kit.aim(beam, (x + fwd.x * (L + 8.0), y + fwd.y * (L + 8.0), z + 0.1))
     bl = ramp_level(_cues(tl, "beam"), t)
-    over["bus beam"] = 2600.0 * bl
+    over["bus beam"] = 1500.0 * bl
     over["coach beam"] = 0.0
+    over["strip fill"] = 900.0 * ramp_level(_cues(tl, "tfill"), t)
+    over["shelter fill"] = 250.0 * ramp_level(_cues(tl, "sfill"), t)
     for nm in ("bus",):
         lamps = ctx["veh"][nm][1]
         for m in lamps:
-            _set_emit(m, 4.0 * bl)
+            _set_emit(m, 2.0 * bl)
     return over
