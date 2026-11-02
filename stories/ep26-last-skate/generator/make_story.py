@@ -132,13 +132,13 @@ SHOTS = [
     ("L12", "Pop settling on the stool under the amber lamp", 2, C([-1.5, -4.4, 1.6], [POP_X, SEAT_Y, 1.0], 2.8)),
     ("L13", "close on his knees and the tape", 2, C([-2.0, -6.4, 0.85], [POP_X, -6.4, 0.8], 1.4)),
     ("L14", "Pop to Nan: 'You skate for both of us'", 2, C([-2.0, -3.3, 1.7], [-3.2, -6.4, 1.3], 3.0)),
-    ("L15", "Nan from behind, gliding to the rail", 2, still([-1.2, -7.6, 1.3], [0.2, -4.4, 0.9], 28)),
+    ("L15", "Nan from behind, gliding to the rail", 2, still([0.8, -8.0, 1.3], [-0.8, -4.6, 0.9], 28)),
     # 03 slow song one
     ("L16", "the room dims for a slow song, seen from the snack bar", 2, FLOOR),
     ("L17", "couples gliding past, seen at the elbows", 2, still([-6.4, -3.6, 1.3], [-1.0, 0.0, 1.0], 24)),
     ("L18", "high wide: the pool travelling round the floor", 2, HIGH),
     ("L19", "Nan alone at the rail, the couples beyond", 2, C([3.8, -6.6, 1.4], [3.0, -3.5, 1.2], 2.8)),
-    ("L20", "me and Pop at the snack bar, the tub between us", 2, C([-1.7, -3.7, 1.55], [-4.4, -6.4, 1.2], 3.0)),
+    ("L20", "me and Pop at the snack bar, the tub between us", 2, C([-1.7, -4.8, 1.55], [-4.4, -6.4, 1.2], 3.0)),
     ("L21", "the pool sliding along the far rail, then onto a tall striped shape", 2, FARCAM),
     ("L22", "medium on the Skater at the far rail, face toward the floor", 2,
      C([-3.0, -5.4, 1.3], [FAR[0], FAR[1], 1.25], 3.4)),
@@ -343,7 +343,7 @@ walk("nan", "L07>", [-6.0, -6.6])
 hide("nan", "L08")
 put("nan", "L10", [4.4, -6.8], yaw=0, expr="neutral")
 put("nan", "L14", [-2.7, -6.2], yaw=-90, expr="soft")
-walk("nan", "L14.4", [-2.7, -6.2], skate=True)
+walk("nan", "L15", [-2.7, -6.2])
 walk("nan", "L15+0.4", [-0.3, -4.6], skate=True)
 walk("nan", "L15>", [NAN[0], NAN[1]], skate=True)
 put("nan", "L16", list(NAN), yaw=180, expr="soft", skate=False)
@@ -404,7 +404,7 @@ orbit("L04", 3.4, 0.8, "c2a", "c2b")
 orbit("L06", 5.0, 3.0, "c1a", "c1b")
 orbit("L06", 5.0, 5.4, "c2a", "c2b")
 orbit("L16", 23.0, 2.0, "c1a", "c1b")
-orbit("L16", 23.0, 5.3, "c2a", "c2b")
+orbit("L16", 23.0, 0.9, "c2a", "c2b")
 orbit("L28", 11.4, 3.4, "c1a", "c1b")
 orbit("L28", 11.4, 0.4, "c2a", "c2b")
 orbit("L35", 18.0, 5.6, "c1a", "c1b")
