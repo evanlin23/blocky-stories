@@ -49,7 +49,7 @@ DECK_D = 1.8                  # the deck in front of the arch (the steps come do
 WORK = (2.05, 3.55)           # the crew's worklight, near the rink
 GX0, GX1, GY0, GY1 = 0.5, 5.5, 12.1, 17.6   # the gallery behind the arch
 GZ = PLAT_Z + 3.6
-LILAC = "#c9a6ff"             # the leftover rim: a cooler lilac than the bulbs
+LILAC = "#a066ff"             # the leftover rim: a cooler lilac than the bulbs
 GREYRIM = "#7a7484"           # the dark one's, and the old leftovers'
 
 VIOLET = "#5d4a72"            # the facade's faded violet
@@ -61,6 +61,15 @@ GLOW = "#c9b8ff"              # their light
 def kit_ss(x):
     x = min(1.0, max(0.0, x))
     return x * x * (3 - 2 * x)
+
+
+def cue_at(tl, name, t):
+    """The latest cue of this name at or before t (its dict), or {}."""
+    out = {}
+    for c in tl.get("cues", []):
+        if c["name"] == name and c["t"] <= t + 1e-9:
+            out = c
+    return out
 
 
 def _shot(tl, t):
@@ -498,7 +507,7 @@ def build_far(kit, ctx, M):
     for sx in (-1, 1):
         kit.cyl(f"van.wheel{sx}", 0.4, 0.3, (vx + 0.5 + sx * 1.3, vy + 1.1, 0.4), pbr(kit, "tyre2", "#111113", 0.8),
                 rot=(0, math.radians(90), 0), n=20)
-    kit.box("van.hatch", (1.6, 0.04, 0.8), (vx - 0.3, vy + 1.12, 1.55), kit.emit("#ffb35c", 0.9, name="van glow"))
+    kit.box("van.hatch", (1.6, 0.04, 0.8), (vx - 0.3, vy + 1.12, 1.55), kit.emit("#ffb35c", 0.45, name="van glow"))
     kit.box("van.counter", (1.9, 0.5, 0.06), (vx - 0.3, vy + 1.38, 1.1), M["steel"], bevel=0.01)
     kit.box("van.awning", (2.1, 0.7, 0.05), (vx - 0.3, vy + 1.4, 2.12), vpaint, rot=(math.radians(-8), 0, 0))
     polished = kit.metal("#c9ccd4", 0.07, name="polished steel")
@@ -508,13 +517,13 @@ def build_far(kit, ctx, M):
 
     # the pane the maze guy carries: steel frame, glass, and a shallow floor behind it that tips with me
     pn = kit.empty("carried pane", (0, 0, -20))
-    kit.box("carried.g", (1.7, 0.014, 2.3), (0, 0, 1.2), M["glass"], pn)
+    kit.box("carried.g", (2.2, 0.014, 2.3), (0, 0, 1.2), M["glass"], pn)
     for sx in (-1, 1):
-        kit.box(f"carried.f{sx}", (0.09, 0.09, 2.45), (sx * 0.895, 0, 1.22), M["silver"], pn)
-    kit.box("carried.top", (1.9, 0.09, 0.09), (0, 0, 2.44), M["silver"], pn)
-    kit.box("carried.bot", (1.9, 0.09, 0.09), (0, 0, -0.01), M["silver"], pn)
+        kit.box(f"carried.f{sx}", (0.09, 0.09, 2.45), (sx * 1.145, 0, 1.22), M["silver"], pn)
+    kit.box("carried.top", (2.4, 0.09, 0.09), (0, 0, 2.44), M["silver"], pn)
+    kit.box("carried.bot", (2.4, 0.09, 0.09), (0, 0, -0.01), M["silver"], pn)
     fl = kit.empty("carried floor", (0, 0.45, 0.0), pn)
-    kit.box("carried.floorm", (1.6, 0.9, 0.05), (0, 0, 0.0), M["ply"], fl)
+    kit.box("carried.floorm", (2.0, 0.9, 0.05), (0, 0, 0.0), M["ply"], fl)
     ctx["carried"] = pn
     ctx["carried_floor"] = fl
 
@@ -691,8 +700,8 @@ def shot_look(kit, story, tl, t, ctx):
 def build_extras(kit, story, ctx):
     d = Path(bpy.app.tempdir or tempfile.gettempdir()) / "extras-faces"
     d.mkdir(parents=True, exist_ok=True)
-    lil = rim_mat(kit, "rim lilac", LILAC, 5.0)
-    gry = rim_mat(kit, "rim grey", GREYRIM, 1.4)
+    lil = rim_mat(kit, "rim lilac", LILAC, 1.8)
+    gry = rim_mat(kit, "rim grey", GREYRIM, 0.25)
     ctx["x"], ctx["base"], ctx["rims"] = {}, {}, {}
     for nm, spec in story.get("extras", {}).items():
         spec = _copy.deepcopy(spec)
@@ -700,10 +709,10 @@ def build_extras(kit, story, ctx):
         ch = rig.Character(nm, spec, d)
         if stretch != 1.0:
             ch.head.scale = (1.0, 1.0, stretch)
-        if spec.get("face", {}).get("eyes") == "mirror":
+        if spec.get("face", {}).get("eyes") in ("mirror", "hollow"):
             matte_eyes(kit, ch)
         old = nm.startswith("o") or nm == "dark"
-        ctx["rims"][nm] = add_rim(kit, ch.root, gry if old else lil, 0.1 if nm != "dark" else 0.12)
+        ctx["rims"][nm] = add_rim(kit, ch.root, gry if old else lil, 0.07 if nm != "dark" else 0.08)
         ctx["x"][nm] = ch
         ctx["base"][nm] = tuple(ch.root.scale)
         ch.pose(0, 0, 0, 0, hidden=True)
@@ -713,7 +722,7 @@ def build_extras(kit, story, ctx):
     if tasha:
         ch = rig.Character("tr", _copy.deepcopy(tasha), d)
         ch.root.scale = (-ch.root.scale[0], ch.root.scale[1], ch.root.scale[2])
-        ctx["rims"]["tr"] = add_rim(kit, ch.root, lil, 0.1)
+        ctx["rims"]["tr"] = add_rim(kit, ch.root, lil, 0.07)
         ctx["x"]["tr"] = ch
         ctx["base"]["tr"] = tuple(ch.root.scale)
         ch.pose(0, 0, 0, 0, hidden=True)
@@ -810,7 +819,7 @@ def pose_stage(story, tl, t, ctx):
     me = bpy.data.objects.get("me")
     if me is not None:
         if "me_rims" not in ctx:
-            ctx["me_rims"] = add_rim(ctx["kit"], me, ctx["M_rim"], 0.1)
+            ctx["me_rims"] = add_rim(ctx["kit"], me, ctx["M_rim"], 0.07)
         e = ents.get("me") or {}
         if e.get("att"):
             place(ctx, tl, "me", me, e, t, ch=None, rims=ctx["me_rims"])
@@ -822,11 +831,11 @@ def pose_stage(story, tl, t, ctx):
 
 
 def build_rain(kit, ctx, M):
-    m = kit.emit("#c4ccff", 5.0, name="rain streak")
+    m = kit.emit("#c4ccff", 0.7, name="rain streak")
     ctx["rain"] = []
     rng = np.random.default_rng(15)
-    for i in range(240):
-        ob = kit.box(f"rain{i}", (0.014, 0.014, 0.55), (0, 0, -50), m)
+    for i in range(170):
+        ob = kit.box(f"rain{i}", (0.008, 0.008, 0.4), (0, 0, -50), m)
         ob.visible_shadow = False
         ob.rotation_euler = (0, 0.09, 0)
         ctx["rain"].append((ob, rng.random(3)))
@@ -872,7 +881,7 @@ def build_breath(kit, ctx):
     tr = N.new("ShaderNodeBsdfTransparent")
     em = N.new("ShaderNodeEmission")
     em.inputs["Color"].default_value = (0.78, 0.8, 0.9, 1)
-    em.inputs["Strength"].default_value = 1.2
+    em.inputs["Strength"].default_value = 0.9
     mix = N.new("ShaderNodeMixShader")
     L.new(mul.outputs[0], mix.inputs[0])
     L.new(tr.outputs[0], mix.inputs[1])
@@ -1011,7 +1020,7 @@ def build(kit, story, tl):
     ctx = {"story": story, "kit": kit}
     M = materials(kit)
     ctx["M"] = M
-    ctx["M_rim"] = rim_mat(kit, "rim lilac", LILAC, 5.0)
+    ctx["M_rim"] = rim_mat(kit, "rim lilac", LILAC, 1.8)
     ctx["M_tray"] = pbr(kit, "tray", "#b99a6a", 0.7)
     ctx["M_fry"] = pbr(kit, "fries", "#e3b13c", 0.6)
     build_field(kit, ctx, M)
