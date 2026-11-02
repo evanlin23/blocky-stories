@@ -890,14 +890,14 @@
    ]
   },
   "L34": {
-   "text": "it's ross, in her outdoor coat, just before midnight.",
+   "text": "it's ross, in her outdoor coat, out of breath.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.466,
+   "dur": 2.086,
    "onset": 0.172,
-   "end": 2.276,
+   "end": 1.879,
    "chunks": [
     [
      0.172,
@@ -909,11 +909,11 @@
     ],
     [
      0.69,
-     1.224
+     1.172
     ],
     [
-     1.293,
-     2.276
+     1.207,
+     1.879
     ]
    ]
   },

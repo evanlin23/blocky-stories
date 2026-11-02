@@ -471,7 +471,7 @@ def build_street(kit, M, ctx):
     for i, tx in enumerate((-8, 6, 20, 34, 48)):
         kit.cyl(f"trunk {i}", 0.16, 2.2, (X0 + tx, 5.6, 1.1), M["dark"], n=8)
         kit.sphere(f"crown {i}", 1.4, (X0 + tx, 5.6, 3.2), M["leaf"], seg=10)
-    sun = kit.light("sun", "SUN", (-8, -10, 20), 4.5, "#fff0d8", size=0.02)
+    sun = kit.light("sun", "SUN", (-6, -14, 13), 9.0, "#fff4dc", size=0.02)
     kit.aim(sun, (X0, 0, 0))
     ctx["sun"] = sun
 
@@ -556,7 +556,7 @@ def build_keeper(kit, M, ctx):
     # (it lights Ros's face too). Each switches only on a cut, with the keeper's pose.
     kit.light("kface_hi", "POINT", (-1.0, -1.9, 3.5), 130.0, "#ffd9b0", size=0.4)
     light_only(kit, "keeper", "kface_hi", ctx["k_objs"])
-    kit.light("kface_lo", "POINT", (1.6, -0.3, 2.0), 170.0, "#ffd9b0", size=0.4)
+    kit.light("kface_lo", "POINT", (1.5, -0.9, 2.1), 60.0, "#ffd9b0", size=0.4)
     kit.light("khand", "POINT", (-1.1, -1.3, 1.9), 150.0, "#ffd9b0", size=0.4)
     _show(ctx["k_objs"], False)
 
@@ -604,6 +604,7 @@ def build(kit, story, tl):
         pl = make_plane(f"whole {pid}", 0.24, 0.24, m)
         ctx["wholes"][pid] = (pl, em, a, b)
     kit.light("glyphglow", "POINT", (0, 0, -20), 0.0, GOLD, size=0.15)
+    kit.light("footlight", "POINT", (1.1, -0.5, 0.8), 70.0, "#ffe6c0", size=0.3)
     return ctx
 
 
@@ -784,17 +785,19 @@ def animate(kit, story, tl, t, ctx):
             continue
         pl.hide_render = False
         gloved = bool(on_g) and who == "me"
-        off = 0.3 if gloved else (0.13 if who == "me" else 0.1)
+        off = 0.3 if gloved else (0.13 if who == "me" else (0.22 if lv < 0.3 else 0.1))
         _billboard(pl, p + (cam - p).normalized() * off, cam)
         sc_ = 1.8 if who == "me" and (lv > 0.5 or gloved) else 1.5
         pl.scale = (sc_, 1, sc_)
-        em.inputs["Strength"].default_value = ((3.2 if not gloved else 4.5) if who == "me" else 6.0) * lv * (1.0 - w)
+        em.inputs["Strength"].default_value = ((3.2 if not gloved else 4.5) if who == "me" else 6.0) * lv * (1.0 - w) * (0.6 if (who == "ros" and lv < 0.3) else 1.0)
         if who == "me" and lv > 0.5 and (1.0 - w) > 0.5 and glow < 0.2 and not gloved:
             glow = 0.2
             glow_p = p
         if _DEBUG:
             import sys
             print(f"DBG t={t:.2f} {who} hand={tuple(round(x, 2) for x in p)} cam={tuple(round(x, 2) for x in cam)}", file=sys.stderr)
+    l68 = tl.get("lines", {}).get("L68")
+    over["footlight"] = 1.0 if l68 and l68["onset"] - 0.05 <= t <= l68["end"] else 0.0
     over["glyphglow"] = 1.0
     gl = kit.LIGHTS["glyphglow"]
     gl["obj"].location = glow_p + (cam - glow_p).normalized() * 0.25 if glow_p is not None else V((0, 0, -20))
