@@ -193,7 +193,7 @@ def materials(kit, wd):
     M["steelp"] = kit.plastic("#9aa3a8", 0.5)
     M["blue"] = kit.plastic("#3d6fa8", 0.5, spec=0.5)
     M["bluedk"] = kit.plastic("#2c527e", 0.55)
-    M["stroke"] = kit.plastic("#2f8fe0", 0.6, name="stroke blue")
+    M["stroke"] = kit.plastic("#2368b8", 0.6, name="stroke blue")
     M["brass"] = kit.plastic("#e0b64a", 0.3, name="brass", spec=0.9)
     M["pad"] = kit.plastic("#c99a38", 0.28, name="padlock", spec=0.9)
     M["dark"] = kit.plastic("#08090b", 0.9, name="dark")
@@ -218,7 +218,7 @@ def materials(kit, wd):
         im = pil_image(f"plate-{n}", digits_image(str(n)), wd / f"plate-{n}.png")
         M[f"plate{n}"] = image_mat(kit, f"plate {n}", im, rough=0.6)
     for nm, hexc, s in (("emit_tube", "#eaf2ff", 6.0), ("emit_lamp", "#ffd28a", 6.0), ("emit_sod", "#ffa845", 8.0),
-                        ("emit_ring", "#3fdc7a", 1.6), ("emit_phone", "#dff0ff", 3.0), ("emit_win", "#fff3d8", 5.0),
+                        ("emit_ring", "#3fdc7a", 1.6), ("emit_phone", "#dff0ff", 3.0), ("emit_win", "#fff3d8", 3.0),
                         ("emit_bulb", "#ffe0a8", 6.0)):
         M[nm] = _own_emit(kit, nm, hexc, s)
     return M
@@ -241,6 +241,17 @@ def set_emit(m, strength):
 
 
 # ------------------------------------------------------------------------------------------ parts
+
+
+def uvplane(kit, name, size, loc, mat, parent=None, rot=(0, 0, 0)):
+    """kit.plane with a UV map, so an image (a scribble, a number plate) lands on it whole."""
+    ob = kit.plane(name, size, loc, mat, parent, rot)
+    uv = ob.data.uv_layers.new(name="UVMap")
+    corners = [(0, 0), (1, 0), (1, 1), (0, 1)]
+    for poly in ob.data.polygons:
+        for k, li in enumerate(poly.loop_indices):
+            uv.data[li].uv = corners[ob.data.loops[li].vertex_index]
+    return ob
 
 
 def torus(kit, name, R, r, loc, mat, rot=(0, 0, 0), parent=None, seg=28, tube=8):
@@ -281,7 +292,7 @@ def build_door(kit, ctx, M, side, k, yc):
     corrugated(kit, f"panel {n}", 2.0, UNIT_H, f, M["blue"], root)
     kit.box(f"rail {n}", (0.05, 2.0, 0.09), (f * 0.03, 0, 0.05), M["bluedk"], root)
     kit.box(f"plate {n}", (0.02, 0.32, 0.2), (f * 0.04, 0.62, 1.95), M["steelp"], root)
-    kit.plane(f"plateimg {n}", (0.3, 0.18), (f * 0.0525, 0.62, 1.95), M[f"plate{n}"], root,
+    uvplane(kit, f"plateimg {n}", (0.3, 0.18), (f * 0.0525, 0.62, 1.95), M[f"plate{n}"], root,
               rot=(math.pi / 2, 0, -math.pi / 2 if f < 0 else math.pi / 2))
     kit.box(f"hasp {n}", (0.03, 0.12, 0.05), (f * 0.04, 0.0, 0.14), M["steelp"], root)
     if side == "B":
@@ -345,7 +356,7 @@ def build_post(kit, ctx, M):
     kit.box("staple", (0.1, 0.012, 0.05), (1.0, face + 0.005, 0.40), M["steelp"])
     pb = kit.box("padlock", (0.07, 0.035, 0.08), (1.0, face + 0.03, 0.345), M["pad"], bevel=0.01)
     torus(kit, "shackle", 0.025, 0.006, (1.0, face + 0.03, 0.395), M["steel"], rot=(math.pi / 2, 0, 0), seg=16, tube=6)
-    kit.light("plant", "SPOT", (1.0, face + 0.55, 0.62), 9, "#fff0d8", size=0.05, spot=38, blend=0.5, shadow=False)
+    kit.light("plant", "SPOT", (1.0, face + 0.55, 0.62), 5, "#fff0d8", size=0.05, spot=38, blend=0.5, shadow=False)
     kit.aim(bpy.data.objects["plant"], (1.0, face, 0.52))
 
 
@@ -362,16 +373,20 @@ def build_unit_seven(kit, ctx, M):
                 z = BOX[2] / 2 + row * BOX[2]
                 ob = kit.box(f"box {side}{idx}", (BOX[0] - 0.01, BOX[1] - 0.01, BOX[2] - 0.01), (x, y, z), M["card"],
                              rot=(0, 0, math.radians(rnd.uniform(-1.4, 1.4))), bevel=0.012)
-                dec = kit.plane(f"dec {side}{idx}", (BOX[0] - 0.03, BOX[2] - 0.03), (x, y - sgn * (BOX[1] / 2 + 0.004), z),
+                dec = uvplane(kit, f"dec {side}{idx}", (BOX[0] - 0.03, BOX[2] - 0.03), (x, y - sgn * (BOX[1] / 2 + 0.004), z),
                                 M[f"{st}{rnd.randint(0, 2)}"], None,
                                 rot=(math.pi / 2, 0, math.pi if sgn < 0 else 0))
                 ctx["boxes"][side].append((ob, dec, idx))
                 if col == 5:   # the frontmost boxes also show their scribble to the corridor
-                    fd = kit.plane(f"fdec {side}{idx}", (BOX[1] - 0.03, BOX[2] - 0.03),
+                    fd = uvplane(kit, f"fdec {side}{idx}", (BOX[1] - 0.03, BOX[2] - 0.03),
                                    (x - BOX[0] / 2 - 0.004, y, z), M[f"{st}{rnd.randint(0, 2)}"], None,
                                    rot=(math.pi / 2, 0, -math.pi / 2))
                     ctx["boxes"][side].append((ob, fd, idx))
                 idx += 1
+    # corrugated steel on unit seven's side walls (the wall the scrape runs along)
+    for nm, y, f in (("wallsheet L", yc + 1.0 - 0.005, -1.0), ("wallsheet R", yc - 1.0 + 0.005, 1.0)):
+        e = kit.empty(nm, (2.5, y, 0), rot=(0, 0, math.pi / 2))
+        corrugated(kit, nm + " m", 3.2, UNIT_H, f, M["steelp"], e, period=0.1, amp=0.016)
     # my battery lamp on the floor in front of the right-hand stack
     ctx["lamp_pos"] = (1.08, yc - 0.55, 0.09)
     lx, ly, lz = ctx["lamp_pos"]
@@ -437,7 +452,7 @@ def build_corridor_props(kit, ctx, M):
     # distant low roofs for the dusk wide
     for i, (x, y, w, d, h) in enumerate(((-18, -22, 10, 8, 4.5), (14, -26, 12, 8, 5.5), (28, -14, 7, 7, 3.6),
                                            (-30, -9, 9, 6, 3.2))):
-        kit.box(f"far {i}", (w, d, h), (x, y, h / 2), kit.plastic("#161a22", 0.9, name="far roof"))
+        kit.box(f"far {i}", (w, d, h), (x, y, h / 2), kit.plastic("#3a414d", 0.9, name="far roof"))
 
 
 def build_car(kit, ctx, M):
@@ -484,14 +499,14 @@ def build_carry(kit, ctx, M):
         e = kit.empty(f"carry {st}", (0, 0, -30))
         if st == "small":
             kit.box("carry body small", (0.95, 0.85, 0.7), (0, 0, 0), M["card"], e, bevel=0.03)
-            kit.plane("carry dec small", (0.9, 0.62), (0, -0.428, 0), M["round1"], e, rot=(math.pi / 2, 0, 0))
+            uvplane(kit, "carry dec small", (0.9, 0.62), (0, -0.428, 0), M["round1"], e, rot=(math.pi / 2, 0, 0))
             e.hide_render = True
             for ob in e.children_recursive:
                 ob.hide_render = True
             ctx["carry"][st] = e
             continue
         kit.box(f"carry body {st}", (1.5, 1.35, 1.1), (0, 0, 0), M["card"], e, bevel=0.03)
-        kit.plane(f"carry dec {st}", (1.42, 1.0), (0, -0.678, 0), M[f"{st}0"], e, rot=(math.pi / 2, 0, 0))
+        uvplane(kit, f"carry dec {st}", (1.42, 1.0), (0, -0.678, 0), M[f"{st}0"], e, rot=(math.pi / 2, 0, 0))
         e.hide_render = True
         for ob in e.children_recursive:
             ob.hide_render = True
@@ -499,10 +514,10 @@ def build_carry(kit, ctx, M):
     # one small box, sitting on the floor of seven at the end (a lone round-scribbled box)
     sm = kit.empty("small box", (0, 0, -30))
     kit.box("small body", (0.36, 0.3, 0.26), (0, 0, 0.13), M["card"], sm, bevel=0.01)
-    kit.plane("small dec", (0.34, 0.24), (0, -0.152, 0.13), M["round1"], sm, rot=(math.pi / 2, 0, 0))
+    uvplane(kit, "small dec", (0.34, 0.24), (0, -0.152, 0.13), M["round1"], sm, rot=(math.pi / 2, 0, 0))
     ctx["small"] = sm
     # my phone's torch and glow
-    kit.light("torch", "SPOT", (0, 0, -30), 1600, "#f4f8ff", size=0.04, spot=48, blend=0.6)
+    kit.light("torch", "SPOT", (0, 0, -30), 2500, "#f4f8ff", size=0.04, spot=48, blend=0.6)
     kit.light("phone", "POINT", (0, 0, -30), 14, "#dff0ff", size=0.05, shadow=False)
     # a phone prop for the call: a small dark slab with a lit face, hung from my head (placed in animate)
     ph = kit.empty("phone prop", (0, 0, -30))
@@ -570,7 +585,7 @@ def build_deep(kit, ctx):
 # ------------------------------------------------------------------------------------------ animate
 
 TIMES = {   # sky colour, sky strength, sun gain, sodium, yard fill, mem fill, batten multiplier, exposure
-    "dusk": ("#161d2e", 0.45, 0.0, 1.0, 0.15, 0.0, 1.0, 0.0),
+    "dusk": ("#1d2740", 0.8, 0.0, 1.0, 0.7, 0.0, 1.0, 0.0),
     "mem": ("#bcd0ee", 1.6, 0.5, 0.0, 1.0, 1.0, 1.0, 0.1),
     "day": ("#a9c4ea", 1.5, 0.9, 0.0, 1.0, 0.0, 0.85, 0.0),
     "sun": ("#f3b574", 1.5, 1.0, 0.0, 0.8, 0.5, 1.0, 0.0),
@@ -670,7 +685,7 @@ def animate(kit, story, tl, t, ctx):
     over["k day"] = 1.0 if ks == "day" else 0.0
     over["k fill"] = 1.0 if ks == "day" else 0.25
     set_emit(M["emit_bulb"], 6.0 if ks == "night" else 0.5)
-    set_emit(M["emit_win"], 1.0 if ks == "night" else 8.0)
+    set_emit(M["emit_win"], 1.0 if ks == "night" else 3.5)
     # Jo's car
     cc = _cues(tl, "car")
     car = ctx["car"]
@@ -779,8 +794,8 @@ def place_keys(ctx, mode):
         k0.location = (x - 0.05 + 0.04 * math.cos(math.radians(30)), y + 0.04 * math.sin(math.radians(30)), z + 0.006)
         k0.rotation_euler = (0, 0, math.radians(30))
         _show(k0, True)
-        k1.location = (x + 0.2, y - 0.05, z + 0.003)    # the second key on its own beside the ring
-        k1.rotation_euler = (0, 0, math.radians(-20))
+        k1.location = (x + 0.085, y - 0.01, z + 0.003)    # the second key on its own beside the ring
+        k1.rotation_euler = (0, 0, math.radians(80))
         _show(k1, True)
     else:
         for e in (ring, k0, k1):

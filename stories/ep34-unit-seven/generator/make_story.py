@@ -75,7 +75,7 @@ KEYCAM = still([1.62, 2.14, 1.6], [1.62, 2.18, 1.2], 28)
 
 SHOTS = [
     (0, "L01 behind me down the lit corridor toward the open door seven, a slow push",
-     move(([-0.25, -1.1, 0.55], [0.5, 3.0, 1.0]), ([-0.2, -0.3, 0.6], [0.7, 3.0, 1.05]), 24, 22)),
+     move(([-0.25, -1.1, 0.6], [0.5, 3.0, 1.1]), ([-0.2, -0.5, 0.65], [0.7, 3.0, 1.1]), 22, 20)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
     ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.95, 1.3], [1.0, 3.0, 1.15], 22)),
@@ -84,10 +84,10 @@ SHOTS = [
     ("L06", "the corridor at night, me at door seven", still([-0.45, -1.0, 1.5], [0.6, 3.0, 1.3], 26)),
     ("L07", "inside seven: the stacks and the aisle, the lamp on the floor", still([0.95, 3.0, 1.15], [3.0, 3.0, 0.85], 22)),
     ("L08", "the two box faces, round on the right, zigzag on the left", still([-1.0, 3.0, 0.85], [1.45, 3.0, -0.25], 14)),
-    ("L09", "me on the round stack looking at the jagged one", still([0.95, 3.5, 1.5], [2.3, 2.5, 1.1], 22)),
+    ("L09", "me on the round stack looking at the jagged one", still([0.95, 3.45, 1.65], [2.3, 2.4, 1.3], 18)),
     ("L10", "knee height on the frame: the two strokes, the padlock", still([1.0, 3.05, 0.5], [1.0, 2.04, 0.5], 48)),
     ("L11+0.3", "top-down on the box top: the ring and two keys", KEYCAM),
-    ("L12", "my face in the lamp's light", still([2.3, 3.35, 2.0], [2.3, 2.25, 2.02], 30)),
+    ("L12", "my face in the lamp's light", still([1.3, 3.35, 2.0], [2.3, 2.25, 2.02], 26)),
     ("L13", "the round button, its green ring", still([0.3, 1.25, 1.3], [-1.1, 0.55, 0.98], 35)),
     ("L14", "the corridor from the entrance, lit, empty", still([-0.1, -0.9, 1.5], [-0.1, 10.0, 1.2], 24)),
     ("L15", "the lights click off: my phone's glow, the green ring ahead",
@@ -108,7 +108,7 @@ SHOTS = [
     ("L26", "close on the ribbed flank and the grime", still([2.2, 10.84, 0.78], [2.0, 10.38, 0.78], 17)),
     ("L27", "front-on again, from beside it: the face to the corridor", still([-0.3, 9.55, 1.55], [1.1, 9.9, 1.55], 42)),
     ("L28", "long lens: unit nine's door is up", LONG_LENS(7.6)),
-    ("L29", "from my doorway: the body out, the head turned round to me", still([0.5, 3.4, 1.55], [1.2, 7.6, 1.5], 50)),
+    ("L29", "from my doorway: the body out, the head turned round to me", still([-0.8, 3.2, 1.55], [1.0, 7.6, 1.5], 40)),
     ("L30", "the hasp, door seven already down", still([-0.1, 3.5, 0.45], [0.9, 3.0, 0.15], 30)),
     ("L31", "the corridor, lit, door eight next to mine", still([-0.35, 0.8, 1.5], [0.9, 5.0, 1.25], 28)),
     ("L32", "door eight's foot, no lock", still([-0.1, 5.7, 0.5], [0.9, 5.3, 0.22], 32)),
@@ -136,24 +136,24 @@ SHOTS = [
     ("L50", "the jagged boxes beside its flank", still([0.1, 3.4, 1.1], [1.5, 3.8, 0.85], 30)),
     ("L51", "the round boxes beside its flank, the lamp at the foot", still([0.1, 2.6, 1.1], [1.5, 2.3, 0.8], 30)),
     ("L52", "memory: a round scribble on a fresh box, the kitchen table",
-     still([KX + 0.7, -0.9, 1.5], [KX - 0.2, 0.3, 1.05], 32)),
+     still([KX + 2.0, -2.0, 1.55], [KX - 0.2, 0.1, 1.15], 30)),
     ("L53", "my face, sad", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
     ("L54", "its face in my door, held", still([-0.3, 3.45, 1.58], [1.0, 3.0, 1.58], 44)),
     ("L55", "that night: the ring with one key, the second beside it",
-     still([KX - 0.25, 0.22, 1.42], [KX - 0.22, 0.34, 0.775], 40)),
+     still([KX - 0.25, 0.12, 1.42], [KX - 0.22, 0.22, 0.775], 40)),
     ("L56", "me with my phone to my ear by the bright window", still([KX + 0.45, -0.1, 1.62], [KX + 1.0, 2.0, 1.5], 40)),
     ("L57", "a hold on my face, a small breath out", still([KX + 0.75, 0.55, 1.62], [KX + 1.0, 2.0, 1.55], 46)),
-    ("L58", "the yard in evening sun: Jo's car pulling in", still([-3.0, -9.5, 1.3], [0.3, -1.5, 1.3], 22)),
-    ("L59", "Jo and me side by side as the door rises", still([-0.7, 1.0, 1.55], [0.7, 3.0, 1.2], 30)),
+    ("L58", "the yard in evening sun: Jo's car pulling in", still([-3.0, -10.5, 1.3], [1.0, -4.5, 1.2], 22)),
+    ("L59", "Jo and me side by side as the door rises", still([-0.6, 0.0, 1.5], [0.3, 3.0, 1.35], 32)),
     ("L60", "straight down the aisle in daylight: the stacks and an empty aisle", AISLE_CAM),
     ("L61", "Jo with a jagged box walking toward the sun", still([-0.3, -0.9, 1.45], [0.0, 4.0, 1.2], 28)),
     ("L61.4", "then me with another", still([-0.3, -0.9, 1.45], [0.0, 4.0, 1.2], 28)),
     ("L62", "Jo in the aisle with a round one, eyebrows up", still([0.6, 3.0, 1.55], [2.0, 3.0, 1.5], 34)),
     ("L63", "Jo: \"That one's yours, obviously\"", still([0.6, 3.0, 1.55], [2.0, 3.0, 1.5], 34)),
     ("L63.3", "and me, a small laugh", still([3.7, 3.0, 1.55], [1.4, 3.0, 1.5], 36)),
-    ("L64", "the key-return slot, sunlight across it", still([-0.1, 1.15, 1.45], [-1.1, -0.3, 1.25], 36)),
-    ("P01", "close on the slot", still([-0.45, 0.2, 1.35], [-1.1, -0.3, 1.3], 55)),
-    ("L65", "her car going out of the gate in the low sun, me watching", still([-4.0, -3.4, 1.4], [1.5, -8.5, 1.0], 26)),
+    ("L64", "the key-return slot, sunlight across it", still([-0.2, 1.9, 1.5], [-1.0, -0.3, 1.25], 34)),
+    ("P01", "close on the slot", still([0.2, -0.3, 1.32], [-1.1, -0.3, 1.28], 45)),
+    ("L65", "her car going out of the gate in the low sun, me watching", still([-4.0, -4.5, 1.4], [5.5, -8.5, 1.0], 26)),
     ("L66", "me carrying round-scribbled boxes out into the sunny yard", still([-0.1, -7.0, 1.4], [-0.1, 0.0, 1.25], 30)),
     ("L67", "one small box on the bare floor of seven, sun across it", still([1.0, 3.6, 0.9], [2.0, 3.0, 0.15], 28)),
     ("L68", "straight down the bare unit to the back wall", AISLE_CAM),
@@ -168,7 +168,8 @@ SHOTS = [
 
 shots = []
 for i, (at, what, cam) in enumerate(SHOTS):
-    s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.006, "step": 2, "what": what}
+    s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.006, "step": 1 if at in ("L15", "L40", "L41", "L42", "L43") else 2,
+         "what": what}
     if i:
         s["at"] = at
     shots.append(s)
@@ -202,10 +203,10 @@ CARRY = {"arms": [80, 80], "side": [-6, -6]}
 SITTING = {"sit": True, "arms": [10, 10], "side": [-8, -8]}
 
 # me
-put("me", 0, [-0.1, 0.55], yaw=180, expr="neutral")
-walk("me", "L01>", [0.15, 2.3], yaw=180)
+put("me", 0, [-0.1, 1.6], yaw=180, expr="neutral")
+walk("me", "L01>", [0.2, 2.8], yaw=180)
 hide("me", "L02")
-put("me", "L03", [1.2, 2.55], yaw=90, expr="grin")
+put("me", "L03", [1.2, 2.5], yaw=90, expr="soft")
 put("me", "L04", [1.7, 3.3], yaw=90, expr="neutral", arms=[20, 20])
 put("me", "L05", [-0.45, -1.75], yaw=0, expr="neutral")
 put("me", "L06", [0.45, 2.7], yaw=90, expr="worried")
@@ -251,13 +252,13 @@ put("me", "L56", [KX + 1.0, 2.0], yaw=0, expr="neutral", arms=[165, 0], side=[0,
 put("me", "L57", [KX + 1.0, 2.0], yaw=0, expr="worried", arms=[165, 0], head=[0, 4])
 key("me", "L57.4", expr="soft", blend=0.3)
 hide("me", "L58")
-put("me", "L59", [0.3, 3.5], yaw=90, expr="soft")
+put("me", "L59", [0.3, 3.45], yaw=50, expr="soft")
 hide("me", "L60")
 put("me", "L61.4", [0.7, 3.0], yaw=180, expr="soft", **CARRY)
 walk("me", "L61.4+0.6", [0.0, 2.0], **CARRY)
 walk("me", "L62-0.05", [-0.1, 0.4], **CARRY)
 hide("me", "L62")
-put("me", "L63.3", [1.5, 3.0], yaw=90, expr="grin")
+put("me", "L63.3", [1.5, 3.0], yaw=90, expr="soft")
 hide("me", "L64")
 put("me", "L65", [-0.1, -1.55], yaw=0, expr="soft", head=[0, 0])
 put("me", "L66", [-0.1, 0.2], yaw=0, expr="soft", **CARRY)
@@ -271,24 +272,25 @@ walk("me", "L73+0.1", [0.0, 0.2], yaw=0)
 
 # Jo
 hide("jo", 0)
-put("jo", "L03", [2.4, 3.15], yaw=90, expr="grin")
-put("jo", "L04", [3.45, 2.75], yaw=-90, expr="grin", **CARRY)
+put("jo", "L03", [1.95, 3.2], yaw=90, expr="soft")
+put("jo", "L04", [3.45, 2.75], yaw=-90, expr="soft", **CARRY)
 put("jo", "L05", [0.5, -2.0], yaw=0, expr="neutral")
 walk("jo", "L05+0.1", [0.5, -2.0], yaw=0)
-walk("jo", "L05>", [2.7, -7.4])
+walk("jo", "L05>", [1.9, -5.0])
 hide("jo", "L06")
-put("jo", "L49", [3.45, 3.0], yaw=-90, expr="grin", **CARRY)
+put("jo", "L49", [3.45, 3.0], yaw=-90, expr="soft", **CARRY)
 hide("jo", "L49.2")
-put("jo", "L59", [0.3, 2.55], yaw=90, expr="soft")
+put("jo", "L59", [0.3, 2.6], yaw=50, expr="soft")
+hide("jo", "L60")
 put("jo", "L61", [0.8, 3.0], yaw=180, expr="soft", **CARRY)
 walk("jo", "L61+0.5", [0.0, 2.0], **CARRY)
 walk("jo", "L61.4-0.05", [-0.1, 0.4], **CARRY)
 hide("jo", "L61.4")
 put("jo", "L62", [2.5, 3.0], yaw=-90, expr="wide", **CARRY)
-key("jo", "L63", expr="grin", blend=0.2)
+key("jo", "L63", expr="soft", blend=0.2)
 hide("jo", "L63.3")
 put("jo", "L64", [-0.5, -0.3], yaw=-90, expr="soft", arms=[78, 0])
-hide("jo", "L65")
+hide("jo", "P01")
 
 # the Deep One: found where it stands, never seen moving
 hide("deep", 0)
