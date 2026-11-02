@@ -138,7 +138,7 @@ SHOTS = [
     ("L12", "Pop settling on the stool under the amber lamp", 2, C([-1.5, -4.4, 1.6], [POP_X, SEAT_Y, 1.0], 2.8)),
     ("L13", "close on his knees and the tape", 2, C([-2.0, -6.4, 0.85], [POP_X, -6.4, 0.8], 1.4)),
     ("L14", "Pop to Nan: 'You skate for both of us'", 2, C([-2.0, -3.3, 1.7], [-3.2, -6.4, 1.3], 3.0)),
-    ("L15", "Nan from behind, gliding to the rail", 2, still([0.8, -8.0, 1.3], [-0.8, -4.6, 0.9], 28)),
+    ("L15", "Nan from behind, gliding to the rail", 2, still([3.4, -8.4, 1.5], [0.4, -4.6, 0.9], 26)),
     # 03 slow song one
     ("L16", "the room dims for a slow song, seen from the snack bar", 2, FLOOR),
     ("L17", "couples gliding past, seen at the elbows", 2, still([-6.4, -3.6, 1.3], [-1.0, 0.0, 1.0], 24)),
