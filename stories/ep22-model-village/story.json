@@ -7026,8 +7026,8 @@
    "at": "L49",
    "name": "sky",
    "color": "#8d959c",
-   "strength": 0.5,
-   "sun": 0.45
+   "strength": 0.7,
+   "sun": 0.7
   },
   {
    "at": "L53.2",

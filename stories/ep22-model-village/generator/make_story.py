@@ -403,7 +403,7 @@ cues = [
     {"at": "L35", "name": "sky", "color": "#8d959c", "strength": 1.0, "sun": 1.0},
     {"at": "L63", "name": "sky", "color": "#141824", "strength": 0.35, "sun": 0.0},
     {"at": "L64", "name": "sky", "color": "#8d959c", "strength": 1.0, "sun": 1.0},
-    {"at": "L49", "name": "sky", "color": "#8d959c", "strength": 0.5, "sun": 0.45},
+    {"at": "L49", "name": "sky", "color": "#8d959c", "strength": 0.7, "sun": 0.7},
     {"at": "L53.2", "name": "sky", "color": "#8d959c", "strength": 1.0, "sun": 1.0},
     {"at": "L33", "name": "curtain", "level": 0.0},
     {"at": "L33.1", "name": "curtain", "level": 1.0, "dur": 1.8},
