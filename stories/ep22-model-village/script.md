@@ -101,7 +101,7 @@ A seaside model village on the front of a small made-up town, on grey out-of-sea
 - `L30` narrator: I leaned over / the CHAPEL / till my NOSE / touched the GLASS.
 - `L31` narrator: He didn't TURN round.
 - `L32` narrator: On FRIDAY, / he was in the house / NEXT DOOR / to MINE.
-- `L33` narrator: That NIGHT, / in my REAL cottage, / I shut every CURTAIN.
+- `L33` narrator: That NIGHT, / in my OWN cottage, / I shut every CURTAIN.
 - `L34` narrator: And THOUGHT / about a face / at the GLASS.
 - `L35` narrator: On SATURDAY, / I went STRAIGHT / to my little COTTAGE.
 - `L36` narrator: Its windows / were EMPTY.
@@ -126,7 +126,7 @@ A seaside model village on the front of a small made-up town, on grey out-of-sea
 - `L54` narrator: One house / at a TIME, / up to the tea shop / and the OTHERS.
 - `L55` narrator: There was a little MAN / in the WINDOW, / and to HIM, / the monster / was ME.
 - `L56` narrator: So I STOPPED / leaning in.
-- `L57` narrator: I put the BRUSH down / and walked into / the REAL tea shop.
+- `L57` narrator: I put the BRUSH down / and walked into / the BIG tea shop.
 - `L58` narrator: Everyone went QUIET.
 - `L59` narrator: Then the OWNER, / MAGGIE, / came over / with a little BOX.
 - `L60` narrator: She said, / "EVERYONE in town / has a FIGURE / in that tea shop."
