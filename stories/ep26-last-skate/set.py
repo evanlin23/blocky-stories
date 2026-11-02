@@ -184,11 +184,11 @@ def link_only(kit, coll, light_name, objs, mode):
 
 def build_hall(kit, ctx):
     x0, x1, y0, y1 = HALL
-    stripe = wstripes(kit, "wall stripes", "#9f2a31", "#e3d6bb", 1.0)
-    stripe2 = wstripes(kit, "wall stripes out", "#8f2830", "#d9cdb4", 1.0)
+    stripe = wstripes(kit, "wall stripes", "#a3434b", "#e3d6bb", 1.0)
+    stripe2 = wstripes(kit, "wall stripes out", "#99444c", "#d9cdb4", 1.0)
     # floors
     kit.box("rink floor", (14.0, 8.8, 0.1), (0, 0, -0.05), kit.planks("#d4a05c", "#bd8446", 1.0, "X", rough=0.55))
-    kit.box("concourse", (16.0, 4.6, 0.1), (0, -6.7, -0.05), kit.checker("#6c2128", "#cdbf9f", 1.4, rough=0.45))
+    kit.box("concourse", (16.0, 4.6, 0.1), (0, -6.7, -0.05), kit.checker("#733a40", "#cdbf9f", 1.4, rough=0.45))
     kit.box("north strip", (16.0, 1.9, 0.1), (0, 5.45, -0.05), kit.planks("#a97b44", "#8f6535", 1.0, "X"))
     kit.box("floor w", (1.0, 8.8, 0.1), (-7.5, 0, -0.05), kit.planks("#a97b44", "#8f6535", 1.0, "Y"))
     kit.box("floor e", (1.0, 8.8, 0.1), (7.5, 0, -0.05), kit.planks("#a97b44", "#8f6535", 1.0, "Y"))
@@ -239,8 +239,8 @@ def build_hall(kit, ctx):
 
 
 def build_rail(kit, ctx):
-    cherry = kit.plastic("#a3232b", 0.4)
-    padm = kit.plastic("#8f1c25", 0.7)
+    cherry = kit.plastic("#a63f48", 0.4)
+    padm = kit.plastic("#8f3740", 0.7)
     cream = kit.plastic("#eadfc6", 0.45)
     kit.cyl  # (kept for clarity)
     runs = []   # (axis, fixed, a, b)
@@ -370,7 +370,7 @@ def build_hire(kit, ctx):
     kit.light("tube", "AREA", (4.6, -8.3, 3.4), 90, "#ff6a78", size=1.5)
     kit.light("hirefill", "AREA", (4.6, -6.5, 3.3), 300, "#ffd9a8", size=1.8)
     # the door by the counter, a closet of warm light behind it
-    dm = kit.plastic("#8f2830", 0.5)
+    dm = kit.plastic("#99444c", 0.5)
     kit.box("closet", (3.0, 1.6, 2.6), (0, -10.1, 1.3), kit.plastic("#d8c7a4", 0.9))
     kit.box("closet floor", (3.0, 1.6, 0.05), (0, -10.1, 0.0), kit.planks("#a97b44", "#8f6535", 1.0, "X"))
     kit.box("closet bulb", (0.3, 0.3, 0.06), (0, -10.1, 2.58), kit.emit("#ffe0b0", 9.0))
@@ -382,12 +382,12 @@ def build_hire(kit, ctx):
 
 def build_booth(kit, ctx):
     cream = kit.plastic("#e8dcc2", 0.5)
-    stripe = wstripes(kit, "wall stripes", "#9f2a31", "#e3d6bb", 1.0)
+    stripe = wstripes(kit, "wall stripes", "#a3434b", "#e3d6bb", 1.0)
     dark = kit.plastic("#1b1618", 0.4)
     kit.box("booth deck", (4.4, 2.0, 1.7), (0, 5.4, 0.85), stripe)
     kit.box("booth floor", (4.2, 1.8, 0.04), (0, 5.4, 1.72), kit.planks("#8f6535", "#7a552b", 1.0, "X"))
     kit.box("booth front", (4.4, 0.12, 0.9), (0, 4.5, 2.2), cream, bevel=0.02)
-    kit.box("booth ledge", (4.6, 0.4, 0.07), (0, 4.58, 2.67), kit.plastic("#a3232b", 0.4))
+    kit.box("booth ledge", (4.6, 0.4, 0.07), (0, 4.58, 2.67), kit.plastic("#a63f48", 0.4))
     for sx in (-1.0, 1.0):
         kit.box(f"deck{sx}", (0.8, 0.34, 0.07), (sx, 4.58, 2.74), dark)
         kit.cyl(f"platter{sx}", 0.14, 0.02, (sx, 4.58, 2.78), kit.plastic("#2a2a30", 0.3))
@@ -660,6 +660,10 @@ def animate(kit, story, tl, t, ctx):
     over["conc0"] = over["conc1"] = 0.15 + 0.85 * dim
     over["amber"] = 0.55 + 0.45 * dim
     over["hirefill"] = 0.3 + 0.7 * dim
+    # ---- a per-shot level (story.json shots[].expo) so cuts land at similar brightness
+    expo = next((sh.get("expo", 1.0) for sh in story["shots"] if sh["id"] == shot), 1.0)
+    for n in list(kit.LIGHTS):
+        over[n] = over.get(n, 1.0) * expo
     # ---- the spotlight: a soft pool that slides, never pops
     sp = _ramp(_cues(tl, "spot"), t, SPOT0, ["to", "gain", "size"])
     tx, ty = sp["to"]
@@ -667,7 +671,7 @@ def animate(kit, story, tl, t, ctx):
     s["obj"].location = (tx - 1.2, ty - 0.9, 4.7)
     kit.aim(s["obj"], (tx, ty, 0.0))
     s["light"].spot_size = math.radians(sp["size"])
-    over["spot"] = sp["gain"]
+    over["spot"] = sp["gain"] * expo
     # ---- the fans
     for i, hub in enumerate(ctx["fans"]):
         hub.rotation_euler = (0, 0, t * 1.1 + i)
@@ -686,11 +690,11 @@ def animate(kit, story, tl, t, ctx):
     side = 1.0 if px < 1.0 else -1.0
     up = kit.LIGHTS["sk_up"]["obj"]
     up.location = (px + 0.9 * side, py - 0.9, 0.22)
-    over["sk_up"] = 0.3 + 0.7 * near
+    over["sk_up"] = (0.3 + 0.7 * near) * expo
     rim = kit.LIGHTS["sk_rim"]["obj"]
     rim.location = (px - 0.4, py + 2.6, 2.9)
     kit.aim(rim, (px, py, 1.5))
-    over["sk_rim"] = 0.35 + 0.65 * near
+    over["sk_rim"] = (0.35 + 0.65 * near) * expo
     # ---- the cast: sitting, skating, wobbling, skates on and off
     steam_on = _switch(_cues(tl, "steam"), "on", t, False)
     for who, keys in tl["acting"].items():

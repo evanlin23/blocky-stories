@@ -211,9 +211,15 @@ SHOTS = [
     ("L73", "hold the overhead wide, the fans at the frame's edge", 2, still([0.0, -0.3, 11.0], [0.0, 0.0, 0.0], 17, 90)),
 ]
 
+# per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
+# flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
+EXPO = {"S19": 1.4, "S20": 1.18, "S21": 1.03, "S22": 1.53, "S23": 1.09, "S24": 0.77, "S25": 0.87, "S26": 1.49, "S31": 0.55, "S32": 0.77, "S33": 1.18, "S34": 0.81, "S35": 0.77, "S36": 1.08, "S37": 1.51, "S38": 1.04, "S39": 1.17, "S40": 0.92, "S41": 1.13, "S42": 1.42, "S43": 2.5, "S44": 0.99, "S45": 1.19, "S46": 0.66, "S47": 1.7, "S48": 0.93, "S49": 0.96, "S50": 0.72, "S51": 1.34, "S52": 2.49, "S53": 2.13, "S54": 1.26, "S55": 1.21, "S56": 0.79, "S57": 1.13, "S58": 2.1, "S59": 0.89, "S60": 1.28, "S61": 1.22, "S62": 1.12, "S63": 0.86, "S64": 0.84, "S65": 1.86, "S66": 1.47, "S67": 1.04, "S68": 0.99, "S69": 1.32, "S70": 0.89, "S71": 0.95, "S72": 0.8, "S73": 0.87, "S74": 0.7, "S75": 1.33, "S76": 1.49, "S77": 0.7, "S78": 0.76}
+
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.0 if step == 1 else 0.004, "step": step, "what": what}
+    if f"S{i + 1:02d}" in EXPO:
+        s["expo"] = EXPO[f"S{i + 1:02d}"]
     if i:
         s["at"] = at
     shots.append(s)

@@ -2240,6 +2240,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "couples gliding past, seen at the elbows",
+   "expo": 1.4,
    "at": "L17"
   },
   {
@@ -2264,6 +2265,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "high wide: the pool travelling round the floor",
+   "expo": 1.18,
    "at": "L18"
   },
   {
@@ -2288,6 +2290,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Nan alone at the rail, the couples beyond",
+   "expo": 1.03,
    "at": "L19"
   },
   {
@@ -2312,6 +2315,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "me and Pop at the snack bar, the tub between us",
+   "expo": 1.53,
    "at": "L20"
   },
   {
@@ -2336,6 +2340,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the pool sliding along the far rail, then onto a tall striped shape",
+   "expo": 1.09,
    "at": "L21"
   },
   {
@@ -2360,6 +2365,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "medium on the Skater at the far rail, face toward the floor",
+   "expo": 0.77,
    "at": "L22"
   },
   {
@@ -2384,6 +2390,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "side view of its legs: two bends, a hard shadow under each",
+   "expo": 0.87,
    "at": "L23"
   },
   {
@@ -2408,6 +2415,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the pool slides away, the room passes, the pool returns: nothing there",
+   "expo": 1.49,
    "at": "L24"
   },
   {
@@ -2528,6 +2536,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Lenny in the booth: a plain cherry shirt, nothing on it",
+   "expo": 0.55,
    "at": "L27.5"
   },
   {
@@ -2552,6 +2561,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the dim, the pool sliding in from the frame's edge",
+   "expo": 0.77,
    "at": "L28"
   },
   {
@@ -2576,6 +2586,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "high wide: the pool on the Skater, dead centre",
+   "expo": 1.18,
    "at": "L29"
   },
   {
@@ -2600,6 +2611,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "medium on its folded arms",
+   "expo": 0.81,
    "at": "L30"
   },
   {
@@ -2624,6 +2636,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "its cream oval face, painted smile, eyes toward the rail",
+   "expo": 0.77,
    "at": "L31"
   },
   {
@@ -2648,6 +2661,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "reverse: Nan at the rail, unaware",
+   "expo": 1.08,
    "at": "L31.2"
   },
   {
@@ -2672,6 +2686,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "me pointing, Pop eating a chip",
+   "expo": 1.51,
    "at": "L32"
   },
   {
@@ -2696,6 +2711,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "close on Pop's wrist and the plain watch",
+   "expo": 1.04,
    "at": "L33"
   },
   {
@@ -2720,6 +2736,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the chip tub untouched, my face worried",
+   "expo": 1.17,
    "at": "L34"
   },
   {
@@ -2757,6 +2774,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "low on the floor boards as the pool edges across them",
+   "expo": 0.92,
    "at": "L35"
   },
   {
@@ -2781,6 +2799,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "along the rail: Nan, a cream post, the Skater folded and facing her",
+   "expo": 1.13,
    "at": "L36"
   },
   {
@@ -2805,6 +2824,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "up close, its stripes faded almost to pink",
+   "expo": 1.42,
    "at": "L37"
   },
   {
@@ -2829,6 +2849,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "its face, the eye highlights the brightest thing, key from below",
+   "expo": 2.5,
    "at": "L38"
   },
   {
@@ -2853,6 +2874,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Nan's face, looking past camera toward us",
+   "expo": 0.99,
    "at": "L39"
   },
   {
@@ -2877,6 +2899,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the pool slides off it, and back again",
+   "expo": 1.19,
    "at": "L40"
   },
   {
@@ -2901,6 +2924,7 @@
    "hand": 0.0,
    "step": 1,
    "what": "THE REVEAL: its head turned all the way round, over its back, looking at me",
+   "expo": 0.66,
    "at": "P01+0.55"
   },
   {
@@ -2925,6 +2949,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "my face, terrified",
+   "expo": 1.7,
    "at": "L42"
   },
   {
@@ -2949,6 +2974,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the chrome stool beside me, empty, the amber lamp over it",
+   "expo": 0.93,
    "at": "L43"
   },
   {
@@ -2973,6 +2999,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "close on the tub, steam faint and slow",
+   "expo": 0.96,
    "at": "L44"
   },
   {
@@ -2997,6 +3024,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the booth lamp, Lenny at the mic",
+   "expo": 0.72,
    "at": "L45"
   },
   {
@@ -3021,6 +3049,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the slow 2 s dim on the wide",
+   "expo": 1.34,
    "at": "L46"
   },
   {
@@ -3045,6 +3074,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "couples gliding off through the gap, the floor left bare",
+   "expo": 2.49,
    "at": "L47"
   },
   {
@@ -3069,6 +3099,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the pool settling on Nan",
+   "expo": 2.13,
    "at": "L48"
   },
   {
@@ -3093,6 +3124,7 @@
    "hand": 0.0,
    "step": 1,
    "what": "the pool widens and the Skater is in it, at her shoulder, a head taller",
+   "expo": 1.26,
    "at": "L49"
   },
   {
@@ -3117,6 +3149,7 @@
    "hand": 0.0,
    "step": 1,
    "what": "THE TEST STILL: its arm held out to her, folded twice, the hand at the end of the sleeve",
+   "expo": 1.21,
    "at": "L50"
   },
   {
@@ -3141,6 +3174,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Nan looks at the hand",
+   "expo": 0.79,
    "at": "L51"
   },
   {
@@ -3165,6 +3199,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Nan's hand rising, a hand's width from its hand",
+   "expo": 1.13,
    "at": "L52"
   },
   {
@@ -3189,6 +3224,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "me standing, terrified, the waltz swelling",
+   "expo": 2.1,
    "at": "L53"
   },
   {
@@ -3213,6 +3249,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the booth: Lenny at the mic, smiling",
+   "expo": 0.89,
    "at": "L54"
   },
   {
@@ -3237,6 +3274,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the door by the hire counter swings open",
+   "expo": 1.28,
    "at": "L55"
   },
   {
@@ -3261,6 +3299,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "out rolled Pop",
+   "expo": 1.22,
    "at": "L56"
   },
   {
@@ -3285,6 +3324,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "close on his skates on the honey boards",
+   "expo": 1.12,
    "at": "L57"
   },
   {
@@ -3309,6 +3349,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Pop coming across the floor, wobbling, the tape on his knees",
+   "expo": 0.86,
    "at": "L58"
   },
   {
@@ -3333,6 +3374,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Nan's face, wide, then softening",
+   "expo": 0.84,
    "at": "L59"
   },
   {
@@ -3357,6 +3399,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "my face, wide, putting it together",
+   "expo": 1.86,
    "at": "L60"
   },
   {
@@ -3381,6 +3424,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Lenny leaning out of the booth, a raised sleeve",
+   "expo": 1.47,
    "at": "L61"
   },
   {
@@ -3405,6 +3449,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Pop wobbling, steady for one second, proud",
+   "expo": 1.04,
    "at": "L62"
   },
   {
@@ -3429,6 +3474,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Pop at the rail, his hand out (cut away before the hands meet)",
+   "expo": 0.99,
    "at": "L63"
   },
   {
@@ -3453,6 +3499,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the pool sliding round them",
+   "expo": 1.32,
    "at": "L64"
   },
   {
@@ -3477,6 +3524,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the post beside them, empty, in the pool's edge",
+   "expo": 0.89,
    "at": "L65"
   },
   {
@@ -3501,6 +3549,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "wider: Pop standing in exactly that place, Nan beside him",
+   "expo": 0.95,
    "at": "L66"
   },
   {
@@ -3525,6 +3574,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Nan laughing, Pop laughing with her",
+   "expo": 0.8,
    "at": "L67"
   },
   {
@@ -3562,6 +3612,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "low tracking: the two of them gliding",
+   "expo": 0.87,
    "at": "L68",
    "follow": "pop"
   },
@@ -3586,6 +3637,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Pop tips a little, Nan's arm at his elbow",
+   "expo": 0.7,
    "at": "L69",
    "follow": "pop"
   },
@@ -3611,6 +3663,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the pair coming past the snack bar, laughing",
+   "expo": 1.33,
    "at": "L70"
   },
   {
@@ -3635,6 +3688,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "me on the chrome stool, chin on my hand",
+   "expo": 1.49,
    "at": "L71"
   },
   {
@@ -3689,6 +3743,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "crane up to the overhead wide",
+   "expo": 0.7,
    "at": "L72"
   },
   {
@@ -3713,6 +3768,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "hold the overhead wide, the fans at the frame's edge",
+   "expo": 0.76,
    "at": "L73"
   }
  ],
