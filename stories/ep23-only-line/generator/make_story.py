@@ -107,7 +107,7 @@ for ln in lines:
             ch[1] = SPOKEN[(ln["id"], k)]
 
 # ---------------------------------------------------------------------------------------------------- places
-LEGY = [3.3, 4.2, 5.1, 6.0]
+LEGY = [3.3, 4.1, 4.9, 5.7]
 LEG_EDGE = 3.7
 MX = [-3.2, -2.05, -0.9, 0.25, 1.2, 2.3]
 MARKS = [[x, round(3.2 - 0.07 * x * x, 2)] for x in MX]     # p1..p5, then the yellow cross
@@ -120,7 +120,7 @@ EDGE_ME, EDGE_WALT = [0.6, 0.45, -0.51], [-0.3, 0.45, -0.51]       # sitting on 
 FLAT = (-40.0, 0.0)
 CAR = (40.0, 0.0)
 # the Prompter: where it stands each day, and how it faces
-PP = {"mon": [3.78, 6.35], "tue": [3.77, 5.45], "wed": [3.45, 4.55], "thu": [3.4, 3.65], "fri": YEL}
+PP = {"mon": [3.78, 6.05], "tue": [3.77, 5.25], "wed": [3.45, 4.45], "thu": [3.4, 3.65], "fri": YEL}
 
 cast = {
     "me": {"age": "adult", "skin": "#d9a47a", "shirt": "#c9a227", "pattern": "knit", "pattern_c": "#a8841a",
@@ -170,6 +170,7 @@ def yaw_to(a, b):
 def face(pos, d=3.0, lens=50, ang=0.0, h=1.62, tz=1.34, push=0.0, lens2=None, z0=0.0):
     """A close-up of a standing face: the camera d metres out at `ang` degrees off the front, the face in the top
     third of the frame (above the caption band)."""
+    d = d * 1.18
     a = math.radians(ang)
 
     def at(dd):
@@ -195,11 +196,11 @@ SHOTS = [
     # 01 the line
     (0, "me, dim ghost light, push in", 2, face(YEL, 3.2, 50, 12, push=0.5, lens2=56)),
     ("L02", "wide from the house, the ghost light and me small", 2, still([0.0, -9.0, 1.4], [1.2, 3.4, 1.1], 24)),
-    ("L03", "low on my feet on the yellow cross", 2, still([YEL[0] + 0.35, YEL[1] - 1.5, 0.3], [YEL[0], YEL[1], 0.1], 38)),
+    ("L03", "low on my feet on the yellow cross", 2, still([YEL[0] + 0.5, YEL[1] - 2.3, 0.28], [YEL[0], YEL[1], 0.3], 24)),
     ("L04", "day, work lights: the circle of chairs", 2, still([0.0, -4.5, 1.7], [0.3, 3.2, 0.9], 25)),
     ("L05", "my face, embarrassed", 2, face(ME_EDGE, 3.0, 50, -10)),
     ("L06", "Marion in the third row with her flask", 2,
-     still([0.6, 1.4, 1.25], [ROW3[0], ROW3[1] + 0.2, 1.0], 36)),
+     still([1.2, 0.5, 1.25], [ROW3[0], ROW3[1] + 0.2, 1.0], 36)),
     ("L07", "wide on the stage in warm wash: Walt and the marks", 2, still([0.0, -8.0, 1.5], [0.0, 3.0, 1.0], 26)),
     ("L08", "Walt, chin up", 2, face(KING, 3.0, 50, 8, tz=1.36)),
     ("L09", "overhead on the six crosses", 2, still([0.0, 1.2, 8.8], [0.0, 3.0, 0.0], 19)),
@@ -210,7 +211,7 @@ SHOTS = [
     ("L14", "slow pan across the proscenium", 2,
      c([0, [-3.5, -6.0, 2.4], [-3.2, -0.2, 3.9], 24], [1, [-3.5, -6.0, 2.4], [3.2, -0.2, 3.9], 24])),
     ("L15", "four green legs from centre stage", 2, still([0.2, 1.0, 1.5], [4.3, 4.7, 1.2], 22)),
-    ("L16", "the chalk tally on the brick", 2, still([5.3, 5.7, 1.0], [5.3, 7.2, 0.78], 28)),
+    ("L16", "the chalk tally on the brick", 2, still([5.3, 6.1, 1.0], [5.3, 7.2, 0.8], 20)),
     # 02 Monday
     ("L17", "the company on their marks", 2, still([0.0, -7.0, 1.4], [0.5, 3.0, 1.1], 24)),
     ("L18", "Walt, arms out", 2, face(KING, 3.4, 44, 8, tz=1.36)),
@@ -218,24 +219,24 @@ SHOTS = [
     ("L20", "me on the yellow cross", 2, face(YEL, 3.6, 40, -22)),
     ("L21", "my face, the tick stops", 2, face(YEL, 3.0, 50, 6)),
     ("L22", "mouth open, nothing comes out", 2, face(YEL, 2.8, 55, -4)),
-    ("L23", "past my shoulder to the dark wings", 1, still([1.35, 2.0, 1.7], [4.5, 4.5, 1.4], 28)),
+    ("L23", "past my shoulder to the dark wings", 1, still([0.9, 0.6, 1.7], [4.5, 4.5, 1.4], 28)),
     ("L24", "nobody turned round", 2, still([0.0, -6.0, 1.5], [0.4, 2.9, 1.2], 22)),
-    ("L25", "Marion clapping in the dark house", 2, still([0.7, 1.4, 1.2], [ROW3[0], ROW3[1] + 0.2, 1.0], 36)),
+    ("L25", "Marion clapping in the dark house", 2, still([1.2, 0.5, 1.2], [ROW3[0], ROW3[1] + 0.2, 1.0], 36)),
     ("L26", "half turned to the wings", 2, face(YEL, 3.0, 50, -12)),
     ("L27", "push into the wings: a gold glint", 2,
-     c([0, [1.8, 2.0, 1.65], [4.0, 6.3, 1.7], 30], [1, [2.9, 3.2, 1.65], [3.9, 6.3, 1.7], 34])),
+     c([0, [1.8, 2.0, 1.65], [4.0, 6.0, 1.7], 30], [1, [2.9, 3.2, 1.65], [3.9, 6.0, 1.7], 34])),
     # 03 Tuesday
     ("L28", "Walt again", 2, face(KING, 3.0, 50, -8, tz=1.38)),
     ("L29", "quick track", 2, TRACK_R),
     ("L30", "my eyes slide to stage left", 2, face(YEL, 3.0, 50, -6)),
     ("L31", "I turn my head to the wings", 2, face(YEL, 3.0, 50, -26)),
     ("L32", "behind the 3rd leg: the edge of the mask", 2, still([YEL[0], YEL[1], 1.58], [PP["tue"][0] - 0.2, PP["tue"][1], 1.72], 34)),
-    ("L33", "closer on the edge: brow and crack", 2, still([3.1, 4.5, 1.66], [3.62, PP["tue"][1], 1.74], 42)),
+    ("L33", "closer on the edge: brow and crack", 2, still([3.1, 4.3, 1.66], [3.62, PP["tue"][1], 1.74], 42)),
     # 04 Wednesday
     ("L34", "work lights: Walt and me on the stage edge", 2, still([0.9, -3.4, 0.85], [0.1, 0.4, 0.7], 32)),
     (CH("L34", "who STANDS"), "Walt, a tin crown pushed up", 2, face(EDGE_WALT, 2.8, 50, 14, h=1.0, tz=0.82, z0=0.0)),
     ("L37", "Walt looks at me funny", 2, face(EDGE_WALT, 2.7, 52, 8, h=1.0, tz=0.82)),
-    ("L38", "over Walt's shoulder: the wings in work light", 2, still([-0.9, 0.1, 1.3], [4.3, 4.2, 1.2], 26)),
+    ("L38", "over Walt's shoulder: the wings in work light", 2, still([-0.4, 1.2, 1.35], [4.3, 4.0, 1.2], 26)),
     ("L39", "Walt points at the yellow cross", 2, still([0.3, -2.4, 1.05], [-0.1, 0.4, 0.95], 32)),
     ("L40", "me on the cross, eyes to stage left", 2, face(YEL, 3.0, 50, -6)),
     ("L41", "from my mark: the Prompter half out of the velvet", 2,
@@ -251,49 +252,49 @@ SHOTS = [
     ("L50", "its mouth opened", 1, still([YEL[0], YEL[1] + 0.05, 1.62], [PP["thu"][0], PP["thu"][1], 1.62], 24)),
     ("L51", "the black inside the mouth", 1, still([2.78, 3.2, 1.5], [PP["thu"][0], PP["thu"][1], 1.5], 30)),
     ("L52", "my face, terrified", 2, face(YEL, 2.9, 52, -10)),
-    ("L53", "night: me in my car under one streetlamp", 2, still([CAR[0] - 3.2, CAR[1] - 3.4, 1.15], [CAR[0], CAR[1] + 0.2, 0.85], 32)),
+    ("L53", "night: me in my car under one streetlamp", 2, still([CAR[0] - 1.3, CAR[1] - 2.7, 1.5], [CAR[0] - 0.4, CAR[1] + 0.1, 1.4], 30)),
     # 06 dress rehearsal
     ("L54", "everyone in costume", 2, still([0.0, -7.0, 1.4], [0.5, 3.0, 1.1], 24)),
     ("L55", "me in the borrowed cloak", 2, face(YEL, 3.0, 50, 6)),
     ("L56", "Walt in his robe asks", 2, face(KING, 3.4, 44, -6, tz=1.36)),
-    ("L57", "low on the boards: my feet on the cross", 1, still([YEL[0] + 0.3, YEL[1] - 1.5, 0.3], [YEL[0], YEL[1], 0.1], 38)),
-    (CH("L57", "and stepped"), "my feet are off the cross", 1, still([YEL[0] + 0.3, YEL[1] - 1.5, 0.3], [YEL[0], YEL[1] + 0.2, 0.1], 38)),
+    ("L57", "low on the boards: my feet on the cross", 1, still([YEL[0] + 0.5, YEL[1] - 2.3, 0.28], [YEL[0], YEL[1], 0.3], 24)),
+    (CH("L57", "and stepped"), "my feet are off the cross", 1, still([YEL[0] + 0.5, YEL[1] - 2.3, 0.28], [YEL[0], YEL[1] + 0.2, 0.3], 24)),
     ("L58", "the lights sink (wide from the house)", 1, still([0.0, -8.0, 1.45], [1.2, 3.0, 1.2], 24)),
     ("L59", "my face, nearly dark", 1, face([YEL[0], YEL[1] + 0.65], 2.6, 52, 6)),
     (CH("L59", "right BESIDE"), "the dim boards at my feet", 1, still([YEL[0] + 0.2, YEL[1] - 1.1, 0.35], [YEL[0], YEL[1] + 0.4, 0.05], 36)),
     ("L61", "the lights creep back up (wide)", 1, still([0.0, -8.0, 1.45], [1.2, 3.0, 1.2], 24)),
-    ("L62", "it stands on my mark, facing the seats", 1, still([0.2, -6.5, 1.45], [1.9, 3.0, 1.45], 26)),
-    ("L64", "the mask turned all the way round to me", 1, still([-1.3, 3.3, 1.7], [YEL[0] + 0.2, 3.3, 1.6], 24)),
-    ("L65", "an arm's length from my nose", 1, still([YEL[0] + 0.1, 4.55, 1.7], [YEL[0], YEL[1], 1.82], 30)),
-    ("L66", "the open mouth", 1, still([YEL[0] + 0.14, 3.4, 1.55], [YEL[0], YEL[1], 1.5], 44)),
-    ("L67", "Marion writing, not looking up", 2, still([0.7, 1.4, 1.2], [ROW3[0], ROW3[1] + 0.2, 1.0], 36)),
+    ("L62", "it stands on my mark, facing the seats", 1, still([0.6, -6.5, 1.45], [2.3, 2.9, 1.5], 30)),
+    ("L64", "the mask turned all the way round to me", 1, still([1.2, 4.9, 1.75], [YEL[0], YEL[1], 1.55], 22)),
+    ("L65", "an arm's length from my nose", 1, still([YEL[0] + 0.5, 4.4, 1.9], [YEL[0], YEL[1], 1.75], 28)),
+    ("L66", "the open mouth", 1, still([YEL[0] + 0.1, 3.4, 1.62], [YEL[0], YEL[1], 1.55], 28)),
+    ("L67", "Marion writing, not looking up", 2, still([1.2, 0.5, 1.2], [ROW3[0], ROW3[1] + 0.2, 1.0], 36)),
     ("L68", "the yellow cross alone", 2, still([3.0, 1.0, 0.5], [YEL[0], YEL[1], 0.05], 30)),
     # 07 what it was doing
     ("L69", "my flat at night, the lamp", 2, FLAT_FACE),
-    ("L70", "the script on the table", 2, still([FLAT[0] - 0.25, FLAT[1] - 1.4, 1.65], [FLAT[0], FLAT[1] + 0.05, 0.74], 38)),
-    ("L71", "memory: Walt from behind, along the curve", 2, still([0.15, 0.35, 1.7], [1.0, 3.0, 1.35], 30)),
+    ("L70", "the script on the table", 2, still([FLAT[0] - 0.55, FLAT[1] - 1.3, 1.9], [FLAT[0] + 0.1, FLAT[1], 0.76], 30)),
+    ("L71", "memory: Walt from behind, along the curve", 2, still([0.4, -0.6, 2.0], [1.0, 3.0, 1.2], 30)),
     ("L72", "overhead on the six crosses again", 2, still([0.0, 1.2, 8.8], [0.0, 3.0, 0.0], 19)),
     ("L73", "the yellow cross with nobody on it", 2, still([3.0, 1.0, 0.5], [YEL[0] - 0.1, YEL[1], 0.05], 30)),
     ("L74", "the four green legs in the dark", 2, still([0.5, 0.8, 1.5], [4.5, 4.5, 1.2], 24)),
     ("L75", "memory: the Prompter on my cross, small and still", 2, still([0.0, -7.0, 1.3], [2.3, 2.9, 1.25], 26)),
     ("L76", "my face at the table", 2, FLAT_FACE),
-    ("L77", "the lamp, my hand flat on the script", 2, still([FLAT[0] - 0.15, FLAT[1] - 1.1, 1.45], [FLAT[0], FLAT[1] - 0.05, 0.9], 34)),
+    ("L77", "the lamp, my hand flat on the script", 2, still([FLAT[0] + 0.5, FLAT[1] + 1.3, 1.3], [FLAT[0], FLAT[1] - 0.5, 1.15], 28)),
     # 08 opening night
     ("L78", "from the back of the house over the heads", 2, still([0.0, -12.8, 2.6], [0.0, 3.0, 1.1], 27)),
-    ("L79", "my knees shaking under the cloak", 2, still([YEL[0] + 0.2, YEL[1] - 2.0, 0.6], [YEL[0], YEL[1], 0.6], 36)),
+    ("L79", "my knees shaking under the cloak", 2, still([YEL[0] + 0.3, YEL[1] - 2.8, 0.7], [YEL[0], YEL[1], 0.6], 30)),
     ("L80", "me in the wings, looking up the row of legs", 2, still([4.35, 1.3, 1.95], [4.6, 5.0, 1.5], 28)),
     ("L82", "a slow track past the legs to the brick", 2,
      c([0, [4.45, 2.8, 1.5], [4.45, 6.6, 1.4], 28], [1, [4.45, 5.2, 1.5], [4.45, 7.2, 1.3], 28])),
     ("L83", "my face, a small breath", 2, face([3.2, 2.0], 3.0, 50, 6)),
-    ("L84", "my feet land on the cross", 2, still([YEL[0] + 0.3, YEL[1] - 1.5, 0.3], [YEL[0], YEL[1], 0.1], 38)),
+    ("L84", "my feet land on the cross", 2, still([YEL[0] + 0.5, YEL[1] - 2.3, 0.28], [YEL[0], YEL[1], 0.3], 24)),
     ("L85", "Walt asks, robe and crown", 2, face(KING, 3.4, 44, 6, tz=1.36)),
     ("L86", "five voices (track)", 2, TRACK_L),
     ("L87", "my throat shut", 2, face(YEL, 3.0, 50, 4)),
-    ("L88", "past my shoulder: the empty wings", 2, still([1.35, 2.0, 1.7], [4.5, 4.5, 1.4], 28)),
+    ("L88", "past my shoulder: the empty wings", 2, still([0.9, 0.6, 1.7], [4.5, 4.5, 1.4], 28)),
     ("L89", "from the stage over the footlights: the house waiting", 2, still([0.4, 1.0, 1.55], [0.0, -8.0, 0.95], 28)),
     (CH("L89", "was WAITING"), "Walt, the smallest nod", 2, face(KING, 3.0, 50, 4, tz=1.4)),
     ("L91", "my face, breath held", 2, face(YEL, 2.7, 55, 0)),
-    ("L92", "my shoulders rise under the cloak", 2, still([YEL[0] + 0.1, YEL[1] - 1.5, 1.35], [YEL[0], YEL[1], 1.25], 40)),
+    ("L92", "my shoulders rise under the cloak", 2, still([YEL[0] + 0.1, YEL[1] - 1.5, 1.5], [YEL[0], YEL[1], 1.4], 40)),
     ("L93", "my voice shook", 2, face(YEL, 2.7, 55, -4)),
     ("L94", "Walt starts to smile", 2, face(KING, 3.0, 50, -4, tz=1.4)),
     ("L95", "wide: the curve complete, the wings empty", 2, still([0.0, -7.5, 1.4], [1.0, 3.0, 1.2], 22)),
@@ -372,6 +373,7 @@ key("me", "L21", expr="scared")
 acting["me"].append({"from": "L22", "to": "L22>", "mouth": [0.8, 0.8]})
 key("me", "L22", expr="scared")
 key("me", "L26", expr="worried", head=[58, 0], blend=0.3)
+hide("me", "L27")
 put("me", "L28", YEL, yaw=0, expr="neutral")
 key("me", "L30", expr="scared", look=[0.9, 0])
 key("me", "L31", expr="scared", head=[60, 0], look=[0.9, 0], blend=0.4)
@@ -497,6 +499,8 @@ cues = [
     {"at": 0, "name": "mood", "set": "ghost"},
     {"at": "L04", "name": "mood", "set": "work"},
     {"at": "L07", "name": "mood", "set": "warm"},
+    {"at": "L11", "name": "mood", "set": "work"},
+    {"at": "L14", "name": "mood", "set": "warm"},
     {"at": "L16", "name": "mood", "set": "wing"},
     {"at": "L17", "name": "mood", "set": "warm"},
     {"at": "L34", "name": "mood", "set": "work"},
@@ -526,10 +530,10 @@ cues = [
     {"at": "L50", "name": "prompter", "pos": PP["thu"], "yaw": yaw_to(PP["thu"], YEL), "head": 0, "mouth": 1,
      "key_gain": 1.0, "rim_gain": 1.0},
     {"at": "L53", "name": "prompter", "hidden": True},
-    {"at": "L62", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 0, "mouth": 1, "key_gain": 0.9, "rim_gain": 0.9,
+    {"at": "L62", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 0, "mouth": 1, "key_gain": 1.3, "rim_gain": 0.9,
      "key": [-0.9, -0.9, 0.35]},
-    {"at": "L64", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 180, "mouth": 1, "key_gain": 0.9, "rim_gain": 0.9,
-     "key": [1.2, 1.1, 0.4], "rim": [-0.5, -0.9, 2.6]},
+    {"at": "L64", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 180, "mouth": 1, "key_gain": 1.8, "rim_gain": 0.9,
+     "key": [-0.6, 1.0, 0.2], "rim": [0.6, -0.9, 2.4]},
     {"at": "L68", "name": "prompter", "hidden": True},
     {"at": "L75", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 0, "mouth": 0, "key_gain": 0.9, "rim_gain": 0.9,
      "key": [-0.9, -0.9, 0.35]},

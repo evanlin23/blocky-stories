@@ -145,7 +145,7 @@ def materials(kit):
     M["wood2"] = kit.planks("#33261b", "#1e1510", scale=1.2, axis="X", name="flat boards", rough=0.75)
     M["brick"] = kit.bricks("#5a4b4a", "#443837", mortar="#262223", scale=1.0, name="cold brick", grime_amt=0.5)
     M["black"] = kit.plastic("#08080a", 0.7, name="black")
-    M["soot"] = kit.plastic("#0c0b0c", 0.9, name="soot coat", spec=0.12)
+    M["soot"] = kit.plastic("#171517", 0.8, name="soot coat", spec=0.2)
     M["gilt"] = kit.plastic("#b8913a", 0.38, name="gilt", spec=0.7)
     M["gilt_dull"] = kit.plastic("#7d6428", 0.5, name="gilt dull")
     M["mask"] = kit.grime("#b8913a", 0.3, 5.0, name="mask gilt", rough=0.42)
@@ -157,7 +157,7 @@ def materials(kit):
     M["dark_wall"] = kit.plastic("#16141a", 0.9, name="dark wall")
     M["tape_w"] = kit.plastic("#cfc8b2", 0.85, name="tape white")
     M["tape_y"] = kit.plastic("#e3b81f", 0.85, name="tape yellow")
-    M["chalk"] = kit.emit("#cdb986", 0.5, name="chalk")
+    M["chalk"] = kit.emit("#e0cc8a", 0.7, name="chalk")
     M["steel"] = kit.metal("#6c7075", 0.45, name="steel")
     M["tin"] = kit.plastic("#9ba2a8", 0.4, name="tin", spec=0.8)
     M["white"] = kit.plastic("#e9e9e4", 0.9, name="beard white")
@@ -174,8 +174,8 @@ def materials(kit):
     M["car"] = kit.plastic("#38585f", 0.5, name="car body")
     M["tyre"] = kit.plastic("#0c0c0e", 0.9, name="tyre")
     M["window_night"] = kit.emit("#1c2a46", 0.5, name="window night")
-    M["head_dark"] = kit.plastic("#15141a", 0.9, name="aud head")
-    M["body_dark"] = kit.plastic("#1b1a22", 0.9, name="aud body")
+    M["head_dark"] = kit.plastic("#2d2b38", 0.9, name="aud head")
+    M["body_dark"] = kit.plastic("#34323f", 0.9, name="aud body")
     M["spark"] = kit.emit("#ff9a2e", 5.0, name="eye spark")
     return M
 
@@ -319,8 +319,8 @@ def build_car(kit, ctx, M):
     for sx in (-1, 1):
         for sy in (-1, 1):
             kit.cyl(f"wheel {sx}{sy}", 0.33, 0.22, (cx + sx * 0.88, cy + sy * 1.4, 0.33), M["tyre"], rot=(0, math.pi / 2, 0), n=18)
-            kit.box(f"pillar {sx}{sy}", (0.07, 0.07, 0.7), (cx + sx * 0.8, cy + sy * 0.75, 1.2), M["car"])
-    kit.box("car roof", (1.7, 1.8, 0.07), (cx, cy, 1.58), M["car"], bevel=0.02)
+            kit.box(f"pillar {sx}{sy}", (0.07, 0.07, 1.3), (cx + sx * 0.8, cy + sy * 0.75, 1.47), M["car"])
+    kit.box("car roof", (1.7, 1.8, 0.07), (cx, cy, 2.15), M["car"], bevel=0.02)
     kit.box("car seat", (0.55, 0.55, 0.12), (cx - 0.4, cy + 0.1, 0.46), M["tyre"], bevel=0.03)
     kit.box("car seat back", (0.55, 0.1, 0.55), (cx - 0.4, cy + 0.42, 0.78), M["tyre"], bevel=0.03)
     wheel = kit.cyl("steering wheel", 0.17, 0.03, (cx - 0.4, cy - 0.5, 1.12), M["tyre"], n=20, r2=0.17)
@@ -446,42 +446,47 @@ def build_prompter(kit, ctx, M):
     # the key from low in the wings (cool) and the thin warm rim: lit only on the Prompter
     key = lamp(kit, "pk_key", "SPOT", (0, 0, 0.3), 55.0, "#ffd2a0", spot=40, blend=0.7, size=0.1)
     rim = lamp(kit, "pk_rim", "SPOT", (0, 0, 2.5), 260.0, "#ffc070", spot=45, blend=0.5, size=0.06)
-    ctx["pr"] = {"root": root, "neck": neck, "mask": mk, "objs": objs, "key": key, "rim": rim}
+    low = lamp(kit, "pk_low", "POINT", (0, 0, 0.2), 160.0, "#8aa0e6", size=0.2)
+    ctx["pr"] = {"root": root, "neck": neck, "mask": mk, "objs": objs, "key": key, "rim": rim, "low": low}
     light_only(kit, "pr only", "pk_key", objs)
     light_only(kit, "pr only", "pk_rim", objs)
+    light_only(kit, "pr only", "pk_low", objs)
 
 
 # ------------------------------------------------------------------------------------------------ the light
 
 # per mood: light name -> gain; every light not listed is off. wash is the colour of the stage wash. exp is the exposure.
 WASH_NAMES = ("wash_l", "wash_r", "wash_top", "wash_back")
+_WARM = {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 1.0, "run2": 0.5, "run3": 1.0,
+         "ghost": 0.4, "marion_lamp": 1.0, "wing_fill": 1.0}
+_COLD = {"wash_l": 0.7, "wash_r": 0.7, "wash_top": 0.7, "wash_back": 0.7, "run1": 1.0, "run2": 0.5, "run3": 1.0,
+         "ghost": 0.4, "marion_lamp": 0.8, "wing_fill": 0.9}
 MOODS = {
-    "ghost": {"gains": {"ghost": 1.0, "ghost_fill": 1.0, "run1": 0.6, "run2": 0.4, "run3": 0.6}, "wash": "#ffb868", "exp": 0.7},
+    "ghost": {"gains": {"ghost": 1.0, "ghost_fill": 1.0, "run1": 0.6, "run2": 0.3, "run3": 0.6, "wing_fill": 0.3},
+              "wash": "#ffb868", "exp": 1.0},
     "work": {"gains": {"work_l": 1.0, "work_r": 1.0, "work_house": 1.0, "run1": 0.12, "run3": 0.12, "ghost": 0.2},
              "wash": "#ffb868", "exp": 0.0},
-    "wing": {"gains": {"run1": 1.0, "run2": 1.0, "run3": 1.0, "ghost": 0.25, "ghost_fill": 0.3, "chalk_lit": 1.0},
+    "wing": {"gains": {"run1": 1.0, "run2": 0.6, "run3": 1.0, "ghost": 0.25, "ghost_fill": 0.3, "chalk_lit": 1.0,
+                       "wing_fill": 0.8},
              "wash": "#ffb868", "exp": 0.9},
-    "warm": {"gains": {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 1.0, "run2": 0.6,
-                       "run3": 1.0, "ghost": 0.4, "marion_lamp": 1.0},
+    "warm": {"gains": dict(_WARM), "wash": "#ffb868", "exp": 0.0},
+    "dim": {"gains": {"wash_l": 0.07, "wash_r": 0.07, "wash_top": 0.07, "wash_back": 0.07, "run1": 1.2, "run2": 0.5,
+                      "run3": 1.2, "ghost": 0.6, "ghost_fill": 0.3, "wing_fill": 0.5},
+            "wash": "#ffb868", "exp": 0.5},
+    "cold": {"gains": dict(_COLD), "wash": "#a9b9e6", "exp": 0.0},
+    "open": {"gains": {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 0.8, "run2": 0.4,
+                       "run3": 0.8, "ghost": 0.3, "aud": 1.0, "wing_fill": 1.0},
              "wash": "#ffb868", "exp": 0.0},
-    "dim": {"gains": {"wash_l": 0.06, "wash_r": 0.06, "wash_top": 0.06, "wash_back": 0.06, "run1": 1.0, "run2": 0.6,
-                      "run3": 1.0, "ghost": 0.4, "ghost_fill": 0.12},
-            "wash": "#ffb868", "exp": 0.0},
-    "cold": {"gains": {"wash_l": 0.7, "wash_r": 0.7, "wash_top": 0.7, "wash_back": 0.7, "run1": 1.0, "run2": 0.6,
-                       "run3": 1.0, "ghost": 0.4, "marion_lamp": 0.8},
-             "wash": "#a9b9e6", "exp": 0.0},
-    "open": {"gains": {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 0.7, "run2": 0.4,
-                       "run3": 0.7, "ghost": 0.3, "aud": 1.0},
-             "wash": "#ffb868", "exp": 0.0},
-    "flat": {"gains": {"flat_lamp": 1.0, "flat_fill": 1.0}, "wash": "#ffb868", "exp": 0.0},
-    "car": {"gains": {"car_lamp": 1.0, "car_fill": 1.0}, "wash": "#ffb868", "exp": 0.0},
+    # the flat and the car are far from the stage: the stage keeps its light, so the next stage shot starts where it was
+    "flat": {"gains": {**_COLD, "flat_lamp": 1.0, "flat_fill": 1.0}, "wash": "#a9b9e6", "exp": 0.0},
+    "car": {"gains": {**_WARM, "car_lamp": 1.0, "car_fill": 1.0}, "wash": "#ffb868", "exp": 0.0},
 }
 
 
 def build_lights(kit, ctx):
     gx, gy = ctx["places"]["ghost"]
-    lamp(kit, "ghost", "POINT", (gx, gy, 1.78), 160.0, "#ffd7a0", size=0.08)
-    lamp(kit, "ghost_fill", "AREA", (3.3, -1.6, 2.2), 55.0, "#ffd0a0", aim=(2.3, 2.8, 1.35), size=1.2)
+    lamp(kit, "ghost", "POINT", (gx, gy, 1.78), 420.0, "#ffd7a0", size=0.08)
+    lamp(kit, "ghost_fill", "AREA", (3.3, -1.6, 2.2), 160.0, "#ffd0a0", aim=(2.3, 2.8, 1.0), size=1.6)
     lamp(kit, "wash_l", "SPOT", (-3.5, -4.0, 5.4), 2600.0, "#ffb868", aim=(-0.5, 2.3, 1.0), spot=44, blend=0.5, size=0.3)
     lamp(kit, "wash_r", "SPOT", (3.5, -4.0, 5.4), 2600.0, "#ffb868", aim=(1.0, 2.3, 1.0), spot=44, blend=0.5, size=0.3)
     lamp(kit, "wash_top", "AREA", (0, 2.4, 5.6), 900.0, "#ffb868", aim=(0, 2.4, 0), size=5.0)
@@ -490,17 +495,18 @@ def build_lights(kit, ctx):
     lamp(kit, "work_r", "AREA", (2.5, 2.5, 5.4), 1500.0, "#d9e5ff", aim=(1.0, 2.5, 0), size=4.0)
     lamp(kit, "work_house", "AREA", (0, -4.2, 3.9), 900.0, "#cfdcff", aim=(0, -5.5, 0), size=6.0)
     lamp(kit, "run1", "POINT", (4.6, 3.75, 0.45), 90.0, "#3f66ff", size=0.1)
-    lamp(kit, "run2", "POINT", (5.3, 6.4, 0.95), 55.0, "#4a6dff", size=0.1)
+    lamp(kit, "run2", "POINT", (5.3, 6.3, 0.9), 14.0, "#6d86d8", size=0.1)
     lamp(kit, "run3", "POINT", (4.5, 2.6, 0.4), 70.0, "#3f66ff", size=0.1)
-    lamp(kit, "chalk_lit", "SPOT", (5.3, 5.9, 1.35), 12.0, "#6d86ff", aim=(5.3, 7.2, 0.95), spot=40, blend=0.5, size=0.1)
-    lamp(kit, "marion_lamp", "SPOT", (-0.3, -2.9, 2.6), 70.0, "#ffc890", aim=(-0.58, -4.5, 1.0), spot=40, blend=0.5, size=0.15)
-    lamp(kit, "aud", "AREA", (0, -2.0, 4.2), 600.0, "#5a6e9c", aim=(0, -8.0, 0.4), size=8.0)
+    lamp(kit, "chalk_lit", "SPOT", (5.3, 6.0, 1.5), 7.0, "#7f94dc", aim=(5.3, 7.2, 0.9), spot=45, blend=0.6, size=0.1)
+    lamp(kit, "wing_fill", "POINT", (4.3, 2.2, 2.8), 110.0, "#8da0e0", size=0.2)
+    lamp(kit, "marion_lamp", "SPOT", (0.2, -3.0, 2.0), 600.0, "#ffc890", aim=(-0.58, -4.5, 0.95), spot=40, blend=0.5, size=0.15)
+    lamp(kit, "aud", "AREA", (0, -2.0, 4.2), 1300.0, "#6d82b4", aim=(0, -8.0, 0.4), size=8.0)
     fx, fy = ctx["places"]["flat"]
     lamp(kit, "flat_lamp", "POINT", (fx - 0.46, fy + 0.17, 1.1), 28.0, "#ffbe74", size=0.05)
     lamp(kit, "flat_fill", "AREA", (fx + 1.8, fy + 2.2, 1.9), 40.0, "#7a92cc", aim=(fx, fy - 0.8, 1.2), size=1.5)
     cx, cy = ctx["places"]["car"]
-    lamp(kit, "car_lamp", "SPOT", (cx + 1.6, cy - 0.5, 4.4), 1400.0, "#ffbc66", aim=(cx - 0.2, cy + 0.1, 0.4), spot=70, blend=0.6, size=0.2)
-    lamp(kit, "car_fill", "AREA", (cx - 2.5, cy - 3.5, 2.5), 70.0, "#6f86bf", aim=(cx, cy, 1.0), size=2.0)
+    lamp(kit, "car_lamp", "SPOT", (cx + 0.9, cy - 1.7, 3.4), 900.0, "#ffbc66", aim=(cx - 0.3, cy, 0.7), spot=60, blend=0.6, size=0.2)
+    lamp(kit, "car_fill", "AREA", (cx - 2.5, cy - 3.5, 2.5), 260.0, "#7f96cf", aim=(cx, cy, 1.0), size=2.5)
 
 
 def _mood_state(tl, t):
@@ -534,7 +540,7 @@ def build(kit, story, tl):
     build_lights(kit, ctx)
     objs = ctx["pr"]["objs"]
     # the stage wash doesn't reach the Prompter: its front lights are dead
-    for nm in WASH_NAMES + ("work_l", "work_r", "work_house", "ghost_fill", "aud"):
+    for nm in WASH_NAMES + ("work_l", "work_r", "work_house", "ghost_fill", "aud", "wing_fill"):
         light_except(kit, "pr dark", nm, objs)
     ctx["costumes"] = False
     return ctx
@@ -554,10 +560,10 @@ def attach_costumes(kit, ctx):
     W["beard"] = [kit.box("walt beard", (0.95, 0.4, 0.34), (0, -R + 0.02, -0.5), M["white"], wh, bevel=0.1),
                   kit.box("walt mustache", (0.7, 0.14, 0.1), (0, -R - 0.02, -0.2), M["white"], wh, bevel=0.04)]
     crown = kit.empty("walt crown", (0, 0, H / 2 + 0.12), wh, rot=(0, 0.16, 0.05))
-    kit.cyl("crown ring", R + 0.05, 0.3, (0, 0, 0), M["tin"], crown, n=24)
+    kit.cyl("crown ring", R + 0.05, 0.22, (0, 0, 0), M["tin"], crown, n=24)
     for k in range(7):
         a = 2 * math.pi * k / 7
-        kit.box(f"crown spike {k}", (0.14, 0.08, 0.34), ((R + 0.02) * math.cos(a), (R + 0.02) * math.sin(a), 0.3), M["tin"], crown,
+        kit.box(f"crown spike {k}", (0.14, 0.08, 0.2), ((R + 0.02) * math.cos(a), (R + 0.02) * math.sin(a), 0.22), M["tin"], crown,
                 rot=(0, 0, a))
     W["crown"] = [crown]
     tor = bpy.data.objects["walt.torso"]
@@ -577,6 +583,18 @@ def attach_costumes(kit, ctx):
                   kit.box("me cloak cape", (2.4, 1.3, 0.7), (0, 0, 1.78), M["cloak"], mt, bevel=0.14),
                   kit.box("me cloak sideL", (0.3, 1.3, 2.4), (-1.05, 0.0, 0.85), M["cloak"], mt, bevel=0.08),
                   kit.box("me cloak sideR", (0.3, 1.3, 2.4), (1.05, 0.0, 0.85), M["cloak"], mt, bevel=0.08)]
+    # Marion's glasses: the lenses out (they render black), full frames in
+    for ob in list(bpy.data.objects):
+        if ob.name in ("marion.gl-1", "marion.gl1", "marion.glf-1", "marion.glf1", "marion.glb"):
+            ob.hide_render = True
+    mh = bpy.data.objects.get("marion.headg")
+    if mh is not None:
+        for sx in (-1, 1):
+            for nm, size, loc in (("t", (0.5, 0.03, 0.035), (sx * 0.24, -R - 0.05, 0.15)),
+                                  ("b", (0.5, 0.03, 0.035), (sx * 0.24, -R - 0.05, -0.19)),
+                                  ("s0", (0.035, 0.03, 0.36), (sx * 0.24 - 0.23, -R - 0.05, -0.02)),
+                                  ("s1", (0.035, 0.03, 0.36), (sx * 0.24 + 0.23, -R - 0.05, -0.02))):
+                kit.box(f"marion frame {nm}{sx}", size, loc, M["tin"], mh)
     # Marion's flask, in her raised hand
     mar = bpy.data.objects.get("marion.arm1")
     if mar is not None:
@@ -621,7 +639,7 @@ def animate(kit, story, tl, t, ctx):
     c = _last(_cues(tl, "prompter"), t)
     hidden = c is None or c.get("hidden", False)
     _show(pr["root"], not hidden)
-    over["pk_key"] = over["pk_rim"] = 0.0
+    over["pk_key"] = over["pk_rim"] = over["pk_low"] = 0.0
     if not hidden:
         x, y = c["pos"]
         pr["root"].location = (x, y, 0)
@@ -639,10 +657,12 @@ def animate(kit, story, tl, t, ctx):
             ob.location = (x + off[0], y + off[1], off[2])
             kit.aim(ob, tuple(mc))
             over["pk_" + name] = float(c.get(gk, 1.0))
+        pr["low"].location = (x - 0.7, y - 0.9, 0.25)
+        over["pk_low"] = float(c.get("key_gain", 1.0))
     # the light: the mood, eased from the one before
     a, b, u = _mood_state(tl, t)
     for name in kit.LIGHTS:
-        if name in ("pk_key", "pk_rim"):
+        if name in ("pk_key", "pk_rim", "pk_low"):
             continue
         over[name] = a["gains"].get(name, 0.0) * (1 - u) + b["gains"].get(name, 0.0) * u
     ca, cb = _hex(a["wash"]), _hex(b["wash"])
