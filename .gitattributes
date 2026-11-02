@@ -1,0 +1,2 @@
+# Parallel story sessions each append one row to these; keep both sides on merge.
+stories/lore.md merge=union
