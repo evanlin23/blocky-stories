@@ -3,5 +3,6 @@
   "description": "Everyone in town has a glowing number over their head. The baker on the library steps is at nine hundred. A woman fresh off the train is at zero.\n\nMine has said one for years. This spring my little brother's number started falling, and in the old reading room something with no number at all sat one table nearer to him every afternoon.\n\nIt's made up, a creepy blocky story built with code and Blender.",
   "pin": "What would the number over your head be?",
   "made_for_kids": false,
-  "cover_s": 84.5
+  "cover_s": 84.5,
+  "shape": "about-me"
 }

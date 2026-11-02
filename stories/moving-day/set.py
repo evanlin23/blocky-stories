@@ -61,6 +61,9 @@ _ms.loader.exec_module(marker)
 # ------------------------------------------------------------------------------------------------ Mum's room
 X0, X1, Y1 = -1.7, 1.3, 3.3
 CEIL = 2.35
+SQUARE_X = (-2.3, -1.7)   # L46: the door's square of light on the hall's south wall and ceiling
+SQUARE_Z0 = 1.05
+SQUARE_DEPTH = 0.6
 WALL_T = 0.12
 DOOR_X = (-1.6, -0.85)                    # her door, front wall, near the bed's head: I stand in it
 DOOR_H = 2.0
@@ -128,6 +131,8 @@ GLOSSY = {"stare"}                        # the one wet, glossy face
 # press: the legs fold (thighs forward, knees bent twice as far) until the torso is under the ceiling;
 # land: [x, y] moves the whole figure so the face box hangs over this point (it doesn't converge reliably);
 # flip: the drawing turned 180 degrees on the box, so it reads upright on a face box that hangs upside down.
+SOLO_FLOOR = (0.3, -0.79, 0.0)
+SOLO_SHELF = (1.66, -0.79, SHELF_Z)
 POSES = {
     # morning 1 (L01 to L13), the hall: 12 boxes, no neck, stooped under the ceiling till the face box's top just
     # touches it, the frown down the hall (west) at nothing; its arms hang at its sides
@@ -158,7 +163,12 @@ POSES = {
              "hang": {"out": 0.05}, "flaps": {"-1": [8, 10, 6, 12], "1": [10, 8, 12, 6]},
              "curl": 25, "key": [-3.75, 2.2, 0.75], "key_gain": 1.0, "body_key": [-2.95, 3.22, 1.6], "body_gain": 1.4},
     # the end (L76 to L78): the face box alone on the hall cupboard's shelf, its smile out at the door
-    "shelf": {"shelf": True, "at": [1.69, -0.79, SHELF_Z], "yaw": -90, "key": [0.85, -1.15, 0.85], "key_gain": 0.5},
+    # the L01 box alone (the Boxes' right shin, its peeled tape, the tape inside the gap at its top): on the hall
+    # floor for the L01 close, on the cupboard's shelf for L77 (the same box, the same framing; see make_story.py)
+    "solo_floor": {"solo": True, "at": SOLO_FLOOR, "yaw": -90, "body_key": [SOLO_FLOOR[0] - 0.55, SOLO_FLOOR[1] + 0.55, 0.75],
+                   "body_aim": [SOLO_FLOOR[0], SOLO_FLOOR[1], 0.32], "body_gain": 1.0},
+    "solo_shelf": {"solo": True, "at": SOLO_SHELF, "yaw": -90, "body_key": [SOLO_SHELF[0] - 0.55, SOLO_SHELF[1] + 0.55, SHELF_Z + 0.75],
+                   "body_aim": [SOLO_SHELF[0], SOLO_SHELF[1], SHELF_Z + 0.32], "body_gain": 1.0},
     "stand": {"at": [0.0, 0.0], "yaw": 0, "neck": 0, "hip": [[0, 2], [0, 2]], "knee": [0, 0], "waist": [0, 0, 0],
               "spine1": [2, 1, 0], "spine2": [3, -1, 0], "head": [6, 0, 4],
               "arm": {"-1": [4, 3, 6], "1": [3, 3, 8]}, "flaps": {"-1": [8, 10, 6, 12], "1": [10, 8, 12, 6]},
@@ -169,10 +179,13 @@ POSES = {
     "over_bed": {"at": [0.36, 2.9], "yaw": -30, "neck": 3, "hip": [[2, 12], [0, 14]], "knee": [4, 3],
                  "press": True, "waist": [12, 2, -3], "spine1": [12, -3, 3], "spine2": [16, 4, -2],
                  "chain": {"to": [-0.82, 1.95]}, "face": {"dir": [-0.1, -0.6, -0.8], "roll": 4}, "flip": True,
-                 "hands": {"-1": [-0.86, 2.38, 0.86], "1": [-0.26, 2.54, 0.7]},
+                 "hands": {"-1": [-0.12, 2.28, 0.72], "1": [0.2, 2.42, 0.66]},
                  "pole": {"-1": [-0.6, 0.6, 0.3], "1": [0.6, 0.6, 0.2]},
                  "flaps": {"-1": [34, 70, 38, 72], "1": [36, 68, 34, 72]}, "curl": 6,
-                 "wrist_roll": {"-1": 42, "1": -45}},
+                 "wrist_roll": {"-1": 42, "1": -45},
+                 # a cold side light on the neck chain and the body, so the boxes above the face read as board and
+                 # not as a black hair-piece (the critic's round 1)
+                 "body_key": [1.1, 0.7, 1.7], "body_aim": [-0.45, 2.4, 2.0], "body_gain": 1.3},
 }
 
 
@@ -732,7 +745,8 @@ def build_boxes(kit, ctx, M, wd: Path, name="boxes"):
              crush=[((sx, -1, -1), 0.025, 0.3)])
         joint_tape(kit, f"{name}.jt.hip{sx}", hip, tw_, td_, tape)
         knee = kit.empty(f"{name}.knee{sx}", (0, 0, -G - th_), hip)
-        part(f"shin{sx}", DIM["shin"], (0, 0, -G / 2 - sh_ / 2), knee, "x", tilt=1.2, bulge=0.008,
+        dec = None
+        part(f"shin{sx}", DIM["shin"], (0, 0, -G / 2 - sh_ / 2), knee, "x", tilt=1.2, bulge=0.008, decals=dec,
              crush=[((-sx, 1, -1), 0.03, 0.3)])
         joint_tape(kit, f"{name}.jt.knee{sx}", knee, sw_, sd_, tape)
         P[f"hip{sx}"], P[f"knee{sx}"] = hip, knee
@@ -1508,7 +1522,7 @@ def time_lights(kit, ctx):
     # the glow from Mum's door at 3 a.m.: her nightlight, through her open door, throws the Boxes' shadow up the
     # hall's far wall and over its ceiling. It lights the hall only (build() links it)
     nx_, nz = NIGHTLIGHT
-    glow = kit.light("door glow", "SPOT", (nx_ + 0.02, Y1 - 0.1, nz + 0.28), 1500.0, "#d6e4ff", spot=60, blend=0.5, size=0.03)
+    glow = kit.light("door glow", "SPOT", (nx_ + 0.02, Y1 - 0.1, nz + 0.28), 1500.0, "#d6e4ff", spot=60, blend=0.5, size=0.004)
     kit.aim(glow, ((DOOR_X[0] + DOOR_X[1]) / 2, -0.06, 1.0))
     glow.visible_camera = False
     # the face box's own light in the morning scenes: from below and the side, aimed between its eyes, lighting
@@ -1536,19 +1550,19 @@ def time_lights(kit, ctx):
 TIME_LIGHTS = {   # light: gain, per time of day. Every light not listed is off
     "dawn": {"dawn mum": 1.0, "dawn mine": 1.0, "dawn front": 1.0, "dawn kitchen": 0.55, "spill kitchen": 1.0,
              "spill front": 1.0, "hall fill": 1.0, "face key": 1.0, "body key": 1.0, "fill mum": 1.0, "fill mine": 1.0,
-             "fill hall": 1.0, "fill front": 1.0, "fill kitchen": 1.0},
+             "fill hall": 1.0, "fill front": 1.8, "fill kitchen": 1.0},
     "night": {"night mine": 1.0, "night front": 1.0, "face key": 0.45, "body key": 0.5, "me fill": 1.0},
-    "night3": {"nightlight": 1.0, "nightlight kick": 1.0, "nightlight rim": 1.0, "window": 1.0, "window ceiling": 1.0,
+    "night3": {"body key": 1.0, "nightlight": 1.0, "nightlight kick": 1.0, "nightlight rim": 1.0, "window": 1.0, "window ceiling": 1.0,
                "window rake": 1.0, "window edge": 1.0, "mum fill": 1.0, "pillow fill": 1.0, "arm fill": 1.0, "door glow": 1.0, "lamp": 1.0, "night mine": 1.0, "me fill": 1.0,
                "night front": 1.0},
-    "sun": {"sun": 1.0, "sun ceiling": 1.0, "dawn front": 0.3, "dawn kitchen": 0.8, "dawn mum": 0.7, "dawn mine": 0.7,
+    "sun": {"sun": 1.0, "sun ceiling": 1.0, "face key": 0.9, "body key": 0.6, "dawn front": 0.6, "dawn kitchen": 0.8, "dawn mum": 0.7, "dawn mine": 0.7,
             "spill kitchen": 0.8, "spill front": 0.5, "spill sun": 1.0, "hall fill": 1.2, "fill mum": 0.8, "fill mine": 0.8,
-            "fill hall": 1.0, "fill front": 0.6, "fill kitchen": 1.0},
+            "fill hall": 1.0, "fill front": 1.8, "fill kitchen": 1.0},
     "end": {"dawn front": 0.9, "dawn kitchen": 0.9, "dawn mum": 0.8, "dawn mine": 0.8, "spill kitchen": 1.0,
-            "spill front": 1.0, "hall fill": 1.4, "face key": 1.0, "body key": 0.0, "fill hall": 1.2, "fill front": 1.0,
+            "spill front": 1.0, "hall fill": 1.4, "face key": 1.0, "body key": 1.0, "fill hall": 1.2, "fill front": 1.0,
             "fill kitchen": 1.0, "fill mum": 1.0, "fill mine": 1.0},
 }
-EXPOSURE = {"dawn": 0.45, "night": 1.0, "night3": 1.0, "sun": 0.35, "end": 0.45}   # the view's exposure by time
+EXPOSURE = {"dawn": 0.45, "night": 1.0, "night3": 1.0, "sun": 0.5, "end": 0.45}   # the view's exposure by time
 OUTSIDE = {"dawn": ("#7f8fa8", 1.3), "night": ("#1f242c", 0.4), "night3": ("#262b33", 0.7), "sun": ("#ffd9a0", 2.4),
            "end": ("#a9b4c2", 1.5)}
 
@@ -1636,6 +1650,24 @@ def build_dressing(kit, ctx, M):
     nx_, nz = NIGHTLIGHT
     kit.box("nightlight", (0.07, 0.035, 0.09), (nx_, Y1 - 0.018, nz), M["trim"], bevel=0.008)
     kit.sphere("nightlight.dome", 0.03, (nx_, Y1 - 0.04, nz), M["nightglow"])
+    # L46: the door's square of nightlight on the hall's south wall, running up it and bending over the ceiling:
+    # two hard-edged panels (a thin light wash over the wall, not a lit surface), shown only while the cue is on
+    sq = kit._new("sqlight")
+    nt = sq.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Color"].default_value = (0.02, 0.02, 0.025, 1.0)   # a SHADOW: unlit near-black, no sheen
+    em.inputs["Strength"].default_value = 1.0
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    mx.inputs["Fac"].default_value = 0.93
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(em.outputs[0], mx.inputs[2])
+    kit._fogged(sq, mx.outputs[0])
+    sx0, sx1 = SQUARE_X
+    sqw = kit.box("sqlight.wall", (sx1 - sx0, 0.003, 2.35 - SQUARE_Z0), ((sx0 + sx1) / 2, HALL[2] + 0.002, (SQUARE_Z0 + 2.35) / 2), sq)
+    sqc = kit.box("sqlight.ceil", (sx1 - sx0, SQUARE_DEPTH, 0.003), ((sx0 + sx1) / 2, HALL[2] + SQUARE_DEPTH / 2, 2.35 - 0.002), sq)
+    ctx["sqlight"] = [sqw, sqc]
 
 
 def build_lights(kit, ctx):
@@ -1692,8 +1724,13 @@ def build_lights(kit, ctx):
         kit.aim(f2, (-1.35, 1.95, 0.6))
         f2.visible_camera = False
         f2.visible_glossy = False
+    # one movable soft light for the shots that need lifting (the "xfill" cues: place, aim, gain), lighting everything
+    xf = kit.light("xfill", "AREA", (0, 0, 1.5), 60.0, "#aab6c8", size=0.9)
+    xf.visible_camera = False
+    xf.visible_glossy = False
+    ctx["xfill"] = xf
     # the lamp on the chest of drawers (off until L51)
-    lamp = kit.light("lamp", "POINT", (DRAWERS[0] - 0.12, DRAWERS[1] + 0.2, 1.08), 12.0, "#ffc890", size=0.06)
+    lamp = kit.light("lamp", "POINT", (DRAWERS[0] - 0.12, DRAWERS[1] + 0.2, 1.08), 28.0, "#ffc890", size=0.06)
     ctx["lamp"] = lamp
 
 
@@ -1917,17 +1954,30 @@ def pose_shelf(cr, pose):
     bpy.context.view_layer.update()
 
 
+def pose_solo(cr, pose):
+    """The right shin alone: it stands on its bottom edge at `at`, its front (the peeled tape) toward -x."""
+    P = cr["pivots"]
+    cr.setdefault("knee1_basis", P["knee1"].matrix_basis.copy())
+    x, y, z = pose["at"]
+    sh = DIM["shin"][2]
+    m = Matrix.Translation((x, y, z + G / 2 + sh + 0.004)) @ Matrix.Rotation(math.radians(pose.get("yaw", -90)), 4, "Z")
+    P["knee1"].matrix_world = m
+    bpy.context.view_layer.update()
+
+
 def _boxes_visibility(cr, hidden, pose):
     root = cr["pivots"]["root"]
     for ob in [root] + list(root.children_recursive):
         ob.hide_render = hidden
     if hidden:
         return
-    if pose.get("shelf"):
-        keep = {cr["head"]}
+    if pose.get("solo"):
+        shin = next(o for o in cr["meshes"] if o.name.endswith(".shin1"))
+        keep = {shin, next(o for o in cr["meshes"] if o.name == "boxes.peel")}
+        keep |= {o for o in cr["pivots"]["knee1"].children_recursive if o.name.startswith("boxes.jt.knee1")}
         for ob in root.children_recursive:
-            if ob.type == "MESH" and ob not in keep:
-                ob.hide_render = True
+            if ob.type == "MESH":
+                ob.hide_render = ob not in keep
         return
     n = int(pose.get("neck", 0))
     for k, (pv, ob) in enumerate(cr["neck"]):
@@ -1948,12 +1998,19 @@ def animate_boxes(kit, story, tl, t, ctx, over):
         return
     key = (str(pose_name), c.get("face", "frown"))
     if ctx.get("posed") != key:
-        if pose.get("shelf"):
-            pose_shelf(cr, pose)
+        if not pose.get("solo") and "knee1_basis" in cr:
+            cr["pivots"]["knee1"].matrix_basis = cr.pop("knee1_basis")
+            bpy.context.view_layer.update()
+        if pose.get("solo"):
+            pose_solo(cr, pose)
         else:
             pose_boxes(cr, pose)
-        set_face(cr, c.get("face", "frown"), ctx["wd"], bool(pose.get("flip", False)), bool(pose.get("mirror", False)))
+        if not pose.get("solo"):
+            set_face(cr, c.get("face", "frown"), ctx["wd"], bool(pose.get("flip", False)), bool(pose.get("mirror", False)))
         ctx["posed"] = key
+        if __import__("os").environ.get("MD_SHIN") and not pose.get("shelf"):
+            sh_ = next(o for o in cr["meshes"] if o.name.endswith(".shin1"))
+            print("SHIN", pose_name, [[round(x, 4) for x in r] for r in sh_.matrix_world], flush=True)
         lo, hi, face, fz = boxes_extent(cr)
         print(f"boxes {pose_name}: feet {lo:.3f} m, top {hi:.3f} m (ceiling {CEIL}), face box at {face}, its lowest "
               f"point {fz:.3f} m, legs folded {cr.get('crouch', 0):.1f} deg, stands at {cr.get('at')}", flush=True)
@@ -1970,11 +2027,14 @@ def animate_boxes(kit, story, tl, t, ctx, over):
     if pose.get("body_key"):
         bk = ctx["body key"]
         bk.location = pose["body_key"]
-        kit.aim(bk, cr["pivots"]["spine1"].matrix_world.translation)
+        kit.aim(bk, V(pose["body_aim"]) if pose.get("body_aim") else cr["pivots"]["spine1"].matrix_world.translation)
         over["body key"] = float(pose.get("body_gain", 1.0))
 
 
 def animate_props(kit, story, tl, t, ctx):
+    sqc = _last(_cues(tl, "sqlight"), t)
+    for ob in ctx.get("sqlight", []):
+        ob.hide_render = not (sqc and sqc.get("on", False))
     # the stack by the door: how many are left (the clock), the eyes on them (L27 to L35), the clean squares in
     # the dust (only once the floor is bare)
     c = _last(_cues(tl, "stack"), t) or {"count": 24}
@@ -2036,9 +2096,9 @@ def animate_props(kit, story, tl, t, ctx):
     where = c.get("where", "sill")
     _show([mug], where != "none")
     if where == "sill":
-        mug.matrix_world = Matrix.Translation(SILL)
+        mug.matrix_world = Matrix.Translation(SILL) @ Matrix.Rotation(math.radians(110), 4, "Z")   # the handle toward the room
     elif where == "counter":
-        mug.matrix_world = Matrix.Translation(tuple(c.get("pos", (0.95, -3.55))) + (COUNTER["z"],))
+        mug.matrix_world = Matrix.Translation(tuple(c.get("pos", (0.95, -3.55))) + (COUNTER["z"],)) @ Matrix.Rotation(math.radians(110), 4, "Z")
     elif where == "hand":
         f = _rig_frame(c.get("who", "mum"), (0.0, -0.2, -1.85), c.get("arm", "arm-1"))
         if f is not None:
@@ -2151,6 +2211,13 @@ def animate(kit, story, tl, t, ctx):
     nc = _last(_cues(tl, "nightlight"), t)
     night_on = 1.0 if (nc.get("on", True) if nc else True) else 0.0
     lamp = float(_eased(_cues(tl, "lamp"), "on", t, 0.0))
+    xc = _last(_cues(tl, "xfill"), t)
+    if xc and xc.get("gain", 0.0) > 0:
+        xf = ctx["xfill"]
+        xf.location = xc["pos"]
+        kit.aim(xf, xc["aim"])
+        xf.data.size = xc.get("size", 0.9)
+        gains = {**gains, "xfill": float(xc["gain"])}
     for name in kit.LIGHTS:
         g = gains.get(name, 0.0)
         if name in ("nightlight", "nightlight kick", "nightlight rim", "door glow"):
