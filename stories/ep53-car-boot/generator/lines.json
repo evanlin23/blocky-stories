@@ -1006,12 +1006,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Pip wasn't STUCK.",
-    "pip wasn't stuck."
+    "All WEEK,",
+    "all week,"
    ],
    [
-    "She was waiting",
-    "she was waiting"
+    "Pip was waiting",
+    "pip was waiting"
    ],
    [
     "on ME.",
@@ -1160,8 +1160,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "It's EMPTY",
-    "it's empty"
+    "Nothing's IN it",
+    "nothing's in it"
    ],
    [
     "when she SITS.",
@@ -1224,16 +1224,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "A week LATER,",
-    "a week later,"
-   ],
-   [
-    "her chair",
+    "Her chair",
     "her chair"
    ],
    [
-    "is EMPTY.",
-    "is empty."
+    "is EMPTY",
+    "is empty"
+   ],
+   [
+    "on SUNDAYS now.",
+    "on sundays now."
    ]
   ]
  },
