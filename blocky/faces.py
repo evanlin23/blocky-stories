@@ -176,7 +176,7 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
 @lru_cache(maxsize=256)
 def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | None, expr: str, open_: float,
           look: tuple[float, float], blink: float, freckles: bool, cheeks: str | None, bags: bool,
-          mouth: str = "auto", inside: str | None = None, eye_scale: float = 1.0, eye_x: float | None = None) -> Image.Image:
+          mouth: str = "auto", inside: str | None = None, eye_scale: float = 1.0) -> Image.Image:
     im = Image.new("RGB", (TEX_W, TEX_H), hexrgb(skin))
     d = ImageDraw.Draw(im)
     s = FX1 - FX0                      # face box width in px
@@ -188,7 +188,7 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
     lx, ly = look
     shut = expr in ("shut", "squeeze", "soft", "laugh") or blink > 0.8
     for side in (-1, 1):
-        cx = _fx(0.5) + side * ((eye_x if eye_x else 0.165) * s if eyes == "pin" else ex)   # eye_x: opt-in wider-set pin eyes (ep56)
+        cx = _fx(0.5) + side * (0.165 * s if eyes == "pin" else ex)
         if eyes == "none":
             continue
         if eyes == "hollow":
@@ -261,7 +261,7 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
             ry = 0.07 * s * (1.0 - 0.85 * blink)
             _ellipse(d, cx + lx * 0.015 * s, ey, 0.045 * s, max(2, ry), fill=pup)
         elif eyes == "pin":
-            r = 0.068 * s * (eye_scale if eye_x else 1.0)
+            r = 0.068 * s
             _ellipse(d, cx + lx * 0.01 * s, ey, r, r * (1.0 - 0.9 * blink), fill=(6, 5, 8))
             if blink < 0.5:
                 _ellipse(d, cx + lx * 0.01 * s - r * 0.32, ey - r * 0.36, r * 0.17, r * 0.17, fill=(255, 255, 255))
@@ -316,7 +316,7 @@ def face_image(face: dict, skin: str, expr: str = "neutral", open_: float = 0.0,
     return _draw(skin, face.get("eyes", "round"), bool(face.get("brows", True)), face.get("ink", "#1a1416"),
                  face.get("pupil", "#141012"), face.get("glow"), expr, q(open_, mouth_steps(face)), (q(look[0], 2), q(look[1], 2)),
                  1.0 if blink > 0.5 else 0.0, bool(face.get("freckles")), face.get("cheeks"), bool(face.get("bags")),
-                 face.get("mouth", "auto"), face.get("mouth_inside"), float(face.get("eye_scale", 1.0)), face.get("eye_x"))
+                 face.get("mouth", "auto"), face.get("mouth_inside"), float(face.get("eye_scale", 1.0)))
 
 
 def mouth_steps(face: dict) -> int:
@@ -331,8 +331,6 @@ def face_key(face: dict, skin: str, expr: str, open_: float, look, blink: float)
     style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror", "pin", "flat", "crescent"))
     if face.get("eye_scale", 1.0) != 1.0:
         style += f"es{face['eye_scale']}-"
-    if face.get("eye_x"):
-        style += f"ex{face['eye_x']}-{face.get('eye_scale', 1.0)}-"
     if face.get("mouth_inside"):   # an open mouth's own inside colour (the copy's opens onto black)
         style += f"in{face['mouth_inside'].lstrip('#')}-"
     return f"{style}{expr}-{q(open_, mouth_steps(face))}-{q(look[0], 2)}-{q(look[1], 2)}-{int(blink > 0.5)}"
