@@ -1,0 +1,1753 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this town, everyone has their own little cloud, and it rains when they're sad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.397,
+   "onset": 0.172,
+   "end": 3.19,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     1.207
+    ],
+    [
+     1.207,
+     1.931
+    ],
+    [
+     2.0,
+     2.405
+    ],
+    [
+     2.405,
+     3.19
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Mr Pell next door has had a light drizzle for twenty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.181
+    ],
+    [
+     1.181,
+     1.724
+    ],
+    [
+     1.724,
+     2.552
+    ]
+   ]
+  },
+  "L03": {
+   "text": "He's got the greenest lawn on the whole street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     1.077
+    ],
+    [
+     1.077,
+     1.81
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Break-ups at the cafe happen in raincoats.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.172
+    ],
+    [
+     1.172,
+     1.966
+    ]
+   ]
+  },
+  "L05": {
+   "text": "At a sad film, the front row brings umbrellas.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.284
+    ],
+    [
+     0.284,
+     0.828
+    ],
+    [
+     0.854,
+     1.276
+    ],
+    [
+     1.276,
+     2.155
+    ]
+   ]
+  },
+  "L06": {
+   "text": "When somebody gets married, the whole street gets freckles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.017
+    ],
+    [
+     1.086,
+     1.517
+    ],
+    [
+     1.517,
+     2.31
+    ]
+   ]
+  },
+  "L07": {
+   "text": "My cloud is the biggest, whitest one in town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.0
+    ],
+    [
+     1.077,
+     1.439
+    ],
+    [
+     1.439,
+     2.086
+    ]
+   ]
+  },
+  "L08": {
+   "text": "And it has never rained. Not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.0
+    ],
+    [
+     1.069,
+     1.759
+    ]
+   ]
+  },
+  "L09": {
+   "text": "People call me the happiest person they know.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     1.31
+    ],
+    [
+     1.31,
+     1.879
+    ]
+   ]
+  },
+  "L10": {
+   "text": "My umbrella is still in its wrapper.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     0.992
+    ],
+    [
+     0.992,
+     1.621
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Mom's sister Lou moved across the sea in spring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.836
+    ],
+    [
+     0.836,
+     1.388
+    ],
+    [
+     1.388,
+     2.19
+    ]
+   ]
+  },
+  "L12": {
+   "text": "For ten years they'd shared Mom's glasshouse, a bench each.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.155,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.948
+    ],
+    [
+     0.948,
+     1.707
+    ],
+    [
+     1.776,
+     2.552
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Since Lou left, Mom's cloud has gone dark and heavy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.241
+    ],
+    [
+     1.241,
+     1.629
+    ],
+    [
+     1.629,
+     2.19
+    ]
+   ]
+  },
+  "L14": {
+   "text": "And it never rains.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     1.19
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Now Mom slept out there in the wicker chair, among Lou's plants.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.19,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.19,
+     0.768
+    ],
+    [
+     0.768,
+     1.061
+    ],
+    [
+     1.061,
+     1.655
+    ],
+    [
+     1.724,
+     2.672
+    ]
+   ]
+  },
+  "L16": {
+   "text": "And the plants were going brown.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.431
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Monday morning, her cloud sat a hand above her head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     1.337
+    ],
+    [
+     1.337,
+     1.784
+    ],
+    [
+     1.784,
+     2.328
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Tuesday, it was down at her hairline.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.94
+    ],
+    [
+     0.94,
+     1.672
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Wednesday, it hung over her eyes. She poured tea into the sugar bowl.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.138,
+   "onset": 0.172,
+   "end": 2.948,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.87
+    ],
+    [
+     0.87,
+     1.397
+    ],
+    [
+     1.492,
+     2.009
+    ],
+    [
+     2.009,
+     2.215
+    ],
+    [
+     2.215,
+     2.948
+    ]
+   ]
+  },
+  "L20": {
+   "text": "I asked if she was fine. She smiled and said, \"Never better.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.121
+    ],
+    [
+     1.215,
+     1.664
+    ],
+    [
+     1.664,
+     1.931
+    ],
+    [
+     2.0,
+     2.69
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Her cloud sank another inch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.768
+    ],
+    [
+     0.768,
+     1.483
+    ]
+   ]
+  },
+  "L22": {
+   "text": "That night, over the far hedge, there was a head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.439,
+     0.647
+    ],
+    [
+     0.647,
+     1.155
+    ],
+    [
+     1.224,
+     1.414
+    ],
+    [
+     1.414,
+     1.983
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Much too high for anyone standing on the ground.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.319
+    ],
+    [
+     1.319,
+     2.034
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Under it, a neck of eight stacked blocks, each as thick as an arm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     0.707
+    ],
+    [
+     0.707,
+     1.517
+    ],
+    [
+     1.586,
+     2.034
+    ],
+    [
+     2.034,
+     2.69
+    ]
+   ]
+  },
+  "L25": {
+   "text": "The next night, the head was up over the glasshouse door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.664,
+     0.966
+    ],
+    [
+     0.966,
+     1.276
+    ],
+    [
+     1.276,
+     2.241
+    ]
+   ]
+  },
+  "L26": {
+   "text": "I never saw it move. It was just nearer every time I looked back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.069
+    ],
+    [
+     1.138,
+     1.457
+    ],
+    [
+     1.457,
+     2.112
+    ],
+    [
+     2.112,
+     2.81
+    ]
+   ]
+  },
+  "L27": {
+   "text": "On the third night, its face was at the roof glass, looking down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.155,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.707
+    ],
+    [
+     0.732,
+     1.147
+    ],
+    [
+     1.147,
+     1.276
+    ],
+    [
+     1.276,
+     1.793
+    ],
+    [
+     1.828,
+     2.603
+    ]
+   ]
+  },
+  "L28": {
+   "text": "At Mom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.017,
+   "onset": 0.172,
+   "end": 0.81,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Its face was moss green, with a mouth like the crack in an old flower pot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.414,
+   "onset": 0.155,
+   "end": 3.207,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.293
+    ],
+    [
+     1.362,
+     1.707
+    ],
+    [
+     1.707,
+     2.146
+    ],
+    [
+     2.146,
+     2.457
+    ],
+    [
+     2.457,
+     3.207
+    ]
+   ]
+  },
+  "L30": {
+   "text": "At breakfast I told Mom. She said, \"Don't you start. You're my happy one.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.155,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.086
+    ],
+    [
+     1.138,
+     1.379
+    ],
+    [
+     1.448,
+     1.897
+    ],
+    [
+     1.923,
+     2.121
+    ],
+    [
+     2.121,
+     2.81
+    ]
+   ]
+  },
+  "L31": {
+   "text": "On Friday, I took her tea out after dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.664,
+     0.974
+    ],
+    [
+     0.974,
+     1.276
+    ],
+    [
+     1.276,
+     1.966
+    ]
+   ]
+  },
+  "L32": {
+   "text": "The lamps in the glasshouse were fading slowly down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     1.112
+    ],
+    [
+     1.112,
+     2.207
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Mom was asleep in the wicker chair, her cloud so low it covered her whole face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.448,
+   "onset": 0.19,
+   "end": 3.259,
+   "chunks": [
+    [
+     0.19,
+     0.732
+    ],
+    [
+     0.732,
+     0.845
+    ],
+    [
+     0.845,
+     1.414
+    ],
+    [
+     1.5,
+     2.017
+    ],
+    [
+     2.017,
+     2.457
+    ],
+    [
+     2.457,
+     3.259
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Lou's bench sat empty beside her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.638
+    ]
+   ]
+  },
+  "L35": {
+   "text": "And the roof vent was open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     1.431
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Hanging down through it, at Mom's height, was the head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.828
+    ],
+    [
+     0.862,
+     1.379
+    ],
+    [
+     1.414,
+     2.069
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Its body stood outside. Its neck bent over the roof and in through the gap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.328,
+   "onset": 0.155,
+   "end": 3.121,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.19
+    ],
+    [
+     1.276,
+     1.767
+    ],
+    [
+     1.767,
+     2.224
+    ],
+    [
+     2.224,
+     2.595
+    ],
+    [
+     2.595,
+     3.121
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Its face hung right beside Lou's bench, a hand away from Mom's cloud.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.293,
+   "onset": 0.155,
+   "end": 3.086,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.103
+    ],
+    [
+     1.103,
+     1.655
+    ],
+    [
+     1.741,
+     2.138
+    ],
+    [
+     2.138,
+     3.086
+    ]
+   ]
+  },
+  "L39": {
+   "text": "And its eyes were on me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.293
+    ]
+   ]
+  },
+  "L40": {
+   "text": "I backed into the potting table, and every dry leaf in there rustled.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.293
+    ],
+    [
+     1.362,
+     1.888
+    ],
+    [
+     1.888,
+     2.146
+    ],
+    [
+     2.146,
+     2.862
+    ]
+   ]
+  },
+  "L41": {
+   "text": "The lamps faded all the way out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.724,
+     0.897
+    ],
+    [
+     0.897,
+     1.483
+    ]
+   ]
+  },
+  "L42": {
+   "text": "When they came slowly back, the head was lower.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.017
+    ],
+    [
+     1.069,
+     1.285
+    ],
+    [
+     1.285,
+     1.931
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Its chin rested on Lou's bench, like it was waiting for someone to sit down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.397,
+   "onset": 0.155,
+   "end": 3.207,
+   "chunks": [
+    [
+     0.155,
+     0.768
+    ],
+    [
+     0.768,
+     1.483
+    ],
+    [
+     1.569,
+     1.854
+    ],
+    [
+     1.854,
+     2.405
+    ],
+    [
+     2.405,
+     3.207
+    ]
+   ]
+  },
+  "L44": {
+   "text": "And Mom's cloud had sunk so far I couldn't see her at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.172
+    ],
+    [
+     1.172,
+     1.552
+    ],
+    [
+     1.552,
+     1.767
+    ],
+    [
+     1.767,
+     2.31
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Through the glass, Mr Pell's lawn glowed green under his porch lamp.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.741,
+     1.431
+    ],
+    [
+     1.431,
+     2.026
+    ],
+    [
+     2.026,
+     2.828
+    ]
+   ]
+  },
+  "L46": {
+   "text": "A cloud rains when you're sad. That's the only way the sad gets out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.172,
+   "end": 2.897,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.328
+    ],
+    [
+     1.414,
+     1.845
+    ],
+    [
+     1.845,
+     2.293
+    ],
+    [
+     2.293,
+     2.897
+    ]
+   ]
+  },
+  "L47": {
+   "text": "A cloud that won't rain just gets heavier. And lower.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.0
+    ],
+    [
+     1.0,
+     1.569
+    ],
+    [
+     1.655,
+     2.328
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Mom had been holding hers in. For me. Because I'm the happy one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.19,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.483,
+     1.138
+    ],
+    [
+     1.224,
+     1.603
+    ],
+    [
+     1.69,
+     2.103
+    ],
+    [
+     2.103,
+     2.776
+    ]
+   ]
+  },
+  "L49": {
+   "text": "And I'd been holding mine in for her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     1.086
+    ],
+    [
+     1.086,
+     1.586
+    ]
+   ]
+  },
+  "L50": {
+   "text": "So I woke her, and told her I missed Lou too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.655
+    ],
+    [
+     0.69,
+     1.052
+    ],
+    [
+     1.052,
+     1.328
+    ],
+    [
+     1.328,
+     1.948
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Every single day since spring. And I'd never once cried.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.414
+    ],
+    [
+     1.483,
+     1.845
+    ],
+    [
+     1.845,
+     2.586
+    ]
+   ]
+  },
+  "L52": {
+   "text": "My cloud went grey.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.19
+    ]
+   ]
+  },
+  "L53": {
+   "text": "And for the first time in my life, it rained.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.784
+    ],
+    [
+     0.784,
+     1.172
+    ],
+    [
+     1.224,
+     1.897
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Mom looked up at it. Her face crumpled. Then her cloud let go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.19,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.672,
+     0.81
+    ],
+    [
+     0.836,
+     1.603
+    ],
+    [
+     1.672,
+     2.155
+    ],
+    [
+     2.155,
+     2.741
+    ]
+   ]
+  },
+  "L55": {
+   "text": "Two clouds, pouring over Lou's bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.0
+    ],
+    [
+     1.0,
+     1.672
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Mom laughed halfway through crying, and so did I.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.224
+    ],
+    [
+     1.276,
+     1.5
+    ],
+    [
+     1.5,
+     1.845
+    ]
+   ]
+  },
+  "L57": {
+   "text": "I ripped the wrapper off my umbrella. It didn't help at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.845
+    ],
+    [
+     0.845,
+     1.431
+    ],
+    [
+     1.517,
+     1.888
+    ],
+    [
+     1.888,
+     2.448
+    ]
+   ]
+  },
+  "L58": {
+   "text": "I sat down on Lou's bench, soaked. The roof vent was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.155,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     1.034
+    ],
+    [
+     1.077,
+     1.448
+    ],
+    [
+     1.534,
+     1.974
+    ],
+    [
+     1.974,
+     2.672
+    ]
+   ]
+  },
+  "L59": {
+   "text": "In the morning, two light white clouds drifted over two benches.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.664,
+     1.155
+    ],
+    [
+     1.155,
+     1.845
+    ],
+    [
+     1.845,
+     2.621
+    ]
+   ]
+  },
+  "L60": {
+   "text": "Every one of Lou's plants was standing up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.034
+    ],
+    [
+     1.034,
+     1.741
+    ]
+   ]
+  },
+  "L61": {
+   "text": "Over the hedge, Mr Pell raised his mug, under his drizzle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.759,
+     1.406
+    ],
+    [
+     1.406,
+     1.793
+    ],
+    [
+     1.845,
+     2.672
+    ]
+   ]
+  },
+  "L62": {
+   "text": "In this town, everyone has a little cloud that rains when they're sad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.164
+    ],
+    [
+     1.164,
+     1.707
+    ],
+    [
+     1.707,
+     2.06
+    ],
+    [
+     2.06,
+     2.759
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Mine works.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.017,
+   "onset": 0.19,
+   "end": 0.828,
+   "chunks": [
+    [
+     0.19,
+     0.828
+    ]
+   ]
+  }
+ }
+}
