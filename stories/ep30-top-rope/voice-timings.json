@@ -74,26 +74,30 @@
    ]
   },
   "L04": {
-   "text": "I climb thursdays, late, in an old mill.",
+   "text": "I climb, Thursdays, late, in an old mill.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.155,
-   "end": 1.897,
+   "tempo": 0.9991,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
    "chunks": [
     [
-     0.155,
-     0.81
+     0.172,
+     0.897
     ],
     [
-     0.845,
-     1.052
+     0.931,
+     1.172
     ],
     [
-     1.094,
-     1.897
+     1.224,
+     1.345
+    ],
+    [
+     1.345,
+     2.034
     ]
    ]
   },
@@ -194,7 +198,7 @@
    ]
   },
   "L09": {
-   "text": "You clip in, climb, and it lowers you down.",
+   "text": "You clip in, Climb, and it lowers you down.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -213,6 +217,10 @@
     ],
     [
      0.879,
+     1.259
+    ],
+    [
+     1.259,
      1.879
     ]
    ]
@@ -518,7 +526,7 @@
    ]
   },
   "L23": {
-   "text": "Lilac as chalk dust, with a black harness round its middle.",
+   "text": "Lilac like chalk dust, with a black harness round its middle.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -529,10 +537,18 @@
    "chunks": [
     [
      0.19,
+     0.629
+    ],
+    [
+     0.629,
      1.207
     ],
     [
      1.276,
+     1.397
+    ],
+    [
+     1.397,
      1.897
     ],
     [
@@ -767,9 +783,9 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.638,
+   "dur": 1.655,
    "onset": 0.172,
-   "end": 1.448,
+   "end": 1.466,
    "chunks": [
     [
      0.172,
@@ -777,7 +793,7 @@
     ],
     [
      0.828,
-     1.448
+     1.466
     ]
    ]
   },
@@ -915,9 +931,9 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.259,
+   "dur": 1.276,
    "onset": 0.19,
-   "end": 1.069,
+   "end": 1.086,
    "chunks": [
     [
      0.19,
@@ -925,7 +941,7 @@
     ],
     [
      0.5,
-     1.069
+     1.086
     ]
    ]
   },
@@ -1018,18 +1034,18 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.81,
-   "onset": 0.155,
-   "end": 1.603,
+   "tempo": 0.9476000000000001,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.707,
    "chunks": [
     [
-     0.155,
-     0.698
+     0.172,
+     0.768
     ],
     [
-     0.698,
-     1.603
+     0.768,
+     1.707
     ]
    ]
   },
@@ -1449,6 +1465,10 @@
    "chunks": [
     [
      0.155,
+     0.302
+    ],
+    [
+     0.302,
      0.707
     ],
     [
@@ -1738,22 +1758,22 @@
    ]
   },
   "L79": {
-   "text": "She checked my knot twice.",
+   "text": "She checked my rope twice.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.466,
+   "dur": 1.5,
    "onset": 0.172,
-   "end": 1.259,
+   "end": 1.293,
    "chunks": [
     [
      0.172,
-     0.724
+     0.586
     ],
     [
-     0.724,
-     1.259
+     0.586,
+     1.293
     ]
    ]
   },

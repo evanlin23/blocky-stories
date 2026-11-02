@@ -131,7 +131,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S21: my eye-line up the roof, the Headstander three holds back from the lip, standing on it, upside down]
 - `L22` narrator: Upside DOWN, / its feet FLAT / on the overhang.
   - [S22: side view of the roof, its soles flat on the panels, its head hanging toward me]
-- `L23` narrator: LILAC as chalk dust, / with a black HARNESS / round its middle.
+- `L23` narrator: LILAC like chalk dust, / with a black HARNESS / round its middle.
   - [S23: medium on its body, the black harness at its waist in shadow, lit from below]
 - `L24` narrator: Its ARMS / hung UP / toward the ceiling, / like that was DOWN.
   - [S24: its arms along its body pointing up at the roof]
@@ -265,7 +265,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S77: me at the base, the gym's rope tied to my harness with a big figure-eight knot]
 - `L78` narrator: And I handed / SAM / the other END.
   - [S78: Sam with the rope laid over her forearm, her harness device clipped (no grip)]
-- `L79` narrator: She checked my knot / TWICE.
+- `L79` narrator: She checked my / ROPE twice.
   - [S79: Sam leaning in toward my knot, her face close to it]
 - `L80` narrator: I climbed SLOWLY / this time.
   - [S80: me mid-wall, steady, warm light on the panels]

@@ -15,7 +15,7 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 # a closing hold: nothing added beyond the script's 0.25 s loop tail. Whisper-safe readings (see script: mishear watch)
-TEMPO = {"L07": 0.95, "L16": 0.95, "L19": 0.95, "L67": 0.95}
+TEMPO = {"L04": 0.97, "L46": 0.92, "L07": 0.95, "L16": 0.95, "L19": 0.95, "L67": 0.95}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -346,7 +346,7 @@ story = {
              "exposure": 0.6},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.38, "bloom": 0.28, "grain": 0.013, "red_line": 0.79},
-    "phonemes": {},
+    "phonemes": {"route": "ɹˈaʊt"},
     "cast": cast,
     "creature": creature,
     "looks": looks,

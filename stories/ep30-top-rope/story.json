@@ -45,7 +45,9 @@
   "grain": 0.013,
   "red_line": 0.79
  },
- "phonemes": {},
+ "phonemes": {
+  "route": "ɹˈaʊt"
+ },
  "cast": {
   "me": {
    "age": "adult",
@@ -286,17 +288,22 @@
    "chunks": [
     [
      "I climb THURSDAYS,",
-     "I climb thursdays,"
+     "I climb, Thursdays,"
     ],
     [
      "LATE,",
      "late,"
     ],
     [
-     "in an old MILL.",
-     "in an old mill."
+     "in an",
+     "in an"
+    ],
+    [
+     "old MILL.",
+     "old mill."
     ]
-   ]
+   ],
+   "tempo": 0.97
   },
   {
    "id": "L05",
@@ -315,8 +322,12 @@
      "and a wall"
     ],
     [
-     "right up into the ROOF.",
-     "right up into the roof."
+     "right up into",
+     "right up into"
+    ],
+    [
+     "the ROOF.",
+     "the roof."
     ]
    ]
   },
@@ -366,8 +377,12 @@
      "A grey box"
     ],
     [
-     "bolted at the TOP.",
-     "bolted at the top."
+     "bolted at",
+     "bolted at"
+    ],
+    [
+     "the TOP.",
+     "the top."
     ]
    ]
   },
@@ -381,11 +396,15 @@
     ],
     [
      "CLIMB,",
-     "climb,"
+     "Climb,"
     ],
     [
-     "and it lowers you DOWN.",
-     "and it lowers you down."
+     "and it lowers",
+     "and it lowers"
+    ],
+    [
+     "you DOWN.",
+     "you down."
     ]
    ]
   },
@@ -412,12 +431,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "The guy on my ROPE",
-     "The guy on my rope"
+     "The guy on",
+     "The guy on"
     ],
     [
-     "was on his PHONE.",
-     "was on his phone."
+     "my ROPE",
+     "my rope"
+    ],
+    [
+     "was on",
+     "was on"
+    ],
+    [
+     "his PHONE.",
+     "his phone."
     ]
    ]
   },
@@ -484,8 +511,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "There's a quiet regular,",
-     "There's a quiet regular,"
+     "There's a",
+     "There's a"
+    ],
+    [
+     "quiet regular,",
+     "quiet regular,"
     ],
     [
      "SAM,",
@@ -510,8 +541,12 @@
      "she asked"
     ],
     [
-     "if she could BELAY me.",
-     "if she could belay me."
+     "if she could",
+     "if she could"
+    ],
+    [
+     "BELAY me.",
+     "belay me."
     ]
    ],
    "tempo": 0.95
@@ -543,8 +578,12 @@
      "I made it"
     ],
     [
-     "to the TOP HOLD.",
-     "to the top hold."
+     "to the",
+     "to the"
+    ],
+    [
+     "TOP HOLD.",
+     "top hold."
     ]
    ]
   },
@@ -576,8 +615,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then I looked UP.",
-     "Then I looked up."
+     "Then I",
+     "Then I"
+    ],
+    [
+     "looked UP.",
+     "looked up."
     ]
    ]
   },
@@ -618,12 +661,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "LILAC as chalk dust,",
-     "Lilac as chalk dust,"
+     "LILAC like",
+     "Lilac like"
     ],
     [
-     "with a black HARNESS",
-     "with a black harness"
+     "chalk dust,",
+     "chalk dust,"
+    ],
+    [
+     "with a",
+     "with a"
+    ],
+    [
+     "black HARNESS",
+     "black harness"
     ],
     [
      "round its middle.",
@@ -648,8 +699,12 @@
      "toward the ceiling,"
     ],
     [
-     "like that was DOWN.",
-     "like that was down."
+     "like that",
+     "like that"
+    ],
+    [
+     "was DOWN.",
+     "was down."
     ]
    ]
   },
@@ -662,12 +717,20 @@
      "Its face"
     ],
     [
-     "was a big GRIN,",
-     "was a big grin,"
+     "was a",
+     "was a"
     ],
     [
-     "the wrong way UP.",
-     "the wrong way up."
+     "big GRIN,",
+     "big grin,"
+    ],
+    [
+     "the wrong",
+     "the wrong"
+    ],
+    [
+     "way UP.",
+     "way up."
     ]
    ]
   },
@@ -680,8 +743,12 @@
      "So to me"
     ],
     [
-     "it was a FROWN.",
-     "it was a frown."
+     "it was",
+     "it was"
+    ],
+    [
+     "a FROWN.",
+     "a frown."
     ]
    ]
   },
@@ -690,8 +757,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I let the box",
-     "I let the box"
+     "I let",
+     "I let"
+    ],
+    [
+     "the box",
+     "the box"
     ],
     [
      "LOWER me.",
@@ -708,8 +779,12 @@
      "It was slow."
     ],
     [
-     "Slower than a MACHINE",
-     "Slower than a machine"
+     "Slower than",
+     "Slower than"
+    ],
+    [
+     "a MACHINE",
+     "a machine"
     ],
     [
      "should be.",
@@ -758,8 +833,12 @@
      "A red tag"
     ],
     [
-     "swung from the BOX.",
-     "swung from the box."
+     "swung from",
+     "swung from"
+    ],
+    [
+     "the BOX.",
+     "the box."
     ]
    ]
   },
@@ -888,8 +967,12 @@
      "The third Thursday"
     ],
     [
-     "it was one hold",
-     "it was one hold"
+     "it was",
+     "it was"
+    ],
+    [
+     "one hold",
+     "one hold"
     ],
     [
      "from the EDGE.",
@@ -920,8 +1003,12 @@
      "When I climbed"
     ],
     [
-     "I could HEAR it.",
-     "I could hear it."
+     "I could",
+     "I could"
+    ],
+    [
+     "HEAR it.",
+     "hear it."
     ]
    ]
   },
@@ -966,8 +1053,12 @@
      "I told myself"
     ],
     [
-     "it was the old BEAMS.",
-     "it was the old beams."
+     "it was the",
+     "it was the"
+    ],
+    [
+     "old BEAMS.",
+     "old beams."
     ]
    ]
   },
@@ -983,7 +1074,8 @@
      "I climbed FAST.",
      "I climbed fast."
     ]
-   ]
+   ],
+   "tempo": 0.92
   },
   {
    "id": "L47",
@@ -1151,8 +1243,12 @@
      "Its eyes"
     ],
     [
-     "were the brightest thing",
-     "were the brightest thing"
+     "were the",
+     "were the"
+    ],
+    [
+     "brightest thing",
+     "brightest thing"
     ],
     [
      "in the MILL.",
@@ -1290,8 +1386,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And it was tied",
-     "And it was tied"
+     "And it",
+     "And it"
+    ],
+    [
+     "was tied",
+     "was tied"
     ],
     [
      "round its WAIST.",
@@ -1304,8 +1404,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It was leaning BACK,",
-     "It was leaning back,"
+     "It was",
+     "It was"
+    ],
+    [
+     "leaning BACK,",
+     "leaning back,"
     ],
     [
      "feet PLANTED,",
@@ -1323,8 +1427,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It let me DOWN",
-     "It let me down"
+     "It let",
+     "It let"
+    ],
+    [
+     "me DOWN",
+     "me down"
     ],
     [
      "SLOWLY,",
@@ -1359,8 +1467,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She had the red TAG",
-     "She had the red tag"
+     "She had the",
+     "She had the"
+    ],
+    [
+     "red TAG",
+     "red tag"
     ],
     [
      "in her hand.",
@@ -1403,8 +1515,12 @@
      "because nobody"
     ],
     [
-     "was on the other END.\"",
-     "was on the other end.\""
+     "was on the",
+     "was on the"
+    ],
+    [
+     "other END.\"",
+     "other end.\""
     ]
    ]
   },
@@ -1423,8 +1539,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The rope went SLACK,",
-     "The rope went slack,"
+     "The rope",
+     "The rope"
+    ],
+    [
+     "went SLACK,",
+     "went slack,"
     ],
     [
      "and slid UP",
@@ -1446,20 +1566,32 @@
    "who": "narrator",
    "chunks": [
     [
-     "A climb is built",
-     "A climb is built"
+     "A climb",
+     "A climb"
+    ],
+    [
+     "is built",
+     "is built"
     ],
     [
      "for TWO.",
      "for two."
     ],
     [
-     "One on the WALL,",
-     "One on the wall,"
+     "One on",
+     "One on"
     ],
     [
-     "one on the other END.",
-     "one on the other end."
+     "the WALL,",
+     "the wall,"
+    ],
+    [
+     "one on the",
+     "one on the"
+    ],
+    [
+     "other END.",
+     "other end."
     ]
    ]
   },
@@ -1518,12 +1650,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She checked my knot",
-     "She checked my knot"
+     "She checked my",
+     "She checked my"
     ],
     [
-     "TWICE.",
-     "twice."
+     "ROPE twice.",
+     "rope twice."
     ]
    ]
   },
@@ -1602,8 +1734,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And I let go",
-     "And I let go"
+     "And I",
+     "And I"
+    ],
+    [
+     "let go",
+     "let go"
     ],
     [
      "on PURPOSE.",
@@ -1616,8 +1752,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The rope went TIGHT.",
-     "The rope went tight."
+     "The rope",
+     "The rope"
+    ],
+    [
+     "went TIGHT.",
+     "went tight."
     ],
     [
      "She leaned BACK.",
