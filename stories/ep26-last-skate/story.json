@@ -3277,7 +3277,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "out rolled Pop",
-   "expo": 0.95,
+   "expo": 1.05,
    "at": "L56"
   },
   {
@@ -3302,7 +3302,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "close on his skates on the honey boards",
-   "expo": 1.12,
+   "expo": 0.75,
    "at": "L57"
   },
   {
@@ -3327,7 +3327,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Pop coming across the floor, wobbling, the tape on his knees",
-   "expo": 0.86,
+   "expo": 0.9,
    "at": "L58"
   },
   {
