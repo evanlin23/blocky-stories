@@ -118,8 +118,10 @@ YAW_NEAR = -45.0
 # (at, what, camera, step, extras)
 SHOTS = [
     # 01 the tilt
-    (0, "the hook: a wide from outside, the envelope still, the basket leaning",
-     c([0, [-2.5, -25, 8.6], [0, 0, 8.1], 20], [1, [-1.8, -23, 8.6], [0, 0, 8.1], 20]), 2, {"frame": "world"}),
+    (0, "the hook: Rosa's face in the basket, lit, saying the wind is zero",
+     face_cam(ROSA, 45, 1.4, 25, 32, h=1.5), 2, {"key": 60, "amb": 1.4}),
+    ("L02", "a wide from outside, the envelope still, the basket leaning",
+     c([0, [-2.5, -25, 8.6], [0, 0, 8.1], 20], [1, [-1.8, -23, 8.6], [0, 0, 8.1], 20]), 2, {"frame": "world", "amb": 1.5}),
     ("L03", "a close on the still envelope", still([-9, -15, 4.0], [0.5, 0, 10.5], 30), 2, {"frame": "world"}),
     ("L04", "low on the fourth corner, the floor tipping", still([0.3, -0.15, 0.95], [0.72, 0.85, 0.22], 22), 2,
      {"key": 40}),
@@ -356,6 +358,7 @@ talk("rosa", "L18.3", "L18>")
 put("rosa", "L19", p3(ROSA), yaw=45)
 key("rosa", "L22", head=[0, -30], blend=0.5)
 talk("rosa", "L22.2", "L22>")
+talk("rosa", "L01.1", "L01>")
 key("rosa", "L23", head=[0, 0], blend=0.4)
 key("rosa", "L25", expr="worried")
 key("rosa", "L39", expr="neutral", yaw=45)
