@@ -139,7 +139,7 @@ def asr(wav: Path, timeline: Path) -> int:
     segs, _ = m.transcribe(np.frombuffer(pcm, np.float32), beam_size=5, language="en")
     heard = " ".join(s.text for s in segs)
     num = {str(i): w for i, w in enumerate("zero one two three four five six seven eight nine ten".split())}
-    words = lambda t: [num.get(w, w) for w in re.sub(r"[^a-z0-9' ]", " ", t.lower().replace("-", " ")).split()]
+    words = lambda t: [num.get(w, w) for w in re.sub(r"[^a-z0-9' ]", " ", t.lower().replace("-", " ").replace("granddad", "grandad")).split()]
     a, b = words(want), words(heard)
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
     print(f"script {len(a)} words, heard {len(b)}, match {sm.ratio():.3f}")
