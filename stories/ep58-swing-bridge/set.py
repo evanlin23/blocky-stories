@@ -58,7 +58,7 @@ def long_arm(kit, name, pts, t=0.19, fold=1.4, hand=True, grp=None):
     and four blocky fingers together, palms down."""
     sl = kit.plastic(COAT, 0.85)
     cuffm = kit.plastic(COAT, 0.85)
-    rim = kit.emit(RIM, 0.9)
+    rim = kit.emit(RIM, 2.4)
     skin = kit.plastic(HAND_SKIN, 0.55)
     P = [V(p) for p in pts]
     joints = [P[0]]
@@ -72,7 +72,7 @@ def long_arm(kit, name, pts, t=0.19, fold=1.4, hand=True, grp=None):
     for i in range(len(joints) - 1):
         a, b = joints[i], joints[i + 1]
         obs.append(seg(kit, f"{name}.s{i}", a, b, t, sl))
-        obs.append(seg(kit, f"{name}.r{i}", a + up * (t / 2 + 0.006), b + up * (t / 2 + 0.006), 0.04, rim, 0.012))
+        obs.append(seg(kit, f"{name}.r{i}", a + up * (t / 2 + 0.006), b + up * (t / 2 + 0.006), 0.06, rim, 0.012))
     for i in range(1, len(joints) - 1):
         d = joints[i + 1] - joints[i - 1]
         obs.append(kit.box(f"{name}.f{i}", (t * 1.18, t * 1.18, 0.12), tuple(joints[i]), sl,
@@ -469,9 +469,9 @@ def build_kitchen(kit, ctx):
     for sx in (-1, 1):
         for sy in (-1, 1):
             kit.box(f"ki_tl{sx}{sy}", (0.07, 0.07, 0.74), (X + sx * 0.7, 3.4 + sy * 0.4, 0.37), kit.plastic("#6a4a30", 0.6))
-    kit.box("ki_chair", (0.5, 0.5, 0.45), (X, 4.4, 0.225), kit.plastic("#6a4a30", 0.7), bevel=0.03)
+    kit.box("ki_chair", (0.5, 0.5, 0.45), (X + 1.15, 3.4, 0.225), kit.plastic("#6a4a30", 0.7), bevel=0.03)
     kit.box("ki_win", (1.4, 0.05, 1.3), (X - 2.0, 6.38, 1.7), kit.emit("#e4ecf0", 0.9))
-    kit.box("ki_chair2", (0.5, 0.5, 0.45), (X - 0.3, 2.45, 0.225), kit.plastic("#6a4a30", 0.7), bevel=0.03)
+    kit.box("ki_chair2", (0.5, 0.5, 0.45), (X - 1.1, 3.4, 0.225), kit.plastic("#6a4a30", 0.7), bevel=0.03)
     ctx["kmug"] = kit.box("ki_mug1", (0.12, 0.12, 0.14), (X - 0.3, 3.3, 0.86), kit.plastic("#d8cdb4", 0.5), bevel=0.02)
     kit.box("ki_mug2", (0.1, 0.1, 0.1), (X + 0.3, 3.5, 0.84), kit.plastic("#d8cdb4", 0.5))
 
@@ -524,14 +524,14 @@ def build(kit, story, tl):
                                                   rail_path(sr, 18.3, 0.5, kink_x=11.0, side=1)])
     # the lean: head and shoulders in at the open sash, face to face with me. He stands on a low stone step, and each
     # sleeve leaves the shoulder straight out through the window opening before it drops to the rail
-    kit.box("step", (1.5, 0.9, 0.28), (19.95, 1.0, 0.14), kit.concrete("#6c6a64", 1.5, 0.5), bevel=0.02)
-
+    
     def lean_path(sh, side):
+        # leaves the shoulder, falls back and down along his side to the rail, then runs flat along it, one elbow jog
         yy = RAIL_Y + side * 0.12
-        pts = [sh, V((sh.x + side * 0.02, sh.y - 0.95, sh.z - 0.3)), V((sh.x - 0.4, yy + 0.2, 1.22)), V((18.3, yy, 1.13))]
+        pts = [sh, V((sh.x - 0.25, sh.y - 0.45, sh.z - 0.3)), V((sh.x - 0.9, yy, 1.14)), V((18.3, yy, 1.13))]
         pts += [V((11.0, yy, 1.13)), V((10.6, yy + side * 0.07, 1.13)), V((0.5, yy, 1.13))]
         return pts
-    R["lean"] = make_reach(kit, wd, "reach_lean", (19.95, 1.2, 0.28), yaw=math.radians(180), lean=0.8, head_pitch=-0.25,
+    R["lean"] = make_reach(kit, wd, "reach_lean", (20.8, 1.42, 0.0), yaw=math.radians(125), lean=0.22, head_pitch=-0.12,
                            paths=lambda sl, sr: [lean_path(sl, -1), lean_path(sr, 1)])
     ctx["reach"] = R
     # lights (all off by default, switched by the look)
@@ -591,6 +591,8 @@ LOOKS = {
                       lights={"cab_lamp": 1.0, "cab_stove": 1.0, "cab_amb": 0.5}),
     "cab_low": dict(sky="#1b2640", ss=0.5, fog="#1b2640", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=0.9,
                     lights={"cab_lamp": 1.0, "cab_stove": 1.0, "cab_amb": 0.5}),
+    "lean_ext": dict(sky="#38486a", ss=1.1, fog="#3c4e72", fd=0.03, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.0, fill=0.3,
+                     lights={"cab_lamp": 0.7, "cab_stove": 0.9, "cab_amb": 0.25, "lamppost": 0.0}),
     "cinema": dict(sky="#201820", ss=0.1, fog="#201820", fd=0.0, fs=30, sun=(0, 0, 0.0, "#ffffff"), moon=0, fill=1.0,
                    lights={"cin_screen": 1.0, "cin_amb": 1.0}),
     "office": dict(sky="#c0c8d0", ss=0.3, fog="#c0c8d0", fd=0.0, fs=30, sun=(0, 0, 0.0, "#ffffff"), moon=0, fill=0.8,
@@ -722,8 +724,8 @@ def _cam(story, tl, t):
     return V(loc), V(tgt)
 
 
-GLOW_EM = 0.6
-GLOW_LIGHT = 9.0
+GLOW_EM = 0.9
+GLOW_LIGHT = 14.0
 
 
 def animate(kit, story, tl, t, ctx):
@@ -807,7 +809,9 @@ def animate(kit, story, tl, t, ctx):
         o.location = (x if i % 2 else 78 - ((t * 1.1 + i * 24) % 160), o.location.y, 10.3)
     # ---- the cabin: sash, door, stools, cap, mugs, steam
     sup = spec.get("sash", False)
+    gone = spec.get("reach") in ("lean", "stand")
     for o, off in zip(ctx["sash"], ctx["sash_off"]):
+        o.hide_render = gone
         o.location.z = (1.6 if sup else 0.9) + off + (0.0 if o.name != "sash_g" else 0.0) - (0.0)
     ctx["door"].rotation_euler = (0, 0, math.radians(spec.get("door", 0)))
     ctx["stool2"].rotation_euler = (0, 0, math.radians(spec.get("stool2", 180)))
@@ -830,7 +834,7 @@ def animate(kit, story, tl, t, ctx):
         over["farlamp"] = spec.get("farlamp", 1.0)
         over["handlamp"] = spec.get("handlamp", 1.0)
     elif rv in ("stand", "lean"):
-        kit.LIGHTS["farlamp"]["obj"].location = (20.0, 1.0, 0.35)
+        kit.LIGHTS["farlamp"]["obj"].location = tuple(spec.get("fl_pos", (20.0, 1.0, 0.35)))
         kit.LIGHTS["handlamp"]["obj"].location = (0.35, RAIL_Y - 0.4, 0.4)
         kit.LIGHTS["sill"]["obj"].location = (20.1, 1.9, 0.58)
         over["farlamp"] = spec.get("farlamp", 0.8)
@@ -863,6 +867,7 @@ def animate(kit, story, tl, t, ctx):
         kit.LIGHTS["phone"]["obj"].location = (m["x"], m["y"] - 0.5, 1.35)
         over["phone"] = 7.0
     # ---- who sits; the glow hands
+    bpy.context.view_layer.update()
     pool = []
     for who in story["cast"]:
         keys = tl["acting"].get(who, [])
@@ -885,6 +890,8 @@ def animate(kit, story, tl, t, ctx):
             b_ = kit.col("#e09a30")
             u_ = min(1.0, g * 1.2)
             bsdf.inputs["Base Color"].default_value = tuple(x + (y - x) * u_ for x, y in zip(a_, b_))
+            if __import__('os').environ.get('DBGH') and True:
+                open('/tmp/claude-0/dbg.txt', 'a').write(f"{shot['id']} {sx} {tuple(round(v,2) for v in sk.matrix_world.translation)}\n")
             if not hidden and g > 0.02:
                 pool.append((g, sk.matrix_world.translation.copy()))
         sl = ctx.get("slits", {}).get(who)

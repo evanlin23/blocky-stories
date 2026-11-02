@@ -21,6 +21,13 @@ ROOT = HERE.parents[2]
 sys.path.insert(0, str(ROOT))
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
+for _l in lines:
+    if _l["id"] in ("L11", "L20", "L23", "L53", "L61"):
+        _l["tempo"] = 0.8 if _l["id"] == "L20" else 0.9
+    for _c in _l["chunks"]:      # spoken in full so Whisper hears them (captions keep the contraction)
+        _c[1] = _c[1].replace("They'd bolted", "They had bolted").replace("I'd thought", "I thought").replace("sat on the", "sat on that").replace("in the fog", "in a fog")
+    if False:
+        pass      # slower so Whisper hears "the" and "they'd"/"I'd" (word check)
 
 # ---------------------------------------------------------------------------------------------------- cast
 
@@ -172,36 +179,36 @@ sh("S11", 8, "L08", fc(hd(21.6, -3.0, 0, 1.2), 0, 8, 1.5, 40, rise=0.05, el=0.0)
 sh("S12", 9, "L09", mv([27.6, -4.4, 1.5], [24.6, -4.5, 1.1], 30, [27.4, -4.4, 1.5], [24.6, -4.5, 1.1], 30),
    {"ada": P(24.6, -4.3, 0, arms=[85, 85], side=[0, 0], expr="grin"), "mec": P(23.2, -3.2, 270, arms=[0, 0], side=[0, 0], expr="neutral")},
    look="day", glow={"ada": B}, crate=(24.6, -4.9, 0.95), fill_k=1.4)
-sh("S13", 9, "L09.2", fc(hd(20.9, -3.0), 0, 6, 2.5, 34, rise=0.05), {"mec": P(20.9, -3.0, 0, arms=[0, 0], side=[0, 0], expr="neutral", head=[0, 6], lean=2),
-   "emrys": P(22.0, 1.7, 0, expr="neutral", arms=[0, 0], side=[0, 0])},
+sh("S13", 9, "L09.2", mv([21.4, -5.6, 1.6], [21.3, 1.0, 1.4], 30, [21.4, -5.3, 1.6], [21.3, 1.0, 1.4], 30), {"mec": P(20.4, -3.2, 0, arms=[0, 0], side=[0, 0], expr="neutral", head=[0, 6], lean=2),
+   "emrys": P(22.0, 1.4, 0, expr="neutral", arms=[0, 0], side=[0, 0])},
    look="day", glow={"emrys": 0.3}, fill_k=1.6, sun=(14, 25, 3.0, "#ffd9a0"))
 ex("mec", "L09.3", head=[0, -4], blend=0.3)
 sh("S14", 10, "L10", mv([25.4, -2.6, 1.55], [21.2, 1.1, 1.55], 34, [25.0, -2.4, 1.55], [21.2, 1.1, 1.55], 34),
    {"emrys": P(21.1, 1.2, -20, expr="neutral", arms=[0, 0], side=[0, 0])}, look="day", glow={"emrys": 0.3}, fill_k=1.5)
-sh("S15", 11, "L11", mv([14.6, -0.3, 0.6], [17.6, 0.1, 0.25], 34, [14.9, -0.3, 0.6], [17.6, 0.1, 0.25], 34),
-   {"emrys": P(18.9, 0.1, 0, expr="neutral", arms=[0, 0], side=[0, 0], lean=18)}, look="dusk", glow={"emrys": 0.3}, hand=0.003, lk={"lamppost": 0.0}, fill_k=1.2)
-sh("S16", 11, "L11.2", mv([17.8, -9.0, 1.5], [15.0, 40.0, 7.0], 30, [17.8, -8.6, 1.5], [15.0, 40.0, 7.0], 30),
-   {"emrys": P(18.6, -0.6, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, look="dusk", glow={"emrys": 0.3}, hand=0.004, lk={"lamppost": 0.0}, fill_k=0.9)
-sh("S17", 12, "L12", mv([250.9, 5.75, 1.5], [249.9, 2.6, 1.15], 34, [250.8, 5.55, 1.5], [249.9, 2.6, 1.15], 34),
-   {"me": P(250.0, 4.45, 0, z=-0.06, sit=True, expr="neutral", arms=[40, 40]),
-    "ada": P(249.7, 2.6, 180, z=-0.06, sit=True, expr="worried", arms=[70, 70])}, look="kitchen", glow={"ada": B})
-sh("S18", 12, "L12.2", mv([250.2, 4.4, 1.15], [249.7, 3.2, 0.8], 36), {"ada": P(249.7, 2.6, 180, z=-0.06, sit=True, expr="worried", arms=[78, 78])},
-   look="kitchen", glow={"ada": B}, hand=0.003, mug=(249.7, 3.2))
-sh("S19", 13, "L13", mv([251.0, 0.6, 1.5], [249.8, 4.0, 1.3], 36, [250.9, 0.7, 1.5], [249.8, 4.0, 1.3], 36),
-   {"me": P(250.5, 4.0, 0, expr="neutral", arms=[0, 0], side=[0, 0]), "ada": P(249.3, 4.0, 90, expr="worried", arms=[0, 70], side=[0, 0])},
+sh("S15", 11, "L11", mv([14.8, 0.0, 0.5], [17.9, 0.1, 0.8], 22, [15.2, 0.0, 0.5], [17.9, 0.1, 0.8], 22),
+   {"emrys": P(18.0, 0.2, 270, expr="neutral", arms=[0, 0], side=[0, 0])}, look="summer", glow={"emrys": 0.3}, hand=0.003, fill_k=2.0)
+sh("S16", 11, "L11.2", mv([18.4, -5.0, 1.5], [14.5, 40.0, 6.5], 28, [18.4, -4.6, 1.5], [14.5, 40.0, 6.5], 28),
+   {"emrys": P(18.6, -0.6, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, look="dusk", glow={"emrys": 0.3}, hand=0.004, lk={"lamppost": 0.0}, fill_k=1.5)
+sh("S17", 12, "L12", mv([250.8, -0.2, 1.5], [250.0, 3.4, 1.2], 21, [250.6, -0.1, 1.5], [250.0, 3.4, 1.2], 21),
+   {"me": P(251.0, 3.4, 270, z=-0.06, sit=True, expr="neutral", arms=[40, 40]),
+    "ada": P(248.9, 3.4, 90, z=-0.06, sit=True, expr="worried", arms=[70, 70])}, look="kitchen", glow={"ada": B})
+sh("S18", 12, "L12.2", mv([250.7, 3.4, 1.25], [249.4, 3.4, 0.95], 17), {"ada": P(248.9, 3.4, 90, z=-0.06, sit=True, expr="worried", arms=[50, 50])},
+   look="kitchen", glow={"ada": B}, hand=0.003, mug=(249.75, 3.4), glow_k=0.12)
+sh("S19", 13, "L13", mv([250.0, -0.3, 1.5], [249.9, 4.0, 1.45], 22, [250.0, -0.2, 1.5], [249.9, 4.0, 1.45], 22),
+   {"me": P(250.55, 4.0, 0, expr="neutral", arms=[0, 0], side=[0, 0]), "ada": P(249.3, 4.0, 90, expr="worried", arms=[0, 70], side=[0, 0])},
    look="kitchen", glow={"ada": B})
 sh("S20", 14, "L14", mv([22.7, -4.0, 1.6], [21.9, 1.5, 1.5], 32, [22.5, -3.7, 1.6], [21.9, 1.5, 1.5], 32),
    {"emrys": P(21.85, 1.6, 0, expr="neutral", arms=[0, 0], side=[0, 0]), "mec": P(21.3, -1.6, 180, arms=[0, 0], side=[0, 0], expr="neutral")},
    look="day", glow={"emrys": M}, fill_k=1.6, sun=(14, 40, 3.0, "#ffd9a0"))
 sh("S21", 15, "L15", mv([19.7, 4.9, 1.5], [21.6, 3.3, 1.4], 30, [19.8, 4.8, 1.5], [21.6, 3.3, 1.4], 30), {"emrys": emr(-25)}, look="cab_eve",
    glow={"emrys": M}, hand=0.003, sash=False)
-sh("S22", 15, "L15.3", mv([21.5, 3.7, 1.32], [22.3, 3.7, 1.32], 38), {}, look="cab_eve", hand=0.002)
+sh("S22", 15, "L15.3", mv([20.7, 3.7, 1.32], [22.3, 3.7, 1.3], 30), {}, look="cab_eve", hand=0.002)
 sh("S23", 16, "L16", mv([21.35, 2.95, 0.95], [21.75, 3.5, 0.8], 38), {"emrys": emr(-25)}, look="cab_eve", glow={"emrys": 0.45}, hand=0.002)
 sh("S24", 16, "L16.2", mv([21.35, 2.95, 0.95], [21.75, 3.5, 0.8], 38), {"emrys": emr(-25)}, look="cab_eve", glow={"emrys": 0.3}, hand=0.002)
 sh("S25", 17, "L17", mv([20.5, 2.7, 1.4], [21.75, 3.6, 1.1], 34), {"emrys": emr(-25)}, look="cab_dark", glow={"emrys": 0.2}, hand=0.002)
 sh("S26", 18, "L18", mv([21.5, 2.8, 1.15], [20.2, 3.7, 0.95], 32, [21.4, 2.9, 1.15], [20.2, 3.7, 0.95], 32), {"me": mecr(arms=[80, 80])},
    look="cab_eve", glow={"me": F})
-sh("S27", 18, "L18.3", mv([19.55, 2.75, 1.05], [19.85, 3.55, 0.85], 46), {"me": mecr(arms=[80, 80])}, look="cab_eve", glow={"me": F}, hand=0.002)
+sh("S27", 18, "L18.3", mv([20.5, 2.6, 1.3], [19.6, 3.0, 1.0], 30), {"me": mecr(arms=[80, 80])}, look="cab_eve", glow={"me": F}, hand=0.002)
 sh("S28", 19, "L19", mv([21.3, 3.3, 0.95], [20.2, 2.4, 0.6], 40), {}, look="cab_eve", hand=0.002, steam=True)
 sh("S29", 19, "L19.2", fc(hd(21.75, 3.6, CAB_SEAT), -25, 30, 1.9, 40, rise=0.1), {"emrys": emr(0, head=[-50, 0])}, look="cab_eve", glow={"emrys": 0.45}, hand=0.003)
 sh("S30", 20, "L20", mv([21.4, 2.7, 0.55], [21.1, 3.6, 0.35], 32), {}, look="cab_eve", hand=0.002)
@@ -245,7 +252,7 @@ sh("S50", 33, "L33", mv([21.9, 2.6, 1.4], [20.7, 3.7, 0.9], 26, [21.8, 2.7, 1.4]
 sh("S51", 34, "L34", mv([19.7, 1.9, 1.45], [0.0, 0.9, 1.15], 52), {}, look="fogpale", reach="mon", fd=0.035, farlamp=0.9, handlamp=0.0, hand=0.003)
 sh("S52", 34, "L34.2", mv([6.0, -16.0, 1.5], [0.2, 0.9, 1.4], 70), {}, look="fogpale", reach="mon", fd=0.03, hand=0.003, handlamp=0.0)
 sh("S53", 35, "L35", mv([10.5, -14.0, 1.7], [3.5, 0.8, 1.2], 38), {}, look="fogpale", reach="mon", fd=0.03, hand=0.003, handlamp=0.0)
-sh("S54", 36, "L36", mv([9.5, -8.0, 1.7], [3.0, 0.8, 1.2], 26), {}, look="fogpale", reach="tue", fd=0.025, hand=0.003)
+sh("S54", 36, "L36", mv([14.0, -14.0, 1.7], [4.5, 0.8, 1.3], 19), {}, look="fogpale", reach="tue", fd=0.025, hand=0.003)
 sh("S55", 37, "L37", mv([22.0, -9.0, 1.7], [13.0, 0.8, 1.15], 28), {}, look="fogpale", reach="wed", fd=0.03, hand=0.003)
 sh("S56", 37, "L37.3", mv([19.7, 1.95, 1.55], [17.8, 0.8, 1.0], 40), {}, look="fogpale", reach="wed", fd=0.03, hand=0.003)
 sh("S57", 38, "L38", mv([18.7, -0.1, 1.4], [17.8, 0.8, 1.02], 48), {}, look="fogpale", reach="wed", fd=0.03, hand=0.002)
@@ -253,29 +260,29 @@ sh("S57", 38, "L38", mv([18.7, -0.1, 1.4], [17.8, 0.8, 1.02], 48), {}, look="fog
 sh("S58", 39, "L39", mv([19.6, 2.7, 0.8], [19.6, 4.6, 0.5], 36), {}, look="cab_night", hand=0.002)
 lvl("stove", "L39", 0.1, 2.0)
 lvl("lamp", "L39", 0.3, 2.0)
-sh("S59", 39, "L39.3", mv([21.2, 3.5, 1.6], [21.2, 4.98, 1.5], 40), {}, look="cab_night", hand=0.002)
+sh("S59", 39, "L39.3", mv([20.3, 3.3, 1.7], [21.2, 4.98, 1.5], 30), {}, look="cab_night", hand=0.002)
 sh("S60", 40, "L40", mv([22.1, 4.9, 1.5], [20.4, 2.4, 1.2], 26, [22.0, 4.8, 1.5], [20.4, 2.4, 1.2], 26),
    {"emrys": emr(-25)}, look="cab_low", glow={"emrys": 0.12}, reach="stand", sash=True, stool2=180, hand=0.003)
 sh("S61", 41, "L41", mv([19.95, 1.95, 1.5], [5.0, 0.8, 1.15], 45), {}, look="fogpale", reach="stand", sash=True, fd=0.03, hand=0.003)
 sh("S62", 42, "L42", mv([21.2, 3.6, 1.55], [19.95, 1.4, 1.5], 34), {}, look="cab_low", reach="stand", sash=True, hand=0.003, farlamp=0.9,
    lk={"cab_stove": 1.4, "cab_lamp": 0.0})
-sh("S63", 43, "L43", mv([22.6, -2.6, 1.5], [6.0, 0.8, 1.2], 24), {}, look="fogpale", reach="stand", sash=True, fd=0.022, hand=0.003)
+sh("S63", 43, "L43", mv([15.3, -3.6, 1.3], [19.6, 1.3, 1.4], 24), {}, look="fogpale", reach="stand", sash=True, fd=0.022, hand=0.003)
 sh("S64", 44, "L44", mv([18.9, 0.85, 1.28], [0.0, 0.8, 1.12], 30), {}, look="fogpale", reach="stand", sash=True, fd=0.03, hand=0.003)
-sh("S65", 45, "L45", mv([15.0, -1.3, 1.55], [20.0, 1.7, 1.25], 28, [15.4, -1.1, 1.55], [20.0, 1.7, 1.25], 28), {}, look="fogpale", reach="lean",
-   sash=True, fd=0.02, hand=0.003, lk={"cab_stove": 0.0})
-sh("S66", 45, "L45.3", mv([21.0, 4.4, 1.55], [20.2, 2.7, 1.5], 36),
-   {"me": P(20.2, 2.95, 0, arms=[0, 0], side=[0, 0], expr="terrified"), "emrys": emr(-25)}, look="cab_low", glow={"emrys": 0.12, "me": 0.0},
+sh("S65", 45, "L45", mv([26.0, -1.3, 1.5], [20.6, 1.6, 1.5], 44, [25.7, -1.2, 1.5], [20.6, 1.6, 1.5], 46), {}, look="lean_ext", reach="lean",
+   sash=True, fd=0.02, hand=0.003, sill=3.5, farlamp=4.0, fl_pos=[22.4, 0.3, 0.7])
+sh("S66", 45, "L45.3", mv([21.15, 0.9, 1.5], [20.0, 2.9, 1.5], 36),
+   {"me": P(20.0, 2.95, 0, arms=[0, 0], side=[0, 0], expr="terrified")}, look="cab_low", glow={"me": 0.0},
    reach="lean", sash=True, hand=0.003, farlamp=0.9)
 sh("S67", 46, "L46", mv([21.4, 3.0, 0.95], [21.75, 3.5, 0.8], 38), {"emrys": emr(-25, head=[0, 20])}, look="cab_low", glow={"emrys": 0.05}, hand=0.002,
    reach="lean", sash=True)
 sh("S68", 47, "L47", fc(hd(20.2, 2.95), 0, 10, 2.0, 40, rise=0.1),
    {"me": P(20.2, 2.95, 0, arms=[40, 40], side=[0, 0], expr="wide", head=[0, 24])}, look="cab_low", glow={"me": 0.4}, hand=0.003)
-sh("S69", 48, "L48", mv([20.8, 4.7, 1.6], [20.1, 2.3, 1.0], 36), {"me": P(20.2, 3.25, 0, arms=[0, 0], side=[0, 0], expr="wide")},
+sh("S69", 48, "L48", mv([21.7, 4.85, 1.3], [20.6, 1.7, 1.5], 30), {"me": P(19.9, 3.25, 0, arms=[35, 35], side=[0, 0], expr="wide")},
    look="cab_low", glow={"me": 0.55}, reach="lean", sash=True, hand=0.003, lk={"cab_lamp": 0.0, "cab_amb": 0.4})
 lvl("stove", "L47", 0.0, 0.5)
 sh("S70", 49, "L49", fc(hd(20.2, 2.95), 0, 8, 1.4, 42, rise=0.08, el=-0.1),
    {"me": P(20.2, 2.95, 0, arms=[85, 85], side=[0, 0], expr="wide", head=[0, 6])}, look="cab_low", glow={"me": 0.5}, hand=0.002, lk={"cab_lamp": 0.0, "cab_amb": 0.3})
-sh("S71", 50, "L50", mv([19.55, 2.75, 1.05], [19.85, 3.55, 0.85], 46), {"me": mecr(arms=[80, 80])}, look="cab_eve", glow={"me": F}, hand=0.002)
+sh("S71", 50, "L50", mv([20.5, 2.6, 1.3], [19.6, 3.0, 1.0], 30), {"me": mecr(arms=[80, 80])}, look="cab_eve", glow={"me": F}, hand=0.002)
 sh("S72", 50, "L50.1", fc((21.6, -12.0, 0.88), 0, -30, 1.35, 42, rise=0.0), {"mec": P(21.6, -12.0, 0, arms=[0, 0], side=[0, 0], expr="neutral")},
    look="dusk", hand=0.002)
 sh("S73", 51, "L51", fc(hd(20.25, 3.55, -0.09), 0, 30, 2.0, 40, rise=0.1), {"me": mecr(arms=[0, 0], head=[35, -14], expr="soft")},
@@ -302,8 +309,8 @@ sh("S83", 59, "L59", mv([11.0, -5.0, 1.4], [11.5, 0.0, 1.3], 32), {"mec": P(14.0
    look="dusk", glow={"mec": 0.4}, hand=0.004, lk={"lamppost": 0.0})
 sh("S84", 60, "L60", mv([17.9, -1.6, 1.55], [20.2, 2.6, 1.6], 34), {"emrys": P(20.2, 2.75, 0, arms=[0, 95], side=[0, 0], expr="neutral")},
    look="dusk", glow={"emrys": B}, hand=0.003, sky_k=1.0, lk={"cab_lamp": 0.8, "cab_amb": 0.8})
-sh("S85", 61, "L61", mv([20.35, 4.3, 1.5], [20.15, 0.0, 1.55], 32, [20.4, 4.1, 1.5], [20.15, 0.0, 1.55], 32),
-   {"emrys": P(20.2, 3.2, 0, expr="neutral", arms=[0, 100], side=[0, 0])}, look="dusk", glow={"emrys": B}, sash=True, hand=0.003,
+sh("S85", 61, "L61", mv([21.3, 4.95, 1.7], [20.0, 0.0, 1.5], 30, [21.3, 4.8, 1.7], [20.0, 0.0, 1.5], 30),
+   {"emrys": P(20.4, 2.65, 0, expr="neutral", arms=[0, 100], side=[0, 0])}, look="dusk", glow={"emrys": B}, sash=True, hand=0.003,
    lk={"cab_lamp": 0.8, "cab_amb": 0.8})
 sh("S86", 62, "L62", fc(hd(14.0, 0.0), 0, 10, 2.3, 38, rise=0.08), {"mec": P(14.0, 0.0, 0, arms=[0, 100], side=[0, 0], expr="grin")},
    look="dusk", glow={"mec": 0.6}, lk={"lamppost": 0.0}, fill_k=1.0)
@@ -523,6 +530,6 @@ story["sound"] = {
         {"from": "L40-0.7", "to": "L40+0.05", "keep": ["sting"]},
         {"from": "L48-0.5", "to": "L48+0.05", "keep": ["sting"]},
     ]}
-story["phonemes"] = {"Emrys": "ˈɛmɹəs"}
+story["phonemes"] = {"Emrys": "ˈɛmɹɪs"}
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {tl0['duration']} s)")
