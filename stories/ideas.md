@@ -9,9 +9,10 @@ The writer takes the next ideas from here, and adds new ones. When a story is ma
 | ep12 `knock-back` | a farmhouse kitchen, one summer | the keeper under the cellar floor, an uncle who knows, the ritual done back |
 | ep13 `closing-time` | an aquarium on the night shift | the watchers behind the big tank, a curtain-call bow, kind all along |
 | ep20 `ep20-photo-strip` | a coin photo booth in an old hotel hall at a wedding | the Third, a far-too-tall paper-flat sepia figure with a slot smile; a whispered line as the first line ("It's getting CLOSER."); the "it never moved, we moved apart" twist; ending on a strip torn in half and shared, looping on a whisper; warmth: two estranged grown siblings make up; the tally mark on the back of a photo |
-| ep27 `ep27-towpath` | a narrowboat moored on a canal in early autumn fog | the Long Man, a person built as long as the boat, always lying flat and face up in canal-weed green and wet-rope brown, one mooring ring nearer each dawn, silent; a greeting as the first line ("On our BOAT, / the day starts / with GOOD MORNING. / Then something LIES DOWN / on the TOWPATH."); the creature was lying in an old dog's empty spot, the way she used to; ending on the dog put back in her spot and a walk at her pace, looping on "Then MOSS lies down"; warmth: an old dog, walking at her pace; a two-stroke tally pressed into a mooring ring |
 
 The premise and twist of each are in its `story.json`; `check` compares every new story against them.
+
+- killed: ep27 `towpath` (#11), 2026-11-02. Not approved by the critic after four rounds (last 6.5/10; standards approved). Not a hard-rule kill: the first twist copied ep23-only-line's (a voice saying my words, a roll call) and was rewritten as the Long Man lying in old dog Moss's empty spot in the grass. Shots stayed weak: the creature's full length in fog, its eyes at the glass, Moss in the last shot. The full build is in git history on branch `claude/ep27-towpath` (commit 53d15b3), with four small fixes left in `reviews/r4-critic.md`, so it can be revived rather than retried from scratch.
 
 ## Next (batch 2 pitches, 2026-10-31): in production elsewhere (ep14 to ep17)
 All four rows below are in production elsewhere (ep14 to ep17). Don't use them, their settings, creatures or kinds of warmth.
