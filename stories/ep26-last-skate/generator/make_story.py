@@ -223,14 +223,12 @@ for i, (at, what, step, cam) in enumerate(SHOTS):
     if i:
         s["at"] = at
     shots.append(s)
-# the tracking shots follow Pop (offsets from his feet)
+# the two gliding shots are locked off (a following camera slides the plank grain across the whole frame)
 for sh in shots:
     if sh["what"].startswith("low tracking"):
-        sh["follow"] = "pop"
-        sh["cam"] = c([0, [-2.8, 2.4, 0.9], [0.0, 0.0, 1.0], 26], [1, [-2.6, 2.3, 0.95], [0.0, 0.0, 1.0], 26])
+        sh["cam"] = still([0.8, 0.8, 1.1], [0.8, -3.0, 1.0], 18)
     if sh["what"].startswith("Pop tips"):
-        sh["follow"] = "pop"
-        sh["cam"] = c([0, [-2.8, 2.4, 1.3], [0.0, 0.0, 1.1], 26])
+        sh["cam"] = still([-1.6, 0.5, 1.3], [-1.6, -2.8, 1.1], 20)
 overhead = [s["id"] for s in shots if s["what"].startswith(("crane up", "hold the overhead"))]
 
 # ---------------------------------------------------------------------------------------------------- acting
