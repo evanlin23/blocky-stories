@@ -174,7 +174,10 @@ HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "h
               "halvor": "halver", "halvors": "halvers", "cagoule": "kagool", "40": "forty",
               "pair": "pear", "mom": "mum", "palate": "palette", "wanna": "wantto",   # pair/pear, mom/mum, palate/palette, wanna (ep32)
               "okoffor": "okafor", "okoffors": "okafors", "ocoffor": "okafor", "ocoffors": "okafors",
-              "okofor": "okafor", "okofors": "okafors"}   # ep14: Okafor
+              "okofor": "okafor", "okofors": "okafors",   # ep14: Okafor
+              # ep57 (opt-in: only these words are affected): British spellings, Whisper's Elon for Ilan, Mrs Varga
+              "favour": "favor", "favours": "favors", "neighbours": "neighbors", "elon": "ilan", "elons": "ilans",
+              "vargas": "varga", "missus": "mrs", "mister": "mr", "caffay": "cafe"}
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 
