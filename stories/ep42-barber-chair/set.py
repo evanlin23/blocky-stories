@@ -797,7 +797,7 @@ def animate(kit, story, tl, t, ctx):
     ang = 0.0
     if bc:
         x = t - bc[-1]["t"]
-        ang = 0.55 * math.exp(-x * 1.8) * math.sin(2 * math.pi * 2.1 * x) if x < 3.0 else 0.0
+        ang = 0.22 * math.exp(-x * 1.6) * math.sin(2 * math.pi * 1.2 * x) if x < 3.0 else 0.0
     ctx["bell"].rotation_euler = (ang, 0, 0.0)
     bs = _switch(_cues(tl, "broom"), "on", t, False)
     ctx["broom"].hide_render = not (bs and "shop" in show)
