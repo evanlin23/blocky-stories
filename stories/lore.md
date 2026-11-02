@@ -47,6 +47,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep45 `bee-yard` | two honey-gold strokes scratched into the wooden board between the two veil hooks, two for a yard built for two (plain tally, no extra stroke) | S42, under L35 ("One is Lena's. The other is mine."), held about 1.8 s, not narrated |
 | ep36 `ice-huts` | two rust-red strokes scratched into the plate of the red hut's iron door latch, two for a hut built for two, in the Leaner's own rust red | S17, under L12 ("I took him a FLASK"), held about 1.8 s, not narrated |
 | ep38 `drive-in` | two soot-black tally strokes pressed into the metal face of the old speaker box hooked on Theo's car window, two for a car built for two front seats (plain tally, no extra stroke) | S70, under L62 ("Theo slid the popcorn over"), held 1.6 s, not narrated |
+| ep41 `orchard-rows` | two clay-red tally strokes pressed into the seat of the bench at the end of the far row, two for a bench built for two (Nan and me). On my sleepwalks Nan always followed inside my prints, so the place beside me on the row stayed empty and the Rough One walked it, a stride to my left. It's gone once Nan walks beside me awake | S76, under L64 ("The square trail ended at the BENCH."), held 1.8 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
