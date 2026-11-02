@@ -27,7 +27,8 @@ FX0, FX1 = int(TEX_W * (0.5 - 50 / 360)), int(TEX_W * (0.5 + 50 / 360))
 FY0, FY1 = int(TEX_H * 0.08), int(TEX_H * 0.92)
 
 EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blank", "wide", "shut", "grin",
-               "terrified", "squeeze", "soft", "asleep")
+               "terrified", "squeeze", "soft", "asleep", "warm")
+# warm: eyes open and a touch narrowed, brows level and relaxed, a wide closed smile with no teeth. Opt-in.
 # terrified: the widest eyes with pin pupils, brows high and pulled up in the middle, the wavy worried mouth.
 # soft: eyes gently closed (the content up-arcs), relaxed brows and a small closed smile: touched, not scared.
 # squeeze: eyes screwed shut (short arcs sagging down, not the content up-arcs of "shut"), brows pinched low.
@@ -139,6 +140,8 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
             x = cx - ww / 2 + k * ww / 10
             d.line([(x, cy - w * 0.18), (x, cy + w * 0.26)], fill=ink, width=max(4, th // 3))
         d.line([(cx - ww / 2, cy + w * 0.04), (cx + ww / 2, cy + w * 0.04)], fill=ink, width=max(4, th // 3))
+    elif expr == "warm":   # a wide closed smile, no teeth
+        _stroke(d, _curve(cx, cy - 0.012 * s, w * 1.0, 0.05 * s), ink, th)
     elif expr == "soft":   # a small closed smile
         _stroke(d, _curve(cx, cy - 0.006 * s, w * 0.6, 0.026 * s), ink, th)
     elif expr == "blank" or expr == "shut" or expr == "asleep":
@@ -194,6 +197,8 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
             ry = rx * (1.0 - 0.85 * blink)
             if eyes == "tired" or expr == "angry":
                 ry *= 0.78
+            if expr == "warm":
+                ry *= 0.86
             if eyes == "mirror":   # the same box as a round eye's outline, so never bigger; black to the edge
                 _ellipse(d, cx, ey, rx, max(2, ry), fill=MIRROR_BLACK, outline=MIRROR_BLACK, width=th)
             else:

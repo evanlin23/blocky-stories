@@ -58,8 +58,8 @@ lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
 # hears "At three" as "Night three" and "slept two" as "slept too" (same sounds): the story's "homophones" below ask
 # `asr` to forgive those, and the lines Whisper dropped words from are slowed or given a breath in their spoken text
 # (the captions don't change)
-TEMPO = {"L32": 0.8, "L68": 0.8}
-SPOKEN = {("L32", "At THREE,"): "At, three,", ("L51", "Its flat face"): "Its, flat face",
+TEMPO = {"L68": 0.8}
+SPOKEN = {("L51", "Its flat face"): "Its, flat face",
           ("L68", "ASLEEP,"): "Fast asleep,", ("L16", "torch in my HAND,"): "torch, in my hand,"}
 for ln in lines:
     if ln["id"] in TEMPO:
@@ -148,7 +148,7 @@ def POV(n, tgt, lens, push=0):
 # the lamp room: the cot, the lens, the glass
 COT_FACE = still([-1.3, -1.6, LF + 1.6], [-1.3, 0.4, LF + 1.38], 32)
 COT_WIDE = still([0.4, -1.7, LF + 1.5], [-1.3, 0.3, LF + 0.9], 28)
-SOCKS = still([0.75, -1.95, LF + 0.5], [-0.3, -1.15, LF + 0.14], 26)
+SOCKS = still([0.55, -2.3, LF + 0.8], [-0.3, -1.2, LF + 0.1], 30)
 PLATE_CAM = still([0.8, 0.34, 16.34], [2.4, 0.34, 16.34], 40)
 PLATE_C = [2.365, 0.34, 16.45]
 
@@ -196,7 +196,7 @@ shot("L22", "my face lit by the phone, scared", COT_FACE)
 shot("L23", "the glow fades", COT_FACE)
 # 04 morning one
 shot("L24", "my socks on the clean boards, sand", SOCKS, hand=0.003)
-shot("L25", "through the glass: the beach far below", still([0.0, 1.8, LF + 1.7], [0.0, 180.0, LF - 3.0], 24))
+shot("L25", "through the glass: the beach far below", still([0.0, 1.8, LF + 1.7], [0.0, 66.0, -30.0], 22))
 shot("L26", "kitchen: toast", still([KX + 2.15, 0.1, 1.5], [KX, 0.1, 1.0], 24))
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
 shot("L27.1", "insert: my socks under the table", still([KX + 1.3, -0.04, 0.6], [KX, -0.1, 0.6], 36), hand=0.003)
@@ -221,9 +221,9 @@ shot("L40", "close on Ines: her eyes on my sandy socks, then me", still([KX + 0.
 # 07 night three
 shot("L41", "me in the camp bed, trying to stay awake", COT_WIDE)
 shot("L42", "buzz, glow, the rail: a coil of rope behind me", RF(5, d=2.2, lens=28))
-shot("L43", "POV: the figure on turn 2, three turns below", POV(5, [1.6, 0.0, 2 * RISE + 1.78], 42), step=1, hand=0)
-shot("L44", "tight on the crown: a round hole", POV(5, [1.6, 0.0, 2 * RISE + 1.78], 88), step=1, hand=0)
-shot("L45", "held, a slow push", POV(5, [1.6, 0.0, 2 * RISE + 1.78], 88, push=14), step=1, hand=0)
+shot("L43", "POV: the figure on turn 2, three turns below", POV(5, [1.6, 0.0, 2 * RISE + 1.78], 34), step=1, hand=0)
+shot("L44", "tight on the crown: a round hole", POV(5, [1.6, 0.0, 2 * RISE + 1.78], 56), step=1, hand=0)
+shot("L45", "held, a slow push", POV(5, [1.6, 0.0, 2 * RISE + 1.78], 56, push=8), step=1, hand=0)
 shot("L46", "straight up the well", still([0.3, 0.0, 9.4], [0.0, 0.0, 19.0], 17))
 # 08 night four (the scare)
 shot("L47", "black, a blue chill on my face, eyes opening", COT_FACE)
@@ -231,26 +231,35 @@ shot("L48", "over my shoulder at the rail: Ines's door ajar", RF(4, d=2.1, lens=
 shot("L49", "the torch cone tilting down the well",
      c([0, [1.3, 0.0, Z4 + 1.55], [-1.0, 0.0, Z4 + 1.0], 26], [1, [1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 5.6], 26]), step=1, hand=0.004)
 shot("P01", "the cone settling on the steps", still([1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 5.6], 30), step=1, hand=0.002)
-shot("L50", "POV: the Upward one turn below", still([1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.9], 22), step=1, hand=0.004)
+shot("L50", "POV: the Upward one turn below", still([1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.9], 28), step=1, hand=0.004)
 shot("L51", "tight on the crown face, the mouth wide",
-     c([0, [1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 32], [1, [1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 36]),
+     c([0, [1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 38], [1, [1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 44]),
      step=1, hand=0.004)
 shot("L52", "buzz: close on my face lit by the phone, terrified", RF(4, d=1.5, lens=32, tz=-0.3), step=1)
 shot("L53", "back to the crown face, held",
-     still([1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 36), step=1, hand=0.003)
-shot("L54", "running up, one", still([0.0, -0.3, 10.1], [0.7, 0.4, 9.6], 18), step=1)
-shot("L54.1", "running up, two", still([0.0, 0.3, 12.3], [-0.5, -0.8, 11.9], 18), step=1)
-shot("L54.2", "running up, three", still([0.0, 0.0, 14.5], [0.9, -0.8, 14.0], 18), step=1)
+     still([1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 44), step=1, hand=0.003)
+def runcam(i, az, lens=26):
+    """In the well, opposite me as I run up past tread i (azimuth az): I'm in profile, lit, mid-frame."""
+    z = i * STEP
+    a = math.radians(az)
+    loc = [round(-0.45 * math.cos(a), 3), round(-0.45 * math.sin(a), 3), round(z + 1.45, 3)]
+    return still(loc, [round(1.7 * math.cos(a), 3), round(1.7 * math.sin(a), 3), round(z + 1.35, 3)], lens)
+
+
+shot("L54", "running up, one", runcam(49, 25), step=1)
+shot("L54.1", "running up, two", runcam(62, 55), step=1)
+shot("L54.2", "running up, three", runcam(74, 55), step=1)
 shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
 shot("L55", "kitchen, flat bright daylight", still([KX + 2.15, 0.6, 1.5], [KX, 0.1, 1.15], 24))
 shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.2, 1.0], 20))
-shot("L57", "Ines says goodnight at her door, lamp on", still([-1.3, -0.6, Z4 + 1.6], [1.7, -0.45, Z4 + 1.25], 21))
+shot("L57", "Ines says goodnight at her door, lamp on, her face to camera", still([0.0, -0.75, Z4 + 1.6], [1.8, 0.0, Z4 + 1.48], 44), hand=0.003)
 shot("L58", "me in the camp bed, listening", COT_WIDE)
 shot("L59", "the lamp room in the dark, rain settling", still([0.5, -2.0, LF + 1.8], [-0.8, 0.5, LF + 1.0], 22), rain=True)
 # 10 dawn
 SIT_ME, YAW_ME, SEAT_ME = sit_at(42)
 SIT_IN, YAW_IN, SEAT_IN = sit_at(40)
+SIT_IN2, YAW_IN2, SEAT_IN2 = sit_at(41)
 shot("L60", "gold sun rises on my face, eyes open", still(local(SEAT_ME, YAW_ME, 1.7, -0.1, 1.2), local(SEAT_ME, YAW_ME, 0, 0, 0.92), 30))
 shot("L61", "wider: me slumped on a step in the sun", still(local(SEAT_ME, YAW_ME, 3.0, 0.9, 1.6), local(SEAT_ME, YAW_ME, 0, 0, 0.8), 24))
 shot("L62", "below her door, open, the room empty", still([-1.5, -0.2, 8.4], [2.3, 0.6, 9.6], 24))
@@ -260,11 +269,16 @@ shot("L64", "her coat over my feet", still(local(SEAT_ME, YAW_ME, 0.9, 0.9, 0.9)
 shot("L65", "high: me, Ines, the stair winding down", still([-0.2, -0.4, 10.4], [-1.9, 1.2, 6.8], 22))
 shot("L66", "POV down the sunlit well: empty", still([-0.8, -0.9, 8.7], [0.0, 1.8, 0.2], 24), hand=0.004)
 shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 1.7, -0.3, 1.3), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 32))
-shot("L68", "memory: me walking down asleep",
-     c([0, [0.2, -0.9, 8.2], [-1.6, 0.4, 7.9], 22], [1, [0.2, -0.9, 8.2], [-1.6, 0.4, 7.9], 22]), hand=0.004)
-shot("L69", "memory: the Upward on the step below the sleeping me",
-     still([0.1, 0.4, 9.6], [-0.85, 1.47, 7.0 + 1.0], 28), hand=0.004)
-shot("L70", "memory: from Ines's door gap, me walking past", still([1.95, 0.95, Z4 + 1.5], [1.45, -0.4, Z4 + 1.25], 28))
+def up(p, dz):
+    return [p[0], p[1], round(p[2] + dz, 3)]
+
+
+shot("L68", "memory: me walking down asleep, eyes shut, toward camera",
+     still(up(tread(39.2, 1.45), 1.55), up(tread(42.0, 1.7), 1.45), 36), hand=0.004)
+shot("L69", "memory: the Upward's crown face below the sleeping me",
+     still([0.3, 0.5, 10.5], [-1.15, 1.15, 8.9], 18), hand=0.004)
+shot("L70", "memory: me walking past her blue door, eyes shut",
+     still(up(tread(45.3, 1.35), 1.55), up(tread(48.3, 1.7), 1.4), 34), hand=0.004)
 shot("L71", "memory: Ines frightened, phone glow", still([0.1, 0.55, Z4 + 1.55], [2.0, 0.55, Z4 + 1.4], 30))
 shot("L72", "memory: Ines worried and soft, me waking at the rail", still([-0.3, 0.0, Z4 + 1.6], [1.9, 0.0, Z4 + 1.3], 26))
 shot("L73", "dawn: Ines asleep in the blanket in the sun",
@@ -272,7 +286,7 @@ shot("L73", "dawn: Ines asleep in the blanket in the sun",
 shot("L74", "Ines opens her eyes, a small smile, lifts her phone",
      still(local(SEAT_IN, YAW_IN, 1.8, 0.0, 1.3), local(SEAT_IN, YAW_IN, 0, 0, 0.9), 32))
 shot("L75", "close on me grinning at my phone", still(local(SEAT_ME, YAW_ME, 1.7, 0.0, 1.3), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 32))
-shot("L76", "two-shot from above in full sun", still([0.3, -0.2, 9.9], [-1.7, 1.0, 6.9], 24))
+shot("L76", "two-shot across the well in full sun: both faces", still([0.6, -0.5, 9.0], [-2.1, 0.6, 8.7], 40))
 
 shots = []
 rain_shots = []
@@ -381,23 +395,23 @@ walk("me", "L54.2+0.9", tread(76, 1.9))
 hide("me", "L54.3")
 put("me", "L55", SEAT_K(-0.75), yaw=180, sit=True, expr="worried", head=[0, 8])
 key("me", "L56", head=[0, 8])
-put("me", "L57", tread(47, 1.6), yaw=180, expr="worried")
+hide("me", "L57")
 put("me", "L58", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-4, head=[0, 8], expr="wide", blink=False)
 put("me", "L59", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-8, head=[0, 10], expr="asleep", blink=False)
 put("me", "L60", SIT_ME, yaw=YAW_ME, sit=True, lean=8, head=[0, 18], expr="asleep", blink=False)
 key("me", "L60+0.9", expr="wide", head=[0, 8], blend=0.3)
 key("me", "L61", expr="worried", blend=0.2)
 key("me", "L67", expr="wide", head=[24, 26], blend=0.4)
-put("me", "L68", tread(44, 1.7), yaw=yaw_to(tread(44), tread(43)), arms=[78, 78], expr="shut", blink=False)
-walk("me", "L68>", tread(41, 1.7), arms=[78, 78])
+put("me", "L68", tread(44, 1.7), yaw=yaw_to(tread(44), tread(43)), arms=[70, 70], expr="shut", blink=False)
+walk("me", "L68>", tread(41.2, 1.7), arms=[70, 70])
 put("me", "L69", tread(41, 1.7), yaw=yaw_to(tread(41), tread(40)), arms=[78, 78], expr="shut", blink=False)
-put("me", "L70", tread(47, 1.7), yaw=yaw_to(tread(47), tread(49)), arms=[78, 78], expr="shut", blink=False)
-walk("me", "L70>", tread(49, 1.7), arms=[78, 78])
+put("me", "L70", tread(50, 1.7), yaw=yaw_to(tread(50), tread(49)), arms=[70, 70], expr="shut", blink=False)
+walk("me", "L70>", tread(46.5, 1.7), arms=[70, 70])
 put("me", "L72", tread(47, 1.55), yaw=FACE_IN - 20, expr="shut", blink=False, lean=8, head=[0, 20])
 key("me", "L72.2", expr="wide", blend=0.2)
 put("me", "L73", SIT_ME, yaw=YAW_ME, sit=True, lean=8, head=[0, 10], expr="worried")
-put("me", "L75", SIT_ME, yaw=YAW_ME, sit=True, lean=4, head=[0, 28], arms=[40, 40], expr="grin")
-key("me", "L76", head=[10, 12], expr="grin")
+put("me", "L75", SIT_ME, yaw=YAW_ME, sit=True, lean=4, head=[0, 24], arms=[40, 40], expr="warm")
+key("me", "L76", head=[14, 6], expr="warm")
 
 # Ines
 hide("ines", 0)
@@ -426,7 +440,7 @@ put("ines", "L56", SEAT_K(0.95), yaw=0, sit=True, expr="neutral", head=[0, 6])
 key("ines", "L56.1", sit=False, blend=0.1)
 walk("ines", "L56.1+0.7", [KX + 0.62, -0.15, 0])
 put("ines", "L56.1+0.75", [KX + 0.62, -0.55, -0.06], yaw=180, sit=True, expr="neutral", head=[0, 6])
-put("ines", "L57", [1.8, 0.0, Z4], yaw=yaw_to([1.8, 0.0], tread(47, 1.6)), expr="soft", head=[0, 4], arms=[0, 0])
+put("ines", "L57", [1.8, 0.0, Z4], yaw=yaw_to([1.8, 0.0], [0.0, -0.75]), expr="warm", head=[0, 2], arms=[30, 30])
 hide("ines", "L58")
 put("ines", "L62", [2.0, 0.0, Z4], yaw=FACE_IN, expr="neutral")
 hide("ines", "L62+0.2")
@@ -440,7 +454,7 @@ put("ines", "L73", SIT_IN, yaw=YAW_IN, sit=True, expr="asleep", blink=False, hea
 key("ines", "L74", expr="smirk", blend=0.2)
 key("ines", "L74.1", arms=[0, 70], blend=0.3)
 put("ines", "L75", SIT_IN, yaw=YAW_IN, sit=True, expr="smirk", arms=[0, 70], head=[0, 8])
-key("ines", "L76", expr="grin", head=[0, 10])
+put("ines", "L76", SIT_IN2, yaw=YAW_IN2, sit=True, expr="warm", arms=[0, 70], head=[-16, 8])
 talk("ines", "L76.1", "L76>")
 
 # ---------------------------------------------------------------------------------------------------- cues
@@ -456,12 +470,14 @@ cues = [
     {"at": "L31", "name": "mode", "set": "night", "dur": 0.8},
     {"at": "L38", "name": "mode", "set": "day", "dur": 0.8},
     {"at": "L41", "name": "mode", "set": "night", "dur": 0.8},
+    {"at": "L54", "name": "mode", "set": "run", "dur": 0.3},
+    {"at": "L54.3", "name": "mode", "set": "night", "dur": 0.3},
     {"at": "L55", "name": "mode", "set": "day", "dur": 0.8},
     {"at": "L57", "name": "mode", "set": "doorlamp", "dur": 0.6},
     {"at": "L58", "name": "mode", "set": "night", "dur": 0.6},
     {"at": "L60", "name": "mode", "set": "gold", "dur": 2.0},
     {"at": "L68", "name": "mode", "set": "memory", "dur": 0.8},
-    {"at": "L73", "name": "mode", "set": "gold", "dur": 0.9},
+    {"at": "L72.2", "name": "mode", "set": "gold", "dur": 1.6},
     # the phone: the glow comes on over 0.5 s, fades over 0.6 s
     {"at": 0.0, "name": "phone", "on": 1.9, "dur": 0.4, "pos": [-1.3, 0.2, LF + 0.98], "color": "#cfe9e0"},
     {"at": "L02", "name": "phone", "on": 0.0, "dur": 0.0},
@@ -539,6 +555,8 @@ cues = [
     {"at": "L54", "name": "clear", "az": None},
     {"at": "L54.3", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L55", "name": "clear", "az": None},
+    {"at": "L57", "name": "clear", "az": 0, "span": 0, "z0": 99, "z1": 99, "rails": [Z4 - 0.5, Z4 + 1.8], "rail_span": 75},
+    {"at": "L58", "name": "clear", "az": None},
     {"at": "L66", "name": "clear", "az": 90, "span": 40, "z0": 0.8, "z1": 7.0},
     {"at": "L67", "name": "clear", "az": None},
     # the bolt, Ines's door, the sand, the coat and the blanket
@@ -613,10 +631,10 @@ sfx = [
 
 story = {
     "slug": "ep28-lamp-room",
-    "title": "Who was on the lighthouse stairs every night?",
+    "title": "Every night in the lighthouse, her text asked who was on the stairs.",
     "made_for_kids": False,
     "premise": "On a first trip away together, a month in, Ines and I rent an old lighthouse for a stormy February week. She sleeps halfway up and I sleep in the lamp room at the top. Every night her text wakes me and I'm at the stair rail, and at the foot of the stairs a figure in a yellow oilskin looks straight up at me with its face on the top of its head. Each night it's nearer.",
-    "twist": "The one on the stairs was me. I sleepwalk a turn further down toward the storm door every night while the oilskin figure comes up a turn to stand in my way, and Ines has been texting only to wake me. The last text, her old question as a joke, is answered with one word: us.",
+    "twist": "The one on the stairs was me. I sleepwalk a turn further down toward the storm door every night while the oilskin figure comes up a turn each time I come down, and Ines has been texting only to wake me. The last text, her old question as a joke, is answered with one word: us.",
     "world": "a whitewashed lighthouse let as a cottage on a grassy sea cliff in a February storm: a tight stone spiral stair round a deep well, an iron rail, a sea-blue bedroom door halfway up, the dead lens in the glass lamp room at the top",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#6fe3c8",
@@ -627,8 +645,8 @@ story = {
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.025, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
-    "phonemes": {"Ines": "inˈɛs", "At": "ˈæt"},
-    "homophones": {"too": "two", "night": "at"},
+    "phonemes": {"Ines": "inˈɛs"},
+    "homophones": {"too": "two"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

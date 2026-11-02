@@ -1,9 +1,9 @@
 {
  "slug": "ep28-lamp-room",
- "title": "Who was on the lighthouse stairs every night?",
+ "title": "Every night in the lighthouse, her text asked who was on the stairs.",
  "made_for_kids": false,
  "premise": "On a first trip away together, a month in, Ines and I rent an old lighthouse for a stormy February week. She sleeps halfway up and I sleep in the lamp room at the top. Every night her text wakes me and I'm at the stair rail, and at the foot of the stairs a figure in a yellow oilskin looks straight up at me with its face on the top of its head. Each night it's nearer.",
- "twist": "The one on the stairs was me. I sleepwalk a turn further down toward the storm door every night while the oilskin figure comes up a turn to stand in my way, and Ines has been texting only to wake me. The last text, her old question as a joke, is answered with one word: us.",
+ "twist": "The one on the stairs was me. I sleepwalk a turn further down toward the storm door every night while the oilskin figure comes up a turn each time I come down, and Ines has been texting only to wake me. The last text, her old question as a joke, is answered with one word: us.",
  "world": "a whitewashed lighthouse let as a cottage on a grassy sea cliff in a February storm: a tight stone spiral stair round a deep well, an iron rail, a sea-blue bedroom door halfway up, the dead lens in the glass lamp room at the top",
  "voice": {
   "voice": "am_adam",
@@ -53,12 +53,10 @@
   "S70"
  ],
  "phonemes": {
-  "Ines": "inˈɛs",
-  "At": "ˈæt"
+  "Ines": "inˈɛs"
  },
  "homophones": {
-  "too": "two",
-  "night": "at"
+  "too": "two"
  },
  "cast": {
   "me": {
@@ -778,15 +776,18 @@
    "who": "narrator",
    "chunks": [
     [
-     "At THREE,",
-     "At, three,"
+     "Three in",
+     "Three in"
+    ],
+    [
+     "the MORNING,",
+     "the morning,"
     ],
     [
      "my phone BUZZED.",
      "my phone buzzed."
     ]
-   ],
-   "tempo": 0.8
+   ]
   },
   {
    "id": "L33",
@@ -1502,16 +1503,16 @@
      "came up"
     ],
     [
-     "a turn,",
-     "a turn,"
+     "a turn",
+     "a turn"
     ],
     [
-     "to stand",
-     "to stand"
+     "every time",
+     "every time"
     ],
     [
-     "in my WAY.",
-     "in my way."
+     "I came DOWN.",
+     "I came down."
     ]
    ]
   },
@@ -2305,16 +2306,16 @@
     [
      0,
      [
-      0.75,
-      -1.95,
-      18.3
+      0.55,
+      -2.3,
+      18.6
      ],
      [
       -0.3,
-      -1.15,
-      17.94
+      -1.2,
+      17.900000000000002
      ],
-     26
+     30
     ]
    ],
    "hand": 0.003,
@@ -2334,10 +2335,10 @@
      ],
      [
       0.0,
-      180.0,
-      14.8
+      66.0,
+      -30.0
      ],
-     24
+     22
     ]
    ],
    "hand": 0.008,
@@ -2733,16 +2734,16 @@
     [
      0,
      [
-      0.75,
-      -1.95,
-      18.3
+      0.55,
+      -2.3,
+      18.6
      ],
      [
       -0.3,
-      -1.15,
-      17.94
+      -1.2,
+      17.900000000000002
      ],
-     26
+     30
     ]
    ],
    "hand": 0.003,
@@ -2857,7 +2858,7 @@
       0.0,
       6.180000000000001
      ],
-     42
+     34
     ]
    ],
    "hand": 0,
@@ -2880,7 +2881,7 @@
       0.0,
       6.180000000000001
      ],
-     88
+     56
     ]
    ],
    "hand": 0,
@@ -2903,7 +2904,7 @@
       0.0,
       6.180000000000001
      ],
-     88
+     56
     ],
     [
      1,
@@ -2917,7 +2918,7 @@
       0.0,
       6.180000000000001
      ],
-     102
+     64
     ]
    ],
    "hand": 0,
@@ -3069,7 +3070,7 @@
       0.0,
       8.5
      ],
-     22
+     28
     ]
    ],
    "hand": 0.004,
@@ -3092,7 +3093,7 @@
       0.0,
       8.38
      ],
-     32
+     38
     ],
     [
      1,
@@ -3106,7 +3107,7 @@
       0.0,
       8.38
      ],
-     36
+     44
     ]
    ],
    "hand": 0.004,
@@ -3152,7 +3153,7 @@
       0.0,
       8.38
      ],
-     36
+     44
     ]
    ],
    "hand": 0.003,
@@ -3166,16 +3167,16 @@
     [
      0,
      [
-      0.0,
-      -0.3,
-      10.1
+      -0.408,
+      -0.19,
+      10.433
      ],
      [
-      0.7,
-      0.4,
-      9.6
+      1.541,
+      0.718,
+      10.333
      ],
-     18
+     26
     ]
    ],
    "hand": 0.008,
@@ -3189,16 +3190,16 @@
     [
      0,
      [
-      0.0,
-      0.3,
-      12.3
+      -0.258,
+      -0.369,
+      12.817
      ],
      [
-      -0.5,
-      -0.8,
-      11.9
+      0.975,
+      1.393,
+      12.717
      ],
-     18
+     26
     ]
    ],
    "hand": 0.008,
@@ -3212,16 +3213,16 @@
     [
      0,
      [
-      0.0,
-      0.0,
-      14.5
+      -0.258,
+      -0.369,
+      15.017
      ],
      [
-      0.9,
-      -0.8,
-      14.0
+      0.975,
+      1.393,
+      14.917
      ],
-     18
+     26
     ]
    ],
    "hand": 0.008,
@@ -3304,21 +3305,21 @@
     [
      0,
      [
-      -1.3,
-      -0.6,
+      0.0,
+      -0.75,
       10.4
      ],
      [
-      1.7,
-      -0.45,
-      10.05
+      1.8,
+      0.0,
+      10.280000000000001
      ],
-     21
+     44
     ]
    ],
-   "hand": 0.008,
+   "hand": 0.003,
    "step": 2,
-   "what": "Ines says goodnight at her door, lamp on",
+   "what": "Ines says goodnight at her door, lamp on, her face to camera",
    "at": "L57"
   },
   {
@@ -3557,35 +3558,21 @@
     [
      0,
      [
-      0.2,
-      -0.9,
-      8.2
+      -0.152,
+      1.442,
+      8.737
      ],
      [
-      -1.6,
-      0.4,
-      7.9
+      -1.7,
+      0.0,
+      9.15
      ],
-     22
-    ],
-    [
-     1,
-     [
-      0.2,
-      -0.9,
-      8.2
-     ],
-     [
-      -1.6,
-      0.4,
-      7.9
-     ],
-     22
+     36
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "memory: me walking down asleep",
+   "what": "memory: me walking down asleep, eyes shut, toward camera",
    "at": "L68"
   },
   {
@@ -3594,21 +3581,21 @@
     [
      0,
      [
-      0.1,
-      0.4,
-      9.6
+      0.3,
+      0.5,
+      10.5
      ],
      [
-      -0.85,
-      1.47,
-      8.0
+      -1.15,
+      1.15,
+      8.9
      ],
-     28
+     18
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "memory: the Upward on the step below the sleeping me",
+   "what": "memory: the Upward's crown face below the sleeping me",
    "at": "L69"
   },
   {
@@ -3617,21 +3604,21 @@
     [
      0,
      [
-      1.95,
-      0.95,
-      10.3
+      0.211,
+      -1.333,
+      9.855
      ],
      [
-      1.45,
-      -0.4,
-      10.05
+      1.679,
+      0.266,
+      10.255
      ],
-     28
+     34
     ]
    ],
-   "hand": 0.008,
+   "hand": 0.004,
    "step": 2,
-   "what": "memory: from Ines's door gap, me walking past",
+   "what": "memory: me walking past her blue door, eyes shut",
    "at": "L70"
   },
   {
@@ -3755,21 +3742,21 @@
     [
      0,
      [
-      0.3,
-      -0.2,
-      9.9
+      0.6,
+      -0.5,
+      9.0
      ],
      [
-      -1.7,
-      1.0,
-      6.9
+      -2.1,
+      0.6,
+      8.7
      ],
-     24
+     40
     ]
    ],
    "hand": 0.008,
    "step": 2,
-   "what": "two-shot from above in full sun",
+   "what": "two-shot across the well in full sun: both faces",
    "at": "L76"
   }
  ],
@@ -4890,46 +4877,15 @@
    },
    {
     "at": "L57",
-    "pos": [
-     40.0,
-     -0.75,
-     -0.06
-    ]
-   },
-   {
-    "at": "L57",
-    "pos": [
-     1.386,
-     -0.8,
-     8.617
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "sit": false,
-    "blink": true,
-    "expr": "worried",
-    "yaw": 180
+    "hidden": true,
+    "blend": 0
    },
    {
     "at": "L58",
     "pos": [
-     1.386,
-     -0.8,
-     8.617
+     40.0,
+     -0.75,
+     -0.06
     ]
    },
    {
@@ -5073,8 +5029,8 @@
     "blend": 0,
     "hidden": false,
     "arms": [
-     78,
-     78
+     70,
+     70
     ],
     "side": [
      0,
@@ -5094,21 +5050,21 @@
    {
     "at": "L68>",
     "pos": [
-     -1.472,
-     0.85,
-     7.517
+     -1.553,
+     0.691,
+     7.553
     ],
     "arms": [
-     78,
-     78
+     70,
+     70
     ]
    },
    {
     "at": "L69",
     "pos": [
-     -1.472,
-     0.85,
-     7.517
+     -1.553,
+     0.691,
+     7.553
     ]
    },
    {
@@ -5150,15 +5106,15 @@
    {
     "at": "L70",
     "pos": [
+     0.85,
      1.472,
-     -0.85,
-     8.617
+     9.167
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     78,
-     78
+     70,
+     70
     ],
     "side": [
      0,
@@ -5173,26 +5129,26 @@
     "sit": false,
     "blink": false,
     "expr": "shut",
-    "yaw": 180.0
+    "yaw": 45.0
    },
    {
     "at": "L70>",
     "pos": [
-     1.472,
-     0.85,
-     8.983
+     1.202,
+     -1.202,
+     8.525
     ],
     "arms": [
-     78,
-     78
+     70,
+     70
     ]
    },
    {
     "at": "L72",
     "pos": [
-     1.472,
-     0.85,
-     8.983
+     1.202,
+     -1.202,
+     8.525
     ]
    },
    {
@@ -5291,22 +5247,22 @@
     ],
     "head": [
      0,
-     28
+     24
     ],
     "lean": 4,
     "tremble": 0,
     "sit": true,
     "blink": true,
-    "expr": "grin",
+    "expr": "warm",
     "yaw": 90.0
    },
    {
     "at": "L76",
     "head": [
-     10,
-     12
+     14,
+     6
     ],
-    "expr": "grin"
+    "expr": "warm"
    }
   ],
   "ines": [
@@ -5779,8 +5735,8 @@
     "blend": 0,
     "hidden": false,
     "arms": [
-     0,
-     0
+     30,
+     30
     ],
     "side": [
      0,
@@ -5788,14 +5744,14 @@
     ],
     "head": [
      0,
-     4
+     2
     ],
     "lean": 0,
     "tremble": 0,
     "sit": false,
     "blink": true,
-    "expr": "soft",
-    "yaw": -27.4
+    "expr": "warm",
+    "yaw": -67.4
    },
    {
     "at": "L58",
@@ -6053,11 +6009,39 @@
    },
    {
     "at": "L76",
-    "expr": "grin",
-    "head": [
-     0,
-     10
+    "pos": [
+     -1.163,
+     2.015,
+     6.823
     ]
+   },
+   {
+    "at": "L76",
+    "pos": [
+     -2.012,
+     1.162,
+     7.007
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     70
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     -16,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "sit": true,
+    "blink": true,
+    "expr": "warm",
+    "yaw": 60.0
    },
    {
     "from": "L76.1",
@@ -6113,6 +6097,18 @@
    "dur": 0.8
   },
   {
+   "at": "L54",
+   "name": "mode",
+   "set": "run",
+   "dur": 0.3
+  },
+  {
+   "at": "L54.4",
+   "name": "mode",
+   "set": "night",
+   "dur": 0.3
+  },
+  {
    "at": "L55",
    "name": "mode",
    "set": "day",
@@ -6143,10 +6139,10 @@
    "dur": 0.8
   },
   {
-   "at": "L73",
+   "at": "L72.2",
    "name": "mode",
    "set": "gold",
-   "dur": 0.9
+   "dur": 1.6
   },
   {
    "at": 0.0,
@@ -6984,6 +6980,24 @@
   },
   {
    "at": "L55",
+   "name": "clear",
+   "az": null
+  },
+  {
+   "at": "L57",
+   "name": "clear",
+   "az": 0,
+   "span": 0,
+   "z0": 99,
+   "z1": 99,
+   "rails": [
+    8.3,
+    10.600000000000001
+   ],
+   "rail_span": 75
+  },
+  {
+   "at": "L58",
    "name": "clear",
    "az": null
   },

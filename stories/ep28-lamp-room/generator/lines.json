@@ -552,8 +552,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "At THREE,",
-    "At three,"
+    "Three in the MORNING,",
+    "Three in the morning,"
    ],
    [
     "my phone BUZZED.",
@@ -1159,12 +1159,16 @@
     "And that thing"
    ],
    [
-    "came UP a turn,",
-    "came up a turn,"
+    "came UP a turn",
+    "came up a turn"
    ],
    [
-    "to stand in my WAY.",
-    "to stand in my way."
+    "every time",
+    "every time"
+   ],
+   [
+    "I came DOWN.",
+    "I came down."
    ]
   ]
  },

@@ -102,6 +102,13 @@ def pbr(kit, name, hexc, rough=0.6, metal=0.0, spec=0.4, noise=None, emit=None):
     return m
 
 
+def unfog(m):
+    """Route the BSDF straight to the output (the far beach and sea shouldn't vanish into the distance fog)."""
+    nt = m.node_tree
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    nt.links.new(nt.nodes["Principled BSDF"].outputs[0], out.inputs["Surface"])
+
+
 def materials(kit):
     M = {}
     M["white"] = pbr(kit, "whitewash", "#e6e1d6", 0.85, noise=(2.5, 0.8))
@@ -117,8 +124,10 @@ def materials(kit):
     M["scratch"] = pbr(kit, "oilskin scratch", "#f0bd30", 0.35)
     M["grass"] = pbr(kit, "grass", "#3a4a2e", 0.95, noise=(1.2, 0.6))
     M["rock"] = pbr(kit, "cliff rock", "#4a4540", 0.95, noise=(0.5, 0.6))
-    M["beach"] = pbr(kit, "beach", "#a89a78", 0.95)
-    M["sea"] = pbr(kit, "sea", "#243444", 0.35)
+    M["beach"] = pbr(kit, "beach", "#c2b48c", 0.95)
+    M["sea"] = pbr(kit, "sea", "#3c5a70", 0.35)
+    unfog(M["beach"])
+    unfog(M["sea"])
     M["dark"] = pbr(kit, "dark room", "#07090c", 0.9)
     M["rope"] = pbr(kit, "rope", "#b59a6a", 0.9, noise=(30.0, 0.6))
     M["wool"] = pbr(kit, "cot blanket", "#5c6b5a", 0.9, noise=(15.0, 0.7))
@@ -436,8 +445,8 @@ def build_ground(kit, ctx, M):
     # the cliff top (grass), the cliff to the north, the beach far below and the sea beyond
     kit.plane("grass", (160, 90), (0, -21, -0.02), M["grass"])
     kit.box("cliff", (160, 0.5, 30), (0, 24.2, -15), M["rock"])
-    kit.plane("beach", (400, 24), (0, 180, -30.2), M["beach"])
-    kit.plane("sea", (800, 500), (0, 270, -30.4), M["sea"])
+    kit.plane("beach", (400, 46), (0, 47.5, -30.2), M["beach"])
+    kit.plane("sea", (800, 500), (0, 320, -30.4), M["sea"])
     # a gravel path from the foot door
     kit.plane("path", (2.2, 12), (0, 8, 0.0), pbr(kit, "path", "#6b665c", 0.95), rot=(0, 0, 0))
     # two bags for the arrival (S04)
@@ -532,25 +541,41 @@ def crown_image(path, mouth):
     d = ImageDraw.Draw(im)
     ink = (10, 7, 7)
     for sx in (-1, 1):
-        ex, ey = c + sx * 0.36 * R, c - 0.2 * R
-        er = 0.31 * R
-        d.ellipse([ex - er - 0.035 * R, ey - er * 1.1 - 0.035 * R, ex + er + 0.035 * R, ey + er * 1.1 + 0.035 * R], fill=ink)
-        d.ellipse([ex - er, ey - er * 1.1, ex + er, ey + er * 1.1], fill=(236, 232, 214))
-        # a lid's shadow over the top of the white
+        ex, ey = c + sx * 0.36 * R, c - 0.14 * R
+        er = 0.3 * R
+        ry = er * 0.92
+        # the eye: a wide cream white, a hair-thin edge (no heavy black ring), a small pupil low in the white
+        d.ellipse([ex - er - 0.012 * R, ey - ry - 0.012 * R, ex + er + 0.012 * R, ey + ry + 0.012 * R], fill=(34, 24, 18))
+        d.ellipse([ex - er, ey - ry, ex + er, ey + ry], fill=(238, 233, 214))
+        pr = 0.06 * R
+        d.ellipse([ex - pr, ey + 0.1 * R - pr, ex + pr, ey + 0.1 * R + pr], fill=ink)
+        # the upper lid hangs low over the white: opaque skin shadow with a hard edge, the inner end lower (a heavy, hooded look)
+        def lid_y(x, drop=0.0):
+            return ey - 0.0 * R + drop * R + 0.1 * (-sx) * (x - ex)
+        poly = [(ex - 1.3 * er, ey - 1.6 * er), (ex + 1.3 * er, ey - 1.6 * er), (ex + 1.3 * er, lid_y(ex + 1.3 * er)),
+                (ex - 1.3 * er, lid_y(ex - 1.3 * er))]
         lid = Image.new("L", (n, n), 0)
-        ImageDraw.Draw(lid).ellipse([ex - er * 1.2, ey - er * 1.9, ex + er * 1.2, ey - er * 0.35], fill=150)
-        lid = lid.filter(ImageFilter.GaussianBlur(10))
+        ImageDraw.Draw(lid).polygon(poly, fill=255)
         eye = Image.new("L", (n, n), 0)
-        ImageDraw.Draw(eye).ellipse([ex - er, ey - er * 1.1, ex + er, ey + er * 1.1], fill=255)
-        im.paste(Image.new("RGB", (n, n), (90, 70, 58)), (0, 0), Image.fromarray(np.minimum(np.asarray(lid), np.asarray(eye)).astype(np.uint8)))
+        ImageDraw.Draw(eye).ellipse([ex - er - 0.012 * R, ey - ry - 0.012 * R, ex + er + 0.012 * R, ey + ry + 0.012 * R], fill=255)
+        m = Image.fromarray(np.minimum(np.asarray(lid), np.asarray(eye)).astype(np.uint8))
+        im.paste(Image.new("RGB", (n, n), (44, 31, 24)), (0, 0), m)
         d = ImageDraw.Draw(im)
-        pr = 0.055 * R
-        d.ellipse([ex - pr, ey - pr, ex + pr, ey + pr], fill=ink)
+        d.line([(ex - 1.1 * er, lid_y(ex - 1.1 * er)), (ex + 1.1 * er, lid_y(ex + 1.1 * er))], fill=(14, 9, 7), width=max(2, int(0.01 * R)))
+    # the mouth: a dark hole with no outline, ragged and a little soft at the edge, opening wider each sighting
     my = c + 0.5 * R
-    sizes = [(0.04, 0.05), (0.07, 0.1), (0.12, 0.26), (0.2, 0.4)]
+    sizes = [(0.04, 0.05), (0.07, 0.11), (0.15, 0.24), (0.3, 0.32)]
     mw, mh = sizes[max(0, min(3, int(mouth)))]
-    d.ellipse([c - (mw + 0.03) * R, my - (mh + 0.03) * R, c + (mw + 0.03) * R, my + (mh + 0.03) * R], fill=(48, 26, 20))
-    d.ellipse([c - mw * R, my - mh * R, c + mw * R, my + mh * R], fill=(2, 1, 2))
+    r2 = np.random.default_rng(11)
+    pts = []
+    for i in range(48):
+        a_ = 2 * math.pi * i / 48
+        j = 1.0 + 0.04 * r2.standard_normal()
+        pts.append((c + math.cos(a_) * mw * R * j, my + math.sin(a_) * mh * R * j))
+    hole = Image.new("L", (n, n), 0)
+    ImageDraw.Draw(hole).polygon(pts, fill=255)
+    hole = hole.filter(ImageFilter.GaussianBlur(4))
+    im.paste(Image.new("RGB", (n, n), (3, 2, 3)), (0, 0), hole)
     im.save(path)
 
 
@@ -665,9 +690,12 @@ def build_lights(kit, ctx):
 
 # mode -> {group: (gain, colour or None)}, "exp" the scene exposure, "pane": (colour, strength), "world": strength
 MODES = {
-    "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (6.0, None),
+    "run": {"win": (1.2, "#7c9ad0"), "shaft": (3.0, "#8aa4d0"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (0.5, None),
+            "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
+            "cot": (1.0, None), "exp": 0.5, "pane": ("#1e2c40", 0.5), "world": 0.4},
+    "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (12.0, None),
                  "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
-                 "cot": (1.0, None), "exp": 0.8, "pane": ("#1e2c40", 0.5), "world": 0.4},
+                 "cot": (1.0, None), "exp": 1.2, "pane": ("#1e2c40", 0.5), "world": 0.4},
     "night": {"win": (0.25, "#4a6aa0"), "shaft": (0.5, None), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (0.5, None),
               "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
               "cot": (1.0, None), "exp": 0.0, "pane": ("#1e2c40", 0.5), "world": 0.4},
@@ -789,14 +817,30 @@ def _dress(kit, story, ctx):
         return
     ctx["dressed"] = True
     sand = [[], [], []]
+    import random
+    rng = random.Random(28)
     for sx in (-1, 1):
         leg = bpy.data.objects[f"me.leg{sx}"]
         kit.box(f"me.sock{sx}", (1.0, 1.04, 0.78), (0, 0, -1.47), M["sock"], leg, bevel=0.1)
-        # sand: level 1 a little at the heel, 2 the soles grey, 3 more and up the sides
-        for size, loc, lv in (((1.07, 1.1, 0.4), (0, 0, -1.86), 0), ((1.08, 1.12, 0.7), (0, 0, -1.7), 1),
-                              ((1.09, 1.14, 1.0), (0, 0, -1.55), 2)):
-            ob = kit.box(f"me.sand{sx}_{lv}", size, loc, M["sand"], leg, bevel=0.03)
-            sand[lv].append(ob)
+        # the foot itself: a sock with a toe that sticks out in front
+        kit.box(f"me.sockfoot{sx}", (1.0, 1.56, 0.36), (0, -0.28, -1.83), M["sock"], leg, bevel=0.14)
+        kit.box(f"me.sockheel{sx}", (1.0, 0.3, 0.5), (0, 0.4, -1.74), M["sock"], leg, bevel=0.1)
+
+        def clumps(lv, k, xr, yr, z, big=(0.14, 0.3), tall=(0.07, 0.13)):
+            for q in range(k):
+                w = rng.uniform(*big)
+                ob = kit.box(f"me.sand{sx}_{lv}_{q}", (w, w * rng.uniform(0.8, 1.4), rng.uniform(*tall)),
+                             (rng.uniform(*xr), rng.uniform(*yr), z), M["sand"], leg, bevel=0.03)
+                ob.rotation_euler = (0, 0, rng.uniform(0, 3))
+                sand[lv].append(ob)
+        # level 1: a little at the toe and the heel; level 2: the foot's top and sides crusted; level 3: up the ankle
+        clumps(0, 8, (-0.4, 0.4), (-0.95, -0.55), -1.62)
+        clumps(0, 3, (-0.35, 0.35), (0.3, 0.5), -1.6)
+        clumps(1, 30, (-0.42, 0.42), (-1.0, 0.45), -1.62, big=(0.16, 0.34), tall=(0.08, 0.15))
+        clumps(1, 8, (-0.5, -0.46), (-0.9, 0.4), -1.78)
+        clumps(1, 8, (0.46, 0.5), (-0.9, 0.4), -1.78)
+        clumps(2, 16, (-0.45, 0.45), (-0.5, 0.45), -1.28, big=(0.15, 0.3), tall=(0.08, 0.14))
+        clumps(2, 10, (-0.52, 0.52), (-0.48, 0.48), -1.5, big=(0.15, 0.3), tall=(0.08, 0.14))
     ctx["sand"] = sand
     # Ines: a camel coat (worn), over a flannel shirt
     if bpy.data.objects.get("ines.torso") is not None:
@@ -811,13 +855,14 @@ def _dress(kit, story, ctx):
         coat.append(kit.box("ines.coatb", (1.9, 0.2, 2.1), (0, 0.5, 1.0), M["camel"], tor, bevel=0.08))
         ctx["coat_worn"] = coat
         blk = rig.cloth({"shirt": "#6b3d3a", "pattern": "plaid", "pattern_c": "#c9b79a"}, "shirt")
-        arm = kit.box("ines.blanket arm", (0.9, 0.8, 0.55), (0.1, -0.5, -0.4), blk, bpy.data.objects["ines.arm-1"], bevel=0.08)
+        arm = kit.box("ines.blanket arm", (1.1, 1.0, 1.5), (0.1, -0.5, -0.8), blk, bpy.data.objects["ines.arm-1"], bevel=0.12)
         arm.rotation_euler = (0, 0, 0)
+        bundle = kit.box("ines.blanket bundle", (2.1, 0.95, 1.15), (0, -0.85, 0.55), blk, tor, bevel=0.14)
         wrap = [kit.box("ines.wrap torso", (2.5, 1.5, 2.3), (0, -0.02, 0.9), blk, tor, bevel=0.2),
                 kit.box("ines.wrap hood", (1.8, 0.4, 1.1), (0, 0.55, 2.6), blk, tor, bevel=0.2)]
         for sx in (-1, 1):
             wrap.append(kit.box(f"ines.wrap leg{sx}", (1.06, 1.1, 1.8), (0, 0, -0.9), blk, bpy.data.objects[f"ines.leg{sx}"], bevel=0.12))
-        ctx["blanket_arm"] = [arm]
+        ctx["blanket_arm"] = [arm, bundle]
         ctx["blanket_wrap"] = wrap
     # the coat laid over my feet, a prop in the world
     ctx["coat_feet"] = [kit.box("coat feet", (0.9, 0.5, 0.14), (0, 0, -80), M["camel"], None, bevel=0.05)]
@@ -916,7 +961,7 @@ def animate(kit, story, tl, t, ctx):
     # the faces' fill: a soft light a metre in front of each character, toward the middle of the room
     from blocky import acting as _act
     mode_a, mode_b, u_ = mode_state(tl, t)
-    fg = {"night": 1.0, "doorlamp": 1.2, "memory": 1.5, "day": 5.0, "gold": 1.6}
+    fg = {"night": 1.0, "run": 3.0, "doorlamp": 3.5, "memory": 2.5, "day": 5.0, "gold": 1.6}
     cur = _last(_cues(tl, "mode"), t)
     gain_f = fg.get(cur["set"], 1.0) if cur else 1.0
     for who, ln in (("me", "me fill"), ("ines", "ines fill")):
