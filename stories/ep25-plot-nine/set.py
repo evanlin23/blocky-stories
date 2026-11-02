@@ -40,13 +40,13 @@ TOD = {
     "day":     dict(sun=8.5, sunc="#fff0d8", fill=1.4, fillc="#b4c6ea", sky=1.5, hor="#cfd3dc", zen="#8fb0da", fogd=0.014, fogb=1.0),
     "gold":    dict(sun=8.5, sunc="#ffbf70", fill=1.4, fillc="#a5b8e6", sky=1.1, hor="#f0b88a", zen="#8aa4c8", fogd=0.016, fogb=0.95),
     "early":   dict(sun=2.8, sunc="#a8bcff", fill=1.8, fillc="#8fa6e0", sky=0.8, hor="#aeb6d8", zen="#5f78b0", fogd=0.016, fogb=0.7),
-    "fog":     dict(sun=2.6, sunc="#ffe2c0", fill=2.2, fillc="#c4cfe6", sky=1.9, hor="#c1c0c4", zen="#aab4c6", fogd=0.105, fogb=1.0),
+    "fog":     dict(sun=2.6, sunc="#ffe2c0", fill=2.2, fillc="#c4cfe6", sky=1.5, hor="#a9a8ad", zen="#98a2b4", fogd=0.075, fogb=0.8),
     "fogthin": dict(sun=5.5, sunc="#ffd9a8", fill=1.8, fillc="#c4cfe6", sky=1.5, hor="#d8c9bd", zen="#9fb2cf", fogd=0.04, fogb=1.0),
     "clear":   dict(sun=8.0, sunc="#ffe0b8", fill=1.5, fillc="#b4c6ea", sky=1.3, hor="#e6cdb8", zen="#8fb0da", fogd=0.014, fogb=1.0),
     "dusk":    dict(sun=7.0, sunc="#ff9a5e", fill=1.3, fillc="#9fb0dc", sky=1.0, hor="#e8a682", zen="#7f93c0", fogd=0.016, fogb=0.9),
     "sunrise": dict(sun=8.0, sunc="#ffc088", fill=1.4, fillc="#a5b8e6", sky=1.2, hor="#ecc0a0", zen="#8aa8d0", fogd=0.014, fogb=1.0),
     "goldend": dict(sun=9.0, sunc="#ffc47c", fill=1.4, fillc="#b0c0e8", sky=1.2, hor="#f2c49a", zen="#92acd2", fogd=0.014, fogb=1.0),
-    "night":   dict(sun=0.9, sunc="#7f98e8", fill=0.5, fillc="#6f86c8", sky=0.35, hor="#2a3350", zen="#121a30", fogd=0.012, fogb=0.28),
+    "night":   dict(sun=3.2, sunc="#8aa2f0", fill=1.4, fillc="#7f96d8", sky=0.9, hor="#3b4a76", zen="#1c2848", fogd=0.014, fogb=0.5),
 }
 SUN_DIR = V((0.88, 0.3, 0.2)).normalized()
 FILL_DIR = V((-0.7, 0.2, 0.55)).normalized()
@@ -215,7 +215,7 @@ def cracked(kit, name, base, dark, scale=3.2):
     L.new(cr.outputs["Color"], mix.inputs["B"])
     L.new(mix.outputs["Result"], b.inputs["Base Color"])
     bp = N.new("ShaderNodeBump")
-    bp.inputs["Strength"].default_value = 0.9
+    bp.inputs["Strength"].default_value = 0.3
     bp.inputs["Distance"].default_value = 0.04
     L.new(cr.outputs["Color"], bp.inputs["Height"])
     L.new(bp.outputs["Normal"], b.inputs["Normal"])
@@ -229,13 +229,14 @@ def materials(kit):
     M = {}
     M["clay"] = cracked(kit, "clay", "#a89878", "#6e5c44", 7.5)
     M["clay2"] = cracked(kit, "clay2", "#b3a384", "#74634a", 6.0)
-    M["wet"] = pbr(kit, "wet soil", "#3a2a1e", 0.3, spec=0.55, noise=(3.0, 0.6, 0.12), bump=0.4)
+    M["wet"] = pbr(kit, "wet soil", "#4c3827", 0.38, spec=0.55, noise=(3.0, 0.6, 0.12), bump=0.4)
+    M["print"] = pbr(kit, "boot print", "#a99870", 0.9)
     M["dust"] = pbr(kit, "dust path", "#cdb88c", 0.95, noise=(2.5, 0.82, 0.0), bump=0.2)
     M["grass"] = pbr(kit, "dry grass", "#8d8458", 0.95, noise=(1.8, 0.7, 0.0))
     M["verge"] = pbr(kit, "verge", "#7a7a4c", 0.95, noise=(3.5, 0.6, 0.0))
     M["board"] = kit.planks("#8a7456", "#5d4c38", 1.2, "X", name="edge boards", rough=0.85)
     M["post"] = pbr(kit, "fence wood", "#6d5d46", 0.9, noise=(4.0, 0.7, 0.0))
-    M["tar"] = kit.planks("#2c241d", "#1a1511", 1.4, "Z", name="tarred boards", rough=0.8)
+    M["tar"] = kit.planks("#52453a", "#372d25", 1.4, "Z", name="tarred boards", rough=0.8)
     M["creosote"] = kit.planks("#6a4630", "#47301f", 1.2, "Z", name="creosote boards", rough=0.78)
     M["roof"] = pbr(kit, "roof felt", "#262626", 0.9)
     M["leaf"] = pbr(kit, "bean leaf", "#4f7a3a", 0.55, spec=0.35, noise=(7.0, 0.62, 0.0))
@@ -454,7 +455,7 @@ def build_plots(kit, M, ctx):
         y -= 0.62
         k += 1
     for j in range(3):
-        kit.box(f"printT{j}", (0.12, 0.3, 0.004), (0.35 + 0.28 * j, -25.5 - 0.28 * j, 0.004), M["wet"],
+        kit.box(f"printT{j}", (0.12, 0.3, 0.004), (0.35 + 0.28 * j, -25.5 - 0.28 * j, 0.004), M["print"],
                 rot=(0, 0, math.radians(35)), bevel=0.0)
 
 
@@ -767,6 +768,7 @@ def decorate(kit, story, ctx):
             kit.box(f"{who}.welly{sx}", (1.04, 1.06, 0.9 * lo), (0, 0, -1.4 + (1 - lo) * 0.45), mat, leg, bevel=0.08)
     hg = bpy.data.objects.get("carter.headg")
     if hg is not None:
+        kit.box("carter.capbrim", (0.9, 0.3, 0.05), (0, -faces.HEAD_R - 0.08, 0.5), M["mous"] if False else M["wellid"], hg, bevel=0.02)
         kit.box("carter.mous", (0.4, 0.09, 0.09), (0, -faces.HEAD_R - 0.01, -0.15), M["mous"], hg, bevel=0.03)
         for sx in (-1, 1):
             kit.box(f"carter.mousend{sx}", (0.1, 0.08, 0.15), (sx * 0.2, -faces.HEAD_R + 0.0, -0.2), M["mous"], hg, bevel=0.03)
@@ -850,7 +852,7 @@ def animate(kit, story, tl, t, ctx):
         n.inputs["Strength"].default_value = s["fogb"] * (0.75 + 0.25 * s["sky"] / 1.5)
     night = _last(_cues(tl, "tod"), t)
     is_night = bool(night and night["set"] == "night")
-    over = {"sun": s["sun"], "char fill": s["fill"], "night glow": 4.0 if is_night else 0.0}
+    over = {"sun": s["sun"], "char fill": s["fill"], "night glow": 6.0 if is_night else 0.0}
     # ---------------------------------------------------------------- the Digger
     dg = ctx["digger"]
     c = _last(_cues(tl, "digger"), t) or {"hidden": True}
@@ -915,7 +917,7 @@ def animate(kit, story, tl, t, ctx):
         tip = can.matrix_world @ ctx["can_tip"]
         stream.location = (tip.x, tip.y, max(0.03, tip.z / 2))
         stream.scale = (1, 1, max(0.05, tip.z - 0.0))
-        tg = float(_eased(_cues(tl, "torch"), "on", t, 0.0))
+    tg = float(_eased(_cues(tl, "torch"), "on", t, 0.0))
     tor = ctx["torch"]
     f = _frame("me", "arm1", (0, 0, -1.9)) if tg > 0.001 else None
     if f:
@@ -927,7 +929,7 @@ def animate(kit, story, tl, t, ctx):
     else:
         tor.location = (0, 0, -9)
         over["torch beam"] = 0.0
-    over["shaft beam"] = 2600.0 * tg
+    over["shaft beam"] = 260.0 * tg
     sp = _last(_cues(tl, "spade"), t) or {"on": False}
     f = _frame("me", "arm1", (0, 0, -1.9)) if sp.get("on") else None
     if f:

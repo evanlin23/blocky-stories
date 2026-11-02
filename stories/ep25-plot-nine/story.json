@@ -76,9 +76,8 @@
    "shoes": "#2a2a22",
    "sleeves": "long",
    "hair": "cap",
-   "hair_c": "#a8a8a6",
-   "hat": "ballcap",
-   "hat_c": "#7b6d58",
+   "hair_c": "#7b6d58",
+   "hat": "none",
    "height": 0.97,
    "face": {
     "eyes": "tired",
@@ -194,8 +193,12 @@
      "old Mr. Carter"
     ],
     [
-     "gave me the KEY.",
-     "gave me the key."
+     "gave me",
+     "gave me"
+    ],
+    [
+     "the KEY.",
+     "the key."
     ]
    ]
   },
@@ -268,8 +271,12 @@
      "The one"
     ],
     [
-     "for his WATERING CAN.",
-     "for his watering can."
+     "for his",
+     "for his"
+    ],
+    [
+     "WATERING CAN.",
+     "watering can."
     ]
    ]
   },
@@ -278,8 +285,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "On my way OUT,",
-     "On my way out,"
+     "On my",
+     "On my"
+    ],
+    [
+     "way OUT,",
+     "way out,"
     ],
     [
      "the gate PADLOCK",
@@ -300,8 +311,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I put it DOWN",
-     "I put it down"
+     "I put",
+     "I put"
+    ],
+    [
+     "it DOWN",
+     "it down"
     ],
     [
      "to the FOG.",
@@ -320,7 +335,7 @@
     ],
     [
      "there's a HEAD",
-     "there's a head"
+     "there's a head,"
     ],
     [
      "in plot ONE,",
@@ -330,7 +345,8 @@
      "by the GATE.",
      "by the gate."
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L12",
@@ -349,8 +365,12 @@
      "sticking up"
     ],
     [
-     "out of the SOIL.",
-     "out of the soil."
+     "out of",
+     "out of"
+    ],
+    [
+     "the SOIL.",
+     "the soil."
     ]
    ]
   },
@@ -381,8 +401,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Two tiny GREEN POINTS",
-     "Two tiny green points"
+     "Two tiny",
+     "Two tiny"
+    ],
+    [
+     "GREEN POINTS",
+     "green points"
     ],
     [
      "for EYES,",
@@ -436,7 +460,8 @@
      "in a DROUGHT.",
      "in a drought."
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L17",
@@ -451,8 +476,12 @@
      "plot one"
     ],
     [
-     "is just a HOLE.",
-     "is just a hole."
+     "is just",
+     "is just"
+    ],
+    [
+     "a HOLE.",
+     "a hole."
     ]
    ]
   },
@@ -479,8 +508,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I drop a PEBBLE",
-     "I drop a pebble"
+     "I drop",
+     "I drop"
+    ],
+    [
+     "a PEBBLE",
+     "a pebble"
     ],
     [
      "in.",
@@ -498,8 +531,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I never hear it",
-     "I never hear it"
+     "I never",
+     "I never"
+    ],
+    [
+     "hear it",
+     "hear it"
     ],
     [
      "LAND.",
@@ -516,8 +553,12 @@
      "Now the head"
     ],
     [
-     "is in plot FOUR,",
-     "is in plot four,"
+     "is in",
+     "is in"
+    ],
+    [
+     "plot FOUR,",
+     "plot four,"
     ],
     [
      "three plots NEARER",
@@ -556,8 +597,12 @@
      "On Wednesday,"
     ],
     [
-     "it's in plot SEVEN.",
-     "it's in plot seven."
+     "it's in",
+     "it's in"
+    ],
+    [
+     "plot SEVEN.",
+     "plot seven."
     ]
    ]
   },
@@ -570,8 +615,12 @@
      "Higher"
     ],
     [
-     "out of the dirt",
-     "out of the dirt"
+     "out of",
+     "out of"
+    ],
+    [
+     "the dirt",
+     "the dirt"
     ],
     [
      "than BEFORE.",
@@ -588,8 +637,12 @@
      "I feed"
     ],
     [
-     "the longest bean CANE",
-     "the longest bean cane"
+     "the longest",
+     "the longest"
+    ],
+    [
+     "bean CANE",
+     "bean cane"
     ],
     [
      "into the HOLE",
@@ -719,8 +772,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I walk the PATH",
-     "I walk the path"
+     "I walk",
+     "I walk"
+    ],
+    [
+     "the PATH",
+     "the path"
     ],
     [
      "counting HOLES.",
@@ -757,8 +814,12 @@
      "of the fog"
     ],
     [
-     "one at a TIME.",
-     "one at a time."
+     "one at",
+     "one at"
+    ],
+    [
+     "a TIME.",
+     "a time."
     ]
    ]
   },
@@ -808,8 +869,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Its arms hang DOWN",
-     "Its arms hang down"
+     "Its arms",
+     "Its arms"
+    ],
+    [
+     "hang DOWN",
+     "hang down"
     ],
     [
      "and go on",
@@ -826,12 +891,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "They're far too LONG",
-     "They're far too long"
+     "They're far",
+     "They're far"
     ],
     [
-     "to have an END.",
-     "to have an end."
+     "too LONG",
+     "too long"
+    ],
+    [
+     "to have",
+     "to have"
+    ],
+    [
+     "an END.",
+     "an end."
     ]
    ]
   },
@@ -858,8 +931,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "When I look BACK,",
-     "When I look back,"
+     "When I",
+     "When I"
+    ],
+    [
+     "look BACK,",
+     "look back,"
     ],
     [
      "its HEAD",
@@ -871,7 +948,7 @@
     ],
     [
      "too far ROUND.",
-     "too far round."
+     "too far around."
     ]
    ]
   },
@@ -884,8 +961,12 @@
      "Those green eyes"
     ],
     [
-     "are on the SHED",
-     "are on the shed"
+     "are on",
+     "are on"
+    ],
+    [
+     "the SHED",
+     "the shed"
     ],
     [
      "behind ME.",
@@ -898,8 +979,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'm the only thing",
-     "I'm the only thing"
+     "I'm the",
+     "I'm the"
+    ],
+    [
+     "only thing",
+     "only thing"
     ],
     [
      "between it",
@@ -971,8 +1056,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He sees the thing",
-     "He sees the thing"
+     "He sees",
+     "He sees"
+    ],
+    [
+     "the thing",
+     "the thing"
     ],
     [
      "in my BEANS,",
@@ -993,8 +1082,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He's never SEEN it.",
-     "He's never seen it."
+     "He's never",
+     "He's never"
+    ],
+    [
+     "SEEN it.",
+     "seen it."
     ],
     [
      "He only comes",
@@ -1019,12 +1112,20 @@
      "for six weeks,"
     ],
     [
-     "he's let himself IN",
-     "he's let himself in"
+     "he's let",
+     "he's let"
     ],
     [
-     "with his OLD KEY.",
-     "with his old key."
+     "himself IN",
+     "himself in"
+    ],
+    [
+     "with his",
+     "with his"
+    ],
+    [
+     "OLD KEY.",
+     "old key."
     ]
    ]
   },
@@ -1147,8 +1248,12 @@
      "is six weeks"
     ],
     [
-     "since he GAVE me",
-     "since he gave me"
+     "since he",
+     "since he"
+    ],
+    [
+     "GAVE me",
+     "gave me"
     ],
     [
      "the KEY.",
@@ -1212,8 +1317,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "At the next DAWN,",
-     "At the next dawn,"
+     "At the",
+     "At the"
+    ],
+    [
+     "next DAWN,",
+     "next dawn,"
     ],
     [
      "there's no HEAD",
@@ -1241,8 +1350,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I shine my TORCH",
-     "I shine my torch"
+     "I shine",
+     "I shine"
+    ],
+    [
+     "my TORCH",
+     "my torch"
     ],
     [
      "straight DOWN it.",
@@ -1260,8 +1373,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then I FILL it,",
-     "Then I fill it,"
+     "Then I",
+     "Then I"
+    ],
+    [
+     "FILL it,",
+     "fill it,"
     ],
     [
      "one SPADE",
@@ -1286,8 +1403,12 @@
      "mr. Carter sits"
     ],
     [
-     "on an upturned BUCKET",
-     "on an upturned bucket"
+     "on an",
+     "on an"
+    ],
+    [
+     "upturned BUCKET",
+     "upturned bucket"
     ],
     [
      "and TEACHES me.",
@@ -1366,8 +1487,12 @@
      "A woman"
     ],
     [
-     "with a red BIKE",
-     "with a red bike"
+     "with a",
+     "with a"
+    ],
+    [
+     "red BIKE",
+     "red bike"
     ],
     [
      "gets the key",
@@ -1388,8 +1513,12 @@
      "Her shed"
     ],
     [
-     "has an EMPTY HOOK.",
-     "has an empty hook."
+     "has an",
+     "has an"
+    ],
+    [
+     "EMPTY HOOK.",
+     "empty hook."
     ]
    ]
   },
@@ -1398,8 +1527,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "So I hand her",
-     "So I hand her"
+     "So I",
+     "So I"
+    ],
+    [
+     "hand her",
+     "hand her"
     ],
     [
      "MY CAN.",
@@ -1416,8 +1549,12 @@
      "Mr. Carter"
     ],
     [
-     "watches from his BUCKET,",
-     "watches from his bucket,"
+     "watches from",
+     "watches from"
+    ],
+    [
+     "his BUCKET,",
+     "his bucket,"
     ],
     [
      "and NODS.",
@@ -1438,8 +1575,12 @@
      "i'll teach her"
     ],
     [
-     "to SNIFF the SOIL.",
-     "to sniff the soil."
+     "to SNIFF",
+     "to sniff"
+    ],
+    [
+     "the SOIL.",
+     "the soil."
     ]
    ],
    "gap": 0.4
@@ -1475,28 +1616,28 @@
     [
      0,
      [
-      3.3,
-      -26.4,
-      0.35
+      3.8,
+      -25.8,
+      0.5
      ],
      [
-      3.55,
+      3.6,
       -27.5,
-      0.5
+      0.55
      ],
      30
     ],
     [
      1,
      [
-      3.35,
-      -25.6,
-      1.05
+      3.8,
+      -25.3,
+      1.1
      ],
      [
       3.95,
       -27.3,
-      1.5
+      1.45
      ],
      24
     ]
@@ -1609,15 +1750,15 @@
      0,
      [
       0.0,
-      3.1,
+      3.5,
       1.3
      ],
      [
       0.0,
       0.4,
-      1.15
+      1.2
      ],
-     30
+     22
     ]
    ],
    "hand": 0.006,
@@ -2032,14 +2173,14 @@
     [
      0,
      [
-      2.0,
-      -5.3,
-      1.3
+      0.9,
+      -6.9,
+      1.4
      ],
      [
-      3.0,
-      -3.9,
-      1.1
+      2.8,
+      -4.2,
+      1.15
      ],
      22
     ]
@@ -2360,7 +2501,7 @@
    "hand": 0.004,
    "step": 4,
    "what": "the hole in plot one, in fog",
-   "at": "L32.2"
+   "at": "L32.3"
   },
   {
    "id": "S35",
@@ -2383,7 +2524,7 @@
    "hand": 0.004,
    "step": 4,
    "what": "the hole in plot four, in fog",
-   "at": "L32.3"
+   "at": "L32.4"
   },
   {
    "id": "S36",
@@ -2406,7 +2547,7 @@
    "hand": 0.004,
    "step": 4,
    "what": "the hole in plot seven, in fog",
-   "at": "L32.4"
+   "at": "L32.5"
   },
   {
    "id": "S37",
@@ -2415,12 +2556,12 @@
      0,
      [
       0.1,
-      -23.2,
+      -27.6,
       1.55
      ],
      [
-      3.2,
-      -28.5,
+      3.5,
+      -29.5,
       0.9
      ],
      22
@@ -2429,12 +2570,12 @@
      1,
      [
       0.15,
-      -25.8,
+      -28.5,
       1.55
      ],
      [
-      3.4,
-      -28.6,
+      3.5,
+      -29.2,
       0.9
      ],
      22
@@ -2566,16 +2707,16 @@
     [
      0,
      [
-      0.0,
-      -26.9,
-      0.4
+      -0.3,
+      -26.5,
+      0.6
      ],
      [
       0.5,
       -28.2,
-      0.08
+      0.2
      ],
-     30
+     22
     ]
    ],
    "hand": 0.006,
@@ -2681,16 +2822,16 @@
     [
      0,
      [
-      5.0,
-      -26.5,
-      1.4
+      3.2,
+      -24.4,
+      1.45
      ],
      [
-      2.4,
-      -26.8,
+      2.65,
+      -26.95,
       1.25
      ],
-     24
+     26
     ]
    ],
    "hand": 0.006,
@@ -2704,13 +2845,13 @@
     [
      0,
      [
-      4.0,
-      -26.2,
+      3.7,
+      -24.9,
       0.5
      ],
      [
-      2.4,
-      -26.8,
+      2.7,
+      -26.9,
       0.4
      ],
      26
@@ -2727,16 +2868,16 @@
     [
      0,
      [
-      4.3,
-      -25.2,
+      3.9,
+      -24.5,
       1.5
      ],
      [
-      2.55,
-      -26.5,
+      2.95,
+      -26.3,
       1.4
      ],
-     22
+     24
     ]
    ],
    "hand": 0.006,
@@ -2819,13 +2960,13 @@
     [
      0,
      [
-      4.3,
-      -25.4,
+      3.9,
+      -24.6,
       1.45
      ],
      [
-      2.55,
-      -26.5,
+      2.95,
+      -26.3,
       1.35
      ],
      26
@@ -2844,7 +2985,7 @@
      [
       1.0,
       -1.0,
-      7.5
+      4.5
      ],
      [
       0.0,
@@ -2934,16 +3075,16 @@
     [
      0,
      [
-      4.6,
-      -25.6,
-      1.4
+      4.0,
+      -24.6,
+      1.45
      ],
      [
-      3.0,
+      3.1,
       -27.0,
       1.3
      ],
-     20
+     22
     ]
    ],
    "hand": 0.006,
@@ -2957,13 +3098,13 @@
     [
      0,
      [
-      4.2,
-      -25.0,
+      3.4,
+      -24.4,
       1.5
      ],
      [
-      2.55,
-      -26.5,
+      2.95,
+      -26.25,
       1.4
      ],
      24
@@ -3155,14 +3296,14 @@
     [
      0,
      [
-      4.6,
-      -26.1,
-      1.1
+      4.9,
+      -27.7,
+      1.2
      ],
      [
       3.1,
       -27.3,
-      0.95
+      1.0
      ],
      24
     ]
@@ -3247,30 +3388,30 @@
     [
      0,
      [
-      80.0,
-      0.3,
-      1.3
+      79.9,
+      0.2,
+      1.35
      ],
      [
-      80.0,
+      79.9,
       1.9,
-      1.3
+      1.15
      ],
-     26
+     20
     ],
     [
      1,
      [
-      80.0,
-      0.6,
-      1.3
+      79.9,
+      0.5,
+      1.35
      ],
      [
-      80.0,
+      79.9,
       1.9,
-      1.3
+      1.15
      ],
-     26
+     20
     ]
    ],
    "hand": 0.006,
@@ -3412,7 +3553,7 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": -160.6
+    "yaw": -175.7
    },
    {
     "at": "L01.1",
@@ -3739,7 +3880,7 @@
     ]
    },
    {
-    "at": "L32.2",
+    "at": "L32.3",
     "hidden": true,
     "blend": 0
    },
@@ -3858,7 +3999,7 @@
     "blink": true,
     "sit": false,
     "expr": "worried",
-    "yaw": -158.6
+    "yaw": -174.8
    },
    {
     "at": "L46",
@@ -3897,7 +4038,7 @@
     "blink": true,
     "sit": false,
     "expr": "worried",
-    "yaw": -158.6
+    "yaw": -174.8
    },
    {
     "at": "L50",
@@ -3936,7 +4077,7 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": -158.6
+    "yaw": -174.8
    },
    {
     "at": "L53.1",
@@ -3975,7 +4116,7 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": -158.6
+    "yaw": -174.8
    },
    {
     "from": "L54",
@@ -4319,8 +4460,8 @@
    {
     "at": "L43",
     "pos": [
-     2.35,
-     -26.8
+     2.65,
+     -26.95
     ],
     "blend": 0,
     "hidden": false,
@@ -4346,15 +4487,15 @@
    {
     "at": "L45",
     "pos": [
-     2.35,
-     -26.8
+     2.65,
+     -26.95
     ]
    },
    {
     "at": "L45",
     "pos": [
-     2.55,
-     -26.5
+     2.95,
+     -26.25
     ],
     "blend": 0,
     "hidden": false,
@@ -4375,10 +4516,10 @@
     "blink": true,
     "sit": false,
     "expr": "wide",
-    "yaw": 29.5
+    "yaw": 19.4
    },
    {
-    "from": "L45.3",
+    "from": "L45.4",
     "to": "L45>",
     "mouth": [
      0.0,
@@ -4393,15 +4534,15 @@
    {
     "at": "L49",
     "pos": [
-     2.55,
-     -26.5
+     2.95,
+     -26.25
     ]
    },
    {
     "at": "L49",
     "pos": [
-     2.55,
-     -26.5
+     2.95,
+     -26.25
     ],
     "blend": 0,
     "hidden": false,
@@ -4422,7 +4563,7 @@
     "blink": true,
     "sit": false,
     "expr": "smirk",
-    "yaw": 21.4
+    "yaw": 5.2
    },
    {
     "from": "L49.1",
@@ -4435,7 +4576,7 @@
    },
    {
     "at": "L51",
-    "yaw": 29.5,
+    "yaw": 19.4,
     "expr": "wide",
     "blend": 0.5
    },
@@ -4447,15 +4588,15 @@
    {
     "at": "L53",
     "pos": [
-     2.55,
-     -26.5
+     2.95,
+     -26.25
     ]
    },
    {
     "at": "L53",
     "pos": [
-     2.55,
-     -26.5
+     2.95,
+     -26.25
     ],
     "blend": 0,
     "hidden": false,
@@ -4476,20 +4617,20 @@
     "blink": true,
     "sit": false,
     "expr": "wide",
-    "yaw": 29.5
+    "yaw": 19.4
    },
    {
     "at": "L54",
     "pos": [
-     2.55,
-     -26.5
+     2.95,
+     -26.25
     ]
    },
    {
     "at": "L54",
     "pos": [
-     2.55,
-     -26.5
+     2.95,
+     -26.25
     ],
     "blend": 0,
     "hidden": false,
@@ -4510,7 +4651,7 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": 21.4
+    "yaw": 5.2
    },
    {
     "at": "L55",
@@ -4524,8 +4665,8 @@
    {
     "at": "L61",
     "pos": [
-     2.55,
-     -26.5
+     2.95,
+     -26.25
     ]
    },
    {
