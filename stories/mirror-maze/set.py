@@ -643,7 +643,12 @@ def pose_ghosts(story, tl, t, ctx):
         s = acting.state(tl, who, max(0.0, ts), cast.index(who))
         x, yaw = reflect_x(s["x"], s["yaw"], planes)
         dy = 0.0
-        if src == "tasha" and mode == "copy":   # the copies stand far down the glass, each a different way down
+        pl = gm.get("place", {}).get(nm)
+        if pl:   # a near copy of Tasha, set in a pane by hand: its own spot, turned to face the lens, my pose a beat late
+            x, yaw = pl[0], pl[2] if len(pl) > 2 else 0.0
+            s = {**s, "y": pl[1]}
+            dy = 0.0
+        if src == "tasha" and mode == "copy" and not pl:   # the copies stand far down the glass, each a different way down
             dy = float(gm.get("dy", 0.0)) * (0.7 + float(gm.get("spread", 0.3)) * int(nm[-1]))
         blink = s["blink"]
         g.pose(x, s["y"] + dy, s["z"], yaw, s["legs"], s["arms"], s["arms_side"], s["head_yaw"], s["head_pitch"], s["lean"],
@@ -1171,6 +1176,12 @@ def animate(kit, story, tl, t, ctx):
     for who in list(story.get("cast", {})) + ["copy"]:
         apply_bow(tl, t, who)
     shot = _shot(tl, t)
+    # L75 to L77: her pane holds only the real Tasha, so I leave the glass's reflections (my green hat showed in it)
+    me_ob = bpy.data.objects.get("me")
+    if me_ob is not None:
+        hide_gl = tl["lines"]["L75"]["wav_at"] <= t < tl["lines"]["L77"]["end"] + 0.1
+        for o in [me_ob] + list(me_ob.children_recursive):
+            o.visible_glossy = not hide_gl
     cam = kit.OBJ["cam"]
     d = story.get("dof", {}).get(shot["id"])
     cam.data.dof.use_dof = bool(d)

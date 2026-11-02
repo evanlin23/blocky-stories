@@ -437,6 +437,7 @@ cues += [{"at": "L62", "name": "props", "roll": False, "trip": 2, "coins": 0, "e
          {"at": "L62", "name": "ghosts", "me": "off", "ta": "off"}]
 put("me", "L62", [IN, 2.4], yaw=180, expr="scared")
 hide("tasha", "L62")
+PLACE = {k: [IN + v[0], v[1], 0.0] for k, v in {"gt0": [0.75, 0.6], "gt1": [-0.75, 0.95], "gt2": [0.75, 1.3], "gt3": [-0.75, 1.65], "gt4": [0.75, 2.0], "gt5": [-0.75, 2.35]}.items()}
 LOOK_IN2 = {"camfill": 0.3, "maze": 0, "inside": 0, "wash": 0, "amb": 0.5, "room": 1.1, "roomb": 1.1}
 S("L62", mv(((IN, 1.0, 1.0), (IN, 3.5, 3.4)), ((IN, 1.4, 1.0), (IN, 4.5, 3.9)), 20), 2, look=LOOK_IN2,
   note="the roof off, rain coming straight in through the open grid")
@@ -445,13 +446,14 @@ cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 6.0, "
 put("me", "L63", [IN, -1.95], yaw=180, expr="scared", head=[40, 0], arms=[0, 40])
 raw("me", "L63.2", head=[-40, 0], arms=[40, 0], blend=0.4)
 raw("me", "L63>-0.3", head=[0, 0], arms=[0, 0], blend=0.4)
-S("L63", one((IN, -0.9, 1.7), (IN, 5.0, 1.5), 6), 2, look={**LOOK_IN2, "camfill": 2.5, "amb": 2.0, "exposure": 1.0},
+S("L63", one((IN, -0.35, 1.65), (IN, -0.05, 1.62), 6), 2, look={**LOOK_IN2, "camfill": 1.3, "amb": 2.0, "exposure": 1.0},
   note="a wide of panes, every one her, each copying me half a beat late")
-S("L64", one((IN + 0.35, 0.6, 1.5), (IN - 1.4, 4.6, 1.4), 24), 2, look=LOOK_IN2, note="none of them showed me")
+S("L64", one((IN + 0.05, -0.4, 1.62), (IN - 0.1, -0.1, 1.6), 24), 2, look=LOOK_IN2, note="none of them showed me")
 # L65 I hide behind the stacked frame; every Tasha stops
 put("me", "L65", [IN + 0.5, 5.2], yaw=180, expr="scared")
 raw("me", "L65.2", pos=[IN + 0.45, 6.9])
-cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 6.0, "spread": 0.04, "hide": "L65.2+0.2", "until": "L69-0.395"}]
+cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 6.0, "spread": 0.04, "place": PLACE, "hide": "L65.2+0.2", "until": "L69-0.395"},
+         {"at": "L65", "name": "ghosts", "me": "off", "ta": "copy", "dy": 6.0, "spread": 0.04, "hide": "L65.2+0.2", "until": "L69-0.395"}]
 S("L65", one((IN - 0.35, 1.6, 1.5), (IN + 0.2, 6.3, 1.4), 26), 2, look=LOOK_IN2, note="behind a stacked steel frame, where nothing could see me")
 raw("me", "L66", pos=[IN + 0.45, 6.5], yaw=180)
 S("L66", one((IN - 0.35, 2.8, 1.5), (IN, 10.0, 1.45), 26), 2, look=LOOK_IN2, note="the frozen gallery")
