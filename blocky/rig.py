@@ -289,7 +289,10 @@ class Character:
                         hair, hg, bevel=0.08)
         elif style in ("cap", "long", "bun", "swoop", "spiky"):
             kit.box(f"{n}.hcap", (2 * R + 0.08, 2 * R + 0.08, 0.3), (0, 0.02, top - 0.05), hair, hg, bevel=0.12)
-            kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, H * 0.75), (0, R - 0.08, top - H * 0.36), hair, hg, bevel=0.1)
+            if "backscarf" in spec.get("extras", []):   # opt-in (ep22): hair right down the back of the head, so a back reads
+                kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, H * 0.98), (0, R - 0.08, 0.0), hair, hg, bevel=0.1)
+            else:
+                kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, H * 0.75), (0, R - 0.08, top - H * 0.36), hair, hg, bevel=0.1)
             for sx in (-1, 1):
                 kit.box(f"{n}.hside{sx}", (0.2, 0.9, 0.5), (sx * (R - 0.02), 0.2, top - 0.25), hair, hg, bevel=0.08)
         if style == "swoop":  # a big fringe swept across the brow, like the reference's ginger boy
@@ -383,6 +386,11 @@ class Character:
         if "scarf" in ex:
             kit.box(f"{n}.scarf", (2.1, 1.12, 0.36), (0, 0, 1.85), ec, self.torso, bevel=0.1)
             kit.box(f"{n}.scarft", (0.36, 0.1, 0.9), (0.45, -0.55, 1.35), ec, self.torso, bevel=0.06)
+        if "backscarf" in ex:   # opt-in (ep22): a scarf tail down the back and a coat seam, so a back reads as a back
+            # no tail on the back: a yellow strip down the back read as a front scarf knot
+            seam = kit.plastic(spec.get("seam_c", "#33426e"), 0.5)
+            kit.box(f"{n}.seam", (0.1, 0.03, 1.5), (0.1, 0.51, 0.85), seam, self.torso, bevel=0.012)
+            kit.box(f"{n}.belt", (2.02, 0.05, 0.16), (0, 0.5, 0.45), seam, self.torso, bevel=0.02)
         if "tie" in ex:
             kit.box(f"{n}.tie", (0.22, 0.06, 1.1), (0, -0.52, 1.35), ec, self.torso, bevel=0.03)
         if "apron" in ex:
