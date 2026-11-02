@@ -332,7 +332,7 @@ def materials(kit):
     M["flame2"] = kit.emit("#ffd27a", 9.0, "flame core")
     M["ember"] = kit.emit("#ff4a10", 3.0, "ember")
     M["phonebody"] = kit.emit("#3a5470", 1.4, "phone")
-    M["screen"] = kit.emit("#a8d4ff", 1.7, "screen")
+    M["screen"] = kit.emit("#98c0ec", 1.2, "screen")
     M["wood"] = kit.planks("#6b5a40", "#4a3c28", 1.2, "X", "gate wood")
     M["gatepost"] = stone_mat(kit, "gatepost", "#5a5c5e", "#8b8a84", 7.0)
     M["track"] = kit.plastic("#6b5e46", 0.95, "track")
@@ -515,7 +515,7 @@ def build_tent(kit, M):
     fs = [(0, 3, 5, 4), (1, 4, 5, 2), (0, 4, 1), (3, 2, 5)]
     tent = kit.mesh_obj("tent", vs, fs, M["canvas"])
     # door: a darker flap with a zip line, on the south gable
-    kit.box("tentdoor", (0.9, 0.02, 1.0), (x0, y0 - l - 0.012, 0.55), kit.plastic("#43553a", 0.9, "tent door"))
+    kit.box("tentdoor", (0.9, 0.02, 1.0), (x0, y0 - l - 0.012, 0.55), kit.plastic("#7d9468", 0.9, "tent door"))
     kit.box("tentzip", (0.02, 0.02, 1.0), (x0, y0 - l - 0.03, 0.55), kit.plastic("#1b1b1e", 0.5, "zip"))
     kit.box("groundsheet", (TENT_W - 0.1, TENT_L - 0.1, 0.04), (x0, y0, 0.0), M["groundsheet"])
     # guy lines' pegs are left out (nothing thin)
@@ -566,7 +566,7 @@ def build_shadows(kit, M):
         ob = kit.mesh_obj(f"handshadow{hi}", verts, faces, M["shadow"])
         ob.hide_render = True
         objs.append(ob)
-    fin = blocks_mesh(kit, "fingershadow", [(TENT_X - 0.65, TENT_Y + 0.4, 0.5, 1.1, 0.14, 0.01, 0.4)], M["shadow"])
+    fin = blocks_mesh(kit, "fingershadow", [(TENT_X - 0.6, TENT_Y + 0.55, 0.5, 1.1, 0.14, 0.01, 0.5)], M["shadow"])
     fin.hide_render = True
     return objs, fin
 
@@ -645,6 +645,8 @@ def build_props(kit, M):
     kit.box("phonebody", (0.075, 0.012, 0.15), (0, 0, 0.075), M["phonebody"], ph, bevel=0.006)
     sc = kit.plane("phonescreen", (0.064, 0.138), (0, -0.0075, 0.075), M["screen"], ph, rot=(math.pi / 2, 0, 0))
     P["phone"] = ph
+    # a soft blue halo that stands in for the phone's glow in a far shot (cue "halo": true; hidden otherwise)
+    P["halo"] = kit.sphere("phonehalo", 0.1, (0, 0, -50), kit.emit("#a8d4ff", 1.8, "halo"), seg=10)
     return P
 
 
@@ -850,6 +852,7 @@ def place_prop(ob, c, home=None):
     ob.hide_render = False
     for ch in ob.children_recursive:
         ch.hide_render = False
+    ob.scale = (c.get("scale", 1.0),) * 3      # opt-in: a bigger prop for a far shot (default 1)
     hand = c.get("hand")
     if hand:
         arm = bpy.data.objects.get(hand)
@@ -949,6 +952,7 @@ def animate(kit, story, tl, t, ctx):
     place_prop(P["phone"], pcue)
     vis = pcue is not None and not pcue.get("hidden")
     ph = P["phone"].location
+    P["halo"].location = (ph.x, ph.y + 0.16, ph.z + 0.1) if (vis and pcue.get("halo")) else (0, 0, -50)
     over["phoneglow"] = (float(pcue.get("glow", 1.0)) if vis else 0.0)
     kit.LIGHTS["phoneglow"]["obj"].location = (ph.x, ph.y - 0.1, ph.z + 0.12) if vis else (0, 0, -50)
     # Big Hands: palms tipped, the rim light behind it, the whole thing posed by acting

@@ -155,7 +155,7 @@ SH = [
     ("L39", C([-4.6, -0.9, 1.7], [-4.6, -0.15, 1.1], 22), {}),                              # S50 my face, orange on it
     ("L40", C([1.0, -3.4, 0.6], [-2.3, 0.1, 1.05], 38), {}),                               # S51 the exterior
     ("L41", C([-4.6, -0.85, 1.7], [-4.6, -0.15, 1.2], 30), {}),                              # S52 my eyes shut and open
-    ("L42", C([-4.2, 0.2, 0.8], [-5.4, 0.95, 0.7], 20), {}),                             # S53 the finger on the bag
+    ("L42", C([-4.2, 0.2, 0.8], [-5.4, 0.95, 0.3], 20), {}),                              # S53 the finger on the bag (tilted down, clear of the caption band)
     ("L43", C([-5.05, 0.35, 0.78], [-5.3, 0.95, 0.35], 40), {}),                              # S54 Dad's face
     ("L44", C([-4.6, 0.4, 0.95], [-4.6, 1.0, 0.3], 36), {}),                               # S55 me, eyes squeezed shut
     ("L45", C([-4.0, 0.3, 0.5], [-5.4, 0.45, 0.95], 24), {}),                                # S56 the wall goes dark
@@ -163,7 +163,7 @@ SH = [
     ("L47", C([1.8, -1.5, 1.0], [-1.9, 0.0, 0.45], 32, [-0.4, -0.9, 0.8], [-1.9, 0.0, 0.5], 32), {}),  # S58 push to the empty seat
     ("L48", C([-1.62, -0.15, 1.95], [-1.9, 0.0, 0.62], 30), {}),                            # S59 top shot: the dry shape
     # ---- 05 the call
-    ("L49", C([0.9, -1.2, 1.5], [-1.2, -15.0, 0.1], 26), {}),                               # S60 Dad off again, me following
+    ("L49", C([0.9, -1.2, 1.5], [-1.4, -10.0, 0.5], 30), {}),                               # S60 Dad off again, me following
     ("L50", C(W(2.8, -43.8, 1.6), W(0.9, -39.2, 1.5), 30), {}),                             # S61 me behind the wall
     ("L51", C(W(1.6, -46.0, 1.6), W(-0.45, -40.6, 1.4), 28), {}),                           # S62 the phone on the gatepost
     ("L52", C([2.6, -44.2, POST_TOP + 0.2], [-0.45, -40.0, POST_TOP + 0.05], 50), {}),           # S63 the phone, close
@@ -192,7 +192,7 @@ SH = [
     ("L68", C([-0.3, -0.6, 1.1], [-0.7, 2.0, 1.0], 36), {}),                              # S85 my face turns
     ("L69", C([0.9, -0.6, 1.1], [0.7, 2.0, 1.0], 36), {}),                                  # S86 Dad goes red
     ("L69.1", C([-1.1, -1.0, 0.7], [-0.45, -0.2, 0.25], 38), {}),                         # S87 the flask lands
-    ("L70", C([1.6, -2.7, 1.0], [-1.3, 0.0, 0.6], 28), {}),                                 # S88 the last frame
+    ("L70", C([2.0, -0.7, 1.15], [-1.2, -0.05, 0.5], 34), {}),                                 # S88 the last frame
 ]
 shots = []
 for i, (at, cam, opt) in enumerate(SH):
@@ -251,9 +251,9 @@ me = [
     {"at": "L45", "pos": TENT_ME, "expr": "wide"},
     *jump("L46", TENT_ME, HIDE, hidden=True),
     # the call: following Dad, behind the wall, out by the gate
-    *jump("L49", HIDE, P(-0.4, -5.0), hidden=False, lean=0, sit=False, yaw=0, expr="neutral", arms=[0, 0], head=[0, 0]),
+    *jump("L49", HIDE, P(-0.4, -5.0), hidden=True, lean=0, sit=False, yaw=0, expr="neutral", arms=[0, 0], head=[0, 0]),
     {"at": "L49>", "pos": P(-0.8, -7.0)},
-    *jump("L50", P(-0.8, -7.0), P(0.9, -39.3), yaw=0, expr="neutral"),
+    *jump("L50", P(-0.8, -7.0), P(0.9, -39.3), hidden=False, yaw=0, expr="neutral"),
     {"at": "L52.1", "pos": P(0.9, -39.3), "expr": "wide"},
     {"at": "L58", "pos": P(0.9, -39.3), "expr": "soft"},
     {"at": "L59", "pos": P(0.9, -39.3), "expr": "neutral"},
@@ -294,9 +294,9 @@ dad = [
     {"at": "L28>", "pos": [-4.2, -2.2, 0.0], "arms": [0, 30]},
     *jump("L29", [-4.2, -2.2, 0.0], TENT_DAD, lean=-90, yaw=0, expr="asleep", blink=False, arms=[0, 0]),
     *jump("L46", TENT_DAD, HIDE, hidden=True),
-    *jump("L49", HIDE, P(-1.0, -9.0), hidden=False, lean=0, yaw=180, expr="neutral", arms=[0, 50]),
-    {"at": "L49>", "pos": P(-1.5, -12.0)},
-    *jump("L50", P(-1.5, -12.0), P(-0.45, -41.3), yaw=180, arms=[62, 62], lean=18, expr="worried"),
+    *jump("L49", HIDE, P(-1.2, -5.5), hidden=False, lean=0, yaw=180, expr="neutral", arms=[0, 50]),
+    {"at": "L49>", "pos": P(-1.7, -8.8)},
+    *jump("L50", P(-1.7, -8.8), P(-0.45, -41.3), yaw=180, arms=[62, 62], lean=18, expr="worried"),
     {"at": "L53", "pos": P(-0.45, -41.3), "head": [0, 14], "expr": "worried"},
     {"at": "L55", "pos": P(-0.45, -41.3), "head": [0, -8]},
     # the replays (L57): banking the fire, the tent door, then the post again
@@ -359,7 +359,7 @@ cues = [
     {"at": "L33", "name": "look", "id": "night"},
     {"at": "L46", "name": "look", "id": "dawn"},
     {"at": "L49", "name": "look", "id": "morning"},
-    {"at": "L56>-0.3", "name": "look", "id": "dusk2"},
+    {"at": "L56>-0.3", "name": "look", "id": "morning"},
     {"at": "L57.2", "name": "look", "id": "morning"},
     {"at": "L63", "name": "look", "id": "sunset"},
     # the fire: out in the morning, embers at night three, lit again for the phone
@@ -404,8 +404,12 @@ cues = [
     {"at": "L40", "name": "flare", "v": 0.35, "pos": [-1.3, 0.1, 0.18]},
     {"at": "L41", "name": "flare", "v": 0.0},
     # L19.2: the tent door is lifted out of black so the size comparison reads (round 1)
-    {"at": "L69", "name": "exposure", "v": 0.35},
-    {"at": "L19.2", "name": "doorlit", "v": 2.2},
+    {"at": "L40", "name": "exposure", "v": 0.45},
+    {"at": "L41", "name": "exposure", "v": -0.2},
+    {"at": "L42", "name": "exposure", "v": 0.0},
+    {"at": "L63", "name": "exposure", "v": 0.4},
+    {"at": "L69", "name": "exposure", "v": 0.7},
+    {"at": "L19.2", "name": "doorlit", "v": 3.5},
     {"at": "P01", "name": "doorlit", "v": 0.0},
     {"at": "L41", "name": "hkey", "v": 1.0},
     # Big Hands' palms: tipped at the fire, flat over the embers at L40
@@ -422,7 +426,7 @@ cues = [
     {"at": "L15", "name": "phone", "hidden": True},
     {"at": "L23", "name": "phone", "hand": "dad.arm1", "offset": [0.0, 0.0, 0.0], "tilt": -80, "yaw": 90},
     {"at": "L24", "name": "phone", "hidden": True},
-    {"at": "L49", "name": "phone", "hand": "dad.arm1", "offset": [0.0, 0.0, 0.0], "tilt": -80, "yaw": 90, "glow": 7.0},
+    {"at": "L49", "name": "phone", "hand": "dad.arm1", "offset": [0.0, 0.0, 0.0], "tilt": -80, "yaw": 90, "glow": 7.0, "scale": 3.5, "halo": True},
     {"at": "L50", "name": "phone", "pos": [-0.45, -40.0, POST_TOP], "yaw": 0, "tilt": -12},
     {"at": "L56>-0.3", "name": "phone", "hidden": True},
     {"at": "L57.2", "name": "phone", "pos": [-0.45, -40.0, POST_TOP], "yaw": 0, "tilt": -12},
