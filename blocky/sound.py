@@ -535,6 +535,8 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         n = synth.n_samples(dur)
         t = np.arange(n) / SR
         up, down = min(0.6, dur * 0.3), min(0.9, dur * 0.5)
+        if (opts or {}).get("fall"):
+            up, down = 0.12, 0.25     # a closing breath: it keeps its level to the cut
         env = np.minimum(1.0, t / up) ** 1.5 * np.minimum(1.0, (dur - t) / down) ** 1.5
         fall = float((opts or {}).get("fall", 0.0))
         noise = synth.noise(dur, seed)[:n]

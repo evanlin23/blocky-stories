@@ -290,7 +290,7 @@ def new_materials(kit, ctx):
     M["flame"] = kit.emit(ORANGE, 7.0, name="flame")
     M["flame_core"] = kit.emit("#ffc070", 9.0, name="flame core")
     M["pilot"] = kit.emit("#ffa04c", 6.0, name="pilot")
-    M["screen"] = kit.emit("#d8e4f0", 2.2, name="phone screen")
+    M["screen"] = kit.emit("#d8e4f0", 0.8, name="phone screen")
     M["phone"] = kit.plastic("#1c1d20", 0.4, name="phone")
     M["cream"] = emissive_glow_mat(kit, ctx, "env cream", "#efe4cc")
     M["green"] = emissive_glow_mat(kit, ctx, "env green", "#2f5a3c")
@@ -494,8 +494,7 @@ def build_creature(kit, ctx, M):
         e = kit.empty(f"cre.{name}", base, root)
         kit.box(f"cre.{name}.b", size, (0, 0, 0), mat, e, bevel=bevel)
         w, d, h = size
-        for sz in (-1, 1):
-            kit.box(f"cre.{name}.cap{sz}", (w * 0.97, d * 0.97, 0.006), (0, 0, sz * (h / 2 + 0.0015)), blk, e)
+        kit.box(f"cre.{name}.cap", (w * 0.97, d * 0.97, 0.006), (0, 0, -(h / 2 + 0.0015)), blk, e)   # only the undersides
         p = {"e": e, "base": V(base), "group": group, "name": name}
         pieces.append(p)
         return e

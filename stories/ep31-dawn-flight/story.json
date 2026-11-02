@@ -1,9 +1,9 @@
 {
  "slug": "ep31-dawn-flight",
- "title": "Our pilot said the wind was zero, but the balloon basket leaned the whole way up",
+ "title": "The pilot said there was zero wind, so why was our balloon basket tilting?",
  "made_for_kids": false,
  "premise": "On Dad's sixtieth birthday we fly a hot-air balloon at dawn over a sea of mist. The pilot says the wind is zero, but the basket keeps leaning toward its empty fourth corner, and each time the burner roars a figure made of loose copper and slate-blue blocks is nearer and more put together.",
- "twist": "I told Dad my brother couldn't come, but I'd forgotten to ask him in time and blamed his work. The basket was built for four and my lie left a corner empty, so the figure was the corner's Keeper standing in the gap. When I confess and my brother comes the next dawn, the basket flies level.",
+ "twist": "I told Dad my brother couldn't come but never asked him. The basket was built for four and I left a corner empty on purpose, so the figure was the corner's Keeper standing in the gap I made. When I confess and my brother comes the next dawn, the basket flies level.",
  "world": "a hot-air balloon basket at sunrise over a valley of thick white mist, a cold dark launch field before it, a kitchen table the night before",
  "voice": {
   "voice": "am_adam",
@@ -77,7 +77,6 @@
    "hair_c": "#9a9a9c",
    "hat": "none",
    "extras": [
-    "glasses",
     "scarf"
    ],
    "extra_c": "#d6c49a",
@@ -1541,7 +1540,7 @@
     ],
     [
      "\"You could've",
-     "You could've"
+     "You could have"
     ],
     [
      "just TOLD me",
@@ -1853,22 +1852,37 @@
     [
      0,
      [
-      0.7355696691002717,
-      0.12117179934406364,
-      1.5
+      3.0,
+      -3.1,
+      1.75
      ],
      [
-      -0.58,
-      0.6,
+      0.0,
+      0.0,
       1.5
      ],
-     32
+     26
+    ],
+    [
+     1,
+     [
+      2.75,
+      -2.85,
+      1.75
+     ],
+     [
+      0.0,
+      0.0,
+      1.5
+     ],
+     26
     ]
    ],
    "hand": 0.005,
    "step": 2,
-   "what": "the hook: Rosa's face in the basket, lit, saying the wind is zero",
-   "key": 60,
+   "what": "the hook: from the east, three faces in the tilted basket, the lean plain",
+   "frame": "world",
+   "key": 40,
    "amb": 1.4
   },
   {
@@ -1956,7 +1970,7 @@
    "step": 2,
    "what": "low on the fourth corner, the floor tipping",
    "at": "L04",
-   "key": 40
+   "key": 110
   },
   {
    "id": "S05",
@@ -2251,7 +2265,7 @@
      [
       0.5582001231476451,
       -0.07059625973709083,
-      1.55
+      1.35
      ],
      [
       -0.62,
@@ -3232,13 +3246,13 @@
      0,
      [
       -1.4,
-      -1.4,
-      1.6
+      -1.3,
+      1.25
      ],
      [
       0.5,
       0.5,
-      1.45
+      1.4
      ],
      17
     ]
@@ -3248,7 +3262,7 @@
    "what": "the reveal from my corner across the basket",
    "at": "L50",
    "key": 0,
-   "amb": 0.45
+   "amb": 0.3
   },
   {
    "id": "S55",
@@ -3256,23 +3270,24 @@
     [
      0,
      [
-      -0.3,
-      -0.45,
-      0.55
+      -1.25,
+      -1.1,
+      1.3
      ],
      [
-      0.62,
-      0.7,
-      0.6
+      0.52,
+      0.55,
+      1.3
      ],
-     24
+     16
     ]
    ],
    "hand": 0.005,
    "step": 1,
    "what": "in the fourth corner beside the sandbag",
    "at": "L51",
-   "key": 0
+   "key": 0,
+   "amb": 0.35
   },
   {
    "id": "S56",
@@ -3304,23 +3319,24 @@
     [
      0,
      [
-      0.1,
-      -0.05,
-      1.52
+      -0.15,
+      0.0,
+      1.7
      ],
      [
       0.95,
-      0.3,
-      1.45
+      0.15,
+      1.5
      ],
-     42
+     24
     ]
    ],
    "hand": 0.005,
    "step": 1,
    "what": "a copper arm block a hand's width from Dad's shoulder",
    "at": "L53",
-   "key": 0
+   "key": 0,
+   "amb": 0.5
   },
   {
    "id": "S58",
@@ -3328,17 +3344,17 @@
     [
      0,
      [
-      -0.55,
-      -0.3,
-      2.0
+      -0.95,
+      -0.8,
+      1.35
      ],
      [
       0.52,
       0.55,
-      2.15
+      2.0
      ],
-     24,
-     6.0
+     22,
+     5.0
     ]
    ],
    "hand": 0.005,
@@ -3346,7 +3362,7 @@
    "what": "its sliced face turned to Dad, three-quarter view",
    "at": "L54",
    "key": 0,
-   "amb": 0.45
+   "amb": 0.3
   },
   {
    "id": "S59",
@@ -3538,7 +3554,7 @@
      [
       0.5582001231476451,
       -0.07059625973709083,
-      1.55
+      1.35
      ],
      [
       -0.62,
@@ -3586,7 +3602,7 @@
      [
       0.46756934444398,
       -0.11285808591116087,
-      1.55
+      1.25
      ],
      [
       -0.62,
@@ -3656,16 +3672,16 @@
     [
      0,
      [
-      0.3894306746804247,
-      -1.7604321905156284,
-      1.5
+      -0.1,
+      -1.0,
+      1.66
      ],
      [
       0.9,
       -0.35,
-      1.5
+      1.52
      ],
-     32
+     28
     ]
    ],
    "hand": 0.005,
@@ -3680,16 +3696,16 @@
     [
      0,
      [
-      0.3894306746804247,
-      -1.7604321905156284,
-      1.5
+      -0.1,
+      -1.0,
+      1.66
      ],
      [
       0.9,
       -0.35,
-      1.5
+      1.52
      ],
-     32
+     28
     ]
    ],
    "hand": 0.005,
@@ -3704,8 +3720,8 @@
     [
      0,
      [
-      0.8295389311788625,
-      0.08696978501149677,
+      0.2803646545265691,
+      -0.6287280664334877,
       1.5
      ],
      [
@@ -3728,16 +3744,16 @@
     [
      0,
      [
-      0.45750658472303474,
-      -1.5723745651135443,
-      1.5
+      -0.1,
+      -1.0,
+      1.66
      ],
      [
       0.9,
       -0.35,
-      1.5
+      1.52
      ],
-     36
+     28
     ]
    ],
    "hand": 0.005,
@@ -3872,16 +3888,16 @@
     [
      0,
      [
-      0.45750658472303474,
-      -1.5723745651135443,
-      1.5
+      -0.1,
+      -1.0,
+      1.66
      ],
      [
       0.9,
       -0.35,
-      1.5
+      1.52
      ],
-     36
+     28
     ]
    ],
    "hand": 0.005,
@@ -3968,16 +3984,16 @@
     [
      0,
      [
-      -3.6,
-      -4.0,
-      2.7
+      3.3,
+      -1.5,
+      1.95
      ],
      [
       0.0,
-      0.0,
-      1.35
+      0.1,
+      1.45
      ],
-     22
+     24
     ]
    ],
    "hand": 0.005,
@@ -4018,23 +4034,24 @@
     [
      0,
      [
-      -0.3,
-      0.1,
+      2.7,
+      0.75,
       1.75
      ],
      [
-      1.21,
+      1.0,
       0.6,
-      1.3
+      1.4
      ],
-     34
+     30
     ]
    ],
    "hand": 0.005,
    "step": 2,
    "what": "Callum's flask on his corner's rim",
    "at": "L80",
-   "key": 24
+   "frame": "world",
+   "key": 30
   },
   {
    "id": "S87",
@@ -4368,13 +4385,13 @@
     ],
     "lean": 0,
     "tremble": 0,
-    "blink": true,
+    "blink": false,
     "yaw": 135,
-    "expr": "shut"
+    "expr": "asleep"
    },
    {
     "at": "L63",
-    "expr": "shut",
+    "expr": "asleep",
     "head": [
      0,
      22
@@ -4384,10 +4401,10 @@
    {
     "at": "L65",
     "yaw": 100.1,
-    "expr": "worried",
+    "expr": "asleep",
     "head": [
      0,
-     0
+     24
     ],
     "blend": 0.3
    },
@@ -4401,13 +4418,21 @@
     "flap": true
    },
    {
-    "at": "L67",
-    "expr": "soft",
+    "at": "L68.3",
+    "expr": "worried",
+    "head": [
+     0,
+     -4
+    ],
     "blend": 0.5
    },
    {
     "at": "L75",
-    "expr": "grin",
+    "expr": "soft",
+    "head": [
+     0,
+     0
+    ],
     "blend": 0.3
    },
    {
@@ -4452,8 +4477,8 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "yaw": 135,
-    "expr": "grin"
+    "yaw": 90,
+    "expr": "soft"
    }
   ],
   "dad": [
@@ -4517,7 +4542,7 @@
     "tremble": 0,
     "blink": true,
     "yaw": 0,
-    "expr": "grin"
+    "expr": "smirk"
    },
    {
     "at": "L07",
@@ -4647,7 +4672,7 @@
     "tremble": 0,
     "blink": true,
     "yaw": 90,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L16",
@@ -4682,7 +4707,7 @@
     "tremble": 0,
     "blink": true,
     "yaw": 180,
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "from": "L16.1",
@@ -4704,11 +4729,11 @@
    },
    {
     "at": "L21",
-    "expr": "grin"
+    "expr": "soft"
    },
    {
     "at": "L32",
-    "expr": "grin",
+    "expr": "smirk",
     "arms": [
      0,
      78
@@ -4753,7 +4778,7 @@
    },
    {
     "at": "L67",
-    "expr": "grin",
+    "expr": "squeeze",
     "blend": 0.3
    },
    {
@@ -4767,7 +4792,7 @@
    },
    {
     "at": "L68",
-    "expr": "grin",
+    "expr": "soft",
     "yaw": -79.9
    },
    {
@@ -4813,7 +4838,7 @@
      0
     ],
     "yaw": -79.9,
-    "expr": "grin",
+    "expr": "soft",
     "blend": 0.4
    },
    {
@@ -4841,8 +4866,8 @@
     "at": "L78",
     "pos": [
      0.9,
-     -0.35,
-     0.0
+     -0.8,
+     0
     ],
     "blend": 0,
     "hidden": false,
@@ -4862,7 +4887,7 @@
     "tremble": 0,
     "blink": true,
     "yaw": 90,
-    "expr": "grin"
+    "expr": "soft"
    }
   ],
   "rosa": [
@@ -5102,15 +5127,6 @@
     "flap": true
    },
    {
-    "from": "L01.1",
-    "to": "L01>",
-    "mouth": [
-     0.55,
-     0.55
-    ],
-    "flap": true
-   },
-   {
     "at": "L23",
     "head": [
      0,
@@ -5212,8 +5228,8 @@
     "at": "L81",
     "pos": [
      -0.58,
-     0.6,
-     0.0
+     0.62,
+     0
     ],
     "blend": 0,
     "hidden": false,
@@ -5232,7 +5248,7 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "yaw": 45
+    "yaw": 90
    }
   ],
   "callum": [
@@ -5245,8 +5261,8 @@
     "at": "L78",
     "pos": [
      0.52,
-     0.55,
-     0.0
+     0.62,
+     0
     ],
     "blend": 0,
     "hidden": false,
@@ -5266,7 +5282,7 @@
     "tremble": 0,
     "blink": true,
     "yaw": 90,
-    "expr": "grin"
+    "expr": "smirk"
    },
    {
     "at": "L80",
@@ -5307,7 +5323,7 @@
   {
    "at": 0,
    "name": "tilt",
-   "deg": 6.0
+   "deg": 8.0
   },
   {
    "at": "L06",
@@ -5615,10 +5631,10 @@
    ],
    "yaw": 0,
    "alpha": 1.0,
-   "key": 30,
+   "key": 120,
    "kfloor": 0.5,
-   "rim": 110,
-   "bounce": 260,
+   "rim": 160,
+   "bounce": 120,
    "head": [
     0,
     0,
@@ -5641,10 +5657,10 @@
    ],
    "yaw": 0,
    "alpha": 1.0,
-   "key": 30,
+   "key": 120,
    "kfloor": 0.5,
-   "rim": 110,
-   "bounce": 260,
+   "rim": 160,
+   "bounce": 120,
    "head": [
     0,
     0,
@@ -5898,8 +5914,8 @@
    {
     "at": "end-1.15",
     "kind": "burner",
-    "db": -18,
-    "dur": 1.05,
+    "db": -10,
+    "dur": 1.1,
     "fall": 7.0
    },
    {

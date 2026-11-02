@@ -1200,20 +1200,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "It was standing",
-    "It was standing"
+    "Its WEIGHT",
+    "Its weight"
    ],
    [
-    "EXACTLY",
-    "exactly"
+    "was on",
+    "was on"
    ],
    [
-    "where CALLUM",
-    "where Callum"
+    "CALLUM'S",
+    "Callum's"
    ],
    [
-    "would STAND.",
-    "would stand."
+    "CORNER.",
+    "corner."
    ]
   ]
  },
@@ -1244,16 +1244,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Because",
-    "Because"
-   ],
-   [
     "Callum never",
     "Callum never"
    ],
    [
-    "said NO.",
-    "said no."
+    "said he was",
+    "said he was"
+   ],
+   [
+    "BUSY.",
+    "busy."
    ]
   ]
  },
@@ -1262,12 +1262,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I never",
-    "I never"
+    "I FORGOT",
+    "I forgot"
    ],
    [
-    "ASKED him.",
-    "asked him."
+    "to ASK him",
+    "to ask him"
+   ],
+   [
+    "till it was",
+    "till it was"
+   ],
+   [
+    "too LATE.",
+    "too late."
    ]
   ]
  },
@@ -1276,20 +1284,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I wanted",
-    "I wanted"
+    "It felt EASIER",
+    "It felt easier"
    ],
    [
-    "ONE MORNING",
-    "one morning"
+    "to blame CALLUM",
+    "to blame Callum"
    ],
    [
-    "with Dad",
-    "with Dad"
+    "than to say",
+    "than to say"
    ],
    [
-    "to MYSELF.",
-    "to myself."
+    "I FORGOT.",
+    "I forgot."
    ]
   ]
  },
@@ -1320,8 +1328,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "And I",
-    "And I"
+    "So I",
+    "So I"
    ],
    [
     "told DAD.",
@@ -1332,8 +1340,12 @@
     "all of it."
    ],
    [
-    "Right THERE.",
-    "Right there."
+    "I couldn't",
+    "I couldn't"
+   ],
+   [
+    "LOOK at him.",
+    "look at him."
    ]
   ]
  },
@@ -1386,12 +1398,12 @@
     "You could have"
    ],
    [
-    "just ASKED me",
-    "just asked me"
+    "just TOLD me",
+    "just told me"
    ],
    [
-    "for that TOO.\"",
-    "for that too."
+    "you FORGOT.\"",
+    "you forgot."
    ]
   ]
  },
@@ -1586,20 +1598,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Callum CAME.",
-    "Callum came."
+    "Callum CAME,",
+    "Callum came,"
    ],
    [
-    "FOUR of us.",
-    "four of us."
+    "and we had",
+    "and we had"
    ],
    [
-    "A CORNER",
-    "A corner"
-   ],
-   [
-    "EACH.",
-    "each."
+    "a CORNER EACH.",
+    "a corner each."
    ]
   ]
  },

@@ -1550,30 +1550,30 @@
    ]
   },
   "L59": {
-   "text": "It was standing exactly where Callum would stand.",
+   "text": "Its weight was on Callum's corner.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.224,
+   "dur": 1.759,
    "onset": 0.155,
-   "end": 2.017,
+   "end": 1.552,
    "chunks": [
     [
      0.155,
-     0.569
+     0.492
     ],
     [
-     0.569,
-     0.974
+     0.492,
+     0.716
     ],
     [
-     0.974,
-     1.353
+     0.716,
+     1.017
     ],
     [
-     1.353,
-     2.017
+     1.017,
+     1.552
     ]
    ]
   },
@@ -1606,74 +1606,82 @@
    ]
   },
   "L61": {
-   "text": "Because Callum never said no.",
+   "text": "Callum never said he was busy.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.155,
-   "end": 1.5,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
    "chunks": [
     [
-     0.155,
-     0.37
+     0.172,
+     0.655
     ],
     [
-     0.37,
-     0.879
+     0.655,
+     1.0
     ],
     [
-     0.879,
-     1.5
+     1.0,
+     1.517
     ]
    ]
   },
   "L62": {
-   "text": "I never asked him.",
+   "text": "I forgot to ask him till it was too late.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.172,
-   "end": 1.155,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
    "chunks": [
     [
-     0.172,
-     0.509
+     0.155,
+     0.483
     ],
     [
-     0.509,
-     1.155
+     0.483,
+     0.897
+    ],
+    [
+     0.897,
+     1.147
+    ],
+    [
+     1.147,
+     1.776
     ]
    ]
   },
   "L63": {
-   "text": "I wanted one morning with Dad to myself.",
+   "text": "It felt easier to blame Callum than to say I forgot.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.172,
-   "end": 1.897,
+   "dur": 2.621,
+   "onset": 0.155,
+   "end": 2.414,
    "chunks": [
     [
-     0.172,
-     0.5
+     0.155,
+     0.707
     ],
     [
-     0.5,
-     0.87
+     0.707,
+     1.448
     ],
     [
-     0.87,
-     1.207
+     1.448,
+     1.767
     ],
     [
-     1.207,
-     1.897
+     1.767,
+     2.414
     ]
    ]
   },
@@ -1706,30 +1714,34 @@
    ]
   },
   "L65": {
-   "text": "And I told Dad. all of it. Right there.",
+   "text": "So I told Dad. all of it. I couldn't look at him.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.155,
-   "end": 1.862,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
    "chunks": [
     [
-     0.155,
-     0.328
+     0.172,
+     0.345
     ],
     [
-     0.328,
-     0.845
+     0.345,
+     0.828
     ],
     [
-     0.922,
+     0.888,
      1.172
     ],
     [
      1.207,
-     1.862
+     1.466
+    ],
+    [
+     1.466,
+     2.086
     ]
    ]
   },
@@ -1782,30 +1794,30 @@
    ]
   },
   "L68": {
-   "text": "He said, You could have just asked me for that too.",
+   "text": "He said, You could have just told me you forgot.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.172,
+   "dur": 2.0,
    "onset": 0.155,
-   "end": 1.966,
+   "end": 1.81,
    "chunks": [
     [
      0.155,
-     0.5
+     0.483
     ],
     [
-     0.526,
+     0.509,
      0.759
     ],
     [
      0.759,
-     1.207
+     1.138
     ],
     [
-     1.207,
-     1.966
+     1.138,
+     1.81
     ]
    ]
   },
@@ -2050,30 +2062,26 @@
    ]
   },
   "L78": {
-   "text": "Callum came. four of us. A corner each.",
+   "text": "Callum came, and we had a corner each.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.138,
+   "dur": 1.879,
    "onset": 0.172,
-   "end": 1.931,
+   "end": 1.672,
    "chunks": [
     [
      0.172,
-     0.603
+     0.638
     ],
     [
-     0.647,
-     1.034
+     0.664,
+     0.888
     ],
     [
-     1.103,
-     1.448
-    ],
-    [
-     1.448,
-     1.931
+     0.888,
+     1.672
     ]
    ]
   },
