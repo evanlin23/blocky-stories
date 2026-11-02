@@ -89,6 +89,7 @@ def main():
     # the fog and sky: "look" (the story's "world" is its one-line description); an older spec kept them in "world"
     look = story.get("look") or (story["world"] if isinstance(story.get("world"), dict) else {})
     kit.set_fog(look.get("fog", "#141820"), look.get("fog_density", 0.05), look.get("fog_start", 2.0))
+    kit.FLASH_SAFE = bool(look.get("flash_safe", False))   # opt-in: slow, smooth flicker (kit.flicker_gain)
     kit.world(look.get("sky", look.get("fog", "#141820")), look.get("sky_strength", 1.0))
     kit.setup_render(job["res"], job.get("samples", 8), job.get("threads", 2), look.get("exposure", 0.0))
     setmod = load_set(sdir)
