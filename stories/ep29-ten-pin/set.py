@@ -457,6 +457,7 @@ def build_screens(kit, ctx, M):
     nt.links.new(tex.outputs["Color"], em.inputs["Color"])
     kit._fogged(m, em.outputs[0])
     ctx["scr_strength"] = em.inputs["Strength"]
+    ctx["scr_tex"] = tex
     # static dim neighbours on their own image
     dim = bpy.data.images.new("score dim", SCR_W, SCR_H, alpha=False)
     st = {"lit5": 0, "dim": 1, "slide": 0, "sixth": 1, "n5": 0, "sym5": []}
@@ -892,8 +893,16 @@ def animate(kit, story, tl, t, ctx):
     st = screen_state(tl, t)
     key = (st["lit5"], st["dim"], st["slide"], st["sixth"], st["n5"], tuple(st["sym5"]))
     if key != ctx["scr_key"]:
+        # a fresh image datablock for every state: Blender doesn't reliably re-upload a changed image between renders
         arr = screen_image(st)
-        ctx["scr_img"].pixels.foreach_set(arr.ravel())
-        ctx["scr_img"].update()
+        img = bpy.data.images.new("score screen", SCR_W, SCR_H, alpha=False)
+        img.colorspace_settings.name = "sRGB"
+        img.pixels.foreach_set(arr.ravel())
+        img.update()
+        old = ctx["scr_img"]
+        ctx["scr_tex"].image = img
+        ctx["scr_img"] = img
+        if old is not None and old.users <= 1:
+            bpy.data.images.remove(old)
         ctx["scr_key"] = key
     return over
