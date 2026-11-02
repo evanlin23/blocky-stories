@@ -3,20 +3,20 @@
 - **Slug:** `ep33-chairlift`. Folder `stories/ep33-chairlift/`.
 - **From:** pitch #17 `chairlift` in `stories/ideas.md`. Its setting, creature (the Four-Face), first-line type (a dare) and kind of warmth (generosity: I give my seat away) are kept. The twist is reshaped (below).
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 608 spoken words in 81 lines, all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
+- **Word count:** 608 spoken words in 81 lines (r1: L10 +1, L37 -1), all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
 - **Estimated length:** about 2:16 to 2:22. The speech is 2:06 at 290 wpm and 2:11 at 278 wpm, and the 0.12 s gaps add about 10 s, P01 0.7 s and the loop tail 0.25 s. If the retime lands under 2:15, add back "from the TOP" at the end of L03 and slow nothing. If it lands over 2:30, L35 goes first, then L49.
 
 ## Premise
-I'm on a one-week holiday by a lake, and I've booked the first chair of every dawn on the old chairlift to the ridge, both seats, so I can watch the sunrise alone. Bo, who runs the bottom station, bets me I can't ride up alone, and says that if I can't, my seat goes to the Halvors, an old couple who stand at the gate rope every dawn in laced walking boots. Every dawn, a rider in a faded orange cagoule with a cube head rides the lift alone, a little nearer my chair each time, and its face is always turned to me.
+I'm on a one-week holiday by a lake, and I've booked the first chair of every dawn on the old chairlift to the ridge, both seats, so I can watch the sunrise alone. Bo, who runs the bottom station, bets me I can't ride up alone all week, and says that if I don't, my seat goes to the Halvors, an old couple who stand at the gate rope every dawn in laced walking boots. Every dawn, a rider in a faded orange cagoule with a cube head rides the lift alone, a little nearer my chair each time, and its face is always turned to me.
 
 ## The rule
-Nobody rides a chair alone. Nobody in the story says it as a rule. In this valley it only lives as Bo's bet.
+Nobody rides alone a whole week. Nobody in the story says it as a rule. In this valley it only lives as Bo's bet (L10: ride alone all week, or the seat goes to the Halvors). Monday to Thursday I do ride alone, and Friday breaks it, so "Nobody EVER / HAS" (L81) means nobody has lasted the week.
 
 ## The twist (and where it's planted)
 - **What it is:** the bet has never been won, and it's older than my week. Every summer some visitor books the dawn chair, takes Bo's bet and loses it, and the forfeit seat is how the Halvors have ridden the first chair every summer for forty years. They have never once bought a pass. "Bo bet me I couldn't ride up alone" turns from a dare about my nerve into a town's way of giving two old people their sunrise, with me as this summer's giver.
 - **How the last 15 seconds turn the first line:** L74 to L81. Bo hands me a coffee, I ask who lost last summer ("A man from the city"), the summer before ("His sister"), Bo says they've ridden the first chair every summer for forty years, and they've never once bought a pass. Then the first line comes back, and its answer: "Nobody EVER / HAS."
 - **Plant 1 (L06, shot 6):** my pink pass card hangs on its cord at my neck. Behind me, the Halvors at the gate rope have no cord and no card. The line names only mine. On a rewatch, they've never had one.
-- **Plant 2 (L10 to L11):** Bo names the forfeit on day one, "your SEAT / goes to THEM", nodding at the Halvors, and Mrs Halvor laughs. It plays as banter. On a rewatch it's the whole arrangement, said out loud in the first 30 seconds.
+- **Plant 2 (L10 to L11):** Bo names the terms and the forfeit on day one, "Ride ALONE / all WEEK, / or your SEAT / goes to THEM", nodding at the Halvors, and Mrs Halvor laughs. It plays as banter. On a rewatch it's the whole arrangement, said out loud in the first 30 seconds.
 - **Supporting plants:** their boots laced to the top every dawn (L09, L30, L65): they always come ready to ride. Bo's flat hand on my empty seat as I sit (L13 to L14, L44): he steadies it for a second rider. At L71 he doesn't need to.
 
 ## How it differs from ep11 and ep20
@@ -88,7 +88,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are the key w
   - [shot 8: over their shoulders, empty chairs rising into blue]
 - `L09` narrator: Their walking BOOTS / are LACED / to the TOP.
   - [shot 9 (support plant): low close on two pairs of boots, red-brown and dark green, laced high]
-- `L10` narrator: Bo says, / "If you CAN'T, / your SEAT / goes to THEM."
+- `L10` narrator: Bo says, / "Ride ALONE / all WEEK, / or your SEAT / goes to THEM."
   - [shot 10 (plant 2): Bo, grinning, tipping his head at the Halvors]
 - `L11` narrator: Mrs Halvor LAUGHS, / so I / LAUGH too.
   - [shot 11: Mrs Halvor laughing, `happy`. Then me, `smug`]
@@ -146,7 +146,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are the key w
   - [shot 36: my face, `terrified`]
 
 ### 03 Thursday: ahead
-- `L37` narrator: On THURSDAY, / it isn't on / the DOWN CHAIRS.
+- `L37` narrator: On THURSDAY, / the DOWN CHAIRS / are all EMPTY.
   - [shot 37: my POV of the down line, every chair empty]
 - `L38` narrator: It's in / the chair / right AHEAD, / going UP.
   - [shot 38: my POV forward up the line: the next up chair, the orange back and the cube above the seat back]
