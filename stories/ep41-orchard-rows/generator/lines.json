@@ -256,20 +256,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nan said her",
-    "Nan said, her"
+    "Nan said she",
+    "Nan said, she"
    ],
    [
-    "knees don't do",
-    "knees don't do"
+    "always left the",
+    "always left the"
    ],
    [
-    "the rows after",
-    "the rows after"
+    "gate open for",
+    "gate open for"
    ],
    [
-    "dark ANYMORE.",
-    "dark anymore."
+    "me, every NIGHT.",
+    "me, every night."
    ]
   ]
  },
@@ -476,16 +476,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "By the stove,",
-    "By the stove,"
+    "By the door,",
+    "By the door,"
    ],
    [
-    "her slippers were",
-    "her slippers were"
+    "my boots were",
+    "my boots were"
    ],
    [
-    "soaked right THROUGH.",
-    "soaked right through."
+    "tied. I never",
+    "tied. I never"
+   ],
+   [
+    "tie THEM.",
+    "tie them."
    ]
   ]
  },
@@ -652,12 +656,20 @@
     "I woke at"
    ],
    [
-    "three, and Nan's",
-    "three, and Nan's"
+    "three with my",
+    "three with my"
    ],
    [
-    "bed was EMPTY.",
-    "bed was empty."
+    "boots on.",
+    "boots on."
+   ],
+   [
+    "Nan's bed was",
+    "Nan's bed was"
+   ],
+   [
+    "EMPTY.",
+    "empty."
    ]
   ]
  },
@@ -1000,12 +1012,8 @@
     "on it,"
    ],
    [
-    "in her soaking",
-    "in her soaking"
-   ],
-   [
-    "wet SLIPPERS.",
-    "wet slippers."
+    "waiting for ME.",
+    "waiting for me."
    ]
   ]
  },
@@ -1014,16 +1022,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "She said she",
-    "She said she"
+    "She said it",
+    "She said it"
    ],
    [
-    "walks it every",
-    "walks it every"
+    "was the first",
+    "was the first"
    ],
    [
-    "night. In CASE.",
-    "night. In case."
+    "time I came",
+    "time I came"
+   ],
+   [
+    "out here AWAKE.",
+    "out here awake."
    ]
   ]
  },
@@ -1054,20 +1066,20 @@
     "Every night since"
    ],
    [
-    "I left,",
-    "I left,"
+    "I moved,",
+    "I moved,"
    ],
    [
-    "Nan walked my",
-    "Nan walked my"
+    "I walked",
+    "I walked"
    ],
    [
-    "old paths,",
-    "old paths,"
+    "back here",
+    "back here"
    ],
    [
-    "step for STEP.",
-    "step for step."
+    "in my SLEEP.",
+    "in my sleep."
    ]
   ]
  },
@@ -1076,16 +1088,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Right inside my",
-    "Right inside my"
+    "Inside my own",
+    "Inside my own"
    ],
    [
-    "prints, so hers",
-    "prints, so hers"
+    "old prints,",
+    "old prints,"
    ],
    [
-    "never SHOWED.",
-    "never showed."
+    "so they never",
+    "so they never"
+   ],
+   [
+    "went OUT.",
+    "went out."
    ]
   ]
  },
@@ -1094,20 +1110,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the square",
-    "And the square"
+    "Nan followed my",
+    "Nan followed my"
    ],
    [
-    "trail was walking",
-    "trail was walking"
+    "glow out every",
+    "glow out every"
    ],
    [
-    "the empty place",
-    "the empty place"
+    "night, and watched",
+    "night, and watched"
    ],
    [
-    "beside HER.",
-    "beside her."
+    "it back HOME.",
+    "it back home."
    ]
   ]
  },
@@ -1328,12 +1344,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Everyone else's prints",
-    "Everyone else's prints"
+    "Everybody else's trail",
+    "Everybody else's trail"
    ],
    [
-    "fade at SUNRISE.",
-    "fade at sunrise."
+    "is gone by",
+    "is gone by"
+   ],
+   [
+    "MORNING.",
+    "morning."
    ]
   ]
  },
@@ -1342,16 +1362,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mine never FADE.",
-    "Mine never fade."
+    "Mine never",
+    "Mine never"
    ],
    [
-    "Nan sees",
-    "Nan sees"
+    "go OUT.",
+    "go out."
    ],
    [
-    "to IT.",
-    "to it."
+    "I still walk",
+    "I still walk"
+   ],
+   [
+    "them every NIGHT.",
+    "them every night."
    ]
   ]
  }

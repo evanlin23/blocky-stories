@@ -9,10 +9,10 @@ In this town every footprint glows in its owner's colour until the next sunrise.
 The world's rule (L01): every footprint you leave glows until the next sunrise. The montage adds the town's own trick (L05 to L06): step inside somebody else's prints and theirs glow one more night, while yours never show. I'm the exception (L08): at Nan's, my prints never fade.
 
 ## Twist
-My prints never faded by themselves. Every night since I left, Nan has walked my old paths step for step, inside my prints, so mine got one more night every night and hers never showed (L51 to L53). The Rough One's square trail was walking the empty place beside her, where a second walker used to be (L54). "Mine never fade" (L08) first reads as something magic about me. After L52 it reads as Nan's care, and the last line says so outright: "Nan sees to IT."
-- **Plant 1 (L11 to L13, S14 to S17):** the rows show only my pink paths, never one blue print of Nan's, while the kitchen floor is full of her blue ones. Nan says her knees don't do the rows after dark anymore (L13). A rewatch knows she walks them every night.
-- **Plant 2 (L23, S28):** Nan's slippers by the stove, soaked through with dew every morning. Paid off at L49 ("soaking wet SLIPPERS").
-- **Bonus plant (L05 to L06, S07 to S09):** the montage shows the sneaky trick on screen first: a second person walks inside the first one's prints, their soles glowing violet, and no violet print shows behind them. It is exactly what Nan does, shown before we meet her.
+My prints never faded by themselves. Every night since I moved to town, I've walked back to the orchard in my sleep, down my old rows, inside my own old prints, so by the town's trick (L05 to L06) they got one more night every night (L51 to L53). Nan knows. Every night she follows my glow out, stepping inside my prints so hers never show, and watches it back home (L54). Tonight is the first time I've come out to her awake (L50). "Mine never fade" (L08) first reads as something magic about the orchard or about me. After L52 it reads as something I do without knowing, and the last line makes it a sting: "Mine never go OUT. I still walk them every NIGHT."
+- **Plant 1 (L13, S16 to S17):** Nan says she always left the gate open for me, every night. It reads as a grandmother hoping I'd visit. A rewatch knows I came every night, asleep. The rows still show only pink, never one blue print of Nan's (S14), because she walks inside mine.
+- **Plant 2 (L23, S28):** my boots by the back door, tied in tight knots, an apple leaf caught in one lace, and "I never tie THEM." Echoed at L31 (I wake with my boots on). Dry, never wet.
+- **Bonus plant (L05 to L06, S07 to S09):** the montage shows the sneaky trick first: a second person walks inside the first one's prints, their soles glowing violet, and no violet print shows behind them. It is how Nan follows me, and it's how a trail gets one more night.
 
 ## World
 One small town at the edge of farmland, autumn harvest week.
@@ -43,7 +43,7 @@ One small town at the edge of farmland, autumn harvest week.
 | Third dawn | L27 to L29 | Outside the kitchen window, its cube head filling the bottom third of the glass, face cut in, looking in. The trail ends under the sill. |
 | Night, back door | L34 to L42 | On the grass at the foot of the two porch steps, so its face is level with mine in the doorway, a stride left of where my pink path begins. Porch lamp fading down behind me. |
 | Chase | L43 to L45 | Each look back: standing in the row one behind mine (row 1 when I'm at row 2, row 4 when I'm at row 5), always a stride to my left. Never caught mid-step. |
-| Bench | L47 to L55 | Not in the frame. |
+| Bench | L47 to L55 | Not in the frame (and not in the past-night insert S62 to S65). |
 | Gone | L56 | Gone. Only fog down the row where it stood. |
 | Sunrise | L62 to L64 | Not seen. Its square trail from the porch ends at the bench, on the empty side. |
 
@@ -69,13 +69,13 @@ No flicker anywhere in this film. Every light change is a slow fade.
 - **Exception (L08):** at Nan's, my prints never fade.
 - **Loved one at stake:** Nan, gone from her bed into the fog on the third night (L31 to L33).
 - **15 to 30 s:** the orchard shows the rule at work (my lit paths in every row, Nan's blue prints only indoors) and the square trail arrives at L14. Nobody explains the rule after L08.
-- **Loophole (L39 to L41, L51 to L53):** the town's own sneaky trick from L05 to L06, read a second way. A print stepped in again gets one more night, and the one stepping never shows. That's why my prints never fade, and why one trail is fresh tonight. I follow it to Nan. No new magic.
+- **Loophole (L39 to L41, L51 to L54):** the town's own sneaky trick from L05 to L06, read a second way. A print stepped in again gets one more night, and the one stepping never shows. My prints never fade because I step in them myself, asleep, every night. One trail is fresh tonight because I just walked it, and Nan's blue stops at the door because she followed inside it. I follow my own glow to find her. No new magic.
 
 ## The last 15 seconds turn the first line
-L61 to L66: at sunrise two trails run side by side down the far row, mine pink and hers blue, the first blue print in the orchard in the whole film. The square trail ends at the bench. "Everyone else's prints fade at SUNRISE. Mine never FADE. Nan sees to IT." loops straight into L01. On a second watch the opening rule is about Nan: my glowing paths were her walking, every night, and "never fade" (L08) is something she did, not something I am.
+L61 to L66: at sunrise two trails run side by side down the far row, mine pink and hers blue, the first blue print in the orchard in the whole film, because tonight she walked beside me instead of inside my prints. The square trail ends at the bench. "Everybody else's trail is gone by MORNING. Mine never go OUT. I still walk them every NIGHT." loops straight into L01. On a second watch the opening rule is about me: my glowing paths were me, walking home in my sleep every night, and the sting says I still do.
 
 ## Lore connection (one)
-Two short clay-red strokes pressed into the wood of the bench seat at the end of the far row: a plain tally, two for a bench built for two. Shown once, in S76 under L64 ("The square trail ended at the BENCH."), the empty seat in dawn light, held 1.8 s, never narrated. No extra stroke, no other thread touched.
+Two short clay-red strokes pressed into the wood of the bench seat at the end of the far row: a plain tally, two for a bench built for two (Nan and me). Lore only, never narrated: on my night walks Nan always came behind me, inside my prints, so the place beside me stayed empty and the Rough One walked it. It's gone once Nan walks beside me. Shown once, in S76 under L64 ("The square trail ended at the BENCH."), the empty seat in dawn light, held 1.8 s, never narrated. No extra stroke, no other thread touched.
 
 ## Shot plan
 78 shots over about 2:18, about 1.8 s a shot. Faces at least a fifth of the frame width, out of the caption band.
@@ -97,29 +97,29 @@ Two short clay-red strokes pressed into the wood of the bench seat at the end of
 | S13 | L10 | Me walking up the track with a bag on my shoulder, my pink trail behind. |
 | S14 | L11 | High wide of the orchard at dusk: seven rows criss-crossed with pink paths. Only pink. Plant 1. |
 | S15 | L12 | Low down a row: pink prints running into the fog. |
-| S16 | L13 | Kitchen: Nan at the stove, her blue prints all over the pale boards. Plant 1. |
-| S17 | L13 | Close on Nan, mild, rubbing one knee. |
+| S16 | L13 | Kitchen: Nan at the stove, her blue prints all over the pale boards. She glances at me, fond. Plant 1. |
+| S17 | L13 | The orchard gate at dusk, standing wide open, hooked back on its post. Plant 1. |
 | S18 | L14 | Dawn. From the porch, down the far row in fog. |
 | S19 | L15 | Ground close: one huge square print pressed dark into wet grass, beside a pink one. |
 | S20 | L16 | Overhead: the line of dark squares beside my glowing path. |
 | S21 | L17 | Low along the row: the two trails parallel, the squares a stride to the left. |
 | S22 | L18 | Tracking along the square trail toward the end of the row. |
 | S23 | L18 | The end of the far row, among the trunks in fog: a big blocky shape, small in frame. |
-| S24 | L19 | Long lens, closer: the Rough One whole, one block per limb. |
-| S25 | L20 | Close on the cube head, the face cut in, glints deep in the eye holes. Test still first. |
+| S24 | L19 | Long lens, closer: the Rough One as a fog silhouette only, one block per limb readable by outline, side or under key with a cool rim, no face detail. |
+| S25 | L20 | The cube head in fog, still a silhouette: the square outline and the dark slots of the cut-in face, two tiny glints deep in the eye holes, mouth unlit. No clear face yet (first clear face is S44). |
 | S26 | L21 | Wide: it stands as still as the trunks, leaves falling past it. |
 | S27 | L22 | Nan picking in the near row, not looking up. Cut to a basket set on the grass at my feet. |
-| S28 | L23 | Insert: the tan slippers by the stove, dark with wet, a small puddle. Plant 2. |
+| S28 | L23 | Insert: my brown work boots by the back door, laces tied in tight double knots, one gold apple leaf caught in a lace. Dry boards, no wet. Plant 2. |
 | S29 | L24 | Second dawn, from the porch: the square trail stops at row 4. |
 | S30 | L25 | It stands between two trees, facing the house, bigger in frame. |
 | S31 | L26 | Me on a ladder picking, my back to it, it soft in the background. |
-| S32 | L26 | Over my shoulder: it in exactly the same place. Hold. |
+| S32 | L26 | Over my shoulder from the ladder: it in frame, soft in the fog between the two trees, exactly the same place and pose as S30. Hold. |
 | S33 | L27 | Third dawn. Me at the kitchen window, the blind rising, daylight ramping over 1.2 s. |
 | S34 | L28 | Outside, looking down: the square trail ending under the sill. |
 | S35 | L29 | From inside: the cube head filling the bottom third of the glass, the cut face looking in. |
 | S36 | L29 | Close on me, frozen, the head reflected faintly in the glass. |
 | S37 | L30 | Night. The house from the orchard, fog rolling up to the porch, the lamp warm. |
-| S38 | L31 | Me waking in my small room, moonlight. |
+| S38 | L31 | Me waking in my small room, moonlight, sitting up with my brown boots still on, laced. |
 | S39 | L31 | Nan's bed, the quilt turned back, empty. |
 | S40 | L32 | High angle: blue prints from her bed, across the kitchen, to the back door. |
 | S41 | L33 | Close: the last blue print on the door mat. Nothing after it. |
@@ -140,13 +140,13 @@ Two short clay-red strokes pressed into the wood of the bench seat at the end of
 | S56 | L46 | Me facing forward, walking fast into the fog. |
 | S57 | L47 | The bright pink trail running to a bench at the end of the far row. |
 | S58 | L48 | The bench, worn wood, the porch lamp tiny far behind. |
-| S59 | L49 | Nan sitting on it, her wet slippers in the grass. |
-| S60 | L50 | Close on Nan, a small smile. |
-| S61 | L51 | Overhead: my pink trail down the row. |
-| S62 | L52 | A past night, silvery grade: Nan walking slowly down the row alone. |
-| S63 | L52 | Close on her slippers landing exactly inside my pink prints, which brighten. |
-| S64 | L53 | Behind her: only pink behind her, no blue. |
-| S65 | L54 | Wide: Nan walking, dark squares pressing into the grass a stride to her left, no one there. |
+| S59 | L49 | Nan sitting on it in her cardigan, facing up the row toward me, as if she expected me. Dry slippers. |
+| S60 | L50 | Close on Nan, a small surprised smile. |
+| S61 | L51 | Overhead: my pink trail down the row, one print lit over another. |
+| S62 | L52 | A past night, silvery grade: me walking slowly down the row, eyes closed, arms loose, boots on. |
+| S63 | L53 | Close on my boots landing exactly inside my own old pink prints, which brighten. |
+| S64 | L54 | Same past night, wider: Nan a few steps behind me, her slippers landing inside my prints, only pink behind us, no blue. |
+| S65 | L54 | Nan on the bench in the past night, watching my pink glow move away up the row toward the porch. |
 | S66 | L55 | Now: me sitting on the bench beside Nan, in the empty half. |
 | S67 | L56 | Looking back down the row: only fog. |
 | S68 | L57 | Nan close, teasing. |
@@ -159,9 +159,9 @@ Two short clay-red strokes pressed into the wood of the bench seat at the end of
 | S75 | L64 | The square trail from the porch ending at the bench, on the empty side. |
 | S76 | L64 | Lore plant: insert of the bench seat in dawn light, two short clay-red strokes pressed into the wood. Held 1.8 s, not narrated. |
 | S77 | L65 | Nan and me on the porch, mugs on the rail, sunrise behind the rows. |
-| S78 | L66 | My pink sole glowing as I step down, Nan's blue beside it. Cut 0.25 s after "IT", loop to S01. |
+| S78 | L66 | My pink sole glowing as I step down, Nan's blue beside it. Cut 0.25 s after "NIGHT", loop to S01. |
 
-## Narration (66 lines, 636 words, about 2:12 of speech at 290 wpm, about 2:18 with gaps)
+## Narration (66 lines, 650 words, about 2:15 of speech at 290 wpm, about 2:21 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words.
 
 L01. In this town, every footprint you leave glows until the next SUNRISE.
@@ -176,7 +176,7 @@ L09. Nan raised me in the orchard house, out past the last STREET.
 L10. I moved into town last year. This week I came back for the HARVEST.
 L11. The orchard was still criss-crossed with my glowing pink PATHS.
 L12. Every row I ever walked, still LIT.
-L13. Nan said her knees don't do the rows after dark ANYMORE.
+L13. Nan said she always left the gate open for me, every NIGHT.
 L14. The first morning, a new trail ran down the far ROW.
 L15. Huge square prints, pressed dark into the DEW.
 L16. The only prints in town that didn't GLOW.
@@ -186,7 +186,7 @@ L19. It was built like a person, out of far too few BLOCKS.
 L20. One huge cube for a head, with a face cut right INTO it.
 L21. Clay red and sack brown, as still as the TREES.
 L22. Nan didn't look up. She just handed me a BASKET.
-L23. By the stove, her slippers were soaked right THROUGH.
+L23. By the door, my boots were tied. I never tie THEM.
 L24. The second morning, the square trail stopped three rows NEARER.
 L25. It stood between two trees, facing the HOUSE.
 L26. I picked that whole row with my back to it, and never once saw it MOVE.
@@ -194,7 +194,7 @@ L27. The third morning, I pulled up the kitchen BLIND.
 L28. The square trail ended right under the WINDOW.
 L29. And so did IT. That cube head filled the bottom of the GLASS.
 L30. That night, the fog came right up to the PORCH.
-L31. I woke at three, and Nan's bed was EMPTY.
+L31. I woke at three with my boots on. Nan's bed was EMPTY.
 L32. Her blue prints went from the bed, across the kitchen, to the back DOOR.
 L33. And STOPPED.
 L34. I opened the DOOR.
@@ -212,12 +212,12 @@ L45. One stride to my LEFT.
 L46. I didn't look back AGAIN.
 L47. My trail ran to the bench at the end of the far ROW.
 L48. The bench where Nan and I sat every single EVENING.
-L49. She was sitting on it, in her soaking wet SLIPPERS.
-L50. She said she walks it every night. In CASE.
+L49. She was sitting on it, waiting for ME.
+L50. She said it was the first time I came out here AWAKE.
 L51. My prints never faded on their OWN.
-L52. Every night since I left, Nan walked my old paths, step for STEP.
-L53. Right inside my prints, so hers never SHOWED.
-L54. And the square trail was walking the empty place beside HER.
+L52. Every night since I moved, I walked back here in my SLEEP.
+L53. Inside my own old prints, so they never went OUT.
+L54. Nan followed my glow out every night, and watched it back HOME.
 L55. I sat down next to her, in my old SPOT.
 L56. When I looked back down the row, there was only FOG.
 L57. Nan said I always did walk too FAST.
@@ -228,5 +228,5 @@ L61. At sunrise, I stood at the kitchen WINDOW.
 L62. Down the far row ran a new pair of trails, side by SIDE.
 L63. One pink and patient. One blue and slow, for the first TIME.
 L64. The square trail ended at the BENCH.
-L65. Everyone else's prints fade at SUNRISE.
-L66. Mine never FADE. Nan sees to IT.
+L65. Everybody else's trail is gone by MORNING.
+L66. Mine never go OUT. I still walk them every NIGHT.

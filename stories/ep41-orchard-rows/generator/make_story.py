@@ -469,9 +469,9 @@ story = {
                "orchard for harvest week, my old pink paths still glow in every row, though everyone else's prints fade at "
                "dawn. Each dawn a new trail of huge square prints that do not glow runs beside my path and ends a little "
                "nearer the house, where something built from far too few blocks stands still all day.",
-    "twist": "My prints never faded by themselves. Every night since I left, Nan has walked my old paths step for step, "
-             "inside my prints, so mine got one more night every night and hers never showed. The square trail was walking "
-             "the empty place beside her, where a second walker used to be.",
+    "twist": "The prints that never fade are my own doing. Every night since I moved to town I have sleepwalked back to the "
+             "orchard and down my old rows, stepping inside my own prints so they never go out, and Nan follows my glow and "
+             "watches it home. Tonight is the first time I come out to her awake, and I still walk them every night.",
     "world": "A small farm town at harvest week: a cobbled dusk street, a townsman's kitchen, and an apple orchard of seven "
              "long rows in fog behind a whitewashed farmhouse, with a bench at the end of the far row.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
