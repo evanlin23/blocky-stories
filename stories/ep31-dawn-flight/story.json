@@ -1,0 +1,1697 @@
+{
+ "slug": "ep31-dawn-flight",
+ "title": "stub",
+ "made_for_kids": false,
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "gap": 0.12,
+ "tail": 0.9,
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#d4a017",
+   "pants": "#222222"
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa SAID",
+     "Rosa said"
+    ],
+    [
+     "the wind",
+     "the wind"
+    ],
+    [
+     "was ZERO.",
+     "was zero."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So WHY",
+     "So why"
+    ],
+    [
+     "was the BASKET",
+     "was the basket"
+    ],
+    [
+     "TILTING?",
+     "tilting?"
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Not a RIPPLE",
+     "Not a ripple"
+    ],
+    [
+     "on the BALLOON.",
+     "on the balloon."
+    ],
+    [
+     "Still as",
+     "Still as"
+    ],
+    [
+     "a PAINTING.",
+     "a painting."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But the BASKET",
+     "But the basket"
+    ],
+    [
+     "leaned,",
+     "leaned,"
+    ],
+    [
+     "toward its",
+     "toward its"
+    ],
+    [
+     "EMPTY CORNER.",
+     "empty corner."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the burner ROARED.",
+     "Then the burner roared."
+    ],
+    [
+     "Down in the MIST,",
+     "Down in the mist,"
+    ],
+    [
+     "PIECES",
+     "pieces"
+    ],
+    [
+     "caught the LIGHT.",
+     "caught the light."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was Dad's",
+     "It was Dad's"
+    ],
+    [
+     "SIXTIETH.",
+     "sixtieth."
+    ],
+    [
+     "A BALLOON flight",
+     "A balloon flight"
+    ],
+    [
+     "at DAWN.",
+     "at dawn."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He'd wanted it",
+     "He'd wanted it"
+    ],
+    [
+     "for YEARS.",
+     "for years."
+    ],
+    [
+     "Me, him,",
+     "Me, him,"
+    ],
+    [
+     "and my brother",
+     "and my brother"
+    ],
+    [
+     "CALLUM.",
+     "Callum."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Callum couldn't",
+     "Callum couldn't"
+    ],
+    [
+     "MAKE it.",
+     "make it."
+    ],
+    [
+     "WORK.",
+     "work."
+    ],
+    [
+     "That's what",
+     "That's what"
+    ],
+    [
+     "I told DAD.",
+     "I told Dad."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad just NODDED.",
+     "Dad just nodded."
+    ],
+    [
+     "He didn't",
+     "He didn't"
+    ],
+    [
+     "ASK AGAIN.",
+     "ask again."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The launch field",
+     "The launch field"
+    ],
+    [
+     "was DARK",
+     "was dark"
+    ],
+    [
+     "and COLD.",
+     "and cold."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa, our PILOT,",
+     "Rosa, our pilot,"
+    ],
+    [
+     "filled the balloon",
+     "filled the balloon"
+    ],
+    [
+     "with FIRE.",
+     "with fire."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It stood UP",
+     "It stood up"
+    ],
+    [
+     "like a GIANT",
+     "like a giant"
+    ],
+    [
+     "WAKING.",
+     "waking."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The BASKET",
+     "The basket"
+    ],
+    [
+     "was built",
+     "was built"
+    ],
+    [
+     "for FOUR.",
+     "for four."
+    ],
+    [
+     "A CORNER",
+     "A corner"
+    ],
+    [
+     "EACH.",
+     "each."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad UNPACKED",
+     "Dad unpacked"
+    ],
+    [
+     "his bag.",
+     "his bag."
+    ],
+    [
+     "FOUR FLASKS",
+     "four flasks"
+    ],
+    [
+     "of TEA.",
+     "of tea."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I said,",
+     "I said,"
+    ],
+    [
+     "\"Dad,",
+     "Dad,"
+    ],
+    [
+     "there's THREE",
+     "there's three"
+    ],
+    [
+     "of us.\"",
+     "of us."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He said,",
+     "He said,"
+    ],
+    [
+     "\"HABIT,\"",
+     "habit,"
+    ],
+    [
+     "and stood the FOURTH",
+     "and stood the fourth"
+    ],
+    [
+     "in the empty CORNER.",
+     "in the empty corner."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa LOOKED",
+     "Rosa looked"
+    ],
+    [
+     "at that CORNER.",
+     "at that corner."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She tied",
+     "She tied"
+    ],
+    [
+     "a SANDBAG",
+     "a sandbag"
+    ],
+    [
+     "in there.",
+     "in there."
+    ],
+    [
+     "\"For BALANCE.\"",
+     "For balance."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The RIM",
+     "The rim"
+    ],
+    [
+     "was old LEATHER,",
+     "was old leather,"
+    ],
+    [
+     "worn SMOOTH",
+     "worn smooth"
+    ],
+    [
+     "by HANDS.",
+     "by hands."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the GROUND",
+     "Then the ground"
+    ],
+    [
+     "LET GO",
+     "let go"
+    ],
+    [
+     "of us.",
+     "of us."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The fields",
+     "The fields"
+    ],
+    [
+     "sank UNDER",
+     "sank under"
+    ],
+    [
+     "the MIST.",
+     "the mist."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa looked UP",
+     "Rosa looked up"
+    ],
+    [
+     "and said,",
+     "and said,"
+    ],
+    [
+     "\"Wind's ZERO.",
+     "Wind's zero."
+    ],
+    [
+     "PERFECT.\"",
+     "perfect."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then Dad's CUP",
+     "Then Dad's cup"
+    ],
+    [
+     "SLID",
+     "slid"
+    ],
+    [
+     "along the RIM.",
+     "along the rim."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "All the way",
+     "All the way"
+    ],
+    [
+     "to the",
+     "to the"
+    ],
+    [
+     "EMPTY CORNER.",
+     "empty corner."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa FROWNED,",
+     "Rosa frowned,"
+    ],
+    [
+     "and gave the burner",
+     "and gave the burner"
+    ],
+    [
+     "a LONG ROAR.",
+     "a long roar."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The mist",
+     "The mist"
+    ],
+    [
+     "lit ORANGE",
+     "lit orange"
+    ],
+    [
+     "under us.",
+     "under us."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And a FIELD AWAY,",
+     "And a field away,"
+    ],
+    [
+     "something",
+     "something"
+    ],
+    [
+     "HUNG in it.",
+     "hung in it."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "BLOCKS.",
+     "blocks."
+    ],
+    [
+     "COPPER ones,",
+     "copper ones,"
+    ],
+    [
+     "and SLATE BLUE.",
+     "and slate blue."
+    ],
+    [
+     "SCATTERED.",
+     "scattered."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Like the PARTS",
+     "Like the parts"
+    ],
+    [
+     "of somebody,",
+     "of somebody,"
+    ],
+    [
+     "before anyone",
+     "before anyone"
+    ],
+    [
+     "had BUILT them.",
+     "had built them."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The roar STOPPED,",
+     "The roar stopped,"
+    ],
+    [
+     "and they",
+     "and they"
+    ],
+    [
+     "were GONE.",
+     "were gone."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The basket",
+     "The basket"
+    ],
+    [
+     "leaned",
+     "leaned"
+    ],
+    [
+     "a little",
+     "a little"
+    ],
+    [
+     "FURTHER.",
+     "further."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad kept POINTING",
+     "Dad kept pointing"
+    ],
+    [
+     "at BARN ROOFS,",
+     "at barn roofs,"
+    ],
+    [
+     "saying,",
+     "saying,"
+    ],
+    [
+     "\"LOOK at THAT.\"",
+     "look at that."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The burner",
+     "The burner"
+    ],
+    [
+     "ROARED",
+     "roared"
+    ],
+    [
+     "AGAIN.",
+     "again."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The pieces",
+     "The pieces"
+    ],
+    [
+     "were CLOSER.",
+     "were closer."
+    ],
+    [
+     "One HEDGE off.",
+     "One hedge off."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And they'd",
+     "And they'd"
+    ],
+    [
+     "come TOGETHER.",
+     "come together."
+    ],
+    [
+     "ALMOST.",
+     "almost."
+    ],
+    [
+     "A SHAPE.",
+     "A shape."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Two LEGS.",
+     "Two legs."
+    ],
+    [
+     "A BODY.",
+     "A body."
+    ],
+    [
+     "Two ARMS.",
+     "Two arms."
+    ],
+    [
+     "A HEAD",
+     "A head"
+    ],
+    [
+     "in SLICES.",
+     "in slices."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every BLOCK",
+     "Every block"
+    ],
+    [
+     "a hand's WIDTH",
+     "a hand's width"
+    ],
+    [
+     "from the NEXT.",
+     "from the next."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Far TALLER",
+     "Far taller"
+    ],
+    [
+     "than a PERSON,",
+     "than a person,"
+    ],
+    [
+     "because of",
+     "because of"
+    ],
+    [
+     "all the GAPS.",
+     "all the gaps."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa never SAW it.",
+     "Rosa never saw it."
+    ],
+    [
+     "She just said,",
+     "She just said,"
+    ],
+    [
+     "\"Somebody's LEANING.\"",
+     "Somebody's leaning."
+    ],
+    [
+     "Nobody WAS.",
+     "Nobody was."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The sandbag ROPE",
+     "The sandbag rope"
+    ],
+    [
+     "CREAKED.",
+     "creaked."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then",
+     "Then"
+    ],
+    [
+     "the next ROAR.",
+     "the next roar."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was",
+     "It was"
+    ],
+    [
+     "a ROPE'S LENGTH",
+     "a rope's length"
+    ],
+    [
+     "from the BASKET.",
+     "from the basket."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every piece",
+     "Every piece"
+    ],
+    [
+     "in the RIGHT place",
+     "in the right place"
+    ],
+    [
+     "now.",
+     "now."
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its FACE",
+     "Its face"
+    ],
+    [
+     "came in",
+     "came in"
+    ],
+    [
+     "SLICES.",
+     "slices."
+    ]
+   ]
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The EYES",
+     "The eyes"
+    ],
+    [
+     "on one.",
+     "on one."
+    ],
+    [
+     "The MOUTH",
+     "The mouth"
+    ],
+    [
+     "two gaps BELOW.",
+     "two gaps below."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Through the GAPS,",
+     "Through the gaps,"
+    ],
+    [
+     "I could see",
+     "I could see"
+    ],
+    [
+     "PINK MIST.",
+     "pink mist."
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The roar FADED,",
+     "The roar faded,"
+    ],
+    [
+     "and it",
+     "and it"
+    ],
+    [
+     "FADED with it.",
+     "faded with it."
+    ]
+   ]
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the basket",
+     "Then the basket"
+    ],
+    [
+     "TIPPED,",
+     "tipped,"
+    ],
+    [
+     "HARD,",
+     "hard,"
+    ],
+    [
+     "toward the fourth CORNER.",
+     "toward the fourth corner."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa said,",
+     "Rosa said,"
+    ],
+    [
+     "\"HOLD ON,\"",
+     "hold on,"
+    ],
+    [
+     "and opened",
+     "and opened"
+    ],
+    [
+     "the BURNER WIDE.",
+     "the burner wide."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.7,
+   "chunks": []
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And it was",
+     "And it was"
+    ],
+    [
+     "IN",
+     "in"
+    ],
+    [
+     "the BASKET.",
+     "the basket."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the FOURTH",
+     "In the fourth"
+    ],
+    [
+     "CORNER,",
+     "corner,"
+    ],
+    [
+     "right beside",
+     "right beside"
+    ],
+    [
+     "the SANDBAG.",
+     "the sandbag."
+    ]
+   ]
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its pieces",
+     "Its pieces"
+    ],
+    [
+     "TOWERED",
+     "towered"
+    ],
+    [
+     "over us.",
+     "over us."
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A hand's WIDTH",
+     "A hand's width"
+    ],
+    [
+     "from Dad's",
+     "from Dad's"
+    ],
+    [
+     "SHOULDER.",
+     "shoulder."
+    ]
+   ]
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its sliced FACE",
+     "Its sliced face"
+    ],
+    [
+     "was turned",
+     "was turned"
+    ],
+    [
+     "to DAD.",
+     "to Dad."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad was watching",
+     "Dad was watching"
+    ],
+    [
+     "the SUNRISE.",
+     "the sunrise."
+    ],
+    [
+     "He never",
+     "He never"
+    ],
+    [
+     "TURNED.",
+     "turned."
+    ]
+   ]
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The burner",
+     "The burner"
+    ],
+    [
+     "roared",
+     "roared"
+    ],
+    [
+     "AGAIN.",
+     "again."
+    ]
+   ]
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the TOP",
+     "And the top"
+    ],
+    [
+     "of its HEAD",
+     "of its head"
+    ],
+    [
+     "had turned",
+     "had turned"
+    ],
+    [
+     "to ME.",
+     "to me."
+    ]
+   ]
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The REST",
+     "The rest"
+    ],
+    [
+     "of it",
+     "of it"
+    ],
+    [
+     "still faced",
+     "still faced"
+    ],
+    [
+     "DAD.",
+     "Dad."
+    ]
+   ]
+  },
+  {
+   "id": "P02",
+   "pause": 0.8,
+   "chunks": []
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was standing",
+     "It was standing"
+    ],
+    [
+     "EXACTLY",
+     "exactly"
+    ],
+    [
+     "where CALLUM",
+     "where Callum"
+    ],
+    [
+     "would STAND.",
+     "would stand."
+    ]
+   ]
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The basket",
+     "The basket"
+    ],
+    [
+     "was leaning",
+     "was leaning"
+    ],
+    [
+     "toward the PLACE",
+     "toward the place"
+    ],
+    [
+     "I'd left EMPTY.",
+     "I'd left empty."
+    ]
+   ]
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Because",
+     "Because"
+    ],
+    [
+     "Callum never",
+     "Callum never"
+    ],
+    [
+     "said NO.",
+     "said no."
+    ]
+   ]
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I never",
+     "I never"
+    ],
+    [
+     "ASKED him.",
+     "asked him."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I wanted",
+     "I wanted"
+    ],
+    [
+     "ONE MORNING",
+     "one morning"
+    ],
+    [
+     "with Dad",
+     "with Dad"
+    ],
+    [
+     "to MYSELF.",
+     "to myself."
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The SUN",
+     "The sun"
+    ],
+    [
+     "broke out",
+     "broke out"
+    ],
+    [
+     "of the MIST,",
+     "of the mist,"
+    ],
+    [
+     "all GOLD.",
+     "all gold."
+    ]
+   ]
+  },
+  {
+   "id": "L65",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And I told DAD.",
+     "And I told Dad."
+    ],
+    [
+     "ALL of it.",
+     "all of it."
+    ],
+    [
+     "Right THERE.",
+     "Right there."
+    ]
+   ]
+  },
+  {
+   "id": "L66",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He went QUIET",
+     "He went quiet"
+    ],
+    [
+     "for a whole",
+     "for a whole"
+    ],
+    [
+     "burner ROAR.",
+     "burner roar."
+    ]
+   ]
+  },
+  {
+   "id": "L67",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then he LAUGHED",
+     "Then he laughed"
+    ],
+    [
+     "so LOUD",
+     "so loud"
+    ],
+    [
+     "Rosa JUMPED.",
+     "Rosa jumped."
+    ]
+   ]
+  },
+  {
+   "id": "L68",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He said,",
+     "He said,"
+    ],
+    [
+     "\"You could've",
+     "You could've"
+    ],
+    [
+     "just ASKED me",
+     "just asked me"
+    ],
+    [
+     "for that TOO.\"",
+     "for that too."
+    ]
+   ]
+  },
+  {
+   "id": "L69",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then he said,",
+     "Then he said,"
+    ],
+    [
+     "\"He'll want",
+     "He'll want"
+    ],
+    [
+     "his FLASK",
+     "his flask"
+    ],
+    [
+     "TOMORROW.\"",
+     "tomorrow."
+    ]
+   ]
+  },
+  {
+   "id": "L70",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The PIECES",
+     "The pieces"
+    ],
+    [
+     "stayed in that CORNER",
+     "stayed in that corner"
+    ],
+    [
+     "all the way DOWN.",
+     "all the way down."
+    ]
+   ]
+  },
+  {
+   "id": "L71",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa set us",
+     "Rosa set us"
+    ],
+    [
+     "DOWN,",
+     "down,"
+    ],
+    [
+     "SOFT,",
+     "soft,"
+    ],
+    [
+     "in a STUBBLE",
+     "in a stubble"
+    ],
+    [
+     "FIELD.",
+     "field."
+    ]
+   ]
+  },
+  {
+   "id": "L72",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad put",
+     "Dad put"
+    ],
+    [
+     "his PHONE",
+     "his phone"
+    ],
+    [
+     "on the RIM",
+     "on the rim"
+    ],
+    [
+     "and rang CALLUM.",
+     "and rang Callum."
+    ]
+   ]
+  },
+  {
+   "id": "L73",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He picked UP",
+     "He picked up"
+    ],
+    [
+     "on the",
+     "on the"
+    ],
+    [
+     "FIRST RING.",
+     "first ring."
+    ]
+   ]
+  },
+  {
+   "id": "L74",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Dad said,",
+     "Dad said,"
+    ],
+    [
+     "\"BALLOON.",
+     "balloon."
+    ],
+    [
+     "TOMORROW.",
+     "tomorrow."
+    ],
+    [
+     "DAWN.\"",
+     "dawn."
+    ]
+   ]
+  },
+  {
+   "id": "L75",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Callum said,",
+     "Callum said,"
+    ],
+    [
+     "\"I'll bring",
+     "I'll bring"
+    ],
+    [
+     "the BISCUITS.\"",
+     "the biscuits."
+    ]
+   ]
+  },
+  {
+   "id": "L76",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I looked",
+     "I looked"
+    ],
+    [
+     "at the",
+     "at the"
+    ],
+    [
+     "fourth CORNER.",
+     "fourth corner."
+    ]
+   ]
+  },
+  {
+   "id": "L77",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Just a SANDBAG,",
+     "Just a sandbag,"
+    ],
+    [
+     "and a FLASK.",
+     "and a flask."
+    ]
+   ]
+  },
+  {
+   "id": "L78",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Callum CAME.",
+     "Callum came."
+    ],
+    [
+     "FOUR of us.",
+     "four of us."
+    ],
+    [
+     "A CORNER",
+     "A corner"
+    ],
+    [
+     "EACH.",
+     "each."
+    ]
+   ]
+  },
+  {
+   "id": "L79",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa UNTIED",
+     "Rosa untied"
+    ],
+    [
+     "the SANDBAG",
+     "the sandbag"
+    ],
+    [
+     "and left it",
+     "and left it"
+    ],
+    [
+     "on the GRASS.",
+     "on the grass."
+    ]
+   ]
+  },
+  {
+   "id": "L80",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Callum's FLASK",
+     "Callum's flask"
+    ],
+    [
+     "stood",
+     "stood"
+    ],
+    [
+     "in Callum's",
+     "in Callum's"
+    ],
+    [
+     "CORNER.",
+     "corner."
+    ]
+   ]
+  },
+  {
+   "id": "L81",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The HORIZON",
+     "The horizon"
+    ],
+    [
+     "sat FLAT",
+     "sat flat"
+    ],
+    [
+     "as a SHELF.",
+     "as a shelf."
+    ]
+   ]
+  },
+  {
+   "id": "L82",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rosa SAID",
+     "Rosa said"
+    ],
+    [
+     "the wind",
+     "the wind"
+    ],
+    [
+     "was ZERO.",
+     "was zero."
+    ],
+    [
+     "The BASKET",
+     "The basket"
+    ],
+    [
+     "flew LEVEL.",
+     "flew level."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -3,
+      1
+     ],
+     [
+      0,
+      0,
+      1
+     ],
+     30
+    ]
+   ]
+  }
+ ]
+}
