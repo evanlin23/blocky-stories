@@ -464,7 +464,7 @@ sfx = [
 ]
 story = {
     "slug": "ep16-lookout",
-    "title": "It walked out of the fog toward my fire tower",
+    "title": "Every pine on the far ridge snapped at the same height",
     "made_for_kids": False,
     "premise": "Alone in a fire lookout's glass cab above an autumn forest, with a lamp, binoculars and a radio, I watch a giant made of the forest walk the ridges in thick fog, and each sign of it is nearer than the last: seen, heard, traces, moving, close, felt.",
     "twist": "It isn't hunting me. It steers by the river, the smoke has hidden the river, and my lamp is the only light that keeps still. I carry the lamp down the fire road at first light until it can see the river again.",
