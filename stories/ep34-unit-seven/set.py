@@ -859,7 +859,7 @@ def _plates(kit, story, tl, t, ctx):
             ok = False                   # a speck is a smear, not a number
         if root.hide_render:
             continue
-        if f > 0 and shot["id"] == "S65":   # side A reads 21..26 and the block has twelve units
+        if shot["id"] == "S65":   # side A reads 21..26, the block has twelve units, and this shot sees a plate big
             ok = False
         for o in obs:
             o.hide_render = not ok
