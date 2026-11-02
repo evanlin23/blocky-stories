@@ -1,42 +1,34 @@
-"""Only Line: a small old playhouse in rehearsal week, and the Prompter (ep23). Built from kit.py's parts; nothing
-here is shared with another story's set.
+"""Only Line (ep23, redo): a sunny town street corner, the playhouse stage door at dusk, and the playhouse stage in
+rehearsal week, where the people who faded all the way stand in the wings. Built from kit.py's parts; nothing here is
+shared with another story's set (the fade mechanism is patterned on ep49-car-wash's make_fade, copied).
 
 Coordinates (metres, z up, the stage floor is z = 0). The stage runs x -9 .. 9 from the lip (y = 0) to the brick
 back wall (y = 7.2). The proscenium is at y = -0.2 with its opening x -4.2 .. 4.2. A character with yaw 0 faces
--y, which is the house: the seats start at y = -2.6 and step back and up. Stage left is +x: four bottle-green curtain legs
-hang there (inner edge x = 3.7), and behind the fourth the back wall carries the chalk tally. My flat is at x = -40
-and my car at x = +40 (separate little sets, nothing in common with the stage).
-
-THE PROMPTER (RULES.md, The creature): one model, built once and posed per shot from the "prompter" cue. An ordinary
-R6-shaped body at 0.85 of our height in a long soot-black coat with a column of dull gilt buttons, and on it a head
-about three times too big: a cracked gilt stage mask, a smooth oval with carved brows, a nose ridge, two eye pits with
-one warm spark deep in each (the brightest thing in frame) and a carved closed mouth that, from L50 on, is a tall dark
-oval going back into black. Wrong in one dimension only: the head's width. It is never seen moving, only nearer.
-Light: the stage wash does not reach it (its front lights are dead). A key from low in the wings (the blue running
-light), a thin warm rim on the mask's edge, and the eye sparks.
+-y, which is the house: the seats start at y = -2.6 and step back and up. Stage left is +x: four bottle-green curtain
+legs hang there (inner edge x = 3.7). The town street is a little set at x = -40 (a brick terrace along y = 4.5) and the
+stage door at x = +40 (a brick wall along y = 3.2); nothing in common with the stage.
 
 Cues read here:
 - mood: {"set": a MOODS name, "dur": s} the light, eased from the mood before (every change is a ramp)
-- prompter: {"pos": [x, y], "yaw": deg, "head": deg (the mask turned on its neck), "mouth": 0|1, "hidden": bool,
-  "key": [dx, dy, dz], "rim": [dx, dy, dz], "key_gain": g, "rim_gain": g}
-- costume: {"who": "walt", "beard": b, "crown": b, "robe": b} or {"who": "me", "cloak": b}
-- chairs: {"on": bool}   - audience: {"on": bool}
+- fade: {"who": key, "a": 0..1, "dur": s} a character's transparency, eased from its last value (ep49's pattern).
+  Face strokes stay stronger than the body: the head's alpha is min(1, 1.6 x the body's). The tin crown never fades.
+- costume: {"who": "walt", "beard": b, "crown": b, "robe": b} or {"who": "me", "cloak": b, "ears": b, "palm": b}
+- throne: {"on": bool}   - audience: {"on": bool}
 Acting keys read here (acting.py ignores them): "sit": true (R6 sitting, the legs straight out).
 """
 
 from __future__ import annotations
 
 import math
-from pathlib import Path
 
 import bpy
-from mathutils import Matrix, Vector as V
 
-CEIL = 9.0
-U = 0.29                      # metres per unit in the Prompter's own build (0.85 x the rig's 0.34)
-MASK_A, MASK_B, MASK_C = 1.75, 0.6, 2.05     # the mask is an ellipsoid: 3.5 wide, 1.2 deep, 4.1 tall (units)
+TX, SDX = -40.0, 40.0
 ROWS = 10
 ROW_Y0, ROW_DY, ROW_Z0, ROW_DZ = -2.6, 0.95, -0.65, 0.12
+THRONE = (0.0, 2.5)
+FADERS = ("walt", "stopman", "mime", "busker", "f1", "f2", "f3", "f4")
+FADED = ("f1", "f2", "f3", "f4")
 
 
 def row_y(r):
@@ -81,19 +73,6 @@ def _show(ob, on):
         o.hide_render = not on
 
 
-def tube(kit, name, r_out, r_in, z0, z1, mat, parent, n=28):
-    """A ring of wall between two radii, from z0 to z1 along its own axis."""
-    verts, faces = [], []
-    for i in range(n):
-        a = 2 * math.pi * i / n
-        c, s = math.cos(a), math.sin(a)
-        verts += [(r_out * c, r_out * s, z0), (r_out * c, r_out * s, z1), (r_in * c, r_in * s, z1), (r_in * c, r_in * s, z0)]
-    for i in range(n):
-        a, b = 4 * i, 4 * ((i + 1) % n)
-        faces += [(a, b, b + 1, a + 1), (a + 1, b + 1, b + 2, a + 2), (a + 2, b + 2, b + 3, a + 3), (a + 3, b + 3, b, a)]
-    return kit.mesh_obj(name, verts, faces, mat, parent, smooth=True)
-
-
 def pleated(kit, name, x0, x1, y, z0, z1, mat, folds=8, amp=0.07):
     """A curtain leg: a velvet sheet hanging in folds."""
     n = folds * 5
@@ -118,16 +97,6 @@ def light_only(kit, coll, light_name, objs):
     kit.LIGHTS[light_name]["obj"].light_linking.receiver_collection = col
 
 
-def light_except(kit, coll, light_name, objs):
-    col = bpy.data.collections.get(coll) or bpy.data.collections.new(coll)
-    for ob in objs:
-        if ob.name not in col.objects:
-            col.objects.link(ob)
-    for co in col.collection_objects:
-        co.light_linking.link_state = "EXCLUDE"
-    kit.LIGHTS[light_name]["obj"].light_linking.receiver_collection = col
-
-
 def lamp(kit, name, kind, loc, energy, hexc, aim=None, size=0.2, spot=None, blend=0.4):
     ob = kit.light(name, kind, loc, energy, hexc, size=size, spot=spot, blend=blend)
     ob.visible_camera = False
@@ -142,42 +111,113 @@ def lamp(kit, name, kind, loc, energy, hexc, aim=None, size=0.2, spot=None, blen
 def materials(kit):
     M = {}
     M["wood"] = kit.planks("#4a3626", "#2a1e15", scale=1.4, axis="Y", name="stage boards", rough=0.7)
-    M["wood2"] = kit.planks("#33261b", "#1e1510", scale=1.2, axis="X", name="flat boards", rough=0.75)
     M["brick"] = kit.bricks("#5a4b4a", "#443837", mortar="#262223", scale=1.0, name="cold brick", grime_amt=0.5)
     M["black"] = kit.plastic("#08080a", 0.7, name="black")
-    M["soot"] = kit.plastic("#171517", 0.8, name="soot coat", spec=0.2)
-    M["gilt"] = kit.plastic("#b8913a", 0.38, name="gilt", spec=0.7)
     M["gilt_dull"] = kit.plastic("#7d6428", 0.5, name="gilt dull")
-    M["mask"] = kit.grime("#b8913a", 0.3, 5.0, name="mask gilt", rough=0.42)
-    M["bronze"] = kit.plastic("#3f2c10", 0.7, name="crack bronze")
-    M["pit"] = kit.plastic("#020203", 0.9, name="pit")
     M["velvet"] = kit.plastic("#1a4a35", 0.97, name="velvet")
     M["seat"] = kit.plastic("#4b4049", 0.92, name="seat plum")
     M["carpet"] = kit.grime("#2a1f27", 0.5, 2.0, name="carpet", rough=0.95)
-    M["dark_wall"] = kit.plastic("#16141a", 0.9, name="dark wall")
     M["tape_w"] = kit.plastic("#cfc8b2", 0.85, name="tape white")
     M["tape_y"] = kit.plastic("#e3b81f", 0.85, name="tape yellow")
-    M["chalk"] = kit.emit("#e0cc8a", 0.7, name="chalk")
     M["steel"] = kit.metal("#6c7075", 0.45, name="steel")
+    M["crown_tin"] = kit.plastic("#9ba2a8", 0.4, name="crown tin", spec=0.8)
     M["tin"] = kit.plastic("#9ba2a8", 0.4, name="tin", spec=0.8)
     M["white"] = kit.plastic("#e9e9e4", 0.9, name="beard white")
     M["robe"] = kit.plastic("#2c3b5c", 0.9, name="robe")
     M["robe_trim"] = kit.plastic("#b8913a", 0.5, name="robe trim")
     M["cloak"] = kit.plastic("#2b2d33", 0.95, name="cloak")
     M["wood_dark"] = kit.plastic("#3a2a1e", 0.7, name="chair wood")
-    M["folding"] = kit.plastic("#7a7e84", 0.5, name="folding chair")
     M["paper"] = kit.plastic("#d9d4c6", 0.9, name="paper")
-    M["grey_bar"] = kit.plastic("#5d5f66", 0.9, name="grey bar")
     M["bulb"] = kit.emit("#ffe3b0", 6.0, name="bulb")
-    M["lamp_shade"] = kit.plastic("#2f4a3a", 0.6, name="lamp shade")
-    M["asphalt"] = kit.grime("#1a1b20", 0.5, 3.0, name="asphalt", rough=0.9)
-    M["car"] = kit.plastic("#38585f", 0.5, name="car body")
-    M["tyre"] = kit.plastic("#0c0c0e", 0.9, name="tyre")
-    M["window_night"] = kit.emit("#1c2a46", 0.5, name="window night")
     M["head_dark"] = kit.plastic("#7a6a66", 0.9, name="aud head")
     M["body_dark"] = kit.plastic("#3c3a52", 0.9, name="aud body")
-    M["spark"] = kit.emit("#ff9a2e", 5.0, name="eye spark")
+    M["earbud"] = kit.plastic("#f4f4f2", 0.35, name="earbud")
+    M["glint"] = kit.emit("#ffb35c", 9.0, name="eye glint")
     return M
+
+
+def town_materials(kit, M):
+    """The sunny street: light fog so the far wall stays warm and bright."""
+    old = dict(kit.FOG)
+    kit.set_fog("#f1e3c4", 0.01, 14.0)
+    M["t_brick"] = kit.bricks("#b0603f", "#94503a", mortar="#7d6f62", scale=1.0, name="warm brick", grime_amt=0.25)
+    M["t_cobble"] = kit.cobbles("#6f6c66", "#a39e93", "#3c3a38", scale=2.2, wet=0.1, name="sunny cobbles")
+    M["t_pave"] = kit.plastic("#b9b3a6", 0.9, name="pavement")
+    M["t_teal"] = kit.plastic("#1f8a86", 0.5, name="door teal")
+    M["t_cherry"] = kit.plastic("#b8223a", 0.5, name="door cherry")
+    M["t_navy"] = kit.plastic("#233f7a", 0.5, name="door navy")
+    M["t_frame"] = kit.plastic("#ece6d8", 0.6, name="door frame")
+    M["t_step"] = kit.plastic("#a39b8e", 0.9, name="door step")
+    M["t_glass"] = kit.plastic("#34495e", 0.2, name="window glass")
+    M["t_green"] = kit.plastic("#3f7d47", 0.65, name="shelter green")
+    M["t_iron"] = kit.plastic("#26292d", 0.5, name="lamp iron")
+    M["t_brass"] = kit.plastic("#c59a3a", 0.3, name="brass", spec=0.8)
+    M["t_wood"] = kit.plastic("#7a5636", 0.7, name="bench wood")
+    kit.set_fog("#4a3940", 0.016, 6.0)
+    M["d_brick"] = kit.bricks("#7a4a3c", "#5f3a30", mortar="#3a2e2c", scale=1.0, name="door brick", grime_amt=0.45)
+    M["d_cobble"] = kit.cobbles("#4a4845", "#7b766d", "#252424", scale=2.2, wet=0.2, name="dusk cobbles")
+    M["d_green"] = kit.plastic("#2f6a4a", 0.5, name="stage door green")
+    M["d_lintel"] = kit.plastic("#5b5148", 0.9, name="lintel")
+    kit.FOG.update(old)
+
+
+# ------------------------------------------------------------------------------------------------ the street
+
+
+def build_street(kit, ctx, M):
+    B = kit.box
+    B("street", (36, 22, 0.2), (TX, -6.0, -0.1), M["t_cobble"])
+    B("pavement", (36, 4.2, 0.02), (TX, 2.4, 0.011), M["t_pave"])
+    B("terrace wall", (36, 0.5, 7.0), (TX, 4.75, 3.5), M["t_brick"])
+    B("terrace eaves", (36, 0.6, 0.3), (TX, 4.5, 7.05), M["t_step"])
+    # windows, two floors, with a white frame standing 1 cm proud of the glass
+    for k, x in enumerate((-10.5, -3.4, 5.0, 11.2)):
+        for z in (1.5, 4.2) if k not in (1,) else (4.2,):
+            B(f"win frame {k} {z}", (1.1, 0.06, 1.5), (TX + x, 4.47, z), M["t_frame"])
+            B(f"win glass {k} {z}", (0.9, 0.04, 1.3), (TX + x, 4.435, z), M["t_glass"])
+    # three painted doors; the cherry one is number nine
+    doors = {"teal": (-6.5, M["t_teal"]), "navy": (1.6, M["t_navy"]), "cherry": (7.5, M["t_cherry"])}
+    for nm, (x, mat) in doors.items():
+        B(f"frame {nm}", (1.4, 0.06, 2.45), (TX + x, 4.47, 1.22), M["t_frame"])
+        B(f"door {nm}", (1.1, 0.08, 2.2), (TX + x, 4.42, 1.1), mat)
+        B(f"knob {nm}", (0.09, 0.05, 0.09), (TX + x + 0.38, 4.365, 1.05), M["t_brass"])
+        B(f"step {nm}", (1.7 if nm != "cherry" else 2.6, 0.8, 0.18), (TX + x, 4.0, 0.09), M["t_step"])
+    nx, nz, th = TX + 7.5, 1.75, 0.07
+    segs = [("top", (0.34, 0.03, th), (0, 0.27)), ("tl", (th, 0.03, 0.28), (-0.135, 0.135)),
+            ("tr", (th, 0.03, 0.28), (0.135, 0.135)), ("mid", (0.34, 0.03, th), (0, 0.0)),
+            ("br", (th, 0.03, 0.28), (0.135, -0.135)), ("bot", (0.34, 0.03, th), (0, -0.27))]
+    for nm, size, (dx, dz) in segs:
+        B(f"nine {nm}", size, (nx + dx, 4.385, nz + dz), M["t_brass"])
+    # the green wooden bus shelter (no text): roof, four posts, a bench, a low back board by the bench
+    B("shelter roof", (4.0, 1.7, 0.12), (TX + 1.4, 2.55, 2.72), M["t_green"])
+    B("shelter fascia", (4.04, 0.08, 0.3), (TX + 1.4, 1.72, 2.62), M["t_green"])
+    for sx in (-0.5, 3.3):
+        for sy in (1.8, 3.2):
+            B(f"shelter post {sx} {sy}", (0.12, 0.12, 2.7), (TX + sx, sy, 1.35), M["t_green"])
+    B("shelter bench", (1.3, 0.45, 0.08), (TX + 2.65, 3.0, 0.46), M["t_wood"])
+    B("shelter bench back", (1.3, 0.05, 0.4), (TX + 2.65, 3.22, 0.78), M["t_green"])
+    # the iron lamp post
+    gx, gy = TX + 3.9, 1.1
+    kit.cyl("lamp post", 0.06, 4.0, (gx, gy, 2.0), M["t_iron"], n=12)
+    kit.cyl("lamp post base", 0.14, 0.5, (gx, gy, 0.25), M["t_iron"], n=12, r2=0.09)
+    B("lamp head", (0.36, 0.36, 0.5), (gx, gy, 4.25), M["t_iron"], bevel=0.03)
+    B("lamp cap", (0.5, 0.5, 0.08), (gx, gy, 4.55), M["t_iron"])
+    B("lamp glass", (0.28, 0.28, 0.4), (gx, gy, 4.25), kit.plastic("#d8d2b8", 0.2, name="lamp glass"))
+
+
+def build_door(kit, ctx, M):
+    B = kit.box
+    B("sd ground", (30, 20, 0.2), (SDX, -6.0, -0.1), M["d_cobble"])
+    B("sd wall", (24, 0.5, 7.0), (SDX, 3.45, 3.5), M["d_brick"])
+    B("sd lintel", (1.7, 0.2, 0.2), (SDX, 3.12, 2.4), M["d_lintel"])
+    B("sd frame", (1.5, 0.05, 2.35), (SDX, 3.17, 1.17), M["d_lintel"])
+    B("sd door", (1.2, 0.08, 2.2), (SDX, 3.12, 1.1), M["d_green"])
+    B("sd handle", (0.1, 0.06, 0.18), (SDX + 0.45, 3.06, 1.05), M["t_brass"])
+    B("sd step", (1.9, 0.8, 0.16), (SDX, 2.75, 0.08), M["d_lintel"])
+    gx, gy, gz = SDX + 1.6, 3.0, 2.35
+    B("sd lamp arm", (0.05, 0.3, 0.05), (gx, gy + 0.1, gz), M["t_iron"])
+    B("sd lamp glass", (0.2, 0.2, 0.26), (gx, gy - 0.1, gz), M["bulb"])
+    B("sd lamp cap", (0.28, 0.28, 0.05), (gx, gy - 0.1, gz + 0.16), M["t_iron"])
 
 
 # ------------------------------------------------------------------------------------------------ the playhouse
@@ -190,7 +230,6 @@ def build_stage(kit, ctx, M):
     kit.box("back wall", (18, 0.3, 9.0), (0, 7.35, 4.5), M["brick"])
     for sx in (-1, 1):
         kit.box(f"side wall {sx}", (0.3, 7.6, 9.0), (sx * 9.0, 3.6, 4.5), M["brick"])
-    # the proscenium: soot-black with worn gilt edging
     for sx in (-1, 1):
         kit.box(f"pros col {sx}", (1.0, 0.6, 5.9), (sx * 4.7, -0.2, 2.25), M["black"])
         kit.box(f"pros trim {sx}", (0.07, 0.64, 4.6), (sx * 4.18, -0.2, 2.3), M["gilt_dull"])
@@ -199,34 +238,19 @@ def build_stage(kit, ctx, M):
     kit.box("pros trim top", (8.5, 0.64, 0.07), (0, -0.2, 4.58), M["gilt_dull"])
     for k in range(9):
         kit.box(f"pros tile {k}", (0.5, 0.64, 0.14), (-3.6 + 0.9 * k, -0.2, 5.0), M["gilt_dull"], bevel=0.02)
-    # the tall green curtain legs in the wings, four a side, hanging in velvet folds
     legy = ctx["places"]["legy"]
     for sx in (-1, 1):
         for k, y in enumerate(legy):
             x0, x1 = (3.7, 5.3) if sx > 0 else (-5.3, -3.7)
             pleated(kit, f"leg {sx} {k}", x0, x1, y, 0.04, 4.6, M["velvet"])
-    # the tape marks: five white, the yellow one last (stage left)
     for k, (x, y) in enumerate(ctx["places"]["marks"]):
         m = M["tape_y"] if k == 5 else M["tape_w"]
         rot = (0, 0, math.radians(((k * 37) % 11) - 5))
         kit.box(f"mark a {k}", (0.5, 0.07, 0.008), (x, y, 0.004), m, rot=rot)
         kit.box(f"mark b {k}", (0.07, 0.5, 0.008), (x, y, 0.004), m, rot=rot)
     kit.box("king mark", (0.45, 0.07, 0.008), (0.0, ctx["places"]["king"][1], 0.004), M["tape_w"])
-    # the eight chalk strokes on the brick, in the wings behind the fourth leg (pale gilt, for a cast of seven)
-    for k in range(8):
-        x = 5.05 + 0.07 * k + 0.004 * math.sin(k * 2.3)
-        kit.box(f"chalk {k}", (0.02, 0.012, 0.25 + 0.015 * math.sin(k * 1.9)), (x, 7.195, 1.04), M["chalk"],
-                rot=(0, 0.035 * math.sin(k * 3.1), 0), bevel=0.004)
-    # a brick patch, built so its courses run level (the wall box above stretches its bricks into streaks); shown
-    # only for the track to the brick (L82), chalk out of frame
-    bp = kit.box("brick patch", (6.0, 3.0, 0.02), (5.0, 7.18, 1.5), kit.bricks("#3b4660", "#2c3448", mortar="#161a26", scale=1.0, name="brick patch", grime_amt=0.4),
-                 rot=(math.pi / 2, 0, 0))
-    bp.hide_render = True
-    ctx["brick_patch"] = bp
-    # paper cups on the stage edge
     for k, x in enumerate((-0.05, 0.9)):
         kit.cyl(f"cup {k}", 0.04, 0.1, (x, 0.18, 0.05), M["paper"], n=14, r2=0.03)
-    # the ghost light: a bare bulb in a cage on a stand
     gx, gy = ctx["places"]["ghost"]
     kit.cyl("ghost base", 0.22, 0.04, (gx, gy, 0.02), M["steel"])
     kit.cyl("ghost pole", 0.022, 1.7, (gx, gy, 0.87), M["steel"], n=10)
@@ -235,11 +259,22 @@ def build_stage(kit, ctx, M):
         a = k * math.pi / 2
         kit.box(f"ghost cage {k}", (0.012, 0.012, 0.3), (gx + 0.12 * math.cos(a), gy + 0.12 * math.sin(a), 1.78), M["steel"])
     kit.cyl("ghost cap", 0.13, 0.02, (gx, gy, 1.94), M["steel"], n=14)
+    # the tall wooden throne (shown for Thursday): a high back, arms, a gilt crest
+    root = kit.empty("throne", (THRONE[0], THRONE[1], 0))
+    kit.box("throne seat", (0.7, 0.62, 0.08), (0, 0, 0.47), M["wood_dark"], root, bevel=0.015)
+    kit.box("throne back", (0.74, 0.1, 1.9), (0, 0.34, 1.0), M["wood_dark"], root, bevel=0.02)
+    kit.box("throne crest", (0.94, 0.12, 0.2), (0, 0.34, 2.02), M["robe_trim"], root, bevel=0.03)
+    for sx in (-1, 1):
+        kit.box(f"throne arm {sx}", (0.1, 0.6, 0.08), (sx * 0.39, 0.0, 0.78), M["wood_dark"], root, bevel=0.015)
+        kit.box(f"throne arm post {sx}", (0.1, 0.1, 0.4), (sx * 0.39, -0.22, 0.62), M["wood_dark"], root)
+        for sy in (-1, 1):
+            kit.box(f"throne leg {sx} {sy}", (0.08, 0.08, 0.45), (sx * 0.3, sy * 0.25, 0.225), M["wood_dark"], root)
+    root.hide_render = True
+    ctx["throne"] = root
 
 
 def build_house(kit, ctx, M):
     xs = seat_xs()
-    ctx["seats"] = []
     for r in range(ROWS):
         y, z = row_y(r), row_z(r)
         kit.box(f"row {r}", (10.0, ROW_DY + 0.02, z + 1.1), (0, y, (z - 1.1) / 2 + 0.0), M["carpet"])
@@ -247,7 +282,6 @@ def build_house(kit, ctx, M):
             kit.box(f"seat {r} {x}", (0.5, 0.5, 0.1), (x, y, z + 0.42), M["seat"], bevel=0.03)
             kit.box(f"back {r} {x}", (0.5, 0.1, 0.62), (x, y - 0.27, z + 0.78), M["seat"], bevel=0.04)
             kit.box(f"rest {r} {x}", (0.1, 0.42, 0.06), (x + 0.3, y, z + 0.6), M["black"])
-    # the audience for opening night: dark heads and shoulders in most of the seats from the 2nd row back
     aud = []
     for r in range(1, ROWS):
         for i, x in enumerate(xs):
@@ -261,238 +295,33 @@ def build_house(kit, ctx, M):
     ctx["aud"] = aud
 
 
-def build_chairs(kit, ctx, M):
-    ctx["chairs"] = []
-    ctr = (0.0, 3.2)
-    for k, (x, y) in enumerate(ctx["places"]["chairs"]):
-        yaw = math.atan2(ctr[0] - x, -(ctr[1] - y))
-        root = kit.empty(f"chair {k}", (x, y, 0), rot=(0, 0, yaw))
-        kit.box(f"chair seat {k}", (0.42, 0.42, 0.04), (0, 0, 0.45), M["folding"], root)
-        kit.box(f"chair back {k}", (0.42, 0.03, 0.34), (0, 0.2, 0.7), M["folding"], root)
-        for sx in (-1, 1):
-            for sy in (-1, 1):
-                kit.box(f"chair leg {k} {sx} {sy}", (0.025, 0.025, 0.45), (sx * 0.18, sy * 0.18, 0.225), M["steel"], root)
-        root.hide_render = True
-        ctx["chairs"].append(root)
-
-
-# ------------------------------------------------------------------------------------------------ my flat and car
-
-
-def build_flat(kit, ctx, M):
-    fx, fy = ctx["places"]["flat"]
-    kit.box("flat floor", (7, 7, 0.1), (fx, fy, -0.05), M["wood2"])
-    kit.box("flat wall back", (7, 0.12, 3.0), (fx, fy - 2.5, 1.5), M["dark_wall"])
-    kit.box("flat wall front", (7, 0.12, 3.0), (fx, fy + 3.2, 1.5), M["dark_wall"])
-    for sx in (-1, 1):
-        kit.box(f"flat wall side {sx}", (0.12, 6.0, 3.0), (fx + sx * 3.4, fy + 0.35, 1.5), M["dark_wall"])
-    kit.box("flat window", (1.1, 0.04, 1.1), (fx + 1.2, fy - 2.42, 1.5), M["window_night"])
-    for k in (-1, 1):
-        kit.box(f"flat sash {k}", (0.04, 0.05, 1.1), (fx + 1.2 + k * 0.0 + (0.0 if k < 0 else 0.0), fy - 2.4, 1.5), M["black"])
-    kit.box("flat sash h", (1.1, 0.05, 0.04), (fx + 1.2, fy - 2.4, 1.5), M["black"])
-    kit.box("table top", (1.4, 0.8, 0.05), (fx, fy + 0.05, 0.74), M["wood_dark"], bevel=0.01)
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            kit.box(f"table leg {sx}{sy}", (0.05, 0.05, 0.72), (fx + sx * 0.64, fy + 0.05 + sy * 0.34, 0.36), M["wood_dark"])
-    kit.box("chair seat flat", (0.46, 0.46, 0.05), (fx, fy - 0.85, 0.43), M["wood_dark"], bevel=0.01)
-    kit.box("chair back flat", (0.46, 0.05, 0.5), (fx, fy - 1.08, 0.7), M["wood_dark"], bevel=0.01)
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            kit.box(f"chair leg flat {sx}{sy}", (0.04, 0.04, 0.42), (fx + sx * 0.2, fy - 0.85 + sy * 0.2, 0.21), M["wood_dark"])
-    # the script: a little stack of pages, grey bars for lines, no words
-    for k in range(3):
-        kit.box(f"page {k}", (0.31, 0.42, 0.012), (fx + 0.12 + 0.012 * k, fy - 0.02 + 0.01 * k, 0.77 + 0.012 * k), M["paper"],
-                rot=(0, 0, math.radians(3 * k - 3)))
-    for k in range(9):
-        kit.box(f"bar {k}", (0.2 - 0.03 * (k % 3 == 2), 0.012, 0.003), (fx + 0.12, fy - 0.17 + 0.038 * k, 0.8), M["grey_bar"])
-    # the desk lamp
-    kit.cyl("lamp base", 0.09, 0.03, (fx - 0.5, fy + 0.22, 0.765), M["black"], n=14)
-    kit.box("lamp arm", (0.02, 0.02, 0.4), (fx - 0.5, fy + 0.22, 0.97), M["black"])
-    kit.cyl("lamp shade", 0.1, 0.14, (fx - 0.46, fy + 0.2, 1.2), M["lamp_shade"], n=16, r2=0.05, rot=(0.5, 0, 0))
-    kit.sphere("lamp bulb", 0.035, (fx - 0.46, fy + 0.16, 1.14), M["bulb"], seg=8)
-    # a shelf on the wall behind me
-    kit.box("flat shelf", (1.4, 0.22, 0.04), (fx - 1.2, fy - 2.34, 1.7), M["wood_dark"])
-
-
-def build_car(kit, ctx, M):
-    cx, cy = ctx["places"]["car"]
-    kit.box("road", (16, 16, 0.1), (cx, cy, -0.05), M["asphalt"])
-    kit.box("car body", (1.75, 4.2, 0.5), (cx, cy, 0.55), M["car"], bevel=0.05)
-    kit.box("car hood", (1.7, 1.3, 0.12), (cx, cy - 1.45, 0.86), M["car"], bevel=0.04)
-    kit.box("car trunk", (1.7, 0.9, 0.12), (cx, cy + 1.6, 0.86), M["car"], bevel=0.04)
-    kit.box("car dash", (1.6, 0.4, 0.34), (cx, cy - 0.75, 0.98), M["tyre"], bevel=0.04)
-    kit.box("car floor", (1.6, 2.3, 0.04), (cx, cy + 0.3, 0.32), M["tyre"])
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            kit.cyl(f"wheel {sx}{sy}", 0.33, 0.22, (cx + sx * 0.88, cy + sy * 1.4, 0.33), M["tyre"], rot=(0, math.pi / 2, 0), n=18)
-            kit.box(f"pillar {sx}{sy}", (0.07, 0.07, 1.3), (cx + sx * 0.8, cy + sy * 0.75, 1.47), M["car"])
-    kit.box("car roof", (1.7, 1.8, 0.07), (cx, cy, 2.15), M["car"], bevel=0.02)
-    kit.box("car seat", (0.55, 0.55, 0.12), (cx - 0.4, cy + 0.1, 0.46), M["tyre"], bevel=0.03)
-    kit.box("car seat back", (0.55, 0.1, 0.55), (cx - 0.4, cy + 0.42, 0.78), M["tyre"], bevel=0.03)
-    wheel = kit.cyl("steering wheel", 0.17, 0.03, (cx - 0.4, cy - 0.5, 1.12), M["tyre"], n=20, r2=0.17)
-    wheel.rotation_euler = (math.radians(-60), 0, 0)
-    gx, gy = cx + 2.7, cy - 0.5
-    kit.cyl("street pole", 0.05, 4.6, (gx, gy, 2.3), M["steel"], n=10)
-    kit.box("street arm", (1.2, 0.07, 0.07), (gx - 0.55, gy, 4.55), M["steel"])
-    kit.box("street head", (0.5, 0.25, 0.1), (gx - 1.1, gy, 4.5), M["black"])
-    kit.box("street glass", (0.4, 0.2, 0.03), (gx - 1.1, gy, 4.44), kit.emit("#ffc479", 5.0, name="streetlamp"))
-
-
-# ------------------------------------------------------------------------------------------------ the Prompter
-
-
-def mask_pt(x, z, off=0.0):
-    yy = -MASK_B * math.sqrt(max(0.02, 1 - (x / MASK_A) ** 2 - (z / MASK_C) ** 2))
-    n = V((x / MASK_A ** 2, yy / MASK_B ** 2, z / MASK_C ** 2)).normalized()
-    return V((x, yy, z)) + n * off, n
-
-
-def feature(kit, name, parent, x, z, off=0.0, spin=0.0):
-    """An empty on the mask's surface at (x, z), its +Z out along the surface normal and +Y up the face."""
-    p, n = mask_pt(x, z, off)
-    e = kit.empty(name, tuple(p), parent)
-    q = n.to_track_quat("Z", "Y")
-    e.rotation_euler = (q.to_matrix() @ Matrix.Rotation(spin, 3, "Z")).to_euler()
-    return e
-
-
-def build_prompter(kit, ctx, M):
-    root = kit.empty("prompter", (0, 0, 0))
-    root.scale = (U, U, U)
-    body = kit.empty("prompter body", (0, 0, 0), root)
-    # legs and shoes, hidden under the coat but there
-    for sx in (-1, 1):
-        kit.box(f"pr leg {sx}", (0.95, 0.95, 2.0), (sx * 0.5, 0, 1.0), M["soot"], body, bevel=0.06)
-        kit.box(f"pr shoe {sx}", (1.0, 1.25, 0.3), (sx * 0.5, -0.12, 0.15), M["black"], body, bevel=0.08)
-    # the long soot-black coat to the shins, with a column of small dull gilt buttons
-    kit.box("pr skirt", (2.2, 1.28, 3.0), (0, 0, 2.1), M["soot"], body, bevel=0.14)
-    kit.box("pr torso", (2.0, 1.0, 2.0), (0, 0, 3.0), M["soot"], body, bevel=0.1)
-    for k in range(7):
-        kit.box(f"pr button {k}", (0.13, 0.06, 0.13), (0, -0.66, 3.55 - 0.42 * k), M["gilt_dull"], body, bevel=0.025)
-    kit.box("pr collar", (1.5, 1.05, 0.25), (0, 0, 4.0), M["soot"], body, bevel=0.07)
-    for sx in (-1, 1):
-        a = kit.empty(f"pr arm {sx}", (sx * 1.5, 0, 3.75), body)
-        kit.box(f"pr sleeve {sx}", (0.98, 1.0, 1.7), (0, 0, -0.6), M["soot"], a, bevel=0.08)
-        kit.box(f"pr hand {sx}", (0.9, 0.9, 0.55), (0, 0, -1.72), M["black"], a, bevel=0.1)
-        a.rotation_euler = (0, math.radians(-5 * sx), 0)
-    neck = kit.empty("pr neck", (0, 0.02, 4.1), body)
-    kit.box("pr neck box", (0.8, 0.8, 0.5), (0, 0, 0.15), M["black"], neck, bevel=0.08)
-    # the mask: a smooth oval, worn gilt, a bronze crack line. Two shells, the same oval: the eye holes are cut in
-    # both, and the mouth hole only in the second (shown from L50 on), so the mouth is a real hole in the gilt
-    mk = kit.empty("pr mask", (0, 0, 2.35), neck)
-    shells = []
-    for tag in ("shut", "open"):
-        ell = kit.sphere(f"pr mask shell {tag}", 1.0, (0, 0, 0), M["mask"], mk, seg=40)
-        ell.scale = (MASK_A, MASK_B, MASK_C)
-        shells.append(ell)
-    cutters = {"shut": [], "open": []}
-    for sx in (-1, 1):                      # the eye holes, each with a spark deep inside
-        f = feature(kit, f"pr eye {sx}", mk, sx * 0.68, 0.22)
-        g = kit.empty(f"pr eye g {sx}", (0, 0, 0), f)
-        g.scale = (1.0, 1.12, 1.0)
-        for tag in cutters:
-            cu = kit.cyl(f"pr cut eye {tag} {sx}", 0.23, 1.1, (0, 0, 0.1), M["pit"], g, n=28)
-            cutters[tag].append(cu)
-        kit.cyl(f"pr eye floor {sx}", 0.25, 0.02, (0, 0, -0.4), M["pit"], g, n=24)
-        kit.sphere(f"pr spark {sx}", 0.055, (0.0, 0.0, -0.3), M["spark"], g, seg=10)
-    for sx in (-1, 1):                      # carved brows, arched, the inner ends low
-        f = feature(kit, f"pr brow {sx}", mk, sx * 0.72, 0.78, 0.0, spin=sx * 0.12)
-        kit.box(f"pr brow bar {sx}", (1.05, 0.08, 0.16), (0, 0, 0.03), M["mask"], f, bevel=0.035)
-    f = feature(kit, "pr nose", mk, 0.0, -0.15, 0.0)
-    kit.box("pr nose bar", (0.17, 0.95, 0.34), (0, 0, 0.04), M["mask"], f, bevel=0.07)
-    # the carved closed mouth: a thin, faintly smiling groove
-    fm = kit.empty("pr mouth shut", (0, 0, 0), mk)
-    for i in range(15):
-        x = -0.7 + 0.1 * i
-        zz = -1.3 + 0.07 * (x / 0.7) ** 2
-        p, n = mask_pt(x, zz, 0.0)
-        e = kit.empty(f"pr smile {i}", tuple(p), fm)
-        q = n.to_track_quat("Z", "Y")
-        e.rotation_euler = (q.to_matrix() @ Matrix.Rotation(math.atan(0.286 * x), 3, "Z")).to_euler()
-        kit.box(f"pr smile seg {i}", (0.16, 0.045, 0.07), (0, 0, 0.0), M["pit"], e, bevel=0.012)
-    ctx["mouth_shut"] = fm
-    # ...and open (from L50): a tall dark oval, a hole in the gilt that goes back into black
-    f = feature(kit, "pr mouth open", mk, 0.0, -1.3)
-    g = kit.empty("pr mouth g", (0, 0, 0), f)
-    g.scale = (0.62, 1.0, 1.0)
-    cu = kit.cyl("pr cut mouth", 0.6, 1.8, (0, 0, 0.0), M["pit"], g, n=32)
-    cutters["open"].append(cu)
-    kit.cyl("pr mouth floor", 0.62, 0.02, (0, 0, -0.9), M["pit"], g, n=24)
-    ctx["mouth_open"] = f
-    # the crack in the gilt, bronze, two runs
-    def crack(prefix, pts):
-        for i, ((x1, z1), (x2, z2)) in enumerate(zip(pts, pts[1:])):
-            L = math.hypot(x2 - x1, z2 - z1)
-            fe = feature(kit, f"{prefix}{i}", mk, (x1 + x2) / 2, (z1 + z2) / 2, 0.0, spin=-math.atan2(x2 - x1, z2 - z1))
-            kit.box(f"{prefix}bar{i}", (0.1, L, 0.07), (0, 0, 0.0), M["bronze"], fe)
-    crack("pr crack a ", [(0.5, 2.0), (0.15, 1.5), (0.4, 1.05), (0.25, 0.6)])
-    crack("pr crack b ", [(-1.2, 0.0), (-0.9, -0.7), (-1.05, -1.35), (-0.75, -1.8)])
-    crack("pr crack c ", [(0.95, -0.2), (0.75, -0.55), (0.9, -0.95)])
-    # cut the holes (Blender's boolean), keep the result as plain meshes, drop the cutters
-    bpy.context.view_layer.update()
-    for tag, shell in zip(("shut", "open"), shells):
-        for cu in cutters[tag]:
-            cu.display_type = "WIRE"
-            m = shell.modifiers.new(f"cut {cu.name}", "BOOLEAN")
-            m.operation = "DIFFERENCE"
-            m.solver = "EXACT"
-            m.object = cu
-    dg = bpy.context.evaluated_depsgraph_get()
-    for shell in shells:
-        me = bpy.data.meshes.new_from_object(shell.evaluated_get(dg))
-        shell.modifiers.clear()
-        shell.data = me
-        for p_ in me.polygons:
-            p_.use_smooth = True
-    for tag in cutters:
-        for cu in cutters[tag]:
-            bpy.data.objects.remove(cu, do_unlink=True)
-    ctx["shell_shut"], ctx["shell_open"] = shells
-    objs = [o for o in root.children_recursive if o.type == "MESH"]
-    # the key from low in the wings (cool) and the thin warm rim: lit only on the Prompter
-    key = lamp(kit, "pk_key", "SPOT", (0, 0, 0.3), 55.0, "#ffd2a0", spot=40, blend=0.7, size=0.1)
-    rim = lamp(kit, "pk_rim", "SPOT", (0, 0, 2.5), 260.0, "#ffc070", spot=45, blend=0.5, size=0.06)
-    low = lamp(kit, "pk_low", "POINT", (0, 0, 0.2), 160.0, "#8aa0e6", size=0.2)
-    ctx["pr"] = {"root": root, "neck": neck, "mask": mk, "objs": objs, "key": key, "rim": rim, "low": low}
-    light_only(kit, "pr only", "pk_key", objs)
-    light_only(kit, "pr only", "pk_rim", objs)
-    light_only(kit, "pr only", "pk_low", objs)
-
-
 # ------------------------------------------------------------------------------------------------ the light
 
-# per mood: light name -> gain; every light not listed is off. wash is the colour of the stage wash. exp is the exposure.
 WASH_NAMES = ("wash_l", "wash_r", "wash_top", "wash_back")
 _WARM = {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 1.0, "run2": 0.5, "run3": 1.0,
          "ghost": 0.4, "marion_lamp": 1.0, "wing_fill": 1.0}
-_COLD = {"wash_l": 0.7, "wash_r": 0.7, "wash_top": 0.7, "wash_back": 0.7, "run1": 1.0, "run2": 0.5, "run3": 1.0,
-         "ghost": 0.4, "marion_lamp": 0.8, "wing_fill": 0.9}
 MOODS = {
-    "ghost": {"gains": {"ghost": 1.0, "ghost_fill": 1.5, "run1": 0.6, "run2": 0.3, "run3": 0.6, "wing_fill": 0.3},
-              "wash": "#ffb868", "exp": 1.2},
+    # the town in the sun, the stage door at dusk
+    "sun": {"gains": {"sun": 1.0, "town_fill": 1.0, "town_fill2": 1.0}, "wash": "#ffb868", "exp": 0.0},
+    "dusk": {"gains": {"door_lamp": 1.0, "door_fill": 1.0, "door_rim": 1.0}, "wash": "#ffb868", "exp": 0.0},
+    # the ghost light is the key, the wash at about 6%; the faded ones are lit by their own little lights
+    "ghost": {"gains": {"wash_l": 0.06, "wash_r": 0.06, "wash_top": 0.06, "wash_back": 0.2, "ghost": 1.0,
+                        "ghost_fill": 0.5, "run1": 0.7, "run2": 0.4, "run3": 0.7, "wing_fill": 0.4, "fkey": 1.0,
+                        "frim": 1.0, "mkey": 1.0, "marion_lamp": 0.4},
+              "wash": "#ffb868", "exp": 0.9},
     "work": {"gains": {"work_l": 1.0, "work_r": 1.0, "work_house": 1.0, "run1": 0.12, "run3": 0.12, "ghost": 0.2},
              "wash": "#ffb868", "exp": 0.0},
-    "wing": {"gains": {"run1": 1.0, "run2": 0.6, "run3": 1.0, "ghost": 0.25, "ghost_fill": 0.3, "chalk_lit": 1.0,
-                       "wing_fill": 0.8},
-             "wash": "#ffb868", "exp": 0.9},
     "warm": {"gains": dict(_WARM), "wash": "#ffb868", "exp": 0.0},
-    "dim": {"gains": {"wash_l": 0.07, "wash_r": 0.07, "wash_top": 0.07, "wash_back": 0.07, "run1": 1.2, "run2": 0.5,
-                      "run3": 1.2, "ghost": 0.3, "ghost_fill": 0.12, "wing_fill": 0.5},
-            "wash": "#ffb868", "exp": 0.5},
-    "cold": {"gains": dict(_COLD), "wash": "#a9b9e6", "exp": 0.0},
     "open": {"gains": {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 1.8, "run2": 1.6,
                        "run3": 1.8, "ghost": 0.3, "aud": 1.0, "aud_back": 1.0, "wing_fill": 2.0, "wing_fill2": 4.0},
              "wash": "#ffb868", "exp": 0.0},
-    # the flat and the car are far from the stage: the stage keeps its light, so the next stage shot starts where it was
-    "flat": {"gains": {"wash_l": 0.25, "wash_r": 0.25, "wash_top": 0.25, "wash_back": 0.25, "run1": 1.0, "run3": 1.0, "ghost": 0.3, "aud": 0.3, "aud_back": 0.3, "wing_fill": 0.9, "wing_fill2": 0.4, "flat_lamp": 1.0, "flat_fill": 1.0}, "wash": "#a9b9e6", "exp": 0.0},
-    "car": {"gains": {**_WARM, "car_lamp": 1.0, "car_fill": 1.0}, "wash": "#ffb868", "exp": 0.0},
 }
 
 
 def build_lights(kit, ctx):
     gx, gy = ctx["places"]["ghost"]
     lamp(kit, "ghost", "POINT", (gx, gy, 1.78), 700.0, "#ffd7a0", size=0.08)
-    lamp(kit, "ghost_fill", "AREA", (3.3, -1.6, 2.2), 160.0, "#ffd0a0", aim=(2.3, 2.8, 1.0), size=1.6)
+    lamp(kit, "ghost_fill", "AREA", (3.3, -1.6, 2.2), 160.0, "#ffd0a0", aim=(3.4, 2.8, 1.2), size=1.6)
     lamp(kit, "wash_l", "SPOT", (-3.5, -4.0, 5.4), 2600.0, "#ffb868", aim=(-0.5, 2.3, 1.0), spot=44, blend=0.5, size=0.3)
     lamp(kit, "wash_r", "SPOT", (3.5, -4.0, 5.4), 2600.0, "#ffb868", aim=(1.0, 2.3, 1.0), spot=44, blend=0.5, size=0.3)
     lamp(kit, "wash_top", "AREA", (0, 2.4, 5.6), 900.0, "#ffb868", aim=(0, 2.4, 0), size=5.0)
@@ -503,18 +332,25 @@ def build_lights(kit, ctx):
     lamp(kit, "run1", "POINT", (4.6, 3.75, 0.45), 90.0, "#3f66ff", size=0.1)
     lamp(kit, "run2", "POINT", (5.3, 6.3, 0.9), 14.0, "#6d86d8", size=0.1)
     lamp(kit, "run3", "POINT", (4.5, 2.6, 0.4), 70.0, "#3f66ff", size=0.1)
-    lamp(kit, "chalk_lit", "SPOT", (5.3, 6.0, 1.5), 7.0, "#7f94dc", aim=(5.3, 7.2, 0.9), spot=45, blend=0.6, size=0.1)
     lamp(kit, "wing_fill", "POINT", (4.3, 2.2, 2.8), 110.0, "#8da0e0", size=0.2)
     lamp(kit, "wing_fill2", "POINT", (4.2, 4.8, 2.4), 90.0, "#8da0e0", size=0.2)
     lamp(kit, "marion_lamp", "SPOT", (0.2, -3.0, 2.0), 600.0, "#ffc890", aim=(-0.58, -4.5, 0.95), spot=40, blend=0.5, size=0.15)
     lamp(kit, "aud_back", "AREA", (0, -12.5, 4.6), 900.0, "#6d82b4", aim=(0, -6.0, 0.6), size=8.0)
     lamp(kit, "aud", "AREA", (0, -2.0, 4.2), 1300.0, "#6d82b4", aim=(0, -8.0, 0.4), size=8.0)
-    fx, fy = ctx["places"]["flat"]
-    lamp(kit, "flat_lamp", "POINT", (fx - 0.46, fy + 0.17, 1.1), 28.0, "#ffbe74", size=0.05)
-    lamp(kit, "flat_fill", "AREA", (fx + 1.8, fy + 2.2, 1.9), 40.0, "#7a92cc", aim=(fx, fy - 0.8, 1.2), size=1.5)
-    cx, cy = ctx["places"]["car"]
-    lamp(kit, "car_lamp", "SPOT", (cx + 0.9, cy - 1.7, 3.4), 900.0, "#ffbc66", aim=(cx - 0.3, cy, 0.7), spot=60, blend=0.6, size=0.2)
-    lamp(kit, "car_fill", "AREA", (cx - 2.5, cy - 3.5, 2.5), 260.0, "#7f96cf", aim=(cx, cy, 1.0), size=2.5)
+    # the faded ones' own lights (linked to them in animate): a warm key low from the ghost light's side, a thin cool
+    # rim from the wings; and one for my face
+    lamp(kit, "fkey", "AREA", (1.6, -0.9, 1.5), 190.0, "#ffc27a", aim=(0.0, 2.6, 1.3), size=1.2)
+    lamp(kit, "frim", "AREA", (4.0, 4.2, 2.6), 500.0, "#8fb2ff", aim=(0.0, 2.4, 1.2), size=1.0)
+    lamp(kit, "mkey", "AREA", (1.0, -1.2, 1.9), 110.0, "#ffd8a8", aim=(2.3, 2.9, 1.5), size=1.0)
+    # the sun, the street fill, the stage door's lamp
+    sun = kit.light("sun", "SUN", (TX - 8, -12, 14), 8.0, "#ffe2b0")
+    sun.data.angle = math.radians(2.5)
+    kit.aim(sun, (TX, 2, 0))
+    lamp(kit, "town_fill", "AREA", (TX + 1, -9.0, 5.0), 2200.0, "#cfe0ff", aim=(TX + 1, 2.0, 1.0), size=9.0)
+    lamp(kit, "town_fill2", "AREA", (TX - 6, -6.0, 3.5), 900.0, "#fff0d8", aim=(TX + 2, 2.0, 1.2), size=5.0)
+    lamp(kit, "door_lamp", "POINT", (SDX + 1.6, 2.7, 2.35), 700.0, "#ffb866", size=0.15)
+    lamp(kit, "door_fill", "AREA", (SDX + 1.0, -5.5, 4.0), 900.0, "#9fb0e6", aim=(SDX, 1.5, 1.2), size=7.0)
+    lamp(kit, "door_rim", "AREA", (SDX - 3.0, 0.5, 3.0), 400.0, "#ffcf9a", aim=(SDX, 1.5, 1.2), size=2.0)
 
 
 def _mood_state(tl, t):
@@ -536,25 +372,53 @@ def _hex(h):
 
 
 def build(kit, story, tl):
-    ctx = {"story": story, "places": story["places"]}
+    ctx = {"story": story, "places": story["places"], "attached": False, "fades": {}, "linked": False}
+    bpy.context.scene.cycles.transparent_max_bounces = 16
     M = materials(kit)
+    town_materials(kit, M)
     ctx["M"] = M
+    build_street(kit, ctx, M)
+    build_door(kit, ctx, M)
     build_stage(kit, ctx, M)
     build_house(kit, ctx, M)
-    build_chairs(kit, ctx, M)
-    build_flat(kit, ctx, M)
-    build_car(kit, ctx, M)
-    build_prompter(kit, ctx, M)
     build_lights(kit, ctx)
-    objs = ctx["pr"]["objs"]
-    # the stage wash doesn't reach the Prompter: its front lights are dead
-    for nm in WASH_NAMES + ("work_l", "work_r", "work_house", "ghost_fill", "aud", "aud_back", "wing_fill", "wing_fill2"):
-        light_except(kit, "pr dark", nm, objs)
-    ctx["costumes"] = False
     return ctx
 
 
-# ------------------------------------------------------------------------------------------------ animate
+# ------------------------------------------------------------------------------------------------ props and costumes
+
+
+def make_fade(kit, who, skip):
+    """ep49's pattern: wrap every material's shader in a mix with a transparent shader, one value per material.
+    Returns [(value node, is_head)]."""
+    vals, seen = [], set()
+    root = bpy.data.objects.get(who)
+    if root is None:
+        return vals
+    for ob in [root] + list(root.children_recursive):
+        if ob.type != "MESH" or ob in skip or "glint" in ob.name:
+            continue
+        for slot in ob.material_slots:
+            m = slot.material
+            if m is None or m.name in seen:
+                continue
+            seen.add(m.name)
+            nt = m.node_tree
+            out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+            lk = out.inputs["Surface"].links
+            if not lk:
+                continue
+            src = lk[0].from_socket
+            tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+            val = nt.nodes.new("ShaderNodeValue")
+            val.outputs[0].default_value = 1.0
+            mx = nt.nodes.new("ShaderNodeMixShader")
+            nt.links.new(val.outputs[0], mx.inputs[0])
+            nt.links.new(tr.outputs[0], mx.inputs[1])
+            nt.links.new(src, mx.inputs[2])
+            nt.links.new(mx.outputs[0], out.inputs["Surface"])
+            vals.append((val, m.name.startswith("head ")))
+    return vals
 
 
 def attach_costumes(kit, ctx):
@@ -568,14 +432,13 @@ def attach_costumes(kit, ctx):
     W["beard"] = [kit.box("walt beard", (0.95, 0.4, 0.34), (0, -R + 0.02, -0.5), M["white"], wh, bevel=0.1),
                   kit.box("walt mustache", (0.7, 0.14, 0.1), (0, -R - 0.02, -0.2), M["white"], wh, bevel=0.04)]
     crown = kit.empty("walt crown", (0, 0, H / 2 + 0.12), wh, rot=(0, 0.16, 0.05))
-    kit.cyl("crown ring", R + 0.05, 0.22, (0, 0, 0), M["tin"], crown, n=24)
+    kit.cyl("crown ring", R + 0.05, 0.22, (0, 0, 0), M["crown_tin"], crown, n=24)
     for k in range(7):
         a = 2 * math.pi * k / 7
-        kit.box(f"crown spike {k}", (0.14, 0.08, 0.2), ((R + 0.02) * math.cos(a), (R + 0.02) * math.sin(a), 0.22), M["tin"], crown,
-                rot=(0, 0, a))
+        kit.box(f"crown spike {k}", (0.14, 0.08, 0.2), ((R + 0.02) * math.cos(a), (R + 0.02) * math.sin(a), 0.22),
+                M["crown_tin"], crown, rot=(0, 0, a))
     W["crown"] = [crown]
     tor = bpy.data.objects["walt.torso"]
-    hips = bpy.data.objects["walt.hips"]
     robe = [kit.box("walt robe top", (2.18, 1.14, 2.14), (0, 0, 1.0), M["robe"], tor, bevel=0.12),
             kit.box("walt robe trim", (0.34, 1.16, 2.16), (0, -0.01, 1.0), M["robe_trim"], tor, bevel=0.05),
             kit.box("walt robe skirt", (2.3, 1.2, 1.9), (0, 0, -0.95), M["robe"], tor, bevel=0.14),
@@ -586,44 +449,112 @@ def attach_costumes(kit, ctx):
         robe.append(kit.box(f"walt robe sleeve {sx}", (1.04, 1.06, 1.1), (0, 0, -0.3), M["robe"], arm, bevel=0.1))
     W["robe"] = robe
     mt = bpy.data.objects["me.torso"]
+    mh = bpy.data.objects["me.headg"]
     C = ctx["cost"]["me"]
     C["cloak"] = [kit.box("me cloak back", (2.5, 0.34, 3.6), (0, 0.66, 0.2), M["cloak"], mt, bevel=0.1),
                   kit.box("me cloak cape", (2.4, 1.3, 0.7), (0, 0, 1.78), M["cloak"], mt, bevel=0.14),
                   kit.box("me cloak sideL", (0.3, 1.3, 2.4), (-1.05, 0.0, 0.85), M["cloak"], mt, bevel=0.08),
                   kit.box("me cloak sideR", (0.3, 1.3, 2.4), (1.05, 0.0, 0.85), M["cloak"], mt, bevel=0.08)]
+    # the white earbuds: two small blocks at my ears; and in my palm (on the top of the raised right forearm)
+    C["ears"] = [kit.box(f"me earbud {sx}", (0.16, 0.2, 0.2), (sx * (R + 0.07), 0.02, -0.02), M["earbud"], mh, bevel=0.04)
+                 for sx in (-1, 1)]
+    arm1 = bpy.data.objects["me.arm1"]
+    C["palm"] = [kit.box(f"me palm bud {k}", (0.22, 0.16, 0.2), (0.0 + 0.2 * (1 if k else -1), -0.56, -1.55), M["earbud"], arm1,
+                         bevel=0.05) for k in (0, 1)]
     # Marion's glasses: the lenses out (they render black), full frames in
     for ob in list(bpy.data.objects):
         if ob.name in ("marion.gl-1", "marion.gl1", "marion.glf-1", "marion.glf1", "marion.glb"):
             ob.hide_render = True
-    mh = bpy.data.objects.get("marion.headg")
-    if mh is not None:
+    mah = bpy.data.objects.get("marion.headg")
+    if mah is not None:
         for sx in (-1, 1):
             for nm, size, loc in (("t", (0.5, 0.03, 0.035), (sx * 0.24, -R - 0.05, 0.15)),
                                   ("b", (0.5, 0.03, 0.035), (sx * 0.24, -R - 0.05, -0.19)),
                                   ("s0", (0.035, 0.03, 0.36), (sx * 0.24 - 0.23, -R - 0.05, -0.02)),
                                   ("s1", (0.035, 0.03, 0.36), (sx * 0.24 + 0.23, -R - 0.05, -0.02))):
-                kit.box(f"marion frame {nm}{sx}", size, loc, M["tin"], mh)
-    # Marion's flask, in her raised hand
-    mar = bpy.data.objects.get("marion.arm1")
-    if mar is not None:
-        fl = kit.cyl("marion flask", 0.26, 0.9, (0, -0.1, -1.9), M["steel"], mar, rot=(0, math.pi / 2, 0), n=14)
-        ctx["flask"] = fl
-    # the pr-only lights must not touch the cast: the wash exclusion covers the Prompter alone
-    ctx["costumes"] = True
+                kit.box(f"marion frame {nm}{sx}", size, loc, M["tin"], mah)
+    # the new cast's props, always on (they hide with their wearer)
+    def P(who):
+        return {k: bpy.data.objects.get(f"{who}.{k}") for k in ("headg", "torso")}
+    sm = P("stopman")
+    if sm["headg"] is not None:     # a flat cap in olive
+        cap = kit.plastic("#6b6b3a", 0.85, name="stopman cap")
+        kit.box("stopman capc", (2 * R + 0.16, 2 * R + 0.1, 0.34), (0, -0.02, H / 2 + 0.0), cap, sm["headg"], bevel=0.12)
+        kit.box("stopman capb", (1.0, 0.6, 0.06), (0, -R - 0.22, H / 2 - 0.12), cap, sm["headg"], bevel=0.02)
+    mi = P("mime")
+    if mi["headg"] is not None:     # a black beret, a little off to one side
+        bm = kit.plastic("#0e0e12", 0.9, name="mime beret")
+        kit.cyl("mime beret", R + 0.2, 0.2, (0.12, -0.02, H / 2 + 0.04), bm, mi["headg"], n=28, rot=(0.0, 0.14, 0.0))
+        kit.cyl("mime beret stalk", 0.05, 0.1, (0.12, -0.02, H / 2 + 0.2), bm, mi["headg"], n=8)
+    hb = P("husband9")
+    if hb["torso"] is not None:     # braces
+        bc = kit.plastic("#d9d2c0", 0.7, name="braces")
+        for sx in (-1, 1):
+            kit.box(f"husband9 brace {sx}", (0.14, 0.04, 2.0), (sx * 0.55, -0.52, 1.0), bc, hb["torso"])
+    bu = P("busker")
+    if bu["torso"] is not None:     # a box guitar on a strap
+        gw = kit.plastic("#a8743c", 0.55, name="guitar wood")
+        gd = kit.plastic("#1a120c", 0.8, name="guitar dark")
+        g = kit.empty("busker guitar", (0.35, -0.75, 0.5), bu["torso"], rot=(0, math.radians(-28), 0))
+        kit.box("guitar body", (1.5, 0.45, 1.6), (0, 0, 0.0), gw, g, bevel=0.1)
+        kit.box("guitar hole", (0.6, 0.05, 0.6), (0, -0.25, 0.1), gd, g)
+        kit.box("guitar neck", (0.3, 0.3, 1.9), (0, -0.05, 1.7), gd, g, bevel=0.04)
+        kit.box("guitar strap", (0.14, 1.06, 0.1), (-0.2, 0.2, 1.05), gd, bu["torso"], rot=(0, math.radians(-30), 0))
+    # the faded ones' eye glints: two small warm lights at the eyes, the brightest thing in the frame
+    for who in FADED:
+        hg = bpy.data.objects.get(f"{who}.headg")
+        if hg is not None:
+            for sx in (-1, 1):
+                kit.sphere(f"{who} glint {sx}", 0.055, (sx * 0.19, -R - 0.005, 0.1), M["glint"], hg, seg=8)
+    ctx["attached"] = True
+
+
+def attach_fades(kit, ctx):
+    skip = set()
+    crown = bpy.data.objects.get("walt crown")
+    if crown is not None:
+        skip = {crown, *crown.children_recursive}
+    for who in FADERS:
+        ctx["fades"][who] = make_fade(kit, who, skip if who == "walt" else set())
+
+
+def link_lights(kit, ctx):
+    objs = []
+    for who in FADED + ("walt", "stopman"):
+        r = bpy.data.objects.get(who)
+        if r is not None:
+            objs += [o for o in [r] + list(r.children_recursive) if o.type == "MESH"]
+    light_only(kit, "faded only", "fkey", objs)
+    light_only(kit, "faded only", "frim", objs)
+    me = bpy.data.objects.get("me")
+    if me is not None:
+        light_only(kit, "me only", "mkey", [o for o in [me] + list(me.children_recursive) if o.type == "MESH"])
+    ctx["linked"] = True
+
+
+def fade_value(tl, who, t):
+    v = 1.0
+    for c in sorted((c for c in _cues(tl, "fade") if c["who"] == who), key=lambda c: c["t"]):
+        if c["t"] > t + 1e-9:
+            break
+        d = float(c.get("dur", 0))
+        u = 1.0 if d <= 0 else _ss((t - c["t"]) / d)
+        v = v + (c["a"] - v) * u
+    return v
 
 
 def animate(kit, story, tl, t, ctx):
-    if not ctx.get("costumes") and bpy.data.objects.get("walt.headg") is not None:
+    if not ctx["attached"] and bpy.data.objects.get("walt.headg") is not None:
         attach_costumes(kit, ctx)
+        attach_fades(kit, ctx)
+        link_lights(kit, ctx)
     A = tl.get("acting", {})
-    # sitting: both legs straight out in front, on the pose's z
     for who, keys in A.items():
         if _switch(keys, "sit", t, False):
             for sx in (-1, 1):
                 leg = bpy.data.objects.get(f"{who}.leg{sx}")
                 if leg is not None:
                     leg.rotation_euler = (math.radians(-90), 0, 0)
-    # costumes follow the cues, and are hidden when their wearer is
     for who, parts in ctx.get("cost", {}).items():
         c = _last([c for c in _cues(tl, "costume") if c.get("who") == who], t) or {}
         root = bpy.data.objects.get(who)
@@ -632,53 +563,33 @@ def animate(kit, story, tl, t, ctx):
             on = bool(c.get(name, False)) and shown
             for o in objs:
                 _show(o, on)
-    if ctx.get("flask") is not None:
-        _show(ctx["flask"], not bpy.data.objects["marion"].hide_render)
-    bc = _last(_cues(tl, "brick"), t)
-    ctx["brick_patch"].hide_render = not bool(bc and bc.get("on"))
-    # chairs and audience
-    cc = _last(_cues(tl, "chairs"), t)
-    for ch in ctx["chairs"]:
-        _show(ch, bool(cc and cc.get("on")))
+    # glints belong to the faded ones: they follow their wearer's hide (children of the head group, set by pose())
+    tc = _last(_cues(tl, "throne"), t)
+    _show(ctx["throne"], bool(tc and tc.get("on")))
     ac = _last(_cues(tl, "audience"), t)
     for o in ctx["aud"]:
         o.hide_render = not bool(ac and ac.get("on"))
-    # the Prompter
-    over = {}
-    pr = ctx["pr"]
-    c = _last(_cues(tl, "prompter"), t)
-    hidden = c is None or c.get("hidden", False)
-    _show(pr["root"], not hidden)
-    over["pk_key"] = over["pk_rim"] = over["pk_low"] = 0.0
-    if not hidden:
-        x, y = c["pos"]
-        pr["root"].location = (x, y, 0)
-        pr["root"].rotation_euler = (0, 0, math.radians(c.get("yaw", 0)))
-        pr["neck"].rotation_euler = (0, 0, math.radians(c.get("head", 0)))
-        _show(ctx["mouth_shut"], not c.get("mouth", 0))
-        _show(ctx["shell_shut"], not c.get("mouth", 0))
-        _show(ctx["mouth_open"], bool(c.get("mouth", 0)))
-        _show(ctx["shell_open"], bool(c.get("mouth", 0)))
-        bpy.context.view_layer.update()
-        mc = pr["mask"].matrix_world.translation
-        for name, dflt, gk in (("key", (-1.0, -0.6, 0.15), "key_gain"), ("rim", (-0.5, 0.9, 2.4), "rim_gain")):
-            off = c.get(name, dflt)
-            ob = pr[name]
-            ob.location = (x + off[0], y + off[1], off[2])
-            kit.aim(ob, tuple(mc))
-            over["pk_" + name] = float(c.get(gk, 1.0))
-        pr["low"].location = (x - 0.7, y - 0.9, 0.25)
-        over["pk_low"] = float(c.get("key_gain", 1.0))
+    # the fades
+    for who, vals in ctx["fades"].items():
+        a = fade_value(tl, who, t)
+        for val, is_head in vals:
+            val.outputs[0].default_value = min(1.0, a * 1.3) if is_head else a
+    # the faded ones' lights follow the shot: {"key": [x,y,z], "rim": [x,y,z], "aim": [x,y,z], "kg", "rg"}
+    fl = _last(_cues(tl, "flight"), t) or {}
+    kit.LIGHTS["fkey"]["obj"].location = tuple(fl.get("key", (1.6, -0.9, 1.5)))
+    kit.LIGHTS["frim"]["obj"].location = tuple(fl.get("rim", (4.0, 4.2, 2.6)))
+    kit.aim(kit.LIGHTS["fkey"]["obj"], tuple(fl.get("aim", (0.0, 2.6, 1.3))))
+    kit.aim(kit.LIGHTS["frim"]["obj"], tuple(fl.get("aim", (0.0, 2.6, 1.3))))
     # the light: the mood, eased from the one before
+    over = {}
     a, b, u = _mood_state(tl, t)
     for name in kit.LIGHTS:
-        if name in ("pk_key", "pk_rim", "pk_low"):
-            continue
         over[name] = a["gains"].get(name, 0.0) * (1 - u) + b["gains"].get(name, 0.0) * u
+    over["fkey"] *= float(fl.get("kg", 1.0))
+    over["frim"] *= float(fl.get("rg", 1.0))
     ca, cb = _hex(a["wash"]), _hex(b["wash"])
     wc = tuple(ca[i] + (cb[i] - ca[i]) * u for i in range(3))
     for nm in WASH_NAMES:
-        L = kit.LIGHTS[nm]["light"]
-        L.color = tuple(kit.srgb(v) for v in wc)
+        kit.LIGHTS[nm]["light"].color = tuple(kit.srgb(v) for v in wc)
     bpy.context.scene.view_settings.exposure = a["exp"] * (1 - u) + b["exp"] * u
     return over
