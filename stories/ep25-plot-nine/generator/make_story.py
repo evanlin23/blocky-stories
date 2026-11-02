@@ -76,7 +76,7 @@ def yaw_to(a, b):
 
 # places
 DIG = {1: (3.4, -3.6), 4: (-3.6, -10.0), 7: (3.4, -22.0), 9: (3.85, -28.8)}
-ME_N = (3.95, -27.3)           # me on plot nine at dawn
+ME_N = (4.05, -28.3)           # me on plot nine at dawn
 ME_F = (3.1, -27.9)            # me between the Digger and the shed door
 CAR_F = (2.95, -26.25)          # Mr. Carter outside the shed
 DOOR = (2.65, -26.95)           # in the doorway
@@ -88,7 +88,7 @@ EYE = 1.55
 SHOTS = [
     # 01 the smell, L01 to L10
     (0, "close, low, a drop off a leaf, push up to me breathing in", 2,
-     c([0, [3.8, -25.8, 0.5], [3.6, -27.5, 0.55], 30], [1, [3.8, -25.3, 1.1], [3.95, -27.3, 1.45], 24])),
+     c([0, [3.6, -26.5, 0.4], [3.55, -27.5, 0.5], 30], [1, [3.6, -26.2, 1.2], [4.05, -28.3, 1.45], 24])),
     ("L02", "wide from the gate: cracked hill, peach sky", 4, move(([0.25, -0.5, 1.9], [0.0, -14, 0.9]),
                                                                   ([0.25, -1.4, 1.9], [0.0, -14, 0.9]), 19)),
     ("L03", "overhead on a neighbour's cracked bed", 4, still([3.5, -9.9, 2.7], [3.5, -10.05, 0.0], 22)),
@@ -182,8 +182,8 @@ SHOTS = [
     ("L67", "my sleeve and the can toward her sleeve", 2, still([0.0, -24.4, 1.15], [0.0, -26.3, 1.1], 44)),
     ("L68", "Mr. Carter nods from his bucket", 2, still([3.3, -27.5, 1.0], [3.2, -25.3, 0.95], 28)),
     ("L69", "me and the newcomer at plot ten's edge", 2, still([-1.4, -23.8, 1.5], [-0.1, -26.2, 1.3], 22)),
-    ("L70", "plot nine, wet and gold at sunrise", 4, move(([0.2, -22.5, 1.55], [3.4, -28.2, 0.7]),
-                                                         ([0.5, -23.0, 1.55], [3.4, -28.2, 0.7]), 21)),
+    ("L70", "plot nine, wet and gold at sunrise", 4, move(([6.9, -23.4, 2.3], [3.5, -28.2, 0.6]),
+                                                         ([6.9, -23.9, 2.3], [3.5, -28.2, 0.6]), 20)),
 ]
 
 shots = []
@@ -225,7 +225,7 @@ def talk(who, a, b):
 hide("carter", 0)
 hide("newcomer", 0)
 # me
-put("me", 0, ME_N, yaw=yaw_to(ME_N, (3.8, -25.3)), head=[0, -10])
+put("me", 0, ME_N, yaw=yaw_to(ME_N, (3.6, -26.2)), head=[0, -10])
 key("me", "L01.1", head=[0, -16], blend=0.5)
 hide("me", "L02")
 put("me", "L05", [0.5, 0.4], yaw=-90)
@@ -278,14 +278,14 @@ put("carter", "L06", [0.0, 0.2], yaw=180)
 walk("carter", "L06+2.0", [0.0, 5.5])
 hide("carter", "L07")
 put("carter", "L43", DOOR, yaw=90, expr="smirk", head=[0, 10])
-put("carter", "L45", CAR_F, yaw=yaw_to(CAR_F, DIG[9]), expr="wide")
+put("carter", "L45", CAR_F, yaw=yaw_to(CAR_F, (3.7, -24.8)), expr="wide")
 acting["carter"].append({"from": "L45.4", "to": "L45>", "mouth": [0.0, 0.9]})
 hide("carter", "L46")
 put("carter", "L49", CAR_F, yaw=yaw_to(CAR_F, ME_F), expr="smirk", head=[0, 8])
 talk("carter", "L49.1", "L49>")
 key("carter", "L51", yaw=yaw_to(CAR_F, DIG[9]), expr="wide", blend=0.5)
 hide("carter", "L52")
-put("carter", "L53", CAR_F, yaw=yaw_to(CAR_F, DIG[9]), expr="wide")
+put("carter", "L53", CAR_F, yaw=yaw_to(CAR_F, (3.7, -24.8)), expr="wide")
 put("carter", "L54", CAR_F, yaw=yaw_to(CAR_F, ME_F))
 key("carter", "L55", expr="soft")
 hide("carter", "L57")
