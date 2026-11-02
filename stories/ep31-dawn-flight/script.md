@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|
 | ep31 `dawn-flight` | a hot-air balloon basket at sunrise over misty farmland, Dad's sixtieth | the Loose One, a person in pieces (copper and slate blue), every block a hand's width from the next, hanging in the right shape | a weather report ("Rosa SAID / the wind / was ZERO.") | the next dawn, four in the basket, the sandbag left on the grass, the horizon level | honesty: I own up to a lie |
 
-Nothing here repeats a Made row or the batch-1 list. No night-shift or one-summer narrator (one morning, a birthday). No knowing elder: Rosa only flies the balloon and says pilot things. The creature is copper and slate blue and gapped, never pale grey or blank. Nothing is pressed against glass (there is no glass). The closing section opens on "Callum CAME.", not a "Last NIGHT," shape. No on-screen age: "sixtieth" is said, never shown. The twist isn't "kind all along", a ritual done back, or ep20's "it never moved, we moved apart": the creature fills a gap I made on purpose, and the fix is a confession.
+Nothing here repeats a Made row or the batch-1 list. No night-shift or one-summer narrator (one morning, a birthday). No knowing elder: Rosa only flies the balloon and says pilot things. The creature is copper and slate blue and gapped, never pale grey or blank. Nothing is pressed against glass (there is no glass). The closing section opens on "Callum CAME.", not a "Last NIGHT," shape. No on-screen age: "sixtieth" is said, never shown. The twist isn't "kind all along", a ritual done back, or ep20's "it never moved, we moved apart": the creature fills a gap my lie left, and the fix is a confession.
 
 ## Premise
 It's Dad's sixtieth, and the thing he's wanted for years is a balloon flight at dawn with both of us, me and my brother Callum. I told Dad that Callum couldn't make it, because of work. Our pilot Rosa launches us into a perfectly still sky over a sea of mist. The basket is built for four, a corner each. With no wind at all, it keeps leaning toward its empty fourth corner, and every time the burner roars and lights up the mist, a figure made of loose copper and slate-blue blocks is a little nearer and a little more put together.
@@ -19,7 +19,7 @@ It's Dad's sixtieth, and the thing he's wanted for years is a balloon flight at 
 Rosa's: a corner each, and stand still, because the basket has to hang level. A balloon basket is a place built for a number, and this one was booked for four.
 
 ## The twist (and where it's planted)
-Callum never said he couldn't come. I never asked him. I wanted one morning with Dad to myself, so I left his corner empty on purpose. The Loose One is the basket's Keeper, standing in the gap I made, and its weight is what tips the basket. "The wind was zero, so why was the basket tilting?" opens as a mystery about the sky, and the twist turns it into my lie: the tilt was the place I'd left empty. When the count is made true by people (Callum, the next dawn), the basket flies level.
+Callum never said he couldn't come. I forgot to ask him until it was too late, and I was too ashamed to tell Dad, so I blamed Callum's work. His corner was empty because of my lie. The Loose One is the basket's Keeper, standing in the gap I made, and its weight is what tips the basket. "The wind was zero, so why was the basket tilting?" opens as a mystery about the sky, and the twist turns it into my lie: the tilt was the place I'd left empty. When the count is made true by people (Callum, the next dawn), the basket flies level.
 - **How the last 15 seconds turn the first line over:** L78 to L82. Four of us, the sandbag left on the grass, the horizon flat, and the first line's own words, "Rosa said the wind was zero," now ending on "The basket flew LEVEL." The tilt was never weather.
 - **Plant 1 (L08, about 15 s):** "Callum couldn't MAKE it. WORK. That's what I told DAD." A rewatch hears "that's what I told Dad", not "that's what he said".
 - **Plant 2 (L14 to L16, about 24 s):** Dad unpacks four flasks for three people, says "habit", and stands the fourth in the empty corner. All four flasks are on screen in S14, and the fourth in its corner in S16.
@@ -81,7 +81,7 @@ About 80 shots, a new shot on almost every line. Rig limits: no hand on the burn
 - **03 Up (L21 to L31):** S21 the fields sinking under the mist, hedge lines going one by one. S22 Rosa looking up at the sky (L22). S23 Dad's cup on the rim, sliding along it (L23). S24 the cup stopping at the fourth corner (L24). S25 Rosa frowning, then the flame overhead (roar 1, ramp). S26 the mist lit orange below. S27 a long lens across the mist: the scatter a field away (L27 to L28). S28 a closer long lens on the scatter, pieces at random angles (L29). S29 the glow fading to plain grey mist (L30). S30 a side wide of the basket, the lean a little steeper (L31).
 - **04 Nearer (L32 to L47):** S31 Dad delighted, barn roofs poking through the mist behind him, his mouth flapping under "LOOK at THAT" (L32). S32 the flame (roar 2, L33). S33 to S36 the figure one hedge off, shaped but slightly off, then closes: a gap between two arm blocks with mist behind, the sliced head not yet lined up (L34 to L38). S37 Rosa at the burner frame watching the basket's lean, her mouth under "Somebody's LEANING", then my eyeline across the basket: three people standing still (L39). S38 a close on the sandbag rope, taut (L40). S39 the flame (roar 3, L41). S40 to S44 the figure a rope's length off, exact, then a close on the face slices (L44 to L45), then pink mist through its gaps (L46). S45 the glow fading, and it with it (L47).
 - **05 The fourth corner (L48 to L58):** S46 a side wide, the basket tipping hard toward the fourth corner (about 12 degrees, L48). S47 Rosa's face, "HOLD ON" (L49). P01 the flame ramping up, long, voice and music out. S48 the reveal from my corner across the basket: the Loose One in the fourth corner, towering over the rim, sandbag and flask at its boots (L50 to L51). S49 a low angle up its pieces into the burner glow (L52). S50 a close: a copper arm block a hand's width from Dad's shoulder, Dad's scarf in frame (L53). S51 the test still: its sliced face turned to Dad, three-quarter view (L54). S52 Dad looking out at the brightening horizon, smiling (L55). S53 a short roar overhead (L56). S54 from my eyeline: its top slice now facing me, the three below still facing Dad (L57 to L58). P02 hold on my face.
-- **06 The truth (L59 to L70):** S55 a wide over my shoulder: me, the fourth corner, it, Dad beside it (L59). S56 a side wide of the lean (L60). S57 to S59 my face, ashamed, through L61 to L63, cutting once to Dad's back. S60 the sun breaking out of the mist, gold flooding the frame (L64, the sunrise ramp). S61 me turned to Dad, my mouth moving, Dad turning to me (L65). S62 Dad quiet under a short roar (L66). S63 Dad laughing, Rosa startled at the burner (L67). S64 Dad's face under L68. S65 Dad nodding at the fourth flask in its corner (L69). S66 a bright wide down the sunlit valley: the basket still leaning, the creature still in its corner, lit gold (L70).
+- **06 The truth (L59 to L70):** S55 a wide over my shoulder: me, the fourth corner, it, Dad beside it (L59), its pieces leaning their weight into Callum's corner. S56 a side wide of the lean (L60). S57 to S59 my face, `ashamed`, eyes down, through L61 to L63, cutting once to Dad's back. S60 the sun breaking out of the mist, gold flooding the frame (L64, the sunrise ramp). S61 me turned to Dad, my mouth moving, face `ashamed` and eyes on the basket floor, never on Dad, Dad turning to me (L65). S62 Dad quiet under a short roar (L66). S63 Dad laughing, Rosa startled at the burner (L67). S64 Dad's face under L68, gentle (`smile`), me still downcast, then my eyes come up at the end of the line. S65 Dad nodding at the fourth flask in its corner (L69). S66 a bright wide down the sunlit valley: the basket still leaning, the creature still in its corner, lit gold (L70).
 - **07 Landing (L71 to L77):** S67 the basket settling upright in a stubble field, gently (L71). S68 the phone lying on the leather rim, screen glowing, no text, Dad bent toward it (L72). S69 a close on the phone (L73). S70 Dad's mouth under L74. S71 Dad and me laughing (L75). S72 me looking across the basket (L76). S73 the fourth corner in bright morning light: the sandbag and the flask, nothing else (L77).
 - **08 Four (L78 to L82):** S74 the launch field the next dawn, bright pink and gold, four of us in the basket, Callum in the fourth corner (L78). S75 Rosa's sleeve and the sandbag lying on the grass outside the basket (L79). S76 Callum's flask standing on his corner's rim (L80). S77 a wide from outside: the balloon up, the basket level against a flat gold horizon (L81). S78 the same wide, held through the last line, then the burner's short falling breath as the closing sound (L82).
 
@@ -160,16 +160,16 @@ Every line is `narrator` (voice A, cast key `me`). Characters are quoted inside 
 - `P02` pause, 0.8 s, no big word (hold on my face; music out)
 
 ### 06 The truth
-- `L59` narrator: It was standing / EXACTLY / where CALLUM / would STAND.
+- `L59` narrator: Its WEIGHT / was on / CALLUM'S / CORNER.
 - `L60` narrator: The basket / was leaning / toward the PLACE / I'd left EMPTY.
-- `L61` narrator: Because / Callum never / said NO.
-- `L62` narrator: I never / ASKED him.
-- `L63` narrator: I wanted / ONE MORNING / with Dad / to MYSELF.
+- `L61` narrator: Callum never / said he was / BUSY.
+- `L62` narrator: I FORGOT / to ASK him / till it was / too LATE.
+- `L63` narrator: It felt EASIER / to blame CALLUM / than to say / I FORGOT.
 - `L64` narrator: The SUN / broke out / of the MIST, / all GOLD.
-- `L65` narrator: And I told DAD. / ALL of it. / Right THERE.
+- `L65` narrator: So I / told DAD. / ALL of it. / I couldn't / LOOK at him.
 - `L66` narrator: He went QUIET / for a whole / burner ROAR.
 - `L67` narrator: Then he LAUGHED / so LOUD / Rosa JUMPED.
-- `L68` narrator: He said, / "You could've / just ASKED me / for that TOO."
+- `L68` narrator: He said, / "You could've / just TOLD me / you FORGOT."
 - `L69` narrator: Then he said, / "He'll want / his FLASK / TOMORROW."
 - `L70` narrator: The PIECES / stayed in that CORNER / all the way DOWN.
 
@@ -183,7 +183,7 @@ Every line is `narrator` (voice A, cast key `me`). Characters are quoted inside 
 - `L77` narrator: Just a SANDBAG, / and a FLASK.
 
 ### 08 Four
-- `L78` narrator: Callum CAME. / FOUR of us. / A CORNER / EACH.
+- `L78` narrator: Callum CAME, / and we had / a CORNER EACH.
 - `L79` narrator: Rosa UNTIED / the SANDBAG / and left it / on the GRASS.
 - `L80` narrator: Callum's FLASK / stood / in Callum's / CORNER.
 - `L81` narrator: The HORIZON / sat FLAT / as a SHELF.
