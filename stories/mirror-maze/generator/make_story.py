@@ -617,7 +617,7 @@ story = {
     "key_color": "#ffd23a",
     "gap": 0.12,
     "tail": LOOP,
-    "look": {"fog": "#1c1826", "fog_density": 0.055, "fog_start": 3.5, "sky": "#120f18", "exposure": 0.7},
+    "look": {"fog": "#1c1826", "fog_density": 0.055, "fog_start": 3.5, "sky": "#120f18", "exposure": 0.7, "flash_safe": True},
     "grade": {"shadows": [0.03, -0.02, 0.07], "highlights": [-0.02, 0.0, 0.03], "saturation": 0.9, "contrast": 1.1,
               "vignette": 0.5, "bloom": 0.35, "grain": 0.012, "red_line": 0.78},
     "rain_shots": rain_shots,

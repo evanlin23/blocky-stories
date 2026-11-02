@@ -18,7 +18,8 @@
   "fog_density": 0.055,
   "fog_start": 3.5,
   "sky": "#120f18",
-  "exposure": 0.7
+  "exposure": 0.7,
+  "flash_safe": true
  },
  "grade": {
   "shadows": [
