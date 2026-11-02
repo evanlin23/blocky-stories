@@ -155,7 +155,7 @@ Every light change is a slow fade, never flicker or strobe.
 3. **Montage (3 to 5, under 15 s):** Dev's bride at his stag night, the sailor's dog, the first date's ex, long-distance couples comparing (L03 to L06, ends about 14 s).
 4. **Narrator as the exception:** mine is "just me", cap and all (L07).
 5. **Loved one at stake:** my husband Theo, an adult, whose silhouette of me fades as he lets go, while the Unlit moves into my seat.
-6. **Climax turns the rule's own logic:** the marker is a cut-out, and a cut-out throws a shadow. A silhouette is too small to read across a car park (L43, L44), but at a drive-in everyone looks at the screen (L45), and the projector throws mine the size of a house. No new magic.
+6. **Climax turns the rule's own logic:** the marker is a cut-out, and a cut-out throws a shadow. Everyone, Theo included, reads my small marker as me and never looks closer (L43, L44), but at a drive-in everyone looks at the screen (L45), and the projector throws mine the size of a house. No new magic.
 7. **Twist planted twice, last line echoes the first:** see above.
 8. **Readable first 2 s:** bright golden hour, two faces and two markers, no fog until Friday 1.
 9. **Cut often:** 73 shots over about 2:20, about 1.9 s average.
@@ -169,7 +169,7 @@ Every light change is a slow fade, never flicker or strobe.
 ## Lore connection (one)
 S70, under L62 ("Theo slid the popcorn over"): two short soot-black tally strokes pressed into the metal face of the old speaker box hooked on Theo's window, two for a car built for two front seats. Held 1.6 s, never narrated. Plain tally, no extra stroke (`stories/lore.md` → Third parallel batch).
 
-## Narration (65 lines, 633 words, about 2:11 of speech at 290 wpm, about 2:20 with gaps)
+## Narration (65 lines, 625 words, about 2:11 of speech at 290 wpm, about 2:20 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words.
 
 L01. In this town, a little silhouette over your head shows who you MISS most.
@@ -214,8 +214,8 @@ L39. Its glints were turned round, through his back window, at ME.
 L40. Theo just kept watching the SCREEN.
 L41. Over his head, the gold ring was EMPTY.
 L42. I couldn't walk up to his window. I didn't know what I'd SAY.
-L43. And a silhouette is only the size of a HAND.
-L44. From three rows back, he'd never even seen MINE.
+L43. Everyone, even Theo, read mine as ME.
+L44. Nobody ever looked CLOSER.
 L45. But at a drive-in, everybody looks at the same ONE thing.
 L46. I got out and walked into the BEAM.
 L47. My shadow went up the screen as tall as a HOUSE.
