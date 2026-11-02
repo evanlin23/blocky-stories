@@ -21,7 +21,7 @@ LF = TURNS * RISE + 2.4
 KX = 40.0
 Z4, Z5, Z6, Z7 = 4 * RISE, 5 * RISE, 6 * RISE, 7 * RISE
 LOOP = 0.25   # a hard cut 0.25 s after the last word, into L01 (no fade at either end)
-HOLDS = {"L59": 0.5, "L45": 0.4, "L66": 0.4, "L76": 0.0}   # a breath after the quiet beats (keeps the film over 2:15)
+HOLDS = {"L11": 0.65, "L59": 0.5, "L45": 0.4, "L66": 0.4, "L76": 0.0}   # a breath after the quiet beats (keeps the film over 2:15)
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
@@ -60,7 +60,7 @@ lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
 # (the captions don't change)
 TEMPO = {"L68": 0.8, "L32": 0.85}
 SPOKEN = {("L51", "Its flat face"): "Its, flat face",
-          ("L68", "FAST ASLEEP,"): "Fast asleep,", ("L16", "torch in"): "torch, in"}
+          ("L68", "FAST ASLEEP,"): "Fast asleep,", ("L16", "torch in"): "torch, in", ("L14", "I slid it SHUT"): "I slid it, shut"}
 CAPTION = {("L68", "ASLEEP,"): "FAST ASLEEP,"}
 for ln in lines:
     for ch in ln.get("chunks", []):
@@ -165,22 +165,32 @@ def shot(at, what, cam, step=2, rain=False, hand=0.008):
     SHOTS.append({"at": at, "what": what, "cam": cam, "step": step, "rain": rain, "hand": hand})
 
 
-# 01 the text (night one, cold open)
-shot(0, "S01: black, then the phone glow on my face", COT_FACE)
-shot("L02", "wide of the lamp room from outside the glass", still([0.3, -5.4, LF + 2.0], [-0.4, 0, LF + 1.4], 26), rain=True)
-shot("L03", "the lighthouse on the cliff top, the warm window halfway up",
+# 01 the rule, and us (the first evening, one forward timeline)
+OPEN_FACE = (-2.05, 0.0)
+shot(0, "S01: late afternoon, Ines and me at the stair foot, faces lit",
+     c([0, [0.0, -1.1, 1.2], [0.0, 0.65, 1.5], 16], [1, [0.0, -1.1, 1.2], [0.0, 0.65, 1.55], 18]), hand=0.003)
+shot("L01.1", "from the foot straight up the well: only two warm lamps lit, dim stone between",
+     still([-0.9, 0.0, 13.8], [2.2, 0.0, 13.8], 11), hand=0.002)
+shot("L01.3", "back to us, looking up", still([0.0, -1.1, 1.2], [0.0, 0.65, 1.5], 22), hand=0.003)
+shot("L02", "close two-shot at the stair foot, a hand's gap between our shoulders",
+     still([0.0, -1.1, 1.55], [0.0, 0.65, 1.5], 21), hand=0.004)
+shot("L03", "the lighthouse on the cliff top, rain starting",
      move(([-4, -30, 6.5], [0, 0, 10.5]), ([-3.6, -28, 7.5], [0, 0, 10.5]), 20), rain=True)
-# 02 arrival
-shot("L04", "Ines and me at the foot, bags", still([0.0, 9.0, 1.45], [0.0, 3.6, 1.35], 30))
-shot("L05", "low angle up the tower, rain", move(([0.5, -9.5, 0.5], [0.3, -0.3, 16]), ([0.3, -9.0, 0.5], [0.3, -0.3, 16]), 17), rain=True)
-shot("L06", "from the stair foot, up the well by day", still([0.1, 0.1, 0.4], [0.2, -0.05, 17.0], 15))
-shot("L07", "Ines at her blue door", RF(4, d=2.0, lens=28))
-shot("L07.2", "the camp bed beside the lens", still([0.6, -2.3, LF + 1.4], [-1.1, 0.2, LF + 0.7], 28))
-shot("L08", "me at the lamp room glass, my back to camera", still([-0.9, -0.6, LF + 1.7], [0.2, 2.1, LF + 1.45], 30))
-shot("L09", "close on me, worried, glancing down the stairs", RF(7, d=2.0, lens=30))
-shot("L10", "Ines on the phone in the kitchen", still([KX + 2.15, 0.4, 1.5], [KX - 1.0, 0.4, 1.35], 26))
-shot("L11", "Ines looks up the stairwell", still([0.0, 2.1, 1.55], [0.0, 0.0, 1.7], 30))
-shot("L12", "the stair foot by day: empty, sand under the door", still([0.0, -0.4, 1.0], [0.0, 2.0, 0.7], 20))
+shot("L03.2", "Ines at her blue door halfway up, under her lamp", RF(4, d=2.0, lens=28))
+shot("L03.3", "my camp bed beside the dead lens", still([0.6, -2.3, LF + 1.4], [-1.1, 0.2, LF + 0.7], 28))
+shot("L04", "kitchen, grey daylight going: eating fast", still([KX + 1.6, -1.4, 1.75], [KX, 0.1, 1.2], 26))
+shot("L05", "on the stairs in low orange sun, an awkward high five",
+     still([0.0, 0.0, 43.5 * STEP + 1.75], pol(1.7, 30 * 43.5, 43.5 * STEP + 1.4), 14), hand=0.003)
+shot("L06", "Ines in bed, phone glow on her face", still([0.0, 0.1, Z4 + 1.0], [1.8, 0.0, Z4 + 1.0], 36))
+shot("L06.2", "me in the camp bed, phone glow on mine", COT_FACE)
+shot("L07", "close on me in the glow, a wince", still([-1.3, -1.25, LF + 1.5], [-1.3, 0.4, LF + 1.38], 44))
+shot("L08", "close on me, the glow, worried", still([-1.3, -1.3, LF + 1.6], [-1.3, 0.4, LF + 1.42], 38))
+shot("L09", "the glow brightens, a soft smile", still([-1.3, -1.25, LF + 1.5], [-1.3, 0.4, LF + 1.38], 44))
+shot("L10", "from the top landing straight down the well: her lamp fades",
+     still([1.3, 0.0, Z7 + 1.55], [1.5, -0.5, Z4 + 1.9], 24), step=1, hand=0.002)
+shot("L11", "the empty well in faint blue window light",
+     still([1.3, 0.0, Z7 + 1.55], [0.0, 0.8, 1.0], 22), step=1, hand=0.002)
+shot("L12", "the stair foot at night: slate, storm door, sand", still([0.0, -0.4, 1.0], [0.0, 2.0, 0.7], 20))
 shot("L13", "the oak door from the landing", still([0.2, -0.9, 16.9], [2.3, 0.15, 16.3], 30))
 shot("L13>-0.35", "the bolt plate: two strokes", PLATE_CAM, hand=0)
 shot("L14>-0.3", "me in the camp bed, rain on the glass", still([0.5, -1.6, LF + 1.5], [-1.3, 0.4, LF + 0.9], 30), rain=True)
@@ -343,14 +353,19 @@ def at_rail(n, at, **kw):
 
 
 # me
-put("me", 0, [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, arms=[60, 60], head=[0, 22], expr="worried")   # S01 in the cot
-hide("me", "L02")
-put("me", "L04", [0.8, 3.9, 0], yaw=180, expr="smirk")
-hide("me", "L05")
+put("me", 0, [0.42, 0.65, 0], yaw=0, expr="smirk", head=[0, -10])   # S01: at the stair foot, looking up
+hide("me", "L01.1")
+put("me", "L01.3", [0.42, 0.65, 0], yaw=0, expr="smirk", head=[0, -10])
+key("me", "L02", pos=[0.38, 0.65, 0], expr="smirk", head=[0, 0], blend=0.2)
+key("me", "L02.2", head=[40, 0], blend=0.3)   # I glance away
+hide("me", "L03")
+put("me", "L04", SEAT_K(-0.75), yaw=180, sit=True, expr="smirk", head=[0, 8])
+hide("me", "L05-0.01")
+put("me", "L05", tread(44, 1.7), yaw=yaw_to(tread(44), (0, 0)), arms=[0, 150], expr="smirk", head=[0, 0])
 hide("me", "L06")
-hide("me", "L07")
-put("me", "L08", [0.2, 2.0, LF], yaw=180, expr="worried")
-at_rail(7, "L09", head=[0, 30], lean=6, expr="worried")
+put("me", "L06.2", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, arms=[60, 60], head=[0, 22], expr="warm")
+key("me", "L07", expr="worried", blend=0.2)
+key("me", "L09", expr="warm", blend=0.4)
 hide("me", "L10")
 put("me", "L13", [2.0, 0.1, Z7], yaw=90, arms=[0, 88], expr="worried")
 hide("me", "L13>-0.35")
@@ -423,14 +438,19 @@ put("me", "L75", SIT_ME, yaw=YAW_ME, sit=True, lean=4, head=[0, 12], arms=[40, 4
 key("me", "L76", head=[14, 6], expr="warm")
 
 # Ines
-hide("ines", 0)
-put("ines", "L04", [-0.8, 3.9, 0], yaw=180, expr="smirk")
-hide("ines", "L05")
-put("ines", "L07", [1.9, 0.0, Z4], yaw=FACE_IN, expr="smirk", head=[0, 4])
-hide("ines", "L07.2")
-put("ines", "L10", [KX - 1.3, 0.4, 0], yaw=90, arms=[0, 150], head=[0, 8], expr="neutral")
-put("ines", "L11", [0.0, -0.2, 0], yaw=180, head=[0, -38], expr="worried")
-hide("ines", "L12")
+put("ines", 0, [-0.42, 0.65, 0], yaw=0, expr="smirk", head=[0, -10])
+hide("ines", "L01.1")
+put("ines", "L01.3", [-0.42, 0.65, 0], yaw=0, expr="smirk", head=[0, -10])
+key("ines", "L02", pos=[-0.38, 0.65, 0], head=[-40, 0], blend=0.3)   # she glances at me
+hide("ines", "L03")
+put("ines", "L03.2", [1.9, 0.0, Z4], yaw=FACE_IN, expr="smirk", head=[0, 4])
+hide("ines", "L03.3")
+put("ines", "L04", SEAT_K(0.95), yaw=0, sit=True, expr="smirk", arms=[28, 28], head=[0, 4])
+hide("ines", "L05-0.01")
+put("ines", "L05", tread(43, 1.7), yaw=yaw_to(tread(43), (0, 0)), arms=[150, 0], expr="smirk", head=[0, 0])
+hide("ines", "L06-0.01")
+put("ines", "L06", [1.9, 0.0, Z4 - 0.51], yaw=FACE_IN, sit=True, lean=-6, arms=[60, 60], head=[0, 22], expr="warm")
+hide("ines", "L06.2")
 put("ines", "L26", SEAT_K(0.95), yaw=0, sit=True, expr="neutral", arms=[28, 28], head=[0, 4])
 talk("ines", "L26.1", "L26>")
 key("ines", "L27", expr="worried", head=[0, 6])
@@ -471,9 +491,12 @@ put("ines", "L76", SIT_IN2, yaw=YAW_IN2, sit=True, expr="warm", arms=[0, 70], he
 FIG = lambda n: [1.6, 0.0, n * RISE]
 cues = [
     # the light
-    {"at": 0, "name": "mode", "set": "night"},
-    {"at": "L04", "name": "mode", "set": "day", "dur": 0.4},
-    {"at": "L14", "name": "mode", "set": "night", "dur": 0.8},
+    {"at": 0, "name": "mode", "set": "arrive"},
+    {"at": "L03", "name": "mode", "set": "day", "dur": 0.8},
+    {"at": "L05", "name": "mode", "set": "arrive", "dur": 0.5},
+    {"at": "L06", "name": "mode", "set": "doorlamp", "dur": 0.6},
+    {"at": "L10", "name": "mode", "set": "dimdown", "dur": 0.6},
+    {"at": "L13", "name": "mode", "set": "night", "dur": 0.8},
     {"at": "L24", "name": "mode", "set": "day", "dur": 0.8},
     {"at": "L31", "name": "mode", "set": "night", "dur": 0.8},
     {"at": "L38", "name": "mode", "set": "day", "dur": 0.8},
@@ -487,8 +510,11 @@ cues = [
     {"at": "L68", "name": "mode", "set": "memory", "dur": 0.8},
     {"at": "L72.2", "name": "mode", "set": "gold", "dur": 1.6},
     # the phone: the glow comes on over 0.5 s, fades over 0.6 s
-    {"at": 0.0, "name": "phone", "on": 1.9, "dur": 0.4, "pos": [-1.3, 0.2, LF + 0.98], "color": "#cfe9e0"},
-    {"at": "L02", "name": "phone", "on": 0.0, "dur": 0.0},
+    {"at": 0.0, "name": "phone", "on": 0.0, "dur": 0.0, "pos": [-1.3, 0.2, LF + 0.98], "color": "#cfe9e0"},
+    {"at": "L06", "name": "phone", "on": 1.0, "dur": 0.4, "pos": [1.55, 0.0, Z4 + 0.48], "color": "#cfe9e0"},
+    {"at": "L06.2", "name": "phone", "on": 0.8, "dur": 0.3, "pos": [-1.3, 0.2, LF + 0.98], "color": "#cfe9e0"},
+    {"at": "L09", "name": "phone", "on": 1.5, "dur": 0.4, "pos": [-1.3, 0.2, LF + 0.98], "color": "#cfe9e0"},
+    {"at": "L10", "name": "phone", "on": 0.0, "dur": 0.5},
     {"at": "L15", "name": "phone", "on": 1.0, "dur": 0.5, "pos": [-0.7, -0.95, LF + 1.22], "color": "#cfe9e0"},
     {"at": "L16", "name": "phone", "on": 0.0, "dur": 0.0},
     {"at": "L22", "name": "phone", "on": 1.0, "dur": 0.5, "pos": [-1.3, 0.2, LF + 0.98], "color": "#cfe9e0"},
@@ -610,8 +636,8 @@ cues = [
 # the coat's pose key uses "yaw" in degrees (the box's local y is its length, along the way I face)
 
 # ---------------------------------------------------------------------------------------------------- sound
-NIGHT_SPANS = [(0, "L04"), ("L14", "L24"), ("L31", "L38"), ("L41", "L55"), ("L57", "L60")]
-DAY_SPANS = [("L04", "L14"), ("L24", "L31"), ("L38", "L41"), ("L55", "L57")]
+NIGHT_SPANS = [("L06", "L24"), ("L31", "L38"), ("L41", "L55"), ("L57", "L60")]
+DAY_SPANS = [(0, "L06"), ("L24", "L31"), ("L38", "L41"), ("L55", "L57")]
 ambience = [{"kind": "water", "from": 0, "to": "end", "lufs": -34}]
 for a, b in NIGHT_SPANS:
     ambience.append({"kind": "wind", "from": a, "to": b, "lufs": -30})
@@ -629,7 +655,7 @@ def buzz(at, db=-14, keep=False):
 
 
 sfx = [
-    buzz("L01+0.05"), buzz("L15"), buzz("L32"), buzz("L42"), buzz("L52", keep=True), buzz("L75", -20),
+    buzz("L15"), buzz("L32"), buzz("L42"), buzz("L52", keep=True), buzz("L75", -20),
     {"at": "L14+0.2", "kind": "click", "db": -10},
     {"at": "L21.1+0.3", "kind": "click", "db": -10},
     {"at": "L37.1+0.3", "kind": "click", "db": -10},
@@ -659,7 +685,7 @@ story = {
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
     "phonemes": {"Ines": "inˈɛs"},
-    "homophones": {"too": "two"},
+    "homophones": {"too": "two", "okay": "ok"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

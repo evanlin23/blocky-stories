@@ -379,8 +379,14 @@ def build_ines_door(kit, ctx, M):
     # the wall lamp at azimuth -14 + 20 (beside the door), warm
     lf = feature(kit, "wall lamp", az - 20.0, z0 + 1.7)
     kit.box("wall lamp.arm", (0.14, 0.04, 0.04), (-0.07, 0, 0), M["brass"], lf)
-    kit.box("wall lamp.shade", (0.12, 0.14, 0.18), (-0.16, 0, 0.02), M["shade"], lf, bevel=0.03)
+    kit.box("wall lamp.shade", (0.2, 0.24, 0.3), (-0.2, 0, 0.02), M["shade"], lf, bevel=0.04)
     ctx["lamp_pos"] = pol(wall_r(z0) - 0.28, az - 20.0, z0 + 1.7)
+    # a second warm lamp beside the lamp-room door at the top (the two lit floors of the opening)
+    z7 = TURNS * RISE
+    lf2 = feature(kit, "wall lamp top", 20.0, z7 + 1.7)
+    kit.box("wall lamp top.arm", (0.14, 0.04, 0.04), (-0.07, 0, 0), M["brass"], lf2)
+    kit.box("wall lamp top.shade", (0.2, 0.24, 0.3), (-0.2, 0, 0.02), M["shade"], lf2, bevel=0.04)
+    ctx["lamp2_pos"] = pol(wall_r(z7) - 0.28, 20.0, z7 + 1.7)
 
 
 def build_foot(kit, ctx, M):
@@ -689,6 +695,7 @@ def build_lights(kit, ctx):
     add_light(kit, "lroom", "lroom", "POINT", (0.2, -0.3, LF + 2.6), 180.0, "#5a78b0", size=0.4)
     add_light(kit, "lroom", "lroom2", "POINT", (-1.0, 1.6, LF + 1.8), 90.0, "#5a78b0", size=0.4)
     add_light(kit, "lamp", "wall lamp", "POINT", ctx["lamp_pos"], 40.0, "#ffb866", size=0.12)
+    add_light(kit, "lamp2", "wall lamp top", "POINT", ctx["lamp2_pos"], 40.0, "#ffb866", size=0.12)
     # the torch and the phone are moved by cues
     add_light(kit, "torch", "torch", "SPOT", (0, 0, 20), 100.0, "#fff1c4", spot=26, blend=0.85, size=0.05)
     add_light(kit, "torch", "torch spill", "POINT", (0, 0, 20), 10.0, "#ffe9b8", size=0.15)
@@ -723,10 +730,18 @@ def build_lights(kit, ctx):
 
 # mode -> {group: (gain, colour or None)}, "exp" the scene exposure, "pane": (colour, strength), "world": strength
 MODES = {
+    # the opening evening: low gold sun at the stair foot, only the two warm wall lamps lit above
+    "arrive": {"win": (0.4, "#ffc47a"), "shaft": (0.3, "#ffc888"), "foot": (1.0, "#ffc47a"), "lroom": (1.0, "#ffc47a"),
+               "lamp": (4.0, None), "lamp2": (4.0, None), "sun": (0.9, "#ffc47a"), "gold": (0.8, "#ffc27a"),
+               "bounce": (0.35, "#ffcc90"), "mem": (0.0, None), "kit": (0.0, None), "cot": (0.0, None), "exp": 0.1,
+               "pane": ("#ffc47a", 1.6), "world": 1.0},
     "run": {"win": (1.2, "#7c9ad0"), "shaft": (1.8, "#8aa4d0"), "foot": (0.4, None), "lroom": (0.0, None), "lamp": (0.5, None),
             "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
             "cot": (1.0, None), "exp": 0.5, "pane": ("#1e2c40", 0.5), "world": 0.4},
-    "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (4.0, None),
+    "dimdown": {"win": (0.7, "#5a7ab8"), "shaft": (1.6, "#6f8cc0"), "foot": (1.3, "#7a96c8"), "lroom": (0.5, None), "lamp": (0.0, None),
+                "lamp2": (0.0, None), "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None),
+                "kit": (0.0, None), "cot": (1.0, None), "exp": 0.3, "pane": ("#1e2c40", 0.5), "world": 0.4},
+    "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (4.0, None), "lamp2": (4.0, None),
                  "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
                  "cot": (1.0, None), "exp": -0.2, "pane": ("#1e2c40", 0.5), "world": 0.4},
     "night": {"win": (0.25, "#4a6aa0"), "shaft": (0.5, None), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (0.5, None),
@@ -1006,7 +1021,7 @@ def animate(kit, story, tl, t, ctx):
     # the faces' fill: a soft light a metre in front of each character, toward the middle of the room
     from blocky import acting as _act
     mode_a, mode_b, u_ = mode_state(tl, t)
-    fg = {"night": 1.0, "run": 1.2, "doorlamp": 2.5, "memory": 2.5, "day": 5.0, "gold": 1.6}
+    fg = {"arrive": 1.6, "night": 1.0, "run": 1.2, "doorlamp": 2.5, "memory": 2.5, "day": 5.0, "gold": 1.6}
     cur = _last(_cues(tl, "mode"), t)
     gain_f = fg.get(cur["set"], 1.0) if cur else 1.0
     for who, ln in (("me", "me fill"), ("ines", "ines fill")):
