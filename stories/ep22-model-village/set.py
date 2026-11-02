@@ -743,6 +743,7 @@ def animate(kit, story, tl, t, ctx):
         ctx["sky_color"] = colr
     w.inputs["Strength"].default_value = sk * (0.62 + 0.38 * lvl)
     over["sun"] = lvl * (sky or {}).get("sun", 1.0)
+    over["light bakery"] = val(tl, "bakerylight", "gain", t, 1.0)
     # --- the lore stone (from L17), the tea shop's roof (lifted for S65), the fog on the bakery glass
     for ob in ctx["stone_objs"]:
         ob.hide_render = not flag(tl, "stone", t, False)

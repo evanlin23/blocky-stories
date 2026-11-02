@@ -185,7 +185,7 @@ def mac(room, d0, d1=None, lens=55, tz=-0.012, dx=0.0, tx=0.0):
 
 
 # 01 the sight, L01 to L17
-shot("S01", None, mac("bakery", 0.14, 0.105), dof=[2.8, BAKFOC])
+shot("S01", None, mac("bakery", 0.13, 0.10, lens=60, tz=-0.012, dx=-0.035), dof=[2.6, [BAKFOC[0], BAKFOC[1], BAKFOC[2] + 0.008]])
 shot("S02", "L01.3", cam((0, [1.2, -0.9, 0.62], [2.0, 0.5, 0.42], 32), (1, [0.1, -3.2, 1.35], [1.9, -0.1, 0.62], 28)), hand=0.01)
 shot("S03", "L03", cam((0, [-2.8, 0.22, 0.36], [3.0, 0.5, 0.40], 22), (1, [-2.5, 0.22, 0.36], [3.2, 0.5, 0.42], 22)), hand=0.004)
 shot("S04", "L04", cam((0, [1.3, 1.0, 0.95], [-1.4, -2.3, 1.0], 30), (1, [1.3, 1.0, 0.95], [-1.1, -2.0, 1.0], 30)))
@@ -366,7 +366,8 @@ for who, dx, dz, gap in tea_faces:
     put(who, "L67", b["pos"], **{k: v for k, v in b.items() if k != "pos"}, hidden=False)
     gone(who, "L68")
 # the Resident (never seen moving): found in his window after each cut
-res("L01", "bakery", "away")
+res("L01", "bakery", "profile")
+res("L02", "bakery", "away")
 res("L10", "bakery", "away")
 gone("resident", "L11")
 res("L13", "bakery", "profile")
@@ -391,6 +392,8 @@ gone("resident", "L55")
 
 # ---------------------------------------------------------------------------------------------- cues
 cues = [
+    {"at": 0, "name": "bakerylight", "gain": 4.0},
+    {"at": "L01.3", "name": "bakerylight", "gain": 1.0},
     {"at": "L17", "name": "stone", "on": True},
     {"at": "L38", "name": "cloud", "level": 0.42, "dur": 3.2},
     {"at": "L64", "name": "cloud", "level": 1.0, "dur": 2.6},
