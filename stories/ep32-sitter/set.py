@@ -697,7 +697,7 @@ def build_hall(kit, ctx, M, wd):
         kit.box("brush", (0.012, 0.012, 0.22), (0.1, 0.07 + 0.03 * (k - 2), -0.07), M["brush"], dr, rot=(0, math.pi / 2, 0.3 + 0.05 * k))
     ctx["hall"]["drawer"] = dr
     kit.light("hall sun", "AREA", (HX + 0.1, -1.3, 1.5), 85.0, "#ffe3b0", size=1.0).rotation_euler = (math.radians(-90), 0, 0)
-    kit.light("shot fill", "POINT", (0, 0, -30), 60.0, "#ffd7a8", size=0.3)
+    kit.light("shot fill", "POINT", (0, 0, -30), 110.0, "#ffd7a8", size=0.3)
     kit.light("drawer lamp", "POINT", (HX + 0.4, 2.2, 1.3), 40.0, "#fff0d8", size=0.2)
     kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 2.55), 105.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
 

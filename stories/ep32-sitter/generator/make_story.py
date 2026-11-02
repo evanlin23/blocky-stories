@@ -198,7 +198,7 @@ def shot(sid, at, what, cam, step=2, **flags):
 
 
 # 01 the criticism
-shot("S01", 0, "my canvas: cross and two ovals", canvas_cam(8, 1.25, 1.25, 30, push=0.3), 2)
+shot("S01", 0, "me at my easel, my canvas beside my face", still(front(ME, yaw_to(ME, DAIS) - 52, 1.9, 1.6), [ME[0] - 0.1, ME[1] + 0.1, 1.45], 26), 2, fill=front(ME, yaw_to(ME, DAIS) - 40, 1.0, 2.0))
 shot("S02", "L02", "Mum's hall, then: frames edge to edge, Mum hanging one", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
 shot("S03", "L03", "the hall now: bare hooks, pale squares", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
 shot("S03b", "L03.1", "a drawer half open, brushes in a jar on their side", still([HX + 0.3, 2.15, 1.0], [HX + 0.2, 2.65, 0.5], 28))
@@ -351,8 +351,8 @@ for i, who in PAINTERS.items():
     hide(who, "L53")
 # the five background painters stay home for the show; Petra and Ade return as one of the room
 # me
-put("me", 0, ME, hidden=True)
-hide("me", 0)
+put("me", 0, ME, yaw=yaw_to(ME, DAIS), expr="worried", **PAINT)
+hide("me", "L02")
 put("me", "L04.2", (-5.9, -3.0), yaw=90, expr="worried", arms=[0, 0])
 hide("me", "L05")
 put("me", "L09", ME, yaw=yaw_to(ME, DAIS), expr="worried", **PAINT)
