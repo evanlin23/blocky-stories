@@ -6,11 +6,11 @@
 In this world everyone has a small round dial over their head that counts down to their next hug. Mine has always been blank, and I tell myself it suits me, because I don't do hugs. My girlfriend Lena keeps bees in a yard on the hill above the harbour. In two years I've never gone into the yard: every evening I walk her to the gate and wave. Her dial has always read months. This week it starts counting hours toward noon on Saturday, the harvest, and a man in honey gold and smoke grey, whose feet never touch the grass and who has no dial at all, stands two hives nearer each day.
 
 ## Rule
-Everyone's dial counts down to their next hug, and at zero the hug comes (L01). The dial says when, never who (L49). I keep the yard's unspoken rule of my own, never past the gate (L13, L15), and break it on Saturday (L53).
+Everyone's dial counts down to their next hug, and at zero the hug comes (L01). The dial says when, never who (L49). I keep the yard's unspoken rule of my own, never past the gate (L13, L15), and break it on Saturday (L52).
 
 ## Twist
 Lena's dial was never counting down to someone else. It was counting down to me: every time I nearly hugged her goodbye at the gate it dropped to seconds, and every time I only waved it jumped back up. My own dial was blank because it was waiting for me to decide. The first line first reads as fate, a clock that happens to you. After L60 to L65 it reads as a countdown to somebody choosing, and the last line ("Mine has NUMBERS now", L70) means I finally chose.
-- **Plant 1 (L16 to L17, S19 to S21):** on Monday, as I wave goodbye at the gate, her dial drops to a few seconds, then jumps back to months, and I blame the bees. S20 shows me half-lifting my arms before I turn it into a wave.
+- **Plant 1 (L16 to L17, S19 to S21):** on Monday, as I nearly hug her goodbye at the gate and turn it into a wave, her dial drops to a few seconds, then jumps back to months, and I blame the bees. S20 shows me half-lifting my arms before I turn it into a wave.
 - **Plant 2 (L35 to L36, S41 to S43):** my veil, never worn, was hung on its hook the week we met. She's been ready for the second person in the yard for two years.
 - Bonus plant (L18, S22): I offer to carry the honey down on Saturday, and the next shot of her dial is the first one counting hours. A rewatch sees the countdown start the day I said I'd come.
 
@@ -20,7 +20,7 @@ One small harbour town on a hill, early summer, clear light.
 - **The bee yard:** a steep grassy hillside above the town, clover and buttercups, a dry-stone wall round the yard with one wooden gate. Inside: twelve white wooden hives in three rows of four up the slope (row 1 nearest the gate, row 3 "the last row" highest), a small weathered shed just inside the gate, on its side wall a wooden board with two hooks and two veils. A smoker on an upturned crate. The harbour and sea are far below in wides. Bees are a soft hum and a few small dark dots drifting near the hives, never a swarm, never on a face. No brand names or text on hives or kit.
 
 ## Cast (all adults, nobody in peril or hurt, nobody is stung)
-- **me** (adult man, late twenties, narrator): navy-and-cream striped tee, dark grey jeans, short black block hair. Round eyes, straight brows. Arms usually folded or hands in pockets until L53. My dial is blank: cream face, no arc, no digits.
+- **me** (adult man, late twenties, narrator): navy-and-cream striped tee, dark grey jeans, short black block hair. Round eyes, straight brows. Arms usually folded or hands in pockets until L52. My dial is blank: cream face, no arc, no digits.
 - **Lena** (adult, late twenties, girlfriend): white beekeeping smock over a sage-green shirt, tan trousers, dark brown curly block hair tied up, a wide-brimmed veil hat with a fine dark mesh hung behind when not in use. Warm, easy smile. Her dial is the one we follow.
 - **Montage extras (adults, one shot each, never named):** the hugging couple on the pier. Arrivals, a crowd of six to eight. The ticket man in a grey cardigan and flat cap, scowling on his stool in the hut. A first-date pair at the café table. Two strangers on the pier steps, a backpacker and a woman with a shopping bag.
 - Lena asks nothing and explains nothing. She laughs, works and waves back. Nobody explains the rule on screen.
@@ -47,7 +47,7 @@ One small harbour town on a hill, early summer, clear light.
 | Thursday | L30 to L31 | Row 3 to row 2, two hives nearer: beside hive 7, facing the gate. |
 | Friday | L33 to L37 | Beside the shed just inside the gate, side-on to us, his shoulder by my empty veil hook board, facing the gate. |
 | Saturday, smoke | L44 to L47 | In the gateway itself, facing out, a pace from me, face a hand above mine and tilted down. |
-| After | L53 | I pass him on his left (no contact, a clear gap). |
+| After | L52 | I pass him on his left (no contact, a clear gap). |
 | Gone | L59 | Gateway empty, smoke thinning. Not seen again. |
 
 ## Look
@@ -140,9 +140,9 @@ Timings are at about 290 wpm. Every shot keeps faces at least 1/5 of the frame w
 | S59 | L49 | Insert: her dial, just digits and pips, nothing else. |
 | S60 | L50 | Lena in the smoke by the hives, calm, working. |
 | S61 | L51 | Me, jaw set. |
-| S62 | L52 | The board: my hook, now empty (cut from veil to empty hook). |
-| S63 | L52 | Me with my veil on, brim crooked. |
-| S64 | L53 | Wide: I step past him on his left, a clear metre between us, into the yard. |
+| S64 | L52 | Wide: I step past him on his left, a clear metre between us, into the yard. |
+| S62 | L52 | The board: my hook, now empty (cut from veil to empty hook), as I run on. |
+| S63 | L53 | Me running with my veil on, brim crooked. |
 | S65 | L54 | Insert: her dial, 3, 2, 1. Music drop before. |
 | S66 | L55 | The hug in the smoke: my arms round her, the two veil brims bumping. |
 | S67 | L56 | Her dial at zero, a slow warm gold fade (0.8 s). |
@@ -215,8 +215,8 @@ L48. And I thought about the RULE.
 L49. The dial tells you WHEN. It never tells you WHO.
 L50. Somebody was going to hug Lena in twenty seconds, whatever I DID.
 L51. So I decided it was going to be ME.
-L52. I pulled my veil on for the first time EVER.
-L53. I stepped past him into the yard and RAN.
+L52. I stepped past him, grabbed my veil off its HOOK and RAN.
+L53. I pulled it on as I ran, for the first time EVER.
 L54. Her dial said three. Two. ONE.
 L55. I hugged her so hard our veils BUMPED.
 L56. Her dial hit zero and glowed slow GOLD.
@@ -224,7 +224,7 @@ L57. And over MY head, something lit up.
 L58. Numbers. For the first time in my LIFE.
 L59. When the smoke cleared, the gateway was EMPTY.
 L60. Then I understood Monday at the GATE.
-L61. Every time I said goodbye, her clock had dropped to SECONDS.
+L61. Every time I nearly hugged her goodbye, it had dropped to SECONDS.
 L62. And every time I only waved, it jumped back to MONTHS.
 L63. All this time, it had been counting down to ME.
 L64. To every time I nearly did IT.
