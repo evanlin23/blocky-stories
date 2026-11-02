@@ -57,6 +57,7 @@ LOOKS = {
     "win_dark": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, win=0.0, lamp=0.0, bfill=1.0),
     # Friday and Saturday dusk: low gold sun, sinking
     "dusk": _L(sun=3.8, sun_col="#ffc070", el=17, az=-78, fill=0.45, sky="#8a78a8", sky_str=0.6, lamp=0.5),
+    "dusk_tee": _L(sun=3.8, sun_col="#ffc070", el=17, az=-78, fill=0.9, sky="#8a78a8", sky_str=0.8, lamp=0.5, tee=1.0),
     "dusk2": _L(sun=3.2, sun_col="#ff9e5a", el=13, az=-78, fill=0.3, sky="#6b5a8a", sky_str=0.55, lamp=0.8, rim=1.0),
     "dusk_str": _L(sun=2.6, sun_col="#ff9e5a", el=10, az=-78, fill=0.18, sky="#5b4c7e", sky_str=0.36, lamp=1.0,
                    strings=1.0, tee=1.0, rim=1.0),
@@ -187,15 +188,15 @@ def mesh_mat(kit, hexc="#9aa0a4"):
     b.inputs["Roughness"].default_value = 0.45
     tc = nt.nodes.new("ShaderNodeTexCoord")
     mp = nt.nodes.new("ShaderNodeMapping")
-    mp.inputs["Scale"].default_value = (24.0, 24.0, 24.0)
+    mp.inputs["Scale"].default_value = (9.0, 9.0, 9.0)
     mp.inputs["Rotation"].default_value = (0, 0, math.radians(45))
     nt.links.new(tc.outputs["Object"], mp.inputs["Vector"])
     ck = nt.nodes.new("ShaderNodeTexChecker")
     ck.inputs["Scale"].default_value = 1.0
     nt.links.new(mp.outputs[0], ck.inputs["Vector"])
     ramp = nt.nodes.new("ShaderNodeValToRGB")
-    ramp.color_ramp.elements[0].position = 0.4
-    ramp.color_ramp.elements[1].position = 0.6
+    ramp.color_ramp.elements[0].position = 0.3
+    ramp.color_ramp.elements[1].position = 0.7
     nt.links.new(ck.outputs["Fac"], ramp.inputs["Fac"])
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mix = nt.nodes.new("ShaderNodeMixShader")
@@ -411,9 +412,8 @@ class Wrung:
         self.head = kit.empty("wrung.head", (0, 0, 0.1), self.shoulders)
         kit.box("wrung.headb", (0.34, 0.34, 0.44), (0, 0, 0.22), white, self.head, bevel=0.08, seg=3)
         for sx in (-1, 1):
-            e = kit.sphere(f"wrung.eye{sx}", 0.034, (sx * 0.085, -0.165, 0.24), black, self.head, seg=14)
-            e.scale = (1.0, 0.4, 1.5)
-            kit.sphere(f"wrung.hi{sx}", 0.008, (sx * 0.085 + 0.01, -0.184, 0.265), hi, self.head, seg=8)
+            e = kit.sphere(f"wrung.eye{sx}", 0.022, (sx * 0.085, -0.165, 0.24), black, self.head, seg=14)
+            e.scale = (1.0, 0.4, 1.4)
             kit.box(f"wrung.brow{sx}", (0.1, 0.012, 0.014), (sx * 0.085, -0.172, 0.39), black, self.head, bevel=0.004)
         noshadow(self.root)
 
@@ -464,7 +464,7 @@ def build(kit, story, tl):
     brick = kit.bricks("#a0573a", "#8a4830", "#6a5a50", 1.2) if hasattr(kit, "bricks") else plastic("#a0573a", 0.8)
     iron = kit.metal("#2c2f33", 0.5)
     stone = kit.concrete("#a8a290", 3.0, 0.3, "stonelook")
-    tee_mat = plastic("#36703a", 0.85, spec=0.05)
+    tee_mat = plastic("#4c9552", 0.85, spec=0.05)
     rubber = plastic("#2a2c30", 0.9, spec=0.05)
 
     # lights (the base is 1: animate sets the real strength through the gains)
@@ -699,6 +699,15 @@ def build(kit, story, tl):
     kit.box("survey.p", (0.05, 0.05, 1.1), (0, 0, 0.55), plastic("#d8d0b0", 0.7), sp)
     kit.box("survey.t", (0.07, 0.07, 0.1), (0, 0, 1.12), plastic("#e8a030", 0.6), sp)
     W["props"]["survey"] = sp
+    # two blocky footprints pressed into the second tee (toes toward the hole, +y); pale ring + dark dent
+    dent = plastic("#0c1a10", 0.9, spec=0.0)
+    ring = plastic("#b9d6a8", 0.9, spec=0.0)
+    for nm in ("print1", "print2"):
+        pe = kit.empty(nm, (0, 0, -50))
+        kit.box(nm + ".r", (0.2, 0.36, 0.006), (0, 0, 0.0), ring, pe, bevel=0.003)
+        kit.box(nm + ".h", (0.15, 0.12, 0.012), (0, -0.09, 0.0), dent, pe, bevel=0.003)
+        kit.box(nm + ".s", (0.17, 0.2, 0.012), (0, 0.07, 0.0), dent, pe, bevel=0.003)
+        W["props"][nm] = pe
     tray = kit.box("panel_a", (3.5, 0.03, 1.9), (0, 0, -50), mesh_mat(kit))
     W["props"]["panel_a"] = tray
     W["props"]["panel_b"] = kit.box("panel_b", (3.5, 0.03, 1.9), (0, 0, -50), mesh_mat(kit))
@@ -969,7 +978,7 @@ def animate(kit, story, tl, t, ctx):
                       {"pos": [0, 0, -50], "yaw": 0.0, "rot": [0, 0, 0], "scale": 1.0})
         hide = bool(c and c.get("hide"))
         ob.location = (v["pos"][0], v["pos"][1], v["pos"][2] if len(v["pos"]) > 2 else 0.0) if not hide else (0, 0, -50)
-        ob.rotation_euler = (v["rot"][0] * D2R, v["rot"][1] * D2R, v["yaw"] * D2R) if oid.startswith(("putter", "panel", "flask", "ball", "survey", "fig_")) else ob.rotation_euler
+        ob.rotation_euler = (v["rot"][0] * D2R, v["rot"][1] * D2R, v["yaw"] * D2R) if oid.startswith(("putter", "panel", "flask", "ball", "survey", "fig_", "print")) else ob.rotation_euler
         if oid.startswith("fig_"):
             s = v["scale"]
             ob.scale = (s, s, 1.0)

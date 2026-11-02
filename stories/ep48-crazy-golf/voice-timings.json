@@ -226,30 +226,30 @@
    ]
   },
   "L09": {
-   "text": "dad has run the crazy golf in the park for decades.",
+   "text": "dad's crazy golf becomes a car park on sunday.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.448,
+   "dur": 2.5,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 2.293,
    "chunks": [
     [
      0.172,
-     0.578
+     0.897
     ],
     [
-     0.578,
-     1.147
+     0.897,
+     1.172
     ],
     [
-     1.147,
-     1.483
+     1.172,
+     1.543
     ],
     [
-     1.483,
-     2.259
+     1.543,
+     2.293
     ]
    ]
   },
@@ -938,26 +938,26 @@
    ]
   },
   "L36": {
-   "text": "his coat is wet with dew.",
+   "text": "his cardigan is wet with dew.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.5,
+   "dur": 1.672,
    "onset": 0.155,
-   "end": 1.293,
+   "end": 1.466,
    "chunks": [
     [
      0.155,
-     0.448
+     0.621
     ],
     [
-     0.448,
-     0.732
+     0.621,
+     0.905
     ],
     [
-     0.732,
-     1.293
+     0.905,
+     1.466
     ]
    ]
   },
