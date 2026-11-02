@@ -37,6 +37,7 @@ jobs:
     timeout-minutes: 340
     strategy:
       fail-fast: false
+      max-parallel: 16   # the free plan runs 20 jobs at once: leave 4 for the test checks on story PRs
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
