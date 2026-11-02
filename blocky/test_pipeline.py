@@ -79,6 +79,22 @@ def test_upload_description_adds_flash_line():
     assert upload.description(GOOD, {"description_line": None}).startswith("A short scary")
 
 
+def test_upload_spaces_out_twist_shapes(monkeypatch):
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    shapes = {"a": "stand-in", "b": "stand-in", "c": "loop", "d": ""}
+    monkeypatch.setattr(upload, "all_stories", lambda: ["a", "b", "c", "d"])
+    monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1})
+    monkeypatch.setattr(upload, "gate_open", lambda s: True)
+    monkeypatch.setattr(upload, "shape", lambda s: shapes[s])
+    assert upload.next_story({}) == "a"
+    assert upload.next_story({"a": {}}) == "c"            # b would repeat a's shape, so c goes first
+    assert upload.next_story({"a": {}, "c": {}}) == "b"
+    monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1} if s == "b" else None)
+    assert upload.next_story({"a": {}}) == "b"            # nothing else is ready: it goes anyway
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics

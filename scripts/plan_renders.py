@@ -11,7 +11,7 @@ import argparse
 import json
 import sys
 
-from stories import all_stories, film, gate_open, uploads
+from stories import all_stories, changed_since, film, gate_open, uploads
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--story", default="")
@@ -23,7 +23,10 @@ if a.story:
     todo = [a.story]
 else:
     done = uploads()
-    todo = [s for s in all_stories() if s not in done and film(s) is None and gate_open(s)]
+    def needs(s):   # never rendered, or fixed since its film was made (a flash redraw, a re-voice)
+        f = film(s)
+        return f is None or changed_since(s, f["created_at"])
+    todo = [s for s in all_stories() if s not in done and needs(s) and gate_open(s)]
 todo, later = todo[:a.max], todo[a.max:]   # all_stories() is oldest first, so the oldest go first
 print(f"to render: {todo or 'nothing'}" + (f"; next run: {later}" if later else ""), file=sys.stderr)
 include = [{"story": s, "shard": k} for s in todo for k in range(a.shards)]

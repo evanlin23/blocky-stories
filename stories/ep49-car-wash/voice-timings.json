@@ -1,0 +1,1973 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this town, the bell on your collar rings before every mistake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     0.94
+    ],
+    [
+     0.94,
+     1.276
+    ],
+    [
+     1.276,
+     1.784
+    ],
+    [
+     1.784,
+     2.603
+    ]
+   ]
+  },
+  "L02": {
+   "text": "A man reaches for a third pie. Ding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     0.819
+    ],
+    [
+     0.819,
+     1.293
+    ],
+    [
+     1.388,
+     1.897
+    ]
+   ]
+  },
+  "L03": {
+   "text": "First dates sound like sleigh rides.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.87
+    ],
+    [
+     0.87,
+     1.655
+    ]
+   ]
+  },
+  "L04": {
+   "text": "At weddings, the whole room leans in after \"I do.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.578,
+     0.983
+    ],
+    [
+     0.983,
+     1.328
+    ],
+    [
+     1.328,
+     2.19
+    ]
+   ]
+  },
+  "L05": {
+   "text": "One guy went to text his ex at midnight, and woke the whole street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.87
+    ],
+    [
+     0.87,
+     1.147
+    ],
+    [
+     1.147,
+     1.638
+    ],
+    [
+     1.707,
+     2.017
+    ],
+    [
+     2.017,
+     2.741
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Some people ring and do it anyway, and everybody winces.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.862
+    ],
+    [
+     0.862,
+     1.008
+    ],
+    [
+     1.008,
+     1.362
+    ],
+    [
+     1.414,
+     2.448
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Mine has never rung. Not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.19,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.483,
+     0.931
+    ],
+    [
+     1.0,
+     1.672
+    ]
+   ]
+  },
+  "L08": {
+   "text": "My big brother Ruben runs the car wash on the edge of town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.914
+    ],
+    [
+     0.914,
+     1.19
+    ],
+    [
+     1.19,
+     1.629
+    ],
+    [
+     1.629,
+     1.923
+    ],
+    [
+     1.923,
+     2.586
+    ]
+   ]
+  },
+  "L09": {
+   "text": "I worked the pay booth with him till last spring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.836
+    ],
+    [
+     0.836,
+     1.052
+    ],
+    [
+     1.052,
+     1.931
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Then I quit, before I could mess it up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.086
+    ],
+    [
+     1.086,
+     1.69
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Since then, his bell rings all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     0.793
+    ],
+    [
+     0.793,
+     1.017
+    ],
+    [
+     1.017,
+     1.621
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Waving cars in. Ding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.888,
+     1.397
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Counting the till. Ding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.784,
+     1.293
+    ]
+   ]
+  },
+  "L14": {
+   "text": "At night, it rings through the wall in his sleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.492,
+     0.793
+    ],
+    [
+     0.793,
+     1.233
+    ],
+    [
+     1.233,
+     1.897
+    ]
+   ]
+  },
+  "L15": {
+   "text": "I ask what's wrong. He pats his pocket and says he's fine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.948
+    ],
+    [
+     1.017,
+     1.301
+    ],
+    [
+     1.301,
+     1.681
+    ],
+    [
+     1.681,
+     1.906
+    ],
+    [
+     1.906,
+     2.569
+    ]
+   ]
+  },
+  "L16": {
+   "text": "On Monday, I turn up in my old overalls.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.638,
+     0.992
+    ],
+    [
+     0.992,
+     1.155
+    ],
+    [
+     1.155,
+     2.0
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Ruben grins like it's his birthday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     0.922
+    ],
+    [
+     0.922,
+     1.655
+    ]
+   ]
+  },
+  "L18": {
+   "text": "In the first hour, I pull the wrong lever.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.776
+    ],
+    [
+     0.81,
+     1.086
+    ],
+    [
+     1.086,
+     1.879
+    ]
+   ]
+  },
+  "L19": {
+   "text": "The brushes start spinning with no car inside.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.905
+    ],
+    [
+     0.905,
+     1.147
+    ],
+    [
+     1.147,
+     1.983
+    ]
+   ]
+  },
+  "L20": {
+   "text": "My bell stays silent.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.293
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Across the yard, Ruben's rings.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.793,
+     1.586
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Inside the tunnel there are wet footprints. Five pairs in a line.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.172,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     0.914
+    ],
+    [
+     0.914,
+     1.569
+    ],
+    [
+     1.647,
+     2.164
+    ],
+    [
+     2.164,
+     2.845
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Each pair a step behind and fainter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.043
+    ],
+    [
+     1.043,
+     1.69
+    ]
+   ]
+  },
+  "L24": {
+   "text": "The dryer whistles a note with nobody under it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.086
+    ],
+    [
+     1.086,
+     1.552
+    ],
+    [
+     1.552,
+     2.103
+    ]
+   ]
+  },
+  "L25": {
+   "text": "That night, I order the wax from my bed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     0.716
+    ],
+    [
+     0.716,
+     1.017
+    ],
+    [
+     1.017,
+     1.69
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Through the wall, his bell rings once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.155
+    ],
+    [
+     1.155,
+     1.672
+    ]
+   ]
+  },
+  "L27": {
+   "text": "On Tuesday, Ruben isn't there at opening.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.759,
+     1.293
+    ],
+    [
+     1.293,
+     1.966
+    ]
+   ]
+  },
+  "L28": {
+   "text": "The tunnel is already running, full of blue mist.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.155,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     1.103
+    ],
+    [
+     1.181,
+     1.439
+    ],
+    [
+     1.439,
+     2.121
+    ]
+   ]
+  },
+  "L29": {
+   "text": "His phone and his keys ride the conveyor out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.966
+    ],
+    [
+     0.966,
+     1.569
+    ],
+    [
+     1.569,
+     2.017
+    ]
+   ]
+  },
+  "L30": {
+   "text": "I call his name down the tunnel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.741
+    ],
+    [
+     0.741,
+     1.466
+    ]
+   ]
+  },
+  "L31": {
+   "text": "The dryer whistles it back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.293
+    ]
+   ]
+  },
+  "L32": {
+   "text": "I run the wash alone all morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.672
+    ],
+    [
+     0.672,
+     0.879
+    ],
+    [
+     0.879,
+     1.552
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Every car comes out with five handprints down the side, each one fainter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.379,
+   "onset": 0.172,
+   "end": 3.172,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.836
+    ],
+    [
+     0.836,
+     1.517
+    ],
+    [
+     1.517,
+     2.155
+    ],
+    [
+     2.241,
+     3.172
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Deep in the mist, somebody in blue overalls is standing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.759
+    ],
+    [
+     0.836,
+     1.207
+    ],
+    [
+     1.207,
+     1.741
+    ],
+    [
+     1.741,
+     2.466
+    ]
+   ]
+  },
+  "L35": {
+   "text": "With every car, they're a step nearer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.75,
+     0.897
+    ],
+    [
+     0.897,
+     1.672
+    ]
+   ]
+  },
+  "L36": {
+   "text": "And there's another one a step behind them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.845
+    ],
+    [
+     0.845,
+     1.138
+    ],
+    [
+     1.138,
+     1.828
+    ]
+   ]
+  },
+  "L37": {
+   "text": "By eleven, I stop sending cars in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.621,
+     0.948
+    ],
+    [
+     0.948,
+     1.897
+    ]
+   ]
+  },
+  "L38": {
+   "text": "At noon, Ruben's van pulls in, the back full of wax.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.155,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.569,
+     1.017
+    ],
+    [
+     1.017,
+     1.448
+    ],
+    [
+     1.492,
+     1.854
+    ],
+    [
+     1.854,
+     2.466
+    ]
+   ]
+  },
+  "L39": {
+   "text": "My order went to the wrong address. He drove to the city at dawn to fix it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.241,
+   "onset": 0.172,
+   "end": 3.034,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.776
+    ],
+    [
+     0.776,
+     1.414
+    ],
+    [
+     1.483,
+     1.854
+    ],
+    [
+     1.854,
+     2.095
+    ],
+    [
+     2.095,
+     2.397
+    ],
+    [
+     2.397,
+     3.034
+    ]
+   ]
+  },
+  "L40": {
+   "text": "He had left his keys, and phone, on the booth sill for me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.914
+    ],
+    [
+     0.94,
+     1.293
+    ],
+    [
+     1.319,
+     1.448
+    ],
+    [
+     1.448,
+     1.845
+    ],
+    [
+     1.845,
+     2.328
+    ]
+   ]
+  },
+  "L41": {
+   "text": "He doesn't say how he knew before I did.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     0.948
+    ],
+    [
+     0.948,
+     1.741
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I check my bell. It hangs there, still.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.81
+    ],
+    [
+     0.879,
+     1.328
+    ],
+    [
+     1.362,
+     1.862
+    ]
+   ]
+  },
+  "L43": {
+   "text": "At closing, the drying lights come up in the tunnel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.629,
+     1.19
+    ],
+    [
+     1.19,
+     1.406
+    ],
+    [
+     1.406,
+     2.034
+    ]
+   ]
+  },
+  "L44": {
+   "text": "There are five of them now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.155,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.741
+    ],
+    [
+     0.741,
+     1.207
+    ]
+   ]
+  },
+  "L45": {
+   "text": "The same man, again and again, each one a step behind and fainter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.155,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.638,
+     1.276
+    ],
+    [
+     1.362,
+     1.629
+    ],
+    [
+     1.629,
+     2.215
+    ],
+    [
+     2.215,
+     2.879
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Wash-blue overalls, and the only collar in town without a bell.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.052,
+     1.19
+    ],
+    [
+     1.19,
+     1.647
+    ],
+    [
+     1.647,
+     2.017
+    ],
+    [
+     2.017,
+     2.776
+    ]
+   ]
+  },
+  "L47": {
+   "text": "The front one is standing in the booth door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.854
+    ],
+    [
+     0.854,
+     0.966
+    ],
+    [
+     0.966,
+     1.655
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Right where I used to stand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.612
+    ],
+    [
+     0.612,
+     1.241
+    ]
+   ]
+  },
+  "L49": {
+   "text": "Its head turns to me. Then the next one. Then the next.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     0.966
+    ],
+    [
+     1.052,
+     1.207
+    ],
+    [
+     1.207,
+     1.569
+    ],
+    [
+     1.603,
+     2.328
+    ]
+   ]
+  },
+  "L50": {
+   "text": "The front one leans in, slowly, until its face is level with mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.172,
+   "end": 2.966,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.897
+    ],
+    [
+     0.94,
+     1.414
+    ],
+    [
+     1.5,
+     2.0
+    ],
+    [
+     2.0,
+     2.301
+    ],
+    [
+     2.301,
+     2.966
+    ]
+   ]
+  },
+  "L51": {
+   "text": "I back away toward the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.362
+    ]
+   ]
+  },
+  "L52": {
+   "text": "And in Ruben's pocket, something rings.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.879
+    ],
+    [
+     0.914,
+     1.707
+    ]
+   ]
+  },
+  "L53": {
+   "text": "He tips it out onto the sill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.638
+    ],
+    [
+     0.638,
+     1.379
+    ]
+   ]
+  },
+  "L54": {
+   "text": "A tiny brass clapper, worn smooth. Mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.914
+    ],
+    [
+     0.948,
+     1.569
+    ],
+    [
+     1.681,
+     2.224
+    ]
+   ]
+  },
+  "L55": {
+   "text": "He's carried it since we were teenagers, back when everything I tried made my bell ring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.586,
+   "onset": 0.155,
+   "end": 3.397,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.854
+    ],
+    [
+     0.854,
+     1.5
+    ],
+    [
+     1.569,
+     1.879
+    ],
+    [
+     1.879,
+     2.509
+    ],
+    [
+     2.509,
+     2.741
+    ],
+    [
+     2.741,
+     3.397
+    ]
+   ]
+  },
+  "L56": {
+   "text": "He wanted me to stop being scared to try.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.741
+    ],
+    [
+     0.741,
+     1.147
+    ],
+    [
+     1.147,
+     1.741
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Every ring I blamed on him was mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.905
+    ],
+    [
+     0.905,
+     1.138
+    ],
+    [
+     1.138,
+     1.793
+    ]
+   ]
+  },
+  "L58": {
+   "text": "But a bell only rings before a mistake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.983
+    ],
+    [
+     0.983,
+     1.862
+    ]
+   ]
+  },
+  "L59": {
+   "text": "So a quiet bell means go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.741
+    ],
+    [
+     0.741,
+     1.362
+    ]
+   ]
+  },
+  "L60": {
+   "text": "I hang the clapper back in my bell.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.793
+    ],
+    [
+     0.793,
+     1.026
+    ],
+    [
+     1.026,
+     1.586
+    ]
+   ]
+  },
+  "L61": {
+   "text": "I ask Ruben if he still wants a partner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.069
+    ],
+    [
+     1.069,
+     1.845
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Then I step into the booth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.276
+    ]
+   ]
+  },
+  "L63": {
+   "text": "My bell stays quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.259
+    ]
+   ]
+  },
+  "L64": {
+   "text": "Down the tunnel, the five of them fade, front to back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     0.905
+    ],
+    [
+     0.905,
+     1.094
+    ],
+    [
+     1.094,
+     1.362
+    ],
+    [
+     1.414,
+     2.086
+    ]
+   ]
+  },
+  "L65": {
+   "text": "On Wednesday, I'm in the booth at seven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.707,
+     0.87
+    ],
+    [
+     0.87,
+     1.138
+    ],
+    [
+     1.138,
+     1.793
+    ]
+   ]
+  },
+  "L66": {
+   "text": "I wave the first car in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.724
+    ],
+    [
+     0.724,
+     1.293
+    ]
+   ]
+  },
+  "L67": {
+   "text": "The booth door has nobody in it but me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.094
+    ],
+    [
+     1.094,
+     1.224
+    ],
+    [
+     1.224,
+     1.776
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Ruben and I watch it come out of the tunnel, shining.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.19,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.19,
+     0.612
+    ],
+    [
+     0.612,
+     0.897
+    ],
+    [
+     0.897,
+     1.094
+    ],
+    [
+     1.094,
+     1.466
+    ],
+    [
+     1.526,
+     2.121
+    ]
+   ]
+  },
+  "L69": {
+   "text": "In this town, a bell on your collar rings before every mistake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     0.992
+    ],
+    [
+     0.992,
+     1.328
+    ],
+    [
+     1.328,
+     1.845
+    ],
+    [
+     1.845,
+     2.655
+    ]
+   ]
+  },
+  "L70": {
+   "text": "Mine was in his pocket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.19,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     1.224
+    ]
+   ]
+  },
+  "L71": {
+   "text": "Just now, it rang.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     1.103
+    ]
+   ]
+  },
+  "L72": {
+   "text": "I hadn't moved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.0
+    ]
+   ]
+  }
+ }
+}
