@@ -356,7 +356,7 @@ def build_post(kit, ctx, M):
     kit.box("staple", (0.1, 0.012, 0.05), (1.0, face + 0.005, 0.40), M["steelp"])
     pb = kit.box("padlock", (0.07, 0.035, 0.08), (1.0, face + 0.03, 0.345), M["pad"], bevel=0.01)
     torus(kit, "shackle", 0.025, 0.006, (1.0, face + 0.03, 0.395), M["steel"], rot=(math.pi / 2, 0, 0), seg=16, tube=6)
-    kit.light("plant", "SPOT", (1.0, face + 0.55, 0.62), 5, "#fff0d8", size=0.05, spot=38, blend=0.5, shadow=False)
+    kit.light("plant", "SPOT", (1.0, face + 0.55, 0.62), 2.2, "#fff0d8", size=0.05, spot=38, blend=0.5, shadow=False)
     kit.aim(bpy.data.objects["plant"], (1.0, face, 0.52))
 
 
@@ -493,24 +493,21 @@ def build_kitchen(kit, ctx, M):
 
 
 def build_carry(kit, ctx, M):
-    """A box hugged to the chest: three variants parented later to whoever carries it."""
+    """A box hugged to the chest: one per (carrier, style), parented to whoever carries it in animate()."""
     ctx["carry"] = {}
-    for st in ("round", "jagged", "small"):
-        e = kit.empty(f"carry {st}", (0, 0, -30))
-        if st == "small":
-            kit.box("carry body small", (0.95, 0.85, 0.7), (0, 0, 0), M["card"], e, bevel=0.03)
-            uvplane(kit, "carry dec small", (0.9, 0.62), (0, -0.428, 0), M["round1"], e, rot=(math.pi / 2, 0, 0))
-            e.hide_render = True
-            for ob in e.children_recursive:
-                ob.hide_render = True
-            ctx["carry"][st] = e
-            continue
-        kit.box(f"carry body {st}", (1.5, 1.35, 1.1), (0, 0, 0), M["card"], e, bevel=0.03)
-        uvplane(kit, f"carry dec {st}", (1.42, 1.0), (0, -0.678, 0), M[f"{st}0"], e, rot=(math.pi / 2, 0, 0))
-        e.hide_render = True
-        for ob in e.children_recursive:
-            ob.hide_render = True
-        ctx["carry"][st] = e
+    for who in ("me", "jo"):
+        for st in ("round", "jagged", "small"):
+            e = kit.empty(f"carry {who} {st}", (0, 0, -30))
+            if st == "small":
+                kit.box(f"carry body {who} small", (0.95, 0.85, 0.7), (0, 0, 0), M["card"], e, bevel=0.03)
+                uvplane(kit, f"carry dec {who} small", (0.9, 0.62), (0, -0.428, 0), M["round1"], e,
+                        rot=(math.pi / 2, 0, 0))
+            else:
+                kit.box(f"carry body {who} {st}", (1.5, 1.35, 1.1), (0, 0, 0), M["card"], e, bevel=0.03)
+                uvplane(kit, f"carry dec {who} {st}", (1.42, 1.0), (0, -0.678, 0), M[f"{st}0"], e,
+                        rot=(math.pi / 2, 0, 0))
+            _show(e, False)
+            ctx["carry"][(who, st)] = e
     # one small box, sitting on the floor of seven at the end (a lone round-scribbled box)
     sm = kit.empty("small box", (0, 0, -30))
     kit.box("small body", (0.36, 0.3, 0.26), (0, 0, 0.13), M["card"], sm, bevel=0.01)
@@ -709,10 +706,12 @@ def animate(kit, story, tl, t, ctx):
             car.location = (pos[0], pos[1], 0)
             car.rotation_euler = (0, 0, math.radians(yaw))
     # who carries what
-    cr = {k: v for k, v in ctx["carry"].items()}
-    for e in cr.values():
+    for e in ctx["carry"].values():
         _show(e, False)
-    carry = _last(_cues(tl, "carry"), t)
+    carriers = {}
+    for c_ in _cues(tl, "carry"):
+        if c_["t"] <= t + 1e-9:
+            carriers[c_["who"]] = c_
     sm = ctx["small"]
     smc = _last(_cues(tl, "small"), t)
     if smc and smc.get("on"):
@@ -723,16 +722,16 @@ def animate(kit, story, tl, t, ctx):
     me = bpy.data.objects.get("me")
     jo = bpy.data.objects.get("jo")
     bpy.context.view_layer.update()
-    if carry and carry.get("on"):
-        who = bpy.data.objects.get(carry["who"])
-        tor = bpy.data.objects.get(f"{carry['who']}.torso")
-        e = cr[carry["style"]]
-        if who is not None and tor is not None and not who.hide_render:
-            e.parent = tor
-            e.location = (0, -1.15, 1.0)
-            e.rotation_euler = (0, 0, 0)
-            e.scale = (1, 1, 1)
-            _show(e, True)
+    for who_, carry in carriers.items():
+        who = bpy.data.objects.get(who_)
+        tor = bpy.data.objects.get(f"{who_}.torso")
+        if not carry.get("on") or who is None or tor is None or who.hide_render:
+            continue
+        e = ctx["carry"][(who_, carry["style"])]
+        e.parent = tor
+        e.location = (0, -1.15, 1.0)
+        e.rotation_euler = (0, 0, 0)
+        _show(e, True)
     # my lights: phone glow and torch follow me
     pg = _ramp(_cues(tl, "phone"), t, "on", 0.0)
     tc = _ramp(_cues(tl, "torch"), t, "on", 0.0)

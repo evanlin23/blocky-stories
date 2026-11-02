@@ -146,12 +146,11 @@ SHOTS = [
     ("L58", "the yard in evening sun: Jo's car pulling in", still([-3.0, -10.5, 1.3], [1.0, -4.5, 1.2], 22)),
     ("L59", "Jo and me side by side as the door rises", still([-0.6, 0.0, 1.5], [0.3, 3.0, 1.35], 32)),
     ("L60", "straight down the aisle in daylight: the stacks and an empty aisle", AISLE_CAM),
-    ("L61", "Jo with a jagged box walking toward the sun", still([-0.3, -0.9, 1.45], [0.0, 4.0, 1.2], 28)),
-    ("L61.4", "then me with another", still([-0.3, -0.9, 1.45], [0.0, 4.0, 1.2], 28)),
+    ("L61", "Jo and me carrying her half out, walking toward the sun", still([-0.3, -0.9, 1.45], [0.0, 4.0, 1.2], 28)),
     ("L62", "Jo in the aisle with a round one, eyebrows up", still([0.6, 3.0, 1.55], [2.0, 3.0, 1.5], 34)),
     ("L63", "Jo: \"That one's yours, obviously\"", still([0.6, 3.0, 1.55], [2.0, 3.0, 1.5], 34)),
     ("L63.3", "and me, a small laugh", still([3.7, 3.0, 1.55], [1.4, 3.0, 1.5], 36)),
-    ("L64", "the key-return slot, sunlight across it", still([-0.2, 1.9, 1.5], [-1.0, -0.3, 1.25], 34)),
+    ("L64", "the key-return slot, sunlight across it", still([0.1, -0.95, 1.45], [-1.1, -0.1, 1.25], 34)),
     ("P01", "close on the slot", still([0.2, -0.3, 1.32], [-1.1, -0.3, 1.28], 45)),
     ("L65", "her car going out of the gate in the low sun, me watching", still([-4.0, -4.5, 1.4], [5.5, -8.5, 1.0], 26)),
     ("L66", "me carrying round-scribbled boxes out into the sunny yard", still([-0.1, -7.0, 1.4], [-0.1, 0.0, 1.25], 30)),
@@ -254,9 +253,9 @@ key("me", "L57.4", expr="soft", blend=0.3)
 hide("me", "L58")
 put("me", "L59", [0.3, 3.45], yaw=50, expr="soft")
 hide("me", "L60")
-put("me", "L61.4", [0.7, 3.0], yaw=180, expr="soft", **CARRY)
-walk("me", "L61.4+0.6", [0.0, 2.0], **CARRY)
-walk("me", "L62-0.05", [-0.1, 0.4], **CARRY)
+put("me", "L61", [0.5, 4.0], yaw=0, expr="soft", **CARRY)
+walk("me", "L61+0.6", [0.1, 1.8], **CARRY)
+walk("me", "L62-0.05", [-0.1, 0.5], **CARRY)
 hide("me", "L62")
 put("me", "L63.3", [1.5, 3.0], yaw=90, expr="soft")
 hide("me", "L64")
@@ -282,14 +281,13 @@ put("jo", "L49", [3.45, 3.0], yaw=-90, expr="soft", **CARRY)
 hide("jo", "L49.2")
 put("jo", "L59", [0.3, 2.6], yaw=50, expr="soft")
 hide("jo", "L60")
-put("jo", "L61", [0.8, 3.0], yaw=180, expr="soft", **CARRY)
-walk("jo", "L61+0.5", [0.0, 2.0], **CARRY)
-walk("jo", "L61.4-0.05", [-0.1, 0.4], **CARRY)
+put("jo", "L61", [0.5, 2.4], yaw=0, expr="soft", **CARRY)
+walk("jo", "L61+0.1", [-0.1, 0.3], **CARRY)
 hide("jo", "L61.4")
 put("jo", "L62", [2.5, 3.0], yaw=-90, expr="wide", **CARRY)
 key("jo", "L63", expr="soft", blend=0.2)
 hide("jo", "L63.3")
-put("jo", "L64", [-0.5, -0.3], yaw=-90, expr="soft", arms=[78, 0])
+put("jo", "L64", [-0.55, 0.1], yaw=-54, expr="soft", arms=[78, 0])
 hide("jo", "P01")
 
 # the Deep One: found where it stands, never seen moving
@@ -359,6 +357,8 @@ cues = [
     {"at": "L16", "name": "phone", "on": 0.0},
     {"at": "L23", "name": "phone", "on": 1.0},
     {"at": "L23", "name": "torch", "on": 1.0},
+    {"at": "L26", "name": "torch", "on": 0.3},
+    {"at": "L27", "name": "torch", "on": 0.4},
     {"at": "L28", "name": "phone", "on": 0.0},
     {"at": "L28", "name": "torch", "on": 0.0},
     {"at": "L41", "name": "phone", "on": 1.0},
@@ -369,7 +369,9 @@ cues = [
     {"at": "L49", "name": "carry", "who": "jo", "style": "jagged", "on": True},
     {"at": "L49.2", "name": "carry", "who": "jo", "style": "jagged", "on": False},
     {"at": "L61", "name": "carry", "who": "jo", "style": "jagged", "on": True},
-    {"at": "L61.4", "name": "carry", "who": "me", "style": "jagged", "on": True},
+    {"at": "L61", "name": "carry", "who": "me", "style": "jagged", "on": True},
+    {"at": "L61.4", "name": "carry", "who": "jo", "style": "jagged", "on": False},
+    {"at": "L62", "name": "carry", "who": "me", "style": "jagged", "on": False},
     {"at": "L62", "name": "carry", "who": "jo", "style": "round", "on": True},
     {"at": "L63.3", "name": "carry", "who": "jo", "style": "round", "on": False},
     {"at": "L66", "name": "carry", "who": "me", "style": "round", "on": True},
