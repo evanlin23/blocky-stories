@@ -48,8 +48,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "My NAN.",
-    "My Nan."
+    "She was",
+    "She was"
+   ],
+   [
+    "my NAN.",
+    "my Nan."
    ]
   ]
  },
@@ -346,8 +350,8 @@
     "One soft spotlight"
    ],
    [
-    "crept ROUND",
-    "crept round"
+    "crept ALONG",
+    "crept along"
    ],
    [
     "the floor,",
@@ -386,12 +390,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I sat with",
-    "I sat with"
+    "I sat beside",
+    "I sat beside"
    ],
    [
-    "POP and a",
-    "Pop and a"
+    "POP, with a",
+    "Pop, with a"
    ],
    [
     "tub of CHIPS.",
@@ -1160,8 +1164,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "And out rolled",
-    "And out rolled"
+    "Out rolled",
+    "Out rolled"
    ],
    [
     "POP.",
@@ -1320,8 +1324,8 @@
     "The spotlight"
    ],
    [
-    "slid ROUND them.",
-    "slid round them."
+    "circled THEM.",
+    "circled them."
    ]
   ]
  },

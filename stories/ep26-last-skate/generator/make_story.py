@@ -20,13 +20,21 @@ lines = json.loads((HERE / "lines.json").read_text())
 # the word check (asr): a few lines a touch slower so a swallowed word comes through ("speakers" heard "speaker",
 # "her skates" heard "escapes", "round them" heard "around him"), and a breath after "My Nan" so it isn't heard as
 # "Nan's" with the next line's first word
-TEMPO = {"L01": 0.94, "L45": 0.94, "L54": 0.94, "L72": 0.94, "L03": 0.95, "L07": 0.95, "L10": 0.92, "L18": 0.94,
-         "L20": 0.94, "L56": 0.95, "L64": 0.92}
+TEMPO = {"L01": 0.94, "L45": 0.94, "L54": 0.94, "L72": 0.94, "L03": 1.0, "L07": 0.95, "L10": 0.92, "L18": 0.94,
+         "L20": 0.94, "L30": 0.9, "L56": 0.95, "L64": 0.92}
+# and a comma in the spoken text only (the captions don't change) where a word was swallowed
+SPOKEN = {("L01", 1): "on the speakers,", ("L54", 1): "on the speakers,", ("L72", 1): "on the speakers,",
+          ("L45", 0): "Then the speakers,", ("L07", 2): "windows open,",
+          ("L10", 3): "for her, skates."}
+for ln in lines:
+    for k, ch in enumerate(ln.get("chunks", [])):
+        if (ln["id"], k) in SPOKEN:
+            ch[1] = SPOKEN[(ln["id"], k)]
 for ln in lines:
     if ln["id"] == "L10":
         ln["gap"] = 0.5
     if ln["id"] == "L03":
-        ln["gap"] = 0.35
+        ln["gap"] = 0.6
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
 lines = lines + [{"id": "P03", "pause": 0.25, "chunks": []}]
@@ -116,7 +124,7 @@ SHOTS = [
     # 02 the last night
     ("L05", "the rink from outside at dusk", 2, move(([-15.0, -5.6, 1.2], [-8.0, -7.0, 0.7]), ([-13.4, -6.2, 1.2], [-8.0, -7.0, 0.7]), 25)),
     ("L06", "wide inside: floor, couples, stripes", 2, still([-6.6, -2.4, 1.9], [2.0, 0.8, 1.0], 20)),
-    ("L07", "the three of us coming in through the doors", 2, C([-1.6, -4.7, 1.6], [-6.4, -7.0, 1.2], 4.8)),
+    ("L07", "the three of us coming in through the doors", 2, C([-1.6, -4.7, 1.6], [-7.4, -7.0, 1.2], 5.2)),
     ("L08", "under the ceiling fans, then down to the shine of the floor", 2,
      move(([-1.0, -2.4, 1.0], [0.0, 2.7, 4.4]), ([-1.0, -2.4, 1.0], [0.5, 0.5, 0.0]), 22)),
     ("L09", "a slow pan along the painted stripes", 2, move(([5.6, 1.2, 1.4], [8.0, 4.0, 1.5]), ([5.6, 1.2, 1.4], [8.0, -3.0, 1.5]), 30)),
@@ -125,19 +133,19 @@ SHOTS = [
      C([6.5, -6.0, 1.15], [6.5, -8.05, 1.12], 0.9)),
     ("L11", "Pop beside her, shaking his head, smiling", 2, C([4.5, -4.8, 1.5], [5.0, -6.9, 1.2], 2.6)),
     ("L12", "Pop settling on the stool under the amber lamp", 2, C([-1.5, -4.4, 1.6], [POP_X, SEAT_Y, 1.0], 2.8)),
-    ("L13", "close on his knees and the tape", 2, C([-3.5, -4.9, 0.85], [POP_X, -6.1, 0.75], 1.3)),
+    ("L13", "close on his knees and the tape", 2, C([-2.0, -6.4, 0.85], [POP_X, -6.4, 0.8], 1.4)),
     ("L14", "Pop to Nan: 'You skate for both of us'", 2, C([-1.2, -4.4, 1.6], [-3.3, -6.5, 1.3], 2.8)),
     ("L15", "Nan from behind, gliding to the rail", 2, still([-3.4, -7.8, 1.15], [0.2, -4.4, 0.9], 28)),
     # 03 slow song one
     ("L16", "the room dims for a slow song, seen from the snack bar", 2, FLOOR),
-    ("L17", "couples gliding past, seen at the elbows", 2, c([0, [-1.5, -2.0, 0.95], [0.0, 0.0, 1.0], 26])),
+    ("L17", "couples gliding past, seen at the elbows", 2, still([-6.4, -3.6, 1.3], [-1.0, 0.0, 1.0], 24)),
     ("L18", "high wide: the pool travelling round the floor", 2, HIGH),
     ("L19", "Nan alone at the rail, the couples beyond", 2, C([3.8, -6.6, 1.4], [3.0, -3.5, 1.2], 2.8)),
     ("L20", "me and Pop at the snack bar, the tub between us", 2, C([-1.7, -3.7, 1.55], [-4.4, -6.4, 1.2], 3.0)),
     ("L21", "the pool sliding along the far rail, then onto a tall striped shape", 2, FARCAM),
     ("L22", "medium on the Skater at the far rail, face toward the floor", 2,
      C([-4.2, -3.5, 1.3], [FAR[0], FAR[1], 1.25], 3.4)),
-    ("L23", "side view of its legs: two bends, a hard shadow under each", 2, C([-6.4, 3.6, 0.9], [FAR[0], FAR[1], 1.0], 2.8)),
+    ("L23", "side view of its legs: two bends, a hard shadow under each", 2, C([-6.4, 3.6, 0.9], [FAR[0], FAR[1] - 0.2, 1.2], 3.2)),
     ("L24", "the pool slides away, the room passes, the pool returns: nothing there", 2, FARCAM),
     # 04 Lenny
     ("L25", "Pop waving up at the booth", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
@@ -173,7 +181,7 @@ SHOTS = [
     ("L48", "the pool settling on Nan", 2, C([1.4, -0.6, 1.5], [3.0, -3.75, 1.0], 3.0)),
     ("L49", "the pool widens and the Skater is in it, at her shoulder, a head taller", 1, RAIL34),
     ("L50", "THE TEST STILL: its arm held out to her, folded twice, the hand at the end of the sleeve", 1,
-     still([4.3, -6.4, 0.8], [2.25, -3.75, 1.2], 27)),
+     still([4.3, -6.4, 0.8], [2.2, -3.75, 1.2], 22)),
     ("L51", "Nan looks at the hand", 2, C([2.5, -5.4, 1.45], [3.0, -3.75, 1.35], 1.7)),
     ("L52", "Nan's hand rising, a hand's width from its hand", 2, C([2.45, -5.5, 1.25], [2.5, -3.75, 1.25], 1.5)),
     ("L53", "me standing, terrified, the waltz swelling", 2, C([-2.9, -4.3, 1.6], [ME_X, -6.4, 1.4], 2.8)),
@@ -195,7 +203,7 @@ SHOTS = [
     ("L67", "Nan laughing, Pop laughing with her", 2, C([2.3, -5.6, 1.5], [2.3, -3.75, 1.3], 2.7)),
     ("L68", "low tracking: the two of them gliding", 2, c([0, [-2.2, -2.6, 0.75], [0.0, 0.0, 1.0], 30])),
     ("L69", "Pop tips a little, Nan's arm at his elbow", 2, c([0, [-1.8, -1.9, 1.35], [0.0, 0.0, 1.2], 36])),
-    ("L70", "the pair coming past the snack bar, laughing", 2, still([-5.8, -4.9, 1.4], [-2.4, -2.9, 1.25], 28)),
+    ("L70", "the pair coming past the snack bar, laughing", 2, still([-6.2, -4.9, 1.4], [-2.6, -2.8, 1.2], 26)),
     ("L71", "me on the chrome stool, chin on my hand", 2, C([-2.0, -4.2, 1.5], [POP_X, SEAT_Y, 1.35], 2.6)),
     ("L72", "crane up to the overhead wide", 2,
      c([0, [-3.4, -4.4, 1.5], [-1.5, -1.0, 1.0], 26, 0], [0.85, [0.0, -0.3, 11.0], [0.0, 0.0, 0.0], 17, 90],
@@ -213,13 +221,10 @@ for i, (at, what, step, cam) in enumerate(SHOTS):
 for sh in shots:
     if sh["what"].startswith("low tracking"):
         sh["follow"] = "pop"
-        sh["cam"] = c([0, [-2.6, -2.8, 0.8], [0.0, 0.0, 1.0], 28], [1, [-2.4, -2.7, 0.85], [0.0, 0.0, 1.0], 28])
+        sh["cam"] = c([0, [-2.4, 2.0, 0.9], [0.0, 0.0, 1.0], 28], [1, [-2.2, 1.9, 0.95], [0.0, 0.0, 1.0], 28])
     if sh["what"].startswith("Pop tips"):
         sh["follow"] = "pop"
-        sh["cam"] = c([0, [-2.0, -2.1, 1.3], [0.0, 0.0, 1.1], 30])
-for sh in shots:
-    if sh["what"].startswith("couples gliding past"):
-        sh["follow"] = "c1a"
+        sh["cam"] = c([0, [-2.0, 1.6, 1.3], [0.0, 0.0, 1.15], 30])
 overhead = [s["id"] for s in shots if s["what"].startswith(("crane up", "hold the overhead"))]
 
 # ---------------------------------------------------------------------------------------------------- acting
@@ -299,8 +304,8 @@ walk("pop", "L63+1.3", [SKR[0], SKR[1]], side=[40, 0], arms=[0, 72], wobble=3)
 key("pop", "L63+1.3", yaw=90, blend=0.3)
 key("pop", "L66", wobble=1, expr="grin", side=[0, 0], arms=[0, 72])
 # skating off with Nan from L68: waypoints of the lap (seconds after L68) and the two partners' lateral offsets
-LAP = [(0.0, (2.0, -3.7)), (2.0, (4.4, -2.5)), (4.0, (5.5, -0.2)), (6.0, (4.2, 1.8)), (8.0, (1.6, 1.4)), (10.0, (-0.6, 0.3)),
-       (12.0, (-1.6, -0.9)), (14.0, (-2.6, -2.2)), (16.0, (-4.2, -2.5))]
+LAP = [(0.0, (2.0, -3.7)), (2.0, (-0.6, -2.7)), (4.0, (-3.2, -2.8)), (6.0, (-4.6, -1.4)), (8.0, (-2.8, 0.3)),
+       (10.0, (-0.4, 0.9)), (12.0, (1.6, 0.4)), (14.0, (3.0, -1.0)), (16.0, (2.0, -2.4))]
 
 
 def lap_pos(i, who):
@@ -387,8 +392,8 @@ orbit("L04", 3.4, 3.9, "c1a", "c1b")
 orbit("L04", 3.4, 0.8, "c2a", "c2b")
 orbit("L06", 5.0, 3.0, "c1a", "c1b")
 orbit("L06", 5.0, 5.4, "c2a", "c2b")
-orbit("L16", 23.0, 4.2, "c1a", "c1b")
-orbit("L16", 23.0, 1.1, "c2a", "c2b")
+orbit("L16", 23.0, 2.0, "c1a", "c1b")
+orbit("L16", 23.0, 5.3, "c2a", "c2b")
 orbit("L28", 11.4, 3.4, "c1a", "c1b")
 orbit("L28", 11.4, 0.4, "c2a", "c2b")
 orbit("L35", 18.0, 4.6, "c1a", "c1b")
@@ -396,8 +401,8 @@ orbit("L35", 18.0, 1.6, "c2a", "c2b")
 orbit("L45", 2.9, 2.5, "c1a", "c1b")
 orbit("L45", 2.9, 5.5, "c2a", "c2b")
 # L47: they roll off through the gap in the south rail, one couple after the other
-for who, dx, p0, lag in (("c1a", -0.4, (-1.5, 1.8), 0.0), ("c1b", 0.4, (-1.5, 1.8), 0.0),
-                         ("c2a", -0.4, (-3.8, -0.4), 1.4), ("c2b", 0.4, (-3.8, -0.4), 1.4)):
+for who, dx, p0, lag in (("c1a", -0.4, (-0.8, 0.0), 0.0), ("c1b", 0.4, (-0.8, 0.0), 0.0),
+                         ("c2a", -0.4, (-3.4, -0.9), 1.4), ("c2b", 0.4, (-3.4, -0.9), 1.4)):
     put(who, "L47", [p0[0] + dx, p0[1]], yaw=180, skate=True, expr="grin", arms=[18, 18])
     walk(who, f"L47+{1.0 + lag:.1f}", [p0[0] + dx + 0.6, p0[1] - 1.2], skate=True, arms=[18, 18])
     walk(who, f"L47+{2.2 + lag:.1f}", [dx * 0.8, -3.7], skate=True, arms=[18, 18])
@@ -448,6 +453,7 @@ cues += [
     {"at": "L47+0.8", "name": "spot", "gain": 1.0, "dur": 1.2},
     {"at": "L48", "name": "spot", "to": [NAN[0] - 0.2, NAN[1] + 0.2], "dur": 2.4},
     {"at": "L49", "name": "spot", "size": 44, "dur": 1.4},
+    {"at": "L72", "name": "spot", "gain": 0.55, "dur": 2.0},
     {"at": "L64", "name": "spot", "to": [4.8, -2.4], "dur": 1.6},
     {"at": "L64+1.2", "name": "spot", "to": [2.4, -3.6], "dur": 1.6},
 ]
@@ -510,7 +516,7 @@ story = {
              "exposure": 0.4},
     "grade": {"shadows": [0.02, -0.01, 0.0], "highlights": [0.03, 0.01, -0.03], "saturation": 1.0, "contrast": 1.06,
               "vignette": 0.38, "bloom": 0.3, "grain": 0.013},
-    "phonemes": {},
+    "phonemes": {"Nan": "nˈæn"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

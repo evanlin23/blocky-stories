@@ -187,7 +187,7 @@ def build_hall(kit, ctx):
     stripe = wstripes(kit, "wall stripes", "#9f2a31", "#e3d6bb", 1.0)
     stripe2 = wstripes(kit, "wall stripes out", "#8f2830", "#d9cdb4", 1.0)
     # floors
-    kit.box("rink floor", (14.0, 8.8, 0.1), (0, 0, -0.05), kit.planks("#d4a05c", "#bd8446", 1.0, "X", rough=0.42))
+    kit.box("rink floor", (14.0, 8.8, 0.1), (0, 0, -0.05), kit.planks("#d4a05c", "#bd8446", 1.0, "X", rough=0.55))
     kit.box("concourse", (16.0, 4.6, 0.1), (0, -6.7, -0.05), kit.checker("#6c2128", "#cdbf9f", 1.4, rough=0.45))
     kit.box("north strip", (16.0, 1.9, 0.1), (0, 5.45, -0.05), kit.planks("#a97b44", "#8f6535", 1.0, "X"))
     kit.box("floor w", (1.0, 8.8, 0.1), (-7.5, 0, -0.05), kit.planks("#a97b44", "#8f6535", 1.0, "Y"))
@@ -203,7 +203,9 @@ def build_hall(kit, ctx):
     wbox(kit, "w south b", 0.6, 8.2, -9.3, -9.1, 0, H, stripe)
     wbox(kit, "w south lintel", -0.6, 0.6, -9.3, -9.1, 2.1, H, stripe)
     # the exterior: facade stripes, ground, a car park, a lamp
-    wbox(kit, "facade", -9.0, -8.2, -12.0, 8.0, 0, 5.0, stripe2)
+    wbox(kit, "facade a", -9.0, -8.2, -12.0, -8.0, 0, 5.0, stripe2)
+    wbox(kit, "facade b", -9.0, -8.2, -6.0, 8.0, 0, 5.0, stripe2)
+    wbox(kit, "facade lintel", -9.0, -8.2, -8.0, -6.0, 2.3, 5.0, stripe2)
     kit.box("ground", (70, 60, 0.1), (-43, -6, -0.06), kit.concrete("#3a3c40", 2.0, 0.6))
     kit.box("kerb", (1.0, 22, 0.14), (-9.6, -2, 0.0), kit.concrete("#6f6d68", 2.0, 0.4))
     for i, (cx, cy, cc) in enumerate([(-17, -2.5, "#2f5d6e"), (-17, -10.5, "#7a3a3a"), (-23, -6.8, "#b9b1a0")]):
@@ -405,7 +407,7 @@ def build_lights(kit, ctx):
         kit.light(f"conc{i}", "AREA", (cx, -6.6, 4.8), 520, "#ffd7a3", size=2.6)
     kit.aim(kit.light("flood", "SPOT", (-17.0, -3.0, 4.6), 2600, "#9fd3da", size=0.6, spot=75, blend=0.8), (-8.4, -6.0, 1.4))
     kit.light("dusk", "SUN", (0, 0, 10), 2.2, "#6fb0b8", rot=(math.radians(60), 0, math.radians(-70)))
-    kit.light("spot", "SPOT", (0, 0, 4.7), 3200, "#fff0dc", rot=(0, 0, 0), size=0.4, spot=40, blend=1.0)
+    kit.light("spot", "SPOT", (0, 0, 4.7), 2300, "#fff0dc", rot=(0, 0, 0), size=0.4, spot=40, blend=1.0)
     for n in ("house0", "house1", "house2", "conc0", "conc1"):
         pass
 
@@ -728,5 +730,5 @@ def animate(kit, story, tl, t, ctx):
         ph = ((t * 0.18 + i / 3.0) % 1.0)
         ob.hide_render = not steam_on
         ob.location = (-4.4 + 0.03 * math.sin(ph * 6 + i), LEDGE_Y, LEDGE_Z + 0.3 + 0.28 * ph)
-        mix.inputs[0].default_value = 0.0 if not steam_on else 0.07 * math.sin(math.pi * ph)
+        mix.inputs[0].default_value = 0.0 if not steam_on else 0.035 * math.sin(math.pi * ph)
     return over
