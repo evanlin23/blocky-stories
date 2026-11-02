@@ -20,6 +20,8 @@ You're the orchestrator. Keep your own context small: you read reports and verdi
 ## 1. Write (1 writer call)
 "Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
 
+**Blind premise check** (the scope research's H2 test): before any building, a fresh general-purpose agent that has read nothing in the repo gets only the batch's titles and first lines, mixed with 5 known hits' first lines and with no labels. It scores each 1 to 10 for "would I stop scrolling for this?". Any of ours that scores below the hits' median goes back to the writer once.
+
 ## 2. Build (a fresh builder call per phase)
 Start a **fresh builder agent for each phase** (the build, then each fix round). Never reuse one builder across phases: a long-lived builder's context passed 350K tokens and made every step expensive (pilot 1). One story at a time, because Blender takes the CPU. When a builder's preview is done, start the next builder while that story is in review. Retry a crashed step. Never drop a story for a crash.
 

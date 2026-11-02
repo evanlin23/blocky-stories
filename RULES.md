@@ -56,6 +56,12 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
   - The lore never makes two stories alike: rule 5 still holds for setting, creature, twist and ending shape.
   - **The canon isn't the twist.** `stand-in` (a Keeper keeps someone's empty place until they come back) is already in more than ten stories. Pick a twist that turns the story over on its own, and let the Keeper fit around it. `stories/lore.md` → "Other things a count can do" lists shapes the canon supports.
 - **Vary the warmth** (owner, 2026-10-31: "We can have other heartwarming endings"): friendship, loyalty, helping, home. Never again "the monster was kind/lonely all along" or the ritual done back.
+- **Scope research** (`docs/research/2026-11-02-scope-research.md`, owner's research, 2026-11-02). These are hypotheses to test, not settled rules:
+  - **Judge on volume:** make about 20 Shorts in 4 weeks before deciding anything. One weak upload (ep20) is a signal, not a verdict.
+  - **The premise is the product,** not the setting. Bus, train and elevator settings already have 2 to 8M hits from big channels, and settings with no premise found nothing. This backs rule first and the big idea above.
+  - **An eerie twist on a premise beats straight horror** (eerie premises reach 10 to 33M, plain animated horror stays under 1M).
+  - **Study Gneef, Noobified and PurpleHat on YouTube directly.** Many Instagram "hits" in our first report were re-uploads of them. Never copy one of their premises: their audience has seen them.
+  - **Still to decide, with the owner:** a test against a closer-to-Roblox look (hard rule 4 limits how close), Part 2s for a premise that hits (the lore rules say never a Part 2 for now), and whether to tag #roblox (titles, descriptions and pins never name it today).
 - **Never reuse what batch 1 shared:** a knowing elder who explains in cryptic quotes. A night-shift or one-summer narrator. A pale grey blank-faced creature. "Pressed FLAT" against glass. A closing-section opener like "Last NIGHT,". An on-screen age. "It didn't touch me". "Not X, it was Y" cadences.
 - **Within a batch** no two stories share a setting, creature type, rule type (what the world's rule is about) or kind of warmth (ending shapes may repeat, owner 2026-11-02). `stories/ideas.md` lists what's been used.
 - **Read every line against the picture under it.** Watch for self-contradictions ("TALL... WIDER than it's TALL"), a count that doesn't match the knocks we hear, and a line about skin landing on a character it doesn't fit.
