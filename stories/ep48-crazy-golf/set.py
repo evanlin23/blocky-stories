@@ -188,15 +188,21 @@ def mesh_mat(kit, hexc="#9aa0a4"):
     b.inputs["Roughness"].default_value = 0.45
     tc = nt.nodes.new("ShaderNodeTexCoord")
     mp = nt.nodes.new("ShaderNodeMapping")
-    mp.inputs["Scale"].default_value = (9.0, 9.0, 9.0)
+    mp.inputs["Scale"].default_value = (7.0, 7.0, 7.0)
     mp.inputs["Rotation"].default_value = (0, 0, math.radians(45))
     nt.links.new(tc.outputs["Object"], mp.inputs["Vector"])
-    ck = nt.nodes.new("ShaderNodeTexChecker")
+    ck = nt.nodes.new("ShaderNodeTexBrick")
+    ck.offset = 0.0
+    ck.squash = 1.0
     ck.inputs["Scale"].default_value = 1.0
+    ck.inputs["Brick Width"].default_value = 1.0
+    ck.inputs["Row Height"].default_value = 1.0
+    ck.inputs["Mortar Size"].default_value = 0.07
+    ck.inputs["Mortar Smooth"].default_value = 0.5
     nt.links.new(mp.outputs[0], ck.inputs["Vector"])
     ramp = nt.nodes.new("ShaderNodeValToRGB")
-    ramp.color_ramp.elements[0].position = 0.3
-    ramp.color_ramp.elements[1].position = 0.7
+    ramp.color_ramp.elements[0].position = 0.15
+    ramp.color_ramp.elements[1].position = 0.85
     nt.links.new(ck.outputs["Fac"], ramp.inputs["Fac"])
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mix = nt.nodes.new("ShaderNodeMixShader")
@@ -355,7 +361,7 @@ def shadow_mat(kit, pose, bun):
     nt.links.new(tex.outputs["Color"], sc.inputs[0])      # a grey ramp; the mask is the red channel
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     em = nt.nodes.new("ShaderNodeEmission")
-    em.inputs["Color"].default_value = kit.col(SH_COL)
+    em.inputs["Color"].default_value = kit.col("#3b2a3a" if bun else SH_COL)
     em.inputs["Strength"].default_value = 1.0
     mix = nt.nodes.new("ShaderNodeMixShader")
     nt.links.new(sc.outputs[0], mix.inputs[0])
@@ -700,8 +706,8 @@ def build(kit, story, tl):
     kit.box("survey.t", (0.07, 0.07, 0.1), (0, 0, 1.12), plastic("#e8a030", 0.6), sp)
     W["props"]["survey"] = sp
     # two blocky footprints pressed into the second tee (toes toward the hole, +y); pale ring + dark dent
-    dent = plastic("#0c1a10", 0.9, spec=0.0)
-    ring = plastic("#b9d6a8", 0.9, spec=0.0)
+    dent = plastic("#1b4424", 0.9, spec=0.0)
+    ring = plastic("#a9d8a0", 0.9, spec=0.0)
     for nm in ("print1", "print2"):
         pe = kit.empty(nm, (0, 0, -50))
         kit.box(nm + ".r", (0.2, 0.36, 0.006), (0, 0, 0.0), ring, pe, bevel=0.003)
