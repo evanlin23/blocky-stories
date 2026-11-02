@@ -187,6 +187,16 @@ def test_compilation_chapters_and_pick():
     assert noon == "2026-11-08T18:00:00Z"
 
 
+def test_grass_steps_are_not_a_hiss():
+    import numpy as np
+    from blocky import sound
+
+    y = sound.step_sound("grass", False, 3)
+    X = np.abs(np.fft.rfft(y)) ** 2
+    f = np.fft.rfftfreq(len(y), 1 / 48000)
+    assert X[f > 4000].sum() / X.sum() < 0.03   # the old step was band-passed noise up to 6 kHz: scratchy
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics
