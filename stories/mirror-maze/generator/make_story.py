@@ -185,7 +185,7 @@ put("me", 0, ME_A, yaw=-90, expr="neutral", head=[40, 0])
 put("copy", 0, [3.0, 11.2, 1.05], yaw=0, expr="blank", blink=False, head=[0, 0], arms=[0, 0])
 hide("copy", "L02")
 hide("guy", 0)
-S(0, one(*CAM_OPEN), 2, note="the open: side-on two-shot, Tasha points at my green hat")
+S(0, one(*CAM_OPEN), 2, look={"exposure": 1.1, "camfill": 1.4}, note="the open: side-on two-shot, Tasha points at my green hat")
 mouth("tasha", "L01.3", "L01>", 0.1, 0.8)
 S("L02", one((3.2, 4.0, 1.45), (3.5, 8.4, 1.6), 60), 2, note="my face, resigned")
 mouth("me", "L02.1", "L02.1>", 0.1, 0.7)
@@ -440,18 +440,18 @@ hide("tasha", "L62")
 LOOK_IN2 = {"camfill": 0.3, "maze": 0, "inside": 0, "wash": 0, "amb": 0.5, "room": 1.1, "roomb": 1.1}
 S("L62", mv(((IN, 1.0, 1.0), (IN, 3.5, 3.4)), ((IN, 1.4, 1.0), (IN, 4.5, 3.9)), 20), 2, look=LOOK_IN2,
   note="the roof off, rain coming straight in through the open grid")
-cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 8.0, "spread": 0.05}]
+cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 6.0, "spread": 0.04}]
 # I stand behind the lens for the gallery, so no pane shows me (and the real glass has none of me to reflect)
 put("me", "L63", [IN, -1.95], yaw=180, expr="scared", head=[40, 0], arms=[0, 40])
 raw("me", "L63.2", head=[-40, 0], arms=[40, 0], blend=0.4)
 raw("me", "L63>-0.3", head=[0, 0], arms=[0, 0], blend=0.4)
-S("L63", one((IN, -1.9, 1.6), (IN, 6.0, 1.5), 9), 2, look={**LOOK_IN2, "camfill": 1.0, "amb": 0.9},
+S("L63", one((IN, -0.9, 1.7), (IN, 5.0, 1.5), 6), 2, look={**LOOK_IN2, "camfill": 2.5, "amb": 2.0, "exposure": 1.0},
   note="a wide of panes, every one her, each copying me half a beat late")
 S("L64", one((IN + 0.35, 0.6, 1.5), (IN - 1.4, 4.6, 1.4), 24), 2, look=LOOK_IN2, note="none of them showed me")
 # L65 I hide behind the stacked frame; every Tasha stops
 put("me", "L65", [IN + 0.5, 5.2], yaw=180, expr="scared")
 raw("me", "L65.2", pos=[IN + 0.45, 6.9])
-cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 8.0, "spread": 0.05, "hide": "L65.2+0.2", "until": "L69-0.395"}]
+cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 6.0, "spread": 0.04, "hide": "L65.2+0.2", "until": "L69-0.395"}]
 S("L65", one((IN - 0.35, 1.6, 1.5), (IN + 0.2, 6.3, 1.4), 26), 2, look=LOOK_IN2, note="behind a stacked steel frame, where nothing could see me")
 raw("me", "L66", pos=[IN + 0.45, 6.5], yaw=180)
 S("L66", one((IN - 0.35, 2.8, 1.5), (IN, 10.0, 1.45), 26), 2, look=LOOK_IN2, note="the frozen gallery")
@@ -507,7 +507,9 @@ S("L80", one((IN + 0.6, 6.6, 1.5), (IN - 0.1, 11.6, 1.45), 30), 2, look=LOOK_IN2
 # L81 and L82: the maze guy carries that pane to the truck, his back to us
 cues += [{"at": "L81", "name": "props", "roll": False, "trip": 1, "coins": 0, "end1": True, "carry": True,
           "off": [1.0, 0.6], "yaw": 90},
-         {"at": "L82", "name": "copyattach", "on": True, "off": [0.0, -0.45], "yaw": 0}]
+         {"at": "L82", "name": "props", "roll": False, "trip": 1, "coins": 0, "end1": True, "carry": True,
+          "off": [0.45, 0.9], "yaw": 0},
+         {"at": "L82", "name": "copyattach", "on": True, "off": [0.0, 0.45], "yaw": 180}]
 hide_all("L81", "me", "tasha")
 put("guy", "L81", [2.0, 9.6], yaw=-90, expr="neutral")
 raw("guy", "L82>", pos=[-2.0, 9.7])
@@ -516,8 +518,8 @@ put("copy", "L82", [0.0, 0.0], yaw=0, expr="blank", **{"head": [0, 0], "arms": [
 raw("copy", "L82+0.6", head=[40, 0], blend=0.5)
 raw("copy", "L82.3", head=[0, 0], blend=0.5)
 S("L81", one((7.8, 8.3, 1.4), (1.5, 9.6, 1.25), 30), 2, note="the maze guy carries that pane to the truck, his back to us")
-FACE82 = {"face": [[-1.0, 6.0, 1.9], [-1.7, 9.1, 1.5], 250, 0.8], "camfill": 0.9}
-S("L82", mv(((-0.2, 5.4, 1.5), (-0.56, 9.0, 1.5)), ((-2.5, 5.4, 1.5), (-2.9, 9.0, 1.5)), 34), 2, look=FACE82,
+FACE82 = {"face": [[1.2, 7.4, 1.9], [-1.5, 9.2, 1.55], 250, 0.8], "camfill": 0.9}
+S("L82", mv(((2.4, 7.7, 1.5), (-0.9, 9.2, 1.45)), ((0.4, 7.7, 1.5), (-3.2, 9.2, 1.45)), 34), 2, look=FACE82,
   note="the carried pane seen from the front, the copy's face in the glass: in the glass it watched us go, late, like always")
 cues += [{"at": "P03", "name": "fade", "dur": 1.6}]
 hide("copy", "P03+0.7")
