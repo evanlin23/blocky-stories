@@ -91,6 +91,10 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
 
     st = st if st is not None else load_story(name)
     out = []
+    set_py = STORIES / name / "set.py"   # tests pass in-memory stories with no folder
+    if set_py.exists() and "flicker" in set_py.read_text() and not (st.get("look") or {}).get("flash_safe"):
+        out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
+                            "flash bar on most stories (RULES.md hard rule 7)"))
     screen, said = texts(st)
     viewer = screen + said + [st.get("title", "")]
     for i, ln in enumerate(st["lines"]):
