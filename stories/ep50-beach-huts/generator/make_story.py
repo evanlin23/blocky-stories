@@ -161,7 +161,7 @@ S("L27", "her phone in the fold", still((-1.05, -1.9, 0.95), (-1.2, -1.42, 0.8),
 S("L28", "the hasp as the door swings", move(((-0.44, -0.5, 1.28), (-0.43, 0, 1.22)), ((0.12, -1.1, 1.3), (-0.21, -0.6, 1.22)), 50), 1)
 S("L29", "her reflection still walking", still((1.0, -1.6, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L30", "the glass and the empty deck", still((1.0, -1.9, 1.5), (1.0, 0, 1.5), 28), 2, **NSTAGE(5, r_remi="stage"))
-S("L31", "running the row", c([0, [-1.2, -2.6, 1.35], [0.8, 0, 1.2], 26]), 2, follow="me", gloom=-0.7)
+S("L31", "running the row", still((-0.8, -4.6, 1.5), (3.0, 0, 1.3), 24), 2, gloom=-0.7)
 S("L31.2", "the row from the end", still((26, -4.5, 1.7), (9, -1.0, 1.3), 22))
 S("L32", "mint window", still((5.0, -1.7, 1.45), (5.0, 0, 1.45), 28), 2, **NSTAGE(6, r_remi="stage"))
 S("L32.2", "lilac window", still((9.0, -1.7, 1.45), (9.0, 0, 1.45), 28), 2, **NSTAGE(7, r_remi="stage"))
