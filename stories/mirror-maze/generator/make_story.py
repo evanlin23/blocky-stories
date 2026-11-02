@@ -29,8 +29,8 @@ LOOP = 0.25
 
 # ---------------------------------------------------------------------------------------------------- the words
 # Word-check pins and the script's own holds are all in lines.json (gap) and here (pauses)
-TEMPO = {}
-SPOKEN = {}
+TEMPO = {"L16": 0.95, "L77": 0.92, "L81": 0.92}
+SPOKEN = {("L77", 1): "back also", ("L16", 1): "Tasha's"}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -311,18 +311,18 @@ acting["copy"].append({"from": fmt("L33.1"), "to": fmt("L33>"), "mouth": [0.0, 0
 m("L35", pos=[X0, -3.0], yaw=0, arms=[0, 0], blend=0.4)
 m("L35>-0.5", pos=[X0, -4.0])
 FOL = "me"
-S("L24", one((-3.4, 0.0, 1.3), (1.0, 0.0, 1.2), 24), 2, follow="me", note="side-on walk across the duckboards, the van far off")
-S("L25", one((-2.8, 0.2, 0.75), (1.0, 0.0, 0.9), 20), 2, follow="me", note="two-shot wide, our legs out of step")
-S("L26", one((-2.6, 0.4, 1.2), (1.0, 0.0, 1.1), 22), 2, follow="me", note="always on the side with the puddles")
+S("L24", one((3.0, 4.4, 1.4), (0.9, -0.5, 1.1), 26), 2, follow="me", note="side-on walk across the duckboards, the van far off")
+S("L25", one((2.6, 3.8, 0.6), (0.9, -0.5, 0.8), 20), 2, follow="me", note="two-shot wide, our legs out of step")
+S("L26", one((3.0, 3.6, 1.3), (0.9, -0.5, 1.1), 24), 2, follow="me", note="always on the side with the puddles")
 S("L27", one((1.5, -1.6, 0.22), (0.7, 0.0, 0.12), 24), 2, follow="me", note="low along a puddle: my boot splashes, hers makes no sound")
-S("L28", one((-2.6, 0.3, 1.3), (1.0, 0.0, 1.2), 22), 2, follow="me", note="I stop and turn to her")
-S("L29", one((-2.6, -1.4, 1.5), (1.8, 0.0, 1.5), 28), 2, follow="me", note="mid shot, side-lit: she stops and turns to me, late")
-S("L30", one((-2.6, 0.3, 1.3), (1.0, 0.0, 1.2), 22), 2, follow="me", note="so I tried her own trick on her")
-S("L31", one((-2.4, 1.6, 1.5), (0.2, 0.0, 1.55), 24), 2, follow="me", note="me pointing at my hat")
-S("L32", one((-3.0, -0.9, 1.5), (1.8, 0.0, 1.55), 28), 2, follow="me", note="she points at her own head, mirror-handed, late")
+S("L28", one((0.8, -4.2, 1.4), (0.8, 0.0, 1.4), 26), 2, follow="me", note="I stop and turn to her")
+S("L29", one((-2.2, -1.8, 1.5), (1.8, 0.0, 1.5), 24), 2, follow="me", note="mid shot, side-lit: she stops and turns to me, late")
+S("L30", one((0.8, -4.2, 1.4), (0.8, 0.0, 1.4), 26), 2, follow="me", note="so I tried her own trick on her")
+S("L31", one((0.0, -3.0, 1.5), (0.1, 0.0, 1.55), 22), 2, follow="me", note="me pointing at my hat")
+S("L32", one((1.6, -3.0, 1.5), (1.6, 0.0, 1.55), 22), 2, follow="me", note="she points at her own head, mirror-handed, late")
 S("L33", one((1.7, 2.5, 1.55), (1.6, 0.0, 1.55), 30), 2, follow="me", note="her mouth makes the words, no sound")
-S("L34", one((-2.8, 0.6, 1.3), (1.0, 0.0, 1.25), 22), 2, follow="me", note="normally she'd laugh at me")
-S("L35", one((-3.2, 0.0, 1.4), (1.0, -1.0, 1.2), 24), 2, follow="me", note="I kept walking")
+S("L34", one((0.8, -4.2, 1.4), (0.8, 0.0, 1.4), 26), 2, follow="me", note="normally she'd laugh at me")
+S("L35", one((3.0, 4.4, 1.4), (0.9, -0.5, 1.1), 26), 2, follow="me", note="I kept walking")
 
 # =========================================================================================== 04 the truck, L36 to L43
 # Walking +y by the cab; at "ducked" I step round behind it. The copy walks on the boards and freezes mid-step
@@ -349,8 +349,8 @@ put("me", "L42", [X0, 2.4], yaw=0, expr="worried")
 MIR = 1.0
 put("copy", "L42", refl([X0, 2.4], MIR), yaw=0, expr="worried")
 m("L42>", pos=[X0, 0.6])
-S("L42", one((-3.0, 0.2, 1.3), (1.0, 0.0, 1.2), 26), 2, follow="me", note="side-on walk again, the lag back")
-S("L43", one((-1.8, 1.8, 1.55), (0.2, 0.0, 1.6), 30), 2, follow="me", note="I didn't say a word")
+S("L42", one((3.0, 4.4, 1.4), (0.9, -0.5, 1.1), 26), 2, follow="me", note="side-on walk again, the lag back")
+S("L43", one((0.2, -2.6, 1.55), (0.2, 0.0, 1.6), 28), 2, follow="me", note="I didn't say a word")
 
 # =========================================================================================== 05 the bumper cars, L44 to L59
 MIR = None
@@ -418,7 +418,7 @@ mput("L60", [X0, -3.0], yaw=0, expr="scared")
 m("L61", pos=[X0, 7.4])
 m("L61>-0.5", pos=[X0, 9.4])
 S("L60", one((0.9, -6.0, 1.5), (0.4, 2.0, 1.4), 28), 2, follow="me", note="running back across the field, the maze lit ahead")
-S("L61", one((-2.6, 0.2, 1.2), (1.0, 0.0, 1.1), 26), 2, follow="me", note="it ran with me, half a beat behind")
+S("L61", one((3.6, -4.6, 1.4), (0.9, 0.6, 1.2), 26), 2, follow="me", note="it ran with me, half a beat behind")
 # inside again, the roof off, half the panes out, rain through the open grid
 MIR = None
 hide("copy", "L62")
@@ -433,26 +433,26 @@ cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 4.0}]
 raw("me", "L63", head=[40, 0], arms=[0, 40])
 raw("me", "L63.2", head=[-40, 0], arms=[40, 0], blend=0.4)
 raw("me", "L63>-0.3", head=[0, 0], arms=[0, 0], blend=0.4)
-S("L63", one((IN - 0.2, 1.0, 1.4), (IN + 0.1, 9.5, 1.45), 26), 2, look=LOOK_IN2,
+S("L63", one((IN - 0.2, -1.5, 1.4), (IN + 0.1, 9.5, 1.45), 24), 2, look=LOOK_IN2,
   note="a wide of panes, every one her, each copying me half a beat late")
-S("L64", one((IN + 0.9, 2.0, 1.45), (IN - 0.3, 2.5, 1.55), 44), 2, look=LOOK_IN2, note="none of them showed me")
+S("L64", one((IN + 0.5, -0.3, 1.5), (IN - 0.3, 2.4, 1.55), 26), 2, look=LOOK_IN2, note="none of them showed me")
 # L65 I hide behind the stacked frame; every Tasha stops
 put("me", "L65", [IN + 0.5, 5.2], yaw=180, expr="scared")
-raw("me", "L65.2", pos=[IN - 0.05, 6.9])
+raw("me", "L65.2", pos=[IN + 0.45, 6.9])
 cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 4.0, "hide": "L65.2+0.2", "until": "L69-0.395"}]
-S("L65", one((IN + 0.7, 4.0, 1.5), (IN, 6.5, 1.4), 30), 2, look=LOOK_IN2, note="behind a stacked steel frame, where nothing could see me")
-raw("me", "L66", pos=[IN + 0.55, 6.6], yaw=180)
-S("L66", one((IN + 0.5, 5.5, 1.5), (IN, 12.0, 1.45), 28), 2, look=LOOK_IN2, note="the frozen gallery")
-S("L67", one((IN - 0.4, 5.5, 1.45), (IN + 0.2, 12.0, 1.45), 28), 2, look=LOOK_IN2, note="for half a beat nothing moved")
+S("L65", one((IN - 0.35, 1.6, 1.5), (IN + 0.2, 6.3, 1.4), 26), 2, look=LOOK_IN2, note="behind a stacked steel frame, where nothing could see me")
+raw("me", "L66", pos=[IN + 0.45, 6.5], yaw=180)
+S("L66", one((IN - 0.35, 2.8, 1.5), (IN, 10.0, 1.45), 26), 2, look=LOOK_IN2, note="the frozen gallery")
+S("L67", one((IN - 0.3, 2.6, 1.5), (IN, 11.0, 1.45), 24), 2, look=LOOK_IN2, note="for half a beat nothing moved")
 # L68 the real Tasha far down the glass, waving both arms
 put("tasha", "L68.2", SPOT, yaw=0, expr="worried", arms=[0, 0])
 for i, r in enumerate(("L68.2+0.3", "L68.2+0.9", "L68.2+1.5")):
     raw("tasha", r, arms=[150, 150] if i % 2 == 0 else [110, 110], blend=0.25)
-S("L68", one((IN + 0.4, 5.2, 1.5), (IN, 12.0, 1.45), 30), 2, look=LOOK_IN2, note="every Tasha frozen")
-S("L68.2", one((IN - 0.1, 5.2, 1.45), (IN, 13.5, 1.4), 55), 2, look=LOOK_IN2,
+S("L68", one((IN - 0.35, 3.0, 1.5), (IN, 11.0, 1.45), 24), 2, look=LOOK_IN2, note="every Tasha frozen")
+S("L68.2", one((IN + 0.45, 6.4, 1.6), (IN, 13.5, 1.4), 46), 2, look=LOOK_IN2,
   note="the real Tasha far down the glass, waving both arms, everything else still")
 raw("tasha", "L69", arms=[0, 0], blend=0.4)
-S("L69", one((IN - 0.1, 5.0, 1.45), (IN, 13.5, 1.4), 55), 2, look=LOOK_IN2, note="in the same spot as before")
+S("L69", one((IN + 0.45, 6.4, 1.6), (IN, 13.5, 1.4), 46), 2, look=LOOK_IN2, note="in the same spot as before")
 # L70 I've run down the glass to her pane; it stands between us
 cues += [{"at": "L70", "name": "ghosts", "me": "off", "ta": "off"}]
 put("me", "L70", [IN + 0.35, 10.4], yaw=180, expr="wide")
@@ -460,12 +460,12 @@ put("copy", "L70", [IN - 0.4, 12.0], yaw=0, expr="neutral", **{"head": [0, 0], "
 put("tasha", "L70", SPOT, yaw=0, expr="wide", arms=[0, 0])
 raw("tasha", "L70.2", arms=[0, 82], expr="grin", blend=0.2)
 mouth("tasha", "L70.3", "L70>", 0.1, 0.8)
-S("L70", one((IN + 0.9, 7.6, 1.5), (IN + 0.1, 13.5, 1.55), 30), 2, look=LOOK_IN2, note="her face goes wide, then she points at my hat")
+S("L70", one((IN + 0.9, 7.6, 1.5), (IN + 0.1, 13.5, 1.55), 22), 2, look=LOOK_IN2, note="her face goes wide, then she points at my hat")
 S("L71", one((IN + 0.7, 10.6, 1.5), (IN, 13.5, 1.55), 36), 2, look=LOOK_IN2, note="a reflection can't go first")
 raw("me", "L72", arms=[0, 150], expr="smirk", blend=0.3)
 mouth("me", "L72.1", "L72.1>", 0.1, 0.8)
 raw("me", "L72.2", arms=[0, 0], blend=0.4)
-S("L72", one((IN - 0.6, 8.2, 1.6), (IN + 0.35, 10.4, 1.62), 34), 2, look=LOOK_IN2, note="PICKLE, on purpose")
+S("L72", one((IN + 0.9, 11.8, 1.6), (IN + 0.35, 10.4, 1.62), 34), 2, look=LOOK_IN2, note="PICKLE, on purpose")
 raw("tasha", "L73", arms=[85, 85], expr="grin", blend=0.2)
 mouth("tasha", "L73.1" if False else "L73", "L73>", 0.2, 0.9)
 S("L73", one((IN + 0.6, 10.8, 1.5), (IN, 13.5, 1.55), 36), 2, look=LOOK_IN2, note="her FRIES yell through the glass, a mouth flap, her grin")
@@ -485,7 +485,7 @@ raw("tasha", "L78>", pos=[IN - 0.05, 11.0])
 hide("copy", "L78")
 S("L78", mv(((IN - 0.45, 7.4, 1.5), (IN, 12.5, 1.4)), ((IN - 0.45, 7.8, 1.5), (IN, 12.2, 1.4)), 30), 2, look=LOOK_IN2,
   note="Tasha stepping out of that same pane, soaked and grinning")
-S("L79", one((IN + 0.5, 9.9, 1.62), (IN - 0.05, 11.0, 1.6), 46), 2, look=LOOK_IN2, note="the eye close-up: her shine is back")
+S("L79", one((IN + 0.5, 9.9, 1.62), (IN - 0.05, 11.0, 1.6), 30), 2, look=LOOK_IN2, note="the eye close-up: her shine is back")
 put("me", "L80", [IN + 0.35, 10.2], yaw=0, expr="grin")
 put("tasha", "L80", [IN - 0.8, 10.9], yaw=0, expr="grin")
 raw("tasha", "L80+0.7", pos=[IN - 0.3, 10.3])
@@ -494,8 +494,8 @@ S("L80", one((IN + 0.6, 6.6, 1.5), (IN - 0.1, 11.6, 1.45), 30), 2, look=LOOK_IN2
   note="the one touch: she bumps my shoulder; in the pane behind her the copy stands in my pose, late")
 # L81 and L82: the maze guy carries that pane to the truck, his back to us
 cues += [{"at": "L81", "name": "props", "roll": False, "trip": 1, "coins": 0, "end1": True, "carry": True,
-          "off": [0.0, 0.9], "yaw": 0},
-         {"at": "L82", "name": "copyattach", "on": True, "off": [0.0, 0.45], "yaw": 180}]
+          "off": [1.0, 0.6], "yaw": 90},
+         {"at": "L82", "name": "copyattach", "on": True, "off": [0.0, -0.45], "yaw": 0}]
 hide_all("L81", "me", "tasha")
 put("guy", "L81", [2.0, 9.6], yaw=-90, expr="neutral")
 raw("guy", "L82>", pos=[-2.0, 9.7])
@@ -606,7 +606,7 @@ story = {
               "vignette": 0.5, "bloom": 0.35, "grain": 0.012, "red_line": 0.78},
     "rain_shots": rain_shots,
     "rain_gain": 1.2,
-    "phonemes": {},
+    "phonemes": {"Tasha's": "tˈɑʃəz"},
     "cast": cast,
     "lines": lines,
     "shots": out_shots,

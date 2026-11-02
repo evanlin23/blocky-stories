@@ -546,7 +546,7 @@ def build_inside(kit, ctx, M):
         kit.box(f"{nm}.top", (1.3, 0.05, 0.05), (0, 0, 2.44), M["steel"], p)
         ctx[nm] = p
     # a stack of steel frames, upright and leaning, across the corridor (the trip-2 hide)
-    st = kit.empty("framestack", (IX - 0.42, 6.3, 0.04))
+    st = kit.empty("framestack", (IX + 0.42, 6.3, 0.04))
     for i in range(5):
         kit.box(f"fs{i}", (0.7, 0.05, 2.2), (0.0, 0.07 * i - 0.12, 1.1), M["steel_d"], st, rot=(math.radians(5), 0, 0), bevel=0.01)
     ctx["framestack"] = st
