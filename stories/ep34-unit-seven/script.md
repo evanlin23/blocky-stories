@@ -2,30 +2,38 @@
 
 - **Slug:** `ep34-unit-seven` (folder `stories/ep34-unit-seven/`), pitch #18 in `stories/ideas.md`.
 - **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 620 spoken words in 72 lines (L01 to L71 and L73; L72 was cut in round 1), all `narrator`, plus one 0.7 s pause beat (P01).
-- **Estimated length:** about 2:17. The round-1 preview timed at 2:18.6. Round 1 cuts L72 (about 3.0 s with its gap) and shortens L66 (about 0.6 s), lengthens L53 (about 0.6 s) and adds the L68 tail "for the first time / since we SIGNED." (about 1.2 s), so about 2:16 to 2:18. If it lands under 2:15, add "I'd sat in it / every Tuesday." after L69. If it lands over 2:30, cut L36 first, then L69, then the L68 tail back to "Unit SEVEN / was EMPTY."
-- **Tense:** L01 is the present ("I visit", the habit). Everything after it is told in the past, as it happened. L73, the last line (there is no L72), turns the habit into the past ("I USED to visit").
+- **Word count:** 642 spoken words in 74 lines, all `narrator`, plus one 0.7 s pause beat (P01). Round 4 (owner, 2026-11-02: "rule first is necessary") opens on the world's rule: L01 and L03 to L06 and L73 are cut, L02 is rewritten, and L74 to L81 are new. Line order in the film is the order below, not the id order.
+- **Estimated length:** about 2:22 to 2:24. The round-3 preview timed at 2:18.6 with 620 words. Round 4 adds about 20 words and two lines (about +5 s). If it lands over 2:30, cut L36 first, then L69, then the L68 tail back to "Unit SEVEN / was EMPTY." If it lands under 2:15, add "I'd sat in it / every Tuesday." after L69.
+- **Tense:** L74 to L79 are the present: the town's rule, how it shapes daily life, and where Jo and I stand now. L02 and L08 to L09 are the present habit. From L07 the story is told in the past, as it happened, in one forward line (no flashback before L52). L81, the last line, lands back in the present and loops into L74.
 
 ## Premise
-Every Tuesday at seven, after work, I let myself into unit seven of a self-storage block on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. We rented it together the week we moved in, and I've kept paying since we split last spring. The corridor lights run on a one-minute timer. One Tuesday a person stands in the open doorway of unit eleven. From the front they're ordinary. From the side they run back the whole depth of the unit. Each Tuesday they're one door nearer mine.
+In this town, a door won't open unless something of yours is inside. Jo's front door hasn't lit up for me since we split. Every Tuesday at seven, after work, I let myself into unit seven of a self-storage block on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. We rented it together the week we moved in, and I've kept paying since we split last spring. The corridor lights run on a one-minute timer. One Tuesday a person stands in the open doorway of unit eleven. From the front they're ordinary. From the side they run back the whole depth of the unit. Each Tuesday they're one door nearer mine.
 
 ## The rule
-Nobody states it. The block's only rule is the light timer: press the button, get one minute. The rule the narrator keeps without knowing it is the one they made up themselves: come every Tuesday at seven and keep the unit as it was, as if Jo might still come for her things.
+**In this town, a door won't open unless something of yours is inside** (L74, 13 words). It touches everyone, every day. It's never explained by anyone, only shown working.
+- **The marker (on screen by 1 s):** a small round lamp in a steel ring above every door in town, our own design, no text. It glows pale door blue (`#6cc3ff`, the caption key colour) when someone with something inside stands at the door, and stays dark for everyone else. Only a lit door will lift. In L74 the lamp over door seven glows above my head while the door rises behind me, and every other lamp in the corridor is dark.
+- **The montage (L75 to L77, about 3 to 11 s):** people leave a sock at a friend's place so they get asked back. Landlords hide a spoon in every flat they've ever rented. Breakups take forever, because you drag your last things out slowly. Played light, a little funny, with the turn underneath.
+- **What's at stake (L78 to L79, about 11 to 15 s):** Jo's front door stays dark for me now. Unit seven is the last door in town that still lights for both of us. Once her things go, it goes dark for her. Once mine go, it goes dark for me.
+- **Second, smaller rule:** the block's corridor lights run on a one-minute timer (L13 to L14).
+- **The rule turned on itself:** the lamp over seven lit for me every Tuesday (L74, L79, L80). By the town's own rule, that means something of mine was always inside. I knew it from the first week.
 
 ## The twist (and where it's planted)
 The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribbles and Jo marks hers with jagged ones, and I hold both keys, so the only person who has opened this room since the split is me. I haven't been minding my ex's things. I've been visiting my own, every Tuesday, and calling them hers, because a room of her things is something to wait beside and a room of mine is something I'd have to sort. The Deep One doesn't reveal a place kept for anyone. Inside my unit it stares only at the round stack I sit on, never at me, and that stare is what ends the pretending: I've always known which scribbles are mine. It's never seen again after that night, and nobody ever stands where it stood: the unit ends empty, with the door down.
 
-"A room full of someone else's things" turns over. The someone else was me.
+"Unless something of yours is inside" turns over: the door that let me in every Tuesday was telling me whose things those were.
 
-- **Plant 1 (L08, about 16 s):** two kinds of marker scribble on the boxes, round loops and jagged zigzags, both fully in frame above the caption band. Never words. L09 then shows me sitting on a round-scribbled stack.
-- **Plant 2 (L11 to L12, about 19 s):** two keys on my ring, both visible on the box top. Jo left hers on the kitchen counter.
+- **Plant 0, the rule (L74 at 0 to 3 s, and L79):** seven's lamp lights for me in the very first shot, and L79 says the door "still opens / for BOTH of us". By the rule, that can only mean my own things are in there. A rewatch sees it at once.
+- **Plant 1 (L08, about 23 s):** two kinds of marker scribble on the boxes, round loops and jagged zigzags, both fully in frame above the caption band. Never words. L09 then shows me sitting on a round-scribbled stack.
+- **Plant 2 (L11 to L12, about 28 s):** two keys on my ring, both visible on the box top. Jo left hers on the kitchen counter.
 - **Plant 3, the line (L07):** "I told myself / it was all HER stuff." A rewatch hears "told myself".
 
 ## How the last 15 seconds turn the first line
-From L66 on: my half goes to the charity shop, what's left fits one small box, and the door comes down on an empty room. The twist is said once, at L53 to L54 (I'd always known half the room was mine, and pretended it was all Jo's so I'd have a reason to keep coming), and the close only shows it. L73 loops: "Every TUESDAY / at SEVEN, / I USED to visit / a ROOM." On a rewatch, L01's "someone ELSE'S things" lands on round-scribbled boxes (mine) in the very first shot, the round stack I sit on is my own, and the two keys say nobody else could have opened the room.
+From L66 on: my half goes to the charity shop, what's left fits one small box, and the door comes down on an empty room. The rule turns at L80 (seven's door had lit up for me every Tuesday), and the twist is said once, at L53 to L54 (I'd always known half the room was mine, and pretended it was all Jo's so I'd have a reason to keep coming). The close only shows it. L81, the last line, "And NOW, / NOTHING of mine / is INSIDE.", plays over seven's lamp fading dark behind me, and the loop runs straight into L74's "unless something of YOURS / is INSIDE." The cold beat: by the town's rule, that door will never open for me again, and I chose it. On a rewatch, L74's lit lamp over seven is the whole twist in the first second, L79's "for BOTH of us" says it out loud, the round stack I sit on is my own, and the two keys say nobody else could have opened the room.
 
 ## World
-A low self-storage block on the edge of a made-up town. One long indoor corridor of twelve identical roller doors, six a side, corrugated and painted roller-door blue, in galvanised steel frames, each with a small stencilled numeral (digits only, no words) and a padlock hasp at the foot. Painted concrete floor, scuffed. Cold fluorescent battens overhead on a timer. By the entrance, a single round push button with a dim green ring that glows in the dark. At the entrance end, a wide yard door onto an asphalt yard with one sodium lamp. Beside the entrance, the site office's steel key-return slot in the wall (no text, no logo).
+A low self-storage block on the edge of a made-up town. One long indoor corridor of twelve identical roller doors, six a side, corrugated and painted roller-door blue, in galvanised steel frames, each with a small stencilled numeral (digits only, no words) and a padlock hasp at the foot. Painted concrete floor, scuffed. Cold fluorescent battens overhead on a timer. By the entrance, a single round push button with a dim green ring that glows in the dark. At the entrance end, a wide yard door onto an asphalt yard with one sodium lamp. Beside the entrance, the site office's steel key-return slot in the wall (no text, no logo). Above every roller door, the town's door lamp: a small round lamp, 12 cm across, in a galvanised ring, dark unless it's lit for someone (see The rule).
+
+The montage and Jo's door (L75 to L78) are short single shots elsewhere in the same made-up town, each with the same door lamp over its door: a friend's narrow hallway with a shoe rack, a flat's kitchen with a high cupboard, a front step with one taped box inside the hall, and Jo's front door on a quiet terraced street at dusk with her lit window beside it. No house numbers, signs or street names anywhere.
 
 Unit seven: 3 m deep, 2 m wide, a bare bulb socket with no bulb, stacks of plain brown boxes down both sides with a 0.7 m aisle between them to the back wall. My battery lamp sits on the floor by the front of the right-hand stack. Nothing on any box can be read, no brand on any door.
 
@@ -33,7 +41,7 @@ Time passes: late winter (dark at seven, corridor lights the only light) to spri
 
 ## Cast (all adults, nobody in peril)
 - **me** (`me`, adult, about thirty): short dark-brown block hair with a side part, a forest-green work jacket over a grey shirt, charcoal trousers, brown boots. Expressions: `neutral`, `worried`, `scared`, `terrified`, `sad`, `smile`.
-- **Jo** (`jo`, adult, about thirty): a black block bob with a straight fringe, a rust-orange puffer jacket, dark jeans, white trainers. On screen at L03 to L05 (packing and splitting up, warm-lit memory) and L59 to L65. She speaks only in reported speech.
+- **Jo** (`jo`, adult, about thirty): a black block bob with a straight fringe, a rust-orange puffer jacket, dark jeans, white trainers. On screen at L78 (at her lit window, now, looking out at me) and L59 to L65. She speaks only in reported speech.
 - Nobody else. No staff on screen.
 
 ## The creature: the Deep One
@@ -43,18 +51,19 @@ Time passes: late winter (dark at seven, corridor lights the only light) to spri
 - **One model**, built once in `set.py` and posed per shot. Test still first: the L43 to L45 reveal, phone size, lit by my lamp from below and the corridor battens as a rim.
 - **Light it for fear:** front light dead. Key from below, my battery lamp on the floor (warm, low). Cold rim from the corridor battens along the ribbed flank. The eye highlights are the brightest thing on it.
 - **Continuity:**
-  - L01 to L15: not there. Unit eleven's door is shut in L01's shot.
+  - L74 to L15: not there. Unit eleven's door is shut and its lamp dark in L74's shot.
+  - Whenever its doorway is up (L16 to L29), the door lamp above that doorway glows pale blue for it. Never explained.
   - L16 to L20 (Tuesday 1): standing in unit eleven's open doorway, face at the door line, facing the corridor, its depth hidden by the angle.
   - L21 to L27 (Tuesday 2): unit ten, same pose. My torch from the side shows the ribbed flank running back to the unit's rear wall.
   - L28 to L30 (Tuesday 3): unit nine, body still facing out, head turned 90 degrees round toward unit seven. The head stays square-on to its own body everywhere else.
   - L31 to L37 (Tuesday 4): unit eight, door down. Never seen. Only the scrape along the shared wall.
   - L38 to L42: gone. Unit eight shut, corridor empty.
-  - L43 to L54 (the scare): inside unit seven, face just inside my door frame, body filling the aisle to the back wall, the jagged stack on its left, the round stack on its right. It touches neither stack and nothing touches it. My lamp on the floor by the round stack lights it from below. Its head is square to its body except at L48, L49 and L54 (one pose only: turned 90 degrees to its own right, toward the round stack). It's never seen turning.
+  - L43 to L54, with L80 between L52 and L53 (the scare): inside unit seven, face just inside my door frame, body filling the aisle to the back wall, the jagged stack on its left, the round stack on its right. It touches neither stack and nothing touches it. My lamp on the floor by the round stack lights it from below. Its head is square to its body except at L48, L49 and L54 (one pose only: turned 90 degrees to its own right, toward the round stack). It's never seen turning.
   - L55 on: gone, and never seen again. At L60 the aisle is empty in bright light.
 
 ## Palette and key colour
 - Galvanised grey `#9aa3a8`, roller-door blue `#3d6fa8`, dust brown `#8a6f52`, fluorescent cold white `#e6eef8`, the button's green ring `#3fdc7a` (dim), my lamp's warm `#ffcf8a`, cardboard `#b8895a`, black marker, the spring sun's gold `#ffc56b` from L58.
-- **Caption key colour:** pale door blue `#6cc3ff`.
+- **Caption key colour:** pale door blue `#6cc3ff`, the same colour as a lit door lamp.
 
 ## Music and sound
 - **Score:** `locrian`, root 41, 62 bpm. Voices: drone and a soft `pulse` that ticks like the light timer from L13. Pad joins at L21. Energy climbs from 0.3 to 0.7 through L42.
@@ -67,8 +76,8 @@ Time passes: late winter (dark at seven, corridor lights the only light) to spri
   - The scrape (`creak` stretched, 2.2 s, -12 dB, panned slowly front to back) under L34 to L36.
   - The `hit` at L43.
   - One key clink at P01 (`bell`, short and bright, -16 dB, at 0.2 s). One clink for the one key, so the count we hear matches the picture.
-  - **The closing sound:** my roller door coming down under L71 and L73, a corrugated rattle (`door`, -12 dB, 2.4 s, with a pitch fall), ending in a hard `thud` (-9 dB) that lands 0.2 s after L73's last word. The loop cut comes 0.25 s after the word ends, right on the thud's tail, so the film ends on the door.
-- **Flash plan (hard rule 7):** the timed lights never strobe or flicker. Lights-off is a 1.2 s ramp down to 12% (the green ring, my lamp and my phone stay on, so no shot goes black). Lights-on is a 1.0 s ramp up. The two lights-off events (L15 and L40) are over 60 s apart, and each off/on pair is at least 3 s apart, so the 1-frame and 3-frame counts stay far under 2 and 3 a second. No red anywhere. Run `python -m blocky flash` on L15 to L17 and L40 to L43 at the final's own step.
+  - **The closing sound:** my roller door coming down under L71 and L81, a corrugated rattle (`door`, -12 dB, 2.4 s, with a pitch fall), ending in a hard `thud` (-9 dB) that lands 0.2 s after L81's last word. The loop cut comes 0.25 s after the word ends, right on the thud's tail, so the film ends on the door.
+- **Flash plan (hard rule 7):** the timed lights never strobe or flicker. Lights-off is a 1.2 s ramp down to 12% (the green ring, my lamp and my phone stay on, so no shot goes black). Lights-on is a 1.0 s ramp up. The two lights-off events (L15 and L40) are over 60 s apart, and each off/on pair is at least 3 s apart, so the 1-frame and 3-frame counts stay far under 2 and 3 a second. No red anywhere. The door lamps never blink: each one lights with a 0.6 s ramp up and goes dark with a 1.0 s ramp down (L74, L81), never two in the same second. Run `python -m blocky flash` on L74, L15 to L17, L40 to L43 and L81 at the final's own step.
 
 ## The lore plant
 - **What:** two short upright strokes, roller-door blue, scratched into the inside face of unit seven's steel door frame at knee height, just above the padlock hasp. Two for a unit taken by two. No extra stroke.
@@ -78,26 +87,29 @@ Time passes: late winter (dark at seven, corridor lights the only light) to spri
 ## Shot plan, beat by beat
 About 72 shots. Each line below carries its shot. Notes for the builder:
 - R6 hands can't grip: every key, box, door and phone beat cuts away from the hand. The keys lie on a box top. Boxes are carried hugged to the chest with both arms, never pinched. Doors are shown already moving, with the hand out of frame.
-- Every plant named in a line is visible in that line's picture: the two scribble styles (L08), my round stack (L09), the padlock (L10), the two keys (L11), Jo at the back of the aisle (L04), the two stacks either side of the Deep One (L50 to L51), the single key (L55), the key slot (L64), one small box (L67 and L70).
-- No black shots. The darkest frames (L15, L40 to L42) keep the green ring, my lamp's glow and my phone's light, and stay readable at phone size. The warm turn (L58 to L65) and the close (L66 to L73) are lit bright: corridor battens fully on, evening sun through the yard door, my lamp on.
+- **The door lamp is on every door in every shot**, dark unless the rule says it's lit: seven's when I'm at it or Jo is (L74, L79, L39, L59), eleven's, ten's and nine's when the Deep One's doorway is up. Seven's is the only lit lamp in L74.
+- Every plant named in a line is visible in that line's picture: seven's lamp lit over me (L74, L79), Jo at her window beside her dark door lamp (L78), the two scribble styles (L08), my round stack (L09), the padlock (L10), the two keys (L11), the two stacks either side of the Deep One (L50 to L51), the single key (L55), the key slot (L64), one small box (L67 and L70).
+- No black shots. The darkest frames (L15, L40 to L42) keep the green ring, my lamp's glow and my phone's light, and stay readable at phone size. The warm turn (L58 to L65) and the close (L66 to L71 and L81) are lit bright: corridor battens fully on, evening sun through the yard door, my lamp on.
 - A face at phone size is at least 1/5 of frame width and out of the caption band.
 
 ## The narration
 Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the key words in `#6cc3ff`.
 
-### 01 Tuesdays (late winter, dark)
-- `L01` narrator: Every TUESDAY / at SEVEN, / I visit a ROOM / full of someone ELSE'S / THINGS.
-  - [low behind me walking down the lit corridor of blue roller doors, toward an open door halfway along. Through it, in the lamp's glow, a stack of boxes with round scribbles. Far end of the corridor dim, unit eleven's door shut. Slow push]
-- `L02` narrator: It's unit SEVEN, / in a STORAGE block / on the EDGE of town.
-  - [outside at dusk: the low block, the asphalt yard, the one sodium lamp, the wide yard door]
-- `L03` narrator: Jo and I / rented it TOGETHER, / the week we MOVED IN.
-  - [memory, warm-lit and bright: unit seven half full, me at the door, Jo smiling]
-- `L04` narrator: She stood at the BACK / and passed the boxes FORWARD.
-  - [Jo at the back of the aisle between the stacks, a box hugged to her chest, me at the front. Cut before any hand-over]
-- `L05` narrator: We split up / last SPRING.
-  - [the yard by day, Jo walking to her small car, me by the yard door, both lit plainly. No tears, no argument shown]
-- `L06` narrator: I kept PAYING / for the unit.
-  - [the corridor at night again, me alone at door seven]
+### 01 The rule (late winter, dark at seven)
+- `L74` narrator: In this TOWN, / a door won't OPEN / unless something of YOURS / is INSIDE.
+  - [the corridor of blue roller doors, battens full on, lit to read. Me front-on at door seven, waist up, face a good fifth of the frame width in the upper middle, `neutral`. Above my head, seven's door lamp glows pale blue (on by 0.6 s, ramped). Every other lamp down the corridor is dark, unit eleven's door shut. Behind me door seven is already rising (hand out of frame), and in the widening gap, round-scribbled boxes in the corridor light, above the caption band]
+- `L75` narrator: So you leave a SOCK / at a friend's place, / to get asked BACK.
+  - [a narrow hallway seen through an open front door, its lamp lit: one striped sock alone on a shoe rack, bright and a little funny]
+- `L76` narrator: Landlords hide a SPOON / in every flat / they've ever RENTED.
+  - [inside a high kitchen cupboard, door open: bare shelves, one spoon lying at the very back. Lit plainly]
+- `L77` narrator: Breakups / take FOREVER / around HERE.
+  - [a front step at evening, the door's lamp lit: through the open door, one last taped box sitting alone in an empty hall]
+- `L78` narrator: Jo's front door / doesn't LIGHT UP / for me / any MORE.
+  - [now, at dusk, a quiet terraced street: me on the pavement in the foreground, three-quarter on, `sad`, looking up. Jo's front door, its lamp dark. Beside it her window, warm-lit, and Jo in it, looking out at me, a small sad smile. Both faces readable at phone size, above the caption band]
+- `L79` narrator: But ONE door / still opens / for BOTH of us.
+  - [back in the corridor: close on seven's lamp glowing pale blue in its ring, then tilting down to the open door and the two stacks inside]
+- `L02` narrator: It's a STORAGE unit / we rented TOGETHER. / I go every TUESDAY / at SEVEN.
+  - [outside at dusk: the low block, the asphalt yard, the one sodium lamp, the wide yard door, me walking in]
 - `L07` narrator: I told myself / it was all HER stuff, / waiting for HER.
   - [inside seven: the two stacks and the aisle, my lamp on the floor]
 - `L08` narrator: The boxes have SCRIBBLES / on them. / Some ROUND, / some JAGGED.
@@ -202,6 +214,8 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 ### 07 What was mine
 - `L52` narrator: I draw CIRCLES / on EVERYTHING.
   - [memory flash, bright: me drawing a round scribble on a fresh box at our old kitchen table, cut before the marker touches]
+- `L80` narrator: And SEVEN had lit up / for ME / every single TUESDAY.
+  - [low from the corridor just outside my door, looking up: seven's door lamp glowing pale blue in its ring over the open door frame, and below it, at the frame's edge, only the Deep One's ribbed blue flank lit from below by my lamp. Its head stays out of frame. The lamp is the brightest thing in shot]
 - `L53` narrator: I'd always KNOWN / half that room / was MINE.
   - [back to the scare framing, my face, `sad` more than scared]
 - `L54` narrator: I'd just PRETENDED / they were all JO'S, / so I'd have a reason / to keep COMING.
@@ -246,11 +260,14 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [me in the doorway with the small box hugged to my chest, `smile`, sunlit]
 - `L71` narrator: Then I pulled the door DOWN.
   - [corridor wide, bright: the blue door rolling down (already moving, hand out of frame), me beside it with the box. The rattle starts. Then low on the door over the empty floor, the gap under it shrinking, sun on the concrete]
-- `L73` narrator: Every TUESDAY / at SEVEN, / I USED to visit / a ROOM.
-  - [the corridor wide from the entrance end, lit and sunny, me walking toward the camera with the small box, door seven landing behind me. The thud lands 0.2 s after "ROOM", and the loop cut comes 0.25 s after the word, on the thud]
+- `L81` narrator: And NOW, / NOTHING of mine / is INSIDE.
+  - [the corridor wide from the entrance end, lit and sunny, me walking toward the camera with the small box, face readable, door seven landing behind me. Over the line, seven's lamp ramps from pale blue to dark over 1.0 s, the last lit lamp in the corridor going out. The thud lands 0.2 s after "INSIDE", and the loop cut comes 0.25 s after the word, on the thud, straight into L74's lit corridor]
 
 ## Voice and timing notes
-- **L01:** an even, matter-of-fact habit, the lift on "THINGS". "THINGS" lands by about 2.6 s.
+- **L74:** the town's rule, said plainly and a little brightly, like everybody knows it. "INSIDE" lands by about 3.0 s.
+- **L75 to L77:** light, almost amused. "FOREVER" (L77) has a dry smile in it.
+- **L78:** the tone drops. Quiet on "any MORE".
+- **L80:** even and low, no push, a small weight on "ME". It's the rule landing on me, said like something I'd always known.
 - **L19** "EVENING." is a greeting, clipped and plain.
 - The scare's hole is the music drop before L43, not a pause beat.
 - **Pronoun:** I call it "they" through L27, while it still looks like a person, and "it" from L29 on, once the head is wrong. Keep that split.
@@ -259,7 +276,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - **L57** "TUESDAY?" is a small lift, almost a joke.
 - **L63** "obviously," has a smile in it.
 - **P01:** the one clink alone, music low.
-- **L73:** plain and warm, not a whisper, no trail-off. The door's thud is the last sound.
-- **Words to check:** "Jo" (jō) at L03, L12, L54, L56, L59. "Jo'S" at L50 ("Joe's" is the mishear, which is fine to read). "SEVEN" and "eleven" are numbers, read in full. "boiler suit" (L18). "fit" (L67) is the past tense, said "fit". "EVENING" at L19 can come out "evening" or "even" by Whisper: slow the line if so.
-- **Homophones Whisper could get wrong:** "PASSED" (L04) and "past" (L41), "SCRAPED", "RIDGES", "TORCH". "ROLLED up" and "rode up" (L59).
+- **L81:** plain and warm, not a whisper, no trail-off, a small weight on "INSIDE" so the loop into L74 rhymes. The door's thud is the last sound.
+- **Words to check:** "Jo" (jō) at L78, L12, L54, L56, L59. "Jo'S" at L50 ("Joe's" is the mishear, which is fine to read). "SEVEN" and "eleven" are numbers, read in full. "boiler suit" (L18). "fit" (L67) is the past tense, said "fit". "EVENING" at L19 can come out "evening" or "even" by Whisper: slow the line if so.
+- **Homophones Whisper could get wrong:** "past" (L41), "SPOON" (L76), "Landlords" (L76), "SCRAPED", "RIDGES", "TORCH". "ROLLED up" and "rode up" (L59).
 
