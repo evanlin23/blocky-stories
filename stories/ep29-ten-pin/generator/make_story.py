@@ -17,7 +17,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
-LOOP = 0.03   # L76 itself ends 0.22 s after "fifth", so the cut lands 0.25 s after the last word
+LOOP = 0.01   # L76 itself ends 0.22 s after "fifth", so the cut lands 0.25 s after the last word
 # captions show two or three words: a longer chunk of the script is split (the spoken words split with it), and
 # every "Lxx.n" reference below is moved to the new chunk numbering
 CHUNK_MAP = {}
@@ -44,7 +44,7 @@ for ln in lines:
         new += [list(x) for x in _split(cap, sp)]
     if "chunks" in ln:
         ln["chunks"] = new
-TEMPO = {"L16": 0.93, "L19": 0.93, "L38": 0.93, "L45": 0.9, "L76": 0.9}   # the word check: a swallowed word comes through
+TEMPO = {"L16": 0.93, "L19": 0.93, "L32": 0.95, "L38": 0.97, "L45": 0.9, "L76": 0.85}   # the word check: a swallowed word comes through
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]

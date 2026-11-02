@@ -802,7 +802,8 @@
      "as MINE.",
      "as mine."
     ]
-   ]
+   ],
+   "tempo": 0.95
   },
   {
    "id": "L33",
@@ -923,7 +924,7 @@
      "next to ours."
     ]
    ],
-   "tempo": 0.93
+   "tempo": 0.97
   },
   {
    "id": "L39",
@@ -1678,11 +1679,11 @@
      "I'm the fifth."
     ]
    ],
-   "tempo": 0.9
+   "tempo": 0.85
   },
   {
    "id": "P99",
-   "pause": 0.03,
+   "pause": 0.01,
    "chunks": []
   }
  ],
