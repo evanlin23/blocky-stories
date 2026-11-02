@@ -16,7 +16,7 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
-TEMPO = {"L64": 0.9, "L72": 0.9, "L73": 0.95, "L54": 0.93, "L57": 0.95, "L19": 0.95}
+TEMPO = {"L49": 0.88, "L64": 0.9, "L72": 0.9, "L73": 0.95, "L54": 0.93, "L57": 0.95, "L19": 0.95}
 GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.4, "L69": 0.3, "L60": 0.25}
 LOOP = 0.45          # seconds after the last word: the door's thud lands in it
 for ln in lines:
@@ -130,15 +130,15 @@ SHOTS = [
      still([0.5, 3.0, 2.2], [3.3, 3.0, 0.85], 20)),
     ("L46", "the lamp beside its boot", still([0.6, 2.05, 0.5], [1.2, 2.6, 0.2], 28)),
     ("L47", "my face, terrified, then my eyes drop", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
-    ("L48", "straight down the aisle line: its front, a stack each side", AISLE_CAM),
-    ("L49", "Jo's warm memory at the back of the aisle", AISLE_CAM),
-    ("L49.2", "and the same spot again, the Deep One", AISLE_CAM),
+    ("L48", "straight down the aisle line: its head turned to the left stack", AISLE_CAM),
+    ("L49", "hard cut, same framing: the head now turned to the right stack", AISLE_CAM),
     ("L50", "the jagged boxes beside its flank", still([0.1, 3.4, 1.1], [1.5, 3.8, 0.85], 30)),
     ("L51", "the round boxes beside its flank, the lamp at the foot", still([0.1, 2.6, 1.1], [1.5, 2.3, 0.8], 30)),
     ("L52", "memory: a round scribble on a fresh box, the kitchen table",
      still([KX + 2.0, -2.0, 1.55], [KX - 0.2, 0.1, 1.15], 30)),
     ("L53", "my face, sad", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
-    ("L54", "its face in my door, held", still([-0.3, 3.45, 1.58], [1.0, 3.0, 1.58], 44)),
+    ("L54", "close on the round stack and my lamp, its flank at the left edge, head still turned to the stack",
+     still([0.15, 2.85, 1.0], [1.5, 2.3, 0.8], 30)),
     ("L55", "that night: the ring with one key, the second beside it",
      still([KX - 0.25, 0.12, 1.42], [KX - 0.22, 0.22, 0.775], 40)),
     ("L56", "me with my phone to my ear by the bright window", still([KX + 0.45, -0.1, 1.62], [KX + 1.0, 2.0, 1.5], 40)),
@@ -277,8 +277,6 @@ put("jo", "L05", [0.5, -2.0], yaw=0, expr="neutral")
 walk("jo", "L05+0.1", [0.5, -2.0], yaw=0)
 walk("jo", "L05>", [1.9, -5.0])
 hide("jo", "L06")
-put("jo", "L49", [3.45, 3.0], yaw=-90, expr="soft", **CARRY)
-hide("jo", "L49.2")
 put("jo", "L59", [0.3, 2.6], yaw=50, expr="soft")
 hide("jo", "L60")
 put("jo", "L61", [0.5, 2.4], yaw=0, expr="soft", **CARRY)
@@ -296,10 +294,10 @@ for at, unit, extra in (("L17", 11, {}), ("L22", 10, {}), ("L29", 9, {"head": [-
     put("deep", at, [1.2, YC[unit]], yaw=-90, expr="neutral", **extra)
     hide("deep", {"L17": "L21", "L22": "L28", "L29": "L31"}[at])
 put("deep", "L43", [1.2, 3.0], yaw=-90, expr="neutral")
-hide("deep", "L49")
-put("deep", "L49.2", [1.2, 3.0], yaw=-90)
+key("deep", "L48", head=[90, 0], blend=0)
+key("deep", "L49", head=[-90, 0], blend=0)
 hide("deep", "L52")
-put("deep", "L53", [1.2, 3.0], yaw=-90)
+put("deep", "L53", [1.2, 3.0], yaw=-90, head=[-90, 0])
 hide("deep", "L55")
 
 # ---------------------------------------------------------------------------------------------------- cues
@@ -309,8 +307,6 @@ cues = [
     {"at": "L03", "name": "time", "set": "mem", "dur": 0.01},
     {"at": "L05", "name": "time", "set": "day", "dur": 0.01},
     {"at": "L06", "name": "time", "set": "dusk", "dur": 0.01},
-    {"at": "L49", "name": "time", "set": "mem", "dur": 0.01},
-    {"at": "L49.2", "name": "time", "set": "dusk", "dur": 0.01},
     {"at": "L58", "name": "time", "set": "sun", "dur": 0.01},
     # the corridor timer: slow ramps only (1.2 s down to 12%, 1.0 s up)
     {"at": "L15.1", "name": "corr", "level": 0.12, "dur": 1.2},
@@ -338,8 +334,6 @@ cues = [
     {"at": 0, "name": "stacks", "left": 18, "right": 18},
     {"at": "L03", "name": "stacks", "left": 9, "right": 9},
     {"at": "L06", "name": "stacks", "left": 18, "right": 18},
-    {"at": "L49", "name": "stacks", "left": 9, "right": 9},
-    {"at": "L49.2", "name": "stacks", "left": 18, "right": 18},
     {"at": "L61", "name": "stacks", "left": 12, "right": 18},
     {"at": "L61.4", "name": "stacks", "left": 6, "right": 18},
     {"at": "L62", "name": "stacks", "left": 3, "right": 18},
@@ -349,8 +343,6 @@ cues = [
     # the lamp
     {"at": "L03", "name": "lamp", "on": 0.0},
     {"at": "L06", "name": "lamp", "on": 1.0},
-    {"at": "L49", "name": "lamp", "on": 0.0},
-    {"at": "L49.2", "name": "lamp", "on": 1.0},
     {"at": "L55", "name": "lamp", "on": 0.0},
     {"at": "L67", "name": "lamp", "on": 1.0},
     # my phone's glow and torch
@@ -367,8 +359,6 @@ cues = [
     # boxes in arms
     {"at": "L04", "name": "carry", "who": "jo", "style": "jagged", "on": True},
     {"at": "L05", "name": "carry", "who": "jo", "style": "jagged", "on": False},
-    {"at": "L49", "name": "carry", "who": "jo", "style": "jagged", "on": True},
-    {"at": "L49.2", "name": "carry", "who": "jo", "style": "jagged", "on": False},
     {"at": "L61", "name": "carry", "who": "jo", "style": "jagged", "on": True},
     {"at": "L61", "name": "carry", "who": "me", "style": "jagged", "on": True},
     {"at": "L61.4", "name": "carry", "who": "jo", "style": "jagged", "on": False},
@@ -409,6 +399,7 @@ cues = [
     {"at": "L55", "name": "facelight", "on": 0.0},
     {"at": "L29", "name": "headtube", "on": False},
     {"at": "L38", "name": "headtube", "on": True},
+    {"at": "L48", "name": "headtube", "on": False},
     {"at": "L64", "name": "slotlight", "on": 1.0},
     {"at": "L65", "name": "slotlight", "on": 0.0},
 ]
@@ -432,7 +423,7 @@ story = {
     "title": "Every Thursday at seven, I visit a room",
     "made_for_kids": False,
     "premise": "Every Thursday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Thursday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Thursday they are one door nearer mine.",
-    "twist": "Half the boxes are mine. The thing that has come to stand in the aisle is standing exactly where Jo stood the night we packed, because a unit rented by two is counted for two and I have been keeping her place empty. When Jo takes her half and I give mine away, the room is finally empty of anyone's things.",
+    "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit looks from the jagged stack to the round one as if counting, and the count makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.", "twist_old": "Half the boxes are mine. The thing that has come to stand in the aisle is standing exactly where Jo stood the night we packed, because a unit rented by two is counted for two and I have been keeping her place empty. When Jo takes her half and I give mine away, the room is finally empty of anyone's things.",
     "world": "a low self-storage block at the edge of a made-up town: one lit indoor corridor of twelve blue roller doors on a one-minute light timer, a yard door onto asphalt and one sodium lamp",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#6cc3ff",
@@ -477,5 +468,6 @@ story = {
               "music_drops": [{"from": "L42>", "to": "L43", "keep": ["hit"]},
                               {"from": "L33>", "to": "L34", "keep": ["creak"]}]},
 }
+story.pop("twist_old", None)
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")

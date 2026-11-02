@@ -163,7 +163,7 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # Bri
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
-HOMOPHONES = {"joe": "jo", "joes": "jos", "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
+HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo", "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
               "wren": "ren", "wrens": "rens"}
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))

@@ -6,7 +6,7 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Every Thursday at seven, I visit a room full of someone else's things.",
+   "text": "Every Tuesday at seven, I visit a room full of someone else's things.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -17,10 +17,10 @@
    "chunks": [
     [
      0.172,
-     0.707
+     0.724
     ],
     [
-     0.707,
+     0.724,
      1.241
     ],
     [
@@ -562,14 +562,14 @@
    ]
   },
   "L21": {
-   "text": "The next Thursday, the door of unit ten was up.",
+   "text": "The next Tuesday, the door of unit ten was up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.138,
+   "dur": 2.121,
    "onset": 0.155,
-   "end": 1.931,
+   "end": 1.914,
    "chunks": [
     [
      0.155,
@@ -581,11 +581,11 @@
     ],
     [
      1.052,
-     1.431
+     1.414
     ],
     [
-     1.431,
-     1.931
+     1.414,
+     1.914
     ]
    ]
   },
@@ -966,12 +966,12 @@
    ]
   },
   "L37": {
-   "text": "I didn't come back for two Thursdays.",
+   "text": "I didn't come back for two Tuesdays.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.828,
+   "dur": 1.81,
    "onset": 0.155,
    "end": 1.621,
    "chunks": [
@@ -981,10 +981,10 @@
     ],
     [
      0.362,
-     0.69
+     0.672
     ],
     [
-     0.69,
+     0.672,
      1.621
     ]
    ]
@@ -1234,54 +1234,62 @@
    ]
   },
   "L48": {
-   "text": "It stood in the gap between the stacks.",
+   "text": "Its head was turned to the left stack.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.759,
    "onset": 0.155,
-   "end": 1.569,
+   "end": 1.552,
    "chunks": [
     [
      0.155,
-     0.474
+     0.439
     ],
     [
-     0.474,
-     0.732
+     0.439,
+     0.759
     ],
     [
-     0.732,
-     1.569
+     0.759,
+     0.879
+    ],
+    [
+     0.879,
+     1.552
     ]
    ]
   },
   "L49": {
-   "text": "Exactly where Jo stood the night we packed.",
+   "text": "I blinked. Now it faced the right stack, like it was counting.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.034,
-   "onset": 0.172,
-   "end": 1.845,
+   "tempo": 0.9064,
+   "dur": 2.828,
+   "onset": 0.19,
+   "end": 2.621,
    "chunks": [
     [
-     0.172,
-     0.629
+     0.19,
+     0.69
     ],
     [
-     0.629,
-     0.974
+     0.768,
+     1.181
     ],
     [
-     0.974,
-     1.199
+     1.181,
+     1.672
     ],
     [
-     1.199,
-     1.845
+     1.698,
+     1.854
+    ],
+    [
+     1.854,
+     2.621
     ]
    ]
   },
@@ -1378,38 +1386,38 @@
    ]
   },
   "L54": {
-   "text": "I'd kept a place for Jo every Thursday. Something was standing in it.",
+   "text": "I came every Tuesday to sit with Jo's things. I'd been sitting on mine.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9579000000000001,
-   "dur": 3.207,
+   "dur": 3.431,
    "onset": 0.172,
-   "end": 3.0,
+   "end": 3.224,
    "chunks": [
     [
      0.172,
-     0.457
+     0.431
     ],
     [
-     0.457,
-     0.724
+     0.431,
+     0.974
     ],
     [
-     0.724,
-     1.052
+     0.974,
+     1.259
     ],
     [
-     1.052,
-     1.776
+     1.259,
+     1.897
     ],
     [
-     1.87,
-     2.534
+     1.992,
+     2.483
     ],
     [
-     2.534,
-     3.0
+     2.483,
+     3.224
     ]
    ]
   },
@@ -1462,14 +1470,14 @@
    ]
   },
   "L57": {
-   "text": "She went quiet for a long time. Then she said, \"Thursday?\"",
+   "text": "She went quiet for a long time. Then she said, \"Tuesday?\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9784999999999999,
-   "dur": 2.776,
+   "dur": 2.741,
    "onset": 0.19,
-   "end": 2.534,
+   "end": 2.5,
    "chunks": [
     [
      0.19,
@@ -1481,15 +1489,15 @@
     ],
     [
      0.724,
-     1.328
+     1.31
     ],
     [
-     1.414,
-     1.845
+     1.379,
+     1.81
     ],
     [
-     1.914,
-     2.534
+     1.879,
+     2.5
     ]
    ]
   },
@@ -1730,7 +1738,7 @@
    ]
   },
   "L66": {
-   "text": "The next Thursday, my half went to the charity shop.",
+   "text": "The next Tuesday, my half went to the charity shop.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1741,7 +1749,7 @@
    "chunks": [
     [
      0.155,
-     0.81
+     0.793
     ],
     [
      0.845,
@@ -1878,46 +1886,46 @@
    ]
   },
   "L72": {
-   "text": "Every week, I'd sat with the gap Jo left. So had it.",
+   "text": "Every week, I'd been visiting my own things, and calling them hers.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.927,
-   "dur": 2.707,
+   "dur": 3.241,
    "onset": 0.19,
-   "end": 2.5,
+   "end": 3.034,
    "chunks": [
     [
      0.19,
-     0.5
+     0.621
     ],
     [
-     0.526,
-     0.888
+     0.655,
+     1.172
     ],
     [
-     0.888,
-     1.155
+     1.172,
+     1.897
     ],
     [
-     1.155,
-     1.724
+     1.948,
+     2.301
     ],
     [
-     1.819,
-     2.5
+     2.301,
+     3.034
     ]
    ]
   },
   "L73": {
-   "text": "Every Thursday at seven, I used to visit a room.",
+   "text": "Every Tuesday at seven, I used to visit a room.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9784999999999999,
-   "dur": 2.586,
+   "dur": 2.603,
    "onset": 0.19,
-   "end": 2.397,
+   "end": 2.414,
    "chunks": [
     [
      0.19,
@@ -1928,16 +1936,16 @@
      1.241
     ],
     [
-     1.31,
-     1.526
+     1.328,
+     1.543
     ],
     [
-     1.526,
-     1.801
+     1.543,
+     1.819
     ],
     [
-     1.801,
-     2.397
+     1.819,
+     2.414
     ]
    ]
   }
