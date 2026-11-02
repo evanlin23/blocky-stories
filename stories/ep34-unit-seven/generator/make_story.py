@@ -75,7 +75,7 @@ KEYCAM = still([1.62, 2.14, 1.6], [1.62, 2.18, 1.2], 28)
 
 SHOTS = [
     (0, "L01 behind me down the lit corridor toward the open door seven, a slow push",
-     move(([-0.25, -1.1, 0.6], [0.5, 3.0, 1.1]), ([-0.2, -0.5, 0.65], [0.7, 3.0, 1.1]), 22, 20)),
+     move(([-0.2, -1.05, 1.3], [0.2, 2.6, 1.3]), ([-0.2, -0.8, 1.3], [0.1, 2.0, 1.3]), 30, 30)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
     ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.95, 1.3], [1.0, 3.0, 1.15], 22)),
@@ -202,8 +202,8 @@ CARRY = {"arms": [80, 80], "side": [-6, -6]}
 SITTING = {"sit": True, "arms": [10, 10], "side": [-8, -8]}
 
 # me
-put("me", 0, [-0.1, 1.6], yaw=180, expr="neutral")
-walk("me", "L01>", [0.2, 2.8], yaw=180)
+put("me", 0, [0.3, 2.7], yaw=0, expr="neutral")
+walk("me", "L01>", [0.0, 1.5])
 hide("me", "L02")
 put("me", "L03", [1.2, 2.5], yaw=90, expr="soft")
 put("me", "L04", [1.7, 3.3], yaw=90, expr="neutral", arms=[20, 20])
@@ -304,7 +304,8 @@ hide("deep", "L55")
 
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [
-    {"at": 0, "name": "time", "set": "dusk"},
+    {"at": 0, "name": "time", "set": "open"},
+    {"at": "L02", "name": "time", "set": "dusk", "dur": 0.01},
     {"at": "L03", "name": "time", "set": "mem", "dur": 0.01},
     {"at": "L05", "name": "time", "set": "day", "dur": 0.01},
     {"at": "L06", "name": "time", "set": "dusk", "dur": 0.01},

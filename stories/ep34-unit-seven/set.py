@@ -581,7 +581,8 @@ def build_deep(kit, ctx):
 
 # ------------------------------------------------------------------------------------------ animate
 
-TIMES = {   # sky colour, sky strength, sun gain, sodium, yard fill, mem fill, batten multiplier, exposure
+TIMES = {
+    "open": ("#1d2740", 0.8, 0.0, 1.0, 0.7, 0.7, 1.0, 0.45),   # sky colour, sky strength, sun gain, sodium, yard fill, mem fill, batten multiplier, exposure
     "dusk": ("#1d2740", 0.8, 0.0, 1.0, 0.7, 0.0, 1.0, 0.0),
     "mem": ("#bcd0ee", 1.6, 0.5, 0.0, 1.0, 1.0, 1.0, 0.1),
     "day": ("#a9c4ea", 1.5, 0.9, 0.0, 1.0, 0.0, 0.85, 0.0),
