@@ -258,16 +258,20 @@
     "A month ago,"
    ],
    [
-    "I quit to",
-    "I quit to"
+    "I got a",
+    "I got a"
    ],
    [
-    "take a job",
-    "take a job"
+    "job in an OFFICE,",
+    "job in an office,"
    ],
    [
-    "in an OFFICE.",
-    "in an office."
+    "and Bea threw",
+    "and Bea threw"
+   ],
+   [
+    "me a PARTY.",
+    "me a party."
    ]
   ]
  },
@@ -276,20 +280,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Bea kept",
-    "Bea kept"
+    "She kept the stall,",
+    "She kept the stall,"
    ],
    [
-    "the stall,",
-    "the stall,"
+    "and I still came",
+    "and I still came"
    ],
    [
-    "and never said",
-    "and never said"
+    "every Friday",
+    "every Friday"
    ],
    [
-    "a WORD.",
-    "a word."
+    "to EAT.",
+    "to eat."
    ]
   ]
  },
@@ -314,8 +318,8 @@
     "the moon."
    ],
    [
-    "Twenty nights in",
-    "Twenty nights in"
+    "THIRTY nights in",
+    "Thirty nights in"
    ],
    [
     "a ROW.",
@@ -354,20 +358,16 @@
     "On Friday,"
    ],
    [
-    "I stood across",
-    "I stood across"
+    "I came straight",
+    "I came straight"
    ],
    [
-    "the car park",
-    "the car park"
+    "from work,",
+    "from work,"
    ],
    [
-    "with my",
-    "with my"
-   ],
-   [
-    "hood UP.",
-    "hood up."
+    "still in my TIE.",
+    "still in my tie."
    ]
   ]
  },
@@ -596,16 +596,12 @@
     "The next Friday,"
    ],
    [
-    "I came back.",
-    "I came back."
+    "I brought her",
+    "I brought her"
    ],
    [
-    "For the dumplings,",
-    "For the dumplings,"
-   ],
-   [
-    "I told MYSELF.",
-    "I told myself."
+    "a flask of TEA.",
+    "a flask of tea."
    ]
   ]
  },
@@ -1086,20 +1082,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "When I",
-    "When I"
+    "The STALL'S coin.",
+    "The stall's coin."
    ],
    [
-    "walked out,",
-    "walked out,"
+    "And it only lands",
+    "And it only lands"
    ],
    [
-    "I took the",
-    "I took the"
+    "with two of us",
+    "with two of us"
    ],
    [
-    "SUN with ME.",
-    "sun with me."
+    "behind the COUNTER.",
+    "behind the counter."
    ]
   ]
  },
@@ -1108,24 +1104,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "She was left",
-    "She was left"
+    "With only Bea",
+    "With only Bea"
    ],
    [
-    "with a coin",
-    "with a coin"
+    "back there,",
+    "back there,"
    ],
    [
-    "that could only",
-    "that could only"
+    "it could only",
+    "it could only"
    ],
    [
-    "land on",
-    "land on"
-   ],
-   [
-    "the MOON.",
-    "the moon."
+    "ever show the MOON.",
+    "ever show the moon."
    ]
   ]
  },
@@ -1134,16 +1126,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "And mine had",
-    "And mine had"
+    "And out front,",
+    "And out front,"
    ],
    [
-    "nothing to",
-    "nothing to"
+    "my side had",
+    "my side had"
    ],
    [
-    "land ON.",
-    "land on."
+    "nothing to land ON.",
+    "nothing to land on."
    ]
   ]
  },
@@ -1228,20 +1220,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Ours drifted together",
-    "Ours drifted together"
+    "Hers and mine",
+    "Hers and mine"
    ],
    [
-    "over our heads",
-    "over our heads"
+    "spun in step",
+    "spun in step"
    ],
    [
-    "and clicked",
-    "and clicked"
+    "and landed at",
+    "and landed at"
    ],
    [
-    "into ONE.",
-    "into one."
+    "the same MOMENT.",
+    "the same moment."
    ]
   ]
  },
@@ -1250,8 +1242,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "SUN side up.",
-    "sun side up."
+    "Both SUN",
+    "Both sun"
+   ],
+   [
+    "side up.",
+    "side up."
    ]
   ]
  },
@@ -1342,12 +1338,24 @@
     "our queue reached"
    ],
    [
-    "all the way",
-    "all the way"
+    "the ARCH.",
+    "the arch."
    ],
    [
-    "to the ARCH.",
-    "to the arch."
+    "And at the",
+    "And at the"
+   ],
+   [
+    "very back stood",
+    "very back stood"
+   ],
+   [
+    "a customer",
+    "a customer"
+   ],
+   [
+    "with no COIN.",
+    "with no coin."
    ]
   ]
  },
@@ -1378,8 +1386,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Ours is SHARED.",
-    "Ours is shared."
+    "Ours takes",
+    "Ours takes"
+   ],
+   [
+    "two heads.",
+    "two heads."
+   ],
+   [
+    "It doesn't",
+    "It doesn't"
+   ],
+   [
+    "care WHOSE.",
+    "care whose."
    ]
   ]
  }
