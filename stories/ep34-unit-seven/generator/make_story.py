@@ -17,7 +17,7 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 TEMPO = {"L49": 0.88, "L64": 0.9, "L73": 0.95, "L54": 0.93, "L57": 0.95, "L19": 0.95}
-GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.4, "L69": 0.5, "L60": 0.4, "L67": 0.35, "L68": 0.4, "L58": 0.2}
+GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.4, "L69": 0.7, "L60": 0.55, "L67": 0.35, "L68": 0.4, "L58": 0.2}
 LOOP = 0.45          # seconds after the last word: the door's thud lands in it
 for ln in lines:
     if ln["id"] == "L42":
@@ -76,7 +76,7 @@ KEYCAM = still([1.62, 2.14, 1.6], [1.62, 2.18, 1.2], 28)
 
 SHOTS = [
     (0, "L01 low in the corridor: me walking toward the lamp-lit open door seven, round-scribbled boxes inside it",
-     move(([-0.75, -0.7, 1.05], [0.75, 2.9, 1.0]), ([-0.7, -0.35, 1.1], [0.7, 2.9, 1.0]), 22, 22)),
+     move(([-0.95, 1.0, 1.4], [0.6, 3.6, 1.1]), ([-0.95, 1.2, 1.4], [0.6, 3.6, 1.1]), 18, 18)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
     ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.95, 1.3], [1.0, 3.0, 1.15], 22)),
@@ -93,7 +93,7 @@ SHOTS = [
     ("L14", "the corridor from the entrance, lit, empty", still([-0.1, -0.9, 1.5], [-0.1, 10.0, 1.2], 24)),
     ("L15", "the lights click off: my phone's glow, the green ring ahead",
      move(([-0.15, 7.4, 1.5], [-0.4, 0.5, 1.25]), ([-0.15, 6.6, 1.5], [-0.4, 0.5, 1.25]), 24)),
-    ("L16", "long lens: unit eleven's door is up, a dark opening near centre", still([-0.9, -0.8, 1.3], [0.9, 12.2, 1.2], 60)),
+    ("L16", "long lens: unit eleven's door is up, a dark opening near centre", still([-0.8, 6.0, 1.4], [0.9, 12.2, 1.15], 38)),
     ("L17", "closer: the Deep One front-on in unit eleven's doorway", FACE_SIDE(11)),
     ("L18", "mid shot of its front, the face plain", still([-0.5, 12.15, 1.5], [1.2, 12.2, 1.4], 44)),
     ("L19", "me at my door, a small nod", still([-0.1, 6.3, 1.5], [0.0, 3.3, 1.35], 42)),
@@ -109,7 +109,7 @@ SHOTS = [
     ("L26", "close on the ribbed flank and the grime", still([2.2, 10.84, 0.78], [2.0, 10.38, 0.78], 17)),
     ("L27", "front-on again, from beside it: the face to the corridor", still([-0.3, 9.55, 1.55], [1.1, 9.9, 1.55], 42)),
     ("L28", "long lens: unit nine's door is up", LONG_LENS(7.6)),
-    ("L29", "closer: the body side-on, the head turned square round to me, both eyes on the camera", still([0.35, 5.35, 1.58], [1.2, 7.6, 1.55], 48)),
+    ("L29", "closer: the body side-on, the head turned square round to me, both eyes on the camera", still([-0.9, 3.6, 1.55], [1.2, 7.9, 1.55], 70)),
     ("L30", "the hasp, door seven already down", still([-0.1, 3.5, 0.45], [0.9, 3.0, 0.15], 30)),
     ("L31", "the corridor, lit, door eight next to mine", still([-0.35, 0.8, 1.5], [0.9, 5.0, 1.25], 28)),
     ("L32", "door eight's foot, no lock", still([-0.1, 5.7, 0.5], [0.9, 5.3, 0.22], 32)),
@@ -203,8 +203,8 @@ CARRY = {"arms": [80, 80], "side": [-6, -6]}
 SITTING = {"sit": True, "arms": [10, 10], "side": [-8, -8]}
 
 # me
-put("me", 0, [0.3, 2.7], yaw=0, expr="neutral")
-walk("me", "L01>", [0.0, 1.5])
+put("me", 0, [-0.5, 2.4], yaw=-15, expr="neutral")
+walk("me", "L01>", [-0.55, 1.9])
 hide("me", "L02")
 put("me", "L03", [1.2, 2.5], yaw=90, expr="soft")
 put("me", "L04", [1.7, 3.3], yaw=90, expr="neutral", arms=[20, 20])
@@ -240,7 +240,7 @@ put("me", "L39", [SIT[0], SIT[1], SIT_Z], yaw=180, expr="neutral", **SITTING)
 put("me", "L41", [0.5, 3.0], yaw=180)
 walk("me", "L41+0.2", [0.5, 2.5], yaw=180)
 walk("me", "L41.2+0.5", [-0.6, 0.85])
-put("me", "L42", [-0.6, 0.62], yaw=-90, expr="worried", head=[-75, 0])
+put("me", "L42", [-0.6, 0.62], yaw=180, expr="worried")
 hide("me", "L43")
 put("me", "L47", [-0.2, 1.4], yaw=yaw_to([-0.2, 1.4], [1.0, 3.0]), expr="terrified")
 key("me", "L47.3", expr="worried", head=[0, 18], blend=0.3)
@@ -290,14 +290,15 @@ hide("jo", "P01")
 
 # the Deep One: found where it stands, never seen moving
 hide("deep", 0)
-for at, unit, extra in (("L17", 11, {}), ("L22", 10, {}), ("L29", 9, {"head": [-90, 0]})):
-    put("deep", at, [1.2, YC[unit]], yaw=-90, expr="neutral", **extra)
+for at, unit, extra in (("L17", 11, {}), ("L22", 10, {}), ("L29", 9, {"head": [99, 0]})):
+    # unit nine: the body is turned a little away from the corridor and the head a long way round, so the neck reads
+    put("deep", at, [1.2, YC[unit] + (0.3 if unit == 9 else 0.0)], yaw=-115 if unit == 9 else -90, expr="neutral", **extra)
     hide("deep", {"L17": "L21", "L22": "L28", "L29": "L31"}[at])
 put("deep", "L43", [1.2, 3.0], yaw=-90, expr="neutral")
-key("deep", "L48", head=[90, 0], blend=0)
-key("deep", "L49", head=[-90, 0], blend=0)
+key("deep", "L48", head=[-90, 0], blend=0)
+key("deep", "L49", head=[90, 0], blend=0)
 hide("deep", "L52")
-put("deep", "L53", [1.2, 3.0], yaw=-90, head=[-90, 0])
+put("deep", "L53", [1.2, 3.0], yaw=-90, head=[90, 0])
 hide("deep", "L55")
 
 # ---------------------------------------------------------------------------------------------------- cues
@@ -351,6 +352,7 @@ cues = [
     {"at": "L16", "name": "phone", "on": 0.0},
     {"at": "L23", "name": "phone", "on": 1.0},
     {"at": "L23", "name": "torch", "on": 1.0},
+    {"at": "L24", "name": "torch", "on": 0.08},
     {"at": "L26", "name": "torch", "on": 0.3},
     {"at": "L27", "name": "torch", "on": 0.4},
     {"at": "L28", "name": "phone", "on": 0.0},

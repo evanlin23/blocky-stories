@@ -593,7 +593,7 @@ def build_deep(kit, ctx):
         ink = kit.plastic("#0b0b0d", 0.5, name="deep ink")
         glint = kit.plastic("#f4f6ff", 0.3, name="deep glint")
         R = 0.62
-        prof.append(kit.box("deep nose", (0.2, 0.34, 0.3), (0, -R - 0.1, -0.12), skin, hg, bevel=0.05))
+        prof.append(kit.box("deep nose", (0.24, 0.4, 0.34), (0, -R - 0.1, -0.12), skin, hg, bevel=0.05))
         prof.append(kit.box("deep lip", (0.5, 0.1, 0.07), (0, -R + 0.01, -0.36), ink, hg))
         ang = math.radians(62)
         for sx in (-1, 1):
