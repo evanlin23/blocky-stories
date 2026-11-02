@@ -213,7 +213,7 @@ shot("S31", "L24.2", "hut", still(H(0.4, -0.6, 1.2), H(-2.0, -1.0, 1.3), 24),
 shot("S32", "L25", "car", still(C(0.1, 0.35, 1.5), C(0.5, 1.15, 1.05), 26),
      {"grandad": P(C(0.5, 1.1), 70, z=-0.23, expr="asleep", head=[0, 14], blink=False)},
      {"grandad": [CAR[0] + 1.0, CAR[1] + 3.0]})
-shot("S33", "L26", "car", still(C(-0.85, 2.2, 1.3), C(0.45, 0.0, 0.9), 15),
+shot("S33", "L26", "car", still(C(0.05, -1.25, 1.9), C(0.05, 0.7, 1.0), 20),
      {"me": P(C(-0.42, -0.2), 0, z=-0.23, expr="worried"),
       "grandad": P(C(0.5, 1.1), 70, z=-0.23, expr="asleep", head=[0, 14], blink=False)},
      {"me": C(0.5, 1.1), "grandad": [CAR[0] + 1.0, CAR[1] + 3.0]}, flame_ang={"me": 42})
@@ -295,7 +295,7 @@ shot("S64", "L55", "ice", still((85.2, -2.1, 1.1), (88.0, -4.0, 1.0), 40),
 shot("S65", "L56", "ice", still((84.4, -8.0, 2.5), (87.3, -4.8, 1.5), 24),
      {"me": P((86.6, -5.6), 40, expr="soft", head=[0, 10]), "grandad": P(GRANDAD_AT, 215, z=-0.3, expr="neutral")},
      {"me": GRANDAD_AT, "grandad": "shore"})
-shot("S66", "L57", "car", still(C(-0.85, 2.2, 1.3), C(0.45, 0.0, 0.9), 15),
+shot("S66", "L57", "car", still(C(0.05, -1.25, 1.9), C(0.05, 0.7, 1.0), 20),
      {"me": P(C(-0.42, -0.2), 0, z=-0.23, expr="worried"),
       "grandad": P(C(0.5, 1.1), 70, z=-0.23, expr="asleep", head=[0, 14], blink=False)},
      {"me": C(0.5, 1.1), "grandad": [CAR[0] + 1.0, CAR[1] + 3.0]}, flame_ang={"me": 42})
@@ -325,7 +325,7 @@ shot("S74", "L63", "hut", still(H(1.2, -1.5, 1.35), H(0.2, 0.4, 1.0), 26),
 shot("S75", "L64", "hut", still(H(-0.35, -1.0, 1.6), H(-0.35, 0.4, 1.6), 30),
      {"grandad": P(H(-0.35, 0.4), 5, z=-0.26, expr="soft")}, {"grandad": "spin", "swing": ("grandad", "L64.4", H(0.75, 0.4))},
      lap=True)
-shot("S76", "L65", "hut", still(H(0.2, -1.6, 1.3), H(0.2, 0.4, 1.4), 24),
+shot("S76", "L65", "hut", still(H(0.2, -1.6, 1.3), H(0.2, 0.4, 1.4), 18),
      {"me": P(H(0.75, 0.4), -75, z=-0.26, expr="soft"), "grandad": P(H(-0.35, 0.4), 75, z=-0.26, expr="soft")},
      {"me": H(-0.35, 0.4), "grandad": H(0.75, 0.4)}, lap=True)
 shot("S77", "L65.5", "hut", still(H(0.45, -1.4, 1.3), H(0.75, 0.4, 1.3), 45),
@@ -494,6 +494,7 @@ story = {
     "leaner_shots": LEANER_SHOTS,
     "leaves_shots": ["S05"],
     "amber_shots": ["S41"],
+    "leaner_face": {"S50": 1.0, "S51": 1.0, "S54": 1.0},
     "leaner_key": {"S50": 2.2, "S51": 2.2, "S52": 2.2, "S53": 2.2, "S54": 2.2, "S43": 1.6},
     "door_shots": ["S25", "S31", "S39", "S49", "S50", "S51", "S52", "S53", "S54", "S55", "S56", "S57", "S58", "S59", "S70", "S71"],
     "music": {"root": 47, "mode": "minor", "bpm": 64, "seed": 36,

@@ -411,12 +411,15 @@ def build_lights(kit, ctx):
     kit.light("hutfill", "POINT", (RED[0] + 0.6, RED[1] - 0.9, 1.9), 60.0, "#ffb98a", size=0.5)
     # the Leaner's cold key and rim, moved in animate to stand with it
     ctx["lkey"] = kit.light("lkey", "AREA", (0, 0, 2), 150.0, "#aac8ea", size=1.6)
+    ctx["lface"] = kit.light("lface", "POINT", (0, 0, -20), 90.0, "#cfe0f5", size=0.5)
     ctx["lamber"] = kit.light("lamber", "POINT", (0, 0, -20), 60.0, "#ffb060", size=0.25)
     ctx["lrim"] = kit.light("lrim", "SPOT", (0, 0, 2), 260.0, "#9cc4ee", size=0.3, spot=40, blend=0.5)
     # the car: a soft orange from the vents, a pale glow from the roof
     cx, cy = CAR
-    kit.light("carvent", "POINT", (cx, cy - 0.5, 0.85), 90.0, "#ff9a3c", size=0.15)
-    kit.light("carroof", "POINT", (cx, cy + 0.6, 1.9), 120.0, "#9aaed0", size=0.3)
+    kit.light("carvent", "POINT", (cx, cy - 0.5, 0.85), 200.0, "#ff9a3c", size=0.15)
+    kit.light("carroof", "POINT", (cx, cy + 0.6, 1.9), 220.0, "#c8b898", size=0.3)
+    kit.light("carwarm", "POINT", (cx - 0.1, cy + 0.9, 1.35), 260.0, "#ffb070", size=0.4)
+    kit.light("carwarm2", "POINT", (cx + 0.1, cy - 0.3, 1.2), 160.0, "#ffa860", size=0.4)
     # the café and the flat-door fills
     kit.light("cafe", "POINT", (-23.0, -3.0, 2.8), 700.0, "#ffc890", size=0.4)
     # a pale fill at the red hut's door from the fog
@@ -657,7 +660,7 @@ def animate_lights(kit, story, tl, t, ctx, over, d):
     over["hutlamp"] = (0.1 + 0.9 * lamp) if inside else 0.0
     over["hutfill"] = (0.3 + 0.7 * lamp) if inside else 0.0
     over["hutbounce"] = (0.12 + 0.88 * lamp) if inside else 0.0
-    over["carvent"] = over["carroof"] = 1.0 if where == "car" else 0.0
+    over["carvent"] = over["carroof"] = over["carwarm"] = over["carwarm2"] = 1.0 if where == "car" else 0.0
     over["cafe"] = 1.0 if where == "town" else 0.0
     over["doorfill"] = 1.0 if sid in story.get("door_shots", []) else 0.0
     # the Leaner's key and rim: on in its exterior shots, set up from the camera's side
@@ -683,6 +686,8 @@ def animate_lights(kit, story, tl, t, ctx, over, d):
         kit_aim(ctx["lkey"], tuple(head))
         ctx["lrim"].location = head + toward * 2.4 - side * 1.0 + Vector((0, 0, 0.8))
         kit_aim(ctx["lrim"], tuple(head))
+        ctx["lface"].location = head - toward * 1.1 + Vector((0, 0, -0.15)) + side * 0.2
+        over["lface"] = story.get("leaner_face", {}).get(sid, 0.0)
         amber = sid in story.get("amber_shots", [])
         over["lamber"] = 1.0 if amber else 0.0
         if amber:       # the lamp's glow comes through the window and lights the tipped face amber
@@ -690,7 +695,7 @@ def animate_lights(kit, story, tl, t, ctx, over, d):
         over["lkey"] = 0.0 if amber else story.get("leaner_key", {}).get(sid, 1.0)
         over["lrim"] = story.get("leaner_rim", {}).get(sid, 1.0)
     else:
-        over["lkey"] = over["lrim"] = over["lamber"] = 0.0
+        over["lkey"] = over["lrim"] = over["lamber"] = over["lface"] = 0.0
     return over
 
 
