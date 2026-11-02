@@ -53,16 +53,16 @@ ENV = {
                    fill=0.0, dash=0.0),
     "office_five": dict(sun=(0.0, "#ffb26b", (40, -30, 16)), zen="#6a5a7a", hor="#e8a068", wstr=0.9, screen=0.0,
                         scl=0.0, fill=0.05, dash=0.0),
-    "night1": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#10142a", hor="#2a2048", wstr=0.3, screen=1.0, scl=1.0,
-                   fill=0.05, dash=1.0),
-    "night2": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#0c1022", hor="#1e1838", wstr=0.27, screen=1.0, scl=1.0,
-                   fill=0.04, dash=1.0),
-    "night3": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#080c1c", hor="#161230", wstr=0.24, screen=1.0, scl=1.0,
-                   fill=0.03, dash=1.0),
-    "night4": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#060a18", hor="#120e2a", wstr=0.22, screen=1.0, scl=1.0,
-                   fill=0.03, dash=1.0),
-    "warm": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#080c1c", hor="#1c1430", wstr=0.24, screen=1.0, scl=1.0,
-                 fill=0.05, dash=1.6),
+    "night1": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#0a1a4a", hor="#2c5cb4", wstr=0.30, screen=1.0, scl=0.20,
+                   fill=0.0, dash=1.0, bsp=0.16, gnd="#26385e", lamp=0.5),
+    "night2": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#08143a", hor="#244c98", wstr=0.24, screen=1.0, scl=0.16,
+                   fill=0.0, dash=1.0, bsp=0.13, gnd="#1d2d4e", lamp=0.5),
+    "night3": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#060f30", hor="#1c3c7c", wstr=0.19, screen=1.0, scl=0.12,
+                   fill=0.0, dash=1.0, bsp=0.10, gnd="#16233f", lamp=0.5),
+    "night4": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#050c26", hor="#16306a", wstr=0.15, screen=1.0, scl=0.09,
+                   fill=0.0, dash=1.0, bsp=0.08, gnd="#111c34", lamp=0.5),
+    "warm": dict(sun=(0.0, "#9bb0ff", (40, -30, 16)), zen="#060f30", hor="#0c2250", wstr=0.20, screen=1.0, scl=0.14,
+                 fill=0.0, dash=1.6, bsp=0.12, gnd="#16233f", lamp=0.6),
 }
 PAINT = {"C": "#e8dcc0", "T": "#3b7d7a", "B": "#9a4a3a"}
 # (x, y, paint). Theo's cream car is row 1 at x = 3.4, mine the teal one in row 4. Columns 3.4 in rows 2, 3 and 5
@@ -258,14 +258,14 @@ def build_car(kit, name, x, y, paint, near, ctx):
     if near:
         # the old speaker box hooked over the driver window's edge, with a grille
         hinge = doors[-1]
-        sm = kit.plastic("#8d9094", 0.5)
+        sm = kit.plastic("#b4b8bc", 0.5)
         box(kit, f"{name}.spk", (0.34, 0.5, 0.52), (-0.02, -1.0, 1.15), sm, hinge, 0.03)
-        box(kit, f"{name}.spkgrille", (0.04, 0.34, 0.34), (-0.2, -1.0, 1.15), kit.plastic("#2a2c2e", 0.7), hinge)
+        box(kit, f"{name}.spkgrille", (0.04, 0.38, 0.14), (-0.2, -1.0, 1.28), kit.plastic("#2a2c2e", 0.7), hinge)
         box(kit, f"{name}.spkhook", (0.2, 0.06, 0.06), (0.0, -1.0, 1.43), sm, hinge)
         if name == "theo":      # the lore plant: two short soot-black tally strokes pressed into the metal face
             sootm = kit.plastic("#050505", 0.9)
-            for dy in (-0.08, 0.08):
-                box(kit, f"{name}.tally{dy}", (0.03, 0.045, 0.22), (-0.235, -1.0 + dy, 1.15), sootm, hinge)
+            for dy in (-0.07, 0.07):
+                box(kit, f"{name}.tally{dy}", (0.03, 0.05, 0.2), (-0.2, -1.0 + dy, 1.05), sootm, hinge)
     ctx["cars"][name] = {"root": root, "doors": doors, "roof": roof, "x": x, "y": y}
     return root
 
@@ -273,6 +273,7 @@ def build_car(kit, name, x, y, paint, near, ctx):
 def build_lot(kit, ctx):
     ground = kit.grime("#6a6460", 0.6, 1.6)
     kit.plane("ground", (2400, 500), (400, -100, 0), ground)
+    ctx["gnd"] = [n for n in ground.node_tree.nodes if n.type == "VALTORGB"]
     # screen: a frame, posts, an emissive face whose colour drifts
     dark = kit.plastic("#1d1c22", 0.8)
     kit.box("screen.frame", (SCREEN_W + 1.2, 0.5, SCREEN_H + 1.2), (0, SCREEN_Y + 0.35, SCREEN_Z0 + SCREEN_H / 2), dark)
@@ -361,11 +362,11 @@ def build_lot(kit, ctx):
     dm, de = flat_emit(kit, "dust", "#cfd8e8", 1.0)
     verts, fcs = [], []
     for i in range(160):
-        yy = rnd.uniform(-52, 44)
+        yy = rnd.uniform(-52, 18)
         u = (yy - ay) / (ey - ay)
         xx = rnd.uniform(-1, 1) * (0.3 + u * 12.7)
         zz = az + (rnd.uniform(0, 1) * (SCREEN_H + 0.05) * u) + 0.25 * (1 - u) * rnd.uniform(-1, 1)
-        s = rnd.uniform(0.008, 0.02) * (1.0 + 0.03 * abs(yy + 60))
+        s = rnd.uniform(0.006, 0.014) * (1.0 + 0.012 * abs(yy + 60))
         b0 = len(verts)
         verts += [(xx - s, yy, zz - s), (xx + s, yy, zz - s), (xx + s, yy, zz + s), (xx - s, yy, zz + s)]
         fcs.append((b0, b0 + 1, b0 + 2, b0 + 3))
@@ -387,6 +388,8 @@ def build_lot(kit, ctx):
         c = ctx["cars"][n]
         kit.light(f"dash.{n}", "POINT", (c["x"], c["y"] + 0.7, 1.0), 14.0, "#ffb070", size=0.2)
     kit.light("spk.glow", "POINT", (0.7, -20.3, 1.5), 8.0, "#ffe0b0", size=0.2)
+    kit.light("unlit.back", "POINT", (0, 0, 3), 1.0, "#7f9ae0", size=0.5)
+    kit.light("cabin", "POINT", (3.4, 0.1, 1.8), 1.0, "#9fb4ff", size=0.3)
 
 
 # ======================================================================================================= rooms
@@ -496,15 +499,17 @@ def build_props(kit, ctx):
     pm = kit.plastic("#d8b85a", 0.4)
     kit.sphere("tub.pop", 0.24, (0, 0, 0.36), pm, tub, seg=10)
     kit.cyl("tub.stripe", 0.225, 0.08, (0, 0, 0.12), kit.plastic("#c0392b", 0.5), tub)
+    tub.scale = (1.9, 1.9, 1.9)
     ctx["tub"] = tub
     # the phone's screen in the sofa vignette: a man holding up his phone, drawn
     from PIL import Image, ImageDraw
-    im = Image.new("RGB", (200, 360), (28, 34, 52))
+    im = Image.new("RGB", (200, 360), (50, 64, 104))
     d = ImageDraw.Draw(im)
-    d.rectangle([60, 215, 140, 360], fill=(70, 100, 140))
+    d.rectangle([60, 215, 140, 360], fill=(96, 140, 190))
     d.rectangle([76, 140, 124, 218], fill=(214, 168, 130))
     d.rectangle([70, 118, 130, 150], fill=(60, 44, 30))
     d.ellipse([36, 14, 164, 128], outline=(255, 207, 90), width=7)
+    d.ellipse([88, 168, 98, 180], fill=(30, 24, 20)); d.ellipse([102, 168, 112, 180], fill=(30, 24, 20)); d.rectangle([90, 196, 110, 202], fill=(120, 60, 50))
     d.polygon([(100, 36), (118, 50), (118, 70), (130, 96), (70, 96), (82, 70), (82, 50)], fill=(10, 10, 14))
     d.ellipse([84, 38, 116, 74], fill=(10, 10, 14))
     d.rectangle([72, 60, 128, 76], fill=(10, 10, 14))
@@ -520,12 +525,15 @@ def build_props(kit, ctx):
     nt.nodes.remove(nt.nodes["Principled BSDF"])
     tex = nt.nodes.new("ShaderNodeTexImage")
     tex.image = img
+    tcg = nt.nodes.new("ShaderNodeTexCoord")
+    nt.links.new(tcg.outputs["Generated"], tex.inputs["Vector"])
     em = nt.nodes.new("ShaderNodeEmission")
-    em.inputs["Strength"].default_value = 1.2
+    em.inputs["Strength"].default_value = 3.0
     nt.links.new(tex.outputs["Color"], em.inputs["Color"])
     out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
     nt.links.new(em.outputs[0], out.inputs["Surface"])
     scr = kit.plane("phone.screen", (0.3, 0.54), (599.5, -0.605, 1.02), m, rot=(math.pi / 2 - 0.35, 0, 0))
+    scr.scale = (1.3, 1.3, 1.3)
     # world gradient for the sky
     w = bpy.context.scene.world
     nt = w.node_tree
@@ -587,8 +595,8 @@ def build_markers(kit, ctx, story):
                                  [(d * 0.5, 5.2), (d * 1.15, 5.12), (d * 1.15, 5.02), (d * 0.5, 5.02)]]):
             poly(kit, f"giant.{who}.p{i}", pts, sm, prof)
         # tuft on Theo's shadow? No: Theo's shadow is plain; his tuft is on the cap in my ring (the outline of Theo)
-        ring = kit.empty(f"giant.{who}.ring", (0, 0, 7.4), root)
-        ring.scale = (2.1, 1.0, 2.1)
+        ring = kit.empty(f"giant.{who}.ring", (0, 0, 6.1), root)
+        ring.scale = (0.7, 1.0, 0.7)
         for i, quad in enumerate(ellipse_band(0, 0, 0.62, 0.8, 0.07)):
             poly(kit, f"giant.{who}.r{i}", quad, gring, ring, y=-0.02)
         gs = kit.empty(f"giant.{who}.sil", (0, 0, 0), ring)
@@ -630,32 +638,94 @@ def ready_unlit(kit, ctx):
             continue
         for k in ("Specular IOR Level", "Specular"):
             if k in b.inputs:
-                b.inputs[k].default_value = 0.02
+                b.inputs[k].default_value = 0.0
                 break
-        b.inputs["Roughness"].default_value = 0.95
+        b.inputs["Roughness"].default_value = 1.0
         for lk in list(b.inputs["Base Color"].links):      # no light lands on it: a black surface, rim and glints only
             nt.links.remove(lk)
-        b.inputs["Base Color"].default_value = (0.0, 0.0, 0.0, 1.0)
-        lw = nt.nodes.new("ShaderNodeLayerWeight")
-        lw.inputs["Blend"].default_value = 0.72
-        pw = nt.nodes.new("ShaderNodeMath")
-        pw.operation = "POWER"
-        pw.inputs[1].default_value = 5.0
-        pm = nt.nodes.new("ShaderNodeMath")
-        pm.operation = "MULTIPLY"
-        pm.inputs[1].default_value = 1.1
-        nt.links.new(lw.outputs["Facing"], pw.inputs[0])
-        nt.links.new(pw.outputs[0], pm.inputs[0])
+        b.inputs["Base Color"].default_value = kit.col("#050506")
+        gm_ = nt.nodes.new("ShaderNodeNewGeometry")
+        bv = nt.nodes.new("ShaderNodeBevel")
+        bv.inputs["Radius"].default_value = 0.03
+        bv.samples = 6
+
+        def _adot(nrm):
+            dt = nt.nodes.new("ShaderNodeVectorMath")
+            dt.operation = "DOT_PRODUCT"
+            nt.links.new(nrm, dt.inputs[0])
+            nt.links.new(gm_.outputs["Incoming"], dt.inputs[1])
+            ab = nt.nodes.new("ShaderNodeMath")
+            ab.operation = "ABSOLUTE"
+            nt.links.new(dt.outputs["Value"], ab.inputs[0])
+            return ab
+
+        def _math(op, a=None, b_=None, va=None, vb=None, clamp=False):
+            n = nt.nodes.new("ShaderNodeMath")
+            n.operation = op
+            n.use_clamp = clamp
+            if a is not None:
+                nt.links.new(a, n.inputs[0])
+            elif va is not None:
+                n.inputs[0].default_value = va
+            if b_ is not None:
+                nt.links.new(b_, n.inputs[1])
+            elif vb is not None:
+                n.inputs[1].default_value = vb
+            return n
+
+        ag = _adot(gm_.outputs["Normal"])
+        abv = _adot(bv.outputs["Normal"])
+        edge = _math("SUBTRACT", ag.outputs[0], abv.outputs[0], clamp=True)         # only where the bevel tilts the normal away
+        edge = _math("MULTIPLY", edge.outputs[0], vb=5.0)
+        graz = _math("SUBTRACT", None, abv.outputs[0], va=1.0)
+        graz = _math("POWER", graz.outputs[0], vb=16.0)
+        tot = _math("ADD", edge.outputs[0], graz.outputs[0])
+        pm = _math("MULTIPLY", tot.outputs[0], vb=3.0)
+        ctx.setdefault("rimnodes", []).append(pm)
         nt.links.new(pm.outputs[0], b.inputs["Emission Strength"])
         b.inputs["Emission Color"].default_value = kit.col("#7f9ed6")
     # the head's two glints, the brightest thing on it
+    build_halo(kit, ctx)
     hg = bpy.data.objects["unlit.headg"]
-    gm, _ = flat_emit(kit, "glint", "#e6f0ff", 60.0)
+    gm, ge = flat_emit(kit, "glint", "#cfdfff", 3.5)
+    ctx["glintem"] = ge
     ctx["glints"] = []
-    for sx in (-1, 1):
-        g = kit.sphere(f"unlit.glint{sx}", 0.075, (sx * 0.2, -0.6, 0.1), gm, hg, seg=8)
+    for sx in (-1, 1):       # narrow slits, slanted a little: glints, not dots
+        g = kit.box(f"unlit.glint{sx}", (0.15, 0.02, 0.03), (sx * 0.2, -0.61, 0.1), gm, hg, rot=(0, sx * 0.35, 0))
         g.visible_shadow = False
         ctx["glints"].append(g)
+
+
+def build_halo(kit, ctx):
+    m = kit._new("halo")
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    e = nt.nodes.new("ShaderNodeEmission")
+    e.inputs["Color"].default_value = kit.col("#4f78c8")
+    e.inputs["Strength"].default_value = 1.8
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    vm = nt.nodes.new("ShaderNodeMapping")
+    vm.inputs["Scale"].default_value = (1 / 2.1, 1 / 2.7, 0.0)
+    ln = nt.nodes.new("ShaderNodeVectorMath")
+    ln.operation = "LENGTH"
+    mr = nt.nodes.new("ShaderNodeMapRange")
+    mr.inputs["From Min"].default_value = 0.0
+    mr.inputs["From Max"].default_value = 1.0
+    mr.inputs["To Min"].default_value = 0.5
+    mr.inputs["To Max"].default_value = 0.0
+    nt.links.new(tc.outputs["Object"], vm.inputs["Vector"])
+    nt.links.new(vm.outputs["Vector"], ln.inputs[0])
+    nt.links.new(ln.outputs["Value"], mr.inputs["Value"])
+    nt.links.new(mr.outputs["Result"], mx.inputs[0])
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(e.outputs[0], mx.inputs[2])
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    nt.links.new(mx.outputs[0], out.inputs["Surface"])
+    h = kit.plane("unlit.halo", (4.2, 5.4), (0, 0, 0), m)
+    h.visible_shadow = False
+    ctx["halo"] = h
 
 
 def ready_cast(kit, ctx):
@@ -695,6 +765,7 @@ def animate(kit, story, tl, t, ctx):
     shot = _shot(tl, t)
     sid = shot["id"]
     over = {}
+    cam_early = _cam(tl, story, t, shot)
     # ---- the lighting preset of this shot
     env = None
     for c in _cues(tl, "env"):
@@ -708,12 +779,15 @@ def animate(kit, story, tl, t, ctx):
     over["sun"] = sg
     over["fill"] = E["fill"]
     beam = _ramp(_cues(tl, "beam"), t, "v", 0.0)
-    over["beamspot"] = beam * (1.0 if E["screen"] > 0.95 else 0.0)
+    over["beamspot"] = beam * (E.get("bsp", 1.0) if E["screen"] > 0.95 else 0.0)
     over["screenlight"] = E["scl"] * (0.04 + 0.96 * beam) if E["scl"] > 0 else 0.0
     for n in ("theo", "me"):
         over[f"dash.{n}"] = E["dash"]
     over["spk.glow"] = 1.0 if sid == "S38" else 0.0
-    over["lampA"] = over["lampB"] = 1.0 if E["screen"] > 0.95 else 0.0
+    over["lampA"] = over["lampB"] = E.get("lamp", 1.0) if E["screen"] > 0.95 else 0.0
+    ctx["gnd"][0].color_ramp.elements[1].color = kit.col(E.get("gnd", "#6a6460"))
+    gc = kit.col(E.get("gnd", "#6a6460"))
+    ctx["gnd"][0].color_ramp.elements[0].color = (gc[0] * 0.55, gc[1] * 0.55, gc[2] * 0.55, 1)
     day = env in ("office_five",)
     over["off.lamp"] = 0.0 if env == "office_five" else 1.0
     over["off.cold"] = 0.0 if env == "office_five" else 1.0
@@ -725,6 +799,21 @@ def animate(kit, story, tl, t, ctx):
     sk["hor"].default_value = kit.col(E["hor"])
     sk["zen"].default_value = kit.col(E["zen"])
     sk["bg"].inputs["Strength"].default_value = E["wstr"]
+    # a small light that rides with the shots that sit in or beside a cabin (steady, so no flash)
+    CAB = {"S41": ((3.4, 0.4, 1.45), 14, "#9fb4ff"), "S42": ((3.9, 0.5, 1.5), 14, "#9fb4ff"),
+           "S60": ((-3.4, 1.0, 2.5), 260, "#ffd9a8"), "S61": ((0.4, -2.4, 2.0), 420, "#ffd9a8"),
+           "S67": ((4.9, 0.6, 2.2), 330, "#ffd9a8"), "S68": ((3.9, 0.4, 2.3), 120, "#ffd9a8"),
+           "S69": ((3.4, 0.9, 2.1), 160, "#ffd9a8"), "S70": ((0.6, -0.2, 1.65), 60, "#ffe0b8"),
+           "S08": ((599.9, -1.6, 1.7), 90, "#cfd8ff"), "S14": ((699.9, 1.0, 2.5), 90, "#ffd0a0"),
+           "S11": ((2.0, 2.0, 3.0), 160, "#ffd9a8")}
+    cb = CAB.get(sid)
+    cl = kit.LIGHTS["cabin"]
+    if cb:
+        cl["obj"].location = cb[0]
+        cl["light"].color = hexv(kit, cb[2])[:3]
+        over["cabin"] = cb[1]
+    else:
+        over["cabin"] = 0.0
     # ---- the screen: a slow drift of colour; its brightness follows the beam (a fade of 1.5 s or more)
     scr = ctx["screen"]
     scr["map"].inputs["Location"].default_value = (0.0, t * 0.05, t * 0.035)
@@ -732,8 +821,8 @@ def animate(kit, story, tl, t, ctx):
         scr["em"].inputs["Strength"].default_value = E["screen"] * (0.04 + 0.96 * beam)
     else:
         scr["em"].inputs["Strength"].default_value = E["screen"]
-    ctx["beam"]["mul"].inputs[1].default_value = 0.30 * beam
-    ctx["dust"]["em"].inputs["Strength"].default_value = 1.5 * beam
+    ctx["beam"]["mul"].inputs[1].default_value = 0.07 * beam
+    ctx["dust"]["em"].inputs["Strength"].default_value = 0.9 * beam
     vis_beam = beam > 0.001
     ctx["beam"]["obj"].hide_render = not vis_beam
     ctx["dust"]["obj"].hide_render = not vis_beam
@@ -773,9 +862,11 @@ def animate(kit, story, tl, t, ctx):
     for ob in lc.children:
         ob.hide_render = capon
     if sid == "S14":
-        lc.location, lc.rotation_euler = (698.8, 2.5, 1.9), (0, 0, math.pi)
+        lc.location, lc.rotation_euler = (699.35, 2.3, 1.75), (0, 0, 0)
+        lc.scale = (1.7, 1.7, 1.7)
     else:
         lc.location, lc.rotation_euler = (4.35, -21.3, 0.62), (0, 0, 0.4)
+        lc.scale = (1.0, 1.0, 1.0)
     # ---- the popcorn tub: on the bench in S13, sliding to me at L62, gone otherwise
     tub = ctx["tub"]
     show = sid == "S13" or sid == "S69"
@@ -796,10 +887,39 @@ def animate(kit, story, tl, t, ctx):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg is not None:
                 leg.rotation_euler = (-math.pi / 2, 0, 0) if sitting else leg.rotation_euler
-    # ---- the Unlit's glints follow its hidden state
     root = bpy.data.objects.get("unlit")
+    ub = kit.LIGHTS["unlit.back"]
+    seated_u = sid in ("S40", "S41", "S42", "S43", "S44", "S45")
+    if root is not None and not root.hide_render and not seated_u:
+        loc_u = root.matrix_world.translation
+        ub["obj"].location = (loc_u.x, loc_u.y + 2.6, 2.6)
+        over["unlit.back"] = 0.0
+    else:
+        over["unlit.back"] = 0.0
+    # ---- the Unlit's glints follow its hidden state; its rim and glints grow with the distance from the camera
+    root = bpy.data.objects.get("unlit")
+    if cam_early is not None and root is not None:
+        dd = (cam_early - root.matrix_world.translation).length
+        for pmn in ctx.get("rimnodes", []):
+            pmn.inputs[1].default_value = 2.0 * (1.0 + dd / 4.0)
+        ctx["glintem"].inputs["Strength"].default_value = 3.5 * (1.0 + dd / 15.0)
+    gsc = 1.0 + (min(1.6, dd / 8.0) if cam_early is not None and root is not None else 0.0)
     for g in ctx.get("glints", []):
         g.hide_render = root.hide_render
+        g.scale = (gsc, 1.0, gsc)
+    # a soft pale-blue mist card behind the standing Unlit, so its black reads against something
+    halo = ctx.get("halo")
+    if halo is not None:
+        on = root is not None and not root.hide_render and not seated_u and cam_early is not None
+        halo.hide_render = not on
+        if on:
+            lu = root.matrix_world.translation
+            ang = math.atan2(cam_early.x - lu.x, -(cam_early.y - lu.y))
+            dirv = V((lu.x - cam_early.x, lu.y - cam_early.y, 0)).normalized()
+            halo.location = (lu.x + dirv.x * 1.6, lu.y + dirv.y * 1.6, 1.9)
+            halo.rotation_euler = (math.pi / 2, 0, ang)
+            hs = 1.0 + dd / 9.0
+            halo.scale = (hs, hs, hs)
     # ---- markers
     cam = _cam(tl, story, t, shot)
     ring_v = _ramp(_cues(tl, "ring"), t, "v", 1.0)
@@ -820,7 +940,7 @@ def animate(kit, story, tl, t, ctx):
             mk["root"].rotation_euler = (0, 0, a)
         mk["sil"].rotation_euler = (0, 0, math.radians(turns.get(who, 0.0)))
         f = ring_v if who == "theo" else 1.0
-        grey = 0.04 + 0.5 * (1 - f) ** 1.3
+        grey = 0.04 + 0.78 * (1 - f) ** 0.8
         gv = int(min(255, grey * 255 * 1.05))
         mk["em"].inputs["Color"].default_value = kit.col("#%02x%02x%02x" % (gv, gv, gv))
         mk["mix"].inputs[0].default_value = max(0.0, min(1.0, f * 1.8))
@@ -835,9 +955,9 @@ def animate(kit, story, tl, t, ctx):
                 t0, rise = c["t"], c.get("rise", 1.0)
         for ob in [g["root"]] + list(g["root"].children_recursive):
             ob.hide_render = not on
-        k = 0.3 + 0.7 * _ss((t - t0) / max(0.01, rise))
+        k = 0.5 + 0.5 * _ss((t - t0) / max(0.01, rise))
         turned = turn_t is not None and t >= turn_t
-        g["root"].scale = (1.5 * k, 1.0, 1.5 * k)
+        g["root"].scale = (2.4 * k, 1.0, 2.4 * k)
         x0 = (g["x"] if not turned else 2.6) if who == "theo" else (-3.2 if not turned else -2.6)
         # my shadow starts centred, then Theo's joins on the right
         g["root"].location = (x0 if sid not in ("S52", "S53", "S54", "S55", "S56", "S57", "S58") else (-0.0 if who == "me" else x0),

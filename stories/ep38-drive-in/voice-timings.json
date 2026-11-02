@@ -1154,58 +1154,50 @@
    ]
   },
   "L43": {
-   "text": "And a silhouette is only the size of a hand.",
+   "text": "Everyone, even Theo, read mine as me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.19,
-   "onset": 0.155,
-   "end": 1.983,
-   "chunks": [
-    [
-     0.155,
-     0.681
-    ],
-    [
-     0.681,
-     1.061
-    ],
-    [
-     1.061,
-     1.388
-    ],
-    [
-     1.388,
-     1.983
-    ]
-   ]
-  },
-  "L44": {
-   "text": "From three rows back, he'd never even seen mine.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.293,
+   "dur": 2.103,
    "onset": 0.172,
-   "end": 2.103,
+   "end": 1.914,
    "chunks": [
     [
      0.172,
      0.448
     ],
     [
-     0.448,
-     0.897
+     0.474,
+     0.983
     ],
     [
-     0.922,
-     1.371
+     1.052,
+     1.397
     ],
     [
-     1.371,
-     2.103
+     1.397,
+     1.914
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Nobody ever looked closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.397
     ]
    ]
   },
