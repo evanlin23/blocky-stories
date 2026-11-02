@@ -686,6 +686,7 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
                 lit = SEG.get(ch, "") if s > 0.02 else ""
                 lay.scale = (1, max(s, 0.001), 1)
                 lay.location.y = anchor * (1 - s) * NUM_H / 2
+                lay.location.x = -0.065 if ch == "1" else 0.0   # the one's bar sits at its cell's right edge: pull it in
                 for sn, o in segs.items():
                     o.hide_render = sn not in lit
 

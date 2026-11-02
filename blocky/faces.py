@@ -210,8 +210,8 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
             if eyes == "tired" or expr == "angry":
                 ry *= 0.78
             if eyes == "negative":
-                _ellipse(d, cx, ey, rx, max(2, ry), fill=(5, 6, 7), outline=inkc, width=th)
-                pr = rx * 0.26
+                _ellipse(d, cx, ey, rx, max(2, ry), fill=(5, 6, 7))   # no ring: black eyes, pinprick pupils
+                pr = rx * 0.13
                 if ry > rx * 0.3:
                     _ellipse(d, cx + lx * rx * 0.35, ey + ly * ry * 0.3, pr, min(pr, ry * 0.9), fill=pup)
             elif eyes == "mirror":   # the same box as a round eye's outline, so never bigger; black to the edge

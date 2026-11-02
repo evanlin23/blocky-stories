@@ -234,34 +234,34 @@
    ]
   },
   "L09": {
-   "text": "I always figured the one was me. Who else would it be?",
+   "text": "Tam stopped saying my name years ago. So the one was me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.466,
+   "dur": 2.793,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 2.586,
    "chunks": [
     [
      0.172,
-     0.75
+     0.819
     ],
     [
-     0.75,
-     0.931
+     0.819,
+     1.103
     ],
     [
-     0.931,
-     1.345
+     1.103,
+     1.569
     ],
     [
-     1.448,
-     1.767
+     1.664,
+     1.983
     ],
     [
-     1.767,
-     2.259
+     1.983,
+     2.586
     ]
    ]
   },
@@ -1174,26 +1174,26 @@
    ]
   },
   "L45": {
-   "text": "I wasn't even in his number anymore.",
+   "text": "Like even I didn't count anymore.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
+   "dur": 1.741,
    "onset": 0.172,
-   "end": 1.707,
+   "end": 1.534,
    "chunks": [
     [
      0.172,
-     0.741
+     0.517
     ],
     [
-     0.741,
-     0.914
+     0.517,
+     0.957
     ],
     [
-     0.914,
-     1.707
+     0.957,
+     1.534
     ]
    ]
   },
@@ -1362,34 +1362,30 @@
    ]
   },
   "L53": {
-   "text": "Tam. The only person in town who ever said my name.",
+   "text": "Tam. He still said my name, in his sleep.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.638,
+   "dur": 1.983,
    "onset": 0.172,
-   "end": 2.448,
+   "end": 1.776,
    "chunks": [
     [
      0.172,
-     0.448
+     0.414
     ],
     [
-     0.5,
-     1.077
+     0.439,
+     0.836
     ],
     [
-     1.077,
-     1.5
+     0.836,
+     1.121
     ],
     [
-     1.5,
-     1.819
-    ],
-    [
-     1.819,
-     2.448
+     1.147,
+     1.776
     ]
    ]
   },
@@ -1674,26 +1670,26 @@
    ]
   },
   "L65": {
-   "text": "Like it had only been holding my place.",
+   "text": "The seat was still warm from the lamp.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.172,
-   "end": 1.707,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.517,
    "chunks": [
     [
-     0.172,
-     0.431
+     0.155,
+     0.483
     ],
     [
-     0.431,
-     1.017
+     0.483,
+     0.897
     ],
     [
-     1.017,
-     1.707
+     0.897,
+     1.517
     ]
    ]
   },

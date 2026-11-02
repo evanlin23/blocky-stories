@@ -42,7 +42,7 @@ cast = {
     "tam": person("#b9a98a", "#3a3f4c", "#efc9a5", "spiky", "#3a2616", "#d8d4cc", extras=["glasses", "hooddown"],
                   extra_c="#141414", face={"eyes": "tired", "brows": True, "ink": "#1c1416", "bags": True}),
     "neg": person("#36755f", "#d4caaf", "#15181c", "cap", "#ececec", "#f2f2f2", pattern="knit", pattern_c="#2c6551",
-                  face={"eyes": "negative", "brows": True, "ink": "#f2f2f2", "pupil": "#ffffff"}),
+                  face={"eyes": "negative", "brows": True, "ink": "#f2f2f2", "pupil": "#ffffff", "mouth": "line"}),
     "baker": person("#e8c030", "#4a3f36", "#f0c8a0", "none", hat="beanie", hat_c="#f6f3ea", extras=["apron"],
                     extra_c="#f6f3ea"),
     "woman": person("#2a8a8a", "#2a2f3a", "#d9a47e", "bun", "#4a2a1a", extras=["coat"], zip_c="#1d6666"),
@@ -125,14 +125,14 @@ def stp(i, dx=0.0):
 
 
 STEP_PEOPLE = {   # who: (step, dx, number)
-    "e1": (3, -0.75, 41), "e2": (4, 0.0, 212), "e3": (3, 0.75, 18),
+    "e1": (3, -0.72, 41), "e2": (2, 0.0, 212), "e3": (3, 0.72, 18),
     "e4": (1, -2.4, 133), "e5": (2, -1.6, 7), "e6": (2, 1.7, 56), "e7": (1, 2.5, 320), "e8": (4, -2.2, 24),
     "e9": (5, 2.0, 91), "e10": (5, -0.9, 15),
 }
 
 # 01 the rule, shown (steps, party, station, door, kitchen)
-S(0, "steps", ([0.0, -5.6, 2.0], [0.0, -1.0, 2.3], 28, [0.0, -5.1, 2.0], [0.0, -1.0, 2.33], 28),
-  {w: {"p": stp(i, dx), "yaw": 0, "num": n, "numz": (0.42 if w == "e2" else 0.0)} for w, (i, dx, n) in list(STEP_PEOPLE.items())[:3]})
+S(0, "steps", ([0.0, -5.4, 1.85], [0.0, -1.0, 1.85], 31, [0.0, -5.1, 1.85], [0.0, -1.0, 1.85], 31),
+  {w: {"p": stp(i, dx), "yaw": 0, "num": n, "numz": (0.4 if w == "e2" else 0.0)} for w, (i, dx, n) in list(STEP_PEOPLE.items())[:3]})
 S("L01.2", "steps", ([1.2, -9.5, 3.4], [0.0, 0.0, 1.5], 24, [0.4, -9.0, 3.3], [0.0, 0.0, 1.5], 24),
   {w: {"p": stp(i, dx), "yaw": 0, "num": n} for w, (i, dx, n) in list(STEP_PEOPLE.items())[3:]})
 S("L02", "steps", ([1.6, -7.6, 1.5], [0.2, -3.3, 2.0], 32),
@@ -194,8 +194,8 @@ S("P01", "room", ([2.6, -4.6, 1.45], [4.15, -4.6, 1.4], 50),
 S("L20.2", "room", ([4.15, -4.6, 1.45], [6.3, 0.4, 1.3], 40),
   {"neg": {"p": [*D_NEG, SEAT_Z], "yaw": -90, **NEG_SIT}, "e11": {"p": PARK}, "e12": {"p": PARK}})
 S("L21", "room", ([3.7, -0.9, 1.35], [6.35, 0.45, 1.35], 36), {})
-S("L22", "room", ([5.1, -0.5, 1.55], [6.35, 0.4, 1.5], 56), {})
-S("L23", "room", ([5.0, 0.0, 1.5], [6.35, 0.4, 1.6], 85), {})
+S("L22", "room", ([3.1, 0.4, 1.45], [6.35, 0.4, 1.45], 40), {})
+S("L23", "room", ([3.2, -1.3, 1.7], [6.35, 0.4, 1.5], 42), {})
 S("L24", "room", ([4.75, -4.5, 1.2], [4.9, 0.4, 1.4], 60), {})
 S("L25", "room", ([5.0, -0.8, 0.7], [6.35, 0.4, 2.1], 36),
   {"e11": {"p": [4.45, -1.4, SEAT_Z]}, "e12": {"p": [4.45, 1.2, SEAT_Z]}})
@@ -232,7 +232,7 @@ S("L32.3", "room", ([-7.0, -0.55, 0.98], [-7.0, 0.25, 0.8], 36), {}, tally=True)
 S("L33", "room", ([0.0, 3.0, 3.0], [-5.4, -0.5, 1.2], 22),
   {"neg": {"p": [*B_NEG, SEAT_Z], "yaw": 180, "head": [90, 4]}, "e12": {"p": [4.45, 1.2, SEAT_Z]}})
 S("L34", "room", ([-4.9, -1.5, 1.7], [-7.0, -0.3, 0.9], 36), {})
-S("L35", "room", ([-6.1, -0.95, 1.38], [-5.3, -0.95, 1.4], 44), {})
+S("L35", "room", ([-7.5, -2.6, 1.7], [-5.3, -0.95, 1.4], 30), {})
 S("L36", "room", ([-7.0, 1.7, 2.0], [-7.0, -1.0, 2.1], 34), {"tam": {"roll": [("L36+0.25", 2)]}})
 # 08 the closing timer
 S("L37", "room", ([-3.0, 3.6, 2.6], [-3.0, 8.0, 2.55], 40), {}, lamps_down="L37+0.8", dome_dim=True)
@@ -242,10 +242,10 @@ S("L40", "room", ([-5.4, -1.8, 1.8], [-7.0, 0.1, 1.9], 30),
   {"neg": {"p": [*OLD_AT, SEAT_Z], "yaw": 0, "head": [0, 0]}}, oldseat=True)
 S("L41", "room", ([2.6, -4.6, 1.45], [4.15, -4.6, 1.4], 50),
   {"me": {"expr": "worried", "head": [0, 0]}}, lamps_up="L41-0.1")
-S("P02", "room", ([-5.3, -0.65, 1.3], [-7.0, 0.15, 1.12], 26),
-  {"neg": {"bend": 62, "arms": [26, 26], "head": [58, -58]},
-   "tam": {"bend": 36, "head": [0, 22], "num": 2, "roll": [("P02>+0.35", 1)]}}, reveal=True)
-S("L42.3", "room", ([-7.0, 1.9, 1.55], [-7.0, -0.95, 1.4], 30), {})
+S("P02", "room", ([-3.3, 0.0, 2.0], [-7.0, 0.0, 1.6], 20),
+  {"neg": {"bend": 62, "arms": [26, 26], "head": [38, -45]},
+   "tam": {"bend": 20, "head": [-30, 8], "num": 2, "roll": [("P02>+0.35", 1)]}}, reveal=True)
+S("L42.3", "room", ([-4.4, 0.0, 2.0], [-7.0, 0.0, 1.4], 30), {})
 S("L43", "room", ([-7.0, 1.9, 2.1], [-7.0, -1.0, 2.0], 32), {})
 S("L44", "room", ([-6.4, 0.2, 2.15], [-7.0, -1.0, 2.1], 40), {})
 S("L45", "room", ([4.0, -4.3, 1.55], [-7.0, 0.1, 1.35], 60), {})
@@ -317,9 +317,9 @@ S("L69", "room", ([-7.0, 1.5, 1.55], [-7.0, -0.95, 1.4], 40),
   {"tam": {"expr": "wide", "head": [0, -4], "arms": [58, 50], "bend": 0,
            "then": [("L69.3", {"expr": "grin"}, 0.3)]}})
 S("L70", "room", ([-4.2, 3.4, 4.3], [-7.0, 0.0, 1.5], 26),
-  {"tam": {"roll": [("L70+0.4", 21)]}, "me": {"roll": [("L70+1.0", 21)]}})
+  {"tam": {"roll": [("L70+0.4", 21)]}, **{w: {"num_off": True} for w in ("e7", "e8", "e9", "e10")}})
 S("L71", "room", ([-7.0, 1.4, 2.0], [-7.0, 0.95, 2.35], 32, [-7.0, 1.4, 2.0], [-7.0, -0.3, 2.0], 32),
-  {"tam": {"expr": "grin"}, "me": {"roll": [("L71+0.6", 22)]}, "e8": {"p": PARK}, "e9": {"p": PARK}, "e10": {"p": PARK}})
+  {"tam": {"expr": "grin"}, "me": {"roll": [("L71+0.9", 21)]}, "e8": {"p": PARK}, "e9": {"p": PARK}, "e10": {"p": PARK}})
 
 # ---------------------------------------------------------------------------------------------------- build
 # camera pass (after the stills sheet): cameras that sat inside a head, a table or a wall, and the framings the sheet asked for
@@ -361,7 +361,7 @@ CAM_FIX = {
     "L65": ([-6.3, 1.5, 0.9], [-7.0, 1.0, 0.5], 40),
     "L67": ([-6.0, -3.2, 1.6], [-6.2, 0.4, 1.3], 26),
     "L69": ([-6.5, 1.9, 1.55], [-7.0, -0.95, 1.45], 34),
-    "L71": ([-4.0, 0.1, 2.0], [-7.0, 0.45, 1.95], 17, [-4.0, 0.1, 2.0], [-7.0, -0.2, 1.95], 17),
+    "L71": ([-4.6, 2.3, 2.0], [-7.0, 1.0, 2.0], 36, [-4.9, -2.0, 2.0], [-7.0, -0.95, 1.7], 32),
 }
 for s in SH:
     if s["ref"] in CAM_FIX:
@@ -486,9 +486,11 @@ for i, s in enumerate(SH):
     if s.get("phones"):
         cues.append({"at": ref, "name": "phones", "mode": s["phones"]})
     if s.get("lamps_down"):
-        cues.append({"at": s["lamps_down"], "name": "lamps", "to": 0.14, "dur": 1.5})
+        cues.append({"at": s["lamps_down"], "name": "lamps", "to": 0.15, "dur": 1.5})
+        cues.append({"at": s["lamps_down"], "name": "dome", "to": 0.12, "dur": 1.5})   # the room goes to about 15%: numbers and a rim light
     if s.get("lamps_up"):
         cues.append({"at": s["lamps_up"], "name": "lamps", "to": 1.0, "dur": 1.5})
+        cues.append({"at": s["lamps_up"], "name": "dome", "to": 0.5, "dur": 1.5})
     if s.get("dome_dim"):
         cues.append({"at": "L33", "name": "dome", "to": 1.0, "dur": 0.1})
         cues.append({"at": "L34", "name": "dome", "to": 0.5, "dur": 4.5})
