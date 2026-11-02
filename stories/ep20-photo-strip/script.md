@@ -145,7 +145,7 @@ L22. We sat so far apart my elbow poked out past the CURTAIN.
 L23. Now it was a whole BODY, standing behind the bench between us.
 L24. So tall the top of every picture cut it off at the MOUTH.
 L25. A long, thin smile, as dark as the coin SLOT.
-L26. In the fourth picture, the smile was WIDER.
+L26. In the fourth picture, the smile had STRETCHED.
 L27. I told Wren I was done with this. She said she'd been done for two YEARS.
 L28. Then she shut the curtain and fed in our last COIN.
 L29. One more, she said. For MUM.
@@ -155,13 +155,13 @@ L32. In the dark, Wren was breathing at her END.
 L33. And in the MIDDLE, a sound like a page being TURNED.
 L34. The second glow lit the booth.
 L35. It was THERE. Right between us.
-L36. Its hand on the seam, exactly where the photos SAID.
-L37. Its head was up by the roof, turned all the way round to ME.
+L36. Its hand on the seam, exactly where every picture SAID.
+L37. Its head was up by the roof, turned all the way around to ME.
 L38. I leaned to see it from the SIDE.
 L39. From the side, it was a LINE. As thin as a sheet of PAPER.
 L40. The lamp went dark again, and we both RAN.
-L41. Wren went out one side of the curtain. I went out the OTHER.
-L42. Under a hall lamp I spread all four strips on a TABLE.
+L41. Wren went out one side of the curtain, and I went out the OTHER.
+L42. Under a brass lamp I spread all four strips on a TABLE.
 L43. And then I SAW it.
 L44. Its hand was on the seam in every picture, at the same HEIGHT.
 L45. It had never come one inch CLOSER.
@@ -180,3 +180,7 @@ L57. I pulled it right back, and she laughed so hard she SNORTED.
 L58. The strip came out. Just the two of us, without a sliver of space BETWEEN.
 L59. Wren tore it in half and tucked two pictures in my jacket POCKET.
 L60. On the way back to the dance, she bumped my shoulder, leaned IN, and whispered,
+
+
+## As built (round 2)
+The built film has 65 shots (S01 to S65): S11 splits at L11.4 (the delivery slot), S28 at L28.2 (the coin slot), S54 at L54.4 (me), S57 at L57.2 (Wren laughing) and S59 at L59.5 (the pocket). Eight silent pause beats (after L12, L25, L26, L31, L33, L40, L47, L49) bring it to 2:15. The Third's head turns about 30 degrees toward the camera with the body still front-on; the side-on shot (L39) is taken from above Wren's head in the booth's own plane.

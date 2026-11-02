@@ -23,7 +23,7 @@ SW, SH = FW + 2 * PAD, 4 * FH + 5 * PAD
 PAPER = (236, 230, 216)
 
 VELVET, VELVET_D = (84, 34, 66), (46, 18, 38)
-SUIT, SUIT2, SKIN3, SHIRT3, INK3 = (66, 46, 31), (88, 64, 44), (181, 152, 120), (160, 138, 108), (18, 12, 9)
+SUIT, SUIT2, SKIN3, SHIRT3, INK3 = (84, 60, 40), (112, 82, 56), (150, 118, 84), (150, 128, 98), (18, 12, 9)
 
 WREN = {"skin": "#e9bd9a", "dress": (47, 107, 70), "hair": (128, 62, 38), "face": {"eyes": "classic", "brows": True}}
 ME = {"skin": "#f1c9a0", "dress": (38, 50, 79), "hair": (46, 31, 22), "face": {"eyes": "round", "brows": True}}
@@ -121,7 +121,7 @@ def third(level, wide, rng):
     arr = np.asarray(lay).astype(np.float32)
     g = rng.normal(0, 9.0, arr.shape[:2])[..., None]
     arr[..., :3] = np.clip(arr[..., :3] + g, 0, 255)
-    arr[..., 3] *= 0.93
+    arr[..., 3] = np.where(arr[..., 3] > 0, 250, 0)
     return Image.fromarray(arr.astype(np.uint8))
 
 
@@ -201,13 +201,13 @@ def strip(n, frames=(0, 1, 2, 3)):
 def back(tally=False, size=(SW, 2 * FH + 3 * PAD)):
     """The paper side of a half strip: plain, or with the tally (three short upright strokes in faded brown)."""
     rng = np.random.default_rng(7)
-    im = Image.new("RGB", size, (232, 226, 212))
+    im = Image.new("RGB", size, (196, 188, 168))
     if tally:
         d = ImageDraw.Draw(im)
         cx, cy = size[0] // 2, int(size[1] * 0.46)
         for i in (-1, 0, 1):
             x = cx + i * 120 + rng.integers(-6, 6)
-            d.line([(x, cy - 170), (x + int(rng.integers(-8, 8)), cy + 170)], fill=(139, 96, 62), width=46)
+            d.line([(x, cy - 170), (x + int(rng.integers(-8, 8)), cy + 170)], fill=(112, 74, 46), width=46)
             d.ellipse([x - 23, cy - 193, x + 23, cy - 147], fill=(139, 96, 62))
             d.ellipse([x - 23, cy + 147, x + 23, cy + 193], fill=(139, 96, 62))
     a = np.asarray(im).astype(np.float32) + rng.normal(0, 4, (size[1], size[0], 3))

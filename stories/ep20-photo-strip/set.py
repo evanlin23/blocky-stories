@@ -551,13 +551,21 @@ def _extras(ctx):
     tor = bpy.data.objects.get("me.torso")
     if tor is not None:
         kit.box("me.pocket", (0.5, 0.06, 0.42), (0.5, -0.52, 1.55), kit.plastic("#2e3a5c", 0.7, "pocket"), tor, bevel=0.03)
-        ctx["pocket_strip"] = kit.box("me.pocket.strip", (0.36, 0.03, 0.7), (0.5, -0.55, 1.95), M["paper"], tor, bevel=0.01)
+        # the half strip sticking out of the pocket: a vertical print (the last strip's first half), 0.59 x 1.0 rig units
+        w, h = 0.46, 0.62
+        ob = kit.mesh_obj("me.pocket.strip", [(-w / 2, -0.6, -h / 2), (w / 2, -0.6, -h / 2), (w / 2, -0.6, h / 2), (-w / 2, -0.6, h / 2)],
+                          [(0, 1, 2, 3)], ctx["strips"]["s5a"].children[0].data.materials[0], tor, loc=(0.5, 0, 1.78))
+        uv = ob.data.uv_layers.new(name="UVMap")
+        for p in ob.data.polygons:
+            for li in p.loop_indices:
+                uv.data[li].uv = [(0, 0.55), (1, 0.55), (1, 1), (0, 1)][ob.data.loops[li].vertex_index]
+        ctx["pocket_strip"] = ob
         ctx["pocket_strip"].hide_render = True
 
 
 def _third_state(tl, t):
     s = {"on": False, "mode": "booth", "x": BX, "y": Y_VELVET - 0.015, "yaw": 0.0, "smile": "normal", "head": 0.0,
-         "roll": 0.0, "arm": "seam"}
+         "roll": 0.0, "pitch": 0.0, "arm": "seam"}
     for c in _cues(tl, "third"):
         if c["t"] <= t + 1e-9:
             for k in s:
@@ -585,7 +593,7 @@ def place_third(ctx, tl, t):
     else:
         ctx["rsh"].rotation_euler = (0, 0, 0)
         ctx["rel"].rotation_euler = (0, 0, 0)
-    ctx["tneck"].rotation_euler = (0, math.radians(s["roll"]), math.radians(s["head"]))
+    ctx["tneck"].rotation_euler = (math.radians(s["pitch"]), math.radians(s["roll"]), math.radians(s["head"]))
     ctx["tface"].image = ctx["tface_img"][s["smile"] == "wide"]
     return s
 
@@ -659,6 +667,11 @@ def animate(kit, story, tl, t, ctx):
     closed = 1.0 - 0.5 * (lo[0] + lo[1])
     for piv, o in zip(ctx["curtain"], lo):
         piv.scale = (max(0.12, 1.0 - 0.9 * o), 1, 1)
+    ctx["curtain"][1].location.x = BX + IW
+    last = [c for c in _cues(tl, "curtain") if c["t"] <= t + 1e-9][-1:]
+    if last and "mid_r" in last[0]:   # the right half hung from the middle, so the gap is at the right edge
+        ctx["curtain"][1].location.x = BX
+        ctx["curtain"][1].scale = (-last[0]["mid_r"], 1, 1)
     # ---- the dome lamp and every glow it makes: the lamp, the curtain lit from within, the light under it
     lv = _level(tl, "lamp", t, 0.4)
     over["dome"] = lv

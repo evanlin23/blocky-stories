@@ -106,7 +106,7 @@ HAND_Y = 0.0108                       # the hand's height above a frame's centre
 S1 = [("s1", 0, 0, 0)]
 SH = [
     # ---- the hook: a strip on the bench between our knees, from above; then Wren, then the hall
-    (0, mv([BX, 3.72, 1.3], [BX, 4.34, 0.5], 36), {}),
+    (0, mv([BX, 3.95, 0.82], [BX + 0.0065, 4.102, 0.506], 40, [BX, 3.99, 0.74], [BX + 0.0065, 4.102, 0.506], 40), {}),
     ("L02", front(W1, 0, 40, 1.6, -0.02, 34, push=0.1), {}),
     ("L03", mv([0.1, -1.6, 1.45], [12.0, 1.2, 1.15], 17), {"hand": 0.004}),
     ("L04", over(0, fy(0) + HAND_Y, 0.55, 40, None, None), {"stage": S1}),
@@ -132,7 +132,7 @@ SH = [
     ("L20", front(W2, 0, 25, 1.5, 0.0, 34, push=0.08), {}),
     # the cake in the hall, then my elbow past the curtain
     ("L21", mv([13.0, -1.5, 1.35], [18.2, 0.2, 1.1], 22, [13.6, -1.5, 1.35], [18.2, 0.2, 1.1], 22), {}),
-    ("L22", mv([BX + 1.0, 1.6, 1.4], [BX + 1.0, 3.2, 1.2], 26, [BX + 0.9, 1.9, 1.4], [BX + 1.0, 3.2, 1.2], 28), {}),
+    ("L22", mv([BX + 1.1, 1.5, 1.35], [BX + 1.1, 3.2, 1.2], 30, [BX + 1.1, 1.9, 1.35], [BX + 1.1, 3.2, 1.2], 32), {}),
     # strip three: the whole body, cut at the mouth, the slot smile, the smile wider
     ("L23", over(0, fy(0) - 0.02, 0.6, 38), {"stage": [("s3", 0, 0, 0)]}),
     ("L24", over(0, fy(1) + 0.03, 0.42, 38), {"stage": [("s3", 0, 0, 0)]}),
@@ -153,7 +153,7 @@ SH = [
     ("L36", mv([BX + 0.45, 3.85, 1.55], [BX + 0.02, 4.74, 1.5], 38), {"step": 1}),
     ("L37", mv([BX + 0.55, 3.8, 0.75], [BX, 4.74, 2.35], 18, [BX + 0.5, 3.9, 0.8], [BX, 4.74, 2.37], 20), {"step": 1}),
     ("L38", front(M4, 0, -28, 1.5, 0.0, 34), {"step": 1}),
-    ("L39", mv([BX - 2.05, 4.05, 1.5], [BX, 4.742, 1.3], 17), {"step": 1, "hide": ["wall_l"]}),
+    ("L39", mv([BX - 2.0, 4.742, 2.3], [BX, 4.742, 1.5], 17), {"step": 1, "hide": ["wall_l"]}),
     ("L40", mv([BX + 0.1, -0.2, 1.45], [BX, 3.2, 1.3], 24), {"step": 1}),
     ("L41", mv([9.0, -1.6, 1.8], [9.0, 0.5, 1.2], 14), {"hand": 0.006}),
     # ---- the table, the four strips, what they say
@@ -172,15 +172,15 @@ SH = [
     ("L51", front([14.0, -0.95, FACE_Z], -90, -35, 1.7, 0.0, 32), {}),
     ("L52", mv([16.2, 0.2, 1.9], [5.0, -0.5, 1.3], 15), {"step": 1}),
     ("L53", mv([9.0, 0.7, 1.55], [9.0, -1.0, 1.5], 24), {}),
-    ("L54", front([8.6, -1.0, FACE_Z], 40, 0, 1.75, 0.0, 34), {}),
-    ("L54.4", front([9.4, -1.0, FACE_Z], -40, 0, 1.75, 0.0, 34), {}),
+    ("L54", mv([9.3, -1.75, 1.62], [8.45, -1.0, FACE_Z], 28), {}),
+    ("L54.4", mv([8.7, -1.75, 1.62], [9.55, -1.0, FACE_Z], 28), {}),
     ("L55", mv([BX, 0.4, 1.55], [BX, 4.7, 1.4], 28), {"hide": LENS_HIDE}),
     ("L56", front(W5, 0, 22, 1.5, 0.0, 34, push=0.08), {}),
     ("L57", front(M5, 0, -22, 1.5, 0.0, 34), {}),
     ("L57.2", front(W5, 0, 22, 1.5, 0.0, 34, push=0.06), {}),
     ("L58", over(0, fy(2) + 0.04, 0.78, 36), {"stage": [("s5", 0, 0, 0)]}),
-    ("L59", mv([TX + 0.05, TY + 0.55, 1.4], [TX, TY, 0.8], 30), {}),
-    ("L59.4", front([9.6, -0.9, 1.15], 0, 20, 0.8, 0.0, 34, aim_dz=0.0), {}),
+    ("L59", mv([9.1, TY + 0.5, 1.3], [9.1, TY + 0.0, 0.8], 30), {}),
+    ("L59.5", front([9.8, -0.62, 1.3], 0, 10, 1.3, 0.0, 34), {}),
     ("L60", mv([16.8, -0.7, 1.55], [11.5, -0.7, 1.5], 24, [16.2, -0.7, 1.55], [11.5, -0.7, 1.5], 24), {"hand": 0.004}),
 ]
 shots, hides, stages = [], {}, {}
@@ -243,7 +243,7 @@ me = [
     {"at": "L17.4", "pos": seat(1, 2)},
     {"at": "L20", "expr": "worried", "head": [-30, 0], "look": [-0.7, 0]},
     # third visit, my elbow out past the curtain
-    *jump("L22", seat(1, 2), seat(1, 3), side=[0, 14], head=[0, 0], look=[0, 0]),
+    *jump("L22", seat(1, 2), seat(1, 3), side=[0, 24], head=[0, 0], look=[0, 0]),
     {"at": "L26", "expr": "scared", "side": [0, 0]},
     *jump("L27", seat(1, 3), [9.95, 0.3, 0.0], sit=False, arms=[0, 0], side=[0, 0], yaw=-60, expr="angry", head=[0, 0]),
     {"at": "L27.3", "expr": "worried"},
@@ -277,7 +277,7 @@ me = [
     {"at": "L57.2", "expr": "squeeze"},
     {"at": "L58", "expr": "soft", "head": [-12, 0]},
     *jump("L59", seat(1, 5), [9.62, -0.62, 0.0], sit=False, arms=[0, 0], yaw=-30, expr="soft", head=[0, 0], look=[0, 0]),
-    {"at": "L59.4", "yaw": 0, "head": [0, 0]},
+    {"at": "L59.5", "yaw": 0, "head": [0, 0]},
     *jump("L60", [9.62, -0.62, 0.0], [11.5, -1.0, 0.0], yaw=90),
     {"at": "L60>", "pos": [14.6, -1.0, 0.0], "expr": "soft", "head": [-35, 0]},
 ]
@@ -317,7 +317,7 @@ wren = [
     {"at": "L57.2", "expr": "squeeze"},
     {"at": "L58", "expr": "soft", "head": [12, 0]},
     *jump("L59", seat(-1, 5), [8.45, -0.62, 0.0], sit=False, arms=[0, 0], yaw=30, expr="soft", head=[0, 0], look=[0, 0]),
-    {"at": "L59.4", "yaw": 0},
+    {"at": "L59.5", "yaw": 0},
     *jump("L60", [8.45, -0.62, 0.0], [11.5, -0.3, 0.0], yaw=90),
     {"at": "L60>", "pos": [14.6, -0.55, 0.0], "expr": "soft"},
     {"at": "L60.3", "head": [20, 0], "arms": [0, 0]},
@@ -357,7 +357,8 @@ cues = [
     {"at": "L12", "name": "curtain", "to": [0.95, 0.95], "dur": 0.0},
     {"at": "L10", "name": "pocket", "on": False},
     # visit one: the lamp glows four times behind the curtain, and the strip slides out
-    *[c_ for k in range(4) for c_ in glow("L11", 0.05 + 0.8 * k)],
+    *[c_ for k in range(4) for c_ in glow("L11", 0.05 + 0.8 * k, dur_down=0.45, lo=0.55)],
+    {"at": "L12", "name": "lamp", "to": LAMP_REST, "dur": 1.5},
     {"at": "L11.4", "name": "strip", "id": "s1", "on": True, "from": [BX + 1.55, 3.12, 0.99], "pos": [BX + 1.55, 2.9, 0.97],
      "tilt": -78, "dur": 0.7},
     {"at": "L12", "name": "strip", "id": "s1", "on": False, "pos": [0, 0, 0]},
@@ -365,7 +366,7 @@ cues = [
     {"at": "L17", "name": "curtain", "to": [0.95, 0.95], "dur": 0.0},
     {"at": "L18", "name": "curtain", "to": [0.0, 0.0], "dur": 0.0},
     # visit three: the curtain's right half held back a little, so my elbow shows at its edge
-    {"at": "L22", "name": "curtain", "to": [0.0, 0.62], "dur": 0.0},
+    {"at": "L22", "name": "curtain", "to": [0.0, 0.0], "mid_r": 0.72, "dur": 0.0},
     {"at": "L23", "name": "curtain", "to": [0.0, 0.0], "dur": 0.0},
     {"at": "L21", "name": "cake", "from": [17.0, -1.5], "to": [17.0, 1.5], "dur": 2.4},
     # the last coin
@@ -379,7 +380,7 @@ cues = [
     {"at": "L34", "name": "lamp", "to": GLOW, "dur": 0.45},
     {"at": "L40", "name": "lamp", "to": 0.0, "dur": 0.5},
     {"at": "L34", "name": "third", "on": True, "mode": "booth", "arm": "seam", "smile": "normal", "head": 0, "roll": 0},
-    {"at": "L37", "name": "third", "head": 62, "roll": -8, "smile": "wide"},
+    {"at": "L37", "name": "third", "head": 30, "pitch": 24, "roll": -7, "smile": "wide"},
     {"at": "L40", "name": "third", "on": False},
     {"at": "L31.1", "name": "curtain", "to": [0.0, 0.0], "dur": 0.0},
     {"at": "P06+0.12", "name": "curtain", "to": [1.0, 1.0], "dur": 0.16},
@@ -405,9 +406,9 @@ cues = [
     {"at": "L57", "name": "strip", "id": "s5", "on": True, "pos": [0, 0, 0]},
     *[{"at": "L59", "name": "strip", "id": f"s{k}", "on": False, "pos": [0, 0, 0]} for k in range(1, 5)],
     {"at": "L59", "name": "strip", "id": "s5a", "on": True, "pos": [round(TX - 0.2, 3), TY + 0.04, 0.804], "rot": -9, "flip": True},
-    {"at": "L59", "name": "strip", "id": "s5b", "on": True, "pos": [round(TX + 0.17, 3), TY - 0.02, 0.804], "rot": 11, "flip": True},
-    {"at": "L59.4", "name": "pocket", "on": True},
-    {"at": "L59.4", "name": "strip", "id": "s5a", "on": False, "pos": [0, 0, 0]},
+    {"at": "L59", "name": "strip", "id": "s5b", "on": True, "pos": [9.06, -1.47, 0.804], "rot": 11, "flip": True},
+    {"at": "L59.5", "name": "pocket", "on": True},
+    {"at": "L59.5", "name": "strip", "id": "s5a", "on": False, "pos": [0, 0, 0]},
 ]
 # the dark pool: the strips in `stage` shots are placed by set.py; `s5` is only ever an insert
 
@@ -438,11 +439,14 @@ LOOKS = {
             "third_rim": [[BX - 1.0, 3.6, 2.7], "head", 70.0, 40, COOL]},
     "L38": {**DARK, "under": [[BX - 0.1, 3.3, 0.3], [BX + 0.84, 4.6, 1.5], 14.0, 60, WARM]},
     "L39": {**DARK, "under": [[BX - 1.0, 3.7, 0.3], [BX, 4.742, 1.4], 10.0, 70, WARM],
-            "key": [[BX - 1.6, 3.5, 2.3], [BX + 1.0, 4.3, 1.2], 45.0, 70, WARM]},
+            "key": [[BX - 1.6, 3.5, 2.3], [BX + 1.0, 4.3, 1.2], 45.0, 70, WARM],
+            "key2": [[BX - 2.0, 4.0, 2.6], [BX - 0.87, 4.6, 1.4], 40.0, 50, WARM]},
+    "L59": {"hall": 0.4},
+    "L59.5": {"hall": 0.55},
     "L40": {"hall": 1.0, "fill": 1.0},
     "L47": {},
     "L49": {"third_rim": [[12.2, -1.0, 2.4], [9.0, 0.0, 1.7], 140.0, 24, COOL], "hall": 1.0,
-            "key": [[11.0, -0.8, 1.0], [9.0, 0.0, 1.5], 7.0, 30, "#c8b090"]},
+            "key": [[11.2, -0.9, 1.9], [9.0, 0.0, 2.3], 22.0, 22, "#d8c0a0"]},
     "L50": {"third_rim": [[7.0, -1.0, 2.4], [9.0, 0.0, 1.7], 100.0, 26, COOL]},
     "L51": {"third_rim": [[11.0, -1.0, 2.4], [9.0, 0.0, 1.7], 70.0, 26, COOL]},
     "L52": {"third_rim": [[12.2, -1.0, 2.4], [9.0, 0.0, 1.7], 30.0, 24, COOL]},
@@ -479,7 +483,7 @@ sfx = [
     {"at": "L47+0.4", "kind": "thud", "db": -16},
     {"at": "L49", "kind": "sting", "db": -13, "dur": 2.0},
     {"at": "L21", "kind": "whoosh", "db": -26},
-    {"at": "L60", "kind": "whoosh", "db": -34},
+    {"at": "L60>-0.1", "kind": "whoosh", "db": -15, "dur": 0.4},
 ]
 for k in range(1, 3):
     sfx.append({"at": f"L{57}.{k}", "kind": "click", "db": -40})
@@ -535,8 +539,8 @@ story = {
               # the music, the room and the steps drop before each scare, and the sting lands in the hole
               "music_drops": [
                   {"from": "L30>-0.1", "to": "L31.1"},
-                  {"from": "L34>-0.1", "to": "L35", "keep": ["sting"]},
-                  {"from": "L48>-0.1", "to": "L49", "keep": ["sting"]},
+                  {"from": "L35-0.62", "to": "L35", "keep": ["sting"]},
+                  {"from": "L49-0.62", "to": "L49", "keep": ["sting"]},
               ]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
