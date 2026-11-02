@@ -1,0 +1,1745 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "in this town, your shadow stays wherever you were happiest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.362
+    ],
+    [
+     1.362,
+     2.31
+    ]
+   ]
+  },
+  "L02": {
+   "text": "nobody has a shadow under them. they're all out on the grass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.19,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.19,
+     0.87
+    ],
+    [
+     0.87,
+     1.259
+    ],
+    [
+     1.328,
+     1.603
+    ],
+    [
+     1.603,
+     2.448
+    ]
+   ]
+  },
+  "L03": {
+   "text": "on hot days, you cool off in a stranger's shadow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.155,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.724,
+     1.147
+    ],
+    [
+     1.147,
+     2.121
+    ]
+   ]
+  },
+  "L04": {
+   "text": "gordon's shadow sits on his ex's doorstep. his wife has noticed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.276,
+   "onset": 0.172,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.966
+    ],
+    [
+     2.052,
+     2.388
+    ],
+    [
+     2.388,
+     3.069
+    ]
+   ]
+  },
+  "L05": {
+   "text": "an old footballer waves to his shadow on the pitch every saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.526
+    ],
+    [
+     1.526,
+     1.914
+    ],
+    [
+     1.914,
+     2.759
+    ]
+   ]
+  },
+  "L06": {
+   "text": "it waves back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ]
+   ]
+  },
+  "L07": {
+   "text": "mine has never left my feet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.931
+    ],
+    [
+     0.931,
+     1.517
+    ]
+   ]
+  },
+  "L08": {
+   "text": "i thought i'd just never been happy anywhere.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.328
+    ],
+    [
+     1.328,
+     1.948
+    ]
+   ]
+  },
+  "L09": {
+   "text": "dad has run the crazy golf in the park for thirty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.147
+    ],
+    [
+     1.147,
+     1.483
+    ],
+    [
+     1.483,
+     2.362
+    ]
+   ]
+  },
+  "L10": {
+   "text": "it's sold. on sunday, it becomes a car park.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     1.052
+    ],
+    [
+     1.077,
+     2.069
+    ]
+   ]
+  },
+  "L11": {
+   "text": "i'm home for the last week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.379
+    ]
+   ]
+  },
+  "L12": {
+   "text": "every morning, the builders fence off another hole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.0
+    ],
+    [
+     1.0,
+     2.138
+    ]
+   ]
+  },
+  "L13": {
+   "text": "and the shadows of old visitors slide out under the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.224
+    ],
+    [
+     1.224,
+     1.594
+    ],
+    [
+     1.594,
+     2.276
+    ]
+   ]
+  },
+  "L14": {
+   "text": "they sit on the pavement, as close as they can get.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ],
+    [
+     1.0,
+     1.328
+    ],
+    [
+     1.328,
+     2.155
+    ]
+   ]
+  },
+  "L15": {
+   "text": "by wednesday, one shadow is left inside, on the last green.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     1.724
+    ],
+    [
+     1.776,
+     2.69
+    ]
+   ]
+  },
+  "L16": {
+   "text": "every evening, dad putts round alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.862
+    ]
+   ]
+  },
+  "L17": {
+   "text": "then he sits by that shadow with two putters till nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.069
+    ],
+    [
+     1.069,
+     1.621
+    ],
+    [
+     1.621,
+     2.276
+    ]
+   ]
+  },
+  "L18": {
+   "text": "i think it's his.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.103
+    ]
+   ]
+  },
+  "L19": {
+   "text": "it has a bun. dad must have had hair back then.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.784,
+     1.466
+    ],
+    [
+     1.466,
+     2.121
+    ]
+   ]
+  },
+  "L20": {
+   "text": "on monday, the windmill's sails are wound backwards.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.595,
+     1.241
+    ],
+    [
+     1.241,
+     2.241
+    ]
+   ]
+  },
+  "L21": {
+   "text": "on tuesday, every flag is twisted round its pole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.724,
+     1.164
+    ],
+    [
+     1.164,
+     2.362
+    ]
+   ]
+  },
+  "L22": {
+   "text": "on wednesday, there's a second ball in the last cup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.741,
+     1.388
+    ],
+    [
+     1.388,
+     2.19
+    ]
+   ]
+  },
+  "L23": {
+   "text": "on thursday, i go to bed early.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.724,
+     1.69
+    ]
+   ]
+  },
+  "L24": {
+   "text": "at midnight, dad's room is still empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     0.957
+    ],
+    [
+     0.957,
+     1.776
+    ]
+   ]
+  },
+  "L25": {
+   "text": "he isn't on his bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.155
+    ]
+   ]
+  },
+  "L26": {
+   "text": "his putter is lying on the last green.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.836
+    ],
+    [
+     0.836,
+     1.741
+    ]
+   ]
+  },
+  "L27": {
+   "text": "his flask is on the bench, with the lid off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     1.0
+    ],
+    [
+     1.034,
+     1.81
+    ]
+   ]
+  },
+  "L28": {
+   "text": "every flag on the course is wrung tight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ],
+    [
+     0.983,
+     1.828
+    ]
+   ]
+  },
+  "L29": {
+   "text": "and the shadow on the green sits there alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.922
+    ],
+    [
+     0.922,
+     1.845
+    ]
+   ]
+  },
+  "L30": {
+   "text": "i call his name at every hole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.534
+    ]
+   ]
+  },
+  "L31": {
+   "text": "behind the fences, something creaks, like a cloth being wrung.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.155,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.793,
+     1.397
+    ],
+    [
+     1.466,
+     1.862
+    ],
+    [
+     1.862,
+     2.552
+    ]
+   ]
+  },
+  "L32": {
+   "text": "i wait up in the kitchen, at the back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     0.931
+    ],
+    [
+     0.957,
+     1.534
+    ]
+   ]
+  },
+  "L33": {
+   "text": "at dawn, i open the front door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     1.552
+    ]
+   ]
+  },
+  "L34": {
+   "text": "he's on the bench under my window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.517
+    ]
+   ]
+  },
+  "L35": {
+   "text": "he says he couldn't sleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.241
+    ]
+   ]
+  },
+  "L36": {
+   "text": "his coat is wet with dew.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.293
+    ]
+   ]
+  },
+  "L37": {
+   "text": "on friday, the fence goes round the last hole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     1.301
+    ],
+    [
+     1.301,
+     2.103
+    ]
+   ]
+  },
+  "L38": {
+   "text": "dad still squeezes through the gap to putt.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.914,
+     1.293
+    ],
+    [
+     1.293,
+     1.828
+    ]
+   ]
+  },
+  "L39": {
+   "text": "the last hole has two tees. one for each player.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     1.241
+    ],
+    [
+     1.31,
+     2.293
+    ]
+   ]
+  },
+  "L40": {
+   "text": "on the second tee, the grass is pressed into two footprints.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.155,
+     0.862
+    ],
+    [
+     0.931,
+     1.526
+    ],
+    [
+     1.526,
+     2.517
+    ]
+   ]
+  },
+  "L41": {
+   "text": "each time dad putts, i hear that creak again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ],
+    [
+     1.052,
+     2.103
+    ]
+   ]
+  },
+  "L42": {
+   "text": "on saturday, the low sun comes in under the windmill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.768,
+     1.19
+    ],
+    [
+     1.19,
+     1.526
+    ],
+    [
+     1.526,
+     2.293
+    ]
+   ]
+  },
+  "L43": {
+   "text": "and i see it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.172,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ]
+   ]
+  },
+  "L44": {
+   "text": "it's standing on the second tee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.448
+    ]
+   ]
+  },
+  "L45": {
+   "text": "a person, wrung like a cloth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     1.414
+    ]
+   ]
+  },
+  "L46": {
+   "text": "its feet face the hole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.207
+    ]
+   ]
+  },
+  "L47": {
+   "text": "every block above is turned further than the one below.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.406
+    ],
+    [
+     1.406,
+     2.276
+    ]
+   ]
+  },
+  "L48": {
+   "text": "its face looks back over its own spine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.836
+    ],
+    [
+     0.836,
+     1.828
+    ]
+   ]
+  },
+  "L49": {
+   "text": "white as the windmill. green as the pond.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.992,
+     1.966
+    ]
+   ]
+  },
+  "L50": {
+   "text": "its shadow isn't anywhere in town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.0
+    ],
+    [
+     1.0,
+     1.655
+    ]
+   ]
+  },
+  "L51": {
+   "text": "dad lines up his putt.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.224
+    ]
+   ]
+  },
+  "L52": {
+   "text": "each time i blink, it's turned a little further round.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     1.017,
+     1.267
+    ],
+    [
+     1.267,
+     2.259
+    ]
+   ]
+  },
+  "L53": {
+   "text": "until its face looks straight at dad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     0.992
+    ],
+    [
+     0.992,
+     1.552
+    ]
+   ]
+  },
+  "L54": {
+   "text": "it leans over the green, slow as a bow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.931
+    ],
+    [
+     1.008,
+     1.862
+    ]
+   ]
+  },
+  "L55": {
+   "text": "dad doesn't look up. he never does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.845,
+     1.638
+    ]
+   ]
+  },
+  "L56": {
+   "text": "i squeeze through the gap onto the green.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     0.948,
+     1.724
+    ]
+   ]
+  },
+  "L57": {
+   "text": "i stand over the shadow there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.466
+    ]
+   ]
+  },
+  "L58": {
+   "text": "it fits me. bun and all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     1.276
+    ]
+   ]
+  },
+  "L59": {
+   "text": "then i look down at my feet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.362
+    ]
+   ]
+  },
+  "L60": {
+   "text": "its head is round and bald.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.431
+    ]
+   ]
+  },
+  "L61": {
+   "text": "the shadow on the green is mine, from the summers he taught me the course.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.172,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.862,
+     1.362
+    ],
+    [
+     1.431,
+     1.854
+    ],
+    [
+     1.854,
+     2.793
+    ]
+   ]
+  },
+  "L62": {
+   "text": "the one under me is dad's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.31
+    ]
+   ]
+  },
+  "L63": {
+   "text": "wherever i am is where he's happiest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     0.974
+    ],
+    [
+     0.974,
+     1.707
+    ]
+   ]
+  },
+  "L64": {
+   "text": "on thursday, he sat all night under my window, as close to his shadow as he could get.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.69,
+   "onset": 0.155,
+   "end": 3.5,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.69,
+     1.25
+    ],
+    [
+     1.25,
+     1.897
+    ],
+    [
+     1.983,
+     2.741
+    ],
+    [
+     2.741,
+     3.5
+    ]
+   ]
+  },
+  "L65": {
+   "text": "i pick up the second putter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.431
+    ]
+   ]
+  },
+  "L66": {
+   "text": "i step onto the second tee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.483
+    ]
+   ]
+  },
+  "L67": {
+   "text": "it leans its wrung face right down to mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     0.948,
+     1.31
+    ],
+    [
+     1.31,
+     1.897
+    ]
+   ]
+  },
+  "L68": {
+   "text": "i putt. when i look up, the tee is just me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.966
+    ],
+    [
+     0.992,
+     1.224
+    ],
+    [
+     1.224,
+     1.948
+    ]
+   ]
+  },
+  "L69": {
+   "text": "we play the last hole together. two balls. one cup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.81,
+     1.207
+    ],
+    [
+     1.301,
+     1.724
+    ],
+    [
+     1.759,
+     2.362
+    ]
+   ]
+  },
+  "L70": {
+   "text": "on sunday, dad opens the gate for free.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.655,
+     1.328
+    ],
+    [
+     1.328,
+     1.914
+    ]
+   ]
+  },
+  "L71": {
+   "text": "the whole town comes for a last round.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.69
+    ]
+   ]
+  },
+  "L72": {
+   "text": "the shadows on the pavement slide back in, onto the grass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.922
+    ],
+    [
+     0.922,
+     1.603
+    ],
+    [
+     1.672,
+     2.483
+    ]
+   ]
+  },
+  "L73": {
+   "text": "at the last hole, his shadow stretches from my feet to his.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.802,
+     1.448
+    ],
+    [
+     1.448,
+     1.828
+    ],
+    [
+     1.828,
+     2.414
+    ]
+   ]
+  },
+  "L74": {
+   "text": "in this town, your shadow stays where you were happiest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.319
+    ],
+    [
+     1.319,
+     2.155
+    ]
+   ]
+  },
+  "L75": {
+   "text": "dad's stays with me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.19
+    ]
+   ]
+  },
+  "L76": {
+   "text": "mine's under the new car park.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.362
+    ]
+   ]
+  }
+ }
+}
