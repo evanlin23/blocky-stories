@@ -1,5 +1,8 @@
 # ep14-lookout: designer notes (motion-designer)
 
+> **Superseded in part (2026-11-02, redo 2).** The story is now rule first with no creature (see `script.md` → "BUILDER: what changes and what's reused"). Everything below about the giant is retired. The notes on the tower, cab, lamp, fog and pines still hold.
+
+
 ## Creature test still
 
 ### Pass 2 (critic round 1: revise, scary 4, silly 4)

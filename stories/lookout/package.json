@@ -1,8 +1,9 @@
 {
-  "title": "Every pine on the far ridge snapped at the same height",
-  "description": "Up in my glass lookout, it's just me, the radio and my lamp. Then the pines on the far ridge show up snapped at the top, all at the same height, in a line that bends toward my tower.\n\nThat night I hear breathing out in the fog. Every breath ends in a creak.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
-  "pin": "Would you have stayed up in that tower alone with just a lamp?",
+  "title": "In This Valley Time Runs SLOWER the Higher You Are",
+  "description": "In this valley, time runs slower the higher up you are. Grandads live in the attic, and if you're waiting for a parcel, you sit in the cellar.\n\nI'm the lookout, 112 stairs up on the highest ridge. For one week, my brother and I made a deal: at ten every night, I flash my lamp and he flashes back. His window answered. Then it never went dark.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+  "pin": "In this valley, which floor would you live on, and who would you take up there with you?",
   "made_for_kids": false,
-  "shape": "misread",
+  "cover_s": 1.2,
+  "shape": "time-gap",
   "hold": "redo: the first line must state the world's rule (owner, 2026-11-02)"
 }

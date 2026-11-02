@@ -92,3 +92,20 @@ A is the pitch with three fixes. The riddle hides the twist in the first line, s
 It's the only take whose warm turn is a two-shot: a small lamp on a road, with something huge stepping carefully behind it. That reads at phone size and needs no words. It's also the only ending that pays off a plant on screen: the footprints that pointed away from me grow a line of trees back to my door. B and C play their warm turns far away or in the dark. The pitch's first line drops into A unchanged if you want it, but ep12's crickets come with it.
 
 **For the build:** the lamp hangs on a bail from a block hand, because R6 hands can't grip. The test still should be the catwalk reveal plus the road wide, the scale shot.
+
+---
+
+# Redo 2 (writer, 2026-11-02): ten big ideas for the same tower, one kept
+
+Each had to be rule first, use the tower, fog, radio and lamp, avoid `stand-in`, and pass the one-sentence test.
+
+1. **Kept. Time runs slower the higher up you are.** Four nights in the lookout are twenty years below, and the stranger on my stairs is my brother, now older than me, who moved higher every year to slow himself down.
+2. The fog takes whatever nobody is watching. The lookout watches the valley, and the reveal is that Dad has stayed up every night watching my lamp. Warm, but no floor drops.
+3. The forest moves at night, so the lookout radios the new paths. Reveal: the forest is still, and the tower walks. Big, but it needs the whole town on legs and the loved one has no stake.
+4. Stand still in the fog too long and you turn into a pine. The giant is Dad. Too close to harm, and it ends sad with no turn.
+5. Every lamp you light puts out a star. Pretty, but the reveal (my lamp is my sister's star) is a fact, not a feeling.
+6. Every radio in the valley plays one day ahead. Too close to a well-known film, and to the owner's banned door-to-the-past shape.
+7. A lit lamp brings home whoever you're waiting for. Every version of the reveal came back to a Keeper keeping a place.
+8. The fog shows the shape of whoever is thinking of you. Too close to ep38's "who you miss" silhouettes.
+9. Nobody remembers the nights. The nightly visitor is Dad. Confusing: why would I fear what I wrote down?
+10. The fog rises a little every year, and the valley is a giant standing up. Awe, but nobody to love.
