@@ -3,16 +3,16 @@
 **Slug:** `ep56-marsh-mill` (replaces batch 4's killed ep39 `glass-house`)
 
 ## Premise
-In this town everyone is born with a brass key on a cord round the neck. It opens exactly one door in town, and never your own, and it only goes warm and gold at the locked door it fits. I've tried every door in town and mine has never opened anything. My great-aunt Win, eighty-one, runs the windmill on the marsh. I was her mate on the millstones for six years, then left two years ago to open my own bakery, and now I only pick her flour up off the step. Her mill door has been open day and night for sixty years. This Monday it's locked, and each night a clean, flour-free patch in the shape of two boots stands nearer behind her on the stone floor, in my old place by the sack hoist.
+In this town everyone is born with a brass key on a cord round the neck. It opens exactly one door in town, and never your own, and it only goes warm and gold at the locked door it fits. I've tried every door in town and mine has never opened anything. My great-aunt Win, eighty-one, runs the windmill on the marsh. I was her mate on the millstones for six years, then left two years ago to open my own bakery, and now I only pick her flour up off the step. Her mill door has been open day and night for thirty years. This Monday it's locked, and each night a clean, flour-free patch in the shape of two boots stands nearer behind her on the stone floor, in my old place by the sack hoist.
 
 ## Rule
-Your key opens one door in town, never your own (L01), and it only goes warm at a locked door it fits (L02, L44). Nobody can open their own locked door. I break my own habit, never going in (L12), on Saturday (L48 to L51).
+Your key opens one door in town, never your own (L01), and it only goes warm at a locked door it fits (L02, L44). Nobody can open their own locked door. I break my own habit, never going in (L13), on Saturday (L48 to L51).
 
 ## Twist
 The one door my key fits is Win's. I never found it because it was the only door in town that had never been locked. Win has known since I was born that the shape on my key matches her lock. She kept the door open for thirty years so I'd never feel I had to come, and this week she locked it, and then locked herself out of her own mill when she went for sail cloth, so that only my key could let her back in. The first line first reads as a rule of exclusion, "never your own". After L58 to L61 it reads as the rule that someone else's door is where you're let in, and L64 says it: "It's the one somebody leaves OPEN for you."
 - **Plant 1 (L08, S11):** "I've tried every door in town." Wide of me trying my key in a shop door at dusk. Far behind, out on the marsh, the windmill's door stands wide open with warm light spilling out. Never pointed at.
-- **Plant 2 (L12, S17 and S18):** picking up the flour, a close of the open mill door's iron lock plate. Its keyhole escutcheon has the same four-spoke glyph as the head of my key, which S12 showed in close-up at L08. Never narrated.
-- Bonus (L14): "Her door has never been locked." The line that hides the answer.
+- **Plant 2 (L12 to L13, S17 and S18):** picking up the flour, a wider shot of the open mill door's edge, its iron lock plate and the step. The plate's keyhole escutcheon has the same four-spoke glyph as the head of my key, which S12 showed in close-up at L08. Never narrated.
+- Bonus (L14, L46): "Thirty years, open day and NIGHT." and "Before that, it was never locked." The lines that hide the answer.
 
 ## World
 One small made-up marsh town, late autumn. No real places, no words on any sign.
@@ -23,14 +23,19 @@ One small made-up marsh town, late autumn. No real places, no words on any sign.
 
 ## Cast (all adults, nobody hurt or in peril)
 - **me** (adult man, about thirty, narrator, the town's new baker): a flour-dusted cream baker's jacket over a rust-and-navy check shirt, dark trousers, short brown block hair, straight brows. My key: plain brass, the head a four-spoke wheel glyph, never glowing until L48.
-- **Great-aunt Win** (adult, eighty-one): white block hair in a bun under a flour-white headscarf, a navy miller's smock, a red neckerchief, round glasses drawn on the face, a lively sideways smile. Her key hangs on her cord like everyone's (its head a different glyph, a crescent). She is never unwell and never in peril. She says nothing on screen except the reported "Took you long enough" (L57).
-- **Montage extras (adults, one beat each, never named except Mr Ames):** the postman (grey jacket, satchel, cap) in the café. Mr Ames (fifties, cardigan) on his own doorstep, and his ex-wife (fifties, green coat) letting him in. A bride and groom at his front door, both in pale wedding clothes, no veil text or confetti words.
+- **Great-aunt Win** (adult, eighty-one): white block hair in a bun under a flour-white headscarf, a navy miller's smock, a red neckerchief, round glasses drawn on the face, a lively sideways smile. Her key hangs on her cord like everyone's (its head a crescent glyph). She is never unwell and never in peril. She says nothing on screen except the reported "Took you long enough" (L57).
+- **Montage extras (adults, one beat each, never named except Mr Ames):** the postman (grey jacket, satchel, cap) in the café. Mr Ames (fifties, cardigan) on his own doorstep, and his ex-wife (fifties, green coat) letting him in. A bride and groom at his front door, both in pale wedding clothes, no veil text or confetti words. The S01 neighbour (yellow cardigan) and her friend.
 - Nobody explains the rule on screen.
 
 ## The marker: the keys (visible by 2 s, on every character but the creature)
 - A brass key a hand long on a dark cord, hanging mid-chest over the clothes, always turned a little to camera. It's built in `set.py` (our own mesh), big enough to read at phone size.
-- Each key head is a different glyph of our own design (wheel, crescent, three dots, a step, a leaf shape). Never letters.
-- When it's at the locked door it fits, the key fades up to a soft warm gold glow over 1 s (never a flash), with a faint gold light on the wearer's chin and the door. It fades back over 1 s when the door opens.
+- Each key head is a different glyph of our own design. Never letters. Every glyph belongs to one character only, and nobody else wears it:
+  - me: four-spoke wheel. Win: crescent.
+  - Mr Ames: a step. His ex-wife: a leaf.
+  - postman: three dots. Bride: a ring. Groom: a triangle.
+  - S01 neighbour: a diamond. Her friend: a cross. Street extras (S03, S04): a bell, a fish, a wave, one each.
+- Escutcheons are only seen on Win's door (the wheel). No other door shows a glyph.
+- A key glows only once it's in the keyhole of the locked door it fits: it fades up to a soft warm gold over 1 s (never a flash), with a faint gold light on the wearer's chin and the door. Never on a chest, a path or a hand away from a lock. It fades back over 1 s when the door opens.
 - My key: brass, never glowing, until L48 (1.2 s fade up).
 - The creature has no key and no cord.
 
@@ -66,9 +71,9 @@ One small made-up marsh town, late autumn. No real places, no words on any sign.
 - **Marker by 2 s:** S01, sunny street, two neighbours on a doorstep face to camera, both keys on their chests, one fading up gold at the door. High key, both faces at least 1/5 of the frame width, keys clear of the caption band.
 - **Montage (L02 to L07, about 3 to 16 s), four examples:** the postman first into the café, Mr Ames locked out and let in by his ex-wife in silence, and a bride's key opening her husband's door first try, with the keys glowing gold at their doors in each.
 - **Narrator as the exception:** my key has never opened anything (L08).
-- **Loved one at stake:** Great-aunt Win, adult, eighty-one. A clean patch closes in behind her each night, then she's gone with the mill dark (L25 to L28).
+- **Loved one at stake (on screen by L09 to L10, about 0:18):** Great-aunt Win, my only family, adult, eighty-one (never said or shown on screen). A clean patch closes in behind her each night, then she's gone with the mill dark (L25 to L28).
 - **15 to 30 s:** L08 to L14 put the rule on me and on Win's door (my key cold at door after door, the mill door the only open one). The escalation starts at L15. Nobody explains the rule.
-- **Loophole climax:** a key only wakes at a locked door, and Win's is the one door I never tried because it was never locked (L44 to L47). The same rule, read again, no new magic.
+- **Loophole climax:** a key only wakes at a locked door, and Win's is the one door I never tried: all week it was locked and I only knocked, and before that it was never locked (L44 to L47). The same rule, read again, no new magic.
 - **First scare:** L25 to L28, about 55 to 61 s: Win gone, the mill dark, her scarf in the door. She's away for an ordinary reason (L54 to L55) and back by the end.
 - **Creature clearly:** L36 to L42, about 75 to 89 s (54 to 64%).
 - **Readable first 2 s:** sunny street, faces and keys in frame. No fog or dark until L25.
@@ -85,28 +90,28 @@ Timings are at about 290 wpm. Faces are at least 1/5 of the frame width where a 
 
 | Shot | Line | Picture |
 |---|---|---|
-| S01 | L01 | Sunny terraced street, medium two-shot on a red front door: a neighbour in a yellow cardigan lifts her key to her friend's lock, both faces to camera, both keys on their chests, hers fading up gold (1 s). The hook frame. |
+| S01 | L01 | Sunny terraced street, medium two-shot on a red front door: a neighbour in a yellow cardigan lifts her key to her friend's lock, both faces to camera, both keys on their chests, hers fading up gold (1 s) once it's in the keyhole. The hook frame. |
 | S02 | L01 | Close on the glowing key at the keyhole, the door swinging in. |
-| S03 | L02 | Medium wide of the street: five painted doors, a few people with keys on cords, one key glowing gold at a door. |
-| S04 | L02 | Insert: three key heads side by side on three chests, three different glyphs. |
-| S05 | L03 | Dawn, the café door: the postman's key glowing at the lock, chairs still up inside. |
+| S03 | L02 | Medium wide of the street: five painted doors, a few people with keys on cords, one key glowing gold in a keyhole. |
+| S04 | L02 | Insert: three street extras' key heads side by side on three chests: bell, fish, wave. All cold. |
+| S05 | L03 | Dawn, the café door: the postman's three-dot key glowing in the keyhole, chairs still up inside. |
 | S06 | L03 | Inside: the postman alone at a table with a cup, satchel on the floor, smug. |
-| S07 | L04 | Mr Ames on his own step, patting his pockets, his key cold on his chest. |
-| S08 | L05 | His ex-wife in a green coat coming up the path, her key fading up gold. |
-| S09 | L06 | Two-shot: she unlocks his door, both staring straight ahead, not a word. |
-| S10 | L07 | The bride at the groom's door, her key glowing first try, the groom grinning in the doorway. |
+| S07 | L04 | Mr Ames on his own step, patting his pockets, his step-glyph key cold on his chest. |
+| S08 | L05 | His ex-wife in a green coat coming up the path, her leaf key cold on her chest. |
+| S09 | L06 | Two-shot: she puts her key in his lock and it fades up gold in the keyhole, both staring straight ahead, not a word. |
+| S10 | L07 | The bride at the groom's door, her ring key glowing in the keyhole first try, the groom grinning in the doorway. |
 | S11 | L08 | Dusk, wide: me trying my key in a shop door, cold. Far behind, out on the marsh, the windmill with its door wide open and warm light spilling. Plant 1. |
 | S12 | L08 | Close: my key in my hand, the four-spoke wheel glyph on its head, dull brass. Plant 2's other half. |
 | S13 | L09 | Wide of the marsh in afternoon sun: the black tower mill, white cap, four still sails, the earth track. |
-| S14 | L09 | Win at the mill door in her smock and headscarf, flour on her sleeves, her crescent key on its cord, smiling sideways. |
-| S15 | L10 | Memory grade (soft, warmer): me and Win side by side on the two stools by the millstones, flour in the window light. |
-| S16 | L11 | My bakery front on the street, a loaf glyph on the board, me in the doorway in my baker's jacket. |
+| S14 | L09 | Win at the mill door in her smock and headscarf, flour on her sleeves, her crescent key on its cord, smiling sideways, face at least 1/4 of the frame. |
+| S15 | L10 | This morning, two-shot: me on the step, Win in the open doorway a pace behind, both faces to camera, her hand lifting in a wave. Present day, no memory grade. |
+| S16 | L11 | Through the open door, present day: two wooden stools side by side at the millstones, Win's worn, mine with untouched flour on its seat. The history shown, not told. |
 | S17 | L12 | The mill step: three flour sacks by the open door, my hands out of frame lifting one (cut before any grip). |
-| S18 | L12 | Close on the open door's iron lock plate: the keyhole's escutcheon is a four-spoke wheel, the same as my key. Held 1.3 s. Plant 2. |
-| S19 | L13 | Me walking back down the track with a sack on my shoulder, not looking back. Win small in the doorway behind. |
+| S18 | L13 | Wider shot, not full frame: the open door's edge, the iron lock plate and the stone step in one frame, the plate about a quarter of the frame width. Its keyhole escutcheon is a four-spoke wheel, the same as my key, readable but not pointed at. Held 1.0 s. Plant 2. |
+| S19 | L13 | Me walking back down the track toward town and my bakery, a sack on my shoulder, not looking back. Win small in the doorway behind. |
 | S20 | L14 | Night, wide: the mill door open, a warm rectangle of light on the dark marsh. |
 | S21 | L15 | Monday, day: the mill door shut. Medium on me at the step, stopped. |
-| S22 | L15 | Close: the closed door, the lock plate, my cold key hanging in front of it. |
+| S22 | L15 | Close: the closed door, the lock plate, my cold key hanging on my chest a hand's width in front of it. The key never touches the plate. |
 | S23 | L16 | The empty step, no sacks. Low rumble from inside. |
 | S24 | L17 | Me knocking (cut away before the knuckles land: my raised arm, then the door). |
 | S25 | L17 | Insert through the small door window: the millstones turning in their casing, flour haze. |
@@ -142,10 +147,10 @@ Timings are at about 290 wpm. Faces are at least 1/5 of the frame width where a 
 | S55 | L42 | Its face, unmoved, the flat mouth. Hold. |
 | S56 | L43 | Me, close, eyes dropping to my key. |
 | S57 | L44 | Memory insert: S01's key glowing at a locked door. |
-| S58 | L45 | Quick memory: me at door after door in town, cold key each time (two doors in one shot, dusk). |
-| S59 | L46 | Memory: S20, the mill door open at night. |
+| S58 | L45 | Quick memory: S24, me knocking at the locked mill door this week, my key hanging cold on my chest, never at the lock. |
+| S59 | L46 | Memory: S20, the mill door open at night, years of it. |
 | S60 | L47 | Me, realising, face lit by the moon. |
-| S61 | L48 | My key lifted to the lock plate, cold, then fading up gold over 1.2 s. Music drop before. |
+| S61 | L48 | My key going into the keyhole, cold, then fading up gold over 1.2 s once it's in. Music drop before. |
 | S62 | L49 | Gold light on my chin and the door, the Lifter's face still behind the glass above. Cover frame. |
 | S63 | L50 | Insert: the key turning in the wheel-shaped escutcheon (cut away from any grip, key and plate only). |
 | S64 | L51 | Inside: the door opening, moonlight and fog behind me, my foot onto the floury floor. |
@@ -168,7 +173,7 @@ Timings are at about 290 wpm. Faces are at least 1/5 of the frame width where a 
 | S81 | L65 | Monday, through the window, empty mill at dawn: by the hoist post, a clean patch of boot shapes in the fresh flour. |
 | S82 | L65 | Hold on the patch, the drone thinning to nothing. Cut back to S01. Leave 0.25 s after the last word. |
 
-## Narration (65 lines, 640 words, about 2:13 of speech at 290 wpm, about 2:20 with gaps)
+## Narration (65 lines, 630 words, about 2:10 of speech at 290 wpm, about 2:20 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words.
 
 L01. In this town, your KEY opens exactly one door, and it's never your OWN.
@@ -179,12 +184,12 @@ L05. The only key that fits it is his EX-wife's.
 L06. She lets him in every evening. Neither of them says a WORD.
 L07. A bride's key opened her husband's door on the first TRY.
 L08. I've tried every door in town. Mine has never opened ANYTHING.
-L09. My great-aunt Win is eighty-one. She runs the WINDMILL on the marsh.
-L10. I was her helper on the stones for six YEARS.
-L11. Two years ago I left to open my own BAKERY.
-L12. Now I just pick up her flour from the step. I don't go IN.
-L13. She never asked me to STAY. So I never asked to come BACK.
-L14. Her door has never been locked. Sixty years, open day and NIGHT.
+L09. My great-aunt Win runs the WINDMILL on the marsh.
+L10. She's the only family I've GOT.
+L11. My old stool still sits beside hers at the STONES.
+L12. Every morning I pick up her flour for my BAKERY.
+L13. It's left on the step by the open door. I never go IN.
+L14. Thirty years, open day and NIGHT.
 L15. Then, this Monday, it was LOCKED.
 L16. No sacks on the step. Just the stones rumbling INSIDE.
 L17. I knocked. Nobody hears a thing over the STONES.
@@ -215,8 +220,8 @@ L41. Level with mine. There was no key around its NECK.
 L42. It just looked at me, like I was LATE.
 L43. And I thought about the RULE.
 L44. A key only goes warm at a LOCKED door.
-L45. I had tried every locked door in TOWN.
-L46. Win's had never been locked. Not ONCE.
+L45. All week it was locked, and I only ever KNOCKED.
+L46. Before that, it was never locked. Not ONCE.
 L47. So I'd never tried mine in IT.
 L48. I lifted my key to her lock, and it went WARM.
 L49. Gold, for the first time in my LIFE.
