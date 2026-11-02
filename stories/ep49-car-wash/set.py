@@ -407,9 +407,9 @@ def build_booth(kit, ctx, M):
     Bb(kit, "bdoorframe2", (-2.7, y1 + 0.0, 0), (-2.64, y1 + 0.06, 2.0), M["white"])
     # the -y wall is plain, with the beanie hook
     Bb(kit, "bfront", (x0, y0, 0), (x1, y0 + t, H), M["booth"])
-    ctx["hook"] = B(kit, "hook", (0.05, 0.12, 0.05), (-3.0, y0 + t + 0.06, 1.7), M["steel"])
-    B(kit, "hookplate", (0.12, 0.03, 0.2), (-3.0, y0 + t + 0.015, 1.7), M["steel"])
-    ctx["beanie"] = B(kit, "beanie_hook", (0.22, 0.2, 0.2), (-3.0, y0 + t + 0.14, 1.55), kit.plastic(MUSTARD, 0.9, name="beaniemat"), bevel=0.07)
+    ctx["hook"] = B(kit, "hook", (0.05, 0.12, 0.05), (-3.0, y0 + t + 0.06, 1.95), M["steel"])
+    B(kit, "hookplate", (0.12, 0.03, 0.2), (-3.0, y0 + t + 0.015, 1.95), M["steel"])
+    ctx["beanie"] = B(kit, "beanie_hook", (0.22, 0.2, 0.2), (-3.0, y0 + t + 0.14, 1.8), kit.plastic(MUSTARD, 0.9, name="beaniemat"), bevel=0.07)
     # the -x wall plain
     Bb(kit, "bleft", (x0, y0, 0), (x0 + t, y1, H), M["booth"])
     # the +x wall with the hatch y 1.0 .. 2.0, z 1.1 .. 1.75
@@ -432,10 +432,10 @@ def build_booth(kit, ctx, M):
         C(kit, "stoolseat", 0.2, 0.06, (-3.5, y, 0.66), mat, n=16)
         C(kit, "stoolleg", 0.04, 0.62, (-3.5, y, 0.33), M["steel"], n=8)
     C(kit, "dust", 0.19, 0.012, (-3.5, 1.15, 0.7), M["dust"], n=16)
-    B(kit, "panel", (0.9, 0.08, 0.6), (-3.2, y1 - 0.14, 1.25), M["dark"], bevel=0.02)
+    B(kit, "panel", (0.9, 0.08, 0.6), (-3.2, y0 + t + 0.05, 1.25), M["dark"], bevel=0.02)
     ctx["levers"] = {}
     for key, x, mat in (("w", -3.45, M["lever_w"]), ("y", -3.2, M["lever_y"]), ("b", -2.95, M["lever_b"])):
-        piv = kit.empty(nm("leverpiv"), (x, y1 - 0.2, 1.1))
+        piv = kit.empty(nm("leverpiv"), (x, y0 + t + 0.12, 1.1))
         B(kit, "leverstick", (0.05, 0.05, 0.26), (0, 0, 0.13), M["steel"], parent=piv)
         kit.sphere(nm("leverknob"), 0.06, (0, 0, 0.28), mat, piv, seg=10)
         ctx["levers"][key] = piv

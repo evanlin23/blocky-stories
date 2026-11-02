@@ -114,8 +114,8 @@ shot(0, "day", {"drv1": P(0, -6, -90, "smirk", pos3=True)},
      "driver close, the bell tinks at 1.2")
 shot("L01.2", "day", {"drv1": P(0, -6, -90, "smirk"), "drv2": P(0, -10.8, -90, "grin"), "drv3": P(0, -15.6, -90, "smirk")},
      still([-3.6, -3.0, 1.35], [0.2, -10.2, 0.95], 24), "wide queue")
-shot("L02", "day", {"pie_man": P(5.0, -12.5, 90, "worried")},
-     still([3.0, -13.6, 1.55], [5.8, -12.4, 1.3], 30), "kiosk hatch")
+shot("L02", "day", {"pie_man": P(5.1, -12.4, 165, "worried")},
+     still([4.3, -9.8, 1.55], [5.5, -12.4, 1.3], 30), "kiosk hatch")
 shot("L03", "day", {"date_a": dict(pos=[CAFE[0] - 0.85, CAFE[1] + 0.1], yaw=55, expr="worried", lean=6),
                     "date_b": dict(pos=[CAFE[0] + 0.85, CAFE[1] + 0.1], yaw=-55, expr="worried", lean=6)},
      still([CAFE[0], CAFE[1] - 2.9, 1.4], [CAFE[0], CAFE[1] + 0.1, 1.2], 28), "cafe date")
@@ -162,9 +162,9 @@ shot("L15.1", "day", {"ruben": dict(pos=[KIT[0] + 0.9, KIT[1] + 0.2], yaw=0, exp
 # ---- 03 Monday
 shot("L16", "sunrise", {"me": P(-1.0, -9.0, 0, "neutral")}, still([-1.0, -12.4, 1.5], [-1.0, -9.0, 1.4], 30), "my old overalls")
 shot("L17", "day", {"ruben": P(-0.6, -1.0, 0, "grin")}, still([-0.6, -3.0, 1.55], [-0.6, -1.0, 1.55], 40), "he grins")
-shot("L18", "day", {"me": P(-3.2, 1.95, 150, "worried", arms=[60, 0])},
-     still([-1.0, 1.0, 1.45], [-3.2, 2.2, 1.3], 28), "booth, my sleeve on the lever")
-shot("L18.1", "day", {}, still([-3.0, 1.55, 1.3], [-2.95, 2.3, 1.18], 42), "the blue lever drops")
+shot("L18", "day", {"me": P(-3.2, 1.25, -20, "worried", arms=[60, 0])},
+     still([-1.0, 1.9, 1.45], [-3.2, 1.0, 1.3], 28), "booth, my sleeve on the lever")
+shot("L18.1", "day", {}, still([-2.95, 1.4, 1.35], [-2.95, 0.65, 1.2], 40), "the blue lever drops")
 shot("L19", "day", {}, still([0.3, -1.2, 1.2], [0.0, 10.0, 1.4], 24), "brushes with no car")
 shot("L20", "day", {"me": P(-1.0, -4.0, 0, "neutral")}, still([-1.0, -4.55, 1.38], [-1.0, -4.0, 1.34], 48), "my bell")
 shot("L21", "day", {"ruben": P(3.4, -3.0, 0, "worried", then=[("L21.1", dict(yaw=-50))]), "me": P(-1.4, -9.0, 0, "worried")},
@@ -192,13 +192,13 @@ shot("L30", "over", {"me": P(-0.5, -3.6, 180, "scared", mouth=True)},
 shot("L31", "over", {}, still([0.0, 7.0, 1.5], [0.0, 13.5, 1.9], 28), "the dryer says it back")
 shot("L32", "over", {"me": P(*BOOTH_IN, 90, "worried", arms=[100, 0])},
      still([0.4, 0.3, 1.5], [-2.9, 1.6, 1.3], 30), "alone in the booth")
-shot("L33", "over", {"drv2": P(0, 10.6, 180, "neutral")}, still([0.2, 18.5, 1.25], [0.0, 10.0, 1.0], 30), "a clean car")
-shot("L33.2", "over", {}, still([-2.35, 11.0, 0.95], [-0.9, 12.1, 0.75], 32), "five handprints")
+shot("L33", "over", {}, still([0.2, 23.0, 1.25], [0.0, 14.0, 1.0], 30), "a clean car")
+shot("L33.2", "over", {}, still([-2.4, 16.7, 0.95], [-0.9, 17.5, 0.75], 32), "five handprints")
 shot("L34", "over", {"st0": P(-3.1, 13.0, 0, "blank")}, still([1.0, -1.0, 1.5], [-3.1, 11.0, 1.45], 55), "a figure at the far end")
 shot("L35", "over", {"st0": P(-3.1, 7.0, 0, "blank")}, still([1.0, -1.0, 1.5], [-3.1, 9.0, 1.45], 50), "nearer, under the foam")
 shot("L36", "over", {"st0": P(-3.1, 7.0, 0, "blank"), "st1": P(-3.1, 7.7, 0, "blank")},
      still([1.0, -1.0, 1.5], [-3.1, 9.0, 1.45], 50), "and one behind")
-shot("L37", "over", {}, still([0.0, -2.8, 1.35], [0.0, 0.0, 1.0], 30), "the chain and its blank disc")
+shot("L37", "over", {}, still([0.0, -4.6, 1.35], [0.0, 0.0, 0.95], 26), "the chain and its blank disc")
 shot("L37.2", "over", {"me": P(*BOOTH_IN, 90, "scared")}, still([-0.4, 1.6, 1.45], [-3.1, 1.6, 1.4], 36), "I stop sending cars in")
 # ---- 05 Noon
 shot("L38", "noon", {}, still([-3.2, -4.0, 1.4], [2.0, -9.5, 1.0], 24), "the van pulls in")
@@ -214,14 +214,19 @@ shot("L42", "noon", {"me": P(-1.0, -4.0, 0, "neutral")}, still([-1.0, -4.5, 1.05
 # ---- 06 the Stutter
 shot("L43", "dusk", {}, still([0.0, -12.0, 1.5], [0.0, 6.0, 1.7], 20), "lamps warm up")
 LINE_ALL = {f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(5)}
+shot("L44", "dusk", dict(LINE_ALL), still([-0.9, 3.0, 1.45], [-3.0, 4.5, 1.3], 20), "five of them, in a line")
+shot("L45", "dusk", dict(LINE_ALL), still([-3.2, 1.15, 1.72], [-3.0, 5.0, 1.45], 26), "down the line, from the booth")
+shot("L45.2", "dusk", dict(LINE_ALL), still([-3.1, 1.3, 1.58], [-3.1, 2.7, 1.55], 32), "the front one's face, from the booth")
+shot("L46", "dusk", dict(LINE_ALL), still([-3.1, 1.2, 1.5], [-3.1, 2.7, 1.3], 26), "its bare collar")
 shot("L47", "dusk", dict(LINE_ALL), still([-0.5, 3.2, 1.55], [-3.1, 2.75, 1.4], 28), "in the booth door")
 shot("L48", "dusk", {**LINE_ALL, "me": P(-1.5, 1.0, 180, "scared"), "ruben": P(-0.7, 1.0, 180, "scared")},
      still([-0.3, 4.3, 1.55], [-1.1, 1.0, 1.4], 26), "I stand where I used to")
 shot("P02", "dusk", dict(LINE_ALL), still([-0.9, 3.0, 1.45], [-3.0, 4.5, 1.3], 20), "hold")
 HEADS = [88, 77, 58, 45, 36]      # each head turns toward me at (-1.3, 3.0)
+shot("L49", "dusk", dict(LINE_ALL), still([-0.5, 3.6, 1.45], [-3.1, 3.6, 1.4], 18), "TEST: the heads turn")
 shot("L49.2", "dusk", dict(LINE_ALL), still([-0.5, 5.4, 1.45], [-3.1, 5.4, 1.4], 18), "the last three")
 ME_FACE = (-1.35, 2.7)
-shot("L50", "dusk", {**LINE_ALL, "me": P(ME_FACE[0], ME_FACE[1], -90, "scared")},
+shot("L50", "dusk", dict(LINE_ALL),
      still([-0.5, 3.05, 1.68], [-2.4, 2.7, 1.5], 30), "it leans in")
 shot("L50.2", "dusk", {**LINE_ALL, "me": P(ME_FACE[0], ME_FACE[1], -90, "scared")},
      still([-3.95, 3.0, 1.6], [-1.4, 2.7, 1.55], 32), "my face over its shoulder")
@@ -351,10 +356,10 @@ cue("L12", "ride", who="drv1", car=None)
 # Tuesday: a car to the hatch at L32 (no driver), the silver car out at L33, handprints
 cue("L32", "car:q2", pos=[0, -5.0], to=[0, 1.5], move=1.8, yaw=0, on=True)
 cue("L33", "car:q2", pos=[0, 1.5], yaw=0, on=False)
-cue("L33", "car:silver", pos=[0, 8.0], to=[0, 14.5], move=2.6, yaw=0, on=True)
-cue("L33.2", "car:silver", pos=[0, 12.0], yaw=0, on=True)
+cue("L33", "car:silver", pos=[0, 10.0], to=[0, 17.5], move=2.6, yaw=0, on=True)
+cue("L33.2", "car:silver", pos=[0, 17.5], yaw=0, on=True)
 cue("L33.2", "hand", on=True)
-cue("L34", "car:silver", pos=[0, 12.0], yaw=0, on=False)
+cue("L34", "car:silver", pos=[0, 17.5], yaw=0, on=False)
 cue("L34", "hand", on=False)
 cue("L35", "car:silver", pos=[0, 5.0], to=[0, 11.0], move=1.2, yaw=0, on=True)
 cue("L35+1.2", "car:silver", pos=[0, 11.0], yaw=0, on=False)
