@@ -1366,58 +1366,54 @@
    ]
   },
   "L53": {
-   "text": "Half that room was mine.",
+   "text": "I'd always known half that room was mine.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
+   "dur": 2.052,
    "onset": 0.172,
-   "end": 1.328,
+   "end": 1.862,
    "chunks": [
     [
      0.172,
-     0.698
+     0.69
     ],
     [
-     0.698,
-     1.328
+     0.69,
+     1.233
+    ],
+    [
+     1.233,
+     1.862
     ]
    ]
   },
   "L54": {
-   "text": "I came every Tuesday to sit with Jo's things. I'd been sitting on mine.",
+   "text": "I'd just pretended they were all Jo's, so I'd have a reason to keep coming.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9579000000000001,
-   "dur": 3.431,
+   "dur": 3.293,
    "onset": 0.172,
-   "end": 3.224,
+   "end": 3.086,
    "chunks": [
     [
      0.172,
-     0.431
+     0.759
     ],
     [
-     0.431,
-     0.974
+     0.759,
+     1.517
     ],
     [
-     0.974,
-     1.259
+     1.612,
+     2.259
     ],
     [
-     1.259,
-     1.897
-    ],
-    [
-     1.992,
-     2.483
-    ],
-    [
-     2.483,
-     3.224
+     2.259,
+     3.086
     ]
    ]
   },
@@ -1738,30 +1734,26 @@
    ]
   },
   "L66": {
-   "text": "The next Tuesday, my half went to the charity shop.",
+   "text": "My half went to the charity shop.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
-   "onset": 0.155,
-   "end": 2.172,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
    "chunks": [
     [
-     0.155,
-     0.793
+     0.172,
+     0.534
     ],
     [
-     0.845,
-     1.285
+     0.534,
+     0.698
     ],
     [
-     1.285,
-     1.406
-    ],
-    [
-     1.406,
-     2.172
+     0.698,
+     1.517
     ]
    ]
   },
@@ -1809,10 +1801,6 @@
     ],
     [
      1.034,
-     1.181
-    ],
-    [
-     1.181,
      1.603
     ],
     [
@@ -1882,38 +1870,6 @@
     [
      0.56,
      1.328
-    ]
-   ]
-  },
-  "L72": {
-   "text": "Every week, I'd been visiting my own things, and calling them hers.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 3.241,
-   "onset": 0.19,
-   "end": 3.034,
-   "chunks": [
-    [
-     0.19,
-     0.621
-    ],
-    [
-     0.655,
-     1.172
-    ],
-    [
-     1.172,
-     1.897
-    ],
-    [
-     1.948,
-     2.301
-    ],
-    [
-     2.301,
-     3.034
     ]
    ]
   },

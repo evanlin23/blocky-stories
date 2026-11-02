@@ -16,8 +16,8 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
-TEMPO = {"L49": 0.88, "L64": 0.9, "L72": 0.9, "L73": 0.95, "L54": 0.93, "L57": 0.95, "L19": 0.95}
-GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.4, "L69": 0.3, "L60": 0.25}
+TEMPO = {"L49": 0.88, "L64": 0.9, "L73": 0.95, "L54": 0.93, "L57": 0.95, "L19": 0.95}
+GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.4, "L69": 0.5, "L60": 0.4, "L67": 0.35, "L68": 0.4, "L58": 0.2}
 LOOP = 0.45          # seconds after the last word: the door's thud lands in it
 for ln in lines:
     if ln["id"] == "L42":
@@ -42,10 +42,11 @@ cast = {
     "jo": {"age": "adult", "skin": "#e6bd96", "shirt": "#a8603f", "pattern": "solid", "collar": "#92522f",
            "pants": "#232a3a", "shoes": "#ececec", "sleeves": "long", "hair": "long", "hair_c": "#141214",
            "hat": "none", "width": 0.9, "face": {"eyes": "lashes", "brows": True, "ink": "#1c1214"}},
-    "deep": {"age": "adult", "skin": "#b3a187", "shirt": "#3d6fa8", "pattern": "solid", "collar": "#3d6fa8",
-             "pants": "#3d6fa8", "shoes": "#8a6f52", "sleeves": "long", "hair": "none", "hair_c": "#8a6f52",
+    "deep": {"age": "adult", "skin": "#b9b4a2", "shirt": "#355f96", "pattern": "solid", "collar": "#355f96",
+             "pants": "#355f96", "shoes": "#8a6f52", "sleeves": "long", "hair": "none", "hair_c": "#8a6f52",
              "hat": "ballcap", "hat_c": "#54432f", "width": 0.7,
-             "face": {"eyes": "classic", "brows": False, "ink": "#0b0b0d", "pupil": "#08080a", "mouth": "auto"}},
+             "face": {"eyes": "hollow", "brows": False, "ink": "#0b0b0d", "pupil": "#08080a", "mouth": "line",
+                      "glow": "#eaf1ff"}},
 }
 
 
@@ -66,7 +67,7 @@ def yaw_to(a, b):
 
 
 # ---------------------------------------------------------------------------------------------------- cameras
-LONG_LENS = lambda y: still([-0.3, -0.8, 1.5], [0.3, y, 1.25], 55)
+LONG_LENS = lambda y, x=0.3: still([-0.3, -0.8, 1.5], [x, y, 1.25], 55)
 AISLE_CAM = still([-1.0, 3.0, 1.45], [2.5, 3.0, 1.3], 24)          # straight down unit seven's aisle from the corridor
 FACE_SIDE = lambda k: still([-0.7, YC[k] - 0.1, 1.55], [1.2, YC[k], 1.5], 36)
 SIT = (2.3, 2.25)
@@ -74,8 +75,8 @@ SIT_Z = 0.46
 KEYCAM = still([1.62, 2.14, 1.6], [1.62, 2.18, 1.2], 28)
 
 SHOTS = [
-    (0, "L01 behind me down the lit corridor toward the open door seven, a slow push",
-     move(([-0.2, -1.05, 1.3], [0.2, 2.6, 1.3]), ([-0.2, -0.8, 1.3], [0.1, 2.0, 1.3]), 30, 30)),
+    (0, "L01 low in the corridor: me walking toward the lamp-lit open door seven, round-scribbled boxes inside it",
+     move(([-0.75, -0.7, 1.05], [0.75, 2.9, 1.0]), ([-0.7, -0.35, 1.1], [0.7, 2.9, 1.0]), 22, 22)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
     ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.95, 1.3], [1.0, 3.0, 1.15], 22)),
@@ -92,7 +93,7 @@ SHOTS = [
     ("L14", "the corridor from the entrance, lit, empty", still([-0.1, -0.9, 1.5], [-0.1, 10.0, 1.2], 24)),
     ("L15", "the lights click off: my phone's glow, the green ring ahead",
      move(([-0.15, 7.4, 1.5], [-0.4, 0.5, 1.25]), ([-0.15, 6.6, 1.5], [-0.4, 0.5, 1.25]), 24)),
-    ("L16", "long lens: unit eleven's door is up", LONG_LENS(12.0)),
+    ("L16", "long lens: unit eleven's door is up, a dark opening near centre", still([-0.9, -0.8, 1.3], [0.9, 12.2, 1.2], 60)),
     ("L17", "closer: the Deep One front-on in unit eleven's doorway", FACE_SIDE(11)),
     ("L18", "mid shot of its front, the face plain", still([-0.5, 12.15, 1.5], [1.2, 12.2, 1.4], 44)),
     ("L19", "me at my door, a small nod", still([-0.1, 6.3, 1.5], [0.0, 3.3, 1.35], 42)),
@@ -103,12 +104,12 @@ SHOTS = [
     ("L22", "front-on, unit ten", FACE_SIDE(10)),
     ("L23", "me walking down the corridor with the torch", still([-0.1, -0.9, 1.5], [-0.2, 7.0, 1.2], 30)),
     ("L24", "from two metres off: its face and the start of its flank", still([0.2, 7.95, 1.5], [1.2, 9.9, 1.3], 30)),
-    ("L25", "the beam travels the whole depth of the flank", move(([0.95, 8.95, 1.15], [3.9, 9.4, 1.0]),
-                                                              ([0.95, 8.95, 1.15], [3.9, 9.45, 1.0]), 20)),
+    ("L25", "low side angle: the flank runs back the whole depth in a cold rim",
+     move(([0.55, 9.2, 0.4], [3.6, 9.55, 1.05]), ([0.6, 9.18, 0.36], [3.6, 9.5, 1.05]), 18)),
     ("L26", "close on the ribbed flank and the grime", still([2.2, 10.84, 0.78], [2.0, 10.38, 0.78], 17)),
     ("L27", "front-on again, from beside it: the face to the corridor", still([-0.3, 9.55, 1.55], [1.1, 9.9, 1.55], 42)),
     ("L28", "long lens: unit nine's door is up", LONG_LENS(7.6)),
-    ("L29", "from my doorway: the body out, the head turned round to me", still([-0.8, 3.2, 1.55], [1.0, 7.6, 1.5], 40)),
+    ("L29", "closer: the body side-on, the head turned square round to me, both eyes on the camera", still([0.35, 5.35, 1.58], [1.2, 7.6, 1.55], 48)),
     ("L30", "the hasp, door seven already down", still([-0.1, 3.5, 0.45], [0.9, 3.0, 0.15], 30)),
     ("L31", "the corridor, lit, door eight next to mine", still([-0.35, 0.8, 1.5], [0.9, 5.0, 1.25], 28)),
     ("L32", "door eight's foot, no lock", still([-0.1, 5.7, 0.5], [0.9, 5.3, 0.22], 32)),
@@ -123,15 +124,15 @@ SHOTS = [
     ("L40", "the lights beyond my door ramp down", still([3.3, 3.1, 1.6], [0.9, 2.9, 1.3], 26)),
     ("L41", "me walking up the low-lit corridor to the button, my back to seven",
      still([0.0, 3.9, 1.55], [-0.6, 0.6, 1.2], 26)),
-    ("L42", "me at the button as the lights come up behind me", still([-0.45, 2.2, 1.6], [-0.6, 0.55, 1.5], 38)),
-    ("L43", "the hit: it is in my unit, its face lit from below", still([-0.5, -0.6, 1.25], [1.0, 3.0, 1.3], 32)),
+    ("L42", "me at the button, looking back over my shoulder, worried", still([-0.2, 1.95, 1.58], [-0.6, 0.62, 1.52], 40)),
+    ("L43", "the hit: it is in my unit, its face lit from below", still([-0.95, 0.1, 1.2], [1.15, 3.0, 1.45], 62)),
     ("L44", "its face right at my open door", still([-0.3, 3.45, 1.58], [1.0, 3.0, 1.58], 44)),
-    ("L45", "from the doorway's edge, high: the body filling the aisle to the back wall",
-     still([0.5, 3.0, 2.2], [3.3, 3.0, 0.85], 20)),
+    ("L45", "low from the doorway's edge: the cold-rimmed flank running back to the wall",
+     still([0.45, 2.22, 0.42], [3.4, 2.7, 1.05], 18)),
     ("L46", "the lamp beside its boot", still([0.6, 2.05, 0.5], [1.2, 2.6, 0.2], 28)),
     ("L47", "my face, terrified, then my eyes drop", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
-    ("L48", "straight down the aisle line: its head turned to the left stack", AISLE_CAM),
-    ("L49", "hard cut, same framing: the head now turned to the right stack", AISLE_CAM),
+    ("L48", "down the aisle line: its head in profile, one eye, facing the left stack", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
+    ("L49", "hard cut, same framing: the head in profile facing the right stack", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
     ("L50", "the jagged boxes beside its flank", still([0.1, 3.4, 1.1], [1.5, 3.8, 0.85], 30)),
     ("L51", "the round boxes beside its flank, the lamp at the foot", still([0.1, 2.6, 1.1], [1.5, 2.3, 0.8], 30)),
     ("L52", "memory: a round scribble on a fresh box, the kitchen table",
@@ -160,7 +161,7 @@ SHOTS = [
      still([-1.0, 2.4, 1.5], [2.5, 3.1, 0.9], 20)),
     ("L70", "me in the doorway with the small box", still([-0.9, 3.0, 1.55], [1.2, 3.0, 1.45], 38)),
     ("L71", "the blue door rolling down, me beside it with the box", still([-0.9, 1.3, 1.5], [0.6, 3.4, 1.15], 26)),
-    ("L72", "low on the door coming down over the empty floor", still([-0.5, 2.1, 0.22], [0.9, 3.0, 0.3], 20)),
+    ("L71+0.7", "low on the door coming down over the empty floor", still([-0.5, 2.1, 0.22], [0.9, 3.0, 0.3], 20)),
     ("L73", "the corridor from the entrance, sunny: me walking toward the camera, the door landing behind",
      still([-0.3, -1.0, 1.45], [0.25, 5.0, 1.15], 21)),
 ]
@@ -239,7 +240,7 @@ put("me", "L39", [SIT[0], SIT[1], SIT_Z], yaw=180, expr="neutral", **SITTING)
 put("me", "L41", [0.5, 3.0], yaw=180)
 walk("me", "L41+0.2", [0.5, 2.5], yaw=180)
 walk("me", "L41.2+0.5", [-0.6, 0.85])
-put("me", "L42", [-0.6, 0.62], yaw=-90, expr="worried")
+put("me", "L42", [-0.6, 0.62], yaw=-90, expr="worried", head=[-75, 0])
 hide("me", "L43")
 put("me", "L47", [-0.2, 1.4], yaw=yaw_to([-0.2, 1.4], [1.0, 3.0]), expr="terrified")
 key("me", "L47.3", expr="worried", head=[0, 18], blend=0.3)
@@ -265,7 +266,6 @@ walk("me", "L66+1.9", [-0.1, -4.2], **CARRY)
 hide("me", "L67")
 put("me", "L70", [1.25, 3.0], yaw=-90, expr="soft", **CARRY)
 put("me", "L71", [0.3, 3.75], yaw=90, expr="soft", **CARRY)
-hide("me", "L72")
 put("me", "L73", [0.25, 3.4], yaw=180, expr="soft", **CARRY)
 walk("me", "L73+0.1", [0.0, 0.2], yaw=0)
 
@@ -313,6 +313,7 @@ cues = [
     {"at": "L15.3+0.4", "name": "corr", "level": 1.0, "dur": 1.0},
     {"at": "L40.2", "name": "corr", "level": 0.12, "dur": 1.2},
     {"at": "L42+0.3", "name": "corr", "level": 0.22, "dur": 1.0},
+    {"at": "L43+0.3", "name": "corr", "level": 0.09, "dur": 2.4},
     {"at": "L55", "name": "corr", "level": 1.0, "dur": 0.01},
     # doors
     {"at": 0, "name": "door", "unit": 7, "open": 1.0},
@@ -400,6 +401,14 @@ cues = [
     {"at": "L29", "name": "headtube", "on": False},
     {"at": "L38", "name": "headtube", "on": True},
     {"at": "L48", "name": "headtube", "on": False},
+    {"at": "L24", "name": "rim", "on": 1.0, "pos": [3.9, 9.05, 1.3], "aim": [1.2, 9.4, 1.15]},
+    {"at": "L28", "name": "rim", "on": 0.0},
+    {"at": "L45", "name": "rim", "on": 1.0, "pos": [2.3, 1.95, 1.4], "aim": [1.2, 2.5, 1.2]},
+    {"at": "L46", "name": "rim", "on": 0.0},
+    {"at": "L48", "name": "profile", "on": True},
+    {"at": "L55", "name": "profile", "on": False},
+    {"at": "L45", "name": "stacks", "left": 18, "right": 9},
+    {"at": "L46", "name": "stacks", "left": 18, "right": 18},
     {"at": "L64", "name": "slotlight", "on": 1.0},
     {"at": "L65", "name": "slotlight", "on": 0.0},
 ]
@@ -420,9 +429,9 @@ sfx = [
 
 story = {
     "slug": "ep34-unit-seven",
-    "title": "Every Thursday at seven, I visit a room",
+    "title": "Every Tuesday at seven, I visit a room",
     "made_for_kids": False,
-    "premise": "Every Thursday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Thursday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Thursday they are one door nearer mine.",
+    "premise": "Every Tuesday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Tuesday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Tuesday they are one door nearer mine.",
     "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit looks from the jagged stack to the round one as if counting, and the count makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.", "twist_old": "Half the boxes are mine. The thing that has come to stand in the aisle is standing exactly where Jo stood the night we packed, because a unit rented by two is counted for two and I have been keeping her place empty. When Jo takes her half and I give mine away, the room is finally empty of anyone's things.",
     "world": "a low self-storage block at the edge of a made-up town: one lit indoor corridor of twelve blue roller doors on a one-minute light timer, a yard door onto asphalt and one sodium lamp",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},

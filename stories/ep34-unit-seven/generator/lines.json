@@ -1052,8 +1052,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Half that room",
-    "Half that room"
+    "I'd always KNOWN",
+    "I'd always known"
+   ],
+   [
+    "half that room",
+    "half that room"
    ],
    [
     "was MINE.",
@@ -1066,28 +1070,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I came",
-    "I came"
+    "I'd just PRETENDED",
+    "I'd just pretended"
    ],
    [
-    "every Tuesday",
-    "every Tuesday"
+    "they were all JO'S,",
+    "they were all Jo's,"
    ],
    [
-    "to sit with",
-    "to sit with"
+    "so I'd have a reason",
+    "so I'd have a reason"
    ],
    [
-    "Jo's THINGS.",
-    "Jo's things."
-   ],
-   [
-    "I'd been sitting",
-    "I'd been sitting"
-   ],
-   [
-    "on MINE.",
-    "on mine."
+    "to keep COMING.",
+    "to keep coming."
    ]
   ]
  },
@@ -1356,20 +1352,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "The NEXT Tuesday,",
-    "The next Tuesday,"
+    "My HALF",
+    "My half"
    ],
    [
-    "my half went",
-    "my half went"
+    "went to",
+    "went to"
    ],
    [
-    "to the",
-    "to the"
-   ],
-   [
-    "charity SHOP.",
-    "charity shop."
+    "the charity SHOP.",
+    "the charity shop."
    ]
   ]
  },
@@ -1404,12 +1396,8 @@
     "was empty"
    ],
    [
-    "for the",
-    "for the"
-   ],
-   [
-    "first TIME",
-    "first time"
+    "for the first time",
+    "for the first time"
    ],
    [
     "since we SIGNED.",
@@ -1460,32 +1448,6 @@
    [
     "the door DOWN.",
     "the door down."
-   ]
-  ]
- },
- {
-  "id": "L72",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every week,",
-    "Every week,"
-   ],
-   [
-    "I'd been visiting",
-    "I'd been visiting"
-   ],
-   [
-    "my OWN things,",
-    "my own things,"
-   ],
-   [
-    "and calling",
-    "and calling"
-   ],
-   [
-    "them HERS.",
-    "them hers."
    ]
   ]
  },

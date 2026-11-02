@@ -135,6 +135,10 @@ def digits_image(text, w=360, h=220):
                 "g": (x, mid - th // 2, x + dw, mid + th // 2),
                 "f": (x, y0, x + th, mid + th // 2), "b": (x + dw - th, y0, x + dw, mid + th // 2),
                 "e": (x, mid - th // 2, x + th, y0 + dh), "c": (x + dw - th, mid - th // 2, x + dw, y0 + dh)}
+        if ch == "7":   # a stencilled 7: a top bar and a slanted stem, so it can't read as a 1
+            d.rectangle([x - 8, y0, x + dw + 8, y0 + th + 4], fill=ink)
+            d.polygon([(x + dw + 8, y0), (x + dw - 30, y0), (x + 6, y0 + dh), (x + 40, y0 + dh)], fill=ink)
+            continue
         for seg in s:
             d.rectangle(bars[seg], fill=ink)
     return im
@@ -154,29 +158,32 @@ def scribble_image(style, seed, w=420, h=340):
     ink = (14, 14, 18)
     th = 15
     if style == "round":
-        for k in range(rnd.randint(2, 3)):
-            cx = rnd.randint(110, w - 110)
-            cy = rnd.randint(105, h - 105)
-            r0 = rnd.randint(22, 36)
-            pts = []
-            for i in range(0, 241, 6):
-                a = math.radians(i * 3)
-                r = r0 + i * 0.16
-                pts.append((cx + r * math.cos(a), cy + r * 0.86 * math.sin(a)))
-            d.line(pts, fill=ink, width=th, joint="curve")
-            for p in (pts[0], pts[-1]):
-                d.ellipse([p[0] - th / 2, p[1] - th / 2, p[0] + th / 2, p[1] + th / 2], fill=ink)
+        # one loose coil that winds out from the middle: never two stacked rings (an "8"), never a loop-and-stem
+        cx = w // 2 + rnd.randint(-30, 30)
+        cy = h // 2 + rnd.randint(-20, 20)
+        pts = []
+        turns = 3.2
+        for i in range(0, 241):
+            a = math.radians(i * 360 * turns / 240 + rnd.uniform(-1, 1))
+            r = 10 + 82 * (i / 240)
+            pts.append((cx + r * 1.15 * math.cos(a), cy + r * 0.9 * math.sin(a)))
+        d.line(pts, fill=ink, width=th, joint="curve")
+        for p in (pts[0], pts[-1]):
+            d.ellipse([p[0] - th / 2, p[1] - th / 2, p[0] + th / 2, p[1] + th / 2], fill=ink)
     else:
-        for k in range(rnd.randint(2, 3)):
-            x = rnd.randint(40, 120)
-            y0 = rnd.randint(70, h - 140)
-            pts = []
-            n = rnd.randint(6, 8)
-            for i in range(n):
-                pts.append((x + i * (w - 200) / (n - 1), y0 + (110 if i % 2 else 0) + rnd.randint(-10, 10)))
-            d.line(pts, fill=ink, width=th, joint="curve")
-            for p in (pts[0], pts[-1]):
-                d.ellipse([p[0] - th / 2, p[1] - th / 2, p[0] + th / 2, p[1] + th / 2], fill=ink)
+        # a tangled scrawl of long straight cuts at odd angles: never a W or an M
+        pts = []
+        ang = rnd.uniform(0, 6.28)
+        x, y = w / 2 + rnd.randint(-40, 40), h / 2 + rnd.randint(-30, 30)
+        for i in range(9):
+            ang += rnd.choice((1, -1)) * rnd.uniform(2.0, 2.7)
+            ln = rnd.uniform(95, 150)
+            x = min(w - 70, max(70, x + ln * math.cos(ang)))
+            y = min(h - 70, max(70, y + ln * 0.8 * math.sin(ang)))
+            pts.append((x, y))
+        d.line(pts, fill=ink, width=th, joint="curve")
+        for p in (pts[0], pts[-1]):
+            d.ellipse([p[0] - th / 2, p[1] - th / 2, p[0] + th / 2, p[1] + th / 2], fill=ink)
     return im
 
 
@@ -291,9 +298,10 @@ def build_door(kit, ctx, M, side, k, yc):
     root = kit.empty(f"door {n}", (P + (0.03 if side == "B" else 0.0) * 1.0, yc, 0))
     corrugated(kit, f"panel {n}", 2.0, UNIT_H, f, M["blue"], root)
     kit.box(f"rail {n}", (0.05, 2.0, 0.09), (f * 0.03, 0, 0.05), M["bluedk"], root)
-    kit.box(f"plate {n}", (0.02, 0.32, 0.2), (f * 0.04, 0.62, 1.95), M["steelp"], root)
-    uvplane(kit, f"plateimg {n}", (0.3, 0.18), (f * 0.0525, 0.62, 1.95), M[f"plate{n}"], root,
-              rot=(math.pi / 2, 0, -math.pi / 2 if f < 0 else math.pi / 2))
+    pl1 = kit.box(f"plate {n}", (0.02, 0.32, 0.2), (f * 0.04, 0.62, 1.95), M["steelp"], root)
+    pl2 = uvplane(kit, f"plateimg {n}", (0.3, 0.18), (f * 0.0525, 0.62, 1.95), M[f"plate{n}"], root,
+                  rot=(math.pi / 2, 0, -math.pi / 2 if f < 0 else math.pi / 2))
+    ctx.setdefault("plates", []).append((root, f, (pl1, pl2)))
     kit.box(f"hasp {n}", (0.03, 0.12, 0.05), (f * 0.04, 0.0, 0.14), M["steelp"], root)
     if side == "B":
         hdr = kit.box(f"header {n}", (0.24, 2.0, 0.5), (P - 0.0, yc, UNIT_H + 0.25), M["steelp"], bevel=0.01)
@@ -398,7 +406,7 @@ def build_unit_seven(kit, ctx, M):
     kit.light("lamp bounce", "POINT", (1.25, yc + 0.1, 0.35), 25, "#ffcf8a", size=0.08)
     kit.light("back rim", "SPOT", (2.1, yc + 0.15, 2.1), 160, "#9fc0ff", size=0.15, spot=70, blend=0.6, shadow=False)
     kit.aim(bpy.data.objects["back rim"], (1.1, yc, 1.5))
-    kit.light("face under", "SPOT", (0.55, yc - 0.15, 0.25), 90, "#ffd9a0", size=0.1, spot=60, blend=0.7)
+    kit.light("face under", "SPOT", (0.55, yc - 0.15, 0.25), 230, "#ffd9a0", size=0.1, spot=60, blend=0.7)
     kit.aim(bpy.data.objects["face under"], (1.0, yc, 1.55))
     # the keys on a box top: a ring and two brass keys
     top = (1.62, yc - AISLE - 0.25, 1.2)
@@ -550,9 +558,9 @@ def build_deep(kit, ctx):
         return
     ctx["deep_done"] = True
     M = ctx["M"]
-    blue = kit.plastic("#3d6fa8", 0.5, name="deep blue", spec=0.5)
-    blue2 = kit.plastic("#33608f", 0.55, name="deep rib")
-    skin = kit.plastic("#b3a187", 0.6, name="deep skin")
+    blue = kit.plastic("#2f5890", 0.5, name="deep blue", spec=0.5)
+    blue2 = kit.plastic("#294c7a", 0.55, name="deep rib")
+    skin = kit.plastic("#b9b4a2", 0.6, name="deep skin")
     cap = kit.plastic("#54432f", 0.92, name="deep cap")
     dust = kit.plastic("#7d6548", 0.95, name="deep dust")
     L = 2.7 / RIG_S
@@ -577,6 +585,26 @@ def build_deep(kit, ctx):
     ht = kit.cyl("deep headtube", 0.58, L, (0, yc + 0.12, 4.62), skin, root, rot=(math.pi / 2, 0, 0))
     capb = kit.box("deep captop", (1.36, L, 0.42), (0, yc + 0.12, 5.31), cap, root, bevel=0.1)
     ctx["deep_head_parts"] = [ht, capb]
+    # a profile: a nose, a cheek eye on each side and a mouth line, shown only in the shots where its head is turned
+    # to the side (cue "profile"), so the front stays a flat drawn face
+    hg = bpy.data.objects.get("deep.headg")
+    prof = []
+    if hg is not None:
+        ink = kit.plastic("#0b0b0d", 0.5, name="deep ink")
+        glint = kit.plastic("#f4f6ff", 0.3, name="deep glint")
+        R = 0.62
+        prof.append(kit.box("deep nose", (0.2, 0.34, 0.3), (0, -R - 0.1, -0.12), skin, hg, bevel=0.05))
+        prof.append(kit.box("deep lip", (0.5, 0.1, 0.07), (0, -R + 0.01, -0.36), ink, hg))
+        ang = math.radians(62)
+        for sx in (-1, 1):
+            ex, ey = sx * (R * math.sin(ang) + 0.01), -R * math.cos(ang)
+            prof.append(kit.box(f"deep pupil{sx}", (0.1, 0.19, 0.19), (ex, ey, 0.08), ink, hg, bevel=0.03))
+            prof.append(kit.box(f"deep glint{sx}", (0.11, 0.05, 0.05), (ex + sx * 0.01, ey - 0.04, 0.13), glint, hg))
+    ctx["deep_profile"] = prof
+    for ob in prof:
+        ob.hide_render = True
+    kit.light("deep rim", "SPOT", (3.0, 2.0, 1.4), 420, "#7fa8ff", size=0.25, spot=60, blend=0.7, shadow=False)
+    kit.aim(bpy.data.objects["deep rim"], (1.3, 2.5, 1.2))
 
 
 # ------------------------------------------------------------------------------------------ animate
@@ -760,13 +788,52 @@ def animate(kit, story, tl, t, ctx):
         _show(pp, True)
     else:
         _show(pp, False)
+    _plates(kit, story, tl, t, ctx)
     # the Deep One: the tube behind its head, and its edge light
+    rc = _last(_cues(tl, "rim"), t)
+    over["deep rim"] = float(rc["on"]) if rc else 0.0
+    if rc and rc.get("on"):
+        rl = kit.LIGHTS["deep rim"]["obj"]
+        rl.location = tuple(rc["pos"])
+        kit.aim(rl, tuple(rc["aim"]))
+    pc2 = _last(_cues(tl, "profile"), t)
+    dr0 = bpy.data.objects.get("deep")
+    for ob in ctx.get("deep_profile", []):
+        ob.hide_render = not (pc2 and pc2.get("on")) or (dr0 is not None and dr0.hide_render)
     hc = _last(_cues(tl, "headtube"), t)
     ht = bool(hc["on"]) if hc else True
     for ob in ctx.get("deep_head_parts", []):
         dr = bpy.data.objects.get("deep")
         ob.hide_render = (dr is not None and dr.hide_render) or not ht
     return over
+
+
+def _plates(kit, story, tl, t, ctx):
+    """A door plate is shown whole or not at all: hide any plate that the shot's frame would crop (or sees edge-on)."""
+    from bpy_extras.object_utils import world_to_camera_view
+    from blocky import bl_story
+    shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
+    spec = next(s for s in story["shots"] if s["id"] == shot["id"])
+    loc, tgt, lens, roll = bl_story.cam_at(spec, shot, t, {}, tl)
+    kit.place_camera(loc, tgt, lens, roll)
+    sc = bpy.context.scene
+    bpy.context.view_layer.update()
+    for root, f, obs in ctx.get("plates", []):
+        if root.hide_render and any(o.hide_render for o in obs):
+            pass
+        cx, cy, cz = root.location.x + f * 0.05, root.location.y + 0.62, root.location.z + 1.95
+        pts = [(cx, cy + dy, cz + dz) for dy in (-0.17, 0.17) for dz in (-0.11, 0.11)]
+        from mathutils import Vector
+        uv = [world_to_camera_view(sc, sc.camera, Vector(p)) for p in pts]
+        inside = [0.03 < v.x < 0.97 and 0.03 < v.y < 0.97 and v.z > 0 for v in uv]
+        width = max(v.x for v in uv) - min(v.x for v in uv)
+        ok = all(inside) or not any(inside)
+        if width < 0.012 and any(inside):
+            ok = False                   # a speck is a smear, not a number
+        if root.hide_render:
+            continue
+        for o in obs:
+            o.hide_render = not ok
 
 
 def _show(e, on):

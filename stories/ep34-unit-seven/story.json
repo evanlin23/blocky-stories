@@ -1,8 +1,8 @@
 {
  "slug": "ep34-unit-seven",
- "title": "Every Thursday at seven, I visit a room",
+ "title": "Every Tuesday at seven, I visit a room",
  "made_for_kids": false,
- "premise": "Every Thursday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Thursday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Thursday they are one door nearer mine.",
+ "premise": "Every Tuesday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Tuesday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Tuesday they are one door nearer mine.",
  "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit looks from the jagged stack to the round one as if counting, and the count makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.",
  "world": "a low self-storage block at the edge of a made-up town: one lit indoor corridor of twelve blue roller doors on a one-minute light timer, a yard door onto asphalt and one sodium lamp",
  "voice": {
@@ -89,11 +89,11 @@
   },
   "deep": {
    "age": "adult",
-   "skin": "#b3a187",
-   "shirt": "#3d6fa8",
+   "skin": "#b9b4a2",
+   "shirt": "#355f96",
    "pattern": "solid",
-   "collar": "#3d6fa8",
-   "pants": "#3d6fa8",
+   "collar": "#355f96",
+   "pants": "#355f96",
    "shoes": "#8a6f52",
    "sleeves": "long",
    "hair": "none",
@@ -102,11 +102,12 @@
    "hat_c": "#54432f",
    "width": 0.7,
    "face": {
-    "eyes": "classic",
+    "eyes": "hollow",
     "brows": false,
     "ink": "#0b0b0d",
     "pupil": "#08080a",
-    "mouth": "auto"
+    "mouth": "line",
+    "glow": "#eaf1ff"
    }
   }
  },
@@ -1170,8 +1171,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Half that room",
-     "Half that room"
+     "I'd always KNOWN",
+     "I'd always known"
+    ],
+    [
+     "half that room",
+     "half that room"
     ],
     [
      "was MINE.",
@@ -1184,28 +1189,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I came",
-     "I came"
+     "I'd just PRETENDED",
+     "I'd just pretended"
     ],
     [
-     "every Tuesday",
-     "every Tuesday"
+     "they were all JO'S,",
+     "they were all Jo's,"
     ],
     [
-     "to sit with",
-     "to sit with"
+     "so I'd have a reason",
+     "so I'd have a reason"
     ],
     [
-     "Jo's THINGS.",
-     "Jo's things."
-    ],
-    [
-     "I'd been sitting",
-     "I'd been sitting"
-    ],
-    [
-     "on MINE.",
-     "on mine."
+     "to keep COMING.",
+     "to keep coming."
     ]
    ],
    "tempo": 0.93,
@@ -1294,7 +1291,8 @@
      "at SEVEN.",
      "at seven."
     ]
-   ]
+   ],
+   "gap": 0.2
   },
   {
    "id": "L59",
@@ -1335,7 +1333,7 @@
      "but boxes."
     ]
    ],
-   "gap": 0.25
+   "gap": 0.4
   },
   {
    "id": "L61",
@@ -1479,20 +1477,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "The NEXT Tuesday,",
-     "The next Tuesday,"
+     "My HALF",
+     "My half"
     ],
     [
-     "my half went",
-     "my half went"
+     "went to",
+     "went to"
     ],
     [
-     "to the",
-     "to the"
-    ],
-    [
-     "charity SHOP.",
-     "charity shop."
+     "the charity SHOP.",
+     "the charity shop."
     ]
    ]
   },
@@ -1512,7 +1506,8 @@
      "small BOX.",
      "small box."
     ]
-   ]
+   ],
+   "gap": 0.35
   },
   {
    "id": "L68",
@@ -1527,18 +1522,15 @@
      "was empty"
     ],
     [
-     "for the",
-     "for the"
-    ],
-    [
-     "first TIME",
-     "first time"
+     "for the first time",
+     "for the first time"
     ],
     [
      "since we SIGNED.",
      "since we signed."
     ]
-   ]
+   ],
+   "gap": 0.4
   },
   {
    "id": "L69",
@@ -1553,7 +1545,7 @@
      "and evening sun."
     ]
    ],
-   "gap": 0.3
+   "gap": 0.5
   },
   {
    "id": "L70",
@@ -1586,33 +1578,6 @@
      "the door down."
     ]
    ]
-  },
-  {
-   "id": "L72",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Every week,",
-     "Every week,"
-    ],
-    [
-     "I'd been visiting",
-     "I'd been visiting"
-    ],
-    [
-     "my OWN things,",
-     "my own things,"
-    ],
-    [
-     "and calling",
-     "and calling"
-    ],
-    [
-     "them HERS.",
-     "them hers."
-    ]
-   ],
-   "tempo": 0.9
   },
   {
    "id": "L73",
@@ -1649,35 +1614,35 @@
     [
      0,
      [
-      -0.2,
-      -1.05,
-      1.3
+      -0.75,
+      -0.7,
+      1.05
      ],
      [
-      0.2,
-      2.6,
-      1.3
+      0.75,
+      2.9,
+      1.0
      ],
-     30
+     22
     ],
     [
      1,
      [
-      -0.2,
-      -0.8,
-      1.3
+      -0.7,
+      -0.35,
+      1.1
      ],
      [
-      0.1,
-      2.0,
-      1.3
+      0.7,
+      2.9,
+      1.0
      ],
-     30
+     22
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "L01 behind me down the lit corridor toward the open door seven, a slow push"
+   "what": "L01 low in the corridor: me walking toward the lamp-lit open door seven, round-scribbled boxes inside it"
   },
   {
    "id": "S02",
@@ -2035,21 +2000,21 @@
     [
      0,
      [
-      -0.3,
+      -0.9,
       -0.8,
-      1.5
+      1.3
      ],
      [
-      0.3,
-      12.0,
-      1.25
+      0.9,
+      12.2,
+      1.2
      ],
-     55
+     60
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "long lens: unit eleven's door is up",
+   "what": "long lens: unit eleven's door is up, a dark opening near centre",
    "at": "L16"
   },
   {
@@ -2265,35 +2230,35 @@
     [
      0,
      [
-      0.95,
-      8.95,
-      1.15
+      0.55,
+      9.2,
+      0.4
      ],
      [
-      3.9,
-      9.4,
-      1.0
+      3.6,
+      9.55,
+      1.05
      ],
-     20
+     18
     ],
     [
      1,
      [
-      0.95,
-      8.95,
-      1.15
+      0.6,
+      9.18,
+      0.36
      ],
      [
-      3.9,
-      9.45,
-      1.0
+      3.6,
+      9.5,
+      1.05
      ],
-     20
+     18
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the beam travels the whole depth of the flank",
+   "what": "low side angle: the flank runs back the whole depth in a cold rim",
    "at": "L25"
   },
   {
@@ -2371,21 +2336,21 @@
     [
      0,
      [
-      -0.8,
-      3.2,
-      1.55
+      0.35,
+      5.35,
+      1.58
      ],
      [
-      1.0,
+      1.2,
       7.6,
-      1.5
+      1.55
      ],
-     40
+     48
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "from my doorway: the body out, the head turned round to me",
+   "what": "closer: the body side-on, the head turned square round to me, both eyes on the camera",
    "at": "L29"
   },
   {
@@ -2684,21 +2649,21 @@
     [
      0,
      [
-      -0.45,
-      2.2,
-      1.6
+      -0.2,
+      1.95,
+      1.58
      ],
      [
       -0.6,
-      0.55,
-      1.5
+      0.62,
+      1.52
      ],
-     38
+     40
     ]
    ],
    "hand": 0.006,
    "step": 1,
-   "what": "me at the button as the lights come up behind me",
+   "what": "me at the button, looking back over my shoulder, worried",
    "at": "L42"
   },
   {
@@ -2707,16 +2672,16 @@
     [
      0,
      [
-      -0.5,
-      -0.6,
-      1.25
+      -0.95,
+      0.1,
+      1.2
      ],
      [
-      1.0,
+      1.15,
       3.0,
-      1.3
+      1.45
      ],
-     32
+     62
     ]
    ],
    "hand": 0.006,
@@ -2753,21 +2718,21 @@
     [
      0,
      [
-      0.5,
-      3.0,
-      2.2
+      0.45,
+      2.22,
+      0.42
      ],
      [
-      3.3,
-      3.0,
-      0.85
+      3.4,
+      2.7,
+      1.05
      ],
-     20
+     18
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "from the doorway's edge, high: the body filling the aisle to the back wall",
+   "what": "low from the doorway's edge: the cold-rimmed flank running back to the wall",
    "at": "L45"
   },
   {
@@ -2822,21 +2787,21 @@
     [
      0,
      [
-      -1.0,
+      -0.1,
       3.0,
-      1.45
+      1.5
      ],
      [
       2.5,
       3.0,
-      1.3
+      1.5
      ],
-     24
+     30
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "straight down the aisle line: its head turned to the left stack",
+   "what": "down the aisle line: its head in profile, one eye, facing the left stack",
    "at": "L48"
   },
   {
@@ -2845,21 +2810,21 @@
     [
      0,
      [
-      -1.0,
+      -0.1,
       3.0,
-      1.45
+      1.5
      ],
      [
       2.5,
       3.0,
-      1.3
+      1.5
      ],
-     24
+     30
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "hard cut, same framing: the head now turned to the right stack",
+   "what": "hard cut, same framing: the head in profile facing the right stack",
    "at": "L49"
   },
   {
@@ -3435,7 +3400,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "low on the door coming down over the empty floor",
-   "at": "L72"
+   "at": "L71+0.7"
   },
   {
    "id": "S76",
@@ -4234,7 +4199,7 @@
      0
     ],
     "head": [
-     0,
+     -75,
      0
     ],
     "lean": 0,
@@ -4737,11 +4702,6 @@
     "sit": false,
     "expr": "soft",
     "yaw": 90
-   },
-   {
-    "at": "L72",
-    "hidden": true,
-    "blend": 0
    },
    {
     "at": "L73",
@@ -5344,6 +5304,12 @@
    "dur": 1.0
   },
   {
+   "at": "L43+0.3",
+   "name": "corr",
+   "level": 0.09,
+   "dur": 2.4
+  },
+  {
    "at": "L55",
    "name": "corr",
    "level": 1.0,
@@ -5806,6 +5772,68 @@
    "at": "L48",
    "name": "headtube",
    "on": false
+  },
+  {
+   "at": "L24",
+   "name": "rim",
+   "on": 1.0,
+   "pos": [
+    3.9,
+    9.05,
+    1.3
+   ],
+   "aim": [
+    1.2,
+    9.4,
+    1.15
+   ]
+  },
+  {
+   "at": "L28",
+   "name": "rim",
+   "on": 0.0
+  },
+  {
+   "at": "L45",
+   "name": "rim",
+   "on": 1.0,
+   "pos": [
+    2.3,
+    1.95,
+    1.4
+   ],
+   "aim": [
+    1.2,
+    2.5,
+    1.2
+   ]
+  },
+  {
+   "at": "L46",
+   "name": "rim",
+   "on": 0.0
+  },
+  {
+   "at": "L48",
+   "name": "profile",
+   "on": true
+  },
+  {
+   "at": "L55",
+   "name": "profile",
+   "on": false
+  },
+  {
+   "at": "L45",
+   "name": "stacks",
+   "left": 18,
+   "right": 9
+  },
+  {
+   "at": "L46",
+   "name": "stacks",
+   "left": 18,
+   "right": 18
   },
   {
    "at": "L64",
