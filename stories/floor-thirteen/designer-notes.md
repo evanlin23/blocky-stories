@@ -349,3 +349,23 @@ I did the critic's five changes in its order. Where I couldn't do one as written
   - That's fine from behind, as in this still. Before any front shot of me ("My face, lit cold from below"), the build needs an opt-in open-front hood in `rig.py`, with defaults unchanged.
   - I didn't touch `rig.py` for the still. The headphones extra is still to build too.
 - **The caption key, brass gold `#ffbf3f`,** reads well at phone size over the all-lit doorway frame. The golden balcony two-shot doesn't exist yet, so that half of the brief's check waits for the build.
+
+## Creature test, pass 3 (2026-11-02): closer, lower, longer gloves
+
+**Still:** `out/floor-thirteen/creature-test/pass3.png` (1080 x 1920), phone version `pass3-phone.png` (360 x 640). The scratch harness (`run.py`, scenario `v16.json`) is in the same folder. Run with `python3 run.py v16.json` and the bpy venv.
+
+**What changed (set.py, all opt-in cues; defaults unchanged except 1 to 3):**
+1. Gloves: `GLOVE_L` 0.62 -> 0.95, new `GLOVE_W` 0.5. They read as hands hanging from the cuffs, not cubes.
+2. New `floor13` light (140 W, 0.8 m, aimed at 13's carpet 2.7 m behind the sill) lights the floor behind the gloves.
+3. The sleeve rims have a 35 degree spread and light only the leaves' `.edge` strips, not the whole leaf: the halo beside the caption is gone.
+4. Cue `attendant` extras: `peak` (gain on `face_peak`, 0 stops the glint in the top-middle glass), `key` (panel key gain), `wash` (gain on hall, hall_rim and backwash).
+5. Cue `lights` extra: `cast_rim` (gain, a cold area light linked to the cast only). At 0.7 it draws the two heads' edges; above about 2 it floods the car.
+
+**Final reveal shot (the pass-3 cue and camera):**
+- Camera (0.05, 0.95, 1.1), target (0, -1.9, 1.8), 18 mm. It is lower than pass 2, so the face looms and looks at us. Doors `gap 0.8, hall 1.0`, indicator "13".
+- Attendant: `{"pose":"bump","bend":44,"head":[-16,0,0],"lit":"all","glow":0.75,"eye":1.9,"peak":0.0,"key":0.3,"wash":0.55}` (final eye gain 1.9; see v16.json).
+- Lights cue: `{"state":"thirteen","cast_dark":true,"cast_rim":0.7}`.
+- Me: (-0.58, 0.12), yaw 80, head [65, 0]; Mr. Okafor: (0.60, 0.15), yaw -80, head [-60, 0]. Both are large side-on edge figures, hoods cold-rimmed. Their positions are close to the lens, so re-probe them in the build (the camera sees only about 40 degrees each side).
+- Measured: eye 250, other buttons 196 to 214, no clipping outside the caption (about 11 px of glove glints), `face_peak` no longer glints in the glass.
+
+**Honest read at 360 px:** the figure is tall and dark, the face looks at us instead of the floor, the long gloves read as hands, the lit carpet gives them a ground, and the two heads at the edges give some human scale. Scary 6 to 7, readable 7. Still dread, not a jump. Not done: the "close hood foreground over the shoulder" framing. At camera height 1.1 to 1.3 a hood within 0.5 m of the lens either blots out the panel or sits black on black (rim at 2 floods the car). Left as the build's call for L57.
