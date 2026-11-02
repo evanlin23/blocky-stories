@@ -322,70 +322,78 @@
    ]
   },
   "L12": {
-   "text": "A month ago, I quit to take a job in an office.",
+   "text": "A month ago, I took an office job, and Bea threw me a party.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 2.81,
    "onset": 0.172,
-   "end": 2.052,
+   "end": 2.621,
    "chunks": [
     [
      0.172,
-     0.603
+     0.552
     ],
     [
-     0.629,
-     0.914
+     0.578,
+     0.836
     ],
     [
-     0.914,
-     1.371
+     0.836,
+     1.448
     ],
     [
-     1.371,
-     2.052
+     1.5,
+     1.923
+    ],
+    [
+     1.923,
+     2.621
     ]
    ]
   },
   "L13": {
-   "text": "Bea kept the stall, and never said a word.",
+   "text": "She kept the stall. I still came every Friday to eat.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.138,
+   "dur": 2.552,
    "onset": 0.172,
-   "end": 1.931,
+   "end": 2.362,
    "chunks": [
     [
      0.172,
-     0.543
+     0.406
     ],
     [
-     0.543,
-     0.914
+     0.406,
+     0.81
     ],
     [
-     0.948,
-     1.371
+     0.879,
+     1.328
     ],
     [
-     1.371,
-     1.931
+     1.328,
+     1.845
+    ],
+    [
+     1.845,
+     2.362
     ]
    ]
   },
   "L14": {
-   "text": "Since that night, her coin has landed on the moon. Twenty nights in a row.",
+   "text": "Since that night, her coin has landed on the moon. Thirty nights in a row.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.172,
+   "dur": 3.19,
    "onset": 0.172,
-   "end": 2.983,
+   "end": 3.0,
    "chunks": [
     [
      0.172,
@@ -401,15 +409,15 @@
     ],
     [
      1.371,
-     1.793
+     1.81
     ],
     [
-     1.888,
-     2.405
+     1.906,
+     2.44
     ],
     [
-     2.405,
-     2.983
+     2.44,
+     3.0
     ]
    ]
   },
@@ -442,34 +450,34 @@
    ]
   },
   "L16": {
-   "text": "On Friday, I stood across the car park with my hood up.",
+   "text": "On Friday, I came from work, still in my tie.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.552,
+   "dur": 2.207,
    "onset": 0.155,
-   "end": 2.345,
+   "end": 2.017,
    "chunks": [
     [
      0.155,
-     0.69
+     0.517
+    ],
+    [
+     0.543,
+     0.741
     ],
     [
      0.741,
-     1.181
+     1.069
     ],
     [
-     1.181,
-     1.612
+     1.138,
+     1.353
     ],
     [
-     1.612,
-     1.828
-    ],
-    [
-     1.828,
-     2.345
+     1.353,
+     2.017
     ]
    ]
   },
@@ -750,30 +758,30 @@
    ]
   },
   "L27": {
-   "text": "The next Friday, I came back. For the dumplings, I told myself.",
+   "text": "The next Friday, I brought her a flask of tea.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.017,
+   "dur": 2.103,
    "onset": 0.155,
-   "end": 2.828,
+   "end": 1.914,
    "chunks": [
     [
      0.155,
-     0.655
+     0.724
     ],
     [
-     0.681,
-     1.293
+     0.759,
+     1.043
     ],
     [
-     1.379,
+     1.043,
+     1.353
+    ],
+    [
+     1.353,
      1.914
-    ],
-    [
-     1.939,
-     2.828
     ]
    ]
   },
@@ -1394,86 +1402,82 @@
    ]
   },
   "L52": {
-   "text": "When I walked out, I took the sun with me.",
+   "text": "The stall's coin. It lands only with two behind the counter.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.948,
+   "dur": 2.793,
    "onset": 0.155,
-   "end": 1.741,
+   "end": 2.586,
    "chunks": [
     [
      0.155,
-     0.328
+     0.845
     ],
     [
-     0.328,
-     0.724
+     0.914,
+     1.439
     ],
     [
-     0.759,
-     1.061
+     1.439,
+     1.957
     ],
     [
-     1.061,
-     1.741
+     1.957,
+     2.586
     ]
    ]
   },
   "L53": {
-   "text": "She was left with a coin that could only land on the moon.",
+   "text": "With only Bea, it could only show the moon.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.431,
-   "onset": 0.172,
-   "end": 2.241,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
    "chunks": [
     [
-     0.172,
-     0.543
+     0.155,
+     0.81
     ],
     [
-     0.543,
-     1.0
+     0.862,
+     1.215
     ],
     [
-     1.0,
-     1.379
-    ],
-    [
-     1.379,
-     1.664
-    ],
-    [
-     1.664,
-     2.241
+     1.215,
+     1.948
     ]
    ]
   },
   "L54": {
-   "text": "And mine had nothing to land on.",
+   "text": "And out front, my side had nothing to land on.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.828,
+   "dur": 2.293,
    "onset": 0.155,
-   "end": 1.638,
+   "end": 2.103,
    "chunks": [
     [
      0.155,
-     0.672
+     0.621
     ],
     [
-     0.672,
-     1.0
+     0.647,
+     1.103
     ],
     [
-     1.0,
-     1.638
+     1.103,
+     1.431
+    ],
+    [
+     1.431,
+     2.103
     ]
    ]
   },
@@ -1578,46 +1582,50 @@
    ]
   },
   "L59": {
-   "text": "Ours drifted together over our heads and clicked into one.",
+   "text": "Ours spun in step and landed at the same moment.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.845,
+   "dur": 2.448,
    "onset": 0.19,
-   "end": 2.655,
+   "end": 2.259,
    "chunks": [
     [
      0.19,
-     1.0
+     0.578
     ],
     [
-     1.0,
-     1.664
+     0.578,
+     1.138
     ],
     [
-     1.664,
-     1.974
+     1.138,
+     1.526
     ],
     [
-     1.974,
-     2.655
+     1.526,
+     2.259
     ]
    ]
   },
   "L60": {
-   "text": "sun side up.",
+   "text": "Both sun side up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.103,
-   "onset": 0.19,
-   "end": 0.897,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
    "chunks": [
     [
-     0.19,
-     0.897
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.103
     ]
    ]
   },
@@ -1714,30 +1722,42 @@
    ]
   },
   "L64": {
-   "text": "The next Friday, our queue reached all the way to the arch.",
+   "text": "Next Friday, our queue reached the arch. At the very back stood a customer with no coin.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.431,
-   "onset": 0.155,
-   "end": 2.224,
+   "dur": 3.759,
+   "onset": 0.172,
+   "end": 3.552,
    "chunks": [
     [
-     0.155,
-     0.724
+     0.172,
+     0.621
     ],
     [
-     0.768,
-     1.259
+     0.647,
+     1.112
     ],
     [
-     1.259,
+     1.112,
      1.569
     ],
     [
-     1.569,
-     2.224
+     1.655,
+     2.0
+    ],
+    [
+     2.0,
+     2.319
+    ],
+    [
+     2.319,
+     2.699
+    ],
+    [
+     2.699,
+     3.552
     ]
    ]
   },
@@ -1770,18 +1790,30 @@
    ]
   },
   "L66": {
-   "text": "Ours is shared.",
+   "text": "Ours takes two heads. It doesn't care whose.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.241,
+   "dur": 2.138,
    "onset": 0.19,
-   "end": 1.034,
+   "end": 1.948,
    "chunks": [
     [
      0.19,
-     1.034
+     0.603
+    ],
+    [
+     0.603,
+     0.983
+    ],
+    [
+     1.026,
+     1.276
+    ],
+    [
+     1.276,
+     1.948
     ]
    ]
   }

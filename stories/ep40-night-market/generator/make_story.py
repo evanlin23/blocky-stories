@@ -18,7 +18,7 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 # silent beats the script plans, as gaps after a line, and the loop cut
-GAPS = {"L25": 0.4, "L35": 0.6, "L42": 0.6, "L44": 0.5, "L57": 0.4, "L60": 0.4, "L61": 1.0}
+GAPS = {"L34": 0.6, "L43": 0.6, "L25": 0.4, "L35": 0.6, "L42": 0.6, "L44": 0.5, "L57": 0.4, "L60": 0.4, "L61": 1.0}
 for ln in lines:
     if ln["id"] in GAPS:
         ln["gap"] = GAPS[ln["id"]]
@@ -46,6 +46,8 @@ def person(skin, shirt, pants, hair, hair_c, **kw):
 
 cast = {
     "me": person("#e0b48a", SLATE, "#2c2f3a", "cap", "#2e2018", hat="beanie", hat_c=SLATE, extras=["hooddown"], body_width=0.85),
+    "me_hood": person("#e0b48a", SLATE, "#2c2f3a", "cap", "#2e2018", hat="hood", hat_c=SLATE, extras=["tie"],
+                      extra_c="#1f2a4a", body_width=0.85),
     "me_office": person("#e0b48a", "#f1f1ee", "#34363e", "cap", "#2e2018", collar="#d9d9d6", extras=["tie"],
                         extra_c="#1f2a4a", body_width=0.85),
     "me_apron": person("#e0b48a", "#f1f1ee", "#34363e", "cap", "#2e2018", collar="#d9d9d6", extras=["apron"],
@@ -98,22 +100,22 @@ SHOTS = [
     ("S03", "L02", "a customer's coin settling sun, grinning", still((1.6, 7.4, 1.55), (-1.0, 7.4, 1.7), 30)),
     ("S04", "L03", "another settling moon, the woman sighing", still((1.5, 6.9, 1.55), (-0.2, 6.9, 1.75), 30)),
     ("S05", "L04", "picnic table: a man holds out a small box", still((PICNIC[0] - 3.2, PICNIC[1] - 1.7, 1.5), (PICNIC[0], PICNIC[1], 1.55), 30)),
-    ("S06", "L04.3", "a worker asks the stall owner, both sun", still((BACK[0] + 3.0, BACK[1] - 1.6, 1.5), (BACK[0], BACK[1], 1.6), 30)),
+    ("S06", "L04.3", "a worker asks the stall owner, both sun", still((BACK[0], BACK[1] - 3.4, 1.55), (BACK[0], BACK[1], 1.7), 22)),
     ("S07", "L05.1", "the home kitchen, dressing gowns, steaming bowls, two moons", still((KITCHEN[0] + 2.0, KITCHEN[1] - 3.0, 1.45), (KITCHEN[0], KITCHEN[1], 1.5), 28)),
     ("S08", "L06", "the noodle man chest out, his sun gleaming", still((0.2, 12.9, 1.55), (-3.35, 12.6, 1.8), 40)),
     ("S09", "L06.5", "the queue rolling their eyes", still((-3.9, 12.6, 1.55), (-1.4, 12.2, 1.6), 30)),
-    ("S10", "L07", "two first daters at a picnic table", still((PICNIC[0] - 3.2, PICNIC[1] + 1.7, 1.5), (PICNIC[0], PICNIC[1], 1.55), 30)),
+    ("S10", "L07", "two first daters at a picnic table", still((PICNIC[0] - 4.2, PICNIC[1], 1.55), (PICNIC[0], PICNIC[1], 1.65), 24)),
     ("S11", "L08", "over the shoulder of the crowd: coins landing all round",
      move(((0.9, 1.6, 1.65), (-0.5, 8.5, 2.0)), ((0.9, 2.2, 1.65), (-0.5, 9.1, 2.0)), 28)),
     ("S12", "L09", "me in my hood, a thin gold line", still((-1.1, 10.0, 1.5), (1.0, 10.0, 1.85), 30)),
     ("S13", "L10", "our stall front on, warm", move(((1.9, 10.6, 1.45), (-3.0, 9.9, 1.55)), ((1.5, 10.4, 1.45), (-3.0, 9.8, 1.55)), 24)),
     ("S14", "L11", "the glyph on the front board", still(*BOARD)),
     ("S15", "L12", "me at the grey desk", still((OFFICE[0] + 0.2, OFFICE[1] - 3.2, 1.55), (OFFICE[0], OFFICE[1], 1.5), 30)),
-    ("S16", "L13", "Bea alone at the counter, the space at her left empty", still((0.6, 9.9, 1.45), (-3.0, 10.2, 1.55), 28)),
+    ("S16", "L13", "Bea alone at the counter, the space at her left empty", still((2.2, 10.0, 1.55), (-3.0, 10.0, 1.6), 27)),
     ("S17", "L14", "close on Bea's coin, moon face", still((-0.9, 9.6, 1.7), (-3.35, 9.45, 2.12), 50)),
     ("S18", "L14.4", "Bea looking up at it, tired", still((0.2, 9.45, 1.5), (-3.35, 9.45, 1.62), 40)),
     ("S19", "L15", "my coin, edge-on, the ridged rim", still((-1.1, 10.0, 1.95), (1.0, 10.0, 2.1), 60)),
-    ("S20", "L16", "wide across the car park: me in my hood at the far end", still((0.4, -2.4, 1.7), (0.0, 17.0, 1.5), 30)),
+    ("S20", "L16", "wide across the car park: me in my hood at the far end", still((-0.3, -3.0, 3.2), (0.0, 7.0, 1.4), 22)),
     ("S21", "L17", "down the left row: the noodle queue snaking back to the arch, all suns", still((0.6, 14.4, 1.75), (-1.2, 2.0, 1.6), 24)),
     ("S22", "L18", "high angle: the queue bending round Bea's stall", still((1.6, 5.0, 5.0), (-1.4, 10.0, 0.8), 28)),
     ("S23", "L18.4", "low angle at Bea's counter, the queue passing behind", still((0.0, 8.0, 0.6), (-3.2, 9.6, 1.1), 28)),
@@ -126,11 +128,11 @@ SHOTS = [
     ("S30", "L24", "closer, a customer in a red jacket, it looks whole", still((-2.0, -0.6, 1.55), (0.9, -0.6, 1.55), 62)),
     ("S31", "L25", "tilt up over its head: empty air, every head round it has a coin",
      c([0, [-1.7, -0.9, 1.1], [0.9, -0.6, 1.2], 38], [1, [-1.7, -0.9, 1.1], [0.9, -0.6, 2.35], 38])),
-    ("S32", "L26", "Bea packing up steamers, talking without looking at me", still((0.1, 10.3, 1.5), (-3.35, 9.6, 1.5), 36)),
+    ("S32", "L26", "Bea packing up steamers, talking without looking at me", still((2.2, 10.0, 1.55), (-3.0, 10.0, 1.6), 27)),
     ("S33", "L27", "me under the arch, hood up", still((0.3, 2.2, 1.5), (-0.9, -0.4, 1.45), 30)),
     ("S34", "L28", "the left row from my side: the figure three stalls nearer", still((-2.0, 7.2, 1.5), (0.9, 7.2, 1.4), 38)),
     ("S35", "L29", "reverse: its side profile, its one eye toward our stall", still((-1.35, 7.2, 1.6), (0.9, 7.2, 1.6), 42)),
-    ("S36", "L30", "low insert: three shadows, the middle one half as wide", still((0.9, 4.6, 0.38), (0.9, 7.2, 0.45), 26)),
+    ("S36", "L30", "low insert: three shadows, the middle one half as wide", still((0.9, 2.0, 0.7), (0.9, 5.8, 0.0), 22)),
     ("S37", "L31", "the noodle man shouting at his queue", still((-0.9, 12.7, 1.7), (-3.35, 12.6, 1.75), 35)),
     ("S38", "L32", "me at Bea's counter, the only one", still((0.5, 8.3, 1.5), (-2.4, 9.55, 1.4), 30)),
     ("S39", "L33", "over my shoulder to the stall opposite: the figure at its counter", still((-2.2, 9.95, 1.65), (3.0, 10.5, 1.3), 30)),
@@ -140,13 +142,13 @@ SHOTS = [
     ("S43", "L36.2", "its one arm hanging at its side", still((-1.6, 9.6, 1.2), (1.5, 10.3, 0.9), 26)),
     ("S44", "L37.2", "three-quarter on the flat indigo plane", still((-0.2, 12.6, 1.4), (1.5, 10.55, 1.1), 28)),
     ("S45", "L38", "its POV: across to our stall, Bea, the empty space", still((1.45, 10.45, 1.55), (-3.35, 10.0, 1.3), 30)),
-    ("S46", "L39", "the iron bell on the arch pole swinging", still((0.0, 1.4, 1.9), (-2.6, -0.8, 2.3), 38)),
+    ("S46", "L39", "the iron bell on the arch pole swinging", still((-2.9, -3.3, 2.2), (-2.2, -0.8, 2.4), 28)),
     ("S47", "L40", "wide down the row: the lanterns fading", still((0.0, -1.6, 1.95), (0.0, 10.0, 2.1), 26)),
     ("S48", "L41", "near dark: Bea's face in cool fill", still((0.2, 9.45, 1.5), (-3.35, 9.45, 1.58), 46)),
     ("S49", "L42", "same frame, the sound stops", still((0.2, 9.45, 1.5), (-3.35, 9.45, 1.58), 46)),
     ("S50", "L43", "the lanterns fading back up over our stall", still((1.8, 10.0, 1.5), (-3.0, 10.0, 1.75), 27)),
     ("S51", "L44", "front on our stall: the Half behind our counter. Scare", still((1.5, 10.1, 1.5), (-3.2, 10.1, 1.65), 32)),
-    ("S52", "L45", "close two-shot: its flat side a hand's width from Bea's shoulder", still((-0.5, 10.1, 1.55), (-3.35, 10.1, 1.5), 46)),
+    ("S52", "L45", "close two-shot: its flat side a hand's width from Bea's shoulder", still((0.3, 9.95, 1.55), (-3.35, 9.95, 1.5), 32)),
     ("S53", "L46", "wide: Bea and the Half filling the stall like two stallholders", still((2.0, 10.1, 1.45), (-3.3, 10.1, 1.35), 24)),
     ("S54", "L47", "Bea, very still, her eyes sliding toward me", still((0.0, 9.45, 1.6), (-3.35, 9.45, 1.6), 46)),
     ("S55", "L48", "the glyph on the front board", still(*BOARD)),
@@ -161,16 +163,22 @@ SHOTS = [
     ("S64", "L57", "front on our stall: just Bea and me", still((1.6, 10.1, 1.5), (-3.3, 10.1, 1.5), 30)),
     ("S65", "L58", "wide from above the arch: every coin flips",
      move(((0.3, -3.6, 4.6), (0.0, 8.0, 1.2)), ((0.3, -3.4, 4.8), (0.0, 8.0, 1.2)), 20)),
-    ("S66", "L59", "two-shot from below: our two coins drift together", still((-1.4, 10.1, 0.8), (-3.35, 10.1, 1.9), 30)),
-    ("S67", "L59.2", "close: they close into one coin and turn", still((-1.6, 10.1, 2.0), (-3.35, 10.1, 2.1), 55)),
-    ("S68", "L60", "it stops sun side up; Bea's face lifts", still((-0.2, 9.9, 1.65), (-3.35, 10.0, 1.85), 40)),
+    ("S66", "L59", "two-shot from below: Bea and me side by side, a coin over each head, spinning in step",
+     still((0.2, 10.1, 0.9), (-3.35, 10.1, 1.95), 22)),
+    ("S67", "L59.2", "wider two-shot: both coins settle on the same frame, a head apart, never touching",
+     still((0.8, 10.1, 1.2), (-3.35, 10.1, 1.9), 18)),
+    ("S68", "L60", "both sun faces up; Bea's face lifts", still((0.4, 10.1, 1.65), (-3.35, 10.1, 1.9), 22)),
     ("S69", "L61", "low under the counter, the apron off the shelf", still((-3.9, 9.0, 0.6), (-2.7, 9.6, 0.5), 30)),
     ("S70", "L61.3", "the float tin on the shelf, the two indigo strokes", still((-3.5, 10.2, 0.9), (-2.78, 10.2, 0.55), 35)),
     ("S71", "L62", "Bea and me folding side by side, she bumps my elbow", still((1.4, 10.1, 1.5), (-3.3, 10.1, 1.4), 32)),
     ("S72", "L63", "the noodle man looking up at his moon, pulling a face", still((0.9, 12.6, 1.55), (-3.35, 12.6, 1.75), 40)),
-    ("S73", "L64", "next Friday: our queue to the arch, one coin between our heads",
+    ("S73", "L64", "next Friday: our queue to the arch, two sun coins over two heads",
      move(((2.4, 12.5, 5.2), (-1.6, 4.0, 1.0)), ((2.4, 12.5, 5.2), (-1.6, 4.2, 1.0)), 24)),
-    ("S74", "L65", "from above the stall: two heads and one coin spinning", still((-1.4, 10.1, 4.7), (-3.35, 10.1, 1.8), 30)),
+    ("S74", "L64.3", "long lens down the queue: at the very back a customer side on, empty air over its head",
+     still((1.8, 9.0, 3.4), (-1.5, -1.7, 1.5), 85)),
+    ("S75", "L65", "slow push in on it: the one eye toward our stall",
+     move(((1.8, 8.0, 2.7), (-1.5, -1.7, 1.5)), ((1.8, 6.0, 2.3), (-1.5, -1.7, 1.55)), 95)),
+    ("S76", "L66", "hold on it, side on, still", still((1.8, 6.0, 2.3), (-1.5, -1.7, 1.55), 95)),
 ]
 
 shots = []
@@ -235,7 +243,7 @@ for w in cast:
 put("bea", "S01", [-3.35, 9.95], yaw=X_, head=UP)
 put("bea", "S02", list(BEA), yaw=X_)
 put("bea", "S13", list(BEA), yaw=X_, head=[0, 8])
-put("bea", "S16", list(BEA), yaw=X_, head=[0, 6])
+put("bea", "S16", list(BEA), yaw=X_, head=[0, 6], expr="soft")
 put("bea", "S17", list(BEA), yaw=X_, head=[0, -10])
 put("bea", "S18", list(BEA), yaw=X_, expr="worried", head=[0, -26])
 put("bea", "S20", list(BEA), yaw=X_)
@@ -243,7 +251,7 @@ put("bea", "S22", list(BEA), yaw=X_, head=[0, 10])
 put("bea", "S24", list(BEA), yaw=X_, head=[0, 8])
 put("bea", "S25", list(BEA), yaw=X_, head=[-6, 24])
 put("bea", "S27", list(BEA), yaw=X_, head=[0, -14])
-put("bea", "S32", list(BEA), yaw=X_, head=[0, 24])
+put("bea", "S32", list(BEA), yaw=X_, head=[0, 10], expr="soft")
 talk("bea", "S32", "S33")
 put("bea", "S38", list(BEA), yaw=X_, head=[0, 8])
 put("bea", "S45", list(BEA), yaw=X_)
@@ -261,7 +269,6 @@ put("bea", "S71", list(BEA), yaw=X_, expr="grin", head=[0, 10])
 key("bea", "S71+0.5", side=[0, 18], blend=0.2)
 key("bea", "S71+0.8", side=[0, 0], blend=0.25)
 put("bea", "S73", list(BEA), yaw=X_, expr="grin")
-put("bea", "S74", list(BEA), yaw=X_, expr="grin", head=[0, -6])
 
 # the noodle man: at his pot all film
 put("noodle", "S01", [-3.35, 11.6], yaw=X_, head=UP, expr="grin")
@@ -280,13 +287,18 @@ key("noodle", "S72+0.7", expr="angry", blend=0.3)
 # me
 put("me", "S12", [1.0, 10.0], yaw=MX, expr="worried")
 hide("me", "S13")
+put("me", "S16", [-1.5, 10.6], yaw=50, expr="soft", arms=[40, 40], head=[0, 8])
+hide("me", "S17")
 put("me", "S19", [1.0, 10.0], yaw=MX, expr="worried")
-put("me", "S20", [0.0, 17.0], yaw=0, expr="worried")
-hide("me", "S21")
+hide("me", "S20")
+put("me_hood", "S20", [0.0, 6.0], yaw=0, expr="worried")
+hide("me_hood", "S21")
 put("me", "S28", [0.0, 17.0], yaw=0, expr="worried")
 hide("me", "S29")
-put("me", "S33", [-0.9, -0.4], yaw=FY, expr="worried", head=[0, 4])
-hide("me", "S34")
+put("me", "S32", [-1.5, 10.6], yaw=50, expr="soft")
+hide("me", "S33")
+put("me_hood", "S33", [-0.9, -0.4], yaw=FY, expr="worried", head=[0, 4])
+hide("me_hood", "S34")
 put("me", "S38", [-1.5, 9.45], yaw=MX, expr="worried")
 put("me", "S40", [-1.5, 9.45], yaw=MX, expr="scared")
 hide("me", "S41")
@@ -305,7 +317,6 @@ put("me_office", "S15", [OFFICE[0], OFFICE[1]], yaw=0, expr="blank", head=[0, 8]
 hide("me_office", "S16")
 put("me_apron", "S71", list(SPOT), yaw=X_, expr="grin", head=[0, 10])
 put("me_apron", "S73", list(SPOT), yaw=X_, expr="grin")
-put("me_apron", "S74", list(SPOT), yaw=X_, expr="grin", head=[0, -6])
 
 # the extras (reused bodies)
 put("ca", "S01", [-1.7, 10.75], yaw=X_, head=UP, expr="worried")
@@ -359,9 +370,9 @@ cues = [
     {"at": "L40", "name": "mood", "to": 0.15, "dur": 1.2},          # the bell dim: down over 1.2 s
     {"at": "L43", "name": "mood", "to": 0.55, "dur": 1.2},          # and back up over 1.2 s
     {"at": "L57+0.3", "name": "mood", "to": 1.0, "dur": 1.6},       # warm and full again from L58
-    {"at": "L01.3", "name": "flip", "dur": 2.2, "turns": 1.5},      # every coin flips at midnight
-    {"at": "L58", "name": "flip", "dur": 2.2, "turns": 1.5, "last": True},
-    {"at": "L59", "name": "merge", "dur": 1.2},                     # Bea's coin and mine drift together and close
+    {"at": "L01.3", "name": "flip", "dur": 2.6, "turns": 1.5},      # every coin flips at midnight
+    {"at": "L58", "name": "flip", "dur": 2.6, "turns": 1.5, "last": True},
+    {"at": "L59", "name": "spin", "dur": 2.4},                      # Bea's coin and mine spin in step, then both land sun up
     {"at": "L39", "name": "bell", "dur": 3.0},
     # the Half: found where it already stands, never seen moving
     {"at": 0, "name": "half", "on": False},
@@ -374,6 +385,8 @@ cues = [
     {"at": "L44", "name": "half", "on": True, "pos": list(HALF_SPOT), "yaw": X_},
 
     {"at": "L56", "name": "half", "on": False},
+    {"at": "L64.3", "name": "queue", "which": "ours_gap"},
+    {"at": "L64.3", "name": "half", "on": True, "pos": [-1.5, -1.7], "yaw": 100},
     # which stall's queue the extras make: the noodle queue (14), then ours
     {"at": 0, "name": "queue", "which": "far"},                       # the queue's bend stays out of the cameras' way
     {"at": R("S21"), "name": "queue", "which": "noodle"},
@@ -394,15 +407,16 @@ sfx = [
     {"at": "L41+0.3", "kind": "knock", "pattern": [0.0, 0.28, 0.56, 0.84], "tone": "hand", "db": -18},
     {"at": "L44", "kind": "hit", "db": -6},                                  # the scare, after the drop
     {"at": "L58", "kind": "riser", "db": -22, "dur": 1.8},
-    {"at": "L59+1.2", "kind": "click", "db": -10},                           # the click, only the sound
+    {"at": "L59+2.3", "kind": "bell", "db": -27},                            # a soft double chime as both coins settle
+    {"at": "L59+2.5", "kind": "bell", "db": -29},
 ]
 
 story = {
     "slug": "ep40-night-market",
     "title": "In this town, a coin over your head decides your luck",
     "made_for_kids": False,
-    "premise": "In a town where a gold coin floats over every head and flips at midnight to decide your luck, my sister Bea keeps our dumpling stall at the Friday night market alone since I quit for an office job. Her coin lands on the moon every night, the queues bend round her stall, and mine stands on its edge. Over three Fridays a customer with no coin comes one stall nearer, until it stands behind our counter, beside Bea.",
-    "twist": "Bea's coin and mine were never two coins: they were the two sides of one that split the night I walked out. She kept only the moon side, and I took the sun side, which has nothing to land on.",
+    "premise": "In a town where a gold coin floats over every head and flips at midnight to decide your luck, my sister Bea keeps our dumpling stall at the Friday night market alone since I took an office job. Her coin lands on the moon every night, the queues bend round her stall, and mine stands on its edge. Over three Fridays a customer with no coin comes one stall nearer, until it stands behind our counter, beside Bea. When I step in beside her, both our coins land sun side up, and next Friday it is waiting at the back of our queue.",
+    "twist": "Bea's coin and mine are the two sides of one coin, the stall's coin, and it only lands when two people stand behind the counter. With only Bea back there it can only show her moon, and my sun side, out front with the customers, has nothing to land on. When I step behind the counter both coins spin in step and land sun up, still two coins over two heads. The stall's coin needs two heads and doesn't care whose.",
     "world": "an open-air car park night market on a wet Friday: two facing rows of striped-awning food stalls under strings of paper lanterns, and an arch of lanterns where the market begins",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#b49cff",
@@ -433,6 +447,7 @@ story = {
                   {"at": "L44", "voices": ["drone"], "energy": 0.25},
                   {"at": "L47", "voices": ["drone", "pad", "choir"], "energy": 0.5},
                   {"at": "L58", "voices": ["piano", "pulse", "pad"], "energy": 0.6, "mode": "major", "root": 40},
+                  {"at": "L64.3", "voices": ["drone"], "energy": 0.2},
               ]},
     "sound": {"floor": "stone", "steps_db": -24,
               "ambience": [

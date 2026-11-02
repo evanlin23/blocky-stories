@@ -189,6 +189,8 @@ def same_spoken(script: str, heard: str) -> bool:
         for w in t.split():
             w = w.replace("'", "")
             w = NUMBERS.get(int(w), w) if w.isdigit() and int(w) in NUMBERS else w
+            if w.isdigit() and 20 < int(w) < 100:   # "30" as "thirty" (ep40)
+                w = _under100(int(w))
             if w.isdigit() and 100 <= int(w) < 1000:   # "112" as "a hundred and twelve" (ep14)
                 h, r = divmod(int(w), 100)
                 w = ("a" if h == 1 else NUMBERS.get(h, str(h))) + "hundred" + ("and" + _under100(r) if r else "")

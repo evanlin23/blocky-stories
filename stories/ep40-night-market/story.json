@@ -2,8 +2,8 @@
  "slug": "ep40-night-market",
  "title": "In this town, a coin over your head decides your luck",
  "made_for_kids": false,
- "premise": "In a town where a gold coin floats over every head and flips at midnight to decide your luck, my sister Bea keeps our dumpling stall at the Friday night market alone since I quit for an office job. Her coin lands on the moon every night, the queues bend round her stall, and mine stands on its edge. Over three Fridays a customer with no coin comes one stall nearer, until it stands behind our counter, beside Bea.",
- "twist": "Bea's coin and mine were never two coins: they were the two sides of one that split the night I walked out. She kept only the moon side, and I took the sun side, which has nothing to land on.",
+ "premise": "In a town where a gold coin floats over every head and flips at midnight to decide your luck, my sister Bea keeps our dumpling stall at the Friday night market alone since I took an office job. Her coin lands on the moon every night, the queues bend round her stall, and mine stands on its edge. Over three Fridays a customer with no coin comes one stall nearer, until it stands behind our counter, beside Bea. When I step in beside her, both our coins land sun side up, and next Friday it is waiting at the back of our queue.",
+ "twist": "Bea's coin and mine are the two sides of one coin, the stall's coin, and it only lands when two people stand behind the counter. With only Bea back there it can only show her moon, and my sun side, out front with the customers, has nothing to land on. When I step behind the counter both coins spin in step and land sun up, still two coins over two heads. The stall's coin needs two heads and doesn't care whose.",
  "world": "an open-air car park night market on a wet Friday: two facing rows of striped-awning food stalls under strings of paper lanterns, and an arch of lanterns where the market begins",
  "voice": {
   "voice": "am_adam",
@@ -73,6 +73,29 @@
    "extras": [
     "hooddown"
    ],
+   "body_width": 0.85
+  },
+  "me_hood": {
+   "age": "adult",
+   "skin": "#e0b48a",
+   "shirt": "#4a5d7a",
+   "pattern": "solid",
+   "pants": "#2c2f3a",
+   "shoes": "#25262b",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2e2018",
+   "hat": "hood",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#161012"
+   },
+   "hat_c": "#4a5d7a",
+   "extras": [
+    "tie"
+   ],
+   "extra_c": "#1f2a4a",
    "body_width": 0.85
   },
   "me_office": {
@@ -534,16 +557,20 @@
      "A month ago,"
     ],
     [
-     "I quit to",
-     "I quit to"
+     "I took an",
+     "I took an"
     ],
     [
-     "take a job",
-     "take a job"
+     "OFFICE job,",
+     "office job,"
     ],
     [
-     "in an OFFICE.",
-     "in an office."
+     "and Bea threw",
+     "and Bea threw"
+    ],
+    [
+     "me a PARTY.",
+     "me a party."
     ]
    ]
   },
@@ -552,20 +579,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Bea kept",
-     "Bea kept"
+     "She kept",
+     "She kept"
     ],
     [
-     "the stall,",
-     "the stall,"
+     "the stall.",
+     "the stall."
     ],
     [
-     "and never said",
-     "and never said"
+     "I still came",
+     "I still came"
     ],
     [
-     "a WORD.",
-     "a word."
+     "every Friday",
+     "every Friday"
+    ],
+    [
+     "to EAT.",
+     "to eat."
     ]
    ]
   },
@@ -590,8 +621,8 @@
      "the moon."
     ],
     [
-     "Twenty nights in",
-     "Twenty nights in"
+     "THIRTY nights in",
+     "Thirty nights in"
     ],
     [
      "a ROW.",
@@ -630,20 +661,20 @@
      "On Friday,"
     ],
     [
-     "I stood across",
-     "I stood across"
+     "I came",
+     "I came"
     ],
     [
-     "the car park",
-     "the car park"
+     "from work,",
+     "from work,"
     ],
     [
-     "with my",
-     "with my"
+     "still in",
+     "still in"
     ],
     [
-     "hood UP.",
-     "hood up."
+     "my TIE.",
+     "my tie."
     ]
    ]
   },
@@ -873,16 +904,16 @@
      "The next Friday,"
     ],
     [
-     "I came back.",
-     "I came back."
+     "I brought her",
+     "I brought her"
     ],
     [
-     "For the dumplings,",
-     "For the dumplings,"
+     "a flask",
+     "a flask"
     ],
     [
-     "I told MYSELF.",
-     "I told myself."
+     "of TEA.",
+     "of tea."
     ]
    ]
   },
@@ -1030,7 +1061,8 @@
      "this time.",
      "this time."
     ]
-   ]
+   ],
+   "gap": 0.6
   },
   {
    "id": "L35",
@@ -1190,7 +1222,8 @@
      "slowly back UP.",
      "slowly back up."
     ]
-   ]
+   ],
+   "gap": 0.6
   },
   {
    "id": "L44",
@@ -1366,20 +1399,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "When I",
-     "When I"
+     "The STALL'S coin.",
+     "The stall's coin."
     ],
     [
-     "walked out,",
-     "walked out,"
+     "It lands only",
+     "It lands only"
     ],
     [
-     "I took the",
-     "I took the"
+     "with two behind",
+     "with two behind"
     ],
     [
-     "SUN with ME.",
-     "sun with me."
+     "the COUNTER.",
+     "the counter."
     ]
    ]
   },
@@ -1388,24 +1421,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "She was left",
-     "She was left"
+     "With only Bea,",
+     "With only Bea,"
     ],
     [
-     "with a coin",
-     "with a coin"
+     "it could only",
+     "it could only"
     ],
     [
-     "that could only",
-     "that could only"
-    ],
-    [
-     "land on",
-     "land on"
-    ],
-    [
-     "the MOON.",
-     "the moon."
+     "show the MOON.",
+     "show the moon."
     ]
    ]
   },
@@ -1414,8 +1439,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And mine had",
-     "And mine had"
+     "And out front,",
+     "And out front,"
+    ],
+    [
+     "my side had",
+     "my side had"
     ],
     [
      "nothing to",
@@ -1509,20 +1538,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ours drifted together",
-     "Ours drifted together"
+     "Ours spun",
+     "Ours spun"
     ],
     [
-     "over our heads",
-     "over our heads"
+     "in step and",
+     "in step and"
     ],
     [
-     "and clicked",
-     "and clicked"
+     "landed at the",
+     "landed at the"
     ],
     [
-     "into ONE.",
-     "into one."
+     "same MOMENT.",
+     "same moment."
     ]
    ]
   },
@@ -1531,8 +1560,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "SUN side up.",
-     "sun side up."
+     "Both SUN",
+     "Both sun"
+    ],
+    [
+     "side up.",
+     "side up."
     ]
    ],
    "gap": 0.4
@@ -1617,20 +1650,32 @@
    "who": "narrator",
    "chunks": [
     [
-     "The next Friday,",
-     "The next Friday,"
+     "Next Friday,",
+     "Next Friday,"
     ],
     [
      "our queue reached",
      "our queue reached"
     ],
     [
-     "all the way",
-     "all the way"
+     "the ARCH.",
+     "the arch."
     ],
     [
-     "to the ARCH.",
-     "to the arch."
+     "At the very",
+     "At the very"
+    ],
+    [
+     "back stood",
+     "back stood"
+    ],
+    [
+     "a customer",
+     "a customer"
+    ],
+    [
+     "with no COIN.",
+     "with no coin."
     ]
    ]
   },
@@ -1661,8 +1706,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ours is SHARED.",
-     "Ours is shared."
+     "Ours takes",
+     "Ours takes"
+    ],
+    [
+     "two heads.",
+     "two heads."
+    ],
+    [
+     "It doesn't",
+     "It doesn't"
+    ],
+    [
+     "care WHOSE.",
+     "care whose."
     ]
    ]
   },
@@ -1821,16 +1878,16 @@
     [
      0,
      [
-      -8.0,
-      6.4,
-      1.5
+      -11.0,
+      4.6,
+      1.55
      ],
      [
       -11.0,
       8.0,
-      1.6
+      1.7
      ],
-     30
+     22
     ]
    ],
    "hand": 0.004,
@@ -1913,16 +1970,16 @@
     [
      0,
      [
-      5.8,
-      7.7,
-      1.5
+      4.8,
+      6.0,
+      1.55
      ],
      [
       9.0,
       6.0,
-      1.55
+      1.65
      ],
-     30
+     24
     ]
    ],
    "hand": 0.004,
@@ -2079,16 +2136,16 @@
     [
      0,
      [
-      0.6,
-      9.9,
-      1.45
+      2.2,
+      10.0,
+      1.55
      ],
      [
       -3.0,
-      10.2,
-      1.55
+      10.0,
+      1.6
      ],
-     28
+     27
     ]
    ],
    "hand": 0.004,
@@ -2171,16 +2228,16 @@
     [
      0,
      [
-      0.4,
-      -2.4,
-      1.7
+      -0.3,
+      -3.0,
+      3.2
      ],
      [
       0.0,
-      17.0,
-      1.5
+      7.0,
+      1.4
      ],
-     30
+     22
     ]
    ],
    "hand": 0.004,
@@ -2461,16 +2518,16 @@
     [
      0,
      [
-      0.1,
-      10.3,
-      1.5
+      2.2,
+      10.0,
+      1.55
      ],
      [
-      -3.35,
-      9.6,
-      1.5
+      -3.0,
+      10.0,
+      1.6
      ],
-     36
+     27
     ]
    ],
    "hand": 0.004,
@@ -2554,15 +2611,15 @@
      0,
      [
       0.9,
-      4.6,
-      0.38
+      2.0,
+      0.7
      ],
      [
       0.9,
-      7.2,
-      0.45
+      5.8,
+      0.0
      ],
-     26
+     22
     ]
    ],
    "hand": 0.004,
@@ -2783,16 +2840,16 @@
     [
      0,
      [
-      0.0,
-      1.4,
-      1.9
+      -2.9,
+      -3.3,
+      2.2
      ],
      [
-      -2.6,
+      -2.2,
       -0.8,
-      2.3
+      2.4
      ],
-     38
+     28
     ]
    ],
    "hand": 0.004,
@@ -2921,16 +2978,16 @@
     [
      0,
      [
-      -0.5,
-      10.1,
+      0.3,
+      9.95,
       1.55
      ],
      [
       -3.35,
-      10.1,
+      9.95,
       1.5
      ],
-     46
+     32
     ]
    ],
    "hand": 0.004,
@@ -3285,21 +3342,21 @@
     [
      0,
      [
-      -1.4,
+      0.2,
       10.1,
-      0.8
+      0.9
      ],
      [
       -3.35,
       10.1,
-      1.9
+      1.95
      ],
-     30
+     22
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "two-shot from below: our two coins drift together",
+   "what": "two-shot from below: Bea and me side by side, a coin over each head, spinning in step",
    "at": "L59"
   },
   {
@@ -3308,21 +3365,21 @@
     [
      0,
      [
-      -1.6,
+      0.8,
       10.1,
-      2.0
+      1.2
      ],
      [
       -3.35,
       10.1,
-      2.1
+      1.9
      ],
-     55
+     18
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "close: they close into one coin and turn",
+   "what": "wider two-shot: both coins settle on the same frame, a head apart, never touching",
    "at": "L59.2"
   },
   {
@@ -3331,21 +3388,21 @@
     [
      0,
      [
-      -0.2,
-      9.9,
+      0.4,
+      10.1,
       1.65
      ],
      [
       -3.35,
-      10.0,
-      1.85
+      10.1,
+      1.9
      ],
-     40
+     22
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "it stops sun side up; Bea's face lifts",
+   "what": "both sun faces up; Bea's face lifts",
    "at": "L60"
   },
   {
@@ -3474,7 +3531,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "next Friday: our queue to the arch, one coin between our heads",
+   "what": "next Friday: our queue to the arch, two sun coins over two heads",
    "at": "L64"
   },
   {
@@ -3483,22 +3540,82 @@
     [
      0,
      [
-      -1.4,
-      10.1,
-      4.7
+      1.8,
+      9.0,
+      3.4
      ],
      [
-      -3.35,
-      10.1,
-      1.8
+      -1.5,
+      -1.7,
+      1.5
      ],
-     30
+     85
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "from above the stall: two heads and one coin spinning",
+   "what": "long lens down the queue: at the very back a customer side on, empty air over its head",
+   "at": "L64.3"
+  },
+  {
+   "id": "S75",
+   "cam": [
+    [
+     0,
+     [
+      1.8,
+      8.0,
+      2.7
+     ],
+     [
+      -1.5,
+      -1.7,
+      1.5
+     ],
+     95
+    ],
+    [
+     1,
+     [
+      1.8,
+      6.0,
+      2.3
+     ],
+     [
+      -1.5,
+      -1.7,
+      1.55
+     ],
+     95
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "slow push in on it: the one eye toward our stall",
    "at": "L65"
+  },
+  {
+   "id": "S76",
+   "cam": [
+    [
+     0,
+     [
+      1.8,
+      6.0,
+      2.3
+     ],
+     [
+      -1.5,
+      -1.7,
+      1.55
+     ],
+     95
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "hold on it, side on, still",
+   "at": "L66"
   }
  ],
  "acting": {
@@ -3544,10 +3661,52 @@
     "blend": 0
    },
    {
-    "at": "L15",
+    "at": "L13",
     "pos": [
      1.0,
      10.0
+    ]
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -1.5,
+     10.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     40,
+     40
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "soft",
+    "yaw": 50
+   },
+   {
+    "at": "L14",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L15",
+    "pos": [
+     -1.5,
+     10.6
     ]
    },
    {
@@ -3582,51 +3741,14 @@
    },
    {
     "at": "L16",
-    "pos": [
-     1.0,
-     10.0
-    ]
-   },
-   {
-    "at": "L16",
-    "pos": [
-     0.0,
-     17.0
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "worried",
-    "yaw": 0
-   },
-   {
-    "at": "L17",
     "hidden": true,
     "blend": 0
    },
    {
     "at": "L22",
     "pos": [
-     0.0,
-     17.0
+     1.0,
+     10.0
     ]
    },
    {
@@ -3665,17 +3787,17 @@
     "blend": 0
    },
    {
-    "at": "L27",
+    "at": "L26",
     "pos": [
      0.0,
      17.0
     ]
    },
    {
-    "at": "L27",
+    "at": "L26",
     "pos": [
-     -0.9,
-     -0.4
+     -1.5,
+     10.6
     ],
     "blend": 0,
     "hidden": false,
@@ -3689,7 +3811,7 @@
     ],
     "head": [
      0,
-     4
+     0
     ],
     "lean": 0,
     "tremble": 0,
@@ -3698,19 +3820,19 @@
      0,
      0
     ],
-    "expr": "worried",
-    "yaw": 180
+    "expr": "soft",
+    "yaw": 50
    },
    {
-    "at": "L28",
+    "at": "L27",
     "hidden": true,
     "blend": 0
    },
    {
     "at": "L32",
     "pos": [
-     -0.9,
-     -0.4
+     -1.5,
+     10.6
     ]
    },
    {
@@ -4103,6 +4225,90 @@
     "blend": 0
    }
   ],
+  "me_hood": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L16",
+    "pos": [
+     0.0,
+     6.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 0
+   },
+   {
+    "at": "L17",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L27",
+    "pos": [
+     0.0,
+     6.0
+    ]
+   },
+   {
+    "at": "L27",
+    "pos": [
+     -0.9,
+     -0.4
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     4
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "worried",
+    "yaw": 180
+   },
+   {
+    "at": "L28",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
   "me_office": [
    {
     "at": 0,
@@ -4207,43 +4413,6 @@
     "head": [
      0,
      0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "grin",
-    "yaw": 90
-   },
-   {
-    "at": "L65",
-    "pos": [
-     -3.35,
-     10.75
-    ]
-   },
-   {
-    "at": "L65",
-    "pos": [
-     -3.35,
-     10.75
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     -6
     ],
     "lean": 0,
     "tremble": 0,
@@ -4400,7 +4569,7 @@
      0,
      0
     ],
-    "expr": "neutral",
+    "expr": "soft",
     "yaw": 90
    },
    {
@@ -4687,7 +4856,7 @@
     ],
     "head": [
      0,
-     24
+     10
     ],
     "lean": 0,
     "tremble": 0,
@@ -4696,7 +4865,7 @@
      0,
      0
     ],
-    "expr": "neutral",
+    "expr": "soft",
     "yaw": 90
    },
    {
@@ -5170,43 +5339,6 @@
     "head": [
      0,
      0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "grin",
-    "yaw": 90
-   },
-   {
-    "at": "L65",
-    "pos": [
-     -3.35,
-     9.45
-    ]
-   },
-   {
-    "at": "L65",
-    "pos": [
-     -3.35,
-     9.45
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     -6
     ],
     "lean": 0,
     "tremble": 0,
@@ -6345,20 +6477,20 @@
   {
    "at": "L01.3",
    "name": "flip",
-   "dur": 2.2,
+   "dur": 2.6,
    "turns": 1.5
   },
   {
    "at": "L58",
    "name": "flip",
-   "dur": 2.2,
+   "dur": 2.6,
    "turns": 1.5,
    "last": true
   },
   {
    "at": "L59",
-   "name": "merge",
-   "dur": 1.2
+   "name": "spin",
+   "dur": 2.4
   },
   {
    "at": "L39",
@@ -6439,6 +6571,21 @@
    "at": "L56",
    "name": "half",
    "on": false
+  },
+  {
+   "at": "L64.3",
+   "name": "queue",
+   "which": "ours_gap"
+  },
+  {
+   "at": "L64.3",
+   "name": "half",
+   "on": true,
+   "pos": [
+    -1.5,
+    -1.7
+   ],
+   "yaw": 100
   },
   {
    "at": 0,
@@ -6538,6 +6685,13 @@
     "energy": 0.6,
     "mode": "major",
     "root": 40
+   },
+   {
+    "at": "L64.3",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.2
    }
   ]
  },
@@ -6616,9 +6770,14 @@
     "dur": 1.8
    },
    {
-    "at": "L59+1.2",
-    "kind": "click",
-    "db": -10
+    "at": "L59+2.3",
+    "kind": "bell",
+    "db": -27
+   },
+   {
+    "at": "L59+2.5",
+    "kind": "bell",
+    "db": -29
    }
   ],
   "music_drops": [

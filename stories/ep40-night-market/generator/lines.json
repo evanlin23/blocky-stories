@@ -280,8 +280,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "She kept the stall.",
-    "She kept the stall."
+    "She kept",
+    "She kept"
+   ],
+   [
+    "the stall.",
+    "the stall."
    ],
    [
     "I still came",
@@ -358,12 +362,20 @@
     "On Friday,"
    ],
    [
-    "I came from work,",
-    "I came from work,"
+    "I came",
+    "I came"
    ],
    [
-    "still in my TIE.",
-    "still in my tie."
+    "from work,",
+    "from work,"
+   ],
+   [
+    "still in",
+    "still in"
+   ],
+   [
+    "my TIE.",
+    "my tie."
    ]
   ]
  },
@@ -596,8 +608,12 @@
     "I brought her"
    ],
    [
-    "a flask of TEA.",
-    "a flask of tea."
+    "a flask",
+    "a flask"
+   ],
+   [
+    "of TEA.",
+    "of tea."
    ]
   ]
  },
@@ -1126,8 +1142,12 @@
     "my side had"
    ],
    [
-    "nothing to land ON.",
-    "nothing to land on."
+    "nothing to",
+    "nothing to"
+   ],
+   [
+    "land ON.",
+    "land on."
    ]
   ]
  },

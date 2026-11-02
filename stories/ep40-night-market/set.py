@@ -41,6 +41,7 @@ S = rig.S
 WORK = Path(tempfile.mkdtemp(prefix="ep40-"))
 
 GOLD = "#c9a24a"
+COIN_TINTS = []
 LANTERN_RED, LANTERN_GLOW = "#c8352a", "#ffb060"
 INDIGO = "#2b2f6b"
 ROWS_Y = [2.2 + 2.6 * i for i in range(6)]
@@ -185,21 +186,29 @@ def coin_material(kit, name, path):
     uv = nt.nodes.new("ShaderNodeUVMap")
     nt.links.new(uv.outputs["UV"], tex.inputs["Vector"])
     bp = nt.nodes.new("ShaderNodeBump")
-    bp.inputs["Strength"].default_value = 0.9
+    bp.inputs["Strength"].default_value = 1.4
     bp.inputs["Distance"].default_value = 0.012
     nt.links.new(tex.outputs["Color"], bp.inputs["Height"])
     nt.links.new(bp.outputs["Normal"], b.inputs["Normal"])
     mix = nt.nodes.new("ShaderNodeMath")          # albedo: 0.88 + 0.12 * height
     mix.operation = "MULTIPLY_ADD"
-    mix.inputs[1].default_value = 0.12
-    mix.inputs[2].default_value = 0.88
+    mix.inputs[1].default_value = 0.22
+    mix.inputs[2].default_value = 0.78
     nt.links.new(tex.outputs["Color"], mix.inputs[0])
     mul = nt.nodes.new("ShaderNodeMixRGB")
     mul.blend_type = "MULTIPLY"
     mul.inputs["Fac"].default_value = 1.0
     mul.inputs["Color1"].default_value = kit.col(GOLD)
     nt.links.new(mix.outputs[0], mul.inputs["Color2"])
-    nt.links.new(mul.outputs["Color"], b.inputs["Base Color"])
+    tint = nt.nodes.new("ShaderNodeRGB")           # a per-shot level (1 = the gold), changed only at cuts
+    tint.outputs["Color"].default_value = (1, 1, 1, 1)
+    COIN_TINTS.append(tint)
+    mul2 = nt.nodes.new("ShaderNodeMixRGB")
+    mul2.blend_type = "MULTIPLY"
+    mul2.inputs["Fac"].default_value = 1.0
+    nt.links.new(mul.outputs["Color"], mul2.inputs["Color1"])
+    nt.links.new(tint.outputs["Color"], mul2.inputs["Color2"])
+    nt.links.new(mul2.outputs["Color"], b.inputs["Base Color"])
     kit._fogged(m, b.outputs[0])
     return m
 
@@ -288,9 +297,10 @@ def stall(kit, ctx, M, side, i):
         kit.cyl(nm + ".potlid", 0.355, 0.05, (X(2.7), yc, 1.5), M["steel"], n=20)
         ctx["noodle_pot"] = (X(2.7), yc)
     else:
+        sy = yc - 1.0 if kind == "ours" else yc - 0.55       # ours stands at the stall's end, clear of Bea's face
         for k in range(4):
-            kit.cyl(nm + f".st{k}", 0.2, 0.1, (X(2.65), yc - 0.55, 1.09 + 0.1 * k), M["bamboo"], n=16)
-        kit.cyl(nm + ".stlid", 0.21, 0.04, (X(2.65), yc - 0.55, 1.5), M["bamboo_d"], n=16)
+            kit.cyl(nm + f".st{k}", 0.2, 0.1, (X(2.65), sy, 1.09 + 0.1 * k), M["bamboo"], n=16)
+        kit.cyl(nm + ".stlid", 0.21, 0.04, (X(2.65), sy, 1.5), M["bamboo_d"], n=16)
     kit.box(nm + ".board", (0.3, 0.42, 0.03), (X(2.55), yc + 0.15 if kind != "noodle" else yc + 0.7, 1.06), M["board"], bevel=0.008)
     kit.box(nm + ".bowl", (0.14, 0.14, 0.08), (X(2.5), yc + 0.9, 1.08), M["cream"], bevel=0.02)
 
@@ -324,12 +334,12 @@ def build_stalls(kit, ctx, M):
     # the old float tin on our shelf (S70): a dented lid with two short indigo strokes
     shelf_z = 0.47
     tin = kit.cyl("tin", 0.115, 0.085, (-2.78, 10.2, shelf_z + 0.0425), M["tin"], n=24)
-    lid_im = Image.new("RGB", (256, 256), "#7d8087")
+    lid_im = Image.new("RGB", (256, 256), "#a9acb3")
     d = ImageDraw.Draw(lid_im)
     d.ellipse([20, 20, 236, 236], outline="#5a5d63", width=8)
     d.ellipse([60, 150, 130, 200], fill="#6a6d74")                                       # the dent
-    for x in (96, 150):
-        d.line([(x, 70), (x + 6, 150)], fill=INDIGO, width=16)                          # two short indigo strokes
+    for x in (92, 160):
+        d.line([(x, 56), (x + 8, 160)], fill="#262a7a", width=26)                       # two short indigo strokes
     lp = WORK / "lid.png"
     lid_im.save(lp)
     lm = image_mat(kit, "tin lid", lp, 0.5)
@@ -419,7 +429,7 @@ def build_vignettes(kit, ctx, M):
     kit.cyl("pic.pole", 0.035, 3.0, (px + 2.2, py + 1.2, 1.5), M["dark"], n=6)
     lantern(kit, ctx, "pic.l1", (px + 1.5, py + 1.2, 2.9), LANTERN_GLOW, 1.8, sway=0.0)
     lantern(kit, ctx, "pic.l2", (px - 1.5, py + 1.2, 2.9), LANTERN_RED, 1.8, sway=0.0)
-    kit.light("pic.key", "POINT", (px, py + 0.2, 2.6), 600.0, LANTERN_GLOW, size=0.4)
+    kit.light("pic.key", "POINT", (px - 3.0, py, 1.7), 260.0, LANTERN_GLOW, size=0.4)
     kit.light("pic.fill", "POINT", (px - 2.4, py - 2.2, 1.8), 160.0, "#9db4ff", size=0.5, shadow=False)
     # the back of a stall: a canvas wall, crates, a hanging lantern
     bx, by = -11.0, 8.0
@@ -429,7 +439,7 @@ def build_vignettes(kit, ctx, M):
         kit.box(f"back.crate{k}", (0.5, 0.5, 0.4), (bx + dx, by + 1.5 - 0.1 * k, 0.2 + dz), M["wood_top"], bevel=0.02)
     kit.cyl("back.pole", 0.035, 3.0, (bx + 2.8, by + 1.2, 1.5), M["dark"], n=6)
     lantern(kit, ctx, "back.l1", (bx, by + 1.3, 2.7), LANTERN_GLOW, 1.8, sway=0.0)
-    kit.light("back.key", "POINT", (bx, by - 0.4, 2.5), 600.0, LANTERN_GLOW, size=0.4)
+    kit.light("back.key", "POINT", (bx, by - 2.6, 1.8), 260.0, LANTERN_GLOW, size=0.4)
     kit.light("back.fill", "POINT", (bx + 3.0, by - 2.4, 1.6), 160.0, "#9db4ff", size=0.5, shadow=False)
     # the home kitchen: pale walls, a lit window, a table with two steaming bowls
     kx, ky = 20.0, 22.0
@@ -519,13 +529,42 @@ def half_face_image(path):
     d = ImageDraw.Draw(im)
     cx = int(W * (0.5 + 17 / 360))
     cy = int(Hh * 0.40)
-    d.ellipse([cx - 56, cy - 80, cx + 56, cy + 80], fill=(8, 7, 10))
-    d.ellipse([cx - 28, cy - 56, cx - 6, cy - 34], fill=(252, 252, 255))             # the highlight: the brightest thing
+    d.ellipse([cx - 62, cy - 86, cx + 62, cy + 86], fill=(8, 7, 10))
+    d.ellipse([cx - 30, cy - 60, cx - 6, cy - 36], fill=(252, 252, 255))             # the highlight: the brightest thing
+    mk = Image.new("RGB", (W, Hh), (0, 0, 0))
+    ImageDraw.Draw(mk).ellipse([cx - 30, cy - 60, cx - 6, cy - 36], fill=(255, 255, 255))
+    mk.save(Path(path).with_name("half-glint.png"))
     x0 = int(W * 0.5)
-    pts = [(x0, int(Hh * 0.72)), (x0 + 90, int(Hh * 0.73)), (x0 + 190, int(Hh * 0.72)), (x0 + 270, int(Hh * 0.69))]
-    d.line(pts, fill=(14, 10, 12), width=20, joint="curve")
-    d.ellipse([pts[-1][0] - 10, pts[-1][1] - 10, pts[-1][0] + 10, pts[-1][1] + 10], fill=(14, 10, 12))
+    pts = [(x0, int(Hh * 0.73)), (x0 + 90, int(Hh * 0.735)), (x0 + 190, int(Hh * 0.735)), (x0 + 270, int(Hh * 0.74))]
+    d.line(pts, fill=(14, 10, 12), width=12, joint="curve")        # a thin, flat, level mouth: not a grin
     im.save(path)
+
+
+def half_face_mat(kit, path, glint):
+    """The Half's face: the painted face, plus an emission only where the eye's highlight is (the brightest thing on it)."""
+    m = kit._new("half face")
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    b.inputs["Roughness"].default_value = 0.6
+    uv = nt.nodes.new("ShaderNodeUVMap")
+    tex = nt.nodes.new("ShaderNodeTexImage")
+    tex.image = bpy.data.images.load(str(path))
+    nt.links.new(uv.outputs["UV"], tex.inputs["Vector"])
+    nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
+    gt = nt.nodes.new("ShaderNodeTexImage")
+    gi = bpy.data.images.load(str(glint))
+    gi.colorspace_settings.name = "Non-Color"
+    gt.image = gi
+    nt.links.new(uv.outputs["UV"], gt.inputs["Vector"])
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Color"].default_value = (1.0, 0.96, 0.9, 1)
+    em.inputs["Strength"].default_value = 7.0
+    mixs = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(gt.outputs["Color"], mixs.inputs["Fac"])
+    nt.links.new(b.outputs[0], mixs.inputs[1])
+    nt.links.new(em.outputs[0], mixs.inputs[2])
+    kit._fogged(m, mixs.outputs[0])
+    return m
 
 
 def build_half(kit, ctx, M):
@@ -536,8 +575,8 @@ def build_half(kit, ctx, M):
     kit.box("half.leg", (0.98, 1.0, 1.72), (0.5, 0, 1.14), trousers, root, bevel=0.06)
     kit.box("half.shoe", (0.99, 1.01, 0.3), (0.5, 0, 0.15), M["shoe"], root, bevel=0.06)
     kit.box("half.torso", (0.98, 1.0, 2.0), (0.5, 0, 3.0), jacket, root, bevel=0.06)
-    kit.box("half.sleeve", (0.98, 1.0, 1.75), (1.5, 0, 3.125), jacket, root, bevel=0.06)
-    kit.box("half.hand", (0.96, 0.98, 0.25), (1.5, 0, 2.125), M["skin"], root, bevel=0.04)
+    kit.box("half.sleeve", (1.0, 1.0, 1.75), (1.49, 0, 3.125), jacket, root, bevel=0.06)
+    kit.box("half.hand", (0.98, 0.98, 0.25), (1.49, 0, 2.125), M["skin"], root, bevel=0.04)
     # the cut: a slab of lacquer over the whole inner face (leg to hip, torso), one material, no edge detail
     kit.box("half.plane.lower", (0.012, 1.0, 2.0), (-0.006, 0, 1.0), lacquer, root)
     kit.box("half.plane.upper", (0.012, 1.0, 2.0), (-0.006, 0, 3.0), lacquer, root)
@@ -545,7 +584,7 @@ def build_half(kit, ctx, M):
     headg = kit.empty("half.headg", (0, 0, faces.HEAD_H / 2 + 0.02), neck)
     fp = WORK / "half-face.png"
     half_face_image(fp)
-    hm = image_mat(kit, "half face", fp, 0.5)
+    hm = half_face_mat(kit, fp, fp.with_name("half-glint.png"))
     half_head(kit, "half.head", hm, lacquer, headg)
     top = faces.HEAD_H / 2
     R = faces.HEAD_R
@@ -554,6 +593,7 @@ def build_half(kit, ctx, M):
     kit.box("half.hback", (R + 0.04, 0.32, faces.HEAD_H * 0.75), ((R + 0.04) / 2, R - 0.08, top - faces.HEAD_H * 0.36), hair, headg, bevel=0.08)
     kit.box("half.hside", (0.2, 0.9, 0.5), (R - 0.02, 0.2, top - 0.25), hair, headg, bevel=0.06)
     ctx["half"] = root
+    ctx["flask"] = kit.cyl("flask", 0.045, 0.24, (0, 0, -5), M["steel"], n=12)
 
 
 # ------------------------------------------------------------------------------------------------ crowd
@@ -615,7 +655,7 @@ def materials(kit):
     M["dark"] = pbr(kit, "darkpole", "#26262c", 0.5, 0.4)
     M["canvas"] = pbr(kit, "canvas", "#2b2b32", 0.95, 0.05)
     M["steel"] = kit.metal("#8a8d90", 0.4)
-    M["iron"] = kit.metal("#2a2a2e", 0.45, name="iron")
+    M["iron"] = kit.metal("#55565e", 0.45, name="iron")
     M["bamboo"] = pbr(kit, "bamboo", "#b58a4a", 0.6, 0.2)
     M["bamboo_d"] = pbr(kit, "bamboo d", "#8a6a36", 0.6, 0.2)
     M["board"] = pbr(kit, "choppingboard", "#c9a878", 0.7, 0.2)
@@ -640,7 +680,7 @@ def materials(kit):
     M["shoe"] = pbr(kit, "half shoe", "#16161a", 0.6, 0.2)
     M["skin"] = pbr(kit, "half skin", "#a98672", 0.5, 0.3)
     M["hair_black"] = pbr(kit, "half hair", "#0d0b0e", 0.6, 0.2)
-    M["lacquer"] = kit.plastic("#262a62", 0.1, name="half lacquer", spec=0.9)
+    M["lacquer"] = kit.plastic("#35385f", 0.22, name="half lacquer", spec=0.5)
     return M
 
 
@@ -650,7 +690,7 @@ def quilt_material(kit):
     m = kit._new(name)
     nt = m.node_tree
     b = nt.nodes["Principled BSDF"]
-    b.inputs["Base Color"].default_value = kit.col("#a8443a")
+    b.inputs["Base Color"].default_value = kit.col("#97493f")
     b.inputs["Roughness"].default_value = 0.7
     tc = nt.nodes.new("ShaderNodeTexCoord")
     sep = nt.nodes.new("ShaderNodeSeparateXYZ")
@@ -688,11 +728,12 @@ def build_lights(kit, ctx):
         kit.light(f"walk{k}", "POINT", (0.0, y, 3.4), 520.0, LANTERN_GLOW, size=0.5)
     kit.light("arch", "POINT", (0.0, ARCH_Y - 0.6, 3.4), 400.0, LANTERN_GLOW, size=0.5)
     kit.light("cool", "AREA", (0.0, 8.0, 7.0), 1000.0, "#7f9cff", size=9.0, rot=(0, 0, 0), shadow=False)
-    kit.light("shadowlamp", "SPOT", (0.2, 7.2, 3.4), 0.0, "#ffe2b8", spot=60, blend=0.3, size=0.03,
+    kit.light("shadowlamp", "SPOT", (0.9, 10.5, 4.0), 0.0, "#ffe2b8", spot=70, blend=0.3, size=0.03,
               rot=(0, 0, 0))
     ctx["shadowlamp"] = kit.LIGHTS["shadowlamp"]["obj"]
-    kit.aim(ctx["shadowlamp"], (0.2, 7.2, 0.0))
+    kit.aim(ctx["shadowlamp"], (0.9, 5.5, 0.3))
     # the Half's lights follow the camera: a warm key from the side, a cool rim from behind it
+    kit.light("under", "POINT", (-3.3, 9.9, 0.95), 100.0, LANTERN_GLOW, size=0.2)
     kit.light("half_key", "SPOT", (0, 0, 1.5), 0.0, "#ffb060", spot=34, blend=0.5, size=0.05)
     kit.light("half_rim", "SPOT", (0, 0, 1.8), 0.0, "#8fb0ff", spot=26, blend=0.5, size=0.05)
 
@@ -768,7 +809,10 @@ SHOT_COINS = {            # one shot's own faces (a different person in a differ
     "S09": {"ca": "sun", "cb": "sun", "g1": "sun"}, "S10": {"ca": "sun", "cb": "moon"}, "S24": {"ca": "sun"},
     "S36": {"ca": "sun", "cb": "sun"},
 }
-EDGE = ("me", "me_office", "me_apron")
+EDGE = ("me", "me_hood", "me_office", "me_apron")
+HALF_SHOTS = {"S41", "S42", "S43", "S44", "S51", "S52", "S53", "S74", "S75", "S76"}
+HALF_FILL = 0.25
+COIN_SHOT = {"S20": (1.0, 0.6), "S01": (0.62, 0.5), "S02": (1.0, 0.5), "S03": (0.62, 0.5)}      # (scale, level): small, dark coins in the hook
 
 
 def crowd_face(m, phase, queue):
@@ -782,7 +826,7 @@ def face_angle(face):
     return {"sun": 0.0, "moon": math.pi, "edge": math.pi / 2}[face]
 
 
-def coin_pose(kit, ctx, co, pos, face_seq, t, flips, cam, tilt_on, scale=1.0):
+def coin_pose(kit, ctx, co, pos, face_seq, t, flips, cam, tilt_on, scale=1.0, ang_over=None, tilt_amt=None):
     """face_seq: the coin's face before the first flip, between and after (3 values). Returns nothing; poses the object."""
     ob = co
     # which phase, and is a flip running
@@ -802,31 +846,63 @@ def coin_pose(kit, ctx, co, pos, face_seq, t, flips, cam, tilt_on, scale=1.0):
             break
     if ang is None:
         ang = face_angle(face_seq[min(phase, len(face_seq) - 1)])
+    if ang_over is not None:
+        ang = ang_over
     dx, dy = cam.x - pos[0], cam.y - pos[1]
     yaw = math.atan2(dx, -dy)
     seed = pos[0] * 1.3 + pos[1] * 0.7
     rock = 0.07 * math.sin(0.9 * t + seed)
     tilt = (0.24 + 0.05 * math.sin(1.1 * t + seed * 1.7)) if tilt_on else 0.0
+    if tilt_amt is not None:
+        tilt = (0.24 + 0.05 * math.sin(1.1 * t + seed * 1.7)) * tilt_amt
     ob.location = pos
     ob.rotation_euler = (tilt, 0, yaw + ang + rock)
     ob.scale = (scale, scale, scale)
 
 
+def cool_level(m):
+    """The cool fill: as the lanterns were (more of it as they dim) down to m = 0.55, then falling to a faint fill at the bell dim."""
+    full = 0.35 + 0.55 * (1 - m)
+    if m >= 0.55:
+        return full
+    k = max(0.0, (m - 0.15) / 0.4)
+    return 0.17 + (full - 0.17) * k
+
+
+def this_camera(story, shot, t):
+    """Where this frame's camera will stand (the engine places it after animate runs), so the coins turn to the right lens."""
+    spec = next(x for x in story["shots"] if x["id"] == shot["id"])
+    keys = spec["cam"]
+    u = (t - shot["start"]) / max(1e-6, shot["end"] - shot["start"])
+    loc = keys[0][1]
+    if len(keys) > 1 and u > keys[0][0]:
+        loc = keys[-1][1]
+        for a, b in zip(keys, keys[1:]):
+            if u <= b[0]:
+                v = ss((u - a[0]) / max(1e-6, b[0] - a[0]))
+                loc = [a[1][i] + (b[1][i] - a[1][i]) * v for i in range(3)]
+                break
+    return V(tuple(loc))
+
+
 def animate(kit, story, tl, t, ctx):
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
     sid = shot["id"]
-    cam = kit.OBJ["cam"]
-    camp = cam.location
+    camp = this_camera(story, shot, t)
     M = ctx["M"]
     # ---- lights
     m = mood(tl, t)
     for n, base in ctx["lantern_nodes"] + ctx["lamp_nodes"]:
         n.inputs["Strength"].default_value = base * (0.08 + 0.92 * m)
     over = {}
+    fill = HALF_FILL if (sid in HALF_SHOTS or sid == "S36") else 1.0     # no warm front fill on the Half: the walkway lights stand down
     for name in list(kit.LIGHTS):
-        if name.startswith("lamp") or name.startswith("walk") or name == "arch":
+        if name.startswith("walk") or name == "arch":
+            over[name] = m * fill
+        elif name.startswith("lamp"):
             over[name] = m
-    over["cool"] = 0.25 + 0.55 * (1 - m) + 0.1
+    over["cool"] = cool_level(m) * (0.5 if (sid in HALF_SHOTS or sid == "S36") else 1.0)
+    over["under"] = 1.0 if sid in ("S69", "S70") else 0.0
     # ---- one-time bits
     if not ctx.get("fitted"):
         ctx["fitted"] = True
@@ -849,15 +925,20 @@ def animate(kit, story, tl, t, ctx):
         sw = 0.5 * math.exp(-1.0 * u) * math.sin(2 * math.pi * 1.4 * u) if 0 <= u < 6 else 0.0
     ctx["bell"].rotation_euler = (0, sw, 0)
     # ---- our awning is lifted for the high shot over the stall
-    for ob in ctx.get("our_awning", []):
-        ob.hide_render = (sid == "S74")
+    for ln in ctx["lanterns"]:                  # no lanterns in the first 2 s, so the coins can't read as lanterns
+        ln["ob"].hide_render = ln["cap"].hide_render = (sid == "S01")
+    # ---- the flask under my arm (S33 only)
+    fst = acting.state(tl, "me_hood", t)
+    ctx["flask"].hide_render = not (sid == "S33" and not fst["hidden"])
+    ctx["flask"].location = (fst["x"] + 0.16, fst["y"] - 0.05, 1.0)
+    ctx["flask"].rotation_euler = (math.radians(70), 0, 0)
     # ---- the steam in the kitchen drifts (position only)
     for k, st in enumerate(ctx["steam"]):
         st.location.z = 1.0 + 0.12 * ((t * 0.35 + k * 0.5) % 1.0)
     # ---- the shadow lamp (S36 only)
     sl = last(cues(tl, "shadow_light"), t)
     over["shadowlamp"] = 1.0 if (sl and sl.get("on")) else 0.0
-    kit.LIGHTS["shadowlamp"]["base"] = 3800.0
+    kit.LIGHTS["shadowlamp"]["base"] = 2400.0
     # ---- the queues
     qc = last(cues(tl, "queue"), t)
     which = qc["which"] if qc else "noodle"
@@ -868,8 +949,8 @@ def animate(kit, story, tl, t, ctx):
             ch = mem["ch"]
             if "queue" in mem:
                 k = mem["queue"]
-                tab = QUEUE_OURS if which == "ours" else QUEUE_NOODLE
-                hide = k >= len(tab) or (which == "far" and 2 <= k <= 5)
+                tab = QUEUE_OURS if which in ("ours", "ours_gap") else QUEUE_NOODLE
+                hide = k >= len(tab) or (which == "far" and 2 <= k <= 5) or (which == "ours_gap" and k >= 10)
                 if which in ("noodle", "far"):
                     pos = tab[min(k, len(tab) - 1)]
                     yaw = -90 if k == 0 else 180
@@ -915,39 +996,20 @@ def animate(kit, story, tl, t, ctx):
         over["half_rim"] = 1.0
     # ---- the coins
     flips = cues(tl, "flip")
-    merge = last(cues(tl, "merge"), t)
-    mt = merge["t"] if merge else None
-    mdur = merge["dur"] if merge else 1.2
+    spin = last(cues(tl, "spin"), t)
     equal = sid in story.get("equal_coins", [])
-    phase_face = lambda seq: seq
-    # shared coin
-    sh = ctx["shared"]
-    if mt is not None and t >= mt + mdur:
-        mid = (-3.35, 10.1, 2.14)
-        u = t - (mt + mdur)
-        spin_until = 3.0
-        if u < spin_until:
-            ang = math.pi + 3 * math.pi * ss(u / spin_until)       # moon to sun, one slow turn and a half
-        else:
-            ang = 4 * math.pi
-            sp = last(cues(tl, "queue"), t)
-            if sp and sp.get("which") == "ours":
-                ang += 2 * math.pi * 0.22 * (t - sp["t"])
-        dx, dy = camp.x - mid[0], camp.y - mid[1]
-        sh.hide_render = False
-        for ob in sh.children_recursive:
-            ob.hide_render = False
-        sh.location = mid
-        sh.rotation_euler = (0.24 if u >= 0 else 0.0, 0, math.atan2(dx, -dy) + ang + 0.05 * math.sin(0.9 * t))
-        sh.scale = (1, 1, 1)
-    else:
-        sh.hide_render = True
-        for ob in sh.children_recursive:
-            ob.hide_render = True
+    csc, ctint = COIN_SHOT.get(sid, (1.0, 1.0))
+    for tn in COIN_TINTS:
+        tn.outputs["Color"].default_value = (ctint, ctint, ctint, 1)
+    ctx["shared"].hide_render = True
+    for ob in ctx["shared"].children_recursive:
+        ob.hide_render = True
     ov = SHOT_COINS.get(sid, {})
     for c in ctx["coins"]:
         ob = c["ob"]
         vis = True
+        tilt_amt = None
+        ang_over = None
         if c["kind"] == "cast":
             name = c["name"]
             st = acting.state(tl, name, t)
@@ -960,26 +1022,27 @@ def animate(kit, story, tl, t, ctx):
                 seq = [ov[name]] * 3
             else:
                 seq = COIN_FACES.get(name, ["sun"] * 3)
-            if name == "bea" and mt is not None and t >= mt:
-                u = min(1.0, (t - mt) / mdur)
-                pos = (pos[0], pos[1] + (10.1 - pos[1]) * ss(u), pos[2])
-                vis = vis and t < mt + mdur
-            if name in EDGE and mt is not None and t >= mt:
-                u = min(1.0, (t - mt) / mdur)
-                pos = (pos[0], pos[1] + (10.1 - pos[1]) * ss(u), pos[2])
-                vis = vis and t < mt + mdur
-            scale = 1.0
+            if spin and (name == "bea" or name in EDGE) and t >= spin["t"] - 1e-9:
+                # Bea's coin and mine, in step: the same smooth turn, each landing sun side up on the same frame
+                u = min(1.0, (t - spin["t"]) / spin["dur"])
+                if name == "bea":
+                    ang_over = math.pi + math.pi * ss(u)
+                    tilt_amt = 1.0
+                else:
+                    ang_over = math.pi / 2 + 1.5 * math.pi * ss(u)
+                    tilt_amt = ss(u)
+            scale = csc
             if equal:
                 scale = max(0.6, min(1.4, (V(pos) - camp).length / 4.4))
             coin_pose(kit, ctx, ob, pos, seq, t, [] if (name in ov or name in EDGE) else flips, camp,
-                      tilt_on=(name not in EDGE), scale=scale)
+                      tilt_on=(name not in EDGE) if tilt_amt is None else True, scale=scale, ang_over=ang_over, tilt_amt=tilt_amt)
         else:
             mem = c["m"]
             vis = not mem.get("hidden", False)
             pos = (mem["pos"][0], mem["pos"][1], mem["ch"].root.scale[2] / S * 1.87 + 0.26)
             q = "queue" in mem
             seq = [crowd_face(mem | {"j": c["j"]}, p, q) for p in range(3)]
-            scale = 1.0
+            scale = csc
             if equal:
                 scale = max(0.6, min(1.4, (V(pos) - camp).length / 4.4))
             coin_pose(kit, ctx, ob, pos, seq, t, flips, camp, True, scale)
