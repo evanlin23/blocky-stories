@@ -58,76 +58,6 @@
   ]
  },
  {
-  "id": "L04",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nobody here",
-    "Nobody here"
-   ],
-   [
-    "owns a LOST PROPERTY",
-    "owns a lost property"
-   ],
-   [
-    "BOX.",
-    "box."
-   ]
-  ]
- },
- {
-  "id": "L05",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A man",
-    "a man"
-   ],
-   [
-    "threw out",
-    "threw out"
-   ],
-   [
-    "his ex's JUMPER.",
-    "his ex's jumper."
-   ],
-   [
-    "He woke up",
-    "He woke up"
-   ],
-   [
-    "WEARING it.",
-    "wearing it."
-   ]
-  ]
- },
- {
-  "id": "L06",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A KITE",
-    "a kite"
-   ],
-   [
-    "blew off",
-    "blew off"
-   ],
-   [
-    "the BEACH.",
-    "the beach."
-   ],
-   [
-    "By DINNER,",
-    "By dinner,"
-   ],
-   [
-    "it's on her ROOF.",
-    "it's on her roof."
-   ]
-  ]
- },
- {
   "id": "L07",
   "who": "narrator",
   "chunks": [
@@ -186,6 +116,28 @@
   ]
  },
  {
+  "id": "L09a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every SUNDAY,",
+    "every sunday,"
+   ],
+   [
+    "I call GRAN.",
+    "i call gran."
+   ],
+   [
+    "She's ALL",
+    "she's all"
+   ],
+   [
+    "I've GOT.",
+    "i've got."
+   ]
+  ]
+ },
+ {
   "id": "L10",
   "who": "narrator",
   "chunks": [
@@ -226,16 +178,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "On SUNDAY,",
-    "On sunday,"
+    "Next SUNDAY,",
+    "next sunday,"
    ],
    [
-    "Gran's on a CALL,",
-    "Gran's on a call,"
-   ],
-   [
-    "pulling ON",
-    "pulling on"
+    "Gran's pulling ON",
+    "gran's pulling on"
    ],
    [
     "a GLOVE.",
@@ -352,6 +300,28 @@
    [
     "go BLANK.",
     "go blank."
+   ]
+  ]
+ },
+ {
+  "id": "L18a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And every TIME",
+    "and every time"
+   ],
+   [
+    "I come to,",
+    "i come to,"
+   ],
+   [
+    "I'm a little CLOSER",
+    "i'm a little closer"
+   ],
+   [
+    "to GRAN.",
+    "to gran."
    ]
   ]
  },
@@ -812,6 +782,20 @@
   ]
  },
  {
+  "id": "L42a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I can't FIND her",
+    "i can't find her"
+   ],
+   [
+    "ANYWHERE.",
+    "anywhere."
+   ]
+  ]
+ },
+ {
   "id": "L43",
   "who": "narrator",
   "chunks": [
@@ -1198,6 +1182,28 @@
    [
     "like the GLOVE.\"",
     "like the glove."
+   ]
+  ]
+ },
+ {
+  "id": "L63a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I tell her",
+    "i tell her"
+   ],
+   [
+    "I'm SORRY",
+    "i'm sorry"
+   ],
+   [
+    "I stayed away",
+    "i stayed away"
+   ],
+   [
+    "four YEARS.",
+    "four years."
    ]
   ]
  },

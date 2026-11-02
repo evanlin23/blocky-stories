@@ -82,9 +82,6 @@ cast = {
     "umbrella_man": person("#dcb08f", "#7a5a3a", "#3a3a3a", "cap", "#6e6a64", pattern="plaid", pattern_c="#5a3f26",
                            hat="ballcap", hat_c="#6a5238", height=1.02,
                            face={"eyes": "tired", "brows": True, "ink": "#1c1613"}),
-    "jumper_man": person("#d9a07c", "#9a9fa6", "#3d4a63", "spiky", "#3a2a1c"),
-    "kite_woman": person("#c98e6a", "#e8c020", "#3a3f4a", "long", "#6a4a2a", extras=["coat"], height=0.97,
-                         face={"eyes": "lashes", "brows": True, "ink": "#161012"}),
     "pass1": person("#e0b08c", "#4a5560", "#2e3238", "cap", "#2a2a2a", extras=["coat"]),
     "pass2": person("#b88562", "#5e6b45", "#38362e", "buzz", "#8a8a88", extras=["coat"], height=0.96),
 }
@@ -125,18 +122,6 @@ shot("L02", "low: the glove hopping up after the raincoat hem",
 shot("L03", "side tracking: umbrella man",
      c([0, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22], [1, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22]),
      {"umbrella_man": P([0.4, -2.4], walk=[("L03>", [0.4, 2.8])])})
-shot("L04", "inside the ticket hut: the empty shelf",
-     c([0, [700.4, -1.2, 1.3], [700, 1.4, 1.2], 24], [1, [700.2, -1.0, 1.3], [700, 1.4, 1.2], 24]))
-shot("L05", "the jumper man at the bin",
-     still([148.6, 9.2, 1.5], [150.6, 5.8, 1.2], 26),
-     {"jumper_man": P([150.95, 5.45], yaw=-140)})
-shot("L05.3", "he wakes up wearing it",
-     still([600.0, -1.9, 1.35], [600, 0.95, 1.15], 26),
-     {"jumper_man": P([600.0, 0.95, 0.18], yaw=0, sit=True, expr="wide")})
-shot("L06", "a kite tumbling over grey sand", still([900, 2, 1.2], [903, 16, 2.2], 22))
-shot("L06.3", "the kite woman at her gate, the kite on the roof",
-     still([798.8, -6.4, 1.4], [800, 2.5, 2.6], 22),
-     {"kite_woman": P([800, -3.6], yaw=180, head=[0, -28])})
 shot("L07", "the dog alone on the harbour front", still([0, -1.2, 0.85], [0, 3.5, 0.4], 30))
 shot("L08", "the dog up the gangway among legs", still([-2.2, -12.6, 0.4], [0.1, -16.8, 0.4], 24),
      {"pass1": P([-0.8, -13.6, 0.0], walk=[("L08+0.5", [-0.8, -15.3, 0.0]), ("L08+1.6", [-0.8, -18.5, 0.9]),
@@ -153,6 +138,11 @@ shot("L09", "me among the passengers, a thing hopping behind each, nothing behin
       "pass2": P([2.0, -1.8], walk=[("L09>", [2.2, -7.0])]),
       "glove_woman": P([-0.9, -2.8], walk=[("L09>", [-0.8, -8.0])]),
       "umbrella_man": P([1.3, -3.6], walk=[("L09>", [1.3, -9.0])])})
+shot("L09a", "the call: Gran grinning, leaning in far too close, my hat on the hook",
+     still([400.1, -1.9, 1.38], [400.1, 0.4, 1.35], 28),
+     {"gran": P([399.9, -0.3], yaw=0, expr="grin")})
+shot("L09a.2", "me at the table, laughing softly at the screen", still([201.8, -2.0, 1.3], [199.9, 0.1, 1.05], 26),
+     {"me": P([199.9, 0.1, -0.03], yaw=90, sit=True, expr="soft")})
 shot("L10", "the bin: a glove drops in", still([152.4, 4.4, 1.5], [150, 6.6, 1.0], 26))
 shot("L11", "me walking away, looking back, worried", still([148.2, 4.5, 1.4], [153.0, 5.6, 1.3], 26),
      {"me": P([151.6, 5.3], expr="worried", head=[150, 0], walk=[("L11>", [154.6, 5.3])])})
@@ -174,6 +164,8 @@ shot("L17", "my flat window at dusk, the island a dark line",
 
 # ------------------------------------------------------------------------------------------------ 03 the evenings
 shot("L18", "the chair empty, the door ajar", still([201.6, -1.6, 1.4], [199.4, 0.9, 0.9], 22))
+shot("L18a", "a slow high wide at blue dusk: the island's one porch lamp, small and far",
+     c([0, [0.5, -9.0, 1.7], [-6, -108, 9.5], 24], [1, [0.5, -9.0, 2.2], [-6, -108, 10.2], 24]))
 shot("L19", "Monday: me at the water's edge", still([-0.7, -19.7, 1.35], [0.2, -16.4, 1.3], 28),
      {"me": P([0.2, -16.4, -0.23], yaw=0, expr="worried")})
 shot("L20", "high wide: the slipway and the ferry's lights", still([-2.5, 5.5, 4.8], [12, -60, 0.6], 19))
@@ -223,6 +215,11 @@ shot("L41", "the late boat over: me walking aboard",
      {"me": P([X, -10.2, 0.0], walk=[("L41+1.0", [X, -13.3, 0.0]), ("L41+2.1", [X, -16.5, 0.9])])})
 shot("L42", "the car deck: looking for her", still([F + 0.0, -6.8, 1.7], [F, -3.0, 1.5], 24),
      {"me": P([F + 0.05, -3.2, 0.9], yaw=180, expr="worried", head=[25, 0]),
+      "pass1": P([F - 2.2, -2.8, 0.9], yaw=180), "pass2": P([F + 2.3, -3.4, 0.9], yaw=180)})
+
+shot("L42a", "me turning between the two parked cars, only passengers' backs",
+     still([F - 0.3, 3.0, 1.6], [F + 0.05, -3.2, 1.3], 26),
+     {"me": P([F + 0.05, -3.2, 0.9], yaw=180, expr="worried", head=[-30, 0]),
       "pass1": P([F - 2.2, -2.8, 0.9], yaw=180), "pass2": P([F + 2.3, -3.4, 0.9], yaw=180)})
 
 # ------------------------------------------------------------------------------------------------ 06 the Shrug
@@ -282,6 +279,9 @@ shot("L62", "the glove held out", still([F + 4.0, 3.9, 5.1], [F + 2.1, 3.7, 4.95
       "me": P(ME_SEAT, yaw=90, sit=True, expr="soft", head=[-40, 0])})
 shot("L63", "two-shot, soft, the glove on my hand", still([F + 5.6, 4.0, 5.25], [F + 1.7, 4.0, 5.0], 20),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
+shot("L63a", "close on Gran, soft, shaking her head, leaning her shoulder against mine",
+     still([F + 4.0, 3.3, 5.3], [F + 1.7, 3.4, 5.2], 30),
+     {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
 shot("L64", "from outside the window, the island coming up", still([F + 6.2, 4.0, 5.3], [F + 1.7, 4.0, 5.2], 22),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
 shot("L64.1", "the armrest, two strokes", still([F + 0.6, 4.0, 5.0], [F + 3.4, 4.0, 4.55], 26),
@@ -329,6 +329,8 @@ for i, sh in enumerate(SHOTS):
 # a few timed acting keys inside shots
 acting["me"].append({"at": "L52>-0.4", "expr": "neutral", "blend": 0.3})
 acting["gran"].append({"at": "L67+0.2", "roll": 14, "blend": 1.4})
+acting["gran"] += [{"at": "L63a+0.2", "head": [14, 0], "blend": 0.5}, {"at": "L63a+0.8", "head": [-14, 0], "blend": 0.6},
+                   {"at": "L63a+1.4", "head": [0, 0], "roll": 8, "blend": 1.0}, {"at": "L64", "roll": 0, "blend": 1.0}]
 
 # ------------------------------------------------------------------------------------------------ cues
 cues = []
@@ -360,8 +362,7 @@ for vid, on in (("lglove_me", False),):
     pass
 cue("L10", "vis", id="lglove_me", on=False)
 cue("L63", "vis", id="lglove_me", on=True)
-cue("L05.3", "vis", id="jumperworn", on=True)
-cue("L06", "vis", id="jumperworn", on=False)
+cue("L09a", "vis", id="gglove", on=False)
 cue("L12", "vis", id="gglove", on=True)
 cue("L14", "vis", id="gglove", on=False)
 cue("L53", "vis", id="gglove", on=True)
@@ -380,8 +381,12 @@ cue("L25+0.2", "cdoor", deg=8, dur=1.2)
 cue("L29", "backdoor", deg=18, dur=1.0)
 cue("L30+0.5", "backdoor", deg=100, dur=1.5)
 # phone and bezel
+cue("L09a", "bezel", on=True)
+cue("L09a.2", "bezel", on=False)
 cue("L12", "bezel", on=True)
 cue("L14", "bezel", on=False)
+cue("L09a.2", "phone", on=True, pos=[200.95, 0.12, 0.77], rot=[-12, 0, -90], glow=0.7)
+cue("L10", "phone", on=False)
 cue("L36", "bezel", on=True)
 cue("L37", "bezel", on=False)
 cue("L40", "bezel", on=True)
@@ -426,12 +431,6 @@ cue("L58.2", "shrug", hidden=True)
 # props
 for pid in ("binglove", "mglove", "glasses", "kite", "jumper"):
     cue(0, "prop", id=pid, hide=True)
-cue("L05", "prop", id="jumper", pos=[150, 6.6, 1.14], rot=[0, 0, 20])
-cue("L05.3", "prop", id="jumper", hide=True)
-cue("L06", "prop", id="kite", pos=[901.2, 8.5, 0.4], rot=[0, 0, 0])
-cue("L06.3-0.05", "prop", id="kite", pos=[907, 22, 3.5], rot=[40, 30, 200])
-cue("L06.3", "prop", id="kite", pos=[800.4, 6.8, 5.0], rot=[34, 0, 15], snap=True)
-cue("L07", "prop", id="kite", hide=True)
 cue("L10", "prop", id="binglove", hide=True)
 cue("L10+0.2", "prop", id="binglove", pos=[150.35, 6.35, 1.6], rot=[20, 0, 30], snap=True)
 cue("L10+0.9", "prop", id="binglove", pos=[150.0, 6.62, 1.1], rot=[60, 0, 80])

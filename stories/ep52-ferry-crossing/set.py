@@ -476,6 +476,7 @@ def build_town(kit, M, ctx):
     kit.box("island.cottage", (8.0, 6.0, 5.0), (-8.0, -108, 11.6), M["white"], None, bevel=0.1)
     kit.box("island.roof", (8.8, 6.8, 1.6), (-8.0, -108, 14.6), M["slate"])
     kit.box("island.door", (1.4, 0.2, 2.6), (-8.0, -111.1, 10.4), M["green"])
+    kit.box("island.porchglow", (1.0, 0.4, 1.0), (-5.6, -111.4, 11.8), kit.emit("#ffcb80", 40.0, "porch glow"))
     for k in range(5):
         kit.cyl(f"island.rock{k}", 5 + 2 * k, 4 + k, (-60 + 25 * k, -120 - 4 * k, 0), M["hill"], n=10, r2=2.5)
     # the ferry's bow, docked
@@ -1160,6 +1161,8 @@ def animate(kit, story, tl, t, ctx):
         cs = [c for c in _cues(tl, "vis") if c.get("id") == vid]
         c = _last(cs, t)
         on = c["on"] if c else info["default"]
+        if not info["objs"]:
+            continue
         top = info["objs"][0]
         while top.parent is not None:
             top = top.parent
