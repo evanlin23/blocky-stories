@@ -6,34 +6,34 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "The voice on the speakers, said, \"This one's for the couple by the rail.\"",
+   "text": "The voice on the speaker said, \"This one's for the couple by the rail.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9682,
-   "dur": 3.103,
+   "dur": 3.086,
    "onset": 0.172,
-   "end": 2.897,
+   "end": 2.879,
    "chunks": [
     [
      0.172,
-     0.457
+     0.474
     ],
     [
-     0.457,
-     0.931
+     0.474,
+     0.922
     ],
     [
-     0.966,
-     1.741
+     0.922,
+     1.707
     ],
     [
-     1.741,
-     2.121
+     1.707,
+     2.086
     ],
     [
-     2.121,
-     2.897
+     2.086,
+     2.879
     ]
    ]
   },
@@ -242,14 +242,14 @@
    ]
   },
   "L10": {
-   "text": "At the hire counter, Nan asked for her, skates.",
+   "text": "At the hire counter, Nan asked for skates.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9476000000000001,
-   "dur": 2.259,
+   "dur": 2.121,
    "onset": 0.172,
-   "end": 2.052,
+   "end": 1.914,
    "chunks": [
     [
      0.172,
@@ -257,15 +257,15 @@
     ],
     [
      0.31,
-     0.793
+     0.776
     ],
     [
-     0.828,
-     1.259
+     0.81,
+     1.241
     ],
     [
-     1.259,
-     2.052
+     1.241,
+     1.914
     ]
    ]
   },
@@ -1198,26 +1198,26 @@
    ]
   },
   "L45": {
-   "text": "Then the speakers, said, \"Last skate.\"",
+   "text": "Then the speaker said, \"Last skate.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9682,
-   "dur": 1.948,
+   "dur": 1.845,
    "onset": 0.172,
-   "end": 1.724,
+   "end": 1.621,
    "chunks": [
     [
      0.172,
-     0.621
+     0.586
     ],
     [
-     0.655,
-     0.879
+     0.586,
+     0.793
     ],
     [
-     1.0,
-     1.724
+     0.897,
+     1.621
     ]
    ]
   },
@@ -1430,14 +1430,14 @@
    ]
   },
   "L54": {
-   "text": "Then the voice on the speakers, said, \"This one's for the couple by the rail.\"",
+   "text": "Then the voice on the speaker said, \"This one's for the couple by the rail.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9682,
-   "dur": 3.241,
+   "dur": 3.207,
    "onset": 0.19,
-   "end": 3.034,
+   "end": 3.0,
    "chunks": [
     [
      0.19,
@@ -1445,19 +1445,19 @@
     ],
     [
      0.595,
-     1.069
+     1.043
     ],
     [
-     1.103,
-     1.879
+     1.043,
+     1.828
     ],
     [
-     1.879,
-     2.259
+     1.828,
+     2.207
     ],
     [
-     2.259,
-     3.034
+     2.207,
+     3.0
     ]
    ]
   },
@@ -1894,34 +1894,34 @@
    ]
   },
   "L72": {
-   "text": "The voice on the speakers, said, \"This one's for the couple by the rail.\"",
+   "text": "The voice on the speaker said, \"This one's for the couple by the rail.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9682,
-   "dur": 3.103,
+   "dur": 3.086,
    "onset": 0.172,
-   "end": 2.897,
+   "end": 2.879,
    "chunks": [
     [
      0.172,
-     0.457
+     0.474
     ],
     [
-     0.457,
-     0.931
+     0.474,
+     0.922
     ],
     [
-     0.966,
-     1.741
+     0.922,
+     1.707
     ],
     [
-     1.741,
-     2.121
+     1.707,
+     2.086
     ],
     [
-     2.121,
-     2.897
+     2.086,
+     2.879
     ]
    ]
   },

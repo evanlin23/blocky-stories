@@ -49,7 +49,7 @@ BOOT_H = 0.28
 TORSO = (0.64, 0.34, 0.72)
 POSES = {   # absolute angles in degrees: dir = (0, sin a, -cos a), front is -y
     "rest": {"leg": (-55, 62, -58), "arm": (8, 172, 8), "dx": 0.17},
-    "reach": {"leg": (-55, 62, -58), "arm": (8, 172, 8), "dx": 0.17, "reach": (-75, -10, -95)},
+    "reach": {"leg": (-55, 62, -58), "arm": (8, 172, 8), "dx": 0.17, "reach": (-100, -10, -100)},
 }
 
 
@@ -426,14 +426,26 @@ def skater_face(path: Path):
     im = im.filter(ImageFilter.GaussianBlur(5))
     d = ImageDraw.Draw(im)
     ink = (22, 16, 15)
+    cherry = (178, 40, 52)
     ey = int(H * 0.40)
     for sx in (-1, 1):
         ex = cx + sx * 92
-        d.ellipse([ex - 44, ey - 88, ex + 44, ey + 88], fill=ink)
-        d.ellipse([ex - 20 + sx * 4, ey - 62, ex + 4 + sx * 4, ey - 38], fill=(255, 255, 255))
-    my = int(H * 0.72)
-    pts = [(cx + (i / 24 - 0.5) * 460, my + 70 * math.cos((i / 24 - 0.5) * math.pi) - 46) for i in range(25)]
-    d.line(pts, fill=ink, width=9, joint="curve")
+        d.ellipse([ex - 56, ey - 104, ex + 56, ey + 104], fill=cherry)               # the cherry rim
+        d.ellipse([ex - 44, ey - 90, ex + 44, ey + 90], fill=(246, 238, 218))        # the cream iris ring
+        d.ellipse([ex - 26, ey - 44, ex + 26, ey + 62], fill=ink)                    # the dark pupil
+        d.ellipse([ex - 14 + sx * 3, ey - 20, ex + 2 + sx * 3, ey - 2], fill=(255, 255, 255))
+    my = int(H * 0.73)
+    for sx in (-1, 1):                                                              # cherry cheek dots
+        d.ellipse([cx + sx * 205 - 26, my - 88 - 26, cx + sx * 205 + 26, my - 88 + 26], fill=(196, 74, 84))
+    half = 232
+    xs = [-half + i * (2 * half) / 40 for i in range(41)]
+    up = [(cx + x, my - 44 + 58 * (1 - (x / half) ** 2)) for x in xs]               # the upper lip: a wide smile
+    lo = [(cx + x, my - 40 + 138 * (1 - (x / half) ** 2)) for x in xs]              # the hard lower edge
+    mid = [(cx + x, uy + 0.42 * (ly - uy)) for (x, uy), (_, ly) in zip(zip(xs, [u[1] for u in up]), lo)]
+    d.polygon(up + lo[::-1], fill=(96, 14, 26))                                     # the dark cherry mouth
+    d.polygon(up + mid[::-1], fill=(250, 245, 232))                                 # a cream band of teeth along the top
+    d.line(up, fill=ink, width=7, joint="curve")
+    d.line(lo, fill=ink, width=8, joint="curve")
     im.save(path)
     return im
 
@@ -443,7 +455,7 @@ def build_skater(kit, ctx):
     wd.mkdir(parents=True, exist_ok=True)
     skin = kit.plastic("#e9dfc9", 0.55)
     glove = kit.plastic("#f3ead6", 0.5)
-    joint = kit.plastic("#33262a", 0.5)
+    joint = kit.plastic("#1f1618", 0.5)
     sm = ostripes(kit, "skater stripes", "#c58f96", "#e9dcc2", 5.0)
     sm2 = ostripes(kit, "skater stripes b", "#c9929a", "#ebe0c8", 6.0)
     skate = kit.plastic("#eadfc7", 0.45)
@@ -524,12 +536,12 @@ def build_skater(kit, ctx):
     for ob in objs:
         pass
     # lights that follow it
-    kit.light("sk_up", "POINT", (0, 0, 0.2), 110, "#ffe0c0", size=0.15)
+    kit.light("sk_up", "POINT", (0, 0, 0.2), 190, "#ffe0c0", size=0.15)
     kit.light("sk_rim", "SPOT", (0, 0, 3), 520, "#f27a88", size=0.1, spot=38, blend=0.8)
     allobjs = objs + list(root.children_recursive)
     link_only(kit, "skater_up", "sk_up", [o for o in allobjs if o.type == "MESH"], "only")
     link_only(kit, "skater_rim", "sk_rim", [o for o in allobjs if o.type == "MESH"], "only")
-    for n in ("conc0", "conc1", "amber", "hirefill", "closet", "tube"):
+    for n in ("conc0", "conc1", "amber", "hirefill", "closet", "tube", "house0", "house1", "house2", "dusk", "flood", "lot", "lot2"):
         link_only(kit, f"skater_not_{n}", n, [o for o in allobjs if o.type == "MESH"], "except")
 
 

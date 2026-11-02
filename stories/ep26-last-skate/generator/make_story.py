@@ -23,9 +23,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 TEMPO = {"L01": 0.94, "L45": 0.94, "L54": 0.94, "L72": 0.94, "L03": 1.0, "L07": 0.95, "L10": 0.92, "L18": 0.94,
          "L20": 0.94, "L30": 0.9, "L56": 0.95, "L64": 0.92}
 # and a comma in the spoken text only (the captions don't change) where a word was swallowed
-SPOKEN = {("L01", 1): "on the speakers,", ("L54", 1): "on the speakers,", ("L72", 1): "on the speakers,",
-          ("L45", 0): "Then the speakers,", ("L07", 2): "windows open,",
-          ("L10", 3): "for her, skates."}
+SPOKEN = {}
 for ln in lines:
     for k, ch in enumerate(ln.get("chunks", [])):
         if (ln["id"], k) in SPOKEN:
@@ -114,9 +112,8 @@ MESEAT = [ME_X, SEAT_Y, 1.25]
 
 SHOTS = [
     # 01 the dedication (dim; the spotlight slides along the rail)
-    (0, "the booth lamp, Lenny's shape at the mic", 2, C([-0.9, 0.6, 3.0], [0.0, 5.4, 2.95], 2.3)),
-    ("L01.2", "the pool slides along the south rail from the west", 2,
-     move(([-6.6, -2.8, 1.3], [2.0, -4.1, 0.9]), ([-6.2, -2.8, 1.3], [3.0, -4.1, 0.9]), 28)),
+    (0, "the pool slides slowly along the rail onto Nan, alone, her face in frame", 2, C([1.7, -1.5, 1.3], [3.0, -3.75, 1.25], 2.4)),
+    ("L01.2", "the booth lamp, Lenny at the mic, his face in frame", 2, C([-0.9, 0.6, 3.0], [0.0, 5.4, 2.95], 2.3)),
     ("L02", "the pool settles on Nan, from behind (over the rail from the concourse)", 2,
      C([3.0, -7.2, 1.5], [3.0, -3.8, 1.0], 2.7)),
     ("L03", "Nan's face in the soft pool, looking off toward the snack bar", 2, C([3.0, -1.4, 1.3], [3.0, -3.75, 1.25], 1.5)),
@@ -127,7 +124,7 @@ SHOTS = [
     ("L07", "the three of us coming in through the doors", 2, C([-1.6, -4.7, 1.6], [-7.4, -7.0, 1.2], 5.2)),
     ("L08", "under the ceiling fans, then down to the shine of the floor", 2,
      move(([-1.0, -2.4, 1.0], [0.0, 2.7, 4.4]), ([-1.0, -2.4, 1.0], [0.5, 0.5, 0.0]), 22)),
-    ("L09", "a slow pan along the painted stripes", 2, move(([5.6, 1.2, 1.4], [8.0, 4.0, 1.5]), ([5.6, 1.2, 1.4], [8.0, -3.0, 1.5]), 30)),
+    ("L09", "the painted stripes, locked off", 4, still([5.6, 0.2, 1.4], [8.0, 0.8, 1.5], 30)),
     ("L10", "Nan at the hire counter, the cubby wall behind", 2, C([3.6, -4.9, 1.7], [4.5, -8.4, 1.8], 3.6)),
     ("L10.2", "the lore shot: the bottom-row end cubby, the far-too-long cherry skates, the tally on the near heel", 2,
      C([6.5, -6.0, 1.15], [6.5, -8.05, 1.12], 0.9)),
@@ -170,7 +167,7 @@ SHOTS = [
     ("L39", "Nan's face, looking past camera toward us", 2, C([3.4, -5.3, 1.4], [3.0, -3.75, 1.3], 1.7)),
     ("L40", "the pool slides off it, and back again", 2, RAIL34),
     ("P01+0.55", "THE REVEAL: its head turned all the way round, over its back, looking at me", 1,
-     still([-0.9, -5.4, 1.45], [1.7, -3.75, 1.85], 34)),
+     still([3.7, -5.7, 1.0], [1.7, -3.75, 1.8], 30)),
     ("L42", "my face, terrified", 2, C([-2.8, -4.4, 1.6], [ME_X, SEAT_Y, 1.4], 2.5)),
     ("L43", "the chrome stool beside me, empty, the amber lamp over it", 2, C([-1.5, -4.4, 1.5], [POP_X, SEAT_Y, 0.9], 3.0)),
     ("L44", "close on the tub, steam faint and slow", 2, C([-3.6, -4.9, 1.6], [-4.4, -5.98, 1.3], 0.9)),
@@ -181,7 +178,7 @@ SHOTS = [
     ("L48", "the pool settling on Nan", 2, C([1.4, -0.6, 1.5], [3.0, -3.75, 1.0], 3.0)),
     ("L49", "the pool widens and the Skater is in it, at her shoulder, a head taller", 1, RAIL34),
     ("L50", "THE TEST STILL: its arm held out to her, folded twice, the hand at the end of the sleeve", 1,
-     still([4.3, -6.4, 0.8], [2.2, -3.75, 1.2], 22)),
+     still([2.3, -6.9, 1.0], [2.3, -3.75, 1.45], 21)),
     ("L51", "Nan looks at the hand", 2, C([2.5, -5.4, 1.45], [3.0, -3.75, 1.35], 1.7)),
     ("L52", "Nan's hand rising, a hand's width from its hand", 2, C([2.45, -5.5, 1.25], [2.5, -3.75, 1.25], 1.5)),
     ("L53", "me standing, terrified, the waltz swelling", 2, C([-2.9, -4.3, 1.6], [ME_X, -6.4, 1.4], 2.8)),
@@ -197,7 +194,7 @@ SHOTS = [
     ("L62", "Pop wobbling, steady for one second, proud", 2, C([-0.6, -0.6, 1.4], [2.0, -2.8, 1.1], 2.9)),
     ("L63", "Pop at the rail, his hand out (cut away before the hands meet)", 2, C([4.3, -6.3, 1.45], [2.3, -3.75, 1.3], 3.0)),
     ("L64", "the pool sliding round them", 2, HIGH),
-    ("L65", "the post beside them, empty, in the pool's edge", 2, C([3.6, -5.8, 1.3], [2.3, -3.75, 1.0], 2.6)),
+    ("L65", "an empty, lit rail post, no bodies", 2, C([2.4, -5.6, 1.1], [2.4, -4.15, 0.95], 1.6)),
     ("L66", "wider: Pop standing in exactly that place, Nan beside him", 2, C([5.2, -6.4, 1.7], [2.3, -3.6, 1.2], 3.8)),
     # 09 two of them
     ("L67", "Nan laughing, Pop laughing with her", 2, C([2.3, -5.6, 1.5], [2.3, -3.75, 1.3], 2.7)),
@@ -206,14 +203,14 @@ SHOTS = [
     ("L70", "the pair coming past the snack bar, laughing", 2, still([-6.2, -4.9, 1.4], [-2.6, -2.8, 1.2], 26)),
     ("L71", "me on the chrome stool, chin on my hand", 2, C([-2.0, -4.2, 1.5], [POP_X, SEAT_Y, 1.35], 2.6)),
     ("L72", "crane up to the overhead wide", 2,
-     c([0, [-3.4, -4.4, 1.5], [-1.5, -1.0, 1.0], 26, 0], [0.85, [0.0, -0.3, 11.0], [0.0, 0.0, 0.0], 17, 90],
-       [1, [0.0, -0.3, 11.0], [0.0, 0.0, 0.0], 17, 90])),
-    ("L73", "hold the overhead wide, the fans at the frame's edge", 2, still([0.0, -0.3, 11.0], [0.0, 0.0, 0.0], 17, 90)),
+     c([0, [-3.4, -4.4, 1.5], [-1.5, -1.0, 1.0], 26, 0], [0.85, [0.0, -2.4, 8.2], [0.0, 0.3, 0.0], 15, 90],
+       [1, [0.0, -2.4, 8.2], [0.0, 0.3, 0.0], 15, 90])),
+    ("L73", "hold the overhead wide, the fans at the frame's edge", 2, still([0.0, -2.4, 8.2], [0.0, 0.3, 0.0], 15, 90)),
 ]
 
 # per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
 # flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
-EXPO = {"S01": 1.1, "S02": 1.4, "S19": 1.4, "S20": 1.18, "S21": 1.03, "S22": 1.53, "S23": 1.09, "S24": 0.77, "S25": 0.87, "S26": 1.49, "S31": 0.55, "S32": 0.77, "S33": 1.18, "S34": 0.81, "S35": 0.77, "S36": 1.08, "S37": 1.51, "S38": 1.04, "S39": 1.17, "S40": 0.92, "S41": 1.13, "S42": 1.42, "S43": 2.5, "S44": 0.99, "S45": 1.19, "S46": 0.66, "S47": 1.7, "S48": 0.93, "S49": 0.96, "S50": 0.72, "S51": 1.34, "S52": 2.49, "S53": 2.13, "S54": 1.26, "S55": 1.21, "S56": 0.79, "S57": 1.13, "S58": 2.1, "S59": 0.89, "S60": 1.28, "S61": 1.22, "S62": 1.12, "S63": 0.86, "S64": 0.84, "S65": 1.86, "S66": 1.47, "S67": 1.04, "S68": 0.99, "S69": 1.32, "S70": 0.89, "S71": 0.95, "S72": 0.8, "S73": 0.87, "S74": 0.7, "S75": 1.33, "S76": 1.49, "S77": 0.7, "S78": 0.76}
+EXPO = {"S01": 1.5, "S02": 1.1, "S19": 1.4, "S20": 1.18, "S21": 1.03, "S22": 1.53, "S23": 1.09, "S24": 0.77, "S25": 0.87, "S26": 1.49, "S31": 0.55, "S32": 0.77, "S33": 1.18, "S34": 0.81, "S35": 0.77, "S36": 1.08, "S37": 1.51, "S38": 1.04, "S39": 1.17, "S40": 0.92, "S41": 1.13, "S42": 1.42, "S43": 2.5, "S44": 0.99, "S45": 1.19, "S46": 1.5, "S47": 1.7, "S48": 0.93, "S49": 0.96, "S50": 0.72, "S51": 1.34, "S52": 2.49, "S53": 2.13, "S54": 1.26, "S55": 1.21, "S56": 0.79, "S57": 1.13, "S58": 2.1, "S59": 0.89, "S60": 1.28, "S61": 1.22, "S62": 1.12, "S63": 0.86, "S64": 0.84, "S65": 1.86, "S66": 1.47, "S67": 1.04, "S68": 0.99, "S69": 1.32, "S70": 0.89, "S71": 0.95, "S72": 0.8, "S73": 0.87, "S74": 0.7, "S75": 1.33, "S76": 1.49, "S77": 0.7, "S78": 0.76}
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
@@ -306,7 +303,8 @@ walk("pop", "L61>", [2.5, -2.5], side=[75, 75])
 walk("pop", "L62>", [2.1, -3.0], side=[70, 70], wobble=2)
 walk("pop", "L63+1.3", [SKR[0], SKR[1]], side=[40, 0], arms=[0, 72], wobble=3)
 key("pop", "L63+1.3", yaw=90, blend=0.3)
-key("pop", "L66", wobble=1, expr="grin", side=[0, 0], arms=[0, 72])
+hide("pop", "L65")
+put("pop", "L66", [SKR[0], SKR[1]], yaw=90, wobble=1, expr="grin", arms=[0, 72])
 # skating off with Nan from L68: waypoints of the lap (seconds after L68) and the two partners' lateral offsets
 LAP = [(0.0, (2.0, -3.7)), (2.0, (-0.6, -2.7)), (4.0, (-3.2, -2.8)), (6.0, (-4.6, -1.4)), (8.0, (-2.8, 0.3)),
        (10.0, (-0.4, 0.9)), (12.0, (1.6, 0.4)), (14.0, (3.0, -1.0)), (16.0, (2.0, -2.4))]
@@ -320,7 +318,7 @@ def lap_pos(i, who):
     dx, dy = b[0] - a[0], b[1] - a[1]
     n = math.hypot(dx, dy)
     nx, ny = -dy / n, dx / n          # left of travel
-    k = 0.45 if who == "nan" else -0.45
+    k = 0.7 if who == "nan" else -0.7
     return t, [round(x + nx * k, 3), round(y + ny * k, 3)]
 
 
@@ -353,6 +351,8 @@ put("nan", "L55", list(NAN), yaw=-60, expr="wide")
 key("nan", "L59+0.5", expr="soft")
 key("nan", "L63", arms=[0, 62], blend=0.4)
 key("nan", "L64", yaw=-90, arms=[0, 40], expr="soft")
+hide("nan", "L65")
+put("nan", "L66", list(NAN), yaw=-90, arms=[0, 40], expr="soft")
 key("nan", "L67", expr="grin", head=[0, 0])
 for i in range(len(LAP)):
     t, p = lap_pos(i, "nan")
@@ -431,8 +431,7 @@ cues += [
     {"at": "L55", "name": "dim", "level": 0.34, "dur": 3.0},
     {"at": "L64", "name": "dim", "level": 0.4, "dur": 3.0},
     # the spotlight: where it is, how bright, how wide a cone. It's never on in a fast song and never pops.
-    {"at": "L01.2", "name": "spot", "to": [2.6, -3.9], "dur": 3.6},
-    {"at": "L02", "name": "spot", "to": [NAN[0], NAN[1]], "dur": 1.4, "size": 30},
+    {"at": 0, "name": "spot", "to": [NAN[0], NAN[1]], "dur": 3.4, "size": 30},
     {"at": "L04", "name": "spot", "gain": 0.0, "dur": 1.6},
     {"at": "L16", "name": "spot", "to": [7.2, -2.6], "size": 42, "dur": 0.02},
     {"at": "L16+1.0", "name": "spot", "gain": 1.0, "dur": 1.4},
@@ -472,9 +471,9 @@ cues += [
     {"at": "L28", "name": "skater", "pos": list(MID), "yaw": yaw_to(MID, NAN), "pose": "rest", "head": [0, 0], "hidden": False},
     {"at": "L33>", "name": "skater", "hidden": True},
     {"at": "L35", "name": "skater", "pos": list(SKR), "yaw": 90, "pose": "rest", "head": [0, 0], "hidden": False},
-    {"at": "P01+0.55", "name": "skater", "look": [ME_X, SEAT_Y], "pitch": 0},
+    {"at": "P01+0.55", "name": "skater", "head": [180, 0]},
     {"at": "L43", "name": "skater", "hidden": True},
-    {"at": "L49", "name": "skater", "pos": list(SKR), "yaw": 90, "pose": "reach", "head": [0, 0], "hidden": False},
+    {"at": "L49", "name": "skater", "pos": list(SKR), "yaw": 90, "pose": "reach", "head": [-40, 0], "hidden": False, "reach_side": -1},
     {"at": "L54", "name": "skater", "hidden": True},
     {"at": "L55", "name": "door", "open": 1.0, "dur": 1.2},
     {"at": "L58", "name": "door", "open": 0.0, "dur": 1.5},
