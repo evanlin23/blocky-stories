@@ -43,7 +43,8 @@
   "contrast": 1.06,
   "vignette": 0.34,
   "bloom": 0.42,
-  "grain": 0.012
+  "grain": 0.012,
+  "red_line": 0.78
  },
  "phonemes": {
   "Theirs": "ðˈɛɹz"

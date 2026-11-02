@@ -483,7 +483,7 @@ story = {
     "look": {"fog": "#8a98a6", "fog_density": 0.028, "fog_start": 6.0, "sky": "#8a98a6", "sky_strength": 0.8,
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.02], "saturation": 1.0, "contrast": 1.06,
-              "vignette": 0.34, "bloom": 0.42, "grain": 0.012},
+              "vignette": 0.34, "bloom": 0.42, "grain": 0.012, "red_line": 0.78},
     "phonemes": {"Theirs": "ðˈɛɹz"},
     "cast": cast,
     "lines": lines,
