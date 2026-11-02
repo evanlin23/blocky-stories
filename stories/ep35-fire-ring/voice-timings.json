@@ -406,34 +406,38 @@
    ]
   },
   "L14": {
-   "text": "When tea was done, Dad walked off down the hill to find signal.",
+   "text": "When tea was done, Dad walked off down the hill to make a call, where I couldn't hear.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.862,
+   "dur": 3.362,
    "onset": 0.155,
-   "end": 2.672,
+   "end": 3.172,
    "chunks": [
     [
      0.155,
-     0.379
+     0.414
     ],
     [
-     0.379,
-     0.793
+     0.414,
+     0.862
     ],
     [
-     0.862,
-     1.448
+     0.931,
+     1.517
     ],
     [
-     1.448,
-     1.793
+     1.517,
+     1.879
     ],
     [
-     1.793,
-     2.672
+     1.879,
+     2.345
+    ],
+    [
+     2.371,
+     3.172
     ]
    ]
   },
@@ -670,26 +674,26 @@
    ]
   },
   "L23": {
-   "text": "Night two, Dad went down for signal again.",
+   "text": "Night two, Dad went down to call again.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
+   "dur": 1.948,
    "onset": 0.172,
-   "end": 1.914,
+   "end": 1.759,
    "chunks": [
     [
      0.172,
      0.517
     ],
     [
-     0.569,
-     1.052
+     0.552,
+     0.992
     ],
     [
-     1.052,
-     1.914
+     0.992,
+     1.759
     ]
    ]
   },
@@ -1318,14 +1322,14 @@
    ]
   },
   "L49": {
-   "text": "Dad went off to find signal again.",
+   "text": "Dad went off to call again.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.862,
+   "dur": 1.552,
    "onset": 0.172,
-   "end": 1.672,
+   "end": 1.362,
    "chunks": [
     [
      0.172,
@@ -1333,11 +1337,7 @@
     ],
     [
      0.569,
-     0.888
-    ],
-    [
-     0.888,
-     1.672
+     1.362
     ]
    ]
   },
@@ -1586,14 +1586,14 @@
    ]
   },
   "L58": {
-   "text": "He'd rung him every night, to get it right for me.",
+   "text": "He'd rung him every night, where I couldn't hear, to get it right for me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.155,
+   "dur": 2.828,
    "onset": 0.172,
-   "end": 1.966,
+   "end": 2.638,
    "chunks": [
     [
      0.172,
@@ -1601,19 +1601,23 @@
     ],
     [
      0.569,
-     1.0
+     0.983
     ],
     [
-     1.052,
-     1.233
+     1.008,
+     1.638
     ],
     [
-     1.233,
-     1.483
+     1.707,
+     1.906
     ],
     [
-     1.483,
-     1.966
+     1.906,
+     2.155
+    ],
+    [
+     2.155,
+     2.638
     ]
    ]
   },
@@ -1710,34 +1714,34 @@
    ]
   },
   "L63": {
-   "text": "That evening, we carried the phone up to the ring.",
+   "text": "At sunset, we carried the phone up to the ring.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
-   "onset": 0.172,
-   "end": 1.862,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
    "chunks": [
     [
-     0.172,
-     0.552
+     0.155,
+     0.655
     ],
     [
-     0.578,
-     0.888
+     0.681,
+     0.992
     ],
     [
-     0.888,
-     1.181
+     0.992,
+     1.267
     ],
     [
-     1.181,
-     1.319
+     1.267,
+     1.406
     ],
     [
-     1.319,
-     1.862
+     1.406,
+     1.948
     ]
    ]
   },

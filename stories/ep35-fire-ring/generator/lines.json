@@ -422,8 +422,12 @@
     "down the hill"
    ],
    [
-    "to find SIGNAL.",
-    "to find signal."
+    "to make a CALL,",
+    "to make a call,"
+   ],
+   [
+    "where I couldn't HEAR.",
+    "where I couldn't hear."
    ]
   ],
   "orig": [
@@ -431,7 +435,8 @@
    0,
    1,
    2,
-   3
+   3,
+   4
   ]
  },
  {
@@ -686,8 +691,8 @@
     "Dad went down"
    ],
    [
-    "for signal AGAIN.",
-    "for signal again."
+    "to call AGAIN.",
+    "to call again."
    ]
   ],
   "orig": [
@@ -1315,17 +1320,12 @@
     "Dad went off"
    ],
    [
-    "to find",
-    "to find"
-   ],
-   [
-    "signal AGAIN.",
-    "signal again."
+    "to call AGAIN.",
+    "to call again."
    ]
   ],
   "orig": [
    0,
-   1,
    1
   ]
  },
@@ -1596,6 +1596,10 @@
     "every night,"
    ],
    [
+    "where I couldn't HEAR,",
+    "where I couldn't hear,"
+   ],
+   [
     "to get",
     "to get"
    ],
@@ -1612,8 +1616,9 @@
    0,
    1,
    2,
-   2,
-   3
+   3,
+   3,
+   4
   ]
  },
  {
@@ -1708,8 +1713,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "That EVENING,",
-    "That evening,"
+    "At SUNSET,",
+    "At sunset,"
    ],
    [
     "we carried",
