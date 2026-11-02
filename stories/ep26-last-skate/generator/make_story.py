@@ -227,10 +227,10 @@ for i, (at, what, step, cam) in enumerate(SHOTS):
 for sh in shots:
     if sh["what"].startswith("low tracking"):
         sh["follow"] = "pop"
-        sh["cam"] = c([0, [-2.4, 2.0, 0.9], [0.0, 0.0, 1.0], 28], [1, [-2.2, 1.9, 0.95], [0.0, 0.0, 1.0], 28])
+        sh["cam"] = c([0, [-2.8, 2.4, 0.9], [0.0, 0.0, 1.0], 26], [1, [-2.6, 2.3, 0.95], [0.0, 0.0, 1.0], 26])
     if sh["what"].startswith("Pop tips"):
         sh["follow"] = "pop"
-        sh["cam"] = c([0, [-2.0, 1.6, 1.3], [0.0, 0.0, 1.15], 30])
+        sh["cam"] = c([0, [-2.8, 2.4, 1.3], [0.0, 0.0, 1.1], 26])
 overhead = [s["id"] for s in shots if s["what"].startswith(("crane up", "hold the overhead"))]
 
 # ---------------------------------------------------------------------------------------------------- acting
@@ -520,7 +520,7 @@ story = {
     "tail": 0,
     "look": {"fog": "#1a1519", "fog_density": 0.012, "fog_start": 6.0, "sky": "#1c4a52", "sky_strength": 0.35,
              "exposure": 0.4},
-    "grade": {"shadows": [0.0, 0.0, 0.012], "highlights": [0.025, 0.01, -0.02], "saturation": 0.88, "contrast": 1.06,
+    "grade": {"shadows": [0.0, 0.0, 0.012], "highlights": [0.025, 0.01, -0.02], "saturation": 0.88, "red_line": 0.78, "contrast": 1.06,
               "vignette": 0.38, "bloom": 0.3, "grain": 0.013},
     "phonemes": {"Nan": "nˈæn"},
     "cast": cast,
