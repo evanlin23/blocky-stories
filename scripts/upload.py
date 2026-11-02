@@ -224,6 +224,8 @@ def main() -> None:
         # API uploads only once the audit is approved (repo variable YT_AUDITED=true): before that, YouTube locks
         # every API upload as private for good, so the owner uploads by hand from the issue instead
         audited = os.environ.get("YT_AUDITED", "").strip().lower() == "true"
+        have = {k: bool(os.environ.get(k)) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")}
+        print(f"API upload: YT_AUDITED={'true' if audited else 'not true'}, secrets present: {have}")   # no values
         if audited and all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
             when = publish_at()
             yt = youtube()
