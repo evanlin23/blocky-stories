@@ -48,7 +48,7 @@ TOD = {
                    fogc="#20242e", fogd=0.0, lamp=0.0, win=0.0, stars=0.0),
 }
 # every named light and its nominal full strength (the story's lt cues set a level 0..n; the level defaults are DEF)
-DEF = {"hall_house": 0.0, "riser": 0.0, "grin_key": 0.0, "grin_rim": 0.0, "hall_low": 0.0, "door_wedge": 0.0,
+DEF = {"hall_house": 0.0, "riser": 0.0, "grin_key": 0.0, "grin_rim": 0.0, "hall_low": 0.0, "door_wedge": 0.0, "back_wash": 0.0,
        "kitchen_day": 0.0, "kitchen_lamp": 0.0, "bed_lamp": 0.0, "landing": 0.0, "mum_key": 0.0}
 
 
@@ -205,7 +205,7 @@ def materials(kit):
     M["enamel"] = pbr(kit, "enamel", "#e8e4d4", 0.22, spec=0.7)
     M["flex"] = pbr(kit, "flex", "#141414", 0.5)
     M["bulb"] = pbr(kit, "bulb", "#ffe2b0", 0.4, emit="#ffd8a0", emit_s=9.0)
-    M["stroke"] = pbr(kit, "stroke", "#4c3038", 0.9)
+    M["stroke"] = pbr(kit, "stroke", "#1c1014", 0.9)
     M["scarf"] = pbr(kit, "scarf", "#d9a23a", 0.9, noise=(14.0, 0.7, 0.0))
     M["stand"] = pbr(kit, "stand", "#25272a", 0.5, metal=0.5)
     M["bunting_a"] = pbr(kit, "bunt a", "#d96b5a", 0.8)
@@ -354,9 +354,10 @@ def build_kitchen(kit, M, ctx):
     kit.box("k.wn_r", (1.5, 0.2, 2.7), (x0 + 1.55, y0 + 2.3, 1.3), M["plaster"])
     kit.box("k.wn_b", (1.6, 0.2, 0.95), (x0, y0 + 2.3, 0.47), M["plaster"])
     kit.box("k.wn_t", (1.6, 0.2, 0.55), (x0, y0 + 2.3, 2.42), M["plaster"])
-    kit.box("k.wsill", (1.9, 0.4, 0.06), (x0, y0 + 2.28, 0.97), M["white"])
-    kit.box("k.wbar", (0.06, 0.06, 1.2), (x0, y0 + 2.3, 1.55), M["white"])
-    kit.box("k.wbar2", (1.6, 0.06, 0.06), (x0, y0 + 2.3, 1.55), M["white"])
+    kw = pbr(kit, "kwin", "#a9a49a", 0.8)       # a dimmer off-white, so the sunlit frame never clips
+    kit.box("k.wsill", (1.9, 0.4, 0.06), (x0, y0 + 2.28, 0.97), kw)
+    kit.box("k.wbar", (0.06, 0.06, 1.2), (x0, y0 + 2.3, 1.55), kw)
+    kit.box("k.wbar2", (1.6, 0.06, 0.06), (x0, y0 + 2.3, 2.02), kw)
     # a round table and two chairs
     kit.cyl("k.table", 0.8, 0.07, (x0 - 0.2, y0 - 0.3, 0.78), M["table"], None, n=32)
     kit.cyl("k.tleg", 0.07, 0.75, (x0 - 0.2, y0 - 0.3, 0.38), M["chair2"], None, n=10)
@@ -471,10 +472,10 @@ def build_hall(kit, M, ctx):
     kit.box("h.wall_w", (0.3, yhi - ylo, 5.0), (HX - 5.15, ym, 2.5), M["hallwall"])
     kit.box("h.wall_e", (0.3, yhi - ylo, 5.0), (HX + 5.15, ym, 2.5), M["hallwall"])
     # the stage-end wall has one high window behind the twelfth chair (seen from the gravel strip outside)
-    wall_x(kit, "h.wall_s", M["hallwall"], ylo - 0.15, HX - 5.3, HX + 5.3, 5.0, [(HX - 2.6, HX - 0.7, 1.7, 3.5)])
-    for i in range(3):
-        kit.box(f"h.sb{i}", (0.05, 0.1, 1.8), (HX - 2.6 + i * 0.95, ylo - 0.05, 2.6), M["white"])
-    kit.box("h.sbh", (1.9, 0.1, 0.05), (HX - 1.65, ylo - 0.05, 2.6), M["white"])
+    wall_x(kit, "h.wall_s", M["hallwall"], ylo - 0.15, HX - 5.3, HX + 5.3, 5.0, [(HX - 2.6, HX + 1.9, 1.7, 4.4)])
+    for i in range(5):
+        kit.box(f"h.sb{i}", (0.05, 0.1, 2.7), (HX - 2.6 + i * 1.125, ylo - 0.05, 3.05), M["white"])
+    kit.box("h.sbh", (4.5, 0.1, 0.05), (HX - 0.35, ylo - 0.05, 2.6), M["white"])
     # the back wall (y = +9): a door (x HX-3.3 .. HX-1.7) and a window (x HX+1.9 .. HX+3.7, z 1.5 .. 3.2)
     wall_x(kit, "h.wall_n", M["hallwall"], yhi + 0.15, HX - 5.3, HX + 5.3, 5.0,
            [(HX - 3.3, HX - 1.7, 0.0, 2.4), (HX + 1.9, HX + 3.7, 1.5, 3.2)])
@@ -502,16 +503,16 @@ def build_hall(kit, M, ctx):
     ctx["curwin"] = []
     for i in range(14):
         cb = kit.box(f"h.cur{i}", (0.8, 0.28 + 0.12 * (i % 2), 4.5), (HX - 4.55 + i * 0.7, ylo + 0.2 + 0.06 * (i % 2), 2.35), M["curtain"], bevel=0.1)
-        if i in (3, 4, 5):
+        if i in (3, 4, 5, 6, 7, 8, 9):
             ctx["curwin"].append(cb)
     kit.box("h.curtop", (10.0, 0.5, 0.4), (HX, ylo + 0.3, 4.7), M["curtain"])
     ry0, ry1 = -9.4, -4.9
     for k, (z, yc) in enumerate(STEPS):
-        kit.box(f"h.step{k}", (6.6, 1.5, z), (HX, yc, z / 2), M["pine_y"])
-    kit.box("h.back", (6.6, 0.06, 0.7), (HX, -9.5, 1.25), M["pine"])
+        kit.box(f"h.step{k}", (7.6, 1.5, z), (HX - 0.5, yc, z / 2), M["pine_y"])
+    kit.box("h.back", (7.6, 0.06, 0.7), (HX - 0.5, -9.5, 1.25), M["pine"])
     # twelve short upright maroon strokes scratched into the backboard (the lore plant: no thirteenth)
     for i in range(12):
-        kit.box(f"h.stroke{i}", (0.03, 0.012, 0.2), (TWELFTH_X - 0.55 + i * 0.1, -9.54, 1.25), M["stroke"])
+        kit.box(f"h.stroke{i}", (0.04, 0.03, 0.3), (TWELFTH_X - 0.55 + i * 0.1, -9.55, 1.25), M["stroke"])
     # the twelve chairs
     twelfth, rest = chair_slots()
     ctx["c12"] = hall_chair(kit, M, "ch12", twelfth, 180)
@@ -532,13 +533,16 @@ def build_hall(kit, M, ctx):
     kit.aim(k, (twelfth[0], twelfth[1], twelfth[2] + 1.35))
     r = kit.light("grin_rim", "SPOT", (twelfth[0] - 1.6, -10.0, 3.6), 650.0, "#ffc890", spot=24, blend=0.7, size=0.2)
     kit.aim(r, (twelfth[0], twelfth[1], twelfth[2] + 1.0))
+    # a wash from behind the riser that lights the backboard strokes and the backs of the heads (cued)
+    bw = kit.light("back_wash", "SPOT", (HX - 0.4, -11.5, 3.9), 900.0, "#ffd9b0", spot=70, blend=0.7, size=0.3)
+    kit.aim(bw, (HX - 0.4, -8.2, 1.6))
     # the general hall light: three area panels in the ceiling; a very low fill for the dark hall
     for i, yy in enumerate((-6.5, 0.0, 6.0)):
         kit.light(f"hall_house{i}", "AREA", (HX, yy, 4.9), 900.0, "#ffe4b8", (0, 0, 0), size=3.5)
     kit.light("hall_low", "AREA", (HX, 0.0, 4.9), 120.0, "#8fa0c8", (0, 0, 0), size=6.0)
     # the streetlight through the open door: a narrow spot from the lamp post outside
-    kit.light("door_wedge", "SPOT", (HX - 2.5, 10.8, 2.0), 6000.0, "#c8d4f0", spot=16, blend=0.4, size=0.15)
-    kit.aim(kit.LIGHTS["door_wedge"]["obj"], (HX - 1.8, -8.0, 0.9))
+    kit.light("door_wedge", "SPOT", (HX - 2.5, 10.8, 2.0), 9000.0, "#d4def5", spot=20, blend=0.4, size=0.15)
+    kit.aim(kit.LIGHTS["door_wedge"]["obj"], (HX - 0.4, -7.2, 0.9))
     # outside: gravel, the lamp post, a path
     kit.box("h.ground", (120, 120, 0.1), (HX, 20, -0.06), M["gravel"])
     kit.box("h.path", (2.2, 28, 0.03), (HX - 2.5, 24, 0.03), M["lane"])
@@ -593,9 +597,21 @@ def build_hall(kit, M, ctx):
     ctx["bunting"] = tris
     # the scarf draped over the twelfth chair, and the folded robe on its seat (cue props)
     sc = kit.empty("scarfprop", (twelfth[0], twelfth[1], twelfth[2]))
-    bx(kit, "scarfprop.a", (0.3, 0.5, 0.05), (0, 0.02, 0.5), M["scarf"], sc, bevel=0.02)
-    bx(kit, "scarfprop.b", (0.3, 0.05, 0.6), (0, 0.24, 0.74), M["scarf"], sc, bevel=0.02)
-    bx(kit, "scarfprop.c", (0.14, 0.05, 0.4), (0.1, -0.24, 0.4), M["scarf"], sc, bevel=0.02)
+    red = pbr(kit, "scarf red", "#9a2e2a", 0.9, noise=(14.0, 0.7, 0.0))
+    cream = pbr(kit, "scarf cream", "#efe2c0", 0.9, noise=(14.0, 0.7, 0.0))
+    # a chunky knitted scarf thrown over the chair back: a fat loop over the top rail, one tail down the front of the
+    # back, one over the seat's edge, stripes and fringe so it reads as cloth and not a card (chair back is at -y)
+    bx(kit, "scarfprop.loop", (0.46, 0.2, 0.2), (0, -0.2, 1.0), M["scarf"], sc, bevel=0.07)
+    bx(kit, "scarfprop.loopb", (0.46, 0.16, 0.24), (0, -0.27, 0.9), M["scarf"], sc, bevel=0.07)
+    bx(kit, "scarfprop.t1", (0.17, 0.1, 0.6), (-0.1, -0.12, 0.72), M["scarf"], sc, rot=(0.12, 0.0, 0.05), bevel=0.04)
+    bx(kit, "scarfprop.seat", (0.34, 0.3, 0.14), (0.04, 0.02, 0.56), M["scarf"], sc, rot=(0.0, 0.0, 0.25), bevel=0.06)
+    bx(kit, "scarfprop.t2", (0.17, 0.1, 0.4), (0.12, 0.2, 0.42), M["scarf"], sc, rot=(-0.2, 0.0, -0.1), bevel=0.04)
+    for i, (z_, c_) in enumerate(((0.82, red), (0.7, cream), (0.58, red))):
+        bx(kit, f"scarfprop.s{i}", (0.18, 0.105, 0.05), (-0.1 + (0.82 - z_) * 0.2, -0.12 + (0.82 - z_) * 0.07, z_), c_, sc, rot=(0.12, 0.0, 0.05), bevel=0.015)
+    bx(kit, "scarfprop.stripe_a", (0.47, 0.205, 0.045), (0, -0.2, 0.97), red, sc, bevel=0.02)
+    bx(kit, "scarfprop.stripe_b", (0.47, 0.205, 0.045), (0, -0.2, 1.06), cream, sc, bevel=0.02)
+    for i in range(5):
+        bx(kit, f"scarfprop.f{i}", (0.02, 0.02, 0.1), (-0.14 + i * 0.07 + 0.0, 0.2 + 0.03 * (i % 2), 0.2), cream, sc, bevel=0.005)
     ctx["scarfprop"] = sc
     rb = kit.empty("robeprop", (twelfth[0], twelfth[1], twelfth[2]))
     bx(kit, "robeprop.a", (0.4, 0.38, 0.12), (0, 0.0, 0.53), M["curtain"], rb, bevel=0.04)
@@ -673,7 +689,7 @@ def grin_texture(skin):
         dx = (x0 + x1) / 2 - cx
         dx = (dx + W / 2) % W - W / 2   # wrap
         k = max(0.0, 1.0 - (abs(dx) - 0.15 * s) / (0.9 * s))
-        th = (0.014 + 0.05 * min(1.0, k * 1.2)) * s
+        th = (0.03 + 0.04 * min(1.0, k * 1.2)) * s
         d.line([(x0 - 1, y_of(dx)), (x1 + 1, y_of(dx))], fill=ink, width=int(th))
     # teeth: a lens between the line and a lower lip, flat blocks with thin dark gaps
     half = 0.40 * s
@@ -798,6 +814,10 @@ def decorate(kit, story, ctx):
         sat = bx(kit, "postman.satchel", (1.5, 0.6, 1.1), (0.9, -0.2, 0.5), pbr(kit, "satchel", "#7a5a38", 0.8), pt, rot=(0, 0.35, 0), bevel=0.1)
         bx(kit, "postman.strap", (0.2, 1.06, 0.08), (0, 0.0, 1.5), pbr(kit, "satchel", "#7a5a38", 0.8), pt, rot=(0, -0.65, 0))
     gh = bpy.data.objects.get("grin.headg")
+    if gh is not None:
+        # the seam where the grin's line meets itself: a black strip down the back of the head, so it reads from far off
+        bx(kit, "grin.seam", (0.07, 0.04, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
+           pbr(kit, "grin seam", "#050304", 0.9), gh, bevel=0.012)
     ctx["grin_tex"] = None
     mat = bpy.data.materials.get("head grin")
     if mat is not None:
@@ -810,6 +830,7 @@ def decorate(kit, story, ctx):
         loaded = bpy.data.images.load(path)
         loaded.colorspace_settings.name = "sRGB"
         tex.image = loaded
+        ctx["grin_tex"] = (tex, loaded)
     # fog nodes (density multiply and fog emission), found once
     d0 = story["look"]["fog_density"]
     fc = lin(hexrgb(story["look"]["fog"]))
@@ -912,6 +933,15 @@ def animate(kit, story, tl, t, ctx):
                 over[f"hall_house{i}"] = lv
         else:
             over[name] = lv
+    # hidden people take their beads, cord and seam with them (decorate adds those after the first pose)
+    for who in story["cast"]:
+        r_ = bpy.data.objects.get(who)
+        if r_ is not None and r_.hide_render:
+            for o in r_.children_recursive:
+                o.hide_render = True
+    # the rig swaps every head's face image per frame; keep the Grin's own (wraparound grin) on
+    if ctx.get("grin_tex"):
+        ctx["grin_tex"][0].image = ctx["grin_tex"][1]
     # ---------------------------------------------------------------- doors, chairs, props
     ang = eased(_cues(tl, "door"), "deg", t, 0.0)
     ctx["bdoor"].rotation_euler = (0, 0, math.radians(ang))

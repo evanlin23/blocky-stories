@@ -458,14 +458,14 @@
    ]
   },
   "L19": {
-   "text": "night, love. thursday's choir. your chair is still there. always.",
+   "text": "night, love. thursday's choir. come and sing with us. please.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.793,
+   "dur": 2.759,
    "onset": 0.19,
-   "end": 2.586,
+   "end": 2.569,
    "chunks": [
     [
      0.19,
@@ -473,19 +473,19 @@
     ],
     [
      0.621,
-     1.224
+     1.345
     ],
     [
-     1.259,
-     1.509
+     1.414,
+     1.767
     ],
     [
-     1.509,
-     1.914
+     1.767,
+     1.966
     ],
     [
-     1.948,
-     2.586
+     2.0,
+     2.569
     ]
    ]
   },
@@ -558,26 +558,26 @@
    ]
   },
   "L23": {
-   "text": "the choir has been eleven since i left.",
+   "text": "the choir has been eleven for years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.0,
+   "dur": 1.862,
    "onset": 0.155,
-   "end": 1.793,
+   "end": 1.672,
    "chunks": [
     [
      0.155,
-     0.439
+     0.466
     ],
     [
-     0.439,
-     0.966
+     0.466,
+     1.017
     ],
     [
-     0.966,
-     1.793
+     1.017,
+     1.672
     ]
    ]
   },
@@ -642,26 +642,26 @@
    ]
   },
   "L26": {
-   "text": "eleven mouths. but twelve notes in the music.",
+   "text": "eleven mouths on one long ah.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.224,
+   "dur": 1.862,
    "onset": 0.172,
-   "end": 2.017,
+   "end": 1.638,
    "chunks": [
     [
      0.172,
-     0.776
+     0.724
     ],
     [
-     0.828,
-     1.353
+     0.724,
+     1.034
     ],
     [
-     1.353,
-     2.017
+     1.034,
+     1.638
     ]
    ]
   },
@@ -1622,14 +1622,14 @@
    ]
   },
   "L66": {
-   "text": "i walk up the aisle to the twelfth chair.",
+   "text": "i walk up the aisle to mum.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.914,
+   "dur": 1.586,
    "onset": 0.19,
-   "end": 1.724,
+   "end": 1.397,
    "chunks": [
     [
      0.19,
@@ -1637,71 +1637,87 @@
     ],
     [
      0.543,
-     0.845
+     0.828
     ],
     [
-     0.845,
-     0.966
-    ],
-    [
-     0.966,
-     1.724
+     0.828,
+     1.397
     ]
    ]
   },
   "L67": {
-   "text": "when i sit, it's empty.",
+   "text": "i sing her last line for her.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.569,
+   "dur": 1.707,
    "onset": 0.172,
-   "end": 1.362,
+   "end": 1.5,
    "chunks": [
     [
      0.172,
-     0.621
+     0.552
     ],
     [
-     0.655,
-     1.362
+     0.552,
+     1.017
+    ],
+    [
+     1.017,
+     1.5
     ]
    ]
   },
   "L68": {
-   "text": "and i sing.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.086,
-   "onset": 0.172,
-   "end": 0.879,
-   "chunks": [
-    [
-     0.172,
-     0.879
-    ]
-   ]
-  },
-  "L69": {
-   "text": "the whole verse, right beside her.",
+   "text": "the grin sits back in its chair.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.819
+    ],
+    [
+     0.819,
+     1.5
+    ]
+   ]
+  },
+  "L69": {
+   "text": "then i sing the whole verse again, right beside her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
    "onset": 0.172,
-   "end": 1.483,
+   "end": 2.259,
    "chunks": [
     [
      0.172,
-     0.621
+     0.543
     ],
     [
-     0.655,
-     1.483
+     0.543,
+     0.966
+    ],
+    [
+     0.966,
+     1.276
+    ],
+    [
+     1.353,
+     2.259
     ]
    ]
   },

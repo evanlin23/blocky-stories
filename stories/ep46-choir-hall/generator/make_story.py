@@ -96,7 +96,7 @@ for i in range(11):
     cast[f"c{i + 1}"] = person(SKINS[i % 8], "#4c3038", "#4c3038", "#2a2022", STYLES[i], HAIRS[i], "solid", None, "#f3efe6",
                                dict(FACE), ["coat"], zip_c="#4a2230", height=[1.0, 0.96, 1.03, 0.98, 1.02, 0.95, 1.0, 1.04, 0.97, 1.01, 0.99][i])
 cast["grin"] = person("#d8c0a6", "#4c3038", "#4c3038", "#2a2022", "buzz", "#5a4030", "solid", None, "#f3efe6",
-                      {"eyes": "round", "brows": True, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#4a2230", height=1.12)
+                      {"eyes": "round", "brows": True, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#4a2230", height=1.35)
 NAMES = list(cast)
 
 # the twelve chairs (set.py's STEPS and CHX)
@@ -181,9 +181,19 @@ def sing(who, a, b, m=0.75):
     acting[who].append({"from": a, "to": b, "mouth": [m, m]})
 
 
+def G(**kw):
+    """The Grin, seated in the twelfth chair (set lower than the cast's seat because it is 1.35x)."""
+    k = {"sit": True, "arms": [14, 14], "blink": False, **kw}
+    yaw = k.pop("yaw", 180)
+    return P(GRINP, yaw, "neutral", **k)
+
+
 def P(pos, yaw=0, expr="neutral", later=(), walks=(), talks=(), sings=(), **kw):
     return {"pos": pos, "yaw": yaw, "expr": expr, "later": list(later), "walks": list(walks), "talks": list(talks),
             "sings": list(sings), "kw": kw}
+
+
+GRINP = (TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2]) - 0.12)
 
 
 def choir(sing_from=None, sing_to=None, skip=(), expr="neutral", look=None, **kw):
@@ -224,21 +234,18 @@ shot(0, "woman at her sage gate, the rule on her chest, neighbours behind",
 shot("L02", "close on a cord over a cardigan",
      still((2.55, -2.45, 1.2), (3.7, -3.5, 1.1), 36),
      {"gatewoman": P(GW, yaw_to(GW, (2.55, -2.45)), "smile")})
-shot("L03", "a man at his gate opens his mouth to a neighbour",
-     still((-2.95, 0.6, 1.5), (-2.95, -3.5, 1.4), 24),
-     {"gateman": P(GM, 90, "neutral", talks=[("L03.0", "L03.1")]), "nb1": P((-2.2, -3.5), -90, "neutral")})
-shot("L03.1", "close: one bead fades",
+shot("L03", "close on the man at his gate: he opens his mouth, one bead fades (merged with the old S03)",
      still((-2.65, -2.5, 1.25), (-3.7, -3.5, 1.15), 36),
-     {"gateman": P(GM, 90, "neutral")})
+     {"gateman": P(GM, 90, "neutral", talks=[("L03.0", "L03.1")])})
 shot("L04", "the groom on one knee, two beads fading",
-     still((-1.2, -8.5, 1.1), (-4.0, -8.5, 0.95), 24),
-     {"groom": P((-4.0, -9.25, -0.34), 180, "worried", lunge=60, talks=[("L04.1", "L04.1>")]),
+     still((-2.3, -9.0, 1.15), (-4.0, -9.25, 0.95), 22),
+     {"groom": P((-4.0, -9.25, -0.34), 140, "worried", lunge=60, talks=[("L04.1", "L04.1>")]),
       "bride": P((-4.0, -7.85), 0, "hopeful")})
 shot("L04.2", "the bride nods hard",
-     still((-3.4, -10.4, 1.45), (-4.0, -7.85, 1.45), 30),
+     still((-1.4, -8.55, 1.3), (-4.0, -8.55, 1.15), 14),
      {"bride": P((-4.0, -7.85), 0, "smile", later=[("L04.2+0.1", dict(head=[0, 20])), ("L04.2+0.3", dict(head=[0, -4])),
                                                     ("L04.2+0.5", dict(head=[0, 20])), ("L04.2+0.7", dict(head=[0, -4]))]),
-      "groom": P((-4.0, -9.25, -0.34), 180, "worried", lunge=60)})
+      "groom": P((-4.0, -9.25, -0.34), 140, "worried", lunge=60)})
 shot("L05", "the two walk off arm by arm, his eight lit beads",
      move(([0.6, -3.4, 1.35], [-0.1, -11, 1.3]), ([0.6, -3.4, 1.35], [-0.1, -11, 1.3]), 26),
      {"groom": P((-0.3, -16.0), 180, "smile", walks=[("L05>", (-0.3, -7.0))]),
@@ -260,8 +267,8 @@ shot("L09", "through the hall window: eleven singers, Mum conducting",
      winshot((HX + 0.3, -7.5, 1.9), 34),
      {**choir("L09", "L09>"), "mumr": P((HX + 1.2, -3.0), 0, "smile", arms=[70, 20])})
 shot("L10", "me at the kitchen window",
-     still((KX + 0.35, KY + 3.8, 1.55), (KX, KY + 1.5, 1.5), 24),
-     {"me": P((KX, KY + 1.5), 180, "neutral")})
+     still((KX - 0.4, KY + 3.8, 1.6), (KX - 0.4, KY + 1.5, 1.5), 24),
+     {"me": P((KX - 0.4, KY + 1.5), 180, "neutral")})
 shot("L12", "my bedroom at night, the bedside lamp, ten lit beads",
      still((BX + 1.0, -0.2, 1.25), (BX - 0.7, -0.2, 1.1), 30),
      {"me": P((BX - 0.7, -0.2, 0.0), 90, "neutral", sit=True)})
@@ -336,9 +343,9 @@ shot("L29", "me at the hall's open door, the inside black",
 shot("P01", "hold on the dark hall; one chair creaks",
      still((HX - 2.7, 8.4, 1.45), (HX - 1.2, -8.0, 1.0), 22), {}, step=4)
 shot("L30", "her scarf on the twelfth chair, in the wedge of streetlight",
-     still((HX - 0.8, -3.6, 1.7), (TWELFTH[0], TWELFTH[1], 1.35), 38), {})
+     still((HX - 0.8, -3.6, 1.7), (TWELFTH[0], TWELFTH[1], 1.3), 50), {})
 shot("L31", "the other eleven chairs are turned to face it",
-     still((HX - 2.4, 8.0, 1.8), (HX - 0.6, -7.0, 1.1), 20), {}, step=4)
+     still((HX - 2.5, 8.3, 3.6), (HX, -7.0, 0.7), 34), {}, step=4)
 shot("L31.4", "me, scared",
      still((HX - 2.3, 7.0, 1.55), (HX - 2.6, 10.1, 1.5), 30),
      {"me": P((HX - 2.6, 9.7), 0, "scared")}, fill=[90, "#a8bce8"])
@@ -402,58 +409,59 @@ shot("L49", "a slow pan along the riser, eleven faces",
      {**choir()}, step=2)
 shot("L50", "someone in maroon in the twelfth chair, from the back",
      still((HX - 1.0, 8.6, 1.9), (TWELFTH[0], TWELFTH[1], 2.1), 70),
-     {**choir(), "grin": P((TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2])), 180, "neutral", sit=True, head=[0, 24], arms=[14, 14], blink=False)})
+     {**choir(), "grin": G(head=[0, 24])})
 shot("L51", "an ordinary singer, waxy, eyes straight ahead",
      still((HX - 1.4, -3.4, 2.55), (TWELFTH[0], TWELFTH[1], 2.1), 48),
-     {**choir(), "grin": P((TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2])), 180, "neutral", sit=True, head=[0, 20], arms=[14, 14], blink=False)})
+     {**choir(), "grin": G(head=[0, 20])})
 shot("L52", "cut away to Mum at the stand",
      front((HX + 1.2, -3.0), -60, 2.6, 1.55, 1.45, 30),
      {"mumr": P((HX + 1.2, -3.0), -60, "neutral", arms=[40, 40])})
 shot("L52.1", "its head now turned toward the hall",
      still((HX - 1.4, -3.4, 2.55), (TWELFTH[0], TWELFTH[1], 2.1), 48),
-     {**choir(), "grin": P((TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2])), 180, "neutral", sit=True, arms=[14, 14], blink=False)})
-shot("L53", "the grin, and the black line carrying on round the cheeks",
-     still((HX - 1.0, -4.3, 2.6), (TWELFTH[0] - 0.05, TWELFTH[1], 2.15), 60),
-     {**choir(), "grin": P((TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2])), 180, "neutral", sit=True, head=[-28, 0], arms=[14, 14], blink=False)})
-shot("L54", "from behind the riser: the black seam round the back of its head",
-     still((TWELFTH[0] + 0.35, -10.95, 2.75), (TWELFTH[0], TWELFTH[1], 2.2), 36),
-     {**choir(), "grin": P((TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2])), 180, "neutral", sit=True, arms=[14, 14], blink=False)})
+     {**choir(), "grin": G()})
+GCAM = (TWELFTH[0] + 0.5, -5.2)
+shot("L53", "the grin, turned to the camera, the black line carrying on round the cheeks; full head in frame",
+     still((GCAM[0], GCAM[1], 3.0), (TWELFTH[0], TWELFTH[1], 2.6), 44),
+     {**choir(skip=("c4", "c8")), "grin": G(yaw=yaw_to(GRINP, GCAM))}, fill=[180, "#ffe2c4"])
+shot("L54", "from behind the riser: the black seam round the back of its head, lit",
+     still((TWELFTH[0] + 0.15, -11.0, 3.0), (TWELFTH[0], TWELFTH[1], 2.65), 28),
+     {**choir(), "grin": G()})
 shot("L55", "no cord round its neck",
-     still((HX - 1.1, -4.2, 2.55), (HX - 1.1, -8.65, 2.0), 40),
-     {**choir(), "grin": P((TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2])), 180, "neutral", sit=True, arms=[14, 14], blink=False)})
+     still((TWELFTH[0] + 0.7, -5.4, 3.0), (TWELFTH[0], TWELFTH[1], 2.4), 36),
+     {**choir(skip=("c4", "c8")), "grin": G(yaw=yaw_to(GRINP, (TWELFTH[0] + 0.7, -5.4)))}, fill=[150, "#ffe2c4"])
 MUMX = TWELFTH[0] - 1.1
 MUMP = (MUMX, TWELFTH[1], 0.9)
-GRINP = (TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2]))
 shot("L56", "Mum steps up beside the riser into the lamp light",
      still((MUMX + 0.8, -5.0, 2.7), (MUMX, TWELFTH[1], 2.45), 38),
      {**choir(), "mumr": P(MUMP, 180, "hopeful"),
-      "grin": P(GRINP, 180, "neutral", sit=True, arms=[14, 14], blink=False)})
+      "grin": G()})
 shot("L57", "Mum singing, close",
      front(MUMP, 180, 1.9, 2.55, 2.5, 36, 12),
      {**choir(), "mumr": P(MUMP, 180, "smile", talks=[("L57", "L57.1")]),
-      "grin": P(GRINP, 180, "neutral", sit=True, arms=[14, 14], blink=False)})
+      "grin": G()})
 shot("L57.1", "close on her cord: the beads fade one by one",
      front(MUMP, 180, 2.1, 2.5, 2.4, 34, 4),
      {"mumr": P(MUMP, 180, "smile")})
-shot("L58", "it tilts toward her",
-     still((MUMX + 2.8, -5.0, 2.9), (MUMX + 0.9, TWELFTH[1], 2.35), 40),
-     {**choir(), "mumr": P(MUMP, 180, "smile"),
-      "grin": P(GRINP, 180, "neutral", sit=True, head=[60, 0], roll=22, bend=6, arms=[14, 14], blink=False)})
+GF = [170, "#ffe2c4"]       # a warm face fill that rides with the camera, so the Grin's grin reads
+shot("L58", "it tilts toward her (we see its face, three-quarter)",
+     still((MUMX - 1.7, -5.0, 3.0), (MUMX + 0.7, TWELFTH[1], 2.55), 29),
+     {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "smile"),
+      "grin": G(head=[40, 0], roll=18, tilt=-12)}, fill=GF)
 shot("L59", "two shot: it leans further, its face a metre from hers",
-     still((MUMX + 2.6, -5.2, 2.85), (MUMX + 0.7, TWELFTH[1], 2.35), 40),
-     {**choir(), "mumr": P(MUMP, 180, "smile"),
-      "grin": P(GRINP, 180, "neutral", sit=True, head=[85, 0], roll=40, bend=10, arms=[14, 14], blink=False)})
+     still((MUMX - 1.6, -5.3, 3.0), (MUMX + 0.6, TWELFTH[1], 2.55), 31),
+     {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "smile"),
+      "grin": G(head=[52, 0], roll=26, tilt=-18)}, fill=GF)
 shot("L60", "close on Mum's cord: one lit bead left",
      front(MUMP, 180, 2.1, 2.5, 2.4, 34, 4),
      {"mumr": P(MUMP, 180, "worried")})
-shot("L61", "Mum, worried, her mouth closing",
-     front(MUMP, 180, 1.9, 2.6, 2.5, 36, 14),
+shot("L61", "Mum, worried, her mouth closing, the grin leaning in behind her",
+     still((MUMX - 1.3, -5.9, 2.7), (MUMX + 0.4, TWELFTH[1], 2.45), 34),
      {"mumr": P(MUMP, 180, "worried"),
-      "grin": P(GRINP, 180, "neutral", sit=True, head=[90, 0], roll=52, bend=14, arms=[14, 14], blink=False)})
-shot("L62", "that grin is at her ear",
-     still((MUMX + 1.5, -6.6, 2.7), (MUMX + 0.4, TWELFTH[1], 2.4), 52),
-     {**choir(), "mumr": P(MUMP, 180, "worried"),
-      "grin": P(GRINP, 180, "neutral", sit=True, head=[90, 0], roll=62, bend=14, arms=[14, 14], blink=False)})
+      "grin": G(head=[58, 0], roll=32, tilt=-22)}, fill=GF)
+shot("L62", "that grin is a hand's width from her ear",
+     still((MUMX - 1.0, -6.3, 2.6), (MUMX + 0.35, TWELFTH[1], 2.45), 33),
+     {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "worried"),
+      "grin": G(head=[62, 0], roll=38, tilt=-26)}, fill=GF)
 shot("P02", "hold on Mum's face",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
      {"mumr": P(MUMP, 180, "worried")}, step=4)
@@ -465,34 +473,44 @@ shot("L65", "the bulge under the jumper",
      {"me": P((HX + 3.8, 7.6), 0, "scared")})
 
 # ---- 05 the verse, L66 to L75
-shot("L66", "low behind me, up the aisle toward the lamp",
-     still((HX + 0.0, 8.4, 0.8), (HX - 0.4, -6.0, 1.4), 26),
-     {"me": P((HX, 6.5), 0, "neutral", walks=[("L66>", (HX, -1.5))])})
-shot("L67", "the twelfth chair, empty in the lamp light",
-     still((HX - 1.4, -3.4, 2.55), (TWELFTH[0], TWELFTH[1], 2.1), 48),
-     {**choir(), "mumr": P(MUMP, 180, "neutral")})
-shot("L67.1", "me in the twelfth chair",
-     still((HX - 1.4, -3.4, 2.55), (TWELFTH[0], TWELFTH[1], 2.1), 48),
-     {**choir(), "mumr": P(MUMP, 180, "neutral"),
-      "me": P(GRINP, 180, "neutral", sit=True, arms=[14, 14])})
-shot("L68", "me singing",
-     front(GRINP, 180, 2.2, 2.4, 2.15, 36, 8),
-     {"me": P(GRINP, 180, "smile", sit=True, arms=[14, 14], sings=[("L68", "L69>")]), "mumr": P(MUMP, 180, "smile")})
+MEP = (MUMX - 0.8, TWELFTH[1], 0.9)       # me, standing beside Mum at the front of the riser
+MIDX = (MEP[0] + MUMX) / 2
+shot("L66", "low behind me, up the aisle toward Mum in the lamp light, the Grin still leaning toward her",
+     still((HX + 0.0, 8.4, 0.8), (HX - 0.8, -6.0, 1.4), 26),
+     {**choir(), "mumr": P(MUMP, 180, "neutral"), "grin": G(head=[62, 0], roll=38, tilt=-26),
+      "me": P((HX, 6.5), 0, "neutral", walks=[("L66>", (HX - 2.0, -3.2))])})
+shot("L67", "me stepping into the lamp light beside Mum, singing her last line",
+     still((97.35, -5.3, 3.0), (97.35, -8.65, 2.0), 21),
+     {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "neutral"), "grin": G(head=[62, 0], roll=38, tilt=-26),
+      "me": P(MEP, 180, "neutral", sings=[("L67", "L67>")])}, fill=[90, "#ffe2c4"])
+shot("L67.2", "close on Mum's one lit bead, still lit",
+     front(MUMP, 180, 2.1, 2.5, 2.4, 34, 4),
+     {"mumr": P(MUMP, 180, "smile")})
+shot("L68", "wide of the riser: the Grin sat back upright in its chair, facing front, head slightly down",
+     still((97.6, -3.0, 3.2), (97.5, -8.65, 1.9), 16),
+     {**choir(), "mumr": P(MUMP, 180, "smile"), "grin": G(head=[0, 14]),
+      "me": P(MEP, 180, "neutral")}, fill=[70, "#ffe2c4"])
+shot("L69", "me and Mum side by side in the lamp light, singing; the Grin upright behind",
+     still((MIDX, -5.4, 3.0), (MIDX, -8.65, 2.1), 27),
+     {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "smile"), "grin": G(head=[0, 14]),
+      "me": P(MEP, 180, "smile", sings=[("L69", "L71>")])}, fill=[90, "#ffe2c4"])
 shot("L70", "the long cord slides out of my collar and spills down my front",
-     still((TWELFTH[0], -4.5, 2.15), (TWELFTH[0], TWELFTH[1], 1.75), 42),
-     {"me": P(GRINP, 180, "smile", sit=True, arms=[14, 14], sings=[("L70", "L71>")])})
+     still((MEP[0] + 0.1, -5.7, 2.5), (MEP[0], MEP[1], 1.95), 36),
+     {"me": P(MEP, 180, "smile", sings=[("L69", "L71>")]), "mumr": P(MUMP, 180, "smile")}, fill=[90, "#ffe2c4"])
 shot("L71", "tilt down the cord as the beads go dark",
-     move(([TWELFTH[0], -4.5, 2.2], [TWELFTH[0], TWELFTH[1], 2.2]), ([TWELFTH[0], -4.5, 2.2], [TWELFTH[0], TWELFTH[1], 1.35]), 42),
-     {"me": P(GRINP, 180, "smile", sit=True, arms=[14, 14], sings=[("L70", "L71>")])})
-shot("L72", "Mum smiles at the hall, one bead still lit",
-     front(MUMP, 180, 2.0, 2.6, 2.5, 36, 12),
-     {"mumr": P(MUMP, 180, "smile"), "me": P(GRINP, 180, "smile", sit=True, arms=[14, 14])})
-shot("L72.2", "behind the riser: twelve strokes on the back board",
-     still((TWELFTH[0] + 0.05, -11.05, 1.25), (TWELFTH[0] + 0.05, -9.5, 1.25), 20),
-     {**choir(), "mumr": P(MUMP, 180, "smile"), "me": P(GRINP, 180, "smile", sit=True, arms=[14, 14])}, step=4)
+     move(([MEP[0], -5.7, 2.6], [MEP[0], MEP[1], 2.3]), ([MEP[0], -5.7, 2.0], [MEP[0], MEP[1], 1.1]), 36),
+     {"me": P(MEP, 180, "smile", sings=[("L69", "L71>")])}, fill=[90, "#ffe2c4"])
+shot("L72", "Mum smiles at the hall, one bead still lit; me beside her, the Grin upright behind",
+     still((MIDX + 0.5, -5.5, 3.0), (MIDX, MUMP[1], 2.1), 27),
+     {**choir(skip=("c4",)), "mumr": P(MUMP, 180, "smile"), "me": P(MEP, 180, "smile"), "grin": G(head=[0, 14])},
+     fill=[90, "#ffe2c4"])
+shot("L72.2", "behind the riser: twelve strokes on the back board, lit",
+     still((TWELFTH[0] + 0.05, -11.05, 1.3), (TWELFTH[0] + 0.05, -9.5, 1.25), 9),
+     {**choir(), "mumr": P(MUMP, 180, "smile"), "me": P(MEP, 180, "smile")}, step=4)
 shot("L73", "me singing, the cord dark below my chin",
-     front(GRINP, 180, 1.9, 2.4, 2.15, 36, 8),
-     {"me": P(GRINP, 180, "smile", sit=True, arms=[14, 14]), "mumr": P(MUMP, 180, "smile")})
+     still((MIDX, -5.4, 3.0), (MIDX, -8.65, 2.1), 27),
+     {**choir(skip=("c4",)), "me": P(MEP, 180, "smile"), "mumr": P(MUMP, 180, "smile"), "grin": G(head=[0, 14])},
+     fill=[90, "#ffe2c4"])
 shot("L74", "a past night: Mum at my door, my door swings shut on her",
      still((BX + 0.3, 0.9, 1.45), (BX, 2.9, 1.4), 30),
      {"mum": P((BX, 2.9), 0, "hopeful")})
@@ -529,9 +547,9 @@ shot("L83", "close on Mum's ten lit beads",
      front((-3.7, -17.5), 90, 1.6, 1.5, 1.35, 34, -14),
      {"mum": P((-3.7, -17.5), 90, "smile")})
 shot("L84", "night, through the hall's high window: twelve heads in maroon",
-     still((TWELFTH[0] + 0.5, -15.4, 2.3), (TWELFTH[0] + 0.1, -8.65, 2.2), 36),
-     {**choir(), "grin": P(GRINP, 180, "neutral", sit=True, arms=[14, 14], blink=False),
-      "me": P((TWELFTH[0] - 1.3, -14.7), 180, "worried", walks=[("L84>", (TWELFTH[0] - 1.1, -13.4))])}, fill=None)
+     still((HX + 0.1, -14.3, 4.3), (HX, -7.2, 1.8), 20),
+     {**choir(), "grin": G(),
+      "me": P((HX - 0.9, -13.3), 180, "worried", walks=[("L84>", (HX - 0.6, -13.0))])}, fill=None)
 
 # ------------------------------------------------------------------------------------------------ build the shots
 shots = []
@@ -603,7 +621,7 @@ tod("L84", "night")
 # the village is asleep at L32 and on the hill: few lit windows is the TOD "night" (win 1.0); fine either way
 
 # lights, each a ramp that ends on the cut it belongs to (0.3 s before it) or a long slow one in the shot
-lt("L10-0.3", "kitchen_day", 1.0, 0.3)
+lt("L10-0.3", "kitchen_day", 0.5, 0.3)
 lt("L10-0.3", "kitchen_lamp", 0.12, 0.3)
 lt("L09-0.3", "hall_house", 0.34, 0.3)
 lt("L09-0.3", "riser", 0.9, 0.3)
@@ -620,7 +638,9 @@ lt("L28-0.3", "kitchen_day", 0.0, 0.3)
 lt("L29-0.3", "hall_house", 0.0, 0.3)
 lt("L29-0.3", "riser", 0.0, 0.3)
 lt("L29-0.3", "hall_low", 0.2, 0.3)
-lt("L29-0.3", "door_wedge", 1.0, 0.3)
+lt("L29-0.3", "door_wedge", 1.8, 0.3)
+lt("L31-0.3", "door_wedge", 3.2, 0.3)
+lt("L31.4-0.3", "door_wedge", 1.8, 0.3)
 lt("L35-0.3", "kitchen_lamp", 0.0, 0.3)
 lt("L35-0.3", "kitchen_day", 0.5, 0.3)
 lt("L39-0.3", "door_wedge", 0.0, 0.3)
@@ -637,6 +657,11 @@ lt("L45-0.3", "riser", 1.0, 0.3)
 lt("L47", "hall_house", 0.1, 2.5)                          # the concert lights go down in one slow ramp
 lt("L49", "grin_key", 1.0, 3.0)
 lt("L49", "grin_rim", 1.0, 3.0)
+lt("L54-0.3", "back_wash", 1.0, 0.3)
+lt("L55-0.3", "back_wash", 0.0, 0.3)
+lt("L72.2-0.3", "back_wash", 1.0, 0.3)
+lt("L73-0.3", "back_wash", 0.0, 0.3)
+lt("L84-0.3", "back_wash", 1.0, 0.3)
 lt("L84-0.3", "hall_house", 0.34, 0.3)
 lt("L84-0.3", "riser", 0.9, 0.3)
 lt("L84-0.3", "grin_key", 0.4, 0.3)
@@ -702,6 +727,8 @@ beads("L37+0.35", "ron", list(range(7)), step=0.2)
 beads("L57.1", "mum", [9, 8, 7, 6, 5, 4, 3], step=0.34)
 beads("L59.2+0.3", "mum", [2])
 beads("L60+0.1", "mum", [1])
+beads("L67+0.2", "me", list(range(9, -1, -1)), step=0.12, dur=0.3)
+beads("L74-0.01", "me", list(range(10)), dur=0.0, on=True)
 beads("L76+0.4", "me", [9, 8, 7, 6], step=0.3)
 beads("L77", "me", [5, 4], step=0.3)
 beads("L78+0.1", "me", [3, 2, 1], step=0.25)
@@ -731,8 +758,8 @@ story = {
     "slug": "ep46-choir-hall",
     "title": "In this world, everyone gets ten words a day.",
     "made_for_kids": False,
-    "premise": "In a hillside village everyone gets ten words a day, worn as ten glass beads that go dark one per word. Mum leads the village choir and spends all ten of hers at my door every night, asking me back to the twelfth chair. I haven't spent a word in three years and people call me the careful one. The week before the winter concert, the empty twelfth chair keeps turning toward her.",
-    "twist": "I was never careful: I stopped talking to Mum three years ago, and every unspent word piled up in the lump under my jumper. The twelfth chair was mine all along, and while I stayed away something kept my place.",
+    "premise": "In a hillside village everyone gets ten words a day, worn as ten glass beads that go dark one per word. Mum leads the village choir and spends all ten of hers at my door every night, asking me to come and sing. I haven't spent a word in three years and people call me the careful one. The week before the winter concert, the empty twelfth chair keeps turning toward her.",
+    "twist": "I was never careful: I stopped talking to Mum three years ago, and every unspent word piled up in the lump under my jumper. Three years of beads are the only purse in the village that can pay for the last line of Mum's verse, so I sing it for her, beside her.",
     "world": "a hillside village in early winter: render cottages with painted gates and frosted hedges, a narrow house with a round-table kitchen, and a plain wooden village hall with a riser of twelve chairs under one enamel lamp",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff7f9e",
