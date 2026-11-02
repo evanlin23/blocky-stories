@@ -1954,6 +1954,9 @@ def animate_boxes(kit, story, tl, t, ctx, over):
             pose_boxes(cr, pose)
         set_face(cr, c.get("face", "frown"), ctx["wd"], bool(pose.get("flip", False)), bool(pose.get("mirror", False)))
         ctx["posed"] = key
+        if __import__("os").environ.get("MD_SHIN") and not pose.get("shelf"):
+            sh_ = next(o for o in cr["meshes"] if o.name.endswith(".shin1"))
+            print("SHIN", pose_name, [[round(x, 4) for x in r] for r in sh_.matrix_world], flush=True)
         lo, hi, face, fz = boxes_extent(cr)
         print(f"boxes {pose_name}: feet {lo:.3f} m, top {hi:.3f} m (ceiling {CEIL}), face box at {face}, its lowest "
               f"point {fz:.3f} m, legs folded {cr.get('crouch', 0):.1f} deg, stands at {cr.get('at')}", flush=True)
