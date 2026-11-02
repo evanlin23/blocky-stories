@@ -44,8 +44,8 @@ BASE = {"odile": (500.0, 0.0), "hut": (500.0, 300.0)}
 
 FOGC = {0: "#17233d", 1: "#8a8ea9", 2: "#e6d2a6"}
 SUNC = {0: "#7f9ad8", 1: "#c9c5e6", 2: "#ffdca8"}
-SUNE = {0: 0.55, 1: 1.6, 2: 3.2}
-EXPO = {0: 0.0, 1: -0.15, 2: -0.5}
+SUNE = {0: 0.8, 1: 1.6, 2: 3.0}
+EXPO = {0: 0.0, 1: -0.1, 2: -0.5}
 
 
 def ss(x):
@@ -250,7 +250,7 @@ def build_world(kit, ctx):
     hut = kit.empty("hut", (-8.0, 1240.0, 0), W)
     kit.box("hut.walls", (5.0, 4.2, 2.6), (0, 0, 1.3), stone, hut, bevel=0.05)
     kit.box("hut.roof", (5.6, 4.8, 0.5), (0, 0, 2.85), snow, hut, bevel=0.15)
-    wm, _ = plain_emit(kit, "hut window", "#f2b36b", 2.0)
+    wm, _ = plain_emit(kit, "hut window", "#f2a050", 0.9)
     kit.box("hut.win", (0.02, 0.9, 0.7), (2.52, 0.2, 1.5), wm, hut)
     dark = kit.plastic("#1a1d22", 0.7, name="dark door")
     kit.box("hut.door", (0.04, 0.9, 1.9), (2.52, -1.3, 1.0), dark, hut)
@@ -268,30 +268,37 @@ def build_world(kit, ctx):
     ctx["plant"] = kit.sphere("plant glint", 0.55, (2.9, 690.0, SLAB_Z + 1.9), pm, W, seg=8)
     ctx["plant_node"] = pn
     fm2, _ = plain_emit(kit, "far light", "#f2b36b", 3.0)
-    ctx["farlight"] = kit.sphere("far light", 5.0, (-8.0, 1238.0, 4.0), fm2, W, seg=8)
+    ctx["farlight"] = kit.sphere("far light", 1.3, (-14.0, 300.0, 6.5), fm2, W, seg=8)
 
 
 def build_van(kit, name, parent, loc, yaw=0.0):
+    """The chemist's small white van. The cab is open at the front (a windscreen frame, not glass) so Bram can sit in it."""
     root = kit.empty(name, loc, parent, rot=(0, 0, yaw))
     white = kit.plastic("#e9edf0", 0.55, name="van white")
     dark = kit.plastic("#16181c", 0.6, name="van dark")
-    kit.box(f"{name}.body", (2.1, 4.6, 1.9), (0, -0.4, 1.55), white, root, bevel=0.12)
-    kit.box(f"{name}.nose", (2.1, 1.3, 1.1), (0, 2.5, 1.1), white, root, bevel=0.1)
-    kit.box(f"{name}.glass", (1.85, 0.05, 0.75), (0, 1.79, 2.0), dark, root)
-    kit.box(f"{name}.under", (2.0, 5.8, 0.4), (0, 0.5, 0.5), dark, root)
+    kit.box(f"{name}.body", (2.1, 3.0, 1.9), (0, -1.4, 1.55), white, root, bevel=0.1)
+    kit.box(f"{name}.floor", (2.1, 2.4, 0.2), (0, 1.1, 0.7), dark, root)
+    kit.box(f"{name}.roof", (2.1, 2.4, 0.15), (0, 1.1, 2.55), white, root, bevel=0.06)
+    kit.box(f"{name}.seat", (0.8, 0.5, 0.35), (-0.5, 0.65, 0.95), dark, root)
+    for sx in (-1, 1):
+        kit.box(f"{name}.side{sx}", (0.08, 2.4, 0.7), (sx * 1.0, 1.1, 1.0), white, root)
+        kit.box(f"{name}.pil{sx}", (0.12, 0.12, 1.2), (sx * 0.98, 2.25, 1.95), white, root)
+    kit.box(f"{name}.dash", (1.9, 0.5, 0.45), (0, 1.95, 0.95), dark, root)
+    kit.box(f"{name}.nose", (2.1, 1.0, 0.95), (0, 2.7, 0.95), white, root, bevel=0.08)
+    kit.box(f"{name}.under", (2.0, 5.8, 0.3), (0, 0.3, 0.45), dark, root)
     for sx in (-1, 1):
         for y in (-1.6, 2.1):
             kit.cyl(f"{name}.w{sx}{y}", 0.45, 0.35, (sx * 1.05, y, 0.45), dark, root, rot=(0, math.radians(90), 0), n=12)
-    hm, _ = fog_emit(kit, f"{name} lamp", "#f4f8ff", 9.0)
+    hm, _ = fog_emit(kit, f"{name} lamp", "#f4f8ff", 5.0)
     for sx in (-1, 1):
-        kit.sphere(f"{name}.lamp{sx}", 0.17, (sx * 0.7, 3.15, 1.0), hm, root, seg=8)
+        kit.sphere(f"{name}.lamp{sx}", 0.17, (sx * 0.7, 3.22, 0.95), hm, root, seg=8)
     return root
 
 
 def build_village(kit, ctx, W, stone, snow):
     plaster = kit.grime("#8c8478", dark=0.6, scale=2.0, name="cottage wall", rough=0.9)
     roofm = kit.plastic("#cfd9e8", 0.9, name="cottage roof")
-    wm, wnode = plain_emit(kit, "cottage window", "#f2b36b", 2.6)
+    wm, wnode = plain_emit(kit, "cottage window", "#f2a050", 0.8)
     ctx["win_nodes"] = [wnode]
     spots = [(-9.0, -20.0, 0), (-14, -52, 90), (16, -34, -90), (18, -78, -80), (-20, -90, 85), (-8, -118, 90), (12, -122, -90)]
     for k, (x, y, yaw) in enumerate(spots):
@@ -415,7 +422,7 @@ def build_plough(kit, ctx):
     wip = []
     for sx in (-0.55, 0.5):
         piv = kit.empty(f"wiper{sx}", (sx, 2.0, 2.55), PL)
-        kit.box(f"wiper{sx}.arm", (0.05, 0.03, 0.95), (0, 0, 0.475), black, piv)
+        kit.box(f"wiper{sx}.arm", (0.035, 0.03, 0.95), (0, 0, 0.475), black, piv)
         kit.box(f"wiper{sx}.blade", (0.04, 0.03, 0.45), (0, 0, 0.8), black, piv)
         wip.append(piv)
     ctx["wipers"] = wip
@@ -450,9 +457,9 @@ def build_plough(kit, ctx):
         or o.name.startswith(("blade", "wheel", "hub", "arm", "psnow", "door", "a pillar")))]
     for nm in ("headL", "headR"):
         light_except(kit, "head except", nm, near)
-    dg = kit.light("dash glow", "POINT", (0.0, 1.3, 2.6), 2.0, "#6dffb0", size=0.08, parent=PL)
+    dg = kit.light("dash glow", "POINT", (0.0, 1.3, 2.6), 3.5, "#6dffb0", size=0.08, parent=PL)
     dg.visible_camera = False
-    fl = kit.light("cab fill", "POINT", (0.0, 0.4, 3.5), 1.2, "#8aa4d0", size=0.2, parent=PL)
+    fl = kit.light("cab fill", "POINT", (0.0, 0.9, 3.5), 12.0, "#8aa4d0", size=0.2, parent=PL)
     fl.visible_camera = False
 
 
@@ -490,9 +497,9 @@ def build_odile(kit, ctx):
     kit.box("o.side", (0.5, 0.5, 0.55), (-2.0, 0.35, 0.28), wood, R, bevel=0.02)
     lampm, _ = plain_emit(kit, "odile shade", "#f2b36b", 3.0)
     kit.cyl("o.shade", 0.2, 0.3, (-2.0, 0.35, 0.72), lampm, R, n=12, r2=0.14)
-    lt = kit.light("odile lamp", "POINT", (bx - 1.9, by + 0.3, 0.9), 70.0, "#ffbd78", size=0.12)
+    lt = kit.light("odile lamp", "POINT", (bx - 1.9, by + 0.3, 0.9), 160.0, "#ffbd78", size=0.12)
     lt.visible_camera = False
-    fl = kit.light("odile fill", "POINT", (bx + 0.2, by - 0.6, 2.2), 14.0, "#f0b070", size=0.3)
+    fl = kit.light("odile fill", "POINT", (bx + 0.2, by - 0.6, 2.2), 55.0, "#f0b070", size=0.3)
     fl.visible_camera = False
     # on the table
     keysm = kit.plastic("#6e6a5d", 0.35, name="keys")
@@ -531,9 +538,9 @@ def build_hut(kit, ctx):
     cup = kit.plastic("#d8d4c8", 0.5, name="hut cup")
     kit.cyl("h.cup", 0.05, 0.1, (0.55, 1.5, 0.95), cup, R, n=12)
     kit.cyl("h.flask", 0.07, 0.3, (-1.3, 1.55, 0.6), kit.plastic("#3d5a4a", 0.5, name="flask"), R, n=12)
-    lt = kit.light("stove light", "POINT", (bx + 0.9, by + 1.0, 0.7), 60.0, "#ffa860", size=0.15)
+    lt = kit.light("stove light", "POINT", (bx + 0.9, by + 1.0, 0.7), 130.0, "#ffa860", size=0.15)
     lt.visible_camera = False
-    fl = kit.light("hut fill", "POINT", (bx, by, 2.1), 10.0, "#e8b080", size=0.3)
+    fl = kit.light("hut fill", "POINT", (bx, by, 2.1), 45.0, "#e8b080", size=0.3)
     fl.visible_camera = False
 
 
@@ -727,7 +734,7 @@ def animate(kit, story, tl, t, ctx):
     gp = ss((yp - 50.0) / 50.0) * (1.0 - ss((yp - 230.0) / 30.0)) if slid else 0.0
     ctx["plant"].hide_render = gp <= 0.0
     ctx["plant_node"].inputs["Strength"].default_value = 3.5 * gp * hg * day
-    ctx["farlight"].hide_render = abs(s - 1240.0) < 300.0
+    ctx["farlight"].hide_render = not (s < 100.0 and abs(th) < 0.1)
     nw = last(cues(tl, "newpost"), t)
     on = bool(nw and nw.get("on"))
     ctx["newpost"]["root"].hide_render = not on

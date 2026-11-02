@@ -29,6 +29,17 @@ HOLDS = {}
 i65 = next(i for i, l in enumerate(lines) if l["id"] == "L65")
 lines.insert(i65 + 1, {"id": "P03", "pause": 1.6, "chunks": []})
 lines.append({"id": "P04", "pause": LOOP, "chunks": []})
+# length: the script's own fallback (two wipers words after L53), then breaths where the picture needs them
+i53 = next(i for i, l in enumerate(lines) if l["id"] == "L53")
+lines.insert(i53 + 1, {"id": "L53b", "who": "narrator", "chunks": [["The wipers kept", "The wipers kept"], ["TICKING.", "ticking."]]})
+HOLDS = {"P01": 1.0, "P02": 1.3, "L45": 0.45, "L64": 0.5, "L72": 0.3, "L54": 0.3, "L05": 0.35, "L13": 0.3,
+         "L19": 0.3, "L27": 0.3, "L46": 0.35, "L71": 0.6, "L66": 0.25, "L62": 0.3}
+for ln in lines:
+    if ln["id"] in HOLDS:
+        if "pause" in ln:
+            ln["pause"] = HOLDS[ln["id"]]
+        else:
+            ln["gap"] = HOLDS[ln["id"]]
 TEMPO = {}
 for ln in lines:
     if ln["id"] in TEMPO:
@@ -73,14 +84,14 @@ def W2P(w, s, th=0.0, px=PX):
 # ---------------------------------------------------------------------------------------------------- places
 ME_CAB = [-0.55, 0.45, 1.57]
 EYE = [-0.5, 0.9, 3.2]
-POV = still(EYE, [-0.5, 30, 2.9], 15)
-POV_BEND = c([0, EYE, [-0.5, 30, 2.9], 15], [1, EYE, [-3.2, 24, 2.7], 15])
-FACE = still([0.5, 1.15, 3.25], [-0.55, 0.45, 3.1], 32)
-FACE_BAG = still([0.0, 1.6, 3.0], [0.0, 0.4, 2.8], 22)
-DASH = still([-0.15, 0.4, 3.0], [0.0, 1.7, 2.35], 28)
+POV = still(EYE, [-0.5, 30, 2.75], 19)
+POV_BEND = c([0, EYE, [-0.5, 30, 2.75], 19], [1, EYE, [-3.2, 24, 2.6], 19])
+FACE = still([0.55, 1.2, 3.3], [-0.55, 0.45, 3.2], 25)
+FACE_BAG = still([0.0, 1.95, 3.3], [0.0, 0.4, 2.7], 14)
+DASH = still([0.55, 0.6, 3.2], [-0.2, 1.4, 2.3], 26)
 SHAKE_CAM = still([0.5, 1.0, 3.3], [-0.2, 1.9, 2.6], 26)
 WIN_R = still([-0.1, 0.2, 3.2], [4.0, 0.7, 2.4], 22)
-WIN_L = still([-0.2, 0.2, 3.2], [-5.0, 1.5, 2.0], 22)
+WIN_L = still([-0.2, 0.2, 3.2], [-3.2, 0.2, 1.6], 24)
 SIDE_WIDE = still([9.0, 1.5, 2.6], [0.0, 0.8, 2.2], 20)
 O_BASE = (500.0, 0.0)
 H_BASE = (500.0, 300.0)
@@ -125,7 +136,7 @@ seg("L28", "L28>", 1150, 1120, 180)
 seg("L29", "L29>", 1065, 1045, 180)
 seg("L30", "L30>", 1032, 1024, 180)
 seg("L31", "L31>", 1022, 1020, 180)
-seg("L32", "L32>", 1020, 1011, 180)
+seg("L32", "L32>", 1010, 1000, 180)
 seg("L33", "L33>", 990, 940, 180)
 seg("L34", "L34>", 900, 880, 180)
 seg("L35", "L35>", 878, 870, 180)
@@ -133,12 +144,12 @@ seg("L36", "L36>", 868, 868, 180)
 seg("L37", "L37>", 862, 830, 180)
 seg("L38", "L38>", 826, 808, 180)
 seg("L39", "L40>", 806, 806, 180)
-seg("L41", "L41>", 806, 801, 180)
-seg("L42", "L45>", 801, 756, 180)
+seg("L41", "L41>", 806, 790, 180)
+seg("L42", "L45>", 790, 756, 180)
 seg("L46", "L46>", 752.5, 751, 180)
 seg("L47", "L47>", 751, 748.5, 180)
 seg("L48", "L49>", 748.5, S_STOP, 180, ease=True)
-seg("L50", "L65>", S_STOP, S_STOP, 180)
+seg("L50", "L65>", S_STOP, S_STOP, 180)  # L53b is inside it
 seg("P03", "P03>", S_STOP, S_STOP, 180)
 seg("L66", "L66>", S_STOP, 712, 180, x1=-1.9, ease=True)
 seg("L67", "L67>", 240, 240, 180)
@@ -213,7 +224,7 @@ SHOTS = [
     ("L06", "the plough in her yard under a hood of snow", 2, still([6.0, -6.0, 2.2], [0.0, 0.8, 2.2], 20), {}),
     ("L07", "Odile in her chair by the lamp, coughing", 2,
      still([O_BASE[0] + 0.9, -1.3, 1.3], [CHAIR[0], 0.2, 0.95], 30), {"snow": 0}),
-    ("L08", "the far light high on the mountain", 2, still([0.6, -6.0, 1.5], [-8.0, 1240.0, 3.0], 40), {}),
+    ("L08", "the far light high on the mountain", 2, still([-5.0, -8.0, 1.6], [-14.0, 300.0, 6.5], 36), {}),
     ("L09", "the keys on the table", 2, still([O_BASE[0] + 0.5, -0.8, 1.35], [O_BASE[0] + 0.35, 0.2, 0.8], 32), {"snow": 0}),
     ("L09.4", "Odile's face", 2, still([O_BASE[0] + 0.6, -0.35, 1.3], [CHAIR[0], 0.1, 1.25], 32), {"snow": 0}),
     ("L10", "my face, nodding", 2, still([CHAIR[0] + 0.5, -0.5, 1.55], [O_BASE[0] + 1.0, 0.9, 1.5], 34), {"snow": 0}),
@@ -247,12 +258,12 @@ SHOTS = [
     ("L33", "POV, normal glints", 2, still(EYE, [-1.5, 30, 2.0], 16), {}),
     ("L34", "the Marker ahead in the beams", 2, still(EYE, W2P((2.2, 855, 0.9), 892, 180), 30), {}),
     ("L35", "closer, one glint far down the line sitting lower", 2, still(EYE, W2P((2.2, 855, 0.9), 874, 180), 24), {}),
-    ("L36", "the snow heaped against its front", 2, still([-0.8, 3.2, 1.0], W2P((2.2, 855, 0.45), 868, 180), 40), {}),
+    ("L36", "the snow heaped against its front", 2, still(W2P((2.7, 858.3, 0.75), 868, 180), W2P((2.2, 855.3, 0.35), 868, 180), 36), {}),
     ("L37", "POV, the low glint, round the bend", 2, POV_BEND, {}),
     ("L38", "the Marker at the edge of my lane", 2, still(EYE, W2P((2.0, 795, 1.0), 817, 180), 28), {}),
-    ("L39", "the arm lines and blunt hands", 2, still([-0.4, 3.0, 1.1], W2P((2.0, 795, 0.7), 806, 180), 46), {}),
+    ("L39", "the arm lines and blunt hands", 2, still(W2P((2.7, 799.3, 0.95), 806, 180), W2P((2.0, 795.3, 0.7), 806, 180), 32), {}),
     ("L40", "my face, scared", 2, FACE, {}),
-    ("L41", "a normal glint fading past", 2, still([-0.2, 0.2, 3.2], [-5.0, 3.5, 2.0], 26), {}),
+    ("L41", "a normal glint fading past", 2, still(EYE, [-3.0, 8.0, 1.8], 24), {}),
     ("L42", "POV, the beams sinking", 2, POV, {}),
     ("L43", "the gauges dimming, wipers going", 2, DASH, {}),
     ("L44", "my face in near dark, the bag a pale shape", 2, FACE_BAG, {}),
@@ -263,14 +274,14 @@ SHOTS = [
     ("L49", "low on the blade, snow sheeting off", 1, still([3.5, 6.5, 0.6], [0.3, 3.8, 0.8], 24), {}),
     ("L50", "blade edge and the two eyes", 1, still([-2.6, 3.9, 0.8], [0.0, 4.5, 1.1], 28), {}),
     ("L51", "the mirror: two white lights stopping", 1, still([-1.6, 0.0, 3.0], [-0.3, -14.0, 1.5], 24), {}),
-    ("L51.2", "Bram in his own cab", 1, still([-0.4, -9.4, 2.15], [-0.5, -12.6, 2.1], 40), {}),
+    ("L51.2", "Bram in his own cab", 1, still([-0.5, -9.2, 1.95], [-0.5, -12.6, 1.9], 38), {}),
     ("L52", "the Marker through the glass, unmoved", 2,
      still([-0.5, 0.9, 3.2], W2P(MK_FINAL + (1.0,), S_STOP, 180), 20), {}),
     ("L53", "same frame, the dawn beginning", 4,
      still([-0.5, 0.9, 3.2], W2P(MK_FINAL + (1.0,), S_STOP, 180), 20), {}),
     # 05 the edge
-    ("L54", "over my shoulder, past the Marker", 2, still([-0.4, -0.2, 3.3], [0.6, 15.0, 1.2], 22), {}),
-    ("L55", "the raw edge beyond the Marker", 2, still([-0.5, -0.1, 2.85], W2P((0.6, 735.0, -1.0), S_STOP, 180), 20), {}),
+    ("L54", "over my shoulder, past the Marker", 2, still([0.15, 0.8, 3.3], [0.6, 15.0, 1.2], 22), {}),
+    ("L55", "the raw edge beyond the Marker", 2, still([0.0, 2.9, 2.2], W2P((0.6, 738.0, -2.0), S_STOP, 180), 20), {}),
     ("L56", "wide from the bend above: the scar of the slide", 2,
      still(W2P((-14.0, 800.0, 22.0), S_STOP, 180), W2P((4.0, 705.0, -6.0), S_STOP, 180), 20), {}),
     ("L57", "the same stretch, broken", 2,
@@ -280,11 +291,11 @@ SHOTS = [
     ("L59", "POV along the posts, off the edge to its glint", 2, still(EYE, [-1.5, 40, 0.0], 16), {}),
     ("L60", "my face, scared easing", 2, FACE, {}),
     ("L61", "the snow lip of the edge", 2,
-     still(W2P((1.2, 744.0, 1.1), S_STOP, 180), W2P((1.2, 739.0, -0.6), S_STOP, 180), 30), {}),
+     still(W2P((-1.6, 741.3, 0.7), S_STOP, 180), W2P((1.2, 740.3, -0.3), S_STOP, 180), 28), {}),
     ("L62", "low wide: the Marker on the new edge, the drop behind", 2, still([-2.3, 2.4, 0.7], [0.2, 5.0, 0.8], 28), {}),
-    ("L63", "Bram knocking at my door", 2, still([-3.5, 2.2, 1.5], [-2.0, 0.1, 1.45], 34), {}),
+    ("L63", "Bram knocking at my door", 2, still([-3.6, 3.3, 1.6], [-2.0, 0.5, 1.5], 34), {}),
     ("L64", "the road ahead, the edge, nothing standing on it", 2, still(EYE, W2P((0.6, 738.0, 0.0), S_STOP, 180), 18), {}),
-    ("L65", "the wide square pressed in the snow", 2, still([2.5, 1.0, 2.6], [0.6, 4.4, 0.0], 24), {}),
+    ("L65", "the wide square pressed in the snow", 2, still([2.2, 8.5, 2.4], [0.6, 4.4, 0.0], 26), {}),
     ("P03", "the tally on the blade: two rust-orange strokes", 4, still([0.05, 5.21, 0.95], [0.34, 3.85, 0.73], 38), {"hand": 0.0}),
     # 06 home
     ("L66", "side wide: the plough creeping along the inside bank, the van behind", 2,
@@ -297,7 +308,7 @@ SHOTS = [
     ("L71", "two cups on the table", 2, still([O_BASE[0] + 0.7, -0.7, 1.3], [O_BASE[0] + 0.5, 0.1, 0.85], 30), {"snow": 0}),
     ("L71.2", "Odile smiles", 2, still([O_BASE[0] + 0.5, -0.35, 1.3], [CHAIR[0], 0.1, 1.28], 36), {"snow": 0}),
     ("L72", "spring: the mended road, the new post at the new edge, me beside it", 2,
-     still(W2P((-1.0, 757.0, 1.6), 700, 0), W2P((0.6, 741.0, 1.2), 700, 0), 22), {}),
+     still(W2P((-0.4, 752.0, 1.5), 700, 0), W2P((0.5, 741.0, 1.2), 700, 0), 26), {}),
     ("L73", "the new post's reflector catches the low sun", 4,
      still(W2P((0.3, 743.4, 1.9), 700, 0), W2P((0.6, 740.9, 1.72), 700, 0), 42), {"hand": 0.0}),
 ]
@@ -390,7 +401,7 @@ hide("bram", 0)
 put("bram", "L23", [H_BASE[0] + 0.6, H_BASE[1] + 0.5], yaw=0, expr="grin", head=[0, 4])
 key("bram", "L24", arms=[0, 84], blend=0.35)
 hide("bram", "L26")
-put("bram", "L51.2", [-0.5, -12.6, 0.62], yaw=180, expr="scared", hide_parts=LEGS, arms=[60, 60])
+put("bram", "L51.2", [-0.5, -12.6, 0.3], yaw=180, expr="scared", hide_parts=LEGS, arms=[60, 60])
 hide("bram", "L52")
 put("bram", "L63", [-2.1, 0.2], yaw=70, expr="scared", arms=[0, 0])
 key("bram", "L63", arms=[75, 75], blend=0.2)
@@ -435,7 +446,7 @@ sound = {"floor": "wood", "steps_db": -26,
              {"at": "L48", "kind": "whoosh", "db": -12, "dur": 1.8},
              {"at": "L57", "kind": "creak", "db": -10, "dur": 3.4},
              {"at": "L63.1", "kind": "knock", "pattern": [0, 0.28, 0.56], "tone": "glass_soft", "db": -10},
-             {"at": "end-0.55", "kind": "click", "db": -10},
+             {"at": "L73>", "kind": "click", "db": -10},
          ],
          "music_drops": [{"from": "L44>", "to": "L45"},
                          {"from": "P02", "to": "L52", "keep": ["hit"]}]}
@@ -451,7 +462,7 @@ story = {
     "key_color": "#ffd23f",
     "gap": 0.12,
     "tail": 0,
-    "look": {"fog": "#17233d", "fog_density": 0.022, "fog_start": 4.0, "sky": "#17233d", "sky_strength": 1.0,
+    "look": {"fog": "#17233d", "fog_density": 0.014, "fog_start": 6.0, "sky": "#17233d", "sky_strength": 1.0,
              "exposure": 0.0},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.4, "bloom": 0.28, "grain": 0.013},
