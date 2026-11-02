@@ -204,8 +204,8 @@ SHOTS = [
     ("L44", "clearly lit: the Tilted in Pip's chair behind our stall, head on its shoulder", 2,
      still([0.3, -4.4, 0.95], [-0.95, 1.3, 1.7], 29)),
     ("L45", "full figure seated", 2, still([0.05, -2.6, 1.2], [-0.65, 1.3, 1.1], 30)),
-    ("L45.1", "close on the tarp knotted at its chest, the rust overalls", 2, still([-0.2, -0.5, 1.2], [-0.65, 1.3, 1.05], 44)),
-    ("L46", "close on its face: two stacked eyes, the mouth beside them", 2, still([0.05, -0.1, 1.5], [-0.95, 1.3, 1.5], 32)),
+    ("L45.1", "close on the tarp knotted at its chest, the rust overalls", 2, still([-0.55, -1.4, 1.75], [-0.6, 0.7, 1.75], 38)),
+    ("L46", "close on its face: two stacked eyes, the mouth beside them", 2, still([-0.5, -1.6, 1.8], [-1.95, 1.3, 1.65], 30)),
     ("L47", "its tarp in the sun, never shifting", 2, still([-2.2, -0.6, 1.4], [-0.95, 1.3, 1.4], 36)),
     ("L47.2", "my cream sleeve in the same light", 2, still([-1.9, -1.45, 1.2], [-1.25, -0.6, 1.15], 40)),
     ("L48", "me a step nearer, scared", 2, still([-2.4, -1.7, 1.5], [-0.65, -1.75, 1.5], 34)),
@@ -425,6 +425,7 @@ cues = [
     {"at": "L69", "name": "tod", "set": "flat"},
     # coats: a colour change is always a fade of a second or more (dur 0 is only ever across a cut)
     {"at": 0, "name": "coat", "who": "haggler", "to": BLUE, "dur": 0},
+    {"at": 0.4, "name": "coat", "who": "haggler", "to": "#9d9082", "dur": 2.2},
     {"at": "L02.1", "name": "coat", "who": "haggler", "to": ORANGE, "dur": 1.0},
     {"at": "L04", "name": "coat", "who": "sofa_a", "to": "#2fb3a3", "dur": 1.5},
     {"at": "L04+0.1", "name": "coat", "who": "sofa_b", "to": "#f0902a", "dur": 1.4},
@@ -490,7 +491,7 @@ cues = [
     {"at": "L56-0.3", "name": "sfill", "to": 1.0, "dur": 0.3},
     {"at": "L57", "name": "sfill", "to": 0.0, "dur": 0.4},
     # a soft daylight fill on the chair arm for the L35 strip, which sits in the estate's shadow
-    {"at": "L35-0.3", "name": "tfill", "to": 1.0, "dur": 0.3},
+    {"at": "L35", "name": "tfill", "to": 1.0, "dur": 0},
     {"at": "L35.2", "name": "tfill", "to": 0.0, "dur": 0.4},
     {"at": "L58", "name": "beam", "to": 1.0, "dur": 1.0},
     {"at": "L63+1.5", "name": "beam", "to": 0.0, "dur": 0.8},
