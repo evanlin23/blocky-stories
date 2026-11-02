@@ -285,11 +285,11 @@ def materials(kit, wd: Path):
     M["terra"] = kit.grime("#c46a3c", 0.72, 4.0, name="terracotta")
     M["window"] = kit.plastic("#3d5a78", 0.2, name="window glass")
     M["dark"] = kit.plastic("#1b1a1e", 0.8, name="dark")
-    M["brass"] = kit.metal("#b8883a", 0.45, name="brass")
+    M["brass"] = kit.metal("#a8a088", 0.45, name="brass")
     M["iron"] = kit.metal("#2a2b2e", 0.5, name="iron")
     M["verd"] = kit.plastic("#3f7f6a", 0.5, name="verdigris")
     M["verd_dome"] = kit.grime("#3f7f6a", 0.62, 6.0, name="dome green")
-    M["leather"] = kit.plastic("#5a1f22", 0.45, name="oxblood leather")
+    M["leather"] = kit.plastic("#5c2c30", 0.45, name="oxblood leather")
     M["woodA"] = kit.planks("#6e5c4a", "#4a3e32", 1.4, "X", name="oak floor")
     M["woodB"] = kit.planks("#5e4a38", "#3e3226", 1.6, "Y", name="oak dark")
     M["wall"] = kit.planks("#d4cebd", "#b6b09e", 1.5, "Z", name="whitewash boards", rough=0.85)
@@ -568,12 +568,12 @@ def build_dome(kit, ctx, M):
     ep = kit.empty("eyepiece", D(px, py - 0.12, 1.3))
     kit.cyl("eyepiece tube", 0.04, 0.3, (0, -0.1, 0), M["brass"], ep, rot=(math.pi / 2, 0, 0))
     kit.cyl("eyepiece cap", 0.05, 0.05, (0, -0.27, 0), M["iron"], ep, rot=(math.pi / 2, 0, 0))
-    ctx["cap"] = box(kit, "eyepiece cap loose", (0.1, 0.1, 0.05), D(0.0, -0.5, 0.67), M["brass"], bevel=0.02)
+    ctx["cap"] = box(kit, "eyepiece cap loose", (0.1, 0.1, 0.05), D(0.0, 0.0, 0.67), M["brass"], bevel=0.02)
     ctx["cap"].hide_render = True
     # two chairs side by side by the eyepiece: Dad's worn (at x -0.45), the second clean (at x 0.75)
     def chair(nm, x, clean):
         y = -0.55
-        sm = M["leather"] if clean else kit.plastic("#4a1a1c", 0.7, name="worn leather")
+        sm = M["leather"] if clean else kit.plastic("#4c2a2a", 0.7, name="worn leather")
         box(kit, f"{nm} seat", (0.52, 0.52, 0.07), D(x, y, SEAT - 0.035), sm, bevel=0.02)
         box(kit, f"{nm} back", (0.52, 0.06, 0.55), D(x, y - 0.26, SEAT + 0.3), sm, bevel=0.02)
         for sx in (-1, 1):
@@ -583,10 +583,10 @@ def build_dome(kit, ctx, M):
     chair("chair2", 0.75, True)
     # the dusty stool (three legs), the chart table with pinned charts, the dust on everything but the second chair
     sx0, sy0 = 2.9, 2.6
-    box(kit, 'side table top', (0.55, 0.42, 0.04), D(0.28, -0.5, 0.62), M['dust'], bevel=0.01)
+    box(kit, 'side table top', (0.7, 0.42, 0.04), D(0.3, 0.0, 0.62), M['dust'], bevel=0.01)
     for sx in (-1, 1):
         for sy in (-1, 1):
-            box(kit, f'side leg{sx}{sy}', (0.04, 0.04, 0.6), D(0.28 + sx * 0.23, -0.5 + sy * 0.17, 0.3), M['woodB'])
+            box(kit, f'side leg{sx}{sy}', (0.04, 0.04, 0.6), D(0.3 + sx * 0.3, 0.0 + sy * 0.17, 0.3), M['woodB'])
     kit.cyl("stool top", 0.24, 0.06, D(sx0, sy0, SEAT - 0.03), M["dust"], n=24)
     for i in range(3):
         a = 2 * math.pi * i / 3 + 0.3
@@ -618,7 +618,7 @@ def build_dome(kit, ctx, M):
     kit.light("red2", "POINT", D(1.3, 0.2, 0.3), 38, "#b04438", size=0.1)
     # a cold starlight rim from the slit, a soft one, so a silhouette keeps an edge
     kit.light("rim", "AREA", D(-0.35, 1.6, 6.4), 380, "#7d9dff", rot=(0, 0, 0), size=2.4)
-    kit.light("fill", "POINT", D(0.6, -0.4, 2.6), 30, "#ffd9a8", size=0.5)
+    kit.light("fill", "POINT", D(1.2, 1.2, 2.4), 45, "#d6e0ff", size=0.5)
     sph = kit.sphere("sky dome sph", 1.0, (CX, 0, 0), M["sky_dome"], seg=24)
     sph.scale = (350, 350, 350)
     sph.visible_shadow = False
@@ -889,7 +889,7 @@ def animate(kit, story, tl, t, ctx):
     gains["red2"] = (1.0 + 1.4 * (1.0 - bulbs)) if sc == "dome" else 0.0
     kit.LIGHTS["rim"]["light"].color = tuple(V((0.49, 0.62, 1.0)).lerp(V((1.0, 0.7, 0.72)), pink))
     gains["rim"] = (0.55 + 1.1 * (1.0 - bulbs)) if sc == "dome" else 0.0
-    gains["fill"] = (0.5 * bulbs) if sc == "dome" else 0.0
+    gains["fill"] = (0.5 * bulbs + 0.5) if sc == "dome" else 0.0
     # shooting stars (rare) over the slit
     # the doors, the bag
     ctx["mine hinge"].rotation_euler = (0, 0, math.radians(-100 if sc == "memory" else 0))
@@ -903,7 +903,7 @@ def animate(kit, story, tl, t, ctx):
     ctx["cap"].hide_render = cc is None
     if cc is not None:
         u = _ss((t - cc["t"]) / 0.9)
-        ctx["cap"].location = D(0.02 + 0.4 * u, -0.5, 0.67)
+        ctx["cap"].location = D(0.0 + 0.5 * u, 0.0, 0.67)
     # the cords: face the camera, bob, and knots by cue
     loc, tgt, lens, roll = bl_story.cam_at(spec, shot, t, None, tl)
     cam = V(loc)
