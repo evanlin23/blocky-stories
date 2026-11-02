@@ -27,9 +27,12 @@ FX0, FX1 = int(TEX_W * (0.5 - 50 / 360)), int(TEX_W * (0.5 + 50 / 360))
 FY0, FY1 = int(TEX_H * 0.08), int(TEX_H * 0.92)
 
 EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blank", "wide", "shut", "grin",
-               "terrified", "squeeze", "soft", "asleep", "laugh")
-# laugh (opt-in): eyes shut in up-arcs, brows raised, a wide open D-shaped mouth with a tongue: a real laugh, not a
-# grimace. terrified: the widest eyes with pin pupils, brows high and pulled up in the middle, the wavy worried mouth.
+               "terrified", "squeeze", "soft", "asleep", "fish", "laugh")
+# fish: opt-in (ep20): lips pushed out into a small pursed pout, cheeks sucked in (two slanted hollows beside the
+# mouth), eyes open and a little wide. It never opens the mouth: the pout is the joke.
+# laugh: opt-in (ep17): eyes shut in up-arcs, brows raised, a wide open D-shaped mouth with a tongue: a real laugh,
+# not a grimace.
+# terrified: the widest eyes with pin pupils, brows high and pulled up in the middle, the wavy worried mouth.
 # soft: eyes gently closed (the content up-arcs), relaxed brows and a small closed smile: touched, not scared.
 # squeeze: eyes screwed shut (short arcs sagging down, not the content up-arcs of "shut"), brows pinched low.
 # asleep: lids closed in flat lines that droop a little at the outer ends (asleep, not content: "shut" and "soft"
@@ -112,6 +115,15 @@ def _line_mouth(d, cx, cy, s, ink, open_):
         d.line([(x0, cy), (x1, cy)], fill=ink, width=max(2, int(th * k)))
 
 
+def _fish_mouth(d, cx, cy, s, ink):
+    """Lips pushed out (a small fat oval split by a line) and cheeks sucked in (a slanted hollow each side)."""
+    th = max(12, int(0.04 * s))
+    for side in (-1, 1):
+        _stroke(d, [(cx + side * 0.2 * s, cy - 0.075 * s), (cx + side * 0.125 * s, cy + 0.0 * s)], ink, th * 0.8)
+    _ellipse(d, cx, cy + 0.005 * s, 0.1 * s, 0.062 * s, fill=(214, 100, 110), outline=ink, width=int(th * 0.5))
+    d.line([(cx - 0.062 * s, cy + 0.007 * s), (cx + 0.062 * s, cy + 0.007 * s)], fill=ink, width=int(th * 0.4))
+
+
 def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
     w = 0.22 * s
     th = max(12, int(0.042 * s))
@@ -122,6 +134,8 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
         d.polygon(pts, fill=(54, 14, 20), outline=ink, width=th // 2)
         _ellipse(d, cx, cy + hh * 0.5, ww * 0.26, hh * 0.2, fill=(190, 80, 90))
         return
+    if expr == "fish":
+        return _fish_mouth(d, cx, cy, s, ink)
     if open_ > 0.05 and expr not in ("blank",):
         h = (0.035 + 0.075 * open_) * s
         ww = w * (0.55 if expr in ("scared", "wide", "crying", "worried", "terrified", "squeeze") else 0.75)
