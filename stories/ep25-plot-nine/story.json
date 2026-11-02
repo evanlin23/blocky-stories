@@ -45,7 +45,9 @@
   "bloom": 0.26,
   "grain": 0.012
  },
- "phonemes": {},
+ "phonemes": {
+  "Gran": "ɡɹˈæn"
+ },
  "cast": {
   "me": {
    "age": "adult",
@@ -125,8 +127,12 @@
      "comes back up"
     ],
     [
-     "out of the GROUND.",
-     "out of the ground."
+     "out of",
+     "out of"
+    ],
+    [
+     "the GROUND.",
+     "the ground."
     ]
    ]
   },
@@ -147,10 +153,15 @@
      "and by Thursday"
     ],
     [
-     "there's a KEY PLANT.",
-     "there's a key plant."
+     "there's a",
+     "there's a"
+    ],
+    [
+     "KEY PLANT.",
+     "key plant."
     ]
-   ]
+   ],
+   "tempo": 1.1
   },
   {
    "id": "L03",
@@ -189,12 +200,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Go and FIND it,",
-     "Go and find it,"
+     "Go and",
+     "Go and"
     ],
     [
-     "and it's YOURS again.",
-     "and it's yours again."
+     "FIND it,",
+     "find it,"
+    ],
+    [
+     "and it's",
+     "and it's"
+    ],
+    [
+     "YOURS again.",
+     "yours again."
     ]
    ]
   },
@@ -261,8 +280,12 @@
      "he says hello"
     ],
     [
-     "to three old STAKES.",
-     "to three old stakes."
+     "to three",
+     "to three"
+    ],
+    [
+     "old STAKES.",
+     "old stakes."
     ],
     [
      "ONE,",
@@ -316,7 +339,8 @@
      "in his BEANS.",
      "in his beans."
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L12",
@@ -327,8 +351,12 @@
      "Then his cap."
     ],
     [
-     "He LAUGHS it off.",
-     "He laughs it off."
+     "He LAUGHS",
+     "He laughs"
+    ],
+    [
+     "it off.",
+     "it off."
     ]
    ]
   },
@@ -424,15 +452,20 @@
      "is a HOLE.",
      "is a hole."
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L18",
    "who": "narrator",
    "chunks": [
     [
-     "I drop a PEBBLE",
-     "I drop a pebble"
+     "I drop",
+     "I drop"
+    ],
+    [
+     "a PEBBLE",
+     "a pebble"
     ],
     [
      "IN.",
@@ -460,16 +493,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "The head is in",
-     "The head is in"
+     "The head",
+     "The head"
+    ],
+    [
+     "is in",
+     "is in"
     ],
     [
      "plot FOUR,",
      "plot four,"
     ],
     [
-     "out to the ARMS.",
-     "out to the arms."
+     "out to",
+     "out to"
+    ],
+    [
+     "the ARMS.",
+     "the arms."
     ]
    ]
   },
@@ -486,8 +527,12 @@
      "plot seven,"
     ],
     [
-     "out to the CHEST.",
-     "out to the chest."
+     "out to",
+     "out to"
+    ],
+    [
+     "the CHEST.",
+     "the chest."
     ]
    ]
   },
@@ -504,8 +549,12 @@
      "to his beans"
     ],
     [
-     "like Gran's still THERE.",
-     "like Gran's still there."
+     "like Gran's",
+     "like Gran's"
+    ],
+    [
+     "still THERE.",
+     "still there."
     ]
    ]
   },
@@ -568,8 +617,12 @@
      "something stands,"
     ],
     [
-     "out to the WAIST.",
-     "out to the waist."
+     "out to",
+     "out to"
+    ],
+    [
+     "the WAIST.",
+     "the waist."
     ]
    ]
   },
@@ -655,8 +708,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "ONE, FOUR, SEVEN, NINE.",
-     "one, four, seven, nine."
+     "ONE, FOUR,",
+     "one, four,"
+    ],
+    [
+     "SEVEN, NINE.",
+     "seven, nine."
     ],
     [
      "Every plot",
@@ -693,8 +750,12 @@
      "and the hill"
     ],
     [
-     "gives every year BACK.",
-     "gives every year back."
+     "gives every",
+     "gives every"
+    ],
+    [
+     "year BACK.",
+     "year back."
     ]
    ]
   },
@@ -711,8 +772,12 @@
      "the way out,"
     ],
     [
-     "he won't remember her",
-     "he won't remember her"
+     "he won't",
+     "he won't"
+    ],
+    [
+     "remember her",
+     "remember her"
     ],
     [
      "at ALL.",
@@ -725,16 +790,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "But what comes BACK",
-     "But what comes back"
+     "But what",
+     "But what"
+    ],
+    [
+     "comes BACK",
+     "comes back"
     ],
     [
      "is yours AGAIN",
      "is yours again"
     ],
     [
-     "if you FIND it.",
-     "if you find it."
+     "if you",
+     "if you"
+    ],
+    [
+     "FIND it.",
+     "find it."
     ]
    ]
   },
@@ -743,12 +816,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "So I walk him",
-     "So I walk him"
+     "So I",
+     "So I"
     ],
     [
-     "back up the PATH.",
-     "back up the path."
+     "walk him",
+     "walk him"
+    ],
+    [
+     "back up",
+     "back up"
+    ],
+    [
+     "the PATH.",
+     "the path."
     ]
    ]
   },
@@ -765,10 +846,15 @@
      "I tell him"
     ],
     [
-     "what he told ME.",
-     "what he told me."
+     "what he",
+     "what he"
+    ],
+    [
+     "told ME.",
+     "told me."
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L37",
@@ -809,8 +895,12 @@
      "in the eyes"
     ],
     [
-     "and says her NAME.",
-     "and says her name."
+     "and says",
+     "and says"
+    ],
+    [
+     "her NAME.",
+     "her name."
     ]
    ]
   },
@@ -841,8 +931,12 @@
      "That night,"
     ],
     [
-     "he hangs his CAP",
-     "he hangs his cap"
+     "he hangs",
+     "he hangs"
+    ],
+    [
+     "his CAP",
+     "his cap"
     ],
     [
      "by her SCARF.",
@@ -913,30 +1007,30 @@
     [
      0,
      [
-      -1.0,
-      -13.6,
-      0.7
+      -1.3,
+      -14.1,
+      0.62
      ],
      [
-      -3.5,
-      -16.8,
-      1.15
+      -3.0,
+      -15.9,
+      1.0
      ],
-     46
+     31
     ],
     [
      1,
      [
-      -1.05,
-      -13.65,
-      0.7
+      -1.35,
+      -14.15,
+      0.62
      ],
      [
-      -3.5,
-      -16.8,
-      1.15
+      -3.0,
+      -15.9,
+      1.0
      ],
-     44
+     30
     ]
    ],
    "hand": 0.006,
@@ -1088,8 +1182,8 @@
       3.0
      ],
      [
-      -2.3,
-      -27.2,
+      -2.0,
+      -26.9,
       0.0
      ],
      24
@@ -1204,7 +1298,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "Grandad tips his cap to the stake at plot one",
-   "at": "L09.3-0.25"
+   "at": "L09.4-0.25"
   },
   {
    "id": "S11",
@@ -1227,7 +1321,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "...at plot four",
-   "at": "L09.3+0.2"
+   "at": "L09.4+0.2"
   },
   {
    "id": "S12",
@@ -1250,7 +1344,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "...at plot seven",
-   "at": "L09.3+0.65"
+   "at": "L09.4+0.65"
   },
   {
    "id": "S13",
@@ -1387,16 +1481,16 @@
     [
      0,
      [
-      -0.3,
-      2.3,
-      1.65
+      -0.6,
+      3.4,
+      1.9
      ],
      [
       3.4,
       -3.6,
-      0.4
+      0.3
      ],
-     24
+     26
     ]
    ],
    "hand": 0.006,
@@ -1691,11 +1785,11 @@
       1.6
      ],
      [
-      0.5,
-      -26.4,
+      0.0,
+      -26.3,
       1.5
      ],
-     40
+     32
     ]
    ],
    "hand": 0.004,
@@ -1908,15 +2002,15 @@
      0,
      [
       3.2,
-      -31.8,
-      2.4
+      -32.0,
+      1.6
      ],
      [
       3.2,
       -28.8,
-      0.9
+      1.1
      ],
-     28
+     22
     ]
    ],
    "hand": 0.004,
@@ -1930,16 +2024,16 @@
     [
      0,
      [
-      0.0,
-      3.0,
-      7.0
+      0.4,
+      -3.0,
+      6.0
      ],
      [
-      0.2,
-      -20.0,
+      0.3,
+      -24.0,
       0.0
      ],
-     22
+     24
     ]
    ],
    "hand": 0.004,
@@ -1999,14 +2093,14 @@
     [
      0,
      [
-      2.9,
-      -30.9,
+      1.3,
+      -31.3,
       1.5
      ],
      [
       3.0,
-      -29.3,
-      1.45
+      -30.3,
+      1.5
      ],
      34
     ]
@@ -2022,14 +2116,14 @@
     [
      0,
      [
-      3.9,
-      -29.7,
-      1.5
+      2.3,
+      -27.8,
+      1.55
      ],
      [
-      3.0,
-      -29.3,
-      1.45
+      3.2,
+      -30.1,
+      1.5
      ],
      34
     ]
@@ -2082,16 +2176,16 @@
     [
      0,
      [
-      0.7,
-      -2.6,
+      4.0,
+      -6.8,
       1.5
      ],
      [
-      2.4,
+      1.8,
       -4.6,
-      1.3
+      1.4
      ],
-     30
+     36
     ]
    ],
    "hand": 0.006,
@@ -2303,16 +2397,16 @@
     [
      0,
      [
-      0.3,
-      -30.4,
-      1.4
+      -0.4,
+      -29.4,
+      0.75
      ],
      [
-      -3.0,
+      -3.5,
       -28.0,
-      0.4
+      0.25
      ],
-     26
+     30
     ]
    ],
    "hand": 0.006,
@@ -2326,16 +2420,16 @@
     [
      0,
      [
-      -1.8,
+      -2.4,
       -28.0,
-      0.3
+      0.2
      ],
      [
       -3.5,
       -28.0,
-      0.2
+      0.28
      ],
-     30
+     40
     ]
    ],
    "hand": 0.004,
@@ -2350,40 +2444,6 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L06",
-    "pos": [
-     -0.8,
-     -26.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     20
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": -90
-   },
-   {
-    "at": "L07",
-    "pos": [
-     -0.8,
-     -26.9
-    ]
    },
    {
     "at": "L07",
@@ -2481,14 +2541,14 @@
     "yaw": 0
    },
    {
-    "at": "L09.3-0.55",
+    "at": "L09.4-0.55",
     "pos": [
      -0.38,
      -3.0
     ]
    },
    {
-    "at": "L09.3-0.25",
+    "at": "L09.4-0.25",
     "hidden": true,
     "blend": 0
    },
@@ -2502,8 +2562,8 @@
    {
     "at": "L13",
     "pos": [
-     0.55,
-     0.9
+     -0.3,
+     1.3
     ],
     "blend": 0,
     "hidden": false,
@@ -2534,8 +2594,8 @@
    {
     "at": "L19",
     "pos": [
-     0.55,
-     0.9
+     -0.3,
+     1.3
     ]
    },
    {
@@ -2580,7 +2640,7 @@
    {
     "at": "L24",
     "pos": [
-     0.5,
+     -0.05,
      -26.4
     ],
     "blend": 0,
@@ -2602,7 +2662,7 @@
     "blink": true,
     "sit": false,
     "expr": "worried",
-    "yaw": -33.0
+    "yaw": -20.6
    },
    {
     "at": "L25",
@@ -2612,7 +2672,7 @@
    {
     "at": "L30",
     "pos": [
-     0.5,
+     -0.05,
      -26.4
     ]
    },
@@ -2653,8 +2713,8 @@
    {
     "at": "L33",
     "pos": [
-     2.9,
-     -29.5
+     3.0,
+     -30.3
     ],
     "blend": 0,
     "hidden": false,
@@ -2675,11 +2735,11 @@
     "blink": true,
     "sit": false,
     "expr": "scared",
-    "yaw": 126.4
+    "yaw": 150.5
    },
    {
     "at": "L33.1",
-    "yaw": -153.4,
+    "yaw": -163.3,
     "head": [
      0,
      0
@@ -2689,8 +2749,8 @@
    {
     "at": "L34",
     "pos": [
-     2.9,
-     -29.5
+     3.0,
+     -30.3
     ]
    },
    {
@@ -2777,8 +2837,8 @@
    {
     "at": "L36",
     "pos": [
-     1.7,
-     -4.5
+     1.2,
+     -4.0
     ],
     "blend": 0,
     "hidden": false,
@@ -2799,7 +2859,7 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": 90.0
+    "yaw": 45.0
    },
    {
     "from": "L36",
@@ -2813,8 +2873,8 @@
    {
     "at": "L36.2",
     "pos": [
-     1.7,
-     -4.5
+     1.2,
+     -4.0
     ]
    },
    {
@@ -2889,77 +2949,14 @@
     "blend": 0
    },
    {
-    "at": "L39",
-    "pos": [
-     2.3,
-     -22.9
-    ]
-   },
-   {
-    "at": "L39",
-    "pos": [
-     2.5,
-     -30.4
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "soft",
-    "yaw": 139.8
-   },
-   {
     "at": "L39.2",
     "hidden": true,
     "blend": 0
    },
    {
     "at": "L42",
-    "pos": [
-     2.5,
-     -30.4
-    ]
-   },
-   {
-    "at": "L42",
-    "pos": [
-     -0.6,
-     -28.8
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "worried",
-    "yaw": 29.4
+    "hidden": true,
+    "blend": 0
    },
    {
     "at": "L43",
@@ -3053,21 +3050,21 @@
     "yaw": 0
    },
    {
-    "at": "L09.3-0.55",
+    "at": "L09.4-0.55",
     "pos": [
      0.38,
      -3.0
     ]
    },
    {
-    "at": "L09.3-0.25",
+    "at": "L09.4-0.25",
     "pos": [
      0.38,
      -3.0
     ]
    },
    {
-    "at": "L09.3-0.25",
+    "at": "L09.4-0.25",
     "pos": [
      0.25,
      -1.8
@@ -3094,14 +3091,14 @@
     "yaw": 90
    },
    {
-    "at": "L09.3+0.2",
+    "at": "L09.4+0.2",
     "pos": [
      0.25,
      -1.8
     ]
    },
    {
-    "at": "L09.3+0.2",
+    "at": "L09.4+0.2",
     "pos": [
      -0.25,
      -7.6
@@ -3128,14 +3125,14 @@
     "yaw": -90
    },
    {
-    "at": "L09.3+0.65",
+    "at": "L09.4+0.65",
     "pos": [
      -0.25,
      -7.6
     ]
    },
    {
-    "at": "L09.3+0.65",
+    "at": "L09.4+0.65",
     "pos": [
      0.25,
      -19.6
@@ -3528,44 +3525,10 @@
     "blend": 0
    },
    {
-    "at": "L34.1",
-    "pos": [
-     2.55,
-     -28.8
-    ]
-   },
-   {
-    "at": "L34.1",
-    "pos": [
-     2.55,
-     -28.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 28.4
-   },
-   {
     "at": "L35",
     "pos": [
      2.55,
-     -28.9
+     -28.8
     ]
    },
    {
@@ -3612,8 +3575,8 @@
    {
     "at": "L36",
     "pos": [
-     2.5,
-     -5.2
+     2.2,
+     -5.0
     ],
     "blend": 0,
     "hidden": false,
@@ -3634,13 +3597,13 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": -131.2
+    "yaw": -135.0
    },
    {
     "at": "L36.2",
     "pos": [
-     2.5,
-     -5.2
+     2.2,
+     -5.0
     ]
    },
    {
@@ -3847,8 +3810,8 @@
    {
     "at": 0,
     "pos": [
-     -3.75,
-     -16.9
+     -3.4,
+     -16.3
     ],
     "blend": 0,
     "hidden": false,
@@ -3869,7 +3832,7 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": 140.2
+    "yaw": 135.0
    },
    {
     "at": "L01.2",
@@ -3884,8 +3847,8 @@
    {
     "at": "L05",
     "pos": [
-     -3.75,
-     -16.9
+     -3.4,
+     -16.3
     ]
    },
    {
@@ -3968,6 +3931,18 @@
    "dur": 3.0
   },
   {
+   "at": "L31",
+   "name": "tod",
+   "set": "fogthin",
+   "dur": 0.3
+  },
+  {
+   "at": "L32",
+   "name": "tod",
+   "set": "fog",
+   "dur": 0.3
+  },
+  {
    "at": "L38",
    "name": "tod",
    "set": "fogthin",
@@ -3994,7 +3969,7 @@
    "at": "L13",
    "name": "digger",
    "plot": 1,
-   "up": -0.12,
+   "up": 0.0,
    "yaw": 0
   },
   {
@@ -4068,17 +4043,19 @@
    "at": "L42",
    "name": "digger",
    "plot": 10,
-   "up": -0.34,
+   "up": -0.3,
    "yaw": 90,
-   "head": 0
+   "head": 0,
+   "nosite": true
   },
   {
    "at": "L43",
    "name": "digger",
    "plot": 10,
-   "up": -0.24,
+   "up": -0.17,
    "yaw": 90,
-   "head": 0
+   "head": 0,
+   "nosite": true
   },
   {
    "at": 0,

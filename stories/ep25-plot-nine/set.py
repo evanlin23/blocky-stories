@@ -432,7 +432,7 @@ def build_plots(kit, M, ctx):
         kit.box(f"row{rx}", (0.9, 4.6, 0.12), (rx, (y0 + y1) / 2, 0.06), M["wet"], bevel=0.05)
         for k in range(4):
             wy = y1 - 0.9 - k * 1.2
-            if rx == 2.9 and k in (0, 2):
+            if k == 3 or (rx == 2.9 and k in (0, 2)):
                 continue
             wig = kit.empty(f"wig{rx}_{k}", (rx, wy, 0))
             for j, (ax, ay) in enumerate(((0.32, 0.32), (-0.32, 0.32), (0.32, -0.32), (-0.32, -0.32))):
@@ -441,7 +441,7 @@ def build_plots(kit, M, ctx):
                 z = rng.uniform(0.3, 1.8)
                 u = 1 - z / 2.05
                 lx, ly = rng.choice((-1, 1)) * 0.32 * u, rng.choice((-1, 1)) * 0.32 * u
-                kit.box(f"lf{rx}_{k}_{j}", (0.2, 0.13, 0.015), (lx, ly, z), M["leaf" if j % 2 else "leaf2"], wig,
+                kit.box(f"lf{rx}_{k}_{j}", (0.14, 0.09, 0.015), (lx, ly, z), M["leaf" if j % 2 else "leaf2"], wig,
                         rot=(rng.uniform(-0.8, 0.8), rng.uniform(-0.8, 0.8), rng.uniform(0, 3)), bevel=0.005)
     # Grandad's shed at the path corner, a door in its +x face
     sx0, sx1, sy0, sy1 = 1.0, 2.4, -27.6, -25.8
@@ -958,6 +958,7 @@ def animate(kit, story, tl, t, ctx):
         ctx["neckroots"].rotation_euler = (0, 0, math.radians(c.get("head", 0)) * 0.5)
         # the loosened ring stays at the ground whatever the height
         ctx["site"].location = (0, 0, 0)
+        _show([ctx["site"]], not c.get("nosite"))
     hc = _last(_cues(tl, "holes"), t) or {"plots": []}
     for n, g in ctx["holes"].items():
         _show([g], n in hc["plots"])

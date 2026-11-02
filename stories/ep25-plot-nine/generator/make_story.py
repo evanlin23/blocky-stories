@@ -32,7 +32,7 @@ LOOP = 0.25
 full.append({"id": "P04", "pause": LOOP, "chunks": []})
 lines = full
 
-TEMPO = {}
+TEMPO = {"L02": 1.1, "L11": 0.93, "L17": 0.93, "L36": 0.93}
 for ln in lines:
     if ln['id'] in TEMPO:
         ln['tempo'] = TEMPO[ln['id']]
@@ -69,7 +69,7 @@ def yaw_to(a, b):
 
 # places
 DIG = {1: (3.4, -3.6), 4: (-3.6, -10.0), 7: (3.4, -22.0), 9: (3.85, -28.8), 10: (-3.5, -28.0)}
-UP = {"lump": -0.12, "shoulders": 0.2, "arms": 0.38, "chest": 0.5, "waist": 0.66, "crown": -0.34, "eyes": -0.24}
+UP = {"lump": 0.0, "shoulders": 0.2, "arms": 0.38, "chest": 0.5, "waist": 0.66, "crown": -0.3, "eyes": -0.17}
 CAR_F = (2.95, -26.25)          # Grandad outside the shed
 BUCKET = (3.2, -25.3)
 BUCKET_SEAT = [BUCKET[0], BUCKET[1], -0.38]
@@ -81,21 +81,21 @@ EYE = 1.55
 SHOTS = [
     # 01 the rule, L01 to L12
     (0, "plot six: keys on a stalk, the woman behind", 2,
-     c([0, [-1.0, -13.6, 0.7], [-3.5, -16.8, 1.15], 46], [1, [-1.05, -13.65, 0.7], [-3.5, -16.8, 1.15], 44])),
+     c([0, [-1.3, -14.1, 0.62], [-3.0, -15.9, 1.0], 31], [1, [-1.35, -14.15, 0.62], [-3.0, -15.9, 1.0], 30])),
     ("L02", "close on the keys on the stalk, dew", 4, still([-1.5, -14.6, 0.78], [-2.75, -15.6, 0.74], 36)),
     ("L03", "three umbrella handles by the gate", 2,
      move(([3.3, -2.5, 0.55], [1.9, -0.6, 0.35]), ([3.1, -2.3, 0.55], [1.9, -0.6, 0.35]), 26)),
     ("L04", "plot two's flask bush", 2, move(([-0.4, -6.4, 0.95], [-3.1, -4.1, 0.65]), ([-0.5, -6.2, 0.95], [-3.1, -4.1, 0.65]), 26)),
     ("L05", "the woman wheels her bike up the path, keys on the bars", 2,
      move(([3.6, -13.4, 1.05], [-0.2, -11.6, 0.8]), ([3.6, -13.3, 1.05], [-0.2, -11.3, 0.8]), 30)),
-    ("L06", "plot ten from above: bare raked soil, my wellies", 4, still([-0.9, -25.0, 3.0], [-2.3, -27.2, 0.0], 24)),
+    ("L06", "plot ten from above: bare raked soil, my wellies", 4, still([-0.9, -25.0, 3.0], [-2.0, -26.9, 0.0], 24)),
     ("L07", "me at plot ten, pleased with myself", 2, still([0.9, -26.2, 1.55], [-2.3, -27.0, 1.4], 28)),
     ("L08", "across the path: Grandad on his bucket, a small wave", 2, still([0.4, -23.4, 1.45], [3.2, -25.3, 1.15], 50)),
     ("L09", "walking down the path at dawn, the two of us", 2,
      move(([0.1, 1.8, 1.55], [0.1, -4.0, 1.0]), ([0.1, 0.8, 1.55], [0.1, -4.0, 1.0]), 26)),
-    ("L09.3-0.25", "Grandad tips his cap to the stake at plot one", 2, still([1.9, -0.9, 1.35], [0.3, -1.8, 1.35], 36)),
-    ("L09.3+0.2", "...at plot four", 2, still([-1.9, -6.8, 1.35], [-0.3, -7.6, 1.35], 36)),
-    ("L09.3+0.65", "...at plot seven", 2, still([1.9, -18.9, 1.35], [0.3, -19.6, 1.35], 36)),
+    ("L09.4-0.25", "Grandad tips his cap to the stake at plot one", 2, still([1.9, -0.9, 1.35], [0.3, -1.8, 1.35], 36)),
+    ("L09.4+0.2", "...at plot four", 2, still([-1.9, -6.8, 1.35], [-0.3, -7.6, 1.35], 36)),
+    ("L09.4+0.65", "...at plot seven", 2, still([1.9, -18.9, 1.35], [0.3, -19.6, 1.35], 36)),
     ("L10", "the tool wall: the green scarf on its hook", 4,
      move(([60.4, 0.1, 1.42], [60.45, 1.8, 1.38]), ([60.4, 0.3, 1.42], [60.45, 1.8, 1.38]), 30)),
     ("L11", "glasses on a stalk in the beans", 2, still([2.9, -24.6, 0.85], [3.8, -26.85, 0.6], 34)),
@@ -103,7 +103,7 @@ SHOTS = [
     ("L12", "his cap on a stalk", 2, still([3.3, -24.6, 0.85], [3.85, -27.45, 0.6], 34)),
     ("L12.1", "Grandad bareheaded, laughing", 2, still([4.2, -22.6, 1.4], [3.2, -25.3, 1.2], 32)),
     # 02 the head, L13 to L24
-    ("L13", "over my shoulder: a lump in plot one", 2, still([-0.3, 2.3, 1.65], [3.4, -3.6, 0.4], 24)),
+    ("L13", "over my shoulder: a lump in plot one", 2, still([-0.6, 3.4, 1.9], [3.4, -3.6, 0.3], 26)),
     ("L14", "plot one: the head and shoulders in profile, the knot", 4, still([1.1, -3.7, 0.5], [3.4, -3.6, 0.38], 30)),
     ("L15", "its face: two green points", 4, still([3.5, -5.5, 0.4], [3.4, -3.6, 0.38], 28)),
     ("L16", "Grandad at the gate, still", 2, still([1.75, -2.5, 1.45], [0.45, -0.9, 1.4], 36)),
@@ -117,7 +117,7 @@ SHOTS = [
     ("L22", "Grandad on his bucket, chatting to the beans", 2, still([3.7, -27.4, 1.25], [3.2, -25.3, 1.05], 38)),
     ("L23", "Grandad, worried, mid-sentence", 2, still([2.1, -22.9, 1.25], [3.2, -25.3, 1.1], 40)),
     ("L24", "me, worried; far up the path the head in plot seven", 4,
-     still([-0.8, -28.4, 1.6], [0.5, -26.4, 1.5], 40)),
+     still([-0.8, -28.4, 1.6], [0.0, -26.3, 1.5], 32)),
     # 03 Friday, L25 to L33
     ("L25", "wide over the bottom fence: mist coming up", 4,
      move(([0.0, -33.2, 1.5], [0.0, -10.0, 1.0]), ([0.0, -33.2, 1.5], [0.0, -10.0, 1.0]), 19)),
@@ -129,17 +129,17 @@ SHOTS = [
     ("L29.1", "close on the root knot under its chin", 4, still([2.75, -28.8, 0.92], [3.85, -28.8, 0.78], 34)),
     ("L29.4", "the scarf's knot on the hook, same framing", 4, still([60.0, 0.2, 1.5], [60.28, 1.8, 1.32], 34)),
     ("L30", "side-on wide: Grandad and the head across the bean row", 4,
-     still([3.2, -31.8, 2.4], [3.2, -28.8, 0.9], 28)),
+     still([3.2, -32.0, 1.6], [3.2, -28.8, 1.1], 22)),
     ("L31", "high wide down the path: holes in a line, the head in nine", 4,
-     still([0.0, 3.0, 7.0], [0.2, -20.0, 0.0], 22)),
+     still([0.4, -3.0, 6.0], [0.3, -24.0, 0.0], 24)),
     ("L32", "overhead on plot seven's hole", 4, still([3.4, -21.9, 2.6], [3.4, -22.0, 0.0], 24)),
     ("L32.2", "where its waist meets the soil", 4, still([2.8, -29.9, 0.55], [3.85, -28.8, 0.5], 30)),
-    ("L33", "me, from the head to Grandad", 2, still([2.9, -30.9, 1.5], [3.0, -29.3, 1.45], 34)),
+    ("L33", "me, from the head to Grandad", 2, still([1.3, -31.3, 1.5], [3.0, -30.3, 1.5], 34)),
     # 04 the walk, L34 to L40
-    ("L34", "me, resolved, turning to Grandad", 2, still([3.9, -29.7, 1.5], [3.0, -29.3, 1.45], 34)),
+    ("L34", "me, resolved, turning to Grandad", 2, still([2.3, -27.8, 1.55], [3.2, -30.1, 1.5], 34)),
     ("L35", "from behind: the two of us walking up the path", 4,
      move(([0.0, -24.8, 1.5], [0.0, -14.0, 1.0]), ([0.0, -23.0, 1.5], [0.0, -13.0, 1.0]), 26)),
-    ("L36", "at plot one's hole, me telling him", 2, still([0.7, -2.6, 1.5], [2.4, -4.6, 1.3], 30)),
+    ("L36", "at plot one's hole, me telling him", 2, still([4.0, -6.8, 1.5], [1.8, -4.6, 1.4], 36)),
     ("L36.2", "plot four's hole: his face starts to change", 2, still([-0.3, -8.0, 1.55], [-2.4, -8.8, 1.45], 38)),
     ("L37", "plot seven: Grandad nods", 2, still([0.4, -20.2, 1.5], [2.2, -21.6, 1.4], 34)),
     ("L37.1", "his shed down the hill in the fog", 4, still([0.6, -21.0, 1.3], [1.7, -26.7, 1.0], 28)),
@@ -151,8 +151,8 @@ SHOTS = [
      move(([60.35, 0.3, 1.45], [60.45, 1.8, 1.4]), ([60.4, 0.2, 1.45], [60.45, 1.8, 1.4]), 32)),
     # 05 the sting, L41 to L43
     ("L41", "high wide down the hill, grey dawn", 4, still([0.0, 3.0, 6.5], [0.2, -18.0, 0.0], 20)),
-    ("L42", "plot ten: a crown just breaks the soil", 2, still([0.3, -30.4, 1.4], [-3.0, -28.0, 0.4], 26)),
-    ("L43", "the crown, low and close", 4, still([-1.8, -28.0, 0.3], [-3.5, -28.0, 0.2], 30)),
+    ("L42", "plot ten: a crown just breaks the soil", 2, still([-0.4, -29.4, 0.75], [-3.5, -28.0, 0.25], 30)),
+    ("L43", "the crown, low and close", 4, still([-2.4, -28.0, 0.2], [-3.5, -28.0, 0.28], 40)),
 ]
 
 shots = []
@@ -192,7 +192,7 @@ def talk(who, a, b):
 
 
 # the newcomer: plot six (L01), wheeling her bike (L05), and nowhere else
-put("newcomer", 0, [-3.75, -16.9], yaw=yaw_to([-3.75, -16.9], [-1.0, -13.6]), expr="neutral", head=[0, 6])
+put("newcomer", 0, [-3.4, -16.3], yaw=yaw_to([-3.4, -16.3], [-1.5, -14.4]), expr="neutral", head=[0, 6])
 key("newcomer", "L01.2", expr="smile", blend=0.5)
 hide("newcomer", "L02")
 put("newcomer", "L05", [-0.45, -12.6], yaw=180, arms=[0, 60])
@@ -202,34 +202,32 @@ hide("newcomer", "L06")
 
 # me
 hide("me", 0)
-put("me", "L06", [-0.8, -26.9], yaw=-90, head=[0, 20])
 put("me", "L07", [-2.2, -27.0], yaw=90, expr="smile", head=[0, 4])
 put("me", "L08", [-0.2, -24.2], yaw=90, head=[0, -4])
 put("me", "L09", [-0.38, -0.2], yaw=0)
-walk("me", "L09.3-0.55", [-0.38, -3.0])
-hide("me", "L09.3-0.25")
-put("me", "L13", [0.55, 0.9], yaw=0, head=[0, 4])
+walk("me", "L09.4-0.55", [-0.38, -3.0])
+hide("me", "L09.4-0.25")
+put("me", "L13", [-0.3, 1.3], yaw=0, head=[0, 4])
 hide("me", "L14")
 put("me", "L19", [2.45, -4.1], yaw=yaw_to([2.45, -4.1], DIG[1]), expr="scared", lean=32, head=[0, 18])
 hide("me", "L20")
-put("me", "L24", [0.5, -26.4], yaw=yaw_to([0.5, -26.4], [-0.8, -28.4]), expr="worried", head=[0, -6])
+put("me", "L24", [-0.05, -26.4], yaw=yaw_to([-0.05, -26.4], [-0.8, -28.4]), expr="worried", head=[0, -6])
 hide("me", "L25")
 put("me", "L30", [4.9, -30.0], yaw=180, expr="worried")
-put("me", "L33", [2.9, -29.5], yaw=yaw_to([2.9, -29.5], DIG[9]), expr="scared", head=[0, 12])
-key("me", "L33.1", yaw=yaw_to([2.9, -29.5], GRAN_FACE), head=[0, 0], blend=0.7)
+put("me", "L33", [3.0, -30.3], yaw=yaw_to([3.0, -30.3], DIG[9]), expr="scared", head=[0, 12])
+key("me", "L33.1", yaw=yaw_to([3.0, -30.3], GRAN_FACE), head=[0, 0], blend=0.7)
 put("me", "L34", [3.2, -30.1], yaw=yaw_to([3.2, -30.1], GRAN_FACE), expr="neutral")
 key("me", "L34.1", expr="neutral", yaw=yaw_to([3.2, -30.1], GRAN_FACE), blend=0.4)
 put("me", "L35", [-0.4, -22.0], yaw=180)
 walk("me", "L35>", [-0.4, -19.2])
-put("me", "L36", [1.7, -4.5], yaw=yaw_to([1.7, -4.5], [2.4, -4.5]))
+put("me", "L36", [1.2, -4.0], yaw=yaw_to([1.2, -4.0], [2.2, -5.0]))
 talk("me", "L36", "L36.2")
 put("me", "L36.2", [-2.2, -10.0], yaw=yaw_to([-2.2, -10.0], [-2.4, -8.7]))
 put("me", "L37", [2.3, -22.9], yaw=yaw_to([2.3, -22.9], [2.2, -21.6]))
 hide("me", "L37.1")
 hide("me", "L38")
-put("me", "L39", [2.5, -30.4], yaw=yaw_to([2.5, -30.4], DIG[9]), expr="soft")
 hide("me", "L39.2")
-put("me", "L42", [-0.6, -28.8], yaw=yaw_to([-0.6, -28.8], [0.3, -30.4]), expr="worried")
+hide("me", "L42")
 hide("me", "L43")
 
 # Grandad
@@ -238,10 +236,10 @@ put("carter", "L08", BUCKET_SEAT, yaw=-90, expr="smile", sit=True, arms=[0, 40])
 key("carter", "L08.1", arms=[0, 40], blend=0.2)
 key("carter", "L08.2", arms=[0, 0], blend=0.4)
 put("carter", "L09", [0.38, -0.2], yaw=0)
-walk("carter", "L09.3-0.55", [0.38, -3.0])
-put("carter", "L09.3-0.25", [0.25, -1.8], yaw=90, arms=[0, 100], head=[0, 14], expr="smile")
-put("carter", "L09.3+0.2", [-0.25, -7.6], yaw=-90, arms=[0, 100], head=[0, 14], expr="smile")
-put("carter", "L09.3+0.65", [0.25, -19.6], yaw=90, arms=[0, 100], head=[0, 14], expr="smile")
+walk("carter", "L09.4-0.55", [0.38, -3.0])
+put("carter", "L09.4-0.25", [0.25, -1.8], yaw=90, arms=[0, 100], head=[0, 14], expr="smile")
+put("carter", "L09.4+0.2", [-0.25, -7.6], yaw=-90, arms=[0, 100], head=[0, 14], expr="smile")
+put("carter", "L09.4+0.65", [0.25, -19.6], yaw=90, arms=[0, 100], head=[0, 14], expr="smile")
 hide("carter", "L10")
 put("carter", "L11.2", BUCKET_SEAT, yaw=yaw_to(BUCKET, [3.0, -24.0]), expr="smirk", sit=True, head=[0, 16])
 hide("carter", "L12")
@@ -260,10 +258,9 @@ hide("carter", "L29.1")
 put("carter", "L30", GRAN_FACE, yaw=90, expr="neutral")
 put("carter", "L33", GRAN_FACE, yaw=90, expr="worried")
 hide("carter", "L34")
-put("carter", "L34.1", [2.55, -28.9], yaw=yaw_to([2.55, -28.9], [3.2, -30.1]), expr="neutral")
 put("carter", "L35", [0.4, -22.0], yaw=180)
 walk("carter", "L35>", [0.4, -19.2])
-put("carter", "L36", [2.5, -5.2], yaw=yaw_to([2.5, -5.2], [1.7, -4.5]), expr="neutral")
+put("carter", "L36", [2.2, -5.0], yaw=yaw_to([2.2, -5.0], [1.2, -4.0]), expr="neutral")
 put("carter", "L36.2", [-2.4, -8.7], yaw=yaw_to([-2.4, -8.7], [-0.3, -8.0]), expr="neutral")
 key("carter", "L36.2+0.8", expr="smile", blend=0.5)
 put("carter", "L37", [2.2, -21.6], yaw=yaw_to([2.2, -21.6], [0.4, -20.2]), expr="smile", head=[0, 10])
@@ -287,6 +284,8 @@ cues = [
     tod("L17", "tue"),
     tod("L21", "wed"),
     {"at": "L25", "name": "tod", "set": "fog", "dur": 3.0},
+    tod("L31", "fogthin"),
+    tod("L32", "fog"),
     {"at": "L38", "name": "tod", "set": "fogthin", "dur": 2.5},
     tod("L40", "dusk"),
     tod("L41", "grey"),
@@ -303,8 +302,8 @@ cues = [
     {"at": "L27", "name": "digger", "plot": 9, "up": UP["waist"], "yaw": 90, "head": 180},
     {"at": "L39", "name": "digger", "plot": 9, "up": UP["shoulders"], "yaw": 90, "head": 180},
     {"at": "L39.2", "name": "digger", "hidden": True},
-    {"at": "L42", "name": "digger", "plot": 10, "up": UP["crown"], "yaw": 90, "head": 0},
-    {"at": "L43", "name": "digger", "plot": 10, "up": UP["eyes"], "yaw": 90, "head": 0},
+    {"at": "L42", "name": "digger", "plot": 10, "up": UP["crown"], "yaw": 90, "head": 0, "nosite": True},
+    {"at": "L43", "name": "digger", "plot": 10, "up": UP["eyes"], "yaw": 90, "head": 0, "nosite": True},
     # holes: plot one from Tuesday, four from Wednesday, seven from Friday; all settle at L39
     {"at": 0, "name": "holes", "plots": []},
     {"at": "L17", "name": "holes", "plots": [1]},
@@ -357,7 +356,7 @@ story = {
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.03], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.36, "bloom": 0.26, "grain": 0.012},
-    "phonemes": {},
+    "phonemes": {"Gran": "ɡɹˈæn"},
     "cast": cast,
     "lines": lines,
     "shots": shots,
