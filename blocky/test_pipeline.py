@@ -129,3 +129,56 @@ def test_film_artifact_lookup(monkeypatch):
     assert f["id"] == 2 and f["run_id"] == 22 and f["url"].endswith("/actions/runs/22")
     payload["artifacts"] = []
     assert stories.film("photo-strip") is None
+
+
+def test_cut_rate_warning(tmp_path):
+    """`check` warns when the average shot runs longer than the hits' 2.3 s, and not otherwise."""
+    from blocky import checks, timeline
+
+    tlp = tmp_path / "tl.json"
+    tl = timeline.write("knock-back", ROOT / "stories/knock-back/voice-timings.json", tlp)   # 79 shots in 147 s
+    cut_warn = lambda path: [m for _, m in checks.run("knock-back", path) if "a shot every" in m]
+    assert cut_warn(tlp) == []
+    slow = tmp_path / "slow.json"
+    slow.write_text(json.dumps(dict(tl, shots=tl["shots"][:20])))   # 20 shots in 147 s: one every 7.3 s
+    assert cut_warn(slow) and "7.3 s" in cut_warn(slow)[0]
+
+
+def test_flash_safe_flicker(monkeypatch):
+    """Safe flicker never drops below 40% and changes gently frame to frame, with dips at least ~1 s apart. The
+    default flicker is untouched (it still blacks out, which is why safe mode exists)."""
+    import types
+
+    monkeypatch.setitem(sys.modules, "bpy", types.ModuleType("bpy"))
+    mu = types.ModuleType("mathutils")
+    mu.Vector = tuple
+    monkeypatch.setitem(sys.modules, "mathutils", mu)
+    import importlib
+
+    kit = importlib.import_module("blocky.kit")
+    fl = {"rate": 14.0, "depth": 0.5, "seed": 3, "dropouts": 0.8}
+    ts = [f / 30 for f in range(30 * 60)]
+    default = [kit.flicker_gain(t, fl) for t in ts]
+    assert min(default) < 0.1
+    safe = [kit.flicker_gain(t, {**fl, "safe": True}) for t in ts]
+    assert min(safe) >= 0.4 * (1 - kit.SAFE_MAX_DEPTH) - 1e-9
+    assert max(abs(a - b) for a, b in zip(safe, safe[1:])) < 0.12          # no single-frame jumps
+    lows = [i for i, g in enumerate(safe) if g < 0.6]
+    starts = [i for i in lows if i - 1 not in lows]
+    assert all(b - a >= 30 for a, b in zip(starts, starts[1:]))            # dips at least a second apart
+
+
+def test_flash_detector_motion_is_not_flashing():
+    """A pan across a high-contrast pattern isn't a flash; real strobes, quarter-screen strobes and two halves
+    strobing in antiphase still fail the house bar (safety.py, GRID)."""
+    import numpy as np
+    from blocky import safety
+
+    z = np.zeros((135, 240)); o = np.full((135, 240), 0.7)
+    fails = lambda fr: not safety.house_report(fr, [z] * len(fr))["house_bar"]["pass"]
+    assert fails([o if i % 2 else z for i in range(60)])
+    assert fails([np.hstack([o[:, :120], z[:, 120:]]) if i % 2 else np.hstack([z[:, :120], o[:, 120:]]) for i in range(60)])
+    assert fails([np.where(np.arange(240)[None, :] < 60, 0.7, 0) * np.ones((135, 1)) if i % 2 else z for i in range(60)])
+    stripes = lambda off: ((np.arange(240)[None, :] + off) // 12 % 2 * 0.7) * np.ones((135, 1))
+    assert not fails([stripes(4 * i) for i in range(90)])
+    assert not fails([o] * 60)
