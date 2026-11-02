@@ -712,12 +712,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "And she didn't",
-    "And she didn't"
+    "I clipped IN",
+    "I clipped in"
    ],
    [
-    "say a WORD.",
-    "say a word."
+    "before she could",
+    "before she could"
+   ],
+   [
+    "SAY it.",
+    "say it."
    ]
   ]
  },
@@ -844,16 +848,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Don't look UP.",
-    "Don't look up."
+    "I kept",
+    "I kept"
    ],
    [
-    "Touch the TOP.",
-    "Touch the top."
+    "my EYES",
+    "my eyes"
    ],
    [
-    "Go DOWN.",
-    "Go down."
+    "on the WALL.",
+    "on the wall."
    ]
   ]
  },
@@ -1268,20 +1272,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "\"I kept ASKING",
-    "\"I kept asking"
+    "\"I kept TRYING",
+    "\"I kept trying"
    ],
    [
-    "because NOBODY",
-    "because nobody"
-   ],
-   [
-    "was on the",
-    "was on the"
-   ],
-   [
-    "other END.\"",
-    "other end.\""
+    "to TELL you.\"",
+    "to tell you.\""
    ]
   ]
  },
@@ -1327,32 +1323,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "A climb",
-    "A climb"
+    "Every ROPE",
+    "Every rope"
    ],
    [
-    "is built",
-    "is built"
+    "has two ENDS.",
+    "has two ends."
    ],
    [
-    "for TWO.",
-    "for two."
+    "Mine was never",
+    "Mine was never"
    ],
    [
-    "One on",
-    "One on"
-   ],
-   [
-    "the WALL,",
-    "the wall,"
-   ],
-   [
-    "one on the",
-    "one on the"
-   ],
-   [
-    "other END.",
-    "other end."
+    "LOOSE.",
+    "loose."
    ]
   ]
  },

@@ -1,6 +1,6 @@
 {
  "slug": "ep30-top-rope",
- "title": "Since my slip last year, nobody holds my rope",
+ "title": "Who was standing upside down on the ceiling above my climb?",
  "made_for_kids": false,
  "premise": "I climb alone on the auto-belay in a brick mill, and since a slip last year I won't let anyone hold my rope. Each Thursday, from the top hold, someone is standing upside down on the overhang ceiling, one hold nearer.",
  "twist": "The auto-belay has been broken for weeks: the upside-down figure is my belayer, my rope tied round its waist, and the thing that held me when I let go was the other end of a climb that needs two.",
@@ -101,6 +101,8 @@
   "height": 1.15,
   "face": {
    "eyes": "hollow",
+   "eye_scale": 0.62,
+   "mouth": "crescent",
    "brows": false,
    "ink": "#1c1224",
    "glow": "#fffdf0"
@@ -147,7 +149,7 @@
      -1.6,
      9.3
     ],
-    90.0
+    45.0
    ]
   },
   "S34": {
@@ -160,7 +162,7 @@
      -1.6,
      9.3
     ],
-    90.0
+    45.0
    ]
   },
   "S40": {
@@ -173,7 +175,7 @@
      -1.6,
      9.3
     ],
-    90.0
+    45.0
    ]
   },
   "S41": {
@@ -186,7 +188,7 @@
      -1.6,
      9.3
     ],
-    90.0
+    45.0
    ]
   },
   "S54": {
@@ -212,7 +214,15 @@
   "S66": {
    "lamps": 0.06,
    "flood": 0.3,
-   "fill": 0.6
+   "fill": 0.6,
+   "glow": [
+    [
+     0.0,
+     -1.5,
+     8.7
+    ],
+    70.0
+   ]
   },
   "S67": {
    "lamps": 0.06,
@@ -229,7 +239,7 @@
      -1.6,
      9.3
     ],
-    90.0
+    45.0
    ]
   },
   "S27": {
@@ -260,6 +270,12 @@
    "flood": 0.35,
    "fill": 1.0
   },
+  "S42": {
+   "lamps": 0.45
+  },
+  "S43": {
+   "lamps": 0.6
+  },
   "S83": {
    "glow": [
     [
@@ -270,8 +286,21 @@
     600.0
    ]
   },
+  "S03": {
+   "lamps": 2.4,
+   "flood": 1.2,
+   "fill": 1.5,
+   "glow": [
+    [
+     0.3,
+     -2.4,
+     3.0
+    ],
+    150.0
+   ]
+  },
   "S01": {
-   "lamps": 2.6,
+   "lamps": 1.6,
    "flood": 1.2,
    "fill": 1.5,
    "glow": [
@@ -287,10 +316,10 @@
    "glow": [
     [
      0.3,
-     -1.4,
+     -3.0,
      9.0
     ],
-    260.0
+    110.0
    ]
   }
  },
@@ -1012,12 +1041,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "And she didn't",
-     "And she didn't"
+     "I clipped IN",
+     "I clipped in"
     ],
     [
-     "say a WORD.",
-     "say a word."
+     "before she could",
+     "before she could"
+    ],
+    [
+     "SAY it.",
+     "say it."
     ]
    ]
   },
@@ -1145,16 +1178,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Don't look UP.",
-     "Don't look up."
+     "I kept",
+     "I kept"
     ],
     [
-     "Touch the TOP.",
-     "Touch the top."
+     "my EYES",
+     "my eyes"
     ],
     [
-     "Go DOWN.",
-     "Go down."
+     "on the WALL.",
+     "on the wall."
     ]
    ]
   },
@@ -1570,20 +1603,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "\"I kept ASKING",
-     "\"I kept asking"
+     "\"I kept TRYING",
+     "\"I kept trying"
     ],
     [
-     "because NOBODY",
-     "because nobody"
-    ],
-    [
-     "was on the",
-     "was on the"
-    ],
-    [
-     "other END.\"",
-     "other end.\""
+     "to TELL you.\"",
+     "to tell you.\""
     ]
    ]
   },
@@ -1629,32 +1654,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "A climb",
-     "A climb"
+     "Every ROPE",
+     "Every rope"
     ],
     [
-     "is built",
-     "is built"
+     "has two ENDS.",
+     "has two ends."
     ],
     [
-     "for TWO.",
-     "for two."
+     "Mine was never",
+     "Mine was never"
     ],
     [
-     "One on",
-     "One on"
-    ],
-    [
-     "the WALL,",
-     "the wall,"
-    ],
-    [
-     "one on the",
-     "one on the"
-    ],
-    [
-     "other END.",
-     "other end."
+     "LOOSE.",
+     "loose."
     ]
    ]
   },
@@ -1748,7 +1761,8 @@
      "I looked UP.",
      "I looked up."
     ]
-   ]
+   ],
+   "tempo": 0.92
   },
   {
    "id": "L82",
@@ -1957,30 +1971,30 @@
     [
      0,
      [
-      0.5,
-      -0.7,
-      9.4
+      0.3,
+      -1.3,
+      9.2
      ],
      [
-      0,
-      -1.6,
+      0.3,
+      -2.4,
       0.3
      ],
-     26
+     24
     ],
     [
      1,
      [
       0.3,
-      -0.8,
-      9.4
+      -1.3,
+      9.2
      ],
      [
-      0,
-      -1.6,
+      0.3,
+      -2.4,
       0.3
      ],
-     30
+     28
     ]
    ],
    "step": 2
@@ -2415,9 +2429,9 @@
      [
       0.15,
       -2.55,
-      8.9
+      8.85
      ],
-     28
+     17
     ]
    ],
    "step": 2
@@ -2436,9 +2450,9 @@
      [
       0.15,
       -2.55,
-      8.9
+      8.85
      ],
-     28
+     21
     ]
    ],
    "step": 2
@@ -2450,16 +2464,16 @@
     [
      0,
      [
-      0.4,
-      -0.9,
-      8.3
+      1.0,
+      -0.4,
+      8.5
      ],
      [
       0.15,
       -2.55,
-      8.7
+      8.85
      ],
-     40
+     18
     ]
    ],
    "step": 2
@@ -2471,16 +2485,16 @@
     [
      0,
      [
-      1.8,
-      -1.2,
-      8.6
+      2.0,
+      -0.6,
+      8.7
      ],
      [
       0.15,
       -2.55,
-      9.0
+      8.85
      ],
-     32
+     18
     ]
    ],
    "step": 2
@@ -2807,16 +2821,16 @@
     [
      0,
      [
-      -0.9,
-      -5.9,
-      1.5
+      0.5,
+      -0.6,
+      1.7
      ],
      [
-      -0.9,
-      -3.3,
-      1.6
+      -0.2,
+      -2.3,
+      1.35
      ],
-     45
+     20
     ]
    ],
    "step": 2
@@ -3437,16 +3451,16 @@
     [
      0,
      [
-      -0.3,
-      -1.7,
-      8.5
+      -0.2,
+      -1.5,
+      8.7
      ],
      [
-      0.62,
+      0.5,
       -0.4,
       8.8
      ],
-     36
+     30
     ]
    ],
    "step": 1
@@ -3808,16 +3822,16 @@
     [
      0,
      [
-      0.3,
-      -1.3,
-      8.1
+      0.0,
+      -6.8,
+      6.2
      ],
      [
-      0.3,
-      -1.8,
-      9.8
+      0.0,
+      -1.5,
+      9.9
      ],
-     22
+     20
     ]
    ],
    "step": 2
@@ -4459,6 +4473,24 @@
     "blend": 0.06
    },
    {
+    "at": "L39",
+    "pos": [
+     0,
+     -1.3,
+     0.3
+    ],
+    "arms": [
+     40,
+     40
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "blend": 0.06
+   },
+   {
     "at": "L40-0.03",
     "pos": [
      0,
@@ -5093,7 +5125,7 @@
     "blend": 0.06
    },
    {
-    "at": "L69-0.03",
+    "at": "L39-0.03",
     "pos": [
      -0.9,
      -3.3,
@@ -5103,9 +5135,37 @@
    },
    {
     "at": "L39",
+    "pos": [
+     -0.6,
+     -3.2,
+     0.3
+    ],
+    "yaw": 180,
     "head": [
      0,
      0
+    ],
+    "blend": 0.06
+   },
+   {
+    "at": "L39.1",
+    "pos": [
+     -0.6,
+     -3.2,
+     0.3
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.06
+   },
+   {
+    "at": "L69-0.03",
+    "pos": [
+     -0.6,
+     -3.2,
+     0.3
     ],
     "blend": 0.06
    },
@@ -5336,6 +5396,14 @@
     ],
     "expr": "neutral",
     "blend": 0.06
+   },
+   {
+    "from": "L39.1",
+    "to": "L39.1+0.45",
+    "mouth": [
+     0.0,
+     0.7
+    ]
    }
   ]
  },
