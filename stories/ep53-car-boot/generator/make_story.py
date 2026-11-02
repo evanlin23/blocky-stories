@@ -491,8 +491,9 @@ cues = [
     {"at": "L56-0.3", "name": "sfill", "to": 1.0, "dur": 0.3},
     {"at": "L57", "name": "sfill", "to": 0.0, "dur": 0.4},
     # a soft daylight fill on the chair arm for the L35 strip, which sits in the estate's shadow
-    {"at": "L35", "name": "tfill", "to": 1.0, "dur": 0},
-    {"at": "L36", "name": "tfill", "to": 0.0, "dur": 0.4},
+    {"at": "L34", "name": "tfill", "to": 0.3, "dur": 1.0},
+    {"at": "L35", "name": "tfill", "to": 0.6, "dur": 0.3},
+    {"at": "L35.2", "name": "tfill", "to": 0.0, "dur": 0.4},
     {"at": "L58", "name": "beam", "to": 1.0, "dur": 1.0},
     {"at": "L63+1.5", "name": "beam", "to": 0.0, "dur": 0.8},
     # vehicles: root = the rear of the car; yaw 0 faces +y, yaw 180 faces -y
