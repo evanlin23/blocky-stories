@@ -4,20 +4,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "Bo BET me",
-    "Bo bet me"
+    "In this TOWN,",
+    "In this town,"
    ],
    [
-    "I couldn't",
-    "I couldn't"
+    "one DAY",
+    "one day"
    ],
    [
-    "ride UP",
-    "ride up"
+    "at the TOP",
+    "at the top"
    ],
    [
-    "ALONE.",
-    "alone."
+    "of the CHAIRLIFT",
+    "of the chairlift"
+   ],
+   [
+    "costs a YEAR",
+    "costs a year"
+   ],
+   [
+    "down BELOW.",
+    "down below."
    ]
   ]
  },
@@ -26,20 +34,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Bo runs",
-    "Bo runs"
+    "From the LAKE,",
+    "From the lake,"
    ],
    [
-    "the CHAIRLIFT",
-    "the chairlift"
+    "you can",
+    "you can"
    ],
    [
-    "from the LAKE",
-    "from the lake"
+    "SEE them",
+    "see them"
    ],
    [
-    "to the RIDGE.",
-    "to the ridge."
+    "up there,",
+    "up there,"
+   ],
+   [
+    "STILL as POSTS.",
+    "still as posts."
    ]
   ]
  },
@@ -48,20 +60,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'm here",
-    "I'm here"
+    "Mr PELL",
+    "Mr Pell"
    ],
    [
-    "for ONE WEEK",
-    "for one week"
+    "went up",
+    "went up"
    ],
    [
-    "to watch",
-    "to watch"
+    "for an AFTERNOON",
+    "for an afternoon"
    ],
    [
-    "the SUNRISE.",
-    "the sunrise."
+    "and missed",
+    "and missed"
+   ],
+   [
+    "all of WINTER.",
+    "all of winter."
    ]
   ]
  },
@@ -70,20 +86,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "I booked",
-    "I booked"
+    "Bo, who runs",
+    "Bo, who runs"
    ],
    [
-    "the FIRST CHAIR",
-    "the first chair"
+    "the LIFT,",
+    "the lift,"
    ],
    [
-    "of every DAWN,",
-    "of every dawn,"
+    "goes up",
+    "goes up"
    ],
    [
-    "BOTH SEATS.",
-    "both seats."
+    "whenever his MUM",
+    "whenever his mum"
+   ],
+   [
+    "VISITS.",
+    "visits."
    ]
   ]
  },
@@ -92,20 +112,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I PAID",
-    "I paid"
+    "But I've NEVER",
+    "But I've never"
    ],
    [
-    "for it,",
-    "for it,"
+    "been up.",
+    "been up."
    ],
    [
-    "so I ride",
-    "so I ride"
-   ],
-   [
-    "ALONE.",
-    "alone."
+    "NOT ONCE.",
+    "Not once."
    ]
   ]
  },
@@ -114,16 +130,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "My PASS hangs",
-    "my pass hangs"
+    "I don't want",
+    "I don't want"
    ],
    [
-    "on a CORD",
-    "on a cord"
+    "to MISS",
+    "to miss"
    ],
    [
-    "round my NECK.",
-    "around my neck."
+    "a single DAY.",
+    "a single day."
    ]
   ]
  },
@@ -132,20 +148,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "At the ROPE",
-    "at the rope."
+    "GRAN",
+    "Gran"
    ],
    [
-    "stand the HALVORS,",
-    "stand the Halvors,"
+    "goes up",
+    "goes up"
    ],
    [
-    "as OLD",
-    "as old"
-   ],
-   [
-    "as the LIFT.",
-    "as the lift."
+    "EVERY MORNING.",
+    "every morning."
    ]
   ]
  },
@@ -154,20 +166,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "They come",
-    "they come"
+    "She FIXES",
+    "She fixes"
    ],
    [
-    "EVERY DAWN",
-    "every dawn"
+    "my BEANIE,",
+    "my beanie,"
    ],
    [
-    "and WATCH",
-    "and watch"
+    "takes a BLANKET",
+    "takes a blanket"
    ],
    [
-    "the CHAIRS go.",
-    "the chairs go."
+    "big enough",
+    "big enough"
+   ],
+   [
+    "for TWO,",
+    "for two,"
    ]
   ]
  },
@@ -176,1318 +192,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Their walking BOOTS",
-    "their walking boots"
-   ],
-   [
-    "are LACED",
-    "are laced"
-   ],
-   [
-    "to the TOP.",
-    "to the top."
-   ]
-  ]
- },
- {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bo says,",
-    "Bo says,"
-   ],
-   [
-    "\"Ride ALONE",
-    "\"ride alone"
-   ],
-   [
-    "all WEEK,",
-    "all week,"
-   ],
-   [
-    "or your SEAT",
-    "or your seat"
-   ],
-   [
-    "goes to THEM.\"",
-    "goes to them.\""
-   ]
-  ]
- },
- {
-  "id": "L11",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mrs Halvor LAUGHS,",
-    "Mrs Halvor laughs,"
-   ],
-   [
-    "so I",
-    "so I"
-   ],
-   [
-    "LAUGH too.",
-    "laugh too."
-   ]
-  ]
- },
- {
-  "id": "L12",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The chair",
-    "the chair"
-   ],
-   [
-    "SWINGS round",
-    "swings round"
-   ],
-   [
-    "behind my KNEES.",
-    "behind my knees."
-   ]
-  ]
- },
- {
-  "id": "L13",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bo lays",
-    "Bo lays"
-   ],
-   [
-    "a HAND",
-    "a hand"
-   ],
-   [
-    "on the",
-    "on the"
-   ],
-   [
-    "EMPTY SEAT,",
-    "empty seat,"
-   ]
-  ]
- },
- {
-  "id": "L14",
-  "who": "narrator",
-  "chunks": [
-   [
-    "like someone ELSE",
-    "like someone else"
-   ],
-   [
-    "is getting ON.",
-    "is getting on."
-   ]
-  ]
- },
- {
-  "id": "L15",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My BOOTS",
-    "my boots"
-   ],
-   [
-    "on the FOOTREST,",
-    "on the footrest,"
-   ],
-   [
-    "high over",
-    "high over"
-   ],
-   [
-    "the BLACK LAKE.",
-    "the black lake."
-   ]
-  ]
- },
- {
-  "id": "L16",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The DOWN CHAIRS",
-    "the down chairs,"
-   ],
-   [
-    "slide past me,",
-    "slide past me,"
-   ],
-   [
-    "EMPTY.",
-    "empty."
-   ]
-  ]
- },
- {
-  "id": "L17",
-  "who": "narrator",
-  "chunks": [
-   [
-    "All but ONE.",
-    "all but one."
-   ]
-  ]
- },
- {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Way up",
-    "way up"
-   ],
-   [
-    "the LINE,",
-    "the line,"
-   ],
-   [
-    "something RIDES DOWN",
-    "something rides down"
-   ],
-   [
-    "on its OWN.",
-    "on its own."
-   ]
-  ]
- },
- {
-  "id": "L19",
-  "who": "narrator",
-  "chunks": [
-   [
-    "An ORANGE CAGOULE",
-    "an orange cagoule"
-   ],
-   [
-    "and a",
-    "and a"
-   ],
-   [
-    "SQUARE HEAD.",
-    "square head."
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Its FACE",
-    "its face"
-   ],
-   [
-    "is turned",
-    "is turned"
-   ],
-   [
-    "toward ME.",
-    "toward me."
-   ]
-  ]
- },
- {
-  "id": "L21",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then the SUN",
-    "then the sun"
-   ],
-   [
-    "comes over",
-    "comes over"
-   ],
-   [
-    "the RIDGE,",
-    "the ridge,"
-   ],
-   [
-    "and I",
-    "and I"
-   ],
-   [
-    "FORGET it.",
-    "forget it."
-   ]
-  ]
- },
- {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On TUESDAY,",
-    "on Tuesday,"
-   ],
-   [
-    "it passes me",
-    "it passes me"
-   ],
-   [
-    "LOWER DOWN.",
-    "lower down."
-   ]
-  ]
- },
- {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Its HEAD",
-    "its head"
-   ],
-   [
-    "is a",
-    "is a"
-   ],
-   [
-    "perfect CUBE.",
-    "perfect cube."
-   ]
-  ]
- },
- {
-  "id": "L24",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Two round EYES",
-    "two round eyes"
-   ],
-   [
-    "and a long",
-    "and a long"
-   ],
-   [
-    "STRAIGHT MOUTH.",
-    "straight mouth."
-   ]
-  ]
- },
- {
-  "id": "L25",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Its chair SWINGS",
-    "its chair swings"
-   ],
-   [
-    "as it",
-    "as it"
-   ],
-   [
-    "goes BY,",
-    "goes by,"
-   ]
-  ]
- },
- {
-  "id": "L26",
-  "who": "narrator",
-  "chunks": [
-   [
-    "and I see",
-    "and I see"
-   ],
-   [
-    "the BACK",
-    "the back"
-   ],
-   [
-    "of its HEAD.",
-    "of its head."
-   ]
-  ]
- },
- {
-  "id": "L27",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It's the",
-    "it's the"
-   ],
-   [
-    "SAME FACE.",
-    "same face."
-   ]
-  ]
- },
- {
-  "id": "L28",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On WEDNESDAY,",
-    "on Wednesday,"
-   ],
-   [
-    "Bo asks,",
-    "Bo asks,"
-   ],
-   [
-    "\"Still ALONE?\"",
-    "\"still alone?\""
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I say,",
-    "I say,"
-   ],
-   [
-    "\"ALONE.\"",
-    "\"alone.\""
-   ]
-  ]
- },
- {
-  "id": "L30",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mr Halvor",
-    "Mr Halvor"
-   ],
-   [
-    "looks down",
-    "looks down"
-   ],
-   [
-    "at his BOOTS.",
-    "at his boots."
-   ]
-  ]
- },
- {
-  "id": "L31",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Over the LAKE,",
-    "over the lake,"
-   ],
-   [
-    "the orange rider",
-    "the orange rider"
-   ],
-   [
-    "passes so CLOSE",
-    "passes so close"
-   ]
-  ]
- },
- {
-  "id": "L32",
-  "who": "narrator",
-  "chunks": [
-   [
-    "our FOOTRESTS",
-    "our footrests,"
-   ],
-   [
-    "almost CLICK.",
-    "almost click."
-   ]
-  ]
- },
- {
-  "id": "L33",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I twist round",
-    "I twist round"
-   ],
-   [
-    "in my SEAT",
-    "in my seat"
-   ],
-   [
-    "to watch",
-    "to watch"
-   ],
-   [
-    "it GO.",
-    "it go."
-   ]
-  ]
- },
- {
-  "id": "L34",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The face",
-    "the face"
-   ],
-   [
-    "on its SIDE",
-    "on its side"
-   ],
-   [
-    "is watching",
-    "is watching"
-   ],
-   [
-    "me BACK.",
-    "me back."
-   ]
-  ]
- },
- {
-  "id": "L35",
-  "who": "narrator",
-  "chunks": [
-   [
-    "There's a FACE",
-    "there's a face"
-   ],
-   [
-    "on all",
-    "on all"
-   ],
-   [
-    "FOUR SIDES.",
-    "four sides."
-   ]
-  ]
- },
- {
-  "id": "L36",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Whichever way",
-    "whichever way"
-   ],
-   [
-    "its chair TURNS,",
-    "its chair turns,"
-   ],
-   [
-    "it's facing ME.",
-    "it's facing me."
-   ]
-  ]
- },
- {
-  "id": "L37",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On THURSDAY,",
-    "on Thursday,"
-   ],
-   [
-    "the DOWN CHAIRS",
-    "the down chairs"
-   ],
-   [
-    "are all EMPTY.",
-    "are all empty."
-   ]
-  ]
- },
- {
-  "id": "L38",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It's in",
-    "it's in"
-   ],
-   [
-    "the chair",
-    "the chair"
-   ],
-   [
-    "right AHEAD,",
-    "right ahead,"
-   ],
-   [
-    "going UP.",
-    "going up."
-   ]
-  ]
- },
- {
-  "id": "L39",
-  "who": "narrator",
-  "chunks": [
-   [
-    "All I see",
-    "all I see"
-   ],
-   [
-    "is the BACK",
-    "is the back"
-   ],
-   [
-    "of its HEAD.",
-    "of its head."
-   ]
-  ]
- },
- {
-  "id": "L40",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And the back",
-    "and the back"
-   ],
-   [
-    "of its head",
-    "of its head"
-   ],
-   [
-    "is LOOKING",
-    "is looking"
-   ],
-   [
-    "at me.",
-    "at me."
-   ]
-  ]
- },
- {
-  "id": "L41",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The whole",
-    "the whole"
-   ],
-   [
-    "way UP,",
-    "way up,"
-   ],
-   [
-    "those EYES",
-    "those eyes"
-   ],
-   [
-    "never BLINK.",
-    "never blink."
-   ]
-  ]
- },
- {
-  "id": "L42",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At the TOP,",
-    "at the top,"
-   ],
-   [
-    "its chair swings",
-    "its chair swings"
-   ],
-   [
-    "round the WHEEL",
-    "round the wheel"
-   ],
-   [
-    "EMPTY.",
-    "empty."
-   ]
-  ]
- },
- {
-  "id": "L43",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On FRIDAY,",
-    "on Friday,"
-   ],
-   [
-    "FOG rolls up",
-    "fog rolls up"
-   ],
-   [
-    "off the LAKE.",
-    "off the lake."
-   ]
-  ]
- },
- {
-  "id": "L44",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bo's HAND",
-    "bo's hand"
-   ],
-   [
-    "is on",
-    "is on"
-   ],
-   [
-    "the EMPTY SEAT",
-    "the empty seat"
-   ],
-   [
-    "AGAIN.",
-    "again."
-   ]
-  ]
- },
- {
-  "id": "L45",
-  "who": "narrator",
-  "chunks": [
-   [
-    "This time,",
-    "this time,"
-   ],
-   [
-    "he doesn't ASK.",
-    "he doesn't ask."
-   ]
-  ]
- },
- {
-  "id": "L46",
-  "who": "narrator",
-  "chunks": [
-   [
-    "HALFWAY UP,",
-    "halfway up,"
-   ],
-   [
-    "the LIFT STOPS.",
-    "the lift stops."
-   ]
-  ]
- },
- {
-  "id": "L47",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The MOTOR'S HUM",
-    "the motor's hum"
-   ],
-   [
-    "sinks",
-    "sinks"
-   ],
-   [
-    "to NOTHING.",
-    "to nothing."
-   ]
-  ]
- },
- {
-  "id": "L48",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My chair ROCKS",
-    "my chair rocks"
-   ],
-   [
-    "in the WHITE.",
-    "in the white."
-   ]
-  ]
- },
- {
-  "id": "L49",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I can't see",
-    "I can't see"
-   ],
-   [
-    "the next TOWER,",
-    "the next tower,"
-   ],
-   [
-    "or the LAKE.",
-    "or the lake."
-   ]
-  ]
- },
- {
-  "id": "L50",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then the chair",
-    "then the chair"
-   ],
-   [
-    "DIPS,",
-    "dips,"
-   ],
-   [
-    "just a LITTLE,",
-    "just a little,"
-   ],
-   [
-    "on my LEFT.",
-    "on my left."
-   ]
-  ]
- },
- {
-  "id": "L51",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Like somebody",
-    "like somebody"
-   ],
-   [
-    "just SAT DOWN.",
-    "just sat down."
-   ]
-  ]
- },
- {
-  "id": "L52",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The fog THINS.",
-    "the fog thins."
-   ]
-  ]
- },
- {
-  "id": "L53",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It's in",
-    "it's in"
-   ],
-   [
-    "the SEAT",
-    "the seat"
-   ],
-   [
-    "BESIDE me.",
-    "beside me."
-   ]
-  ]
- },
- {
-  "id": "L54",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Its ORANGE SLEEVE",
-    "its orange sleeve"
-   ],
-   [
-    "is a",
-    "is a"
-   ],
-   [
-    "HAND'S WIDTH",
-    "hand's width"
-   ],
-   [
-    "from mine.",
-    "from mine."
-   ]
-  ]
- },
- {
-  "id": "L55",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A FACE",
-    "a face"
-   ],
-   [
-    "on its SIDE",
-    "on its side"
-   ],
-   [
-    "is turned",
-    "is turned"
-   ],
-   [
-    "to ME.",
-    "to me."
-   ]
-  ]
- },
- {
-  "id": "L56",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I lean BACK",
-    "I lean back"
-   ],
-   [
-    "to look",
-    "to look"
-   ],
-   [
-    "past it.",
-    "past it."
-   ]
-  ]
- },
- {
-  "id": "L57",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The face",
-    "the face"
-   ],
-   [
-    "on its BACK",
-    "on its back"
-   ],
-   [
-    "is turned",
-    "is turned"
-   ],
-   [
-    "to me TOO.",
-    "to me too."
-   ]
-  ]
- },
- {
-  "id": "L58",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every side",
-    "every side"
-   ],
-   [
-    "of that CUBE",
-    "of that cube"
-   ],
-   [
-    "is LOOKING",
-    "is looking"
-   ],
-   [
-    "at me.",
-    "at me."
-   ]
-  ]
- },
- {
-  "id": "L59",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I shut",
-    "I shut"
-   ],
-   [
-    "my EYES",
-    "my eyes"
-   ],
-   [
-    "and COUNT.",
-    "and count."
-   ]
-  ]
- },
- {
-  "id": "L60",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The motor HUMS",
-    "the motor hums"
-   ],
-   [
-    "back on,",
-    "back on,"
-   ],
-   [
-    "and we MOVE.",
-    "and we move."
-   ]
-  ]
- },
- {
-  "id": "L61",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At the TOP,",
-    "at the top,"
-   ],
-   [
-    "the seat",
-    "the seat"
-   ],
-   [
-    "beside me",
-    "beside me"
-   ],
-   [
-    "is EMPTY.",
-    "is empty."
-   ]
-  ]
- },
- {
-  "id": "L62",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I paid",
-    "I paid"
-   ],
-   [
-    "for BOTH SEATS",
-    "for both seats"
-   ],
-   [
-    "so nobody",
-    "so nobody"
-   ],
-   [
-    "would sit THERE.",
-    "would sit there."
-   ]
-  ]
- },
- {
-  "id": "L63",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Something SAT there",
-    "something sat there"
-   ],
-   [
-    "ANYWAY.",
-    "anyway."
-   ]
-  ]
- },
- {
-  "id": "L64",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On SATURDAY,",
-    "on Saturday,"
-   ],
-   [
-    "the HALVORS",
-    "the Halvors"
-   ],
-   [
-    "are at",
-    "are at"
-   ],
-   [
-    "the GATE.",
-    "the gate."
-   ]
-  ]
- },
- {
-  "id": "L65",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Their BOOTS",
-    "their boots"
-   ],
-   [
-    "are LACED,",
-    "are laced,"
-   ],
-   [
-    "like ALWAYS.",
-    "like always."
-   ]
-  ]
- },
- {
-  "id": "L66",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I tell Bo,",
-    "I tell Bo,"
-   ],
-   [
-    "\"I LOST.\"",
-    "\"I lost.\""
-   ]
-  ]
- },
- {
-  "id": "L67",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I take OFF",
-    "I take off"
-   ],
-   [
-    "my PASS",
-    "my pass"
-   ]
-  ]
- },
- {
-  "id": "L68",
-  "who": "narrator",
-  "chunks": [
-   [
-    "and give it",
-    "and give it"
-   ],
-   [
-    "to Mr HALVOR.",
-    "to Mr Halvor."
-   ]
-  ]
- },
- {
-  "id": "L69",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He looks",
-    "he looks"
-   ],
-   [
-    "at me",
-    "at me"
-   ],
-   [
-    "a long TIME.",
-    "a long time."
-   ]
-  ]
- },
- {
-  "id": "L70",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then they",
-    "then they"
-   ],
-   [
-    "SIT DOWN,",
-    "sit down,"
-   ],
-   [
-    "side by SIDE.",
-    "side by side."
-   ]
-  ]
- },
- {
-  "id": "L71",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bo doesn't HOLD",
-    "Bo doesn't hold"
-   ],
-   [
-    "either SEAT.",
-    "either seat."
-   ]
-  ]
- },
- {
-  "id": "L72",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Their chair RISES",
-    "their chair rises"
-   ],
-   [
-    "into the PINK.",
-    "into the pink."
-   ]
-  ]
- },
- {
-  "id": "L73",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The DOWN CHAIRS",
-    "the down chairs"
-   ],
-   [
-    "come back EMPTY.",
-    "come back empty."
-   ]
-  ]
- },
- {
-  "id": "L74",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bo sets",
-    "Bo sets"
-   ],
-   [
-    "a COFFEE",
-    "a coffee"
-   ],
-   [
-    "on the RAIL",
-    "on the rail"
-   ],
-   [
-    "for ME.",
-    "for me."
-   ]
-  ]
- },
- {
-  "id": "L75",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I ask him",
-    "I ask him"
-   ],
-   [
-    "who LOST",
-    "who lost"
-   ],
-   [
-    "LAST SUMMER.",
-    "last summer."
-   ]
-  ]
- },
- {
-  "id": "L76",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bo says,",
-    "Bo says,"
-   ],
-   [
-    "\"A man",
-    "\"a man"
-   ],
-   [
-    "from the CITY.\"",
-    "from the city.\""
-   ]
-  ]
- },
- {
-  "id": "L77",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And the",
-    "and the"
-   ],
-   [
-    "summer BEFORE?",
-    "summer before?"
-   ],
-   [
-    "Bo says,",
-    "Bo says,"
-   ],
-   [
-    "\"His SISTER.\"",
-    "\"his sister.\""
-   ]
-  ]
- },
- {
-  "id": "L78",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bo says",
-    "Bo says"
-   ],
-   [
-    "they've ridden",
-    "they've ridden"
-   ],
-   [
-    "the FIRST CHAIR",
-    "the first chair"
-   ],
-   [
-    "every SUMMER",
-    "every summer"
-   ],
-   [
-    "for FORTY YEARS.",
-    "for forty years."
-   ]
-  ]
- },
- {
-  "id": "L79",
-  "who": "narrator",
-  "chunks": [
-   [
-    "They've never once",
-    "they've never once"
-   ],
-   [
-    "BOUGHT a PASS.",
-    "bought a pass."
-   ]
-  ]
- },
- {
-  "id": "L80",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bo BET me",
-    "Bo bet me"
-   ],
-   [
-    "I couldn't",
-    "I couldn't"
-   ],
-   [
-    "ride UP",
-    "ride up"
+    "and rides up",
+    "and rides up"
    ],
    [
     "ALONE.",
@@ -1496,16 +202,567 @@
   ]
  },
  {
-  "id": "L81",
+  "id": "L10",
   "who": "narrator",
   "chunks": [
    [
-    "Nobody EVER",
-    "nobody ever"
+    "She comes DOWN",
+    "She comes down"
    ],
    [
-    "HAS.",
-    "has."
+    "for SUNDAY DINNER.",
+    "for Sunday dinner."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every SUNDAY,",
+    "Every Sunday,"
+   ],
+   [
+    "she says",
+    "she says"
+   ],
+   [
+    "I look OLDER.",
+    "I look older."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "For ME,",
+    "For me,"
+   ],
+   [
+    "it's been",
+    "it's been"
+   ],
+   [
+    "a WEEK.",
+    "a week."
+   ],
+   [
+    "For HER,",
+    "For her,"
+   ],
+   [
+    "HALF an HOUR.",
+    "half an hour."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Through the VIEWER",
+    "Through the viewer"
+   ],
+   [
+    "on the DECK,",
+    "on the deck,"
+   ],
+   [
+    "I WATCH her.",
+    "I watch her."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Everyone up there",
+    "Everyone up there"
+   ],
+   [
+    "faces the SUNRISE.",
+    "faces the sunrise."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "GRAN",
+    "Gran"
+   ],
+   [
+    "faces the",
+    "faces the"
+   ],
+   [
+    "other WAY,",
+    "other way,"
+   ],
+   [
+    "DOWN",
+    "down"
+   ],
+   [
+    "at the TOWN.",
+    "at the town."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "On TUESDAY,",
+    "On Tuesday,"
+   ],
+   [
+    "a GULL lands",
+    "a gull lands"
+   ],
+   [
+    "on her HAT.",
+    "on her hat."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "On FRIDAY,",
+    "On Friday,"
+   ],
+   [
+    "it's STILL there.",
+    "it's still there."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Bo says",
+    "Bo says"
+   ],
+   [
+    "she's the OLDEST",
+    "she's the oldest"
+   ],
+   [
+    "in the VALLEY.",
+    "in the valley."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then one SUNDAY,",
+    "Then one Sunday,"
+   ],
+   [
+    "Gran doesn't",
+    "Gran doesn't"
+   ],
+   [
+    "come DOWN.",
+    "come down."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every chair",
+    "Every chair"
+   ],
+   [
+    "comes round",
+    "comes round"
+   ],
+   [
+    "EMPTY.",
+    "empty."
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.7,
+  "chunks": []
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Through the VIEWER,",
+    "Through the viewer,"
+   ],
+   [
+    "she hasn't MOVED.",
+    "she hasn't moved."
+   ],
+   [
+    "Her EYES",
+    "Her eyes"
+   ],
+   [
+    "are SHUT.",
+    "are shut."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So for the",
+    "So for the"
+   ],
+   [
+    "FIRST TIME",
+    "first time"
+   ],
+   [
+    "in my LIFE,",
+    "in my life,"
+   ],
+   [
+    "I ride UP.",
+    "I ride up."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Below me,",
+    "Below me,"
+   ],
+   [
+    "the FOG",
+    "the fog"
+   ],
+   [
+    "boils off",
+    "boils off"
+   ],
+   [
+    "the LAKE",
+    "the lake"
+   ],
+   [
+    "in SECONDS.",
+    "in seconds."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Bo's SHADOW",
+    "Bo's shadow"
+   ],
+   [
+    "swings round",
+    "swings round"
+   ],
+   [
+    "the DECK",
+    "the deck"
+   ],
+   [
+    "like a",
+    "like a"
+   ],
+   [
+    "CLOCK HAND.",
+    "clock hand."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At the TOP,",
+    "At the top,"
+   ],
+   [
+    "Gran OPENS",
+    "Gran opens"
+   ],
+   [
+    "her EYES,",
+    "her eyes,"
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "and says",
+    "and says"
+   ],
+   [
+    "she only",
+    "she only"
+   ],
+   [
+    "NODDED OFF",
+    "nodded off"
+   ],
+   [
+    "for TEN MINUTES.",
+    "for ten minutes."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I ask her",
+    "I ask her"
+   ],
+   [
+    "WHY",
+    "why"
+   ],
+   [
+    "she LIVES",
+    "she lives"
+   ],
+   [
+    "up here.",
+    "up here."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Gran says",
+    "Gran says"
+   ],
+   [
+    "she's only got",
+    "she's only got"
+   ],
+   [
+    "a FEW",
+    "a few"
+   ],
+   [
+    "YEARS LEFT,",
+    "years left,"
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "and she'd like",
+    "and she'd like"
+   ],
+   [
+    "to WATCH me",
+    "to watch me"
+   ],
+   [
+    "GROW OLD.",
+    "grow old."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Up HERE,",
+    "Up here,"
+   ],
+   [
+    "her few YEARS",
+    "her few years"
+   ],
+   [
+    "will last",
+    "will last"
+   ],
+   [
+    "my WHOLE LIFE.",
+    "my whole life."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every Sunday",
+    "Every Sunday"
+   ],
+   [
+    "she said",
+    "she said"
+   ],
+   [
+    "I looked OLDER.",
+    "I looked older."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She MEANT it.",
+    "She meant it."
+   ]
+  ]
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I",
+    "So I"
+   ],
+   [
+    "SIT DOWN",
+    "sit down"
+   ],
+   [
+    "BESIDE her,",
+    "beside her,"
+   ]
+  ]
+ },
+ {
+  "id": "L34",
+  "who": "narrator",
+  "chunks": [
+   [
+    "and she",
+    "and she"
+   ],
+   [
+    "shakes OUT",
+    "shakes out"
+   ],
+   [
+    "the BLANKET",
+    "the blanket"
+   ],
+   [
+    "for TWO.",
+    "for two."
+   ]
+  ]
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Down at",
+    "Down at"
+   ],
+   [
+    "the LAKE,",
+    "the lake,"
+   ],
+   [
+    "Bo's SHADOW",
+    "Bo's shadow"
+   ],
+   [
+    "goes ROUND",
+    "goes round"
+   ],
+   [
+    "and ROUND.",
+    "and round."
+   ]
+  ]
+ },
+ {
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In this TOWN,",
+    "In this town,"
+   ],
+   [
+    "one DAY",
+    "one day"
+   ],
+   [
+    "at the TOP",
+    "at the top"
+   ],
+   [
+    "costs a YEAR",
+    "costs a year"
+   ],
+   [
+    "down THERE.",
+    "down there."
+   ]
+  ]
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "From the LAKE,",
+    "From the lake,"
+   ],
+   [
+    "we haven't MOVED",
+    "we haven't moved"
+   ],
+   [
+    "since SPRING.",
+    "since spring."
    ]
   ]
  }
