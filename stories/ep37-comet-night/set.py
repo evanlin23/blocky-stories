@@ -94,7 +94,7 @@ def _node_mat(kit, name):
     return m, nt
 
 
-def star_mat(kit, name, scale=26.0, thresh=0.5, size=0.2, bright=5.0, gradient=False):
+def star_mat(kit, name, scale=26.0, thresh=0.5, size=0.2, bright=5.0, gradient=False, base=1.0):
     """A sky of random dots (no real constellations). Controls (nodes kept on the material): 'stars' (0..1),
     'bgh' and 'bgz' (horizon and zenith colours). Emission only, so the fog never touches it."""
     m, nt = _node_mat(kit, name)
@@ -154,7 +154,7 @@ def star_mat(kit, name, scale=26.0, thresh=0.5, size=0.2, bright=5.0, gradient=F
     st = N.new("ShaderNodeMath")
     st.operation = "MULTIPLY_ADD"
     st.inputs[1].default_value = bright
-    st.inputs[2].default_value = 1.0
+    st.inputs[2].default_value = base
     Lk.new(fac.outputs[0], st.inputs[0])
     em = N.new("ShaderNodeEmission")
     Lk.new(mix1.outputs["Result"], em.inputs["Color"])
@@ -293,7 +293,7 @@ def materials(kit, wd: Path):
     M["woodA"] = kit.planks("#6e5c4a", "#4a3e32", 1.4, "X", name="oak floor")
     M["woodB"] = kit.planks("#5e4a38", "#3e3226", 1.6, "Y", name="oak dark")
     M["wall"] = kit.planks("#d4cebd", "#b6b09e", 1.5, "Z", name="whitewash boards", rough=0.85)
-    M["dome_in"] = kit.grime("#b3ae9c", 0.7, 2.0, name="dome inside")
+    M["dome_in"] = kit.grime("#5f5b4e", 0.7, 2.0, name="dome inside")
     M["dust"] = kit.plastic("#8d887e", 0.98, name="dust")
     M["pier"] = kit.grime("#6a6a68", 0.6, 5.0, name="dusty iron")
     M["grass"] = kit.grime("#9a8a52", 0.55, 8.0, name="dry grass ground")
@@ -317,7 +317,7 @@ def materials(kit, wd: Path):
     M["streak"] = glow_mat(kit, "streak", "#eef4ff", 8.0)
     M["gline"] = glow_mat(kit, "grey line", "#7e7f7a", 0.5)
     M["puff"] = glow_mat(kit, "puff", ROSE, 1.2)
-    M["sky_dome"] = star_mat(kit, "sky dome", scale=22.0, thresh=0.5, size=0.17, gradient=True)
+    M["sky_dome"] = star_mat(kit, "sky dome", scale=22.0, thresh=0.5, size=0.17, gradient=True, base=0.7)
     M["sky_hill"] = star_mat(kit, "sky hill", scale=22.0, thresh=0.5, size=0.17, gradient=True)
     M["bunting"] = [kit.plastic(c, 0.8, name=f"flag {c}") for c in ("#e9a3a8", "#f0d9a0", "#8ec9a8", "#9fb7e0")]
     M["awn"] = [kit.plastic("#d9d4c6", 0.8, name="awn w"), kit.plastic("#b5532c", 0.8, name="awn r")]
@@ -379,7 +379,7 @@ def build_square(kit, ctx, M):
         y0 = 8.4 + 0.55 * i
         box(kit, f"step{i}", (8.4, 11.0 - y0, 0.18 * (i + 1)), (0, (y0 + 11.0) / 2, 0.09 * (i + 1)), M["stone2"])
     box(kit, "civic door", (1.7, 0.3, 2.5), (0, 10.95, 1.05 + 0.9), M["woodB"])
-    kit.cyl("civic arch", 0.85, 0.3, (0, 10.95, 3.1 + 0.45), M["woodB"], rot=(math.pi / 2, 0, 0))
+    kit.cyl("civic arch", 0.85, 0.3, (0, 10.99, 3.1 + 0.45), M["woodB"], rot=(math.pi / 2, 0, 0))
     kit.cyl("medallion", 0.7, 0.08, (0, 10.9, 4.9), M["stone2"], rot=(math.pi / 2, 0, 0), n=32)
     kit.cyl("medallion ring", 0.82, 0.05, (0, 10.93, 4.9), M["stone2"], rot=(math.pi / 2, 0, 0), n=32)
     for x in (-5.2, -3.2, 3.2, 5.2):
@@ -620,7 +620,7 @@ def build_dome(kit, ctx, M):
     kit.light("seat", "POINT", D(1.3, 0.4, 1.6), 40, "#ffb48a", size=0.2)
     kit.light("shoulder", "POINT", D(-2.8, -1.2, 2.2), 45, "#c0463a", size=0.3)
     # blocky clouds that roll over the slit (a rigid cluster that slides in animate)
-    cm = glow_mat(kit, "cloud block", "#6b717e", 0.9)
+    cm = glow_mat(kit, "cloud block", "#6b717e", 0.7)
     ctx["cloud_blocks"] = []
     rc = random.Random(9)
     for ix in range(0, 9):
@@ -844,6 +844,8 @@ def animate(kit, story, tl, t, ctx):
         sm.node_tree.nodes["stars"].outputs[0].default_value = stars_on
     cl = _cues(tl, "cloud")
     amt = _eased(cl, "amount", t, 0.0)
+    if 91.68 <= t < 130.5:      # the slit is already grey cloud from S56 (L48) on, no stars
+        amt = 1.0
     pink = _eased(cl, "pink", t, 0.0)
     dm = M["sky_dome"]
     base = V(kit.col("#0b1226")[:3])
@@ -907,10 +909,10 @@ def animate(kit, story, tl, t, ctx):
     gains["red"] = (1.0 + 1.2 * (1.0 - bulbs)) if sc == "dome" else 0.0
     gains["red2"] = (1.0 + 1.4 * (1.0 - bulbs)) if sc == "dome" else 0.0
     kit.LIGHTS["rim"]["light"].color = tuple(V((0.49, 0.62, 1.0)).lerp(V((1.0, 0.7, 0.72)), pink))
-    gains["rim"] = (0.55 + 1.1 * (1.0 - bulbs)) if sc == "dome" else 0.0
+    gains["rim"] = (0.3 + 0.6 * (1.0 - bulbs)) if sc == "dome" else 0.0
     gains["fill"] = (0.5 * bulbs + 0.5) if sc == "dome" else 0.0
     sid = spec["id"]
-    kshot = sid in ("S30", "S31", "S32", "S33", "S34")
+    kshot = sid in ("S30", "S31", "S32", "S33", "S34", "S48", "S63")
     if kshot:      # the creature reads as a person, not a robot: one side key, no fill, only the eyes and the hole bright
         gains["fill"] = 0.0
         for i in range(4):
@@ -922,7 +924,15 @@ def animate(kit, story, tl, t, ctx):
     elif sc == "dome":
         bpy.context.scene.world.node_tree.nodes["Background"].inputs["Strength"].default_value = SCENES[sc][1]
     gains["kside"] = 1.0 if kshot else 0.0
-    gains["kred"] = 1.0 if sid in ("S48", "S49", "S50", "S53") else (0.5 if sid in ("S62", "S63") else 0.0)
+    if sid == "S48":
+        kit.LIGHTS["kside"]["obj"].location = D(1.1, -1.55, 1.5)
+        gains["kside"] = 0.6
+    elif sid == "S63":
+        kit.LIGHTS["kside"]["obj"].location = D(2.3, -0.62, 1.3)
+        gains["kside"] = 0.6
+    else:
+        kit.LIGHTS["kside"]["obj"].location = D(1.7, -3.1, 1.4)
+    gains["kred"] = 1.0 if sid in ("S49", "S50", "S53") else (0.5 if sid == "S62" else 0.0)
     gains["seat"] = 1.0 if sid == "S66" else (0.8 if sid == "S49" else 0.0)
     gains["shoulder"] = 1.0 if sid == "S38" else 0.0
     # shooting stars (rare) over the slit
