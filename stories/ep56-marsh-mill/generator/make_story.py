@@ -47,18 +47,18 @@ cast = {
     "win": person("#2b3a5c", "#3a3c46", "#e6bf9a", "bun", "#f2efe8", collar="#c0392b", hat="beanie", hat_c="#c4bcac",
                   height=0.93, shoes="#4a3a30", key="crescent",
                   face={"eyes": "round", "brows": True}),
-    "nb1": person("#e3b83a", "#5a4a3a", "#e9c3a0", "swoop", "#7a4a2a", face=LASH, key="dots"),
-    "nb2": person("#4f7fa8", "#6a5a44", "#b98a62", "spiky", "#23201c", key="step"),
+    "nb1": person("#e3b83a", "#5a4a3a", "#e9c3a0", "swoop", "#7a4a2a", face=LASH, key="diamond"),
+    "nb2": person("#4f7fa8", "#6a5a44", "#b98a62", "spiky", "#23201c", key="cross"),
     "postman": person("#8a8d90", "#4a4d52", "#e2b48a", "none", "#555555", hat="ballcap", hat_c="#5a5d60", extras=["backpack"],
-                      extra_c="#6a5a44", key="leaf", collar="#6b6e72"),
-    "ames": person("#8a6a4a", "#4a4036", "#d9ac84", "buzz", "#9a9a9a", pattern="knit", pattern_c="#6e533a", key="wheel"),
-    "exwife": person("#3f7a4a", "#3a3a3a", "#e2b48a", "long", "#5a3a22", extras=["coat"], zip_c="#2a4a30", face=LASH, key="crescent"),
-    "bride": person("#f1ece0", "#f1ece0", "#c9946a", "bun", "#1a1412", face=LASH, key="dots", collar="#e0d8c4"),
-    "groom": person("#e6dfce", "#d8cfba", "#f0c7a6", "swoop", "#3a2a1c", extras=["tie"], extra_c="#8a4a36", key="step"),
-    "p1": person("#c2584a", "#4a5568", "#f0c7a6", "cap", "#7a4a2a", key="leaf", sleeves="short"),
-    "p2": person("#7aa88c", "#6d5a48", "#c9946a", "long", "#4a2c1c", face=LASH, key="dots"),
-    "p3": person("#d98a3a", "#3d4a66", "#8a5a3a", "bun", "#1a1412", face=LASH, key="step"),
-    "lifter": person("#4a2444", "#d9c9a6", "#c9a27a", "cap", "#241620", shoes="#2a2220", height=1.38,
+                      extra_c="#6a5a44", key="dots", collar="#6b6e72"),
+    "ames": person("#8a6a4a", "#4a4036", "#d9ac84", "buzz", "#9a9a9a", pattern="knit", pattern_c="#6e533a", key="step"),
+    "exwife": person("#3f7a4a", "#3a3a3a", "#e2b48a", "long", "#5a3a22", extras=["coat"], zip_c="#2a4a30", face=LASH, key="leaf"),
+    "bride": person("#f1ece0", "#f1ece0", "#c9946a", "bun", "#1a1412", face=LASH, key="ring", collar="#e0d8c4"),
+    "groom": person("#e6dfce", "#d8cfba", "#f0c7a6", "swoop", "#3a2a1c", extras=["tie"], extra_c="#8a4a36", key="triangle"),
+    "p1": person("#c2584a", "#4a5568", "#f0c7a6", "cap", "#7a4a2a", key="bell", sleeves="short"),
+    "p2": person("#7aa88c", "#6d5a48", "#c9946a", "long", "#4a2c1c", face=LASH, key="fish"),
+    "p3": person("#d98a3a", "#3d4a66", "#8a5a3a", "bun", "#1a1412", face=LASH, key="wave"),
+    "lifter": person("#4a2444", "#d9c9a6", "#a8774c", "cap", "#241620", shoes="#2a2220", height=1.38,
                      face={"eyes": "pin", "brows": False, "mouth": "flat", "eye_x": 0.27, "eye_scale": 1.9, "ink": "#1a1012"},
                      key=None),
 }
@@ -69,7 +69,7 @@ def build_story(shots_, acting_, cues_, sound_, music_, fx_=None):
         "slug": "ep56-marsh-mill",
         "title": "In this town, your key opens one door, and it's never your own",
         "made_for_kids": False,
-        "premise": "In a marsh town everyone is born with a brass key on a cord round the neck. It opens exactly one door, never your own, and goes warm and gold only at the locked door it fits. The narrator's has never opened anything. His great-aunt Win's windmill door, open for sixty years, is locked on Monday, and each night a clean flour-free patch in the shape of two boots stands nearer behind her, in his old place by the sack hoist.",
+        "premise": "In a marsh town everyone is born with a brass key on a cord round the neck. It opens exactly one door, never your own, and goes warm and gold only at the locked door it fits. The narrator's has never opened anything. His great-aunt Win's windmill door, open for thirty years, is locked on Monday, and each night a clean flour-free patch in the shape of two boots stands nearer behind her, in his old place by the sack hoist.",
         "twist": "The one door the narrator's key fits is Win's. He never found it because it was the only door in town never locked. She kept it open for thirty years so he'd never feel he had to come, then locked it and herself out so only his key could let her back in. The first line, a rule of exclusion, becomes the rule that someone else's door is where you are let in.",
         "world": "A small marsh town in late autumn: a sunny terraced street of painted doors, then flat reed beds and dykes under a big sky, a raised earth track, and a tarred black tower windmill with white sails, floury whitewashed rooms inside and an oak sack hoist.",
         "key_color": "#b48cff",
@@ -171,7 +171,7 @@ def nb(x, y=4.6, yaw=0.0, **kw):
 sh("S01", 1, 0, C([-10.8, 0.9, 1.4], [-10.8, 4.4, 0.85], 25),
    {"nb2": P(-11.3, 4.3, 0, expr="grin", head=[0, 0]), "nb1": P(-10.3, 4.3, 0, expr="grin")}, hand=0.004)
 glow("nb1", 0.3, 1.0, 1.0)
-sh("S02", 1, mid("L01", 0.55), C([-10.8, 2.9, 1.2], [-10.8, 4.6, 0.8], 30, [-10.8, 3.2, 1.2], [-10.8, 4.6, 0.85], 30),
+sh("S02", 1, mid("L01", 0.55), C([-10.8, 1.2, 1.3], [-10.8, 4.6, 0.95], 30, [-10.8, 1.5, 1.3], [-10.8, 4.6, 0.95], 30),
    {"nb1": P(-10.8, 4.5, 0, expr="grin")}, hand=0.004)
 door("h2", mid("L01", 0.62), 1.0, 0.9)
 glow("nb1", mid("L01", 0.95), 0.0, 1.0)
@@ -191,7 +191,6 @@ sh("S07", 4, "L04", C(front(-5.4, 4.6, 0, 2.6, 1.3), [-5.4, 4.6, 0.8], 26),
    {"ames": P(-5.4, 4.6, 0, expr="worried", arms=[25, 25])}, hand=0.004)
 sh("S08", 5, "L05", C([-6.0, 0.9, 1.3], [-5.9, 4.4, 0.8], 26, [-6.0, 1.4, 1.3], [-5.9, 4.4, 0.8], 26),
    {"exwife": P(-6.2, 4.5, 15, expr="neutral")}, hand=0.004)
-glow("exwife", "L05+0.7", 1.0, 1.0)
 sh("S09", 6, "L06", C([-5.4, 0.8, 1.3], [-5.4, 4.6, 0.8], 24),
    {"ames": P(-5.9, 4.6, 0, expr="neutral"), "exwife": P(-4.9, 4.6, 0, expr="neutral")}, hand=0.004)
 door("h3", "L06+0.5", 1.0, 0.9)
@@ -207,15 +206,14 @@ sh("S11", 8, "L08", C([MX - 2.5, 15.0, 1.6], [MX - 2.5, 60.0, 5.0], 22, [MX - 2.
 sh("S12", 8, mid("L08", 0.55), C(front(SHOP[0], 23.7, 0, 1.2, 1.1), [SHOP[0], 23.7, 0.75], 34),
    {"me": P(SHOP[0], 23.7, 0, expr="neutral")}, hand=0.004)
 sh("S13", 9, "L09", C([MX + 10, MY - 34, 2.0], [MX, MY, 6.0], 22, [MX + 8, MY - 30, 2.0], [MX, MY, 6.0], 22), {}, hand=0.003)
-sh("S14", 9, mid("L09", 0.5), C(front(MX, MY - 4.2, 0, 2.6, 1.3), [MX, MY - 4.2, 0.75], 30),
+sh("S14", 9, mid("L09", 0.5), C(front(MX, MY - 4.2, 0, 1.7, 1.25), [MX, MY - 4.2, 0.95], 30),
    {"win": P(MX, MY - 4.2, 0, z=0.2, expr="smirk")}, hand=0.004)
-sh("S15", 10, "L10", C(mi(0.4, -2.6, 1.3), mi(0.4, 0.0, 0.85), 24),
-   {"me": P(MX + 0.9, MY - 0.1, 340, expr="smirk"), "win": P(MX - 0.1, MY - 0.1, 20, expr="smirk")}, hand=0.004)
-sh("S16", 11, "L11", C(front(-21.6, 4.6, 0, 3.0, 1.3), [-21.6, 4.6, 0.8], 26),
-   {"me": P(-21.6, 4.6, 0, expr="smirk")}, hand=0.004)
+sh("S15", 10, "L10", C(front(MX + 0.2, MY - 4.6, 0, 3.0, 1.35), [MX + 0.2, MY - 4.2, 1.1], 28),
+   {"me": P(MX + 0.7, MY - 4.7, 0, z=0.2, expr="smirk"), "win": P(MX - 0.3, MY - 3.7, 0, expr="smirk", arms=[150, 0])}, hand=0.004)
+sh("S16", 11, "L11", C([MX + 0.35, MY - 5.0, 1.0], [MX + 0.35, MY + 0.3, 0.6], 26), {}, hand=0.003)
 sh("S17", 12, "L12", C([MX + 1.0, MY - 6.4, 0.9], [MX, MY - 4.4, 0.5], 30), {}, hand=0.004)
-sh("S18", 12, mid("L12", 0.5), C([MX + 0.2, MY - 4.45, 0.98], [MX + 0.32, MY - 3.47, 0.95], 44), {}, hand=0.002)
-sh("S19", 13, "L13", C([MX + 2.2, MY - 24, 1.6], [MX, MY - 12, 1.5], 34),
+sh("S18", 13, "L13", C([MX + 0.7, MY - 5.6, 1.15], [MX + 0.35, MY - 3.47, 0.95], 36), {}, hand=0.002)
+sh("S19", 13, mid("L13", 0.42), C([MX + 2.2, MY - 24, 1.6], [MX, MY - 12, 1.5], 34),
    {"me": P(MX, MY - 8.5, 0, to=(MX, MY - 17), expr="neutral", arms=[0, 0]), "win": P(MX, MY - 3.8, 0, z=0.0, expr="smirk")}, hand=0.006)
 sh("S20", 14, "L14", C([MX + 5.0, MY - 30, 1.6], [MX, MY - 4, 1.5], 26, [MX + 3.0, MY - 26, 1.6], [MX, MY - 4, 1.5], 26), {}, hand=0.004)
 sh("S20b", 14, mid("L14", 0.55), C([MX - 3.0, MY - 12, 1.2], [MX, MY - 4, 1.1], 28), {}, hand=0.004)
@@ -284,14 +282,15 @@ sh("S56", 43, "L43", C(front(MX, MY - 4.6, 0, 2.0, 1.4), [MX, MY - 4.6, 1.15], 3
 # ---- the loophole and the turn (S57 to S68)
 sh("S57", 44, "L44", C([0.0, 1.0, 1.3], [0.0, 4.5, 0.8], 24), {"nb1": P(0.0, 4.5, 0, expr="grin")}, hand=0.004)
 glow("nb1", "L44+0.1", 1.0, 1.0)
-sh("S58", 45, "L45", C([MX - 7.5, 15.0, 1.6], [MX - 9.0, 26.0, 1.4], 24),
-   {"me": P(MX - 11.0, 25.0, 180, expr="neutral")}, hand=0.004)
-sh("S59", 46, "L46", C([MX - 4.0, MY - 28, 1.6], [MX, MY - 4, 1.5], 24), {}, hand=0.004)
+sh("S58", 45, "L45", C(front(MX, MY - 4.4, 0, 2.2, 1.5, 60), [MX, MY - 4.3, 1.4], 30),
+   {"me": P(MX, MY - 4.4, 180, z=0.2, arms=[95, 0], expr="worried")}, hand=0.004)
+sh("S59", 46, "L46", C([MX + 5.0, MY - 30, 1.6], [MX, MY - 4, 1.5], 26, [MX + 3.0, MY - 26, 1.6], [MX, MY - 4, 1.5], 26), {}, hand=0.004)
 sh("S60", 47, "L47", C(front(MX, MY - 4.6, 0, 2.1, 1.5), [MX, MY - 4.6, 1.45], 30),
    {"me": P(MX, MY - 4.6, 0, expr="wide")}, hand=0.003)
 sh("S61", 48, "L48", C([MX + 0.5, MY - 7.8, 1.5], [MX + 0.5, MY - 4.0, 1.35], 22, [MX + 0.5, MY - 6.9, 1.5], [MX + 0.5, MY - 4.0, 1.4], 22),
    {"me": P(MX + 0.95, MY - 4.25, 320, z=0.2, expr="neutral"), "lifter": P(*LIF2, 0, **lift_up)}, hand=0.003)
 glow("me", "L48+0.4", 1.0, 1.2)
+glow("me", "L51+0.3", 0.0, 1.0)
 sh("S62", 49, "L49", C([MX + 0.5, MY - 6.7, 1.5], [MX + 0.5, MY - 4.0, 1.42], 22),
    {"me": P(MX + 0.95, MY - 4.25, 320, z=0.2, expr="wide"), "lifter": P(*LIF2, 0, **lift_up)}, hand=0.003)
 sh("S63", 50, "L50", C([MX + 0.6, MY - 5.3, 1.1], [MX + 0.55, MY - 3.9, 1.0], 22),
@@ -317,7 +316,7 @@ glow("me", "L56", 1.0, 0.6)
 sh("S72", 57, "L57", C(front(MX, MY - 3.6, 0, 1.9, 1.3), [MX, MY - 3.6, 1.22], 32),
    {"win": P(MX, MY - 3.6, 0, expr="smirk")}, hand=0.004)
 sh("S73", 58, "L58", C([MX + 0.2, MY - 4.45, 0.98], [MX + 0.32, MY - 3.47, 0.95], 44), {}, hand=0.002)
-sh("S73b", 58, mid("L58", 0.5), C(front(MX + 0.9, MY - 4.0, 0, 1.15, 1.1), [MX + 0.9, MY - 4.0, 0.75], 34),
+sh("S73b", 58, mid("L58", 0.5), C(front(MX + 0.9, MY - 4.0, 0, 2.2, 1.2), [MX + 0.9, MY - 4.0, 0.85], 34),
    {"me": P(MX + 0.9, MY - 4.0, 0, z=0.2, expr="smirk")}, hand=0.002)
 sh("S74", 59, "L59", C([MX - 2.5, 15.0, 1.6], [MX - 2.5, 60.0, 5.0], 22),
    {"me": P(SHOP[0], 23.7, 180, expr="neutral")}, hand=0.003)

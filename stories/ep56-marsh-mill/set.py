@@ -314,7 +314,11 @@ def build_mill(kit, M, ctx):
     for k in range(3):
         ctx["sacks"].append(box(f"sack{k}", (0.5, 0.34, 0.62), (MX - 0.75 + 0.62 * k, MY - 4.55 - 0.3 * (k % 2), 0.4), M["sack"], bevel=0.12))
     # the scarf caught in the door (L27)
-    ctx["scarf"] = box("scarf", (0.13, 0.025, 0.62), (MX + 0.5, MY - 3.64, 1.05), kit.plastic("#d4cebe", 0.9, name="scarfcloth"), bevel=0.02)
+    ctx["scarf"] = empty("scarf", (MX + 0.5, MY - 3.64, 1.3))
+    sc1, sc2 = kit.plastic("#cfc7b2", 0.95, name="scarfcloth"), kit.plastic("#a89f88", 0.95, name="scarfcloth2")
+    box("scarf.knot", (0.17, 0.05, 0.1), (0, 0, 0.0), sc2, ctx["scarf"], bevel=0.02)
+    for k, (dx, rz, ln, mt_) in enumerate(((-0.04, 0.12, 0.34, sc1), (0.03, -0.1, 0.42, sc2), (0.0, 0.05, 0.26, sc1))):
+        box(f"scarf.fold{k}", (0.1, 0.03 + 0.01 * k, ln), (dx, -0.01 * k, -0.07 - ln / 2 + 0.03 * k), mt_, ctx["scarf"], bevel=0.015, rot=(0, rz, 0))
     # the spill of light on the marsh when the door is open at night
     ctx["spill"] = plane("spillpl", (1.5, 5.0), (MX, MY - 6.6, 0.08), M["spill"])
     # ---- inside: stones, hopper, chute and bins, stove, stools, ladder, the hoist and its post
@@ -350,6 +354,7 @@ def build_mill(kit, M, ctx):
         return ob
     ctx["stool_win"] = stool("stool_win", False)
     ctx["stool_me"] = stool("stool_me", True)
+    box("stool_me.flour", (0.34, 0.34, 0.03), (0, 0, 0.555), kit.plastic("#f0ebe0", 0.95, name="stool_flour"), ctx["stool_me"], bevel=0.01)
     # the hoist: chain and hook through the trapdoor, and the oak post beside it, with two plum strokes
     box("hoist.chain", (0.04, 0.04, 1.6), (MX + 0.55, MY - 0.1, 2.8), M["chain"])
     for k in range(7):
@@ -375,8 +380,15 @@ def build_mill(kit, M, ctx):
     ]
     ctx["shadow_down"] = [box("sh.dL", (0.3, 0.02, 1.2), (-0.72, 0, 1.95), M["shadow"], sh),
                           box("sh.dR", (0.3, 0.02, 1.2), (0.72, 0, 1.95), M["shadow"], sh)]
-    ctx["shadow_up"] = [box("sh.uL", (0.3, 0.02, 1.5), (-0.62, 0, 3.0), M["shadow"], sh),
-                        box("sh.uR", (0.3, 0.02, 1.5), (0.62, 0, 3.0), M["shadow"], sh)]
+    ctx["shadow_up"] = [box("sh.uL", (0.28, 0.02, 1.25), (-0.8, 0, 2.95), M["shadow"], sh),
+                        box("sh.uR", (0.28, 0.02, 1.25), (0.8, 0, 2.95), M["shadow"], sh),
+                        box("sh.uhL", (0.5, 0.02, 0.3), (-0.8, 0, 3.7), M["shadow"], sh),
+                        box("sh.uhR", (0.5, 0.02, 0.3), (0.8, 0, 3.7), M["shadow"], sh)]
+    # the lit wall behind the shadow: soft overlapping discs, so the shape reads black against light
+    lit = kit.emit("#ffe2b0", 0.6, name="shadow_lit")
+    litm2 = kit.emit("#ffd9a0", 0.35, name="shadow_lit2")
+    ctx["shadow_lit"] = [cyl("sh.lit1", 2.9, 0.02, (0, 0.06, 2.4), litm2, sh, rot=(math.pi / 2, 0, 0), n=32),
+                         cyl("sh.lit2", 2.1, 0.02, (0, 0.05, 2.4), lit, sh, rot=(math.pi / 2, 0, 0), n=32)]
     ctx["shadow"] = sh
     # flour in the air: tiny flecks
     fl = kit.emit("#d8d2c0", 1.0, name="fleck")
@@ -468,16 +480,37 @@ def make_key(kit, who, glyph, torso, M):
     elif glyph == "step":
         for k in range(3):
             box(f"{who}.g", (0.14 * (3 - k) + 0.1, 0.02, 0.1), (-0.12 + 0.07 * (3 - k) * 0.5, yg, 0.84 + 0.14 * k), ink, g)
-    else:   # leaf
+    elif glyph == "leaf":
         box(f"{who}.g", (0.26, 0.02, 0.26), (0, yg, 0.98), ink, g, rot=(0, 0.785, 0))
         box(f"{who}.g", (0.03, 0.03, 0.42), (0, yg - 0.01, 0.98), br, g, rot=(0, 0.3, 0))
+    elif glyph == "diamond":
+        box(f"{who}.g", (0.3, 0.02, 0.3), (0, yg, 0.98), ink, g, rot=(0, 0.785, 0))
+    elif glyph == "cross":
+        box(f"{who}.g", (0.36, 0.02, 0.1), (0, yg, 0.98), ink, g)
+        box(f"{who}.g", (0.1, 0.02, 0.36), (0, yg, 0.98), ink, g)
+    elif glyph == "ring":
+        cyl(f"{who}.g", 0.24, 0.02, (0, yg, 0.98), ink, g, rot=(math.pi / 2, 0, 0), n=20)
+        cyl(f"{who}.g", 0.14, 0.03, (0, yg - 0.004, 0.98), br, g, rot=(math.pi / 2, 0, 0), n=20)
+    elif glyph == "triangle":
+        for k in range(3):
+            box(f"{who}.g", (0.4 - 0.13 * k, 0.02, 0.11), (0, yg, 0.86 + 0.11 * k), ink, g)
+    elif glyph == "bell":
+        box(f"{who}.g", (0.34, 0.02, 0.22), (0, yg, 0.94), ink, g)
+        box(f"{who}.g", (0.2, 0.02, 0.14), (0, yg, 1.1), ink, g)
+        box(f"{who}.g", (0.06, 0.02, 0.06), (0, yg, 0.8), ink, g)
+    elif glyph == "fish":
+        box(f"{who}.g", (0.3, 0.02, 0.16), (-0.04, yg, 0.98), ink, g)
+        box(f"{who}.g", (0.1, 0.02, 0.24), (0.15, yg, 0.98), ink, g)
+    else:   # wave
+        for k in range(3):
+            box(f"{who}.g", (0.14, 0.02, 0.1), (-0.14 + 0.14 * k, yg, 1.04 if k % 2 else 0.92), ink, g)
     return g, b
 
 
 def make_lifter_extras(kit, torso, M):
     """The second pair of arms: full size, out of the top of the shoulders behind the first pair, held straight up, hands
     open (palms up). Each is on a pivot so a bend at the waist can keep them upright."""
-    skin = kit.plastic("#c9a27a", 0.5, name="lifter_skin_up")
+    skin = kit.plastic("#a8774c", 0.5, name="lifter_skin_up")
     plum = kit.plastic("#5a2d4f", 0.6, name="lifter_plum_up")
     pivs = []
     for sx in (-1, 1):
@@ -485,9 +518,9 @@ def make_lifter_extras(kit, torso, M):
         # sleeve from the shoulder up, then the bare forearm and a flat open hand with the thumb out
         box("lifter.upsl", (0.98, 1.0, 1.3), (0, 0, 0.62), plum, p, bevel=0.08)
         box("lifter.upfa", (0.92, 0.95, 0.9), (0, 0, 1.75), skin, p, bevel=0.08)
-        box("lifter.uphand", (1.05, 0.5, 0.34), (0, 0, 2.38), skin, p, bevel=0.08)
-        for k in range(4):
-            box("lifter.upfin", (0.17, 0.4, 0.3), (-0.4 + 0.27 * k, 0.0, 2.55), skin, p, bevel=0.05)
+        # a plain open hand: a flat mitten of a palm, the thumb out to the side
+        box("lifter.uphand", (0.9, 0.46, 0.95), (0, 0, 2.55), skin, p, bevel=0.1)
+        box("lifter.upthumb", (0.26, 0.34, 0.5), (sx * 0.58, 0.0, 2.4), skin, p, bevel=0.07, rot=(0, sx * 0.4, 0))
         pivs.append(p)
     # smock buttons down the front
     btn = M["btn"]
@@ -527,8 +560,10 @@ MILL = {
 
 def look_of(sid, n):
     """(exterior look, mill-interior mood) for a shot (n = the narration line it sits on)."""
-    if sid in ("S11", "S74", "S58"):
+    if sid in ("S11", "S74"):
         return "dusk", "out"
+    if sid == "S58":
+        return "grey", "in_day"
     if sid in ("S20", "S20b", "S59"):
         return "night", "out"
     if sid == "S57":
@@ -591,7 +626,7 @@ def build(kit, story, tl):
     kit.light("keyglow", "POINT", (0, 0, -50), 1.0, "#ffcc66", size=0.2, shadow=False)
     kit.light("spilll", "POINT", (MX, MY - 4.2, 1.0), 1.0, "#ffb868", size=0.5, shadow=False)
     kit.light("mface", "POINT", (MX - 1.6, MY - 6.4, 2.2), 1.0, "#a8bcff", size=0.4, shadow=False)
-    kit.light("lkey", "SPOT", (MX - 1.7, MY - 1.4, 0.35), 1.0, "#ffb070", spot=38, blend=0.6, size=0.3, shadow=False)
+    kit.light("lkey", "SPOT", (MX - 1.7, MY - 1.4, 0.35), 1.0, "#ffd6b0", spot=38, blend=0.6, size=0.3, shadow=False)
     kit.aim(kit.LIGHTS["lkey"]["obj"], (MX + 0.2, MY - 0.1, 2.0))
     kit.light("lfill", "POINT", (MX + 0.6, MY - 2.9, 1.3), 1.0, "#9fb4ff", size=0.5, shadow=False)
     build_marsh(kit, M, ctx)
@@ -724,14 +759,19 @@ def animate(kit, story, tl, t, ctx):
     # night-time rim for the creature: a cool light behind it, from the door side
     if n in (36, 37, 38, 39, 40, 41, 42) or sid in ("TEST", "S61", "S62"):
         over["rim"] = 90.0
-        over["stove"] = 70.0
-        over["lkey"] = 480.0
-        over["lfill"] = 90.0
+        over["stove"] = 18.0
+        over["lkey"] = 230.0 if n < 40 else 380.0
+        over["lfill"] = 0.0 if n < 40 else 170.0           # no cool fill: the face is warm from below, the moon only rims it
+        over["moon"] = over["moon"] * 0.12
+        over["moon2"] = over["moon2"] * 1.5
     # ---- spill of light on the marsh from an open door at night
-    ctx["spill"].hide_render = not (sid in ("S20", "S20b", "S59"))
+    ctx["spill"].hide_render = not (sid in ("S20", "S20b", "S59", "S11", "S74"))
     ctx["doorglow"].hide_render = not (sid in ("S11", "S20", "S20b", "S59", "S74"))
+    far = sid in ("S11", "S74")
+    ctx["doorglow"].scale = (3.0, 2.0, 1) if far else (1, 1, 1)
+    ctx["spill"].scale = (3.5, 3.0, 1) if far else (1, 1, 1)
     over["spilll"] = 160.0 if sid in ("S20", "S20b", "S59") else 0.0
-    over["shoplamp"] = 90.0 if sid in ("S11", "S74", "S58") else 0.0
+    over["shoplamp"] = 90.0 if sid in ("S11", "S74") else 0.0
     over["mface"] = 500.0 if sid in ("S46", "S53", "S56", "S60", "S61", "S62", "S63", "S64") else 0.0
     # ---- doors
     dcues = _cues(tl, "door")
@@ -739,7 +779,7 @@ def animate(kit, story, tl, t, ctx):
         v = track(dcues, t, "id", did, 0.0)
         if did == "mill":
             frac = v
-            if sid in ("S11", "S20", "S20b", "S59", "S74", "S79", "S76", "S77", "S78", "S69", "S70", "S71", "S72", "S80", "S66", "S67"):
+            if sid in ("S13", "S14", "S15", "S16", "S17", "S18", "S19", "S11", "S20", "S20b", "S59", "S74", "S79", "S76", "S77", "S78", "S69", "S70", "S71", "S72", "S80", "S66", "S67"):
                 frac = 1.0
             if sid == "S75":
                 frac = 1.0 - 0.7 * ss((t - shot["start"]) / max(0.5, shot["end"] - shot["start"]))
@@ -758,7 +798,8 @@ def animate(kit, story, tl, t, ctx):
     if ctx.get("cloth") is not None:
         ctx["cloth"].hide_render = not (n in (54, 55, 56, 57))
     # ---- the scene's props by line
-    ctx["scarf"].hide_render = n != 27
+    for o in [ctx["scarf"]] + list(ctx["scarf"].children):
+        o.hide_render = n != 27
     ctx["scarf"].rotation_euler = (0.05 * math.sin(t * 0.9), 0.14 * math.sin(t * 1.3), 0.12 * math.sin(t * 0.7))
     for k, s_ in enumerate(ctx["sacks"]):
         s_.hide_render = not (n in (12, 13) or sid in ("S17",))
@@ -803,6 +844,8 @@ def animate(kit, story, tl, t, ctx):
         for o in grp:
             o.hide_render = not on
     ctx["shadow"].hide_render = False
+    for o in ctx["shadow_lit"]:
+        o.hide_render = n not in (30, 31, 32)
     sc = 1.0 + (0.18 if n == 31 else 0.28 if n == 32 else 0.0)
     ctx["shadow"].scale = (sc, 1, sc)
     ctx["shadow"].location = (MX + 0.4, MY + 3.06, -0.3 * (sc - 1.0) * 2)
@@ -827,15 +870,15 @@ def animate(kit, story, tl, t, ctx):
         v = track(gl, t, "who", who, 0.0)
         for k in ("Emission Strength",):
             if k in b.inputs:
-                b.inputs[k].default_value = 1.5 * v
+                b.inputs[k].default_value = 0.3 * v
         if v > 0.01 and not st["hidden"] and (best is None or v > best[1]):
             best = (who, v, g)
     if best:
         bpy.context.view_layer.update()
         wp = best[2].matrix_world.translation
         # the glow light sits just in front of the key (toward the camera side, -y of the wearer)
-        kit.LIGHTS["keyglow"]["obj"].location = (wp.x, wp.y - 0.35, wp.z + 0.25)
-        over["keyglow"] = 11.0 * best[1]
+        kit.LIGHTS["keyglow"]["obj"].location = (wp.x, wp.y - 0.55, wp.z + 0.3)
+        over["keyglow"] = 1.3 * best[1]
     else:
         over["keyglow"] = 0.0
     # ---- the Lifter: the raised arms stay upright whatever the bend, and the bend at the waist is a cue
@@ -853,5 +896,10 @@ def animate(kit, story, tl, t, ctx):
         for p in ctx["lifter_up"]:
             p.rotation_euler = (-math.radians(60) * bend, 0, 0)
         near = n >= 40
-        kit.aim(kit.LIGHTS["lkey"]["obj"], (MX + 0.05, MY - 1.7, 1.5) if near else (MX + 0.2, MY - 0.1, 2.0))
+        kit.LIGHTS["lfill"]["light"].color = kit.col("#ffd8bc")[:3] if near else kit.col("#9fb4ff")[:3]
+        if near:
+            kit.LIGHTS["lkey"]["obj"].location = (MX - 0.7, MY - 2.6, 0.3)
+        else:
+            kit.LIGHTS["lkey"]["obj"].location = (MX - 1.7, MY - 1.4, 0.35)
+        kit.aim(kit.LIGHTS["lkey"]["obj"], (MX + 0.05, MY - 3.0, 1.7) if near else (MX + 0.2, MY - 0.1, 2.0))
     return over

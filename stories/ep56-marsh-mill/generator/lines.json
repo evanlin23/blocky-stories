@@ -176,24 +176,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "My great-aunt",
-    "My great-aunt"
+    "My great-aunt Win",
+    "My great-aunt Win"
    ],
    [
-    "Win is eighty-one.",
-    "Win is eighty-one."
+    "runs the WINDMILL",
+    "runs the windmill"
    ],
    [
-    "She runs the",
-    "She runs the"
-   ],
-   [
-    "WINDMILL on",
-    "windmill on"
-   ],
-   [
-    "the marsh.",
-    "the marsh."
+    "on the marsh.",
+    "on the marsh."
    ]
   ]
  },
@@ -202,20 +194,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I was her",
-    "I was her"
+    "She's the only",
+    "She's the only"
    ],
    [
-    "helper on the",
-    "helper on the"
-   ],
-   [
-    "stones for",
-    "stones for"
-   ],
-   [
-    "six YEARS.",
-    "six years."
+    "family I've GOT.",
+    "family I've got."
    ]
   ]
  },
@@ -224,20 +208,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Two years ago",
-    "Two years ago"
+    "My old stool",
+    "My old stool"
    ],
    [
-    "I left to",
-    "I left to"
+    "still sits beside",
+    "still sits beside"
    ],
    [
-    "open my",
-    "open my"
+    "hers at",
+    "hers at"
    ],
    [
-    "own BAKERY.",
-    "own bakery."
+    "the STONES.",
+    "the stones."
    ]
   ]
  },
@@ -246,28 +230,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Now I just",
-    "Now I just"
+    "Every morning I",
+    "Every morning I"
    ],
    [
     "pick up her",
     "pick up her"
    ],
    [
-    "flour from",
-    "flour from"
+    "flour for",
+    "flour for"
    ],
    [
-    "the step.",
-    "the step."
-   ],
-   [
-    "I don't",
-    "I don't"
-   ],
-   [
-    "go IN.",
-    "go in."
+    "my BAKERY.",
+    "my bakery."
    ]
   ]
  },
@@ -276,24 +252,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "She never asked",
-    "She never asked"
+    "It's left on",
+    "It's left on"
    ],
    [
-    "me to STAY.",
-    "me to stay."
+    "the step by",
+    "the step by"
    ],
    [
-    "So I never",
-    "So I never"
+    "the open door.",
+    "the open door."
    ],
    [
-    "asked to",
-    "asked to"
+    "I never",
+    "I never"
    ],
    [
-    "come BACK.",
-    "come back."
+    "go IN.",
+    "go in."
    ]
   ]
  },
@@ -302,16 +278,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Her door has",
-    "Her door has"
-   ],
-   [
-    "never been locked.",
-    "never been locked."
-   ],
-   [
-    "Sixty years,",
-    "Sixty years,"
+    "Thirty years,",
+    "Thirty years,"
    ],
    [
     "open day",
@@ -960,16 +928,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I had tried",
-    "I had tried"
+    "All week",
+    "All week"
    ],
    [
-    "every locked door",
-    "every locked door"
+    "it was locked,",
+    "it was locked,"
    ],
    [
-    "in TOWN.",
-    "in town."
+    "and I",
+    "and I"
+   ],
+   [
+    "only ever KNOCKED.",
+    "only ever knocked."
    ]
   ]
  },
@@ -978,12 +950,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Win's had",
-    "Win's had"
+    "Before that,",
+    "Before that,"
    ],
    [
-    "never been locked.",
-    "never been locked."
+    "it was",
+    "it was"
+   ],
+   [
+    "never locked.",
+    "never locked."
    ],
    [
     "Not ONCE.",

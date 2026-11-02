@@ -2,7 +2,7 @@
  "slug": "ep56-marsh-mill",
  "title": "In this town, your key opens one door, and it's never your own",
  "made_for_kids": false,
- "premise": "In a marsh town everyone is born with a brass key on a cord round the neck. It opens exactly one door, never your own, and goes warm and gold only at the locked door it fits. The narrator's has never opened anything. His great-aunt Win's windmill door, open for sixty years, is locked on Monday, and each night a clean flour-free patch in the shape of two boots stands nearer behind her, in his old place by the sack hoist.",
+ "premise": "In a marsh town everyone is born with a brass key on a cord round the neck. It opens exactly one door, never your own, and goes warm and gold only at the locked door it fits. The narrator's has never opened anything. His great-aunt Win's windmill door, open for thirty years, is locked on Monday, and each night a clean flour-free patch in the shape of two boots stands nearer behind her, in his old place by the sack hoist.",
  "twist": "The one door the narrator's key fits is Win's. He never found it because it was the only door in town never locked. She kept it open for thirty years so he'd never feel he had to come, then locked it and herself out so only his key could let her back in. The first line, a rule of exclusion, becomes the rule that someone else's door is where you are let in.",
  "world": "A small marsh town in late autumn: a sunny terraced street of painted doors, then flat reed beds and dykes under a big sky, a raised earth track, and a tarred black tower windmill with white sails, floury whitewashed rooms inside and an oak sack hoist.",
  "key_color": "#b48cff",
@@ -97,7 +97,7 @@
     "eyes": "lashes",
     "brows": true
    },
-   "key": "dots"
+   "key": "diamond"
   },
   "nb2": {
    "age": "adult",
@@ -114,7 +114,7 @@
     "eyes": "round",
     "brows": true
    },
-   "key": "step"
+   "key": "cross"
   },
   "postman": {
    "age": "adult",
@@ -137,7 +137,7 @@
     "backpack"
    ],
    "extra_c": "#6a5a44",
-   "key": "leaf"
+   "key": "dots"
   },
   "ames": {
    "age": "adult",
@@ -155,7 +155,7 @@
     "brows": true
    },
    "pattern_c": "#6e533a",
-   "key": "wheel"
+   "key": "step"
   },
   "exwife": {
    "age": "adult",
@@ -176,7 +176,7 @@
     "coat"
    ],
    "zip_c": "#2a4a30",
-   "key": "crescent"
+   "key": "leaf"
   },
   "bride": {
    "age": "adult",
@@ -194,7 +194,7 @@
     "brows": true
    },
    "collar": "#e0d8c4",
-   "key": "dots"
+   "key": "ring"
   },
   "groom": {
    "age": "adult",
@@ -215,7 +215,7 @@
     "tie"
    ],
    "extra_c": "#8a4a36",
-   "key": "step"
+   "key": "triangle"
   },
   "p1": {
    "age": "adult",
@@ -232,7 +232,7 @@
     "eyes": "round",
     "brows": true
    },
-   "key": "leaf"
+   "key": "bell"
   },
   "p2": {
    "age": "adult",
@@ -249,7 +249,7 @@
     "eyes": "lashes",
     "brows": true
    },
-   "key": "dots"
+   "key": "fish"
   },
   "p3": {
    "age": "adult",
@@ -266,11 +266,11 @@
     "eyes": "lashes",
     "brows": true
    },
-   "key": "step"
+   "key": "wave"
   },
   "lifter": {
    "age": "adult",
-   "skin": "#c9a27a",
+   "skin": "#a8774c",
    "shirt": "#4a2444",
    "pattern": "solid",
    "pants": "#d9c9a6",
@@ -469,24 +469,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "My great-aunt",
-     "My great-aunt"
+     "My great-aunt Win",
+     "My great-aunt Win"
     ],
     [
-     "Win is eighty-one.",
-     "Win is eighty-one."
+     "runs the WINDMILL",
+     "runs the windmill"
     ],
     [
-     "She runs the",
-     "She runs the"
-    ],
-    [
-     "WINDMILL on",
-     "windmill on"
-    ],
-    [
-     "the marsh.",
-     "the marsh."
+     "on the marsh.",
+     "on the marsh."
     ]
    ]
   },
@@ -495,20 +487,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I was her",
-     "I was her"
+     "She's the only",
+     "She's the only"
     ],
     [
-     "helper on the",
-     "helper on the"
-    ],
-    [
-     "stones for",
-     "stones for"
-    ],
-    [
-     "six YEARS.",
-     "six years."
+     "family I've GOT.",
+     "family I've got."
     ]
    ]
   },
@@ -517,20 +501,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Two years ago",
-     "Two years ago"
+     "My old stool",
+     "My old stool"
     ],
     [
-     "I left to",
-     "I left to"
+     "still sits beside",
+     "still sits beside"
     ],
     [
-     "open my",
-     "open my"
+     "hers at",
+     "hers at"
     ],
     [
-     "own BAKERY.",
-     "own bakery."
+     "the STONES.",
+     "the stones."
     ]
    ]
   },
@@ -539,28 +523,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Now I just",
-     "Now I just"
+     "Every morning I",
+     "Every morning I"
     ],
     [
      "pick up her",
      "pick up her"
     ],
     [
-     "flour from",
-     "flour from"
+     "flour for",
+     "flour for"
     ],
     [
-     "the step.",
-     "the step."
-    ],
-    [
-     "I don't",
-     "I don't"
-    ],
-    [
-     "go IN.",
-     "go in."
+     "my BAKERY.",
+     "my bakery."
     ]
    ]
   },
@@ -569,24 +545,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "She never asked",
-     "She never asked"
+     "It's left on",
+     "It's left on"
     ],
     [
-     "me to STAY.",
-     "me to stay."
+     "the step by",
+     "the step by"
     ],
     [
-     "So I never",
-     "So I never"
+     "the open door.",
+     "the open door."
     ],
     [
-     "asked to",
-     "asked to"
+     "I never",
+     "I never"
     ],
     [
-     "come BACK.",
-     "come back."
+     "go IN.",
+     "go in."
     ]
    ]
   },
@@ -595,16 +571,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Her door has",
-     "Her door has"
-    ],
-    [
-     "never been locked.",
-     "never been locked."
-    ],
-    [
-     "Sixty years,",
-     "Sixty years,"
+     "Thirty years,",
+     "Thirty years,"
     ],
     [
      "open day",
@@ -1253,16 +1221,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I had tried",
-     "I had tried"
+     "All week",
+     "All week"
     ],
     [
-     "every locked door",
-     "every locked door"
+     "it was locked,",
+     "it was locked,"
     ],
     [
-     "in TOWN.",
-     "in town."
+     "and I",
+     "and I"
+    ],
+    [
+     "only ever KNOCKED.",
+     "only ever knocked."
     ]
    ]
   },
@@ -1271,12 +1243,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Win's had",
-     "Win's had"
+     "Before that,",
+     "Before that,"
     ],
     [
-     "never been locked.",
-     "never been locked."
+     "it was",
+     "it was"
+    ],
+    [
+     "never locked.",
+     "never locked."
     ],
     [
      "Not ONCE.",
@@ -1746,13 +1722,13 @@
      0,
      [
       -10.8,
-      2.9,
-      1.2
+      1.2,
+      1.3
      ],
      [
       -10.8,
       4.6,
-      0.8
+      0.95
      ],
      30
     ],
@@ -1760,13 +1736,13 @@
      1,
      [
       -10.8,
-      3.2,
-      1.2
+      1.5,
+      1.3
      ],
      [
       -10.8,
       4.6,
-      0.85
+      0.95
      ],
      30
     ]
@@ -2078,19 +2054,19 @@
      0,
      [
       30.0,
-      88.2,
-      1.3
+      89.1,
+      1.25
      ],
      [
       30.0,
       90.8,
-      0.75
+      0.95
      ],
      30
     ]
    ],
    "step": 2,
-   "at": "L09+1.37",
+   "at": "L09+1.03",
    "hand": 0.004
   },
   {
@@ -2100,16 +2076,16 @@
     [
      0,
      [
-      30.4,
-      92.4,
-      1.3
+      30.2,
+      87.4,
+      1.35
      ],
      [
-      30.4,
-      95.0,
-      0.85
+      30.2,
+      90.8,
+      1.1
      ],
-     24
+     28
     ]
    ],
    "step": 2,
@@ -2123,21 +2099,21 @@
     [
      0,
      [
-      -21.6,
-      1.6,
-      1.3
+      30.35,
+      90.0,
+      1.0
      ],
      [
-      -21.6,
-      4.6,
-      0.8
+      30.35,
+      95.3,
+      0.6
      ],
      26
     ]
    ],
    "step": 2,
    "at": "L11",
-   "hand": 0.004
+   "hand": 0.003
   },
   {
    "id": "S17",
@@ -2164,25 +2140,25 @@
   },
   {
    "id": "S18",
-   "n": 12,
+   "n": 13,
    "cam": [
     [
      0,
      [
-      30.2,
-      90.55,
-      0.98
+      30.7,
+      89.4,
+      1.15
      ],
      [
-      30.32,
+      30.35,
       91.53,
       0.95
      ],
-     44
+     36
     ]
    ],
    "step": 2,
-   "at": "L12+1.09",
+   "at": "L13",
    "hand": 0.002
   },
   {
@@ -2205,7 +2181,7 @@
     ]
    ],
    "step": 2,
-   "at": "L13",
+   "at": "L13+0.99",
    "hand": 0.006
   },
   {
@@ -2265,7 +2241,7 @@
     ]
    ],
    "step": 2,
-   "at": "L14+1.49",
+   "at": "L14+0.8",
    "hand": 0.004
   },
   {
@@ -3154,16 +3130,16 @@
     [
      0,
      [
-      22.5,
-      15.0,
-      1.6
+      31.905,
+      89.5,
+      1.5
      ],
      [
-      21.0,
-      26.0,
+      30.0,
+      90.7,
       1.4
      ],
-     24
+     30
     ]
    ],
    "step": 2,
@@ -3177,8 +3153,8 @@
     [
      0,
      [
-      26.0,
-      67.0,
+      35.0,
+      65.0,
       1.6
      ],
      [
@@ -3186,7 +3162,21 @@
       91.0,
       1.5
      ],
-     24
+     26
+    ],
+    [
+     1,
+     [
+      33.0,
+      69.0,
+      1.6
+     ],
+     [
+      30.0,
+      91.0,
+      1.5
+     ],
+     26
     ]
    ],
    "step": 2,
@@ -3537,13 +3527,13 @@
      0,
      [
       30.9,
-      89.85,
-      1.1
+      88.8,
+      1.2
      ],
      [
       30.9,
       91.0,
-      0.75
+      0.85
      ],
      34
     ]
@@ -3911,72 +3901,35 @@
      0
     ],
     "expr": "smirk",
-    "yaw": 340,
-    "pos": [
-     30.9,
-     94.9,
-     0.0
-    ],
-    "blend": 0.0,
-    "hidden": false
-   },
-   {
-    "at": "L11",
-    "pos": [
-     30.9,
-     94.9,
-     0.0
-    ]
-   },
-   {
-    "at": "L11",
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "smirk",
     "yaw": 0,
     "pos": [
-     -21.6,
-     4.6,
-     0.0
+     30.7,
+     90.3,
+     0.2
     ],
     "blend": 0.0,
     "hidden": false
    },
    {
-    "at": "L12",
+    "at": "L11",
     "pos": [
-     -21.6,
-     4.6,
-     0.0
+     30.7,
+     90.3,
+     0.2
     ],
     "hidden": true,
     "blend": 0.0
    },
    {
-    "at": "L13",
+    "at": "L13+0.99",
     "pos": [
-     -21.6,
-     4.6,
-     0.0
+     30.7,
+     90.3,
+     0.2
     ]
    },
    {
-    "at": "L13",
+    "at": "L13+0.99",
     "arms": [
      0,
      0
@@ -4476,7 +4429,7 @@
    {
     "at": "L45",
     "arms": [
-     0,
+     95,
      0
     ],
     "side": [
@@ -4492,12 +4445,12 @@
      0,
      0
     ],
-    "expr": "neutral",
+    "expr": "worried",
     "yaw": 180,
     "pos": [
-     19.0,
-     25.0,
-     0.0
+     30.0,
+     90.6,
+     0.2
     ],
     "blend": 0.0,
     "hidden": false
@@ -4505,9 +4458,9 @@
    {
     "at": "L46",
     "pos": [
-     19.0,
-     25.0,
-     0.0
+     30.0,
+     90.6,
+     0.2
     ],
     "hidden": true,
     "blend": 0.0
@@ -4515,9 +4468,9 @@
    {
     "at": "L47",
     "pos": [
-     19.0,
-     25.0,
-     0.0
+     30.0,
+     90.6,
+     0.2
     ]
    },
    {
@@ -5129,7 +5082,7 @@
     "hidden": true
    },
    {
-    "at": "L09+1.37",
+    "at": "L09+1.03",
     "pos": [
      0.0,
      0.0,
@@ -5137,7 +5090,7 @@
     ]
    },
    {
-    "at": "L09+1.37",
+    "at": "L09+1.03",
     "arms": [
      0,
      0
@@ -5176,7 +5129,7 @@
    {
     "at": "L10",
     "arms": [
-     0,
+     150,
      0
     ],
     "side": [
@@ -5193,10 +5146,10 @@
      0
     ],
     "expr": "smirk",
-    "yaw": 20,
+    "yaw": 0,
     "pos": [
-     29.9,
-     94.9,
+     29.7,
+     91.3,
      0.0
     ],
     "blend": 0.0,
@@ -5205,23 +5158,23 @@
    {
     "at": "L11",
     "pos": [
-     29.9,
-     94.9,
+     29.7,
+     91.3,
      0.0
     ],
     "hidden": true,
     "blend": 0.0
    },
    {
-    "at": "L13",
+    "at": "L13+0.99",
     "pos": [
-     29.9,
-     94.9,
+     29.7,
+     91.3,
      0.0
     ]
    },
    {
-    "at": "L13",
+    "at": "L13+0.99",
     "arms": [
      0,
      0
@@ -7322,13 +7275,6 @@
    "ramp": 0.8
   },
   {
-   "at": "L05+0.7",
-   "name": "glow",
-   "who": "exwife",
-   "to": 1.0,
-   "ramp": 1.0
-  },
-  {
    "at": "L06+0.5",
    "name": "door",
    "id": "h3",
@@ -7374,6 +7320,13 @@
    "who": "me",
    "to": 1.0,
    "ramp": 1.2
+  },
+  {
+   "at": "L51+0.3",
+   "name": "glow",
+   "who": "me",
+   "to": 0.0,
+   "ramp": 1.0
   },
   {
    "at": "L51",
