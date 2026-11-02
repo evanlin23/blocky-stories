@@ -48,6 +48,7 @@ ENV_H = 13.0
 ENV_R = 4.8
 CRUISE = 18.0                       # metres the landscape sinks while we float
 KITCHEN = V((0, 0, -300))
+GROUND = -0.55                      # the field is this far below the basket's floor
 LAND_SHIFT = V((260, 140, 0))
 G = 0.085                           # the gap between the creature's pieces
 LH = 0.2
@@ -120,7 +121,7 @@ def _lin(c):
 
 # the days: [d, horizon, zenith, fog, mist, sun colour, sun power, sun elevation (degrees), sky strength, mist glow]
 DAYS = [
-    (0.00, "#8a6a92", "#2c2f5c", "#9d92b4", "#b7bdd3", "#c8b0d8", 0.35, -6.0, 0.55, 0.34),
+    (0.00, "#8a6a92", "#2c2f5c", "#9d92b4", "#b7bdd3", "#c8b0d8", 0.35, -6.0, 0.85, 0.34),
     (0.35, "#f0a0a8", "#4a4f8a", "#d9b2c4", "#e2c6d0", "#ffb8a8", 1.4, -3.0, 0.85, 0.62),
     (1.00, "#ffc46b", "#86a6d6", "#ffd9a8", "#fff0d2", "#ffd9a0", 4.2, 9.0, 1.25, 1.00),
 ]
@@ -191,8 +192,22 @@ def emissive_glow_mat(kit, ctx, name, base_hex, rough=0.7, zscale=9.0):
     mul.operation = "MULTIPLY"
     nt.links.new(val.outputs[0], mul.inputs[0])
     nt.links.new(mr.outputs["Result"], mul.inputs[1])
-    b.inputs["Emission Color"].default_value = kit.col(ORANGE)
-    nt.links.new(mul.outputs[0], b.inputs["Emission Strength"])
+    mixc = nt.nodes.new("ShaderNodeMix")
+    mixc.data_type = "RGBA"
+    mixc.inputs["A"].default_value = kit.col(base_hex)
+    mixc.inputs["B"].default_value = kit.col(ORANGE)
+    cl = nt.nodes.new("ShaderNodeMath")
+    cl.operation = "MULTIPLY"
+    cl.use_clamp = True
+    cl.inputs[1].default_value = 1.6
+    nt.links.new(mul.outputs[0], cl.inputs[0])
+    nt.links.new(cl.outputs[0], mixc.inputs["Factor"])
+    nt.links.new(mixc.outputs["Result"], b.inputs["Emission Color"])
+    add = nt.nodes.new("ShaderNodeMath")
+    add.operation = "ADD"
+    add.inputs[1].default_value = 0.22            # the cloth is a little lit from within: it never goes black
+    nt.links.new(mul.outputs[0], add.inputs[0])
+    nt.links.new(add.outputs[0], b.inputs["Emission Strength"])
     kit._fogged(m, b.outputs[0])
     ctx["env_glow"].append(val.outputs[0])
     return m
@@ -349,11 +364,11 @@ def build_basket(kit, ctx, M):
     kit.box("floor", (2 * HX + 0.02, 2 * HX + 0.02, 0.08), (0, 0, -0.04), M["floor"], Vg)
     o = HX + WALL
     for sy in (-1, 1):
-        kit.box(f"wallY{sy}", (2 * o, WALL, WALL_H), (0, sy * (HX + WALL / 2), WALL_H / 2), M["wicker"], Vg)
+        kit.box(f"wallY{sy}", (2 * o, WALL, WALL_H - GROUND), (0, sy * (HX + WALL / 2), (WALL_H + GROUND) / 2), M["wicker"], Vg)
         kit.box(f"rimY{sy}", (2 * o + 0.08, 0.2, RIM_H), (0, sy * (HX + WALL / 2), WALL_H + RIM_H / 2), M["leather"], Vg,
                 bevel=0.05)
     for sx in (-1, 1):
-        kit.box(f"wallX{sx}", (WALL, 2 * HX, WALL_H), (sx * (HX + WALL / 2), 0, WALL_H / 2), M["wicker"], Vg)
+        kit.box(f"wallX{sx}", (WALL, 2 * HX, WALL_H - GROUND), (sx * (HX + WALL / 2), 0, (WALL_H + GROUND) / 2), M["wicker"], Vg)
         kit.box(f"rimX{sx}", (0.2, 2 * HX + 0.18, RIM_H), (sx * (HX + WALL / 2), 0, WALL_H + RIM_H / 2), M["leather"], Vg,
                 bevel=0.05)
     # low dividers: four corner compartments around a middle
@@ -363,8 +378,8 @@ def build_basket(kit, ctx, M):
         kit.box(f"divY{sy}", (0.05, HX - 0.5, 0.5), (0, sy * (0.5 + (HX - 0.5) / 2), 0.25), M["wicker"], Vg)
     # two gas tanks in the middle
     for sy in (-1, 1):
-        kit.cyl(f"tank{sy}", 0.19, 0.95, (0, sy * 0.25, 0.5), M["tank"], Vg, n=24)
-        kit.cyl(f"tankcap{sy}", 0.1, 0.1, (0, sy * 0.25, 1.0), M["steel_dark"], Vg, n=16)
+        kit.cyl(f"tank{sy}", 0.18, 0.66, (0, sy * 0.25, 0.35), M["tank"], Vg, n=24)
+        kit.cyl(f"tankcap{sy}", 0.09, 0.08, (0, sy * 0.25, 0.7), M["steel_dark"], Vg, n=16)
     # rope handles on the rim (loops on the outside)
     for sx in (-1, 1):
         for sy in (-1, 1):
@@ -527,6 +542,7 @@ def pose_creature(ctx, kit, c, t):
     pose = c.get("pose", "hidden")
     if pose == "hidden":
         return None
+    root.parent = ctx["L"] if c.get("on") == "L" else ctx["V"]
     s = float(c.get("s", {"scatter": 1.0, "off": 0.0, "exact": 0.0}.get(pose, 0.0)))
     off = 1.0 if pose == "off" else 0.0
     pos = c.get("pos", [0, 0, 0])
@@ -564,7 +580,7 @@ def build_landscape(kit, ctx, M):
     L = ctx["L"]
     kit.box("ground", (1500, 1500, 1.0), (0, 0, -0.5), M["ground"], L)
     kit.box("ground2", (110, 90, 1.02), (LAND_SHIFT.x, LAND_SHIFT.y, -0.5), M["ground2"], L)
-    mist = kit.box("mist", (1500, 1500, 0.5), (0, 0, 0.45), mist_mat(kit, ctx), L)
+    mist = kit.box("mist", (1500, 1500, 0.02), (0, 0, 0.45), mist_mat(kit, ctx), L)
     mist.visible_shadow = False
     ctx["mist"] = mist
     rnd = lambda i, a=0: kit.hash01(i, a)
@@ -745,13 +761,13 @@ def animate(kit, story, tl, t, ctx):
     up = _ease_value(_cues(tl, "env"), "up", t, 1.0)
     ang = math.radians(-88.0 * (1 - up))
     E = ctx["E"]
-    E.matrix_basis = ME @ Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "Y")
-    ctx["flames"].rotation_euler = (0, ang, 0)
+    E.matrix_basis = ME @ Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "X")
+    ctx["flames"].rotation_euler = (ang, 0, 0)
     # ---- the landscape
     alt = _ease_value(_cues(tl, "alt"), "alt", t, 0.0)
     fld = _switch(_cues(tl, "field"), "f", t, 0)
     shift = -LAND_SHIFT if fld else V((0, 0, 0))
-    ctx["L"].matrix_basis = ME @ Matrix.Translation(V((shift.x, shift.y, -alt)))
+    ctx["L"].matrix_basis = ME @ Matrix.Translation(V((shift.x, shift.y, GROUND - alt)))
     mh = 0.45 + 2.95 * _ss((alt - 2.0) / 10.0)
     if _switch(_cues(tl, "mist"), "h", t, None) is not None:
         mh = _ease_value(_cues(tl, "mist"), "h", t, mh)
@@ -772,7 +788,7 @@ def animate(kit, story, tl, t, ctx):
     mp = ctx["sky_map"]
     mp.inputs["Rotation"].default_value = (ME.to_3x3().inverted()).to_euler()
     # ---- the mist's glow
-    ctx["mist_emit"].default_value = mglow * 0.55 + 1.5 * roar
+    ctx["mist_emit"].default_value = mglow * 0.55 + 0.75 * roar
     sock_color(ctx["mist_emit_col"], mistc)
     u = min(1.0, roar * 1.3)
     oc = tuple(mistc[i] * (1 - u) + _hex(ORANGE)[i] * u for i in range(3))
@@ -798,7 +814,7 @@ def animate(kit, story, tl, t, ctx):
         over["kfill"] = 1.0
     # ---- the plants: flasks, bag, rope, cup, phone
     fl = _switch(_cues(tl, "flasks"), "state", t, "corner")
-    rim_y = [-0.88, -0.66, -0.44, -0.22]
+    rim_x = [0.05, 0.27, 0.49, 0.71]
     for i, ob in enumerate(ctx["flasks"]):
         ob.hide_render = False
         if fl == "none":
@@ -806,7 +822,7 @@ def animate(kit, story, tl, t, ctx):
             continue
         hide(ob, False)
         if i < 3 or fl == "rim":
-            ob.location = (1.21, rim_y[i], RIM_TOP)
+            ob.location = (rim_x[i], -1.21, RIM_TOP)
         elif fl == "corner":
             ob.location = (0.28, 0.96, 0.0)
         else:                                   # "end": Callum's flask stands on his corner's rim
@@ -818,7 +834,7 @@ def animate(kit, story, tl, t, ctx):
     if bs == "tied":
         bag.location = (0.95, 0.93, 0.0)
         bag.rotation_euler = (0, 0, 0.3)
-        stretch(rope, (0.95, 0.93, 0.36), (1.12, 1.12, RIM_TOP - 0.05))
+        stretch(rope, (0.95, 0.93, 0.36), (0.8, 0.64, 1.2))
         rope.parent = ctx["V"]
     elif bs == "grass":
         bag.parent = ctx["L"] if False else ctx["V"]
@@ -838,7 +854,7 @@ def animate(kit, story, tl, t, ctx):
     # ---- the cables from the frame to the mouth ring
     posts = [V((1.2, 0, 2.42)), V((-1.2, 0, 2.42))]
     ringp = [V((1.25, 0.4, 0)), V((1.25, -0.4, 0)), V((-1.25, 0.4, 0)), V((-1.25, -0.4, 0))]
-    Em = E.matrix_world if False else (ME @ Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "Y"))
+    Em = ME @ Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "X")
     for i, cb in enumerate(ctx["cables"]):
         a = MV @ posts[0 if i < 2 else 1]
         b = Em @ ringp[i if i < 2 else i]
@@ -864,19 +880,22 @@ def animate(kit, story, tl, t, ctx):
             hide_tree(cre, False)
             for sck in ctx["fade"]:
                 sck.default_value = 1.0 - alpha
+        import os
+        if os.environ.get("DAWN_DEBUG"):
+            print("cre", round(t, 2), pos, alpha, "hidden" if cre.hide_render else "shown", cre.matrix_world.translation, flush=True)
         ck = cur.get("key", 380.0)
         cp = V(pos) + V((0, 0, 1.3))
-        away = (cp - V((cam_loc.x, cam_loc.y, cp.z)))
+        away = (cp - V((cam_loc.x, cam_loc.y, cp.z))) if cur.get("on") != "L" else V((0.7, 0.7, 0))
         away = away.normalized() if away.length > 1e-3 else V((0, 1, 0))
         K.LIGHTS["ckey"]["obj"].location = cp + away * 0.9 + V((0, 0, 1.5))
         K.LIGHTS["ckey"]["base"] = ck * max(roar, cur.get("kfloor", 0.0)) * (1.0 if alpha > 0.012 else 0.0)
-        K.LIGHTS["ckey"]["obj"].parent = ctx["V"]
+        K.LIGHTS["ckey"]["obj"].parent = cre.parent
         K.LIGHTS["crim"]["obj"].location = cp + away * 1.1 + V((0, 0, 0.3))
         K.LIGHTS["crim"]["base"] = cur.get("rim", 90.0) * alpha
-        K.LIGHTS["crim"]["obj"].parent = ctx["V"]
+        K.LIGHTS["crim"]["obj"].parent = cre.parent
         cb = K.LIGHTS["cbounce"]
         cb["obj"].location = V(pos) + V((0, 0, -0.3))
-        cb["obj"].parent = ctx["V"]
+        cb["obj"].parent = cre.parent
         cb["base"] = cur.get("bounce", 0.0) * alpha
         over["ckey"] = 1.0
         over["crim"] = 1.0
@@ -886,6 +905,13 @@ def animate(kit, story, tl, t, ctx):
         over["ckey"] = 0.0
         over["crim"] = 0.0
         over["cbounce"] = 0.0
+    import os
+    if os.environ.get("DAWN_DEBUG") == "ray":
+        dg = bpy.context.evaluated_depsgraph_get()
+        dg.update()
+        d = (cam_tgt - cam_loc).normalized()
+        ok, loc, nrm, idx, ob, mat = bpy.context.scene.ray_cast(dg, cam_loc, d)
+        print("ray", round(t, 2), tuple(round(x, 2) for x in cam_loc), ob.name if ob else None, (loc - cam_loc).length if ok else None, flush=True)
     # ---- the soft key light that rides the camera
     key = spec.get("key", 0.0)
     over["fkey"] = 0.0

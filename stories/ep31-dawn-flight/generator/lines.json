@@ -84,12 +84,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then the burner ROARED.",
-    "Then the burner roared."
+    "Then the",
+    "Then the"
    ],
    [
-    "Down in the MIST,",
-    "Down in the mist,"
+    "burner ROARED.",
+    "burner roared."
+   ],
+   [
+    "Down in",
+    "Down in"
+   ],
+   [
+    "the MIST,",
+    "the mist,"
    ],
    [
     "PIECES",
@@ -330,12 +338,20 @@
     "habit,"
    ],
    [
-    "and stood the FOURTH",
-    "and stood the fourth"
+    "and stood",
+    "and stood"
    ],
    [
-    "in the empty CORNER.",
-    "in the empty corner."
+    "the FOURTH",
+    "the fourth"
+   ],
+   [
+    "in the",
+    "in the"
+   ],
+   [
+    "empty CORNER.",
+    "empty corner."
    ]
   ]
  },
@@ -447,7 +463,7 @@
    ],
    [
     "\"Wind's ZERO.",
-    "Wind's zero."
+    "Wind is zero."
    ],
    [
     "PERFECT.\"",
@@ -500,8 +516,12 @@
     "Rosa frowned,"
    ],
    [
-    "and gave the burner",
-    "and gave the burner"
+    "and gave",
+    "and gave"
+   ],
+   [
+    "the burner",
+    "the burner"
    ],
    [
     "a LONG ROAR.",
@@ -532,8 +552,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And a FIELD AWAY,",
-    "And a field away,"
+    "And a",
+    "And a"
+   ],
+   [
+    "FIELD AWAY,",
+    "field away,"
    ],
    [
     "something",
@@ -727,7 +751,7 @@
    ],
    [
     "A HEAD",
-    "A head"
+    "A head,"
    ],
    [
     "in SLICES.",
@@ -780,8 +804,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Rosa never SAW it.",
-    "Rosa never saw it."
+    "Rosa never",
+    "Rosa never"
+   ],
+   [
+    "SAW it.",
+    "saw it."
    ],
    [
     "She just said,",
@@ -852,8 +880,12 @@
     "Every piece"
    ],
    [
-    "in the RIGHT place",
-    "in the right place"
+    "in the",
+    "in the"
+   ],
+   [
+    "RIGHT place",
+    "right place"
    ],
    [
     "now.",
@@ -954,8 +986,12 @@
     "hard,"
    ],
    [
-    "toward the fourth CORNER.",
-    "toward the fourth corner."
+    "toward the",
+    "toward the"
+   ],
+   [
+    "fourth CORNER.",
+    "fourth corner."
    ]
   ]
  },
@@ -1284,8 +1320,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And I told DAD.",
-    "And I told Dad."
+    "And I",
+    "And I"
+   ],
+   [
+    "told DAD.",
+    "told Dad."
    ],
    [
     "ALL of it.",
@@ -1343,7 +1383,7 @@
    ],
    [
     "\"You could've",
-    "You could've"
+    "You could have"
    ],
    [
     "just ASKED me",
@@ -1386,12 +1426,20 @@
     "The pieces"
    ],
    [
-    "stayed in that CORNER",
-    "stayed in that corner"
+    "stayed in",
+    "stayed in"
    ],
    [
-    "all the way DOWN.",
-    "all the way down."
+    "that CORNER",
+    "that corner"
+   ],
+   [
+    "all the",
+    "all the"
+   ],
+   [
+    "way DOWN.",
+    "way down."
    ]
   ]
  },

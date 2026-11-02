@@ -88,10 +88,12 @@ DAD = (0.9, -0.35)
 ROSA = (-0.58, 0.6)
 D4 = (0.52, 0.55)              # the fourth corner: the Loose One stands here
 FIELD_DAD = (-2.2, -2.6)
+FG = -0.55                     # standing on the field
 K0 = -300.0                    # the kitchen's floor
 KITCHEN_ME = (-0.95, 0.0)
 KITCHEN_DAD = (0.95, 0.0)
-SC1 = [39.0, 39.0, -13.2]      # the scatter, a field away, hung in the mist
+SC1 = [30.0, 30.0, 2.9]        # the scatter, a field away, hung in the mist (in the landscape's own frame)
+SC1W = [30.0, 30.0, -12.4]     # the same place in the basket's frame at cruise height (for the cameras)
 FAR = [28.0, 28.0, -0.7]       # one hedge off, at basket height
 NEAR = [5.7, 5.7, -0.1]        # a rope's length off
 
@@ -107,7 +109,7 @@ def c2w(root, yaw, loc):
 CAM_UP = [0.0, -0.9, 1.3]
 FLAME = still(CAM_UP, [0.0, 0.0, 3.0], 22)
 SIDE = still([-14.0, -22.0, 0.6], [0.0, 0.0, 2.4], 24)
-ME_EYE = [0.5, 0.5, 1.75]       # inside the basket, over the fourth corner's rim, looking out
+ME_EYE = [0.5, 0.5, 2.05]       # inside the basket, over the fourth corner's rim, looking out
 ROOT_FAR = FAR
 YAW_FAR = -45.0
 YAW_NEAR = -45.0
@@ -117,16 +119,16 @@ YAW_NEAR = -45.0
 SHOTS = [
     # 01 the tilt
     (0, "the hook: a wide from outside, the envelope still, the basket leaning",
-     c([0, [-3, -36, 8.8], [0, 0, 7.6], 22], [1, [-2.2, -33.5, 8.7], [0, 0, 7.6], 22]), 2, {"frame": "world"}),
+     c([0, [-2.5, -25, 8.6], [0, 0, 8.1], 20], [1, [-1.8, -23, 8.6], [0, 0, 8.1], 20]), 2, {"frame": "world"}),
     ("L03", "a close on the still envelope", still([-9, -15, 4.0], [0.5, 0, 10.5], 30), 2, {"frame": "world"}),
-    ("L04", "low on the fourth corner, the floor tipping", still([-0.35, -0.25, 0.6], [0.62, 0.66, 0.2], 20), 2,
-     {"key": 14}),
+    ("L04", "low on the fourth corner, the floor tipping", still([0.3, -0.15, 0.95], [0.72, 0.85, 0.22], 22), 2,
+     {"key": 40}),
     ("L05", "the burner roaring overhead", FLAME, 2, {"key": 0}),
-    ("L05.1", "the mist below, the scatter far off", still([0.5, 0.5, 1.8], [35.0, 35.0, -12.0], 38), 2, {"key": 0}),
+    ("L05.1", "the mist below, the scatter far off", still([0.5, 0.5, 2.05], [27.0, 27.0, -11.0], 38), 2, {"key": 0}),
     # 02 before
-    ("L06", "Dad on the launch field, grinning", face_cam((FIELD_DAD[0], FIELD_DAD[1]), 0, 1.9, 22, 30, h=1.5), 2,
+    ("L06", "Dad on the launch field, grinning", face_cam((FIELD_DAD[0], FIELD_DAD[1]), 0, 1.9, 22, 30, h=1.5, z0=FG), 2,
      {"key": 40, "frame": "world"}),
-    ("L07", "the kitchen table at night", still([0.2, -2.3, K0 + 1.55], [0, 0, K0 + 1.1], 22), 2,
+    ("L07", "the kitchen table at night", still([0.5, -1.95, K0 + 1.5], [0, 0, K0 + 1.1], 20), 2,
      {"room": "kitchen", "frame": "world"}),
     ("L08", "me looking down at my tea", face_cam(KITCHEN_ME, 90, 1.5, -35, 32, h=1.5, z0=K0), 2,
      {"room": "kitchen", "frame": "world", "key": 20}),
@@ -138,32 +140,32 @@ SHOTS = [
     ("L11", "the first flame into the mouth", still([1.6, -2.4, 1.2], [-0.2, 0.0, 3.0], 24), 2, {"frame": "world"}),
     ("L12", "the envelope standing up off the grass", still([-8.5, -12.0, 1.0], [-1.0, 0.0, 8.0], 17), 2,
      {"frame": "world"}),
-    ("L13", "top-down on the four-corner basket", still([0.0, -1.7, 3.0], [0.0, 0.0, 0.2], 15), 2, {"key": 20}),
+    ("L13", "top-down on the four-corner basket", still([0.0, -0.7, 3.05], [0.0, 0.05, 0.3], 11), 2, {"key": 14}),
     ("L14", "Dad's bag open and FOUR flasks along the rim of his corner",
-     still([-0.2, 0.15, 1.95], [1.1, -0.55, 1.15], 27), 2, {"key": 28}),
+     still([0.1, 0.45, 1.95], [0.32, -1.2, 1.2], 24), 2, {"key": 26}),
     ("L15", "my face", face_cam(ME, 135, 1.5, -40, 32), 2, {"key": 34}),
     ("L16", "Dad's sleeve and the fourth flask on the empty corner's floor",
-     still([-0.4, -0.12, 1.3], [0.62, 0.55, 0.55], 24), 2, {"key": 32}),
+     still([-0.05, 0.1, 1.5], [0.4, 0.95, 0.35], 22), 2, {"key": 60}),
     ("L17", "Rosa looking at the empty corner", face_cam(ROSA, 90, 1.5, -50, 32, h=1.5), 2, {"key": 34}),
     ("L18", "the sandbag, tied by its rope into the fourth corner, Rosa's sleeve at the end",
-     still([-0.45, 0.2, 1.4], [0.85, 0.8, 0.8], 24), 2, {"key": 34}),
+     still([-0.35, 0.5, 1.5], [0.9, 0.85, 0.85], 24), 2, {"key": 40}),
     ("L19", "the lore close: four slate-blue strokes on the leather rim",
      still([0.55, 0.15, 2.8], [0.55, 1.48, 0.11], 28), 2, {"key": 30}),
     ("L20", "the ground lets go of us", c([0, [-7.5, -10, 2.2], [0, 0, 3.6], 20], [1, [-7.5, -10, 2.2], [0, 0, 4.4], 20]),
      2, {"frame": "world"}),
     # 03 up
-    ("L21", "the fields sinking under the mist", c([0, [0.4, 0.4, 1.7], [4.5, 6.5, -4.0], 24],
-                                                  [1, [0.4, 0.4, 1.7], [4.5, 6.5, -12.0], 24]), 2, {"key": 0}),
+    ("L21", "the fields sinking under the mist", c([0, [0.5, 0.5, 2.0], [9, 13, -4.0], 30],
+                                                  [1, [0.5, 0.5, 2.0], [9, 13, -14.0], 30]), 2, {"key": 0}),
     ("L22", "Rosa looking up", face_cam(ROSA, 45, 1.5, 25, 32, h=1.35, dz=0.0), 2, {"key": 32}),
     ("L23", "Dad's cup sliding along the rim", still([-0.4, -1.0, 1.75], [1.21, 0.1, 1.2], 30), 2, {"key": 22}),
     ("L24", "the cup stopping at the fourth corner", still([0.3, 0.1, 1.7], [1.21, 0.78, 1.25], 32), 2, {"key": 22}),
     ("L25", "Rosa frowning", face_cam(ROSA, 45, 1.5, 30, 32, h=1.5), 2, {"key": 34}),
     ("L25.1", "the flame overhead, roar one", FLAME, 2, {"key": 0}),
-    ("L26", "the mist lit orange under us", still([0.5, 0.5, 1.8], [7.0, 9.0, -12.0], 26), 2, {"key": 0}),
-    ("L27", "a long lens across the mist: the scatter a field away", still(ME_EYE, SC1, 70), 4, {"key": 0}),
-    ("L28", "a closer long lens on the scatter", still(ME_EYE, [SC1[0], SC1[1], SC1[2] + 0.2], 105), 4, {"key": 0}),
-    ("L29", "the parts of somebody", still(ME_EYE, [SC1[0], SC1[1], SC1[2] + 0.2], 125), 4, {"key": 0}),
-    ("L30", "the roar stops and they are gone", still(ME_EYE, [SC1[0], SC1[1], SC1[2] + 0.2], 70), 4, {"key": 0}),
+    ("L26", "the mist lit orange under us", still([0.5, 0.5, 2.05], [9.0, 11.0, -12.0], 26), 2, {"key": 0}),
+    ("L27", "a long lens across the mist: the scatter a field away", still(ME_EYE, SC1W, 70), 4, {"key": 0}),
+    ("L28", "a closer long lens on the scatter", still(ME_EYE, [SC1W[0], SC1W[1], SC1W[2] + 1.0], 105), 4, {"key": 0}),
+    ("L29", "the parts of somebody", still(ME_EYE, [SC1W[0], SC1W[1], SC1W[2] + 1.0], 125), 4, {"key": 0}),
+    ("L30", "the roar stops and they are gone", still(ME_EYE, [SC1W[0], SC1W[1], SC1W[2] + 1.0], 70), 4, {"key": 0}),
     ("L31", "a side wide: the lean a little steeper", SIDE, 2, {"frame": "world"}),
     # 04 nearer
     ("L32", "Dad delighted, barn roofs behind him", face_cam(DAD, 90, 1.5, -5, 30, h=1.55), 2, {"key": 32}),
@@ -244,7 +246,7 @@ SHOTS = [
      {"frame": "world", "key": 12}),
     ("L80", "Callum's flask on his corner's rim", still([-0.3, 0.1, 1.75], [1.21, 0.6, 1.3], 34), 2, {"key": 24}),
     ("L81", "a wide from outside: the basket level against a flat gold horizon",
-     c([0, [-3, -36, 8.8], [0, 0, 7.6], 22], [1, [-2.2, -33.5, 8.7], [0, 0, 7.6], 22]), 2, {"frame": "world"}),
+     c([0, [-2.5, -25, 8.6], [0, 0, 8.1], 20], [1, [-1.8, -23, 8.6], [0, 0, 8.1], 20]), 2, {"frame": "world"}),
 ]
 
 shots = []
@@ -289,7 +291,7 @@ put("me", 0, p3(ME), yaw=135, expr="worried", head=[0, 6])
 hide("me", "L06")
 put("me", "L07", p3(KITCHEN_ME, K0), yaw=90, expr="neutral", head=[0, 6])
 key("me", "L08", head=[0, 30], expr="worried", blend=0.4)
-put("me", "L10", [-1.3, -1.9, 0], yaw=30, expr="worried")
+put("me", "L10", [-1.3, -1.9, FG], yaw=30, expr="worried")
 put("me", "L13", p3(ME), yaw=135, expr="worried", head=[0, 6])
 key("me", "L15", expr="worried")
 talk("me", "L15.1", "L15>")
@@ -312,12 +314,12 @@ put("me", "L78", p3(ME), yaw=135, expr="grin")
 
 # Dad: grinning on the field, hopeful at the table, in his corner watching the east
 put("dad", 0, p3(DAD), yaw=90, expr="soft")
-put("dad", "L06", p3(FIELD_DAD), yaw=0, expr="grin")
+put("dad", "L06", p3(FIELD_DAD, FG), yaw=0, expr="grin")
 put("dad", "L07", p3(KITCHEN_DAD, K0), yaw=-90, expr="worried", head=[0, 4])
 key("dad", "L09", expr="soft", head=[0, 16], blend=0.3)
 key("dad", "L09+0.55", head=[0, -6], blend=0.25)
 key("dad", "L09+1.0", head=[0, 14], blend=0.3)
-put("dad", "L10", [-2.3, -2.4, 0], yaw=30, expr="soft")
+put("dad", "L10", [-2.3, -2.4, FG], yaw=30, expr="soft")
 put("dad", "L13", p3(DAD), yaw=90, expr="grin")
 put("dad", "L16", p3(DAD), yaw=180, arms=[0, 82], expr="grin")
 talk("dad", "L16.1", "L16.2")
@@ -345,13 +347,13 @@ put("dad", "L78", p3(DAD), yaw=90, expr="grin")
 # Rosa: by the fan, at the burner frame, in her corner
 put("rosa", 0, p3(ROSA), yaw=45, expr="neutral")
 hide("rosa", "L06")
-put("rosa", "L10", [2.9, -3.8, 0], yaw=-60)
-put("rosa", "L11", [0.4, -1.9, 0], yaw=180, arms=[40, 40], head=[0, 10])
+put("rosa", "L10", [2.9, -3.8, FG], yaw=-60)
+put("rosa", "L11", [0.4, -1.9, FG], yaw=180, arms=[40, 40], head=[0, 10])
 put("rosa", "L13", p3(ROSA), yaw=45)
 key("rosa", "L17", yaw=90, expr="worried", blend=0.4)
-put("rosa", "L18", [0.4, 1.0, 0], yaw=90, arms=[85, 0], expr="neutral")
+put("rosa", "L18", [0.1, 1.0, 0], yaw=90, arms=[85, 0], expr="neutral")
 talk("rosa", "L18.3", "L18>")
-put("rosa", "L20", p3(ROSA), yaw=45)
+put("rosa", "L19", p3(ROSA), yaw=45)
 key("rosa", "L22", head=[0, -30], blend=0.5)
 talk("rosa", "L22.2", "L22>")
 key("rosa", "L23", head=[0, 0], blend=0.4)
@@ -363,7 +365,7 @@ talk("rosa", "L49.1", "L49.2")
 key("rosa", "L50", expr="neutral", blend=0.4)
 key("rosa", "L67", expr="wide", blend=0.1)
 key("rosa", "L68", expr="neutral", blend=0.4)
-put("rosa", "L79", [2.0, -0.9, 0], yaw=200, arms=[55, 55], expr="neutral")
+put("rosa", "L79", [2.0, -0.9, FG], yaw=200, arms=[55, 55], expr="neutral")
 put("rosa", "L81", p3(ROSA), yaw=45)
 
 # Callum: only in section 08
@@ -413,7 +415,7 @@ cue("L11+0.3", "env", up=1.0, dur=3.4)
 cue("L78", "env", up=1.0, dur=0)
 # the burner: ramps up over 0.6 s, holds, shrinks over 0.9 s; never two roars inside 3 s
 cue("L05", "roar", peak=1.0, up=0.6, hold=1.6, down=0.9)
-cue("L11+0.4", "roar", peak=0.8, up=1.0, hold=2.4, down=1.0)
+cue("L11+0.4", "roar", peak=0.8, up=1.0, hold=1.6, down=0.9)
 cue("L25.1", "roar", peak=1.0, up=0.6, hold=8.4, down=1.0)
 cue("L33", "roar", peak=1.0, up=0.6, hold=9.0, down=1.0)
 cue("L41", "roar", peak=1.0, up=0.6, hold=8.7, down=1.0)
@@ -423,9 +425,9 @@ cue("L66", "roar", peak=0.8, up=0.5, hold=0.8, down=0.8)
 cue("end-1.2", "roar", peak=0.45, up=0.3, hold=0.1, down=0.75)
 # the Loose One
 cue(0, "cre", pose="hidden")
-cue("L05.1", "cre", pose="scatter", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
+cue("L05.1", "cre", pose="scatter", on="L", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
 cue("L06", "cre", pose="hidden")
-cue("L27", "cre", pose="scatter", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
+cue("L27", "cre", pose="scatter", on="L", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
 cue("L31", "cre", pose="hidden")
 cue("L34", "cre", pose="scatter", pos=FAR, yaw=YAW_FAR, s=0.5, alpha="roar", key=900)
 cue("L35", "cre", pose="off", pos=FAR, yaw=YAW_FAR, s=0.04, alpha="roar", key=900)
@@ -452,7 +454,7 @@ cue(0, "satchel", on=False)
 cue("L14", "satchel", on=True)
 cue("L78", "satchel", on=False)
 cue(0, "cup", on=False)
-cue("L23", "cup", on=True, y=-0.12)
+cue("L23", "cup", on=True, y=-0.75)
 cue("L23+0.3", "cup", y=0.8, dur=1.7)
 cue("L26", "cup", on=False)
 cue(0, "phone", on=False)
