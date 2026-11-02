@@ -322,16 +322,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Something TALLER",
-    "Something taller"
+    "Nobody HERE",
+    "Nobody here"
    ],
    [
-    "than me",
-    "than me,"
+    "is TALLER",
+    "is taller"
    ],
    [
-    "was LIVING here.",
-    "was living here."
+    "than ME.",
+    "than me."
    ]
   ],
   "gain_db": -1.5
@@ -674,8 +674,12 @@
     "and the stack"
    ],
    [
-    "was WHOLE.",
-    "was whole."
+    "was BACK,",
+    "was back,"
+   ],
+   [
+    "all but ONE.",
+    "all but one."
    ]
   ]
  },
@@ -867,6 +871,21 @@
     "with us."
    ]
   ]
+ },
+ {
+  "id": "L45b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mum KNEW.",
+    "Mum knew."
+   ],
+   [
+    "She'd MISSED it.",
+    "She'd missed it."
+   ]
+  ],
+  "gap": 0.4
  },
  {
   "id": "L46",

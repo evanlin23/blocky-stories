@@ -2,7 +2,7 @@
 
 - **Slug:** `ep17-moving-day` (kept, with the folder).
 - **Why it's redone:** it was held because L01 wasn't the world's rule (owner, 2026-11-02, "rule first is necessary"). This is a full rewrite: a new rule, a new big idea and new line ids. The set, the cast, the Boxes model and the best old scenes are reused. The ten pitches are in `notes/pitches.md` → "Redo pitches".
-- **Word count:** 362 spoken words in 48 lines, plus 2 pause beats.
+- **Word count:** 369 spoken words in 49 lines, plus 2 pause beats.
 - **Estimated length:** about 85 s at 290 wpm with line gaps and the two pauses, so about 88 s with the holds below. That's in the 60 to 90 s test group.
 - **Shots:** 57 (S01 to S57), an average of about 1.55 s. A new shot on almost every line, two on the longer ones.
 - **The machine-readable lines** are in `generator/lines.json`, rewritten to match this file.
@@ -17,7 +17,7 @@ In a town where every house grows to fit the tallest one living in it, the old h
 
 - **Premise:** in this town a house grows, or sinks, to fit the tallest one living in it, a hand a night until it fits. Our old house was always a ladder taller than either of us, and Mum said old houses are just like that. It sold in the spring. The new one is small and fits me exactly, my hair on the ceiling. Mum hasn't laughed since. Then each morning there's more room over my head, the walls have stretched with Mum's photos on them, and the stack of moving boxes by the door is shorter.
 - **The rule:** "In this town, a house grows to fit the tallest one living in it." Everyone knows it. Nobody explains it, and nobody is new to town.
-- **The twist (the big idea):** the old house never broke the rule. Something tall lived in it with us the whole time, folded under its high ceilings, and Mum never looked up. When we moved, it taped itself into one of our boxes from the inside and came along. The new house is growing to fit it. By the end the ceilings are back to the old height, Mum laughs for the first time since the sale, and its box sits on the hall cupboard shelf.
+- **The twist (the big idea):** the old house never broke the rule. Something tall lived in it with us the whole time, folded under its high ceilings. Mum knew, and never looked up at it. Her grief since the sale was missing it. When we moved, it taped itself into one of our boxes from the inside and came along. The new house is growing to fit it. By the end the ceilings are back to the old height, Mum laughs for the first time since the sale because it's home again (L45b says so plainly), and its box sits on the hall cupboard shelf.
 - **Where it's planted:**
   1. L01 says "the tallest **one**", not "person".
   2. L05: the old house was a ladder taller than any of us. That's the exception, and it's the whole twist in plain sight.
@@ -66,8 +66,8 @@ The narration only calls it "it". It's the existing Boxes model from `set.py`, o
 | morning 1 | L15 to L18 | not seen (only the scrape at L14) | shorter, about 18 | a hand above my hair |
 | morning 2 | L19 to L26 | kitchen: its top folded flat along the ceiling, the face box hanging at the end over Mum at the counter, the rest out of frame through the doorway | shorter again, the face box gone from it (L26) | walls stretched, photos higher, about a third of the way to ladder height |
 | 3 a.m. | L27 to L34 | Mum's room: bent over her bed, top boxes folded along the ceiling, arms reaching down side-on to the quilt | not seen | creaking upward |
-| morning 3 | L35 to L45 | gone | whole again | ladder height in every room |
-| end | L46 to L48 | the face box alone on the hall cupboard shelf, taped from the inside, frown out | whole | ladder height |
+| morning 3 | L35 to L45b | gone | back, all but the face box | ladder height in every room |
+| end | L46 to L48 | the face box alone on the hall cupboard shelf, taped from the inside, frown out | back, all but the face box | ladder height |
 
 5. **The arms** are narrow boxes, down at its sides until L31, shot side-on with the box ends in frame, resting on the quilt near the foot of the bed, clear of Mum's shoulders.
 6. **It's shown little and late:** a scrape (L14), what it leaves (the gap, the stretched walls, the shorter stack), then only its folded top and face (L22 to L23, about 45% in), then clearly at 3 a.m. (L29, about 57% in), lit from the hall's side with a rim, the face the brightest thing.
@@ -128,7 +128,7 @@ Each line: id, then the caption chunks split with ` / `. CAPS are the key words.
   - S19: me in the hall doorway again (S09's frame): a hand's width of air between my hair and the ceiling. The pencil mark is below the new top of the frame.
 - `L16` The house / had GROWN.
   - S20: low angle up the hall, the ceiling higher.
-- `L17` Something TALLER / than me / was LIVING here.
+- `L17` Nobody HERE / is TALLER / than ME.
   - S21: my face, `scared`, looking up into the gap.
 - `L18` And the STACK / was SHORTER.
   - S22: the stack's locked-off wide, about six boxes gone, clean squares in the dust. Hold 0.3 s.
@@ -174,9 +174,9 @@ Each line: id, then the caption chunks split with ` / `. CAPS are the key words.
 
 ### 5. Ladder height (61 to 71 s)
 
-- `L35` By MORNING, / it was GONE, / and the STACK / was WHOLE.
+- `L35` By MORNING, / it was GONE, / and the STACK / was BACK, / all but ONE.
   - S41: Mum's room in morning light, the corner empty, the ceiling high.
-  - S42: the stack's wide, whole again, every box taped (the face box not among them).
+  - S42: the stack's wide, back to full height, every box taped, one clean square in the dust where the face box stood.
 - `L36` And for ONCE, / Mum LOOKED UP.
   - S43: Mum in the front room with her mug, her head tilting up.
   - S44: her eyeline: the frames at the top of a tall wall under a ceiling at ladder height.
@@ -202,7 +202,9 @@ Each line: id, then the caption chunks split with ` / `. CAPS are the key words.
 - `L44` That was / never US.
   - S53: my face, looking up. Hold 0.4 s.
 - `L45` It came / WITH us.
-  - S54: the stack by the door, whole, the clean square in the dust where the face box once stood.
+  - S54: the stack by the door, back to full height, the clean square in the dust where the face box once stood.
+- `L45b` Mum KNEW. / She'd MISSED it.
+  - S54b: Mum below the old photo, head tipped back to it, her laugh gone soft, eyes wet. She looks at the photo, not at the ceiling. Hold 0.4 s.
 - `L46` Mum opened / the hall CUPBOARD.
   - S55: the hall, Mum opens the cupboard, head down.
 - `L47` On the SHELF / sat ONE box, / taped / from the INSIDE.
@@ -227,9 +229,10 @@ None, on purpose. The canon's Keepers are each tied to one place, and this thing
 - **L32:** clipped.
 - **L34:** quiet, gain -1.5 dB, a 0.5 s gap after.
 - **L37:** dry, it's Mum's joke.
+- **L45b:** plain and warm, a beat after "Mum KNEW." It's the feeling, not a clue. Gap 0.4 s after.
 - **L42 to L44:** slow and plain. L43 at tempo 0.92. "never US" with a beat after.
 - **L48:** the slowest line, tempo 0.88. Land "UP" low and don't trail off.
-- **For Whisper:** "Mum" (said 9 times) may come back as "mom" (see the old notes on `SPELLINGS`). "three a.m." at L27: if Kokoro reads "a.m." as "am", change only the spoken text to "three A M". "hung"/"hang" and "rode"/"road" are spellings, not mistakes.
+- **For Whisper:** "Mum" (said 10 times) may come back as "mom" (see the old notes on `SPELLINGS`). "three a.m." at L27: if Kokoro reads "a.m." as "am", change only the spoken text to "three A M". "hung"/"hang" and "rode"/"road" are spellings, not mistakes.
 
 ## Notes for the builder
 
@@ -237,5 +240,5 @@ None, on purpose. The canon's Keepers are each tied to one place, and this thing
 - **Changed:** the ceiling height is now a per-scene value: right on my hair (opening), plus a hand (morning 1), about a third of the way to ladder height (morning 2), rising during S32, ladder height (morning 3 on). The walls and the photos on them scale up with it, so the frames ride up. The kitchen pose is new: the Boxes' top run folded flat along the kitchen ceiling with the face box hanging at the end and the body out of frame through the doorway (S26 to S28). The face box is now one box in the stack (S01, S13 to S17) and the shelf box at the end, frown out.
 - **New:** the three montage exteriors and interiors (S02 to S06: a street of mixed-height houses, a tower house, a lodger and a lowered ceiling, a dinner with a tall hat and a domed ceiling), each with new extras. The old house photo prop, in two uses: dim at eye height (S07, S11) and close at the reveal (S50), showing a tall narrow house and, in its top window, a pale tall shape bent under the ceiling with the frown. A pencil height mark on my doorframe (S09, S19).
 - **Cut:** the shelf box as the Boxes' "bottom box", the stack shrinking to nothing, my room at dawn (the many-eyes face), the sideways-eyes front room, the tape cores, the pull-apart, the unpacking montage.
-- **Cover:** a guess at about 51 s (S34, the Boxes bent over Mum's bed, "over her BED,"). S50 (the photo's top window) is the alternative.
+- **Cover:** `cover_s` 49.2 (S34, the Boxes bent over Mum's bed). Not S50: the photo's top window is the reveal.
 - **Standards words:** no death, weapon or gore words, no child words, nothing claimed true, no real place or brand. No words on any box, sign or photo.
