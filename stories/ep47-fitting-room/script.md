@@ -214,7 +214,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L34` narrator: I pull it BACK.
   - [S43: the curtain rings sliding along the brass rail, from inside the fitting room looking out (cut away from hands)]
 - `L35` narrator: A charcoal pinstripe SUIT / hangs there, / cut to MY marks.
-  - [S44: mid shot: the Empty in `hang` pose on a wooden hanger on the brass hook, flat grey light, shoes beneath it, collar seen side-on. S45: close on the jacket's back seam, the blue chalk lines still on it]
+  - [S44: mid shot: the Empty in `hang` pose, a limp suit on a wooden hanger on the brass hook, shoulders slack, sleeves hanging flat, flat grey light, shoes beneath it, collar seen side-on so its inside and the glints stay unseen. S45: close on the jacket's back seam, the blue chalk lines still on it]
 - `L36` narrator: There's NOBODY / in it.
   - [S46: me, `scared`, holding the curtain edge back, the limp suit filling half the frame]
 - `L37` narrator: Uncle comes home / after DARK.
@@ -249,12 +249,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `P02` pause 0.6 s: none
   - [hold the wide. Everything but the voice drops, then one low felt thud]
 - `L48` narrator: It's the SUIT.
-  - [S60: mid shot across the bench: the Empty in `stand` pose, lit from the side by the bench lamp, rimmed blue from the side window]
+  - [S60: mid shot across the bench: the Empty in `stand` pose, lit from the side by the bench lamp, rimmed blue from the side window, the collar's inside dark with no glints yet]
 - `L49` narrator: Standing UP, / with nobody / INSIDE it.
   - [S61: low, full length: the trouser legs straight above the lace-ups, the empty cuffs at its sides]
 - `L50` narrator: Deep down / the open COLLAR, / two little EYES / catch the LAMP.
   - [S62: close on the open collar from slightly above: dark going far down, and two soft glints deep inside]
-- `L51` narrator: It's the only thing / in this town / with no TAGS. / Apart from ME.
+- `L51` narrator: It has no TAGS / on it / either. / Just like ME.
   - [S63: wide across the workroom: the Empty behind my bench and me in the doorway, both of us bare of tags, every customer behind me speckled]
 - `L52` narrator: Its empty SLEEVES / lift, / slowly, / and MEASURE the air / where I used to STAND.
   - [S64: the Empty in `sleeves_up`, cuffs held apart at chest height, as if holding a tape across the space in front of the bench. S65: the space between its cuffs, where I'd stand]
