@@ -272,7 +272,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [me in the foreground, and far down the row the white seller's stall, his cream coat small in frame (callback to L07)]
 - `L55` narrator: I've never decided / a single THING.
   - [me, `worried`, looking down at my coat]
-- `L56` narrator: Pip wasn't STUCK. / She was waiting / on ME.
+- `L56` narrator: All WEEK, / Pip was waiting / on ME.
   - [cut to Pip at the shelter, on the bench, her grey coat beside her, looking down the lane]
 - `L57` narrator: So I RUN.
   - [me running out of frame past the gate, the Tilted small in the background, still leaning, out of focus]
@@ -296,7 +296,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [Pip `laughing`, the bus pulling away behind her]
 - `L64` narrator: Back at the STALL, / she drops / into her CHAIR.
   - [the stall in full sun, Pip sitting down in the left camp chair]
-- `L65` narrator: It's EMPTY / when she SITS.
+- `L65` narrator: Nothing's IN it / when she SITS.
   - [close: Pip in the chair, no tarp strip on the arm, the goods on the table facing every which way]
 - `L66` narrator: I load her BAG / in the CAR.
   - [the holdall in the estate's boot, me beside it, `smile`. Cut away from hands]
@@ -310,7 +310,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the field a week later, a pale cold morning, flat light, no fog. Our stall with one chair.
 - **Shots:** 9.
 
-- `L69` narrator: A week LATER, / her chair / is EMPTY.
+- `L69` narrator: Her chair / is EMPTY / on SUNDAYS now.
   - [the stall: me in blue behind the table, Pip's chair empty beside me in plain daylight]
 - `L70` narrator: I fold it FLAT / and shut it / in the BOOT.
   - [three shots: the folded chair in the boot (cut away from hands), the tailgate coming down, then the lore insert: close on the chrome tailgate latch, two short upright tarp-green strokes scratched into it, held 1.6 s. Not narrated]
