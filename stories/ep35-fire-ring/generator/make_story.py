@@ -108,7 +108,7 @@ SH = [
     ("L04", C([7.4, -6.6, 6.2], [0.0, 0.2, 0.4], 30), {}),                                  # S06 high wide of the three seats
     ("L05", C([-0.55, 0.6, 0.98], [-1.9, 0.05, 0.78], 42), {}),                             # S07 the phone on the empty seat
     ("L05.3", C([-1.25, 0.05, 1.18], [0.0, -2.0, 1.0], 38), {}),                            # S08 Grandad laughing
-    ("L06", C([1.5, -0.45, 1.0], [-0.55, -0.4, 0.78], 34), {}),                             # S09 Grandad pouring
+    ("L06", C([1.5, -0.45, 1.0], [-0.55, -0.4, 0.78], 26), {}),                             # S09 Grandad pouring
     ("L06.2", C([0.25, -0.5, 0.8], [-0.3, 0.0, 0.3], 42), {}),                              # S10 the stew, the flask
     ("L07", C([HOME[0], -5.3, 1.5], [HOME[0], -0.5, 1.3], 34), {}),                         # S11 Grandad at his door
     ("L07b", C([HOME[0] + 0.7, -4.2, 1.3], [HOME[0], -0.5, 1.35], 42, [HOME[0] + 0.3, -3.0, 1.3], [HOME[0], -0.5, 1.4], 44), {}),   # S12
@@ -118,7 +118,7 @@ SH = [
     ("L10-0.45", C([2.5, 0.7, 1.1], [0.0, -2.0, 0.8], 34), {}),                                  # S15 Dad sits on Grandad's seat
     ("L10.1", C([0.9, -0.5, 1.05], [0.0, 2.0, 1.0], 34), {}),                               # S16 me angry
     ("L10.1+0.8", C([2.3, -2.7, 1.35], [0.45, -1.4, 0.62], 30), {}),                           # S17 Dad's back, the pack, the flask
-    ("L12", C([-0.36, -0.55, 0.9], [-0.38, 0.15, 0.08], 28), {}),                             # S18 THE LORE PLANT (set at "L11>-0.35")
+    ("L12", C([-0.5, -0.55, 0.9], [-0.5, 0.15, 0.08], 28), {}),                             # S18 THE LORE PLANT (set at "L11>-0.35")
     ("L13", C([1.3, 0.35, 0.98], [-0.1, 2.0, 1.02], 32), {}),                               # S19 my face over the mug
     ("L14", C([0.2, -1.0, 1.4], [-2.6, -12.5, -0.3], 30), {}),                              # S20 Dad down the hill
     ("L15", C([-0.7, -0.6, 0.92], [0.0, 2.0, 1.0], 34), {}),                                # S21 me looking east
@@ -151,11 +151,11 @@ SH = [
     ("L34", C([1.1, -1.25, 0.6], [0.3, 0.0, 0.12], 34), {}),                                # S46 the embers
     ("L35", C([-4.0, 0.3, 0.5], [-5.4, 0.45, 0.95], 24, [-4.1, 0.3, 0.5], [-5.4, 0.45, 1.0], 24), {}),   # S47 the wall, dark then glowing
     ("L37", C([-4.35, 0.2, 1.0], [-5.5, 0.2, 0.62], 12), {}),                                # S48 the two hands
-    ("L38", C([-4.1, 0.7, 0.62], [-5.3, 0.8, 0.5], 28), {}),                             # S49 over Dad
+    ("L38", C([-4.2, 0.2, 0.8], [-5.4, 0.95, 0.7], 20), {}),                             # S49 over Dad
     ("L39", C([-4.6, -0.9, 1.7], [-4.6, -0.15, 1.1], 22), {}),                              # S50 my face, orange on it
-    ("L40", C([1.4, -1.2, 0.34], [-2.4, 0.1, 1.15], 30), {}),                               # S51 the exterior
+    ("L40", C([1.0, -3.4, 0.6], [-2.3, 0.1, 1.05], 38), {}),                               # S51 the exterior
     ("L41", C([-4.6, -0.85, 1.7], [-4.6, -0.15, 1.2], 30), {}),                              # S52 my eyes shut and open
-    ("L42", C([-4.1, 0.7, 0.62], [-5.3, 0.8, 0.5], 28), {}),                             # S53 the finger on the bag
+    ("L42", C([-4.2, 0.2, 0.8], [-5.4, 0.95, 0.7], 20), {}),                             # S53 the finger on the bag
     ("L43", C([-5.05, 0.35, 0.78], [-5.3, 0.95, 0.35], 40), {}),                              # S54 Dad's face
     ("L44", C([-4.6, 0.4, 0.95], [-4.6, 1.0, 0.3], 36), {}),                               # S55 me, eyes squeezed shut
     ("L45", C([-4.0, 0.3, 0.5], [-5.4, 0.45, 0.95], 24), {}),                                # S56 the wall goes dark
@@ -163,7 +163,7 @@ SH = [
     ("L47", C([1.8, -1.5, 1.0], [-1.9, 0.0, 0.45], 32, [-0.4, -0.9, 0.8], [-1.9, 0.0, 0.5], 32), {}),  # S58 push to the empty seat
     ("L48", C([-1.62, -0.15, 1.95], [-1.9, 0.0, 0.62], 30), {}),                            # S59 top shot: the dry shape
     # ---- 05 the call
-    ("L49", C([0.8, -0.6, 1.6], [-1.2, -13.0, 0.2], 30), {}),                               # S60 Dad off again, me following
+    ("L49", C([0.9, -1.2, 1.5], [-1.2, -15.0, 0.1], 26), {}),                               # S60 Dad off again, me following
     ("L50", C(W(2.8, -43.8, 1.6), W(0.9, -39.2, 1.5), 30), {}),                             # S61 me behind the wall
     ("L51", C(W(1.6, -46.0, 1.6), W(-0.45, -40.6, 1.4), 28), {}),                           # S62 the phone on the gatepost
     ("L52", C([2.6, -44.2, POST_TOP + 0.2], [-0.45, -40.0, POST_TOP + 0.05], 50), {}),           # S63 the phone, close
@@ -192,7 +192,7 @@ SH = [
     ("L68", C([-0.3, -0.6, 1.1], [-0.7, 2.0, 1.0], 36), {}),                              # S85 my face turns
     ("L69", C([0.9, -0.6, 1.1], [0.7, 2.0, 1.0], 36), {}),                                  # S86 Dad goes red
     ("L69.1", C([-1.1, -1.0, 0.7], [-0.45, -0.2, 0.25], 38), {}),                         # S87 the flask lands
-    ("L70", C([3.4, 0.4, 1.1], [0.0, 1.9, 0.95], 30), {}),                                 # S88 the last frame
+    ("L70", C([1.6, -2.7, 1.0], [-1.3, 0.0, 0.6], 28), {}),                                 # S88 the last frame
 ]
 shots = []
 for i, (at, cam, opt) in enumerate(SH):
@@ -251,9 +251,9 @@ me = [
     {"at": "L45", "pos": TENT_ME, "expr": "wide"},
     *jump("L46", TENT_ME, HIDE, hidden=True),
     # the call: following Dad, behind the wall, out by the gate
-    *jump("L49", HIDE, P(-0.3, -3.2), hidden=False, lean=0, sit=False, yaw=0, expr="neutral", arms=[0, 0], head=[0, 0]),
-    {"at": "L49>", "pos": P(-0.6, -6.0)},
-    *jump("L50", P(-0.6, -6.0), P(0.9, -39.3), yaw=0, expr="neutral"),
+    *jump("L49", HIDE, P(-0.4, -5.0), hidden=False, lean=0, sit=False, yaw=0, expr="neutral", arms=[0, 0], head=[0, 0]),
+    {"at": "L49>", "pos": P(-0.8, -7.0)},
+    *jump("L50", P(-0.8, -7.0), P(0.9, -39.3), yaw=0, expr="neutral"),
     {"at": "L52.1", "pos": P(0.9, -39.3), "expr": "wide"},
     {"at": "L58", "pos": P(0.9, -39.3), "expr": "soft"},
     {"at": "L59", "pos": P(0.9, -39.3), "expr": "neutral"},
@@ -294,9 +294,9 @@ dad = [
     {"at": "L28>", "pos": [-4.2, -2.2, 0.0], "arms": [0, 30]},
     *jump("L29", [-4.2, -2.2, 0.0], TENT_DAD, lean=-90, yaw=0, expr="asleep", blink=False, arms=[0, 0]),
     *jump("L46", TENT_DAD, HIDE, hidden=True),
-    *jump("L49", HIDE, P(-0.9, -5.2), hidden=False, lean=0, yaw=180, expr="neutral", arms=[0, 50]),
-    {"at": "L49>", "pos": P(-1.1, -8.6)},
-    *jump("L50", P(-1.1, -8.6), P(-0.45, -41.3), yaw=180, arms=[62, 62], lean=18, expr="worried"),
+    *jump("L49", HIDE, P(-1.0, -9.0), hidden=False, lean=0, yaw=180, expr="neutral", arms=[0, 50]),
+    {"at": "L49>", "pos": P(-1.5, -12.0)},
+    *jump("L50", P(-1.5, -12.0), P(-0.45, -41.3), yaw=180, arms=[62, 62], lean=18, expr="worried"),
     {"at": "L53", "pos": P(-0.45, -41.3), "head": [0, 14], "expr": "worried"},
     {"at": "L55", "pos": P(-0.45, -41.3), "head": [0, -8]},
     # the replays (L57): banking the fire, the tent door, then the post again
@@ -323,14 +323,14 @@ grandad = [
     *jump("L03", HIDE, P(-3.1, -15.5), hidden=False, yaw=0, expr="neutral", arms=[0, 0], sit=False, lean=0),
     {"at": "L03>", "pos": P(-3.1, -10.4)},
     *jump("L04", P(-3.1, -10.4), sit_g(), yaw=180, sit=True, expr="grin"),
-    *jump("L05", sit_g(), sit_g(), yaw=-132, lean=10, expr="grin", head=[0, 0]),
-    *jump("L06", sit_g(), [-0.82, -0.8, 0.0], sit=False, yaw=146, lean=0, arms=[0, 42], expr="grin"),
+    *jump("L05", sit_g(), sit_g(), yaw=-132, lean=10, expr="smirk", head=[0, 0]),
+    *jump("L06", sit_g(), [-0.82, -0.8, 0.0], sit=False, yaw=146, lean=0, arms=[0, 42], expr="smirk"),
     *jump("L07", [-0.82, -0.8, 0.0], [HOME[0], -0.55, 0.18], yaw=0, expr="grin", arms=[0, 150]),
     *jump("L08", [HOME[0], -0.55, 0.18], HIDE, hidden=True),
 ]
 
 # Big Hands: not there until L17; on the farthest, middle and nearest stones; at the ring at L40
-STAND = dict(yaw=-90, arms=[48, 48], side=[34, 34], expr="neutral", sit=False, lean=0, head=[0, 0])
+STAND = dict(yaw=-90, arms=[30, 30], side=[16, 16], expr="neutral", sit=False, lean=0, head=[0, 0])
 bighands = [
     {"at": 0, "pos": HIDE, "hidden": True, "yaw": 0, "arms": [0, 0], "side": [0, 0], "head": [0, 0], "lean": 0, "sit": False},
     *jump("L17", HIDE, [8.0, 0.2, 0.05], hidden=False, **STAND),
@@ -340,7 +340,7 @@ bighands = [
     *jump("L28", [6.0, 0.5, 0.05], HIDE, hidden=True),
     *jump("L31", HIDE, [4.0, 0.0, 0.05], hidden=False, **STAND),
     *jump("L33", [4.0, 0.0, 0.05], HIDE, hidden=True),
-    *jump("L40", HIDE, [-2.5, 0.12, 0.0], hidden=False, yaw=90, arms=[86, 86], expr="neutral", sit=False, lean=0, head=[0, 8]),
+    *jump("L40", HIDE, [-2.5, 0.12, 0.0], hidden=False, yaw=90, arms=[40, 40], side=[35, 35], expr="neutral", sit=False, lean=0, head=[0, 8]),
     *jump("L41", [-2.5, 0.12, 0.0], HIDE, hidden=True),
 ]
 
@@ -400,10 +400,17 @@ cues = [
     {"at": "L02", "name": "flare", "v": 0.0},
     {"at": 0, "name": "hkey", "v": 1.0},
     {"at": "L40", "name": "hkey", "v": 0.12},
+    # L40: an ember-orange low light under the hands, so the creature is lit from below (round 1)
+    {"at": "L40", "name": "flare", "v": 0.35, "pos": [-1.3, 0.1, 0.18]},
+    {"at": "L41", "name": "flare", "v": 0.0},
+    # L19.2: the tent door is lifted out of black so the size comparison reads (round 1)
+    {"at": "L69", "name": "exposure", "v": 0.35},
+    {"at": "L19.2", "name": "doorlit", "v": 2.2},
+    {"at": "P01", "name": "doorlit", "v": 0.0},
     {"at": "L41", "name": "hkey", "v": 1.0},
     # Big Hands' palms: tipped at the fire, flat over the embers at L40
-    {"at": 0, "name": "handtilt", "deg": -60.0},
-    {"at": "L40", "name": "handtilt", "deg": -100.0},
+    {"at": 0, "name": "handtilt", "deg": -150.0},
+    {"at": "L40", "name": "handtilt", "deg": -60.0},
     # props. The mug on a ring stone's side; the phone; the dented flask; the pack; Grandad's stick
     {"at": 0, "name": "mug", "pos": [0.18, 1.06, 0.0]},
     {"at": "L02", "name": "mug", "hidden": True},
@@ -415,7 +422,7 @@ cues = [
     {"at": "L15", "name": "phone", "hidden": True},
     {"at": "L23", "name": "phone", "hand": "dad.arm1", "offset": [0.0, 0.0, 0.0], "tilt": -80, "yaw": 90},
     {"at": "L24", "name": "phone", "hidden": True},
-    {"at": "L49", "name": "phone", "hand": "dad.arm1", "offset": [0.0, 0.0, 0.0], "tilt": -80, "yaw": 90},
+    {"at": "L49", "name": "phone", "hand": "dad.arm1", "offset": [0.0, 0.0, 0.0], "tilt": -80, "yaw": 90, "glow": 7.0},
     {"at": "L50", "name": "phone", "pos": [-0.45, -40.0, POST_TOP], "yaw": 0, "tilt": -12},
     {"at": "L56>-0.3", "name": "phone", "hidden": True},
     {"at": "L57.2", "name": "phone", "pos": [-0.45, -40.0, POST_TOP], "yaw": 0, "tilt": -12},
@@ -423,13 +430,13 @@ cues = [
     {"at": "L64", "name": "phone", "pos": PHONE_SEAT, "yaw": 78, "tilt": -18},
     {"at": "L65.1", "name": "phone", "pos": PHONE_SEAT, "yaw": 90, "tilt": -18},
     {"at": 0, "name": "flask", "hidden": True},
-    {"at": "L06", "name": "flask", "hand": "grandad.arm1", "offset": [0.0, 0.0, 0.0], "tilt": 118},
+    {"at": "L06", "name": "flask", "hand": "grandad.arm1", "offset": [0.25, -0.25, 0.0], "tilt": 60, "yaw": 270},
     {"at": "L07", "name": "flask", "hidden": True},
     {"at": "L09", "name": "flask", "pos": [0.78, -1.42, 0.5], "yaw": 0, "tilt": 0},
     {"at": "L13", "name": "flask", "pos": [0.78, -1.42, 0.5], "yaw": 0, "tilt": 0},
     {"at": "L14", "name": "flask", "hidden": True},
     {"at": "L69", "name": "flask", "hand": "dad.arm1", "offset": [0.0, 0.0, 0.0], "tilt": 0},
-    {"at": "L69.1", "name": "flask", "pos": [-0.5, -0.28, HEARTH_TOP], "yaw": 20, "tilt": 0},
+    {"at": "L69.1", "name": "flask", "pos": [-0.5, -0.28, HEARTH_TOP], "yaw": -90, "tilt": 0},
     {"at": 0, "name": "pack", "hidden": True},
     {"at": "L08", "name": "pack", "worn": True},
     {"at": "L09", "name": "pack", "pos": [0.78, -1.42, 0.0], "yaw": 25},
@@ -492,6 +499,7 @@ story = {
     "key_color": "#ff8a3d",
     "gap": 0.12,
     "tail": 0.25,
+    "fade_out": False,
     "look": {"fog": "#2a3550", "fog_density": 0.02, "fog_start": 6.0, "sky": "#101830", "exposure": 0.55},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.04, 0.015, -0.025], "saturation": 0.95,
               "contrast": 1.05, "vignette": 0.3, "bloom": 0.3, "grain": 0.012, "red_line": 0.76},

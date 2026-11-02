@@ -319,6 +319,7 @@ def materials(kit):
     M["tin"] = kit.metal("#9a9da0", 0.35, "tin")
     M["flask"] = kit.plastic("#2f6b3b", 0.35, "flask")
     M["flaskdark"] = kit.plastic("#16381d", 0.5, "flask dent")
+    M["flasklip"] = kit.plastic("#b8dcb4", 0.25, "flask dent lip", spec=0.9)
     M["flaskcap"] = kit.plastic("#2a2a2c", 0.5, "flask cap")
     M["packm"] = kit.plastic("#7a3b22", 0.85, "pack")
     M["packin"] = kit.plastic("#120d0a", 0.9, "pack in")
@@ -528,14 +529,16 @@ def build_tent(kit, M):
 
 
 def hand_shadow_boxes(sx, sy, w, hgt, mirror=1):
-    """A mitten silhouette as (u, v, du, dv, rot) boxes in panel space: palm, four fingers, a thumb."""
-    out = [(0.0, 0.0, w, hgt * 0.5, 0.0)]
-    fw = w / 4.6
+    """A spread mitten silhouette as (u, v, du, dv, rot) boxes in panel space: a palm block, four fat fingers fanned
+    a little with clear gaps between them, a thumb. Reads as an open hand, not a bar."""
+    out = [(0.0, 0.0, w * 0.74, hgt * 0.34, 0.0)]
     for k in range(4):
-        fx = (-1.5 + k) * (w / 4.0)
-        fh = hgt * (0.52 if k not in (0, 3) else 0.44) * (1.0 + 0.06 * (k == 1))
-        out.append((fx, hgt * 0.25 + fh / 2, fw, fh, 0.0))
-    out.append((mirror * w * 0.62, hgt * 0.02, fw * 1.1, hgt * 0.34, mirror * -0.8))
+        a = (-1.5 + k) * 0.11               # a gentle fan
+        fl = hgt * (0.46, 0.62, 0.58, 0.42)[k if mirror > 0 else 3 - k]
+        fx = (-1.5 + k) * (w * 0.215)
+        base_v = hgt * 0.15
+        out.append((fx + math.sin(a) * fl * 0.5, base_v + math.cos(a) * fl * 0.5, w * 0.17, fl, -a))
+    out.append((mirror * w * 0.5, hgt * 0.04, w * 0.17, hgt * 0.32, mirror * -0.9))
     return out
 
 
@@ -549,9 +552,9 @@ def build_shadows(kit, M):
     n_in = V((TENT_H, 0, -w)) / sl     # inward normal of the west panel (points into the tent, down and east)
     origin = V((TENT_X - w, TENT_Y, 0))
     objs = []
-    for hi, (uc, vc, mir) in enumerate(((-0.34, 0.66, 1), (0.36, 0.66, -1))):
+    for hi, (uc, vc, mir) in enumerate(((0.25, 0.9, 1), (1.1, 1.0, -1))):
         verts, faces = [], []
-        for (bu, bv, du, dv, rot) in hand_shadow_boxes(0, 0, 0.5, 0.82, mir):
+        for (bu, bv, du, dv, rot) in hand_shadow_boxes(0, 0, 0.7, 0.85, mir):
             c, s = math.cos(rot), math.sin(rot)
             base = len(verts)
             for (px, py) in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
@@ -563,7 +566,7 @@ def build_shadows(kit, M):
         ob = kit.mesh_obj(f"handshadow{hi}", verts, faces, M["shadow"])
         ob.hide_render = True
         objs.append(ob)
-    fin = blocks_mesh(kit, "fingershadow", [(TENT_X - 0.7, TENT_Y + 0.1, 0.405, 0.9, 0.07, 0.01, 0.12)], M["shadow"])
+    fin = blocks_mesh(kit, "fingershadow", [(TENT_X - 0.65, TENT_Y + 0.4, 0.5, 1.1, 0.14, 0.01, 0.4)], M["shadow"])
     fin.hide_render = True
     return objs, fin
 
@@ -621,6 +624,9 @@ def build_props(kit, M):
     kit.cyl("flaskcap", 0.05, 0.07, (0, 0, 0.295), M["flaskcap"], fl, n=14)
     kit.box("flaskdent", (0.065, 0.045, 0.1), (0.04, -0.035, 0.12), M["flaskdark"], fl, rot=(0, 0, 0.7), bevel=0.012)
     kit.box("flaskdent2", (0.04, 0.03, 0.06), (0.052, -0.03, 0.16), M["flaskdark"], fl, rot=(0.1, 0.2, 0.8), bevel=0.008)
+    # the dent's bright lip catches the light (round 1): a pale crescent over the dark hollow, turned to the camera
+    kit.box("flaskdentlip", (0.07, 0.012, 0.11), (0.046, -0.041, 0.125), M["flasklip"], fl, rot=(0, 0, 0.7), bevel=0.004)
+    kit.box("flaskdentlip2", (0.04, 0.012, 0.06), (0.057, -0.037, 0.178), M["flasklip"], fl, rot=(0.1, 0.2, 0.8), bevel=0.004)
     kit.box("flaskband", (0.12, 0.12, 0.012), (0, 0, 0.06), M["flaskcap"], fl)
     P["flask"] = fl
     # the pack
@@ -785,6 +791,7 @@ def apply_look(kit, ctx, name):
     for v in FROST_NODES:
         v.outputs[0].default_value = lk["frost"]
     ctx["look"] = name
+    ctx["look_exp"] = lk["exposure"]
     ctx["look_fire"] = lk["fire"]
     ctx["look_rim"] = lk["rim"]
 
@@ -824,6 +831,7 @@ def build(kit, story, tl):
     kit.light("tentglow", "POINT", (TENT_X - 0.3, TENT_Y - 1.0, 1.0), 40.0, "#ff8a3d", size=0.25)
     kit.light("tentfill", "POINT", (TENT_X + 0.3, TENT_Y - 0.3, 1.1), 45.0, "#9db4e4", size=0.3, shadow=False)
     kit.light("phoneglow", "POINT", (0, 0, 0), 10.0, "#a8d4ff", size=0.05, shadow=False)
+    kit.light("doorlit", "POINT", (-3.2, -4.0, 1.4), 90.0, "#ffb878", size=0.5, shadow=False)
     kit.light("flare", "POINT", (-0.4, 0.0, 1.0), 60.0, "#ff8a3d", size=0.3, shadow=False)
     apply_look(kit, ctx, "dusk")
     return ctx
@@ -941,7 +949,7 @@ def animate(kit, story, tl, t, ctx):
     place_prop(P["phone"], pcue)
     vis = pcue is not None and not pcue.get("hidden")
     ph = P["phone"].location
-    over["phoneglow"] = 1.0 if vis else 0.0
+    over["phoneglow"] = (float(pcue.get("glow", 1.0)) if vis else 0.0)
     kit.LIGHTS["phoneglow"]["obj"].location = (ph.x, ph.y - 0.1, ph.z + 0.12) if vis else (0, 0, -50)
     # Big Hands: palms tipped, the rim light behind it, the whole thing posed by acting
     deg = _ease_to(_cues(tl, "handtilt"), t, "deg", -75.0)
@@ -966,6 +974,14 @@ def animate(kit, story, tl, t, ctx):
         over["hkey"] = 0.0
     fl = _ease_to(_cues(tl, "flare"), t, "v", 0.0)
     over["flare"] = fl
+    # an optional exposure nudge on top of the look (cue "exposure", v in stops; default 0 changes nothing)
+    bpy.context.scene.view_settings.exposure = ctx.get("look_exp", bpy.context.scene.view_settings.exposure) + _ease_to(_cues(tl, "exposure"), t, "v", 0.0)
+    over["doorlit"] = _ease_to(_cues(tl, "doorlit"), t, "v", 0.0)
+    fp = _last(_cues(tl, "flare"), t)
+    if fp is not None and fp.get("pos"):
+        kit.LIGHTS["flare"]["obj"].location = tuple(fp["pos"])
+    else:
+        kit.LIGHTS["flare"]["obj"].location = (-0.4, 0.0, 1.0)
     ctx["gate"].rotation_euler = (0, 0, math.radians(_ease_to(_cues(tl, "gate"), t, "deg", 0.0)))
     # sitting: both legs forward (an acting key "sit": true)
     for who in story.get("cast", {}):
