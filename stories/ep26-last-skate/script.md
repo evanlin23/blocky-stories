@@ -3,17 +3,18 @@
 - **Slug:** `ep26-last-skate` (folder `stories/ep26-last-skate/`). Pitch #10 in `stories/ideas.md`, written in a parallel batch, so the upload order is the owner's.
 - **Working title:** see `package.json`. A statement, no imperative, and it doesn't spoil Pop.
 - **Target length:** 2:15 to 2:30 final, never over 3:00.
-- **Word count:** 628 spoken words in 73 lines, all `narrator`, voice A, plus 2 pause beats (1.5 s in all).
-- **Estimated length:** about 2:17 to 2:25. At 290 wpm the speech alone is about 2:10. The gaps between lines add about 9 s, the pause beats 1.5 s and the loop tail 0.25 s. If the retime lands under 2:15, add the spare line after L68 ("The FANS / kept TURNING, / slow as THEM."). If it lands over 2:30, cut L44 (the warm chips) first, then L09.
+- **Word count:** 628 spoken words in 72 lines, all `narrator`, voice A, plus 2 pause beats (1.5 s in all).
+- **Estimated length:** about 2:17 to 2:26. At 290 wpm the speech alone is about 2:09. The gaps between lines add about 9 s, the pause beats 1.5 s and the loop tail 0.25 s. If the retime lands under 2:15, add the spare line after L68 ("The FANS / kept TURNING, / slow as THEM."). If it lands over 2:30, cut L44 (the warm chips) first, then L09.
+- **Opening rewrite (owner's rule-first decision, 2026-11-02):** L01 to L04 are new, L05 to L07 are gone, L19b and L74 are new. L08 to L10 and everything after stay, with L18, L20, L45, L54, L56, L64 and L72 synced to the builder's current text. The dedication now first comes at L54, as the first eerie use of the rail.
 
 ## Premise
-On the last night before an old roller rink shuts for good, I take Nan and Pop back to where they met. Pop says his knees are done and sits at the snack bar, so Nan waits at the rail alone through every slow song. Each time the slow spotlight comes round, a Skater in faded cherry-and-cream stripes, with legs and arms that bend twice like a folding chair, stands nearer to her.
+At this rink, slow songs are couples only and everyone else waits at the rail. On its last night before it shuts for good, I take Nan and Pop back to where they met. Pop says his knees are done and sits at the snack bar, so Nan waits at the rail alone through every slow song. Each time the slow spotlight comes round, a Skater in faded cherry-and-cream stripes, with legs and arms that bend twice like a folding chair, stands nearer to her.
 
 ## The rule
-Slow songs are couples only. Anyone without a partner waits at the rail. (The Skater keeps that count: a couples skate is built for pairs, and Nan alone at the rail is half of one.)
+L01 says it: "At this RINK, slow songs are COUPLES ONLY. Everyone ELSE waits at the RAIL." (14 words). Anyone without a partner waits at the rail. The marker is a cherry ribbon loop tied between each couple's near wrists (see 01). (The Skater keeps that count: a couples skate is built for pairs, and Nan alone at the rail is half of one.)
 
 ## The twist
-The dedication was Pop's. He asked Lenny in the booth for their song, the one they met to, and he's spent six months of Tuesdays relearning to skate in secret. On the last skate he rolls out of the hire-counter door, wobbling, and holds out his hand to Nan, and when the spotlight comes round again the Skater is gone. It had been standing where he should have been. "The couple by the rail" with only one person there turns from "who is the other one?" into Pop's surprise, and the last line answers it: there were two of them.
+The dedication was Pop's. He asked Lenny in the booth for their song, the one they met to, and he's spent six months of Tuesdays relearning to skate in secret. On the last skate he rolls out of the hire-counter door, wobbling, and holds out his hand to Nan, and when the spotlight comes round again the Skater is gone. It had been standing where he should have been. The first line's rule ("Everyone ELSE / waits at / the RAIL") reads at first as the reason Nan is alone and something stands with her. By the end it turns over: the Skater was keeping the couples count at the rail, and the last lines say there were two of them, and for once nobody waited at the rail. "The couple by the rail" (first heard at L54) turns from "who is the other one?" into Pop's dedication.
 
 - **Plant 1 (L13 to L14):** Pop's knees, strapped in thick white tape. He says they're done, so it reads as bad knees. On a rewatch it's skating support.
 - **Plant 2 (L25 to L27):** Pop thanks the man in the booth by name, "Cheers, LENNY," though he says he hasn't been here in forty years. Asked how he knows, he says it's on his shirt. The shirt in the shot is plain cherry with no name and no text (the set is text-free anyway).
@@ -56,7 +57,7 @@ Every light change is a slow ramp. Plan it so `python -m blocky flash` has nothi
 - Pre-check flash on S21 to S25, S42 to S44 and S47 to S56 at the final's own frame steps.
 
 ## The twist, and the last 15 seconds
-L66 to L73 replay the dedication over the overhead wide: two old skaters alone on the honey floor, the spotlight round them, the rail empty all the way round. The first line said there was only one person by the rail. The last line says there were two. A rewatch catches the knee tape, "Cheers, LENNY" with the plain shirt, the watch, and the empty stool.
+L66 to L74 replay the dedication over the overhead wide: two old skaters alone on the honey floor, the spotlight round them, the rail empty all the way round. The first line said everyone else waits at the rail. The last line says that for once nobody did, and it loops straight back into the rule over shot 1's line of singles. A rewatch catches the knee tape, "Cheers, LENNY" with the plain shirt, the watch, and the empty stool.
 
 ## The one lore connection (plain tally, touches no thread)
 At the hire counter (shot under L10 to L11), the end cubby of the bottom row holds one pair of skates far too long for anyone, cherry red, laces still tied in their factory bows. Pressed into the heel leather of the near skate is a plain tally of two short upright strokes, a shade darker than the leather. Held 1.2 s, never narrated, never seen again. Two strokes for a pair, no extra stroke. It names no Keeper, Maker or Bench and points at no other story.
@@ -65,32 +66,27 @@ At the hire counter (shot under L10 to L11), the end cubby of the bottom row hol
 
 Each line gives the id and who says it, then the caption chunks split with ` / `. CAPS are the key words in `#ff5f7e`. Every line is the narrator's, voice A. Pause beats give a length and their big word, or none.
 
-## 01 The dedication (cold open)
-- **Where:** the rink at the last skate, lights low, the spotlight on the rail. Shots 1 to 4.
-- `L01` narrator: The voice / on the SPEAKERS said, / "This one's / for the COUPLE / by the RAIL."
-  - [the booth lamp, Lenny's silhouette at the mic. Then the spotlight slides along the rail]
-- `L02` narrator: There was only / ONE person / by the rail.
-  - [the spotlight settles on one small figure at the cherry rail, from behind. The rail beside her is in shadow]
-- `L03` narrator: My NAN.
-  - [Nan's face in the soft pool, looking off toward the snack bar, `soft`]
-- `L04` narrator: Three hours EARLIER, / she'd been / SO happy.
-  - [dissolve to the same rail in full warm light, crowded and loud]
-
-## 02 The last night
-- **Where:** the car park at dusk, then inside: the floor, the hire counter, the snack bar. Shots 5 to 15. The rink organ at 132 bpm.
-- **Plants:** the lore cubby (S10). The knee tape (L13 to L14).
-- `L05` narrator: Nan and Pop / MET at this rink, / fifty years AGO.
-  - [the rink from outside at dusk, doors propped open, warm light spilling on the teal evening]
-- `L06` narrator: Tonight / was its LAST night. / Then it SHUTS / for GOOD.
-  - [wide inside: the honey floor, couples going round, the stripes on the walls]
-- `L07` narrator: I drove them DOWN, / with the windows / OPEN in the HEAT.
-  - [the three of us coming in through the doors, Pop fanning himself]
+## 01 The rule (opening, one forward timeline, no backstory before 0:20)
+- **Where:** the rink in warm, readable light at the start of a slow song, then the drive, then inside. Shots 1 to 10. The first 2 s are lit to read, with the rule marker and Nan's face in frame. Nothing dark until slow song one.
+- **The rule marker (ours, no text):** every couple on the floor wears one short cherry ribbon loop tied between their near wrists, so the pair is joined at the wrist and nobody grips. Anyone without a partner has bare wrists and stands at the rail. In shot 1 the floor is full of ribbon-joined pairs, and the singles stand in a line along the rail.
+- `L01` narrator: At this RINK, / slow songs are / COUPLES ONLY. / Everyone ELSE / waits at / the RAIL.
+  - [shot 1, lit warm, the spotlight soft and not yet moving: the floor full of couples gliding, each pair joined by a cherry ribbon loop at the wrist. In the foreground at the rail, Nan's face, `soft`, smiling, her wrist bare. Cut on "Everyone ELSE" to a slow track along the line of singles at the rail]
+- `L02` narrator: Tonight was / the rink's LAST night. / Then it SHUTS / for GOOD.
+  - [the rink from outside at dusk, doors propped open, warm light spilling on the teal evening. A stack of folded chairs and a few taped boxes by the door, no text on any of them]
+- `L03` narrator: I brought / my NAN / and my POP.
+  - [the three of us coming in through the doors, Nan's arm through Pop's, Pop fanning her with his free hand]
+- `L04` narrator: I drove them DOWN, / with the windows OPEN. / Nan held / Pop's ARM / the whole WAY.
+  - [in the car at dusk, windows down: me driving, and in the back Nan's arm through Pop's, her head on his shoulder. Then back to the doors]
 - `L08` narrator: The big FANS / were turning, / and the floor / SMELLED of WAX.
   - [low under the ceiling fans turning slowly, then down to the shine of the floor]
 - `L09` narrator: CHERRY / and CREAM STRIPES / on every WALL.
   - [a slow pan along the painted stripes]
-- `L10` narrator: At the hire COUNTER, / Nan asked / for her SKATES.
+- `L10` narrator: At the / hire COUNTER, / Nan asked / for SKATES.
   - [Nan at the counter, the cubby wall behind. Then the lore shot: the bottom-row end cubby, the far-too-long cherry skates, laces in their bows, the two-stroke tally on the heel. Held 1.2 s, no line about it]
+
+## 02 The last night
+- **Where:** the hire counter and the snack bar. The rink organ at 132 bpm.
+- **Plant:** the knee tape (L13 to L14).
 - `L11` narrator: Pop asked / for NOTHING.
   - [Pop beside her, shaking his head, smiling]
 - `L12` narrator: He sat down / at the SNACK BAR, / on a chrome STOOL.
@@ -108,11 +104,13 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the room dims over 1.2 s. The organ fades into the waltz]
 - `L17` narrator: Couples ONLY.
   - [two couples gliding past hand in hand, seen at the elbows, cut away before any grip]
-- `L18` narrator: One soft SPOTLIGHT / crept ROUND the floor, / slow as a CLOCK.
+- `L18` narrator: One soft SPOTLIGHT / crept ALONG / the floor, / slow as / a CLOCK.
   - [high wide: the soft pool travelling round the floor]
 - `L19` narrator: Nan waited / at the RAIL, / ALONE.
-  - [Nan at the rail, the couples passing in front of her]
-- `L20` narrator: I sat with POP / and a tub / of CHIPS.
+  - [Nan at the rail, bare wrist on the rail, the ribbon-joined couples passing in front of her]
+- `L19b` narrator: Fifty years AGO, / she met Pop / at that same RAIL.
+  - [hold on Nan at the rail in the pool's edge, looking toward the snack bar, `soft`]
+- `L20` narrator: I sat beside / POP, with a / tub of CHIPS.
   - [me and Pop at the snack bar, the tub between us]
 - `L21` narrator: When the light / reached the FAR wall, / someone was / STANDING there.
   - [the pool sliding along the far rail, then onto a tall striped shape]
@@ -178,7 +176,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 07 The last skate (the scare)
 - **Where:** the rink at its darkest, the spotlight on the rail. Shots 47 to 56. The dim is over 2 s.
-- `L45` narrator: Then the speakers / said, / "LAST SKATE."
+- `L45` narrator: Then the speaker / said, / "LAST SKATE."
   - [the booth lamp, Lenny at the mic]
 - `L46` narrator: The lights / went down / LOWER than BEFORE.
   - [the slow 2 s dim on the wide]
@@ -198,7 +196,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [Nan's hand rising from the rail, a hand's width from its hand. Hold]
 - `L53` narrator: I tried / to SHOUT, / but the music / swelled UP / over me.
   - [me at the snack bar, `terrified`, standing, the waltz swelling warm]
-- `L54` narrator: Then the voice / on the speakers said, / "This one's / for the COUPLE / by the RAIL."
+- `L54` narrator: Then the voice / on the SPEAKER / said, "This one's / for the COUPLE / by the RAIL."
   - [the booth: Lenny at the mic, smiling, looking toward the hire counter]
 
 ## 08 Pop
@@ -206,7 +204,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **The warm turn is all picture.** No line says he loves her.
 - `L55` narrator: The door / by the hire COUNTER / swung OPEN.
   - [the door, warm light behind it]
-- `L56` narrator: And out rolled / POP.
+- `L56` narrator: Out rolled / POP.
   - [Pop in the doorway on old brown skates, arms out]
 - `L57` narrator: On SKATES.
   - [close on his skates on the honey boards]
@@ -222,7 +220,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [Pop, wobbling, steady for one second, proud]
 - `L63` narrator: He rolled UP / to the rail, / and held out / HIS hand.
   - [Pop at the rail, his hand out to her. Cut away before the hands meet]
-- `L64` narrator: The spotlight / slid ROUND them.
+- `L64` narrator: The spotlight / circled THEM.
   - [the pool sliding round the pair, slow]
 - `L65` narrator: And the Skater / was GONE.
   - [the post beside them, empty, in the pool's edge]
@@ -241,14 +239,17 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the pair coming past the snack bar, laughing]
 - `L71` narrator: I watched / from the snack BAR, / on Pop's STOOL.
   - [me on the chrome stool, chin on my hand, `soft`]
-- `L72` narrator: The voice / on the speakers said, / "This one's / for the COUPLE / by the RAIL."
+- `L72` narrator: The voice / on the SPEAKER / said, "This one's / for the COUPLE / by the RAIL."
   - [crane up to the overhead wide: two old skaters alone on the honey floor in the spotlight, the rail empty all the way round]
 - `L73` narrator: There were / TWO of them.
-  - [hold the overhead wide, the fans turning slowly at frame edge. 0.25 s after the last word, cut back to L01's booth lamp]
+  - [hold the overhead wide, the fans turning slowly at frame edge]
+- `L74` narrator: And for ONCE, / NOBODY / waited at / the RAIL.
+  - [the overhead wide holds: the rail empty all the way round, the two of them below in the spotlight, joined at the wrist by one cherry ribbon loop (if that's cheap to add to the L67 to L74 shots, otherwise leave their wrists as they are). The waltz's low note falls in pitch and the fans keep turning. 0.25 s after the last word, cut back to shot 1's line of singles at the rail]
 
 ## Notes for the builder and standards
+- **The rule marker (new with the opening):** a short cherry ribbon loop tied between the near wrists of every couple on the floor during slow songs, our own prop, no text. Singles have bare wrists and stand at the rail. It must read in shot 1 by 2 s, lit warm, with Nan's face in frame. Cheapest build: one ribbon mesh parented between two wrists, reused per couple. It's needed in the L01, L16 to L19b and L28 to L31 floor shots. It's optional on Nan and Pop from L67 on. The Skater never wears one.
 - **Whisper-risky words, kept on purpose:** "Lenny" (a plain name), "fifty", "forty" and "Six" (Whisper may write digits, so normalize numbers in the check), "Tuesdays", "Nan". Avoided: "DJ" (could come back as "deejay" or "D.J."), "deckchair" (one word or two), any brand.
 - **Checks words:** no death words, no harm words (no "fell", "lost", "grab", "took", "pulled"), no child words. Pop's knees are "done", never anything worse.
 - **Rig limits:** no hand ever grips. Hands meeting are cut away (L17, L63, L69). The Skater's held-out arm shows the hand at the end of the sleeve, side-on, never foreshortened toward camera. The Skater's double joints need new pose keys in `set.py`, its own model only, nothing shared.
-- **Reported speech:** Pop (L14, L25, L27), Lenny (L61) and Nan (L70) are quoted in my narration. Nobody has a voice of their own. The speakers' lines (L01, L45, L54, L72) are mine too, read as reported speech.
+- **Reported speech:** Pop (L14, L25, L27), Lenny (L61) and Nan (L70) are quoted in my narration. Nobody has a voice of their own. The speaker's lines (L45, L54, L72) are mine too, read as reported speech.
 - **Spare line for length:** after L68, "The FANS / kept TURNING, / slow as THEM."
