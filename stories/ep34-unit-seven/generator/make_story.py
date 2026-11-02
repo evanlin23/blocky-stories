@@ -35,9 +35,9 @@ cast = {
     "jo": {"age": "adult", "skin": "#e6bd96", "shirt": "#c4592a", "pattern": "solid", "collar": "#a94a22",
            "pants": "#232a3a", "shoes": "#ececec", "sleeves": "long", "hair": "long", "hair_c": "#141214",
            "hat": "none", "width": 0.9, "face": {"eyes": "lashes", "brows": True, "ink": "#1c1214"}},
-    "deep": {"age": "adult", "skin": "#c2a98a", "shirt": "#3d6fa8", "pattern": "solid", "collar": "#3d6fa8",
+    "deep": {"age": "adult", "skin": "#b3a187", "shirt": "#3d6fa8", "pattern": "solid", "collar": "#3d6fa8",
              "pants": "#3d6fa8", "shoes": "#8a6f52", "sleeves": "long", "hair": "none", "hair_c": "#8a6f52",
-             "hat": "ballcap", "hat_c": "#8a6f52", "width": 0.7,
+             "hat": "ballcap", "hat_c": "#54432f", "width": 0.7,
              "face": {"eyes": "classic", "brows": False, "ink": "#0b0b0d", "pupil": "#08080a", "mouth": "auto"}},
 }
 
@@ -117,10 +117,10 @@ SHOTS = [
     ("L41", "me walking up the low-lit corridor to the button, my back to seven",
      still([0.0, 3.9, 1.55], [-0.6, 0.6, 1.2], 26)),
     ("L42", "me at the button as the lights come up behind me", still([-0.45, 2.2, 1.6], [-0.6, 0.55, 1.5], 38)),
-    ("L43", "the hit: it is in my unit, its face lit from below", still([-0.5, 0.6, 1.5], [1.0, 3.0, 1.35], 30)),
+    ("L43", "the hit: it is in my unit, its face lit from below", still([-0.5, -0.6, 1.25], [1.0, 3.0, 1.3], 32)),
     ("L44", "its face right at my open door", still([-0.3, 3.45, 1.58], [1.0, 3.0, 1.58], 44)),
     ("L45", "from the doorway's edge, high: the body filling the aisle to the back wall",
-     still([1.0, 2.3, 2.1], [3.0, 3.1, 0.8], 21)),
+     still([0.5, 3.0, 2.2], [3.3, 3.0, 0.85], 20)),
     ("L46", "the lamp beside its boot", still([0.6, 2.05, 0.5], [1.2, 2.6, 0.2], 28)),
     ("L47", "my face, terrified, then my eyes drop", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
     ("L48", "straight down the aisle line: its front, a stack each side", AISLE_CAM),
@@ -308,7 +308,7 @@ cues = [
     {"at": "L15+0.9", "name": "corr", "level": 0.12, "dur": 1.2},
     {"at": "L15.1+1.1", "name": "corr", "level": 1.0, "dur": 1.0},
     {"at": "L40.1", "name": "corr", "level": 0.12, "dur": 1.2},
-    {"at": "L42+0.3", "name": "corr", "level": 0.45, "dur": 1.0},
+    {"at": "L42+0.3", "name": "corr", "level": 0.22, "dur": 1.0},
     {"at": "L55", "name": "corr", "level": 1.0, "dur": 0.01},
     # doors
     {"at": 0, "name": "door", "unit": 7, "open": 1.0},

@@ -381,6 +381,8 @@ def build_unit_seven(kit, ctx, M):
     kit.light("lamp", "POINT", (lx, ly, lz + 0.12), 30, "#ffcf8a", size=0.08)
     kit.light("unit glow", "POINT", (2.2, yc, 2.0), 14, "#ffcf8a", size=0.3, shadow=False)
     kit.light("lamp bounce", "POINT", (1.25, yc + 0.1, 0.35), 25, "#ffcf8a", size=0.08)
+    kit.light("back rim", "SPOT", (2.1, yc + 0.15, 2.1), 160, "#9fc0ff", size=0.15, spot=70, blend=0.6, shadow=False)
+    kit.aim(bpy.data.objects["back rim"], (1.1, yc, 1.5))
     kit.light("face under", "SPOT", (0.55, yc - 0.15, 0.25), 90, "#ffd9a0", size=0.1, spot=60, blend=0.7)
     kit.aim(bpy.data.objects["face under"], (1.0, yc, 1.55))
     # the keys on a box top: a ring and two brass keys
@@ -538,8 +540,8 @@ def build_deep(kit, ctx):
     M = ctx["M"]
     blue = kit.plastic("#3d6fa8", 0.5, name="deep blue", spec=0.5)
     blue2 = kit.plastic("#33608f", 0.55, name="deep rib")
-    skin = kit.plastic("#c2a98a", 0.55, name="deep skin")
-    cap = kit.plastic("#8a6f52", 0.9, name="deep cap")
+    skin = kit.plastic("#b3a187", 0.6, name="deep skin")
+    cap = kit.plastic("#54432f", 0.92, name="deep cap")
     dust = kit.plastic("#7d6548", 0.95, name="deep dust")
     L = 2.7 / RIG_S
     y0 = 0.5
@@ -651,6 +653,7 @@ def animate(kit, story, tl, t, ctx):
     fon = float(fl["on"]) if fl else 0.0
     over["lamp bounce"] = fon
     over["face under"] = fon
+    over["back rim"] = fon
     # plant light, key fill, slot light
     pc = _last(_cues(tl, "plant"), t)
     over["plant"] = float(pc["on"]) if pc else 0.0
