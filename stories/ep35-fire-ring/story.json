@@ -35,7 +35,8 @@
   "contrast": 1.05,
   "vignette": 0.3,
   "bloom": 0.3,
-  "grain": 0.012
+  "grain": 0.012,
+  "red_line": 0.76
  },
  "phonemes": {},
  "cast": {

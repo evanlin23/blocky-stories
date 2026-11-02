@@ -492,7 +492,7 @@ story = {
     "tail": 0.25,
     "look": {"fog": "#2a3550", "fog_density": 0.02, "fog_start": 6.0, "sky": "#101830", "exposure": 0.55},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.04, 0.015, -0.025], "saturation": 0.95,
-              "contrast": 1.05, "vignette": 0.3, "bloom": 0.3, "grain": 0.012},
+              "contrast": 1.05, "vignette": 0.3, "bloom": 0.3, "grain": 0.012, "red_line": 0.76},
     "phonemes": {},
     "cast": cast,
     "lines": lines,
