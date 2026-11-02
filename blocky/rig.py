@@ -343,8 +343,38 @@ class Character:
         elif hat == "hood":
             kit.box(f"{n}.hood", (2 * R + 0.34, 2 * R + 0.3, H + 0.3), (0, 0.12, 0.08), hc, hg, bevel=0.22)
             # the hood is open at the front: a dark recess the face sits in front of
+        elif hat == "hoodopen":
+            # opt-in (ep14, Floor Thirteen): a hood that is really open at the front, so the face shows from the
+            # front: a back panel, two sides and a top, with a soft lip round the opening
+            hw, hd, hh, hz = 2 * R + 0.34, 2 * R + 0.3, H + 0.3, 0.08
+            kit.box(f"{n}.hoodb", (hw, 0.3, hh), (0, 0.12 + hd / 2 - 0.15, hz), hc, hg, bevel=0.14)
+            for sx in (-1, 1):
+                kit.box(f"{n}.hoods{sx}", (0.22, hd, hh), (sx * (hw / 2 - 0.11), 0.12, hz), hc, hg, bevel=0.1)
+            kit.box(f"{n}.hoodt", (hw, hd, 0.24), (0, 0.12, hz + hh / 2 - 0.12), hc, hg, bevel=0.1)
+            kit.box(f"{n}.hoodlip", (hw - 0.3, 0.1, 0.1), (0, 0.12 - hd / 2 + 0.03, hz + hh / 2 - 0.3), hc, hg, bevel=0.04)
         ex = spec.get("extras", [])
         ec = kit.plastic(spec.get("extra_c", "#20242c"), 0.4)
+        self.hp = {"ears": [], "neck": []}
+        if "headphones" in ex:
+            # opt-in (ep14, Floor Thirteen): big black block over-ear headphones, in two places at once (a set's
+            # animate shows one: on the ears, or round the neck). Plain black, no logo.
+            hp_c = kit.plastic(spec.get("hp_c", "#0d0d10"), 0.45)
+            ears = self.hp["ears"]
+            ears.append(kit.box(f"{n}.hpe_band", (2 * R + 0.5, 0.22, 0.16), (0, 0.12, top + 0.46), hp_c, hg, bevel=0.06))
+            for sx in (-1, 1):
+                ears.append(kit.box(f"{n}.hpe_arm{sx}", (0.16, 0.2, 0.9), (sx * (R + 0.34), 0.12, top + 0.02), hp_c, hg,
+                                    bevel=0.05))
+                ears.append(kit.box(f"{n}.hpe_cup{sx}", (0.34, 0.74, 0.82), (sx * (R + 0.4), 0.12, -0.05), hp_c, hg,
+                                    bevel=0.12))
+            neck = self.hp["neck"]
+            neck.append(kit.box(f"{n}.hpn_back", (1.5, 0.16, 0.16), (0, 0.5, 2.0), hp_c, self.torso, bevel=0.05))
+            for sx in (-1, 1):
+                neck.append(kit.box(f"{n}.hpn_side{sx}", (0.16, 1.0, 0.16), (sx * 0.72, 0.0, 2.0), hp_c, self.torso,
+                                    bevel=0.05))
+                neck.append(kit.box(f"{n}.hpn_cup{sx}", (0.66, 0.34, 0.74), (sx * 0.72, -0.55, 1.78), hp_c, self.torso,
+                                    bevel=0.12))
+            for ob in neck:
+                ob.hide_render = True
         if "glasses" in ex:
             for sx in (-1, 1):
                 kit.box(f"{n}.gl{sx}", (0.42, 0.06, 0.32), (sx * 0.24, -R - 0.03, -0.02), kit.glass("#dde6ea"), hg,
