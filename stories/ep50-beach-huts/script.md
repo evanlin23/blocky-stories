@@ -8,7 +8,7 @@
   - The second deckchair's sag is shown as the trace of someone heavy who just got up (L22), so the chair is never seen sagging under nobody. At dusk the sag is heard off-frame (L39).
   - The sting shot keeps the lore limit: the chair is out and empty, canvas flat, so it hints the place is open again, never that the Keeper stayed.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 586 spoken words in 73 lines (L03, L05, L08 cut 2026-11-02 so Remi and the stake land by 0:20), all `narrator`, plus 2 pause beats (1.3 s in all).
+- **Word count:** 588 spoken words in 73 lines (L03, L05, L08 cut 2026-11-02 so Remi and the stake land by 0:20), all `narrator`, plus 2 pause beats (1.3 s in all).
 - **Estimated length:** about 2:19 to 2:25. At 290 wpm the speech is 2:08, at 278 wpm (the measured rate on short lines) 2:14. The 0.12 s gaps add about 9 s, the pauses 1.3 s and the loop tail 0.25 s. If it lands under 2:15, add "The wind SINGS / in the hut ROOFS." after L13. If it lands over 2:30, cut L46 first, then L54.
 - **Timing targets:** the montage ends by about 12 s. Remi is on screen from L10 (about 17 s) and her reflection faces down the shore in the window under L10b (about 18 s, shown, not narrated) and walking from L14. The first taking is L25 at about 51 s (36%). The Small Head is shown clearly from L45 at about 84 s (59%).
 
@@ -18,11 +18,11 @@
 - **Rule:** "In this town, your reflection does what you really want to do." (L01, 12 words.)
 - **Twist:** Remi's reflection was following mine. My reflection was never missing. What I really want is to walk the shore with her, so my reflection has been out there doing it all along, far down the sand, where I never looked. Hers walked toward it every day because she wanted the same. "Your reflection does what you really want" first reads as the town exposing that Remi wants to leave me. By the end it means we both wanted the same walk, and I was the one not on it.
 - **Where the twist is planted:**
-  - Plant 1, the figure in my coat: in the opening wide (L01, second shot), far down the wet sand in the reflections, one small figure in a rust duffel coat walks toward the point. Not narrated. It's there again, tiny, in the far left of the L17 window shot.
+  - Plant 1, the figure in my coat: in the opening wide (L01, second shot), far down the wet sand in the reflections, one small figure in a magenta duffel coat walks toward the point. Not narrated. It's there again, tiny, in the far left of the L17 window shot.
   - Plant 2, she never looks back: Remi's reflection only ever faces ahead, down the shore, as if keeping someone in sight. Narrated as misdirection at L18 ("She never looks BACK / at the HUT"), and paid off at L66.
   - Rewatch reward: in every window shot before L62, I'm missing from the glass while everyone else's reflection is busy.
-- **How the last 15 seconds turn over the first line:** L74 to L76 repeat the rule, then "Mine walks / with REMI." The first line was a rule that showed what people secretly want, and for me it seemed to show nothing. Now it's how I know where I belong. Then the sting: "This morning it was ALREADY out there," over a hut window with no me in it and the second deckchair set out again, empty. A second watch catches the coat figure in L01 and hears "I don't want ANYTHING" (L09) as wrong from the start.
-- **Ending shape:** two people and two reflections walking the shore at the same pace at evening (L73), then a cold cut to the next morning: the hut window empty of me, the laptop shut on the step, the second deckchair out and empty, facing the sea.
+- **How the last 15 seconds turn over the first line:** L74 to L76 repeat the rule, then "Mine walks / with REMI." The first line was a rule that showed what people secretly want, and for me it seemed to show nothing. Now it's how I know where I belong. Then the sting, cold and looping back to the rule: "It was ALREADY / out THERE / before I WOKE," over the laptop left open on the hut step and, in the window glass, my reflection walking away down the shore without me. What I really want has started the walk again before I have. A second watch catches the coat figure in L01 and hears "I don't want ANYTHING" (L09) as wrong from the start.
+- **Ending shape:** two people and two reflections walking the shore at the same pace at evening (L73), then a cold cut to the next morning: the laptop left open on the hut step, and in the window glass my reflection walking away down the shore alone, the second deckchair out and empty, facing the sea.
 - **Warmth:** making time. Shown: I shut the laptop and walk to her, I sit beside her, I listen to her talk all the way back, the laptop stays shut all summer.
 
 ## World
@@ -38,7 +38,7 @@ A row of twelve painted beach huts on a long off-season shore, in windy spring w
 
 All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 
-- `me` (adult, the narrator): sandy-brown block hair with a side part, a rust duffel coat (`#a8552e`) with cream toggles, a grey jumper, dark jeans. The coat must read as a small rust shape at a distance (plant 1). Faces: `neutral`, `worried`, `scared`, `sheepish`, `smile`. No age on screen.
+- `me` (adult, the narrator): sandy-brown block hair with a side part, a magenta duffel coat (`#b8327a`) with cream toggles, a grey jumper, dark jeans. The coat must read as a small magenta shape at a distance (plant 1). Faces: `neutral`, `worried`, `scared`, `sheepish`, `smile`. No age on screen.
 - `remi` (adult, my fiancée): dark curly block hair, a cream cable jumper, denim dungarees flecked with blue paint, a mustard scarf (`#d9a441`). Faces: `neutral`, `smile`, `worried`, `faraway` (eyes on the distance). Never quoted directly. Her one quote (L64) is reported.
 - `neighbour` (adult, older): a navy and white fisherman's stripe jumper, a red bobble hat, a grey drawn beard. L01 and L02 only.
 - `office` (three adults): plain shirts in pale blue, white and olive. Unused since L03 was cut (2026-11-02).
@@ -73,7 +73,7 @@ Every word is the narrator's.
 
 ## Palette and light
 
-- **Palette:** pale overcast sky `#c9d3d6`, dry sand `#d9cba8`, wet sand `#8f8572` (glossy), sea grey-green `#5f7a78`, foam `#e6ece8`, hut pastels faded blue `#8fb3c9` (ours), mint `#a9cfb4`, butter `#e8d48a`, coral `#e09a84`, lilac `#b7a6c9`, driftwood grey `#9a9288`, boat blue `#4f74a0`, breakwater stone `#7b7d78`, lantern amber `#f0b46a`, dusk blue `#3d5470`. The Small Head's stripes and skin above. My coat rust `#a8552e`, Remi's scarf mustard `#d9a441`.
+- **Palette:** pale overcast sky `#c9d3d6`, dry sand `#d9cba8`, wet sand `#8f8572` (glossy), sea grey-green `#5f7a78`, foam `#e6ece8`, hut pastels faded blue `#8fb3c9` (ours), mint `#a9cfb4`, butter `#e8d48a`, coral `#e09a84`, lilac `#b7a6c9`, driftwood grey `#9a9288`, boat blue `#4f74a0`, breakwater stone `#7b7d78`, lantern amber `#f0b46a`, dusk blue `#3d5470`. The Small Head's stripes and skin above. My coat magenta `#b8327a` (no earlier story's shore or ice figure uses it; ep36's Leaner is rust red), Remi's scarf mustard `#d9a441`.
 - **Caption key colour:** sea-glass green `#7fe3c8`.
 - **First 2 s:** a bright, windy morning, sun out between clouds, the huts lit full and the neighbour's face in a mid shot. Dusk and dark come only from L24.
 - **Light, every change a slow ramp:**
@@ -91,7 +91,7 @@ Every word is the narrator's.
 - **Music:** G mixolydian, 76 bpm. For the first third: a thin plucked synth on the off-beats, a soft high wind pad, and little else. From L25 (the first taking) a heavy low drone on G with a sub layer enters under everything and holds to the end, never stopping. From L66 a plain warm melody line on a soft square lead comes in over the drone, resolving to G major. At L74 the melody drops out and the drone alone carries the last line, with a slow pitch fall on the final tail at -18 dB.
 - **Drops:** P01 (0.6 s, before "REMI is GONE"): everything drops but wind, then one low hollow thud as the drone lands. P02 (0.7 s, before L44): all music out but the drone's sub, one long creak of deckchair canvas, then the hit on "I turn".
 - **Ambience, all synthesized:** steady spring wind, soft surf, hut roofs ticking in the wind, a laptop's quiet fan, a kettle ticking as it cools (L23), the hut door swinging on its hinge (L28), deckchair canvas creaking (L39, P02), footsteps on wet sand (L61, L70, L73).
-- **The loop:** 0.25 s after "THERE" in L76, cut to L01's bright first shot.
+- **The loop:** 0.25 s after "WOKE" in L76, cut to L01's bright first shot.
 
 ## The rule as the hits do it
 
@@ -118,7 +118,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L01` narrator: In this TOWN, / your REFLECTION does / what you really WANT / to DO.
   - [a: mid shot, bright: the neighbour stands still at his butter-yellow hut window, `neutral`, face large in frame. In the glass beside him his reflection is mid-cartwheel, upside down, arms out]
-  - [b: high wide of the hut row and the shining wet sand. Every figure on the sand stands still while its reflection below does something else: one dances, one lies flat sunbathing, one waves. Far down to the left, in the wet sand only, one small figure in a rust duffel coat walks toward the point (plant 1). Not mentioned]
+  - [b: high wide of the hut row and the shining wet sand. Every figure on the sand stands still while its reflection below does something else: one dances, one lies flat sunbathing, one waves. Far down to the left, in the wet sand only, one small figure in a magenta duffel coat walks toward the point (plant 1). Not mentioned]
 - `L02` narrator: My NEIGHBOUR / stands perfectly STILL. / In the glass, / he's doing CARTWHEELS.
   - [a: close on the neighbour, bobble hat, blinking at the sea]
   - [b: the window glass alone: his reflection, right way up now, landing a cartwheel and starting another]
@@ -154,7 +154,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L16` narrator: On TUESDAY, / it's past the BLUE BOATS.
   - [the window: in the glass, far down the shore, the reflection beyond three upturned blue boats]
 - `L17` narrator: By THURSDAY, / it's a DOT / out on the POINT.
-  - [the window, close: a tiny mustard dot where the shore curves out to the point. At the far left of the glass, tinier still, a rust speck ahead of it. Not mentioned]
+  - [the window, close: a tiny mustard dot where the shore curves out to the point. At the far left of the glass, tinier still, a magenta speck ahead of it. Not mentioned]
 - `L18` narrator: She never looks BACK / at the HUT. / Not ONCE.
   - [a: close on the glass: the reflection's back, head facing forward down the shore]
   - [b: Remi, real, turning to look at me over her shoulder, `smile`]
@@ -263,14 +263,14 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L55` narrator: Far down / the SHORE, / in the GLASS, / Remi's reflection / has STOPPED.
   - [the window, deeper: far off at the point, Remi's reflection sitting on the old bench by the breakwater]
 - `L56` narrator: It's sitting / next to a SMALL FIGURE / in my COAT.
-  - [closer on the glass: beside her on the bench, a tiny rust-coloured figure in a duffel coat]
+  - [closer on the glass: beside her on the bench, a tiny magenta figure in a duffel coat]
 - `L57` narrator: Your reflection does / what you really WANT.
   - [on me, `neutral` now, the Small Head's face blurred in the foreground]
 - `L58` narrator: So all this TIME, / MINE has been / out THERE, / DOING it.
   - [a: the window: the two small figures side by side on the bench]
   - [b: me, eyes going from the glass to the shore]
 - `L59` narrator: Walking the SHORE / with HER.
-  - [a cut back to the L01 wide, held a beat: the rust figure in the wet sand, walking toward the point]
+  - [a cut back to the L01 wide, held a beat: the magenta figure in the wet sand, walking toward the point]
 - `L60` narrator: I SHUT / the LAPTOP.
   - [close on the laptop: the lid coming down on its hinge, the glow gone (lid motion over about 0.5 s, the screen light fading with it). Cut away from any hand]
 - `L61` narrator: I leave it / in MY chair, / and I WALK.
@@ -293,7 +293,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [a: low on the wet sand at the bench's feet: in the shine, two reflections sitting close, hers facing mine]
   - [b: me looking down at it, `neutral`]
 - `L66` narrator: That's why / it never / looked BACK.
-  - [Remi's reflection in the wet sand, its face turned toward the rust figure beside it. The warm melody comes in]
+  - [Remi's reflection in the wet sand, its face turned toward the magenta figure beside it. The warm melody comes in]
 - `L67` narrator: It was keeping ME / in SIGHT.
   - [Remi, `smile`, looking at me]
 - `L68` narrator: I sit DOWN / beside her.
@@ -322,17 +322,17 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [our hut window, evening: me and Remi on the deck, and both our reflections in the glass. The melody drops out, the drone holds]
 - `L75` narrator: Mine walks / with REMI.
   - [the window, close: my reflection, smiling]
-- `L76` narrator: This MORNING, / it was ALREADY / out THERE.
-  - [the sting, cold grey morning, wind: our hut window with no me in it. On the step, the laptop sits shut. In front of the window, the second deckchair is out again, empty, canvas flat, facing the sea. Far down the wet sand, tiny, the rust figure walking toward the point alone. Hold, then the drone's pitch fall at -18 dB, then cut to L01]
+- `L76` narrator: It was ALREADY / out THERE / before I WOKE.
+  - [the sting, cold grey morning, wind: the laptop left open on the hut step, its screen glowing. In the hut window's glass, my reflection in the magenta duffel coat walks away down the shore toward the point, alone, its back to me. Nobody on the real sand. In front of the window, the second deckchair is out again, empty, canvas flat, facing the sea. Hold, then the drone's pitch fall at -18 dB, then cut to L01]
 
 ## Shot count
 
-95 shots (including the two pause holds), about 1.6 s each on average at the measured length. The longest holds are the lore hasp (L28, about 1.6 s) and the sting (L76, about 2.2 s with the tail).
+95 shots (including the two pause holds), about 1.6 s each on average at the measured length. The longest holds are the lore hasp (L28, about 1.6 s) and the sting (L76, about 2.6 s with the tail).
 
 ## Risks for the builder
 
 - **Whisper on names:** "Remi" may come back as "Remy". Accept either spelling in the word check if the tool allows, or test it first.
 - **"Fiancée":** the caption carries the accent. If the word check compares without accents, it should pass. If not, caption it "FIANCEE".
-- **Reflections are the whole marker.** Every window, puddle and wet-sand shot needs a posed copy set. The opening wide (L01b) and the sting (L76) need the rust figure readable as rust at phone size: about 12 to 16 px tall in the final at 540x960 is enough.
+- **Reflections are the whole marker.** Every window, puddle and wet-sand shot needs a posed copy set. The opening wide (L01b) and the sting (L76) need the magenta figure readable as magenta at phone size: about 12 to 16 px tall in the final at 540x960 is enough.
 - **No hands:** sanding (L11), the laptop lid (L60) and the date's touching sleeves (L06) all cut away from grips.
 - **Three lean poses** for the Small Head (L49 to L51). Check its huge shoulders against the chair frame and the window wall for intersections in the stills.
