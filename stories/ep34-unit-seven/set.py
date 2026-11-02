@@ -824,6 +824,10 @@ def _time_state(tl, t):
 def animate(kit, story, tl, t, ctx):
     M = ctx["M"]
     build_deep(kit, ctx)
+    dr_ = bpy.data.objects.get("deep")
+    if dr_ is not None:     # parts built here don't inherit the root's hidden state: copy it, every frame
+        for ob in dr_.children_recursive:
+            ob.hide_render = dr_.hide_render
     over = {}
     sky, skys, sun, sod, yfill, mfill, bmul, expo = _time_state(tl, t)
     w = bpy.context.scene.world
@@ -930,11 +934,8 @@ def animate(kit, story, tl, t, ctx):
             carriers[c_["who"]] = c_
     sm = ctx["small"]
     smc = _last(_cues(tl, "small"), t)
-    if smc and smc.get("on"):
-        sm.location = tuple(smc["pos"])
-        _show(sm, True)
-    else:
-        _show(sm, False)
+    _show(sm, True)          # never toggled (a toggled hide_render drew the box black in some shards)
+    sm.location = tuple(smc["pos"]) if smc and smc.get("on") else (0, 0, -30)
     me = bpy.data.objects.get("me")
     jo = bpy.data.objects.get("jo")
     bpy.context.view_layer.update()
