@@ -1,6 +1,6 @@
-# ep46-marsh-mill
+# ep56-marsh-mill
 
-**Slug:** `ep46-marsh-mill` (replaces batch 4's killed ep39 `glass-house`)
+**Slug:** `ep56-marsh-mill` (replaces batch 4's killed ep39 `glass-house`)
 
 ## Premise
 In this town everyone is born with a brass key on a cord round the neck. It opens exactly one door in town, and never your own, and it only goes warm and gold at the locked door it fits. I've tried every door in town and mine has never opened anything. My great-aunt Win, eighty-one, runs the windmill on the marsh. I was her mate on the millstones for six years, then left two years ago to open my own bakery, and now I only pick her flour up off the step. Her mill door has been open day and night for sixty years. This Monday it's locked, and each night a clean, flour-free patch in the shape of two boots stands nearer behind her on the stone floor, in my old place by the sack hoist.
