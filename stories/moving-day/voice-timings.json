@@ -58,14 +58,14 @@
    ]
   },
   "L03": {
-   "text": "It was the bottom box of a stack taller than me.",
+   "text": "It was the bottom box of a stack taller than the door.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.19,
+   "dur": 2.328,
    "onset": 0.155,
-   "end": 2.0,
+   "end": 2.138,
    "chunks": [
     [
      0.155,
@@ -81,7 +81,7 @@
     ],
     [
      1.25,
-     2.0
+     2.138
     ]
    ]
   },
@@ -737,6 +737,30 @@
     ]
    ]
   },
+  "L29b": {
+   "text": "And Mum was still asleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.707
+    ],
+    [
+     0.707,
+     1.276
+    ]
+   ]
+  },
   "L30": {
    "text": "So I tried to pull it apart.",
    "who": "narrator",
@@ -846,6 +870,58 @@
     [
      0.698,
      1.31
+    ]
+   ]
+  },
+  "L34b": {
+   "text": "In the kitchen, every tape roll was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.655,
+     1.25
+    ],
+    [
+     1.25,
+     1.948
+    ]
+   ]
+  },
+  "L34c": {
+   "text": "Just cardboard rings, stood up in a row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.897
+    ],
+    [
+     0.931,
+     1.199
+    ],
+    [
+     1.199,
+     1.793
     ]
    ]
   },
@@ -1274,42 +1350,38 @@
    ]
   },
   "L53": {
-   "text": "Tucked, round her shoulders, the edges folded under the mattress.",
+   "text": "Laid over her bed the old way.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9682,
-   "dur": 2.931,
-   "onset": 0.19,
-   "end": 2.724,
+   "dur": 1.793,
+   "onset": 0.207,
+   "end": 1.586,
    "chunks": [
     [
-     0.19,
-     0.612
+     0.207,
+     0.492
     ],
     [
-     0.612,
-     1.172
+     0.492,
+     0.81
     ],
     [
-     1.241,
-     1.87
-    ],
-    [
-     1.87,
-     2.724
+     0.81,
+     1.586
     ]
    ]
   },
   "L54": {
-   "text": "The quilt she'd left packed.",
+   "text": "The quilt she had left packed.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.431,
+   "dur": 1.466,
    "onset": 0.155,
-   "end": 1.224,
+   "end": 1.259,
    "chunks": [
     [
      0.155,
@@ -1317,11 +1389,11 @@
     ],
     [
      0.414,
-     0.707
+     0.741
     ],
     [
-     0.707,
-     1.224
+     0.741,
+     1.259
     ]
    ]
   },
@@ -1346,14 +1418,14 @@
    ]
   },
   "L56": {
-   "text": "Back in the old house, Mum's room was the cold one.",
+   "text": "Back in the old house, that quilt lived on her bed.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.448,
+   "dur": 2.293,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 2.086,
    "chunks": [
     [
      0.172,
@@ -1361,43 +1433,47 @@
     ],
     [
      0.37,
-     0.914
+     0.897
     ],
     [
-     0.974,
-     1.406
+     0.948,
+     1.293
     ],
     [
-     1.406,
-     1.578
+     1.293,
+     1.457
     ],
     [
-     1.578,
-     2.259
+     1.457,
+     2.086
     ]
    ]
   },
   "L57": {
-   "text": "She slept under that quilt all winter.",
+   "text": "Here, it was too warm for it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.862,
+   "dur": 1.534,
    "onset": 0.172,
-   "end": 1.655,
+   "end": 1.345,
    "chunks": [
     [
      0.172,
-     0.509
+     0.345
     ],
     [
-     0.509,
-     1.0
+     0.37,
+     0.517
     ],
     [
-     1.0,
-     1.655
+     0.517,
+     0.862
+    ],
+    [
+     0.862,
+     1.345
     ]
    ]
   },
@@ -1506,21 +1582,21 @@
    ]
   },
   "L62": {
-   "text": "In the morning, it was gone.",
+   "text": "It was gone by morning.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.448,
-   "onset": 0.172,
+   "onset": 0.155,
    "end": 1.259,
    "chunks": [
     [
-     0.172,
-     0.552
+     0.155,
+     0.586
     ],
     [
-     0.578,
+     0.586,
      1.259
     ]
    ]
@@ -1854,26 +1930,30 @@
    ]
   },
   "L77": {
-   "text": "On its front, in black marker, a smile.",
+   "text": "The bottom box. My peeled tape hung off its seam.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.172,
-   "end": 1.81,
+   "dur": 2.448,
+   "onset": 0.155,
+   "end": 2.259,
    "chunks": [
     [
-     0.172,
-     0.569
+     0.155,
+     0.828
     ],
     [
-     0.595,
-     1.121
+     0.879,
+     1.371
     ],
     [
-     1.147,
-     1.81
+     1.371,
+     1.612
+    ],
+    [
+     1.612,
+     2.259
     ]
    ]
   },
@@ -1898,82 +1978,6 @@
     [
      1.034,
      1.534
-    ]
-   ]
-  },
-  "L29b": {
-   "text": "And Mum was still asleep.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.483,
-   "onset": 0.155,
-   "end": 1.276,
-   "chunks": [
-    [
-     0.155,
-     0.448
-    ],
-    [
-     0.448,
-     0.707
-    ],
-    [
-     0.707,
-     1.276
-    ]
-   ]
-  },
-  "L34b": {
-   "text": "In the kitchen, every tape roll was empty.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.172,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.655,
-     1.25
-    ],
-    [
-     1.25,
-     1.948
-    ]
-   ]
-  },
-  "L34c": {
-   "text": "Just cardboard rings, stood up in a row.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.172,
-   "end": 1.793,
-   "chunks": [
-    [
-     0.172,
-     0.655
-    ],
-    [
-     0.655,
-     0.897
-    ],
-    [
-     0.931,
-     1.199
-    ],
-    [
-     1.199,
-     1.793
     ]
    ]
   }

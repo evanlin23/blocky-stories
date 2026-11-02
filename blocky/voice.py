@@ -20,6 +20,7 @@ timestamps divided by the rate.
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -149,6 +150,9 @@ def asr(wav: Path, timeline: Path) -> int:
         if op == "equal":
             continue
         sa, sb = " ".join(a[a1:a2]), " ".join(b[b1:b2])
+        if op == "insert" and a1 == len(a) and os.environ.get("BLOCKY_ASR_TAIL"):   # opt-in (ep23): after the last line
+            print(f"  tail: Whisper repeated the end, ignored: {sb!r} (the film has no words there)")
+            continue
         if same_spoken(sa, sb):
             print(f"  spelling: script {sa!r} | heard {sb!r} (the same words, spelled another way)")
             continue
