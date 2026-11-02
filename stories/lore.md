@@ -24,6 +24,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep12 `knock-back` | none (before the canon), but the knock fits the roll call | |
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S59, under L59 ("Wren tore it in half"), held 1.5 s, not narrated |
+| ep24 `wash-cycle` | a plain tally under the seat of chair four in a laundromat row of six, six short laundry-blue strokes, one per chair, no extra stroke (the pin doesn't ask about it) | S31, under L31 ("Its face / didn't BLINK."), a low shot up at the seat's underside, held 1.5 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
