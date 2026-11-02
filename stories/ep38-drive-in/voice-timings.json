@@ -62,38 +62,38 @@
    ]
   },
   "L03": {
-   "text": "At his stag night, Dev's silhouette was his bride, and his mates all groaned.",
+   "text": "At Dev's stag night, his silhouette was his bride, and his mates all groaned.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.207,
+   "dur": 3.259,
    "onset": 0.155,
-   "end": 3.017,
+   "end": 3.069,
    "chunks": [
     [
      0.155,
-     0.534
+     0.69
     ],
     [
-     0.534,
-     0.966
+     0.69,
+     1.094
     ],
     [
-     0.966,
-     1.337
+     1.094,
+     1.457
     ],
     [
-     1.337,
-     1.81
+     1.457,
+     1.897
     ],
     [
-     1.862,
-     2.276
+     1.931,
+     2.345
     ],
     [
-     2.276,
-     3.017
+     2.345,
+     3.069
     ]
    ]
   },
