@@ -252,7 +252,7 @@ def build_shelter(kit, M):
     kit.box("sh.bench", (0.45, 2.2, 0.08), (0.45, 0, 0.5), M.wood, root, bevel=0.02)
     for sgn in (-1, 1):
         kit.box(f"sh.bleg{sgn}", (0.4, 0.08, 0.5), (0.45, sgn * 1.0, 0.25), M.woodd, root)
-    kit.light("shelter lamp", "POINT", (-14.0, -28.0, 1.9), 700, "#ffe8c8", size=0.5)
+    kit.light("shelter lamp", "POINT", (-14.0, -28.0, 1.9), 420, "#ffe8c8", size=0.5)
     return root
 
 

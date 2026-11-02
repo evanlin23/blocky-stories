@@ -99,7 +99,7 @@ cast = {
     "bg2": person("#2fb3a4", "#e8c09c", "spiky", "#7a4a2a"),
     "bg3": person("#e86aa1", "#8c5c40", "long", "#1c1612", face={"eyes": "lashes", "brows": True, "ink": "#161012"}),
     "bg4": person("#47a9d7", "#f1c9a0", "cap", "#8a6a3a", height=0.97),
-    "tilted": {"age": "adult", "skin": "#8a7556", "shirt": "#85533a", "pattern": "solid", "pants": "#7a4a30",
+    "tilted": {"age": "adult", "height": 1.16, "skin": "#8a7556", "shirt": "#85533a", "pattern": "solid", "pants": "#7a4a30",
                "shoes": "#2a2420", "sleeves": "long", "hair": "none", "hat": "none", "extras": [],
                "face": {"eyes": "round", "brows": False, "ink": "#0a0807", "pupil": "#050404", "mouth": "line"}},
 }
@@ -223,7 +223,7 @@ SHOTS = [
     # 05 go, L58 to L68 -----------------------------------------------------------------------------------------
     ("L58", "wide up the lane: a bus pulling in, headlamps coming up, Pip standing with her bag", 2,
      still([-17.2, -19.5, 1.7], [-15.5, -32.0, 1.3], 26)),
-    ("L59", "me arriving, out of breath", 2, still([-14.4, -29.6, 1.5], [-15.6, -25.5, 1.4], 34)),
+    ("L59", "me arriving, out of breath", 2, still([-14.2, -31.6, 1.6], [-15.6, -24.0, 1.3], 26)),
     ("L60", "me to Pip: Go, I'll be fine", 2, still([-16.7, -26.8, 1.55], [-14.6, -28.3, 1.45], 30)),
     ("L60.2", "Pip's face easing", 2, still([-15.7, -27.6, 1.55], [-14.0, -28.3, 1.5], 38)),
     ("L61", "my anorak fills with colour for the first time", 2,
@@ -351,8 +351,8 @@ hide("me", "L56")
 put("me", "L57", [-7.0, -6.0], yaw=yaw_to([-7.0, -6.0], [-16, -15]), run=True)
 walk("me", "L57+1.35", [-15.8, -14.6], run=True)
 hide("me", "L58")
-put("me", "L59", [-15.6, -19.0], yaw=0, expr="worried", lean=10)
-walk("me", "L59+0.9", [-15.6, -26.2], run=True)
+put("me", "L59", [-15.6, -22.0], yaw=0, expr="worried", lean=6)
+walk("me", "L59+1.5", [-15.6, -26.2])
 put("me", "L60", [-15.0, -28.3], yaw=90, expr="smirk", head=[0, 0])
 key("me", "L61", expr="smirk")
 key("me", "L62", expr="smirk")
@@ -398,12 +398,12 @@ hide("pip", "L67")
 put("pip", "L68", [161.05, 0.0, SZ], yaw=0, sit=True, expr="soft", side=[0, 70])
 
 # the Tilted
-put("tilted", "L32", [CHAIR[0], CHAIR[1], SZ], yaw=0, sit=True, expr="terrified", blink=False)
+put("tilted", "L32", [CHAIR[0], CHAIR[1], SZ], yaw=0, sit=True, expr="terrified", blink=False, arms=[45, 45], side=[8, 8])
 hide("tilted", "L34")
-put("tilted", "L44", [CHAIR[0], CHAIR[1], SZ], yaw=0, sit=True, expr="terrified", blink=False)
-put("tilted", "L50", [CHAIR[0], 1.05, SZ], yaw=0, sit=True, expr="terrified", blink=False)
+put("tilted", "L44", [CHAIR[0], CHAIR[1], SZ], yaw=0, sit=True, expr="terrified", blink=False, arms=[50, 50], side=[8, 8])
+put("tilted", "L50", [CHAIR[0], 1.05, SZ], yaw=0, sit=True, expr="terrified", blink=False, arms=[-45, -45], side=[10, 10])
 hide("tilted", "L56")
-put("tilted", "L57", [CHAIR[0], 1.05, SZ], yaw=0, sit=True, expr="terrified", blink=False)
+put("tilted", "L57", [CHAIR[0], 1.05, SZ], yaw=0, sit=True, expr="terrified", blink=False, arms=[-45, -45], side=[10, 10])
 hide("tilted", "L58")
 
 # ------------------------------------------------------------------------------------------------ cues
