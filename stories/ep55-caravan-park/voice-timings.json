@@ -1,0 +1,1765 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this town, moss grows on you while you wait for someone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.362
+    ],
+    [
+     1.362,
+     1.741
+    ],
+    [
+     1.741,
+     2.379
+    ]
+   ]
+  },
+  "L02": {
+   "text": "The bus stop man is basically a hedge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.776,
+     1.241
+    ],
+    [
+     1.241,
+     1.81
+    ]
+   ]
+  },
+  "L03": {
+   "text": "A man waiting on a parcel has a flower on his nose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.138
+    ],
+    [
+     1.138,
+     1.594
+    ],
+    [
+     1.594,
+     2.345
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Everyone meeting the late train is shaggy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.086
+    ],
+    [
+     1.086,
+     1.724
+    ]
+   ]
+  },
+  "L05": {
+   "text": "When their person steps off, it comes off in a green shower.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.103
+    ],
+    [
+     1.155,
+     1.561
+    ],
+    [
+     1.561,
+     2.483
+    ]
+   ]
+  },
+  "L06": {
+   "text": "On the shop bench, he's green to the elbows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.793,
+     1.207
+    ],
+    [
+     1.207,
+     2.017
+    ]
+   ]
+  },
+  "L07": {
+   "text": "His wife's right beside him, checking her watch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     1.103
+    ],
+    [
+     1.181,
+     2.017
+    ]
+   ]
+  },
+  "L08": {
+   "text": "me? I've never had a speck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.328,
+     0.732
+    ],
+    [
+     0.732,
+     1.293
+    ]
+   ]
+  },
+  "L09": {
+   "text": "I'm always early. I never wait.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.845,
+     1.603
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Jory and I have had this caravan for thirty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.19,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.19,
+     0.612
+    ],
+    [
+     0.612,
+     1.31
+    ],
+    [
+     1.31,
+     2.172
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Two chairs by the gate. His, and mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.052
+    ],
+    [
+     1.121,
+     1.328
+    ],
+    [
+     1.353,
+     1.966
+    ]
+   ]
+  },
+  "L12": {
+   "text": "I never sit in mine. There's always somewhere to be.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     1.034
+    ],
+    [
+     1.103,
+     1.483
+    ],
+    [
+     1.483,
+     2.293
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Every evening, I walk the headland path.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.828
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Jory walks me to the gate, me on his left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.19,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.672,
+     1.034
+    ],
+    [
+     1.086,
+     1.862
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Then he waits in his chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.276
+    ]
+   ]
+  },
+  "L16": {
+   "text": "This autumn, he's coming up green.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.0
+    ],
+    [
+     1.0,
+     1.552
+    ]
+   ]
+  },
+  "L17": {
+   "text": "thicker every evening, mostly on his left shoulder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     1.026,
+     1.517
+    ],
+    [
+     1.517,
+     2.259
+    ]
+   ]
+  },
+  "L18": {
+   "text": "When I get back, it stays on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.664,
+     1.431
+    ]
+   ]
+  },
+  "L19": {
+   "text": "I'm right there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ]
+   ]
+  },
+  "L20": {
+   "text": "By october, there are flowers in his eyebrows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.681,
+     1.199
+    ],
+    [
+     1.199,
+     2.0
+    ]
+   ]
+  },
+  "L21": {
+   "text": "I put the kettle on, then I'm out again for milk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.879
+    ],
+    [
+     0.948,
+     1.448
+    ],
+    [
+     1.448,
+     2.017
+    ]
+   ]
+  },
+  "L22": {
+   "text": "He won't come in. He just looks at my chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.759,
+     1.112
+    ],
+    [
+     1.112,
+     1.828
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Then the mornings get strange.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.345
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Two deep hollows by the step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.379
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Like someone knelt there all night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.448
+    ]
+   ]
+  },
+  "L26": {
+   "text": "The step mat is pushed aside.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     1.397
+    ]
+   ]
+  },
+  "L27": {
+   "text": "The porch light fades down on its own.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.094
+    ],
+    [
+     1.094,
+     1.741
+    ]
+   ]
+  },
+  "L28": {
+   "text": "slowly. Like somebody patient.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.19,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.517,
+     1.483
+    ]
+   ]
+  },
+  "L29": {
+   "text": "One evening, I'm late back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     1.293
+    ]
+   ]
+  },
+  "L30": {
+   "text": "The fog is in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.069
+    ]
+   ]
+  },
+  "L31": {
+   "text": "And Jory isn't at the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     1.31
+    ]
+   ]
+  },
+  "L32": {
+   "text": "His cap is on the gatepost, furry with moss.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     1.052
+    ],
+    [
+     1.129,
+     1.353
+    ],
+    [
+     1.353,
+     2.0
+    ]
+   ]
+  },
+  "L33": {
+   "text": "His chair is green right across the seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.81,
+     1.207
+    ],
+    [
+     1.207,
+     1.759
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Like he waited longer than anyone ever has.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.31
+    ],
+    [
+     1.31,
+     2.034
+    ]
+   ]
+  },
+  "L35": {
+   "text": "I ring his phone. It buzzes on the kitchen table.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.897,
+     1.319
+    ],
+    [
+     1.319,
+     2.276
+    ]
+   ]
+  },
+  "L36": {
+   "text": "His coat is still on its hook. His boots are gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     1.121
+    ],
+    [
+     1.19,
+     1.526
+    ],
+    [
+     1.526,
+     2.155
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I call his name into the fog. Only the sea answers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.155,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.155,
+     0.664
+    ],
+    [
+     0.664,
+     1.259
+    ],
+    [
+     1.353,
+     1.81
+    ],
+    [
+     1.81,
+     2.414
+    ]
+   ]
+  },
+  "L38": {
+   "text": "I go back out to the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.276
+    ]
+   ]
+  },
+  "L39": {
+   "text": "The porch light is fading down again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.155
+    ],
+    [
+     1.155,
+     1.672
+    ]
+   ]
+  },
+  "L40": {
+   "text": "There are hollows in the grass by my chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     0.983
+    ],
+    [
+     0.983,
+     1.759
+    ]
+   ]
+  },
+  "L41": {
+   "text": "fresh ones, still filling with water.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.992
+    ],
+    [
+     0.992,
+     1.603
+    ]
+   ]
+  },
+  "L42": {
+   "text": "And in the fog, beside my chair, something is kneeling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.612,
+     1.259
+    ],
+    [
+     1.328,
+     2.207
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Kneeling, it's as tall as the gatepost.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.474,
+     0.888
+    ],
+    [
+     0.888,
+     1.69
+    ]
+   ]
+  },
+  "L44": {
+   "text": "It's cream and green, like the side of an old caravan.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.155,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.034
+    ],
+    [
+     1.103,
+     1.509
+    ],
+    [
+     1.509,
+     2.448
+    ]
+   ]
+  },
+  "L45": {
+   "text": "It's the only thing in the whole park with no moss on it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.155,
+     0.664
+    ],
+    [
+     0.664,
+     1.19
+    ],
+    [
+     1.19,
+     1.672
+    ],
+    [
+     1.672,
+     2.172
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Its head bends down, slowly, toward Jory's empty chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.793
+    ],
+    [
+     0.828,
+     1.224
+    ],
+    [
+     1.293,
+     1.776
+    ],
+    [
+     1.776,
+     2.5
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Then it turns, and leans in, until its face is level with mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     1.241
+    ],
+    [
+     1.31,
+     1.793
+    ],
+    [
+     1.793,
+     2.759
+    ]
+   ]
+  },
+  "L48": {
+   "text": "It doesn't blink. It just waits, in my place.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.793,
+     1.241
+    ],
+    [
+     1.267,
+     1.983
+    ]
+   ]
+  },
+  "L49": {
+   "text": "And I finally get it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.155,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.138
+    ]
+   ]
+  },
+  "L50": {
+   "text": "Moss comes off when the one you're waiting for arrives.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     0.974
+    ],
+    [
+     0.974,
+     1.448
+    ],
+    [
+     1.448,
+     2.086
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Mine never grew, because I never waited.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.19,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.19,
+     0.879
+    ],
+    [
+     0.931,
+     1.431
+    ],
+    [
+     1.431,
+     1.966
+    ]
+   ]
+  },
+  "L52": {
+   "text": "His never came off, because I never really arrived.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.819,
+     1.31
+    ],
+    [
+     1.31,
+     2.138
+    ]
+   ]
+  },
+  "L53": {
+   "text": "I was always on my way out again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     1.069
+    ],
+    [
+     1.069,
+     1.586
+    ]
+   ]
+  },
+  "L54": {
+   "text": "All these years, Jory's been waiting for me to stop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.732,
+     1.397
+    ],
+    [
+     1.397,
+     1.543
+    ],
+    [
+     1.543,
+     2.103
+    ]
+   ]
+  },
+  "L55": {
+   "text": "I leave that thing at the gate, and go up the path.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.086
+    ],
+    [
+     1.138,
+     1.406
+    ],
+    [
+     1.406,
+     1.983
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Jory's on the old bench at the top, green from his hair to his boots.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.19,
+   "end": 2.897,
+   "chunks": [
+    [
+     0.19,
+     0.957
+    ],
+    [
+     0.957,
+     1.431
+    ],
+    [
+     1.526,
+     2.172
+    ],
+    [
+     2.172,
+     2.897
+    ]
+   ]
+  },
+  "L57": {
+   "text": "He came looking for me, and sat down to wait.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     0.845
+    ],
+    [
+     0.897,
+     1.362
+    ],
+    [
+     1.362,
+     1.931
+    ]
+   ]
+  },
+  "L58": {
+   "text": "I don't say hurry. I sit down on his left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.828,
+     1.215
+    ],
+    [
+     1.215,
+     1.897
+    ]
+   ]
+  },
+  "L59": {
+   "text": "And we wait for the fog to lift.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.914
+    ],
+    [
+     0.914,
+     1.483
+    ]
+   ]
+  },
+  "L60": {
+   "text": "It takes ages. The gulls come and go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.845,
+     1.155
+    ],
+    [
+     1.155,
+     1.828
+    ]
+   ]
+  },
+  "L61": {
+   "text": "For the first time in my life, there's moss on my shoulder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.172
+    ],
+    [
+     1.241,
+     1.647
+    ],
+    [
+     1.647,
+     2.397
+    ]
+   ]
+  },
+  "L62": {
+   "text": "And all of his comes off in one green shower.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.897
+    ],
+    [
+     0.897,
+     1.983
+    ]
+   ]
+  },
+  "L63": {
+   "text": "When we get back to the gate, it's gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.931
+    ],
+    [
+     0.966,
+     1.638
+    ]
+   ]
+  },
+  "L64": {
+   "text": "Just two hollows, filling up with rain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.759,
+     1.026
+    ],
+    [
+     1.026,
+     1.655
+    ]
+   ]
+  },
+  "L65": {
+   "text": "Now Jory takes the evening walk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.534
+    ]
+   ]
+  },
+  "L66": {
+   "text": "And I'm the one in the chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.276
+    ]
+   ]
+  },
+  "L67": {
+   "text": "He comes back up the path slowly, stopping for every gull.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.155,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.328
+    ],
+    [
+     1.422,
+     1.741
+    ],
+    [
+     1.741,
+     2.552
+    ]
+   ]
+  },
+  "L68": {
+   "text": "It takes him forever. I don't mind one bit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.931
+    ],
+    [
+     1.0,
+     1.397
+    ],
+    [
+     1.397,
+     1.983
+    ]
+   ]
+  },
+  "L69": {
+   "text": "The second chair is just a chair again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.259
+    ],
+    [
+     1.259,
+     1.776
+    ]
+   ]
+  },
+  "L70": {
+   "text": "In this town, moss grows on you while you wait.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.259
+    ],
+    [
+     1.259,
+     1.966
+    ]
+   ]
+  },
+  "L71": {
+   "text": "I've got some now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     1.086
+    ]
+   ]
+  },
+  "L72": {
+   "text": "But if I'm ever late to my chair, Jory says the grass beside it starts to sink.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.534,
+   "onset": 0.155,
+   "end": 3.328,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.776,
+     1.345
+    ],
+    [
+     1.439,
+     2.172
+    ],
+    [
+     2.172,
+     2.5
+    ],
+    [
+     2.5,
+     3.328
+    ]
+   ]
+  },
+  "L20b": {
+   "text": "The gulls sit on him like a rock.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.845
+    ],
+    [
+     0.845,
+     1.5
+    ]
+   ]
+  }
+ }
+}
