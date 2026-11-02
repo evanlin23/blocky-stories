@@ -440,6 +440,39 @@ def skater_face(path: Path):
     return im
 
 
+def build_car(kit, ctx):
+    """Our car in the car park (L04): a high bench, the sides cut down to the belt line, no glass, so we see us inside."""
+    cx, cy = -13.0, -4.4
+    body = kit.plastic("#2f5d6e", 0.35)
+    dark = kit.plastic("#1c1d20", 0.7)
+    kit.box("ourcar body", (4.3, 1.9, 0.62), (cx, cy, 0.58), body, bevel=0.1)
+    kit.box("ourcar hood", (1.1, 1.8, 0.1), (cx + 1.6, cy, 0.95), body, bevel=0.05)
+    kit.box("ourcar boot", (0.9, 1.8, 0.1), (cx - 1.7, cy, 0.95), body, bevel=0.05)
+    for i, (dx, dy) in enumerate(((-1.0, -0.9), (-1.0, 0.9), (1.0, -0.9), (1.0, 0.9))):
+        kit.box(f"ourcar pillar{i}", (0.07, 0.07, 1.0), (cx + dx, cy + dy, 1.45), body)
+    kit.box("ourcar roof", (2.3, 1.95, 0.08), (cx, cy, 1.98), body, bevel=0.03)
+    seatm = kit.plastic("#7a6a58", 0.8)
+    for i, bx in enumerate((cx + 0.9, cx - 0.7)):          # the front bench (me) and the back one (Nan and Pop)
+        kit.box(f"ourcar bench{i}", (0.6, 1.6, 0.55), (bx, cy, 0.7), seatm)
+        kit.box(f"ourcar back{i}", (0.12, 1.6, 0.75), (bx - 0.36, cy, 1.15), seatm)
+    for i, (dx, dy) in enumerate(((-1.4, -0.95), (-1.4, 0.95), (1.4, -0.95), (1.4, 0.95))):
+        kit.cyl(f"ourcar wheel{i}", 0.33, 0.22, (cx + dx, cy + dy, 0.33), dark, rot=(math.pi / 2, 0, 0))
+    for sy in (-0.7, 0.7):
+        kit.box(f"ourcar lamp{sy}", (0.06, 0.3, 0.18), (cx + 2.16, cy + sy, 0.7), kit.emit("#fff0c8", 4.0))
+    kit.light("carglow", "POINT", (cx, cy, 1.7), 90, "#ffd9a0", size=0.2)
+
+
+def build_ribbons(kit, ctx):
+    """The rule marker: one short cherry ribbon loop tied between the near wrists of each couple (and, from L67, of
+    Pop and Nan). Our own prop, no text. The Skater and the singles never wear one."""
+    rb = kit.plastic("#b0404c", 0.5)
+    ctx["ribbons"] = []
+    for key in (("c1a", "c1b"), ("c2a", "c2b"), ("pop", "nan")):
+        strip = kit.box(f"ribbon {key[0]}", (1.0, 0.03, 0.07), (0, 0, -9), rb)
+        knots = [kit.box(f"ribbon knot {key[0]}{k}", (0.08, 0.08, 0.1), (0, 0, -9), rb, bevel=0.02) for k in (0, 1)]
+        ctx["ribbons"].append((key, strip, knots))
+
+
 def build_skater(kit, ctx):
     wd = ROOT / "out" / "work" / "ep26-last-skate" / "faces"
     wd.mkdir(parents=True, exist_ok=True)
@@ -586,13 +619,15 @@ def build(kit, story, tl):
     build_snack(kit, ctx)
     build_hire(kit, ctx)
     build_booth(kit, ctx)
+    build_car(kit, ctx)
+    build_ribbons(kit, ctx)
     build_skater(kit, ctx)
     ctx["sk_state"] = None
     return ctx
 
 
-SPOT0 = {"to": [0.3, -3.9], "gain": 1.0, "size": 34.0}
-DIM0 = {"level": 0.2}
+SPOT0 = {"to": [3.0, -3.9], "gain": 0.0, "size": 34.0}
+DIM0 = {"level": 1.0}
 
 
 def _init_cast(kit, story, tl, ctx):
@@ -751,4 +786,30 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = not steam_on
         ob.location = (-4.4 + 0.03 * math.sin(ph * 6 + i), LEDGE_Y, LEDGE_Z + 0.3 + 0.28 * ph)
         mix.inputs[0].default_value = 0.0 if not steam_on else 0.035 * math.sin(math.pi * ph)
+    # ---- the ribbons: tied between the near wrists of each couple while both are on screen
+    bpy.context.view_layer.update()
+    for (a, b), strip, knots in ctx["ribbons"]:
+        on = a != "pop"
+        if not on:
+            on = bool(_switch(_cues(tl, "ribbon"), "on", t, False))
+        ra, rb_ = bpy.data.objects.get(a), bpy.data.objects.get(b)
+        show = on and ra is not None and rb_ is not None and not ra.hide_render and not rb_.hide_render
+        best = None
+        if show:
+            tips = lambda w: [bpy.data.objects[f"{w}.arm{sx}"].matrix_world @ Vector((0, 0, -1.7)) for sx in (-1, 1)]
+            for pa in tips(a):
+                for pb in tips(b):
+                    d = (pa - pb).length
+                    if best is None or d < best[0]:
+                        best = (d, pa, pb)
+        ok = best is not None and best[0] < 1.3
+        for o in [strip] + knots:
+            o.hide_render = not ok
+        if ok:
+            d, pa, pb = best
+            mid = (pa + pb) / 2
+            strip.location = mid
+            strip.scale = (max(d, 0.05), 1, 1)
+            strip.rotation_euler = (pb - pa).to_track_quat("X", "Z").to_euler()
+            knots[0].location, knots[1].location = pa, pb
     return over

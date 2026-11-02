@@ -20,7 +20,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 # the word check (asr): a few lines a touch slower so a swallowed word comes through ("speakers" heard "speaker",
 # "her skates" heard "escapes", "round them" heard "around him"), and a breath after "My Nan" so it isn't heard as
 # "Nan's" with the next line's first word
-TEMPO = {"L01": 0.94, "L45": 0.94, "L54": 0.94, "L72": 0.94, "L03": 1.0, "L07": 0.95, "L10": 0.92, "L18": 0.94,
+TEMPO = {"L45": 0.94, "L54": 0.94, "L72": 0.94, "L10": 0.92, "L18": 0.94,
          "L20": 0.94, "L30": 0.9, "L56": 0.95, "L64": 0.92}
 # and a comma in the spoken text only (the captions don't change) where a word was swallowed
 SPOKEN = {}
@@ -30,9 +30,7 @@ for ln in lines:
             ch[1] = SPOKEN[(ln["id"], k)]
 for ln in lines:
     if ln["id"] == "L10":
-        ln["gap"] = 0.5
-    if ln["id"] == "L03":
-        ln["gap"] = 0.6
+        ln["gap"] = 0.7
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
 lines = lines + [{"id": "P03", "pause": 0.25, "chunks": []}]
@@ -66,6 +64,14 @@ cast = {
     "c2b": {"age": "adult", "skin": "#b87850", "shirt": "#7d4f8e", "pattern": "solid", "pants": "#2c3040",
             "shoes": "#e8dcc2", "sleeves": "short", "hair": "bun", "hair_c": "#241812", "hat": "none",
             "face": {"eyes": "round", "brows": True, "ink": "#1c1210", "bags": False}},
+    # the singles at the rail in shot 1: bare wrists, no ribbon
+    "s1": {"age": "adult", "skin": "#d9a27a", "shirt": "#6a7f9c", "pattern": "solid", "pants": "#35384a", "shoes": "#e8dcc2",
+           "sleeves": "short", "hair": "buzz", "hair_c": "#2a1d17", "hat": "none", "face": dict(FACE)},
+    "s2": {"age": "adult", "skin": "#a8704c", "shirt": "#c9a24a", "pattern": "solid", "pants": "#3a3a46", "shoes": "#e8dcc2",
+           "sleeves": "short", "hair": "bun", "hair_c": "#1c130f", "hat": "none",
+           "face": {"eyes": "lashes", "brows": True, "ink": "#18100e"}},
+    "s3": {"age": "adult", "skin": "#f0c8a4", "shirt": "#7a9c6a", "pattern": "stripes", "pattern_c": "#dfe4d2", "pants": "#2f3342",
+           "shoes": "#e8dcc2", "sleeves": "short", "hair": "swoop", "hair_c": "#5a3a22", "hat": "none", "face": dict(FACE)},
 }
 
 
@@ -86,6 +92,7 @@ def yaw_to(a, b):
 
 
 # ---------------------------------------------------------------------------------------------------- places
+CAR_Z = -0.05
 NAN = (3.0, -3.75)         # Nan at the south rail
 SKR = (1.65, -3.75)        # the Skater's post at the rail (and where Pop stands at the end)
 FAR = (-2.5, 3.7)          # the far (north) rail
@@ -111,17 +118,16 @@ POPSEAT = [POP_X, SEAT_Y, 1.25]
 MESEAT = [ME_X, SEAT_Y, 1.25]
 
 SHOTS = [
-    # 01 the dedication (dim; the spotlight slides along the rail)
-    (0, "dark: the pool slides slowly onto Nan, alone at the rail, her face in frame", 2, C([3.0, -6.3, 1.3], [3.0, -3.75, 1.25], 2.3)),
-    ("L01.2", "the booth lamp, Lenny at the mic, his face in frame", 2, C([-0.9, 0.6, 3.0], [0.0, 5.4, 2.95], 2.3)),
-    ("L02", "the pool settles on Nan, from behind (over the rail from the concourse)", 2,
-     C([3.0, -7.2, 1.5], [3.0, -3.8, 1.0], 2.7)),
-    ("L03", "Nan's face in the soft pool, looking off toward the snack bar", 2, C([3.0, -1.4, 1.3], [3.0, -3.75, 1.25], 1.5)),
-    ("L04", "the same rail in full warm light, crowded", 2, still([6.2, -1.8, 1.55], [1.5, -4.1, 1.0], 24)),
-    # 02 the last night
-    ("L05", "the rink from outside at dusk", 2, move(([-15.0, -5.6, 1.2], [-8.0, -7.0, 0.7]), ([-13.4, -6.2, 1.2], [-8.0, -7.0, 0.7]), 25)),
-    ("L06", "wide inside: floor, couples, stripes", 2, still([-6.6, -2.4, 1.9], [2.0, 0.8, 1.0], 20)),
-    ("L07", "the three of us coming in through the doors", 2, C([-1.6, -4.7, 1.6], [-7.4, -7.0, 1.2], 5.2)),
+    # 01 the rule (warm, readable from frame 1): couples joined by a cherry ribbon at the wrist, singles at the rail
+    (0, "shot 1, warm: Nan's face at the rail, bare wrist, ribbon-joined couples gliding behind her", 2,
+     C([3.1, -6.6, 1.7], [3.4, -3.4, 1.3], 3.4)),
+    ("L01.3", "a slow track along the line of singles at the rail", 2,
+     move(([2.8, -6.4, 1.4], [3.4, -3.75, 1.3]), ([6.0, -6.4, 1.4], [6.4, -3.75, 1.3]), 21)),
+    ("L02", "the rink from outside at dusk", 2, move(([-15.0, -5.6, 1.2], [-8.0, -7.0, 0.7]), ([-13.4, -6.2, 1.2], [-8.0, -7.0, 0.7]), 25)),
+    ("L03", "the three of us coming in through the doors", 2, C([-1.6, -4.7, 1.6], [-7.4, -7.0, 1.2], 5.2)),
+    ("L04", "in the car at dusk, windows down: me driving, Nan's arm through Pop's in the back", 2,
+     C([-10.0, -8.2, 2.2], [-13.2, -4.4, 1.25], 3.2)),
+    ("L04.4", "Nan holds Pop's arm at the doors", 2, C([-3.4, -5.0, 1.4], [-6.2, -6.9, 1.3], 2.6)),
     ("L08", "under the ceiling fans, then down to the shine of the floor", 2,
      move(([-1.0, -5.3, 1.0], [0.0, 2.7, 4.4]), ([-1.0, -5.3, 1.0], [0.5, 0.5, 0.0]), 24)),
     ("L09", "the painted stripes, locked off", 4, still([5.6, 0.2, 1.4], [8.0, 0.8, 1.5], 30)),
@@ -138,6 +144,7 @@ SHOTS = [
     ("L17", "couples gliding past, seen at the elbows", 2, still([-6.4, -3.6, 1.3], [-1.0, 0.0, 1.0], 24)),
     ("L18", "high wide: the pool travelling round the floor", 2, HIGH),
     ("L19", "Nan alone at the rail, the couples beyond", 2, C([3.8, -6.6, 1.4], [3.0, -3.5, 1.2], 2.8)),
+    ("L19b", "Nan at the rail in the pool's edge, looking toward the snack bar", 2, C([3.0, -1.4, 1.3], [3.0, -3.75, 1.25], 1.5)),
     ("L20", "me and Pop at the snack bar, the tub between us", 2, C([-1.7, -4.8, 1.55], [-4.4, -6.4, 1.2], 3.0)),
     ("L21", "the pool sliding along the far rail, then onto a tall striped shape", 2, FARCAM),
     ("L22", "medium on the Skater at the far rail, face toward the floor", 2,
@@ -210,13 +217,13 @@ SHOTS = [
 
 # per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
 # flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
-EXPO = {"S15": 1.9, "S16": 0.8, "S17": 0.7, "S09": 0.55, "S01": 1.0, "S02": 1.1, "S19": 1.4, "S20": 1.18, "S21": 1.03, "S22": 1.53, "S23": 1.09, "S24": 0.77, "S25": 0.87, "S26": 1.49, "S31": 0.55, "S32": 0.77, "S33": 1.18, "S34": 0.81, "S35": 0.77, "S36": 1.08, "S37": 1.51, "S38": 1.04, "S39": 1.17, "S40": 0.92, "S41": 1.13, "S42": 1.42, "S43": 2.5, "S44": 0.99, "S45": 1.19, "S46": 1.5, "S47": 1.7, "S48": 0.93, "S49": 0.96, "S50": 0.72, "S51": 1.34, "S52": 2.49, "S53": 2.13, "S54": 1.26, "S55": 1.21, "S56": 0.79, "S57": 1.13, "S58": 2.1, "S59": 0.89, "S60": 1.28, "S61": 1.05, "S62": 0.75, "S63": 0.8, "S64": 0.84, "S65": 1.86, "S66": 1.47, "S67": 1.04, "S68": 0.99, "S69": 1.32, "S70": 0.89, "S71": 0.95, "S72": 0.8, "S73": 0.87, "S74": 0.7, "S75": 1.33, "S76": 1.49, "S77": 0.7, "S78": 0.76}
+EXPO = {"L04": 2.6, "L04.4": 0.8, "L13": 1.9, "L14": 0.8, "L15": 0.7, "L08": 0.55, "L17": 1.4, "L18": 1.18, "L19": 1.03, "L20": 1.53, "L21": 1.09, "L22": 0.77, "L23": 0.87, "L24": 1.49, "L27.5": 0.55, "L28": 0.77, "L29": 1.18, "L30": 0.81, "L31": 0.77, "L31.2": 1.08, "L32": 1.51, "L33": 1.04, "L34": 1.17, "L35": 0.92, "L36": 1.13, "L37": 1.42, "L38": 2.5, "L39": 0.99, "L40": 1.19, "P01+0.55": 1.5, "L42": 1.7, "L43": 0.93, "L44": 0.96, "L45": 0.72, "L46": 1.34, "L47": 2.49, "L48": 2.13, "L49": 1.26, "L50": 1.21, "L51": 0.79, "L52": 1.13, "L53": 2.1, "L54": 0.89, "L55": 1.28, "L56": 1.05, "L57": 0.75, "L58": 0.8, "L59": 0.84, "L60": 1.86, "L61": 1.47, "L62": 1.04, "L63": 0.99, "L64": 1.32, "L65": 0.89, "L66": 0.95, "L67": 0.8, "L68": 0.87, "L69": 0.7, "L70": 1.33, "L71": 1.49, "L72": 0.7, "L73": 0.76}
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.0 if step == 1 else 0.004, "step": step, "what": what}
-    if f"S{i + 1:02d}" in EXPO:
-        s["expo"] = EXPO[f"S{i + 1:02d}"]
+    if str(at) in EXPO:
+        s["expo"] = EXPO[str(at)]
     if i:
         s["at"] = at
     shots.append(s)
@@ -264,8 +271,10 @@ def seat(who, at, x, **kw):
 
 # ---- me
 hide("me", 0)
-put("me", "L07", [-9.5, -7.5], yaw=90, expr="neutral")
-walk("me", "L07>", [-6.1, -7.4])
+put("me", "L03", [-9.5, -7.5], yaw=90, expr="neutral")
+walk("me", "L03>", [-6.1, -7.4])
+put("me", "L04", [-12.1, -4.0, CAR_Z], yaw=90, sit=True, arms=[62, 62], expr="soft")
+put("me", "L04.4", [-6.1, -7.6], yaw=90, expr="soft")
 hide("me", "L08")
 seat("me", "L16", ME_X, expr="worried")
 key("me", "L20", arms=[66, 66], expr="neutral")
@@ -280,8 +289,10 @@ key("me", "L71", arms=[78, 78])
 
 # ---- Pop
 hide("pop", 0)
-put("pop", "L07", [-9.8, -7.0], yaw=90, expr="neutral", arms=[100, 0])
-walk("pop", "L07>", [-6.3, -7.0], arms=[100, 0])
+put("pop", "L03", [-9.8, -7.0], yaw=90, expr="neutral", arms=[100, 0])
+walk("pop", "L03>", [-6.3, -7.0], arms=[100, 0])
+put("pop", "L04", [-13.7, -3.9, CAR_Z], yaw=90, sit=True, arms=[0, 0], expr="smirk")
+put("pop", "L04.4", [-6.3, -7.35], yaw=90, side=[0, 38], expr="smirk")
 hide("pop", "L08")
 put("pop", "L11", [5.6, -6.8], yaw=0, expr="smirk")
 key("pop", "L11", head=[25, 0])
@@ -335,11 +346,11 @@ for i in range(len(LAP)):
 
 # ---- Nan
 put("nan", 0, list(NAN), yaw=0, expr="soft")
-key("nan", "L02", yaw=180, blend=0)
-key("nan", "L03", head=[62, 0], blend=0.3)
-key("nan", "L04", head=[0, 0], expr="grin", blend=0.3)
-put("nan", "L07", [-9.0, -6.5], yaw=90, expr="grin")
-walk("nan", "L07>", [-6.0, -6.6])
+hide("nan", "L02")
+put("nan", "L03", [-9.0, -6.5], yaw=90, expr="grin")
+walk("nan", "L03>", [-6.0, -6.6])
+put("nan", "L04", [-13.7, -4.7, CAR_Z], yaw=90, sit=True, arms=[0, 0], head=[0, 0], expr="soft")
+put("nan", "L04.4", [-6.3, -6.65], yaw=90, side=[38, 0], expr="soft")
 hide("nan", "L08")
 put("nan", "L10", [4.4, -6.8], yaw=0, expr="neutral")
 put("nan", "L14", [-2.7, -6.2], yaw=-90, expr="soft")
@@ -347,6 +358,8 @@ walk("nan", "L15", [-2.7, -6.2])
 walk("nan", "L15+0.4", [-0.3, -4.6], skate=True)
 walk("nan", "L15>", [NAN[0], NAN[1]], skate=True)
 put("nan", "L16", list(NAN), yaw=180, expr="soft", skate=False)
+key("nan", "L19b", head=[62, 0], blend=0.3)
+key("nan", "L20", head=[0, 0], blend=0.3)
 put("nan", "L34", list(NAN), yaw=0, head=[-30, 0], expr="soft")
 key("nan", "L39", head=[-45, 0], blend=0.3)
 put("nan", "L48", list(NAN), yaw=0, head=[-30, 0], expr="soft")
@@ -399,12 +412,13 @@ def orbit(anchor, secs, th0, a, b, off=0.45, hide_at=None):
 
 for w in ("c1a", "c1b", "c2a", "c2b"):
     hide(w, 0)
-orbit("L04", 3.4, 3.9, "c1a", "c1b")
-orbit("L04", 3.4, 0.8, "c2a", "c2b")
-orbit("L06", 5.0, 3.0, "c1a", "c1b")
-orbit("L06", 5.0, 5.4, "c2a", "c2b")
-orbit("L16", 23.0, 2.0, "c1a", "c1b")
-orbit("L16", 23.0, 0.9, "c2a", "c2b")
+for w, x in (("s1", 4.2), ("s2", 5.4), ("s3", 6.6)):
+    put(w, 0, [x, -3.75], yaw=0, expr="neutral")
+    hide(w, "L02")
+orbit("L01", 4.5, 4.7, "c1a", "c1b")
+orbit("L01", 4.5, 5.7, "c2a", "c2b")
+orbit("L16", 23.0, 0.98, "c1a", "c1b")
+orbit("L16", 23.0, 6.06, "c2a", "c2b")
 orbit("L28", 11.4, 3.4, "c1a", "c1b")
 orbit("L28", 11.4, 0.4, "c2a", "c2b")
 orbit("L35", 18.0, 5.6, "c1a", "c1b")
@@ -424,11 +438,15 @@ for who, dx, p0, lag in (("c1a", -0.4, (-0.8, 0.0), 0.0), ("c1b", 0.4, (-0.8, 0.
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [{"at": 0, "name": "skates", "who": w, "on": True} for w in ("c1a", "c1b", "c2a", "c2b")]
 cues += [
+    {"at": 0, "name": "skates", "who": "s1", "on": True},
+    {"at": 0, "name": "skates", "who": "s2", "on": True},
+    {"at": 0, "name": "skates", "who": "s3", "on": True},
+    {"at": 0, "name": "skates", "who": "nan", "on": True},
+    {"at": "L02", "name": "skates", "who": "nan", "on": False},
     {"at": "L11", "name": "skates", "who": "nan", "on": True},
     {"at": "L56", "name": "skates", "who": "pop", "on": True},
     # the room's level: dim (0.2) for the dedication, full for the fast songs, 0.3 for a slow song, lower for the last
     # skate, then warm and a little up for Pop. Every change is a slow ramp.
-    {"at": "L04", "name": "dim", "level": 1.0, "dur": 1.4},
     {"at": "L16", "name": "dim", "level": 0.3, "dur": 1.2},
     {"at": "L25", "name": "dim", "level": 1.0, "dur": 1.5},
     {"at": "L28", "name": "dim", "level": 0.3, "dur": 1.2},
@@ -438,8 +456,6 @@ cues += [
     {"at": "L55", "name": "dim", "level": 0.34, "dur": 3.0},
     {"at": "L64", "name": "dim", "level": 0.4, "dur": 3.0},
     # the spotlight: where it is, how bright, how wide a cone. It's never on in a fast song and never pops.
-    {"at": 0, "name": "spot", "to": [NAN[0], NAN[1]], "dur": 3.4, "size": 30},
-    {"at": "L04", "name": "spot", "gain": 0.0, "dur": 1.6},
     {"at": "L16", "name": "spot", "to": [7.2, -2.6], "size": 42, "dur": 0.02},
     {"at": "L16+1.0", "name": "spot", "gain": 1.0, "dur": 1.4},
     {"at": "L18", "name": "spot", "to": [6.2, 2.8], "dur": 2.4},
@@ -482,6 +498,7 @@ cues += [
     {"at": "L43", "name": "skater", "hidden": True},
     {"at": "L49", "name": "skater", "pos": list(SKR), "yaw": 90, "pose": "reach", "head": [-40, 0], "hidden": False, "reach_side": -1},
     {"at": "L54", "name": "skater", "hidden": True},
+    {"at": "L67", "name": "ribbon", "pair": "pop_nan", "on": True},
     {"at": "L55", "name": "door", "open": 1.0, "dur": 2.2},
     {"at": "L58", "name": "door", "open": 0.0, "dur": 1.5},
     {"at": "L44", "name": "steam", "on": True},
@@ -491,7 +508,6 @@ cues += [
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
     {"at": 0, "kind": "click", "db": -16},
-    {"at": "L01.2", "kind": "whoosh", "db": -26, "dur": 1.5},
     {"at": "L10.2", "kind": "castors", "db": -30, "dur": 1.4},
     {"at": "L15", "kind": "castors", "db": -26, "dur": 3.0},
     {"at": "L21", "kind": "riser", "db": -28, "dur": 2.4},
@@ -538,8 +554,8 @@ story = {
     # piano; the last skate and "their song": the same, warmer, with the drone held low under it
     "music": {"root": 50, "mode": "major", "bpm": 72, "seed": 26,
               "sections": [
-                  {"at": 0, "voices": ["drone", "pad"], "energy": 0.25, "mode": "lydian", "root": 53},
-                  {"at": "L04", "voices": ["pad", "pulse", "piano"], "energy": 0.6, "mode": "major", "root": 50},
+                  {"at": 0, "voices": ["pad", "piano"], "energy": 0.35, "mode": "lydian", "root": 53},
+                  {"at": "L02", "voices": ["pad", "pulse", "piano"], "energy": 0.6, "mode": "major", "root": 50},
                   {"at": "L16", "voices": ["pad", "piano"], "energy": 0.3, "mode": "lydian", "root": 53},
                   {"at": "L25", "voices": ["pad", "pulse", "piano"], "energy": 0.55, "mode": "major", "root": 50},
                   {"at": "L28", "voices": ["pad", "piano"], "energy": 0.3, "mode": "lydian", "root": 53},

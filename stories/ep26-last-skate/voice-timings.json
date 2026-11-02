@@ -6,186 +6,134 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "The voice on the speaker said, \"This one's for the couple by the rail.\"",
+   "text": "At this rink, slow songs are couples only. Everyone else waits at the rail.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.9682,
-   "dur": 3.086,
-   "onset": 0.172,
-   "end": 2.879,
+   "tempo": 1.03,
+   "dur": 3.345,
+   "onset": 0.155,
+   "end": 3.155,
    "chunks": [
     [
-     0.172,
-     0.474
+     0.155,
+     0.534
     ],
     [
-     0.474,
-     0.922
+     0.578,
+     1.103
     ],
     [
-     0.922,
-     1.707
+     1.103,
+     1.759
     ],
     [
-     1.707,
-     2.086
+     1.854,
+     2.345
     ],
     [
-     2.086,
-     2.879
+     2.345,
+     2.56
+    ],
+    [
+     2.56,
+     3.155
     ]
    ]
   },
   "L02": {
-   "text": "There was only one person by the rail.",
+   "text": "Tonight was the rink's last night. Then it shuts for good.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
-   "onset": 0.155,
-   "end": 1.69,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.345,
    "chunks": [
     [
-     0.155,
+     0.172,
      0.509
     ],
     [
      0.509,
-     1.017
+     0.793
     ],
     [
-     1.017,
-     1.69
+     0.793,
+     1.293
+    ],
+    [
+     1.362,
+     1.759
+    ],
+    [
+     1.759,
+     2.345
     ]
    ]
   },
   "L03": {
-   "text": "She was my Nan.",
+   "text": "I brought my Nan and my Pop.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.224,
-   "onset": 0.19,
-   "end": 1.017,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
    "chunks": [
     [
-     0.19,
-     0.414
+     0.155,
+     0.406
     ],
     [
-     0.414,
-     1.017
+     0.406,
+     0.759
+    ],
+    [
+     0.759,
+     1.397
     ]
    ]
   },
   "L04": {
-   "text": "Three hours earlier, she'd been so happy.",
+   "text": "I drove them down, with the windows open. Nan held Pop's arm the whole way.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.948,
-   "onset": 0.172,
-   "end": 1.741,
+   "dur": 3.431,
+   "onset": 0.155,
+   "end": 3.241,
    "chunks": [
     [
-     0.172,
-     0.81
+     0.155,
+     0.439
     ],
     [
-     0.845,
-     1.069
+     0.439,
+     0.759
     ],
     [
-     1.069,
-     1.741
-    ]
-   ]
-  },
-  "L05": {
-   "text": "Nan and Pop met at this rink, fifty years ago.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.31,
-   "onset": 0.19,
-   "end": 2.121,
-   "chunks": [
-    [
-     0.19,
-     0.603
+     0.784,
+     0.914
     ],
     [
-     0.603,
-     0.768
+     0.914,
+     1.621
     ],
     [
-     0.768,
-     1.138
+     1.715,
+     2.095
     ],
     [
-     1.215,
-     2.121
-    ]
-   ]
-  },
-  "L06": {
-   "text": "Tonight was its last night. Then it shuts for good.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.345,
-   "onset": 0.172,
-   "end": 2.138,
-   "chunks": [
-    [
-     0.172,
-     0.457
+     2.095,
+     2.509
     ],
     [
-     0.457,
-     1.103
-    ],
-    [
-     1.172,
-     1.569
-    ],
-    [
-     1.569,
-     2.138
-    ]
-   ]
-  },
-  "L07": {
-   "text": "I drove them down, with the windows open, in the heat.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9784999999999999,
-   "dur": 2.448,
-   "onset": 0.172,
-   "end": 2.241,
-   "chunks": [
-    [
-     0.172,
-     0.569
-    ],
-    [
-     0.569,
-     1.034
-    ],
-    [
-     1.034,
-     1.586
-    ],
-    [
-     1.621,
-     2.241
+     2.509,
+     3.241
     ]
    ]
   },
@@ -502,6 +450,30 @@
     [
      0.897,
      1.466
+    ]
+   ]
+  },
+  "L19b": {
+   "text": "Fifty years ago, she met Pop at that same rail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.776,
+     1.164
+    ],
+    [
+     1.164,
+     2.069
     ]
    ]
   },
@@ -1942,6 +1914,34 @@
     [
      0.362,
      1.069
+    ]
+   ]
+  },
+  "L74": {
+   "text": "And for once, nobody waited at the rail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.638,
+     0.879
+    ],
+    [
+     0.879,
+     1.164
+    ],
+    [
+     1.164,
+     1.741
     ]
    ]
   }

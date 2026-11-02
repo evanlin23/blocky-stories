@@ -4,24 +4,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "The voice",
-    "The voice"
+    "At this RINK,",
+    "At this rink,"
    ],
    [
-    "on the SPEAKER",
-    "on the speaker"
+    "slow songs are",
+    "slow songs are"
    ],
    [
-    "said, \"This one's",
-    "said, \"This one's"
+    "COUPLES ONLY.",
+    "couples only."
    ],
    [
-    "for the COUPLE",
-    "for the couple"
+    "Everyone ELSE",
+    "Everyone else"
    ],
    [
-    "by the RAIL.\"",
-    "by the rail.\""
+    "waits at",
+    "waits at"
+   ],
+   [
+    "the RAIL.",
+    "the rail."
    ]
   ]
  },
@@ -30,84 +34,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "There was only",
-    "There was only"
-   ],
-   [
-    "ONE person",
-    "one person"
-   ],
-   [
-    "by the rail.",
-    "by the rail."
-   ]
-  ]
- },
- {
-  "id": "L03",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She was",
-    "She was"
-   ],
-   [
-    "my NAN.",
-    "my Nan."
-   ]
-  ]
- },
- {
-  "id": "L04",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Three hours EARLIER,",
-    "Three hours earlier,"
-   ],
-   [
-    "she'd been",
-    "she'd been"
-   ],
-   [
-    "SO happy.",
-    "so happy."
-   ]
-  ]
- },
- {
-  "id": "L05",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nan and Pop",
-    "Nan and Pop"
-   ],
-   [
-    "MET at",
-    "met at"
-   ],
-   [
-    "this rink,",
-    "this rink,"
-   ],
-   [
-    "fifty years AGO.",
-    "fifty years ago."
-   ]
-  ]
- },
- {
-  "id": "L06",
-  "who": "narrator",
-  "chunks": [
-   [
     "Tonight was",
     "Tonight was"
    ],
    [
-    "its LAST night.",
-    "its last night."
+    "the rink's",
+    "the rink's"
+   ],
+   [
+    "LAST night.",
+    "last night."
    ],
    [
     "Then it SHUTS",
@@ -120,24 +56,54 @@
   ]
  },
  {
-  "id": "L07",
+  "id": "L03",
   "who": "narrator",
   "chunks": [
    [
-    "I drove them",
-    "I drove them"
+    "I brought",
+    "I brought"
    ],
    [
-    "DOWN, with the",
-    "down, with the"
+    "my NAN",
+    "my Nan"
    ],
    [
-    "windows OPEN,",
-    "windows open,"
+    "and my POP.",
+    "and my Pop."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I drove",
+    "I drove"
    ],
    [
-    "in the HEAT.",
-    "in the heat."
+    "them DOWN,",
+    "them down,"
+   ],
+   [
+    "with the",
+    "with the"
+   ],
+   [
+    "windows OPEN.",
+    "windows open."
+   ],
+   [
+    "Nan held",
+    "Nan held"
+   ],
+   [
+    "Pop's ARM",
+    "Pop's arm"
+   ],
+   [
+    "the whole WAY.",
+    "the whole way."
    ]
   ]
  },
@@ -382,6 +348,24 @@
    [
     "ALONE.",
     "alone."
+   ]
+  ]
+ },
+ {
+  "id": "L19b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Fifty years AGO,",
+    "Fifty years ago,"
+   ],
+   [
+    "she met Pop",
+    "she met Pop"
+   ],
+   [
+    "at that same RAIL.",
+    "at that same rail."
    ]
   ]
  },
@@ -1508,6 +1492,28 @@
    [
     "TWO of them.",
     "two of them."
+   ]
+  ]
+ },
+ {
+  "id": "L74",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And for ONCE,",
+    "And for once,"
+   ],
+   [
+    "NOBODY",
+    "nobody"
+   ],
+   [
+    "waited at",
+    "waited at"
+   ],
+   [
+    "the RAIL.",
+    "the rail."
    ]
   ]
  }
