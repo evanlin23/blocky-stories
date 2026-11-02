@@ -109,8 +109,9 @@ def shot(at, what, cam, step=2, lamp=None):
         LAMP[at] = round(lamp * 0.4)
 
 
-HOOK = move(([-8.0, -0.1, 2.2], [2.6, -0.55, 1.0]), ([-7.2, -0.1, 2.2], [2.6, -0.55, 1.0]), 60, 66)
-HOOK_END = still([-7.2, -0.1, 2.2], [2.6, -0.55, 1.0], 66)
+HOOK = move(([-6.2, -0.2, 2.1], [2.6, -0.8, 1.75]), ([-5.6, -0.2, 2.1], [2.6, -0.8, 1.75]), 62, 68)
+HOOK_END = still([-5.6, -0.2, 2.1], [2.6, -0.8, 1.75], 68)
+LONGSIDE = still([40.0, 3.0, 1.4], [14.0, -1.4, 0.6], 14)
 WIDE_BOAT = still([-3.0, 5.5, 3.4], [9.0, 0.0, 0.8], 15)
 RING_CAM = still([3.3, 2.3, 0.78], [5.0, 0.45, 0.8], 26)
 WINDOW = still([5.0, -1.5, 1.06], [5.0, -0.1, 0.70], 30)
@@ -118,7 +119,7 @@ WINDOW = still([5.0, -1.5, 1.06], [5.0, -0.1, 0.70], 30)
 # 01 good morning
 shot(0, "the hook: me at the hatch, face lit, the long dark line far up the towpath, empty grass by the back ring",
      HOOK, 2, 520)
-shot("L02", "Moss's head at the low round window", still([8.5, -4.2, 1.0], [8.5, -1.95, 0.95], 26))
+shot("L02", "Moss's head at the low round window", still([8.5, -4.2, 1.0], [8.5, -1.95, 0.95], 26), 2, 350)
 shot("L02.2", "side wide of the whole boat on still water", still([6, -9.5, 1.2], [6, -0.15, 1.2], 11))
 shot("L03", "the past: me at the open hatch from below, smirk", still([4.6, -1.05, 1.25], [2.6, -1.05, 2.05], 32), 2, 300)
 shot("L04", "the past: Moss on the top step", still([0.9, -1.05, 1.7], [2.5, -1.05, 0.6], 24))
@@ -131,22 +132,22 @@ shot("L09", "Moss in her bed looking up at me, tail up, me at the top step",
      still([5.2, -1.4, 0.55], [3.4, -1.05, 1.0], 20), 2, 150)
 shot("L10", "high angle: my boots past her bed", still([6.2, -0.9, 1.6], [4.4, -1.4, 0.3], 15))
 shot("L10.1", "me striding alone on the hedge side, upright", still([-6.5, 3.4, 1.2], [-1.0, 3.7, 1.35], 26), 2, 200)
-shot("L11", "plant 2: the back ring under my bunk window, the grass grown in", still([4.0, 2.2, 0.95], [5.0, 0.35, 0.62], 30), 2)
+shot("L11", "plant 2: the back ring under my bunk window, the grass grown in", still([4.0, 2.2, 0.95], [5.0, 0.35, 0.62], 30), 2, 500)
 
 # 02 the first dawn
 shot("L12", "me rising out of the hatch, worried", still([0.3, -1.05, 1.95], [2.6, -1.05, 1.95], 34), 2, 420)
 shot("L13", "over my shoulder: three rings past the front and a long dark shape", still([0.4, 0.2, 2.3], [24, 0.3, 0.5], 28))
-shot("L14", "a side view of it, too long to be a log", still([28.5, -8.0, 1.6], [28.5, 0.3, 0.7], 10))
+shot("L14", "a side view of it, too long to be a log", LONGSIDE)
 shot("L15", "Moss sitting up, ears forward", still([2.5, -1.55, 0.75], [3.9, -1.05, 0.4], 24), 2, 150)
 shot("L16", "me walking away on the hedge side, glancing back", still([-8.0, 3.2, 1.4], [-3.0, 3.6, 1.5], 30), 2, 300)
-shot("L17", "the same view: the fog thins, the grass is empty", still([28.5, -8.0, 1.6], [28.5, 0.3, 0.7], 10))
+shot("L17", "the same view: the fog thins, the grass is empty", LONGSIDE)
 
 # 03 the second dawn
 shot("L18", "from the front of the boat: two rings, then its head", still([11.0, -0.8, 2.2], [20, 0.3, 0.6], 26))
 shot("L19", "me crouched at the bow, scared", still([13.5, -1.0, 1.7], [10.8, -1.05, 2.1], 32), 2, 380)
 shot("L20", "its head and shoulders, face up, eyes open", still([18.4, -1.3, 1.9], [19.0, 0.3, 0.7], 30))
 shot("L21", "a slow pan along it", move(([16.6, -1.0, 1.2], [19.8, 0.3, 0.7]), ([16.6, -1.0, 1.2], [30, 0.3, 0.7]), 30))
-shot("L22", "high wide: the boat and the Long Man end to end", still([17.0, -20.0, 12.0], [17.0, 0.0, 0.5], 8))
+shot("L22", "high wide: the boat and the Long Man end to end", still([37.0, 3.0, 1.4], [12.0, -1.4, 0.6], 14))
 shot("L23", "the weed-green coat", still([21.5, -0.5, 1.25], [21.8, 0.3, 0.7], 34))
 shot("L23.2", "the rope-brown trousers and a boot", still([26.0, -1.7, 1.5], [26.8, 0.3, 0.7], 26))
 shot("L24", "straight down over its face", still([19.0, 0.3, 2.3], [19.0, 0.3, 0.7], 30))
@@ -165,7 +166,7 @@ shot("L34", "from the front ring: its head now on its side", still([14.6, -3.8, 
 shot("L35", "the head turned flat while the chest stays face up", still([12.5, -1.7, 1.35], [12.2, 0.3, 0.75], 30))
 shot("L36", "low behind its sideways head: the look runs along the grass to the back ring", still([13.6, 1.5, 1.7], [4.0, 0.2, 0.6], 24))
 shot("L37", "the back ring and the grown-in grass under my window, my face small in the glass",
-     still([3.0, 2.4, 1.0], [5.0, -0.05, 0.8], 28))
+     still([3.0, 2.4, 1.0], [5.0, -0.05, 0.8], 28), 2, 400)
 shot("L38", "night: the bolt from below", still([4.7, -0.9, 1.0], [3.2, -0.62, 1.95], 36), 2, 100)
 shot("L38.2", "my hand at the end of my sleeve beside the bolt", still([5.2, -1.0, 1.5], [3.6, -0.85, 1.4], 22), 2, 150)
 shot("L39", "Moss at the foot of the steps, watching the hatch", still([4.5, -1.05, 0.5], [3.0, -1.05, 1.5], 28), 2, 150)
@@ -189,7 +190,7 @@ shot("L52", "Moss's face, ears up, eyes on the hatch", still([2.4, -1.25, 1.0], 
 # 06 the turn
 shot("L53", "its head in the grass by the back ring, face up (L05's framing)", RING_CAM)
 shot("L54", "the past: Moss in the same grass, the same sky", RING_CAM)
-shot("L55", "the grown-in grass in the present, its hair at the edge", still([6.8, 1.3, 0.85], [4.9, 0.45, 0.6], 30))
+shot("L55", "the grown-in grass in the present, its hair at the edge", still([2.4, 2.4, 0.95], [4.7, 0.4, 0.6], 30))
 shot("L56", "outside wide: it lies along the boat, unchanged", WIDE_BOAT)
 shot("L57", "Moss on the first step, looking up", still([4.7, -1.1, 0.55], [3.1, -1.05, 1.4], 22), 2, 150)
 shot("L58", "high wide: the rings along the towpath, its head at the last", still([-4.0, 3.2, 3.6], [14.0, 0.0, 0.5], 22))
@@ -209,18 +210,18 @@ shot("L64", "the towpath alongside the boat, the fog easing",
 shot("L65", "the grass flattened in one long line, no one there",
      move(([3.0, 3.0, 1.35], [9.0, 0.1, 0.55]), ([4.0, 3.0, 1.35], [10.0, 0.1, 0.55]), 28))
 shot("P03", "the lore plant: two strokes on the back ring", still([5.0, 0.55, 1.1], [5.0, 0.0, 0.62], 44))
-shot("L66", "me stepping off the deck onto the towpath, Moss in my arms", still([-1.8, 2.8, 1.3], [1.2, 0.9, 1.2], 26), 2, 300)
-shot("L66.1", "Moss set down on the grass by the ring", RING_CAM)
-shot("L67", "Moss rolled over, tail up, me crouched beside her", still([3.0, 2.8, 0.95], [5.0, 0.7, 0.8], 26), 2, 200)
+shot("L66", "me stepping off the deck onto the towpath, Moss in my arms", still([-1.2, 3.8, 1.5], [1.8, 0.9, 1.1], 20), 2, 300)
+shot("L66.1", "Moss set down on the grass by the ring", RING_CAM, 2, 300)
+shot("L67", "Moss rolled over, tail up, me crouched beside her", still([1.4, 3.6, 1.15], [5.0, 1.0, 0.75], 21), 2, 200)
 
 # 08 her pace
 shot("L68", "me at the open hatch in a clear morning, Moss in my arms",
      still([4.6, -1.05, 1.25], [2.6, -1.05, 2.05], 32), 2, 380)
 shot("L69", "low from behind: me upright beside Moss on the hedge side, very slow",
-     still([-2.2, 3.9, 0.9], [4.0, 3.4, 1.0], 28), 2, 200)
+     still([-5.2, 4.8, 1.2], [2.4, 3.2, 0.9], 22), 2, 200)
 shot("L70", "side wide from the hedge: the two of us small on the long towpath",
      still([3.0, 6.8, 1.5], [3.0, 2.0, 1.0], 20))
-shot("L71", "Moss's face, ears soft, looking ahead", still([3.9, 3.5, 0.8], [3.0, 3.1, 0.75], 36), 2, 200)
+shot("L71", "Moss's face, ears soft, looking ahead", still([5.0, 4.4, 1.15], [3.1, 3.1, 1.1], 34), 2, 200)
 shot("L72", "the first shot again: me at the hatch, Moss rolled in the grass behind me", HOOK_END, 2, 520)
 
 S[:] = [(at, what, step, cam) for at, what, step, cam in S]
@@ -333,7 +334,7 @@ hide("me", "L71")
 put("me", "L72", STEP0, yaw=-120, expr="smirk", head=[-15, 4])
 
 # the Long Man: eyes open, never blinking, a hairline mouth
-put("longman", 0, [0, 0, 0], expr="wide", blink=False)
+put("longman", 0, [0, 0, 0], expr="neutral", blink=False)
 
 # ------------------------------------------------------------------------------------------------- cues
 cues = []
@@ -422,7 +423,7 @@ cue("L71", "moss", pos=[2.6, 3.1, 0.5], yaw=90, head=[0, 4], ears=0.5, tail=-20,
 cue("L72", "moss", pos=[5.15, 0.5, 0.5], yaw=-90, pose="roll", head=[0, 0], ears=0.4, tail=-10, wag=0.0, walk=False)
 
 # the Long Man (head x, y; body runs away up the towpath)
-cue(0, "long", x=14.0, y=0.3, turn=0, hidden=False)
+cue(0, "long", x=12.0, y=0.3, turn=0, hidden=False)
 cue("L02", "long", hidden=True)
 cue("L13", "long", x=22.5, y=0.3, turn=0, hidden=False)
 cue("L17", "long", hidden=True)

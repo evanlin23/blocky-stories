@@ -51,13 +51,13 @@ STATES = {
     "grey2":  dict(fog="#c2cac9", dens=0.024, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "grey3":  dict(fog="#b4bec2", dens=0.026, ws=0.90, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "dawn":   dict(fog="#c8d0cf", dens=0.026, ws=1.00, exp=-0.05, key=0.9, rim=0.7, fill=1.00, eye=0.5, warm=0.0),
-    "far":    dict(fog="#c2cac9", dens=0.012, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
+    "far":    dict(fog="#c2cac9", dens=0.005, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "wide":   dict(fog="#c6cecd", dens=0.006, ws=1.00, exp=-0.20, key=0.7, rim=0.6, fill=1.00, eye=1.0, warm=0.0),
-    "wide3":  dict(fog="#a9b5ba", dens=0.003, ws=0.85, exp=-0.15, key=1.0, rim=1.0, fill=0.9, eye=1.0, warm=0.0),
+    "wide3":  dict(fog="#a9b5ba", dens=0.002, ws=0.85, exp=-0.15, key=1.0, rim=1.0, fill=0.9, eye=1.0, warm=0.0),
     "wide2":  dict(fog="#aab6bb", dens=0.012, ws=0.85, exp=-0.20, key=1.0, rim=1.0, fill=0.85, eye=1.0, warm=0.0),
     "night":  dict(fog="#7f8f99", dens=0.026, ws=0.75, exp=-0.15, key=0.5, rim=0.4, fill=0.90, eye=0.5, warm=0.0),
     "thick":  dict(fog="#a3aeb3", dens=0.055, ws=0.55, exp=-0.25, key=1.0, rim=1.0, fill=0.85, eye=0.45, warm=0.0),
-    "hook":   dict(fog="#c8d0cf", dens=0.013, ws=1.00, exp=-0.12, key=0.9, rim=0.7, fill=1.00, eye=0.5, warm=0.0),
+    "hook":   dict(fog="#c8d0cf", dens=0.005, ws=1.00, exp=-0.12, key=0.9, rim=0.7, fill=1.00, eye=0.5, warm=0.0),
     "scare":  dict(fog="#8e9ca2", dens=0.05, ws=0.28, exp=-0.05, key=0.3, rim=1.0, fill=0.45, eye=1.8, warm=0.0),
     "clear1": dict(fog="#c2cac9", dens=0.030, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "clear2": dict(fog="#cad3d1", dens=0.012, ws=1.00, exp=-0.30, key=0.5, rim=0.4, fill=1.00, eye=0.5, warm=0.4),
@@ -73,7 +73,7 @@ LIGHT_BASE = {            # name -> (kind, loc, aim, power, colour, size)
     "rim": ("AREA", (14, 7, 3.0), (9, 0.3, 0.6), 1800, "#cfe0e8", 5),
     "eyes": ("POINT", (5.0, 0.25, 1.6), (5.0, 0.1, 0.8), 25, "#e8f0f4", 0.3),
     "winglow": ("SPOT", (5.0, -1.55, 1.0), (5.0, 0.03, 0.84), 90, "#b9d3e6", 0.4),
-    "faceside": ("AREA", (2.5, 0.9, 1.8), (5.0, 0.2, 0.85), 500, "#b4d0e2", 1.6),
+    "faceside": ("AREA", (2.5, 0.9, 1.8), (5.0, 0.2, 0.85), 500, "#86aed0", 1.6),
     "cab a": ("AREA", (3.0, -1.05, 1.9), (3.0, -1.05, 0), 170, "#c4d2dc", 1.2),
     "cab b": ("AREA", (4.9, -1.0, 1.9), (4.9, -1.0, 0), 170, "#bccbd6", 1.4),
     "cab d": ("AREA", (7.4, -1.0, 1.85), (6.5, -1.0, 0), 170, "#bccbd6", 1.6),
@@ -457,17 +457,19 @@ class Moss:
                 self.legs[n].location = (self.legs[n].location[0], self.legs[n].location[1] + (0.0 if n[0] == "b" else -0.05), 0.08)
             hpitch += 18
         elif p == "roll":
-            # rolled on her back in the grass, chin up to the sky: the body flipped, the legs bent in the air
-            self.body.rotation_euler = (0, math.radians(180), 0)
-            self.body.location = (0, 0.0, 0.2)
+            # a contented old dog on her back in the grass: tipped a little to one side, front paws folded loosely
+            # over the chest, hind legs flopped out and bent, head turned to the side, ears fallen in the grass
+            self.body.rotation_euler = (0, math.radians(158), 0)
+            self.body.location = (0, 0.0, 0.22)
+            fold = {"fl": (-95, -22), "fr": (-80, 26), "bl": (62, -48), "br": (50, 52)}
             for n, leg in self.legs.items():
-                leg.rotation_euler = (math.radians(30 if n[0] == "f" else -30), 0, 0)
-            self.head.location = (0, -0.38, 0.0)
-            self.head.rotation_euler = (math.radians(-62), math.radians(180), 0)
-            self.tail.rotation_euler = (math.radians(30), 0, 0)
+                leg.rotation_euler = (math.radians(fold[n][0]), math.radians(fold[n][1]), 0)
+            self.head.location = (0, -0.38, 0.02)
+            self.head.rotation_euler = (math.radians(-8), math.radians(158), math.radians(34))
+            self.tail.rotation_euler = (math.radians(70), 0, math.radians(-18))
             e = st.get("ears", 0.5)
             for piv, sx in self.ears:
-                piv.rotation_euler = (math.radians(12 - 50 * e), 0, math.radians(sx * 24))
+                piv.rotation_euler = (math.radians(70), 0, math.radians(sx * 38))
             return
         elif p == "held":
             for n in self.legs:
@@ -564,10 +566,10 @@ def stretch_long(kit_, ctx):
     hair = kit_.plastic("#2f4026", 0.5, "ln wet hair")
     kit_.box("longman.fringe", (1.0, 0.5, 0.1), (0.12, -0.5, 0.66), hair, head, rot=(0.0, 0.1, 0.0), bevel=0.04)
     kit_.box("longman.fringe2", (0.7, 0.45, 0.1), (-0.3, -0.5, 0.62), hair, head, rot=(0.0, -0.2, 0.0), bevel=0.04)
-    glint = kit_.emit("#f4faf6", 14.0, "eye glint")
+    glint = kit_.emit("#cfdcd8", 5.0, "eye glint")
     for sx in (-1, 1):
-        kit_.sphere(f"longman.glint{sx}", 0.034, (sx * 0.228, -0.598, 0.09), glint, head, seg=8)
-        kit_.sphere(f"longman.glintb{sx}", 0.012, (sx * 0.228 + 0.02, -0.62, 0.115), glint, head, seg=6)
+        kit_.sphere(f"longman.glint{sx}", 0.02, (sx * 0.228, -0.598, 0.09), glint, head, seg=8)
+        kit_.sphere(f"longman.glintb{sx}", 0.006, (sx * 0.228 + 0.02, -0.62, 0.115), glint, head, seg=6)
     ctx["long_ready"] = True
 
 
@@ -577,6 +579,10 @@ def place_long(tl, t, ctx):
         return
     if not ctx.get("long_ready"):
         stretch_long(kit, ctx)
+        # the coat, trousers and boots were made after the fog nodes were gathered: ease their fog with the rest
+        em, dn = collect_fog(kit)
+        ctx["fog_em"] = list(ctx["fog_em"]) + [n for n in em if n not in ctx["fog_em"]]
+        ctx["fog_dn"] = list(ctx["fog_dn"]) + [n for n in dn if n not in ctx["fog_dn"]]
     cs = _cues(tl, "long")
     c = _last(cs, t)
     hide = bool(c and c.get("hidden", False)) or c is None
@@ -760,15 +766,15 @@ def animate(kit_, story, tl, t, ctx):
     hx = _eased(cs, "x", t, 22.5) if lc else 22.5
     turn = _eased(cs, "turn", t, 0.0) if lc else 0.0
     ly = _eased(cs, "y", t, 0.3) if lc else 0.3
-    fo = (-2.6 + 1.5 * turn, 1.2 - 1.1 * turn, 1.1 - 0.7 * turn)
+    fo = (-2.6 + 1.5 * turn, 1.2 - 1.1 * turn, 0.7 - 0.4 * turn)
     for name, off, aim in (("faceside", fo, (0, 0.0, -0.1)), ("rim", (3.2, 3.4, 1.4), (0, 0, 0)),
                            ("eyes", (0.0, 0.9, 0.7), (0, 0, 0)), ("key", (-1.2, -8.0, 2.6), (0, 0.2, -0.1))):
         ob = kit.LIGHTS[name]["obj"]
         ob.location = (hx + off[0], ly + off[1], GROUND + 0.30 + off[2])
         kit.aim(ob, (hx + aim[0], ly + aim[1], GROUND + 0.30 + aim[2]))
     over = {
-        "faceside": s["eye"] * ((1.0 - turn) + 0.06 * turn), "winglow": 0.0,
-        "sky": 1.0, "warm": s["warm"], "key": s["key"], "rim": s["rim"], "eyes": s["eye"],
+        "faceside": s["eye"] * 0.85 * ((1.0 - turn) + 0.06 * turn), "winglow": 0.0,
+        "sky": 1.0, "warm": s["warm"], "key": s["key"], "rim": s["rim"], "eyes": s["eye"] * 0.4,
         "cab a": s["fill"], "cab b": s["fill"], "cab c": s["fill"], "cab d": s["fill"], "cab e": s["fill"], "porch": s["fill"],
         "hatch": 0.0,
     }
