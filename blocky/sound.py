@@ -534,6 +534,17 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
+    if kind == "rattle":      # ep34, opt-in: a corrugated roller door running down its slats, slowing as it lands
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        rate = 46.0 * (1.0 - 0.8 * (t / dur) ** 1.3)          # slat knocks per second, falling
+        ph = np.cumsum(rate) / SR
+        gate = (np.sin(2 * np.pi * ph) > 0.55).astype(float)
+        gate = synth.one_pole_smooth(gate, 0.002)
+        body = fft_filter(synth.noise(dur, seed), "band", 500, 3600)[:n]
+        rumble = fft_filter(synth.noise(dur, seed + 1), "band", 70, 260)[:n]
+        env = np.clip(t / 0.08, 0, 1) * (1 - 0.35 * (t / dur))
+        return (body * gate * 0.9 + rumble * 0.5) * env
     if kind == "silence":
         return np.zeros(1)
     raise ValueError(f"no sfx {kind!r}")
