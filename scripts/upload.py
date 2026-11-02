@@ -50,7 +50,7 @@ def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
     last = shape(next(reversed(done))) if done else ""
     held = None
     for s in queue() + [x for x in all_stories() if x not in queue()]:
-        if s in done or s in skip:
+        if s in done or s in skip or (load_package(s) or {}).get("hold"):   # held for a redo (RULES → Packaging)
             continue
         if film(s) and gate_open(s):
             if not last or shape(s) != last:
