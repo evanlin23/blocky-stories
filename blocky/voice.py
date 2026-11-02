@@ -20,6 +20,7 @@ timestamps divided by the rate.
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -149,6 +150,9 @@ def asr(wav: Path, timeline: Path) -> int:
         if op == "equal":
             continue
         sa, sb = " ".join(a[a1:a2]), " ".join(b[b1:b2])
+        if op == "insert" and a1 == len(a) and os.environ.get("BLOCKY_ASR_TAIL"):   # opt-in (ep23): after the last line
+            print(f"  tail: Whisper repeated the end, ignored: {sb!r} (the film has no words there)")
+            continue
         if same_spoken(sa, sb):
             print(f"  spelling: script {sa!r} | heard {sb!r} (the same words, spelled another way)")
             continue
@@ -164,7 +168,9 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # Bri
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
 HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
-              "wren": "ren", "wrens": "rens"}
+              "wren": "ren", "wrens": "rens", "too": "to",   # "too" (ep15: "back TOO,") is heard as "to"
+              # ep33 (opt-in: only a story with these words is affected): made-up names Whisper spells its own way
+              "halvor": "halver", "halvors": "halvers", "cagoule": "kagool", "40": "forty"}
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 

@@ -8,7 +8,7 @@ on:
     paths: ["stories/*/**"]   # files inside a story folder only (not stories/lore.md or ideas.md)
   workflow_dispatch:
     inputs:
-      story: {description: "story folder (blank = every story that's ready)", default: ""}
+      story: {description: "story folder (blank = every story that's ready, at most 15 a run)", default: ""}
 concurrency: {group: render, cancel-in-progress: false}
 permissions: {contents: read, actions: read}
 env:
@@ -20,6 +20,7 @@ jobs:
       matrix: ${{ steps.p.outputs.matrix }}
       stories: ${{ steps.p.outputs.stories }}
       any: ${{ steps.p.outputs.any }}
+      more: ${{ steps.p.outputs.more }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -90,6 +91,22 @@ jobs:
         run: |
           S=${{ matrix.story }}
           set +e; python -m blocky flash $S; echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: cover frame
+        run: |
+          S=${{ matrix.story }}
+          SLUG=$(python -c "import json;print(json.load(open('stories/$S/story.json')).get('slug','$S'))")
+          python - "$S" "$SLUG" <<'PY'
+          import json, subprocess, sys
+          from pathlib import Path
+          s, slug = sys.argv[1], sys.argv[2]
+          pkg = Path(f"stories/{s}/package.json")
+          cover = json.loads(pkg.read_text()).get("cover_s") if pkg.exists() else None
+          dur = json.loads(Path(f"out/work/{s}/timeline.json").read_text())["duration"]
+          t = float(cover) if cover is not None else round(dur * 0.78, 2)   # default: near the reveal
+          subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{t:.2f}", "-i", f"out/{slug}.mp4",
+                          "-frames:v", "1", "-q:v", "3", f"out/{slug}.cover.jpg"], check=True)
+          Path(f"out/{slug}.cover.txt").write_text(f"{t:.2f}\n")
+          PY
       - name: keep the film
         uses: actions/upload-artifact@v4
         with:
@@ -97,6 +114,8 @@ jobs:
           path: |
             out/*.mp4
             out/*.contact.png
+            out/*.cover.jpg
+            out/*.cover.txt
             out/*.flash.json
             out/work/${{ matrix.story }}/mix.json
           retention-days: 90
@@ -108,3 +127,12 @@ jobs:
             exit 1
           fi
           echo "film-${{ matrix.story }} is ready for the daily upload"
+
+  again:   # more stories were ready than one run can hold: start another run for the rest
+    needs: [plan, assemble]
+    if: always() && needs.plan.outputs.more == 'true'
+    runs-on: ubuntu-latest
+    permissions: {actions: write}
+    env: {GH_TOKEN: "${{ github.token }}"}
+    steps:
+      - run: gh workflow run render.yml --repo "${{ github.repository }}" --ref main
