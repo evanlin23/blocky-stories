@@ -261,7 +261,12 @@ def hollow_shell(kit, M, name, key, interior="#cfc3a8", floor="#7b5a3d", door=No
 
 def room_light(kit, name, key, dx, dy, dz, energy, hexc="#ffd7a8", size=0.012):
     r = LAY.room(key)
-    return kit.light(name, "POINT", (r["win_x"] + dx, r["front_y"] + dy, r["floor_z"] + dz), energy, hexc, size=size)
+    lt = kit.light(name, "POINT", (r["win_x"] + dx, r["front_y"] + dy, r["floor_z"] + dz), energy, hexc, size=size)
+    try:
+        lt.visible_camera = False     # the lamp itself never shows as a blown white blob
+    except Exception:
+        pass
+    return lt
 
 
 def table(kit, M, name, x, y, z, w, d, h, mat, legs=True):
@@ -382,7 +387,8 @@ def room_tea(kit, M):
         chair(kit, M, f"tea.c{k}", x, y + 0.047, zf, wood, 0)
     kit.box("tea.counter", (0.34, 0.05, 0.034), (cx - 0.1, yf + 0.58, zf + 0.017), wood)
     kit.box("tea.urn", (0.03, 0.03, 0.05), (cx - 0.2, yf + 0.58, zf + 0.06), M["metal"])
-    room_light(kit, "light tea", "tea", 0.075, 0.03, 0.004, 0.3, "#ffb676", size=0.004)
+    room_light(kit, "light tea", "tea", 0.06, 0.03, 0.01, 0.5, "#ffb676", size=0.004)
+    room_light(kit, "light tea face", "tea", -0.02, 0.012, 0.045, 0.1, "#ffd2a0", size=0.004)
     room_light(kit, "light tea back", "tea", 0.1, 0.4, 0.1, 0.5, "#ffcf9a", size=0.02)
     return ctx
 
@@ -652,6 +658,9 @@ def build_figures(kit, M, ctx):
         y = LAY.row_y(row) + 0.06 + dy * 0.9
         tiny_fig(kit, M, f"vf{k}", x, y, LAY.top_z(row) + 0.002, 180 + rng.uniform(-9, 9), rng.choice(TOPS), rng.choice(["#2a1d15", "#8a8a8a", "#6a4a2a", "#c9b27a", "#3a3028"]),
                  rng.choice(SKINS), pants=rng.choice(["#3b4a63", "#4a4a52", "#5b5348", "#2c3345"]), scale=rng.uniform(0.92, 1.08))
+    # three in a row at the front (S47/S48): their backs to the path, close enough to read
+    for k, (x, tp) in enumerate([(-1.23, "#8a6f58"), (-1.15, "#5a7a8a"), (-1.07, "#9a5a4a")]):
+        tiny_fig(kit, M, f"trio{k}", x, 0.2 + 0.012 * (k % 2), LAY.top_z(0) + 0.002, 180 + (-4, 3, -2)[k], tp, ["#2a1d15", "#8a8a8a", "#6a4a2a"][k], SKINS[k], pants="#3b4a63")
     # the man with the dog (row 1) and the woman at the gate (row 2)
     row = 1
     y = LAY.row_y(row) + 0.28
@@ -844,6 +853,9 @@ def animate(kit, story, tl, t, ctx):
     # --- depth of field: a shot may carry "dof": [f-stop, [x, y, z] the focus point]
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
     spec = next((s for s in story["shots"] if s["id"] == shot["id"]), {})
+    tp = bpy.data.objects.get("tea.pane")      # S67 looks out through it: the lamps would show as white discs in it
+    if tp is not None:
+        tp.hide_render = shot["id"] == "S67"
     cam = kit.OBJ["cam"]
     mm = _main_mod()
     if spec.get("dof") and mm is not None and hasattr(mm, "cam_at"):
