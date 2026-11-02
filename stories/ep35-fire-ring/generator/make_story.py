@@ -472,8 +472,8 @@ sfx = [
     # the morning: a gate latch
     {"at": "L59", "kind": "click", "db": -18},
     # the close: the final chord falls, a log settles in the fire with a crackle of sparks, and it carries into the loop
-    {"at": "L70.2", "kind": "glide", "db": -20, "dur": 0.9},
-    {"at": "L70.3", "kind": "logsettle", "db": -16, "dur": 1.6},
+    {"at": "L70.3", "kind": "glide", "db": -14, "dur": 0.9},
+    {"at": "L70>-0.2", "kind": "logsettle", "db": -8, "dur": 1.2},
 ]
 STEPS = {"floor": "grass", "steps_db": -22}
 
