@@ -34,7 +34,7 @@ def noshadow(ob):
 def _L(**kw):
     base = dict(sun=0.0, sun_col="#ffe2b0", el=20.0, az=-70.0, fill=0.0, sky="#9bb6d8", sky_str=0.5, moon=0.0,
                 lamp=0.0, strings=0.0, rim=0.0, bed=0.0, hall=0.0, dadroom=0.0, kitchen=0.0, win=0.0, myshadow=1.0,
-                tee=0.0, bfill=0.0)
+                tee=0.0, bfill=0.0, dfill=0.0)
     base.update(kw)
     return base
 
@@ -43,11 +43,11 @@ LOOKS = {
     # late afternoon, warm, long object shadows
     "day": _L(sun=4.2, sun_col="#ffd9a0", el=30, az=-60, fill=0.9, sky="#a8c0e0", sky_str=0.9),
     "eve": _L(sun=4.2, sun_col="#ffcf8a", el=22, az=-62, fill=0.8, sky="#b6b0d0", sky_str=0.8),
-    "front": _L(sun=4.2, sun_col="#ffd9a0", el=22, az=12, fill=0.5, sky="#a8c0e0", sky_str=0.8),
+    "front": _L(sun=4.2, sun_col="#ffd9a0", el=22, az=0, fill=0.5, sky="#a8c0e0", sky_str=0.8),
     # my bedroom, evening
     "bedroom": _L(sun=0.0, sky="#554c70", sky_str=0.3, bed=1.0, myshadow=0.0),
     # Dad's empty room, moonlight in the window
-    "dadroom": _L(sun=0.0, sky="#202845", sky_str=0.12, dadroom=1.0, hall=0.5, myshadow=0.0),
+    "dadroom": _L(sun=0.0, sky="#202845", sky_str=0.12, dadroom=1.0, hall=0.5, myshadow=0.0, dfill=1.0),
     # the course at midnight: cool moon, the lamp post on, string lights off
     "midnight": _L(sun=0.0, moon=4.5, sky="#2a3868", sky_str=0.5, lamp=1.0, strings=0.0, fill=0.0),
     "kitchen": _L(sun=0.0, sky="#26304f", sky_str=0.18, kitchen=1.0, myshadow=0.0),
@@ -386,7 +386,7 @@ class Wrung:
         green = kit.plastic("#3f7d6a", 0.75, spec=0.1)
         pants = kit.plastic("#3a7664", 0.8, spec=0.05)
         black = kit.plastic("#08080a", 0.95, spec=0.0)
-        hi = kit.emit("#ffffff", 22.0, "wrung eye light")
+        hi = kit.emit("#ffffff", 7.0, "wrung eye light")
         self.root = kit.empty("wrung", (0, 0, -50))
         self.root.scale = (1.3, 1.3, 1.3)      # clearly taller than the cast (about 2.5 m)
         r = self.root
@@ -491,6 +491,7 @@ def build(kit, story, tl):
     kit.light("hallB", "POINT", (bx - 0.3, by - 0.9, 1.9), 1.0, "#9ab4ff", size=0.3, shadow=False)
     kit.light("bfill", "POINT", (G.BENCH_HOUSE[0] + 1.2, G.BENCH_HOUSE[1] - 2.2, 1.9), 1.0, "#ffd0a0", size=0.4,
               shadow=False)
+    kit.light("dfill", "POINT", (bx - 1.1, by + 0.1, 1.7), 1.0, "#ffc890", size=0.4, shadow=False)
     kit.light("kitchen", "POINT", (cx, cy, 2.2), 1.0, "#ffbf80", size=0.2)
 
     # ------------------------------------------------------------------------------------ ground
@@ -895,6 +896,7 @@ def animate(kit, story, tl, t, ctx):
     gains["hallB"] = look["dadroom"] * 200.0
     gains["kitchen"] = look["kitchen"] * 220.0
     gains["bfill"] = look["bfill"] * 60.0
+    gains["dfill"] = look["dfill"] * 70.0
     # the world
     w = bpy.context.scene.world
     bg = w.node_tree.nodes["Background"]
