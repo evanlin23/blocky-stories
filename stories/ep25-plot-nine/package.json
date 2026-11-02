@@ -1,8 +1,9 @@
 {
-  "title": "In a six-week drought, my allotment plot is wet every single dawn.",
-  "description": "An old man gave me the key to his allotment plot and said it was time for somebody new. That spring it didn't rain for six weeks, and every plot on the hill cracked in the sun. Except mine. Mine was dark and wet at every dawn.\n\nThen a head came up out of the soil by the gate, and each morning it was one bed further down the path, nearer to my beans.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
-  "pin": "What's one thing somebody taught you that you'd pass on?",
+  "title": "On This Hill Whatever You FORGET Comes Back Up",
+  "description": "On this hill, whatever you forget comes back up out of the ground. Leave your keys in the lettuce and by Thursday there's a key plant. Nothing has ever come up in my plot, because I don't forget things.\n\nGrandad has the plot across the path. This week his glasses came up in his beans. Then on Monday something much bigger came up by the gate, and every dawn it's one plot nearer to his.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+  "pin": "What would come up in your plot by Thursday?",
   "made_for_kids": false,
-  "shape": "never-left",
+  "cover_s": 48.0,
+  "shape": "forgotten",
   "hold": "redo: the first line must state the world's rule (owner, 2026-11-02)"
 }
