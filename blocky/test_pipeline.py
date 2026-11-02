@@ -113,6 +113,38 @@ def test_upload_queue_goes_first(monkeypatch):
     assert upload.next_story({"c": {}}) == "b"            # a is held for a redo
 
 
+def test_upload_publishes_at_4pm_central(monkeypatch):
+    import datetime as dt
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    morning = dt.datetime(2026, 11, 3, 12, 47, tzinfo=dt.timezone.utc)      # 6:47 am Central (CST, UTC-6)
+    assert upload.publish_at(morning) == "2026-11-03T22:00:00Z"
+    late = dt.datetime(2026, 11, 3, 22, 10, tzinfo=dt.timezone.utc)         # past 4 pm: an hour from now
+    assert upload.publish_at(late) == "2026-11-03T23:10:00Z"
+    summer = dt.datetime(2027, 6, 1, 13, 0, tzinfo=dt.timezone.utc)         # CDT, UTC-5
+    assert upload.publish_at(summer) == "2027-06-01T21:00:00Z"
+    monkeypatch.setenv("YT_AUTOPUBLISH", "false")
+    assert upload.publish_at(morning) is None
+
+
+def test_upload_finds_a_title_already_on_the_channel():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    class Q:
+        def __init__(self, r): self.r = r
+        def execute(self): return self.r
+    class YT:
+        def channels(self):
+            return type("C", (), {"list": lambda s, **k: Q({"items": [{"contentDetails": {"relatedPlaylists": {"uploads": "UU1"}}}]})})()
+        def playlistItems(self):
+            items = [{"snippet": {"title": "In This Town a Bell RINGS Before Every Mistake", "resourceId": {"videoId": "abc"}}}]
+            return type("P", (), {"list": lambda s, **k: Q({"items": items})})()
+    assert upload.already_on_channel(YT(), "In This Town a Bell RINGS Before Every Mistake ") == "abc"
+    assert upload.already_on_channel(YT(), "Something else") is None
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics
