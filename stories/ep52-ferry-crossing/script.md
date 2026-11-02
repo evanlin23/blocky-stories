@@ -9,18 +9,20 @@
   - The sleepwalk nights start at about 37 s, not 15 s. Seconds 15 to 30 show the rule at work instead (the binned glove turning up on Gran's hand). Nobody explains the rule anywhere.
   - "Tyres", "teatime", "darned" and "harbour" are left out because Whisper might write them as other words.
 - **Revision (2026-11-02, owner after ep20: "I didn't really like feel anything from the story... it was also a little bit confusing"):** Gran is now seen and loved by 0:20. The montage is down to three examples (the glove, the umbrella, the dog), so L04, L05 and L06 are cut. New L09a puts Gran on her Sunday call at about 15 s, with what I'd lose ("She's ALL / I've GOT."). L12 changes to "Next SUNDAY," so it follows on. One forward timeline, with no backstory before 0:20 (L15 to L17 now start at about 27 s). The 8 s cut is added back with L18a, L42a and L63a. `jumper-man` and `kite-woman` leave the cast.
+- **Revision round 1 (standards, 2026-11-02, hard rule 5):** the blank evenings and "I come to" read as ep41-orchard-rows (going back to a grandmother's place without knowing, then "it was me"). They're cut. The pull now happens while I'm awake and trying: every street ends at the slipway (L18, L18a), my keys hop out my door to the sea (L19), damp dots start at my door under my feet (L20), I chase the keys onto the ferry (L21), my scarf hops up Gran's lane and I follow it halfway, then turn back before she sees me (L24, L24a), and on Thursday the dots lead me to her door (L25). L56 is now "All WEEK, / I was HOPPING / my way BACK." L24b is cut. New title and description.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 591 spoken words in 69 lines, all `narrator`, plus 2 drop beats (1.3 s in all).
-- **Estimated length:** about 2:17 to 2:19 (the voiced cut was 137 s, and this revision nets about +1 s: L04 to L06 and the shorter L12 take out about 8.7 s, and L09a, L18a, L42a and L63a add about 10 s). If it comes in under 2:15, add "The SEA / is flat and GREY / all the way OVER." after L41. If it runs over 2:30, cut L38 first, then L20.
+- **Word count:** 621 spoken words in 70 lines, all `narrator`, plus 2 drop beats (1.3 s in all).
+- **Estimated length:** about 2:20 to 2:22 (round 1 adds about 6 s of words in L18 to L25 and takes out L24b's 2 s and 0.4 s of L56). If it comes in under 2:15, add "The SEA / is flat and GREY / all the way OVER." after L41. If it runs over 2:30, cut L38 first, then L20.
 
 ## The story
 
-- **Premise:** In my town, everything you lose hops home after you. Nothing I lose ever comes back. Gran raised me on the island one ferry crossing out, and I haven't crossed back in four years. I throw a glove away on purpose, and on Sunday's call Gran is pulling it on. Then my evenings start going blank, and each time I come to I'm further along the way to her: the slipway, the ferry's window seat, her lane, her open door. One night her door is open, her glasses are on the mat, she's gone, and the back room is stacked with everything I've ever lost.
+- **Premise:** In my town, everything you lose hops home after you. Nothing I lose ever comes back. Gran raised me on the island one ferry crossing out, and I haven't crossed back in four years. I throw a glove away on purpose, and on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and my scarf hop off toward the island, and damp hop-dots start at my own door. Each evening I follow them a little further, wanting to and not wanting to: the ferry's window seat, halfway up her lane (where I lose my nerve and turn back), her door. On Thursday her door is open, her glasses are on the mat, she's gone, and the back room is stacked with everything I've ever lost.
 - **Rule:** "In this town, everything you lose finds its way back to you." Lost things hop home after their owners.
-- **Twist:** the rule never said "to its owner". Lost things find their way to where they belong, and people count too (the dog). Everything of mine went to Gran's because I still belong there, and the blank evenings were me, a lost thing, finding my way back. I'm what Gran lost. On the late crossing the Shrug sits in my place on the window bench beside her. When I stop fighting it and sit down in my old seat, it's gone.
+- **Twist:** the rule never said "to its owner". Lost things find their way to where they belong, and people count too (the dog). Everything of mine went to Gran's because I still belong there, and the pull all week, the streets that end at the slipway and the dots that start at my own door, was me, a lost thing, hopping my way back. I'm what Gran lost. On the late crossing the Shrug sits in my place on the window bench beside her. When I stop fighting it and sit down in my old seat, it's gone.
 - **Where the twist is planted:**
   - Plant 1, the striped hat: in the Sunday calls (L09a, L12 to L14), my old teal-and-cream striped hat hangs on the hook behind Gran. Not narrated. Paid off at L34, hung by the door of the room of lost things.
   - Plant 2, the dog (L07 to L08): it trots home on its own, to its house, with no owner in sight. Paid off at L54, "PEOPLE count too."
+  - Plant 3, the dots (L20): narrated as something odd that starts at my door. First time through they read as my keys' dots, or something leading me. Paid off at L56.
   - Rewatch reward, not narrated: in L09's shot, every character on the slipway has a lost thing hopping behind them and I don't, but a faint line of small damp hop-dots runs off from my feet down the slipway toward the water and the island.
 - **How the last 15 seconds turn over the first line:** first time through, "everything you lose finds its way back to you" is a cosy, funny town rule, and I'm the unlucky one it skips. By L66 to L68 it means Gran lost me, and I'm the thing that hopped home. The sting, a glove on her mat that I haven't lost yet, makes the rule a promise that I'll be lost again someday, and that the town is already sending things back. A second watch sees the hat, the dog and the hop-dots under my feet.
 - **Ending shape:** two people on a ferry's window bench at night, a long pale wake behind them, then a cut to a doormat with a glove on it.
@@ -41,7 +43,7 @@ A small car ferry on its daily crossing between a grey harbour town and an islan
 
 All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 
-- `me` (adult man): short black block hair with a side fringe, a navy duffel coat with horn toggles, a grey scarf, mustard knit gloves (the left one has a hole in the thumb). From L10 to L62 only the right glove is on my hand, and the left one is back on from L63. Faces (from `faces.EXPRESSIONS`): `neutral`, `worried`, `scared`, `soft` (a small smile). No age on screen.
+- `me` (adult man): short black block hair with a side fringe, a navy duffel coat with horn toggles, a grey scarf (worn up to L24, then gone: it hops off up the lane and hangs in the back room from L31), mustard knit gloves (the left one has a hole in the thumb). From L10 to L62 only the right glove is on my hand, and the left one is back on from L63. Faces (from `faces.EXPRESSIONS`): `neutral`, `worried`, `scared`, `soft` (a small smile). No age on screen.
 - `gran` (adult, older): white block hair in a bun, round brown-framed glasses (off from L27 on until L61), a heather cardigan with a diamond knit pattern, and a long plum travelling coat at night. Warm and plain, never cryptic, never explains anything. Faces: `neutral`, `squeeze` (squinting, no glasses), `soft`, `grin` (the reunion).
 - `glove-woman` (adult): green raincoat, block bob. L01, L02.
 - `umbrella-man` (adult): brown tweed jacket, flat cap. L01, L03.
@@ -54,7 +56,7 @@ Every word is the narrator's. Gran's one quote (L63) and her call (L14, L36 to L
 
 Every lost thing hops home after its owner: a glove, a sock, an umbrella, a key ring, a scarf. Each one moves in small low hops, a soft bob each time, and leaves a short line of small damp dots on the ground behind it that fade after a second. This is the town's marker and it's on or beside every character by 2 s. It's our own design and carries no words.
 
-- **I'm the exception:** nothing hops behind me, ever.
+- **I'm the exception:** nothing hops behind me, ever. From L19 my things hop away from me, toward the water and the island, which is where they belong (L19 keys, L24 scarf).
 - **The Shrug carries none of it:** nothing hops behind it, and it leaves no dots.
 - Hop timing: about two hops a second at most, each a smooth arc, no flashes or glints.
 
@@ -69,9 +71,9 @@ Every lost thing hops home after its owner: a glove, a sock, an umbrella, a key 
   | Beat | Lines | Where it is | Shoulders | Shown how |
   |---|---|---|---|---|
   | Opening, montage, call | L01 to L17 | not there | | |
-  | Monday slipway | L19 to L20 | not there | | |
+  | Streets and Monday | L18 to L20 | not there | | |
   | Tuesday ferry, me alone on the window bench | L21 to L23 | in the seat beside me, never seen | | the empty seat folded down (L22), then its cushion pressing down into a deep dent and the bench tilting a little toward it (L23), my body leaning with it |
-  | Wednesday lane | L24 | not there, but a faint orange smudge on the wet window glass is left in L23's last frame, not mentioned | | |
+  | Wednesday lane | L24 to L24a | not there, but a faint orange smudge on the wet window glass is left in L23's last frame, not mentioned | | |
   | Gran's cottage | L25 to L40 | not there | | |
   | Late boat over, car deck | L41 to L43 | not shown | | a soft heavy creak of a seat from the lounge above at L43, sound only |
   | Lounge reveal | L44 | half seen: an orange edge at the right of frame beside Gran, out of focus | high | |
@@ -87,7 +89,7 @@ Every lost thing hops home after its owner: a glove, a sock, an umbrella, a key 
 - **Caption key colour:** sea-glass `#7fe0c8`.
 - **Light, every change a slow ramp:**
   - L01 to L17 are bright overcast daylight, lit to read on a phone, faces in frame. Dusk and night come after.
-  - Evenings (L18 to L24) are blue dusk, darker each evening, scene by scene across cuts.
+  - Evenings (L18 to L24a) are blue dusk, darker each evening, scene by scene across cuts.
   - Gran's cottage at night: the porch lamp is steady, warm and on in every shot. The hall is dim. The back room's ceiling bulb is already on at L30 (no switch is shown). The camera moves into it.
   - The phone screen at L35 brightens from dark over 0.5 s.
   - The lounge strips are steady in every shot. For the reveal, the lounge reads dim because of where the strips are and the window glow, not because anything switches.
@@ -113,7 +115,7 @@ Every lost thing hops home after its owner: a glove, a sock, an umbrella, a key 
 - **Loved one at stake:** Gran (older adult), seen and loved on her Sunday call at about 15 s (L09a, "She's ALL / I've GOT."), gone from her open house at night (L25 to L29), away for an ordinary reason, back by the end.
 - **15 to 30 s:** the rule at work with nobody explaining it: the binned glove, then Gran pulling it on in the call.
 - **The climax turns the rule's own logic:** "finds its way back to you" is read again as "finds its way to where it belongs", and the dog has already shown that a living thing counts. No new magic. I stop fighting the rule and go home on purpose.
-- **Cuts:** 80 shots over about 2:18, about 1.7 s a shot on average. No shot holds longer than about 3 s.
+- **Cuts:** about 84 shots over about 2:21, about 1.7 s a shot on average. No shot holds longer than about 3 s.
 
 ## The lore connection (one only)
 
@@ -165,35 +167,37 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L17` narrator: I moved to TOWN / four YEARS ago, / and never / crossed BACK.
   - [me at my flat window at dusk, the island a dark line far off]
 
-## 03 The evenings (L18 to L24)
+## 03 The pull (L18 to L24a)
 
-- **Where:** each evening bluer and darker: the town slipway, the ferry lounge, the island lane.
-- **Shots:** 9.
+- **Where:** each evening bluer and darker: harbour streets, my flat's door, the town slipway, the ferry lounge, the island lane. I'm awake and trying in every shot. Nothing blacks out and nothing skips.
+- **Shots:** 12.
 
-- `L18` narrator: Then my EVENINGS / go BLANK.
-  - [my flat at dusk, the chair empty, the door ajar]
-- `L18a` narrator: And every TIME / I come to, / I'm a little CLOSER / to GRAN.
-  - [a slow high wide at blue dusk: the town, the grey water and the island's one porch lamp, small and far]
-- `L19` narrator: MONDAY, / I come to / on the SLIPWAY.
-  - [me standing at the bottom of the slipway at blue dusk, `worried`, blinking, the water at my shoes]
-- `L20` narrator: I don't remember / the WALK.
-  - [high wide: the empty slipway and the ferry's lights out on the water]
-- `L21` narrator: TUESDAY, / I come to / in the FERRY'S / window SEAT.
-  - [the lounge at dusk, steady strips: me on the left-hand seat of the window bench, `scared`, the grey sea moving past the window]
+- `L18` narrator: Then every STREET / I take / ends at the SLIPWAY.
+  - [blue dusk: me walking up a harbour street away from the water, `worried`. I round the corner and the street opens straight onto the slipway, the water ahead]
+- `L18a` narrator: I turn LEFT, / I turn RIGHT, / it's always the WATER.
+  - [shot A: me turning left at a corner, the slipway ahead. Shot B: me turning right at another corner, the same slipway ahead, framed the same, `worried`]
+- `L19` narrator: MONDAY, / my KEYS hop / out my DOOR, / down to the SEA.
+  - [shot A: my flat's door at dusk, open: my key ring hopping over the step and away down the street, small damp dots behind it. Shot B: high wide, the key ring hopping down the empty slipway to the water's edge, me small at the top, `worried`]
+- `L20` narrator: And damp little DOTS / start at my DOOR, / under my FEET.
+  - [low close at my doorstep: my shoes on the step, and a faint line of damp hop-dots starting right under them and running off down the street toward the harbour. Readable at phone size. Then me, `scared`, looking down]
+- `L21` narrator: TUESDAY, / I chase my KEYS / onto the FERRY, / right to the window SEAT.
+  - [shot A: me hurrying up the ferry's bow ramp after the hopping key ring, `worried`. Shot B: the lounge at dusk, steady strips: the keys hop on past the bench out of frame, and I'm sitting in the left-hand seat of the window bench, `scared`, as if I sat without meaning to, the grey sea moving past the window]
 - `L22` narrator: The seat / BESIDE me / is folded DOWN, / and EMPTY.
   - [close on the right-hand seat: folded down, teal vinyl, nobody on it. The rest of the lounge empty behind]
 - `L23` narrator: Then the bench / SINKS, / like somebody HEAVY / just sat DOWN.
   - [shot A: low close: the empty cushion pressing down into a deep dent, the creak. Shot B: me tipping a little toward it, `scared`, not looking. A faint orange smudge on the glass beside the empty seat, not mentioned]
-- `L24` narrator: WEDNESDAY, / halfway up / Gran's LANE.
-  - [me between dry-stone walls in deep dusk, `worried`, the cottage's porch lamp up the hill]
+- `L24` narrator: WEDNESDAY, / my SCARF / hops up Gran's LANE, / and I follow it HALFWAY.
+  - [shot A: my grey scarf hopping up the lane between dry-stone walls in deep dusk, dots behind it. Shot B: me following up the lane, no scarf on now, `worried`, the cottage's porch lamp up the hill]
+- `L24a` narrator: Then I turn BACK, / before she SEES me.
+  - [me stopping halfway, looking up at the warm porch lamp, `soft` going to `worried`, then turning and walking back down the lane, my back to camera]
 
 ## 04 The door (L25 to L34)
 
 - **Where:** Gran's cottage at night. The first real scare: Gran gone, her glasses left.
 - **Shots:** 12.
 
-- `L25` narrator: THURSDAY, / I come to / at Gran's DOOR, / in the DARK.
-  - [night, steady porch lamp: me at the green door, `scared`, breath in the cold]
+- `L25` narrator: THURSDAY, / the DOTS / lead me all the way / to Gran's DOOR.
+  - [shot A: the hop-dots running up the island lane at night ahead of my shoes, fading behind. Shot B: night, steady porch lamp: me at the green door, `scared`, breath in the cold, no scarf]
 - `L26` narrator: The door / is OPEN.
   - [the door standing a hand's width open, the dark hall beyond]
 - `P01` pause 0.6 s: none
@@ -209,7 +213,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L31` narrator: That room / is FULL, / floor to CEILING.
   - [wide from the doorway: every wall hung with hooks, every hook holding something]
 - `L32` narrator: Every glove / and KEY / I've ever LOST, / hung up NEATLY / on HOOKS.
-  - [shot A: a slow pan along rows of odd gloves, all mine, mustard and navy and grey. Shot B: key rings on hooks, rattling very softly though nothing's touched them]
+  - [shot A: a slow pan along rows of odd gloves, all mine, mustard and navy and grey, past my grey scarf on its hook. Shot B: key rings on hooks, Monday's ring in front, rattling very softly though nothing's touched them]
 - `L33` narrator: My BIKE / leans on the WALL, / still SHINY.
   - [a blue bike leaning under the hooks, clean, like it's waiting]
 - `L34` narrator: And my old / striped HAT / hangs by the DOOR.
@@ -251,7 +255,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `P02` pause 0.7 s: none
   - [hold. Everything drops but the engine hum, then the deep seat creak]
 - `L45` narrator: And BESIDE her, / in MY place, / sits somebody / in LIFE JACKET / ORANGE.
-  - [rack focus: the Shrug in the left-hand seat, clearly lit, the two orange humps of its shoulders up past its head]
+  - [rack focus: the Shrug in the left-hand seat, clearly lit, the two orange humps of its shoulders up past its head, only its eyes showing between them]
 - `L46` narrator: Its SHOULDERS / rise up / past its EARS.
   - [side-on mid shot: the shoulder blocks level with its eyes, the long arms hanging to the seat]
 - `L47` narrator: Only its EYES / show / between them.
@@ -278,8 +282,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [quick still: the dog sitting by its blue door]
 - `L55` narrator: Everything I lost / went to GRAN'S. / I still belong THERE.
   - [quick still: the back room's hooks, the striped hat]
-- `L56` narrator: All those EVENINGS, / I was finding / my way BACK.
-  - [quick still: the hop-dots under my feet on the slipway in L09, now easy to see]
+- `L56` narrator: All WEEK, / I was HOPPING / my way BACK.
+  - [quick stills: the hop-dots starting under my shoes at my door (L20), then the dots under my feet on the slipway in L09, now easy to see]
 - `L57` narrator: So I stop / FIGHTING it.
   - [me, `neutral`, taking a breath]
 - `L58` narrator: I walk to / the BENCH, / and sit down / in my old SEAT.
@@ -321,7 +325,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## Risks
 
-- **"come to" (L18a, L19, L21, L25):** plain words, but check Whisper doesn't join "come to" into "come too".
+- **"DOTS" (L20, L25):** a plain word. Check Whisper doesn't hear "dots" as "dogs", since the dog lines come earlier.
 - **"LIFE JACKET" (L45):** written with a space, no hyphen, to match how Whisper spells it.
 - **"GRAN'S" (L55):** a possessive, could come back "grans". Fix the caption if so.
 - **Harm words:** no line has a child word, so `HARM` can't fire. No `GRAPHIC` word appears ("lost" and "gone" are fine here). "GONE" at L28 is a coat, never a person.

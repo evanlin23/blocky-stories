@@ -294,12 +294,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then my EVENINGS",
-    "Then my evenings"
+    "Then every STREET",
+    "then every street"
    ],
    [
-    "go BLANK.",
-    "go blank."
+    "I take",
+    "I take"
+   ],
+   [
+    "ends at the SLIPWAY.",
+    "ends at the slipway."
    ]
   ]
  },
@@ -308,20 +312,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "And every TIME",
-    "and every time"
+    "I turn LEFT,",
+    "I turn left,"
    ],
    [
-    "I come to,",
-    "i come to,"
+    "I turn RIGHT,",
+    "I turn right,"
    ],
    [
-    "I'm a little CLOSER",
-    "i'm a little closer"
-   ],
-   [
-    "to GRAN.",
-    "to gran."
+    "it's always the WATER.",
+    "it's always the water."
    ]
   ]
  },
@@ -334,12 +334,16 @@
     "monday,"
    ],
    [
-    "I come to",
-    "I come to"
+    "my KEYS hop",
+    "my keys hop"
    ],
    [
-    "on a SLIPWAY.",
-    "on a slipway."
+    "out my DOOR,",
+    "out my door,"
+   ],
+   [
+    "down to the SEA.",
+    "down to the sea."
    ]
   ]
  },
@@ -348,12 +352,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I don't remember",
-    "I don't remember"
+    "And damp little DOTS",
+    "and damp little dots"
    ],
    [
-    "the WALK.",
-    "the walk."
+    "start at my DOOR,",
+    "start at my door,"
+   ],
+   [
+    "under my FEET.",
+    "under my feet."
    ]
   ]
  },
@@ -366,16 +374,16 @@
     "tuesday,"
    ],
    [
-    "I come to",
-    "I come to"
+    "I chase my KEYS",
+    "I chase my keys"
    ],
    [
-    "in the FERRY'S",
-    "in the ferry's"
+    "onto the FERRY,",
+    "onto the ferry,"
    ],
    [
-    "window SEAT.",
-    "window seat."
+    "right to the window SEAT.",
+    "right to the window seat."
    ]
   ]
  },
@@ -432,12 +440,30 @@
     "wednesday,"
    ],
    [
-    "halfway up",
-    "halfway up"
+    "my SCARF",
+    "my scarf"
    ],
    [
-    "Gran's LANE.",
-    "Gran's lane."
+    "hops up Gran's LANE,",
+    "hops up Gran's lane,"
+   ],
+   [
+    "and I follow it HALFWAY.",
+    "and I follow it halfway."
+   ]
+  ]
+ },
+ {
+  "id": "L24a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then I turn BACK,",
+    "then I turn back,"
+   ],
+   [
+    "before she SEES me.",
+    "before she sees me."
    ]
   ]
  },
@@ -450,16 +476,16 @@
     "thursday,"
    ],
    [
-    "I come to",
-    "I come to"
+    "the DOTS",
+    "the dots"
    ],
    [
-    "at Gran's DOOR,",
-    "at Gran's door,"
+    "lead me all the way",
+    "lead me all the way"
    ],
    [
-    "in the DARK.",
-    "in the dark."
+    "to Gran's DOOR.",
+    "to Gran's door."
    ]
   ]
  },
@@ -1042,12 +1068,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "All those EVENINGS,",
-    "All those evenings,"
+    "All WEEK,",
+    "all week,"
    ],
    [
-    "I was finding",
-    "I was finding"
+    "I was HOPPING",
+    "I was hopping"
    ],
    [
     "my way BACK.",
