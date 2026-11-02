@@ -224,7 +224,7 @@ shot("S17b", "L17.1", "Mum at a kitchen table, years ago", still([KX + 0.4, -1.1
 shot("S17c", "L17.2", "my face again", still(front(ME, yaw_to(ME, DAIS) - 50, 1.4, 1.58), z3(ME, 1.55), 38))
 shot("S18", "L18", "the canvas: a nose stopped short", canvas_cam(8, 1.2, 1.25, 34), hide_cast=["me"])
 shot("S19", "L19", "Kofi in the doorway with a mug", still([-2.0, -3.5, 1.5], [-4.9, -3.0, 1.4], 30))
-shot("S19b", "L19.1", "the cushion under it, flat", still(front(U1, Y1 + 180, 1.15, 0.95), [0.0, 0.0, 0.62], 30), fill=front(U1, Y1 + 150, 0.9, 1.1))
+shot("S19b", "L19.1", "the cushion under it, flat", still(front(U1, Y1 + 180, 0.95, 0.9), [0.0, 0.0, 0.64], 40), fill=front(U1, Y1 + 150, 1.5, 1.4))
 # 03 weeks two to four
 shot("S20", "L20", "its face: the nose", still(fc(U2, yaw_to(U2, ME), 1.2, 1.7), z3(U2, 1.55), 40))
 shot("S20b", "L20.2", "my canvas: the same short nose", canvas_cam(8, 1.2, 1.25, 34), hide_cast=["me"])
@@ -282,11 +282,11 @@ shot("S61d", "L61.3", "its four places: beside Petra", still(front(U4, Y4, 2.2, 
 # 06 week six
 shot("S62", "L62", "the room, warm, me walking in", still([-3.4, -3.6, 1.65], [2.6, -0.4, 1.35], 22))
 shot("S63", "L63", "it at my elbow, waiting", still([1.3, 1.1, 1.6], [3.1, 0.0, 1.45], 26))
-shot("S64", "L64", "me painting, steady", still([4.6, -2.3, 1.55], [3.7, -0.7, 1.4], 30))
+shot("S64", "L64", "me painting, steady", still([4.6, -2.3, 1.55], [3.7, -0.7, 1.4], 30), fill=[4.3, -1.3, 2.2])
 shot("S65", "L65", "Mum's eyes on my canvas", canvas_cam(8, 1.0, 1.3, 34), hide_cast=["me"])
 shot("S66", "L66", "the finished portrait", canvas_cam(8, 1.1, 1.25, 30, push=0.1), hide_cast=["me"])
-shot("S67", "L67", "the spare stool, empty", still([2.0, 0.9, 1.1], [U5[0], U5[1], 0.45], 30))
-shot("S68", "L68", "the dais stool: a dent in the cushion", still([1.1, -1.6, 1.3], [0.0, 0.0, 0.55], 30))
+shot("S67", "L67", "the spare stool, empty", still([2.0, 0.9, 1.1], [U5[0], U5[1], 0.45], 30), fill=[2.4, 1.0, 1.7])
+shot("S68", "L68", "the dais stool: a dent in the cushion", still([1.1, -1.6, 1.3], [0.0, 0.0, 0.55], 30), fill=[1.0, -1.0, 1.7])
 # 07 the show
 shot("S69", "L69", "Mum at the door in daylight", still([-1.8, -1.0, 1.6], [-5.2, -2.85, 1.45], 26))
 shot("S70", "L70", "the dais on its edge: nine strokes", still([-1.2, 1.8, 1.1], [-5.3, 1.8, 0.75], 22))
@@ -428,7 +428,7 @@ cues = [
     {"at": "L24", "name": "time", "set": "night"},
     {"at": "L62", "name": "time", "set": "warm"},
     {"at": "L69", "name": "time", "set": "show"},
-    {"at": "L75", "name": "time", "set": "day"},
+    {"at": "L75", "name": "time", "set": "end"},
     # the hall
     {"at": 0, "name": "hall", "state": "then"},
     {"at": "L03", "name": "hall", "state": "now"},

@@ -365,6 +365,7 @@ def materials(kit, wd):
     M["brick"] = kit.bricks("#76605a", "#58463f", "#4f4842", scale=1.0)
     M["ground"] = kit.concrete("#1d1f24", scale=1.2, stains=0.35, name="car park", rough=0.28)
     M["step"] = kit.concrete("#4a4b50", scale=2.0, stains=0.3, name="steps", rough=0.5)
+    M["ceilmat"] = kit.plastic("#8f897c", 0.95, "ceiling")
     M["roof"] = kit.plastic("#23262b", 0.8, "roof")
     M["pine"] = pine_mat(kit)
     M["dais"] = pine_mat(kit, "dais wood", "#caa56d", "#9c7a46", 9.0)
@@ -375,10 +376,10 @@ def materials(kit, wd):
     M["lampglow"] = kit.emit("#ffc88a", 6.0, "lamp bulb")
     M["table"] = kit.plastic("#a9794a", 0.6, "table wood")
     M["floor2"] = kit.plastic("#b8a58a", 0.7, "hall floor")
-    M["hallwall"] = kit.plastic("#f4f0e8", 0.9, "hall wall")
-    M["square"] = kit.plastic("#fdfbf4", 0.95, "pale squares")
+    M["hallwall"] = kit.plastic("#c9c4b8", 0.9, "hall wall")
+    M["square"] = kit.plastic("#d2cec2", 0.95, "pale squares")
     M["frame"] = kit.plastic("#5a3d24", 0.55, "frame wood")
-    M["glass_door"] = kit.emit("#fff1d6", 5.0, "door glass")
+    M["glass_door"] = kit.emit("#fff1d6", 2.0, "door glass")
     M["door"] = kit.plastic("#7a5636", 0.6, "door wood")
     M["jar"] = kit.plastic("#cfd8d4", 0.3, "jar")
     M["brush"] = kit.plastic("#9a6a3c", 0.6, "brush")
@@ -434,7 +435,7 @@ def wall(kit, M, name, axis, c, a0, a1, z0, z1, hole=None, inner_sign=1, T=0.3):
 def build_room(kit, ctx, M):
     zb = GROUND
     kit.box("floor", (X1 - X0 + 0.6, Y1 - Y0 + 0.6, 0.45), ((X0 + X1) / 2, (Y0 + Y1) / 2, -0.225), M["floor"])
-    ctx["ceiling"] = slab(kit, "ceiling", X0, X1, Y0, Y1, CEIL, CEIL + 0.04, M["plaster"])
+    ctx["ceiling"] = slab(kit, "ceiling", X0, X1, Y0, Y1, CEIL, CEIL + 0.04, M["ceilmat"])
     ctx["roof"] = slab(kit, "roof", X0 - 0.35, X1 + 0.35, Y0 - 0.35, Y1 + 0.35, CEIL + 0.04, CEIL + 0.36, M["roof"])
     # south wall (inner face at y = Y0; room is to +y), big open window for the car park view
     wall(kit, M, "wall s", "x", Y0, X0 - 0.3, X1 + 0.3, zb, CEIL, hole=(-2.6, 2.6, 0.9, 2.5), inner_sign=1)
@@ -638,7 +639,7 @@ def build_hall(kit, ctx, M, wd):
     # a corridor along y: x 39 .. 41.2, y -1.5 .. 3.5, high 2.6
     ctx["hall"] = {}
     kit.box("hall floor", (2.2, 5.0, 0.1), (HX + 0.1, 1.0, -0.05), M["floor2"])
-    kit.box("hall ceil", (2.2, 5.0, 0.1), (HX + 0.1, 1.0, 2.65), M["hallwall"])
+    kit.box("hall ceil", (2.2, 5.0, 0.1), (HX + 0.1, 1.0, 2.65), M["ceilmat"])
     kit.box("hall w", (0.1, 5.0, 2.6), (HX - 1.05, 1.0, 1.3), M["hallwall"])
     kit.box("hall e", (0.1, 5.0, 2.6), (HX + 1.25, 1.0, 1.3), M["hallwall"])
     kit.box("hall n", (2.2, 0.1, 2.6), (HX + 0.1, 3.55, 1.3), M["hallwall"])
@@ -696,15 +697,15 @@ def build_hall(kit, ctx, M, wd):
     for k in range(5):
         kit.box("brush", (0.012, 0.012, 0.22), (0.1, 0.07 + 0.03 * (k - 2), -0.07), M["brush"], dr, rot=(0, math.pi / 2, 0.3 + 0.05 * k))
     ctx["hall"]["drawer"] = dr
-    kit.light("hall sun", "AREA", (HX + 0.1, -1.3, 1.5), 85.0, "#ffe3b0", size=1.0).rotation_euler = (math.radians(-90), 0, 0)
+    kit.light("hall sun", "AREA", (HX + 0.1, -1.3, 1.3), 14.0, "#ffe3b0", size=1.0).rotation_euler = (math.radians(-90), 0, 0)
     kit.light("shot fill", "POINT", (0, 0, -30), 110.0, "#ffd7a8", size=0.3)
-    kit.light("drawer lamp", "POINT", (HX + 0.4, 2.2, 1.3), 40.0, "#fff0d8", size=0.2)
-    kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 2.55), 105.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
+    kit.light("drawer lamp", "POINT", (HX + 0.4, 2.2, 1.3), 20.0, "#fff0d8", size=0.2)
+    kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 1.9), 34.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
 
 
 def build_kitchen(kit, ctx, M, wd):
     kit.box("kit floor", (3.6, 4.2, 0.1), (KX, 0.5, -0.05), M["floor2"])
-    kit.box("kit ceil", (3.6, 4.2, 0.1), (KX, 0.5, 2.65), M["hallwall"])
+    kit.box("kit ceil", (3.6, 4.2, 0.1), (KX, 0.5, 2.65), M["ceilmat"])
     for (sx, sy, w, d) in ((-1.85, 0.5, 0.1, 4.2), (1.85, 0.5, 0.1, 4.2), (0, -1.65, 3.6, 0.1)):
         kit.box("kit wall", (w, d, 2.6), (KX + sx, sy, 1.3), M["hallwall"])
     kit.box("kit wall n a", (1.0, 0.1, 2.6), (KX - 1.3, 2.65, 1.3), M["hallwall"])
@@ -739,6 +740,7 @@ def build_props(kit, ctx, M):
 
 
 def build_lights(kit, ctx):
+    ctx["hide_lights"] = []
     # the room: dim warm fill from the ceiling, floor-level work lights round the dais, a cold rim from the north window
     for k, th in enumerate(ctx["TH"]):
         x, y = 4.5 * math.cos(math.radians(th)), 4.5 * math.sin(math.radians(th))
@@ -751,8 +753,11 @@ def build_lights(kit, ctx):
     rim.rotation_euler = (V((0, -1.5, -1.2)).to_track_quat("-Z", "Y").to_euler())
     # daylight, for the show: ceiling panels and the window
     for k, (x, y) in enumerate(((-2.5, -1.0), (2.5, -1.0), (0.0, 2.0), (0.0, -3.5))):
-        kit.light(f"show ceil {k}", "AREA", (x, y, 3.1), 300.0, "#fff6e6", size=2.0).rotation_euler = (math.pi, 0, 0)
-    kit.light("show day", "AREA", (0.0, 4.0, 2.3), 600.0, "#f2f6ff", size=3.0).rotation_euler = (V((0, -1, -0.5)).to_track_quat("-Z", "Y").to_euler())
+        kit.light(f"show ceil {k}", "AREA", (x, y, 2.9), 80.0, "#fff6e6", size=2.0).rotation_euler = (math.pi, 0, 0)
+    kit.light("show day", "AREA", (0.0, 4.0, 2.0), 250.0, "#f2f6ff", size=3.0).rotation_euler = (V((0, -1, -0.5)).to_track_quat("-Z", "Y").to_euler())
+    for nm in list(kit.LIGHTS):
+        if nm.startswith(("show ", "hall ", "kit ", "north rim", "drawer")):
+            kit.LIGHTS[nm]["obj"].visible_camera = False
     # outside: the lamp post, a cold wash on the building
     kit.light("post light", "POINT", (-2.6, -9.0, GROUND + 3.4), 700.0, "#ffd29a", size=0.3)
     kit.light("ext wash", "AREA", (-12.0, -20.0, 14.0), 1400.0, "#5a73a8", size=6.0).rotation_euler = (V((12, 20, -14)).to_track_quat("-Z", "Y").to_euler())
@@ -799,6 +804,9 @@ def build(kit, story, tl):
     build_hall(kit, ctx, M, wd)
     build_kitchen(kit, ctx, M, wd)
     ctx["props"] = build_props(kit, ctx, M)
+    for nm in list(kit.LIGHTS):
+        if nm.startswith(("hall ", "kit ")):
+            kit.LIGHTS[nm]["obj"].visible_camera = False
     # the show wall: framed pictures on the west wall, the portrait among them
     show = []
     for k, y in enumerate((-0.5 - 1.1, 0.9 + 0.6, 2.0 + 0.9, 3.4 + 0.2)):
@@ -896,13 +904,13 @@ def animate(kit, story, tl, t, ctx):
     world = bpy.data.worlds[0].node_tree.nodes["Background"]
     if show_on:
         world.inputs["Color"].default_value = kit.col("#cfe0f4")
-        world.inputs["Strength"].default_value = 2.2
-        bpy.context.scene.view_settings.exposure = 0.0
+        world.inputs["Strength"].default_value = 0.6
+        bpy.context.scene.view_settings.exposure = 1.1
     else:
         world.inputs["Color"].default_value = kit.col("#0c1018")
         world.inputs["Strength"].default_value = 1.0
-        bpy.context.scene.view_settings.exposure = {"night": -0.2, "warm": 0.75}.get(state, 0.4)
-    ctx["pane_mat"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 6.0 if show_on else 0.55
+        bpy.context.scene.view_settings.exposure = {"night": -0.2, "warm": 0.75, "end": 1.15}.get(state, 0.5)
+    ctx["pane_mat"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 1.4 if show_on else 0.55
     # the rain runs down the north window
     if "pane" in ctx:
         tex = ctx["pane_mat"].node_tree.nodes[ctx["pane_mat"]["tex_name"]]
