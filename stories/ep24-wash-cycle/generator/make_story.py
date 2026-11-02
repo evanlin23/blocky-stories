@@ -73,7 +73,7 @@ cast = {
                "face": {"eyes": "tired", "brows": True, "ink": "#1a1416", "cheeks": "#eba094"}},
     "turned": {"age": "adult", "skin": "#9d8163", "shirt": "#efece4", "pattern": "solid", "pants": "#3f7fd0",
                "shoes": "#141414", "sleeves": "short", "hair": "swoop", "hair_c": "#5a3118", "width": 1.1,
-               "face": {"eyes": "tired", "brows": False, "ink": "#1c0f08", "mouth": "gape"}},
+               "face": {"eyes": "tired", "brows": False, "ink": "#1c0f08", "mouth": "gape", "gaze": 2.0, "pupil_scale": 0.68}},
 }
 
 # ---------------------------------------------------------------------------------------------------- shots
@@ -117,8 +117,8 @@ shot("L28", mv([3.9, -14.0, 1.7], [3.9, -3.5, 1.4], 12.5), hand=0.004)   # S29 o
 shot("L29", mv([0.6, -10.8, 1.5], [2.4, -5.8, 1.35], 24), hand=0.01)   # S30 walking off
 # 03 one chair nearer (night three)
 shot("L30", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S31 four
-shot("L31", mv([CHX[3], -0.14, 0.03], [CHX[3], -0.02, 0.41], 11), hand=0)   # S32 the tally
-shot("L31b+0.45", front(ME_F, 180, 1.35, 0.15, 36, aim_dz=-0.15), hand=0.003)                    # S33 the same page
+shot("L31", front(F(3), 14, 1.9, -0.1, 40, push=0.06), hand=0.002)                            # S32 its face: it doesn't blink
+shot("L31b", mv([CHX[3], -0.14, 0.03], [CHX[3], -0.02, 0.41], 11), hand=0)   # S33 the tally (six strokes), held through "ten times"
 shot("L32", front(F(3), 0, 1.5, -0.1, 36, push=0.08), hand=0.002)                                # S34 closer
 shot("L33", front(ME_F, 180, 1.5, 0.0, 36), hand=0.004)                                          # S35 it wants the coat back
 shot("L34", mv([2.5, -1.3, 1.5], [3.35, -3.3, 1.3], 18, [2.6, -1.3, 1.5], [3.35, -3.3, 1.3], 18), hand=0.003)   # S36 the hook
@@ -137,9 +137,18 @@ shot("L45", mv([-4.4, -1.0, 1.4], [3.65, -0.1, 1.2], 20), hand=0)               
 shot("L48.3", c([0, [-3.3, -3.0, 1.3], [-3.6, -0.8, 1.2], 60], [1, [-3.35, -2.9, 1.3], [-3.6, -0.8, 1.2], 62]), hand=0.002)   # S47 its upside-down face over mine
 shot("L49", c([0, [-3.6, -1.7, 1.5], [-3.6, -0.5, 1.4], 80], [1, [-3.6, -1.62, 1.5], [-3.6, -0.5, 1.4], 86]), hand=0)  # S48 its eyes
 shot("L50", c([0, [-1.3, -2.6, 1.2], [-3.6, -0.95, 0.95], 55], [1, [-1.35, -2.55, 1.2], [-3.6, -0.95, 0.95], 57]), hand=0.002)   # S49 me, frozen, front three-quarter
-shot("L51", c([0, [-3.7, -2.7, 0.8], [-3.6, -0.8, 1.15], 46, -3]), hand=0.002)   # S50 its eyes slide to the coat
-shot("L52", c([0, [-3.1, -2.5, 1.55], [-3.6, -0.7, 1.35], 48, 4]), hand=0.002)   # S51 over to his chair
-shot("L53", c([0, [-3.7, -2.6, 0.85], [-3.6, -0.8, 1.15], 48, 5], [1, [-3.65, -2.5, 0.88], [-3.6, -0.8, 1.15], 50, 5]), hand=0.002)   # S52 counting
+FACE_C = lambda dx=0.0: c([0, [-3.6 + dx, -1.7, 1.5], [-3.6, -0.5, 1.4], 80], [1, [-3.6 + dx, -1.64, 1.5], [-3.6, -0.5, 1.4], 84])
+COAT_C = c([0, [-2.95, -0.5, 0.88], [-3.62, -0.86, 0.84], 42], [1, [-3.0, -0.5, 0.88], [-3.62, -0.86, 0.84], 44])   # from beside it: my coat's front
+CHAIR_C = c([0, [3.0, -0.95, 1.0], [3.65, 0.0, 0.7], 26], [1, [3.05, -0.9, 1.0], [3.65, 0.0, 0.7], 27])              # his empty chair, six
+shot("L51", FACE_C(), hand=0.002)                              # S50 its eyes slide down
+shot("L51.2", COAT_C, hand=0.002)                              # S51 the coat's buttons
+shot("L51.2+0.45", FACE_C(0.12), hand=0.002)                          # S52 its eyes over to his chair
+shot("L52.1+0.1", CHAIR_C, hand=0.002)                             # S53 his empty chair
+shot("L52.2+0.1", FACE_C(-0.1), hand=0.002)                        # S54 and back, down
+shot("L53", COAT_C, hand=0.002)                                # S55 Coat.
+shot("L53.1", CHAIR_C, hand=0.002)                             # S56 Chair.
+shot("L53.2", COAT_C, hand=0.002)                              # S57 Coat.
+shot("L53.3", FACE_C(0.05), hand=0.002)                        # S58 counting
 # 05 the coat was his
 shot("L54", c([0, [-1.3, -2.6, 1.2], [-3.6, -0.95, 0.98], 60], [1, [-1.35, -2.55, 1.2], [-3.6, -0.95, 0.98], 62]), hand=0.002)   # S53 I knew: my face, its face above
 shot("L55", mv([-4.4, -1.0, 1.45], [3.2, -2.5, 1.2], 17), hand=0.003)                            # S55 replay of the wide
@@ -155,7 +164,7 @@ shot("L63", front([ST[0], LY + 0.25, TOP + FH], 0, 1.7, 0.1, 32), hand=0.003)   
 shot("L64", mv([ST[0] + 0.55, LY - 3.0, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.2], 17, [ST[0] + 0.55, LY - 2.9, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.2], 17), hand=0.003)   # S64 the wash
 shot("L65", front([ST[0], LY - 1.15, TOP + FH], 180, 1.5, 0.0, 36), hand=0.003)   # S65 thank you
 shot("L66", front([ST[0], LY + 0.25, TOP + FH], 0, 1.6, 0.0, 34), hand=0.003)   # S66 his slippers
-shot("L68", c([0, [ST[0] + 2.6, LY - 0.35, TOP + 1.45], [ST[0], LY - 0.35, TOP + 1.4], 22], [1, [ST[0] + 2.5, LY - 0.35, TOP + 1.45], [ST[0], LY - 0.35, TOP + 1.4], 22.5]), hand=0.002)   # S66 two-shot, both faces in profile
+shot("L68", c([0, [ST[0] + 3.3, LY - 0.3, TOP + 1.45], [ST[0], LY - 0.3, TOP + 1.38], 24], [1, [ST[0] + 3.2, LY - 0.3, TOP + 1.45], [ST[0], LY - 0.3, TOP + 1.38], 25]), hand=0.002)   # S66 two-shot, both faces in profile
 # 07 two coats
 shot("L69", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S68
 shot("L71", mv([-1.5, -2.3, 1.2], [0.2, -1.65, 0.95], 22, [-1.4, -2.3, 1.2], [0.2, -1.65, 0.95], 23), hand=0.003)   # S69 towels
@@ -173,6 +182,10 @@ for i, (at, cam, opt) in enumerate(SH):
         s["hand"] = opt["hand"]
     shots.append(s)
 SID = {at: s["id"] for (at, _, _), s in zip(SH, shots)}
+# the room's top light in each close-up of the creature, set to match its neighbours' exposure across the cut
+DIM = {"L20": 0.6, "L21": 0.6, "L22": 0.6, "L23": 0.6, "L24": 0.6, "L48.3": 0.45, "L49": 0.5, "L50": 0.4, "L51": 0.6,
+       "L51.2+0.45": 0.6, "L52.2+0.1": 0.6, "L53.3": 0.6,
+       "L54": 0.4, "L58": 0.5}
 RAIN = [SID[k] for k in ("L03", "L04", "L28", "L29", "L34", "L72", "L76")]
 
 # ---------------------------------------------------------------------------------------------------- acting
@@ -304,6 +317,7 @@ ar.jump("L76", [2.3, -2.55, 0.0], hidden=True)
 me0.jump("L76", [1.3, -2.55, 0.0], hidden=True)
 
 # --- the Turned: head turned right round (so its face looks at me and the haircut faces the dryers), arms hung back
+DOWN, SIDE = -1.0, 1.0                   # look keys: the face is upside down, so image-down is face-up (+x is toward chair six)
 TURN = dict(yaw=180, head=[0, 0], arms=[-20, -20], side=[10, 10], expr="neutral", look=[0, 0], sit=True, bend=0,
             lean=0, tremble=0.0, blink=False)
 tu = Actor(seat(4))
@@ -315,16 +329,18 @@ tu.jump("L42", seat(5), hidden=False, **TURN)
 tu.jump("P01+0.3", seat(5), hidden=True)
 tu.jump("L48.3", seat(0), hidden=False, **{**TURN, "lean": 7, "look": [0, 0.0], "head": [0, 0]})
 tu.set("L49", look=[0, 0])
-tu.set("L51", look=[0, -1.0])
-tu.set("L52.1", look=[-1.0, 0.0])
-tu.set("L52.2", look=[0, -1.0])
-tu.set("L53", look=[0, -1.0])
-tu.set("L53.1", look=[-1.0, 0.0])
-tu.set("L53.2", look=[0, -1.0])
-tu.set("L53.3", look=[0, -0.5])
+tu.set("L51", look=[0, DOWN])
+tu.set("L51.2+0.45", look=[SIDE, 0.0])
+tu.set("L52.2+0.1", look=[0, DOWN])
+tu.set("L53", look=[0, DOWN])
+tu.set("L53.1", look=[SIDE, 0.0])
+tu.set("L53.2", look=[0, DOWN])
+tu.set("L53.3", look=[0, DOWN])
+tu.set("L53.3+0.6", look=[SIDE, 0.0])
+tu.set("L53.3+1.0", look=[0, DOWN])
 tu.jump("L55", seat(0), hidden=True)
-tu.jump("L58", seat(0), hidden=False, **{**TURN, "lean": 7, "look": [0, -1.0]})
-tu.jump("L59", seat(0), hidden=False, **{**TURN, "lean": 7, "head": [20, 0], "look": [0, -1.0]})
+tu.jump("L58", seat(0), hidden=False, **{**TURN, "lean": 7, "look": [0, DOWN]})
+tu.jump("L59", seat(0), hidden=False, **{**TURN, "lean": 7, "head": [20, 0], "look": [0, DOWN]})
 tu.jump("L60", seat(0), hidden=True)
 
 tu.keys.append({"from": "L19", "to": "L60", "mouth": [1.0, 1.0]})
@@ -422,14 +438,15 @@ story = {
               "vignette": 0.3, "bloom": 0.25, "grain": 0.012, "red_line": 0.79, "red_lift_blue": 0.5},
     "rain_shots": RAIN,
     "lamp_shots": ["S01", SID["L44"]],
-    "tally_shots": [SID["L31"]],
+    "tally_shots": [SID["L31b"]],
     "hook_lamp_shots": [SID["L72"], SID["L76"]],
-    "scare_shots": ["S47", "S48", "S49", "S50", "S51", "S52", "S53", "S57"],
+    "scare_shots": [SID[k] for k in ("L48.3", "L49", "L50", "L51", "L51.2+0.45", "L52.2+0.1", "L53.3", "L54", "L58")],
     "shoe_shots": [SID["L23"]],
     "hide_wall_shots": [SID["L68"]],
     "stair_fill_shots": [SID["L62"], SID["L65"], SID["L68"]],
+    "cool_shots": [SID["L66"]],
     "phonemes": {"Arthur": "ˈɑɹθəɹ", "turned": "tˈɜɹnd", "drums": "dɹˈʌmz"},
-    "creature_dim": {"S21": 0.6, "S22": 0.6, "S23": 0.6, "S24": 0.6, "S25": 0.6, "S47": 0.45, "S48": 0.5, "S49": 0.25, "S50": 0.5, "S51": 0.5, "S52": 0.5, "S53": 0.25, "S57": 0.5},
+    "creature_dim": {SID[k]: v for k, v in DIM.items()},
     "cast": cast,
     "lines": lines,
     "shots": shots,

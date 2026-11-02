@@ -6,7 +6,7 @@
 - **Target length:** 2:15 to 2:30.
 - **Word count:** 638 spoken words in 77 lines, all `narrator` in voice A, plus 3 pause beats (P02 0.9 s, P01 0.7 s, P03 0.8 s).
 - **Estimated length:** about 2:19 to 2:25. At 290 wpm the speech is about 2:10. The 0.12 s gaps add about 9 s, P01 0.7 s and the loop tail 0.25 s. If the retime lands under 2:15, add back "I read the same PAGE / TEN TIMES." after L31. If it lands over 2:30, L43 goes first, then L74.
-- **Shots:** 68 (S01 to S68).
+- **Shots:** 77 (S01 to S77). The S numbers in the plan below are the beats, not the build's ids: the build (`generator/make_story.py`, `story.json`) splits some beats into several cuts, and the sections give each one's true count.
 - **Name change:** the pitch's "Mr Amadi" is now **Arthur**, and he has no name at all until L68. "Amadi" risks Whisper spellings, and "Mr." reads as "mister" in Kokoro but comes back "Mr." from Whisper, which `asr` counts as a wrong word. "Arthur" is a common word in Whisper's training and Kokoro says it plainly. Until L68 he's "the old man".
 - **Metrics:** `metrics/summary.md` (2026-11-01) has one row, ep11, with every number "?", so there are no lessons to apply yet. The script follows RULES.md as written.
 
@@ -75,7 +75,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 01 The coat (night one)
 
-- **Where:** the laundromat at night, rain outside. **Shots:** 18.
+- **Where:** the laundromat at night, rain outside. **Shots:** 18 (S01 to S18).
 
 - `L01` narrator: I've been WEARING / a stranger's COAT. / For a WEEK.
   - [S01: close on me at the folding table in the green coat, collar up, tubes humming. Slow push in]
@@ -116,7 +116,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 02 The Turned (night two)
 
-- **Where:** the same, the next night. **Shots:** 11.
+- **Where:** the same, the next night. **Shots:** 11 (S19 to S29).
 
 - `L19` narrator: The second night, / somebody ELSE / was in the CHAIRS.
   - [S19: from my seat, the row: the old man in six, and a broad figure in five, its back to me]
@@ -143,14 +143,14 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 03 One chair nearer (night three)
 
-- **Where:** the same, night three. **Shots:** 11.
+- **Where:** the same, night three. **Shots:** 12 (S30 to S41).
 
 - `L30` narrator: Night THREE, / it was in chair FOUR.
   - [S30: from my seat, the row: the old man in six, five empty, the Turned in four]
 - `L31` narrator: Its face / didn't BLINK.
-  - [S31: the lore plant. Low from the floor, the underside of chair four's seat: six short laundry-blue strokes. Held 1.5 s, not narrated]
+  - [S31: its face, close, three-quarter, eyes open and fixed: the line is about what it shows]
 - `L31b` narrator: I read the / same PAGE / TEN TIMES.
-  - [S31 held into S32]
+  - [S32: the lore plant. Low from the floor, the underside of chair four's seat: six short laundry-blue strokes. Held 1.5 s through the line, not narrated]
 - `L32` narrator: ONE chair NEARER. / I never SAW it move.
   - [S32: close on its face over the chair back, a little bigger in frame than S25]
 - `L33` narrator: I thought, / it wants the COAT BACK.
@@ -172,7 +172,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 04 Night four (the scare)
 
-- **Where:** the same, night four. **Shots:** 11.
+- **Where:** the same, night four. **Shots:** 17 (S42 to S58).
 
 - `L41` narrator: Night FOUR, / the old man / wasn't THERE.
   - [S41: from the door, the row and table, chair six's place empty of him]
@@ -190,7 +190,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S45 held: the room at 20%, the dryer windows a steady warm glow, the Turned a dark shape in six]
 - `L47` narrator: The DRUMS / STOPPED.
   - [S45 held: every drum still. Music drops here]
-- `P01` pause: 0.7 s, no word.
+- `P01` pause: 0.5 s, no word (the silence is 0.8 s with the line gaps).
   - [S45 held at 20%. Only the hum. The ramp back to full starts at the end of P01 and takes 1.0 s]
 - `L48` narrator: When they came BACK, / its FACE / was an INCH / from MINE.
   - [S45 holds through "When they came BACK" while the ramp finishes, then S46 cuts in on "its FACE". Close: the Turned in chair one against the table edge, its head tipped back over the chair, its upside-down face filling the top half of frame, my face in the lower third, the green collar between. The hit lands on "INCH". The test still]
@@ -199,17 +199,17 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L50` narrator: I couldn't MOVE.
   - [S48: front three-quarter on my face, frozen, the green collar]
 - `L51` narrator: Its eyes / slid DOWN / to the COAT.
-  - [S49: over its head, its gaze on the coat's buttons]
+  - [S48: its face, pupils clearly down; then S49: over its shoulder, my coat's buttons]
 - `L52` narrator: Then over to / HIS chair, / and BACK.
-  - [S50: its face, eyes to the far end, the empty chair six soft behind]
+  - [S50: its face, pupils sideways; S51: chair six, empty; S52: its face, pupils down again]
 - `L53` narrator: Coat. / Chair. / Coat. / Like it was COUNTING.
-  - [S51: alternating the coat and chair six, held, slow, no fast cutting]
+  - [S53 coat, S54 chair six, S55 coat: three quick cuts on the three words; S56: its face, the pupils going down, sideways, down]
 - `P03` pause: 0.8 s, no word.
   - [S51 held]
 
 ## 05 The coat was his
 
-- **Where:** the same moment. **Shots:** 5.
+- **Where:** the same moment. **Shots:** 5 (S59 to S63).
 
 - `L54` narrator: Then I KNEW / that LAVENDER.
   - [S52: front three-quarter on my face, eyes widening, the Turned's face still above me]
@@ -224,7 +224,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 06 Gratitude
 
-- **Where:** the laundromat, then the stair and his door. **Shots:** 9.
+- **Where:** the laundromat, then the stair and his door. **Shots:** 9 (S64 to S72).
 
 - `L59` narrator: I stood UP. / It didn't / FOLLOW.
   - [S57: me standing, it staying in chair one, its face turning only with my coat. Music turns to C major here]
@@ -249,7 +249,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 07 Two coats
 
-- **Where:** the laundromat, a few nights later. **Shots:** 3 (S66, S67, S68).
+- **Where:** the laundromat, a few nights later. **Shots:** 5 (S73 to S77).
 
 - `L69` narrator: ARTHUR sat / in his own CHAIR again.
   - [S66: the row from my seat, Arthur in six, the other five chairs empty and plain]

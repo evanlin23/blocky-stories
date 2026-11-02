@@ -152,7 +152,7 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
 @lru_cache(maxsize=256)
 def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | None, expr: str, open_: float,
           look: tuple[float, float], blink: float, freckles: bool, cheeks: str | None, bags: bool,
-          mouth: str = "auto", inside: str | None = None) -> Image.Image:
+          mouth: str = "auto", inside: str | None = None, pscale: float = 1.0) -> Image.Image:
     im = Image.new("RGB", (TEX_W, TEX_H), hexrgb(skin))
     d = ImageDraw.Draw(im)
     s = FX1 - FX0                      # face box width in px
@@ -200,7 +200,7 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
                 _ellipse(d, cx, ey, rx, max(2, ry), fill=MIRROR_BLACK, outline=MIRROR_BLACK, width=th)
             else:
                 _ellipse(d, cx, ey, rx, max(2, ry), fill=white, outline=inkc, width=th)
-                pr = rx * (0.2 if expr == "terrified" else 0.28 if expr in ("blank", "wide") else 0.42)
+                pr = rx * (0.2 if expr == "terrified" else 0.28 if expr in ("blank", "wide") else 0.42) * pscale
                 if ry > rx * 0.3:
                     px, py = cx + lx * rx * 0.35, ey + ly * ry * 0.3
                     _ellipse(d, px, py, pr, min(pr, ry * 0.9), fill=pup)
@@ -259,12 +259,13 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
     if mouth == "gape":
         mx, my, rx, ry = _fx(0.5), _fy(0.68), 0.25 * s, 0.1 * s
         _ellipse(d, mx, my, rx, ry, fill=(5, 2, 3), outline=tuple(int(c * 0.4) for c in hexrgb(skin)), width=max(6, int(0.02 * s)))
-        # a row of top teeth along the upper edge, so a face hung upside down reads as one (the teeth hang at the bottom)
+        # a row of top fangs along the upper edge, so a face hung upside down reads as one (the teeth hang at the bottom)
         for k in range(-3, 4):
             x = mx + k * rx * 0.27
-            hw = rx * 0.11
-            top = my - ry * math.sqrt(max(0.0, 1 - (k * 0.27) ** 2)) * 0.92
-            d.rectangle([x - hw, top, x + hw, top + ry * 0.42], fill=(226, 218, 196))
+            hw = rx * 0.095
+            top = my - ry * math.sqrt(max(0.0, 1 - (k * 0.27) ** 2)) * 0.95
+            h = ry * (0.62 if k % 2 else 0.45)
+            d.polygon([(x - hw, top), (x + hw, top), (x + hw * 0.15, top + h)], fill=(214, 204, 176))
     elif mouth == "line":
         _line_mouth(d, _fx(0.5), _fy(0.7), s, inkc, open_)
     elif mouth != "none":
@@ -278,10 +279,12 @@ def face_image(face: dict, skin: str, expr: str = "neutral", open_: float = 0.0,
     """The head's whole texture for one expression, mouth opening (0..1), gaze (-1..1 each way) and blink (0..1).
     Values are snapped so a film reuses a few dozen textures, not thousands."""
     q = lambda x, n: round(x * n) / n
+    g = float(face.get("gaze", 1.0))     # opt-in: how far the pupils travel (1.0 is the usual, small)
+    look = (look[0] * g, look[1] * g)
     return _draw(skin, face.get("eyes", "round"), bool(face.get("brows", True)), face.get("ink", "#1a1416"),
                  face.get("pupil", "#141012"), face.get("glow"), expr, q(open_, mouth_steps(face)), (q(look[0], 2), q(look[1], 2)),
                  1.0 if blink > 0.5 else 0.0, bool(face.get("freckles")), face.get("cheeks"), bool(face.get("bags")),
-                 face.get("mouth", "auto"), face.get("mouth_inside"))
+                 face.get("mouth", "auto"), face.get("mouth_inside"), float(face.get("pupil_scale", 1.0)))
 
 
 def mouth_steps(face: dict) -> int:
@@ -294,6 +297,10 @@ def face_key(face: dict, skin: str, expr: str, open_: float, look, blink: float)
     q = lambda x, n: round(x * n) / n
     # a non-default eye or mouth style is in the key, so a cached texture of the old style is never reused
     style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror", "gape"))
+    if face.get("pupil_scale", 1.0) != 1.0:
+        style += f"ps{face['pupil_scale']}-"
+    if face.get("gaze", 1.0) != 1.0:
+        style += f"g{face['gaze']}-"
     if face.get("mouth_inside"):   # an open mouth's own inside colour (the copy's opens onto black)
         style += f"in{face['mouth_inside'].lstrip('#')}-"
     return f"{style}{expr}-{q(open_, mouth_steps(face))}-{q(look[0], 2)}-{q(look[1], 2)}-{int(blink > 0.5)}"

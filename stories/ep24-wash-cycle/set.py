@@ -440,6 +440,9 @@ def build(kit, story, tl):
     kit.aim(kit.LIGHTS["hook lamp"]["obj"], (3.35, -3.3, 1.3))
     kit.light("stair fill", "AREA", (ST[0], 1.0, 4.3), 90.0, "#ffd8b0", size=1.4)
     kit.aim(kit.LIGHTS["stair fill"]["obj"], (ST[0], 2.6, 1.8))
+    # his door, shot L66: a cool white fill from the camera side, so his white hair stays white (the warm bulb is dimmed)
+    kit.light("door cool", "AREA", (ST[0] + 0.4, 3.26, 4.6), 130.0, "#dbe8ff", size=1.4)
+    kit.aim(kit.LIGHTS["door cool"]["obj"], (ST[0], 5.1, 3.7))
     kit.light("t rim", "SPOT", (0, 2.2, 1.6), 150.0, "#9fc4ff", size=0.15, spot=38, blend=0.7)
     kit.light("t key", "SPOT", (0, -1.2, 0.35), 260.0, "#d79a52", size=0.12, spot=34, blend=0.7)
     return ctx
@@ -629,6 +632,11 @@ def animate(kit, story, tl, t, ctx):
     over["me lamp"] = 1.0 if sid in story.get("lamp_shots", []) else 0.0
     over["hook lamp"] = 1.0 if sid in story.get("hook_lamp_shots", []) else 0.0
     over["stair fill"] = 1.0 if sid in story.get("stair_fill_shots", []) else 0.0
+    cool = sid in story.get("cool_shots", [])
+    over["door cool"] = 1.0 if cool else 0.0
+    if cool:
+        over["stair bulb"] = 0.2
+        over["landing fill"] = 0.3
     for sx in (-1, 1):   # the near stair wall comes away for the doorway two-shot
         w = bpy.data.objects.get(f"stair wall{sx}")
         if w is not None and sx == 1:
