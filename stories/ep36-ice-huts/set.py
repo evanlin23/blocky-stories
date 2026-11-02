@@ -411,6 +411,7 @@ def build_lights(kit, ctx):
     kit.light("hutfill", "POINT", (RED[0] + 0.6, RED[1] - 0.9, 1.9), 60.0, "#ffb98a", size=0.5)
     # the Leaner's cold key and rim, moved in animate to stand with it
     ctx["lkey"] = kit.light("lkey", "AREA", (0, 0, 2), 150.0, "#aac8ea", size=1.6)
+    ctx["lamber"] = kit.light("lamber", "POINT", (0, 0, -20), 60.0, "#ffb060", size=0.25)
     ctx["lrim"] = kit.light("lrim", "SPOT", (0, 0, 2), 260.0, "#9cc4ee", size=0.3, spot=40, blend=0.5)
     # the car: a soft orange from the vents, a pale glow from the roof
     cx, cy = CAR
@@ -682,10 +683,14 @@ def animate_lights(kit, story, tl, t, ctx, over, d):
         kit_aim(ctx["lkey"], tuple(head))
         ctx["lrim"].location = head + toward * 2.4 - side * 1.0 + Vector((0, 0, 0.8))
         kit_aim(ctx["lrim"], tuple(head))
-        over["lkey"] = story.get("leaner_key", {}).get(sid, 1.0)
+        amber = sid in story.get("amber_shots", [])
+        over["lamber"] = 1.0 if amber else 0.0
+        if amber:       # the lamp's glow comes through the window and lights the tipped face amber
+            ctx["lamber"].location = head + fwd * 0.7 + Vector((0, 0, 0.25))
+        over["lkey"] = 0.0 if amber else story.get("leaner_key", {}).get(sid, 1.0)
         over["lrim"] = story.get("leaner_rim", {}).get(sid, 1.0)
     else:
-        over["lkey"] = over["lrim"] = 0.0
+        over["lkey"] = over["lrim"] = over["lamber"] = 0.0
     return over
 
 
@@ -701,6 +706,7 @@ def animate(kit, story, tl, t, ctx):
     for o in ctx.get("leaves", []):
         o.hide_render = sid not in story.get("leaves_shots", [])
     after = int(sid[1:3]) >= 72
+    bpy.data.objects["red.pane"].hide_render = sid == "S41"
     ctx["lap"].hide_render = not (after and sid in ("S73", "S74", "S75", "S76", "S77"))
     for b in ctx["blanket"]:
         b.hide_render = after

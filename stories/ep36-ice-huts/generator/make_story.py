@@ -213,7 +213,7 @@ shot("S31", "L24.2", "hut", still(H(0.4, -0.6, 1.2), H(-2.0, -1.0, 1.3), 24),
 shot("S32", "L25", "car", still(C(0.1, 0.35, 1.5), C(0.5, 1.15, 1.05), 26),
      {"grandad": P(C(0.5, 1.1), 70, z=-0.23, expr="asleep", head=[0, 14], blink=False)},
      {"grandad": [CAR[0] + 1.0, CAR[1] + 3.0]})
-shot("S33", "L26", "car", still(C(0.05, 1.9, 1.5), C(-0.3, -0.3, 1.3), 24),
+shot("S33", "L26", "car", still(C(-0.85, 2.2, 1.3), C(0.45, 0.0, 0.9), 15),
      {"me": P(C(-0.42, -0.2), 0, z=-0.23, expr="worried"),
       "grandad": P(C(0.5, 1.1), 70, z=-0.23, expr="asleep", head=[0, 14], blink=False)},
      {"me": C(0.5, 1.1), "grandad": [CAR[0] + 1.0, CAR[1] + 3.0]}, flame_ang={"me": 42})
@@ -230,13 +230,15 @@ shot("S39", "L32", "hut", still(H(0.6, -0.9, 1.25), H(-2.0, -1.0, 0.8), 24),
 shot("S40", "L32.3", "hut", still(H(0.95, -1.1, 1.3), H(-0.35, 0.45, 1.25), 26),
      {"grandad": P(H(-0.35, 0.4), 180, z=-0.26, expr="wide", blink=False)}, {"grandad": "shore"})
 LEAN_V4 = dict(pos=(RED[0] + 0.25, RED[1] + 3.5), lean=55.0, face=(RED[0] + 0.25, RED[1] + 1.0), look=[0.5, 0.0])
+LEAN_V4w = dict(LEAN_V4, lean=38.0)
+LEAN_V4b = dict(LEAN_V4, face=(RED[0] - 1.0, RED[1] + 1.0))
 shot("S41", "L33", "hut", still(H(0.2, -0.5, 1.15), H(0.25, 1.8, 1.1), 30),
-     {"me": P(H(-0.7, -0.6), 180, expr="scared", z=0.0)}, {"me": list(RED)}, leaner=LEAN_V4, curtain=0.0, leaner_cam=True,
+     {"me": P(H(-0.7, -0.6), 180, expr="scared", z=0.0)}, {"me": list(RED)}, leaner=LEAN_V4w, curtain=0.0, leaner_cam=True,
      leaner_key_gain=0.0)
 shot("S42", "L34", "ice", still((RED[0] + 3.4, RED[1] + 3.2, 0.95), (RED[0] + 0.3, RED[1] + 2.6, 0.95), 28), {}, {},
      leaner=LEAN_V4, fog=(0.012, 0.01))
-shot("S43", "L35", "ice", still(H(-1.2, 2.2, 0.9), H(0.25, 2.3, 0.92), 60), {}, {},
-     leaner=LEAN_V4)
+shot("S43", "L35", "ice", still((26.6, 5.2, 0.9), (30.5, 6.7, 0.85), 55), {}, {},
+     leaner=LEAN_V4b)
 shot("S44", "L36", "hut", still(H(0.2, -0.4, 1.2), H(0.25, 1.8, 1.15), 30),
      {"me": P(H(-0.7, -0.6), 180, expr="scared")}, {"me": list(RED)}, leaner=LEAN_V4, curtain=1.0, curtain_dur=0.9)
 # 07 the fog night
@@ -250,16 +252,17 @@ shot("S48", "L40", "hut", still(H(-1.0, -1.5, 1.5), H(-0.2, -0.6, 1.5), 40),
      {"me": P(H(-0.2, -0.6), -90, expr="wide")}, {"me": list(RED)})
 shot("S49", "L41", "hut", still(H(1.2, -0.9, 1.3), H(-1.9, -0.9, 1.1), 30),
      {"me": P(H(-1.25, -0.95), -90, expr="scared", lean=20)}, {"me": list(RED)}, door_open=(1.0, 0.7), door_at="L41.2")
-SCARE_L = dict(pos=(RED[0] - 2.8, RED[1] + 0.38), lean=50.0, face=(RED[0] - 1.7, RED[1] - 0.3), look=[0.0, 0.0])
-ME_SCARE = P(H(-0.15, -0.2), -90, expr="terrified", lean=42, head=[0, 0], blink=False)
-shot("S50", "L42", "ice", still(H(-0.7, -1.25, 0.35), H(-1.5, -0.2, 1.1), 30), {"me": ME_SCARE}, {"me": list(RED)},
+LEAN_OLD = dict(pos=(RED[0] - 2.8, RED[1] + 0.38), lean=50.0, face=(RED[0] - 1.7, RED[1] - 1.5), look=[0.0, 0.0])
+SCARE_L = dict(pos=(26.4, 4.3), lean=50.0, face=(24.1, 2.4), look=[0.0, 0.0])
+ME_SCARE = P((26.4, 2.2), face=(25.14, 4.9), expr="terrified", lean=20, head=[0, 0], blink=False)
+shot("S50", "L42", "ice", still((21.6, 3.4, 0.5), (26.0, 3.2, 0.95), 30), {"me": ME_SCARE}, {"me": list(RED)},
      leaner=SCARE_L, leaner_cam=True, door_open=(1.0, 0.01), door_state=1.0, fog=(0.07, 0.01))
-shot("S51", "L43", "ice", still(H(-1.6, -3.4, 1.15), H(-1.7, -0.1, 1.1), 36), {"me": ME_SCARE}, {"me": list(RED)}, leaner=SCARE_L)
-shot("S52", "L44", "ice", still(H(-2.3, -1.7, 1.1), H(-1.4, -0.2, 1.1), 50), {"me": ME_SCARE}, {"me": list(RED)}, leaner=SCARE_L,
+shot("S51", "L43", "ice", still((24.4, 1.0, 0.35), (25.7, 3.3, 0.9), 34), {"me": ME_SCARE}, {"me": list(RED)}, leaner=SCARE_L)
+shot("S52", "L44", "ice", still((23.0, 3.0, 0.4), (26.0, 3.1, 1.0), 42), {"me": ME_SCARE}, {"me": list(RED)}, leaner=SCARE_L,
      puffs=[0.2, 0.75])
-shot("S53", "L44.2", "ice", still(H(-0.7, -1.25, 0.4), H(-1.8, -0.2, 1.05), 55), {"me": ME_SCARE}, {"me": list(RED)},
+shot("S53", "L44.2", "ice", still((24.0, 2.5, 0.3), (25.5, 3.5, 0.8), 36), {"me": ME_SCARE}, {"me": list(RED)},
      leaner=SCARE_L)
-shot("S54", "L45", "ice", still(H(-3.5, -1.4, 1.3), H(0.75, 0.4, 0.6), 32), {"me": ME_SCARE}, {"me": list(RED)}, leaner=SCARE_L)
+shot("S54", "L45", "ice", still((21.2, 1.8, 0.5), (26.0, 3.2, 0.95), 28), {"me": ME_SCARE}, {"me": list(RED)}, leaner=SCARE_L)
 # 08 the climax: the rule turned
 FAR_F = {"fisher1": P((11.2, -5.2), 90), "fisher2": P((11.2, 8.6), 90), "fisher3": P((22.5, -3.5), 90),
          "fisher4": P((20.0, -10.0), 90)}
@@ -269,12 +272,12 @@ shot("S56", "L47", "ice", still(H(-3.4, -2.6, 1.55), H(-1.4, -0.9, 1.55), 28),
      {"me": P(H(-1.4, -0.9), -100, expr="worried", lean=10)}, {"me": "shore"})
 shot("S57", "L48", "ice", still(H(-2.9, -0.5, 0.7), H(-1.4, -0.9, 1.9), 26),
      {"me": P(H(-1.4, -0.9), -100, expr="wide", head=[0, -32])}, {"me": "shore"})
-shot("S58", "L49", "ice", still(H(-1.5, -2.2, 0.3), H(-1.6, -0.9, 2.0), 28),
+shot("S58", "L49", "ice", still(H(-1.6, -3.6, 0.5), H(-1.6, -0.9, 1.9), 28),
      {"me": P(H(-1.6, -0.9), -100, expr="wide", head=[0, -30])}, {"me": "shore", "swing": ("me", "L49.0", [88.0, -4.0])},
-     flame_ang={"me": 52}, leaner=SCARE_L)
-shot("S59", "L50", "ice", still(H(-5.0, -2.2, 1.35), H(-2.1, -0.9, 1.1), 28),
+     flame_ang={"me": 52}, leaner=LEAN_OLD)
+shot("S59", "L50", "ice", still(H(-3.0, -5.8, 1.3), H(-2.8, -1.1, 1.2), 24),
      {"me": P(H(-1.2, -1.0), -90, expr="worried", walk=[(1.2, H(-4.4, -1.15)[:2])], lean=10)}, {"me": [88.0, -4.0]},
-     leaner=SCARE_L)
+     leaner=LEAN_OLD)
 shot("S59b", "L50.3", "ice", still(H(-2.6, -2.8, 1.4), H(-6.5, -1.0, 1.3), 28),
      {"me": P(H(-4.6, -1.2), -90, walk=[(1.5, H(-12.0, -1.2)[:2])], expr="worried")}, {"me": [88.0, -4.0]})
 GRANDAD_AT = (88.0, -4.0)
@@ -292,7 +295,7 @@ shot("S64", "L55", "ice", still((85.2, -2.1, 1.1), (88.0, -4.0, 1.0), 40),
 shot("S65", "L56", "ice", still((84.4, -8.0, 2.5), (87.3, -4.8, 1.5), 24),
      {"me": P((86.6, -5.6), 40, expr="soft", head=[0, 10]), "grandad": P(GRANDAD_AT, 215, z=-0.3, expr="neutral")},
      {"me": GRANDAD_AT, "grandad": "shore"})
-shot("S66", "L57", "car", still(C(0.05, 1.9, 1.5), C(-0.3, -0.3, 1.3), 24),
+shot("S66", "L57", "car", still(C(-0.85, 2.2, 1.3), C(0.45, 0.0, 0.9), 15),
      {"me": P(C(-0.42, -0.2), 0, z=-0.23, expr="worried"),
       "grandad": P(C(0.5, 1.1), 70, z=-0.23, expr="asleep", head=[0, 14], blink=False)},
      {"me": C(0.5, 1.1), "grandad": [CAR[0] + 1.0, CAR[1] + 3.0]}, flame_ang={"me": 42})
@@ -306,16 +309,16 @@ shot("S68", "L58", "town", move(([-21.2, -1.5, 1.7], [-24.0, -2.6, 1.5]), ([-22.
 shot("S69", "L59", "ice", still((15.0, 4.4, 1.55), (29.0, 3.6, 1.55), 30),
      {"me": P((24.0, 2.8), 90, walk=[(2.2, (26.0, 2.8))]), "grandad": P((24.0, 4.9), 90, walk=[(2.2, (26.0, 4.9))])},
      {"me": [24.0, 40.0], "grandad": "shore"}, fog=(0.03, 2.0), puffs=[0.5], leaner_cam=False)
-shot("S70", "L60", "ice", still(H(-5.6, 2.4, 1.5), H(-2.0, -0.2, 1.1), 30), {}, {}, leaner=dict(SCARE_L, lean=50.0),
+shot("S70", "L60", "ice", still((25.9, 0.9, 1.3), (27.8, 3.8, 1.1), 30), {}, {}, leaner=LEAN_OLD,
      door_state=0.0, fog=(0.03, 0.01))
 shot("S71", "L60.3", "ice", still(H(-5.6, -3.0, 1.45), H(-2.0, -1.0, 1.2), 30),
      {"me": P(H(-3.4, -1.9), 80, walk=[(1.2, H(-1.6, -1.15)[:2])], expr="worried"),
       "grandad": P(H(-3.7, -3.3), 80, walk=[(1.2, H(-1.9, -1.45)[:2])])}, {"me": "shore", "grandad": "shore"},
-     leaner=SCARE_L)
+     leaner=LEAN_OLD)
 shot("S72", "L61.3", "hut", still(H(-0.9, -1.2, 1.2), H(0.75, 0.45, 0.8), 24),
      {"me": P(H(0.75, 0.4), 0, z=-0.26, expr="soft")}, {"me": "shore"}, lamp=(1.0, 1.5), lap=True, door_state=0.0)
 shot("S73", "L62", "hut", still(H(-0.9, -0.9, 1.25), H(0.25, 1.8, 1.0), 30),
-     {"me": P(H(0.75, 0.4), 150, z=-0.26, expr="soft", head=[-30, 4])}, {"me": "shore"}, lap=True)
+     {"me": P(H(0.75, 0.4), 150, z=-0.26, expr="soft", head=[-30, 4])}, {"me": "shore"}, lap=True, curtain=0.0, curtain_dur=1.0)
 shot("S74", "L63", "hut", still(H(1.2, -1.5, 1.35), H(0.2, 0.4, 1.0), 26),
      {"me": P(H(0.75, 0.4), -60, z=-0.26, expr="soft"), "grandad": P(H(-0.35, 0.4), 120, z=-0.26, expr="soft")},
      {"me": "shore", "grandad": "shore"}, lap=True, dusk=(1.0, 3.0))
@@ -325,7 +328,7 @@ shot("S75", "L64", "hut", still(H(-0.35, -1.0, 1.6), H(-0.35, 0.4, 1.6), 30),
 shot("S76", "L65", "hut", still(H(0.2, -1.6, 1.3), H(0.2, 0.4, 1.4), 24),
      {"me": P(H(0.75, 0.4), -75, z=-0.26, expr="soft"), "grandad": P(H(-0.35, 0.4), 75, z=-0.26, expr="soft")},
      {"me": H(-0.35, 0.4), "grandad": H(0.75, 0.4)}, lap=True)
-shot("S77", "L65.5", "hut", still(H(1.2, -1.4, 1.35), H(0.75, 0.4, 1.35), 45),
+shot("S77", "L65.5", "hut", still(H(0.45, -1.4, 1.3), H(0.75, 0.4, 1.3), 45),
      {"me": P(H(0.75, 0.4), 14, z=-0.26, expr="grin")}, {"me": H(-0.35, 0.4)}, lap=True)
 
 WHERE = {s["id"]: s["where"] for s in SH}
@@ -490,6 +493,8 @@ story = {
     "shot_where": WHERE,
     "leaner_shots": LEANER_SHOTS,
     "leaves_shots": ["S05"],
+    "amber_shots": ["S41"],
+    "leaner_key": {"S50": 2.2, "S51": 2.2, "S52": 2.2, "S53": 2.2, "S54": 2.2, "S43": 1.6},
     "door_shots": ["S25", "S31", "S39", "S49", "S50", "S51", "S52", "S53", "S54", "S55", "S56", "S57", "S58", "S59", "S70", "S71"],
     "music": {"root": 47, "mode": "minor", "bpm": 64, "seed": 36,
               "sections": [
