@@ -3,7 +3,7 @@
 **Slug:** `ep58-swing-bridge` (replaces batch 4's killed ep40 `night-market`, pitch #24b)
 
 ## Premise
-In this town your hands glow, soft and amber, whenever somebody needs you. Mine never have, not that I've seen, and I tell myself that suits me: my wife Ada is the strong one, and I don't need anybody either. Her dad, Emrys, swung the old iron swing bridge on the river for forty-one years, and his hands were the brightest thing on the water. This spring the new road bridge opened downriver and the old one was bolted shut. Ada asks me to sit with him in the evenings in the bridge cabin, where he still waits for boats, calls me "the lodger", and watches his hands go dark week by week. Something stands on the far bank in the fog with its arms laid along the bolted bridge, and each night its hands rest a little nearer the cabin, and the second stool nobody has sat on in thirty years.
+In this town your hands glow, soft and amber, whenever somebody needs you. Mine never have, not that I've seen, and I tell myself that suits me: my wife Ada is the strong one, and I don't need anybody either. Her dad, Emrys, swung the old iron swing bridge on the river for forty-one years, and his hands were the brightest thing on the water. This spring the new road bridge opened downriver and the old one was bolted shut. Ada asks me to sit with him in the evenings in the bridge cabin, where he still waits for boats, calls me "the lodger", and watches his hands go dark week by week. Something stands on the far bank in the fog with its arms laid along the bolted bridge, and each night its hands rest a little nearer the cabin, toward the second stool nobody has sat on in thirty years.
 
 ## Rule
 Your hands glow while somebody needs you (L01). The montage shows it everywhere (L02 to L06), and from L10 to L17 it shows on Emrys with nobody explaining it: bright when the boats needed him, dimmer each week once nothing does. The rule says **somebody**, and it never says how big the need has to be (L53 to L54).
@@ -15,7 +15,7 @@ My hands had been glowing for months, faintly, and it was Emrys who needed me: t
 - Bonus plant (L19, S28 to S29): two mugs steaming on the sill every evening before I arrive. He was waiting for me, not for boats.
 
 ## Shape
-`about-me` in the package (the narrator's own marker turns out to be the loved one's need). The Keeper fits around it: the cabin was built for two bridgemen, the Span's hands rest on the second stool while the count is short, and it's gone once I sit there.
+`about-me` in the package (the narrator's own marker turns out to be the loved one's need). The Keeper fits around it: the cabin was built for two bridgemen, the Reach comes to the cabin window by the second stool while the count is short, and it's gone once I sit there.
 
 ## World
 One made-up river town in late autumn. No real names and no words anywhere in the set: no signs, no plaques, no lettering on the bridge, the cinema or the van.
@@ -35,41 +35,42 @@ One made-up river town in late autumn. No real names and no words anywhere in th
 
 ## The marker: glowing hands (visible by 2 s, on every character but the creature)
 - The hand blocks themselves glow: a soft amber-gold (#ffc76a) from inside the hand, with a small soft halo and a little warm light spill on the sleeve, coat and ground (one small point light per hand). It reads as "carrying light", never as gloves or as fire.
-- Brightness is the need. Bright: the doctor and Emrys in the memories. Medium: most people. Faint: me (and only visible in the dark). Dark: the Span's hands, always.
+- Brightness is the need. Bright: the doctor and Emrys in the memories. Medium: most people. Faint: me (and only visible in the dark). Dark: the Reach's hands, always.
 - Every change in brightness is a slow ramp of at least 1 s, most 2 to 2.5 s. Never a flicker, never a pulse.
 - **Exposure:** the hand core never clips. Keep its brightest pixel under about 235 in 8-bit, the halo well under that, and faces always brighter than the halo spill on them. Test S01 and S80 for clipping before anything else.
 - My hands in daylight show nothing visible (S10, S11). In the dark they show a faint gold (S27, S32, S69). The stove light is a redder orange (#e0682a) so the two can be told apart.
 
-## The creature: the Span (never named on screen)
-**The one wrong thing: its arms are as long as the bridge.** Everything else is an ordinary man of ordinary height (Emrys's height plus his cap), standing like an old lock-keeper leaning on a balance beam. He stays on the far bank, about 30 m off, the whole film. Only his hands come nearer.
-- **The read in one silhouette:** a small figure on the far bank, and two thin lines running the whole length of the bridge rail to two hands at the near end. That's the shot the whole design serves.
-- **Build (one model in `set.py`, posed per shot):** ordinary R6 torso, legs and head, standing upright, leaning a few degrees forward from the ankles, never bent at the hips. Each arm leaves the shoulder, drops forward and down to the top chord of the rail at waist height, then runs flat along it: a chain of thin sleeve blocks, each about 1.5 m, laid end to end with a small fold of cloth at each join so it reads as one long sleeve, not a pipe. The two arms lie side by side on the near-side rail, a hand's width apart, perfectly straight. Arm thickness stays ordinary (the same as an ordinary forearm), so the length is the only wrongness. Hands are ordinary size.
+## The creature: the Reach (never named on screen)
+**The one wrong thing: its arms are as long as the bridge.** Everything else is an ordinary man of ordinary height (Emrys's height plus his cap), standing like an old lock-keeper leaning on a balance beam. For three nights he stays on the far bank and only his hands come nearer. On Thursday it's the other way round: he is at our window, and his hands lie back on the far bank.
+- **The read in one silhouette:** a small figure at one end of the bridge, and two thin lines running the whole length of the rail to two hands at the other end. Every creature shot serves that.
+- **Build (one model in `set.py`, posed per shot):** ordinary R6 torso, legs and head, standing upright. Each arm leaves the shoulder, drops to the top chord of the rail at waist height, then runs flat along it: a chain of thin sleeve blocks, each about 1.5 m, laid end to end with a small fold of cloth at each join so it reads as one long sleeve, not a pipe. The two arms lie side by side, a hand's width apart, perfectly straight. Arm thickness stays ordinary (an ordinary forearm), so the length is the only wrongness. Hands are ordinary size.
 - **Clothes:** a lock-keeper's ochre waistcoat (#8a6424) buttoned to the neck over a near-black peat-brown shirt (#2b2420), so the long sleeves read as dark lines against pale fog and apart from the green rail. Peat trousers, boots with tan toe caps (#b39a78). Skin warm clay (#c49a74). Short peat-brown block hair. Never grey, never pale.
-- **Face (our own, in `faces.py`):** an ordinary face that doesn't change: two small black eyes set a touch wide, each with one pin highlight (the brightest thing on it), no brows, a short straight mouth. Head tipped down a few degrees, looking along its own arms toward the cabin.
-- **Hands:** the same dull clay as its face, with no glow ever (it carries none of the town's marker). Always flat, palms down, fingers together, resting. **Never gripping, never curled, never closed on anything.** They never touch anyone and nobody is ever pulled: the nearest they come is a hand's width from Emrys's own hand on the sill.
+- **Face (our own, in `faces.py`):** an ordinary face that doesn't change: two small black eyes set a touch wide, each with one pin highlight (the brightest thing on it), no brows, a short straight mouth. Head tipped down a few degrees.
+- **Hands:** the same dull clay as its face, with no glow ever (it carries none of the town's marker). Always flat, palms down, fingers together, resting on the iron. **Never gripping, never curled, never closed on anything.** They never touch anyone and nobody is ever pulled.
 - **Pose rules (this is what makes it read):**
-  - It's never seen moving, only nearer between cuts. The hands are the only thing that changes place, and the arms are as long as they need to be to reach.
-  - Shoot the arms along their length or from the side, so the lines run out of frame toward the far bank. Whenever the hands are in frame, at least a stretch of the two sleeves runs away from them, so nobody reads them as cut-off hands.
+  - It's never seen moving, only nearer between cuts. It never chases.
+  - Shoot the arms along their length or from the side, so the lines run out of frame toward the other bank. Whenever hands or body are in frame, at least a stretch of sleeve runs away from them.
   - Behind the sleeves there is always something lighter: fog, the window, the lit plaster wall. A thin cool rim along the top of each sleeve.
-  - The body is only ever seen far off on the far bank, by long lens. Its face is shown once clearly (S62), by long lens through the fog, at least 1/5 of the frame width.
-- **Light it for fear:** front fill dead. The hands keyed low from the lamp and the stove's last embers, a cool blue rim from the fogged window along the sleeves. The far bank is a dark shape against bright fog (S51 to S54), then a lit figure for S62 only, caught in the slow car lights from the new bridge.
-- **Test still first (before any other shot):** (1) a pure-black silhouette, side-on to the bridge against pale fog at 270x480: the small figure, the two lines along the rail, two hands at the near end. A viewer must say "its arms are as long as the bridge" within a second. (2) S63 finished at phone size, lit as planned. If either reads as a rope, a pipe, a handrail or two people, thicken the sleeve folds, lift the lines a few centimetres clear of the rail's top chord and brighten the fog behind them before building anything else.
-- How it differs from earlier creatures: the Attendant's long arms were folded, white-gloved and close by, and its face was a button panel. This one's arms are laid out straight and flat, its face is ordinary, and its body never comes near. Big Hands (killed `fire-ring`) had huge hands, and these are ordinary size. It isn't too tall (the Stilted, the Walker), and it isn't bent anywhere (the Stooped, the Skater, the Wrung One). One wrong length, lying still.
+  - **The lean (L45, once):** outside the tall window with the lower sash pushed up, it leans forward from the ankles, upright like a man leaning on a beam, head and shoulders in at the open sash, face to face with me, a hand's width between our faces. Its arms still run back out behind it, over the bank and along the whole rail to its hands on the far bank. It never comes further in and never touches me. The lean is a new pose across a cut.
+- **Light it for fear:** front fill dead. On the far bank, a dark shape against bright fog (S51 to S54). At the window, key from the low lamp and the stove's last embers below and to the side, a cool blue rim from the fog along its shoulders and sleeves.
+- **Test still first (before any other shot):** (1) a pure-black silhouette, side-on to the bridge against pale fog at 270x480: the small figure, the two lines along the rail, two hands at the other end. A viewer must say "its arms are as long as the bridge" within a second. (2) S63 finished at phone size, lit as planned. If either reads as a rope, a pipe, a handrail or two people, thicken the sleeve folds, lift the lines a few centimetres clear of the rail's top chord and brighten the fog behind them before building anything else.
+- How it differs from earlier creatures: the Attendant's long arms were folded, white-gloved and close by, and its face was a button panel. This one's arms are laid out straight and flat along a rail, and its face is ordinary. Big Hands (killed `fire-ring`) had huge hands, and these are ordinary size. It isn't too tall (the Stilted, the Walker), and it isn't bent anywhere (the Stooped, the Skater, the Wrung One). One wrong length, lying still.
 
 **Continuity by beat**
 | Beat | Lines | Where it is |
 |---|---|---|
 | Traces only | L22 to L23 | Not seen. Two wet handprints, flat and ordinary size, on the near end of the rail by the cabin window. The whole rail creaks in the fog, end to end. |
 | Thursday, empty cabin | L24 to L27 | Not seen. The second stool is turned to face the door. |
-| Monday | L34 to L35 | Body on the far bank, a small dark shape in fog. Two thin lines along the near-side rail, fading into fog halfway. Hands not seen. |
-| Tuesday | L36 | Body unchanged on the far bank. Hands resting flat on the near end of the rail, by the pivot, the sleeves running back across the whole bridge. |
-| Wednesday | L37 to L38 | Body unchanged. The arms run off the rail's end, across the bank, and both hands rest flat on the outside sill of the cabin's tall window, beyond the glass. |
-| Thursday, inside | L40 to L46 | Body unchanged. The window's lower sash is pushed up. The arms come in over the sill and both hands rest flat on the second stool. At L45, across a cut, they rest on the inside sill by the two mugs, a hand's width from Emrys's hand. |
-| Gone | L58 | The second stool is mine, the sill clear, the sash down. The far bank is empty fog, the rail bare. Not seen again. |
+| Monday | L34 to L35 | Body on the far bank, a small dark shape in fog. Two thin lines along the rail, fading into fog. Hands not seen. |
+| Tuesday | L36 | Body unchanged. Hands resting flat on the rail halfway across, by the bolted pivot plate. |
+| Wednesday | L37 to L38 | Body unchanged. Hands resting flat on the near end of the rail, just under the cabin window. |
+| Thursday, the reveal | L40 to L44 | The ends have changed places. The body stands on the near bank just outside the tall window, lower sash pushed up, by the second stool. The arms run back from its shoulders along the whole rail, and the hands rest flat on the far end, on the far bank. |
+| The lean | L45 | Across a cut: leaning in at the open sash, face to face with me, a hand's width apart. Arms still trailing the whole bridge to its hands. |
+| Gone | L58 | The window empty, the sash down, the rail bare, the far bank empty fog. Not seen again. |
 | Sting | L65 | Not seen. The cabin's second stool, empty, through the fog. |
 
 ## Look
-- **Palette:** bridge green #4d7461 (rivets #2f4a3e), cabin brick #8a4b3a, slate #3b4048, window frames cream #d9cfb8, river slate #435766, fog #aeb9c1 at its brightest, night sky #1d2633, lamp amber #f0a24a, stove orange #e0682a, hand glow gold #ffc76a, the Span's ochre #8a6424 and peat #2b2420, my teal #2f7f86, Ada's plum #6b3a5a, Emrys's navy #26324a with brass #b8913e and a dark green cap #34493b.
+- **Palette:** bridge green #4d7461 (rivets #2f4a3e), cabin brick #8a4b3a, slate #3b4048, window frames cream #d9cfb8, river slate #435766, fog #aeb9c1 at its brightest, night sky #1d2633, lamp amber #f0a24a, stove orange #e0682a, hand glow gold #ffc76a, the Reach's ochre #8a6424 and peat #2b2420, my teal #2f7f86, Ada's plum #6b3a5a, Emrys's navy #26324a with brass #b8913e and a dark green cap #34493b.
 - **Caption key colour:** dusk violet `#b98cff` (no other story uses it, and it sits apart from the gold hands and the ochre creature).
 - **Music:** G Dorian, 76 bpm in 4/4. A thin plucked synth and a soft breathy pad for the first third, the river's lap underneath. A low sustained drone enters on L24 (the first taking) and holds to the end. `music_drops` of 0.6 s before L24 ("On Thursday, the cabin was DARK"), 0.7 s before L40 ("And it was in the cabin with US") and 0.5 s before L48 ("The stove was out"), voice and hit kept. From L57 the pad opens onto the Dorian raised sixth and the pluck plays the tune in full, warmer, then thins again for the sting.
 - **Sound (all synthesized):** the river lapping, a steady far hum of road traffic from the new bridge, the iron creak of the bolted span, the stove ticking as it cools, two mugs set down, a long, slow iron creak running the whole rail end to end (L23), footsteps on gravel, the cabin door's hinge. A soft warm swell (-18 dB) as Emrys's hands come up (L57). No boat horns, no bells.
@@ -80,10 +81,10 @@ One made-up river town in late autumn. No real names and no words anywhere in th
 - **Marker by 2 s:** S01 is a clear late afternoon on the bridge approach. Three townsfolk walk toward camera in the blue shade of the cabin wall, low sun behind lighting the river, their hands glowing gold. The doctor's face is at least 1/4 of the frame width, high in frame, out of the caption band. Faces lit by soft bounce, brighter than the glow.
 - **Montage (L02 to L06, about 2 to 13 s), four examples:** the doctor who can't hide in the cinema. The man whose dog at home makes him glow all through work. The couple after a row, both glowing, both pretending not to. Pockets don't help, the light leaks out (the setup for plant 2).
 - **Narrator as the exception:** my hands have never glowed (L08), nobody needs me, and I don't need anybody (L09).
-- **Loved one at stake:** Emrys, my father-in-law, an adult in his seventies. His hands go dark as nothing needs him, he goes missing for a night (L24 to L31), and the Span's hands rest nearer each night, until they lie on the stool beside him.
+- **Loved one at stake:** Emrys, my father-in-law, an adult in his seventies. His hands go dark as nothing needs him, he goes missing for a night (L24 to L31), and the Reach comes nearer each night, until it stands at the window by the stool beside him.
 - **15 to 30 s:** L09 to L14 show the rule at work on Emrys (his hands lighting the water in the memory, then the bridge bolted shut). Nobody explains it.
 - **First real scare and taking:** L24 to L27 (about 55 to 63 s): the dark cabin, the open door, his cap on the wheel, his warm mug, the second stool turned to face me. He's back at breakfast for an ordinary reason (L29 to L31).
-- **Creature little and late:** traces at L22 to L23, a shape in fog at L34 to L35, its hands nearer at L36 to L37, shown clearly from L40 (about 63% in), its hands nearer Emrys at L45.
+- **Creature little and late:** traces at L22 to L23, a shape in fog at L34 to L35, its hands nearer at L36 to L37, shown clearly from L40 (about 63% in), leaning in face to face at L45.
 - **Loophole climax:** the rule says somebody, and one person is enough (L53 to L54). I need him and say so (L55 to L56), and his hands come up (L57).
 - **Readable first 2 s:** high key, faces and glowing hands in frame, no fog or dark until L22.
 - **Cuts:** 91 shots over about 141 s, an average of about 1.55 s.
@@ -92,10 +93,10 @@ One made-up river town in late autumn. No real names and no words anywhere in th
 L59 to L65. The wave he gave every boat, given to me, and my name. Then the rule comes back (L63) and lands on me: "Mine glow for EMRYS." The first line, which sounded like a rule that left me out, was about me from the first evening in the cabin. The last line turns it again and lands cold: at three in the morning my hands woke me, glowing, while everyone who needs me was asleep. The loop drops back into L01, and on a second watch the "somebody" in it has a stool by the wheel. Rewatch plants: the two colours on my hands by the stove (L18, S27) and the light leaking from my pockets (L21, S31 to S32).
 
 ## Lore connection (one)
-A plain tally: two short ochre strokes scratched into the brass hub plate of the iron wheel, two for a cabin built for two bridgemen, in the Span's own ochre (lore.md → Open threads → Third parallel batch). Shown once in S22, under L15 ("Every evening he sat in the cabin by the wheel"), held about 1.8 s, never narrated. No extra stroke, nothing else of the canon.
+A plain tally: two short ochre strokes scratched into the brass hub plate of the iron wheel, two for a cabin built for two bridgemen, in the Reach's own ochre (lore.md → Open threads → Third parallel batch). Shown once in S22, under L15 ("Every evening he sat in the cabin by the wheel"), held about 1.8 s, never narrated. No extra stroke, nothing else of the canon.
 
 ## Shot plan
-Timings are estimates at about 290 wpm. Re-time from `voice-timings.json`. Every shot with a face as its subject keeps the face at least 1/5 of the frame width and out of the caption band. The Span's body is only ever seen far off, on the far bank. Its hands are only ever seen with the sleeves running away from them.
+Timings are estimates at about 290 wpm. Re-time from `voice-timings.json`. Every shot with a face as its subject keeps the face at least 1/5 of the frame width and out of the caption band. Whenever the Reach's body or hands are in frame, a stretch of sleeve runs away from them toward the other bank.
 
 | Shot | Line | Picture |
 |---|---|---|
@@ -152,22 +153,22 @@ Timings are estimates at about 290 wpm. Re-time from `voice-timings.json`. Every
 | S51 | L34 | Through the tall window: the far bank in fog, a small dark figure at the end of the rail. |
 | S52 | L34 | Long lens from the bank path, side-on to the bridge: the figure leaning on the far end of the rail, like a man at a lock gate. |
 | S53 | L35 | Same lens, wider: two thin dark lines along the top of the rail, out from the figure into the fog. No face detail. |
-| S54 | L36 | Tuesday, side-on to the bridge against bright fog: the figure small on the far bank, two lines along the whole rail, two hands resting flat at our end. The silhouette read. |
-| S55 | L37 | Wednesday, from the path: the arms running off the rail, across the bank, up to the cabin's tall window. |
-| S56 | L37 | From inside, through the glass: two flat clay hands resting on the outside sill, the sleeves running back into the fog. |
-| S57 | L38 | Insert: its dull clay hands on the sill outside the glass. Inside, beyond the pane, Emrys's faint glow. |
+| S54 | L36 | Tuesday, side-on to the bridge against bright fog: the figure small on the far bank, two lines along the rail to two hands resting halfway, by the bolt plate. The silhouette read. |
+| S55 | L37 | Wednesday, from the path: the two sleeves along the whole rail, ending in two flat hands at our end, under the cabin window. |
+| S56 | L37 | From inside, through the glass, looking down: the two hands resting on the rail's end, the sleeves running back into the fog. |
+| S57 | L38 | Insert: its dull clay hands on the iron. Beyond the pane, inside, Emrys's faint glow reflected in the glass. |
 | S58 | L39 | Thursday: the stove's fire sinking (2 s fade). |
 | S59 | L39 | The bracket lamp turning low (2 s fade). Music drop after. |
-| S60 | L40 | Wide from the cabin corner: Emrys on his stool, the window's lower sash pushed up, two dark lines coming in over the sill. |
-| S61 | L41 | Three-quarter medium: its two hands resting flat on the second stool beside Emrys, the sleeves running back out of the window, lamp key from low and to the side, cool rim from the window. |
-| S62 | L42 | Long lens from the cabin window across the bridge: the man on the far bank, ochre waistcoat buttoned, head tipped down, caught in the slow car lights. Face at least 1/5 of the frame width. |
-| S63 | L43 | The reveal (test still first): wide, side-on to the bridge, the whole span in frame: the small figure on the far bank, the two sleeves along the full rail, over the bank, in at the cabin window. |
-| S64 | L44 | Low along the rail at its height: the two sleeves running straight away to a vanishing point in the fog, side by side, a hand's width apart. |
-| S65 | L45 | After a cut: the hands now resting on the inside sill by the two mugs, a hand's width from Emrys's hand. Still, flat, not gripping. |
-| S66 | L45 | Emrys's face, unaware, eyes down on his hands. |
+| S60 | L40 | Wide from the cabin corner: Emrys on his stool, the second stool beside him, the window's lower sash pushed up, and a figure standing just outside it. |
+| S61 | L41 | Through the window past it, long lens: its two sleeves running back along the whole rail to two flat hands on the far bank. |
+| S62 | L42 | Three-quarter medium through the open sash: its face and waistcoat, ochre buttoned, head tipped down, lamp key from low and to the side. Face at least 1/5 of the frame width. |
+| S63 | L43 | The reveal (test still first): wide, side-on to the bridge from the bank path, the whole span in frame: the figure at our cabin window, the two sleeves along the full rail, two hands at the far end. |
+| S64 | L44 | Low along the rail at its height from beside the cabin: the two sleeves running straight away to a vanishing point in the fog, side by side, a hand's width apart. |
+| S65 | L45 | After a cut: it leans in at the open sash, head and shoulders in, face to face with me, a hand's width apart, the sleeves trailing out behind it into the fog. Still, never touching. |
+| S66 | L45 | Reverse: my face, frozen, its face filling the near edge of frame. Emrys behind me, unaware, eyes down on his hands. |
 | S67 | L46 | Insert: Emrys's hands, dark. |
 | S68 | L47 | Me, looking down at my own hands. |
-| S69 | L48 | Low over my shoulder: my two hands glowing gold in the lower left foreground, the stove black, and beyond them its two dark hands on the sill beside Emrys's, the sleeves running out of the window, clearly lit. Cover frame. |
+| S69 | L48 | Low over my shoulder: my two hands glowing gold in the lower left foreground, the stove black, and beyond them its face at the open sash, the sleeves trailing out into the fog, clearly lit. Cover frame. |
 | S70 | L49 | My face lit from below by my own hands. |
 | S71 | L50 | Callback (0.3 s dissolve): S27, the gold on the far side of my hands. |
 | S72 | L50 | Callback: S32, the light at my pocket seam. |
@@ -175,12 +176,12 @@ Timings are estimates at about 290 wpm. Re-time from `voice-timings.json`. Every
 | S74 | L52 | Callback: S28, the two mugs steaming before I arrive. |
 | S75 | L53 | Wide: the dark river and the bolted bridge in fog. |
 | S76 | L54 | Me close, deciding. |
-| S77 | L55 | Two-shot across the dead stove: me talking, Emrys listening, its hands still on the sill beside him. |
+| S77 | L55 | Two-shot across the dead stove: me talking, Emrys listening, its face still at the open sash behind him. |
 | S78 | L56 | Emrys turning to look at me properly for the first time. |
 | S79 | L57 | His hands glowing up slowly (2.5 s ramp). |
 | S80 | L57 | His face lit warm from below by his own hands. |
 | S81 | L58 | Me sitting down on the second stool, three-quarter. |
-| S82 | L58 | Through the window: the sill clear, the sash down, the rail bare, the far bank empty fog. |
+| S82 | L58 | The window: empty, the sash down, the rail bare, the far bank empty fog. |
 | S83 | L59 | Next evening at dusk, side view: me crossing the old bridge on foot, hands glowing faintly. |
 | S84 | L60 | Emrys at the cabin window raising one flat, bright hand. |
 | S85 | L61 | Memory callback (summer grade): the same wave to a passing boat. |
@@ -191,7 +192,7 @@ Timings are estimates at about 290 wpm. Re-time from `voice-timings.json`. Every
 | S90 | L65 | Our bedroom at 3 a.m.: my hands glowing bright on the blanket, Ada asleep beside me. |
 | S91 | L65 | The cabin in fog from the bank path, dark, the second stool empty in the window. Cut back to S01. Leave 0.25 s after the last word. |
 
-## Narration (65 lines, 605 words, about 2:05 of speech at 290 wpm, about 2:22 with gaps)
+## Narration (65 lines, 607 words, about 2:05 of speech at 290 wpm, about 2:22 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words.
 
 L01. In this town, your HANDS glow whenever somebody NEEDS you.
@@ -229,16 +230,16 @@ L32. That night his hands were nearly DARK.
 L33. He wouldn't leave the cabin, so NEITHER did I.
 L34. On Monday, something stood on the far BANK.
 L35. Just a shape in the fog, leaning on the RAIL.
-L36. On Tuesday, its hands were at OUR end.
-L37. On Wednesday, they were on the cabin WINDOWSILL.
+L36. On Tuesday, its hands were halfway ACROSS.
+L37. On Wednesday, they were at OUR end, under the WINDOW.
 L38. Its hands didn't glow at ALL.
 L39. On Thursday, the stove burned down, and the lamp went LOW.
-L40. And its hands were in the cabin with US.
-L41. Resting on the second STOOL, beside Emrys.
-L42. Out on the far bank, an ordinary man in an ochre WAISTCOAT.
+L40. And it was at the window, with US.
+L41. It had come across. Its hands were on the far BANK.
+L42. An ordinary man in an ochre WAISTCOAT.
 L43. But its arms were as long as the BRIDGE.
-L44. Laid flat along the rail, all the way to US.
-L45. Every time I looked away, they lay nearer HIM.
+L44. Back along the rail, all the way to its HANDS.
+L45. And slowly, it leaned in at the window, face to face with ME.
 L46. Emrys stared at his hands. They were DARK.
 L47. Then I saw MINE.
 L48. The stove was out, and my hands were GLOWING.
@@ -251,7 +252,7 @@ L54. But the rule just says SOMEBODY. One is ENOUGH.
 L55. So I told him I didn't know how to be in this FAMILY.
 L56. And that I needed him to show ME.
 L57. His hands came up slowly, like a lamp turned UP.
-L58. I sat on the second stool, and the far bank was EMPTY.
+L58. I sat on the second stool, and the window was EMPTY.
 L59. The next evening, I crossed the old bridge at DUSK.
 L60. Emrys raised one bright hand at the cabin WINDOW.
 L61. The wave he gave every boat for forty-one YEARS.
