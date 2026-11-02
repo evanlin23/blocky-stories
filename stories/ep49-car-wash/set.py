@@ -271,7 +271,7 @@ def materials(kit):
     M["drum"] = kit.plastic("#e8e3d4", 0.6, name="drum")
     M["footp"] = alpha_mat(kit, "footprint", "#20303c", None, 0.0)
     set_alpha(M["footp"], 0.0)
-    M["handp"] = alpha_mat(kit, "handprint", "#243a52", None, 0.0)
+    M["handp"] = alpha_mat(kit, "handprint", "#0f1c2c", None, 0.0)
     M["mist"] = alpha_mat(kit, "mist", MISTC, MISTC, 1.1)
     M["lamp"] = emissive(kit, "drylamp", AMBER, 0.0)
     M["worklight"] = emissive(kit, "worklight", "#cfe0ff", 6.0)
@@ -422,7 +422,7 @@ def build_booth(kit, ctx, M):
     Bb(kit, "sill", (x1 - 0.02, 0.85, 1.07), (x1 + 0.22, 2.15, 1.12), M["steel"])
     # the tally: two short upright strokes scratched in wash blue at the right end (high y)
     for k, y in enumerate((1.9, 2.0)):
-        Bb(kit, "tally", (x1 + 0.05, y - 0.012, 1.1195), (x1 + 0.17, y + 0.012, 1.1225), M["scratch"])
+        Bb(kit, "tally", (x1 + 0.02, y - 0.016, 1.1195), (x1 + 0.2, y + 0.016, 1.126), M["scratch"])
     # inside: a counter under the hatch, the till, two stools (one dusty), the lever panel on the +y wall
     Bb(kit, "counter", (x1 - 0.5, 1.0, 0), (x1 - t, 2.0, 1.02), M["boothin"])
     B(kit, "till", (0.3, 0.4, 0.2), (x1 - 0.3, 1.5, 1.12), M["dark"], bevel=0.03)
@@ -444,8 +444,10 @@ def build_booth(kit, ctx, M):
     # the window-sill wet ring where the keys sat (shown for one shot)
     ctx["ring"] = C(kit, "wetring", 0.07, 0.006, (x1 + 0.1, 1.0, 1.125), kit.plastic("#4a5a66", 0.2, name="wetring"), n=18)
     # items on the sill and the conveyor: phone, keys, clapper
-    ctx["phone"] = B(kit, "phone", (0.07, 0.15, 0.012), (0, 0, -5), kit.plastic("#15171b", 0.3, name="phonebody"), bevel=0.01)
+    ctx["phone"] = B(kit, "phone", (0.24, 0.46, 0.03), (0, 0, -5), kit.plastic("#2a2e36", 0.3, name="phonebody"), bevel=0.02)
+    B(kit, "phonescreen", (0.2, 0.4, 0.006), (0, 0, 0.017), M["phoneglow"], parent=ctx["phone"])
     ctx["keys"] = kit.empty(nm("keys"), (0, 0, -5))
+    ctx["keys"].scale = (3.0, 3.0, 3.0)
     C(kit, "keyring", 0.04, 0.008, (0, 0, 0), M["steel"], parent=ctx["keys"], n=16)
     for k in range(3):
         B(kit, "key", (0.025, 0.07, 0.006), (0.0, -0.06, 0.0), M["steel"], (0, 0, 0.5 * (k - 1)), ctx["keys"])
@@ -757,6 +759,14 @@ def build(kit, story, tl):
     kit.light("yard_fill", "AREA", (0, -7, 6), 380, "#f4f1ea", size=10)
     kit.aim(kit.LIGHTS["yard_fill"]["obj"], (0, -7, 0))
     kit.light("hatch_fill", "POINT", (-1.0, 0.0, 1.6), 80, "#ffe9d0", size=0.3)
+    # the Stutter in the mist: a cold back light behind it, a blue rim; the lean: a low amber key from below
+    kit.light("figback", "POINT", (-3.1, 12.6, 1.7), 900, "#cfe6ff", size=0.8)
+    kit.light("figrim", "SPOT", (-4.0, 12.0, 2.8), 700, "#7fb0ff", spot=60, blend=0.5, size=0.3)
+    kit.aim(kit.LIGHTS["figrim"]["obj"], (-3.1, 9.8, 1.4))
+    kit.light("leankey", "SPOT", (-2.5, 2.2, 0.08), 420, AMBER, spot=60, blend=0.5, size=0.25)
+    kit.aim(kit.LIGHTS["leankey"]["obj"], (-2.5, 2.7, 1.6))
+    kit.light("item_lamp", "SPOT", (0.5, 0.2, 1.3), 260, "#ffe2b0", spot=70, blend=0.5, size=0.3)
+    kit.aim(kit.LIGHTS["item_lamp"]["obj"], (0.0, 1.6, 0.25))
     kit.light("sill_rake", "SPOT", (-1.2, 1.4, 1.5), 120, "#ffd9a0", spot=40, blend=0.5, size=0.1)
     kit.aim(kit.LIGHTS["sill_rake"]["obj"], (-2.05, 1.9, 1.1))
     ctx["lamp_rows"] = [n for n in kit.LIGHTS if n.startswith("dry")]
@@ -825,6 +835,32 @@ def animate(kit, story, tl, t, ctx):
         g[n] = dry
     for n in ("skey", "skey2", "skey3", "srim"):
         g[n] = dry
+    sil = ramp(tl, "sil", t, 0.0)
+    g["figback"] = sil
+    g["figrim"] = sil
+    g["leankey"] = ramp(tl, "leankey", t, 0.0)
+    g["booth_lamp"] = 1.0 - ramp(tl, "boothoff", t, 0.0)
+    g["skey3"] = 1.0 - 0.9 * ramp(tl, "boothoff", t, 0.0) if "skey3" in g else 0.0
+    # darken the Stutter's copies against the mist
+    if "st_cols" not in ctx:
+        ctx["st_cols"] = []
+        for k in range(5):
+            root = bpy.data.objects.get(f"st{k}")
+            seen = set()
+            for ob in [root] + list(root.children_recursive) if root else []:
+                if ob.type != "MESH":
+                    continue
+                for slot in ob.material_slots:
+                    m = slot.material
+                    if m is None or m.name in seen or not m.node_tree:
+                        continue
+                    seen.add(m.name)
+                    for n in m.node_tree.nodes:
+                        if n.type == "BSDF_PRINCIPLED":
+                            ctx["st_cols"].append((n.inputs["Base Color"], tuple(n.inputs["Base Color"].default_value)))
+    for sock, c0 in ctx["st_cols"]:
+        u = 0.82 * sil
+        sock.default_value = (c0[0] * (1 - u) + 0.01 * u, c0[1] * (1 - u) + 0.02 * u, c0[2] * (1 - u) + 0.05 * u, c0[3])
     # ---- the mist, the brushes, the lever
     mist = ramp(tl, "mist", t, 0.0)
     for s in ctx["mist"]:
@@ -850,7 +886,7 @@ def animate(kit, story, tl, t, ctx):
     for h in ctx["handprints"]:
         h.hide_render = not ha
     for k, m in enumerate(ctx.get("hand_mats", [])):
-        set_alpha(m, 0.7 - 0.13 * k)
+        set_alpha(m, 0.95 - 0.15 * k)
     show(ctx["chain"], (last(tl, "chain", t) or {"on": False})["on"])
     show([ctx["ring"]], (last(tl, "ring_mark", t) or {"on": False})["on"])
     # ---- cars and the items
@@ -873,6 +909,7 @@ def animate(kit, story, tl, t, ctx):
         show(objs, True)
         ob.location = tuple(p)
         ob.rotation_euler = (0, 0, math.radians(c.get("yaw", 0.0)))
+    g["item_lamp"] = 1.0 if (traj2(tl, "item:phone", t) and traj2(tl, "item:phone", t)[1].get("on", True)) else 0.0
     # ---- my clapper in my bell, my bag, Ruben's drum
     cm = (last(tl, "clapper", t) or {"on": False})["on"]
     if ctx["clappers"].get("me") is not None:
@@ -958,10 +995,14 @@ def make_handprints(kit, ctx, M):
     hs = []
     ctx["hand_mats"] = []
     for k in range(5):
-        # the prints ride the silver car's left side (x -0.9), five in a row, each fainter than the one before
+        # a wet hand pressed on the silver car's left side (x -0.9): palm, four fingers and a thumb, five in a row
         m = M["handp"].copy()
         m.name = f"handprint{k}"
         ctx["hand_mats"].append(m)
-        h = B(kit, "handp", (0.012, 0.2, 0.2), (-0.915, -1.2 + 0.55 * k, 0.62), m, parent=car)
-        hs.append(h)
+        y0 = -1.3 + 0.62 * k
+        X = -0.912
+        hs.append(B(kit, "handp", (0.012, 0.2, 0.22), (X, y0, 0.55), m, parent=car))
+        for j, (dy, ln) in enumerate(((-0.075, 0.13), (-0.025, 0.16), (0.025, 0.17), (0.075, 0.13))):
+            hs.append(B(kit, "handf", (0.012, 0.04, ln), (X, y0 + dy, 0.66 + ln / 2), m, parent=car))
+        hs.append(B(kit, "handt", (0.012, 0.13, 0.05), (X, y0 + 0.14, 0.6), m, (0.6, 0, 0), parent=car))
     return hs
