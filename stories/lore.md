@@ -33,3 +33,10 @@ ep14 to ep17 are being written elsewhere. When they land, add their rows here an
 - **The booth is older than the hotel (ep20, the world only).** Keepers' places are often older than the buildings around them. A later story's set can carry one old Maker-built object inside a newer room.
 - **The Bench.** Never seen. A later story could show one glimpse: a flat floor far below, through a gap, with a single unfinished blocky hand lying on it.
 - **The Makers left.** Why, and whether they come back to check the counts, is open. Don't answer it soon.
+- **Parallel batch (2026-11-02).** Pitches #6 to #11 in `stories/ideas.md` are scripted at once by separate writers. Each touches only its own thread, so none contradicts another:
+  - `model-village` (#6) may use "the booth is older than the hotel": one Maker-built object (its stone base) older than the town around it. No tally.
+  - `only-line` (#7) may use "the third stroke": a tally with one stroke too many (chalk in the wings). It never points at ep20 on screen.
+  - `plot-nine` (#9) may use "the Bench": one glimpse, a flat floor and one unfinished hand, down the Digger's hole. Nothing more of it.
+  - `wash-cycle` (#8), `last-skate` (#10) and `towpath` (#11) plant a plain tally only, with no extra stroke, and touch no thread. (#5 `snow-plough` likewise.)
+  - Nobody touches "the Makers left", names the Makers, Keepers or Bench, or shows two Keepers together.
+  - Shared facts for all six: a Keeper's strokes are in its own colour, and it adds a stroke for itself only while it stands in a gap. On a boat, everyone aboard is crew, a dog included (only #11 relies on this).
