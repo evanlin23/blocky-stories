@@ -314,7 +314,7 @@ def build_mill(kit, M, ctx):
     for k in range(3):
         ctx["sacks"].append(box(f"sack{k}", (0.5, 0.34, 0.62), (MX - 0.75 + 0.62 * k, MY - 4.55 - 0.3 * (k % 2), 0.4), M["sack"], bevel=0.12))
     # the scarf caught in the door (L27)
-    ctx["scarf"] = box("scarf", (0.2, 0.03, 0.8), (MX + 0.45, MY - 3.64, 1.1), M["sack"], bevel=0.02)
+    ctx["scarf"] = box("scarf", (0.13, 0.025, 0.62), (MX + 0.5, MY - 3.64, 1.05), kit.plastic("#d4cebe", 0.9, name="scarfcloth"), bevel=0.02)
     # the spill of light on the marsh when the door is open at night
     ctx["spill"] = plane("spillpl", (1.5, 5.0), (MX, MY - 6.6, 0.08), M["spill"])
     # ---- inside: stones, hopper, chute and bins, stove, stools, ladder, the hoist and its post
@@ -759,7 +759,7 @@ def animate(kit, story, tl, t, ctx):
         ctx["cloth"].hide_render = not (n in (54, 55, 56, 57))
     # ---- the scene's props by line
     ctx["scarf"].hide_render = n != 27
-    ctx["scarf"].rotation_euler = (0, 0.08 * math.sin(t * 1.3), 0)
+    ctx["scarf"].rotation_euler = (0.05 * math.sin(t * 0.9), 0.14 * math.sin(t * 1.3), 0.12 * math.sin(t * 0.7))
     for k, s_ in enumerate(ctx["sacks"]):
         s_.hide_render = not (n in (12, 13) or sid in ("S17",))
     # stools: mine turned to face Win (L19 on, to the west), later to face the door (L28 on)

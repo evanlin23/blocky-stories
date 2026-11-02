@@ -66,30 +66,30 @@
    ]
   },
   "L03": {
-   "text": "The postman's opens the caf\u00e9, so he's first in.",
+   "text": "The postman's key opens the cafe, so he's first in.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.466,
+   "dur": 2.621,
    "onset": 0.155,
-   "end": 2.259,
+   "end": 2.414,
    "chunks": [
     [
      0.155,
-     0.569
+     0.741
     ],
     [
-     0.569,
-     1.276
+     0.741,
+     1.448
     ],
     [
-     1.345,
-     1.638
+     1.517,
+     1.793
     ],
     [
-     1.638,
-     2.259
+     1.793,
+     2.414
     ]
    ]
   },
@@ -258,30 +258,30 @@
    ]
   },
   "L10": {
-   "text": "I was her mate on the stones for six years.",
+   "text": "I was her helper on the stones for six years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.034,
-   "onset": 0.172,
-   "end": 1.845,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.914,
    "chunks": [
     [
-     0.172,
-     0.414
+     0.155,
+     0.379
     ],
     [
-     0.414,
-     0.707
+     0.379,
+     0.759
     ],
     [
-     0.707,
-     1.129
+     0.759,
+     1.199
     ],
     [
-     1.129,
-     1.845
+     1.199,
+     1.914
     ]
    ]
   },
@@ -666,14 +666,14 @@
    ]
   },
   "L24": {
-   "text": "A hand's width from her shoulder. She never turned round.",
+   "text": "A hand's width from her shoulder. She never turned around.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.638,
+   "dur": 2.672,
    "onset": 0.172,
-   "end": 2.431,
+   "end": 2.466,
    "chunks": [
     [
      0.172,
@@ -684,12 +684,12 @@
      1.293
     ],
     [
-     1.371,
-     1.621
+     1.388,
+     1.638
     ],
     [
-     1.621,
-     2.431
+     1.638,
+     2.466
     ]
    ]
   },
@@ -1126,7 +1126,7 @@
    ]
   },
   "L41": {
-   "text": "Level with mine. There was no key round its neck.",
+   "text": "Level with mine. There was no key around its neck.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1137,18 +1137,18 @@
    "chunks": [
     [
      0.172,
-     0.81
+     0.828
     ],
     [
-     0.879,
-     1.25
+     0.897,
+     1.233
     ],
     [
-     1.25,
-     1.612
+     1.233,
+     1.629
     ],
     [
-     1.612,
+     1.629,
      2.207
     ]
    ]
@@ -1226,26 +1226,26 @@
    ]
   },
   "L45": {
-   "text": "I'd tried every locked door in town.",
+   "text": "I had tried every locked door in town.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
+   "dur": 1.931,
    "onset": 0.155,
-   "end": 1.69,
+   "end": 1.741,
    "chunks": [
     [
      0.155,
-     0.69
+     0.509
     ],
     [
-     0.69,
-     1.043
+     0.509,
+     1.094
     ],
     [
-     1.043,
-     1.69
+     1.094,
+     1.741
     ]
    ]
   },
@@ -1494,62 +1494,62 @@
    ]
   },
   "L55": {
-   "text": "She'd told the postman where she was going. I never asked him.",
+   "text": "She had told the postman where she was going. I never asked him.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.672,
-   "onset": 0.172,
-   "end": 2.483,
+   "dur": 2.776,
+   "onset": 0.19,
+   "end": 2.586,
    "chunks": [
     [
-     0.172,
-     0.466
+     0.19,
+     0.509
     ],
     [
-     0.466,
-     0.974
+     0.509,
+     0.983
     ],
     [
-     0.974,
-     1.483
+     0.983,
+     1.586
     ],
     [
-     1.552,
-     1.854
+     1.655,
+     1.966
     ],
     [
-     1.854,
-     2.483
+     1.966,
+     2.586
     ]
    ]
   },
   "L56": {
-   "text": "She looked at the open door, then at my glowing key.",
+   "text": "Win looked at the open door, then at my glowing key.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.345,
-   "onset": 0.19,
-   "end": 2.155,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
    "chunks": [
     [
-     0.19,
-     0.457
+     0.172,
+     0.526
     ],
     [
-     0.457,
-     1.034
+     0.526,
+     1.138
     ],
     [
-     1.103,
-     1.267
+     1.207,
+     1.371
     ],
     [
-     1.267,
-     2.155
+     1.371,
+     2.259
     ]
    ]
   },
@@ -1578,34 +1578,38 @@
    ]
   },
   "L58": {
-   "text": "She'd known since I was born. The shape on my key matches her lock.",
+   "text": "She had known since I was born. The shape on my key matches her lock.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.034,
+   "dur": 3.086,
    "onset": 0.19,
-   "end": 2.828,
+   "end": 2.879,
    "chunks": [
     [
      0.19,
-     0.664
+     0.552
     ],
     [
-     0.664,
-     1.224
+     0.552,
+     0.75
     ],
     [
-     1.31,
-     1.647
+     0.75,
+     1.259
     ],
     [
-     1.647,
-     2.232
+     1.345,
+     1.681
     ],
     [
-     2.232,
-     2.828
+     1.681,
+     2.284
+    ],
+    [
+     2.284,
+     2.879
     ]
    ]
   },

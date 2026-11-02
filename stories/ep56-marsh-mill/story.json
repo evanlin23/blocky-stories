@@ -345,12 +345,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The postman's",
-     "The postman's"
+     "The postman's key",
+     "The postman's key"
     ],
     [
-     "opens the CAFÉ,",
-     "opens the café,"
+     "opens the CAFE,",
+     "opens the cafe,"
     ],
     [
      "so he's",
@@ -499,8 +499,8 @@
      "I was her"
     ],
     [
-     "mate on the",
-     "mate on the"
+     "helper on the",
+     "helper on the"
     ],
     [
      "stones for",
@@ -831,8 +831,8 @@
      "She never"
     ],
     [
-     "turned ROUND.",
-     "turned round."
+     "turned AROUND.",
+     "turned around."
     ]
    ]
   },
@@ -1185,8 +1185,8 @@
      "There was no"
     ],
     [
-     "key round",
-     "key round"
+     "key around",
+     "key around"
     ],
     [
      "its NECK.",
@@ -1253,12 +1253,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'd tried every",
-     "I'd tried every"
+     "I had tried",
+     "I had tried"
     ],
     [
-     "locked door",
-     "locked door"
+     "every locked door",
+     "every locked door"
     ],
     [
      "in TOWN.",
@@ -1461,16 +1461,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "She'd told the",
-     "She'd told the"
+     "She had told",
+     "She had told"
     ],
     [
-     "postman where she",
-     "postman where she"
+     "the postman where",
+     "the postman where"
     ],
     [
-     "was going.",
-     "was going."
+     "she was going.",
+     "she was going."
     ],
     [
      "I never",
@@ -1487,8 +1487,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "She looked at",
-     "She looked at"
+     "Win looked at",
+     "Win looked at"
     ],
     [
      "the open door,",
@@ -1527,12 +1527,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "She'd known since",
-     "She'd known since"
+     "She had known",
+     "She had known"
     ],
     [
-     "I was born.",
-     "I was born."
+     "since I",
+     "since I"
+    ],
+    [
+     "was born.",
+     "was born."
     ],
     [
      "The shape on",
@@ -1860,7 +1864,7 @@
     ]
    ],
    "step": 2,
-   "at": "L03+1.16",
+   "at": "L03+1.24",
    "hand": 0.004
   },
   {
@@ -2560,7 +2564,7 @@
     ]
    ],
    "step": 2,
-   "at": "L24+1.13",
+   "at": "L24+1.15",
    "hand": 0.003
   },
   {
@@ -3325,16 +3329,16 @@
     [
      0,
      [
-      30.7,
-      93.3,
-      0.4
+      31.0,
+      92.9,
+      0.95
      ],
      [
       30.2,
       94.5,
-      0.15
+      0.35
      ],
-     26
+     24
     ]
    ],
    "step": 2,
@@ -3371,16 +3375,16 @@
     [
      0,
      [
-      30.1,
-      93.6,
-      0.45
+      30.6,
+      93.5,
+      0.85
      ],
      [
       30.2,
-      94.9,
-      0.15
+      94.85,
+      0.25
      ],
-     26
+     22
     ]
    ],
    "step": 2,
@@ -3545,7 +3549,7 @@
     ]
    ],
    "step": 2,
-   "at": "L58+1.32",
+   "at": "L58+1.34",
    "hand": 0.002
   },
   {
@@ -4899,7 +4903,7 @@
     "blend": 0.0
    },
    {
-    "at": "L58+1.32",
+    "at": "L58+1.34",
     "pos": [
      31.1,
      90.1,
@@ -4907,7 +4911,7 @@
     ]
    },
    {
-    "at": "L58+1.32",
+    "at": "L58+1.34",
     "arms": [
      0,
      0
@@ -5451,7 +5455,7 @@
     "hidden": false
    },
    {
-    "at": "L24+1.13",
+    "at": "L24+1.15",
     "pos": [
      29.1,
      95.5,
@@ -5459,7 +5463,7 @@
     ]
    },
    {
-    "at": "L24+1.13",
+    "at": "L24+1.15",
     "arms": [
      40,
      40
@@ -6129,7 +6133,7 @@
     "hidden": false
    },
    {
-    "at": "L03+1.16",
+    "at": "L03+1.24",
     "pos": [
      10.8,
      4.5,
@@ -6137,7 +6141,7 @@
     ]
    },
    {
-    "at": "L03+1.16",
+    "at": "L03+1.24",
     "arms": [
      40,
      0

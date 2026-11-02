@@ -173,14 +173,14 @@ Every line is `who: narrator`. CAPS are the caption key words.
 
 L01. In this town, your KEY opens exactly one door, and it's never your OWN.
 L02. It goes warm and GOLD at the one locked door it FITS.
-L03. The postman's opens the CAFÉ, so he's first IN.
+L03. The postman's key opens the CAFE, so he's first IN.
 L04. Mr Ames locked himself out of his own HOUSE.
 L05. The only key that fits it is his EX-wife's.
 L06. She lets him in every evening. Neither of them says a WORD.
 L07. A bride's key opened her husband's door on the first TRY.
 L08. I've tried every door in town. Mine has never opened ANYTHING.
 L09. My great-aunt Win is eighty-one. She runs the WINDMILL on the marsh.
-L10. I was her mate on the stones for six YEARS.
+L10. I was her helper on the stones for six YEARS.
 L11. Two years ago I left to open my own BAKERY.
 L12. Now I just pick up her flour from the step. I don't go IN.
 L13. She never asked me to STAY. So I never asked to come BACK.
@@ -194,7 +194,7 @@ L20. Wednesday, there was a clean patch on the floury floor by the HOIST.
 L21. Two boot shapes, where someone had been STANDING.
 L22. Flour settles on everything in a mill. It hadn't settled THERE.
 L23. Thursday, the clean patch was right behind HER.
-L24. A hand's width from her SHOULDER. She never turned ROUND.
+L24. A hand's width from her SHOULDER. She never turned AROUND.
 L25. Friday, the stones were SILENT. The mill was DARK.
 L26. Win was GONE.
 L27. Her headscarf was caught in the door, still white with FLOUR.
@@ -211,11 +211,11 @@ L37. Standing in my place by the hoist. Taller than the DOOR.
 L38. Two arms hanging. Two more reaching up into the BEAMS.
 L39. Palms open, like it was holding up a sack that wasn't THERE.
 L40. Then it bent down, SLOWLY, until its face was at the GLASS.
-L41. Level with mine. There was no key round its NECK.
+L41. Level with mine. There was no key around its NECK.
 L42. It just looked at me, like I was LATE.
 L43. And I thought about the RULE.
 L44. A key only goes warm at a LOCKED door.
-L45. I'd tried every locked door in TOWN.
+L45. I had tried every locked door in TOWN.
 L46. Win's had never been locked. Not ONCE.
 L47. So I'd never tried mine in IT.
 L48. I lifted my key to her lock, and it went WARM.
@@ -225,10 +225,10 @@ L51. I stepped inside, into the clean patch by the HOIST.
 L52. And it was GONE. Flour started settling on my BOOTS.
 L53. At dawn, the door creaked open behind ME.
 L54. Win, off the first bus, new sail cloth under her ARM.
-L55. She'd told the postman where she was going. I never asked HIM.
-L56. She looked at the open door, then at my glowing KEY.
+L55. She had told the postman where she was going. I never asked HIM.
+L56. Win looked at the open door, then at my glowing KEY.
 L57. And she said, "Took you long ENOUGH."
-L58. She'd known since I was born. The shape on my key matches her LOCK.
+L58. She had known since I was born. The shape on my key matches her LOCK.
 L59. She never locked it, so I'd never feel I HAD to come.
 L60. This week she locked herself out of her own MILL.
 L61. Only one key in town could let her back IN.
