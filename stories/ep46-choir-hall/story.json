@@ -87,9 +87,9 @@
   "mumr": {
    "age": "adult",
    "skin": "#e8bd98",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "bun",
@@ -303,9 +303,9 @@
   "c1": {
    "age": "adult",
    "skin": "#e0b08a",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "cap",
@@ -325,9 +325,9 @@
   "c2": {
    "age": "adult",
    "skin": "#c68a62",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "spiky",
@@ -348,9 +348,9 @@
   "c3": {
    "age": "adult",
    "skin": "#8c5c40",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "swoop",
@@ -371,9 +371,9 @@
   "c4": {
    "age": "adult",
    "skin": "#f0c8a0",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "long",
@@ -394,9 +394,9 @@
   "c5": {
    "age": "adult",
    "skin": "#d9a07c",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "bun",
@@ -417,9 +417,9 @@
   "c6": {
    "age": "adult",
    "skin": "#a8744e",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "buzz",
@@ -440,9 +440,9 @@
   "c7": {
    "age": "adult",
    "skin": "#e8bd98",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "cap",
@@ -462,9 +462,9 @@
   "c8": {
    "age": "adult",
    "skin": "#7a4a34",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "long",
@@ -485,9 +485,9 @@
   "c9": {
    "age": "adult",
    "skin": "#e0b08a",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "bun",
@@ -508,9 +508,9 @@
   "c10": {
    "age": "adult",
    "skin": "#c68a62",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "swoop",
@@ -531,9 +531,9 @@
   "c11": {
    "age": "adult",
    "skin": "#8c5c40",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "spiky",
@@ -554,9 +554,9 @@
   "grin": {
    "age": "adult",
    "skin": "#d8c0a6",
-   "shirt": "#5a2f3a",
+   "shirt": "#4c3038",
    "pattern": "solid",
-   "pants": "#5a2f3a",
+   "pants": "#4c3038",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "buzz",
@@ -572,6 +572,7 @@
    "extras": [
     "coat"
    ],
+   "height": 1.12,
    "zip_c": "#4a2230"
   }
  },
@@ -1075,8 +1076,8 @@
      "but twelve notes"
     ],
     [
-     "in the CHORD.",
-     "in the chord."
+     "in the MUSIC.",
+     "in the music."
     ]
    ]
   },
@@ -1532,8 +1533,8 @@
      "someone in maroon"
     ],
     [
-     "TOO.",
-     "too."
+     "AS WELL.",
+     "as well."
     ]
    ]
   },
@@ -3675,15 +3676,15 @@
      0,
      [
       98.9,
-      -5.0,
-      2.4
+      -4.2,
+      2.55
      ],
      [
       98.9,
       -8.65,
-      1.95
+      2.0
      ],
-     55
+     40
     ]
    ],
    "hand": 0.006,
@@ -3743,16 +3744,16 @@
     [
      0,
      [
-      97.11920661172977,
-      -6.77956740576283,
-      2.3
+      97.06688925642167,
+      -6.0313943680679625,
+      2.5
      ],
      [
       97.25,
       -8.65,
-      2.2
+      2.4
      ],
-     38
+     34
     ]
    ],
    "hand": 0.006,
@@ -3812,16 +3813,16 @@
     [
      0,
      [
-      97.11920661172977,
-      -6.77956740576283,
-      2.3
+      97.06688925642167,
+      -6.0313943680679625,
+      2.5
      ],
      [
       97.25,
       -8.65,
-      2.2
+      2.4
      ],
-     38
+     34
     ]
    ],
    "hand": 0.006,

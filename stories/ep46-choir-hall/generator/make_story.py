@@ -72,7 +72,7 @@ cast = {
     "me": person("#e0b08a", "#22304a", "#7b7f86", "#5a3b24", "cap", "#3a2418", "knit", "#1a2438", "#22304a"),
     "mum": person("#e8bd98", "#6b4a6e", "#4a4a52", "#3a2a22", "bun", "#7a6858", "knit", "#563a58", "#f0e6d0", TIRED,
                   ["coat"], zip_c="#563a58"),
-    "mumr": person("#e8bd98", "#5a2f3a", "#5a2f3a", "#2a2022", "bun", "#7a6858", "solid", None, "#f3efe6", TIRED,
+    "mumr": person("#e8bd98", "#4c3038", "#4c3038", "#2a2022", "bun", "#7a6858", "solid", None, "#f3efe6", TIRED,
                    ["coat"], zip_c="#4a2230"),
     "ron": person("#e2b896", "#6b4a2e", "#4a463e", "#2a2a22", "none", "#e8e6e0", "knit", "#563a22", "#d8d0be", TIRED,
                   ["coat"], zip_c="#5a3a22", height=0.97),
@@ -93,10 +93,10 @@ SKINS = ["#e0b08a", "#c68a62", "#8c5c40", "#f0c8a0", "#d9a07c", "#a8744e", "#e8b
 STYLES = ["cap", "spiky", "swoop", "long", "bun", "buzz", "cap", "long", "bun", "swoop", "spiky"]
 HAIRS = ["#2a1d15", "#6a5a3a", "#1a1412", "#9a5a32", "#8a8a8a", "#3a2a22", "#4a3a2a", "#171717", "#7a4a2a", "#c8b48a", "#2a1d15"]
 for i in range(11):
-    cast[f"c{i + 1}"] = person(SKINS[i % 8], "#5a2f3a", "#5a2f3a", "#2a2022", STYLES[i], HAIRS[i], "solid", None, "#f3efe6",
+    cast[f"c{i + 1}"] = person(SKINS[i % 8], "#4c3038", "#4c3038", "#2a2022", STYLES[i], HAIRS[i], "solid", None, "#f3efe6",
                                dict(FACE), ["coat"], zip_c="#4a2230", height=[1.0, 0.96, 1.03, 0.98, 1.02, 0.95, 1.0, 1.04, 0.97, 1.01, 0.99][i])
-cast["grin"] = person("#d8c0a6", "#5a2f3a", "#5a2f3a", "#2a2022", "buzz", "#5a4030", "solid", None, "#f3efe6",
-                      {"eyes": "round", "brows": True, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#4a2230")
+cast["grin"] = person("#d8c0a6", "#4c3038", "#4c3038", "#2a2022", "buzz", "#5a4030", "solid", None, "#f3efe6",
+                      {"eyes": "round", "brows": True, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#4a2230", height=1.12)
 NAMES = list(cast)
 
 # the twelve chairs (set.py's STEPS and CHX)
@@ -419,7 +419,7 @@ shot("L54", "from behind the riser: the black seam round the back of its head",
      still((TWELFTH[0] + 0.35, -10.95, 2.75), (TWELFTH[0], TWELFTH[1], 2.2), 36),
      {**choir(), "grin": P((TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2])), 180, "neutral", sit=True, arms=[14, 14], blink=False)})
 shot("L55", "no cord round its neck",
-     still((HX - 1.1, -5.0, 2.4), (HX - 1.1, -8.65, 1.95), 55),
+     still((HX - 1.1, -4.2, 2.55), (HX - 1.1, -8.65, 2.0), 40),
      {**choir(), "grin": P((TWELFTH[0], TWELFTH[1], sit_z(TWELFTH[2])), 180, "neutral", sit=True, arms=[14, 14], blink=False)})
 MUMX = TWELFTH[0] - 1.1
 MUMP = (MUMX, TWELFTH[1], 0.9)
@@ -433,7 +433,7 @@ shot("L57", "Mum singing, close",
      {**choir(), "mumr": P(MUMP, 180, "smile", talks=[("L57", "L57.1")]),
       "grin": P(GRINP, 180, "neutral", sit=True, arms=[14, 14], blink=False)})
 shot("L57.1", "close on her cord: the beads fade one by one",
-     front(MUMP, 180, 1.5, 2.3, 2.2, 38, 4),
+     front(MUMP, 180, 2.1, 2.5, 2.4, 34, 4),
      {"mumr": P(MUMP, 180, "smile")})
 shot("L58", "it tilts toward her",
      still((MUMX + 2.8, -5.0, 2.9), (MUMX + 0.9, TWELFTH[1], 2.35), 40),
@@ -444,7 +444,7 @@ shot("L59", "two shot: it leans further, its face a metre from hers",
      {**choir(), "mumr": P(MUMP, 180, "smile"),
       "grin": P(GRINP, 180, "neutral", sit=True, head=[85, 0], roll=40, bend=10, arms=[14, 14], blink=False)})
 shot("L60", "close on Mum's cord: one lit bead left",
-     front(MUMP, 180, 1.5, 2.3, 2.2, 38, 4),
+     front(MUMP, 180, 2.1, 2.5, 2.4, 34, 4),
      {"mumr": P(MUMP, 180, "worried")})
 shot("L61", "Mum, worried, her mouth closing",
      front(MUMP, 180, 1.9, 2.6, 2.5, 36, 14),

@@ -642,26 +642,26 @@
    ]
   },
   "L26": {
-   "text": "eleven mouths. but twelve notes in the chord.",
+   "text": "eleven mouths. but twelve notes in the music.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.172,
+   "dur": 2.224,
    "onset": 0.172,
-   "end": 1.966,
+   "end": 2.017,
    "chunks": [
     [
      0.172,
-     0.759
+     0.776
     ],
     [
-     0.81,
-     1.337
+     0.828,
+     1.353
     ],
     [
-     1.337,
-     1.966
+     1.353,
+     2.017
     ]
    ]
   },
@@ -1234,14 +1234,14 @@
    ]
   },
   "L50": {
-   "text": "and in the twelfth chair, someone in maroon too.",
+   "text": "and in the twelfth chair, someone in maroon as well.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.172,
+   "dur": 2.31,
    "onset": 0.172,
-   "end": 1.966,
+   "end": 2.121,
    "chunks": [
     [
      0.172,
@@ -1249,15 +1249,15 @@
     ],
     [
      0.345,
-     0.828
+     0.862
     ],
     [
-     0.888,
-     1.492
+     0.94,
+     1.517
     ],
     [
-     1.492,
-     1.966
+     1.517,
+     2.121
     ]
    ]
   },
