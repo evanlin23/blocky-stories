@@ -168,7 +168,7 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # Bri
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
 HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
-              "wren": "ren", "wrens": "rens", "too": "to",   # "too" (ep15: "back TOO,") is heard as "to"
+              "wren": "ren", "wrens": "rens", "remy": "remi", "remys": "remis", "hot": "hut", "too": "to",   # "too" (ep15: "back TOO,") is heard as "to"
               # ep33 (opt-in: only a story with these words is affected): made-up names Whisper spells its own way
               "halvor": "halver", "halvors": "halvers", "cagoule": "kagool", "40": "forty",
               "pair": "pear", "mom": "mum", "palate": "palette", "wanna": "wantto"}   # pair/pear, mom/mum, palate/palette, wanna (ep32)
