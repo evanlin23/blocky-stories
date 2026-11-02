@@ -1,231 +1,197 @@
-# ep32-sitter: the script (writer, 2026-11-02)
+# ep32-sitter: the script (writer, redo 2026-11-02)
 
-- **Slug:** `ep32-sitter` (pitch #16 in `stories/ideas.md`, second parallel batch).
-- **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 627 spoken words in 74 lines (round 1: L41 and L43 rewritten, L44, L56 and L57 cut, the spare L12b restored), all `narrator`, voice A. At 290 wpm the speech is about 2:11, plus about 9 s of line gaps, the two music drops and the 0.25 s tail, so about 2:20 to 2:25. If it still lands short, add "Petra didn't even GLANCE / at it." after L34. If long, L39 goes first.
-- **Tense:** past, first person. Every line is `narrator`, voice A. Mum, Kofi and Petra are only ever quoted inside my lines.
+- **Slug:** `ep32-sitter` (pitch #16 in `stories/ideas.md`, redone to rule first).
+- **Target length:** about 95 to 105 s (the 60 to 100 s test band, at its long end). 
+- **Word count:** 395 spoken words in 40 lines, all `narrator`, voice A. At 290 wpm the speech is about 82 s, plus about 14 s of line and chunk gaps, two music drops and the 0.25 s tail, so about 95 to 100 s. The reveal (L29 to L31) starts about 67 s in, so it sits in the last 25 to 30 s. If long, L20 goes first, then L35. If short, add "It sat with its HANDS / folded, / like it was WAITING." after L12.
+- **Tense:** past, first person (L01 to L05 and L37 to L40 are present: how the town is, how things are now). Kofi, Petra and Mum are only ever quoted inside my lines.
+
+## Changed for the builder (redo, 2026-11-02)
+Every line is new, so re-voice everything once (old L01 to L76 are all gone, and the ids below restart at L01). Old `voice-timings.json` is stale.
+
+**story.json text** (paste, so `check` compares the new story):
+- `title`: "In This Town Your Face FADES If Nobody Looks"
+- `premise`: "In a town where your face fades to bare wood if nobody looks at you, and lonely people sit for the portrait class to be painted back in, I join that class to learn to finish a face. I haven't spoken to Mum since spring. On the dais stool sits someone faded all the way to raw pine and pencil guide lines, and every week its face copies the line I stopped on and it sits one easel nearer."
+- `twist`: "Faded all the way, nobody can see you except someone who loves you, which is why the others paint the fruit and say the stool has been empty for months. The faded sitter is Mum, gone unlooked-at since I stopped speaking to her in spring, and the half face on my canvas is the one I have been failing to finish on my portrait of her at home. I finish the face from memory without stopping, the colour comes back up her, and she says not bad. The sting: a new faded sitter on the stool, and nobody else looks up."
+- `world`: "a town where unlooked-at faces fade to wood: a sunny bus stop and a cafe and a bakery counter for the montage, my small flat with one easel, and a community arts centre life room on rainy Wednesday evenings with eight easels round a pine dais, a stool, a green cushion and a bowl of fruit, plus Mum's bare front hall"
+
+**New**
+- **The fade (the rule marker, needed by 2 s).** A per-character `fade` amount from 0 to 1: painted colour thins into raw pine grain (`pine_mat`) on the face and then the body, and graphite guide lines (a cross, two eye ovals, little lines at the eye corners) show through the face. Fade 0.5 at S01 to S02 (bus-stop man), 0.4 easing to 0.05 over the shot at S05 (Mr Dobbs being filled in), 1.0 for faded Mum and the sting sitter. One shared look, so all four read as the same rule.
+- **Faded Mum replaces the Unpainted.** Mum's own R6 body and silver bob hair block at normal proportions (drop the 1.4x torso), all pine at fade 1.0, no glasses (they fade with her), face texture per week: stage 0 = cross, two ovals, corner lines. Stage 1 = plus my nose line. Stage 2 = plus one mouth corner. Corner lines must read at phone size (they're plant 1).
+- **The restore (S34):** fade 1.0 to 0.0 over about 2.5 s, from the face down: brown eyes with corner lines, silver hair, round tortoiseshell glasses, teal check cardigan. A soft rising paper-shimmer sound under it. Ramps only, nothing flashes.
+- **Montage sets, small and daylight:** a bus stop on a sunny street (no signs, no text), a cafe table for two by a window, a bakery counter. Extras: the bus-stop man (red cap, half faded), two passers-by, a couple at breakfast, a baker and a customer.
+- **My flat corner (S06 to S08):** one easel by a window, a shelf with my phone face down. **New canvas image: Mum's portrait at home**, her silver bob, round tortoiseshell glasses and teal check cardigan painted, her face only guide lines at stage 2 (cross, ovals, corner lines, a nose line stopped short, one mouth corner: where I always stop). Reused at S29 beside the class canvas.
+- **The sting sitter (S39 to S40):** the same pine model, fade 1.0, with a different hair block (a short crop) and guide lines without corner lines, so it reads as somebody else.
+- **The tally plant moves:** nine graphite strokes on the dais's front edge, seen at S39 (see the lore plant).
+- **Sound:** thin pulse and rain to L21. A heavy low drone enters at L22 (the first scare) and holds through L31. Music drops (voice and hit only) 0.6 s before L23 and 0.7 s before L31. A major, 76 bpm, warm pad from L32 to L37. L38 to L40 back to the low drone, cold, then the closing sound.
+
+**Dropped:** Mum's kitchen and the phone call, the old L02 to L04 backstory hall shots (Mum hanging pictures years ago), Mr Dobbs as a painter (he's now the montage sitter), the 1.4x torso, the dented-cushion beat, the stills montage of positions, the end-of-term show, the dais on its edge, and the frame-on-the-hook closing sound.
+
+**Kept:** the life room, the eight easels, the dais, stool and flat green cushion, the fruit bowl and every fruit canvas, the power-dip ramp (one dip now, not two), the car park and the rainy window shot, Mum's bare hall, and the finished portrait (it must now read as Mum: her eyes, bob and glasses).
+
+## Big idea (the one sentence)
+In a town where your face fades if nobody looks at you, the faceless thing creeping nearer my easel every week is my own mum, faded so far that only someone who loves her can still see her, because I stopped looking at her in spring.
 
 ## Premise
-I'm an adult who paints in secret. Mum used to paint and always said I give up halfway, so I join a Wednesday evening portrait class at a community arts centre without telling her. Kofi, who runs it, sets a stool on the dais and says paint what you see. What I see is a sitter made of raw pine with pencil guide lines where a face should be. Every week I start its face, panic, and leave it half done, and every week its face has the line I stopped on and it sits nearer my easel.
+In this town, a face nobody looks at fades back to bare wood and the first pencil lines it was drawn with. Lonely people sit for the Wednesday portrait class, where eight painters fill them back in. I paint, but Mum always said I never finish a face, and we haven't spoken since spring. I join the class to learn. On the dais stool sits someone faded all the way. Nobody else looks up. Every week its face copies the line I stopped on, and it sits one easel nearer.
 
 ## Rule
-Paint what you see (Kofi's only instruction, said once, flat, like it's obvious).
+"In this town, if nobody looks at you, your face fades." Marker: the fade itself, raw pine grain and graphite guide lines showing through paint, on the bus-stop man's face at frame centre from 0 s, in bright daylight.
+
+- **Montage (3 to 5, in the first 15 s):** the half-faded man at the bus stop as people walk past (S01), couples staring at each other over breakfast (S03), the baker holding your eye till your change is counted (S04), Mr Dobbs on the dais being painted back in (S05).
+- **Seconds 15 to 30:** Mum's half-faced portrait, the bare hall, the class, Kofi's one instruction. Nobody explains the rule.
+- **The narrator is the exception:** I'm the only one in the room who sees the sitter (L14, "Nobody else LOOKED UP"). The reason is the reveal.
+- **The loved one at stake:** Mum, in a picture by about 0:15 (her portrait on my easel, her face only guide lines), with "we haven't spoken since spring, and she lives alone" under the rule we've just seen.
+- **The loophole the climax turns:** the montage shows painting fills a face back in (L05). Nobody can see Mum to paint her, but I don't need to see her: I paint her face from memory, all of it, without stopping. "I never finish a face" turns over.
 
 ## Twist
-The stool has been empty since the hired sitter moved away in spring. Everyone else paints the bowl of fruit. A class is a place built for its painters and its sitter, so the Unpainted sat in to keep the count of nine, but a sitter with no face isn't really there, and I was the only one painting it. Every face I left half done was its face, and it came nearer each week so I could see it better. "I never finish a face" turns from Mum's old complaint into the reason it kept coming. When I finish it, its spare stool is empty and the cushion on the dais has a dent at last. Mum, at the show, asks if the class still needs a sitter, so a person fills the stool.
+Faded all the way, nobody can see you except someone who loves you. The others paint the fruit because to them the stool is empty. The sitter is Mum, who went unlooked-at since I stopped speaking to her in spring and came to the one place built for being looked at. Her face copied my canvas because painting is looking, and she sat nearer each week to the only person who could see her. Said plainly at L29 to L31, over one picture: my home portrait of Mum beside my class canvas, the same half face line for line, then her pine face through the wet window.
 
-- **Where it's planted:**
-  - **Plant 1, the fruit:** every other canvas shows the bowl of fruit, never the stool. Seen on Petra's canvas at L13 (a pencil outline of the bowl), on Mr Dobbs's at L22 and Petra's pear at L34. Paid at L53 and L54.
-  - **Plant 2, the flat cushion:** the green cushion under it never dents. Named at L19, visible from L09. Paid at L55, and turned over at L68 when it finally dents.
-  - **Bonus for the rewatch:** its face is always exactly my canvas. L01's canvas (cross, two ovals) is its face at L12, and the nose I stop on at L16 to L18 is on it at L20.
+- **Plant 1, the corner lines:** the sitter's guide-line eyes have little lines at the corners, named at L13 ("little LINES at the CORNERS") and visible on Mum's home portrait at S06 (L06). Guide lines don't have those. Mum's eyes do (paid at L33, "with lines at the CORNERS").
+- **Plant 2, since spring:** "We haven't SPOKEN since SPRING" (L07) and Petra's "empty for MONTHS" (L27). Paid at L29 ("since SPRING").
+- **Plant 3, the fruit:** every other canvas is the fruit bowl (S14 Petra's sketch, S20 her pear, S28 seven bowls through the window). On a rewatch it's because they can't see her.
+- **Bonus:** the pine hair block is Mum's bob shape from S11 on.
 
 ## The last 15 seconds
-L71 to L76: Mum in front of the painting, asking to take it home, asking if the class still needs a sitter, then the first line again with "This one's in her HALL." On a second watch, L01 is no longer just Mum's complaint: it's why the thing on the dais kept coming nearer, and the face on L01's canvas is its face.
+L36 to L40: Mum restored saying "Not BAD", her portrait in her hall with me visiting every Wednesday, then a new faded sitter on the stool and "I wonder who stopped LOOKING at THEM." The loop cut lands on L01, which now reads as a warning about whoever you haven't called. On a second watch the first faded face at the bus stop, the couples staring, and "Nobody else LOOKED UP" all play as Mum's story.
 
 ## World
-A community arts centre on a hill, in a squat brick building, on rainy Wednesday evenings in autumn, and in daylight for the end-of-term show. The life room: cream plaster walls, a scuffed honey-board floor, a tall north window black-blue with rain, eight wooden easels in a curve, each with a clamp lamp, a low pine dais in the middle with a plain stool and a fat sage-green cushion, and a side table with a bowl of fruit (an orange, a pear, two plums, a bunch of grapes). Plus Mum's front hall, then and now. No text anywhere: no signs, no labels, no lettering on canvases, paint tubes or the building.
+Daylight montage: a sunny street bus stop, a cafe window table, a bakery counter (no signs, no text). My small flat: one easel by a window, a shelf. The community arts centre on a hill, squat brick, rainy Wednesday evenings. The life room: cream plaster walls, a scuffed honey-board floor, a tall north window black-blue with rain, eight wooden easels in a curve each with a clamp lamp, a low pine dais in the middle with a plain stool and a fat sage-green cushion, a side table with a bowl of fruit. The car park under one lamp post. Mum's front hall, bare hooks and pale squares, then with one portrait. No text anywhere.
 
 ## Cast (all adults, nobody in peril)
-- **Me (`me`):** an adult, no age on screen. Black block hair with a short fringe, a mustard knit jumper with one blue paint smudge, charcoal trousers, white trainers. Easel 8, the end of the curve by the window.
-- **Mum (`mum`):** in her fifties. Silver block bob, round tortoiseshell glasses, a teal cardigan in a small check over a cream top. Her drawn eyes have little lines at the corners (I paint those eyes at L65).
-- **Kofi (`kofi`):** runs the class, forties. Shaved head, round black glasses, a rust shirt under a denim apron. Says "paint what you see" once and goes to make tea. He doesn't know anything and explains nothing.
-- **Petra (`petra`):** classmate at easel 7, thirties. Copper block hair in a bun, a navy and white striped top, a paint rag over one shoulder.
-- **Mr Dobbs (`ade`):** classmate at easel 1, sixties. Grey block beard, brown flat cap, olive tweed jacket.
-- **Five more painters:** background adults at easels 2 to 6, seen mostly from behind, plain knit and shirt colours (plum, slate, mustard-free).
+- **Me (`me`):** an adult, no age on screen. Black block hair with a short fringe, a mustard knit jumper with one blue paint smudge, charcoal trousers, white trainers. Easel 8, by the window.
+- **Mum (`mum`):** fifties. Silver block bob, round tortoiseshell glasses, a teal cardigan in a small check over a cream top, brown eyes with little lines at the corners. Seen as herself only on my portrait (S06), restored (S34 on) and in her hall (S37).
+- **Kofi (`kofi`):** runs the class, forties. Shaved head, round black glasses, rust shirt, denim apron. Says "Paint what you see" once and explains nothing.
+- **Petra (`petra`):** easel 7, thirties. Copper bun, navy and white striped top, paint rag on one shoulder.
+- **Mr Dobbs (`ade`):** sixties. Grey block beard, brown flat cap, olive tweed jacket. The montage sitter at S05, half faded, being filled back in.
+- **Montage extras:** the bus-stop man (red cap, blue jacket, half faded), two passers-by, a breakfast couple, a baker in a white apron and a customer. Five background painters at easels 2 to 6.
 
-## The creature: the Unpainted
-- **Look:** an R6 body built from the same blocks as everyone, all raw unvarnished pine (`#d8b98a`) with visible grain and two dark knots on the chest. Wrong in one dimension: its torso is about 1.4 times too long, so seated its head is level with the easel tops (about 1.9 m), higher than anyone standing. The head is our rounded cylinder in pine. Its face is only graphite guide lines, thick and pencil grey: a vertical and a horizontal line crossing, and two empty eye ovals. No pupils, no mouth at first, no clothes. One model, built once in `set.py`, posed per shot, with a face texture per week.
-- **Face per week (always exactly my canvas):** week 1, cross and two ovals. Week 2, plus a nose line. Week 3, plus one mouth corner. Week 4, plus one eyebrow. Week 5, the same as week 4.
-- **Light it for fear:** easel clamp lamps from below and the side, a cold rim from the north window, front fill dead. The empty eye ovals are the palest spot on it. It's never seen moving, only already somewhere nearer.
-- **Continuity list:**
-  - L09 to L19 (week 1): on the dais stool, on the green cushion, which stays flat. Facing the easels, hands on knees.
-  - L20 to L25 (week 2): on a paint-spattered spare stool beside easel 1 (Mr Dobbs), body toward the curve.
-  - L26 to L30 (week 3): on a spare stool between easels 4 and 5, in the middle of the curve, head turned toward my corner.
-  - L31 to L35 (week 4): on a spare stool beside easel 7 (Petra), its knee level with her palette shelf, a hand's width clear of her.
-  - L36 to L40 (week 5): beside Petra at first, gone from there when the lights come back (her spare stool empty, L38).
-  - L41 to L47: on a spare stool right beside my easel, its knee against my easel leg, its long body bent forward from the waist into my canvas (L43), no head turn, a hand's width clear of me. It never touches me.
-  - L53 to L60: still beside my easel, small in the window shot. The dais stool empty, cushion flat.
-  - L62 to L66 (week 6): beside my easel, facing my canvas.
-  - L67 onward: gone. The spare stool empty, the dais cushion dented (L68). It never appears again.
+## The faded sitter (faded Mum, no monster)
+- **Look:** Mum's R6 body and bob, every surface raw pine (`#d8b98a`) with grain, normal proportions. Face: graphite guide lines only, per week as above. No glasses, no clothes colour. Never seen moving, only already nearer.
+- **Light it:** clamp lamps from below and the side, a cold rim from the north window, front fill dead. The empty eye ovals are the palest spot on it. Restored Mum is lit warm and bright.
+- **Continuity:**
+  - S11 to S16 (week 1): on the dais stool, cushion flat, facing the easels, hands on knees.
+  - S17 to S18 (week 2): on a spare paint-spattered stool between easels 4 and 5, head turned to my corner.
+  - S19 to S21 (week 3): on a spare stool beside Petra at easel 7, its knee level with her palette shelf, a hand's width clear of her.
+  - S22 to S24 (week 4): on a spare stool at my elbow, leaning in from the waist, its face a hand's width from mine, never touching.
+  - S28 to S31: still beside my empty easel, seen small through the window, then its face turned toward the glass.
+  - S32 to S34: beside my easel, facing my canvas, restoring at S34.
+  - S35 on: Mum herself. The pine look never returns on her.
+  - Sting (S39 to S40): a different faded sitter on the dais stool.
 
 ## Palette and sound
-- **Palette:** cream plaster, honey boards, warm tungsten from the clamp lamps (about 3200 K), the north window night blue with rain, raw pine and graphite, sage cushion, Mum's teal. The show (L69 to L74) is a bright Saturday afternoon with all the room lights on and white daylight from the window. Mum's hall at L75 and L76 is a bright morning, white walls, sun through the door glass. Every warm and closing shot is bright enough to read at phone size.
-- **Caption key colour:** cerulean `#4cc3f0` (a paint blue, the smudge on my jumper).
-- **Music:** A Aeolian, 68 bpm, a soft synth pulse with a felt-like low pad and rain hiss. It thins each week. Music drops (voice and the hit only) for 0.6 s before L41 and 0.5 s before L45. From L62 it moves to A major at 76 bpm with a warm low pad. All synthesized in `sound.py`, no music box.
-- **The power dips (L37 to L41):** each is a slow ramp: lamps down from 100% to 40% over 1.2 s, hold 0.8 s, back up over 1.2 s, with a low electrical sag in the sound. Never full dark. Two dips, a cut on the second while dim. Keep well under 2 flashes a second. Pre-check with `flash`.
-- **Closing sound:** at L76 the frame's wire settles on the hook with a soft wooden knock and a two-note low chord falling a fifth, at about -16 dB, then 0.25 s to the loop cut.
+- **Palette:** montage in bright sunny primaries, my flat in cool morning light, and the life room warm tungsten (about 3200 K) against the night-blue rainy window, raw pine and graphite, the sage cushion and Mum's teal. S32 to S37 bright and warm. S38 to S40 the room colder, lamps lower, still readable.
+- **Caption key colour:** cerulean `#4cc3f0` (the paint smudge on my jumper).
+- **Music:** A Aeolian, 68 bpm, a thin synth pulse with rain hiss to L21. Low heavy drone enters at L22 and holds to L31. Drops 0.6 s before L23 and 0.7 s before L31. A major, 76 bpm, warm low pad L32 to L37. L38 to L40 the drone returns alone, cold.
+- **The power dip (L22):** one slow ramp, lamps 100% to 40% over 1.2 s, hold 0.8 s, cut while dim, back up over 1.2 s into S23. Never full dark. Pre-check with `flash`.
+- **Closing sound:** under L40, one low two-note chord falling a fifth at about -16 dB, then 0.25 s to the loop cut.
 
 ## The lore plant
-A graphite tally of nine short upright strokes, plain, no extra stroke (eight easels and one sitter, the number the class was built for), on the underside of the dais top. At the show Kofi has stood the dais on its edge against the wall to make room, so its underside faces the room. Shot S70 under L70: the dais underside fills the upper middle of the frame, the nine strokes fully in frame, well above the caption band, lit by daylight, held 1.6 s. Never narrated. Same graphite grey as the Unpainted's face lines.
+Nine short graphite strokes, plain, no extra stroke (eight easels and one sitter, the number the class is built for), scratched along the front edge of the dais. Seen in S39 under L39: the dais edge across the lower middle of the frame, above the caption band, strokes fully in frame, lit by a clamp lamp, held about 1.6 s. Never narrated. Same graphite as the guide lines.
 
 ## Shot plan and narration
-Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean. The shot is under each line.
+Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean. Shots under each line.
 
-### 01 The criticism (0 to about 12 s)
-- `L01` narrator: Mum always SAID / I never FINISH / a FACE.
-  - [S01: my canvas under a clamp lamp, a pencil head oval with a cross and two empty eye ovals, nothing else, with my face also in frame beside it, looking at it. Slow push in. Rewatch plant: this is its face]
-- `L02` narrator: She used to PAINT. / Her HALL was covered / in her PICTURES.
-  - [S02: Mum's front hall years ago, bright, frames edge to edge (landscapes and flowers, no text), Mum in her teal cardigan hanging one]
-- `L03` narrator: Now it's BARE, / and her BRUSHES / live in a DRAWER.
-  - [S03: the same hall now, bare hooks and paler squares on the paper. Cut to a drawer slid half open: brushes in a jar on their side]
-- `L04` narrator: So I joined a WEDNESDAY / PORTRAIT CLASS, / and didn't TELL her.
-  - [S04: high wide of a squat brick arts centre on a hill in rain, warm windows, no signs. Cut to me on its rain-dark steps, a canvas under my arm]
+### 01 The rule (0 to about 15 s)
+- `L01` narrator: In this TOWN, / if nobody LOOKS at you, / your face FADES.
+  - [S01: bright daylight bus stop. The bus-stop man at frame centre, face at least 1/4 frame width: half his face faded to raw pine grain, one eye only a pencil oval. Two passers-by walk past without looking. Rule marker and face readable from frame 1]
+  - [S01b at "FADES": push in on the fade line across his cheek]
+- `L02` narrator: Down to bare WOOD, / and the first PENCIL LINES / you were DRAWN with.
+  - [S02: close on his faded half: grain, and the graphite cross and oval showing through]
+- `L03` narrator: So everybody STARES. / Couples stare at each other / over BREAKFAST.
+  - [S03: cafe window table, a couple staring hard at each other, toast going cold. Played for a laugh]
+- `L04` narrator: The baker holds your EYE / till your change / is COUNTED.
+  - [S04: bakery counter, the baker staring at the customer, unblinking. Cut to the customer's uneasy face]
+- `L05` narrator: And if you're LONELY, / you sit for the PORTRAIT CLASS, / and eight painters / fill you back IN.
+  - [S05: the life room in warm light: Mr Dobbs on the dais, his faded cheek warming back to colour. S05b: over a painter's shoulder, his face on the canvas]
 
-### 02 Week one (about 12 to 45 s)
-- `L05` narrator: EIGHT EASELS / in a CURVE, / and a wooden DAIS / in the MIDDLE.
-  - [S05: overhead of the life room: the curve of easels round the low dais, the empty stool and green cushion on it, the fruit bowl on the side table]
-- `L06` narrator: Kofi runs it. / He set a STOOL / on the DAIS, / with a fat green CUSHION,
-  - [S06: Kofi in his apron setting the stool down, then plumping the cushion. Cut away before his hands meet it]
-- `L07` narrator: and said, / "Paint what you SEE."
-  - [S07: Kofi's face, mid-shot, friendly, glasses catching the lamp]
-- `L08` narrator: Then he set out a BOWL of FRUIT / and went to make TEA.
-  - [S08: the fruit bowl on the side table, Kofi's back going out of the door]
-- `L09` narrator: I looked at the DAIS, / and someone was SITTING there.
-  - [S09: over my shoulder from easel 8 to the dais: the Unpainted on the stool, the cushion flat under it]
-- `L10` narrator: It was made of RAW PINE, / like a FENCE POST / that grew a PERSON.
-  - [S10: low wide past two easels on the Unpainted: grain and knots, hands on knees, lit from below. Seated, its head is level with the easel tops, higher than a standing painter]
-- `L11` narrator: Where a face should BE, / there were only / PENCIL LINES.
-  - [S11: slow push on its head]
-- `L12` narrator: A CROSS, / and two empty OVALS / for EYES.
-  - [S12: close on its face: the cross and two ovals, exactly my L01 canvas. The ovals are the palest thing]
-- `L12b` narrator: The guide lines you DRAW / before you draw / ANYTHING.
-  - [S12b: my canvas again, the same lines, the clamp lamp buzzing]
-- `L13` narrator: Next to me, / Petra was already SKETCHING.
-  - [S13: Petra at easel 7, her canvas angled so we see a pencil outline of the fruit bowl. Plant 1, not named]
+### 02 Mum (about 15 to 23 s)
+- `L06` narrator: I PAINT. / But Mum always SAID / I never FINISH / a FACE.
+  - [S06: my flat, my easel: Mum's portrait, silver bob, round tortoiseshell glasses, teal check cardigan, her face only guide lines: a cross, two ovals, little lines at the eye corners, a short nose line and one mouth corner. Me beside it, face in frame. Plant 1 visible]
+- `L07` narrator: We haven't SPOKEN / since SPRING, / and she lives ALONE.
+  - [S07: my phone face down on the shelf, silent, no UI. S07b: Mum's front hall, bare hooks and paler squares on the paper, nobody in it]
+- `L08` narrator: I told myself / someone ELSE / was looking at her.
+  - [S08: me close, turning away from the portrait]
+
+### 03 Week one (about 23 to 42 s)
+- `L09` narrator: So on WEDNESDAY / I joined the PORTRAIT CLASS, / to learn to finish a FACE.
+  - [S09: high wide of the squat brick arts centre on a hill in rain, warm windows, no signs. S09b: me on its steps, a canvas under my arm]
+- `L10` narrator: Kofi set out / a BOWL of FRUIT, / and said, / "Paint what you SEE."
+  - [S10: the fruit bowl on the side table. S10b: Kofi mid-shot, friendly, glasses catching the lamp]
+- `L11` narrator: On the dais STOOL, / someone was SITTING. / Faded ALL the WAY.
+  - [S11: over my shoulder from easel 8: the faded sitter on the stool, the green cushion flat under it]
+- `L12` narrator: Bare PINE, / from its HAIR / to its SHOES.
+  - [S12: low wide past two easels: grain, two dark knots, the pine bob, lit from below]
+- `L13` narrator: Just a CROSS, / two empty OVALS, / and little LINES / at the CORNERS.
+  - [S13: close on its face. The ovals the palest thing, the corner lines clear. Plant 1 named]
 - `L14` narrator: Nobody else / LOOKED UP.
-  - [S14: wide of the curve from behind the dais, every painter's head down]
-- `L15` narrator: So I drew what I SAW.
-  - [S15: me at my easel, side on, concentrating]
-- `L16` narrator: The guide LINES, / then the start / of a NOSE.
-  - [S16: my canvas: a short nose line being added. Cut away before a hand meets the canvas]
-- `L17` narrator: And I heard Mum / in my HEAD, / saying, "HALFWAY again?"
-  - [S17: my face, eyes wide. Soft flash-free insert of Mum's face at a kitchen table, years ago, raised eyebrow]
-- `L18` narrator: My hand STOPPED. / I left it THERE.
-  - [S18: the canvas: cross, ovals, a nose line stopped short]
-- `L19` narrator: When Kofi called TIME, / the cushion under it / was still PERFECTLY FLAT.
-  - [S19: Kofi back in the doorway with a mug, then close on the cushion under its pine seat: smooth, no dent. Plant 2, named and visible]
+  - [S14: wide from behind the dais, every painter's head down. Petra's canvas: a pencil outline of the fruit bowl. Plant 3]
+- `L15` narrator: So I painted IT. / I got as far / as the NOSE, / and STOPPED.
+  - [S15: me at easel 8, side on. S15b: my canvas, a nose line stopped short. Cut away before a hand meets the canvas]
+- `L16` narrator: HALFWAY. / AGAIN.
+  - [S16: my face, jaw tight, lamp from below]
 
-### 03 Weeks two to four (about 45 to 85 s)
-- `L20` narrator: The next WEDNESDAY, / it had a NOSE, / right where MINE / had stopped.
-  - [S20: close on its face: the same short nose line I stopped on, then a cut to my canvas, same line, same length]
-- `L21` narrator: And it had moved / to a SPARE STOOL / by the FIRST EASEL.
-  - [S21: the empty dais stool, cushion flat, then pan to the Unpainted on a paint-spattered stool beside easel 1]
-- `L22` narrator: Mr Dobbs, at the first easel, / painted RIGHT PAST it.
-  - [S22: over Mr Dobbs's shoulder: his canvas is the fruit bowl in oils. Its pine shoulder at frame edge. Plant 1]
-- `L23` narrator: Mum PHONED. / I told her I was / working LATE.
-  - [S23: my phone face up on the easel shelf, buzzing, a plain glow, no text. Cut to Mum in her bright kitchen, phone to her ear, puzzled]
-- `L24` narrator: I started its MOUTH, / got one CORNER in, / and FROZE.
-  - [S24: my canvas, one mouth corner, then nothing]
-- `L25` narrator: HALFWAY. / AGAIN.
-  - [S25: my face, jaw tight, lamp from below]
-- `L26` narrator: Week THREE, / the corner of a MOUTH / was on its FACE.
-  - [S26: close on its face: the mouth corner]
-- `L27` narrator: It sat in the MIDDLE / of the CURVE now,
-  - [S27: overhead: the Unpainted between easels 4 and 5]
-- `L28` narrator: its empty eyes / turned toward MY corner.
-  - [S28: from behind easel 5, its head turned to camera at easel 8]
-- `L29` narrator: Every line I ADDED / felt like it was / LOOKING back.
-  - [S29: my canvas, one eyebrow line appearing, and its face reflected faint in the dark window behind]
-- `L30` narrator: I drew one EYEBROW / and packed UP.
-  - [S30: my bag zipped on the stool, the canvas left half done]
-- `L31` narrator: Week FOUR, / it had an EYEBROW.
-  - [S31: close on its face: one eyebrow]
-- `L32` narrator: And it was sitting / beside PETRA.
-  - [S32: over my shoulder: Petra at easel 7 and the Unpainted beside her, one easel from me]
-- `L33` narrator: Right next to her, / one wooden knee / by her PALETTE.
-  - [S33: low on its pine knee level with her palette shelf, a hand's width from her arm]
-- `L34` narrator: Petra HUMMED, / and painted / a GREEN PEAR.
-  - [S34: Petra's canvas: a green pear. Plant 1]
-- `L35` narrator: I couldn't look at my CANVAS, / or toward IT.
-  - [S35: me staring at the floor between us]
+### 04 Weeks two and three (about 42 to 55 s)
+- `L17` narrator: Next WEDNESDAY, / it had a NOSE. / MY nose, / right where I'd STOPPED.
+  - [S17: close on its face, the short nose line. S17b: my canvas, the same line, same length]
+- `L18` narrator: And it was sitting / one easel CLOSER.
+  - [S18: the empty dais stool, cushion flat, pan to it on a spare stool between easels 4 and 5, head turned to my corner]
+- `L19` narrator: Week THREE, / I painted half a MOUTH. / It sat by PETRA, / with half a MOUTH.
+  - [S19: my canvas, one mouth corner. S19b: over my shoulder, it beside Petra at easel 7, one mouth corner on its face, its pine knee by her palette]
+- `L20` narrator: Petra HUMMED, / and painted / a PEAR.
+  - [S20: Petra's canvas, a green pear. Plant 3]
+- `L21` narrator: Its empty EYES / never left / MY EASEL.
+  - [S21: from behind easel 7, its head turned to camera at easel 8]
 
-### 04 Week five, the scare (about 85 to 105 s)
-- `L36` narrator: Week FIVE, / it was raining HARD.
-  - [S36: the north window streaming, the room lamps warm]
-- `L37` narrator: An hour IN, / the LIGHTS DIPPED.
-  - [S37: wide of the room, then a clamp lamp bulb sagging to amber. Lamps ramp to 40% over 1.2 s, hold, ramp back, rain sound up]
-- `L38` narrator: When they came BACK, / Petra's spare stool / was EMPTY.
-  - [S38: Petra painting, the spare stool beside her empty]
-- `L39` narrator: I didn't want to TURN.
-  - [S39: tight on me, eyes to the side]
-- `L40` narrator: The lights dipped AGAIN.
-  - [S40: second slow ramp down. Cut while dim. Music drop 0.6 s before L51]
-- `L41` narrator: And when I looked UP / from my PALETTE, / it was sitting / RIGHT BESIDE ME.
-  - [S41: lamps back up: wide from the window side, the Unpainted on a spare stool at my elbow, taller than me even seated. The hit]
-- `L42` narrator: One wooden KNEE / against my EASEL LEG.
-  - [S42: low on its knee against the easel leg]
-- `L43` narrator: It was leaning IN / to my CANVAS, / like a MIRROR.
-  - [S43: a 3/4 angle, lit from below: its long body bent forward from the waist into my canvas, its half-drawn face close to the canvas face, no head turn, a hand's width clear of me. Music drop 0.5 s before L45]
-- `L45` narrator: The two FACES / were the SAME.
-  - [S45: straight on: its face and my canvas side by side in frame, every line matching]
-- `L46` narrator: It was WAITING.
-  - [S46: its empty ovals, the palest thing in frame]
-- `L47` narrator: I left my coat / and RAN.
-  - [S47: my coat on the easel peg, the door swinging]
+### 05 The scare (about 55 to 65 s)
+- `L22` narrator: Week FOUR, / an hour IN, / the lights DIPPED.
+  - [S22: wide of the room, clamp lamps ramping to 40%, rain up, the drone enters. Cut while dim. Music drop 0.6 s before L23]
+- `L23` narrator: When they came BACK, / it was RIGHT / BESIDE ME.
+  - [S23: lamps up: wide from the window side, it on a spare stool at my elbow. The hit. Cover frame]
+- `L24` narrator: Leaning IN, / its face / a hand from MINE.
+  - [S24: 3/4, lit from below, its pencil face leaning in toward mine, a hand's width apart, the ovals the palest thing. It never touches me]
+- `L25` narrator: I left my COAT / and RAN.
+  - [S25: my coat on the easel peg, the door swinging]
 
-### 05 The car park (about 105 to 122 s)
-- `L48` narrator: In the CAR PARK, / Petra caught me UP.
-  - [S48: rain, a lamp post, Petra jogging over with my coat]
-- `L49` narrator: I asked her who our SITTER was.
-  - [S49: two-shot under the lamp]
-- `L50` narrator: She LAUGHED. / "Nobody has sat on that stool / since SPRING."
-  - [S50: Petra, amused, rain on her bun]
-- `L51` narrator: The hired sitter / MOVED AWAY.
-  - [S51: me, the words landing]
-- `L52` narrator: "We paint the FRUIT," / she said.
-  - [S52: Petra shrugging]
-- `L53` narrator: Through the WINDOW, / I could see every CANVAS.
-  - [S53: from the car park through the lit, rain-streaked window: the curve of easels from behind]
-- `L54` narrator: Seven BOWLS of FRUIT. / And mine.
-  - [S54: push in: seven fruit canvases, then mine with the half face, the Unpainted beside it, small. Plant 1 paid]
-- `L55` narrator: On the DAIS, / the green cushion, / perfectly FLAT.
-  - [S55: push in through the window to the empty dais stool and its flat cushion. Plant 2 paid]
-- `L58` narrator: But a sitter / with no FACE / isn't really THERE.
-  - [S58: its blank face behind wet glass]
-- `L59` narrator: And only ONE of us / was PAINTING it.
-  - [S59: my canvas through the window, the half face]
-- `L60` narrator: Every face / I gave UP on / was ITS face.
-  - [S60: me in the rain, close, understanding]
-- `L61` narrator: It came closer every week / so I could SEE it / BETTER.
-  - [S61: quick cut of its four positions, dais to my elbow, as stills]
+### 06 The car park (about 65 to 83 s)
+- `L26` narrator: In the CAR PARK, / Petra brought my COAT. / I asked who our SITTER was.
+  - [S26: rain, a lamp post, Petra jogging over with my coat. S26b: two-shot under the lamp]
+- `L27` narrator: She LAUGHED. / "That stool's been EMPTY / for MONTHS."
+  - [S27: Petra, amused, rain on her bun. S27b: me, the words landing]
+- `L28` narrator: Through the WINDOW, / I could see / every CANVAS.
+  - [S28: from the car park through the lit, rain-streaked window: seven bowls of fruit, then mine with the half face, the faded sitter beside it, small]
+- `L29` narrator: Mine had the same half FACE / I'd been starting at HOME / since SPRING.
+  - [S29: THE PICTURE. Mum's home portrait and my class canvas side by side in frame, the same lines, corner lines included. Hold it]
+- `L30` narrator: Faded all the WAY, / nobody can SEE you, / except someone who LOVES you.
+  - [S30: through the wet glass, the faded sitter turns its pencil face toward me. Drone holds. Music drop 0.7 s before L31]
+- `L31` narrator: The thing on the STOOL / was MUM.
+  - [S31: close through the glass on its face, the pine bob, the corner lines, rain running down. Held to the end of the line plus 0.6 s]
 
-### 06 Week six, the face (about 122 to 132 s)
-- `L62` narrator: I went BACK / the next WEEK.
-  - [S62: the room, lamps bright and warm, me walking in. Music to A major]
-- `L63` narrator: It was beside my EASEL, / facing my CANVAS, / waiting.
-  - [S63: the Unpainted at my elbow, lit warm, still a little wrong]
-- `L64` narrator: I didn't STOP this time.
-  - [S64: me painting, side on, steady. Cut away before a hand meets the canvas]
-- `L65` narrator: I painted the kindest EYES / I KNOW, / brown, with LINES / at the CORNERS.
-  - [S65: my canvas: warm brown eyes with little lines at the corners, Mum's eyes]
-- `L66` narrator: Then a mouth / about to say, / "NOT BAD."
-  - [S66: the finished portrait, an ordinary kind face, brightly lit]
-- `L67` narrator: When I looked UP, / the spare stool / was EMPTY.
-  - [S67: the spare stool beside my easel, empty]
-- `L68` narrator: On the DAIS, / the green cushion / had a DENT in it.
-  - [S68: the dais stool, bright, nobody on it, the cushion pressed down as if someone just stood up]
+### 07 The face (about 83 to 97 s)
+- `L32` narrator: I went back IN, / and I didn't STOP / this time.
+  - [S32: me walking in wet, the room bright and warm, music to A major. S32b: me painting, side on, steady. Cut away before a hand meets the canvas]
+- `L33` narrator: The kindest EYES I know, / BROWN, / with lines at the CORNERS.
+  - [S33: my canvas, Mum's eyes. S33b: its face, the brown coming into the ovals]
+- `L34` narrator: Silver HAIR. / Round GLASSES. / A mouth about to say, / "NOT BAD."
+  - [S34: the restore, about 2.5 s: the colour climbs her, silver bob, glasses, teal cardigan. Mum on the stool at my elbow, looking at the canvas]
+- `L35` narrator: Behind me, / Petra dropped / her BRUSH.
+  - [S35: Petra staring at Mum, mouth open. S35b: the brush on the boards]
+- `L36` narrator: Mum looked at it / for a long TIME. / Then she said, / "Not BAD."
+  - [S36: Mum's face, glasses, eyes shining, a small smile. S36b: two-shot, me and Mum, the painting between us]
 
-### 07 The show (about 132 to 145 s)
-- `L69` narrator: I invited Mum / to the end-of-term SHOW.
-  - [S69: Mum at the door in daylight, teal cardigan, surprised]
-- `L70` narrator: Kofi had stood the DAIS / against the WALL / to make ROOM.
-  - [S70: bright daylight. The dais on its edge against the wall, underside to camera in the upper middle of the frame: nine short graphite strokes, fully in frame, above the caption band, held 1.6 s. Lore plant, never named]
-- `L71` narrator: Mum stood in front of my painting / for a LONG time.
-  - [S71: Mum from behind, the portrait on the wall at her eye height]
-- `L72` narrator: She didn't SAY anything.
-  - [S72: Mum's face, glasses, lips pressed, eyes shining]
-- `L73` narrator: Then she asked / if she could take it HOME.
-  - [S73: two-shot, me and Mum, the painting between us]
-- `L74` narrator: And she asked Kofi / if the class / still needed a SITTER.
-  - [S74: Kofi grinning, Mum's hand up, the dais back on its feet behind them]
-- `L75` narrator: Mum always SAID / I never FINISH / a FACE.
-  - [S75: Mum's hall, bright morning, Mum lifting the painting toward a bare hook]
-- `L76` narrator: This one's / in her HALL.
-  - [S76: the portrait hung alone among the pale squares, the brushes jar out on the hall table below it, sun through the door glass. The frame settles on the hook (closing sound), 0.25 s, loop cut to S01]
+### 08 The hall, and the sting (about 97 to 105 s)
+- `L37` narrator: It hangs in her HALL now. / I go round every WEDNESDAY / to LOOK at her.
+  - [S37: Mum's hall, bright morning, the portrait alone among the pale squares, Mum and me in front of it, both looking at each other]
+- `L38` narrator: Kofi still sets out / the STOOL.
+  - [S38: the life room, colder, Kofi plumping the green cushion. Cut away before his hands meet it]
+- `L39` narrator: This week, / someone NEW / was SITTING on it.
+  - [S39: low on the dais: the nine graphite strokes on its front edge (lore plant, held 1.6 s), rising to the sting sitter on the stool, short pine crop, guide-line face. Behind it, every painter's head down over the fruit]
+- `L40` narrator: I wonder who stopped / LOOKING / at THEM.
+  - [S40: slow push on its blank pencil face, the ovals the palest thing. Closing chord, 0.25 s, loop cut to S01]
 
 ## Notes for the builder
-- Hands never grip: cut away at L06, L16 and L64, and the phone lies on the shelf at L23.
-- The Unpainted's torso is long: check its head against the easel tops and the lamp clamps at L11, L41 and L63 for intersections.
-- At L43 it bends forward from the waist toward my canvas at a 3/4 angle, with no head turn. Check the bent torso against the easel and lamp clamp, and keep it a hand's width clear of me in every shot.
-- Spare stools are plain paint-spattered stools, not the dais stool. The green cushion is only on the dais stool.
-- Canvases carry no text, no signature.
+- Hands never grip: cut away at S15b, S32b and S38. The phone lies on the shelf at S07.
+- S24 leans it from the waist toward me, a hand's width clear in every shot. Check it against the easel and lamp clamp.
+- S29 is the reveal picture: both canvases large, side by side, every guide line matching, out of the caption band.
+- Spare stools are plain and paint-spattered. The green cushion is only on the dais stool.
+- No text on canvases, signs, the bakery or the bus stop.
+- Cover (`cover_s` 56.0, estimated): S23, it at my elbow under the lamps with my face in frame, caption "BESIDE ME". Re-set it from the timings.
