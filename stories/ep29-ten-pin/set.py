@@ -544,7 +544,7 @@ def spare_face(skin: str, kind: str):
         else:
             ry = max(rx * ry_k, 0.012 * s)
             faces._ellipse(d, cx, ey, rx, ry, fill=hole, outline=ink, width=th // 2)
-            gr = (0.034 if kind == "wide" else 0.026 if kind == "stare" else 0.02) * s
+            gr = (0.017 if kind == "wide" else 0.015 if kind == "stare" else 0.012) * s
             gy = ey + (ry * 0.05 if kind in ("wide", "stare") else 0)
             if kind == "slit":
                 faces._stroke(d, [(cx - rx * 0.7, ey), (cx + rx * 0.7, ey)], (255, 255, 255), th * 0.5)
@@ -611,7 +611,7 @@ def build_spare(kit, ctx, M):
     for kind in ("shut", "slit", "half", "wide"):
         load(kind)
     # the key from below and the rim behind
-    kit.light("ckey", "SPOT", (0, PIN_Y - 0.6, 0.1), 360.0, "#6fe0cf", spot=26, blend=0.6, size=0.15)
+    kit.light("ckey", "SPOT", (0, PIN_Y - 0.6, 0.1), 420.0, "#6fe0cf", spot=26, blend=0.8, size=0.15)
     kit.light("crim", "SPOT", (0, DECK_END + 0.1, 2.9), 300.0, "#a8f0e4", spot=32, blend=0.5, size=0.2)
     return ctx["spare"]
 
@@ -633,7 +633,7 @@ def pose_spare(kit, ctx, tl, t, over):
         over["crim"] = 0.0
         return
     over["ckey"] = over.get("ckey", 1.0) * cue.get("key", 1.0)
-    over["crim"] = over.get("crim", 1.0) * cue.get("rim", 1.0)
+    over["crim"] = over.get("crim", 1.0) * cue.get("rim", 1.0) * 0.0   # lit from below only: no light from above
     lane = cue.get("lane", 3)
     pos = cue.get("pos") or [lane_x(lane), 15.9 if lane else 15.2]
     x, y = pos
@@ -650,8 +650,8 @@ def pose_spare(kit, ctx, tl, t, over):
     sp["st1"].default_value = 2.0 * cue.get("glow", 1.0)
     sp["st2"].default_value = {"shut": 0.0, "slit": 3.0, "half": 3.0, "wide": 6.0}[eyes] * cue.get("glow", 1.0)
     # the lights follow it
-    ck["obj"].location = (x + 0.1, y - 1.5, 0.05)
-    kit.aim(ck["obj"], (x, y, 1.95))
+    ck["obj"].location = (x + 0.1, y - 1.3, 0.04)
+    kit.aim(ck["obj"], (x, y, 1.2))
     cr["obj"].location = (x, y + 0.9 + (0.0 if lane else 0.6), 2.9)
     kit.aim(cr["obj"], (x, y, 1.7))
 
@@ -668,9 +668,9 @@ def build_lights(kit, ctx):
     for i in range(5):
         kit.light(f"strip{i}", "AREA", (lane_x(i), 15.0, 2.9), 60.0, "#a9f0e2", size=1.3, shadow=False)
     kit.light("seats", "AREA", (-1.8, SEAT_Y + 1.5, 3.2), 260.0, "#ffc58a", size=5.0, shadow=False)
-    kit.light("shadowL", "SPOT", (-1.8, -9.0, 0.9), 0.0, "#ffc68a", spot=75, blend=0.25, size=0.05)
-    kit.LIGHTS["shadowL"]["base"] = 3500.0
-    kit.aim(kit.LIGHTS["shadowL"]["obj"], (-1.8, 6.0, 0.0))
+    kit.light("shadowL", "SPOT", (-1.8, -8.8, 3.2), 0.0, "#ffc68a", spot=75, blend=0.25, size=0.05)
+    kit.LIGHTS["shadowL"]["base"] = 3400.0
+    kit.aim(kit.LIGHTS["shadowL"]["obj"], (-1.8, 8.0, 0.0))
     # the opening: a soft warm light on my face for the first seconds, so the first frame reads on a phone
     kit.light("open", "AREA", (-0.3, -3.4, 2.4), 0.0, "#ffd4a6", size=2.2, shadow=False)
     kit.LIGHTS["open"]["base"] = 130.0
@@ -783,6 +783,7 @@ def build(kit, story, tl):
     build_screens(kit, ctx, M)
     build_lights(kit, ctx)
     build_spare(kit, ctx, M)
+    build_shadows(kit, ctx)
     return ctx
 
 
@@ -844,16 +845,62 @@ def animate_ball(ctx, tl, t):
     ball.rotation_euler = (done * run / 0.109, 0, 0)
 
 
+FIVE_X = (0.6, -0.5, -1.6, -2.7, -3.8)   # the five people of the closing freeze (make_story's FIVE)
+
+
+def build_shadows(kit, ctx):
+    """Five long soft shadows on the boards behind the five, drawn as dark strips (the freeze's high wide)."""
+    m = kit.plastic("#030203", 0.95, name="freeze shadow")
+    b = m.node_tree.nodes["Principled BSDF"]
+    b.inputs["Alpha"].default_value = 0.78
+    try:
+        m.surface_render_method = "BLENDED"
+    except Exception:
+        pass
+    obs = []
+    for i, x in enumerate(FIVE_X):
+        tip = x + (x + 1.8) * 0.28
+        verts = [(x - 0.28, -3.05, 0.045), (x + 0.28, -3.05, 0.045), (tip + 0.42, 9.5, 0.045), (tip - 0.42, 9.5, 0.045)]
+        obs.append(kit.mesh_obj(f"fshadow{i}", verts, [(0, 1, 2, 3)], m))
+    ctx["fshadows"] = obs
+
+
+def link_lights(kit, ctx):
+    """The Spare is lit from below only: every light but its own key skips it (Cycles light linking)."""
+    sp = ctx["spare"]["c"]
+    mine = {sp.root} | set(sp.root.children_recursive)
+    coll = bpy.data.collections.new("receivers")
+    bpy.context.scene.collection.children.link(coll)
+    for ob in bpy.data.objects:
+        if ob not in mine and ob.type in ("MESH", "EMPTY") and ob.name not in coll.objects:
+            coll.objects.link(ob)
+    for nm, L in kit.LIGHTS.items():
+        if nm != "ckey":
+            L["obj"].light_linking.receiver_collection = coll
+
+
 def animate(kit, story, tl, t, ctx):
     M = ctx["M"]
     lazy(kit, ctx, M, story)
+    if not ctx.get("linked"):
+        ctx["linked"] = True
+        link_lights(kit, ctx)
     over = {}
     # the lights: a slow dip, the house coming up
     g = dip_gain(tl, t)
     for nm in kit.LIGHTS:
         if nm.startswith(("lamp", "lanes", "strip", "seats", "ckey", "crim")):
             over[nm] = g
+    scs0 = _last(_cues(tl, "shadowlight"), t)
+    if scs0 is not None:   # the freeze: the other lights give way so the five long shadows read on the boards
+        fz = 1.0 - 0.7 * _ss((t - scs0["t"]) / 1.0)
+        for nm in kit.LIGHTS:
+            if nm.startswith(("lamp", "lanes", "seats", "fill")):
+                over[nm] = g * fz
     hg = house_gain(tl, t)
+    scs = _last(_cues(tl, "shadowlight"), t)
+    if scs is not None:   # the freeze: the house lights give way a little so the five long shadows read
+        hg *= 1.0 - 0.85 * _ss((t - scs["t"]) / 1.0)
     for k in range(4):
         over[f"house{k}"] = hg
     # people sitting
@@ -866,7 +913,7 @@ def animate(kit, story, tl, t, ctx):
     animate_pins(ctx, tl, t)
     pose_spare(kit, ctx, tl, t, over)
     animate_ball(ctx, tl, t)
-    over["open"] = 1.0 - _ss((t - 2.0) / 1.0)
+    over["open"] = 1.0 - _ss((t - 3.2) / 1.0)
     for st in ctx["bulbs"]:
         st.default_value = 6.0 * g
     sc = _last(_cues(tl, "shadowlight"), t)
@@ -884,6 +931,8 @@ def animate(kit, story, tl, t, ctx):
             ob.hide_render = not on
     for ob in ctx.get("p_bag", []):
         ob.hide_render = not show_flag(tl, t, "bag")
+    for ob in ctx.get("fshadows", []):
+        ob.hide_render = scs0 is None or t < scs0["t"] + 0.5
     ns = show_flag(tl, t, "noscreen")
     for ob in bpy.data.objects:
         if ob.name.startswith("scr."):

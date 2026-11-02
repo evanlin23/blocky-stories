@@ -986,30 +986,30 @@
    ]
   },
   "L38": {
-   "text": "Week three, it was in the, lane next to ours.",
+   "text": "Week three, it was in the lane next to ours.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9579000000000001,
-   "dur": 2.397,
-   "onset": 0.172,
-   "end": 2.19,
+   "dur": 2.241,
+   "onset": 0.19,
+   "end": 2.034,
    "chunks": [
     [
-     0.172,
-     0.5
+     0.19,
+     0.603
     ],
     [
-     0.526,
-     0.793
+     0.638,
+     0.836
     ],
     [
-     0.793,
-     1.293
+     0.836,
+     1.138
     ],
     [
-     1.293,
-     2.19
+     1.138,
+     2.034
     ]
    ]
   },

@@ -17,7 +17,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
-LOOP = 0.25
+LOOP = 0.03   # L76 itself ends 0.22 s after "fifth", so the cut lands 0.25 s after the last word
 # captions show two or three words: a longer chunk of the script is split (the spoken words split with it), and
 # every "Lxx.n" reference below is moved to the new chunk numbering
 CHUNK_MAP = {}
@@ -53,6 +53,8 @@ lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
 
 def _fixref(v):
     import re
+    if isinstance(v, str) and v.startswith("!"):   # "!L54.1": already the new chunk numbering
+        return v[1:]
     m = re.match(r"^(L\d+)\.(\d+)(.*)$", v) if isinstance(v, str) else None
     if not m:
         return v
@@ -152,8 +154,8 @@ def shot(at, scene, camera, step=2, hand=0.004, note=""):
 SEATED_ALL = {w: seat(w) for w in WHO}
 
 # 01 night one ---------------------------------------------------------------------------------------------
-shot(0, {"me": ([-0.3, -1.5], 0, {"expr": "smirk"})},
-     mv([-0.3, -4.8, 1.5], [-0.3, -1.5, 1.45], [-0.3, -4.2, 1.5], [-0.3, -1.5, 1.45], 26, 30, v=0.1), note="S1")
+shot(0, {}, mv([SCR_X - 0.3, -5.4, 1.85], [SCR_X - 0.45, -3.4, 1.95], [SCR_X - 0.4, -4.9, 1.92], [SCR_X - 0.45, -3.4, 1.95], 26, 34),
+     hand=0, note="S1 push in on the fifth row's empty square, scoring by itself")
 shot("L02", {"me": ([-0.3, -1.5], 0, {"expr": "smirk"})},
      mv([1.1, -4.0, 1.5], [-0.3, -1.5, 1.45], [0.8, -3.6, 1.5], [-0.3, -1.5, 1.45], 28, 30, v=0.1), note="S2 me, the screen glowing behind")
 shot("L03", {w: ([x, -10.6], 180, {"expr": "neutral"}) for w, x in
@@ -200,11 +202,11 @@ shot("L22", {}, cam(LONG, [-4.8, 15.4, 1.45], 135, 0.0), hand=0, note="S22 someb
 shot("L23", {}, cam(LONG, [-4.8, 15.9, 0.95], 140, 0.0), hand=0, note="S23 body, chest to shoes")
 shot("L24", {}, mv(LONG, [-4.8, 15.9, 0.8], LONG, [-4.8, 15.9, 1.85], 110, 110, 0.0), hand=0, note="S24 tilt up to two heads")
 shot("L25", {}, cam(LONG, [-4.8, 15.9, 1.57], 210, 0.0), hand=0, note="S25 bottom face")
-shot("L26", {}, cam(LONG, [-4.8, 15.9, 1.99], 210, 0.0), hand=0, note="S26 top face shut")
+shot("L26", {}, cam(LONG, [-4.8, 15.9, 1.62], 270, 0.0), hand=0, note="S26 top face shut, both faces above the caption")
 shot("L27", {"me": seat("me", expr="worried", head=[-40, 0]), "rosie": seat("rosie", expr="neutral")},
      cam([-3.4, -3.6, 1.5], [-3.4, -5.6, 1.42], 18, 0.1), note="S27 nudging Rosie")
-shot("L28", {"rosie": ([SEAT_X["rosie"], SEAT_Y, SEAT_Z], 180, {"sit": True, "head": [-20, 0], "expr": "neutral"})},
-     cam([-1.9, -6.9, 1.95], [-4.8, 15.9, 1.55], 55, 0.0), hand=0.003, note="S28 over Rosie's shoulder")
+shot("L28", {"rosie": ([SEAT_X["rosie"], SEAT_Y, SEAT_Z], 180, {"sit": True, "head": [-8, 0], "expr": "neutral"})},
+     cam([-2.1, -8.6, 1.35], [-4.8, 15.9, 1.6], 44, 0.0), hand=0.003, note="S28 over Rosie's shoulder")
 shot("L28.2", {"rosie": seat("rosie", expr="worried", talk=("L28.2", "L28>"))},
      face_cam([SEAT_X["rosie"], SEAT_Y], 180, 2.4, 22), note="S28 her puzzled face")
 shot("L29", {"tomasz": seat("tomasz", expr="smirk", head=[0, -26])},
@@ -250,11 +252,12 @@ shot("L44", {}, cam([SCR_X, -5.4, 1.9], [SCR_X - 0.45, -3.4, 2.1], 22, 0.0), han
 shot("L44.2", {w: stand(w) for w in WHO}, cam([-4.6, -7.4, 0.95], [SCR_X, -3.4, 1.8], 22, 0.0), note="S44 everyone stands back")
 shot("L45", {"mags": ([SCR_X, -4.9], 0, {"expr": "neutral", "talk": ("L45.3", "L45>")})},
      cam([-1.2, -6.9, 1.45], [-1.35, -3.9, 1.85], 22, 0.0), hand=0.003, note="S45 your go, Spare (plant 4)")
-shot("L46", {"dev": ([-0.6, -4.9], 180 + 0, {"expr": "neutral"}), "rosie": ([-1.55, -4.9], 180, {"expr": "worried"}),
-             "tomasz": ([-2.5, -4.9], 180, {"expr": "neutral"})},
-     mv([-0.6, -2.6, 1.5], [-0.6, -4.9, 1.45], [-2.5, -2.6, 1.5], [-2.5, -4.9, 1.45], 24, 24, 0.1), note="S46 nobody stops me")
-shot("L47", {"me": ([0.0, -1.5], 180, {"arms": [62, 62], "side": [-8, -8], "expr": "worried"})},
-     cam([2.1, -1.0, 1.3], [0.0, -0.9, 1.1], 17, 0.0), note="S47 I step on, ball at my chest")
+shot("L46", {"dev": ([-0.85, -4.9], 180, {"expr": "neutral"}), "rosie": ([-1.55, -4.9], 180, {"expr": "worried"}),
+             "tomasz": ([-2.25, -4.9], 180, {"expr": "neutral"})},
+     mv([-1.55, -2.5, 1.5], [-1.55, -4.9, 1.4], [-1.55, -2.5, 1.5], [-1.55, -4.9, 1.4], 14.5, 16.0, 0.1),
+     note="S46 nobody stops me: one held three-shot")
+shot("L47", {"me": ([0.0, -1.3], 180, {"arms": [45, 45], "side": [-22, -22], "expr": "worried"})},
+     cam([0.35, 1.5, 1.4], [0.0, -1.3, 1.35], 24, 0.0), note="S47 front on, ball at my chest")
 shot("L48", {}, cam([0.0, -0.6, 0.5], [0.0, 14.6, 0.55], 95, 0.0), hand=0.002, note="S48 a fresh rack")
 shot("L49", {}, cam([0.0, -0.6, 0.5], [0.0, 14.6, 0.9], 75, 0.0), hand=0.002, note="S49 the sweep lifts")
 shot("L50", {}, cam([0.0, -0.6, 0.45], [0.0, 15.2, 1.35], 95, 0.0), hand=0, step=1, note="S50 THE REVEAL")
@@ -262,7 +265,7 @@ shot("L51", {}, cam([0.0, -0.6, 0.6], [0.0, 15.2, 1.75], 160, 0.0), hand=0, step
 shot("L52", {}, cam([0.0, -0.6, 0.6], [0.0, 15.2, 2.0], 230, 0.0), hand=0, step=1, note="S52 wide eyes")
 shot("L53", {}, mv([0.5, -4.8, 1.0], [0.0, -1.2, 1.9], [0.45, -4.7, 1.0], [0.0, -1.2, 1.95], 17, 17), step=1,
      note="S53 the light dips")
-shot("L53.1", {}, cam([0.0, -0.6, 0.9], [0.0, 7.5, 1.5], 40, 0.0), hand=0, step=1, note="S54 halfway up")
+shot("!L54.1", {}, cam([0.0, -0.6, 0.9], [0.0, 7.5, 1.5], 40, 0.0), hand=0, step=1, note="S54 halfway up")
 shot("L55", {"me": ([0.0, -0.9], 180, {"expr": "scared"}),
              "dev": ([-0.4, -4.4], 180, {"expr": "neutral"}), "rosie": ([-1.4, -4.4], 180, {"expr": "neutral"}),
              "mags": ([-2.4, -4.4], 180, {"expr": "neutral"}), "tomasz": ([-3.4, -4.4], 180, {"expr": "neutral"})},
@@ -314,8 +317,8 @@ shot("L74", {**{w: ([x - 0.2, -2.2], 0, {"arms": [88, 88], "expr": "soft"}) for 
              "me": ([-3.6, -2.2], 0, {"arms": [88, 88], "expr": "soft"})},
      cam([-1.4, 5.5, 1.4], [-1.4, -2.2, 1.3], 24, 0.0), hand=0.003, note="S74 five grown-ups")
 FIVE = {"dev": 0.6, "tomasz": -0.5, "mags": -1.6, "rosie": -2.7, "me": -3.8}
-shot("L75", {w: ([x, -1.2], 0, {"arms": [88, 88], "expr": "soft", "freeze": True}) for w, x in FIVE.items()},
-     cam([-1.7, -6.8, 3.25], [-1.7, 3.0, 0.1], 24, 0.0), hand=0, note="S75 FREEZE: five shadows")
+shot("L75", {w: ([x, -3.2], 180, {"arms": [88, 88], "expr": "soft", "freeze": True}) for w, x in FIVE.items()},
+     cam([-1.7, -8.5, 3.15], [-1.7, 2.0, 0.0], 15, 0.0), hand=0, note="S75 FREEZE: high wide from behind, five shadows")
 
 shots = []
 for i, s in enumerate(SHOTS):
@@ -369,7 +372,6 @@ for w, x in (("dev", -0.4), ("rosie", -0.9), ("mags", -0.5), ("tomasz", -0.9)): 
 walk("me", "L03", "L03+0.05", [-0.7, -7.7], 180)
 walk("me", "L03", "L03+1.5", [-0.7, -6.9], 180)
 walk("me", "L42", "L42+0.1", [0.0, -0.6], 180)                  # up to the line
-walk("me", "L47", "L47+0.1", [0.0, -0.75], 180)                 # onto the approach
 for w, x in ROW.items():                                         # the row reverses, facing the camera's side
     walk(w, "L71", "L71+0.3", [x, -3.9], 0)
     walk(w, "L71", "L71+2.9", [x, -2.4], 0)
@@ -405,6 +407,7 @@ for w in WHO:
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [
     {"at": 0, "name": "spare", "hidden": True},
+    {"at": "L27", "name": "spare", "lane": 3, "eyes": "shut", "key": 8.0, "rim": 1.0},
     {"at": "L22", "name": "spare", "lane": 3, "eyes": "shut", "key": 0.18, "rim": 0.6},
     {"at": "L23", "name": "spare", "lane": 3, "eyes": "shut", "key": 0.8, "rim": 1.0},
     {"at": "L31", "name": "spare", "lane": 2, "eyes": "slit", "bot": 0, "top": 0},
@@ -415,7 +418,7 @@ cues = [
     {"at": "L41+2.05", "name": "spare", "lane": 1, "eyes": "half", "bot": 12, "top": 8},
     {"at": "L43", "name": "spare", "hidden": True},
     {"at": "L50", "name": "spare", "lane": 0, "pos": [0.0, 15.2], "eyes": "wide", "gap": True, "bot": 0, "top": 0},
-    {"at": "L53.1", "name": "spare", "lane": 0, "pos": [0.0, 7.5], "eyes": "wide", "bot": 0, "top": 0},
+    {"at": "!L54.1", "name": "spare", "lane": 0, "pos": [0.0, 7.5], "eyes": "wide", "bot": 0, "top": 0},
     {"at": "L57", "name": "spare", "hidden": True},
     # our pins
     {"at": 0, "name": "pins", "act": "up"},
@@ -436,7 +439,7 @@ cues = [
     # the lane lights: two slow dips in week three, one in week four, the house lights come up at the strike
     {"at": "L41", "name": "dip", "down": 0.5, "hold": 0.25, "up": 0.6, "depth": 0.55},
     {"at": "L41+1.45", "name": "dip", "down": 0.5, "hold": 0.25, "up": 0.6, "depth": 0.55},
-    {"at": "L53", "name": "dip", "down": 0.6, "hold": 0.3, "up": 0.8, "depth": 0.62},
+    {"at": "!L54.1-0.65", "name": "dip", "down": 0.6, "hold": 0.3, "up": 0.8, "depth": 0.62},
     {"at": "L58", "name": "house", "rise": 1.5},
     {"at": "L75-1.0", "name": "shadowlight", "on": 1.0},
     {"at": "L75-0.1", "name": "show", "what": "noscreen", "on": True},
@@ -492,7 +495,8 @@ sfx = [
     {"at": "L48", "kind": "alley_clunk", "db": -12},
     {"at": "L49", "kind": "alley_whirr", "db": -16, "dur": 1.1},
     {"at": "L50+0.02", "kind": "hit", "db": -8},
-    {"at": "L53", "kind": "alley_buzz", "db": -15, "dur": 1.6},
+    {"at": "L53", "kind": "alley_buzz", "db": -17, "dur": 1.6},
+    {"at": "!L54.1-0.65", "kind": "alley_buzz", "db": -15, "dur": 1.6},
     {"at": "L56+0.1", "kind": "alley_roll", "db": -16, "dur": 3.3},
     {"at": "L58+0.05", "kind": "alley_clatter", "db": -8, "dur": 1.5},
     {"at": "L60.2", "kind": "bell", "db": -26},
