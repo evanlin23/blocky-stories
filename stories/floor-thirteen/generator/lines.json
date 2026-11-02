@@ -190,8 +190,12 @@
     "a tomato"
    ],
    [
-    "over the BALCONY wall.",
-    "over the balcony wall."
+    "over the",
+    "over the"
+   ],
+   [
+    "BALCONY wall.",
+    "balcony wall."
    ]
   ]
  },
@@ -251,11 +255,11 @@
   "chunks": [
    [
     "TUESDAY,",
-    "tuesday,"
+    "Tuesday,"
    ],
    [
     "I pressed TWELVE.",
-    "I pressed twelve."
+    "I pressed, twelve."
    ]
   ]
  },
@@ -760,8 +764,12 @@
     "He smiled"
    ],
    [
-    "the way you SMILE",
-    "the way you smile"
+    "the way",
+    "the way"
+   ],
+   [
+    "you SMILE",
+    "you smile"
    ],
    [
     "at a STRANGER.",
@@ -889,12 +897,16 @@
     "On it"
    ],
    [
-    "was the RED SCARF",
-    "was the red scarf"
+    "was the",
+    "was the"
    ],
    [
-    "he KNITS me",
-    "he knits me"
+    "RED SCARF",
+    "red scarf"
+   ],
+   [
+    "he KNITTED me",
+    "he knitted me"
    ],
    [
     "every WINTER.",

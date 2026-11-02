@@ -81,14 +81,19 @@ INDICATOR = still([0.0, 0.0, 2.2], [0.0, -0.94, 2.3], 30)
 FACE_ME = still([0.32, -0.86, 1.52], [-0.1, 0.6, 1.5], 24)
 HELD = still([0.05, 0.95, 1.1], [0.0, -1.9, 1.8], 18)             # the bump frame, locked off
 FACE_FEAR = still([0.3, -0.86, 1.2], [-0.35, 0.15, 1.55], 26)
-BAL = still([BX, -2.6, 1.6], [BX, 0.75, 1.5], 26)                 # the balconies from the street side
+BAL = still([BX, -2.6, 1.6], [BX, 0.75, 1.5], 22)                 # the balconies from the street side
 
 # ------------------------------------------------------------------------------------------------------ shots
 SH = []
+FK = None
 
 
 def shot(at, label, cam, step=2, hand=0.01, key=None):
     SH.append({"at": at, "label": label, "cam": cam, "step": step, "hand": hand, "key": key})
+
+
+def _lamp_placeholder():
+    pass
 
 
 def lamp(cam, aim, w=1.0, up=0.45, c="#e8e4dc", size=0.7, side=0.0):
@@ -105,27 +110,27 @@ shot("L01.2", "closer on a shelf: kettle, hat, books, each with a brass tag", st
 shot("L02", "the board of keys, a tag on every ring; Mr. Abel lifts his set off it", still([-0.8, -3.0, 1.55], [1.2, -3.0, 1.55], 14))
 shot("L03", "Mr. Abel with a big iced cake on a stand, guilty", still([0.1, -2.6, 1.4], [0.1, -4.5, 1.15], 18))
 shot("L03.3", "the cake close, its brass tag", still([0.1, -3.0, 1.15], [0.1, -4.0, 1.1], 14))
-SHOT_LAND = still([0.9, -3.3, 1.6], [-0.4, -5.0, 1.45], 18)
+SHOT_LAND = still([0.8, -2.7, 1.6], [-0.4, -5.0, 1.45], 16)
 shot("L04", "the Abels' front door: his wife, arms folded", SHOT_LAND)
-shot("L04.2", "her face softening at the cake", still([0.2, -4.2, 1.6], [-0.65, -5.3, 1.55], 20))
-shot("L05", "Mrs. Ruiz in the lift, a shrug", FACE_ME)
+shot("L04.2", "her face softening at the cake", still([-0.1, -4.0, 1.6], [-0.65, -5.3, 1.55], 20))
+shot("L05", "Mrs. Ruiz in the lift, a shrug", FACE_ME, 2, 0.01, lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
 shot("L06", "bright 13: a man in an armchair doing the crossword, a tag on the chair arm; he waves",
      still([0.5, -4.4, 1.35], [-0.35, -6.2, 1.15], 20))
 # 02 Grandad
-shot("L07", "me in the lift, arms folded, pleased with myself", FACE_ME)
+shot("L07", "me in the lift, arms folded, pleased with myself", FACE_ME, 2, 0.01, lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
 SHOT_HIS_DOOR = still([0.5, -3.5, 1.6], [-0.55, -5.1, 1.5], 18)
 shot("L08", "the twelve landing: his door opens, him smiling at me", SHOT_HIS_DOOR)
 shot("L09", "morning sun on the balconies: a tomato on his open palm over the low wall", BAL, 2, 0.01,
-     lamp(BAL, [BX, 0.75, 1.5], 1.2, up=0.25, c="#ffe3b8", size=1.5))
+     lamp(BAL, [BX, 0.75, 1.5], 0.6, up=0.25, c="#ffe3b8", size=1.5))
 L10C = still([BX + 0.9, -1.5, 1.6], [BX + 0.4, 0.75, 1.4], 24)
 shot("L10", "him patting his pockets", L10C, 2, 0.01, lamp(L10C, [BX + 0.4, 0.75, 1.4], 1.0, up=0.2, c="#ffe3b8", size=1.0))
 shot("L11", "the lift: Grandad, the indicator reading 13, his glasses pushed up on his head",
-     still([0.95, 0.55, 1.75], [-0.1, -0.9, 2.0], 20))
-shot("L12", "close on his face, glasses on his forehead, puzzled", still([0.3, -0.86, 1.55], [-0.05, 0.45, 1.5], 24))
+     still([0.3, 0.75, 1.6], [0.0, -0.6, 1.85], 20), 2, 0.01, {"at": [0.9, 0.3, 2.1], "aim": [0.0, -0.3, 1.7], "w": 0.6, "c": "#e8e4dc", "size": 0.7})
+shot("L12", "close on his face, glasses on his forehead, puzzled", still([0.3, -0.86, 1.55], [-0.05, 0.45, 1.5], 24), 2, 0.01, {"at": [0.3, -0.86, 1.9], "aim": [-0.05, 0.45, 1.5], "w": 0.5, "c": "#e8e4dc", "size": 0.7})
 # 03 Tuesday
 shot("L13", "insert: my finger on the 12 button", PANEL_MID)
 shot("L14", "insert: the indicator ticking from 12 to 13", INDICATOR)
-shot("L14.1", "my face", FACE_ME)
+shot("L14.1+0.35", "my face", FACE_ME, 2, 0.01, lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
 shot("P02", "the doors part on thirteen with the sconces off", BACK_WIDE, 1)
 shot("L15", "wide from the car through the gap: the shelves in shadow, fog", still([0.0, 0.8, 1.5], [0.0, -8.0, 1.3], 24))
 shot("L16", "the dark shelves, the brass tags catching a little light", still([0.0, -0.5, 1.45], [-1.3, -2.9, 1.35], 24))
@@ -139,10 +144,10 @@ shot("P03", "the doors part on dark thirteen", BACK_WIDE, 1)
 shot("L21", "through the gap: the shape halfway up the hall, chest up, side-lit", still([0.0, 0.5, 1.6], [0.25, -7.2, 1.7], 34))
 shot("L22", "closer: the black jacket, brass buttons and piping, the peaked cap", still([0.0, 0.4, 1.6], [0.25, -7.2, 2.0], 55))
 shot("L23", "close on its head: the 3x3 panel", still([0.0, 0.4, 1.7], [0.25, -7.2, 2.1], 95))
-shot("L24", "the panel: one button lit toward me", still([0.0, 0.4, 1.7], [0.25, -7.2, 2.1], 120))
-shot("L24.1", "my face", FACE_ME)
+shot("L23.3", "the panel: one button lit toward me", still([0.0, 0.4, 1.7], [0.25, -7.2, 2.1], 120))
+shot("L24.1", "my face", FACE_ME, 2, 0.01, lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
 shot("L25", "the balconies at blue hour: Grandad talking over the wall, me pausing", BAL, 2, 0.01,
-     lamp(BAL, [BX, 0.75, 1.5], 1.4, up=0.2, c="#bcd0ff", size=1.6))
+     lamp(BAL, [BX, 0.75, 1.5], 1.0, up=0.2, c="#bcd0ff", size=1.6))
 L26C = still([BX - 0.9, -1.8, 1.6], [BX - 0.35, 0.75, 1.5], 24)
 shot("L26", "me smiling, a little too long", L26C, 2, 0.01, lamp(L26C, [BX - 0.35, 0.75, 1.5], 1.0, up=0.2, c="#bcd0ff", size=1.0))
 # 05 Thursday
@@ -158,17 +163,16 @@ shot("P05", "THE BUMP: the held centre-line frame, locked off: the leaves hit it
 shot("L34", "my face lit cold from below by its buttons", FACE_FEAR, 1, 0.004,
      lamp(FACE_FEAR, [-0.35, 0.15, 1.55], 0.5, up=0.1, c="#bcd0ff", side=0.2))
 shot("L35", "the doorway is empty across the cut, the doors closing with nothing in the way", BACK_WIDE, 1, 0.003)
-shot("L36", "my orange shoes on concrete steps, fast", still([STX + 0.75, -1.4, 0.9], [STX, -1.4, 1.1], 22))
-shot("L36.2", "lower down the steps", still([STX + 0.75, -3.4, 0.2], [STX, -3.4, 0.5], 22))
+shot("L36", "my orange shoes on concrete steps, fast", still([STX + 0.45, -3.6, 0.55], [STX, -1.4, 0.95], 22))
+shot("L36.2", "lower down the steps", still([STX + 0.4, -1.2, 1.35], [STX, -2.8, 0.2], 24))
 # 06 Grandad's door
 shot("L37", "the twelve landing, his door opening, his face", SHOT_HIS_DOOR)
 L38C = still([0.0, -4.1, 1.6], [-0.55, -5.1, 1.55], 22)
 shot("L38", "close on his face: polite, kind, nothing in it for me", L38C, 2, 0.006, lamp(L38C, [-0.55, -5.1, 1.55], 0.7, up=0.2))
 shot("L39", "his mouth moving under the quote", L38C, 2, 0.006, lamp(L38C, [-0.55, -5.1, 1.55], 0.7, up=0.2))
 L392 = still([0.2, -4.9, 1.55], [-0.1, -3.6, 1.5], 22)
-shot("L39.2", "then my face", L392, 2, 0.006, lamp(L392, [-0.1, -3.6, 1.5], 0.7, up=0.2))
 P06C = still([0.2, -4.9, 1.6], [0.0, -2.0, 1.9], 20)
-shot("P06", "near silence: hold on my face, the indicator over the lift doors still lit 13", P06C, 2, 0.003,
+shot("L39.2", "then my face; near silence: hold, the indicator over the lift doors still lit 13", P06C, 2, 0.003,
      lamp(P06C, [0.0, -3.6, 1.5], 0.7, up=0.2))
 shot("L40", "insert: the indicator over the lift doors, reading 13, cold", still([0.0, -3.2, 2.15], [0.0, -1.34, 2.3], 44))
 shot("L41", "wide: him in his doorway, me a step back, the space between us", still([0.0, -1.6, 1.5], [0.0, -5.0, 1.35], 20), 2, 0.003)
@@ -177,16 +181,16 @@ shot("L42", "the lift doors part on dark thirteen: me stepping out for the first
 shot("L43", "side mid-shot: I walk past the Attendant, its one lit button follows me", still([1.0, -3.4, 1.5], [-0.3, -5.8, 1.5], 18))
 shot("L43.3", "a shelf with a brass 12 tag", still([-0.1, -7.3, 1.5], [-1.2, -8.3, 1.3], 24))
 shot("L44", "the red scarf on the shelf, cold-lit, a brass tag", still([-0.35, -7.75, 1.45], [-1.2, -8.27, 1.25], 28))
-shot("L44.2", "my hands lifting it off, on my open palms", still([0.6, -7.3, 1.65], [-0.5, -8.3, 1.3], 18))
+shot("L44.3", "my hands lifting it off, on my open palms", still([0.6, -7.3, 1.65], [-0.5, -8.3, 1.3], 18))
 shot("L45", "the twelve landing: the scarf lying across his open palms", still([-0.1, -4.0, 1.5], [-0.55, -5.0, 1.25], 20), 2, 0.004)
 L46C = still([-0.25, -4.2, 1.6], [-0.55, -5.1, 1.5], 24)
 shot("L46", "his face, looking down at it", L46C, 2, 0.004, lamp(L46C, [-0.55, -5.1, 1.5], 0.7, up=0.2, c="#ffe3b8"))
 L47C = still([0.55, -4.0, 1.6], [-0.55, -4.75, 1.5], 18)
 shot("L47", "his face comes up to mine, knowing me; his hand on my shoulder", L47C, 2, 0.004, lamp(L47C, [-0.55, -4.75, 1.5], 0.7, up=0.2, c="#ffe3b8"))
 shot("L48", "the balconies next morning: a tomato on the wall top between us, him puzzled at me again", BAL, 2, 0.01,
-     lamp(BAL, [BX, 0.75, 1.5], 1.2, up=0.25, c="#ffe3b8", size=1.5))
-shot("L49", "me in the lift, the scarf round my neck", FACE_ME)
-shot("L49.1", "the indicator ticking from 12 to 13, over my shoulder", still([0.25, 0.9, 1.65], [0.0, -0.9, 1.9], 22), 2, 0.004)
+     lamp(BAL, [BX, 0.75, 1.5], 0.6, up=0.25, c="#ffe3b8", size=1.5))
+shot("L49", "me in the lift, the scarf round my neck", FACE_ME, 2, 0.01, lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
+shot("L49.1+0.3", "the indicator ticking from 12 to 13, over my shoulder", still([0.25, 0.9, 1.65], [0.0, -0.9, 1.9], 22), 2, 0.004)
 shot("L50", "the doors part on dark thirteen: the Attendant facing the car, my tag hanging from its gloves",
      still([0.0, 0.6, 1.5], [0.0, -2.6, 1.15], 24), 1, 0.002)
 
@@ -232,19 +236,18 @@ def talk(who, a, b, amount=0.6):
 for who in cast:
     hide(who, 0)
 ME_BACK = [-0.1, 0.6]
-BAL_HIM = [BX + 0.3, 0.75]
-BAL_ME = [BX - 0.3, 0.75]
+BAL_HIM = [BX + 0.5, 0.75]
+BAL_ME = [BX - 0.5, 0.75]
 HIS_DOOR = [-0.55, -5.1]
 
 # --- 01: bright thirteen
-put("abel", 0, [0.05, -2.0], yaw=115, arms=[0, 100], expr="neutral")
-key("abel", "P01>-0.2", yaw=180, blend=0.35, expr="grin")
+put("abel", 0, [0.1, -2.0], yaw=180, arms=[0, 100], expr="grin")
 put("abel", "L01", [0.35, -4.9], yaw=180, arms=[0, 100], expr="grin")
 put("abel", "L02", [0.8, -3.0], yaw=-90, arms=[0, 30], expr="grin")
 key("abel", "L02.1", arms=[0, 105], blend=0.35)
 put("abel", "L03", [0.1, -4.6], yaw=180, arms=[70, 70], expr="worried")
-put("abel", "L04", [-0.05, -4.4], yaw=0, arms=[70, 70], expr="worried")
-hide("abel", "L05")
+put("abel", "L04", [0.2, -4.3], yaw=0, arms=[70, 70], expr="worried")
+hide("abel", "L04.2")
 put("abel_wife", "L04", [-0.65, -5.3], yaw=180, arms=[58, 58], expr="angry")
 key("abel_wife", "L04.2", expr="soft", arms=[18, 18], blend=0.6)
 hide("abel_wife", "L05")
@@ -268,7 +271,7 @@ put("okafor", "L10", [BX + 0.45, 0.75], yaw=0, expr="worried")
 hide("me", "L10")
 for k in range(8):   # patting his pockets
     key("okafor", f"L10+{0.25 * k:.2f}", arms=[14, 0] if k % 2 == 0 else [0, 14], blend=0.1)
-put("okafor", "L11", [0.0, -0.3], yaw=0, head=[40, 0], expr="neutral")
+put("okafor", "L11", [0.0, -0.3], yaw=0, head=[0, 0], expr="neutral")
 put("okafor", "L12", [-0.05, 0.45], yaw=0, expr="worried")
 hide("okafor", "L13")
 # --- 03: Tuesday (me, small and in the car only for the faces)
@@ -294,8 +297,8 @@ put("me", "L34", [-0.35, 0.2], yaw=0, head=[0, -6], expr="terrified")
 hide("me", "L35")
 # the stairs: I run down toward -y; z follows the nosings (rise .13 per .2 run)
 put("me", "L36", [STX, -0.25, 1.92], yaw=0, expr="worried")
-walk("me", "L36>+0.1", [STX, -2.6, 0.4], keep_yaw=False)
-walk("me", "L36.2>", [STX, -4.2, -0.65])
+walk("me", "L36>+0.1", [STX, -2.4, 0.5], keep_yaw=False)
+walk("me", "L36.2>", [STX, -3.4, -0.13])
 hide("me", "L37")
 # --- 06: Grandad's door
 put("okafor", "L37", HIS_DOOR, yaw=180, expr="neutral")
@@ -312,7 +315,7 @@ walk("me", "L42>", [0.0, -3.7])
 put("me", "L43", [0.1, -3.0], yaw=0, expr="worried")
 walk("me", "L43.3", [0.1, -7.2])
 hide("me", "L43.3")
-put("me", "L44.2", [-0.5, -8.3], yaw=-90, arms=[80, 80], expr="soft")
+put("me", "L44.3", [-0.5, -8.3], yaw=-90, arms=[80, 80], expr="soft")
 hide("me", "L45")
 put("okafor", "L45", HIS_DOOR, yaw=180, arms=[80, 80], expr="neutral")
 key("okafor", "L46", head=[0, 38], expr="soft", blend=0.5)
@@ -411,8 +414,8 @@ cue("L20+0.55", "indicator", floor="13", arrow=None)
 cue("L27", "indicator", floor="12", arrow="up")
 cue("L27+0.45", "indicator", floor="13", arrow=None)
 cue("L49", "indicator", floor="12", arrow=None)
-cue("L49.1", "indicator", floor="12", arrow="up")
-cue("L49.1+0.5", "indicator", floor="13", arrow=None)
+cue("L49.1+0.3", "indicator", floor="12", arrow="up")
+cue("L49.1+0.75", "indicator", floor="13", arrow=None)
 
 # the floor panel's lit buttons (11 is the 12, 12 the 13, 21 close)
 cue(0, "panel", lit=[])
@@ -440,7 +443,7 @@ cue("P02", "attendant", pose="far", lit=[4], glow=1.6, eye=1.4, side=1.0, rim=1.
 cue("L19", "attendant", hidden=True)
 cue("P03", "attendant", pose="half", lit=[4], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0)
 cue("L25", "attendant", hidden=True)
-cue("P04", "attendant", pose="centre", lit=[4], glow=1.5, eye=1.3)
+cue("P04", "attendant", pose="centre", lit=[4], glow=1.5, eye=1.3, key=0.3)
 BUMP = dict(pose="bump", bend=44, head=[-16, 0, 0], glow=0.75, eye=1.9, peak=0.0, key=0.3, wash=0.55)
 cue("P05", "attendant", lit="all", dur=0.5, **BUMP)
 cue("L35", "attendant", hidden=True)
@@ -448,7 +451,7 @@ cue("L43", "attendant", pose="shelf", lit=[5], glow=1.6, eye=1.4, side=1.0, rim=
 cue("L43.1+0.3", "attendant", pose="shelf", lit=[4], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
 cue("L43.2", "attendant", pose="shelf", lit=[3], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
 cue("L45", "attendant", hidden=True)
-cue("L50", "attendant", pose="last", lit=[4], glow=1.5, eye=1.3, side=0.6, rim=1.0)
+cue("L50", "attendant", pose="last", lit=[4], glow=1.5, eye=1.3, side=0.15, rim=0.5, sleeve=0.25, wash=0.7, key=0.4)
 
 # balconies: the hour, the tomatoes on the wall, the props
 cue(0, "sky", hour=None)
@@ -467,14 +470,15 @@ cue("L09", "props", tomato=True, keys=False)
 cue("L10", "props", tomato=False)
 cue("L19", "props", tomato=True)
 cue("L20", "props", tomato=False)
-cue("L44.2", "props", scarf_me=True, shelf_scarf=False)
+cue("L44.3", "props", scarf_me=True, shelf_scarf=False)
 cue("L45", "props", scarf_him=True, shelf_scarf=False)
 cue("L47", "props", shelf_scarf=False)
 cue("L49", "props", scarf_neck=True, shelf_scarf=False)
 cue("L50", "props", shelf_scarf=True)
 cue(0, "cake", on=False)
 cue("L03", "cake", on=True, pos=[0.1, -4.0, 0.98], yaw=0)
-cue("L04", "cake", on=True, pos=[-0.05, -4.95, 0.98], yaw=0)
+cue("L04", "cake", on=True, pos=[0.2, -4.85, 0.98], yaw=0)
+cue("L04.2", "cake", on=True, pos=[-0.2, -4.75, 0.98], yaw=0)
 cue("L05", "cake", on=False)
 
 # ---------------------------------------------------------------------------------------------------- sound
@@ -520,7 +524,7 @@ story = {
              "exposure": 1.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.0, 0.005, 0.01], "saturation": 0.88, "contrast": 1.1,
               "vignette": 0.4, "bloom": 0.22, "grain": 0.014, "red_line": 0.79},
-    "phonemes": {"Abel": "ˈAbəl", "Ruiz": "ɹuˈis"},
+    "phonemes": {"Abel": "ˈAbəl", "Ruiz": "ɹuˈis", "pressed": "pɹˈɛst", "forgotten": "fɚɡˈɑtᵊn"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

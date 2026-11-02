@@ -436,11 +436,11 @@ def build_attendant(kit, M, name="attendant", cap=True, grid=DEFAULT_GRID, style
     # hangs straight whatever the arms do). "12" stamped in the brass and one cold upright stroke under it.
     tg = kit.empty(f"{name}.tag", (0, 0, 0), R)
     kit.box(f"{name}.tagloop", (0.05, 0.05, 0.26), (0, 0, -0.1), M["brass_dark"], tg, bevel=0.015)
-    kit.box(f"{name}.tagplate", (0.36, 0.05, 0.5), (0, 0, -0.45), M["brass"], tg, bevel=0.02)
+    kit.box(f"{name}.tagplate", (0.36, 0.05, 0.5), (0, 0, -0.45), M["brass_frame"], tg, bevel=0.02)
     kit.box(f"{name}.tagrim", (0.4, 0.04, 0.54), (0, 0.012, -0.45), M["brass_dark"], tg, bevel=0.02)
     seg_digits(kit, f"{name}.tagnum", "12", (0.0, -0.38, -0.045), 0.045, 0.085, 0.03, M["brass_dark"], parent=tg,
                depth=0.04, axis="y")
-    stroke = kit.box(f"{name}.tagstroke", (0.035, 0.04, 0.16), (0.0, -0.05, -0.6), glow_mat(kit, "tag stroke", GLOW, 6.0), tg)
+    stroke = kit.box(f"{name}.tagstroke", (0.035, 0.04, 0.16), (0.0, -0.05, -0.6), glow_mat(kit, "tag stroke", GLOW, 3.0), tg)
     return {"root": R, "waist": W, "neck": neck, "head": hc, "arms": arms, "buttons": buttons, "name": name,
             "grid": grid, "tag": tg, "height": (LEG_H + TORSO_H + COLLAR_H + NECK_H + HEAD_S + (CAP_H if cap else 0)) * U}
 
@@ -838,7 +838,7 @@ def build_hall(kit, ctx, M):
     # my shelf (left wall, 7 m down): a brass tag with 12 and a folded red scarf, with its tag
     sy = -8.27
     st = tiers[2] + 0.03
-    scarf = pbr(kit, "scarf red", "#b3262b", 0.95, noise=(60.0, 0.8))
+    scarf = pbr(kit, "scarf red", "#8f1a1f", 0.95, noise=(60.0, 0.8))
     for i in range(3):
         kit.box(f"scarf{i}", (0.34, 0.5, 0.045), (-1.2, sy, st + 0.0225 + 0.045 * i), scarf, bevel=0.01)
     kit.box("scarf_stripe", (0.345, 0.06, 0.14), (-1.2, sy, st + 0.07), pbr(kit, "scarf stripe", "#e8d9b0", 0.9))
@@ -847,9 +847,7 @@ def build_hall(kit, ctx, M):
     kit.box("t12.tag", (0.016, 0.13, 0.17), (-1.0, sy + 0.1, st + 0.03), tagm, bevel=0.006)
     dm = pbr(kit, "tag stamp", "#5a4420", 0.5, metal=0.8)
     # the tag's face is toward the aisle (+x); a viewer there faces -x, so +y is on their right: no mirror
-    seg_digits(kit, "t12d", "12", (sy + 0.1, st + 0.04), 0.02, 0.036, 0.011, dm, axis="x", depth=0.004)
-    for ob in [o for o in bpy.data.objects if o.name.startswith("t12d")]:
-        ob.location.x = -1.0 + 0.008 + 0.002
+    seg_digits(kit, "t12d", "12", (sy + 0.1, st + 0.04, -0.99), 0.02, 0.036, 0.011, dm, axis="x", depth=0.006)
 
 
 def set_doors(ctx, gap=DOOR_W, hall=1.0):
@@ -932,7 +930,7 @@ def build_lights(kit, ctx):
     kit.light("att_rim", "AREA", (0.0, 0.0, 2.5), 240.0, "#a9c4e6", size=0.6)
     # the cold lamp over my shelf (cue "shelf": a gain)
     kit.aim(kit.light("shelf_lamp", "AREA", (-0.6, SILL_Y - 7.0, 2.2), 160.0, "#a9c4e6", size=0.5), (-1.3, SILL_Y - 7.0, 1.2))
-    kit.aim(kit.light("stair_lamp", "AREA", (STX, -1.2, 3.0), 260.0, "#e8e2cc", size=1.0), (STX, -1.5, 0.8))
+    kit.aim(kit.light("stair_lamp", "AREA", (STX, -2.0, 3.0), 420.0, "#e8e2cc", size=1.2), (STX, -2.0, 0.3))
     kit.light("hall_low", "SPOT", (0.25, SILL_Y - 3.0, 0.7), 140.0, "#a9c4e6", spot=35, blend=0.5, size=0.25)
     # 13's light off the sill, seen only in reflections: the brass buttons and piping down its jacket catch it
     ping = kit.light("brass_ping", "AREA", (0.0, CAR_Y0 + 0.25, 0.06), 36.0, "#b9cde6", size=0.5)
@@ -946,12 +944,12 @@ def build_lights(kit, ctx):
     # a soft cold fill on the cast only (cue "fill"): so a face in the talk reads, lit from the doors' side
     kit.aim(kit.light("fill", "AREA", (0.0, CAR_Y0 + 0.2, 0.8), 22.0, "#9db6d6", size=0.5), (0.0, 0.4, 1.5))
     # the 12 landing's lamp
-    kit.light("land_lamp", "AREA", (0.0, SILL_Y - 2.0, 2.4), 90.0, "#f1e2c6", size=0.7)
+    kit.light("land_lamp", "AREA", (0.0, SILL_Y - 2.0, 2.4), 240.0, "#f1e2c6", size=0.7)
     # the balconies (30 m east): blue hour, then low golden sun
     kit.aim(kit.light("balc_cool", "AREA", (BX, -3.0, 4.0), 420.0, "#8fa8d0", size=3.0), (BX, 0.9, 0.8))
     kit.aim(kit.light("balc_win", "AREA", (BX, 1.5, 1.6), 35.0, "#ffcf8a", size=1.0), (BX, 0.0, 1.0))
-    kit.aim(kit.light("balc_sun", "AREA", (BX - 2.4, -4.5, 1.5), 1400.0, "#ffb460", size=1.2), (BX, 0.9, 1.1))
-    kit.aim(kit.light("balc_fill", "AREA", (BX + 0.3, -1.6, 2.4), 160.0, "#ffd9a8", size=2.5), (BX, 0.9, 1.0))
+    kit.aim(kit.light("balc_sun", "AREA", (BX - 2.4, -4.5, 1.5), 650.0, "#ffb460", size=1.2), (BX, 0.9, 1.1))
+    kit.aim(kit.light("balc_fill", "AREA", (BX + 0.3, -1.6, 2.4), 80.0, "#ffd9a8", size=2.5), (BX, 0.9, 1.0))
 
 
 def link_light(name, objs, state="INCLUDE"):
@@ -974,7 +972,7 @@ def link_light(name, objs, state="INCLUDE"):
 def brass_parts(att):
     """The Attendant's brass, which the ping light alone may touch: jacket buttons, hem, collar edge, cuffs,
     shoulder-board edges, trouser stripes and the cap band."""
-    keys = (".btn", ".hem", ".collar_edge", ".boardedge", ".stripe", ".band", ".frame", ".tagplate", ".tagloop")
+    keys = (".btn", ".hem", ".collar_edge", ".boardedge", ".stripe", ".band", ".frame")
     return [o for o in att["root"].children_recursive if o.type == "MESH" and any(k in o.name for k in keys)]
 
 
@@ -1394,7 +1392,7 @@ def _late(kit, story, ctx):
     if ctx.get("late") or not bpy.data.objects.get("me.arm1"):
         return
     M = ctx["M"]
-    scarf = pbr(kit, "scarf red", "#b3262b", 0.95, noise=(60.0, 0.8))
+    scarf = pbr(kit, "scarf red", "#8f1a1f", 0.95, noise=(60.0, 0.8))
     cream = pbr(kit, "scarf stripe", "#e8d9b0", 0.9)
     late = ctx.setdefault("late_objs", {})
     tom = bpy.data.objects.get("okafor.arm1")
@@ -1404,7 +1402,7 @@ def _late(kit, story, ctx):
     hg = bpy.data.objects.get("okafor.headg")
     if hg:
         fr = pbr(kit, "glasses frame", "#2a2420", 0.4)
-        gl = kit.glass("#dde6ea")
+        gl = pbr(kit, "glasses lens", "#cfd9de", 0.25, spec=0.6)
         parts = []
         for sx in (-1, 1):
             parts.append(kit.box(f"okafor.gup{sx}", (0.4, 0.05, 0.24), (sx * 0.24, -0.69, 0.35), gl, hg, bevel=0.03))
@@ -1622,6 +1620,8 @@ def animate(kit, story, tl, t, ctx):
     sco = ctx.get("sconce_mat")
     if sco:
         sco.node_tree.nodes["glow"].inputs["Strength"].default_value = 5.0 * g.pop("sconce", 0.0)
+    for sx in (-1, 1):
+        g[f"sleeve_rim{sx}"] *= a.get("sleeve", 1.0)
     g["att_side"] *= a.get("side", 0.0)
     g["att_rim"] *= a.get("rim", 0.0)
     return g
