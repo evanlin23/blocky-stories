@@ -81,7 +81,6 @@ for ln in lines:
         ln["chunks"] = split_chunks(ln["chunks"], ln["id"])
 
 # the word check: Whisper writes numbers above twenty as digits and "plow" the American way, so the spoken text
-# (never the captions) says them that way; the voice reads them the same. "Odile's" is heard "Odeel's".
 import re
 SAY = [(r"\b[Ff]orty-first\b", "41st"), (r"\b[Ff]orty-one\b", "41"), (r"\b[Tt]wenty-three\b", "23"),
        (r"\b[Tt]wenty-one\b", "21"), (r"\b[Ff]orty\b", "40"), (r"\bploughed\b", "plowed"), (r"\b[Pp]lough\b", "plow")]

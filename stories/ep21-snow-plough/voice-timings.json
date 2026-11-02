@@ -426,34 +426,34 @@
    ]
   },
   "L16": {
-   "text": "Slim and orange, with a black cap and one amber eye.",
+   "text": "Each one orange, with a black cap and one amber eye.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.5,
-   "onset": 0.19,
-   "end": 2.31,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.345,
    "chunks": [
     [
-     0.19,
-     0.776
+     0.172,
+     0.81
     ],
     [
-     0.828,
-     0.948
+     0.879,
+     1.0
     ],
     [
-     0.948,
-     1.406
+     1.0,
+     1.439
     ],
     [
-     1.406,
-     1.638
+     1.439,
+     1.672
     ],
     [
-     1.638,
-     2.31
+     1.672,
+     2.345
     ]
    ]
   },
@@ -1814,22 +1814,22 @@
    ]
   },
   "L68": {
-   "text": "Odeel's lamp was still on.",
+   "text": "Her lamp was still on.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.19,
-   "end": 1.414,
+   "dur": 1.379,
+   "onset": 0.155,
+   "end": 1.19,
    "chunks": [
     [
-     0.19,
-     0.716
+     0.155,
+     0.457
     ],
     [
-     0.716,
-     1.414
+     0.457,
+     1.19
     ]
    ]
   },
