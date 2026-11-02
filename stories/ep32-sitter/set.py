@@ -748,6 +748,17 @@ def fade_setup(ctx, who):
     if root is None:
         return None
     F = {"body": [], "edge": [], "kh": [], "tex": [], "glasses": []}
+    top = bpy.data.objects.get(f"{who}.glf1")
+    hg = bpy.data.objects.get(f"{who}.headg")
+    if top is not None and hg is not None:           # seat the frames round the eyes (full rings, not one bar above them)
+        R_ = faces.HEAD_R
+        for sx in (-1, 1):
+            bpy.data.objects[f"{who}.glf{sx}"].location.z = 0.13
+            for nm, size, loc in ((f"glb{sx}", (0.46, 0.04, 0.05), (sx * 0.24, -R_ - 0.05, -0.13)),
+                                  (f"gls{sx}a", (0.05, 0.04, 0.26), (sx * 0.24 - 0.21, -R_ - 0.05, 0.0)),
+                                  (f"gls{sx}b", (0.05, 0.04, 0.26), (sx * 0.24 + 0.21, -R_ - 0.05, 0.0))):
+                ctx["kit"].box(f"{who}.gl{nm}", size, loc, top.material_slots[0].material if top.material_slots else None, hg)
+        bpy.data.objects[f"{who}.glb"].location.z = 0.0
     done = {}
     for ob in [root] + list(root.children_recursive):
         if ob.type != "MESH":
@@ -1053,8 +1064,8 @@ def build_props(kit, ctx, M):
                  kit.box("coat sleeve", (0.12, 0.1, 0.5), (-0.3, 0, -0.05), M["coat"], bevel=0.03, rot=(0, -0.2, 0))]
     th7 = math.radians(ctx["TH"][6])
     p7 = (RP_ * math.cos(th7), RP_ * math.sin(th7))
-    P["brushdrop"] = [kit.box("dropped brush", (0.016, 0.24, 0.016), (p7[0] + 0.05, p7[1] - 0.25, 0.012), M["brush"], rot=(0, 0, 0.6)),
-                      kit.box("dropped bristles", (0.022, 0.07, 0.022), (p7[0] + 0.1, p7[1] - 0.13, 0.014), M["bristle"], rot=(0, 0, 0.6))]
+    P["brushdrop"] = [kit.box("dropped brush", (0.03, 0.3, 0.03), (p7[0] + 0.05, p7[1] - 0.25, 0.012), M["brush"], rot=(0, 0, 0.6)),
+                      kit.box("dropped bristles", (0.04, 0.09, 0.04), (p7[0] + 0.1, p7[1] - 0.13, 0.014), M["bristle"], rot=(0, 0, 0.6))]
     for objs in P.values():
         for o in objs:
             o.hide_render = True
@@ -1091,7 +1102,7 @@ def build(kit, story, tl):
     g = story["geom"]
     RE_, ths = g["RE"], g["TH"]
     wd = workdir(tl)
-    ctx = {"story": story, "wd": wd, "TH": ths, "fade": {}, "site_lights": {}}
+    ctx = {"kit": kit, "story": story, "wd": wd, "TH": ths, "fade": {}, "site_lights": {}}
     clear_lens(kit)
     M = materials(kit, wd)
     _site_materials(kit, M)

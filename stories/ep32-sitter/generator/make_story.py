@@ -183,6 +183,34 @@ FLAT_EASEL = (-40.25, 0.7)
 ME_FLAT = (-39.45, 0.45)
 PAIR = (200.0, 0.0)
 
+_mm = ((ME[0] + U5[0]) / 2, (ME[1] + U5[1]) / 2)
+
+
+def PAIRMID(z):
+    return [_mm[0], _mm[1], z]
+
+
+def PAIRCAM(d, z):
+    """A camera d metres inside the circle from the midpoint between me and the sitter, looking out at both faces."""
+    return [round(_mm[0] - N8[0] * d, 3), round(_mm[1] - N8[1] * d, 3), z]
+
+
+M36 = (U5[0] + 0.3 * N8[0], U5[1] + 0.3 * N8[1])
+
+
+def fa36(dist, ang, z):
+    dx, dy = P5[0] - M36[0], P5[1] - M36[1]
+    n_ = math.hypot(dx, dy)
+    dx, dy = dx / n_, dy / n_
+    best = None
+    for sg in (1, -1):
+        a = math.radians(ang * sg)
+        v = (dx * math.cos(a) - dy * math.sin(a), dx * math.sin(a) + dy * math.cos(a))
+        if best is None or v[0] * N8[0] + v[1] * N8[1] > best[0] * N8[0] + best[1] * N8[1]:
+            best = v
+    return [round(M36[0] + best[0] * dist, 3), round(M36[1] + best[1] * dist, 3), z]
+
+
 # ---------------------------------------------------------------------------------------------------- shots
 SH = []
 
@@ -192,15 +220,15 @@ def shot(sid, at, what, cam, **flags):
 
 
 # 01 the rule
-shot("S01", 0, "the bus-stop man, half his face faded to pine, in the sun", still([80.1, -3.4, 1.55], [80.0, 0.2, 1.5], 40))
+shot("S01", 0, "the bus-stop man, half his face faded to pine, in the sun", still([80.1, -2.4, 1.56], [80.0, 0.2, 1.52], 40), fill=[80.9, -1.6, 2.2])
 shot("S01b", "L01.3", "push in on the fade line across his cheek",
-     c([0, [80.2, -2.7, 1.57], [80.0, 0.2, 1.56], 42], [1, [80.1, -2.0, 1.58], [79.97, 0.2, 1.57], 50]))
-shot("S02", "L02", "his faded half: grain, a pencil oval", still([80.3, -1.3, 1.58], [80.0, 0.2, 1.57], 38))
+     c([0, [80.2, -2.0, 1.57], [80.0, 0.2, 1.56], 42], [1, [80.1, -1.5, 1.58], [79.97, 0.2, 1.57], 50]), fill=[80.9, -1.0, 2.2])
+shot("S02", "L02", "his faded half: grain, a pencil oval", still([80.3, -1.0, 1.58], [80.0, 0.2, 1.57], 38), fill=[80.9, -0.5, 2.2])
 shot("S02b", "L02.3", "two passers-by do not look", still([81.6, -5.8, 1.5], [79.9, 0.5, 1.4], 26))
 shot("S03", "L03", "the cafe window table: a couple staring, toast going cold", still([120.0, -1.2, 1.5], [120.0, 1.5, 1.38], 17))
 shot("S03b", "L03.2", "closer on their stare", still([120.0, -0.3, 1.42], [120.0, 1.5, 1.38], 25))
 shot("S04", "L04", "the baker stares at the customer", still([160.35, -1.3, 1.62], [160.9, 1.7, 1.5], 26))
-shot("S04b", "L04.2", "the customer's uneasy face", still([161.9, 2.9, 1.62], [160.9, -0.15, 1.52], 30))
+shot("S04b", "L04.2", "the customer's uneasy face", still([162.0, 0.95, 1.6], [160.9, -0.15, 1.55], 30), fill=[162.0, 0.6, 2.3])
 shot("S05", "L05", "the life room, warm: Mr Dobbs on the dais, his cheek warming", still([3.0, -2.7, 1.55], [0.0, 0.0, 1.3], 28))
 shot("S05b", "L05.4", "over a painter's shoulder, his face on the canvas", canvas_cam(3, 1.3, 1.3, 30), hide_cast=["bg2"])
 # 02 Mum
@@ -239,9 +267,9 @@ _m4 = (ME[0] + (U4[0] - ME[0]) * 0.28, ME[1] + (U4[1] - ME[1]) * 0.28)
 shot("S21", "L21", "its head turned to my easel, empty eyes", still([_m4[0], _m4[1], 1.5], z3(U4, HS), 28), hide_cast=["me", "petra"], hide_easels=[7])
 # 05 the scare
 shot("S22", "L22", "wide of the room: the lamps sag", still([-4.6, -4.2, 1.9], [0.8, 0.3, 1.3], 20))
-shot("S23", "L23", "lamps up: it on a spare stool at my elbow", still([1.2, -0.3, 1.55], [3.7, 0.0, 1.5], 28), hide_easels=[7, 8], hide_cast=["petra"])
+shot("S23", "L23", "lamps up: it on a spare stool at my elbow", still(PAIRCAM(1.7, 1.55), PAIRMID(1.5), 30), hide_easels=[7, 8], hide_cast=["petra"])
 shot("S24", "L24", "3/4, lit from below: its face leaning toward mine",
-     still([2.9, -1.7, 1.5], [(ME[0] + U5[0]) / 2, (ME[1] + U5[1]) / 2, 1.5], 20), hand=0.003, hide_easels=[7, 8], hide_cast=["petra"])
+     still(PAIRCAM(1.25, 1.55), PAIRMID(1.5), 30), hand=0.003, hide_easels=[7, 8], hide_cast=["petra"])
 shot("S25", "L25", "my coat on the peg, the door swinging", still([-3.0, -4.1, 1.5], [-5.5, -3.0, 1.2], 26))
 # 06 the car park
 PETRA_C, ME_C = (-2.5, -8.9), (-1.2, -8.5)
@@ -279,13 +307,13 @@ shot("S33b", "L33.2", "its face: the brown coming into the ovals", still(fa(1.5,
 shot("S34", "L34", "the restore: colour climbs her; Mum at my elbow, looking at the canvas",
      c([0, fa(2.4, 35, HS + 0.12), z3(U5, HS - 0.08), 26], [1, fa(1.9, 32, HS + 0.1), z3(U5, HS - 0.04), 28]), hide_cast=["me"], hand=0.002)
 shot("S35", "L35", "Petra, staring at Mum, mouth open", still(front(PP(7), yaw_to(PP(7), U5) + 15, 1.3, 1.6), z3(PP(7), 1.55), 24))
-shot("S35b", "L35.2", "the brush on the boards", still([PP(7)[0] - 0.6, PP(7)[1] + 0.2, 0.85], [PP(7)[0] + 0.05, PP(7)[1] - 0.25, 0.05], 34))
-shot("S36", "L36", "Mum's face, glasses, eyes shining, a small smile", still(fa(1.5, 20, HS + 0.1), z3(U5, HS + 0.02), 30), hide_cast=["me"], hand=0.002)
+shot("S35b", "L35.2", "the brush on the boards", still([PP(7)[0] - 0.55, PP(7)[1] - 0.55, 0.5], [PP(7)[0] + 0.05, PP(7)[1] - 0.25, 0.03], 34), fill=[PP(7)[0] - 0.3, PP(7)[1] - 0.5, 1.5])
+shot("S36", "L36", "Mum's face, glasses, eyes shining, a small smile", still(fa36(1.3, 18, 1.6), z3(M36, 1.6), 30), hide_cast=["me"], hide_easels=[8], hand=0.002)
 shot("S36b", "L36.4", "two-shot: me and Mum, the painting between us", still(fa(2.6, 55, 1.6), mid(U5, C8, 1.35), 26))
 # 08 the hall, and the sting
 shot("S37", "L37", "Mum's hall, bright morning: the portrait alone among the pale squares, Mum and me in front of it",
-     still([HX + 1.1, 1.2, 1.5], [HX - 0.8, 1.2, 1.4], 15), ev=1.0)
-shot("S38", "L38", "the life room, colder: Kofi plumping the green cushion", still([1.1, -1.7, 1.3], [0.0, 0.0, 0.62], 30), fill=[1.0, -1.0, 1.7])
+     still([HX + 1.15, 1.2, 1.5], [HX - 0.8, 1.2, 1.4], 11), ev=1.0)
+shot("S38", "L38", "the life room, colder: Kofi plumping the green cushion", still([0.7, -2.4, 1.4], [-0.45, -0.4, 0.95], 24), fill=[0.6, -1.0, 1.9])
 shot("S39", "L39", "low on the dais: nine graphite strokes, rising to the new sitter",
      c([0, [0.3, -2.35, 0.3], [0.0, -1.0, 0.12], 16], [1, [0.3, -2.35, 0.34], [0.0, 0.0, 0.95], 24]), tally=True, hand=0.002)
 shot("S40", "L40", "slow push on its blank pencil face, the ovals the palest thing",
@@ -384,7 +412,7 @@ key("me", "L34", expr="soft", arms=[10, 40], head=[26, 0], blend=0.5)
 key("me", "L35", expr="wide", head=[0, 0], blend=0.4)
 put("me", "L36", (ME[0] - 0.1, ME[1] + 0.05), yaw=yaw_to(ME, U5), expr="soft", arms=[0, 0])
 hide("me", "L37")
-put("me", "L37", (HX - 0.35, 1.65), yaw=0, expr="smile", arms=[0, 0])
+put("me", "L37", (HX - 0.35, 1.55), yaw=0, expr="smile", arms=[0, 0])
 hide("me", "L38")
 
 # the faded one: Mum's body, all pine on the dais stool and the spare stools, then herself
@@ -399,24 +427,23 @@ put("mum", "L11", (U1[0], U1[1], Z_DAIS), yaw=Y1, expr="blank", fade=1.0, fade_h
 key("mum", "L17", stage=1)
 put("mum", "L18", (U3[0], U3[1], Z_SPARE), yaw=Y3, expr="blank", head=[rel(U3, Y3, ME), 0], fade=1.0, fade_h=1.0, stage=1, **SIT)
 put("mum", "L19.3", (U4[0], U4[1], Z_SPARE), yaw=Y4, expr="blank", head=[rel(U4, Y4, ME), 0], fade=1.0, fade_h=1.0, stage=2, **SIT)
-put("mum", "L23", (U5[0], U5[1], Z_SPARE), yaw=Y5, expr="blank", head=[rel(U5, Y5, ME), 0], fade=1.0, fade_h=1.0, stage=2, **SIT)
-key("mum", "L24", bendto=[ME[0], ME[1], 24], blend=0.0)
+put("mum", "L23", (U5[0], U5[1], Z_SPARE), yaw=Y5, expr="blank", head=[0, 0], fade=1.0, fade_h=1.0, stage=2, **SIT)
+key("mum", "L24", bendto=[ME[0], ME[1], 40], blend=0.0)
 key("mum", "L25", bendto=[ME[0], ME[1], 0], blend=0.0)
 hide("mum", "L26")
 put("mum", "L28", (U5[0], U5[1], Z_SPARE), yaw=Y5, expr="blank", head=[0, 0], fade=1.0, fade_h=1.0, stage=2, **SIT)
 key("mum", "L30", yaw=yaw_to(U5, (0.5, -8.0)), blend=0.0)
 put("mum", "L32", (U5[0], U5[1], Z_SPARE), yaw=Y5, expr="blank", head=[0, 0], fade=1.0, fade_h=1.0, stage=2, **SIT)
 key("mum", "L33.2", expr="soft", fade=1.0, fade_h=1.0, stage=3)
-key("mum", "L34", fade=1.0, fade_h=1.0, expr="soft", blend=0.2)
-key("mum", "L34+1.4", fade_h=0.0, blend=1.4)
-key("mum", "L34+2.6", fade=0.0, blend=2.6)
+key("mum", "L33+1.5", fade_h=0.0, blend=1.0)
+key("mum", "L33+1.9", fade=0.0, blend=1.0)
 key("mum", "L34+2.8", expr="smile", blend=0.3)
 key("mum", "L35", expr="soft", fade=0.0, fade_h=0.0, head=[rel(U5, Y5, PP(7)), 0], blend=0.4)
 put("mum", "L36", (U5[0] + 0.3 * N8[0], U5[1] + 0.3 * N8[1], 0.0), yaw=yaw_to(U5, P5), expr="soft", fade=0.0, fade_h=0.0,
     arms=[0, 0], head=[0, 0], lean=0, bendto=[0, 0, 0], sit=False)
 key("mum", "L36.4", expr="smile", blend=0.3)
 hide("mum", "L37")
-put("mum", "L37", (HX - 0.35, 0.75), yaw=180, expr="smile", fade=0.0, fade_h=0.0, arms=[0, 0], sit=False)
+put("mum", "L37", (HX - 0.35, 0.85), yaw=180, expr="smile", fade=0.0, fade_h=0.0, arms=[0, 0], sit=False)
 hide("mum", "L38")
 
 # Mr Dobbs, the montage sitter on the dais, half faded, being painted back in
@@ -425,7 +452,7 @@ key("ade", "L05.6", fade=0.0, fade_h=0.0, blend=3.0)
 hide("ade", "L06")
 
 # the bus stop, the cafe, the bakery
-put("bus", 0, BUS, yaw=0, expr="worried", fade=0.3, fade_h=0.46, stage=0, head=[0, 0])
+put("bus", 0, BUS, yaw=0, expr="worried", fade=0.4, fade_h=0.8, stage=0, head=[0, 0])
 hide("bus", "L03")
 put("walk1", 0, (78.0, 1.3), yaw=90, expr="neutral", arms=[0, 0])
 walk("walk1", "L03", (83.5, 1.3))
@@ -449,7 +476,7 @@ hide("cust", "L05")
 put("kofi", "L10", (-4.3, -1.6), yaw=-90, arms=[34, 34], expr="grin")
 put("kofi", "L10.3", (-1.0, -0.4), yaw=40, expr="grin", arms=[0, 0])
 hide("kofi", "L11")
-put("kofi", "L38", (-0.95, -0.85), yaw=-25, expr="soft", arms=[40, 40])
+put("kofi", "L38", (-0.8, -0.75), yaw=-25, expr="soft", arms=[40, 40])
 hide("kofi", "L39")
 
 # the sting sitter
