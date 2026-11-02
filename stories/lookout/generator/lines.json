@@ -185,9 +185,9 @@
   "chunks": [
    ["I key", "I key"],
    ["the RADIO", "the radio"],
-   ["and HOLD", "and hold"],
-   ["it UP", "it up"],
-   ["to the DARK.", "to the dark."]
+   ["and HOLD it", "and hold it"],
+   ["UP to the", "up to the"],
+   ["DARK.", "dark."]
   ]
  },
  {
@@ -646,6 +646,16 @@
   ]
  },
  {
+  "id": "L64b",
+  "who": "narrator",
+  "chunks": [
+   ["FOG to", "Fog to"],
+   ["its WAIST,", "its waist,"],
+   ["its LIGHTS", "its lights"],
+   ["on my LAMP.", "on my lamp."]
+  ]
+ },
+ {
   "id": "L65",
   "who": "narrator",
   "chunks": [
@@ -726,8 +736,8 @@
    ["It walks DOWN", "It walks down"],
    ["the SLOPE", "the slope"],
    ["until I can't", "until I can't"],
-   ["TELL it", "tell it"],
-   ["from the TREES.", "from the trees."]
+   ["TELL it from", "tell it from"],
+   ["the TREES.", "the trees."]
   ]
  },
  {

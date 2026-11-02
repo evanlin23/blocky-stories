@@ -1,0 +1,2045 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Mum always said I never finish a face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.19,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.19,
+     0.888
+    ],
+    [
+     0.888,
+     1.388
+    ],
+    [
+     1.388,
+     2.0
+    ]
+   ]
+  },
+  "L02": {
+   "text": "She used to paint. Her hall was covered in her pictures.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.776
+    ],
+    [
+     0.845,
+     1.138
+    ],
+    [
+     1.138,
+     1.509
+    ],
+    [
+     1.509,
+     2.276
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Now it's bare, and her brushes live in a drawer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.707,
+     1.199
+    ],
+    [
+     1.199,
+     1.406
+    ],
+    [
+     1.406,
+     2.017
+    ]
+   ]
+  },
+  "L04": {
+   "text": "So I joined a Wednesday portrait class, and didn't tell her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.983
+    ],
+    [
+     0.983,
+     1.586
+    ],
+    [
+     1.638,
+     1.862
+    ],
+    [
+     1.862,
+     2.414
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Eight easels in a curve, and a wooden dais in the middle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 2.741,
+   "onset": 0.19,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.672,
+     1.241
+    ],
+    [
+     1.31,
+     1.448
+    ],
+    [
+     1.448,
+     1.923
+    ],
+    [
+     1.923,
+     2.552
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Kofi runs it. He set a stool on the dais, with a fat green cushion,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.914,
+     1.094
+    ],
+    [
+     1.094,
+     1.337
+    ],
+    [
+     1.337,
+     1.724
+    ],
+    [
+     1.75,
+     1.888
+    ],
+    [
+     1.888,
+     2.879
+    ]
+   ]
+  },
+  "L07": {
+   "text": "and said, \"Paint what you see.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.466,
+     0.69
+    ],
+    [
+     0.69,
+     1.224
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Then he set out a bowl of fruit and went to make tea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.586
+    ],
+    [
+     0.586,
+     1.181
+    ],
+    [
+     1.181,
+     1.388
+    ],
+    [
+     1.388,
+     2.086
+    ]
+   ]
+  },
+  "L09": {
+   "text": "I looked at the dais, and someone was sitting there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.862
+    ],
+    [
+     0.914,
+     1.233
+    ],
+    [
+     1.233,
+     2.017
+    ]
+   ]
+  },
+  "L10": {
+   "text": "It was made of raw pine, like a fence post that grew a person.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     1.138
+    ],
+    [
+     1.207,
+     1.353
+    ],
+    [
+     1.353,
+     1.819
+    ],
+    [
+     1.819,
+     2.06
+    ],
+    [
+     2.06,
+     2.707
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Where a face should be, there were only pencil lines.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.155,
+     0.276
+    ],
+    [
+     0.276,
+     0.845
+    ],
+    [
+     0.931,
+     1.31
+    ],
+    [
+     1.31,
+     2.172
+    ]
+   ]
+  },
+  "L12": {
+   "text": "A cross, and two empty ovals for eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     0.741
+    ],
+    [
+     0.741,
+     1.19
+    ],
+    [
+     1.19,
+     1.81
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Next to me, Petra was already sketching.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.603,
+     0.914
+    ],
+    [
+     0.914,
+     1.793
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Nobody else looked up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.19,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.155
+    ]
+   ]
+  },
+  "L15": {
+   "text": "So I drew what I saw.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.155
+    ]
+   ]
+  },
+  "L16": {
+   "text": "The guide lines, then the start of a nose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.793,
+     1.147
+    ],
+    [
+     1.147,
+     1.81
+    ]
+   ]
+  },
+  "L17": {
+   "text": "And I heard Mum in my head, saying, \"Halfway again?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.612
+    ],
+    [
+     0.612,
+     0.948
+    ],
+    [
+     0.992,
+     1.276
+    ],
+    [
+     1.379,
+     2.19
+    ]
+   ]
+  },
+  "L18": {
+   "text": "My hand stopped. I left it there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.81,
+     1.077
+    ],
+    [
+     1.077,
+     1.603
+    ]
+   ]
+  },
+  "L19": {
+   "text": "When Kofi called time, the cushion under it was still perfectly flat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.155,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.138
+    ],
+    [
+     1.207,
+     1.526
+    ],
+    [
+     1.526,
+     1.715
+    ],
+    [
+     1.715,
+     1.974
+    ],
+    [
+     1.974,
+     2.845
+    ]
+   ]
+  },
+  "L20": {
+   "text": "The next Wednesday, it had a nose, right where mine had stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.759,
+     0.905
+    ],
+    [
+     0.905,
+     1.362
+    ],
+    [
+     1.431,
+     1.888
+    ],
+    [
+     1.888,
+     2.517
+    ]
+   ]
+  },
+  "L21": {
+   "text": "And it had moved to a spare stool by the first easel.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.586
+    ],
+    [
+     0.586,
+     0.69
+    ],
+    [
+     0.69,
+     1.172
+    ],
+    [
+     1.172,
+     1.328
+    ],
+    [
+     1.328,
+     2.086
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Mr Dobbs, at the first easel, painted right past it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.397
+    ],
+    [
+     1.466,
+     1.939
+    ],
+    [
+     1.939,
+     2.586
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Mum phoned. I told her I was working late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.19,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.724,
+     1.008
+    ],
+    [
+     1.008,
+     1.224
+    ],
+    [
+     1.224,
+     1.948
+    ]
+   ]
+  },
+  "L24": {
+   "text": "I started its mouth, got one corner in, and froze.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.879
+    ],
+    [
+     0.948,
+     1.259
+    ],
+    [
+     1.259,
+     1.603
+    ],
+    [
+     1.629,
+     2.328
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Halfway. Again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.5,
+     1.017
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Week three, the corner of a mouth was on its face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.854
+    ],
+    [
+     0.854,
+     1.164
+    ],
+    [
+     1.164,
+     1.319
+    ],
+    [
+     1.319,
+     1.966
+    ]
+   ]
+  },
+  "L27": {
+   "text": "It sat in the middle of the curve now,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.75
+    ],
+    [
+     0.75,
+     0.862
+    ],
+    [
+     0.862,
+     1.569
+    ]
+   ]
+  },
+  "L28": {
+   "text": "its empty eyes turned toward my corner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.147
+    ],
+    [
+     1.147,
+     1.81
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Every line I added felt like it was looking back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     0.974
+    ],
+    [
+     0.974,
+     1.267
+    ],
+    [
+     1.267,
+     1.414
+    ],
+    [
+     1.414,
+     2.103
+    ]
+   ]
+  },
+  "L30": {
+   "text": "I drew one eyebrow and packed up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.819
+    ],
+    [
+     0.819,
+     1.5
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Week four, it had an eyebrow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.716
+    ],
+    [
+     0.716,
+     1.397
+    ]
+   ]
+  },
+  "L32": {
+   "text": "And it was sitting beside Petra.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.284
+    ],
+    [
+     0.284,
+     0.638
+    ],
+    [
+     0.638,
+     1.517
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Right next to her, one wooden knee by her palette.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.776
+    ],
+    [
+     0.828,
+     1.276
+    ],
+    [
+     1.276,
+     2.034
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Petra hummed, and painted a green pear.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.664,
+     0.957
+    ],
+    [
+     0.957,
+     1.776
+    ]
+   ]
+  },
+  "L35": {
+   "text": "I couldn't look at my canvas, or toward it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.966
+    ],
+    [
+     1.0,
+     1.69
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Week five, it was raining hard.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     0.759
+    ],
+    [
+     0.759,
+     1.534
+    ]
+   ]
+  },
+  "L37": {
+   "text": "An hour in, the lights dipped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     1.379
+    ]
+   ]
+  },
+  "L38": {
+   "text": "When they came back, Petra's spare stool was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.741
+    ],
+    [
+     0.776,
+     1.457
+    ],
+    [
+     1.457,
+     2.155
+    ]
+   ]
+  },
+  "L39": {
+   "text": "I didn't want to turn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     1.086
+    ]
+   ]
+  },
+  "L40": {
+   "text": "The lights dipped again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.19
+    ]
+   ]
+  },
+  "L41": {
+   "text": "And when I looked up from my palette, it was sitting right beside me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
+     0.681
+    ],
+    [
+     0.681,
+     1.293
+    ],
+    [
+     1.362,
+     1.733
+    ],
+    [
+     1.733,
+     2.69
+    ]
+   ]
+  },
+  "L42": {
+   "text": "One wooden knee against my easel leg.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.974
+    ],
+    [
+     0.974,
+     1.672
+    ]
+   ]
+  },
+  "L43": {
+   "text": "It was leaning in to my canvas, like a mirror.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.655
+    ],
+    [
+     0.655,
+     1.224
+    ],
+    [
+     1.276,
+     2.017
+    ]
+   ]
+  },
+  "L44": {
+   "text": "so its half-drawn face was an inch from my canvas.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.983
+    ],
+    [
+     0.983,
+     1.362
+    ],
+    [
+     1.362,
+     2.19
+    ]
+   ]
+  },
+  "L45": {
+   "text": "The two faces were the same.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.698
+    ],
+    [
+     0.698,
+     1.397
+    ]
+   ]
+  },
+  "L46": {
+   "text": "It was waiting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.155,
+   "end": 0.879,
+   "chunks": [
+    [
+     0.155,
+     0.879
+    ]
+   ]
+  },
+  "L47": {
+   "text": "I left my coat and ran.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.768
+    ],
+    [
+     0.768,
+     1.328
+    ]
+   ]
+  },
+  "L48": {
+   "text": "In the car park, Petra caught me up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.672
+    ],
+    [
+     0.707,
+     1.112
+    ],
+    [
+     1.112,
+     1.586
+    ]
+   ]
+  },
+  "L49": {
+   "text": "I asked her who our sitter was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.698
+    ],
+    [
+     0.698,
+     1.517
+    ]
+   ]
+  },
+  "L50": {
+   "text": "She laughed. \"Nobody has sat on that stool since spring.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9682,
+   "dur": 2.534,
+   "onset": 0.207,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.207,
+     0.621
+    ],
+    [
+     0.707,
+     1.147
+    ],
+    [
+     1.147,
+     1.586
+    ],
+    [
+     1.586,
+     2.328
+    ]
+   ]
+  },
+  "L51": {
+   "text": "The hired sitter moved away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.75
+    ],
+    [
+     0.75,
+     1.466
+    ]
+   ]
+  },
+  "L52": {
+   "text": "\"We paint the fruit,\" she said.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.457
+    ],
+    [
+     0.457,
+     0.793
+    ],
+    [
+     0.879,
+     1.414
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Through the window, I could see every canvas.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.724,
+     0.931
+    ],
+    [
+     0.931,
+     1.879
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Seven bowls of fruit. And mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.19,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.19,
+     0.647
+    ],
+    [
+     0.647,
+     1.034
+    ],
+    [
+     1.086,
+     1.741
+    ]
+   ]
+  },
+  "L55": {
+   "text": "On the dais, the green cushion, perfectly flat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.595,
+     1.19
+    ],
+    [
+     1.241,
+     2.069
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Eight easels and a stool. A class of nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.103
+    ],
+    [
+     1.172,
+     1.457
+    ],
+    [
+     1.457,
+     2.034
+    ]
+   ]
+  },
+  "L57": {
+   "text": "It was sitting in for the one who left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.69
+    ],
+    [
+     0.69,
+     0.957
+    ],
+    [
+     0.957,
+     1.552
+    ]
+   ]
+  },
+  "L58": {
+   "text": "But a sitter with no face isn't really there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.121
+    ],
+    [
+     1.121,
+     1.948
+    ]
+   ]
+  },
+  "L59": {
+   "text": "And only one of us was painting it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.724
+    ],
+    [
+     0.724,
+     1.534
+    ]
+   ]
+  },
+  "L60": {
+   "text": "Every face I gave up on was its face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     0.888
+    ],
+    [
+     0.888,
+     1.112
+    ],
+    [
+     1.112,
+     1.845
+    ]
+   ]
+  },
+  "L61": {
+   "text": "It came closer every week so I could see it better.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     1.138
+    ],
+    [
+     1.138,
+     1.31
+    ],
+    [
+     1.31,
+     1.638
+    ],
+    [
+     1.638,
+     2.155
+    ]
+   ]
+  },
+  "L62": {
+   "text": "I went back the next week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     1.259
+    ]
+   ]
+  },
+  "L63": {
+   "text": "It was beside my easel, facing my canvas, waiting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     1.034
+    ],
+    [
+     1.103,
+     1.81
+    ],
+    [
+     1.845,
+     2.397
+    ]
+   ]
+  },
+  "L64": {
+   "text": "I didn't stop this time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     1.276
+    ]
+   ]
+  },
+  "L65": {
+   "text": "I painted the kindest eyes I know, brown, with lines at the corners.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.155,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     1.008
+    ],
+    [
+     1.008,
+     1.259
+    ],
+    [
+     1.293,
+     2.146
+    ],
+    [
+     2.146,
+     2.879
+    ]
+   ]
+  },
+  "L66": {
+   "text": "Then a mouth about to say, \"Not bad.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.0
+    ],
+    [
+     1.103,
+     1.759
+    ]
+   ]
+  },
+  "L67": {
+   "text": "When I looked up, the spare stool was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.638
+    ],
+    [
+     0.664,
+     1.164
+    ],
+    [
+     1.164,
+     1.862
+    ]
+   ]
+  },
+  "L68": {
+   "text": "On the dais, the green cushion had a dent in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.612,
+     1.19
+    ],
+    [
+     1.19,
+     1.353
+    ],
+    [
+     1.353,
+     2.0
+    ]
+   ]
+  },
+  "L69": {
+   "text": "I invited Mum to the end-of-term show.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     0.931
+    ],
+    [
+     0.931,
+     1.862
+    ]
+   ]
+  },
+  "L70": {
+   "text": "Kofi had stood the dais against the wall to make room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.966
+    ],
+    [
+     0.966,
+     1.466
+    ],
+    [
+     1.466,
+     2.19
+    ]
+   ]
+  },
+  "L71": {
+   "text": "Mum stood in front of my painting for a long time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.19,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.19,
+     0.509
+    ],
+    [
+     0.509,
+     0.698
+    ],
+    [
+     0.698,
+     1.172
+    ],
+    [
+     1.172,
+     1.328
+    ],
+    [
+     1.328,
+     2.121
+    ]
+   ]
+  },
+  "L72": {
+   "text": "She didn't say anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     1.138
+    ]
+   ]
+  },
+  "L73": {
+   "text": "Then she asked if she could take it home.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.879
+    ],
+    [
+     0.879,
+     1.603
+    ]
+   ]
+  },
+  "L74": {
+   "text": "And she asked Kofi if the class still needed a sitter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.81
+    ],
+    [
+     0.81,
+     1.207
+    ],
+    [
+     1.207,
+     1.561
+    ],
+    [
+     1.561,
+     2.138
+    ]
+   ]
+  },
+  "L75": {
+   "text": "Mum always said I never finish a face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.19,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.19,
+     0.888
+    ],
+    [
+     0.888,
+     1.388
+    ],
+    [
+     1.388,
+     2.0
+    ]
+   ]
+  },
+  "L76": {
+   "text": "This one's in her hall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.207
+    ]
+   ]
+  },
+  "L12b": {
+   "text": "The guide lines you draw before you draw anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.034
+    ],
+    [
+     1.034,
+     1.517
+    ],
+    [
+     1.517,
+     2.086
+    ]
+   ]
+  }
+ }
+}
