@@ -50,10 +50,10 @@ PIN_Y = 14.4
 DECK_END = 16.4
 SEAT_Y = -5.6
 SEAT_H = 0.46
-SEATS = [0.15, -0.85, -1.85, -2.85, -4.1]      # x of the five seats: Tomasz, Mags, Dev, Rosie, me
+SEATS = [0.15, -0.85, -1.85, -2.85, -3.9]      # x of the five seats: Dev, Tomasz, Mags, Rosie, me
 APPROACH_Y0 = -4.6
 CEIL = 3.4
-SCR = {"x": -0.85, "y": -3.4, "z": 2.35, "w": 1.5, "h": 1.05}
+SCR = {"x": -1.35, "y": -3.4, "z": 2.35, "w": 1.5, "h": 1.05}
 RET = {"x": -0.8, "y": -1.7}                    # our pair's ball return (hood front faces -y)
 WALL_R, WALL_L = 2.2, -13.0
 TEAL, CREAM, MUSTARD = "#1f8f86", "#efe6d2", "#d9a62e"
@@ -239,7 +239,16 @@ def build_room(kit, ctx, M):
     box("approach", (WALL_R - WALL_L, -APPROACH_Y0, 0.1), ((WALL_R + WALL_L) / 2, APPROACH_Y0 / 2, -0.05), M["approach"])
     box("carpet", (WALL_R - WALL_L, 4.4, 0.1), ((WALL_R + WALL_L) / 2, APPROACH_Y0 - 2.2, -0.05), M["carpet"])
     # shell
-    box("wall.back", (WALL_R - WALL_L, 0.2, CEIL), ((WALL_R + WALL_L) / 2, APPROACH_Y0 - 4.5, CEIL / 2), M["wall"])
+    yb = APPROACH_Y0 - 4.5
+    box("wall.back.l", (-1.4 - WALL_L, 0.2, CEIL), ((WALL_L - 1.4) / 2, yb, CEIL / 2), M["wall"])
+    box("wall.back.r", (WALL_R + 0.1, 0.2, CEIL), ((WALL_R - 0.1) / 2, yb, CEIL / 2), M["wall"])
+    box("wall.back.h", (1.3, 0.2, CEIL - 2.2), (-0.75, yb, (CEIL + 2.2) / 2), M["wall"])
+    box("outside", (6.0, 0.3, 3.0), (-0.75, yb - 3.0, 1.5), M["black"])
+    ctx["doors"] = []
+    for side, hx in ((-1, -1.4), (1, -0.1)):    # two leaves, hinged on the jambs, swinging in (+y)
+        piv = kit.empty(f"door.p{side}", (hx, yb - 0.05, 0.0))
+        kit.box(f"door.leaf{side}", (0.65, 0.05, 2.1), (-side * -0.0 + (0.325 if side < 0 else -0.325), 0, 1.05), M["ballhood"], piv, bevel=0.01)
+        ctx["doors"].append((piv, side))
     box("wall.right", (0.2, 28.0, CEIL), (WALL_R + 0.1, 5.0, CEIL / 2), M["wall"])
     box("wall.left", (0.2, 28.0, CEIL), (WALL_L - 0.1, 5.0, CEIL / 2), M["wall"])
     box("ceiling", (WALL_R - WALL_L, 29.0, 0.1), ((WALL_R + WALL_L) / 2, 5.0, CEIL + 0.05), M["ceiling"])
@@ -299,26 +308,39 @@ def build_room(kit, ctx, M):
 
 def build_returns(kit, ctx, M):
     """Ball returns at each pair of lanes, with a wooden hood. Ours has the five teal strokes."""
-    ctx["balls"] = []
+    ctx["returns"] = []
     for pair in range(4):
         x = -PITCH * (2 * pair) - PITCH / 2
         y = RET["y"]
-        kit.box(f"ret{pair}.body", (0.9, 0.7, 0.45), (x, y, 0.225), M["retbody"], bevel=0.02)
+        for sx, w in ((-1, 0.29), (1, 0.29)):      # the body is two wings round a tunnel the ball comes out of
+            kit.box(f"ret{pair}.wing{sx}", (w, 0.7, 0.45), (x + sx * (0.16 + w / 2), y, 0.225), M["retbody"], bevel=0.015)
+        kit.box(f"ret{pair}.floor", (0.32, 0.7, 0.12), (x, y, 0.06), M["retbody"])
+        kit.box(f"ret{pair}.roof", (0.32, 0.7, 0.07), (x, y, 0.415), M["retbody"])
+        kit.box(f"ret{pair}.back", (0.32, 0.04, 0.26), (x, y + 0.3, 0.25), M["black"])
         kit.box(f"ret{pair}.hood", (0.9, 0.7, 0.36), (x, y, 0.63), M["ballhood"], bevel=0.04)
-        kit.box(f"ret{pair}.mouth", (0.3, 0.05, 0.2), (x, y - 0.33, 0.37), M["black"])
-        for s in (-1, 1):
-            kit.box(f"ret{pair}.rail{s}", (0.03, 0.9, 0.03), (x + s * 0.1, y - 0.75, 0.2), M["rail"])
-        ctx.setdefault("returns", []).append((x, y))
+        for s_ in (-1, 1):
+            kit.box(f"ret{pair}.rail{s_}", (0.03, 0.9, 0.03), (x + s_ * 0.1, y - 0.78, 0.12), M["rail"])
+        ctx["returns"].append((x, y))
     # five teal strokes on the hood front (the lore plant): short, upright, evenly spaced, pressed in
     x, y = RET["x"], RET["y"]
     for k in range(5):
         kit.box(f"stroke{k}", (0.026, 0.01, 0.17), (x + (k - 2) * 0.062, y - 0.352, 0.63), M["teal"], bevel=0.004)
     ball = kit.sphere("ball", 0.109, (0, -9, 0.3), M["ball"], seg=24)
     ctx["ball"] = ball
-    # a ball or two in the other racks
-    for pair in (1, 2):
+    for pair in (1, 2):    # a ball in the other racks
         x2, y2 = ctx["returns"][pair]
-        kit.sphere(f"restball{pair}", 0.109, (x2, y2 - 0.55, 0.26), M["ball"], seg=16)
+        kit.sphere(f"restball{pair}", 0.109, (x2, y2 - 0.6, 0.23), M["ball"], seg=16)
+    # the lamp housings over each approach, with a warm bulb (its emission follows the lane lights)
+    ctx["bulbs"] = []
+    for i in range(4):
+        lx = lane_x(i)
+        kit.cyl(f"lamp{i}.housing", 0.22, 0.2, (lx, -1.4, CEIL - 0.1), M["mask"], n=16)
+        bm = kit.emit("#ffcf93", 6.0, name=f"bulb{i}")
+        kit.cyl(f"lamp{i}.bulb", 0.15, 0.03, (lx, -1.4, CEIL - 0.21), bm, n=16)
+        ctx["bulbs"].append(bm.node_tree.nodes["Emission"].inputs["Strength"])
+    # the team's bag (Mags's knee, S66)
+    ctx["p_bag"] = [kit.box("bag", (0.6, 0.3, 0.32), (SEATS[2], -5.12, 0.62), M["tealshoe"], bevel=0.05),
+                    kit.box("bag.flap", (0.6, 0.3, 0.05), (SEATS[2], -5.12, 0.8), M["creamshoe"], bevel=0.02, rot=(0.5, 0, 0))]
 
 
 # ------------------------------------------------------------------------------------------------ the screens
@@ -609,6 +631,8 @@ def pose_spare(kit, ctx, tl, t, over):
         over["ckey"] = 0.0
         over["crim"] = 0.0
         return
+    over["ckey"] = over.get("ckey", 1.0) * cue.get("key", 1.0)
+    over["crim"] = over.get("crim", 1.0) * cue.get("rim", 1.0)
     lane = cue.get("lane", 3)
     pos = cue.get("pos") or [lane_x(lane), 15.9 if lane else 15.2]
     x, y = pos
@@ -644,6 +668,9 @@ def build_lights(kit, ctx):
     for i in range(5):
         kit.light(f"strip{i}", "AREA", (lane_x(i), 15.0, 2.9), 60.0, "#a9f0e2", size=1.3, shadow=False)
     kit.light("seats", "AREA", (-1.8, SEAT_Y + 1.5, 3.2), 260.0, "#ffc58a", size=5.0, shadow=False)
+    kit.light("shadowL", "SPOT", (-1.8, -9.0, 0.9), 0.0, "#ffc68a", spot=75, blend=0.25, size=0.05)
+    kit.LIGHTS["shadowL"]["base"] = 5000.0
+    kit.aim(kit.LIGHTS["shadowL"]["obj"], (-1.8, 6.0, 0.0))
     kit.light("fill", "AREA", (-4.0, 6.0, 3.3), 45.0, "#7c86b8", size=10.0, shadow=False)
     for k, (hx, hy) in enumerate(((0.0, -3.0), (-3.5, -3.0), (-0.8, 3.0), (-4.0, 4.0))):
         kit.light(f"house{k}", "AREA", (hx, hy, 3.3), 0.0, "#ffe2b5", size=5.0, shadow=True)
@@ -833,6 +860,14 @@ def animate(kit, story, tl, t, ctx):
     animate_pins(ctx, tl, t)
     pose_spare(kit, ctx, tl, t, over)
     animate_ball(ctx, tl, t)
+    for st in ctx["bulbs"]:
+        st.default_value = 6.0 * g
+    sc = _last(_cues(tl, "shadowlight"), t)
+    over["shadowL"] = 0.0 if sc is None else _ss((t - sc["t"]) / 1.0) * sc.get("on", 1.0)
+    dc = _last(_cues(tl, "door"), t)
+    op = 0.0 if dc is None else (_ss((t - dc["t"]) / 0.6) if dc.get("open", 0) > 0.5 else 1 - _ss((t - dc["t"]) / 0.6))
+    for piv, side in ctx["doors"]:
+        piv.rotation_euler = (0, 0, -side * op * math.radians(100))
     # props
     me = bpy.data.objects.get("me")
     mags = bpy.data.objects.get("mags")
@@ -840,6 +875,8 @@ def animate(kit, story, tl, t, ctx):
         on = show_flag(tl, t, key) and (who is None or not who.hide_render)
         for ob in ctx.get(f"p_{key}", []):
             ob.hide_render = not on
+    for ob in ctx.get("p_bag", []):
+        ob.hide_render = not show_flag(tl, t, "bag")
     on = show_flag(tl, t, "nachos")
     for ob in ctx.get("p_nachos", []):
         ob.hide_render = not on
