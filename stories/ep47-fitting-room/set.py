@@ -190,14 +190,15 @@ def materials(kit):
     M["red"] = pbr(kit, "pincushion red", "#a02a2a", 0.8)
     M["black"] = pbr(kit, "black matte", "#050506", 0.95, spec=0.0)
     M["void"] = pbr(kit, "void", "#010101", 1.0, spec=0.0)
-    M["lining"] = pbr(kit, "lining", "#08080a", 0.95, spec=0.0)
+    M["lining"] = pbr(kit, "lining", "#17171d", 0.95, spec=0.0)
     M["collar"] = pbr(kit, "collar", "#232329", 0.9)
     M["pin"] = pinstripe(kit, "pinstripe", PIN, STRIPE)
     M["pin_collar"] = pinstripe(kit, "pinstripe collar", "#2a2a31", "#62626e", scale=16.0)
     M["pin_arm"] = pinstripe(kit, "pinstripe arm", PIN, STRIPE)
     M["trouser"] = pinstripe(kit, "pinstripe trouser", PIN, STRIPE)
     M["shoe"] = pbr(kit, "empty shoes", "#5a3a22", 0.4, spec=0.5)
-    M["shirt"] = pbr(kit, "empty shirt", "#34343e", 0.85)
+    M["shirt"] = pbr(kit, "empty shirt", "#9c9a94", 0.85)
+    M["lining2"] = pbr(kit, "lining2", "#3b3b46", 0.95, spec=0.0)
     M["glow"] = kit.emit("#fff1d0", 6.0, name="bulb glow")
     M["screen"] = kit.emit("#d8e8ff", 1.2, name="phone screen")
     M["warm_panel"] = kit.emit("#ffd9a0", 1.1, name="warm panel")
@@ -796,15 +797,17 @@ def build_empty(kit, M, ctx):
     # no head: a tall raised charcoal collar, flared, open and notched at the front. The dark notch is its mouth; the
     # two glints sit deep inside the back wall and only show down the notch (and only once the cue turns them on)
     neck = kit.empty("empty.neck", (0, 0, 2.0), torso)
-    col = funnel_mesh(kit, "empty.collar", 0.52, 0.56, 0.1, 1.05, 0.42, M["pin_collar"], M["lining"], neck)
-    for sx in (-1, 1):   # sloped suit shoulders into the collar, and two pointed collar tips lying out over the chest
-        kit.box(f"empty.shoulder{sx}", (0.95, 1.0, 0.3), (sx * 0.78, 0, 0.02), M["pin"], neck, rot=(0, sx * -0.32, 0), bevel=0.1)
-        kit.box(f"empty.tip{sx}", (0.34, 0.05, 0.6), (sx * 0.42, -0.5, 0.3), M["pin_collar"], neck, rot=(0, sx * 0.5, 0), bevel=0.02)
-    floor_ = kit.cyl("empty.voidfloor", 0.42, 0.02, (0, 0, 0.03), M["void"], neck, n=24)
+    # jacket collar: a stiff stand-up ring, open to the sky; a taller pale shirt collar inside it. No hood, no cap.
+    col = funnel_mesh(kit, "empty.collar", 0.66, 0.92, 0.08, 0.96, 0.74, M["pin_collar"], M["lining2"], neck)
+    sh = funnel_mesh(kit, "empty.shirtcollar", 0.46, 0.62, 0.035, 0.9, 0.74, M["shirt"], M["lining2"], neck)
+    for sx in (-1, 1):   # sloped suit shoulders into the collar, and two long lapels running down the chest
+        kit.box(f"empty.shoulder{sx}", (0.95, 1.0, 0.3), (sx * 0.86, 0, 0.02), M["pin"], neck, rot=(0, sx * -0.32, 0), bevel=0.1)
+        kit.box(f"empty.tip{sx}", (0.3, 0.05, 1.0), (sx * 0.5, -0.56, -0.15), M["pin_collar"], neck, rot=(0, sx * 0.35, 0), bevel=0.02)
+    floor_ = kit.cyl("empty.voidfloor", 0.5, 0.02, (0, 0, 0.1), M["void"], neck, n=24)
     glints = []
     gm = kit.emit("#f4f0e2", 12.0, name="glint")
     for sx in (-1, 1):
-        glints.append(kit.sphere(f"empty.glint{sx}", 0.05, (sx * 0.12, 0.3, 0.85), gm, neck, seg=10))
+        glints.append(kit.sphere(f"empty.glint{sx}", 0.04, (sx * 0.17, 0.24, 0.12), gm, neck, seg=10))
     e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=[floor_], glints=glints)
     ctx["empty"] = e
 
