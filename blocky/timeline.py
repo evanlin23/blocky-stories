@@ -221,6 +221,7 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
               for who, keys in st.get("acting", {}).items()}
     return {"name": st["name"], "fps": fps, "duration": duration, "frames": int(round(duration * fps)),
             "tail": st.get("tail", TAIL),
+            "fade_out": st.get("fade_out", True),
             "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
             "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
             "cues": cues, "fx": fx, "acting": acting}
