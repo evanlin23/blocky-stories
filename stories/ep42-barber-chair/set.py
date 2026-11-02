@@ -844,17 +844,17 @@ def animate(kit, story, tl, t, ctx):
             cr["root"].location = (CHX, CHY[wh], 0.0)
             cr["root"].rotation_euler = (0, 0, math.radians(-90 + (sw_deg if wh == "third" else 0.0)))
         CR.set_mouth(cr, st["mouth"])
-        for nm in ("ckey", "crim", "cfill"):
-            spec = look.get(nm)
-            if spec:
-                pos, aim, watts = spec[:3]
-                if len(spec) > 3 and spec[3]:
-                    K.LIGHTS[nm]["light"].spot_size = math.radians(spec[3])
-                ob = K.LIGHTS[nm]["obj"]
-                ob.location = pos
-                ob.rotation_euler = (V(aim) - V(pos)).to_track_quat("-Z", "Y").to_euler()
-                K.LIGHTS[nm]["base"] = watts
-                over[nm] = 1.0
+    for nm in ("ckey", "crim", "cfill"):
+        spec = look.get(nm)
+        if spec:
+            pos, aim, watts = spec[:3]
+            if len(spec) > 3 and spec[3]:
+                K.LIGHTS[nm]["light"].spot_size = math.radians(spec[3])
+            ob = K.LIGHTS[nm]["obj"]
+            ob.location = pos
+            ob.rotation_euler = (V(aim) - V(pos)).to_track_quat("-Z", "Y").to_euler()
+            K.LIGHTS[nm]["base"] = watts
+            over[nm] = 1.0
     # my plain oxblood cape (L61 on), Mr Ostrowski's shivering panes, the combs and the cape on Len's arm
     mo = bool(look.get("oxblood")) and "shop" in show
     for ob in ctx["mecape"]:
@@ -892,6 +892,10 @@ def animate(kit, story, tl, t, ctx):
             ob.hide_render = (not short) or me_gone
     # ---- the rings
     place_rings(K, BL, story, tl, t, ctx, shot, sid)
+    kk = look.get("k", 1.0)
+    if kk != 1.0:
+        for nm in list(over):
+            over[nm] = over[nm] * kk
     return over
 
 

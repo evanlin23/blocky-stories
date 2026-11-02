@@ -23,7 +23,7 @@ TEAL, CREAM = "#2a8c8c", "#efe6d2"
 PANEL_W, PANEL_H, PANEL_Z = 0.80, 0.64, 0.86
 
 # the cape's loft: (z, half width, front reach, back reach, squareness)
-CAPE = [(1.30, 0.23, 0.21, 0.21, 2.0),
+CAPE = [(1.30, 0.29, 0.26, 0.26, 2.0),
         (1.26, 0.48, 0.32, 0.22, 3.0),
         (1.215, 0.60, 0.40, 0.26, 5.0),
         (1.05, 0.62, 0.435, 0.27, 6.0),
@@ -179,7 +179,7 @@ def build_creature(M):
     parts.append(cape)
     # the high round collar: a tube, open at the top, with a flat black floor just under the rim
     n = 40
-    ro, ri, z0, z1 = 0.235, 0.20, 1.27, 1.50
+    ro, ri, z0, z1 = 0.30, 0.265, 1.27, 1.36
     verts, faces = [], []
     for z, r in ((z0, ro), (z1, ro), (z1, ri), (z0 + 0.02, ri)):
         for j in range(n):
@@ -191,7 +191,7 @@ def build_creature(M):
             faces.append((a, b, b + n, a + n))
     col = kit.mesh_obj("creature.collar", verts, faces, striped(), root, smooth=True)
     parts.append(col)
-    parts.append(kit.cyl("creature.collar.floor", ri + 0.002, 0.012, (0, 0, 1.385), kit.plastic("#010101", 0.9, "void", 0.0), root, n=40))
+    parts.append(kit.cyl("creature.collar.floor", ri + 0.002, 0.012, (0, 0, 1.315), kit.plastic("#010101", 0.9, "void", 0.0), root, n=40))
     # a plain dark-brown boot under the hem each side, and the trouser shin above it
     boot = kit.plastic("#2e1b10", 0.5, "boot")
     trou = kit.plastic("#16161a", 0.8, "trousers")
