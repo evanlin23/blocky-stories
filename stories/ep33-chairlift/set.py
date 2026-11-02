@@ -45,18 +45,23 @@ BASE_FOG = 0.010
 LOOKS = {
     "pre": dict(sky="#3d5170", sky_s=2.3, fog="#47597a", fogd=0.010, sun_e=0.0, sun_c="#ffb48a", sun_el=7.0, disc=0.0,
                 cam=1.0, cam_c="#9cb4e4"),
-    "pink": dict(sky="#b7899f", sky_s=2.0, fog="#c997aa", fogd=0.011, sun_e=1.6, sun_c="#ffb898", sun_el=14.0, disc=3.0,
+    "pink": dict(sky="#b7899f", sky_s=2.0, fog="#c997aa", fogd=0.011, sun_e=1.6, sun_c="#ffb898", sun_el=20.0, disc=2.4,
                  cam=0.8, cam_c="#ffd2cc"),
-    "gold": dict(sky="#d6aa84", sky_s=2.1, fog="#e0b98e", fogd=0.011, sun_e=3.2, sun_c="#ffd391", sun_el=21.0, disc=4.0,
+    "gold": dict(sky="#d6aa84", sky_s=2.1, fog="#e0b98e", fogd=0.011, sun_e=3.2, sun_c="#ffd391", sun_el=24.0, disc=3.0,
                  cam=0.7, cam_c="#ffe2b8"),
-    "fog": dict(sky="#b8bdc4", sky_s=2.4, fog="#c9cdd2", fogd=0.075, sun_e=0.0, sun_c="#e6e8ee", sun_el=20.0, disc=0.0,
-                cam=1.0, cam_c="#e6eaf2"),
-    "thin": dict(sky="#c7bfc6", sky_s=2.4, fog="#d4cdd0", fogd=0.028, sun_e=0.6, sun_c="#ffd8c0", sun_el=20.0, disc=0.7,
-                 cam=0.9, cam_c="#f1e6e6"),
+    # the warm turn (L64 on): brighter than the rides' dawn, so every face reads
+    "warm1": dict(sky="#d9a0b4", sky_s=3.6, fog="#d9a9b8", fogd=0.011, sun_e=3.0, sun_c="#ffb898", sun_el=16.0, disc=2.4,
+                  cam=1.5, cam_c="#ffe0d8"),
+    "warm2": dict(sky="#e3b98f", sky_s=3.6, fog="#e8c295", fogd=0.011, sun_e=4.0, sun_c="#ffd391", sun_el=22.0, disc=3.0,
+                  cam=1.3, cam_c="#fff0d0"),
+    "fog": dict(sky="#8e959f", sky_s=1.0, fog="#9aa1ab", fogd=0.075, sun_e=0.0, sun_c="#e6e8ee", sun_el=20.0, disc=0.0,
+                cam=0.3, cam_c="#e6eaf2"),
+    "thin": dict(sky="#a8adb6", sky_s=0.38, fog="#b4b8c0", fogd=0.03, sun_e=0.0, sun_c="#ffd8c0", sun_el=20.0, disc=0.5,
+                 cam=0.06, cam_c="#f1e6e6"),
 }
 
-CREATURE_ORANGE, PUTTY = "#c97c4a", "#c9b48f"
-GLINT = 5.0
+CREATURE_ORANGE, PUTTY = "#c97c4a", "#8f8269"
+GLINT = 7.0
 HANG = G.HANG
 SPACING = 22.0
 
@@ -208,13 +213,13 @@ def build_bottom(kit, ctx, M):
             kit.cyl(f"pile{ix}_{iy}", 0.22, 3.0, (ix * 2.2 - 0.5, iy * 3.4 - 5.5, -1.7), M["post"], n=8)
     # the roof over the wheel, on four posts, pitched along y
     for sx in (-1, 1):
-        for y in (-3.6, 3.2):
+        for y in (-3.6, 2.4):
             kit.box(f"rpost{sx}{y}", (0.3, 0.3, 4.4), (sx * 4.6, y, 2.2), M["post"], bevel=0.02)
     for sx in (-1, 1):
-        r = kit.box(f"roof{sx}", (3.3, 7.8, 0.14), (sx * 2.2, -0.2, 4.95), M["roof"], bevel=0.02)
+        r = kit.box(f"roof{sx}", (3.3, 6.9, 0.14), (sx * 2.2, -0.6, 4.95), M["roof"], bevel=0.02)
         r.rotation_euler = (0, -sx * 0.30, 0)
-        kit.box(f"rbeam{sx}", (0.22, 7.2, 0.24), (sx * 4.6, -0.2, 4.35), M["post"], bevel=0.02)
-    kit.box("ridge", (0.3, 7.9, 0.2), (0, -0.2, 5.55), M["post"], bevel=0.02)
+        kit.box(f"rbeam{sx}", (0.22, 6.3, 0.24), (sx * 4.6, -0.6, 4.35), M["post"], bevel=0.02)
+    kit.box("ridge", (0.3, 7.0, 0.2), (0, -0.6, 5.55), M["post"], bevel=0.02)
     # the wheel and its sheave frame
     ctx["wheel_b"] = bull_wheel(kit, "wheelB", 0, 0, 2.3, M)
     kit.box("wframe", (0.5, 0.5, 2.2), (0, 0, 1.0), M["dark"], bevel=0.02)
@@ -244,7 +249,7 @@ def build_bottom(kit, ctx, M):
     kit.box("rail_top", (19.0, 0.1, 0.08), (-0.5, 3.45, 1.07), M["post"], bevel=0.01)
     kit.box("rail_mid", (19.0, 0.06, 0.06), (-0.5, 3.45, 0.55), M["post"], bevel=0.01)
     # the cup (cue)
-    cup = kit.empty("cup", (1.2, 3.45, 1.11))
+    cup = kit.empty("cup", (0.6, 3.45, 1.11))
     kit.cyl("cup.body", 0.075, 0.13, (0, 0, 0.065), M["cup"], cup, n=14, r2=0.06)
     for k in range(3):
         kit.box(f"cup.steam{k}", (0.018, 0.018, 0.2 + 0.05 * k), (0.03 * (k - 1), 0.0, 0.26 + 0.05 * k), M["steam"], cup)
@@ -309,7 +314,7 @@ def build_chair(kit, M, name, tally=False):
     kit.box(f"{name}.foot", (W, 0.36, 0.07), (0, -0.55, -0.34), M["rubber"], root, bevel=0.012)
     if tally:   # two short upright strokes pressed into the rubber, one per seat, in the Four-Face's colour
         for x in (-0.2, 0.2):
-            kit.box(f"{name}.tally{x}", (0.04, 0.2, 0.012), (x, -0.55, -0.298), M["tally"], root)
+            kit.box(f"{name}.tally{x}", (0.06, 0.26, 0.012), (x, -0.55, -0.298), M["tally"], root)
     kit.cyl(f"{name}.hanger", 0.03, HANG - 0.05, (0, 0.34, 0.05 + (HANG - 0.05) / 2), M["frame"], root, n=8)
     kit.box(f"{name}.grip", (0.26, 0.42, 0.2), (0, 0.34, HANG), M["dark"], root, bevel=0.03)
     return root
@@ -335,7 +340,7 @@ def build_sky(kit, ctx, M):
     out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
     nt.links.new(e.outputs[0], out.inputs["Surface"])
     ctx["disc_e"] = e
-    ctx["disc"] = kit.sphere("sundisc", 28.0, (60, 700, 60), m, seg=24)
+    ctx["disc"] = kit.sphere("sundisc", 18.0, (60, 450, 60), m, seg=24)
     kit.light("sun", "SUN", (0, 0, 50), 1.0, "#ffb48a", rot=(0.5, 0, 0))
     kit.light("camfill", "AREA", (0, 0, 5), 10.0, "#9cb4e4", size=1.5, shadow=False)
     kit.light("ckey", "SPOT", (0, 0, 5), 0.0, "#d9e4ff", size=0.15, spot=38, blend=0.5)
@@ -354,13 +359,13 @@ def face_png():
     d = ImageDraw.Draw(im)
     ink = (14, 12, 12)
     for sx in (-1, 1):
-        cx, cy, r = W * (0.5 + sx * 0.235), W * 0.40, W * 0.115
+        cx, cy, r = W * (0.5 + sx * 0.235), W * 0.40, W * 0.14
         d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=ink)
-        g = W * 0.042
+        g = W * 0.05
         gx, gy = cx + r * 0.32, cy - r * 0.34
         d.ellipse([gx - g, gy - g, gx + g, gy + g], fill=(255, 251, 238))
-    th = W * 0.058
-    x0, x1, y = W * 0.18, W * 0.82, W * 0.75
+    th = W * 0.045
+    x0, x1, y = W * 0.12, W * 0.88, W * 0.77
     d.line([(x0, y), (x1, y)], fill=ink, width=int(th))
     for x in (x0, x1):
         d.ellipse([x - th / 2, y - th / 2, x + th / 2, y + th / 2], fill=ink)
@@ -374,7 +379,7 @@ def make_cube_head(kit, ctx):
     if root is None or hg is None:
         return False
     ctx["creature_head_rig"] = bpy.data.objects.get("creature.headm")
-    side = 1.55
+    side = 1.75
     skin = kit.plastic(PUTTY, 0.45, name="putty")
     kit.box("creature.cube", (side, side, side), (0, 0, 0), skin, hg, bevel=0.012)
     pil = face_png()
@@ -408,6 +413,8 @@ def make_cube_head(kit, ctx):
         uv = pl.data.uv_layers.new(name="UVMap")
         for li, uvv in zip(pl.data.polygons[0].loop_indices, [(0, 0), (1, 0), (1, 1), (0, 1)]):
             uv.data[li].uv = uvv
+    for ob in root.children_recursive:
+        ob.hide_render = root.hide_render   # built mid-run: take the creature's hidden state at once
     ctx["cube_ready"] = True
     return True
 
@@ -440,6 +447,24 @@ def build(kit, story, tl):
         t += dt
     ctx["clock"] = (dt, C)
     ctx["card_ready"] = False
+    # opt-in camera aim: a shot's "aim": {"who", "off"} points its camera at that cast member's feet-root + off
+    import __main__
+    from blocky import acting as _a
+
+    if hasattr(__main__, "cam_at") and not getattr(__main__, "_aim_patched", False):
+        orig = __main__.cam_at
+
+        def cam_at2(spec, shot, t, chars, tl_):
+            loc, tgt, lens, roll = orig(spec, shot, t, chars, tl_)
+            aim = spec.get("aim")
+            if aim:
+                st = _a.state(tl_, aim["who"], t)
+                o = aim.get("off", [0.0, 0.0, 0.0])
+                tgt = (st["x"] + o[0], st["y"] + o[1], st["z"] + o[2])
+            return loc, tgt, lens, roll
+
+        __main__.cam_at = cam_at2
+        __main__._aim_patched = True
     return ctx
 
 
@@ -519,7 +544,7 @@ def sway_now(tl, t):
 def _rot_about(ob, pivot, rx, ry):
     """Rotate an object (placed in world space) about a world pivot: rx about world x, then ry about world y."""
     M_ = Matrix.Translation(pivot) @ Matrix.Rotation(ry, 4, "Y") @ Matrix.Rotation(rx, 4, "X") @ Matrix.Translation(-V(pivot))
-    ob.matrix_world = M_ @ ob.matrix_world
+    ob.matrix_world = M_ @ ob.matrix_basis   # these objects have no parent, and matrix_world isn't updated yet
 
 
 def animate(kit, story, tl, t, ctx):
@@ -545,7 +570,7 @@ def animate(kit, story, tl, t, ctx):
     sun["obj"].rotation_euler = (-s).to_track_quat("-Z", "Y").to_euler()
     sun["light"].color = _lin(L["sun_c"])
     K.LIGHTS["sun"]["base"] = max(L["sun_e"], 0.0001)
-    ctx["disc"].location = tuple(s * 700.0)
+    ctx["disc"].location = tuple(s * 450.0)
     ctx["disc_e"].inputs["Strength"].default_value = L["disc"]
     ctx["disc_e"].inputs["Color"].default_value = (*_lin(L["sun_c"]), 1)
     # ---- the camera of this frame (the follow-camera fill and the creature's key)
@@ -587,7 +612,13 @@ def animate(kit, story, tl, t, ctx):
     if me_riding is not None:
         ycur = me_riding[1]["y"]
         P = ycur if me_riding[1]["yaw"] > 1.5 else (G.LL + G.ARC + (G.LL - ycur))
-    ph = P
+    # opt-in "phase" cue: put cable chair 0 at loop position `u` `when` seconds after the cue (so a chair is in the
+    # shot), kept until the next phase cue (one with "off" puts it back)
+    shift = 0.0
+    for c in sorted(_cues(tl, "phase"), key=lambda c_: c_["t"]):
+        if c["t"] <= t:
+            shift = 0.0 if c.get("off") else (c["u"] - clock(ctx, c["t"] + c.get("when", 0.0))) % ctx["spacing"]
+    ph = P + shift
     for ob in ctx["special"]:
         ob.location = (0, 0, -60)
     for k, c in enumerate(cents[:3]):
@@ -595,27 +626,18 @@ def animate(kit, story, tl, t, ctx):
         ob.location = (c[0], c[1], c[2])
         ob.rotation_euler = (0, 0, c[3])
     # cable chairs: skip any that overlap a special chair
+    up_on = _switch(_cues(tl, "upchairs"), "on", t, False)
     for k, ob in enumerate(ctx["cable"]):
         u = (ph + k * ctx["spacing"]) % G.TOT
         x, y, zr, yaw = G.path(u)
+        if not up_on and (u < G.LL or u >= G.BOTTOM_ARC):   # only the returning chairs are empty on the lift
+            ob.location = (x, y, -60)
+            continue
         ob.location = (x, y, zr - HANG)
         ob.rotation_euler = (0, 0, yaw)
         for c in cents:
             if math.hypot(c[0] - x, c[1] - y) < 5.5:
                 ob.location = (x, y, -60)
-    # sway: a chair and its riders rock about the grip
-    for k, c in enumerate(cents[:3]):
-        ob = ctx["special"][k]
-        pivot = V((c[0], c[1], c[2] + HANG))
-        a = math.radians(amp) * math.sin(2 * math.pi * 0.33 * t + k)
-        roll = math.radians(bias) * 1.0 + a * 0.6
-        pitch = a * 0.5
-        # the chair's roll is about its travel axis: world x for an up/down chair
-        ob.rotation_euler = (0, 0, c[3])
-        _rot_about(ob, pivot, pitch, roll)
-        for who in c[4]:
-            r = bpy.data.objects[who]
-            _rot_about(r, pivot, pitch, roll)
     # ---- seated riders: legs forward and down, hands on the lap
     for who, s_, seat in riders:
         r = bpy.data.objects.get(who)
@@ -629,7 +651,20 @@ def animate(kit, story, tl, t, ctx):
             if leg is not None:
                 leg.rotation_euler = (-math.radians(55), 0, 0)
             if arm is not None:
-                arm.rotation_euler = (-math.radians(58), 0, 0)
+                arm.rotation_euler = (-math.radians(12), 0, 0)
+    # sway: a chair and its riders rock about the grip
+    for k, c in enumerate(cents[:3]):
+        ob = ctx["special"][k]
+        pivot = V((c[0], c[1], c[2] + HANG))
+        a = math.radians(amp) * math.sin(2 * math.pi * 0.33 * t + k)
+        roll = math.radians(bias) * 1.0 + a * 0.6
+        pitch = a * 0.5
+        # the chair's roll is about its travel axis: world x for an up/down chair
+        ob.rotation_euler = (0, 0, c[3])
+        _rot_about(ob, pivot, pitch, roll)
+        for who in c[4]:
+            r = bpy.data.objects[who]
+            _rot_about(r, pivot, pitch, roll)
     # ---- the wheels
     ctx["wheel_b"].rotation_euler = (0, 0, P / G.R)
     ctx["wheel_t"].rotation_euler = (0, 0, P / G.R)
@@ -715,14 +750,14 @@ def animate(kit, story, tl, t, ctx):
         side = to_cam.cross(V((0, 0, 1)))
         kd = max(1.5, min(dist, 6.0))
         key = K.LIGHTS["ckey"]
-        key["obj"].location = head + side * 1.5 + to_cam * 0.7 + V((0, 0, 0.5))
+        key["obj"].location = head + side * 1.7 + to_cam * 0.1 + V((0, 0, -0.45))
         K.aim(key["obj"], tuple(head))
-        key["base"] = 150.0 * ck * (key["obj"].location - head).length ** 2 / 2.2
+        key["base"] = 380.0 * ck * (key["obj"].location - head).length ** 2 / 2.2 * min(1.0, max(0.3, (cam - head).length / 3.9) ** 1.4)
         key["light"].color = _lin(L.get("cam_c", "#d9e4ff")) if False else (0.7, 0.8, 1.0)
         over["ckey"] = 1.0
         rim = K.LIGHTS["crim"]
-        rim["obj"].location = head - to_cam * 1.6 + V((0, 0, 0.9)) - side * 0.6
+        rim["obj"].location = head - to_cam * 1.5 + V((0, 0, 0.8)) - side * 1.0
         K.aim(rim["obj"], tuple(head))
-        rim["base"] = 190.0 * ck * (rim["obj"].location - head).length ** 2 / 2.5
+        rim["base"] = 520.0 * ck * (rim["obj"].location - head).length ** 2 / 2.5
         over["crim"] = 1.0
     return over

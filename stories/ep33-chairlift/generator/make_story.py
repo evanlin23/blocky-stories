@@ -25,7 +25,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 # ---------------------------------------------------------------------------------------------------- holds
 # If the voice lands under 2:15 the holds are added in this order, never words: P01 up to 1.0 s, the beat after L21
 # (L21's gap), L61's gap, L73's gap. A pause beat P01 is the music_drops hole (0.7 s). The loop tail is 0.3 s.
-HOLDS = {"P01": 0.7}
+HOLDS = {"P01": 1.0}
 LOOP = 0.3
 out_lines = []
 for ln in lines:
@@ -33,7 +33,8 @@ for ln in lines:
     if ln["id"] == "L51":
         out_lines.append({"id": "P01", "pause": HOLDS["P01"], "chunks": []})
 lines = out_lines
-GAPS = {}   # line id -> gap after it
+GAPS = {"L17": 0.55, "L21": 0.8, "L27": 0.5, "L36": 0.55, "L41": 0.5, "L42": 0.6, "L51": 0.25, "L59": 0.6,
+        "L61": 0.7, "L63": 0.75, "L69": 0.85, "L73": 0.9, "L79": 0.8, "L14": 0.4, "L60": 0.4}   # line id -> gap after it
 TEMPO = {}  # line id -> tempo
 for ln in lines:
     if ln["id"] in GAPS:
@@ -48,7 +49,7 @@ cast = {
            "hat": "beanie", "hat_c": "#efe3c8",
            "face": {"eyes": "round", "brows": True, "cheeks": "#e98d7a", "ink": "#1b1410"}},
     "bo": {"age": "adult", "skin": "#d8a578", "shirt": "#2f5a3a", "pattern": "knit", "pattern_c": "#264a30",
-           "collar": "#244a2f", "pants": "#3b3a38", "shoes": "#2b241e", "sleeves": "long", "hair": "cap",
+           "collar": "#244a2f", "pants": "#3b3a38", "shoes": "#2b241e", "sleeves": "long", "hair": "none",
            "hair_c": "#141414", "hat": "beanie", "hat_c": "#2b2b30", "width": 1.08,
            "face": {"eyes": "round", "brows": True, "ink": "#1a120e"}},
     "mr_halvor": {"age": "adult", "skin": "#e3b896", "shirt": "#6a4a2e", "pattern": "solid", "collar": "#583c24",
@@ -59,10 +60,9 @@ cast = {
                    "collar": "#3d5f8f", "pants": "#4a4f58", "shoes": "#2c4a35", "sleeves": "long", "hair": "bun",
                    "hair_c": "#a9a8a6", "hat": "none", "height": 0.93,
                    "face": {"eyes": "lashes", "brows": True, "cheeks": "#e49a8a", "ink": "#2a2420"}},
-    "creature": {"age": "adult", "skin": "#c9b48f", "shirt": "#c97c4a", "pattern": "solid", "collar": "#b06b3d",
+    "creature": {"age": "adult", "skin": "#8f8269", "shirt": "#c97c4a", "pattern": "solid", "collar": "#b06b3d",
                  "pants": "#3a3d42", "shoes": "#7b7f84", "sleeves": "long", "hair": "none", "hat": "none",
-                 "extras": ["hooddown"],
-                 "face": {"eyes": "dot", "brows": False, "ink": "#0e0c0c"}},
+                                  "face": {"eyes": "dot", "brows": False, "ink": "#0e0c0c"}},
 }
 
 # ---------------------------------------------------------------------------------------------------- helpers
@@ -116,10 +116,10 @@ def dzs(y_me, dy):
 
 
 # ---------------------------------------------------------------------------------------------------- places
-BO = [-0.9, -2.5]
+BO = [1.25, -2.6]
 MR = [-2.6, -3.95]
 MRS = [-1.45, -3.95]
-ME0 = [1.5, -2.4]
+ME0 = [3.4, -2.2]
 ROPEZ = 0.0
 
 
@@ -166,109 +166,110 @@ def shot(at, cam, **opt):
 
 
 # ---- 01 Monday: the bet
+P0 = (0.0, 0.75, 1.88)   # my point of view: just ahead of my beanie, over the lap bar
+CR = {"who": "creature", "off": [0.0, 0.0, 1.57]}      # aim at the Four-Face's head
 BOH = hd(BO)
 shot(0, front(BOH, 0, 0, 5.4, 0.0, 36, push=1.5, lens2=40), hand=0.004)
-shot("L02", mv((-17, -24, 15), (0, 68, 13), 20, (-15, -22, 15.5), (0, 68, 13), 20.5), hand=0.0)
-shot("L03", front(hd(ME0), 180, 18, 3.0, 0.0, 34, push=0.15))
-shot("L04", mv((-2.8, -5.4, 1.05), (0.4, -1.3, 1.5), 30, (-2.6, -5.2, 1.05), (0.6, -1.3, 1.5), 30), hand=0.003)
-shot("L05", front(hd(ME0), 180, -14, 2.5, 0.0, 34, push=0.1))
-shot("L06", mv((0.6, 0.15, 1.5), (-1.2, -3.3, 1.2), 31, (0.5, 0.15, 1.5), (-1.2, -3.3, 1.2), 31))
+shot("L02", mv((-7.5, -13.0, 9.5), (0, 40, 8.0), 20, (-5.5, -13.0, 10.0), (0, 40, 8.5), 20), hand=0.0)
+shot("L03", front(hd(ME0), 180, 18, 3.0, 0.0, 32, push=0.15))
+shot("L04", mv((-0.1, -7.0, 1.5), (0.2, -1.2, 1.4), 30, (-0.1, -7.0, 1.5), (0.4, -1.2, 1.4), 30), hand=0.003)
+shot("L05", front(hd(ME0), 180, -14, 2.7, 0.0, 32, push=0.1))
+shot("L06", mv((1.5, 0.6, 1.5), (-1.7, -3.4, 1.25), 26, (1.4, 0.5, 1.5), (-1.7, -3.4, 1.25), 26))
 shot("L07", mv((-2.05, -0.4, 1.5), (-2.05, -3.95, 1.45), 30, (-2.05, -0.55, 1.5), (-2.05, -3.95, 1.45), 31))
-shot("L08", mv((-2.0, -6.0, 1.8), (1.8, 16, 6.5), 28, (-2.0, -6.1, 1.8), (1.8, 20, 8.0), 28))
+shot("L08", mv((8.5, -4.0, 1.7), (1.8, 16, 7.0), 28, (8.5, -4.0, 1.7), (1.8, 22, 8.5), 28))
 shot("L09", mv((-2.0, -2.0, 0.42), (-2.02, -3.95, 0.3), 22, (-2.0, -2.15, 0.4), (-2.02, -3.95, 0.3), 22), hand=0.002)
-shot("L10", front(hd(BO), 0, 22, 2.6, 0.0, 32, aim_dz=0.0))
+shot("L10", front(hd(BO), 0, 22, 2.6, 0.0, 32))
 shot("L11", front(hd(MRS, 1.47), 180, -10, 2.7, 0.0, 34, push=0.1))
-shot("L11.1", front(hd([1.5, -2.3]), 180, 14, 2.6, 0.0, 34))
-shot("L12", mv((-0.5, -4.9, 0.55), (1.2, -1.0, 1.0), 28, (-0.3, -4.7, 0.6), (1.4, -0.9, 1.0), 28), hand=0.003)
-shot("L13", mv((0.75, -1.1, 1.05), (1.15, 0.0, 0.6), 24, (0.8, -1.0, 1.0), (1.15, 0.0, 0.6), 25), hand=0.002)
-shot("L14", mv((-0.9, -2.7, 1.45), (0.8, -0.1, 1.0), 26, (-0.8, -2.6, 1.45), (0.8, -0.1, 1.0), 27))
+shot("L11.1", front(hd(ME0), 180, 14, 2.6, 0.0, 34))
+shot("L12", mv((3.9, -5.6, 0.6), (1.2, -1.2, 1.0), 30, (3.6, -5.2, 0.7), (1.4, -1.0, 1.0), 30), hand=0.003)
+shot("L13", mv((0.5, -2.1, 2.3), (1.1, -0.1, 0.65), 30, (0.55, -2.0, 2.25), (1.1, -0.1, 0.65), 31), hand=0.002)
+shot("L14", mv((-1.3, -1.6, 1.6), (0.8, -0.1, 0.95), 30, (-1.2, -1.5, 1.6), (0.8, -0.1, 0.95), 31))
 # the lore plant: top-down on the footrest between my boots, the two orange strokes centred, held the whole line
-shot("L15", ride_cam(-0.72, 0.42, 1.42, -0.72, 0.60, 0.17, 24), follow=FL, hand=0.0)
-shot("L16", ride_cam(0.8, 1.0, 1.3, -4.6, 1.8, 0.8, 40), follow=FL, hand=0.004)
-shot("L17", ride_cam(0.1, 2.5, 1.6, 0.0, 0.0, HEAD, 34), follow=FL, hand=0.004)
-Y18 = 24.0
-shot("L18", ride_cam(-0.2, 0.2, 1.7, -2.6, 96.0, 34.0, 80), follow=FL, hand=0.003)
-shot("L19", ride_cam(-0.2, 0.2, 1.7, -3.2, 88.0, 31.0, 150), follow=FL, hand=0.003)
-shot("L20", ride_cam(-0.2, 0.2, 1.7, -3.4, 80.0, 28.0, 220), follow=FL, hand=0.002)
-shot("L21", ride_cam(1.0, -3.3, 1.95, -1.5, 90.0, 24.0, 38, 1.0, -3.2, 1.95, -1.5, 90.0, 27.0, 38), follow=FL, hand=0.003)
+shot("L15", ride_cam(-0.72, 0.30, 1.42, -0.72, 0.60, 0.17, 15), follow=FL, hand=0.0)
+shot("L16", ride_cam(-1.0, 1.4, 1.4, -5.0, 1.4, 1.0, 20), follow=FL, hand=0.004)
+shot("L17", ride_cam(0.1, 2.5, 1.75, 0.0, 0.0, HEAD, 34), follow=FL, hand=0.004)
+shot("L18", ride_cam(*P0, 0, 0, 0, 110), follow=FL, aim=CR, hand=0.003)
+shot("L19", ride_cam(1.5, 0.6, 1.9, 0, 0, 0, 150), follow=FL, aim=CR, hand=0.003)
+shot("L20", ride_cam(1.6, 0.6, 1.9, 0, 0, 0, 190), follow=FL, aim=CR, hand=0.002)
+shot("L21", ride_cam(0.9, -2.9, 1.9, 13.0, 90.0, 31.0, 38, 0.9, -2.9, 1.9, 13.0, 90.0, 33.0, 38), follow=FL, hand=0.003)
 
 # ---- 02 Tuesday and Wednesday
-Y22, Y25 = 36.0, 60.0
-shot("L22", ride_cam(0.0, 0.3, 1.7, -2.4, 30.0, 1.7 + dzs(Y22, 30.0), 55), follow=FL, hand=0.003)
-shot("L23", ride_cam(0.4, 0.6, 1.7, -3.6, 21.0, 1.67 + dzs(Y22 + 8, 21), 105, tx2=-3.6, ty2=11.0, tz2=1.67 + dzs(Y22 + 12, 11)), follow=FL, hand=0.002)
-shot("L23.1", ride_cam(0.5, 0.7, 1.6, -3.6, 9.0, 1.7 + dzs(Y22 + 16, 9), 110, tx2=-3.6, ty2=5.0, tz2=1.7 + dzs(Y22 + 19, 5)), follow=FL, hand=0.002)
-shot("L24", ride_cam(0.3, 0.4, 1.68, -3.6, 6.0, 1.67 + dzs(Y22 + 19, 6), 140, tx2=-3.6, ty2=3.0, tz2=1.67 + dzs(Y22 + 21, 3), lens2=150), follow=FL, hand=0.002)
-shot("L25", ride_cam(-0.3, 0.3, 1.8, -3.6, 4.0, 1.67 + dzs(Y22 + 21, 4), 60, tx2=-3.6, ty2=-0.6, tz2=1.67, lens2=55), follow=FL, hand=0.003)
-shot("L26", ride_cam(0.9, -1.3, 1.9, -3.6, -9.0, 1.67 - dzs(Y25, 9) * 0.9 + 0.2, 70), follow=FL, hand=0.003)
-shot("L27", ride_cam(0.6, -0.9, 1.8, -3.6, -13.0, 1.67 - dzs(Y25, 13) * 0.8 + 0.2, 160), follow=FL, hand=0.002)
-shot("L28", front(hd(BO), 0, -18, 2.5, 0.0, 32, push=0.1))
-shot("L29", front(hd([1.0, -2.3]), 180, -16, 2.5, 0.0, 34))
+Y22, Y25 = 18.0, 34.0
+shot("L22", ride_cam(*P0, 0, 0, 0, 45), follow=FL, aim=CR, hand=0.003)
+shot("L23", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 90), follow=FL, aim=CR, hand=0.002)
+shot("L23.1", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 100), follow=FL, aim=CR, hand=0.002)
+shot("L24", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 75), follow=FL, aim=CR, hand=0.002)
+shot("L25", ride_cam(-0.5, 0.75, 1.8, 0, 0, 0, 36), follow=FL, aim=CR, hand=0.003)
+shot("L26", ride_cam(0.0, -1.0, 1.95, 0, 0, 0, 55), follow=FL, aim=CR, hand=0.003)
+shot("L27", ride_cam(0.0, -1.0, 1.95, 0, 0, 0, 120), follow=FL, aim=CR, hand=0.002)
+shot("L28", front(hd(BO), 0, -18, 2.6, 0.0, 32, push=0.1))
+shot("L29", front(hd(ME0), 180, -16, 2.7, 0.0, 32))
 shot("L30", front(hd(MR, 1.62), 180, 0, 2.2, -0.15, 26, aim_dz=-0.6), hand=0.002)
 # Wednesday over the lake: two chairs about to pass; footrests level; I twist round; the side face; the orbit
-shot("L31", ride_cam(3.0, -5.0, 2.4, -2.7, 12.0, 0.9, 30), follow=FL, hand=0.004)
-shot("L32", ride_cam(-0.3, 1.1, 0.0, -2.0, 0.6, -0.15, 40), follow=FL, hand=0.002)
-shot("L33", ride_cam(0.8, 2.0, 1.75, 0.0, 0.0, HEAD, 34), follow=FL, hand=0.004)
-shot("L34", ride_cam(1.0, -1.1, 1.9, -3.2, -9.0, 1.4, 90), follow=FL, hand=0.003)
+shot("L31", ride_cam(3.0, -5.0, 2.4, 0, 0, 0, 30), follow=FL, aim={"who": "creature", "off": [1.5, 0.0, 0.8]}, hand=0.004)
+shot("L32", ride_cam(-2.5, 0.6, 0.12, 0, 0, 0, 30), follow=FL, aim={"who": "creature", "off": [-0.72, -0.6, 0.2]}, hand=0.002)
+shot("L33", ride_cam(0.3, 2.3, 1.8, 0.0, 0.0, HEAD, 32), follow=FL, hand=0.004)
+shot("L34", ride_cam(0.9, -0.9, 1.95, 0, 0, 0, 90), follow=FL, aim=CR, hand=0.003)
 shot("L35", mv((0.0, 0.0, 0.0), (0, 0, 0), 30), follow="creature", hand=0.0)   # replaced below
-shot("L36", front(hd([0, 0]), 180, 0, 2.5, 0.0, 34), follow=FL)
+shot("L36", ride_cam(0.2, 2.4, 1.75, 0.0, 0.0, HEAD, 34), follow=FL)
 
 # ---- 03 Thursday: ahead
-shot("L37", ride_cam(0.9, 0.5, 1.6, -3.6, 10.0, 0.6 + dzs(70, 10), 45), follow=FL, hand=0.004)
-shot("L38", ride_cam(0.0, 0.4, 1.8, -0.0, 9.0, 1.57 + dzs(72, 9), 85), follow=FL, hand=0.003)
-shot("L39", ride_cam(0.0, 0.4, 1.8, -0.0, 9.0, 1.57 + dzs(80, 9), 150), follow=FL, hand=0.003)
-shot("L40", ride_cam(0.0, 0.4, 1.8, -0.0, 9.0, 1.57 + dzs(88, 9), 220), follow=FL, hand=0.002)
-shot("L41", ride_cam(0.9, -1.5, 1.7, 0.0, 6.0, 1.9 + dzs(96, 6) * 0.5, 36), follow=FL, hand=0.004)
+shot("L37", ride_cam(-0.3, 0.8, 1.85, -4.6, 6.0, 4.5, 36), follow=FL, hand=0.004)
+shot("L38", ride_cam(*P0, 0, 0, 0, 60), follow=FL, aim=CR, hand=0.003)
+shot("L39", ride_cam(*P0, 0, 0, 0, 120), follow=FL, aim=CR, hand=0.003)
+shot("L40", ride_cam(*P0, 0, 0, 0, 180), follow=FL, aim=CR, hand=0.002)
+shot("L41", ride_cam(0.4, 2.5, 1.8, 0.0, 0.0, HEAD, 34), follow=FL, hand=0.004)
 shot("L42", mv((7.0, 118.0, 41.5), (0.0, 128.0, 43.0), 24, (7.0, 118.0, 41.5), (0.0, 129.0, 42.2), 25), hand=0.002)
 
 # ---- 04 Friday: the fog
-shot("L43", mv((-4.0, 36.0, 3.2), (0.0, 0.0, 3.0), 26, (-3.0, 33.0, 3.0), (0.4, 0.0, 3.0), 28), hand=0.004)
-shot("L44", mv((0.9, -0.9, 1.1), (1.15, 0.0, 0.6), 24, (0.95, -0.85, 1.05), (1.15, 0.0, 0.6), 25), hand=0.002)
-shot("L45", front(hd(BO), 0, 14, 2.4, 0.0, 34, push=0.1))
+shot("L43", mv((-3.0, 30.0, 2.8), (0.5, 0.0, 2.6), 26, (-2.2, 27.0, 2.8), (0.8, 0.0, 2.6), 28), hand=0.004)
+shot("L44", mv((0.5, -2.1, 2.3), (1.1, -0.1, 0.65), 30, (0.55, -2.0, 2.25), (1.1, -0.1, 0.65), 31), hand=0.002)
+shot("L45", front(hd(BO), 0, 14, 2.5, 0.0, 32, push=0.1))
 shot("L46", ride_cam(3.4, -4.2, 1.5, -0.6, 0.0, 1.0, 26), follow=FL, hand=0.004)
-shot("L47", ride_cam(0.6, 2.2, 3.0, 0.9, 6.0, 1.5, 30), follow=FL, hand=0.003)
+shot("L47", ride_cam(1.4, 3.6, 2.9, -0.72, 0.5, 2.3, 34), follow=FL, hand=0.003)
 shot("L48", ride_cam(2.4, 4.0, 2.2, -0.7, 0.0, 1.2, 28), follow=FL, hand=0.006)
-shot("L49", ride_cam(0.0, 0.2, 1.75, 0.0, 5.0, 1.75, 34), follow=FL, hand=0.006)
+shot("L49", ride_cam(*P0, 0.0, 6.0, 1.85, 34), follow=FL, hand=0.006)
 shot("L50", ride_cam(-0.7, 3.4, 1.15, -0.7, 0.0, 1.0, 30), follow=FL, hand=0.002)
-shot("L51", ride_cam(0.5, 1.9, 1.7, -0.2, 0.0, HEAD, 34), follow=FL, hand=0.003)
-shot("P01", ride_cam(0.5, 1.9, 1.7, -0.2, 0.0, HEAD, 34, lens2=36), follow=FL, hand=0.003)
+shot("L51", ride_cam(0.5, 2.0, 1.7, -0.2, 0.0, HEAD, 34), follow=FL, hand=0.003)
+shot("P01", ride_cam(0.5, 2.0, 1.7, -0.2, 0.0, HEAD, 34, lens2=36), follow=FL, hand=0.003)
 shot("L52", ride_cam(-0.7, 4.0, 1.7, -0.7, 0.0, 1.5, 26), follow=FL, hand=0.003)
 # the reveal: from in front, the two of us in one frame, its cube toward me, the glints the brightest thing
-shot("L53", ride_cam(-0.85, 3.9, 1.62, -0.85, 0.0, 1.5, 26, lens2=29), follow=FL, hand=0.002)
+shot("L53", ride_cam(-0.95, 3.7, 1.9, -0.95, 0.0, 1.45, 22, lens2=25), follow=FL, hand=0.002)
 shot("L54", ride_cam(-0.1, 1.7, 1.2, -0.75, 0.0, 0.95, 40), follow=FL, hand=0.002)
-shot("L55", ride_cam(1.0, 0.9, 1.7, -1.44, 0.0, HEAD, 30, lens2=34), follow=FL, hand=0.002)
+shot("L55", ride_cam(1.3, 1.1, 1.7, -1.44, 0.0, HEAD, 32, lens2=36), follow=FL, hand=0.002)
 shot("L56", ride_cam(-0.6, 2.2, 1.7, -0.1, 0.1, HEAD, 34), follow=FL, hand=0.003)
-shot("L57", ride_cam(-2.2, -1.9, 1.7, -1.44, -0.1, HEAD, 36, lens2=40), follow=FL, hand=0.002)
+shot("L57", ride_cam(-2.2, -2.2, 1.9, -1.44, -0.1, HEAD, 36, lens2=40), follow=FL, hand=0.002)
 shot("L58", ride_cam(-3.1, 1.8, 2.4, -1.44, -0.1, 1.55, 40, lens2=48), follow=FL, hand=0.002)
 shot("L59", ride_cam(0.2, 1.4, 1.65, 0.0, 0.0, HEAD, 38), follow=FL, hand=0.003)
-shot("L60", mv((-3.5, 52.0, 1.6), (-0.8, 64.0, 10.0), 26), hand=0.003)
+shot("L60", ride_cam(-3.0, -4.5, 1.6, -0.7, 3.0, 2.3, 28), follow=FL, hand=0.003)
 shot("L61", mv((-2.6, 112.0, 40.8), (1.6, 125.0, 40.6), 30, (-2.5, 114.0, 40.8), (1.7, 127.0, 40.8), 30), hand=0.003)
-shot("L62", mv((3.6, 128.5, 41.4), (1.8, 124.0, 40.9), 26), hand=0.002)
+shot("L62", mv((7.0, 120.5, 41.5), (2.9, 126.0, 40.9), 26), hand=0.002)
 shot("L63", mv((-3.8, 122.5, 41.6), (0.0, 129.0, 40.4), 30, (-3.6, 124.0, 41.6), (0.0, 129.0, 40.4), 30), hand=0.002)
 
 # ---- 05 Saturday: the forfeit
 shot("L64", mv((2.4, 1.0, 1.5), (-1.7, -3.7, 1.35), 26, (2.0, 0.6, 1.5), (-1.7, -3.7, 1.35), 26), hand=0.003)
 shot("L65", mv((-1.9, -2.0, 0.34), (-2.0, -3.95, 0.3), 20, (-1.9, -2.2, 0.36), (-2.0, -3.95, 0.3), 20), hand=0.002)
-shot("L66", mv((-0.3, 0.3, 1.45), (-0.35, -2.4, 1.45), 28))
-shot("L67", front(hd([0.2, -2.3]), 180, -22, 2.2, -0.05, 32, push=0.1), hand=0.002)
+shot("L66", mv((0.7, -0.4, 1.58), (0.55, -2.35, 1.5), 20))
+shot("L67", front(hd([0.25, -2.35]), 180, -22, 2.4, -0.05, 32, push=0.1), hand=0.002)
 shot("L68", front([MR[0], MR[1], 1.1], 180, 8, 1.55, 0.05, 28, aim_dz=0.0))
 shot("L69", front(hd(MR, 1.62), 180, -14, 2.3, 0.0, 34, push=0.12))
-shot("L70", mv((0.8, -5.3, 0.9), (1.6, -0.6, 1.3), 30, (0.9, -5.0, 0.9), (1.6, -0.5, 1.3), 30), hand=0.003)
+shot("L70", mv((3.9, -5.0, 1.0), (1.2, -1.3, 1.2), 30, (3.8, -4.9, 1.0), (1.3, -1.2, 1.2), 30), hand=0.003)
 shot("L71", front(hd([0.45, -1.7]), 90, 22, 2.5, 0.0, 34))
-shot("L72", mv((-1.3, 1.8, 1.3), (1.8, 12.0, 5.0), 30, (-1.3, 1.8, 1.3), (1.8, 19.0, 7.0), 30), hand=0.003)
+shot("L72", mv((-1.3, 2.8, 1.3), (1.8, 8.0, 4.0), 30, (-1.3, 2.8, 1.3), (1.8, 14.0, 6.0), 30), hand=0.003)
 shot("L73", mv((-6.0, 12.0, 4.2), (-1.8, 12.0, 4.0), 30, (-6.0, 12.0, 4.2), (-1.8, 12.0, 4.0), 30), hand=0.003)
-shot("L74", mv((1.2, 1.6, 1.55), (1.2, 3.45, 1.15), 30, (1.25, 1.65, 1.55), (1.2, 3.45, 1.15), 31), hand=0.002)
-shot("L75", front(hd([1.0, 2.55]), 180, -18, 2.4, 0.0, 34, push=0.1))
-shot("L76", front(hd([-0.1, 2.65]), 180, 18, 2.4, 0.0, 34))
-shot("L77", front(hd([1.0, 2.55]), 180, -18, 2.4, 0.0, 34))
-shot("L77.2", front(hd([-0.1, 2.65]), 180, 20, 2.4, 0.0, 34, push=0.1))
-shot("L78", mv((0.0, -2.0, 1.6), (1.8, 38.0, 12.0), 120, (0.0, -2.0, 1.6), (1.8, 40.0, 12.5), 130), hand=0.002)
+shot("L74", mv((1.2, 5.6, 1.5), (0.55, 3.2, 1.2), 26, (1.25, 5.55, 1.5), (0.55, 3.2, 1.2), 27), hand=0.002)
+shot("L75", front(hd([1.1, 2.95]), 180, -22, 3.0, -0.22, 28, aim_dz=-0.2))
+shot("L76", front(hd([-0.1, 2.95]), 180, 18, 2.4, 0.0, 34))
+shot("L77", front(hd([1.1, 2.95]), 180, -18, 2.4, 0.0, 34))
+shot("L77.2", front(hd([-0.1, 2.95]), 180, 20, 2.4, 0.0, 34, push=0.1))
+shot("L78", mv((3.6, 3.3, 1.6), (0, 0, 0), 100), aim={"who": "mr_halvor", "off": [0.0, 0.0, 1.0]}, hand=0.002)
 shot("L79", ride_cam(0.5, 5.2, 1.9, 0.0, 0.0, 1.45, 34), follow="mr_halvor", hand=0.003)
-shot("L80", mv((0.5, -1.6, 1.7), (1.8, 46.0, 14.0), 34, (0.5, -1.6, 1.7), (1.8, 50.0, 15.0), 34), hand=0.002)
-shot("L81", mv((-16.0, 70.0, 8.0), (1.0, 28.0, 8.0), 24, (-14.0, 70.0, 8.0), (1.0, 28.0, 8.5), 24), hand=0.002)
+shot("L80", mv((2.9, 0.3, 1.75), (0.5, 46.0, 13.5), 30, (2.9, 0.3, 1.75), (0.5, 50.0, 14.5), 30), hand=0.002)
+shot("L81", mv((-8.5, -11.5, 6.0), (1.5, 48.0, 15.0), 22, (-7.5, -11.5, 6.0), (1.5, 49.0, 15.5), 22), hand=0.002)
 
 # ---- the orbit round the cube (L35): follow the creature, four keys
-ORB = [(0, (0.0, -2.3, 1.7)), (0.34, (-2.3, 0.0, 1.7)), (0.67, (0.0, 2.3, 1.7)), (1.0, (2.3, 0.0, 1.7))]
-orbit_cam = [[u, list(p), [0.0, 0.0, 1.55], 38] for u, p in ORB]
+ORB = [(0, (0.0, -3.2, 2.0)), (0.34, (-3.2, 0.0, 2.0)), (0.67, (0.0, 3.2, 2.0)), (1.0, (3.2, 0.0, 2.0))]
+orbit_cam = [[u, list(p), [0.0, 0.0, 1.55], 30] for u, p in ORB]
 for i, (at, cam, opt) in enumerate(SH):
     if at == "L35":
         SH[i] = (at, orbit_cam, {"follow": "creature", "hand": 0.0})
@@ -283,6 +284,8 @@ for i, (at, cam, opt) in enumerate(SH):
         s["hand"] = opt["hand"]
     if "follow" in opt:
         s["follow"] = opt["follow"]
+    if "aim" in opt:
+        s["aim"] = opt["aim"]
     shots.append(s)
     SID[at] = sid
 
@@ -323,11 +326,11 @@ class Track:
         return self
 
 
-Y22, Y25 = 36.0, 60.0
+Y22, Y25 = 18.0, 34.0
 M_ = Track()
-M_.stand(0, ME0, 180, expr="neutral")
+M_.stand(0, ME0, 180, expr="neutral", head=[0, 0], arms=[0, 0], lean=0, look=[0, 0])
 M_.attr("L05", expr="smirk")
-M_.stand("L06", [-0.6, -2.1], 180, jump=True)
+M_.stand("L06", [-0.7, -2.2], 180, jump=True)
 M_.stand("L07", [1.0, -2.4], 180, jump=True)
 M_.stand("L11.1", ME0, 180, jump=True, expr="grin")
 M_.mouth("L11.1", "L11.2", 0.55)
@@ -343,7 +346,7 @@ M_.ride("L21", "up", 46.0, -1)
 # Tuesday
 M_.ride("L22", "up", Y22, -1, jump=True, expr="neutral")
 M_.ride("L25.1", "up", Y25, -1)
-M_.ride("L27>", "up", Y25 + 8.0, -1)
+M_.ride("L27>", "up", Y25 + 7.0, -1)
 # Wednesday at the gate, then the lake
 M_.stand("L28", ME0, 180, jump=True)
 M_.attr("L29", expr="smirk")
@@ -374,19 +377,21 @@ M_.ride("L60>", "up", 69.0, -1)
 M_.ride("L61", "up", 117.0, -1, jump=True, expr="worried")
 M_.ride("L61>", "up", 127.0, -1)
 # the top deck: I stand and look at the empty seat
-M_.stand("L62", [4.2, 126.0, 39.5], 90, jump=True, expr="worried")
+M_.stand("L62", [4.4, 125.5, 39.5], -90, jump=True, expr="worried")
 # Saturday: the gate, the card, the coffee
-M_.stand("L64", [0.25, -2.35], 180, jump=True, expr="soft")
+M_.stand("L64", [0.15, -2.35], 180, jump=True, expr="soft")
+M_.attr("L66", head=[-35, 0])
+M_.attr("L67", head=[0, 0])
 M_.attr("L67", arms=[165, 165])
 M_.attr("L68", arms=[0, 0])
-M_.stand("L74", [1.0, 2.55], 180, jump=True, expr="soft")
+M_.stand("L74", [1.1, 2.95], 180, jump=True, expr="soft")
 M_.attr("L77", expr="grin")
 M_.mouth("L77", "L77.1", 0.6)
 M_.attr("L77.2", expr="soft")
-M_.stand("L80", [0.7, 0.9], 180, jump=True, expr="soft")
+M_.stand("L80", [1.1, 2.95], 180, jump=True, expr="soft")
 
 B_ = Track()
-B_.stand(0, BO, 0, expr="grin")
+B_.stand(0, BO, 0, expr="grin", head=[0, 0], arms=[0, 0])
 B_.attr("L10-0.05", head=[0, 0])
 B_.attr("L10", head=[-38, -6])
 B_.attr("L11", head=[0, 0])
@@ -399,14 +404,14 @@ B_.stand("L43", [0.1, -0.15], 90, jump=True, expr="neutral")
 B_.attr("L44", head=[0, 26])
 B_.stand("L45", BO, 0, jump=True, expr="neutral", head=[0, 0])
 B_.stand("L64", BO, 0, jump=True, expr="grin")
-B_.attr("L66", expr="soft")
+B_.stand("L66", [0.95, -2.4], 180, jump=True, expr="soft", head=[35, 0])
 B_.stand("L71", [0.45, -1.7], 90, jump=True, expr="soft")
-B_.stand("L74", [-0.1, 2.65], 180, jump=True, expr="grin")
+B_.stand("L74", [-0.1, 2.95], 180, jump=True, expr="smirk")
 B_.mouth("L76", "L76>", 0.6)
 B_.mouth("L77.2", "L77.2>", 0.6)
 
 MR_ = Track()
-MR_.stand(0, MR, 180, expr="neutral")
+MR_.stand(0, MR, 180, expr="neutral", head=[0, 0], arms=[0, 0])
 MR_.attr("L30", head=[0, 38])
 MR_.attr("L31", head=[0, 0])
 MR_.attr("L69", expr="soft")
@@ -423,7 +428,7 @@ MR_.ride("L80", "up", 46.0, -1)
 MR_.ride("end", "up", 51.0, -1)
 
 MRS_ = Track()
-MRS_.stand(0, MRS, 180, expr="neutral")
+MRS_.stand(0, MRS, 180, expr="neutral", head=[0, 0], arms=[0, 0])
 MRS_.attr("L11", expr="grin")
 MRS_.mouth("L11", "L11.1", 0.7)
 MRS_.attr("L11.1", expr="neutral")
@@ -442,23 +447,23 @@ MRS_.ride("end", "up", 51.0, 1)
 # the Four-Face. Down chairs face -y; it sits on the side nearer my line (x = -1.08). It is only ever nearer.
 C_ = Track()
 C_.ride_u(0, arc(0.0), 1, hidden=True)          # a ghost on the wheel, so the chair swings in at L04
-C_.ride_u("L04", arc(0.12), 1)
-C_.ride_u("L04>", arc(0.9), 1)
-C_.ride_u("L05", arc(0.9), 1)
+C_.ride_u("L04", arc(0.12), 1, hidden=True)
+C_.ride_u("L04>", arc(0.9), 1, hidden=True)
+C_.ride_u("L05", arc(0.9), 1, hidden=True)
 # Monday: far up the line, coming down
 C_.ride("L18", "down", 122.0, 1, jump=True, hidden=False)
 C_.ride("L20.1", "down", 106.0, 1)
 C_.ride("L21", "down", 104.0, 1, hidden=True)
 # Tuesday: nearer, passing me below the halfway tower; level with my chair at L25.1
-C_.ride("L22", "down", Y22 + 34.0, 1, jump=True, hidden=False)
-C_.ride("L23", "down", Y22 + 22.0, 1)
-C_.ride("L24", "down", Y22 + 10.0, 1)
-C_.ride("L25", "down", Y22 + 4.0, 1)
+C_.ride("L22", "down", Y25 + 12.0, 1, jump=True, hidden=False)
+C_.ride("L23", "down", Y25 + 8.0, 1)
+C_.ride("L24", "down", Y25 + 4.5, 1)
+C_.ride("L25", "down", Y25 + 2.0, 1)
 C_.ride("L25.1", "down", Y25, 1)
-C_.ride("L26", "down", Y25 - 8.0, 1)
-C_.ride("L27", "down", Y25 - 14.0, 1)
-C_.ride("L27>", "down", Y25 - 17.0, 1)
-C_.ride("L28", "down", Y25 - 17.0, 1, hidden=True)
+C_.ride("L26", "down", Y25 - 3.0, 1)
+C_.ride("L27", "down", Y25 - 6.0, 1)
+C_.ride("L27>", "down", Y25 - 8.0, 1)
+C_.ride("L28", "down", Y25 - 8.0, 1, hidden=True)
 # Wednesday: over the lake, passing so close
 C_.ride("L31", "down", 26.0, 1, jump=True, hidden=False)
 C_.ride("L32", "down", 16.0, 1)
@@ -479,12 +484,12 @@ C_.ride("L43", "up", 64.0, 1, jump=True, hidden=True)
 C_.ride("L53", "up", 64.0, 1, hidden=False)
 C_.ride("L59+0.5", "up", 64.0, 1)
 C_.ride("L60", "up", 64.0, 1, hidden=True)
-C_.ride("L60>", "up", 69.0, 1)
-C_.ride("L61", "up", 117.0, 1, jump=True)
-C_.ride("L61>", "up", 127.0, 1)
-C_.ride_u("L62", G.TOP_ARC + 0.05 * G.ARC, 1, jump=True)
-C_.ride_u("L63", G.TOP_ARC + 0.05 * G.ARC, 1)
-C_.ride_u("L63>", G.TOP_ARC + 0.9 * G.ARC, 1)
+C_.ride("L60>", "up", 69.0, 1, hidden=True)
+C_.ride("L61", "up", 117.0, 1, jump=True, hidden=True)
+C_.ride("L61>", "up", 127.0, 1, hidden=True)
+C_.ride_u("L62", G.TOP_ARC + 0.05 * G.ARC, 1, jump=True, hidden=True)
+C_.ride_u("L63", G.TOP_ARC + 0.05 * G.ARC, 1, hidden=True)
+C_.ride_u("L63>", G.TOP_ARC + 0.9 * G.ARC, 1, hidden=True)
 
 acting = {"me": M_.keys, "bo": B_.keys, "mr_halvor": MR_.keys, "mrs_halvor": MRS_.keys, "creature": C_.keys}
 
@@ -493,23 +498,26 @@ acting = {"me": M_.keys, "bo": B_.keys, "mr_halvor": MR_.keys, "mrs_halvor": MRS
 cues = [
     {"at": 0, "name": "light", "look": "pre", "ramp": 0.01},
     {"at": "L15", "name": "light", "look": "pink", "ramp": 9.0},
-    {"at": "L21>", "name": "light", "look": "pre", "ramp": 0.01},
+    {"at": "L22", "name": "light", "look": "pre", "ramp": 0.01},
     {"at": "L24", "name": "light", "look": "pink", "ramp": 8.0},
     {"at": "L28", "name": "light", "look": "pre", "ramp": 0.01},
     {"at": "L31", "name": "light", "look": "pink", "ramp": 8.0},
-    {"at": "L36>", "name": "light", "look": "pre", "ramp": 0.01},
+    {"at": "L37", "name": "light", "look": "pre", "ramp": 0.01},
     {"at": "L38", "name": "light", "look": "pink", "ramp": 8.0},
     {"at": "L41", "name": "light", "look": "gold", "ramp": 6.0},
-    {"at": "L42>", "name": "light", "look": "pre", "ramp": 0.01},
+    {"at": "L43", "name": "light", "look": "pre", "ramp": 0.01},
     {"at": "L43+0.2", "name": "light", "look": "fog", "ramp": 3.0},
     {"at": "L52", "name": "light", "look": "thin", "ramp": 2.0},
     {"at": "L60", "name": "light", "look": "gold", "ramp": 7.0},
-    {"at": "L63>", "name": "light", "look": "pink", "ramp": 0.3},
-    {"at": "L72", "name": "light", "look": "gold", "ramp": 9.0},
+    {"at": "L64", "name": "light", "look": "warm1", "ramp": 0.01},
+    {"at": "L72", "name": "light", "look": "warm2", "ramp": 9.0},
     {"at": 0, "name": "card", "me": True, "mr": False},
     {"at": "L68", "name": "card", "me": False, "mr": True},
     {"at": 0, "name": "cup", "on": False},
     {"at": "L74", "name": "cup", "on": True},
+    {"at": 0, "name": "upchairs", "on": False},
+    {"at": "L08", "name": "upchairs", "on": True},
+    {"at": "L09", "name": "upchairs", "on": False},
     {"at": 0, "name": "sway", "amp": 1.4, "bias": 0.0, "dur": 0.1},
     {"at": "L47", "name": "sway", "amp": 3.2, "bias": 0.0, "dur": 1.2},
     {"at": "L50", "name": "sway", "amp": 1.4, "bias": -3.6, "dur": 0.9},
@@ -519,6 +527,12 @@ cues = [
     {"at": "L15", "name": "arm_to", "who": "bo", "to": None},
     {"at": "L44", "name": "arm_to", "who": "bo", "arm": 1, "to": [1.12, -0.02, 0.62]},
     {"at": "L45", "name": "arm_to", "who": "bo", "to": None},
+    {"at": "L74", "name": "arm_to", "who": "bo", "arm": 1, "to": [0.6, 3.38, 1.2]},
+    {"at": "L75", "name": "arm_to", "who": "bo", "to": None},
+    {"at": "L73", "name": "phase", "u": 249.65, "when": 1.0},
+    {"at": "L08", "name": "phase", "u": 14.0, "when": 0.9},
+    {"at": "L74", "name": "phase", "off": True},
+    {"at": "L09", "name": "phase", "off": True},
 ]
 fx = [
     {"at": "L46", "kind": "shake", "dur": 0.5, "amp": 0.6},
@@ -556,7 +570,7 @@ story = {
     "key_color": "#ff8fb1",
     "gap": 0.12,
     "tail": LOOP,
-    "look": {"fog": "#47597a", "fog_density": 0.010, "fog_start": 12.0, "sky": "#3d5170", "exposure": 0.6},
+    "look": {"fog": "#47597a", "fog_density": 0.010, "fog_start": 12.0, "sky": "#3d5170", "exposure": 0.0},
     "grade": {"shadows": [-0.01, 0.0, 0.05], "highlights": [0.04, 0.012, -0.03], "saturation": 1.0,
               "contrast": 1.06, "vignette": 0.3, "bloom": 0.35, "grain": 0.012},
     "phonemes": {"Halvor": "hˈælvɚ", "Halvors": "hˈælvɚz", "cagoule": "kəɡˈul", "Bo": "bˈO"},
