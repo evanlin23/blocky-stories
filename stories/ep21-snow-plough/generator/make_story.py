@@ -23,7 +23,7 @@ MK_FINAL = (0.6, 706.2)  # the Marker, on the new edge
 S_STOP = MK_FINAL[1] + 4.4
 
 # ---------------------------------------------------------------------------------------------------- lines
-LOOP = 0.25
+LOOP = 0.13
 HOLDS = {}
 # the tally hold after L65 (not narrated), and the loop gap at the end
 i65 = next(i for i, l in enumerate(lines) if l["id"] == "L65")
@@ -207,6 +207,7 @@ cues += [
     # the light of the day: night until L53, then one continuous ramp to grey-lilac, then pale gold
     {"at": 0, "name": "tod", "v": 0.0},
     {"at": "L53", "name": "tod", "v": 0.0},
+    {"at": "L58", "name": "tod", "v": 0.55},
     {"at": "L66", "name": "tod", "v": 1.0},
     {"at": "L67", "name": "tod", "v": 1.35},
     {"at": "L72", "name": "tod", "v": 1.95},
@@ -313,11 +314,11 @@ SHOTS = [
     ("L43", "the gauges dimming, wipers going", 2, DASH, {}),
     ("L44", "my face in near dark, the bag a pale shape", 2, FACE_BAG, {}),
     ("L45", "POV, the beams climb back on empty snow", 2, POV, {}),
-    ("L46", "the Marker in the middle of the road", 1, still([-0.3, 2.6, 2.2], W2P(MK_FINAL + (1.0,), 716.5, 180), 28), {}),
+    ("L46", "the Marker in the middle of the road", 1, still([0.4, 4.7, 1.0], W2P(MK_FINAL + (0.9,), 716.5, 180), 30), {}),
     ("L47", "side wide: the plough and the Marker almost touching", 1, still([-9.0, 4.0, 2.2], [0.0, 6.5, 1.0], 24), {}),
     ("L48", "my face, thrown forward", 1, still([0.55, 1.3, 3.25], [-0.55, 0.45, 3.1], 20), {}),
     ("L49", "low on the blade, snow sheeting off", 1, still([3.5, 6.5, 0.6], [0.3, 3.8, 0.8], 24), {}),
-    ("L50", "blade edge and the two eyes", 1, still([-2.9, 3.6, 1.2], [0.0, 4.6, 1.2], 30), {}),
+    ("L50", "blade edge and the two eyes", 1, still([-2.9, 3.6, 1.2], [0.7, 4.5, 1.2], 26), {}),
     ("L51", "the mirror: two white lights stopping", 1, still([-1.6, 0.0, 3.0], [-0.3, -14.0, 1.5], 24), {}),
     (ref("L51", 2), "Bram in his own cab", 1, still([-0.5, -9.2, 1.95], [-0.5, -12.6, 1.9], 38), {}),
     ("L52", "the Marker through the glass, unmoved", 2,
@@ -333,7 +334,7 @@ SHOTS = [
      still([0.7, 0.8, 3.3], W2P((2.9, 690.0, -11.0), S_STOP, 180), 24), {}),
     ("L58", "the slab below, post twenty-three upright on it", 2,
      still(W2P((7.0, 703.0, 5.0), S_STOP, 180), W2P((2.9, 690.0, -12.0), S_STOP, 180), 34), {}),
-    ("L59", "POV along the posts, off the edge to its glint", 2, still(EYE, [-2.3, 20.0, -8.0], 20), {}),
+    ("L59", "POV along the posts, off the edge to its glint", 2, still(W2P((6.0, 712.0, 6.0), S_STOP, 180), W2P((2.9, 668.0, -6.0), S_STOP, 180), 20), {}),
     ("L60", "my face, scared easing", 2, FACE, {}),
     ("L61", "the snow lip of the edge", 2,
      still(W2P((-1.6, 711.3, 0.7), S_STOP, 180), W2P((1.2, 705.3, -0.3), S_STOP, 180), 28), {}),
@@ -341,10 +342,10 @@ SHOTS = [
     ("L63", "Bram knocking at my door", 2, still([0.3, 0.3, 3.0], [1.7, 0.3, 2.8], 34), {}),
     ("L64", "the road ahead, the edge, nothing standing on it", 2, still(EYE, W2P((0.6, 703.0, 0.0), S_STOP, 180), 18), {}),
     ("L65", "the wide square pressed in the snow", 2, still([2.2, 8.5, 2.4], [0.6, 4.4, 0.0], 26), {}),
-    ("P03", "the tally on the blade: two rust-orange strokes", 4, still([0.05, 5.21, 0.95], [0.34, 3.85, 0.73], 38), {"hand": 0.0}),
+    ("P03", "the tally on the blade: two rust-orange strokes", 4, still([-0.4, 7.3, 1.0], [0.34, 3.85, 0.78], 20), {"hand": 0.0}),
     # 06 home
     ("L66", "side wide: the plough creeping along the inside bank, the van behind", 2,
-     still([-8.0, 2.0, 2.4], [0.0, 0.8, 2.2], 20), {}),
+     still([-24.0, -7.0, 4.0], [0.0, -6.0, 1.8], 16), {}),
     ("L67", "sunrise over the stone cottages", 2, still(EYE, [4.0, 40, 3.6], 18), {}),
     ("L68", "Odile's window, warm and steady", 2, still(EYE, W2P((-6.8, -20.5, 1.5), -5, 180), 30), {}),
     ("L69", "the bag on her table beside a glass of water", 2,

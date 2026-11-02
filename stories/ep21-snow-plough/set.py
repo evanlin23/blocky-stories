@@ -333,9 +333,10 @@ def build_marker(kit, ctx, W):
     flush with the shoulders, two arm lines moulded flat in its sides, two amber reflectors for eyes. Built once;
     posed per shot by the 'marker' cue. It faces +y (uphill)."""
     root = kit.empty("marker", (0, 0, 0), W)
-    orange = kit.plastic("#3d180a", 0.8, name="marker orange")
+    orange = kit.plastic("#c4501e", 0.7, name="marker orange")
     black = kit.plastic("#0b0b0d", 0.5, name="marker black")
-    lighter = kit.plastic("#6a2c12", 0.6, name="marker arm paint")
+    lighter = kit.plastic("#dd6a2a", 0.5, name="marker arm paint")
+    ringm = kit.plastic("#050506", 0.6, name="marker ring")
     snowm = kit.plastic("#dfe7f3", 0.95, name="marker snow")
     kit.box("marker.body", (1.8, 0.5, 1.05), (0, 0, 0.525), orange, root, bevel=0.03)
     kit.box("marker.cap", (1.82, 0.52, 0.35), (0, 0, 1.225), black, root, bevel=0.03)
@@ -345,8 +346,9 @@ def build_marker(kit, ctx, W):
     nodes = []
     for sx in (-1, 1):
         m, e = fog_emit(kit, f"marker eye {sx}", "#ffb03a", 0.0)
-        s = kit.sphere(f"marker.eye{sx}", 0.13, (sx * 0.42, 0.25, 1.2), m, root, seg=12)
+        s = kit.sphere(f"marker.eye{sx}", 0.09, (sx * 0.42, 0.25, 1.2), m, root, seg=12)
         s.scale = (1.0, 0.5, 1.0)
+        kit.cyl(f"marker.ring{sx}", 0.135, 0.03, (sx * 0.42, 0.262, 1.2), ringm, root, rot=(math.radians(90), 0, 0), n=16)
         nodes.append(e)
     sn = []
     sn.append(kit.box("marker.snow1", (1.7, 0.46, 0.06), (0, 0, 1.42), snowm, root, bevel=0.03))
@@ -468,6 +470,8 @@ def build_plough(kit, ctx):
     kit.box("step r", (0.5, 0.9, 0.1), (1.5, 0.3, 1.0), grey, PL, bevel=0.02)
     vd = kit.light("van dome", "POINT", (-0.3, -12.4, 2.3), 7.0, "#dfe8ff", size=0.15, parent=PL)
     vd.visible_camera = False
+    bk = kit.light("bram key", "POINT", (-0.5, -10.9, 2.1), 22.0, "#fff0dc", size=0.15, parent=PL)
+    bk.visible_camera = False
     dg = kit.light("dash glow", "POINT", (0.0, 1.3, 2.6), 3.5, "#6dffb0", size=0.08, parent=PL)
     dg.visible_camera = False
     fl = kit.light("cab fill", "POINT", (0.0, 0.9, 3.5), 22.0, "#8aa4d0", size=0.2, parent=PL)
@@ -578,9 +582,13 @@ def build(kit, story, tl):
             col.objects.link(o)
     for co in col.collection_objects:
         co.light_linking.link_state = "EXCLUDE"
-    mk = kit.light("mkey", "SPOT", (0, 0, 3), 60.0, "#ffe2b8", spot=48, blend=0.6, size=0.3, parent=ctx["W"])
+    mk = kit.light("mkey", "SPOT", (0, 0, 3), 150.0, "#ffe2b8", spot=48, blend=0.6, size=0.3, parent=ctx["W"])
     mk.visible_camera = False
     light_only(kit, "mk only", "mkey", mobjs)
+    ms = kit.light("mside", "AREA", (0, 0, 1), 110.0, "#ffd9b0", size=1.2, parent=ctx["W"])
+    ms.visible_camera = False
+    light_only(kit, "mk side", "mside", mobjs)
+    ctx["mside"] = ms
     ctx["mkey"] = mk
     # falling snow
     fm = kit._new("flake")
@@ -707,6 +715,7 @@ def animate(kit, story, tl, t, ctx):
     hg = max(0.2, eased(cues(tl, "lights"), "g", t, 1.0))
     over["headL"] = over["headR"] = hg
     over["dash glow"] = 1.0
+    over["bram key"] = 1.0 if (last(cues(tl, "van"), t) or {}).get("mode") == "follow" else 0.0
     over["van dome"] = 1.0 if (last(cues(tl, "van"), t) or {}).get("mode") == "follow" else 0.0
     day = 1.0 - 0.6 * min(1.0, tod)    # reflectors fade a little in daylight
     # ---- the posts: a glint fades up as the headlights reach it and down as they leave
@@ -738,8 +747,9 @@ def animate(kit, story, tl, t, ctx):
         dx, dy = wx - px, wy - s
         ypl = sn * dx + c * dy
         xpl = c * dx - sn * dy
-        g = ss((ypl + 2.0) / 7.0) * (1.0 - ss((ypl - 34.0) / 22.0)) if abs(xpl) < 12 else 0.0
-        d["node"].inputs["Strength"].default_value = 4.0 * g * hg * day if ypl < 70 else 0.0
+        rng = 34.0 + 90.0 * min(1.0, tod / 0.5)   # in the grey of dawn the reflectors carry further
+        g = ss((ypl + 2.0) / 7.0) * (1.0 - ss((ypl - rng) / 22.0)) if abs(xpl) < 12 else 0.0
+        d["node"].inputs["Strength"].default_value = 4.0 * g * hg * day if ypl < rng + 30 else 0.0
         if i == 23 and slid:   # the glint that matters: the brightest point wherever it is in frame
             d["node"].inputs["Strength"].default_value = 16.0 * g * hg
         for ch in root.children:
@@ -777,17 +787,21 @@ def animate(kit, story, tl, t, ctx):
         mpl = V((sn * 0 + c * (x - px) - sn * (y - s), sn * (x - px) + c * (y - s), 0.8))
         near = min(1.0, max(0.3, (cl - mpl).length / 9.0))   # eyes close to the camera would clip to white
         for e in M["eyes"]:
-            e.inputs["Strength"].default_value = 1.4 * g * hg * day * near
+            e.inputs["Strength"].default_value = 3.2 * g * hg * day * near
         rim = ctx["mrim"]
         rim.location = (x, y - 3.0, 1.9)
         rim.rotation_euler = (V((x, y, 0.8)) - V((x, y - 3.0, 1.9))).to_track_quat("-Z", "Y").to_euler()
         over["mrim"] = 1.0
-        ctx["mkey"].location = (x + 0.8, y + 3.2, 2.6)
-        ctx["mkey"].rotation_euler = (V((x, y, 0.7)) - V((x + 0.8, y + 3.2, 2.6))).to_track_quat("-Z", "Y").to_euler()
+        ctx["mkey"].location = (x + 0.5, y + 3.4, 3.4)
+        ctx["mkey"].rotation_euler = (V((x, y, 0.7)) - V((x + 0.5, y + 3.4, 3.4))).to_track_quat("-Z", "Y").to_euler()
         over["mkey"] = hg * float(mk.get("kg", 1.0))
+        ctx["mside"].location = (x - 3.2, y + 1.2, 1.0)
+        ctx["mside"].rotation_euler = (V((x, y, 0.8)) - V((x - 3.2, y + 1.2, 1.0))).to_track_quat("-Z", "Y").to_euler()
+        over["mside"] = 1.0
     else:
         over["mrim"] = 0.0
         over["mkey"] = 0.0
+        over["mside"] = 0.0
     sq = last(cues(tl, "square"), t)
     ctx["square"].hide_render = not (sq and sq.get("on"))
     # ---- the plough, the vans, the bag, the tally, the snow hood

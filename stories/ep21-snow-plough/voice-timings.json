@@ -1922,34 +1922,42 @@
    ]
   },
   "L72": {
-   "text": "That spring, we set a new post at the new edge.",
+   "text": "That spring, we put 23 back, and set a new post where it had stood.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.19,
+   "dur": 3.121,
    "onset": 0.172,
-   "end": 1.983,
+   "end": 2.914,
    "chunks": [
     [
      0.172,
-     0.621
+     0.552
     ],
     [
-     0.647,
-     0.879
+     0.578,
+     0.741
     ],
     [
-     0.879,
-     1.233
+     0.741,
+     1.483
     ],
     [
-     1.233,
-     1.345
+     1.552,
+     1.733
     ],
     [
-     1.345,
-     1.983
+     1.733,
+     2.146
+    ],
+    [
+     2.146,
+     2.284
+    ],
+    [
+     2.284,
+     2.914
     ]
    ]
   },
