@@ -2,6 +2,18 @@
 
 Every agent reads this file, and only this file, for the rules. The owner's words outrank everything here. Note numbers (9, 18, 21) are the showrunner notes these came from in `evanlin23/content`. When the owner gives new feedback, add it here as a dated quote and change the rule it touches.
 
+## The 30-day run (from 2026-11-02)
+The owner, 2026-11-02: "I kinda want to just let you go by yourself and upload for the next like 30 days all autonomously and iterate and see what works and what doesnt. The main goal is to get monetized. I am already down 200 dollars so i guess that can be one of the first milesotnes."
+- **The team runs the channel alone until 2026-12-02.** One story a day goes up through the API, private, and goes public on its own at 4:00 PM Central (`upload.py`). That leaves the owner a window to stop one. The team writes, builds, reviews, merges, uploads and changes these rules from the numbers without asking. The owner gets an issue per upload and a weekly summary.
+- **Still the owner's:** anything that costs money, the pace (one a day, owner 2026-11-02), and the hard rules. A rule the owner quoted changes only with the owner.
+- **Milestones**, checked every Monday in `metrics/summary.md` (YouTube's thresholds, to be confirmed in Studio):
+  1. Rule-first stories beat ep20's 64% stayed and 47% average view.
+  2. A Short past 100K views, then one past 1M.
+  3. 500 subscribers and 3M Shorts views in 90 days (the Partner Program's first tier: fan funding, no ad share).
+  4. 1,000 subscribers and 10M Shorts views in 90 days (ad revenue share).
+  5. $200 earned back. Shorts pay roughly a few cents per 1,000 views, so this needs millions of monetized views.
+- **How to iterate:** change one thing at a time where you can (length, look, rule type, title style), and judge on day-7 numbers across several uploads, never on one (the scope research: about 20 Shorts before judging).
+
 ## What we make
 A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **PandaNanoAdventures** and no other channel (note 21).
 - Owner: "it should be like creepy roblox shorts and the characters should look more like roblox. also the voice should be like the sped up roblox voice... it should not be educational, it should be like crazy stories" (note 18).
