@@ -90,7 +90,8 @@ LEG_H, LEG_W = 2.6, 0.84       # rig units (a person's legs are 2.0 x 1.0)
 TORSO_W, TORSO_H, TORSO_D = 1.6, 2.05, 0.9    # narrow shoulders: the doors close on them
 ARM_W, ARM_L = 0.72, 3.6       # a person's arm is 1.0 x 2.0; folded, the gloves hang below its knees
 ARM_IN = 19.5                  # how far each arm swings in so the gloves meet and cross (degrees)
-GLOVE_L = 0.62
+GLOVE_L = 0.95                 # a glove longer than it is wide reads as a hand hanging from the cuff, not a cube
+GLOVE_W = 0.5
 COLLAR_H = 0.25
 NECK_H = 0.2                   # a wool neck block between the collar and the head (7 cm)
 # the head: a deep black lacquer block, its face a lift panel set back in a socket behind a lacquer lip
@@ -356,7 +357,7 @@ def build_attendant(kit, M, name="attendant", cap=True, grid=DEFAULT_GRID, style
         kit.box(f"{name}.sleeve{sx}", (ARM_W, ARM_W, sl), (0, 0, 0.3 - sl / 2), M["wool"], a, bevel=bev)
         kit.box(f"{name}.cuff{sx}", (ARM_W + 0.04, ARM_W + 0.04, 0.1), (0, 0, 0.3 - sl + 0.06), M["brass"], a,
                 bevel=0.02)
-        kit.box(f"{name}.glove{sx}", (ARM_W - 0.04, ARM_W - 0.02, GLOVE_L), (0, 0, 0.3 - sl - GLOVE_L / 2), M["glove"],
+        kit.box(f"{name}.glove{sx}", (GLOVE_W, GLOVE_W + 0.04, GLOVE_L), (0, 0, 0.3 - sl - GLOVE_L / 2), M["glove"],
                 a, bevel=0.1)
         kit.box(f"{name}.board{sx}", (ARM_W + 0.06, ARM_W * 0.7, 0.07), (0, 0, 0.32), M["wool"], a, bevel=0.02)
         kit.box(f"{name}.boardedge{sx}", (0.05, ARM_W * 0.72, 0.08), (sx * (ARM_W / 2 + 0.02), 0, 0.32), M["brass"], a)
@@ -653,13 +654,13 @@ LIGHT_STATES = {   # gains on each light's base energy; the ceiling never flicke
     "on": {"ceiling": 1.0, "panel_key": 0.15, "hall": 0.0, "hall_rim": 0.0, "backwash": 0.0, "hall_far": 0.0,
            "hall_low": 0.0,
            "sleeve_rim-1": 0.0, "sleeve_rim1": 0.0, "brass_ping": 0.0, "face": 0.0, "face_under": 0.0,
-           "face_peak": 0.0, "diffuser": 1.0},
+           "face_peak": 0.0, "diffuser": 1.0, "floor13": 0.0, "cast_rim": 0.0},
     # 13: the car's panel down to 5%, the monster lit and not us (no light on its chest, none on the cast but its
     # own cold glow)
     "thirteen": {"ceiling": 0.05, "panel_key": 1.0, "hall": 1.0, "hall_rim": 1.0, "backwash": 1.0, "hall_far": 1.0,
                  "hall_low": 1.0,
                  "sleeve_rim-1": 1.0, "sleeve_rim1": 1.0, "brass_ping": 1.0, "face": 1.0, "face_under": 0.0,
-                 "face_peak": 1.0, "diffuser": 0.05},
+                 "face_peak": 1.0, "diffuser": 0.05, "floor13": 1.0, "cast_rim": 1.0},
 }
 
 
@@ -677,6 +678,11 @@ def build_lights(kit, ctx):
     kit.light("backwash", "AREA", (0.0, SILL_Y - 0.9, HALL_H - 0.08), 120.0, "#a9c4e6", size=0.9)
     for sx in (-1, 1):
         kit.light(f"sleeve_rim{sx}", "AREA", (sx * 0.75, SILL_Y - 0.6, 1.5), 80.0, "#a9c4e6", size=0.2)
+    # lit carpet behind and beside the gloves, so they hang in front of something rather than on a black floor
+    kit.light("floor13", "AREA", (0.0, SILL_Y - 1.3, 2.3), 140.0, "#a9c4e6", size=0.8)
+    # a cold rim on the cast only (cue "cast_rim": a gain, 0 when absent), from the hall behind it, for shots where
+    # one of us is in the foreground: it draws the hood's outline and nothing else
+    kit.light("cast_rim", "AREA", (0.0, CAR_Y0 + 0.3, 2.2), 60.0, "#a9c4e6", size=0.4)
     kit.light("hall_far", "POINT", (-0.9, SILL_Y - 7.5, 2.2), 30.0, "#a9c4e6", size=0.2)
     kit.light("hall_low", "SPOT", (0.25, SILL_Y - 3.0, 0.7), 140.0, "#a9c4e6", spot=35, blend=0.5, size=0.25)
     # 13's light off the sill, seen only in reflections: the brass buttons and piping down its jacket catch it
@@ -738,11 +744,14 @@ def aim_lights(ctx, att):
         ob = bpy.data.objects[f"sleeve_rim{sx}"]
         tgt = att["arms"][sx].matrix_world @ V((0, 0, -1.2))
         ob.rotation_euler = (V(tgt) - ob.location).to_track_quat("-Z", "Y").to_euler()
+        ob.data.spread = math.radians(35)   # tight: it draws the sleeve and the door edge, no halo on the leaf
     ob = bpy.data.objects["brass_ping"]
     chest = att["waist"].matrix_world @ V((0, 0, TORSO_H * 0.6))
     ob.rotation_euler = (V(chest) - ob.location).to_track_quat("-Z", "Y").to_euler()
     ob = bpy.data.objects["hall_low"]
     ob.rotation_euler = (V((head.x, CAR_Y0 + 1.2, 0.0)) - ob.location).to_track_quat("-Z", "Y").to_euler()
+    ob = bpy.data.objects["floor13"]
+    ob.rotation_euler = (V((0.0, SILL_Y - 2.7, 0.0)) - ob.location).to_track_quat("-Z", "Y").to_euler()
     ob = bpy.data.objects["hall"]   # the carpet and wall behind it, so its outline shows against them
     ob.rotation_euler = (V((head.x, SILL_Y - 1.3, 0.3)) - ob.location).to_track_quat("-Z", "Y").to_euler()
     ob = bpy.data.objects["backwash"]
@@ -781,7 +790,7 @@ def build(kit, story, tl):
     # the sleeve rims draw its arms and the car doors' leading edges, and nothing else (not us, not its face)
     arm_parts = [o for o in ctx["att"]["root"].children_recursive if o.type == "MESH"
                  and any(k in o.name for k in (".sleeve", ".glove", ".board")) and ".boardedge" not in o.name]
-    leaves = [o for lf, _ in ctx["leaves"]["car"] for o in [lf] + list(lf.children)]
+    leaves = [o for lf, _ in ctx["leaves"]["car"] for o in lf.children if o.name.endswith(".edge")]   # the thin lines only
     for sx in (-1, 1):
         link_light(f"sleeve_rim{sx}", arm_parts + leaves)
     animate(kit, story, tl, 0.0, ctx)
@@ -811,9 +820,20 @@ def animate(kit, story, tl, t, ctx):
             link_light("ceiling", cast if dark else [], "EXCLUDE")
             ctx["cast_dark"] = dark
     g = dict(LIGHT_STATES[s])
+    g["cast_rim"] *= float(lc.get("cast_rim", 0.0))
+    if g["cast_rim"] and not ctx.get("cast_rim"):
+        cast = [o for o in bpy.data.objects if o.type == "MESH"
+                and any(o.name == n or o.name.startswith(n + ".") for n in story.get("cast", {}))]
+        if cast:
+            link_light("cast_rim", cast)
+            ctx["cast_rim"] = True
     lit = sum(1 for x in gains if x > 0)
     for k in ("face", "face_under", "face_peak"):
         g[k] = g[k] * lit / len(gains) * a.get("glow", 1.0) if lit and not a.get("hidden") else 0.0
+    g["face_peak"] *= a.get("peak", 1.0)   # opt-in: <1 stops the visor light glinting in the top row of glass
+    for k in ("backwash", "hall", "hall_rim"):
+        g[k] *= a.get("wash", 1.0)   # opt-in: dim 13's back wall so the figure is a darker cut-out
+    g["panel_key"] *= a.get("key", 1.0)   # opt-in: a softer side key on the gloves
     ctx["M"]["diffuser"].node_tree.nodes["glow"].inputs["Strength"].default_value = 3.0 * g.pop("diffuser")
     ctx["M"]["segment"].node_tree.nodes["glow"].inputs["Strength"].default_value = 0.5   # under the buttons
     pl = (_last(_cues(tl, "panel"), t) or {}).get("lit", [])
