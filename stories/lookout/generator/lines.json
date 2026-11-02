@@ -1,0 +1,746 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   ["How do you", "How do you"],
+   ["LOSE", "lose"],
+   ["something TALLER", "something taller"],
+   ["than the TREES?", "than the trees?"]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   ["Up here,", "Up here,"],
+   ["it's just ME", "it's just me"],
+   ["and my LAMP.", "and my lamp."]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   ["It's a", "It's a"],
+   ["GLASS ROOM", "glass room"],
+   ["on STEEL LEGS,", "on steel legs,"],
+   ["a hundred", "a hundred"],
+   ["and TWELVE", "and twelve"],
+   ["STAIRS UP.", "stairs up."]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   ["The radio CLICKS,", "The radio clicks,"],
+   ["and the", "and the"],
+   ["RANGER says,", "ranger says,"],
+   ["\"Controlled BURN,", "controlled burn,"],
+   ["EAST SIDE,", "east side,"],
+   ["all WEEK.\"", "all week."]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   ["Way off EAST,", "Way off east,"],
+   ["a GREY SMUDGE", "a grey smudge"],
+   ["sits on", "sits on"],
+   ["the HILLS.", "the hills."]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   ["On CLEAR MORNINGS,", "On clear mornings,"],
+   ["the RIVER", "the river"],
+   ["in the VALLEY", "in the valley"],
+   ["SHINES like FOIL.", "shines like foil."]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   ["You could STEER", "You could steer"],
+   ["by it.", "by it."]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   ["Through my BINOCULARS,", "Through my binoculars,"],
+   ["the PINES", "the pines"],
+   ["on the", "on the"],
+   ["FAR RIDGE", "far ridge"],
+   ["are SNAPPED", "are snapped"],
+   ["at the TOP.", "at the top."]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   ["A long LINE", "A long line"],
+   ["of them,", "of them,"],
+   ["all the", "all the"],
+   ["SAME HEIGHT.", "same height."]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   ["Whatever BROKE them", "Whatever broke them"],
+   ["was TALLER", "was taller"],
+   ["than the TREES.", "than the trees."]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   ["The line", "The line"],
+   ["runs STRAIGHT", "runs straight"],
+   ["for the VALLEY,", "for the valley,"],
+   ["then BENDS", "then bends"],
+   ["toward my TOWER.", "toward my tower."]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "tempo": 0.96,
+  "chunks": [
+   ["I radio", "I radio"],
+   ["it IN.", "it in."],
+   ["\"SNAPPED TREETOPS,", "snapped... treetops,"],
+   ["FAR RIDGE,", "far ridge,"],
+   ["coming THIS WAY.\"", "coming this way."]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "gap": 0.35,
+  "chunks": [
+   ["The ranger says,", "The ranger says,"],
+   ["\"COPY.\"", "copy."]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   ["That NIGHT,", "That night,"],
+   ["there's no LIGHT", "there's no light"],
+   ["out there", "out there"],
+   ["but MINE.", "but mine."]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   ["Under the", "Under the"],
+   ["radio's HISS,", "radio's hiss,"],
+   ["I hear BREATHING.", "I hear breathing."]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   ["SLOW and HEAVY,", "Slow and heavy,"],
+   ["out in", "out in"],
+   ["the FOG.", "the fog."]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   ["Every breath", "Every breath"],
+   ["ENDS in", "ends in"],
+   ["a CREAK,", "a creak,"],
+   ["like a TRUNK", "like a trunk"],
+   ["in the WIND.", "in the wind."]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.9,
+  "chunks": [
+
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   ["I key", "I key"],
+   ["the RADIO", "the radio"],
+   ["and HOLD", "and hold"],
+   ["it UP", "it up"],
+   ["to the DARK.", "to the dark."]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   ["The ranger says,", "The ranger says,"],
+   ["\"Say AGAIN?\"", "say again?"]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   ["I let GO", "I let go"],
+   ["of the BUTTON.", "of the button."]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   ["In the MORNING,", "In the morning,"],
+   ["I take", "I take"],
+   ["the STAIRS DOWN.", "the stairs down."]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "tempo": 0.93,
+  "chunks": [
+   ["At the", "At the"],
+   ["tower's FOOT,", "tower's foot,"],
+   ["there are PRINTS.", "there are... prints."]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   ["Each one's", "Each one's"],
+   ["big enough", "big enough"],
+   ["to LIE", "to lie"],
+   ["DOWN in.", "down in."]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   ["A square HEEL,", "A square heel,"],
+   ["and four", "and four"],
+   ["long TOES", "long toes"],
+   ["like ROOTS.", "like roots."]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   ["They're full", "They're full"],
+   ["of RAINWATER,", "of rainwater,"],
+   ["and GREEN", "and green"],
+   ["with MOSS.", "with moss."]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   ["Every one", "Every one"],
+   ["points DOWNHILL,", "points downhill,"],
+   ["AWAY from ME.", "away from me."]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   ["At DUSK,", "At dusk,"],
+   ["the PINES", "the pines"],
+   ["below me", "below me"],
+   ["start to PART.", "start to part."]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   ["They LEAN AWAY", "They lean away"],
+   ["in a", "in a"],
+   ["MOVING LINE,", "moving line,"]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   ["as something WIDE", "As something wide"],
+   ["walks THROUGH them.", "walks through them."]
+  ]
+ },
+ {
+  "id": "P02",
+  "pause": 1.5,
+  "chunks": [
+   ["THUD", ""]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   ["Then its SHOULDERS", "Then its shoulders"],
+   ["come UP", "come up"],
+   ["over the FOG.", "over the fog."]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   ["Two BOULDERS", "Two boulders"],
+   ["under MOSS,", "under moss,"],
+   ["HIGHER than", "higher than"],
+   ["the TREES.", "the trees."]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   ["And between them,", "And between them,"],
+   ["a STUMP", "a stump"],
+   ["for a HEAD.", "for a head."]
+  ]
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   ["It's coming", "It's coming"],
+   ["UP the RIDGE.", "up the ridge."],
+   ["Toward ME.", "toward me."]
+  ]
+ },
+ {
+  "id": "L34",
+  "who": "narrator",
+  "chunks": [
+   ["After DARK,", "After dark,"],
+   ["the THUDS CLIMB", "the thuds climb"],
+   ["through the FOG.", "through the fog."]
+  ]
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   ["Then one LANDS", "Then one lands"],
+   ["at the FOOT", "at the foot"],
+   ["of my TOWER.", "of my tower."]
+  ]
+ },
+ {
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   ["I take", "I take"],
+   ["my LAMP", "my lamp"],
+   ["out on", "out on"],
+   ["the CATWALK.", "the catwalk."]
+  ]
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   ["My light STOPS", "My light stops"],
+   ["at a", "at a"],
+   ["GREY WALL", "grey wall"],
+   ["past the RAIL.", "past the rail."]
+  ]
+ },
+ {
+  "id": "L38",
+  "who": "narrator",
+  "chunks": [
+   ["Below me,", "Below me,"],
+   ["the tower GROANS.", "the tower groans."]
+  ]
+ },
+ {
+  "id": "L39",
+  "who": "narrator",
+  "chunks": [
+   ["The deck TILTS", "The deck tilts"],
+   ["under my BOOTS.", "under my boots."]
+  ]
+ },
+ {
+  "id": "L40",
+  "who": "narrator",
+  "chunks": [
+   ["Something's LEANING", "Something's leaning"],
+   ["its WEIGHT", "its weight"],
+   ["on my TOWER.", "on my tower."]
+  ]
+ },
+ {
+  "id": "L41",
+  "who": "narrator",
+  "chunks": [
+   ["I GRIP", "I grip"],
+   ["the RAIL.", "the rail."],
+   ["The LAMP SWINGS", "the lamp swings"],
+   ["on its WIRE.", "on its wire."]
+  ]
+ },
+ {
+  "id": "P03",
+  "pause": 0.6,
+  "chunks": [
+
+  ]
+ },
+ {
+  "id": "L42",
+  "who": "narrator",
+  "tempo": 0.95,
+  "gain_db": -1.0,
+  "chunks": [
+   ["Two small", "Two small"],
+   ["LIGHTS RISE", "lights rise"],
+   ["out of", "out of"],
+   ["the FOG.", "the fog."]
+  ]
+ },
+ {
+  "id": "L43",
+  "who": "narrator",
+  "tempo": 0.92,
+  "gain_db": -1.5,
+  "chunks": [
+   ["WARM ones,", "Warm ones."],
+   ["one ARM'S LENGTH", "one arm's length"],
+   ["from my FACE.", "from my face."]
+  ]
+ },
+ {
+  "id": "L44",
+  "who": "narrator",
+  "tempo": 0.9,
+  "gain_db": -2.0,
+  "chunks": [
+   ["They sit DEEP", "They sit deep"],
+   ["in a HOLLOW", "in a hollow"],
+   ["of BARK.", "of bark."]
+  ]
+ },
+ {
+  "id": "L45",
+  "who": "narrator",
+  "chunks": [
+   ["Its STONE SHOULDERS", "Its stone shoulders"],
+   ["come up", "come up"],
+   ["AFTER them.", "after them."]
+  ]
+ },
+ {
+  "id": "L46",
+  "who": "narrator",
+  "chunks": [
+   ["Its HEAD", "Its head"],
+   ["is WIDER", "is wider"],
+   ["than my ROOM.", "than my room."]
+  ]
+ },
+ {
+  "id": "L47",
+  "who": "narrator",
+  "chunks": [
+   ["It BREATHES OUT,", "It breathes out,"],
+   ["and the", "and the"],
+   ["LIGHTS SWELL.", "lights swell."]
+  ]
+ },
+ {
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   ["The breath ENDS", "The breath ends"],
+   ["in a CREAK.", "in a creak."]
+  ]
+ },
+ {
+  "id": "L49",
+  "who": "narrator",
+  "tempo": 0.93,
+  "gain_db": -3.0,
+  "chunks": [
+   ["I KNOW", "I know"],
+   ["that CREAK.", "that creak."]
+  ]
+ },
+ {
+  "id": "L50",
+  "who": "narrator",
+  "chunks": [
+   ["The radio CLICKS.", "The radio clicks."],
+   ["The ranger says,", "the ranger says,"],
+   ["\"LOOKOUT, REPORT.\"", "lookout, report."]
+  ]
+ },
+ {
+  "id": "L51",
+  "who": "narrator",
+  "tempo": 0.95,
+  "chunks": [
+   ["I say,", "I say,"],
+   ["\"All CLEAR.\"", "all clear."]
+  ]
+ },
+ {
+  "id": "P04",
+  "pause": 1.0,
+  "chunks": [
+
+  ]
+ },
+ {
+  "id": "L52",
+  "who": "narrator",
+  "chunks": [
+   ["I back INSIDE.", "I back inside."],
+   ["I carry", "I carry"],
+   ["the LAMP", "the lamp"],
+   ["to the", "to the"],
+   ["FAR WINDOW.", "far window."]
+  ]
+ },
+ {
+  "id": "L53",
+  "who": "narrator",
+  "chunks": [
+   ["The two LIGHTS", "The two lights"],
+   ["FOLLOW it.", "follow it."]
+  ]
+ },
+ {
+  "id": "L54",
+  "who": "narrator",
+  "chunks": [
+   ["I set", "I set"],
+   ["it DOWN", "it down"],
+   ["and step AWAY.", "and step away."]
+  ]
+ },
+ {
+  "id": "L55",
+  "who": "narrator",
+  "chunks": [
+   ["They STAY", "They stay"],
+   ["on the LAMP.", "on the lamp."]
+  ]
+ },
+ {
+  "id": "L56",
+  "who": "narrator",
+  "chunks": [
+   ["In the VALLEY,", "In the valley,"],
+   ["SMOKE lies", "smoke lies"],
+   ["like MILK.", "like milk."]
+  ]
+ },
+ {
+  "id": "L57",
+  "who": "narrator",
+  "chunks": [
+   ["The RIVER", "The river"],
+   ["hasn't SHONE", "hasn't shone"],
+   ["since the BURN.", "since the burn."]
+  ]
+ },
+ {
+  "id": "L58",
+  "who": "narrator",
+  "chunks": [
+   ["It STEERS", "It steers"],
+   ["by the RIVER.", "by the river."]
+  ]
+ },
+ {
+  "id": "L59",
+  "who": "narrator",
+  "chunks": [
+   ["And my LAMP", "And my lamp"],
+   ["is the", "is the"],
+   ["only LIGHT", "only light"],
+   ["it can SEE.", "it can see."]
+  ]
+ },
+ {
+  "id": "L60",
+  "who": "narrator",
+  "tempo": 0.96,
+  "chunks": [
+   ["It can't FIND", "It can't find"],
+   ["its WAY.", "its way."]
+  ]
+ },
+ {
+  "id": "P05",
+  "pause": 1.2,
+  "chunks": [
+
+  ]
+ },
+ {
+  "id": "L61",
+  "who": "narrator",
+  "chunks": [
+   ["I pick", "I pick"],
+   ["it UP", "it up"],
+   ["and HOLD", "and hold"],
+   ["it HIGH.", "it high."]
+  ]
+ },
+ {
+  "id": "L62",
+  "who": "narrator",
+  "chunks": [
+   ["On the STAIRS,", "On the stairs,"],
+   ["its LIGHTS", "its lights"],
+   ["TRACK the LAMP.", "track the lamp."]
+  ]
+ },
+ {
+  "id": "L63",
+  "who": "narrator",
+  "chunks": [
+   ["At the GATE,", "At the gate,"],
+   ["I step onto", "I step onto"],
+   ["the FIRE ROAD.", "the fire road."]
+  ]
+ },
+ {
+  "id": "L64",
+  "who": "narrator",
+  "chunks": [
+   ["BEHIND me,", "Behind me,"],
+   ["it STEPS", "it steps"],
+   ["OUT of", "out of"],
+   ["the FOG.", "the fog."]
+  ]
+ },
+ {
+  "id": "L65",
+  "who": "narrator",
+  "chunks": [
+   ["Its ROOT TOES", "Its root toes"],
+   ["come DOWN", "come down"],
+   ["where my LIGHT", "where my light"],
+   ["just WAS.", "just was."]
+  ]
+ },
+ {
+  "id": "L66",
+  "who": "narrator",
+  "chunks": [
+   ["My ARM ACHES.", "My arm aches."],
+   ["I hold", "I hold"],
+   ["it HIGHER.", "it higher."]
+  ]
+ },
+ {
+  "id": "L67",
+  "who": "narrator",
+  "chunks": [
+   ["All NIGHT,", "All night,"],
+   ["we walk DOWN", "we walk down"],
+   ["the MOUNTAIN.", "the mountain."]
+  ]
+ },
+ {
+  "id": "L68",
+  "who": "narrator",
+  "chunks": [
+   ["At FIRST LIGHT,", "At first light,"],
+   ["we come out", "we come out"],
+   ["over the VALLEY.", "over the valley."]
+  ]
+ },
+ {
+  "id": "L69",
+  "who": "narrator",
+  "chunks": [
+   ["Below us,", "Below us,"],
+   ["the SMOKE", "the smoke"],
+   ["is LIFTING,", "is lifting,"],
+   ["and the", "and the"],
+   ["RIVER SHINES.", "river shines."]
+  ]
+ },
+ {
+  "id": "P06",
+  "pause": 1.2,
+  "chunks": [
+
+  ]
+ },
+ {
+  "id": "L70",
+  "who": "narrator",
+  "chunks": [
+   ["THIN and SILVER,", "Thin and silver,"],
+   ["like FOIL.", "like foil."]
+  ]
+ },
+ {
+  "id": "L71",
+  "who": "narrator",
+  "chunks": [
+   ["It steps", "It steps"],
+   ["PAST me", "past me"],
+   ["without LOOKING BACK.", "without looking back."]
+  ]
+ },
+ {
+  "id": "L72",
+  "who": "narrator",
+  "tempo": 0.86,
+  "gain_db": -1.0,
+  "chunks": [
+   ["It walks DOWN", "It walks down"],
+   ["the SLOPE", "the slope"],
+   ["until I can't", "until I can't"],
+   ["TELL it", "tell it"],
+   ["from the TREES.", "from the trees."]
+  ]
+ },
+ {
+  "id": "L73",
+  "who": "narrator",
+  "tempo": 0.97,
+  "chunks": [
+   ["There's a TREE", "There's a tree"],
+   ["in every FOOTPRINT", "in every footprint"],
+   ["on the", "on the"],
+   ["fire ROAD.", "fire road."],
+   ["All the WAY", "all the way"],
+   ["to my DOOR.", "to my door."]
+  ]
+ }
+]

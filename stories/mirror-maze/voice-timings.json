@@ -1,0 +1,2161 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Tasha points at anything green and goes, what's that?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.181
+    ],
+    [
+     1.181,
+     1.534
+    ],
+    [
+     1.569,
+     2.207
+    ]
+   ]
+  },
+  "L02": {
+   "text": "And I say pickle. Every time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.81
+    ],
+    [
+     0.862,
+     1.621
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Whoever says pickle buys the fries.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.828
+    ],
+    [
+     0.828,
+     1.724
+    ]
+   ]
+  },
+  "L04": {
+   "text": "So she yells fries, and I pay.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.897
+    ],
+    [
+     0.922,
+     1.603
+    ]
+   ]
+  },
+  "L05": {
+   "text": "I have never won. Not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.776
+    ],
+    [
+     0.828,
+     1.5
+    ]
+   ]
+  },
+  "L06": {
+   "text": "We've been best friends since forever.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.845
+    ],
+    [
+     0.845,
+     1.569
+    ]
+   ]
+  },
+  "L07": {
+   "text": "It was the last weekend of the fair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     1.077
+    ],
+    [
+     1.077,
+     1.741
+    ]
+   ]
+  },
+  "L08": {
+   "text": "And it was pouring. Half the rides were under tarps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.828
+    ],
+    [
+     0.897,
+     1.388
+    ],
+    [
+     1.388,
+     2.155
+    ]
+   ]
+  },
+  "L09": {
+   "text": "The only ride still lit was the mirror maze.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.103
+    ],
+    [
+     1.103,
+     1.293
+    ],
+    [
+     1.293,
+     2.086
+    ]
+   ]
+  },
+  "L10": {
+   "text": "The maze guy was already rolling up its roof tarp.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.017
+    ],
+    [
+     1.017,
+     1.353
+    ],
+    [
+     1.353,
+     2.103
+    ]
+   ]
+  },
+  "L11": {
+   "text": "He kept his back to us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.741
+    ],
+    [
+     0.741,
+     1.259
+    ]
+   ]
+  },
+  "L12": {
+   "text": "So we went in before it came down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.586
+    ],
+    [
+     0.586,
+     0.879
+    ],
+    [
+     0.879,
+     1.621
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Inside was all glass, and a hundred of us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.19,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     1.052
+    ],
+    [
+     1.103,
+     1.492
+    ],
+    [
+     1.492,
+     1.966
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Tasha said, first one out wins.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.138
+    ],
+    [
+     1.138,
+     1.672
+    ]
+   ]
+  },
+  "L15": {
+   "text": "And we split up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.155,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.931
+    ]
+   ]
+  },
+  "L16": {
+   "text": "There were Tashas all down the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.716
+    ],
+    [
+     0.716,
+     1.061
+    ],
+    [
+     1.061,
+     1.672
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Every one of them moving.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.716
+    ],
+    [
+     0.716,
+     1.293
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Except one, way at the back, standing still.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     0.75
+    ],
+    [
+     0.75,
+     1.0
+    ],
+    [
+     1.026,
+     1.81
+    ]
+   ]
+  },
+  "L19": {
+   "text": "I figured it was the angles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     0.784
+    ],
+    [
+     0.784,
+     1.466
+    ]
+   ]
+  },
+  "L20": {
+   "text": "For once, I came out first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     0.879
+    ],
+    [
+     0.879,
+     1.362
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Then Tasha came out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.224
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Her hair was swept the other way.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.716
+    ],
+    [
+     0.716,
+     1.431
+    ]
+   ]
+  },
+  "L23": {
+   "text": "I figured it was the wind.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     0.793
+    ],
+    [
+     0.793,
+     1.397
+    ]
+   ]
+  },
+  "L24": {
+   "text": "We headed for the fry van.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.681
+    ],
+    [
+     0.681,
+     1.431
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Every step, she was half a beat late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     0.776
+    ],
+    [
+     0.776,
+     1.155
+    ],
+    [
+     1.155,
+     1.586
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Always on the side with the puddles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.854
+    ],
+    [
+     0.854,
+     1.552
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Her boots didn't splash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.241
+    ]
+   ]
+  },
+  "L28": {
+   "text": "I stopped and turned to her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.776
+    ],
+    [
+     0.776,
+     1.224
+    ]
+   ]
+  },
+  "L29": {
+   "text": "She stopped and turned to me. A little late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.776
+    ],
+    [
+     0.776,
+     1.052
+    ],
+    [
+     1.147,
+     1.81
+    ]
+   ]
+  },
+  "L30": {
+   "text": "So I tried her own trick on her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.94
+    ],
+    [
+     0.94,
+     1.431
+    ]
+   ]
+  },
+  "L31": {
+   "text": "I pointed at my hat and went, what's that?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.802
+    ],
+    [
+     0.802,
+     1.052
+    ],
+    [
+     1.086,
+     1.707
+    ]
+   ]
+  },
+  "L32": {
+   "text": "She pointed at her own head. Nothing green up there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.655
+    ],
+    [
+     0.655,
+     1.121
+    ],
+    [
+     1.215,
+     1.647
+    ],
+    [
+     1.647,
+     2.241
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Her mouth made the words. No sound.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.966
+    ],
+    [
+     1.043,
+     1.759
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Normally she'd laugh at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.19,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.19,
+     0.509
+    ],
+    [
+     0.509,
+     0.862
+    ],
+    [
+     0.862,
+     1.31
+    ]
+   ]
+  },
+  "L35": {
+   "text": "I kept walking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.034
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Then the wind came hard, so I ducked behind a truck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.0
+    ],
+    [
+     1.069,
+     1.466
+    ],
+    [
+     1.466,
+     2.241
+    ]
+   ]
+  },
+  "L37": {
+   "text": "When I stood up, she was frozen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.586
+    ],
+    [
+     0.621,
+     1.466
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Mid-step, one foot in the air.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     0.836
+    ],
+    [
+     0.836,
+     1.448
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Rain running off her coat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.19,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     1.293
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Then she did my duck, way too fast.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.776
+    ],
+    [
+     0.81,
+     1.655
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Like she was catching up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     1.207
+    ]
+   ]
+  },
+  "L42": {
+   "text": "And she was back to being late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.741
+    ],
+    [
+     0.741,
+     1.397
+    ]
+   ]
+  },
+  "L43": {
+   "text": "I didn't say a word.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     1.103
+    ]
+   ]
+  },
+  "L44": {
+   "text": "So at the bumper cars, I hid behind the tarp.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.914
+    ],
+    [
+     0.948,
+     1.207
+    ],
+    [
+     1.207,
+     2.017
+    ]
+   ]
+  },
+  "L45": {
+   "text": "I stood back there, shaking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.759
+    ],
+    [
+     0.802,
+     1.379
+    ]
+   ]
+  },
+  "L46": {
+   "text": "I put my hands over my face. Three deep breaths.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.319
+    ],
+    [
+     0.319,
+     0.612
+    ],
+    [
+     0.612,
+     1.207
+    ],
+    [
+     1.285,
+     2.207
+    ]
+   ]
+  },
+  "L47": {
+   "text": "I couldn't hear her at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.155,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.672
+    ],
+    [
+     0.672,
+     1.19
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Then I stepped out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     1.052
+    ]
+   ]
+  },
+  "L49": {
+   "text": "She was right where I'd left her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.647
+    ],
+    [
+     0.647,
+     1.328
+    ]
+   ]
+  },
+  "L50": {
+   "text": "In the rain, one hand half up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.879
+    ],
+    [
+     0.879,
+     1.448
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Then she saw me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.017
+    ]
+   ]
+  },
+  "L52": {
+   "text": "She didn't hurry this time. Hand down, like I did. One step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.569
+    ],
+    [
+     0.569,
+     1.034
+    ],
+    [
+     1.103,
+     1.466
+    ],
+    [
+     1.492,
+     1.879
+    ],
+    [
+     1.914,
+     2.569
+    ]
+   ]
+  },
+  "L53": {
+   "text": "And she stopped, facing me, in my pose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.672,
+     1.0
+    ],
+    [
+     1.026,
+     1.741
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Her eyes were black, like a window at night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.828
+    ],
+    [
+     0.879,
+     1.31
+    ],
+    [
+     1.31,
+     1.862
+    ]
+   ]
+  },
+  "L55": {
+   "text": "No shine at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.19,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.19,
+     0.509
+    ],
+    [
+     0.509,
+     1.017
+    ]
+   ]
+  },
+  "L56": {
+   "text": "That's what a reflection does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.379
+    ]
+   ]
+  },
+  "L57": {
+   "text": "It can't move if it can't see you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     0.957
+    ],
+    [
+     0.957,
+     1.466
+    ]
+   ]
+  },
+  "L58": {
+   "text": "It came out of the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.155,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     1.207
+    ]
+   ]
+  },
+  "L59": {
+   "text": "Tasha was still in there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.293
+    ]
+   ]
+  },
+  "L60": {
+   "text": "The whole fair was coming down. I ran back in anyway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.224
+    ],
+    [
+     1.293,
+     1.75
+    ],
+    [
+     1.75,
+     2.379
+    ]
+   ]
+  },
+  "L61": {
+   "text": "It ran with me, half a beat behind.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.655
+    ],
+    [
+     0.707,
+     1.086
+    ],
+    [
+     1.086,
+     1.69
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Half the panels were out. The roof was off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     0.948
+    ],
+    [
+     1.017,
+     1.285
+    ],
+    [
+     1.285,
+     1.828
+    ]
+   ]
+  },
+  "L63": {
+   "text": "And every pane showed Tasha, copying me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     1.103
+    ],
+    [
+     1.138,
+     1.828
+    ]
+   ]
+  },
+  "L64": {
+   "text": "None of them showed me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.19,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.534,
+     1.138
+    ]
+   ]
+  },
+  "L65": {
+   "text": "I hid again, where nothing could see me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.681,
+     1.086
+    ],
+    [
+     1.086,
+     1.776
+    ]
+   ]
+  },
+  "L66": {
+   "text": "Then I popped back out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     1.172
+    ]
+   ]
+  },
+  "L67": {
+   "text": "For half a beat, nothing moved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.655
+    ],
+    [
+     0.69,
+     1.466
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Except one, way down the glass, waving both arms.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.888
+    ],
+    [
+     0.888,
+     1.224
+    ],
+    [
+     1.259,
+     2.276
+    ]
+   ]
+  },
+  "L69": {
+   "text": "In the same spot as before.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.724
+    ],
+    [
+     0.724,
+     1.414
+    ]
+   ]
+  },
+  "L70": {
+   "text": "She pointed at my hat and went, what's that?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.802
+    ],
+    [
+     0.802,
+     1.069
+    ],
+    [
+     1.103,
+     1.741
+    ]
+   ]
+  },
+  "L71": {
+   "text": "A reflection can't go first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.466
+    ]
+   ]
+  },
+  "L72": {
+   "text": "So I said pickle. On purpose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.776
+    ],
+    [
+     0.828,
+     1.569
+    ]
+   ]
+  },
+  "L73": {
+   "text": "She yelled fries.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.19,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     1.069
+    ]
+   ]
+  },
+  "L74": {
+   "text": "She's still Tasha. And she's still winning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.19,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.19,
+     0.828
+    ],
+    [
+     0.897,
+     1.31
+    ],
+    [
+     1.31,
+     1.828
+    ]
+   ]
+  },
+  "L75": {
+   "text": "But it stood between us, facing me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.828
+    ],
+    [
+     0.862,
+     1.5
+    ]
+   ]
+  },
+  "L76": {
+   "text": "So I stepped back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     1.017
+    ]
+   ]
+  },
+  "L77": {
+   "text": "It stepped back too, half a beat late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.776
+    ],
+    [
+     0.81,
+     1.155
+    ],
+    [
+     1.155,
+     1.586
+    ]
+   ]
+  },
+  "L78": {
+   "text": "And there was Tasha, soaked and grinning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.759
+    ],
+    [
+     0.836,
+     1.086
+    ],
+    [
+     1.086,
+     1.741
+    ]
+   ]
+  },
+  "L79": {
+   "text": "The shine was back in her eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.768
+    ],
+    [
+     0.768,
+     1.431
+    ]
+   ]
+  },
+  "L80": {
+   "text": "She bumped my shoulder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.19
+    ]
+   ]
+  },
+  "L81": {
+   "text": "The maze guy carried that pane to the truck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     1.241
+    ],
+    [
+     1.241,
+     1.845
+    ]
+   ]
+  },
+  "L82": {
+   "text": "In the glass, it watched us go. Late, like always.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.854
+    ],
+    [
+     0.854,
+     1.241
+    ],
+    [
+     1.353,
+     1.517
+    ],
+    [
+     1.543,
+     2.276
+    ]
+   ]
+  },
+  "L83": {
+   "text": "My coins were already on the counter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.094
+    ],
+    [
+     1.094,
+     1.707
+    ]
+   ]
+  },
+  "L84": {
+   "text": "Before she even pointed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.293
+    ]
+   ]
+  },
+  "L85": {
+   "text": "We both looked up at the rain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.75
+    ],
+    [
+     0.75,
+     1.414
+    ]
+   ]
+  },
+  "L86": {
+   "text": "So did our reflections, in the van's shiny side.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.966
+    ],
+    [
+     1.017,
+     1.439
+    ],
+    [
+     1.439,
+     2.241
+    ]
+   ]
+  },
+  "L87": {
+   "text": "And nobody was late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.276
+    ]
+   ]
+  },
+  "L88": {
+   "text": "At the fry van, she pointed at my hat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.759
+    ],
+    [
+     0.81,
+     1.164
+    ],
+    [
+     1.164,
+     1.793
+    ]
+   ]
+  }
+ }
+}

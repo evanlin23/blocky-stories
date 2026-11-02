@@ -5,9 +5,10 @@ and clothes are blocks and procedural patterns made here. No game assets, meshes
 A character spec (in a story's `cast`):
     {"skin": "#f1c9a0", "shirt": "#3d6ea6", "pattern": "plaid|knit|stripes|solid", "pattern_c": "#..",
      "pants": "#..", "shoes": "#..", "sleeves": "short|long", "collar": "#.." or null,
-     "hair": "none|cap|spiky|swoop|long|bun|buzz", "hair_c": "#..",
-     "hat": "none|fedora|beanie|ballcap|hood|tophat", "hat_c": "#..",
-     "extras": ["glasses", "backpack", "scarf", "tie", "apron"], "extra_c": "#..",
+     "hair": "none|cap|spiky|swoop|long|bun|buzz", "hair_c": "#..", "fringe": "hard" (a swoop swept harder),
+     "hat": "none|fedora|beanie|ballcap|hood|tophat|bucket", "hat_c": "#..",
+     "extras": ["glasses", "backpack", "scarf", "tie", "apron", "coat", "hooddown"], "extra_c": "#..",
+     "zip_c": "#.." (the coat's zip),
      "face": {"eyes": "round|dot|tired|lashes|button|hollow", "brows": true, "glow": null, ...},
      "height": 1.0, "width": 1.0, "age": "adult|teen"}
 
@@ -179,6 +180,37 @@ def head_material(name, skin):
     return m, tex
 
 
+def soften(ob, width, seg=3):
+    """A bevel and smooth shading on a part kit doesn't bevel (the bucket hat's crown and brim)."""
+    m = ob.modifiers.new("bevel", "BEVEL")
+    m.width = width
+    m.segments = seg
+    m.limit_method = "ANGLE"
+    for p in ob.data.polygons:
+        p.use_smooth = True
+    try:
+        ob.modifiers.new("wn", "WEIGHTED_NORMAL").keep_sharp = True
+    except Exception:
+        pass
+    return ob
+
+
+def brim_mesh(name, r0, z0, r1, z1, th, mat, parent, n=48):
+    """A brim sloping all the way round: a ring from radius r0 at height z0 out to r1 at z1, th thick."""
+    verts, fcs = [], []
+    for j in range(n):
+        a = 2 * math.pi * j / n
+        c, s_ = math.cos(a), math.sin(a)
+        verts += [(r0 * c, r0 * s_, z0), (r1 * c, r1 * s_, z1), (r1 * c, r1 * s_, z1 - th), (r0 * c, r0 * s_, z0 - th)]
+    for j in range(n):
+        a, b = 4 * j, 4 * ((j + 1) % n)
+        fcs += [(a, a + 1, b + 1, b),            # top, facing up
+                (a + 1, a + 2, b + 2, b + 1),    # outer edge, facing out
+                (a + 2, a + 3, b + 3, b + 2),    # underside, facing down
+                (a + 3, a, b, b + 3)]            # inner edge, facing in
+    return kit.mesh_obj(name, verts, fcs, mat, parent)
+
+
 class Character:
     """One avatar. `pose()` sets every joint for a frame."""
 
@@ -215,6 +247,19 @@ class Character:
             kit.box(f"{name}.skinarm{sx}", (0.96, 0.98, 2.0 - sleeve), (0, 0, 0.25 - sleeve - (2.0 - sleeve) / 2),
                     skin, arm, bevel=bev)
             P[f"arm{sx}"] = arm
+        ex = spec.get("extras", [])
+        self.coat = []
+        if "coat" in ex:
+            # a coat to mid-thigh (ep14): two skirt panels hinged at the hips like the legs, so each swings with its
+            # own leg and a stride never pokes through, meeting at the front; a zip down the middle of the front
+            for sx in (-1, 1):
+                hinge = kit.empty(f"{name}.coat{sx}", (sx * 0.5, 0, 2.0), self.root)
+                kit.box(f"{name}.coatm{sx}", (1.0, 1.08, 0.78), (sx * 0.005, 0, -0.33), shirt, hinge, bevel=bev)
+                self.coat.append((hinge, sx))
+            zc = kit.plastic(spec.get("zip_c", "#2a2a2e"), 0.4)
+            kit.box(f"{name}.zip", (0.07, 0.03, 1.76), (0, -0.505, 0.9), zc, self.torso, bevel=0.012)   # under the collar
+        if "hooddown" in ex:   # a hood lying down behind the collar, in the coat's colour (ep14)
+            kit.box(f"{name}.hooddown", (1.56, 0.5, 0.44), (0, 0.66, 1.98), shirt, self.torso, bevel=0.18)
         self.neck = kit.empty(f"{name}.neck", (0, 0, 2.0), self.torso)
         self.head = kit.empty(f"{name}.head", (0, 0, 0), self.neck)
         self.head_mat, self.face_tex = head_material(name, spec["skin"])
@@ -230,7 +275,16 @@ class Character:
         top = H / 2
         hair = kit.plastic(spec.get("hair_c", "#2a1d15"), 0.65)
         style = spec.get("hair", "cap")
-        if style in ("cap", "long", "bun", "swoop", "spiky"):
+        if style in ("cap", "long", "bun", "swoop", "spiky") and spec.get("hat") == "bucket":
+            # under a bucket hat (ep14) the crown covers the top, and the back and sides stop under the brim, so no
+            # block corner pokes through it
+            cut = top - 0.17
+            hb0 = top - H * 0.36 - H * 0.375
+            kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, cut - hb0), (0, R - 0.08, (cut + hb0) / 2), hair, hg, bevel=0.1)
+            for sx in (-1, 1):
+                kit.box(f"{n}.hside{sx}", (0.2, 0.9, cut - (top - 0.5)), (sx * (R - 0.02), 0.2, (cut + top - 0.5) / 2),
+                        hair, hg, bevel=0.08)
+        elif style in ("cap", "long", "bun", "swoop", "spiky"):
             kit.box(f"{n}.hcap", (2 * R + 0.08, 2 * R + 0.08, 0.3), (0, 0.02, top - 0.05), hair, hg, bevel=0.12)
             kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, H * 0.75), (0, R - 0.08, top - H * 0.36), hair, hg, bevel=0.1)
             for sx in (-1, 1):
@@ -239,6 +293,11 @@ class Character:
             kit.box(f"{n}.fringe", (2 * R + 0.06, 0.5, 0.34), (0.05, -R + 0.2, top - 0.12), hair, hg,
                     rot=(0.0, 0.12, 0.0), bevel=0.12)
             kit.box(f"{n}.fringe2", (0.9, 0.5, 0.3), (-0.3, -R + 0.25, top - 0.22), hair, hg, rot=(0, 0.35, 0), bevel=0.1)
+            if spec.get("fringe") == "hard":
+                # swept hard to the character's right (-x, the rig's "left"): a long lock from the crown down over the
+                # right brow, stopping above the eye, so which way the fringe goes reads at phone size (ep14)
+                kit.box(f"{n}.fringe3", (0.82, 0.34, 0.28), (-0.27, -R + 0.13, top - 0.13), hair, hg,
+                        rot=(0.0, -0.42, 0.0), bevel=0.1)
         if style == "spiky":
             for k in range(9):
                 a = -math.pi * 0.9 + k * math.pi * 1.8 / 8
@@ -269,6 +328,12 @@ class Character:
         elif hat == "tophat":
             kit.cyl(f"{n}.tbrim", R + 0.3, 0.07, (0, 0, top + 0.06), hc, hg, n=32)
             kit.cyl(f"{n}.tcrown", R, 0.95, (0, 0, top + 0.55), hc, hg, n=32)
+        elif hat == "bucket":
+            # a bucket hat (ep14): a short round crown and a brim sloping down all the way round, plain matte cloth
+            # with no band and no logo. The crown is wide enough to cover the block hair's corners under it
+            bc = kit.plastic(spec.get("hat_c", "#333333"), 0.9)
+            soften(kit.cyl(f"{n}.bcrown", R + 0.28, 0.46, (0, 0, top + 0.12), bc, hg, n=40, r2=R + 0.17), 0.08)
+            soften(brim_mesh(f"{n}.bbrim", R + 0.24, top - 0.07, R + 0.58, top - 0.25, 0.06, bc, hg), 0.025, 2)
         elif hat == "hood":
             kit.box(f"{n}.hood", (2 * R + 0.34, 2 * R + 0.3, H + 0.3), (0, 0.12, 0.08), hc, hg, bevel=0.22)
             # the hood is open at the front: a dark recess the face sits in front of
@@ -320,6 +385,8 @@ class Character:
             ob.hide_render = hidden
         self.P["leg-1"].rotation_euler = (legs, 0, 0)
         self.P["leg1"].rotation_euler = (-legs, 0, 0)
+        for hinge, sx in self.coat:   # a coat's skirt panel swings with its own leg
+            hinge.rotation_euler = (legs if sx < 0 else -legs, 0, 0)
         # arms swing opposite their legs when walking, on top of the pose
         self.P["arm-1"].rotation_euler = (-arms[0] - legs * 0.9, arms_side[0], 0)
         self.P["arm1"].rotation_euler = (-arms[1] + legs * 0.9, -arms_side[1], 0)

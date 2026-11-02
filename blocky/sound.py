@@ -7,7 +7,9 @@
 - footsteps on every step the acting takes (acting.footsteps), on the story's floor
 - one-off sounds at time refs (`sfx`): hits, risers, creaks, door slams, knocks (a "pattern" of hit times and a
   "tone": below, hand, glass, soft, glass_soft), whooshes, glitches, bells, thuds, wet clicks, bubbles (an applause
-  wash, or tinybubbles), a pop, squeaks and squeals (skin on acrylic), a glide, a hum sweep, castors
+  wash, or tinybubbles), a pop, squeaks and squeals (skin on acrylic), a glide, a hum sweep, castors, and (ep17,
+  opt-in) a packing-tape peel (`tape`), cardboard dragged on boards (`scrape`, "distant": through a wall) and a
+  papery cardboard flex (`creak` with "tone": "cardboard"; the default creak is unchanged)
 - the score can be heard through something: `music.filter` keys [{"at", "hz", "dur"}] move a low-pass over it
 
 Balance before the master: narrator -16 LUFS over its lines, music -27 under the voice and -21 where nobody
@@ -412,6 +414,8 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
     if kind == "whoosh":
         t = np.arange(synth.n_samples(0.5)) / SR
         return fft_filter(synth.noise(0.5, seed), "band", 400, 2500) * np.sin(np.pi * t / 0.5) ** 2
+    if kind == "creak" and (opts or {}).get("tone") == "cardboard":   # ep17, opt-in: a slow, low, papery flex
+        return _cardboard_creak(dur, seed)
     if kind == "creak":
         t = np.arange(synth.n_samples(dur)) / SR
         f = 140 + 60 * np.sin(2 * np.pi * 0.7 * t) + 20 * synth.noise(dur, seed)
@@ -512,9 +516,88 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
             c = synth.click(0.006, 1400.0, seed + k) * 0.3
             y[i:i + len(c)] += c[: len(y) - i]
         return y
+    if kind == "radio":   # opt-in (ep14): a press click, then a short band-limited static burst. No voice
+        d = max(0.25, dur if dur != 1.0 else 0.45)
+        n = synth.n_samples(d)
+        t = np.arange(n) / SR
+        y = fft_filter(synth.noise(d, seed), "band", 900, 4200)[:n] * np.minimum(1, t / 0.02) * np.exp(-t / (d * 0.5)) * 0.7
+        c = synth.click(0.01, 2500.0, seed)[:n]
+        y[:len(c)] += c
+        return y
+    if kind == "breath":  # opt-in (ep14): one slow, heavy breath of something huge: low filtered noise, swelling and fading
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        env = np.sin(np.pi * np.clip(t / dur, 0, 1)) ** 1.5
+        y = fft_filter(synth.noise(dur, seed), "band", 70, 600)[:n] * env
+        return y + 0.4 * fft_filter(synth.noise(dur, seed + 1), "band", 600, 1800)[:n] * env ** 3
+    if kind == "tape":        # ep17: packing tape peeled off board, a sticky crackle
+        return _tape_peel(dur if dur != 1.0 else 0.75, seed)
+    if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
+        return _scrape(dur, seed, bool((opts or {}).get("distant")))
     if kind == "silence":
         return np.zeros(1)
     raise ValueError(f"no sfx {kind!r}")
+
+
+def _crackle(dur: float, seed: int, rate: float, lo: float, hi: float) -> np.ndarray:
+    """Random tiny clicks at about `rate` a second, each a short band-limited tick."""
+    rng = np.random.default_rng(seed)
+    n = synth.n_samples(dur)
+    y = np.zeros(n)
+    k = int(rate * dur)
+    for i in rng.integers(0, max(1, n - 64), k):
+        y[i] += rng.uniform(0.3, 1.0) * rng.choice([-1, 1])
+    return fft_filter(y, "band", lo, hi)
+
+
+def _tape_peel(dur: float, seed: int) -> np.ndarray:
+    """A strip of packing tape coming off board: a fast sticky crackle that rises as it goes, over a thin
+    tearing hiss, then a little tug at the end."""
+    n = synth.n_samples(dur)
+    t = np.arange(n) / SR
+    env = np.clip(t / (dur * 0.15), 0, 1) * (1 - np.clip((t - dur * 0.85) / (dur * 0.15), 0, 1))
+    rate = 260 + 520 * (t / dur)
+    crack = _crackle(dur, seed, float(rate.mean()), 1200, 7000)
+    hiss = fft_filter(synth.noise(dur, seed + 1), "band", 2500, 9000) * 0.18
+    y = (crack * 1.6 + hiss) * env * (0.6 + 0.4 * t / dur)
+    tug = synth.thump(0.06, 260, 120, seed) * 0.25
+    y[-len(tug):] += tug
+    return y / (np.abs(y).max() + 1e-9)
+
+
+def _scrape(dur: float, seed: int, distant: bool) -> np.ndarray:
+    """A box dragged across boards: friction noise in stick-slip bursts (an uneven 7 to 13 a second), a soft
+    knock where a corner catches a board seam. Distant: through a wall, so dull, lower and a little smeared."""
+    rng = np.random.default_rng(seed)
+    n = synth.n_samples(dur)
+    t = np.arange(n) / SR
+    rough = fft_filter(synth.noise(dur, seed), "band", 180, 2200)
+    f = 7 + 6 * np.abs(np.sin(2 * np.pi * 0.4 * t + rng.uniform(0, 6)))
+    stick = 0.35 + 0.65 * np.clip(np.sin(2 * np.pi * np.cumsum(f) / SR) * 1.4, 0, 1) ** 2
+    env = np.clip(t / 0.12, 0, 1) * np.clip((dur - t) / 0.2, 0, 1)
+    y = rough * stick * env
+    for at in rng.uniform(0.1, max(0.11, dur - 0.2), max(1, int(dur * 1.5))):   # corners catching seams
+        i = int(at * SR)
+        k = synth.thump(0.09, 160, 70, int(at * 1000)) * 0.5
+        y[i:i + len(k)] += k[: n - i]
+    if distant:
+        y = fft_filter(y, "low", 650) * 0.55
+        d = int(0.023 * SR)
+        y[d:] += y[:-d] * 0.35   # a little of the other room in it
+    return y / (np.abs(y).max() + 1e-9)
+
+
+def _cardboard_creak(dur: float, seed: int) -> np.ndarray:
+    """Board flexing under weight: a slow swell of dry fibre crackle and a low papery rustle, never a wooden
+    groan (a wooden creak is lookout's)."""
+    n = synth.n_samples(dur)
+    t = np.arange(n) / SR
+    swell = np.sin(np.pi * np.clip(t / dur, 0, 1)) ** 1.5
+    crack = _crackle(dur, seed, 140, 600, 4500)
+    rustle = fft_filter(synth.noise(dur, seed + 3), "band", 250, 1400) * 0.35
+    slow = 0.6 + 0.4 * np.sin(2 * np.pi * 1.3 * t + seed)
+    y = (crack * slow + rustle) * swell
+    return y / (np.abs(y).max() + 1e-9)
 
 
 FILE_TP = -1.6         # the encoded file's true peak target (the gate is -1.5 dBTP on the final AAC)
@@ -570,9 +653,13 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
         y *= np.minimum(1, np.arange(len(y)) / (0.3 * SR)) * np.minimum(1, (len(y) - np.arange(len(y))) / (0.3 * SR))
         m.add("amb", a0, to_lufs(y, a.get("lufs", -32.0)), pan=a.get("pan", 0.0))
     surface = snd.get("floor", "stone")
+    # opt-in: a floor per span of the film ("floor_spans": [{"from": ref, "to": ref, "floor": ...}]), over the
+    # story's or the character's own
+    fspans = [(at(f["from"]), at(f["to"]), f["floor"]) for f in snd.get("floor_spans", [])]
     for i, who in enumerate(st.get("cast", {})):
         for k, fs in enumerate(acting.footsteps(tl, who)):
-            m.add("steps", fs["t"], step_sound(snd.get("floors", {}).get(who, surface), fs["run"], i * 1000 + k),
+            fl = next((f for a0, a1, f in fspans if a0 <= fs["t"] < a1), snd.get("floors", {}).get(who, surface))
+            m.add("steps", fs["t"], step_sound(fl, fs["run"], i * 1000 + k),
                   gain_db=snd.get("steps_db", -20.0), pan=float(np.clip(fs["x"] * 0.1, -0.6, 0.6)))
     drops = [drop_spec(d) for d in snd.get("music_drops", [])]
     for k, e in enumerate(snd.get("sfx", [])):

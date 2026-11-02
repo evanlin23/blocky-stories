@@ -1,0 +1,247 @@
+# ep17-moving-day · 03 · Reel spec
+
+**Motion designer, 2026-10-31, preview build,** from `reels/blocky/stories/moving-day/story.json` (the source of truth, written by `generator/make_story.py`; this list is generated from its timeline, one caption per item, after the engine's caption joining). A creepy blocky story for PandaNanoAdventures (note 21): fiction with no facts (note 18), so no line is a claim, and no caption has a digit, so nothing needs `[no-claim]`. Every line is voice A; Mum's words are reported. The film is 139.3 s with 81 shots and 241 captions, and it loops: a hard cut 0.25 s after the last word into the first frame. The story, the house, the Boxes and the sound are described in `designer-notes.md`. This is the preview; the final isn't drawn yet.
+
+## On screen
+
+- The box
+- was taped SHUT.
+- From the INSIDE.
+- I'd PEELED
+- the outside TAPE.
+- The flaps
+- still HELD.
+- It was
+- the BOTTOM box
+- of a STACK
+- TALLER than ME.
+- And on
+- the TOP box,
+- in black MARKER,
+- a FROWN.
+- The new house
+- is SMALLER,
+- with LOW CEILINGS.
+- The OLD one
+- got SOLD,
+- and Mum hasn't
+- LAUGHED since.
+- She said,
+- "No more LADDER
+- to hang PHOTOS."
+- Every BOX
+- still smells like
+- the OLD HALL.
+- Mum left
+- the OLD QUILT
+- PACKED.
+- Too WARM
+- for it HERE.
+- And every MORNING,
+- her MUG
+- was on the
+- front-room WINDOWSILL.
+- Mum said,
+- "That's where
+- I always
+- KEPT it."
+- She didn't
+- LOOK UP.
+- Mum thinks
+- I MOVED it
+- in my SLEEP.
+- We'd STACKED
+- the REST
+- of our BOXES
+- by the DOOR.
+- SIX had GONE.
+- In the NIGHT,
+- something SCRAPED,
+- like CARDBOARD
+- across the FLOOR.
+- Next MORNING,
+- it was in
+- the KITCHEN.
+- TALLER.
+- Its top box
+- FOLDED
+- along the CEILING.
+- The FROWN
+- was GONE.
+- Now it STARED
+- at the BACK
+- of Mum's HEAD.
+- The MARKER
+- was still WET.
+- Mum made
+- her TEA
+- right under it.
+- And every PHOTO
+- was moved UP
+- to the CEILING.
+- Like something TALL
+- had HUNG them.
+- Mum never
+- LOOKED UP.
+- The STACK
+- by the door
+- was HALF GONE.
+- The morning AFTER,
+- it was in
+- the FRONT ROOM.
+- Every box
+- in there
+- had EYES now.
+- Drawn in MARKER.
+- ALL of them
+- AIMED at Mum's DOOR.
+- Its own FACE
+- looked SIDEWAYS,
+- the SAME way.
+- And Mum
+- was still
+- ASLEEP.
+- So I tried
+- to PULL it
+- APART.
+- I PULLED
+- till my ARMS
+- SHOOK.
+- No TAPE
+- to PEEL.
+- Every SEAM
+- was taped
+- from the INSIDE.
+- Not ONE box
+- would SHIFT.
+- In the KITCHEN,
+- every TAPE ROLL
+- was EMPTY.
+- Just CARDBOARD
+- RINGS,
+- STOOD UP
+- in a ROW.
+- By the DOOR,
+- FOUR boxes
+- LEFT.
+- I WOKE UP
+- with it
+- in MY room.
+- Its top box
+- hung DOWN
+- over my PILLOW.
+- Its face
+- was far too
+- many EYES.
+- ALL on ME.
+- I didn't MOVE
+- till DAWN.
+- The STACK
+- by the door
+- was GONE.
+- Every BOX
+- we BROUGHT
+- was IN it.
+- At BREAKFAST,
+- Mum said
+- I looked TIRED.
+- At THREE A.M.,
+- the SCRAPING
+- STOPPED.
+- I went
+- into the HALL.
+- A SQUARE SHADOW
+- filled the WALL
+- and BENT
+- over the CEILING.
+- It came
+- from Mum's ROOM.
+- Her door
+- stood OPEN.
+- It was BENT
+- over her BED,
+- TOO TALL
+- for the ROOM.
+- Its face
+- was drawn
+- WIDE OPEN.
+- Its long ARMS
+- REACHED DOWN
+- to her.
+- I hit
+- the LIGHT.
+- Under its HANDS
+- was the OLD QUILT.
+- TUCKED round
+- her SHOULDERS,
+- the edges FOLDED
+- under the MATTRESS.
+- The QUILT
+- she'd left
+- PACKED.
+- Mum SLEPT
+- right THROUGH it.
+- Back in
+- the OLD house,
+- Mum's ROOM
+- was the COLD one.
+- She slept
+- under that QUILT
+- all WINTER.
+- Her MUG
+- LIVED on the WINDOWSILL.
+- Her PHOTOS
+- hung at LADDER HEIGHT.
+- These BOXES
+- came from
+- the OLD house.
+- Everything
+- it MOVED
+- was where
+- it LIVED
+- BEFORE.
+- In the MORNING,
+- it was GONE.
+- Our STACK
+- was BACK
+- by the DOOR.
+- Mum came out
+- WRAPPED
+- in the QUILT.
+- She went
+- for her MUG
+- on the SILL.
+- And for ONCE,
+- she LOOKED UP.
+- She said,
+- "That's LADDER HEIGHT."
+- She LAUGHED
+- till she
+- had to SIT.
+- Her first LAUGH
+- since the SALE.
+- I was LAUGHING TOO.
+- So we UNPACKED
+- the STACK
+- the OLD way.
+- She POINTED.
+- I put it
+- THERE.
+- COATS by the DOOR.
+- The KETTLE
+- on the LEFT.
+- The PHOTOS
+- stayed UP.
+- When we'd EMPTIED
+- the LAST box,
+- Mum opened
+- the hall CUPBOARD.
+- On the SHELF
+- sat ONE more,
+- still taped SHUT.
+- On its FRONT,
+- in black MARKER,
+- a SMILE.
+- Mum CLOSED
+- the CUPBOARD
+- on it.
