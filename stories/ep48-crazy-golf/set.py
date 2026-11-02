@@ -158,7 +158,7 @@ def last_cue(cues, t):
 
 
 # ---------------------------------------------------------------------------------------------- materials
-def shadow_mat(kit, alpha, name, colour="#1d2634"):
+def shadow_mat(kit, alpha, name, colour="#566580"):
     m = kit._new(name)
     nt = m.node_tree
     nt.nodes.remove(nt.nodes["Principled BSDF"])
@@ -283,7 +283,7 @@ def flat_fig(kit, name, pose="stand", bun=False, scale=1.0):
     e = kit.empty(name, (0, 0, -50))
     parts, head = _parts(pose)
     grow = [0.07, 0.035, 0.0]
-    alpha = [0.20, 0.24, 0.30]
+    alpha = [0.14, 0.17, 0.22]
     for L in range(3):
         m = shadow_mat(kit, alpha[L], f"shadow{L}")
         z = 0.012 + 0.003 * L

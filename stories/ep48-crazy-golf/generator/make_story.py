@@ -14,7 +14,43 @@ sys.path.insert(0, str(HERE.parent))
 import golf_layout as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-lines = json.loads((HERE / "lines.json").read_text())
+import re
+orig_lines = json.loads((HERE / "lines.json").read_text())
+# captions are two or three words at a time: longer script chunks are split, and chunk references are remapped
+lines, CHUNKMAP = [], {}
+for ln in orig_lines:
+    if "pause" in ln:
+        lines.append(ln)
+        continue
+    out, mp = [], []
+    for cap, spoken in ln["chunks"]:
+        cw, sw = cap.split(), spoken.split()
+        n = len(cw)
+        k = 1 if n <= 3 else (2 if n <= 6 else 3)
+        sizes = [n // k + (1 if i < n % k else 0) for i in range(k)]
+        mp.append(len(out))
+        i = 0
+        for sz in sizes:
+            out.append([" ".join(cw[i:i + sz]), " ".join(sw[i:i + sz])])
+            i += sz
+    CHUNKMAP[ln["id"]] = mp
+    lines.append({**ln, "chunks": out})
+
+
+def remap(ref):
+    if not isinstance(ref, str):
+        return ref
+    mm = re.match(r"^(L\d+)\.(\d+)(.*)$", ref)
+    if mm and mm.group(1) in CHUNKMAP:
+        return f"{mm.group(1)}.{CHUNKMAP[mm.group(1)][int(mm.group(2))]}{mm.group(3)}"
+    return ref
+
+
+def remap_all(items):
+    for it in items:
+        for key in ("at", "from", "to"):
+            if key in it:
+                it[key] = remap(it[key])
 D2R = math.pi / 180
 
 
@@ -207,7 +243,7 @@ put("c3", 0, [-12.0, -23.0], 90)
 walk("c3", "L02", [2.0, -23.0])
 put("c4", 0, [13.0, -26.0], -90)
 walk("c4", "L02", [-1.0, -26.0])
-shot(0, mv([0.2, -20.4, 1.55], [0.0, -24.9, 1.38], 40), hand=0.006)
+shot(0, mv([0.3, -18.2, 1.45], [0.0, -25.5, 1.25], 32), hand=0.006)
 shot("L01.2", mv([-9.0, -13.0, 0.55], [3.0, -27.0, 1.0], 24, [-8.0, -13.4, 0.55], [3.0, -27.0, 1.0], 24))
 # L02: the shoes on the path, the bench's long shadow; then high over the lawn
 hide("me", "L02")
@@ -256,9 +292,9 @@ shot("L08", mv([-6.0, -21.4, 1.4], [-6.0, -24.0, 1.32], 38))
 
 # ===== 02 the last week (L09 to L22): the course in warm sun
 hide("me", "L09")
-put("dad", "L09.1", [G.KIOSK[0], G.KIOSK[1]], -90, expr="grin")
+put("dad", "L09.1", [2.9, 1.7], -90, expr="grin")
 shot("L09", mv([-5.5, -5.5, 1.7], [1.5, 6.0, 2.4], 24, [-5.0, -5.2, 1.7], [1.5, 6.0, 2.4], 24))
-shot("L09.1", mv([-0.3, -0.5, 1.7], [3.0, 1.7, 1.7], 38))
+shot("L09.1", mv([0.2, 0.2, 1.7], [2.9, 1.7, 1.65], 40))
 put("builder_a", "L10", [-7.6, 1.9], 90, expr="neutral", arms=[40, 40])
 obj("survey", "L10", [-6.9, 1.9, 0.0])
 shot("L10", mv([-5.2, -1.6, 1.4], [-7.3, 1.9, 0.9], 35))
@@ -606,11 +642,14 @@ shot("L76", mv([1.2, 21.8, 0.8], [2.6, 24.5, 0.1], 34, [1.8, 22.9, 0.55], [2.6, 
 # the creature starts hidden; the "x" placeholder cue is dropped
 cue(0, "wring", pos=[0, 0], yaw=180, wring=180, lean=[0, 0], head_extra=0, hide=True)
 
+for k_ in acting.values():
+    remap_all(k_)
+remap_all(cues)
 shots = []
 for i, (at, camera, step, hand, follow) in enumerate(SH):
     s = {"id": f"S{i + 1:03d}", "cam": camera, "step": step}
     if i:
-        s["at"] = at
+        s["at"] = remap(at)
     if hand is not None:
         s["hand"] = hand
     if follow:
@@ -700,5 +739,10 @@ story = {
     "music": music,
     "sound": sound,
 }
+remap_all(sfx)
+remap_all(music["sections"])
+remap_all(sound["music_drops"])
+remap_all(sound["floor_spans"])
+remap_all(sound["ambience"])
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {len(cues)} cues)")

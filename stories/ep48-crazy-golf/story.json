@@ -441,8 +441,12 @@
      "your shadow stays"
     ],
     [
-     "wherever you were HAPPIEST.",
-     "wherever you were happiest."
+     "wherever you",
+     "wherever you"
+    ],
+    [
+     "were HAPPIEST.",
+     "were happiest."
     ]
    ]
   },
@@ -451,8 +455,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Nobody has a shadow",
-     "nobody has a shadow"
+     "Nobody has",
+     "nobody has"
+    ],
+    [
+     "a shadow",
+     "a shadow"
     ],
     [
      "UNDER them.",
@@ -463,8 +471,12 @@
      "they're all"
     ],
     [
-     "out on the GRASS.",
-     "out on the grass."
+     "out on",
+     "out on"
+    ],
+    [
+     "the GRASS.",
+     "the grass."
     ]
    ]
   },
@@ -481,8 +493,12 @@
      "you cool off"
     ],
     [
-     "in a STRANGER'S shadow.",
-     "in a stranger's shadow."
+     "in a",
+     "in a"
+    ],
+    [
+     "STRANGER'S shadow.",
+     "stranger's shadow."
     ]
    ]
   },
@@ -495,8 +511,12 @@
      "gordon's shadow"
     ],
     [
-     "sits on his EX'S doorstep.",
-     "sits on his ex's doorstep."
+     "sits on his",
+     "sits on his"
+    ],
+    [
+     "EX'S doorstep.",
+     "ex's doorstep."
     ],
     [
      "His WIFE",
@@ -517,8 +537,12 @@
      "an old footballer"
     ],
     [
-     "waves to his shadow",
-     "waves to his shadow"
+     "waves to",
+     "waves to"
+    ],
+    [
+     "his shadow",
+     "his shadow"
     ],
     [
      "on the PITCH",
@@ -545,8 +569,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mine has never LEFT",
-     "mine has never left"
+     "Mine has",
+     "mine has"
+    ],
+    [
+     "never LEFT",
+     "never left"
     ],
     [
      "my FEET.",
@@ -563,8 +591,12 @@
      "i thought"
     ],
     [
-     "I'd just never been HAPPY",
-     "i'd just never been happy"
+     "I'd just never",
+     "i'd just never"
+    ],
+    [
+     "been HAPPY",
+     "been happy"
     ],
     [
      "ANYWHERE.",
@@ -607,8 +639,12 @@
      "on sunday,"
     ],
     [
-     "it becomes a CAR PARK.",
-     "it becomes a car park."
+     "it becomes a",
+     "it becomes a"
+    ],
+    [
+     "CAR PARK.",
+     "car park."
     ]
    ]
   },
@@ -621,8 +657,12 @@
      "i'm home"
     ],
     [
-     "for the last WEEK.",
-     "for the last week."
+     "for the",
+     "for the"
+    ],
+    [
+     "last WEEK.",
+     "last week."
     ]
    ]
   },
@@ -639,8 +679,12 @@
      "the builders"
     ],
     [
-     "fence off another HOLE.",
-     "fence off another hole."
+     "fence off",
+     "fence off"
+    ],
+    [
+     "another HOLE.",
+     "another hole."
     ]
    ]
   },
@@ -671,16 +715,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "They sit on the PAVEMENT,",
-     "they sit on the pavement,"
+     "They sit on",
+     "they sit on"
+    ],
+    [
+     "the PAVEMENT,",
+     "the pavement,"
     ],
     [
      "as CLOSE",
      "as close"
     ],
     [
-     "as they can GET.",
-     "as they can get."
+     "as they",
+     "as they"
+    ],
+    [
+     "can GET.",
+     "can get."
     ]
    ]
   },
@@ -693,12 +745,20 @@
      "by wednesday,"
     ],
     [
-     "one shadow is left INSIDE,",
-     "one shadow is left inside,"
+     "one shadow is",
+     "one shadow is"
     ],
     [
-     "on the LAST GREEN.",
-     "on the last green."
+     "left INSIDE,",
+     "left inside,"
+    ],
+    [
+     "on the",
+     "on the"
+    ],
+    [
+     "LAST GREEN.",
+     "last green."
     ]
    ]
   },
@@ -711,8 +771,12 @@
      "every evening,"
     ],
     [
-     "Dad putts round ALONE.",
-     "dad putts round alone."
+     "Dad putts",
+     "dad putts"
+    ],
+    [
+     "round ALONE.",
+     "round alone."
     ]
    ]
   },
@@ -757,12 +821,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "It has a BUN.",
-     "it has a bun."
+     "It has",
+     "it has"
     ],
     [
-     "Dad must have had HAIR",
-     "dad must have had hair"
+     "a BUN.",
+     "a bun."
+    ],
+    [
+     "Dad must have",
+     "dad must have"
+    ],
+    [
+     "had HAIR",
+     "had hair"
     ],
     [
      "back THEN.",
@@ -801,8 +873,12 @@
      "every flag"
     ],
     [
-     "is twisted round its POLE.",
-     "is twisted round its pole."
+     "is twisted round",
+     "is twisted round"
+    ],
+    [
+     "its POLE.",
+     "its pole."
     ]
    ]
   },
@@ -815,12 +891,20 @@
      "on wednesday,"
     ],
     [
-     "there's a second BALL",
-     "there's a second ball"
+     "there's a",
+     "there's a"
     ],
     [
-     "in the last CUP.",
-     "in the last cup."
+     "second BALL",
+     "second ball"
+    ],
+    [
+     "in the",
+     "in the"
+    ],
+    [
+     "last CUP.",
+     "last cup."
     ]
    ]
   },
@@ -833,8 +917,12 @@
      "on thursday,"
     ],
     [
-     "I go to bed EARLY.",
-     "i go to bed early."
+     "I go to",
+     "i go to"
+    ],
+    [
+     "bed EARLY.",
+     "bed early."
     ]
    ]
   },
@@ -880,12 +968,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "His PUTTER is lying",
-     "his putter is lying"
+     "His PUTTER",
+     "his putter"
     ],
     [
-     "on the last GREEN.",
-     "on the last green."
+     "is lying",
+     "is lying"
+    ],
+    [
+     "on the",
+     "on the"
+    ],
+    [
+     "last GREEN.",
+     "last green."
     ]
    ]
   },
@@ -894,12 +990,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "His FLASK is on the bench,",
-     "his flask is on the bench,"
+     "His FLASK is",
+     "his flask is"
     ],
     [
-     "with the lid OFF.",
-     "with the lid off."
+     "on the bench,",
+     "on the bench,"
+    ],
+    [
+     "with the",
+     "with the"
+    ],
+    [
+     "lid OFF.",
+     "lid off."
     ]
    ]
   },
@@ -908,8 +1012,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Every FLAG on the course",
-     "every flag on the course"
+     "Every FLAG on",
+     "every flag on"
+    ],
+    [
+     "the course",
+     "the course"
     ],
     [
      "is wrung TIGHT.",
@@ -940,8 +1048,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I call his name",
-     "i call his name"
+     "I call",
+     "i call"
+    ],
+    [
+     "his name",
+     "his name"
     ],
     [
      "at every HOLE.",
@@ -998,8 +1110,12 @@
      "at dawn,"
     ],
     [
-     "I open the front DOOR.",
-     "i open the front door."
+     "I open the",
+     "i open the"
+    ],
+    [
+     "front DOOR.",
+     "front door."
     ]
    ]
   },
@@ -1008,8 +1124,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He's on the bench",
-     "he's on the bench"
+     "He's on",
+     "he's on"
+    ],
+    [
+     "the bench",
+     "the bench"
     ],
     [
      "under my WINDOW.",
@@ -1036,8 +1156,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "His coat is WET",
-     "his coat is wet"
+     "His coat",
+     "his coat"
+    ],
+    [
+     "is WET",
+     "is wet"
     ],
     [
      "with DEW.",
@@ -1054,8 +1178,12 @@
      "on friday,"
     ],
     [
-     "the fence goes round",
-     "the fence goes round"
+     "the fence",
+     "the fence"
+    ],
+    [
+     "goes round",
+     "goes round"
     ],
     [
      "the LAST HOLE.",
@@ -1094,8 +1222,12 @@
      "has two tees."
     ],
     [
-     "One for each PLAYER.",
-     "one for each player."
+     "One for",
+     "one for"
+    ],
+    [
+     "each PLAYER.",
+     "each player."
     ]
    ]
   },
@@ -1104,12 +1236,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "On the SECOND tee,",
-     "on the second tee,"
+     "On the",
+     "on the"
     ],
     [
-     "the grass is PRESSED",
-     "the grass is pressed"
+     "SECOND tee,",
+     "second tee,"
+    ],
+    [
+     "the grass",
+     "the grass"
+    ],
+    [
+     "is PRESSED",
+     "is pressed"
     ],
     [
      "into two FOOTPRINTS.",
@@ -1122,12 +1262,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Each time Dad PUTTS,",
-     "each time dad putts,"
+     "Each time",
+     "each time"
     ],
     [
-     "I hear that CREAK again.",
-     "i hear that creak again."
+     "Dad PUTTS,",
+     "dad putts,"
+    ],
+    [
+     "I hear that",
+     "i hear that"
+    ],
+    [
+     "CREAK again.",
+     "creak again."
     ]
    ]
   },
@@ -1163,8 +1311,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And I SEE it.",
-     "and i see it."
+     "And I",
+     "and i"
+    ],
+    [
+     "SEE it.",
+     "see it."
     ]
    ]
   },
@@ -1177,8 +1329,12 @@
      "it's standing"
     ],
     [
-     "on the SECOND tee.",
-     "on the second tee."
+     "on the",
+     "on the"
+    ],
+    [
+     "SECOND tee.",
+     "second tee."
     ]
    ]
   },
@@ -1191,8 +1347,12 @@
      "a person,"
     ],
     [
-     "wrung like a CLOTH.",
-     "wrung like a cloth."
+     "wrung like",
+     "wrung like"
+    ],
+    [
+     "a CLOTH.",
+     "a cloth."
     ]
    ]
   },
@@ -1223,8 +1383,12 @@
      "is turned further"
     ],
     [
-     "than the one BELOW.",
-     "than the one below."
+     "than the",
+     "than the"
+    ],
+    [
+     "one BELOW.",
+     "one below."
     ]
    ]
   },
@@ -1241,8 +1405,12 @@
      "looks back"
     ],
     [
-     "over its own SPINE.",
-     "over its own spine."
+     "over its",
+     "over its"
+    ],
+    [
+     "own SPINE.",
+     "own spine."
     ]
    ]
   },
@@ -1251,12 +1419,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "White as the WINDMILL.",
-     "white as the windmill."
+     "White as",
+     "white as"
     ],
     [
-     "Green as the POND.",
-     "green as the pond."
+     "the WINDMILL.",
+     "the windmill."
+    ],
+    [
+     "Green as",
+     "green as"
+    ],
+    [
+     "the POND.",
+     "the pond."
     ]
    ]
   },
@@ -1297,16 +1473,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Each time I BLINK,",
-     "each time i blink,"
+     "Each time",
+     "each time"
+    ],
+    [
+     "I BLINK,",
+     "i blink,"
     ],
     [
      "it's turned",
      "it's turned"
     ],
     [
-     "a little further ROUND.",
-     "a little further round."
+     "a little",
+     "a little"
+    ],
+    [
+     "further ROUND.",
+     "further round."
     ]
    ]
   },
@@ -1341,8 +1525,12 @@
      "over the green,"
     ],
     [
-     "slow as a BOW.",
-     "slow as a bow."
+     "slow as",
+     "slow as"
+    ],
+    [
+     "a BOW.",
+     "a bow."
     ]
    ]
   },
@@ -1351,8 +1539,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad doesn't look UP.",
-     "dad doesn't look up."
+     "Dad doesn't",
+     "dad doesn't"
+    ],
+    [
+     "look UP.",
+     "look up."
     ],
     [
      "He never DOES.",
@@ -1365,8 +1557,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I squeeze through the GAP",
-     "i squeeze through the gap"
+     "I squeeze through",
+     "i squeeze through"
+    ],
+    [
+     "the GAP",
+     "the gap"
     ],
     [
      "onto the GREEN.",
@@ -1407,8 +1603,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then I look down",
-     "then i look down"
+     "Then I",
+     "then i"
+    ],
+    [
+     "look down",
+     "look down"
     ],
     [
      "at MY FEET.",
@@ -1421,8 +1621,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Its head is ROUND",
-     "its head is round"
+     "Its head",
+     "its head"
+    ],
+    [
+     "is ROUND",
+     "is round"
     ],
     [
      "and BALD.",
@@ -1435,8 +1639,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The shadow on the green",
-     "the shadow on the green"
+     "The shadow on",
+     "the shadow on"
+    ],
+    [
+     "the green",
+     "the green"
     ],
     [
      "is MINE,",
@@ -1447,8 +1655,12 @@
      "from the summers"
     ],
     [
-     "he taught me the COURSE.",
-     "he taught me the course."
+     "he taught me",
+     "he taught me"
+    ],
+    [
+     "the COURSE.",
+     "the course."
     ]
    ]
   },
@@ -1457,8 +1669,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The one under me",
-     "the one under me"
+     "The one",
+     "the one"
+    ],
+    [
+     "under me",
+     "under me"
     ],
     [
      "is DAD'S.",
@@ -1493,20 +1709,32 @@
      "on thursday,"
     ],
     [
-     "he sat all night",
-     "he sat all night"
+     "he sat",
+     "he sat"
+    ],
+    [
+     "all night",
+     "all night"
     ],
     [
      "under my WINDOW,",
      "under my window,"
     ],
     [
-     "as close to his shadow",
-     "as close to his shadow"
+     "as close to",
+     "as close to"
     ],
     [
-     "as he could GET.",
-     "as he could get."
+     "his shadow",
+     "his shadow"
+    ],
+    [
+     "as he",
+     "as he"
+    ],
+    [
+     "could GET.",
+     "could get."
     ]
    ]
   },
@@ -1543,8 +1771,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It leans its wrung FACE",
-     "it leans its wrung face"
+     "It leans its",
+     "it leans its"
+    ],
+    [
+     "wrung FACE",
+     "wrung face"
     ],
     [
      "right down",
@@ -1565,8 +1797,12 @@
      "i putt."
     ],
     [
-     "When I look UP,",
-     "when i look up,"
+     "When I",
+     "when i"
+    ],
+    [
+     "look UP,",
+     "look up,"
     ],
     [
      "the tee",
@@ -1583,8 +1819,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "We play the last hole",
-     "we play the last hole"
+     "We play the",
+     "we play the"
+    ],
+    [
+     "last hole",
+     "last hole"
     ],
     [
      "TOGETHER.",
@@ -1614,8 +1854,12 @@
      "on sunday,"
     ],
     [
-     "Dad opens the gate",
-     "dad opens the gate"
+     "Dad opens",
+     "dad opens"
+    ],
+    [
+     "the gate",
+     "the gate"
     ],
     [
      "for FREE.",
@@ -1632,8 +1876,12 @@
      "the whole town"
     ],
     [
-     "comes for a last ROUND.",
-     "comes for a last round."
+     "comes for a",
+     "comes for a"
+    ],
+    [
+     "last ROUND.",
+     "last round."
     ]
    ]
   },
@@ -1642,8 +1890,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The shadows on the PAVEMENT",
-     "the shadows on the pavement"
+     "The shadows on",
+     "the shadows on"
+    ],
+    [
+     "the PAVEMENT",
+     "the pavement"
     ],
     [
      "slide back IN,",
@@ -1660,8 +1912,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "At the last HOLE,",
-     "at the last hole,"
+     "At the",
+     "at the"
+    ],
+    [
+     "last HOLE,",
+     "last hole,"
     ],
     [
      "his shadow stretches",
@@ -1690,8 +1946,12 @@
      "your shadow stays"
     ],
     [
-     "where you were HAPPIEST.",
-     "where you were happiest."
+     "where you",
+     "where you"
+    ],
+    [
+     "were HAPPIEST.",
+     "were happiest."
     ]
    ]
   },
@@ -1718,8 +1978,12 @@
      "mine's under"
     ],
     [
-     "the new CAR PARK.",
-     "the new car park."
+     "the new",
+     "the new"
+    ],
+    [
+     "CAR PARK.",
+     "car park."
     ]
    ]
   }
@@ -1731,16 +1995,16 @@
     [
      0,
      [
-      0.2,
-      -20.4,
-      1.55
+      0.3,
+      -18.2,
+      1.45
      ],
      [
       0.0,
-      -24.9,
-      1.38
+      -25.5,
+      1.25
      ],
-     40,
+     32,
      0.0
     ]
    ],
@@ -1841,7 +2105,7 @@
     ]
    ],
    "step": 2,
-   "at": "L02.2"
+   "at": "L02.3"
   },
   {
    "id": "S005",
@@ -1907,7 +2171,7 @@
     ]
    ],
    "step": 2,
-   "at": "L04.2"
+   "at": "L04.3"
   },
   {
    "id": "S008",
@@ -1951,7 +2215,7 @@
     ]
    ],
    "step": 2,
-   "at": "L05.2"
+   "at": "L05.3"
   },
   {
    "id": "S010",
@@ -2063,16 +2327,16 @@
     [
      0,
      [
-      -0.3,
-      -0.5,
+      0.2,
+      0.2,
       1.7
      ],
      [
-      3.0,
+      2.9,
       1.7,
-      1.7
+      1.65
      ],
-     38,
+     40,
      0.0
     ]
    ],
@@ -2290,7 +2554,7 @@
     ]
    ],
    "step": 2,
-   "at": "L15.2"
+   "at": "L15.3"
   },
   {
    "id": "S024",
@@ -2400,7 +2664,7 @@
     ]
    ],
    "step": 2,
-   "at": "L19.1"
+   "at": "L19.2"
   },
   {
    "id": "S029",
@@ -2664,7 +2928,7 @@
     ]
    ],
    "step": 2,
-   "at": "L27.1"
+   "at": "L27.2"
   },
   {
    "id": "S041",
@@ -3018,7 +3282,7 @@
     ]
    ],
    "step": 2,
-   "at": "L40.1"
+   "at": "L40.2"
   },
   {
    "id": "S057",
@@ -3062,7 +3326,7 @@
     ]
    ],
    "step": 2,
-   "at": "L41.1"
+   "at": "L41.2"
   },
   {
    "id": "S059",
@@ -3407,7 +3671,7 @@
     ]
    ],
    "step": 2,
-   "at": "L52.2"
+   "at": "L52.3"
   },
   {
    "id": "S074",
@@ -3664,7 +3928,7 @@
     ]
    ],
    "step": 2,
-   "at": "L61.2"
+   "at": "L61.3"
   },
   {
    "id": "S085",
@@ -3767,7 +4031,7 @@
     ]
    ],
    "step": 2,
-   "at": "L64.3"
+   "at": "L64.4"
   },
   {
    "id": "S089",
@@ -3943,7 +4207,7 @@
     ]
    ],
    "step": 2,
-   "at": "L69.2"
+   "at": "L69.3"
   },
   {
    "id": "S097",
@@ -4031,7 +4295,7 @@
     ]
    ],
    "step": 2,
-   "at": "L72.2"
+   "at": "L72.3"
   },
   {
    "id": "S101",
@@ -4075,7 +4339,7 @@
     ]
    ],
    "step": 2,
-   "at": "L73.2"
+   "at": "L73.3"
   },
   {
    "id": "S103",
@@ -4309,7 +4573,7 @@
     "expr": "neutral"
    },
    {
-    "at": "L19.1",
+    "at": "L19.2",
     "pos": [
      5.7,
      25.6
@@ -4373,14 +4637,14 @@
     "hidden": true
    },
    {
-    "at": "L27.1",
+    "at": "L27.2",
     "pos": [
      150.0,
      9.9
     ]
    },
    {
-    "at": "L27.1",
+    "at": "L27.2",
     "pos": [
      3.4,
      24.8
@@ -4468,14 +4732,14 @@
     "hidden": true
    },
    {
-    "at": "L40.1",
+    "at": "L40.2",
     "pos": [
      149.0,
      28.2
     ]
    },
    {
-    "at": "L40.1",
+    "at": "L40.2",
     "pos": [
      2.2,
      16.9
@@ -4508,7 +4772,7 @@
     "expr": "scared"
    },
    {
-    "at": "L56.1",
+    "at": "L56.2",
     "pos": [
      0.2,
      18.9
@@ -4632,14 +4896,14 @@
     ]
    },
    {
-    "at": "L61.2",
+    "at": "L61.3",
     "pos": [
      -1.2,
      23.8
     ]
    },
    {
-    "at": "L61.2",
+    "at": "L61.3",
     "pos": [
      -1.0,
      26.0
@@ -4766,7 +5030,7 @@
     ]
    },
    {
-    "at": "L69.2",
+    "at": "L69.3",
     "pos": [
      0.6,
      25.8
@@ -4840,7 +5104,7 @@
    {
     "at": "L09.1",
     "pos": [
-     3.3,
+     2.9,
      1.7
     ],
     "blend": 0.0,
@@ -4851,7 +5115,7 @@
    {
     "at": "L11",
     "pos": [
-     3.3,
+     2.9,
      1.7
     ],
     "arms": [
@@ -4863,7 +5127,7 @@
    {
     "at": "L12",
     "pos": [
-     3.3,
+     2.9,
      1.7
     ],
     "arms": [
@@ -4875,7 +5139,7 @@
    {
     "at": "L16",
     "pos": [
-     3.3,
+     2.9,
      1.7
     ]
    },
@@ -5076,14 +5340,14 @@
     ]
    },
    {
-    "at": "L61.2",
+    "at": "L61.3",
     "pos": [
      -0.9,
      19.95
     ]
    },
    {
-    "at": "L61.2",
+    "at": "L61.3",
     "pos": [
      2.9,
      25.7
@@ -5138,7 +5402,7 @@
     ]
    },
    {
-    "at": "L64.3",
+    "at": "L64.4",
     "hidden": true
    },
    {
@@ -5178,7 +5442,7 @@
     "expr": "grin"
    },
    {
-    "at": "L69.2",
+    "at": "L69.3",
     "pos": [
      -0.6,
      25.8
@@ -5261,14 +5525,14 @@
     ]
    },
    {
-    "at": "L04.2",
+    "at": "L04.3",
     "pos": [
      0,
      0
     ]
    },
    {
-    "at": "L04.2",
+    "at": "L04.3",
     "pos": [
      -22.7,
      -2.1
@@ -5315,14 +5579,14 @@
     ]
    },
    {
-    "at": "L04.2",
+    "at": "L04.3",
     "pos": [
      0,
      0
     ]
    },
    {
-    "at": "L04.2",
+    "at": "L04.3",
     "pos": [
      -21.4,
      -2.1
@@ -5649,14 +5913,14 @@
     "hidden": true
    },
    {
-    "at": "L72.2",
+    "at": "L72.3",
     "pos": [
      -9.6,
      5.0
     ]
    },
    {
-    "at": "L72.2",
+    "at": "L72.3",
     "pos": [
      -7.5,
      6.0
@@ -5749,14 +6013,14 @@
     "hidden": true
    },
    {
-    "at": "L72.2",
+    "at": "L72.3",
     "pos": [
      -5.6,
      10.4
     ]
    },
    {
-    "at": "L72.2",
+    "at": "L72.3",
     "pos": [
      -1.9,
      11.0
@@ -5805,14 +6069,14 @@
     ]
    },
    {
-    "at": "L02.2",
+    "at": "L02.3",
     "pos": [
      2.0,
      -23.0
     ]
    },
    {
-    "at": "L02.2",
+    "at": "L02.3",
     "pos": [
      -3.0,
      -20.0
@@ -5873,14 +6137,14 @@
     "hidden": true
    },
    {
-    "at": "L72.2",
+    "at": "L72.3",
     "pos": [
      6.4,
      4.6
     ]
    },
    {
-    "at": "L72.2",
+    "at": "L72.3",
     "pos": [
      4.0,
      5.6
@@ -7379,7 +7643,7 @@
    "dur": 2.0
   },
   {
-   "at": "L41.1",
+   "at": "L41.2",
    "name": "flag",
    "which": "near",
    "wound": 2
@@ -7471,7 +7735,7 @@
    "head_extra": 0.0
   },
   {
-   "at": "L52.2",
+   "at": "L52.3",
    "name": "wring",
    "pos": [
     0.9,
@@ -7552,7 +7816,7 @@
    "dur": 1.0
   },
   {
-   "at": "L61.2",
+   "at": "L61.3",
    "name": "obj",
    "id": "putter2",
    "pos": [
@@ -7587,13 +7851,13 @@
    "z": 0.5
   },
   {
-   "at": "L64.3",
+   "at": "L64.4",
    "name": "look",
    "id": "dusk_str",
    "dur": 0.6
   },
   {
-   "at": "L64.3",
+   "at": "L64.4",
    "name": "sit",
    "who": "dad",
    "on": false,
@@ -8336,7 +8600,7 @@
     "dur": 1.5
    },
    {
-    "at": "L41.1-0.3",
+    "at": "L41.2-0.3",
     "kind": "creak",
     "db": -14,
     "dur": 1.2
@@ -8358,7 +8622,7 @@
     "dur": 1.0
    },
    {
-    "at": "L52.2",
+    "at": "L52.3",
     "kind": "creak",
     "db": -12,
     "dur": 1.0
