@@ -37,6 +37,20 @@ def next_story(done: dict) -> str | None:
     return None
 
 
+def cover(d: Path, s: str) -> tuple[str, str] | None:
+    """Commit the film's cover frame to covers/<slug>.jpg so the issue can show it; returns (url, m:ss)."""
+    jpg = next(d.rglob(f"{s}.cover.jpg"), None)
+    if jpg is None:
+        return None
+    txt = next(d.rglob(f"{s}.cover.txt"), None)
+    t = float(txt.read_text().strip()) if txt else 0.0
+    dst = ROOT / "covers" / f"{s}.jpg"
+    dst.parent.mkdir(exist_ok=True)
+    dst.write_bytes(jpg.read_bytes())
+    subprocess.run(["git", "-C", str(ROOT), "add", str(dst)], check=True)
+    return f"https://raw.githubusercontent.com/{REPO}/main/covers/{s}.jpg", f"{int(t) // 60}:{int(t) % 60:02d}"
+
+
 def fetch(story: str, d: Path) -> tuple[Path, dict]:
     f = film(story)
     subprocess.run(["gh", "run", "download", str(f["run_id"]), "--repo", REPO, "-n", f"film-{story}", "-D", str(d)],
@@ -146,15 +160,17 @@ def main() -> None:
                   f"<details><summary>Title and description</summary>\n\n```\n{title}\n\n{desc}```\n</details>\n\n"
                   f"Close this issue once it's public.")
         else:
+            cv = cover(Path(td), s)
             record(story, {"manual": True, "issued": today, "title": title})
+            shot = (f"**Cover** (pick the {cv[1]} moment as the Short's thumbnail):\n\n![cover]({cv[0]})\n\n" if cv else "")
             issue(f"Upload by hand: {title}",
-                  f"**{s}** is ready for PandaNanoAdventures. Automatic uploads are off until the YouTube API audit is "
-                  f"approved (then set the repo variable `YT_AUDITED` to `true`), so upload it by hand:\n\n"
-                  f"1. Download `{s}.mp4` from {rel}\n"
-                  f"2. Upload in Studio with the title and description below. Made for kids: **No**. "
-                  f"Altered or synthetic content: **No**.\n"
-                  f"3. Pin this comment:\n\n> {pin}\n\n"
-                  f"```\n{title}\n\n{desc}```\n\nClose this issue once it's public.")
+                  f"**{s}** is ready for PandaNanoAdventures.\n\n"
+                  f"**Video:** open {film(story)['url']} and tap **film-{story}** under Artifacts "
+                  f"(a zip with `{s}.mp4`).\n\n"
+                  f"**Title**\n```\n{title}\n```\n**Description**\n```\n{desc}```\n"
+                  f"**Pinned comment** (post it as your own first comment)\n```\n{pin}\n```\n"
+                  f"**Settings:** Made for kids: **No**. Altered or synthetic content: **No**.\n\n"
+                  f"{shot}Close this issue once it's public.")
 
 
 if __name__ == "__main__":
