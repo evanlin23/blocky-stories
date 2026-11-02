@@ -13837,8 +13837,20 @@
    "neck": -31,
    "roll": 0,
    "pitch": 25,
-   "hyaw": -20,
-   "drop": 1.1
+   "hyaw": -32,
+   "drop": 1.25
+  },
+  {
+   "at": "L57",
+   "name": "sface",
+   "level": 1.0,
+   "dur": 1.0
+  },
+  {
+   "at": "L58",
+   "name": "sface",
+   "level": 0.0,
+   "dur": 0.5
   },
   {
    "at": "L58",

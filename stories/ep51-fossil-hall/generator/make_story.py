@@ -472,7 +472,9 @@ shot("L54.3", "hall", C([-0.69, -1.45, 0.08], [-0.69, -2.9, 0.62], 34), {"abe": 
 shot("L55", "hall", C([-0.69, -1.45, 0.08], [-0.69, -2.9, 0.62], 34), {"abe": ABE_B},
      "hold the S072 framing: its face the right way up, eyes on camera, lit warm on one side only (the cover)", hand=0.003)
 shot("L56", "hall", C([2.8, 0.6, 0.7], [-0.25, -3.0, 1.5], 28), {"abe": ABE_B}, "two-shot, low three-quarter: Grandad glowing, the Stooped a dark outline bent over my seat, no rim")
-stooped("L57", roll=0, neck=-31, pitch=25, drop=1.1, hyaw=-20)
+stooped("L57", roll=0, neck=-31, pitch=25, drop=1.25, hyaw=-32)
+cue("L57", "sface", level=1.0, dur=1.0)
+cue("L58", "sface", level=0.0, dur=0.5)
 shot("L57", "hall", C([3.2, -1.7, 1.45], [-0.69, -2.0, 1.4], 30), {
     "abe": ABE_B, "me": P(-0.69, -1.7, 180, expr="scared", lean=4, head=[0, 18])}, "side on: its face leans up under my chin, a hand's width away", hand=0.003)
 # ---- 06 the loophole (L58 to L70)

@@ -310,6 +310,8 @@ def build_hall(kit, M, ctx):
             B(kit, f"lampface {x} {dy}", (1.8, 0.2, 0.06), (x, -2.0 + dy, 7.1), M["lamp"])
     kit.light("stooped rim", "SPOT", (-1.0, -8.2, 3.0), 700.0, "#8fb0ff", size=0.3, spot=34, blend=0.7)
     kit.aim(kit.LIGHTS["stooped rim"]["obj"], (-1.0, -3.9, 1.2))
+    kit.light("stooped face", "SPOT", (1.2, -2.5, 1.45), 60.0, "#ffd9a0", size=0.4, spot=15, blend=0.9)
+    kit.aim(kit.LIGHTS["stooped face"]["obj"], (-0.75, -2.55, 1.15))
     kit.light("tail gold", "POINT", (5.6, -0.5, 2.3), 140.0, GOLD, size=0.3)
     kit.light("hall blue", "AREA", (0, -1.5, 6.8), 650.0, "#7f9bd6", rot=(0, 0, 0), size=10.0)
     ctx["lamp_mat"] = M["lamp"]
@@ -784,6 +786,7 @@ def animate(kit, story, tl, t, ctx):
     else:
         rimo.location = (-1.0, -8.2, 3.0)
         kit.aim(rimo, (-1.0, -3.9, 1.2))
+    over["stooped face"] = _eased(_cues(tl, "sface"), "level", t, 0.0)
     over["tally lamp"] = _eased(_cues(tl, "tally"), "on", t, 0.0)
     # ---- the torch rolling in slow circles by the skeleton's feet
     tg = _eased(_cues(tl, "torch"), "on", t, 0.0)
