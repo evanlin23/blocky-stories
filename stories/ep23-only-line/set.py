@@ -475,7 +475,7 @@ MOODS = {
             "wash": "#ffb868", "exp": 0.5},
     "cold": {"gains": dict(_COLD), "wash": "#a9b9e6", "exp": 0.0},
     "open": {"gains": {"wash_l": 1.0, "wash_r": 1.0, "wash_top": 1.0, "wash_back": 1.0, "run1": 0.8, "run2": 0.4,
-                       "run3": 0.8, "ghost": 0.3, "aud": 1.0, "wing_fill": 1.0},
+                       "run3": 0.8, "ghost": 0.3, "aud": 1.0, "wing_fill": 1.5, "wing_fill2": 2.5},
              "wash": "#ffb868", "exp": 0.0},
     # the flat and the car are far from the stage: the stage keeps its light, so the next stage shot starts where it was
     "flat": {"gains": {**_COLD, "flat_lamp": 1.0, "flat_fill": 1.0}, "wash": "#a9b9e6", "exp": 0.0},
@@ -499,6 +499,7 @@ def build_lights(kit, ctx):
     lamp(kit, "run3", "POINT", (4.5, 2.6, 0.4), 70.0, "#3f66ff", size=0.1)
     lamp(kit, "chalk_lit", "SPOT", (5.3, 6.0, 1.5), 7.0, "#7f94dc", aim=(5.3, 7.2, 0.9), spot=45, blend=0.6, size=0.1)
     lamp(kit, "wing_fill", "POINT", (4.3, 2.2, 2.8), 110.0, "#8da0e0", size=0.2)
+    lamp(kit, "wing_fill2", "POINT", (4.2, 4.8, 2.4), 90.0, "#8da0e0", size=0.2)
     lamp(kit, "marion_lamp", "SPOT", (0.2, -3.0, 2.0), 600.0, "#ffc890", aim=(-0.58, -4.5, 0.95), spot=40, blend=0.5, size=0.15)
     lamp(kit, "aud", "AREA", (0, -2.0, 4.2), 1300.0, "#6d82b4", aim=(0, -8.0, 0.4), size=8.0)
     fx, fy = ctx["places"]["flat"]
@@ -540,7 +541,7 @@ def build(kit, story, tl):
     build_lights(kit, ctx)
     objs = ctx["pr"]["objs"]
     # the stage wash doesn't reach the Prompter: its front lights are dead
-    for nm in WASH_NAMES + ("work_l", "work_r", "work_house", "ghost_fill", "aud", "wing_fill"):
+    for nm in WASH_NAMES + ("work_l", "work_r", "work_house", "ghost_fill", "aud", "wing_fill", "wing_fill2"):
         light_except(kit, "pr dark", nm, objs)
     ctx["costumes"] = False
     return ctx

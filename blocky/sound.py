@@ -556,8 +556,8 @@ def _clap(dur: float, seed: int) -> np.ndarray:
         b = fft_filter(synth.noise(0.09, seed + k), "band", 900, 3800) * synth.decay(0.09, 0.016, 0.0006)[: synth.n_samples(0.09)]
         i = int(t0 * SR)
         y[i:i + len(b)] += b * g
-    tail = fft_filter(synth.noise(d, seed + 9), "band", 300, 1800) * synth.decay(d, d / 4.5, 0.012)[: len(y)]
-    y += tail * 0.22
+    tail = fft_filter(synth.noise(d, seed + 9), "band", 300, 1800) * synth.decay(d, d / 3.2, 0.012)[: len(y)]
+    y += tail * 0.3
     return y / max(1e-9, np.abs(y).max()) * 0.9
 
 

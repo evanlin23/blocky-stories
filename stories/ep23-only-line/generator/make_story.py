@@ -89,7 +89,7 @@ for ln in lines:
 for ln in lines:
     if ln["id"] == "P04":
         ln["pause"] = 1.0
-lines = lines + [{"id": "P05", "pause": 0.36, "chunks": []}]
+lines = lines + [{"id": "P05", "pause": 0.42, "chunks": []}]
 
 for ln in lines:      # "around", not "round": Whisper writes the American spelling and so does the narrator
     for ch in ln.get("chunks", []):
@@ -186,8 +186,8 @@ def face(pos, d=3.0, lens=50, ang=0.0, h=1.62, tz=1.34, push=0.0, lens2=None, z0
 HOUSE_WIDE = still([0.0, -8.0, 1.45], [0.8, 3.0, 1.2], 24)
 LOW_CROSS = still([1.3, 1.5, 0.3], [YEL[0], YEL[1], 0.05], 28)
 WINGS_FROM_MARK = still([1.4, 2.0, 1.7], [4.5, 4.5, 1.4], 28)
-TRACK_L = c([0, [-3.6, 0.6, 1.5], [-3.4, 3.0, 1.4], 32], [1, [1.6, 0.6, 1.5], [1.8, 3.0, 1.4], 32])
-TRACK_R = c([0, [1.6, 0.6, 1.5], [1.8, 3.0, 1.4], 32], [1, [-3.6, 0.6, 1.5], [-3.4, 3.0, 1.4], 32])
+TRACK_L = c([0, [-0.9, -0.4, 1.5], [-0.9, 3.0, 1.35], 28], [1, [0.5, -0.4, 1.5], [0.5, 3.0, 1.35], 28])
+TRACK_R = c([0, [0.5, -0.4, 1.5], [0.5, 3.0, 1.35], 28], [1, [-0.9, -0.4, 1.5], [-0.9, 3.0, 1.35], 28])
 MARION_CAM = [-0.8 + 0.5, -1.5, 1.25]
 SEATED_MARION = [ROW3[0], ROW3[1], 1.1]
 FLAT_FACE = still([FLAT[0] - 0.15, FLAT[1] + 2.2, 1.28], [FLAT[0], FLAT[1] - 0.75, 1.0], 38)
@@ -266,7 +266,7 @@ SHOTS = [
     ("L62", "it stands on my mark, facing the seats", 1, still([0.6, -6.5, 1.45], [2.3, 2.9, 1.5], 30)),
     ("L64", "the mask turned all the way round to me", 1, still([1.2, 4.9, 1.75], [YEL[0], YEL[1], 1.55], 22)),
     ("L65", "an arm's length from my nose", 1, still([YEL[0] + 0.5, 4.4, 1.9], [YEL[0], YEL[1], 1.75], 28)),
-    ("L66", "the open mouth", 1, still([YEL[0] + 0.1, 3.4, 1.62], [YEL[0], YEL[1], 1.55], 28)),
+    ("L66", "the open mouth", 1, still([YEL[0] + 0.05, 3.45, 1.62], [YEL[0], YEL[1], 1.6], 20)),
     ("L67", "Marion writing, not looking up", 2, still([1.2, 0.5, 1.2], [ROW3[0], ROW3[1] + 0.2, 1.0], 36)),
     ("L68", "the yellow cross alone", 2, still([3.0, 1.0, 0.5], [YEL[0], YEL[1], 0.05], 30)),
     # 07 what it was doing
@@ -578,7 +578,8 @@ sfx = [
     {"at": "L66>", "kind": "hit", "db": -8, "dur": 1.6},
     {"at": "L87", "kind": "creak", "db": -30, "dur": 0.8},
     {"at": "L93", "kind": "bell", "db": -34},
-    {"at": "P04>", "kind": "clap", "db": -9, "dur": 0.9},
+    {"at": "P04>", "kind": "clap", "db": -9, "dur": 1.4},
+    {"at": "P04>", "kind": "thud", "db": -22},
 ]
 
 story = {
