@@ -965,7 +965,7 @@ def animate(kit, story, tl, t, ctx):
     bl = ramp_level(_cues(tl, "beam"), t)
     over["bus beam"] = 1500.0 * bl
     over["coach beam"] = 0.0
-    over["strip fill"] = 900.0 * ramp_level(_cues(tl, "tfill"), t)
+    over["strip fill"] = 2600.0 * ramp_level(_cues(tl, "tfill"), t)
     over["shelter fill"] = 250.0 * ramp_level(_cues(tl, "sfill"), t)
     for nm in ("bus",):
         lamps = ctx["veh"][nm][1]
