@@ -303,11 +303,11 @@ shot("S68", "L68", "the dais stool: a dent in the cushion", still([1.1, -1.6, 1.
 shot("S69", "L69", "Mum at the door in daylight", still([-1.8, -1.0, 1.6], [-5.2, -2.85, 1.45], 26))
 shot("S70", "L70", "the dais on its edge: nine strokes", still([-1.2, 1.8, 1.1], [-5.3, 1.8, 0.75], 22))
 shot("S71", "L71", "Mum before my painting", still([-1.4, -0.9, 1.65], [-5.5, -0.9, 1.5], 26))
-shot("S72", "L72", "Mum's whole face", still(front((-4.2, -0.9), -50, 1.5, 1.6), [-4.2, -0.9, 1.45], 28))
+shot("S72", "L72", "Mum's whole face", still(front((-4.2, -0.9), -50, 1.5, 1.6), [-4.2, -0.9, 1.45], 28), ev=0.45)
 shot("S73", "L73", "me and Mum, the painting between us", still([-1.8, -0.8, 1.6], [-5.2, -0.8, 1.45], 26))
-shot("S74", "L74", "Kofi smiling, Mum smiling, her hand up", still([-5.3, -0.05, 1.55], [-2.9, -0.05, 1.1], 18))
+shot("S74", "L74", "Kofi smiling, Mum smiling, her hand up", still([-5.3, -0.05, 1.55], [-2.9, -0.05, 1.1], 18), ev=0.4)
 # 08 Mum's hall
-shot("S75", "L75", "Mum's hall, bright morning, lifting the painting", still([HX + 1.1, 0.5, 1.5], [HX - 0.8, 1.7, 1.35], 18))
+shot("S75", "L75", "Mum's hall, bright morning, lifting the painting", still([HX + 1.1, 0.5, 1.5], [HX - 0.8, 1.7, 1.35], 18), ev=0.5)
 shot("S76", "L76", "the portrait hung alone, the jar below", still([HX + 1.1, 0.3, 1.45], [HX - 1.0, 1.2, 1.4], 18))
 
 shots = []

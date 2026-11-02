@@ -3886,6 +3886,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "Mum's whole face",
+   "ev": 0.45,
    "at": "L72"
   },
   {
@@ -3932,6 +3933,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "Kofi smiling, Mum smiling, her hand up",
+   "ev": 0.4,
    "at": "L74"
   },
   {
@@ -3955,6 +3957,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "Mum's hall, bright morning, lifting the painting",
+   "ev": 0.5,
    "at": "L75"
   },
   {
