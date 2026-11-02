@@ -548,7 +548,10 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         f0 = 62.0 * (2.0 ** (-fall * t / dur / 12.0) if fall else 1.0)
         throb = np.sin(2 * np.pi * np.cumsum(f0) / SR) * 0.35
         flutter = 0.82 + 0.18 * np.sin(2 * np.pi * 17.0 * t + seed)
-        return (body * flutter + hiss + throb) * env
+        y = (body * flutter + hiss + throb) * env
+        if fall:
+            y = np.tanh(y * 2.2) / 2.2 * 1.9    # a closing breath: a flatter level, no sharp peak
+        return y
     if kind == "tape":        # ep17: packing tape peeled off board, a sticky crackle
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall

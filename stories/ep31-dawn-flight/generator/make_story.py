@@ -477,7 +477,7 @@ sfx = [
     {"at": "L49.3", "kind": "burner", "db": -9, "dur": 10.4, "keep": True},
     {"at": "L56", "kind": "burner", "db": -13, "dur": 2.2},
     {"at": "L66", "kind": "burner", "db": -16, "dur": 2.2},
-    {"at": "end-1.15", "kind": "burner", "db": -10, "dur": 1.1, "fall": 7.0},
+    {"at": "end-1.15", "kind": "burner", "db": -17.5, "dur": 1.1, "fall": 7.0},
     {"at": "L04", "kind": "creak", "db": -22, "dur": 1.2},
     {"at": "L16", "kind": "creak", "db": -26, "dur": 0.8},
     {"at": "L23+0.2", "kind": "creak", "db": -24, "dur": 1.4},

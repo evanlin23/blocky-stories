@@ -31,7 +31,7 @@ A flat farmland valley at dawn under a thick white ground mist, with hedge lines
 
 ## Cast (all adults)
 - **Me** (`me`): an adult in my late twenties, the elder of Dad's two. Mustard knit jumper under a navy gilet, short dark block hair, a grey beanie. Faces: `neutral`, `worried`, `scared`, `ashamed`, `relief`, `smile`.
-- **Dad** (`dad`): turning sixty, cheerful, easily thrilled. Waxed bottle-green jacket, a check scarf in cream and brown, grey block hair with a bald top, drawn round glasses. Faces: `smile`, `delighted`, `quiet`, `laugh`. Never in peril and never sees the creature: he watches the view and the sunrise the whole flight.
+- **Dad** (`dad`): turning sixty, cheerful, easily thrilled. Waxed bottle-green jacket, a check scarf in cream and brown, grey block hair with a bald top. Faces: `smile`, `delighted`, `quiet`, `laugh`. Never in peril and never sees the creature: he watches the view and the sunrise the whole flight.
 - **Rosa** (`rosa`): our pilot, an adult in her forties, calm and practical. Cream fleece, burgundy beanie, black gloves. Faces: `neutral`, `frown`, `focus`, `smile`. She says only pilot things: weather, balance, "hold on". She explains nothing, knows nothing about the figure and never sees it.
 - **Callum** (`callum`): my younger brother, an adult in his twenties. Forest-green hoodie (darker than the envelope), a short block beard, a navy woolly hat. On screen only in section 08. At L73 to L75 he's a phone burble, and I report his words.
 - No cast clothing uses copper or slate blue, so the creature never reads as one of us.
