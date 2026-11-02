@@ -88,11 +88,44 @@ def test_upload_spaces_out_twist_shapes(monkeypatch):
     monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1})
     monkeypatch.setattr(upload, "gate_open", lambda s: True)
     monkeypatch.setattr(upload, "shape", lambda s: shapes[s])
+    monkeypatch.setattr(upload, "queue", lambda: [])
+    monkeypatch.setattr(upload, "load_package", lambda s: {})
     assert upload.next_story({}) == "a"
     assert upload.next_story({"a": {}}) == "c"            # b would repeat a's shape, so c goes first
     assert upload.next_story({"a": {}, "c": {}}) == "b"
     monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1} if s == "b" else None)
     assert upload.next_story({"a": {}}) == "b"            # nothing else is ready: it goes anyway
+
+
+def test_upload_queue_goes_first(monkeypatch):
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    monkeypatch.setattr(upload, "all_stories", lambda: ["a", "b", "c"])
+    monkeypatch.setattr(upload, "queue", lambda: ["c"])
+    monkeypatch.setattr(upload, "load_package", lambda s: {})
+    monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1})
+    monkeypatch.setattr(upload, "gate_open", lambda s: True)
+    monkeypatch.setattr(upload, "shape", lambda s: "")
+    assert upload.next_story({}) == "c"
+    assert upload.next_story({"c": {}}) == "a"
+    monkeypatch.setattr(upload, "load_package", lambda s: {"hold": "redo"} if s == "a" else {})
+    assert upload.next_story({"c": {}}) == "b"            # a is held for a redo
+
+
+def test_upload_publishes_at_4pm_central(monkeypatch):
+    import datetime as dt
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    morning = dt.datetime(2026, 11, 3, 12, 47, tzinfo=dt.timezone.utc)      # 6:47 am Central (CST, UTC-6)
+    assert upload.publish_at(morning) == "2026-11-03T22:00:00Z"
+    late = dt.datetime(2026, 11, 3, 22, 10, tzinfo=dt.timezone.utc)         # past 4 pm: an hour from now
+    assert upload.publish_at(late) == "2026-11-03T23:10:00Z"
+    summer = dt.datetime(2027, 6, 1, 13, 0, tzinfo=dt.timezone.utc)         # CDT, UTC-5
+    assert upload.publish_at(summer) == "2027-06-01T21:00:00Z"
+    monkeypatch.setenv("YT_AUTOPUBLISH", "false")
+    assert upload.publish_at(morning) is None
 
 
 def test_metrics_summary_and_titles():
