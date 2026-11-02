@@ -44,6 +44,7 @@
   "grain": 0.012,
   "red_line": 0.79
  },
+ "asr_ignore_tail_repeat": true,
  "phonemes": {},
  "places": {
   "marks": [
@@ -721,8 +722,8 @@
      "nobody on stage"
     ],
     [
-     "TURNED ROUND.",
-     "turned round."
+     "TURNED AROUND.",
+     "turned around."
     ]
    ]
   },
@@ -1375,8 +1376,8 @@
      "all the"
     ],
     [
-     "way ROUND,",
-     "way round,"
+     "way AROUND,",
+     "way around,"
     ],
     [
      "to ME.",
@@ -1903,7 +1904,8 @@
      "my LORD.",
      "my lord."
     ]
-   ]
+   ],
+   "tempo": 0.9
   },
   {
    "id": "P04",

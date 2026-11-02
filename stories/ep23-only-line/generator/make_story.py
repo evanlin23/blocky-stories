@@ -91,8 +91,13 @@ for ln in lines:
         ln["pause"] = 1.0
 lines = lines + [{"id": "P05", "pause": 0.36, "chunks": []}]
 
+for ln in lines:      # "around", not "round": Whisper writes the American spelling and so does the narrator
+    for ch in ln.get("chunks", []):
+        for k in (0, 1):
+            ch[k] = ch[k].replace("ROUND", "AROUND").replace("round", "around")
+
 # lines a touch slower so the word check hears every word (filled in by a fix round, if it needs any)
-TEMPO = {}
+TEMPO = {"L96": 0.9}
 SPOKEN = {}
 for ln in lines:
     if ln["id"] in TEMPO:
@@ -588,6 +593,7 @@ story = {
              "exposure": 0.0},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.03], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.22, "grain": 0.012, "red_line": 0.79},
+    "asr_ignore_tail_repeat": True,   # Whisper repeats the last line after the held silence; the film has no words there
     "phonemes": {},
     "places": {"marks": MARKS, "legy": LEGY, "king": KING, "chairs": CHAIRS, "ghost": [-0.3, 2.0], "flat": list(FLAT),
                "car": list(CAR)},
