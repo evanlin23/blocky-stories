@@ -186,26 +186,26 @@
    ]
   },
   "L07": {
-   "text": "Gran goes up every morning.",
+   "text": "Gran lives up there.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.621,
+   "dur": 1.328,
    "onset": 0.172,
-   "end": 1.431,
+   "end": 1.138,
    "chunks": [
     [
      0.172,
-     0.379
+     0.397
     ],
     [
-     0.379,
-     0.69
+     0.397,
+     0.56
     ],
     [
-     0.69,
-     1.431
+     0.56,
+     1.138
     ]
    ]
   },
@@ -674,14 +674,14 @@
    ]
   },
   "L26": {
-   "text": "and says she only nodded off for ten minutes.",
+   "text": "and says she only nodded off for half an hour.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
+   "dur": 2.172,
    "onset": 0.172,
-   "end": 1.914,
+   "end": 1.983,
    "chunks": [
     [
      0.172,
@@ -693,11 +693,11 @@
     ],
     [
      0.707,
-     1.103
+     1.121
     ],
     [
-     1.103,
-     1.914
+     1.121,
+     1.983
     ]
    ]
   },
@@ -850,26 +850,26 @@
    ]
   },
   "L33": {
-   "text": "So I sit down beside her,",
+   "text": "So every Sunday, I ride up and sit beside her,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.603,
+   "dur": 2.397,
    "onset": 0.172,
-   "end": 1.397,
+   "end": 2.19,
    "chunks": [
     [
      0.172,
-     0.353
+     0.845
     ],
     [
-     0.353,
-     0.698
+     0.897,
+     1.267
     ],
     [
-     0.698,
-     1.397
+     1.267,
+     2.19
     ]
    ]
   },
