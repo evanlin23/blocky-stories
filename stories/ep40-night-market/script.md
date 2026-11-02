@@ -3,15 +3,16 @@
 **Slug:** `ep40-night-market`
 
 ## Premise
-In this town a gold coin floats over every head, and at midnight every coin flips. Sun face up, your day goes well. Moon face up, it doesn't. My big sister Bea and I (both adults) started a dumpling stall at the Friday night market in a car park. A month ago I quit for an office job and she kept it alone. Since that night her coin has landed on the moon every night, the queues walk round her stall, and she's going to sell it. My coin has stood on its edge the whole time. Over three Fridays, a customer with no coin over its head comes one stall nearer, and on the third it's behind our counter, filling the space beside Bea where I used to stand.
+In this town a gold coin floats over every head, and at midnight every coin flips. Sun face up, your day goes well. Moon face up, it doesn't. My big sister Bea and I (both adults) started a dumpling stall at the Friday night market in a car park. A month ago I took an office job, on good terms (she threw me a party), and she kept the stall alone. I still come every Friday, but as a customer, on the front side of the counter. Since that night her coin has landed on the moon every night, the queues walk round her stall, and she's going to sell it. My coin has stood on its edge the whole time. Over three Fridays, a customer with no coin over its head comes one stall nearer, and on the third it's behind our counter, filling the space beside Bea where I used to stand.
 
 ## Rule
 The world's rule: a coin over your head flips at midnight and decides your luck (L01). Its marker is the coin itself, over every head from the first frame. The narrator is the exception: my coin never lands, it stands on its edge (L08 to L09). The rule works on Bea with nobody explaining it (L16 to L22): queues bend round a moon stall.
 
 ## Twist
-Bea's coin and mine were never two coins. They were the two sides of one, and it split the night I walked out: she was left with only the moon side, so she could only ever land on the moon, and I took the sun side, which has nothing to land on, so it stands on its edge (L48 to L54). The first line, "a coin over your head", reads at first as one coin per person. After L59 it reads as one coin over two heads: ours, shared.
-- **Plant 1 (L14 and L15, S17 to S19, again L21 to L22, S27 to S28):** her coin only ever shows the moon face, mine only ever shows the rim, and they've been that way for exactly as long, since the night I quit. The two coins are the same size and the same pattern.
+Bea's coin and mine are the two sides of one coin, and it's the stall's coin. It only lands when two people stand behind the counter. With only Bea back there, it can only show her side, the moon, and my sun side, out front with the customers, has nothing to land on, so it stands on its edge (L48 to L54). When I step behind the counter, both coins spin in step and land sun up together (L58 to L60). They stay two coins over two heads: nothing joins. The sting (L64 to L66): the stall's coin needs two heads, and it doesn't care whose. The Half is at the back of our queue, still waiting for a turn behind the counter. The first line, "a coin over your head", reads at first as your own luck. After L66 it reads as a coin that belongs to a place and takes whoever stands under it.
+- **Plant 1 (L14 and L15, S17 to S19, again L21 to L22, S27 to S28):** her coin only ever shows the moon face, mine only ever shows the rim, and they've been that way for exactly as long, since the night I started the office job. The two coins are the same size and the same pattern.
 - **Plant 2 (L11, S13):** the painted glyph on our stall, a coin split down the middle, the sun half painted by me and the moon half by Bea. It's in the background of every stall shot after.
+- **Plant 3 (L13, S16):** I "still came every Friday to EAT": I'm always on the customer side of the counter, never behind it.
 - Bonus (L38, S45): the Half's one eye is on the empty space beside Bea, the space that's the other half of the stall.
 
 ## World
@@ -31,7 +32,7 @@ Montage vignettes (small, cheap sets): a picnic table at the market edge (the pr
 - **Bea's coin:** shows only the moon face, every shot, even when it rocks.
 - **My coin:** always edge-on to camera, whichever way the camera looks (billboard to the edge), so it reads as a thin gold line with a ridged rim.
 - **The Half:** no coin, ever (the Keeper carries none of the town's markers).
-- **L59:** Bea's coin and mine drift together between our heads over about 1.2 s and close face to face into one coin, then it turns once, slowly, and stops sun side up. No light flash on the click, only the sound.
+- **L59 to L60:** Bea's coin and mine stay where they are, one over each head, and spin in step at half a turn a second for about 1.5 s, then both settle sun side up on the same frame. They never move toward each other or touch. Each coin under a third of the frame width. A soft double chime as they settle, no light change.
 
 ## The creature: the Half (never named on screen)
 - One model, built once in `set.py` and posed per shot. The **left half** of an ordinary adult-height R6 person, divided down the exact middle: left leg, left arm, left half of the torso and the left half of a rounded-cylinder head. Lantern-red quilted jacket, indigo trousers, a half block of black hair.
@@ -47,25 +48,26 @@ Montage vignettes (small, cheap sets): a picnic table at the market edge (the pr
 | Friday 2 | L28 to L30 | Three stalls nearer, in the left row's walkway, still side on, facing our stall. The half-width shadow on the tarmac. |
 | Friday 3 | L33 to L38 | At the counter of the stall directly opposite ours, turned front on to me and our stall. Only the left half: the flat indigo plane where its right side should be. Eye on the space at Bea's left. |
 | Scare | L44 to L46 | Behind our counter at Bea's left (viewer's right), its flat side toward her, a hand's width from her shoulder. It fills my old spot. It doesn't touch her. |
-| Gone | L55 to L57 | I step into that spot. Cut on the step: it's gone, never seen leaving. Not in any later shot. |
+| Gone | L55 to L57 | I step into that spot. Cut on the step: it's gone, never seen leaving. Not seen again until L64. |
+| Sting | L64 to L66 | At the very back of our queue, under the lantern arch, side on (its left side, looks whole), facing our stall. Empty air over its head where every other head has a coin. Never seen moving. Last shot of the film. |
 
 ## Look
 - **Palette:** lantern red #c8352a, warm lantern glow #ffb060, indigo #2b2f6b, matte coin gold #c9a24a, wet tarmac #2e3034, awning cream #efe2c4, noodle-stall blue #2f6fa8, Bea's teal #2d7f7a, mustard apron #d5a32b, my slate blue #4a5d7a.
 - **Caption key colour:** moon lilac `#b49cff` (ep11 lime, ep12 red, ep13 cyan and ep20 brass gold are taken, and gold would vanish against the coins).
 - **`look.flash_safe: true`** in `story.json`. Full quality, final at 10 samples.
 - **Lighting:** the first 2 s are bright and warm: the whole market lit by lanterns, faces and coins clear. The car park's far edges sink into game-engine fog after the hook. Darker and cooler from L23, warm and full again from L58.
-- **Music:** E Dorian, 100 bpm. A plucked synth melody split between two voices that answer each other (a hocket), over a soft synthesized hand drum and a low warm drone. After L12 only one voice plays, so the tune has gaps. Drops of 0.6 s before L35 ("only HALF of it") and before L44 ("behind our COUNTER"). From L58 both voices return and the mode lifts to E Mixolydian, brighter, the drone gone.
-- **Sound:** market murmur, sizzle and steamer hiss, the soft creak of lantern strings, a gentle rising synth shimmer for each midnight flip, the midnight bell (a synthesized iron bell with a slow pitch fall, -18 dB tail), Bea's knife on the board (dry wooden taps that stop at L42), a small bright click for L59.
+- **Music:** E Dorian, 100 bpm. A plucked synth melody split between two voices that answer each other (a hocket), over a soft synthesized hand drum and a low warm drone. After L12 only one voice plays, so the tune has gaps. Drops of 0.6 s before L35 ("only HALF of it") and before L44 ("behind our COUNTER"). From L58 both voices return and the mode lifts to E Mixolydian, brighter, the drone gone. At L64's second sentence ("At the very back") the plucked voices stop and the low drone returns alone and holds to the cut, so the last beat lands cold.
+- **Sound:** market murmur, sizzle and steamer hiss, the soft creak of lantern strings, a gentle rising synth shimmer for each midnight flip, the midnight bell (a synthesized iron bell with a slow pitch fall, -18 dB tail), Bea's knife on the board (dry wooden taps that stop at L42), a soft double chime as both coins settle at L59.
 
 ## Flash plan (hard rule 7)
 - Lanterns sway (position only) and glow steadily: their emission never changes except at the bell.
 - **The bell dim (L40 to L43):** every lantern and steam lamp fades down together over 1.2 s to about 15%, holds dark for about 1.6 s (L41 to L42, the coins and faces just readable in a cool fill), and fades back up over 1.2 s. Two changes in about 4 s, all ramps far over 0.3 s. No flicker anywhere in the set.
 - Coins: even matte gold on every face, spins at most one turn a second, never emissive.
 - No bright cut-ins: cuts between warm wides and the darker creature shots stay within one stop of each other.
-- Run `python -m blocky flash` pre-check on S01 to S02 (the flip), S44 to S50 (the bell) and S66 to S67 (the click) at the final's frame steps.
+- Run `python -m blocky flash` pre-check on S01 to S02 (the flip), S44 to S50 (the bell) and S66 to S67 (the paired spin) at the final's frame steps.
 
 ## Shot plan
-74 shots for about 2:20, an average of about 1.9 s. Faces at least 1/5 of the frame width and clear of the caption band.
+76 shots for about 2:22, an average of about 1.9 s. Faces at least 1/5 of the frame width and clear of the caption band.
 
 | Shot | Line | Picture |
 |---|---|---|
@@ -84,11 +86,11 @@ Montage vignettes (small, cheap sets): a picnic table at the market edge (the pr
 | S13 | L10 | Our stall front on, warm: Bea behind the counter, steamers going. |
 | S14 | L11 | Insert: the painted glyph on the front board, a coin split down the middle, sun half and moon half. Plant 2. |
 | S15 | L12 | Me in the office shirt and tie at a plain grey desk, a blank monitor, my edge-on coin above me. |
-| S16 | L13 | Bea alone at the counter, the space at her left empty. |
+| S16 | L13 | Me on the customer side of the counter eating from a paper tray, Bea behind it alone, the space at her left empty. Both smiling. |
 | S17 | L14 | Close on Bea's coin, moon face. |
 | S18 | L14.6 | Bea looking up at it, tired. |
 | S19 | L15 | Close on my coin, edge-on, the ridged rim. Plant 1. |
-| S20 | L16 | Wide across the car park: me in my hood at the far side, the stalls glowing between. |
+| S20 | L16 | Wide across the car park: me arriving at the far side, hood up against the rain, the tie showing, the stalls glowing between. |
 | S21 | L17 | Down the left row: the noodle queue snaking back to the lantern arch, all sun coins. |
 | S22 | L18 | High angle: the queue bending round Bea's stall. |
 | S23 | L18.6 | Low angle at Bea's counter, the queue passing behind, nobody turning. |
@@ -100,8 +102,8 @@ Montage vignettes (small, cheap sets): a picnic table at the market edge (the pr
 | S29 | L23 | Long lens to the far end: under the lantern arch, a figure side on, facing our stall. Fog behind it. |
 | S30 | L24 | Closer, still side on: a customer in a red jacket, it looks whole. |
 | S31 | L25 | Tilt up over its head: empty air where a coin should be. Every head round it has one. |
-| S32 | L26 | Bea packing up steamers, talking without looking at me. |
-| S33 | L27 | The next Friday: me under the arch, hood up. |
+| S32 | L26 | Bea packing up steamers, telling me across the counter with a tired smile. |
+| S33 | L27 | The next Friday: me under the arch, hood up, a flask tucked under my arm. |
 | S34 | L28 | The left row from my side: the figure three stalls nearer, side on. |
 | S35 | L29 | Reverse: its side profile, its one eye toward our stall. |
 | S36 | L30 | Low insert on the wet tarmac: two customers' shadows, and between them one half as wide. |
@@ -134,23 +136,25 @@ Montage vignettes (small, cheap sets): a picnic table at the market edge (the pr
 | S63 | L56 | Behind the counter: I step into the spot. The Half is not in the frame. |
 | S64 | L57 | Front on our stall: just Bea and me. |
 | S65 | L58 | Wide from above the arch: every coin in the market flips. |
-| S66 | L59 | Two-shot from below: our two coins drift together over our heads. |
-| S67 | L59.6 | Close: they close into one coin and turn slowly. |
-| S68 | L60 | It stops sun side up. Bea's face lifts. |
+| S66 | L59 | Two-shot from below: Bea and me side by side behind the counter, a coin over each head, both spinning in step. Each coin under a third of the frame width. |
+| S67 | L59.6 | Wider two-shot: both coins settle on the same frame, a head apart, never touching. |
+| S68 | L60 | Both sun faces up. Bea's face lifts, clear of the steamers. |
 | S69 | L61 | Low under the counter: Bea pulls the mustard apron off the shelf (cut before hands). |
 | S70 | L61.6 | **Lore plant:** the old float tin on the shelf beside it, its dented lid stamped with two short indigo strokes. Held 1.6 s, not narrated. |
 | S71 | L62 | Bea and me folding side by side, she bumps my elbow (shoulder-level, no hands in frame). |
 | S72 | L63 | The noodle man looking up at his moon, pulling a face. |
-| S73 | L64 | Next Friday, high wide: our queue reaching the lantern arch, the one coin turning between our two heads. |
-| S74 | L65 to L66 | From above the stall: two heads and one coin spinning slowly between them. Cut 0.25 s after "SHARED" back to S01. |
+| S73 | L64 | Next Friday, high wide: our queue reaching the lantern arch, Bea and me behind the counter, two sun coins. |
+| S74 | L64.5 | Long lens down the queue from our counter to the arch: at the very back, a customer side on, empty air over its head. Drone only. |
+| S75 | L65 | Slow push in on it: the one eye toward our stall. Fog behind it. |
+| S76 | L66 | Hold on it, side on, still. Cut 0.25 s after "WHOSE" back to S01. |
 
 ## The last 15 seconds turn the first line
-"In this town, a COIN over your head flips at MIDNIGHT and decides your LUCK" opens as one coin per person, and the story plays it that way: Bea's luck has run out, mine is stuck. L48 to L54 show the coin over Bea's head and the coin over mine were the two sides of one coin that split when I left. The last lines, "a COIN over your head decides your LUCK. Ours is SHARED", loop straight into the first, which now reads as one coin over two heads. A second watch sees Bea's moon and my edge as two halves waiting, from the montage on. Rewatch plants: the glyph split down the middle, sun half mine and moon half hers (L11, S14), and her coin only ever showing the moon while mine only ever shows the rim, for exactly as long (L14 to L15, L21 to L22, S17 to S19, S27 to S28).
+"In this town, a COIN over your head flips at MIDNIGHT and decides your LUCK" opens as one coin per person, your own luck, and the story plays it that way: Bea's luck has run out, mine is stuck. L48 to L54 turn the rule's own logic: the two coins are the two sides of the stall's coin, and it only lands with two people behind the counter. I step round, and both land sun up (L58 to L60). Then the sting: at the back of our queue stands the customer with no coin, and the last lines, "a COIN over your head decides your LUCK. Ours takes two heads. It doesn't care WHOSE", loop straight into the first. On a second watch "your head" means whoever is standing under it, and every shot of the empty space at Bea's left is a vacancy. Rewatch plants: the glyph split down the middle, sun half mine and moon half hers (L11, S14), me always on the customer side of the counter (L13, S16, L32), and her coin only ever showing the moon while mine only ever shows the rim, for exactly as long (L14 to L15, L21 to L22, S17 to S19, S27 to S28).
 
 ## Lore connection (one)
 The dented lid of the stall's old float tin (S70, under L61, "Bea dug my old apron out from under the COUNTER") carries two short indigo strokes, stamped: a tally, two for a stall built for two. Indigo is the Half's own colour. Shown once, held 1.6 s, never narrated. A plain tally, no extra stroke (lore.md → Open threads → Third parallel batch).
 
-## Narration (66 lines, 639 words, about 2:12 of speech at 290 wpm, about 2:20 with gaps)
+## Narration (66 lines, 646 words, about 2:14 of speech at 290 wpm, about 2:22 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words. Planned silent beats: 0.4 s after L25, 0.6 s after L35, 0.6 s in S49 after L42, 0.5 s after L44, 0.4 s after L57, 0.4 s after L60.
 
 L01. In this town, a COIN over your head flips at MIDNIGHT and decides your LUCK.
@@ -164,11 +168,11 @@ L08. Every coin lands. Except MINE.
 L09. Mine stands on its EDGE.
 L10. My big sister Bea and I started a dumpling stall at the night MARKET.
 L11. We painted the sign together. I did the SUN half, and Bea did the MOON.
-L12. A month ago, I got a job in an OFFICE, and Bea threw me a PARTY.
-L13. She kept the stall, and I still came every Friday to EAT.
+L12. A month ago, I took an OFFICE job, and Bea threw me a PARTY.
+L13. She kept the stall. I still came every Friday to EAT.
 L14. Since that night, her coin has landed on the MOON. THIRTY nights in a ROW.
 L15. And mine has stood on its edge exactly as LONG.
-L16. On Friday, I came straight from work, still in my TIE.
+L16. On Friday, I came from work, still in my TIE.
 L17. The noodle queue next door ran right back to the lantern ARCH.
 L18. When it reached Bea's stall, it bent AROUND it, like water around a STONE.
 L19. A man looked up at her coin and kept WALKING.
@@ -204,18 +208,18 @@ L48. I looked at our sign. A sun half and a moon HALF.
 L49. I looked up at her coin. Only ever the MOON.
 L50. Then up at mine. Only ever the EDGE.
 L51. Her moon and my sun were the two sides of ONE coin.
-L52. The STALL'S coin. And it only lands with two of us behind the COUNTER.
-L53. With only Bea back there, it could only ever show the MOON.
+L52. The STALL'S coin. It lands only with two behind the COUNTER.
+L53. With only Bea, it could only show the MOON.
 L54. And out front, my side had nothing to land ON.
 L55. So I walked around and stepped into my old SPOT.
 L56. Right where the flat side had BEEN.
 L57. And there was nobody next to Bea but ME.
 L58. Then every coin in the market FLIPPED.
-L59. Hers and mine spun in step and landed at the same MOMENT.
+L59. Ours spun in step and landed at the same MOMENT.
 L60. Both SUN side up.
 L61. Bea dug my old apron out from under the COUNTER.
 L62. We folded side by side, and she bumped my elbow on every second DUMPLING.
 L63. Next door, the noodle man got a MOON. He went home for SOUP.
-L64. The next Friday, our queue reached the ARCH. And at the very back stood a customer with no COIN.
+L64. Next Friday, our queue reached the ARCH. At the very back stood a customer with no COIN.
 L65. In this town, a COIN over your head decides your LUCK.
 L66. Ours takes two heads. It doesn't care WHOSE.
