@@ -14,6 +14,14 @@ The owner, 2026-11-02: "I kinda want to just let you go by yourself and upload f
   5. $200 earned back. Shorts pay roughly a few cents per 1,000 views, so this needs millions of monetized views.
 - **How to iterate:** change one thing at a time where you can (length, look, rule type, title style), and judge on day-7 numbers across several uploads, never on one (the scope research: about 20 Shorts before judging).
 
+## Trends: don't bet the channel on one format (owner, 2026-11-02)
+The owner: "this niche might be oversaturated, but I think I'd like to keep this Roblox-y blocky style... if we have these same stories going out. They're not necessarily evergreen content. So if it just falls out of fashion. Then none of the videos really have any chance to go viral."
+- **Keep the look, vary what we make in it.** The blocky style, cast, narrator and captions are the brand. The format inside them can change.
+- **Every Monday, `scripts/trends.py`** (in the metrics workflow) writes `docs/trends/<date>.md`. It lists blocky / Roblox-style Shorts from the last 14 days ranked by views per day, plus each format's momentum against the week before. `/week` reads it before writing.
+- **The 70/30 mix:** about 70% of each batch is what's working (our numbers plus rising formats), and about 30% is experiments with a format we haven't tried, in the same style: sad or emotional, riddle or puzzle, comedy, POV, mystery series. Note which is which in each story's package (`"lane": "core"` or `"lane": "experiment"`), so `metrics` can compare them.
+- **A format whose momentum falls two scans in a row loses its share** to the best experiment. A format rising fast that we haven't tried gets an experiment slot the next week.
+- **Build things that are ours,** so viewers come back for us rather than for a format: recurring characters, Part 2s of what hits, and a signature hook of our own. Never copy a specific channel's premise.
+
 ## What we make
 A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **PandaNanoAdventures** and no other channel (note 21).
 - Owner: "it should be like creepy roblox shorts and the characters should look more like roblox. also the voice should be like the sped up roblox voice... it should not be educational, it should be like crazy stories" (note 18).

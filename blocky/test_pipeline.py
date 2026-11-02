@@ -145,6 +145,24 @@ def test_upload_finds_a_title_already_on_the_channel():
     assert upload.already_on_channel(YT(), "Something else") is None
 
 
+def test_trend_scan_ranks_by_views_per_day():
+    import datetime as dt
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import trends
+
+    assert trends.seconds("PT1M5S") == 65 and trends.seconds("PT45S") == 45 and trends.seconds("") == 0
+    now = dt.datetime(2026, 11, 9, tzinfo=dt.timezone.utc)
+    assert round(trends.rate(1000, "2026-11-07T00:00:00Z", now)) == 500
+    rows = [{"id": "a", "title": "In This Town X", "channel": "C1", "views": 900, "seconds": 60, "age": 3.0,
+             "per_day": 300.0, "queries": ["rule premise"]},
+            {"id": "b", "title": "Sad | one", "channel": "C2", "views": 100, "seconds": 70, "age": 1.0,
+             "per_day": 100.0, "queries": ["sad / emotional"]}]
+    mom = trends.momentum(rows)
+    assert mom["rule premise"] == 300 and mom["comedy"] == 0
+    md = trends.report(rows, mom, {"momentum": {"rule premise": 600}}, "2026-11-09")
+    assert "| rule premise | 300 | -50% |" in md and "Sad / one" in md and md.index("In This Town X") < md.index("Sad / one")
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics
