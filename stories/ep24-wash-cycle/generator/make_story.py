@@ -417,7 +417,7 @@ story = {
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.03], "saturation": 1.0, "contrast": 1.05,
               "vignette": 0.3, "bloom": 0.25, "grain": 0.012, "red_line": 0.79, "red_lift_blue": 0.5},
     "rain_shots": RAIN,
-    "phonemes": {"Arthur": "ˈɑɹθəɹ"},
+    "phonemes": {"Arthur": "ˈɑɹθəɹ", "turned": "tˈɜɹnd", "drums": "dɹˈʌmz"},
     "cast": cast,
     "lines": lines,
     "shots": shots,
