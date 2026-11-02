@@ -56,8 +56,8 @@
     "of a stack"
    ],
    [
-    "TALLER than ME.",
-    "taller than me."
+    "TALLER than the DOOR.",
+    "taller than the door."
    ]
   ]
  },
@@ -1031,20 +1031,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "TUCKED round",
-    "Tucked round"
+    "Laid over",
+    "Laid over"
    ],
    [
-    "her SHOULDERS,",
-    "her shoulders,"
+    "her BED",
+    "her bed"
    ],
    [
-    "the edges FOLDED",
-    "the edges folded"
-   ],
-   [
-    "under the MATTRESS.",
-    "under the mattress."
+    "the OLD way.",
+    "the old way."
    ]
   ]
  },
@@ -1095,16 +1091,16 @@
     "the old house,"
    ],
    [
-    "Mum's ROOM",
-    "Mum's room"
+    "that QUILT",
+    "that quilt"
    ],
    [
-    "was the",
-    "was the"
+    "LIVED",
+    "lived"
    ],
    [
-    "COLD one.",
-    "cold one."
+    "on her BED.",
+    "on her bed."
    ]
   ]
  },
@@ -1113,16 +1109,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "She slept",
-    "She slept"
+    "HERE,",
+    "Here,"
    ],
    [
-    "under that QUILT",
-    "under that quilt"
+    "it was",
+    "it was"
    ],
    [
-    "all WINTER.",
-    "all winter."
+    "TOO WARM",
+    "too warm"
+   ],
+   [
+    "for it.",
+    "for it."
    ]
   ]
  },
@@ -1213,12 +1213,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "In the MORNING,",
-    "In the morning,"
+    "It was GONE",
+    "It was gone"
    ],
    [
-    "it was GONE.",
-    "it was gone."
+    "by MORNING.",
+    "by morning."
    ]
   ]
  },
@@ -1478,16 +1478,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "On its FRONT,",
-    "On its front,"
+    "The BOTTOM box.",
+    "The bottom box."
    ],
    [
-    "in black MARKER,",
-    "in black marker,"
+    "My PEELED TAPE",
+    "My peeled tape"
    ],
    [
-    "a SMILE.",
-    "a smile."
+    "hung OFF",
+    "hung off"
+   ],
+   [
+    "its SEAM.",
+    "its seam."
    ]
   ],
   "gap": 0.45

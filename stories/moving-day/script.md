@@ -3,7 +3,7 @@
 - **Working title:** The box was taped shut from the inside. L01 says it word for word. The upload title is the packager's, and it isn't an imperative rule.
 - **Takeaway:** none on purpose. It's a made-up blocky story for PandaNanoAdventures (notes 16 and 21).
 - **Target length:** 2:15 to 2:20, never over 3:00.
-- **Word count:** 593 spoken words in 81 lines, all in voice A, plus 2 pause beats. That's 572 after the new L78, plus 21 for L29b, L34b and L34c.
+- **Word count:** 592 spoken words in 81 lines, all in voice A, plus 2 pause beats. Round 1 fixes (L03, L53, L56, L57, L62, L77) took it from 593 to 592.
 - **Estimated length:** about 2:19.
   - The first real `voice` run measured 2:14.4 (134.43 s), with all five of the brief's holds already in. The voice ran at 292 wpm while speaking.
   - That was 0.6 s under the owner's 2:15 floor, so the fix is more story, not more silence. The three new lines add 21 words, about 4.3 s at that pace, plus 0.36 s of line gaps. That comes to about 139 s, which is 2:19, inside 2:15 to 2:20 with some margin.
@@ -14,6 +14,8 @@
 
 **Scriptwriter, 2026-10-31:** L78 is now "Mum CLOSED / the CUPBOARD / on it." Section 08 gives the reason.
 
+**Writer, 2026-11-02 (round 1 fixes):** standards found the banned "monster was kind all along" (the tuck at L52 to L53 plus the smile at L77), and the critic found the twist only added a fact. The tuck is gone (L53, L56, L57), the shelf box no longer has a face, and the twist is now in section 08: the box on the shelf is the L01 box, my peeled tape still on it, so the loop makes L01 mean something new. L03 and L62 take standards' nice-to-haves. Changed ids: L03, L53, L56, L57, L62, L77.
+
 ## The producer's nine changes, and where they are
 
 1. **L01's picture is fixed.** The outer tape is peeled back, the flaps still hold, and tape shines through a gap at one corner. The box stays shut. L02 says "PEELED" rather than "slit", so no blade is implied.
@@ -22,8 +24,8 @@
 4. **The stack by the door is the clock.** It's the same locked-off wide at L14 to L15, L25, L35 and L41, then whole again at L63. Six boxes go, then half, then four are left, then none. The Boxes get taller by folding along the ceiling. What it points at goes from nothing, to the back of Mum's head, to Mum's door, to me. No line says "closer" or "each time".
 5. **None of B's rule is used.** Nothing looks away, turns back or blinks. Every face change happens between scenes, off screen.
 6. **The laugh pays off Mum's own line.** At L07 she says "No more LADDER to hang PHOTOS." At L67 she says "That's LADDER HEIGHT."
-7. **The tuck and the twist stay about the house.** No word for care, kindness, missing, loneliness or looking after, and no motive. L61 is the producer's line as written.
-8. **The end is still.** From L77 the smiling box never moves or changes. I have the last line, with 0.25 s to the cut.
+7. **The quilt and "where it lived" stay about the house.** No word for care, kindness, missing, loneliness or looking after, and no motive. There's no tuck: the quilt is laid over the bed the old way, the hands clear of Mum, and L57 says it was too warm for here, so it was never for her. L61 is the producer's line as written.
+8. **The end is still.** From L76 the shelf box never moves or changes, and it has no face. I have the last line, with 0.2 to 0.3 s to the cut.
 9. **One house set, no room in a second state.** There are four mornings, and the only thing that comes back whole is the stack.
 
 ## Format
@@ -45,6 +47,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Shots:** about 10.
 - **Plants:** all land by about 23 s.
   - The inside tape at L01 to L02 pays off at L33 and at the very end.
+  - **The twist plants.** L03 and L04: the "stack" in the hall with a face on its top box isn't our stack by the door (that's L14). It's the Boxes, and L01's box is its bottom box. L33: every one of its seams is taped from the inside, like L01's box. Both pay off at L77, where the shelf box is the L01 box.
   - Mum's ladder line at L07, about 14 s, pays off at L59 and L67.
   - The old-hall smell at L08, about 16 s, pays off at L60.
   - The quilt left packed at L09, about 18 s, pays off at L52 to L54.
@@ -55,8 +58,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [close on the bottom box of a stack in the hall. Its outer tape is peeled back along the seam, but the flaps still hold. Through a gap at one corner, tape shines on the inside. The box stays shut]
 - `L02` narrator: I'd PEELED / the outside TAPE. / The flaps / still HELD.
   - [my hands flat on the flaps, pressing. They don't give]
-- `L03` narrator: It was / the BOTTOM box / of a STACK / TALLER than ME.
-  - [a slow tilt up the Boxes, standing still in the hall. Its top box just touches the ceiling]
+- `L03` narrator: It was / the BOTTOM box / of a STACK / TALLER than the DOOR.
+  - [a slow tilt up the Boxes, standing still in the hall beside a doorway, its top above the door frame. Its top box just touches the ceiling. This is twist plant 1: the bottom box is L01's]
 - `L04` narrator: And on / the TOP box, / in black MARKER, / a FROWN.
   - [close on the front box. Face: the frown, aimed down the hall at nothing]
 - `L05` narrator: The new house / is SMALLER, / with LOW CEILINGS.
@@ -184,15 +187,15 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L49` narrator: Its face / was drawn / WIDE OPEN.
   - [close, from below. Face: wide open, with huge round eyes and a black open mouth that fills the box. A slower line]
 - `L50` narrator: Its long ARMS / REACHED DOWN / to her.
-  - [side-on: its arms come down over the bed, and the box ends are in frame above her shoulders. Never the full length toward camera]
+  - [side-on: its arms come down over the bed, and the box ends are in frame above the quilt, clear of her shoulders. Never the full length toward camera]
 - `P01` pause 1.2 s: none
   - [hold the side-on wide in near silence, with one low, slow creak of cardboard]
 - `L51` narrator: I hit / the LIGHT.
   - [a dim lamp on the chest of drawers by her door comes up slowly. Flash pre-check it at the final's frame steps]
 - `L52` narrator: Under its HANDS / was the / OLD QUILT.
-  - [close: the box ends resting on the quilt's edge]
-- `L53` narrator: TUCKED round / her SHOULDERS, / the edges FOLDED / under the MATTRESS.
-  - [Mum asleep with the quilt at her shoulders, her face clear and calm, breathing slow]
+  - [close: the box ends resting flat on the quilt near the foot of the bed, well clear of Mum]
+- `L53` narrator: Laid over / her BED / the OLD way.
+  - [high and wide: the quilt spread flat over the whole bed, square and even, edges hanging straight. Mum asleep under it, her face clear and calm. The box ends stay clear of her shoulders. Nothing is tucked]
 - `L54` narrator: The QUILT / she'd left / PACKED.
 - `L55` narrator: Mum SLEPT / right THROUGH it.
   - [Mum sleeping, warm in the lamp light. A quieter line. Hold 0.5 s]
@@ -201,10 +204,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - **Where:** L56 and L57 are Mum's room in the lamp light, with me in the doorway and the Boxes still bent over the bed. L58 to L60 cut to the mug on the windowsill, the photos at the ceiling and the Boxes' taped seams. L61 goes back to Mum's room.
 - **Shots:** about 6.
-- **The twist is the house.** Every line here is about where things lived. None of them says why the Boxes did it.
+- **This is the reveal, not the twist.** Every line here is about where things lived. None of them says why the Boxes did it, and L57 shows it wasn't for Mum. The twist is in section 08.
 
-- `L56` narrator: Back in / the OLD house, / Mum's ROOM / was the / COLD one.
-- `L57` narrator: She slept / under that QUILT / all WINTER.
+- `L56` narrator: Back in / the OLD house, / that QUILT / LIVED / on her BED.
+  - [the Boxes still over the bed in the lamp light, the quilt square under it]
+- `L57` narrator: HERE, / it was / TOO WARM / for it.
+  - [Mum asleep, too warm: one arm out on top of the quilt, her face calm. It's the house's way, not hers]
 - `L58` narrator: Her MUG / LIVED / on the WINDOWSILL.
   - [the mug on the front-room windowsill]
 - `L59` narrator: Her PHOTOS / hung at / LADDER HEIGHT.
@@ -216,11 +221,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 07 Ladder height
 
-- **Where:** L62 is Mum's room in the morning, with the corner empty. L63 is the stack's wide, whole again. L64 to L74 are the front room and kitchen in low gold sun.
+- **Where:** L62 is Mum's room by morning, with the corner empty. L63 is the stack's wide, whole again. L64 to L74 are the front room and kitchen in low gold sun.
 - **Shots:** about 11.
 - **The warm turn is in the picture.** P02 is the laugh, with no words over it. The lines after it are short and come after we've seen it.
 
-- `L62` narrator: In the MORNING, / it was GONE.
+- `L62` narrator: It was GONE / by MORNING.
   - [Mum's room in the morning. The corner is empty, and Mum is still asleep under the quilt]
 - `L63` narrator: Our STACK / was BACK / by the DOOR.
   - [the locked-off wide: the stack whole again, every box taped]
@@ -251,16 +256,17 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - **Where:** the hall, at the open hall cupboard. The last shot holds on the box on the shelf.
 - **Shots:** about 4.
-- **The end is still.** From L77 the box never moves and its face never changes. The narrator has the last line.
+- **The end is still.** From L76 the box never moves, and it has no face. The narrator has the last line.
+- **The twist.** The shelf box is L01's box, the Boxes' bottom box, shot exactly as L01 is shot: my peeled outer tape hanging off its seam, the flaps holding, tape shining inside at the corner gap. So across the loop, L01 isn't one of our boxes on the first morning. It's the thing itself, shut from the inside, and now it's in our cupboard. A rewatch sees it in the first frame and catches the plants at L03 to L04 and L33.
 
 - `L75` narrator: When we'd EMPTIED / the LAST box, / Mum opened / the hall CUPBOARD.
   - [the hall, with our folded boxes in a neat pile by Mum's feet. She opens the cupboard]
 - `L76` narrator: On the SHELF / sat ONE more, / still taped SHUT.
-  - [inside the cupboard, on the shelf: one box, made up and taped. It's the Boxes' front box]
-- `L77` narrator: On its FRONT, / in black MARKER, / a SMILE.
-  - [close. Face: the smile, on the same box with the same line weight. Hold 0.45 s]
+  - [inside the cupboard, on the shelf: one box, made up and shut. It's the Boxes' bottom box, the L01 box. No face on any side we see]
+- `L77` narrator: The BOTTOM box. / My PEELED TAPE / hung OFF / its SEAM.
+  - [close, side-lit, framed exactly like L01: the whole box, my peeled outer tape hanging off the seam, the flaps holding, tape shining inside at the corner gap. No face. Hold 0.45 s]
 - `L78` narrator: Mum CLOSED / the CUPBOARD / on it.
-  - [Mum swings the cupboard door shut. The box doesn't move, and its smile stays in view until the last of the gap closes on "it". Hold on the shut door, then 0.25 s after "it", a hard cut to L01's close on the taped box, with no fade. The slowest line]
+  - [Mum swings the cupboard door shut. The box doesn't move, and its corner gap stays in view until the door closes on "it", with a cupboard thud at -18 dB. Hold on the shut door, then 0.2 to 0.3 s after "it", a hard cut to L01's close on the same box, with no fade. The slowest line]
 
 Across the loop it reads "Mum closed the cupboard on it. The box was taped shut. From the inside." The old L78 ("The SMILING box / is still / on that SHELF. / We've NEVER / OPENED it.") had floor-thirteen's "X is still there. We never Y." shape. The new line is one plain action with no "still" and no "never". It isn't a rule Mum keeps (ep12's lane) and it isn't a gesture at the box. "Closed" doesn't double L01's "SHUT" across the seam.
 
@@ -276,7 +282,7 @@ The narration calls it "it". "The Boxes" is the team's name only and never said.
    - two eyes slid sideways toward Mum's door, L26 to L34
    - far too many eyes, L36 to L42. Flat and dry, never opening one after another (that's ep13).
    - wide open, L48 to L61
-   - the smile, on the cupboard shelf, L77 to the end
+   - none at the end. The shelf box (L76 to the end) is the bottom box, L01's, which never had a face
 4. **Its height** grows by folding along the ceiling, never by stretching. On morning 1 the top box touches the ceiling. On morning 2 the top box bends along it, and on morning 3 two boxes do. On morning 4 it bends toward my bed and the front box hangs over my pillow. At 3 a.m. it's the same over Mum's bed.
 5. **What it points at:** down the hall at nothing, then the back of Mum's head, then Mum's door, then me. At 3 a.m. it's over Mum.
 6. **Arms:** long, made of narrow boxes, and kept down at its sides until L50. They're shot side-on, with the box ends in frame.
@@ -296,7 +302,7 @@ The narration calls it "it". "The Boxes" is the team's name only and never said.
 ## Notes for the designer, sound and standards
 
 - **Cast:** `me` is the narrator, an adult. The age is in the brief's cast table only, never on screen or in the voice. `mum` is an adult. Nobody else appears, and every word is voice A.
-- **The tuck:** Mum's face stays clear of the quilt and nothing presses on her. Her eyes stay shut and calm through L48 to L62. The arms are side-on with the box ends in frame. "Reached" and "tucked" are the only touch words, and both land on the quilt.
+- **The quilt:** there's no tuck. The quilt is laid flat over the bed, Mum's face stays clear and nothing presses on her. Her eyes stay shut and calm through L48 to L62. The arms are side-on with the box ends in frame, resting on the quilt near the foot of the bed, never at her shoulders. "Reached" is the only touch word.
 - **The light at L51** is a dim lamp by her door, so I don't cross the room past it. It comes up as one slow change.
 - **L30 to L34:** R6 hands can't grip. My hands sit flat on a seam, I lean back, and my arms tremble. The cutaway shows my hand at the seam's edge. The Boxes aren't marked, dented or torn, and nothing comes off.
 - **L34b and L34c, the tape cores:** five bare cardboard cores, made from kit cylinders, with no printing and no brand. They stand on end on the kitchen counter. I'd keep them there, untouched and never mentioned, in the L43 breakfast shot, then have them gone from L62 on, as the L35 eyes are. That's the producer's call.
@@ -349,7 +355,7 @@ The narration calls it "it". "The Boxes" is the team's name only and never said.
 
 1. **L02 says "PEELED", not "slit"**, so no blade is implied. L01's picture becomes outer tape peeled back along the seam. Is that all right?
 2. **After 3 a.m. the Boxes are gone and the whole stack is back by the door** (L62 to L63). L42 put every box into the figure, so the stack has to come back for there to be anything left to unpack. It's unexplained and never seen happening.
-3. **The smiling box on the shelf is the Boxes' own front box.** I've written it that way for continuity. Confirm it in the creature's continuity list.
+3. **The box on the shelf is the Boxes' bottom box, L01's box,** with my peeled tape on it and no face (round 1). The continuity list says so.
 4. **The stack's size.** About 24 boxes, so six gone on morning 1 still leaves a figure taller than me. The designer may change the number, but not L15's "SIX".
 5. **Engine changes the script needs:** two new synthesized sfx kinds (the scrape and the creak), and possibly the "mum"/"mom" spelling in `voice.py`. All of them should be opt-in.
-6. **Length.** The estimate is the bottom of the range. If the retime lands short, the brief should say where the extra hold goes. I'd put it on P02 first, then the photos after L66, then the smile after L77.
+6. **Length.** The estimate is the bottom of the range. If the retime lands short, the brief should say where the extra hold goes. I'd put it on P02 first, then the photos after L66, then the shelf box after L77.
