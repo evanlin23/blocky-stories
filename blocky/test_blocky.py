@@ -480,3 +480,227 @@ def test_state_changes_never_land_inside_a_shots_first_frame():
         times = [c["t"] for c in tl["cues"]] + [k["t"] for ks in tl["acting"].values() for k in ks]
         for s in tl["shots"]:
             assert not any(s["start"] < t < s["start"] + fr - 1e-9 for t in times), (name, s["id"])
+
+
+# ---- ep14 (mirror-maze): the copy's eyes, the bucket hat, the coat, the hood down and the hard fringe, all opt-in
+
+def test_mirror_eyes_keep_the_round_outline_and_brows_but_have_no_white_pupil_or_glint():
+    """The copy's "mirror" eyes: exactly a round eye's outline and size, near-black to the edge, nothing white
+    inside, the brows and mouth kept; and a texture key of its own so a cached round-eye face is never reused."""
+    import numpy as np
+
+    skin = "#b07850"
+    for expr in ("neutral", "blank", "scared", "wide", "smirk"):
+        rnd = np.asarray(faces.face_image({"eyes": "round"}, skin, expr).convert("RGB")).astype(int)
+        mir = np.asarray(faces.face_image({"eyes": "mirror"}, skin, expr).convert("RGB")).astype(int)
+        sk = np.array(faces.hexrgb(skin))
+        # the eye band: rows of the eyes, columns of the face box
+        y0, y1 = int(faces._fy(0.42) - 0.14 * (faces.FX1 - faces.FX0)), int(faces._fy(0.42) + 0.14 * (faces.FX1 - faces.FX0))
+        band = (slice(y0, y1), slice(faces.FX0, faces.FX1))
+        drawn_r = np.abs(rnd[band] - sk).sum(axis=2) > 60
+        drawn_m = np.abs(mir[band] - sk).sum(axis=2) > 60
+        ys, xs = np.nonzero(drawn_r)
+        ym, xm = np.nonzero(drawn_m)
+        # never bigger: the same outer extent as the round eye
+        assert abs(xs.min() - xm.min()) <= 2 and abs(xs.max() - xm.max()) <= 2, expr
+        assert abs(ys.min() - ym.min()) <= 2 and abs(ys.max() - ym.max()) <= 2, expr
+        # inside each eye (a box round its centre, well inside the outline): near-black, nothing white
+        w = faces.FX1 - faces.FX0
+        for side in (-1, 1):
+            cx, cy, h = int(faces._fx(0.5) + side * 0.22 * w), int(faces._fy(0.42)), int(0.06 * w)
+            core = (slice(cy - h, cy + h), slice(cx - h, cx + h))
+            assert mir[core].max() < 30, expr                          # no white, no pupil, no glint
+            assert rnd[core].max() > 230, expr                         # (the round eye has its white there)
+    # the brows are drawn above the eyes, as on the round face
+    above = (slice(int(faces._fy(0.42) - 0.26 * (faces.FX1 - faces.FX0)), int(faces._fy(0.42) - 0.13 * (faces.FX1 - faces.FX0))),
+             slice(faces.FX0, faces.FX1))
+    rnd = np.asarray(faces.face_image({"eyes": "round"}, skin, "blank").convert("RGB")).astype(int)
+    mir = np.asarray(faces.face_image({"eyes": "mirror"}, skin, "blank").convert("RGB")).astype(int)
+    assert np.array_equal(rnd[above], mir[above])
+    assert "mirror" in faces.EYES and not faces.check_original({"eyes": "mirror"})
+    assert faces.face_key({"eyes": "mirror"}, skin, "blank", 0, (0, 0), 0) != faces.face_key({"eyes": "round"}, skin, "blank", 0, (0, 0), 0)
+    assert faces.face_key({"eyes": "round"}, skin, "blank", 0, (0, 0), 0) == "blank-0.0-0.0-0.0-0"   # unchanged
+
+
+@pytest.fixture
+def fake_rig(monkeypatch):
+    """rig.py without Blender: a stand-in bpy records every part the rig builds (name -> its arguments)."""
+    import importlib
+    import sys
+    import types
+
+    class Mods:
+        def new(self, name, kind):
+            return types.SimpleNamespace(width=0.0, segments=0, limit_method="", keep_sharp=False)
+
+    class Ob:
+        def __init__(self, name):
+            self.name, self.location, self.rotation_euler, self.scale = name, (0, 0, 0), (0, 0, 0), (1, 1, 1)
+            self.hide_render, self.children_recursive = False, []
+            self.modifiers, self.data = Mods(), types.SimpleNamespace(polygons=[])
+
+    made = {}
+
+    def part(kind):
+        def f(name, *a, **k):
+            made[name] = (kind, a, k)
+            return Ob(name)
+        return f
+
+    monkeypatch.setitem(sys.modules, "bpy", types.ModuleType("bpy"))
+    mu = types.ModuleType("mathutils")
+    mu.Vector = tuple
+    monkeypatch.setitem(sys.modules, "mathutils", mu)
+    saved = {m: sys.modules.pop(m) for m in ("blocky.kit", "blocky.rig") if m in sys.modules}
+    kit = importlib.import_module("blocky.kit")
+    rig = importlib.import_module("blocky.rig")
+    for nm in ("empty", "box", "cyl", "mesh_obj", "sphere", "plane"):
+        monkeypatch.setattr(kit, nm, part(nm))
+    monkeypatch.setattr(kit, "plastic", lambda c, *a, **k: f"plastic {c}")
+    monkeypatch.setattr(kit, "glass", lambda *a, **k: "glass")
+    monkeypatch.setattr(rig, "cloth", lambda spec, key: f"cloth {spec.get(key)}")
+    monkeypatch.setattr(rig, "head_material", lambda name, skin: ("head", None))
+    monkeypatch.setattr(rig, "head_mesh", part("head"))
+    monkeypatch.setattr(rig.Character, "set_face", lambda self, *a: None)
+    yield rig, made
+    for m in ("blocky.kit", "blocky.rig"):
+        sys.modules.pop(m, None)
+    sys.modules.update(saved)
+    import blocky as pkg
+    for m, mod in saved.items():
+        setattr(pkg, m.rsplit(".", 1)[1], mod)
+
+
+BASE_SPEC = {"skin": "#d9a27a", "shirt": "#b8697a", "pants": "#17171b", "hair": "cap", "hair_c": "#141214",
+             "face": {"eyes": "round"}}
+
+
+def test_the_rig_defaults_build_no_new_parts(fake_rig):
+    """Without the new options nothing new is built: ep11 to ep13's casts are unchanged (also checked in Blender:
+    every existing cast member builds the same objects, transforms, meshes and materials)."""
+    rig, made = fake_rig
+    for spec in (BASE_SPEC, {**BASE_SPEC, "hair": "swoop", "hat": "fedora"}, {**BASE_SPEC, "hat": "ballcap"}):
+        made.clear()
+        c = rig.Character("x", spec, None)
+        assert c.coat == []
+        assert not [n for n in made if n.partition(".")[2].startswith(("bcrown", "bbrim", "coat", "zip", "hooddown",
+                                                                         "fringe3"))]
+        assert "x.hcap" in made
+
+
+def test_the_bucket_hat_has_a_crown_and_a_brim_sloping_down_all_round(fake_rig):
+    import numpy as np
+
+    rig, made = fake_rig
+    rig.Character("me", {**BASE_SPEC, "hat": "bucket", "hat_c": "#6f9a2e"}, None)
+    assert made["me.bcrown"][0] == "cyl" and made["me.bbrim"][0] == "mesh_obj"
+    assert "me.hcap" not in made                   # the crown covers the top: no block corners poking through
+    verts, fcs = np.array(made["me.bbrim"][1][0]), made["me.bbrim"][1][1]
+    r = np.hypot(verts[:, 0], verts[:, 1])
+    outer, inner = verts[r > r.mean()], verts[r < r.mean()]
+    assert outer[:, 2].max() < inner[:, 2].min()   # it slopes down, all the way round
+    # every face of the brim faces outward from the ring's own centre line (no flipped normals)
+    for f in fcs:
+        p = verts[list(f)]
+        n = np.cross(p[1] - p[0], p[2] - p[0])
+        c = p.mean(axis=0)
+        mid = np.array([c[0], c[1], 0.0]) / max(1e-9, np.hypot(c[0], c[1]))
+        ring = np.array([mid[0] * (r.min() + r.max()) / 2, mid[1] * (r.min() + r.max()) / 2, verts[:, 2].mean()])
+        assert np.dot(n, c - ring) > 0
+
+
+def test_the_coat_swings_with_its_legs_and_the_hood_lies_down(fake_rig):
+    rig, made = fake_rig
+    c = rig.Character("tasha", {**BASE_SPEC, "hair": "swoop", "fringe": "hard", "extras": ["coat", "hooddown"]}, None)
+    assert {"tasha.coatm-1", "tasha.coatm1", "tasha.zip", "tasha.hooddown", "tasha.fringe3"} <= set(made)
+    assert len(c.coat) == 2
+    c.pose(0, 0, 0, 0, legs=0.4)
+    for hinge, sx in c.coat:   # each panel takes its own leg's swing, so a stride never pokes through it
+        leg = c.P[f"leg{sx}"]
+        assert hinge.rotation_euler == leg.rotation_euler and abs(hinge.rotation_euler[0]) == pytest.approx(0.4)
+    # the hard fringe is only for a swoop
+    made.clear()
+    rig.Character("y", {**BASE_SPEC, "hair": "cap", "fringe": "hard"}, None)
+    assert "y.fringe3" not in made
+
+
+def test_mouth_inside_draws_an_open_mouth_as_a_hole_of_that_colour():
+    """The copy's open mouth (face "mouth_inside"): the same size as the normal open mouth, that colour to its edge
+    with no ink lip line; a shut mouth and every face without the option are drawn as before."""
+    import numpy as np
+
+    skin, black = "#b07850", "#07070a"
+    w = faces.FX1 - faces.FX0
+    cx, cy = int(faces._fx(0.5)), int(faces._fy(0.74))
+    win = (slice(cy - int(0.08 * w), cy + int(0.08 * w)), slice(cx - int(0.12 * w), cx + int(0.12 * w)))
+    sk = np.array(faces.hexrgb(skin))
+    plain = np.asarray(faces.face_image({"eyes": "mirror"}, skin, "neutral", 0.67).convert("RGB")).astype(int)[win]
+    hole = np.asarray(faces.face_image({"eyes": "mirror", "mouth_inside": black}, skin, "neutral", 0.67)
+                      .convert("RGB")).astype(int)[win]
+    drawn_p, drawn_h = np.abs(plain - sk).sum(2) > 60, np.abs(hole - sk).sum(2) > 60
+    yp, xp = np.nonzero(drawn_p)
+    yh, xh = np.nonzero(drawn_h)
+    assert abs(xp.min() - xh.min()) <= 2 and abs(xp.max() - xh.max()) <= 2   # the same size
+    assert abs(yp.min() - yh.min()) <= 2 and abs(yp.max() - yh.max()) <= 2
+    ink = np.array(faces.hexrgb("#1a1416"))
+    near_ink = lambda im: int((np.abs(im - ink).sum(2) < 8).sum())
+    assert near_ink(plain) > 2000 and near_ink(hole) < near_ink(plain) / 20   # black to the edge: no ink lip line
+    assert np.median(hole[drawn_h], axis=0).max() <= 10                     # and black inside
+    shut = lambda f: np.asarray(faces.face_image(f, skin, "neutral", 0.0).convert("RGB"))
+    assert np.array_equal(shut({"eyes": "mirror"}), shut({"eyes": "mirror", "mouth_inside": black}))
+    k = lambda f: faces.face_key(f, skin, "neutral", 0.67, (0, 0), 0)
+    assert k({"eyes": "mirror", "mouth_inside": black}) != k({"eyes": "mirror"})
+
+
+def test_asleep_lids_are_opt_in_and_not_the_content_arcs():
+    """ep17: Mum asleep at 3 a.m. "shut" draws up-arcs, which read as smiling eyes. "asleep" draws flat lids that
+    droop at the outer ends. It's a new expression, so every existing face draws exactly as before."""
+    import numpy as np
+    face = {"eyes": "round", "brows": True}
+    assert "asleep" in faces.EXPRESSIONS and not faces.check_original(face)
+    asleep = np.asarray(faces.face_image(face, "#a86a58", "asleep").convert("L")).astype(int)
+    for other in ("shut", "soft", "blank"):
+        assert np.abs(asleep - np.asarray(faces.face_image(face, "#a86a58", other).convert("L")).astype(int)).sum() > 0
+    # the lid's outer end sits lower than its inner end (a droop), on both eyes
+    s = faces.FX1 - faces.FX0
+    ey = faces._fy(0.42)
+    ink = asleep < 80
+    for side in (-1, 1):
+        cx = faces._fx(0.5) + side * 0.22 * s
+        inner = int(cx - side * 0.07 * s)
+        outer = int(cx + side * 0.07 * s)
+        rows_in = np.where(ink[:, inner])[0]
+        rows_out = np.where(ink[:, outer])[0]
+        rows_in = rows_in[np.abs(rows_in - ey) < 0.12 * s]
+        rows_out = rows_out[np.abs(rows_out - ey) < 0.12 * s]
+        assert rows_out.mean() > rows_in.mean()
+
+
+def test_hall_and_ladder_homophones_are_not_wrong_words():
+    """ep17: "the OLD HALL" and "No more LADDER". In General American "hall"/"haul" and the flapped
+    "ladder"/"latter" are one sound, so Whisper writing either is a spelling, as "threw" for "through" is. Other
+    words are still wrong words."""
+    from blocky import voice
+    assert voice.same_spoken("the old hall", "the old haul")
+    assert voice.same_spoken("no more ladder", "no more latter")
+    assert voice.same_spoken("right through it", "right threw it")
+    assert not voice.same_spoken("the old hall", "the old hell")
+
+
+def test_cardboard_sounds_are_opt_in():
+    """ep17's three new kinds: a tape peel, a cardboard scrape (dull through a wall when distant), and a
+    cardboard creak tone. The default creak is untouched."""
+    import numpy as np
+    from blocky import sound
+    from blocky.synth import SR
+    tape = sound.sfx("tape", 2)
+    assert 0.5 * SR < len(tape) < 1.0 * SR and np.abs(tape).max() > 0.5
+    near = sound.sfx("scrape", 4, 2.2, {})
+    far = sound.sfx("scrape", 4, 2.2, {"distant": True})
+    assert len(near) == len(far) > 2 * SR
+    hf = lambda y: np.abs(np.fft.rfft(y))[int(1500 * len(y) / SR):].sum() / np.abs(np.fft.rfft(y)).sum()
+    assert hf(far) < hf(near) * 0.6
+    wood = sound.sfx("creak", 3, 1.0)
+    assert np.allclose(wood, sound.sfx("creak", 3, 1.0, {})) and np.allclose(wood, sound.sfx("creak", 3, 1.0, {"tone": None}))
+    card = sound.sfx("creak", 3, 1.0, {"tone": "cardboard"})
+    assert len(card) == len(wood) and not np.allclose(card, wood) and np.abs(card).max() > 0.5

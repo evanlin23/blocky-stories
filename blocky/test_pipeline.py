@@ -129,3 +129,16 @@ def test_film_artifact_lookup(monkeypatch):
     assert f["id"] == 2 and f["run_id"] == 22 and f["url"].endswith("/actions/runs/22")
     payload["artifacts"] = []
     assert stories.film("photo-strip") is None
+
+
+def test_cut_rate_warning(tmp_path):
+    """`check` warns when the average shot runs longer than the hits' 2.3 s, and not otherwise."""
+    from blocky import checks, timeline
+
+    tlp = tmp_path / "tl.json"
+    tl = timeline.write("knock-back", ROOT / "stories/knock-back/voice-timings.json", tlp)   # 79 shots in 147 s
+    cut_warn = lambda path: [m for _, m in checks.run("knock-back", path) if "a shot every" in m]
+    assert cut_warn(tlp) == []
+    slow = tmp_path / "slow.json"
+    slow.write_text(json.dumps(dict(tl, shots=tl["shots"][:20])))   # 20 shots in 147 s: one every 7.3 s
+    assert cut_warn(slow) and "7.3 s" in cut_warn(slow)[0]

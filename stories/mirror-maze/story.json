@@ -1,0 +1,1702 @@
+{
+ "slug": "ep15-mirror-maze",
+ "title": "Only one of us walked out of the mirror maze",
+ "made_for_kids": false,
+ "premise": "x",
+ "twist": "y",
+ "world": "z",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#ffd23a",
+ "gap": 0.12,
+ "tail": 0.25,
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#d9a27a",
+   "shirt": "#b8697a",
+   "face": {
+    "eyes": "round"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "TASHA points",
+     "Tasha points"
+    ],
+    [
+     "at anything GREEN",
+     "at anything green"
+    ],
+    [
+     "and goes,",
+     "and goes,"
+    ],
+    [
+     "what's THAT?",
+     "what's that?"
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And I say",
+     "And I say"
+    ],
+    [
+     "PICKLE.",
+     "pickle."
+    ],
+    [
+     "Every TIME.",
+     "Every time."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Whoever",
+     "Whoever"
+    ],
+    [
+     "says PICKLE",
+     "says pickle"
+    ],
+    [
+     "buys the FRIES.",
+     "buys the fries."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So she yells",
+     "So she yells"
+    ],
+    [
+     "FRIES,",
+     "fries,"
+    ],
+    [
+     "and I PAY.",
+     "and I pay."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I have NEVER",
+     "I have never"
+    ],
+    [
+     "won.",
+     "won."
+    ],
+    [
+     "Not ONCE.",
+     "Not once."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We've been",
+     "We've been"
+    ],
+    [
+     "best FRIENDS",
+     "best friends"
+    ],
+    [
+     "since FOREVER.",
+     "since forever."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was the",
+     "It was the"
+    ],
+    [
+     "LAST WEEKEND",
+     "last weekend"
+    ],
+    [
+     "of the FAIR.",
+     "of the fair."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And it was",
+     "And it was"
+    ],
+    [
+     "POURING.",
+     "pouring."
+    ],
+    [
+     "HALF the rides",
+     "Half the rides"
+    ],
+    [
+     "were under TARPS.",
+     "were under tarps."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The only ride",
+     "The only ride"
+    ],
+    [
+     "still LIT",
+     "still lit"
+    ],
+    [
+     "was the",
+     "was the"
+    ],
+    [
+     "MIRROR MAZE.",
+     "mirror maze."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The MAZE GUY",
+     "The maze guy"
+    ],
+    [
+     "was already",
+     "was already"
+    ],
+    [
+     "rolling up",
+     "rolling up"
+    ],
+    [
+     "its ROOF TARP.",
+     "its roof tarp."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He kept",
+     "He kept"
+    ],
+    [
+     "his BACK",
+     "his back"
+    ],
+    [
+     "to us.",
+     "to us."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So we",
+     "So we"
+    ],
+    [
+     "went IN",
+     "went in"
+    ],
+    [
+     "before it",
+     "before it"
+    ],
+    [
+     "came DOWN.",
+     "came down."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Inside",
+     "Inside"
+    ],
+    [
+     "was all GLASS,",
+     "was all glass,"
+    ],
+    [
+     "and a HUNDRED",
+     "and a hundred"
+    ],
+    [
+     "of US.",
+     "of us."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "TASHA said,",
+     "Tasha said,"
+    ],
+    [
+     "\"FIRST one OUT",
+     "first one out"
+    ],
+    [
+     "WINS.\"",
+     "wins."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And we",
+     "And we"
+    ],
+    [
+     "SPLIT UP.",
+     "split up."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There were",
+     "There were"
+    ],
+    [
+     "TASHAS",
+     "Tashas"
+    ],
+    [
+     "all down",
+     "all down"
+    ],
+    [
+     "the GLASS.",
+     "the glass."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every one",
+     "Every one"
+    ],
+    [
+     "of them",
+     "of them"
+    ],
+    [
+     "MOVING.",
+     "moving."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Except ONE,",
+     "Except one,"
+    ],
+    [
+     "way at",
+     "way at"
+    ],
+    [
+     "the BACK,",
+     "the back,"
+    ],
+    [
+     "standing STILL.",
+     "standing still."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I figured",
+     "I figured"
+    ],
+    [
+     "it was",
+     "it was"
+    ],
+    [
+     "the ANGLES.",
+     "the angles."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "For once,",
+     "For once,"
+    ],
+    [
+     "I came out",
+     "I came out"
+    ],
+    [
+     "FIRST.",
+     "first."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then TASHA",
+     "Then Tasha"
+    ],
+    [
+     "came OUT.",
+     "came out."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her hair",
+     "Her hair"
+    ],
+    [
+     "was swept",
+     "was swept"
+    ],
+    [
+     "the OTHER way.",
+     "the other way."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I figured",
+     "I figured"
+    ],
+    [
+     "it was",
+     "it was"
+    ],
+    [
+     "the WIND.",
+     "the wind."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We headed",
+     "We headed"
+    ],
+    [
+     "for the",
+     "for the"
+    ],
+    [
+     "fry VAN.",
+     "fry van."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every STEP,",
+     "Every step,"
+    ],
+    [
+     "she was",
+     "she was"
+    ],
+    [
+     "HALF a beat",
+     "half a beat"
+    ],
+    [
+     "LATE.",
+     "late."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Always on",
+     "Always on"
+    ],
+    [
+     "the side",
+     "the side"
+    ],
+    [
+     "with the PUDDLES.",
+     "with the puddles."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her boots",
+     "Her boots"
+    ],
+    [
+     "didn't SPLASH.",
+     "didn't splash."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I STOPPED",
+     "I stopped"
+    ],
+    [
+     "and turned",
+     "and turned"
+    ],
+    [
+     "to HER.",
+     "to her."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She STOPPED",
+     "She stopped"
+    ],
+    [
+     "and turned",
+     "and turned"
+    ],
+    [
+     "to ME.",
+     "to me."
+    ],
+    [
+     "A little LATE.",
+     "A little late."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I tried",
+     "So I tried"
+    ],
+    [
+     "her own TRICK",
+     "her own trick"
+    ],
+    [
+     "on her.",
+     "on her."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I pointed",
+     "I pointed"
+    ],
+    [
+     "at my HAT",
+     "at my hat"
+    ],
+    [
+     "and went,",
+     "and went,"
+    ],
+    [
+     "what's THAT?",
+     "what's that?"
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She pointed",
+     "She pointed"
+    ],
+    [
+     "at her",
+     "at her"
+    ],
+    [
+     "OWN HEAD.",
+     "own head."
+    ],
+    [
+     "Nothing GREEN",
+     "Nothing green"
+    ],
+    [
+     "up there.",
+     "up there."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her mouth",
+     "Her mouth"
+    ],
+    [
+     "made the WORDS.",
+     "made the words."
+    ],
+    [
+     "No SOUND.",
+     "No sound."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Normally",
+     "Normally"
+    ],
+    [
+     "she'd LAUGH",
+     "she'd laugh"
+    ],
+    [
+     "at me.",
+     "at me."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I kept",
+     "I kept"
+    ],
+    [
+     "WALKING.",
+     "walking."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the WIND",
+     "Then the wind"
+    ],
+    [
+     "came HARD,",
+     "came hard,"
+    ],
+    [
+     "so I DUCKED",
+     "so I ducked"
+    ],
+    [
+     "behind a TRUCK.",
+     "behind a truck."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "When I",
+     "When I"
+    ],
+    [
+     "stood UP,",
+     "stood up,"
+    ],
+    [
+     "she was FROZEN.",
+     "she was frozen."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mid-STEP,",
+     "Mid-step,"
+    ],
+    [
+     "one foot",
+     "one foot"
+    ],
+    [
+     "in the AIR.",
+     "in the air."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Rain running",
+     "Rain running"
+    ],
+    [
+     "off her COAT.",
+     "off her coat."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then she",
+     "Then she"
+    ],
+    [
+     "did my DUCK,",
+     "did my duck,"
+    ],
+    [
+     "way too FAST.",
+     "way too fast."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Like she",
+     "Like she"
+    ],
+    [
+     "was catching UP.",
+     "was catching up."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And she was",
+     "And she was"
+    ],
+    [
+     "back to",
+     "back to"
+    ],
+    [
+     "being LATE.",
+     "being late."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I didn't",
+     "I didn't"
+    ],
+    [
+     "say a WORD.",
+     "say a word."
+    ]
+   ],
+   "gap": 0.4
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So at the",
+     "So at the"
+    ],
+    [
+     "BUMPER CARS,",
+     "bumper cars,"
+    ],
+    [
+     "I HID",
+     "I hid"
+    ],
+    [
+     "behind the TARP.",
+     "behind the tarp."
+    ]
+   ]
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I stood",
+     "I stood"
+    ],
+    [
+     "back there,",
+     "back there,"
+    ],
+    [
+     "SHAKING.",
+     "shaking."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I put",
+     "I put"
+    ],
+    [
+     "my HANDS",
+     "my hands"
+    ],
+    [
+     "over my FACE.",
+     "over my face."
+    ],
+    [
+     "Three deep BREATHS.",
+     "Three deep breaths."
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I couldn't",
+     "I couldn't"
+    ],
+    [
+     "hear her",
+     "hear her"
+    ],
+    [
+     "at ALL.",
+     "at all."
+    ]
+   ],
+   "gap": 0.4
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I",
+     "Then I"
+    ],
+    [
+     "stepped OUT.",
+     "stepped out."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She was",
+     "She was"
+    ],
+    [
+     "right where",
+     "right where"
+    ],
+    [
+     "I'd LEFT her.",
+     "I'd left her."
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the RAIN,",
+     "In the rain,"
+    ],
+    [
+     "one hand",
+     "one hand"
+    ],
+    [
+     "half UP.",
+     "half up."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then she",
+     "Then she"
+    ],
+    [
+     "SAW me.",
+     "saw me."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 1.8,
+   "chunks": []
+  },
+  {
+   "id": "P02",
+   "pause": 0.5,
+   "chunks": []
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She didn't",
+     "She didn't"
+    ],
+    [
+     "HURRY",
+     "hurry"
+    ],
+    [
+     "this time.",
+     "this time."
+    ],
+    [
+     "Hand DOWN,",
+     "Hand down,"
+    ],
+    [
+     "like I DID.",
+     "like I did."
+    ],
+    [
+     "ONE STEP.",
+     "One step."
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And she STOPPED,",
+     "And she stopped,"
+    ],
+    [
+     "FACING me,",
+     "facing me,"
+    ],
+    [
+     "in my POSE.",
+     "in my pose."
+    ]
+   ]
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Her EYES",
+     "Her eyes"
+    ],
+    [
+     "were BLACK,",
+     "were black,"
+    ],
+    [
+     "like a WINDOW",
+     "like a window"
+    ],
+    [
+     "at NIGHT.",
+     "at night."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "No SHINE",
+     "No shine"
+    ],
+    [
+     "at ALL.",
+     "at all."
+    ]
+   ],
+   "gap": 0.4
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's what",
+     "That's what"
+    ],
+    [
+     "a REFLECTION does.",
+     "a reflection does."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It can't MOVE",
+     "It can't move"
+    ],
+    [
+     "if it can't",
+     "if it can't"
+    ],
+    [
+     "SEE you.",
+     "see you."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It came out",
+     "It came out"
+    ],
+    [
+     "of the GLASS.",
+     "of the glass."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Tasha was",
+     "Tasha was"
+    ],
+    [
+     "still IN there.",
+     "still in there."
+    ]
+   ],
+   "gap": 0.6
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The whole fair",
+     "The whole fair"
+    ],
+    [
+     "was coming DOWN.",
+     "was coming down."
+    ],
+    [
+     "I RAN back",
+     "I ran back"
+    ],
+    [
+     "in ANYWAY.",
+     "in anyway."
+    ]
+   ]
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It ran",
+     "It ran"
+    ],
+    [
+     "WITH me,",
+     "with me,"
+    ],
+    [
+     "half a beat",
+     "half a beat"
+    ],
+    [
+     "BEHIND.",
+     "behind."
+    ]
+   ]
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Half the PANELS",
+     "Half the panels"
+    ],
+    [
+     "were OUT.",
+     "were out."
+    ],
+    [
+     "The ROOF",
+     "The roof"
+    ],
+    [
+     "was OFF.",
+     "was off."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And every PANE",
+     "And every pane"
+    ],
+    [
+     "showed TASHA,",
+     "showed Tasha,"
+    ],
+    [
+     "COPYING me.",
+     "copying me."
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "None of them",
+     "None of them"
+    ],
+    [
+     "showed ME.",
+     "showed me."
+    ]
+   ]
+  },
+  {
+   "id": "L65",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I HID again,",
+     "I hid again,"
+    ],
+    [
+     "where NOTHING",
+     "where nothing"
+    ],
+    [
+     "could SEE me.",
+     "could see me."
+    ]
+   ]
+  },
+  {
+   "id": "L66",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I",
+     "Then I"
+    ],
+    [
+     "popped back OUT.",
+     "popped back out."
+    ]
+   ]
+  },
+  {
+   "id": "L67",
+   "who": "narrator",
+   "chunks": [
+    [
+     "For HALF",
+     "For half"
+    ],
+    [
+     "a beat,",
+     "a beat,"
+    ],
+    [
+     "NOTHING moved.",
+     "nothing moved."
+    ]
+   ]
+  },
+  {
+   "id": "L68",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Except ONE,",
+     "Except one,"
+    ],
+    [
+     "way down",
+     "way down"
+    ],
+    [
+     "the GLASS,",
+     "the glass,"
+    ],
+    [
+     "waving both ARMS.",
+     "waving both arms."
+    ]
+   ],
+   "gap": 0.6
+  },
+  {
+   "id": "L69",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the",
+     "In the"
+    ],
+    [
+     "SAME SPOT",
+     "same spot"
+    ],
+    [
+     "as BEFORE.",
+     "as before."
+    ]
+   ]
+  },
+  {
+   "id": "L70",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She pointed",
+     "She pointed"
+    ],
+    [
+     "at my HAT",
+     "at my hat"
+    ],
+    [
+     "and went,",
+     "and went,"
+    ],
+    [
+     "what's THAT?",
+     "what's that?"
+    ]
+   ]
+  },
+  {
+   "id": "L71",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A reflection",
+     "A reflection"
+    ],
+    [
+     "can't go FIRST.",
+     "can't go first."
+    ]
+   ]
+  },
+  {
+   "id": "L72",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I said",
+     "So I said"
+    ],
+    [
+     "PICKLE.",
+     "pickle."
+    ],
+    [
+     "On PURPOSE.",
+     "On purpose."
+    ]
+   ]
+  },
+  {
+   "id": "L73",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She yelled",
+     "She yelled"
+    ],
+    [
+     "FRIES.",
+     "fries."
+    ]
+   ]
+  },
+  {
+   "id": "L74",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She's still TASHA.",
+     "She's still Tasha."
+    ],
+    [
+     "And she's still",
+     "And she's still"
+    ],
+    [
+     "WINNING.",
+     "winning."
+    ]
+   ]
+  },
+  {
+   "id": "L75",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But IT stood",
+     "But it stood"
+    ],
+    [
+     "between us,",
+     "between us,"
+    ],
+    [
+     "FACING me.",
+     "facing me."
+    ]
+   ]
+  },
+  {
+   "id": "L76",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I",
+     "So I"
+    ],
+    [
+     "stepped BACK.",
+     "stepped back."
+    ]
+   ]
+  },
+  {
+   "id": "L77",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It stepped",
+     "It stepped"
+    ],
+    [
+     "back TOO,",
+     "back too,"
+    ],
+    [
+     "HALF a beat",
+     "half a beat"
+    ],
+    [
+     "LATE.",
+     "late."
+    ]
+   ]
+  },
+  {
+   "id": "L78",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And there",
+     "And there"
+    ],
+    [
+     "was TASHA,",
+     "was Tasha,"
+    ],
+    [
+     "SOAKED",
+     "soaked"
+    ],
+    [
+     "and GRINNING.",
+     "and grinning."
+    ]
+   ]
+  },
+  {
+   "id": "L79",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The SHINE",
+     "The shine"
+    ],
+    [
+     "was back",
+     "was back"
+    ],
+    [
+     "in her EYES.",
+     "in her eyes."
+    ]
+   ]
+  },
+  {
+   "id": "L80",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She bumped",
+     "She bumped"
+    ],
+    [
+     "my SHOULDER.",
+     "my shoulder."
+    ]
+   ]
+  },
+  {
+   "id": "L81",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The maze guy",
+     "The maze guy"
+    ],
+    [
+     "carried that PANE",
+     "carried that pane"
+    ],
+    [
+     "to the TRUCK.",
+     "to the truck."
+    ]
+   ]
+  },
+  {
+   "id": "L82",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the GLASS,",
+     "In the glass,"
+    ],
+    [
+     "it watched",
+     "it watched"
+    ],
+    [
+     "us GO.",
+     "us go."
+    ],
+    [
+     "LATE,",
+     "Late,"
+    ],
+    [
+     "like ALWAYS.",
+     "like always."
+    ]
+   ]
+  },
+  {
+   "id": "P03",
+   "pause": 1.8,
+   "chunks": []
+  },
+  {
+   "id": "L83",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My coins were",
+     "My coins were"
+    ],
+    [
+     "already on",
+     "already on"
+    ],
+    [
+     "the COUNTER.",
+     "the counter."
+    ]
+   ]
+  },
+  {
+   "id": "L84",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Before she",
+     "Before she"
+    ],
+    [
+     "even POINTED.",
+     "even pointed."
+    ]
+   ]
+  },
+  {
+   "id": "L85",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We both",
+     "We both"
+    ],
+    [
+     "looked UP",
+     "looked up"
+    ],
+    [
+     "at the RAIN.",
+     "at the rain."
+    ]
+   ]
+  },
+  {
+   "id": "L86",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So did",
+     "So did"
+    ],
+    [
+     "our REFLECTIONS,",
+     "our reflections,"
+    ],
+    [
+     "in the van's",
+     "in the van's"
+    ],
+    [
+     "SHINY SIDE.",
+     "shiny side."
+    ]
+   ]
+  },
+  {
+   "id": "L87",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And NOBODY",
+     "And nobody"
+    ],
+    [
+     "was LATE.",
+     "was late."
+    ]
+   ]
+  },
+  {
+   "id": "L88",
+   "who": "narrator",
+   "chunks": [
+    [
+     "At the",
+     "At the"
+    ],
+    [
+     "fry VAN,",
+     "fry van,"
+    ],
+    [
+     "she pointed",
+     "she pointed"
+    ],
+    [
+     "at my HAT.",
+     "at my hat."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -3,
+      1.5
+     ],
+     [
+      0,
+      0,
+      1.5
+     ],
+     30
+    ]
+   ]
+  }
+ ],
+ "acting": {}
+}
