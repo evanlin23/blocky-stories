@@ -3277,7 +3277,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "out rolled Pop",
-   "expo": 1.22,
+   "expo": 0.95,
    "at": "L56"
   },
   {
@@ -4847,10 +4847,14 @@
     "blink": true,
     "sit": false,
     "skate": true,
-    "wobble": 3,
+    "wobble": 0,
     "hidden": false,
     "expr": "smirk",
     "yaw": 180
+   },
+   {
+    "at": "L57",
+    "wobble": 2
    },
    {
     "at": "L58",

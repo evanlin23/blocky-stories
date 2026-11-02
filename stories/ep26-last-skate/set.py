@@ -373,8 +373,8 @@ def build_hire(kit, ctx):
     dm = kit.plastic("#99444c", 0.5)
     kit.box("closet", (3.0, 1.6, 2.6), (0, -10.1, 1.3), kit.plastic("#d8c7a4", 0.9))
     kit.box("closet floor", (3.0, 1.6, 0.05), (0, -10.1, 0.0), kit.planks("#a97b44", "#8f6535", 1.0, "X"))
-    kit.box("closet bulb", (0.3, 0.3, 0.06), (0, -10.1, 2.58), kit.emit("#ffe0b0", 9.0))
-    kit.light("closet", "POINT", (0, -9.9, 2.2), 180, "#ffdba8", size=0.2)
+    kit.box("closet bulb", (0.3, 0.3, 0.06), (0, -10.1, 2.58), kit.emit("#ffe0b0", 3.5))
+    kit.light("closet", "POINT", (0, -9.9, 2.2), 110, "#ffdba8", size=0.2)
     hinge = kit.empty("doorhinge", (-0.58, -9.12, 0))
     kit.box("door", (1.16, 0.05, 2.08), (0.58, 0, 1.04), dm, hinge, bevel=0.01)
     ctx["door"] = hinge
@@ -534,8 +534,8 @@ def build_skater(kit, ctx):
     for ob in objs:
         pass
     # lights that follow it
-    kit.light("sk_up", "POINT", (0, 0, 0.2), 320, "#ffe0c0", size=0.15)
-    kit.light("sk_rim", "SPOT", (0, 0, 3), 520, "#f27a88", size=0.1, spot=38, blend=0.8)
+    kit.light("sk_up", "POINT", (0, 0, 0.2), 400, "#ffe0c0", size=0.15)
+    kit.light("sk_rim", "SPOT", (0, 0, 3), 620, "#f27a88", size=0.1, spot=38, blend=0.8)
     allobjs = objs + list(root.children_recursive)
     link_only(kit, "skater_up", "sk_up", [o for o in allobjs if o.type == "MESH"], "only")
     link_only(kit, "skater_rim", "sk_rim", [o for o in allobjs if o.type == "MESH"], "only")
