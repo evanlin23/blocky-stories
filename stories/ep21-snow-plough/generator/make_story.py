@@ -135,7 +135,7 @@ FACE_BAG = still([0.0, 1.95, 3.3], [0.0, 0.4, 2.7], 14)
 DASH = still([0.55, 0.6, 3.2], [-0.2, 1.4, 2.3], 26)
 SHAKE_CAM = still([0.5, 1.0, 3.3], [-0.2, 1.9, 2.6], 26)
 WIN_R = still([-0.1, 0.2, 3.2], [4.0, 0.7, 2.4], 22)
-WIN_L = still([-0.2, 0.2, 3.2], [-3.2, 0.2, 1.6], 24)
+WIN_L = still([-1.45, 1.0, 1.5], [-2.2, 8.0, 1.2], 24)
 SIDE_WIDE = still([9.0, 1.5, 2.6], [0.0, 0.8, 2.2], 20)
 O_BASE = (500.0, 0.0)
 H_BASE = (500.0, 300.0)
@@ -180,7 +180,7 @@ seg("L28", "L28>", 1150, 1120, 180)
 seg("L29", "L29>", 1065, 1045, 180)
 seg("L30", "L30>", 1032, 1024, 180)
 seg("L31", "L31>", 1022, 1020, 180)
-seg("L32", "L32>", 1010, 1000, 180)
+seg("L32", "L32>", 1018, 1008, 180)
 seg("L33", "L33>", 990, 940, 180)
 seg("L34", "L34>", 900, 880, 180)
 seg("L35", "L35>", 878, 870, 180)
@@ -219,7 +219,7 @@ cues += [
     {"at": "L29", "name": "marker", "x": 3.0, "y": 1005, "vis": True, "drift": False, "snow": True},
     {"at": "L34", "name": "marker", "x": 2.2, "y": 855, "vis": True, "drift": False, "snow": True},
     {"at": "L36", "name": "marker", "x": 2.2, "y": 855, "vis": True, "drift": True, "snow": True},
-    {"at": "L38", "name": "marker", "x": 2.0, "y": 795, "vis": True, "drift": False, "snow": True},
+    {"at": "L38", "name": "marker", "x": 2.0, "y": 795, "vis": True, "drift": False, "snow": True, "kg": 2.5},
     {"at": "L41", "name": "marker", "x": 2.0, "y": 795, "vis": False},
     {"at": "L46", "name": "marker", "x": MK_FINAL[0], "y": MK_FINAL[1], "vis": True, "drift": False, "snow": True},
     {"at": "L64", "name": "marker", "x": MK_FINAL[0], "y": MK_FINAL[1], "vis": False},
@@ -289,7 +289,7 @@ SHOTS = [
     ("L22", "the fortieth post, then the hut and the white van", 2, still(EYE, [-2.5, 40, 1.6], 17), {}),
     ("L23", "Bram by the stove", 2, still([H_BASE[0] + 0.3, H_BASE[1] - 1.7, 1.45], [H_BASE[0] + 0.6, H_BASE[1] + 0.6, 1.4], 30), {"snow": 0}),
     ("L24", "the white bag at the end of Bram's sleeve", 2,
-     still([H_BASE[0] + 0.5, H_BASE[1] - 0.8, 1.2], [H_BASE[0] + 0.6, H_BASE[1] + 0.5, 1.1], 38), {"snow": 0}),
+     still([H_BASE[0] - 0.3, H_BASE[1] - 1.9, 1.5], [H_BASE[0] + 0.5, H_BASE[1] + 0.5, 1.3], 30), {"snow": 0}),
     ("L25", "the bag on the passenger seat", 2, FACE_BAG, {}),
     ("L26", "the plough turning at the top, white van lights behind", 2, still([10.0, -1.0, 3.0], [0.0, 0.8, 2.2], 18), {}),
     # 04 down
@@ -302,7 +302,7 @@ SHOTS = [
     ("L33", "POV, normal glints", 2, still(EYE, [-1.5, 30, 2.0], 16), {}),
     ("L34", "the Marker ahead in the beams", 2, still(EYE, W2P((2.2, 855, 0.9), 892, 180), 30), {}),
     ("L35", "closer, one glint far down the line sitting lower", 2, still(EYE, W2P((2.2, 855, 0.9), 874, 180), 24), {}),
-    ("L36", "the snow heaped against its front", 2, still(W2P((2.7, 858.3, 0.75), 868, 180), W2P((2.2, 855.3, 0.35), 868, 180), 36), {}),
+    ("L36", "the snow heaped against its front", 2, still(EYE, W2P((2.2, 855.5, 0.6), 868, 180), 42), {}),
     ("L37", "POV, the low glint, round the bend", 2, POV_BEND, {}),
     ("L38", "the Marker at the edge of my lane", 2, still(EYE, W2P((2.0, 795, 1.0), 817, 180), 28), {}),
     ("L39", "the arm lines and blunt hands", 2, still(W2P((2.7, 799.3, 0.95), 806, 180), W2P((2.0, 795.3, 0.7), 806, 180), 32), {}),
@@ -336,8 +336,8 @@ SHOTS = [
     ("L60", "my face, scared easing", 2, FACE, {}),
     ("L61", "the snow lip of the edge", 2,
      still(W2P((-1.6, 741.3, 0.7), S_STOP, 180), W2P((1.2, 740.3, -0.3), S_STOP, 180), 28), {}),
-    ("L62", "low wide: the Marker on the new edge, the drop behind", 2, still([-2.3, 2.4, 0.7], [0.2, 5.0, 0.8], 28), {}),
-    ("L63", "Bram knocking at my door", 2, still([-3.6, 3.3, 1.6], [-2.0, 0.5, 1.5], 34), {}),
+    ("L62", "low wide: the Marker on the new edge, the drop behind", 2, still([-3.6, 3.7, 1.0], [0.2, 5.0, 0.9], 34), {}),
+    ("L63", "Bram knocking at my door", 2, still([0.3, 0.3, 3.0], [1.7, 0.3, 2.8], 34), {}),
     ("L64", "the road ahead, the edge, nothing standing on it", 2, still(EYE, W2P((0.6, 738.0, 0.0), S_STOP, 180), 18), {}),
     ("L65", "the wide square pressed in the snow", 2, still([2.2, 8.5, 2.4], [0.6, 4.4, 0.0], 26), {}),
     ("P03", "the tally on the blade: two rust-orange strokes", 4, still([0.05, 5.21, 0.95], [0.34, 3.85, 0.73], 38), {"hand": 0.0}),
@@ -447,7 +447,7 @@ key("bram", "L24", arms=[0, 84], blend=0.35)
 hide("bram", "L26")
 put("bram", ref("L51", 2), [-0.5, -12.6, 0.3], yaw=180, expr="scared", hide_parts=LEGS, arms=[60, 60])
 hide("bram", "L52")
-put("bram", "L63", [-2.1, 0.2], yaw=70, expr="scared", arms=[0, 0])
+put("bram", "L63", [1.65, 0.3, 1.1], yaw=-90, expr="scared", arms=[0, 0])
 key("bram", "L63", arms=[75, 75], blend=0.2)
 key("bram", ref("L63", 2), expr="worried", blend=0.5)
 hide("bram", "L64")
@@ -508,7 +508,7 @@ story = {
     "tail": 0,
     "look": {"fog": "#17233d", "fog_density": 0.014, "fog_start": 6.0, "sky": "#17233d", "sky_strength": 1.0,
              "exposure": 0.0},
-    "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
+    "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08, "red_line": 0.79,
               "vignette": 0.4, "bloom": 0.28, "grain": 0.013},
     "phonemes": {"Odile": "oʊdˈil"},
     "cast": cast,

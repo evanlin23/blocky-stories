@@ -45,7 +45,13 @@ BASE = {"odile": (500.0, 0.0), "hut": (500.0, 300.0)}
 FOGC = {0: "#17233d", 1: "#8a8ea9", 2: "#e6d2a6"}
 SUNC = {0: "#7f9ad8", 1: "#c9c5e6", 2: "#ffdca8"}
 SUNE = {0: 0.8, 1: 1.6, 2: 3.0}
-EXPO = {0: 0.0, 1: -0.1, 2: -0.5}
+EXPO = {0: 0.0, 1: -0.25, 2: -0.6}
+
+
+def hide_tree(root, flag):
+    root.hide_render = flag
+    for o in root.children_recursive:
+        o.hide_render = flag
 
 
 def ss(x):
@@ -329,12 +335,13 @@ def build_marker(kit, ctx, W):
     root = kit.empty("marker", (0, 0, 0), W)
     orange = kit.plastic("#9a3f18", 0.75, name="marker orange")
     black = kit.plastic("#0b0b0d", 0.5, name="marker black")
+    lighter = kit.plastic("#b5521f", 0.6, name="marker arm paint")
     snowm = kit.plastic("#dfe7f3", 0.95, name="marker snow")
     kit.box("marker.body", (1.8, 0.5, 1.05), (0, 0, 0.525), orange, root, bevel=0.03)
     kit.box("marker.cap", (1.82, 0.52, 0.35), (0, 0, 1.225), black, root, bevel=0.03)
     for sx in (-1, 1):
-        kit.box(f"marker.arm{sx}", (0.1, 0.03, 0.78), (sx * 0.74, 0.255, 0.58), orange, root, bevel=0.012)
-        kit.box(f"marker.hand{sx}", (0.24, 0.12, 0.26), (sx * 0.78, 0.30, 0.34), orange, root, bevel=0.025)
+        kit.box(f"marker.arm{sx}", (0.12, 0.04, 0.78), (sx * 0.74, 0.265, 0.58), lighter, root, bevel=0.015)
+        kit.box(f"marker.hand{sx}", (0.26, 0.14, 0.26), (sx * 0.78, 0.31, 0.34), lighter, root, bevel=0.03)
     nodes = []
     for sx in (-1, 1):
         m, e = fog_emit(kit, f"marker eye {sx}", "#ffb03a", 0.0)
@@ -457,6 +464,10 @@ def build_plough(kit, ctx):
         or o.name.startswith(("blade", "wheel", "hub", "arm", "psnow", "door", "a pillar")))]
     for nm in ("headL", "headR"):
         light_except(kit, "head except", nm, near)
+    kit.box("step", (0.5, 0.9, 0.1), (-1.5, 0.3, 1.0), grey, PL, bevel=0.02)
+    kit.box("step r", (0.5, 0.9, 0.1), (1.5, 0.3, 1.0), grey, PL, bevel=0.02)
+    vd = kit.light("van dome", "POINT", (-0.3, -12.4, 2.3), 7.0, "#dfe8ff", size=0.15, parent=PL)
+    vd.visible_camera = False
     dg = kit.light("dash glow", "POINT", (0.0, 1.3, 2.6), 3.5, "#6dffb0", size=0.08, parent=PL)
     dg.visible_camera = False
     fl = kit.light("cab fill", "POINT", (0.0, 0.9, 3.5), 12.0, "#8aa4d0", size=0.2, parent=PL)
@@ -502,7 +513,7 @@ def build_odile(kit, ctx):
     fl = kit.light("odile fill", "POINT", (bx + 0.2, by - 0.6, 2.2), 55.0, "#f0b070", size=0.3)
     fl.visible_camera = False
     # on the table
-    keysm = kit.plastic("#6e6a5d", 0.35, name="keys")
+    keysm = kit.plastic("#d4d0bf", 0.3, name="keys")
     objs = {"keys": [], "bag": [], "glass": [], "cups": []}
     objs["keys"].append(kit.cyl("o.ring", 0.05, 0.015, (0.28, 0.1, 0.79), keysm, R, n=10))
     objs["keys"].append(kit.box("o.key1", (0.04, 0.12, 0.012), (0.34, 0.2, 0.787), keysm, R))
@@ -556,7 +567,7 @@ def build(kit, story, tl):
     # the moon / sun and the marker's rim light
     sun = kit.light("sun", "SUN", (0, 0, 60), 1.0, "#7f9ad8", rot=(math.radians(58), 0, math.radians(215)))
     ctx["sun"] = sun
-    mrim = kit.light("mrim", "AREA", (0, 0, 2), 90.0, "#7fa4ff", size=1.8)
+    mrim = kit.light("mrim", "AREA", (0, 0, 2), 90.0, "#7fa4ff", size=1.8, parent=ctx["W"])
     mrim.visible_camera = False
     ctx["mrim"] = mrim
     # the Marker is lit by its own soft key, not by the headlights (those would flatten it)
@@ -567,7 +578,7 @@ def build(kit, story, tl):
             col.objects.link(o)
     for co in col.collection_objects:
         co.light_linking.link_state = "EXCLUDE"
-    mk = kit.light("mkey", "SPOT", (0, 0, 3), 3200.0, "#ffe2b8", spot=48, blend=0.6, size=0.3)
+    mk = kit.light("mkey", "SPOT", (0, 0, 3), 260.0, "#ffe2b8", spot=48, blend=0.6, size=0.3, parent=ctx["W"])
     mk.visible_camera = False
     light_only(kit, "mk only", "mkey", mobjs)
     ctx["mkey"] = mk
@@ -696,6 +707,7 @@ def animate(kit, story, tl, t, ctx):
     hg = max(0.2, eased(cues(tl, "lights"), "g", t, 1.0))
     over["headL"] = over["headR"] = hg
     over["dash glow"] = 1.0
+    over["van dome"] = 1.0 if (last(cues(tl, "van"), t) or {}).get("mode") == "follow" else 0.0
     day = 1.0 - 0.6 * min(1.0, tod)    # reflectors fade a little in daylight
     # ---- the posts: a glint fades up as the headlights reach it and down as they leave
     sl = last(cues(tl, "slide"), t)
@@ -722,7 +734,7 @@ def animate(kit, story, tl, t, ctx):
         else:
             root.rotation_euler = (0, 0, 0)
         root.location = (wx, wy, z)
-        root.hide_render = (i == 24 and slid)
+        hide_tree(root, i == 24 and slid)
         dx, dy = wx - px, wy - s
         ypl = sn * dx + c * dy
         xpl = c * dx - sn * dy
@@ -737,7 +749,7 @@ def animate(kit, story, tl, t, ctx):
     ctx["farlight"].hide_render = not (s < 100.0 and abs(th) < 0.1)
     nw = last(cues(tl, "newpost"), t)
     on = bool(nw and nw.get("on"))
-    ctx["newpost"]["root"].hide_render = not on
+    hide_tree(ctx["newpost"]["root"], not on)
     nv = eased(cues(tl, "newpost"), "glow", t, 0.0) if on else 0.0
     ctx["newpost"]["node"].inputs["Strength"].default_value = 5.0 * nv
     # ---- the Marker
@@ -756,15 +768,18 @@ def animate(kit, story, tl, t, ctx):
         dx, dy = x - px, y - s
         ypl = sn * dx + c * dy
         g = ss((ypl + 1.0) / 4.0) * (1.0 - ss((ypl - 30.0) / 18.0))
+        cl = V(sspec["cam"][0][1])
+        mpl = V((sn * 0 + c * (x - px) - sn * (y - s), sn * (x - px) + c * (y - s), 0.8))
+        near = min(1.0, max(0.3, (cl - mpl).length / 9.0))   # eyes close to the camera would clip to white
         for e in M["eyes"]:
-            e.inputs["Strength"].default_value = 3.2 * g * hg * day
+            e.inputs["Strength"].default_value = 3.2 * g * hg * day * near
         rim = ctx["mrim"]
         rim.location = (x, y - 3.0, 1.9)
-        kit.aim(rim, (x, y, 0.8))
+        rim.rotation_euler = (V((x, y, 0.8)) - V((x, y - 3.0, 1.9))).to_track_quat("-Z", "Y").to_euler()
         over["mrim"] = 1.0
         ctx["mkey"].location = (x + 0.8, y + 3.2, 2.6)
-        kit.aim(ctx["mkey"], (x, y, 0.7))
-        over["mkey"] = hg
+        ctx["mkey"].rotation_euler = (V((x, y, 0.7)) - V((x + 0.8, y + 3.2, 2.6))).to_track_quat("-Z", "Y").to_euler()
+        over["mkey"] = hg * float(mk.get("kg", 1.0))
     else:
         over["mrim"] = 0.0
         over["mkey"] = 0.0
