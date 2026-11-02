@@ -79,10 +79,10 @@ cast = {
            "pants": "#1f2a40", "shoes": "#2c2622", "sleeves": "long", "hair": "cap", "hair_c": "#6b4a2e",
            "hat": "beanie", "hat_c": "#1f4a4d",
            "face": {"eyes": "tired", "brows": True, "ink": "#1b1513"}},
-    "longman": {"age": "adult", "skin": "#6f7352", "shirt": "#4d6638", "pattern": "knit", "pattern_c": "#34472a",
+    "longman": {"age": "adult", "skin": "#6f7352", "shirt": "#4d6638", "pattern": "solid", "pattern_c": "#34472a",
                 "pants": "#6a4f33", "pants_pattern": "stripes", "pants_pattern_c": "#58402a", "shoes": "#6a4f33",
-                "sleeves": "long", "hair": "buzz", "hair_c": "#2f4026", "hat": "none", "height": 1.0,
-                "face": {"eyes": "round", "brows": False, "mouth": "line", "ink": "#0a0a0a", "pupil": "#050505", "bags": True}},
+                "sleeves": "long", "hair": "cap", "hair_c": "#25321d", "hat": "none", "height": 1.0,
+                "face": {"eyes": "round", "brows": True, "mouth": "line", "ink": "#0a0a0a", "pupil": "#050505", "bags": True}},
 }
 
 

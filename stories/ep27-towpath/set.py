@@ -226,7 +226,7 @@ def materials(kit_, ctx):
     M["honey2"] = kit_.planks("#a77a45", "#85602f", 1.4, "Y", "honeyY")
     M["floor"] = kit_.planks("#8f6a3b", "#6e4f28", 1.6, "X", "cabfloor")
     M["iron"] = kit_.plastic("#2a2a2a", 0.45, "iron", spec=0.6)
-    M["tally"] = kit_.plastic("#4d6638", 0.8, "tally")
+    M["tally"] = kit_.emit("#8fd070", 1.1, "tally")
     M["bed"] = kit_.plastic("#7c4a3a", 0.95, "mosbed")
     M["mattress"] = kit_.plastic("#6f7f8a", 0.95, "mattress")
     M["quilt"] = kit_.plastic("#a99f86", 0.95, "quilt")
@@ -279,15 +279,17 @@ def build_world(kit_, ctx, M):
               rot=(rnd.uniform(-0.25, 0.25), rnd.uniform(-0.25, 0.25), rnd.uniform(0, 3)))
         ctx["tufts"].append(t)
     # rings: an iron ring lying on the coping with its staple
+    # (the rings past the back one sit 0.6 m toward the stern of the creature's head, so no ring sits behind its face)
     for i, rx in enumerate(RINGS):
-        tube_ring(f"ring{i}", 0.13, 0.027, (rx, 0.08, GROUND + 0.07 + 0.027), M["iron"])
-        B(f"staple{i}", (0.07, 0.06, 0.05), (rx, 0.24, GROUND + 0.095), M["iron"], 0.01)
-    # the two strokes on the back ring (x = 5): short uprights across the iron's top, in canal-weed green
-    z_top = GROUND + 0.07 + 0.027 * 2 + 0.002
+        rx = rx if i == 0 else rx - 0.6
+        tube_ring(f"ring{i}", 0.17 if i == 0 else 0.13, 0.03 if i == 0 else 0.027, (rx, 0.08, GROUND + 0.07 + 0.027), M["iron"])
+        B(f"staple{i}", (0.07, 0.06, 0.05), (rx, 0.27 if i == 0 else 0.24, GROUND + 0.095), M["iron"], 0.01)
+    # the two strokes on the back ring (x = 5): pressed across the iron's near side (the +y side the camera sees),
+    # bright canal-weed green, long enough to read as two strokes and not grass
+    z_top = GROUND + 0.07 + 0.03 * 2 + 0.004
     ctx["tally"] = []
-    for k, off in enumerate((-0.025, 0.025)):
-        # the ring's near side (toward the camera at -y... the front) at angle -90 degrees: radial strokes
-        ctx["tally"].append(B(f"tally{k}", (0.012, 0.062, 0.006), (WIN_X + off, 0.08 - 0.13, z_top), M["tally"], 0.002))
+    for k, off in enumerate((-0.05, 0.05)):
+        ctx["tally"].append(B(f"tally{k}", (0.024, 0.11, 0.012), (WIN_X + off, 0.08 + 0.17, z_top), M["tally"], 0.004))
 
 
 def build_boat(kit_, ctx, M):
@@ -562,10 +564,19 @@ def stretch_long(kit_, ctx):
     for i in range(24):
         ctx["beads"].append(kit_.sphere(f"longman.cbead{i}", rnd.uniform(0.02, 0.04),
                                         (rnd.uniform(-0.85, 0.85), -0.53, 2.0 - rnd.uniform(0.3, 2 * kt - 0.5)), bead, tor, seg=8))
-    # hair lying flat and wet on the skull: a thin cap and a short swept fringe, never upright
-    hair = kit_.plastic("#2f4026", 0.5, "ln wet hair")
-    kit_.box("longman.fringe", (1.0, 0.5, 0.1), (0.12, -0.5, 0.66), hair, head, rot=(0.0, 0.1, 0.0), bevel=0.04)
-    kit_.box("longman.fringe2", (0.7, 0.45, 0.1), (-0.3, -0.5, 0.62), hair, head, rot=(0.0, -0.2, 0.0), bevel=0.04)
+    # a man's face: a nose, two ears, a heavy brow, a neck and a collar, so the head isn't a bare cylinder
+    R = faces.HEAD_R
+    kit_.box("longman.nose", (0.2, 0.34, 0.42), (0, -R - 0.06, -0.06), skin, head, bevel=0.06)
+    kit_.box("longman.nosetip", (0.26, 0.16, 0.16), (0, -R - 0.2, -0.2), skin, head, bevel=0.05)
+    for sx in (-1, 1):
+        kit_.box(f"longman.ear{sx}", (0.1, 0.24, 0.4), (sx * (R + 0.02), 0.05, -0.02), skin, head, bevel=0.04)
+        kit_.box(f"longman.cheek{sx}", (0.26, 0.1, 0.16), (sx * 0.34, -R + 0.01, -0.22), skin, head, bevel=0.04)
+    kit_.box("longman.brow", (1.0, 0.1, 0.1), (0, -R + 0.01, 0.27), kit_.plastic("#1f2a18", 0.8, "ln brow"), head, bevel=0.03)
+    kit_.box("longman.neckm", (0.95, 0.85, 0.7), (0, 0, 0.0), skin, bpy.data.objects["longman.neck"], bevel=0.1)
+    kit_.box("longman.collar", (1.45, 1.15, 0.34), (0, 0, 1.98), lapel, tor, bevel=0.1)
+    # hair lying flat and wet on the skull: a thin fringe over the brow, never upright
+    hair = kit_.plastic("#25321d", 0.5, "ln wet hair")
+    kit_.box("longman.fringe", (1.24, 0.1, 0.2), (0.0, -R + 0.03, 0.5), hair, head, bevel=0.04)
     glint = kit_.emit("#cfdcd8", 5.0, "eye glint")
     for sx in (-1, 1):
         kit_.sphere(f"longman.glint{sx}", 0.02, (sx * 0.228, -0.598, 0.09), glint, head, seg=8)
@@ -740,7 +751,7 @@ def animate(kit_, story, tl, t, ctx):
     moss_here = (not mroot.hide_render) and abs(mroot.location.x - PATCH[0]) < 0.8 and abs(mroot.location.y - PATCH[1]) < 0.8
     for o in ctx["tufts"]:
         inside = abs(o.location.y - PATCH[1]) < 0.34 and abs(o.location.x - PATCH[0]) < 0.6
-        o.hide_render = pon or ((long_here or moss_here) and inside)
+        o.hide_render = pon or ((long_here or moss_here) and inside) or bool(_last(_cues(tl, "tally"), t) and _last(_cues(tl, "tally"), t).get("on"))
     tc = _last(_cues(tl, "tally"), t)
     for o in ctx["tally"]:
         o.hide_render = not (tc and tc.get("on"))
