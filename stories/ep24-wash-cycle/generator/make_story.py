@@ -93,8 +93,8 @@ shot("L05", mv([-4.4, -0.9, 1.3], [3.5, 0.4, 1.0], 16, [-4.3, -0.9, 1.3], [3.5, 
 shot("L06", mv([-1.6, -0.55, 1.5], [-3.5, -2.45, 1.25], 24, [-1.75, -0.55, 1.5], [-3.5, -2.45, 1.25], 25))           # S06 me at the table
 shot("L07", mv([2.7, -0.6, 1.4], [4.4, -3.0, 1.3], 24, [2.9, -0.7, 1.4], [4.4, -3.0, 1.3], 26), hand=0.004)           # S07 in at the door
 shot("L08", mv([-0.5, -1.0, 1.35], [3.65, 0.0, 1.2], 30, [-0.1, -1.0, 1.35], [3.65, 0.0, 1.2], 32), hand=0.003)       # S08 old man small
-shot("L09", mv([1.9, -1.55, 1.5], [3.45, 0.0, 1.2], 24, [2.05, -1.5, 1.5], [3.45, 0.0, 1.2], 25), hand=0.003)         # S09 grey jumper
-shot("L10", mv([2.35, -1.4, 1.5], [3.65, 0.0, 1.5], 28, [2.4, -1.35, 1.5], [3.65, 0.0, 1.5], 29), hand=0.003)   # S10 profile
+shot("L09", mv([2.7, 1.9, 1.5], [3.6, 0.0, 1.4], 22, [2.8, 1.8, 1.5], [3.6, 0.0, 1.4], 23), hand=0.003)   # S09 grey jumper
+shot("L10", mv([2.4, 1.15, 1.5], [3.65, 0.0, 1.5], 30, [2.45, 1.1, 1.5], [3.65, 0.0, 1.5], 31), hand=0.003)   # S10 his face
 shot("L11", front(ME_F, 180, 1.5, 0.0, 34), hand=0.005)                                          # S11 me, cold
 shot("L12", mv([-2.6, 0.2, 1.35], [-5.0, -1.1, 1.1], 24, [-2.8, 0.2, 1.35], [-5.0, -1.1, 1.1], 25), hand=0.003)   # S12 the change machine
 shot("L13", mv([-2.3, -0.95, 1.15], [-2.3, -3.0, 1.0], 22), hand=0.002)   # S13 the buzz
@@ -118,13 +118,13 @@ shot("L28", mv([3.9, -14.0, 1.7], [3.9, -3.5, 1.4], 12.5), hand=0.004)   # S29 o
 shot("L29", mv([0.6, -10.8, 1.5], [2.4, -5.8, 1.35], 24), hand=0.01)   # S30 walking off
 # 03 one chair nearer (night three)
 shot("L30", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S31 four
-shot("L31", mv([CHX[3], -0.5, 0.05], [CHX[3], 0.02, 0.41], 18), hand=0)                          # S32 the tally
+shot("L31", mv([CHX[3], -0.5, 0.05], [CHX[3], 0.0, 0.5], 18), hand=0)   # S32 the tally
 shot("L31b+0.45", front(ME_F, 180, 1.35, 0.15, 36, aim_dz=-0.15), hand=0.003)                    # S33 the same page
 shot("L32", front(F(3), 0, 1.5, -0.1, 36, push=0.08), hand=0.002)                                # S34 closer
 shot("L33", front(ME_F, 180, 1.5, 0.0, 36), hand=0.004)                                          # S35 it wants the coat back
-shot("L34", mv([3.0, -1.5, 1.5], [3.3, -3.3, 1.4], 24, [3.05, -1.5, 1.5], [3.3, -3.3, 1.4], 25), hand=0.003)       # S36 the hook
+shot("L34", mv([2.5, -1.3, 1.5], [3.35, -3.3, 1.3], 18, [2.6, -1.3, 1.5], [3.35, -3.3, 1.3], 18), hand=0.003)   # S36 the hook
 shot("L35", front(F(3), 0, 1.5, -0.1, 36), hand=0.002)                                           # S37 its eyes
-shot("L36", mv([2.7, -1.6, 1.55], [3.65, 0.0, 1.45], 20, [2.8, -1.55, 1.55], [3.65, 0.0, 1.45], 21), hand=0.003)   # S38 he coughs
+shot("L36", mv([2.9, 1.6, 1.55], [3.65, 0.0, 1.45], 20, [3.0, 1.55, 1.55], [3.65, 0.0, 1.45], 21), hand=0.003)   # S38 he coughs
 shot("L37", mv([0.4, -1.9, 1.5], [2.4, -0.8, 1.3], 20, [0.7, -1.9, 1.5], [2.7, -0.8, 1.3], 20), hand=0.004)   # S39 past his chair
 shot("L38", front([3.1, -0.85, FH], 90, 1.5, 0.0, 34), hand=0.003)                               # S40 lavender
 shot("L39", mv([-3.6, 1.0, 1.3], [-4.8, 1.0, 1.25], 24, [-3.5, 1.0, 1.3], [-4.8, 1.0, 1.25], 25), hand=0.002)       # S41 soap machine
@@ -151,12 +151,12 @@ shot("L58", c([0, [-3.66, -1.95, 1.62], [-3.6, -0.3, 1.5], 28, 7], [1, [-3.65, -
 shot("L59", c([0, [-4.5, -1.9, 1.55], [-3.5, -0.5, 1.45], 24], [1, [-4.45, -1.85, 1.55], [-3.5, -0.5, 1.45], 25]), hand=0.002)   # S59 I stand
 shot("L60", mv([3.6, 2.3, 0.85], [5.25, 3.1, 0.5], 24, [3.7, 2.35, 0.85], [5.25, 3.1, 0.5], 25), hand=0.002)   # S60 machine six
 shot("L61", front([-3.6, -2.45, FH], 180, 1.9, 0.1, 30, push=0.3, aim_dz=-0.25), hand=0.003)     # S61 folding
-shot("L62", mv([ST[0] + 0.45, ST[1] + 0.3, 1.3], [ST[0], ST[1] + 2.9, 2.0], 22, [ST[0] + 0.45, ST[1] + 1.3, 1.9], [ST[0], ST[1] + 3.6, 2.4], 22), hand=0.004)  # S62 up the stair
-shot("L63", front([ST[0], LY + 0.1, TOP + FH], 0, 1.4, 0.0, 34), hand=0.003)                     # S63 his door
-shot("L64", mv([ST[0] + 0.55, LY - 1.9, TOP + 1.4], [ST[0], LY - 0.45, TOP + 1.15], 24, [ST[0] + 0.55, LY - 1.8, TOP + 1.4], [ST[0], LY - 0.45, TOP + 1.15], 25), hand=0.003)  # S64 the wash
-shot("L65", front([ST[0], LY - 1.15, TOP + FH], 125, 1.45, 0.0, 38), hand=0.003)                 # S65 thank you
-shot("L66", front([ST[0], LY - 0.15, TOP + FH], 0, 1.5, 0.0, 36), hand=0.003)                    # S66 his slippers
-shot("L68", mv([ST[0] + 0.55, LY - 2.3, TOP + 1.5], [ST[0], LY - 0.5, TOP + 1.3], 21, [ST[0] + 0.5, LY - 2.2, TOP + 1.5], [ST[0], LY - 0.5, TOP + 1.3], 21), hand=0.003)  # S67 two-shot
+shot("L62", mv([ST[0], 4.3, TOP + 1.75], [ST[0], 1.6, 1.5], 24, [ST[0], 4.2, TOP + 1.75], [ST[0], 2.4, 1.9], 24), hand=0.004)   # S62 up the stair
+shot("L63", front([ST[0], LY + 0.25, TOP + FH], 0, 1.7, 0.1, 32), hand=0.003)   # S63 his door
+shot("L64", mv([ST[0] + 0.55, LY - 3.0, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.2], 17, [ST[0] + 0.55, LY - 2.9, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.2], 17), hand=0.003)   # S64 the wash
+shot("L65", front([ST[0], LY - 1.15, TOP + FH], 180, 1.5, 0.0, 36), hand=0.003)   # S65 thank you
+shot("L66", front([ST[0], LY + 0.25, TOP + FH], 0, 1.6, 0.0, 34), hand=0.003)   # S66 his slippers
+shot("L68", mv([ST[0] + 0.55, LY - 3.1, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.3], 16, [ST[0] + 0.5, LY - 3.0, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.3], 16), hand=0.003)   # S67 two-shot
 # 07 two coats
 shot("L69", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S68
 shot("L71", mv([-2.0, -2.65, 1.15], [0.2, -1.65, 0.95], 22, [-1.9, -2.65, 1.15], [0.2, -1.65, 0.95], 23), hand=0.003)  # S69 towels
@@ -219,8 +219,8 @@ me.set("L18+0.9", expr="neutral")
 me.jump("L19", STOOL, **{**SIT, "arms": [68, 68]}, expr="neutral")
 me.set("L25", expr="worried", head=[0, 4])
 me.set("L26", expr="worried", tremble=0.0)
-me.jump("L29", [3.2, -5.2, 0.0], **{**STAND, "yaw": 0}, expr="neutral")
-me.walk("L29>", [1.4, -6.4, 0.0])
+me.jump("L29", [3.0, -5.3, 0.0], **{**STAND, "yaw": 0}, expr="neutral")
+me.walk("L29>", [1.9, -6.0, 0.0])
 me.jump("L30", STOOL, **P(SIT, expr="neutral", head=[0, 0], look=[0, 0]))
 me.set("L31b", head=[0, 18], look=[0, -1.0], expr="worried")
 me.set("L33", head=[0, 0], look=[0, 0], expr="worried")
@@ -261,7 +261,11 @@ me0.jump("L60", STOOL, hidden=False, **P(SIT, expr="neutral"))
 me0.set("L61", arms=[70, 70], expr="smirk")
 me0.jump("L62", [ST[0], ST[1] + 1.8, 1.15], **{**STAND, "arms": [88, 88], "yaw": 180}, expr="neutral")
 me0.walk("L63", [ST[0], LY - 1.15, TOP], expr="neutral")
+me0.set("L63", hidden=True)
+me0.jump("L64", [ST[0], LY - 1.15, TOP], hidden=False, **{**STAND, "arms": [88, 88], "yaw": 180}, expr="neutral")
 me0.set("L65", expr="soft")
+me0.set("L66", hidden=True)
+me0.jump("L68", [ST[0], LY - 1.15, TOP], hidden=False, **{**STAND, "arms": [88, 88], "yaw": 180}, expr="soft")
 me0.jump("L69", STOOL, **P(SIT, expr="neutral"))
 me0.set("L71", arms=[68, 68])
 me0.jump("L74", [1.3, -2.55, 0.0], **{**STAND, "arms": [68, 68], "yaw": 180}, expr="smirk")
@@ -289,7 +293,8 @@ ar.walk("L55+1.8", [2.8, -2.55, 0.0], yaw=180)
 ar.jump("L56", [-2.3, -2.5, 0.0], **{**STAND, "yaw": 0, "arms": [60, 60]})
 ar.jump("L57", [-2.3, -2.5, 0.0], hidden=True)
 ar.jump("L63", [ST[0], LY + 0.25, TOP], hidden=False, **{**STAND, "yaw": 0}, expr="neutral")
-ar.set("L66", head=[0, 24], expr="soft")
+ar.set("L65", hidden=True)
+ar.set("L66", hidden=False, head=[0, 24], expr="soft")
 ar.set("L68", head=[0, 0], expr="soft")
 ar.jump("L69", seat(5), hidden=False, **P(SIT, arms=[22, 22], expr="neutral"))
 ar.jump("L74", [2.3, -2.55, 0.0], **{**STAND, "arms": [68, 68], "yaw": 180}, expr="soft")

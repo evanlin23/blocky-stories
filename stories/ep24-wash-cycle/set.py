@@ -101,8 +101,11 @@ def materials(kit):
     M["tube"] = kit.emit("#f4eedb", TUBE_STRENGTH, "wc tube")
     M["warm"] = kit.emit("#d79a52", 1.7, "wc dryer glow")
     M["warm2"] = kit.emit("#ffcf90", 2.2, "wc warm plane")
+    M["warm3"] = kit.emit("#ffcf90", 0.9, "wc warm room")
     M["washglass"] = kit.emit("#3d5f86", 0.5, "wc wash glass")
     M["lamp"] = kit.emit("#bcd0ff", 6.0, "wc street lamp")
+    M["bokeh"] = kit.emit("#a9bfe8", 2.2, "wc bokeh")
+    M["bokeh2"] = kit.emit("#e8b27a", 2.2, "wc bokeh warm")
     M["panel"] = kit.emit("#c9e6cf", 1.1, "wc change panel")
     M["black"] = kit.plastic("#0d0f13", 0.6, "wc black")
     M["blue"] = kit.emit(BLUE, 1.6, "wc tally blue")
@@ -226,9 +229,9 @@ def build_machines(kit, ctx, M):
     for i, x in enumerate(CHX):
         B(kit, f"dryer{i}", (1.3, 0.9, 1.85), (x, 3.15, 0.925), M["dryer"], bevel=0.02)
         kit.cyl(f"dryer ring{i}", 0.4, 0.08, (x, 2.66, 1.0), M["steel"], rot=(math.pi / 2, 0, 0), n=32)
-        kit.cyl(f"dryer glass{i}", 0.31, 0.02, (x, 2.63, 1.0), M["warm"], rot=(math.pi / 2, 0, 0), n=32)
+        kit.cyl(f"dryer glass{i}", 0.31, 0.04, (x, 2.615, 1.0), M["warm"], rot=(math.pi / 2, 0, 0), n=32)
         B(kit, f"dryer panel{i}", (0.9, 0.04, 0.2), (x, 2.68, 1.62), M["steel2"])
-        e = kit.empty(f"dryer load{i}", (x, 2.6, 1.0))
+        e = kit.empty(f"dryer load{i}", (x, 2.58, 1.0))
         for j, (lm, rr, a) in enumerate((("lump1", 0.17, 0.0), ("lump2", 0.2, 2.1), ("lump3", 0.12, 4.2))):
             B(kit, f"dl{i}{j}", (0.13, 0.04, 0.1), (rr * math.cos(a), 0, rr * math.sin(a)), M[lm], e, bevel=0.015,
               rot=(0, a, 0))
@@ -240,15 +243,16 @@ def build_machines(kit, ctx, M):
     ctx["d7_hinge"] = kit.empty("d7 hinge", (x7 - 0.4, y7 + 0.36, 1.0))
     kit.cyl("d7 ring", 0.4, 0.08, (0.4, 0.0, 0), M["steel"], ctx["d7_hinge"], rot=(math.pi / 2, 0, 0), n=32)
     ctx["d7_glass_mat"] = kit.emit("#d79a52", 1.7, "wc d7 glass")
-    kit.cyl("d7 glass", 0.31, 0.02, (0.4, -0.02, 0), ctx["d7_glass_mat"], ctx["d7_hinge"], rot=(math.pi / 2, 0, 0), n=32)
+    kit.cyl("d7 glass", 0.31, 0.04, (0.4, 0.045, 0), ctx["d7_glass_mat"], ctx["d7_hinge"], rot=(math.pi / 2, 0, 0), n=32)
     kit.cyl("d7 drum", 0.31, 0.5, (x7, y7 + 0.1, 1.0), M["black"], rot=(math.pi / 2, 0, 0), n=32)
-    ctx["d7_coat"] = kit.empty("d7 coat", (x7, y7 + 0.3, 1.0))
+    ctx["d7_coat"] = kit.empty("d7 coat", (x7, y7 + 0.41, 1.0))
+    kit.cyl("d7 hole", 0.33, 0.01, (x7, y7 + 0.355, 1.0), M["black"], rot=(math.pi / 2, 0, 0), n=32)
     B(kit, "d7 coat a", (0.5, 0.1, 0.34), (0, 0, 0), M["coat"], ctx["d7_coat"], bevel=0.04)
     B(kit, "d7 coat b", (0.18, 0.1, 0.36), (0.1, 0, 0.12), M["coat"], ctx["d7_coat"], bevel=0.04, rot=(0, 0.7, 0))
-    ctx["d7_loadfloor"] = kit.empty("d7 floor coat", (x7, y7 + 0.1, 0.78))
+    ctx["d7_loadfloor"] = kit.empty("d7 floor coat", (x7, y7 + 0.45, 0.8))
     B(kit, "d7 fcoat", (0.5, 0.36, 0.1), (0, 0, 0), M["coat"], ctx["d7_loadfloor"], bevel=0.04)
     B(kit, "d7 fcoat2", (0.4, 0.3, 0.08), (0, 0, 0.08), M["coat"], ctx["d7_loadfloor"], bevel=0.04)
-    kit.light("d7 inner", "POINT", (x7, y7 + 0.28, 1.0), 14.0, "#e8a45a", size=0.1)
+    kit.light("d7 inner", "POINT", (x7, y7 + 0.7, 1.0), 14.0, "#e8a45a", size=0.1)
     # twelve front-loaders on the right end wall: two rows of six, each a drum with a load
     ctx["wash"] = []
     for r_ in range(2):
@@ -257,8 +261,8 @@ def build_machines(kit, ctx, M):
             z0 = r_ * 0.98
             B(kit, f"wash{r_}{c_}", (0.9, 0.96, 0.95), (XR - 0.45, y, z0 + 0.475), M["dryer"], bevel=0.02)
             kit.cyl(f"wash ring{r_}{c_}", 0.33, 0.07, (XR - 0.93, y, z0 + 0.5), M["steel"], rot=(0, math.pi / 2, 0), n=28)
-            kit.cyl(f"wash glass{r_}{c_}", 0.26, 0.02, (XR - 0.96, y, z0 + 0.5), M["washglass"], rot=(0, math.pi / 2, 0), n=28)
-            e = kit.empty(f"wash load{r_}{c_}", (XR - 0.99, y, z0 + 0.5))
+            kit.cyl(f"wash glass{r_}{c_}", 0.26, 0.04, (XR - 0.975, y, z0 + 0.5), M["washglass"], rot=(0, math.pi / 2, 0), n=28)
+            e = kit.empty(f"wash load{r_}{c_}", (XR - 1.0, y, z0 + 0.5))
             still = r_ == 0 and c_ == 5
             sets = (("lump3", 0.11, 0.0), ("lump4", 0.15, 2.4), ("lump3", 0.08, 4.4)) if still else \
                    (("lump1", 0.1, 0.0), ("lump2", 0.15, 2.2), ("lump4", 0.1, 4.3))
@@ -304,8 +308,8 @@ def build_outside(kit, ctx, M):
     B(kit, "lamp head2", (0.5, 0.3, 0.12), (6.8, -7.2, 4.45), M["lamp"])
     kit.light("street2", "POINT", (6.6, -7.2, 4.2), 900.0, "#9db4ff", size=0.3)
     # blurs of cold light in the rain, across the street
-    for k, (x, y, z, r, m) in enumerate(((1.4, -11.0, 2.2, 0.35, "lamp"), (-1.0, -13.0, 3.0, 0.5, "warm2"), (3.2, -9.0, 1.2, 0.25, "warm2"),
-                                         (0.2, -15.5, 1.6, 0.6, "lamp"), (2.6, -12.0, 3.4, 0.4, "lamp"))):
+    for k, (x, y, z, r, m) in enumerate(((1.4, -11.0, 2.2, 0.3, "bokeh"), (-1.0, -13.0, 3.0, 0.45, "bokeh2"), (3.2, -9.0, 1.2, 0.2, "bokeh2"),
+                                         (0.2, -15.5, 1.6, 0.55, "bokeh"), (2.6, -12.0, 3.4, 0.35, "bokeh"))):
         kit.sphere(f"bokeh{k}", r, (x, y, z), M[m])
     # far windows across the street (a blur of cold light from inside the shop)
     for k, (x, z, w) in enumerate(((-9, 3.2, 0.9), (-5, 2.2, 0.7), (1, 3.6, 1.1), (6, 2.6, 0.8), (10, 3.0, 0.9))):
@@ -314,27 +318,29 @@ def build_outside(kit, ctx, M):
 
 
 def build_stairs(kit, ctx, M):
-    """The side stair up to his door: 12 treads rising along +y from (x0, y0), a warm bulb, a landing, his door open
-    onto a warm room."""
+    """The side stair up to his door: 12 treads rising along +y from (x0, y0), a warm bulb, a landing, and his door
+    (a frame, no leaf) onto a warm room."""
     x0, y0 = ST
     for k in range(12):
         B(kit, f"stair{k}", (1.3, 0.28, 0.19 * (k + 1)), (x0, y0 + 0.14 + 0.28 * k, 0.095 * (k + 1)), M["wood"])
     top = 0.19 * 12
-    B(kit, "landing", (1.3, 1.5, 0.1), (x0, y0 + 0.28 * 12 + 0.75, top - 0.05), M["wood"])
     ly = y0 + 0.28 * 12 + 1.5
+    B(kit, "landing", (1.3, 1.5, 0.1), (x0, y0 + 0.28 * 12 + 0.75, top - 0.05), M["wood"])
     for sx in (-1, 1):
-        B(kit, f"stair wall{sx}", (0.12, 9.0, 5.2), (x0 + sx * 0.72, y0 + 3.0, 2.6), M["plaster"])
-    B(kit, "stair ceiling", (1.6, 9.0, 0.1), (x0, y0 + 3.0, 5.2), M["plaster"])
-    B(kit, "stair back (street)", (1.6, 0.12, 5.2), (x0, y0 - 1.2, 2.6), M["plaster"])
-    B(kit, "door wall L", (0.5, 0.12, 4.6), (x0 - 0.5, ly, top + 2.3), M["plaster"])
-    B(kit, "door wall R", (0.5, 0.12, 4.6), (x0 + 0.5, ly, top + 2.3), M["plaster"])
-    B(kit, "door wall top", (1.6, 0.12, 2.1), (x0, ly, top + 3.55), M["plaster"])
-    B(kit, "door leaf", (0.04, 0.8, 2.1), (x0 + 0.52, ly - 0.25, top + 1.05), M["wood"], rot=(0, 0, 0.0))
-    B(kit, "flat floor", (1.6, 2.6, 0.1), (x0, ly + 1.3, top - 0.05), M["wood"])
-    B(kit, "flat back", (1.6, 0.1, 3.2), (x0, ly + 2.6, top + 1.6), M["warm2"])
+        B(kit, f"stair wall{sx}", (0.12, 12.0, 6.0), (x0 + sx * 0.72, y0 + 3.0, 3.0), M["plaster"])
+    B(kit, "stair ceiling", (1.6, 12.0, 0.1), (x0, y0 + 3.0, 5.0), M["plaster"])
+    B(kit, "stair back (street)", (1.6, 0.12, 5.2), (x0, y0 - 1.5, 2.6), M["plaster"])
+    # his door: a frame (two posts and a lintel) and the warm room behind it
+    for sx in (-1, 1):
+        B(kit, f"door post{sx}", (0.12, 0.2, 2.2), (x0 + sx * 0.6, ly, top + 1.1), M["wood"])
+    B(kit, "door lintel", (1.32, 0.2, 0.12), (x0, ly, top + 2.2), M["wood"])
+    B(kit, "door wall top", (1.6, 0.14, 0.9), (x0, ly, top + 2.7), M["plaster"])
+    B(kit, "flat floor", (1.6, 2.8, 0.1), (x0, ly + 1.4, top - 0.05), M["wood"])
+    B(kit, "flat back", (1.6, 0.1, 3.0), (x0, ly + 2.8, top + 1.5), M["warm3"])
     B(kit, "bulb", (0.12, 0.12, 0.14), (x0, y0 + 2.4, 3.9), M["warm2"])
-    kit.light("stair bulb", "POINT", (x0, y0 + 2.4, 3.7), 260.0, "#ffc890", size=0.1)
-    kit.light("flat light", "POINT", (x0, ly + 1.4, top + 1.9), 110.0, "#ffc890", size=0.2)
+    kit.light("stair bulb", "POINT", (x0, y0 + 2.4, 3.7), 110.0, "#ffd0a0", size=0.1)
+    kit.light("flat light", "POINT", (x0, ly + 1.6, top + 2.0), 55.0, "#ffd0a0", size=0.2)
+    kit.light("landing fill", "AREA", (x0, ly - 1.2, top + 3.2), 60.0, "#e8d8c0", size=1.4)
     ctx["stair_top"] = (x0, ly - 0.6, top)
 
 
@@ -363,8 +369,8 @@ def build(kit, story, tl):
     build_props(kit, ctx, M)
     # the Turned's own light (placed by animate on whichever chair it's in): a cool rim from the dryer glass, behind
     # its head, and a low warm key from the table side, below
-    kit.light("t rim", "AREA", (0, 2.2, 1.6), 110.0, "#9fc4ff", size=0.6)
-    kit.light("t key", "AREA", (0, -1.2, 0.35), 150.0, "#d79a52", size=0.5)
+    kit.light("t rim", "SPOT", (0, 2.2, 1.6), 150.0, "#9fc4ff", size=0.15, spot=38, blend=0.7)
+    kit.light("t key", "SPOT", (0, -1.2, 0.35), 260.0, "#d79a52", size=0.12, spot=34, blend=0.7)
     return ctx
 
 
@@ -490,8 +496,8 @@ def lights_follow_turned(kit, tl, t, over):
     r.location = (x - 0.2, y + 1.6, 1.9)
     kit.aim(r, (x, y - 0.15, 1.35))
     g = float(_ramp(_cues(tl, "tubes"), t, 1.0))
-    over["t key"] = 0.5 + 0.5 * g
-    over["t rim"] = 0.5 + 0.5 * g
+    over["t key"] = 0.12 + 0.88 * g
+    over["t rim"] = 0.12 + 0.88 * g
 
 
 def animate(kit, story, tl, t, ctx):
