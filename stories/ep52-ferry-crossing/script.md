@@ -8,9 +8,10 @@
   - To get both of us on the late boat, I ride it over from the island and back. Gran boards at the town end while I'm looking for her on the car deck, so she's alone on the window bench when the Shrug is shown.
   - The sleepwalk nights start at about 37 s, not 15 s. Seconds 15 to 30 show the rule at work instead (the binned glove turning up on Gran's hand). Nobody explains the rule anywhere.
   - "Tyres", "teatime", "darned" and "harbour" are left out because Whisper might write them as other words.
+- **Revision (2026-11-02, owner after ep20: "I didn't really like feel anything from the story... it was also a little bit confusing"):** Gran is now seen and loved by 0:20. The montage is down to three examples (the glove, the umbrella, the dog), so L04, L05 and L06 are cut. New L09a puts Gran on her Sunday call at about 15 s, with what I'd lose ("She's ALL / I've GOT."). L12 changes to "Next SUNDAY," so it follows on. One forward timeline, with no backstory before 0:20 (L15 to L17 now start at about 27 s). The 8 s cut is added back with L18a, L42a and L63a. `jumper-man` and `kite-woman` leave the cast.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 588 spoken words in 68 lines, all `narrator`, plus 2 drop beats (1.3 s in all).
-- **Estimated length:** about 2:16 to 2:20. At 290 wpm the speech is 2:02, and at 278 wpm it's 2:07. The 0.12 s gaps add about 8.2 s, the drops 1.3 s and the loop tail 0.25 s. If it comes in under 2:15, add "Every EVENING, / I end up / a little CLOSER." after L24. If it runs over 2:30, cut L38 first, then L20.
+- **Word count:** 591 spoken words in 69 lines, all `narrator`, plus 2 drop beats (1.3 s in all).
+- **Estimated length:** about 2:17 to 2:19 (the voiced cut was 137 s, and this revision nets about +1 s: L04 to L06 and the shorter L12 take out about 8.7 s, and L09a, L18a, L42a and L63a add about 10 s). If it comes in under 2:15, add "The SEA / is flat and GREY / all the way OVER." after L41. If it runs over 2:30, cut L38 first, then L20.
 
 ## The story
 
@@ -18,7 +19,7 @@
 - **Rule:** "In this town, everything you lose finds its way back to you." Lost things hop home after their owners.
 - **Twist:** the rule never said "to its owner". Lost things find their way to where they belong, and people count too (the dog). Everything of mine went to Gran's because I still belong there, and the blank evenings were me, a lost thing, finding my way back. I'm what Gran lost. On the late crossing the Shrug sits in my place on the window bench beside her. When I stop fighting it and sit down in my old seat, it's gone.
 - **Where the twist is planted:**
-  - Plant 1, the striped hat: in the Sunday call (L12 to L14), my old teal-and-cream striped hat hangs on the hook behind Gran. Not narrated. Paid off at L34, hung by the door of the room of lost things.
+  - Plant 1, the striped hat: in the Sunday calls (L09a, L12 to L14), my old teal-and-cream striped hat hangs on the hook behind Gran. Not narrated. Paid off at L34, hung by the door of the room of lost things.
   - Plant 2, the dog (L07 to L08): it trots home on its own, to its house, with no owner in sight. Paid off at L54, "PEOPLE count too."
   - Rewatch reward, not narrated: in L09's shot, every character on the slipway has a lost thing hopping behind them and I don't, but a faint line of small damp hop-dots runs off from my feet down the slipway toward the water and the island.
 - **How the last 15 seconds turn over the first line:** first time through, "everything you lose finds its way back to you" is a cosy, funny town rule, and I'm the unlucky one it skips. By L66 to L68 it means Gran lost me, and I'm the thing that hopped home. The sting, a glove on her mat that I haven't lost yet, makes the rule a promise that I'll be lost again someday, and that the town is already sending things back. A second watch sees the hat, the dog and the hop-dots under my feet.
@@ -44,8 +45,6 @@ All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 - `gran` (adult, older): white block hair in a bun, round brown-framed glasses (off from L27 on until L61), a heather cardigan with a diamond knit pattern, and a long plum travelling coat at night. Warm and plain, never cryptic, never explains anything. Faces: `neutral`, `squeeze` (squinting, no glasses), `soft`, `grin` (the reunion).
 - `glove-woman` (adult): green raincoat, block bob. L01, L02.
 - `umbrella-man` (adult): brown tweed jacket, flat cap. L01, L03.
-- `jumper-man` (adult): messy block hair, a fluffy pink jumper with a heart knit. Face `wide` in bed. L05 only.
-- `kite-woman` (adult): yellow oilskin, block plaits. L06 only.
 - `passengers` (two adults, plain coats in slate and olive): background on the slipway and the car deck.
 - `dog`: a blocky sandy-brown dog of our own build, short legs, a loose red-brown lead trailing. L07, L08, a still in L54.
 
@@ -109,12 +108,12 @@ Every lost thing hops home after its owner: a glove, a sock, an umbrella, a key 
 
 - **First line:** "In this TOWN, / everything you LOSE / finds its way / BACK to you." (11 words.)
 - **Marker by 2 s:** the opening wide on the bright slipway shows a glove and an umbrella hopping after their owners, with faces in frame.
-- **Montage (3 to 5, in the first 15 s):** the glove up the slipway, the umbrella at a heel, the empty lost-property shelf, the man waking up in his ex's jumper, the kite on the roof by dinner, the dog riding the ferry home alone. (The glove and umbrella share the opening shot, so it reads as five examples.)
+- **Montage (3, in the first 12 s):** the glove up the slipway, the umbrella at a heel, the dog riding the ferry home alone.
 - **The narrator is the exception:** nothing I lose ever comes back (L09). The binned glove never hops after me (L11).
-- **Loved one at stake:** Gran (older adult), gone from her open house at night (L25 to L29), away for an ordinary reason, back by the end.
+- **Loved one at stake:** Gran (older adult), seen and loved on her Sunday call at about 15 s (L09a, "She's ALL / I've GOT."), gone from her open house at night (L25 to L29), away for an ordinary reason, back by the end.
 - **15 to 30 s:** the rule at work with nobody explaining it: the binned glove, then Gran pulling it on in the call.
 - **The climax turns the rule's own logic:** "finds its way back to you" is read again as "finds its way to where it belongs", and the dog has already shown that a living thing counts. No new magic. I stop fighting the rule and go home on purpose.
-- **Cuts:** 80 shots over about 2:17, about 1.7 s a shot on average. No shot holds longer than about 3 s.
+- **Cuts:** 80 shots over about 2:18, about 1.7 s a shot on average. No shot holds longer than about 3 s.
 
 ## The lore connection (one only)
 
@@ -127,7 +126,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 ## 01 The rule (L01 to L08)
 
 - **Where:** the town slipway and harbour in bright overcast daylight, then quick montage cutaways.
-- **Shots:** 11.
+- **Shots:** 6.
 
 - `L01` narrator: In this TOWN, / everything you LOSE / finds its way / BACK to you.
   - [bright low wide up the town slipway, the ferry's ramp down behind. The glove woman walks toward camera, face in frame, and a green glove hops after her heel. The umbrella man passes behind her, a black umbrella bobbing at his heel. Hop-dots fade on the concrete]
@@ -135,12 +134,6 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [low close at heel height: the green glove hopping up the concrete after a green raincoat hem]
 - `L03` narrator: An UMBRELLA / bobs along / at a man's HEEL.
   - [side tracking mid shot: the umbrella man, `neutral`, not looking down, the furled umbrella hopping beside his shoe]
-- `L04` narrator: Nobody here / owns a LOST PROPERTY / BOX.
-  - [inside the ticket hut: an empty wooden shelf with cobwebs and dust, no labels]
-- `L05` narrator: A man / threw out / his ex's JUMPER. / He woke up / WEARING it.
-  - [shot A: the jumper man at a kerbside bin, the pink jumper on top of the rubbish. Shot B: the jumper man sitting up in bed, `wide`, wearing the fluffy pink jumper]
-- `L06` narrator: A KITE / blew off / the BEACH. / By DINNER, / it's on her ROOF.
-  - [shot A: a yellow diamond kite tumbling away over grey sand. Shot B: the kite woman at her front gate at dusk, looking up, `neutral`, the kite lying neatly on her roof ridge]
 - `L07` narrator: A DOG / slipped its LEAD / in TOWN.
   - [the sandy dog trotting along the harbour front alone, its lead trailing, no owner in frame]
 - `L08` narrator: It rode the FERRY / and trotted HOME / all on its OWN.
@@ -148,17 +141,19 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 02 The glove (L09 to L17)
 
-- **Where:** the town slipway, a harbour street, my flat, then a flashback still of the window bench.
-- **Shots:** 10.
+- **Where:** the town slipway, my flat (Gran on the phone), a harbour street, my flat again, then a flashback still of the window bench (after 0:20).
+- **Shots:** 12.
 
 - `L09` narrator: Except for ME. / Nothing I lose / EVER / comes BACK.
   - [mid shot on the slipway: me, `neutral`, among the passengers, each with a thing hopping behind. Nothing behind me. Faint hop-dots run from my feet down the slipway toward the water, not mentioned]
+- `L09a` narrator: Every SUNDAY, / I call GRAN. / She's ALL / I've GOT.
+  - [shot A: my phone propped on the table in my flat, daylight. On the screen Gran, `grin`, glasses on, in her kitchen, leaning in far too close to her camera so her glasses fill half the screen. Behind her, on the coat hook, my teal-and-cream striped hat. Not mentioned. Shot B: me at the table, `soft`, laughing at the screen, face in frame]
 - `L10` narrator: So I drop / an old GLOVE / in a BIN, / on PURPOSE.
   - [a harbour street bin, overcast. Cut away from hands: a mustard knit glove with a hole in the thumb drops into it]
 - `L11` narrator: It never HOPS / after me.
   - [me walking away down the street, looking back over my shoulder, `worried`. The bin behind me, nothing hopping]
-- `L12` narrator: On SUNDAY, / Gran's on the CALL, / pulling ON / a GLOVE.
-  - [my phone in my flat, propped on a table, the screen showing Gran in her kitchen, `soft`, glasses on, the mustard glove on her hand. Behind her, on a coat hook, my teal-and-cream striped hat. Not mentioned]
+- `L12` narrator: Next SUNDAY, / Gran's pulling ON / a GLOVE.
+  - [my phone in my flat, propped on the same table, the screen showing Gran in her kitchen, `soft`, glasses on, the mustard glove on her hand. Behind her, on a coat hook, my teal-and-cream striped hat. Not mentioned]
 - `L13` narrator: MY glove, / with the HOLE / in the THUMB.
   - [close on the phone screen: the glove on Gran's hand, the thumb hole]
 - `L14` narrator: She says / it turned up / on her MAT.
@@ -173,10 +168,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 ## 03 The evenings (L18 to L24)
 
 - **Where:** each evening bluer and darker: the town slipway, the ferry lounge, the island lane.
-- **Shots:** 8.
+- **Shots:** 9.
 
 - `L18` narrator: Then my EVENINGS / go BLANK.
   - [my flat at dusk, the chair empty, the door ajar]
+- `L18a` narrator: And every TIME / I come to, / I'm a little CLOSER / to GRAN.
+  - [a slow high wide at blue dusk: the town, the grey water and the island's one porch lamp, small and far]
 - `L19` narrator: MONDAY, / I come to / on the SLIPWAY.
   - [me standing at the bottom of the slipway at blue dusk, `worried`, blinking, the water at my shoes]
 - `L20` narrator: I don't remember / the WALK.
@@ -221,7 +218,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 ## 05 The call (L35 to L42)
 
 - **Where:** the back room, then the late ferry. Night.
-- **Shots:** 9.
+- **Shots:** 10.
 
 - `L35` narrator: At MIDNIGHT, / my PHONE / BUZZES.
   - [close on my phone on the back room's table among gloves, the screen brightening over 0.5 s]
@@ -239,6 +236,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the island slipway at night, the ferry's bow ramp down, me walking aboard alone]
 - `L42` narrator: At the town SLIPWAY, / I look for her / on the CAR DECK.
   - [the car deck under steady lamps: two parked cars, passengers' backs, me looking between them, `worried`. Gran not there]
+- `L42a` narrator: I can't FIND her / ANYWHERE.
+  - [me turning between the two parked cars, `worried`, the deck lamps steady, only passengers' backs]
 
 ## 06 The Shrug (L43 to L51)
 
@@ -291,7 +290,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 ## 08 Home (L60 to L65)
 
 - **Where:** the lounge, then outside the window.
-- **Shots:** 7.
+- **Shots:** 8.
 
 - `L60` narrator: I give Gran / her GLASSES.
   - [cut away from hands: the glasses held out from my sleeve toward her]
@@ -301,6 +300,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the mustard glove with the holed thumb held out from her plum sleeve. Cut away before any grip]
 - `L63` narrator: She says, / "I knew / you'd turn UP, / like the GLOVE."
   - [two-shot, both `soft`, the glove on my hand now]
+- `L63a` narrator: I tell her / I'm SORRY / I stayed away / four YEARS.
+  - [close on Gran, `soft`, glasses on, shaking her head slowly as if it doesn't matter, then leaning her shoulder against mine]
 - `L64` narrator: We sit / by the WINDOW / as the ISLAND / comes UP.
   - [shot A: from outside the window, the two of us side by side in the glass, the island's lights coming up behind. Shot B, the lore shot: close on the steel armrest between her sleeve and mine, two short orange strokes scratched into it. Held 1.6 s. Not narrated]
 - `L65` narrator: A WAKE / runs out / behind us, / all the way / back to TOWN.
@@ -320,9 +321,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## Risks
 
-- **"ex's JUMPER" (L05):** Whisper may write "exes" or "X's". If `asr` flags it, change the caption to match rather than re-voice.
-- **"LOST PROPERTY" (L04)** is two plain words, fine.
-- **"come to" (L19, L21, L25):** plain words, but check Whisper doesn't join "come to" into "come too".
+- **"come to" (L18a, L19, L21, L25):** plain words, but check Whisper doesn't join "come to" into "come too".
 - **"LIFE JACKET" (L45):** written with a space, no hyphen, to match how Whisper spells it.
 - **"GRAN'S" (L55):** a possessive, could come back "grans". Fix the caption if so.
 - **Harm words:** no line has a child word, so `HARM` can't fire. No `GRAPHIC` word appears ("lost" and "gone" are fine here). "GONE" at L28 is a coat, never a person.

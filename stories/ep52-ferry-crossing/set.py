@@ -293,11 +293,9 @@ def shrug_face(path):
         d.ellipse([x - 46, ey - 50, x + 46, ey + 50], fill=ink)
         d.ellipse([x - 22, ey - 30, x - 4, ey - 12], fill=(250, 244, 226))
     my = faces._fy(0.72)
-    th = max(14, int(0.05 * s))
+    th = max(16, int(0.06 * s))
     half = deg(66)
     d.line([(cx - half, my), (cx + half, my)], fill=ink, width=th)
-    for x in (cx - half, cx + half):
-        d.ellipse([x - th / 2, my - th / 2, x + th / 2, my + th / 2], fill=ink)
     im.save(path)
 
 
@@ -346,8 +344,8 @@ def build_shrug(kit, M, ctx):
     tex.image = img
     headg = kit.empty("shrug.headg", (0, 0, faces.HEAD_H / 2 + 0.02), head)
     rig.head_mesh("shrug.headm", mat, headg)
-    hood = kit.box("shrug.hood", (1.5, 1.38, 0.5), (0, 0.02, 0.4), orange, headg, bevel=0.14)
-    collar = kit.box("shrug.collar", (1.34, 0.62, 0.8), (0, -0.62, -0.5), orange2, headg, bevel=0.16)
+    hood = kit.box("shrug.hood", (1.34, 1.3, 0.3), (0, 0.05, 0.62), orange, headg, bevel=0.12)
+    collar = kit.box("shrug.collar", (1.5, 0.9, 0.5), (0, 0.15, -0.95), orange2, headg, bevel=0.16)
     ctx["shrug"].update(neck=neck, head=head, hood=hood, collar=collar, headg=headg)
     ctx["shrug_parts"] = [root]
 
@@ -367,14 +365,14 @@ def pose_shrug(ctx, c):
     lean = math.radians(float(c.get("lean", 0.0)))     # about the hips; positive leans toward world -y (toward Gran)
     sg["upper"].rotation_euler = (0, -lean, 0)
     for sx in (-1, 1):
-        sg["hump"][sx].location = (sx * (1.5 - 0.4 * u), 0, 1.62 + 0.4 * u)
+        sg["hump"][sx].location = (sx * (1.5 - 0.35 * u), 0, 1.62 + 0.45 * u)
         sg["arm"][sx].location = (sx * (0.55 * u + 0.1), 0, 0.35)
         sg["arm"][sx].rotation_euler = (math.radians(c.get("armfwd", 0.0)), lean, 0)
-    sg["neck"].location = (0, 0, 2.0 - 0.34 * u)
+    sg["neck"].location = (0, 0, 2.0 - 0.2 * u)
     sg["neck"].rotation_euler = (0, 0, math.radians(c.get("head", 0.0)))
     sg["head"].rotation_euler = (math.radians(c.get("tilt", 0.0)), 0, 0)
-    sg["hood"].location = (0, 0.02, 0.5 - 0.06 * u)
-    sg["collar"].location = (0, -0.62, -0.67 + 0.17 * u)
+    sg["hood"].location = (0, 0.05, 0.62)
+    sg["collar"].location = (0, 0.15, -0.95 + 0.1 * u)
 
 
 # ------------------------------------------------------------------------------------------------ the dog
@@ -681,6 +679,7 @@ def build_island(kit, M, ctx):
     kit.box("c.porch", (0.16, 0.14, 0.22), (cx + 0.95, 34.8, 2.45), M["iron"])
     kit.box("c.porchglow", (0.1, 0.1, 0.14), (cx + 0.95, 34.8, 2.36), M["lamp"])
     kit.light("porch lamp", "POINT", (cx + 0.95, 34.5, 2.3), 1.0, "#ffd9a0", size=0.15)
+    kit.light("mat lamp", "POINT", (cx - 0.5, 33.0, 1.1), 1.0, "#ffd9a0", size=0.2)
     # hall: x +-1.2, y 35.3 .. 43.3
     for sx in (-1, 1):
         kit.box(f"c.hall{sx}", (0.12, 8.0, 2.6), (cx + sx * 1.2, 39.3, 1.3), M["cream"])
@@ -714,6 +713,7 @@ def build_island(kit, M, ctx):
     kit.box("br.boardback", (8.0, 0.06, 2.6), (cx, 46.62, 1.3), M["peg"])
     kit.box("br.boardfront.l", (3.4, 0.06, 2.6), (cx - 2.3, 43.33, 1.3), M["peg"])
     kit.box("br.boardfront.r", (3.4, 0.06, 2.6), (cx + 2.3, 43.33, 1.3), M["peg"])
+    kit.light("tbl lamp", "POINT", (cx - 0.3, 43.9, 1.7), 1.0, "#ffd9a8", size=0.3)
     kit.light("br bulb", "POINT", (cx, 45.2, 2.45), 1.0, "#ffe2b8", size=0.3)
     kit.sphere("br.bulbglow", 0.07, (cx, 45.2, 2.5), M["lamp"], seg=8)
     cols = ["#d9a531", "#2a3550", "#8a8f94", "#8a3f2a", "#3f6f7a", "#5e3550", "#c9c2ae", "#3a6fb0", "#6b4a2e"]
@@ -775,6 +775,8 @@ def build_island(kit, M, ctx):
         for sy in (-1, 1):
             kit.box(f"br.tl{sx}{sy}", (0.06, 0.06, 0.76), (cx - 0.6 + sx * 0.45, 44.6 + sy * 0.3, 0.38), M["shelf"])
     kit.light("isl lamp", "POINT", (X + 3.0, -9.0, 3.6), 1.0, "#ffe2b0", size=0.4)
+    kit.light("board fill", "POINT", (X + 1.6, -13.0, 2.2), 1.0, "#ffe2b0", size=0.4)
+    kit.light("blue fill", "POINT", (X + 6.0, -5.6, 1.4), 1.0, "#ffe6c0", size=0.4)
     kit.box("isl.lamppost", (0.12, 0.12, 3.6), (X + 3.2, -9.0, 1.8), M["iron"])
     build_bow(kit, M, X, -13.2, "I")
     ctx["vis"]["bowI"] = {"objs": [_obj("bowI")], "default": False}
@@ -904,6 +906,8 @@ def build_ferry(kit, M, ctx):
     kit.light("window rim2", "POINT", (F + 3.1, 3.2, 6.1), 1.0, "#9fc4ff", size=0.2)
     kit.light("shrug key", "SPOT", (F + 3.6, 6.4, 4.7), 1.0, "#ffb070", spot=45, blend=0.6, size=0.3)
     kit.aim(kit.LIGHTS["shrug key"]["obj"], (F + 1.7, 4.75, 5.1))
+    kit.light("bench fill", "POINT", (F + 0.6, 4.0, 6.0), 1.0, "#cfd8f0", size=0.4)
+    kit.box("isl.hill", (16, 70, 9), (F + 112, 12, 2.0), kit.plastic("#161c28", 1.0, "far island 2"))
     kit.light("shrug rim", "POINT", (F + 0.2, 4.75, 6.2), 1.0, "#9fc4ff", size=0.3)
     kit.light("sunbeam", "SPOT", (F + 5.5, 4.0, 6.6), 1.0, "#ffd89a", spot=70, blend=0.5, size=0.6)
     kit.aim(kit.LIGHTS["sunbeam"]["obj"], (F + 1.7, 4.0, 4.5))
@@ -1135,10 +1139,15 @@ def animate(kit, story, tl, t, ctx):
     over["d fill"] = 55.0
     over["b lamp"] = 200.0
     over["h lamp"] = 240.0
-    over["blue lamp"] = 22.0
+    over["blue lamp"] = 60.0
     over["deck lamp 0"] = over["deck lamp 1"] = over["deck lamp 2"] = 90.0
-    over["lounge a"] = 26.0
-    over["lounge b"] = 26.0
+    over["lounge a"] = 50.0
+    over["lounge b"] = 50.0
+    over["board fill"] = 220.0
+    over["blue fill"] = 40.0
+    over["mat lamp"] = 28.0
+    over["bench fill"] = 70.0
+    over["tbl lamp"] = 45.0
     over["harbour key"] = 55.0
     over["shrug key"] = 380.0
     over["shrug rim"] = 70.0
