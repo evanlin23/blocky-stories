@@ -164,7 +164,7 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # Bri
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
 HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
-              "wren": "ren", "wrens": "rens"}
+              "wren": "ren", "wrens": "rens", "higher": "hire"}   # higher/hire (ep26)
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 
@@ -185,6 +185,8 @@ def same_spoken(script: str, heard: str) -> bool:
         for w in t.split():
             w = w.replace("'", "")
             w = NUMBERS.get(int(w), w) if w.isdigit() and int(w) in NUMBERS else w
+            if w.isdigit() and 20 < int(w) < 100:   # "50" as "fifty", "40" as "forty" (ep26)
+                w = _under100(int(w))
             if w.isdigit() and 100 <= int(w) < 1000:   # "112" as "a hundred and twelve" (ep14)
                 h, r = divmod(int(w), 100)
                 w = ("a" if h == 1 else NUMBERS.get(h, str(h))) + "hundred" + ("and" + _under100(r) if r else "")
