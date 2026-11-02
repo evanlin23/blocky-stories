@@ -10,7 +10,9 @@ A character spec (in a story's `cast`):
      "extras": ["glasses", "backpack", "scarf", "tie", "apron", "coat", "hooddown"], "extra_c": "#..",
      "zip_c": "#.." (the coat's zip),
      "face": {"eyes": "round|dot|tired|lashes|button|hollow", "brows": true, "glow": null, ...},
-     "height": 1.0, "width": 1.0, "age": "adult|teen"}
+     "height": 1.0, "width": 1.0, "body_width": 1.0, "age": "adult|teen"}
+`body_width` (opt-in, default 1.0) narrows only the torso, arms and legs and leaves the head as it is, for a set
+where two people have to sit side by side without their arms meeting (ep20's photo booth).
 
 The rig's units: the torso is 2 wide. `S` scales a unit to metres, so a default character is about 1.75 m.
 Front is -y. Pivots: hips at z = 2, shoulders at z = 3.75, neck at z = 4.
@@ -227,24 +229,25 @@ class Character:
         pants = cloth(spec, "pants") if "pants" in spec else kit.plastic("#2c3550", 0.7)
         shoes = kit.plastic(spec.get("shoes", spec.get("pants", "#222222")), 0.6)
         bev = 0.08
+        bw = float(spec.get("body_width", 1.0))
         P = {"root": self.root}
         self.hips = kit.empty(f"{name}.hips", (0, 0, 2.0), self.root)
         for sx in (-1, 1):
-            leg = kit.empty(f"{name}.leg{sx}", (sx * 0.5, 0, 2.0), self.root)
-            kit.box(f"{name}.legm{sx}", (0.98, 1.0, 1.72), (0, 0, -0.86), pants, leg, bevel=bev)
-            kit.box(f"{name}.shoe{sx}", (0.99, 1.01, 0.3), (0, 0, -1.85), shoes, leg, bevel=bev)
+            leg = kit.empty(f"{name}.leg{sx}", (sx * 0.5 * bw, 0, 2.0), self.root)
+            kit.box(f"{name}.legm{sx}", (0.98 * bw, 1.0, 1.72), (0, 0, -0.86), pants, leg, bevel=bev)
+            kit.box(f"{name}.shoe{sx}", (0.99 * bw, 1.01, 0.3), (0, 0, -1.85), shoes, leg, bevel=bev)
             P[f"leg{sx}"] = leg
         self.torso = kit.empty(f"{name}.torso", (0, 0, 2.0), self.root)
-        kit.box(f"{name}.torsom", (2.0, 1.0, 2.0), (0, 0, 1.0), shirt, self.torso, bevel=bev)
+        kit.box(f"{name}.torsom", (2.0 * bw, 1.0, 2.0), (0, 0, 1.0), shirt, self.torso, bevel=bev)
         if spec.get("collar"):
             cm = kit.plastic(spec["collar"], 0.6)
-            kit.box(f"{name}.collar", (1.2, 1.04, 0.22), (0, 0, 1.93), cm, self.torso, bevel=0.06)
+            kit.box(f"{name}.collar", (1.2 * bw, 1.04, 0.22), (0, 0, 1.93), cm, self.torso, bevel=0.06)
         sleeve = {"short": 0.7, "long": 1.75, "none": 0.0}[spec.get("sleeves", "long")]
         for sx in (-1, 1):
-            arm = kit.empty(f"{name}.arm{sx}", (sx * 1.5, 0, 1.75), self.torso)
+            arm = kit.empty(f"{name}.arm{sx}", (sx * 1.5 * bw, 0, 1.75), self.torso)
             if sleeve > 0:
-                kit.box(f"{name}.sleeve{sx}", (0.98, 1.0, sleeve), (0, 0, 0.25 - sleeve / 2), shirt, arm, bevel=bev)
-            kit.box(f"{name}.skinarm{sx}", (0.96, 0.98, 2.0 - sleeve), (0, 0, 0.25 - sleeve - (2.0 - sleeve) / 2),
+                kit.box(f"{name}.sleeve{sx}", (0.98 * bw, 1.0, sleeve), (0, 0, 0.25 - sleeve / 2), shirt, arm, bevel=bev)
+            kit.box(f"{name}.skinarm{sx}", (0.96 * bw, 0.98, 2.0 - sleeve), (0, 0, 0.25 - sleeve - (2.0 - sleeve) / 2),
                     skin, arm, bevel=bev)
             P[f"arm{sx}"] = arm
         ex = spec.get("extras", [])
@@ -286,7 +289,10 @@ class Character:
                         hair, hg, bevel=0.08)
         elif style in ("cap", "long", "bun", "swoop", "spiky"):
             kit.box(f"{n}.hcap", (2 * R + 0.08, 2 * R + 0.08, 0.3), (0, 0.02, top - 0.05), hair, hg, bevel=0.12)
-            kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, H * 0.75), (0, R - 0.08, top - H * 0.36), hair, hg, bevel=0.1)
+            if "backscarf" in spec.get("extras", []):   # opt-in (ep22): hair right down the back of the head, so a back reads
+                kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, H * 0.98), (0, R - 0.08, 0.0), hair, hg, bevel=0.1)
+            else:
+                kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, H * 0.75), (0, R - 0.08, top - H * 0.36), hair, hg, bevel=0.1)
             for sx in (-1, 1):
                 kit.box(f"{n}.hside{sx}", (0.2, 0.9, 0.5), (sx * (R - 0.02), 0.2, top - 0.25), hair, hg, bevel=0.08)
         if style == "swoop":  # a big fringe swept across the brow, like the reference's ginger boy
@@ -350,6 +356,11 @@ class Character:
         if "scarf" in ex:
             kit.box(f"{n}.scarf", (2.1, 1.12, 0.36), (0, 0, 1.85), ec, self.torso, bevel=0.1)
             kit.box(f"{n}.scarft", (0.36, 0.1, 0.9), (0.45, -0.55, 1.35), ec, self.torso, bevel=0.06)
+        if "backscarf" in ex:   # opt-in (ep22): a scarf tail down the back and a coat seam, so a back reads as a back
+            # no tail on the back: a yellow strip down the back read as a front scarf knot
+            seam = kit.plastic(spec.get("seam_c", "#33426e"), 0.5)
+            kit.box(f"{n}.seam", (0.1, 0.03, 1.5), (0.1, 0.51, 0.85), seam, self.torso, bevel=0.012)
+            kit.box(f"{n}.belt", (2.02, 0.05, 0.16), (0, 0.5, 0.45), seam, self.torso, bevel=0.02)
         if "tie" in ex:
             kit.box(f"{n}.tie", (0.22, 0.06, 1.1), (0, -0.52, 1.35), ec, self.torso, bevel=0.03)
         if "apron" in ex:
