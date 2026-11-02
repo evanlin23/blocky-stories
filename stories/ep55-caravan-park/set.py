@@ -212,6 +212,7 @@ def materials(kit):
     M["platform"] = _mixed(kit, "platform", "#8a8780", "#6e6c66", 0.5, 5.0, 0.9)
     M["train"] = kit.plastic("#4f6a78", 0.5, name="train")
     M["dark"] = kit.plastic("#262a30", 0.6, name="dark")
+    M["coatgrey"] = kit.plastic("#56626c", 0.8, name="coat grey")
     M["ink"] = kit.plastic("#2a2420", 0.7, name="ink")
     M["floor"] = kit.plastic("#8b7a5f", 0.8, name="in floor")
     M["wall"] = kit.plastic("#d9d0b6", 0.9, name="in wall")
@@ -589,8 +590,8 @@ def build_interior(kit, ctx, M):
     for k in range(3):
         kit.cyl(f"hook{k}", 0.012, 0.1, (ix - 2.1, iy + k * 0.3 - 0.05, 1.55), M["steam"], rot=(0, math.pi / 2, 0), n=6)
     coat = kit.empty("coat", (ix - 2.08, iy + 0.25, 1.55))
-    kit.box("coat.body", (0.14, 0.5, 0.95), (0, 0, -0.5), M["canvas2"], coat, bevel=0.04)
-    kit.box("coat.collar", (0.17, 0.52, 0.1), (0, 0, -0.04), M["rustcap"], coat, bevel=0.03)
+    kit.box("coat.body", (0.14, 0.5, 0.95), (0, 0, -0.5), M["coatgrey"], coat, bevel=0.04)
+    kit.box("coat.collar", (0.17, 0.52, 0.1), (0, 0, -0.04), M["dark"], coat, bevel=0.03)
     wbox(kit, "boot mat", (ix - 2.0, iy - 0.2, 0.0), (ix - 1.2, iy + 0.7, 0.02), M["coir"])
     for k, yy in enumerate((0.0, 0.4)):
         wbox(kit, f"boot patch{k}", (ix - 1.8, iy + yy - 0.05, 0.021), (ix - 1.45, iy + yy + 0.2, 0.024), M["floor"])
