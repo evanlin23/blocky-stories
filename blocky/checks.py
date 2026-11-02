@@ -81,6 +81,9 @@ def originality(name: str, st: dict) -> list[tuple[str, str]]:
     return out
 
 
+CUT_MAX_S = 2.3
+
+
 def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list[tuple[str, str]]:
     from blocky import voicecheck as sc
 
@@ -88,6 +91,10 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
 
     st = st if st is not None else load_story(name)
     out = []
+    set_py = STORIES / name / "set.py"   # tests pass in-memory stories with no folder
+    if set_py.exists() and "flicker" in set_py.read_text() and not (st.get("look") or {}).get("flash_safe"):
+        out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
+                            "flash bar on most stories (RULES.md hard rule 7)"))
     screen, said = texts(st)
     viewer = screen + said + [st.get("title", "")]
     for i, ln in enumerate(st["lines"]):
@@ -144,4 +151,9 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
         shot_ids = [s["id"] for s in st["shots"]]
         if len(set(shot_ids)) != len(shot_ids):
             out.append(("block", "two shots share an id"))
+        if tl.get("shots"):   # the hits cut every 1.2 to 2.3 s on average (RULES.md, What the hits do 9)
+            per = tl["duration"] / len(tl["shots"])
+            if per > CUT_MAX_S:
+                out.append(("warn", f"a shot every {per:.1f} s on average; the hits cut every 1.2 to 2.3 s "
+                                    f"(about {int(tl['duration'] / CUT_MAX_S) + 1} shots for this length)"))
     return out
