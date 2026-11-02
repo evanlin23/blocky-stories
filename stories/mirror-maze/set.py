@@ -55,7 +55,7 @@ import bpy
 import numpy as np
 from mathutils import Vector as V
 
-from blocky import acting, rig
+from blocky import acting, rig, timeline
 
 # ------------------------------------------------------------------------------------------------ the layout
 BOARD_Z = 0.05                # the duckboards' top (everyone on the boards stands at this z)
@@ -77,6 +77,11 @@ VIOLET = "#5d4a72"            # the facade's faded violet
 SILVER = "#a4a2b0"            # and its silver
 BULB = "#efe6ff"              # the lilac-white bulbs
 GLOW = "#c9b8ff"              # their light
+
+
+def kit_ss(x):
+    x = min(1.0, max(0.0, x))
+    return x * x * (3 - 2 * x)
 
 
 def _shot(tl, t):
@@ -412,6 +417,231 @@ def build_truck(kit, ctx, M):
     ctx["truck"] = TRUCK
 
 
+# ------------------------------------------------------------------------------------------------ the rest of the fair
+VAN = (1.0, -16.0)            # the fry van, far down the walkway (its hatch faces +y, toward the maze)
+RINK = (3.4, 11.4, 1.2, 6.8)  # the bumper cars' steel floor: x0, x1, y0, y1
+IX = 60.0                     # the maze's inside is built here, out in the dark (its own lights), cut to on the action
+PANE_Y1 = 13.0                # the corridor's end
+
+
+def tarp_mat(kit):
+    return pbr(kit, "tarp", "#1b1c24", 0.75, noise=(3.0, 0.6, 0.1))
+
+
+def build_far(kit, ctx, M):
+    tarp = tarp_mat(kit)
+    # rides lumped under dark tarps, standing off in the fog
+    for i, (x, y, w, d, h) in enumerate(((-9.0, 3.0, 4.0, 3.0, 2.2), (-12.5, 9.0, 3.5, 5.0, 3.0), (11.0, -1.0, 4.5, 3.0, 2.6),
+                                         (13.5, 14.0, 5.0, 5.0, 3.4), (-7.5, -6.0, 3.0, 3.0, 1.8), (8.0, -9.0, 3.5, 3.0, 2.0))):
+        kit.box(f"ride{i}", (w, d, h), (x, y, h / 2), tarp, bevel=0.35)
+        kit.box(f"ride{i}.top", (w * 0.6, d * 0.6, h * 0.5), (x, y, h + h * 0.18), tarp, bevel=0.3)
+    # the dark big wheel, far back, a silhouette: a rim, spokes, a few cars
+    wx, wy, wz, R = -16.0, 30.0, 8.5, 7.0
+    for k in range(40):
+        a = 2 * math.pi * k / 40
+        kit.box(f"wheel.rim{k}", (0.22, 0.22, 2 * math.pi * R / 40 + 0.05), (wx, wy, wz), M["steel_d"],
+                rot=(0, 0, 0)).location = (wx + R * math.cos(a), wy, wz + R * math.sin(a))
+    for k in range(40):
+        a = 2 * math.pi * k / 40
+        ob = bpy.data.objects[f"wheel.rim{k}"]
+        ob.rotation_euler = (0, -a, 0)
+    for k in range(10):
+        a = math.pi * k / 10
+        kit.box(f"wheel.spoke{k}", (0.1, 0.1, 2 * R), (wx, wy, wz), M["steel_d"], rot=(0, math.pi / 2 - a, 0))
+    kit.box("wheel.legL", (0.4, 0.4, wz + 0.3), (wx - 3.5, wy, (wz) / 2), M["steel_d"], rot=(0, math.radians(-22), 0))
+    kit.box("wheel.legR", (0.4, 0.4, wz + 0.3), (wx + 3.5, wy, (wz) / 2), M["steel_d"], rot=(0, math.radians(22), 0))
+    for k in (1, 4, 6, 9, 13, 16, 22, 29, 34):   # half its cars already off
+        a = 2 * math.pi * k / 40
+        kit.box(f"wheel.car{k}", (1.0, 0.8, 0.8), (wx + R * math.cos(a), wy, wz + R * math.sin(a) - 0.5), M["trailer"], bevel=0.1)
+
+    # the bumper cars: a steel-plated floor, steel pillars, the cars shoved together, a sagging tarp on the near side
+    x0, x1, y0, y1 = RINK
+    plate = kit.metal("#4e4c55", 0.45)
+    kit.box("rink.floor", (x1 - x0, y1 - y0, 0.08), ((x0 + x1) / 2, (y0 + y1) / 2, 0.04), plate)
+    for i, (px, py) in enumerate(((x0, y0), (x1, y0), (x0, y1), (x1, y1), ((x0 + x1) / 2, y1), ((x0 + x1) / 2, y0))):
+        kit.cyl(f"rink.pillar{i}", 0.07, 3.2, (px, py, 1.6), M["steel_d"], n=10)
+    carc = ("#3a3342", "#2e3a44", "#443a33", "#33423a", "#3c3c48")
+    for i in range(7):
+        cx, cy = x0 + 1.4 + (i % 4) * 1.5, y1 - 1.0 - (i // 4) * 1.3
+        cm = pbr(kit, f"car{i}", carc[i % 5], 0.45, coat=0.2)
+        kit.box(f"rink.car{i}", (1.0, 1.4, 0.45), (cx, cy, 0.3), cm, rot=(0, 0, math.radians(i * 37)), bevel=0.15)
+        kit.cyl(f"rink.pole{i}", 0.02, 1.8, (cx, cy, 1.2), M["steel_d"], n=6)
+    # the tarp over the west edge of the rink: a sheet sagging between the pillars, to the ground at its hem
+    verts, fcs = [], []
+    nx, ny = 6, 10
+    for j in range(ny + 1):
+        for i in range(nx + 1):
+            u, v = i / nx, j / ny
+            z = 3.1 - 2.2 * (1 - abs(2 * v - 1) ** 2) * 0.5 - 0.9 * u
+            verts.append((x0 - 0.2 + u * 1.5, y0 + 0.2 + v * (y1 - y0 - 0.4), max(0.1, z)))
+    for j in range(ny):
+        for i in range(nx):
+            a = j * (nx + 1) + i
+            fcs.append((a, a + 1, a + nx + 2, a + nx + 1))
+    kit.mesh_obj("rink.tarp", verts, fcs, tarp, smooth=True)
+
+    # the fry van: boxy, a lit hatch with a steel counter, and a polished steel panel beside it
+    vx, vy = VAN
+    vpaint = pbr(kit, "van paint", "#3a2f34", 0.5, coat=0.2)
+    kit.box("van.body", (4.0, 2.2, 2.5), (vx + 0.5, vy - 0.0, 1.25 + 0.3), vpaint, bevel=0.1)
+    for sx in (-1, 1):
+        kit.cyl(f"van.wheel{sx}", 0.4, 0.3, (vx + 0.5 + sx * 1.3, vy + 1.1, 0.4), pbr(kit, "tyre2", "#111113", 0.8),
+                rot=(0, math.radians(90), 0), n=20)
+    ctx["van_hatch_y"] = vy + 1.12
+    kit.box("van.hatch", (1.6, 0.04, 0.8), (vx - 0.3, vy + 1.12, 1.55), kit.emit("#ffb35c", 2.2, name="van glow"))
+    kit.box("van.counter", (1.9, 0.5, 0.06), (vx - 0.3, vy + 1.38, 1.1), M["steel"], bevel=0.01)
+    kit.box("van.awning", (2.1, 0.7, 0.05), (vx - 0.3, vy + 1.4, 2.12), vpaint, rot=(math.radians(-8), 0, 0))
+    ctx["van_steel"] = kit.box("van.steel", (1.8, 0.03, 1.5), (vx + 1.75, vy + 1.12, 1.3), kit.metal("#c9ccd4", 0.07, name="polished steel"))
+    # coins: plain discs, put on the counter by a cue
+    ctx["coins"] = [kit.cyl(f"coin{i}", 0.018, 0.004, (vx - 0.55 + i * 0.07, vy + 1.38, 1.14), kit.metal("#9a9588", 0.3), n=14)
+                    for i in range(4)]
+
+    # the crew's rolled tarp along the maze's roofline (the maze guy is up there)
+    ctx["roll"] = kit.cyl("roof.roll", 0.22, 4.2, (ARCH_X + 0.5, MAZE_Y + 1.6, PLAT_Z + FACADE_H + 0.35), tarp,
+                          rot=(0, math.radians(90), 0), n=14)
+    # a pane the maze guy carries to the truck (steel frame, glass)
+    pn = kit.empty("carried pane", (0, 0, -20))
+    kit.box("carried.g", (1.1, 0.014, 2.3), (0, 0, 1.2), M["glass"], pn)
+    for sx in (-1, 1):
+        kit.box(f"carried.f{sx}", (0.05, 0.05, 2.45), (sx * 0.575, 0, 1.22), M["steel"], pn)
+    kit.box("carried.top", (1.2, 0.05, 0.05), (0, 0, 2.44), M["steel"], pn)
+    kit.box("carried.bot", (1.2, 0.05, 0.05), (0, 0, -0.01), M["steel"], pn)
+    ctx["carried"] = pn
+    # a set of upright frames stacked against the exterior skirt (the truck's load is the other stack)
+
+
+# ------------------------------------------------------------------------------------------------ the maze's inside
+GHOSTS = (("gm0", "me", (IX - 0.75,)), ("gm1", "me", (IX + 0.75,)), ("gm2", "me", (IX + 0.75, IX + 2.25)),
+          ("gm3", "me", (IX - 0.75, IX - 2.25)),
+          ("gt0", "tasha", (IX - 0.75,)), ("gt1", "tasha", (IX + 0.75,)), ("gt2", "tasha", (IX + 0.75, IX + 2.25)),
+          ("gt3", "tasha", (IX - 0.75, IX - 2.25)))
+
+
+def build_inside(kit, ctx, M):
+    cy = 7.0
+    kit.box("in.floor", (16.0, 18.0, 0.04), (IX, cy, 0.0), M["ply"])
+    ceil = kit.box("in.ceiling", (16.0, 18.0, 0.05), (IX, cy, 3.25), tarp_mat(kit))
+    ctx["ceiling"] = ceil
+    ctx["panes"] = []
+    k = 0
+    for wx in (-3.75, -2.25, -0.75, 0.75, 2.25, 3.75):
+        for j in range(12):
+            y = 0.6 + j * 1.15
+            p = kit.empty(f"ip{k}", (IX + wx, y, 0.04), rot=(0, 0, math.radians(90)))
+            kit.box(f"ip{k}.g", (1.1, 0.012, 2.3), (0, 0, 1.2), M["glass"], p)
+            for sx in (-1, 1):
+                kit.box(f"ip{k}.f{sx}", (0.05, 0.05, 2.45), (sx * 0.575, 0, 1.22), M["steel"], p)
+            kit.box(f"ip{k}.top", (1.2, 0.05, 0.05), (0, 0, 2.44), M["steel"], p)
+            if abs(wx) < 3:
+                for b in range(3):
+                    kit.sphere(f"ip{k}.b{b}", 0.04, (-0.35 + b * 0.35, 0.0, 2.52), M["bulb"], p, seg=8)
+            ctx["panes"].append((p, wx, j))
+            k += 1
+    # the end panes: the corridor's last, which Tasha steps out of, and the one behind it
+    for nm, y in (("end1", PANE_Y1 - 0.2), ("end2", PANE_Y1 + 0.9)):
+        p = kit.empty(nm, (IX, y, 0.04))
+        kit.box(f"{nm}.g", (1.2, 0.012, 2.3), (0, 0, 1.2), M["glass"], p)
+        for sx in (-1, 1):
+            kit.box(f"{nm}.f{sx}", (0.05, 0.05, 2.45), (sx * 0.625, 0, 1.22), M["steel"], p)
+        kit.box(f"{nm}.top", (1.3, 0.05, 0.05), (0, 0, 2.44), M["steel"], p)
+        ctx[nm] = p
+    # a stack of steel frames, upright and leaning, across the corridor (the trip-2 hide)
+    st = kit.empty("framestack", (IX - 0.05, 6.3, 0.04))
+    for i in range(5):
+        kit.box(f"fs{i}", (1.3, 0.05, 2.2), (0.0, 0.07 * i - 0.12, 1.1), M["steel_d"], st, rot=(math.radians(5), 0, 0), bevel=0.01)
+    ctx["framestack"] = st
+    # its lights: two soft lilac-white panels over the corridor
+    kit.light("room", "AREA", (IX, 3.5, 3.0), 260.0, "#d8d0ff", size=3.0)
+    kit.LIGHTS["room"]["obj"].rotation_euler = (0, 0, 0)
+    kit.light("roomb", "AREA", (IX, 10.0, 3.0), 260.0, "#d8d0ff", size=3.0)
+    kit.LIGHTS["roomb"]["obj"].rotation_euler = (0, 0, 0)
+    kit.light("amb", "AREA", (3.0, 0.0, 12.0), 140.0, "#8d84b8", size=22.0)
+    kit.LIGHTS["amb"]["obj"].rotation_euler = (0, 0, 0)
+    kit.light("van", "AREA", (VAN[0] - 0.3, VAN[1] + 1.5, 2.0), 0.0, "#ffb060", size=1.4)
+    for nm in ("room", "roomb", "amb", "van"):
+        kit.LIGHTS[nm]["obj"].visible_camera = False
+
+
+def build_ghosts(kit, story, ctx):
+    ctx["ghosts"] = []
+    d = Path(bpy.app.tempdir or tempfile.gettempdir()) / "ghost-faces"
+    d.mkdir(parents=True, exist_ok=True)
+    for nm, src, planes in GHOSTS:
+        spec = story.get("cast", {}).get(src)
+        if not spec:
+            continue
+        g = rig.Character(nm, _copy.deepcopy(spec), d)
+        if len(planes) % 2:
+            g.root.scale = (-g.root.scale[0], g.root.scale[1], g.root.scale[2])
+        ctx["ghosts"].append((g, nm, src, planes))
+
+
+def cue_at(tl, name, t):
+    """The latest cue of this name at or before t (its dict), or {}."""
+    out = {}
+    for c in tl.get("cues", []):
+        if c["name"] == name and c["t"] <= t + 1e-9:
+            out = c
+    return out
+
+
+def ghost_time(c, t, lag):
+    """When a copying ghost last saw me: normally lag ago. While I'm hidden (the cue's hide..until window) it holds, and
+    for half a beat after I'm back it still holds, then eases to catch up."""
+    h0, h1 = c.get("hide"), c.get("until")
+    if h0 is None:
+        return t - lag
+    if t < h0:
+        return t - lag
+    if t < h1 + lag:
+        return h0 - lag
+    u = min(1.0, (t - h1 - lag) / 0.6)
+    u = u * u * (3 - 2 * u)
+    return (h0 - lag) + (t - lag - (h0 - lag)) * u
+
+
+def reflect_x(x, yaw, planes):
+    for p in planes:
+        x = 2 * p - x
+        yaw = -yaw
+    return x, yaw
+
+
+def pose_ghosts(story, tl, t, ctx):
+    gm = cue_at(tl, "ghosts", t)
+    if gm and "_res" not in gm:   # resolve the freeze window's refs once
+        at = timeline.resolver(tl["lines"], tl["duration"])
+        for k in ("hide", "until"):
+            if isinstance(gm.get(k), str):
+                gm[k] = at(gm[k])
+        gm["_res"] = True
+    cast = list(story.get("cast", {}))
+    tix = 0
+    for g, nm, src, planes in ctx.get("ghosts", []):
+        mode = gm.get("me" if src == "me" else "ta", "off")
+        if mode == "off" or not gm:
+            g.pose(0, 0, 0, 0, hidden=True)
+            continue
+        if src == "me":
+            who, lag = "me", 0.0
+        elif mode == "copy":
+            who, lag = "me", LAG
+        else:
+            who, lag = "tasha", 0.0
+        ts = ghost_time(gm, t, lag) if (mode == "copy") else t
+        if "skip" in gm and nm in gm["skip"]:
+            g.pose(0, 0, 0, 0, hidden=True)
+            continue
+        s = acting.state(tl, who, max(0.0, ts), cast.index(who))
+        x, yaw = reflect_x(s["x"], s["yaw"], planes)
+        dy = 0.0
+        if src == "tasha" and mode == "copy":   # the copies stand far down the glass, each a different way down
+            dy = float(gm.get("dy", 0.0)) * (0.7 + 0.3 * int(nm[-1]))
+        blink = s["blink"]
+        g.pose(x, s["y"] + dy, s["z"], yaw, s["legs"], s["arms"], s["arms_side"], s["head_yaw"], s["head_pitch"], s["lean"],
+               s["bob"], s["expr"], s["mouth"], s["look"], blink, s["hidden"])
+
+
 # ------------------------------------------------------------------------------------------------ the copy
 
 
@@ -691,7 +921,8 @@ def wet_coat(kit, story):
 
 # ------------------------------------------------------------------------------------------------ lights
 
-SHOT_LIGHTS = ("work", "rim", "rim2", "bounce", "kick", "face", "hair")
+SHOT_LIGHTS = ("work", "rim", "rim2", "bounce", "kick", "face", "hair", "van")
+GAINS = {"maze": 1.0, "inside": 1.0, "wash": 1.0, "amb": 1.0, "room": 0.0, "roomb": 0.0}
 
 
 def build_lights(kit, ctx):
@@ -729,8 +960,12 @@ def shot_look(kit, story, tl, t, ctx):
 
     over = {nm: 0.0 for nm in SHOT_LIGHTS}
     look = story.get("looks", {}).get(_shot(tl, t)["id"], {})
-    for nm in ("maze", "inside", "wash"):
-        over[nm] = float(look.get(nm, 1.0))
+    fade = cue_at(tl, "fade", t)
+    fg = 1.0
+    if fade and not fade.get("reset"):
+        fg = 1.0 - kit_ss((t - fade["t"]) / float(fade.get("dur", 3.0)))
+    for nm, dflt in GAINS.items():
+        over[nm] = float(look.get(nm, dflt)) * (fg if nm in ("maze", "inside", "wash") else 1.0)
     for nm in SHOT_LIGHTS:
         if nm not in look:
             continue
@@ -752,7 +987,7 @@ def shot_look(kit, story, tl, t, ctx):
     # the lamp's head turns to where the beam is aimed
     d = K.LIGHTS["work"]["obj"].rotation_euler.to_matrix() @ V((0, 0, -1))
     ctx["work_head"].rotation_euler = (-math.atan2(d.z, math.hypot(d.x, d.y)), 0, math.atan2(d.x, -d.y))
-    g = float(look.get("bulbs", 1.0))
+    g = float(look.get("bulbs", 1.0)) * fg
     e = K.MATS["bulb"].node_tree.nodes.get("Emission")
     if e is not None:
         e.inputs["Strength"].default_value = 14.0 * g
@@ -770,6 +1005,10 @@ def build(kit, story, tl):
     build_worklight(kit, ctx, M)
     build_maze(kit, ctx, M)
     build_truck(kit, ctx, M)
+    build_far(kit, ctx, M)
+    build_inside(kit, ctx, M)
+    bpy.context.scene.cycles.transparent_max_bounces = 24   # a corridor of clear panes
+    build_ghosts(kit, story, ctx)
     build_copy(kit, story, ctx)
     wet_coat(kit, story)
     build_lights(kit, ctx)
@@ -796,7 +1035,14 @@ def pose_copy(story, tl, t, ctx):
     blink = copy_blink(story, tl, t) if acting._switch(keys, "blink", t, True) else 0.0
     # "stride" holds the legs apart while it stands (frozen mid-step, one foot up), eased like any number
     legs = s["legs"] + math.radians(acting._held(keys, "stride", t, 0.0))
-    c.pose(s["x"], s["y"], s["z"], s["yaw"], legs, s["arms"], s["arms_side"], s["head_yaw"], s["head_pitch"],
+    x, y, z, yaw = s["x"], s["y"], s["z"], s["yaw"]
+    at_ = cue_at(tl, "copyattach", t)
+    if at_.get("on") and ctx.get("carry"):   # it stands in the pane the maze guy carries
+        cx, cy, cz, cyaw = ctx["carry"]
+        side, ahead = at_.get("off", [0.0, 0.45])
+        x, y, z = cx + ahead * math.sin(cyaw) + side * math.cos(cyaw), cy - ahead * math.cos(cyaw) + side * math.sin(cyaw), cz
+        yaw = cyaw + math.radians(at_.get("yaw", 0))
+    c.pose(x, y, z, yaw, legs, s["arms"], s["arms_side"], s["head_yaw"], s["head_pitch"],
            s["lean"], s["bob"], s["expr"], s["mouth"], s["look"], blink, s["hidden"])
     # its face is late on its own head (creature pass 3): it points where the head pointed LAG ago and slides round
     # after it. In head terms that's the opposite way on the mirrored rig, and the UVs run once round (u = angle / 2 pi)
@@ -846,8 +1092,63 @@ def link_lights(kit, story, ctx):
         kit.LIGHTS[nm]["obj"].light_linking.receiver_collection = col
 
 
+def set_wet(story, wet):
+    """Tasha's coat (and the copy's: they share it) soaked: darker and glossier."""
+    tasha = story.get("cast", {}).get("tasha")
+    if not tasha:
+        return
+    b = rig.cloth(tasha, "shirt").node_tree.nodes["Principled BSDF"]
+    base = kit_col(tasha["shirt"])
+    k = 0.55 if wet else 1.0
+    b.inputs["Base Color"].default_value = (base[0] * k, base[1] * k, base[2] * k, 1.0)
+    b.inputs["Roughness"].default_value = 0.25 if wet else 0.42
+
+
+def kit_col(h):
+    from blocky import kit as K
+
+    return K.col(h)
+
+
+def set_props(story, tl, t, ctx):
+    """Cue "props": {roll: bool, coins: n, trip: 1|2, end1: bool, carry: bool} read at t."""
+    pr = cue_at(tl, "props", t)
+    ctx["roll"].hide_render = not pr.get("roll", False)
+    for i, c in enumerate(ctx["coins"]):
+        c.hide_render = i >= pr.get("coins", 0)
+    set_wet(story, pr.get("wet", False))
+    trip2 = pr.get("trip", 1) == 2
+    ctx["ceiling"].hide_render = trip2
+    for ob, wx, j in ctx["panes"]:
+        gone = trip2 and (j % 2 == 1 or (abs(wx) < 3 and j in (4, 8)))
+        for o in [ob] + list(ob.children_recursive):
+            o.hide_render = gone
+    for o in [ctx["end1"]] + list(ctx["end1"].children_recursive):
+        o.hide_render = not pr.get("end1", True)
+    ctx["framestack"].hide_render = False
+    for o in ctx["framestack"].children_recursive:
+        o.hide_render = not trip2
+    # the pane the maze guy carries
+    ctx["carry"] = None
+    pn = ctx["carried"]
+    on = pr.get("carry", False)
+    for o in [pn] + list(pn.children_recursive):
+        o.hide_render = not on
+    if on and "guy" in story.get("cast", {}):
+        cast = list(story["cast"])
+        g = acting.state(tl, "guy", t, cast.index("guy"))
+        side, ahead = pr.get("off", [0.0, 0.9])
+        c, sn = math.cos(g["yaw"]), math.sin(g["yaw"])
+        wx_, wy_ = g["x"] + ahead * sn + side * c, g["y"] - ahead * c + side * sn
+        pn.location = (wx_, wy_, g["z"])
+        pn.rotation_euler = (0, 0, g["yaw"] + math.radians(pr.get("yaw", 40)))
+        ctx["carry"] = (wx_, wy_, g["z"], g["yaw"] + math.radians(pr.get("yaw", 40)))
+
+
 def animate(kit, story, tl, t, ctx):
     link_lights(kit, story, ctx)
+    set_props(story, tl, t, ctx)
+    pose_ghosts(story, tl, t, ctx)
     pose_copy(story, tl, t, ctx)
     for who in list(story.get("cast", {})) + ["copy"]:
         apply_bow(tl, t, who)
