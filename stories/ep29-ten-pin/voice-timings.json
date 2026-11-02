@@ -1,0 +1,1765 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "They call me the spare.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.155,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     1.103
+    ]
+   ]
+  },
+  "L02": {
+   "text": "From my first frame, that's been my name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.87,
+     1.81
+    ]
+   ]
+  },
+  "L03": {
+   "text": "I'm new at the warehouse, and on Thursdays the team goes bowling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.983
+    ],
+    [
+     1.052,
+     1.69
+    ],
+    [
+     1.69,
+     2.759
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Dev, Rosie, Mags and Tomasz, all in teal shirts.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.345,
+     0.655
+    ],
+    [
+     0.707,
+     0.922
+    ],
+    [
+     0.922,
+     1.328
+    ],
+    [
+     1.362,
+     2.276
+    ]
+   ]
+  },
+  "L05": {
+   "text": "They dragged me along my first week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.836
+    ],
+    [
+     0.836,
+     1.655
+    ]
+   ]
+  },
+  "L06": {
+   "text": "The alley's old, and the lane lights buzz.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.784,
+     1.862
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Mags handed me house shoes from the team bag.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.103
+    ],
+    [
+     1.103,
+     1.966
+    ]
+   ]
+  },
+  "L08": {
+   "text": "They were warm. Like somebody had just kicked them off.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.112
+    ],
+    [
+     1.112,
+     1.31
+    ],
+    [
+     1.31,
+     2.034
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Up on the screen, our scores came up in six rows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.716,
+     1.337
+    ],
+    [
+     1.337,
+     2.207
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Four rows had tiny pictures of the team.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     1.233
+    ],
+    [
+     1.233,
+     1.879
+    ]
+   ]
+  },
+  "L11": {
+   "text": "The bottom row was me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.224
+    ]
+   ]
+  },
+  "L12": {
+   "text": "The fifth row had no picture, and it was already scoring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.155,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     1.259
+    ],
+    [
+     1.328,
+     2.448
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Dev said the team had one rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.569
+    ]
+   ]
+  },
+  "L14": {
+   "text": "When the fifth row lights up, nobody bowls.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.017
+    ],
+    [
+     1.069,
+     1.879
+    ]
+   ]
+  },
+  "L15": {
+   "text": "So we waited, and the fifth row scored.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.181
+    ],
+    [
+     1.181,
+     1.776
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Then Dev pointed at me and said, Go on then, spare.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.155,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.155,
+     0.768
+    ],
+    [
+     0.768,
+     1.086
+    ],
+    [
+     1.155,
+     2.138
+    ]
+   ]
+  },
+  "L17": {
+   "text": "I heard it like a spare part. The one tagging along.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     1.069
+    ],
+    [
+     1.138,
+     1.371
+    ],
+    [
+     1.371,
+     2.224
+    ]
+   ]
+  },
+  "L18": {
+   "text": "I rolled it straight into the gutter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.466
+    ]
+   ]
+  },
+  "L19": {
+   "text": "My ball came back up the ball return with a big wooden thunk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.905
+    ],
+    [
+     0.905,
+     1.517
+    ],
+    [
+     1.517,
+     2.621
+    ]
+   ]
+  },
+  "L20": {
+   "text": "That's when I saw it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.069
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Three lanes down, behind the pins, where it's always dark,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.784,
+     1.414
+    ],
+    [
+     1.466,
+     2.414
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Somebody was standing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.19,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.19,
+     1.138
+    ]
+   ]
+  },
+  "L23": {
+   "text": "A bowler in a teal shirt, like ours, perfectly still.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.0
+    ],
+    [
+     1.026,
+     1.466
+    ],
+    [
+     1.5,
+     2.328
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Its head had another head stacked on top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.992
+    ],
+    [
+     0.992,
+     1.828
+    ]
+   ]
+  },
+  "L25": {
+   "text": "The bottom face stared down the lane.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.698
+    ],
+    [
+     0.698,
+     1.638
+    ]
+   ]
+  },
+  "L26": {
+   "text": "The top face had its eyes shut, like it was asleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.155,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.293
+    ],
+    [
+     1.362,
+     2.172
+    ]
+   ]
+  },
+  "L27": {
+   "text": "I nudged Rosie.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     1.121
+    ]
+   ]
+  },
+  "L28": {
+   "text": "She looked right at it, and asked what I was pointing at.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.19,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.19,
+     0.828
+    ],
+    [
+     0.879,
+     1.448
+    ],
+    [
+     1.448,
+     2.155
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Tomasz looked up at the screen and said, spare's having a good night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.172,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.094
+    ],
+    [
+     1.094,
+     1.517
+    ],
+    [
+     1.612,
+     2.095
+    ],
+    [
+     2.095,
+     2.793
+    ]
+   ]
+  },
+  "L30": {
+   "text": "I'd scored fourteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.19
+    ]
+   ]
+  },
+  "L31": {
+   "text": "The next Thursday, it was two lanes down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.716,
+     1.828
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Same teal shirt, and the same house shoes as mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.19,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.19,
+     0.81
+    ],
+    [
+     0.836,
+     1.543
+    ],
+    [
+     1.543,
+     2.172
+    ]
+   ]
+  },
+  "L33": {
+   "text": "And the top head's eyes were open a slit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.888
+    ],
+    [
+     0.888,
+     1.164
+    ],
+    [
+     1.164,
+     1.741
+    ]
+   ]
+  },
+  "L34": {
+   "text": "The fifth row lit up, and we all stood back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     0.931
+    ],
+    [
+     1.0,
+     1.948
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Nobody rolled.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.19,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.19,
+     1.0
+    ]
+   ]
+  },
+  "L36": {
+   "text": "But down that dark lane, the pins went down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     1.017
+    ],
+    [
+     1.061,
+     2.034
+    ]
+   ]
+  },
+  "L37": {
+   "text": "The team were all very busy with the nachos.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     1.026
+    ],
+    [
+     1.026,
+     1.776
+    ]
+   ]
+  },
+  "L38": {
+   "text": "Week three, it was in the lane next to ours.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     1.043
+    ],
+    [
+     1.043,
+     1.879
+    ]
+   ]
+  },
+  "L39": {
+   "text": "The top head was half open now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.431
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Both heads had turned to our lane.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.828
+    ],
+    [
+     0.828,
+     1.534
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Every time the lights buzzed, it faced a little more toward me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.224
+    ],
+    [
+     1.293,
+     1.906
+    ],
+    [
+     1.906,
+     2.517
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I bowled with my eyes on the carpet all night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.94
+    ],
+    [
+     0.94,
+     1.328
+    ],
+    [
+     1.328,
+     1.948
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Week four, the lane next door was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     1.129
+    ],
+    [
+     1.129,
+     1.828
+    ]
+   ]
+  },
+  "L44": {
+   "text": "The fifth row lit up, and everyone stood back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.966
+    ],
+    [
+     1.034,
+     2.069
+    ]
+   ]
+  },
+  "L45": {
+   "text": "And Mags looked right at me, and said, Your go, spare.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     0.914
+    ],
+    [
+     0.94,
+     1.241
+    ],
+    [
+     1.285,
+     1.517
+    ],
+    [
+     1.552,
+     2.103
+    ]
+   ]
+  },
+  "L46": {
+   "text": "It was the one rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.155,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.155,
+     1.103
+    ]
+   ]
+  },
+  "L47": {
+   "text": "I broke it anyway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.069
+    ]
+   ]
+  },
+  "L48": {
+   "text": "The pinsetter dropped a fresh rack.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.836
+    ],
+    [
+     0.836,
+     1.569
+    ]
+   ]
+  },
+  "L49": {
+   "text": "The sweep lifted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.172,
+     1.034
+    ]
+   ]
+  },
+  "L50": {
+   "text": "It was standing among the pins. In our lane.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.172
+    ],
+    [
+     1.267,
+     2.017
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Both heads staring straight down the boards at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.069
+    ],
+    [
+     1.069,
+     1.483
+    ],
+    [
+     1.483,
+     1.948
+    ]
+   ]
+  },
+  "L52": {
+   "text": "The top head's eyes were wide open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.81,
+     1.655
+    ]
+   ]
+  },
+  "L53": {
+   "text": "The lane lights buzzed and dipped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.879,
+     1.448
+    ]
+   ]
+  },
+  "L54": {
+   "text": "When they came back, it was halfway up the lane.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.784,
+     1.25
+    ],
+    [
+     1.25,
+     1.931
+    ]
+   ]
+  },
+  "L55": {
+   "text": "Nobody behind me made a sound.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.19,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.19,
+     0.81
+    ],
+    [
+     0.81,
+     1.552
+    ]
+   ]
+  },
+  "L56": {
+   "text": "So I bowled.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.19,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.19,
+     0.948
+    ]
+   ]
+  },
+  "L57": {
+   "text": "The ball rolled right through where it stood. It wasn't there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.983
+    ],
+    [
+     0.983,
+     1.552
+    ],
+    [
+     1.638,
+     2.431
+    ]
+   ]
+  },
+  "L58": {
+   "text": "All ten went down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.19,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.534,
+     1.155
+    ]
+   ]
+  },
+  "L59": {
+   "text": "My first strike ever.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.155
+    ]
+   ]
+  },
+  "L60": {
+   "text": "Up on the screen, my picture slid up into the fifth row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.793,
+     1.181
+    ],
+    [
+     1.181,
+     1.474
+    ],
+    [
+     1.474,
+     2.362
+    ]
+   ]
+  },
+  "L61": {
+   "text": "The sixth row was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.293
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Rosie said their friend Juno moved away in the spring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     1.155
+    ],
+    [
+     1.155,
+     1.612
+    ],
+    [
+     1.612,
+     2.293
+    ]
+   ]
+  },
+  "L63": {
+   "text": "They'd been a team of five. Then four.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.966
+    ],
+    [
+     1.034,
+     1.724
+    ]
+   ]
+  },
+  "L64": {
+   "text": "And every Thursday since, the fifth row bowled itself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.155,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.155,
+     1.052
+    ],
+    [
+     1.103,
+     1.612
+    ],
+    [
+     1.612,
+     2.414
+    ]
+   ]
+  },
+  "L65": {
+   "text": "They never saw what was bowling it. They just called it the spare.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.345
+    ],
+    [
+     1.414,
+     1.87
+    ],
+    [
+     1.87,
+     2.534
+    ]
+   ]
+  },
+  "L66": {
+   "text": "Mags said the shoes were always warm when she got them out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.19,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.19,
+     0.526
+    ],
+    [
+     0.526,
+     0.854
+    ],
+    [
+     0.854,
+     1.422
+    ],
+    [
+     1.422,
+     2.276
+    ]
+   ]
+  },
+  "L67": {
+   "text": "And Dev said, We were hoping you'd take its place.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.759,
+     1.147
+    ],
+    [
+     1.147,
+     2.034
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Spare was its name. They gave it to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.914
+    ],
+    [
+     0.983,
+     1.31
+    ],
+    [
+     1.31,
+     1.793
+    ]
+   ]
+  },
+  "L69": {
+   "text": "Mags handed me the fifth teal shirt.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     0.948
+    ],
+    [
+     0.948,
+     1.603
+    ]
+   ]
+  },
+  "L70": {
+   "text": "Then Tomasz shouted, Forklift!",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.879,
+     1.5
+    ]
+   ]
+  },
+  "L71": {
+   "text": "And the whole team put their arms out flat and reversed up the approach, going beep, beep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.707,
+   "onset": 0.155,
+   "end": 3.5,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.672,
+     1.457
+    ],
+    [
+     1.457,
+     1.837
+    ],
+    [
+     1.837,
+     2.431
+    ],
+    [
+     2.517,
+     2.983
+    ],
+    [
+     3.034,
+     3.5
+    ]
+   ]
+  },
+  "L72": {
+   "text": "It was the silliest thing I've ever seen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.897
+    ],
+    [
+     0.897,
+     1.724
+    ]
+   ]
+  },
+  "L73": {
+   "text": "So I did it too.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.0
+    ]
+   ]
+  },
+  "L74": {
+   "text": "Five grown-ups, beeping backwards on a bowling lane.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.741,
+     1.285
+    ],
+    [
+     1.285,
+     2.19
+    ]
+   ]
+  },
+  "L75": {
+   "text": "Five shadows on the boards.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.362
+    ]
+   ]
+  },
+  "L76": {
+   "text": "They call me the spare. I'm the fifth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.828
+    ],
+    [
+     0.879,
+     1.517
+    ]
+   ]
+  }
+ }
+}
