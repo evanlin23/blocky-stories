@@ -189,7 +189,7 @@ def materials(kit):
     M["hat1"] = P("#3f8f8a", 0.9, "hat teal")
     M["hat2"] = P("#efe6cf", 0.9, "hat cream")
     M["lamp"] = kit.emit("#ffd9a0", 6.0, "lamp glow")
-    M["strip"] = kit.emit("#eef2f0", 3.0, "fluorescent")
+    M["strip"] = kit.emit("#eef2f0", 0.9, "fluorescent")
     M["port"] = kit.emit("#ffcf90", 3.5, "port glow")
     M["screen"] = kit.emit("#bcd6ff", 1.0, "screen")
     M["far"] = kit.emit("#ffcf8a", 4.0, "far lights")
@@ -289,9 +289,9 @@ def shrug_face(path):
         return W * a / 360.0
     ey = faces._fy(0.42)
     for side in (-1, 1):
-        x = cx + side * deg(32)
-        d.ellipse([x - 36, ey - 40, x + 36, ey + 40], fill=ink)
-        d.ellipse([x + side * -6 - 3, ey - 20 - 3, x + side * -6 + 9, ey - 20 + 9], fill=(250, 244, 226))
+        x = cx + side * deg(34)
+        d.ellipse([x - 46, ey - 50, x + 46, ey + 50], fill=ink)
+        d.ellipse([x - 22, ey - 30, x - 4, ey - 12], fill=(250, 244, 226))
     my = faces._fy(0.72)
     th = max(14, int(0.05 * s))
     half = deg(66)
@@ -347,7 +347,7 @@ def build_shrug(kit, M, ctx):
     headg = kit.empty("shrug.headg", (0, 0, faces.HEAD_H / 2 + 0.02), head)
     rig.head_mesh("shrug.headm", mat, headg)
     hood = kit.box("shrug.hood", (1.5, 1.38, 0.5), (0, 0.02, 0.4), orange, headg, bevel=0.14)
-    collar = kit.box("shrug.collar", (1.34, 0.62, 0.8), (0, -0.62, -0.5), orange, headg, bevel=0.16)
+    collar = kit.box("shrug.collar", (1.34, 0.62, 0.8), (0, -0.62, -0.5), orange2, headg, bevel=0.16)
     ctx["shrug"].update(neck=neck, head=head, hood=hood, collar=collar, headg=headg)
     ctx["shrug_parts"] = [root]
 
@@ -900,6 +900,9 @@ def build_ferry(kit, M, ctx):
     kit.light("harbour key", "POINT", (F + 2.2, 6.9, 4.7), 1.0, "#ffb26a", size=0.2)
     kit.light("window rim", "POINT", (F + 3.1, 5.6, 6.1), 1.0, "#9fc4ff", size=0.2)
     kit.light("window rim2", "POINT", (F + 3.1, 3.2, 6.1), 1.0, "#9fc4ff", size=0.2)
+    kit.light("shrug key", "SPOT", (F + 3.6, 6.4, 4.7), 1.0, "#ffb070", spot=45, blend=0.6, size=0.3)
+    kit.aim(kit.LIGHTS["shrug key"]["obj"], (F + 1.7, 4.75, 5.1))
+    kit.light("shrug rim", "POINT", (F + 0.2, 4.75, 6.2), 1.0, "#9fc4ff", size=0.3)
     kit.light("sunbeam", "SPOT", (F + 5.5, 4.0, 6.6), 1.0, "#ffd89a", spot=70, blend=0.5, size=0.6)
     kit.aim(kit.LIGHTS["sunbeam"]["obj"], (F + 1.7, 4.0, 4.5))
 
@@ -1131,9 +1134,11 @@ def animate(kit, story, tl, t, ctx):
     over["h lamp"] = 70.0
     over["blue lamp"] = 22.0
     over["deck lamp 0"] = over["deck lamp 1"] = over["deck lamp 2"] = 90.0
-    over["lounge a"] = 75.0
-    over["lounge b"] = 75.0
+    over["lounge a"] = 18.0
+    over["lounge b"] = 18.0
     over["harbour key"] = 55.0
+    over["shrug key"] = 380.0
+    over["shrug rim"] = 70.0
     over["window rim"] = 90.0
     over["window rim2"] = 70.0
     sb = float(_eased(_cues(tl, "sunbeam"), "v", t, 0.0))
@@ -1221,10 +1226,10 @@ def animate(kit, story, tl, t, ctx):
     c = _interp_cues(dc, t, ("pos", "yaw")) if dc else None
     if c and not c.get("hide"):
         yaw = c.get("yaw", [0.0])
-        dg["root"].location = (c["pos"][0], c["pos"][1], 0.0)
         moving = c.get("gait", 0)
         ph_ = t * 9.0
-        dg["root"].location = (c["pos"][0], c["pos"][1], abs(math.sin(ph_)) * 0.02 * moving)
+        z0 = c["pos"][2] if len(c["pos"]) > 2 else 0.0
+        dg["root"].location = (c["pos"][0], c["pos"][1], z0 + abs(math.sin(ph_)) * 0.02 * moving)
         dg["root"].rotation_euler = (0, 0, math.radians(yaw[0] if isinstance(yaw, (list, tuple)) else yaw))
         for i, lg in enumerate(dg["legs"]):
             lg.rotation_euler = (math.sin(ph_ + (math.pi if i in (1, 2) else 0)) * 0.6 * moving, 0, 0)
