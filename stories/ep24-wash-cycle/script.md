@@ -4,7 +4,7 @@
 - **Working title:** The dryer nobody started had a warm coat inside (the packager may change it, never to an imperative or a spoiler).
 - **Pitch:** #8 `wash-cycle` in `stories/ideas.md`. Setting, creature, first-line type and kind of warmth are kept.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 637 spoken words in 77 lines, all `narrator` in voice A, plus 3 pause beats (P02 0.9 s, P01 0.7 s, P03 0.8 s).
+- **Word count:** 638 spoken words in 77 lines, all `narrator` in voice A, plus 3 pause beats (P02 0.9 s, P01 0.7 s, P03 0.8 s).
 - **Estimated length:** about 2:19 to 2:25. At 290 wpm the speech is about 2:10. The 0.12 s gaps add about 9 s, P01 0.7 s and the loop tail 0.25 s. If the retime lands under 2:15, add back "I read the same PAGE / TEN TIMES." after L31. If it lands over 2:30, L43 goes first, then L74.
 - **Shots:** 68 (S01 to S68).
 - **Name change:** the pitch's "Mr Amadi" is now **Arthur**, and he has no name at all until L68. "Amadi" risks Whisper spellings, and "Mr." reads as "mister" in Kokoro but comes back "Mr." from Whisper, which `asr` counts as a wrong word. "Arthur" is a common word in Whisper's training and Kokoro says it plainly. Until L68 he's "the old man".
@@ -48,7 +48,7 @@
 | L59 | chair one | it stays sitting as I stand. It never follows |
 | L69 to L76 | gone | the chairs are just chairs |
 
-- **Test still:** L48, phone size: its upside-down-feeling face filling the top half of frame, my face in the lower third, the green collar between. Iterate until it frightens.
+- **Test still:** L48, phone size: its upside-down face filling the top half of frame, my face in the lower third, the green collar between. Iterate until it frightens.
 
 ## Look and sound
 
@@ -127,7 +127,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L22` narrator: But the BIB / of its overalls / was on its BACK.
   - [S22: closer, the bib and two buttons on its back]
 - `L23` narrator: Its shoes / pointed the WRONG WAY, / HEELS to the DRYERS.
-  - [S23: low under the chairs, its shoes heels-forward beside the old man's normal brown shoes]
+  - [S23: a low shot under the chairs of its heels-forward shoes beside Arthur's normal brown shoes]
 - `L24` narrator: And on the BACK / of its HEAD / was a FACE.
   - [S24: slow tilt up from the collar to the face on the back of its head]
 - `L25` narrator: It was LOOKING at me. / Over the back / of the CHAIR.
@@ -193,11 +193,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `P01` pause: 0.7 s, no word.
   - [S45 held at 20%. Only the hum. The ramp back to full starts at the end of P01 and takes 1.0 s]
 - `L48` narrator: When they came BACK, / its FACE / was an INCH / from MINE.
-  - [S45 holds through "When they came BACK" while the ramp finishes, then S46 cuts in on "its FACE". Close: the Turned in chair one against the table edge, its head tipped back over the chair, its face filling the top of frame, my face low. The hit lands on "INCH". The test still]
+  - [S45 holds through "When they came BACK" while the ramp finishes, then S46 cuts in on "its FACE". Close: the Turned in chair one against the table edge, its head tipped back over the chair, its upside-down face filling the top half of frame, my face in the lower third, the green collar between. The hit lands on "INCH". The test still]
 - `L49` narrator: I could see / every black LINE / of its EYES.
   - [S47: extreme close on its eyes, thick strokes, small hard highlights]
 - `L50` narrator: I couldn't MOVE.
-  - [S48: me, frozen, the green collar]
+  - [S48: front three-quarter on my face, frozen, the green collar]
 - `L51` narrator: Its eyes / slid DOWN / to the COAT.
   - [S49: over its head, its gaze on the coat's buttons]
 - `L52` narrator: Then over to / HIS chair, / and BACK.
@@ -212,7 +212,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the same moment. **Shots:** 5.
 
 - `L54` narrator: Then I KNEW / that LAVENDER.
-  - [S52: me, eyes widening, the Turned's face still above me]
+  - [S52: front three-quarter on my face, eyes widening, the Turned's face still above me]
 - `L55` narrator: He was the ONLY one / here that first NIGHT.
   - [S53: a soft replay of S13's wide, the old man walking back from the dryers. Slowed, slightly cooler]
 - `L56` narrator: While I was at the CHANGE MACHINE, / he put his COAT / in that DRYER.
@@ -228,7 +228,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L59` narrator: I stood UP. / It didn't / FOLLOW.
   - [S57: me standing, it staying in chair one, its face turning only with my coat. Music turns to C major here]
-- `L60` narrator: His last LOAD / sat FINISHED / in the END MACHINE.
+- `L60` narrator: His wash / from NIGHT THREE / sat in the END MACHINE.
   - [S58: a front-loader, grey towels and jumpers resting in the drum]
 - `L61` narrator: I DRIED it. / I FOLDED it / the way he DOES, / CORNERS FIRST.
   - [S59: me at the table folding towels, the stack neat, a slow push]
@@ -245,7 +245,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L67` narrator: "What was I / supposed to DO?"
   - [S64 held]
 - `L68` narrator: Then he told me / his name was ARTHUR.
-  - [S65: two-shot in the doorway, warm light]
+  - [S65: a two-shot in the doorway with both faces, mine and Arthur's, warm light]
 
 ## 07 Two coats
 
