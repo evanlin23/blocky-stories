@@ -392,10 +392,10 @@ def build_lot(kit, ctx):
 # ======================================================================================================= rooms
 def build_rooms(kit, ctx):
     wall = kit.plastic("#5a4a40", 0.9)
-    wood = kit.plastic("#4a3020", 0.7)
+    wood = kit.plastic("#4a3c32", 0.7)
     # ---- 1 the bar (x = 300)
-    kit.box("bar.floor", (12, 10, 0.2), (300, 2, -0.1), kit.plastic("#2a1d16", 0.7))
-    kit.box("bar.wall", (12, 0.3, 5), (300, 3.2, 2.5), kit.plastic("#4a2c24", 0.9))
+    kit.box("bar.floor", (12, 10, 0.2), (300, 2, -0.1), kit.plastic("#2a2624", 0.7))
+    kit.box("bar.wall", (12, 0.3, 5), (300, 3.2, 2.5), kit.plastic("#3b3a3c", 0.9))
     kit.box("bar.shelf", (6, 0.4, 0.1), (300, 2.9, 2.4), wood)
     kit.box("bar.shelf2", (6, 0.4, 0.1), (300, 2.9, 3.2), wood)
     for i, c in enumerate(("#6a8a4a", "#a0642a", "#3a5a8a", "#8a3a3a", "#c0a050", "#4a7a6a", "#7a5a9a")):
@@ -410,8 +410,8 @@ def build_rooms(kit, ctx):
     for sx in (298.85, 300.0, 301.15):
         kit.cyl(f"stool{int(sx)}", 0.28, 0.08, (sx, 0.2, 0.58), wood)
         kit.cyl(f"stoolp{sx}", 0.06, 0.58, (sx, 0.2, 0.29), wood)
-    kit.light("bar.key", "POINT", (300, -1.4, 3.2), 260.0, "#ffb870", size=0.5)
-    kit.light("bar.back", "POINT", (300, 1.6, 3.0), 160.0, "#ffa860", size=0.5)
+    kit.light("bar.key", "POINT", (300, -1.4, 3.2), 260.0, "#ffe0b8", size=0.5)
+    kit.light("bar.back", "POINT", (300, 1.6, 3.0), 160.0, "#ffe0b8", size=0.5)
     # ---- 2 the harbour (x = 400)
     kit.box("harb.quay", (14, 8, 0.3), (400, -1, -0.15), kit.concrete("#7a7670", 1.2))
     sea = kit.plane("harb.sea", (80, 60), (400, 38, -0.9), kit.plastic("#27414f", 0.12))
