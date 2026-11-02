@@ -24,7 +24,6 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep12 `knock-back` | none (before the canon), but the knock fits the roll call | |
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S59, under L59 ("Wren tore it in half"), held 1.5 s, not narrated |
-| ep22 `model-village` | under the old green paint of the model village's ground, one seamless worn grey stone, no joins, older than the brick town modelled on it (the "older object" thread, no tally). It fits the count too: the Resident stands by the one empty chair in the model tea shop until my figure fills it (the pin, "Would you have kept sanding?", asks about the stone) | S17, under L17 ("Then I started SANDING the old GREEN off the GROUND"), held 1.5 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
