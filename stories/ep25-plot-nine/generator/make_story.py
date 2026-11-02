@@ -88,7 +88,7 @@ EYE = 1.55
 SHOTS = [
     # 01 the smell, L01 to L10
     (0, "me bent over the wet soil, face lit, a drop falls off the leaf beside me", 2,
-     c([0, [3.45, -29.7, 0.45], [3.7, -27.6, 0.85], 17], [1, [3.45, -29.3, 0.5], [3.7, -27.6, 0.88], 16])),
+     c([0, [3.6, -28.7, 0.9], [3.75, -27.3, 0.95], 20], [1, [3.6, -28.5, 0.9], [3.75, -27.3, 0.95], 19])),
     ("L02", "wide from the gate: cracked hill, peach sky", 4, move(([0.25, -0.5, 1.9], [0.0, -14, 0.9]),
                                                                   ([0.25, -1.4, 1.9], [0.0, -14, 0.9]), 19)),
     ("L03", "overhead on a neighbour's cracked bed", 4, still([3.5, -9.9, 2.7], [3.5, -10.05, 0.0], 22)),
@@ -146,7 +146,7 @@ SHOTS = [
     ("L37", "low at the soil line where an arm goes in", 2, still([4.7, -30.2, 0.14], [3.85, -29.3, 0.1], 30)),
     ("L38", "my wellies on the wet path", 2, still([-0.3, -26.5, 0.6], [0.5, -28.2, 0.2], 22)),
     ("L39", "its head turned all the way round", 1, still([0.9, -28.5, 1.0], [3.85, -28.8, 0.62], 24)),
-    ("L40", "over its shoulder: me, the shed door behind me", 2, still([5.3, -30.4, 1.35], [2.9, -27.4, 1.3], 18)),
+    ("L40", "over its shoulder: me, the shed door behind me", 2, still([5.5, -28.2, 1.4], [3.1, -27.9, 1.35], 28)),
     ("L41", "side-on wide: the Digger, me, the shed in a line", 4, still([-1.0, -30.7, 1.2], [3.0, -27.5, 0.9], 19)),
     ("L42", "my face; the door opens behind me", 2, still([4.5, -26.9, 1.5], [3.0, -27.6, 1.3], 20)),
     ("L43", "Mr. Carter in the doorway with the can", 2, still([3.2, -24.4, 1.45], [2.65, -26.95, 1.25], 26)),
@@ -164,7 +164,7 @@ SHOTS = [
     ("L53", "me, from him to the plot", 2, still([4.4, -29.3, 1.5], [3.1, -27.9, 1.4], 22)),
     ("L54", "two shot by the shed; the fog thins", 2, still([4.0, -24.6, 1.45], [3.1, -27.0, 1.3], 22)),
     ("L55", "Mr. Carter, a small smile", 2, still([3.5, -24.4, 1.3], [2.95, -26.25, 1.42], 24)),
-    ("L56", "wide from the path: the soil settles", 2, still([0.3, -29.3, 1.3], [3.85, -28.8, 0.3], 21)),
+    ("L56", "wide from the path: the soil settles", 2, still([0.5, -30.4, 1.1], [3.85, -28.8, 0.4], 21)),
     # 05 passing it on, L57 to L70
     ("L57", "the same angle as L34, clear morning: nothing", 4, still([0.45, -28.2, 1.45], [3.85, -28.8, 0.55], 24)),
     ("L58", "overhead on the hole", 4, still([3.85, -28.7, 2.3], [3.85, -28.82, 0.0], 24)),
@@ -176,9 +176,8 @@ SHOTS = [
     ("L62", "me watering at dusk", 2, still([4.9, -27.7, 1.2], [3.1, -27.3, 1.0], 24)),
     ("L63", "I sniff the soil; Mr. Carter nods behind", 2, still([4.4, -28.2, 1.1], [3.1, -27.0, 0.9], 22)),
     ("L64", "high wide: plot nine full, the others green", 4, still([-2.0, -17.5, 7.0], [3.0, -27.0, 0.4], 22)),
-    ("L65", "the newcomer wheels her bike down the path", 2, still([0.7, -26.0, 1.4], [0.0, -21.0, 1.1], 26)),
-    ("L66", "plot ten's shed: an empty hook", 2, move(([80.2, 0.2, 1.4], [80.2, 1.9, 1.45]),
-                                                      ([80.2, 0.5, 1.4], [80.2, 1.9, 1.45]), 22)),
+    ("L65", "the newcomer wheels her bike down the path, side-on", 2, move(([2.3, -19.6, 1.3], [-0.4, -19.6, 1.2]), ([2.3, -19.7, 1.3], [-0.4, -19.7, 1.2]), 22)),
+    ("L66", "plot ten's shed: an empty hook with its clean outline", 2, move(([80.15, 0.5, 1.45], [80.28, 1.9, 1.42]), ([80.2, 0.8, 1.45], [80.28, 1.9, 1.42]), 34)),
     ("L67", "my sleeve and the can toward her sleeve", 2, still([0.0, -24.0, 1.2], [-0.03, -26.4, 1.15], 30)),
     ("L68", "Mr. Carter nods from his bucket", 2, still([3.3, -27.5, 1.0], [3.2, -25.3, 0.95], 28)),
     ("L69", "me and the newcomer at plot ten's edge", 2, still([-1.4, -23.8, 1.5], [-0.1, -26.2, 1.3], 22)),
@@ -225,8 +224,8 @@ def talk(who, a, b):
 hide("carter", 0)
 hide("newcomer", 0)
 # me
-put("me", 0, [3.95, -27.5], yaw=0, lean=26, head=[0, 4], expr="neutral")
-key("me", "L01.1", head=[0, 6], lean=14, blend=0.6)
+put("me", 0, [3.95, -27.1], yaw=0, lean=6, head=[0, 4], expr="neutral")
+key("me", "L01.1", head=[0, 8], lean=0, blend=0.6)
 hide("me", "L02")
 put("me", "L05", [0.5, 0.4], yaw=-90)
 hide("me", "L06")
@@ -302,8 +301,8 @@ key("carter", "L68.2", head=[0, 0], blend=0.35)
 hide("carter", "L69")
 
 # the newcomer
-put("newcomer", "L65", [-0.45, -17.0], yaw=0, expr="neutral", arms=[40, 0])
-walk("newcomer", "L65+2.6", [-0.45, -24.5], arms=[40, 0])
+put("newcomer", "L65", [-0.45, -18.8], yaw=0, expr="neutral", arms=[60, 0])
+walk("newcomer", "L65+2.4", [-0.45, -20.6], arms=[60, 0])
 key("newcomer", "L65", expr="neutral")
 hide("newcomer", "L66")
 put("newcomer", "L67", [-0.55, -26.3], yaw=90, arms=[80, 80])
@@ -314,7 +313,8 @@ hide("newcomer", "L70")
 # ------------------------------------------------------------------------------------------------ cues
 cues = [
     # time of day: set.py TOD. Every change between shots is a cut at a shot start or a slow ramp (dur)
-    {"at": 0, "name": "tod", "set": "dawn"},
+    {"at": 0, "name": "tod", "set": "gold"},
+    {"at": "L02", "name": "tod", "set": "dawn"},
     {"at": "L05", "name": "tod", "set": "day"},
     {"at": "L11", "name": "tod", "set": "dawn"},
     {"at": "L22", "name": "tod", "set": "gold"},
@@ -322,31 +322,31 @@ cues = [
     {"at": "L27", "name": "tod", "set": "early"},
     {"at": "L28", "name": "tod", "set": "dawn"},
     {"at": "L30+0.2", "name": "tod", "set": "fog", "dur": 4.0},
-    {"at": "L46", "name": "tod", "set": "night"},
-    {"at": "L49", "name": "tod", "set": "fog"},
+    {"at": "L45+1.0", "name": "tod", "set": "night", "dur": 1.5},
+    {"at": "L48+0.8", "name": "tod", "set": "fog", "dur": 1.0},
     {"at": "L54", "name": "tod", "set": "fogthin", "dur": 3.0},
     {"at": "L57", "name": "tod", "set": "clear"},
     {"at": "L61", "name": "tod", "set": "day"},
-    {"at": "L62", "name": "tod", "set": "dusk"},
-    {"at": "L63", "name": "tod", "set": "day"},
+    {"at": "L61.2", "name": "tod", "set": "dusk", "dur": 1.5},
+    {"at": "L62.1", "name": "tod", "set": "day", "dur": 1.0},
     {"at": "L65", "name": "tod", "set": "sunrise"},
     {"at": "L70", "name": "tod", "set": "goldend", "dur": 3.0},
     # the Digger: found where it already stands, never seen moving. up = how far its shoulders stand above the soil
     {"at": 0, "name": "digger", "hidden": True},
     {"at": "L11", "name": "digger", "plot": 1, "up": -0.3, "yaw": 0},
-    {"at": "L12", "name": "digger", "plot": 1, "up": 0.04, "yaw": 0},
+    {"at": "L12", "name": "digger", "plot": 1, "up": 0.2, "yaw": 0},
     {"at": "L17", "name": "digger", "hidden": True},
-    {"at": "L21", "name": "digger", "plot": 4, "up": 0.04, "yaw": 0},
-    {"at": "L23", "name": "digger", "plot": 7, "up": 0.04, "yaw": 0},
-    {"at": "L24", "name": "digger", "plot": 7, "up": 0.24, "yaw": 0},
+    {"at": "L21", "name": "digger", "plot": 4, "up": 0.2, "yaw": 0},
+    {"at": "L23", "name": "digger", "plot": 7, "up": 0.2, "yaw": 0},
+    {"at": "L24", "name": "digger", "plot": 7, "up": 0.42, "yaw": 0},
     {"at": "L25", "name": "digger", "hidden": True},
-    {"at": "L29", "name": "digger", "plot": 7, "up": 0.24, "yaw": 0},
+    {"at": "L29", "name": "digger", "plot": 7, "up": 0.42, "yaw": 0},
     {"at": "L30", "name": "digger", "hidden": True},
     {"at": "L34", "name": "digger", "plot": 9, "up": 0.5, "yaw": 90, "head": 0},
     {"at": "L39", "name": "digger", "plot": 9, "up": 0.5, "yaw": 90, "head": 180},
     {"at": "L46", "name": "digger", "hidden": True},
     {"at": "L49", "name": "digger", "plot": 9, "up": 0.5, "yaw": 90, "head": 180},
-    {"at": "L56", "name": "digger", "plot": 9, "up": 0.04, "yaw": 90, "head": 180},
+    {"at": "L56", "name": "digger", "plot": 9, "up": 0.2, "yaw": 90, "head": 180},
     {"at": "L57", "name": "digger", "hidden": True},
     # holes: plots listed. 1 from Tuesday, 4 from Wednesday's feeding, 7 from Friday; 9 on Saturday
     {"at": 0, "name": "holes", "plots": []},
@@ -373,7 +373,7 @@ cues = [
     {"at": "L56", "name": "can", "where": "off"},
     {"at": "L62", "name": "can", "where": "me", "water": True},
     {"at": "L63", "name": "can", "where": "off"},
-    {"at": "L67", "name": "can", "where": "me", "arm": "arm-1"},
+    {"at": "L67", "name": "can", "where": "world", "pos": [-0.03, -25.3, 1.3], "rot": [0.0, 0.0, 0.0], "scale": 1.8},
     {"at": "L68", "name": "can", "where": "off"},
     {"at": 0, "name": "torch", "on": 0.0},
     {"at": "L59", "name": "torch", "on": 1.0, "dur": 0.8},

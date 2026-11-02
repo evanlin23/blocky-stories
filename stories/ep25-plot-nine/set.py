@@ -46,7 +46,7 @@ TOD = {
     "dusk":    dict(sun=7.0, sunc="#ff9a5e", fill=1.3, fillc="#9fb0dc", sky=1.0, hor="#e8a682", zen="#7f93c0", fogd=0.016, fogb=0.9),
     "sunrise": dict(sun=8.0, sunc="#ffc088", fill=1.4, fillc="#a5b8e6", sky=1.2, hor="#ecc0a0", zen="#8aa8d0", fogd=0.014, fogb=1.0),
     "goldend": dict(sun=9.0, sunc="#ffc47c", fill=1.4, fillc="#b0c0e8", sky=1.2, hor="#f2c49a", zen="#92acd2", fogd=0.014, fogb=1.0),
-    "night":   dict(sun=3.2, sunc="#8aa2f0", fill=1.4, fillc="#7f96d8", sky=0.9, hor="#3b4a76", zen="#1c2848", fogd=0.014, fogb=0.5),
+    "night":   dict(sun=4.5, sunc="#9bb0f4", fill=2.0, fillc="#8aa0e0", sky=1.3, hor="#4d5d8a", zen="#26335a", fogd=0.02, fogb=0.62),
 }
 SUN_DIR = V((0.88, 0.3, 0.2)).normalized()
 FILL_DIR = V((-0.7, 0.2, 0.55)).normalized()
@@ -272,7 +272,7 @@ def materials(kit):
     M["wellid"] = pbr(kit, "welly dark", "#1f2c20", 0.4, spec=0.5)
     M["wetpants"] = pbr(kit, "wet trousers", "#2a2926", 0.4, spec=0.5)
     M["capwool"] = pbr(kit, "tweed cap", "#7b6d58", 0.95, noise=(25.0, 0.7, 0.0))
-    M["pony"] = pbr(kit, "pony", "#4a2e1c", 0.7)
+    M["pony"] = pbr(kit, "pony", "#6b4226", 0.7)
     M["zipstripe"] = pbr(kit, "zip stripe", "#efe4c4", 0.6)
     M["mous"] = pbr(kit, "moustache", "#9a9a98", 0.9)
     M["greenbed"] = pbr(kit, "green crop bed", "#44693a", 0.9, noise=(8.0, 0.55, 0.0))
@@ -622,7 +622,7 @@ def build_props(kit, M, ctx):
     # drops: one per emitter (see EMITTERS); the sprinkle is a field of them
     ctx["drops"] = {}
     for name, *_ in EMITTERS:
-        ctx["drops"][name] = kit.sphere(f"drop.{name}", 0.012, (0, 0, -9), M["water"], seg=8)
+        ctx["drops"][name] = kit.sphere(f"drop.{name}", 0.022 if name == "leaf" else 0.012, (0, 0, -9), M["water"], seg=8)
     rng = random.Random(14)
     ctx["sprinkle"] = []
     for k in range(18):
@@ -664,7 +664,7 @@ def build_interior(kit, M, x0, ctx, plot_ten=False):
             kit.box(f"in{x0}.hoe{dx}", (0.22, 0.015, 0.05), (x, 1.78, 0.57), M["iron2"], rot=(0, 0.2, 0))
     bare = x0 + 0.28
     kit.box(f"in{x0}.hookbare", (0.045, 0.09, 0.045), (bare, 1.82, 1.55), M["iron2"], bevel=0.008)
-    if not plot_ten:
+    if True:
         # dust on the boards, and the clean can-shaped patch where the can hung
         kit.box(f"in{x0}.dust", (0.95, 0.004, 0.85), (bare, 1.867, 1.28), pbr(kit, "wall dust", "#6b5a44", 0.95))
         kit.box(f"in{x0}.cleanbody", (0.28, 0.004, 0.24), (bare, 1.864, 1.3), M["creosote"])
@@ -794,7 +794,7 @@ def decorate(kit, story, ctx):
             kit.box(f"carter.mousend{sx}", (0.1, 0.08, 0.15), (sx * 0.2, -faces.HEAD_R + 0.0, -0.2), M["mous"], hg, bevel=0.03)
     hg2 = bpy.data.objects.get("newcomer.headg")
     if hg2 is not None:
-        kit.box("newcomer.tail", (0.42, 0.4, 1.0), (0, faces.HEAD_R + 0.2, -0.05), M["pony"], hg2, bevel=0.1)
+        kit.box("newcomer.tail", (0.46, 0.44, 1.5), (0, faces.HEAD_R + 0.22, -0.3), M["pony"], hg2, bevel=0.1)
         kit.box("newcomer.tailtie", (0.46, 0.44, 0.1), (0, faces.HEAD_R + 0.17, 0.38), M["capwool"], hg2, bevel=0.03)
     tor2 = bpy.data.objects.get("newcomer.torso")
     if tor2 is not None:
@@ -940,6 +940,8 @@ def animate(kit, story, tl, t, ctx):
         can_world = can
     else:
         can.location = (0, 0, -9)
+    sc_ = float(cc.get("scale", 1.0))
+    can.scale = (sc_, sc_, sc_)
     if can_world is not None and cc.get("water"):
         bpy.context.view_layer.update()
         tip = can.matrix_world @ ctx["can_tip"]

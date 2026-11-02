@@ -130,34 +130,34 @@
    ]
   },
   "L06": {
-   "text": "He said, my knees are done, and walked out without a wave.",
+   "text": "He said, time for somebody new, and walked out without a wave.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.483,
+   "dur": 2.69,
    "onset": 0.155,
-   "end": 2.276,
+   "end": 2.5,
    "chunks": [
     [
      0.155,
-     0.466
+     0.448
     ],
     [
-     0.5,
-     0.784
+     0.483,
+     0.759
     ],
     [
-     0.784,
-     1.052
+     0.759,
+     1.224
     ],
     [
-     1.077,
-     1.492
+     1.293,
+     1.715
     ],
     [
-     1.492,
-     2.276
+     1.715,
+     2.5
     ]
    ]
   },
@@ -1174,26 +1174,26 @@
    ]
   },
   "L44": {
-   "text": "His trousers are soaked to the knee.",
+   "text": "His trouser legs are soaked through.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.655,
+   "dur": 1.759,
    "onset": 0.155,
-   "end": 1.466,
+   "end": 1.534,
    "chunks": [
     [
      0.155,
-     0.595
+     0.802
     ],
     [
-     0.595,
-     0.897
+     0.802,
+     1.077
     ],
     [
-     0.897,
-     1.466
+     1.077,
+     1.534
     ]
    ]
   },

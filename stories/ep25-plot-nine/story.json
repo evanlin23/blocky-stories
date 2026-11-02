@@ -1,8 +1,8 @@
 {
  "slug": "ep25-plot-nine",
- "title": "In a six-week drought, my allotment plot is wet every single dawn.",
+ "title": "My garden was wet every morning. It hadn't rained in six weeks.",
  "made_for_kids": false,
- "premise": "In the driest spring on the hill, I take over old Mr. Carter's allotment plot when he says it's time for somebody new. Every plot cracks in the sun but mine, which is dark and wet at every dawn. A head and shoulders of root-wrapped soil rises out of plot one by the gate, and each dawn it is in a bed further down the path, nearer to my beans, leaving a round hole that no cane can find the bottom of.",
+ "premise": "In the driest spring on the hill, I take over old Mr. Carter's allotment plot when his knees give out. Every plot cracks in the sun but mine, which is dark and wet at every dawn. A head and shoulders of root-wrapped soil rises out of plot one by the gate, and each dawn it is in a bed further down the path, nearer to my beans, leaving a round hole that no cane can find the bottom of.",
  "twist": "Mr. Carter never stopped coming. Every night since he gave me the key he has let himself in with his old key and his old can to water the plot he couldn't let go of, and the thing in the soil rises along the path he walks, following him in to plot nine. The smell of rain was his can, and six weeks is how long since he gave me the key.",
  "world": "allotment gardens on a gentle hillside at dawn in a dry spring: a five-bar gate and an iron padlock, a dusty path, ten plots of cracked clay, tarred sheds, one dark wet plot of bean canes, and mist filling the valley below",
  "voice": {
@@ -211,12 +211,12 @@
      "He said,"
     ],
     [
-     "\"My KNEES",
-     "my knees"
+     "\"Time for",
+     "time for"
     ],
     [
-     "are DONE,\"",
-     "are done,"
+     "somebody NEW,\"",
+     "somebody new,"
     ],
     [
      "and walked OUT",
@@ -1038,16 +1038,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "His trousers",
-     "His trousers"
+     "His trouser legs",
+     "His trouser legs"
     ],
     [
      "are SOAKED",
      "are soaked"
     ],
     [
-     "to the KNEE.",
-     "to the knee."
+     "THROUGH.",
+     "through."
     ]
    ],
    "gap": 0.5
@@ -1618,30 +1618,30 @@
     [
      0,
      [
-      3.45,
-      -29.7,
-      0.45
+      3.6,
+      -28.7,
+      0.9
      ],
      [
-      3.7,
-      -27.6,
-      0.85
+      3.75,
+      -27.3,
+      0.95
      ],
-     17
+     20
     ],
     [
      1,
      [
-      3.45,
-      -29.3,
-      0.5
+      3.6,
+      -28.5,
+      0.9
      ],
      [
-      3.7,
-      -27.6,
-      0.88
+      3.75,
+      -27.3,
+      0.95
      ],
-     16
+     19
     ]
    ],
    "hand": 0.006,
@@ -2755,16 +2755,16 @@
     [
      0,
      [
-      5.3,
-      -30.4,
-      1.35
+      5.5,
+      -28.2,
+      1.4
      ],
      [
-      2.9,
-      -27.4,
-      1.3
+      3.1,
+      -27.9,
+      1.35
      ],
-     18
+     28
     ]
    ],
    "hand": 0.006,
@@ -3123,14 +3123,14 @@
     [
      0,
      [
-      0.3,
-      -29.3,
-      1.3
+      0.5,
+      -30.4,
+      1.1
      ],
      [
       3.85,
       -28.8,
-      0.3
+      0.4
      ],
      21
     ]
@@ -3367,21 +3367,35 @@
     [
      0,
      [
-      0.7,
-      -26.0,
-      1.4
+      2.3,
+      -19.6,
+      1.3
      ],
      [
-      0.0,
-      -21.0,
-      1.1
+      -0.4,
+      -19.6,
+      1.2
      ],
-     26
+     22
+    ],
+    [
+     1,
+     [
+      2.3,
+      -19.7,
+      1.3
+     ],
+     [
+      -0.4,
+      -19.7,
+      1.2
+     ],
+     22
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the newcomer wheels her bike down the path",
+   "what": "the newcomer wheels her bike down the path, side-on",
    "at": "L65"
   },
   {
@@ -3390,35 +3404,35 @@
     [
      0,
      [
-      80.2,
-      0.2,
-      1.4
-     ],
-     [
-      80.2,
-      1.9,
+      80.15,
+      0.5,
       1.45
      ],
-     22
+     [
+      80.28,
+      1.9,
+      1.42
+     ],
+     34
     ],
     [
      1,
      [
       80.2,
-      0.5,
-      1.4
-     ],
-     [
-      80.2,
-      1.9,
+      0.8,
       1.45
      ],
-     22
+     [
+      80.28,
+      1.9,
+      1.42
+     ],
+     34
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "plot ten's shed: an empty hook",
+   "what": "plot ten's shed: an empty hook with its clean outline",
    "at": "L66"
   },
   {
@@ -3534,7 +3548,7 @@
     "at": 0,
     "pos": [
      3.95,
-     -27.5
+     -27.1
     ],
     "blend": 0,
     "hidden": false,
@@ -3550,7 +3564,7 @@
      0,
      4
     ],
-    "lean": 26,
+    "lean": 6,
     "tremble": 0,
     "blink": true,
     "sit": false,
@@ -3561,9 +3575,9 @@
     "at": "L01.1",
     "head": [
      0,
-     6
+     8
     ],
-    "lean": 14,
+    "lean": 0,
     "blend": 0.6
    },
    {
@@ -3575,7 +3589,7 @@
     "at": "L05",
     "pos": [
      3.95,
-     -27.5
+     -27.1
     ]
    },
    {
@@ -4832,12 +4846,12 @@
     "at": "L65",
     "pos": [
      -0.45,
-     -17.0
+     -18.8
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     40,
+     60,
      0
     ],
     "side": [
@@ -4856,13 +4870,13 @@
     "yaw": 0
    },
    {
-    "at": "L65+2.6",
+    "at": "L65+2.4",
     "pos": [
      -0.45,
-     -24.5
+     -20.6
     ],
     "arms": [
-     40,
+     60,
      0
     ]
    },
@@ -4879,7 +4893,7 @@
     "at": "L67",
     "pos": [
      -0.45,
-     -24.5
+     -20.6
     ]
    },
    {
@@ -4959,6 +4973,11 @@
   {
    "at": 0,
    "name": "tod",
+   "set": "gold"
+  },
+  {
+   "at": "L02",
+   "name": "tod",
    "set": "dawn"
   },
   {
@@ -4998,14 +5017,16 @@
    "dur": 4.0
   },
   {
-   "at": "L46",
+   "at": "L45+1.0",
    "name": "tod",
-   "set": "night"
+   "set": "night",
+   "dur": 1.5
   },
   {
-   "at": "L49",
+   "at": "L48+0.8",
    "name": "tod",
-   "set": "fog"
+   "set": "fog",
+   "dur": 1.0
   },
   {
    "at": "L54",
@@ -5024,14 +5045,16 @@
    "set": "day"
   },
   {
-   "at": "L62",
+   "at": "L61.2",
    "name": "tod",
-   "set": "dusk"
+   "set": "dusk",
+   "dur": 1.5
   },
   {
-   "at": "L63",
+   "at": "L62.1",
    "name": "tod",
-   "set": "day"
+   "set": "day",
+   "dur": 1.0
   },
   {
    "at": "L65",
@@ -5060,7 +5083,7 @@
    "at": "L12",
    "name": "digger",
    "plot": 1,
-   "up": 0.04,
+   "up": 0.2,
    "yaw": 0
   },
   {
@@ -5072,21 +5095,21 @@
    "at": "L21",
    "name": "digger",
    "plot": 4,
-   "up": 0.04,
+   "up": 0.2,
    "yaw": 0
   },
   {
    "at": "L23",
    "name": "digger",
    "plot": 7,
-   "up": 0.04,
+   "up": 0.2,
    "yaw": 0
   },
   {
    "at": "L24",
    "name": "digger",
    "plot": 7,
-   "up": 0.24,
+   "up": 0.42,
    "yaw": 0
   },
   {
@@ -5098,7 +5121,7 @@
    "at": "L29",
    "name": "digger",
    "plot": 7,
-   "up": 0.24,
+   "up": 0.42,
    "yaw": 0
   },
   {
@@ -5139,7 +5162,7 @@
    "at": "L56",
    "name": "digger",
    "plot": 9,
-   "up": 0.04,
+   "up": 0.2,
    "yaw": 90,
    "head": 180
   },
@@ -5294,8 +5317,18 @@
   {
    "at": "L67",
    "name": "can",
-   "where": "me",
-   "arm": "arm-1"
+   "where": "world",
+   "pos": [
+    -0.03,
+    -25.3,
+    1.3
+   ],
+   "rot": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": 1.8
   },
   {
    "at": "L68",
