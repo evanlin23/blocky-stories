@@ -16,7 +16,7 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
-TEMPO = {"L49": 0.8, "L67": 0.88, "L64": 0.9, "L73": 0.95, "L54": 0.7, "L57": 0.95, "L19": 0.95}
+TEMPO = {"L50": 0.9, "L49": 0.8, "L67": 0.88, "L64": 0.9, "L73": 0.95, "L54": 0.7, "L57": 0.95, "L19": 0.95}
 GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.7, "L69": 0.7, "L60": 0.55, "L67": 0.35, "L68": 0.4, "L58": 0.2}
 LOOP = 0.45          # seconds after the last word: the door's thud lands in it
 for ln in lines:
@@ -76,7 +76,7 @@ KEYCAM = still([1.62, 2.14, 1.6], [1.62, 2.18, 1.2], 28)
 
 SHOTS = [
     (0, "L01 low in the corridor: me walking toward the lamp-lit open door seven, round-scribbled boxes inside it",
-     move(([-0.95, 1.0, 1.4], [0.8, 3.5, 1.15]), ([-0.95, 1.2, 1.4], [0.8, 3.5, 1.15]), 18, 18)),
+     move(([-0.95, 1.0, 1.55], [0.8, 3.5, 0.3]), ([-0.95, 1.2, 1.55], [0.8, 3.5, 0.3]), 18, 18)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
     ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.95, 1.3], [1.0, 3.0, 1.15], 22)),
@@ -100,7 +100,7 @@ SHOTS = [
     ("L19.2", "reverse: it hasn't changed", still([-0.2, 3.7, 1.5], [0.7, 12.2, 1.4], 70)),
     ("L20", "over its shoulder: me small at door seven, locking up",
      still([0.55, 13.2, 1.45], [-0.1, 3.0, 1.15], 40)),
-    ("L21", "long lens: unit ten's door is up", LONG_LENS(10.0)),
+    ("L21", "long lens: unit ten's door is up", still([-0.8, 3.7, 1.4], [0.9, 9.9, 1.15], 38)),
     ("L22", "front-on, unit ten", FACE_SIDE(10)),
     ("L23", "me walking down the corridor with the torch", still([-0.1, -0.9, 1.5], [-0.2, 7.0, 1.2], 30)),
     ("L24", "from two metres off: its face and the start of its flank", still([0.2, 7.95, 1.5], [1.2, 9.9, 1.3], 30)),
@@ -129,7 +129,7 @@ SHOTS = [
     ("L44", "its face right at my open door", still([-0.3, 3.45, 1.58], [1.0, 3.0, 1.58], 44)),
     ("L45", "low from the doorway's edge: the cold-rimmed flank running back to the wall",
      still([0.45, 2.22, 0.42], [3.4, 2.7, 1.05], 18)),
-    ("L46", "the lamp beside its boot", still([0.3, 1.7, 0.55], [1.3, 2.7, 0.35], 24)),
+    ("L46", "the lamp beside its boot", still([0.0, 2.3, 1.9], [1.5, 2.5, -0.15], 15)),
     ("L47", "my face, terrified, then my eyes drop", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
     ("L48", "down the aisle line: its head in profile, one eye, facing the round stack", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
     ("L49", "hard cut, same framing, held: the head still toward the round stack, never toward me", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),

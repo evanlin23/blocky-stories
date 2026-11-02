@@ -344,6 +344,9 @@ def build_shell(kit, ctx, M):
         kit.box(f"uceil {k}", (3.2, 2.0, 0.1), (2.5, yc, UNIT_H + 0.05), M["ceil"])
     # doors
     ctx["doors"] = {}
+    ctx["voids"] = {}
+    for k, yc in YC.items():   # a black sheet in the doorway, shown only in the shots that frame an open door from afar
+        ctx["voids"][k] = kit.box(f"void {k}", (0.02, 1.9, UNIT_H), (1.0, yc, UNIT_H / 2), M["dark"])
     for k, yc in YC.items():
         ctx["doors"][k] = build_door(kit, ctx, M, "B", k, yc)
     for k, yc in YA.items():
@@ -400,6 +403,13 @@ def build_unit_seven(kit, ctx, M):
     for nm, y, f in (("wallsheet L", yc + 1.0 - 0.005, -1.0), ("wallsheet R", yc - 1.0 + 0.005, 1.0)):
         e = kit.empty(nm, (2.5, y, 0), rot=(0, 0, math.pi / 2))
         corrugated(kit, nm + " m", 3.2, UNIT_H, f, M["steelp"], e, period=0.1, amp=0.016)
+    # the dent in the round stack's top front box where I sat: a crumpled ring round a sunken dark dish
+    tx = DEPTH_X - 0.25 - 5 * BOX[0] - 0.03
+    ty = yc - (AISLE + BOX[1] / 2 + 0.002)
+    tz = 3 * BOX[2]
+    ctx["dent"] = [torus(kit, "dent rim", 0.15, 0.03, (tx, ty, tz + 0.012), M["card"], seg=24, tube=8),
+                   kit.cyl("dent dish", 0.15, 0.03, (tx, ty, tz - 0.004), M["dark"])]
+    ctx["dent"] += [kit.box("dent lip", (0.3, 0.07, 0.04), (tx, ty + BOX[1] / 2 - 0.02, tz - 0.01), M["card"], rot=(math.radians(-25), 0, 0))]
     # my battery lamp on the floor in front of the right-hand stack
     ctx["lamp_pos"] = (1.08, yc - 0.55, 0.09)
     lx, ly, lz = ctx["lamp_pos"]
@@ -679,8 +689,14 @@ def animate(kit, story, tl, t, ctx):
         root.location.z = v * (UNIT_H + 0.05)
         for ob in root.children_recursive:
             ob.hide_render = v > 0.995
+    shot0 = next((s_ for s_ in tl["shots"] if s_["start"] <= t < s_["end"]), None)
+    for k, vo in ctx["voids"].items():
+        dc = [c for c in _cues(tl, "door") if c.get("unit") == k and c.get("open", 0) > 0.5 and c["t"] <= t]
+        vo.hide_render = not (k in (10, 11) and shot0 is not None and dc and abs(shot0["start"] - dc[-1]["t"]) < 0.3)
     # unit seven's stacks
     sc = _last(_cues(tl, "stacks"), t)
+    for ob in ctx.get("dent", []):
+        ob.hide_render = not (sc and sc.get("at") == "L46")
     nl = sc["left"] if sc else STACK_N
     nr = sc["right"] if sc else STACK_N
     scr = _last(_cues(tl, "scribble"), t)    # {"left": "round"}: the hook's boxes show round loops to the corridor
@@ -843,6 +859,8 @@ def _plates(kit, story, tl, t, ctx):
             ok = False                   # a speck is a smear, not a number
         if root.hide_render:
             continue
+        if f > 0 and shot["id"] == "S65":   # side A reads 21..26 and the block has twelve units
+            ok = False
         for o in obs:
             o.hide_render = not ok
 
