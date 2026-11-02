@@ -48,8 +48,8 @@ UPPER, FORE, FORE2 = 0.42, 0.40, 0.34
 BOOT_H = 0.28
 TORSO = (0.64, 0.34, 0.72)
 POSES = {   # absolute angles in degrees: dir = (0, sin a, -cos a), front is -y
-    "rest": {"leg": (-55, 62, -58), "arm": (8, 172, 8), "dx": 0.17},
-    "reach": {"leg": (-55, 62, -58), "arm": (8, 172, 8), "dx": 0.17, "reach": (-100, -10, -100)},
+    "rest": {"leg": (-55, 62, -58), "fold": (42, -42, 42)},      # both arms zigzag flat against the chest, elbows showing
+    "reach": {"leg": (-55, 62, -58), "fold": (42, -42, 42), "reach": (-100, -10, -100)},
 }
 
 
@@ -417,33 +417,25 @@ def build_lights(kit, ctx):
 
 def skater_face(path: Path):
     W, H = faces.TEX_W, faces.TEX_H
-    cream = (214, 204, 182)
+    cream = (176, 166, 146)
     im = Image.new("RGB", (W, H), cream)
     d = ImageDraw.Draw(im)
     cx = W // 2
     # a smooth, very slightly paler oval plate: no nose, no brows, no mouth but the painted smile
-    d.ellipse([cx - 250, int(H * 0.06), cx + 250, int(H * 0.96)], fill=(224, 214, 192))
+    d.ellipse([cx - 250, int(H * 0.06), cx + 250, int(H * 0.96)], fill=(186, 176, 156))
     im = im.filter(ImageFilter.GaussianBlur(5))
     d = ImageDraw.Draw(im)
     ink = (22, 16, 15)
-    cherry = (178, 40, 52)
+    cherry = (170, 44, 54)
     ey = int(H * 0.40)
     for sx in (-1, 1):
         ex = cx + sx * 92
-        d.ellipse([ex - 56, ey - 104, ex + 56, ey + 104], fill=cherry)               # the cherry rim
-        d.ellipse([ex - 44, ey - 90, ex + 44, ey + 90], fill=(246, 238, 218))        # the cream iris ring
-        d.ellipse([ex - 26, ey - 44, ex + 26, ey + 62], fill=ink)                    # the dark pupil
-        d.ellipse([ex - 14 + sx * 3, ey - 20, ex + 2 + sx * 3, ey - 2], fill=(255, 255, 255))
+        d.ellipse([ex - 36, ey - 60, ex + 36, ey + 60], fill=cherry)                 # the cherry rim
+        d.ellipse([ex - 28, ey - 50, ex + 28, ey + 50], fill=(228, 220, 200))        # a pale ring
+        d.ellipse([ex - 13, ey - 20, ex + 13, ey + 24], fill=ink)                    # a small dark pupil
+        d.ellipse([ex - 7 + sx * 2, ey - 12, ex + 1 + sx * 2, ey - 3], fill=(255, 255, 255))
     my = int(H * 0.73)
-    for sx in (-1, 1):                                                              # cherry cheek dots
-        d.ellipse([cx + sx * 205 - 22, my - 88 - 22, cx + sx * 205 + 22, my - 88 + 22], fill=(128, 50, 58))
-    half = 236
-    xs = [-half + i * (2 * half) / 40 for i in range(41)]
-    sm = [(cx + x, my - 30 + 78 * (1 - (x / half) ** 2)) for x in xs]               # one thin painted line, wide
-    d.line(sm, fill=(70, 12, 22), width=8, joint="curve")
-    for sx in (-1, 1):                                                              # a small painted curl at each end
-        ex_, ey_ = sm[0] if sx < 0 else sm[-1]
-        d.line([(ex_, ey_ - 22), (ex_ + sx * 3, ey_ + 4)], fill=(70, 12, 22), width=8)
+    d.line([(cx - 175, my), (cx + 175, my)], fill=(60, 12, 20), width=7)             # a thin, flat, straight mouth
     im.save(path)
     return im
 
@@ -526,15 +518,15 @@ def build_skater(kit, ctx):
         th = (92 / (faces.TEX_W / (2 * math.pi * 1.0)))      # radians round the head
         ang = sx * th
         px, py = R * math.sin(ang), -R * math.cos(ang)
-        v = 1.0 - (faces.TEX_H * 0.40 - 50) / faces.TEX_H
+        v = 1.0 - (faces.TEX_H * 0.40 - 7) / faces.TEX_H
         pz = 0.08 + v * (Hh - 0.16) - Hh / 2
         pr = 1.006
-        hl = kit.sphere(f"sk.hl{sx}", 0.045, (px * pr, py * pr, pz), kit.emit("#fff8ee", 40.0), inner, seg=8)
+        hl = kit.sphere(f"sk.hl{sx}", 0.03, (px * pr, py * pr, pz), kit.emit("#fff8ee", 40.0), inner, seg=8)
         objs.append(hl)
     for ob in objs:
         pass
     # lights that follow it
-    kit.light("sk_up", "POINT", (0, 0, 0.2), 400, "#ffe0c0", size=0.15)
+    kit.light("sk_up", "POINT", (0, 0, 0.2), 330, "#ffe0c0", size=0.15)
     kit.light("sk_rim", "SPOT", (0, 0, 3), 620, "#f27a88", size=0.1, spot=38, blend=0.8)
     allobjs = objs + list(root.children_recursive)
     link_only(kit, "skater_up", "sk_up", [o for o in allobjs if o.type == "MESH"], "only")
@@ -562,14 +554,19 @@ def pose_skater(ctx, st):
     for sx in (-1, 1):
         ch = sk["arms"][sx]
         reach = "reach" in P and sx == st.get("reach_side", 1)
-        angs = P["reach"] if reach else P["arm"]
         prev = 0.0
-        for k, a in enumerate(angs):
-            ch[k].rotation_euler = (rad(a) - prev, 0, 0)
-            prev = rad(a)
-        off = 0.0 if reach else P["dx"]
-        ch[1].location = (sx * off, 0, -UPPER)
-        ch[2].location = (sx * off, 0, -FORE)
+        if reach:
+            ch[0].location = (sx * 0.41, 0, TORSO[2] - 0.08)
+            for k, a in enumerate(P["reach"]):
+                ch[k].rotation_euler = (rad(a) - prev, 0, 0)
+                prev = rad(a)
+        else:   # a zigzag in the chest's plane, pressed to the front of the stripes
+            ch[0].location = (sx * 0.38, -0.27, TORSO[2] - 0.12)
+            for k, a in enumerate(P["fold"]):
+                ch[k].rotation_euler = (0, sx * (rad(a) - prev), 0)
+                prev = rad(a)
+        ch[1].location = (0, 0, -UPPER)
+        ch[2].location = (0, 0, -FORE)
     sk["root"].location = (st["pos"][0], st["pos"][1], 0.0)
     sk["root"].rotation_euler = (0, 0, rad(st["yaw"]))
     hy, hp = st["head"]
@@ -669,7 +666,8 @@ def animate(kit, story, tl, t, ctx):
         over[n] = dim ** 1.5
     over["conc0"] = over["conc1"] = 0.15 + 0.85 * dim
     over["amber"] = 0.55 + 0.45 * dim
-    over["hirefill"] = 0.3 + 0.7 * dim
+    over["hirefill"] = 0.08 + 0.92 * dim ** 2
+    over["tube"] = 0.15 + 0.85 * dim ** 2
     # ---- a per-shot level (story.json shots[].expo) so cuts land at similar brightness
     expo = next((sh.get("expo", 1.0) for sh in story["shots"] if sh["id"] == shot), 1.0)
     for n in list(kit.LIGHTS):
@@ -699,7 +697,7 @@ def animate(kit, story, tl, t, ctx):
     near = 1.0 - _ss((d - 1.4) / 2.2)
     side = 1.0 if px < 1.0 else -1.0
     up = kit.LIGHTS["sk_up"]["obj"]
-    up.location = (px + 0.9 * side, py - 0.9, 0.22)
+    up.location = (px + 1.4 * side, py + 0.1, 0.2)
     over["sk_up"] = (0.3 + 0.7 * near) * expo
     rim = kit.LIGHTS["sk_rim"]["obj"]
     rim.location = (px - 0.4, py + 2.6, 2.9)

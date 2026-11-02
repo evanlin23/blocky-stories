@@ -155,7 +155,7 @@ SHOTS = [
     ("L29", "high wide: the pool on the Skater, dead centre", 2, HIGH),
     ("L30", "medium on its folded arms", 2, C([-1.6, -3.5, 1.55], [MID[0], MID[1], 1.4], 2.9)),
     ("L31", "its cream oval face, painted smile, eyes toward the rail", 2, still([-0.1, -1.5, 1.2], [MID[0], MID[1], 1.95], 38)),
-    ("L31.2", "reverse: Nan at the rail, unaware", 2, C([3.0, -0.4, 1.6], [3.0, -3.75, 1.2], 2.5)),
+    ("L31.2", "reverse: Nan at the rail, unaware", 2, C([3.0, -6.6, 1.5], [3.0, -3.75, 1.3], 2.8)),
     ("L32", "me pointing, Pop eating a chip", 2, C([-1.7, -3.6, 1.6], [-4.2, -6.5, 1.3], 3.0)),
     ("L33", "close on Pop's wrist and the plain watch", 2, C([-3.0, -5.3, 1.9], [-3.23, -6.1, 1.5], 0.9)),
     # 06 slow song three
@@ -185,8 +185,8 @@ SHOTS = [
     ("L54", "the booth: Lenny at the mic, smiling", 2, BOOTH),
     # 08 Pop
     ("L55", "the door by the hire counter swings open", 2, still([0.3, -2.4, 1.4], [0.0, -9.0, 1.2], 26)),
-    ("L56", "out rolled Pop", 2, C([0.1, -4.8, 1.35], [0.0, -8.4, 1.1], 3.0)),
-    ("L57", "close on his skates on the honey boards", 2, C([0.7, -2.4, 0.4], [0.1, -4.3, 0.15], 0.9)),
+    ("L56", "out rolled Pop", 2, C([0.3, -2.4, 1.4], [0.0, -8.4, 1.1], 3.4)),
+    ("L57", "close on his skates on the honey boards", 2, C([2.3, -1.0, 0.9], [0.2, -4.4, 0.5], 2.7)),
     ("L58", "Pop coming across the floor, wobbling, the tape on his knees", 2, C([-2.4, -0.8, 1.3], [0.5, -2.2, 1.0], 3.0)),
     ("L59", "Nan's face, wide, then softening", 2, C([2.4, -5.4, 1.45], [3.0, -3.75, 1.35], 1.8)),
     ("L60", "my face, wide, putting it together", 2, C([-2.9, -4.3, 1.6], [ME_X, -6.4, 1.4], 2.6)),
