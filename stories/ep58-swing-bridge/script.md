@@ -3,10 +3,10 @@
 **Slug:** `ep58-swing-bridge` (replaces batch 4's killed ep40 `night-market`, pitch #24b)
 
 ## Premise
-In this town your hands glow, soft and amber, whenever somebody needs you. Mine never have, not that I've seen, and I tell myself that suits me: my wife Ada is the strong one, and I don't need anybody either. Her dad, Emrys, swung the old iron swing bridge on the river for forty-one years, and his hands were the brightest thing on the water. This spring the new road bridge opened downriver and the old one was bolted shut. Ada asks me to sit with him in the evenings in the bridge cabin, where he still waits for boats, calls me "the lodger", and watches his hands go dark week by week. Something stands on the far bank in the fog with its arms laid along the bolted bridge, and each night its hands rest a little nearer the cabin, toward the second stool nobody has sat on in thirty years.
+In this town your hands glow, soft and amber, whenever somebody needs you. Mine never have, not that I've seen, and I tell myself that suits me: my wife Ada is the strong one, and I don't need anybody either. Her dad, Emrys, is going dark: his old iron swing bridge has been bolted shut since the new road bridge opened, and nothing needs him anymore. Ada says if his hands go out we'll lose him, so she asks me to sit with him in the evenings in the bridge cabin, where he still waits for boats, calls me "the lodger", and watches his hands go dark week by week. Something stands on the far bank in the fog with its arms laid along the bolted bridge, and each night its hands rest a little nearer the cabin, toward the second stool nobody has sat on in thirty years.
 
 ## Rule
-Your hands glow while somebody needs you (L01). The montage shows it everywhere (L02 to L06), and from L10 to L17 it shows on Emrys with nobody explaining it: bright when the boats needed him, dimmer each week once nothing does. The rule says **somebody**, and it never says how big the need has to be (L53 to L54).
+Your hands glow while somebody needs you (L01). The montage shows it everywhere (L02 to L06), and from L10 to L17 it shows on Emrys with nobody explaining it: already dim when we meet him by the bolted bridge, dimmer each week once nothing needs him. The rule says **somebody**, and it never says how big the need has to be (L53 to L54).
 
 ## Twist
 My hands had been glowing for months, faintly, and it was Emrys who needed me: the gruff man who calls me the lodger and always has two mugs out before I get there. I never saw it because I only looked at my hands by the stove, where they "went orange", and I walked home with them in my pockets. The first line first reads as a rule that leaves me out (nobody needs me). After L47 to L52 it reads as a rule that was about me the whole time, and "Mine glow for EMRYS" (L64) puts it back in my mouth. The sting (L65) turns it once more: my hands woke me at three, glowing, while everyone who needs me was asleep. Something else needs me, and the cabin has a second stool.
@@ -24,7 +24,7 @@ One made-up river town in late autumn. No real names and no words anywhere in th
 - **The bank path:** a gravel path along the river with one iron lamp post, reeds, and far downriver the new concrete road bridge, a pale arch with a slow string of small car lights (steady, never flashing).
 - **Montage places (one shot or two each):** a small cinema (the screen shows only soft coloured light), an office meeting table, a house window with a dog, a sofa in a living room.
 - **Home:** our kitchen table (L13, L29) and our bedroom at night (L65).
-- **Weather:** the opening is a clear late afternoon. From L22 the evenings bring river fog. The memory shots (L11, L61) are a warm summer evening.
+- **Weather:** the opening is a clear late afternoon. From L22 the evenings bring river fog. No memory or flashback shots anywhere: one forward timeline.
 
 ## Cast (all adults, nobody in peril, nobody hurt, nobody in or near the water)
 - **me** (narrator, man in his thirties): teal knit jumper with a cream zigzag band, dark jeans, a dark navy coat with deep pockets outdoors, short brown block hair. Our own face: round eyes, slightly raised brows, a small flat mouth that turns into a crooked grin at the end.
@@ -35,7 +35,7 @@ One made-up river town in late autumn. No real names and no words anywhere in th
 
 ## The marker: glowing hands (visible by 2 s, on every character but the creature)
 - The hand blocks themselves glow: a soft amber-gold (#ffc76a) from inside the hand, with a small soft halo and a little warm light spill on the sleeve, coat and ground (one small point light per hand). It reads as "carrying light", never as gloves or as fire.
-- Brightness is the need. Bright: the doctor and Emrys in the memories. Medium: most people. Faint: me (and only visible in the dark). Dark: the Reach's hands, always.
+- Brightness is the need. Bright: the doctor and Ada. Emrys starts weak (S14) and fades from there. Medium: most people. Faint: me (and only visible in the dark). Dark: the Reach's hands, always.
 - Every change in brightness is a slow ramp of at least 1 s, most 2 to 2.5 s. Never a flicker, never a pulse.
 - **Exposure:** the hand core never clips. Keep its brightest pixel under about 235 in 8-bit, the halo well under that, and faces always brighter than the halo spill on them. Test S01 and S80 for clipping before anything else.
 - My hands in daylight show nothing visible (S10, S11). In the dark they show a faint gold (S27, S32, S69). The stove light is a redder orange (#e0682a) so the two can be told apart.
@@ -74,7 +74,7 @@ One made-up river town in late autumn. No real names and no words anywhere in th
 - **Caption key colour:** dusk violet `#b98cff` (no other story uses it, and it sits apart from the gold hands and the ochre creature).
 - **Music:** G Dorian, 76 bpm in 4/4. A thin plucked synth and a soft breathy pad for the first third, the river's lap underneath. A low sustained drone enters on L24 (the first taking) and holds to the end. `music_drops` of 0.6 s before L24 ("On Thursday, the cabin was DARK"), 0.7 s before L40 ("And it was in the cabin with US") and 0.5 s before L48 ("The stove was out"), voice and hit kept. From L57 the pad opens onto the Dorian raised sixth and the pluck plays the tune in full, warmer, then thins again for the sting.
 - **Sound (all synthesized):** the river lapping, a steady far hum of road traffic from the new bridge, the iron creak of the bolted span, the stove ticking as it cools, two mugs set down, a long, slow iron creak running the whole rail end to end (L23), footsteps on gravel, the cabin door's hinge. A soft warm swell (-18 dB) as Emrys's hands come up (L57). No boat horns, no bells.
-- **Light changes (flash-safe, `look.flash_safe: true`):** every change is a slow ramp. The stove burning down (L39) is a 2 s fade. The lamp going low (L39) is a 2 s fade. Emrys's hands coming up (L57) is a 2.5 s ramp. The memory shots dissolve in and out over 0.5 s. The car lights on the far bridge move slowly and never blink. Nothing flickers, nothing strobes, nothing cuts to black. Pre-check S01 to S09 (many glowing hands) and S58 to S82 with `python -m blocky flash`.
+- **Light changes (flash-safe, `look.flash_safe: true`):** every change is a slow ramp. The stove burning down (L39) is a 2 s fade. The lamp going low (L39) is a 2 s fade. Emrys's hands coming up (L57) is a 2.5 s ramp. The car lights on the far bridge move slowly and never blink. Nothing flickers, nothing strobes, nothing cuts to black. Pre-check S01 to S09 (many glowing hands) and S58 to S82 with `python -m blocky flash`.
 
 ## The hits checklist (RULES.md → What the hits do)
 - **Rule line:** L01, "In this town, your HANDS glow whenever somebody NEEDS you." (10 words)
@@ -82,7 +82,8 @@ One made-up river town in late autumn. No real names and no words anywhere in th
 - **Montage (L02 to L06, about 2 to 13 s), four examples:** the doctor who can't hide in the cinema. The man whose dog at home makes him glow all through work. The couple after a row, both glowing, both pretending not to. Pockets don't help, the light leaks out (the setup for plant 2).
 - **Narrator as the exception:** my hands have never glowed (L08), nobody needs me, and I don't need anybody (L09).
 - **Loved one at stake:** Emrys, my father-in-law, an adult in his seventies. His hands go dark as nothing needs him, he goes missing for a night (L24 to L31), and the Reach comes nearer each night, until it stands at the window by the stool beside him.
-- **15 to 30 s:** L09 to L14 show the rule at work on Emrys (his hands lighting the water in the memory, then the bridge bolted shut). Nobody explains it.
+- **Who I love and what I could lose, by 0:20:** Emrys on screen at L09 (S13), his hands going dark at L10, and Ada's "we'd lose HIM" at L12. One forward timeline: the only history is L11, one line over the bolted bridge itself (S15). No memory shots.
+- **15 to 30 s:** L10 to L17 show the rule at work on Emrys (dim by the bolted bridge, dimmer week by week). Nobody explains it.
 - **First real scare and taking:** L24 to L27 (about 55 to 63 s): the dark cabin, the open door, his cap on the wheel, his warm mug, the second stool turned to face me. He's back at breakfast for an ordinary reason (L29 to L31).
 - **Creature little and late:** traces at L22 to L23, a shape in fog at L34 to L35, its hands nearer at L36 to L37, shown clearly from L40 (about 63% in), leaning in face to face at L45.
 - **Loophole climax:** the rule says somebody, and one person is enough (L53 to L54). I need him and say so (L55 to L56), and his hands come up (L57).
@@ -112,17 +113,17 @@ Timings are estimates at about 290 wpm. Re-time from `voice-timings.json`. Every
 | S10 | L07 | Me on the bridge approach in daylight, medium, hands at my sides, nothing showing. |
 | S11 | L08 | Close: my hands held up, palms to camera, plain in daylight. |
 | S12 | L09 | Ada in her plum coat lifting a crate into the car boot herself, hands glowing. Me hovering beside her, useless. |
-| S13 | L09 | Me shrugging, hands in pockets. |
-| S14 | L10 | Emrys at the cabin door, medium: navy jacket, green cap, moustache, the green swing bridge behind him. |
-| S15 | L11 | Memory (warm summer grade, 0.5 s dissolve in): the bridge swung open, a small sailing boat's mast passing, Emrys at the cabin window, hands blazing gold. |
-| S16 | L11 | Memory wide at dusk: his glow reflected in long gold streaks on the water. |
-| S17 | L12 | Present, wide: downriver, the pale new road bridge with a slow line of car lights. |
-| S18 | L12 | Insert: big iron bolts and a steel plate pinning the swing span shut. |
-| S19 | L13 | Our kitchen table: Ada asking me, her hand on my sleeve. |
+| S13 | L09 | Me shrugging, hands in pockets, on the bank path. Behind me, small but clear, Emrys at the cabin door by the green bridge, his hands only a dim glow. First sight of him. |
+| S14 | L10 | Emrys at the cabin door, medium: navy jacket, green cap, moustache, the green swing bridge behind him. His hands at his sides, a weak gold, much dimmer than the townsfolk in S01. |
+| S15 | L11 | Insert: big iron bolts and a steel plate pinning the swing span shut, Emrys's dim hand resting on the plate. The history in one picture. |
+| S16 | L11 | Wide, same evening: Emrys small beside the bolted bridge, and far downriver the pale new road bridge with a slow line of car lights. |
+| S17 | L12 | Our kitchen table: Ada, worried, looking at me across it. |
+| S18 | L12 | Close: Ada's own glowing hands gripping her mug. |
+| S19 | L13 | Ada asking me, her hand on my sleeve. |
 | S20 | L14 | Emrys at the cabin door, flat look, me on the path with my hands in my pockets. |
 | S21 | L15 | Inside the cabin: Emrys on his stool by the iron wheel, watching the window. |
 | S22 | L15 | Insert: the wheel's brass hub plate, two short ochre strokes scratched in it. Held 1.8 s. Lore plant, not narrated. |
-| S23 | L16 | Emrys's hands on his knees, the glow a shade dimmer than the memory. |
+| S23 | L16 | Emrys's hands on his knees, the glow a shade dimmer than in S14. |
 | S24 | L16 | Same framing a week later (0.3 s dissolve): dimmer still. |
 | S25 | L17 | October dusk, cabin lamp unlit: his hands a faint glow in the dark corner. |
 | S26 | L18 | Me on an upturned crate by the stove (never on the second stool), hands held out, lit orange. |
@@ -184,7 +185,7 @@ Timings are estimates at about 290 wpm. Re-time from `voice-timings.json`. Every
 | S82 | L58 | The window: empty, the sash down, the rail bare, the far bank empty fog. |
 | S83 | L59 | Next evening at dusk, side view: me crossing the old bridge on foot, hands glowing faintly. |
 | S84 | L60 | Emrys at the cabin window raising one flat, bright hand. |
-| S85 | L61 | Memory callback (summer grade): the same wave to a passing boat. |
+| S85 | L61 | Over Emrys's shoulder: his raised bright hand, the empty river beyond where the boats used to pass. Present, no flashback. |
 | S86 | L62 | Me grinning, lifting my glowing hand back. |
 | S87 | L62 | Ada on the bank path, seeing both, smiling. |
 | S88 | L63 | Wide: the bridge at dusk, the cabin's warm window, two pairs of glowing hands. |
@@ -192,7 +193,7 @@ Timings are estimates at about 290 wpm. Re-time from `voice-timings.json`. Every
 | S90 | L65 | Our bedroom at 3 a.m.: my hands glowing bright on the blanket, Ada asleep beside me. |
 | S91 | L65 | The cabin in fog from the bank path, dark, the second stool empty in the window. Cut back to S01. Leave 0.25 s after the last word. |
 
-## Narration (65 lines, 607 words, about 2:05 of speech at 290 wpm, about 2:22 with gaps)
+## Narration (65 lines, 602 words, about 2:05 of speech at 290 wpm, about 2:22 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words.
 
 L01. In this town, your HANDS glow whenever somebody NEEDS you.
@@ -204,10 +205,10 @@ L06. Pockets don't help. The light gets OUT.
 L07. And then there's ME.
 L08. My hands have never glowed. Not that I've SEEN.
 L09. Ada's the strong one, so nobody needs me. And I don't need ANYBODY.
-L10. My wife's dad, Emrys, ran the old swing bridge for forty-one YEARS.
-L11. Every boat on the river needed him, and his hands lit the WATER.
-L12. Then the new road bridge opened, and they bolted his SHUT.
-L13. Ada asked me to sit with him in the EVENINGS.
+L10. But my wife's dad, Emrys, was going DARK.
+L11. They'd bolted his old swing bridge SHUT, and nothing needed him ANYMORE.
+L12. Ada said if his hands went out, we'd lose HIM.
+L13. So she asked me to sit with him in the EVENINGS.
 L14. He still calls me the LODGER.
 L15. Every evening he sat in the cabin by the wheel, waiting for BOATS.
 L16. And week by week, his hands got DIMMER.
