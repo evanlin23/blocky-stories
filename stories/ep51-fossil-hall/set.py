@@ -188,7 +188,7 @@ def materials(kit):
     M["gold"] = kit.emit(GOLD, 0.9, "gold glimmer")
     M["coat"] = pbr(kit, "stooped coat", "#4a3c2c", 0.9, noise=(6, 0.82))
     M["brass"] = pbr(kit, "brass", "#b08a3e", 0.35, 0.9)
-    M["trou"] = pbr(kit, "stooped trousers", "#6a6a6c", 0.9)
+    M["trou"] = pbr(kit, "stooped trousers", "#54473a", 0.9)
     M["shoe"] = pbr(kit, "stooped shoes", "#4a3626", 0.6)
     M["hand"] = pbr(kit, "stooped hands", "#a08d70", 0.8)
     M["sandstone"] = pbr(kit, "sandstone", "#d9c6a5", 0.85, noise=(2.2, 0.9), bump=0.2)
@@ -452,7 +452,7 @@ def stooped_face(path_face, path_mask):
     """Its own drawn face on the head texture: two small round white eyes a little too far apart in dark hollows, pin
     pupils, no brows, a short straight mouth. The mask marks the eyes (they are the one thing that is lightly self-lit)."""
     W, H = faces.TEX_W, faces.TEX_H
-    skin = (112, 102, 88)
+    skin = (58, 50, 44)
     im = Image.new("RGB", (W, H), skin)
     mk = Image.new("L", (W, H), 0)
     d, dm = ImageDraw.Draw(im), ImageDraw.Draw(mk)
@@ -461,47 +461,57 @@ def stooped_face(path_face, path_mask):
     ink = (20, 14, 12)
     for side in (-1, 1):
         x = cx + side * 0.33 * s
-        hx, hy = 0.15 * s, 0.17 * s
-        d.ellipse([x - hx, ey - hy * 0.9, x + hx, ey + hy * 1.15], fill=(26, 18, 14))
-        r = 0.03 * s
-        d.ellipse([x - r, ey - r, x + r, ey + r], fill=(246, 244, 236), outline=ink, width=int(0.012 * s))
+        hx, hy = 0.17 * s, 0.2 * s
+        d.ellipse([x - hx, ey - hy * 0.9, x + hx, ey + hy * 1.15], fill=(14, 10, 8))
+        r = 0.022 * s
+        d.ellipse([x - r, ey - r, x + r, ey + r], fill=(226, 222, 206), outline=ink, width=int(0.012 * s))
         dm.ellipse([x - r, ey - r, x + r, ey + r], fill=255)
-        pr = 0.012 * s
+        pr = 0.009 * s
         d.ellipse([x - pr, ey - pr, x + pr, ey + pr], fill=(6, 5, 5))
+    for side in (-1, 1):
+        d.ellipse([cx + side * 0.45 * s - 0.12 * s, faces._fy(0.62) - 0.12 * s, cx + side * 0.45 * s + 0.12 * s, faces._fy(0.62) + 0.12 * s], fill=(38, 32, 28))
     my = faces._fy(0.80)
     # a wide dark slit of a gape, much wider than tall, ragged top and bottom (not a round O)
     d.polygon([(cx - 0.36 * s, my), (cx - 0.2 * s, my - 0.045 * s), (cx + 0.2 * s, my - 0.045 * s), (cx + 0.36 * s, my),
-               (cx + 0.2 * s, my + 0.055 * s), (cx - 0.2 * s, my + 0.055 * s)], fill=(14, 8, 6))
+               (cx + 0.2 * s, my + 0.055 * s), (cx - 0.2 * s, my + 0.055 * s)], fill=(6, 3, 3))
     for k in range(-4, 5):
         x0 = cx + k * 0.07 * s
-        d.polygon([(x0 - 0.015 * s, my - 0.045 * s), (x0 + 0.015 * s, my - 0.045 * s), (x0, my - 0.005 * s)], fill=(190, 182, 160))
-        d.polygon([(x0 - 0.015 * s, my + 0.055 * s), (x0 + 0.015 * s, my + 0.055 * s), (x0, my + 0.02 * s)], fill=(190, 182, 160))
+        d.polygon([(x0 - 0.015 * s, my - 0.045 * s), (x0 + 0.015 * s, my - 0.045 * s), (x0, my - 0.005 * s)], fill=(150, 142, 122))
+        d.polygon([(x0 - 0.015 * s, my + 0.055 * s), (x0 + 0.015 * s, my + 0.055 * s), (x0, my + 0.02 * s)], fill=(150, 142, 122))
     im.save(path_face)
     mk.save(path_mask)
 
 
 def build_stooped(kit, M, ctx):
+    """Tall and folded: very long legs put the hips and the level back at 2.6 to 2.9 m, over the cast's heads; the long
+    neck and head hang from the front of the back, the long arms hang with hands. Root = the floor between the feet."""
     root = kit.empty("stooped", (0, 0, -40))
-    B(kit, "st torso", (0.6, 1.3, 0.34), (0, -0.45, 1.26), M["coat"], root, bevel=0.04)
-    B(kit, "st yoke", (0.96, 0.34, 0.38), (0, -1.08, 1.25), M["coat"], root, bevel=0.06)
-    B(kit, "st coat tail", (0.54, 0.06, 0.8), (0, 0.22, 0.8), M["coat"], root, bevel=0.02)
-    B(kit, "st collar", (0.34, 0.2, 0.2), (0, -1.05, 1.3), M["coat"], root, bevel=0.04)
+    HZ = 2.74                                   # centre height of the back
+    B(kit, "st torso", (0.6, 1.3, 0.34), (0, -0.45, HZ), M["coat"], root, bevel=0.04)
+    B(kit, "st yoke", (0.96, 0.34, 0.4), (0, -1.08, HZ - 0.01), M["coat"], root, bevel=0.06)
+    B(kit, "st coat tail", (0.54, 0.06, 0.9), (0, 0.22, HZ - 0.5), M["coat"], root, bevel=0.02)
+    B(kit, "st collar", (0.3, 0.2, 0.2), (0, -1.17, HZ - 0.08), M["coat"], root, bevel=0.04)
     for s in (-1, 1):
-        B(kit, f"st leg{s}", (0.25, 0.25, 1.12), (s * 0.15, 0.0, 0.56), M["trou"], root, bevel=0.03)
-        B(kit, f"st shoe{s}", (0.28, 0.44, 0.12), (s * 0.15, -0.07, 0.06), M["shoe"], root, bevel=0.04)
-        B(kit, f"st sleeve{s}", (0.2, 0.2, 0.86), (s * 0.5, -1.08, 0.74), M["coat"], root, bevel=0.03)
-        B(kit, f"st cuff{s}", (0.22, 0.22, 0.05), (s * 0.5, -1.08, 0.3), M["trou"], root)
-        B(kit, f"st hand{s}", (0.17, 0.1, 0.2), (s * 0.5, -1.08, 0.2), M["hand"], root, bevel=0.03)
+        B(kit, f"st thigh{s}", (0.24, 0.26, 1.4), (s * 0.15, -0.03, 1.95), M["trou"], root, bevel=0.03)
+        B(kit, f"st knee{s}", (0.2, 0.2, 0.2), (s * 0.15, 0.0, 1.22), M["trou"], root, bevel=0.03)
+        B(kit, f"st shin{s}", (0.2, 0.2, 1.2), (s * 0.15, 0.03, 0.62), M["trou"], root, bevel=0.03)
+        B(kit, f"st shoe{s}", (0.28, 0.5, 0.12), (s * 0.15, -0.08, 0.06), M["shoe"], root, bevel=0.04)
+        B(kit, f"st sleeve{s}", (0.2, 0.2, 1.05), (s * 0.5, -1.08, HZ - 0.55), M["coat"], root, bevel=0.03)
+        B(kit, f"st forearm{s}", (0.14, 0.14, 0.95), (s * 0.5, -1.08, 1.12), M["hand"], root, bevel=0.03)
+        B(kit, f"st cuff{s}", (0.22, 0.22, 0.05), (s * 0.5, -1.08, 1.67), M["brass"], root)
+        B(kit, f"st hand{s}", (0.17, 0.1, 0.2), (s * 0.5, -1.08, 0.55), M["hand"], root, bevel=0.03)
         for fx in (-0.06, -0.02, 0.02, 0.06):
-            B(kit, f"st finger{s}{fx}", (0.026, 0.03, 0.17), (s * 0.5 + fx, -1.08, 0.04), M["hand"], root, bevel=0.01)
-    # four round brass buttons down the hanging front (the underside of the folded body)
+            B(kit, f"st finger{s}{fx}", (0.026, 0.03, 0.26), (s * 0.5 + fx, -1.08, 0.33), M["hand"], root, bevel=0.01)
+    # brass buttons down the hanging front (the underside of the folded body), a brass badge at the collar
     for i in range(4):
-        kit.cyl(f"st button{i}", 0.04, 0.03, (0, -0.18 - i * 0.24, 1.105), M["brass"], root, n=14)
-    B(kit, "st pin", (0.07, 0.07, 0.02), (0.12, -0.95, 1.105), M["brass"], root)
-    # the neck hangs from the shoulders' front end and swings; the head hangs from it, upside down
-    neck = kit.empty("st neck", (0, -1.14, 1.2), root)
-    B(kit, "st neck box", (0.12, 0.12, 0.6), (0, 0, -0.29), M["coat"], neck, bevel=0.03)
-    headr = kit.empty("st headroll", (0, 0, -0.6), neck)
+        kit.cyl(f"st button{i}", 0.04, 0.03, (0, -0.18 - i * 0.24, HZ - 0.17), M["brass"], root, n=14)
+    B(kit, "st pin", (0.08, 0.08, 0.02), (0.13, -0.95, HZ - 0.17), M["brass"], root)
+    # the neck hangs from the front of the back and swings; drop is its length; the head hangs from it
+    neck = kit.empty("st neck", (0, -1.2, HZ - 0.04), root)
+    nb = B(kit, "st neck box", (0.15, 0.15, 1.0), (0, 0, -0.5), M["hand"], neck, bevel=0.03)
+    nb.location = (0, 0, 0)
+    nb.parent = neck
+    headr = kit.empty("st headroll", (0, 0, -1.0), neck)
     path = bpy.app.tempdir or "/tmp/"
     pf, pm = path + "stooped-face.png", path + "stooped-mask.png"
     stooped_face(pf, pm)
@@ -527,10 +537,9 @@ def build_stooped(kit, M, ctx):
     L.new(mul.outputs[0], b.inputs["Emission Strength"])
     kit._fogged(m, b.outputs[0])
     # the head mesh is in rig units (radius 0.62): scale it to metres. headr sits at the head's centre, so a roll turns it in place
-    headr.location = (0, 0, -0.6 - 0.16)
     hm = rig.head_mesh("st head", m, headr)
-    hm.scale = (U * 1.05, U * 0.95, U * 1.05)
-    ctx["stooped"] = dict(root=root, neck=neck, headr=headr)
+    hm.scale = (U * 0.95, U * 0.9, U * 1.35)      # long and gaunt
+    ctx["stooped"] = dict(root=root, neck=neck, headr=headr, nb=nb)
 
 
 def set_stooped(ctx, c):
@@ -543,6 +552,10 @@ def set_stooped(ctx, c):
     px, py = c["pos"]
     root.location = (px, py, 0)
     root.rotation_euler = (0, 0, math.radians(c.get("yaw", 180)))
+    drop = c.get("drop", 1.3)                   # neck length: ~1.3 hangs the face at seated face height
+    s["nb"].scale = (1, 1, drop)
+    s["nb"].location = (0, 0, -drop / 2)
+    s["headr"].location = (0, 0, -drop - 0.2)
     s["neck"].rotation_euler = (math.radians(c.get("neck", 0)), 0, math.radians(c.get("lean", 0)))
     # the head: roll 180 is face upside down (hanging); 0 is the right way up. pitch tips the face up toward a face
     s["headr"].rotation_euler = (math.radians(c.get("pitch", 0)), math.radians(c.get("roll", 180)),
