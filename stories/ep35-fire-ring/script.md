@@ -26,7 +26,7 @@ A high moor in autumn, made up and unnamed: brown and purple heather, a peat bog
 - `me`: the narrator, a young adult. Dark block hair, a moss-green fleece with a cream zigzag knit band, a knitted beanie. No age said or shown.
 - `dad`: middle-aged, block hair with grey at the sides, a stiff brand-new bright orange waterproof (crisp folds, hood up on night three), grey walking trousers.
 - `grandad`: older, white block hair, a flat cap, a brown tweed-check jumper, a walking stick. Only in the memory shots (L03 to L06) and at his front door (L07). After that he is only ever a voice we never hear: his words are reported in mine, and the phone gives a synth static crackle when he talks.
-- Gran: never shown, never heard. Named once (L05).
+- Granny: never shown, never heard. Named once (L05).
 
 ## The creature: Big Hands
 - **Look:** ordinary height (the same as Dad), R6 body, a heather-purple jumper with a peat-brown diamond knit, peat-brown trousers, peat-brown boots. A soft cylinder head in a muted heath-tan with the face set a little too low on it: a small calm drawn face, half-lidded eyes, a short straight mouth. Two small ember-orange catch points in the eyes, the brightest thing in its shots. Its wrongness is the hands: each is a flat block mitten about 0.9 m tall and 0.6 m wide (as big as the tent door), four chunky finger blocks and a thumb block, fixed to the normal sleeve ends. Always show the sleeve meeting the hand, never a foreshortened arm toward camera.
@@ -79,15 +79,15 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
   - [Dad across the fire on a seat stone, in his stiff orange jacket, grinning too hard]
 - `L03` narrator: Every AUTUMN, / Grandad and I / climbed the MOOR / to the same old FIRE RING.
   - [memory, warm golden dusk: Grandad and me climbing through heather, the ring on the ridge ahead]
-- `L04` narrator: Three flat SEATS / round the fire. / His, MINE, / and an EMPTY one.
+- `L04` narrator: Three flat SEATS / round the fire. / Grandad's, MINE, / and an EMPTY one.
   - [high wide of the ring and the three seat stones, Grandad on his, me on mine, the empty seat west]
-- `L05` narrator: Grandad propped his PHONE / on the empty one, / the only spot / with a BAR, / and rang GRAN.
+- `L05` narrator: Grandad propped his PHONE / on the empty one, / the only spot / with a BAR, / and rang GRANNY.
   - [the phone propped on the empty seat, screen glowing. Grandad leaning toward it, laughing, `grin`]
 - `L06` narrator: And Grandad's STEW / was the best thing / on the whole MOOR.
   - [Grandad pouring stew from a dented green flask into the pot on the hearth stone. The dent clear, never named]
 - `L07` narrator: This year, / his KNEES / couldn't do the CLIMB.
   - [Grandad at his dark blue front door, leaning on his stick, cheerful, waving]
-- `L08` narrator: So DAD came instead, / in a jacket so NEW / it still CREAKED.
+- `L08` narrator: So DAD came instead. / The jacket was so NEW / it still CREAKED.
   - [Dad on the moor path, the new orange jacket in crisp folds, a big pack. A creak of stiff fabric in the mix]
 
 ## 02 Night one (shots 10 to 26)
@@ -101,7 +101,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
   - [LORE PLANT, shot 13: the pot on the hearth stone, steam, the three heather-purple strokes on the stone upper left, 25 to 50% frame height, 1.5 s or more]
 - `L13` narrator: Like he was trying / to BE him.
   - [my face over the mug, `worried`, Dad blurred behind on Grandad's seat]
-- `L14` narrator: After TEA, / Dad walked off / down the HILL / to find SIGNAL.
+- `L14` narrator: When TEA was done, / Dad walked off / down the HILL / to find SIGNAL.
   - [wide at dusk from the ring: Dad walking down the slope toward the wall, back to us, a small phone glow at his hand. A curlew-like call]
 - `L15` narrator: Alone at the FIRE, / I looked out / past the LIGHT.
   - [me on my seat, the fire between me and camera, looking east into blue dusk]
@@ -154,7 +154,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
 - `L36` narrator: But it GLOWED / dull ORANGE.
   - [the wall glowing a dull orange, readable, with a slow breathing glow]
 - (drop 0.7 s, music out, hit on HANDS)
-- `L37` narrator: And spread over / the WHOLE WALL / were two HANDS.
+- `L37` narrator: And spread over / the WHOLE WALL / lay two HANDS.
   - [wide inside: two huge black hand shadows across the whole west wall]
 - `L38` narrator: Right above / Dad's SLEEPING BAG.
   - [the shadows over Dad asleep in his bag, his face lit by the glow, `asleep`]
@@ -197,7 +197,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
   - [Dad leaning on the gate, head down, `worried`]
 - `L54` narrator: That I barely SPOKE / to him.
   - [Dad's face closer, `worried`]
-- `L55` narrator: That he only wanted / the moor to feel / the way it did / with GRANDAD.
+- `L55` narrator: That he only wanted / the PLACE to feel / the way it did / with GRANDAD.
   - [Dad looking up the hill toward the ring]
 - `L56` narrator: Grandad said, / "Then bring me UP / tonight. / I want to HEAR / the FIRE."
   - [the phone on the gatepost, static crackle]

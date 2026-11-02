@@ -533,5 +533,33 @@ story = {
               "music_drops": [{"from": "L36>-0.6", "to": "L37.2", "keep": ["hit"]},
                               {"from": "L41>-0.5", "to": "L42.1>-0.22", "keep": ["hit"]}]},
 }
+# The shots, cues and sounds below name chunks by their place in the script (L19.2 = the script's third part of L19).
+# lines.json splits any part over three words into captions of two or three, so each reference is moved to the first
+# caption of the part it means.
+import re
+
+ORIG = {l["id"]: l.get("orig", []) for l in lines if "chunks" in l}
+REF = re.compile(r"^(L\d+b?)\.(\d+)(.*)$")
+
+
+def remap(ref):
+    m = REF.match(ref)
+    if not m or m.group(1) not in ORIG or not ORIG[m.group(1)]:
+        return ref
+    o = ORIG[m.group(1)]
+    k = int(m.group(2))
+    return f"{m.group(1)}.{o.index(k) if k in o else k}{m.group(3)}"
+
+
+def walk(x):
+    if isinstance(x, dict):
+        return {k: (remap(v) if k in ("at", "from", "to", "until") and isinstance(v, str) else walk(v)) for k, v in x.items()}
+    if isinstance(x, list):
+        return [walk(v) for v in x]
+    return x
+
+
+story = walk(story)
+story["lines"] = [{k: v for k, v in l.items() if k != "orig"} for l in lines]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")
