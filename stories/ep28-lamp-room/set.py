@@ -902,8 +902,14 @@ def _dress(kit, story, ctx):
         ctx["blanket_wrap"] = wrap
     # the coat laid over my feet, a prop in the world
     cf = kit.box("coat feet", (1.0, 0.62, 0.16), (0, 0, -80), M["camel2"], None, bevel=0.05)
+    lin = pbr(kit, "coat lining", "#4a3320", 0.9)
     kit.box("coat feet sleeve", (0.7, 0.24, 0.15), (0.2, 0.42, 0.04), M["camel2"], cf, rot=(0, 0, 0.5), bevel=0.05)
-    kit.box("coat feet lapel", (0.3, 0.64, 0.06), (-0.3, 0.0, 0.1), pbr(kit, "coat lining", "#4a3320", 0.9), cf, bevel=0.02)
+    kit.box("coat feet sleeve2", (0.62, 0.22, 0.14), (-0.42, 0.38, 0.05), M["camel2"], cf, rot=(0, 0, -0.9), bevel=0.05)
+    kit.box("coat feet fold1", (0.9, 0.12, 0.12), (0.0, -0.08, 0.1), M["camel2"], cf, rot=(0.0, 0.1, 0.12), bevel=0.04)
+    kit.box("coat feet fold2", (0.6, 0.1, 0.1), (0.1, 0.18, 0.12), M["camel2"], cf, rot=(0.0, -0.1, -0.2), bevel=0.04)
+    kit.box("coat feet lapel", (0.3, 0.64, 0.06), (-0.3, 0.0, 0.1), lin, cf, bevel=0.02)
+    kit.box("coat feet collar", (0.5, 0.14, 0.14), (0.0, -0.36, 0.14), lin, cf, rot=(0, 0, 0.15), bevel=0.04)
+    kit.box("coat feet button", (0.07, 0.07, 0.05), (0.25, -0.1, 0.17), lin, cf, bevel=0.02)
     ctx["coat_feet"] = [cf]
 
 

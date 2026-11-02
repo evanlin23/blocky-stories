@@ -279,7 +279,7 @@ shot("L68", "memory: me walking down asleep, eyes shut, toward camera",
      c([0, up(tread(39.2, 1.3), 1.55), up(tread(42.9, 1.6), 1.4), 26], [1, up(tread(39.2, 1.3), 1.55), up(tread(41.3, 1.6), 1.4), 28]),
      hand=0.004)
 shot("L69", "memory: the Upward's crown face below the sleeping me",
-     still([0.0, -1.0, 9.8], [-0.85, 1.4, 7.9], 15), hand=0.004)
+     still([-0.2, 0.4, 14.9], [-0.8, 1.4, 10.6], 29), hand=0.004)
 shot("L70", "memory: me walking past her blue door, eyes shut",
      still(up(tread(45.0, 1.5), 1.55), up(tread(48.2, 1.7), 1.4), 24), hand=0.004)
 shot("L71", "memory: Ines frightened, phone glow", still([0.1, 0.55, Z4 + 1.55], [2.0, 0.55, Z4 + 1.4], 30))
@@ -543,7 +543,7 @@ cues = [
     {"at": "L50", "name": "up", "pos": FIG(3), "face": 0, "mouth": 2},
     {"at": "L51", "name": "up", "pos": FIG(3), "face": 0, "mouth": 3},
     {"at": "L54", "name": "up", "hidden": True},
-    {"at": "L69", "name": "up", "pos": tread(39, 1.7), "face": 109, "mouth": 1, "rim": 0.0},
+    {"at": "L69", "name": "up", "pos": tread(39.5, 1.7), "face": 109, "mouth": 1, "rim": 0.0},
     {"at": "L70", "name": "up", "hidden": True},
     # the treads the view down the well needs gone
     {"at": 0, "name": "clear", "az": None},
@@ -569,7 +569,7 @@ cues = [
     {"at": "L58", "name": "clear", "az": None},
     {"at": "L66", "name": "clear", "az": 90, "span": 40, "z0": 0.8, "z1": 7.0},
     {"at": "L67", "name": "clear", "az": None},
-    {"at": "L69", "name": "clear", "az": 135, "span": 55, "z0": 8.6, "z1": 12.5, "rails": [6.6, 10.5], "rail_az": 135, "rail_span": 90},
+    {"at": "L69", "name": "clear", "az": 125, "span": 80, "z0": 8.6, "z1": 17.5, "rails": [6.6, 16.5], "rail_az": 135, "rail_span": 90},
     {"at": "L70", "name": "clear", "az": None},
     {"at": "L76", "name": "clear", "az": 150, "span": 0, "z0": 99, "z1": 99, "rails": [6.6, 9.4], "rail_az": 165, "rail_span": 75},
     # the bolt, Ines's door, the sand, the coat and the blanket
