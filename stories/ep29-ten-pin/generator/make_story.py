@@ -390,7 +390,7 @@ for i, s in enumerate(SHOTS):
             if tk:
                 talk(w, i, *tk)
             if laugh:
-                _add(w, {"from": at, "to": "L73", "mouth": [0.6, 0.6], "flap": True}, i)
+                _add(w, {"from": at, "to": "L73", "mouth": [0.55, 0.45]}, i)
         else:
             hide(w, i, at)
     for (w, wat, wpos, wyaw) in WALKS.get(at, []):

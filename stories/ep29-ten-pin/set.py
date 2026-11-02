@@ -774,6 +774,8 @@ def show_flag(tl, t, what):
 
 def build(kit, story, tl):
     ctx = {}
+    # objects come and go between frames (hide_render), and a kept scene lets a frame depend on the ones before it
+    bpy.context.scene.render.use_persistent_data = False
     M = materials(kit)
     ctx["M"] = M
     build_room(kit, ctx, M)
