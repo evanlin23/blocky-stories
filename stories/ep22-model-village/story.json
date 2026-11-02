@@ -1,0 +1,1622 @@
+{
+ "slug": "ep22-model-village",
+ "title": "The little man in the model village moves one window a day",
+ "made_for_kids": false,
+ "premise": "I've taken a job repainting the knee-high model village on the front of a small seaside town. A thumb-sized man in a mustard scarf, made better than the glued painted figures, stands in a different tiny window every afternoon, one window further up the hill, toward my own model cottage.",
+ "twist": "He was never coming for me. Every afternoon his window filled with my giant face, and every window I leaned into, he left. To him I was the monster, and at the end I am a tiny figure in the tea shop window myself.",
+ "world": "a grey out-of-season seaside model village of painted wood houses on a sloping green ground, a low sea wall, wet slate sea, a gravel path round its front edge, and a brick town with a warm tea shop",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#5ccfc0",
+ "gap": 0.12,
+ "tail": 0,
+ "look": {
+  "fog": "#8d959c",
+  "fog_density": 0.012,
+  "fog_start": 6.0,
+  "sky": "#8d959c",
+  "sky_strength": 1.0,
+  "exposure": 0.0
+ },
+ "grade": {
+  "shadows": [
+   -0.01,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "saturation": 0.95,
+  "contrast": 1.06,
+  "vignette": 0.3,
+  "bloom": 0.2,
+  "grain": 0.012
+ },
+ "phonemes": {},
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#e2b48a",
+   "shirt": "#4f6e4b",
+   "pattern": "solid",
+   "collar": "#3f5a3d",
+   "pants": "#6b6e72",
+   "shoes": "#2b2a2c",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#5b3b27",
+   "hat": "none",
+   "extras": [
+    "coat"
+   ],
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1d1416",
+    "bags": true
+   }
+  },
+  "maggie": {
+   "age": "adult",
+   "skin": "#e6bd98",
+   "shirt": "#27355c",
+   "pattern": "stripes",
+   "pattern_c": "#e8e6e0",
+   "pants": "#4a4a52",
+   "shoes": "#2e2a28",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#b9b9bd",
+   "hat": "none",
+   "height": 0.94,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1d1416",
+    "cheeks": "#e59a8e"
+   }
+  },
+  "t1": {
+   "age": "adult",
+   "skin": "#d9a77c",
+   "shirt": "#cfc6b0",
+   "pattern": "knit",
+   "pattern_c": "#b4aa94",
+   "pants": "#2c3345",
+   "shoes": "#222222",
+   "sleeves": "long",
+   "hair": "buzz",
+   "hair_c": "#7a7a7a",
+   "hat": "none",
+   "width": 1.08,
+   "face": {
+    "eyes": "dot",
+    "brows": true,
+    "ink": "#1d1416"
+   }
+  },
+  "t2": {
+   "age": "adult",
+   "skin": "#c68e64",
+   "shirt": "#2d2f36",
+   "pattern": "solid",
+   "collar": "#24262c",
+   "pants": "#24262c",
+   "shoes": "#1c1c1e",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#1e1a18",
+   "hat": "none",
+   "height": 1.04,
+   "extras": [
+    "coat"
+   ],
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1d1416"
+   }
+  },
+  "t3": {
+   "age": "adult",
+   "skin": "#eac3a0",
+   "shirt": "#f1e24f",
+   "pattern": "solid",
+   "collar": "#d9c93e",
+   "pants": "#3b4a63",
+   "shoes": "#5a2f2a",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#8a4a2a",
+   "hat": "none",
+   "height": 0.93,
+   "extras": [
+    "coat"
+   ],
+   "face": {
+    "eyes": "lashes",
+    "brows": true,
+    "ink": "#1d1416"
+   }
+  },
+  "t4": {
+   "age": "adult",
+   "skin": "#dcb28a",
+   "shirt": "#6c5b4a",
+   "pattern": "plaid",
+   "pattern_c": "#40382e",
+   "pants": "#3a3a3a",
+   "shoes": "#2a2220",
+   "sleeves": "long",
+   "hair": "none",
+   "hair_c": "#999999",
+   "hat": "ballcap",
+   "hat_c": "#3a4a5a",
+   "height": 0.97,
+   "face": {
+    "eyes": "tired",
+    "brows": true,
+    "ink": "#1d1416"
+   }
+  },
+  "t5": {
+   "age": "adult",
+   "skin": "#b98260",
+   "shirt": "#7a3f55",
+   "pattern": "knit",
+   "pattern_c": "#5f2f42",
+   "pants": "#2a2c34",
+   "shoes": "#222222",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#2a1d15",
+   "hat": "none",
+   "height": 0.96,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1d1416"
+   }
+  },
+  "resident": {
+   "age": "adult",
+   "skin": "#e8b98f",
+   "shirt": "#1f2e52",
+   "pattern": "solid",
+   "collar": "#1a2644",
+   "pants": "#1e2230",
+   "shoes": "#14161c",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2b1d14",
+   "hat": "none",
+   "height": 0.0257,
+   "extras": [
+    "coat",
+    "scarf"
+   ],
+   "extra_c": "#cc9a1c",
+   "face": {
+    "eyes": "round",
+    "brows": false,
+    "mouth": "line",
+    "ink": "#120d0e",
+    "pupil": "#0a0708"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There's a little MAN",
+     "There's a little man"
+    ],
+    [
+     "in the WINDOW.",
+     "in the window."
+    ],
+    [
+     "He's the size",
+     "He's the size"
+    ],
+    [
+     "of my THUMB.",
+     "of my thumb."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He's in the BAKERY",
+     "He's in the bakery"
+    ],
+    [
+     "of the model VILLAGE",
+     "of the model village"
+    ],
+    [
+     "down by the SEA.",
+     "down by the sea."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every HOUSE in town",
+     "Every house in town"
+    ],
+    [
+     "is down there,",
+     "is down there,"
+    ],
+    [
+     "no higher",
+     "no higher"
+    ],
+    [
+     "than my KNEE.",
+     "than my knee."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I moved here",
+     "I moved here"
+    ],
+    [
+     "a MONTH ago,",
+     "a month ago,"
+    ],
+    [
+     "and got the job",
+     "and got the job"
+    ],
+    [
+     "REPAINTING it.",
+     "repainting it."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Nobody in town",
+     "Nobody in town"
+    ],
+    [
+     "TALKS to me.",
+     "talks to me."
+    ],
+    [
+     "They NOD,",
+     "They nod,"
+    ],
+    [
+     "and keep WALKING.",
+     "and keep walking."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I spend",
+     "So I spend"
+    ],
+    [
+     "my AFTERNOONS",
+     "my afternoons"
+    ],
+    [
+     "over the little STREETS",
+     "over the little streets"
+    ],
+    [
+     "with a BRUSH.",
+     "with a brush."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Out of SEASON.",
+     "Out of season."
+    ],
+    [
+     "GREY sky.",
+     "Grey sky."
+    ],
+    [
+     "A sea",
+     "A sea"
+    ],
+    [
+     "like WET SLATE.",
+     "like wet slate."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There are tiny PEOPLE",
+     "There are tiny people"
+    ],
+    [
+     "all over the village.",
+     "all over the village."
+    ],
+    [
+     "A man with a DOG.",
+     "A man with a dog."
+    ],
+    [
+     "A woman at a GATE.",
+     "A woman at a gate."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "All GLUED down.",
+     "All glued down."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But HE",
+     "But he"
+    ],
+    [
+     "isn't glued.",
+     "isn't glued."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And YESTERDAY,",
+     "And yesterday,"
+    ],
+    [
+     "that bakery window",
+     "that bakery window"
+    ],
+    [
+     "was EMPTY.",
+     "was empty."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I know.",
+     "I know."
+    ],
+    [
+     "I PAINTED it.",
+     "I painted it."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He's made",
+     "He's made"
+    ],
+    [
+     "BETTER than the others.",
+     "better than the others."
+    ],
+    [
+     "A MUSTARD scarf.",
+     "A mustard scarf."
+    ],
+    [
+     "A neat little FACE.",
+     "A neat little face."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the houses",
+     "And the houses"
+    ],
+    [
+     "don't OPEN.",
+     "don't open."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I leaned in CLOSE",
+     "I leaned in close"
+    ],
+    [
+     "to the GLASS.",
+     "to the glass."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He stood",
+     "He stood"
+    ],
+    [
+     "with his BACK to me.",
+     "with his back to me."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I started",
+     "Then I started"
+    ],
+    [
+     "SANDING the old GREEN",
+     "sanding the old green"
+    ],
+    [
+     "off the GROUND.",
+     "off the ground."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Next DAY,",
+     "Next day,"
+    ],
+    [
+     "the bakery window",
+     "the bakery window"
+    ],
+    [
+     "was EMPTY AGAIN.",
+     "was empty again."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Two doors UP,",
+     "Two doors up,"
+    ],
+    [
+     "in the house",
+     "in the house"
+    ],
+    [
+     "with the BLUE DOOR.",
+     "with the blue door."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Same SCARF.",
+     "Same scarf."
+    ],
+    [
+     "Same BACK",
+     "Same back"
+    ],
+    [
+     "to the GLASS.",
+     "to the glass."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I got down",
+     "I got down"
+    ],
+    [
+     "on my KNEES",
+     "on my knees"
+    ],
+    [
+     "and leaned RIGHT IN.",
+     "and leaned right in."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Behind him,",
+     "Behind him,"
+    ],
+    [
+     "on a TABLE,",
+     "on a table,"
+    ],
+    [
+     "sat a CUP",
+     "sat a cup"
+    ],
+    [
+     "the size of a SEED.",
+     "the size of a seed."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I never PAINTED",
+     "I never painted"
+    ],
+    [
+     "a cup",
+     "a cup"
+    ],
+    [
+     "that SMALL.",
+     "that small."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "By THURSDAY,",
+     "By thursday,"
+    ],
+    [
+     "he'd crossed",
+     "he'd crossed"
+    ],
+    [
+     "the MAIN STREET.",
+     "the main street."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Halfway up the HILL,",
+     "Halfway up the hill,"
+    ],
+    [
+     "in the window",
+     "in the window"
+    ],
+    [
+     "of the CHAPEL.",
+     "of the chapel."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's when I SAW",
+     "That's when I saw"
+    ],
+    [
+     "where he was HEADING.",
+     "where he was heading."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My COTTAGE",
+     "My cottage"
+    ],
+    [
+     "is on that hill.",
+     "is on that hill."
+    ],
+    [
+     "It's in the MODEL too.",
+     "It's in the model too."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Grey ROOF.",
+     "Grey roof."
+    ],
+    [
+     "Yellow DOOR.",
+     "Yellow door."
+    ],
+    [
+     "The window",
+     "The window"
+    ],
+    [
+     "I sleep BEHIND.",
+     "I sleep behind."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "One window",
+     "One window"
+    ],
+    [
+     "NEARER",
+     "nearer"
+    ],
+    [
+     "every DAY.",
+     "every day."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I leaned over",
+     "I leaned over"
+    ],
+    [
+     "the CHAPEL",
+     "the chapel"
+    ],
+    [
+     "till my NOSE",
+     "till my nose"
+    ],
+    [
+     "touched the GLASS.",
+     "touched the glass."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He didn't TURN round.",
+     "He didn't turn round."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "On FRIDAY,",
+     "On friday,"
+    ],
+    [
+     "he was in the house",
+     "he was in the house"
+    ],
+    [
+     "NEXT DOOR",
+     "next door"
+    ],
+    [
+     "to MINE.",
+     "to mine."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That NIGHT,",
+     "That night,"
+    ],
+    [
+     "in my REAL cottage,",
+     "in my real cottage,"
+    ],
+    [
+     "I shut every CURTAIN.",
+     "I shut every curtain."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And THOUGHT",
+     "And thought"
+    ],
+    [
+     "about a face",
+     "about a face"
+    ],
+    [
+     "at the GLASS.",
+     "at the glass."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "On SATURDAY,",
+     "On saturday,"
+    ],
+    [
+     "I went STRAIGHT",
+     "I went straight"
+    ],
+    [
+     "to my little COTTAGE.",
+     "to my little cottage."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its windows",
+     "Its windows"
+    ],
+    [
+     "were EMPTY.",
+     "were empty."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So was",
+     "So was"
+    ],
+    [
+     "next DOOR.",
+     "next door."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Up the STREET,",
+     "Up the street,"
+    ],
+    [
+     "window by WINDOW.",
+     "window by window."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The last house",
+     "The last house"
+    ],
+    [
+     "at the TOP",
+     "at the top"
+    ],
+    [
+     "is the TEA SHOP.",
+     "is the tea shop."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Where the tiny TOWNSFOLK",
+     "Where the tiny townsfolk"
+    ],
+    [
+     "SIT.",
+     "sit."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I put my FACE",
+     "I put my face"
+    ],
+    [
+     "right up",
+     "right up"
+    ],
+    [
+     "to its WINDOW.",
+     "to its window."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His face",
+     "His face"
+    ],
+    [
+     "was RIGHT behind it.",
+     "was right behind it."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His BODY",
+     "His body"
+    ],
+    [
+     "faced into the ROOM.",
+     "faced into the room."
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But his HEAD",
+     "But his head"
+    ],
+    [
+     "had turned",
+     "had turned"
+    ],
+    [
+     "all the way ROUND",
+     "all the way round"
+    ],
+    [
+     "to look at ME.",
+     "to look at me."
+    ]
+   ]
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I jerked BACK",
+     "I jerked back"
+    ],
+    [
+     "and KICKED",
+     "and kicked"
+    ],
+    [
+     "my paint POT over.",
+     "my paint pot over."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And that's when",
+     "And that's when"
+    ],
+    [
+     "I SAW it.",
+     "I saw it."
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every tiny PERSON",
+     "Every tiny person"
+    ],
+    [
+     "in the whole VILLAGE",
+     "in the whole village"
+    ],
+    [
+     "had its BACK",
+     "had its back"
+    ],
+    [
+     "to me.",
+     "to me."
+    ]
+   ]
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "All facing AWAY",
+     "All facing away"
+    ],
+    [
+     "from where I STAND.",
+     "from where I stand."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I thought about",
+     "I thought about"
+    ],
+    [
+     "what HE sees",
+     "what he sees"
+    ],
+    [
+     "every MORNING.",
+     "every morning."
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A FACE",
+     "A face"
+    ],
+    [
+     "bigger than",
+     "bigger than"
+    ],
+    [
+     "his whole HOUSE,",
+     "his whole house,"
+    ],
+    [
+     "filling the WINDOW.",
+     "filling the window."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Breathing on",
+     "Breathing on"
+    ],
+    [
+     "the GLASS.",
+     "the glass."
+    ]
+   ]
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "MINE.",
+     "Mine."
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every window",
+     "Every window"
+    ],
+    [
+     "I leaned INTO,",
+     "I leaned into,"
+    ],
+    [
+     "he LEFT.",
+     "he left."
+    ]
+   ]
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "One house",
+     "One house"
+    ],
+    [
+     "at a TIME,",
+     "at a time,"
+    ],
+    [
+     "up to the tea shop",
+     "up to the tea shop"
+    ],
+    [
+     "and the OTHERS.",
+     "and the others."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There was a little MAN",
+     "There was a little man"
+    ],
+    [
+     "in the WINDOW,",
+     "in the window,"
+    ],
+    [
+     "and to HIM,",
+     "and to him,"
+    ],
+    [
+     "the monster",
+     "the monster"
+    ],
+    [
+     "was ME.",
+     "was me."
+    ]
+   ]
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I STOPPED",
+     "So I stopped"
+    ],
+    [
+     "leaning in.",
+     "leaning in."
+    ]
+   ]
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I put the BRUSH down",
+     "I put the brush down"
+    ],
+    [
+     "and walked into",
+     "and walked into"
+    ],
+    [
+     "the REAL tea shop.",
+     "the real tea shop."
+    ]
+   ]
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Everyone went QUIET.",
+     "Everyone went quiet."
+    ]
+   ]
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the OWNER,",
+     "Then the owner,"
+    ],
+    [
+     "MAGGIE,",
+     "Maggie,"
+    ],
+    [
+     "came over",
+     "came over"
+    ],
+    [
+     "with a little BOX.",
+     "with a little box."
+    ]
+   ]
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She said,",
+     "She said,"
+    ],
+    [
+     "\"EVERYONE in town",
+     "\"Everyone in town"
+    ],
+    [
+     "has a FIGURE",
+     "has a figure"
+    ],
+    [
+     "in that tea shop.\"",
+     "in that tea shop.\""
+    ]
+   ]
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "\"You've been here",
+     "\"You've been here"
+    ],
+    [
+     "a MONTH.",
+     "a month."
+    ],
+    [
+     "You're LATE.\"",
+     "You're late.\""
+    ]
+   ]
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Inside the box",
+     "Inside the box"
+    ],
+    [
+     "was a BLANK one,",
+     "was a blank one,"
+    ],
+    [
+     "waiting for a FACE.",
+     "waiting for a face."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That night",
+     "That night"
+    ],
+    [
+     "I PAINTED it.",
+     "I painted it."
+    ],
+    [
+     "Brown HAIR.",
+     "Brown hair."
+    ],
+    [
+     "Green COAT.",
+     "Green coat."
+    ],
+    [
+     "A tiny BRUSH.",
+     "A tiny brush."
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Next afternoon,",
+     "Next afternoon,"
+    ],
+    [
+     "half the TOWN",
+     "half the town"
+    ],
+    [
+     "came down",
+     "came down"
+    ],
+    [
+     "to the MODEL with me.",
+     "to the model with me."
+    ]
+   ]
+  },
+  {
+   "id": "L65",
+   "who": "narrator",
+   "chunks": [
+    [
+     "They leaned over",
+     "They leaned over"
+    ],
+    [
+     "the little STREETS",
+     "the little streets"
+    ],
+    [
+     "and SHOWED me",
+     "and showed me"
+    ],
+    [
+     "their OWN.",
+     "their own."
+    ]
+   ]
+  },
+  {
+   "id": "L66",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I set mine",
+     "I set mine"
+    ],
+    [
+     "at the WINDOW TABLE,",
+     "at the window table,"
+    ],
+    [
+     "in the one",
+     "in the one"
+    ],
+    [
+     "EMPTY CHAIR.",
+     "empty chair."
+    ]
+   ]
+  },
+  {
+   "id": "L67",
+   "who": "narrator",
+   "chunks": [
+    [
+     "From INSIDE,",
+     "From inside,"
+    ],
+    [
+     "the faces in the window",
+     "the faces in the window"
+    ],
+    [
+     "were all SMILING.",
+     "were all smiling."
+    ]
+   ]
+  },
+  {
+   "id": "L68",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The man in the SCARF",
+     "The man in the scarf"
+    ],
+    [
+     "hasn't been",
+     "hasn't been"
+    ],
+    [
+     "in any window",
+     "in any window"
+    ],
+    [
+     "SINCE.",
+     "since."
+    ]
+   ]
+  },
+  {
+   "id": "L69",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There's a little MAN",
+     "There's a little man"
+    ],
+    [
+     "in the tea shop WINDOW.",
+     "in the tea shop window."
+    ],
+    [
+     "He's the size",
+     "He's the size"
+    ],
+    [
+     "of my THUMB,",
+     "of my thumb,"
+    ],
+    [
+     "and he's ME.",
+     "and he's me."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      0.16999999999999998,
+      7.0,
+      0.7825
+     ],
+     [
+      0.16999999999999998,
+      7.17,
+      0.7615
+     ],
+     60
+    ]
+   ],
+   "dof": [
+    2.8,
+    [
+     0.17,
+     7.1566,
+     0.77
+    ]
+   ],
+   "hand": 0.0,
+   "step": 2
+  }
+ ],
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ],
+    "hidden": true
+   }
+  ],
+  "maggie": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ],
+    "hidden": true
+   }
+  ],
+  "t1": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ],
+    "hidden": true
+   }
+  ],
+  "t2": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ],
+    "hidden": true
+   }
+  ],
+  "t3": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ],
+    "hidden": true
+   }
+  ],
+  "t4": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ],
+    "hidden": true
+   }
+  ],
+  "t5": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     0
+    ],
+    "hidden": true
+   }
+  ],
+  "resident": [
+   {
+    "at": 0,
+    "pos": [
+     0.17,
+     7.162,
+     0.73
+    ],
+    "yaw": 180,
+    "head": [
+     172,
+     9
+    ],
+    "expr": "blank"
+   }
+  ]
+ },
+ "cues": [],
+ "fx": [],
+ "music": {
+  "root": 50,
+  "mode": "dorian",
+  "bpm": 76,
+  "seed": 22,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "drone",
+     "pad"
+    ],
+    "energy": 0.3
+   }
+  ]
+ },
+ "sound": {
+  "floor": "stone",
+  "steps_db": -22,
+  "ambience": [],
+  "sfx": []
+ }
+}
