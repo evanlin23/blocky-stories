@@ -85,7 +85,7 @@ def shot(at, cam, **opt):
 
 
 # 01 the coat (night one)
-shot(0, front(ME_F, 180, 1.9, 0.0, 36, push=0.22), hand=0.004)                                  # S01 me, collar up
+shot(0, front(ME_F, 180, 1.9, 0.0, 36, push=0.22, aim_dz=-0.34), hand=0.004)                                  # S01 me, collar up
 shot("L02", mv([-2.3, -0.95, 1.15], [-2.3, -3.0, 1.0], 22, [-2.3, -1.1, 1.15], [-2.3, -3.0, 1.0], 22), hand=0.003)   # S02 the door
 shot("L03", mv([1.0, -2.3, 1.55], [0.9, -5.5, 1.4], 30, [1.0, -2.4, 1.55], [0.9, -5.5, 1.4], 30), hand=0.004)          # S03 rain on glass
 shot("L04", mv([-2.2, -10.2, 1.5], [1.6, -3.6, 1.2], 22), hand=0.01)                            # S04 outside
@@ -95,7 +95,7 @@ shot("L07", mv([2.7, -0.6, 1.4], [4.4, -3.0, 1.3], 24, [2.9, -0.7, 1.4], [4.4, -
 shot("L08", mv([-0.5, -1.0, 1.35], [3.65, 0.0, 1.2], 30, [-0.1, -1.0, 1.35], [3.65, 0.0, 1.2], 32), hand=0.003)       # S08 old man small
 shot("L09", mv([2.7, 1.9, 1.5], [3.6, 0.0, 1.4], 22, [2.8, 1.8, 1.5], [3.6, 0.0, 1.4], 23), hand=0.003)   # S09 grey jumper
 shot("L10", mv([2.4, 1.15, 1.5], [3.65, 0.0, 1.5], 30, [2.45, 1.1, 1.5], [3.65, 0.0, 1.5], 31), hand=0.003)   # S10 his face
-shot("L11", front(ME_F, 180, 1.5, 0.0, 34), hand=0.005)                                          # S11 me, cold
+shot("L11", front(ME_F, 180, 1.5, 0.0, 34, aim_dz=-0.3), hand=0.005)                                          # S11 me, cold
 shot("L12", mv([-2.6, 0.2, 1.35], [-5.0, -1.1, 1.1], 24, [-2.8, 0.2, 1.35], [-5.0, -1.1, 1.1], 25), hand=0.003)   # S12 the change machine
 shot("L13", mv([-4.45, -0.95, 1.5], [-0.3, -2.6, 1.15], 19, [-4.4, -0.95, 1.5], [-0.2, -2.6, 1.15], 19), hand=0.003)   # S13 wide: the end dryer buzzes, he walks back from it
 shot("L14.2", mv([0.9, -1.1, 1.55], [2.8, -2.55, 1.3], 22, [1.0, -1.1, 1.55], [2.8, -2.55, 1.3], 23), hand=0.003)   # S15 him folding
@@ -117,7 +117,7 @@ shot("L28", mv([3.9, -14.0, 1.7], [3.9, -3.5, 1.4], 12.5), hand=0.004)   # S29 o
 shot("L29", mv([0.6, -10.8, 1.5], [2.4, -5.8, 1.35], 24), hand=0.01)   # S30 walking off
 # 03 one chair nearer (night three)
 shot("L30", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S31 four
-shot("L31", mv([CHX[3], -0.5, 0.05], [CHX[3], 0.0, 0.5], 18), hand=0)   # S32 the tally
+shot("L31", mv([CHX[3], -0.14, 0.03], [CHX[3], -0.02, 0.41], 11), hand=0)   # S32 the tally
 shot("L31b+0.45", front(ME_F, 180, 1.35, 0.15, 36, aim_dz=-0.15), hand=0.003)                    # S33 the same page
 shot("L32", front(F(3), 0, 1.5, -0.1, 36, push=0.08), hand=0.002)                                # S34 closer
 shot("L33", front(ME_F, 180, 1.5, 0.0, 36), hand=0.004)                                          # S35 it wants the coat back
@@ -160,7 +160,8 @@ shot("L68", mv([ST[0] + 0.55, LY - 3.1, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.3]
 shot("L69", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S68
 shot("L71", mv([-1.5, -2.3, 1.2], [0.2, -1.65, 0.95], 22, [-1.4, -2.3, 1.2], [0.2, -1.65, 0.95], 23), hand=0.003)   # S69 towels
 shot("L72", mv([2.3, -1.2, 1.5], [3.4, -3.3, 1.3], 16, [2.4, -1.2, 1.5], [3.4, -3.3, 1.3], 16), hand=0.003)   # S70 two coats
-shot("L74", mv([-1.4, -0.7, 1.55], [1.4, -2.5, 1.25], 24, [-1.9, -0.55, 1.55], [1.5, -2.5, 1.25], 21), hand=0.003)   # S71 pull back to the table
+shot("L74", mv([-1.4, -0.7, 1.55], [1.4, -2.5, 1.25], 24, [-1.9, -0.55, 1.55], [1.5, -2.5, 1.25], 21), hand=0.003)   # S70 pull back to the table
+shot("L76", mv([2.3, -1.25, 1.5], [3.35, -3.3, 1.32], 17, [2.45, -1.32, 1.5], [3.35, -3.3, 1.32], 19), hand=0.002)   # S71 the last frame: the two coats on the hook
 
 shots, rain, step = [], [], {}
 for i, (at, cam, opt) in enumerate(SH):
@@ -172,7 +173,7 @@ for i, (at, cam, opt) in enumerate(SH):
         s["hand"] = opt["hand"]
     shots.append(s)
 SID = {at: s["id"] for (at, _, _), s in zip(SH, shots)}
-RAIN = [SID[k] for k in ("L03", "L04", "L28", "L29", "L34")]
+RAIN = [SID[k] for k in ("L03", "L04", "L28", "L29", "L34", "L72", "L76")]
 
 # ---------------------------------------------------------------------------------------------------- acting
 
@@ -299,6 +300,9 @@ ar.set("L68", head=[0, 0], expr="soft")
 ar.jump("L69", seat(5), hidden=False, **P(SIT, arms=[22, 22], expr="neutral"))
 ar.jump("L74", [2.3, -2.55, 0.0], **{**STAND, "arms": [68, 68], "yaw": 180}, expr="soft")
 
+ar.jump("L76", [2.3, -2.55, 0.0], hidden=True)
+me0.jump("L76", [1.3, -2.55, 0.0], hidden=True)
+
 # --- the Turned: head turned right round (so its face looks at me and the haircut faces the dryers), arms hung back
 TURN = dict(yaw=180, head=[180, 4], arms=[-42, -42], side=[4, 4], expr="terrified", look=[0, 0], sit=True, bend=0,
             lean=0, tremble=0.0)
@@ -418,7 +422,8 @@ story = {
               "vignette": 0.3, "bloom": 0.25, "grain": 0.012, "red_line": 0.79, "red_lift_blue": 0.5},
     "rain_shots": RAIN,
     "lamp_shots": [SID["L19"] if False else "S01"],
-    "hook_lamp_shots": [SID["L72"]],
+    "tally_shots": [SID["L31"]],
+    "hook_lamp_shots": [SID["L72"], SID["L76"]],
     "stair_fill_shots": [SID["L62"], SID["L65"], SID["L68"]],
     "phonemes": {"Arthur": "ˈɑɹθəɹ", "turned": "tˈɜɹnd", "drums": "dɹˈʌmz"},
     "creature_dim": {"S21": 0.6, "S22": 0.6, "S23": 0.6, "S24": 0.6, "S25": 0.6, "S47": 0.5, "S48": 0.5, "S49": 0.5, "S50": 0.5, "S51": 0.5, "S52": 0.5},

@@ -166,11 +166,11 @@ def build_room(kit, ctx, M):
         B(kit, f"door frame{k}", (0.08, 0.3, CEIL), (x, YF - 0.1, CEIL / 2), M["steel"])
     B(kit, "door push bar", (0.7, 0.05, 0.05), (4.4, YF + 0.12, 1.0), M["steel"])
     # coat hooks and the two coats
-    for k, x in enumerate((3.2, 3.5)):
+    for k, x in enumerate((3.1, 3.6)):
         kit.cyl(f"hook{k}", 0.018, 0.12, (x, YF + 0.06, 1.7), M["steel"], rot=(math.pi / 2, 0, 0), n=10)
         kit.sphere(f"hookb{k}", 0.03, (x, YF + 0.12, 1.7), M["steel"])
-    ctx["coat_a"] = coat_prop(kit, "coat_a", M["coat"], (3.2, YF + 0.16, 1.66), M["coat_d"], M["coat_l"], M["btn_k"])
-    ctx["coat_b"] = coat_prop(kit, "coat_b", M["navy"], (3.5, YF + 0.16, 1.66), M["navy_d"], M["navy_l"], M["btn_k"])
+    ctx["coat_a"] = coat_prop(kit, "coat_a", M["coat"], (3.1, YF + 0.16, 1.66), M["coat_d"], M["coat_l"], M["btn_k"])
+    ctx["coat_b"] = coat_prop(kit, "coat_b", M["navy"], (3.6, YF + 0.16, 1.66), M["navy_d"], M["navy_l"], M["btn_k"])
     # tubes over the room (emissive bars, plus the area lights that really light it)
     for k, x in enumerate((-4.0, -1.35, 1.35, 4.0)):
         for y in (-1.5, 1.4):
@@ -209,6 +209,7 @@ def coat_prop(kit, name, mat, loc, dark=None, light=None, btn=None):
     for k in range(3):
         kit.sphere(f"{name}.b{k}", 0.022, (0.035, -0.075, -0.3 - 0.16 * k), btn or mat, root)
     B(kit, f"{name}.hem", (0.46, 0.13, 0.05), (0, 0, -0.84), dark, root, bevel=0.02)
+    root.scale = (0.78, 0.78, 0.78)
     return root
 
 
@@ -243,7 +244,7 @@ def build_seats(kit, ctx, M):
         ctx["chairs"].append(r)
     # the Keeper's tally under chair four: six short upright strokes in laundry blue, one per chair
     for k in range(6):
-        B(kit, f"tally{k}", (0.03, 0.21, 0.012), (CHX[3] - 0.175 + 0.07 * k, 0.0, 0.405), M["blue"])
+        B(kit, f"tally{k}", (0.02, 0.15, 0.012), (CHX[3] - 0.1125 + 0.045 * k, 0.0, 0.405), M["blue"])
     # my stool
     kit.cyl("stool", 0.2, 0.05, (-3.6, -2.45, 0.46), M["steel"], n=20)
     kit.cyl("stool leg", 0.03, 0.44, (-3.6, -2.45, 0.22), M["steel2"], n=10)
@@ -426,6 +427,7 @@ def build(kit, story, tl):
     # the Turned's own light (placed by animate on whichever chair it's in): a cool rim from the dryer glass, behind
     # its head, and a low warm key from the table side, below
     # lights that serve one shot only (so its brightness matches its neighbours across the cut)
+    kit.light("tally lamp", "POINT", (CHX[3], -0.35, 0.12), 3.0, "#dfe6f2", size=0.1)
     kit.light("me lamp", "AREA", (-2.5, -0.9, 2.0), 45.0, "#e8e2d4", size=1.2)
     kit.aim(kit.LIGHTS["me lamp"]["obj"], (-3.6, -2.3, 1.4))
     kit.light("hook lamp", "AREA", (2.8, -1.6, 2.4), 45.0, "#e8e2d4", size=1.0)
@@ -590,6 +592,7 @@ def animate(kit, story, tl, t, ctx):
     for k in range(4):
         over[f"tube{k}"] = g * dim
     over["table lamp"] = g * dim
+    over["tally lamp"] = 1.0 if sid in story.get("tally_shots", []) else 0.0
     over["me lamp"] = 1.0 if sid in story.get("lamp_shots", []) else 0.0
     over["hook lamp"] = 1.0 if sid in story.get("hook_lamp_shots", []) else 0.0
     over["stair fill"] = 1.0 if sid in story.get("stair_fill_shots", []) else 0.0
