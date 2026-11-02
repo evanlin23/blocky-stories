@@ -243,8 +243,8 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
                 _ellipse(d, cx + qx * r * 0.35, ey + qy * r * 0.35, r * 0.12, r * 0.12, fill=(230, 225, 215))
         if brows and eyes not in ("hollow", "none"):
             tilt = {"worried": 0.9, "crying": 1.0, "scared": 0.7, "angry": -0.9, "wide": 0.4, "smirk": -0.25,
-                    "grin": -0.4, "terrified": 1.0}.get(expr, 0.0)
-            by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide") else 0)
+                    "grin": -0.4, "terrified": 1.0, "warm": 0.08}.get(expr, 0.0)
+            by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide", "warm") else 0)
             _brow(d, cx, by, 0.16 * s, tilt, inkc, th, side)
     if expr == "crying" and not shut:
         tear = (120, 190, 255)

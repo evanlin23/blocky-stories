@@ -58,9 +58,9 @@ lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
 # hears "At three" as "Night three" and "slept two" as "slept too" (same sounds): the story's "homophones" below ask
 # `asr` to forgive those, and the lines Whisper dropped words from are slowed or given a breath in their spoken text
 # (the captions don't change)
-TEMPO = {"L68": 0.8}
+TEMPO = {"L68": 0.8, "L32": 0.85}
 SPOKEN = {("L51", "Its flat face"): "Its, flat face",
-          ("L68", "ASLEEP,"): "Fast asleep,", ("L16", "torch in my HAND,"): "torch, in my hand,"}
+          ("L68", "ASLEEP,"): "Fast asleep,", ("L16", "torch in"): "torch, in"}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -148,7 +148,7 @@ def POV(n, tgt, lens, push=0):
 # the lamp room: the cot, the lens, the glass
 COT_FACE = still([-1.3, -1.6, LF + 1.6], [-1.3, 0.4, LF + 1.38], 32)
 COT_WIDE = still([0.4, -1.7, LF + 1.5], [-1.3, 0.3, LF + 0.9], 28)
-SOCKS = still([0.55, -2.3, LF + 0.8], [-0.3, -1.2, LF + 0.1], 30)
+SOCKS = still([0.5, -2.15, LF + 1.0], [-0.3, -1.3, LF + 0.1], 24)
 PLATE_CAM = still([0.8, 0.34, 16.34], [2.4, 0.34, 16.34], 40)
 PLATE_C = [2.365, 0.34, 16.45]
 
@@ -196,7 +196,7 @@ shot("L22", "my face lit by the phone, scared", COT_FACE)
 shot("L23", "the glow fades", COT_FACE)
 # 04 morning one
 shot("L24", "my socks on the clean boards, sand", SOCKS, hand=0.003)
-shot("L25", "through the glass: the beach far below", still([0.0, 1.8, LF + 1.7], [0.0, 66.0, -30.0], 22))
+shot("L25", "through the glass: the beach far below", still([0.0, 1.8, LF + 1.7], [0.0, 61.8, -7.2], 34))
 shot("L26", "kitchen: toast", still([KX + 2.15, 0.1, 1.5], [KX, 0.1, 1.0], 24))
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
 shot("L27.1", "insert: my socks under the table", still([KX + 1.3, -0.04, 0.6], [KX, -0.1, 0.6], 36), hand=0.003)
@@ -238,22 +238,22 @@ shot("L51", "tight on the crown face, the mouth wide",
 shot("L52", "buzz: close on my face lit by the phone, terrified", RF(4, d=1.5, lens=32, tz=-0.3), step=1)
 shot("L53", "back to the crown face, held",
      still([1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 44), step=1, hand=0.003)
-def runcam(i, az, lens=26):
-    """In the well, opposite me as I run up past tread i (azimuth az): I'm in profile, lit, mid-frame."""
+def runcam(i, az, lens=24):
+    """In the well, ahead of me round the spiral as I run up past tread i (azimuth az): my face comes toward the lens."""
     z = i * STEP
-    a = math.radians(az)
-    loc = [round(-0.45 * math.cos(a), 3), round(-0.45 * math.sin(a), 3), round(z + 1.45, 3)]
-    return still(loc, [round(1.7 * math.cos(a), 3), round(1.7 * math.sin(a), 3), round(z + 1.35, 3)], lens)
+    a, a2 = math.radians(az + 80), math.radians(az)
+    loc = [round(0.8 * math.cos(a), 3), round(0.8 * math.sin(a), 3), round(z + 1.6, 3)]
+    return still(loc, [round(1.8 * math.cos(a2), 3), round(1.8 * math.sin(a2), 3), round(z + 1.4, 3)], lens)
 
 
-shot("L54", "running up, one", runcam(49, 25), step=1)
-shot("L54.1", "running up, two", runcam(62, 55), step=1)
-shot("L54.2", "running up, three", runcam(74, 55), step=1)
+shot("L54", "running up, one", runcam(48.6, 25), step=1)
+shot("L54.1", "running up, two", runcam(61.6, 54), step=1)
+shot("L54.2", "running up, three", runcam(73.6, 54), step=1)
 shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
 shot("L55", "kitchen, flat bright daylight", still([KX + 2.15, 0.6, 1.5], [KX, 0.1, 1.15], 24))
 shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.2, 1.0], 20))
-shot("L57", "Ines says goodnight at her door, lamp on, her face to camera", still([0.0, -0.75, Z4 + 1.6], [1.8, 0.0, Z4 + 1.48], 44), hand=0.003)
+shot("L57", "Ines says goodnight at her door, lamp on, her face to camera", still([0.0, -0.75, Z4 + 1.3], [1.8, 0.0, Z4 + 1.35], 32), hand=0.003)
 shot("L58", "me in the camp bed, listening", COT_WIDE)
 shot("L59", "the lamp room in the dark, rain settling", still([0.5, -2.0, LF + 1.8], [-0.8, 0.5, LF + 1.0], 22), rain=True)
 # 10 dawn
@@ -274,11 +274,12 @@ def up(p, dz):
 
 
 shot("L68", "memory: me walking down asleep, eyes shut, toward camera",
-     still(up(tread(39.2, 1.45), 1.55), up(tread(42.0, 1.7), 1.45), 36), hand=0.004)
+     c([0, up(tread(39.2, 1.3), 1.55), up(tread(42.9, 1.6), 1.4), 26], [1, up(tread(39.2, 1.3), 1.55), up(tread(41.3, 1.6), 1.4), 28]),
+     hand=0.004)
 shot("L69", "memory: the Upward's crown face below the sleeping me",
-     still([0.3, 0.5, 10.5], [-1.15, 1.15, 8.9], 18), hand=0.004)
+     still([0.3, 0.5, 11.4], [-1.15, 1.15, 8.7], 20), hand=0.004)
 shot("L70", "memory: me walking past her blue door, eyes shut",
-     still(up(tread(45.3, 1.35), 1.55), up(tread(48.3, 1.7), 1.4), 34), hand=0.004)
+     still(up(tread(45.0, 1.5), 1.55), up(tread(48.2, 1.7), 1.4), 24), hand=0.004)
 shot("L71", "memory: Ines frightened, phone glow", still([0.1, 0.55, Z4 + 1.55], [2.0, 0.55, Z4 + 1.4], 30))
 shot("L72", "memory: Ines worried and soft, me waking at the rail", still([-0.3, 0.0, Z4 + 1.6], [1.9, 0.0, Z4 + 1.3], 26))
 shot("L73", "dawn: Ines asleep in the blanket in the sun",
@@ -286,7 +287,7 @@ shot("L73", "dawn: Ines asleep in the blanket in the sun",
 shot("L74", "Ines opens her eyes, a small smile, lifts her phone",
      still(local(SEAT_IN, YAW_IN, 1.8, 0.0, 1.3), local(SEAT_IN, YAW_IN, 0, 0, 0.9), 32))
 shot("L75", "close on me grinning at my phone", still(local(SEAT_ME, YAW_ME, 1.7, 0.0, 1.3), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 32))
-shot("L76", "two-shot across the well in full sun: both faces", still([0.6, -0.5, 9.0], [-2.1, 0.6, 8.7], 40))
+shot("L76", "two-shot across the well in full sun: both faces", still([0.5, -0.4, 9.0], [-2.1, 0.6, 8.7], 28))
 
 shots = []
 rain_shots = []
@@ -386,12 +387,18 @@ at_rail(4, "L48", head=[0, 30], lean=18, expr="wide", blink=False)
 hide("me", "L49")
 at_rail(4, "L52", head=[0, 22], lean=10, expr="terrified", blink=False, arms=[40, 40])
 hide("me", "L53")
-put("me", "L54", tread(48), yaw=yaw_to(tread(48), tread(49)), expr="terrified")
-walk("me", "L54+0.9", tread(52, 1.9))
-put("me", "L54.1", tread(60), yaw=yaw_to(tread(60), tread(61)), expr="terrified")
-walk("me", "L54.1+0.9", tread(64, 1.9))
-put("me", "L54.2", tread(72), yaw=yaw_to(tread(72), tread(73)), expr="terrified")
-walk("me", "L54.2+0.9", tread(76, 1.9))
+def arc(who, at, i0, i1, dur, r=1.8, n=4, **kw):
+    """Walk the spiral, not the chord across the well: n keys along the treads from i0 to i1."""
+    for k in range(1, n + 1):
+        walk(who, f"{at}+{round(dur * k / n, 3)}", tread(i0 + (i1 - i0) * k / n, r), **kw)
+
+
+put("me", "L54", tread(48, 1.8), yaw=yaw_to(tread(48), tread(49)), expr="terrified")
+arc("me", "L54", 48, 49.7, 0.35, n=2)
+put("me", "L54.1", tread(60, 1.8), yaw=yaw_to(tread(60), tread(61)), expr="terrified")
+arc("me", "L54.1", 60, 63.6, 0.8)
+put("me", "L54.2", tread(72, 1.8), yaw=yaw_to(tread(72), tread(73)), expr="terrified")
+arc("me", "L54.2", 72, 75.5, 0.76)
 hide("me", "L54.3")
 put("me", "L55", SEAT_K(-0.75), yaw=180, sit=True, expr="worried", head=[0, 8])
 key("me", "L56", head=[0, 8])
@@ -402,15 +409,15 @@ put("me", "L60", SIT_ME, yaw=YAW_ME, sit=True, lean=8, head=[0, 18], expr="aslee
 key("me", "L60+0.9", expr="wide", head=[0, 8], blend=0.3)
 key("me", "L61", expr="worried", blend=0.2)
 key("me", "L67", expr="wide", head=[24, 26], blend=0.4)
-put("me", "L68", tread(44, 1.7), yaw=yaw_to(tread(44), tread(43)), arms=[70, 70], expr="shut", blink=False)
-walk("me", "L68>", tread(41.2, 1.7), arms=[70, 70])
+put("me", "L68", tread(43.0, 1.7), yaw=yaw_to(tread(43), tread(42)), arms=[38, 38], expr="shut", blink=False)
+arc("me", "L68", 43.0, 41.2, 3.5, r=1.7, n=5, arms=[38, 38])
 put("me", "L69", tread(41, 1.7), yaw=yaw_to(tread(41), tread(40)), arms=[78, 78], expr="shut", blink=False)
-put("me", "L70", tread(50, 1.7), yaw=yaw_to(tread(50), tread(49)), arms=[70, 70], expr="shut", blink=False)
-walk("me", "L70>", tread(46.5, 1.7), arms=[70, 70])
+put("me", "L70", tread(50, 1.7), yaw=yaw_to(tread(50), tread(49)), arms=[38, 38], expr="shut", blink=False)
+arc("me", "L70", 50, 46.5, 1.67, r=1.7, n=4, arms=[38, 38])
 put("me", "L72", tread(47, 1.55), yaw=FACE_IN - 20, expr="shut", blink=False, lean=8, head=[0, 20])
 key("me", "L72.2", expr="wide", blend=0.2)
 put("me", "L73", SIT_ME, yaw=YAW_ME, sit=True, lean=8, head=[0, 10], expr="worried")
-put("me", "L75", SIT_ME, yaw=YAW_ME, sit=True, lean=4, head=[0, 24], arms=[40, 40], expr="warm")
+put("me", "L75", SIT_ME, yaw=YAW_ME, sit=True, lean=4, head=[0, 12], arms=[40, 40], expr="warm", blink=False)
 key("me", "L76", head=[14, 6], expr="warm")
 
 # Ines
@@ -440,7 +447,7 @@ put("ines", "L56", SEAT_K(0.95), yaw=0, sit=True, expr="neutral", head=[0, 6])
 key("ines", "L56.1", sit=False, blend=0.1)
 walk("ines", "L56.1+0.7", [KX + 0.62, -0.15, 0])
 put("ines", "L56.1+0.75", [KX + 0.62, -0.55, -0.06], yaw=180, sit=True, expr="neutral", head=[0, 6])
-put("ines", "L57", [1.8, 0.0, Z4], yaw=yaw_to([1.8, 0.0], [0.0, -0.75]), expr="warm", head=[0, 2], arms=[30, 30])
+put("ines", "L57", [1.8, 0.0, Z4], yaw=yaw_to([1.8, 0.0], [0.0, -0.75]), expr="warm", head=[0, 2], arms=[30, 30], blink=False)
 hide("ines", "L58")
 put("ines", "L62", [2.0, 0.0, Z4], yaw=FACE_IN, expr="neutral")
 hide("ines", "L62+0.2")
@@ -454,8 +461,7 @@ put("ines", "L73", SIT_IN, yaw=YAW_IN, sit=True, expr="asleep", blink=False, hea
 key("ines", "L74", expr="smirk", blend=0.2)
 key("ines", "L74.1", arms=[0, 70], blend=0.3)
 put("ines", "L75", SIT_IN, yaw=YAW_IN, sit=True, expr="smirk", arms=[0, 70], head=[0, 8])
-put("ines", "L76", SIT_IN2, yaw=YAW_IN2, sit=True, expr="warm", arms=[0, 70], head=[-16, 8])
-talk("ines", "L76.1", "L76>")
+put("ines", "L76", SIT_IN2, yaw=YAW_IN2, sit=True, expr="warm", arms=[0, 70], head=[-16, 8], blink=False)
 
 # ---------------------------------------------------------------------------------------------------- cues
 # the Upward: found where it stands, never seen moving. face = which way the top of its picture points (the way
@@ -535,7 +541,7 @@ cues = [
     {"at": "L50", "name": "up", "pos": FIG(3), "face": 0, "mouth": 2},
     {"at": "L51", "name": "up", "pos": FIG(3), "face": 0, "mouth": 3},
     {"at": "L54", "name": "up", "hidden": True},
-    {"at": "L69", "name": "up", "pos": tread(40, 1.7), "face": 135, "mouth": 1, "rim": 0.0},
+    {"at": "L69", "name": "up", "pos": tread(40, 1.7), "face": 156, "mouth": 1, "rim": 0.0},
     {"at": "L70", "name": "up", "hidden": True},
     # the treads the view down the well needs gone
     {"at": 0, "name": "clear", "az": None},
@@ -552,13 +558,18 @@ cues = [
     {"at": "L43", "name": "clear", "az": 0, "span": 55, "z0": 2 * RISE + 0.8, "z1": Z5 + 0.4, "rails": [Z5 - 0.2, Z5 + 1.7], "rail_span": 70},
     {"at": "L47", "name": "clear", "az": None},
     {"at": "L49", "name": "clear", "az": 0, "span": 55, "z0": 3 * RISE + 0.6, "z1": Z4 + 0.5, "rails": [Z4 - 0.5, Z4 + 0.9], "rail_span": 70},
-    {"at": "L54", "name": "clear", "az": None},
+    {"at": "L54", "name": "clear", "az": 25, "span": 75, "z0": 10.5, "z1": 11.6},
+    {"at": "L54.1", "name": "clear", "az": 55, "span": 80, "z0": 12.8, "z1": 14.2},
+    {"at": "L54.2", "name": "clear", "az": 55, "span": 80, "z0": 15.0, "z1": 16.3},
     {"at": "L54.3", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L55", "name": "clear", "az": None},
-    {"at": "L57", "name": "clear", "az": 0, "span": 0, "z0": 99, "z1": 99, "rails": [Z4 - 0.5, Z4 + 1.8], "rail_span": 75},
+    {"at": "L57", "name": "clear", "az": 0, "span": 45, "z0": Z4 + 1.5, "z1": Z4 + 3.4, "rails": [Z4 - 0.5, Z4 + 1.8], "rail_span": 75},
     {"at": "L58", "name": "clear", "az": None},
     {"at": "L66", "name": "clear", "az": 90, "span": 40, "z0": 0.8, "z1": 7.0},
     {"at": "L67", "name": "clear", "az": None},
+    {"at": "L69", "name": "clear", "az": 135, "span": 55, "z0": 8.6, "z1": 12.5, "rails": [6.6, 10.5], "rail_az": 135, "rail_span": 90},
+    {"at": "L70", "name": "clear", "az": None},
+    {"at": "L76", "name": "clear", "az": 150, "span": 0, "z0": 99, "z1": 99, "rails": [6.6, 9.4], "rail_az": 165, "rail_span": 75},
     # the bolt, Ines's door, the sand, the coat and the blanket
     {"at": 0, "name": "bolt", "open": 1.0, "dur": 0.0},
     {"at": "L14+0.15", "name": "bolt", "open": 0.0, "dur": 0.45},

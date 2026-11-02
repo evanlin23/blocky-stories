@@ -109,6 +109,19 @@ def unfog(m):
     nt.links.new(nt.nodes["Principled BSDF"].outputs[0], out.inputs["Surface"])
 
 
+def glow(kit, name, hexc):
+    """An unfogged emissive far-away surface (the beach and the sea): its strength follows the daylight (apply_mode)."""
+    m = kit._new(name)
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    e = nt.nodes.new("ShaderNodeEmission")
+    e.inputs["Color"].default_value = kit.col(hexc)
+    e.inputs["Strength"].default_value = 0.02
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    nt.links.new(e.outputs[0], out.inputs["Surface"])
+    return m, e
+
+
 def materials(kit):
     M = {}
     M["white"] = pbr(kit, "whitewash", "#e6e1d6", 0.85, noise=(2.5, 0.8))
@@ -120,14 +133,13 @@ def materials(kit):
     M["storm"] = kit.planks("#3d3226", "#2a2119", 1.2, "Z", name="storm door")
     M["boards"] = kit.planks("#d8d1c0", "#bdb5a2", 1.0, "X", name="white boards", rough=0.8)
     M["blue"] = pbr(kit, "sea blue door", "#2c6a9a", 0.5)
-    M["sand"] = pbr(kit, "sand", "#8f7a50", 0.95, noise=(9.0, 0.7))
+    M["sand"] = pbr(kit, "sand", "#b49a64", 0.95, noise=(9.0, 0.75))
     M["scratch"] = pbr(kit, "oilskin scratch", "#f0bd30", 0.35)
     M["grass"] = pbr(kit, "grass", "#3a4a2e", 0.95, noise=(1.2, 0.6))
     M["rock"] = pbr(kit, "cliff rock", "#4a4540", 0.95, noise=(0.5, 0.6))
-    M["beach"] = pbr(kit, "beach", "#c2b48c", 0.95)
-    M["sea"] = pbr(kit, "sea", "#3c5a70", 0.35)
-    unfog(M["beach"])
-    unfog(M["sea"])
+    M["beach"], M["beach_node"] = glow(kit, "beach glow", "#cdbd92")
+    M["sea"], M["sea_node"] = glow(kit, "sea glow", "#587d94")
+    M["surf"], M["surf_node"] = glow(kit, "surf glow", "#e8eef0")
     M["dark"] = pbr(kit, "dark room", "#07090c", 0.9)
     M["rope"] = pbr(kit, "rope", "#b59a6a", 0.9, noise=(30.0, 0.6))
     M["wool"] = pbr(kit, "cot blanket", "#5c6b5a", 0.9, noise=(15.0, 0.7))
@@ -142,7 +154,7 @@ def materials(kit):
     M["bag2"] = pbr(kit, "bag two", "#6a3a32", 0.8)
     M["roof"] = pbr(kit, "lamp roof", "#26303a", 0.6)
     M["chair"] = pbr(kit, "chair", "#8a6a48", 0.7)
-    M["sock"] = pbr(kit, "cream sock", "#f4ecd8", 0.95)
+    M["sock"] = pbr(kit, "cream sock", "#efe6d0", 0.95)
     # the Upward
     M["oil"] = pbr(kit, "oilskin", "#d9a92a", 0.5, spec=0.5, noise=(14.0, 0.82))
     M["rust"] = pbr(kit, "rust trousers", "#7a3f22", 0.7)
@@ -168,7 +180,7 @@ def materials(kit):
     M["roomglow"] = m2
     M["roomglow_node"] = e2
     M["warmpane"] = kit.emit("#ffb060", 1.6, name="warm pane")
-    M["shade"] = kit.emit("#ffc88a", 1.4, name="lampshade")
+    M["shade"] = kit.emit("#ffc88a", 0.9, name="lampshade")
     M["sunsea"] = kit.emit("#aab4b8", 0.9, name="grey sea window")
     return M
 
@@ -447,6 +459,7 @@ def build_ground(kit, ctx, M):
     kit.box("cliff", (160, 0.5, 30), (0, 24.2, -15), M["rock"])
     kit.plane("beach", (400, 46), (0, 47.5, -30.2), M["beach"])
     kit.plane("sea", (800, 500), (0, 320, -30.4), M["sea"])
+    kit.plane("surf", (400, 2.6), (0, 112.6, -30.1), M["surf"])
     # a gravel path from the foot door
     kit.plane("path", (2.2, 12), (0, 8, 0.0), pbr(kit, "path", "#6b665c", 0.95), rot=(0, 0, 0))
     # two bags for the arrival (S04)
@@ -693,9 +706,9 @@ MODES = {
     "run": {"win": (1.2, "#7c9ad0"), "shaft": (3.0, "#8aa4d0"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (0.5, None),
             "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
             "cot": (1.0, None), "exp": 0.5, "pane": ("#1e2c40", 0.5), "world": 0.4},
-    "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (12.0, None),
+    "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (4.0, None),
                  "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
-                 "cot": (1.0, None), "exp": 1.2, "pane": ("#1e2c40", 0.5), "world": 0.4},
+                 "cot": (1.0, None), "exp": -0.2, "pane": ("#1e2c40", 0.5), "world": 0.4},
     "night": {"win": (0.25, "#4a6aa0"), "shaft": (0.5, None), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (0.5, None),
               "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
               "cot": (1.0, None), "exp": 0.0, "pane": ("#1e2c40", 0.5), "world": 0.4},
@@ -783,7 +796,10 @@ def apply_mode(kit, ctx, tl, t):
     col = tuple(x + (y - x) * u for x, y in zip(ca, cb))
     node = ctx["pane_node"]
     node.inputs["Color"].default_value = (*(kit.srgb(c) for c in col), 1.0)
-    node.inputs["Strength"].default_value = pa[1] + (pb[1] - pa[1]) * u
+    pst = pa[1] + (pb[1] - pa[1]) * u
+    node.inputs["Strength"].default_value = pst
+    for k_, g_ in (("beach_node", 0.8), ("sea_node", 0.6), ("surf_node", 1.0)):
+        ctx["M"][k_].inputs["Strength"].default_value = max(0.02, (pst - 0.5) * g_)
     w = a["world"] + (b["world"] - a["world"]) * u
     bg = bpy.context.scene.world.node_tree.nodes["Background"]
     bg.inputs["Strength"].default_value = w
@@ -823,10 +839,10 @@ def _dress(kit, story, ctx):
         leg = bpy.data.objects[f"me.leg{sx}"]
         kit.box(f"me.sock{sx}", (1.0, 1.04, 0.78), (0, 0, -1.47), M["sock"], leg, bevel=0.1)
         # the foot itself: a sock with a toe that sticks out in front
-        kit.box(f"me.sockfoot{sx}", (1.0, 1.56, 0.36), (0, -0.28, -1.83), M["sock"], leg, bevel=0.14)
+        kit.box(f"me.sockfoot{sx}", (1.0, 1.56, 0.36), (0, -0.28, -1.83), M["sock"], leg, bevel=0.08)
         kit.box(f"me.sockheel{sx}", (1.0, 0.3, 0.5), (0, 0.4, -1.74), M["sock"], leg, bevel=0.1)
 
-        def clumps(lv, k, xr, yr, z, big=(0.14, 0.3), tall=(0.07, 0.13)):
+        def clumps(lv, k, xr, yr, z, big=(0.07, 0.15), tall=(0.04, 0.08)):
             for q in range(k):
                 w = rng.uniform(*big)
                 ob = kit.box(f"me.sand{sx}_{lv}_{q}", (w, w * rng.uniform(0.8, 1.4), rng.uniform(*tall)),
@@ -834,13 +850,13 @@ def _dress(kit, story, ctx):
                 ob.rotation_euler = (0, 0, rng.uniform(0, 3))
                 sand[lv].append(ob)
         # level 1: a little at the toe and the heel; level 2: the foot's top and sides crusted; level 3: up the ankle
-        clumps(0, 8, (-0.4, 0.4), (-0.95, -0.55), -1.62)
-        clumps(0, 3, (-0.35, 0.35), (0.3, 0.5), -1.6)
-        clumps(1, 30, (-0.42, 0.42), (-1.0, 0.45), -1.62, big=(0.16, 0.34), tall=(0.08, 0.15))
-        clumps(1, 8, (-0.5, -0.46), (-0.9, 0.4), -1.78)
-        clumps(1, 8, (0.46, 0.5), (-0.9, 0.4), -1.78)
-        clumps(2, 16, (-0.45, 0.45), (-0.5, 0.45), -1.28, big=(0.15, 0.3), tall=(0.08, 0.14))
-        clumps(2, 10, (-0.52, 0.52), (-0.48, 0.48), -1.5, big=(0.15, 0.3), tall=(0.08, 0.14))
+        clumps(0, 12, (-0.4, 0.4), (-1.0, -0.6), -1.64)
+        clumps(0, 4, (-0.35, 0.35), (0.3, 0.5), -1.62)
+        clumps(1, 70, (-0.44, 0.44), (-1.0, 0.45), -1.64)
+        clumps(1, 14, (-0.5, -0.5), (-0.9, 0.4), -1.8)
+        clumps(1, 14, (0.5, 0.5), (-0.9, 0.4), -1.8)
+        clumps(2, 30, (-0.45, 0.45), (-0.5, 0.5), -1.28)
+        clumps(2, 24, (-0.52, 0.52), (-0.5, 0.5), -1.5)
     ctx["sand"] = sand
     # Ines: a camel coat (worn), over a flannel shirt
     if bpy.data.objects.get("ines.torso") is not None:
@@ -961,7 +977,7 @@ def animate(kit, story, tl, t, ctx):
     # the faces' fill: a soft light a metre in front of each character, toward the middle of the room
     from blocky import acting as _act
     mode_a, mode_b, u_ = mode_state(tl, t)
-    fg = {"night": 1.0, "run": 3.0, "doorlamp": 3.5, "memory": 2.5, "day": 5.0, "gold": 1.6}
+    fg = {"night": 1.0, "run": 3.0, "doorlamp": 2.5, "memory": 2.5, "day": 5.0, "gold": 1.6}
     cur = _last(_cues(tl, "mode"), t)
     gain_f = fg.get(cur["set"], 1.0) if cur else 1.0
     for who, ln in (("me", "me fill"), ("ines", "ines fill")):
