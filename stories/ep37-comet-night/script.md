@@ -21,7 +21,7 @@ One small hill town in August. Day: a sunny cobbled square of cream stone, a pal
 - **me** (adult, late twenties, narrator): rust-orange zip jacket over a cream tee, dark jeans, black block curls, round black-rimmed glasses. Round eyes, soft brows. **No cord over my head** in every shot until S77.
 - **Dad** (adult, late fifties): oatmeal knit cardigan with brown elbow patches, a dark green shirt, grey trousers, a thin grey side-parted block haircut. Tired eyes, heavy brows. His cord: pale grey, one large matte grey knot, no glow, and one long loose end. His hair steps paler each night (four material swaps: N1 grey #8a8a86, N2 #a2a29e, N3 #b4b4b0, N4 to N5 #c4c4c0). A slump pose from N3.
 - **Mum** (adult): teal cardigan, short dark bob with grey streaks. One shot (S17), at her front door looking up the hill. Two small glowing knots.
-- **Montage townsfolk** (adults only): the bride (ivory suit-dress, flower crown of plain blocks) and groom (charcoal suit) on the steps. The "I'll call you" man (denim jacket, alone at a café table, one dull knot). Two old friends in their seventies (lavender and mustard cardigans) on a bench, their two cords twisted into one. The mayor (burgundy suit, round brass chain medallion with no markings) with so many cords wound round his neck they read as a scarf. A neighbour handing back a folded umbrella (green raincoat) and the woman who lent it (yellow shirt). A small clapping crowd in the square.
+- **Montage townsfolk** (adults only): the bride (ivory suit-dress, flower crown of plain blocks) and groom (charcoal suit) on the steps. The "I'll call you" man (denim jacket, alone at a café table, one dull knot). Two old friends in their seventies (lavender and mustard cardigans) on a bench, their two cords twisted into one. The baker (flour-white apron) with so many cords wound round his neck they read as a scarf. A neighbour handing back a folded umbrella (green raincoat) and the woman who lent it (yellow shirt). A small clapping crowd in the square.
 
 ## The creature: the man with the hole (never named on screen)
 - One model, built once in `set.py` and posed per shot. A person of ordinary height (1.85 m) in a long dome-green coat (#3f7f6a, weathered with darker verdigris streaks #2c5e4d) with two rows of brass buttons (#c8963c), green trousers, dark boots. Skin the same dull verdigris green, never grey.
@@ -67,7 +67,7 @@ Every light change in this story is a slow fade of 1 s or more. Nothing flickers
 ## The hits checklist (RULES.md → What the hits do)
 1. **Rule opener:** L01, "In this town, every promise you make ties a KNOT over your head." (13 words.)
 2. **Marker by 2 s:** S01 opens on the bride and groom, faces in frame, sunlit, each with a cord and one bright rose knot above them. S02 shows the whole square with cords over every head.
-3. **Montage (5 examples in the first 15 s):** the wedding (L02), "I'll call you" (L03), the tangled friends (L04), the mayor's scarf (L05), the kept umbrella and the clapping street (L06 to L07).
+3. **Montage (5 examples in the first 15 s):** the wedding (L02), "I'll call you" (L03), the tangled friends (L04), the baker's scarf (L05), the kept umbrella and the clapping street (L06 to L07).
 4. **Narrator as the exception:** L08 to L09, no cord at all, in the middle of a square full of them (S08).
 5. **Loved one at stake:** Dad, his knot pulling tighter and his face greyer every night (L14, L22 to L24, L32, L36, L46, L51).
 6. **Climax turns the rule's own logic:** a kept promise slips loose. A saved seat is kept only when someone sits in it (L59). I sit, and the knot slips free. No new magic.
@@ -85,7 +85,7 @@ Every light change in this story is a slow fade of 1 s or more. Nothing flickers
 | S04 | L02 | The guests on the steps, their own old dull knots, clapping (cut in mid-clap, no hands touching). |
 | S05 | L03 | The "I'll call you" man alone at a café table, a blank-backed phone face down, one dull knot sagging over him. |
 | S06 | L04 | Two old friends on a bench, their two cords twisted into one between their heads. |
-| S07 | L05 | The mayor in burgundy, beaming, a wad of cords wound round his neck like a scarf, knots glowing in it. |
+| S07 | L05 | The baker in a flour-white apron, beaming, a wad of cords wound round his neck like a scarf, knots glowing in it. |
 | S08 | L06 | The neighbour hands back a folded umbrella (cut on the handover, no grip). The lender's knot loosens and goes in a small slow rose puff. |
 | S09 | L07 | The square claps, wide. |
 | S10 | L08 | Me in the middle of the square, cords over everyone round me, clear air over my head. |
@@ -159,7 +159,7 @@ Every light change in this story is a slow fade of 1 s or more. Nothing flickers
 | S78 | L68 | The ending: two chairs under the dome, both full, no knot over Dad, one new knot over me, pink dawn cloud. Cut on "ONE now." back to S01. |
 
 ## The last 15 seconds turn the first line
-"In this town, every promise you make ties a knot over your head" opens on a square full of debts: the call never made, the mayor's scarf, Dad's grey knot that I took for the promise he broke. L56 to L62 show the grey knot was the one promise kept every August for ten years, waiting for me to sit down. The loop drops back to the square, and on a second watch every bobbing knot reads as someone still keeping a promise, the first line sounds hopeful, and the narrator with no knots is the sad one. Rewatch plants: the cord's loose end running down to my door (S12, S19), and the only clean chair in a dusty dome (S23, S24, "dusty stool" in L21).
+"In this town, every promise you make ties a knot over your head" opens on a square full of debts: the call never made, the baker's scarf, Dad's grey knot that I took for the promise he broke. L56 to L62 show the grey knot was the one promise kept every August for ten years, waiting for me to sit down. The loop drops back to the square, and on a second watch every bobbing knot reads as someone still keeping a promise, the first line sounds hopeful, and the narrator with no knots is the sad one. Rewatch plants: the cord's loose end running down to my door (S12, S19), and the only clean chair in a dusty dome (S23, S24, "dusty stool" in L21).
 
 ## Lore connection (one)
 Two short verdigris-green strokes scratched into the brass collar of the telescope (S75, under L65, "He slid the eyepiece cap across to me"), held 1.6 s, never narrated. In the canon (`stories/lore.md`) it's a plain tally: the dome was built for two, the man with the hole is a Keeper who stood in the empty second place, and its strokes are in its own colour. No extra stroke. It touches no open thread.
@@ -171,7 +171,7 @@ L01. In this town, every promise you make ties a KNOT over your head.
 L02. Say "I do," and you get a bright new one on the STEPS.
 L03. A guy who said "I'll call you" in SPRING still has his.
 L04. Old friends have their cords TANGLED into one.
-L05. The mayor has so many he wears them like a SCARF.
+L05. The baker has so many he wears them like a SCARF.
 L06. Keep one, and it slips loose in a puff of LIGHT.
 L07. And the whole street CLAPS.
 L08. Me? I don't have a single KNOT.

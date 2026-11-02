@@ -35,7 +35,7 @@ def D(x, y, z=0.0):
 # ---------------------------------------------------------------------------------------------------- lines
 # pause beats (0.5 s) after L28, L31, L42, L44, L50, L62, and 0.3 s after L68 before the loop cut
 PAUSES = {"L28": "P1", "L31": "P2", "L42": "P3", "L44": "P4", "L50": "P5", "L62": "P6"}
-HOLDS = {"L61": 0.5, "L66": 0.5}                    # a line's gap, if the voice lands short
+HOLDS = {"L61": 0.5, "L66": 0.5, "L24": 0.6, "L41": 0.6, "L52": 0.6}                    # a line's gap, if the voice lands short
 out_lines = []
 for ln in lines:
     out_lines.append(ln)
@@ -96,7 +96,7 @@ cast = {
                       face={"eyes": "round", "brows": True}),
     "friend2": person("#c99a78", "#d3a53a", "#4c5260", hair="bun", hair_c="#d4d4d4", pattern="knit", pattern_c="#b98f2c",
                       face={"eyes": "lashes", "brows": True}),
-    "mayor": person("#e3b890", "#6e1f35", "#2a2224", hair="buzz", hair_c="#555555", extras=["tie"], extra_c="#d6c27a",
+    "baker": person("#e3b890", "#c9b48a", "#2a2224", hair="buzz", hair_c="#555555", extras=["apron"], extra_c="#f4f1e8",
                     collar="#f0e8d8", face={"eyes": "round", "brows": True}, cord={"knots": [1.8]}),
     "neighbour": person("#d9ac86", "#2f6a4a", "#2f3138", hair="cap", hair_c="#2c2c2c", face={"eyes": "round", "brows": True},
                         cord={"knots": [0.5]}),
@@ -158,7 +158,7 @@ SHOTS = [
     ("S12", "L10", "dome", still(D(-1.5, 0.5, 1.55), D(-0.45, -0.4, 1.5), 17), 4),
     ("S13", "L11", "dome", still(D(-1.2, 0.3, 1.9), D(-0.45, -0.4, 1.8), 25), 4),
     ("S14", "L12", "dusk", still([HX - 1.9, 3.6, 1.75], [HX, 1.3, 1.65], 24), 4),
-    ("S15", "L13", "memory", still([HX + 0.5, 3.6, 1.8], [HX, 0.4, 1.7], 24), 4),
+    ("S15", "L13", "memory", still([HX + 1.3, 3.0, 1.3], [HX + 0.25, 0.45, 1.1], 24), 4),
     ("S16", "L14", "dome", still(D(-1.15, 0.2, 1.75), D(-0.45, -0.4, 1.7), 21), 4),
     ("S17", "L15", "dusk", still([HX + 14.9, 4.4, 1.75], [HX + 16, 1.6, 1.65], 26), 4),
     ("S18", ref("L15", True), "dusk", still([HX + 3, 4, 2.0], hill(0, DOME_YL, 4.5), 55), 4),
@@ -181,7 +181,7 @@ SHOTS = [
     ("S35", "L31", "dome", still(D(-1.2, -0.8, 1.4), D(0, -3.85, 1.0), 30), 4),
     ("S36", "L32", "dome", still(D(-1.3, 0.2, 1.75), D(-0.45, -0.4, 1.7), 20), 4),
     ("S37", "L33", "dome", still(D(1.4, 1.6, 1.4), D(-3.3, -0.5, 1.2), 30), 4),
-    ("S38", "L34", "dome", still(D(-4.0, -0.5, 1.6), D(-0.45, -0.4, 1.4), 28), 4),
+    ("S38", "L34", "dome", still(D(-4.15, -1.3, 1.9), D(-0.45, -0.5, 1.4), 26), 4),
     ("S39", "L35", "dome", still(D(-1.1, 0.3, 1.5), D(-0.45, -0.45, 1.45), 24), 4),
     ("S40", "L36", "dome", still(D(-1.5, 0.2, 1.75), D(-0.45, -0.4, 1.75), 18), 4),
     ("S41", "L37", "dome", still(D(-1.8, -1.3, 1.25), D(-0.45, -0.55, 1.2), 26), 4),
@@ -191,16 +191,16 @@ SHOTS = [
     ("S45", "L40", "dome", still(D(3.0, 3.0, 2.3), D(-0.2, -0.5, 1.2), 20), 4),
     ("S46", ref("L40", True), "dome", still(D(1.5, 1.0, 0.6), D(-0.2, 0.1, 0.55), 24), 4),
     ("S47", "L41", "dome", still(D(1.7, 1.4, 1.5), D(2.9, 2.6, 1.2), 20), 4),
-    ("S48", "L42", "dome", still(D(2.7, 2.4, 1.25), D(-0.45, -1.5, 1.15), 45), 1),
-    ("S49", "L43", "dome", still(D(2.3, -1.4, 1.4), D(-0.45, -1.2, 1.4), 40), 1),
+    ("S48", "L42", "dome", still(D(0.9, 2.2, 2.4), D(-0.45, -1.0, 1.0), 32), 1),
+    ("S49", "L43", "dome", still(D(3.2, -1.0, 1.7), D(-0.45, -0.9, 1.25), 26), 1),
     ("S50", "L44", "dome", still(D(-1.7, -0.3, 0.45), D(-0.45, -1.45, 1.25), 36), 1),
     ("S51", ref("L44", True), "dome", still(D(0.7, 0.0, 1.0), D(-0.45, -1.45, 1.2), 55), 1),
     ("S52", "L45", "dome", still(D(1.7, 1.4, 1.5), D(2.9, 2.6, 1.2), 20), 1),
-    ("S53", "L46", "dome", still(D(2.7, 2.4, 1.25), D(-0.45, -1.5, 1.15), 36), 2),
+    ("S53", "L46", "dome", still(D(0.9, 2.2, 2.4), D(-0.45, -1.0, 1.0), 30), 2),
     ("S54", ref("L46", True), "dome", still(D(-1.3, 0.3, 1.85), D(-0.45, -0.4, 1.75), 24), 4),
     ("S55", "L47", "dome", still(D(0.5, 2.0, 1.5), D(2.9, 2.6, 1.15), 20), 4),
     ("S56", "L48", "dome", still(D(-0.8, -1.3, 1.0), D(-0.2, 0.9, 5.0), 20), 4),
-    ("S57", "L49", "dome", still(D(-0.6, 0.0, 0.6), D(-0.2, 0.3, 6.5), 22), 4),
+    ("S57", "L49", "dome", still(D(-0.3, -2.0, 0.5), D(-0.2, -0.2, 6.0), 22), 4),
     ("S58", "L50", "dome", still(D(-1.4, 0.4, 1.55), D(-0.45, -0.45, 1.45), 18), 4),
     ("S59", "L51", "dome", still(D(-1.3, -1.3, 1.9), D(-0.45, -0.45, 1.75), 18), 4),
     ("S60", ref("L51", True), "dome", still(D(1.6, 1.3, 1.5), D(2.9, 2.6, 1.15), 20), 4),
@@ -208,20 +208,20 @@ SHOTS = [
     ("S62", "L53", "dome", still(D(2.6, 2.0, 1.4), D(0.75, -0.7, 1.0), 32), 1),
     ("S63", "L54", "dome", still(D(1.9, 1.0, 1.2), D(0.75, -0.65, 0.95), 34), 1),
     ("S64", "L55", "dome", still(D(1.3, 0.9, 1.5), D(2.9, 2.6, 1.15), 20), 4),
-    ("S65", "L56", "memory", still([HX + 0.5, 3.6, 1.8], [HX, 0.4, 1.7], 24), 4),
-    ("S66", "L57", "dome", still(D(1.9, -1.7, 1.0), D(0.4, -0.5, 0.5), 30), 4),
+    ("S65", "L56", "memory", still([HX + 1.3, 3.0, 1.3], [HX + 0.25, 0.45, 1.1], 24), 4),
+    ("S66", "L57", "dome", still(D(1.5, 0.7, 1.1), D(0.75, -0.55, 0.55), 30), 4),
     ("S67", "L58", "dome", still(D(-2.0, -0.4, 1.5), D(-0.45, -0.45, 1.5), 20), 4),
     ("S68", "L59", "dome", still(D(1.3, 1.1, 1.5), D(2.9, 2.6, 1.15), 20), 4),
     ("S69", "L60", "dome", still(D(2.3, 1.7, 1.35), D(0.75, -0.55, 1.25), 28), 1),
     ("S70", "L61", "dome", still(D(3.0, 3.0, 2.3), D(-0.2, -0.5, 1.2), 20), 4),
     ("S71", "L62", "dome", still(D(-2.2, 1.6, 1.9), D(-0.2, -0.4, 1.1), 22), 4),
     ("S72", "L63", "dome", still(D(0.2, 2.6, 0.7), D(0.15, -0.55, 1.6), 20), 4),
-    ("S73", "L64", "dome", still(D(1.4, 0.7, 1.5), D(0.75, -0.55, 1.45), 30), 4),
-    ("S74", ref("L64", k=2), "dome", still(D(1.4, 1.0, 1.3), D(0.3, 0.0, 0.75), 28), 4),
+    ("S73", "L64", "dome", still(D(1.6, 1.8, 1.55), D(0.3, -0.5, 1.4), 28), 4),
+    ("S74", ref("L64", k=2), "dome", still(D(1.3, 1.4, 1.6), D(0.4, -0.4, 1.1), 30), 4),
     ("S75", ref("L65", k=1), "dome", still(D(0.7, 0.65, 1.9), D(-0.27, 0.654, 1.87), 28), 4),
     ("S76", "L66", "dome", still(D(0.15, 1.6, 1.45), D(0.15, -0.55, 1.45), 16), 4),
     ("S77", "L67", "dome", still(D(1.4, 0.6, 1.45), D(0.75, -0.55, 1.4), 28), 4),
-    ("S78", "L68", "dome", still(D(0.15, 1.9, 1.5), D(0.15, -0.55, 1.5), 17), 4),
+    ("S78", "L68", "dome", still(D(0.15, 1.9, 1.5), D(0.15, -0.55, 1.5), 22), 4),
 ]
 shots = []
 for sid, at, scene, cam, step in SHOTS:
@@ -265,7 +265,7 @@ put("c4", 0, [2.6, 9.9, 0.54], 0, "neutral")
 put("callman", 0, [9.3, -1.0, SEAT - 0.68], 90, "worried", sit=True, head=[0, 10])
 put("friend1", 0, [-8.5, -1.7, SEAT - 0.68], 90, "grin", sit=True, head=[-15, 0])
 put("friend2", 0, [-8.5, -0.5, SEAT - 0.68], 90, "grin", sit=True, head=[15, 0])
-put("mayor", 0, [3.5, 2.5, 0], 0, "grin")
+put("baker", 0, [3.5, 2.5, 0], 0, "grin")
 put("neighbour", 0, [-3.4, -1.6, 0], 90, "smirk", arms=[80, 80])
 put("lender", 0, [-2.0, -1.6, 0], -90, "grin", arms=[80, 80])
 put("c5", 0, [-1.6, -1.2, 0], 0, "neutral")
@@ -280,7 +280,7 @@ put("me", 0, [0, -2.2, 0], 0, "neutral", hidden=True)
 for who in ("c1", "c2", "c3", "c4"):
     key(who, ref("L02", True), arms=[82, 82], side=[-14, -14], blend=0.1)
     key(who, "L03", arms=[0, 0], side=[0, 0], blend=0.2)
-for who in ("c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "bride", "groom", "mayor"):
+for who in ("c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "bride", "groom", "baker"):
     key(who, "L07", arms=[82, 82], side=[-14, -14], blend=0.1)
     key(who, "L08", arms=[0, 0], side=[0, 0], blend=0.3)
 # the umbrella handover: the lender's knot lets go
@@ -291,6 +291,7 @@ key("me", "L09", expr="smirk", side=[38, 38], head=[0, 6], blend=0.25)
 # me on my doorstep at dusk, looking up the hill
 put("me", "L12", DOORSTEP, 180, "worried", head=[0, -10])
 # Dad in my doorway ten years ago (S15), then back to the chair
+put("me", "L13", DOORSTEP, 180, "worried", hidden=True)
 put("dad", "L13", [HX, 0.45, 0], 180, "worried")
 put("dad", "L14", D(-0.45, -0.58, SITZ), 180, "shut", sit=True, lean=10)
 put("mum", "L15", [HX + 16, 1.6, 0], 180, "worried", head=[0, -10])
@@ -386,11 +387,13 @@ cue("cordset", "L62", who="dad", len=0.34, stand=0.0, dur=1.2)
 cue("knot", ref("L06", k=1), who="lender", i=0, scale=0.0, dur=1.2)
 cue("puff", ref("L06", k=1), who="lender", dur=1.2)
 cue("puff", "L62", who="dad", dur=1.2)
-cue("knot", "L67", who="me", i=0, scale=1.0, dur=1.0)
+cue("knot", "L67", who="me", i=0, scale=1.6, glow=0.3, dur=1.0)
 cue("cap", ref("L64", k=2))
 # the sky through the slit: cloud over 3 s at L48, pink dawn over 8 s from L66
 cue("cloud", 0, amount=0.0, pink=0.0)
-cue("cloud", "L48", amount=1.0, dur=3.0)
+cue("cloud", "L48+1.2", amount=1.0, dur=3.0)
+cue("cloudroll", "L48", dur=5.0)
+cue("cloudroll", "L66", gone=True)
 cue("cloud", "L66", pink=1.0, dur=8.0)
 # the dome's bulbs fade over 2 s, never a switch
 cue("dome", 0, bulbs=1.0)
@@ -409,6 +412,8 @@ cue("keeper", "L40", hidden=True)
 cue("keeper", "L42", hidden=False, pos=[-0.45, -1.55], yaw=180, bend=26, head=[0, 10])
 cue("keeper", "L46", hidden=True)
 cue("keeper", "L53+1.5", hidden=False, pos=[0.75, -0.62], yaw=180, sit=0.55, head=[0, 8])
+cue("keeper", "L57", hidden=True)
+cue("keeper", "L58", hidden=False, pos=[0.75, -0.62], yaw=180, sit=0.55, head=[0, 8])
 cue("keeper", "L60", hidden=True)
 cue("streak", ref("L44", True), dur=1.5)
 
@@ -432,6 +437,7 @@ sfx = [
     {"at": "L62", "kind": "whoosh", "db": -22, "dur": 1.2},
     {"at": ref("L64", k=2), "kind": "click", "db": -16},                      # the cap's tick on wood
     {"at": "L12", "kind": "whoosh", "db": -34, "dur": 1.0},
+    {"at": "P7", "kind": "bell", "db": -18, "dur": 1.5},                      # the closing sound
 ]
 music = {"root": 45, "mode": "minor", "bpm": 80, "seed": 37, "sections": [
     {"at": 0, "voices": ["pulse", "pad", "drone"], "energy": 0.5},

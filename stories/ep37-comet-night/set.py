@@ -307,7 +307,7 @@ def materials(kit, wd: Path):
     M["kskin"] = kit.plastic("#4d7f69", 0.6, name="keeper skin")
     M["ktrou"] = kit.plastic("#2d5c4a", 0.7, name="keeper trousers")
     M["kboot"] = kit.plastic("#171b19", 0.5, name="keeper boots")
-    M["lens"] = kit.metal("#9a7a40", 0.3, name="lens ring")
+    M["lens"] = glow_mat(kit, "lens ring", "#b8903e", 0.7)
     M["black"] = kit.plastic("#050506", 0.2, name="lens black")
     M["hole"] = hole_mat(kit)
     M["glint"] = glow_mat(kit, "glint", "#f0f6ff", 9.0)
@@ -426,7 +426,7 @@ def build_square(kit, ctx, M):
     # an umbrella (the kept promise), folded, rests on the neighbour's forearms
     ctx["umbrella"] = kit.cyl("umbrella", 0.045, 0.95, (-2.7, -1.62, 1.02), kit.plastic("#2f5d44", 0.7, name="umbrella"),
                               rot=(math.pi / 2, 0, math.pi / 2))
-    # the mayor's scarf of cords and his round blank medallion, built where he stands (3.5, 2.5)
+    # the baker's scarf of cords, built where he stands (3.5, 2.5)
     mx, my = 3.5, 2.5
     rnd = random.Random(5)
     ctx["scarf"] = []
@@ -440,12 +440,9 @@ def build_square(kit, ctx, M):
             seg_between(ob, (mx + r * math.cos(a), my + r * math.sin(a), z + 0.02 * math.sin(a * 3)),
                         (mx + r * math.cos(a2), my + r * math.sin(a2), z + 0.02 * math.sin(a2 * 3)), 0.05)
             if k % 2 == ring % 2:
-                m = knot_mat(kit, f"scarf knot {ring}{k}", "#7a4458", ROSE, rnd.choice((0.6, 1.2, 2.0)))
+                m = knot_mat(kit, f"scarf knot {ring}{k}", ROSE, ROSE, rnd.choice((0.5, 0.8, 1.0)))
                 kit.box(f"scarfk{ring}-{k}", (0.07, 0.07, 0.07), (mx + (r + 0.03) * math.cos(a), my + (r + 0.03) * math.sin(a), z), m,
                         bevel=0.02)
-    kit.cyl("chain medallion", 0.11, 0.025, (mx, my - 0.55, 0.98), M["brass"], rot=(math.pi / 2, 0, 0))
-    box(kit, "chain", (0.5, 0.02, 0.025), (mx, my - 0.52, 1.18), M["brass"], rot=(0, 0.55, 0))
-    box(kit, "chain2", (0.5, 0.02, 0.025), (mx, my - 0.52, 1.18), M["brass"], rot=(0, -0.55, 0))
 
 
 # ------------------------------------------------------------------------------------------------ the hill
@@ -544,7 +541,6 @@ def build_dome(kit, ctx, M):
         w = 2 * math.pi * R / n + 0.05
         box(kit, f"dwall{k}", (w, 0.22, 3.1), D((R + 0.1) * math.cos(a), (R + 0.1) * math.sin(a), 1.55), M["wall"],
             rot=(0, 0, a + math.pi / 2))
-    kit.cyl("dome wall cap", R + 0.25, 0.2, D(0, 0, 3.1), M["woodB"], n=48)
     dome_shell(kit, "dome inside", 4.55, 3.1, M["dome_in"], 1.1, -0.2, loc=(CX, 0, 0))
     # the arched plank door in the south wall, closed
     box(kit, "dome door", (1.15, 0.12, 2.0), D(0, -R - 0.02, 1.0), M["woodB"])
@@ -619,6 +615,18 @@ def build_dome(kit, ctx, M):
     # a cold starlight rim from the slit, a soft one, so a silhouette keeps an edge
     kit.light("rim", "AREA", D(-0.35, 1.6, 6.4), 380, "#7d9dff", rot=(0, 0, 0), size=2.4)
     kit.light("fill", "POINT", D(1.2, 1.2, 2.4), 45, "#d6e0ff", size=0.5)
+    kit.light("kside", "POINT", D(1.7, -3.1, 1.4), 70, "#ffd2a0", size=0.15)
+    kit.light("kred", "POINT", D(-0.6, 1.4, 1.3), 60, "#c0463a", size=0.3)
+    kit.light("seat", "POINT", D(1.3, 0.4, 1.6), 40, "#ffb48a", size=0.2)
+    kit.light("shoulder", "POINT", D(-2.8, -1.2, 2.2), 45, "#c0463a", size=0.3)
+    # blocky clouds that roll over the slit (a rigid cluster that slides in animate)
+    cm = glow_mat(kit, "cloud block", "#6b717e", 0.9)
+    ctx["cloud_blocks"] = []
+    rc = random.Random(9)
+    for ix in range(0, 9):
+        for iy in range(-4, 5):
+            ctx["cloud_blocks"].append((ix, iy, kit.box(f"cloud{ix}_{iy}", (2.2, 2.2, 0.8 + rc.random() * 0.8),
+                                                         (CX, 0, 9.0 + rc.random() * 0.4), cm, bevel=0.15)))
     sph = kit.sphere("sky dome sph", 1.0, (CX, 0, 0), M["sky_dome"], seg=24)
     sph.scale = (350, 350, 350)
     sph.visible_shadow = False
@@ -723,15 +731,16 @@ def build_cords(kit, story, ctx, M):
                 size = 0.11
             else:
                 dull = st < 0.8
-                m = knot_mat(kit, f"knot {who} {i}", "#a07688" if dull else "#ff9ab8", ROSE if not dull else "#c08a9c", st)
-                size = 0.1
+                st = min(st, 1.2) * 0.8 if not dull else st
+                m = knot_mat(kit, f"knot {who} {i}", "#a07688" if dull else ROSE, ROSE if not dull else "#c08a9c", st)
+                size = 0.1 if dull else 0.13
             ob = kit.box(f"{who}.knot{i}", (size, size, size), (0, 0, 0), m, bevel=size * 0.3)
             knots.append({"ob": ob, "mat": m, "size": size, "base": st})
         ctx["cords"][who] = {"segs": segs, "knots": knots, "tail": tail, "spec": cs, "ph": random.Random(sum(map(ord, who))).uniform(0, 6.28)}
     # the old friends' shared cord: two strands twisted between their heads, drawn in animate
     ctx["twin"] = {"a": [kit.box(f"twin.a{i}", (1, 1, 1), (0, 0, 0), M["cord"]) for i in range(14)],
                    "b": [kit.box(f"twin.b{i}", (1, 1, 1), (0, 0, 0), M["cord"]) for i in range(14)],
-                   "knots": [knot_mat(kit, f"twin knot {i}", "#ff9ab8", ROSE, 1.6) for i in range(2)]}
+                   "knots": [knot_mat(kit, f"twin knot {i}", ROSE, ROSE, 0.9) for i in range(2)]}
     ctx["twin"]["kobs"] = [kit.box(f"twin.knot{i}", (0.07, 0.07, 0.07), (0, 0, 0), m, bevel=0.02) for i, m in enumerate(ctx["twin"]["knots"])]
     # a rose puff for a kept promise: a soft bloom and a ring of sparks
     pm = M["puff"]
@@ -845,6 +854,16 @@ def animate(kit, story, tl, t, ctx):
     dm.node_tree.nodes["bgh"].outputs[0].default_value = (h.x, h.y, h.z, 1)
     dm.node_tree.nodes["bgz"].outputs[0].default_value = (z_.x, z_.y, z_.z, 1)
     dm.node_tree.nodes["stars"].outputs[0].default_value = max(0.0, 1.0 - amt * 1.2)
+    ctx["sky_dome"].hide_render = sc != "dome"
+    ctx["sky_hill"].hide_render = sc == "dome"
+    rl = _last(_cues(tl, "cloudroll"), t)
+    on = sc == "dome" and rl is not None and not rl.get("gone")
+    for ix, iy, ob in ctx["cloud_blocks"]:
+        ob.hide_render = not on
+    if on:
+        u = _ss((t - rl["t"]) / rl.get("dur", 5.0))
+        for ix, iy, ob in ctx["cloud_blocks"]:
+            ob.location = (CX - 11.0 + 15.0 * u - ix * 2.0 + (0.7 if iy % 2 else 0.0), iy * 2.0, ob.location[2])
     # sitting legs, and the cast's hair
     for who, keys in tl.get("acting", {}).items():
         sit = False
@@ -890,6 +909,22 @@ def animate(kit, story, tl, t, ctx):
     kit.LIGHTS["rim"]["light"].color = tuple(V((0.49, 0.62, 1.0)).lerp(V((1.0, 0.7, 0.72)), pink))
     gains["rim"] = (0.55 + 1.1 * (1.0 - bulbs)) if sc == "dome" else 0.0
     gains["fill"] = (0.5 * bulbs + 0.5) if sc == "dome" else 0.0
+    sid = spec["id"]
+    kshot = sid in ("S30", "S31", "S32", "S33", "S34")
+    if kshot:      # the creature reads as a person, not a robot: one side key, no fill, only the eyes and the hole bright
+        gains["fill"] = 0.0
+        for i in range(4):
+            gains[f"bulb{i}"] = 0.12
+        gains["rim"] = 0.2
+        gains["red"] = 0.0
+        gains["red2"] = 0.0
+        bpy.context.scene.world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0.12
+    elif sc == "dome":
+        bpy.context.scene.world.node_tree.nodes["Background"].inputs["Strength"].default_value = SCENES[sc][1]
+    gains["kside"] = 1.0 if kshot else 0.0
+    gains["kred"] = 1.0 if sid in ("S48", "S49", "S50", "S53") else (0.5 if sid in ("S62", "S63") else 0.0)
+    gains["seat"] = 1.0 if sid == "S66" else (0.8 if sid == "S49" else 0.0)
+    gains["shoulder"] = 1.0 if sid == "S38" else 0.0
     # shooting stars (rare) over the slit
     # the doors, the bag
     ctx["mine hinge"].rotation_euler = (0, 0, math.radians(-100 if sc == "memory" else 0))

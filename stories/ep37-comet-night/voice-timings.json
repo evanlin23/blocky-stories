@@ -122,30 +122,30 @@
    ]
   },
   "L05": {
-   "text": "The mayor has so many he wears them like a scarf.",
+   "text": "The baker has so many he wears them like a scarf.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
+   "dur": 2.293,
    "onset": 0.155,
-   "end": 2.086,
+   "end": 2.103,
    "chunks": [
     [
      0.155,
-     0.56
+     0.612
     ],
     [
-     0.56,
-     1.052
+     0.612,
+     1.069
     ],
     [
-     1.052,
-     1.439
+     1.069,
+     1.457
     ],
     [
-     1.439,
-     2.086
+     1.457,
+     2.103
     ]
    ]
   },
