@@ -592,6 +592,11 @@ def animate(kit, story, tl, t, ctx):
     for k in range(4):
         over[f"tube{k}"] = g * dim
     over["table lamp"] = g * dim
+    # while the tubes are down the whole room sinks with them (the street through the glass, the dryer windows), slowly
+    over["street"] = 0.3 + 0.7 * g
+    over["street2"] = 0.3 + 0.7 * g
+    for k in range(3):
+        over[f"dryer glow{k}"] = 0.45 + 0.55 * g
     over["tally lamp"] = 1.0 if sid in story.get("tally_shots", []) else 0.0
     over["me lamp"] = 1.0 if sid in story.get("lamp_shots", []) else 0.0
     over["hook lamp"] = 1.0 if sid in story.get("hook_lamp_shots", []) else 0.0
