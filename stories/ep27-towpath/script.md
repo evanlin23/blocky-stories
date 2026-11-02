@@ -4,7 +4,7 @@
 - **Revision 1 (standards and critic round 1):** a new twist. The copied voice and the roll call are gone (they were ep23 `only-line`'s). The Long Man is silent in every line. The twist is now about a place: Moss's spot in the grass by the back ring, empty since her legs went. Nearly every line changed, so re-voice the whole story.
 - **Title:** in `package.json`.
 - **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 627 spoken words in 72 lines, all `narrator` in voice A, plus 3 pause beats (3.0 s in all).
+- **Word count:** 627 spoken words in 72 lines, all `narrator` in voice A, plus 4 pause beats (3.25 s in all).
 - **Estimated length:** the speech is 2:10 at 290 wpm and 2:15 at 278 wpm. The 0.12 s gaps add 8.5 s, the pause beats 3.0 s, the lead and loop tail 0.5 s. So the cut lands about 2:22 to 2:27. If the retime runs under 2:15, lengthen P02 to 1.4 s, then P03 to 2.0 s. If it runs over 2:30, cut L41 first, then L48. Never change the voice's speed.
 - **Shots:** about 72. Each section gives its count.
 - **Tense:** L01 and L68 to L72 are the present (the narrator's now, after the story). L03 to L06 are the twelve good years. Everything else is this autumn.
@@ -269,6 +269,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L72` narrator: On our BOAT, / the day starts / with GOOD MORNING. / Then MOSS lies down / on the TOWPATH.
   - [shot 1's framing, lighter: me at the hatch in the foreground, front fill, `smirk`, and behind me in the grass by the back ring, Moss rolled over, chin up to the sky. The towpath beyond is empty. Plain hard cut on the loop tail to shot 1]
 
+- `P04` pause 0.25 s: none
+  - [the loop beat: no words, the water carries on; no fade at either end]
 ## The lore connection
 
 - **What:** a plain Keeper tally, two short upright strokes, pressed into the top of the back mooring ring by Moss's spot, in the Long Man's canal-weed green (`#4d6638`). One stroke for me and one for Moss. A boat is counted with everyone aboard, a dog included. There's no extra stroke, because Moss is back in her place and it's no longer lying in the gap.

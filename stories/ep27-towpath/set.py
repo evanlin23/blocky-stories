@@ -55,17 +55,18 @@ STATES = {
     "wide":   dict(fog="#c6cecd", dens=0.006, ws=1.00, exp=-0.20, key=0.7, rim=0.6, fill=1.00, eye=1.0, warm=0.0),
     "wide3":  dict(fog="#a9b5ba", dens=0.002, ws=0.85, exp=-0.15, key=1.0, rim=1.0, fill=0.9, eye=1.0, warm=0.0),
     "wide2":  dict(fog="#aab6bb", dens=0.012, ws=0.85, exp=-0.20, key=1.0, rim=1.0, fill=0.85, eye=1.0, warm=0.0),
+    "wide4":  dict(fog="#a9b5ba", dens=0.0, ws=0.55, exp=-0.55, key=0.55, rim=0.5, fill=0.8, eye=1.0, warm=0.0),
     "night":  dict(fog="#7f8f99", dens=0.026, ws=0.75, exp=-0.15, key=0.5, rim=0.4, fill=0.90, eye=0.5, warm=0.0),
     "thick":  dict(fog="#a3aeb3", dens=0.055, ws=0.55, exp=-0.25, key=1.0, rim=1.0, fill=0.85, eye=0.45, warm=0.0),
-    "hook":   dict(fog="#c8d0cf", dens=0.005, ws=1.00, exp=-0.12, key=0.9, rim=0.7, fill=1.00, eye=0.5, warm=0.0),
+    "hook":   dict(fog="#c8d0cf", dens=0.0, ws=1.00, exp=-0.12, key=0.9, rim=0.7, fill=0.25, eye=0.5, warm=0.0),
     "scare":  dict(fog="#8e9ca2", dens=0.05, ws=0.28, exp=-0.05, key=0.3, rim=1.0, fill=0.45, eye=1.8, warm=0.0),
     "clear1": dict(fog="#c2cac9", dens=0.030, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "clear2": dict(fog="#cad3d1", dens=0.012, ws=1.00, exp=-0.30, key=0.5, rim=0.4, fill=1.00, eye=0.5, warm=0.4),
     "morning": dict(fog="#d4dcd8", dens=0.014, ws=1.00, exp=-0.08, key=0.4, rim=0.3, fill=1.00, eye=0.0, warm=0.6),
 }
 for _k, _v in STATES.items():           # the water's mirror (specular level, roughness): the high wides turn it matte so they don't white out
-    _v.setdefault("wsp", 0.15 if _k in ("wide", "wide2", "wide3") else 0.9)
-    _v.setdefault("wr", 0.55 if _k in ("wide", "wide2", "wide3") else 0.12)
+    _v.setdefault("wsp", 0.15 if _k in ("wide", "wide2", "wide3", "wide4") else 0.9)
+    _v.setdefault("wr", 0.55 if _k in ("wide", "wide2", "wide3", "wide4") else 0.12)
 LIGHT_BASE = {            # name -> (kind, loc, aim, power, colour, size)
     "sky": ("AREA", (8, -6, 14), (8, 0, 0), 1500, "#dfe6ea", 22),
     "warm": ("AREA", (8, -24, 5), (8, 0, 1), 9000, "#ffd9a0", 14),
@@ -566,12 +567,11 @@ def stretch_long(kit_, ctx):
                                         (rnd.uniform(-0.85, 0.85), -0.53, 2.0 - rnd.uniform(0.3, 2 * kt - 0.5)), bead, tor, seg=8))
     # a man's face: a nose, two ears, a heavy brow, a neck and a collar, so the head isn't a bare cylinder
     R = faces.HEAD_R
-    kit_.box("longman.nose", (0.2, 0.34, 0.42), (0, -R - 0.06, -0.06), skin, head, bevel=0.06)
-    kit_.box("longman.nosetip", (0.26, 0.16, 0.16), (0, -R - 0.2, -0.2), skin, head, bevel=0.05)
+    kit_.box("longman.nose", (0.18, 0.26, 0.38), (0, -R - 0.04, -0.04), skin, head, bevel=0.06)
+    kit_.box("longman.nosetip", (0.24, 0.12, 0.14), (0, -R - 0.13, -0.16), skin, head, bevel=0.05)
     for sx in (-1, 1):
         kit_.box(f"longman.ear{sx}", (0.1, 0.24, 0.4), (sx * (R + 0.02), 0.05, -0.02), skin, head, bevel=0.04)
-        kit_.box(f"longman.cheek{sx}", (0.26, 0.1, 0.16), (sx * 0.34, -R + 0.01, -0.22), skin, head, bevel=0.04)
-    kit_.box("longman.brow", (1.0, 0.1, 0.1), (0, -R + 0.01, 0.27), kit_.plastic("#1f2a18", 0.8, "ln brow"), head, bevel=0.03)
+    kit_.box("longman.brow", (1.0, 0.08, 0.07), (0, -R + 0.01, 0.3), kit_.plastic("#1f2a18", 0.8, "ln brow"), head, bevel=0.03)
     kit_.box("longman.neckm", (0.95, 0.85, 0.7), (0, 0, 0.0), skin, bpy.data.objects["longman.neck"], bevel=0.1)
     kit_.box("longman.collar", (1.45, 1.15, 0.34), (0, 0, 1.98), lapel, tor, bevel=0.1)
     # hair lying flat and wet on the skull: a thin fringe over the brow, never upright
