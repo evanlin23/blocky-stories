@@ -8,7 +8,7 @@
 - **Shots:** about 72, a new shot on almost every line.
 
 ## Premise
-Every autumn I camped on a high moor with Grandad, beside the same old stone fire ring with three flat seats round it: his, mine and an empty one, where Grandad propped his phone (the only spot with a bar) to ring Gran. This year his knees can't do the climb, so Dad comes instead. Dad has never camped in his life, yet he pitches the tent perfectly, sits on Grandad's seat and makes a stew that tastes exactly like Grandad's. It feels like he's trying to be him. Each evening, while Dad walks down the hill "to find signal", someone in heather purple with hands as big as the tent door stands out past the firelight, one stepping stone nearer the ring each night.
+Every autumn I camped on a high moor with Grandad, beside the same old stone fire ring with three flat seats round it: his, mine and an empty one, where Grandad propped his phone (the only spot with a bar) to ring Gran. This year his knees can't do the climb, so Dad comes instead. Dad has never camped in his life, yet he pitches the tent perfectly, sits on Grandad's seat and makes a stew that tastes exactly like Grandad's. It feels like he's trying to be him. Each evening, while Dad walks down the hill to make a call where I can't hear, someone in heather purple with hands as big as the tent door stands out past the firelight, one stepping stone nearer the ring each night.
 
 ## The rule
 A place is kept for its number. The ring was built for three, and the empty seat has to hold someone. In Grandad's years it held Gran's voice on the phone. This year it holds nobody, so Big Hands keeps it. Never said on screen.
@@ -16,7 +16,7 @@ A place is kept for its number. The ring was built for three, and the empty seat
 ## Twist (and where it's planted)
 The stew is Grandad's. He cooked it and sent it up in his dented flask, and every evening Dad has been ringing him from the bottom of the hill to be talked through each step of the camp, because he wanted the moor to feel the way it did with Grandad, for me. "Tastes EXACTLY like Grandad's" turns from a sting (he's trying to replace him) into proof that he asked for help.
 - **Plant 1:** Grandad pours stew from the dented green flask in the memory shot (L06, never named), the same flask stands upright in Dad's open pack on night one (L11, held 1.5 s or more), and Dad makes the stew with his back to me (L11).
-- **Plant 2:** Dad walks off down the hill "to find SIGNAL" every evening (L14, L23) and comes back knowing new things: how to bank a fire (L21), which way the wind will turn (L28).
+- **Plant 2:** Dad walks off down the hill "to make a CALL, where I couldn't HEAR" every evening (L14, L23) and comes back knowing new things: how to bank a fire (L21), which way the wind will turn (L28).
 - **The turn, last 15 seconds (L66 to L70):** the stones are empty, Grandad on the phone asks "How's my STEW?", Dad goes red and sets down the dented flask, and the first line comes back with "It IS."
 
 ## World
@@ -65,7 +65,7 @@ A high moor in autumn, made up and unnamed: brown and purple heather, a peat bog
 
 ## Plants that must be visible (checklist for the builder)
 - The dented green flask: L06 (Grandad pouring stew from it, memory), L11 (upright in Dad's open pack beside him, mouth of the pack to camera, 1.5 s or more), L69 (Dad sets it on the hearth stone).
-- Dad leaving to find signal: L14 (Dad walking down the hill at dusk, back to us, a phone screen glow at his hand), L23 (the same path, later dusk), L49 (morning, me following at a distance).
+- Dad leaving to call: L14 (Dad walking down the hill at dusk, back to us, a phone screen glow at his hand), L23 (the same path, later dusk), L49 (morning, me following at a distance).
 - The phone on the empty seat: L05 (memory: Grandad's phone propped on it, screen glowing), L64 and L65 (our phone propped on it), L70 (still there in the last shot).
 - R6 hands can't grip: the phone and flask always rest on stone or sit in a pack. At L14 and L23 the phone is a small glowing slab at Dad's hand seen from behind, no grip detail. L69 is a cut: the flask lands on the stone in frame, Dad's hand only at the edge.
 
@@ -101,7 +101,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
   - [LORE PLANT, shot 13: the pot on the hearth stone, steam, the three heather-purple strokes on the stone upper left, 25 to 50% frame height, 1.5 s or more]
 - `L13` narrator: Like he was trying / to BE him.
   - [my face over the mug, `worried`, Dad blurred behind on Grandad's seat]
-- `L14` narrator: When TEA was done, / Dad walked off / down the HILL / to find SIGNAL.
+- `L14` narrator: When TEA was done, / Dad walked off / down the HILL / to make a CALL, / where I couldn't HEAR.
   - [wide at dusk from the ring: Dad walking down the slope toward the wall, back to us, a small phone glow at his hand. A curlew-like call]
 - `L15` narrator: Alone at the FIRE, / I looked out / past the LIGHT.
   - [me on my seat, the fire between me and camera, looking east into blue dusk]
@@ -123,7 +123,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
   - [two-shot across the fire, both looking at the flames, a gap of silence]
 
 ## 03 Night two (shots 27 to 35)
-- `L23` narrator: Night TWO, / Dad went down / for signal AGAIN.
+- `L23` narrator: Night TWO, / Dad went down / to call AGAIN.
   - [the same wide as L14, later dusk, Dad's phone glow going down the hill]
 - `L24` narrator: And it was standing / on the MIDDLE stone.
   - [my point of view: Big Hands on the middle stone, 6 m out, bigger in frame]
@@ -183,7 +183,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
   - [top shot: frost all over the slab except a dark dry patch the shape of a seated person]
 
 ## 05 The call (shots 53 to 62)
-- `L49` narrator: Dad went off / to find signal AGAIN.
+- `L49` narrator: Dad went off / to call AGAIN.
   - [morning, Dad heading down the hill, phone glow at his hand]
 - `L50` narrator: This time, / I FOLLOWED him.
   - [me behind the drystone wall, `neutral`, Dad small below]
@@ -203,7 +203,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
   - [the phone on the gatepost, static crackle]
 - `L57` narrator: Every trick / Dad came back with / had come from GRANDAD, / down the PHONE.
   - [quick memory cuts: Dad banking the fire (L21), Dad turning the tent door (L28), each with the gatepost phone glow cut in]
-- `L58` narrator: He'd rung him / every NIGHT, / to get it RIGHT / for ME.
+- `L58` narrator: He'd rung him / every NIGHT, / where I couldn't HEAR, / to get it RIGHT / for ME.
   - [my face behind the wall, `soft`]
 
 ## 06 The fire (shots 63 to 72)
@@ -215,7 +215,7 @@ Each line gives the id, then the caption chunks split with ` / `. The spoken tex
   - [my face, `soft`]
 - `L62` narrator: He looked at his BOOTS / for a long TIME.
   - [Dad looking down at his boots, then a wobbly smile, `grin`]
-- `L63` narrator: That EVENING, / we carried the PHONE / up to the RING.
+- `L63` narrator: At SUNSET, / we carried the PHONE / up to the RING.
   - [sunset, gold sky, the two of us climbing through heather side by side. A curlew-like call]
 - `L64` narrator: On the EMPTY seat, / it found / ONE BAR.
   - [the phone propped on the empty seat, screen glowing, sunset behind]
