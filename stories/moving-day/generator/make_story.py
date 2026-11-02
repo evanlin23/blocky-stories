@@ -105,9 +105,9 @@ SHIFT = (1.36, 0.0, 1.2)
 
 
 def solo(shift):
-    a = ([-1.25 + shift[0], -0.62 + shift[1], 0.40 + shift[2]], [0.3 + shift[0], -0.79 + shift[1], 0.12 + shift[2]])
-    b = ([-1.17 + shift[0], -0.64 + shift[1], 0.39 + shift[2]], a[1])
-    return move(a, b, 24, 25)
+    a = ([-0.95 + shift[0], -1.3 + shift[1], 0.85 + shift[2]], [0.12 + shift[0], -0.5 + shift[1], 0.42 + shift[2]])
+    b = ([-0.88 + shift[0], -1.27 + shift[1], 0.84 + shift[2]], a[1])
+    return move(a, b, 17, 18)
 
 
 SOLO_L01 = solo((0, 0, 0))
@@ -122,14 +122,15 @@ SHOTS = [
      SOLO_L01),
     ("L02", "hall", "my flat hands on its shins", 2, still([-1.2, -0.35, 1.9], [0.05, -0.8, 0.7], 22)),
     ("L03", "hall", "a slow tilt up the Boxes to the frown at the ceiling, me beside it for scale", 2,
-     move(([-2.0, -1.3, 0.55], [0.1, -0.5, 1.4]), ([-2.0, -1.3, 0.55], [0.0, -0.5, 1.55]), 14)),   # Mum's door frame, lower than the stack
+     c([0, [-1.5, -1.05, 0.38], [0.55, -0.89, 0.3], 22], [0.35, [-1.6, -1.1, 0.45], [0.5, -0.89, 0.45], 20],
+       [1, [-2.0, -1.3, 0.55], [0.0, -0.5, 1.55], 14])),   # Mum's door frame, lower than the stack
     ("L04.3", "hall", "the frown, close", 4, FROWN),
     ("L05", "front", "the low ceiling: me carrying a box under the bare bulb, the ceiling just over my head", 2,
      still([-1.1, -2.3, 1.2], [-2.6, -3.3, 1.55], 18)),
     ("L06", "kitchen", "Mum tired just inside the kitchen door, head down, the Boxes' legs in the hall behind her", 2,
      still([0.85, -3.25, 1.4], [0.45, -1.8, 1.3], 24)),
     ("L07", "front", "Mum hanging the old house's photo at eye height, her mouth going", 2,
-     still([-2.5, -1.75, 1.7], [-4.4, -2.7, 1.3], 20)),
+     still([-2.55, -1.95, 1.62], [-4.1, -2.65, 1.45], 20)),
     ("L08", "front", "my face to a box I'm carrying, eyes shut", 2, still([-1.5, -2.6, 1.55], [-2.4, -3.6, 1.35], 24)),
     ("L09", "front", "Mum folds the flaps shut over the quilt and pushes the box to the stack", 2,
      still([-2.15, -3.8, 1.2], [-3.0, -4.0, 0.4], 26)),
@@ -138,7 +139,7 @@ SHOTS = [
     ("L11", "front", "Mum lifting it, head down (to L12)", 2, still([-0.7, -2.85, 1.55], [-1.15, -4.25, 1.05], 22)),
     # 02 the stack, L13 to L25
     ("L13", "hall", "Mum carrying the mug past the Boxes, under its face", 2,
-     still([-3.4, -0.8, 1.45], [-0.4, -0.85, 1.35], 22)),
+     still([-0.3, -1.3, 1.45], [-2.1, -0.8, 1.35], 20)),
     ("L14", "front", "the clock wide: 24", 4, CLOCK),
     ("L15", "front", "the clock wide: 18, a row lower, no dust squares", 4, CLOCK),
     ("L16", "mine", "me in bed in the dark, awake", 2, still([-3.25, 1.6, 1.35], [-4.1, 2.75, 0.72], 26)),
@@ -164,14 +165,14 @@ SHOTS = [
     ("L29", "front", "the sideways face", 4, SIDEWAYS),
     ("L29b", "front", "Mum's shut door, quiet in grey light, the sideways face at the frame's edge, closer", 4,
      still([-4.2, -3.4, 1.45], [-1.22, -0.06, 1.0], 28)),
-    ("L30", "front", "my hands flat on a joint, leaning back", 2, still([-0.75, -3.65, 1.45], [-1.45, -2.65, 1.2], 22)),
+    ("L30", "front", "my hands flat on a joint, leaning back", 2, still([-0.65, -1.7, 1.45], [-1.3, -3.1, 1.0], 15)),
     ("L31", "front", "my arms trembling: over my shoulder, the joint ahead", 2, still([-1.7, -4.6, 1.5], [-1.5, -2.6, 1.3], 15)),
     ("L32", "front", "a bare joint, no tape", 2, still([-1.65, -3.05, 1.45], [-1.6, -2.3, 1.42], 35)),
     ("L33", "front", "a slow push into the joint, tape glinting inside", 2,
      move(([-1.6, -3.0, 1.45], [-1.6, -2.3, 1.42]), ([-1.6, -2.82, 1.44], [-1.6, -2.3, 1.42]), 40)),
     ("L34", "front", "me stepping back, the Boxes unmarked", 2, still([-3.9, -3.7, 1.45], [-2.0, -2.25, 1.45], 18)),
     ("L34b", "kitchen", "the kitchen: me at the counter looking down at the cores, over my shoulder", 2,
-     still([0.55, -2.6, 1.7], [1.72, -3.56, 0.94], 26)),
+     still([1.95, -1.7, 1.5], [1.1, -2.9, 1.15], 17)),
     ("L34c", "kitchen", "close and low along the five bare cores standing in a row, locked", 4,
      still([1.18, -3.2, 0.97], [1.7, -3.58, 0.94], 30)),
     ("L35", "front", "the clock wide: 4, each with two marker eyes at Mum's door", 4, CLOCK),
@@ -183,7 +184,7 @@ SHOTS = [
     ("L40", "mine", "the window greying toward dawn behind it", 2, still([-4.25, 1.45, 1.05], [-3.05, 3.3, 1.4], 22)),
     ("L41", "front", "the empty clock wide: bare floor, clean squares in the dust (to L42)", 4, CLOCK),
     ("L43", "kitchen", "breakfast, me wrecked, the row of cores in the background", 2,
-     still([0.15, -1.85, 1.55], [1.5, -3.45, 1.05], 18)),
+     still([1.1, -1.75, 1.5], [1.1, -2.75, 1.3], 15)),
     # 05 three a.m., L44 to L55 (from L48 on ones)
     ("L44", "mine", "my eyes open in the dark", 2, still([-4.0, 1.95, 1.2], [-4.12, 2.88, 0.78], 22)),
     ("L45", "hall", "the dark hall, a cold glow at Mum's door, me small in it", 2, still([-4.5, -0.55, 1.45], [-1.3, -0.45, 1.1], 15)),
@@ -291,7 +292,7 @@ IN_BED = {"lie": [-88, 0, 90], "head": [-55, 0], "side": [24, 0], "expr": "aslee
 ME_IN_BED = {"lie": [-88, 0, 0], "hide_parts": ["arm1", "arm-1", "leg-1", "leg1", "torsom", "collar"]}
 
 # me
-hide("me", 0)                                                                    # the L01 close is the box alone
+put("me", 0, [-0.12, -0.38, -0.7], yaw=-10, sit=True, head=[-40, 8], expr="worried")   # L01: I sit by the box, looking at it (L77 is the box alone)
 put("me", "L02", [-0.75, -0.76], yaw=90, arms=[55, 55], side=[-22, -22], lean=6)
 hide("me", "L03")
 put("me", "L05", [-2.1, -2.45], yaw=-150, arms=[78, 78], side=[-10, -10], head=[0, 8])   # carrying a box
@@ -302,18 +303,18 @@ put("me", "L08", [-2.4, -3.6], yaw=yaw_to([-2.4, -3.6], [-1.5, -2.6]), arms=[78,
 hide("me", "L09")
 put("me", "L16", ME_BED, **ME_IN_BED)                                            # awake in bed in the dark
 hide("me", "L17")
-put("me", "L30", [-1.22, -3.1], yaw=180, lean=-10, arms=[78, 78], side=[-8, -14])  # pulling at a joint
+put("me", "L30", [-1.22, -3.1], yaw=180, lean=-10, arms=[78, 78], side=[-8, -14], head=[0, 6])  # pulling at a joint
 key("me", "L31", arms=[78, 80], blend=0.05)
 tremble_arms("me", "L31", 13, 75, 81)
 hide("me", "L32")                                                                 # the joint inserts
 put("me", "L34", [-1.3, -3.15], yaw=180, arms=[30, 30])                            # stepping back
 walk("me", "L34+0.9", [-1.3, -3.6], arms=[10, 10], keep_yaw=True)
-put("me", "L34b", [1.25, -2.92], yaw=0, head=[0, 32])                              # at the counter, looking down
+put("me", "L34b", [1.0, -2.9], yaw=120, head=[0, 30], arms=[50, 50])                              # at the counter, looking down
 hide("me", "L34c")
 hide("me", "L36")                                                                 # my eyes: the camera
 put("me", "L39", ME_BED, **ME_IN_BED, expr="terrified", blink=False)              # awake under it
 key("me", "L40", expr="worried", blend=0.3)
-put("me", "L43", [1.45, -2.1], yaw=-130, head=[0, 22])                            # breakfast, wrecked
+put("me", "L43", [1.38, -2.75], yaw=225, head=[0, 10])                            # breakfast, wrecked
 put("me", "L44", ME_BED, **ME_IN_BED, expr="wide", blink=False)                   # 3 a.m.: eyes open
 put("me", "L45", [-2.75, -0.78], yaw=90, expr="wide")                            # out in the hall
 walk("me", "L46-0.1", [-2.1, -0.78], expr="wide")
@@ -337,7 +338,7 @@ hide("me", "L73.2")
 # Mum
 hide("mum", 0)
 put("mum", "L06", [0.45, -1.95], yaw=0, head=[0, 22])                             # tired in the kitchen doorway
-put("mum", "L07", [-3.85, -2.6], yaw=-90, arms=[75, 75], side=[-25, -25], head=[0, -6])   # hanging a frame
+put("mum", "L07", [-3.85, -2.6], yaw=150, arms=[58, 58], side=[-25, -25], head=[0, -4])   # hanging a frame
 talk("mum", "L07", "L07>")
 hide("mum", "L08")
 put("mum", "L09", [-3.0, -3.25], yaw=0, lean=10, arms=[22, 22], side=[-14, -14], head=[0, 24])
@@ -357,7 +358,7 @@ hide("mum", "L22")
 put("mum", "L24", [-3.9, -1.95], yaw=0, head=[0, 25])                             # crossing under the photos
 walk("mum", "L25-0.03", [-3.9, -3.8], head=[0, 25])
 hide("mum", "L25")
-put("mum", "L43", [0.75, -2.89], yaw=0, arms=[78, 74], head=[0, 12])              # breakfast
+put("mum", "L43", [0.82, -2.75], yaw=135, arms=[40, 40], head=[0, 6])              # breakfast
 talk("mum", "L43.1", "L43>")
 hide("mum", "L44")
 put("mum", "L48", MUM_BED, yaw=0, **IN_BED)                                       # asleep under the quilt
@@ -471,11 +472,25 @@ cues = [
     {"at": "L75.2", "name": "door", "door": "cupboard", "open": 1.0, "dur": 0.9},
     {"at": "L78>-1.3", "name": "door", "door": "cupboard", "open": 0.0, "dur": 1.1},   # shut on "it"
     # the relights ("xfill": one soft light, placed and aimed per beat, off between)
+    {"at": 0, "name": "xfill", "pos": [0.2, 0.3, 1.2], "aim": [-0.2, -0.3, 0.7], "gain": 1.1},
+    {"at": "L02", "name": "xfill", "gain": 0},
+    {"at": "L07", "name": "xfill", "pos": [-2.0, -1.3, 2.0], "aim": [-3.8, -2.6, 1.5], "gain": 0.9},
+    {"at": "L08", "name": "xfill", "gain": 0},
+    {"at": "L13", "name": "xfill", "pos": [0.1, -1.1, 1.9], "aim": [-2.0, -0.8, 1.4], "gain": 0.9},
+    {"at": "L14", "name": "xfill", "gain": 0},
+    {"at": "L30", "name": "xfill", "pos": [-0.7, -1.7, 2.1], "aim": [-1.25, -3.0, 1.3], "gain": 0.9},
     {"at": "L31", "name": "xfill", "pos": [-0.9, -4.7, 1.9], "aim": [-1.4, -3.0, 1.2], "gain": 1.2},
     {"at": "L32", "name": "xfill", "gain": 0},
+    {"at": "L34b", "name": "xfill", "pos": [1.9, -1.7, 2.1], "aim": [1.0, -2.9, 1.3], "gain": 0.9},
+    {"at": "L34c", "name": "xfill", "gain": 0},
+    {"at": "L43", "name": "xfill", "pos": [1.1, -1.7, 2.1], "aim": [1.1, -2.75, 1.3], "gain": 0.9},
+    {"at": "L44", "name": "xfill", "gain": 0},
     {"at": "L45", "name": "xfill", "pos": [-3.6, -0.8, 2.2], "aim": [-2.2, -0.8, 0.9], "gain": 0.5},
     {"at": "L46", "name": "xfill", "pos": [-3.0, -0.8, 2.2], "aim": [-1.0, -0.8, 1.2], "gain": 0.3},
     {"at": "L47.2", "name": "xfill", "gain": 0},
+    {"at": 0, "name": "sqlight", "on": False},
+    {"at": "L46", "name": "sqlight", "on": True},
+    {"at": "L47.2", "name": "sqlight", "on": False},
     {"at": "L59", "name": "xfill", "pos": [-3.0, -3.3, 0.5], "aim": [-4.2, -3.2, 2.3], "gain": 0.9},
     {"at": "L60", "name": "xfill", "pos": [0.9, 0.3, 1.9], "aim": [-0.5, 2.3, 1.5], "gain": 1.0},
     {"at": "L61", "name": "xfill", "gain": 0},
@@ -509,7 +524,7 @@ story = {
     "title": "The box was taped shut from the inside",
     "made_for_kids": False,
     "premise": "I've moved with Mum into a smaller house with low ceilings after the old one was sold. Mum hasn't laughed since. Something built from our own moving boxes stands in a different room each morning, taller each time, with a new marker face, while the stack by the door shrinks and Mum's things turn up in odd places.",
-    "twist": "It puts everything where it lived in the old house: the mug on the old kitchen windowsill, the photos at the old wall's height, and at 3 a.m. its hands were tucking the old quilt round Mum, because in the old house her room was the cold one.",
+    "twist": "It puts everything where it lived in the old house: the mug on the old kitchen windowsill, the photos at the old wall's height, and the box on the shelf at the end is the one it was built on, its bottom box, the L01 box, still sealed from the inside.",
     "world": "a small single-storey house half moved into: low ceilings, off-white walls, honey boards, a stack of taped moving boxes by the front door, Mum's room lit by one cold nightlight",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#b98aff",

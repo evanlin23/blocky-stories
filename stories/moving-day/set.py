@@ -61,6 +61,9 @@ _ms.loader.exec_module(marker)
 # ------------------------------------------------------------------------------------------------ Mum's room
 X0, X1, Y1 = -1.7, 1.3, 3.3
 CEIL = 2.35
+SQUARE_X = (-2.3, -1.7)   # L46: the door's square of light on the hall's south wall and ceiling
+SQUARE_Z0 = 1.05
+SQUARE_DEPTH = 0.6
 WALL_T = 0.12
 DOOR_X = (-1.6, -0.85)                    # her door, front wall, near the bed's head: I stand in it
 DOOR_H = 2.0
@@ -743,9 +746,6 @@ def build_boxes(kit, ctx, M, wd: Path, name="boxes"):
         joint_tape(kit, f"{name}.jt.hip{sx}", hip, tw_, td_, tape)
         knee = kit.empty(f"{name}.knee{sx}", (0, 0, -G - th_), hip)
         dec = None
-        if sx == 1:   # the hidden mark: a tally of four and a slash, low on the L01 box's front
-            dec = {"front": pil_image("boxes-shin-tally", marker.mark("tally", int(sw_ * PX_PER_M), int(sh_ * PX_PER_M),
-                                                                     line_w=int(hw * PX_PER_M * 0.45)), wd / "boxes-shin-tally.png")}
         part(f"shin{sx}", DIM["shin"], (0, 0, -G / 2 - sh_ / 2), knee, "x", tilt=1.2, bulge=0.008, decals=dec,
              crush=[((-sx, 1, -1), 0.03, 0.3)])
         joint_tape(kit, f"{name}.jt.knee{sx}", knee, sw_, sd_, tape)
@@ -1522,7 +1522,7 @@ def time_lights(kit, ctx):
     # the glow from Mum's door at 3 a.m.: her nightlight, through her open door, throws the Boxes' shadow up the
     # hall's far wall and over its ceiling. It lights the hall only (build() links it)
     nx_, nz = NIGHTLIGHT
-    glow = kit.light("door glow", "SPOT", (nx_ + 0.02, Y1 - 0.1, nz + 0.28), 1500.0, "#d6e4ff", spot=60, blend=0.5, size=0.03)
+    glow = kit.light("door glow", "SPOT", (nx_ + 0.02, Y1 - 0.1, nz + 0.28), 1500.0, "#d6e4ff", spot=60, blend=0.5, size=0.004)
     kit.aim(glow, ((DOOR_X[0] + DOOR_X[1]) / 2, -0.06, 1.0))
     glow.visible_camera = False
     # the face box's own light in the morning scenes: from below and the side, aimed between its eyes, lighting
@@ -1650,6 +1650,24 @@ def build_dressing(kit, ctx, M):
     nx_, nz = NIGHTLIGHT
     kit.box("nightlight", (0.07, 0.035, 0.09), (nx_, Y1 - 0.018, nz), M["trim"], bevel=0.008)
     kit.sphere("nightlight.dome", 0.03, (nx_, Y1 - 0.04, nz), M["nightglow"])
+    # L46: the door's square of nightlight on the hall's south wall, running up it and bending over the ceiling:
+    # two hard-edged panels (a thin light wash over the wall, not a lit surface), shown only while the cue is on
+    sq = kit._new("sqlight")
+    nt = sq.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Color"].default_value = kit.col("#a9bddc")
+    em.inputs["Strength"].default_value = 0.09
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    mx.inputs["Fac"].default_value = 0.5
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(em.outputs[0], mx.inputs[2])
+    kit._fogged(sq, mx.outputs[0])
+    sx0, sx1 = SQUARE_X
+    sqw = kit.box("sqlight.wall", (sx1 - sx0, 0.003, 2.35 - SQUARE_Z0), ((sx0 + sx1) / 2, HALL[2] + 0.002, (SQUARE_Z0 + 2.35) / 2), sq)
+    sqc = kit.box("sqlight.ceil", (sx1 - sx0, SQUARE_DEPTH, 0.003), ((sx0 + sx1) / 2, HALL[2] + SQUARE_DEPTH / 2, 2.35 - 0.002), sq)
+    ctx["sqlight"] = [sqw, sqc]
 
 
 def build_lights(kit, ctx):
@@ -2014,6 +2032,9 @@ def animate_boxes(kit, story, tl, t, ctx, over):
 
 
 def animate_props(kit, story, tl, t, ctx):
+    sqc = _last(_cues(tl, "sqlight"), t)
+    for ob in ctx.get("sqlight", []):
+        ob.hide_render = not (sqc and sqc.get("on", False))
     # the stack by the door: how many are left (the clock), the eyes on them (L27 to L35), the clean squares in
     # the dust (only once the floor is bare)
     c = _last(_cues(tl, "stack"), t) or {"count": 24}
