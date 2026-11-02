@@ -642,7 +642,7 @@ sfx = [
 
 story = {
     "slug": "ep28-lamp-room",
-    "title": "Every night in the lighthouse, her text asked who was on the stairs.",
+    "title": "Someone climbs the lighthouse stairs one turn higher each night.",
     "made_for_kids": False,
     "premise": "On a first trip away together, a month in, Ines and I rent an old lighthouse for a stormy February week. She sleeps halfway up and I sleep in the lamp room at the top. Every night her text wakes me and I'm at the stair rail, and at the foot of the stairs a figure in a yellow oilskin looks straight up at me with its face on the top of its head. Each night it's nearer.",
     "twist": "The one on the stairs was me. I sleepwalk a turn further down toward the storm door every night while the oilskin figure comes up a turn each time I come down, and Ines has been texting only to wake me. The last text, her old question as a joke, is answered with one word: us.",
