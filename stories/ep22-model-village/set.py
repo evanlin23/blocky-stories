@@ -541,9 +541,9 @@ def build_tea_real(kit, M, ctx):
         kit.cyl(f"tea.rcup{k}", 0.05, 0.08, (TX + x + 0.15, y, 0.79), kit.plastic("#e8e2d4", 0.4), n=16)
     # warm light in the room: honey, the same grey day only coming through steamed glass
     for k, x in enumerate((-2.4, 0.2, 2.6)):
-        kit.light(f"tea lamp{k}", "POINT", (TX + x, 0.2, 2.8), 140, "#ffcf98", size=0.3)
-    kit.light("tea table fill", "POINT", (TX - 2.5, -1.3, 1.6), 30, "#ffe2bd", size=0.2)
-    kit.light("tea window fill", "POINT", (TX, -1.8, 1.8), 40, "#ffe2bd", size=0.3)
+        kit.light(f"tea lamp{k}", "POINT", (TX + x, 0.2, 2.8), 85, "#ffcf98", size=0.3)
+    kit.light("tea table fill", "POINT", (TX - 2.5, -1.3, 1.6), 22, "#ffe2bd", size=0.2)
+    kit.light("tea window fill", "POINT", (TX, -1.8, 1.8), 22, "#ffe2bd", size=0.3)
     # a window box and flower pots outside would be text-free decoration: two pots
     for sx in (-1, 1):
         kit.cyl(f"tea.pot{sx}", 0.18, 0.4, (TX + sx * 2.5, fy - 0.6, 0.2), kit.plastic("#8a5a44", 0.8), n=16)
