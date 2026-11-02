@@ -111,11 +111,32 @@ def direction(up: float, dn: float, area: float = AREA) -> int:
     return 1 if up > dn else -1
 
 
+# Motion is not a flash (owner, 2026-11-02, on ep20's photo-wall pan: "we should fix the detector since that seems
+# fairly benign"). In a pan across a high-contrast pattern, about as much of each part of the screen brightens as
+# darkens on every frame, so the old reading (whichever share is bigger) flipped direction frame to frame and
+# counted 11 "flashes" a second while overall brightness barely moved. A flash is the SAME area going brighter then
+# darker. So the shares are taken per cell of a GRID x GRID grid, and only each cell's NET change counts: a pan
+# cancels inside every cell, while a whole-screen strobe, or two halves flashing in antiphase, doesn't.
+GRID = 4
+
+
+def _coherent(up: np.ndarray, dn: np.ndarray) -> tuple[float, float]:
+    """Screen shares of net brightening and net darkening, cell by cell (see GRID above)."""
+    cu = cd = 0.0
+    for rows_u, rows_d in zip(np.array_split(up, GRID, axis=0), np.array_split(dn, GRID, axis=0)):
+        for cu_, cd_ in zip(np.array_split(rows_u, GRID, axis=1), np.array_split(rows_d, GRID, axis=1)):
+            w = cu_.size / up.size
+            net = float(cu_.mean()) - float(cd_.mean())
+            cu += w * max(0.0, net)
+            cd += w * max(0.0, -net)
+    return cu, cd
+
+
 def lum_shares(a: np.ndarray, b: np.ndarray) -> tuple[float, float]:
-    """Shares of the screen getting brighter and darker by DELTA or more from luminance a to b."""
+    """Shares of the screen getting brighter and darker by DELTA or more from luminance a to b, net per cell."""
     d = b - a
     dark = np.minimum(a, b) < DARK
-    return float(((d >= DELTA) & dark).mean()), float(((d <= -DELTA) & dark).mean())
+    return _coherent((d >= DELTA) & dark, (d <= -DELTA) & dark)
 
 
 def red_shares(a: np.ndarray, b: np.ndarray) -> tuple[float, float]:
@@ -135,21 +156,27 @@ def built_shares(lum: list[np.ndarray], i: int, k_max: int = BUILD, delta: float
         ok = np.ones(cur.shape, bool) if dark_lim is None else np.minimum(cur, lum[i - k]) < dark_lim
         up_any |= (d >= delta) & ok
         dn_any |= (d <= -delta) & ok
-    return float(up_any.mean()), float(dn_any.mean())
+    return _coherent(up_any, dn_any)
 
 
 def transitions(lum: list[np.ndarray], red: list[np.ndarray]) -> dict[str, list[tuple[int, int, float, float]]]:
     """Every counted transition, per reading: (frame, direction, share brighter, share darker).
     These are the lists the flash counts come from, so a table made from them shows what was counted."""
     out = {"general": [], "general_3f": [], "red": [], "red_3f": []}
+    last = {k: 0 for k in out}
     for i in range(1, len(lum)):
         for key, (up, dn) in (("general", lum_shares(lum[i - 1], lum[i])),
                               ("general_3f", built_shares(lum, i)),
                               ("red", red_shares(red[i - 1], red[i])),
                               ("red_3f", built_shares(red, i, delta=RED_DELTA + 1e-6, dark_lim=None))):
             d = direction(up, dn)
+            if key.startswith("general") and min(up, dn) >= AREA:
+                # net brightening in some regions AND net darkening in others, each over AREA: both are flashing
+                # (two halves strobing in antiphase), so it's a change against the last direction, never a hold
+                d = -last[key] or 1
             if d:
                 out[key].append((i, d, round(up, 3), round(dn, 3)))
+                last[key] = d
     return out
 
 
