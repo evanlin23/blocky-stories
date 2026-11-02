@@ -661,8 +661,7 @@ def pose_spare(kit, ctx, tl, t, over):
 def build_lights(kit, ctx):
     for i in range(4):
         x = lane_x(i)
-        kit.light(f"lamp{i}", "SPOT", (x, -1.4, 3.0), 560.0, "#ffb26a", spot=84, blend=0.7, size=0.25,
-                  flicker={"rate": 9.0, "depth": 0.05, "seed": 3 + i})
+        kit.light(f"lamp{i}", "SPOT", (x, -1.4, 3.0), 560.0, "#ffb26a", spot=84, blend=0.7, size=0.25)
         kit.light(f"lanes{i}a", "AREA", (x, 5.0, 3.0), 55.0, "#ffbd78", size=1.8)
         kit.light(f"lanes{i}b", "AREA", (x, 10.5, 3.0), 45.0, "#ffbd78", size=1.8)
     for i in range(5):
@@ -671,7 +670,7 @@ def build_lights(kit, ctx):
     kit.light("shadowL", "SPOT", (-1.8, -9.0, 0.9), 0.0, "#ffc68a", spot=75, blend=0.25, size=0.05)
     kit.LIGHTS["shadowL"]["base"] = 3500.0
     kit.aim(kit.LIGHTS["shadowL"]["obj"], (-1.8, 6.0, 0.0))
-    kit.light("fill", "AREA", (-4.0, 6.0, 3.3), 45.0, "#7c86b8", size=10.0, shadow=False)
+    kit.light("fill", "AREA", (-4.0, 6.0, 3.3), 90.0, "#7c86b8", size=10.0, shadow=False)
     for k, (hx, hy) in enumerate(((0.0, -3.0), (-3.5, -3.0), (-0.8, 3.0), (-4.0, 4.0))):
         kit.light(f"house{k}", "AREA", (hx, hy, 3.3), 0.0, "#ffe2b5", size=5.0, shadow=True)
         kit.LIGHTS[f"house{k}"]["base"] = 380.0

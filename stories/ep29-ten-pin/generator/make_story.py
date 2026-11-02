@@ -436,7 +436,7 @@ cues = [
     # the lane lights: two slow dips in week three, one in week four, the house lights come up at the strike
     {"at": "L41", "name": "dip", "down": 0.5, "hold": 0.25, "up": 0.6, "depth": 0.55},
     {"at": "L41+1.45", "name": "dip", "down": 0.5, "hold": 0.25, "up": 0.6, "depth": 0.55},
-    {"at": "L53", "name": "dip", "down": 0.6, "hold": 0.3, "up": 0.8, "depth": 0.55},
+    {"at": "L53", "name": "dip", "down": 0.6, "hold": 0.3, "up": 0.8, "depth": 0.62},
     {"at": "L58", "name": "house", "rise": 1.5},
     {"at": "L75-1.0", "name": "shadowlight", "on": 1.0},
     {"at": "L75-0.1", "name": "show", "what": "noscreen", "on": True},
