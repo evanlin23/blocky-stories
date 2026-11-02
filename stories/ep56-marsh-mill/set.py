@@ -552,7 +552,7 @@ MILL = {
     "in_dim": dict(mill_fill=14, mill_door=140, stove=14, moon=0, moon2=0),
     "in_dark": dict(mill_fill=18, mill_door=260, stove=16, moon=0, moon2=0),
     "in_night": dict(mill_fill=9, mill_door=0, stove=16, moon=1.0, moon2=1.0),
-    "in_enter": dict(mill_fill=45, mill_door=0, stove=20, moon=1.0, moon2=1.0),
+    "in_enter": dict(mill_fill=130, mill_door=0, stove=20, moon=1.0, moon2=1.0),
     "in_dawn": dict(mill_fill=180, mill_door=500, stove=16, moon=0, moon2=0),
     "out": dict(mill_fill=0, mill_door=0, stove=0, moon=0, moon2=0),
 }
