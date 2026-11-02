@@ -57,15 +57,6 @@ cast = {
     "neighbour": {"age": "adult", "skin": "#d9a98a", "shirt": "#e8e8ee", "pattern": "stripes", "pattern_c": "#243a5e",
                   "pants": "#2d3a4f", "shoes": "#222222", "sleeves": "long", "hair": "cap", "hair_c": "#c9c9c9",
                   "hat": "beanie", "hat_c": "#b83a32", "face": {"eyes": "round", "brows": True}},
-    "o1": {"age": "adult", "skin": "#d9a98a", "shirt": "#a9c4dc", "pattern": "solid", "collar": "#e8ecef",
-           "pants": "#2b2f38", "shoes": "#1c1c1c", "sleeves": "long", "hair": "spiky", "hair_c": "#3a2a20",
-           "face": {"eyes": "tired", "brows": True}},
-    "o2": {"age": "adult", "skin": "#8d5a3c", "shirt": "#e9ecef", "pattern": "solid", "collar": "#cfd6dc",
-           "pants": "#3a3f4a", "shoes": "#1c1c1c", "sleeves": "long", "hair": "buzz", "hair_c": "#141010", "extras": ["tie"],
-           "extra_c": "#6b2f3a", "face": {"eyes": "round", "brows": True}},
-    "o3": {"age": "adult", "skin": "#e6bf98", "shirt": "#7d8450", "pattern": "solid", "collar": "#6a7144",
-           "pants": "#2b2f38", "shoes": "#1c1c1c", "sleeves": "long", "hair": "long", "hair_c": "#6b4a2e",
-           "face": {"eyes": "lashes", "brows": True}},
     "dieter": {"age": "adult", "skin": "#c99673", "shirt": "#8a8f96", "pattern": "solid", "pants": "#8a8f96",
                "shoes": "#d9d9d9", "sleeves": "long", "hair": "buzz", "hair_c": "#141010",
                "face": {"eyes": "round", "brows": True}},
@@ -84,7 +75,6 @@ cast = {
 }
 reflections = {
     "r_neighbour": {"of": "neighbour"},
-    "r_o1": {"of": "o1"}, "r_o2": {"of": "o2"}, "r_o3": {"of": "o3"},
     "r_dieter": {"of": "dieter"},
     "r_shopper": {"of": "shopper", "set": {"shirt": "#c86a6a", "zip_c": "#f0d0c0"}},
     "r_date_f": {"of": "date_f"}, "r_date_m": {"of": "date_m"},
@@ -136,26 +126,19 @@ S("L01.2", "high wide of the sand, figures and reflections, the rust figure", st
   refl={"r_dieter": "sand", "r_shopper": "sand", "r_date_f": "sand", "r_me": {"kind": "sand", "scale": 1.6}})
 S("L02", "close on the neighbour", still((-3.5, -2.5, 1.62), (-3.55, -0.8, 1.55), 40))
 S("L02.2", "the glass alone", still((-3.0, -1.7, 1.45), (-3.0, 0, 1.45), 28), 1, **NSTAGE(4, r_neighbour="stage"))
-S("L03", "office: reflections asleep in the glass top", still((OFFX, 36.5, 1.9), (OFFX, 40.3, 0.9), 20), 2,
-  refl={"r_o1": {"kind": "table", "base": 0.78}, "r_o2": {"kind": "table", "base": 0.78},
-        "r_o3": {"kind": "table", "base": 0.78}})
 S("L04", "dieter passes the bakery", still((BX - 0.3, 36.8, 1.5), (BX + 0.4, 41.5, 1.35), 26))
 S("L04.2", "his reflection face down in the cake", still((BX + 0.2, 38.2, 1.45), (BX + 0.2, 43.0, 1.3), 28), 2,
   refl={"r_dieter": "glass"})
-S("L05", "the pale rectangle in the cubicle", still((SHOPX, 38.7, 1.45), (SHOPX, 41.4, 1.3), 28))
-S("L05.2", "shop window: she stands, her reflection walks out", still((SHOPWX + 0.4, 36.2, 1.5), (SHOPWX + 0.4, 41.5, 1.4), 22),
-  2, refl={"r_shopper": "glass"})
 S("L06", "the date at the cafe", still((CAFEX + 0.2, 38.2, 1.35), (CAFEX, 41.9, 1.1), 26))
 S("L06.1", "cafe window: their reflections close", still((CAFEX, 40.3, 1.35), (CAFEX, 43.0, 1.2), 28), 2,
   refl={"r_date_f": "glass", "r_date_m": "glass"})
 S("L07", "me at the window: no me in the glass", still((0.9, -2.6, 1.5), (0.8, 0, 1.4), 24), 2, **NSTAGE(5))
-S("L08", "the puddle with nothing of me in it", still((-1.0, -2.05, 0.5), (-1.0, -1.1, 0.3), 32), 2, puddle=True)
 S("L09", "me on the step, laptop open", still((-1.0, -2.8, 1.25), (-0.3, -0.6, 1.2), 30))
 # 02 Remi's reflection
 S("L10", "Remi on the deck", still((-0.9, -3.2, 1.5), (-1.4, -1.0, 1.4), 32))
 S("L11", "Remi sanding the frame", still((2.6, -1.8, 1.5), (1.0, -0.3, 1.4), 30))
 S("L12", "me on the step, the chair folded", still((0.9, -2.8, 1.3), (0.4, -0.6, 1.1), 26))
-S("L12.1", "the window: Remi's reflection stopped", still((1.0, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
+S("L10.2", "the window: Remi's reflection stopped", still((1.0, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L13", "laptop glow on my face", still((-1.3, -1.6, 1.45), (-0.35, -0.7, 1.4), 50))
 S("L14", "Remi sands, her reflection walks", still((1.15, -1.7, 1.45), (1.25, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L15", "Monday: at the water's edge", still((1.0, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
@@ -305,19 +288,19 @@ SEAT = 0.51       # a sitter's root sits this far under the seat top
 
 # --- the neighbour and his cartwheeling reflection
 put("neighbour", 0, [-3.55, -0.85], yaw=0)
-hide("neighbour", "L03")
+hide("neighbour", "L04")
 put("r_neighbour", 0, [0.3, 0.07, 0.45], yaw=0, roll=150, side=[85, 85], expr="grin")
 key("r_neighbour", "L01.1", roll=-150, blend=0.5)
 key("r_neighbour", "L01.3", roll=110, blend=0.4)
 key("r_neighbour", "L02.2", roll=8, blend=0.35, pos=[0.3, 0.07, 0.0])
 key("r_neighbour", "L02.2+0.5", roll=150, blend=0.4)
-hide("r_neighbour", "L03")
+hide("r_neighbour", "L04")
 
 # --- the sand figures (L01) and their reflections
 put("dieter", 0, [8.0, -12.5], yaw=0)
 put("shopper", 0, [4.5, -15.5], yaw=0)
 put("date_f", 0, [16.5, -11.5], yaw=0)
-hide("dieter", "L03"); hide("shopper", "L03"); hide("date_f", "L03")
+hide("dieter", "L04"); hide("shopper", "L04"); hide("date_f", "L04")
 put("r_dieter", 0, [8.0, -12.5], yaw=0, side=[70, 70], expr="grin")        # dancing
 key("r_dieter", "L01.2+0.4", side=[10, 80], head=[25, 0], blend=0.4)
 key("r_dieter", "L01.2+0.9", side=[80, 10], head=[-25, 0], blend=0.4)
@@ -333,29 +316,19 @@ key("r_date_f", "L01.3+0.4", arms=[170, 0], blend=0.3)
 put("r_me", 0, [11.5, -14.0], yaw=90)
 walk("r_me", "L02", [12.7, -14.0])
 for who in ("r_dieter", "r_shopper", "r_date_f"):
-    hide(who, "L03")
+    hide(who, "L04")
 
 # --- the office
-for k, (n, x) in enumerate((("o1", OFFX - 1.0), ("o2", OFFX), ("o3", OFFX + 1.0))):
-    put(n, "L03", [x, 40.95], yaw=0)
-    hide(n, "L04")
-    put("r_" + n, "L03", [x, 40.45], yaw=0, bow=50, head=[0, 35], expr="asleep", blink=False)
-    hide("r_" + n, "L04")
 
 # --- the bakery
 put("dieter", "L04", [BX - 2.4, 40.2], yaw=90, head=[0, -12])
 walk("dieter", "L04.2", [BX + 0.6, 40.2], head=[0, -12])
 key("dieter", "L04.2+0.6", head=[0, -12])
-hide("dieter", "L05")
+hide("dieter", "L06")
 put("r_dieter", "L04.2", [BX + 0.2, 43.8, 0.85], yaw=0, bow=82, head=[0, 20], expr="shut")
-hide("r_dieter", "L05")
+hide("r_dieter", "L06")
 
 # --- the shop
-put("shopper", "L05.2", [SHOPWX - 0.5, 40.1], yaw=0)
-hide("shopper", "L06")
-put("r_shopper", "L05.2", [SHOPWX + 0.3, 42.6], yaw=0)
-walk("r_shopper", "L05.2+1.2", [SHOPWX + 2.4, 42.6])
-hide("r_shopper", "L06")
 
 # --- the cafe
 put("date_f", "L06", [CAFEX - 0.45, 41.95, -SEAT + 0.46], yaw=0, sit=True, expr="smirk", head=[60, 0])
@@ -367,11 +340,9 @@ hide("r_date_f", "L07"); hide("r_date_m", "L07")
 
 # --- me and Remi on the deck, morning
 put("me", "L07", [0.35, -1.0], yaw=0)
-put("me", "L08", [-1.0, -1.75], yaw=0)
 ME_Z = 0.36 - SEAT
 SIT_ME = dict(sit=True, arms=[68, 68], side=[0, 0], head=[0, 22])
 put("me", "L09", [ME_SIT[0], ME_SIT[1], ME_Z], yaw=0, **SIT_ME)
-key("me", "L12.1", expr="neutral")
 put("me", "L22.2", [-0.2, -0.55, 0.36], yaw=52, expr="worried", head=[25, 0])
 put("me", "L24", [ME_SIT[0], ME_SIT[1], ME_Z], yaw=0, **SIT_ME)
 key("me", "P01", expr="neutral")
@@ -447,7 +418,7 @@ put("remi", "L74", [0.4, -1.25], yaw=0, expr=GRIN)
 hide("remi", "L75")
 
 # --- the reflections of me and Remi (stage: pos [lateral, depth])
-put("r_remi", "L12.1", [0.0, 0.42], yaw=180, look=[0.6, 0.0], expr="neutral")
+put("r_remi", "L10.2", [0.0, 0.42], yaw=180, look=[0.6, 0.0], expr="neutral")
 put("r_remi", "L14", [0.0, 0.12], yaw=180)
 walk("r_remi", "L14+1.4", [0.3, 0.36], yaw=180)
 put("r_remi", "L15", [0.4, 0.5], yaw=180)
