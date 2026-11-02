@@ -314,30 +314,30 @@
    ]
   },
   "L13": {
-   "text": "him at one end. me at the other.",
+   "text": "him, then me, shoulder to shoulder.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.69,
-   "onset": 0.155,
-   "end": 1.483,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
    "chunks": [
     [
-     0.155,
-     0.259
+     0.172,
+     0.31
     ],
     [
-     0.259,
-     0.672
+     0.336,
+     0.69
     ],
     [
-     0.741,
-     0.854
+     0.768,
+     1.017
     ],
     [
-     0.854,
-     1.483
+     1.017,
+     1.69
     ]
    ]
   },
@@ -1010,26 +1010,26 @@
    ]
   },
   "L41": {
-   "text": "like somebody sitting down in my place.",
+   "text": "like somebody standing over my seat.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.828,
+   "dur": 1.81,
    "onset": 0.172,
-   "end": 1.638,
+   "end": 1.621,
    "chunks": [
     [
      0.172,
-     0.543
+     0.586
     ],
     [
-     0.543,
-     0.94
+     0.586,
+     0.854
     ],
     [
-     0.94,
-     1.638
+     0.854,
+     1.621
     ]
    ]
   },
@@ -1186,26 +1186,26 @@
    ]
   },
   "L48": {
-   "text": "they're all looking at my end of the bench.",
+   "text": "they're all looking at my seat, beside him.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.793,
+   "dur": 1.931,
    "onset": 0.172,
-   "end": 1.586,
+   "end": 1.741,
    "chunks": [
     [
      0.172,
-     0.612
+     0.578
     ],
     [
-     0.612,
-     0.957
+     0.578,
+     0.983
     ],
     [
-     0.957,
-     1.586
+     1.017,
+     1.741
     ]
    ]
   },
@@ -1718,26 +1718,26 @@
    ]
   },
   "L69": {
-   "text": "i sit down in my old place.",
+   "text": "i sit down on my old seat.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.69,
+   "dur": 1.586,
    "onset": 0.172,
-   "end": 1.5,
+   "end": 1.397,
    "chunks": [
     [
      0.172,
-     0.647
+     0.612
     ],
     [
-     0.647,
-     0.966
+     0.612,
+     0.94
     ],
     [
-     0.966,
-     1.5
+     0.94,
+     1.397
     ]
    ]
   },
@@ -1814,34 +1814,34 @@
    ]
   },
   "L73": {
-   "text": "on friday, we're back on the bench, one at each end,",
+   "text": "on friday, we're back on the bench, shoulder to shoulder,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.362,
+   "dur": 2.5,
    "onset": 0.155,
-   "end": 2.155,
+   "end": 2.293,
    "chunks": [
     [
      0.155,
-     0.552
+     0.569
     ],
     [
-     0.578,
-     0.819
+     0.595,
+     0.836
     ],
     [
-     0.819,
-     1.259
+     0.836,
+     1.276
     ],
     [
-     1.345,
-     1.517
+     1.371,
+     1.621
     ],
     [
-     1.517,
-     2.155
+     1.621,
+     2.293
     ]
    ]
   },
@@ -1986,22 +1986,22 @@
    ]
   },
   "L80": {
-   "text": "what stood in my place.",
+   "text": "what stood over my seat.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.362,
+   "dur": 1.397,
    "onset": 0.155,
-   "end": 1.172,
+   "end": 1.207,
    "chunks": [
     [
      0.155,
-     0.474
+     0.457
     ],
     [
-     0.474,
-     1.172
+     0.457,
+     1.207
     ]
    ]
   }

@@ -240,20 +240,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "HIM",
-    "him"
+    "HIM,",
+    "him,"
    ],
    [
-    "at one END.",
-    "at one end."
+    "then ME,",
+    "then me,"
    ],
    [
-    "ME",
-    "me"
+    "SHOULDER",
+    "shoulder"
    ],
    [
-    "at the OTHER.",
-    "at the other."
+    "to SHOULDER.",
+    "to shoulder."
    ]
   ]
  },
@@ -777,12 +777,12 @@
     "like somebody"
    ],
    [
-    "sitting DOWN",
-    "sitting down"
+    "STANDING",
+    "standing"
    ],
    [
-    "in MY place.",
-    "in my place."
+    "over MY seat.",
+    "over my seat."
    ]
   ]
  },
@@ -911,12 +911,12 @@
     "they're all looking"
    ],
    [
-    "at MY end",
-    "at my end"
+    "at MY SEAT,",
+    "at my seat,"
    ],
    [
-    "of the BENCH.",
-    "of the bench."
+    "BESIDE him.",
+    "beside him."
    ]
   ]
  },
@@ -1322,12 +1322,12 @@
     "i sit down"
    ],
    [
-    "in my OLD",
-    "in my old"
+    "on my OLD",
+    "on my old"
    ],
    [
-    "PLACE.",
-    "place."
+    "SEAT.",
+    "seat."
    ]
   ]
  },
@@ -1402,12 +1402,12 @@
     "on the bench,"
    ],
    [
-    "one at",
-    "one at"
+    "SHOULDER",
+    "shoulder"
    ],
    [
-    "EACH END,",
-    "each end,"
+    "to SHOULDER,",
+    "to shoulder,"
    ]
   ]
  },
@@ -1524,8 +1524,8 @@
     "what stood"
    ],
    [
-    "in my PLACE.",
-    "in my place."
+    "over my SEAT.",
+    "over my seat."
    ]
   ]
  }

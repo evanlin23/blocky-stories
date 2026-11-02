@@ -186,11 +186,11 @@ def materials(kit):
     M["torch"] = pbr(kit, "torch body", "#2c5a3a", 0.4)
     M["lens"] = kit.emit("#ffe2a8", 3.0, "torch lens")
     M["gold"] = kit.emit(GOLD, 0.9, "gold glimmer")
-    M["coat"] = pbr(kit, "stooped coat", "#7a6248", 0.9, noise=(6, 0.82))
+    M["coat"] = pbr(kit, "stooped coat", "#4a3c2c", 0.9, noise=(6, 0.82))
     M["brass"] = pbr(kit, "brass", "#b08a3e", 0.35, 0.9)
     M["trou"] = pbr(kit, "stooped trousers", "#6a6a6c", 0.9)
     M["shoe"] = pbr(kit, "stooped shoes", "#4a3626", 0.6)
-    M["hand"] = pbr(kit, "stooped hands", "#8c7556", 0.8)
+    M["hand"] = pbr(kit, "stooped hands", "#a08d70", 0.8)
     M["sandstone"] = pbr(kit, "sandstone", "#d9c6a5", 0.85, noise=(2.2, 0.9), bump=0.2)
     M["grass"] = pbr(kit, "grass", "#5f8a3f", 0.95, noise=(9, 0.8))
     M["road"] = pbr(kit, "road", "#4b4b50", 0.9, noise=(5, 0.85))
@@ -208,7 +208,7 @@ def materials(kit):
     M["candle"] = pbr(kit, "candle", "#f4ecd8", 0.6)
     M["flame"] = kit.emit("#ffc060", 5.0, "flame")
     M["fern_rel"] = pbr(kit, "fern relief", "#bba784", 0.85)
-    M["spark"] = kit.emit(GOLD, 1.6, "spark")
+    M["spark"] = kit.emit(GOLD, 2.0, "spark")
     return M
 
 
@@ -364,17 +364,18 @@ def build_skeleton(kit, M, ctx):
 
 def build_bench(kit, M, ctx):
     y = -3.4
-    B(kit, "bench seat", (3.4, 0.5, 0.07), (0, y, 0.43), M["bench"], bevel=0.02)
-    B(kit, "bench slat", (3.4, 0.5, 0.07), (0, y, 0.43), M["bench"], bevel=0.02)
-    B(kit, "bench rail", (3.2, 0.04, 0.1), (0, y - 0.2, 0.3), M["iron"])
+    B(kit, "bench seat", (2.8, 0.5, 0.07), (0, y, 0.43), M["bench"], bevel=0.02)
+    B(kit, "bench slat", (2.8, 0.5, 0.07), (0, y, 0.43), M["bench"], bevel=0.02)
+    B(kit, "bench rail", (2.6, 0.04, 0.1), (0, y - 0.2, 0.3), M["iron"])
     for s in (-1, 1):
         # a slab leg, wider than it is thick
-        B(kit, f"bench leg{s}", (0.06, 0.46, 0.43), (s * 1.55, y, 0.215), M["iron"], bevel=0.01)
-        B(kit, f"bench foot{s}", (0.24, 0.5, 0.04), (s * 1.55, y, 0.02), M["iron"], bevel=0.01)
+        B(kit, f"bench leg{s}", (0.06, 0.46, 0.43), (s * 1.25, y, 0.215), M["iron"], bevel=0.01)
+        B(kit, f"bench foot{s}", (0.24, 0.5, 0.04), (s * 1.25, y, 0.02), M["iron"], bevel=0.01)
     # the lore plant: two short upright dust-brown strokes on the inner face of the leg at my end (x = -1.55 leg, face +x)
-    sm = pbr(kit, "tally", "#7a6248", 0.9)
-    for dy in (-0.07, 0.07):
-        B(kit, f"tally{dy}", (0.012, 0.025, 0.13), (-1.55 + 0.036, y + dy, 0.21), sm)
+    sm = pbr(kit, "tally", "#d8c49a", 0.9)
+    for dy in (-0.09, 0.09):
+        B(kit, f"tally{dy}", (0.014, 0.04, 0.24), (-1.25 - 0.036, y + dy, 0.2), sm)
+    kit.light("tally lamp", "POINT", (-1.75, y, 0.34), 4.0, "#ffe2b0", size=0.1)
 
 
 def build_gallery(kit, M, ctx):
@@ -429,6 +430,7 @@ def build_basement(kit, M, ctx):
     ctx["sheet_over"] = B(kit, "abe sheet", (1.55, 0.7, 0.42), (X - 0.2, 0.0, 1.0), kit.emit("#ffd98a", 1.05, "sheet glow"), bevel=0.16)
     ctx["sheet_over"].hide_render = True
     kit.light("base dim", "POINT", (X, 0, 2.3), 6.0, "#7a8aa8", size=0.3)
+    kit.light("base lamp", "POINT", (X - 0.4, -1.4, 1.5), 5.0, "#ffd9a0", size=0.3)
     # stairs and the door at x = 140: eight steps going down toward -y
     SX = 140.0
     B(kit, "stair wall w", (0.3, 8, 4.2), (SX - 1.15, -2.0, 1.6), M["concrete"])
@@ -450,7 +452,7 @@ def stooped_face(path_face, path_mask):
     """Its own drawn face on the head texture: two small round white eyes a little too far apart in dark hollows, pin
     pupils, no brows, a short straight mouth. The mask marks the eyes (they are the one thing that is lightly self-lit)."""
     W, H = faces.TEX_W, faces.TEX_H
-    skin = (118, 94, 68)
+    skin = (176, 164, 142)
     im = Image.new("RGB", (W, H), skin)
     mk = Image.new("L", (W, H), 0)
     d, dm = ImageDraw.Draw(im), ImageDraw.Draw(mk)
@@ -459,36 +461,43 @@ def stooped_face(path_face, path_mask):
     ink = (20, 14, 12)
     for side in (-1, 1):
         x = cx + side * 0.33 * s
-        hx, hy = 0.125 * s, 0.15 * s
-        d.ellipse([x - hx, ey - hy * 0.9, x + hx, ey + hy * 1.15], fill=(58, 42, 30))
-        r = 0.062 * s
+        hx, hy = 0.11 * s, 0.13 * s
+        d.ellipse([x - hx, ey - hy * 0.9, x + hx, ey + hy * 1.15], fill=(46, 34, 26))
+        r = 0.036 * s
         d.ellipse([x - r, ey - r, x + r, ey + r], fill=(246, 244, 236), outline=ink, width=int(0.012 * s))
         dm.ellipse([x - r, ey - r, x + r, ey + r], fill=255)
-        pr = 0.017 * s
+        pr = 0.012 * s
         d.ellipse([x - pr, ey - pr, x + pr, ey + pr], fill=(6, 5, 5))
     my = faces._fy(0.80)
-    d.line([(cx - 0.12 * s, my), (cx + 0.12 * s, my)], fill=ink, width=int(0.022 * s))
+    d.ellipse([cx - 0.2 * s, my - 0.11 * s, cx + 0.2 * s, my + 0.13 * s], fill=(18, 10, 8))
+    for k in range(-3, 4):
+        d.polygon([(cx + k * 0.055 * s - 0.018 * s, my - 0.1 * s), (cx + k * 0.055 * s + 0.018 * s, my - 0.1 * s),
+                   (cx + k * 0.055 * s, my - 0.04 * s)], fill=(200, 192, 170))
     im.save(path_face)
     mk.save(path_mask)
 
 
 def build_stooped(kit, M, ctx):
     root = kit.empty("stooped", (0, 0, -40))
-    B(kit, "st torso", (0.52, 1.3, 0.3), (0, -0.45, 1.26), M["coat"], root, bevel=0.04)
+    B(kit, "st torso", (0.6, 1.3, 0.34), (0, -0.45, 1.26), M["coat"], root, bevel=0.04)
+    B(kit, "st yoke", (0.96, 0.34, 0.38), (0, -1.08, 1.25), M["coat"], root, bevel=0.06)
     B(kit, "st coat tail", (0.54, 0.06, 0.8), (0, 0.22, 0.8), M["coat"], root, bevel=0.02)
     B(kit, "st collar", (0.34, 0.2, 0.2), (0, -1.05, 1.3), M["coat"], root, bevel=0.04)
     for s in (-1, 1):
         B(kit, f"st leg{s}", (0.25, 0.25, 1.12), (s * 0.15, 0.0, 0.56), M["trou"], root, bevel=0.03)
         B(kit, f"st shoe{s}", (0.28, 0.44, 0.12), (s * 0.15, -0.07, 0.06), M["shoe"], root, bevel=0.04)
-        B(kit, f"st sleeve{s}", (0.17, 0.17, 1.0), (s * 0.37, -1.0, 0.68), M["coat"], root, bevel=0.03)
-        B(kit, f"st hand{s}", (0.15, 0.15, 0.2), (s * 0.37, -1.0, 0.12), M["hand"], root, bevel=0.04)
+        B(kit, f"st sleeve{s}", (0.2, 0.2, 0.86), (s * 0.5, -1.08, 0.74), M["coat"], root, bevel=0.03)
+        B(kit, f"st cuff{s}", (0.22, 0.22, 0.05), (s * 0.5, -1.08, 0.3), M["trou"], root)
+        B(kit, f"st hand{s}", (0.17, 0.1, 0.2), (s * 0.5, -1.08, 0.2), M["hand"], root, bevel=0.03)
+        for fx in (-0.06, -0.02, 0.02, 0.06):
+            B(kit, f"st finger{s}{fx}", (0.026, 0.03, 0.17), (s * 0.5 + fx, -1.08, 0.04), M["hand"], root, bevel=0.01)
     # four round brass buttons down the hanging front (the underside of the folded body)
     for i in range(4):
         kit.cyl(f"st button{i}", 0.04, 0.03, (0, -0.18 - i * 0.24, 1.105), M["brass"], root, n=14)
     B(kit, "st pin", (0.07, 0.07, 0.02), (0.12, -0.95, 1.105), M["brass"], root)
     # the neck hangs from the shoulders' front end and swings; the head hangs from it, upside down
-    neck = kit.empty("st neck", (0, -1.1, 1.22), root)
-    B(kit, "st neck box", (0.14, 0.14, 0.58), (0, 0, -0.29), M["coat"], neck, bevel=0.03)
+    neck = kit.empty("st neck", (0, -1.14, 1.2), root)
+    B(kit, "st neck box", (0.17, 0.17, 0.6), (0, 0, -0.29), M["hand"], neck, bevel=0.03)
     headr = kit.empty("st headroll", (0, 0, -0.6), neck)
     path = bpy.app.tempdir or "/tmp/"
     pf, pm = path + "stooped-face.png", path + "stooped-mask.png"
@@ -515,9 +524,9 @@ def build_stooped(kit, M, ctx):
     L.new(mul.outputs[0], b.inputs["Emission Strength"])
     kit._fogged(m, b.outputs[0])
     # the head mesh is in rig units (radius 0.62): scale it to metres. headr sits at the head's centre, so a roll turns it in place
-    headr.location = (0, 0, -0.6 - 0.3)
+    headr.location = (0, 0, -0.6 - 0.16)
     hm = rig.head_mesh("st head", m, headr)
-    hm.scale = (U * 0.95, U * 0.95, U * 1.55)
+    hm.scale = (U * 1.05, U * 0.95, U * 1.05)
     ctx["stooped"] = dict(root=root, neck=neck, headr=headr)
 
 
@@ -643,7 +652,7 @@ def lens_hide():
 def build(kit, story, tl):
     M = materials(kit)
     M["vestgreen"] = pbr(kit, "vest", "#1f4a38", 0.7, noise=(6, 0.85))
-    M["white"] = pbr(kit, "white hair", "#f1efe8", 0.7)
+    M["white"] = pbr(kit, "white hair", "#d9d5c8", 0.8)
     M["mestripe"] = rig.cloth({"shirt": "#1d2c4a", "pattern": "stripes", "pattern_c": "#efe8d6"}, "shirt")
     ctx = {"M": M, "glow": {}, "inited": False}
     sc = bpy.context.scene
@@ -679,7 +688,7 @@ def build_props(kit, M, ctx):
     # sparks: small soft gold motes that drift up over the crowd and go out
     ctx["sparks"] = []
     for i in range(16):
-        sp = kit.sphere(f"spark{i}", 0.05, (0, 0, -50), M["spark"], seg=8)
+        sp = kit.sphere(f"spark{i}", 0.11, (0, 0, -50), M["spark"], seg=8)
         sp.visible_shadow = False
         ctx["sparks"].append(sp)
     ctx["spark1"] = kit.sphere("spark one", 0.06, (0, 0, -50), M["spark"], seg=8)
@@ -735,7 +744,16 @@ def animate(kit, story, tl, t, ctx):
     # ---- the Stooped: never seen moving, so a pose is a switch at a cut
     sc_ = _last(_cues(tl, "stooped"), t)
     set_stooped(ctx, sc_)
-    over["stooped rim"] = 0.0 if (sc_ is None or sc_.get("hidden") or sc_["pos"][0] < -5) else 1.0
+    over["stooped rim"] = 0.0 if (sc_ is None or sc_.get("hidden")) else 1.0
+    rimo = kit.LIGHTS["stooped rim"]["obj"]
+    if sc_ is not None and not sc_.get("hidden") and sc_["pos"][0] < -5:
+        px_, py_ = sc_["pos"]
+        rimo.location = (px_ + 5.0, py_ - 2.5, 3.2)
+        kit.aim(rimo, (px_, py_ - 0.4, 1.2))
+    else:
+        rimo.location = (-1.0, -8.2, 3.0)
+        kit.aim(rimo, (-1.0, -3.9, 1.2))
+    over["tally lamp"] = _eased(_cues(tl, "tally"), "on", t, 0.0)
     # ---- the torch rolling in slow circles by the skeleton's feet
     tg = _eased(_cues(tl, "torch"), "on", t, 0.0)
     tor = ctx["torch"]
@@ -769,7 +787,7 @@ def animate(kit, story, tl, t, ctx):
             L["obj"].location = (0, 0, -50)
             over[f"gl {who}"] = 0.0
             continue
-        p = torso.matrix_world @ V((0, -0.4, 1.0))
+        p = torso.matrix_world @ V((0, -5.0, 1.6 if who == "abe" else 1.0))
         L["obj"].location = (p.x, p.y, p.z + 0.1)
         L["base"] = story.get("glow_light_w", 90.0)
         over[f"gl {who}"] = s / 3.0 * _eased(_cues(tl, "glk"), "level", t, 1.0)
