@@ -2,14 +2,14 @@
 
 - **Slug:** `ep31-dawn-flight` (folder `stories/ep31-dawn-flight/`), kept from pitch #15. This is a full redo: the old first line wasn't a rule, so the premise and twist are new. The set, Dad and Rosa carry over.
 - **Target length:** 60 to 90 s (this batch's length test). Aim 75 to 85 s.
-- **Word count:** 342 spoken words in 42 lines, all `narrator` in voice A, plus 1 pause beat (0.8 s).
+- **Word count:** 344 spoken words in 42 lines, all `narrator` in voice A, plus 1 pause beat (0.8 s).
 - **Estimated length:** about 78 s. Speech at 290 wpm is about 70 s, the 0.12 s line gaps add about 5 s, the pause 0.8 s, the tail 0.9 s. If the first `voice` run lands over 85 s, cut L26 first, then L04. If under 72 s, add "Rosa LET OUT / a long BREATH." after L35.
 
 ## The big idea (first)
 **A son who comes apart as his dad forgets him takes Dad up for his sixtieth birthday balloon flight, and it turns out Dad turned sixty four years ago: it's the last morning Dad remembers whole, with the son in it, so they fly it again every single dawn.**
 
 - **Wait, what:** "Dad turned sixty four years ago." Then one picture: the inside of Rosa's trailer, its back wall covered in hundreds of identical balloon badges.
-- **How it reframes the rule** ("you stay in one piece while your family remembers you"): Dad can't remember me now, but he remembers me then. The only place I'm whole is inside his sixtieth, so every dawn I give it to him again. The flight that opens as a birthday treat is how I keep existing.
+- **How it reframes the rule** ("if your family forgets you, your body comes apart, block by block"): Dad can't remember me now, but he remembers me then. The only place I'm whole is inside his sixtieth, so every dawn I give it to him again. The flight that opens as a birthday treat is how I keep existing.
 - **What it reframes:** my "four years" of coming loose, Rosa never asking our names, Dad's "First time UP!", the badge on his scarf, the rim worn smooth in two places exactly under our hands, Rosa mouthing Dad's words, and why I "knew what to say". The last line, "Tomorrow, Dad turns sixty again," loops straight back into the first shot, which is the next morning's flight.
 - **Feeling:** sad and awed, then a cold bite (by lunch he'll ask who I am).
 - **The test:** a son who's falling apart because Dad is forgetting him keeps himself whole by giving Dad the same birthday every morning. That's an "oh no".
@@ -24,25 +24,25 @@
 7. Everyone weighs what they're keeping secret, and the basket tilts toward Dad. (The secret had no "oh no" that wasn't another lie.)
 8. Every sixtieth birthday you go up and don't come down. (Death-adjacent, hard rule 2.)
 9. The sun only rises when everyone's counted. (A Keeper count again, close to stand-in.)
-10. **Kept:** you stay in one piece while your family remembers you, and Dad's sixtieth is relived every dawn. It has a marker on every body (seams), a funny montage, an exception (me, coming loose), a loved one (Dad), a loophole (he remembers me then, so I give him then) and a plain reveal with one picture.
+10. **Kept:** if your family forgets you, your body comes apart block by block, and Dad's sixtieth is relived every dawn. It has a marker on every body (seams), a funny montage, an exception (me, coming loose), a loved one (Dad), a loophole (he remembers me then, so I give him then) and a plain reveal with one picture.
 
 ## Variety (against everything made)
 | Story | Setting | Creature | First line | Ending shape | Warmth |
 |---|---|---|---|---|---|
-| ep31 `dawn-flight` (redo) | a hot-air balloon basket at dawn over misty farmland, Dad's sixtieth | none: the eerie element is me, my own blocks drifting apart as Dad forgets me | a world rule about being held together ("In this VALLEY, you stay in ONE PIECE while your FAMILY REMEMBERS you.") | `relived`: the birthday is replayed every dawn, and the last line hands the loop to tomorrow | devotion: I give Dad his best morning every day |
+| ep31 `dawn-flight` (redo) | a hot-air balloon basket at dawn over misty farmland, Dad's sixtieth | none: the eerie element is me, my own blocks drifting apart as Dad forgets me | a world rule about coming apart ("In this VALLEY, if your FAMILY FORGETS you, your body comes APART, BLOCK by BLOCK.") | `relived`: the birthday is replayed every dawn, and the last line hands the loop to tomorrow | devotion: I give Dad his best morning every day |
 
 No other story's rule is about being held together, and no other twist is a day relived. No Keeper stands anywhere, so it isn't `stand-in`. No creature, so no "kind all along". No knowing elder: Rosa explains nothing and only says pilot things. No newcomer, mayor or midnight square. No night-shift or one-summer narrator. Nothing pale grey, nothing pressed against glass, no on-screen age (the badge has no number and "sixty" is only said), no "Last NIGHT," opener, no "Not X, it was Y". The old version's lie, sandbag, four flasks, Callum and the Loose One are all gone.
 
 ## Premise
-In this valley, every body is built in blocks with thin seams between them, and you stay in one piece while your family remembers you. I'm coming loose: my blocks hang a finger's width apart, because Dad, all the family I've got, is forgetting. For his sixtieth he wants a balloon flight at dawn, just him and me, and Rosa takes us up over the mist. With each burner roar I come further apart, until Dad looks at me and asks Rosa who I am.
+In this valley, every body is built in blocks with thin seams between them, and if your family forgets you, your body comes apart, block by block. I'm coming loose: my blocks hang a finger's width apart, because Dad, all the family I've got, is forgetting. For his sixtieth he wants a balloon flight at dawn, just him and me, and Rosa takes us up over the mist. With each burner roar I come further apart, until Dad looks at me and asks Rosa who I am.
 
 ## The rule
-"In this valley, you stay in one piece while your family remembers you." Everyone's body is cut along the same seams (each limb in three blocks, the torso in two, the head in four slices). The better your family keeps you in mind, the tighter the seams. Newlyweds click shut. A son home from the city rattles. A grandad with a big family squeaks.
+"In this valley, if your family forgets you, your body comes apart, block by block." Everyone's body is cut along the same seams (each limb in three blocks, the torso in two, the head in four slices). The better your family keeps you in mind, the tighter the seams. Newlyweds click shut. A son home from the city rattles. A grandad with a big family squeaks.
 - **Marker by 2 s:** the seams themselves, on every body in frame. Dad's are hairline dark lines. Mine are a finger's width of open air with pink mist showing through them.
 - **Montage (L02 to L04, about 3 to 8 s):** newlyweds click tight, a son home from the city rattles at his mum's door, a grandad with a big family squeaks along a lane. Played light.
 - **The narrator is the exception:** everyone else is snug. I've been coming loose for four years (L05, L06).
 - **The loved one at stake:** Dad, all the family I've got (L07 to L09, shown at the kitchen table by 16 s: Dad looking at me politely, like a guest).
-- **The loophole the climax turns:** the rule says "remembers you", and it doesn't say when. Dad doesn't know me now, but he knows me on his sixtieth. So I say what I said that morning, Dad lands back in it, and I click whole (L30 to L35). Nothing new is added: it's the rule's own logic.
+- **The loophole the climax turns:** the rule only counts whether you're forgotten, and it doesn't say when. Dad doesn't know me now, but he knows me on his sixtieth. So I say what I said that morning, Dad lands back in it, and I click whole (L30 to L35). Nothing new is added: it's the rule's own logic.
 
 ## The twist (and where it's planted)
 Dad turned sixty four years ago. It's the last morning he remembers whole, with me in it, so Rosa flies us every dawn and it's his sixtieth again. The badges on her trailer wall are every one of those mornings.
@@ -162,7 +162,7 @@ About 48 shots for about 78 s (about 1.6 s a shot). Times are estimates from the
 Every line is `narrator` (voice A, cast key `me`). Characters are quoted inside the lines, and their mouths flap under the words. CAPS are the key words, in coral. Chunks split with ` / `.
 
 ### 01 The rule
-- `L01` narrator: In this VALLEY, / you stay / in ONE PIECE / while your FAMILY / REMEMBERS you.
+- `L01` narrator: In this VALLEY, / if your FAMILY / FORGETS you, / your body comes APART, / BLOCK by BLOCK.
 - `L02` narrator: Get MARRIED, / and you CLICK / TIGHT / overnight.
 - `L03` narrator: Move to the CITY, / and you come HOME / RATTLING.
 - `L04` narrator: GRANDADS / with big FAMILIES / SQUEAK / when they WALK.
