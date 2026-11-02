@@ -758,14 +758,14 @@
    ]
   },
   "L28": {
-   "text": "I counted from one.",
+   "text": "I counted down from 40.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.362,
+   "dur": 1.638,
    "onset": 0.172,
-   "end": 1.172,
+   "end": 1.448,
    "chunks": [
     [
      0.172,
@@ -773,31 +773,35 @@
     ],
     [
      0.586,
-     1.172
+     0.759
+    ],
+    [
+     0.759,
+     1.448
     ]
    ]
   },
   "L29": {
-   "text": "At twelve, one of them was wrong.",
+   "text": "At 29, one of them was wrong.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.69,
+   "dur": 1.862,
    "onset": 0.155,
-   "end": 1.5,
+   "end": 1.672,
    "chunks": [
     [
      0.155,
-     0.534
+     0.724
     ],
     [
-     0.56,
-     0.828
+     0.776,
+     1.008
     ],
     [
-     0.828,
-     1.5
+     1.008,
+     1.672
     ]
    ]
   },
@@ -882,50 +886,50 @@
    ]
   },
   "L33": {
-   "text": "I kept counting. thirteen. fourteen.",
+   "text": "I kept counting. 28. 27.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.017,
+   "dur": 2.259,
    "onset": 0.172,
-   "end": 1.81,
+   "end": 2.052,
    "chunks": [
     [
      0.172,
-     0.724
+     0.828
     ],
     [
-     0.759,
-     1.086
+     0.897,
+     1.276
     ],
     [
-     1.147,
-     1.81
+     1.31,
+     2.052
     ]
    ]
   },
   "L34": {
-   "text": "At seventeen, it was there again.",
+   "text": "At 26, it was there again.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.81,
+   "dur": 1.776,
    "onset": 0.155,
-   "end": 1.621,
+   "end": 1.586,
    "chunks": [
     [
      0.155,
-     0.741
+     0.724
     ],
     [
-     0.793,
-     0.983
+     0.75,
+     0.914
     ],
     [
-     0.983,
-     1.621
+     0.914,
+     1.586
     ]
    ]
   },
@@ -990,62 +994,62 @@
    ]
   },
   "L37": {
-   "text": "The next post along was sitting low, like it was kneeling.",
+   "text": "A post further down was sitting low, like it was kneeling.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.552,
+   "dur": 2.586,
    "onset": 0.172,
-   "end": 2.362,
+   "end": 2.397,
    "chunks": [
     [
      0.172,
-     0.638
+     0.466
     ],
     [
-     0.638,
+     0.466,
      0.836
     ],
     [
      0.836,
-     1.414
+     1.448
     ],
     [
-     1.5,
-     1.681
+     1.534,
+     1.715
     ],
     [
-     1.681,
-     2.362
+     1.715,
+     2.397
     ]
    ]
   },
   "L38": {
-   "text": "At twenty, it was at the edge of my lane.",
+   "text": "At 25, it was at the edge of my lane.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.017,
+   "dur": 2.155,
    "onset": 0.155,
-   "end": 1.828,
+   "end": 1.966,
    "chunks": [
     [
      0.155,
-     0.586
+     0.741
     ],
     [
-     0.638,
-     0.854
+     0.768,
+     0.974
     ],
     [
-     0.854,
-     1.112
+     0.974,
+     1.25
     ],
     [
-     1.112,
-     1.828
+     1.25,
+     1.966
     ]
    ]
   },
@@ -1118,21 +1122,21 @@
    ]
   },
   "L41": {
-   "text": "Then post 21.",
+   "text": "Then post 24.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.431,
+   "dur": 1.448,
    "onset": 0.172,
    "end": 1.241,
    "chunks": [
     [
      0.172,
-     0.552
+     0.534
     ],
     [
-     0.552,
+     0.534,
      1.241
     ]
    ]
@@ -1834,42 +1838,34 @@
    ]
   },
   "L69": {
-   "text": "I put the white bag on her table, next to the keys and a glass of water.",
+   "text": "I put her keys and the white bag on her table.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.103,
+   "dur": 2.241,
    "onset": 0.155,
-   "end": 2.897,
+   "end": 2.052,
    "chunks": [
     [
      0.155,
-     0.379
+     0.319
     ],
     [
-     0.379,
-     0.768
+     0.319,
+     0.776
     ],
     [
-     0.768,
-     1.276
+     0.776,
+     0.914
     ],
     [
-     1.345,
-     1.578
+     0.914,
+     1.353
     ],
     [
-     1.578,
-     1.966
-    ],
-    [
-     1.966,
-     2.319
-    ],
-    [
-     2.319,
-     2.897
+     1.353,
+     2.052
     ]
    ]
   },

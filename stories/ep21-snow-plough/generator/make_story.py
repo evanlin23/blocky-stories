@@ -18,8 +18,8 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 PX = 0.6                 # the plough's lane
-EDGE_Y = 740.5           # where the outer half of the road ends now
-MK_FINAL = (0.6, 741.2)  # the Marker, on the new edge
+EDGE_Y = 705.5           # where the outer half of the road ends now
+MK_FINAL = (0.6, 706.2)  # the Marker, on the new edge
 S_STOP = MK_FINAL[1] + 4.4
 
 # ---------------------------------------------------------------------------------------------------- lines
@@ -32,7 +32,7 @@ lines.append({"id": "P04", "pause": LOOP, "chunks": []})
 # length: the script's own fallback (two wipers words after L53), then breaths where the picture needs them
 i53 = next(i for i, l in enumerate(lines) if l["id"] == "L53")
 lines.insert(i53 + 1, {"id": "L53b", "who": "narrator", "chunks": [["The wipers kept", "The wipers kept"], ["TICKING.", "ticking."]]})
-HOLDS = {"P01": 1.0, "P02": 1.3, "L45": 0.45, "L64": 0.5, "L72": 0.3, "L54": 0.3, "L05": 0.35, "L13": 0.3,
+HOLDS = {"P01": 1.0, "P02": 0.8, "L45": 0.6, "L64": 0.5, "L72": 0.3, "L54": 0.3, "L05": 0.35, "L13": 0.3,
          "L19": 0.3, "L27": 0.3, "L46": 0.35, "L71": 0.6, "L66": 0.25, "L62": 0.3}
 for ln in lines:
     if ln["id"] in HOLDS:
@@ -157,8 +157,8 @@ def seg(t0, t1, s0, s1, th0=0.0, th1=None, x0=PX, x1=None, ease=False):
     _prev["v"] = (s1, th1, x1)
 
 
-# the hook, on the way down (the Marker stands at world y 1005)
-seg(0, "L04>", 1050, 1032, 180)
+# the hook, on the way down (the Marker stands at world y 885, between posts 30 and 29)
+seg(0, "L04>", 912, 898, 180)
 # the evening before: the plough in Odile's yard
 seg("L05", "L12>", -20, -20, 0)
 # up
@@ -174,28 +174,29 @@ seg("L21", "L21>", 740, 760)
 seg("L22", "L22>", 1168, 1200)
 seg("L23", "L25>", 1215, 1215)
 seg("L26", "L26>", 1215, 1215, 0, 180)
-# down: the Marker at 1005 (L29 to L33), at 855 (L34 to L37), at 795 (L38 to L40)
+# down, counting from forty: the Marker at 885 (post 29, L29 to L33), 795 (26, L34 to L37), 765 (25, L38 to L40);
+# post 24 at 720 is the last good glint, and the stop is where post 23 was (the road ends at 705.5)
 seg("L27", "L27>", 1215, 1185, 180)
 seg("L28", "L28>", 1150, 1120, 180)
-seg("L29", "L29>", 1065, 1045, 180)
-seg("L30", "L30>", 1032, 1024, 180)
-seg("L31", "L31>", 1022, 1020, 180)
-seg("L32", "L32>", 1018, 1008, 180)
-seg("L33", "L33>", 990, 940, 180)
-seg("L34", "L34>", 900, 880, 180)
-seg("L35", "L35>", 878, 870, 180)
-seg("L36", "L36>", 868, 868, 180)
-seg("L37", "L37>", 862, 830, 180)
-seg("L38", "L38>", 826, 808, 180)
-seg("L39", "L40>", 806, 806, 180)
-seg("L41", "L41>", 806, 790, 180)
-seg("L42", "L45>", 790, 756, 180)
-seg("L46", "L46>", 752.5, 751, 180)
-seg("L47", "L47>", 751, 748.5, 180)
-seg("L48", "L49>", 748.5, S_STOP, 180, ease=True)
+seg("L29", "L29>", 925, 908, 180)
+seg("L30", "L30>", 906, 898, 180)
+seg("L31", "L31>", 897, 895, 180)
+seg("L32", "L32>", 895, 889, 180)
+seg("L33", "L33>", 868, 826, 180)
+seg("L34", "L34>", 822, 806, 180)
+seg("L35", "L35>", 805, 800, 180)
+seg("L36", "L36>", 799, 799, 180)
+seg("L37", "L37>", 797, 778, 180)
+seg("L38", "L38>", 780, 774, 180)
+seg("L39", "L40>", 774, 774, 180)
+seg("L41", "L41>", 770, 735, 180)
+seg("L42", "L45>", 735, 722, 180)
+seg("L46", "L46>", 720, 713, 180)
+seg("L47", "L47>", 713, 711.5, 180)
+seg("L48", "L49>", 711.5, S_STOP, 180, ease=True)
 seg("L50", "L65>", S_STOP, S_STOP, 180)  # L53b is inside it
 seg("P03", "P03>", S_STOP, S_STOP, 180)
-seg("L66", "L66>", S_STOP, 712, 180, x1=-1.9, ease=True)
+seg("L66", "L66>", S_STOP, 672, 180, x1=-1.9, ease=True)
 seg("L67", "L67>", 240, 240, 180)
 seg("L68", "L68>", -5, -5, 180)
 seg("L69", "L71>", -5, -5, 180)
@@ -214,13 +215,13 @@ cues += [
     {"at": "L42", "name": "lights", "g": 0.25, "dur": 1.2},
     {"at": "L45", "name": "lights", "g": 1.0, "dur": 1.4},
     # the Marker: always found where it already is, never seen moving
-    {"at": 0, "name": "marker", "x": 3.0, "y": 1005, "vis": True, "drift": False, "snow": True},
-    {"at": "L05", "name": "marker", "vis": False, "x": 3.0, "y": 1005},
-    {"at": "L29", "name": "marker", "x": 3.0, "y": 1005, "vis": True, "drift": False, "snow": True},
-    {"at": "L34", "name": "marker", "x": 2.2, "y": 855, "vis": True, "drift": False, "snow": True},
-    {"at": "L36", "name": "marker", "x": 2.2, "y": 855, "vis": True, "drift": True, "snow": True},
-    {"at": "L38", "name": "marker", "x": 2.0, "y": 795, "vis": True, "drift": False, "snow": True, "kg": 2.5},
-    {"at": "L41", "name": "marker", "x": 2.0, "y": 795, "vis": False},
+    {"at": 0, "name": "marker", "x": 3.0, "y": 885, "vis": True, "drift": False, "snow": True},
+    {"at": "L05", "name": "marker", "vis": False, "x": 3.0, "y": 885},
+    {"at": "L29", "name": "marker", "x": 3.0, "y": 885, "vis": True, "drift": False, "snow": True},
+    {"at": "L34", "name": "marker", "x": 2.2, "y": 795, "vis": True, "drift": False, "snow": True},
+    {"at": "L36", "name": "marker", "x": 2.2, "y": 795, "vis": True, "drift": True, "snow": True},
+    {"at": "L38", "name": "marker", "x": 2.0, "y": 765, "vis": True, "drift": False, "snow": True, "kg": 3.0},
+    {"at": "L41", "name": "marker", "x": 2.0, "y": 765, "vis": False},
     {"at": "L46", "name": "marker", "x": MK_FINAL[0], "y": MK_FINAL[1], "vis": True, "drift": False, "snow": True},
     {"at": "L64", "name": "marker", "x": MK_FINAL[0], "y": MK_FINAL[1], "vis": False},
     {"at": "L65", "name": "square", "on": True},
@@ -246,7 +247,7 @@ cues += [
     {"at": "L09", "name": "table", "keys": True},
     {"at": "L13", "name": "table"},
     {"at": "L69", "name": "table", "keys": True, "bag": True, "glass": True},
-    {"at": "L71", "name": "table", "keys": True, "bag": True, "glass": True, "cups": True},
+    {"at": "L71", "name": "table", "glass": True, "cups": True},
     {"at": "L72", "name": "table"},
     {"at": "L72", "name": "newpost", "on": True, "glow": 0.25, "dur": 0.1},
     {"at": "L73", "name": "newpost", "on": True, "glow": 1.0, "dur": 1.6},
@@ -256,13 +257,12 @@ cues += [
 # (at, what, step, camera, extra). step 1 on ones (the scare), 4 on fours (locked), else 2
 SHOTS = [
     # 01 the count
-    (0, "my face in the green dash light, then the road", 2, FACE, {}),
-    ("L01.2", "POV through the windscreen, wipers sweeping, a glint slides past", 2, POV, {}),
-    ("L02", "my face in green dash light", 2, FACE, {}),
+    (0, "two amber eyes in the post line, in the beams", 2, still(EYE, W2P((3.0, 885, 1.15), 910, 180), 38), {}),
+    (ref("L01", 2), "my face in green dash light", 2, FACE, {}),
     ("L03", "the Marker glimpse at the edge of the beams", 2,
-     still(EYE, W2P((3.0, 1005, 1.1), 1040, 180), 30), {}),
-    ("L04", "close on two amber eyes", 2, still(EYE, W2P((3.0, 1005, 1.2), 1030, 180), 62), {}),
-    (ref("L04", 2), "a normal post's single glint", 2, still(EYE, W2P((3.0, 990, 1.7), 1030, 180), 45), {}),
+     still(EYE, W2P((3.0, 885, 1.1), 906, 180), 30), {}),
+    ("L04", "close on two amber eyes", 2, still(EYE, W2P((3.0, 885, 1.2), 901, 180), 62), {}),
+    (ref("L04", 2), "a normal post's single glint", 2, still(EYE, W2P((3.0, 870, 1.7), 899, 180), 45), {}),
     # 02 the promise
     ("L05", "Odile's cottage window lit warm in falling snow", 2,
      still([-1.5, -5.5, 1.7], [-7.4, 0.5, 1.5], 26), {}),
@@ -297,27 +297,27 @@ SHOTS = [
     ("L27", "POV, the line now on the left", 2, POV, {}),
     ("L28", "my face, lips moving", 2, FACE, {}),
     ("L29", "POV, a wide glint pair fading up in the line", 2, still(EYE, [-1.8, 40, 1.8], 17), {}),
-    ("L30", "the Marker in the post line", 2, still(EYE, W2P((3.0, 1005, 0.8), 1028, 180), 36), {}),
+    ("L30", "the Marker in the post line", 2, still(EYE, W2P((3.0, 885, 0.8), 902, 180), 36), {}),
     ("L31", "my face, scared", 2, FACE, {}),
     ("L32", "from my window as the plough passes it", 2, WIN_L, {}),
     ("L33", "POV, normal glints", 2, still(EYE, [-1.5, 30, 2.0], 16), {}),
-    ("L34", "the Marker ahead in the beams", 2, still(EYE, W2P((2.2, 855, 0.9), 892, 180), 30), {}),
-    ("L35", "closer, one glint far down the line sitting lower", 2, still(EYE, W2P((2.2, 855, 0.9), 874, 180), 24), {}),
-    ("L36", "the snow heaped against its front", 2, still(EYE, W2P((2.2, 855.5, 0.6), 868, 180), 42), {}),
+    ("L34", "the Marker ahead in the beams", 2, still(EYE, W2P((2.2, 795, 0.9), 812, 180), 30), {}),
+    ("L35", "closer, one glint far down the line sitting lower", 2, still(EYE, W2P((2.2, 795, 0.9), 803, 180), 24), {}),
+    ("L36", "the snow heaped against its front", 2, still(EYE, W2P((2.2, 795.5, 0.6), 799, 180), 42), {}),
     ("L37", "POV, the low glint, round the bend", 2, POV_BEND, {}),
-    ("L38", "the Marker at the edge of my lane", 2, still(EYE, W2P((2.0, 795, 1.0), 817, 180), 28), {}),
-    ("L39", "the arm lines and blunt hands", 2, still(W2P((2.7, 799.3, 0.95), 806, 180), W2P((2.0, 795.3, 0.7), 806, 180), 32), {}),
+    ("L38", "the Marker at the edge of my lane", 2, still(EYE, W2P((2.0, 765, 1.0), 778, 180), 28), {}),
+    ("L39", "the arm lines and blunt hands", 2, still(W2P((2.7, 769.3, 0.95), 774, 180), W2P((2.0, 765.3, 0.7), 774, 180), 32), {}),
     ("L40", "my face, scared", 2, FACE, {}),
     ("L41", "a normal glint fading past", 2, still(EYE, [-3.0, 8.0, 1.8], 24), {}),
     ("L42", "POV, the beams sinking", 2, POV, {}),
     ("L43", "the gauges dimming, wipers going", 2, DASH, {}),
     ("L44", "my face in near dark, the bag a pale shape", 2, FACE_BAG, {}),
     ("L45", "POV, the beams climb back on empty snow", 2, POV, {}),
-    ("L46", "the Marker in the middle of the road", 1, still(EYE, W2P(MK_FINAL + (1.0,), 751.8, 180), 26), {}),
+    ("L46", "the Marker in the middle of the road", 1, still([-0.3, 2.6, 2.2], W2P(MK_FINAL + (1.0,), 716.5, 180), 28), {}),
     ("L47", "side wide: the plough and the Marker almost touching", 1, still([-9.0, 4.0, 2.2], [0.0, 6.5, 1.0], 24), {}),
-    ("L48", "my face, thrown forward", 1, FACE, {}),
+    ("L48", "my face, thrown forward", 1, still([0.55, 1.3, 3.25], [-0.55, 0.45, 3.1], 20), {}),
     ("L49", "low on the blade, snow sheeting off", 1, still([3.5, 6.5, 0.6], [0.3, 3.8, 0.8], 24), {}),
-    ("L50", "blade edge and the two eyes", 1, still([-2.6, 3.9, 0.8], [0.0, 4.5, 1.1], 28), {}),
+    ("L50", "blade edge and the two eyes", 1, still([-2.9, 3.6, 1.2], [0.0, 4.6, 1.2], 30), {}),
     ("L51", "the mirror: two white lights stopping", 1, still([-1.6, 0.0, 3.0], [-0.3, -14.0, 1.5], 24), {}),
     (ref("L51", 2), "Bram in his own cab", 1, still([-0.5, -9.2, 1.95], [-0.5, -12.6, 1.9], 38), {}),
     ("L52", "the Marker through the glass, unmoved", 2,
@@ -326,20 +326,20 @@ SHOTS = [
      still([-0.5, 0.9, 3.2], W2P(MK_FINAL + (1.0,), S_STOP, 180), 20), {}),
     # 05 the edge
     ("L54", "over my shoulder, past the Marker", 2, still([0.15, 0.8, 3.3], [0.6, 15.0, 1.2], 22), {}),
-    ("L55", "the raw edge beyond the Marker", 2, still([0.0, 2.9, 2.2], W2P((0.6, 738.0, -2.0), S_STOP, 180), 20), {}),
+    ("L55", "the raw edge beyond the Marker", 2, still([0.0, 2.4, 2.9], W2P((0.6, 700.0, -3.0), S_STOP, 180), 22), {}),
     ("L56", "wide from the bend above: the scar of the slide", 2,
-     still(W2P((-14.0, 800.0, 22.0), S_STOP, 180), W2P((4.0, 705.0, -6.0), S_STOP, 180), 20), {}),
+     still(W2P((-8.0, 704.0, 9.0), S_STOP, 180), W2P((2.9, 690.0, -11.0), S_STOP, 180), 28), {}),
     ("L57", "the same stretch, broken", 2,
-     still([0.7, 0.8, 3.3], W2P((2.0, 722.0, -5.0), S_STOP, 180), 20), {}),
+     still([0.7, 0.8, 3.3], W2P((2.9, 690.0, -11.0), S_STOP, 180), 24), {}),
     ("L58", "the slab below, post twenty-three upright on it", 2,
-     still(W2P((7.0, 748.0, 6.0), S_STOP, 180), W2P((2.9, 690.0, -12.5), S_STOP, 180), 28), {}),
-    ("L59", "POV along the posts, off the edge to its glint", 2, still(EYE, [-1.5, 40, 0.0], 16), {}),
+     still(W2P((7.0, 703.0, 5.0), S_STOP, 180), W2P((2.9, 690.0, -12.0), S_STOP, 180), 34), {}),
+    ("L59", "POV along the posts, off the edge to its glint", 2, still(EYE, [-2.3, 20.0, -8.0], 20), {}),
     ("L60", "my face, scared easing", 2, FACE, {}),
     ("L61", "the snow lip of the edge", 2,
-     still(W2P((-1.6, 741.3, 0.7), S_STOP, 180), W2P((1.2, 740.3, -0.3), S_STOP, 180), 28), {}),
+     still(W2P((-1.6, 711.3, 0.7), S_STOP, 180), W2P((1.2, 705.3, -0.3), S_STOP, 180), 28), {}),
     ("L62", "low wide: the Marker on the new edge, the drop behind", 2, still([-3.6, 3.7, 1.0], [0.2, 5.0, 0.9], 34), {}),
     ("L63", "Bram knocking at my door", 2, still([0.3, 0.3, 3.0], [1.7, 0.3, 2.8], 34), {}),
-    ("L64", "the road ahead, the edge, nothing standing on it", 2, still(EYE, W2P((0.6, 738.0, 0.0), S_STOP, 180), 18), {}),
+    ("L64", "the road ahead, the edge, nothing standing on it", 2, still(EYE, W2P((0.6, 703.0, 0.0), S_STOP, 180), 18), {}),
     ("L65", "the wide square pressed in the snow", 2, still([2.2, 8.5, 2.4], [0.6, 4.4, 0.0], 26), {}),
     ("P03", "the tally on the blade: two rust-orange strokes", 4, still([0.05, 5.21, 0.95], [0.34, 3.85, 0.73], 38), {"hand": 0.0}),
     # 06 home
@@ -350,12 +350,12 @@ SHOTS = [
     ("L69", "the bag on her table beside a glass of water", 2,
      still([O_BASE[0] + 0.5, -0.9, 1.4], [O_BASE[0] + 0.5, 0.1, 0.85], 30), {"snow": 0}),
     ("L70", "Odile looks from the bag to me", 2, still([O_BASE[0] + 0.7, -0.6, 1.4], [CHAIR[0], 0.1, 1.2], 30), {"snow": 0}),
-    ("L71", "two cups on the table", 2, still([O_BASE[0] + 0.7, -0.7, 1.3], [O_BASE[0] + 0.5, 0.1, 0.85], 30), {"snow": 0}),
+    ("L71", "two cups on the table", 2, still([O_BASE[0] + 0.55, -1.5, 1.35], [O_BASE[0] + 0.52, -0.2, 0.8], 30), {"snow": 0}),
     (ref("L71", 2), "Odile smiles", 2, still([O_BASE[0] + 0.5, -0.35, 1.3], [CHAIR[0], 0.1, 1.28], 36), {"snow": 0}),
     ("L72", "spring: the mended road, the new post at the new edge, me beside it", 2,
-     still(W2P((-0.4, 752.0, 1.5), 700, 0), W2P((0.5, 741.0, 1.2), 700, 0), 26), {}),
+     still(W2P((-0.4, 722.0, 1.5), 700, 0), W2P((0.5, 711.0, 1.2), 700, 0), 26), {}),
     ("L73", "the new post's reflector catches the low sun", 4,
-     still(W2P((0.3, 743.4, 1.9), 700, 0), W2P((0.6, 740.9, 1.72), 700, 0), 42), {"hand": 0.0}),
+     still(W2P((0.3, 713.4, 1.9), 700, 0), W2P((0.6, 710.9, 1.72), 700, 0), 42), {"hand": 0.0}),
 ]
 
 shots = []
@@ -423,7 +423,7 @@ key("me", "L60", expr="scared")
 key("me", "L60>", expr="neutral", blend=0.6)
 key("me", "L66", expr="neutral")
 hide("me", "L69")
-put("me", "L72", W2P((-0.2, 743.2), 700, 0)[:2] + [0.0], yaw=150, expr="soft",
+put("me", "L72", W2P((-0.2, 713.2), 700, 0)[:2] + [0.0], yaw=150, expr="soft",
     **{k: v for k, v in NEUTRAL.items() if k not in ("hide_parts",)})
 # Odile: in her chair by the lamp
 hide("odile", 0)
@@ -441,7 +441,7 @@ key("odile", "L12>", tremble=3.0, blend=0.1)
 hide("odile", "L13")
 put("odile", "L70", [CHAIR[0], CHAIR[1], -0.17], yaw=90, expr="neutral", sit=True, head=[0, 10])
 key("odile", "L71", expr="neutral")
-key("odile", ref("L71", 2), expr="grin", head=[0, 2], blend=0.5)
+key("odile", ref("L71", 2), expr="soft", head=[0, 2], blend=0.5)
 # Bram: the hut, then his van, then at my door
 hide("bram", 0)
 put("bram", "L23", [H_BASE[0] + 0.6, H_BASE[1] + 0.5], yaw=0, expr="grin", head=[0, 4])
@@ -492,9 +492,11 @@ sound = {"floor": "wood", "steps_db": -26,
              {"at": "L48", "kind": "whoosh", "db": -12, "dur": 1.8},
              {"at": "L57", "kind": "creak", "db": -10, "dur": 3.4},
              {"at": ref("L63", 1), "kind": "knock", "pattern": [0, 0.28, 0.56], "tone": "glass_soft", "db": -10},
-             {"at": "L73>", "kind": "click", "db": -2},
+             {"at": "L73>-0.05", "kind": "bell", "db": -9, "dur": 0.5},
+             {"at": "L73>", "kind": "thud", "db": -8, "dur": 0.4},
          ],
          "music_drops": [{"from": "L44>", "to": "L45"},
+                         {"from": "L45>", "to": "L46", "keep": ["hit"]},
                          {"from": "P02", "to": "L52", "keep": ["hit"]}]}
 
 story = {

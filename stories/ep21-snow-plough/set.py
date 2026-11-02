@@ -38,7 +38,7 @@ POST_X = 3.0
 PX = 0.6
 NPOST = 40
 SP = 30.0
-SLID0, SLID1 = 665.0, 740.5
+SLID0, SLID1 = 665.0, 705.5
 SLAB_Z = -13.0
 BASE = {"odile": (500.0, 0.0), "hut": (500.0, 300.0)}
 
@@ -208,11 +208,11 @@ def build_world(kit, ctx):
     prof = [(0, 0), (ROAD, 0), (45, -33), (45, -40), (0, -13.5)]
     endwall1 = quad(kit, "end wall 1", [(x, SLID1, z) for x, z in prof], cliff, W)
     endwall0 = quad(kit, "end wall 0", [(x, SLID0, z) for x, z in reversed(prof)], cliff, W)
-    slab = kit.box("slab", (ROAD, 36, 0.8), (ROAD / 2, 690.0, SLAB_Z - 0.4), snow, W, rot=(0, math.radians(7), 0), bevel=0.12)
+    slab = kit.box("slab", (ROAD, 30, 0.8), (ROAD / 2, 690.0, SLAB_Z - 0.4), snow, W, rot=(0, math.radians(7), 0), bevel=0.12)
     rub = []
     for k in range(9):
         h = kit.hash01(k, 3)
-        rub.append(kit.box(f"rubble{k}", (1.2 + 2 * h, 1.4 + h, 0.7 + h), (0.5 + 4 * kit.hash01(k, 5), 676 + 56 * kit.hash01(k, 9),
+        rub.append(kit.box(f"rubble{k}", (1.2 + 2 * h, 1.4 + h, 0.7 + h), (0.5 + 4 * kit.hash01(k, 5), 668 + 34 * kit.hash01(k, 9),
                                                                           SLAB_Z - 1.6 - 5 * kit.hash01(k, 11)), cliff, W,
                            rot=(0.3 * h, 0.2, 0.9 * h), bevel=0.2))
     post.extend([gully, cutwall, endwall1, endwall0, slab] + rub)
@@ -333,9 +333,9 @@ def build_marker(kit, ctx, W):
     flush with the shoulders, two arm lines moulded flat in its sides, two amber reflectors for eyes. Built once;
     posed per shot by the 'marker' cue. It faces +y (uphill)."""
     root = kit.empty("marker", (0, 0, 0), W)
-    orange = kit.plastic("#9a3f18", 0.75, name="marker orange")
+    orange = kit.plastic("#3d180a", 0.8, name="marker orange")
     black = kit.plastic("#0b0b0d", 0.5, name="marker black")
-    lighter = kit.plastic("#b5521f", 0.6, name="marker arm paint")
+    lighter = kit.plastic("#6a2c12", 0.6, name="marker arm paint")
     snowm = kit.plastic("#dfe7f3", 0.95, name="marker snow")
     kit.box("marker.body", (1.8, 0.5, 1.05), (0, 0, 0.525), orange, root, bevel=0.03)
     kit.box("marker.cap", (1.82, 0.52, 0.35), (0, 0, 1.225), black, root, bevel=0.03)
@@ -345,8 +345,8 @@ def build_marker(kit, ctx, W):
     nodes = []
     for sx in (-1, 1):
         m, e = fog_emit(kit, f"marker eye {sx}", "#ffb03a", 0.0)
-        s = kit.sphere(f"marker.eye{sx}", 0.17, (sx * 0.42, 0.25, 1.2), m, root, seg=12)
-        s.scale = (1.0, 0.3, 1.0)
+        s = kit.sphere(f"marker.eye{sx}", 0.13, (sx * 0.42, 0.25, 1.2), m, root, seg=12)
+        s.scale = (1.0, 0.5, 1.0)
         nodes.append(e)
     sn = []
     sn.append(kit.box("marker.snow1", (1.7, 0.46, 0.06), (0, 0, 1.42), snowm, root, bevel=0.03))
@@ -567,7 +567,7 @@ def build(kit, story, tl):
     # the moon / sun and the marker's rim light
     sun = kit.light("sun", "SUN", (0, 0, 60), 1.0, "#7f9ad8", rot=(math.radians(58), 0, math.radians(215)))
     ctx["sun"] = sun
-    mrim = kit.light("mrim", "AREA", (0, 0, 2), 90.0, "#7fa4ff", size=1.8, parent=ctx["W"])
+    mrim = kit.light("mrim", "AREA", (0, 0, 2), 420.0, "#6f9bff", size=2.2, parent=ctx["W"])
     mrim.visible_camera = False
     ctx["mrim"] = mrim
     # the Marker is lit by its own soft key, not by the headlights (those would flatten it)
@@ -578,7 +578,7 @@ def build(kit, story, tl):
             col.objects.link(o)
     for co in col.collection_objects:
         co.light_linking.link_state = "EXCLUDE"
-    mk = kit.light("mkey", "SPOT", (0, 0, 3), 260.0, "#ffe2b8", spot=48, blend=0.6, size=0.3, parent=ctx["W"])
+    mk = kit.light("mkey", "SPOT", (0, 0, 3), 60.0, "#ffe2b8", spot=48, blend=0.6, size=0.3, parent=ctx["W"])
     mk.visible_camera = False
     light_only(kit, "mk only", "mkey", mobjs)
     ctx["mkey"] = mk
@@ -699,7 +699,7 @@ def animate(kit, story, tl, t, ctx):
     ctx["sun"].data.energy = ctx["sun"].data.energy  # base is 1.0; gain below
     bpy.context.scene.view_settings.exposure = lerp(EXPO[0], EXPO[1], ss(tod)) if tod <= 1 else lerp(EXPO[1], EXPO[2], ss(tod - 1))
     ctx["odile_sky"].inputs["Color"].default_value = (*fogc, 1.0)
-    ctx["odile_sky"].inputs["Strength"].default_value = 0.9 + 1.4 * min(tod, 2.0)
+    ctx["odile_sky"].inputs["Strength"].default_value = 0.9 + 0.4 * min(tod, 2.0)
     sd = ctx["sundisc"]
     sd.hide_render = tod < 1.5
     ctx["sundisc_node"].inputs["Strength"].default_value = 3.0 * ss((tod - 1.5) / 0.5)
@@ -734,12 +734,17 @@ def animate(kit, story, tl, t, ctx):
         else:
             root.rotation_euler = (0, 0, 0)
         root.location = (wx, wy, z)
-        hide_tree(root, i == 24 and slid)
+        hide_tree(root, False)
         dx, dy = wx - px, wy - s
         ypl = sn * dx + c * dy
         xpl = c * dx - sn * dy
         g = ss((ypl + 2.0) / 7.0) * (1.0 - ss((ypl - 34.0) / 22.0)) if abs(xpl) < 12 else 0.0
         d["node"].inputs["Strength"].default_value = 4.0 * g * hg * day if ypl < 70 else 0.0
+        if i == 23 and slid:   # the glint that matters: the brightest point wherever it is in frame
+            d["node"].inputs["Strength"].default_value = 16.0 * g * hg
+        for ch in root.children:
+            if ch.name.endswith(".eye"):
+                ch.scale = (2.4, 3.6, 2.4) if (i == 23 and slid) else (0.9, 1.5, 0.9)
     # the plant: post 23's glint, down on the slab, seen from far up the road, sitting lower than the line
     dxp, dyp = 2.9 - px, 690.0 - s
     yp = sn * dxp + c * dyp
@@ -772,7 +777,7 @@ def animate(kit, story, tl, t, ctx):
         mpl = V((sn * 0 + c * (x - px) - sn * (y - s), sn * (x - px) + c * (y - s), 0.8))
         near = min(1.0, max(0.3, (cl - mpl).length / 9.0))   # eyes close to the camera would clip to white
         for e in M["eyes"]:
-            e.inputs["Strength"].default_value = 3.2 * g * hg * day * near
+            e.inputs["Strength"].default_value = 1.4 * g * hg * day * near
         rim = ctx["mrim"]
         rim.location = (x, y - 3.0, 1.9)
         rim.rotation_euler = (V((x, y, 0.8)) - V((x, y - 3.0, 1.9))).to_track_quat("-Z", "Y").to_euler()
