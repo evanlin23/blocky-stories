@@ -4,20 +4,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every MORNING",
-    "Every morning"
+    "On our BOAT,",
+    "On our boat,"
    ],
    [
-    "something on the TOWPATH",
-    "something on the towpath"
+    "the day starts",
+    "the day starts"
    ],
    [
-    "says GOOD MORNING.",
-    "says good morning."
+    "with GOOD MORNING.",
+    "with good morning."
    ],
    [
-    "In my VOICE.",
-    "In my voice."
+    "Then something LIES DOWN",
+    "Then something lies down"
+   ],
+   [
+    "on the TOWPATH.",
+    "on the towpath."
    ]
   ]
  },
@@ -26,20 +30,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I live on a long BOAT",
-    "I live on a long boat"
+    "Just me,",
+    "Just me,"
    ],
    [
-    "on a quiet CANAL,",
-    "on a quiet canal,"
+    "my old dog MOSS,",
+    "my old dog Moss,"
    ],
    [
-    "with my old dog,",
-    "with my old dog,"
+    "and a long BOAT",
+    "and a long boat"
    ],
    [
-    "MOSS.",
-    "Moss."
+    "on a quiet CANAL.",
+    "on a quiet canal."
    ]
   ]
  },
@@ -48,30 +52,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Her muzzle",
-    "Her muzzle"
-   ],
-   [
-    "went WHITE",
-    "went white"
-   ],
-   [
-    "years AGO.",
-    "years ago."
-   ]
-  ]
- },
- {
-  "id": "L04",
-  "who": "narrator",
-  "chunks": [
-   [
     "For twelve YEARS,",
     "For twelve years,"
    ],
    [
-    "I opened the HATCH",
-    "I opened the hatch"
+    "I slid the HATCH",
+    "I slid the hatch"
    ],
    [
     "at first LIGHT",
@@ -92,29 +78,65 @@
   ]
  },
  {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She'd climb the three STEPS",
+    "She'd climb the three steps"
+   ],
+   [
+    "and JUMP",
+    "and jump"
+   ],
+   [
+    "onto the TOWPATH.",
+    "onto the towpath."
+   ]
+  ]
+ },
+ {
   "id": "L05",
   "who": "narrator",
   "chunks": [
    [
-    "And she'd come UP",
-    "And she'd come up"
+    "Then she'd ROLL",
+    "Then she'd roll"
    ],
    [
-    "the three STEPS",
-    "the three steps"
+    "in the wet GRASS",
+    "in the wet grass"
    ],
    [
-    "to WAG it",
-    "to wag it"
+    "by the back RING,",
+    "by the back ring,"
    ],
    [
-    "back at ME.",
-    "back at me."
+    "face UP,",
+    "face up,"
+   ],
+   [
+    "eyes on the SKY.",
+    "eyes on the sky."
    ]
   ]
  },
  {
   "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then we'd walk the TOWPATH",
+    "Then we'd walk the towpath"
+   ],
+   [
+    "at HER pace.",
+    "at her pace."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
   "who": "narrator",
   "chunks": [
    [
@@ -128,22 +150,20 @@
   ]
  },
  {
-  "id": "L07",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She stopped COMING UP.",
-    "She stopped coming up."
-   ]
-  ]
- },
- {
   "id": "L08",
   "who": "narrator",
   "chunks": [
    [
-    "So I stopped SAYING it.",
-    "So I stopped saying it."
+    "She couldn't make",
+    "She couldn't make"
+   ],
+   [
+    "the STEPS.",
+    "the steps."
+   ],
+   [
+    "Or the JUMP.",
+    "Or the jump."
    ]
   ]
  },
@@ -152,16 +172,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'd just STEP",
-    "I'd just step"
+    "I still said",
+    "I still said"
    ],
    [
-    "around her bed",
-    "around her bed"
+    "GOOD MORNING.",
+    "good morning."
    ],
    [
-    "and go OUT.",
-    "and go out."
+    "She'd wag from her BED",
+    "She'd wag from her bed"
+   ],
+   [
+    "and stay DOWN.",
+    "and stay down."
    ]
   ]
  },
@@ -170,20 +194,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then, one morning",
-    "Then, one morning"
+    "So I'd step ROUND her",
+    "So I'd step round her"
    ],
    [
-    "in SEPTEMBER,",
-    "in september,"
+    "and walk the towpath ALONE.",
+    "and walk the towpath alone."
    ],
    [
-    "I woke to my OWN VOICE",
-    "I woke to my own voice"
-   ],
-   [
-    "OUTSIDE.",
-    "outside."
+    "FAST.",
+    "Fast."
    ]
   ]
  },
@@ -192,8 +212,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "\"Good MORNING.\"",
-    "Good morning."
+    "By September,",
+    "By September,"
+   ],
+   [
+    "her worn PATCH",
+    "her worn patch"
+   ],
+   [
+    "by the back ring",
+    "by the back ring"
+   ],
+   [
+    "had grown OVER.",
+    "had grown over."
    ]
   ]
  },
@@ -202,8 +234,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Just those TWO WORDS.",
-    "Just those two words."
+    "Then one DAWN,",
+    "Then one dawn,"
+   ],
+   [
+    "in thick autumn FOG,",
+    "in thick autumn fog,"
+   ],
+   [
+    "I came up",
+    "I came up"
+   ],
+   [
+    "and STOPPED.",
+    "and stopped."
    ]
   ]
  },
@@ -212,20 +256,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Moss was at the FOOT",
-    "Moss was at the foot"
+    "Three RINGS",
+    "Three rings"
    ],
    [
-    "of the STEPS,",
-    "of the steps,"
+    "up the TOWPATH,",
+    "up the towpath,"
    ],
    [
-    "looking UP",
-    "looking up"
+    "something was LYING",
+    "something was lying"
    ],
    [
-    "at the HATCH.",
-    "at the hatch."
+    "in the GRASS.",
+    "in the grass."
    ]
   ]
  },
@@ -234,20 +278,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then she CLIMBED them.",
-    "Then she climbed them."
+    "Long and DARK,",
+    "Long and dark,"
    ],
    [
-    "All THREE.",
-    "All three."
+    "FLAT",
+    "flat"
    ],
    [
-    "For the first time",
-    "For the first time"
-   ],
-   [
-    "since JUNE.",
-    "since june."
+    "along the water's EDGE.",
+    "along the water's edge."
    ]
   ]
  },
@@ -256,12 +296,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I followed her UP",
-    "I followed her up"
+    "Down in the cabin,",
+    "Down in the cabin,"
    ],
    [
-    "onto the DECK.",
-    "onto the deck."
+    "Moss was SITTING UP,",
+    "Moss was sitting up,"
+   ],
+   [
+    "ears FORWARD.",
+    "ears forward."
    ]
   ]
  },
@@ -270,12 +314,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Fog sat on the CANAL,",
-    "Fog sat on the canal,"
+    "I walked",
+    "I walked"
    ],
    [
-    "FLAT and WHITE.",
-    "flat and white."
+    "the OTHER way.",
+    "the other way."
    ]
   ]
  },
@@ -284,70 +328,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Three RINGS",
-    "Three rings"
-   ],
-   [
-    "up the TOWPATH",
-    "up the towpath"
-   ],
-   [
-    "from my boat,",
-    "from my boat,"
-   ],
-   [
-    "something was LYING",
-    "something was lying"
-   ],
-   [
-    "in the grass.",
-    "in the grass."
-   ]
-  ]
- },
- {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Long and DARK,",
-    "Long and dark,"
-   ],
-   [
-    "right along",
-    "right along"
-   ],
-   [
-    "the water's EDGE.",
-    "the water's edge."
-   ]
-  ]
- },
- {
-  "id": "L19",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Moss stood on the DECK",
-    "Moss stood on the deck"
-   ],
-   [
-    "and WAGGED.",
-    "and wagged."
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "By the time",
-    "By the time"
-   ],
-   [
-    "the fog THINNED,",
-    "the fog thinned,"
+    "When I came BACK,",
+    "When I came back,"
    ],
    [
     "the towpath",
@@ -360,7 +342,7 @@
   ]
  },
  {
-  "id": "L21",
+  "id": "L18",
   "who": "narrator",
   "chunks": [
    [
@@ -368,31 +350,17 @@
     "The next dawn,"
    ],
    [
-    "my voice AGAIN.",
-    "my voice again."
-   ],
-   [
-    "\"Good MORNING.\"",
-    "Good morning."
-   ]
-  ]
- },
- {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
     "TWO rings",
-    "Two rings"
+    "two rings"
    ],
    [
-    "from my boat now.",
-    "from my boat now."
+    "from my boat.",
+    "from my boat."
    ]
   ]
  },
  {
-  "id": "L23",
+  "id": "L19",
   "who": "narrator",
   "chunks": [
    [
@@ -406,7 +374,7 @@
   ]
  },
  {
-  "id": "L24",
+  "id": "L20",
   "who": "narrator",
   "chunks": [
    [
@@ -424,7 +392,7 @@
   ]
  },
  {
-  "id": "L25",
+  "id": "L21",
   "who": "narrator",
   "chunks": [
    [
@@ -434,7 +402,7 @@
   ]
  },
  {
-  "id": "L26",
+  "id": "L22",
   "who": "narrator",
   "chunks": [
    [
@@ -448,7 +416,7 @@
   ]
  },
  {
-  "id": "L27",
+  "id": "L23",
   "who": "narrator",
   "chunks": [
    [
@@ -470,29 +438,29 @@
   ]
  },
  {
-  "id": "L28",
+  "id": "L24",
   "who": "narrator",
   "chunks": [
    [
-    "It lay on its BACK,",
-    "It lay on its back,"
+    "It lay there",
+    "It lay there"
+   ],
+   [
+    "face UP,",
+    "face up,"
    ],
    [
     "arms at its SIDES,",
     "arms at its sides,"
    ],
    [
-    "eyes OPEN",
-    "eyes open"
-   ],
-   [
-    "on the SKY.",
-    "on the sky."
+    "eyes on the SKY.",
+    "eyes on the sky."
    ]
   ]
  },
  {
-  "id": "L29",
+  "id": "L25",
   "who": "narrator",
   "chunks": [
    [
@@ -510,20 +478,92 @@
   ]
  },
  {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It made no SOUND",
+    "It made no sound"
+   ],
+   [
+    "at ALL.",
+    "at all."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Below me,",
+    "Below me,"
+   ],
+   [
+    "Moss WHINED",
+    "Moss whined"
+   ],
+   [
+    "at the foot",
+    "at the foot"
+   ],
+   [
+    "of the STEPS.",
+    "of the steps."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She tried the first STEP,",
+    "She tried the first step,"
+   ],
+   [
+    "and SLID back DOWN.",
+    "and slid back down."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The THIRD morning,",
+    "The third morning,"
+   ],
+   [
+    "I was up",
+    "I was up"
+   ],
+   [
+    "BEFORE the light.",
+    "before the light."
+   ]
+  ]
+ },
+ {
   "id": "L30",
   "who": "narrator",
   "chunks": [
    [
-    "Moss went UP",
-    "Moss went up"
+    "I watched",
+    "I watched"
    ],
    [
-    "to look at it,",
-    "to look at it,"
+    "through my bunk WINDOW,",
+    "through my bunk window,"
    ],
    [
-    "ears FORWARD.",
-    "ears forward."
+    "the one",
+    "the one"
+   ],
+   [
+    "on the TOWPATH side.",
+    "on the towpath side."
    ]
   ]
  },
@@ -532,12 +572,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I said her NAME.",
-    "I said her name."
+    "The fog got THICKER.",
+    "The fog got thicker."
    ],
    [
-    "She didn't TURN.",
-    "She didn't turn."
+    "Then THINNER.",
+    "Then thinner."
    ]
   ]
  },
@@ -546,16 +586,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The THIRD morning,",
-    "The third morning,"
+    "And it was",
+    "And it was"
    ],
    [
-    "I was awake",
-    "I was awake"
-   ],
-   [
-    "BEFORE it.",
-    "before it."
+    "at my FRONT RING.",
+    "at my front ring."
    ]
   ]
  },
@@ -564,16 +600,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I sat on the STEPS",
-    "I sat on the steps"
+    "I never SAW it come.",
+    "I never saw it come."
    ],
    [
-    "under the HATCH",
-    "under the hatch"
-   ],
-   [
-    "and WAITED.",
-    "and waited."
+    "It was just THERE.",
+    "It was just there."
    ]
   ]
  },
@@ -582,131 +614,21 @@
   "who": "narrator",
   "chunks": [
    [
-    "It came from",
-    "It came from"
-   ],
-   [
-    "right by my FRONT RING.",
-    "right by my front ring."
-   ],
-   [
-    "\"Good MORNING.\"",
-    "Good morning."
-   ]
-  ]
- },
- {
-  "id": "L35",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It had my CROAK.",
-    "It had my croak."
-   ],
-   [
-    "The one I only have",
-    "The one I only have"
-   ],
-   [
-    "before COFFEE.",
-    "before coffee."
-   ]
-  ]
- },
- {
-  "id": "L36",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I said,",
-    "I said,"
-   ],
-   [
-    "\"HELLO?\"",
-    "hello?"
-   ]
-  ]
- },
- {
-  "id": "L37",
-  "who": "narrator",
-  "chunks": [
-   [
-    "NOTHING.",
-    "Nothing."
-   ]
-  ]
- },
- {
-  "id": "L38",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I said,",
-    "I said,"
-   ],
-   [
-    "\"What do you WANT?\"",
-    "What do you want?"
-   ]
-  ]
- },
- {
-  "id": "L39",
-  "who": "narrator",
-  "chunks": [
-   [
-    "NOTHING.",
-    "Nothing."
-   ]
-  ]
- },
- {
-  "id": "L40",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It never once said",
-    "It never once said"
-   ],
-   [
-    "MY NAME.",
-    "my name."
-   ],
-   [
-    "Just those",
-    "Just those"
-   ],
-   [
-    "two WORDS.",
-    "two words."
-   ]
-  ]
- },
- {
-  "id": "L41",
-  "who": "narrator",
-  "chunks": [
-   [
-    "When I looked OUT,",
-    "When I looked out,"
-   ],
-   [
-    "its head",
-    "its head"
+    "Its head",
+    "Its head"
    ],
    [
     "was TURNED",
     "was turned"
    ],
    [
-    "toward the BOAT.",
-    "toward the boat."
+    "toward my BOAT.",
+    "toward my boat."
    ]
   ]
  },
  {
-  "id": "L42",
+  "id": "L35",
   "who": "narrator",
   "chunks": [
    [
@@ -724,7 +646,39 @@
   ]
  },
  {
-  "id": "L43",
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its eyes",
+    "Its eyes"
+   ],
+   [
+    "were on the GRASS",
+    "were on the grass"
+   ],
+   [
+    "by my back RING.",
+    "by my back ring."
+   ]
+  ]
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Right under",
+    "Right under"
+   ],
+   [
+    "my WINDOW.",
+    "my window."
+   ]
+  ]
+ },
+ {
+  "id": "L38",
   "who": "narrator",
   "chunks": [
    [
@@ -742,7 +696,29 @@
   ]
  },
  {
-  "id": "L44",
+  "id": "L39",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Moss lay at the foot",
+    "Moss lay at the foot"
+   ],
+   [
+    "of the STEPS",
+    "of the steps"
+   ],
+   [
+    "all night,",
+    "all night,"
+   ],
+   [
+    "watching the HATCH.",
+    "watching the hatch."
+   ]
+  ]
+ },
+ {
+  "id": "L40",
   "who": "narrator",
   "chunks": [
    [
@@ -764,17 +740,7 @@
   ]
  },
  {
-  "id": "L45",
-  "who": "narrator",
-  "chunks": [
-   [
-    "No VOICE.",
-    "No voice."
-   ]
-  ]
- },
- {
-  "id": "L46",
+  "id": "L41",
   "who": "narrator",
   "chunks": [
    [
@@ -792,21 +758,25 @@
   ]
  },
  {
-  "id": "L47",
+  "id": "L42",
   "who": "narrator",
   "chunks": [
    [
-    "My bunk has one small WINDOW",
-    "My bunk has one small window"
+    "My window",
+    "My window"
    ],
    [
-    "on the TOWPATH side.",
-    "on the towpath side."
+    "was WHITE",
+    "was white"
+   ],
+   [
+    "with FOG.",
+    "with fog."
    ]
   ]
  },
  {
-  "id": "L48",
+  "id": "L43",
   "who": "narrator",
   "chunks": [
    [
@@ -825,7 +795,7 @@
   "chunks": []
  },
  {
-  "id": "L49",
+  "id": "L44",
   "who": "narrator",
   "chunks": [
    [
@@ -843,7 +813,7 @@
   ]
  },
  {
-  "id": "L50",
+  "id": "L45",
   "who": "narrator",
   "chunks": [
    [
@@ -861,51 +831,49 @@
   ]
  },
  {
-  "id": "L51",
+  "id": "L46",
   "who": "narrator",
   "chunks": [
    [
-    "Its FACE",
-    "Its face"
+    "Its head",
+    "Its head"
    ],
    [
-    "right at my WINDOW.",
-    "right at my window."
+    "in the GRASS",
+    "in the grass"
    ],
    [
-    "Its head turned RIGHT round",
-    "Its head turned right round"
-   ],
-   [
-    "to ME.",
-    "to me."
+    "by my back RING.",
+    "by my back ring."
    ]
   ]
  },
  {
-  "id": "L52",
+  "id": "L47",
   "who": "narrator",
   "chunks": [
    [
-    "Then, an INCH",
-    "Then, an inch"
+    "An INCH",
+    "An inch"
    ],
    [
-    "from my EAR,",
-    "from my ear,"
-   ],
-   [
-    "my own voice said,",
-    "my own voice said,"
-   ],
-   [
-    "\"Good MORNING.\"",
-    "Good morning."
+    "from the GLASS.",
+    "from the glass."
    ]
   ]
  },
  {
-  "id": "L53",
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It didn't BLINK.",
+    "It didn't blink."
+   ]
+  ]
+ },
+ {
+  "id": "L49",
   "who": "narrator",
   "chunks": [
    [
@@ -913,8 +881,8 @@
     "Behind me,"
    ],
    [
-    "something TAPPED",
-    "something tapped"
+    "something SCRAPED",
+    "something scraped"
    ],
    [
     "on the STEPS.",
@@ -923,7 +891,7 @@
   ]
  },
  {
-  "id": "L54",
+  "id": "L50",
   "who": "narrator",
   "chunks": [
    [
@@ -945,7 +913,7 @@
   ]
  },
  {
-  "id": "L55",
+  "id": "L51",
   "who": "narrator",
   "chunks": [
    [
@@ -967,25 +935,57 @@
   ]
  },
  {
-  "id": "L56",
+  "id": "L52",
   "who": "narrator",
   "chunks": [
    [
-    "WAITING.",
-    "Waiting."
+    "WHINING",
+    "Whining"
+   ],
+   [
+    "to go OUT.",
+    "to go out."
    ]
   ]
  },
  {
-  "id": "L57",
+  "id": "L53",
   "who": "narrator",
   "chunks": [
    [
-    "The way she'd waited",
-    "The way she'd waited"
+    "I looked BACK.",
+    "I looked back."
    ],
    [
-    "every dawn",
+    "Face UP now.",
+    "Face up now."
+   ],
+   [
+    "Eyes on the SKY.",
+    "Eyes on the sky."
+   ]
+  ]
+ },
+ {
+  "id": "L54",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In HER spot.",
+    "In her spot."
+   ]
+  ]
+ },
+ {
+  "id": "L55",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The spot she'd rolled in",
+    "The spot she'd rolled in"
+   ],
+   [
+    "every DAWN",
     "every dawn"
    ],
    [
@@ -995,20 +995,56 @@
   ]
  },
  {
+  "id": "L56",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Empty",
+    "Empty"
+   ],
+   [
+    "all SUMMER.",
+    "all summer."
+   ]
+  ]
+ },
+ {
+  "id": "L57",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She couldn't get THERE",
+    "She couldn't get there"
+   ],
+   [
+    "any MORE.",
+    "any more."
+   ]
+  ]
+ },
+ {
   "id": "L58",
   "who": "narrator",
   "chunks": [
    [
-    "For the HATCH",
-    "For the hatch"
+    "So something came,",
+    "So something came,"
    ],
    [
-    "to open.",
-    "to open."
+    "one ring NEARER",
+    "one ring nearer"
    ],
    [
-    "For two WORDS.",
-    "For two words."
+    "every DAWN,",
+    "every dawn,"
+   ],
+   [
+    "to lie there",
+    "to lie there"
+   ],
+   [
+    "for HER.",
+    "for her."
    ]
   ]
  },
@@ -1017,91 +1053,17 @@
   "who": "narrator",
   "chunks": [
    [
-    "On a BOAT,",
-    "On a boat,"
+    "The way",
+    "The way"
    ],
    [
-    "everybody on board",
-    "everybody on board"
-   ],
-   [
-    "is CREW.",
-    "is crew."
+    "SHE did.",
+    "she did."
    ]
   ]
  },
  {
   "id": "L60",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And every morning,",
-    "And every morning,"
-   ],
-   [
-    "somebody calls",
-    "somebody calls"
-   ],
-   [
-    "the CREW.",
-    "the crew."
-   ]
-  ]
- },
- {
-  "id": "L61",
-  "who": "narrator",
-  "chunks": [
-   [
-    "That was MY JOB.",
-    "That was my job."
-   ]
-  ]
- },
- {
-  "id": "L62",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I STOPPED.",
-    "I stopped."
-   ]
-  ]
- },
- {
-  "id": "L63",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So something came",
-    "So something came"
-   ],
-   [
-    "and did it",
-    "and did it"
-   ],
-   [
-    "FOR me.",
-    "for me."
-   ]
-  ]
- },
- {
-  "id": "L64",
-  "who": "narrator",
-  "chunks": [
-   [
-    "In my VOICE.",
-    "In my voice."
-   ],
-   [
-    "To HER.",
-    "To her."
-   ]
-  ]
- },
- {
-  "id": "L65",
   "who": "narrator",
   "chunks": [
    [
@@ -1115,7 +1077,7 @@
   ]
  },
  {
-  "id": "L66",
+  "id": "L61",
   "who": "narrator",
   "chunks": [
    [
@@ -1137,7 +1099,7 @@
   ]
  },
  {
-  "id": "L67",
+  "id": "L62",
   "who": "narrator",
   "chunks": [
    [
@@ -1155,23 +1117,13 @@
   ]
  },
  {
-  "id": "L68",
+  "id": "L63",
   "who": "narrator",
   "chunks": [
    [
-    "I looked at MOSS,",
-    "I looked at Moss,"
+    "I said,",
+    "I said,"
    ],
-   [
-    "and said it MYSELF.",
-    "and said it myself."
-   ]
-  ]
- },
- {
-  "id": "L69",
-  "who": "narrator",
-  "chunks": [
    [
     "\"Good MORNING,",
     "Good morning,"
@@ -1183,35 +1135,21 @@
   ]
  },
  {
-  "id": "L70",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She WAGGED",
-    "She wagged"
-   ],
-   [
-    "so hard",
-    "so hard"
-   ],
-   [
-    "she nearly sat DOWN.",
-    "she nearly sat down."
-   ]
-  ]
- },
- {
   "id": "P02",
   "pause": 0.8,
   "chunks": []
  },
  {
-  "id": "L71",
+  "id": "L64",
   "who": "narrator",
   "chunks": [
    [
-    "The fog came off the WATER",
-    "The fog came off the water"
+    "The fog came off",
+    "The fog came off"
+   ],
+   [
+    "the WATER,",
+    "the water,"
    ],
    [
     "SLOWLY.",
@@ -1220,12 +1158,12 @@
   ]
  },
  {
-  "id": "L72",
+  "id": "L65",
   "who": "narrator",
   "chunks": [
    [
-    "The towpath",
-    "The towpath"
+    "And the towpath",
+    "And the towpath"
    ],
    [
     "was EMPTY.",
@@ -1239,27 +1177,59 @@
   "chunks": []
  },
  {
-  "id": "L73",
+  "id": "L66",
   "who": "narrator",
   "chunks": [
    [
-    "Now I say it",
-    "Now I say it"
+    "I stepped OFF",
+    "I stepped off"
    ],
    [
-    "EVERY dawn.",
+    "and set her DOWN",
+    "and set her down"
+   ],
+   [
+    "by the back RING.",
+    "by the back ring."
+   ]
+  ]
+ },
+ {
+  "id": "L67",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She ROLLED over,",
+    "She rolled over,"
+   ],
+   [
+    "slow and CREAKY,",
+    "slow and creaky,"
+   ],
+   [
+    "and WAGGED.",
+    "and wagged."
+   ]
+  ]
+ },
+ {
+  "id": "L68",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Now I carry her OFF",
+    "Now I carry her off"
+   ],
+   [
+    "every DAWN.",
     "every dawn."
    ]
   ]
  },
  {
-  "id": "L74",
+  "id": "L69",
   "who": "narrator",
   "chunks": [
-   [
-    "I carry her UP.",
-    "I carry her up."
-   ],
    [
     "We walk the TOWPATH",
     "We walk the towpath"
@@ -1271,13 +1241,19 @@
   ]
  },
  {
-  "id": "L75",
+  "id": "L70",
   "who": "narrator",
   "chunks": [
    [
     "It takes AGES.",
     "It takes ages."
-   ],
+   ]
+  ]
+ },
+ {
+  "id": "L71",
+  "who": "narrator",
+  "chunks": [
    [
     "I don't MIND.",
     "I don't mind."
@@ -1285,28 +1261,28 @@
   ]
  },
  {
-  "id": "L76",
+  "id": "L72",
   "who": "narrator",
   "chunks": [
    [
-    "Every MORNING",
-    "Every morning"
+    "On our BOAT,",
+    "On our boat,"
    ],
    [
-    "somebody says GOOD MORNING",
-    "somebody says good morning"
+    "the day starts",
+    "the day starts"
    ],
    [
-    "to my DOG.",
-    "to my dog."
+    "with GOOD MORNING.",
+    "with good morning."
    ],
    [
-    "In my VOICE.",
-    "In my voice."
+    "Then MOSS lies down",
+    "Then Moss lies down"
    ],
    [
-    "It's ME.",
-    "It's me."
+    "on the TOWPATH.",
+    "on the towpath."
    ]
   ]
  }
