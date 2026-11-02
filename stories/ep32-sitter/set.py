@@ -1,20 +1,23 @@
-"""ep32 "sitter": the set (a community arts centre life room on a rainy Wednesday, Mum's bare hall, a kitchen, a car park).
+"""ep32 "sitter": the set (the faded-wood town: a sunny bus stop, a cafe, a bakery, my flat, a community arts centre life room on
+a rainy Wednesday, Mum's bare hall, a car park, and the reveal pair).
 
-Everything is built once in build() from kit's parts; animate() only moves and switches what the story's cues say.
+Everything is built once in build() from kit's parts; animate() only moves and switches what the story's cues and acting say.
 The cast (rig.py) is posed by bl_story from the story's acting. Nothing here carries text: no signs, no lettering.
 
 Places (metres, floor z = 0, the car park at z = -0.45): the life room is centred on the dais at the origin
 (x -5.6 .. 5.6, y -5.2 .. 5.0, ceiling 3.2). Easel i stands at angle TH[i] on a curve of radius RE with its canvas
 facing out, its painter behind it at RP. Mum's hall is at x = 40 (a corridor along y, the west wall x = 39 holds the
-frames), the kitchen at x = -40. The car park lies south of the room (y < -5.5), the steps outside the west door.
+frames), my flat at x = -40, the bus stop at x = 80, the cafe at x = 120, the bakery at x = 160, the reveal pair at x = 200.
 
+Acting keys read here (acting.py ignores them): "sit": true seats a character (legs flat) on whatever is under them;
+"fade" / "fade_h": how far the body / the face has faded to raw pine (0..1); "stage": which pencil face a faded head wears;
+"bendto": [x, y, deg] leans the torso from the waist toward x, y.
 Cues read here (all optional):
-- time: {"set": "night" | "day" | "show"} the light of the moment (night is the class; show is the bright Saturday)
+- time: {"set": night | cold | warm | end | bus | cafe | bake | flat | pair} the light of the moment (and which little set's lights are on)
 - dip: {"down", "hold", "up", "depth", "hold_to"} the room's lamps ramp to (1 - depth), hold, ramp back (never dark)
-- unp: {"on", "pos", "yaw", "head" (degrees relative) | "look" [x, y], "dais", "stage"} the Unpainted. One model
-  (build_unp), only posed. It is found where it already is: never seen moving.
 - stool: {"on", "pos", "yaw"} the paint-spattered spare stool; canvas: {"stage"} my canvas; easel: {"i", "img"}
-- hall: {"state": then | now | hung | lift}; drawer: {"open"}; cushion: {"dent"}; show: {"on"}; prop: {"which", "on"}
+- hall: {"state": now | hung}; prop: {"which", "on"}
+Shot flags: tally (the nine strokes on the dais edge), turn8, noceil, hide_easels, hide_cast, fill, ev.
 """
 
 from __future__ import annotations
@@ -24,9 +27,11 @@ import random
 from pathlib import Path
 
 import bpy
+import mathutils
 from mathutils import Vector as V
 from PIL import Image, ImageDraw, ImageFilter
 
+from blocky import acting as _ac
 from blocky import faces, rig
 
 HERE = Path(__file__).resolve().parent
@@ -38,6 +43,9 @@ GROUND = -0.45
 DAIS_H = 0.22
 HX, KX = 40.0, -40.0
 GRAPHITE = (44, 42, 42)
+
+BUS_, CAF_, BAK_, FLAT_, FLAT_EASEL_, PAIR_ = (80.0, 0.2), (120.0, 1.5), (160.9, -0.15), (-40.0, 0.0), (-40.25, 0.7), (200.0, 0.0)
+
 
 
 # ------------------------------------------------------------------------------------------ small helpers
@@ -114,7 +122,12 @@ def set_img(m, im_path_img):
     m.node_tree.nodes[m["tex_name"]].image = im_path_img
 
 
+
+
 # ------------------------------------------------------------------------------------------ the drawings
+
+FACE_BOX = (100, 95, 280, 380)          # my canvases: where the guide lines go (x, y, w, h)
+HEAD_OVAL = (240, 285, 150, 205)        # centre x, y and radii of the head
 
 
 def paper(w, h, base=(239, 232, 214), seed=1):
@@ -138,9 +151,10 @@ def oval(d, cx, cy, rx, ry, th, fill=None, col=GRAPHITE):
     d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=fill, outline=col, width=int(th))
 
 
-def portrait_lines(d, ox, oy, W, H, stage, th, pale=(246, 240, 226)):
-    """My drawing, in a W x H box at (ox, oy). The Unpainted's face is exactly these lines.
-    stage 0: guide cross and two empty ovals; 1: + the short nose; 2: + a mouth corner; 3: + one eyebrow."""
+def portrait_lines(d, ox, oy, W, H, stage, th, pale=(246, 240, 226), corners=True):
+    """The half face I keep drawing, in a W x H box at (ox, oy). Faded Mum's face is exactly these lines.
+    stage 0: guide cross, two empty ovals and the little lines at the eye corners; 1: + the short nose;
+    2: + a mouth corner."""
     def P(u, v):
         return (ox + u * W, oy + v * H)
 
@@ -148,61 +162,104 @@ def portrait_lines(d, ox, oy, W, H, stage, th, pale=(246, 240, 226)):
     pencil(d, [P(0.1, 0.42), P(0.9, 0.42)], th * 0.8)
     for cx in (0.29, 0.71):
         oval(d, *P(cx, 0.42), 0.16 * W, 0.1 * H, th, fill=pale)
+    if corners:
+        for s_, ex in ((-1, 0.13), (1, 0.87)):
+            for k in (-1, 0, 1):
+                pencil(d, [P(ex, 0.42 + k * 0.012), P(ex + s_ * 0.085, 0.42 + k * 0.05)], th * 0.85)
     if stage >= 1:
         pencil(d, [P(0.5, 0.5), P(0.53, 0.56), P(0.555, 0.605)], th)
     if stage >= 2:
         pencil(d, [P(0.33, 0.775), P(0.375, 0.795), P(0.425, 0.8)], th)
-    if stage >= 3:
-        pencil(d, [P(0.17, 0.32), P(0.24, 0.28), P(0.33, 0.275), P(0.4, 0.29)], th)
+
+
+def brown_eyes(d, ox, oy, W, H, scale=1.0):
+    """The kind brown eyes, painted over the guide ovals."""
+    for cx in (0.29, 0.71):
+        x, y = ox + cx * W, oy + 0.42 * H
+        rx, ry = 0.14 * W * scale, 0.085 * H * scale
+        d.ellipse([x - rx, y - ry, x + rx, y + ry], fill=(247, 241, 229), outline=(60, 40, 30), width=3)
+        r = ry * 0.95
+        d.ellipse([x - r, y - r, x + r, y + r], fill=(104, 62, 36))
+        r2 = r * 0.45
+        d.ellipse([x - r2, y - r2, x + r2, y + r2], fill=(24, 14, 10))
+        d.ellipse([x + r * 0.25, y - r * 0.7, x + r * 0.6, y - r * 0.35], fill=(250, 246, 238))
+
+
+def _plaid(d, box, base, line, gap=14):
+    x0, y0, x1, y1 = box
+    d.rectangle(box, fill=base)
+    for x in range(x0, x1, gap):
+        d.line([(x, y0), (x, y1)], fill=line, width=3)
+    for y in range(y0, y1, gap):
+        d.line([(x0, y), (x1, y)], fill=line, width=3)
+
+
+def portrait_of_mum(finished, w=480, h=600):
+    """Mum in oils: the silver bob, round tortoiseshell glasses, the teal check cardigan over cream. At home (finished=False)
+    her face is only the guide lines I always stop on; finished, it is painted."""
+    ox, oy, W, H = FACE_BOX
+    cx, cy, rx, ry = HEAD_OVAL
+    im = Image.new("RGB", (w, h), (214, 190, 150))
+    d = ImageDraw.Draw(im)
+    for y in range(h):
+        k = y / h
+        d.line([(0, y), (w, y)], fill=(int(214 - 24 * k), int(190 - 26 * k), int(150 - 24 * k)))
+    _plaid(d, (50, 470, 430, 640), (47, 127, 130), (36, 100, 104))
+    d.polygon([(190, 470), (290, 470), (240, 540)], fill=(240, 232, 214))                    # cream top
+    d.rectangle([205, 430, 275, 480], fill=(232, 196, 160))                                  # neck
+    d.ellipse([cx - rx - 22, cy - ry - 18, cx + rx + 22, cy + ry - 40], fill=(196, 200, 206))  # silver bob behind
+    d.rectangle([cx - rx - 22, cy - 40, cx - rx + 26, cy + 120], fill=(196, 200, 206))
+    d.rectangle([cx + rx - 26, cy - 40, cx + rx + 22, cy + 120], fill=(196, 200, 206))
+    face = (232, 196, 160) if finished else (240, 233, 216)
+    d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=face)
+    d.pieslice([cx - rx - 8, cy - ry - 10, cx + rx + 8, cy + 20], 180, 360, fill=(196, 200, 206))   # fringe
+    if finished:
+        brown_eyes(d, ox, oy, W, H, 1.0)
+        for s_, ex in ((-1, 0.13), (1, 0.87)):
+            for k in (-1, 0, 1):
+                pencil(d, [(ox + ex * W, oy + (0.42 + k * 0.012) * H), (ox + (ex + s_ * 0.085) * W, oy + (0.42 + k * 0.05) * H)], 3, (120, 88, 70))
+        for cxx in (0.29, 0.71):
+            d.arc([ox + cxx * W - 40, oy + 0.42 * H - 70, ox + cxx * W + 40, oy + 0.42 * H - 28], 200, 340, fill=(120, 120, 124), width=5)
+        pencil(d, [(ox + 0.5 * W, oy + 0.5 * H), (ox + 0.46 * W, oy + 0.6 * H), (ox + 0.52 * W, oy + 0.62 * H)], 3, (200, 150, 124))
+        d.arc([ox + 0.3 * W, oy + 0.7 * H, ox + 0.7 * W, oy + 0.86 * H], 15, 165, fill=(168, 80, 80), width=7)   # about to say it
+    else:
+        portrait_lines(d, ox, oy, W, H, 2, 7)
+    for cxx in (0.29, 0.71):                                                                 # round tortoiseshell glasses
+        x, y = ox + cxx * W, oy + 0.42 * H
+        d.ellipse([x - 55, y - 55, x + 55, y + 55], outline=(112, 76, 44), width=9)
+    d.line([(ox + 0.29 * W + 55, oy + 0.42 * H - 8), (ox + 0.71 * W - 55, oy + 0.42 * H - 8)], fill=(112, 76, 44), width=8)
+    return im
 
 
 def canvas_image(stage):
     W, H = 480, 600
+    if stage >= 5:
+        return portrait_of_mum(True)
     im = paper(W, H, seed=3)
     d = ImageDraw.Draw(im)
-    if stage <= 4:
-        # the head oval, faint, then the lines
-        oval(d, W * 0.5, H * 0.5, W * 0.4, H * 0.45, 4, col=(150, 150, 150))
-        portrait_lines(d, W * 0.1, H * 0.06, W * 0.8, H * 0.88, min(stage, 3), 9)
-    if stage == 4:   # the kind brown eyes go in over the guide ovals
-        for cx in (0.3, 0.7):
-            x, y = W * 0.1 + cx * W * 0.8, H * 0.06 + 0.42 * H * 0.88
-            oval(d, x, y, 0.12 * W * 0.8, 0.07 * H * 0.88, 5, fill=(246, 240, 228))
-            d.ellipse([x - 20, y - 20, x + 20, y + 20], fill=(104, 62, 36))
-            d.ellipse([x - 8, y - 8, x + 8, y + 8], fill=(24, 14, 10))
-            d.ellipse([x + 5, y - 12, x + 14, y - 3], fill=(250, 246, 238))
-            for k in range(3):
-                pencil(d, [(x + (cx - 0.5) * 2 * 40 * 1.0, y + 4 + 6 * k), (x + (cx - 0.5) * 2 * 62, y + 12 + 12 * k - 4)], 4, (96, 70, 52))
-    if stage >= 5:
-        im = finished_portrait()
+    cx, cy, rx, ry = HEAD_OVAL
+    oval(d, cx, cy, rx, ry, 4, col=(150, 150, 150))
+    ox, oy, fw, fh = FACE_BOX
+    portrait_lines(d, ox, oy, fw, fh, min(stage, 2), 7)
+    if stage == 4:                       # the kind brown eyes go in over the guide ovals
+        brown_eyes(d, ox, oy, fw, fh, 1.0)
     return im
 
 
-def finished_portrait(w=480, h=600):
-    im = Image.new("RGB", (w, h), (231, 205, 160))
+def ade_image(w=480, h=600):
+    """Mr Dobbs being painted: brown flat cap, grey beard, olive tweed."""
+    im = Image.new("RGB", (w, h), (206, 192, 164))
     d = ImageDraw.Draw(im)
-    for y in range(h):
-        k = y / h
-        d.line([(0, y), (w, y)], fill=(int(228 - 30 * k), int(200 - 28 * k), int(158 - 24 * k)))
-    d.rounded_rectangle([60, 440, 420, 640], radius=60, fill=(47, 127, 130))             # the cardigan
-    d.rectangle([205, 380, 275, 450], fill=(232, 196, 160))                              # neck
-    d.ellipse([120, 90, 360, 420], fill=(232, 196, 160))                                 # face
-    d.pieslice([100, 60, 380, 340], 180, 360, fill=(190, 194, 200))                      # silver hair top
-    d.rectangle([100, 190, 140, 380], fill=(190, 194, 200))
-    d.rectangle([340, 190, 380, 380], fill=(190, 194, 200))
-    for cx in (200, 280):                                                                # the glasses
-        d.ellipse([cx - 38, 210, cx + 38, 280], outline=(107, 74, 46), width=7)
-    d.line([(238, 240), (242, 240)], fill=(107, 74, 46), width=6)
-    for cx in (200, 280):                                                                # brown eyes, lines at the corners
-        d.ellipse([cx - 16, 230, cx + 16, 262], fill=(246, 240, 228))
-        d.ellipse([cx - 11, 233, cx + 11, 259], fill=(104, 62, 36))
-        d.ellipse([cx - 4, 240, cx + 4, 252], fill=(24, 14, 10))
-        s = 1 if cx > 240 else -1
-        for k in range(3):
-            d.line([(cx + s * 38, 244 + 6 * (k - 1)), (cx + s * 56, 238 + 14 * (k - 1))], fill=(120, 88, 70), width=3)
-        d.arc([cx - 30, 188, cx + 30, 218], 200, 340, fill=(120, 120, 124), width=5)       # brows
-    d.arc([212, 330, 270, 378], 15, 165, fill=(168, 80, 80), width=7)                    # a mouth about to say it
-    d.line([(244, 280), (238, 318), (250, 320)], fill=(200, 150, 124), width=4)
+    d.rounded_rectangle([60, 460, 420, 640], radius=50, fill=(120, 128, 60))
+    d.rectangle([205, 410, 275, 470], fill=(217, 166, 126))
+    d.ellipse([120, 120, 360, 450], fill=(217, 166, 126))
+    d.pieslice([108, 40, 372, 300], 180, 360, fill=(107, 74, 46))
+    d.rectangle([108, 150, 372, 190], fill=(107, 74, 46))
+    d.chord([116, 300, 364, 520], 0, 180, fill=(140, 140, 138))                               # grey beard
+    for cxx in (200, 280):
+        d.ellipse([cxx - 18, 230, cxx + 18, 262], fill=(246, 240, 228))
+        d.ellipse([cxx - 10, 234, cxx + 10, 258], fill=(60, 44, 34))
+    d.line([(238, 280), (232, 322), (246, 324)], fill=(190, 140, 112), width=4)
     return im
 
 
@@ -244,7 +301,7 @@ def fruit_image(style, seed=0):
 
 
 def art_image(seed, w=300, h=380):
-    """A framed landscape or flowers for Mum's hall and the show wall. No text."""
+    """A framed landscape or flowers for Mum's hall. No text."""
     rnd = random.Random(seed)
     sky = [(150, 190, 220), (230, 190, 150), (180, 200, 170), (200, 170, 190)][seed % 4]
     im = Image.new("RGB", (w, h), sky)
@@ -259,8 +316,10 @@ def art_image(seed, w=300, h=380):
     return im
 
 
-def pine_face_image(stage):
-    """The Unpainted's head texture: raw pine with the same pencil lines as my canvas. Wraps the head (faces.py)."""
+def pine_face_image(kind, stage):
+    """A faded head's texture: raw pine with graphite guide lines, wrapped round the head (faces.py's layout).
+    kind "mum": the lines end in little corner lines (plant 1) and at stage 3 the brown eyes are in. kind "plain": the
+    cross and ovals only (the montage faces). kind "plain2": the same, a touch smaller (the sting sitter)."""
     W, H = faces.TEX_W, faces.TEX_H
     rnd = random.Random(11)
     im = Image.new("RGB", (W, H), (217, 186, 140))
@@ -272,25 +331,29 @@ def pine_face_image(stage):
         d.line([(x, y0), (x + rnd.randint(-6, 6), min(H, y0 + rnd.randint(80, 400)))], fill=(217 - dk, 186 - dk, 140 - dk), width=rnd.choice((1, 2, 3)))
     im = im.filter(ImageFilter.GaussianBlur(0.8))
     d = ImageDraw.Draw(im)
+    s = faces.FX1 - faces.FX0
+    fw = 1.048 * s * (0.9 if kind == "plain2" else 1.0)
     fh = (faces.FY1 - faces.FY0) * 0.96
-    fw = fh * 0.8
-    portrait_lines(d, W / 2 - fw / 2, faces.FY0 + (faces.FY1 - faces.FY0) * 0.02, fw, fh, min(stage, 3), 26, pale=(247, 240, 224))
+    ox, oy = W / 2 - fw / 2, faces.FY0 + (faces.FY1 - faces.FY0) * 0.02
+    portrait_lines(d, ox, oy, fw, fh, min(stage, 2), 22, pale=(247, 240, 224), corners=(kind == "mum"))
+    if stage >= 3 and kind == "mum":
+        brown_eyes(d, ox, oy, fw, fh, 0.62)
     return im
 
 
 def tally_image():
-    """Nine plain upright graphite strokes, no tenth. Upright in the image (v down)."""
-    W, H = 1024, 1024
+    """Nine plain upright graphite strokes, no tenth, to scratch along the dais's front edge (1.2 x 0.2 m)."""
+    W, H = 1200, 200
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     rnd = random.Random(9)
-    x0, gap = 262, 62
+    x0, gap = 200, 100
     for k in range(9):
-        x = x0 + k * gap + rnd.randint(-3, 3)
-        top, bot = 390 + rnd.randint(-8, 8), 640 + rnd.randint(-8, 8)
-        d.line([(x, top), (x + rnd.randint(-5, 5), bot)], fill=(*GRAPHITE, 255), width=17)
-        d.ellipse([x - 8, top - 8, x + 8, top + 8], fill=(*GRAPHITE, 255))
-        d.ellipse([x - 8, bot - 8, x + 8, bot + 8], fill=(*GRAPHITE, 255))
+        x = x0 + k * gap + rnd.randint(-4, 4)
+        top, bot = 38 + rnd.randint(-5, 5), 168 + rnd.randint(-5, 5)
+        d.line([(x, top), (x + rnd.randint(-4, 4), bot)], fill=(*GRAPHITE, 255), width=11)
+        d.ellipse([x - 5, top - 5, x + 5, top + 5], fill=(*GRAPHITE, 255))
+        d.ellipse([x - 5, bot - 5, x + 5, bot + 5], fill=(*GRAPHITE, 255))
     return im.filter(ImageFilter.GaussianBlur(0.9))
 
 
@@ -309,6 +372,7 @@ def rain_image():
         x, y = rnd.randrange(W), rnd.randrange(H)
         d.ellipse([x - 4, y - 4, x + 4, y + 7], fill=(80, 100, 140))
     return im.filter(ImageFilter.GaussianBlur(1.2))
+
 
 
 # ------------------------------------------------------------------------------------------ materials
@@ -485,13 +549,13 @@ def build_room(kit, ctx, M):
         kit.sphere("grape", 0.022, (bx + 0.03 + 0.03 * (k % 3), by - 0.02 + 0.025 * (k // 3), bz + 0.2 + 0.01 * (k % 2)), M["grape"])
 
 
+
 def build_dais(kit, ctx, M):
     d = kit.empty("dais", (0, 0, 0))
     kit.box("dais top", (2.0, 2.0, DAIS_H), (0, 0, DAIS_H / 2), M["dais"], d, bevel=0.02)
-    # the tally under it (hidden unless the dais is on its edge): nine strokes
+    # nine graphite strokes along the front edge (shown only in S39)
     mt = img_mat(kit, "tally", tally_image(), ctx["wd"], rough=0.9, alpha=True)
-    pl = uvplane(kit, "tally", (1.7, 1.7), (0, 0, -0.002), mt, d, (math.pi, 0, math.radians(90)))
-    pl.location = (0, 0, 0.0)
+    pl = uvplane(kit, "tally", (1.2, 0.2), (0, -1.0 - 0.015, 0.11), mt, d, (math.pi / 2, 0, 0))
     ctx["dais"], ctx["tally"] = d, pl
     # the stool and the cushion
     top = DAIS_H + 0.35
@@ -575,62 +639,169 @@ def build_stool(kit, ctx, M):
     st.hide_render = True
 
 
-# ------------------------------------------------------------------------------------------ the Unpainted
+# ------------------------------------------------------------------------------------------ the fade (one look for everyone)
+#
+# A person who is looked at by nobody thins into raw pine grain, and the pencil lines they were drawn with show through.
+# Every faded character (the bus-stop man, Mr Dobbs, Mum, the sting sitter) wears this one look. A cast member's own
+# materials are copied once and a mix shader to pine is laid over them: `fade` (0..1) is the whole body, `fade_h` the face.
+# The face wipes across from one side with a ragged edge, like grain creeping; the pine face is a texture with the guide lines.
 
 
-def build_unp(kit, ctx, M, wd):
-    """The Unpainted: an R6 body in raw pine, wrong in one dimension (its torso is 1.4 times too long, its arms too
-    long). Seated, its head is level with the easel tops. Built once and only posed. Its face is a texture per week."""
-    pine = M["pine"]
-    root = kit.empty("unp", (0, 0, 0))
-    hip = kit.empty("unp hip", (0, 0, 0.62), root)
-    for sx in (-1, 1):
-        kit.box("unp thigh", (0.33, 0.72, 0.33), (sx * 0.17, -0.34, 0), pine, hip, bevel=0.03)
-        kit.box("unp shin", (0.33, 0.33, 0.62), (sx * 0.17, -0.55, -0.4), pine, hip, bevel=0.03)
-        kit.box("unp foot", (0.33, 0.42, 0.13), (sx * 0.17, -0.67, -0.69), pine, hip, bevel=0.03)
-    tp = kit.empty("unp torso pivot", (0, 0, 0), hip)
-    kit.box("unp torso", (0.62, 0.32, 0.95), (0, 0, 0.305), pine, tp, bevel=0.035)
-    # two dark knots on the chest
-    knot = kit.plastic("#5a3d22", 0.7, "knot")
-    for (kx, kz, r) in ((-0.13, 0.55, 0.06), (0.17, 0.3, 0.045)):
-        kit.sphere("knot", r, (kx, -0.172, kz), knot, tp, seg=10).scale = (1, 0.25, 1)
-    sh = 0.305 + 0.475 - 0.08
-    for sx in (-1, 1):
-        arm = kit.empty(f"unp arm{sx}", (sx * 0.46, 0, sh), tp)
-        kit.box("unp arm", (0.26, 0.28, 1.08), (0, 0, -0.5), pine, arm, bevel=0.03)
-        arm.rotation_euler = (math.radians(-14), 0, 0)
-    neck = kit.empty("unp neck", (0, 0, 0.305 + 0.475), tp)
-    kit.box("unp neckm", (0.2, 0.2, 0.1), (0, 0, 0.0), pine, neck)
-    ns = kit.empty("unp head scale", (0, 0, 0.02), neck)
-    ns.scale = (S, S, S)
-    head = kit.empty("unp head", (0, 0, 0), ns)
-    hg = kit.empty("unp headg", (0, 0, faces.HEAD_H / 2 + 0.02), head)
-    mat, tex = rig.head_material("unp", "#d9ba8c")
-    ob = rig.head_mesh("unp headm", mat, hg)
-    imgs = []
-    for st in range(4):
-        path = wd / f"unp-face-{st}.png"
-        pine_face_image(st).save(path)
-        im = bpy.data.images.load(str(path))
-        im.colorspace_settings.name = "sRGB"
-        imgs.append(im)
-    tex.image = imgs[0]
-    hb = mat.node_tree.nodes["Principled BSDF"]
-    mat.node_tree.links.new(tex.outputs["Color"], hb.inputs["Emission Color"])
-    hb.inputs["Emission Strength"].default_value = 0.12
-    ctx["unp"] = {"root": root, "hip": hip, "tp": tp, "neck": head, "tex": tex, "imgs": imgs}
-    # lit for fear: a key from below and the side, a cold rim from behind. Front lights are dead
-    key = kit.light("unp key", "SPOT", (0, 0, 0), 240.0, "#ffa060", spot=34, blend=0.6, size=0.1)
-    key.parent = root
-    key.location = (0.45, -0.75, 0.15)
-    key.rotation_euler = (V((0.0, 0.0, 1.78)) - V((0.45, -0.75, 0.15))).to_track_quat("-Z", "Y").to_euler()
-    rim = kit.light("unp rim", "SPOT", (0, 0, 0), 150.0, "#7ea0e0", spot=50, blend=0.5, size=0.2)
-    rim.parent = root
-    rim.location = (-0.5, 1.1, 2.3)
-    rim.rotation_euler = (V((0.0, -0.1, 1.6)) - V((-0.5, 1.1, 2.3))).to_track_quat("-Z", "Y").to_euler()
-    root.hide_render = True
-    for o in root.children_recursive:
-        o.hide_render = True
+def _pine_branch(nt, image=None):
+    """A pine Principled BSDF inside material tree nt (procedural grain on bodies, a drawn texture on a head)."""
+    N, Lk = nt.nodes, nt.links
+    b = N.new("ShaderNodeBsdfPrincipled")
+    b.inputs["Roughness"].default_value = 0.72
+    if image is not None:
+        t = N.new("ShaderNodeTexImage")
+        t.image = image
+        t.interpolation = "Linear"
+        uv = N.new("ShaderNodeUVMap")
+        Lk.new(uv.outputs["UV"], t.inputs["Vector"])
+        Lk.new(t.outputs["Color"], b.inputs["Base Color"])
+        return b, t
+    tc = N.new("ShaderNodeTexCoord")
+    mp = N.new("ShaderNodeMapping")
+    mp.inputs["Scale"].default_value = (5.0, 1.6, 1.6)
+    Lk.new(tc.outputs["Object"], mp.inputs["Vector"])
+    wave = N.new("ShaderNodeTexWave")
+    wave.bands_direction = "X"
+    wave.inputs["Scale"].default_value = 1.0
+    wave.inputs["Distortion"].default_value = 5.0
+    wave.inputs["Detail"].default_value = 3.0
+    Lk.new(mp.outputs["Vector"], wave.inputs["Vector"])
+    nz = N.new("ShaderNodeTexNoise")
+    nz.inputs["Scale"].default_value = 3.0
+    Lk.new(mp.outputs["Vector"], nz.inputs["Vector"])
+    mix = N.new("ShaderNodeMath")
+    mix.operation = "MULTIPLY_ADD"
+    Lk.new(wave.outputs["Fac"], mix.inputs[0])
+    mix.inputs[1].default_value = 0.6
+    Lk.new(nz.outputs["Fac"], mix.inputs[2])
+    ramp = N.new("ShaderNodeValToRGB")
+    ramp.color_ramp.elements[0].position = 0.3
+    ramp.color_ramp.elements[0].color = (0.36, 0.26, 0.14, 1)
+    ramp.color_ramp.elements[1].position = 0.9
+    ramp.color_ramp.elements[1].color = (0.62, 0.49, 0.30, 1)
+    Lk.new(mix.outputs[0], ramp.inputs["Fac"])
+    Lk.new(ramp.outputs["Color"], b.inputs["Base Color"])
+    return b, None
+
+
+def _lay_over(m, branch, factor_socket):
+    """Insert Mix(original surface, branch) before the material output."""
+    nt = m.node_tree
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    src = out.inputs["Surface"].links[0].from_socket
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(src, mx.inputs[1])
+    nt.links.new(branch.outputs[0], mx.inputs[2])
+    nt.links.new(factor_socket, mx.inputs[0])
+    nt.links.new(mx.outputs[0], out.inputs["Surface"])
+
+
+def _math(N, Lk, op, a=None, b=None, clamp=False):
+    n = N.new("ShaderNodeMath")
+    n.operation = op
+    n.use_clamp = clamp
+    for i, v in enumerate((a, b)):
+        if v is None:
+            continue
+        if isinstance(v, (int, float)):
+            n.inputs[i].default_value = v
+        else:
+            Lk.new(v, n.inputs[i])
+    return n
+
+
+def _head_pine(ctx, m, who):
+    """The face's pine layer: the pine face texture wherever u < edge (ragged), and all round the back of the head."""
+    nt = m.node_tree
+    N, Lk = nt.nodes, nt.links
+    kind = ctx["story"]["geom"]["faders"][who]
+    br, tex = _pine_branch(nt, ctx["pine_faces"][(kind, 0)])
+    uv = N.new("ShaderNodeUVMap")
+    sep = N.new("ShaderNodeSeparateXYZ")
+    Lk.new(uv.outputs["UV"], sep.inputs["Vector"])
+    nz = N.new("ShaderNodeTexNoise")
+    nz.inputs["Scale"].default_value = 38.0
+    Lk.new(uv.outputs["UV"], nz.inputs["Vector"])
+    edge, kh = N.new("ShaderNodeValue"), N.new("ShaderNodeValue")
+    sub = _math(N, Lk, "SUBTRACT", edge.outputs[0], sep.outputs["X"])
+    rag = _math(N, Lk, "MULTIPLY_ADD", nz.outputs["Fac"], 0.07)
+    Lk.new(sub.outputs[0], rag.inputs[2])
+    sh = _math(N, Lk, "SUBTRACT", rag.outputs[0], 0.035)
+    f1 = _math(N, Lk, "MULTIPLY", sh.outputs[0], 20.0, clamp=True)
+    d1 = _math(N, Lk, "SUBTRACT", sep.outputs["X"], 0.5)
+    d2 = _math(N, Lk, "ABSOLUTE", d1.outputs[0])
+    o1 = _math(N, Lk, "SUBTRACT", d2.outputs[0], 0.17)
+    o1b = _math(N, Lk, "MULTIPLY", o1.outputs[0], 50.0, clamp=True)
+    o2 = _math(N, Lk, "MULTIPLY", o1b.outputs[0], kh.outputs[0], clamp=True)
+    mx = _math(N, Lk, "MAXIMUM", f1.outputs[0], o2.outputs[0])
+    _lay_over(m, br, mx.outputs[0])
+    return edge, kh, tex
+
+
+def fade_setup(ctx, who):
+    """Copy the materials of `who` and lay the pine over them. Done once, the first frame the character exists."""
+    root = bpy.data.objects.get(who)
+    if root is None:
+        return None
+    F = {"body": [], "edge": [], "kh": [], "tex": [], "glasses": []}
+    done = {}
+    for ob in [root] + list(root.children_recursive):
+        if ob.type != "MESH":
+            continue
+        if ".gl" in ob.name:                         # the lenses and frames go when the face does
+            F["glasses"].append(ob)
+            continue
+        is_head = ob.name.endswith(".headm")
+        for slot in ob.material_slots:
+            om = slot.material
+            if om is None or not om.use_nodes:
+                continue
+            key = (om.name, is_head)
+            if key not in done:
+                m = om.copy()
+                if is_head:
+                    edge, kh, tex = _head_pine(ctx, m, who)
+                    F["edge"].append(edge)
+                    F["kh"].append(kh)
+                    F["tex"].append(tex)
+                else:
+                    br, _ = _pine_branch(m.node_tree)
+                    val = m.node_tree.nodes.new("ShaderNodeValue")
+                    _lay_over(m, br, val.outputs[0])
+                    F["body"].append(val)
+                done[key] = m
+            slot.material = done[key]
+    return F
+
+
+def fade_update(ctx, tl, t, who):
+    """Set one faded character's pine from its acting keys. Returns (body, head) levels."""
+    keys = tl["acting"].get(who, [])
+    fb = _ac._held(keys, "fade", t, 0.0)
+    fh = _ac._held(keys, "fade_h", t, fb)
+    if who not in ctx["fade"]:
+        ctx["fade"][who] = fade_setup(ctx, who)
+    F = ctx["fade"][who]
+    if F is None:
+        return 0.0, 0.0
+    for v in F["body"]:
+        v.outputs[0].default_value = float(fb)
+    for e in F["edge"]:
+        e.outputs[0].default_value = 0.33 + 0.37 * float(fh)
+    for k in F["kh"]:
+        k.outputs[0].default_value = min(1.0, max(0.0, float(fh) * 4.0))
+    kind = ctx["story"]["geom"]["faders"][who]
+    st = int(_ac._switch(keys, "stage", t, 0))
+    for tex in F["tex"]:
+        tex.image = ctx["pine_faces"][(kind, min(st, 3 if kind == "mum" else 2))]
+    for g in F["glasses"]:
+        g.hide_render = g.hide_render or fh > 0.55
+    return fb, fh
+
 
 
 # ------------------------------------------------------------------------------------------ hall and kitchen
@@ -673,7 +844,7 @@ def build_hall(kit, ctx, M, wd):
     # the portrait for the last shots, one of the hooks
     pf = kit.empty("hall portrait", (HX - 0.97, 1.2, 1.55))
     kit.box("portrait frame", (0.04, 0.66, 0.81), (0, 0, 0), M["frame"], pf)
-    pm = img_mat(kit, "portrait", finished_portrait(), wd, rough=0.7)
+    pm = img_mat(kit, "portrait", portrait_of_mum(True), wd, rough=0.7)
     pl = uvplane(kit, "portrait face", (0.6, 0.75), (0.0215, 0, 0), None, pf, (math.pi / 2, 0, math.pi / 2))
     pl.data.materials.append(pm)
     ctx["hall"]["portrait"] = pf
@@ -704,36 +875,186 @@ def build_hall(kit, ctx, M, wd):
     kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 1.9), 34.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
 
 
-def build_kitchen(kit, ctx, M, wd):
-    kit.box("kit floor", (3.6, 4.2, 0.1), (KX, 0.5, -0.05), M["floor2"])
-    kit.box("kit ceil", (3.6, 4.2, 0.1), (KX, 0.5, 2.65), M["ceilmat"])
-    for (sx, sy, w, d) in ((-1.85, 0.5, 0.1, 4.2), (1.85, 0.5, 0.1, 4.2), (0, -1.65, 3.6, 0.1)):
-        kit.box("kit wall", (w, d, 2.6), (KX + sx, sy, 1.3), M["hallwall"])
-    kit.box("kit wall n a", (1.0, 0.1, 2.6), (KX - 1.3, 2.65, 1.3), M["hallwall"])
-    kit.box("kit wall n b", (1.0, 0.1, 2.6), (KX + 1.3, 2.65, 1.3), M["hallwall"])
-    kit.box("kit wall n c", (1.6, 0.1, 0.8), (KX, 2.65, 0.4), M["hallwall"])
-    kit.box("kit wall n d", (1.6, 0.1, 0.6), (KX, 2.65, 2.3), M["hallwall"])
-    kit.box("kit window", (1.6, 0.06, 1.2), (KX, 2.72, 1.4), M["win_day"])
-    kit.box("kit table", (1.1, 0.8, 0.05), (KX, 0.55, 0.75), M["table"], bevel=0.01)
-    for sx in (-0.5, 0.5):
-        for sy in (-0.35, 0.35):
-            kit.box("kit leg", (0.05, 0.05, 0.75), (KX + sx, 0.55 + sy, 0.37), M["table"])
-    kit.cyl("kit mug", 0.045, 0.1, (KX + 0.2, 0.55, 0.83), M["mug"])
-    kit.light("kit lamp", "AREA", (KX, 0.6, 2.5), 220.0, "#ffe6c4", size=1.6)
-    kit.light("kit window", "AREA", (KX, 2.5, 1.6), 140.0, "#fff2e0", size=1.2).rotation_euler = (math.radians(75), 0, 0)
+# ------------------------------------------------------------------------------------------ the little daylight sets
+
+
+def _site_materials(kit, M):
+    M["pave"] = kit.concrete("#bdb9b0", scale=2.0, stains=0.12, name="pavement", rough=0.8)
+    M["road"] = kit.concrete("#55575d", scale=2.0, stains=0.2, name="street", rough=0.7)
+    M["cream"] = kit.plastic("#eadfc3", 0.8, "facade cream")
+    M["terra"] = kit.plastic("#c5704e", 0.8, "facade terracotta")
+    M["sage"] = kit.plastic("#9cb59a", 0.8, "facade sage")
+    M["sky"] = kit.plastic("#8fb0d0", 0.8, "facade blue")
+    M["mustard"] = kit.plastic("#d9b04a", 0.8, "facade mustard")
+    M["pane"] = kit.plastic("#3b5068", 0.25, "dark pane")
+    M["shelter"] = kit.plastic("#9fc6d6", 0.5, "shelter panel")
+    M["metal"] = kit.plastic("#5e646b", 0.4, "shelter metal")
+    M["signdisc"] = kit.plastic("#d8b030", 0.5, "plain disc")
+    M["cloth"] = kit.plastic("#f1ede2", 0.9, "table cloth white")
+    M["toast"] = kit.plastic("#d0a05a", 0.7, "toast")
+    M["plate"] = kit.plastic("#f4f1ea", 0.4, "plate")
+    M["chair"] = kit.plastic("#8d4a3a", 0.6, "cafe chair")
+    M["tile"] = kit.plastic("#d9cdb8", 0.6, "bakery tile")
+    M["loaf"] = kit.plastic("#c98a4a", 0.7, "loaf")
+    M["loaf2"] = kit.plastic("#b0733a", 0.7, "loaf dark")
+    M["counter"] = kit.plastic("#a9794a", 0.55, "bakery counter")
+    M["counter_top"] = kit.plastic("#ebe3d3", 0.4, "counter top")
+    M["flatwall"] = kit.plastic("#d9dde0", 0.9, "flat wall")
+    M["flatfloor"] = kit.planks("#b99a6a", "#8f7348", scale=1.0, axis="Y", name="flat boards", rough=0.6)
+    M["win_cool"] = kit.emit("#dcecff", 5.0, "flat window")
+    M["slate"] = kit.plastic("#2c2f37", 0.9, "slate wall")
+
+
+def _room(kit, M, cx, cy, w, d, x_floor, wall, ceil=True, h=3.0, front=False, back_y=None):
+    kit.box("site floor", (w, d, 0.1), (cx, cy, -0.05), x_floor)
+    by = cy + d / 2
+    kit.box("site back wall", (w, 0.1, h), (cx, by, h / 2), wall)
+    for sx in (-1, 1):
+        kit.box("site side wall", (0.1, d, h), (cx + sx * w / 2, cy, h / 2), wall)
+    if ceil:
+        kit.box("site ceiling", (w, d, 0.1), (cx, cy, h + 0.05), M["ceilmat"])
+    if front:
+        kit.box("site front wall", (w, 0.1, h), (cx, cy - d / 2, h / 2), wall)
+
+
+def build_bus(kit, ctx, M):
+    X, Y = BUS_[0], BUS_[1]
+    kit.box("bus pavement", (22, 4.2, 0.2), (X, 1.0, -0.1), M["pave"])
+    kit.box("bus road", (22, 7.0, 0.2), (X, -4.6, -0.22), M["road"])
+    # the buildings behind the shelter, flat-faced and plain: no signs, no lettering
+    facades = [(X - 7.4, "cream"), (X - 4.2, "terra"), (X - 1.0, "sage"), (X + 2.2, "mustard"), (X + 5.4, "sky"), (X + 8.6, "cream")]
+    for k, (fx, mk) in enumerate(facades):
+        hgt = 4.6 + 0.8 * (k % 3)
+        kit.box("bus facade", (3.2, 3.0, hgt), (fx, 4.7, hgt / 2), M[mk])
+        for wx in (-0.8, 0.8):
+            for wz in (1.9, 3.5):
+                kit.box("bus window", (0.8, 0.04, 1.0), (fx + wx, 3.17, wz), M["pane"])
+        kit.box("bus door", (0.9, 0.05, 2.0), (fx, 3.17, 1.0), M["door"])
+    # the shelter
+    kit.box("bus roof", (3.8, 1.8, 0.1), (X, 1.25, 2.5), M["metal"])
+    for sx in (-1.8, 1.8):
+        for sy in (0.45, 2.05):
+            kit.box("bus post", (0.08, 0.08, 2.5), (X + sx, sy, 1.25), M["metal"])
+    kit.box("bus back panel", (3.6, 0.05, 1.8), (X, 2.07, 1.3), M["shelter"])
+    kit.box("bus bench seat", (1.8, 0.42, 0.06), (X + 0.4, 1.7, 0.5), M["easel"], bevel=0.01)
+    for sx in (-0.8, 0.8):
+        kit.box("bus bench leg", (0.06, 0.36, 0.5), (X + 0.4 + sx, 1.7, 0.25), M["metal"])
+    # a plain stop sign: a pole and a blank disc
+    kit.cyl("bus pole", 0.04, 2.6, (X + 2.9, -0.55, 1.3), M["metal"])
+    kit.cyl("bus disc", 0.26, 0.04, (X + 2.9, -0.6, 2.45), M["signdisc"], rot=(math.pi / 2, 0, 0))
+    kit.light("bus sun", "SUN", (X, 0, 12), 4.2, "#fff0d6", rot=(math.radians(58), 0, math.radians(-28)))
+    ctx["site_lights"]["bus"] = ["bus sun"]
+
+
+def build_cafe(kit, ctx, M):
+    X, Y = CAF_[0], CAF_[1]
+    _room(kit, M, X, 0.6, 6.0, 5.0, M["floor"], M["plaster"], front=False)
+    kit.box("cafe window", (3.4, 0.04, 1.5), (X, 3.02, 1.65), M["win_day"])
+    for sx in (-1.7, 0.0, 1.7):
+        kit.box("cafe mullion", (0.07, 0.06, 1.5), (X + sx, 2.99, 1.65), M["white"])
+    kit.box("cafe sill", (3.6, 0.2, 0.05), (X, 3.0, 0.88), M["white"])
+    # the table for two: a cloth to the knees, so the sitters' legs are under it
+    kit.box("cafe cloth", (0.72, 0.84, 0.44), (X, Y, 0.65), M["cloth"], bevel=0.01)
+    kit.box("cafe table top", (0.74, 0.9, 0.04), (X, Y, 0.88), M["cloth"], bevel=0.01)
+    for sx in (-0.18, 0.18):
+        kit.cyl("cafe plate", 0.11, 0.02, (X + sx, Y - 0.05, 0.91), M["plate"])
+        kit.box("cafe toast", (0.1, 0.1, 0.025), (X + sx, Y - 0.05, 0.935), M["toast"], rot=(0, 0, 0.3 * sx))
+        kit.cyl("cafe mug", 0.04, 0.09, (X + sx * 1.1, Y + 0.28, 0.955), M["mug"])
+    for sx, sgn in ((-0.55, 1), (0.55, -1)):
+        kit.box("cafe seat", (0.46, 0.46, 0.05), (X + sx, Y, 0.425), M["chair"], bevel=0.01)
+        kit.box("cafe chair back", (0.05, 0.46, 0.5), (X + sx - sgn * 0.26, Y, 0.72), M["chair"], bevel=0.01)
+        for lx in (-0.2, 0.2):
+            for ly in (-0.2, 0.2):
+                kit.box("cafe chair leg", (0.04, 0.04, 0.4), (X + sx + lx, Y + ly, 0.2), M["chair"])
+    kit.light("cafe key", "AREA", (X, -0.6, 2.7), 190.0, "#fff1dc", size=2.5).rotation_euler = (math.radians(20), 0, 0)
+    kit.light("cafe fill", "AREA", (X, 1.2, 2.8), 120.0, "#ffe8c8", size=2.5)
+    ctx["site_lights"]["cafe"] = ["cafe key", "cafe fill"]
+
+
+def build_bakery(kit, ctx, M):
+    X = BAK_[0] - 0.4
+    _room(kit, M, X, 0.6, 6.0, 5.2, M["tile"], M["cream"], front=True)
+    kit.box("bake front window", (3.2, 0.04, 1.6), (X, -1.93, 1.6), M["win_day"])
+    # shelves of bread behind the counter
+    rnd = random.Random(4)
+    for k, z in enumerate((1.0, 1.55, 2.1)):
+        kit.box("bake shelf", (4.4, 0.34, 0.05), (X, 2.8, z), M["easel"])
+        for j in range(8):
+            mk = "loaf" if (j + k) % 2 else "loaf2"
+            if (j + k) % 3 == 0:
+                kit.box("bake loaf", (0.34, 0.14, 0.12), (X - 1.9 + j * 0.54, 2.8, z + 0.085), M[mk], bevel=0.05)
+            else:
+                kit.sphere("bake bun", 0.1, (X - 1.9 + j * 0.54, 2.8, z + 0.13), M[mk]).scale = (1.2, 0.9, 0.8)
+    # the counter and the glass case
+    kit.box("bake counter", (3.4, 0.7, 1.0), (X + 0.4, 0.9, 0.5), M["counter"], bevel=0.01)
+    kit.box("bake counter top", (3.6, 0.82, 0.05), (X + 0.4, 0.9, 1.025), M["counter_top"], bevel=0.01)
+    kit.box("bake tray", (0.9, 0.4, 0.05), (X - 0.3, 0.9, 1.075), M["plate"])
+    for j in range(5):
+        kit.sphere("bake roll", 0.07, (X - 0.55 + j * 0.12, 0.9, 1.15), M["loaf"]).scale = (1.3, 0.9, 0.8)
+    kit.light("bake key", "AREA", (X + 0.4, -1.1, 2.7), 210.0, "#fff1dc", size=2.5).rotation_euler = (math.radians(15), 0, 0)
+    kit.light("bake back", "AREA", (X + 0.4, 2.0, 2.9), 110.0, "#ffe8c8", size=2.5)
+    ctx["site_lights"]["bake"] = ["bake key", "bake back"]
+
+
+def build_flat(kit, ctx, M, wd):
+    X = FLAT_[0]
+    _room(kit, M, X, 0.0, 3.8, 3.8, M["flatfloor"], M["flatwall"], front=False)
+    kit.box("flat window", (1.5, 0.04, 1.3), (X - 0.2, 1.83, 1.6), M["win_cool"])
+    for sx in (-0.95, -0.2, 0.55):
+        kit.box("flat mullion", (0.05, 0.06, 1.3), (X + sx, 1.80, 1.6), M["white"])
+    # my easel with Mum's portrait
+    ex, ey = FLAT_EASEL_
+    for sx in (-0.38, 0.38):
+        kit.box("flat easel leg", (0.05, 0.05, 1.9), (ex + sx, ey, 0.95), M["easel"])
+    kit.box("flat easel shelf", (0.84, 0.2, 0.04), (ex, ey - 0.08, 0.7), M["easel"])
+    kit.box("flat easel back leg", (0.05, 0.05, 1.7), (ex, ey + 0.4, 0.85), M["easel"], rot=(math.radians(-13), 0, 0))
+    kit.box("flat canvas frame", (0.74, 0.03, 0.92), (ex, ey - 0.05, 1.3), M["canvas_back"])
+    face = uvplane(kit, "flat canvas face", (0.74, 0.92), (ex, ey - 0.0765, 1.3), None, None, (math.pi / 2, 0, 0))
+    ctx["flat_mat"] = img_mat(kit, "flat canvas", portrait_of_mum(False), wd, rough=0.88)
+    face.data.materials.append(ctx["flat_mat"])
+    # the shelf with my phone face down
+    sx_ = X + 1.7
+    kit.box("flat shelf", (0.3, 1.0, 0.04), (sx_, 0.2, 1.0), M["easel"])
+    kit.box("flat shelf bracket", (0.2, 0.04, 0.16), (sx_ + 0.04, -0.2, 0.9), M["dark"])
+    kit.box("flat shelf bracket", (0.2, 0.04, 0.16), (sx_ + 0.04, 0.6, 0.9), M["dark"])
+    kit.box("flat phone", (0.078, 0.158, 0.011), (sx_, 0.15, 1.027), M["phone_off"], bevel=0.004, rot=(0, 0, 0.1))
+    kit.cyl("flat mug", 0.04, 0.09, (sx_, 0.5, 1.065), M["mug"])
+    kit.light("flat sun", "AREA", (X - 0.2, 1.4, 2.6), 260.0, "#d7e8ff", size=2.0).rotation_euler = (math.radians(-80), 0, 0)
+    kit.light("flat key", "AREA", (X + 0.2, -1.4, 2.5), 150.0, "#f1f2ff", size=2.0).rotation_euler = (math.radians(20), 0, 0)
+    ctx["site_lights"]["flat"] = ["flat sun", "flat key"]
+
+
+def build_pair(kit, ctx, M, wd):
+    X = PAIR_[0]
+    kit.box("pair wall", (7.0, 0.1, 4.0), (X, 1.5, 1.9), M["slate"])
+    kit.box("pair floor", (7.0, 5.0, 0.1), (X, -0.8, -0.05), M["floor"])
+    ctx["pair_mats"] = []
+    for sx, nm, im in ((-0.58, "home", portrait_of_mum(False)), (0.58, "class", canvas_image(2))):
+        x = X + sx
+        for lx in (-0.5, 0.5):
+            kit.box("pair easel leg", (0.05, 0.05, 2.1), (x + lx, 1.1, 1.05), M["easel"])
+        kit.box("pair easel shelf", (1.1, 0.2, 0.04), (x, 1.0, 0.75), M["easel"])
+        kit.box("pair frame", (1.04, 0.04, 1.3), (x, 1.0, 1.5), M["canvas_back"])
+        pl = uvplane(kit, f"pair {nm}", (1.0, 1.25), (x, 0.965, 1.5), None, None, (math.pi / 2, 0, 0))
+        mt = img_mat(kit, f"pair {nm}", im, wd, rough=0.88)
+        pl.data.materials.append(mt)
+    kit.light("pair key", "AREA", (X, -1.6, 3.3), 330.0, "#fff3e2", size=3.0).rotation_euler = (math.radians(30), 0, 0)
+    ctx["site_lights"]["pair"] = ["pair key"]
+
+
+# ------------------------------------------------------------------------------------------ props, lights, build
 
 
 def build_props(kit, ctx, M):
     P = {}
     P["canvas_carry"] = [kit.box("carried canvas", (0.5, 0.03, 0.62), (0, 0, 0), M["canvas_back"])]
-    P["bag"] = [kit.box("bag", (0.5, 0.2, 0.4), (0, 0, 0), M["bag"], bevel=0.04)]
-    P["mug"] = [kit.cyl("held mug", 0.04, 0.1, (0, 0, 0), M["mug"])]
-    P["phone"] = [kit.box("phone glow", (0.1, 0.18, 0.012), (0, 0, 0), M["phone"], bevel=0.005)]
-    P["phone_mum"] = [kit.box("phone at ear", (0.05, 0.1, 0.17), (0, 0, 0), M["phone_off"], bevel=0.01)]
-    coat = [kit.box("coat", (0.5, 0.12, 0.6), (0, 0, 0), M["coat"], bevel=0.04),
-            kit.box("coat sleeve", (0.12, 0.1, 0.5), (0.3, 0, -0.05), M["coat"], bevel=0.03, rot=(0, 0.2, 0)),
-            kit.box("coat sleeve", (0.12, 0.1, 0.5), (-0.3, 0, -0.05), M["coat"], bevel=0.03, rot=(0, -0.2, 0))]
-    P["coat"] = coat
+    P["coat"] = [kit.box("coat", (0.5, 0.12, 0.6), (0, 0, 0), M["coat"], bevel=0.04),
+                 kit.box("coat sleeve", (0.12, 0.1, 0.5), (0.3, 0, -0.05), M["coat"], bevel=0.03, rot=(0, 0.2, 0)),
+                 kit.box("coat sleeve", (0.12, 0.1, 0.5), (-0.3, 0, -0.05), M["coat"], bevel=0.03, rot=(0, -0.2, 0))]
+    th7 = math.radians(ctx["TH"][6])
+    p7 = (RP_ * math.cos(th7), RP_ * math.sin(th7))
+    P["brushdrop"] = [kit.box("dropped brush", (0.016, 0.24, 0.016), (p7[0] + 0.05, p7[1] - 0.25, 0.012), M["brush"], rot=(0, 0, 0.6)),
+                      kit.box("dropped bristles", (0.022, 0.07, 0.022), (p7[0] + 0.1, p7[1] - 0.13, 0.014), M["bristle"], rot=(0, 0, 0.6))]
     for objs in P.values():
         for o in objs:
             o.hide_render = True
@@ -741,7 +1062,6 @@ def build_props(kit, ctx, M):
 
 
 def build_lights(kit, ctx):
-    ctx["hide_lights"] = []
     # the room: dim warm fill from the ceiling, floor-level work lights round the dais, a cold rim from the north window
     for k, th in enumerate(ctx["TH"]):
         x, y = 4.5 * math.cos(math.radians(th)), 4.5 * math.sin(math.radians(th))
@@ -752,18 +1072,18 @@ def build_lights(kit, ctx):
         kit.light(f"foot {k}", "POINT", (x, y, z), 14.0, "#ffa860", size=0.15)
     rim = kit.light("north rim", "AREA", (0.0, 4.6, 2.3), 260.0, "#6f93d8", size=2.4)
     rim.rotation_euler = (V((0, -1.5, -1.2)).to_track_quat("-Z", "Y").to_euler())
-    # daylight, for the show: ceiling panels and the window
-    for k, (x, y) in enumerate(((-2.5, -1.0), (2.5, -1.0), (0.0, 2.0), (0.0, -3.5))):
-        kit.light(f"show ceil {k}", "AREA", (x, y, 2.9), 80.0, "#fff6e6", size=2.0).rotation_euler = (math.pi, 0, 0)
-    kit.light("show day", "AREA", (0.0, 4.0, 2.0), 250.0, "#f2f6ff", size=3.0).rotation_euler = (V((0, -1, -0.5)).to_track_quat("-Z", "Y").to_euler())
     for nm in list(kit.LIGHTS):
-        if nm.startswith(("show ", "hall ", "kit ", "north rim", "drawer")):
+        if nm.startswith(("hall ", "kit ", "north rim", "drawer", "cafe ", "bake ", "flat ", "pair ")):
             kit.LIGHTS[nm]["obj"].visible_camera = False
     # outside: the lamp post, a cold wash on the building
     kit.light("post light", "POINT", (-2.6, -9.0, GROUND + 3.4), 700.0, "#ffd29a", size=0.3)
     kit.light("ext wash", "AREA", (-12.0, -20.0, 14.0), 1400.0, "#5a73a8", size=6.0).rotation_euler = (V((12, 20, -14)).to_track_quat("-Z", "Y").to_euler())
     kit.light("step fill", "POINT", (-8.0, -4.6, 1.6), 70.0, "#ffb878", size=0.3)
     kit.light("door spill", "POINT", (X0 + 0.5, -2.85, 1.7), 40.0, "#ffbf80", size=0.2)
+    # the faded one's lights: a key from below and the side, a cold rim from behind. Front lights are dead.
+    # They travel to whichever faded character is on screen (animate)
+    kit.light("unp key", "SPOT", (0, 0, 0), 240.0, "#ffa060", spot=34, blend=0.6, size=0.1)
+    kit.light("unp rim", "SPOT", (0, 0, 0), 150.0, "#7ea0e0", spot=50, blend=0.5, size=0.2)
 
 
 def build(kit, story, tl):
@@ -771,9 +1091,10 @@ def build(kit, story, tl):
     g = story["geom"]
     RE_, ths = g["RE"], g["TH"]
     wd = workdir(tl)
-    ctx = {"story": story, "wd": wd, "TH": ths}
+    ctx = {"story": story, "wd": wd, "TH": ths, "fade": {}, "site_lights": {}}
     clear_lens(kit)
     M = materials(kit, wd)
+    _site_materials(kit, M)
     ctx["M"] = M
     build_room(kit, ctx, M)
     build_dais(kit, ctx, M)
@@ -783,49 +1104,47 @@ def build(kit, story, tl):
         ctx["easels"].append(e)
         ctx["emat"][i] = mat
     ctx["images"] = {}
+
+    def load(path):
+        im = bpy.data.images.load(str(path))
+        im.colorspace_settings.name = "sRGB"
+        return im
+
     for name, (style, seed) in {"pencil": ("pencil", 1), "bowl2": ("oil", 2), "pear": ("pear", 3), "bowlA": ("oil", 4), "bowlB": ("oil", 6),
                                 "bowlC": ("oil", 7), "bowlD": ("oil", 9)}.items():
         path = wd / f"fruit-{name}.png"
         fruit_image(style, seed).save(path)
-        im = bpy.data.images.load(str(path))
-        im.colorspace_settings.name = "sRGB"
-        ctx["images"][name] = im
-    for st in range(6):
+        ctx["images"][name] = load(path)
+    path = wd / "canvas-ade.png"
+    ade_image().save(path)
+    ctx["images"]["ade"] = load(path)
+    for st in (0, 1, 2, 4, 5):
         path = wd / f"canvas-stage-{st}.png"
         canvas_image(st).save(path)
-        im = bpy.data.images.load(str(path))
-        im.colorspace_settings.name = "sRGB"
-        ctx["images"][f"mine{st}"] = im
+        ctx["images"][f"mine{st}"] = load(path)
+    ctx["pine_faces"] = {}
+    for kind, stages in (("mum", 4), ("plain", 3), ("plain2", 3)):
+        for st in range(stages):
+            path = wd / f"pine-{kind}-{st}.png"
+            pine_face_image(kind, st).save(path)
+            ctx["pine_faces"][(kind, st)] = load(path)
     default = {1: "bowl2", 2: "bowlA", 3: "bowlB", 4: "bowlC", 5: "bowlD", 6: "bowlA", 7: "pencil"}
     for i, nm in default.items():
         set_img(ctx["emat"][i], ctx["images"][nm])
     set_img(ctx["emat"][8], ctx["images"]["mine0"])
     build_stool(kit, ctx, M)
-    build_unp(kit, ctx, M, wd)
     build_hall(kit, ctx, M, wd)
-    build_kitchen(kit, ctx, M, wd)
+    build_bus(kit, ctx, M)
+    build_cafe(kit, ctx, M)
+    build_bakery(kit, ctx, M)
+    build_flat(kit, ctx, M, wd)
+    build_pair(kit, ctx, M, wd)
     ctx["props"] = build_props(kit, ctx, M)
-    for nm in list(kit.LIGHTS):
-        if nm.startswith(("hall ", "kit ")):
-            kit.LIGHTS[nm]["obj"].visible_camera = False
-    # the show wall: framed pictures on the west wall, the portrait among them
-    show = []
-    for k, y in enumerate((-0.5 - 1.1, 0.9 + 0.6, 2.0 + 0.9, 3.4 + 0.2)):
-        f = kit.empty("show frame", (X0 + 0.08, y, 1.55))
-        kit.box("sf", (0.04, 0.5, 0.64), (0, 0, 0), M["frame"], f)
-        pm = img_mat(kit, f"showart{k}", fruit_image("oil", 10 + k), wd, rough=0.7)
-        pl = uvplane(kit, "sfp", (0.44, 0.58), (0.0215, 0, 0), None, f, (math.pi / 2, 0, math.pi / 2))
-        pl.data.materials.append(pm)
-        show.append(f)
-    sp = kit.empty("show portrait", (X0 + 0.09, -0.9, 1.55))
-    kit.box("spf", (0.05, 0.7, 0.85), (0, 0, 0), M["frame"], sp)
-    pm = img_mat(kit, "showportrait", finished_portrait(), wd, rough=0.7)
-    pl = uvplane(kit, "spp", (0.6, 0.75), (0.026, 0, 0), None, sp, (math.pi / 2, 0, math.pi / 2))
-    pl.data.materials.append(pm)
-    ctx["show_wall"] = show + [sp]
     build_lights(kit, ctx)
-    ctx["base_world"] = None
     return ctx
+
+
+RP_ = 3.7
 
 
 # ------------------------------------------------------------------------------------------ animation
@@ -836,33 +1155,6 @@ def _show(objs, on):
         o.hide_render = not on
         for c_ in o.children_recursive:
             c_.hide_render = not on
-
-
-def unp_state(ctx, tl, t, kit, hide=False):
-    cs = _last(_cues(tl, "unp"), t)
-    u = ctx["unp"]
-    on = bool(cs and cs.get("on"))
-    _show([u["root"]], on and not hide)
-    if not on:
-        return
-    x, y = cs["pos"]
-    yaw = cs.get("yaw", 0.0)
-    z = DAIS_H if cs.get("dais") else 0.0
-    u["root"].location = (x, y, z)
-    u["root"].rotation_euler = (0, 0, math.radians(yaw))
-    if "look" in cs:
-        lx, ly = cs["look"]
-        want = math.degrees(math.atan2(lx - x, -(ly - y)))
-        rel = _wrap(want - yaw)
-    else:
-        rel = cs.get("head", 0.0)
-    u["neck"].rotation_euler = (0, 0, math.radians(rel))
-    u["tp"].rotation_euler = (math.radians(cs.get("lean", 0.0)), 0, 0)
-    st = min(int(cs.get("stage", 0)), 3)
-    u["tex"].image = u["imgs"][st]
-    # its lights go with it
-    for o in (kit.LIGHTS["unp key"]["obj"], kit.LIGHTS["unp rim"]["obj"]):
-        o.hide_render = False
 
 
 def dip_gain(tl, t):
@@ -889,6 +1181,49 @@ def _ref_time(tl, ref):
     return tl["lines"][ref]["onset"]
 
 
+def _line_t(tl, lid):
+    return tl["lines"][lid]["onset"]
+
+
+# the light of each moment: exposure, sky colour, sky strength
+STATES = {
+    "night": (-0.2, "#0c1018", 1.0),
+    "cold": (-0.4, "#0c1018", 1.0),
+    "warm": (0.75, "#0c1018", 1.0),
+    "end": (1.15, "#0c1018", 1.0),
+    "bus": (0.1, "#a9d2f4", 1.1),
+    "cafe": (0.3, "#a9d2f4", 1.0),
+    "bake": (0.3, "#a9d2f4", 1.0),
+    "flat": (0.45, "#a9d2f4", 1.0),
+    "pair": (0.25, "#0c1018", 1.0),
+}
+SITES = ("bus", "cafe", "bake", "flat", "pair")
+
+
+def _seat_people(tl, t, kit):
+    """Seated characters bend their legs flat; a bend key leans the torso toward a point."""
+    for who, keys in tl["acting"].items():
+        root = bpy.data.objects.get(who)
+        if root is None or root.hide_render:
+            continue
+        if _ac._switch(keys, "sit", t, False):
+            for sx in (-1, 1):
+                leg = bpy.data.objects.get(f"{who}.leg{sx}")
+                if leg is not None:
+                    leg.rotation_euler = (-math.pi / 2, 0, 0)
+        bx, by, deg = _ac._held(keys, "bendto", t, [0.0, 0.0, 0.0])
+        tor = bpy.data.objects.get(f"{who}.torso")
+        if tor is not None and (deg or any("bendto" in k for k in keys)):
+            yaw = root.rotation_euler.z
+            wx, wy = bx - root.location.x, by - root.location.y
+            n = math.hypot(wx, wy) or 1.0
+            wx, wy = wx / n, wy / n
+            lx = wx * math.cos(yaw) + wy * math.sin(yaw)
+            ly = -wx * math.sin(yaw) + wy * math.cos(yaw)
+            a = math.radians(deg)
+            tor.rotation_euler = (-a * ly, a * lx, 0)
+
+
 def animate(kit, story, tl, t, ctx):
     M = ctx["M"]
     over = {}
@@ -899,70 +1234,80 @@ def animate(kit, story, tl, t, ctx):
         R = faces.HEAD_R
         kit.box("ade.beard", (0.98, 0.34, 0.6), (0, -R + 0.1, -0.33), kit.plastic("#8d8d8a", 0.9, "beard"), bpy.data.objects["ade.headg"], bevel=0.14)
         ctx["beard"] = True
-    # time of day
+    # time of day, and which little set is on
     ts = _last(_cues(tl, "time"), t)
     state = ts["set"] if ts else "night"
-    show_on = bool((_last(_cues(tl, "show"), t) or {}).get("on"))
+    ev, sky, sk_s = STATES.get(state, STATES["night"])
     world = bpy.data.worlds[0].node_tree.nodes["Background"]
-    if show_on:
-        world.inputs["Color"].default_value = kit.col("#cfe0f4")
-        world.inputs["Strength"].default_value = 0.6
-        bpy.context.scene.view_settings.exposure = 1.1
-    else:
-        world.inputs["Color"].default_value = kit.col("#0c1018")
-        world.inputs["Strength"].default_value = 1.0
-        bpy.context.scene.view_settings.exposure = {"night": -0.2, "warm": 0.75, "end": 1.15}.get(state, 0.5)
-    bpy.context.scene.view_settings.exposure += float(spec.get("ev", 0.0))
-    ctx["pane_mat"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 1.4 if show_on else 0.55
+    world.inputs["Color"].default_value = kit.col(sky)
+    world.inputs["Strength"].default_value = sk_s
+    bpy.context.scene.view_settings.exposure = ev + float(spec.get("ev", 0.0))
+    ctx["pane_mat"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 0.55
     # the rain runs down the north window
-    if "pane" in ctx:
-        tex = ctx["pane_mat"].node_tree.nodes[ctx["pane_mat"]["tex_name"]]
-        if not ctx.get("pane_map"):
-            nt = ctx["pane_mat"].node_tree
-            tc = nt.nodes.new("ShaderNodeTexCoord")
-            mp = nt.nodes.new("ShaderNodeMapping")
-            nt.links.new(tc.outputs["UV"], mp.inputs["Vector"])
-            nt.links.new(mp.outputs["Vector"], tex.inputs["Vector"])
-            ctx["pane_map"] = mp
-        ctx["pane_map"].inputs["Location"].default_value = (0, (t * 0.35) % 1.0, 0)
+    tex = ctx["pane_mat"].node_tree.nodes[ctx["pane_mat"]["tex_name"]]
+    if not ctx.get("pane_map"):
+        nt = ctx["pane_mat"].node_tree
+        tc = nt.nodes.new("ShaderNodeTexCoord")
+        mp = nt.nodes.new("ShaderNodeMapping")
+        nt.links.new(tc.outputs["UV"], mp.inputs["Vector"])
+        nt.links.new(mp.outputs["Vector"], tex.inputs["Vector"])
+        ctx["pane_map"] = mp
+    ctx["pane_map"].inputs["Location"].default_value = (0, (t * 0.35) % 1.0, 0)
+    # the faded ones: the pine look, from their acting keys
+    active = None
+    for who in story["geom"]["faders"]:
+        root = bpy.data.objects.get(who)
+        if root is None:
+            continue
+        fb, fh = fade_update(ctx, tl, t, who)
+        if not root.hide_render and fh > 0.3 and (active is None or fh > active[1]):
+            active = (who, fh)
     # the lamps and the dips
+    in_room = state not in SITES
     dip = dip_gain(tl, t)
     for name in kit.LIGHTS:
         g = 1.0
-        if name.startswith(("lamp ", "room fill", "foot", "unp ")):
-            g = 0.0 if show_on and name.startswith(("lamp ", "foot")) else dip
-            if show_on and name.startswith("room fill"):
-                g = 0.25
+        if name.startswith(("lamp ", "room fill", "foot")):
+            g = dip if in_room else 0.0
             if state == "warm":
-                g *= {"lamp ": 1.4, "room fill": 2.2, "foot": 1.8, "unp ": 1.0}[next(k for k in ("lamp ", "room fill", "foot", "unp ") if name.startswith(k))]
-        if name.startswith("show "):
-            g = 1.0 if show_on else 0.0
-            over[name] = g
-            continue
-        if name == "unp key" and spec.get("unp_gain") is not None:
-            g *= float(spec["unp_gain"])
+                g *= {"lamp ": 1.4, "room fill": 2.2, "foot": 1.8}[next(k for k in ("lamp ", "room fill", "foot") if name.startswith(k))]
+            if state == "cold":
+                g *= 0.7
+        if name in ("unp key", "unp rim"):
+            g = 0.0
+            if active is not None and in_room:
+                g = min(1.0, active[1] * 1.2) * dip
+                if name == "unp key" and spec.get("unp_gain") is not None:
+                    g *= float(spec["unp_gain"])
+        for site, names in ctx["site_lights"].items():
+            if name in names:
+                g = 1.0 if state == site else 0.0
         if name == "shot fill":
             fl = spec.get("fill")
             if fl:
                 kit.LIGHTS[name]["obj"].location = tuple(fl)
             g = 1.0 if fl else 0.0
         if name == "north rim":
-            g = 0.15 if show_on else (0.4 if state == "warm" else 1.0)
+            g = 0.4 if state == "warm" else (1.0 if in_room else 0.0)
+            if state == "cold":
+                g = 1.25
         over[name] = g
-    ctx["lamp_objs"] = [e for e in ctx["easels"]]
-    for e in ctx["easels"]:
-        e.hide_render = show_on
-        for c_ in e.children_recursive:
-            c_.hide_render = show_on
-    for name in kit.LIGHTS:
-        if name.startswith("lamp "):
-            kit.LIGHTS[name]["obj"].hide_render = show_on
+    if active is not None:
+        who = active[0]
+        root = bpy.data.objects[who]
+        yaw = root.rotation_euler.z
+        rot = mathutils.Matrix.Rotation(yaw, 3, "Z")
+        for nm, off, aim_off in (("unp key", V((0.45, -0.75, 0.15)), V((0.0, 0.0, 1.4))), ("unp rim", V((-0.5, 1.1, 2.3)), V((0.0, -0.1, 1.5)))):
+            ob = kit.LIGHTS[nm]["obj"]
+            base = V((root.location.x, root.location.y, root.location.z))
+            ob.location = base + rot @ off
+            ob.rotation_euler = ((base + V((0, 0, aim_off.z)) + rot @ V((aim_off.x, aim_off.y, 0))) - ob.location).to_track_quat("-Z", "Y").to_euler()
+    ctx["lamp_objs"] = ctx["easels"]
     # a shot can hide what stands in front of its lens
+    for e in ctx["easels"]:
+        _show([e], True)
     for i in spec.get("hide_easels", []):
-        e = ctx["easels"][i - 1]
-        e.hide_render = True
-        for c_ in e.children_recursive:
-            c_.hide_render = True
+        _show([ctx["easels"][i - 1]], False)
     for who in spec.get("hide_cast", []):
         r = bpy.data.objects.get(who)
         if r is not None:
@@ -974,25 +1319,12 @@ def animate(kit, story, tl, t, ctx):
     ctx["easels"][7].rotation_euler = (0, 0, 0.0 if spec.get("turn8") else math.radians(ctx["TH"][7] + 90))
     ctx["ceiling"].hide_render = ov
     ctx["roof"].hide_render = ov
-    # the dais: on its feet, or on its edge against the west wall for the show
-    dpos = _last(_cues(tl, "show"), t)
-    d = ctx["dais"]
-    stood = show_on and t < _line_t(tl, "L74")
-    if stood:
-        d.location = (X0 + 0.3, 1.8, 1.0)
-        d.rotation_euler = (0, math.radians(-90), 0)
-    else:
-        d.location = (0, 0, 0)
-        d.rotation_euler = (0, 0, 0)
-    ctx["tally"].hide_render = not stood
-    _show([ctx["dais_stool"]], not stood)
-    for o in ctx["show_wall"]:
-        _show([o], show_on)
-    dent = (_last(_cues(tl, "cushion"), t) or {}).get("dent", 0.0)
+    ctx["tally"].hide_render = not spec.get("tally")
     for k, cu in enumerate(ctx["cushions"]):
-        cu.hide_render = stood or (k != (1 if dent > 0.5 else 0))
-    # the Unpainted, the spare stool, my canvas, the others
-    unp_state(ctx, tl, t, kit, bool(spec.get("hide_unp")))
+        cu.hide_render = k != 0
+    # the people sit and lean
+    _seat_people(tl, t, kit)
+    # the spare stool, my canvas, the others
     sc = _last(_cues(tl, "stool"), t)
     st = ctx["stool"]
     _show([st], bool(sc and sc.get("on")))
@@ -1004,78 +1336,37 @@ def animate(kit, story, tl, t, ctx):
     for c_ in _cues(tl, "easel"):
         if c_["t"] <= t:
             set_img(ctx["emat"][c_["i"]], ctx["images"][c_["img"]])
-    # the hall and its drawer
-    hs = (_last(_cues(tl, "hall"), t) or {}).get("state", "then")
+    # the hall
+    hs = (_last(_cues(tl, "hall"), t) or {}).get("state", "now")
     for f in ctx["hall"]["frames"]:
         _show([f], hs == "then")
     for sq in ctx["hall"]["squares"]:
         sq.hide_render = hs == "then"
-    pf = ctx["hall"]["portrait"]
-    _show([pf], hs in ("hung", "lift"))
+    _show([ctx["hall"]["portrait"]], hs in ("hung", "lift"))
     for o in ctx["hall"]["jar"]:
         o.hide_render = hs != "hung"
-    if hs == "hung":
-        t0 = tl["lines"]["L76"]["end"] - 0.04
-        k = math.exp(-max(0.0, t - t0) * 7.0) * math.cos(max(0.0, t - t0) * 24.0) if t > t0 else 0.0
-        pf.rotation_euler = (math.radians(4.0 * k), 0, 0)
-        pf.location = (HX - 0.97, 1.2, 1.55)
-    elif hs == "lift":
-        pf.location = (HX - 0.55, 1.35, 1.0)
-        pf.rotation_euler = (0, math.radians(-8), 0)
-    ctx["hall"]["drawer"].location = (HX + 0.2, 3.0 - 0.4 * _last(_cues(tl, "drawer"), t)["open"], 0.55) if _cues(tl, "drawer") else (HX + 0.2, 3.0, 0.55)
+    ctx["hall"]["drawer"].location = (HX + 0.2, 3.0, 0.55)
     # the door swings after I run
-    tl47 = _line_t(tl, "L47")
+    tl25 = _line_t(tl, "L25")
     ang = -72.0
-    if t > tl47:
-        ang = -72.0 + 38.0 * math.exp(-(t - tl47) * 1.6) * math.sin((t - tl47) * 5.0)
+    if t > tl25:
+        ang = -72.0 + 38.0 * math.exp(-(t - tl25) * 1.6) * math.sin((t - tl25) * 5.0)
     ctx["door"].rotation_euler = (0, 0, math.radians(ang))
-    # the props follow their holders
+    # the props
     pr = {}
     for c_ in _cues(tl, "prop"):
         if c_["t"] <= t:
             pr[c_["which"]] = c_["on"]
-    ep = ctx["easels"][7]
-    th8 = math.radians(ctx["TH"][7])
-    n8, t8 = (math.cos(th8), math.sin(th8)), (-math.sin(th8), math.cos(th8))
-    ex, ey = ep.location.x, ep.location.y
-    place = {
-        "bag": ((ex + n8[0] * 0.55 + t8[0] * 0.3, ey + n8[1] * 0.55 + t8[1] * 0.3, 0.2), (0, 0, th8 + 0.4)),
-        "phone": ((ex + n8[0] * 0.1 + t8[0] * 0.15, ey + n8[1] * 0.1 + t8[1] * 0.15, 0.845), (0, 0, th8 + math.pi / 2 + 0.3)),
-        "coat": None,
-    }
     for k, objs in ctx["props"].items():
-        on = bool(pr.get(k))
         for o in objs:
-            o.hide_render = not on
-    for k, v in place.items():
-        if k == "coat":
-            c0 = ctx["props"]["coat"]
-            base = V((X0 + 0.12, -3.85, 1.45))
-            for o, off in zip(c0, ((0, 0, 0), (0, 0.27, -0.05), (0, -0.27, -0.05))):
-                o.location = base + V(off)
-                o.rotation_euler = (0, 0, math.pi / 2)
-            continue
-        loc, rot = v
-        for o in ctx["props"][k]:
-            o.location = loc
-            o.rotation_euler = rot
-    # held and worn props: look the cast up by name
-    for who, which, part, off in (("me", "canvas_carry", "me.arm1", (0.0, -0.3, -0.55)), ("kofi", "mug", "kofi.arm1", (0.0, -0.3, -0.7))):
-        if pr.get(which) and part in bpy.data.objects:
-            o = ctx["props"][which][0]
-            o.location = bpy.data.objects[part].matrix_world @ V(off)
-            o.rotation_euler = (0, 0, 0)
-    if pr.get("phone_mum") and "mum.headg" in bpy.data.objects:
-        o = ctx["props"]["phone_mum"][0]
-        o.location = bpy.data.objects["mum.headg"].matrix_world @ V((0.85, 0.05, 0.0))
-        o.rotation_euler = bpy.data.objects["mum.headg"].matrix_world.to_euler()
+            o.hide_render = not pr.get(k)
+    c0 = ctx["props"]["coat"]
+    base = V((X0 + 0.12, -3.85, 1.45))
+    for o, off in zip(c0, ((0, 0, 0), (0, 0.27, -0.05), (0, -0.27, -0.05))):
+        o.location = base + V(off)
+        o.rotation_euler = (0, 0, math.pi / 2)
+    if pr.get("canvas_carry") and "me.arm1" in bpy.data.objects:
+        o = ctx["props"]["canvas_carry"][0]
+        o.location = bpy.data.objects["me.arm1"].matrix_world @ V((0.0, -0.3, -0.55))
+        o.rotation_euler = (0, 0, 0)
     return over
-
-
-def _e8(ctx, a, b):
-    e = ctx["easels"][7]
-    return (e.location.x + a, e.location.y + b)
-
-
-def _line_t(tl, lid):
-    return tl["lines"][lid]["onset"]

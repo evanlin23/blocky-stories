@@ -4,8 +4,146 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum always SAID",
-    "Mum always said"
+    "In this TOWN,",
+    "In this town,"
+   ],
+   [
+    "if nobody",
+    "if nobody"
+   ],
+   [
+    "LOOKS at you,",
+    "looks at you,"
+   ],
+   [
+    "your face FADES.",
+    "your face fades."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Down to",
+    "Down to"
+   ],
+   [
+    "bare WOOD,",
+    "bare wood,"
+   ],
+   [
+    "and the",
+    "and the"
+   ],
+   [
+    "first PENCIL LINES",
+    "first pencil lines"
+   ],
+   [
+    "you were",
+    "you were"
+   ],
+   [
+    "DRAWN with.",
+    "drawn with."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So everybody STARES.",
+    "So everybody stares."
+   ],
+   [
+    "Couples stare",
+    "Couples stare"
+   ],
+   [
+    "at each other",
+    "at each other"
+   ],
+   [
+    "over BREAKFAST.",
+    "over breakfast."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The baker",
+    "The baker"
+   ],
+   [
+    "holds your EYE",
+    "holds your eye"
+   ],
+   [
+    "till your change",
+    "till your change"
+   ],
+   [
+    "is COUNTED.",
+    "is counted."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And if",
+    "And if"
+   ],
+   [
+    "you're LONELY,",
+    "you're lonely,"
+   ],
+   [
+    "you sit for",
+    "you sit for"
+   ],
+   [
+    "the PORTRAIT CLASS,",
+    "the portrait class,"
+   ],
+   [
+    "and eight painters",
+    "and eight painters"
+   ],
+   [
+    "fill you",
+    "fill you"
+   ],
+   [
+    "back IN.",
+    "back in."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I PAINT.",
+    "I paint."
+   ],
+   [
+    "But Mum",
+    "But Mum"
+   ],
+   [
+    "always SAID",
+    "always said"
    ],
    [
     "I never FINISH",
@@ -18,139 +156,91 @@
   ]
  },
  {
-  "id": "L02",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She used",
-    "She used"
-   ],
-   [
-    "to PAINT.",
-    "to paint."
-   ],
-   [
-    "Her HALL",
-    "Her hall"
-   ],
-   [
-    "was covered",
-    "was covered"
-   ],
-   [
-    "in her PICTURES.",
-    "in her pictures."
-   ]
-  ]
- },
- {
-  "id": "L03",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Now it's BARE,",
-    "Now it's bare,"
-   ],
-   [
-    "and her BRUSHES",
-    "and her brushes"
-   ],
-   [
-    "live in",
-    "live in"
-   ],
-   [
-    "a DRAWER.",
-    "a drawer."
-   ]
-  ]
- },
- {
-  "id": "L04",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So I",
-    "So I"
-   ],
-   [
-    "joined a WEDNESDAY",
-    "joined a Wednesday"
-   ],
-   [
-    "PORTRAIT CLASS,",
-    "portrait class,"
-   ],
-   [
-    "and didn't",
-    "and didn't"
-   ],
-   [
-    "TELL her.",
-    "tell her."
-   ]
-  ]
- },
- {
-  "id": "L05",
-  "who": "narrator",
-  "chunks": [
-   [
-    "EIGHT EASELS",
-    "Eight easels"
-   ],
-   [
-    "in a CURVE,",
-    "in a curve,"
-   ],
-   [
-    "and a",
-    "and a"
-   ],
-   [
-    "wooden DAIS",
-    "wooden dais"
-   ],
-   [
-    "in the MIDDLE.",
-    "in the middle."
-   ]
-  ]
- },
- {
-  "id": "L06",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Kofi runs it.",
-    "Kofi runs it."
-   ],
-   [
-    "He set",
-    "He set"
-   ],
-   [
-    "a STOOL",
-    "a stool"
-   ],
-   [
-    "on the DAIS,",
-    "on the dais,"
-   ],
-   [
-    "with a",
-    "with a"
-   ],
-   [
-    "fat green CUSHION,",
-    "fat green cushion,"
-   ]
-  ]
- },
- {
   "id": "L07",
   "who": "narrator",
   "chunks": [
+   [
+    "We haven't SPOKEN",
+    "We haven't spoken"
+   ],
+   [
+    "since SPRING,",
+    "since spring,"
+   ],
+   [
+    "and she",
+    "and she"
+   ],
+   [
+    "lives ALONE.",
+    "lives alone."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I told myself",
+    "I told myself"
+   ],
+   [
+    "someone ELSE",
+    "someone else"
+   ],
+   [
+    "was looking",
+    "was looking"
+   ],
+   [
+    "at her.",
+    "at her."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So on WEDNESDAY",
+    "So on Wednesday"
+   ],
+   [
+    "I joined",
+    "I joined"
+   ],
+   [
+    "the PORTRAIT CLASS,",
+    "the portrait class,"
+   ],
+   [
+    "to learn to",
+    "to learn to"
+   ],
+   [
+    "finish a FACE.",
+    "finish a face."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Kofi set out",
+    "Kofi set out"
+   ],
+   [
+    "a BOWL",
+    "a bowl"
+   ],
+   [
+    "of FRUIT,",
+    "of fruit,"
+   ],
    [
     "and said,",
     "and said,"
@@ -166,102 +256,28 @@
   ]
  },
  {
-  "id": "L08",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then he",
-    "Then he"
-   ],
-   [
-    "set out a",
-    "set out a"
-   ],
-   [
-    "BOWL of FRUIT",
-    "bowl of fruit"
-   ],
-   [
-    "and went",
-    "and went"
-   ],
-   [
-    "to make TEA.",
-    "to make tea."
-   ]
-  ]
- },
- {
-  "id": "L09",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I looked",
-    "I looked"
-   ],
-   [
-    "at the DAIS,",
-    "at the dais,"
-   ],
-   [
-    "and someone",
-    "and someone"
-   ],
-   [
-    "was SITTING there.",
-    "was sitting there."
-   ]
-  ]
- },
- {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It was made",
-    "It was made"
-   ],
-   [
-    "of RAW PINE,",
-    "of raw pine,"
-   ],
-   [
-    "like a",
-    "like a"
-   ],
-   [
-    "FENCE POST",
-    "fence post"
-   ],
-   [
-    "that grew",
-    "that grew"
-   ],
-   [
-    "a PERSON.",
-    "a person."
-   ]
-  ]
- },
- {
   "id": "L11",
   "who": "narrator",
   "chunks": [
    [
-    "Where a",
-    "Where a"
+    "On the",
+    "On the"
    ],
    [
-    "face should BE,",
-    "face should be,"
+    "platform STOOL",
+    "platform stool"
    ],
    [
-    "there were only",
-    "there were only"
+    "someone was SITTING.",
+    "someone was sitting."
    ],
    [
-    "PENCIL LINES.",
-    "pencil lines."
+    "Faded ALL",
+    "Faded all"
+   ],
+   [
+    "the WAY.",
+    "the way."
    ]
   ]
  },
@@ -270,42 +286,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "A CROSS,",
-    "A cross,"
+    "Raw PINE,",
+    "Raw pine,"
    ],
    [
-    "and two",
-    "and two"
+    "from its HAIR",
+    "from its hair"
    ],
    [
-    "empty OVALS",
-    "empty ovals"
-   ],
-   [
-    "for EYES.",
-    "for eyes."
-   ]
-  ]
- },
- {
-  "id": "L12b",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The guide",
-    "The guide"
-   ],
-   [
-    "lines you DRAW",
-    "lines you draw"
-   ],
-   [
-    "before you draw",
-    "before you draw"
-   ],
-   [
-    "ANYTHING.",
-    "anything."
+    "to its SHOES.",
+    "to its shoes."
    ]
   ]
  },
@@ -314,16 +304,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Next to me,",
-    "Next to me,"
+    "Just a CROSS,",
+    "Just a cross,"
    ],
    [
-    "Petra was",
-    "Petra was"
+    "two empty OVALS,",
+    "two empty ovals,"
    ],
    [
-    "already SKETCHING.",
-    "already sketching."
+    "and little LINES",
+    "and little lines"
+   ],
+   [
+    "at the CORNERS.",
+    "at the corners."
    ]
   ]
  },
@@ -346,235 +340,33 @@
   "who": "narrator",
   "chunks": [
    [
-    "So I drew",
-    "So I drew"
+    "So I",
+    "So I"
    ],
    [
-    "what I SAW.",
-    "what I saw."
+    "painted IT.",
+    "painted it."
+   ],
+   [
+    "I got",
+    "I got"
+   ],
+   [
+    "as far",
+    "as far"
+   ],
+   [
+    "as the NOSE,",
+    "as the nose,"
+   ],
+   [
+    "and STOPPED.",
+    "and stopped."
    ]
   ]
  },
  {
   "id": "L16",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The guide LINES,",
-    "The guide lines,"
-   ],
-   [
-    "then the start",
-    "then the start"
-   ],
-   [
-    "of a NOSE.",
-    "of a nose."
-   ]
-  ]
- },
- {
-  "id": "L17",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And I",
-    "And I"
-   ],
-   [
-    "heard Mum",
-    "heard Mum"
-   ],
-   [
-    "in my HEAD,",
-    "in my head,"
-   ],
-   [
-    "saying,",
-    "saying,"
-   ],
-   [
-    "\"HALFWAY again?\"",
-    "\"Halfway again?\""
-   ]
-  ]
- },
- {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My hand STOPPED.",
-    "My hand stopped."
-   ],
-   [
-    "I left",
-    "I left"
-   ],
-   [
-    "it THERE.",
-    "it there."
-   ]
-  ]
- },
- {
-  "id": "L19",
-  "who": "narrator",
-  "chunks": [
-   [
-    "When Kofi",
-    "When Kofi"
-   ],
-   [
-    "called TIME,",
-    "called time,"
-   ],
-   [
-    "the cushion",
-    "the cushion"
-   ],
-   [
-    "under it",
-    "under it"
-   ],
-   [
-    "was still",
-    "was still"
-   ],
-   [
-    "PERFECTLY FLAT.",
-    "perfectly flat."
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The next WEDNESDAY,",
-    "The next Wednesday,"
-   ],
-   [
-    "it had",
-    "it had"
-   ],
-   [
-    "a NOSE,",
-    "a nose,"
-   ],
-   [
-    "right where MINE",
-    "right where mine"
-   ],
-   [
-    "had stopped.",
-    "had stopped."
-   ]
-  ]
- },
- {
-  "id": "L21",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And it",
-    "And it"
-   ],
-   [
-    "had moved",
-    "had moved"
-   ],
-   [
-    "to a",
-    "to a"
-   ],
-   [
-    "SPARE STOOL",
-    "spare stool"
-   ],
-   [
-    "by the",
-    "by the"
-   ],
-   [
-    "FIRST EASEL.",
-    "first easel."
-   ]
-  ]
- },
- {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mr Dobbs, at",
-    "Mr Dobbs, at"
-   ],
-   [
-    "the first easel,",
-    "the first easel,"
-   ],
-   [
-    "painted RIGHT",
-    "painted right"
-   ],
-   [
-    "PAST it.",
-    "past it."
-   ]
-  ]
- },
- {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mum PHONED.",
-    "Mum phoned."
-   ],
-   [
-    "I told",
-    "I told"
-   ],
-   [
-    "her I was",
-    "her I was"
-   ],
-   [
-    "working LATE.",
-    "working late."
-   ]
-  ]
- },
- {
-  "id": "L24",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I started",
-    "I started"
-   ],
-   [
-    "its MOUTH,",
-    "its mouth,"
-   ],
-   [
-    "got one",
-    "got one"
-   ],
-   [
-    "CORNER in,",
-    "corner in,"
-   ],
-   [
-    "and FROZE.",
-    "and froze."
-   ]
-  ]
- },
- {
-  "id": "L25",
   "who": "narrator",
   "chunks": [
    [
@@ -588,135 +380,37 @@
   ]
  },
  {
-  "id": "L26",
+  "id": "L17",
   "who": "narrator",
   "chunks": [
    [
-    "Week THREE,",
-    "Week three,"
-   ],
-   [
-    "the corner",
-    "the corner"
-   ],
-   [
-    "of a MOUTH",
-    "of a mouth"
-   ],
-   [
-    "was on",
-    "was on"
-   ],
-   [
-    "its FACE.",
-    "its face."
-   ]
-  ]
- },
- {
-  "id": "L27",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It sat",
-    "It sat"
-   ],
-   [
-    "in the MIDDLE",
-    "in the middle"
-   ],
-   [
-    "of the",
-    "of the"
-   ],
-   [
-    "CURVE now,",
-    "curve now,"
-   ]
-  ]
- },
- {
-  "id": "L28",
-  "who": "narrator",
-  "chunks": [
-   [
-    "its empty eyes",
-    "its empty eyes"
-   ],
-   [
-    "turned toward",
-    "turned toward"
-   ],
-   [
-    "MY corner.",
-    "my corner."
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every line",
-    "Every line"
-   ],
-   [
-    "I ADDED",
-    "I added"
-   ],
-   [
-    "felt like",
-    "felt like"
-   ],
-   [
-    "it was",
-    "it was"
-   ],
-   [
-    "LOOKING back.",
-    "looking back."
-   ]
-  ]
- },
- {
-  "id": "L30",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I drew",
-    "I drew"
-   ],
-   [
-    "one EYEBROW",
-    "one eyebrow"
-   ],
-   [
-    "and packed UP.",
-    "and packed up."
-   ]
-  ]
- },
- {
-  "id": "L31",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Week FOUR,",
-    "Week four,"
+    "Next WEDNESDAY,",
+    "Next Wednesday,"
    ],
    [
     "it had",
     "it had"
    ],
    [
-    "an EYEBROW.",
-    "an eyebrow."
+    "a NOSE.",
+    "a nose."
+   ],
+   [
+    "MY nose,",
+    "My nose,"
+   ],
+   [
+    "right where",
+    "right where"
+   ],
+   [
+    "I'd STOPPED.",
+    "I'd stopped."
    ]
   ]
  },
  {
-  "id": "L32",
+  "id": "L18",
   "who": "narrator",
   "chunks": [
    [
@@ -728,35 +422,47 @@
     "was sitting"
    ],
    [
-    "beside PETRA.",
-    "beside Petra."
+    "one easel CLOSER.",
+    "one easel closer."
    ]
   ]
  },
  {
-  "id": "L33",
+  "id": "L19",
   "who": "narrator",
   "chunks": [
    [
-    "Right next",
-    "Right next"
+    "Week THREE,",
+    "Week three,"
    ],
    [
-    "to her,",
-    "to her,"
+    "I painted",
+    "I painted"
    ],
    [
-    "one wooden knee",
-    "one wooden knee"
+    "half a MOUTH.",
+    "half a mouth."
    ],
    [
-    "by her PALETTE.",
-    "by her palette."
+    "It sat",
+    "It sat"
+   ],
+   [
+    "by PETRA,",
+    "by Petra,"
+   ],
+   [
+    "with half",
+    "with half"
+   ],
+   [
+    "a MOUTH.",
+    "a mouth."
    ]
   ]
  },
  {
-  "id": "L34",
+  "id": "L20",
   "who": "narrator",
   "chunks": [
    [
@@ -768,63 +474,49 @@
     "and painted"
    ],
    [
-    "a GREEN PEAR.",
-    "a green pear."
+    "a PEAR.",
+    "a pear."
    ]
   ]
  },
  {
-  "id": "L35",
+  "id": "L21",
   "who": "narrator",
   "chunks": [
    [
-    "I couldn't look",
-    "I couldn't look"
+    "Its empty EYES",
+    "Its empty eyes"
    ],
    [
-    "at my CANVAS,",
-    "at my canvas,"
+    "never left",
+    "never left"
    ],
    [
-    "or toward IT.",
-    "or toward it."
+    "MY EASEL.",
+    "my easel."
    ]
   ]
  },
  {
-  "id": "L36",
+  "id": "L22",
   "who": "narrator",
   "chunks": [
    [
-    "Week FIVE,",
-    "Week five,"
+    "Week FOUR,",
+    "Week four,"
    ],
    [
-    "it was",
-    "it was"
+    "an hour IN,",
+    "an hour in,"
    ],
    [
-    "raining HARD.",
-    "raining hard."
-   ]
-  ]
- },
- {
-  "id": "L37",
-  "who": "narrator",
-  "chunks": [
-   [
-    "An hour IN,",
-    "An hour in,"
-   ],
-   [
-    "the LIGHTS DIPPED.",
+    "the lights DIPPED.",
     "the lights dipped."
    ]
   ]
  },
  {
-  "id": "L38",
+  "id": "L23",
   "who": "narrator",
   "chunks": [
    [
@@ -836,135 +528,39 @@
     "came back,"
    ],
    [
-    "Petra's spare stool",
-    "Petra's spare stool"
+    "it was RIGHT",
+    "it was right"
    ],
    [
-    "was EMPTY.",
-    "was empty."
+    "BESIDE ME.",
+    "beside me."
    ]
   ]
  },
  {
-  "id": "L39",
+  "id": "L24",
   "who": "narrator",
   "chunks": [
    [
-    "I didn't",
-    "I didn't"
+    "Leaning IN,",
+    "Leaning in,"
    ],
    [
-    "want to TURN.",
-    "want to turn."
+    "its face",
+    "its face"
+   ],
+   [
+    "a hand",
+    "a hand"
+   ],
+   [
+    "from MINE.",
+    "from mine."
    ]
   ]
  },
  {
-  "id": "L40",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The lights",
-    "The lights"
-   ],
-   [
-    "dipped AGAIN.",
-    "dipped again."
-   ]
-  ]
- },
- {
-  "id": "L41",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And when",
-    "And when"
-   ],
-   [
-    "I looked UP",
-    "I looked up"
-   ],
-   [
-    "from my PALETTE,",
-    "from my palette,"
-   ],
-   [
-    "it was sitting",
-    "it was sitting"
-   ],
-   [
-    "RIGHT BESIDE ME.",
-    "right beside me."
-   ]
-  ]
- },
- {
-  "id": "L42",
-  "who": "narrator",
-  "chunks": [
-   [
-    "One wooden KNEE",
-    "One wooden knee"
-   ],
-   [
-    "against my",
-    "against my"
-   ],
-   [
-    "EASEL LEG.",
-    "easel leg."
-   ]
-  ]
- },
- {
-  "id": "L43",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It was",
-    "It was"
-   ],
-   [
-    "leaning IN",
-    "leaning in"
-   ],
-   [
-    "to my CANVAS,",
-    "to my canvas,"
-   ],
-   [
-    "like a MIRROR.",
-    "like a mirror."
-   ]
-  ]
- },
- {
-  "id": "L45",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The two FACES",
-    "The two faces"
-   ],
-   [
-    "were the SAME.",
-    "were the same."
-   ]
-  ]
- },
- {
-  "id": "L46",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It was WAITING.",
-    "It was waiting."
-   ]
-  ]
- },
- {
-  "id": "L47",
+  "id": "L25",
   "who": "narrator",
   "chunks": [
    [
@@ -972,7 +568,7 @@
     "I left"
    ],
    [
-    "my coat",
+    "my COAT",
     "my coat"
    ],
    [
@@ -982,7 +578,7 @@
   ]
  },
  {
-  "id": "L48",
+  "id": "L26",
   "who": "narrator",
   "chunks": [
    [
@@ -994,26 +590,16 @@
     "car park,"
    ],
    [
-    "Petra caught",
-    "Petra caught"
+    "Petra brought",
+    "Petra brought"
    ],
    [
-    "me UP.",
-    "me up."
-   ]
-  ]
- },
- {
-  "id": "L49",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I asked",
-    "I asked"
+    "my COAT.",
+    "my coat."
    ],
    [
-    "her who",
-    "her who"
+    "I asked who",
+    "I asked who"
    ],
    [
     "our SITTER was.",
@@ -1022,7 +608,7 @@
   ]
  },
  {
-  "id": "L50",
+  "id": "L27",
   "who": "narrator",
   "chunks": [
    [
@@ -1030,53 +616,21 @@
     "She laughed."
    ],
    [
-    "\"Nobody has sat",
-    "\"Nobody has sat"
+    "\"That stool's",
+    "\"That stool's"
    ],
    [
-    "on that stool",
-    "on that stool"
+    "been EMPTY",
+    "been empty"
    ],
    [
-    "since SPRING.\"",
-    "since spring.\""
+    "for MONTHS.\"",
+    "for months.\""
    ]
   ]
  },
  {
-  "id": "L51",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The hired sitter",
-    "The hired sitter"
-   ],
-   [
-    "MOVED AWAY.",
-    "moved away."
-   ]
-  ]
- },
- {
-  "id": "L52",
-  "who": "narrator",
-  "chunks": [
-   [
-    "\"We paint",
-    "\"We paint"
-   ],
-   [
-    "the FRUIT,\"",
-    "the fruit,\""
-   ],
-   [
-    "she said.",
-    "she said."
-   ]
-  ]
- },
- {
-  "id": "L53",
+  "id": "L28",
   "who": "narrator",
   "chunks": [
    [
@@ -1084,204 +638,134 @@
     "Through the window,"
    ],
    [
-    "I could",
-    "I could"
+    "I could see",
+    "I could see"
    ],
    [
-    "see every CANVAS.",
-    "see every canvas."
+    "every CANVAS.",
+    "every canvas."
    ]
   ]
  },
  {
-  "id": "L54",
+  "id": "L29",
   "who": "narrator",
   "chunks": [
    [
-    "Seven BOWLS",
-    "Seven bowls"
+    "Mine had the",
+    "Mine had the"
    ],
    [
-    "of FRUIT.",
-    "of fruit."
+    "same half FACE",
+    "same half face"
    ],
    [
-    "And mine.",
-    "And mine."
+    "I'd been",
+    "I'd been"
+   ],
+   [
+    "starting at HOME",
+    "starting at home"
+   ],
+   [
+    "since SPRING.",
+    "since spring."
    ]
   ]
  },
  {
-  "id": "L55",
+  "id": "L30",
   "who": "narrator",
   "chunks": [
    [
-    "On the DAIS,",
-    "On the dais,"
+    "Faded all",
+    "Faded all"
    ],
    [
-    "the green cushion,",
-    "the green cushion,"
+    "the WAY,",
+    "the way,"
    ],
    [
-    "perfectly FLAT.",
-    "perfectly flat."
+    "nobody can",
+    "nobody can"
+   ],
+   [
+    "SEE you,",
+    "see you,"
+   ],
+   [
+    "except someone",
+    "except someone"
+   ],
+   [
+    "who LOVES you.",
+    "who loves you."
    ]
   ]
  },
  {
-  "id": "L58",
+  "id": "L31",
   "who": "narrator",
   "chunks": [
    [
-    "But a sitter",
-    "But a sitter"
+    "The thing",
+    "The thing"
    ],
    [
-    "with no FACE",
-    "with no face"
+    "on the STOOL",
+    "on the stool"
    ],
    [
-    "isn't really THERE.",
-    "isn't really there."
+    "was MUM.",
+    "was Mum."
    ]
   ]
  },
  {
-  "id": "L59",
+  "id": "L32",
   "who": "narrator",
   "chunks": [
    [
-    "And only",
-    "And only"
+    "I went",
+    "I went"
    ],
    [
-    "ONE of us",
-    "one of us"
+    "back IN,",
+    "back in,"
    ],
    [
-    "was PAINTING it.",
-    "was painting it."
+    "and I",
+    "and I"
+   ],
+   [
+    "didn't STOP",
+    "didn't stop"
+   ],
+   [
+    "this time.",
+    "this time."
    ]
   ]
  },
  {
-  "id": "L60",
+  "id": "L33",
   "who": "narrator",
   "chunks": [
    [
-    "Every face",
-    "Every face"
+    "The kindest",
+    "The kindest"
    ],
    [
-    "I gave",
-    "I gave"
+    "EYES I know,",
+    "eyes I know,"
    ],
    [
-    "UP on",
-    "up on"
+    "BROWN,",
+    "brown,"
    ],
    [
-    "was ITS face.",
-    "was its face."
-   ]
-  ]
- },
- {
-  "id": "L61",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It came",
-    "It came"
-   ],
-   [
-    "closer every week",
-    "closer every week"
-   ],
-   [
-    "so I",
-    "so I"
-   ],
-   [
-    "could SEE it",
-    "could see it"
-   ],
-   [
-    "BETTER.",
-    "better."
-   ]
-  ]
- },
- {
-  "id": "L62",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I went BACK",
-    "I went back"
-   ],
-   [
-    "the next WEEK.",
-    "the next week."
-   ]
-  ]
- },
- {
-  "id": "L63",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It was",
-    "It was"
-   ],
-   [
-    "beside my EASEL,",
-    "beside my easel,"
-   ],
-   [
-    "facing my CANVAS,",
-    "facing my canvas,"
-   ],
-   [
-    "waiting.",
-    "waiting."
-   ]
-  ]
- },
- {
-  "id": "L64",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I didn't",
-    "I didn't"
-   ],
-   [
-    "STOP this time.",
-    "stop this time."
-   ]
-  ]
- },
- {
-  "id": "L65",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I painted",
-    "I painted"
-   ],
-   [
-    "the kindest EYES",
-    "the kindest eyes"
-   ],
-   [
-    "I KNOW,",
-    "I know,"
-   ],
-   [
-    "brown, with LINES",
-    "brown, with lines"
+    "with lines",
+    "with lines"
    ],
    [
     "at the CORNERS.",
@@ -1290,12 +774,20 @@
   ]
  },
  {
-  "id": "L66",
+  "id": "L34",
   "who": "narrator",
   "chunks": [
    [
-    "Then a mouth",
-    "Then a mouth"
+    "Silver HAIR.",
+    "Silver hair."
+   ],
+   [
+    "Round GLASSES.",
+    "Round glasses."
+   ],
+   [
+    "A mouth",
+    "A mouth"
    ],
    [
     "about to say,",
@@ -1308,202 +800,142 @@
   ]
  },
  {
-  "id": "L67",
+  "id": "L35",
   "who": "narrator",
   "chunks": [
    [
-    "When I",
-    "When I"
+    "Behind me,",
+    "Behind me,"
    ],
    [
-    "looked UP,",
-    "looked up,"
+    "Petra dropped",
+    "Petra dropped"
    ],
    [
-    "the spare stool",
-    "the spare stool"
-   ],
-   [
-    "was EMPTY.",
-    "was empty."
+    "her BRUSH.",
+    "her brush."
    ]
   ]
  },
  {
-  "id": "L68",
+  "id": "L36",
   "who": "narrator",
   "chunks": [
    [
-    "On the DAIS,",
-    "On the dais,"
+    "Mum looked",
+    "Mum looked"
    ],
    [
-    "the green cushion",
-    "the green cushion"
-   ],
-   [
-    "had a",
-    "had a"
-   ],
-   [
-    "DENT in it.",
-    "dent in it."
-   ]
-  ]
- },
- {
-  "id": "L69",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I invited Mum",
-    "I invited Mum"
-   ],
-   [
-    "to the",
-    "to the"
-   ],
-   [
-    "end-of-term SHOW.",
-    "end-of-term show."
-   ]
-  ]
- },
- {
-  "id": "L70",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Kofi had",
-    "Kofi had"
-   ],
-   [
-    "stood the DAIS",
-    "stood the dais"
-   ],
-   [
-    "against the WALL",
-    "against the wall"
-   ],
-   [
-    "to make ROOM.",
-    "to make room."
-   ]
-  ]
- },
- {
-  "id": "L71",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mum stood",
-    "Mum stood"
-   ],
-   [
-    "in front",
-    "in front"
-   ],
-   [
-    "of my painting",
-    "of my painting"
+    "at it",
+    "at it"
    ],
    [
     "for a",
     "for a"
    ],
    [
-    "LONG time.",
+    "long TIME.",
     "long time."
+   ],
+   [
+    "Then she said,",
+    "Then she said,"
+   ],
+   [
+    "\"Not BAD.\"",
+    "\"Not bad.\""
    ]
   ]
  },
  {
-  "id": "L72",
+  "id": "L37",
   "who": "narrator",
   "chunks": [
    [
-    "She didn't",
-    "She didn't"
+    "It hangs in",
+    "It hangs in"
    ],
    [
-    "SAY anything.",
-    "say anything."
+    "her HALL now.",
+    "her hall now."
+   ],
+   [
+    "I go",
+    "I go"
+   ],
+   [
+    "round every WEDNESDAY",
+    "round every Wednesday"
+   ],
+   [
+    "to LOOK",
+    "to look"
+   ],
+   [
+    "at her.",
+    "at her."
    ]
   ]
  },
  {
-  "id": "L73",
+  "id": "L38",
   "who": "narrator",
   "chunks": [
    [
-    "Then she asked",
-    "Then she asked"
+    "Kofi still",
+    "Kofi still"
    ],
    [
-    "if she could",
-    "if she could"
+    "sets out",
+    "sets out"
    ],
    [
-    "take it HOME.",
-    "take it home."
+    "the STOOL.",
+    "the stool."
    ]
   ]
  },
  {
-  "id": "L74",
+  "id": "L39",
   "who": "narrator",
   "chunks": [
    [
-    "And she",
-    "And she"
+    "This week,",
+    "This week,"
    ],
    [
-    "asked Kofi",
-    "asked Kofi"
+    "someone NEW",
+    "someone new"
    ],
    [
-    "if the class",
-    "if the class"
+    "was SITTING",
+    "was sitting"
    ],
    [
-    "still needed",
-    "still needed"
-   ],
-   [
-    "a SITTER.",
-    "a sitter."
+    "on it.",
+    "on it."
    ]
   ]
  },
  {
-  "id": "L75",
+  "id": "L40",
   "who": "narrator",
   "chunks": [
    [
-    "Mum always SAID",
-    "Mum always said"
+    "I wonder",
+    "I wonder"
    ],
    [
-    "I never FINISH",
-    "I never finish"
+    "who stopped",
+    "who stopped"
    ],
    [
-    "a FACE.",
-    "a face."
-   ]
-  ]
- },
- {
-  "id": "L76",
-  "who": "narrator",
-  "chunks": [
-   [
-    "This one's",
-    "This one's"
+    "LOOKING",
+    "looking"
    ],
    [
-    "in her HALL.",
-    "in her hall."
+    "at THEM.",
+    "at them."
    ]
   ]
  }
