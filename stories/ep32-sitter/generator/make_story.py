@@ -224,7 +224,7 @@ shot("S17b", "L17.1", "Mum at a kitchen table, years ago", still([KX + 0.4, -1.1
 shot("S17c", "L17.2", "my face again", still(front(ME, yaw_to(ME, DAIS) - 50, 1.4, 1.58), z3(ME, 1.55), 38))
 shot("S18", "L18", "the canvas: a nose stopped short", canvas_cam(8, 1.2, 1.25, 34), hide_cast=["me"])
 shot("S19", "L19", "Kofi in the doorway with a mug", still([-2.0, -3.5, 1.5], [-4.9, -3.0, 1.4], 30))
-shot("S19b", "L19.1", "the cushion under it, flat", still([1.9, -1.1, 0.95], [0.0, 0.0, 0.62], 26))
+shot("S19b", "L19.1", "the cushion under it, flat", still(front(U1, Y1 + 180, 1.15, 0.95), [0.0, 0.0, 0.62], 30), fill=front(U1, Y1 + 150, 0.9, 1.1))
 # 03 weeks two to four
 shot("S20", "L20", "its face: the nose", still(fc(U2, yaw_to(U2, ME), 1.2, 1.7), z3(U2, 1.55), 40))
 shot("S20b", "L20.2", "my canvas: the same short nose", canvas_cam(8, 1.2, 1.25, 34), hide_cast=["me"])
@@ -269,7 +269,7 @@ shot("S51", "L51", "me, the words landing", still(front(ME_C, yaw_to(ME_C, PETRA
 shot("S52", "L52", "Petra shrugging", still(front(PETRA_C, yaw_to(PETRA_C, ME_C) + 55, 1.5, 1.1), z3(PETRA_C, 1.0), 38), rain=True)
 shot("S53", "L53", "through the window, every canvas", still([0.2, -9.5, 1.9], [0.0, -2.0, 1.3], 24), rain=True)
 shot("S54", "L54", "push in: seven bowls of fruit, then mine", c([0, [0.5, -9.0, 1.7], [0.5, -2.0, 1.3], 28], [1, [1.0, -7.0, 1.6], [2.4, -0.8, 1.4], 36]), rain=True)
-shot("S55", "L55", "the empty stool, the flat cushion", c([0, [0.3, -9.0, 1.4], [0.0, 0.0, 0.8], 30], [1, [0.2, -7.0, 1.2], [0.0, 0.0, 0.75], 34]), rain=True)
+shot("S55", "L55", "the empty stool, the flat cushion", c([0, [0.3, -9.0, 1.9], [0.0, 0.0, 0.7], 34], [1, [0.2, -7.4, 1.9], [0.0, 0.0, 0.65], 40]), rain=True)
 shot("S56", "L56", "overhead: eight easels and a stool", still([0.01, -3.0, 9.4], [0, -0.6, 0.5], 20), noceil=True)
 shot("S57", "L57", "it sits in, seen through the glass", still([0.5, -8.0, 1.6], [U5[0], U5[1], 1.45], 40), rain=True)
 shot("S58", "L58", "its blank face behind wet glass", still([0.5, -8.0, 1.78], [U5[0], U5[1], 1.76], 100), rain=True)
@@ -301,7 +301,7 @@ shot("S76", "L76", "the portrait hung alone, the jar below", still([HX + 1.1, 0.
 shots = []
 for i, (sid, at, what, step, cam, fl) in enumerate(SH):
     s = {"id": sid, "cam": cam, "hand": 0.0 if sid in ("S70", "S12", "S46", "S46b", "S45") else 0.006, "step": step, "what": what}
-    s.update({k: v for k, v in fl.items() if k in ("noceil", "hide_easels", "hide_cast")})
+    s.update({k: v for k, v in fl.items() if k in ("noceil", "hide_easels", "hide_cast", "fill")})
     if i:
         s["at"] = at
     shots.append(s)
@@ -426,6 +426,7 @@ cues = [
     {"at": "L17.2", "name": "time", "set": "night"},
     {"at": "L23.1", "name": "time", "set": "day"},
     {"at": "L24", "name": "time", "set": "night"},
+    {"at": "L62", "name": "time", "set": "warm"},
     {"at": "L69", "name": "time", "set": "show"},
     {"at": "L75", "name": "time", "set": "day"},
     # the hall

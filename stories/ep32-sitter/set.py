@@ -362,7 +362,7 @@ def materials(kit, wd):
     M = {}
     M["plaster"] = kit.grime("#ece3cd", 0.86, 2.0, "plaster", 0.92)
     M["floor"] = kit.planks("#cc9a54", "#9d7036", scale=1.0, axis="Y", name="honey boards", rough=0.55)
-    M["brick"] = kit.bricks("#8c4b36", "#66332a", "#4f4842", scale=1.0)
+    M["brick"] = kit.bricks("#76605a", "#58463f", "#4f4842", scale=1.0)
     M["ground"] = kit.concrete("#1d1f24", scale=1.2, stains=0.35, name="car park", rough=0.28)
     M["step"] = kit.concrete("#4a4b50", scale=2.0, stains=0.3, name="steps", rough=0.5)
     M["roof"] = kit.plastic("#23262b", 0.8, "roof")
@@ -502,7 +502,7 @@ def build_dais(kit, ctx, M):
     ctx["dais_stool"] = st
     ctx["cushions"] = []
     for dent in (0.0, 1.0):
-        n_r, n_a, T, R = 7, 28, 0.11, 0.36
+        n_r, n_a, T, R = 7, 28, 0.11, 0.43
         verts, fcs = [], []
         for i in range(n_r + 1):
             r = R * i / n_r
@@ -696,9 +696,10 @@ def build_hall(kit, ctx, M, wd):
     for k in range(5):
         kit.box("brush", (0.012, 0.012, 0.22), (0.1, 0.07 + 0.03 * (k - 2), -0.07), M["brush"], dr, rot=(0, math.pi / 2, 0.3 + 0.05 * k))
     ctx["hall"]["drawer"] = dr
-    kit.light("hall sun", "AREA", (HX + 0.1, -1.3, 1.5), 140.0, "#ffe3b0", size=1.0).rotation_euler = (math.radians(-90), 0, 0)
+    kit.light("hall sun", "AREA", (HX + 0.1, -1.3, 1.5), 85.0, "#ffe3b0", size=1.0).rotation_euler = (math.radians(-90), 0, 0)
+    kit.light("shot fill", "POINT", (0, 0, -30), 60.0, "#ffd7a8", size=0.3)
     kit.light("drawer lamp", "POINT", (HX + 0.4, 2.2, 1.3), 40.0, "#fff0d8", size=0.2)
-    kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 2.55), 150.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
+    kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 2.55), 105.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
 
 
 def build_kitchen(kit, ctx, M, wd):
@@ -750,10 +751,10 @@ def build_lights(kit, ctx):
     rim.rotation_euler = (V((0, -1.5, -1.2)).to_track_quat("-Z", "Y").to_euler())
     # daylight, for the show: ceiling panels and the window
     for k, (x, y) in enumerate(((-2.5, -1.0), (2.5, -1.0), (0.0, 2.0), (0.0, -3.5))):
-        kit.light(f"show ceil {k}", "AREA", (x, y, 3.1), 420.0, "#fff6e6", size=2.0).rotation_euler = (math.pi, 0, 0)
-    kit.light("show day", "AREA", (0.0, 4.0, 2.3), 900.0, "#f2f6ff", size=3.0).rotation_euler = (V((0, -1, -0.5)).to_track_quat("-Z", "Y").to_euler())
+        kit.light(f"show ceil {k}", "AREA", (x, y, 3.1), 300.0, "#fff6e6", size=2.0).rotation_euler = (math.pi, 0, 0)
+    kit.light("show day", "AREA", (0.0, 4.0, 2.3), 600.0, "#f2f6ff", size=3.0).rotation_euler = (V((0, -1, -0.5)).to_track_quat("-Z", "Y").to_euler())
     # outside: the lamp post, a cold wash on the building
-    kit.light("post light", "POINT", (-2.6, -9.0, GROUND + 3.4), 700.0, "#ffbf78", size=0.3)
+    kit.light("post light", "POINT", (-2.6, -9.0, GROUND + 3.4), 700.0, "#ffd29a", size=0.3)
     kit.light("ext wash", "AREA", (-12.0, -20.0, 14.0), 1400.0, "#5a73a8", size=6.0).rotation_euler = (V((12, 20, -14)).to_track_quat("-Z", "Y").to_euler())
     kit.light("step fill", "POINT", (-8.0, -4.6, 1.6), 70.0, "#ffb878", size=0.3)
     kit.light("door spill", "POINT", (X0 + 0.5, -2.85, 1.7), 40.0, "#ffbf80", size=0.2)
@@ -900,7 +901,7 @@ def animate(kit, story, tl, t, ctx):
     else:
         world.inputs["Color"].default_value = kit.col("#0c1018")
         world.inputs["Strength"].default_value = 1.0
-        bpy.context.scene.view_settings.exposure = -0.2 if state == "night" else 0.4
+        bpy.context.scene.view_settings.exposure = {"night": -0.2, "warm": 0.75}.get(state, 0.4)
     ctx["pane_mat"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 6.0 if show_on else 0.55
     # the rain runs down the north window
     if "pane" in ctx:
@@ -921,12 +922,19 @@ def animate(kit, story, tl, t, ctx):
             g = 0.0 if show_on and name.startswith(("lamp ", "foot")) else dip
             if show_on and name.startswith("room fill"):
                 g = 0.25
+            if state == "warm":
+                g *= {"lamp ": 1.4, "room fill": 2.2, "foot": 1.8, "unp ": 1.0}[next(k for k in ("lamp ", "room fill", "foot", "unp ") if name.startswith(k))]
         if name.startswith("show "):
             g = 1.0 if show_on else 0.0
             over[name] = g
             continue
+        if name == "shot fill":
+            fl = spec.get("fill")
+            if fl:
+                kit.LIGHTS[name]["obj"].location = tuple(fl)
+            g = 1.0 if fl else 0.0
         if name == "north rim":
-            g = 0.15 if show_on else 1.0
+            g = 0.15 if show_on else (0.4 if state == "warm" else 1.0)
         over[name] = g
     ctx["lamp_objs"] = [e for e in ctx["easels"]]
     for e in ctx["easels"]:
