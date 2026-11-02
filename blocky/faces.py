@@ -35,7 +35,9 @@ EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blan
 # squeeze: eyes screwed shut (short arcs sagging down, not the content up-arcs of "shut"), brows pinched low.
 # asleep: lids closed in flat lines that droop a little at the outer ends (asleep, not content: "shut" and "soft"
 # use up-arcs, which read as smiling eyes), brows level and low, a short slack mouth. Opt-in: no other face changes.
-EYES = ("round", "classic", "dot", "tired", "lashes", "button", "hollow", "none", "mirror")
+EYES = ("round", "classic", "dot", "tired", "lashes", "button", "hollow", "none", "mirror", "pin")
+# pin (ep45, opt-in): two small round black eyes set a touch close together, each with one pin highlight in pure white
+# (the brightest thing on the face). A face's "mouth": "flat" is a short flat line, slightly parted onto black.
 # mirror (ep14's copy): a "round" eye's own outline and size, filled to the edge with near-black. No white, no pupil and
 # no glint, but the brows and the mouth stay, so the face still makes every expression. A face's "mouth_inside" (a hex
 # colour) draws an open mouth as a hole of that colour to its edge, with no lip line, instead of the usual dark red
@@ -43,7 +45,7 @@ EYES = ("round", "classic", "dot", "tired", "lashes", "button", "hollow", "none"
 MIRROR_BLACK = (7, 7, 10)
 # "auto" is the mood mouth; "line" is one long hairline that only parts into a dark slit when it talks (a
 # mannequin's seam, no lips or teeth); "none" draws no mouth
-MOUTHS = ("auto", "line", "none")
+MOUTHS = ("auto", "line", "none", "flat")
 
 
 def hexrgb(h: str) -> tuple[int, int, int]:
@@ -175,7 +177,7 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
     lx, ly = look
     shut = expr in ("shut", "squeeze", "soft") or blink > 0.8
     for side in (-1, 1):
-        cx = _fx(0.5) + side * ex
+        cx = _fx(0.5) + side * (0.165 * s if eyes == "pin" else ex)
         if eyes == "none":
             continue
         if eyes == "hollow":
@@ -244,6 +246,11 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
         elif eyes == "dot":
             ry = 0.07 * s * (1.0 - 0.85 * blink)
             _ellipse(d, cx + lx * 0.015 * s, ey, 0.045 * s, max(2, ry), fill=pup)
+        elif eyes == "pin":
+            r = 0.068 * s
+            _ellipse(d, cx + lx * 0.01 * s, ey, r, r * (1.0 - 0.9 * blink), fill=(6, 5, 8))
+            if blink < 0.5:
+                _ellipse(d, cx + lx * 0.01 * s - r * 0.32, ey - r * 0.36, r * 0.17, r * 0.17, fill=(255, 255, 255))
         elif eyes == "button":
             r = 0.075 * s
             _ellipse(d, cx, ey, r, r, fill=pup, outline=inkc, width=th)
@@ -269,6 +276,10 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
                 _ellipse(d, _fx(0.5) + side * (fx + 0.06) * s, _fy(fy), 6, 6, fill=tuple(int(c * 0.72) for c in hexrgb(skin)))
     if mouth == "line":
         _line_mouth(d, _fx(0.5), _fy(0.7), s, inkc, open_)
+    elif mouth == "flat":   # a short flat line, slightly parted onto black
+        w, h = 0.2 * s, 0.014 * s
+        d.rounded_rectangle([_fx(0.5) - w / 2, _fy(0.72) - h, _fx(0.5) + w / 2, _fy(0.72) + h], radius=h, fill=(7, 5, 6))
+        d.line([(_fx(0.5) - w / 2, _fy(0.72) - h * 1.6), (_fx(0.5) + w / 2, _fy(0.72) - h * 1.6)], fill=inkc, width=max(4, int(0.012 * s)))
     elif mouth != "none":
         _mouth(d, expr, _fx(0.5), _fy(0.74), s, inkc, open_, (90, 30, 36) if inside is None else hexrgb(inside),
                hole=inside is not None)
@@ -295,7 +306,7 @@ def mouth_steps(face: dict) -> int:
 def face_key(face: dict, skin: str, expr: str, open_: float, look, blink: float) -> str:
     q = lambda x, n: round(x * n) / n
     # a non-default eye or mouth style is in the key, so a cached texture of the old style is never reused
-    style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror"))
+    style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror", "pin", "flat"))
     if face.get("mouth_inside"):   # an open mouth's own inside colour (the copy's opens onto black)
         style += f"in{face['mouth_inside'].lstrip('#')}-"
     return f"{style}{expr}-{q(open_, mouth_steps(face))}-{q(look[0], 2)}-{q(look[1], 2)}-{int(blink > 0.5)}"

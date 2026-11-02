@@ -158,7 +158,7 @@ def asr(wav: Path, timeline: Path) -> int:
     return bad
 
 
-SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # British and American spellings
+SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros": "zeroes", "arrivals": "arrivals"}   # British and American spellings
 # homophones: the same sound, and Whisper picks the spelling from the words around it ("under the bulb threw"), so
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
@@ -185,6 +185,8 @@ def same_spoken(script: str, heard: str) -> bool:
         for w in t.split():
             w = w.replace("'", "")
             w = NUMBERS.get(int(w), w) if w.isdigit() and int(w) in NUMBERS else w
+            if w.isdigit() and 20 < int(w) < 100:   # "72" as "seventy two" (ep45)
+                w = _under100(int(w))
             if w.isdigit() and 100 <= int(w) < 1000:   # "112" as "a hundred and twelve" (ep14)
                 h, r = divmod(int(w), 100)
                 w = ("a" if h == 1 else NUMBERS.get(h, str(h))) + "hundred" + ("and" + _under100(r) if r else "")
