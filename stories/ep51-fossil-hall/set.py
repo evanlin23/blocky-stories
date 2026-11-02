@@ -190,7 +190,8 @@ def materials(kit):
     M["brass"] = pbr(kit, "brass", "#b08a3e", 0.35, 0.9)
     M["trou"] = pbr(kit, "stooped trousers", "#54473a", 0.9)
     M["shoe"] = pbr(kit, "stooped shoes", "#4a3626", 0.6)
-    M["hand"] = pbr(kit, "stooped hands", "#a08d70", 0.8)
+    M["skin"] = pbr(kit, "stooped skin", "#3a3028", 0.85)
+    M["hand"] = pbr(kit, "stooped hands", "#6e5c48", 0.8)
     M["sandstone"] = pbr(kit, "sandstone", "#d9c6a5", 0.85, noise=(2.2, 0.9), bump=0.2)
     M["grass"] = pbr(kit, "grass", "#5f8a3f", 0.95, noise=(9, 0.8))
     M["road"] = pbr(kit, "road", "#4b4b50", 0.9, noise=(5, 0.85))
@@ -452,7 +453,7 @@ def stooped_face(path_face, path_mask):
     """Its own drawn face on the head texture: two small round white eyes a little too far apart in dark hollows, pin
     pupils, no brows, a short straight mouth. The mask marks the eyes (they are the one thing that is lightly self-lit)."""
     W, H = faces.TEX_W, faces.TEX_H
-    skin = (58, 50, 44)
+    skin = (46, 40, 36)
     im = Image.new("RGB", (W, H), skin)
     mk = Image.new("L", (W, H), 0)
     d, dm = ImageDraw.Draw(im), ImageDraw.Draw(mk)
@@ -463,21 +464,33 @@ def stooped_face(path_face, path_mask):
         x = cx + side * 0.33 * s
         hx, hy = 0.17 * s, 0.2 * s
         d.ellipse([x - hx, ey - hy * 0.9, x + hx, ey + hy * 1.15], fill=(14, 10, 8))
-        r = 0.022 * s
+        r = 0.03 * s
         d.ellipse([x - r, ey - r, x + r, ey + r], fill=(226, 222, 206), outline=ink, width=int(0.012 * s))
         dm.ellipse([x - r, ey - r, x + r, ey + r], fill=255)
         pr = 0.009 * s
         d.ellipse([x - pr, ey - pr, x + pr, ey + pr], fill=(6, 5, 5))
     for side in (-1, 1):
         d.ellipse([cx + side * 0.45 * s - 0.12 * s, faces._fy(0.62) - 0.12 * s, cx + side * 0.45 * s + 0.12 * s, faces._fy(0.62) + 0.12 * s], fill=(38, 32, 28))
-    my = faces._fy(0.80)
-    # a wide dark slit of a gape, much wider than tall, ragged top and bottom (not a round O)
-    d.polygon([(cx - 0.36 * s, my), (cx - 0.2 * s, my - 0.045 * s), (cx + 0.2 * s, my - 0.045 * s), (cx + 0.36 * s, my),
-               (cx + 0.2 * s, my + 0.055 * s), (cx - 0.2 * s, my + 0.055 * s)], fill=(6, 3, 3))
+    my = faces._fy(0.78)
+    rnd = random.Random(7)
+    # a wide, tall, dark ragged gape (never a round O): torn edges and a few long uneven teeth
+    top = [(cx - 0.42 * s, my - 0.02 * s)]
+    bot = [(cx - 0.42 * s, my - 0.02 * s)]
+    for k in range(-5, 6):
+        top.append((cx + k * 0.075 * s, my - (0.07 + 0.05 * rnd.random()) * s))
+        bot.append((cx + k * 0.075 * s, my + (0.1 + 0.08 * rnd.random()) * s))
+    top.append((cx + 0.42 * s, my - 0.02 * s))
+    bot.append((cx + 0.42 * s, my - 0.02 * s))
+    d.polygon(top + bot[::-1], fill=(4, 2, 2))
     for k in range(-4, 5):
-        x0 = cx + k * 0.07 * s
-        d.polygon([(x0 - 0.015 * s, my - 0.045 * s), (x0 + 0.015 * s, my - 0.045 * s), (x0, my - 0.005 * s)], fill=(150, 142, 122))
-        d.polygon([(x0 - 0.015 * s, my + 0.055 * s), (x0 + 0.015 * s, my + 0.055 * s), (x0, my + 0.02 * s)], fill=(150, 142, 122))
+        if rnd.random() < 0.7:
+            x0 = cx + (k + rnd.uniform(-0.2, 0.2)) * 0.085 * s
+            ln = rnd.uniform(0.05, 0.11) * s
+            d.polygon([(x0 - 0.016 * s, my - 0.06 * s), (x0 + 0.016 * s, my - 0.06 * s), (x0, my - 0.06 * s + ln)], fill=(150, 140, 118))
+        if rnd.random() < 0.5:
+            x0 = cx + (k + rnd.uniform(-0.2, 0.2)) * 0.085 * s
+            ln = rnd.uniform(0.04, 0.09) * s
+            d.polygon([(x0 - 0.016 * s, my + 0.1 * s), (x0 + 0.016 * s, my + 0.1 * s), (x0, my + 0.1 * s - ln)], fill=(140, 130, 110))
     im.save(path_face)
     mk.save(path_mask)
 
@@ -508,7 +521,7 @@ def build_stooped(kit, M, ctx):
     B(kit, "st pin", (0.08, 0.08, 0.02), (0.13, -0.95, HZ - 0.17), M["brass"], root)
     # the neck hangs from the front of the back and swings; drop is its length; the head hangs from it
     neck = kit.empty("st neck", (0, -1.2, HZ - 0.04), root)
-    nb = B(kit, "st neck box", (0.15, 0.15, 1.0), (0, 0, -0.5), M["hand"], neck, bevel=0.03)
+    nb = B(kit, "st neck box", (0.17, 0.17, 1.0), (0, 0, -0.5), M["skin"], neck, bevel=0.03)
     nb.location = (0, 0, 0)
     nb.parent = neck
     headr = kit.empty("st headroll", (0, 0, -1.0), neck)
@@ -538,7 +551,9 @@ def build_stooped(kit, M, ctx):
     kit._fogged(m, b.outputs[0])
     # the head mesh is in rig units (radius 0.62): scale it to metres. headr sits at the head's centre, so a roll turns it in place
     hm = rig.head_mesh("st head", m, headr)
-    hm.scale = (U * 0.95, U * 0.9, U * 1.35)      # long and gaunt
+    hm.scale = (U * 0.85, U * 0.8, U * 1.4)      # long and gaunt
+    # heavy brow, long nose and a jutting jaw, in the head's own space (front is -y)
+    B(kit, "st nose", (0.05, 0.06, 0.12), (0, -0.2, -0.05), M["skin"], headr, bevel=0.015)
     ctx["stooped"] = dict(root=root, neck=neck, headr=headr, nb=nb)
 
 

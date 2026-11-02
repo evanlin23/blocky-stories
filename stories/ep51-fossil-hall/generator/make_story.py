@@ -456,11 +456,11 @@ shot("L48", "hall", C([-0.7, -8.6, 1.7], [-0.5, -3.4, 0.9], 12), {
     "c1": P(-4.4, -6.9, 180, expr="blank"), "c4": P(0.8, -5.7, 180, expr="blank"), "c5": P(1.9, -6.8, 180, expr="blank"),
     "abe": ABE_B}, "over my shoulder: the crowd parts and the bench's end is in shadow")
 shot("P02", "hall", C([-3.2, -6.0, 1.0], [-0.69, -3.7, 0.9], 24), {"abe": ABE_B}, "hold; the drone only, then one slow creak")
-shot("L49", "hall", C([-2.0, -1.0, 0.5], [-0.69, -3.3, 1.0], 26), {"abe": ABE_B}, "the reveal, three-quarter front and low: the Stooped bent over my seat")
+shot("L49", "hall", C([-5.0, 0.2, 0.45], [-0.3, -3.3, 1.45], 26), {"abe": ABE_B}, "the reveal, three-quarter front and low: the Stooped bent over my seat")
 stooped("L49")
-shot("L50", "hall", C([-1.4, -1.7, 0.9], [-0.69, -3.0, 1.0], 24), {"abe": ABE_B}, "close on the hanging coat front and its four brass buttons")
-shot("L51", "hall", C([-3.6, -4.0, 0.55], [-0.69, -3.8, 0.8], 28), {"abe": ABE_B}, "low side profile: the right angle at its hips")
-shot("L52", "hall", C([-0.69, -5.5, 1.62], [-0.69, -3.0, 1.1], 28), {"abe": ABE_B}, "along the flat of its back, level as a table")
+shot("L50", "hall", C([-1.3, -1.9, 0.5], [-0.69, -3.2, 2.4], 38), {"abe": ABE_B}, "close on the hanging coat front and its four brass buttons")
+shot("L51", "hall", C([-6.8, -3.6, 0.7], [-0.69, -3.5, 1.5], 30), {"abe": ABE_B}, "low side profile: the right angle at its hips")
+shot("L52", "hall", C([-0.69, -6.6, 3.0], [-0.69, -2.9, 2.2], 30), {"abe": ABE_B}, "along the flat of its back, level as a table")
 stooped("L53", drop=2.16)
 shot("L53", "hall", C([-1.9, -1.8, 0.4], [-0.69, -2.9, 0.34], 36), {"abe": ABE_B}, "close, low: the head hanging upside down at knee height")
 stooped("L54", roll=140, pitch=0, drop=2.16)
@@ -471,10 +471,10 @@ stooped("L54.3", roll=0, pitch=0, hyaw=0, drop=1.88)
 shot("L54.3", "hall", C([-0.69, -1.45, 0.08], [-0.69, -2.9, 0.62], 34), {"abe": ABE_B}, "fully round, the right way up, eyes on camera, from below", hand=0.003)
 shot("L55", "hall", C([-0.69, -1.45, 0.08], [-0.69, -2.9, 0.62], 34), {"abe": ABE_B},
      "hold the S072 framing: its face the right way up, eyes on camera, lit warm on one side only (the cover)", hand=0.003)
-shot("L56", "hall", C([0.8, 0.0, 0.6], [0.0, BY, 0.9], 20), {"abe": ABE_B}, "two-shot, low three-quarter: Grandad glowing, the Stooped a dark outline bent over my seat, no rim")
-stooped("L57", roll=0, neck=-33, pitch=-30, drop=1.3)
-shot("L57", "hall", C([-1.6, -3.3, 1.8], [-0.69, -1.95, 1.25], 34), {
-    "abe": ABE_B, "me": P(-0.69, -1.7, 0, expr="scared", lean=4, head=[0, 18])}, "its face leans up to mine, a hand's width away", hand=0.003)
+shot("L56", "hall", C([2.8, 0.6, 0.7], [-0.25, -3.0, 1.5], 28), {"abe": ABE_B}, "two-shot, low three-quarter: Grandad glowing, the Stooped a dark outline bent over my seat, no rim")
+stooped("L57", roll=0, neck=-31, pitch=25, drop=1.1, hyaw=-20)
+shot("L57", "hall", C([3.2, -1.7, 1.45], [-0.69, -2.0, 1.4], 30), {
+    "abe": ABE_B, "me": P(-0.69, -1.7, 180, expr="scared", lean=4, head=[0, 18])}, "side on: its face leans up under my chin, a hand's width away", hand=0.003)
 # ---- 06 the loophole (L58 to L70)
 cue("L58", "glk", level=0.1)
 shot("L58", "hall", C([0.9, -1.2, 1.15], [HX["abe"], BY, 1.1], 32), {"abe": SIT(HX["abe"], BY, 180, expr=TIRED, head=[0, -32])},
@@ -513,7 +513,7 @@ shot("L67", "hall", C([0.0, -2.6, 1.3], [0.0, -6.4, 2.3], 22), {
      "tiny soft sparks drift up over the crowd and go out")
 cue("L67", "sparks", center=[0.0, -6.8])
 glow("L67", CROWD, 0.4, 1.5)
-shot("L68", "hall", C([0.0, -0.3, 1.25], [0.0, BY, 0.85], 22), {"abe": SIT(HX["abe"], BY, 180, expr=MOVED)},
+shot("L68", "hall", C([0.3, 0.6, 1.4], [-0.3, -3.2, 1.6], 24), {"abe": SIT(HX["abe"], BY, 180, expr=MOVED)},
      "Abe faint and ordinary at his end, the Stooped still at mine, face up")
 cue("L69", "stooped", hidden=True)
 cue("L69", "glk", level=0.1)
@@ -521,7 +521,7 @@ shot("L69", "hall", C([1.0, -1.7, 1.3], [0.55, BY, 1.1], 40), {
     "abe": SIT(HX["abe"], BY, 180, expr=MOVED), "me": P(-0.1, -1.9, 160, expr="soft", head=[-25, 0])},
      "Abe close; I come into the edge of frame beside him, lowering. The camera stays on him through the cut")
 walk("me", "L69>", (-0.7, -2.5))
-shot("L69.2", "hall", C([0.0, -0.3, 1.25], [0.0, BY, 0.85], 22), {
+shot("L69.2", "hall", C([0.3, 0.6, 1.4], [-0.3, -3.2, 1.6], 24), {
     "abe": SIT(HX["abe"], BY, 180, expr=MOVED), "me": SIT(HX["me"], BY, 180, expr=MOVED),
     "c3": P(-2.3, -1.7, 180, arms=[40, 40], expr=SMILE), "c5": P(2.2, -1.8, 180, arms=[40, 40], expr=SMILE),
     "c4": P(-3.6, -1.9, 180, arms=[40, 40], expr=SMILE), "c6": P(3.5, -1.7, 180, arms=[40, 40], expr=SMILE)},

@@ -130,7 +130,7 @@ Two dust-brown tally strokes, short and upright, scratched into the iron leg of 
 
 ## Format
 
-Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase without quote marks. CAPS are the key words, in glow gold. Present tense, with the old Fridays in the past.
+Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase without quote marks. CAPS are the key words, in glow gold. Present tense, one forward timeline, no backstory before L20 (owner, 2026-11-02).
 
 ## 01 The rule (L01 to L09, 0 to 16 s)
 
@@ -168,7 +168,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [Grandad, `smile`, leading a small tour past the cases, a bright soft glow round him]
 - `L11` narrator: He's always been / the BRIGHTEST man / in TOWN.
   - [low wide: the tour group around him all faintly lit, Grandad the brightest thing in the hall]
-- `L12` narrator: Every FRIDAY, / we SAT / on the BENCH / facing / the big SKELETON.
+- `L12` narrator: Every FRIDAY, / we SIT / on the BENCH / facing / the big SKELETON.
   - [wide from behind the bench: the short bench, the giant skeleton rising over it, Grandad and me shoulder to shoulder]
   - [low tilt up the skeleton's long neck to its head high over the hall]
 - `L13` narrator: HIM, / then ME, / SHOULDER / to SHOULDER.
@@ -180,9 +180,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the curator, `curious`, at the tail with Grandad, gesturing up at the pale block. Grandad `sheepish`, looking away]
 - `L16` narrator: and Grandad / gets BRIGHTER / every WEEK.
   - [the same angle, a week later: his glow stronger, the curator's face lit warm by it]
-- `L17` narrator: People cross / the ROAD / when he PASSES.
+- `L17` narrator: People cross / the ROAD, / sure he's HIDING / SOMETHING.
   - [a street at dusk: Grandad glowing on one pavement, two neighbours crossing to the other side]
-- `L18` narrator: The museum / puts him / into the DARK / galleries / to save BULBS.
+- `L18` narrator: The museum / hides him / in the DARK / galleries. / His JOB / is NEXT.
   - [the curator, apologetic, pointing him through a doorway into a dim side room]
   - [the dark gallery, cool blue, Grandad alone, the only light, the cases around him warm on one side. Open on a slow 0.4 s rise from the cut]
 - `L19` narrator: He sleeps / with a TOWEL / on his FACE.
