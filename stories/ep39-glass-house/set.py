@@ -323,6 +323,8 @@ def build_street(kit, ctx, M):
         wbox(kit, f"fw{hx}b", (hx + 0.45, 1.2, 0.0), (hx + 1.95, 1.34, 0.5), bm)
         bbox(kit, f"gate{hx}", (hx - 0.43, 1.2, 0.05), (hx + 0.43, 1.28, 0.95), pc, 0.02)
         wbox(kit, f"sw{hx}", (hx + 1.95, 1.2, 0.0), (hx + 2.05, 4.4, 0.55), bm)
+    # a tall privet hedge far down the street (L62's last beat: a head over it)
+    wbox(kit, "far_hedge", (34.4, 1.9, 0.0), (38.8, 2.7, 2.1), M["hedge"] if "hedge" in M else M["green"])
     # the far side of the road: a plain wall and a lamp post (the wedding's bunting hangs from it)
     wbox(kit, "farwall", (-45, -10.6, -0.2), (45, -10.4, 1.2), M["brick2"])
     for px in (14.0, 30.0):
@@ -1126,7 +1128,7 @@ def animate(kit, story, tl, t, ctx):
         for st in ctx["stars"]:
             st.hide_render = td["stars"] < 0.5
         lamps = _level(_cues(tl, "lamps"), "to", t, 1.0)
-        over["ga_cool"] = td["ga_moon"]
+        over["ga_cool"] = td["ga_moon"] * (0.35 if shot["id"] in ("S27", "S28", "S29") else 1.0)
         over["ga_lamp0"] = lamps
         over["ga_lamp1"] = lamps
         over["ga_lampfill"] = lamps
@@ -1171,7 +1173,7 @@ def animate(kit, story, tl, t, ctx):
     for c in _cues(tl, "neck"):
         if c["t"] <= t + 1e-9:
             cue = c
-    pose_creature(ctx, cue if room == "garden" else None)
+    pose_creature(ctx, cue if (cue and cue.get("room", "garden") == room) else None)
     # ---- the dry leaves on the potting table
     rus = _switch(_cues(tl, "rustle"), "on", t, False)
     for ob, loc, ph in ctx["leaves"]:

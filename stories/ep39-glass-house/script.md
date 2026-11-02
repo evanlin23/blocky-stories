@@ -145,6 +145,7 @@ A new shot every 1.2 to 2.3 s: 83 shots over about 2:19 (about 1.68 s each). Lin
 | S60 | L60 | Lou's plants standing up green, wet leaves catching soft sun. |
 | S61 | L61 | Mr Pell over the hedge, raising his mug, under his drizzle. Almost a smile. |
 | S62 | L62 | Sunny street again, mirroring S01: me at the gate, a small light rain falling from my cloud, Mum beside me under hers. |
+| S62b | L62 | Cold sting at the end of L62: far down the street, a Long Neck head over a hedge beside a neighbour's big, heavy, dry grey cloud. Cut at L63. |
 | S63 | L63 | Close on me, grinning in my own drizzle. Cut 0.25 s after "WORKS." back to S01. |
 
 ## The last 15 seconds turn the first line
@@ -167,7 +168,7 @@ L08. And it has never rained. Not ONCE.
 L09. People call me the happiest person they KNOW.
 L10. My umbrella is still in its WRAPPER.
 L11. Mum's sister Lou moved across the sea in SPRING.
-L12. For thirty years they'd shared Mum's glasshouse, a bench EACH.
+L12. For ten years they'd shared Mum's glasshouse, a bench EACH.
 L13. Since Lou left, Mum's cloud has gone dark and HEAVY.
 L14. And it never RAINS.
 L15. Now Mum slept out there in the wicker chair, among Lou's PLANTS.
@@ -175,7 +176,7 @@ L16. And the plants were going BROWN.
 L17. Monday morning, her cloud sat a hand above her HEAD.
 L18. Tuesday, it was down at her HAIRLINE.
 L19. Wednesday, it hung over her eyes. She poured tea into the sugar BOWL.
-L20. I asked if she was okay. She smiled and said, "Never BETTER."
+L20. I asked if she was fine. She smiled and said, "Never BETTER."
 L21. Her cloud sank another INCH.
 L22. That night, over the far hedge, there was a HEAD.
 L23. Much too high for anyone standing on the GROUND.
@@ -188,7 +189,7 @@ L29. Its face was moss green, with a mouth like the crack in an old flower POT.
 L30. At breakfast I told Mum. She said, "Don't you start. You're my HAPPY one."
 L31. On Friday, I took her tea out after DARK.
 L32. The lamps in the glasshouse were fading slowly DOWN.
-L33. Mum was asleep in the wicker chair, her cloud so low it hid her whole FACE.
+L33. Mum was asleep in the wicker chair, her cloud so low it covered her whole FACE.
 L34. Lou's bench sat EMPTY beside her.
 L35. And the roof vent was OPEN.
 L36. Hanging down through it, at Mum's height, was the HEAD.
@@ -219,3 +220,7 @@ L60. Every one of Lou's plants was standing UP.
 L61. Over the hedge, Mr Pell raised his mug, under his DRIZZLE.
 L62. In this town, everyone has a little CLOUD that rains when they're SAD.
 L63. Mine WORKS.
+
+## Notes (fix round 1)
+- "Mum" is spoken British (TTS phoneme override `Mum` = /mˈʌm/, set in `phonemes`), so the voice and the captions both say Mum. Whisper hears it as "Mum's".
+- L28 is slowed (tempo 0.62) so S28 holds over 1.0 s, for the flash margin between S27 and S29. Closing sound: a cold sting at the S62b cut and a low thud after "WORKS.".

@@ -270,66 +270,66 @@
    ]
   },
   "L11": {
-   "text": "Mom's sister Lou moved across the sea in spring.",
+   "text": "Mum's sister Lou moved across the sea in spring.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
+   "dur": 2.362,
    "onset": 0.172,
-   "end": 2.19,
+   "end": 2.172,
    "chunks": [
     [
      0.172,
-     0.836
+     0.819
     ],
     [
-     0.836,
-     1.388
+     0.819,
+     1.371
     ],
     [
-     1.388,
-     2.19
+     1.371,
+     2.172
     ]
    ]
   },
   "L12": {
-   "text": "For ten years they'd shared Mom's glasshouse, a bench each.",
+   "text": "For ten years they'd shared Mum's glasshouse, a bench each.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.759,
+   "dur": 2.724,
    "onset": 0.155,
-   "end": 2.552,
+   "end": 2.517,
    "chunks": [
     [
      0.155,
-     0.586
+     0.603
     ],
     [
-     0.586,
-     0.948
+     0.603,
+     0.966
     ],
     [
-     0.948,
-     1.707
+     0.966,
+     1.672
     ],
     [
-     1.776,
-     2.552
+     1.741,
+     2.517
     ]
    ]
   },
   "L13": {
-   "text": "Since Lou left, Mom's cloud has gone dark and heavy.",
+   "text": "Since Lou left, Mum's cloud has gone dark and heavy.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
+   "dur": 2.362,
    "onset": 0.172,
-   "end": 2.19,
+   "end": 2.172,
    "chunks": [
     [
      0.172,
@@ -337,15 +337,15 @@
     ],
     [
      0.69,
-     1.241
+     1.224
     ],
     [
-     1.241,
-     1.629
+     1.224,
+     1.612
     ],
     [
-     1.629,
-     2.19
+     1.612,
+     2.172
     ]
    ]
   },
@@ -370,30 +370,30 @@
    ]
   },
   "L15": {
-   "text": "Now Mom slept out there in the wicker chair, among Lou's plants.",
+   "text": "Now Mum slept out there in the wicker chair, among Lou's plants.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.862,
+   "dur": 2.845,
    "onset": 0.19,
-   "end": 2.672,
+   "end": 2.655,
    "chunks": [
     [
      0.19,
-     0.768
+     0.75
     ],
     [
-     0.768,
-     1.061
+     0.75,
+     1.043
     ],
     [
-     1.061,
-     1.655
+     1.043,
+     1.638
     ],
     [
-     1.724,
-     2.672
+     1.707,
+     2.655
     ]
    ]
   },
@@ -742,18 +742,18 @@
    ]
   },
   "L28": {
-   "text": "At Mom.",
+   "text": "At Mum.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.017,
-   "onset": 0.172,
-   "end": 0.81,
+   "tempo": 0.6386000000000001,
+   "dur": 1.603,
+   "onset": 0.293,
+   "end": 1.276,
    "chunks": [
     [
-     0.172,
-     0.81
+     0.293,
+     1.276
     ]
    ]
   },
@@ -794,14 +794,14 @@
    ]
   },
   "L30": {
-   "text": "At breakfast I told Mom. She said, \"Don't you start. You're my happy one.\"",
+   "text": "At breakfast I told Mum. She said, \"Don't you start. You're my happy one.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.017,
+   "dur": 2.983,
    "onset": 0.155,
-   "end": 2.81,
+   "end": 2.776,
    "chunks": [
     [
      0.155,
@@ -809,23 +809,23 @@
     ],
     [
      0.621,
-     1.086
+     1.069
     ],
     [
-     1.138,
-     1.379
+     1.121,
+     1.362
     ],
     [
-     1.448,
-     1.897
+     1.414,
+     1.862
     ],
     [
-     1.923,
-     2.121
+     1.888,
+     2.086
     ],
     [
-     2.121,
-     2.81
+     2.086,
+     2.776
     ]
    ]
   },
@@ -882,38 +882,38 @@
    ]
   },
   "L33": {
-   "text": "Mom was asleep in the wicker chair, her cloud so low it covered her whole face.",
+   "text": "Mum was asleep in the wicker chair, her cloud so low it covered her whole face.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.448,
+   "dur": 3.397,
    "onset": 0.19,
-   "end": 3.259,
+   "end": 3.207,
    "chunks": [
     [
      0.19,
-     0.732
+     0.698
     ],
     [
-     0.732,
-     0.845
+     0.698,
+     0.81
     ],
     [
-     0.845,
-     1.414
+     0.81,
+     1.379
     ],
     [
-     1.5,
-     2.017
+     1.466,
+     1.983
     ],
     [
-     2.017,
-     2.457
+     1.983,
+     2.405
     ],
     [
-     2.457,
-     3.259
+     2.405,
+     3.207
     ]
    ]
   },
@@ -958,30 +958,30 @@
    ]
   },
   "L36": {
-   "text": "Hanging down through it, at Mom's height, was the head.",
+   "text": "Hanging down through it, at Mum's height, was the head.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
+   "dur": 2.293,
    "onset": 0.172,
-   "end": 2.069,
+   "end": 2.086,
    "chunks": [
     [
      0.172,
-     0.586
+     0.595
     ],
     [
-     0.586,
-     0.828
+     0.595,
+     0.845
     ],
     [
-     0.862,
-     1.379
+     0.879,
+     1.345
     ],
     [
-     1.414,
-     2.069
+     1.379,
+     2.086
     ]
    ]
   },
@@ -1022,14 +1022,14 @@
    ]
   },
   "L38": {
-   "text": "Its face hung right beside Lou's bench, a hand away from Mom's cloud.",
+   "text": "Its face hung right beside Lou's bench, a hand away from Mum's cloud.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.293,
+   "dur": 3.224,
    "onset": 0.155,
-   "end": 3.086,
+   "end": 3.017,
    "chunks": [
     [
      0.155,
@@ -1049,7 +1049,7 @@
     ],
     [
      2.138,
-     3.086
+     3.017
     ]
    ]
   },
@@ -1190,34 +1190,34 @@
    ]
   },
   "L44": {
-   "text": "And Mom's cloud had sunk so far I couldn't see her at all.",
+   "text": "And Mum's cloud had sunk so far I couldn't see her at all.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.5,
+   "dur": 2.466,
    "onset": 0.155,
-   "end": 2.31,
+   "end": 2.276,
    "chunks": [
     [
      0.155,
-     0.732
+     0.698
     ],
     [
-     0.732,
-     1.172
+     0.698,
+     1.147
     ],
     [
-     1.172,
-     1.552
+     1.147,
+     1.534
     ],
     [
-     1.552,
-     1.767
+     1.534,
+     1.75
     ],
     [
-     1.767,
-     2.31
+     1.75,
+     2.276
     ]
    ]
   },
@@ -1310,7 +1310,7 @@
    ]
   },
   "L48": {
-   "text": "Mom had been holding hers in. For me. Because I'm the happy one.",
+   "text": "Mum had been holding hers in. For me. Because I'm the happy one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1474,34 +1474,34 @@
    ]
   },
   "L54": {
-   "text": "Mom looked up at it. Her face crumpled. Then her cloud let go.",
+   "text": "Mum looked up at it. Her face crumpled. Then her cloud let go.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.966,
+   "dur": 2.897,
    "onset": 0.19,
-   "end": 2.741,
+   "end": 2.672,
    "chunks": [
     [
      0.19,
-     0.672
+     0.621
     ],
     [
-     0.672,
-     0.81
+     0.621,
+     0.759
     ],
     [
-     0.836,
-     1.603
+     0.784,
+     1.552
     ],
     [
-     1.672,
-     2.155
+     1.621,
+     2.103
     ],
     [
-     2.155,
-     2.741
+     2.103,
+     2.672
     ]
    ]
   },
@@ -1530,30 +1530,30 @@
    ]
   },
   "L56": {
-   "text": "Mom laughed halfway through crying, and so did I.",
+   "text": "Mum laughed halfway through crying, and so did I.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 2.086,
    "onset": 0.172,
-   "end": 1.845,
+   "end": 1.879,
    "chunks": [
     [
      0.172,
-     0.741
+     0.759
     ],
     [
-     0.741,
-     1.224
+     0.759,
+     1.241
     ],
     [
-     1.276,
-     1.5
+     1.293,
+     1.517
     ],
     [
-     1.5,
-     1.845
+     1.517,
+     1.879
     ]
    ]
   },

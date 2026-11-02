@@ -19,7 +19,7 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 # the word check: slow a line down where a word was swallowed (filled in after the first asr run)
-TEMPO = {}
+TEMPO = {"L28": 0.62}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -68,7 +68,7 @@ shot("S02b", "L02.2", "street", "low angle up through the drizzle", still([3.9, 
 shot("S03", "L03", "street", "over the fences: his lawn green, the rest straw",
      move(([-3.4, -0.4, 2.8], [4.5, 2.8, 0.3]), ([-3.0, -0.4, 2.8], [4.5, 2.8, 0.3]), 22))
 shot("S04", "L04", "street", "the cafe couple in raincoats, both clouds raining on the cups",
-     still([-22.0, -1.3, 1.45], [-22.0, 2.6, 1.3], 30))
+     still([-22.0, -1.3, 1.6], [-22.0, 2.6, 1.7], 26))
 shot("S05a", "L05", "cinema", "the front row from the screen, faces lit blue", still(Cn(0.1, -0.9, 1.15), Cn(0.1, 3.0, 1.1), 26))
 shot("S05b", "L05.2", "cinema", "the same row, umbrellas up, clouds raining on them", still(Cn(0.1, -0.9, 1.3), Cn(0.1, 3.0, 1.6), 26))
 shot("S06a", "L06", "street", "the wedding couple under bunting",
@@ -79,7 +79,7 @@ shot("S08", "L08", "street", "close on my dry cloud, push in",
      move(([0.4, 1.3, 2.3], [0.0, 3.9, 2.4]), ([0.2, 2.2, 2.35], [0.0, 3.9, 2.4]), 26))
 shot("S09", "L09", "street", "me waving to a neighbour, both grinning", still([-1.9, -3.4, 1.65], [-1.9, 0.8, 1.9], 30))
 shot("S10", "L10", "kitchen", "the hall hook: three patched umbrellas and mine in its wrapper",
-     c([0, K(1.0, 0.9, 1.5), K(2.2, 4.0, 1.3), 28], [1, K(1.2, 1.4, 1.5), K(2.2, 4.0, 1.3), 28]))
+     c([0, K(2.75, 1.7, 1.15), K(2.9, 3.74, 1.1), 26], [1, K(2.85, 2.1, 1.12), K(2.9, 3.74, 1.1), 26]))
 shot("S11a", "L11", "garden", "Lou's framed photo on Mum's bench", still(G(-0.7, 17.2, 1.0), G(-1.93, 18.0, 0.92), 40))
 shot("S11b", "L11.2", "garden", "the sea postcard on the potting table", still(G(0.2, 20.4, 1.25), G(0.32, 21.45, 0.97), 40))
 shot("S12a", "L12", "garden", "daytime wide down the garden to the glasshouse",
@@ -96,8 +96,8 @@ shot("S18", "L18", "kitchen", "Tuesday: the cloud at her hairline", still(K(1.0,
 shot("S19a", "L19", "kitchen", "Wednesday: over her eyes", still(K(1.0, 0.1, 1.45), K(1.0, 2.75, 1.5), 30))
 shot("S19b", "L19.3", "kitchen", "tea into the sugar bowl", still(K(1.9, 0.7, 1.4), K(1.1, 1.95, 0.95), 30), 2, 0)
 shot("S20a", "L20", "kitchen", "me across the table, asking", still(K(2.25, 3.5, 1.55), K(1.0, 1.05, 1.45), 30))
-shot("S20b", "L20.2", "kitchen", "Mum's smile under the cloud's edge", still(K(1.0, 0.55, 1.4), K(1.0, 2.75, 1.38), 38))
-shot("S21", "L21", "kitchen", "the cloud over her nose", still(K(1.0, 0.55, 1.4), K(1.0, 2.75, 1.38), 38))
+shot("S20b", "L20.2", "kitchen", "Mum's smile under the cloud's edge", still(K(1.75, 0.8, 1.5), K(1.0, 2.75, 1.45), 34))
+shot("S21", "L21", "kitchen", "the cloud over her nose", still(K(1.75, 0.8, 1.5), K(1.0, 2.75, 1.45), 34))
 shot("S22", "L22", "garden", "night, from the back step: the glasshouse glowing, a head over the far hedge",
      still(G(1.6, 10.5, 1.5), G(3.7, 25.0, 3.5), 40))
 shot("S23", "L23", "garden", "closer: the head against the stars", c([0, G(2.0, 14.0, 1.5), G(3.7, 25.0, 3.8), 38], [1, G(2.4, 16.0, 1.5), G(3.7, 25.0, 3.8), 38]))
@@ -108,9 +108,9 @@ shot("S26a", "L26", "garden", "me, close, looking away to the house", still(G(-0
 shot("S26b", "L26.2", "garden", "back to the door: the head, same spot, hold", still(G(-0.4, 9.4, 1.45), G(1.0, 15.8, 3.0), 30), 4, 0)
 shot("S27", "L27", "garden", "night three, inside, looking up: the face on a roof pane", still(G(0.0, 18.2, 1.3), G(1.25, 19.5, 2.5), 28))
 shot("S28", "L28", "garden", "high: Mum asleep, her cloud low", still(G(0.2, 20.7, 2.5), G(0.85, 19.4, 1.0), 28))
-shot("S29", "L29", "garden", "the face through the glass", still(G(1.15, 18.5, 1.75), G(1.28, 19.5, 2.5), 36))
+shot("S29", "L29", "garden", "the face through the glass", still(G(0.1, 18.9, 1.2), G(1.27, 19.5, 2.55), 38))
 shot("S30a", "L30", "kitchen", "breakfast, me telling Mum", still(K(2.9, -0.4, 1.5), K(1.0, 1.9, 1.3), 24))
-shot("S30b", "L30.2", "kitchen", "Mum, cloud over her eyes, smiling", still(K(1.0, 0.55, 1.4), K(1.0, 2.75, 1.38), 38))
+shot("S30b", "L30.2", "kitchen", "Mum, cloud over her eyes, smiling", still(K(1.75, 0.8, 1.5), K(1.0, 2.75, 1.45), 34))
 shot("S31", "L31", "garden", "Friday dusk: me on the path with a mug toward the glowing glasshouse", still(G(-0.7, 7.6, 1.6), G(0.1, 16.0, 1.4), 26))
 shot("S32", "L32", "garden", "inside: the lamps fading slowly down", still(G(-0.3, 16.5, 1.4), G(0.2, 19.0, 2.35), 26))
 shot("S33a", "L33", "garden", "Mum asleep, cloud over her whole face", still(G(0.55, 17.2, 1.25), G(0.85, 19.5, 1.25), 34))
@@ -148,10 +148,12 @@ shot("S57a", "L57", "garden", "the wrapper torn off, on the floor", still(G(0.0,
 shot("S57b", "L57.3", "garden", "the umbrella up, rain falling under it", still(G(0.3, 15.9, 1.75), G(0.15, 18.4, 1.6), 20))
 shot("S58a", "L58", "garden", "I sit on Lou's bench where the head was", still(G(0.4, 17.4, 1.2), G(1.95, 19.5, 1.1), 30))
 shot("S58b", "L58.3", "garden", "up at the roof vent: empty, open, rain on its sill", still(G(0.3, 18.5, 1.4), G(1.9, 19.45, 2.2), 28))
-shot("S59", "L59", "garden", "morning: two light white clouds over two benches", still(G(0.0, 16.4, 1.35), G(0.0, 19.5, 1.5), 22))
+shot("S59", "L59", "garden", "morning: two light white clouds over two benches", still(G(0.0, 16.1, 1.9), G(0.0, 19.5, 1.5), 11))
 shot("S60", "L60", "garden", "Lou's plants standing up green, wet leaves in soft sun", still(G(0.9, 17.3, 1.2), G(2.0, 18.6, 0.95), 34))
 shot("S61", "L61", "garden", "Mr Pell over the hedge, raising his mug, under his drizzle", still(G(-3.2, 14.0, 1.6), G(-7.2, 14.0, 1.75), 32))
 shot("S62", "L62", "street", "the sunny street again: me at the gate, a light rain, Mum beside me", ALONG)
+shot("S62b", "L62.4", "street", "far down the street: a long head over a hedge beside a neighbour's heavy dry cloud",
+     still([25.0, -2.6, 1.5], [35.5, 1.5, 3.0], 40), 1, 0)
 shot("S63", "L63", "street", "close on me, grinning in my own drizzle", still([-1.6, -0.2, 1.7], [0.0, 0.9, 1.75], 38))
 
 shots = []
@@ -275,6 +277,7 @@ put("mum", "L62-0.1", [1.5, 0.35], yaw=-90, expr="grin")
 put("pell", "L62-0.1", [4.0, 0.85], yaw=-90, expr="smirk", arms=[0, 62])
 put("nb1", "L62-0.1", [8.0, 0.85], yaw=-90, expr="smirk")
 put("nb2", "L62-0.1", [12.0, 0.85], yaw=-90, expr="neutral")
+put("nb3", "L62-0.1", [33.0, 0.85], yaw=-90, expr="neutral")
 put("me", "L63", [0.0, 0.95], yaw=-90, expr="grin", head=[0, 0])
 # the cafe couple laughing in the rain (L46b): same table, new faces
 put("cf1", "L46.1", [-22.6, 2.6, -0.23], yaw=90, expr="grin", sit=True, head=[0, 4], arms=[8, 8])
@@ -289,6 +292,10 @@ NECK_BODY = {
     # night 3: the body at the east wall, the neck over the eave and along the roof, the head down on one pane
     "n3": {"body": [2.75, 19.5], "yaw": -90,
            "pts": [[2.75, 19.5, 1.34], [2.75, 19.5, 2.05], [2.3, 19.5, 1.9], [1.45, 19.5, 2.42]], "look": [0.85, 19.5, 1.3]},
+    # night 3, close: the head hangs face-on over one pane, looking down through the glass
+    "n3f": {"body": [2.75, 19.5], "yaw": -90,
+            "pts": [[2.75, 19.5, 1.34], [2.75, 19.5, 3.0], [0.4, 19.5, 3.9], [1.1, 19.5, 2.62]],
+            "look": [0.1, 18.9, 1.2]},
     # the scare: the neck in through the open vent, the head hanging beside Lou's bench at Mum's height
     "scare": {"body": [2.75, 19.5], "yaw": -90,
               "pts": [[2.75, 19.5, 1.34], [2.75, 19.5, 2.05], [1.62, 19.5, 2.05], [1.58, 19.5, 1.55]],
@@ -338,11 +345,15 @@ cues = [
     neck("L22", "n1"),
     neck("L25", "n2"),
     neck("L27", "n3"),
+    neck("L29", "n3f"),
     {"at": "L30", "name": "neck", "on": False},
     neck("L36", "scare"),
     neck("L39", "scare", look=[1.0, 17.1, 1.4]),
     neck("L42-0.2", "low"),
     {"at": "L58", "name": "neck", "on": False},
+    {"at": "L62.4", "name": "neck", "on": True, "room": "street", "abs": True, "body": [36.6, 3.0], "yaw": 0,
+     "pts": [[36.6 - GX, 3.0, 1.34], [36.6 - GX, 3.0, 4.2]], "look": [28.0 - GX, -2.6, 3.0]},
+    {"at": "L63", "name": "neck", "on": False},
     {"at": "L40.2", "name": "rustle", "on": True},
     {"at": "L41", "name": "rustle", "on": False},
     # ---- the tea
@@ -372,8 +383,8 @@ cues = [
     # ---- clouds: Pell's drizzle all the way, the cafe and cinema rain, then mine, then Mum's
     {"at": 0, "name": "cloud", "who": "pell", "rain": 0.55, "dur": 0.3},
     {"at": "L61-0.1", "name": "cloud", "who": "pell2", "rain": 0.55, "dur": 0.3},
-    {"at": "L03.2", "name": "cloud", "who": "cf1", "rain": 0.8, "dur": 0.3},
-    {"at": "L03.2", "name": "cloud", "who": "cf2", "rain": 0.8, "dur": 0.3},
+    {"at": "L03.2", "name": "cloud", "who": "cf1", "rain": 1.0, "size": 1.35, "tone": 0.55, "dur": 0.3},
+    {"at": "L03.2", "name": "cloud", "who": "cf2", "rain": 1.0, "size": 1.35, "tone": 0.55, "dur": 0.3},
     {"at": "L05.2", "name": "cloud", "who": "cn1", "rain": 0.8, "dur": 0.3},
     {"at": "L05.2", "name": "cloud", "who": "cn2", "rain": 0.8, "dur": 0.3},
     {"at": "L05.2", "name": "cloud", "who": "cn3", "rain": 0.8, "dur": 0.3},
@@ -391,7 +402,7 @@ cues = [
     {"at": "L19", "name": "cloud", "who": "mum", "gap": -0.3, "dur": 0.05},
     {"at": "L21", "name": "cloud", "who": "mum", "gap": -0.4, "dur": 0.05},
     {"at": "L22", "name": "cloud", "who": "mum", "gap": -0.46, "dur": 0.05},
-    {"at": "L33", "name": "cloud", "who": "mum", "gap": -0.5, "dur": 0.05},
+    {"at": "L33", "name": "cloud", "who": "mum", "gap": -0.78, "size": 1.7, "dur": 0.05},
     {"at": "L44", "name": "cloud", "who": "mum", "gap": -0.78, "size": 1.7, "dur": 0.05},
     {"at": "L47", "name": "cloud", "who": "mum", "gap": -0.78, "size": 1.7, "dur": 0.05},
     {"at": "L50.3+0.1", "name": "cloud", "who": "mum", "gap": -0.2, "size": 1.5, "dur": 0.9},
@@ -399,10 +410,11 @@ cues = [
     {"at": "L54.3", "name": "cloud", "who": "mum", "rain": 0.85, "dur": 0.8},
     {"at": "L55", "name": "cloud", "who": "mum", "white": 1.0, "dur": 3.5},
     {"at": "L59", "name": "cloud", "who": "mum", "gap": 0.14, "size": 1.0, "rain": 0.0, "white": 1.0, "dur": 0.05},
+    {"at": "L62-0.1", "name": "cloud", "who": "nb3", "size": 3.0, "gap": 0.0, "tone": 1.0, "rain": 0.0, "dur": 0.05},
     {"at": "L62", "name": "cloud", "who": "mum", "gap": 0.14, "size": 1.0, "rain": 0.25, "white": 1.0, "dur": 0.05},
     # mine: the biggest, whitest cloud in town, never rained; it goes grey at L52 and rains from L53
     {"at": 0, "name": "cloud", "who": "me", "size": 2.0, "rain": 0.0, "dur": 0.05},
-    {"at": "L52", "name": "cloud", "who": "me", "tone": 0.6, "dur": 1.0},
+    {"at": "L52-0.15", "name": "cloud", "who": "me", "tone": 1.0, "dur": 0.9},
     {"at": "L53", "name": "cloud", "who": "me", "rain": 0.7, "dur": 0.8},
     {"at": "L59", "name": "cloud", "who": "me", "tone": 0.0, "size": 1.4, "rain": 0.0, "gap": 0.14, "dur": 0.05},
     {"at": "L62", "name": "cloud", "who": "me", "tone": 0.0, "size": 1.7, "rain": 0.3, "dur": 0.05},
@@ -420,6 +432,8 @@ sfx = [
     {"at": "L42", "kind": "thud", "db": -24},
     {"at": "L52", "kind": "bell", "db": -20},                                 # one soft note as the cloud turns grey
     {"at": "L58", "kind": "click", "db": -22},
+    {"at": "L62.4", "kind": "sting", "db": -14},                                # far down the street, a head over a hedge
+    {"at": "L63+0.6", "kind": "thud", "db": -16},                               # the last sound
 ]
 for s_ in sfx:
     s_.pop("name", None)
@@ -441,7 +455,7 @@ story = {
     "exposure": {"street": 0.0, "kitchen": 0.2, "cinema": 0.3},
     "grade": {"shadows": [-0.01, 0.0, 0.035], "highlights": [0.02, 0.008, -0.01], "saturation": 1.05, "contrast": 1.06,
               "vignette": 0.32, "bloom": 0.2, "grain": 0.011},
-    "phonemes": {},
+    "phonemes": {"Mum": "mˈʌm"},
     "cast": cast,
     "clouds": clouds,
     "umbrellas": umbrellas,

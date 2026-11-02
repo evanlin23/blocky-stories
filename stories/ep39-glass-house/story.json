@@ -45,7 +45,9 @@
   "bloom": 0.2,
   "grain": 0.011
  },
- "phonemes": {},
+ "phonemes": {
+  "Mum": "mˈʌm"
+ },
  "cast": {
   "me": {
    "age": "adult",
@@ -166,7 +168,7 @@
   "cf1": {
    "age": "adult",
    "skin": "#e6b890",
-   "shirt": "#c8472f",
+   "shirt": "#e0b02a",
    "pattern": "solid",
    "pants": "#2a2e3a",
    "shoes": "#2c2a2a",
@@ -187,7 +189,7 @@
   "cf2": {
    "age": "adult",
    "skin": "#b88460",
-   "shirt": "#2f7f8c",
+   "shirt": "#3f9a5a",
    "pattern": "solid",
    "pants": "#2a2e3a",
    "shoes": "#2c2a2a",
@@ -358,6 +360,7 @@
    "size": 2.0,
    "color": "#f6f8fb",
    "under": "#c3c8d0",
+   "grey": "#454c58",
    "drops": 90,
    "spread": 1.1
   },
@@ -386,7 +389,8 @@
    "size": 1.05
   },
   "nb3": {
-   "size": 0.9
+   "size": 0.9,
+   "grey": "#5a6270"
   },
   "cf1": {
    "size": 1.0,
@@ -651,7 +655,7 @@
    "chunks": [
     [
      "Mum's sister Lou",
-     "Mom's sister Lou"
+     "Mum's sister Lou"
     ],
     [
      "moved across the",
@@ -677,7 +681,7 @@
     ],
     [
      "Mum's glasshouse,",
-     "Mom's glasshouse,"
+     "Mum's glasshouse,"
     ],
     [
      "a bench EACH.",
@@ -695,7 +699,7 @@
     ],
     [
      "Mum's cloud has",
-     "Mom's cloud has"
+     "Mum's cloud has"
     ],
     [
      "gone dark",
@@ -727,7 +731,7 @@
    "chunks": [
     [
      "Now Mum slept",
-     "Now Mom slept"
+     "Now Mum slept"
     ],
     [
      "out there in",
@@ -1021,9 +1025,10 @@
    "chunks": [
     [
      "At MUM.",
-     "At Mom."
+     "At Mum."
     ]
-   ]
+   ],
+   "tempo": 0.62
   },
   {
    "id": "L29",
@@ -1065,7 +1070,7 @@
     ],
     [
      "told Mum.",
-     "told Mom."
+     "told Mum."
     ],
     [
      "She said,",
@@ -1131,7 +1136,7 @@
    "chunks": [
     [
      "Mum was asleep",
-     "Mom was asleep"
+     "Mum was asleep"
     ],
     [
      "in the",
@@ -1197,7 +1202,7 @@
     ],
     [
      "at Mum's height,",
-     "at Mom's height,"
+     "at Mum's height,"
     ],
     [
      "was the HEAD.",
@@ -1257,7 +1262,7 @@
     ],
     [
      "from Mum's CLOUD.",
-     "from Mom's cloud."
+     "from Mum's cloud."
     ]
    ]
   },
@@ -1373,7 +1378,7 @@
    "chunks": [
     [
      "And Mum's cloud",
-     "And Mom's cloud"
+     "And Mum's cloud"
     ],
     [
      "had sunk so",
@@ -1469,7 +1474,7 @@
    "chunks": [
     [
      "Mum had been",
-     "Mom had been"
+     "Mum had been"
     ],
     [
      "holding hers in.",
@@ -1597,7 +1602,7 @@
    "chunks": [
     [
      "Mum looked up",
-     "Mom looked up"
+     "Mum looked up"
     ],
     [
      "at it.",
@@ -1641,7 +1646,7 @@
    "chunks": [
     [
      "Mum laughed halfway",
-     "Mom laughed halfway"
+     "Mum laughed halfway"
     ],
     [
      "through crying,",
@@ -1926,14 +1931,14 @@
      [
       -22.0,
       -1.3,
-      1.45
+      1.6
      ],
      [
       -22.0,
       2.6,
-      1.3
+      1.7
      ],
-     30
+     26
     ]
    ],
    "hand": 0.006,
@@ -2144,30 +2149,30 @@
     [
      0,
      [
-      101.0,
-      0.9,
-      1.5
+      102.75,
+      1.7,
+      1.15
      ],
      [
-      102.2,
-      4.0,
-      1.3
+      102.9,
+      3.74,
+      1.1
      ],
-     28
+     26
     ],
     [
      1,
      [
-      101.2,
-      1.4,
-      1.5
+      102.85,
+      2.1,
+      1.12
      ],
      [
-      102.2,
-      4.0,
-      1.3
+      102.9,
+      3.74,
+      1.1
      ],
-     28
+     26
     ]
    ],
    "hand": 0.006,
@@ -2556,16 +2561,16 @@
     [
      0,
      [
-      101.0,
-      0.55,
-      1.4
+      101.75,
+      0.8,
+      1.5
      ],
      [
       101.0,
       2.75,
-      1.38
+      1.45
      ],
-     38
+     34
     ]
    ],
    "hand": 0.006,
@@ -2580,16 +2585,16 @@
     [
      0,
      [
-      101.0,
-      0.55,
-      1.4
+      101.75,
+      0.8,
+      1.5
      ],
      [
       101.0,
       2.75,
-      1.38
+      1.45
      ],
-     38
+     34
     ]
    ],
    "hand": 0.006,
@@ -2824,16 +2829,16 @@
     [
      0,
      [
-      201.15,
-      18.5,
-      1.75
+      200.1,
+      18.9,
+      1.2
      ],
      [
-      201.28,
+      201.27,
       19.5,
-      2.5
+      2.55
      ],
-     36
+     38
     ]
    ],
    "hand": 0.006,
@@ -2872,16 +2877,16 @@
     [
      0,
      [
-      101.0,
-      0.55,
-      1.4
+      101.75,
+      0.8,
+      1.5
      ],
      [
       101.0,
       2.75,
-      1.38
+      1.45
      ],
-     38
+     34
     ]
    ],
    "hand": 0.006,
@@ -3785,15 +3790,15 @@
      0,
      [
       200.0,
-      16.4,
-      1.35
+      16.1,
+      1.9
      ],
      [
       200.0,
       19.5,
       1.5
      ],
-     22
+     11
     ]
    ],
    "hand": 0.006,
@@ -3873,6 +3878,30 @@
    "room": "street",
    "what": "the sunny street again: me at the gate, a light rain, Mum beside me",
    "at": "L62"
+  },
+  {
+   "id": "S62b",
+   "cam": [
+    [
+     0,
+     [
+      25.0,
+      -2.6,
+      1.5
+     ],
+     [
+      35.5,
+      1.5,
+      3.0
+     ],
+     40
+    ]
+   ],
+   "hand": 0,
+   "step": 1,
+   "room": "street",
+   "what": "far down the street: a long head over a hedge beside a neighbour's heavy dry cloud",
+   "at": "L62.4"
   },
   {
    "id": "S63",
@@ -5540,6 +5569,39 @@
     "tremble": 0,
     "sit": false,
     "blink": true
+   },
+   {
+    "at": "L62-0.1",
+    "pos": [
+     -2.55,
+     0.85
+    ]
+   },
+   {
+    "at": "L62-0.1",
+    "pos": [
+     33.0,
+     0.85
+    ],
+    "yaw": -90,
+    "blend": 0,
+    "expr": "neutral",
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "sit": false,
+    "blink": true
    }
   ],
   "cf1": [
@@ -6290,6 +6352,43 @@
    ]
   },
   {
+   "at": "L29",
+   "name": "neck",
+   "on": true,
+   "body": [
+    2.75,
+    19.5
+   ],
+   "yaw": -90,
+   "pts": [
+    [
+     2.75,
+     19.5,
+     1.34
+    ],
+    [
+     2.75,
+     19.5,
+     3.0
+    ],
+    [
+     0.4,
+     19.5,
+     3.9
+    ],
+    [
+     1.1,
+     19.5,
+     2.62
+    ]
+   ],
+   "look": [
+    0.1,
+    18.9,
+    1.2
+   ]
+  },
+  {
    "at": "L30",
    "name": "neck",
    "on": false
@@ -6410,6 +6509,40 @@
   },
   {
    "at": "L58",
+   "name": "neck",
+   "on": false
+  },
+  {
+   "at": "L62.4",
+   "name": "neck",
+   "on": true,
+   "room": "street",
+   "abs": true,
+   "body": [
+    36.6,
+    3.0
+   ],
+   "yaw": 0,
+   "pts": [
+    [
+     -163.4,
+     3.0,
+     1.34
+    ],
+    [
+     -163.4,
+     3.0,
+     4.2
+    ]
+   ],
+   "look": [
+    -172.0,
+    -2.6,
+    3.0
+   ]
+  },
+  {
+   "at": "L63",
    "name": "neck",
    "on": false
   },
@@ -6558,14 +6691,18 @@
    "at": "L03.2",
    "name": "cloud",
    "who": "cf1",
-   "rain": 0.8,
+   "rain": 1.0,
+   "size": 1.35,
+   "tone": 0.55,
    "dur": 0.3
   },
   {
    "at": "L03.2",
    "name": "cloud",
    "who": "cf2",
-   "rain": 0.8,
+   "rain": 1.0,
+   "size": 1.35,
+   "tone": 0.55,
    "dur": 0.3
   },
   {
@@ -6685,7 +6822,8 @@
    "at": "L33",
    "name": "cloud",
    "who": "mum",
-   "gap": -0.5,
+   "gap": -0.78,
+   "size": 1.7,
    "dur": 0.05
   },
   {
@@ -6745,6 +6883,16 @@
    "dur": 0.05
   },
   {
+   "at": "L62-0.1",
+   "name": "cloud",
+   "who": "nb3",
+   "size": 3.0,
+   "gap": 0.0,
+   "tone": 1.0,
+   "rain": 0.0,
+   "dur": 0.05
+  },
+  {
    "at": "L62",
    "name": "cloud",
    "who": "mum",
@@ -6763,11 +6911,11 @@
    "dur": 0.05
   },
   {
-   "at": "L52",
+   "at": "L52-0.15",
    "name": "cloud",
    "who": "me",
-   "tone": 0.6,
-   "dur": 1.0
+   "tone": 1.0,
+   "dur": 0.9
   },
   {
    "at": "L53",
@@ -7058,6 +7206,16 @@
     "at": "L58",
     "kind": "click",
     "db": -22
+   },
+   {
+    "at": "L62.4",
+    "kind": "sting",
+    "db": -14
+   },
+   {
+    "at": "L63+0.6",
+    "kind": "thud",
+    "db": -16
    }
   ],
   "music_drops": [
