@@ -1,0 +1,1809 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "It's getting closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.155,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.172
+    ]
+   ]
+  },
+  "L02": {
+   "text": "My sister Wren slid the strip along the bench to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.267
+    ],
+    [
+     1.267,
+     1.741
+    ],
+    [
+     1.741,
+     2.207
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Four pictures from the old booth at our cousin's wedding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.828
+    ],
+    [
+     0.828,
+     1.337
+    ],
+    [
+     1.337,
+     1.819
+    ],
+    [
+     1.819,
+     2.362
+    ]
+   ]
+  },
+  "L04": {
+   "text": "And between our heads, in every picture, a hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.828
+    ],
+    [
+     0.854,
+     1.414
+    ],
+    [
+     1.439,
+     2.034
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Wren and I hadn't spoken in two years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.19,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.569,
+     0.992
+    ],
+    [
+     0.992,
+     1.759
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Over something too small to even name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.034
+    ],
+    [
+     1.034,
+     1.845
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Mum wanted one photo of her two, from the booth in the hotel hall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.103,
+   "onset": 0.19,
+   "end": 2.914,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     1.061
+    ],
+    [
+     1.061,
+     1.534
+    ],
+    [
+     1.638,
+     2.009
+    ],
+    [
+     2.009,
+     2.397
+    ],
+    [
+     2.397,
+     2.914
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Sit in the middle, she said. Together.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.19,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.19,
+     0.353
+    ],
+    [
+     0.353,
+     0.552
+    ],
+    [
+     0.586,
+     0.948
+    ],
+    [
+     1.017,
+     1.586
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Inside was one long bench, with plum velvet behind it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.19,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.19,
+     0.586
+    ],
+    [
+     0.586,
+     1.276
+    ],
+    [
+     1.362,
+     1.931
+    ],
+    [
+     1.931,
+     2.603
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Wren sat at the far left end. I sat at the far right.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.828
+    ],
+    [
+     0.828,
+     1.328
+    ],
+    [
+     1.414,
+     1.75
+    ],
+    [
+     1.75,
+     2.5
+    ]
+   ]
+  },
+  "L11": {
+   "text": "The lamp glowed four times, slow and warm, and the strip slid out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.069
+    ],
+    [
+     1.147,
+     1.69
+    ],
+    [
+     1.715,
+     2.069
+    ],
+    [
+     2.069,
+     2.69
+    ]
+   ]
+  },
+  "L12": {
+   "text": "That's when we saw the hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.698
+    ],
+    [
+     0.698,
+     1.276
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Faded brown, like a very old photo.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.698,
+     1.017
+    ],
+    [
+     1.017,
+     1.862
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Resting on the velvet behind us, right on the seam down the middle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.793
+    ],
+    [
+     0.793,
+     1.379
+    ],
+    [
+     1.474,
+     1.715
+    ],
+    [
+     1.715,
+     2.017
+    ],
+    [
+     2.017,
+     2.741
+    ]
+   ]
+  },
+  "L15": {
+   "text": "But the back of the booth was solid wood, flush with the wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.828
+    ],
+    [
+     0.828,
+     1.483
+    ],
+    [
+     1.561,
+     1.87
+    ],
+    [
+     1.87,
+     2.483
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Mum looked at the strip and sighed. That's not together.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.19,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.19,
+     0.492
+    ],
+    [
+     0.492,
+     0.819
+    ],
+    [
+     0.819,
+     1.31
+    ],
+    [
+     1.397,
+     1.776
+    ],
+    [
+     1.776,
+     2.345
+    ]
+   ]
+  },
+  "L17": {
+   "text": "Wren slid to the very edge of the bench, so I slid to mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.19,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.19,
+     0.647
+    ],
+    [
+     0.647,
+     1.061
+    ],
+    [
+     1.061,
+     1.517
+    ],
+    [
+     1.603,
+     2.034
+    ],
+    [
+     2.034,
+     2.672
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Second strip. An arm now, in a dark old suit, and a shoulder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.741,
+     1.155
+    ],
+    [
+     1.181,
+     1.5
+    ],
+    [
+     1.5,
+     1.897
+    ],
+    [
+     1.923,
+     2.603
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Its hand was still on the seam.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.784
+    ],
+    [
+     0.784,
+     1.466
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Wren's voice went small. She said it was leaning in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.19,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     1.172
+    ],
+    [
+     1.25,
+     1.474
+    ],
+    [
+     1.474,
+     1.638
+    ],
+    [
+     1.638,
+     2.293
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Third strip, after the cake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     0.784
+    ],
+    [
+     0.784,
+     1.31
+    ]
+   ]
+  },
+  "L22": {
+   "text": "We sat so far apart my elbow poked out past the curtain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.155,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.888
+    ],
+    [
+     0.888,
+     1.241
+    ],
+    [
+     1.241,
+     1.594
+    ],
+    [
+     1.594,
+     2.431
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Now it was a whole body, standing behind the bench between us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.19,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.19,
+     0.457
+    ],
+    [
+     0.457,
+     1.034
+    ],
+    [
+     1.121,
+     1.629
+    ],
+    [
+     1.629,
+     1.914
+    ],
+    [
+     1.914,
+     2.603
+    ]
+   ]
+  },
+  "L24": {
+   "text": "So tall the top of every picture cut it off at the mouth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.793
+    ],
+    [
+     0.793,
+     1.301
+    ],
+    [
+     1.301,
+     1.647
+    ],
+    [
+     1.647,
+     2.259
+    ]
+   ]
+  },
+  "L25": {
+   "text": "A long, thin smile, as dark as the coin slot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.466,
+     1.034
+    ],
+    [
+     1.103,
+     1.439
+    ],
+    [
+     1.439,
+     2.241
+    ]
+   ]
+  },
+  "L26": {
+   "text": "In the fourth picture, the smile had stretched.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.741
+    ],
+    [
+     0.768,
+     1.112
+    ],
+    [
+     1.112,
+     1.776
+    ]
+   ]
+  },
+  "L27": {
+   "text": "I told Wren I was done with this. She said she'd been done for two years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.207,
+   "onset": 0.155,
+   "end": 3.017,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.0
+    ],
+    [
+     1.0,
+     1.448
+    ],
+    [
+     1.543,
+     1.81
+    ],
+    [
+     1.81,
+     2.224
+    ],
+    [
+     2.224,
+     3.017
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Then she shut the curtain and fed in our last coin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.957
+    ],
+    [
+     0.957,
+     1.285
+    ],
+    [
+     1.285,
+     2.155
+    ]
+   ]
+  },
+  "L29": {
+   "text": "One more, she said. For mum.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.431,
+     0.759
+    ],
+    [
+     0.81,
+     1.397
+    ]
+   ]
+  },
+  "L30": {
+   "text": "We sat at opposite ends, not looking at each other.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.172
+    ],
+    [
+     1.241,
+     1.586
+    ],
+    [
+     1.586,
+     2.241
+    ]
+   ]
+  },
+  "L31": {
+   "text": "The lamp glowed once. Then it went out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.034
+    ],
+    [
+     1.103,
+     1.25
+    ],
+    [
+     1.25,
+     1.793
+    ]
+   ]
+  },
+  "L32": {
+   "text": "In the dark, Wren was breathing at her end.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     1.155
+    ],
+    [
+     1.155,
+     1.776
+    ]
+   ]
+  },
+  "L33": {
+   "text": "And in the middle, a sound like a page being turned.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.603
+    ],
+    [
+     0.655,
+     1.061
+    ],
+    [
+     1.061,
+     1.397
+    ],
+    [
+     1.397,
+     2.155
+    ]
+   ]
+  },
+  "L34": {
+   "text": "The second glow lit the booth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.345
+    ]
+   ]
+  },
+  "L35": {
+   "text": "It was there. Right between us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.603,
+     1.397
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Its hand on the seam, exactly where every picture said.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.155,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.983
+    ],
+    [
+     1.061,
+     1.569
+    ],
+    [
+     1.569,
+     2.517
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Its head was up by the roof, turned all the way around to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.603
+    ],
+    [
+     0.603,
+     1.086
+    ],
+    [
+     1.155,
+     1.578
+    ],
+    [
+     1.578,
+     2.052
+    ],
+    [
+     2.052,
+     2.517
+    ]
+   ]
+  },
+  "L38": {
+   "text": "I leaned to see it from the side.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.707
+    ],
+    [
+     0.707,
+     1.397
+    ]
+   ]
+  },
+  "L39": {
+   "text": "From the side, it was a line. As thin as a sheet of paper.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.698
+    ],
+    [
+     0.698,
+     1.155
+    ],
+    [
+     1.224,
+     1.629
+    ],
+    [
+     1.629,
+     1.854
+    ],
+    [
+     1.854,
+     2.466
+    ]
+   ]
+  },
+  "L40": {
+   "text": "The lamp went dark again, and we both ran.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.034
+    ],
+    [
+     1.086,
+     1.259
+    ],
+    [
+     1.259,
+     2.0
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Wren went out one side of the curtain, and I went out the other.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.19,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     0.94
+    ],
+    [
+     0.94,
+     1.448
+    ],
+    [
+     1.517,
+     1.801
+    ],
+    [
+     1.801,
+     2.5
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Under a brass lamp I spread all four strips on a table.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.302
+    ],
+    [
+     0.302,
+     0.905
+    ],
+    [
+     0.905,
+     1.207
+    ],
+    [
+     1.207,
+     1.784
+    ],
+    [
+     1.784,
+     2.448
+    ]
+   ]
+  },
+  "L43": {
+   "text": "And then I saw it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.155,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     1.017
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Its hand was on the seam in every picture, at the same height.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.681
+    ],
+    [
+     0.681,
+     0.94
+    ],
+    [
+     0.94,
+     1.586
+    ],
+    [
+     1.655,
+     2.034
+    ],
+    [
+     2.034,
+     2.517
+    ]
+   ]
+  },
+  "L45": {
+   "text": "It had never come one inch closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.017
+    ],
+    [
+     1.017,
+     1.621
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Wren and I had been sliding apart, a little more every strip.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.19,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     1.052
+    ],
+    [
+     1.052,
+     1.466
+    ],
+    [
+     1.534,
+     1.906
+    ],
+    [
+     1.906,
+     2.655
+    ]
+   ]
+  },
+  "L47": {
+   "text": "It had always been there. We just kept giving it more room.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     1.017
+    ],
+    [
+     1.086,
+     1.466
+    ],
+    [
+     1.466,
+     1.69
+    ],
+    [
+     1.69,
+     2.362
+    ]
+   ]
+  },
+  "L48": {
+   "text": "I looked up. Wren was at the far end of the hall. I was at this one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.155,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.698,
+     0.974
+    ],
+    [
+     0.974,
+     1.267
+    ],
+    [
+     1.267,
+     1.353
+    ],
+    [
+     1.353,
+     1.724
+    ],
+    [
+     1.759,
+     1.966
+    ],
+    [
+     1.966,
+     2.621
+    ]
+   ]
+  },
+  "L49": {
+   "text": "And in the dark between us, something tall and flat stood in the middle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.155,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.155,
+     0.284
+    ],
+    [
+     0.284,
+     0.552
+    ],
+    [
+     0.552,
+     1.034
+    ],
+    [
+     1.103,
+     1.621
+    ],
+    [
+     1.621,
+     1.966
+    ],
+    [
+     1.966,
+     2.181
+    ],
+    [
+     2.181,
+     2.741
+    ]
+   ]
+  },
+  "L50": {
+   "text": "Wren looked at it. Then she took one step toward me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.19,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.19,
+     0.543
+    ],
+    [
+     0.543,
+     0.81
+    ],
+    [
+     0.879,
+     1.259
+    ],
+    [
+     1.259,
+     1.621
+    ],
+    [
+     1.621,
+     2.207
+    ]
+   ]
+  },
+  "L51": {
+   "text": "I took one toward her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.172
+    ]
+   ]
+  },
+  "L52": {
+   "text": "With every step, the dark between us got smaller.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.732,
+     0.992
+    ],
+    [
+     0.992,
+     1.293
+    ],
+    [
+     1.293,
+     2.069
+    ]
+   ]
+  },
+  "L53": {
+   "text": "We met under the middle lamp, with nothing left between us at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.603
+    ],
+    [
+     0.603,
+     1.121
+    ],
+    [
+     1.19,
+     1.759
+    ],
+    [
+     1.759,
+     2.121
+    ],
+    [
+     2.121,
+     2.69
+    ]
+   ]
+  },
+  "L54": {
+   "text": "She said she couldn't remember what we'd fought about. Neither could I.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.957
+    ],
+    [
+     0.957,
+     1.164
+    ],
+    [
+     1.164,
+     1.69
+    ],
+    [
+     1.784,
+     2.552
+    ]
+   ]
+  },
+  "L55": {
+   "text": "We went back in and sat right in the middle, her elbow in my ribs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.155,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.647
+    ],
+    [
+     0.647,
+     0.914
+    ],
+    [
+     0.914,
+     1.129
+    ],
+    [
+     1.129,
+     1.5
+    ],
+    [
+     1.569,
+     2.009
+    ],
+    [
+     2.009,
+     2.741
+    ]
+   ]
+  },
+  "L56": {
+   "text": "She pulled the fish face from every family photo we'd ever taken.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.897
+    ],
+    [
+     0.897,
+     1.25
+    ],
+    [
+     1.25,
+     1.862
+    ],
+    [
+     1.862,
+     2.741
+    ]
+   ]
+  },
+  "L57": {
+   "text": "I pulled it right back, and she laughed so hard she snorted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.155,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.0
+    ],
+    [
+     1.069,
+     1.483
+    ],
+    [
+     1.483,
+     1.828
+    ],
+    [
+     1.828,
+     2.552
+    ]
+   ]
+  },
+  "L58": {
+   "text": "The strip came out. Just the two of us, without a sliver of space between.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.155,
+   "onset": 0.155,
+   "end": 2.966,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.862
+    ],
+    [
+     0.94,
+     1.285
+    ],
+    [
+     1.285,
+     1.448
+    ],
+    [
+     1.474,
+     2.009
+    ],
+    [
+     2.009,
+     2.966
+    ]
+   ]
+  },
+  "L59": {
+   "text": "Wren tore it in half and tucked two pictures in my jacket pocket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.854
+    ],
+    [
+     0.854,
+     1.147
+    ],
+    [
+     1.147,
+     1.578
+    ],
+    [
+     1.578,
+     1.983
+    ],
+    [
+     1.983,
+     2.534
+    ]
+   ]
+  },
+  "L60": {
+   "text": "On the way back to the dance, she bumped my shoulder, leaned in, and whispered,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.155,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.612
+    ],
+    [
+     0.612,
+     1.034
+    ],
+    [
+     1.103,
+     1.353
+    ],
+    [
+     1.353,
+     1.759
+    ],
+    [
+     1.793,
+     2.19
+    ],
+    [
+     2.215,
+     2.879
+    ]
+   ]
+  }
+ }
+}

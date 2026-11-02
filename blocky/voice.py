@@ -161,7 +161,7 @@ def asr(wav: Path, timeline: Path) -> int:
 SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # British and American spellings
 # homophones: the same sound, and Whisper picks the spelling from the words around it ("under the bulb threw"), so
 # hearing one for the other isn't a mispronunciation. `asr` lists them as spellings, never silently
-HOMOPHONES = {"threw": "through"}
+HOMOPHONES = {"threw": "through", "wren": "ren", "wrens": "rens"}   # "wren" is said "ren" (ep20's Wren)
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 
