@@ -87,9 +87,8 @@ EYE = 1.55
 # (at, what, step, camera). The interiors are set.py's: the shed at x 60 and plot ten's at x 80, the shaft at x 120.
 SHOTS = [
     # 01 the smell, L01 to L10
-    (0, "close on wet soil, a drop falls off a leaf", 2,
-     c([0, [3.9, -26.9, 0.22], [3.55, -27.62, 0.3], 34], [1, [3.85, -26.8, 0.4], [3.55, -27.62, 0.3], 34])),
-    ("L01.2", "me breathing in", 2, still([3.6, -26.2, 1.4], [4.05, -28.3, 1.5], 26)),
+    (0, "me bent over the wet soil, face lit, a drop falls off the leaf beside me", 2,
+     c([0, [3.45, -29.7, 0.45], [3.7, -27.6, 0.85], 17], [1, [3.45, -29.3, 0.5], [3.7, -27.6, 0.88], 16])),
     ("L02", "wide from the gate: cracked hill, peach sky", 4, move(([0.25, -0.5, 1.9], [0.0, -14, 0.9]),
                                                                   ([0.25, -1.4, 1.9], [0.0, -14, 0.9]), 19)),
     ("L03", "overhead on a neighbour's cracked bed", 4, still([3.5, -9.9, 2.7], [3.5, -10.05, 0.0], 22)),
@@ -226,8 +225,8 @@ def talk(who, a, b):
 hide("carter", 0)
 hide("newcomer", 0)
 # me
-put("me", 0, ME_N, yaw=yaw_to(ME_N, (3.6, -26.2)), head=[0, -10])
-key("me", "L01.1", head=[0, -16], blend=0.5)
+put("me", 0, [3.95, -27.5], yaw=0, lean=26, head=[0, 4], expr="neutral")
+key("me", "L01.1", head=[0, 6], lean=14, blend=0.6)
 hide("me", "L02")
 put("me", "L05", [0.5, 0.4], yaw=-90)
 hide("me", "L06")
