@@ -16,6 +16,7 @@ from stories import all_stories, film, gate_open, uploads
 ap = argparse.ArgumentParser()
 ap.add_argument("--story", default="")
 ap.add_argument("--shards", type=int, default=16)
+ap.add_argument("--max", type=int, default=15)   # GitHub caps a matrix at 256 jobs: 15 stories x 16 shards = 240
 a = ap.parse_args()
 
 if a.story:
@@ -23,8 +24,10 @@ if a.story:
 else:
     done = uploads()
     todo = [s for s in all_stories() if s not in done and film(s) is None and gate_open(s)]
-print(f"to render: {todo or 'nothing'}", file=sys.stderr)
+todo, later = todo[:a.max], todo[a.max:]   # all_stories() is oldest first, so the oldest go first
+print(f"to render: {todo or 'nothing'}" + (f"; next run: {later}" if later else ""), file=sys.stderr)
 include = [{"story": s, "shard": k} for s in todo for k in range(a.shards)]
 print("matrix=" + json.dumps({"include": include}))
 print("stories=" + json.dumps(todo))
 print("any=" + ("true" if todo else "false"))
+print("more=" + ("true" if later else "false"))
