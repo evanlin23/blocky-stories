@@ -169,7 +169,7 @@ shot("L05", {"me": seat("me", expr="worried"), "rosie": seat("rosie")},
      cam([-2.9, -3.3, 1.45], [-3.7, -5.6, 1.4], 24, 0.12), note="S5 me on the end seat, a little apart")
 shot("L06", {}, mv([-1.0, -5.2, 0.4], [0.0, -1.4, 3.0], [-0.6, -5.2, 0.4], [0.0, -1.4, 3.1], 22), note="S6 lamp housing")
 shot("L07", {"mags": ([-1.0, -3.7], 0, {"arms": [0, 84], "side": [0, 34], "expr": "soft", "talk": ("L07", "L07>")})},
-     cam([-1.0, -6.0, 1.5], [-1.0, -3.7, 1.3], 24, 0.1), note="S7 Mags holds out the shoes (plant 2)")
+     cam([0.7, -5.4, 1.45], [-1.0, -3.9, 1.3], 24, 0.1), note="S7 Mags holds out the shoes (plant 2)")
 shot("L08", {"me": ([-1.0, -3.2], 0, {"expr": "worried"})},
      mv([-1.0, -5.4, 0.7], [-1.0, -3.2, 0.15], [-1.0, -5.0, 0.6], [-1.0, -3.2, 0.15], 30, 34), note="S8 warm shoes")
 shot("L09", {w: seat(w) for w in WHO},
@@ -260,7 +260,7 @@ shot("L49", {}, cam([0.0, -0.6, 0.5], [0.0, 14.6, 0.9], 75, 0.0), hand=0.002, no
 shot("L50", {}, cam([0.0, -0.6, 0.45], [0.0, 15.2, 1.35], 95, 0.0), hand=0, step=1, note="S50 THE REVEAL")
 shot("L51", {}, cam([0.0, -0.6, 0.6], [0.0, 15.2, 1.75], 160, 0.0), hand=0, step=1, note="S51 both faces")
 shot("L52", {}, cam([0.0, -0.6, 0.6], [0.0, 15.2, 2.0], 230, 0.0), hand=0, step=1, note="S52 wide eyes")
-shot("L53", {}, mv([0.35, -3.2, 1.0], [0.0, -1.4, 2.8], [0.3, -3.1, 1.0], [0.0, -1.4, 2.85], 24, 24), step=1,
+shot("L53", {}, mv([0.5, -4.6, 1.1], [0.0, -1.4, 2.5], [0.45, -4.5, 1.1], [0.0, -1.4, 2.55], 21, 21), step=1,
      note="S53 the light dips")
 shot("L53.1", {}, cam([0.0, -0.6, 0.9], [0.0, 7.5, 1.5], 40, 0.0), hand=0, step=1, note="S54 halfway up")
 shot("L55", {"me": ([0.0, -0.9], 180, {"expr": "scared"}),
@@ -295,7 +295,7 @@ shot("L67", {"dev": ([SEAT_X["dev"], SEAT_Y, SEAT_Z], -140, {"sit": True, "expr"
      cam([-1.3, -3.7, 1.55], [0.15, -5.6, 1.5], 24, 0.1), note="S67 Dev, take its place")
 shot("L68", {"me": seat("me", expr="soft", head=[0, -4])}, face_cam([SEAT_X["me"], SEAT_Y], 180, 2.0, 22), note="S68 my grin")
 shot("L69", {"mags": ([-1.0, -3.9], 0, {"arms": [0, 84], "side": [0, 34], "expr": "soft"})},
-     cam([-1.0, -6.2, 1.5], [-1.0, -3.9, 1.3], 24, 0.1), note="S69 the fifth teal shirt")
+     cam([0.7, -5.6, 1.45], [-1.0, -4.0, 1.3], 24, 0.1), note="S69 the fifth teal shirt")
 shot("L69.2", {"me": ([-1.0, -3.9], 0, {"expr": "soft"})}, face_cam([-1.0, -3.9], 0, 2.0, 24), note="S69 me in it")
 
 # 07 the warm turn and the freeze (bright) ----------------------------------------------------------------

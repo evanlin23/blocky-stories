@@ -60,7 +60,9 @@ def make(kind: str, seed: int, dur: float, opts: dict | None = None) -> np.ndarr
             f = float(r.uniform(420, 1100))
             bonk = synth.sine(f, 0.12)[: synth.n_samples(0.12)] * _env(synth.n_samples(0.12), 0.001, 0.025)
             tick = _bp(synth.noise(0.04, seed + k), 800, 4500) * _env(synth.n_samples(0.04), 0.0005, 0.008)
-            _add(y, bonk * 0.5 + tick * 0.7, float(t0), float(r.uniform(0.4, 1.0)) * (1.0 - 0.5 * t0 / 1.4))
+            g = float(r.uniform(0.4, 1.0)) * (1.0 - 0.5 * t0 / 1.4)
+            _add(y, bonk, float(t0), 0.5 * g)
+            _add(y, tick, float(t0), 0.7 * g)
         _add(y, _bp(synth.noise(1.2, seed), 60, 300) * np.exp(-np.arange(synth.n_samples(1.2)) / SR / 0.45), 0.0, 0.9)
         return y
     if kind == "alley_clunk":     # the pinsetter: a heavy mechanical drop and a metal tick

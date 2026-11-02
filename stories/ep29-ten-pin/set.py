@@ -178,8 +178,8 @@ def squiggle(kit):
     L.new(tc.outputs["Object"], nz.inputs["Vector"])
     base = N.new("ShaderNodeMix")
     base.data_type = "RGBA"
-    base.inputs["A"].default_value = kit.col("#4a1822")
-    base.inputs["B"].default_value = kit.col("#5e2230")
+    base.inputs["A"].default_value = kit.col("#3a1838")
+    base.inputs["B"].default_value = kit.col("#4b2446")
     L.new(nz.outputs["Fac"], base.inputs["Factor"])
     cur = base.outputs["Result"]
     for sock, hexc in layers:
@@ -204,8 +204,8 @@ def materials(kit):
     M["arrow"] = kit.plastic("#5a381d", 0.4, name="arrow")
     M["foul"] = kit.plastic("#1d1514", 0.4, name="foul line")
     M["carpet"] = squiggle(kit)
-    M["wall"] = kit.grime("#4a2f3a", 0.7, 1.4, name="wall paint", rough=0.85)
-    M["wallwood"] = kit.planks("#6b4630", "#4c2f20", 1.0, "Z", name="wall wood", rough=0.5)
+    M["wall"] = kit.grime("#34404c", 0.7, 1.4, name="wall paint", rough=0.85)
+    M["wallwood"] = kit.planks("#5b4a3a", "#3e3226", 1.0, "Z", name="wall wood", rough=0.5)
     M["ceiling"] = kit.plastic("#1c1a22", 0.9, name="ceiling")
     M["seat"] = kit.plastic(MUSTARD, 0.5, name="seat")
     M["seatleg"] = kit.metal("#6c6f73", 0.4, name="seat leg")
