@@ -28,6 +28,13 @@ from blocky.gate import load_package
 REPO = os.environ.get("GITHUB_REPOSITORY", "evanlin23/blocky-stories")
 
 
+def queue() -> list[str]:
+    """queue.txt: story folders to upload first, in order (blank lines and # comments ignored)."""
+    q = ROOT / "queue.txt"
+    names = [ln.strip() for ln in q.read_text().splitlines()] if q.exists() else []
+    return [n for n in names if n and not n.startswith("#") and (ROOT / "stories" / n / "story.json").exists()]
+
+
 def shape(story: str) -> str:
     """package.json's optional `shape`: a short tag for the twist's shape (e.g. "stand-in")."""
     try:
@@ -37,13 +44,13 @@ def shape(story: str) -> str:
     return str(pkg.get("shape", "")).strip().lower()
 
 
-def next_story(done: dict) -> str | None:
+def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
     """The oldest ready story, skipping past one whose twist shape matches the last upload's, so two in a row
     never end the same way (a story is only held back while another ready one can go first)."""
     last = shape(next(reversed(done))) if done else ""
     held = None
-    for s in all_stories():
-        if s in done:
+    for s in queue() + [x for x in all_stories() if x not in queue()]:
+        if s in done or s in skip or (load_package(s) or {}).get("hold"):   # held for a redo (RULES → Packaging)
             continue
         if film(s) and gate_open(s):
             if not last or shape(s) != last:
@@ -141,17 +148,25 @@ def main() -> None:
     if not a.story and any(today in (e.get("uploaded"), e.get("issued")) for e in done.values()):
         print("already posted one today")   # the backup run found the first one worked
         return
-    story = a.story or next_story(done)
-    if not story:
-        print("nothing ready to upload today")
-        return
+    failed: set[str] = set()
+    while True:   # a film that fails the flash bar never blocks the day: take the next one
+        story = a.story or next_story(done, frozenset(failed))
+        if not story:
+            print("nothing ready to upload today" + (f" (flash fails: {sorted(failed)})" if failed else ""))
+            return
+        td_obj = tempfile.TemporaryDirectory()
+        mp4, flash = fetch(story, Path(td_obj.name))
+        if flash.get("house_bar", {}).get("pass"):
+            break
+        print(f"{story}: the film fails the flash bar; skipping it (redraw the shots its flash report names)")
+        td_obj.cleanup()
+        if a.story:
+            sys.exit(1)
+        failed.add(story)
     pkg = load_package(story)
     s = slug(story)
     rel = film(story)["url"] + " (the `film-" + story + "` artifact, at the bottom of the run page)"
-    with tempfile.TemporaryDirectory() as td:
-        mp4, flash = fetch(story, Path(td))
-        if not flash.get("house_bar", {}).get("pass"):
-            sys.exit(f"{story}: the film fails the flash bar; not uploading")
+    with td_obj as td:
         desc = description(pkg, flash)
         title = pkg["title"]
         print(f"{story}: {title!r} ({mp4.stat().st_size / 1e6:.0f} MB)")
