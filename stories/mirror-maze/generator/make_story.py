@@ -449,10 +449,10 @@ put("tasha", "L68.2", SPOT, yaw=0, expr="worried", arms=[0, 0])
 for i, r in enumerate(("L68.2+0.3", "L68.2+0.9", "L68.2+1.5")):
     raw("tasha", r, arms=[150, 150] if i % 2 == 0 else [110, 110], blend=0.25)
 S("L68", one((IN - 0.35, 3.0, 1.5), (IN, 11.0, 1.45), 24), 2, look=LOOK_IN2, note="every Tasha frozen")
-S("L68.2", one((IN + 0.45, 6.4, 1.6), (IN, 13.5, 1.4), 46), 2, look=LOOK_IN2,
+S("L68.2", one((IN - 0.2, 7.0, 1.6), (IN, 13.5, 1.4), 46), 2, look=LOOK_IN2,
   note="the real Tasha far down the glass, waving both arms, everything else still")
 raw("tasha", "L69", arms=[0, 0], blend=0.4)
-S("L69", one((IN + 0.45, 6.4, 1.6), (IN, 13.5, 1.4), 46), 2, look=LOOK_IN2, note="in the same spot as before")
+S("L69", one((IN - 0.2, 7.0, 1.6), (IN, 13.5, 1.4), 46), 2, look=LOOK_IN2, note="in the same spot as before")
 # L70 I've run down the glass to her pane; it stands between us
 cues += [{"at": "L70", "name": "ghosts", "me": "off", "ta": "off"}]
 put("me", "L70", [IN + 0.35, 10.4], yaw=180, expr="wide")
@@ -525,11 +525,11 @@ raw("tasha", "L85", head=[0, -38], blend=0.5)
 raw("me", "L86.3", head=[0, 0], blend=0.5)
 raw("tasha", "L86.3", head=[0, 0], blend=0.5)
 S("L85", one((0.9, -14.35, 1.3), (1.5, -12.6, 1.8), 30), 2, look=LOOK_VAN, note="we both looked up at the rain")
-S("L86", one((5.6, -11.3, 1.3), (2.6, -14.9, 1.35), 28), 2, look=LOOK_VAN,
+S("L86", one((4.6, -11.8, 1.35), (2.4, -14.9, 1.35), 24), 2, look=LOOK_VAN,
   note="the van's polished steel side: our two reflections look up at the rain with us, on time")
 raw("tasha", "L87", expr="grin")
 raw("me", "L87", expr="grin")
-S("L87", one((1.2, -14.3, 1.5), (1.5, -12.6, 1.55), 40), 2, look=LOOK_VAN, note="and nobody was late")
+S("L87", one((1.2, -14.3, 1.5), (1.5, -12.6, 1.55), 24), 2, look=LOOK_VAN, note="and nobody was late")
 # L88: the last shot is L01's framing: she points at my hat, and the film cuts back to it
 put("tasha", "L88", [0.4, -13.2], yaw=90, expr="smirk", head=[-45, 0], arms=[0, 0])
 put("me", "L88", [1.6, -13.2], yaw=-90, expr="neutral", head=[40, 0])

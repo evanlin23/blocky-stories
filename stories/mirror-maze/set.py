@@ -503,9 +503,9 @@ def build_far(kit, ctx, M):
     pn = kit.empty("carried pane", (0, 0, -20))
     kit.box("carried.g", (1.1, 0.014, 2.3), (0, 0, 1.2), M["glass"], pn)
     for sx in (-1, 1):
-        kit.box(f"carried.f{sx}", (0.05, 0.05, 2.45), (sx * 0.575, 0, 1.22), M["steel"], pn)
-    kit.box("carried.top", (1.2, 0.05, 0.05), (0, 0, 2.44), M["steel"], pn)
-    kit.box("carried.bot", (1.2, 0.05, 0.05), (0, 0, -0.01), M["steel"], pn)
+        kit.box(f"carried.f{sx}", (0.09, 0.09, 2.45), (sx * 0.575, 0, 1.22), M["silver"], pn)
+    kit.box("carried.top", (1.2, 0.09, 0.09), (0, 0, 2.44), M["silver"], pn)
+    kit.box("carried.bot", (1.2, 0.09, 0.09), (0, 0, -0.01), M["silver"], pn)
     ctx["carried"] = pn
     # a set of upright frames stacked against the exterior skirt (the truck's load is the other stack)
 
@@ -548,7 +548,7 @@ def build_inside(kit, ctx, M):
     # a stack of steel frames, upright and leaning, across the corridor (the trip-2 hide)
     st = kit.empty("framestack", (IX + 0.42, 6.3, 0.04))
     for i in range(5):
-        kit.box(f"fs{i}", (0.7, 0.05, 2.2), (0.0, 0.07 * i - 0.12, 1.1), M["steel_d"], st, rot=(math.radians(5), 0, 0), bevel=0.01)
+        kit.box(f"fs{i}", (0.7, 0.05, 2.2), (0.0, 0.07 * i - 0.12, 1.1), M["steel"], st, rot=(math.radians(5), 0, 0), bevel=0.01)
     ctx["framestack"] = st
     # its lights: two soft lilac-white panels over the corridor
     kit.light("room", "AREA", (IX, 3.5, 3.0), 900.0, "#d8d0ff", size=3.0)
