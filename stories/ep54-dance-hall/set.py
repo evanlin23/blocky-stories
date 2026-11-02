@@ -221,7 +221,7 @@ def materials(kit):
     M["scuff"] = kit.plastic("#16120e", 0.9)
     M["silver"] = kit.plastic("#c4cad2", 0.3)
     M["sleeve"] = kit.plastic("#e9dcc0", 0.8)
-    M["glove"] = kit.plastic("#f6f3ec", 0.9)
+    M["glove"] = kit.plastic("#d6d2c6", 0.9)
     M["plum"] = kit.plastic("#5a2748", 0.85)
     M["boot"] = kit.plastic("#5b3a22", 0.7)
     M["white"] = kit.plastic("#f3efe4", 0.7)
@@ -446,7 +446,7 @@ def build_street(kit, M, ctx):
         B(kit, f"awning {i}", (4.4, 0.9, 0.08), (x, 6.55, 2.7), M["coral" if i % 2 else "mint"], rot=(0.3, 0, 0))
     # the bus stop: a shelter and a post with a coloured disc
     sx = X0
-    B(kit, "shelter roof", (3.2, 1.3, 0.08), (sx, 0.4, 2.5), M["post"])
+    B(kit, "shelter roof", (3.2, 1.3, 0.08), (sx, 0.4, 2.5), M["mint"])
     B(kit, "shelter back", (3.2, 0.05, 2.3), (sx, 1.0, 1.3), M["shelterback"])
     for dx in (-1.55, 1.55):
         B(kit, "shelter post", (0.07, 0.07, 2.5), (sx + dx, 0.0, 1.25), M["post"])
@@ -547,14 +547,14 @@ def build_keeper(kit, M, ctx):
     ctx["k_root"], ctx["k_hips"], ctx["k_torso"], ctx["k_headc"] = root, hips, torso, headc
     ctx["k_objs"] = _all(root)
     # its own key (warm, above and to the side) and a cool rim from the windows: they light the Stilted and nothing else
-    kit.light("kkey", "POINT", (2.2, 1.2, 4.4), 300.0, "#ffc890", size=0.5)
+    kit.light("kkey", "POINT", (2.2, 1.2, 4.4), 180.0, "#ffc890", size=0.5)
     kit.light("krim", "POINT", (-3.4, 2.2, 3.4), 260.0, "#9fb8ff", size=0.5)
     kit.light("kfront", "POINT", (0.9, -1.3, 1.9), 140.0, "#ffd8a8", size=0.3)
     for ln in ("kkey", "krim", "kfront"):
         light_only(kit, "keeper", ln, ctx["k_objs"])
     # face lights: a high one for the upright pose (its face is above the brass ring), a low one at eye height for the bend
     # (it lights Ros's face too). Each switches only on a cut, with the keeper's pose.
-    kit.light("kface_hi", "POINT", (-1.3, -1.9, 3.9), 260.0, "#ffd9b0", size=0.4)
+    kit.light("kface_hi", "POINT", (-1.0, -1.9, 3.5), 130.0, "#ffd9b0", size=0.4)
     light_only(kit, "keeper", "kface_hi", ctx["k_objs"])
     kit.light("kface_lo", "POINT", (1.6, -0.3, 2.0), 170.0, "#ffd9b0", size=0.4)
     kit.light("khand", "POINT", (-1.1, -1.3, 1.9), 150.0, "#ffd9b0", size=0.4)
@@ -655,6 +655,11 @@ def decorate(kit, story, ctx):
     tor = ob("pm.torso")
     if tor:
         B(kit, "pm.parcel", (0.9, 0.6, 0.7), (-0.95, -0.7, 0.8), kit.plastic("#b88a5a", 0.8), tor, bevel=0.03)
+    for who in ("me", "ros", "pm"):       # extras made after the cast was hidden must start hidden too
+        root = ob(who)
+        if root is not None and root.hide_render:
+            for q in _all(root):
+                q.hide_render = True
     ctx["inited"] = True
 
 
@@ -706,6 +711,7 @@ def animate(kit, story, tl, t, ctx):
     kc_ = _last(_cues(tl, "keeper"), t)
     kvis = kc_ is not None and not kc_.get("hidden", False)
     kb = kc_.get("bend", 0) if kvis else 0
+    over["chan"] = chan * (0.06 if kvis and kb < 100 else 1.0)
     over["kface_hi"] = 1.0 if kvis and kb < 100 else 0.0
     over["kface_lo"] = 1.0 if kvis and kb >= 100 else 0.0
     over["khand"] = 1.0 if kvis and kb >= 100 else 0.0
@@ -778,13 +784,13 @@ def animate(kit, story, tl, t, ctx):
             continue
         pl.hide_render = False
         gloved = bool(on_g) and who == "me"
-        off = 0.22 if gloved else (0.13 if who == "me" else 0.1)
+        off = 0.3 if gloved else (0.13 if who == "me" else 0.1)
         _billboard(pl, p + (cam - p).normalized() * off, cam)
-        sc_ = 1.8 if who == "me" and lv > 0.5 else 1.5
+        sc_ = 1.8 if who == "me" and (lv > 0.5 or gloved) else 1.5
         pl.scale = (sc_, 1, sc_)
-        em.inputs["Strength"].default_value = 6.0 * lv * (1.0 - w)
-        if who == "me" and lv > 0.5 and (1.0 - w) > 0.5 and glow < 0.6:
-            glow = 0.6
+        em.inputs["Strength"].default_value = ((3.2 if not gloved else 4.5) if who == "me" else 6.0) * lv * (1.0 - w)
+        if who == "me" and lv > 0.5 and (1.0 - w) > 0.5 and glow < 0.2 and not gloved:
+            glow = 0.2
             glow_p = p
         if _DEBUG:
             import sys
