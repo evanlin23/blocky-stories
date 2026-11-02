@@ -3,5 +3,6 @@
  "description": "In this town, every lie you tell pins a small white tag to your clothes. The man who sells shoes looks like a snowman. I've never had a single one.\n\nI came home for a week to help my uncle shut the little alterations shop where he taught me to cut. Every time a customer asks after me, another tag lands on him. And at night, someone keeps chalking up my old bench for a suit.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
  "pin": "How many tags would be on you right now?",
  "made_for_kids": false,
- "cover_s": 102.4
+ "cover_s": 102.4,
+ "shape": "stand-in"
 }
