@@ -70,7 +70,7 @@ A seaside model village on the front of a small made-up town, on grey out-of-sea
 - `L01` narrator: There's a little MAN / in the WINDOW. / He's the size / of my THUMB.
 - `L02` narrator: He's in the BAKERY / of the model VILLAGE / down by the SEA.
 - `L03` narrator: Every HOUSE in town / is down there, / no higher / than my KNEE.
-- `L04` narrator: I moved here / a MONTH ago, / and took the job / REPAINTING it.
+- `L04` narrator: I moved here / a MONTH ago, / and got the job / REPAINTING it.
 - `L05` narrator: Nobody in town / TALKS to me. / They NOD, / and keep WALKING.
 - `L06` narrator: So I spend / my AFTERNOONS / over the little STREETS / with a BRUSH.
 - `L07` narrator: Out of SEASON. / GREY sky. / A sea / like WET SLATE.
