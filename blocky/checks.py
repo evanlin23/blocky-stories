@@ -84,6 +84,22 @@ def originality(name: str, st: dict) -> list[tuple[str, str]]:
 CUT_MAX_S = 2.3
 
 
+# effects that are mostly bright noise (over a quarter of their energy above 4 kHz, measured 2026-11-02): fine as a
+# rare, quiet accent, scratchy when loud or repeated (the owner pulled ep36 over its hissy grass steps)
+HARSH_SFX = {"glitch", "tape", "rasp", "radio"}   # click is a tiny transient tick, not a hiss: back-row held 84% with 15
+
+
+def harsh_sound(st: dict) -> list[tuple[str, str]]:
+    sfx = [s for s in (st.get("sound") or {}).get("sfx", []) if s.get("kind") in HARSH_SFX]
+    loud = [f"{s['kind']}@{s.get('at')}" for s in sfx if float(s.get("db", -30)) > -24]
+    out = []
+    if loud:
+        out.append(("warn", f"bright, noisy effects above -24 dB can sound scratchy: {loud[:5]} (keep them quiet)"))
+    if len(sfx) > 6:
+        out.append(("warn", f"{len(sfx)} bright, noisy effects; repeated, they read as scratching (ep36's grass steps)"))
+    return out
+
+
 def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list[tuple[str, str]]:
     from blocky import voicecheck as sc
 
@@ -95,6 +111,7 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
     if set_py.exists() and "flicker" in set_py.read_text() and not (st.get("look") or {}).get("flash_safe"):
         out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
                             "flash bar on most stories (RULES.md hard rule 7)"))
+    out += harsh_sound(st)
     screen, said = texts(st)
     viewer = screen + said + [st.get("title", "")]
     for i, ln in enumerate(st["lines"]):

@@ -197,6 +197,14 @@ def test_grass_steps_are_not_a_hiss():
     assert X[f > 4000].sum() / X.sum() < 0.03   # the old step was band-passed noise up to 6 kHz: scratchy
 
 
+def test_check_warns_on_loud_or_repeated_harsh_effects():
+    from blocky import checks
+
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "tape", "db": -18, "at": "L03"}]}})
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "glitch", "db": -30}] * 7}})
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "whoosh", "db": -12}, {"kind": "tape", "db": -30}, {"kind": "click", "db": -12}]}}) == []
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics
