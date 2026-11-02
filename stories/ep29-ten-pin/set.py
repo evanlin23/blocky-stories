@@ -206,7 +206,7 @@ def materials(kit):
     M["carpet"] = squiggle(kit)
     M["wall"] = kit.grime("#34404c", 0.7, 1.4, name="wall paint", rough=0.85)
     M["wallwood"] = kit.planks("#5b4a3a", "#3e3226", 1.0, "Z", name="wall wood", rough=0.5)
-    M["ceiling"] = kit.plastic("#1c1a22", 0.9, name="ceiling")
+    M["ceiling"] = kit.plastic("#454350", 0.9, name="ceiling")
     M["seat"] = kit.plastic(MUSTARD, 0.5, name="seat")
     M["seatleg"] = kit.metal("#6c6f73", 0.4, name="seat leg")
     M["mask"] = kit.plastic("#1e1f24", 0.8, name="masking")
