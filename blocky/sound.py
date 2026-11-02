@@ -42,7 +42,7 @@ MUSIC_UNDER = -27.0
 MUSIC_FREE = -21.0
 MODES = {"minor": [0, 2, 3, 5, 7, 8, 10], "phrygian": [0, 1, 3, 5, 7, 8, 10], "dorian": [0, 2, 3, 5, 7, 9, 10],
          "harmonic": [0, 2, 3, 5, 7, 8, 11], "locrian": [0, 1, 3, 5, 6, 8, 10], "major": [0, 2, 4, 5, 7, 9, 11],
-         "whole": [0, 2, 4, 6, 8, 10], "mixolydian": [0, 2, 4, 5, 7, 9, 10]}
+         "whole": [0, 2, 4, 6, 8, 10], "lydian": [0, 2, 4, 6, 7, 9, 11], "mixolydian": [0, 2, 4, 5, 7, 9, 10]}
 
 
 def load_wav(path: Path) -> np.ndarray:
@@ -484,7 +484,12 @@ def step_sound(surface: str, run: bool, seed: int) -> np.ndarray:
     elif surface == "metal":
         y = _layer(synth.thump(0.1, 220, 120, seed) * 0.5, synth.fm_bell(float(r.uniform(700, 900)), 0.25, 2.7, 1.2, 0.06) * 0.25)
     elif surface == "grass":
-        y = fft_filter(synth.noise(0.12, seed), "band", 1500, 6000) * synth.decay(0.12, 0.04)[: synth.n_samples(0.12)] * 0.6
+        # a soft low swish and a dull heel, not a hiss: the old 1.5 to 6 kHz noise burst read as scratching
+        # (owner, 2026-11-02, ep36: "a horrible scratchy sound")
+        n = synth.n_samples(0.16)
+        env = np.minimum(1.0, np.arange(n) / (0.02 * SR)) * synth.decay(0.16, 0.05)[:n]   # 20 ms fade-in, no click
+        swish = fft_filter(synth.noise(0.16, seed), "band", 250, 1600)[:n] * env * 0.35
+        y = _layer(swish, synth.thump(0.08, 120, 70, seed) * 0.25)
     else:  # stone, concrete
         y = _layer(synth.thump(0.08, 140, 70, seed) * 0.6, fft_filter(synth.noise(0.06, seed), "band", 1200, 5000) * synth.decay(0.06, 0.01)[: synth.n_samples(0.06)] * 0.6)
     return y * (1.4 if run else 1.0) * float(r.uniform(0.8, 1.1))
@@ -690,6 +695,40 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
+    if kind == "ding":        # ep49: a small brass collar bell. opts: pitch (Hz), lp (low-pass Hz, a muffled pocket ring), fall (pitch drop)
+        o = opts or {}
+        f = float(o.get("pitch", 2200.0))
+        d = float(dur if dur != 1.0 else 0.9)
+        if o.get("fall"):
+            n = synth.n_samples(d)
+            tt = np.arange(n) / SR
+            fr = f * (1 - float(o["fall"]) * np.clip(tt / d, 0, 1) ** 1.5)
+            y = np.sin(2 * np.pi * np.cumsum(fr) / SR) * np.exp(-tt / (d * 0.35))
+            y += 0.3 * np.sin(2 * np.pi * np.cumsum(fr * 2.76) / SR) * np.exp(-tt / (d * 0.15))
+        else:
+            y = synth.fm_bell(f, d, ratio=3.1, index=1.6, tau=d * 0.3)
+        if o.get("lp"):
+            y = fft_filter(y, "low", float(o["lp"]))
+            y = _layer(y, fft_filter(synth.noise(0.12, seed), "band", 300, 1500) * synth.decay(0.12, 0.03)[: synth.n_samples(0.12)] * 0.15)
+        return y * 0.7
+    if kind == "whistle":     # ep49: the dryer's breathy note. opts: pitch; "name": true rises and falls in two syllables
+        o = opts or {}
+        d = float(dur if dur != 1.0 else 2.4)
+        n = synth.n_samples(d)
+        tt = np.arange(n) / SR
+        f = float(o.get("pitch", 740.0)) * (1 + (0.12 * np.sin(np.pi * tt / d * 2) if o.get("name") else 0.0))
+        env = np.sin(np.pi * np.clip(tt / d, 0, 1)) ** 1.5
+        if o.get("name"):
+            env = env * (0.65 + 0.35 * np.cos(2 * np.pi * tt / (d / 2) + np.pi))
+        y = np.sin(2 * np.pi * np.cumsum(f) / SR) * env
+        y += fft_filter(synth.noise(d, seed), "band", 600, 1800) * env * 0.25
+        return y * 0.5
+    if kind == "clank":       # ep49: a slow clank of rollers
+        return _layer(synth.thump(0.18, 180, 90, seed) * 0.8,
+                      fft_filter(synth.noise(0.12, seed), "band", 500, 3000) * synth.decay(0.12, 0.03)[: synth.n_samples(0.12)] * 0.5)
+    if kind == "whirr":       # ep49: brushes spinning up
+        d = float(dur)
+        return synth.whirr(d, seed, 160.0) * np.sin(np.pi * np.clip(np.arange(synth.n_samples(d)) / SR / d, 0, 1)) ** 0.7 * 0.6
     if kind == "curlew":      # ep35, opt-in: a far, long falling whistle that ends in a bubbling trill
         n = synth.n_samples(dur)
         t = np.arange(n) / SR

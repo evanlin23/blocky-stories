@@ -1,0 +1,1773 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this town, every promise you make ties a knot over your head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.267
+    ],
+    [
+     1.267,
+     1.741
+    ],
+    [
+     1.741,
+     2.138
+    ],
+    [
+     2.138,
+     2.603
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Say \"I do,\" and you get a bright new one on the steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.19,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.19,
+     0.724
+    ],
+    [
+     0.828,
+     1.043
+    ],
+    [
+     1.043,
+     1.397
+    ],
+    [
+     1.397,
+     1.638
+    ],
+    [
+     1.638,
+     2.19
+    ]
+   ]
+  },
+  "L03": {
+   "text": "A guy who said \"I'll call you\" in spring still has his.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     1.0
+    ],
+    [
+     1.0,
+     1.431
+    ],
+    [
+     1.431,
+     2.293
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Old friends have their cords tangled into one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.492
+    ],
+    [
+     1.492,
+     2.121
+    ]
+   ]
+  },
+  "L05": {
+   "text": "The baker has so many he wears them like a scarf.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.155,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     1.069
+    ],
+    [
+     1.069,
+     1.457
+    ],
+    [
+     1.457,
+     2.103
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Keep one, and it slips loose in a puff of light.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     0.922
+    ],
+    [
+     0.922,
+     1.241
+    ],
+    [
+     1.241,
+     1.966
+    ]
+   ]
+  },
+  "L07": {
+   "text": "And the whole street claps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     1.241
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Me? I don't have a single knot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.0
+    ],
+    [
+     1.0,
+     1.483
+    ]
+   ]
+  },
+  "L09": {
+   "text": "I don't make promises.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.207
+    ]
+   ]
+  },
+  "L10": {
+   "text": "My dad has the oldest knot in town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.155
+    ],
+    [
+     1.155,
+     1.81
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Grey and hard, and ten years old.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.681,
+     1.069
+    ],
+    [
+     1.069,
+     1.569
+    ]
+   ]
+  },
+  "L12": {
+   "text": "I always figured it was one, he broke.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 2.0,
+   "onset": 0.19,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.19,
+     0.802
+    ],
+    [
+     0.802,
+     1.138
+    ],
+    [
+     1.172,
+     1.793
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Something he promised me when he moved out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.017
+    ],
+    [
+     1.017,
+     1.655
+    ]
+   ]
+  },
+  "L14": {
+   "text": "This August, Mum, said it had started pulling tight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     1.147
+    ],
+    [
+     1.147,
+     1.75
+    ],
+    [
+     1.75,
+     2.276
+    ]
+   ]
+  },
+  "L15": {
+   "text": "And Dad was sleeping up at his observatory on the hill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.974
+    ],
+    [
+     0.974,
+     1.715
+    ],
+    [
+     1.715,
+     2.276
+    ]
+   ]
+  },
+  "L16": {
+   "text": "It was falling-star week. He'd, be up there all night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8755,
+   "dur": 2.707,
+   "onset": 0.19,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.19,
+     0.862
+    ],
+    [
+     0.862,
+     1.543
+    ],
+    [
+     1.543,
+     1.931
+    ],
+    [
+     1.931,
+     2.483
+    ]
+   ]
+  },
+  "L17": {
+   "text": "So I climbed the hill, first time since he left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.776
+    ],
+    [
+     0.81,
+     1.319
+    ],
+    [
+     1.319,
+     1.897
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Dad looked up from the telescope and just said my name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.31
+    ],
+    [
+     1.31,
+     1.698
+    ],
+    [
+     1.698,
+     2.345
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Then went back to the sky.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.241
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Two chairs still sat by the eyepiece. His, and the one I used to sit in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.328,
+   "onset": 0.172,
+   "end": 3.121,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.103
+    ],
+    [
+     1.103,
+     1.948
+    ],
+    [
+     2.0,
+     2.25
+    ],
+    [
+     2.25,
+     2.543
+    ],
+    [
+     2.543,
+     3.121
+    ]
+   ]
+  },
+  "L21": {
+   "text": "I took the dusty stool by the wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     1.147
+    ],
+    [
+     1.147,
+     1.724
+    ]
+   ]
+  },
+  "L22": {
+   "text": "At midnight, his knot gave a long, slow creak.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.543,
+     0.922
+    ],
+    [
+     0.922,
+     1.224
+    ],
+    [
+     1.267,
+     2.017
+    ]
+   ]
+  },
+  "L23": {
+   "text": "And pulled one turn tighter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.362
+    ]
+   ]
+  },
+  "L24": {
+   "text": "Dad rubbed his eyes. His face looked grey under it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.414
+    ],
+    [
+     1.414,
+     1.966
+    ],
+    [
+     1.966,
+     2.328
+    ]
+   ]
+  },
+  "L25": {
+   "text": "That's when I saw someone by the dome door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.026
+    ],
+    [
+     1.026,
+     1.81
+    ]
+   ]
+  },
+  "L26": {
+   "text": "A man in a long green coat with brass buttons.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.957
+    ],
+    [
+     0.957,
+     1.517
+    ],
+    [
+     1.517,
+     2.086
+    ]
+   ]
+  },
+  "L27": {
+   "text": "With a square hole clean through his chest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.043
+    ],
+    [
+     1.043,
+     1.655
+    ]
+   ]
+  },
+  "L28": {
+   "text": "And through it... stars.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.19,
+     0.621
+    ],
+    [
+     0.69,
+     1.328
+    ]
+   ]
+  },
+  "L29": {
+   "text": "He was standing in front of a wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     0.888
+    ],
+    [
+     0.888,
+     1.5
+    ]
+   ]
+  },
+  "L30": {
+   "text": "No cord over his head. Just like mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.0
+    ],
+    [
+     1.069,
+     1.879
+    ]
+   ]
+  },
+  "L31": {
+   "text": "I looked at Dad, and the doorway was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.948
+    ],
+    [
+     0.948,
+     1.914
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Night two, the knot creaked again. Dad's hair had gone paler.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     0.94
+    ],
+    [
+     0.94,
+     1.75
+    ],
+    [
+     1.75,
+     2.586
+    ]
+   ]
+  },
+  "L33": {
+   "text": "The man stood by the star charts. closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.966
+    ],
+    [
+     0.966,
+     1.983
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Facing the telescope, the sky showing through his chest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ],
+    [
+     1.034,
+     1.621
+    ],
+    [
+     1.621,
+     2.379
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Dad never turned round.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.793,
+     1.328
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Night three, the knot was so tight the cord stood straight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.845
+    ],
+    [
+     0.845,
+     1.241
+    ],
+    [
+     1.241,
+     2.155
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Dad fell asleep sitting up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.345
+    ]
+   ]
+  },
+  "L38": {
+   "text": "And the man stood right behind the second chair. my chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.155,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.077
+    ],
+    [
+     1.077,
+     1.776
+    ],
+    [
+     1.87,
+     2.534
+    ]
+   ]
+  },
+  "L39": {
+   "text": "His eyes were on the empty seat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     1.008
+    ],
+    [
+     1.008,
+     1.466
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Night four, the dome lights faded down to the red working light.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     1.103
+    ],
+    [
+     1.103,
+     1.561
+    ],
+    [
+     1.561,
+     2.052
+    ],
+    [
+     2.052,
+     2.534
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Slowly. My eyes took ages to adjust.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.19,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.19,
+     0.845
+    ],
+    [
+     0.845,
+     1.345
+    ],
+    [
+     1.345,
+     1.879
+    ]
+   ]
+  },
+  "L42": {
+   "text": "When they did, he was right behind dad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.621,
+     1.017
+    ],
+    [
+     1.017,
+     1.776
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Bent over him, the square hole a hand from Dad's head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.716,
+     1.147
+    ],
+    [
+     1.147,
+     1.534
+    ],
+    [
+     1.534,
+     2.259
+    ]
+   ]
+  },
+  "L44": {
+   "text": "And through his chest went the brightest streak of the week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     1.017
+    ],
+    [
+     1.017,
+     1.543
+    ],
+    [
+     1.543,
+     2.086
+    ]
+   ]
+  },
+  "L45": {
+   "text": "I couldn't even breathe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.155
+    ]
+   ]
+  },
+  "L46": {
+   "text": "When the lights crept back, he was gone. Dad's knot was tighter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.155,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.879
+    ],
+    [
+     0.905,
+     1.448
+    ],
+    [
+     1.543,
+     2.069
+    ],
+    [
+     2.069,
+     2.603
+    ]
+   ]
+  },
+  "L47": {
+   "text": "I watched that door till dawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.431
+    ]
+   ]
+  },
+  "L48": {
+   "text": "The final night, cloud rolled in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.672,
+     1.586
+    ]
+   ]
+  },
+  "L49": {
+   "text": "Thick and grey, right across the slit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.707,
+     1.181
+    ],
+    [
+     1.181,
+     1.672
+    ]
+   ]
+  },
+  "L50": {
+   "text": "Not one falling star got through.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.586
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Dad just stared up. His knot creaked so hard I heard it from the wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.052,
+   "onset": 0.172,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.293
+    ],
+    [
+     1.293,
+     1.888
+    ],
+    [
+     1.888,
+     2.19
+    ],
+    [
+     2.19,
+     2.862
+    ]
+   ]
+  },
+  "L52": {
+   "text": "I thought that was it. Whatever he'd waited for wasn't coming.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     0.931
+    ],
+    [
+     1.0,
+     1.672
+    ],
+    [
+     1.672,
+     2.5
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Then the red light faded down, and the man was there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.276
+    ],
+    [
+     1.345,
+     1.69
+    ],
+    [
+     1.69,
+     2.328
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Standing over the second chair, halfway down to sit in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.207
+    ],
+    [
+     1.276,
+     1.854
+    ],
+    [
+     1.854,
+     2.448
+    ]
+   ]
+  },
+  "L55": {
+   "text": "And I remembered what Dad really promised me, the night he left.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.155,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.138
+    ],
+    [
+     1.138,
+     1.638
+    ],
+    [
+     1.707,
+     2.017
+    ],
+    [
+     2.017,
+     2.534
+    ]
+   ]
+  },
+  "L56": {
+   "text": "\"Every August, I'll save you a seat.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.0
+    ],
+    [
+     1.0,
+     1.534
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Ten years, and not one speck of dust on that chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.983
+    ],
+    [
+     0.983,
+     1.457
+    ],
+    [
+     1.457,
+     2.259
+    ]
+   ]
+  },
+  "L58": {
+   "text": "He'd kept that promise every single year.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.397
+    ],
+    [
+     1.397,
+     1.879
+    ]
+   ]
+  },
+  "L59": {
+   "text": "And a saved seat is not kept until somebody sits in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.379
+    ],
+    [
+     1.379,
+     2.052
+    ],
+    [
+     2.052,
+     2.517
+    ]
+   ]
+  },
+  "L60": {
+   "text": "So I sat down. Before the man could.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.034
+    ],
+    [
+     1.034,
+     1.707
+    ]
+   ]
+  },
+  "L61": {
+   "text": "The lights came back up. The man was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.0
+    ],
+    [
+     1.069,
+     1.431
+    ],
+    [
+     1.431,
+     1.966
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Over Dad's head, the grey knot loosened, and slipped free.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.879,
+     1.293
+    ],
+    [
+     1.293,
+     1.888
+    ],
+    [
+     1.888,
+     2.379
+    ]
+   ]
+  },
+  "L63": {
+   "text": "A little puff of light, under a sky with no stars.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.879
+    ],
+    [
+     0.948,
+     1.371
+    ],
+    [
+     1.371,
+     2.276
+    ]
+   ]
+  },
+  "L64": {
+   "text": "I looked at him and said, \"Hi, dad.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.897
+    ],
+    [
+     1.017,
+     1.724
+    ]
+   ]
+  },
+  "L65": {
+   "text": "He slid the eyepiece cap across to me, like he used to.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     1.138
+    ],
+    [
+     1.138,
+     1.379
+    ],
+    [
+     1.448,
+     1.793
+    ],
+    [
+     1.793,
+     2.069
+    ]
+   ]
+  },
+  "L66": {
+   "text": "We talked about everything until the cloud went pink.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.267
+    ],
+    [
+     1.267,
+     2.207
+    ]
+   ]
+  },
+  "L67": {
+   "text": "Somewhere in there, I said I'd be back next august.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.19,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.698,
+     1.008
+    ],
+    [
+     1.008,
+     1.5
+    ],
+    [
+     1.5,
+     2.034
+    ]
+   ]
+  },
+  "L68": {
+   "text": "In this town, every promise ties a knot. I've got one now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.19,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.595,
+     1.267
+    ],
+    [
+     1.267,
+     1.638
+    ],
+    [
+     1.707,
+     2.086
+    ],
+    [
+     2.086,
+     2.586
+    ]
+   ]
+  }
+ }
+}

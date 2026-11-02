@@ -1,6 +1,7 @@
 {
- "title": "Our building doesn't have a thirteenth floor",
- "description": "I live on twelve. The lift goes up anyway.\n\nA small building, a brass-and-black attendant, and a rule nobody gave me. It's made up. Built with code and Blender.\n\nMr. Okafor next door has never said hello.",
- "pin": "Would you have stepped out on thirteen?",
- "made_for_kids": false
+  "title": "Our building doesn't have a thirteenth floor",
+  "description": "I live on twelve. The lift goes up anyway.\n\nA small building, a brass-and-black attendant, and a rule nobody gave me. It's made up. Built with code and Blender.\n\nMr. Okafor next door has never said hello.",
+  "pin": "Would you have stepped out on thirteen?",
+  "made_for_kids": false,
+  "hold": "redo: the first line must state the world's rule (owner, 2026-11-02)"
 }

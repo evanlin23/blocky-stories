@@ -3,5 +3,6 @@
   "description": "Every Thursday I climb late in an old brick mill, alone, on the machine at the top of the wall. Since my slip last year, nobody holds my rope.\n\nThen one night I looked up from the top hold, and someone was standing on the ceiling. Upside down. One hold closer every week.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
   "pin": "Would you have let Sam hold your rope?",
   "made_for_kids": false,
-  "shape": "stand-in"
+  "shape": "stand-in",
+  "hold": "redo: the first line must state the world's rule (owner, 2026-11-02)"
 }
