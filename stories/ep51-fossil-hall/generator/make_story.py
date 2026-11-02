@@ -86,7 +86,7 @@ GLOW.update({"abe": 3.0, "planner": 4.0, "groom": 4.0, "bride": 4.0, "whisperer"
 SMILE, MOVED, TIRED, SLEEPY, SHEEPISH = "smirk", "soft", "neutral", "asleep", "worried"
 NEUTRAL = {"arms": [0, 0], "side": [0, 0], "head": [0, 0], "lean": 0, "tremble": 0, "blink": True, "sit": False}
 SITZ = -0.06
-acting = {n: [] for n in cast}
+acting = {n: [{"at": 0, "hidden": True, "blend": 0}] for n in cast}
 cues = []
 shots = []
 visible = set()
@@ -183,7 +183,7 @@ def shot(at, area, cam, who=None, note="", hall=None, step=2, hand=0.006, **extr
     return s
 
 
-STOOPED = {"yaw": 180, "pos": [-1.0, -3.9]}
+STOOPED = {"yaw": 180, "pos": [-1.0, -4.0]}
 
 
 def stooped(at, **kw):
@@ -211,22 +211,22 @@ stepz = lambda y: 0.17 * min(5, max(0, int((y - 2.9) // 0.55) + 1)) if y > 2.9 e
 SXC = 340.0
 
 
-def sp(x, y, yaw=180, **kw):
+def sp(x, y, yaw=0, **kw):
     return P(x, y, yaw, **kw) if y <= 2.9 else {"pos": (x, y, stepz(y)), "yaw": yaw, **kw}
 
 
 shot(0, "st", C([SXC - 0.25, -0.1, 1.62], [SXC - 0.1, 1.9, 1.55], 30), {
     "visitor": P(SXC - 0.1, 1.9, 0, expr=SMILE, head=[0, 4]),
-    "c1": sp(SXC + 1.5, 3.2, 180), "c2": sp(SXC - 1.7, 3.2, 180)},
+    "c1": sp(SXC + 1.5, 3.2, 0), "c2": sp(SXC - 1.7, 3.2, 0)},
      "the yellow raincoat on the sunny steps, smug, a gold rim", step=1)
 glow(0, "visitor", 3.0)   # a clear rim on the first frame, then settled
 glow("L01.1", "visitor", 1.5, 1.0)
 shot("L01.2", "st", C([SXC, -3.2, 2.5], [SXC, 3.6, 1.1], 26), {
-    "planner": sp(SXC, 3.6, 180, arms=[80, 80], side=[10, 10], expr=SMILE),
-    "c1": sp(SXC - 2.4, 3.2, 180, arms=[100, 0]), "c2": sp(SXC + 2.4, 3.3, 180, arms=[100, 100]),
-    "c3": sp(SXC - 1.2, 4.2, 180, arms=[100, 0]), "c4": sp(SXC + 1.2, 4.3, 180, arms=[90, 90]),
-    "c5": sp(SXC - 3.3, 4.2, 180), "c6": sp(SXC + 3.4, 3.2, 180), "c7": sp(SXC - 0.5, 2.6, 180, expr="shut"),
-    "c8": sp(SXC + 2.1, 5.2, 180), "c9": sp(SXC - 2.2, 5.3, 180), "c10": sp(SXC + 0.3, 5.1, 180),
+    "planner": sp(SXC, 3.6, 0, arms=[80, 80], side=[10, 10], expr=SMILE),
+    "c1": sp(SXC - 2.4, 3.2, 0, arms=[100, 0]), "c2": sp(SXC + 2.4, 3.3, 0, arms=[100, 100]),
+    "c3": sp(SXC - 1.2, 4.2, 0, arms=[100, 0]), "c4": sp(SXC + 1.2, 4.3, 0, arms=[90, 90]),
+    "c5": sp(SXC - 3.3, 4.2, 0), "c6": sp(SXC + 3.4, 3.2, 0), "c7": sp(SXC - 0.5, 2.6, 0, expr="shut"),
+    "c8": sp(SXC + 2.1, 5.2, 0), "c9": sp(SXC - 2.2, 5.3, 0), "c10": sp(SXC + 0.3, 5.1, 0),
     "visitor": P(SXC - 0.9, 1.7, 180, expr=SMILE)},
      "wider: a dozen rims and one man lit like a lamp", step=2)
 LV = 180.0
@@ -239,12 +239,12 @@ shot("L03", "ds", C([DX - 1.6, -2.2, 1.5], [DX + 0.1, 1.4, 1.4], 28), {
     "birthday": P(DX + 0.3, -0.5, 180, expr=SHEEPISH, head=[0, -6])},
      "dusk doorstep: the planner lamp-bright, the birthday man squinting")
 PX = 260.0
-shot("L04", "pk", C([PX, -2.6, 1.25], [PX, 0, 1.1], 32), {
+shot("L04", "pk", C([PX, -4.6, 1.5], [PX, 0, 1.0], 30), {
     "whisperer": SIT(PX - 0.55, 0.0, 0, head=[-35, 0], expr="neutral"),
     "friend": SIT(PX + 0.55, 0.0, 0, head=[0, 0], expr="neutral")}, "the whisperer leans to his friend's ear")
 glow("L04", "whisperer", 3.0)
 glow("L04", "friend", 1.0)
-shot("L04.2", "pk", C([PX, -1.6, 1.3], [PX + 0.05, 0, 1.15], 36), {
+shot("L04.2", "pk", C([PX, -3.2, 1.4], [PX + 0.05, 0, 1.1], 34), {
     "whisperer": SIT(PX - 0.55, 0.0, 0, head=[-35, 0], expr="neutral"),
     "friend": SIT(PX + 0.55, 0.0, 0, expr="neutral")}, "a spark crosses the gap and her rim swells")
 glow("L04.2", "whisperer", 1.0, 1.0)
@@ -252,27 +252,27 @@ glow("L04.2", "friend", 3.5, 1.0)
 key("friend", "L04.2", expr="wide", blend=0.1)
 cue("L04.2", "spark1", a=[PX - 0.55, 0.0, 1.3], b=[PX + 0.55, 0.0, 1.3])
 RX = 300.0
-shot("L05", "rs", C([RX, -2.5, 1.35], [RX, 0, 1.15], 32), {
+shot("L05", "rs", C([RX, -4.3, 1.9], [RX, 0, 1.0], 26), {
     "groom": SIT(RX - 1.15, 0, 90, expr="smirk"), "bride": SIT(RX + 1.15, 0, -90, expr=SMILE)},
      "the engaged couple glowing like two lamps, trying to look casual")
-shot("L05.2", "rs", C([RX + 0.5, -1.9, 1.45], [RX, 0.2, 1.0], 34), {
+shot("L05.2", "rs", C([RX + 0.4, -3.3, 1.85], [RX, 0.4, 1.0], 28), {
     "groom": SIT(RX - 1.15, 0, 90, expr="neutral"), "bride": SIT(RX + 1.15, 0, -90, expr="neutral"),
     "waiter": P(RX, 1.15, 0, lean=18, expr="neutral", head=[0, 8])}, "the waiter leans in to blow out the candles")
 shot("L06", "st", C([SXC, -0.4, 1.62], [SXC, 1.9, 1.55], 28), {
     "dull": P(SXC, 1.9, 0, expr=SMILE, arms=[85, 85], side=[-20, -20], head=[0, -8]),
-    "c1": sp(SXC - 1.4, 3.3, 180), "c2": sp(SXC + 1.5, 3.2, 180), "c4": sp(SXC + 0.4, 4.4, 180)},
+    "c1": sp(SXC - 1.4, 3.3, 0), "c2": sp(SXC + 1.5, 3.2, 0), "c4": sp(SXC + 0.4, 4.4, 0)},
      "the dullest man, no rim, arms folded, chin up")
 shot("L07", "st", C([SXC + 0.3, -0.1, 1.6], [SXC, 1.9, 1.55], 28), {
     "me": P(SXC, 1.9, 0, expr="neutral"),
-    "c1": sp(SXC - 1.3, 3.3, 180), "c2": sp(SXC + 1.2, 3.3, 180), "c3": sp(SXC - 0.3, 4.4, 180), "c4": sp(SXC + 0.9, 4.5, 180),
-    "c5": sp(SXC - 1.9, 4.5, 180)}, "me: close, no rim, a glowing crowd behind")
-shot("L08", "st", C([SXC, -0.7, 1.55], [SXC, 1.9, 1.45], 26), {
+    "c1": sp(SXC - 1.3, 3.3, 0), "c2": sp(SXC + 1.2, 3.3, 0), "c3": sp(SXC - 0.3, 4.4, 0), "c4": sp(SXC + 0.9, 4.5, 0),
+    "c5": sp(SXC - 1.9, 4.5, 0)}, "me: close, no rim, a glowing crowd behind")
+shot("L08", "st", C([SXC, -1.8, 1.55], [SXC, 1.9, 1.45], 24), {
     "me": P(SXC - 0.55, 1.9, 90, expr=SMILE), "c6": P(SXC + 0.6, 1.9, -90, expr="wide", head=[0, 3]),
-    "c1": sp(SXC - 1.8, 3.3, 180), "c2": sp(SXC + 1.8, 3.4, 180)}, "me chatting to a stranger who looks overwhelmed")
+    "c1": sp(SXC - 1.8, 3.3, 0), "c2": sp(SXC + 1.8, 3.4, 0)}, "me chatting to a stranger who looks overwhelmed")
 talk("me", "L08", "L08>")
-shot("L09", "hall", C([0.3, -6.6, 1.3], [0.2, -3.4, 1.1], 28), {
+shot("L09", "hall", C([0.4, -7.8, 1.6], [0.2, -3.4, 1.1], 26), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE, head=[-55, 0])},
-     "the fossil hall by day, from behind the bench: Abe's back and glow, me beside him talking", hall=1.0, step=2)
+     "the fossil hall by day, from behind the bench: Abe's back and glow, me beside him talking", hall=0.6, step=2)
 talk("me", "L09", "L09>")
 # ---- 02 Grandad (L10 to L20)
 TOUR = [("c1", -8.9, -7.2, 100), ("c2", -9.6, -8.1, 80), ("c3", -7.6, -8.4, 150), ("c4", -9.2, -6.9, 110),
@@ -290,15 +290,15 @@ shot("L13", "hall", C([0.0, 0.2, 1.2], [0.0, BY, 1.0], 26), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE)}, "Abe at one end, me at the other, a gap between")
 shot("L14", "hall", MV(([4.3, 0.2, 1.95], [6.0, 1.5, 1.7]), ([4.7, 0.2, 1.95], [6.3, 1.5, 1.68]), 38),
      {}, "along the tail to the paler, mended block")
-shot("L14.1", "hall", C([5.4, -3.0, 1.45], [6.1, 1.5, 1.7], 28), {
+shot("L14.1", "hall", C([5.6, -5.0, 1.55], [6.1, 1.5, 1.7], 26), {
     "c7": P(6.5, -0.7, 180, arms=[110, 0], expr="neutral"), "abe": P(4.3, -1.5, 180, expr=SMILE, head=[40, 0])},
      "a visitor points at the tail; behind, Abe's glow swells")
 glow("L14.1", "abe", 3.7, 1.0)
-shot("L15", "hall", C([6.9, -2.9, 1.4], [5.1, -0.3, 1.5], 28), {
+shot("L15", "hall", C([7.8, -4.6, 1.5], [5.1, -0.3, 1.5], 26), {
     "curator": P(5.5, -0.6, 180, arms=[150, 0], expr="neutral", head=[0, -22]),
     "abe": P(4.5, -0.55, 180, expr=SHEEPISH, head=[50, 0])}, "the curator points up at the pale block; Abe looks away")
 glow("L15", "abe", 3.7)
-shot("L16", "hall", C([6.9, -2.9, 1.4], [5.1, -0.3, 1.5], 28), {
+shot("L16", "hall", C([7.8, -4.6, 1.5], [5.1, -0.3, 1.5], 26), {
     "curator": P(5.5, -0.6, 180, arms=[150, 0], expr="neutral", head=[0, -22]),
     "abe": P(4.5, -0.55, 180, expr=SHEEPISH, head=[50, 0])}, "a week later: his glow stronger, her face lit warm by it")
 glow("L16", "abe", 4.6, 1.0)
@@ -309,9 +309,9 @@ shot("L17", "sr", MV(([SRX + 6.5, -3.4, 1.5], [SRX - 1.0, 3.8, 1.3]), ([SRX + 6.
 walk("abe", "L17>", (SRX - 1.0, 4.2))
 walk("c1", "L17>", (SRX + 1.4, -3.4))
 walk("c2", "L17>", (SRX + 2.3, -3.5))
-shot("L18", "hall", C([-6.4, -2.6, 1.55], [-12.0, 0.2, 1.5], 27), {
+shot("L18", "hall", C([-8.4, -5.0, 1.55], [-11.2, 0.0, 1.4], 24), {
     "curator": P(-10.4, -0.9, -90, arms=[90, 0], expr=SHEEPISH), "abe": P(-11.6, 0.6, -90, expr=TIRED)},
-     "the curator points him through the arch into the dark side rooms", hall=1.0)
+     "the curator points him through the arch into the dark side rooms", hall=0.6)
 glow("L18", "abe", 4.8)
 shot("L18.3", "gal", C([-16.2, -0.6, 1.5], [-20.2, 0.0, 1.25], 28), {"abe": P(-19.4, 0.0, 90, expr=TIRED)},
      "the dark gallery: Abe alone, the only light")
@@ -320,17 +320,17 @@ glow("L18.3+0.05", "abe", 5.0, 0.5)
 cue("L18.3", "gal", level=0.25)
 cue("L18.3+0.05", "gal", level=1.0, dur=0.5)
 BX = 420.0
-shot("L19", "bd", C([BX - 1.4, -1.9, 1.7], [BX, -0.1, 0.8], 28), {
+shot("L19", "bd", C([BX - 2.2, -2.4, 2.1], [BX, 0.1, 0.7], 30), {
     "abe": {"pos": (BX, 0.95, 0.7), "yaw": 180, "lean": -90, "expr": SLEEPY}}, "his small bedroom, a checked towel over his face")
 shot("L20", "hall", C([-2.0, -6.8, 1.35], [0.1, -3.4, 0.95], 26), {"abe": SIT(HX["abe"], BY, 180, expr=TIRED)},
-     "the bench: Abe alone at his end, mine empty", hall=1.0)
+     "the bench: Abe alone at his end, mine empty", hall=0.6)
 shot("L20.2", "lv", C([LV + 0.6, -2.6, 1.3], [LV, 0.85, 0.95], 28), {
     "me": SIT(LV, 0.85, 0, expr=SHEEPISH, head=[-45, 0])}, "me on the sofa, worried, looking away from the window")
 # ---- 03 traces (L21 to L28)
 cue("L21", "stripes", on=True)
 shot("L21", "hall", C([-9.2, 0.7, 1.58], [-30.0, 0.0, 1.5], 27), {
     "me": P(-11.0, 0.4, -90, expr="neutral"), "abe": P(-27.0, 0.0, 90, expr=TIRED)},
-     "me in the hall doorway; Abe far off in the dark gallery, a soft gold patch", hall=1.0)
+     "me in the hall doorway; Abe far off in the dark gallery, a soft gold patch", hall=0.6)
 glow("L21", "abe", 5.0)
 shot("L22", "gal", C([-19.7, 1.2, 0.95], [-19.7, 2.4, 0.98], 45), {}, "close on a dusty case glass")
 cue("L22", "stripes", on=False)
@@ -340,9 +340,9 @@ cue("L23", "stripes", on=True)
 shot("L23.1", "gal", C([-15.3, 1.0, 0.55], [-33.0, -2.2, 0.5], 26), {}, "down the gallery, the stripe running into the dark")
 shot("L24", "gal", C([-18.0, -0.7, 1.0], [-20.3, 1.7, 0.8], 30), {
     "me": P(-20.3, 1.55, 180, z=-0.28, lean=18, expr=SHEEPISH, head=[0, 8])}, "me crouching at the height of the stripe")
-shot("L25", "hall", C([0.2, -3.9, 0.7], [-4.2, 1.5, 5.0], 21), {}, "up from the bench to the skeleton's head, turned a little", hall=1.0)
+shot("L25", "hall", C([0.2, -3.9, 0.7], [-4.2, 1.5, 5.0], 21), {}, "up from the bench to the skeleton's head, turned a little", hall=0.6)
 cue("L25", "skull", yaw=16.0)
-shot("L26", "hall", C([0.2, -3.9, 0.7], [-4.2, 1.5, 5.0], 21), {}, "the same frame, the head turned more", hall=1.0)
+shot("L26", "hall", C([0.2, -3.9, 0.7], [-4.2, 1.5, 5.0], 21), {}, "the same frame, the head turned more", hall=0.6)
 cue("L26", "skull", yaw=34.0)
 shot("L27", "gal", C([-15.6, 0.9, 1.62], [-33.0, -1.5, 1.25], 28), {"abe": P(-17.4, 0.2, -90, expr=TIRED)},
      "over Abe's shoulder, down the gallery: something level and dark bends over a case at the far end")
@@ -358,7 +358,7 @@ shot("L28", "gal", C([-15.6, 0.9, 1.62], [-33.0, -1.5, 1.25], 28), {"abe": P(-17
 key("abe", "L28", yaw=-130, blend=0.9)
 glow("L28", "abe", 5.0)
 # ---- 04 taken (L29 to L41)
-shot("L29", "hall", C([0.0, -8.0, 1.65], [0.0, 1.5, 2.5], 20), {}, "the hall from the bench: the lamps ramp down", hall=1.0)
+shot("L29", "hall", C([0.0, -8.0, 1.65], [0.0, 1.5, 2.5], 20), {}, "the hall from the bench: the lamps ramp down", hall=0.6)
 cue("L29", "hall", level=0.07, dur=1.5)
 HALLLV["v"] = 0.07
 shot("P01", "hall", C([1.9, -5.6, 0.95], [-0.6, 0.6, 1.3], 22), {}, "hold on the dim hall", hall=0.07)
@@ -406,18 +406,18 @@ CROWD_POS = {  # the late-opening crowd, behind the bench (y < -4.6), all facing
 ABE_B = SIT(HX["abe"], BY, 180, expr=TIRED)
 shot("L42", "hall", C([0.0, -9.3, 6.2], [0.0, -3.0, 0.5], 22), {
     "abe": ABE_B, **{n: P(x, y, 180, expr="neutral") for n, (x, y) in CROWD_POS.items() if n != "c12"}},
-     "the hall from high up: a crowd, every visitor a soft rim", hall=0.16)
-shot("L43", "hall", C([-3.4, -7.9, 1.6], [-1.0, -4.8, 1.55], 28), {
+     "the hall from high up: a crowd, every visitor a soft rim", hall=0.3)
+shot("L43", "hall", C([-5.2, -9.0, 2.2], [-1.5, -5.4, 1.4], 24), {
     "c2": P(-3.1, -5.6, 150, expr=SMILE), "c3": P(-1.9, -7.0, 20, expr="soft"), "c8": P(-4.1, -6.5, 100, expr=SMILE),
     "c4": P(-0.2, -5.7, 200, expr=SMILE), "c9": P(-2.6, -8.3, 60, expr="neutral")}, "mid shot through the crowd, faces lit warm")
-shot("L44", "hall", C([-2.9, -6.6, 1.15], [1.0, BY, 1.3], 30), {
+shot("L44", "hall", C([-5.6, -8.6, 2.3], [1.0, BY, 1.2], 24), {
     "abe": ABE_B, "c1": P(-1.2, -5.7, 190, expr="neutral"), "c4": P(2.9, -5.5, 160, expr="neutral")},
      "through gaps in the crowd: Abe lit like a lantern, the skeleton above")
 glow("L44", "abe", 6.0, 1.0)
 shot("L44.2", "hall", C([0.2, -8.4, 1.55], [0.9, -5.5, 1.55], 32), {
     "c3": P(0.6, -5.6, 180, arms=[110, 100], expr="worried"), "c5": P(1.6, -5.5, 180, arms=[110, 100], expr="worried"),
     "c6": P(2.6, -5.9, 180, arms=[100, 100], expr="worried")}, "two visitors squinting, hands up")
-shot("L45", "hall", C([-6.4, -8.0, 1.6], [-4.7, -5.6, 1.55], 27), {
+shot("L45", "hall", C([-7.4, -9.0, 1.9], [-4.7, -5.6, 1.5], 24), {
     "me": P(-4.7, -5.6, 113, expr=SHEEPISH), "c8": P(-5.6, -5.0, 140), "c12": P(-3.3, -5.0, 200), "c1": P(-5.0, -7.6, 180)},
      "me at the edge of the crowd, worried, looking toward the bench")
 shot("L46", "hall", MV(([-2.6, -8.3, 1.55], [-3.4, -5.6, 1.5]), ([-2.0, -8.3, 1.55], [-2.6, -4.6, 1.5]), 28), {
@@ -433,9 +433,11 @@ key("c1", "L47.2+0.7", yaw=180, expr="blank", blend=0.4)
 key("c9", "L47.3", yaw=180, expr="blank", blend=0.4)
 key("c8", "L47.3+0.3", yaw=180, expr="blank", blend=0.4)
 stooped("L47.3")
+cue("L47", "hall", level=0.12, dur=1.2)
+HALLLV["v"] = 0.12
 shot("L47.3", "hall", C([0.2, -9.4, 6.4], [-1.0, -4.4, 0.4], 24), {
     "abe": ABE_B, **{n: P(x, y, 180, expr="blank") for n, (x, y) in CROWD_POS.items() if n not in ("c12", "c14")}},
-     "the crowd's glow from high up: a dark gap at my end of the bench", hall=0.16)
+     "the crowd's glow from high up: a dark gap at my end of the bench", hall=0.3)
 shot("L48", "hall", C([-6.3, -6.7, 1.62], [-1.0, -3.4, 1.0], 27), {
     "me": P(-5.1, -5.3, 60, expr="scared"), "c2": P(-3.1, -5.6, 180, expr="blank"), "c8": P(-5.4, -4.2, 180, expr="blank"),
     "c1": P(-4.2, -6.9, 180, expr="blank"), "abe": ABE_B}, "over my shoulder: the crowd parts and the bench's end is in shadow")
@@ -451,12 +453,12 @@ shot("L54", "hall", C([-1.6, -1.5, 0.36], [-1.0, -2.9, 0.34], 36), {"abe": ABE_B
 stooped("L54.2", roll=82, pitch=0, hyaw=12)
 shot("L54.2", "hall", C([-1.5, -1.5, 0.36], [-1.0, -2.9, 0.34], 36), {"abe": ABE_B}, "half round")
 stooped("L54.3", roll=0, pitch=0, hyaw=0)
-shot("L54.3", "hall", C([-1.0, -1.6, 0.1], [-1.0, -2.9, 0.42], 40), {"abe": ABE_B}, "fully round, the right way up, eyes on camera, from below", hand=0.003)
+shot("L54.3", "hall", C([-1.0, -1.45, 0.08], [-1.0, -2.9, 0.62], 34), {"abe": ABE_B}, "fully round, the right way up, eyes on camera, from below", hand=0.003)
 shot("L55", "hall", C([0.0, -0.3, 1.25], [0.0, BY, 0.85], 22), {"abe": ABE_B}, "Abe glowing at his end, the Stooped a dark outline at mine, no rim")
 shot("L56", "hall", C([-0.2, -1.8, 0.45], [-1.0, -2.9, 0.4], 38), {"abe": ABE_B}, "close on its face, warm light on one side only")
-stooped("L57", roll=0, neck=-60, pitch=-58)
-shot("L57", "hall", C([-3.4, -2.0, 1.15], [-1.0, -2.1, 1.0], 30), {
-    "abe": ABE_B, "me": P(-1.0, -1.65, 0, expr="scared", lean=22, head=[0, 12])}, "its face leans up to mine, a hand's width away", hand=0.003)
+stooped("L57", roll=0, neck=-80, pitch=-70)
+shot("L57", "hall", C([-4.4, -2.1, 1.05], [-1.0, -2.0, 1.0], 30), {
+    "abe": ABE_B, "me": P(-1.0, -1.7, 0, expr="scared", lean=4, head=[0, 18])}, "its face leans up to mine, a hand's width away", hand=0.003)
 # ---- 06 the loophole (L58 to L70)
 shot("L58", "hall", C([0.9, -1.2, 1.15], [HX["abe"], BY, 1.1], 32), {"abe": SIT(HX["abe"], BY, 180, expr=TIRED, head=[0, -32])},
      "Abe won't look at me; he's looking at the tail")
@@ -497,20 +499,20 @@ shot("L69", "hall", C([1.0, -1.7, 1.3], [0.55, BY, 1.1], 40), {
     "abe": SIT(HX["abe"], BY, 180, expr=MOVED), "me": P(-0.1, -1.9, 160, expr="soft", head=[-25, 0])},
      "Abe close; I come into the edge of frame beside him, lowering. The camera stays on him through the cut")
 walk("me", "L69>", (-0.7, -2.5))
-shot("L70", "hall", C([0.0, -0.3, 1.25], [0.0, BY, 0.85], 22), {
+shot("L69.2", "hall", C([0.0, -0.3, 1.25], [0.0, BY, 0.85], 22), {
     "abe": SIT(HX["abe"], BY, 180, expr=MOVED), "me": SIT(HX["me"], BY, 180, expr=MOVED),
     "c3": P(-0.7, -1.7, 180, arms=[40, 40], expr=SMILE), "c5": P(1.3, -1.8, 180, arms=[40, 40], expr=SMILE),
     "c4": P(-2.0, -1.9, 180, arms=[40, 40], expr=SMILE), "c6": P(2.6, -1.7, 180, arms=[40, 40], expr=SMILE)},
      "me seated at my end, Abe at his, nothing over my seat, the crowd starting to clap")
-key("c3", "L70.1", arms=[75, 75], blend=0.2)
-key("c5", "L70.1", arms=[75, 75], blend=0.2)
-key("c4", "L70.1+0.25", arms=[75, 75], blend=0.2)
-key("c6", "L70.1+0.25", arms=[75, 75], blend=0.2)
+key("c3", "L70", arms=[75, 75], blend=0.2)
+key("c5", "L70", arms=[75, 75], blend=0.2)
+key("c4", "L70+0.25", arms=[75, 75], blend=0.2)
+key("c6", "L70+0.25", arms=[75, 75], blend=0.2)
 shot("L70.2", "hall", C([-0.45, -3.9, 0.22], [-1.55, -3.4, 0.2], 36), {
     "abe": SIT(HX["abe"], BY, 180, expr=MOVED), "me": SIT(HX["me"], BY, 180, expr=MOVED)},
      "the lore plant: close and low on the bench's iron leg, two short strokes scratched in", step=4, hand=0.002)
 # ---- 07 the name (L71 to L80)
-shot("L71", "hall", C([6.9, -1.7, 1.4], [5.1, -0.3, 1.45], 28), {
+shot("L71.1", "hall", C([6.9, -1.7, 1.4], [5.1, -0.3, 1.45], 28), {
     "curator": P(5.55, -0.5, -90, arms=[50, 0], expr=SMILE), "abe": P(4.6, -0.5, 90, arms=[50, 0], expr=SMILE)},
      "the curator and Abe by the tail, smiling; cut before the hands meet")
 SRX2 = 380.0
@@ -519,7 +521,7 @@ shot("L72", "sr", C([SRX2 + 5.0, 0.3, 1.5], [SRX2 - 0.4, 4.0, 1.3], 26), {
     "abe": P(SRX2 - 1.4, 4.0, 90, expr=SMILE), "c1": P(SRX2 + 0.2, 4.0, -90, expr=SMILE)}, "dusk street: a neighbour stops to talk")
 glow("L73", "me", 0.0)
 shot("L73", "hall", C([0.0, 0.2, 1.2], [0.0, BY, 1.0], 26), {
-    "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE)}, "back on the bench, one at each end", hall=0.16)
+    "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE)}, "back on the bench, one at each end", hall=0.3)
 shot("L74", "hall", C([0.0, -0.9, 1.25], [0.0, BY, 1.15], 36), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE)}, "two faint gold rims, his and mine")
 glow("L74", "me", 1.0, 1.0)
@@ -577,6 +579,7 @@ story = {
     "glow": GLOW,
     "glow_later": ["me"],
     "glow_lights": ["abe", "planner", "groom", "bride"],
+    "glow_light_w": 260.0,
     "cast": cast,
     "lines": lines,
     "shots": shots,

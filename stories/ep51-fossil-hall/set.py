@@ -26,9 +26,10 @@ from PIL import Image, ImageDraw
 from blocky import faces, rig
 
 U = 0.34                       # metres per rig unit
-GLOW_UNIT = 0.55               # emission strength of the nearest shell at glow strength 1
-SHELLS = ((0.10, 1.0), (0.24, 0.5), (0.42, 0.22))   # (grow in rig units, share of the strength)
+GLOW_UNIT = 0.7               # emission strength of the nearest shell at glow strength 1
+SHELLS = ((0.035, 1.0), (0.085, 0.5), (0.15, 0.22))   # (grow in rig units, share of the strength)
 GOLD = "#ffd98a"
+GLOW_GOLD = "#ffb83a"
 
 
 # ------------------------------------------------------------------------------------------------ helpers
@@ -307,7 +308,7 @@ def build_hall(kit, M, ctx):
         for dy in (-2.4, 2.4):
             B(kit, f"lampface {x} {dy}", (1.8, 0.2, 0.06), (x, -2.0 + dy, 7.1), M["lamp"])
     kit.light("stooped rim", "SPOT", (-1.0, -8.2, 3.0), 700.0, "#8fb0ff", size=0.3, spot=34, blend=0.7)
-    kit.aim(kit.LIGHTS["stooped rim"]["obj"], (-1.0, -3.9, 1.1))
+    kit.aim(kit.LIGHTS["stooped rim"]["obj"], (-1.0, -3.9, 1.2))
     kit.light("tail gold", "POINT", (5.6, -0.5, 2.3), 140.0, GOLD, size=0.3)
     kit.light("hall blue", "AREA", (0, -1.5, 6.8), 650.0, "#7f9bd6", rot=(0, 0, 0), size=10.0)
     ctx["lamp_mat"] = M["lamp"]
@@ -394,7 +395,7 @@ def build_gallery(kit, M, ctx):
         ctx["stripes"] += cs[1]
         cs = case(kit, M, f"gcase s{k}", x + 0.2, -2.5, 1, length=1.7, dusty=True, items=k + 1)
         ctx["stripes"] += cs[1]
-    kit.light("gal moon", "AREA", (-24, 0, 6.2), 280.0, "#6f8fcf", rot=(0, 0, 0), size=8.0)
+    kit.light("gal moon", "AREA", (-24, 0, 6.2), 650.0, "#6f8fcf", rot=(0, 0, 0), size=8.0)
 
 
 def build_basement(kit, M, ctx):
@@ -473,22 +474,22 @@ def stooped_face(path_face, path_mask):
 
 def build_stooped(kit, M, ctx):
     root = kit.empty("stooped", (0, 0, -40))
-    B(kit, "st torso", (0.62, 1.2, 0.36), (0, -0.4, 1.06), M["coat"], root, bevel=0.04)
-    B(kit, "st coat tail", (0.64, 0.06, 0.62), (0, 0.22, 0.78), M["coat"], root, bevel=0.02)
-    B(kit, "st collar", (0.4, 0.2, 0.2), (0, -0.98, 1.18), M["coat"], root, bevel=0.04)
+    B(kit, "st torso", (0.52, 1.3, 0.3), (0, -0.45, 1.26), M["coat"], root, bevel=0.04)
+    B(kit, "st coat tail", (0.54, 0.06, 0.8), (0, 0.22, 0.8), M["coat"], root, bevel=0.02)
+    B(kit, "st collar", (0.34, 0.2, 0.2), (0, -1.05, 1.3), M["coat"], root, bevel=0.04)
     for s in (-1, 1):
-        B(kit, f"st leg{s}", (0.28, 0.28, 0.88), (s * 0.17, 0.0, 0.44), M["trou"], root, bevel=0.03)
-        B(kit, f"st shoe{s}", (0.3, 0.46, 0.12), (s * 0.17, -0.07, 0.06), M["shoe"], root, bevel=0.04)
-        B(kit, f"st sleeve{s}", (0.2, 0.2, 0.78), (s * 0.43, -0.9, 0.62), M["coat"], root, bevel=0.03)
-        B(kit, f"st hand{s}", (0.18, 0.18, 0.16), (s * 0.43, -0.9, 0.15), M["hand"], root, bevel=0.04)
+        B(kit, f"st leg{s}", (0.25, 0.25, 1.12), (s * 0.15, 0.0, 0.56), M["trou"], root, bevel=0.03)
+        B(kit, f"st shoe{s}", (0.28, 0.44, 0.12), (s * 0.15, -0.07, 0.06), M["shoe"], root, bevel=0.04)
+        B(kit, f"st sleeve{s}", (0.17, 0.17, 1.0), (s * 0.37, -1.0, 0.68), M["coat"], root, bevel=0.03)
+        B(kit, f"st hand{s}", (0.15, 0.15, 0.2), (s * 0.37, -1.0, 0.12), M["hand"], root, bevel=0.04)
     # four round brass buttons down the hanging front (the underside of the folded body)
     for i in range(4):
-        kit.cyl(f"st button{i}", 0.04, 0.03, (0, -0.1 - i * 0.24, 0.875), M["brass"], root, n=14)
-    B(kit, "st pin", (0.07, 0.07, 0.02), (0.13, -0.88, 0.875), M["brass"], root)
+        kit.cyl(f"st button{i}", 0.04, 0.03, (0, -0.18 - i * 0.24, 1.105), M["brass"], root, n=14)
+    B(kit, "st pin", (0.07, 0.07, 0.02), (0.12, -0.95, 1.105), M["brass"], root)
     # the neck hangs from the shoulders' front end and swings; the head hangs from it, upside down
-    neck = kit.empty("st neck", (0, -1.0, 1.04), root)
-    B(kit, "st neck box", (0.17, 0.17, 0.5), (0, 0, -0.25), M["coat"], neck, bevel=0.03)
-    headr = kit.empty("st headroll", (0, 0, -0.7), neck)
+    neck = kit.empty("st neck", (0, -1.1, 1.22), root)
+    B(kit, "st neck box", (0.14, 0.14, 0.58), (0, 0, -0.29), M["coat"], neck, bevel=0.03)
+    headr = kit.empty("st headroll", (0, 0, -0.6), neck)
     path = bpy.app.tempdir or "/tmp/"
     pf, pm = path + "stooped-face.png", path + "stooped-mask.png"
     stooped_face(pf, pm)
@@ -514,9 +515,9 @@ def build_stooped(kit, M, ctx):
     L.new(mul.outputs[0], b.inputs["Emission Strength"])
     kit._fogged(m, b.outputs[0])
     # the head mesh is in rig units (radius 0.62): scale it to metres. headr sits at the head's centre, so a roll turns it in place
-    headr.location = (0, 0, -0.7 - 0.2)
+    headr.location = (0, 0, -0.6 - 0.3)
     hm = rig.head_mesh("st head", m, headr)
-    hm.scale = (U * 1.05, U * 1.05, U * 1.3)
+    hm.scale = (U * 0.95, U * 0.95, U * 1.55)
     ctx["stooped"] = dict(root=root, neck=neck, headr=headr)
 
 
@@ -560,7 +561,7 @@ def glow_material(kit, who, ring, share):
     L.new(geo.outputs["Backfacing"], f.inputs[0])
     L.new(on.outputs[0], f.inputs[1])
     em = N.new("ShaderNodeEmission")
-    em.inputs["Color"].default_value = kit.col(GOLD)
+    em.inputs["Color"].default_value = kit.col(GLOW_GOLD)
     em.inputs["Strength"].default_value = 0.0
     tr = N.new("ShaderNodeBsdfTransparent")
     mix = N.new("ShaderNodeMixShader")
@@ -757,7 +758,7 @@ def animate(kit, story, tl, t, ctx):
         for ob in g["shells"]:
             ob.hide_render = not on
         for em, onn, share in g["mats"]:
-            em.inputs["Strength"].default_value = GLOW_UNIT * s * share
+            em.inputs["Strength"].default_value = GLOW_UNIT * (min(s, 6.0) ** 0.7) * share
             onn.outputs[0].default_value = 1.0 if on else 0.0
     for who in story.get("glow_lights", []):
         L = kit.LIGHTS[f"gl {who}"]
