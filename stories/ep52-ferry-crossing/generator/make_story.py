@@ -143,7 +143,7 @@ shot("L08", "the dog up the gangway among legs", still([-2.2, -12.6, 0.4], [0.1,
                                           ("L08+2.6", [-0.8, -22, 0.9])]),
       "pass2": P([0.9, -13.0, 0.0], walk=[("L08+0.8", [0.9, -15.3, 0.0]), ("L08+1.9", [0.9, -18.5, 0.9]),
                                          ("L08+2.8", [0.9, -22, 0.9])])})
-shot("L08.2", "the dog on an island doorstep", still([305.4, -5.2, 0.7], [308.9, -3.1, 0.5], 28))
+shot("L08.3", "the dog on an island doorstep", still([305.4, -5.2, 0.7], [308.9, -3.1, 0.5], 28))
 
 # ------------------------------------------------------------------------------------------------ 02 the glove
 shot("L09", "me among the passengers, a thing hopping behind each, nothing behind me",
@@ -459,7 +459,7 @@ cue("L08", "dog", pos=[0.1, -14.3, 0], yaw=[0], gait=1)
 cue("L08+0.5", "dog", pos=[0.1, -15.3, 0], yaw=[0], gait=1)
 cue("L08+1.4", "dog", pos=[0.1, -18.5, 0.9], yaw=[0], gait=1)
 cue("L08+2.6", "dog", pos=[0.1, -22.0, 0.9], yaw=[0], gait=1)
-cue("L08.2", "dog", pos=[X + 8.55, -3.0, 0], yaw=[90], gait=0, snap=True)
+cue("L08.3", "dog", pos=[X + 8.55, -3.0, 0], yaw=[90], gait=0, snap=True)
 cue("L09", "dog", hide=True, pos=[0, 0, 0])
 cue("L54", "dog", pos=[X + 8.55, -3.0, 0], yaw=[90], gait=0)
 cue("L55", "dog", hide=True, pos=[0, 0, 0])

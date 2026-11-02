@@ -2052,7 +2052,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the dog on an island doorstep",
-   "at": "L08.2"
+   "at": "L08.3"
   },
   {
    "id": "S12",
@@ -6469,7 +6469,7 @@
     ]
    },
    {
-    "at": "L08.2",
+    "at": "L08.3",
     "hidden": true,
     "blend": 0
    },
@@ -6621,7 +6621,7 @@
     ]
    },
    {
-    "at": "L08.2",
+    "at": "L08.3",
     "hidden": true,
     "blend": 0
    },
@@ -7661,7 +7661,7 @@
    "gait": 1
   },
   {
-   "at": "L08.2",
+   "at": "L08.3",
    "name": "dog",
    "pos": [
     308.55,

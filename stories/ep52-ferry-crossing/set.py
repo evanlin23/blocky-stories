@@ -1133,7 +1133,7 @@ def animate(kit, story, tl, t, ctx):
     over["k fill"] = 60.0
     over["d lamp"] = 28.0
     over["d fill"] = 55.0
-    over["b lamp"] = 110.0
+    over["b lamp"] = 200.0
     over["h lamp"] = 240.0
     over["blue lamp"] = 22.0
     over["deck lamp 0"] = over["deck lamp 1"] = over["deck lamp 2"] = 90.0
