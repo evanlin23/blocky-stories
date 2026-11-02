@@ -35,6 +35,7 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
 
 ## The look
 - **Characters** (`blocky/rig.py`, `faces.py`): R6 blocky bodies, a soft rounded-cylinder head, flat drawn faces with thick black strokes, block hair, hats, patterned shirts. A face at phone size is at least 1/5 of the frame width, out of the caption band.
+  - **The body type stays** (owner, 2026-11-01: "I kinda want them to be the same body type"). Research found that Roblox's terms restrict off-platform commercial use of "derivatives of the classic Roblox avatars" (R6/R15), and our proportions match R6 (`docs/research/2026-11-01-web-research.md`). The owner accepted that risk. Keep it small everywhere else: every face, hair piece, outfit and pattern is our own, never a catalogue item or the default face, and there's never the name, logo or UI anywhere.
 - **Sets:** realistic materials around the plastic avatars (brick, wood, cobbles, concrete), practical lights that flicker, long shadows, game-engine fog. Each story's `set.py` is new.
 - **The creature** is the thing that makes or breaks a story:
   - It's built from the same blocks as everyone else, but wrong: too tall, too wide or too flat, limbs too long, a face blank, upside down or opening onto darkness. It's never seen moving, only closer. Thin rods and tentacles read as props (owner: "the tentacle just looks silly").

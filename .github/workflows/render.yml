@@ -1,6 +1,6 @@
 # Final render on GitHub's free runners (public repo). On every push to main, each story whose gate is open and
 # that has no render release yet is drawn in 16 parallel shards, then assembled: finish, narration, mix and the
-# flash measure. The film goes to a release `render-<story>`; the daily upload takes it from there.
+# flash measure. The film is kept as the run artifact `film-<story>` (90 days); the daily upload takes it from there.
 name: render
 on:
   push:
@@ -10,7 +10,7 @@ on:
     inputs:
       story: {description: "story folder (blank = every story that's ready)", default: ""}
 concurrency: {group: render, cancel-in-progress: false}
-permissions: {contents: write}
+permissions: {contents: read, actions: read}
 env:
   SHARDS: 16
 jobs:
@@ -85,15 +85,26 @@ jobs:
           python -m blocky voice $S --verify
           python -m blocky finish $S
           python -m blocky mix $S
-      - name: flash measure and release
+      - name: flash measure
+        id: flash
         run: |
           S=${{ matrix.story }}
-          SLUG=$(python -c "import json;print(json.load(open('stories/$S/story.json')).get('slug','$S'))")
-          set +e; python -m blocky flash $S; FLASH=$?; set -e
-          cp out/work/$S/mix.json out/$SLUG.mix.json
-          PRE=""; [ $FLASH -eq 0 ] || PRE="--prerelease"
-          { echo "Final render of \`$S\` at ${GITHUB_SHA::7}."; echo
-            [ $FLASH -eq 0 ] && echo "Flash bar: pass. Queued for the daily upload." || echo "Flash bar: **FAIL**. Not uploaded; see the flash report and redraw the named shots."; } > notes.md
-          gh release create render-$S out/$SLUG.mp4 out/$SLUG.contact.png out/$SLUG.flash.json out/$SLUG.mix.json \
-            --title "$SLUG" --notes-file notes.md --target "$GITHUB_SHA" $PRE
-          exit $FLASH
+          set +e; python -m blocky flash $S; echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: keep the film
+        uses: actions/upload-artifact@v4
+        with:
+          name: film-${{ matrix.story }}
+          path: |
+            out/*.mp4
+            out/*.contact.png
+            out/*.flash.json
+            out/work/${{ matrix.story }}/mix.json
+          retention-days: 90
+          compression-level: 0
+      - name: flash result
+        run: |
+          if [ "${{ steps.flash.outputs.code }}" != "0" ]; then
+            echo "::error::the film fails the flash bar; it's kept as the film artifact but won't be uploaded. Redraw the shots the flash report names."
+            exit 1
+          fi
+          echo "film-${{ matrix.story }} is ready for the daily upload"

@@ -2,7 +2,7 @@
 
     python scripts/upload.py [--story NAME] [--dry-run]
 
-Ready means: not in uploads.json, the gate is open, and its render release holds the film with a passing flash
+Ready means: not in uploads.json, the gate is open, and the render workflow's film artifact has a passing flash
 report. The oldest episode number goes first. One story per run (the workflow runs once a day).
 
 With the YouTube secrets set (YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN; docs/youtube-setup.md) and the
@@ -21,7 +21,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from stories import ROOT, UPLOADS, all_stories, gate_open, release_assets, release_tag, slug, uploads
+from stories import ROOT, UPLOADS, all_stories, film, gate_open, slug, uploads
 
 from blocky.gate import load_package
 
@@ -32,17 +32,18 @@ def next_story(done: dict) -> str | None:
     for s in all_stories():
         if s in done:
             continue
-        assets = release_assets(s)
-        if assets and f"{slug(s)}.mp4" in assets and gate_open(s):
+        if film(s) and gate_open(s):
             return s
     return None
 
 
 def fetch(story: str, d: Path) -> tuple[Path, dict]:
+    f = film(story)
+    subprocess.run(["gh", "run", "download", str(f["run_id"]), "--repo", REPO, "-n", f"film-{story}", "-D", str(d)],
+                   check=True)
     s = slug(story)
-    subprocess.run(["gh", "release", "download", release_tag(story), "--dir", str(d), "--pattern", f"{s}.mp4",
-                    "--pattern", f"{s}.flash.json", "--pattern", f"{s}.contact.png"], check=True)
-    return d / f"{s}.mp4", json.loads((d / f"{s}.flash.json").read_text())
+    mp4 = next(d.rglob(f"{s}.mp4"))
+    return mp4, json.loads(next(d.rglob(f"{s}.flash.json")).read_text())
 
 
 def description(pkg: dict, flash: dict) -> str:
@@ -117,7 +118,7 @@ def main() -> None:
         return
     pkg = load_package(story)
     s = slug(story)
-    rel = f"https://github.com/{REPO}/releases/tag/{release_tag(story)}"
+    rel = film(story)["url"] + " (the `film-" + story + "` artifact, at the bottom of the run page)"
     with tempfile.TemporaryDirectory() as td:
         mp4, flash = fetch(story, Path(td))
         if not flash.get("house_bar", {}).get("pass"):
