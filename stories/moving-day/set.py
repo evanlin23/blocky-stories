@@ -60,14 +60,18 @@ _ms.loader.exec_module(marker)
 
 # ------------------------------------------------------------------------------------------------ Mum's room
 X0, X1, Y1 = -1.7, 1.3, 3.3
-CEIL = 2.35
+CEIL = 2.35                # the height the walls, ceilings and the Boxes' poses are built at
+LOW, LADDER = 1.84, 3.3    # the ceiling rests on my hair at the start; ladder height from the third morning
+PC = {"h": CEIL}           # the ceiling height the Boxes' pose is solved against (animate sets it per pose)
+TOPS = []                  # wall pieces that reach the ceiling: (object, bottom z), restretched every frame
+CEILS = []                 # things fixed to the ceiling: (object, built z)
 SQUARE_X = (-2.3, -1.7)   # L46: the door's square of light on the hall's south wall and ceiling
 SQUARE_Z0 = 1.05
 SQUARE_DEPTH = 0.6
 WALL_T = 0.12
 DOOR_X = (-1.6, -0.85)                    # her door, front wall, near the bed's head: I stand in it
-DOOR_H = 2.0
-WIN_Y, WIN_Z = (1.0, 2.0), (0.9, 1.95)    # the window, right wall, curtained
+DOOR_H = 1.78
+WIN_Y, WIN_Z = (1.0, 2.0), (0.9, 1.7)    # the window, right wall, curtained
 BED_X, BED_Y = (X0, X0 + 2.05), (1.25, 2.6)
 BASE_Z, MAT_Z = 0.2, 0.42                 # the divan's top, the mattress's top
 DRAWERS = (-0.5, 0.25)                    # the chest of drawers just inside the door, with the lamp
@@ -89,9 +93,9 @@ MY_DOOR = (-2.75, -2.0)              # my door, the hall's north wall
 FRONT_DOOR_H = (-3.2, -2.45)         # the front room's doorway, the hall's south wall
 KITCHEN_DOOR = (0.1, 0.8)            # the kitchen's doorway, the hall's south wall
 STREET_DOOR = (-4.3, -3.45)          # the front door, in the front room's south wall: it opens straight in
-MY_WIN = (-3.4, -2.7, 0.9, 1.9)      # my room's back wall
-FRONT_WIN = (-4.85, -4.05, 0.8, 1.85)   # the front room's east wall, with its deep sill (the mug)
-KIT_WIN = (0.8, 1.5, 1.0, 1.8)       # over the sink
+MY_WIN = (-3.4, -2.7, 0.85, 1.7)      # my room's back wall
+FRONT_WIN = (-4.85, -4.05, 0.8, 1.7)   # the front room's east wall, with its deep sill (the mug)
+KIT_WIN = (0.8, 1.5, 0.95, 1.7)       # over the sink
 CUP_Y = (-1.2, -0.35)                # the cupboard's door, in the hall's east wall
 SHELF_Z = 1.2                        # the cupboard shelf, chest height
 SILL = (-0.8, -4.45, 0.8)            # where the mug stands on the front sill
@@ -117,7 +121,8 @@ HIP_Z = DIM["shin"][2] + DIM["thigh"][2] + 1.5 * G
 TONES = ["#a8794c", "#9b6d43", "#b2865a", "#8f6640", "#a57a50", "#b08152", "#9d7349", "#a98055"]
 FACE_TONE = "#a87b50"                     # the face box, always
 FACES = marker.FACES
-GLOSSY = {"stare"}                        # the one wet, glossy face
+GLOSSY = {"stare"}
+FACE_K = 22                               # the stack box (top row, fifth column) the face box takes the place of                        # the one wet, glossy face
 
 # Poses: angles in degrees. hip [forward, out], knee bend; waist / spine1 / spine2 [forward, side, twist];
 # neck: how many neck boxes show (0 to 3), chain: {"to": [x, y], "drop": deg} the chain runs along the ceiling
@@ -169,6 +174,19 @@ POSES = {
                    "body_aim": [SOLO_FLOOR[0], SOLO_FLOOR[1], 0.32], "body_gain": 1.0},
     "solo_shelf": {"solo": True, "at": SOLO_SHELF, "yaw": -90, "body_key": [SOLO_SHELF[0] - 0.55, SOLO_SHELF[1] + 0.55, SHELF_Z + 0.75],
                    "body_aim": [SOLO_SHELF[0], SOLO_SHELF[1], SHELF_Z + 0.32], "body_gain": 1.0},
+    # the face box alone: one box in the stack by the front door (the top row's fifth column), frown out into the room
+    # (S01, the opening), and the same box alone on the hall cupboard's shelf at the end, frown out at the door
+    "head_stack": {"headonly": True, "at": [-1.655, -4.865, 3 * 0.36 + 0.0], "yaw": 183, "scale": 0.8},
+    "head_shelf": {"headonly": True, "at": [1.66, -0.79, SHELF_Z], "yaw": -90, "scale": 1.0},
+    # morning 2 (L22 to L25), the kitchen: the body stands in the hall doorway out of frame; three neck boxes run
+    # flat along the kitchen ceiling from the doorway to over the counter, the face box hanging at their end, its stare
+    # down at the back of Mum's head. The ceiling is a third of the way up (2.2 m)
+    "kitchen2": {"ceil": 2.2, "at": [0.45, -0.86], "yaw": 0, "neck": 3, "press": True, "clear_n1": True,
+                 "hip": [[2, 10], [0, 12]], "knee": [4, 3], "waist": [12, 2, -3], "spine1": [12, -3, 3],
+                 "spine2": [15, 4, -2], "chain": {"to": [0.7, -2.75], "drop": -3.0}, "land": [0.7, -2.75],
+                 "face": {"dir": [0.7, -0.25, -0.62], "roll": 0}, "flip": True,
+                 "hang": {"out": 0.05}, "flaps": {"-1": [8, 10, 6, 12], "1": [10, 8, 12, 6]},
+                 "curl": 25, "key": [1.5, -2.2, 0.9], "body_key": [0.2, -1.4, 1.3], "body_aim": [0.45, -1.2, 1.6]},
     "stand": {"at": [0.0, 0.0], "yaw": 0, "neck": 0, "hip": [[0, 2], [0, 2]], "knee": [0, 0], "waist": [0, 0, 0],
               "spine1": [2, 1, 0], "spine2": [3, -1, 0], "head": [6, 0, 4],
               "arm": {"-1": [4, 3, 6], "1": [3, 3, 8]}, "flaps": {"-1": [8, 10, 6, 12], "1": [10, 8, 12, 6]},
@@ -514,7 +532,11 @@ def materials(kit, wd: Path):
     near-black nights; the quilt (faded plum, lilac, rose) is the only strong colour."""
     M = {}
     M["wall"] = kit.grime("#c2c5b6", 0.9, 1.6, name="wall paint", rough=0.85)
-    M["ceiling"] = kit.grime("#cacbc3", 0.93, 1.2, name="ceiling paint", rough=0.9)
+    M["ceiling"] = kit.plastic("#cacbc3", 0.9, name="ceiling paint")
+    _b = M["ceiling"].node_tree.nodes["Principled BSDF"]
+    _b.inputs["Emission Color"].default_value = kit.col("#cacbc3")
+    _b.inputs["Emission Strength"].default_value = 0.0
+    M["_ceil_emit"] = _b.inputs["Emission Strength"]
     M["trim"] = kit.plastic("#d4d2c8", 0.5, name="trim")
     M["floor"] = kit.planks("#a77d4b", "#83603a", 1.0, "Y", name="floorboards", rough=0.55)
     M["wood"] = kit.planks("#6e4d34", "#523823", 2.0, "Z", name="dark wood", rough=0.5)
@@ -894,7 +916,7 @@ def _chain(cr, pose):
     tx, ty = pose["chain"]["to"]
     a = V((tx - C.x, ty - C.y, 0.0))
     a = a.normalized() if a.length > 1e-6 else V((0, -1, 0))
-    zc = CEIL - DIM["neck"][1] / 2 - 0.05           # a neck box's centre line, flat under the ceiling (its sag clear)
+    zc = PC["h"] - DIM["neck"][1] / 2 - 0.05           # a neck box's centre line, flat under the ceiling (its sag clear)
     P_ = C
     for k in range(n):
         pv = P[f"n{k + 1}"]
@@ -914,9 +936,9 @@ def _chain(cr, pose):
             # N1 climbs at a slant, so a corner of it rises above its centre line: lower the climb till it's clear
             ob = cr["neck"][0][1]
             top = max((ob.matrix_world @ v.co).z for v in ob.data.vertices)
-            if top <= CEIL - 0.002:
+            if top <= PC["h"] - 0.002:
                 break
-            zt -= top - (CEIL - 0.002) + 0.002
+            zt -= top - (PC["h"] - 0.002) + 0.002
         P_ = P_ + d * L_NECK
     # the face box hangs from the chain's end: it runs down from the joint (its local z, the top of the drawing,
     # points away from the joint), so a face aimed down hangs upside down
@@ -928,7 +950,7 @@ def _chain(cr, pose):
     bpy.context.view_layer.update()
     # a tipped box is taller than it is thick: let it hang just clear of the ceiling (the joint's gap opens a little)
     hm = cr["head"].matrix_world
-    over = max((hm @ v.co).z for v in cr["head"].data.vertices) - (CEIL - 0.012)
+    over = max((hm @ v.co).z for v in cr["head"].data.vertices) - (PC["h"] - 0.012)
     if over > 0:
         P["head"].matrix_world = Matrix.Translation((0, 0, -over)) @ P["head"].matrix_world
         bpy.context.view_layer.update()
@@ -972,11 +994,11 @@ def pose_boxes(cr, pose):
 
     def whole():
         crouch = 0.0
-        if pose.get("press") and body(0.0) > CEIL - 0.012:
+        if pose.get("press") and body(0.0) > PC["h"] - 0.012:
             a, b = 0.0, 55.0
             for _ in range(14):
                 crouch = (a + b) / 2
-                if body(crouch) > CEIL - 0.012:
+                if body(crouch) > PC["h"] - 0.012:
                     a = crouch
                 else:
                     b = crouch
@@ -1107,9 +1129,11 @@ def wall(kit, name, axis, c, a, b, holes, mat, trim=None):
             return
         n[0] += 1
         if axis == "x":
-            kit.box(f"{name}.{n[0]}", (hi - lo, _T, z1 - z0), ((lo + hi) / 2, c, (z0 + z1) / 2), mat)
+            ob = kit.box(f"{name}.{n[0]}", (hi - lo, _T, z1 - z0), ((lo + hi) / 2, c, (z0 + z1) / 2), mat)
         else:
-            kit.box(f"{name}.{n[0]}", (_T, hi - lo, z1 - z0), (c, (lo + hi) / 2, (z0 + z1) / 2), mat)
+            ob = kit.box(f"{name}.{n[0]}", (_T, hi - lo, z1 - z0), (c, (lo + hi) / 2, (z0 + z1) / 2), mat)
+        if abs(z1 - CEIL) < 1e-6:
+            TOPS.append((ob, z0))
         if trim is not None and z0 == 0.0:
             for side in (-1, 1):
                 off = side * (_T / 2 + 0.01)
@@ -1202,13 +1226,47 @@ def photo_image(kind, w=360, h=460):
     return im.filter(ImageFilter.SMOOTH)
 
 
-PHOTOS = ["house", "mum", "us", "me", "garden", "mum2", "us", "house"]
-PHOTO_SIZE = [(0.34, 0.27), (0.26, 0.33), (0.3, 0.24), (0.24, 0.3), (0.3, 0.24), (0.26, 0.33), (0.24, 0.3), (0.4, 0.32)]
+def old_house_image(lit, w=640, h=938):
+    """The old house from outside: tall and narrow, high windows, a door with no number. In its top window something
+    pale and square-headed is folded under the window's ceiling, with the Boxes' marker frown. lit=False is the
+    dim, easy-to-miss version Mum hangs (L08); lit=True is the close one (L41)."""
+    from blocky import faces as F
+    im = Image.new("RGB", (w, h), (150, 168, 186))
+    d = ImageDraw.Draw(im)
+    d.rectangle([w * 0.2, h * 0.1, w * 0.8, h * 0.93], fill=(156, 98, 76))
+    d.polygon([(w * 0.13, h * 0.12), (w * 0.5, h * 0.015), (w * 0.87, h * 0.12)], fill=(70, 64, 66))
+    for row in range(1, 5):
+        for col in range(2):
+            x0, y0 = w * (0.28 + col * 0.27), h * (0.17 + row * 0.145)
+            d.rectangle([x0, y0, x0 + w * 0.17, y0 + h * 0.105], fill=(226, 232, 236))
+            d.line([x0 + w * 0.085, y0, x0 + w * 0.085, y0 + h * 0.105], fill=(120, 110, 100), width=4)
+    d.rectangle([w * 0.43, h * 0.8, w * 0.57, h * 0.93], fill=(60, 52, 64))
+    d.rectangle([0, h * 0.93, w, h], fill=(96, 112, 84))
+    # the top window: wider, with something folded in it
+    wx0, wy0, wx1, wy1 = w * 0.3, h * 0.14, w * 0.7, h * 0.285
+    inner = (232, 236, 238) if lit else (150, 156, 160)
+    d.rectangle([wx0 - 6, wy0 - 6, wx1 + 6, wy1 + 6], fill=(120, 110, 100))
+    d.rectangle([wx0, wy0, wx1, wy1], fill=inner)
+    fig = (214, 210, 200) if lit else (168, 168, 166)
+    ink = (22, 18, 20) if lit else (96, 98, 100)
+    # folded along the window's ceiling, then the box hanging at its end
+    d.rectangle([wx0 + 4, wy0 + 4, wx1 - 70, wy0 + 40], fill=fig)
+    d.rectangle([wx1 - 140, wy0 + 4, wx1 - 6, wy1 - 8], fill=fig)
+    fx0, fy0, fx1, fy1 = wx1 - 130, wy0 + 40, wx1 - 16, wy1 - 12
+    lw = 7 if lit else 5
+    d.line([fx0 + 20, fy0 + 24, fx0 + 40, fy0 + 24], fill=ink, width=lw)
+    d.line([fx1 - 40, fy0 + 24, fx1 - 20, fy0 + 24], fill=ink, width=lw)
+    d.arc([fx0 + 22, fy0 + 40, fx1 - 22, fy1 + 20], 205, 335, fill=ink, width=lw)
+    return im.filter(ImageFilter.SMOOTH)
+
+
+PHOTOS = ["oldhouse", "mum", "us", "me", "garden", "mum2", "us", "garden"]
+PHOTO_SIZE = [(0.30, 0.44), (0.26, 0.33), (0.3, 0.24), (0.24, 0.3), (0.3, 0.24), (0.26, 0.33), (0.24, 0.3), (0.3, 0.24)]
 # where each frame hangs on the front room's long west wall (x = -4.6): (y, z) at eye height before L22; then up
 # the wall to its very top and on across the ceiling, flat on it, where the old house's taller wall would have
 # been ("wall", y, z) or ("ceil", x, y). The big one of the old house goes highest, onto the ceiling
-PHOTO_LOW = [(-4.05, 1.52), (-3.62, 1.58), (-3.2, 1.5), (-2.78, 1.55), (-2.36, 1.48), (-1.98, 1.57), (-3.42, 1.12),
-             (-2.6, 1.12)]
+PHOTO_LOW = [(-3.0, 1.45), (-3.62, 1.58), (-3.3, 1.2), (-4.05, 1.55), (-2.36, 1.48), (-1.98, 1.57), (-3.9, 1.1),
+             (-2.5, 1.12)]
 PHOTO_UP = [("wall", -4.05, 2.12), ("wall", -3.55, 2.1), ("wall", -3.05, 2.13), ("wall", -2.55, 2.1),
             ("ceil", -4.32, -3.85), ("ceil", -4.3, -3.2), ("ceil", -4.32, -2.55), ("ceil", -3.82, -3.25)]
 
@@ -1221,7 +1279,7 @@ def build_house(kit, ctx, M):
         size = (x1 - x0 + _T, y1 - y0 + _T)
         c = ((x0 + x1) / 2, (y0 + y1) / 2)
         kit.box(f"floor {tag}", (*size, 0.1), (*c, -0.05), M["floor"])
-        kit.box(f"ceiling {tag}", (*size, 0.12), (*c, CEIL + 0.06), M["ceiling"])
+        CEILS.append((kit.box(f"ceiling {tag}", (*size, 0.12), (*c, CEIL + 0.06), M["ceiling"]), CEIL + 0.06))
     for nm, axis, c, a, b, holes in WALLS:
         wall(kit, nm, axis, c, a, b, holes, M["wall"], None if nm.startswith("w cup") else M["trim"])
     # the windows: a painted frame with one upright, a sill (the front room's is deep), the outside beyond (one
@@ -1254,10 +1312,7 @@ def build_house(kit, ctx, M):
         ob.location = (X1 - 0.1, 0, 0)
     # bare pendant bulbs, not fitted yet (a new house): never lit, never swinging
     for k, (bx, by) in enumerate(((0.6, 0.9), (-3.0, 1.3), (-2.1, -0.77), (-2.6, -3.5), (0.9, -2.6))):
-        kit.cyl(f"rose{k}", 0.05, 0.03, (bx, by, CEIL - 0.015), M["trim"])
-        kit.cyl(f"cord{k}", 0.004, 0.3, (bx, by, CEIL - 0.165), M["cord"])
-        kit.cyl(f"holder{k}", 0.016, 0.05, (bx, by, CEIL - 0.335), M["cord"])
-        kit.sphere(f"bulb{k}", 0.03, (bx, by, CEIL - 0.385), M["bulb"])
+        CEILS.append((kit.cyl(f"rose{k}", 0.05, 0.03, (bx, by, CEIL - 0.015), M["trim"]), CEIL - 0.015))
     # the doors: Mum's (open into her room, against the wall by the bed's head), mine, the front door (shut), the
     # hall cupboard's (shut until L75)
     door_panel(kit, ctx, M, "mum", (DOOR_X[0] + 0.01, -0.02), (1, 0), (0, 1), DOOR_X[1] - DOOR_X[0])
@@ -1270,6 +1325,11 @@ def build_house(kit, ctx, M):
         for k, x in enumerate((a, b)):   # painted door frames
             kit.box(f"jamb {nm}{k}", (0.04, _T + 0.03, DOOR_H), (x + (0.02 if k == 0 else -0.02), y, DOOR_H / 2), M["trim"])
         kit.box(f"head {nm}", (b - a, _T + 0.03, 0.05), ((a + b) / 2, y, DOOR_H - 0.025), M["trim"])
+    # the pencil mark at my height on my doorframe's hall side (S09, S19): a short line, a little proud of the jamb
+    kit.box("pencil mark", (0.04, 0.004, 0.012), (MY_DOOR[1] - 0.02, -_T / 2 - (_T + 0.03) / 2 - 0.003, 1.72),
+            kit.plastic("#35353a", 0.8, name="pencil"))
+    kit.box("pencil tick", (0.012, 0.004, 0.06), (MY_DOOR[1] - 0.02, -_T / 2 - (_T + 0.03) / 2 - 0.003, 1.70),
+            kit.plastic("#35353a", 0.8, name="pencil"))
     for k, y in enumerate(CUP_Y):
         kit.box(f"jamb cupboard{k}", (_T + 0.03, 0.04, DOOR_H), (X1 + _T / 2, y + (0.02 if k == 0 else -0.02), DOOR_H / 2), M["trim"])
     kit.box("head cupboard", (_T + 0.03, CUP_Y[1] - CUP_Y[0], 0.05), (X1 + _T / 2, sum(CUP_Y) / 2, DOOR_H - 0.025), M["trim"])
@@ -1330,6 +1390,130 @@ def build_kitchen(kit, ctx, M):
     ctx["rolls"], ctx["cores"] = rolls, cores
 
 
+# ------------------------------------------------------------------------------------------------ the montage
+# L01 to L04 (S02 to S06): a bright street, a lodger's house, a living room and a dining room, far from the house
+# (x 60, 100 and 140), lit by their own lights (the "street" time set: one exposure for all of them, so nothing
+# strobes between shots). Nobody here is in peril; they are adults who each have one bit of business with a ceiling.
+OS = (60.0, 0.0)       # the street
+O5 = (100.0, 0.0)      # the living room (the lowered ceiling)
+O6 = (140.0, 0.0)      # the dining room (the dome)
+YF = 6.0               # the houses' front wall, as y from the street's origin
+HOUSES = [  # name, x, width, height, door_w, door_h, body, roof, rows, door colour
+    ("a", -6.8, 3.0, 3.2, 0.95, 1.68, "#ff7a59", "#6b3fa0", 1, "#2d5fd0"),
+    ("b", -3.3, 3.2, 4.6, 1.05, 2.22, "#3fb6e8", "#f2c230", 2, "#d83a52"),
+    ("c", 0.0, 3.0, 3.8, 0.98, 1.86, "#7ccf5a", "#d4483b", 1, "#7a4cc2"),
+    ("d", 3.2, 2.4, 8.5, 1.1, 2.86, "#f4d03f", "#2c6fdb", 5, "#d8501f"),
+    ("e", 10.0, 3.4, 4.2, 1.1, 1.95, "#ef6fb0", "#2f9e8f", 1, "#1f1b24"),
+    ("f", 16.0, 3.4, 2.1, 0.9, 1.78, "#e6dfca", "#6a6f78", 1, "#59616d"),   # the small new house, no number on its door
+]
+
+
+def _unfogged_emit(kit, name, hexc, strength):
+    m = kit._new(name)
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    e = nt.nodes.new("ShaderNodeEmission")
+    e.inputs["Color"].default_value = kit.col(hexc)
+    e.inputs["Strength"].default_value = strength
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    nt.links.new(e.outputs[0], out.inputs["Surface"])
+    return m
+
+
+def build_street(kit, ctx, M):
+    ox, oy = OS
+    pm = lambda hexc, r=0.55: kit.plastic(hexc, r, name=f"st {hexc} {r}")
+    kit.box("st ground", (80, 40, 0.2), (ox, oy + 8, -0.1), pm("#8d96a3", 0.8))
+    kit.box("st road", (80, 5.0, 0.02), (ox, oy + 1.0, 0.001), pm("#59616d", 0.85))
+    kit.box("st pavement", (80, 2.6, 0.02), (ox, oy + 4.2, 0.01), pm("#d0cbbd", 0.8))
+    kit.plane("st sky", (240, 90), (ox, oy + 55, 25), _unfogged_emit(kit, "st sky", "#cfe2f4", 1.3), rot=(math.radians(90), 0, 0))
+    for nm, x, w, h, dw, dh, body, roof, rows, dc in HOUSES:
+        cx = ox + x
+        yf = oy + YF
+        depth = 4.0
+        mb, mw_ = pm(body), kit.glass("#bfe8ff", name="st glass")
+        if nm == "e":   # the lodger's house: the door stands open on a dark hall
+            kit.box(f"st {nm} left", ((w - dw) / 2, depth, h), (cx - (w + dw) / 4, yf + depth / 2, h / 2), mb)
+            kit.box(f"st {nm} right", ((w - dw) / 2, depth, h), (cx + (w + dw) / 4, yf + depth / 2, h / 2), mb)
+            kit.box(f"st {nm} over", (dw, depth, h - dh), (cx, yf + depth / 2, dh + (h - dh) / 2), mb)
+            kit.box(f"st {nm} hall", (dw + 0.02, 0.05, dh), (cx, yf + 1.4, dh / 2), pm("#2a2430", 0.9))
+            kit.box(f"st {nm} hall floor", (dw, 1.4, 0.02), (cx, yf + 0.7, 0.012), pm("#6d5a62", 0.8))
+            kit.box(f"st {nm} door", (0.04, 0.8, dh - 0.05), (cx + dw / 2 - 0.02, yf - 0.4, dh / 2), pm(dc), rot=(0, 0, math.radians(-70)))
+        else:
+            kit.box(f"st {nm} body", (w, depth, h), (cx, yf + depth / 2, h / 2), mb)
+            kit.box(f"st {nm} door", (dw, 0.05, dh), (cx, yf - 0.02, dh / 2), pm(dc))
+        kit.box(f"st {nm} frame", (dw + 0.16, 0.04, dh + 0.1), (cx, yf - 0.008, (dh + 0.1) / 2), pm("#f4f1e8"))
+        kit.box(f"st {nm} roof", (w + 0.4, depth + 0.4, 0.3), (cx, yf + depth / 2, h + 0.15), pm(roof))
+        if nm != "e":
+            kit.box(f"st {nm} step", (dw + 0.5, 0.5, 0.08), (cx, yf - 0.3, 0.04), pm("#e5e1d6"))
+        for r in range(rows):
+            z = dh + 0.55 + r * ((h - dh - 1.0) / max(1, rows)) if rows > 1 else dh + 0.5
+            if nm == "f":
+                z = 1.1
+            elif z + 0.5 > h:
+                continue
+            for dx in (-1, 1):
+                if abs(dx) * w * 0.25 < dw * 0.3 and rows == 1:
+                    pass
+                kit.box(f"st {nm} win{r}{dx}", (0.5, 0.03, 0.62), (cx + dx * w * 0.27, yf - 0.018, z), mw_)
+                kit.box(f"st {nm} win{r}{dx}f", (0.58, 0.02, 0.7), (cx + dx * w * 0.27, yf - 0.008, z), pm("#f4f1e8"))
+    # the suitcase the lodger carries (placed by animate)
+    ctx["suitcase"] = kit.box("suitcase", (0.5, 0.16, 0.36), (0, 0, -5), pm("#e0942a"), bevel=0.02)
+    kit.box("suitcase band", (0.52, 0.17, 0.05), (0, 0, 0), pm("#2b2a33"), ctx["suitcase"])
+    # the street's light: a soft overcast sun and a lift from the road
+    sun = kit.light("street sun", "SUN", (ox, oy - 8, 14), 3.0, "#f4f6ff", rot=(math.radians(55), 0, math.radians(8)))
+    sun.data.angle = math.radians(18)
+    # ---- the living room (S05): a lowered ceiling and a pale line where it used to be
+    px, py = O5
+    pr = lambda hexc, r=0.7: kit.plastic(hexc, r, name=f"rm {hexc} {r}")
+    kit.box("lr floor", (4.0, 3.6, 0.1), (px, py + 1.6, -0.05), pr("#b98a5a", 0.5))
+    kit.box("lr back", (4.0, 0.1, 2.9), (px, py + 3.45, 1.45), pr("#f0d9a8"))
+    kit.box("lr left", (0.1, 3.6, 2.9), (px - 2.0, py + 1.6, 1.45), pr("#f0d9a8"))
+    kit.box("lr right", (0.1, 3.6, 2.9), (px + 2.0, py + 1.6, 1.45), pr("#f0d9a8"))
+    kit.box("lr ceiling", (4.0, 3.6, 0.1), (px, py + 1.6, 2.17), pr("#f7f2e6"))
+    kit.plane("lr line", (3.9, 0.07), (px, py + 3.39, 2.06), pr("#fff9ea"), rot=(math.radians(-90), 0, 0))
+    for sgn in (-1, 1):
+        kit.plane(f"lr line{sgn}", (3.4, 0.07), (px + sgn * 1.94, py + 1.7, 2.06), pr("#fff9ea"),
+                  rot=(math.radians(90), 0, math.radians(90 * sgn)))
+    kit.box("sofa seat", (1.8, 0.8, 0.42), (px, py + 2.6, 0.21), pr("#1f9d8a", 0.8), bevel=0.05)
+    kit.box("sofa back", (1.8, 0.2, 0.8), (px, py + 3.0, 0.62), pr("#188574", 0.8), bevel=0.05)
+    for sx in (-1, 1):
+        kit.box(f"sofa arm{sx}", (0.2, 0.8, 0.6), (px + sx * 0.9, py + 2.6, 0.3), pr("#188574", 0.8), bevel=0.05)
+    kit.box("lr rug", (2.6, 1.8, 0.015), (px, py + 1.2, 0.008), pr("#e0584a", 0.9))
+    up = kit.light("lr up", "AREA", (px, py + 1.4, 0.3), 120.0, "#fff1d6", size=2.4, rot=(math.pi, 0, 0))
+    kit.light("lr lamp", "AREA", (px, py + 1.0, 1.95), 220.0, "#fff1d6", size=2.4)
+    # ---- the dining room (S06): a ceiling that bulges up over the tall hat
+    qx, qy = O6
+    pd = lambda hexc, r=0.7: kit.plastic(hexc, r, name=f"dr {hexc} {r}")
+    kit.box("dr floor", (4.4, 3.6, 0.1), (qx, qy + 1.6, -0.05), pd("#c8a070", 0.5))
+    kit.box("dr back", (4.4, 0.1, 3.4), (qx, qy + 3.45, 1.7), pd("#a8d0f0"))
+    kit.box("dr left", (0.1, 3.6, 3.4), (qx - 2.2, qy + 1.6, 1.7), pd("#a8d0f0"))
+    kit.box("dr right", (0.1, 3.6, 3.4), (qx + 2.2, qy + 1.6, 1.7), pd("#a8d0f0"))
+    nx, ny = 44, 36
+    verts, faces = [], []
+    for j in range(ny + 1):
+        for i in range(nx + 1):
+            x = -2.2 + 4.4 * i / nx
+            y = -0.05 + 3.5 * j / ny
+            bump = 0.62 * math.exp(-(((x - 0.95) / 0.62) ** 2 + ((y - 1.9) / 0.62) ** 2))
+            verts.append((qx + x, qy + y, 2.45 + bump))
+    for j in range(ny):
+        for i in range(nx):
+            a = j * (nx + 1) + i
+            faces.append((a, a + 1, a + nx + 2, a + nx + 1))
+    kit.mesh_obj("dr ceiling", verts, faces, pd("#fdf6e8"), smooth=True)
+    kit.box("dr table", (2.2, 0.95, 0.06), (qx, qy + 1.9, 0.76), pd("#8a4f2b", 0.5), bevel=0.01)
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            kit.box(f"dr leg{sx}{sy}", (0.07, 0.07, 0.73), (qx + sx * 1.0, qy + 1.9 + sy * 0.4, 0.365), pd("#6a3a1e", 0.5))
+    for sx in (-1, 1):
+        kit.box(f"dr chair{sx}", (0.5, 0.5, 0.05), (qx + sx * 1.0, qy + 1.9, 0.43), pd("#d8503f", 0.6))
+        kit.box(f"dr chairback{sx}", (0.05, 0.5, 0.5), (qx + sx * 1.27, qy + 1.9, 0.7), pd("#d8503f", 0.6))
+        kit.cyl(f"dr plate{sx}", 0.14, 0.015, (qx + sx * 0.55, qy + 1.9, 0.795), pd("#f4f1e8", 0.3))
+    kit.light("dr up", "AREA", (qx, qy + 1.4, 0.3), 150.0, "#fff1d6", size=2.4, rot=(math.pi, 0, 0))
+    kit.light("dr lamp", "AREA", (qx, qy + 1.4, 2.3), 260.0, "#fff1d6", size=2.6)
+
+
 def build_my_room(kit, ctx, M):
     (bx0, bx1), (by0, by1), top = MY_BED["x"], MY_BED["y"], MY_BED["top"]
     kit.box("my bed", (bx1 - bx0, by1 - by0, top - 0.2), ((bx0 + bx1) / 2, (by0 + by1) / 2, (top - 0.2) / 2), M["base"], bevel=0.02)
@@ -1367,6 +1551,11 @@ def build_stack(kit, ctx, M, wd):
         base = blank
         boxes.append({"ob": ob, "slot": slots["front"], "base": base, "row": row, "col": col})
     ctx["stack"] = boxes
+    # the clean square on the wall where the face box stood (top row, fifth column): it sat there all along
+    cs_ = kit.plane("clean square", (STACK["w"] - 0.01, STACK["h"] - 0.01),
+                    (STACK["x0"] + 4.5 * STACK["w"], STACK["y"] + 0.012, 3 * STACK["h"] + STACK["h"] / 2),
+                    kit.plastic("#e4e5d8", 0.9, name="clean wall"), rot=(math.radians(-90), 0, 0))
+    ctx["clean"] = cs_
     loose = []
     for k, (x, y, yaw) in enumerate(((-3.95, -3.05, 196), (-3.95, -4.3, 172), (-3.35, -2.3, 205))):
         size = (0.5, 0.42, 0.4)
@@ -1443,11 +1632,18 @@ def build_props(kit, ctx, M, wd):
     frames = []
     for k, kind in enumerate(PHOTOS):
         fw_, fh_ = PHOTO_SIZE[k]
-        im = photo_image(kind, 360, int(360 * fh_ / fw_))
-        img = pil_image(f"photo {k}", im, wd / f"photo-{k}-{kind}.png")
+        if kind == "oldhouse":
+            imgs_oh = [pil_image("oh-" + n, old_house_image(n == "lit"), wd / f"photo-oldhouse-{n}.png") for n in ("dim", "lit")]
+            img = imgs_oh[0]
+        else:
+            im = photo_image(kind, 360, int(360 * fh_ / fw_))
+            img = pil_image(f"photo {k}", im, wd / f"photo-{k}-{kind}.png")
         g = kit.empty(f"photo{k}", (0, 0, -5))
         kit.box(f"photo{k}.frame", (fw_ + 0.05, 0.022, fh_ + 0.05), (0, 0, 0), M["frame wood"], g, bevel=0.004)
         pm = image_mat(kit, f"photo {k}", img, 0.4, 0.0)
+        if kind == "oldhouse":
+            ctx["oh_tex"] = next(n for n in pm.node_tree.nodes if n.type == "TEX_IMAGE")
+            ctx["oh_imgs"] = {"dim": imgs_oh[0], "lit": imgs_oh[1]}
         pl = kit.plane(f"photo{k}.pic", (fw_, fh_), (0, -0.0115, 0), pm, g, rot=(math.radians(90), 0, 0))
         uv = pl.data.uv_layers.new(name="UVMap")
         for poly in pl.data.polygons:
@@ -1537,6 +1733,14 @@ def time_lights(kit, ctx):
     bk.visible_camera = False
     bk.visible_glossy = False
     ctx["body key"] = bk
+    # warm daylight for the morning shots: a broad warm area under each room's ceiling
+    for tag, (x0, x1, y0, y1) in ROOMS.items():
+        if tag in ("cupboard",):
+            continue
+        f = kit.light(f"day {tag}", "AREA", ((x0 + x1) / 2, (y0 + y1) / 2, CEIL - 0.08), 90.0, "#ffe2b8",
+                      size=min(x1 - x0, y1 - y0) * 0.9)
+        f.visible_camera = False
+        f.visible_glossy = False
     # a soft fill under each room's ceiling by day (the white walls' bounce, lifted)
     for tag, (x0, x1, y0, y1) in ROOMS.items():
         if tag == "cupboard":
@@ -1548,6 +1752,11 @@ def time_lights(kit, ctx):
 
 
 TIME_LIGHTS = {   # light: gain, per time of day. Every light not listed is off
+    "street": {"street sun": 1.0, "lr lamp": 1.0, "dr lamp": 1.0, "lr up": 1.0, "dr up": 1.0},
+    "day": {"dawn mum": 0.8, "dawn mine": 0.8, "dawn front": 0.8, "dawn kitchen": 0.7, "spill kitchen": 1.0,
+            "spill front": 1.0, "hall fill": 1.0, "face key": 0.0, "body key": 0.0, "fill mum": 1.0, "fill mine": 1.0,
+            "fill hall": 1.0, "fill front": 1.8, "fill kitchen": 1.0, "day front": 1.0, "day kitchen": 1.0,
+            "day hall": 1.0, "day mine": 1.0, "day mum": 1.0},
     "dawn": {"dawn mum": 1.0, "dawn mine": 1.0, "dawn front": 1.0, "dawn kitchen": 0.55, "spill kitchen": 1.0,
              "spill front": 1.0, "hall fill": 1.0, "face key": 1.0, "body key": 1.0, "fill mum": 1.0, "fill mine": 1.0,
              "fill hall": 1.0, "fill front": 1.8, "fill kitchen": 1.0},
@@ -1562,8 +1771,8 @@ TIME_LIGHTS = {   # light: gain, per time of day. Every light not listed is off
             "spill front": 1.0, "hall fill": 1.4, "face key": 1.0, "body key": 1.0, "fill hall": 1.2, "fill front": 1.0,
             "fill kitchen": 1.0, "fill mum": 1.0, "fill mine": 1.0},
 }
-EXPOSURE = {"dawn": 0.45, "night": 1.0, "night3": 1.0, "sun": 0.5, "end": 0.45}   # the view's exposure by time
-OUTSIDE = {"dawn": ("#7f8fa8", 1.3), "night": ("#1f242c", 0.4), "night3": ("#262b33", 0.7), "sun": ("#ffd9a0", 2.4),
+EXPOSURE = {"dawn": 0.45, "night": 1.0, "night3": 1.0, "sun": 0.5, "end": 0.45, "day": 0.45, "street": 0.45}   # the view's exposure by time
+OUTSIDE = {"day": ("#dfe6f0", 2.0), "street": ("#7f8fa8", 1.3), "dawn": ("#7f8fa8", 1.3), "night": ("#1f242c", 0.4), "night3": ("#262b33", 0.7), "sun": ("#ffd9a0", 2.4),
            "end": ("#a9b4c2", 1.5)}
 
 
@@ -1742,6 +1951,7 @@ def build(kit, story, tl):
     build_house(kit, ctx, M)
     build_kitchen(kit, ctx, M)
     build_my_room(kit, ctx, M)
+    build_street(kit, ctx, M)
     build_stack(kit, ctx, M, wd)
     build_props(kit, ctx, M, wd)
     build_bed(kit, ctx, M)
@@ -1954,6 +2164,17 @@ def pose_shelf(cr, pose):
     bpy.context.view_layer.update()
 
 
+def pose_head(cr, pose):
+    """The face box alone, set on its bottom at `at`, its drawn front turned `yaw` degrees (0 faces -y), scaled."""
+    P = cr["pivots"]
+    x, y, z = pose["at"]
+    sc = pose.get("scale", 1.0)
+    m = (Matrix.Translation((x, y, z + 0.004)) @ Matrix.Rotation(math.radians(pose.get("yaw", 0)), 4, "Z")
+         @ Matrix.Scale(sc, 4))
+    P["head"].matrix_world = m
+    bpy.context.view_layer.update()
+
+
 def pose_solo(cr, pose):
     """The right shin alone: it stands on its bottom edge at `at`, its front (the peeled tape) toward -x."""
     P = cr["pivots"]
@@ -1970,6 +2191,12 @@ def _boxes_visibility(cr, hidden, pose):
     for ob in [root] + list(root.children_recursive):
         ob.hide_render = hidden
     if hidden:
+        return
+    if pose.get("headonly"):
+        keep = {cr["head"]} | {o for o in cr["pivots"]["head"].children_recursive if o.name.startswith(f"{cr['name']}.jt.head")}
+        for ob in root.children_recursive:
+            if ob.type == "MESH":
+                ob.hide_render = ob not in keep
         return
     if pose.get("solo"):
         shin = next(o for o in cr["meshes"] if o.name.endswith(".shin1"))
@@ -1997,12 +2224,15 @@ def animate_boxes(kit, story, tl, t, ctx, over):
     if hidden:
         return
     key = (str(pose_name), c.get("face", "frown"))
+    PC["h"] = pose.get("ceil", CEIL)
     if ctx.get("posed") != key:
         if not pose.get("solo") and "knee1_basis" in cr:
             cr["pivots"]["knee1"].matrix_basis = cr.pop("knee1_basis")
             bpy.context.view_layer.update()
         if pose.get("solo"):
             pose_solo(cr, pose)
+        elif pose.get("headonly"):
+            pose_head(cr, pose)
         else:
             pose_boxes(cr, pose)
         if not pose.get("solo"):
@@ -2018,6 +2248,10 @@ def animate_boxes(kit, story, tl, t, ctx, over):
             probe(ctx)
     eye = eye_line(cr, bool(pose.get("flip", False)))
     kit.aim(ctx["kick"], eye)
+    if pose.get("headonly"):
+        over["body key"] = 0.0
+        over["face key"] = float(pose.get("key_gain", 0.0))
+        return
     if pose.get("key"):
         fk = ctx["face key"]
         fk.location = pose["key"]
@@ -2032,22 +2266,27 @@ def animate_boxes(kit, story, tl, t, ctx, over):
 
 
 def animate_props(kit, story, tl, t, ctx):
+    sc = ctx.get("suitcase")
+    if sc is not None:
+        lod = bpy.data.objects.get("lod")
+        on = lod is not None and not lod.hide_render
+        sc.hide_render = not on
+        for o in sc.children:
+            o.hide_render = not on
+        if on:
+            sc.matrix_world = _rig_frame("lod", (0.0, 0.0, -2.35), "arm1")
     sqc = _last(_cues(tl, "sqlight"), t)
     for ob in ctx.get("sqlight", []):
         ob.hide_render = not (sqc and sqc.get("on", False))
     # the stack by the door: how many are left (the clock), the eyes on them (L27 to L35), the clean squares in
     # the dust (only once the floor is bare)
-    c = _last(_cues(tl, "stack"), t) or {"count": 24}
-    n = int(c.get("count", 24))
-    keep = {24: lambda b: True, 18: lambda b: b["row"] <= 2, 12: lambda b: b["row"] <= 1,
-            4: lambda b: b["row"] == 0 and 1 <= b["col"] <= 4, 0: lambda b: False}[n]
-    eyes = bool(c.get("eyes", False))
-    for b in ctx["stack"]:
-        on = keep(b)
-        b["ob"].hide_render = not on
-        img = ctx["mark_imgs"]["eyes"] if (on and eyes) else b["base"]
-        if b["slot"].image != img:
-            b["slot"].image = img
+    c = _last(_cues(tl, "stack"), t) or {}
+    hide = set(c.get("hide", [])) | {FACE_K}
+    for k, b in enumerate(ctx["stack"]):
+        b["ob"].hide_render = k in hide
+        if b["slot"].image != b["base"]:
+            b["slot"].image = b["base"]
+    ctx["clean"].hide_render = not c.get("clean", False)
     ctx["dust"].hide_render = not c.get("dust", False)
     # the loose boxes in the front room, the same eyes on them; one is Mum's seat at L68
     c = _last(_cues(tl, "loose"), t) or {"on": True}
@@ -2078,18 +2317,27 @@ def animate_props(kit, story, tl, t, ctx):
         u = min(1.0, max(0.0, (1.0 - op - stagger) / (1.0 - stagger))) if k < 2 else min(1.0, (1.0 - op) / 0.75)
         ang = -25.0 + (shut + 25.0) * u
         hg.rotation_euler = Matrix.Rotation(math.radians(ang), 3, axis).to_euler()
-    # the photos: at eye height, then up the wall and across the ceiling
-    c = _last(_cues(tl, "photos"), t) or {"where": "low"}
+    # the photos ride up the front room's west wall with the ceiling (their stretch is the ceiling's over LOW); the
+    # old house's frame (0) is in Mum's hands in the kitchen (L05), then hangs on the wall (L08 on)
+    f = ctx["ceil_h"] / LOW
+    oh = _last(_cues(tl, "oldhouse"), t) or {"where": "wall", "look": "dim"}
+    img = ctx["oh_imgs"][oh.get("look", "dim")]
+    if ctx["oh_tex"].image != img:
+        ctx["oh_tex"].image = img
     for k, g in enumerate(ctx["photos"]):
-        if c.get("where") == "up":
-            kind, a, b = PHOTO_UP[k]
-            if kind == "wall":
-                g.location, g.rotation_euler = (FRONT[0] + 0.012, a, b), (0, 0, math.radians(90))
-            else:
-                g.location, g.rotation_euler = (a, b, CEIL - 0.012), (math.radians(90), 0, math.radians(90 + 4 * (k % 2) - 2))
-        else:
-            y, z = PHOTO_LOW[k]
-            g.location, g.rotation_euler = (FRONT[0] + 0.012, y, z), (0, 0, math.radians(90))
+        y, z = PHOTO_LOW[k]
+        g.scale = (1 + 0.3 * (f - 1),) * 3
+        g.location, g.rotation_euler = (FRONT[0] + 0.012 + 0.0 * k, y, z * f), (0, 0, math.radians(90))
+        if k == 0:
+            where = oh.get("where", "wall")
+            g.hide_render = where == "none"
+            for o in g.children_recursive:
+                o.hide_render = where == "none"
+            if where == "hand":
+                fr = _rig_frame("mum", (0, -1.45, 3.1))
+                if fr is not None:
+                    g.scale = (1, 1, 1)
+                    g.matrix_world = fr
     # the mug: on the sill, in a hand, on the counter, or nowhere
     c = _last(_cues(tl, "mug"), t) or {"where": "sill"}
     mug = ctx["mug"]
@@ -2190,6 +2438,29 @@ def animate_people(kit, story, tl, t, ctx):
         ctx["glow_linked"] = True
 
 
+CEIL_LIGHTS = ("hall fill", "window edge", "fill mum", "fill mine", "fill hall", "fill front", "fill kitchen",
+               "day mum", "day mine", "day hall", "day front", "day kitchen")
+
+
+def animate_ceiling(kit, ctx, h):
+    """The ceiling at h: the wall pieces under it are stretched to meet it, the ceiling slabs and roses ride on it, and
+    the lights fixed to it go with it. (The walls were built at CEIL.)"""
+    for ob, z0 in TOPS:
+        hn = h - z0
+        ob.hide_render = hn < 0.02
+        if hn >= 0.02:
+            ob.scale.z = hn / (CEIL - z0)
+            ob.location.z = z0 + hn / 2
+    for ob, z in CEILS:
+        ob.location.z = z + (h - CEIL)
+    lz = ctx.setdefault("lz", {})
+    for nm in CEIL_LIGHTS:
+        L = kit.LIGHTS.get(nm)
+        if L is not None:
+            lz.setdefault(nm, L["obj"].location.z)
+            L["obj"].location.z = lz[nm] + (h - CEIL)
+
+
 def animate(kit, story, tl, t, ctx):
     over = {}
     dbg = __import__("os").environ.get("MOVING_DAY_CAM")   # look-dev only: "x,y,z,tx,ty,tz,lens" replaces the shot
@@ -2197,6 +2468,8 @@ def animate(kit, story, tl, t, ctx):
         v = [float(x) for x in dbg.split(",")]
         for s in story["shots"]:
             s["cam"] = [[0, v[0:3], v[3:6], v[6]]]
+    ctx["ceil_h"] = h = float(_eased(_cues(tl, "ceil"), "h", t, LOW))
+    animate_ceiling(kit, ctx, h)
     animate_people(kit, story, tl, t, ctx)
     bpy.context.view_layer.update()   # the cast was just posed: their parts' places, for the props they hold
     animate_props(kit, story, tl, t, ctx)
@@ -2206,6 +2479,7 @@ def animate(kit, story, tl, t, ctx):
     cs = [c for c in _cues(tl, "time") if c["t"] <= t + 1e-9]
     bpy.context.scene.view_settings.exposure = (cs[-1].get("exposure", EXPOSURE[cs[-1]["set"]]) if cs
                                                  else EXPOSURE["dawn"])
+    ctx["M"]["_ceil_emit"].default_value = {"day": 0.35, "sun": 0.35, "end": 0.35, "dawn": 0.3}.get(cs[-1]["set"] if cs else "day", 0.0)
     ctx["outside"].inputs["Color"].default_value = colour
     ctx["outside"].inputs["Strength"].default_value = strength
     nc = _last(_cues(tl, "nightlight"), t)

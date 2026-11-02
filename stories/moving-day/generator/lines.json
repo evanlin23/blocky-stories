@@ -12,8 +12,12 @@
     "a house grows"
    ],
    [
-    "to fit the TALLEST one",
-    "to fit the tallest one"
+    "to fit",
+    "to fit"
+   ],
+   [
+    "the TALLEST one",
+    "the tallest one"
    ],
    [
     "LIVING in it.",
@@ -40,20 +44,32 @@
   "who": "narrator",
   "chunks": [
    [
-    "When a TALL lodger",
-    "When a tall lodger"
+    "When a TALL",
+    "When a tall"
+   ],
+   [
+    "lodger",
+    "lodger"
    ],
    [
     "moves OUT,",
     "moves out,"
    ],
    [
-    "the ceiling comes DOWN",
-    "the ceiling comes down"
+    "the ceiling",
+    "the ceiling"
    ],
    [
-    "a HAND a NIGHT.",
-    "a hand a night."
+    "comes DOWN",
+    "comes down"
+   ],
+   [
+    "a HAND",
+    "a hand"
+   ],
+   [
+    "a NIGHT.",
+    "a night."
    ]
   ]
  },
@@ -66,8 +82,12 @@
     "And nobody"
    ],
    [
-    "wears a TALL HAT",
-    "wears a tall hat"
+    "wears",
+    "wears"
+   ],
+   [
+    "a TALL HAT",
+    "a tall hat"
    ],
    [
     "to DINNER.",
@@ -84,14 +104,23 @@
     "Our old house"
    ],
    [
-    "was a LADDER taller",
-    "was a ladder taller"
+    "was a LADDER",
+    "was a ladder"
    ],
    [
-    "than ANY of us.",
-    "than any of us."
+    "taller",
+    "taller"
+   ],
+   [
+    "than ANY",
+    "than any"
+   ],
+   [
+    "of us.",
+    "of us."
    ]
-  ]
+  ],
+  "gap": 0.3
  },
  {
   "id": "L06",
@@ -103,7 +132,7 @@
    ],
    [
     "in the SPRING.",
-    "in the spring."
+    "in the spring,"
    ],
    [
     "The new one",
@@ -138,8 +167,12 @@
     "She hung"
    ],
    [
-    "the old house PHOTO",
-    "the old house photo"
+    "the old",
+    "the old"
+   ],
+   [
+    "house PHOTO",
+    "house photo"
    ],
    [
     "at eye HEIGHT.",
@@ -185,7 +218,7 @@
   "chunks": [
    [
     "And ONE box",
-    "And one box"
+    "And, one box"
    ],
    [
     "in our STACK,",
@@ -202,8 +235,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "It was taped SHUT",
-    "It was taped shut"
+    "It was",
+    "It was"
+   ],
+   [
+    "taped SHUT",
+    "taped shut"
    ],
    [
     "from the INSIDE.",
@@ -218,7 +255,7 @@
   "chunks": [
    [
     "Its marker FROWN",
-    "Its marker frown"
+    "Its marker frown,"
    ],
    [
     "faced Mum's DOOR.",
@@ -253,8 +290,12 @@
     "By morning,"
    ],
    [
-    "there was a GAP",
-    "there was a gap"
+    "there was",
+    "there was"
+   ],
+   [
+    "a GAP",
+    "a gap"
    ],
    [
     "over my HEAD.",
@@ -286,7 +327,7 @@
    ],
    [
     "than me",
-    "than me"
+    "than me,"
    ],
    [
     "was LIVING here.",
@@ -583,8 +624,12 @@
     "Under its hands"
    ],
    [
-    "was the OLD QUILT,",
-    "was the old quilt,"
+    "was the",
+    "was the"
+   ],
+   [
+    "OLD QUILT,",
+    "old quilt,"
    ],
    [
     "laid over her",
@@ -713,8 +758,12 @@
     "I looked up"
    ],
    [
-    "at the old house PHOTO.",
-    "at the old house photo."
+    "at the old",
+    "at the old"
+   ],
+   [
+    "house PHOTO.",
+    "house photo."
    ]
   ]
  },
@@ -723,8 +772,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "In its TOP WINDOW,",
-    "In its top window,"
+    "In its",
+    "In its"
+   ],
+   [
+    "TOP WINDOW,",
+    "top window,"
    ],
    [
     "something TALL",
@@ -772,8 +825,12 @@
     "as tall"
    ],
    [
-    "as the tallest one",
-    "as the tallest one"
+    "as the",
+    "as the"
+   ],
+   [
+    "tallest one",
+    "tallest one"
    ],
    [
     "LIVING in it.",
