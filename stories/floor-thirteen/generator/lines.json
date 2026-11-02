@@ -1,7 +1,7 @@
 [
  {
   "id": "P01",
-  "pause": 0.7,
+  "pause": 0.5,
   "chunks": [
    [
     "DING",
@@ -14,16 +14,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I pressed LOBBY.",
-    "I pressed lobby."
+    "In this BUILDING,",
+    "In this building,"
    ],
    [
-    "The lift",
-    "The lift"
+    "everything you FORGET",
+    "everything you forget"
    ],
    [
-    "went UP.",
-    "went up."
+    "turns up",
+    "turns up"
+   ],
+   [
+    "on floor THIRTEEN.",
+    "on floor thirteen."
    ]
   ]
  },
@@ -32,8 +36,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "To floor",
-    "To floor"
+    "Lost your KEYS?",
+    "Lost your keys?"
    ],
    [
     "THIRTEEN.",
@@ -46,16 +50,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Our building",
-    "Our building"
+    "Mr. Abel",
+    "Mister Abel"
    ],
    [
-    "doesn't",
-    "doesn't"
+    "forgot his",
+    "forgot his"
    ],
    [
-    "HAVE one.",
-    "have one."
+    "ANNIVERSARY.",
+    "anniversary."
+   ],
+   [
+    "It turned up",
+    "It turned up"
+   ],
+   [
+    "as a CAKE.",
+    "as a cake."
    ]
   ]
  },
@@ -64,20 +76,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Just LEFT",
-    "Just left"
+    "He FETCHED it",
+    "He fetched it"
    ],
    [
-    "of the doors",
-    "of the doors"
+    "and REMEMBERED,",
+    "and remembered,"
    ],
    [
-    "stood SOMETHING",
-    "stood something"
+    "with an HOUR",
+    "with an hour"
    ],
    [
-    "in a UNIFORM.",
-    "in a uniform."
+    "to SPARE.",
+    "to spare."
    ]
   ]
  },
@@ -86,21 +98,363 @@
   "who": "narrator",
   "chunks": [
    [
-    "Black and BRASS,",
-    "Black and brass,"
+    "Mrs. Ruiz",
+    "Missus Ruiz"
    ],
    [
-    "like it",
-    "like it"
+    "forgot her",
+    "forgot her"
    ],
    [
-    "WORKED here.",
-    "worked here."
+    "FIRST BOYFRIEND",
+    "first boyfriend"
+   ],
+   [
+    "years AGO.",
+    "years ago."
    ]
   ]
  },
  {
   "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He's still",
+    "He's still"
+   ],
+   [
+    "UP there,",
+    "up there,"
+   ],
+   [
+    "doing the CROSSWORD.",
+    "doing the crossword."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "ME?",
+    "me?"
+   ],
+   [
+    "I've never",
+    "i've never"
+   ],
+   [
+    "forgotten",
+    "forgotten"
+   ],
+   [
+    "a THING.",
+    "a thing."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Grandad",
+    "Grandad"
+   ],
+   [
+    "lives NEXT DOOR,",
+    "lives next door,"
+   ],
+   [
+    "on TWELVE.",
+    "on twelve."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every MORNING",
+    "Every morning"
+   ],
+   [
+    "he passes me",
+    "he passes me"
+   ],
+   [
+    "a TOMATO",
+    "a tomato"
+   ],
+   [
+    "over the BALCONY wall.",
+    "over the balcony wall."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And he forgets",
+    "And he forgets"
+   ],
+   [
+    "EVERYTHING.",
+    "everything."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He rides up",
+    "He rides up"
+   ],
+   [
+    "to THIRTEEN",
+    "to thirteen"
+   ],
+   [
+    "for his GLASSES",
+    "for his glasses"
+   ],
+   [
+    "twice a DAY.",
+    "twice a day."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "They're usually",
+    "They're usually"
+   ],
+   [
+    "on his HEAD.",
+    "on his head."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "TUESDAY,",
+    "tuesday,"
+   ],
+   [
+    "I pressed TWELVE.",
+    "I pressed twelve."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The lift",
+    "The lift"
+   ],
+   [
+    "went PAST it.",
+    "went past it."
+   ]
+  ]
+ },
+ {
+  "id": "P02",
+  "pause": 0.6,
+  "chunks": [
+   [
+    "DING",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "THIRTEEN,",
+    "thirteen,"
+   ],
+   [
+    "but DARK.",
+    "but dark."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody FETCHING.",
+    "Nobody fetching."
+   ],
+   [
+    "Just SHELVES",
+    "Just shelves"
+   ],
+   [
+    "of forgotten THINGS.",
+    "of forgotten things."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And way",
+    "And way"
+   ],
+   [
+    "down the HALL,",
+    "down the hall,"
+   ],
+   [
+    "ONE small",
+    "one small"
+   ],
+   [
+    "cold LIGHT,",
+    "cold light,"
+   ],
+   [
+    "pointed",
+    "pointed"
+   ],
+   [
+    "at ME.",
+    "at me."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then the doors",
+    "Then the doors"
+   ],
+   [
+    "CLOSED",
+    "closed"
+   ],
+   [
+    "on their OWN.",
+    "on their own."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At TWELVE,",
+    "At twelve,"
+   ],
+   [
+    "Grandad was",
+    "Grandad was"
+   ],
+   [
+    "at his DOOR,",
+    "at his door,"
+   ],
+   [
+    "waving a TOMATO.",
+    "waving a tomato."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "WEDNESDAY,",
+    "wednesday,"
+   ],
+   [
+    "PAST twelve",
+    "past twelve"
+   ],
+   [
+    "AGAIN.",
+    "again."
+   ]
+  ]
+ },
+ {
+  "id": "P03",
+  "pause": 0.6,
+  "chunks": [
+   [
+    "DING",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It was",
+    "It was"
+   ],
+   [
+    "HALFWAY",
+    "halfway"
+   ],
+   [
+    "up the HALL.",
+    "up the hall."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Something",
+    "Something"
+   ],
+   [
+    "in a black",
+    "in a black"
+   ],
+   [
+    "and BRASS",
+    "and brass"
+   ],
+   [
+    "UNIFORM.",
+    "uniform."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
   "who": "narrator",
   "chunks": [
    [
@@ -122,340 +476,16 @@
   ]
  },
  {
-  "id": "L07",
+  "id": "L24",
   "who": "narrator",
   "chunks": [
-   [
-    "NINE of them.",
-    "nine of them."
-   ],
    [
     "ONE was LIT,",
     "one was lit,"
    ],
    [
-    "pointed",
-    "pointed"
-   ],
-   [
-    "at ME.",
-    "at me."
-   ]
-  ]
- },
- {
-  "id": "L08",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then the doors",
-    "Then the doors"
-   ],
-   [
-    "CLOSED",
-    "closed"
-   ],
-   [
-    "on their OWN.",
-    "on their own."
-   ]
-  ]
- },
- {
-  "id": "L09",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I live",
-    "I live"
-   ],
-   [
-    "on TWELVE.",
-    "on twelve."
-   ]
-  ]
- },
- {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mr. Okafor",
-    "Mr. Okafor"
-   ],
-   [
-    "next DOOR",
-    "next door"
-   ],
-   [
-    "has never",
-    "has never"
-   ],
-   [
-    "said HELLO.",
-    "said hello."
-   ]
-  ]
- },
- {
-  "id": "L11",
-  "who": "narrator",
-  "chunks": [
-   [
-    "But most EVENINGS,",
-    "But most evenings,"
-   ],
-   [
-    "over the",
-    "over the"
-   ],
-   [
-    "BALCONY wall,",
-    "balcony wall,"
-   ]
-  ]
- },
- {
-  "id": "L12",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I hear him",
-    "I hear him"
-   ],
-   [
-    "TALKING.",
-    "talking."
-   ]
-  ]
- },
- {
-  "id": "L13",
-  "who": "narrator",
-  "chunks": [
-   [
-    "To his",
-    "To his"
-   ],
-   [
-    "TOMATOES.",
-    "tomatoes."
-   ]
-  ]
- },
- {
-  "id": "L14",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He tells them",
-    "He tells them"
-   ],
-   [
-    "the WEATHER.",
-    "the weather."
-   ]
-  ]
- },
- {
-  "id": "L15",
-  "who": "narrator",
-  "chunks": [
-   [
-    "WEDNESDAY,",
-    "Wednesday,"
-   ],
-   [
-    "I was on",
-    "I was on"
-   ],
-   [
-    "the PHONE",
-    "the phone"
-   ],
-   [
-    "the whole RIDE,",
-    "the whole ride,"
-   ]
-  ]
- },
- {
-  "id": "L16",
-  "who": "narrator",
-  "chunks": [
-   [
-    "arguing with",
-    "arguing with"
-   ],
-   [
-    "my LANDLORD",
-    "my landlord"
-   ],
-   [
-    "about the HEATING.",
-    "about the heating."
-   ]
-  ]
- },
- {
-  "id": "L17",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Straight DOWN",
-    "Straight down"
-   ],
-   [
-    "to the LOBBY.",
-    "to the lobby."
-   ],
-   [
-    "A NORMAL ride.",
-    "A normal ride."
-   ]
-  ]
- },
- {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "THURSDAY,",
-    "Thursday,"
-   ],
-   [
-    "HEADPHONES on,",
-    "headphones on,"
-   ],
-   [
-    "I pressed LOBBY.",
-    "I pressed lobby."
-   ]
-  ]
- },
- {
-  "id": "L19",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And it",
-    "And it"
-   ],
-   [
-    "went UP",
-    "went up"
-   ],
-   [
-    "AGAIN.",
-    "again."
-   ]
-  ]
- },
- {
-  "id": "P02",
-  "pause": 0.6,
-  "chunks": [
-   [
-    "DING",
-    ""
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "This time",
-    "This time"
-   ],
-   [
-    "it stood",
-    "it stood"
-   ],
-   [
-    "just RIGHT",
-    "just right"
-   ],
-   [
-    "by the doors.",
-    "by the doors."
-   ]
-  ]
- },
- {
-  "id": "L21",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Behind it,",
-    "Behind it,"
-   ],
-   [
-    "the HALL",
-    "the hall"
-   ],
-   [
-    "ran back",
-    "ran back"
-   ],
-   [
-    "FURTHER",
-    "further"
-   ],
-   [
-    "than our BUILDING",
-    "than our building"
-   ],
-   [
-    "is WIDE,",
-    "is wide,"
-   ]
-  ]
- },
- {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
-    "with ONE",
-    "with one"
-   ],
-   [
-    "cold LIGHT",
-    "cold light"
-   ],
-   [
-    "at the",
-    "at the"
-   ],
-   [
-    "far END.",
-    "far end."
-   ]
-  ]
- },
- {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And the doors",
-    "And the doors"
-   ],
-   [
-    "HELD OPEN.",
-    "held open."
-   ]
-  ]
- },
- {
-  "id": "L24",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I pressed CLOSE.",
-    "I pressed close."
+    "on ME.",
+    "on me."
    ]
   ]
  },
@@ -464,16 +494,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Its LIGHT",
-    "Its light"
+    "That EVENING,",
+    "That evening,"
    ],
    [
-    "MOVED DOWN",
-    "moved down"
+    "Grandad called me",
+    "Grandad called me"
    ],
    [
-    "to the CORNER,",
-    "to the corner,"
+    "by DAD'S name.",
+    "by dad's name."
    ]
   ]
  },
@@ -482,16 +512,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "like it was",
-    "like it was"
+    "I LAUGHED",
+    "I laughed"
    ],
    [
-    "WATCHING",
-    "watching"
-   ],
-   [
-    "my FINGER.",
-    "my finger."
+    "it OFF.",
+    "it off."
    ]
   ]
  },
@@ -500,362 +526,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "They closed",
-    "They closed"
-   ],
-   [
-    "on my",
-    "on my"
-   ],
-   [
-    "THIRD press.",
-    "third press."
-   ]
-  ]
- },
- {
-  "id": "L28",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Its light",
-    "Its light"
-   ],
-   [
-    "stayed on ME",
-    "stayed on me"
-   ],
-   [
-    "till the GAP",
-    "till the gap"
-   ],
-   [
-    "CLOSED.",
-    "closed."
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "SATURDAY,",
-    "Saturday,"
-   ],
-   [
-    "UP AGAIN.",
-    "up again."
-   ]
-  ]
- },
- {
-  "id": "P03",
-  "pause": 0.6,
-  "chunks": [
-   [
-    "DING",
-    ""
-   ]
-  ]
- },
- {
-  "id": "L30",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It was",
-    "It was"
-   ],
-   [
-    "RIGHT in FRONT",
-    "right in front"
-   ],
-   [
-    "of the doors.",
-    "of the doors."
-   ]
-  ]
- },
- {
-  "id": "L31",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Now I could",
-    "Now I could"
-   ],
-   [
-    "see its HANDS.",
-    "see its hands."
-   ]
-  ]
- },
- {
-  "id": "L32",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Its ARMS",
-    "Its arms"
-   ],
-   [
-    "were too LONG.",
-    "were too long."
-   ]
-  ]
- },
- {
-  "id": "L33",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The folded GLOVES",
-    "The folded gloves"
-   ],
-   [
-    "hung BELOW",
-    "hung below"
-   ],
-   [
-    "its KNEES.",
-    "its knees."
-   ]
-  ]
- },
- {
-  "id": "L34",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I pressed CLOSE",
-    "I pressed close"
-   ],
-   [
-    "over and OVER.",
-    "over and over."
-   ]
-  ]
- },
- {
-  "id": "L35",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I stopped COUNTING",
-    "I stopped counting"
-   ],
-   [
-    "before they SHUT.",
-    "before they shut."
-   ]
-  ]
- },
- {
-  "id": "L36",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I didn't",
-    "I didn't"
-   ],
-   [
-    "tell ANYONE.",
-    "tell anyone."
-   ]
-  ]
- },
- {
-  "id": "L37",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Who would",
-    "Who would"
-   ],
-   [
-    "I TELL?",
-    "I tell?"
-   ],
-   [
-    "My LANDLORD?",
-    "My landlord?"
-   ]
-  ]
- },
- {
-  "id": "L38",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Next MONDAY,",
-    "Next Monday,"
-   ],
-   [
-    "Mr. Okafor's DOOR",
-    "Mr. Okafor's door"
-   ],
-   [
-    "and MINE",
-    "and mine"
-   ],
-   [
-    "opened TOGETHER.",
-    "opened together."
-   ]
-  ]
- },
- {
-  "id": "L39",
-  "who": "narrator",
-  "chunks": [
-   [
-    "We'd lived",
-    "We'd lived"
-   ],
-   [
-    "one WALL apart",
-    "one wall apart"
-   ],
-   [
-    "since SPRING.",
-    "since spring."
-   ]
-  ]
- },
- {
-  "id": "L40",
-  "who": "narrator",
-  "chunks": [
-   [
-    "We waited",
-    "We waited"
-   ],
-   [
-    "for the LIFT",
-    "for the lift"
-   ],
-   [
-    "without a WORD,",
-    "without a word,"
-   ],
-   [
-    "like ALWAYS.",
-    "like always."
-   ]
-  ]
- },
- {
-  "id": "L41",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He went",
-    "He went"
-   ],
-   [
-    "to the BACK.",
-    "to the back."
-   ],
-   [
-    "I stayed",
-    "I stayed"
-   ],
-   [
-    "by the BUTTONS.",
-    "by the buttons."
-   ]
-  ]
- },
- {
-  "id": "L42",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I pressed LOBBY.",
-    "I pressed lobby."
-   ]
-  ]
- },
- {
-  "id": "L43",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And it",
-    "And it"
-   ],
-   [
-    "went UP.",
-    "went up."
-   ]
-  ]
- },
- {
-  "id": "L44",
-  "who": "narrator",
-  "chunks": [
-   [
-    "His face",
-    "His face"
-   ],
-   [
-    "went STIFF.",
-    "went stiff."
-   ]
-  ]
- },
- {
-  "id": "L45",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He'd been",
-    "He'd been"
-   ],
-   [
-    "to THIRTEEN",
-    "to thirteen"
-   ],
-   [
-    "BEFORE.",
-    "before."
-   ]
-  ]
- },
- {
-  "id": "L46",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I bet",
-    "I bet"
-   ],
-   [
-    "he'd never",
-    "he'd never"
-   ],
-   [
-    "TOLD anyone",
-    "told anyone"
-   ],
-   [
-    "EITHER.",
-    "either."
-   ]
-  ]
- },
- {
-  "id": "L47",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then the lift",
-    "Then the lift"
-   ],
-   [
-    "SLOWED.",
-    "slowed."
+    "THURSDAY.",
+    "thursday."
    ]
   ]
  },
@@ -870,114 +542,109 @@
   ]
  },
  {
-  "id": "L48",
+  "id": "L28",
   "who": "narrator",
   "chunks": [
    [
-    "It FILLED",
-    "It filled"
+    "It was RIGHT",
+    "It was right"
    ],
    [
-    "the whole GAP.",
-    "the whole gap."
+    "in front",
+    "in front"
+   ],
+   [
+    "of the DOORS.",
+    "of the doors."
    ]
   ]
  },
  {
-  "id": "L49",
+  "id": "L29",
   "who": "narrator",
   "chunks": [
    [
-    "One LIGHT.",
-    "One light."
+    "Its arms",
+    "Its arms"
    ],
    [
-    "On HIM.",
-    "On him."
+    "were too LONG.",
+    "were too long."
+   ],
+   [
+    "Its GLOVES",
+    "Its gloves"
+   ],
+   [
+    "hung below",
+    "hung below"
+   ],
+   [
+    "its KNEES.",
+    "its knees."
    ]
   ]
  },
  {
-  "id": "L50",
+  "id": "L30",
   "who": "narrator",
   "chunks": [
    [
-    "Then on ME.",
-    "Then on me."
+    "From them",
+    "From them"
+   ],
+   [
+    "hung a",
+    "hung a"
+   ],
+   [
+    "BRASS TAG,",
+    "brass tag,"
+   ],
+   [
+    "like the ones",
+    "like the ones"
+   ],
+   [
+    "on the KEYS.",
+    "on the keys."
    ]
   ]
  },
  {
-  "id": "L51",
+  "id": "L31",
   "who": "narrator",
   "chunks": [
    [
-    "The doors",
-    "The doors"
+    "It had",
+    "It had"
    ],
    [
-    "didn't even",
-    "didn't even"
+    "my FLAT number",
+    "my flat number"
    ],
    [
-    "TRY.",
-    "try."
+    "on it.",
+    "on it."
    ]
   ]
  },
  {
-  "id": "L52",
+  "id": "L32",
   "who": "narrator",
   "chunks": [
    [
-    "I pressed CLOSE.",
-    "I pressed close."
+    "I pressed CLOSE",
+    "I pressed close"
    ],
    [
-    "NOTHING.",
-    "nothing."
-   ]
-  ]
- },
- {
-  "id": "L53",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I pressed it",
-    "I pressed it"
-   ],
-   [
-    "AGAIN.",
-    "again."
-   ]
-  ]
- },
- {
-  "id": "L54",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The doors",
-    "The doors"
-   ],
-   [
-    "started to",
-    "started to"
-   ],
-   [
-    "SLIDE.",
-    "slide."
+    "over and OVER.",
+    "over and over."
    ]
   ]
  },
  {
   "id": "P05",
-  "pause": 0.6,
-  "chunks": []
- },
- {
-  "id": "P06",
   "pause": 0.9,
   "chunks": [
    [
@@ -987,43 +654,29 @@
   ]
  },
  {
-  "id": "L55",
+  "id": "L33",
   "who": "narrator",
   "chunks": [
    [
-    "It was IN",
-    "It was in"
+    "It LEANED in.",
+    "It leaned in."
    ],
    [
-    "the DOORWAY.",
-    "the doorway."
+    "The doors",
+    "The doors"
+   ],
+   [
+    "BOUNCED",
+    "bounced"
+   ],
+   [
+    "off its SHOULDERS.",
+    "off its shoulders."
    ]
   ]
  },
  {
-  "id": "L56",
-  "who": "narrator",
-  "chunks": [
-   [
-    "SQUEEZED to FIT,",
-    "squeezed to fit,"
-   ],
-   [
-    "its HEAD",
-    "its head"
-   ],
-   [
-    "tipped DOWN",
-    "tipped down"
-   ],
-   [
-    "at US.",
-    "at us."
-   ]
-  ]
- },
- {
-  "id": "L57",
+  "id": "L34",
   "who": "narrator",
   "chunks": [
    [
@@ -1035,669 +688,317 @@
     "lit up,"
    ],
    [
-    "and ALL",
-    "and all"
-   ],
-   [
-    "on US.",
-    "on us."
+    "on ME.",
+    "on me."
    ]
   ]
  },
  {
-  "id": "L58",
+  "id": "L35",
   "who": "narrator",
   "chunks": [
    [
-    "The doors",
-    "The doors"
+    "Then the doors",
+    "Then the doors"
    ],
    [
-    "BOUNCED off",
-    "bounced off"
+    "SHUT,",
+    "shut,"
    ],
    [
-    "its SHOULDERS.",
-    "its shoulders."
+    "and the lift",
+    "and the lift"
+   ],
+   [
+    "didn't MOVE.",
+    "didn't move."
    ]
   ]
  },
  {
-  "id": "L59",
+  "id": "L36",
   "who": "narrator",
   "chunks": [
    [
-    "It didn't",
-    "It didn't"
+    "I took",
+    "I took"
    ],
    [
-    "FLINCH.",
-    "flinch."
+    "the STAIRS",
+    "the stairs"
+   ],
+   [
+    "down to TWELVE.",
+    "down to twelve."
    ]
   ]
  },
  {
-  "id": "L60",
+  "id": "L37",
   "who": "narrator",
   "chunks": [
    [
-    "They rolled BACK",
-    "They rolled back"
+    "Grandad",
+    "Grandad"
    ],
    [
-    "and tried AGAIN.",
-    "and tried again."
-   ]
-  ]
- },
- {
-  "id": "P07",
-  "pause": 0.7,
-  "chunks": [
-   [
-    "THUMP",
-    ""
-   ]
-  ]
- },
- {
-  "id": "L61",
-  "who": "narrator",
-  "chunks": [
-   [
-    "His hand",
-    "His hand"
-   ],
-   [
-    "found my SLEEVE,",
-    "found my sleeve,"
-   ],
-   [
-    "SHAKING.",
-    "shaking."
-   ]
-  ]
- },
- {
-  "id": "L62",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then I thought",
-    "Then I thought"
-   ],
-   [
-    "of WEDNESDAY.",
-    "of Wednesday."
-   ]
-  ]
- },
- {
-  "id": "L63",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The one ride",
-    "The one ride"
-   ],
-   [
-    "I TALKED",
-    "I talked"
-   ],
-   [
-    "the whole WAY,",
-    "the whole way,"
-   ]
-  ]
- },
- {
-  "id": "L64",
-  "who": "narrator",
-  "chunks": [
-   [
-    "the lift",
-    "the lift"
-   ],
-   [
-    "never went UP.",
-    "never went up."
-   ]
-  ]
- },
- {
-  "id": "L65",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So I said,",
-    "So I said,"
-   ],
-   [
-    "\"TALK",
-    "talk"
-   ],
-   [
-    "to me.\"",
-    "to me."
-   ]
-  ]
- },
- {
-  "id": "L66",
-  "who": "narrator",
-  "chunks": [
-   [
-    "One LIGHT",
-    "One light"
-   ],
-   [
-    "went OUT.",
-    "went out."
-   ]
-  ]
- },
- {
-  "id": "L67",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He STARED",
-    "He stared"
-   ],
-   [
-    "at it.",
-    "at it."
-   ]
-  ]
- },
- {
-  "id": "L68",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then he said,",
-    "Then he said,"
-   ],
-   [
-    "\"About WHAT?\"",
-    "About what?"
-   ]
-  ]
- },
- {
-  "id": "L69",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I said,",
-    "I said,"
-   ],
-   [
-    "\"ANYTHING.",
-    "anything."
-   ],
-   [
-    "The WEATHER.\"",
-    "The weather."
-   ]
-  ]
- },
- {
-  "id": "L70",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He said,",
-    "He said,"
-   ],
-   [
-    "\"I don't TALK",
-    "I don't talk"
-   ],
-   [
-    "to PEOPLE.\"",
-    "to people."
-   ]
-  ]
- },
- {
-  "id": "L71",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Even THAT",
-    "Even that"
-   ],
-   [
-    "put one OUT.",
-    "put one out."
-   ]
-  ]
- },
- {
-  "id": "L72",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I said,",
-    "I said,"
-   ],
-   [
-    "\"You talk",
-    "You talk"
-   ],
-   [
-    "to your TOMATOES.\"",
-    "to your tomatoes."
-   ]
-  ]
- },
- {
-  "id": "L73",
-  "who": "narrator",
-  "chunks": [
-   [
-    "\"They always LISTEN,\"",
-    "they always listen,"
-   ],
-   [
-    "he said.",
-    "he said."
-   ]
-  ]
- },
- {
-  "id": "L74",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He looked",
-    "He looked"
-   ],
-   [
-    "at his SHOES.",
-    "at his shoes."
-   ]
-  ]
- },
- {
-  "id": "L75",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I told him,",
-    "I told him,"
-   ],
-   [
-    "\"I don't know",
-    "I don't know"
-   ],
-   [
-    "ANYONE",
-    "anyone"
-   ],
-   [
-    "in this CITY.\"",
-    "in this city."
-   ]
-  ]
- },
- {
-  "id": "L76",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He looked",
-    "He looked"
-   ],
-   [
-    "UP.",
-    "up."
-   ]
-  ]
- },
- {
-  "id": "L77",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He said,",
-    "He said,"
-   ],
-   [
-    "\"The TOMATOES",
-    "The tomatoes"
-   ],
-   [
-    "were my WIFE'S.",
-    "were my wife's."
-   ],
-   [
-    "It's been",
-    "It's been"
-   ],
-   [
-    "FOUR YEARS.\"",
-    "four years."
-   ]
-  ]
- },
- {
-  "id": "L78",
-  "who": "narrator",
-  "chunks": [
-   [
-    "One light LEFT,",
-    "One light left,"
-   ],
-   [
-    "right in",
-    "right in"
-   ],
-   [
-    "the MIDDLE.",
-    "the middle."
-   ]
-  ]
- },
- {
-  "id": "L79",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then he said,",
-    "Then he said,"
-   ],
-   [
-    "\"Come and",
-    "Come and"
-   ],
-   [
-    "TRY one.\"",
-    "try one."
-   ]
-  ]
- },
- {
-  "id": "L80",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The doors",
-    "The doors"
-   ],
-   [
-    "slid SHUT,",
-    "slid shut,"
-   ],
-   [
-    "and nothing",
-    "and nothing"
-   ],
-   [
-    "STOPPED them.",
-    "stopped them."
-   ]
-  ]
- },
- {
-  "id": "L81",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It only COMES",
-    "It only comes"
-   ],
-   [
-    "when NOBODY",
-    "when nobody"
-   ],
-   [
-    "in the lift",
-    "in the lift"
-   ],
-   [
-    "is TALKING.",
-    "is talking."
-   ]
-  ]
- },
- {
-  "id": "L82",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Even if",
-    "Even if"
-   ],
-   [
-    "there are",
-    "there are"
-   ],
-   [
-    "TWO of you.",
-    "two of you."
-   ]
-  ]
- },
- {
-  "id": "P08",
-  "pause": 0.6,
-  "chunks": []
- },
- {
-  "id": "L83",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At the LOBBY,",
-    "At the lobby,"
-   ],
-   [
-    "the doors",
-    "the doors"
-   ],
-   [
-    "opened",
+    "OPENED",
     "opened"
    ],
    [
-    "on DAYLIGHT.",
-    "on daylight."
+    "his door.",
+    "his door."
    ]
   ]
  },
  {
-  "id": "L84",
+  "id": "L38",
   "who": "narrator",
   "chunks": [
    [
-    "We walked out",
-    "We walked out"
+    "He smiled",
+    "He smiled"
    ],
    [
-    "SIDE by SIDE.",
-    "side by side."
+    "the way you SMILE",
+    "the way you smile"
+   ],
+   [
+    "at a STRANGER.",
+    "at a stranger."
    ]
   ]
  },
  {
-  "id": "L85",
+  "id": "L39",
   "who": "narrator",
   "chunks": [
    [
-    "On the BALCONY,",
-    "On the balcony,"
+    "He said,",
+    "He said,"
    ],
    [
-    "a TOMATO",
-    "a tomato"
+    "\"Can I",
+    "\"Can I"
    ],
    [
-    "came over",
-    "came over"
-   ],
-   [
-    "the WALL.",
-    "the wall."
+    "HELP you?\"",
+    "help you?\""
    ]
   ]
  },
  {
-  "id": "L86",
+  "id": "P06",
+  "pause": 0.8,
+  "chunks": []
+ },
+ {
+  "id": "L40",
   "who": "narrator",
   "chunks": [
    [
-    "Then ANOTHER.",
-    "Then another."
+    "Everything you FORGET",
+    "Everything you forget"
+   ],
+   [
+    "turns up",
+    "turns up"
+   ],
+   [
+    "on THIRTEEN.",
+    "on thirteen."
    ]
   ]
  },
  {
-  "id": "L87",
+  "id": "L41",
   "who": "narrator",
   "chunks": [
    [
-    "Then his",
-    "Then his"
+    "And Grandad",
+    "And Grandad"
    ],
    [
-    "whole HEAD,",
-    "whole head,"
+    "had FORGOTTEN",
+    "had forgotten"
    ],
    [
-    "still TALKING.",
-    "still talking."
+    "ME.",
+    "me."
    ]
   ]
  },
  {
-  "id": "L88",
+  "id": "L42",
   "who": "narrator",
   "chunks": [
    [
-    "He introduced me",
-    "He introduced me"
+    "But nothing",
+    "But nothing"
    ],
    [
-    "to EVERY",
-    "to every"
+    "up there",
+    "up there"
    ],
    [
-    "PLANT.",
-    "plant."
+    "is GONE.",
+    "is gone."
+   ],
+   [
+    "It just WAITS",
+    "It just waits"
+   ],
+   [
+    "to be FETCHED.",
+    "to be fetched."
    ]
   ]
  },
  {
-  "id": "L89",
+  "id": "L43",
   "who": "narrator",
   "chunks": [
    [
-    "It took",
-    "It took"
+    "So I went",
+    "So I went"
    ],
    [
-    "an HOUR.",
-    "an hour."
+    "back UP,",
+    "back up,"
+   ],
+   [
+    "right PAST it,",
+    "right past it,"
+   ],
+   [
+    "to a SHELF",
+    "to a shelf"
+   ],
+   [
+    "with my NUMBER.",
+    "with my number."
    ]
   ]
  },
  {
-  "id": "L90",
+  "id": "L44",
   "who": "narrator",
   "chunks": [
    [
-    "The next MORNING,",
-    "The next morning,"
+    "On it",
+    "On it"
    ],
    [
-    "we got in",
-    "we got in"
+    "was the RED SCARF",
+    "was the red scarf"
    ],
    [
-    "that lift",
-    "that lift"
+    "he KNITS me",
+    "he knits me"
    ],
    [
-    "MID-SENTENCE.",
-    "mid-sentence."
+    "every WINTER.",
+    "every winter."
    ]
   ]
  },
  {
-  "id": "L91",
+  "id": "L45",
   "who": "narrator",
   "chunks": [
    [
-    "He was waving",
-    "He was waving"
+    "I put it",
+    "I put it"
    ],
    [
-    "a TOMATO",
-    "a tomato"
-   ],
-   [
-    "AROUND.",
-    "around."
+    "in his HANDS.",
+    "in his hands."
    ]
   ]
  },
  {
-  "id": "L92",
+  "id": "L46",
   "who": "narrator",
   "chunks": [
    [
-    "It BUMPED",
-    "It bumped"
+    "He held it",
+    "He held it"
    ],
    [
-    "the TOP",
-    "the top"
-   ],
-   [
-    "BUTTON.",
-    "button."
+    "a LONG time.",
+    "a long time."
    ]
   ]
  },
  {
-  "id": "L93",
+  "id": "L47",
   "who": "narrator",
   "chunks": [
    [
-    "I pressed LOBBY.",
-    "I pressed lobby."
+    "Then he said",
+    "Then he said"
+   ],
+   [
+    "my NAME.",
+    "my name."
    ]
   ]
  },
  {
-  "id": "L94",
+  "id": "L48",
   "who": "narrator",
   "chunks": [
    [
-    "We rode it",
-    "We rode it"
+    "He forgets me",
+    "He forgets me"
    ],
    [
-    "up to TWENTY",
-    "up to twenty"
+    "most MORNINGS now.",
+    "most mornings now."
+   ]
+  ]
+ },
+ {
+  "id": "L49",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Good thing",
+    "Good thing"
    ],
    [
-    "and DOWN again",
-    "and down again"
+    "I never",
+    "I never"
    ],
    [
-    "before EITHER",
-    "before either"
+    "forget ANYTHING.",
+    "forget anything."
+   ]
+  ]
+ },
+ {
+  "id": "L50",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every MORNING,",
+    "Every morning,"
    ],
    [
-    "of us",
-    "of us"
+    "I go up",
+    "I go up"
    ],
    [
-    "NOTICED.",
-    "noticed."
+    "to THIRTEEN",
+    "to thirteen"
+   ],
+   [
+    "and FETCH myself",
+    "and fetch myself"
+   ],
+   [
+    "BACK.",
+    "back."
    ]
   ]
  }
