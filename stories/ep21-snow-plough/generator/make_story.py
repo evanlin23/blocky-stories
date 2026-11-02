@@ -45,6 +45,51 @@ for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
 
+
+
+MAP = {}
+
+
+def ref(lid, k):
+    """The new index of the first caption piece of the script's chunk k, once long chunks are split."""
+    return f"{lid}.{MAP[lid][k]}"
+
+
+def split_chunks(chunks, lid=None):
+    """Captions run two or three words at a time (house rule): split any longer chunk, spoken text alongside."""
+    out, starts = [], []
+    for cap, spk in chunks:
+        starts.append(len(out))
+        cw, sw = cap.split(), spk.split()
+        n = len(cw)
+        if len(cw) != len(sw) or (n <= 3 and len(cap) <= 18):
+            out.append([cap, spk])
+            continue
+        k = max(2 if len(cap) > 18 and n >= 2 else 1, -(-n // 3))
+        sizes = [n // k + (1 if i < n % k else 0) for i in range(k)]
+        i = 0
+        for sz in sizes:
+            out.append([" ".join(cw[i:i + sz]), " ".join(sw[i:i + sz])])
+            i += sz
+    if lid:
+        MAP[lid] = starts
+    return out
+
+
+for ln in lines:
+    if ln.get("chunks"):
+        ln["chunks"] = split_chunks(ln["chunks"], ln["id"])
+
+# the word check: Whisper writes numbers above twenty as digits and "plow" the American way, so the spoken text
+# (never the captions) says them that way; the voice reads them the same. "Odile's" is heard "Odeel's".
+import re
+SAY = [(r"\b[Ff]orty-first\b", "41st"), (r"\b[Ff]orty-one\b", "41"), (r"\b[Tt]wenty-three\b", "23"),
+       (r"\b[Tt]wenty-one\b", "21"), (r"\b[Ff]orty\b", "40"), (r"\bploughed\b", "plowed"), (r"\b[Pp]lough\b", "plow")]
+for ln in lines:
+    for ch in ln.get("chunks", []):
+        for pat, rep in SAY:
+            ch[1] = re.sub(pat, rep, ch[1])
+
 # ---------------------------------------------------------------------------------------------------- cast
 cast = {
     "me": {"age": "adult", "skin": "#e0b08a", "shirt": "#2f5fa8", "pattern": "solid", "collar": "#27497f",
@@ -217,7 +262,7 @@ SHOTS = [
     ("L03", "the Marker glimpse at the edge of the beams", 2,
      still(EYE, W2P((3.0, 1005, 1.1), 1040, 180), 30), {}),
     ("L04", "close on two amber eyes", 2, still(EYE, W2P((3.0, 1005, 1.2), 1030, 180), 62), {}),
-    ("L04.2", "a normal post's single glint", 2, still(EYE, W2P((3.0, 990, 1.7), 1030, 180), 45), {}),
+    (ref("L04", 2), "a normal post's single glint", 2, still(EYE, W2P((3.0, 990, 1.7), 1030, 180), 45), {}),
     # 02 the promise
     ("L05", "Odile's cottage window lit warm in falling snow", 2,
      still([-1.5, -5.5, 1.7], [-7.4, 0.5, 1.5], 26), {}),
@@ -226,7 +271,7 @@ SHOTS = [
      still([O_BASE[0] + 0.9, -1.3, 1.3], [CHAIR[0], 0.2, 0.95], 30), {"snow": 0}),
     ("L08", "the far light high on the mountain", 2, still([-5.0, -8.0, 1.6], [-14.0, 300.0, 6.5], 36), {}),
     ("L09", "the keys on the table", 2, still([O_BASE[0] + 0.5, -0.8, 1.35], [O_BASE[0] + 0.35, 0.2, 0.8], 32), {"snow": 0}),
-    ("L09.4", "Odile's face", 2, still([O_BASE[0] + 0.6, -0.35, 1.3], [CHAIR[0], 0.1, 1.25], 32), {"snow": 0}),
+    (ref("L09", 4), "Odile's face", 2, still([O_BASE[0] + 0.6, -0.35, 1.3], [CHAIR[0], 0.1, 1.25], 32), {"snow": 0}),
     ("L10", "my face, nodding", 2, still([CHAIR[0] + 0.5, -0.5, 1.55], [O_BASE[0] + 1.0, 0.9, 1.5], 34), {"snow": 0}),
     ("L11", "Odile, one hand raised flat", 2, still([O_BASE[0] + 0.7, -0.6, 1.4], [CHAIR[0], 0.1, 1.15], 26), {"snow": 0}),
     ("L12", "close on her, then a cough", 2, still([O_BASE[0] + 0.5, -0.3, 1.3], [CHAIR[0], 0.1, 1.28], 42), {"snow": 0}),
@@ -241,7 +286,7 @@ SHOTS = [
     ("L19", "the cab, a slow small shake", 2, SHAKE_CAM, {"hand": 0.02}),
     ("L20", "the right-hand window, black below the post line", 2, WIN_R, {}),
     ("L21", "my face, worried", 2, FACE, {}),
-    ("L21.2", "the road ahead again", 2, POV, {}),
+    (ref("L21", 2), "the road ahead again", 2, POV, {}),
     ("L22", "the fortieth post, then the hut and the white van", 2, still(EYE, [-2.5, 40, 1.6], 17), {}),
     ("L23", "Bram by the stove", 2, still([H_BASE[0] + 0.3, H_BASE[1] - 1.7, 1.45], [H_BASE[0] + 0.6, H_BASE[1] + 0.6, 1.4], 30), {"snow": 0}),
     ("L24", "the white bag at the end of Bram's sleeve", 2,
@@ -274,7 +319,7 @@ SHOTS = [
     ("L49", "low on the blade, snow sheeting off", 1, still([3.5, 6.5, 0.6], [0.3, 3.8, 0.8], 24), {}),
     ("L50", "blade edge and the two eyes", 1, still([-2.6, 3.9, 0.8], [0.0, 4.5, 1.1], 28), {}),
     ("L51", "the mirror: two white lights stopping", 1, still([-1.6, 0.0, 3.0], [-0.3, -14.0, 1.5], 24), {}),
-    ("L51.2", "Bram in his own cab", 1, still([-0.5, -9.2, 1.95], [-0.5, -12.6, 1.9], 38), {}),
+    (ref("L51", 2), "Bram in his own cab", 1, still([-0.5, -9.2, 1.95], [-0.5, -12.6, 1.9], 38), {}),
     ("L52", "the Marker through the glass, unmoved", 2,
      still([-0.5, 0.9, 3.2], W2P(MK_FINAL + (1.0,), S_STOP, 180), 20), {}),
     ("L53", "same frame, the dawn beginning", 4,
@@ -306,7 +351,7 @@ SHOTS = [
      still([O_BASE[0] + 0.5, -0.9, 1.4], [O_BASE[0] + 0.5, 0.1, 0.85], 30), {"snow": 0}),
     ("L70", "Odile looks from the bag to me", 2, still([O_BASE[0] + 0.7, -0.6, 1.4], [CHAIR[0], 0.1, 1.2], 30), {"snow": 0}),
     ("L71", "two cups on the table", 2, still([O_BASE[0] + 0.7, -0.7, 1.3], [O_BASE[0] + 0.5, 0.1, 0.85], 30), {"snow": 0}),
-    ("L71.2", "Odile smiles", 2, still([O_BASE[0] + 0.5, -0.35, 1.3], [CHAIR[0], 0.1, 1.28], 36), {"snow": 0}),
+    (ref("L71", 2), "Odile smiles", 2, still([O_BASE[0] + 0.5, -0.35, 1.3], [CHAIR[0], 0.1, 1.28], 36), {"snow": 0}),
     ("L72", "spring: the mended road, the new post at the new edge, me beside it", 2,
      still(W2P((-0.4, 752.0, 1.5), 700, 0), W2P((0.5, 741.0, 1.2), 700, 0), 26), {}),
     ("L73", "the new post's reflector catches the low sun", 4,
@@ -386,7 +431,7 @@ key("odile", "L07", expr="neutral")
 key("odile", "L07+1.0", head=[14, 22], tremble=3.0, blend=0.1)
 key("odile", "L07+1.6", head=[0, 6], tremble=0, blend=0.3)
 key("odile", "L09", head=[0, 4])
-talk("odile", "L09.3", "L09>")
+talk("odile", ref("L09", 3), "L09>")
 key("odile", "L11", arms=[80, 85], expr="neutral")
 talk("odile", "L11", "L11>")
 key("odile", "L12", arms=[0, 0], blend=0.3)
@@ -395,17 +440,17 @@ key("odile", "L12>", tremble=3.0, blend=0.1)
 hide("odile", "L13")
 put("odile", "L70", [CHAIR[0], CHAIR[1], -0.17], yaw=90, expr="neutral", sit=True, head=[0, 10])
 key("odile", "L71", expr="neutral")
-key("odile", "L71.2", expr="grin", head=[0, 2], blend=0.5)
+key("odile", ref("L71", 2), expr="grin", head=[0, 2], blend=0.5)
 # Bram: the hut, then his van, then at my door
 hide("bram", 0)
 put("bram", "L23", [H_BASE[0] + 0.6, H_BASE[1] + 0.5], yaw=0, expr="grin", head=[0, 4])
 key("bram", "L24", arms=[0, 84], blend=0.35)
 hide("bram", "L26")
-put("bram", "L51.2", [-0.5, -12.6, 0.3], yaw=180, expr="scared", hide_parts=LEGS, arms=[60, 60])
+put("bram", ref("L51", 2), [-0.5, -12.6, 0.3], yaw=180, expr="scared", hide_parts=LEGS, arms=[60, 60])
 hide("bram", "L52")
 put("bram", "L63", [-2.1, 0.2], yaw=70, expr="scared", arms=[0, 0])
 key("bram", "L63", arms=[75, 75], blend=0.2)
-key("bram", "L63.2", expr="worried", blend=0.5)
+key("bram", ref("L63", 2), expr="worried", blend=0.5)
 hide("bram", "L64")
 
 # ---------------------------------------------------------------------------------------------------- music and sound
@@ -445,7 +490,7 @@ sound = {"floor": "wood", "steps_db": -26,
              {"at": "L46", "kind": "hit", "db": -8},
              {"at": "L48", "kind": "whoosh", "db": -12, "dur": 1.8},
              {"at": "L57", "kind": "creak", "db": -10, "dur": 3.4},
-             {"at": "L63.1", "kind": "knock", "pattern": [0, 0.28, 0.56], "tone": "glass_soft", "db": -10},
+             {"at": ref("L63", 1), "kind": "knock", "pattern": [0, 0.28, 0.56], "tone": "glass_soft", "db": -10},
              {"at": "L73>", "kind": "click", "db": -10},
          ],
          "music_drops": [{"from": "L44>", "to": "L45"},

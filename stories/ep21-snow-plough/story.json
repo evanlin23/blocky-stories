@@ -113,19 +113,23 @@
    "chunks": [
     [
      "FORTY-ONE",
-     "Forty-one"
+     "41"
     ],
     [
      "POSTS.",
      "posts."
     ],
     [
-     "On the way UP,",
-     "on the way up,"
+     "On the",
+     "on the"
+    ],
+    [
+     "way UP,",
+     "way up,"
     ],
     [
      "there were FORTY.",
-     "there were forty."
+     "there were 40."
     ]
    ]
   },
@@ -174,8 +178,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And it had TWO",
-     "And it had two"
+     "And it",
+     "And it"
+    ],
+    [
+     "had TWO",
+     "had two"
     ],
     [
      "REFLECTORS.",
@@ -216,7 +224,7 @@
    "chunks": [
     [
      "She ploughed",
-     "She ploughed"
+     "She plowed"
     ],
     [
      "the PASS ROAD",
@@ -224,7 +232,7 @@
     ],
     [
      "for FORTY",
-     "for forty"
+     "for 40"
     ],
     [
      "WINTERS.",
@@ -259,8 +267,12 @@
      "Her tablets"
     ],
     [
-     "were on the chemist's VAN,",
-     "were on the chemist's van,"
+     "were on the",
+     "were on the"
+    ],
+    [
+     "chemist's VAN,",
+     "chemist's van,"
     ],
     [
      "and the van",
@@ -286,7 +298,7 @@
     ],
     [
      "her plough KEYS",
-     "her plough keys"
+     "her plow keys"
     ],
     [
      "on the table",
@@ -326,7 +338,7 @@
     ],
     [
      "\"Forty POSTS",
-     "forty posts"
+     "40 posts"
     ],
     [
      "to the TOP.",
@@ -343,8 +355,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "\"If you can't SEE",
-     "If you can't see"
+     "\"If you",
+     "If you"
+    ],
+    [
+     "can't SEE",
+     "can't see"
     ],
     [
      "the next one,",
@@ -362,11 +378,15 @@
    "chunks": [
     [
      "The plough",
-     "The plough"
+     "The plow"
     ],
     [
-     "is a YELLOW BOX",
-     "is a yellow box"
+     "is a",
+     "is a"
+    ],
+    [
+     "YELLOW BOX",
+     "yellow box"
     ],
     [
      "on WHEELS,",
@@ -406,8 +426,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "All you can SEE",
-     "All you can see"
+     "All you",
+     "All you"
+    ],
+    [
+     "can SEE",
+     "can see"
     ],
     [
      "are the POSTS.",
@@ -420,16 +444,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Thin and ORANGE,",
-     "Thin and orange,"
+     "Slim and ORANGE,",
+     "Slim and orange,"
     ],
     [
-     "with a black CAP",
-     "with a black cap"
+     "with a",
+     "with a"
     ],
     [
-     "and one amber EYE.",
-     "and one amber eye."
+     "black CAP",
+     "black cap"
+    ],
+    [
+     "and one",
+     "and one"
+    ],
+    [
+     "amber EYE.",
+     "amber eye."
     ]
    ]
   },
@@ -438,8 +470,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "You steer",
-     "You steer"
+     "You drive",
+     "You drive"
     ],
     [
      "from GLINT",
@@ -471,7 +503,7 @@
    "chunks": [
     [
      "At TWENTY-THREE,",
-     "At twenty-three,"
+     "At 23,"
     ],
     [
      "the whole cab",
@@ -497,8 +529,12 @@
      "came up"
     ],
     [
-     "from the DROP SIDE,",
-     "from the drop side,"
+     "from the",
+     "from the"
+    ],
+    [
+     "DROP SIDE,",
+     "drop side,"
     ],
     [
      "like ice",
@@ -519,8 +555,12 @@
      "I told myself"
     ],
     [
-     "it was the BLADE",
-     "it was the blade"
+     "it was",
+     "it was"
+    ],
+    [
+     "the BLADE",
+     "the blade"
     ],
     [
      "on a ROCK.",
@@ -534,7 +574,7 @@
    "chunks": [
     [
      "FORTY",
-     "Forty"
+     "40"
     ],
     [
      "at the TOP.",
@@ -555,8 +595,12 @@
      "the van driver,"
     ],
     [
-     "was in the HUT",
-     "was in the hut"
+     "was in",
+     "was in"
+    ],
+    [
+     "the HUT",
+     "the hut"
     ],
     [
      "with a STOVE",
@@ -577,8 +621,12 @@
      "He handed me"
     ],
     [
-     "a little white BAG.",
-     "a little white bag."
+     "a little",
+     "a little"
+    ],
+    [
+     "white BAG.",
+     "white bag."
     ]
    ]
   },
@@ -599,8 +647,12 @@
      "beside me,"
     ],
     [
-     "where I could SEE it.",
-     "where I could see it."
+     "where I could",
+     "where I could"
+    ],
+    [
+     "SEE it.",
+     "see it."
     ]
    ]
   },
@@ -609,8 +661,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He'd follow me DOWN",
-     "He'd follow me down"
+     "He'd follow",
+     "He'd follow"
+    ],
+    [
+     "me DOWN",
+     "me down"
     ],
     [
      "in his VAN,",
@@ -635,8 +691,12 @@
      "the posts"
     ],
     [
-     "were on my LEFT.",
-     "were on my left."
+     "were on",
+     "were on"
+    ],
+    [
+     "my LEFT.",
+     "my left."
     ]
    ],
    "gap": 0.3
@@ -686,8 +746,12 @@
      "wide."
     ],
     [
-     "Snow on its SHOULDERS.",
-     "snow on its shoulders."
+     "Snow on",
+     "snow on"
+    ],
+    [
+     "its SHOULDERS.",
+     "its shoulders."
     ]
    ]
   },
@@ -714,8 +778,12 @@
      "Its two eyes"
     ],
     [
-     "caught my HEADLIGHTS",
-     "caught my headlights"
+     "caught my",
+     "caught my"
+    ],
+    [
+     "HEADLIGHTS",
+     "headlights"
     ],
     [
      "like a pair",
@@ -754,8 +822,12 @@
      "At seventeen,"
     ],
     [
-     "it was there AGAIN.",
-     "it was there again."
+     "it was",
+     "it was"
+    ],
+    [
+     "there AGAIN.",
+     "there again."
     ]
    ]
   },
@@ -768,8 +840,12 @@
      "One step"
     ],
     [
-     "OUT of the LINE,",
-     "out of the line,"
+     "OUT of",
+     "out of"
+    ],
+    [
+     "the LINE,",
+     "the line,"
     ],
     [
      "on the ROAD.",
@@ -790,8 +866,12 @@
      "against its front,"
     ],
     [
-     "like it had stood there",
-     "like it had stood there"
+     "like it had",
+     "like it had"
+    ],
+    [
+     "stood there",
+     "stood there"
     ],
     [
      "for HOURS.",
@@ -816,8 +896,12 @@
      "was sitting low,"
     ],
     [
-     "like it was KNEELING.",
-     "like it was kneeling."
+     "like it",
+     "like it"
+    ],
+    [
+     "was KNEELING.",
+     "was kneeling."
     ]
    ]
   },
@@ -830,8 +914,12 @@
      "At twenty,"
     ],
     [
-     "it was at the edge",
-     "it was at the edge"
+     "it was at",
+     "it was at"
+    ],
+    [
+     "the edge",
+     "the edge"
     ],
     [
      "of my LANE.",
@@ -844,8 +932,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Under the orange PAINT",
-     "Under the orange paint"
+     "Under the",
+     "Under the"
+    ],
+    [
+     "orange PAINT",
+     "orange paint"
     ],
     [
      "were the LINES",
@@ -878,8 +970,12 @@
      "built a person"
     ],
     [
-     "out of a POST",
-     "out of a post"
+     "out of",
+     "out of"
+    ],
+    [
+     "a POST",
+     "a post"
     ],
     [
      "and SQUASHED it.",
@@ -897,7 +993,7 @@
     ],
     [
      "TWENTY-ONE.",
-     "twenty-one."
+     "21."
     ]
    ]
   },
@@ -920,12 +1016,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "The engine COUGHED.",
-     "The engine coughed."
+     "The engine",
+     "The engine"
     ],
     [
-     "The beams went BROWN.",
-     "the beams went brown."
+     "COUGHED.",
+     "coughed."
+    ],
+    [
+     "The beams",
+     "the beams"
+    ],
+    [
+     "went BROWN.",
+     "went brown."
     ]
    ]
   },
@@ -934,8 +1038,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "All I could HEAR",
-     "All I could hear"
+     "All I",
+     "All I"
+    ],
+    [
+     "could HEAR",
+     "could hear"
     ],
     [
      "was the WIPER",
@@ -972,8 +1080,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It was in the MIDDLE",
-     "It was in the middle"
+     "It was in",
+     "It was in"
+    ],
+    [
+     "the MIDDLE",
+     "the middle"
     ],
     [
      "of the ROAD.",
@@ -1016,7 +1128,7 @@
    "chunks": [
     [
      "The plough SLID,",
-     "The plough slid,"
+     "The plow slid,"
     ],
     [
      "and SLID,",
@@ -1084,8 +1196,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "We sat like that",
-     "We sat like that"
+     "We sat",
+     "We sat"
+    ],
+    [
+     "like that",
+     "like that"
     ],
     [
      "till the sky",
@@ -1116,8 +1232,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And in the GREY,",
-     "And in the grey,"
+     "And in",
+     "And in"
+    ],
+    [
+     "the GREY,",
+     "the grey,"
     ],
     [
      "I could see",
@@ -1175,8 +1295,12 @@
      "the cab shook"
     ],
     [
-     "on the way UP.",
-     "on the way up."
+     "on the",
+     "on the"
+    ],
+    [
+     "way UP.",
+     "way up."
     ]
    ]
   },
@@ -1185,8 +1309,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Down on a slab",
-     "Down on a slab"
+     "Down on",
+     "Down on"
+    ],
+    [
+     "a slab",
+     "a slab"
     ],
     [
      "of OLD ROAD",
@@ -1198,7 +1326,7 @@
     ],
     [
      "TWENTY-THREE.",
-     "twenty-three."
+     "23."
     ]
    ]
   },
@@ -1207,15 +1335,19 @@
    "who": "narrator",
    "chunks": [
     [
-     "Still STANDING.",
-     "Still standing."
+     "Still STANDING",
+     "Still standing"
     ],
     [
-     "Still GLINTING.",
-     "still glinting."
+     "and still",
+     "and still"
     ],
     [
-     "Right in LINE",
+     "GLINTING,",
+     "glinting,"
+    ],
+    [
+     "right in LINE",
      "right in line"
     ],
     [
@@ -1261,8 +1393,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The FORTY-FIRST post",
-     "The forty-first post"
+     "The FORTY-FIRST",
+     "The 41st"
+    ],
+    [
+     "post",
+     "post"
     ],
     [
      "was standing",
@@ -1273,8 +1409,12 @@
      "right where"
     ],
     [
-     "the road ENDS NOW.",
-     "the road ends now."
+     "the road",
+     "the road"
+    ],
+    [
+     "ENDS NOW.",
+     "ends now."
     ]
    ],
    "gap": 0.3
@@ -1292,8 +1432,12 @@
      "on my door,"
     ],
     [
-     "and I turned to LOOK.",
-     "and I turned to look."
+     "and I turned",
+     "and I turned"
+    ],
+    [
+     "to LOOK.",
+     "to look."
     ]
    ]
   },
@@ -1302,8 +1446,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "When I looked BACK,",
-     "When I looked back,"
+     "When I",
+     "When I"
+    ],
+    [
+     "looked BACK,",
+     "looked back,"
     ],
     [
      "it was GONE.",
@@ -1317,8 +1465,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Just a WIDE SQUARE",
-     "Just a wide square"
+     "Just a",
+     "Just a"
+    ],
+    [
+     "WIDE SQUARE",
+     "wide square"
     ],
     [
      "PRESSED",
@@ -1340,8 +1492,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I hugged the MOUNTAIN",
-     "I hugged the mountain"
+     "I hugged",
+     "I hugged"
+    ],
+    [
+     "the MOUNTAIN",
+     "the mountain"
     ],
     [
      "at walking PACE,",
@@ -1363,8 +1519,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The sun was UP",
-     "The sun was up"
+     "The sun",
+     "The sun"
+    ],
+    [
+     "was UP",
+     "was up"
     ],
     [
      "by the VILLAGE.",
@@ -1391,16 +1551,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "I put the white BAG",
-     "I put the white bag"
+     "I put the",
+     "I put the"
+    ],
+    [
+     "white BAG",
+     "white bag"
     ],
     [
      "on her TABLE,",
      "on her table,"
     ],
     [
-     "next to the KEYS",
-     "next to the keys"
+     "next to",
+     "next to"
+    ],
+    [
+     "the KEYS",
+     "the keys"
     ],
     [
      "and a glass",
@@ -1431,8 +1599,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She poured TWO cups",
-     "She poured two cups"
+     "She poured",
+     "She poured"
+    ],
+    [
+     "TWO cups",
+     "two cups"
     ],
     [
      "and slid one",
@@ -1458,12 +1630,20 @@
      "That spring,"
     ],
     [
-     "we set a new POST",
-     "we set a new post"
+     "we set a",
+     "we set a"
     ],
     [
-     "at the new EDGE.",
-     "at the new edge."
+     "new POST",
+     "new post"
+    ],
+    [
+     "at the",
+     "at the"
+    ],
+    [
+     "new EDGE.",
+     "new edge."
     ]
    ],
    "gap": 0.3
@@ -1474,15 +1654,19 @@
    "chunks": [
     [
      "FORTY-ONE",
-     "Forty-one"
+     "41"
     ],
     [
      "POSTS.",
      "posts."
     ],
     [
-     "On the way UP,",
-     "on the way up,"
+     "On the",
+     "on the"
+    ],
+    [
+     "way UP,",
+     "way up,"
     ],
     [
      "TOO.",
@@ -1609,7 +1793,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "a normal post's single glint",
-   "at": "L04.2"
+   "at": "L04.3"
   },
   {
    "id": "S06",
@@ -2052,7 +2236,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the road ahead again",
-   "at": "L21.2"
+   "at": "L21.3"
   },
   {
    "id": "S25",
@@ -3291,7 +3475,7 @@
    "step": 2,
    "what": "Odile smiles",
    "snow": 0,
-   "at": "L71.2"
+   "at": "L71.3"
   },
   {
    "id": "S78",
@@ -3763,7 +3947,7 @@
     "expr": "neutral"
    },
    {
-    "at": "L71.2",
+    "at": "L71.3",
     "expr": "grin",
     "head": [
      0,
