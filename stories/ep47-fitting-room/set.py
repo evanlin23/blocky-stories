@@ -195,11 +195,11 @@ def materials(kit):
     M["pin_arm"] = pinstripe(kit, "pinstripe arm", PIN, STRIPE)
     M["trouser"] = pinstripe(kit, "pinstripe trouser", PIN, STRIPE)
     M["shoe"] = pbr(kit, "empty shoes", "#5a3a22", 0.4, spec=0.5)
-    M["shirt"] = pbr(kit, "empty shirt", "#b4b4b8", 0.85)
+    M["shirt"] = pbr(kit, "empty shirt", "#5c5c64", 0.85)
     M["glow"] = kit.emit("#fff1d0", 6.0, name="bulb glow")
     M["screen"] = kit.emit("#d8e8ff", 1.2, name="phone screen")
     M["warm_panel"] = kit.emit("#ffd9a0", 1.1, name="warm panel")
-    M["door_light"] = kit.emit("#fff6e0", 3.0, name="arcade end light")
+    M["door_light"] = kit.emit("#fff6e0", 1.1, name="arcade end light")
     M["window_cool"] = kit.emit("#8aa6d0", 1.6, name="passage light")
     M["window_night"] = kit.emit("#1b2438", 0.5, name="night window")
     M["sky"] = kit.emit("#aebfd0", 1.0, name="train sky")
@@ -435,6 +435,7 @@ def build_shop_front(kit, M):
     for k, y in enumerate((-1.2, -0.15)):
         B(kit, f"ushop.mull{k}", (0.06, 0.05, 1.5), (-3.98, y, 1.6), M["brass"])
     B(kit, "ushop.step", (0.4, 1.2, 0.05), (-3.85, 1.9, 0.025), M["stone_d"])
+    B(kit, "window seat", (0.5, 2.5, 0.5), (-5.45, -0.8, 0.25), M["oak_d"], bevel=0.02)
     B(kit, "ushop.lintel", (0.1, 1.0, 0.1), (-4.1, 1.9, 2.3), M["brass"])
     sign_picture(kit, M, "spool", -3.9, 0.3, 3.12, -1)
     # the bell over the door
@@ -497,16 +498,16 @@ def build_shop(kit, M, ctx):
     B(kit, "rail along x", (2.4, 0.04, 0.04), (-9.4, SHOP_Y0 + 0.3, 1.95), M["brass"])
     # packing boxes stacked on the counter, more each day (ctx["boxes"] is shown by count)
     ctx["boxes"] = []
-    spots = [(-6.7, -2.0, 0.0), (-6.7, -1.45, 0.0), (-6.7, -2.0, 1), (-6.7, -0.85, 0.0), (-6.7, -1.45, 1), (-6.7, -2.3, 2),
-             (-6.7, -0.85, 1), (-6.7, -2.0, 2)]
+    spots = [(-6.7, -2.2, 0), (-6.7, -1.75, 0), (-6.7, -2.2, 1), (-6.7, -1.75, 1), (-6.7, 0.05, 0), (-6.7, -2.2, 2),
+             (-6.7, 0.05, 1), (-6.7, -1.75, 2)]
     for k, (x, y, lv) in enumerate(spots):
         m = M["kraft"] if k % 2 == 0 else M["kraft_d"]
         ctx["boxes"].append(B(kit, f"pack{k}", (0.45, 0.5, 0.42), (x, y, 1.06 + 0.21 + lv * 0.43), m, bevel=0.015))
     # the two benches, lamps
     bench(kit, M, "bench U", -1.0)
     bench(kit, M, "bench M", 1.0)
-    ctx["lamp_m"] = lamp(kit, M, "lamp m", -13.45, 1.2, 1.55, -12.6, 2.7, 1.2, 330.0, spot=80)
-    ctx["lamp_u"] = lamp(kit, M, "lamp u", -11.9, -1.15, 1.5, -12.6, -1.0, 0.95, 140.0, spot=80)
+    ctx["lamp_m"] = lamp(kit, M, "lamp m", -13.45, 1.2, 1.55, -12.6, 2.7, 1.2, 520.0, spot=80)
+    ctx["lamp_u"] = lamp(kit, M, "lamp u", -11.9, -1.15, 1.5, -12.6, -1.0, 0.95, 260.0, spot=80)
     # the pendant light over the workroom
     kit.cyl("pendant cord", 0.01, 0.35, (-12.6, 0.2, CEIL - 0.17), M["iron"], n=6)
     ctx["pendant"] = kit.cyl("pendant bulb", 0.09, 0.14, (-12.6, 0.2, CEIL - 0.45), M["glow"], n=14)
@@ -534,7 +535,7 @@ def build_shop(kit, M, ctx):
     ctx["curtain"] = cur
     for k in range(9):
         d = 0.05 if k % 2 else 0.0
-        B(kit, f"fold{k}", (0.07 + d, 1.72 / 9 + 0.01, 2.45), ((d / 2), 0.1 + k * 1.72 / 9 + 0.0, 1.25), M["ochre"], cur)
+        B(kit, f"fold{k}", (0.07 + d, 1.72 / 9 + 0.01, 2.3), ((d / 2), 0.1 + k * 1.72 / 9 + 0.0, 1.35), M["ochre"], cur)
         kit.cyl(f"ring{k}", 0.04, 0.012, (0, 0.1 + k * 1.72 / 9, 2.5), M["brass"], cur, n=10, rot=(math.radians(90), 0, 0))
     # the hanger: a wooden hanger on the hook (shown while the suit hangs; swings a little at L43)
     hang = kit.empty("hanger", (SHOP_X0 + 0.32, HANG_AT[1], 2.0))
@@ -599,22 +600,25 @@ def build_shop(kit, M, ctx):
     ctx["lights"] = {}
     L = kit.light("sun", "SUN", (14, 8, 16), 3.2, "#ffe2a8", size=0.08)
     kit.aim(L, (0, 0, 0))
-    L = kit.light("sun_eve", "SUN", (16, -3, 7), 2.2, "#ffb064", size=0.1)
+    L = kit.light("sun_eve", "SUN", (16, -3, 7), 1.3, "#ffb064", size=0.1)
     kit.aim(L, (0, 0, 0))
     L = kit.light("shop_front", "AREA", (-4.7, -0.5, 2.5), 260.0, "#fff1d6", size=3.0)
     kit.aim(L, (-9.5, 0.2, 1.0))
-    L = kit.light("shop_front_eve", "AREA", (-4.7, -0.5, 2.5), 300.0, "#ffb15e", size=3.0)
+    L = kit.light("shop_front_eve", "AREA", (-4.7, -0.5, 2.5), 140.0, "#ffb15e", size=3.0)
     kit.aim(L, (-9.5, 0.2, 1.0))
-    L = kit.light("shop_mid", "POINT", (-9.0, 0.5, 2.9), 90.0, "#ffe6bf", size=0.5)
-    L = kit.light("shop_work", "POINT", (-12.6, 0.0, 2.9), 70.0, "#ffe6bf", size=0.5)
-    L = kit.light("passage", "AREA", (-12.6, 3.5, 1.6), 340.0, "#86a2d2", size=2.4)
+    L = kit.light("shop_mid", "POINT", (-9.0, 0.5, 2.9), 240.0, "#ffe6bf", size=0.5)
+    L = kit.light("shop_work", "POINT", (-12.6, 0.0, 2.9), 220.0, "#ffe6bf", size=0.5)
+    L = kit.light("passage", "AREA", (-12.6, 3.5, 1.6), 700.0, "#86a2d2", size=2.4)
     kit.aim(L, (-12.6, 0.5, 1.0))
-    L = kit.light("ceiling", "POINT", (-12.6, 0.2, CEIL - 0.45), 330.0, "#ffd9a0", size=0.12)
-    L = kit.light("stair_spill", "POINT", (-15.4, 2.2, 2.3), 60.0, "#ffbd78", size=0.2)
-    L = kit.light("fit_light", "POINT", (-14.8, -1.7, 2.6), 40.0, "#dfe6f0", size=0.2)
+    L = kit.light("ceiling", "POINT", (-12.6, 0.2, CEIL - 0.45), 600.0, "#ffd9a0", size=0.12)
+    L = kit.light("stair_spill", "POINT", (-15.4, 2.2, 2.3), 160.0, "#ffbd78", size=0.2)
+    L = kit.light("fit_light", "POINT", (-14.8, -1.7, 2.6), 160.0, "#dfe6f0", size=0.2)
+    kit.light("porch", "POINT", (-4.9, 1.2, 2.5), 160.0, "#ffd29a", size=0.2)
+    L = kit.light("tally", "SPOT", (-10.9, 0.1, 0.9), 90.0, "#ffc890", spot=50, blend=0.5, size=0.05)
+    kit.aim(L, (FOOT[0], FOOT[1], 0.15))
     L = kit.light("arcade_fill", "AREA", (0, -6, 4.8), 500.0, "#e8f0ff", size=6.0)
     kit.aim(L, (0, -6, 0))
-    L = kit.light("cafe_in", "AREA", (5.4, -4.5, 2.9), 160.0, "#ffe2b0", size=3.0)
+    L = kit.light("cafe_in", "AREA", (5.4, -4.5, 2.9), 300.0, "#ffe2b0", size=3.0)
     kit.aim(L, (6.0, -4.5, 0))
 
 
@@ -651,8 +655,8 @@ def build_rooms(kit, M, ctx):
         B(kit, f"sit.win.m{k}", (0.07, 0.05, 1.3), (44.93, y, 1.55), M["oak_d"])
     B(kit, "sit.win.t", (0.07, 1.7, 0.06), (44.93, 0.2, 2.18), M["oak_d"])
     B(kit, "sit.win.b", (0.1, 1.7, 0.06), (44.93, 0.2, 0.93), M["oak_d"])
-    kit.light("sit_lamp", "POINT", (44.4, 1.6, 1.35), 55.0, "#ffbf80", size=0.15)
-    L = kit.light("sit_fill", "AREA", (42.5, 0, 2.5), 22.0, "#ffd8a8", size=2.0)
+    kit.light("sit_lamp", "POINT", (44.4, 1.6, 1.35), 110.0, "#ffbf80", size=0.15)
+    L = kit.light("sit_fill", "AREA", (42.5, 0, 2.5), 110.0, "#ffd8a8", size=2.0)
     kit.aim(L, (42.5, 0, 0))
     # his bedroom and mine: the bed, the peg rail
     room(kit, M, "bed", 60.0, 64.5, -2.5, 2.5)
@@ -669,7 +673,7 @@ def build_rooms(kit, M, ctx):
     B(kit, "bed.win.t", (1.5, 0.07, 0.06), (62.0, 2.43, 2.25), M["oak_d"])
     B(kit, "bed.win.b", (1.5, 0.1, 0.06), (62.0, 2.43, 0.95), M["oak_d"])
     B(kit, "bed.rug", (1.2, 1.6, 0.012), (60.9, 0.2, 0.01), pbr(kit, "rug", "#7d4f3c", 0.95))
-    kit.light("bed_win", "AREA", (62.0, 2.2, 1.7), 130.0, "#9bb4d6", size=1.4)
+    kit.light("bed_win", "AREA", (62.0, 2.2, 1.7), 320.0, "#9bb4d6", size=1.4)
     kit.aim(kit.LIGHTS["bed_win"]["obj"], (62.0, 0.0, 0.8))
     # the train: a window wall with the city sliding by
     room(kit, M, "train", 80.0, 84.0, -2.2, 1.6, h=2.4, floor=pbr(kit, "train floor", "#3e403f", 0.7))
@@ -1005,18 +1009,18 @@ MODES = {
     # world (strength, colour), then gains per light
     "day": {"world": (0.9, "#d4e4f4"), "sun": 1.0, "sun_eve": 0, "shop_front": 1.0, "shop_front_eve": 0, "shop_mid": 0.55,
             "shop_work": 0.5, "passage": 0.35, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 1.0, "cafe_in": 1.0},
-    "night_w": {"world": (0.03, "#101a2c"), "sun": 0, "sun_eve": 0, "shop_front": 0, "shop_front_eve": 0, "shop_mid": 0,
+    "night_w": {"porch": 1.0, "world": (0.03, "#101a2c"), "sun": 0, "sun_eve": 0, "shop_front": 0.22, "shop_front_eve": 0, "shop_mid": 0.25,
                 "shop_work": 0, "passage": 1.0, "stair_spill": 1.0, "fit_light": 0.0, "arcade_fill": 0.0, "cafe_in": 0.3},
-    "grey": {"world": (0.4, "#aab4c0"), "sun": 0, "sun_eve": 0, "shop_front": 0.55, "shop_front_eve": 0, "shop_mid": 0.35,
-             "shop_work": 0.25, "passage": 0.6, "stair_spill": 0.15, "fit_light": 0.6, "arcade_fill": 0.5, "cafe_in": 0.8},
+    "grey": {"world": (0.4, "#aab4c0"), "sun": 0, "sun_eve": 0, "shop_front": 0.8, "shop_front_eve": 0, "shop_mid": 0.8,
+             "shop_work": 0.6, "passage": 0.8, "stair_spill": 0.5, "fit_light": 1.0, "arcade_fill": 0.5, "cafe_in": 0.8},
     "friday": {"world": (0.85, "#d4e4f4"), "sun": 1.0, "sun_eve": 0, "shop_front": 1.0, "shop_front_eve": 0, "shop_mid": 0.5,
                "shop_work": 0.3, "passage": 0.55, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 1.0, "cafe_in": 1.0},
-    "eve": {"world": (0.55, "#f0c890"), "sun": 0, "sun_eve": 1.0, "shop_front": 0, "shop_front_eve": 1.0, "shop_mid": 0.35,
+    "eve": {"tally": 1.0, "world": (0.55, "#f0c890"), "sun": 0, "sun_eve": 1.0, "shop_front": 0, "shop_front_eve": 1.0, "shop_mid": 0.35,
             "shop_work": 0.25, "passage": 0.3, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 0.5, "cafe_in": 1.0},
     "sat": {"world": (0.95, "#dbe9f6"), "sun": 1.0, "sun_eve": 0, "shop_front": 1.0, "shop_front_eve": 0, "shop_mid": 0.55,
             "shop_work": 0.5, "passage": 0.35, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 1.0, "cafe_in": 1.0},
     "up": {"world": (0.03, "#101a2c"), "sun": 0, "sun_eve": 0, "shop_front": 0, "shop_front_eve": 0, "shop_mid": 0,
-           "shop_work": 0, "passage": 0, "stair_spill": 0, "fit_light": 0, "arcade_fill": 0.0, "cafe_in": 0.0, "bed_win": 0.3},
+           "shop_work": 0, "passage": 0.4, "stair_spill": 0.6, "fit_light": 0, "arcade_fill": 0.0, "cafe_in": 0.0, "bed_win": 0.3},
 }
 INTERIOR_ALWAYS = {"sit_lamp": 1.0, "sit_fill": 1.0, "train_in": 1.0, "train_win": 1.0, "bed_win": 1.0}
 
@@ -1140,6 +1144,18 @@ def animate(kit, story, tl, t, ctx):
             d.hide_render = True
     # the city sliding past the train window
     ctx["city"].location = (-((t * 4.5) % 40.0), 0, 0)
+    # sitting: legs straight out in front (R6 can't bend), for the window seat
+    for who in ("uncle2", "me2"):
+        keys = tl["acting"].get(who, [])
+        sit = False
+        for k in keys:
+            if "sit" in k and k["t"] <= t + 1e-9:
+                sit = bool(k["sit"])
+        if sit:
+            for sx in (-1, 1):
+                leg = bpy.data.objects.get(f"{who}.leg{sx}")
+                if leg is not None:
+                    leg.rotation_euler = (math.radians(-90), 0, 0)
     # --- the Empty
     c = _last(_cues(tl, "empty"), t)
     pose_empty(ctx, c or {"hidden": True})

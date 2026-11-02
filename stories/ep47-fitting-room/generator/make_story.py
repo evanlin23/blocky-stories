@@ -13,8 +13,31 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
+# captions show two or three words at a time (the house check): a longer chunk is split in two, and every chunk
+# reference below (L53.3 and the like) is written for the script's own chunks, so it's remapped to the split ones
+IDX = {}
+SPLIT = []
+for ln in lines:
+    if "chunks" not in ln or not ln["chunks"]:
+        continue
+    new, m = [], {}
+    for k, (cap, spk) in enumerate(ln["chunks"]):
+        m[k] = len(new)
+        cw, sw = cap.split(" "), spk.split(" ")
+        n = len(cw)
+        if n <= 3:
+            new.append([cap, spk])
+            continue
+        h = (n + 1) // 2
+        new.append([" ".join(cw[:h]), " ".join(sw[:h])])
+        new.append([" ".join(cw[h:]), " ".join(sw[h:])])
+        SPLIT.append(ln["id"])
+    ln["chunks"] = new
+    IDX[ln["id"]] = m
+print("split lines:", ",".join(sorted(set(SPLIT))))
+
 # a swallowed name or title is helped: slower, or a spelling the voice says plainly
-TEMPO = {"L12": 0.95, "L07": 0.95, "L64": 0.95}
+TEMPO = {"L12": 0.95, "L07": 0.95, "L64": 0.95, "L63": 0.9}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -36,9 +59,9 @@ cast = {
     "me": mk("#e0b08a", "#4a6078", "#3b3e46", "#6a4a30", "cap", "#241a16", collar="#efe6d2", extras=["coat"],
              zip_c="#3b4a5c", face={"eyes": "lashes", "brows": True}),
     "me2": mk("#e0b08a", "#efe6d2", "#3b3e46", "#6a4a30", "cap", "#241a16", face={"eyes": "lashes", "brows": True}),
-    "uncle": mk("#d9a98a", "#e9e5da", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", tags="uncle", extras=["apron", "glasses"],
+    "uncle": mk("#d9a98a", "#e9e5da", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", tags="uncle", extras=["apron"],
                 extra_c="#c9b996", face={"eyes": "tired", "brows": True, "bags": True}),
-    "uncle2": mk("#d9a98a", "#e9e5da", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", extras=["glasses"], extra_c="#4a4a4a",
+    "uncle2": mk("#d9a98a", "#e9e5da", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", extras=[], extra_c="#4a4a4a",
                  face={"eyes": "tired", "brows": True, "bags": True}),
     "salesman": mk("#cf9c76", "#7a5a8a", hair="buzz", hair_c="#3a2a1e", tags="lump"),
     "salon_a": mk("#e6bd98", "#a65a4a", hair="cap", hair_c="#3a2a1e", tags="speckle", face={"eyes": "lashes", "brows": True}),
@@ -93,13 +116,13 @@ SHOTS = [
     (0, "two walkers toward camera", 2, still((0.1, 3.9, 1.5), (0, -2, 1.45), 42)),
     ("L01.2", "wide down the arcade", 2, move(((0.5, 8.0, 1.6), (0, -20, 1.9)), ((0.3, 7.0, 1.6), (0, -20, 1.9)), 26)),
     ("L02", "the shoe man", 2, still((1.0, -4.6, 1.5), (-3.45, -7.1, 1.45), 40)),
-    ("L03", "salon pair", 2, still((-2.0, -7.6, 1.5), (-2.0, -11.0, 1.45), 42)),
-    ("L03.2", "lilac lapel, tag, door shuts", 2, still((-2.0, -9.2, 1.5), (-2.0, -11.0, 1.4), 70)),
+    ("L03", "salon pair", 2, still((-2.0, -14.4, 1.5), (-2.0, -11.0, 1.45), 42)),
+    ("L03.2", "lilac lapel, tag, door shuts", 2, still((-2.0, -13.4, 1.6), (-2.0, -11.0, 1.4), 60)),
     ("L04", "the date table", 2, still((0.4, -3.0, 1.45), (3.2, -3.0, 1.35), 42)),
     ("L05", "cafe man, sheepish", 2, still((0.4, -5.2, 1.45), (3.2, -5.2, 1.4), 42)),
     ("L05.2", "his chest, the tag drifts", 2, still((1.5, -5.2, 1.4), (3.3, -5.2, 1.2), 60)),
     ("L06", "the cafe claps", 2, still((-0.5, -2.0, 1.6), (3.2, -5.4, 1.4), 30)),
-    ("L07", "Mrs. Kettle", 2, still((0.0, -9.0, 1.45), (0, -6, 1.45), 45)),
+    ("L07", "Mrs. Kettle", 2, still((0.0, -9.0, 1.45), (-0.45, -6, 1.45), 45)),
     ("L08", "her clean lapel", 2, still((0.1, -8.0, 1.3), (0, -6, 1.2), 70)),
     ("L09", "Mr. Kettle, white", 2, move(((0.0, -8.4, 1.4), (0, -6, 1.3)), ((0.0, -10.4, 1.6), (0, -6, 1.3)), 45)),
     ("L10", "me up the arcade", 2, still((0.2, -2.0, 1.5), (0, 5, 1.45), 40)),
@@ -109,10 +132,10 @@ SHOTS = [
     ("L12.2", "Uncle at his bench", 2, still((-12.0, 0.2, 1.55), (UB[0], UB[1], 1.35), 40)),
     ("L13", "the train", 2, still((82.2, -2.0, 1.55), (82.0, 0.6, 1.5), 36)),
     ("L14", "boxes, Uncle folding", 2, still((-8.6, 0.3, 1.7), (-6.9, -1.2, 1.4), 32)),
-    ("L14.2", "me at the hook", 2, still((-13.0, 0.3, 1.5), (-15.4, -0.2, 1.3), 34)),
+    ("L14.2", "me at the hook", 2, still((-12.2, 0.4, 1.5), (-15.2, -0.3, 1.3), 34)),
     ("L15", "upstairs table", 2, still((44.0, -1.8, 1.6), (42.5, 0.6, 1.4), 38)),
     ("L16", "me, I love it", 2, still((42.3, 0.9, 1.5), (42.5, -0.75, 1.5), 42)),
-    ("L17", "my clean sleeve", 2, still((42.2, -0.1, 1.4), (42.5, -0.8, 1.2), 55)),
+    ("L17", "my clean sleeve", 2, still((42.1, 0.5, 1.45), (42.5, -0.8, 1.25), 50)),
     ("L18", "Uncle, tea", 2, still((42.5, -1.4, 1.55), (42.5, 0.75, 1.5), 42)),
     ("L19", "the counter, back to camera", 2, still((-9.6, -0.4, 1.65), (-6.2, -1.0, 1.5), 34)),
     ("L19.3", "the bib, a tag", 2, still((-6.3, -1.2, 1.5), (-7.75, -1.0, 1.15), 60)),
@@ -137,15 +160,15 @@ SHOTS = [
     ("L33", "me looks at my shoes", 2, still((-11.5, -1.4, 1.35), (-13.8, -1.7, 1.25), 34)),
     ("L34", "the rings slide", 2, still((-14.3, -0.95, 2.3), (-14.3, -2.6, 2.5), 35)),
     ("L35", "the suit hangs", 2, still((-12.8, -1.2, 1.5), (-15.55, -1.75, 1.0), 35)),
-    ("L35.2", "chalk on the jacket", 2, still((-13.9, -1.6, 1.3), (-15.55, -1.75, 1.2), 55)),
+    ("L35.2", "chalk on the jacket", 2, still((-13.2, -1.3, 1.4), (-15.55, -1.75, 1.2), 42)),
     ("L36", "nobody in it", 2, still((-12.5, -2.2, 1.45), (-14.3, -1.5, 1.3), 34)),
     ("L37", "Uncle comes home", 2, still((-6.0, 0.8, 1.5), (-4.2, 1.9, 1.4), 28)),
     ("L38", "the table, the ticket", 2, still((44.0, -1.8, 1.6), (42.5, 0.7, 1.4), 38)),
-    ("L39", "his smile", 2, still((42.8, -1.2, 1.55), (42.5, 0.75, 1.5), 42)),
+    ("L39", "his smile", 2, still((43.2, -1.8, 1.55), (42.5, 0.75, 1.5), 42)),
     ("L40", "the heart tag", 2, still((42.2, -0.4, 1.35), (42.7, 0.75, 1.2), 50)),
     ("L41", "his back at the window", 2, still((42.0, 0.2, 1.5), (44.3, 0.2, 1.4), 30)),
     ("L42", "me in bed", 2, still((60.8, 0.1, 1.5), (62.9, 0, 0.95), 30)),
-    ("L42.2", "the dark stairs", 2, still((-15.4, 3.0, 2.5), (-15.4, 0.4, 0.3), 24)),
+    ("L42.2", "the dark stairs", 2, still((-15.4, 2.4, 2.3), (-15.4, 0.3, 0.4), 24)),
     ("L43", "the bare hanger", 2, still((-12.8, -1.4, 1.6), (-15.5, -1.75, 1.6), 35)),
     # 05 Friday
     ("L44", "the shop crowded, over Uncle", 2, still((-8.6, -0.2, 1.65), (-5.2, 0.4, 1.5), 28)),
@@ -153,10 +176,10 @@ SHOTS = [
     ("L45", "his collar", 2, still((-6.3, -1.0, 1.65), (UN[0], UN[1], 1.5), 55)),
     ("L45.2", "his collar, another", 2, still((-6.3, -0.8, 1.6), (UN[0], UN[1], 1.5), 60)),
     ("L46", "tags to his chin", 2, still((-5.9, -0.6, 1.55), (UN[0], UN[1], 1.5), 45)),
-    ("L47", "something standing", 1, move(((-5.0, 0.5, 1.5), (-12.6, 2.2, 1.3)), ((-5.6, 0.6, 1.5), (-12.6, 2.4, 1.3)), 24)),
+    ("L47", "something standing", 1, move(((-8.6, 0.3, 1.65), (-12.6, 2.6, 1.2)), ((-8.9, 0.4, 1.65), (-12.6, 2.7, 1.2)), 26)),
     ("L48", "it's the suit", 1, still((-9.4, 2.5, 1.5), (EM[0], EM[1], 1.35), 40)),
     ("L49", "standing, nobody inside", 1, still((-10.4, 2.2, 0.7), (EM[0], EM[1], 1.0), 34)),
-    ("L50", "the open collar", 1, still((-11.6, 2.6, 1.95), (EM[0], EM[1], 1.5), 60)),
+    ("L50", "the open collar", 1, still((-12.6, 2.45, 2.25), (EM[0], EM[1], 1.5), 48)),
     ("L51", "wide: both of us bare", 1, still((-7.4, 0.2, 1.55), (-12.0, 1.8, 1.3), 32)),
     ("L52", "sleeves lift", 1, still((-10.6, 1.4, 1.5), (EM[0], 2.3, 1.2), 40)),
     ("L52.3", "the space between its cuffs", 1, still((-11.6, 1.0, 1.4), (EM[0], 2.1, 1.1), 45)),
@@ -169,30 +192,35 @@ SHOTS = [
     ("L56", "every tag the same lie", 2, move(((-6.0, -0.6, 1.9), (UN[0] + 0.3, UN[1], 1.7)), ((-6.0, -1.4, 1.5), (UN[0], UN[1], 1.2)), 55)),
     ("L57", "he's known", 2, still((-10.0, 0.3, 1.6), (UN[0], UN[1], 1.55), 55)),
     ("L58", "a tag drifts off", 2, still((1.5, -5.2, 1.4), (3.3, -5.2, 1.2), 60)),
-    ("L58.3", "me turns from it", 2, still((-10.8, 1.0, 1.55), (-12.6, 1.8, 1.5), 55)),
+    ("L58.3", "me turns from it", 2, still((-9.8, 0.2, 1.6), (-12.0, 1.4, 1.5), 40)),
     ("L59", "this truth is mine", 2, still((-8.9, 0.7, 1.55), (-11.5, 0.5, 1.45), 40)),
     ("L60", "the shop turns to me", 2, still((-8.2, -0.9, 1.7), (-4.9, 0.6, 1.5), 26)),
-    ("L60.2", "me, I miss this", 2, still((-9.6, 0.6, 1.55), (-11.5, 0.6, 1.5), 55)),
+    ("L60.2", "me, I miss this", 2, still((-12.2, 0.4, 1.55), (-10.0, 0.5, 1.5), 45)),
     ("L61", "the tags fall like snow", 2, still((-5.9, -0.6, 1.55), (UN[0], UN[1], 1.5), 40)),
-    ("L62", "I step up to my bench", 2, still((-10.8, 0.6, 1.55), (ST[0], ST[1], 1.5), 40)),
+    ("L62", "I step up to my bench", 2, still((-9.2, 0.6, 1.6), (-11.5, 1.2, 1.45), 36)),
     ("L62.2", "the heap", 2, still((-10.0, 1.1, 0.45), (HEAP[0], HEAP[1], 0.2), 28)),
     ("L63", "I look at my sleeves", 2, still((-12.6, 0.2, 1.6), (ST[0], ST[1], 1.35), 44)),
     ("L64", "Mrs. Kettle again", 2, still((-8.2, -0.6, 1.6), (-5.6, 0.2, 1.45), 34)),
-    ("L65", "my sleeve", 2, still((-12.9, 0.9, 1.4), (-12.2, ST[1], 1.15), 55)),
+    ("L65", "my sleeve", 2, still((-12.0, 0.2, 1.45), (-12.5, ST[1], 1.25), 40)),
     # 07 the window
-    ("L66", "the window seat, gold", 2, still((-1.3, -0.7, 1.15), (-4.9, -0.7, 1.0), 36)),
-    ("L67", "clean shirtsleeves", 2, still((-2.2, -0.7, 1.15), (-4.9, -0.7, 0.9), 55)),
+    ("L66", "the window seat, gold", 2, still((-2.0, -2.6, 1.25), (-5.0, -0.8, 1.0), 36)),
+    ("L67", "clean shirtsleeves", 2, still((-2.6, -1.6, 1.2), (-5.2, -0.8, 1.0), 50)),
     ("L68", "chalk on canvas", 2, still((-12.0, 0.3, 1.6), (-12.6, 1.0, 0.95), 40)),
-    ("L68.1", "the tally on the foot", 2, move(((-10.9, 0.0, 0.35), (FOOT[0], FOOT[1], 0.13)), ((-11.2, 0.15, 0.3), (FOOT[0], FOOT[1], 0.13)), 50)),
+    ("L68.1", "the tally on the foot", 2, move(((-10.7, -0.1, 0.4), (FOOT[0], FOOT[1], 0.13)), ((-10.9, 0.05, 0.35), (FOOT[0], FOOT[1], 0.13)), 45)),
     ("L69.1", "two aprons", 2, still((-13.0, -0.3, 1.5), (-15.9, -0.3, 1.3), 34)),
     ("L69.3", "turn the sign", 2, still((-6.0, 1.9, 1.6), (-4.3, 1.9, 1.7), 40)),
     ("L70", "Saturday, push in", 2, move(((0.4, 7.0, 1.6), (0, -20, 1.9)), ((-1.5, -0.2, 1.45), (-4.9, -0.4, 1.45)), 26, 34)),
     ("L71", "me at my bench", 2, still((-12.6, 0.2, 1.6), (ST[0], ST[1], 1.45), 44)),
     ("L72", "the fitting room, empty", 2, still((-11.0, -0.9, 1.55), (-15.4, -1.75, 1.3), 30)),
-    ("L73", "my sleeve", 4, still((-12.9, 0.9, 1.4), (-12.2, ST[1], 1.15), 55)),
+    ("L73", "my sleeve", 4, still((-12.0, 0.2, 1.45), (-12.5, ST[1], 1.25), 40)),
 ]
+def widen(cam):
+    return [[k[0], k[1], k[2], (max(20, round(k[3] * 0.68)) if k[3] >= 28 else k[3])] + k[4:] for k in cam]
+
+
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
+    cam = widen(cam)
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.0 if step == 4 else 0.006, "step": step, "what": what}
     if i:
         s["at"] = at
@@ -285,9 +313,9 @@ hide("cafe_man", "L07")
 hide("cafe_f", "L07")
 for n in ("x1", "x2", "x3"):
     hide(n, "L07")
-put("mrs_kettle", "L07", [-0.7, -6.0], yaw=0, expr="smirk", head=[0, -8], arms=[10, 10])
-put("mr_kettle", "L09", [0.5, -6.0], yaw=0, expr="neutral")
-put("mrs_kettle", "L09", [-0.7, -6.0], yaw=0, expr="smirk", head=[0, -8], arms=[10, 10])
+put("mrs_kettle", "L07", [-0.45, -6.0], yaw=0, expr="smirk", head=[0, -8], arms=[10, 10])
+put("mr_kettle", "L09", [0.45, -6.0], yaw=0, expr="neutral")
+put("mrs_kettle", "L09", [-0.45, -6.0], yaw=0, expr="smirk", head=[0, -8], arms=[10, 10])
 hide("mrs_kettle", "L10")
 hide("mr_kettle", "L10")
 put("me", "L10", [0.0, 5.5], yaw=0, expr="neutral")
@@ -310,8 +338,8 @@ rub("me", "L13", 0.3, 7, 55)
 hide("uncle", "L13")
 hide("me", "L14")
 put("uncle", "L14", [-7.9, -1.1], yaw=90, expr="neutral", arms=[55, 55], side=[-10, -10], head=[0, 24])
-put("me", "L14.2", [-14.2, 0.0], yaw=-90, expr="neutral")
-key("me", "L14.2+0.8", expr="neutral", arms=[60, 0], blend=0.3)
+put("me", "L14.2", [-15.0, -0.3], yaw=-90, expr="neutral", arms=[60, 0])
+key("me", "L14.2+0.9", yaw=90, arms=[0, 0], blend=0.4)
 hide("uncle", "L14.2")
 hide("me", "L15")
 put("uncle", "L15", [42.5, 0.8], yaw=0, expr="neutral", head=[0, 5])
@@ -360,15 +388,17 @@ hide("me", "L42.2")
 # 05 Friday
 put("uncle", "L44", [UN[0], UN[1]], yaw=90, expr="tired", head=[0, 6])
 put("mrs_kettle", "L44", [-5.3, 0.4], yaw=-90, expr="smirk")
-put("cam", "L44", [-5.5, -1.0], yaw=-90, expr="neutral")
+put("cam", "L44", [-5.6, 0.0], yaw=-90, expr="neutral")
 put("teal", "L44", [-5.3, 1.5], yaw=-90, expr="neutral")
 put("stick", "L44", [-5.6, -0.2], yaw=-90, expr="neutral", lean=10)
 put("mr_kettle", "L44", [-4.7, 0.5], yaw=-90, expr="neutral")
 put("x1", "L44", [-4.8, 1.5], yaw=-90, expr="neutral")
-put("x2", "L44", [-4.5, -0.4], yaw=-90, expr="neutral")
-put("x3", "L44", [-5.0, -1.6], yaw=-90, expr="smirk")
+put("x2", "L44", [-4.5, 0.6], yaw=-90, expr="neutral")
+put("x3", "L44", [-5.0, -2.0], yaw=-90, expr="smirk")
 put("stick", "L44.3", [-6.0, -0.9], yaw=-90, expr="neutral", lean=14)
-put("cam", "L44.3", [-5.2, 0.4], yaw=-90)
+put("cam", "L44.3", [-5.2, 0.9], yaw=-90)
+put("stick", "L45", [-5.6, -1.9], yaw=-90, expr="neutral", lean=8)
+put("cam", "L45", [-5.4, 0.6], yaw=-90)
 put("uncle", "L55", [UN[0], UN[1]], yaw=90, expr="soft")
 put("me", "L47", [-9.8, 0.3], yaw=-90, expr="wide")
 hide("me", "L47+0.01")
@@ -376,7 +406,7 @@ put("me", "L51", [-9.8, 0.3], yaw=-90, expr="scared")
 put("me", "L53", [-13.25, 2.0], yaw=150, expr="scared", head=[-30, 0])
 
 put("me", "L54", [-13.25, 2.0], yaw=150, expr="scared", head=[-30, 0])
-put("me", "L58.3", [-11.4, 1.1], yaw=-30, expr="worried", head=[-40, 0])
+put("me", "L58.3", [-11.5, 1.5], yaw=-40, expr="worried", head=[-40, 0])
 put("me", "L59", [-10.6, 0.6], yaw=90, expr="worried")
 put("me", "L60", [-10.0, 0.5], yaw=90, expr="worried")
 put("me", "L60.2", [-10.0, 0.5], yaw=-90, expr="worried", head=[0, 0])
@@ -396,9 +426,9 @@ put("mrs_kettle", "L64", [-5.4, 0.3], yaw=-90, expr="smirk", head=[0, -8])
 put("mr_kettle", "L64", [-5.3, -0.6], yaw=-90, expr="neutral", head=[20, 0])
 put("uncle", "L64", [UN[0], UN[1]], yaw=90, expr="soft")
 put("x1", "L60", [-5.0, 1.0], yaw=-90, expr="wide")
-put("x3", "L60", [-5.2, -0.6], yaw=-90, expr="wide")
+put("x3", "L60", [-5.2, -2.0], yaw=-90, expr="wide")
 put("teal", "L60", [-4.7, 0.4], yaw=-90, expr="wide")
-put("cam", "L60", [-5.8, 0.0], yaw=-90, expr="wide")
+put("cam", "L60", [-5.6, 0.7], yaw=-90, expr="wide")
 for n in ("stick", "x2", "x3", "x1", "teal", "cam", "mr_kettle", "mrs_kettle"):
     hide(n, "L65+0.5") if n not in ("mr_kettle", "mrs_kettle") else None
 # 07 the window
@@ -407,8 +437,8 @@ hide("uncle", "L66")
 hide("mrs_kettle", "L66")
 hide("mr_kettle", "L66")
 SEAT = {"yaw": 90, "sit": True}
-put("uncle2", "L66", [-4.95, -1.3, -0.01], expr="soft", **SEAT)
-put("me2", "L66", [-4.95, -0.3, -0.01], expr="soft", **SEAT)
+put("uncle2", "L66", [-5.5, -1.3, -0.01], expr="soft", **SEAT)
+put("me2", "L66", [-5.5, -0.3, -0.01], expr="soft", **SEAT)
 put("uncle2", "L68", [-12.6, -1.8], yaw=180, expr="soft", arms=[45, 45])
 put("me2", "L68", [ST[0] + 0.0, 0.2], yaw=180, expr="soft")
 hide("uncle2", "L68.1")
@@ -576,5 +606,33 @@ story = {
               "music_drops": [{"from": "P01", "to": "P01>", "keep": ["creak"]},
                               {"from": "P02", "to": "P02>", "keep": ["thud"]}]},
 }
+import re
+
+
+def remap(v):
+    if isinstance(v, str):
+        m = re.match(r"^(L\d+)\.(\d+)(.*)$", v)
+        if m and m.group(1) in IDX:
+            return f"{m.group(1)}.{IDX[m.group(1)][int(m.group(2))]}{m.group(3)}"
+        return v
+    if isinstance(v, list):
+        return [remap(x) for x in v]
+    if isinstance(v, dict):
+        return {k: (remap(x) if k in ("at", "from", "to") else walk_(x)) for k, x in v.items()}
+    return v
+
+
+def walk_(v):
+    if isinstance(v, list):
+        return [walk_(x) for x in v]
+    if isinstance(v, dict):
+        return {k: (remap(x) if k in ("at", "from", "to") else walk_(x)) for k, x in v.items()}
+    return v
+
+
+for key_ in ("shots", "acting", "cues", "fx"):
+    story[key_] = walk_(story[key_])
+story["sound"] = walk_(story["sound"])
+story["music"] = walk_(story["music"])
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")
