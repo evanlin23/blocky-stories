@@ -41,6 +41,7 @@ RINGS = [5.0, 8.5, 12.0, 15.5, 19.0, 22.5]
 WIN_X, WIN_Z = 5.0, 0.84                # the bunk window
 LONG_KT, LONG_KL = 6.5, 11.98            # the Long Man: torso and leg stretch (rig units)
 LONG_H = 1.0
+PATCH = (5.15, 0.5)                    # Moss's spot by the back ring
 
 # ---------------------------------------------------------------------------------------------- light states
 # fog colour, fog density, world strength, exposure, then multipliers on the lights
@@ -55,7 +56,9 @@ STATES = {
     "wide3":  dict(fog="#a9b5ba", dens=0.003, ws=0.85, exp=-0.15, key=1.0, rim=1.0, fill=0.9, eye=1.0, warm=0.0),
     "wide2":  dict(fog="#aab6bb", dens=0.012, ws=0.85, exp=-0.20, key=1.0, rim=1.0, fill=0.85, eye=1.0, warm=0.0),
     "night":  dict(fog="#7f8f99", dens=0.026, ws=0.75, exp=-0.15, key=0.5, rim=0.4, fill=0.90, eye=0.5, warm=0.0),
-    "thick":  dict(fog="#a3aeb3", dens=0.055, ws=0.55, exp=-0.25, key=1.0, rim=1.0, fill=0.85, eye=1.0, warm=0.0),
+    "thick":  dict(fog="#a3aeb3", dens=0.055, ws=0.55, exp=-0.25, key=1.0, rim=1.0, fill=0.85, eye=0.45, warm=0.0),
+    "hook":   dict(fog="#c8d0cf", dens=0.013, ws=1.00, exp=-0.12, key=0.9, rim=0.7, fill=1.00, eye=0.5, warm=0.0),
+    "scare":  dict(fog="#8e9ca2", dens=0.05, ws=0.28, exp=-0.05, key=0.3, rim=1.0, fill=0.45, eye=1.8, warm=0.0),
     "clear1": dict(fog="#c2cac9", dens=0.030, ws=0.95, exp=-0.25, key=0.7, rim=0.6, fill=1.00, eye=0.5, warm=0.0),
     "clear2": dict(fog="#cad3d1", dens=0.012, ws=1.00, exp=-0.30, key=0.5, rim=0.4, fill=1.00, eye=0.5, warm=0.4),
     "morning": dict(fog="#d4dcd8", dens=0.014, ws=1.00, exp=-0.08, key=0.4, rim=0.3, fill=1.00, eye=0.0, warm=0.6),
@@ -226,8 +229,10 @@ def materials(kit_, ctx):
     M["tally"] = kit_.plastic("#4d6638", 0.8, "tally")
     M["bed"] = kit_.plastic("#7c4a3a", 0.95, "mosbed")
     M["mattress"] = kit_.plastic("#6f7f8a", 0.95, "mattress")
-    M["quilt"] = kit_.plastic("#d8ccb0", 0.95, "quilt")
-    M["pillow"] = kit_.plastic("#8d979a", 0.95, "pillow")
+    M["quilt"] = kit_.plastic("#a99f86", 0.95, "quilt")
+    M["pillow"] = kit_.plastic("#2b3538", 0.95, "pillow")
+    M["earth"] = kit_.grime("#6b5a46", 0.7, 10.0, "earth", 0.95)
+    M["tuft"] = kit_.plastic("#86a35a", 0.9, "tuft")
     M["leak"] = kit_.emit("#cfd8dc", 1.0, "leak")
     M["glass"] = clear_mat(kit_, "porthole glass")
     M["brass"] = kit_.metal("#8a6a38", 0.4, "brass")
@@ -259,6 +264,20 @@ def build_world(kit_, ctx, M):
         B(f"hedgetop{i}", (3.4, 1.6, 0.9), (hx, 8.5, 3.0 + 0.2 * (i % 3)), M["hedge"], 0.3)
     # the flattened strip where it lay (alongside the boat), shown from L72
     ctx["flat"] = [span("flat strip", 4.6, 17.2, -0.05, 0.85, GROUND + 0.022, GROUND + 0.034, M["flat"], 0.01)]
+    # Moss's worn patch by the back ring (the past) and the grass that has grown over it (the present)
+    import random
+    ctx["patch"] = [span("worn patch", PATCH[0] - 0.55, PATCH[0] + 0.55, PATCH[1] - 0.4, PATCH[1] + 0.4,
+                         GROUND + 0.021, GROUND + 0.032, M["earth"], 0.04)]
+    rnd = random.Random(11)
+    ctx["tufts"] = []
+    for i in range(110):
+        a = rnd.uniform(0, 2 * math.pi)
+        rr = math.sqrt(rnd.uniform(0.05, 1.0))
+        bx, by = PATCH[0] + 0.6 * rr * math.cos(a), PATCH[1] + 0.45 * rr * math.sin(a)
+        h = rnd.uniform(0.07, 0.13) if rr < 0.55 else rnd.uniform(0.16, 0.3)
+        t = B(f"tuft{i}", (0.018, 0.018, h), (bx, by, GROUND + h / 2), M["tuft"], 0.008,
+              rot=(rnd.uniform(-0.25, 0.25), rnd.uniform(-0.25, 0.25), rnd.uniform(0, 3)))
+        ctx["tufts"].append(t)
     # rings: an iron ring lying on the coping with its staple
     for i, rx in enumerate(RINGS):
         tube_ring(f"ring{i}", 0.13, 0.027, (rx, 0.08, GROUND + 0.07 + 0.027), M["iron"])
@@ -437,6 +456,19 @@ class Moss:
                 self.legs[n].rotation_euler = (math.radians(-88 if n[0] == "b" else -80), 0, 0)
                 self.legs[n].location = (self.legs[n].location[0], self.legs[n].location[1] + (0.0 if n[0] == "b" else -0.05), 0.08)
             hpitch += 18
+        elif p == "roll":
+            # rolled on her back in the grass, chin up to the sky: the body flipped, the legs bent in the air
+            self.body.rotation_euler = (0, math.radians(180), 0)
+            self.body.location = (0, 0.0, 0.2)
+            for n, leg in self.legs.items():
+                leg.rotation_euler = (math.radians(30 if n[0] == "f" else -30), 0, 0)
+            self.head.location = (0, -0.38, 0.0)
+            self.head.rotation_euler = (math.radians(-62), math.radians(180), 0)
+            self.tail.rotation_euler = (math.radians(30), 0, 0)
+            e = st.get("ears", 0.5)
+            for piv, sx in self.ears:
+                piv.rotation_euler = (math.radians(12 - 50 * e), 0, math.radians(sx * 24))
+            return
         elif p == "held":
             for n in self.legs:
                 self.legs[n].rotation_euler = (math.radians(14), 0, 0)
@@ -448,6 +480,7 @@ class Moss:
             sw = 24 * math.sin(2 * math.pi * 1.6 * t)
             for n, leg in self.legs.items():
                 leg.rotation_euler = (math.radians(sw if n in ("fl", "br") else -sw), 0, 0)
+        self.head.location = (0, -0.40, 0.24)
         self.head.rotation_euler = (math.radians(hpitch), 0, math.radians(hy))
         e = st.get("ears", 0.5)
         for piv, sx in self.ears:   # 0 flat and down, 1 pricked and forward
@@ -461,10 +494,9 @@ class Moss:
 
 # ----------------------------------------------------------------------------------------- the Long Man
 def stretch_long(kit_, ctx):
-    """Called once the cast exists: the rig's body becomes 12 m long, head and shoulders left alone."""
-    sc = rig.S * LONG_H
+    """Called once the cast exists: the rig's body becomes 12 m long, head and shoulders left alone. Everything that makes
+    it read as a person lying down (coat, belt, buttons, collar, separate arms with hands, two legs, boots) is built here."""
     kt, kl = LONG_KT, LONG_KL
-    root = bpy.data.objects["longman"]
     ob = lambda n: bpy.data.objects.get(f"longman.{n}")
     shirt = ob("torsom").data.materials[0]
     pants = ob("legm-1").data.materials[0]
@@ -476,17 +508,43 @@ def stretch_long(kit_, ctx):
         o = ob(n)
         if o is not None:
             bpy.data.objects.remove(o, do_unlink=True)
-    kit_.box("longman.torsom", (2.0, 1.0, 2 * kt), (0, 0, 2 - kt), shirt, tor, bevel=0.1, seg=2)
+    dark = kit_.plastic("#26331f", 0.8, "ln dark")
+    lapel = kit_.plastic("#7d9460", 0.8, "ln lapel")
+    belt = kit_.plastic("#2b2118", 0.55, "ln belt")
+    brass = kit_.metal("#9a7a42", 0.4, "ln buckle")
+    rope = kit_.plastic("#b39a6a", 0.85, "ln rope")
+    sole = kit_.plastic("#17120e", 0.7, "ln sole")
+    cuff = kit_.plastic("#7b8a52", 0.8, "ln cuff")
+    # the coat: shoulders full width, the body a little narrower, the hem flaring over the thighs
+    kit_.box("longman.torsom", (1.9, 1.0, 2 * kt), (0, 0, 2 - kt), shirt, tor, bevel=0.1, seg=2)
+    kit_.box("longman.yoke", (2.06, 1.08, 1.5), (0, 0, 1.25), shirt, tor, bevel=0.12)
+    kit_.box("longman.hem", (2.16, 1.12, 3.0), (0, 0, 2 - 2 * kt - 1.1), shirt, tor, bevel=0.14)
+    kit_.box("longman.placket", (0.1, 0.03, 2 * kt - 0.6), (0, -0.515, 2 - kt - 0.25), dark, tor, bevel=0.01)
+    for k in range(7):
+        kit_.cyl(f"longman.button{k}", 0.1, 0.05, (0.0, -0.53, 0.1 - 1.55 * k), brass, tor, rot=(math.pi / 2, 0, 0), n=10)
+    for sx in (-1, 1):
+        kit_.box(f"longman.lapel{sx}", (0.5, 0.1, 1.9), (sx * 0.42, -0.53, 0.95), lapel, tor, rot=(0, sx * 0.3, 0), bevel=0.03)
+        kit_.box(f"longman.pocket{sx}", (0.7, 0.07, 0.4), (sx * 0.58, -0.52, -7.2), dark, tor, bevel=0.03)
+        kit_.box(f"longman.pocketb{sx}", (0.7, 0.07, 0.4), (sx * 0.58, -0.52, -8.2), dark, tor, bevel=0.03)
+    kit_.box("longman.belt", (2.1, 1.1, 0.55), (0, 0, 2 - 2 * kt + 1.9), belt, tor, bevel=0.05)
+    kit_.box("longman.buckle", (0.4, 0.06, 0.4), (0, -0.57, 2 - 2 * kt + 1.9), brass, tor, bevel=0.02)
     hips_z = 4.0 - 2 * kt
     for sx in (-1, 1):
         leg = bpy.data.objects[f"longman.leg{sx}"]
-        leg.location = (sx * 0.5, 0, hips_z)
-        kit_.box(f"longman.legm{sx}", (0.98, 1.0, 1.72 * kl), (0, 0, -0.86 * kl), pants, leg, bevel=0.1)
-        kit_.box(f"longman.shoe{sx}", (0.99, 1.02, 0.7), (0, 0, -1.72 * kl), shoe, leg, bevel=0.1)
+        leg.location = (sx * 0.58, 0, hips_z)
+        kit_.box(f"longman.legm{sx}", (0.8, 1.0, 1.72 * kl), (0, 0, -0.86 * kl), pants, leg, bevel=0.1)
+        for k, ox in enumerate((-0.2, 0.2)):
+            kit_.box(f"longman.rope{sx}{k}", (0.07, 0.03, 1.6 * kl), (ox, -0.512, -0.86 * kl - 0.1), rope, leg, bevel=0.01)
+        kit_.box(f"longman.shoe{sx}", (0.84, 1.7, 1.5), (0, -0.4, -1.72 * kl - 0.2), shoe, leg, bevel=0.14)
+        kit_.box(f"longman.toe{sx}", (0.84, 0.5, 0.7), (0, -1.0, -1.72 * kl - 0.45), shoe, leg, bevel=0.14)
+        kit_.box(f"longman.sole{sx}", (0.86, 1.72, 0.18), (0, -0.4, -1.72 * kl - 1.0), sole, leg, bevel=0.03)
         arm = bpy.data.objects[f"longman.arm{sx}"]
+        arm.location = (sx * 1.74, 0, 1.75)
         La = 2 * kt - 0.9
-        kit_.box(f"longman.sleeve{sx}", (0.98, 1.0, La - 0.7), (0, 0, 0.25 - (La - 0.7) / 2), sleeve, arm, bevel=0.1)
-        kit_.box(f"longman.skinarm{sx}", (0.96, 0.98, 0.7), (0, 0, 0.25 - (La - 0.7) - 0.35), skin, arm, bevel=0.08)
+        kit_.box(f"longman.sleeve{sx}", (0.78, 1.0, La - 1.3), (0, 0, 0.25 - (La - 1.3) / 2), sleeve, arm, bevel=0.1)
+        kit_.box(f"longman.cuff{sx}", (0.84, 1.06, 0.4), (0, 0, 0.25 - (La - 1.3) - 0.2), cuff, arm, bevel=0.06)
+        kit_.box(f"longman.hand{sx}", (0.8, 0.9, 1.3), (0, 0, 0.25 - (La - 1.3) - 0.4 - 0.65), skin, arm, bevel=0.12)
+        kit_.box(f"longman.thumb{sx}", (0.22, 0.4, 0.6), (-sx * 0.38, -0.32, 0.25 - (La - 1.3) - 0.9), skin, arm, bevel=0.06)
     # beads of water that never run: small clear spheres on the face and the coat
     bead = kit_.plastic("#7f9591", 0.03, "bead", spec=1.0)
     head = bpy.data.objects["longman.headg"]
@@ -501,7 +559,11 @@ def stretch_long(kit_, ctx):
                                         (R * math.sin(a), -R * math.cos(a) * 1.0 - 0.005, zz), bead, head, seg=8))
     for i in range(24):
         ctx["beads"].append(kit_.sphere(f"longman.cbead{i}", rnd.uniform(0.02, 0.04),
-                                        (rnd.uniform(-0.85, 0.85), -0.5, 2.0 - rnd.uniform(0.3, 2 * kt - 0.5)), bead, tor, seg=8))
+                                        (rnd.uniform(-0.85, 0.85), -0.53, 2.0 - rnd.uniform(0.3, 2 * kt - 0.5)), bead, tor, seg=8))
+    # hair lying flat and wet on the skull: a thin cap and a short swept fringe, never upright
+    hair = kit_.plastic("#2f4026", 0.5, "ln wet hair")
+    kit_.box("longman.fringe", (1.0, 0.5, 0.1), (0.12, -0.5, 0.66), hair, head, rot=(0.0, 0.1, 0.0), bevel=0.04)
+    kit_.box("longman.fringe2", (0.7, 0.45, 0.1), (-0.3, -0.5, 0.62), hair, head, rot=(0.0, -0.2, 0.0), bevel=0.04)
     glint = kit_.emit("#f4faf6", 14.0, "eye glint")
     for sx in (-1, 1):
         kit_.sphere(f"longman.glint{sx}", 0.034, (sx * 0.228, -0.598, 0.09), glint, head, seg=8)
@@ -521,11 +583,11 @@ def place_long(tl, t, ctx):
     sc = rig.S * LONG_H
     hx = _eased(cs, "x", t, 22.5) if c else 22.5
     turn = _eased(cs, "turn", t, 0.0) if c else 0.0
-    y = ctx.get("long_y", 0.30)
+    y = _eased(cs, "y", t, 0.30) if c else 0.30
     M = Matrix(((0, 0, -1), (1, 0, 0), (0, -1, 0)))
     root.rotation_euler = M.to_euler()
     head_local = V((0, 0, 4.62)) * sc
-    z = GROUND + 0.30
+    z = GROUND + (0.28 if y < 0.25 else 0.24)       # the head lies on its back on the coping or the verge
     target = V((hx, y, z))
     root.location = target - M @ head_local
     neck = bpy.data.objects["longman.neck"]
@@ -661,6 +723,18 @@ def animate(kit_, story, tl, t, ctx):
     fc = _last(_cues(tl, "flat"), t)
     for o in ctx["flat"]:
         o.hide_render = not (fc and fc.get("on"))
+    pc = _last(_cues(tl, "patch"), t)
+    pon = bool(pc and pc.get("on"))
+    lc0 = _last(_cues(tl, "long"), t)
+    lx0 = _eased(_cues(tl, "long"), "x", t, 22.5) if lc0 else 22.5
+    long_here = bool(lc0 and not lc0.get("hidden", False) and abs(lx0 - 5.0) < 0.3)
+    for o in ctx["patch"]:
+        o.hide_render = not pon
+    mroot = ctx["moss"].root
+    moss_here = (not mroot.hide_render) and abs(mroot.location.x - PATCH[0]) < 0.8 and abs(mroot.location.y - PATCH[1]) < 0.8
+    for o in ctx["tufts"]:
+        inside = abs(o.location.y - PATCH[1]) < 0.34 and abs(o.location.x - PATCH[0]) < 0.6
+        o.hide_render = pon or ((long_here or moss_here) and inside)
     tc = _last(_cues(tl, "tally"), t)
     for o in ctx["tally"]:
         o.hide_render = not (tc and tc.get("on"))
@@ -685,14 +759,15 @@ def animate(kit_, story, tl, t, ctx):
     lc = _last(cs, t)
     hx = _eased(cs, "x", t, 22.5) if lc else 22.5
     turn = _eased(cs, "turn", t, 0.0) if lc else 0.0
+    ly = _eased(cs, "y", t, 0.3) if lc else 0.3
     fo = (-2.6 + 1.5 * turn, 1.2 - 1.1 * turn, 1.1 - 0.7 * turn)
     for name, off, aim in (("faceside", fo, (0, 0.0, -0.1)), ("rim", (3.2, 3.4, 1.4), (0, 0, 0)),
                            ("eyes", (0.0, 0.9, 0.7), (0, 0, 0)), ("key", (-1.2, -8.0, 2.6), (0, 0.2, -0.1))):
         ob = kit.LIGHTS[name]["obj"]
-        ob.location = (hx + off[0], ctx.get("long_y", 0.3) + off[1], GROUND + 0.30 + off[2])
-        kit.aim(ob, (hx + aim[0], ctx.get("long_y", 0.3) + aim[1], GROUND + 0.30 + aim[2]))
+        ob.location = (hx + off[0], ly + off[1], GROUND + 0.30 + off[2])
+        kit.aim(ob, (hx + aim[0], ly + aim[1], GROUND + 0.30 + aim[2]))
     over = {
-        "faceside": s["eye"] * ((1.0 - turn) + 0.06 * turn), "winglow": s["eye"] * (0.5 if abs(hx - 5.0) < 0.1 else 0.0),
+        "faceside": s["eye"] * ((1.0 - turn) + 0.06 * turn), "winglow": 0.0,
         "sky": 1.0, "warm": s["warm"], "key": s["key"], "rim": s["rim"], "eyes": s["eye"],
         "cab a": s["fill"], "cab b": s["fill"], "cab c": s["fill"], "cab d": s["fill"], "cab e": s["fill"], "porch": s["fill"],
         "hatch": 0.0,

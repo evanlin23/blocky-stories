@@ -1,44 +1,40 @@
-"""Writes ../story.json for ep27-towpath (writer's script.md, builder round 1, 2026-11-02).
+"""Writes ../story.json for ep27-towpath (writer's script.md round 1 revision, builder review round 2, 2026-11-02).
 
 Run from anywhere: python stories/ep27-towpath/generator/make_story.py
 The words are in lines.json next to this file. Everything else is here: the cast, the shots and cameras, the acting,
-the cues set.py reads (time of day, Moss, the Long Man, the hatch, the bolt, the wipe), the score and the sound.
+the cues set.py reads (time of day, Moss, the Long Man, the hatch, the bolt, the wipe, the patch), the score and sound.
 
 Places (set.py's metres): x along the canal from the boat's stern (0) to its bow (12); y across it, the towpath at
 +y, the water at -y, the boat's towpath side at y = -0.15; z up (water 0, towpath 0.5, back deck 0.72, cabin
 floor 0.05). A character with yaw 0 faces -y, yaw 90 faces +x, yaw -90 faces -x, yaw 180 faces +y.
 """
 import json
-import math
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
-HOLDS = {"P01": 0.7, "P02": 1.3, "P03": 1.7}
+HOLDS = {"P01": 0.7, "P02": 1.6, "P03": 1.7}
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["pause"] = HOLDS[ln["id"]]
 
 # spoken-only fixes for the word check (the captions don't change)
-SPOKEN = {("L02", "I live on a long boat"): "I live, on a long boat", ("L09", "I'd just step"): "I would just step",
-          ("L74", "We walk the towpath"): "We walk, the towpath",
-          ("L59", "everybody on board"): "everybody on board,", ("L59", "is crew."): "is crew.",
-          ("L65", "and opened the hatch."): "and opened, the hatch."}
+SPOKEN = {("L10", "So I'd step round her"): "So I'd step, round her", ("L24", "It lay there"): "It lay there.",
+          ("L53", "I looked back."): "I looked, back.", ("L58", "one ring nearer"): "one ring nearer,", ("L58", "to lie there"): "to lie there,"}
 for ln in lines:
     for ch in ln.get("chunks", []):
         if (ln["id"], ch[1]) in SPOKEN:
             ch[1] = SPOKEN[(ln["id"], ch[1])]
 
-# the word check (asr): lines a touch slower so a swallowed word comes through
-TEMPO = {"L02": 0.9, "L09": 0.9, "L47": 0.9, "L59": 0.78, "L24": 0.88, "L65": 0.9, "L74": 0.9}
+# lines a touch slower so a swallowed word comes through (the word check)
+TEMPO = {"L10": 0.8, "L24": 1.0, "L53": 0.9, "L58": 0.8}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
 
-# captions show two or three words at a time: a longer chunk of the script is split into even pieces. CHUNK_MAP keeps
-# the script's own chunk numbers ("L14.2") pointing at the same words, whatever the splitting did
 CHUNK_MAP = {}
 
 
@@ -67,7 +63,6 @@ for ln in lines:
 def remap(v):
     """Time references written against the script's chunks, moved onto the split chunks."""
     if isinstance(v, str):
-        import re
         mm = re.match(r"^(L\d+)\.(\d+)(.*)$", v)
         if mm and mm.group(1) in CHUNK_MAP:
             return f"{mm.group(1)}.{CHUNK_MAP[mm.group(1)][int(mm.group(2))]}{mm.group(3)}"
@@ -75,19 +70,19 @@ def remap(v):
     if isinstance(v, list):
         return [remap(x) for x in v]
     if isinstance(v, dict):
-        return {k: (remap(x) if k in ("at", "from", "to") else remap(x) if isinstance(x, (list, dict)) else x)
-                for k, x in v.items()}
+        return {k: remap(x) for k, x in v.items()}
     return v
 
+
 cast = {
-    "me": {"age": "adult", "skin": "#e0b690", "shirt": "#a99b7a", "pattern": "knit", "pattern_c": "#8d805f",
+    "me": {"age": "adult", "skin": "#e0b690", "shirt": "#7a705a", "pattern": "knit", "pattern_c": "#625a46",
            "pants": "#1f2a40", "shoes": "#2c2622", "sleeves": "long", "hair": "cap", "hair_c": "#6b4a2e",
            "hat": "beanie", "hat_c": "#1f4a4d",
            "face": {"eyes": "tired", "brows": True, "ink": "#1b1513"}},
-    "longman": {"age": "adult", "skin": "#8a8a64", "shirt": "#4d6638", "pattern": "knit", "pattern_c": "#34472a",
+    "longman": {"age": "adult", "skin": "#6f7352", "shirt": "#4d6638", "pattern": "knit", "pattern_c": "#34472a",
                 "pants": "#6a4f33", "pants_pattern": "stripes", "pants_pattern_c": "#58402a", "shoes": "#6a4f33",
-                "sleeves": "long", "hair": "cap", "hair_c": "#2f4026", "hat": "none", "height": 1.0,
-                "face": {"eyes": "hollow", "brows": False, "mouth": "line", "ink": "#0e0e0e", "glow": "#f4faf6"}},
+                "sleeves": "long", "hair": "buzz", "hair_c": "#2f4026", "hat": "none", "height": 1.0,
+                "face": {"eyes": "round", "brows": False, "mouth": "line", "ink": "#0a0a0a", "pupil": "#050505", "bags": True}},
 }
 
 
@@ -104,212 +99,132 @@ def move(a, b, lens_a, lens_b=None, roll=0):
 
 
 # ----------------------------------------------------------------------------------------------- the shots
-# (at, what, step, camera)
 S = []
+LAMP = {}
 
 
-def shot(at, what, cam, step=2):
+def shot(at, what, cam, step=2, lamp=None):
     S.append((at, what, step, cam))
+    if lamp:
+        LAMP[at] = round(lamp * 0.4)
 
 
-# 01 the greeting
-shot(0, "low on the towpath at dawn, the boat on the right, far up the path a long dark line",
-     move(([-9.5, 1.5, 0.95], [12, -0.2, 0.95]), ([-7.2, 1.4, 0.95], [12, -0.2, 0.95]), 24))
-shot("L02", "side wide of the whole boat on still water", still([6, -22, 1.7], [6, -0.15, 1.15], 20))
-shot("L03", "close on Moss in her bed, white muzzle on her paws", still([3.3, -1.0, 0.42], [4.2, -1.05, 0.2], 36))
-shot("L04", "the past: me at the open hatch from below, smirk", still([4.7, -1.4, 0.35], [2.85, -1.05, 2.15], 30))
-shot("L05", "the past: Moss on the top step, wagging, me at the hatch", still([1.9, -1.8, 1.0], [2.2, -1.05, 0.85], 30))
-shot("L06", "Moss lying at the foot of the steps, looking at them", still([5.8, -1.35, 0.55], [3.7, -1.05, 0.3], 28))
-shot("L07", "the three steps from Moss's eye level, empty", still([3.9, -1.05, 0.26], [2.3, -1.05, 0.5], 32))
-shot("L08", "me at the top of the steps, back to camera, hatch open on grey fog",
-     still([4.4, -1.05, 1.1], [2.5, -1.05, 1.35], 28))
-shot("L09", "high angle: my boots stepping past her bed, Moss's head turning",
-     still([4.1, -1.75, 1.95], [4.0, -1.1, 0.2], 28))
+HOOK = move(([-8.0, -0.1, 2.2], [2.6, -0.55, 1.0]), ([-7.2, -0.1, 2.2], [2.6, -0.55, 1.0]), 60, 66)
+HOOK_END = still([-7.2, -0.1, 2.2], [2.6, -0.55, 1.0], 66)
+WIDE_BOAT = still([-3.0, 5.5, 3.4], [9.0, 0.0, 0.8], 15)
+RING_CAM = still([3.3, 2.3, 0.78], [5.0, 0.45, 0.8], 26)
+WINDOW = still([5.0, -1.5, 1.06], [5.0, -0.1, 0.70], 30)
+
+# 01 good morning
+shot(0, "the hook: me at the hatch, face lit, the long dark line far up the towpath, empty grass by the back ring",
+     HOOK, 2, 520)
+shot("L02", "Moss's head at the low round window", still([8.5, -4.2, 1.0], [8.5, -1.95, 0.95], 26))
+shot("L02.2", "side wide of the whole boat on still water", still([6, -9.5, 1.2], [6, -0.15, 1.2], 11))
+shot("L03", "the past: me at the open hatch from below, smirk", still([4.6, -1.05, 1.25], [2.6, -1.05, 2.05], 32), 2, 300)
+shot("L04", "the past: Moss on the top step", still([0.9, -1.05, 1.7], [2.5, -1.05, 0.6], 24))
+shot("L04.1", "the past: Moss's landing in the grass beside the back deck", still([-1.6, 2.6, 1.0], [1.4, 0.8, 0.85], 26))
+shot("L05", "the past, plant 1: Moss rolled in the worn patch by the back ring, chin up, the round window above", RING_CAM)
+shot("L06", "the past: low from behind, me and Moss slow on the hedge side", still([-9.0, 3.9, 1.0], [0.0, 3.4, 1.0], 22))
+shot("L07", "Moss in her bed, white muzzle on her paws", still([2.7, -1.5, 0.7], [4.05, -1.05, 0.25], 22))
+shot("L08", "the three steps from Moss's eye level, empty, the hatch above", still([3.9, -1.05, 0.26], [2.3, -1.05, 0.6], 30))
+shot("L09", "Moss in her bed looking up at me, tail up, me at the top step",
+     still([5.2, -1.4, 0.55], [3.4, -1.05, 1.0], 20), 2, 150)
+shot("L10", "high angle: my boots past her bed", still([6.2, -0.9, 1.6], [4.4, -1.4, 0.3], 15))
+shot("L10.1", "me striding alone on the hedge side, upright", still([-6.5, 3.4, 1.2], [-1.0, 3.7, 1.35], 26), 2, 200)
+shot("L11", "plant 2: the back ring under my bunk window, the grass grown in", still([4.0, 2.2, 0.95], [5.0, 0.35, 0.62], 30), 2)
+
 # 02 the first dawn
-shot("L10", "my bunk, me sitting up, Moss at the foot of the steps behind", still([8.0, -0.85, 1.35], [5.3, -0.85, 1.15], 26))
-shot("L11", "the shut hatch from below, grey light round its edges", still([5.2, -1.3, 0.9], [3.0, -1.05, 2.0], 30))
-shot("L12", "my face, half lit by the round window", still([4.0, -1.4, 1.45], [5.5, -0.6, 1.4], 34))
-shot("L13", "Moss from behind and low, sitting square, head up at the shut hatch",
-     still([5.0, -1.35, 0.5], [3.5, -1.05, 0.95], 28))
-shot("L14", "Moss on the second step", still([4.4, -1.0, 0.55], [2.9, -1.05, 0.6], 28))
-shot("L14.2", "Moss on the top step under the hatch, slid open", still([4.3, -1.05, 0.7], [2.5, -1.05, 1.0], 28))
-shot("L15", "the back deck from behind: Moss at the rail, me rising out of the hatch",
-     still([-1.8, -0.9, 1.5], [1.9, -0.9, 1.15], 28))
-shot("L16", "wide over the water, fog and the willows' outlines", still([1.0, -1.1, 1.7], [3.0, -25, 1.0], 26))
-shot("L17", "over my shoulder down the boat and up the towpath: the third ring and a long dark shape",
-     still([0.9, -0.5, 2.3], [24, 0.3, 0.7], 22))
-shot("L18", "a long lens on it", still([0.9, -0.5, 2.3], [28, 0.3, 0.6], 55))
-shot("L19", "Moss at the rail facing up the towpath, wagging, me behind her", still([2.0, -1.8, 1.2], [1.1, -0.7, 1.05], 30))
-shot("L20", "the same long lens: the fog thins, the grass is empty", still([0.9, -0.5, 2.3], [28, 0.3, 0.6], 55))
+shot("L12", "me rising out of the hatch, worried", still([0.3, -1.05, 1.95], [2.6, -1.05, 1.95], 34), 2, 420)
+shot("L13", "over my shoulder: three rings past the front and a long dark shape", still([0.4, 0.2, 2.3], [24, 0.3, 0.5], 28))
+shot("L14", "a side view of it, too long to be a log", still([28.5, -8.0, 1.6], [28.5, 0.3, 0.7], 10))
+shot("L15", "Moss sitting up, ears forward", still([2.5, -1.55, 0.75], [3.9, -1.05, 0.4], 24), 2, 150)
+shot("L16", "me walking away on the hedge side, glancing back", still([-8.0, 3.2, 1.4], [-3.0, 3.6, 1.5], 30), 2, 300)
+shot("L17", "the same view: the fog thins, the grass is empty", still([28.5, -8.0, 1.6], [28.5, 0.3, 0.7], 10))
+
 # 03 the second dawn
-shot("L21", "the cabin, hatch open, Moss already on the second step", still([4.4, -1.0, 0.7], [2.9, -1.05, 0.55], 28))
-shot("L22", "from the bow up the towpath: two rings, then its head", still([11.3, -0.6, 1.6], [21, 0.3, 0.6], 26))
-shot("L23", "me at the front of the boat, scared", still([13.5, -1.0, 1.5], [10.9, -1.05, 1.95], 32))
-shot("L24", "its head and shoulders, face up, eyes open", still([16.4, -0.7, 1.15], [19.3, 0.3, 0.7], 38))
-shot("L25", "a slow pan from its shoulders along the torso and on",
-     move(([16.4, -0.9, 1.1], [19.5, 0.3, 0.7]), ([16.4, -0.9, 1.1], [30, 0.3, 0.7]), 30))
-shot("L26", "high wide: the boat and the Long Man end to end, the same length",
-     still([15.5, -17, 15], [15.5, 0.2, 0.5], 15, 90))
-shot("L27", "close on the weed-green coat", still([21.5, -0.5, 1.25], [21.8, 0.3, 0.7], 34))
-shot("L27.2", "the rope-brown trouser stripe", still([26.5, -0.5, 1.25], [26.8, 0.3, 0.7], 34))
-shot("L28", "straight down over its face", still([19.0, 0.3, 2.3], [19.0, 0.3, 0.7], 30))
-shot("L29", "macro on the beads on its cheek", still([18.9, -0.2, 1.1], [19.05, 0.3, 0.8], 75))
-shot("L30", "Moss on the back deck, ears up, looking along the boat", still([0.4, -0.95, 1.0], [2.4, -0.45, 0.9], 30))
-shot("L31", "me behind her, mouth open on her name; Moss keeps looking", still([1.3, -1.85, 1.35], [0.9, -0.8, 1.2], 30))
+shot("L18", "from the front of the boat: two rings, then its head", still([11.0, -0.8, 2.2], [20, 0.3, 0.6], 26))
+shot("L19", "me crouched at the bow, scared", still([13.5, -1.0, 1.7], [10.8, -1.05, 2.1], 32), 2, 380)
+shot("L20", "its head and shoulders, face up, eyes open", still([18.4, -1.3, 1.9], [19.0, 0.3, 0.7], 30))
+shot("L21", "a slow pan along it", move(([16.6, -1.0, 1.2], [19.8, 0.3, 0.7]), ([16.6, -1.0, 1.2], [30, 0.3, 0.7]), 30))
+shot("L22", "high wide: the boat and the Long Man end to end", still([17.0, -20.0, 12.0], [17.0, 0.0, 0.5], 8))
+shot("L23", "the weed-green coat", still([21.5, -0.5, 1.25], [21.8, 0.3, 0.7], 34))
+shot("L23.2", "the rope-brown trousers and a boot", still([26.0, -1.7, 1.5], [26.8, 0.3, 0.7], 26))
+shot("L24", "straight down over its face", still([19.0, 0.3, 2.3], [19.0, 0.3, 0.7], 30))
+shot("L25", "the beads on its cheek", still([18.92, 0.12, 2.0], [18.92, 0.12, 0.95], 70))
+shot("L26", "low along the grass to its still face", still([19.7, 1.7, 0.72], [19.0, 0.3, 0.8], 34))
+shot("L27", "Moss whining, one leg on the first step", still([4.9, -1.35, 0.4], [3.3, -1.05, 0.35], 30), 2, 150)
+shot("L28", "Moss back on the cabin floor, looking up", still([5.0, -1.35, 0.5], [3.5, -1.05, 0.95], 22), 2, 150)
+
 # 04 the third dawn
-shot("L32", "my bunk, me already sitting up in my beanie", still([8.0, -0.85, 1.35], [5.3, -0.85, 1.15], 26))
-shot("L33", "me on the steps under the shut hatch, Moss at the foot",
-     still([4.8, -1.05, 1.1], [2.9, -1.05, 1.3], 28))
-shot("L34", "the shut hatch, my head turning toward the front", still([3.9, -0.5, 1.0], [2.9, -1.05, 1.45], 30))
-shot("L35", "my face, worried, a hand at my throat", still([4.2, -1.05, 1.5], [2.9, -1.05, 1.45], 40))
-shot("L36", "me with the hatch half open, calling out, side on", still([1.2, -1.8, 1.5], [2.7, -1.05, 2.0], 34))
-shot("L37", "fog over the front of the boat", still([6.5, -1.05, 2.5], [14, 0.0, 0.8], 24))
-shot("L38", "closer on me, scared", still([4.2, -1.05, 1.6], [2.7, -1.05, 2.0], 36))
-shot("L39", "the water by the front ring, flat", still([12.6, -2.4, 0.9], [14.4, 0.0, 0.55], 30))
-shot("L40", "Moss on the top step beside me, looking toward the front", still([4.5, -1.55, 0.95], [2.8, -1.05, 0.75], 30))
-shot("L41", "its head at the front ring, now turned on its side, face toward the boat",
-     still([3.0, -5.5, 2.0], [12.1, 0.3, 0.8], 70))
-shot("L42", "close: the head turned flat sideways while the chest stays face up",
-     still([10.4, -0.8, 1.45], [12.7, 0.3, 0.7], 42))
-shot("L43", "inside at night: the bolt from below", still([4.7, -0.9, 1.0], [3.2, -0.62, 1.95], 36))
-shot("L43.2", "my hand at the end of my sleeve beside it", still([5.1, -1.35, 1.55], [3.3, -0.7, 1.75], 34))
+shot("L29", "my bunk, me sitting up in my beanie", still([4.0, -1.5, 1.35], [5.55, -0.62, 1.2], 22), 2, 150)
+shot("L30", "me at the round window, side on", still([3.7, -0.9, 1.5], [5.45, -0.55, 1.5], 34), 2, 150)
+shot("L31", "through the window: white fog, then the towpath comes clear", WINDOW)
+shot("L32", "along the boat's side: its head at the front ring", still([4.2, 0.35, 0.95], [12.0, 0.3, 0.7], 24))
+shot("L33", "my face at the window, worried", still([3.6, -1.6, 1.5], [5.2, -0.6, 1.45], 24), 2, 250)
+shot("L34", "from the front ring: its head now on its side", still([14.6, -3.8, 2.8], [12.4, 0.3, 0.7], 26))
+shot("L35", "the head turned flat while the chest stays face up", still([12.5, -1.7, 1.35], [12.2, 0.3, 0.75], 30))
+shot("L36", "low behind its sideways head: the look runs along the grass to the back ring", still([13.6, 1.5, 1.7], [4.0, 0.2, 0.6], 24))
+shot("L37", "the back ring and the grown-in grass under my window, my face small in the glass",
+     still([3.0, 2.4, 1.0], [5.0, -0.05, 0.8], 28))
+shot("L38", "night: the bolt from below", still([4.7, -0.9, 1.0], [3.2, -0.62, 1.95], 36), 2, 100)
+shot("L38.2", "my hand at the end of my sleeve beside the bolt", still([5.2, -1.0, 1.5], [3.6, -0.85, 1.4], 22), 2, 150)
+shot("L39", "Moss at the foot of the steps, watching the hatch", still([4.5, -1.05, 0.5], [3.0, -1.05, 1.5], 28), 2, 150)
+
 # 05 the fourth dawn: the scare
-shot("L44", "the bunk window from inside: white fog, beaded with condensation", still([5.0, -1.5, 0.98], [5.0, -0.1, 0.84], 36))
-shot("L45", "me lying awake, the round window above me", still([4.2, -1.3, 1.25], [5.5, -0.6, 0.85], 30))
-shot("L46", "close on the cabin wall by the bunk, wood grain", still([6.4, -1.0, 0.75], [6.6, -0.25, 0.7], 40))
-shot("L47", "me rising onto an elbow toward the window", still([4.3, -1.25, 1.3], [5.1, -0.55, 1.25], 32))
-shot("L48", "my sleeve crossing the glass in a one second wipe", still([5.0, -1.5, 0.98], [5.0, -0.1, 0.84], 36))
-shot("P01", "the wiped glass, white fog behind it", still([5.0, -1.5, 0.98], [5.0, -0.1, 0.84], 36), 1)
-shot("L49", "two round eyes right behind the glass", still([5.0, -1.5, 0.98], [5.0, -0.1, 0.84], 36), 1)
-shot("L50", "high wide outside in thick fog: the Long Man the whole length of the boat",
-     still([8.5, -15, 14], [8.5, 0.2, 0.5], 15, 90), 1)
-shot("L51", "its face at my window, me inside", still([3.9, -1.2, 1.15], [5.0, -0.15, 0.95], 36), 1)
-shot("L52", "tight on me, my ear by the glass, its eyes beyond", still([6.2, -1.3, 1.35], [5.0, -0.35, 1.3], 42), 1)
-shot("L53", "me turning from the window, two faint points behind me", still([4.2, -1.55, 1.3], [5.2, -0.4, 1.25], 34), 1)
-shot("L54", "Moss at the foot of the steps, one front leg on the first step", still([4.9, -1.35, 0.4], [3.3, -1.05, 0.35], 30))
-shot("L55", "low from behind Moss on the first step: the bolted hatch above", still([4.5, -1.05, 0.5], [3.0, -1.05, 1.5], 28))
-shot("L56", "Moss's face, ears up, eyes on the hatch", still([2.95, -0.75, 0.5], [3.3, -1.05, 0.52], 48))
+shot("L40", "the bunk window from inside: white fog, beaded", WINDOW)
+shot("L41", "me lying awake, the round window above me", still([4.2, -1.3, 1.25], [5.5, -0.6, 0.85], 30), 2, 150)
+shot("L42", "close on the round window, white", still([5.0, -1.5, 0.98], [5.0, -0.1, 0.84], 52))
+shot("L43", "my sleeve crossing the glass in a one second wipe", WINDOW)
+shot("P01", "the wiped glass, white fog behind it", WINDOW, 1)
+shot("L44", "two round eyes right behind the glass (the creature test)", WINDOW, 1)
+shot("L45", "high wide outside: the Long Man along the whole boat", still([6.0, -11.0, 7.0], [9.0, 0.0, 0.6], 16), 1)
+shot("L46", "its head by the back ring, face at the round window", still([2.2, 0.9, 1.15], [5.0, 0.1, 0.85], 30), 1)
+shot("L47", "tight on me by the glass, its eyes beyond", still([6.6, -1.35, 1.5], [5.0, -0.5, 1.5], 28), 1, 250)
+shot("L48", "its eyes through the glass, close", still([5.0, -1.5, 0.98], [5.0, -0.1, 0.84], 70), 1)
+shot("L49", "me turning from the window, two faint points behind me", still([3.6, -1.7, 1.5], [5.2, -0.6, 1.45], 22), 1, 250)
+shot("L50", "Moss climbing", still([4.3, -1.25, 0.5], [3.4, -1.05, 0.25], 28), 1, 150)
+shot("L51", "Moss on the first step, the bolted hatch above", still([4.5, -1.05, 0.5], [3.0, -1.05, 1.5], 28), 1, 150)
+shot("L52", "Moss's face, ears up, eyes on the hatch", still([2.4, -1.25, 1.0], [3.3, -1.05, 0.85], 20), 1, 200)
+
 # 06 the turn
-shot("L57", "the warm past: Moss waiting at the foot of the steps", still([5.0, -1.35, 0.5], [3.5, -1.05, 0.95], 28))
-shot("L58", "the warm past: the hatch sliding open over light", still([5.2, -1.3, 0.9], [3.0, -1.05, 2.0], 30))
-shot("L59", "the cabin, me looking from Moss to the window", still([7.6, -1.0, 1.3], [4.8, -0.9, 1.1], 26))
-shot("L60", "the hatch from below, bolted", still([4.4, -0.9, 0.9], [3.2, -0.62, 1.95], 34))
-shot("L61", "my face, neutral, the fear going", still([4.3, -1.3, 1.5], [5.4, -0.7, 1.45], 42))
-shot("L62", "me at the foot of the hatch, saying nothing", still([4.4, -1.05, 1.1], [2.5, -1.05, 1.35], 28))
-shot("L63", "outside wide: the Long Man along the boat in the fog", still([8.5, -15, 14], [8.5, 0.2, 0.5], 15, 90))
-shot("L64", "Moss on the first step, looking up", still([4.5, -1.05, 0.5], [3.0, -1.05, 1.5], 28))
-# 07 good morning
-shot("L65", "from below: the bolt", still([4.7, -0.9, 1.0], [3.2, -0.62, 1.95], 36))
-shot("L65.1", "from below: the hatch sliding open over 1.5 s", still([5.2, -1.3, 0.9], [3.0, -1.05, 2.0], 30))
-shot("L66", "me at the foot of the steps by Moss, reaching", still([5.7, -1.7, 1.2], [4.0, -1.1, 0.9], 30))
-shot("L66.2", "me rising out of the hatch with Moss held against my chest", still([0.3, -1.05, 1.9], [2.45, -1.05, 2.0], 32))
-shot("L67", "the back deck from behind: me and Moss at the hatch, its face on the towpath",
-     still([-3.0, 0.45, 1.3], [3.8, 0.0, 1.15], 30))
-shot("L68", "Moss on the deck boards beside me, looking up", still([0.7, -1.75, 1.1], [1.4, -1.05, 0.9], 32))
-shot("L69", "my face, a small smile", still([0.2, -1.7, 2.0], [1.35, -1.05, 2.0], 40))
-shot("L70", "Moss wagging so hard she nearly sits", still([0.5, -0.5, 1.0], [1.4, -1.05, 0.9], 36))
-shot("P02", "the canal and the towpath; the fog begins to ease",
-     still([1.0, -1.1, 1.8], [6.0, -25, 1.2], 24))
-shot("L72", "the towpath alongside the boat, the grass flattened in one long line",
-     move(([2.0, 3.0, 1.35], [8.0, 0.1, 0.55]), ([4.0, 3.0, 1.35], [10.0, 0.1, 0.55]), 28))
-shot("P03", "the lore plant: the back ring, two strokes", still([5.0, 0.62, 1.05], [5.0, -0.02, 0.58], 42))
+shot("L53", "its head in the grass by the back ring, face up (L05's framing)", RING_CAM)
+shot("L54", "the past: Moss in the same grass, the same sky", RING_CAM)
+shot("L55", "the grown-in grass in the present, its hair at the edge", still([6.8, 1.3, 0.85], [4.9, 0.45, 0.6], 30))
+shot("L56", "outside wide: it lies along the boat, unchanged", WIDE_BOAT)
+shot("L57", "Moss on the first step, looking up", still([4.7, -1.1, 0.55], [3.1, -1.05, 1.4], 22), 2, 150)
+shot("L58", "high wide: the rings along the towpath, its head at the last", still([-4.0, 3.2, 3.6], [14.0, 0.0, 0.5], 22))
+shot("L59", "my face at the window, the fear going", still([3.5, -1.55, 1.55], [5.3, -0.7, 1.5], 22), 2, 300)
+
+# 07 her spot
+shot("L60", "from below: the bolt", still([4.7, -0.9, 1.0], [3.2, -0.62, 1.95], 36), 2, 100)
+shot("L60.1", "the hatch sliding open, the grey light easing in", still([5.2, -1.3, 0.9], [3.0, -1.05, 2.0], 30), 2, 100)
+shot("L61", "me crouched at the foot of the steps by Moss", still([6.2, -0.5, 1.2], [4.4, -1.5, 1.0], 17), 2, 200)
+shot("L61.2", "me rising out of the hatch with Moss against my chest", still([0.3, -1.05, 1.9], [2.45, -1.05, 2.0], 32), 2, 420)
+shot("L62", "the back deck: me with Moss, and its face on the grass by the back ring",
+     still([-2.2, 0.9, 1.45], [3.2, -0.2, 1.1], 22), 2, 150)
+shot("L63", "my face, Moss's head at my chin", still([1.5, -3.3, 2.25], [1.5, -1.3, 2.25], 34), 2, 350)
+shot("P02", "wide over the canal: the fog thins, the willows come clear", still([-0.3, -1.0, 1.9], [6.0, -25, 1.2], 24))
+shot("L64", "the towpath alongside the boat, the fog easing",
+     move(([2.0, 3.0, 1.35], [8.0, 0.1, 0.55]), ([3.0, 3.0, 1.35], [9.0, 0.1, 0.55]), 28))
+shot("L65", "the grass flattened in one long line, no one there",
+     move(([3.0, 3.0, 1.35], [9.0, 0.1, 0.55]), ([4.0, 3.0, 1.35], [10.0, 0.1, 0.55]), 28))
+shot("P03", "the lore plant: two strokes on the back ring", still([5.0, 0.55, 1.1], [5.0, 0.0, 0.62], 44))
+shot("L66", "me stepping off the deck onto the towpath, Moss in my arms", still([-1.8, 2.8, 1.3], [1.2, 0.9, 1.2], 26), 2, 300)
+shot("L66.1", "Moss set down on the grass by the ring", RING_CAM)
+shot("L67", "Moss rolled over, tail up, me crouched beside her", still([3.0, 2.8, 0.95], [5.0, 0.7, 0.8], 26), 2, 200)
+
 # 08 her pace
-shot("L73", "me at the open hatch in a clear morning, smirk", still([4.7, -1.4, 0.35], [2.85, -1.05, 2.15], 30))
-shot("L74", "low in front of us on the towpath: me bent beside Moss, my sleeve on her back, the boat behind",
-     still([-6.0, 1.45, 0.75], [-2.2, 1.0, 0.85], 34))
-shot("L75", "side wide: the two of us small on the long towpath, the last fog lifting",
-     still([-4.2, -7.0, 1.5], [-4.2, 1.0, 1.0], 26))
-shot("L76", "the first shot again, lighter: the boat, and us walking back toward it",
-     move(([-9.5, 1.5, 0.95], [12, -0.2, 0.95]), ([-7.2, 1.4, 0.95], [12, -0.2, 0.95]), 24))
+shot("L68", "me at the open hatch in a clear morning, Moss in my arms",
+     still([4.6, -1.05, 1.25], [2.6, -1.05, 2.05], 32), 2, 380)
+shot("L69", "low from behind: me upright beside Moss on the hedge side, very slow",
+     still([-2.2, 3.9, 0.9], [4.0, 3.4, 1.0], 28), 2, 200)
+shot("L70", "side wide from the hedge: the two of us small on the long towpath",
+     still([3.0, 6.8, 1.5], [3.0, 2.0, 1.0], 20))
+shot("L71", "Moss's face, ears soft, looking ahead", still([3.9, 3.5, 0.8], [3.0, 3.1, 0.75], 36), 2, 200)
+shot("L72", "the first shot again: me at the hatch, Moss rolled in the grass behind me", HOOK_END, 2, 520)
 
-# camera fixes: character shots framed on the face heights (standing: pos z + 1.55)
-FIX = {
- 0: move(([-9.6, 1.45, 1.4], [-5.4, 1.2, 1.65]), ([-8.6, 1.45, 1.4], [-5.4, 1.2, 1.65]), 30),
- "L02": still([6, -17, 1.4], [6, -0.15, 1.1], 18),
- "L04": still([4.6, -1.05, 1.25], [2.6, -1.05, 2.05], 32),
- "L05": still([3.5, -1.3, 1.2], [1.8, -1.05, 1.5], 28),
- "L08": still([5.3, -1.05, 1.7], [2.6, -1.05, 1.95], 26),
- "L10": still([8.2, -0.9, 1.45], [4.8, -0.8, 1.2], 24),
- "L12": still([3.7, -0.9, 1.5], [5.45, -0.55, 1.5], 34),
- "L15": still([-1.0, -1.1, 1.6], [2.6, -1.05, 1.9], 30),
- "L19": still([1.2, -4.0, 1.8], [1.1, -0.8, 1.7], 30),
- "L23": still([13.5, -1.0, 1.7], [10.8, -1.05, 2.1], 32),
- "L24": still([21.2, 0.6, 1.5], [19.1, 0.3, 0.8], 34),
- "L26": still([15.5, -26, 8], [15.5, 0.2, 0.6], 11),
- "L03": still([4.5, -0.4, 0.6], [3.9, -1.05, 0.3], 30),
- "L37": still([3.5, -0.6, 2.6], [14, 0.0, 0.8], 24),
- "P02": still([-0.3, -1.0, 1.9], [6.0, -25, 1.2], 24),
- "L31": still([1.2, -3.6, 1.9], [1.2, -0.7, 1.8], 30),
- "L33": still([0.6, -1.05, 1.7], [2.95, -1.05, 1.9], 30),
- "L34": still([4.2, -1.4, 1.8], [2.95, -1.05, 1.9], 30),
- "L35": still([1.3, -1.05, 1.9], [2.95, -1.05, 1.95], 26),
- "L36": still([4.4, -1.3, 1.5], [2.6, -1.05, 2.05], 30),
- "L38": still([4.0, -1.3, 1.6], [2.6, -1.05, 2.05], 36),
- "L40": still([4.6, -1.6, 1.4], [2.8, -1.05, 1.3], 30),
- "L41": still([4.0, -6.5, 5.0], [12.1, 0.3, 0.8], 60),
- "L42": still([8.5, -5.5, 4.0], [12.7, 0.3, 0.7], 50),
- "L43.2": still([5.4, -1.4, 1.6], [3.5, -0.85, 1.7], 30),
- "L47": still([3.6, -1.4, 1.5], [5.5, -0.6, 1.5], 32),
- "L50": still([9, -14, 5], [9, 0.2, 0.8], 16),
- "L52": still([6.2, -1.3, 1.45], [5.0, -0.35, 1.45], 36),
- "L53": still([4.2, -1.55, 1.45], [5.2, -0.4, 1.45], 34),
- "L59": still([7.6, -1.0, 1.4], [4.8, -0.9, 1.4], 26),
- "L61": still([4.3, -1.3, 1.5], [5.4, -0.7, 1.5], 32),
- "L63": still([9, -14, 5], [9, 0.2, 0.8], 16),
- "L66": still([7.0, -1.5, 1.4], [4.6, -1.4, 1.0], 30),
- "L66.2": still([0.3, -1.05, 1.9], [2.45, -1.05, 2.0], 32),
- "L67": still([-3.0, 0.45, 1.3], [3.8, 0.0, 1.6], 30),
- "L68": still([1.7, -3.8, 1.6], [1.7, -1.2, 1.5], 30),
- "L69": still([1.5, -3.3, 2.25], [1.5, -1.3, 2.25], 34),
- "L70": still([1.9, -3.3, 1.1], [1.9, -1.2, 0.95], 34),
- "L74": still([-5.5, 2.5, 1.5], [-2.0, 1.1, 1.3], 32),
-}
-# second camera pass (builder round 2): character shots framed head-and-shoulders or better, the wides readable
-FIX.update({
- "L02": still([6, -9.5, 1.2], [6, -0.15, 1.2], 11),
- "L03": still([2.7, -1.5, 0.7], [4.05, -1.05, 0.25], 22),
- "L05": still([1.9, -3.4, 1.5], [1.85, -1.05, 1.35], 22),
- "L08": still([4.9, -1.05, 1.2], [2.6, -1.05, 2.3], 22),
- "L09": still([6.6, -1.0, 1.0], [4.4, -1.35, 1.2], 20),
- "L10": still([4.0, -1.5, 1.35], [5.55, -0.62, 1.2], 22),
- "L13": still([5.0, -1.35, 0.5], [3.5, -1.05, 0.95], 20),
- "L17": still([-1.5, 1.0, 1.8], [24, 0.3, 0.6], 26),
- "L18": still([-1.5, 1.0, 1.8], [26, 0.3, 0.6], 50),
- "L19": still([-1.6, -0.9, 1.6], [1.7, -0.75, 1.6], 18),
- "L20": still([-1.5, 1.0, 1.8], [26, 0.3, 0.6], 50),
- "L21": still([4.4, -1.0, 0.7], [2.9, -1.05, 0.55], 20),
- "L24": still([17.4, -0.7, 1.3], [19.0, 0.3, 0.75], 30),
- "L26": still([-1.0, 6.0, 3.6], [19.0, -0.2, 0.7], 16),
- "L50": still([-3.0, 5.5, 3.4], [9.0, 0.0, 0.8], 15),
- "L63": still([-3.0, 5.5, 3.4], [9.0, 0.0, 0.8], 15),
- "L24": still([18.4, -1.3, 1.9], [19.0, 0.3, 0.7], 30),
- "L41": still([14.6, -3.8, 2.8], [12.4, 0.3, 0.7], 26),
- "L42": still([12.5, -1.7, 1.35], [12.2, 0.3, 0.75], 30),
- "L56": still([2.4, -1.25, 1.0], [3.3, -1.05, 0.85], 20),
- "L02": still([6, -9.5, 1.2], [6, -0.15, 1.2], 11),
- "L08": still([4.9, -1.05, 1.0], [2.6, -1.05, 2.5], 22),
- "L09": still([6.6, -1.0, 1.0], [4.4, -1.35, 1.5], 17),
- "L29": still([18.92, 0.12, 2.0], [18.92, 0.12, 0.95], 70),
- "L30": still([-0.5, -1.5, 1.3], [1.7, -0.5, 1.0], 20),
- "L31": still([1.2, -3.4, 1.6], [1.2, -0.8, 1.5], 18),
- "L32": still([4.0, -1.5, 1.35], [5.55, -0.62, 1.2], 22),
- "L33": still([5.0, -0.8, 1.4], [3.3, -1.05, 1.6], 24),
- "L34": still([5.0, -0.8, 1.4], [3.3, -1.05, 1.6], 28),
- "L35": still([5.0, -0.8, 1.45], [3.3, -1.05, 1.65], 30),
- "L40": still([4.4, -1.7, 1.1], [2.7, -1.05, 1.2], 17),
- "L43.2": still([5.2, -1.0, 1.5], [3.6, -0.85, 1.4], 22),
- "L52": still([6.8, -1.4, 1.45], [5.0, -0.55, 1.45], 28),
- "L53": still([3.6, -1.7, 1.5], [5.2, -0.6, 1.45], 22),
- "L61": still([3.5, -1.55, 1.55], [5.3, -0.7, 1.5], 22),
- "L62": still([0.5, -1.05, 1.7], [3.3, -1.05, 1.65], 24),
- "L66": still([6.2, -0.5, 1.2], [4.4, -1.5, 1.0], 17),
- "L68": still([1.7, -3.8, 1.6], [1.7, -1.2, 1.5], 22),
- "L70": still([1.9, -3.3, 1.1], [1.9, -1.2, 0.95], 24),
-})
-S[:] = [(at, what, step, FIX.get(at, cam)) for at, what, step, cam in S]
-S[-1] = (S[-1][0], S[-1][1], S[-1][2], FIX[0])
+S[:] = [(at, what, step, cam) for at, what, step, cam in S]
 
-LAMP = {"L27.2": 300, "L56": 200, "L60": 120, "L55": 150, "L64": 150}
 shots = []
 for i, (at, what, step, cam) in enumerate(S):
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.004, "step": step, "what": what}
@@ -350,78 +265,75 @@ def talk(who, a, b):
 
 STEP0, STEP1, STEP2 = [2.6, -1.05, 0.54], [2.95, -1.05, 0.36], [3.3, -1.05, 0.2]
 BUNK = [5.55, -0.62, -0.06]
-FLAT = [0.0, 0.0]
 
 # me
-put("me", 0, [-5.4, 1.35, 0.5], yaw=-90, expr="neutral", head=[0, 4])
-hide("me", "L03")
-put("me", "L04", STEP0, yaw=90, head=[0, 22], expr="smirk")
-put("me", "L05", [1.2, -1.05, 0.72], yaw=90, lean=6, arms=[12, 12], head=[0, 8], expr="smirk")
-hide("me", "L06")
-put("me", "L08", STEP0, yaw=-90, head=[0, 0], expr="neutral")
-put("me", "L09", [5.3, -1.62, 0.05], yaw=-90, expr="neutral")
-walk("me", "L09+1.4", [3.3, -1.62, 0.05], expr="neutral")
-hide("me", "L09+1.45")
-put("me", "L10", BUNK, yaw=-90, expr="worried", head=[0, 6])
-put("me", "L12", [5.45, -0.55, -0.06], yaw=-95, expr="worried", head=[-25, 0])
+put("me", 0, STEP0, yaw=-120, expr="neutral", head=[-15, 4])
+key("me", "L02>", hidden=True, blend=0)
+put("me", "L03", STEP0, yaw=90, head=[0, 22], expr="smirk")
+hide("me", "L04")
+put("me", "L06", [-2.2, 3.7, 0.5], yaw=90, expr="smirk", head=[0, 12])
+walk("me", "L06+3.0", [3.4, 3.7, 0.5], expr="smirk", head=[0, 12])
+hide("me", "L07")
+put("me", "L09", STEP0, yaw=90, head=[0, 24], expr="neutral")
+talk("me", "L09", "L09.1>")
+put("me", "L10", [5.3, -1.62, 0.05], yaw=-90, expr="neutral")
+walk("me", "L10+1.4", [3.3, -1.62, 0.05], expr="neutral")
+hide("me", "L10.1")
+put("me", "L10.1", [-2.0, 3.7, 0.5], yaw=90, expr="neutral", head=[0, 0])
+walk("me", "L10.1+1.8", [4.0, 3.7, 0.5], expr="neutral")
+hide("me", "L11")
+put("me", "L12", [2.6, -1.05, 0.54], yaw=-90, expr="worried", head=[0, 0])
 hide("me", "L13")
-put("me", "L15", STEP0, yaw=-90, head=[0, 0], expr="neutral")
-walk("me", "L15+0.5", [2.6, -1.05, 0.54], expr="neutral")
-hide("me", "L16")
-put("me", "L19", [0.6, -1.0, 0.72], yaw=90, expr="wide")
+put("me", "L16", [-2.0, 3.6, 0.5], yaw=-90, expr="worried", head=[-40, 4])
+walk("me", "L16+1.8", [-6.5, 3.6, 0.5], expr="worried", head=[-40, 4])
+hide("me", "L17")
+put("me", "L19", [10.8, -1.05, 0.62], yaw=90, lean=22, expr="scared", head=[0, 10])
 hide("me", "L20")
-put("me", "L23", [10.8, -1.05, 0.62], yaw=90, lean=22, expr="scared", head=[0, 10])
-hide("me", "L24")
-put("me", "L31", [0.7, -0.85, 0.72], yaw=90, expr="scared", arms=[10, 10])
-talk("me", "L31", "L31.1")
+put("me", "L29", BUNK, yaw=-90, expr="neutral", head=[0, 6])
+put("me", "L30", [5.45, -0.55, -0.06], yaw=-95, expr="worried", head=[-25, 0])
+put("me", "L31", [5.45, -0.55, -0.06], yaw=-95, expr="worried", head=[-25, 0])
 hide("me", "L32")
-put("me", "L32", BUNK, yaw=-90, expr="worried")
-put("me", "L33", STEP2, yaw=90, expr="neutral", head=[0, -6])
-put("me", "L34", STEP2, yaw=90, expr="worried", head=[0, 0])
-key("me", "L34.2", head=[0, 6], blend=0.4)
-put("me", "L35", STEP2, yaw=90, expr="worried", arms=[0, 100], head=[0, 0])
-put("me", "L36", STEP0, yaw=90, expr="worried", head=[0, 0])
-talk("me", "L36", "L36>")
-put("me", "L38", STEP0, yaw=90, expr="scared", head=[0, 0])
-talk("me", "L38", "L38>")
-put("me", "L40", STEP1, yaw=90, expr="scared")
-hide("me", "L41")
-put("me", "L43.2", [3.55, -0.85, 0.05], yaw=90, expr="worried", arms=[150, 0])
-hide("me", "L44")
-put("me", "L45", [5.95, -0.7, 0.8], yaw=0, expr="worried", lie=[-88, 0, 90])
-put("me", "L47", BUNK, yaw=-90, expr="worried", head=[-5, 0], lean=0)
-put("me", "L48", [5.35, -0.55, -0.06], yaw=-90, expr="worried", head=[-40, 0])
+put("me", "L33", [5.0, -0.7, -0.06], yaw=-20, expr="worried", head=[0, 0])
+put("me", "L37", [5.0, -0.5, -0.06], yaw=180, expr="worried", head=[0, 0])
+hide("me", "L38")
+put("me", "L38", STEP0, yaw=90, expr="worried", head=[0, 0])
+hide("me", "L38.2")
+put("me", "L38.2", [3.55, -0.85, 0.05], yaw=90, expr="worried", arms=[150, 0])
+hide("me", "L39")
+put("me", "L41", [5.95, -0.7, 0.8], yaw=0, expr="worried", lie=[-88, 0, 90])
+put("me", "L43", [5.35, -0.55, -0.06], yaw=-90, expr="worried", head=[-40, 0])
 hide("me", "P01>")
-put("me", "L51", [5.35, -0.55, -0.06], yaw=-90, expr="scared", head=[-60, 0])
-put("me", "L52", [5.0, -0.6, -0.06], yaw=180, expr="wide", head=[-25, 0])
-put("me", "L53", [5.0, -0.7, -0.06], yaw=-20, expr="wide", head=[0, 0])
-walk("me", "L53+0.6", [4.6, -0.9, 0.05], expr="wide")
-hide("me", "L54")
-put("me", "L59", [4.6, -1.35, 0.05], yaw=-90, expr="worried", head=[-20, 0])
-key("me", "L59.2", head=[40, 0], expr="worried", blend=0.5)
-put("me", "L61", [5.3, -0.7, 0.05], yaw=-100, expr="neutral", head=[0, 0])
-put("me", "L62", STEP2, yaw=-90, expr="neutral")
-hide("me", "L63")
-hide("me", "L65")
-put("me", "L66", [4.7, -1.6, 0.05], yaw=-90, expr="neutral", arms=[70, 70], lean=18, head=[0, 22])
-put("me", "L66.2", STEP0, yaw=-90, expr="neutral", arms=[60, 60], head=[0, 8])
-put("me", "L67", [1.5, -1.3, 0.72], yaw=90, expr="wide", arms=[60, 60], lean=-4)
-put("me", "L68", [1.5, -1.3, 0.72], yaw=90, expr="neutral", arms=[0, 0], head=[0, 20])
-put("me", "L69", [1.5, -1.3, 0.72], yaw=-10, expr="smirk", head=[0, 6])
-key("me", "L69+0.3", yaw=0, blend=0.3)
-put("me", "L70", [1.5, -1.3, 0.72], yaw=20, expr="smirk", head=[0, 16])
-put("me", "P02", [1.5, -1.3, 0.72], yaw=20, expr="smirk", head=[0, 6])
-hide("me", "L72")
-put("me", "L73", STEP0, yaw=90, head=[0, 24], expr="smirk")
-put("me", "L74", [-1.4, 1.35, 0.5], yaw=-90, lean=24, expr="smirk", arms=[30, 0], head=[0, 22])
-walk("me", "L74>", [-2.3, 1.35, 0.5], lean=24, arms=[30, 0], head=[0, 22])
-walk("me", "L75>", [-4.6, 1.35, 0.5], lean=24, arms=[30, 0], head=[0, 22])
-put("me", "L76", [-6.6, 1.35, 0.5], yaw=90, lean=22, expr="smirk", arms=[30, 0], head=[0, 22])
-walk("me", "end", [-4.7, 1.35, 0.5], lean=22, arms=[30, 0], head=[0, 22])
+put("me", "L46", [5.35, -0.55, -0.06], yaw=-90, expr="scared", head=[-60, 0])
+put("me", "L47", [5.3, -0.62, -0.06], yaw=63, expr="wide", head=[0, 0])
+put("me", "L49", [5.0, -0.7, -0.06], yaw=-20, expr="wide", head=[0, 0])
+walk("me", "L49+0.6", [4.6, -0.9, 0.05], expr="wide")
+hide("me", "L50")
+put("me", "L59", [5.3, -0.7, -0.06], yaw=-100, expr="neutral", head=[0, 0])
+hide("me", "L60")
+put("me", "L60.1", STEP0, yaw=90, expr="neutral")
+hide("me", "L61")
+put("me", "L61", [4.7, -1.6, 0.05], yaw=-90, expr="neutral", arms=[70, 70], lean=18, head=[0, 22])
+put("me", "L61.2", STEP0, yaw=-90, expr="neutral", arms=[60, 60], head=[0, 8])
+put("me", "L62", [1.4, -1.05, 0.72], yaw=-60, expr="neutral", arms=[60, 60], lean=-4, head=[0, 8])
+put("me", "L63", [1.5, -1.3, 0.72], yaw=-10, expr="smirk", arms=[60, 60], head=[0, 6])
+key("me", "L63+0.3", yaw=0, blend=0.3)
+hide("me", "P02")
+put("me", "L66", [0.8, 0.95, 0.5], yaw=90, expr="neutral", arms=[60, 60], head=[0, 14])
+walk("me", "L66+1.0", [4.2, 1.5, 0.5], expr="neutral", arms=[60, 60], head=[0, 14])
+put("me", "L66.1", [4.2, 1.5, 0.5], yaw=180, expr="neutral", arms=[0, 0], lean=0, head=[0, 20])
+put("me", "L67", [4.6, 1.7, 0.5], yaw=180, expr="smirk", lean=26, arms=[40, 0], head=[0, 24])
+hide("me", "L68")
+put("me", "L68", STEP0, yaw=90, expr="smirk", head=[0, 24], arms=[60, 60])
+hide("me", "L69")
+put("me", "L69", [0.0, 3.5, 0.5], yaw=90, expr="smirk", head=[0, 14], arms=[0, 0])
+walk("me", "L69+2.5", [2.2, 3.5, 0.5], expr="smirk", head=[0, 14])
+put("me", "L70", [2.2, 3.5, 0.5], yaw=90, expr="smirk", head=[0, 14])
+walk("me", "L70+1.5", [3.6, 3.5, 0.5], expr="smirk", head=[0, 14])
+hide("me", "L71")
+put("me", "L72", STEP0, yaw=-120, expr="smirk", head=[-15, 4])
 
 # the Long Man: eyes open, never blinking, a hairline mouth
 put("longman", 0, [0, 0, 0], expr="wide", blink=False)
-key("longman", "L67", look=[0, 1], blend=0.1)
 
 # ------------------------------------------------------------------------------------------------- cues
 cues = []
@@ -431,134 +343,166 @@ def cue(at, name, **kw):
     cues.append({"at": at, "name": name, **kw})
 
 
-# time of day: ramps only inside shots
-cue(0, "time", set="dawn")
-cue("L04", "time", set="past")
-cue("L06", "time", set="grey1")
+# time of day: slow ramps only inside shots
+cue(0, "time", set="hook")
+cue("L02", "time", set="grey1")
+cue("L03", "time", set="past")
+cue("L07", "time", set="grey1")
+cue("L13", "time", set="wide3")
+cue("L14", "time", set="far")
 cue("L16", "time", set="grey1")
 cue("L17", "time", set="far")
-cue("L20", "time", set="clear1", dur=1.8)
-cue("L21", "time", set="grey2")
-cue("L26", "time", set="wide3")
-cue("L27", "time", set="grey2")
-cue("L32", "time", set="night")
-cue("L34", "time", set="grey3")
-cue("L43", "time", set="night")
-cue("L44", "time", set="thick")
-cue("L50", "time", set="wide2")
-cue("L51", "time", set="thick")
-cue("L57", "time", set="past")
-cue("L59", "time", set="thick")
-cue("L63", "time", set="wide2")
-cue("L64", "time", set="thick")
-cue("L66", "time", set="clear1")
-cue("P02", "time", set="clear2", dur=2.9)
-cue("L73", "time", set="morning")
+cue("L17+0.3", "time", set="clear1", dur=3.0)
+cue("L18", "time", set="grey2")
+cue("L22", "time", set="wide3")
+cue("L23", "time", set="grey2")
+cue("L29", "time", set="night")
+cue("L32", "time", set="grey3")
+cue("L38", "time", set="night")
+cue("L40", "time", set="thick")
+cue("L44", "time", set="scare")
+cue("L45", "time", set="wide2")
+cue("L46", "time", set="scare")
+cue("L53", "time", set="thick")
+cue("L54", "time", set="past")
+cue("L55", "time", set="thick")
+cue("L56", "time", set="wide2")
+cue("L57", "time", set="thick")
+cue("L60", "time", set="night")
+cue("L60.1", "time", set="grey1")
+cue("L62", "time", set="thick")
+cue("L63", "time", set="grey1")
+cue("P02", "time", set="clear2", dur=3.0)
+cue("L66", "time", set="clear2")
+cue("L68", "time", set="morning")
+cue("L72", "time", set="hook")
+
 # Moss
-cue(0, "moss", hidden=False, pos=[-5.2, 0.75, 0.5], yaw=-90, pose="stand", head=[0, 6], ears=0.6, tail=20, wag=0)
-cue("L02", "moss", hidden=True)
-cue("L03", "moss", hidden=False, pos=[4.15, -1.05, 0.12], yaw=-90, pose="lie", head=[0, 0], ears=0.2, tail=30, wag=0)
-cue("L04", "moss", hidden=True)
-cue("L05", "moss", hidden=False, pos=[2.45, -1.05, 0.54], yaw=-90, pose="stand", ears=0.9, tail=-40, wag=1.0)
-cue("L06", "moss", pos=[4.0, -1.05, 0.12], yaw=-90, pose="lie", ears=0.3, tail=30, wag=0, head=[0, 0])
-cue("L07", "moss", hidden=True)
-cue("L09", "moss", hidden=False, pos=[4.05, -1.05, 0.12], yaw=-90, pose="lie", head=[0, 0], ears=0.2)
-cue("L09+0.5", "moss", head=[-38, 0])
-cue("L10", "moss", pos=[3.7, -1.05, 0.05], yaw=-90, pose="sit", head=[0, 38], ears=0.7, tail=30, wag=0)
-cue("L14", "moss", pos=[3.0, -1.05, 0.36], yaw=-90, pose="climb", head=[0, 18], ears=0.8, dur=0.3)
-cue("L14.2", "moss", pos=[2.5, -1.05, 0.54], yaw=-90, pose="stand", head=[0, 0], ears=0.9, tail=-35, wag=0.6)
-cue("L15", "moss", pos=[1.4, -0.45, 0.72], yaw=180, pose="stand", head=[0, 0], ears=0.8, wag=0.5)
-cue("L19", "moss", pos=[1.7, -0.5, 0.72], yaw=90, pose="stand", head=[0, 0], ears=1.0, tail=-35, wag=1.0)
-cue("L21", "moss", pos=[2.95, -1.05, 0.36], yaw=-90, pose="stand", head=[0, 6], ears=0.9, tail=-20, wag=0.3)
-cue("L22", "moss", hidden=True)
-cue("L30", "moss", hidden=False, pos=[1.7, -0.5, 0.72], yaw=90, pose="stand", ears=1.0, tail=-10, wag=0)
-cue("L32", "moss", pos=[3.7, -1.05, 0.05], yaw=-90, pose="sit", head=[0, 38], ears=0.6, tail=30, wag=0)
-cue("L36", "moss", hidden=True)
-cue("L40", "moss", hidden=False, pos=[2.5, -1.05, 0.54], yaw=-90, pose="sit", head=[40, 8], ears=1.0, tail=20, wag=0)
-cue("L41", "moss", hidden=True)
-cue("L53+0.2", "moss", hidden=False, pos=[3.5, -1.05, 0.2], yaw=-90, pose="climb", head=[0, 16], ears=0.7, tail=30, wag=0)
-cue("L55", "moss", pos=[3.3, -1.05, 0.2], yaw=-90, pose="sit", head=[0, 40], ears=0.9)
-cue("L57", "moss", pos=[3.7, -1.05, 0.05], yaw=-90, pose="sit", head=[0, 38], ears=0.8, tail=-10, wag=0.3)
+UPRIGHT = {"pose": "stand", "ears": 0.6, "tail": 20, "wag": 0}
+cue(0, "moss", hidden=True)
+cue("L02", "moss", hidden=False, pos=[8.5, -1.5, 0.05], yaw=0, pose="stand", head=[0, -26], ears=0.9, tail=20, wag=0)
+cue("L03", "moss", hidden=True)
+cue("L04", "moss", hidden=False, pos=[2.45, -1.05, 0.54], yaw=-90, pose="stand", head=[0, 0], ears=0.9, tail=-35, wag=0.7)
+cue("L04.1", "moss", pos=[1.4, 0.8, 0.5], yaw=90, pose="stand", head=[0, 10], ears=0.9, tail=-35, wag=0.5)
+cue("L05", "moss", pos=[5.15, 0.5, 0.5], yaw=-90, pose="roll", head=[0, 0], ears=0.4, tail=-10, wag=0.0)
+cue("L06", "moss", pos=[-1.5, 3.1, 0.5], yaw=90, pose="stand", head=[0, 14], ears=0.7, tail=-10, wag=0.3, walk=True)
+cue("L06+3.0", "moss", pos=[3.7, 3.1, 0.5], dur=3.0)
+cue("L07", "moss", pos=[4.15, -1.05, 0.12], yaw=-90, pose="lie", head=[0, 0], ears=0.2, tail=30, wag=0, walk=False)
+cue("L08", "moss", hidden=True)
+cue("L09", "moss", hidden=False, pos=[4.05, -1.05, 0.12], yaw=-90, pose="lie", head=[0, 28], ears=0.7, tail=-40, wag=0.9)
+cue("L10", "moss", pos=[4.05, -1.05, 0.12], yaw=-90, pose="lie", head=[-38, 0], ears=0.3, tail=30, wag=0)
+cue("L10.1", "moss", hidden=True)
+cue("L15", "moss", hidden=False, pos=[3.8, -1.05, 0.05], yaw=-90, pose="sit", head=[0, 30], ears=1.0, tail=30, wag=0)
+cue("L16", "moss", hidden=True)
+cue("L27", "moss", hidden=False, pos=[3.5, -1.05, 0.2], yaw=-90, pose="climb", head=[0, 16], ears=0.7, tail=30, wag=0)
+cue("L28", "moss", pos=[3.7, -1.05, 0.05], yaw=-90, pose="sit", head=[0, 38], ears=0.8, tail=30, wag=0)
+cue("L29", "moss", hidden=True)
+cue("L39", "moss", hidden=False, pos=[3.9, -1.05, 0.12], yaw=-90, pose="lie", head=[0, 30], ears=0.8, tail=30, wag=0)
+cue("L40", "moss", hidden=True)
+cue("L50", "moss", hidden=False, pos=[3.5, -1.05, 0.2], yaw=-90, pose="climb", head=[0, 16], ears=0.7, tail=30, wag=0)
+cue("L51", "moss", pos=[3.3, -1.05, 0.2], yaw=-90, pose="sit", head=[0, 40], ears=0.9, tail=20, wag=0)
+cue("L53", "moss", hidden=True)
+cue("L54", "moss", hidden=False, pos=[5.15, 0.5, 0.5], yaw=-90, pose="roll", head=[0, 0], ears=0.4, tail=-10, wag=0.0)
+cue("L55", "moss", hidden=True)
+cue("L57", "moss", hidden=False, pos=[3.3, -1.05, 0.2], yaw=-90, pose="sit", head=[0, 40], ears=0.9, tail=20, wag=0)
 cue("L58", "moss", hidden=True)
-cue("L59", "moss", hidden=False, pos=[4.0, -1.05, 0.12], yaw=-90, pose="lie", head=[0, 0], ears=0.4, tail=30, wag=0)
-cue("L64", "moss", pos=[3.3, -1.05, 0.2], yaw=-90, pose="sit", head=[0, 40], ears=0.9, tail=20, wag=0)
-cue("L65", "moss", pos=[3.3, -1.05, 0.2], yaw=-90, pose="sit", head=[0, 40], ears=0.9)
-cue("L66", "moss", pos=[4.2, -1.1, 0.12], yaw=-90, pose="lie", head=[0, 0], ears=0.5)
-cue("L66.2", "moss", pose="held", hold="me", ears=0.6, head=[0, 0])
-cue("L67", "moss", pose="held", hold="me", ears=0.8)
-cue("L68", "moss", hold=None, pos=[1.9, -1.2, 0.72], yaw=-90, pose="stand", head=[0, 38], ears=0.9, tail=-30, wag=0.2)
-cue("L69", "moss", head=[0, 36], wag=0.4)
-cue("L70", "moss", tail=-45, wag=1.0)
-cue("L70.2", "moss", pose="sit", pos=[1.9, -1.2, 0.72], wag=1.0)
-cue("L72", "moss", hidden=True)
-cue("L74", "moss", hidden=False, pos=[-1.5, 0.9, 0.5], yaw=-90, pose="stand", head=[0, 8], ears=0.7, tail=-20, wag=0.4, walk=True)
-cue("L74>", "moss", pos=[-2.4, 0.9, 0.5], dur=2.5)
-cue("L75>", "moss", pos=[-4.7, 0.9, 0.5], dur=3.0)
-cue("L76", "moss", pos=[-6.7, 0.9, 0.5], yaw=90)
-cue("L76+0.1", "moss", pos=[-4.8, 0.9, 0.5], dur=3.3)
-# the Long Man (head x; body runs away up the towpath)
-cue(0, "long", x=22.5, turn=0, hidden=False)
+cue("L60", "moss", hidden=False, pos=[4.0, -1.05, 0.12], yaw=-90, pose="lie", head=[0, 0], ears=0.4, tail=30, wag=0)
+cue("L61.2", "moss", pose="held", hold="me", ears=0.6, head=[0, 0])
+cue("L62", "moss", pose="held", hold="me", ears=0.8)
+cue("P02", "moss", hidden=True)
+cue("L66", "moss", hidden=False, pose="held", hold="me", ears=0.8, head=[0, 0])
+cue("L66.1", "moss", hold=None, pos=[5.15, 0.55, 0.5], yaw=-90, pose="lie", head=[0, 0], ears=0.5, tail=20, wag=0)
+cue("L67", "moss", pos=[5.15, 0.5, 0.5], yaw=-90, pose="roll", head=[0, 0], ears=0.6, tail=-45, wag=1.0)
+cue("L68", "moss", hidden=False, pose="held", hold="me", ears=0.8, head=[0, 0], walk=False)
+cue("L69", "moss", hold=None, pos=[-0.2, 3.0, 0.5], yaw=90, pose="stand", head=[0, 30], ears=0.9, tail=-30, wag=0.2, walk=True)
+cue("L69+2.5", "moss", pos=[2.1, 3.0, 0.5], dur=2.5)
+cue("L70", "moss", pos=[2.1, 3.0, 0.5], dur=0.01)
+cue("L70+1.5", "moss", pos=[3.5, 3.0, 0.5], dur=2.0)
+cue("L71", "moss", pos=[2.6, 3.1, 0.5], yaw=90, head=[0, 4], ears=0.5, tail=-20, wag=0.2, walk=False, dur=0.01)
+cue("L72", "moss", pos=[5.15, 0.5, 0.5], yaw=-90, pose="roll", head=[0, 0], ears=0.4, tail=-10, wag=0.0, walk=False)
+
+# the Long Man (head x, y; body runs away up the towpath)
+cue(0, "long", x=14.0, y=0.3, turn=0, hidden=False)
 cue("L02", "long", hidden=True)
-cue("L17", "long", x=22.5, turn=0, hidden=False)
-cue("L20", "long", hidden=True)
-cue("L22", "long", x=19.0, turn=0, hidden=False)
-cue("L31>", "long", hidden=True)
-cue("L41", "long", x=12.0, turn=1, hidden=False)
-cue("L43", "long", hidden=True)
-cue("L49", "long", x=5.0, turn=1, hidden=False)
+cue("L13", "long", x=22.5, y=0.3, turn=0, hidden=False)
+cue("L17", "long", hidden=True)
+cue("L18", "long", x=19.0, y=0.3, turn=0, hidden=False)
+cue("L29", "long", hidden=True)
+cue("L32", "long", x=12.0, y=0.3, turn=0, hidden=False)
+cue("L34", "long", x=12.0, y=0.3, turn=1, hidden=False)
+cue("L38", "long", hidden=True)
+cue("P01>", "long", x=5.0, y=0.17, turn=1, hidden=False)
+cue("L50", "long", hidden=True)
+cue("L53", "long", x=5.0, y=0.5, turn=0, hidden=False)
+cue("L54", "long", hidden=True)
+cue("L55", "long", x=5.0, y=0.5, turn=0, hidden=False)
 cue("L57", "long", hidden=True)
-cue("L63", "long", x=5.0, turn=1, hidden=False)
+cue("L58", "long", x=5.0, y=0.5, turn=0, hidden=False)
+cue("L59", "long", hidden=True)
+cue("L62", "long", x=5.0, y=0.17, turn=1, hidden=False)
 cue("L65", "long", hidden=True)
-cue("L66.2", "long", x=5.0, turn=1, hidden=False)
-cue("L68>", "long", hidden=True)
+# the worn patch (past only) and the grown-in tufts (present)
+cue(0, "patch", on=False)
+cue("L05", "patch", on=True)
+cue("L06", "patch", on=True)
+cue("L07", "patch", on=False)
+cue("L54", "patch", on=True)
+cue("L55", "patch", on=False)
 # the hatch and the bolt
-cue(0, "hatch", open=0.0)
-cue("L04", "hatch", open=1.0)
-cue("L06", "hatch", open=0.0)
+cue(0, "hatch", open=1.0)
+cue("L02", "hatch", open=0.0)
+cue("L03", "hatch", open=1.0)
+cue("L04", "hatch", open=0.0)
 cue("L08", "hatch", open=1.0)
 cue("L10", "hatch", open=0.0)
-cue("L14.2", "hatch", open=1.0)
-cue("L32", "hatch", open=0.0)
-cue("L36", "hatch", open=1.0)
-cue("L43", "hatch", open=0.0)
-cue("L57", "hatch", open=0.0)
-cue("L58", "hatch", open=1.0, dur=1.6)
-cue("L59", "hatch", open=0.0)
-cue("L65.1", "hatch", open=1.0, dur=1.6)
+cue("L12", "hatch", open=1.0)
+cue("L15", "hatch", open=0.0)
+cue("L19", "hatch", open=0.0)
+cue("L27", "hatch", open=1.0)
+cue("L28", "hatch", open=1.0)
+cue("L29", "hatch", open=0.0)
+cue("L38", "hatch", open=1.0)
+cue("L38.1", "hatch", open=0.0)
+cue("L60.1", "hatch", open=1.0, dur=1.5)
+cue("L68", "hatch", open=1.0)
 cue(0, "bolt", on=False)
-cue("L43+0.9", "bolt", on=True)
-cue("L65+0.7", "bolt", on=False)
+cue("L38.2+0.5", "bolt", on=True)
+cue("L60+0.6", "bolt", on=False)
 # the bunk window: condensation, wiped in a second
 cue(0, "wipe", to=0.0)
-cue("L48+0.15", "wipe", to=1.0, dur=1.0)
-cue("L53", "wipe", to=0.55)
-cue("L57", "wipe", to=0.0)
+cue("L31", "wipe", to=0.0)
+cue("L31.1", "wipe", to=0.0)
+cue("L32", "wipe", to=0.0)
+cue("L40", "wipe", to=0.0)
+cue("L43+0.15", "wipe", to=1.0, dur=1.0)
+cue("L49", "wipe", to=0.55)
+cue("L53", "wipe", to=0.0)
 cue(0, "flat", on=False)
-cue("L72", "flat", on=True)
-cue("L73", "flat", on=False)
+cue("L65", "flat", on=True)
+cue("L66", "flat", on=False)
 cue(0, "tally", on=False)
 cue("P03", "tally", on=True)
-cue("L73", "tally", on=False)
+cue("L66", "tally", on=False)
 
 # --------------------------------------------------------------------------------------------------- sound
 sfx = [
-    {"at": "L14", "kind": "click", "db": -26},
-    {"at": "L14.2", "kind": "click", "db": -26},
-    {"at": "L43.1", "kind": "click", "db": -16},
-    {"at": "L46", "kind": "knock", "pattern": [0, 0.5, 1.15, 1.6], "tone": "soft", "db": -24},
-    {"at": "L48.1", "kind": "whoosh", "db": -26, "dur": 1.0},
-    {"at": "L49", "kind": "sting", "db": -11},
-    {"at": "L54", "kind": "click", "db": -22},
-    {"at": "L65", "kind": "click", "db": -16},
-    {"at": "L65.1", "kind": "creak", "db": -22, "dur": 1.6},
-    {"at": "L76>", "kind": "bell", "db": -17, "dur": 1.6},
+    {"at": "L03+0.2", "kind": "creak", "db": -26, "dur": 1.2},
+    {"at": "L38.2+0.5", "kind": "click", "db": -16},
+    {"at": "L44", "kind": "sting", "db": -11},
+    {"at": "L50", "kind": "click", "db": -24},
+    {"at": "L50.2", "kind": "click", "db": -24},
+    {"at": "L51", "kind": "click", "db": -24},
+    {"at": "L52", "kind": "glide", "db": -26, "dur": 1.0},
+    {"at": "L60+0.6", "kind": "click", "db": -16},
+    {"at": "L60.1", "kind": "creak", "db": -22, "dur": 1.6},
+    {"at": "L72>", "kind": "bell", "db": -17, "dur": 1.6},
 ]
 story = {
     "slug": "ep27-towpath",
-    "title": "Every morning, something on the towpath says good morning in my voice",
+    "title": "On our boat, the day starts with good morning, then something lies down on the towpath",
     "made_for_kids": False,
-    "premise": "I live on a narrowboat with my old dog, and each autumn dawn a voice outside says good morning in my voice, one mooring ring nearer, while the dog climbs the steps to meet it.",
-    "twist": "It never greeted me. On a boat everyone aboard is crew, a dog too, and when I stopped saying good morning to her, something came and called the roll for me, to her, in my voice.",
+    "premise": "I live on a long boat with my old dog, Moss. Every dawn since her legs went, something as long as the boat lies down on the towpath one mooring ring nearer, and it ends beside my window, in the grass by the back ring.",
+    "twist": "It was never coming for me or the boat. Moss rolled in the grass by the back ring every morning for twelve years, and since her legs went the patch has sat empty, so something came to lie in her place for her, until I carry her out to her spot.",
     "world": "a navy narrowboat moored on a still canal in autumn fog, a gravel towpath with iron mooring rings along the stone edge, willows on the far bank",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#9be37a",
@@ -567,7 +511,7 @@ story = {
     "gap": 0.12,
     "tail": 0.25,
     "look": {"fog": "#c2cac9", "fog_density": 0.06, "fog_start": 3.0, "sky": "#c2cac9", "sky_strength": 0.95,
-             "exposure": 0.05},
+             "exposure": 0.05, "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.0, 0.004, 0.0], "saturation": 0.9, "contrast": 1.04,
               "vignette": 0.28, "bloom": 0.12, "grain": 0.012},
     "phonemes": {},
@@ -580,25 +524,24 @@ story = {
     "music": {"root": 47, "mode": "minor", "bpm": 66, "seed": 27,
               "sections": [
                   {"at": 0, "voices": ["drone", "pad"], "energy": 0.3},
-                  {"at": "L10", "voices": ["drone", "pad", "pulse"], "energy": 0.36},
-                  {"at": "L21", "voices": ["drone", "pad", "pulse"], "energy": 0.42},
+                  {"at": "L07", "voices": ["drone", "pad", "pulse"], "energy": 0.36},
+                  {"at": "L18", "voices": ["drone", "pad", "pulse"], "energy": 0.42},
                   {"at": "L32", "voices": ["drone", "pad", "pulse"], "energy": 0.46},
-                  {"at": "L44", "voices": ["drone", "pad"], "energy": 0.3},
-                  {"at": "L49", "voices": ["drone", "pad", "choir"], "energy": 0.5},
-                  {"at": "L54", "voices": ["pad"], "energy": 0.25},
+                  {"at": "L40", "voices": ["drone", "pad"], "energy": 0.3},
+                  {"at": "L44", "voices": ["drone", "pad", "choir"], "energy": 0.5},
+                  {"at": "L53", "voices": ["pad"], "energy": 0.25},
                   {"at": "L57", "voices": ["pad", "drone"], "energy": 0.3},
-                  {"at": "L65", "voices": ["piano", "pad"], "energy": 0.3},
                   {"at": "P02", "voices": ["piano", "pad", "drone"], "energy": 0.4, "mode": "major", "root": 50},
-                  {"at": "L76", "voices": ["pad"], "energy": 0.25},
+                  {"at": "L72", "voices": ["pad"], "energy": 0.25},
               ]},
     "sound": {"floor": "wood", "steps_db": -24,
               "ambience": [
                   {"kind": "water", "from": 0, "to": "end", "lufs": -34},
                   {"kind": "wind", "from": 0, "to": "L10", "lufs": -44},
-                  {"kind": "wind", "from": "L71", "to": "end", "lufs": -44},
+                  {"kind": "wind", "from": "L66", "to": "end", "lufs": -44},
               ],
               "sfx": sfx,
-              "music_drops": [{"from": "P01", "to": "L49", "keep": ["sting"]}]},
+              "music_drops": [{"from": "P01", "to": "L44", "keep": ["sting"]}]},
 }
 story = remap(story)
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

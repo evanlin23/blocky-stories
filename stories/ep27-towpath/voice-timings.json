@@ -6,174 +6,218 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Every morning something on the towpath says good morning. In my voice.",
+   "text": "On our boat, the day starts with good morning. Then something lies down on the towpath.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.172,
-   "onset": 0.172,
-   "end": 2.983,
+   "dur": 3.603,
+   "onset": 0.155,
+   "end": 3.397,
    "chunks": [
     [
-     0.172,
-     0.621
+     0.155,
+     0.5
     ],
     [
-     0.621,
-     0.888
+     0.526,
+     1.026
     ],
     [
-     0.888,
-     1.31
+     1.026,
+     1.724
     ],
     [
-     1.31,
-     2.086
+     1.793,
+     2.19
     ],
     [
-     2.181,
-     2.983
+     2.19,
+     2.629
+    ],
+    [
+     2.629,
+     3.397
     ]
    ]
   },
   "L02": {
-   "text": "I live, on a long boat on a quiet canal, with my old dog, Moss.",
+   "text": "Just me, my old dog Moss, and a long boat on a quiet canal.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 3.31,
-   "onset": 0.19,
-   "end": 3.103,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.759,
    "chunks": [
     [
-     0.19,
-     0.612
+     0.172,
+     0.431
     ],
     [
-     0.612,
-     1.043
+     0.457,
+     0.655
     ],
     [
-     1.043,
-     1.155
+     0.655,
+     1.207
     ],
     [
-     1.155,
-     1.81
+     1.276,
+     1.397
     ],
     [
-     1.862,
-     2.086
+     1.397,
+     1.784
     ],
     [
-     2.086,
-     2.5
+     1.784,
+     1.897
     ],
     [
-     2.534,
-     3.103
+     1.897,
+     2.759
     ]
    ]
   },
   "L03": {
-   "text": "Her muzzle went white years ago.",
+   "text": "For twelve years, I slid the hatch at first light and said, Good morning, Moss.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.172,
-   "end": 1.5,
+   "dur": 3.328,
+   "onset": 0.155,
+   "end": 3.138,
    "chunks": [
     [
-     0.172,
-     0.483
+     0.155,
+     0.724
     ],
     [
-     0.483,
-     0.81
+     0.75,
+     0.992
     ],
     [
-     0.81,
-     1.5
+     0.992,
+     1.25
+    ],
+    [
+     1.25,
+     1.707
+    ],
+    [
+     1.707,
+     2.103
+    ],
+    [
+     2.172,
+     2.552
+    ],
+    [
+     2.586,
+     3.138
     ]
    ]
   },
   "L04": {
-   "text": "For twelve years, I opened the hatch at first light and said, Good morning, Moss.",
+   "text": "She'd climb the three steps and jump onto the towpath.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.379,
+   "dur": 2.293,
    "onset": 0.172,
-   "end": 3.19,
-   "chunks": [
-    [
-     0.172,
-     0.759
-    ],
-    [
-     0.784,
-     1.061
-    ],
-    [
-     1.061,
-     1.319
-    ],
-    [
-     1.319,
-     1.776
-    ],
-    [
-     1.776,
-     2.155
-    ],
-    [
-     2.224,
-     2.603
-    ],
-    [
-     2.638,
-     3.19
-    ]
-   ]
-  },
-  "L05": {
-   "text": "And she'd come up the three steps to wag it back at me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.276,
-   "onset": 0.155,
    "end": 2.086,
    "chunks": [
     [
-     0.155,
-     0.379
+     0.172,
+     0.492
     ],
     [
-     0.379,
-     0.629
+     0.492,
+     0.948
     ],
     [
-     0.629,
-     1.155
+     0.948,
+     1.233
     ],
     [
-     1.155,
-     1.466
-    ],
-    [
-     1.466,
+     1.233,
      2.086
     ]
    ]
   },
+  "L05": {
+   "text": "Then she'd roll in the wet grass by the back ring, face up, eyes on the sky.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.293,
+   "onset": 0.155,
+   "end": 3.103,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     0.655
+    ],
+    [
+     0.655,
+     1.052
+    ],
+    [
+     1.052,
+     1.19
+    ],
+    [
+     1.19,
+     1.621
+    ],
+    [
+     1.698,
+     2.138
+    ],
+    [
+     2.215,
+     2.491
+    ],
+    [
+     2.491,
+     3.103
+    ]
+   ]
+  },
   "L06": {
+   "text": "Then we'd walk the towpath at her pace.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.94
+    ],
+    [
+     0.94,
+     1.586
+    ]
+   ]
+  },
+  "L07": {
    "text": "This summer, her legs got slow.",
    "who": "narrator",
    "voice": "am_adam",
@@ -197,319 +241,167 @@
     ]
    ]
   },
-  "L07": {
-   "text": "She stopped coming up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.259,
-   "onset": 0.172,
-   "end": 1.052,
-   "chunks": [
-    [
-     0.172,
-     0.5
-    ],
-    [
-     0.5,
-     1.052
-    ]
-   ]
-  },
   "L08": {
-   "text": "So I stopped saying it.",
+   "text": "She couldn't make the steps. Or the jump.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.397,
+   "dur": 1.828,
    "onset": 0.172,
-   "end": 1.207,
+   "end": 1.621,
    "chunks": [
     [
      0.172,
-     0.612
+     0.526
     ],
     [
-     0.612,
-     1.207
+     0.526,
+     0.897
+    ],
+    [
+     0.948,
+     1.621
     ]
    ]
   },
   "L09": {
-   "text": "I would just step around her bed and go out.",
+   "text": "I still said good morning. She'd wag from her bed and stay down.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 2.086,
-   "onset": 0.19,
-   "end": 1.879,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.155,
+   "end": 2.724,
    "chunks": [
     [
-     0.19,
-     0.629
+     0.155,
+     0.586
     ],
     [
-     0.629,
-     1.155
+     0.586,
+     1.121
     ],
     [
-     1.155,
-     1.879
+     1.215,
+     1.647
+    ],
+    [
+     1.647,
+     1.906
+    ],
+    [
+     1.906,
+     2.724
     ]
    ]
   },
   "L10": {
-   "text": "Then, one morning in september, I woke to my own voice outside.",
+   "text": "So I'd step, round her and walk the towpath alone. Fast.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.017,
-   "onset": 0.172,
-   "end": 2.81,
+   "tempo": 0.8240000000000001,
+   "dur": 3.207,
+   "onset": 0.224,
+   "end": 2.948,
    "chunks": [
     [
-     0.172,
-     0.664
+     0.224,
+     0.621
     ],
     [
-     0.664,
+     0.655,
+     0.922
+    ],
+    [
+     0.922,
      1.259
     ],
     [
-     1.328,
-     1.612
-    ],
-    [
-     1.612,
+     1.259,
      2.121
     ],
     [
-     2.121,
-     2.81
+     2.25,
+     2.948
     ]
    ]
   },
   "L11": {
-   "text": "Good morning.",
+   "text": "By September, her worn patch by the back ring had grown over.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.086,
-   "onset": 0.172,
-   "end": 0.897,
+   "dur": 2.862,
+   "onset": 0.155,
+   "end": 2.655,
    "chunks": [
     [
-     0.172,
-     0.897
+     0.155,
+     0.724
+    ],
+    [
+     0.759,
+     1.362
+    ],
+    [
+     1.362,
+     1.517
+    ],
+    [
+     1.517,
+     1.854
+    ],
+    [
+     1.854,
+     2.655
     ]
    ]
   },
   "L12": {
-   "text": "Just those two words.",
+   "text": "Then one dawn, in thick autumn fog, I came up and stopped.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.362,
-   "onset": 0.172,
-   "end": 1.172,
+   "dur": 2.638,
+   "onset": 0.155,
+   "end": 2.448,
    "chunks": [
     [
-     0.172,
-     0.526
+     0.155,
+     0.672
     ],
     [
-     0.526,
-     1.172
+     0.724,
+     1.017
+    ],
+    [
+     1.017,
+     1.483
+    ],
+    [
+     1.509,
+     1.837
+    ],
+    [
+     1.837,
+     2.448
     ]
    ]
   },
   "L13": {
-   "text": "Moss was at the foot of the steps, looking up at the hatch.",
+   "text": "Three rings up the towpath, something was lying in the grass.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
+   "dur": 2.69,
    "onset": 0.19,
-   "end": 2.172,
-   "chunks": [
-    [
-     0.19,
-     0.526
-    ],
-    [
-     0.526,
-     0.732
-    ],
-    [
-     0.732,
-     1.19
-    ],
-    [
-     1.259,
-     1.543
-    ],
-    [
-     1.543,
-     2.172
-    ]
-   ]
-  },
-  "L14": {
-   "text": "Then she climbed them. All three. For the first time since june.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.741,
-   "onset": 0.172,
-   "end": 2.552,
-   "chunks": [
-    [
-     0.172,
-     0.379
-    ],
-    [
-     0.379,
-     0.776
-    ],
-    [
-     0.845,
-     1.259
-    ],
-    [
-     1.31,
-     1.466
-    ],
-    [
-     1.466,
-     1.862
-    ],
-    [
-     1.862,
-     2.552
-    ]
-   ]
-  },
-  "L15": {
-   "text": "I followed her up onto the deck.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.638,
-   "onset": 0.155,
-   "end": 1.448,
-   "chunks": [
-    [
-     0.155,
-     0.509
-    ],
-    [
-     0.509,
-     0.741
-    ],
-    [
-     0.741,
-     1.448
-    ]
-   ]
-  },
-  "L16": {
-   "text": "Fog sat on the canal, flat and white.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.172,
-   "end": 1.793,
-   "chunks": [
-    [
-     0.172,
-     0.56
-    ],
-    [
-     0.56,
-     0.948
-    ],
-    [
-     1.008,
-     1.793
-    ]
-   ]
-  },
-  "L17": {
-   "text": "Three rings up the towpath from my boat, something was lying in the grass.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.224,
-   "onset": 0.19,
-   "end": 3.017,
-   "chunks": [
-    [
-     0.19,
-     0.578
-    ],
-    [
-     0.578,
-     1.034
-    ],
-    [
-     1.034,
-     1.603
-    ],
-    [
-     1.698,
-     2.319
-    ],
-    [
-     2.319,
-     3.017
-    ]
-   ]
-  },
-  "L18": {
-   "text": "Long and dark, right along the water's edge.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.19,
-   "end": 1.897,
-   "chunks": [
-    [
-     0.19,
-     0.69
-    ],
-    [
-     0.741,
-     1.077
-    ],
-    [
-     1.077,
-     1.897
-    ]
-   ]
-  },
-  "L19": {
-   "text": "Moss stood on the deck and wagged.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.638,
-   "onset": 0.19,
-   "end": 1.431,
+   "end": 2.483,
    "chunks": [
     [
      0.19,
@@ -517,91 +409,151 @@
     ],
     [
      0.543,
-     0.819
+     1.155
     ],
     [
-     0.819,
-     1.431
+     1.25,
+     1.784
+    ],
+    [
+     1.784,
+     2.483
     ]
    ]
   },
-  "L20": {
-   "text": "By the time the fog thinned, the towpath was empty.",
+  "L14": {
+   "text": "Long and dark, flat along the water's edge.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.448,
-   "onset": 0.155,
-   "end": 2.259,
+   "dur": 2.19,
+   "onset": 0.19,
+   "end": 1.983,
    "chunks": [
     [
-     0.155,
-     0.474
+     0.19,
+     0.672
     ],
     [
-     0.474,
-     1.086
+     0.732,
+     0.94
     ],
     [
-     1.155,
-     1.561
-    ],
-    [
-     1.561,
-     2.259
-    ]
-   ]
-  },
-  "L21": {
-   "text": "The next dawn, my voice again. Good morning.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.155,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.155,
-     0.552
-    ],
-    [
-     0.578,
+     0.94,
      1.19
     ],
     [
-     1.259,
-     1.948
+     1.19,
+     1.983
     ]
    ]
   },
-  "L22": {
-   "text": "Two rings from my boat now.",
+  "L15": {
+   "text": "Down in the cabin, Moss was sitting up, ears forward.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.603,
+   "dur": 2.397,
    "onset": 0.172,
-   "end": 1.414,
+   "end": 2.19,
    "chunks": [
     [
      0.172,
-     0.569
+     0.37
     ],
     [
-     0.569,
-     0.776
+     0.37,
+     0.69
     ],
     [
-     0.776,
-     1.414
+     0.724,
+     0.983
+    ],
+    [
+     0.983,
+     1.328
+    ],
+    [
+     1.397,
+     2.19
     ]
    ]
   },
-  "L23": {
+  "L16": {
+   "text": "I walked the other way.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.207
+    ]
+   ]
+  },
+  "L17": {
+   "text": "When I came back, the towpath was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.707
+    ],
+    [
+     0.732,
+     1.129
+    ],
+    [
+     1.129,
+     1.828
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The next dawn, two rings from my boat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.647,
+     1.034
+    ],
+    [
+     1.034,
+     1.724
+    ]
+   ]
+  },
+  "L19": {
    "text": "And now I could see it.",
    "who": "narrator",
    "voice": "am_adam",
@@ -625,35 +577,35 @@
     ]
    ]
   },
-  "L24": {
+  "L20": {
    "text": "It was a person. Built like you or me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.9064,
-   "dur": 2.19,
-   "onset": 0.19,
-   "end": 1.966,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
    "chunks": [
     [
-     0.19,
-     0.336
+     0.155,
+     0.302
     ],
     [
-     0.336,
-     0.776
+     0.302,
+     0.69
     ],
     [
-     0.854,
-     1.371
+     0.741,
+     1.207
     ],
     [
-     1.371,
-     1.966
+     1.207,
+     1.724
     ]
    ]
   },
-  "L25": {
+  "L21": {
    "text": "But long.",
    "who": "narrator",
    "voice": "am_adam",
@@ -669,7 +621,7 @@
     ]
    ]
   },
-  "L26": {
+  "L22": {
    "text": "As long as my whole boat.",
    "who": "narrator",
    "voice": "am_adam",
@@ -693,7 +645,7 @@
     ]
    ]
   },
-  "L27": {
+  "L23": {
    "text": "A coat the green of canal weed. Trousers like wet rope.",
    "who": "narrator",
    "voice": "am_adam",
@@ -725,43 +677,43 @@
     ]
    ]
   },
-  "L28": {
-   "text": "It lay on its back, arms at its sides, eyes open on the sky.",
+  "L24": {
+   "text": "It lay there. face up, arms at its sides, eyes on the sky.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.776,
+   "dur": 2.672,
    "onset": 0.155,
-   "end": 2.586,
+   "end": 2.483,
    "chunks": [
     [
      0.155,
-     0.457
+     0.603
     ],
     [
-     0.457,
-     0.793
+     0.638,
+     0.931
     ],
     [
-     0.845,
-     1.112
+     0.983,
+     1.233
     ],
     [
-     1.112,
-     1.483
+     1.233,
+     1.603
     ],
     [
-     1.517,
-     1.923
+     1.638,
+     1.888
     ],
     [
-     1.923,
-     2.586
+     1.888,
+     2.483
     ]
    ]
   },
-  "L29": {
+  "L25": {
    "text": "Beads of water sat on its face and never ran.",
    "who": "narrator",
    "voice": "am_adam",
@@ -789,255 +741,119 @@
     ]
    ]
   },
-  "L30": {
-   "text": "Moss went up to look at it, ears forward.",
+  "L26": {
+   "text": "It made no sound at all.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.19,
-   "end": 1.879,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.31,
    "chunks": [
     [
-     0.19,
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.784
+    ],
+    [
+     0.784,
+     1.31
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Below me, Moss whined at the foot of the steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
      0.569
     ],
     [
-     0.569,
-     0.784
+     0.629,
+     1.112
     ],
     [
-     0.784,
-     1.0
+     1.112,
+     1.337
     ],
     [
-     1.069,
-     1.879
+     1.337,
+     2.0
     ]
    ]
   },
-  "L31": {
-   "text": "I said her name. She didn't turn.",
+  "L28": {
+   "text": "She tried the first step, and slid back down.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.638,
-   "onset": 0.155,
-   "end": 1.431,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
    "chunks": [
     [
-     0.155,
-     0.37
+     0.172,
+     0.483
     ],
     [
-     0.37,
-     0.672
-    ],
-    [
-     0.707,
-     1.431
-    ]
-   ]
-  },
-  "L32": {
-   "text": "The third morning, I was awake before it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.017,
-   "onset": 0.155,
-   "end": 1.828,
-   "chunks": [
-    [
-     0.155,
-     0.724
-    ],
-    [
-     0.759,
-     1.19
-    ],
-    [
-     1.19,
-     1.828
-    ]
-   ]
-  },
-  "L33": {
-   "text": "I sat on the steps under the hatch and waited.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.155,
-   "end": 1.862,
-   "chunks": [
-    [
-     0.155,
-     0.492
-    ],
-    [
-     0.492,
-     0.784
-    ],
-    [
-     0.784,
-     1.241
-    ],
-    [
-     1.241,
-     1.862
-    ]
-   ]
-  },
-  "L34": {
-   "text": "It came from right by my front ring. Good morning.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.431,
-   "onset": 0.155,
-   "end": 2.241,
-   "chunks": [
-    [
-     0.155,
-     0.534
-    ],
-    [
-     0.534,
+     0.483,
      0.931
     ],
     [
-     0.931,
-     1.414
+     0.957,
+     1.259
     ],
     [
-     1.509,
-     2.241
+     1.259,
+     1.983
     ]
    ]
   },
-  "L35": {
-   "text": "It had my croak. The one I only have before coffee.",
+  "L29": {
+   "text": "The third morning, I was up before the light.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.586,
+   "dur": 2.034,
    "onset": 0.155,
-   "end": 2.379,
+   "end": 1.845,
    "chunks": [
     [
      0.155,
-     0.353
+     0.741
     ],
     [
-     0.353,
-     0.828
+     0.776,
+     1.086
     ],
     [
-     0.897,
-     1.155
-    ],
-    [
-     1.155,
-     1.534
-    ],
-    [
-     1.534,
-     2.379
+     1.086,
+     1.845
     ]
    ]
   },
-  "L36": {
-   "text": "I said, hello?",
+  "L30": {
+   "text": "I watched through my bunk window, the one on the towpath side.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.19,
-   "onset": 0.172,
-   "end": 0.966,
-   "chunks": [
-    [
-     0.172,
-     0.431
-    ],
-    [
-     0.457,
-     0.966
-    ]
-   ]
-  },
-  "L37": {
-   "text": "Nothing.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 0.914,
-   "onset": 0.19,
-   "end": 0.707,
-   "chunks": [
-    [
-     0.19,
-     0.707
-    ]
-   ]
-  },
-  "L38": {
-   "text": "I said, What do you want?",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.172,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.172,
-     0.448
-    ],
-    [
-     0.474,
-     0.629
-    ],
-    [
-     0.629,
-     1.155
-    ]
-   ]
-  },
-  "L39": {
-   "text": "Nothing.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 0.914,
-   "onset": 0.19,
-   "end": 0.707,
-   "chunks": [
-    [
-     0.19,
-     0.707
-    ]
-   ]
-  },
-  "L40": {
-   "text": "It never once said my name. Just those two words.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.379,
+   "dur": 2.741,
    "onset": 0.155,
-   "end": 2.19,
+   "end": 2.534,
    "chunks": [
     [
      0.155,
@@ -1045,55 +861,127 @@
     ],
     [
      0.414,
-     0.698
+     0.672
     ],
     [
-     0.698,
-     1.103
+     0.672,
+     1.241
     ],
     [
-     1.172,
-     1.492
+     1.328,
+     1.509
     ],
     [
-     1.492,
-     2.19
+     1.509,
+     1.638
+    ],
+    [
+     1.638,
+     2.534
     ]
    ]
   },
-  "L41": {
-   "text": "When I looked out, its head was turned toward the boat.",
+  "L31": {
+   "text": "The fog got thicker. Then thinner.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 1.879,
    "onset": 0.155,
-   "end": 2.052,
+   "end": 1.672,
    "chunks": [
     [
      0.155,
-     0.328
+     0.431
     ],
     [
-     0.328,
-     0.69
+     0.431,
+     0.879
     ],
     [
-     0.741,
-     1.008
-    ],
-    [
-     1.008,
-     1.345
-    ],
-    [
-     1.345,
-     2.052
+     0.948,
+     1.672
     ]
    ]
   },
-  "L42": {
+  "L32": {
+   "text": "And it was at my front ring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.647
+    ],
+    [
+     0.647,
+     1.328
+    ]
+   ]
+  },
+  "L33": {
+   "text": "I never saw it come. It was just there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.897
+    ],
+    [
+     0.948,
+     1.121
+    ],
+    [
+     1.121,
+     1.776
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Its head was turned toward my boat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.759
+    ],
+    [
+     0.759,
+     1.552
+    ]
+   ]
+  },
+  "L35": {
    "text": "Turned too far. The body still face up.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1117,7 +1005,59 @@
     ]
    ]
   },
-  "L43": {
+  "L36": {
+   "text": "Its eyes were on the grass by my back ring.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     0.716
+    ],
+    [
+     0.716,
+     1.052
+    ],
+    [
+     1.052,
+     1.259
+    ],
+    [
+     1.259,
+     1.914
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Right under my window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.19,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.466,
+     1.155
+    ]
+   ]
+  },
+  "L38": {
    "text": "That night, I shut the hatch and slid the bolt.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1149,7 +1089,39 @@
     ]
    ]
   },
-  "L44": {
+  "L39": {
+   "text": "Moss lay at the foot of the steps all night, watching the hatch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.732
+    ],
+    [
+     0.732,
+     1.061
+    ],
+    [
+     1.061,
+     1.483
+    ],
+    [
+     1.552,
+     2.397
+    ]
+   ]
+  },
+  "L40": {
    "text": "The fourth dawn, the fog was so thick I couldn't see the bank.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1181,23 +1153,7 @@
     ]
    ]
   },
-  "L45": {
-   "text": "No voice.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.017,
-   "onset": 0.19,
-   "end": 0.81,
-   "chunks": [
-    [
-     0.19,
-     0.81
-    ]
-   ]
-  },
-  "L46": {
+  "L41": {
    "text": "Just water, tapping the side of the boat.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1225,35 +1181,31 @@
     ]
    ]
   },
-  "L47": {
-   "text": "My bunk has one small window on the towpath side.",
+  "L42": {
+   "text": "My window was white with fog.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 2.621,
-   "onset": 0.19,
-   "end": 2.397,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
    "chunks": [
     [
-     0.19,
-     0.638
+     0.172,
+     0.534
     ],
     [
-     0.638,
-     1.337
+     0.534,
+     0.854
     ],
     [
-     1.337,
-     1.466
-    ],
-    [
-     1.466,
-     2.397
+     0.854,
+     1.5
     ]
    ]
   },
-  "L48": {
+  "L43": {
    "text": "I wiped the glass and looked out.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1277,7 +1229,7 @@
     ]
    ]
   },
-  "L49": {
+  "L44": {
    "text": "Two eyes looked back at me.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1301,7 +1253,7 @@
     ]
    ]
   },
-  "L50": {
+  "L45": {
    "text": "It was lying along my whole boat, front to back.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1329,99 +1281,95 @@
     ]
    ]
   },
-  "L51": {
-   "text": "Its face right at my window. Its head turned right round to me.",
+  "L46": {
+   "text": "Its head in the grass by my back ring.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.948,
+   "dur": 1.897,
    "onset": 0.155,
-   "end": 2.759,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.81
+    ],
+    [
+     0.81,
+     1.052
+    ],
+    [
+     1.052,
+     1.707
+    ]
+   ]
+  },
+  "L47": {
+   "text": "An inch from the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.172
+    ]
+   ]
+  },
+  "L48": {
+   "text": "It didn't blink.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.155,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.155,
+     0.914
+    ]
+   ]
+  },
+  "L49": {
+   "text": "Behind me, something scraped on the steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
    "chunks": [
     [
      0.155,
      0.534
     ],
     [
-     0.534,
-     0.732
+     0.569,
+     1.026
     ],
     [
-     0.732,
-     1.241
-    ],
-    [
-     1.328,
-     1.879
-    ],
-    [
-     1.879,
-     2.293
-    ],
-    [
-     2.293,
-     2.759
+     1.026,
+     1.707
     ]
    ]
   },
-  "L52": {
-   "text": "Then, an inch from my ear, my own voice said, Good morning.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.172,
-   "end": 2.466,
-   "chunks": [
-    [
-     0.172,
-     0.483
-    ],
-    [
-     0.483,
-     0.966
-    ],
-    [
-     1.017,
-     1.31
-    ],
-    [
-     1.31,
-     1.724
-    ],
-    [
-     1.759,
-     2.466
-    ]
-   ]
-  },
-  "L53": {
-   "text": "Behind me, something tapped on the steps.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.914,
-   "onset": 0.172,
-   "end": 1.724,
-   "chunks": [
-    [
-     0.172,
-     0.552
-    ],
-    [
-     0.586,
-     1.043
-    ],
-    [
-     1.043,
-     1.724
-    ]
-   ]
-  },
-  "L54": {
+  "L50": {
    "text": "It was Moss, trying to climb them, one slow step at a time.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1453,7 +1401,7 @@
     ]
    ]
   },
-  "L55": {
+  "L51": {
    "text": "She got to the first one and sat there, looking up at the bolted hatch.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1489,231 +1437,223 @@
     ]
    ]
   },
-  "L56": {
-   "text": "Waiting.",
+  "L52": {
+   "text": "Whining to go out.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 0.879,
-   "onset": 0.19,
-   "end": 0.672,
-   "chunks": [
-    [
-     0.19,
-     0.672
-    ]
-   ]
-  },
-  "L57": {
-   "text": "The way she'd waited every dawn for twelve years.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.155,
-   "end": 2.034,
-   "chunks": [
-    [
-     0.155,
-     0.379
-    ],
-    [
-     0.379,
-     0.75
-    ],
-    [
-     0.75,
-     1.207
-    ],
-    [
-     1.207,
-     2.034
-    ]
-   ]
-  },
-  "L58": {
-   "text": "For the hatch to open. For two words.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.931,
+   "dur": 1.224,
    "onset": 0.172,
-   "end": 1.741,
+   "end": 1.034,
    "chunks": [
     [
      0.172,
-     0.5
+     0.414
     ],
     [
-     0.5,
-     0.897
-    ],
-    [
-     0.966,
-     1.741
+     0.414,
+     1.034
     ]
    ]
   },
-  "L59": {
-   "text": "On a boat, everybody on board, is crew.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.8034,
-   "dur": 2.5,
-   "onset": 0.224,
-   "end": 2.224,
-   "chunks": [
-    [
-     0.224,
-     0.655
-    ],
-    [
-     0.707,
-     1.448
-    ],
-    [
-     1.483,
-     2.224
-    ]
-   ]
-  },
-  "L60": {
-   "text": "And every morning, somebody calls the crew.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.155,
-   "end": 1.759,
-   "chunks": [
-    [
-     0.155,
-     0.741
-    ],
-    [
-     0.793,
-     1.199
-    ],
-    [
-     1.199,
-     1.759
-    ]
-   ]
-  },
-  "L61": {
-   "text": "That was my job.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.328,
-   "onset": 0.172,
-   "end": 1.121,
-   "chunks": [
-    [
-     0.172,
-     0.448
-    ],
-    [
-     0.448,
-     1.121
-    ]
-   ]
-  },
-  "L62": {
-   "text": "I stopped.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.0,
-   "onset": 0.172,
-   "end": 0.793,
-   "chunks": [
-    [
-     0.172,
-     0.793
-    ]
-   ]
-  },
-  "L63": {
-   "text": "So something came and did it for me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.172,
-   "end": 1.586,
-   "chunks": [
-    [
-     0.172,
-     0.87
-    ],
-    [
-     0.87,
-     1.121
-    ],
-    [
-     1.121,
-     1.586
-    ]
-   ]
-  },
-  "L64": {
-   "text": "In my voice. To her.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.362,
-   "onset": 0.172,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.638,
-     1.155
-    ]
-   ]
-  },
-  "L65": {
-   "text": "I slid the bolt and opened, the hatch.",
+  "L53": {
+   "text": "I looked, back. Face up now. Eyes on the sky.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.927,
-   "dur": 1.966,
+   "dur": 2.397,
    "onset": 0.19,
-   "end": 1.741,
+   "end": 2.172,
    "chunks": [
     [
      0.19,
+     0.603
+    ],
+    [
+     0.638,
+     1.172
+    ],
+    [
+     1.267,
+     1.509
+    ],
+    [
+     1.509,
+     2.172
+    ]
+   ]
+  },
+  "L54": {
+   "text": "In her spot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.19,
+   "end": 0.879,
+   "chunks": [
+    [
+     0.19,
+     0.879
+    ]
+   ]
+  },
+  "L55": {
+   "text": "The spot she'd rolled in every dawn for twelve years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.879
+    ],
+    [
+     0.879,
+     1.328
+    ],
+    [
+     1.328,
+     2.155
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Empty all summer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     1.069
+    ]
+   ]
+  },
+  "L57": {
+   "text": "She couldn't get there any more.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.647
+    ],
+    [
+     0.647,
+     1.241
+    ]
+   ]
+  },
+  "L58": {
+   "text": "So something came, one ring nearer, every dawn, to lie there, for her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.8240000000000001,
+   "dur": 3.793,
+   "onset": 0.224,
+   "end": 3.552,
+   "chunks": [
+    [
+     0.224,
+     1.121
+    ],
+    [
+     1.233,
+     1.897
+    ],
+    [
+     1.948,
+     2.448
+    ],
+    [
+     2.483,
+     2.879
+    ],
+    [
+     2.914,
+     3.552
+    ]
+   ]
+  },
+  "L59": {
+   "text": "The way she did.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     1.0
+    ]
+   ]
+  },
+  "L60": {
+   "text": "I slid the bolt and opened the hatch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
      0.439
     ],
     [
      0.439,
-     0.741
+     0.759
     ],
     [
-     0.741,
-     1.103
+     0.759,
+     1.043
     ],
     [
-     1.129,
-     1.741
+     1.043,
+     1.603
     ]
    ]
   },
-  "L66": {
+  "L61": {
    "text": "I lifted Moss up, all of her, and carried her up the steps.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1745,7 +1685,7 @@
     ]
    ]
   },
-  "L67": {
+  "L62": {
    "text": "It lay there in the fog, its eyes on us.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1773,8 +1713,32 @@
     ]
    ]
   },
-  "L68": {
-   "text": "I looked at Moss, and said it myself.",
+  "L63": {
+   "text": "I said, Good morning, Moss.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.483,
+     0.828
+    ],
+    [
+     0.862,
+     1.345
+    ]
+   ]
+  },
+  "L64": {
+   "text": "The fog came off the water, slowly.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1785,172 +1749,124 @@
    "chunks": [
     [
      0.155,
-     0.37
-    ],
-    [
-     0.37,
-     0.707
-    ],
-    [
-     0.732,
-     0.94
-    ],
-    [
-     0.94,
-     1.621
-    ]
-   ]
-  },
-  "L69": {
-   "text": "Good morning, Moss.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.293,
-   "onset": 0.172,
-   "end": 1.086,
-   "chunks": [
-    [
-     0.172,
-     0.569
-    ],
-    [
-     0.603,
-     1.086
-    ]
-   ]
-  },
-  "L70": {
-   "text": "She wagged so hard she nearly sat down.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.052,
-   "onset": 0.172,
-   "end": 1.845,
-   "chunks": [
-    [
-     0.172,
      0.466
     ],
     [
      0.466,
-     0.828
+     0.716
     ],
     [
-     0.828,
-     1.164
+     0.716,
+     1.0
     ],
     [
-     1.164,
-     1.845
+     1.034,
+     1.621
     ]
    ]
   },
-  "L71": {
-   "text": "The fog came off the water slowly.",
+  "L65": {
+   "text": "And the towpath was empty.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.862,
+   "dur": 1.569,
    "onset": 0.155,
-   "end": 1.672,
+   "end": 1.379,
    "chunks": [
     [
      0.155,
-     0.629
+     0.655
     ],
     [
-     0.629,
-     1.077
-    ],
-    [
-     1.077,
-     1.672
+     0.655,
+     1.379
     ]
    ]
   },
-  "L72": {
-   "text": "The towpath was empty.",
+  "L66": {
+   "text": "I stepped off and set her down by the back ring.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.5,
+   "dur": 2.172,
    "onset": 0.155,
-   "end": 1.31,
+   "end": 1.983,
    "chunks": [
     [
      0.155,
-     0.586
+     0.647
     ],
     [
-     0.586,
-     1.31
+     0.647,
+     0.854
+    ],
+    [
+     0.854,
+     1.172
+    ],
+    [
+     1.172,
+     1.328
+    ],
+    [
+     1.328,
+     1.983
     ]
    ]
   },
-  "L73": {
-   "text": "Now I say it every dawn.",
+  "L67": {
+   "text": "She rolled over, slow and creaky, and wagged.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
+   "dur": 2.121,
    "onset": 0.172,
-   "end": 1.328,
+   "end": 1.914,
    "chunks": [
     [
      0.172,
-     0.388
+     0.655
     ],
     [
-     0.388,
-     0.603
+     0.716,
+     1.259
     ],
     [
-     0.603,
-     1.328
+     1.285,
+     1.914
     ]
    ]
   },
-  "L74": {
-   "text": "I carry her up. We walk, the towpath at her pace.",
+  "L68": {
+   "text": "Now I carry her off every dawn.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 2.569,
-   "onset": 0.19,
-   "end": 2.362,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
    "chunks": [
     [
-     0.19,
-     0.474
+     0.172,
+     0.56
     ],
     [
-     0.474,
-     0.828
+     0.56,
+     0.793
     ],
     [
-     0.897,
-     1.207
-    ],
-    [
-     1.233,
-     1.638
-    ],
-    [
-     1.638,
-     2.362
+     0.793,
+     1.517
     ]
    ]
   },
-  "L75": {
-   "text": "It takes ages. I don't mind.",
+  "L69": {
+   "text": "We walk the towpath at her pace.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1961,47 +1877,83 @@
    "chunks": [
     [
      0.155,
-     0.707
+     0.406
     ],
     [
-     0.741,
+     0.406,
+     0.802
+    ],
+    [
+     0.802,
      1.448
     ]
    ]
   },
-  "L76": {
-   "text": "Every morning somebody says good morning to my dog. In my voice. It's me.",
+  "L70": {
+   "text": "It takes ages.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.397,
+   "dur": 1.172,
+   "onset": 0.155,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.155,
+     0.983
+    ]
+   ]
+  },
+  "L71": {
+   "text": "I don't mind.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
    "onset": 0.172,
-   "end": 3.172,
+   "end": 0.897,
    "chunks": [
     [
      0.172,
-     0.586
+     0.897
+    ]
+   ]
+  },
+  "L72": {
+   "text": "On our boat, the day starts with good morning. Then Moss lies down on the towpath.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.586,
+   "onset": 0.155,
+   "end": 3.379,
+   "chunks": [
+    [
+     0.155,
+     0.5
     ],
     [
-     0.586,
-     0.983
+     0.526,
+     1.026
     ],
     [
-     0.983,
-     1.345
+     1.026,
+     1.707
     ],
     [
-     1.345,
-     1.948
+     1.793,
+     2.207
     ],
     [
-     2.043,
-     2.534
+     2.207,
+     2.612
     ],
     [
-     2.569,
-     3.172
+     2.612,
+     3.379
     ]
    ]
   }
