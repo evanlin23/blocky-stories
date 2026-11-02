@@ -123,7 +123,7 @@ def _lin(c):
 DAYS = [
     (0.00, "#8a6a92", "#2c2f5c", "#9d92b4", "#b7bdd3", "#c8b0d8", 0.35, -6.0, 0.85, 0.34),
     (0.35, "#f0a0a8", "#4a4f8a", "#d9b2c4", "#e2c6d0", "#ffb8a8", 1.4, -3.0, 0.85, 0.62),
-    (1.00, "#ffc46b", "#86a6d6", "#ffd9a8", "#fff0d2", "#ffd9a0", 4.2, 9.0, 1.25, 1.00),
+    (1.00, "#ffc46b", "#86a6d6", "#ffcf98", "#f0d5ac", "#ffd9a0", 3.0, 9.0, 1.0, 0.75),
 ]
 
 
@@ -423,7 +423,7 @@ def build_basket(kit, ctx, M):
     kit.box("satm", (0.5, 0.3, 0.28), (0, 0, 0.14), M["bag"], sat, bevel=0.06)
     kit.box("satflap", (0.52, 0.32, 0.03), (0, -0.0, 0.3), M["bag"], sat, rot=(0.0, 0.0, 0.0), bevel=0.01)
     ctx["satchel"] = sat
-    ph = kit.empty("phone", (1.21, -0.55, RIM_TOP + 0.006), Vg)
+    ph = kit.empty("phone", (1.21, 0.35, RIM_TOP + 0.006), Vg)
     kit.box("phoneb", (0.075, 0.15, 0.012), (0, 0, 0), M["phone"], ph, bevel=0.01)
     kit.box("phones", (0.064, 0.136, 0.002), (0, 0, 0.007), M["screen"], ph)
     ctx["phone"] = ph
