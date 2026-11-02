@@ -148,38 +148,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Dad has run",
-    "dad has run"
+    "DAD'S crazy golf",
+    "dad's crazy golf"
    ],
    [
-    "the CRAZY GOLF",
-    "the crazy golf"
+    "becomes a CAR PARK",
+    "becomes a car park"
    ],
    [
-    "in the park",
-    "in the park"
-   ],
-   [
-    "for DECADES.",
-    "for decades."
-   ]
-  ]
- },
- {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It's SOLD.",
-    "it's sold."
-   ],
-   [
-    "On SUNDAY,",
-    "on sunday,"
-   ],
-   [
-    "it becomes a CAR PARK.",
-    "it becomes a car park."
+    "on SUNDAY.",
+    "on sunday."
    ]
   ]
  },
@@ -611,8 +589,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "His coat is WET",
-    "his coat is wet"
+    "His CARDIGAN",
+    "his cardigan"
+   ],
+   [
+    "is WET",
+    "is wet"
    ],
    [
     "with DEW.",

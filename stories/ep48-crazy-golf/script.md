@@ -3,14 +3,15 @@
 - **Slug:** `ep48-crazy-golf`
 - **From:** pitch #32 `crazy-golf` in `stories/ideas.md` (Batch 5), with its notes. Kept: the rule, the setting, the Wrung One, Dad, celebration (a last round), the marker and the lore plant.
 - **Changes from the pitch:**
+  - **0:20 pass (owner, 2026-11-02):** Dad and what I could lose must be on screen by 0:20 on one forward timeline. L09 ("Dad has run... for DECADES", backstory) and L10 ("It's SOLD...") are now one line, L09 "DAD'S crazy golf / becomes a CAR PARK / on SUNDAY.", so Dad is on screen at about 16.4 s, the loss is said by about 18.2 s, and L11 (me home, Dad waving) lands at about 18.3 s. L10 is gone.
   - Dad leaves his **putter and flask** behind, not a cap. Dad is bald, and a cap would put a cap on his shadow and spoil plant 2.
   - **Where Dad was on Thursday night** is now tied to the twist. He sat all night on the bench under my bedroom window, as close to his own shadow (under me, in bed) as he could get, the same way the visitors' shadows sit on the pavement "as close as they can get". At dawn he's found there, and he says he couldn't sleep.
   - The newlyweds were cut from the montage for length. It has three examples plus a callback ("It waves BACK").
   - The narration says "the LAST hole / the LAST GREEN" and never "eighteenth", so Whisper has no ordinal to mishear. The flags and hole posts carry the numbers.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 632 spoken words in 76 lines, all `narrator`, plus 3 pause beats (1.9 s in all).
-- **Shots:** 105, about 1.35 s each on average.
-- **Estimated length:** speech at 290 wpm is 2:11. The 0.12 s gaps add about 9 s, the pauses 1.9 s and the loop tail 0.25 s, so about 2:22. If it lands over 2:30, cut L41 first, then L06. If it lands under 2:15, add "The grass there / is always WARM." after L15.
+- **Word count:** 621 spoken words in 75 lines, all `narrator`, plus 3 pause beats (1.9 s in all).
+- **Shots:** 104, about 1.35 s each on average.
+- **Estimated length:** speech at 290 wpm is 2:11. The 0.12 s gaps add about 9 s, the pauses 1.9 s and the loop tail 0.25 s, so about 2:22. If it lands over 2:30, cut L41 first, then L06. (Measured before the 0:20 pass: 2:21.7. L09 and L10 merged into one line, so about 2:19.5 now.) If it lands under 2:15, add "The grass there / is always WARM." after L15.
 
 ## The story
 
@@ -136,15 +137,13 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L08` narrator: I thought / I'd just never been HAPPY / ANYWHERE.
   - [me on the path, `neutral`, looking down at my feet, a little sad]
 
-## 02 The last week (L09 to L22, 16 to 44 s)
+## 02 The last week (L09 to L22, 16 to 42 s)
 
 - **Where:** the crazy-golf course across the closing week, late-afternoon to early-evening sun. The rule works and nobody explains it.
-- **Shots:** 21.
+- **Shots:** 20.
 
-- `L09` narrator: Dad has run / the CRAZY GOLF / in the park / for DECADES.
-  - [the iron gate and the cream kiosk, the white windmill behind, pond-green sails turning slowly]
-  - [Dad in the kiosk hatch, `smile`, bald head shining a little in the sun]
-- `L10` narrator: It's SOLD. / On SUNDAY, / it becomes a CAR PARK.
+- `L09` narrator: DAD'S crazy golf / becomes a CAR PARK / on SUNDAY.
+  - [Dad in the kiosk hatch, `smile`, bald head shining a little in the sun, the white windmill behind, pond-green sails turning slowly]
   - [over the fence: a man in a hard hat setting down a bare survey post on the turf. No text on it]
 - `L11` narrator: I'm HOME / for the last WEEK.
   - [me at the gate with a holdall, `smile`, Dad waving from the kiosk]
@@ -213,7 +212,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [Dad on the bench under the front bedroom window, `tired`, hands in his cardigan]
 - `L35` narrator: He says / he couldn't SLEEP.
   - [Dad, `sheepish`, looking up at me]
-- `L36` narrator: His coat is WET / with DEW.
+- `L36` narrator: His CARDIGAN / is WET / with DEW.
   - [close on his cardigan shoulders beaded with dew in the dawn light]
 
 ## 04 The second tee (L37 to L55, 67 to 101 s)
@@ -334,7 +333,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 ## Risks
 
 - **"Gordon's" (L04) and "EX'S" (L04):** plain words, but Whisper could write "ex's" as "exes". If so, change the caption, not the voice.
-- **"CRAZY GOLF" (L09):** Whisper might write "crazy-golf". Spacing and hyphens count as spelling.
+- **"crazy golf" (L09):** Whisper might write "crazy-golf". Spacing and hyphens count as spelling.
 - **Harm and child words:** none of `checks.HARM`, `GRAPHIC` or `CHILD` appears in any line (no "missing", "lost", "took", "fall", "locked"). "His room is still EMPTY" carries the taking.
 - **Dad in peril:** the Wrung One never touches him and he never sees it. The lean (L54) stops well short of him, and standards should see nothing that reads as a threat to his body.
 - **Shadows:** keep them soft-edged and mid-dark so they read at phone size in low sun. Nobody's body may cast a shadow in any shot, or the rule breaks on screen.
