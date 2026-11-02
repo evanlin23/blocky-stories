@@ -278,6 +278,7 @@ def materials(kit):
     M["window_n"] = emissive(kit, "windnight", "#20365a", 0.9)
     M["window_warm"] = emissive(kit, "windwarm", "#ffcf88", 2.5)
     M["lampshade"] = emissive(kit, "lampshade", "#ffd9a0", 4.0)
+    M["itemdark"] = kit.plastic("#101319", 0.35, name="itemdark")
     M["phoneglow"] = emissive(kit, "phoneglow", "#a8c8ff", 1.6)
     M["lightpanel"] = emissive(kit, "lightpanel", "#fff2dc", 3.0)
     M["scratch"] = kit.plastic(WASH_BLUE, 0.4, name="scratch")
@@ -396,15 +397,15 @@ def build_shed(kit, ctx, M):
 
 
 def build_booth(kit, ctx, M):
-    x0, x1, y0, y1, H = -3.9, -2.1, 0.5, 2.5, 2.3
+    x0, x1, y0, y1, H = -3.9, -2.1, 0.5, 2.5, 2.9
     t = 0.1
     B(kit, "bfloor", (x1 - x0, y1 - y0, 0.08), ((x0 + x1) / 2, (y0 + y1) / 2, 0.05), M["floor"])
     B(kit, "broof", (x1 - x0 + 0.3, y1 - y0 + 0.3, 0.12), ((x0 + x1) / 2, (y0 + y1) / 2, H + 0.06), M["steel"])
     Bb(kit, "bdoorL", (x0, y1 - t, 0), (-3.5, y1, H), M["booth"])
     Bb(kit, "bdoorR", (-2.7, y1 - t, 0), (x1, y1, H), M["booth"])
-    Bb(kit, "bdoorT", (-3.5, y1 - t, 2.0), (-2.7, y1, H), M["booth"])
-    Bb(kit, "bdoorframe1", (-3.56, y1 + 0.0, 0), (-3.5, y1 + 0.06, 2.0), M["white"])
-    Bb(kit, "bdoorframe2", (-2.7, y1 + 0.0, 0), (-2.64, y1 + 0.06, 2.0), M["white"])
+    Bb(kit, "bdoorT", (-3.5, y1 - t, 2.6), (-2.7, y1, H), M["booth"])
+    Bb(kit, "bdoorframe1", (-3.56, y1 + 0.0, 0), (-3.5, y1 + 0.06, 2.6), M["white"])
+    Bb(kit, "bdoorframe2", (-2.7, y1 + 0.0, 0), (-2.64, y1 + 0.06, 2.6), M["white"])
     # the -y wall is plain, with the beanie hook
     Bb(kit, "bfront", (x0, y0, 0), (x1, y0 + t, H), M["booth"])
     ctx["hook"] = B(kit, "hook", (0.05, 0.12, 0.05), (-3.0, y0 + t + 0.06, 1.95), M["steel"])
@@ -445,12 +446,12 @@ def build_booth(kit, ctx, M):
     ctx["ring"] = C(kit, "wetring", 0.07, 0.006, (x1 + 0.1, 1.0, 1.125), kit.plastic("#4a5a66", 0.2, name="wetring"), n=18)
     # items on the sill and the conveyor: phone, keys, clapper
     ctx["phone"] = B(kit, "phone", (0.24, 0.46, 0.03), (0, 0, -5), kit.plastic("#2a2e36", 0.3, name="phonebody"), bevel=0.02)
-    B(kit, "phonescreen", (0.2, 0.4, 0.006), (0, 0, 0.017), M["phoneglow"], parent=ctx["phone"])
+    B(kit, "phonescreen", (0.2, 0.4, 0.006), (0, 0, 0.017), M["itemdark"], parent=ctx["phone"])
     ctx["keys"] = kit.empty(nm("keys"), (0, 0, -5))
     ctx["keys"].scale = (3.0, 3.0, 3.0)
-    C(kit, "keyring", 0.04, 0.008, (0, 0, 0), M["steel"], parent=ctx["keys"], n=16)
+    C(kit, "keyring", 0.04, 0.008, (0, 0, 0), M["itemdark"], parent=ctx["keys"], n=16)
     for k in range(3):
-        B(kit, "key", (0.025, 0.07, 0.006), (0.0, -0.06, 0.0), M["steel"], (0, 0, 0.5 * (k - 1)), ctx["keys"])
+        B(kit, "key", (0.025, 0.07, 0.006), (0.0, -0.06, 0.0), M["itemdark"], (0, 0, 0.5 * (k - 1)), ctx["keys"])
     ctx["clapper"] = kit.empty(nm("clapper"), (0, 0, -5))
     kit.sphere(nm("clapperb"), 0.035, (0, 0, 0.0), M["brass"], ctx["clapper"], seg=10)
     C(kit, "clapperst", 0.008, 0.07, (0, 0, 0.06), M["brass"], parent=ctx["clapper"], n=8)
@@ -760,12 +761,14 @@ def build(kit, story, tl):
     kit.aim(kit.LIGHTS["yard_fill"]["obj"], (0, -7, 0))
     kit.light("hatch_fill", "POINT", (-1.0, 0.0, 1.6), 80, "#ffe9d0", size=0.3)
     # the Stutter in the mist: a cold back light behind it, a blue rim; the lean: a low amber key from below
+    kit.light("collar_lamp", "SPOT", (-3.5, 0.65, 1.9), 140, "#ffd9a8", spot=70, blend=0.6, size=0.3)
+    kit.aim(kit.LIGHTS["collar_lamp"]["obj"], (-3.0, 2.0, 1.5))
     kit.light("figback", "POINT", (-3.1, 12.6, 1.7), 900, "#cfe6ff", size=0.8)
     kit.light("figrim", "SPOT", (-4.0, 12.0, 2.8), 700, "#7fb0ff", spot=60, blend=0.5, size=0.3)
     kit.aim(kit.LIGHTS["figrim"]["obj"], (-3.1, 9.8, 1.4))
-    kit.light("leankey", "SPOT", (-2.5, 2.2, 0.08), 420, AMBER, spot=60, blend=0.5, size=0.25)
-    kit.aim(kit.LIGHTS["leankey"]["obj"], (-2.5, 2.7, 1.6))
-    kit.light("item_lamp", "SPOT", (0.5, 0.2, 1.3), 260, "#ffe2b0", spot=70, blend=0.5, size=0.3)
+    kit.light("leankey", "SPOT", (-1.9, 2.78, 0.95), 110, AMBER, spot=60, blend=0.5, size=0.25)
+    kit.aim(kit.LIGHTS["leankey"]["obj"], (-2.2, 2.78, 1.75))
+    kit.light("item_lamp", "SPOT", (0.5, 0.2, 1.3), 90, "#ffe2b0", spot=70, blend=0.5, size=0.3)
     kit.aim(kit.LIGHTS["item_lamp"]["obj"], (0.0, 1.6, 0.25))
     kit.light("sill_rake", "SPOT", (-1.2, 1.4, 1.5), 120, "#ffd9a0", spot=40, blend=0.5, size=0.1)
     kit.aim(kit.LIGHTS["sill_rake"]["obj"], (-2.05, 1.9, 1.1))
@@ -814,6 +817,11 @@ def animate(kit, story, tl, t, ctx):
         attach(kit, story, ctx, M)
         for k in range(5):
             ctx["fades"][k] = make_fade(kit, f"st{k}", ctx)
+            # the Stutter's arms are too long: they hang past the hip, nearly to the knee
+            for sx in (-1, 1):
+                arm = bpy.data.objects.get(f"st{k}.arm{sx}")
+                if arm is not None:
+                    arm.scale = (1.0, 1.0, 1.6)
     # ---- the time of day
     tod = (last(tl, "tod", t) or {"set": "day"})["set"]
     T = TOD[tod]
@@ -838,6 +846,7 @@ def animate(kit, story, tl, t, ctx):
     sil = ramp(tl, "sil", t, 0.0)
     g["figback"] = sil
     g["figrim"] = sil
+    g["collar_lamp"] = ramp(tl, "collarlit", t, 0.0)
     g["leankey"] = ramp(tl, "leankey", t, 0.0)
     g["booth_lamp"] = 1.0 - ramp(tl, "boothoff", t, 0.0)
     g["skey3"] = 1.0 - 0.9 * ramp(tl, "boothoff", t, 0.0) if "skey3" in g else 0.0
@@ -858,8 +867,21 @@ def animate(kit, story, tl, t, ctx):
                     for n in m.node_tree.nodes:
                         if n.type == "BSDF_PRINCIPLED":
                             ctx["st_cols"].append((n.inputs["Base Color"], tuple(n.inputs["Base Color"].default_value)))
+                            for lk in m.node_tree.links:
+                                if lk.to_socket == n.inputs["Base Color"]:
+                                    ctx.setdefault("st_links", []).append((m.node_tree, lk.from_socket, lk.to_socket))
+    dark = sil > 0.5
+    if dark != ctx.get("st_dark", False):
+        ctx["st_dark"] = dark
+        for tree, a, b in ctx.get("st_links", []):
+            if dark:
+                for lk in list(tree.links):
+                    if lk.to_socket == b:
+                        tree.links.remove(lk)
+            elif not any(lk.to_socket == b for lk in tree.links):
+                tree.links.new(a, b)
     for sock, c0 in ctx["st_cols"]:
-        u = 0.82 * sil
+        u = (1.0 if dark else 0.82 * sil)
         sock.default_value = (c0[0] * (1 - u) + 0.01 * u, c0[1] * (1 - u) + 0.02 * u, c0[2] * (1 - u) + 0.05 * u, c0[3])
     # ---- the mist, the brushes, the lever
     mist = ramp(tl, "mist", t, 0.0)

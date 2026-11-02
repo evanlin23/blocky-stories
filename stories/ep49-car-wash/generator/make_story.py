@@ -54,7 +54,7 @@ for k in range(5):
     u = 0.09 * k
     cast[f"st{k}"] = person(tint(BASE["skin"], u), tint(BASE["shirt"], u), tint(BASE["pants"], u), "cap",
                             tint(BASE["hair_c"], u), extras=["apron"], extra_c=tint(BASE["extra_c"], u),
-                            shoes=tint("#2a3a52", u), height=1.15, collar=tint("#3f8fcf", u),
+                            shoes=tint("#2a3a52", u), height=1.3, width=0.92, collar=tint("#3f8fcf", u),
                             face={"eyes": "round", "brows": False, "ink": "#0e1116", "pupil": "#050507"})
 cast["pie_man"] = person("#d9a47a", "#6b4a30", "#3a3a40", "cap", "#4a3a2a", hat="ballcap", hat_c="#8a8070", width=1.12)
 cast["date_a"] = person("#c98f68", "#e4572e", "#2f3140", "long", "#3a2418", pattern="knit", pattern_c="#c9441f")
@@ -184,8 +184,7 @@ shot("L26.1", "night", {"me": dict(pos=list(SEAT), yaw=-40, expr="worried", head
 shot("L27", "over", {"me": P(1.2, -6.5, 0, "worried")}, still([1.0, -11.5, 1.5], [1.2, -6.5, 1.35], 26), "empty opening")
 shot("L27.1", "over", {}, still([-3.1, -3.0, 1.45], [-3.1, 1.2, 1.2], 28), "the booth, the stool, the empty hook")
 shot("L28", "over", {}, still([0.0, -4.0, 1.5], [0.0, 10.0, 1.5], 22), "mist and slow brushes")
-shot("P01", "over", {}, still([0.0, -0.6, 0.45], [0.0, 8.0, 0.25], 26), "empty conveyor")
-shot("L29", "over", {}, still([0.0, 0.1, 0.78], [0.0, 3.4, 0.2], 30), "phone and keys ride out")
+shot("P01", "over", {}, still([0.0, 0.1, 0.78], [0.0, 3.4, 0.2], 30), "empty conveyor, then phone and keys ride out")
 shot("L29.2", "over", {"me": P(-0.6, -1.9, 0, "scared")}, still([-0.6, -4.4, 1.5], [-0.6, -1.9, 1.45], 30), "I call")
 shot("L30", "over", {"me": P(-0.5, -3.6, 180, "scared", mouth=True)},
      still([0.2, 2.6, 1.5], [-0.5, -3.6, 1.45], 30), "calling down the tunnel")
@@ -214,11 +213,11 @@ shot("L42", "noon", {"me": P(-1.0, -4.0, 0, "neutral")}, still([-1.0, -4.5, 1.05
 # ---- 06 the Stutter
 shot("L43", "dusk", {}, still([0.0, -12.0, 1.5], [0.0, 6.0, 1.7], 20), "lamps warm up")
 LINE_ALL = {f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(5)}
-shot("L44", "dusk", dict(LINE_ALL), still([-0.9, 3.0, 1.45], [-3.0, 4.5, 1.3], 20), "five of them, in a line")
-shot("L45", "dusk", dict(LINE_ALL), still([-3.2, 1.15, 1.72], [-3.0, 5.0, 1.45], 26), "down the line, from the booth")
-shot("L45.2", "dusk", dict(LINE_ALL), still([-3.1, 1.25, 1.45], [-3.1, 2.7, 1.68], 32), "the front one's face, from the booth")
-shot("L46", "dusk", dict(LINE_ALL), still([-3.1, 1.0, 1.4], [-3.1, 2.7, 1.62], 25), "its bare collar")
-shot("L47", "dusk", dict(LINE_ALL), still([-0.5, 3.2, 1.55], [-3.1, 2.75, 1.4], 28), "in the booth door")
+shot("L44", "dusk", dict(LINE_ALL), still([1.0, 1.2, 1.55], [-3.0, 4.8, 1.5], 22), "five of them, in a line")
+shot("L45", "dusk", dict(LINE_ALL), still([-3.2, 1.15, 1.95], [-3.0, 5.0, 1.75], 26), "down the line, from the booth")
+shot("L45.2", "dusk", dict(LINE_ALL), still([-3.1, 1.2, 1.7], [-3.1, 2.7, 1.98], 30), "the front one's face, from the booth")
+shot("L46", "dusk", {**LINE_ALL, "ruben": P(-2.62, 1.75, 0, "worried")}, still([-3.1, 0.66, 1.5], [-3.1, 2.7, 0.7], 18), "its bare collar, Ruben's bell in frame")
+shot("L47", "dusk", dict(LINE_ALL), still([-0.5, 3.2, 1.75], [-3.1, 2.75, 1.7], 28), "in the booth door")
 shot("L48", "dusk", {**LINE_ALL, "me": P(-1.5, 1.0, 180, "scared"), "ruben": P(-0.7, 1.0, 180, "scared")},
      still([-0.3, 4.3, 1.55], [-1.1, 1.0, 1.4], 26), "I stand where I used to")
 shot("P02", "dusk", dict(LINE_ALL), still([-0.9, 3.0, 1.45], [-3.0, 4.5, 1.3], 20), "hold")
@@ -229,13 +228,12 @@ ME_FACE = (-1.45, 2.7)
 LEAN0 = {**LINE_ALL, "st0": P(LINE[0][0], LINE[0][1], 90, "blank", lean=5,
                               then=[("L50+0.3", dict(lean=10, blend=0.6))])}
 LEAN1 = {**LINE_ALL, "st0": P(LINE[0][0], LINE[0][1], 90, "blank", lean=10,
-                              then=[("L50.2+0.1", dict(lean=28, blend=1.9))]),
-         "me": P(ME_FACE[0], ME_FACE[1], -90, "scared")}
-shot("L50", "dusk", {**LEAN0, "me": P(ME_FACE[0], ME_FACE[1], -90, "scared")},
-     move([-0.9, 3.55, 1.6], [-1.15, 3.4, 1.58], 30, 30) if False else c([0, [-0.5, 3.55, 1.65], [-2.3, 2.72, 1.72], 30], [1, [-0.7, 3.45, 1.63], [-2.2, 2.72, 1.72], 30]),
+                              then=[("L50.2+0.1", dict(lean=28, blend=1.9))])}
+shot("L50", "dusk", {**LEAN0},
+     move([-0.9, 3.55, 1.6], [-1.15, 3.4, 1.58], 30, 30) if False else c([0, [-1.0, 2.8, 1.75], [-2.5, 2.75, 1.8], 26], [1, [-1.2, 2.78, 1.68], [-2.2, 2.78, 1.65], 22]),
      "it turns and leans in, over my shoulder")
 shot("L50.2", "dusk", LEAN1,
-     c([0, [-0.7, 3.5, 1.65], [-2.15, 2.72, 1.72], 34], [1, [-0.8, 3.4, 1.62], [-2.05, 2.72, 1.68], 38]),
+     c([0, [-1.3, 2.78, 1.66], [-2.0, 2.78, 1.62], 20], [1, [-1.3, 2.78, 1.66], [-2.0, 2.78, 1.62], 20]),
      "its leaning face level with mine, lit from below")
 # ---- 07 the clapper
 shot("L51", "dusk", {**LINE_ALL, "me": P(ME_FACE[0], ME_FACE[1], -90, "scared", then=[("L51+0.2", dict(pos=[-1.35, 1.4], keep_yaw=True))])},
@@ -243,7 +241,7 @@ shot("L51", "dusk", {**LINE_ALL, "me": P(ME_FACE[0], ME_FACE[1], -90, "scared", 
 shot("L52", "dusk", {"ruben": P(-1.0, 0.4, 0, "smirk")}, still([-1.0, -1.8, 1.4], [-1.0, 0.4, 1.35], 34), "his pocket rings")
 shot("L53", "dusk", {}, still([-0.9, 0.7, 1.35], [-2.0, 1.0, 1.1], 44), "onto the sill")
 shot("L54", "dusk", {}, still([-1.5, 0.95, 1.24], [-2.0, 1.02, 1.13], 70), "the clapper")
-shot("L54.1", "dusk", {"me": P(-1.55, 1.5, -90, "worried")}, still([-3.0, 1.5, 1.3], [-1.7, 1.5, 1.2], 42), "my bell's empty mouth")
+shot("L54.1+0.3", "dusk", {"me": P(-1.55, 1.5, -90, "worried")}, still([-3.0, 1.5, 1.3], [-1.7, 1.5, 1.2], 42), "my bell's empty mouth")
 shot("L55", "dusk", {"ruben": P(-1.4, 1.2, -90, "smirk")}, still([-3.0, 1.7, 1.45], [-1.5, 1.2, 1.45], 38), "he carried it")
 shot("L55.2", "dusk", {"me": P(-1.4, 1.5, -90, "worried")}, still([-3.0, 1.4, 1.45], [-1.5, 1.5, 1.45], 38), "me, softening")
 shot("L56", "dusk", {**LINE_ALL, "me": P(-1.3, 1.0, 180, "worried"), "ruben": P(-0.55, 1.0, 180, "smirk")},
@@ -408,12 +406,15 @@ cue("L60", "item:clapper", pos=[-2.0, 1.0, 1.158], on=False)
 cue("L60", "clapper", on=True)
 # light and weather: slow ramps only
 cue("L27", "mist", v=1.0, dur=3.2)
+cue("L28>", "mist", v=0.4, dur=0.9)
 cue("L38", "mist", v=0.25, dur=1.2)
 cue("L43", "mist", v=0.12, dur=1.2)
 cue("L65", "mist", v=0.0, dur=1.5)
 cue("L43", "dry", v=1.0, dur=1.2)
 cue("L45", "boothoff", v=1.0, dur=1.0)
 cue("L47", "boothoff", v=0.0, dur=0.6)
+cue("L46-0.4", "collarlit", v=1.0, dur=0.4)
+cue("L46>", "collarlit", v=0.0, dur=0.4)
 cue("L49.2", "leankey", v=1.0, dur=0.6)
 cue("L51+0.6", "leankey", v=0.0, dur=0.6)
 cue("L71", "dry", v=0.0, dur=1.2)
