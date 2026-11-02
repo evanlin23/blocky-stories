@@ -397,6 +397,7 @@ sfx = [
     {"at": "L36.1>", "kind": "click", "db": -30},
     {"at": "L41", "kind": "door", "db": -22},
     {"at": "L45", "kind": "hum_sweep", "db": -13, "dur": 1.2},
+    {"at": "P01-0.15", "kind": "hum_sweep", "db": -27, "dur": 0.95, "keep": True},   # the hum, under the 0.8 s of quiet
     {"at": "L45+0.1", "kind": "glitch", "db": -28, "dur": 0.7},
         {"at": "L48.3", "kind": "hit", "db": -8, "keep": True},
     {"at": "L48.3+0.03", "kind": "sting", "db": -14, "dur": 2.4, "keep": True},
