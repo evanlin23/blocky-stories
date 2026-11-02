@@ -1,0 +1,1717 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "I've been wearing a stranger's coat. for a week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.276
+    ],
+    [
+     1.353,
+     2.0
+    ]
+   ]
+  },
+  "L02": {
+   "text": "It came out of a dryer that nobody started.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.931
+    ],
+    [
+     0.931,
+     1.371
+    ],
+    [
+     1.371,
+     1.948
+    ]
+   ]
+  },
+  "L03": {
+   "text": "My washer broke in the first freeze of the year.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.836
+    ],
+    [
+     0.836,
+     1.422
+    ],
+    [
+     1.422,
+     2.0
+    ]
+   ]
+  },
+  "L04": {
+   "text": "So I went to the all-night laundromat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.621
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Six orange chairs face the dryers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.19,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.19,
+     0.879
+    ],
+    [
+     0.879,
+     1.741
+    ]
+   ]
+  },
+  "L06": {
+   "text": "I sat behind them at the folding table.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.819
+    ],
+    [
+     0.819,
+     1.776
+    ]
+   ]
+  },
+  "L07": {
+   "text": "That first night, I came in soaked to the skin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.776,
+     1.345
+    ],
+    [
+     1.345,
+     2.034
+    ]
+   ]
+  },
+  "L08": {
+   "text": "There was one other person, an old man in chair six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     0.983
+    ],
+    [
+     1.052,
+     1.492
+    ],
+    [
+     1.492,
+     2.31
+    ]
+   ]
+  },
+  "L09": {
+   "text": "He had a grey jumper on. that was all. on a freezing night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.655,
+   "onset": 0.155,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.155,
+     1.0
+    ],
+    [
+     1.052,
+     1.483
+    ],
+    [
+     1.534,
+     2.466
+    ]
+   ]
+  },
+  "L10": {
+   "text": "He never looked up. he never said a word.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.828,
+     1.25
+    ],
+    [
+     1.25,
+     1.828
+    ]
+   ]
+  },
+  "L11": {
+   "text": "I sat there shivering, my teeth going like a drum.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.155,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.155,
+     0.983
+    ],
+    [
+     1.052,
+     2.293
+    ]
+   ]
+  },
+  "L12": {
+   "text": "I'd only got up once, for change.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.854,
+     1.517
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Then a dryer buzzed behind me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     0.845
+    ],
+    [
+     0.845,
+     1.517
+    ]
+   ]
+  },
+  "L14": {
+   "text": "I hadn't used it. the old man was folding towels.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.845,
+     1.25
+    ],
+    [
+     1.25,
+     2.259
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Inside was a coat. dark green wool, still warm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.19,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.19,
+     0.897
+    ],
+    [
+     0.966,
+     1.534
+    ],
+    [
+     1.569,
+     2.31
+    ]
+   ]
+  },
+  "L16": {
+   "text": "I held it up. it was exactly my size.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.793,
+     1.328
+    ],
+    [
+     1.328,
+     2.034
+    ]
+   ]
+  },
+  "L17": {
+   "text": "I asked the room whose it was. the old man kept folding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.224
+    ],
+    [
+     1.293,
+     1.724
+    ],
+    [
+     1.724,
+     2.534
+    ]
+   ]
+  },
+  "L18": {
+   "text": "So I put it on. it smelled of lavender soap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.836,
+     2.086
+    ]
+   ]
+  },
+  "L19": {
+   "text": "The second night, somebody else was in the chairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.664,
+     1.052
+    ],
+    [
+     1.052,
+     1.879
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Chair five, right next to the old man.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.759
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Laundry-blue overalls. broad shoulders. a neat brown haircut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.19,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.19,
+     0.966
+    ],
+    [
+     1.0,
+     1.672
+    ],
+    [
+     1.75,
+     2.828
+    ]
+   ]
+  },
+  "L22": {
+   "text": "But the bib of its overalls was on its back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.086
+    ],
+    [
+     1.086,
+     1.897
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Its shoes pointed the wrong way, heels to the dryers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.276
+    ],
+    [
+     1.345,
+     2.345
+    ]
+   ]
+  },
+  "L24": {
+   "text": "And on the back of its head was a face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     0.948
+    ],
+    [
+     0.948,
+     1.672
+    ]
+   ]
+  },
+  "L25": {
+   "text": "It was looking at me. over the back of the chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.155,
+     0.879
+    ],
+    [
+     0.966,
+     1.337
+    ],
+    [
+     1.337,
+     2.034
+    ]
+   ]
+  },
+  "L26": {
+   "text": "I called it the turned.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.155
+    ]
+   ]
+  },
+  "L27": {
+   "text": "The old man just watched his drum.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.655
+    ]
+   ]
+  },
+  "L28": {
+   "text": "When I left, he went out the side door, and upstairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.56,
+     1.328
+    ],
+    [
+     1.353,
+     2.155
+    ]
+   ]
+  },
+  "L29": {
+   "text": "I buttoned the coat up to my chin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.431
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Night three, it was in chair four.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.466
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Its face didn't blink.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.224
+    ]
+   ]
+  },
+  "L32": {
+   "text": "One chair nearer. I never saw it move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.879,
+     1.862
+    ]
+   ]
+  },
+  "L33": {
+   "text": "I thought, it wants the coat back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.509,
+     1.431
+    ]
+   ]
+  },
+  "L34": {
+   "text": "So I hung it on the hook by the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.81
+    ],
+    [
+     0.81,
+     1.534
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Its eyes went to the hook.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.259
+    ]
+   ]
+  },
+  "L36": {
+   "text": "The old man coughed. he was still in just the jumper.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     1.0
+    ],
+    [
+     1.069,
+     1.414
+    ],
+    [
+     1.414,
+     2.31
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I went past his chair for my coat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.879
+    ],
+    [
+     0.879,
+     1.552
+    ]
+   ]
+  },
+  "L38": {
+   "text": "And I smelled it again. lavender.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     1.0
+    ],
+    [
+     1.094,
+     1.724
+    ]
+   ]
+  },
+  "L39": {
+   "text": "I thought it had to be the soap the shop sells.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.353
+    ],
+    [
+     0.353,
+     0.957
+    ],
+    [
+     0.957,
+     1.793
+    ]
+   ]
+  },
+  "L40": {
+   "text": "I put the coat back on and kept my eyes down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.897
+    ],
+    [
+     0.897,
+     2.069
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Night four, the old man wasn't there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.0
+    ],
+    [
+     1.0,
+     1.672
+    ]
+   ]
+  },
+  "L42": {
+   "text": "The turned was in his chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.345
+    ]
+   ]
+  },
+  "L43": {
+   "text": "As far from me as it had ever been.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     1.724
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I let out a breath.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Then the tubes began to fade.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.483
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Down to a brown glow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     1.172
+    ]
+   ]
+  },
+  "L47": {
+   "text": "The drums stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.0
+    ]
+   ]
+  },
+  "L48": {
+   "text": "When they came back, its face was an inch from mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.793,
+     1.172
+    ],
+    [
+     1.172,
+     1.534
+    ],
+    [
+     1.534,
+     2.207
+    ]
+   ]
+  },
+  "L49": {
+   "text": "I could see every black line of its eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.129
+    ],
+    [
+     1.129,
+     1.793
+    ]
+   ]
+  },
+  "L50": {
+   "text": "I couldn't move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Its eyes slid down to the coat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.879
+    ],
+    [
+     0.879,
+     1.466
+    ]
+   ]
+  },
+  "L52": {
+   "text": "Then over to chair six, and back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.948
+    ],
+    [
+     0.983,
+     1.534
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Coat. chair. coat. like it was counting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 1.914,
+   "onset": 0.19,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.19,
+     0.328
+    ],
+    [
+     0.362,
+     0.534
+    ],
+    [
+     0.569,
+     0.776
+    ],
+    [
+     0.828,
+     1.707
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Then I knew that lavender.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.414
+    ]
+   ]
+  },
+  "L55": {
+   "text": "He was the only one here that first night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.793,
+     1.776
+    ]
+   ]
+  },
+  "L56": {
+   "text": "While I was at the change machine, he put his coat in that dryer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.172,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.172,
+     1.362
+    ],
+    [
+     1.431,
+     1.87
+    ],
+    [
+     1.87,
+     2.655
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Then he sat in a jumper for a week, so I wouldn't ask.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.845
+    ],
+    [
+     0.845,
+     1.259
+    ],
+    [
+     1.328,
+     2.155
+    ]
+   ]
+  },
+  "L58": {
+   "text": "And now he had a cold, and his chair was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.983
+    ],
+    [
+     1.034,
+     1.448
+    ],
+    [
+     1.448,
+     2.155
+    ]
+   ]
+  },
+  "L59": {
+   "text": "I stood up. the turned didn't follow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.655,
+     0.922
+    ],
+    [
+     0.922,
+     1.586
+    ]
+   ]
+  },
+  "L60": {
+   "text": "His last load sat finished in machine six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.129
+    ],
+    [
+     1.129,
+     1.983
+    ]
+   ]
+  },
+  "L61": {
+   "text": "I dried it. I folded it the way he does, corners first.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.155,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.69,
+     1.077
+    ],
+    [
+     1.077,
+     1.552
+    ],
+    [
+     1.586,
+     2.397
+    ]
+   ]
+  },
+  "L62": {
+   "text": "I carried it up his stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.345
+    ]
+   ]
+  },
+  "L63": {
+   "text": "He opened up in a plaid scarf, with a cold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.155
+    ],
+    [
+     1.207,
+     1.966
+    ]
+   ]
+  },
+  "L64": {
+   "text": "I held out his wash, with his coat folded on top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ],
+    [
+     0.983,
+     1.388
+    ],
+    [
+     1.388,
+     2.276
+    ]
+   ]
+  },
+  "L65": {
+   "text": "I said, thank you. then I said it again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.948,
+     1.862
+    ]
+   ]
+  },
+  "L66": {
+   "text": "He went pink. he said, you were shivering.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.638,
+     0.914
+    ],
+    [
+     0.94,
+     1.707
+    ]
+   ]
+  },
+  "L67": {
+   "text": "What was I supposed to do?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.31
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Then he told me his name was Arthur.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.672
+    ]
+   ]
+  },
+  "L69": {
+   "text": "Two nights later, he was back in chair six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.698,
+     1.845
+    ]
+   ]
+  },
+  "L70": {
+   "text": "Chair five is just a chair now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.552
+    ]
+   ]
+  },
+  "L71": {
+   "text": "I pass him his towels.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.543
+    ],
+    [
+     0.543,
+     1.259
+    ]
+   ]
+  },
+  "L72": {
+   "text": "There are two coats on the hook by the door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     0.966
+    ],
+    [
+     0.966,
+     1.655
+    ]
+   ]
+  },
+  "L73": {
+   "text": "His, and a new one of mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.431,
+     0.802
+    ],
+    [
+     0.802,
+     1.414
+    ]
+   ]
+  },
+  "L74": {
+   "text": "For a week, I didn't even know his name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.043
+    ],
+    [
+     1.043,
+     1.672
+    ]
+   ]
+  },
+  "L75": {
+   "text": "But the whole time,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.155,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.155,
+     1.034
+    ]
+   ]
+  },
+  "L76": {
+   "text": "I've been wearing a friend's coat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.448
+    ]
+   ]
+  },
+  "L31b": {
+   "text": "I read the same page ten times.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.828
+    ],
+    [
+     0.828,
+     1.569
+    ]
+   ]
+  }
+ }
+}

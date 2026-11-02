@@ -536,6 +536,12 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
     if kind == "silence":
         return np.zeros(1)
+    if kind == "buzzer":   # opt-in (ep24): a dryer's soft square-wave buzzer, 0.4 s with a slow on-off
+        d = min(dur, 0.45)
+        t = np.arange(synth.n_samples(d)) / SR
+        sq = np.sign(np.sin(2 * np.pi * 392.0 * t)) * 0.5 + np.sign(np.sin(2 * np.pi * 523.0 * t)) * 0.3
+        env = np.minimum(1, t / 0.02) * np.minimum(1, (d - t) / 0.06) * (0.65 + 0.35 * np.sign(np.sin(2 * np.pi * 12.0 * t)))
+        return fft_filter(sq * env, "low", 1800)
     raise ValueError(f"no sfx {kind!r}")
 
 

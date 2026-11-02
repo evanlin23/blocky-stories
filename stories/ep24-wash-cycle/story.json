@@ -1,0 +1,1305 @@
+{
+ "slug": "ep24-wash-cycle",
+ "title": "The dryer nobody started had a warm coat inside",
+ "made_for_kids": false,
+ "premise": "x",
+ "twist": "x",
+ "world": "x",
+ "key_color": "#b99cf2",
+ "gap": 0.14,
+ "tail": 0.25,
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "cast": {},
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I've been WEARING",
+     "I've been wearing"
+    ],
+    [
+     "a stranger's COAT.",
+     "a stranger's coat."
+    ],
+    [
+     "For a WEEK.",
+     "for a week."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It came out",
+     "It came out"
+    ],
+    [
+     "of a DRYER",
+     "of a dryer"
+    ],
+    [
+     "that NOBODY",
+     "that nobody"
+    ],
+    [
+     "STARTED.",
+     "started."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My washer BROKE",
+     "My washer broke"
+    ],
+    [
+     "in the first FREEZE",
+     "in the first freeze"
+    ],
+    [
+     "of the year.",
+     "of the year."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I went",
+     "So I went"
+    ],
+    [
+     "to the all-night LAUNDROMAT.",
+     "to the all-night laundromat."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "SIX orange CHAIRS",
+     "Six orange chairs"
+    ],
+    [
+     "face the DRYERS.",
+     "face the dryers."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I sat BEHIND them",
+     "I sat behind them"
+    ],
+    [
+     "at the FOLDING TABLE.",
+     "at the folding table."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That first night,",
+     "That first night,"
+    ],
+    [
+     "I came in SOAKED",
+     "I came in soaked"
+    ],
+    [
+     "to the SKIN.",
+     "to the skin."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There was ONE other person,",
+     "There was one other person,"
+    ],
+    [
+     "an OLD MAN",
+     "an old man"
+    ],
+    [
+     "in chair SIX.",
+     "in chair six."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He had a grey JUMPER on.",
+     "He had a grey jumper on."
+    ],
+    [
+     "That was ALL.",
+     "that was all."
+    ],
+    [
+     "On a FREEZING NIGHT.",
+     "on a freezing night."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He never LOOKED UP.",
+     "He never looked up."
+    ],
+    [
+     "He never SAID",
+     "he never said"
+    ],
+    [
+     "a WORD.",
+     "a word."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I sat there SHIVERING,",
+     "I sat there shivering,"
+    ],
+    [
+     "my teeth going like a DRUM.",
+     "my teeth going like a drum."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'd only got UP once,",
+     "I'd only got up once,"
+    ],
+    [
+     "for CHANGE.",
+     "for change."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then a DRYER",
+     "Then a dryer"
+    ],
+    [
+     "BUZZED",
+     "buzzed"
+    ],
+    [
+     "behind me.",
+     "behind me."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I hadn't USED it.",
+     "I hadn't used it."
+    ],
+    [
+     "The old man",
+     "the old man"
+    ],
+    [
+     "was FOLDING TOWELS.",
+     "was folding towels."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Inside was a COAT.",
+     "Inside was a coat."
+    ],
+    [
+     "Dark GREEN WOOL,",
+     "dark green wool,"
+    ],
+    [
+     "still WARM.",
+     "still warm."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I held it UP.",
+     "I held it up."
+    ],
+    [
+     "It was EXACTLY",
+     "it was exactly"
+    ],
+    [
+     "my SIZE.",
+     "my size."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I asked the room",
+     "I asked the room"
+    ],
+    [
+     "whose it WAS.",
+     "whose it was."
+    ],
+    [
+     "The old man",
+     "the old man"
+    ],
+    [
+     "kept FOLDING.",
+     "kept folding."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I put it ON.",
+     "So I put it on."
+    ],
+    [
+     "It smelled of LAVENDER SOAP.",
+     "it smelled of lavender soap."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The second night,",
+     "The second night,"
+    ],
+    [
+     "somebody ELSE",
+     "somebody else"
+    ],
+    [
+     "was in the CHAIRS.",
+     "was in the chairs."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Chair FIVE,",
+     "Chair five,"
+    ],
+    [
+     "right next to the OLD MAN.",
+     "right next to the old man."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Laundry-BLUE OVERALLS.",
+     "Laundry-blue overalls."
+    ],
+    [
+     "BROAD SHOULDERS.",
+     "broad shoulders."
+    ],
+    [
+     "A neat brown HAIRCUT.",
+     "a neat brown haircut."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But the BIB",
+     "But the bib"
+    ],
+    [
+     "of its overalls",
+     "of its overalls"
+    ],
+    [
+     "was on its BACK.",
+     "was on its back."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its shoes",
+     "Its shoes"
+    ],
+    [
+     "pointed the WRONG WAY,",
+     "pointed the wrong way,"
+    ],
+    [
+     "HEELS to the DRYERS.",
+     "heels to the dryers."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And on the BACK",
+     "And on the back"
+    ],
+    [
+     "of its HEAD",
+     "of its head"
+    ],
+    [
+     "was a FACE.",
+     "was a face."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was LOOKING at me.",
+     "It was looking at me."
+    ],
+    [
+     "Over the back",
+     "over the back"
+    ],
+    [
+     "of the CHAIR.",
+     "of the chair."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I called it",
+     "I called it"
+    ],
+    [
+     "the TURNED.",
+     "the turned."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The old man",
+     "The old man"
+    ],
+    [
+     "just watched his DRUM.",
+     "just watched his drum."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "When I LEFT,",
+     "When I left,"
+    ],
+    [
+     "he went out the SIDE DOOR,",
+     "he went out the side door,"
+    ],
+    [
+     "and UPSTAIRS.",
+     "and upstairs."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I BUTTONED the coat",
+     "I buttoned the coat"
+    ],
+    [
+     "up to my CHIN.",
+     "up to my chin."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Night THREE,",
+     "Night three,"
+    ],
+    [
+     "it was in chair FOUR.",
+     "it was in chair four."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its face",
+     "Its face"
+    ],
+    [
+     "didn't BLINK.",
+     "didn't blink."
+    ]
+   ]
+  },
+  {
+   "id": "L31b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I read the same PAGE",
+     "I read the same page"
+    ],
+    [
+     "TEN TIMES.",
+     "ten times."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "ONE chair NEARER.",
+     "One chair nearer."
+    ],
+    [
+     "I never SAW it move.",
+     "I never saw it move."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I thought,",
+     "I thought,"
+    ],
+    [
+     "it wants the COAT BACK.",
+     "it wants the coat back."
+    ]
+   ]
+  },
+  {
+   "id": "L34",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So I hung it",
+     "So I hung it"
+    ],
+    [
+     "on the HOOK",
+     "on the hook"
+    ],
+    [
+     "by the DOOR.",
+     "by the door."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its EYES",
+     "Its eyes"
+    ],
+    [
+     "went to the HOOK.",
+     "went to the hook."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The old man COUGHED.",
+     "The old man coughed."
+    ],
+    [
+     "He was STILL",
+     "he was still"
+    ],
+    [
+     "in just the JUMPER.",
+     "in just the jumper."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I went past his chair",
+     "I went past his chair"
+    ],
+    [
+     "for my COAT.",
+     "for my coat."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And I smelled it AGAIN.",
+     "And I smelled it again."
+    ],
+    [
+     "LAVENDER.",
+     "lavender."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I thought",
+     "I thought"
+    ],
+    [
+     "it had to be the SOAP",
+     "it had to be the soap"
+    ],
+    [
+     "the shop SELLS.",
+     "the shop sells."
+    ]
+   ]
+  },
+  {
+   "id": "L40",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I put the coat back ON",
+     "I put the coat back on"
+    ],
+    [
+     "and kept my eyes DOWN.",
+     "and kept my eyes down."
+    ]
+   ]
+  },
+  {
+   "id": "L41",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Night FOUR,",
+     "Night four,"
+    ],
+    [
+     "the old man",
+     "the old man"
+    ],
+    [
+     "wasn't THERE.",
+     "wasn't there."
+    ]
+   ]
+  },
+  {
+   "id": "L42",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The Turned",
+     "The turned"
+    ],
+    [
+     "was in HIS chair.",
+     "was in his chair."
+    ]
+   ]
+  },
+  {
+   "id": "L43",
+   "who": "narrator",
+   "chunks": [
+    [
+     "As FAR from me",
+     "As far from me"
+    ],
+    [
+     "as it had EVER been.",
+     "as it had ever been."
+    ]
+   ]
+  },
+  {
+   "id": "L44",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I let out a BREATH.",
+     "I let out a breath."
+    ]
+   ]
+  },
+  {
+   "id": "P02",
+   "pause": 0.9,
+   "chunks": []
+  },
+  {
+   "id": "L45",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the TUBES",
+     "Then the tubes"
+    ],
+    [
+     "began to FADE.",
+     "began to fade."
+    ]
+   ]
+  },
+  {
+   "id": "L46",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Down to a brown GLOW.",
+     "Down to a brown glow."
+    ]
+   ]
+  },
+  {
+   "id": "L47",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The DRUMS",
+     "The drums"
+    ],
+    [
+     "STOPPED.",
+     "stopped."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.7,
+   "chunks": []
+  },
+  {
+   "id": "L48",
+   "who": "narrator",
+   "chunks": [
+    [
+     "When they came BACK,",
+     "When they came back,"
+    ],
+    [
+     "its FACE",
+     "its face"
+    ],
+    [
+     "was an INCH",
+     "was an inch"
+    ],
+    [
+     "from MINE.",
+     "from mine."
+    ]
+   ]
+  },
+  {
+   "id": "L49",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I could see",
+     "I could see"
+    ],
+    [
+     "every black LINE",
+     "every black line"
+    ],
+    [
+     "of its EYES.",
+     "of its eyes."
+    ]
+   ]
+  },
+  {
+   "id": "L50",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I couldn't MOVE.",
+     "I couldn't move."
+    ]
+   ]
+  },
+  {
+   "id": "L51",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its eyes",
+     "Its eyes"
+    ],
+    [
+     "slid DOWN",
+     "slid down"
+    ],
+    [
+     "to the COAT.",
+     "to the coat."
+    ]
+   ]
+  },
+  {
+   "id": "L52",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then over to",
+     "Then over to"
+    ],
+    [
+     "chair SIX,",
+     "chair six,"
+    ],
+    [
+     "and BACK.",
+     "and back."
+    ]
+   ]
+  },
+  {
+   "id": "L53",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Coat.",
+     "Coat."
+    ],
+    [
+     "Chair.",
+     "chair."
+    ],
+    [
+     "Coat.",
+     "coat."
+    ],
+    [
+     "Like it was COUNTING.",
+     "like it was counting."
+    ]
+   ],
+   "tempo": 0.95
+  },
+  {
+   "id": "P03",
+   "pause": 0.8,
+   "chunks": []
+  },
+  {
+   "id": "L54",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I KNEW",
+     "Then I knew"
+    ],
+    [
+     "that LAVENDER.",
+     "that lavender."
+    ]
+   ]
+  },
+  {
+   "id": "L55",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He was the ONLY one",
+     "He was the only one"
+    ],
+    [
+     "here that first NIGHT.",
+     "here that first night."
+    ]
+   ]
+  },
+  {
+   "id": "L56",
+   "who": "narrator",
+   "chunks": [
+    [
+     "While I was at the CHANGE MACHINE,",
+     "While I was at the change machine,"
+    ],
+    [
+     "he put his COAT",
+     "he put his coat"
+    ],
+    [
+     "in that DRYER.",
+     "in that dryer."
+    ]
+   ]
+  },
+  {
+   "id": "L57",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then he sat",
+     "Then he sat"
+    ],
+    [
+     "in a JUMPER",
+     "in a jumper"
+    ],
+    [
+     "for a WEEK,",
+     "for a week,"
+    ],
+    [
+     "so I wouldn't ASK.",
+     "so I wouldn't ask."
+    ]
+   ]
+  },
+  {
+   "id": "L58",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And now he had a COLD,",
+     "And now he had a cold,"
+    ],
+    [
+     "and his chair",
+     "and his chair"
+    ],
+    [
+     "was EMPTY.",
+     "was empty."
+    ]
+   ]
+  },
+  {
+   "id": "L59",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I stood UP.",
+     "I stood up."
+    ],
+    [
+     "The Turned",
+     "the turned"
+    ],
+    [
+     "didn't FOLLOW.",
+     "didn't follow."
+    ]
+   ]
+  },
+  {
+   "id": "L60",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His last LOAD",
+     "His last load"
+    ],
+    [
+     "sat FINISHED",
+     "sat finished"
+    ],
+    [
+     "in machine SIX.",
+     "in machine six."
+    ]
+   ]
+  },
+  {
+   "id": "L61",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I DRIED it.",
+     "I dried it."
+    ],
+    [
+     "I FOLDED it",
+     "I folded it"
+    ],
+    [
+     "the way he DOES,",
+     "the way he does,"
+    ],
+    [
+     "CORNERS FIRST.",
+     "corners first."
+    ]
+   ]
+  },
+  {
+   "id": "L62",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I carried it",
+     "I carried it"
+    ],
+    [
+     "UP his STAIRS.",
+     "up his stairs."
+    ]
+   ]
+  },
+  {
+   "id": "L63",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He opened up",
+     "He opened up"
+    ],
+    [
+     "in a plaid SCARF,",
+     "in a plaid scarf,"
+    ],
+    [
+     "with a cold.",
+     "with a cold."
+    ]
+   ]
+  },
+  {
+   "id": "L64",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I held out his WASH,",
+     "I held out his wash,"
+    ],
+    [
+     "with his COAT",
+     "with his coat"
+    ],
+    [
+     "folded on TOP.",
+     "folded on top."
+    ]
+   ]
+  },
+  {
+   "id": "L65",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I said, \"THANK you.\"",
+     "I said, thank you."
+    ],
+    [
+     "Then I said it AGAIN.",
+     "then I said it again."
+    ]
+   ]
+  },
+  {
+   "id": "L66",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He went PINK.",
+     "He went pink."
+    ],
+    [
+     "He said,",
+     "he said,"
+    ],
+    [
+     "\"You were SHIVERING.\"",
+     "you were shivering."
+    ]
+   ]
+  },
+  {
+   "id": "L67",
+   "who": "narrator",
+   "chunks": [
+    [
+     "\"What was I",
+     "What was I"
+    ],
+    [
+     "supposed to DO?\"",
+     "supposed to do?"
+    ]
+   ]
+  },
+  {
+   "id": "L68",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then he told me",
+     "Then he told me"
+    ],
+    [
+     "his name was ARTHUR.",
+     "his name was Arthur."
+    ]
+   ]
+  },
+  {
+   "id": "L69",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Two nights LATER,",
+     "Two nights later,"
+    ],
+    [
+     "he was back in chair SIX.",
+     "he was back in chair six."
+    ]
+   ]
+  },
+  {
+   "id": "L70",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Chair FIVE",
+     "Chair five"
+    ],
+    [
+     "is just a CHAIR now.",
+     "is just a chair now."
+    ]
+   ]
+  },
+  {
+   "id": "L71",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I pass him",
+     "I pass him"
+    ],
+    [
+     "his TOWELS.",
+     "his towels."
+    ]
+   ]
+  },
+  {
+   "id": "L72",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There are TWO COATS",
+     "There are two coats"
+    ],
+    [
+     "on the HOOK",
+     "on the hook"
+    ],
+    [
+     "by the door.",
+     "by the door."
+    ]
+   ]
+  },
+  {
+   "id": "L73",
+   "who": "narrator",
+   "chunks": [
+    [
+     "HIS,",
+     "His,"
+    ],
+    [
+     "and a new one",
+     "and a new one"
+    ],
+    [
+     "of MINE.",
+     "of mine."
+    ]
+   ]
+  },
+  {
+   "id": "L74",
+   "who": "narrator",
+   "chunks": [
+    [
+     "For a WEEK,",
+     "For a week,"
+    ],
+    [
+     "I didn't even know",
+     "I didn't even know"
+    ],
+    [
+     "his NAME.",
+     "his name."
+    ]
+   ]
+  },
+  {
+   "id": "L75",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But the whole TIME,",
+     "But the whole time,"
+    ]
+   ]
+  },
+  {
+   "id": "L76",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I've been WEARING",
+     "I've been wearing"
+    ],
+    [
+     "a FRIEND's COAT.",
+     "a friend's coat."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     30
+    ]
+   ]
+  }
+ ],
+ "acting": {},
+ "cues": [],
+ "fx": []
+}
