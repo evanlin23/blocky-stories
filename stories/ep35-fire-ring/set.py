@@ -332,7 +332,7 @@ def materials(kit):
     M["flame2"] = kit.emit("#ffd27a", 9.0, "flame core")
     M["ember"] = kit.emit("#ff4a10", 3.0, "ember")
     M["phonebody"] = kit.emit("#3a5470", 1.4, "phone")
-    M["screen"] = kit.emit("#a8d4ff", 3.5, "screen")
+    M["screen"] = kit.emit("#a8d4ff", 1.7, "screen")
     M["wood"] = kit.planks("#6b5a40", "#4a3c28", 1.2, "X", "gate wood")
     M["gatepost"] = stone_mat(kit, "gatepost", "#5a5c5e", "#8b8a84", 7.0)
     M["track"] = kit.plastic("#6b5e46", 0.95, "track")
@@ -554,7 +554,7 @@ def build_shadows(kit, M):
     objs = []
     for hi, (uc, vc, mir) in enumerate(((0.25, 0.9, 1), (1.1, 1.0, -1))):
         verts, faces = [], []
-        for (bu, bv, du, dv, rot) in hand_shadow_boxes(0, 0, 0.7, 0.85, mir):
+        for (bu, bv, du, dv, rot) in hand_shadow_boxes(0, 0, 0.58, 0.7, mir):
             c, s = math.cos(rot), math.sin(rot)
             base = len(verts)
             for (px, py) in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
