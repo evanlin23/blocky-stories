@@ -2,7 +2,7 @@
 
 - **Slug:** `ep32-sitter` (pitch #16 in `stories/ideas.md`, second parallel batch).
 - **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 636 spoken words in 76 lines, all `narrator`, voice A. At 290 wpm the speech is about 2:11, plus about 9 s of line gaps, the two music drops and the 0.25 s tail, so about 2:20 to 2:25. If it lands short, add back "The guide lines you DRAW / before you draw / ANYTHING." after L12. If long, L39 goes first.
+- **Word count:** 627 spoken words in 74 lines (round 1: L41 and L43 rewritten, L44, L56 and L57 cut, the spare L12b restored), all `narrator`, voice A. At 290 wpm the speech is about 2:11, plus about 9 s of line gaps, the two music drops and the 0.25 s tail, so about 2:20 to 2:25. If it still lands short, add "Petra didn't even GLANCE / at it." after L34. If long, L39 goes first.
 - **Tense:** past, first person. Every line is `narrator`, voice A. Mum, Kofi and Petra are only ever quoted inside my lines.
 
 ## Premise
@@ -43,7 +43,7 @@ A community arts centre on a hill, in a squat brick building, on rainy Wednesday
   - L26 to L30 (week 3): on a spare stool between easels 4 and 5, in the middle of the curve, head turned toward my corner.
   - L31 to L35 (week 4): on a spare stool beside easel 7 (Petra), its knee level with her palette shelf, a hand's width clear of her.
   - L36 to L40 (week 5): beside Petra at first, gone from there when the lights come back (her spare stool empty, L38).
-  - L41 to L47: on a spare stool right beside my easel, its knee against my easel leg, body to the dais, head turned all the way round to my canvas, face an inch from it. It never touches me.
+  - L41 to L47: on a spare stool right beside my easel, its knee against my easel leg, its long body bent forward from the waist into my canvas (L43), no head turn, a hand's width clear of me. It never touches me.
   - L53 to L60: still beside my easel, small in the window shot. The dais stool empty, cushion flat.
   - L62 to L66 (week 6): beside my easel, facing my canvas.
   - L67 onward: gone. The spare stool empty, the dais cushion dented (L68). It never appears again.
@@ -63,7 +63,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
 
 ### 01 The criticism (0 to about 12 s)
 - `L01` narrator: Mum always SAID / I never FINISH / a FACE.
-  - [S01: close on my canvas under a clamp lamp: a pencil head oval with a cross and two empty eye ovals, nothing else. Slow push in. Rewatch plant: this is its face]
+  - [S01: my canvas under a clamp lamp, a pencil head oval with a cross and two empty eye ovals, nothing else, with my face also in frame beside it, looking at it. Slow push in. Rewatch plant: this is its face]
 - `L02` narrator: She used to PAINT. / Her HALL was covered / in her PICTURES.
   - [S02: Mum's front hall years ago, bright, frames edge to edge (landscapes and flowers, no text), Mum in her teal cardigan hanging one]
 - `L03` narrator: Now it's BARE, / and her BRUSHES / live in a DRAWER.
@@ -88,6 +88,8 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S11: slow push on its head]
 - `L12` narrator: A CROSS, / and two empty OVALS / for EYES.
   - [S12: close on its face: the cross and two ovals, exactly my L01 canvas. The ovals are the palest thing]
+- `L12b` narrator: The guide lines you DRAW / before you draw / ANYTHING.
+  - [S12b: my canvas again, the same lines, the clamp lamp buzzing]
 - `L13` narrator: Next to me, / Petra was already SKETCHING.
   - [S13: Petra at easel 7, her canvas angled so we see a pencil outline of the fruit bowl. Plant 1, not named]
 - `L14` narrator: Nobody else / LOOKED UP.
@@ -148,14 +150,12 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S39: tight on me, eyes to the side]
 - `L40` narrator: The lights dipped AGAIN.
   - [S40: second slow ramp down. Cut while dim. Music drop 0.6 s before L51]
-- `L41` narrator: And when they STEADIED, / it was sitting / RIGHT BESIDE ME.
+- `L41` narrator: And when I looked UP / from my PALETTE, / it was sitting / RIGHT BESIDE ME.
   - [S41: lamps back up: wide from the window side, the Unpainted on a spare stool at my elbow, taller than me even seated. The hit]
 - `L42` narrator: One pine KNEE / against my EASEL LEG.
   - [S42: low on its knee against the easel leg]
-- `L43` narrator: Its head had turned / ALL the way ROUND,
-  - [S43: from behind it: its body faces the dais, its head faces backward toward my canvas]
-- `L44` narrator: so its half-drawn FACE / was an inch from my CANVAS.
-  - [S44: profile two-shot of its face and my canvas, an inch apart, lit from below. Music drop 0.5 s before L55]
+- `L43` narrator: It was leaning IN / to my CANVAS, / like a MIRROR.
+  - [S43: a 3/4 angle, lit from below: its long body bent forward from the waist into my canvas, its half-drawn face close to the canvas face, no head turn, a hand's width clear of me. Music drop 0.5 s before L45]
 - `L45` narrator: The two FACES / were the SAME.
   - [S45: straight on: its face and my canvas side by side in frame, every line matching]
 - `L46` narrator: It was WAITING.
@@ -180,10 +180,6 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S54: push in: seven fruit canvases, then mine with the half face, the Unpainted beside it, small. Plant 1 paid]
 - `L55` narrator: On the DAIS, / the green cushion, / perfectly FLAT.
   - [S55: push in through the window to the empty dais stool and its flat cushion. Plant 2 paid]
-- `L56` narrator: Eight EASELS / and a STOOL. / A class of NINE.
-  - [S56: overhead of the room again, eight easels and the stool]
-- `L57` narrator: It was sitting IN / for the one / who LEFT.
-  - [S57: the Unpainted beside my easel, seen through the glass]
 - `L58` narrator: But a sitter / with no FACE / isn't really THERE.
   - [S58: its blank face behind wet glass]
 - `L59` narrator: And only ONE of us / was PAINTING it.
@@ -230,6 +226,6 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
 ## Notes for the builder
 - Hands never grip: cut away at L06, L16 and L64, and the phone lies on the shelf at L23.
 - The Unpainted's torso is long: check its head against the easel tops and the lamp clamps at L11, L41 and L63 for intersections.
-- Its head turned "all the way round" (L43) is a head rotation of 180 degrees on a forward-facing body. Keep it a hand's width clear of me in every shot.
+- At L43 it bends forward from the waist toward my canvas at a 3/4 angle, with no head turn. Check the bent torso against the easel and lamp clamp, and keep it a hand's width clear of me in every shot.
 - Spare stools are plain paint-spattered stools, not the dais stool. The green cushion is only on the dais stool.
 - Canvases carry no text, no signature.
