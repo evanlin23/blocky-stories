@@ -28,10 +28,10 @@ if which == "a":
         return [[sl, V((0.5, -0.3, 1.0)), V((1.2, -0.12, z)), V((4.0, -0.12, z)), V((4.4, -0.2, z)), V((L, -0.12, z))],
                 [sr, V((0.5, 0.3, 1.0)), V((1.2, 0.12, z)), V((4.0, 0.12, z)), V((4.4, 0.2, z)), V((L, 0.12, z))]]
     S.make_reach(kit, W, (-0.55, 0.0, 0.0), yaw=math.radians(90), head_pitch=0.1, paths=paths)
-    kit.light("lamp", "POINT", (-0.3, -1.0, 0.15), 120, "#f0a24a", size=0.15)
-    moon((6, 8, 7), (5, 0, 1), 1500)
-    kit.light("fill", "AREA", (L + 3, -7, 5), 1600, "#9db8e0", size=6); kit.aim(kit.LIGHTS["fill"]["obj"], (4, 0, 1))
-    kit.place_camera((L + 6.0, -2.6, 0.95), (3.5, 0.8, 1.3), 36)
+    kit.light("lamp", "POINT", (-0.25, -0.75, 0.2), 70, "#f0a24a", size=0.12)
+    kit.light("hlamp", "POINT", (L - 0.4, -0.5, 0.4), 25, "#f0a24a", size=0.12)
+    moon((6, 8, 7), (5, 0, 1), 500)
+    kit.place_camera((L + 4.0, -2.2, 0.95), (3.2, 0.8, 1.3), 34)
 else:
     brick = kit.plastic("#7a4535", 0.85); cream = kit.plastic("#cfc5ae", 0.6)
     kit.box("wallL", (4, 0.4, 3), (-2.6, 0, 1.5), brick); kit.box("wallR", (4, 0.4, 3), (4.4, 0, 1.5), brick)

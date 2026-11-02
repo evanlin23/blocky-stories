@@ -172,23 +172,24 @@ sh("S11", 8, "L08", fc(hd(21.6, -3.0, 0, 1.2), 0, 8, 1.5, 40, rise=0.05, el=0.0)
 sh("S12", 9, "L09", mv([27.6, -4.4, 1.5], [24.6, -4.5, 1.1], 30, [27.4, -4.4, 1.5], [24.6, -4.5, 1.1], 30),
    {"ada": P(24.6, -4.3, 0, arms=[85, 85], side=[0, 0], expr="grin"), "mec": P(23.2, -3.2, 270, arms=[0, 0], side=[0, 0], expr="neutral")},
    look="day", glow={"ada": B}, crate=(24.6, -4.9, 0.95), fill_k=1.4)
-sh("S13", 9, "L09.2", fc(hd(21.6, -3.0), 0, 8, 2.4, 36, rise=0.08), {"mec": P(21.6, -3.0, 0, arms=[0, 0], side=[0, 0], expr="neutral", head=[0, 6], lean=2)},
-   look="day", fill_k=1.6, sun=(14, 25, 3.0, "#ffd9a0"))
+sh("S13", 9, "L09.2", fc(hd(20.9, -3.0), 0, 6, 2.5, 34, rise=0.05), {"mec": P(20.9, -3.0, 0, arms=[0, 0], side=[0, 0], expr="neutral", head=[0, 6], lean=2),
+   "emrys": P(22.0, 1.7, 0, expr="neutral", arms=[0, 0], side=[0, 0])},
+   look="day", glow={"emrys": 0.3}, fill_k=1.6, sun=(14, 25, 3.0, "#ffd9a0"))
 ex("mec", "L09.3", head=[0, -4], blend=0.3)
 sh("S14", 10, "L10", mv([25.4, -2.6, 1.55], [21.2, 1.1, 1.55], 34, [25.0, -2.4, 1.55], [21.2, 1.1, 1.55], 34),
-   {"emrys": P(21.1, 1.2, -20, expr="neutral", arms=[0, 0], side=[0, 0])}, look="day", glow={"emrys": M}, fill_k=1.5)
-sh("S15", 11, "L11", mv([19.8, -4.2, 1.7], [20.2, 2.6, 1.55], 30, [19.8, -3.9, 1.7], [20.2, 2.6, 1.55], 30),
-   {"emrys": P(20.2, 2.7, 0, expr="neutral", arms=[40, 0], side=[0, 0])}, look="summer", glow={"emrys": B}, open=True, boat=True, boat_x=15.6, boat_y0=-5.5, fill_k=0.8,
-   hand=0.003)
-sh("S16", 11, "L11.2", mv([19.4, -6.0, 2.3], [11.5, 1.5, 0.3], 28, [19.4, -5.7, 2.3], [11.5, 1.5, 0.3], 28), {}, look="summer", open=True,
-   streaks=True, boat=True, boat_x=12.8, boat_y0=-3.0, sun=(7, 30, 2.6, "#ffb070"))
-sh("S17", 12, "L12", mv([18.5, 12.0, 1.8], [9.0, 120.0, 7.0], 38, [18.5, 14.0, 1.8], [9.0, 120.0, 7.0], 38), {}, look="day", hand=0.004,
-   sun=(20, 160, 2.6, "#ffe0b0"))
-sh("S18", 12, "L12.2", mv([16.6, -1.3, 0.95], [17.75, 0.0, 0.1], 38, [16.8, -1.1, 0.95], [17.75, 0.0, 0.1], 40), {}, look="day", hand=0.002,
-   sun=(35, 150, 2.6, "#ffe0b0"))
-sh("S19", 13, "L13", mv([250.9, 0.8, 1.55], [249.9, 3.6, 1.3], 34, [250.8, 0.9, 1.55], [249.9, 3.6, 1.3], 34),
-   {"me": P(250.0, 4.35, 0, z=-0.06, sit=True, expr="neutral", arms=[40, 40]), "ada": P(248.9, 3.9, 55, expr="neutral", arms=[55, 0])},
-   look="kitchen", glow={"ada": M})
+   {"emrys": P(21.1, 1.2, -20, expr="neutral", arms=[0, 0], side=[0, 0])}, look="day", glow={"emrys": 0.3}, fill_k=1.5)
+sh("S15", 11, "L11", mv([14.6, -0.3, 0.6], [17.6, 0.1, 0.25], 34, [14.9, -0.3, 0.6], [17.6, 0.1, 0.25], 34),
+   {"emrys": P(18.9, 0.1, 0, expr="neutral", arms=[0, 0], side=[0, 0], lean=18)}, look="dusk", glow={"emrys": 0.3}, hand=0.003, lk={"lamppost": 0.0}, fill_k=1.2)
+sh("S16", 11, "L11.2", mv([17.8, -9.0, 1.5], [15.0, 40.0, 7.0], 30, [17.8, -8.6, 1.5], [15.0, 40.0, 7.0], 30),
+   {"emrys": P(18.6, -0.6, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, look="dusk", glow={"emrys": 0.3}, hand=0.004, lk={"lamppost": 0.0}, fill_k=0.9)
+sh("S17", 12, "L12", mv([250.9, 5.75, 1.5], [249.9, 2.6, 1.15], 34, [250.8, 5.55, 1.5], [249.9, 2.6, 1.15], 34),
+   {"me": P(250.0, 4.45, 0, z=-0.06, sit=True, expr="neutral", arms=[40, 40]),
+    "ada": P(249.7, 2.6, 180, z=-0.06, sit=True, expr="worried", arms=[70, 70])}, look="kitchen", glow={"ada": B})
+sh("S18", 12, "L12.2", mv([250.2, 4.4, 1.15], [249.7, 3.2, 0.8], 36), {"ada": P(249.7, 2.6, 180, z=-0.06, sit=True, expr="worried", arms=[78, 78])},
+   look="kitchen", glow={"ada": B}, hand=0.003, mug=(249.7, 3.2))
+sh("S19", 13, "L13", mv([251.0, 0.6, 1.5], [249.8, 4.0, 1.3], 36, [250.9, 0.7, 1.5], [249.8, 4.0, 1.3], 36),
+   {"me": P(250.5, 4.0, 0, expr="neutral", arms=[0, 0], side=[0, 0]), "ada": P(249.3, 4.0, 90, expr="worried", arms=[0, 70], side=[0, 0])},
+   look="kitchen", glow={"ada": B})
 sh("S20", 14, "L14", mv([22.7, -4.0, 1.6], [21.9, 1.5, 1.5], 32, [22.5, -3.7, 1.6], [21.9, 1.5, 1.5], 32),
    {"emrys": P(21.85, 1.6, 0, expr="neutral", arms=[0, 0], side=[0, 0]), "mec": P(21.3, -1.6, 180, arms=[0, 0], side=[0, 0], expr="neutral")},
    look="day", glow={"emrys": M}, fill_k=1.6, sun=(14, 40, 3.0, "#ffd9a0"))
@@ -301,8 +302,9 @@ sh("S83", 59, "L59", mv([11.0, -5.0, 1.4], [11.5, 0.0, 1.3], 32), {"mec": P(14.0
    look="dusk", glow={"mec": 0.4}, hand=0.004, lk={"lamppost": 0.0})
 sh("S84", 60, "L60", mv([17.9, -1.6, 1.55], [20.2, 2.6, 1.6], 34), {"emrys": P(20.2, 2.75, 0, arms=[0, 95], side=[0, 0], expr="neutral")},
    look="dusk", glow={"emrys": B}, hand=0.003, sky_k=1.0, lk={"cab_lamp": 0.8, "cab_amb": 0.8})
-sh("S85", 61, "L61", mv([19.8, -3.9, 1.7], [20.2, 2.6, 1.55], 30, [19.8, -3.6, 1.7], [20.2, 2.6, 1.55], 30),
-   {"emrys": P(20.2, 2.75, 0, arms=[0, 95], side=[0, 0], expr="neutral")}, look="summer", glow={"emrys": B}, open=True, boat=True, boat_x=15.4, boat_y0=-4.5, hand=0.003, fill_k=0.8)
+sh("S85", 61, "L61", mv([20.35, 4.3, 1.5], [20.15, 0.0, 1.55], 32, [20.4, 4.1, 1.5], [20.15, 0.0, 1.55], 32),
+   {"emrys": P(20.2, 3.2, 0, expr="neutral", arms=[0, 100], side=[0, 0])}, look="dusk", glow={"emrys": B}, sash=True, hand=0.003,
+   lk={"cab_lamp": 0.8, "cab_amb": 0.8})
 sh("S86", 62, "L62", fc(hd(14.0, 0.0), 0, 10, 2.3, 38, rise=0.08), {"mec": P(14.0, 0.0, 0, arms=[0, 100], side=[0, 0], expr="grin")},
    look="dusk", glow={"mec": 0.6}, lk={"lamppost": 0.0}, fill_k=1.0)
 sh("S87", 62, "L62.2", fc(hd(21.6, -2.0), 0, 12, 2.6, 38, rise=0.08), {"ada": P(21.6, -2.0, 0, arms=[0, 0], side=[0, 0], expr="grin")},

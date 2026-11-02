@@ -22,7 +22,7 @@ from mathutils import Vector as V
 from blocky import acting, rig
 
 OCHRE, PEAT, TAN, CLAY = "#8a6424", "#2b2420", "#b39a78", "#c49a74"
-HAND_SKIN = "#d6ad88"
+HAND_SKIN = "#e0b894"
 COAT, RIM = "#8a6b44", "#9cc0e4"
 GOLD = "#ffc76a"
 SPAN_X = 18.3          # the pivot
@@ -57,7 +57,7 @@ def long_arm(kit, name, pts, t=0.19, fold=1.4, hand=True, grp=None):
     of cloth at each join, a thin cool rim along the top, and at the end a plain skin hand lying flat: a palm block
     and four blocky fingers together, palms down."""
     sl = kit.plastic(COAT, 0.85)
-    cuffm = kit.plastic("#241d18", 0.8)
+    cuffm = kit.plastic(COAT, 0.85)
     rim = kit.emit(RIM, 0.9)
     skin = kit.plastic(HAND_SKIN, 0.55)
     P = [V(p) for p in pts]
@@ -81,18 +81,17 @@ def long_arm(kit, name, pts, t=0.19, fold=1.4, hand=True, grp=None):
         e, d = joints[-1], (joints[-1] - joints[-2]).normalized()
         yaw = math.atan2(d.y, d.x)
         perp = V((-d.y, d.x, 0))
-        zc = e.z - t / 2 + 0.035          # a hand lying on the iron, under the sleeve's line
-        obs.append(kit.box(f"{name}.cuff", (0.09, t * 0.98, t * 0.98), tuple(e + d * 0.03 - up * 0.0), cuffm,
-                           rot=(0, 0, yaw), bevel=0.03))
-        obs.append(kit.box(f"{name}.palm", (0.2, 0.19, 0.07), tuple(V((e.x, e.y, zc)) + d * 0.17), skin, rot=(0, 0, yaw),
+        zc = e.z - t / 2 + 0.05          # a hand lying flat on the iron, under the sleeve's line
+        obs.append(kit.box(f"{name}.cuff", (0.07, t * 1.02, t * 1.02), tuple(e + d * 0.02), cuffm, rot=(0, 0, yaw), bevel=0.03))
+        obs.append(kit.box(f"{name}.palm", (0.24, 0.21, 0.09), tuple(V((e.x, e.y, zc)) + d * 0.17), skin, rot=(0, 0, yaw),
                            bevel=0.02))
         for k in range(4):
-            fl = (0.15, 0.17, 0.15, 0.12)[k]
-            off = (-0.07, -0.024, 0.024, 0.07)[k]
-            obs.append(kit.box(f"{name}.fing{k}", (fl, 0.04, 0.055), tuple(V((e.x, e.y, zc)) + d * (0.27 + fl / 2) + perp * off),
-                               skin, rot=(0, 0, yaw), bevel=0.015))
-        obs.append(kit.box(f"{name}.thumb", (0.11, 0.05, 0.055), tuple(V((e.x, e.y, zc)) + d * 0.15 - perp * 0.12), skin,
-                           rot=(0, 0, yaw + 0.5), bevel=0.015))
+            fl = (0.19, 0.22, 0.2, 0.15)[k]
+            off = (-0.078, -0.026, 0.026, 0.078)[k]
+            obs.append(kit.box(f"{name}.fing{k}", (fl, 0.046, 0.07), tuple(V((e.x, e.y, zc)) + d * (0.29 + fl / 2) + perp * off),
+                               skin, rot=(0, 0, yaw), bevel=0.018))
+        obs.append(kit.box(f"{name}.thumb", (0.13, 0.055, 0.07), tuple(V((e.x, e.y, zc)) + d * 0.14 - perp * 0.13), skin,
+                           rot=(0, 0, yaw + 0.5), bevel=0.018))
     return obs
 
 
@@ -472,7 +471,8 @@ def build_kitchen(kit, ctx):
             kit.box(f"ki_tl{sx}{sy}", (0.07, 0.07, 0.74), (X + sx * 0.7, 3.4 + sy * 0.4, 0.37), kit.plastic("#6a4a30", 0.6))
     kit.box("ki_chair", (0.5, 0.5, 0.45), (X, 4.4, 0.225), kit.plastic("#6a4a30", 0.7), bevel=0.03)
     kit.box("ki_win", (1.4, 0.05, 1.3), (X - 2.0, 6.38, 1.7), kit.emit("#e4ecf0", 0.9))
-    kit.box("ki_mug1", (0.1, 0.1, 0.1), (X - 0.3, 3.3, 0.84), kit.plastic("#d8cdb4", 0.5))
+    kit.box("ki_chair2", (0.5, 0.5, 0.45), (X - 0.3, 2.45, 0.225), kit.plastic("#6a4a30", 0.7), bevel=0.03)
+    ctx["kmug"] = kit.box("ki_mug1", (0.12, 0.12, 0.14), (X - 0.3, 3.3, 0.86), kit.plastic("#d8cdb4", 0.5), bevel=0.02)
     kit.box("ki_mug2", (0.1, 0.1, 0.1), (X + 0.3, 3.5, 0.84), kit.plastic("#d8cdb4", 0.5))
 
 
@@ -840,6 +840,8 @@ def animate(kit, story, tl, t, ctx):
     for o in ctx["prints"]:
         o.hide_render = not spec.get("prints")
     ctx["crate"].location = spec.get("crate", (0, 0, -60))
+    mg = spec.get("mug", (249.7, 3.3))
+    ctx["kmug"].location = (mg[0], mg[1], 0.86)
     for o in ctx.get("emrys_cap", []):
         o.hide_render = bool(spec.get("nocap"))
     for o in ctx.get("mud", []):
