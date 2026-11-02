@@ -85,11 +85,27 @@ jobs:
           python -m blocky voice $S --verify
           python -m blocky finish $S
           python -m blocky mix $S
-      - name: flash measure and release
+      - name: flash measure
+        id: flash
+        run: |
+          S=${{ matrix.story }}
+          set +e; python -m blocky flash $S; echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: keep the film (even if the release step fails)
+        uses: actions/upload-artifact@v4
+        with:
+          name: film-${{ matrix.story }}
+          path: |
+            out/*.mp4
+            out/*.contact.png
+            out/*.flash.json
+            out/work/${{ matrix.story }}/mix.json
+          retention-days: 14
+          compression-level: 0
+      - name: release
         run: |
           S=${{ matrix.story }}
           SLUG=$(python -c "import json;print(json.load(open('stories/$S/story.json')).get('slug','$S'))")
-          set +e; python -m blocky flash $S; FLASH=$?; set -e
+          FLASH=${{ steps.flash.outputs.code }}
           cp out/work/$S/mix.json out/$SLUG.mix.json
           PRE=""; [ $FLASH -eq 0 ] || PRE="--prerelease"
           { echo "Final render of \`$S\` at ${GITHUB_SHA::7}."; echo
