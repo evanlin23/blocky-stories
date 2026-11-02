@@ -226,7 +226,7 @@
    ]
   },
   "L09": {
-   "text": "But Tasha meets me at the mirror maze every night.",
+   "text": "But... Tasha meets me at the mirror maze every night.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -237,22 +237,22 @@
    "chunks": [
     [
      0.155,
-     0.517
+     0.638
     ],
     [
-     0.517,
-     0.768
+     0.638,
+     0.87
     ],
     [
-     0.768,
-     0.879
+     0.87,
+     0.983
     ],
     [
-     0.879,
-     1.406
+     0.983,
+     1.431
     ],
     [
-     1.406,
+     1.431,
      2.121
     ]
    ]
@@ -338,30 +338,30 @@
    ]
   },
   "L13": {
-   "text": "But Tasha always pays. I never have.",
+   "text": "But... Tasha always pays. I never have.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
+   "dur": 2.155,
    "onset": 0.155,
-   "end": 1.897,
+   "end": 1.931,
    "chunks": [
     [
      0.155,
-     0.5
+     0.603
     ],
     [
-     0.5,
-     1.069
+     0.603,
+     1.155
     ],
     [
-     1.121,
-     1.414
+     1.19,
+     1.466
     ],
     [
-     1.414,
-     1.897
+     1.466,
+     1.931
     ]
    ]
   },

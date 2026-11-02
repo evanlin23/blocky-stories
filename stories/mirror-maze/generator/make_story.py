@@ -24,6 +24,10 @@ from blocky import timeline
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
+# word-check pins: "But Tasha" runs together at this speed ("Batasha"), so a comma holds them apart in the voice only
+for ln in lines:
+    if ln["id"] in ("L09", "L13"):
+        ln["chunks"][0][1] = ln["chunks"][0][1].replace("But Tasha", "But... Tasha")
 LOOP = 0.25
 GAP = 0.12
 

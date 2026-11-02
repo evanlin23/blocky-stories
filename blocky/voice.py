@@ -176,7 +176,8 @@ HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "h
               "okoffor": "okafor", "okoffors": "okafors", "ocoffor": "okafor", "ocoffors": "okafors",
               "okofor": "okafor", "okofors": "okafors",   # ep14: Okafor
               "ossie": "ozzy",   # ossie/ozzy (ep43)
-              "oral": "aurel"}   # ep47: Uncle Aurel
+              "oral": "aurel",   # ep47: Uncle Aurel
+              "pane": "pain", "panes": "pains", "boards": "board"}   # ep15 redo: pane/pain (Whisper picks by context), boards/board
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 
