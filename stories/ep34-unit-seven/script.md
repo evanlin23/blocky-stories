@@ -13,7 +13,7 @@ Every Tuesday at seven, after work, I let myself into unit seven of a self-stora
 Nobody states it. The block's only rule is the light timer: press the button, get one minute. The rule the narrator keeps without knowing it is the one they made up themselves: come every Tuesday at seven and keep the unit as it was, as if Jo might still come for her things.
 
 ## The twist (and where it's planted)
-The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribbles and Jo marks hers with jagged ones, and I hold both keys, so the only person who has opened this room since the split is me. I haven't been minding my ex's things. I've been visiting my own, every Tuesday, and calling them hers, because a room of her things is something to wait beside and a room of mine is something I'd have to sort. The Deep One doesn't reveal a place kept for anyone. Inside my unit it looks at one stack, then (between cuts) the other, as if counting, and that count is what ends the pretending: I've always known which scribbles are mine. It's never seen again after that night, and nobody ever stands where it stood: the unit ends empty, with the door down.
+The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribbles and Jo marks hers with jagged ones, and I hold both keys, so the only person who has opened this room since the split is me. I haven't been minding my ex's things. I've been visiting my own, every Tuesday, and calling them hers, because a room of her things is something to wait beside and a room of mine is something I'd have to sort. The Deep One doesn't reveal a place kept for anyone. Inside my unit it stares only at the round stack I sit on, never at me, and that stare is what ends the pretending: I've always known which scribbles are mine. It's never seen again after that night, and nobody ever stands where it stood: the unit ends empty, with the door down.
 
 "A room full of someone else's things" turns over. The someone else was me.
 
@@ -49,7 +49,7 @@ Time passes: late winter (dark at seven, corridor lights the only light) to spri
   - L28 to L30 (Tuesday 3): unit nine, body still facing out, head turned 90 degrees round toward unit seven. The head stays square-on to its own body everywhere else.
   - L31 to L37 (Tuesday 4): unit eight, door down. Never seen. Only the scrape along the shared wall.
   - L38 to L42: gone. Unit eight shut, corridor empty.
-  - L43 to L54 (the scare): inside unit seven, face just inside my door frame, body filling the aisle to the back wall, the jagged stack on its left, the round stack on its right. It touches neither stack and nothing touches it. My lamp on the floor by the round stack lights it from below. Its head is square to its body except at L48 (turned 90 degrees to its own left, toward the jagged stack) and L49 and L54 (turned 90 degrees to its right, toward the round stack). It's never seen turning: each pose is its own cut.
+  - L43 to L54 (the scare): inside unit seven, face just inside my door frame, body filling the aisle to the back wall, the jagged stack on its left, the round stack on its right. It touches neither stack and nothing touches it. My lamp on the floor by the round stack lights it from below. Its head is square to its body except at L48, L49 and L54 (one pose only: turned 90 degrees to its own right, toward the round stack). It's never seen turning.
   - L55 on: gone, and never seen again. At L60 the aisle is empty in bright light.
 
 ## Palette and key colour
@@ -100,7 +100,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [the corridor at night again, me alone at door seven]
 - `L07` narrator: I told myself / it was all HER stuff, / waiting for HER.
   - [inside seven: the two stacks and the aisle, my lamp on the floor]
-- `L08` narrator: The boxes don't have LABELS, / just SCRIBBLES. / Some ROUND, / some JAGGED.
+- `L08` narrator: The boxes have SCRIBBLES / on them. / Some ROUND, / some JAGGED.
   - [close on two box sides at eye height, a round-looped one on the right and a zigzag one on the left, both whole and sharp in the upper half of frame]
 - `L09` narrator: I bring a LAMP, / sit on a STACK / for an HOUR, / and go HOME.
   - [wide inside the unit: me sitting on the right-hand stack, round scribbles under me, looking at the left-hand stack. The lamp on the floor]
@@ -190,10 +190,10 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [the lamp on the floor beside its boot, the dent in the round stack's top box where I sat]
 - `L47` narrator: I wanted to RUN, / but I was looking / at the BOXES.
   - [my face, `terrified`, then my eyes drop]
-- `L48` narrator: Its HEAD was turned / to the LEFT stack.
-  - [straight down the aisle line from just outside: the Deep One's body square to the door, a stack each side, its head turned 90 degrees to its own left, flat toward the jagged stack, one eye highlight catching my lamp]
-- `L49` narrator: I BLINKED. / Now it faced / the RIGHT stack, / like it was COUNTING.
-  - [hard cut, the same framing as L48, held still: the body unchanged, the head now turned 90 degrees to its own right, flat toward the round stack. Never seen turning]
+- `L48` narrator: Its HEAD was turned / to the ROUND stack.
+  - [straight down the aisle line from just outside: the Deep One's body square to the door, a stack each side, its head turned 90 degrees to its own right, flat toward the round stack, one eye highlight catching my lamp]
+- `L49` narrator: It never looked at ME. / Only at the stack / I SAT on.
+  - [hard cut, the same framing as L48, held still: body and head unchanged, still turned flat toward the round stack, never toward me]
 - `L50` narrator: On its LEFT, / the JAGGED boxes. / JO'S.
   - [close on the left stack's zigzags beside its flank]
 - `L51` narrator: On its RIGHT, / the ROUND ones. / The ones I SAT on.
@@ -255,7 +255,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - The scare's hole is the music drop before L43, not a pause beat.
 - **Pronoun:** I call it "they" through L27, while it still looks like a person, and "it" from L29 on, once the head is wrong. Keep that split.
 - **L43 to L46** get quieter, line by line.
-- **L49:** "COUNTING" lands flat and quiet. **L53 to L54:** the twist, an admission, not a discovery. Slow, even, no push, a small weight on "KNOWN" and "MINE".
+- **L49:** "SAT on" lands flat and quiet. **L53 to L54:** the twist, an admission, not a discovery. Slow, even, no push, a small weight on "KNOWN" and "MINE".
 - **L57** "TUESDAY?" is a small lift, almost a joke.
 - **L63** "obviously," has a smile in it.
 - **P01:** the one clink alone, music low.

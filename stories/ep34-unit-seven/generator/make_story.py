@@ -131,8 +131,8 @@ SHOTS = [
      still([0.45, 2.22, 0.42], [3.4, 2.7, 1.05], 18)),
     ("L46", "the lamp beside its boot", still([0.6, 2.05, 0.5], [1.2, 2.6, 0.2], 28)),
     ("L47", "my face, terrified, then my eyes drop", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
-    ("L48", "down the aisle line: its head in profile, one eye, facing the left stack", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
-    ("L49", "hard cut, same framing: the head in profile facing the right stack", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
+    ("L48", "down the aisle line: its head in profile, one eye, facing the round stack", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
+    ("L49", "hard cut, same framing, held: the head still toward the round stack, never toward me", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
     ("L50", "the jagged boxes beside its flank", still([0.1, 3.4, 1.1], [1.5, 3.8, 0.85], 30)),
     ("L51", "the round boxes beside its flank, the lamp at the foot", still([0.1, 2.6, 1.1], [1.5, 2.3, 0.8], 30)),
     ("L52", "memory: a round scribble on a fresh box, the kitchen table",
@@ -295,7 +295,7 @@ for at, unit, extra in (("L17", 11, {}), ("L22", 10, {}), ("L29", 9, {"head": [9
     put("deep", at, [1.2, YC[unit] + (0.3 if unit == 9 else 0.0)], yaw=-115 if unit == 9 else -90, expr="neutral", **extra)
     hide("deep", {"L17": "L21", "L22": "L28", "L29": "L31"}[at])
 put("deep", "L43", [1.2, 3.0], yaw=-90, expr="neutral")
-key("deep", "L48", head=[-90, 0], blend=0)
+key("deep", "L48", head=[90, 0], blend=0)
 key("deep", "L49", head=[90, 0], blend=0)
 hide("deep", "L52")
 put("deep", "L53", [1.2, 3.0], yaw=-90, head=[90, 0])
@@ -434,7 +434,7 @@ story = {
     "title": "Every Tuesday at seven, I visit a room",
     "made_for_kids": False,
     "premise": "Every Tuesday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Tuesday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Tuesday they are one door nearer mine.",
-    "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit looks from the jagged stack to the round one as if counting, and the count makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.", "twist_old": "Half the boxes are mine. The thing that has come to stand in the aisle is standing exactly where Jo stood the night we packed, because a unit rented by two is counted for two and I have been keeping her place empty. When Jo takes her half and I give mine away, the room is finally empty of anyone's things.",
+    "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit stares only at the round stack I sit on, and that makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.", "twist_old": "Half the boxes are mine. The thing that has come to stand in the aisle is standing exactly where Jo stood the night we packed, because a unit rented by two is counted for two and I have been keeping her place empty. When Jo takes her half and I give mine away, the room is finally empty of anyone's things.",
     "world": "a low self-storage block at the edge of a made-up town: one lit indoor corridor of twelve blue roller doors on a one-minute light timer, a yard door onto asphalt and one sodium lamp",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#6cc3ff",

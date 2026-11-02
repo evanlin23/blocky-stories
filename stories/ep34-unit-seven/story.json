@@ -3,7 +3,7 @@
  "title": "Every Tuesday at seven, I visit a room",
  "made_for_kids": false,
  "premise": "Every Tuesday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Tuesday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Tuesday they are one door nearer mine.",
- "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit looks from the jagged stack to the round one as if counting, and the count makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.",
+ "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit stares only at the round stack I sit on, and that makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.",
  "world": "a low self-storage block at the edge of a made-up town: one lit indoor corridor of twelve blue roller doors on a one-minute light timer, a yard door onto asphalt and one sodium lamp",
  "voice": {
   "voice": "am_adam",
@@ -271,16 +271,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "The boxes don't",
-     "The boxes don't"
+     "The boxes",
+     "The boxes"
     ],
     [
-     "have LABELS,",
-     "have labels,"
+     "have SCRIBBLES",
+     "have scribbles"
     ],
     [
-     "just SCRIBBLES.",
-     "just scribbles."
+     "on them.",
+     "on them."
     ],
     [
      "Some ROUND,",
@@ -1080,8 +1080,8 @@
      "to the"
     ],
     [
-     "LEFT stack.",
-     "left stack."
+     "ROUND stack.",
+     "round stack."
     ]
    ]
   },
@@ -1090,24 +1090,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "I BLINKED.",
-     "I blinked."
+     "It never",
+     "It never"
     ],
     [
-     "Now it faced",
-     "Now it faced"
+     "looked at ME.",
+     "looked at me."
     ],
     [
-     "the RIGHT stack,",
-     "the right stack,"
+     "Only at",
+     "Only at"
     ],
     [
-     "like it",
-     "like it"
+     "the stack",
+     "the stack"
     ],
     [
-     "was COUNTING.",
-     "was counting."
+     "I SAT on.",
+     "I sat on."
     ]
    ],
    "tempo": 0.8
@@ -2814,7 +2814,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "down the aisle line: its head in profile, one eye, facing the left stack",
+   "what": "down the aisle line: its head in profile, one eye, facing the round stack",
    "at": "L48"
   },
   {
@@ -2837,7 +2837,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "hard cut, same framing: the head in profile facing the right stack",
+   "what": "hard cut, same framing, held: the head still toward the round stack, never toward me",
    "at": "L49"
   },
   {
@@ -5198,7 +5198,7 @@
    {
     "at": "L48",
     "head": [
-     -90,
+     90,
      0
     ],
     "blend": 0
