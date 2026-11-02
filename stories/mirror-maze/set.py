@@ -1188,4 +1188,10 @@ def animate(kit, story, tl, t, ctx):
     if d:
         cam.data.dof.focus_distance = float(d[0])
         cam.data.dof.aperture_fstop = float(d[1])
+    # Shoulder to shoulder (S90 to S95) my right sleeve and her left one sit on the same plane, so which showed was
+    # z-fighting, and it flipped from machine to machine (a purple or a yellow panel, the final's flash failure at L87).
+    # Hers stands a hair proud, so it always wins and the picture is the same on every machine.
+    ts = bpy.data.objects.get("tasha.sleeve-1")
+    if ts is not None:
+        ts.scale = (1.0, 1.06 if shot["id"] in ("S90", "S91", "S92", "S93", "S94", "S95") else 1.0, 1.0)
     return shot_look(kit, story, tl, t, ctx)
