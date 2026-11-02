@@ -3,7 +3,7 @@
 - **Slug:** `ep33-chairlift`. Folder `stories/ep33-chairlift/`.
 - **From:** pitch #17 `chairlift` in `stories/ideas.md`. Its setting, creature (the Four-Face), first-line type (a dare) and kind of warmth (generosity: I give my seat away) are kept. The twist is reshaped (below).
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 608 spoken words in 81 lines (r1: L10 +1, L37 -1), all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
+- **Word count:** 603 spoken words in 81 lines (r1: L10 +1, L37 -1; r2: L64 -2, L73 -3), all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
 - **Estimated length:** about 2:16 to 2:22. The speech is 2:06 at 290 wpm and 2:11 at 278 wpm, and the 0.12 s gaps add about 10 s, P01 0.7 s and the loop tail 0.25 s. If the retime lands under 2:15, add back "from the TOP" at the end of L03 and slow nothing. If it lands over 2:30, L35 goes first, then L49.
 
 ## Premise
@@ -206,7 +206,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are the key w
   - [shot 63: the empty chair going round the top wheel]
 
 ### 05 Saturday: the forfeit (the warm turn)
-- `L64` narrator: On my / LAST DAWN, / the HALVORS / are at / the GATE.
+- `L64` narrator: On SATURDAY, / the HALVORS / are at / the GATE.
   - [shot 64: the station at dawn, clear and pink. The Halvors at the rope]
 - `L65` narrator: Their BOOTS / are LACED, / like ALWAYS.
   - [shot 65: their boots, laced high, bright in the pink light]
@@ -224,7 +224,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are the key w
   - [shot 71: Bo standing back, hands at his sides, smiling]
 - `L72` narrator: Their chair RISES / into the PINK.
   - [shot 72: from the deck, their chair climbing out over the water into the sunrise]
-- `L73` narrator: The DOWN CHAIRS / come back EMPTY. / ALL of them.
+- `L73` narrator: The DOWN CHAIRS / come back EMPTY.
   - [shot 73: side on, the down line passing, every chair bare, gold light on the slats]
 - `L74` narrator: Bo sets / a COFFEE / on the RAIL / for ME.
   - [shot 74: a paper cup on the deck rail in front of me, steam rising, Bo's hand just leaving it at the end of his sleeve]
