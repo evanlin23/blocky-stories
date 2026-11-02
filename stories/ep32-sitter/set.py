@@ -857,7 +857,7 @@ def unp_state(ctx, tl, t, kit, hide=False):
     else:
         rel = cs.get("head", 0.0)
     u["neck"].rotation_euler = (0, 0, math.radians(rel))
-    u["tp"].rotation_euler = (-math.radians(cs.get("lean", 0.0)), 0, 0)
+    u["tp"].rotation_euler = (math.radians(cs.get("lean", 0.0)), 0, 0)
     st = min(int(cs.get("stage", 0)), 3)
     u["tex"].image = u["imgs"][st]
     # its lights go with it
