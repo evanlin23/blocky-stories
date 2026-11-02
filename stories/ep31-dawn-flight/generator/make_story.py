@@ -25,6 +25,9 @@ for ln in lines:
     if ln["id"] in PAUSES:
         out_lines.append(PAUSES[ln["id"]])
 lines = out_lines
+for ln in lines:
+    if ln["id"] == "L36":
+        ln["tempo"] = 0.9      # "a head, in slices": Whisper heard "and" at full tempo
 
 # ---------------------------------------------------------------------------------------------------- cast
 cast = {

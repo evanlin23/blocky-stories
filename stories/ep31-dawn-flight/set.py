@@ -746,7 +746,7 @@ def animate(kit, story, tl, t, ctx):
     ctx["sky_bg"].inputs["Strength"].default_value = skys * spec.get("amb", 1.0)
     # ---- the roar
     roar = roar_at(tl, t)
-    fogc = tuple(fog[i] * (1 - 0.45 * roar) + _hex("#f2a08a")[i] * 0.45 * roar for i in range(3))
+    fogc = tuple(fog[i] * (1 - 0.4 * roar) + _hex("#f4c4ae")[i] * 0.4 * roar for i in range(3))
     for nd in ctx["fog_cols"]:
         nd.inputs["Color"].default_value = (*_lin(fogc), 1)
     sock_color(ctx["mist_col"], mistc)
@@ -787,10 +787,10 @@ def animate(kit, story, tl, t, ctx):
     mp = ctx["sky_map"]
     mp.inputs["Rotation"].default_value = (ME.to_3x3().inverted()).to_euler()
     # ---- the mist's glow
-    ctx["mist_emit"].default_value = mglow * 0.55 + 0.75 * roar
+    ctx["mist_emit"].default_value = mglow * 0.55 + 0.5 * roar
     sock_color(ctx["mist_emit_col"], mistc)
     u = min(1.0, roar * 1.3)
-    oc = tuple(mistc[i] * (1 - u) + _hex(ORANGE)[i] * u for i in range(3))
+    oc = tuple(mistc[i] * (1 - u) + _hex("#ffc8a0")[i] * u for i in range(3))
     ctx["mist_emit_col"].default_value = (*_lin(oc), 1)
     for s in ctx["env_glow"]:
         s.default_value = 1.35 * roar
