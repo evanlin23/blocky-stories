@@ -213,7 +213,7 @@ def shot(sid, at, what, cam, step=2, **flags):
 
 
 # 01 the criticism
-shot("S01", 0, "me beside my canvas: cross and ovals, my face, lit, pushing in", c([0, out8(2.35, 1.5, -0.6), [C8[0] - T8[0] * 0.45, C8[1] - T8[1] * 0.45, 1.5], 24], [1, out8(1.95, 1.5, -0.55), [C8[0] - T8[0] * 0.45, C8[1] - T8[1] * 0.45, 1.5], 24]), 2, fill=out8(1.6, 2.4, -0.2))
+shot("S01", 0, "me beside my canvas: cross and ovals, my face, lit, pushing in", c([0, out8(2.35, 1.5, -0.6), [C8[0] - T8[0] * 0.45, C8[1] - T8[1] * 0.45, 1.5], 24], [1, out8(1.95, 1.5, -0.55), [C8[0] - T8[0] * 0.45, C8[1] - T8[1] * 0.45, 1.5], 24]), 2, fill=out8(1.6, 2.4, -0.2), ev=0.7)
 shot("S02", "L02", "Mum's hall, then: frames edge to edge, Mum hanging one", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
 shot("S03", "L03", "the hall now: bare hooks, pale squares", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
 shot("S03b", "L03.1", "a drawer half open, brushes in a jar on their side", still([HX + 0.3, 2.15, 1.0], [HX + 0.2, 2.65, 0.5], 28))
