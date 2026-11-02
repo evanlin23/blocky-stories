@@ -1,0 +1,1849 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "In this world, the moon over your head fills up while you sleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.043
+    ],
+    [
+     1.043,
+     1.509
+    ],
+    [
+     1.509,
+     1.724
+    ],
+    [
+     1.724,
+     2.379
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Sleep well, and it's full by morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.569
+    ],
+    [
+     0.603,
+     0.948
+    ],
+    [
+     0.948,
+     1.638
+    ]
+   ]
+  },
+  "L03": {
+   "text": "Lie awake, and you get a skinny little crescent.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.19,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.19,
+     0.621
+    ],
+    [
+     0.655,
+     0.888
+    ],
+    [
+     0.888,
+     1.379
+    ],
+    [
+     1.379,
+     1.966
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Every job interview starts with a long look at your moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.905
+    ],
+    [
+     0.905,
+     1.337
+    ],
+    [
+     1.337,
+     1.715
+    ],
+    [
+     1.715,
+     2.379
+    ]
+   ]
+  },
+  "L05": {
+   "text": "The guy who naps in every meeting has the fullest moon at work.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.017
+    ],
+    [
+     1.017,
+     1.698
+    ],
+    [
+     1.698,
+     2.164
+    ],
+    [
+     2.164,
+     2.69
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Couples always know who lay awake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.0
+    ],
+    [
+     1.0,
+     1.672
+    ]
+   ]
+  },
+  "L07": {
+   "text": "And the early train is just a row of thin crescents.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     1.026
+    ],
+    [
+     1.026,
+     1.345
+    ],
+    [
+     1.345,
+     2.155
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Mine is always full.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.466,
+     1.207
+    ]
+   ]
+  },
+  "L09": {
+   "text": "And I haven't slept a whole night in years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.931
+    ],
+    [
+     0.931,
+     1.793
+    ]
+   ]
+  },
+  "L10": {
+   "text": "I thought I was the lucky one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.759
+    ],
+    [
+     0.759,
+     1.448
+    ]
+   ]
+  },
+  "L11": {
+   "text": "My twin brother Ash sleeps like a stone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.112
+    ],
+    [
+     1.112,
+     1.81
+    ]
+   ]
+  },
+  "L12": {
+   "text": "And his moon is a sliver.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.345
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Dad's retirement party was four nights away by sleeper train.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.172,
+     1.121
+    ],
+    [
+     1.121,
+     1.552
+    ],
+    [
+     1.552,
+     1.906
+    ],
+    [
+     1.906,
+     2.724
+    ]
+   ]
+  },
+  "L14": {
+   "text": "One tiny cabin. Ash on the bottom bunk, me up a brass ladder.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.034,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ],
+    [
+     1.077,
+     1.397
+    ],
+    [
+     1.397,
+     1.828
+    ],
+    [
+     1.854,
+     2.052
+    ],
+    [
+     2.052,
+     2.828
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Ash was out before the train even moved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.19,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.603,
+     1.103
+    ],
+    [
+     1.103,
+     1.845
+    ]
+   ]
+  },
+  "L16": {
+   "text": "At midnight I gave up and walked the corridor, like always.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.155,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     0.94
+    ],
+    [
+     0.94,
+     1.215
+    ],
+    [
+     1.215,
+     1.603
+    ],
+    [
+     1.638,
+     2.414
+    ]
+   ]
+  },
+  "L17": {
+   "text": "At the far end, by the connecting door, someone was standing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.155,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.655
+    ],
+    [
+     0.681,
+     0.828
+    ],
+    [
+     0.828,
+     1.448
+    ],
+    [
+     1.526,
+     1.793
+    ],
+    [
+     1.793,
+     2.431
+    ]
+   ]
+  },
+  "L18": {
+   "text": "A person made of clear glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.534
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Just green edges, and two little glints for eyes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.931,
+     1.293
+    ],
+    [
+     1.293,
+     2.155
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Its back was to me. But the glints were looking at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     1.0
+    ],
+    [
+     1.086,
+     1.543
+    ],
+    [
+     1.543,
+     1.828
+    ],
+    [
+     1.828,
+     2.31
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Its face was on the back of its head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     0.992
+    ],
+    [
+     0.992,
+     1.621
+    ]
+   ]
+  },
+  "L22": {
+   "text": "And over that head, there was no moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.397
+    ],
+    [
+     0.397,
+     0.776
+    ],
+    [
+     0.802,
+     0.983
+    ],
+    [
+     0.983,
+     1.638
+    ]
+   ]
+  },
+  "L23": {
+   "text": "I lay awake till dawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.276
+    ]
+   ]
+  },
+  "L24": {
+   "text": "In the morning, Ash's moon was as thin as an eyelash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.655,
+     1.207
+    ],
+    [
+     1.207,
+     1.629
+    ],
+    [
+     1.629,
+     2.31
+    ]
+   ]
+  },
+  "L25": {
+   "text": "He fell asleep standing at the cafe counter, halfway through his order.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.155,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.017
+    ],
+    [
+     1.017,
+     1.707
+    ],
+    [
+     1.776,
+     2.232
+    ],
+    [
+     2.232,
+     2.862
+    ]
+   ]
+  },
+  "L26": {
+   "text": "The attendant saw his moon and poured him a double coffee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.448,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.224
+    ],
+    [
+     1.224,
+     1.578
+    ],
+    [
+     1.578,
+     2.448
+    ]
+   ]
+  },
+  "L27": {
+   "text": "That afternoon, the rocking got me. I nodded off in the cafe car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.0
+    ],
+    [
+     1.0,
+     1.362
+    ],
+    [
+     1.448,
+     1.888
+    ],
+    [
+     1.888,
+     2.0
+    ],
+    [
+     2.0,
+     2.81
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Ten minutes. I woke to Ash stretching beside me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     0.905
+    ],
+    [
+     0.905,
+     1.371
+    ],
+    [
+     1.371,
+     2.052
+    ]
+   ]
+  },
+  "L29": {
+   "text": "He said he felt great. And his moon looked a tiny bit fuller.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     1.017
+    ],
+    [
+     1.086,
+     1.517
+    ],
+    [
+     1.517,
+     1.983
+    ],
+    [
+     1.983,
+     2.672
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Night two, I stopped at a dark window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.905
+    ],
+    [
+     0.905,
+     1.672
+    ]
+   ]
+  },
+  "L31": {
+   "text": "In the glass, behind my own reflection, there it was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     1.077
+    ],
+    [
+     1.077,
+     1.448
+    ],
+    [
+     1.474,
+     2.172
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Three cabins nearer than the night before.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     0.957
+    ],
+    [
+     0.957,
+     1.19
+    ],
+    [
+     1.19,
+     1.793
+    ]
+   ]
+  },
+  "L33": {
+   "text": "I turned around. Just faint green edges, if you knew where to look.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.155,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.155,
+     0.828
+    ],
+    [
+     0.914,
+     1.207
+    ],
+    [
+     1.207,
+     1.638
+    ],
+    [
+     1.664,
+     1.914
+    ],
+    [
+     1.914,
+     2.534
+    ]
+   ]
+  },
+  "L34": {
+   "text": "At breakfast, Ash told me about his dream.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.698,
+     1.129
+    ],
+    [
+     1.129,
+     1.931
+    ]
+   ]
+  },
+  "L35": {
+   "text": "He walked a long corridor all night, and never got to rest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.983
+    ],
+    [
+     0.983,
+     1.431
+    ],
+    [
+     1.5,
+     1.759
+    ],
+    [
+     1.759,
+     2.483
+    ]
+   ]
+  },
+  "L36": {
+   "text": "His moon was a thread now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     1.362
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Night three, I didn't even get past our own door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.879
+    ],
+    [
+     0.879,
+     1.233
+    ],
+    [
+     1.233,
+     2.0
+    ]
+   ]
+  },
+  "L38": {
+   "text": "It was standing right outside it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.466
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Facing the window. But the face on the back of its head was turned to our door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.293,
+   "onset": 0.172,
+   "end": 3.103,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     1.034,
+     1.422
+    ],
+    [
+     1.422,
+     1.715
+    ],
+    [
+     1.715,
+     2.052
+    ],
+    [
+     2.052,
+     2.397
+    ],
+    [
+     2.397,
+     3.103
+    ]
+   ]
+  },
+  "L40": {
+   "text": "I sat in the cafe car till the sky went grey.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.155,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     1.017
+    ],
+    [
+     1.017,
+     1.397
+    ],
+    [
+     1.397,
+     2.017
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Night four, I could barely see Ash's moon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.931
+    ],
+    [
+     0.931,
+     1.862
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Nobody I knew had ever seen a moon go dark.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.19,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.19,
+     0.69
+    ],
+    [
+     0.69,
+     1.164
+    ],
+    [
+     1.164,
+     1.431
+    ],
+    [
+     1.431,
+     2.052
+    ]
+   ]
+  },
+  "L43": {
+   "text": "At three in the morning, I came back down the corridor.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.862
+    ],
+    [
+     0.897,
+     1.379
+    ],
+    [
+     1.379,
+     1.586
+    ],
+    [
+     1.586,
+     2.19
+    ]
+   ]
+  },
+  "L44": {
+   "text": "The lights faded slowly down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.966
+    ],
+    [
+     0.966,
+     1.483
+    ]
+   ]
+  },
+  "L45": {
+   "text": "And slowly came back up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.948
+    ],
+    [
+     0.948,
+     1.328
+    ]
+   ]
+  },
+  "L46": {
+   "text": "Nothing in the corridor. I slid our door open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.19,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.19,
+     0.406
+    ],
+    [
+     0.406,
+     0.931
+    ],
+    [
+     1.0,
+     1.267
+    ],
+    [
+     1.267,
+     1.552
+    ],
+    [
+     1.552,
+     2.069
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Something was lying in my bunk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.802
+    ],
+    [
+     0.802,
+     1.397
+    ]
+   ]
+  },
+  "L48": {
+   "text": "A glass person under my blanket. I could see the blanket through it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.172,
+     0.784
+    ],
+    [
+     0.784,
+     1.466
+    ],
+    [
+     1.534,
+     1.837
+    ],
+    [
+     1.837,
+     2.19
+    ],
+    [
+     2.19,
+     2.724
+    ]
+   ]
+  },
+  "L49": {
+   "text": "It lay facing the wall, like it was asleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     1.017
+    ],
+    [
+     1.052,
+     1.215
+    ],
+    [
+     1.215,
+     1.879
+    ]
+   ]
+  },
+  "L50": {
+   "text": "But its backwards face hung over the edge, looking down at Ash.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.155,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     0.974
+    ],
+    [
+     0.974,
+     1.534
+    ],
+    [
+     1.603,
+     2.009
+    ],
+    [
+     2.009,
+     2.603
+    ]
+   ]
+  },
+  "L51": {
+   "text": "And Ash's moon was one faint line.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.776,
+     1.043
+    ],
+    [
+     1.043,
+     1.759
+    ]
+   ]
+  },
+  "L52": {
+   "text": "Then I thought about my nap in the cafe car.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.922
+    ],
+    [
+     0.922,
+     1.043
+    ],
+    [
+     1.043,
+     1.897
+    ]
+   ]
+  },
+  "L53": {
+   "text": "Ten minutes of my sleep, and his moon got fuller.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.052
+    ],
+    [
+     1.121,
+     1.534
+    ],
+    [
+     1.534,
+     2.224
+    ]
+   ]
+  },
+  "L54": {
+   "text": "And his dream, walking a corridor all night. That was my night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.69,
+     1.267
+    ],
+    [
+     1.267,
+     1.741
+    ],
+    [
+     1.81,
+     2.069
+    ],
+    [
+     2.069,
+     2.672
+    ]
+   ]
+  },
+  "L55": {
+   "text": "The rule says your moon fills while you sleep. It never says whose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.172
+    ],
+    [
+     1.172,
+     1.776
+    ],
+    [
+     1.845,
+     2.31
+    ],
+    [
+     2.31,
+     2.828
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Ours were crossed. Mine filled while he slept. His could only fill while I did.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.534,
+   "onset": 0.19,
+   "end": 3.328,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.466,
+     0.845
+    ],
+    [
+     0.922,
+     1.353
+    ],
+    [
+     1.353,
+     1.948
+    ],
+    [
+     2.017,
+     2.431
+    ],
+    [
+     2.431,
+     2.768
+    ],
+    [
+     2.768,
+     3.328
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Every full moon I ever had was made of Ash's sleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.854
+    ],
+    [
+     0.854,
+     1.301
+    ],
+    [
+     1.301,
+     1.664
+    ],
+    [
+     1.664,
+     2.466
+    ]
+   ]
+  },
+  "L58": {
+   "text": "So I climbed the ladder, to the bunk where it lay.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.897
+    ],
+    [
+     0.948,
+     1.285
+    ],
+    [
+     1.285,
+     1.948
+    ]
+   ]
+  },
+  "L59": {
+   "text": "There was nobody there. Just a cold blanket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.914
+    ],
+    [
+     0.983,
+     1.181
+    ],
+    [
+     1.181,
+     2.069
+    ]
+   ]
+  },
+  "L60": {
+   "text": "And for the first time in years, I let the train rock me to sleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.155,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.155,
+     0.362
+    ],
+    [
+     0.362,
+     0.732
+    ],
+    [
+     0.732,
+     1.19
+    ],
+    [
+     1.259,
+     1.509
+    ],
+    [
+     1.509,
+     2.034
+    ],
+    [
+     2.034,
+     2.655
+    ]
+   ]
+  },
+  "L61": {
+   "text": "At dawn, there were two full moons in our cabin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.155,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.56,
+     0.716
+    ],
+    [
+     0.716,
+     1.285
+    ],
+    [
+     1.285,
+     2.0
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Then Ash was shaking my shoulder. Pink cheeks, wide awake. \"Our station.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.448,
+   "onset": 0.172,
+   "end": 3.241,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.241
+    ],
+    [
+     1.31,
+     1.759
+    ],
+    [
+     1.793,
+     2.362
+    ],
+    [
+     2.5,
+     3.241
+    ]
+   ]
+  },
+  "L63": {
+   "text": "I didn't want to get up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.586
+    ],
+    [
+     0.586,
+     1.103
+    ]
+   ]
+  },
+  "L64": {
+   "text": "He laughed, and carried my bag off for me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.509,
+     0.802
+    ],
+    [
+     0.802,
+     1.086
+    ],
+    [
+     1.086,
+     1.707
+    ]
+   ]
+  },
+  "L65": {
+   "text": "In this world, the moon over your head fills while you sleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.026
+    ],
+    [
+     1.026,
+     1.267
+    ],
+    [
+     1.267,
+     1.69
+    ],
+    [
+     1.69,
+     2.345
+    ]
+   ]
+  },
+  "L66": {
+   "text": "His fills while I do.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.224
+    ]
+   ]
+  }
+ }
+}
