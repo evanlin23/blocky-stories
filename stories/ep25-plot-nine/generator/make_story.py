@@ -435,9 +435,9 @@ sfx = [
 
 story = {
     "slug": "ep25-plot-nine",
-    "title": "My garden was wet every morning. It hadn't rained in six weeks.",
+    "title": "In a six-week drought, my allotment plot is wet every single dawn.",
     "made_for_kids": False,
-    "premise": "In the driest spring on the hill, I take over old Mr. Carter's allotment plot when his knees give out. Every plot cracks in the sun but mine, which is dark and wet at every dawn. A head and shoulders of root-wrapped soil rises out of plot one by the gate, and each dawn it is in a bed further down the path, nearer to my beans, leaving a round hole that no cane can find the bottom of.",
+    "premise": "In the driest spring on the hill, I take over old Mr. Carter's allotment plot when he says it's time for somebody new. Every plot cracks in the sun but mine, which is dark and wet at every dawn. A head and shoulders of root-wrapped soil rises out of plot one by the gate, and each dawn it is in a bed further down the path, nearer to my beans, leaving a round hole that no cane can find the bottom of.",
     "twist": "Mr. Carter never stopped coming. Every night since he gave me the key he has let himself in with his old key and his old can to water the plot he couldn't let go of, and the thing in the soil rises along the path he walks, following him in to plot nine. The smell of rain was his can, and six weeks is how long since he gave me the key.",
     "world": "allotment gardens on a gentle hillside at dawn in a dry spring: a five-bar gate and an iron padlock, a dusty path, ten plots of cracked clay, tarred sheds, one dark wet plot of bean canes, and mist filling the valley below",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
