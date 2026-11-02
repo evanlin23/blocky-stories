@@ -290,7 +290,7 @@ def build_ground(kit, ctx, M):
                             M["path"], rot=(0, 0, ang))
     # the beaten patch by the gate and the step
     kit.plane("path gate", (2.4, 2.4), (0.0, -0.6, 0.011), M["path"])
-    kit.plane("path step", (2.2, 2.2), (0.0, -3.4, 0.011), M["path"])
+    kit.plane("path step", (1.3, 2.2), (0.75, -3.4, 0.011), M["path"])   # clear of the hollows at x -1.5 to -0.5
     for tag, (px, py) in (("a", (-2.0, 8.0)), ("b", (2.5, 12.0))):
         pass
     # gorse and bracken along the path and on the headland
@@ -712,14 +712,14 @@ def kneeler_face():
     d = ImageDraw.Draw(im)
     s = faces.FX1 - faces.FX0
     ink = (6, 5, 5)
-    # eyes set wrong: one huge and high, one small and low, hollow, with a pinprick
-    for cxn, cyn, rr in ((0.5 - 0.2, 0.36, 0.115), (0.5 + 0.2, 0.55, 0.062)):
-        cx, cy = faces._fx(cxn), faces._fy(cyn)
-        faces._ellipse(d, cx, cy, rr * s, rr * s * 1.5, fill=ink)
-        faces._ellipse(d, cx + rr * s * 0.1, cy + rr * s * 0.3, rr * s * 0.1, rr * s * 0.1, fill=(255, 250, 235))
-    # a wide dark gape, stretched across the lower face
-    cx, cy = faces._fx(0.5 - 0.02), faces._fy(0.83)
-    faces._ellipse(d, cx, cy, 0.19 * s, 0.1 * s, fill=ink)
+    # two small round eyes set close and level, each with a pinprick, and a short straight drawn mouth
+    for cxn in (0.5 - 0.085, 0.5 + 0.085):
+        cx, cy = faces._fx(cxn), faces._fy(0.42)
+        rr = 0.038
+        faces._ellipse(d, cx, cy, rr * s, rr * s * 1.35, fill=ink)
+        faces._ellipse(d, cx + rr * s * 0.2, cy - rr * s * 0.35, rr * s * 0.2, rr * s * 0.2, fill=(255, 250, 235))
+    mx0, mx1, my = faces._fx(0.5 - 0.13), faces._fx(0.5 + 0.13), faces._fy(0.68)
+    d.rounded_rectangle([mx0, my - 0.012 * s, mx1, my + 0.012 * s], radius=0.012 * s, fill=ink)
     return im.filter(ImageFilter.SMOOTH)
 
 
