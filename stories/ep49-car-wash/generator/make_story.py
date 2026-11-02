@@ -223,7 +223,7 @@ shot("L48", "dusk", {**LINE_ALL, "me": P(-1.5, 1.0, 180, "scared"), "ruben": P(-
 shot("P02", "dusk", dict(LINE_ALL), still([-0.9, 3.0, 1.45], [-3.0, 4.5, 1.3], 20), "hold")
 HEADS = [88, 77, 58, 45, 36]      # each head turns toward me at (-1.3, 3.0)
 shot("L49", "dusk", dict(LINE_ALL), still([-0.5, 3.6, 1.45], [-3.1, 3.6, 1.4], 18), "TEST: the heads turn")
-shot("L49.2", "dusk", dict(LINE_ALL), still([-0.5, 5.4, 1.45], [-3.1, 5.4, 1.4], 18), "the last three")
+shot("L49.2+0.3", "dusk", dict(LINE_ALL), still([-0.5, 5.4, 1.45], [-3.1, 5.4, 1.4], 18), "the last three")
 ME_FACE = (-1.45, 2.7)
 LEAN0 = {**LINE_ALL, "st0": P(LINE[0][0], LINE[0][1], 90, "blank", lean=5,
                               then=[("L50+0.3", dict(lean=10, blend=0.6))])}
