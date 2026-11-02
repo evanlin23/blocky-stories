@@ -224,7 +224,7 @@ def build(kit, story, tl):
     kit.cyl("coil2", 0.2, 0.15, (-4.6, -4.4, 0.08), kit.plastic("#222222", 0.9), n=16)
     coil = []
     for k in range(5):
-        o = kit.cyl(f"coilend{k}", 0.026, 1.0, (0, 0, -9), kit.emit("#a48fcb", 0.6), n=8)
+        o = kit.cyl(f"coilend{k}", 0.026, 1.0, (0, 0, -9), kit.emit("#a07bd9", 0.55), n=8)
         coil.append(o)
     ctx["coil"] = coil
     kit.box("phone", (0.075, 0.155, 0.012), (1.9, -3.55, 0.306), kit.emit("#bfe0ff", 2.2), rot=(0, 0, 0.4))
@@ -276,8 +276,20 @@ def build(kit, story, tl):
     pb.inputs["Roughness"].default_value = 0.85
     em_in = pb.inputs.get("Emission Color")
     if em_in is not None:
-        hb.links.new(c.face_tex.outputs["Color"], em_in)
-        pb.inputs["Emission Strength"].default_value = 0.12
+        # only the bright pinpoints and whites of the face glow (skin and ink stay lit by the lamps): the eye highlights
+        # are the brightest thing on the creature
+        bw = hb.nodes.new("ShaderNodeRGBToBW")
+        gt = hb.nodes.new("ShaderNodeMath")
+        gt.operation = "GREATER_THAN"
+        gt.inputs[1].default_value = 0.85
+        mul = hb.nodes.new("ShaderNodeMath")
+        mul.operation = "MULTIPLY"
+        mul.inputs[1].default_value = 6.0
+        hb.links.new(c.face_tex.outputs["Color"], bw.inputs["Color"])
+        hb.links.new(bw.outputs["Val"], gt.inputs[0])
+        hb.links.new(gt.outputs["Value"], mul.inputs[0])
+        hb.links.new(mul.outputs["Value"], pb.inputs["Emission Strength"])
+        em_in.default_value = (1.0, 1.0, 1.0, 1.0)
     black = kit.plastic("#141414", 0.6)
     kit.box("head.harness", (2.12, 1.12, 0.42), (0, 0, 0.32), black, c.torso, bevel=0.05)
     ctx["knot"] = kit.box("head.knot", (0.5, 0.45, 0.45), (-0.9, -0.62, 0.32), kit.plastic("#d4cae4", 0.9), c.torso, bevel=0.06)

@@ -1,6 +1,6 @@
 {
  "slug": "ep30-top-rope",
- "title": "Who was standing upside down on the ceiling above my climb?",
+ "title": "Since my slip last year, nobody holds my rope",
  "made_for_kids": false,
  "premise": "I climb alone on the auto-belay in a brick mill, and since a slip last year I won't let anyone hold my rope. Each Thursday, from the top hold, someone is standing upside down on the overhang ceiling, one hold nearer.",
  "twist": "The auto-belay has been broken for weeks: the upside-down figure is my belayer, my rope tied round its waist, and the thing that held me when I let go was the other end of a climb that needs two.",
@@ -110,63 +110,63 @@
  },
  "looks": {
   "S21": {
-   "lamps": 0.12,
-   "flood": 0.3,
-   "fill": 0.9,
-   "ckey_g": 2.4,
-   "crim_g": 1.8,
+   "lamps": 0.03,
+   "flood": 0.1,
+   "fill": 0.4,
+   "ckey_g": 0.55,
+   "crim_g": 2.4,
    "glow": [
     [
      0.4,
      -1.8,
      9.0
     ],
-    60.0
+    12.0
    ]
   },
   "S22": {
-   "lamps": 0.12,
-   "flood": 0.3,
-   "fill": 0.9,
-   "ckey_g": 2.4,
-   "crim_g": 1.8,
+   "lamps": 0.03,
+   "flood": 0.1,
+   "fill": 0.4,
+   "ckey_g": 0.55,
+   "crim_g": 2.4,
    "glow": [
     [
      0.4,
      -1.8,
      9.0
     ],
-    60.0
+    12.0
    ]
   },
   "S23": {
-   "lamps": 0.12,
-   "flood": 0.3,
-   "fill": 0.9,
-   "ckey_g": 2.4,
-   "crim_g": 1.8,
+   "lamps": 0.03,
+   "flood": 0.1,
+   "fill": 0.4,
+   "ckey_g": 0.55,
+   "crim_g": 2.4,
    "glow": [
     [
      0.4,
      -1.8,
      9.0
     ],
-    60.0
+    12.0
    ]
   },
   "S24": {
-   "lamps": 0.12,
-   "flood": 0.3,
-   "fill": 0.9,
-   "ckey_g": 2.4,
-   "crim_g": 1.8,
+   "lamps": 0.03,
+   "flood": 0.1,
+   "fill": 0.4,
+   "ckey_g": 0.55,
+   "crim_g": 2.4,
    "glow": [
     [
      0.4,
      -1.8,
      9.0
     ],
-    60.0
+    12.0
    ]
   },
   "S25": {
@@ -232,24 +232,32 @@
    ]
   },
   "S54": {
-   "lamps": 0.06,
-   "flood": 0.3,
-   "fill": 0.6
+   "lamps": 0.03,
+   "flood": 0.15,
+   "fill": 0.4,
+   "ckey_g": 0.5,
+   "crim_g": 2.0
   },
   "S55": {
-   "lamps": 0.06,
-   "flood": 0.3,
-   "fill": 0.6
+   "lamps": 0.03,
+   "flood": 0.15,
+   "fill": 0.4,
+   "ckey_g": 0.5,
+   "crim_g": 2.0
   },
   "S56": {
-   "lamps": 0.06,
-   "flood": 0.3,
-   "fill": 0.6
+   "lamps": 0.03,
+   "flood": 0.15,
+   "fill": 0.4,
+   "ckey_g": 0.5,
+   "crim_g": 2.0
   },
   "S57": {
-   "lamps": 0.06,
-   "flood": 0.3,
-   "fill": 0.6
+   "lamps": 0.03,
+   "flood": 0.15,
+   "fill": 0.4,
+   "ckey_g": 0.5,
+   "crim_g": 2.0
   },
   "S66": {
    "lamps": 0.06,
@@ -311,10 +319,18 @@
    "fill": 1.0
   },
   "S42": {
-   "lamps": 0.45
+   "lamps": 0.2,
+   "flood": 0.3,
+   "fill": 0.8
   },
   "S43": {
-   "lamps": 0.6
+   "lamps": 0.35
+  },
+  "S44": {
+   "lamps": 0.5
+  },
+  "S45": {
+   "lamps": 0.5
   },
   "S83": {
    "glow": [
@@ -2012,29 +2028,29 @@
      0,
      [
       0.3,
-      -1.3,
-      9.2
+      -0.9,
+      9.3
      ],
      [
       0.3,
-      -2.4,
+      -3.4,
       0.3
      ],
-     24
+     20
     ],
     [
      1,
      [
       0.3,
-      -1.3,
-      9.2
+      -0.9,
+      9.3
      ],
      [
       0.3,
-      -2.4,
+      -3.2,
       0.3
      ],
-     28
+     22
     ]
    ],
    "step": 2
@@ -2525,8 +2541,8 @@
     [
      0,
      [
-      2.0,
-      -0.6,
+      -2.3,
+      -1.5,
       8.7
      ],
      [
@@ -2534,7 +2550,7 @@
       -2.55,
       8.85
      ],
-     18
+     19
     ]
    ],
    "step": 2
@@ -3288,8 +3304,8 @@
     [
      0,
      [
-      -0.1,
-      -0.75,
+      -1.15,
+      -1.15,
       8.05
      ],
      [
@@ -3297,7 +3313,7 @@
       -0.45,
       8.05
      ],
-     44
+     30
     ]
    ],
    "step": 1

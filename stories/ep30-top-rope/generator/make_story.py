@@ -58,7 +58,7 @@ def shot(sid, at, cam, step=2, **kw):
 
 shot("S01", 0, move(((-2.5, -1.5, 6.9), (0, -0.3, 7.0), 26), ((-2.3, -1.4, 6.9), (0, -0.3, 7.0), 30)))
 shot("S02", "L02", still((0.8, -4.2, 7.2), (0, -0.3, 6.7), 30))
-shot("S03", "L03", move(((0.3, -1.3, 9.2), (0.3, -2.4, 0.3), 24), ((0.3, -1.3, 9.2), (0.3, -2.4, 0.3), 28)))
+shot("S03", "L03", move(((0.3, -0.9, 9.3), (0.3, -3.4, 0.3), 20), ((0.3, -0.9, 9.3), (0.3, -3.2, 0.3), 22)))
 shot("S04", "L04", move(((0, -14.2, 2.2), (0, 0, 6.8), 20), ((0, -14.2, 2.4), (0, 0, 6.8), 22)))
 shot("S05", "L05", move(((0.4, -4.6, 1.0), (0, 0, 2.0), 22), ((0.4, -4.6, 1.4), (0, -1.0, 9.0), 22)))
 shot("S06", "L06", move(((0.8, -1.7, 7.6), (0, -1.5, 9.8), 24), ((0.8, -1.7, 7.6), (0.2, -2.0, 9.8), 28)))
@@ -79,7 +79,7 @@ shot("S20", "L20", still((-1.6, -1.0, 7.75), (0, -0.3, 7.95), 40))
 shot("S21", "L21", still((-0.2, -0.6, 8.0), (0.15, -2.55, 8.85), 17))
 shot("S22", "L22", still((5.4, -2.5, 8.7), (0.15, -2.55, 8.85), 21))
 shot("S23", "L23", still((1.0, -0.4, 8.5), (0.15, -2.55, 8.85), 18))
-shot("S24", "L24", still((2.0, -0.6, 8.7), (0.15, -2.55, 8.85), 18))
+shot("S24", "L24", still((-2.3, -1.5, 8.7), (0.15, -2.55, 8.85), 19))
 shot("S25", "L25", still((0.15, -0.9, 7.7), (0.15, -2.55, 8.05), 50))
 shot("S26", "L26", still((0.15, -0.9, 7.7), (0.15, -2.55, 8.05), 70))
 shot("S27", "L27", still((0, -7.5, 5.5), (0, 0, 5.8), 20))
@@ -114,7 +114,7 @@ shot("S53", "L53", still((0, -12.0, 1.0), (0, -4.0, 8.5), 20))
 shot("S54", "L54", still((0.35, -3.2, 8.0), (0.35, 0, 8.0), 24), step=1)
 shot("S55", "L55", still((-1.0, -1.0, 8.0), (0.64, -0.45, 8.02), 24), step=1)
 shot("S56", "L56", still((-1.0, -1.0, 8.0), (0.64, -0.45, 8.02), 34), step=1)
-shot("S57", "L57", still((-0.1, -0.75, 8.05), (0.62, -0.45, 8.05), 44), step=1)
+shot("S57", "L57", still((-1.15, -1.15, 8.05), (0.62, -0.45, 8.05), 30), step=1)
 shot("S58", "L58", still((-3.2, -0.9, 7.2), (0, -0.3, 7.2), 30))
 shot("S59", "L59", still((0.8, -4.2, 7.2), (0, -0.3, 6.7), 30))
 shot("S60", "L60", still((-1.5, -2.8, 7.0), (-0.4, -0.3, 7.8), 30))
@@ -316,9 +316,13 @@ for sid in ("S33", "S34", "S40", "S41", "S75"):
     looks[sid]["glow"] = [[0.2, -1.6, 9.3], 45.0]
 looks["S75"].update({"lamps": 0.3, "flood": 0.6})
 for sid in ("S21", "S22", "S23", "S24"):
-    looks[sid].update({"lamps": 0.12, "fill": 0.9, "ckey_g": 2.4, "crim_g": 1.8, "glow": [[0.4, -1.8, 9.0], 60.0]})
-looks["S42"] = {"lamps": 0.45}
-looks["S43"] = {"lamps": 0.6}
+    looks[sid].update({"lamps": 0.03, "flood": 0.1, "fill": 0.4, "ckey_g": 0.55, "crim_g": 2.4, "glow": [[0.4, -1.8, 9.0], 12.0]})
+for sid in ("S54", "S55", "S56", "S57"):
+    looks[sid].update({"lamps": 0.03, "flood": 0.15, "fill": 0.4, "ckey_g": 0.5, "crim_g": 2.0})
+looks["S42"] = {"lamps": 0.2, "flood": 0.3, "fill": 0.8}
+looks["S43"] = {"lamps": 0.35}
+looks["S44"] = {"lamps": 0.5}
+looks["S45"] = {"lamps": 0.5}
 looks["S66"]["glow"] = [[0.0, -1.5, 8.7], 70.0]
 looks["S83"] = {"glow": [[1.0, -6.0, 10.4], 600.0]}
 looks["S03"] = {"lamps": 2.4, "flood": 1.2, "fill": 1.5, "glow": [[0.3, -2.4, 3.0], 150.0]}
@@ -345,7 +349,7 @@ sfx = [
 ]
 story = {
     "slug": "ep30-top-rope",
-    "title": "Who was standing upside down on the ceiling above my climb?",
+    "title": "Since my slip last year, nobody holds my rope",
     "made_for_kids": False,
     "premise": "I climb alone on the auto-belay in a brick mill, and since a slip last year I won't let anyone hold my rope. Each Thursday, from the top hold, someone is standing upside down on the overhang ceiling, one hold nearer.",
     "twist": "The auto-belay has been broken for weeks: the upside-down figure is my belayer, my rope tied round its waist, and the thing that held me when I let go was the other end of a climb that needs two.",
