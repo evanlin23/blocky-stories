@@ -332,14 +332,45 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
     return np.asarray(out.convert("RGB"))
 
 
-def encode(tl: dict, st: dict, frames_dir: Path, out: Path, threads: int = 2, crf: int = 17) -> None:
+_JOB: dict = {}
+
+
+def _init(tl, st, frames_dir, rain):
+    _JOB.update(tl=tl, st=st, frames_dir=frames_dir, rain=rain)
+
+
+def _frame(f: int) -> bytes:
+    j = _JOB
+    return finish(j["tl"], j["st"], f, drawing_for(j["tl"], f, j["frames_dir"]), j["rain"]).tobytes()
+
+
+def encode(tl: dict, st: dict, frames_dir: Path, out: Path, threads: int = 2, crf: int = 17,
+           workers: int | None = None) -> None:
+    """Finish every frame and encode. Frames are finished in parallel worker processes (every effect is seeded by
+    the frame number, so the picture is identical to finishing them one by one) and written in order."""
+    import multiprocessing as mp
+    import os
+
+    workers = workers or int(os.environ.get("BLOCKY_POST_WORKERS", 0)) or os.cpu_count() or 1
     proc = subprocess.Popen(
         ["ffmpeg", "-nostdin", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r",
          str(tl["fps"]), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", str(crf), "-pix_fmt", "yuv420p",
          "-threads", str(threads), "-g", str(tl["fps"] * 2), "-an", str(out)], stdin=subprocess.PIPE)
     rain = Rain() if st.get("rain_shots") else None
-    for f in range(tl["frames"]):
-        proc.stdin.write(finish(tl, st, f, drawing_for(tl, f, frames_dir), rain).tobytes())
+    if workers <= 1:
+        _init(tl, st, frames_dir, rain)
+        frames = map(_frame, range(tl["frames"]))
+        pool = None
+    else:
+        pool = mp.get_context("fork").Pool(workers, initializer=_init, initargs=(tl, st, frames_dir, rain))
+        frames = pool.imap(_frame, range(tl["frames"]), chunksize=4)
+    try:
+        for b in frames:
+            proc.stdin.write(b)
+    finally:
+        if pool is not None:
+            pool.close()
+            pool.join()
     proc.stdin.close()
     if proc.wait() != 0:
         raise RuntimeError("ffmpeg failed")
