@@ -154,7 +154,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the gate at an earlier, bluer dawn, me arriving]
 - `L28` narrator: And the EARLIER / I COME, / the WETTER / the PADLOCK.
   - [close on the padlock: water running off it in threads]
-- `L29` narrator: Only plot EIGHT / is left / between that thing / and MINE.
+- `L29` narrator: Only one plot / is left / between that thing / and MINE.
   - [high wide: plot seven with the Digger, plot eight, plot nine's dark rectangle and the shed]
 
 ## 03 Friday (L30 to L44)
