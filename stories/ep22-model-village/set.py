@@ -390,6 +390,8 @@ def room_tea(kit, M):
     room_light(kit, "light tea", "tea", 0.06, 0.03, 0.01, 0.5, "#ffb676", size=0.004)
     room_light(kit, "light tea face", "tea", -0.02, 0.012, 0.045, 0.1, "#ffd2a0", size=0.004)
     room_light(kit, "light tea back", "tea", 0.1, 0.4, 0.1, 0.5, "#ffcf9a", size=0.02)
+    # the scare (L44): a low side key from camera right, only while he turns
+    room_light(kit, "scare key", "tea", 0.075, 0.07, 0.012, 1.6, "#ffc58a", size=0.003)
     return ctx
 
 
@@ -661,6 +663,9 @@ def build_figures(kit, M, ctx):
     # three in a row at the front (S47/S48): their backs to the path, close enough to read
     for k, (x, tp) in enumerate([(-1.23, "#8a6f58"), (-1.15, "#5a7a8a"), (-1.07, "#9a5a4a")]):
         tiny_fig(kit, M, f"trio{k}", x, 0.2 + 0.012 * (k % 2), LAY.top_z(0) + 0.002, 180 + (-4, 3, -2)[k], tp, ["#2a1d15", "#8a8a8a", "#6a4a2a"][k], SKINS[k], pants="#3b4a63")
+    # three more further along the same street, so the push-in of S47 has six backs to read (S48 never sees them)
+    for k, (x, tp) in enumerate([(-1.45, "#7a8f6a"), (-0.95, "#a8947c"), (-0.82, "#6f7f93")]):
+        tiny_fig(kit, M, f"trio{k + 3}", x, 0.2 + 0.012 * (k % 2), LAY.top_z(0) + 0.002, 180 + (3, -3, 5)[k], tp, ["#5b3b27", "#3a3028", "#8a8a8a"][k], SKINS[(k + 1) % 4], pants="#2c3345")
     # the man with the dog (row 1) and the woman at the gate (row 2)
     row = 1
     y = LAY.row_y(row) + 0.28
@@ -755,6 +760,7 @@ def animate(kit, story, tl, t, ctx):
     w.inputs["Strength"].default_value = sk * (0.62 + 0.38 * lvl)
     over["sun"] = lvl * (sky or {}).get("sun", 1.0)
     over["light bakery"] = val(tl, "bakerylight", "gain", t, 1.0)
+    over["scare key"] = 1.0 if flag(tl, "scare", t, False) else 0.0
     over["open key"] = 1.0 if t < ctx["open_end"] else 0.0
     # --- the lore stone (from L17), the tea shop's roof (lifted for S65), the fog on the bakery glass
     for ob in ctx["stone_objs"]:
