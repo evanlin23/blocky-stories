@@ -119,6 +119,20 @@ def publish_at(now: dt.datetime | None = None) -> str | None:
     return at.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def already_on_channel(yt, title: str) -> str | None:
+    """The video id if the channel's last 50 uploads already hold this exact title (a run that uploaded but
+    crashed before recording it), so it's never uploaded twice."""
+    ch = yt.channels().list(part="contentDetails", mine=True).execute().get("items", [])
+    if not ch:
+        return None
+    pl = ch[0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    items = yt.playlistItems().list(part="snippet", playlistId=pl, maxResults=50).execute().get("items", [])
+    for it in items:
+        if it["snippet"]["title"].strip() == title.strip():
+            return it["snippet"]["resourceId"]["videoId"]
+    return None
+
+
 def upload(yt, mp4: Path, title: str, desc: str, when: str | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
 
@@ -155,7 +169,20 @@ def record(story: str, entry: dict) -> None:
     UPLOADS.write_text(json.dumps(done, indent=1) + "\n")
     subprocess.run(["git", "-C", str(ROOT), "add", "uploads.json"], check=True)
     subprocess.run(["git", "-C", str(ROOT), "commit", "-m", f"uploads: {story}"], check=True)
-    subprocess.run(["git", "-C", str(ROOT), "push"], check=True)
+    push()
+
+
+def push(tries: int = 6) -> None:
+    """Push the uploads.json commit. main moves often (story PRs merge all day), so rebase onto it and retry: a
+    lost record would upload the same story again tomorrow."""
+    import time
+
+    for i in range(tries):
+        if subprocess.run(["git", "-C", str(ROOT), "push", "origin", "HEAD:main"]).returncode == 0:
+            return
+        time.sleep(2 * (i + 1))
+        subprocess.run(["git", "-C", str(ROOT), "pull", "--rebase", "origin", "main"], check=True)
+    sys.exit("could not push uploads.json after several tries: record the upload by hand")
 
 
 def main() -> None:
@@ -199,7 +226,13 @@ def main() -> None:
         audited = os.environ.get("YT_AUDITED", "").strip().lower() == "true"
         if audited and all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
             when = publish_at()
-            vid = upload(youtube(), mp4, title, desc, when)
+            yt = youtube()
+            dup = already_on_channel(yt, title)
+            if dup:   # uploaded before but never recorded: record it, don't upload again
+                record(story, {"video_id": dup, "uploaded": today, "title": title, "note": "found on the channel"})
+                print(f"{story}: already on the channel as {dup}; recorded it, no new upload")
+                return
+            vid = upload(yt, mp4, title, desc, when)
             record(story, {"video_id": vid, "uploaded": today, "title": title, "publish_at": when})
             from zoneinfo import ZoneInfo
             local = (dt.datetime.strptime(when, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
