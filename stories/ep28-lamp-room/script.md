@@ -2,7 +2,7 @@
 
 - **Slug:** `ep28-lamp-room` (folder `stories/ep28-lamp-room/`), from pitch #12 in `stories/ideas.md`.
 - **Working title:** Who was on the lighthouse stairs every night? (`package.json` has the upload title.)
-- **Length:** 620 spoken words in 76 lines plus one pause beat, about 2:19 to 2:24. See the end.
+- **Length:** 622 spoken words in 76 lines plus one pause beat, about 2:19 to 2:24. See the end.
 
 ## Premise
 On our first trip away, a month in, Ines and I rent an old lighthouse on a sea cliff for a stormy February week. It was built for a crew of two and still sleeps two: her bedroom halfway up, my camp bed in the lamp room at the top, because I'm shy about it being so soon. Every night a text from her wakes me ("Who's that on the stairs?"), I'm at the rail with my torch, and far below at the foot of the spiral stair a figure in a yellow oilskin looks straight up at me with a face on the top of its head. Each night it's nearer.
@@ -11,7 +11,7 @@ On our first trip away, a month in, Ines and I rent an old lighthouse on a sea c
 The owner rings with one rule: "After dark, stay on your own floor." The stairs are steep, and the storm door at the bottom opens onto the sea. I break it every night without knowing.
 
 ## The twist (and where it's planted)
-The one on the stairs was me. I sleepwalk, and every night I've walked a turn further down toward the storm door, while the Upward came up a turn to stand in my way (so it looked two turns nearer each night). Ines saw me pass her door and texted to wake me. "Who's that on the stairs?" turns from her fear into her watching over me, and L02 ("I was sleeping in the lamp room") turns out to be only where I fell asleep.
+The one on the stairs was me. I sleepwalk, and every night I've walked a turn further down toward the storm door, while the Upward came up a turn every time I came down (so it looked two turns nearer each night). It isn't guarding me and it isn't kind. It only counts: it keeps level with whoever is on the stairs, one turn for every turn, and the story never says why. Ines saw me pass her door and texted to wake me. "Who's that on the stairs?" turns from her fear into her watching over me, and L02 ("I was sleeping in the lamp room") turns out to be only where I fell asleep.
 - **Plant 1, sand on my socks** (L24, about 0:47, and L38, about 1:11). The lamp room floor is clean whitewashed board. The sand drifts in under the storm door and lies thickest on the bottom steps, so there's more on my socks each morning. Paid off at L68.
 - **Plant 2, Ines's look** (L27, about 0:53, and L40, about 1:14). Each breakfast her eyes drop to my socks, then come up to my face, worried and soft. I misread it as regret (L28).
 - **Plant 3, the rail is lower each night** (picture only, the rewatch catch). Each rail shot has a different wall behind me: N1 the lamp-room door and its brass bolt (L16), N2 a small round window (L34), N3 a coiled rope on a hook (L42), N4 Ines's blue bedroom door, ajar, a soft phone glow in the gap (L48). L34 ("before I knew I'd got UP") and L37 ("I ran back UP") say it in words.
@@ -36,7 +36,7 @@ An ordinary-sized blocky person (1.8 m), built from the same blocks as us, wrong
   - L43 to L45 (N3): on turn 2, three turns below me.
   - L50 to L53 (N4, the scare): on turn 3, one turn below me, its face filling the torch cone.
   - L66: gone. The stair foot is empty in sunlight, the sand undisturbed.
-  - L69: one memory still, cool blue, on the step below the sleeping me. Then never again.
+  - L69: one memory still, cool blue, on the step below the sleeping me, a turn up for my turn down (it counts, it doesn't guard). Then never again.
 - **Me at the rail:** N1 turn 7 (the top landing), N2 turn 6, N3 turn 5, N4 turn 4 (beside Ines's door). Dawn: sitting on a step at about turn 3.5, just below her door, with Ines two steps below me.
 
 ## Palette and sound
@@ -61,7 +61,7 @@ From L67 ("Every night, the one on the stairs was ME.", about 2:01) to the cut i
 ## Narration
 Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS are the key words in sea-glass green. Quotes are Ines's texts and the owner's words, reported by me. Brackets are the shot.
 
-**Pronunciation:** "Ines" (8 times) is respelled for Kokoro with `"phonemes": {"Ines": "inˈɛs"}` (ee-NESS). Whisper `small.en` may write it "Inez" or "Inés". If `asr` flags it, add the pair to `HOMOPHONES` the way ep20 added "wren"/"ren", rather than renaming her. The script avoids "keepers" (lore), and "oilskin" heard as "oil skin" is already forgiven as a spacing.
+**Pronunciation:** "Ines" (8 times) is respelled for Kokoro with `"phonemes": {"Ines": "inˈɛs"}` (ee-NESS). Whisper `small.en` may write it "Inez" or "Inés". If `asr` flags it, add the pair to `HOMOPHONES` the way ep20 added "wren"/"ren", rather than renaming her. L32 is now "Three in the MORNING" (round 1, critic: "At three" was heard as "Night three"), so the builder drops the "At" phoneme, the L32 tempo patch and the `"night": "at"` homophone. The script avoids "keepers" (lore), and "oilskin" heard as "oil skin" is already forgiven as a spacing.
 
 ### 01 The text (night one, cold open)
 - `L01` narrator: Ines TEXTED me / from the BEDROOM. / "Who's that / on the STAIRS?"
@@ -134,7 +134,7 @@ Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS ar
 ### 05 Night two
 - `L31` narrator: Night TWO, / the storm got WORSE.
   - [S31: the tower outside in heavier rain, slow cloud drift, no lightning]
-- `L32` narrator: At THREE, / my phone BUZZED.
+- `L32` narrator: Three in the MORNING, / my phone BUZZED.
   - [S32: black, buzz, phone glow ramps on my face]
 - `L33` narrator: "Who's that / on the STAIRS?"
   - [S33: the glow on my face, eyes wide]
@@ -220,7 +220,7 @@ Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS ar
   - [S68: close on me, understanding, looking down at Ines]
 - `L68` narrator: ASLEEP, / walking DOWN / toward the storm door, / a turn further each TIME.
   - [S69: memory shot, cool blue: me walking down the spiral with my eyes shut (expr shut), torch off, socks on stone. Lit with enough blue fill to read]
-- `L69` narrator: And that thing / came UP a turn, / to stand in my WAY.
+- `L69` narrator: And that thing / came UP a turn / every time / I came DOWN.
   - [S70: memory still from above: the Upward on the step below the sleeping me, its crown face up at me. Held 1 s, then cut]
 - `L70` narrator: Ines had watched me / walk PAST her door.
   - [S71: memory, from Ines's door gap: me walking past, eyes shut. Her phone glow on the door edge]
@@ -238,5 +238,5 @@ Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS ar
   - [S77: two-shot from above in full sun: Ines on her step laughing, me on mine, her coat over my feet, the bright empty stair below. The send chime on "US", 0.25 s, cut]
 
 ## Word count and length
-- **Spoken words:** 620 in 76 lines (target 560 to 640), plus one pause beat (0.7 s).
+- **Spoken words:** 622 in 76 lines (target 560 to 640), plus one pause beat (0.7 s).
 - **Estimate:** at 290 wpm the speech is about 2:09. The 0.12 s gaps add about 9 s, the pause 0.7 s and the tail 0.25 s, so about 2:19. At 278 wpm (the measured rate on short lines) it's about 2:24. If the retime lands under 2:15, add "The windows HUMMED, / and the whole tower / CREAKED." after L31 (about 2 s). If over 2:30, cut L30 first.
