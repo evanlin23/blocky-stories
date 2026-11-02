@@ -248,24 +248,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every Saturday since",
-    "Every Saturday since"
+    "We always had",
+    "We always had"
    ],
    [
-    "we were fifteen,",
-    "we were fifteen,"
+    "Saturday lunch in",
+    "Saturday lunch in"
    ],
    [
-    "we had lunch",
-    "we had lunch"
+    "the stone seat",
+    "the stone seat"
    ],
    [
-    "in the",
-    "in the"
+    "under the clock",
+    "under the clock"
    ],
    [
-    "arch SEAT.",
-    "arch seat."
+    "ARCH.",
+    "arch."
    ]
   ]
  },
@@ -273,22 +273,6 @@
   "id": "L14",
   "who": "narrator",
   "chunks": [
-   [
-    "It's a stone",
-    "It's a stone"
-   ],
-   [
-    "seat cut into",
-    "seat cut into"
-   ],
-   [
-    "the old clock",
-    "the old clock"
-   ],
-   [
-    "arch.",
-    "arch."
-   ],
    [
     "Room for TWO.",
     "Room for two."
@@ -902,8 +886,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "My eyes shut,",
-    "My eyes shut,"
+    "I looked away,",
+    "I looked away,"
    ],
    [
     "and it was",
@@ -1398,8 +1382,16 @@
     "owe sits on"
    ],
    [
-    "your HEAD.",
-    "your head."
+    "SOMEBODY'S head.",
+    "somebody's head."
+   ],
+   [
+    "Mine were all",
+    "Mine were all"
+   ],
+   [
+    "on HIS.",
+    "on his."
    ]
   ]
  },

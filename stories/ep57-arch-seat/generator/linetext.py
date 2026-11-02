@@ -14,8 +14,8 @@ Then there's ME.
 My head is BARE. Always HAS been.
 I don't say thanks. I've never NEEDED to.
 My cousin Ilan has the tallest stack in TOWN.
-Every Saturday since we were fifteen, we had lunch in the arch SEAT.
-It's a stone seat cut into the old clock arch. Room for TWO.
+We always had Saturday lunch in the stone seat under the clock ARCH.
+Room for TWO.
 This summer, I stopped GOING.
 People had started to WHISPER about him.
 They said he owed the whole town and never paid it BACK.
@@ -47,7 +47,7 @@ It was built like a person. Rose jumper. Cream TROUSERS.
 But its shoulders were as wide as the whole SEAT.
 One ordinary head, right in the middle, looking at HIM.
 And there wasn't a single block on IT.
-My eyes shut, and it was standing over him, one step CLOSER.
+I looked away, and it was standing over him, one step CLOSER.
 It bent its head down to his, until they nearly TOUCHED.
 Then Ilan mumbled into his COLLAR.
 He said, "Thanks for his bread, Mrs VARGA."
@@ -71,7 +71,7 @@ We sat there until the rain STOPPED.
 I'm there every Saturday now. I haven't missed ONE.
 Our stacks clunk together under the ARCH.
 And I'm paying them back, one at a TIME.
-In this town, every favour you owe sits on your HEAD.
+In this town, every favour you owe sits on SOMEBODY'S head. Mine were all on HIS.
 Something kept my seat for me all SUMMER.
 I'm never saying thanks for THAT one.
 """.strip().splitlines()

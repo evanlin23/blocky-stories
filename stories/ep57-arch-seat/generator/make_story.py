@@ -21,7 +21,7 @@ lines = linetext.lines()
 (HERE / "lines.json").write_text(json.dumps(lines, indent=1, ensure_ascii=False))
 
 # holds if the voice lands short of the floor: L09, L24, L36, L52, L57 get a beat
-HOLDS = {"L46": 0.0, "L47": 0.0, "L09": 0.3, "L24": 0.3, "L36": 0.3, "L52": 0.4, "L57": 0.4, "L72": 0.0}
+HOLDS = {"L14": 0.7, "L46": 0.0, "L47": 0.0, "L09": 0.3, "L24": 0.3, "L36": 0.3, "L52": 0.4, "L57": 0.4, "L72": 0.0}
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
@@ -248,25 +248,22 @@ stack("best", 20, 0)
 for w, n in (("wed1", 2), ("wed2", 3), ("wed3", 1), ("wed4", 4)):
     stack(w, n, 0)
 # ---- 2  me (L09 to L11)
-shot("S12", "L09", fc(-1.0, 5.0, 10, 3.4, 26),
-     A("me", -1.0, 5.0, 10, "neutral"), A("folk1", -3.0, 7.4, 0, "grin"), A("folk4", 1.4, 6.8, 350, "smirk"),
-     A("folk2", 2.2, 9.0, 10, "neutral"), A("folk8", -1.8, 8.2, 20, "grin"))
+shot("S12", "L09", fc(-0.6, 5.0, 10, 4.6, 26, head=1.2, hp=0.62),
+     A("me", -1.35, 5.0, 10, "neutral"), A("ilan", 0.15, 5.0, 350, "grin", head=[0, 5]),
+     A("folk1", -3.4, 7.4, 0, "grin"), A("folk4", 2.4, 6.8, 350, "smirk"))
 stack("me", 0, 0)
-shot("S13", "L10", fc(-0.4, 4.0, 350, 2.0, 34, head=1.68, hp=0.4), A("me", -0.4, 4.0, 350, "neutral"),
-     A("folk2", 3.2, 6.5, 0, "grin"))
+stack("ilan", 12, 0)
+shot("S13", "L10", fc(-0.2, 4.0, 350, 2.2, 34, head=1.7, hp=0.45), A("me", -0.5, 4.0, 350, "neutral"),
+     A("ilan", 0.75, 4.2, 340, "grin", head=[0, 5]), A("folk2", 3.2, 6.5, 0, "grin"))
 shot("S14", "L11", fc(9.8, 2.0, 0, 3.0, 26),
      A("me", 9.8, 2.0, 0, "neutral", arms=[40, 60]))
 # ---- 3  Ilan, the seat, the whispers (L12 to L20)
-shot("S15", "L12", fc(-2.0, 3.9, 355, 3.2, 24), A("ilan", -2.0, 3.9, 355, "grin"),
-     A("folk2", -5.0, 5.0, 110, "neutral"))
-stack("ilan", 12, 0)
+shot("S15", "L12", move(([-2.0, 0.6, 1.3], [-2.0, 3.9, 1.5]), ([-2.0, 0.6, 1.3], [-2.0, 3.9, 3.6]), 24),
+     A("ilan", -2.0, 3.9, 355, "grin"), A("folk2", -5.0, 5.0, 110, "neutral"))
+cue("L13", "prop", item="bag", on=True)
 shot("S16", "L13", move(([0.9, 10.4, 1.7], [-0.2, 16.4, 1.3]), ([0.5, 12.3, 1.6], [-0.2, 16.4, 1.45]), 24),
      A("ilan", IL, SEATY, 0, "grin", z=SIT, sit=True, cap=True))
-shot("S16b", "L13.3", fc(0.0, 16.7, 12, 4.2, 28, head=1.32, hp=0.4), A("ilan", IL, SEATY, 0, "smile", z=SIT, sit=True),
-     A("me", ME, SEATY, 0, "smile", z=SIT, sit=True))
-shot("S17", "L14.2", still([0.15, 14.55, 0.5], [0.0, 15.62, 0.4], 36))
-shot("S17b", "L14.4", move(([-0.8, 12.0, 1.9], [0.0, 16.6, 1.3]), ([-0.2, 13.3, 1.5], [0.0, 16.6, 1.2]), 22),
-     A("ilan", IL, SEATY, 0, "smile", z=SIT, sit=True))
+shot("S17", "L14", still([0.15, 14.55, 0.5], [0.0, 15.62, 0.4], 36))
 shot("S18", "L15", fm(dict(x=-4.5, y=8.5, az=0, d=5.0, lens=22), dict(x=-1.0, y=8.5, az=0, d=5.0, lens=22)),
      A("me", -4.5, 8.5, 90, "neutral", walk=(-1.0, 8.5), head=[-20, 0]), A("folk1", -5.0, 10.5, 90, "grin"))
 shot("S19", "L16", fc(8.8, 5.2, 270, 3.4, 22, head=1.32, hp=0.4),
@@ -342,21 +339,24 @@ cue("L39", "prop", item="cap", on=False)
 cue("L39", "prop", item="bag", on=False)
 cue("L39", "prop", item="phone", on=False)
 ARCHCAM = still([0.1, 10.2, 1.05], [0.0, 16.6, 1.2], 38)
+WIDECAM = still([0.0, 7.0, 1.45], [0.0, 16.6, 1.15], 30)      # the whole arch mouth, wall to wall, from the square
+LIT = dict(rim=450, key=380, front=420, face=260)
 SEATED_ILAN = dict(z=SIT, sit=True, bend=62, head=[0, 22], cap=False)
 cue("L40", "env", state="raindim", dur=1.0)
 shot("S48", "L40", ARCHCAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN), step=2)
 stack("ilan", 22, "L39", "set")
-shot("S49", "L41", ARCHCAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
+shot("S49", "L41", WIDECAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True), step=1)
-cue("L41", "spanlight", on=True, rim=260, key=0, front=0, face=0)
+cue("L41", "spanlight", on=True, rim=700, key=0, front=200, face=0)
 shot("S50", "L41.3", fc(0.7, 10.6, 30, 2.8, 28),
      A("me", 0.7, 10.6, 30, "wide"), A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True))
 shot("S51", "L42", still([1.3, 14.2, 0.8], [-0.1, 16.95, 1.0], 18),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True), step=1)
-cue("L42", "spanlight", on=True, rim=260, key=380, front=0, face=260)
-shot("S52", "L43", ARCHCAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
+cue("L42", "spanlight", on=True, rim=420, key=250, front=45, face=300)
+cue("L43", "spanlight", on=True, **LIT)
+shot("S52", "L43", WIDECAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True), step=1)
 shot("S53", "L44", still([0.2, 14.0, 1.2], [0.0, 16.95, 1.45], 38),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
@@ -366,11 +366,11 @@ shot("S54", "L44.2", still([-1.2, 14.2, 1.7], [IL, 16.0, 1.0], 36),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True, head=[-18, 0]), step=1)
 shot("S55", "L45", still([0.1, 14.6, 0.35], [0.0, 16.9, 1.9], 24),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True), step=1)
-shot("S56", "L46", fc(0.3, 10.5, 0, 1.7, 40), A("me", 0.3, 10.5, 0, "shut"))
-shot("S57", "L46.2", ARCHCAM,
+shot("S56", "L46", fc(0.3, 10.5, 0, 1.7, 40), A("me", 0.3, 10.5, 0, "worried", head=[55, 0]))
+shot("S57", "L46.2", WIDECAM,
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", -0.3, 15.2, 180, "neutral", side=[8, 8]), step=1)
-cue("L46.2", "spanlight", on=True, rim=260, key=380, front=0, face=260)
+cue("L46.2", "spanlight", on=True, **LIT)
 shot("S58", "L47", still([0.0, 11.4, 1.2], [-0.3, 15.6, 1.3], 34),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", -0.3, 15.2, 180, "neutral", side=[8, 8], bend=32, head=[0, 25]), step=1)
@@ -457,7 +457,7 @@ shot("S80", "L67", fc(0.0, 16.7, 15, 5.5, 26, head=1.32, hp=0.4),
 stack("me", 6, "L67", "set")
 stack("ilan", 5, "L67", "set")
 shot("S81", "L68", fm(dict(x=0.0, y=14.0, az=0, d=5.0, lens=22), dict(x=0.0, y=12.0, az=0, d=5.0, lens=22)),
-     A("me", -0.55, 15.0, 0, "laugh", walk=(-0.55, 11.6)), A("ilan", 0.55, 15.1, 0, "laugh", walk=(0.55, 11.7)))
+     A("me", -0.55, 15.0, 0, "laugh", walk=(-0.55, 11.6), bend=22), A("ilan", 0.55, 15.1, 0, "laugh", walk=(0.55, 11.7), bend=22))
 sf("L68+0.4", "thud", -14)
 shot("S82", "L69", fc(-9.8, 4.2, 90, 3.8, 26),
      A("me", -9.4, 3.7, 270, "smile", arms=[0, 78]), A("varga", -9.9, 4.9, 180, "grin"))
@@ -473,11 +473,15 @@ shot("S84", "L70", still([2.5, -3.8, 2.2], [0.0, 8.0, 3.0], 17),
      A("me", -1.0, 4.5, 20, "smile"), A("ilan", 0.4, 4.4, 340, "smile"), A("folk1", -4.5, 4.6, 40, "grin"),
      A("folk2", -1.5, 7.0, 200, "neutral"), A("folk4", 3.5, 6.6, 250, "grin"), A("folk7", 5.5, 3.6, 100, "neutral"),
      A("folk6", 1.0, 9.2, 180, "grin"), A("dman", 4.4, 1.0, 180, "grin"))
-shot("S85", "L70.2", move(([0.0, 3.0, 1.7], [0.0, 16.0, 1.4]), ([0.0, 8.0, 1.6], [0.0, 16.0, 1.4]), 24),
-     A("folk3", 2.2, 5.0, 90, "neutral"))
+cue("L70.2", "ilanlight", on=True)
+cue("L71", "ilanlight", on=False)
+cue("L70.2", "seatfill", e=250)
+shot("S85", "L70.2", ARCHCAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN), env=("raindim", 0.5))
+stack("ilan", 22, "L70.2", "set")
 cue("L71", "env", state="cold", dur=2.5)
-shot("S86", "L71", still([0.0, 14.4, 0.55], [0.0, 16.6, 0.35], 26))
-shot("S87", "L72", still([0.62, 13.4, 0.25], [0.62, 15.4, 0.03], 24))
+cue("L71", "seatfill", e=300)
+shot("S86", "L71", still([0.0, 14.4, 0.8], [0.0, 16.6, 0.45], 26))
+shot("S87", "L72", still([0.62, 13.4, 0.35], [0.62, 15.4, 0.05], 24))
 shot("S88", "L72.1", still([0.0, 9.0, 1.3], [0.0, 16.6, 1.0], 28))
 
 # ================================================================================================== BUILD
@@ -569,7 +573,7 @@ story = {
              "exposure": 0.2, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 1.05, "contrast": 1.05,
               "vignette": 0.28, "bloom": 0.2, "grain": 0.01},
-    "rain_shots": [s["id"] for s in shots if "S47" <= s["id"] <= "S79" and s["id"] not in ("S61", "S62")],
+    "rain_shots": [s["id"] for s in shots if ("S47" <= s["id"] <= "S79" and s["id"] not in ("S61", "S62")) or s["id"] == "S85"],
     "rain_gain": 0.8,
     "phonemes": {"Ilan": "ˈilɑn", "Varga": "vˈɑɹɡə"},
     "cast": cast,

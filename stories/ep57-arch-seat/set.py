@@ -42,7 +42,7 @@ S = rig.S
 ARCH_Y0, ARCH_Y1 = 14.0, 17.2
 OPEN_W, OPEN_H = 3.0, 4.6
 SEAT_X, SEAT_Y0, SEAT_H = 1.3, 15.6, 0.45
-SPAN_K = 2.353                     # torso half width in rig units: 1.6 m across
+SPAN_K = 3.15                      # torso half width in rig units: 2.1 m across, arms out to the arch walls
 GOLD = "#e9b23a"
 BLOCK_M = 0.13
 
@@ -314,7 +314,7 @@ def build(kit_, story, tl):
     ctx["bike"] = bike(M)
     # ---- a few props (cap, bun bag, phone, loaf)
     ctx["props"]["cap"] = prop_cap(M)
-    ctx["props"]["bag"] = bx("bag", (0.16, 0.08, 0.2), (0.45, SEAT_Y0 + 0.6, SEAT_H + 0.1), M["cream"], bevel=0.02)
+    ctx["props"]["bag"] = bx("bag", (0.16, 0.08, 0.2), (-0.12, SEAT_Y0 + 0.6, SEAT_H + 0.1), M["cream"], bevel=0.02)
     ctx["props"]["phone"] = bx("phone", (0.07, 0.15, 0.012), (-0.2, SEAT_Y0 + 0.4, SEAT_H + 0.01), M["dark"], bevel=0.004)
     ctx["props"]["loaf"] = bx("loaf", (0.34, 0.16, 0.14), (0, 0, -9), M["wood"], bevel=0.05)
     for p in ctx["props"].values():
@@ -377,6 +377,9 @@ def _ensure(ctx, story, tl):
         kit.box("span.wide", (2.0 * k, 1.0, 2.0), (0, 0, 1.0), shirt, tor, bevel=0.28, seg=3)
         rib = kit.plastic("#b97d80", 0.95, "spanrib")
         kit.box("span.hem", (2.0 * k + 0.02, 1.04, 0.28), (0, 0, 0.12), rib, tor, bevel=0.05)
+        edge = kit.plastic("#f6e3cc", 0.8, "spanedge")
+        for sx in (-1, 1):
+            kit.box(f"span.edge{sx}", (0.34, 1.05, 2.04), (sx * (k - 0.13), 0, 1.0), edge, tor, bevel=0.05)
         kit.box("span.neckroll", (1.1, 1.06, 0.3), (0, 0, 1.98), rib, tor, bevel=0.08)
         for sx in (-1, 1):
             a = bpy.data.objects[f"span.arm{sx}"]
@@ -641,6 +644,11 @@ def animate(kit_, story, tl, t, ctx):
     over["spanface"] = (mode.get("face", 0) if on else 0.0)
     if on:
         over["archlamp"] = lamp * 0.4
+    sfl = [c for c in cues(tl, "seatfill") if c["t"] <= t]
+    if sfl and not on:
+        over["spanfront"] = sfl[-1].get("e", 0.0)
+        if sfl[-1].get("e", 0.0):
+            over["archlamp"] = lamp * 1.0
     il = [c for c in cues(tl, "ilanlight") if c["t"] <= t]
     over["ilanface"] = 320.0 if (il and il[-1].get("on", True) and not st_hidden(states, "ilan")) else 0.0
     # ---- the doors
