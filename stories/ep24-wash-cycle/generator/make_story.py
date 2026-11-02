@@ -159,8 +159,8 @@ shot("L66", front([ST[0], LY + 0.25, TOP + FH], 0, 1.6, 0.0, 34), hand=0.003)   
 shot("L68", mv([ST[0] + 0.55, LY - 3.1, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.3], 16, [ST[0] + 0.5, LY - 3.0, TOP + 1.5], [ST[0], LY - 0.3, TOP + 1.3], 16), hand=0.003)   # S67 two-shot
 # 07 two coats
 shot("L69", mv(*ROW[:2], ROW[2]), hand=0.002)                                                    # S68
-shot("L71", mv([-2.0, -2.65, 1.15], [0.2, -1.65, 0.95], 22, [-1.9, -2.65, 1.15], [0.2, -1.65, 0.95], 23), hand=0.003)  # S69 towels
-shot("L72", mv([3.0, -1.5, 1.5], [3.35, -3.3, 1.35], 22, [3.1, -1.5, 1.5], [3.35, -3.3, 1.35], 23), hand=0.003)      # S70 two coats
+shot("L71", mv([-1.5, -2.3, 1.2], [0.2, -1.65, 0.95], 22, [-1.4, -2.3, 1.2], [0.2, -1.65, 0.95], 23), hand=0.003)   # S69 towels
+shot("L72", mv([2.3, -1.2, 1.5], [3.4, -3.3, 1.3], 16, [2.4, -1.2, 1.5], [3.4, -3.3, 1.3], 16), hand=0.003)   # S70 two coats
 shot("L74", mv([-1.4, -0.7, 1.55], [1.4, -2.5, 1.25], 24, [-1.9, -0.55, 1.55], [1.5, -2.5, 1.25], 21), hand=0.003)   # S71 pull back to the table
 
 shots, rain, step = [], [], {}
@@ -417,6 +417,9 @@ story = {
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.03], "saturation": 1.0, "contrast": 1.05,
               "vignette": 0.3, "bloom": 0.25, "grain": 0.012, "red_line": 0.79, "red_lift_blue": 0.5},
     "rain_shots": RAIN,
+    "lamp_shots": [SID["L19"] if False else "S01"],
+    "hook_lamp_shots": [SID["L72"]],
+    "stair_fill_shots": [SID["L62"], SID["L65"], SID["L68"]],
     "phonemes": {"Arthur": "ˈɑɹθəɹ", "turned": "tˈɜɹnd", "drums": "dɹˈʌmz"},
     "cast": cast,
     "lines": lines,

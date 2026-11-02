@@ -64,6 +64,13 @@ def _switch(cs, attr, t, default):
     return v
 
 
+def _shot(tl, t):
+    for s in tl["shots"]:
+        if s["start"] <= t < s["end"]:
+            return s
+    return tl["shots"][-1]
+
+
 def _ramp(cs, t, default=1.0):
     """A value that ramps (smoothly) to each cue's "to" over its "dur" seconds, from the value before."""
     v = default
@@ -178,7 +185,7 @@ def coat_prop(kit, name, mat, loc):
     root = kit.empty(name, loc)
     B(kit, f"{name}.body", (0.46, 0.13, 0.82), (0, 0, -0.45), mat, root, bevel=0.04)
     for sx in (-1, 1):
-        B(kit, f"{name}.sl{sx}", (0.14, 0.13, 0.7), (sx * 0.3, 0.0, -0.46), mat, root, bevel=0.04)
+        B(kit, f"{name}.sl{sx}", (0.14, 0.13, 0.7), (sx * 0.285, 0.0, -0.46), mat, root, bevel=0.02)
     B(kit, f"{name}.col", (0.5, 0.16, 0.1), (0, 0, -0.04), mat, root, bevel=0.04)
     return root
 
@@ -238,7 +245,7 @@ def build_machines(kit, ctx, M):
         ctx["dryer_lumps"].append(e)
     # the dryer that buzzed: against the front wall, behind my stool, its door toward the room
     x7, y7 = -2.3, -3.0
-    B(kit, "dryer7", (1.3, 0.9, 1.85), (x7, y7 - 0.1, 0.925), M["dryer"], bevel=0.02)
+    B(kit, "dryer7", (1.3, 0.9, 1.85), (x7, y7 - 0.1, 0.925), kit.plastic("#9ea3a8", 0.34, "wc dryer7 body"), bevel=0.02)
     B(kit, "dryer7 panel", (0.9, 0.04, 0.2), (x7, y7 + 0.37, 1.62), M["steel2"])
     ctx["d7_hinge"] = kit.empty("d7 hinge", (x7 - 0.4, y7 + 0.36, 1.0))
     kit.cyl("d7 ring", 0.4, 0.08, (0.4, 0.0, 0), M["steel"], ctx["d7_hinge"], rot=(math.pi / 2, 0, 0), n=32)
@@ -369,6 +376,13 @@ def build(kit, story, tl):
     build_props(kit, ctx, M)
     # the Turned's own light (placed by animate on whichever chair it's in): a cool rim from the dryer glass, behind
     # its head, and a low warm key from the table side, below
+    # lights that serve one shot only (so its brightness matches its neighbours across the cut)
+    kit.light("me lamp", "AREA", (-2.5, -0.9, 2.0), 45.0, "#e8e2d4", size=1.2)
+    kit.aim(kit.LIGHTS["me lamp"]["obj"], (-3.6, -2.3, 1.4))
+    kit.light("hook lamp", "AREA", (2.8, -1.6, 2.4), 45.0, "#e8e2d4", size=1.0)
+    kit.aim(kit.LIGHTS["hook lamp"]["obj"], (3.35, -3.3, 1.3))
+    kit.light("stair fill", "AREA", (ST[0], 1.0, 4.3), 90.0, "#ffd8b0", size=1.4)
+    kit.aim(kit.LIGHTS["stair fill"]["obj"], (ST[0], 2.6, 1.8))
     kit.light("t rim", "SPOT", (0, 2.2, 1.6), 150.0, "#9fc4ff", size=0.15, spot=38, blend=0.7)
     kit.light("t key", "SPOT", (0, -1.2, 0.35), 260.0, "#d79a52", size=0.12, spot=34, blend=0.7)
     return ctx
@@ -513,6 +527,10 @@ def animate(kit, story, tl, t, ctx):
         if n.type == "EMISSION":
             n.inputs["Strength"].default_value = TUBE_STRENGTH * (0.12 + 0.88 * g)
     over["table lamp"] = 0.4 + 0.6 * g
+    sid = _shot(tl, t)["id"]
+    over["me lamp"] = 1.0 if sid in story.get("lamp_shots", []) else 0.0
+    over["hook lamp"] = 1.0 if sid in story.get("hook_lamp_shots", []) else 0.0
+    over["stair fill"] = 1.0 if sid in story.get("stair_fill_shots", []) else 0.0
     lights_follow_turned(kit, tl, t, over)
     # drums: turn while "on" (washers, and the dryers)
     ang, last, on = 0.0, 0.0, True
