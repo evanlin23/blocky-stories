@@ -142,3 +142,27 @@ def test_cut_rate_warning(tmp_path):
     slow = tmp_path / "slow.json"
     slow.write_text(json.dumps(dict(tl, shots=tl["shots"][:20])))   # 20 shots in 147 s: one every 7.3 s
     assert cut_warn(slow) and "7.3 s" in cut_warn(slow)[0]
+
+
+def test_flash_safe_flicker(monkeypatch):
+    """Safe flicker never drops below 40% and changes gently frame to frame, with dips at least ~1 s apart. The
+    default flicker is untouched (it still blacks out, which is why safe mode exists)."""
+    import types
+
+    monkeypatch.setitem(sys.modules, "bpy", types.ModuleType("bpy"))
+    mu = types.ModuleType("mathutils")
+    mu.Vector = tuple
+    monkeypatch.setitem(sys.modules, "mathutils", mu)
+    import importlib
+
+    kit = importlib.import_module("blocky.kit")
+    fl = {"rate": 14.0, "depth": 0.5, "seed": 3, "dropouts": 0.8}
+    ts = [f / 30 for f in range(30 * 60)]
+    default = [kit.flicker_gain(t, fl) for t in ts]
+    assert min(default) < 0.1
+    safe = [kit.flicker_gain(t, {**fl, "safe": True}) for t in ts]
+    assert min(safe) >= 0.4 * (1 - kit.SAFE_MAX_DEPTH) - 1e-9
+    assert max(abs(a - b) for a, b in zip(safe, safe[1:])) < 0.12          # no single-frame jumps
+    lows = [i for i, g in enumerate(safe) if g < 0.6]
+    starts = [i for i in lows if i - 1 not in lows]
+    assert all(b - a >= 30 for a, b in zip(starts, starts[1:]))            # dips at least a second apart
