@@ -71,7 +71,7 @@ All adults. Nobody is ever in peril or shown hurt.
 ## Lore plant (one, the "one stroke too many" thread)
 
 - **What:** a chalk tally on the cold brick back wall of the stage left wings: eight short upright strokes in pale gilt chalk, the Prompter's colour, for a cast of seven.
-- **Where:** S16, under L16 ("Behind them, / the back WALL / is old BRICK."), held 1.5 s at waist height, lit by the blue running light. Not narrated, never mentioned again, never tied to ep20 on screen. The pin asks about it.
+- **Where:** S16, under L16 ("Behind them, / the back WALL / is old BRICK."), held 1.5 s at waist height, lit by the blue running light. Not narrated, never mentioned again, never tied to ep20 on screen. The pin asks about it: "There were seven of us in the cast. Who made the eighth chalk mark?"
 - It fits the canon: a Keeper adds a stroke for itself only while it stands in a gap, and all week it has been standing in mine.
 
 ## Format
