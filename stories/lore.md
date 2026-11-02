@@ -25,6 +25,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S63, under L59 ("Wren tore it in half"), held about 1.8 s, not narrated |
 | ep25 `plot-nine` | the Bench, one glimpse: down the Digger's hole in torchlight, far below, a flat pale floor with one unfinished blocky hand lying on it, palm up. No tally. (The Digger is the allotments' Keeper. It rose in Mr. Carter's footsteps, standing in the gap he left when he gave up his plot but kept coming, and sank once he was a plot-holder again.) | under P03, after L59 ("I shine my TORCH / straight DOWN it."), held 1.6 s, not narrated |
+| ep46 `ep46-choir-hall` | a plain tally: twelve maroon strokes scratched into the back rail of the choir riser's top step, twelve for a choir built for twelve, no extra stroke. (The Grin is the hall's Keeper, sitting in the twelfth chair the narrator left empty for three years. It has no cord or beads, and it's gone when the narrator sits there.) | S84, under L72 ("Mum doesn't LOOK / at me."), held 1.6 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
