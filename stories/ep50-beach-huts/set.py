@@ -46,8 +46,8 @@ TOD = {
     "day":   dict(se=4.2, sc="#fff1dc", el=38, az=-20, sky="#c9d3d6", ss=1.05, fog="#b4c2c8", back="#c4d2d8"),
     "grey":  dict(se=1.0, sc="#dfe8f0", el=30, az=-20, sky="#b4bfc6", ss=0.95, fog="#a6b2ba", back="#a8b6bf"),
     "peach": dict(se=2.6, sc="#ffb184", el=11, az=-35, sky="#d9a68f", ss=0.9, fog="#c39a88", back="#e6b79c"),
-    "blue":  dict(se=0.8, sc="#9db4de", el=5, az=-35, sky="#3a5470", ss=0.55, fog="#41566e", back="#5b7692"),
-    "bench": dict(se=1.7, sc="#b7c8ee", el=10, az=-30, sky="#5e7c9e", ss=1.15, fog="#4d6684", back="#5a7694"),
+    "blue":  dict(se=1.5, sc="#a9bfe6", el=7, az=-35, sky="#4a6a90", ss=0.95, fog="#50688a", back="#6a86a6"),
+    "bench": dict(se=2.4, sc="#b7c8ee", el=10, az=-30, sky="#6a88aa", ss=1.5, fog="#5a7494", back="#5a7694"),
     "gold":  dict(se=3.2, sc="#ffbf6e", el=9, az=-40, sky="#f0c397", ss=0.85, fog="#d9b48c", back="#f0cfa6"),
 }
 
@@ -361,7 +361,7 @@ def build(kit, story, tl):
     # --- ground
     kit.plane("sand", (400, 6.6), (0, -4.2, 0.0), M["sand"])
     kit.plane("sandback", (400, 10), (0, 5.0, 0.0), M["sand"])
-    kit.plane("sandx", (60, 14), (62, -3.0, 0.0), M["sand"])
+    kit.plane("sandx", (60, 5.2), (62, 0.1, 0.0), M["sand"])
     wet = wetsand(kit, "wet sand", "#8f8572", 0.58)
     wp = kit.plane("wet", (400, 13.2), (0, -11.4, 0.0), wet)
     wp.visible_shadow = False
@@ -445,6 +445,12 @@ def build(kit, story, tl):
     kit.light("lantern", "POINT", (LANT[0], LANT[1], DECK_Z + 0.16), 900, "#f0b46a", size=0.08)
     kit.light("laptop", "POINT", (0.0, -1.05, 1.0), 12, "#cfe0ff", size=0.1)
     kit.light("hutin", "POINT", (-0.4, 1.0, 2.1), 90, "#ffcf94", size=0.15)
+    kit.light("headkey", "POINT", (2.3, -2.2, 1.0), 420, "#ffc27a", size=0.3)
+    kit.light("dusklift", "AREA", (-2.8, -6.5, 2.8), 300, "#9db8ea", size=4.0)
+    kit.aim(LIGHT("dusklift", kit), (1.0, -1.3, 1.5))
+    kit.light("benchlift", "AREA", (42.0, -13.0, 3.0), 900, "#c3d3f2", size=6.0)
+    kit.aim(LIGHT("benchlift", kit), (46.8, -6.4, 0.3))
+    kit.light("shadowkey", "POINT", (3.3, -4.0, 1.5), 1400, "#f4b66e", size=0.04)
     kit.light("rim", "AREA", (3.0, -12.0, 1.4), 400, "#7aa2e0", size=5.0)
     kit.aim(LIGHT("rim", kit), (0.6, -0.9, 1.1))
     # 'rim' is a cool light from the sea side, low; only the night scenes switch it on
@@ -651,6 +657,9 @@ def animate(kit, story, tl, t, ctx):
             cur[k] = cur[k] + (tgt[k] - cur[k]) * u
         for k in ("sc", "sky", "fog", "back"):
             cur[k] = _mix_hex(cur[k], tgt[k], u)
+    gl = float(sx_.get("gloom", 0.0))
+    cur["se"] *= (1 - gl)
+    cur["ss"] *= (1 - 0.8 * gl)
     sun = ctx["sun"]
     el, az = math.radians(cur["el"]), math.radians(cur["az"])
     d = Vector((math.sin(az) * math.cos(el), math.cos(az) * math.cos(el), math.sin(el)))   # toward the sun, from the sea
@@ -758,6 +767,19 @@ def animate(kit, story, tl, t, ctx):
     over["laptop"] = ss(op) * (1.0 if show else 0.0) * _ramp(tl, "lapglow", "on", t, 1.0)
     over["hutin"] = _ramp(tl, "hutin", "on", t, 0.0)
     over["rim"] = _ramp(tl, "rim", "on", t, 0.0)
+    lift = ss(_ramp(tl, "lift", "on", t, 0.0))
+    over["headkey"] = lift * (0.0 if sx_.get("ghost") else 1.0)
+    over["shadowkey"] = 1.0 if sx_.get("ghost") else 0.0
+    over["lantern"] = over["lantern"] * (0.0 if sx_.get("ghost") else 1.0)
+    over["dusklift"] = lift
+    over["benchlift"] = ss(_ramp(tl, "benchlift", "on", t, 0.0))
+    # ghost shots: the Small Head is out of sight but its shadow still falls (L42 to L43)
+    gh = bool(sx_.get("ghost"))
+    for ob in bpy.data.objects:
+        if ob.name.startswith("smallhead"):
+            if gh:
+                ob.hide_render = False
+            ob.visible_camera = not gh
     return over
 
 
@@ -795,9 +817,8 @@ def place_refl(kit, tl, ctx, rn, c, kind, t, sx_):
         zbase = kind.get("base", 0.0)
         c.pose(px, py, (zbase + (-z if flip else z)), s["yaw"], s["legs"], s["arms"], s["arms_side"], s["head_yaw"],
                s["head_pitch"], s["lean"], 0.0, s["expr"], s["mouth"], s["look"], s["blink"], s["hidden"])
-        root.scale = (base[0], base[1], -base[2] if flip else base[2])
-        if flip:
-            root.scale = (base[0], base[1], -base[2])
+        zs = kind.get("scale", 1.0)
+        root.scale = (base[0] * zs, base[1] * zs, (-base[2] if flip else base[2]) * zs)
     roll = math.radians(_held(keys, "roll", t, 0.0))
     if roll:
         e = root.rotation_euler
