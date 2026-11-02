@@ -148,7 +148,7 @@ def POV(n, tgt, lens, push=0):
 # the lamp room: the cot, the lens, the glass
 COT_FACE = still([-1.3, -1.6, LF + 1.6], [-1.3, 0.4, LF + 1.38], 32)
 COT_WIDE = still([0.4, -1.7, LF + 1.5], [-1.3, 0.3, LF + 0.9], 28)
-SOCKS = still([0.9, -2.5, LF + 0.55], [-0.3, -1.15, LF + 0.12], 24)
+SOCKS = still([0.75, -1.95, LF + 0.5], [-0.3, -1.15, LF + 0.14], 26)
 PLATE_CAM = still([0.8, 0.34, 16.34], [2.4, 0.34, 16.34], 40)
 PLATE_C = [2.365, 0.34, 16.45]
 
@@ -176,10 +176,10 @@ shot("L08", "me at the lamp room glass, my back to camera", still([-0.9, -0.6, L
 shot("L09", "close on me, worried, glancing down the stairs", RF(7, d=2.0, lens=30))
 shot("L10", "Ines on the phone in the kitchen", still([KX + 2.15, 0.4, 1.5], [KX - 1.0, 0.4, 1.35], 26))
 shot("L11", "Ines looks up the stairwell", still([0.5, 1.6, 0.9], [0.0, -1.7, 1.3], 30))
-shot("L12", "the stair foot by day: empty, sand under the door", still([0.0, -1.4, 1.35], [0.0, 1.9, 0.55], 22))
+shot("L12", "the stair foot by day: empty, sand under the door", still([0.0, -0.4, 1.0], [0.0, 2.0, 0.7], 20))
 shot("L13", "the oak door from the landing", still([0.2, -0.9, 16.9], [2.3, 0.15, 16.3], 30))
-shot("L13>", "the bolt plate: two strokes", PLATE_CAM, hand=0)
-shot("L14.2", "me in the camp bed, rain on the glass", still([0.5, -1.6, LF + 1.5], [-1.3, 0.4, LF + 0.9], 30), rain=True)
+shot("L13>-0.35", "the bolt plate: two strokes", PLATE_CAM, hand=0)
+shot("L14>-0.3", "me in the camp bed, rain on the glass", still([0.5, -1.6, LF + 1.5], [-1.3, 0.4, LF + 0.9], 30), rain=True)
 # 03 night one
 shot("L15", "black, the buzz, the glow on my face; I'm standing",
      still([-0.7, -2.2, LF + 1.62], [-0.7, -0.6, LF + 1.4], 32))
@@ -336,15 +336,15 @@ put("me", "L08", [0.2, 2.0, LF], yaw=180, expr="worried")
 at_rail(7, "L09", head=[0, 30], lean=6, expr="worried")
 hide("me", "L10")
 put("me", "L13", [2.0, 0.1, Z7], yaw=90, arms=[0, 88], expr="worried")
-hide("me", "L13>")
-put("me", "L14.2", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-8, head=[0, 8], expr="asleep", blink=False)
+hide("me", "L13>-0.35")
+put("me", "L14>-0.3", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-8, head=[0, 8], expr="asleep", blink=False)
 put("me", "L15", [-0.7, -0.6, LF], yaw=0, head=[0, 22], arms=[64, 64], expr="worried")
 at_rail(7, "L16", head=[0, 28], arms=[0, 20])
 hide("me", "L17")
 put("me", "L21", tread(82), yaw=yaw_to(tread(82), tread(83)), expr="scared")
 walk("me", "L21+0.5", tread(84, 1.9))
 walk("me", "L21+0.85", [2.3, 0.0, Z7], arms=[0, 40])
-hide("me", "L21+0.95")
+hide("me", "L21.1")
 put("me", "L22", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, arms=[60, 60], head=[0, 20], expr="scared")
 put("me", "L24", [-0.3, -1.15, LF], yaw=0, expr="worried")
 hide("me", "L25")
@@ -359,7 +359,7 @@ put("me", "L37", tread(76), yaw=yaw_to(tread(76), tread(77)), expr="scared")
 walk("me", "L37+0.45", tread(80))
 walk("me", "L37+0.9", tread(84, 1.9))
 walk("me", "L37+1.15", [2.3, 0.0, Z7])
-hide("me", "L37+1.2")
+hide("me", "L37.1")
 put("me", "L38", [-0.3, -1.15, LF], yaw=0, expr="worried")
 put("me", "L39", SEAT_K(-0.75), yaw=180, sit=True, expr="worried", head=[0, 8])
 put("me", "L41", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-4, head=[0, 10], arms=[0, 0], expr="worried")
@@ -481,8 +481,8 @@ cues = [
     {"at": "L76", "name": "phone", "on": 0.0, "dur": 0.0},
     # the torch (gain = (distance / 2) squared so the far figure is lit as the near one)
     {"at": 0, "name": "torch", "on": 0.0, "from": [0, 0, 20], "aim": [0, 0, 0]},
-    {"at": "L13>", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.45, "spill": 0.0},
-    {"at": "L14.2", "name": "torch", "on": 0.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "dur": 0.0, "gain": 0.45, "spill": 0.0},
+    {"at": "L13>-0.35", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.45, "spill": 0.0},
+    {"at": "L14>-0.3", "name": "torch", "on": 0.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "dur": 0.0, "gain": 0.45, "spill": 0.0},
     {"at": "L16", "name": "torch", "on": 1.0, "dur": 0.5, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0],
      "gain": 0.4, "spill": 1.0},
     {"at": "L17", "name": "torch", "on": 1.0, "from": [1.3, 0.0, Z7 + 1.55], "aim": [0.0, 1.55, 1.2], "gain": 29.0, "spill": 0.0, "spot": 7, "blend": 0.15},
@@ -523,8 +523,8 @@ cues = [
     {"at": "L70", "name": "up", "hidden": True},
     # the treads the view down the well needs gone
     {"at": 0, "name": "clear", "az": None},
-    {"at": "L13>", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
-    {"at": "L14.2", "name": "clear", "az": None},
+    {"at": "L13>-0.35", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
+    {"at": "L14>-0.3", "name": "clear", "az": None},
     {"at": "L17", "name": "clear", "az": 60, "span": 100, "z0": 2.0, "z1": 15.6, "rails": [Z7 - 0.2, Z7 + 1.7], "rail_az": 60, "rail_span": 110},
     {"at": "L21", "name": "clear", "az": None},
     {"at": "L21.1", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},

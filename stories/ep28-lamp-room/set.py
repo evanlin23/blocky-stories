@@ -664,9 +664,9 @@ def build_lights(kit, ctx):
 
 # mode -> {group: (gain, colour or None)}, "exp" the scene exposure, "pane": (colour, strength), "world": strength
 MODES = {
-    "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (0.9, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (3.0, None),
+    "doorlamp": {"win": (0.3, "#4a6aa0"), "shaft": (1.6, "#8aa0c8"), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (6.0, None),
                  "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
-                 "cot": (1.0, None), "exp": 0.3, "pane": ("#1e2c40", 0.5), "world": 0.4},
+                 "cot": (1.0, None), "exp": 0.8, "pane": ("#1e2c40", 0.5), "world": 0.4},
     "night": {"win": (0.25, "#4a6aa0"), "shaft": (0.5, None), "foot": (0.4, None), "lroom": (0.5, None), "lamp": (0.5, None),
               "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
               "cot": (1.0, None), "exp": 0.0, "pane": ("#1e2c40", 0.5), "world": 0.4},
