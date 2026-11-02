@@ -798,8 +798,8 @@ def build_empty(kit, M, ctx):
     # two glints sit deep inside the back wall and only show down the notch (and only once the cue turns them on)
     neck = kit.empty("empty.neck", (0, 0, 2.0), torso)
     # jacket collar: a stiff stand-up ring, open to the sky; a taller pale shirt collar inside it. No hood, no cap.
-    col = funnel_mesh(kit, "empty.collar", 0.66, 0.92, 0.08, 0.96, 0.74, M["pin_collar"], M["lining2"], neck)
-    sh = funnel_mesh(kit, "empty.shirtcollar", 0.46, 0.62, 0.035, 0.9, 0.74, M["shirt"], M["lining2"], neck)
+    col = funnel_mesh(kit, "empty.collar", 0.66, 0.78, 0.08, 0.96, 0.74, M["pin_collar"], M["lining2"], neck)
+    sh = funnel_mesh(kit, "empty.shirtcollar", 0.46, 0.54, 0.035, 0.9, 0.74, M["shirt"], M["lining2"], neck)
     for sx in (-1, 1):   # sloped suit shoulders into the collar, and two long lapels running down the chest
         kit.box(f"empty.shoulder{sx}", (0.95, 1.0, 0.3), (sx * 0.86, 0, 0.02), M["pin"], neck, rot=(0, sx * -0.32, 0), bevel=0.1)
         kit.box(f"empty.tip{sx}", (0.3, 0.05, 1.0), (sx * 0.5, -0.56, -0.15), M["pin_collar"], neck, rot=(0, sx * 0.35, 0), bevel=0.02)
@@ -807,7 +807,7 @@ def build_empty(kit, M, ctx):
     glints = []
     gm = kit.emit("#f4f0e2", 12.0, name="glint")
     for sx in (-1, 1):
-        glints.append(kit.sphere(f"empty.glint{sx}", 0.04, (sx * 0.17, 0.24, 0.12), gm, neck, seg=10))
+        glints.append(kit.sphere(f"empty.glint{sx}", 0.04, (sx * 0.25, 0.2, 0.4), gm, neck, seg=10))
     e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=[floor_], glints=glints)
     ctx["empty"] = e
 
