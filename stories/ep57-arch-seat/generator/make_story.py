@@ -381,6 +381,8 @@ shot("S59", "L47.3", still([0.3, 13.0, 3.0], [-0.62, 15.9, 0.9], 26),
 shot("S60", "L48", still([1.3, 16.1, 1.0], [-0.62, 16.0, 0.85], 36),
      A("ilan", IL, 16.05, 0, "squeeze", mouth=(0.0, 1.6), **SEATED_ILAN))
 cue("L48", "spanlight", on=False)
+cue("L48", "seatfill", e=200)
+cue("L56", "seatfill", e=0)
 cue("L48", "ilanlight", on=True)
 cue("L49", "ilanlight", on=False)
 cue("L46.2", "ilanlight", on=True)

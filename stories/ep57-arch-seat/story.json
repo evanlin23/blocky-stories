@@ -10979,6 +10979,16 @@
   },
   {
    "at": "L48",
+   "name": "seatfill",
+   "e": 200
+  },
+  {
+   "at": "L56",
+   "name": "seatfill",
+   "e": 0
+  },
+  {
+   "at": "L48",
    "name": "ilanlight",
    "on": true
   },
