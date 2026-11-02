@@ -47,7 +47,7 @@ TOD = {
     "grey":  dict(se=1.0, sc="#dfe8f0", el=30, az=-20, sky="#b4bfc6", ss=0.95, fog="#a6b2ba", back="#a8b6bf"),
     "peach": dict(se=2.6, sc="#ffb184", el=11, az=-35, sky="#d9a68f", ss=0.9, fog="#c39a88", back="#e6b79c"),
     "blue":  dict(se=0.8, sc="#9db4de", el=5, az=-35, sky="#3a5470", ss=0.55, fog="#41566e", back="#5b7692"),
-    "bench": dict(se=2.4, sc="#b7c8ee", el=10, az=-30, sky="#6f8eb0", ss=1.6, fog="#5b7494", back="#7fa0c0"),
+    "bench": dict(se=1.7, sc="#b7c8ee", el=10, az=-30, sky="#5e7c9e", ss=1.15, fog="#4d6684", back="#5a7694"),
     "gold":  dict(se=3.2, sc="#ffbf6e", el=9, az=-40, sky="#f0c397", ss=0.85, fog="#d9b48c", back="#f0cfa6"),
 }
 

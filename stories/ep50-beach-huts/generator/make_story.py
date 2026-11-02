@@ -79,8 +79,8 @@ cast = {
                "shoes": "#2a2522", "sleeves": "long", "hair": "cap", "hair_c": "#1c1410",
                "face": {"eyes": "round", "brows": True}},
     "smallhead": {"age": "adult", "skin": "#cfc3a6", "shirt": "#b5655a", "pattern": "solid", "pants": "#6a7480",
-                  "shoes": "#4a4f58", "sleeves": "long", "hair": "none", "width": 1.45, "head_scale": 0.42,
-                  "face": {"eyes": "hollow", "mouth": "line", "brows": False}},
+                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": 1.3, "width": 1.3, "head_scale": 0.5,
+                  "face": {"eyes": "dot", "mouth": "line", "brows": False}},
 }
 reflections = {
     "r_neighbour": {"of": "neighbour"},
@@ -199,7 +199,7 @@ S("L43", "the tiny head on the wall", still((-0.6, -0.9, 2.0), (0.8, 0, 2.0), 40
 S("P02", "hold on my face", still((0.5, -1.9, 1.45), (-0.35, -0.6, 1.45), 50), 1)
 # 05 the Small Head
 S("L44", "I turn my head", still((-1.1, -1.8, 1.5), (-0.35, -0.6, 1.45), 45), 1)
-S("L45", "the reveal", still((0.5, -4.2, 1.1), (1.3, -1.5, 1.35), 30), 1)
+S("L45", "the reveal", still((0.4, -5.4, 1.2), (1.3, -1.5, 1.3), 24), 1)
 S("L46", "the stripes", still((0.2, -1.5, 1.0), (1.2, -1.5, 1.0), 42), 1)
 S("L47", "spilling over the chair", still((0.1, -2.7, 0.4), (1.3, -1.5, 0.7), 24), 1)
 S("L48", "tilt up to the head", move(((0.3, -1.4, 0.9), (1.3, -1.5, 1.0)), ((0.3, -1.4, 1.1), (1.3, -1.5, 1.9)), 40), 1)
@@ -256,6 +256,8 @@ SHOTS = [(R(a), w, c_, st, kw) for a, w, c_, st, kw in SHOTS]
 for i, (at, what, cam, step, kw) in enumerate(SHOTS):
     sid = f"S{i + 1:02d}"
     s = {"id": sid, "cam": cam, "hand": 0.006 if step == 1 else 0.004, "step": step, "what": what}
+    if sid in ("S99", "S100"):
+        s["hand"] = 0.0
     if i:
         s["at"] = at
     if kw.get("follow"):
