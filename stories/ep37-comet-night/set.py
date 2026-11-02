@@ -900,12 +900,12 @@ def animate(kit, story, tl, t, ctx):
             M["streak"].node_tree.nodes["E"].inputs["Strength"].default_value = 9.0 * math.sin(math.pi * u) ** 0.6
     # the dome's lights: bulbs ease; the red lamp is always on (low) in the dome
     bulbs = _eased(_cues(tl, "dome"), "bulbs", t, 1.0)
-    M["bulb"].node_tree.nodes["E"].inputs["Strength"].default_value = 0.6 + 5.4 * bulbs
+    M["bulb"].node_tree.nodes["E"].inputs["Strength"].default_value = 0.6 + 1.2 * bulbs
     gains = {}
     for nm, d in LIGHT_SCENES.items():
         gains[nm] = d.get(sc, 0.0)
     for i in range(4):
-        gains[f"bulb{i}"] = (bulbs * 0.25 + 0.03) if sc == "dome" else 0.0
+        gains[f"bulb{i}"] = (bulbs * 0.04 + 0.02) if sc == "dome" else 0.0
     gains["red"] = (1.0 + 1.2 * (1.0 - bulbs)) if sc == "dome" else 0.0
     gains["red2"] = (1.0 + 1.4 * (1.0 - bulbs)) if sc == "dome" else 0.0
     kit.LIGHTS["rim"]["light"].color = tuple(V((0.49, 0.62, 1.0)).lerp(V((1.0, 0.7, 0.72)), pink))
