@@ -15,8 +15,3 @@ Pass: fiction (no set text, no real places), kids and mature themes (all adults,
 - Line 438 of the same file: story.json `title` is still "My garden was wet every morning. ...". Copy across the package title "In a six-week drought, my allotment plot is wet every single dawn."
 - At 88 to 90 s, the night wide shows the hill as a near-white shape against a dark blue sky. It passes, but watch it in the final measure.
 
-## Round 3b
-
-I checked commit 560146b. Only the story.json `title` and `premise` changed: the title now matches package.json, and the premise reads "when he says it's time for somebody new". No knee wording is left in story.json, the generator or script.md, and `check` passes with warnings only. The picture and audio are the same, so the round 3 findings above still hold.
-
-Verdict: approve
