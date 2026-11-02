@@ -1151,6 +1151,11 @@ def animate(kit, story, tl, t, ctx):
         cs = [c for c in _cues(tl, "vis") if c.get("id") == vid]
         c = _last(cs, t)
         on = c["on"] if c else info["default"]
+        top = info["objs"][0]
+        while top.parent is not None:
+            top = top.parent
+        if top.hide_render and top.name in ("me", "gran", "jumper_man"):
+            on = False
         _show(info["objs"], on)
     # ---------------------------------------------------------------- doors
     ctx["cdoor"].rotation_euler = (0, 0, math.radians(float(_eased(_cues(tl, "cdoor"), "deg", t, 0.0))))
