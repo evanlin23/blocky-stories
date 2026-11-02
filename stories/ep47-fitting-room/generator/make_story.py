@@ -108,7 +108,7 @@ EM = (-12.6, 2.9)      # the Empty
 UN = (-7.75, -1.0)     # Uncle at the counter
 UB = (-12.6, -1.8)     # Uncle at his bench
 HEAP = (-11.35, 1.75)
-FOOT = (-11.72, 0.62)
+FOOT = (-11.6, 0.66)
 FRONT = ((-5.0, 0.5, 1.5), (-12.6, 2.2, 1.3), 24)
 
 SHOTS = [
@@ -136,7 +136,7 @@ SHOTS = [
     ("L15", "upstairs table", 2, still((44.0, -1.8, 1.6), (42.5, 0.6, 1.4), 38)),
     ("L16", "me, I love it", 2, still((42.3, 0.9, 1.5), (42.5, -0.75, 1.5), 42)),
     ("L17", "my clean sleeve", 2, still((42.1, 0.5, 1.45), (42.5, -0.8, 1.25), 50)),
-    ("L18", "Uncle, tea", 2, still((42.5, -1.4, 1.55), (42.5, 0.75, 1.5), 42)),
+    ("L18", "Uncle, tea", 2, still((42.5, -1.8, 1.7), (42.5, 0.75, 1.55), 40)),
     ("L19", "the counter, back to camera", 2, still((-9.6, -0.4, 1.65), (-6.2, -1.0, 1.5), 34)),
     ("L19.3", "the bib, a tag", 2, still((-6.3, -1.2, 1.5), (-7.75, -1.0, 1.15), 60)),
     ("L20", "me with a box", 2, still((-12.0, 1.3, 1.5), (-9.8, 0.3, 1.45), 36)),
@@ -159,13 +159,13 @@ SHOTS = [
     ("L32", "shoes under the hem", 2, still((-13.2, -1.7, 0.09), (-14.5, -1.75, 0.2), 28)),
     ("L33", "me looks at my shoes", 2, still((-11.5, -1.4, 1.35), (-13.8, -1.7, 1.25), 34)),
     ("L34", "the rings slide", 2, still((-14.3, -0.95, 2.3), (-14.3, -2.6, 2.5), 35)),
-    ("L35", "the suit hangs", 2, still((-12.8, -1.2, 1.5), (-15.55, -1.75, 1.0), 35)),
+    ("L35", "the suit hangs", 2, still((-11.6, -2.3, 1.3), (-15.5, -1.75, 1.05), 36)),
     ("L35.2", "chalk on the jacket", 2, still((-13.2, -1.3, 1.4), (-15.55, -1.75, 1.2), 42)),
     ("L36", "nobody in it", 2, still((-12.5, -2.2, 1.45), (-14.3, -1.5, 1.3), 34)),
     ("L37", "Uncle comes home", 2, still((-6.0, 0.8, 1.5), (-4.2, 1.9, 1.4), 28)),
     ("L38", "the table, the ticket", 2, still((44.0, -1.8, 1.6), (42.5, 0.7, 1.4), 38)),
     ("L39", "his smile", 2, still((43.2, -1.8, 1.55), (42.5, 0.75, 1.5), 42)),
-    ("L40", "the heart tag", 2, still((42.2, -0.4, 1.35), (42.7, 0.75, 1.2), 50)),
+    ("L40", "the heart tag", 2, still((42.4, -1.0, 1.5), (42.6, 0.75, 1.3), 44)),
     ("L41", "his back at the window", 2, still((42.0, 0.2, 1.5), (44.3, 0.2, 1.4), 30)),
     ("L42", "me in bed", 2, still((60.8, 0.1, 1.5), (62.9, 0, 0.95), 30)),
     ("L42.2", "the dark stairs", 2, still((-15.4, 2.4, 2.3), (-15.4, 0.3, 0.4), 24)),
@@ -181,17 +181,17 @@ SHOTS = [
     ("L49", "standing, nobody inside", 1, still((-10.4, 2.2, 0.7), (EM[0], EM[1], 1.2), 36)),
     ("L50", "the open collar", 1, still((-12.0, 1.4, 1.6), (EM[0], EM[1], 1.7), 40)),
     ("L51", "wide: both of us bare", 1, still((-7.4, 0.2, 1.55), (-12.0, 1.8, 1.3), 32)),
-    ("L52", "sleeves lift", 1, still((-10.6, 1.4, 1.5), (EM[0], 2.3, 1.2), 40)),
-    ("L52.3", "the space between its cuffs", 1, still((-11.6, 1.0, 1.4), (EM[0], 2.1, 1.1), 45)),
+    ("L52", "sleeves lift, side-on", 1, still((-8.7, 2.5, 1.3), (EM[0], 2.5, 1.15), 40)),
+    ("L52.3", "the space between its cuffs, three-quarter", 1, still((-10.2, 0.8, 1.35), (EM[0], 2.4, 1.15), 40)),
     ("L53", "it leans, 12", 1, still((-10.6, 0.8, 1.5), (-12.6, 2.2, 1.45), 50)),
     ("L53.2", "it leans, 24", 1, still((-10.7, 0.9, 1.5), (-12.6, 2.2, 1.45), 55)),
     ("L53.3", "35: eyes level with mine", 1, still((-12.0, 0.4, 1.58), (-12.8, 2.3, 1.5), 32)),
-    ("L54", "past its shoulder to me; Uncle far behind", 1, still((-13.8, 2.8, 1.55), (-9.0, 0.4, 1.45), 34)),
+    ("L54", "past its shoulder to me; Uncle far behind", 1, still((-9.7, 1.1, 1.55), (-12.1, 2.3, 1.5), 36)),
     ("L55", "Uncle says it", 2, still((-6.0, -0.7, 1.6), (UN[0], UN[1], 1.5), 48)),
     # 06 the truth
     ("L56", "every tag the same lie", 2, move(((-6.0, -0.6, 1.9), (UN[0] + 0.3, UN[1], 1.7)), ((-6.0, -1.4, 1.5), (UN[0], UN[1], 1.2)), 55)),
     ("L57", "he's known", 2, still((-10.0, 0.3, 1.6), (UN[0], UN[1], 1.55), 55)),
-    ("L58", "a tag drifts off", 2, still((1.5, -5.2, 1.4), (3.3, -5.2, 1.2), 60)),
+    ("L58", "a tag drifts off", 2, still((0.3, -5.0, 1.45), (3.4, -5.0, 1.2), 44)),
     ("L58.3", "me turns from it", 2, still((-9.8, 0.2, 1.6), (-12.0, 1.4, 1.5), 40)),
     ("L59", "this truth is mine", 2, still((-8.9, 0.7, 1.55), (-11.5, 0.5, 1.45), 40)),
     ("L60", "the shop turns to me", 2, still((-8.2, -0.9, 1.7), (-4.9, 0.6, 1.5), 26)),
@@ -200,14 +200,14 @@ SHOTS = [
     ("L62", "I step up to my bench", 2, still((-9.2, 0.6, 1.6), (-11.5, 1.2, 1.45), 36)),
     ("L62.2", "the heap", 2, still((-10.0, 1.1, 0.45), (HEAP[0], HEAP[1], 0.2), 28)),
     ("L63", "I look at my sleeves", 2, still((-12.6, 0.2, 1.6), (ST[0], ST[1], 1.35), 44)),
-    ("L64", "Mrs. Kettle again", 2, still((-8.2, -0.6, 1.6), (-5.6, 0.2, 1.45), 34)),
+    ("L64", "Mrs. Kettle again", 2, still((-8.4, 1.0, 1.55), (-5.5, 1.2, 1.45), 36)),
     ("L65", "my sleeve", 2, still((-12.0, 0.2, 1.45), (-12.5, ST[1], 1.25), 40)),
     # 07 the window
-    ("L66", "the window seat, gold", 2, still((-2.0, -2.6, 1.25), (-5.0, -0.8, 1.0), 36)),
+    ("L66", "the window seat, gold", 2, still((-1.8, -2.4, 1.3), (-5.2, -0.8, 1.15), 32)),
     ("L67", "clean shirtsleeves", 2, still((-2.6, -1.6, 1.2), (-5.2, -0.8, 1.0), 50)),
     ("L68", "chalk on canvas", 2, still((-12.0, 0.3, 1.6), (-12.6, 1.0, 0.95), 40)),
-    ("L68.1", "the tally on the foot", 2, move(((-10.7, -0.1, 0.4), (FOOT[0], FOOT[1], 0.13)), ((-10.9, 0.05, 0.35), (FOOT[0], FOOT[1], 0.13)), 45)),
-    ("L69.1", "two aprons", 2, still((-13.0, -0.3, 1.5), (-15.9, -0.3, 1.3), 34)),
+    ("L68.1", "the tally on the foot", 2, move(((-10.95, 0.3, 0.28), (FOOT[0] + 0.1, FOOT[1], 0.12)), ((-10.9, 0.4, 0.26), (FOOT[0] + 0.1, FOOT[1], 0.12)), 42)),
+    ("L69", "two aprons", 2, still((-13.0, -0.3, 1.5), (-15.9, -0.3, 1.3), 34)),
     ("L69.3", "turn the sign", 2, still((-6.0, 1.9, 1.6), (-4.3, 1.9, 1.7), 40)),
     ("L70", "Saturday, the arcade", 2, still((0.4, 7.0, 1.6), (0, -20, 1.9), 26)),
     ("L70.2", "our shop window", 2, still((-1.5, -0.2, 1.45), (-4.9, -0.4, 1.45), 34)),
@@ -235,6 +235,8 @@ for n in ALL:
 
 
 def put(who, at, pos, **kw):
+    if at == 0:      # at the very first frame there is nothing to walk from (frame 0 would show the old spot)
+        acting[who] = []
     keys = acting[who]
     prev = next((k["pos"] for k in reversed(keys) if "pos" in k), None)
     if prev is not None:
@@ -272,11 +274,11 @@ def rub(who, a, off=0.0, n=6, base=50):
 
 
 # 01 the arcade
-put("x1", 0, [-0.5, -2.2], yaw=180, expr="smirk")
-walk("x1", "L01.2", [-0.5, 1.4])
+put("x1", 0, [-0.5, -0.8], yaw=180, expr="smirk")
+walk("x1", "L01.2", [-0.5, 1.8])
 hide("x1", "L02")
-put("x2", 0, [0.5, -2.2], yaw=180, expr="grin")
-walk("x2", "L01.2", [0.5, 1.4])
+put("x2", 0, [0.5, -0.8], yaw=180, expr="grin")
+walk("x2", "L01.2", [0.5, 1.8])
 hide("x2", "L02")
 talk("x1", 0, "L01.2")
 put("x1", "L01.2", [0.8, -3.0], yaw=180, expr="neutral")
@@ -372,6 +374,7 @@ hide("me", "L28")
 # 04 Thursday
 put("me", "L33", [-13.8, -1.7], yaw=90, expr="scared", head=[0, 30])
 key("me", "L33+0.8", head=[0, 0], blend=0.4)
+hide("me", "L35")
 put("me", "L36", [-14.1, -0.8], yaw=-90, expr="scared", head=[-70, 0])
 hide("me", "L37")
 put("uncle", "L37", [-3.2, 1.9], yaw=-90, expr="soft", head=[0, 8])
@@ -381,6 +384,7 @@ put("uncle", "L38", [42.5, 0.8], yaw=0, expr="soft", head=[0, 10])
 put("me", "L38", [42.5, -0.8], yaw=180, expr="worried")
 put("uncle", "L39", [42.5, 0.8], yaw=0, expr="smirk", head=[0, 6])
 key("uncle", "L39", look=[0.8, 0.0])
+hide("me", "L40")
 put("uncle", "L41", [44.3, 0.2], yaw=90, expr="worried")
 hide("me", "L41")
 put("me", "L42", [62.9, 0.0, 0.0], yaw=-90, expr="scared", head=[0, 24])
@@ -406,7 +410,11 @@ hide("me", "L47+0.01")
 put("me", "L51", [-9.8, 0.3], yaw=-90, expr="scared")
 put("me", "L53", [-13.25, 2.0], yaw=150, expr="scared", head=[-30, 0])
 
-put("me", "L54", [-13.25, 2.0], yaw=150, expr="scared", head=[-30, 0])
+put("me", "L54", [-12.1, 2.0], yaw=62, expr="scared", head=[0, 0])
+put("cafe_man", "L58", [3.4, -5.0], yaw=-75, expr="smirk")
+put("cafe_f", "L58", [3.4, -5.9], yaw=-100, expr="neutral")
+hide("cafe_man", "L58.3")
+hide("cafe_f", "L58.3")
 put("me", "L58.3", [-11.5, 1.5], yaw=-40, expr="worried", head=[-40, 0])
 put("me", "L59", [-10.6, 0.6], yaw=90, expr="worried")
 put("me", "L60", [-10.0, 0.5], yaw=90, expr="worried")
@@ -419,13 +427,17 @@ put("me", "L62.2", [ST[0], ST[1]], yaw=0, expr="worried")
 put("me", "L63", [ST[0], ST[1]], yaw=0, expr="worried", head=[0, 30], arms=[40, 40], side=[0, 0])
 put("me", "L65", [ST[0], ST[1]], yaw=0, expr="worried", head=[0, 24])
 put("uncle", "L56", [UN[0], UN[1]], yaw=90, expr="tired")
-key("uncle", "L57", expr="worried", head=[0, 0], look=[0, 0], blend=0.4)
+put("uncle", "L57", [UN[0], UN[1]], yaw=-90, expr="worried", head=[0, 0])
+key("uncle", "L57", look=[0, 0])
+put("uncle", "L58", [UN[0], UN[1]], yaw=90, expr="tired")
 key("uncle", "L61+0.6", expr="soft")
 put("uncle", "L61", [UN[0], UN[1]], yaw=90, expr="tired")
 key("uncle", "L61+0.8", expr="soft", blend=0.5)
-put("mrs_kettle", "L64", [-5.4, 0.3], yaw=-90, expr="smirk", head=[0, -8])
-put("mr_kettle", "L64", [-5.3, -0.6], yaw=-90, expr="neutral", head=[20, 0])
+put("mrs_kettle", "L64", [-5.5, 1.5], yaw=-90, expr="smirk", head=[0, -8])
+put("mr_kettle", "L64", [-5.5, 0.6], yaw=-90, expr="neutral", head=[20, 0])
 put("uncle", "L64", [UN[0], UN[1]], yaw=90, expr="soft")
+for n in ("x1", "teal", "cam"):
+    hide(n, "L64")
 put("x1", "L60", [-5.0, 1.0], yaw=-90, expr="wide")
 put("x3", "L60", [-5.2, -2.0], yaw=-90, expr="wide")
 put("teal", "L60", [-4.7, 0.4], yaw=-90, expr="wide")
@@ -437,9 +449,9 @@ hide("me", "L66")
 hide("uncle", "L66")
 hide("mrs_kettle", "L66")
 hide("mr_kettle", "L66")
-SEAT = {"yaw": 90, "sit": True}
-put("uncle2", "L66", [-5.5, -1.3, -0.01], expr="soft", **SEAT)
-put("me2", "L66", [-5.5, -0.3, -0.01], expr="soft", **SEAT)
+SEAT = {"yaw": 90}
+put("uncle2", "L66", [-5.55, -1.3, -0.17], expr="soft", **SEAT)
+put("me2", "L66", [-5.55, -0.3, -0.17], expr="soft", **SEAT)
 put("uncle2", "L68", [-12.6, -1.8], yaw=180, expr="soft", arms=[45, 45])
 put("me2", "L68", [ST[0] + 0.0, 0.2], yaw=180, expr="soft")
 hide("uncle2", "L68.1")
@@ -468,7 +480,7 @@ def cue(at, name, **kw):
 
 # the time of day
 for at, m in ((0, "day"), ("L24", "night_w"), ("L28", "grey"), ("L37", "up"), ("L43", "grey"), ("L44", "friday"),
-              ("L66", "eve"), ("L69.1", "sat")):
+              ("L66", "eve"), ("L69", "sat")):
     cue(at, "mode", set=m, dur=0.3)
 # practicals (every ramp 1 s)
 cue(0, "lamp", light="ceiling", on=0.0)
@@ -479,22 +491,26 @@ cue("L47", "lamp", light="lamp m", on=1.0, dur=1.0)
 cue("L66", "lamp", light="lamp m", on=0.5, dur=1.0)
 cue(0, "lamp", light="lamp u", on=0.0)
 cue("L66", "lamp", light="lamp u", on=0.5, dur=1.0)
-cue("L69.1", "lamp", light="lamp m", on=0.0, dur=1.0)
-cue("L69.1", "lamp", light="lamp u", on=0.0, dur=1.0)
+cue("L69", "lamp", light="lamp m", on=0.0, dur=1.0)
+cue("L69", "lamp", light="lamp u", on=0.0, dur=1.0)
 # the curtain
 cue(0, "curtain", open=1.0)
 cue("L24", "curtain", open=0.0, dur=0.3)
 cue("L34", "curtain", open=1.0, dur=1.0)
 # the Empty: only shadows and traces until L47
 cue(0, "empty", hidden=True)
-cue("L31", "empty", pose="hang", pos=[-15.55, -1.75], yaw=90)
+cue("L31", "empty", pose="hang", pos=[-15.45, -1.75], yaw=-60)
 cue("L43", "empty", hidden=True)
 cue("L47", "empty", pose="stand", pos=list(EM), yaw=90)
-cue("L52", "empty", pose="sleeves_up", pos=list(EM), yaw=0)
-cue("L53", "empty", pose="lean", pos=list(EM), yaw=0, lean=12)
-cue("L53.2", "empty", pose="lean", pos=list(EM), yaw=0, lean=24)
-cue("L53.3", "empty", pose="lean", pos=list(EM), yaw=0, lean=40)
-cue("L62", "empty", pose="lean", pos=list(EM), yaw=0, lean=40)
+cue("L50", "empty", pose="stand", pos=list(EM), yaw=22, glints=True)
+cue("L51", "empty", pose="stand", pos=list(EM), yaw=62, glints=True)
+cue("L52", "empty", pose="sleeves_up", pos=list(EM), yaw=0, glints=True)
+cue("L53", "empty", pose="lean", pos=list(EM), yaw=0, lean=12, glints=True)
+cue("L53.2", "empty", pose="lean", pos=list(EM), yaw=0, lean=24, glints=True)
+cue("L53.3", "empty", pose="lean", pos=list(EM), yaw=0, lean=40, glints=True)
+cue("L54", "empty", pose="lean", pos=list(EM), yaw=35, lean=40, glints=True)
+cue("L55", "empty", pose="lean", pos=list(EM), yaw=0, lean=40, glints=True)
+cue("L62", "empty", pose="lean", pos=list(EM), yaw=0, lean=40, glints=True)
 cue("L62.2", "empty", pose="heap", pos=[-11.35, 1.75], yaw=-40)
 cue("L63", "empty", hidden=True)
 cue(0, "hanger", on=False)
@@ -511,13 +527,13 @@ cue("L31", "pincushion", on=False)
 cue("L25", "cloth", on=True)
 cue("L28", "cloth", on=False)
 cue("L68", "canvas", on=True)
-cue("L69.1", "canvas", on=False)
+cue("L69", "canvas", on=False)
 cue("L29", "phone", on=True)
 cue("L30", "phone", on=False)
 cue("L38", "ticket", on=True)
 cue("L43", "ticket", on=False)
 cue(0, "aprons", n=0)
-cue("L69.1", "aprons", n=2)
+cue("L69", "aprons", n=2)
 cue("L69.3", "sign", turn=1.0, dur=0.8)
 cue("L22+0.5", "bell")
 cue("L44", "bell")
@@ -581,7 +597,7 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#7cc4f0",
     "gap": 0.12,
-    "tail": 0.25,
+    "tail": 0,
     "look": {"fog": "#1c2230", "fog_density": 0.012, "fog_start": 8.0, "sky": "#cfe0ee", "sky_strength": 0.9,
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,

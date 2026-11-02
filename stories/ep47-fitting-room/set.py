@@ -36,7 +36,7 @@ SHOP_Y0, SHOP_Y1 = -2.6, 3.2
 CEIL = 3.2
 ME_ST = (-12.6, 1.8)      # my station
 EMPTY_ST = (-12.6, 2.9)   # where the Empty stands
-FOOT = (-11.72, 0.62)     # the front-left brass foot of my bench (the lore tally)
+FOOT = (-11.6, 0.66)     # the front-left brass foot of my bench (the lore tally)
 HEAP = (-11.35, 1.75)
 CURTAIN_X = -14.3
 HANG_AT = (-15.55, -1.75)
@@ -48,8 +48,8 @@ GREEN = "#2f5a43"
 CREAM = "#e8dcc4"
 OAK = "#8a6440"
 OCHRE = "#b58a2e"
-PIN = "#34343a"
-STRIPE = "#8a8a90"
+PIN = "#26262c"
+STRIPE = "#6c6c78"
 
 
 def ss(x):
@@ -190,12 +190,14 @@ def materials(kit):
     M["red"] = pbr(kit, "pincushion red", "#a02a2a", 0.8)
     M["black"] = pbr(kit, "black matte", "#050506", 0.95, spec=0.0)
     M["void"] = pbr(kit, "void", "#010101", 1.0, spec=0.0)
-    M["lining"] = pbr(kit, "lining", "#2a2a30", 0.9)
+    M["lining"] = pbr(kit, "lining", "#08080a", 0.95, spec=0.0)
+    M["collar"] = pbr(kit, "collar", "#232329", 0.9)
     M["pin"] = pinstripe(kit, "pinstripe", PIN, STRIPE)
+    M["pin_collar"] = pinstripe(kit, "pinstripe collar", "#2a2a31", "#62626e", scale=16.0)
     M["pin_arm"] = pinstripe(kit, "pinstripe arm", PIN, STRIPE)
     M["trouser"] = pinstripe(kit, "pinstripe trouser", PIN, STRIPE)
     M["shoe"] = pbr(kit, "empty shoes", "#5a3a22", 0.4, spec=0.5)
-    M["shirt"] = pbr(kit, "empty shirt", "#5c5c64", 0.85)
+    M["shirt"] = pbr(kit, "empty shirt", "#34343e", 0.85)
     M["glow"] = kit.emit("#fff1d0", 6.0, name="bulb glow")
     M["screen"] = kit.emit("#d8e8ff", 1.2, name="phone screen")
     M["warm_panel"] = kit.emit("#ffd9a0", 1.1, name="warm panel")
@@ -591,8 +593,8 @@ def build_shop(kit, M, ctx):
     kit.cyl("card.fl1", 0.09, 0.012, (-0.012, 0, 0.07), M["brass"], sc, n=12, rot=(0, 0, 0))
     ctx["sign_card"] = sc
     # the lore tally: two short upright charcoal strokes pressed into the bench foot (one shot, not narrated)
-    for k, dy in enumerate((-0.025, 0.025)):
-        B(kit, f"tally{k}", (0.006, 0.012, 0.09), (FOOT[0] + 0.095, FOOT[1] + dy, 0.12), M["coin_dark"])
+    for k, dy in enumerate((-0.03, 0.03)):
+        B(kit, f"tally{k}", (0.014, 0.016, 0.1), (FOOT[0] + 0.099, FOOT[1] + dy, 0.12), M["coin_dark"])
     ctx["tally_dust"] = [kit.sphere(f"dust{k}", 0.006, (0, 0, 0), M["dust"], seg=6) for k in range(7)]
     for d in ctx["tally_dust"]:
         d.hide_render = True
@@ -618,6 +620,8 @@ def build_shop(kit, M, ctx):
     kit.aim(L, (FOOT[0], FOOT[1], 0.15))
     L = kit.light("arcade_fill", "AREA", (0, -6, 4.8), 500.0, "#e8f0ff", size=6.0)
     kit.aim(L, (0, -6, 0))
+    L = kit.light("empty_key", "SPOT", (-10.2, 1.4, 2.6), 520.0, "#ffe2c0", spot=75, blend=0.7, size=0.3)
+    kit.aim(L, (-12.6, 2.8, 0.8))
     L = kit.light("cafe_in", "AREA", (5.4, -4.5, 2.9), 300.0, "#ffe2b0", size=3.0)
     kit.aim(L, (6.0, -4.5, 0))
 
@@ -706,20 +710,24 @@ def build_rooms(kit, M, ctx):
 # ------------------------------------------------------------------------------------------------ the Empty
 
 
-def tube_mesh(kit, name, r_out, r_in, z0, h_back, dip, mat_out, mat_in, parent, n=40):
-    """The open collar: a ring wall whose top edge dips at the front (-y), so the dark inside shows from the front."""
+def funnel_mesh(kit, name, r0, r1, thick, h, hf, mat_out, mat_in, parent, n=48):
+    """The raised open collar: a flared ring wall (radius r0 at the shoulders, r1 at the top). Its top edge is high at
+    the back (h) and sweeps down to hf at the front (-y), so the dark inside shows over the low front."""
     verts, faces_ = [], []
-    ang = [2 * math.pi * k / n for k in range(n)]
 
     def top(a):
-        # the front is a = -pi/2: dip there
         d = math.atan2(math.sin(a + math.pi / 2), math.cos(a + math.pi / 2))
-        return z0 + h_back - dip * math.exp(-(d / 0.9) ** 2)
+        w = (1 - math.cos(d)) / 2
+        return hf + (h - hf) * w ** 1.3
 
-    for a in ang:
+    for k in range(n):
+        a = 2 * math.pi * k / n
         c, s_ = math.cos(a), math.sin(a)
         zt = top(a)
-        verts += [(r_out * c, r_out * s_, z0), (r_out * c, r_out * s_, zt), (r_in * c, r_in * s_, zt), (r_in * c, r_in * s_, z0)]
+        f = zt / h
+        ro = r0 + (r1 - r0) * f
+        ri = ro - thick
+        verts += [(r0 * c, r0 * s_, 0.0), (ro * c, ro * s_, zt), (ri * c, ri * s_, zt), ((r0 - thick) * c, (r0 - thick) * s_, 0.0)]
     for k in range(n):
         a, b = 4 * k, 4 * ((k + 1) % n)
         faces_ += [(a, b, b + 1, a + 1), (a + 1, b + 1, b + 2, a + 2), (a + 2, b + 2, b + 3, a + 3)]
@@ -755,26 +763,24 @@ def build_empty(kit, M, ctx):
         kit.box(f"empty.cuffb{sx}", (1.02, 1.04, 0.16), (0, 0, -1.67), M["pin_arm"], arm, bevel=0.04)
         kit.box(f"empty.cuffin{sx}", (0.72, 0.72, 0.02), (0, 0, -1.76), M["void"], arm)
         arms.append(arm)
-    # the head is a tall raised collar: an open tube (black inside) with a dark gape on its front and two glints in it
+    # no head: a tall raised charcoal collar, flared, open and notched at the front. The dark notch is its mouth; the
+    # two glints sit deep inside the back wall and only show down the notch (and only once the cue turns them on)
     neck = kit.empty("empty.neck", (0, 0, 2.0), torso)
-    tube_mesh(kit, "empty.collar", 0.62, 0.52, 0.0, 1.35, 0.0, M["shirt"], M["lining"], neck)
-    tube_mesh(kit, "empty.void", 0.53, 0.5, -0.02, 1.34, 0.0, M["void"], M["void"], neck)
-    floor_ = kit.cyl("empty.voidfloor", 0.54, 0.02, (0, 0, 0.03), M["void"], neck, n=24)
-    gape = kit.sphere("empty.gape", 1.0, (0, -0.60, 0.66), M["void"], neck, seg=16)
-    gape.scale = (0.3, 0.05, 0.5)
+    funnel_mesh(kit, "empty.collar", 0.56, 0.86, 0.09, 1.6, 0.5, M["pin_collar"], M["lining"], neck)
+    floor_ = kit.cyl("empty.voidfloor", 0.5, 0.02, (0, 0, 0.03), M["void"], neck, n=24)
     glints = []
     gm = kit.emit("#f4f0e2", 12.0, name="glint")
     for sx in (-1, 1):
-        glints.append(kit.sphere(f"empty.glint{sx}", 0.045, (sx * 0.13, -0.655, 0.8), gm, neck, seg=10))
-    e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=glints + [floor_, gape], glints=glints)
+        glints.append(kit.sphere(f"empty.glint{sx}", 0.05, (sx * 0.16, 0.5, 0.95), gm, neck, seg=10))
+    e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=[floor_], glints=glints)
     ctx["empty"] = e
 
 
 POSES = {
     #        arms (fwd deg, out deg) l/r,           torso lean, head-neck tilt back, legs
-    "hang": {"arm": (6, 3), "lean": 5, "tilt": 0},
+    "hang": {"arm": (3, 2), "lean": 3, "tilt": 0},
     "stand": {"arm": (0, 2), "lean": 0, "tilt": 0},
-    "sleeves_up": {"arm": (78, 10), "lean": 0, "tilt": 0},
+    "sleeves_up": {"arm": (66, 16), "lean": 0, "tilt": 0},
     "lean": {"arm": (12, 4), "lean": 12, "tilt": 0},
 }
 
@@ -809,8 +815,11 @@ def pose_empty(ctx, c):
         for arm, sx in zip(e["arms"], (-1, 1)):
             arm.rotation_euler = (-math.radians(fwd), sx * math.radians(out) * -1, 0)
         e["neck"].rotation_euler = (math.radians(c.get("tilt", P["tilt"])), 0, 0)
+        e["neck"].scale = (1, 1, 0.5) if pose == "hang" else (1, 1, 1)   # limp: the collar slumps
     for ob in e["void"]:
         ob.hide_render = heap
+    for ob in e["glints"]:
+        ob.hide_render = heap or pose == "hang" or not c.get("glints", False)
 
 
 def pose_heap(e):
@@ -1016,7 +1025,8 @@ MODES = {
     "grey": {"world": (0.4, "#aab4c0"), "sun": 0, "sun_eve": 0, "shop_front": 0.8, "shop_front_eve": 0, "shop_mid": 0.8,
              "shop_work": 0.6, "passage": 0.8, "stair_spill": 0.5, "fit_light": 1.0, "arcade_fill": 0.5, "cafe_in": 0.8},
     "friday": {"world": (0.85, "#d4e4f4"), "sun": 1.0, "sun_eve": 0, "shop_front": 1.0, "shop_front_eve": 0, "shop_mid": 0.5,
-               "shop_work": 0.3, "passage": 0.55, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 1.0, "cafe_in": 1.0},
+               "shop_work": 0.3, "passage": 0.55, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 1.0, "cafe_in": 1.0,
+               "empty_key": 1.0},
     "eve": {"tally": 1.0, "world": (0.5, "#e6d6c0"), "sun": 0, "sun_eve": 1.0, "shop_front": 0, "shop_front_eve": 1.0, "shop_mid": 0.35,
             "shop_work": 0.25, "passage": 0.3, "stair_spill": 0, "fit_light": 0.2, "arcade_fill": 0.5, "cafe_in": 1.0},
     "sat": {"world": (0.95, "#dbe9f6"), "sun": 1.0, "sun_eve": 0, "shop_front": 1.0, "shop_front_eve": 0, "shop_mid": 0.55,
@@ -1125,7 +1135,7 @@ def animate(kit, story, tl, t, ctx):
     sw = 0.0
     if c.get("on") and c.get("swing"):
         sw = 0.05 * math.sin((t - c["t"]) * 3.0) * math.exp(-(t - c["t"]) * 0.5)
-    hg.rotation_euler = (sw, 0, 0)
+    hg.rotation_euler = (sw, 0, math.radians(-150))
     # the door sign card, turning from plain to the spool
     flip = ramped(_cues(tl, "sign"), "turn", t, 0.0, 0.3)
     ctx["sign_card"].rotation_euler = (0, 0, math.radians(180 * flip))
@@ -1162,7 +1172,7 @@ def animate(kit, story, tl, t, ctx):
     c = _last(_cues(tl, "empty"), t)
     pose_empty(ctx, c or {"hidden": True})
     if c and c.get("pose") == "hang":
-        ctx["empty"]["root"].location = (HANG_AT[0], HANG_AT[1], 0.02)
+        ctx["empty"]["root"].location = (c["pos"][0], c["pos"][1], 0.22)   # hung from the hook: the shoes clear the floor
     # --- tags
     animate_tags(kit, ctx, tl, t)
     return over

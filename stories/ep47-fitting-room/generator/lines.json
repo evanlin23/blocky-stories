@@ -910,20 +910,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "It's the only thing",
-    "It's the only thing"
+    "It has no TAGS",
+    "It has no tags"
    ],
    [
-    "in this town",
-    "in this town"
+    "on it",
+    "on it"
    ],
    [
-    "with no TAGS.",
-    "with no tags."
+    "either.",
+    "either."
    ],
    [
-    "Apart from ME.",
-    "Apart from me."
+    "Just like ME.",
+    "Just like me."
    ]
   ]
  },
@@ -1240,6 +1240,11 @@
     "for a new apron."
    ]
   ]
+ },
+ {
+  "id": "P03",
+  "pause": 0.85,
+  "chunks": []
  },
  {
   "id": "L69",
