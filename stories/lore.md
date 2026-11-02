@@ -17,6 +17,16 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 - **What's under the towns.** Far below every town is the Bench: the Makers' workbench floor, flat and endless, with unfinished pieces lying on it. Keepers that come up from below (ep12's) come from there. No story has shown it, and none should show more than a glimpse.
 - **What the Keepers are to each other.** Kin, all the same first batch. They never meet, because each is tied to its own place. They're never evil. They're also never "kind all along": they're doing a job, and it's eerie because they do it without caring how it looks to us.
 
+## Other things a count can do
+(Added 2026-11-02, because most of the parallel batches used the same shape: a Keeper standing in someone's empty place until they come back. These are all true in the canon, and each makes a different twist.)
+- **The count is too high, and the extra one is us.** The narrator, or someone they love, is the stroke that shouldn't be there, and the Keeper's job is to make the number right.
+- **Leaving breaks the count.** A Keeper can't stop anyone leaving, but a place built for four goes on counting four. The empty chair is set, the coat is hung, and the person who left starts to fade from photos instead.
+- **A count kept for someone who's gone for good.** The Keeper isn't waiting. It's mourning, the only way a counter knows how.
+- **A count that's wrong on purpose.** People lie to a Keeper (a name on a list, a ticket bought for nobody) to protect someone. The twist is the lie.
+- **Two places count the same person.** Someone belongs to two places at once (two homes, two crews), and two Keepers' tallies both include them.
+- **The Keeper is the one being counted.** Something bigger than the Keeper keeps a count too, and the story ends on the Keeper's own stroke.
+- **The rule was never about the Keeper.** The town's rule protects people from something else entirely, and the Keeper is just standing nearby, counting.
+
 ## Planted so far
 | Story | The connection it plants | Where (line, shot) |
 |---|---|---|
