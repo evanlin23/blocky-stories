@@ -263,7 +263,7 @@ def materials(kit):
     M["pie"] = kit.plastic("#b57a3c", 0.7, name="pie")
     M["tin"] = kit.metal("#b9bec2", 0.4, name="tin")
     M["car_silver"] = kit.plastic("#b9c2c9", 0.35, name="car_silver")
-    M["car_red"] = kit.plastic("#d4542a", 0.35, name="car_red")
+    M["car_red"] = kit.plastic("#4f86c6", 0.35, name="car_red")
     M["car_teal"] = kit.plastic("#3b8a86", 0.4, name="car_teal")
     M["car_plum"] = kit.plastic("#7d4a86", 0.4, name="car_plum")
     M["car_sand"] = kit.plastic("#c7b27e", 0.4, name="car_sand")
