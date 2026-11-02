@@ -1656,11 +1656,11 @@ def build_dressing(kit, ctx, M):
     nt = sq.node_tree
     nt.nodes.remove(nt.nodes["Principled BSDF"])
     em = nt.nodes.new("ShaderNodeEmission")
-    em.inputs["Color"].default_value = kit.col("#a9bddc")
-    em.inputs["Strength"].default_value = 0.09
+    em.inputs["Color"].default_value = (0.02, 0.02, 0.025, 1.0)   # a SHADOW: unlit near-black, no sheen
+    em.inputs["Strength"].default_value = 1.0
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mx = nt.nodes.new("ShaderNodeMixShader")
-    mx.inputs["Fac"].default_value = 0.5
+    mx.inputs["Fac"].default_value = 0.93
     nt.links.new(tr.outputs[0], mx.inputs[1])
     nt.links.new(em.outputs[0], mx.inputs[2])
     kit._fogged(sq, mx.outputs[0])
