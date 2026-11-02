@@ -169,7 +169,7 @@ def mats(kit):
     M["puddle"] = kit.plastic("#2b3640", 0.04, name="puddle", spec=0.9)
     M["mat"] = kit.plastic("#4a3a2c", 0.98, name="doormat")
     M["dark"] = kit.plastic("#05060a", 1.0, name="cut black")
-    M["clay"] = kit.grime("#7c3422", 0.55, 9.0, name="clay rough", rough=1.0)
+    M["clay"] = kit.grime("#7a4535", 0.55, 9.0, name="clay rough", rough=1.0)
     M["sack"] = kit.checker("#5e4529", "#503a22", 80.0, name="sack weave", rough=1.0)
     M["glint"] = kit.emit("#cfe4ff", 12.0, name="glint")
     M["mist"] = kit.emit("#8a98a6", 0.05, name="mist in the cut")
@@ -425,7 +425,7 @@ def build_lights(kit, ctx):
     kit.light("bedroom", "POINT", (3.9, OY - 3.0, F + 2.3), 110, "#ffd29a", size=0.3)
     kit.light("daywin", "AREA", (geo.WIN_X0 / 2 + geo.WIN_X1 / 2, OY + 0.9, F + 1.6), 900, "#fff0d8", rot=(-math.pi / 2, 0, 0), size=1.4)
     kit.light("benchl", "POINT", (0.0, OY + 66.5, 3.4), 420, "#a8bce8", size=0.6)
-    kit.light("rkey", "POINT", (0, 0, -60), 120, "#ffc890", size=0.25)
+    kit.light("rkey", "POINT", (0, 0, -60), 120, "#ffd4b8", size=0.25)
     kit.light("rrim", "POINT", (0, 0, -60), 160, "#7ea8ff", size=0.3)
 
 
