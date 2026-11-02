@@ -45,6 +45,11 @@ BLUE, ORANGE, GREEN = "#3f7fd0", "#e2742b", "#2f5d43"
 TUBE_STRENGTH = 3.0
 TUBE_W = 62.0
 EYE_GLOW = 3.2
+NECK_LEN = 1.5                               # a bare neck between its shoulders and the scalp of its upside-down head
+NECK_RISE = 1.5
+TURNED_HEAD_H = faces.HEAD_H * 1.24 + 0.05 + NECK_LEN
+HEAD_ROLL = 150.0                              # degrees: the face hangs upside down
+TIP_BACK = 0.0                                 # degrees extra, before the roll
 
 
 def _ss(x):
@@ -115,7 +120,7 @@ def materials(kit):
     M["bokeh2"] = kit.emit("#e8b27a", 2.2, "wc bokeh warm")
     M["panel"] = kit.emit("#c9e6cf", 1.1, "wc change panel")
     M["black"] = kit.plastic("#0d0f13", 0.6, "wc black")
-    M["blue"] = kit.emit(BLUE, 1.6, "wc tally blue")
+    M["blue"] = kit.plastic(BLUE, 0.85, "wc tally blue")
     M["wet"] = kit.plastic("#171b21", 0.22, "wc wet road")
     M["walk"] = kit.plastic("#3a3f47", 0.3, "wc sidewalk")
     M["brick"] = kit.bricks("#5e3a30", "#4a2c26", "#3a3532", 1.0, "wc brick")
@@ -128,6 +133,11 @@ def materials(kit):
     M["towel_w"] = kit.plastic("#d8d6ce", 0.95, "wc towel white")
     M["coat"] = kit.plastic(GREEN, 0.9, "wc coat green")
     M["navy"] = kit.plastic("#26334f", 0.9, "wc coat navy")
+    M["coat_d"] = kit.plastic("#1f4130", 0.9, "wc coat dark")
+    M["coat_l"] = kit.plastic("#417a58", 0.85, "wc coat collar")
+    M["navy_d"] = kit.plastic("#18223a", 0.9, "wc navy dark")
+    M["navy_l"] = kit.plastic("#33466c", 0.85, "wc navy collar")
+    M["btn_k"] = kit.plastic("#16110e", 0.5, "wc coat button")
     M["lump1"] = kit.plastic("#7c5a46", 0.95, "wc lump1")
     M["lump2"] = kit.plastic("#486a58", 0.95, "wc lump2")
     M["lump3"] = kit.plastic("#8a8f98", 0.95, "wc lump3")
@@ -159,8 +169,8 @@ def build_room(kit, ctx, M):
     for k, x in enumerate((3.2, 3.5)):
         kit.cyl(f"hook{k}", 0.018, 0.12, (x, YF + 0.06, 1.7), M["steel"], rot=(math.pi / 2, 0, 0), n=10)
         kit.sphere(f"hookb{k}", 0.03, (x, YF + 0.12, 1.7), M["steel"])
-    ctx["coat_a"] = coat_prop(kit, "coat_a", M["coat"], (3.2, YF + 0.16, 1.66))
-    ctx["coat_b"] = coat_prop(kit, "coat_b", M["navy"], (3.5, YF + 0.16, 1.66))
+    ctx["coat_a"] = coat_prop(kit, "coat_a", M["coat"], (3.2, YF + 0.16, 1.66), M["coat_d"], M["coat_l"], M["btn_k"])
+    ctx["coat_b"] = coat_prop(kit, "coat_b", M["navy"], (3.5, YF + 0.16, 1.66), M["navy_d"], M["navy_l"], M["btn_k"])
     # tubes over the room (emissive bars, plus the area lights that really light it)
     for k, x in enumerate((-4.0, -1.35, 1.35, 4.0)):
         for y in (-1.5, 1.4):
@@ -181,13 +191,42 @@ def build_room(kit, ctx, M):
     ctx["tube_mat"] = M["tube"]
 
 
-def coat_prop(kit, name, mat, loc):
+def coat_prop(kit, name, mat, loc, dark=None, light=None, btn=None):
+    """A coat on a hook: body, shoulders, two sleeves with darker cuffs, a standing collar with lapels and buttons,
+    so it reads as a coat and not a slab."""
     root = kit.empty(name, loc)
-    B(kit, f"{name}.body", (0.46, 0.13, 0.82), (0, 0, -0.45), mat, root, bevel=0.04)
+    dark = dark or mat
+    light = light or mat
+    B(kit, f"{name}.body", (0.44, 0.12, 0.72), (0, 0, -0.5), mat, root, bevel=0.04)
+    B(kit, f"{name}.yoke", (0.56, 0.12, 0.13), (0, 0, -0.14), mat, root, bevel=0.05)
     for sx in (-1, 1):
-        B(kit, f"{name}.sl{sx}", (0.14, 0.13, 0.7), (sx * 0.285, 0.0, -0.46), mat, root, bevel=0.02)
-    B(kit, f"{name}.col", (0.5, 0.16, 0.1), (0, 0, -0.04), mat, root, bevel=0.04)
+        B(kit, f"{name}.sl{sx}", (0.13, 0.12, 0.66), (sx * 0.325, 0.0, -0.45), mat, root, bevel=0.04, rot=(0, sx * 0.14, 0))
+        B(kit, f"{name}.cuff{sx}", (0.145, 0.135, 0.09), (sx * 0.375, 0.0, -0.78), dark, root, bevel=0.03, rot=(0, sx * 0.14, 0))
+        B(kit, f"{name}.lap{sx}", (0.15, 0.04, 0.34), (sx * 0.1, -0.07, -0.26), light, root, bevel=0.015, rot=(0, sx * 0.0, sx * -0.0))
+    B(kit, f"{name}.col", (0.4, 0.15, 0.1), (0, 0.02, -0.04), light, root, bevel=0.035)
+    B(kit, f"{name}.colf", (0.24, 0.05, 0.08), (0, -0.07, -0.07), dark, root, bevel=0.02)
+    B(kit, f"{name}.seam", (0.02, 0.02, 0.5), (0, -0.07, -0.55), dark, root)
+    for k in range(3):
+        kit.sphere(f"{name}.b{k}", 0.022, (0.035, -0.075, -0.3 - 0.16 * k), btn or mat, root)
+    B(kit, f"{name}.hem", (0.46, 0.13, 0.05), (0, 0, -0.84), dark, root, bevel=0.02)
     return root
+
+
+def coat_loose(kit, name, M, parent, scale=1.0):
+    """A coat tumbling or lying in a drum (x right, z up, y toward the camera is -y): body, two long sleeves with
+    darker cuffs, a collar with a V of lapels and two buttons. Built flat in the x-z plane."""
+    mat, dark, light, btn = M["coat"], M["coat_d"], M["coat_l"], M["btn_k"]
+    k = scale
+    B(kit, f"{name}.body", (0.34 * k, 0.1, 0.34 * k), (0, 0, -0.02 * k), mat, parent, bevel=0.04)
+    B(kit, f"{name}.sl1", (0.11 * k, 0.1, 0.44 * k), (0.25 * k, 0, 0.1 * k), mat, parent, bevel=0.035, rot=(0, -0.95, 0))
+    B(kit, f"{name}.cuff1", (0.125 * k, 0.115, 0.07 * k), (0.42 * k, 0, 0.24 * k), dark, parent, bevel=0.03, rot=(0, -0.95, 0))
+    B(kit, f"{name}.sl2", (0.11 * k, 0.1, 0.4 * k), (-0.2 * k, 0, -0.26 * k), mat, parent, bevel=0.035, rot=(0, 0.5, 0))
+    B(kit, f"{name}.cuff2", (0.125 * k, 0.115, 0.07 * k), (-0.28 * k, 0, -0.44 * k), dark, parent, bevel=0.03, rot=(0, 0.5, 0))
+    B(kit, f"{name}.col", (0.3 * k, 0.12, 0.09 * k), (0, 0, 0.18 * k), light, parent, bevel=0.035)
+    for sx in (-1, 1):
+        B(kit, f"{name}.lap{sx}", (0.08 * k, 0.05, 0.2 * k), (sx * 0.06 * k, -0.06, 0.08 * k), light, parent, bevel=0.015, rot=(0, sx * -0.55, 0))
+    for j in range(2):
+        kit.sphere(f"{name}.b{j}", 0.022, (0.03 * k, -0.07, -0.05 * k - 0.1 * k * j), btn, parent)
 
 
 def build_seats(kit, ctx, M):
@@ -226,6 +265,8 @@ def build_seats(kit, ctx, M):
     B(kit, "held body", (0.5, 0.1, 0.8), (0, 0, 0), kit.plastic(GREEN, 0.9, "wc coat green"), hc, bevel=0.04)
     for sx in (-1, 1):
         B(kit, f"held sl{sx}", (0.14, 0.12, 0.6), (sx * 0.32, 0, -0.1), kit.plastic(GREEN, 0.9, "wc coat green"), hc, bevel=0.04)
+        B(kit, f"held cuff{sx}", (0.155, 0.14, 0.09), (sx * 0.32, 0, -0.4), M["coat_d"], hc, bevel=0.03)
+    B(kit, "held col", (0.42, 0.15, 0.1), (0, 0.02, 0.42), M["coat_l"], hc, bevel=0.035)
     ctx["held"] = hc
 
 
@@ -254,11 +295,19 @@ def build_machines(kit, ctx, M):
     kit.cyl("d7 drum", 0.31, 0.5, (x7, y7 + 0.1, 1.0), M["black"], rot=(math.pi / 2, 0, 0), n=32)
     ctx["d7_coat"] = kit.empty("d7 coat", (x7, y7 + 0.41, 1.0))
     kit.cyl("d7 hole", 0.33, 0.01, (x7, y7 + 0.355, 1.0), M["black"], rot=(math.pi / 2, 0, 0), n=32)
-    B(kit, "d7 coat a", (0.5, 0.1, 0.34), (0, 0, 0), M["coat"], ctx["d7_coat"], bevel=0.04)
-    B(kit, "d7 coat b", (0.18, 0.1, 0.36), (0.1, 0, 0.12), M["coat"], ctx["d7_coat"], bevel=0.04, rot=(0, 0.7, 0))
+    coat_loose(kit, "d7c", M, ctx["d7_coat"], 1.0)
     ctx["d7_loadfloor"] = kit.empty("d7 floor coat", (x7, y7 + 0.45, 0.8))
-    B(kit, "d7 fcoat", (0.5, 0.36, 0.1), (0, 0, 0), M["coat"], ctx["d7_loadfloor"], bevel=0.04)
-    B(kit, "d7 fcoat2", (0.4, 0.3, 0.08), (0, 0, 0.08), M["coat"], ctx["d7_loadfloor"], bevel=0.04)
+    fl_ = ctx["d7_loadfloor"]
+    B(kit, "d7f body", (0.46, 0.34, 0.12), (0, 0.02, 0.0), M["coat"], fl_, bevel=0.05)
+    B(kit, "d7f sl1", (0.12, 0.38, 0.1), (0.2, -0.08, 0.1), M["coat"], fl_, bevel=0.04, rot=(0, 0, 0.55))
+    B(kit, "d7f cuff1", (0.135, 0.09, 0.115), (0.07, -0.25, 0.1), M["coat_d"], fl_, bevel=0.03, rot=(0, 0, 0.55))
+    B(kit, "d7f sl2", (0.12, 0.38, 0.1), (-0.18, -0.1, 0.1), M["coat"], fl_, bevel=0.04, rot=(0, 0, -0.45))
+    B(kit, "d7f cuff2", (0.135, 0.09, 0.115), (-0.07, -0.27, 0.1), M["coat_d"], fl_, bevel=0.03, rot=(0, 0, -0.45))
+    B(kit, "d7f col", (0.34, 0.1, 0.12), (0, 0.21, 0.1), M["coat_l"], fl_, bevel=0.04)
+    for sx in (-1, 1):
+        B(kit, f"d7f lap{sx}", (0.1, 0.22, 0.04), (sx * 0.07, 0.1, 0.17), M["coat_l"], fl_, bevel=0.015, rot=(0, 0, sx * 0.45))
+    for j in range(3):
+        kit.sphere(f"d7f b{j}", 0.025, (0.0, 0.06 - 0.09 * j, 0.185), M["btn_k"], fl_)
     kit.light("d7 inner", "POINT", (x7, y7 + 0.7, 1.0), 14.0, "#e8a45a", size=0.1)
     # twelve front-loaders on the right end wall: two rows of six, each a drum with a load
     ctx["wash"] = []
@@ -446,6 +495,9 @@ def dress(kit, ctx, story):
         nt.links.new(ramp.outputs["Color"], bsdf.inputs["Emission Color"])
         bsdf.inputs["Emission Strength"].default_value = EYE_GLOW
         bpy.data.objects["turned.head"].scale = (1.0, 1.0, 1.24)
+        # a bare neck, so the head is plainly on upside down: the neck runs into its HAIR, the chin points at the ceiling
+        B(kit, "turned.neckblock", (0.62, 0.62, NECK_LEN + 0.1), (0, 0, 2.0 + NECK_LEN / 2 + 0.03),
+          kit.plastic("#cdb59c", 0.7, "wc turned neck"), tor, bevel=0.08)
     if "me" in cast:
         tor = bpy.data.objects["me.torso"]
         g = kit.plastic(cast["me"]["shirt"], 0.9)
@@ -477,6 +529,13 @@ def people(kit, ctx, story, tl, t):
         sit = bool(_switch(keys, "sit", t, False)) and not s["hidden"]
         for ob in ctx["shins"].get(who, []):
             ob.hide_render = not sit
+        if who == "turned":
+            # its head hangs over the back of the chair: rolled right round on the neck, so the face on the back of
+            # its head reads upside down (chin to the ceiling, the neat haircut down at the collar)
+            nk = bpy.data.objects.get("turned.neck")
+            if nk is not None:
+                nk.location = (0, 0, 2.0 + NECK_RISE)
+                nk.rotation_euler = (s["head_pitch"] + math.radians(TIP_BACK), math.radians(HEAD_ROLL), s["head_yaw"])
         tor = bpy.data.objects.get(f"{who}.torso")
         if tor is not None:
             tor.rotation_euler = (math.radians(AC._held(keys, "bend", t, 0.0)), 0, 0)
@@ -511,7 +570,7 @@ def lights_follow_turned(kit, tl, t, over):
     kit.aim(r, (x, y - 0.15, 1.35))
     g = float(_ramp(_cues(tl, "tubes"), t, 1.0))
     over["t key"] = 0.12 + 0.88 * g
-    over["t rim"] = 0.12 + 0.88 * g
+    over["t rim"] = 0.0          # lit from below only (the tubes' own light does the rest)
 
 
 def animate(kit, story, tl, t, ctx):
@@ -525,9 +584,12 @@ def animate(kit, story, tl, t, ctx):
         over[f"tube{k}"] = g
     for n in ctx["tube_mat"].node_tree.nodes:
         if n.type == "EMISSION":
-            n.inputs["Strength"].default_value = TUBE_STRENGTH * (0.12 + 0.88 * g)
-    over["table lamp"] = 0.4 + 0.6 * g
+            n.inputs["Strength"].default_value = TUBE_STRENGTH * g
     sid = _shot(tl, t)["id"]
+    dim = float(story.get("creature_dim", {}).get(sid, 1.0))     # the room's top light in a creature close-up
+    for k in range(4):
+        over[f"tube{k}"] = g * dim
+    over["table lamp"] = g * dim
     over["me lamp"] = 1.0 if sid in story.get("lamp_shots", []) else 0.0
     over["hook lamp"] = 1.0 if sid in story.get("hook_lamp_shots", []) else 0.0
     over["stair fill"] = 1.0 if sid in story.get("stair_fill_shots", []) else 0.0
