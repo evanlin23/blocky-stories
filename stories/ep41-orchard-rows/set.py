@@ -806,8 +806,8 @@ def animate(kit, story, tl, t, ctx):
     fx_, fy_ = math.sin(yawr), -math.cos(yawr)
     kit.LIGHTS["rkey"]["obj"].location = (px + 1.5 * math.cos(yawr) + fx_ * 0.9, py + 1.5 * math.sin(yawr) + fy_ * 0.9, 0.9)
     kit.LIGHTS["rrim"]["obj"].location = (px - 1.3 * math.cos(yawr) - fx_ * 1.5, py - 1.3 * math.sin(yawr) - fy_ * 1.5, 3.0)
-    over["rkey"] = rk
-    over["rrim"] = rk
+    over["rkey"] = rk * rc.get("key", 1.0) if on else 0.0
+    over["rrim"] = rk * rc.get("rim", 1.0) if on else 0.0
     # --- falling leaves
     lv, leaves = ctx["leaves"]
     lc = last_cue(cues_of(tl, "leaves"), t)

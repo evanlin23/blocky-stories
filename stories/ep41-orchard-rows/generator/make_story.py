@@ -20,7 +20,7 @@ OY = geo.OY
 F = geo.FLOOR
 
 lines = json.loads((HERE / "lines.json").read_text())
-LOOP = 0.25
+LOOP = 0.08
 out_lines = []
 for ln in lines:
     out_lines.append(ln)
@@ -177,8 +177,8 @@ def strength(at, tid, value, dur=0.6):
     cues.append({"at": at, "name": "trail_str", "id": tid, "value": value, "dur": dur})
 
 
-def rough(at, pos, yaw=0.0, on=True, lights=1.0):
-    cues.append({"at": at, "name": "rough", "on": on, "pos": pos, "yaw": yaw, "lights": lights})
+def rough(at, pos, yaw=0.0, on=True, lights=1.0, key=1.0, rim=1.0):
+    cues.append({"at": at, "name": "rough", "on": on, "pos": pos, "yaw": yaw, "lights": lights, "key": key, "rim": rim})
 
 
 def look(x, y):
@@ -286,13 +286,16 @@ cue("L14", "lamp", to=0.35, dur=0.4)
 trail("L14", "sq1", "#1d2a16", SQ1, kind="dark", gap=1.3, lat=0.32)
 shot("S19", "L15", cam(([0.55, 62.2, 0.5], [-0.55, 65.0, 0.0], 28), ([0.55, 62.4, 0.5], [-0.55, 65.2, 0.0], 28)), {})
 shot("S20", "L16", cam(([-0.4, 65.0, 4.0], [-0.4, 65.0, 0.0], 30), ([-0.4, 64.0, 3.6], [-0.4, 64.5, 0.0], 30)), {})
+rough("L17", O(geo.LEFT, 61.5), on=False)
 shot("S21", "L17", cam(([-0.6, 53.5, 0.35], [-0.6, 66.0, 0.3], 28), ([-0.6, 55.5, 0.35], [-0.6, 66.0, 0.3], 28)), {})
+rough("L18", O(geo.LEFT, 61.5), yaw=0, lights=0.6)
 shot("S22", "L18", cam(([-1.1, 54.0, 0.55], [-1.1, 66.0, 0.9], 30), ([-1.1, 58.0, 0.55], [-1.1, 66.0, 0.9], 30)), {})
+rough("L18.3", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.05, rim=1.5)
 shot("S23", "L18.3", cam(([0.8, 49.0, 1.2], [-1.1, 62.0, 1.3], 55), ([0.8, 49.5, 1.2], [-1.1, 62.0, 1.3], 55)), {})
 shot("S24", "L19", cam(([1.8, 36.0, 1.4], [-1.1, 61.6, 1.3], 100), ([1.8, 36.6, 1.4], [-1.1, 61.6, 1.3], 100)), {})
-rough("L19", O(geo.LEFT, 61.5), yaw=0, lights=0.12)
+rough("L19", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.05, rim=1.5)
 shot("S25", "L20", cam(([-0.4, 47.0, 2.1], [-1.1, 61.2, 2.1], 90), ([-0.45, 47.6, 2.1], [-1.1, 61.2, 2.1], 90), hand=0.004), {})
-rough("L20", O(geo.LEFT, 61.5), yaw=0, lights=0.15)
+rough("L20", O(geo.LEFT, 73.0), yaw=0, lights=0.3, key=0.05, rim=1.5)
 rough("L21", O(geo.LEFT, 61.5), yaw=0, lights=0.6)
 shot("S26", "L21", cam(([0.5, 50.0, 1.4], [-1.1, 61.5, 1.5], 34), ([0.6, 50.4, 1.4], [-1.1, 61.5, 1.5], 34)), {})
 cue("L21", "leaves", on=True, at_xy=O(geo.LEFT, 61.5))
@@ -435,6 +438,7 @@ shot("S73", "L62", cam(([0.0, 1.3, 2.7], [0.0, 60.0, 0.8], 30), ([0.0, 1.5, 2.7]
 trail("L62", "fp", PINK, [[O(-0.55, 66.4), O(-0.55, 2.8)]], strength=3.4)
 trail("L62", "fb", BLUE, [[O(0.55, 66.4), O(0.55, 2.8)]], strength=3.4)
 shot("S74", "L63", cam(([0.2, 9.5, 0.55], [0.0, 12.0, 0.0], 40), ([0.2, 9.8, 0.5], [0.0, 12.0, 0.0], 40)), {})
+trail("L64", "sq_end", "#1d2a16", [[O(geo.LEFT, 56.0), O(geo.LEFT, 66.0), O(-1.35, geo.BENCH_Y - 0.1)]], kind="dark", gap=1.3, lat=0.32)
 shot("S75", "L64", cam(([-0.2, 57.0, 3.2], [-0.9, 68.6, 0.4], 38), ([-0.2, 57.5, 3.0], [-0.9, 68.6, 0.4], 38)), {})
 shot("S76", "L64.2", cam(([0.0, 68.5, 1.55], [0.0, 69.5, 0.5], 36), ([0.0, 68.6, 1.5], [0.0, 69.5, 0.5], 36), hand=0.003), {})
 shot("S77", "L65", cam(([3.9, 1.4, 2.55], [0.0, 0.75, 2.3], 32), ([3.7, 1.45, 2.55], [0.0, 0.75, 2.3], 32)),
