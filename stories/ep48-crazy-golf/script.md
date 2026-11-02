@@ -156,7 +156,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the gate from outside: two shadows slipping out under its bottom bar onto the pavement]
 - `L14` narrator: They sit on the PAVEMENT, / as CLOSE / as they can GET.
   - [the pavement outside the gate: a row of shadows sitting against the railings, facing in]
-- `L15` narrator: By WEDNESDAY, / one shadow is left INSIDE, / on the LAST GREEN.
+- `L15` narrator: Before LONG, / one shadow is left INSIDE, / on the LAST GREEN.
   - [high wide: seventeen holes fenced. The last green open, and on it one small dark shape]
   - [closer: the shadow sitting on the last green, hugging its knees, its back to us]
 - `L16` narrator: Every EVENING, / Dad putts around ALONE.
