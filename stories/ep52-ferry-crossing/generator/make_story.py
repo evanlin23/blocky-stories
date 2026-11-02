@@ -36,6 +36,10 @@ for ln in lines:
         full.append({"id": pid, "pause": dur, "chunks": []})
 full.append({"id": "P03", "pause": 0.25, "chunks": []})
 lines = full
+TEMPO = {"L12": 1.0, "L68": 0.7, "L20": 0.9, "L13": 1.0, "L02": 0.9, "L45": 0.9}
+for _l in lines:
+    if _l["id"] in TEMPO:
+        _l["tempo"] = TEMPO[_l["id"]]
 
 
 def split_chunks(ln):
@@ -112,9 +116,9 @@ def P(pos, **kw):
 
 # ------------------------------------------------------------------------------------------------ 01 the rule
 shot(0, "bright low wide up the slipway: glove woman and umbrella man walking to camera",
-     c([0, [0.9, 3.6, 1.25], [-0.2, -4.5, 1.1], 24], [1, [0.9, 3.35, 1.25], [-0.2, -4.5, 1.1], 24]),
-     {"glove_woman": P([-0.5, -4.2], walk=[("L01>", [-0.5, 0.5])]),
-      "umbrella_man": P([0.9, -5.8], walk=[("L01>", [0.9, -0.8])])})
+     c([0, [0.9, 2.6, 1.2], [-0.1, -3.5, 1.0], 26], [1, [0.9, 2.4, 1.2], [-0.1, -3.5, 1.0], 26]),
+     {"glove_woman": P([-0.5, -3.0], walk=[("L01>", [-0.4, 0.2])]),
+      "umbrella_man": P([0.9, -4.6], walk=[("L01>", [0.9, -0.6])])})
 shot("L02", "low: the glove hopping up after the raincoat hem",
      c([0, [0.9, 2.9, 0.3], [-0.4, -1.0, 0.2], 30], [1, [0.9, 2.7, 0.3], [-0.4, -1.0, 0.2], 30]),
      {"glove_woman": P([-0.5, -4.6], walk=[("L02>", [-0.45, 0.2])])})
@@ -124,7 +128,7 @@ shot("L03", "side tracking: umbrella man",
 shot("L04", "inside the ticket hut: the empty shelf",
      c([0, [700.4, -1.2, 1.3], [700, 1.4, 1.2], 24], [1, [700.2, -1.0, 1.3], [700, 1.4, 1.2], 24]))
 shot("L05", "the jumper man at the bin",
-     still([152.7, 3.3, 1.5], [150.4, 6.2, 1.1], 28),
+     still([148.6, 9.2, 1.5], [150.6, 5.8, 1.2], 26),
      {"jumper_man": P([150.95, 5.45], yaw=-140)})
 shot("L05.3", "he wakes up wearing it",
      still([600.0, -1.9, 1.35], [600, 0.95, 1.15], 26),
@@ -184,7 +188,7 @@ shot("L24", "Wednesday: halfway up Gran's lane", still([X + 0.9, 11.2, 1.45], [X
 
 # ------------------------------------------------------------------------------------------------ 04 the door
 shot("L25", "Thursday: me at the green door", still([X - 2.1, 32.2, 1.5], [X + 0.1, 34.0, 1.45], 22),
-     {"me": P([X - 0.1, 33.6], yaw=180, expr="scared", head=[60, 0])})
+     {"me": P([X - 0.1, 33.6], yaw=-50, expr="scared")})
 shot("L26", "the door a hand's width open", still([X, 31.6, 1.45], [X, 36.0, 1.3], 24))
 shot("L27", "her glasses on the mat", still([X - 0.3, 32.9, 0.3], [X, 34.35, 0.06], 36))
 shot("L28", "her bed, made", still([X + 2.2, 36.2, 1.5], [X + 3.6, 38.4, 0.7], 22))
@@ -224,7 +228,7 @@ shot("L42", "the car deck: looking for her", still([F + 0.0, -6.8, 1.7], [F, -3.
 # ------------------------------------------------------------------------------------------------ 06 the Shrug
 shot("L43", "up the stair to the lounge door", still([F - 2.3, -4.2, 1.5], [F - 2.3, 0.4, 4.6], 22))
 shot("L44", "Gran at the window, an orange edge beside her",
-     still([F - 2.3, 1.2, 5.5], [F + 1.7, 3.5, 5.2], 28),
+     still([F - 1.2, 1.1, 5.5], [F + 1.7, 3.5, 5.2], 28),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="neutral")})
 shot("L45", "the Shrug in my seat, clearly lit", still([F + 4.3, 5.7, 5.4], [F + 1.7, 4.75, 5.15], 24),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="neutral")})

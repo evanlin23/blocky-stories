@@ -45,12 +45,12 @@ SEAT_Y = {"gran": 3.25, "me": 4.75}
 BENCH_X = 1.7
 
 TOD = {
-    "day":    dict(sun=2.4, sunc="#f4f1ea", fill=1.5, fillc="#c9d4de", sky=1.25, hor="#c4ccd0", zen="#a9b6bf", fogd=0.010, fogb=1.0),
+    "day":    dict(sun=2.4, sunc="#f4f1ea", fill=1.5, fillc="#c9d4de", sky=1.25, hor="#c4ccd0", zen="#a9b6bf", fogd=0.006, fogb=1.0),
     "sunny":  dict(sun=4.0, sunc="#ffe3b4", fill=1.4, fillc="#c9d4de", sky=1.3, hor="#d3d6d0", zen="#9db8d4", fogd=0.008, fogb=1.0),
     "dusk1":  dict(sun=0.9, sunc="#9fb4e0", fill=1.1, fillc="#8ea0d0", sky=0.7, hor="#7f90b4", zen="#3c4c7a", fogd=0.012, fogb=0.55),
     "dusk2":  dict(sun=0.6, sunc="#8a9fd2", fill=0.9, fillc="#7587c0", sky=0.5, hor="#53638c", zen="#243256", fogd=0.013, fogb=0.35),
-    "dusk3":  dict(sun=0.45, sunc="#7e92c8", fill=0.8, fillc="#6578b2", sky=0.38, hor="#3a4870", zen="#18223f", fogd=0.014, fogb=0.24),
-    "night":  dict(sun=0.55, sunc="#8ea4dc", fill=0.9, fillc="#6f84bc", sky=0.3, hor="#202b4a", zen="#0b1226", fogd=0.014, fogb=0.14),
+    "dusk3":  dict(sun=0.8, sunc="#7e92c8", fill=1.2, fillc="#7588c2", sky=0.45, hor="#3a4870", zen="#18223f", fogd=0.014, fogb=0.24),
+    "night":  dict(sun=1.1, sunc="#8ea4dc", fill=1.6, fillc="#7f94cc", sky=0.5, hor="#202b4a", zen="#0b1226", fogd=0.014, fogb=0.14),
 }
 SUN_DIR = V((0.55, 0.45, 0.7)).normalized()
 FILL_DIR = V((-0.6, -0.4, 0.5)).normalized()
@@ -234,7 +234,7 @@ def make_hopper(kit, M, name, kind, colour):
     mat = kit.plastic(colour, 0.6, f"hop {colour}")
     g = kit.empty(name, (0, 0, -50))
     if kind == "glove":
-        glove(kit, f"{name}.g", mat, g, scale=1.0).rotation_euler = (math.radians(90), 0, 0)
+        glove(kit, f"{name}.g", mat, g, scale=1.8).rotation_euler = (math.radians(90), 0, 0)
     elif kind == "umbrella":
         kit.cyl(f"{name}.shaft", 0.032, 0.8, (0, 0, 0.4), kit.plastic("#16171b", 0.6, "umb"), g, n=10, r2=0.05)
         kit.box(f"{name}.crook", (0.12, 0.035, 0.035), (0.06, 0, 0.03), kit.plastic("#2a1d15", 0.5, "umbh"), g, bevel=0.01)
@@ -711,7 +711,7 @@ def build_island(kit, M, ctx):
     kit.box("br.front.l", (3.4, 0.12, 2.6), (cx - 2.5, 43.3, 1.3), M["peg"]) if False else None
     for sx in (-1, 1):
         kit.box(f"br.board{sx}", (0.06, 3.6, 2.6), (cx + sx * 4.0, 45.1, 1.3), M["peg"])
-    kit.box("br.boardback", (8.0, 0.06, 2.6), (cx, 46.85, 1.3), M["peg"])
+    kit.box("br.boardback", (8.0, 0.06, 2.6), (cx, 46.62, 1.3), M["peg"])
     kit.box("br.boardfront.l", (3.4, 0.06, 2.6), (cx - 2.3, 43.33, 1.3), M["peg"])
     kit.box("br.boardfront.r", (3.4, 0.06, 2.6), (cx + 2.3, 43.33, 1.3), M["peg"])
     kit.light("br bulb", "POINT", (cx, 45.2, 2.45), 1.0, "#ffe2b8", size=0.3)
@@ -749,12 +749,12 @@ def build_island(kit, M, ctx):
             xx = cx - 3.8 + 0.43 * k
             if abs(xx - (cx + 1.3)) < 0.8 and 1.3 < z < 2.0:
                 continue
-            hung(xx, 46.78, z + rng.uniform(0, 0.05), (0, 0, 0), rng.choice((0, 0, 1, 2, 3, 4)))
+            hung(xx, 46.5, z + rng.uniform(0, 0.05), (0, 0, 0), rng.choice((0, 0, 1, 2, 3, 4)))
         for k in range(7):
-            hung(cx - 3.93, 43.7 + 0.45 * k, z, (0, 0, math.radians(-90)), rng.choice((0, 0, 1, 2, 3, 4)))
-            hung(cx + 3.93, 43.7 + 0.45 * k, z, (0, 0, math.radians(90)), rng.choice((0, 0, 1, 2, 3, 4)))
+            hung(cx - 3.93, 43.7 + 0.45 * k, z, (0, 0, math.radians(90)), rng.choice((0, 0, 1, 2, 3, 4)))
+            hung(cx + 3.93, 43.7 + 0.45 * k, z, (0, 0, math.radians(-90)), rng.choice((0, 0, 1, 2, 3, 4)))
     for k in range(4):
-        hung(cx + 0.75 + 0.3 * k, 46.78, 1.72, (0, 0, 0), 1)
+        hung(cx + 0.75 + 0.3 * k, 46.5, 1.72, (0, 0, 0), 1)
     # the umbrella and the bike, the striped hat by the door, the table and the phone place
     kit.cyl("br.umb", 0.04, 1.0, (cx + 3.0, 44.0, 0.52), kit.plastic("#16171b", 0.6, "umb2"), None, rot=(0.12, 0.1, 0), n=10)
     hat_stripes(kit, M, "br.hat").location = (cx - 0.9, 43.4, 1.7)
@@ -774,6 +774,8 @@ def build_island(kit, M, ctx):
     for sx in (-1, 1):
         for sy in (-1, 1):
             kit.box(f"br.tl{sx}{sy}", (0.06, 0.06, 0.76), (cx - 0.6 + sx * 0.45, 44.6 + sy * 0.3, 0.38), M["shelf"])
+    kit.light("isl lamp", "POINT", (X + 3.0, -9.0, 3.6), 1.0, "#ffe2b0", size=0.4)
+    kit.box("isl.lamppost", (0.12, 0.12, 3.6), (X + 3.2, -9.0, 1.8), M["iron"])
     build_bow(kit, M, X, -13.2, "I")
     ctx["vis"]["bowI"] = {"objs": [_obj("bowI")], "default": False}
     # the neighbour's blue door
@@ -1120,9 +1122,10 @@ def animate(kit, story, tl, t, ctx):
     for nm in kit.LIGHTS:
         if nm.startswith("town lamp"):
             over[nm] = 55.0 * lamp
-    over["porch lamp"] = 38.0
-    over["hall light"] = 26.0
-    over["hall light2"] = 22.0
+    over["porch lamp"] = 110.0
+    over["isl lamp"] = 260.0
+    over["hall light"] = 34.0
+    over["hall light2"] = 30.0
     over["bed light"] = 30.0
     over["br bulb"] = 190.0
     over["flat lamp"] = 105.0
@@ -1134,8 +1137,8 @@ def animate(kit, story, tl, t, ctx):
     over["h lamp"] = 70.0
     over["blue lamp"] = 22.0
     over["deck lamp 0"] = over["deck lamp 1"] = over["deck lamp 2"] = 90.0
-    over["lounge a"] = 18.0
-    over["lounge b"] = 18.0
+    over["lounge a"] = 26.0
+    over["lounge b"] = 26.0
     over["harbour key"] = 55.0
     over["shrug key"] = 380.0
     over["shrug rim"] = 70.0
