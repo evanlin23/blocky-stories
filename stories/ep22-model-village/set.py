@@ -300,7 +300,7 @@ def room_bakery(kit, M):
     for k in range(5):
         kit.box(f"bakery.roll{k}", (0.016, 0.014, 0.01), (cx - 0.1 + k * 0.022, yf + 0.40, zf + 0.041), kit.plastic("#c99a5c", 0.6), bevel=0.004)
     kit.box("bakery.sack", (0.05, 0.04, 0.06), (cx + 0.18, yf + 0.18, zf + 0.03), kit.plastic("#cfc6b2", 0.95), bevel=0.01)
-    room_light(kit, "light bakery", "bakery", 0.07, 0.07, 0.04, 0.4)
+    room_light(kit, "light bakery", "bakery", 0.07, 0.07, 0.04, 0.12)
     r = sh["r"]
     mist = kit.box("bakery.mist", (LAY.WIN_W, 0.0008, LAY.WIN_H), (r["win_x"], r["front_y"] + LAY.WALL / 2 + 0.002, r["win_z"]),
                    mist_mat(kit, "mist bakery", 0.0))
@@ -319,7 +319,7 @@ def room_blue(kit, M):
     chair(kit, M, "blue.chair", r["win_x"] + 0.06, yf + 0.18, zf, wood, 90)
     kit.box("blue.rug", (0.16, 0.14, 0.002), (cx, yf + 0.25, zf + 0.001), kit.plastic("#7d6b8c", 0.95))
     kit.box("blue.shelf", (0.2, 0.03, 0.003), (cx, yf + d_in(r, 0.01), zf + 0.11), wood)
-    room_light(kit, "light blue", "blue", -0.07, 0.07, 0.04, 2.6)
+    room_light(kit, "light blue", "blue", -0.07, 0.07, 0.04, 0.9)
     return sh
 
 
@@ -337,7 +337,7 @@ def room_chapel(kit, M):
             kit.box(f"chapel.pew{k}{sx}", (0.12, 0.016, 0.03), (cx + sx * 0.14, yf + 0.17 + k * 0.1, zf + 0.015), wood)
     kit.box("chapel.altar", (0.12, 0.04, 0.035), (cx, yf + 0.55, zf + 0.0175), kit.plastic("#cfc9b8", 0.8))
     kit.box("chapel.bell", (0.08, 0.08, 0.16), (cx, yf + 0.3, LAY.top_z(r["row"]) + LAY.H_BODY + 0.18), kit.plastic(r["wall"], 0.9), bevel=0.004)
-    room_light(kit, "light chapel", "chapel", 0.07, 0.07, 0.04, 1.0)
+    room_light(kit, "light chapel", "chapel", 0.07, 0.07, 0.04, 0.1)
     return sh
 
 
@@ -483,7 +483,7 @@ def mist_mat(kit, name="mist", fac=0.0):
     nt.nodes.remove(nt.nodes["Principled BSDF"])
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     df = nt.nodes.new("ShaderNodeBsdfDiffuse")
-    df.inputs["Color"].default_value = (0.82, 0.85, 0.88, 1)
+    df.inputs["Color"].default_value = (0.55, 0.57, 0.6, 1)
     vl = nt.nodes.new("ShaderNodeValue")
     vl.outputs[0].default_value = fac
     mx = nt.nodes.new("ShaderNodeMixShader")
@@ -541,7 +541,7 @@ def build_tea_real(kit, M, ctx):
         kit.cyl(f"tea.rcup{k}", 0.05, 0.08, (TX + x + 0.15, y, 0.79), kit.plastic("#e8e2d4", 0.4), n=16)
     # warm light in the room: honey, the same grey day only coming through steamed glass
     for k, x in enumerate((-2.4, 0.2, 2.6)):
-        kit.light(f"tea lamp{k}", "POINT", (TX + x, 0.2, 2.8), 85, "#ffcf98", size=0.3)
+        kit.light(f"tea lamp{k}", "POINT", (TX + x, 0.2, 2.8), 60, "#ffcf98", size=0.3)
     kit.light("tea table fill", "POINT", (TX - 2.5, -1.3, 1.6), 22, "#ffe2bd", size=0.2)
     kit.light("tea window fill", "POINT", (TX, -1.8, 1.8), 22, "#ffe2bd", size=0.3)
     # a window box and flower pots outside would be text-free decoration: two pots
