@@ -3,7 +3,7 @@
  "title": "The box was taped shut from the inside",
  "made_for_kids": false,
  "premise": "I've moved with Mum into a smaller house with low ceilings after the old one was sold. Mum hasn't laughed since. Something built from our own moving boxes stands in a different room each morning, taller each time, with a new marker face, while the stack by the door shrinks and Mum's things turn up in odd places.",
- "twist": "It puts everything where it lived in the old house: the mug on the old kitchen windowsill, the photos at the old wall's height, and at 3 a.m. its hands were tucking the old quilt round Mum, because in the old house her room was the cold one.",
+ "twist": "It puts everything where it lived in the old house: the mug on the old kitchen windowsill, the photos at the old wall's height, and the box on the shelf at the end is the one it was built on, its bottom box, the L01 box, still sealed from the inside.",
  "world": "a small single-storey house half moved into: low ceilings, off-white walls, honey boards, a stack of taped moving boxes by the front door, Mum's room lit by one cold nightlight",
  "voice": {
   "voice": "am_adam",
@@ -147,8 +147,12 @@
      "of a stack"
     ],
     [
-     "TALLER than ME.",
-     "taller than me."
+     "TALLER than",
+     "taller than"
+    ],
+    [
+     "the DOOR.",
+     "the door."
     ]
    ]
   },
@@ -1123,20 +1127,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "TUCKED round",
-     "Tucked, round"
+     "Laid over",
+     "Laid over"
     ],
     [
-     "her SHOULDERS,",
-     "her shoulders,"
+     "her BED",
+     "her bed"
     ],
     [
-     "the edges FOLDED",
-     "the edges folded"
-    ],
-    [
-     "under the MATTRESS.",
-     "under the mattress."
+     "the OLD way.",
+     "the old way."
     ]
    ],
    "tempo": 0.94
@@ -1151,7 +1151,7 @@
     ],
     [
      "she'd left",
-     "she'd left"
+     "she had left"
     ],
     [
      "PACKED.",
@@ -1188,16 +1188,16 @@
      "the old house,"
     ],
     [
-     "Mum's ROOM",
-     "Mum's room"
+     "that QUILT",
+     "that quilt"
     ],
     [
-     "was the",
-     "was the"
+     "LIVED",
+     "lived"
     ],
     [
-     "COLD one.",
-     "cold one."
+     "on her BED.",
+     "on her bed."
     ]
    ]
   },
@@ -1206,16 +1206,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "She slept",
-     "She slept"
+     "HERE,",
+     "Here,"
     ],
     [
-     "under that QUILT",
-     "under that quilt"
+     "it was",
+     "it was"
     ],
     [
-     "all WINTER.",
-     "all winter."
+     "TOO WARM",
+     "too warm"
+    ],
+    [
+     "for it.",
+     "for it."
     ]
    ]
   },
@@ -1306,12 +1310,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "In the MORNING,",
-     "In the morning,"
+     "It was GONE",
+     "It was gone"
     ],
     [
-     "it was GONE.",
-     "it was gone."
+     "by MORNING.",
+     "by morning."
     ]
    ]
   },
@@ -1572,16 +1576,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "On its FRONT,",
-     "On its front,"
+     "The BOTTOM box.",
+     "The bottom box."
     ],
     [
-     "in black MARKER,",
-     "in black marker,"
+     "My PEELED TAPE",
+     "My peeled tape"
     ],
     [
-     "a SMILE.",
-     "a smile."
+     "hung OFF",
+     "hung off"
+    ],
+    [
+     "its SEAM.",
+     "its seam."
     ]
    ],
    "gap": 0.65
@@ -1607,7 +1615,7 @@
   },
   {
    "id": "P03",
-   "pause": 0.25,
+   "pause": 0.12,
    "chunks": []
   }
  ],
@@ -1618,30 +1626,30 @@
     [
      0,
      [
-      -0.3,
-      -1.22,
-      0.2
+      -0.95,
+      -1.3,
+      0.85
      ],
      [
-      0.32,
-      -0.95,
-      0.16
+      0.12,
+      -0.5,
+      0.42
      ],
-     24
+     17
     ],
     [
      1,
      [
-      -0.22,
-      -1.18,
-      0.19
+      -0.88,
+      -1.27,
+      0.84
      ],
      [
-      0.32,
-      -0.95,
-      0.16
+      0.12,
+      -0.5,
+      0.42
      ],
-     26
+     18
     ]
    ],
    "hand": 0.004,
@@ -1679,30 +1687,44 @@
     [
      0,
      [
-      -1.65,
-      -0.42,
-      0.4
+      -1.5,
+      -1.05,
+      0.38
      ],
      [
-      0.2,
-      -0.72,
-      0.55
+      0.55,
+      -0.89,
+      0.3
      ],
-     18
+     22
+    ],
+    [
+     0.35,
+     [
+      -1.6,
+      -1.1,
+      0.45
+     ],
+     [
+      0.5,
+      -0.89,
+      0.45
+     ],
+     20
     ],
     [
      1,
      [
-      -1.65,
-      -0.42,
-      0.75
+      -2.0,
+      -1.3,
+      0.55
      ],
      [
-      -0.1,
-      -0.76,
-      2.05
+      0.0,
+      -0.5,
+      1.55
      ],
-     18
+     14
     ]
    ],
    "hand": 0.004,
@@ -1789,14 +1811,14 @@
     [
      0,
      [
-      -2.5,
-      -1.75,
-      1.7
+      -2.55,
+      -1.95,
+      1.62
      ],
      [
-      -4.4,
-      -2.7,
-      1.3
+      -4.1,
+      -2.65,
+      1.45
      ],
      20
     ]
@@ -1923,16 +1945,16 @@
     [
      0,
      [
-      -3.4,
-      -0.8,
+      -0.3,
+      -1.3,
       1.45
      ],
      [
-      -0.4,
-      -0.85,
+      -2.1,
+      -0.8,
       1.35
      ],
-     22
+     20
     ]
    ],
    "hand": 0.004,
@@ -2383,16 +2405,16 @@
     [
      0,
      [
-      -0.75,
-      -3.65,
+      -0.65,
+      -1.7,
       1.45
      ],
      [
-      -1.45,
-      -2.65,
-      1.2
+      -1.3,
+      -3.1,
+      1.0
      ],
-     22
+     15
     ]
    ],
    "hand": 0.004,
@@ -2407,22 +2429,22 @@
     [
      0,
      [
-      -0.85,
-      -3.35,
-      1.4
+      -1.7,
+      -4.6,
+      1.5
      ],
      [
-      -1.4,
+      -1.5,
       -2.6,
-      1.15
+      1.3
      ],
-     28
+     15
     ]
    ],
    "hand": 0.004,
    "step": 2,
    "room": "front",
-   "what": "my arms trembling",
+   "what": "my arms trembling: over my shoulder, the joint ahead",
    "at": "L31"
   },
   {
@@ -2517,16 +2539,16 @@
     [
      0,
      [
-      0.55,
-      -2.6,
-      1.7
+      1.95,
+      -1.7,
+      1.5
      ],
      [
-      1.72,
-      -3.56,
-      0.94
+      1.1,
+      -2.9,
+      1.15
      ],
-     26
+     17
     ]
    ],
    "hand": 0.004,
@@ -2733,16 +2755,16 @@
     [
      0,
      [
-      0.15,
-      -1.85,
-      1.55
+      1.1,
+      -1.75,
+      1.5
      ],
      [
-      1.5,
-      -3.45,
-      1.05
+      1.1,
+      -2.75,
+      1.3
      ],
-     18
+     15
     ]
    ],
    "hand": 0.004,
@@ -2781,22 +2803,22 @@
     [
      0,
      [
-      -3.5,
-      -0.95,
+      -4.5,
+      -0.55,
       1.45
      ],
      [
       -1.3,
-      -0.35,
-      1.05
+      -0.45,
+      1.1
      ],
-     20
+     15
     ]
    ],
    "hand": 0.004,
    "step": 2,
    "room": "hall",
-   "what": "the dark hall, a cold glow at Mum's door",
+   "what": "the dark hall, a cold glow at Mum's door, me small in it",
    "at": "L45"
   },
   {
@@ -2987,16 +3009,16 @@
     [
      0,
      [
-      -0.6,
-      1.3,
-      1.25
+      -0.75,
+      1.15,
+      1.2
      ],
      [
-      -0.86,
-      2.38,
-      0.8
+      -0.1,
+      2.3,
+      0.72
      ],
-     32
+     28
     ]
    ],
    "hand": 0.006,
@@ -3083,22 +3105,22 @@
     [
      0,
      [
-      1.1,
-      3.15,
-      1.75
+      -1.0,
+      0.25,
+      1.4
      ],
      [
-      -0.9,
-      0.6,
+      -0.35,
+      2.5,
       1.25
      ],
-     16
+     19
     ]
    ],
    "hand": 0.004,
    "step": 2,
    "room": "mum",
-   "what": "me in the doorway, the Boxes over the bed in lamp light",
+   "what": "the Boxes over the bed in lamp light",
    "at": "L56"
   },
   {
@@ -3107,22 +3129,22 @@
     [
      0,
      [
-      -0.9,
-      1.0,
-      1.2
+      -0.5,
+      0.55,
+      1.25
      ],
      [
-      -1.05,
-      1.9,
-      0.7
+      -0.95,
+      1.95,
+      0.62
      ],
-     35
+     28
     ]
    ],
    "hand": 0.004,
    "step": 2,
    "room": "mum",
-   "what": "the quilt at her shoulders",
+   "what": "Mum asleep, one arm out on the quilt",
    "at": "L57"
   },
   {
@@ -3179,30 +3201,30 @@
     [
      0,
      [
-      -0.35,
-      1.4,
-      1.45
+      0.75,
+      0.9,
+      1.25
      ],
      [
-      -0.75,
-      2.45,
-      1.45
+      0.15,
+      2.6,
+      1.15
      ],
-     28
+     22
     ],
     [
      1,
      [
-      -0.38,
-      1.52,
-      1.45
+      0.7,
+      1.0,
+      1.25
      ],
      [
-      -0.75,
-      2.45,
-      1.45
+      0.15,
+      2.6,
+      1.15
      ],
-     30
+     24
     ]
    ],
    "hand": 0.004,
@@ -3389,22 +3411,22 @@
     [
      0,
      [
-      -2.3,
-      -3.35,
-      1.45
+      -2.12,
+      -3.62,
+      1.52
      ],
      [
-      -1.35,
-      -3.95,
-      1.45
+      -1.3,
+      -3.85,
+      1.48
      ],
-     30
+     22
     ]
    ],
    "hand": 0.004,
    "step": 2,
    "room": "front",
-   "what": "\"That's LADDER HEIGHT\"",
+   "what": "\"That's LADDER HEIGHT\": a medium close on Mum's laughing face",
    "at": "L67"
   },
   {
@@ -3413,14 +3435,14 @@
     [
      0,
      [
-      -1.25,
-      -2.2,
-      1.45
+      -1.1,
+      -3.3,
+      1.52
      ],
      [
-      -2.0,
-      -3.95,
-      1.3
+      -1.6,
+      -4.1,
+      1.47
      ],
      22
     ]
@@ -3428,7 +3450,7 @@
    "hand": 0.004,
    "step": 2,
    "room": "front",
-   "what": "the two-shot in gold sun, the laugh",
+   "what": "a medium close on Mum laughing in the gold sun",
    "at": "P02"
   },
   {
@@ -3437,16 +3459,16 @@
     [
      0,
      [
-      -2.35,
-      -2.95,
-      1.25
+      -2.5,
+      -2.8,
+      1.3
      ],
      [
       -1.6,
       -4.2,
-      0.85
+      0.95
      ],
-     26
+     17
     ]
    ],
    "hand": 0.004,
@@ -3461,16 +3483,16 @@
     [
      0,
      [
-      -0.85,
-      -2.7,
-      1.4
+      -0.8,
+      -2.5,
+      1.45
      ],
      [
       -1.95,
       -4.0,
-      1.0
+      1.1
      ],
-     22
+     15
     ]
    ],
    "hand": 0.004,
@@ -3485,16 +3507,16 @@
     [
      0,
      [
-      -0.95,
-      -3.6,
+      -0.85,
+      -2.3,
       1.5
      ],
      [
-      -2.4,
-      -4.5,
-      1.0
+      -2.2,
+      -4.1,
+      1.1
      ],
-     22
+     15
     ]
    ],
    "hand": 0.004,
@@ -3629,14 +3651,14 @@
     [
      0,
      [
-      0.75,
-      -0.62,
-      1.55
+      0.62,
+      -0.5,
+      1.75
      ],
      [
-      1.69,
+      1.66,
       -0.79,
-      1.42
+      1.5
      ],
      26
     ]
@@ -3653,14 +3675,28 @@
     [
      0,
      [
-      0.86,
-      -0.77,
-      1.45
+      0.41000000000000014,
+      -1.3,
+      2.05
      ],
      [
-      1.69,
-      -0.79,
-      1.42
+      1.48,
+      -0.5,
+      1.6199999999999999
+     ],
+     17
+    ],
+    [
+     1,
+     [
+      0.4800000000000001,
+      -1.27,
+      2.04
+     ],
+     [
+      1.48,
+      -0.5,
+      1.6199999999999999
      ],
      18
     ]
@@ -3668,7 +3704,7 @@
    "hand": 0.0,
    "step": 4,
    "room": "hall",
-   "what": "the smile",
+   "what": "the L01 close again: the box on the shelf, peeled tape, no face",
    "at": "L77"
   },
   {
@@ -3682,9 +3718,9 @@
       2.15
      ],
      [
-      1.45,
+      1.5,
       -0.75,
-      1.3
+      1.45
      ],
      24
     ]
@@ -3701,39 +3737,41 @@
    {
     "at": 0,
     "pos": [
-     -0.8,
-     -0.76
+     -0.12,
+     -0.38,
+     -0.7
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     48,
-     0
-    ],
-    "side": [
-     -25,
-     0
-    ],
-    "head": [
      0,
      0
     ],
-    "lean": 6,
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     -40,
+     8
+    ],
+    "lean": 0,
     "tremble": 0,
     "lie": null,
-    "sit": false,
+    "sit": true,
     "hide_parts": [],
     "part_offset": {},
     "blink": true,
     "width": 0.88,
     "expr": "worried",
-    "yaw": 90
+    "yaw": -10
    },
    {
     "at": "L02",
     "pos": [
-     -0.8,
-     -0.76
+     -0.12,
+     -0.38,
+     -0.7
     ]
    },
    {
@@ -3953,7 +3991,7 @@
     ],
     "head": [
      0,
-     0
+     6
     ],
     "lean": -10,
     "tremble": 0,
@@ -4143,14 +4181,14 @@
    {
     "at": "L34b",
     "pos": [
-     1.25,
-     -2.92
+     1.0,
+     -2.9
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     0,
-     0
+     50,
+     50
     ],
     "side": [
      0,
@@ -4158,7 +4196,7 @@
     ],
     "head": [
      0,
-     32
+     30
     ],
     "lean": 0,
     "tremble": 0,
@@ -4169,7 +4207,7 @@
     "blink": true,
     "width": 0.88,
     "expr": "worried",
-    "yaw": 0
+    "yaw": 120
    },
    {
     "at": "L34c",
@@ -4184,8 +4222,8 @@
    {
     "at": "L39",
     "pos": [
-     1.25,
-     -2.92
+     1.0,
+     -2.9
     ]
    },
    {
@@ -4246,8 +4284,8 @@
    {
     "at": "L43",
     "pos": [
-     1.45,
-     -2.1
+     1.38,
+     -2.75
     ],
     "blend": 0,
     "hidden": false,
@@ -4261,7 +4299,7 @@
     ],
     "head": [
      0,
-     22
+     10
     ],
     "lean": 0,
     "tremble": 0,
@@ -4272,13 +4310,13 @@
     "blink": true,
     "width": 0.88,
     "expr": "worried",
-    "yaw": -130
+    "yaw": 225
    },
    {
     "at": "L44",
     "pos": [
-     1.45,
-     -2.1
+     1.38,
+     -2.75
     ]
    },
    {
@@ -4551,7 +4589,7 @@
     "part_offset": {},
     "blink": true,
     "width": 0.88,
-    "expr": "grin",
+    "expr": "laugh",
     "yaw": 66.4
    },
    {
@@ -4594,7 +4632,7 @@
     "part_offset": {},
     "blink": true,
     "width": 0.88,
-    "expr": "grin",
+    "expr": "laugh",
     "yaw": 49.4
    },
    {
@@ -4632,7 +4670,7 @@
     "part_offset": {},
     "blink": true,
     "width": 0.88,
-    "expr": "grin",
+    "expr": "soft",
     "yaw": 0
    },
    {
@@ -4785,8 +4823,8 @@
     "blend": 0,
     "hidden": false,
     "arms": [
-     75,
-     75
+     58,
+     58
     ],
     "side": [
      -25,
@@ -4794,7 +4832,7 @@
     ],
     "head": [
      0,
-     -6
+     -4
     ],
     "lean": 0,
     "tremble": 0,
@@ -4805,7 +4843,7 @@
     "blink": true,
     "width": 0.88,
     "expr": "neutral",
-    "yaw": -90
+    "yaw": 150
    },
    {
     "from": "L07",
@@ -5131,14 +5169,14 @@
    {
     "at": "L43",
     "pos": [
-     0.75,
-     -2.89
+     0.82,
+     -2.75
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     78,
-     74
+     40,
+     40
     ],
     "side": [
      0,
@@ -5146,7 +5184,7 @@
     ],
     "head": [
      0,
-     12
+     6
     ],
     "lean": 0,
     "tremble": 0,
@@ -5157,7 +5195,7 @@
     "blink": true,
     "width": 0.88,
     "expr": "neutral",
-    "yaw": 0
+    "yaw": 135
    },
    {
     "from": "L43.1",
@@ -5176,8 +5214,8 @@
    {
     "at": "L48",
     "pos": [
-     0.75,
-     -2.89
+     0.82,
+     -2.75
     ]
    },
    {
@@ -5435,17 +5473,8 @@
     "part_offset": {},
     "blink": true,
     "width": 0.88,
-    "expr": "grin",
+    "expr": "laugh",
     "yaw": -105
-   },
-   {
-    "from": "L67.1",
-    "to": "L67>",
-    "mouth": [
-     0.55,
-     0.55
-    ],
-    "flap": true
    },
    {
     "at": "P02",
@@ -5482,7 +5511,7 @@
     "part_offset": {},
     "blink": true,
     "width": 0.88,
-    "expr": "squeeze",
+    "expr": "laugh",
     "yaw": 150
    },
    {
@@ -5521,7 +5550,7 @@
     "part_offset": {},
     "blink": true,
     "width": 0.88,
-    "expr": "squeeze",
+    "expr": "laugh",
     "yaw": 180
    },
    {
@@ -5561,7 +5590,7 @@
     "part_offset": {},
     "blink": true,
     "width": 0.88,
-    "expr": "grin",
+    "expr": "laugh",
     "yaw": 165
    },
    {
@@ -5772,6 +5801,11 @@
     "blend": 0.5
    },
    {
+    "at": "L77",
+    "hidden": true,
+    "blend": 0
+   },
+   {
     "at": "L78",
     "pos": [
      0.2,
@@ -5880,6 +5914,12 @@
   {
    "at": 0,
    "name": "boxes",
+   "pose": "solo_floor",
+   "face": "frown"
+  },
+  {
+   "at": "L02",
+   "name": "boxes",
    "pose": "hall",
    "face": "frown"
   },
@@ -5925,8 +5965,8 @@
   {
    "at": "L75",
    "name": "boxes",
-   "pose": "shelf",
-   "face": "smile"
+   "pose": "solo_shelf",
+   "face": "none"
   },
   {
    "at": 0,
@@ -6219,11 +6259,251 @@
    "dur": 0.9
   },
   {
-   "at": "L78.2-0.85",
+   "at": "L78>-1.3",
    "name": "door",
    "door": "cupboard",
    "open": 0.0,
    "dur": 1.1
+  },
+  {
+   "at": 0,
+   "name": "xfill",
+   "pos": [
+    0.2,
+    0.3,
+    1.2
+   ],
+   "aim": [
+    -0.2,
+    -0.3,
+    0.7
+   ],
+   "gain": 1.1
+  },
+  {
+   "at": "L02",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L07",
+   "name": "xfill",
+   "pos": [
+    -2.0,
+    -1.3,
+    2.0
+   ],
+   "aim": [
+    -3.8,
+    -2.6,
+    1.5
+   ],
+   "gain": 0.9
+  },
+  {
+   "at": "L08",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L13",
+   "name": "xfill",
+   "pos": [
+    0.1,
+    -1.1,
+    1.9
+   ],
+   "aim": [
+    -2.0,
+    -0.8,
+    1.4
+   ],
+   "gain": 0.9
+  },
+  {
+   "at": "L14",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L30",
+   "name": "xfill",
+   "pos": [
+    -0.7,
+    -1.7,
+    2.1
+   ],
+   "aim": [
+    -1.25,
+    -3.0,
+    1.3
+   ],
+   "gain": 0.9
+  },
+  {
+   "at": "L31",
+   "name": "xfill",
+   "pos": [
+    -0.9,
+    -4.7,
+    1.9
+   ],
+   "aim": [
+    -1.4,
+    -3.0,
+    1.2
+   ],
+   "gain": 1.2
+  },
+  {
+   "at": "L32",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L34b",
+   "name": "xfill",
+   "pos": [
+    1.9,
+    -1.7,
+    2.1
+   ],
+   "aim": [
+    1.0,
+    -2.9,
+    1.3
+   ],
+   "gain": 0.9
+  },
+  {
+   "at": "L34c",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L43",
+   "name": "xfill",
+   "pos": [
+    1.1,
+    -1.7,
+    2.1
+   ],
+   "aim": [
+    1.1,
+    -2.75,
+    1.3
+   ],
+   "gain": 0.9
+  },
+  {
+   "at": "L44",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L45",
+   "name": "xfill",
+   "pos": [
+    -3.6,
+    -0.8,
+    2.2
+   ],
+   "aim": [
+    -2.2,
+    -0.8,
+    0.9
+   ],
+   "gain": 0.5
+  },
+  {
+   "at": "L46",
+   "name": "xfill",
+   "pos": [
+    -3.0,
+    -0.8,
+    2.2
+   ],
+   "aim": [
+    -1.0,
+    -0.8,
+    1.2
+   ],
+   "gain": 0.3
+  },
+  {
+   "at": "L47.2",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": 0,
+   "name": "sqlight",
+   "on": false
+  },
+  {
+   "at": "L46",
+   "name": "sqlight",
+   "on": true
+  },
+  {
+   "at": "L47.2",
+   "name": "sqlight",
+   "on": false
+  },
+  {
+   "at": "L59",
+   "name": "xfill",
+   "pos": [
+    -3.0,
+    -3.3,
+    0.5
+   ],
+   "aim": [
+    -4.2,
+    -3.2,
+    2.3
+   ],
+   "gain": 0.9
+  },
+  {
+   "at": "L60",
+   "name": "xfill",
+   "pos": [
+    0.9,
+    0.3,
+    1.9
+   ],
+   "aim": [
+    -0.5,
+    2.3,
+    1.5
+   ],
+   "gain": 1.0
+  },
+  {
+   "at": "L61",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L62",
+   "name": "xfill",
+   "pos": [
+    0.6,
+    0.3,
+    2.0
+   ],
+   "aim": [
+    -0.6,
+    2.0,
+    0.8
+   ],
+   "gain": 1.6
+  },
+  {
+   "at": "L63",
+   "name": "xfill",
+   "gain": 0
   },
   {
    "at": 0,
@@ -6506,6 +6786,12 @@
     "at": "L75.3",
     "kind": "door",
     "db": -18
+   },
+   {
+    "at": "L78>-0.2",
+    "kind": "thud",
+    "db": -18,
+    "dur": 0.6
    }
   ],
   "music_drops": [
