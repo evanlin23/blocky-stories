@@ -1,31 +1,32 @@
-"""Lookout: a fire lookout tower over an autumn forest in fog, and the giant. Built from kit.py's parts (batch 2,
-story 3, ep14; nothing here is shared with another story's set).
+"""Lookout (redo 2): a fire lookout tower over an autumn forest, a valley whose town runs on hourglass time. Built from
+kit.py's parts (nothing here is shared with another story's set).
 
-Coordinates: the ground at the tower's foot is z = 0 and the tower stands on (0, 0). Its four braced steel legs
-rise to the cab: a 4 x 4 m wooden cab (x, y in -CAB .. CAB) whose floor's top is CAB_Z = 19.6, glass on all four
-sides from the sill to the header, under a metal pyramid roof. The plank catwalk runs WALK = 1 m round it at the
-same height, with a waist-high metal rail along its outer edge (+-WALK_OUT). A character facing -y has yaw 0.
+Coordinates: the ground at the tower's foot is z = 0 and the tower stands on (0, 0). Its four braced steel legs rise
+to the cab: a 4 x 4 m wooden cab (x, y in -CAB .. CAB) whose floor's top is CAB_Z = 19.6, glass on all four sides, under
+a metal pyramid roof. The plank catwalk runs WALK = 1 m round it, with a waist-high rail on its outer edge. A
+character facing -y has yaw 0. The valley falls away south: the town's night lights lie on its floor (z = -150), its
+hillside and the far ridge, where the ranger's hut stands.
 
-THE GIANT (brief, "The creature"; built once by build_giant(), posed only by pose_giant()): our own R6 body plan
-at 13.5 times my 1.75 m, built from the forest out of the same kind of game parts as the narrator (pass 2, note 21):
-square bevelled timbers, flat colours and solid moss tops. 23.6 m tall, 18.4 m across the arms. Legs and arms
-4.6 x 4.6 x 9.2 m, each a bundle of four square posts; the torso a log-cabin wall of 0.92 m timbers, 9.2 wide, 9.2
-tall and 4.6 deep with crossed ends at its corners; bark #3b2a1e, timber ends grey-brown (55 to 70% of #6e5a44,
-never pale), moss on every face that looks up. Two faceted block boulders (3.9 and 3.6 m, #7e8378, moss on their
-upper facets) sit on its shoulders and rise to the middle of its head, three saplings on its left stone and one on
-its right. The head is a 14-faceted hollow stump 5 m across and tall with a broken, mossy rim; its front opens into
-a dark almond-shaped split 2.5 x 3.3 m (the brief's "about 2.8 x 3": a round opening read as a face, an arch as a
-lit doorway), 3.8 m deep. Two warm lights (0.35 m, 1.2 m apart) hang 1.5 m inside it, in its upper part, and
-faintly light its walls. No mouth, nose, carving or smile. Its feet are flat with four root toes at the front. Its
-front is local -y (like the rig), its origin the ground under its middle. productions/ep14-lookout/designer-notes.md
-("Creature test still") has the numbers and the lighting.
+THE TOWN (the montage, day): its own slab at TOWN = (1200, 0), far east of the ridge. A street runs along x, the road
+at z = -PL and the pavement on a stone plinth at z = 0, so a cellar and an office basement open onto the road under
+the pavement. Houses stand behind the pavement (y > 0). No text or signs anywhere.
+
+THE MARKER: a glass hourglass floats above every head, pale brass caps, pale-gold sand. Its stream is driven by one
+value per character, `sand` (0.05 gush-free trickle to 1.0 gush): the cue {"name": "sand", "who", "v"}. The grains
+are small, steady and never blink.
 
 Cues read here (all optional):
-- giant: {"pos": [x, y, z], "yaw": deg, "head": deg (turn, 60 at most), "pitch": deg (a hunch from the hip),
-  "stride": deg (each leg's swing from the hip), "hidden": bool} where the giant is and how it holds itself
-- look: {"id": "night" | "day"} the whole light from here (LOOKS: fog, sky, exposure, suns, gains, fog cards)
-- lamp: {"pos": [x, y, z]} set down, or {"hand": "me.arm-1", "offset": [x, y, z]} its bail hanging from a hand
-- shot: {"look": {...} or null} one shot's own lights (shot_look below)
+- look: {"id": ...} the whole light from here (LOOKS)
+- night: {"n": 1|2|3} the pines' growth and which town lights are on
+- ollie: {"where": "win"|"win2"|"hut"|"none", "dur": s} Ollie's own light, fading up over dur
+- sand: {"who": name, "v": 0.05..1.0}
+- lamp: {"pos": [x, y, z]} set down, or {"hand": "me.arm-1", "offset": [x, y, z]} its bail from a hand
+- lamp2: {"hand": "ollie_old.arm-1", "offset": ...} or {"pos": ...} the second lantern (ollie_old's)
+- mover: {"pos": [x, y, z], "r": metres, "dur": s, "on": bool} the lamp crossing the valley, eased from the last key
+- door / gate: {"open": 0..1, "dur": s}
+- radio: {"on": bool}; binos / radio: {"hand": ...}
+- parcel: {"on": true} drops onto the pavement hatch
+- padlock: {"open": bool}
 """
 
 from __future__ import annotations
@@ -82,17 +83,15 @@ SNAPPED = ((-140.0, 380.0), (-100.0, 330.0), (-62.0, 282.0), (-40.0, 240.0), (-2
 
 
 def terrain_z(x, y):
-    """The ground's height: the summit plateau, the long fall south along the road, the drop past the shelf to the
-    valley, and the higher ridge to the north."""
+    """The ground's height: the summit plateau, the long fall south, the drop to the valley floor (VALLEY_Z), the
+    valley's two sides and the far ridge, and the higher ridge to the north."""
     z = -0.2 * max(0.0, -y - 20.0) - 0.05 * max(0.0, abs(x) - 24.0)
     z += 0.16 * max(0.0, y - 110.0) - 0.0006 * max(0.0, y - 260.0) ** 2
     if y < -272.0:
         z = max(VALLEY_Z, z - 1.6 * (-272.0 - y))
-        z += 0.3 * max(0.0, -y - 1080.0)          # the valley's far side rises into low hills
-    # small bumps, smoothed to nothing on the plateau, along the road and on the shelf, so the generator (no
-    # Blender) can place me on the ground there with terrain_smooth()
-    k = min(1.0, max(0.0, (math.hypot(x, y) - 18.0) / 20.0), max(0.0, (road_dist(x, y) - 6.0) / 10.0),
-            max(0.0, (math.hypot(x - SHELF[0], y - SHELF[1]) - 14.0) / 10.0))
+        z += 0.9 * min(max(0.0, -y - 760.0), 180.0)                  # the far ridge, where the hut stands
+        z += 0.7 * max(0.0, abs(x) - 350.0) * min(1.0, (-y - 272.0) / 100.0)   # the valley's two sides
+    k = min(1.0, max(0.0, (math.hypot(x, y) - 18.0) / 20.0), max(0.0, (road_dist(x, y) - 6.0) / 10.0))
     z += 0.9 * mnoise.noise(V((x * 0.02, y * 0.02, 0.5))) * k
     return z
 
@@ -119,39 +118,8 @@ def road_dist(x, y):
     return best
 
 
-# ------------------------------------------------------------------------------------------------ the giant
-G_SCALE = 13.5                # times my height
-LEG = (4.6, 4.6, 9.2)
-TORSO = (9.2, 4.6, 9.2)
-HIP_Z = 9.2
-NECK_Z = 18.4                 # the torso's top
-ARM_X = 6.9                   # the arms' centres, out from the middle
-ARM_PIVOT = 8.05              # the shoulder pivot above the torso's base (its top is 1.15 above it)
-HEAD_R = 2.5                  # the stump: 5 m across
-HEAD_H = 5.0                  # ... and 5 m tall to its rim (the rim is broken, +-0.25)
-HOLLOW_W, HOLLOW_H = 2.5, 3.3           # the brief's "about 2.8 x 3", as an almond: it reads as a split in the
-                                         # wood, never a round face or a lit doorway
-HOLLOW_Z = 2.5                # the hollow's middle above the head's base: the lights at 20.9 m standing
-LIGHT_SEP = 1.2
-LIGHT_IN = 1.5                # how far inside the hollow's mouth the lights hang
-LIGHT_R = 0.175               # 0.35 m each (the ember shader fades its rim, so it reads as a glow, not a disc)
-LIGHT_Z = HOLLOW_Z + 0.6      # pass 2: in the hollow's upper third, so they peer down out of it (21.5 m standing)
-STUMP_FACETS = 14             # pass 2 (note 21): the stump is a faceted block part, not a sculpted trunk
-LOG_D = 0.92                  # the torso's logs
-HERO_PINES = ((16.5, -10.0, 15.5), (9.5, -24.0, 16.2),      # (the second clear of its walk down the road)
-             
-              # round its walk-up spot in 03 (the scale wide): their tops reach its chest
-              (-44.5, -10.0, 15.8), (-43.0, 4.0, 16.6), (-14.0, -20.5, 15.2), (-30.5, -25.5, 16.2),
-              (-46.0, -21.0, 14.8), (-39.0, -26.5, 15.6))
-# (x, y, radius): no forest pine where the giant stands. 13.5 m clears its arms (9.2 m out) plus a pine's lowest
-# branches (about 4 m), so nothing passes through it (contact probe, pass 2)
-CLEAR = ((2.45, -8.0, 13.5), (-28.0, -8.0, 15.5), (-19.0, -1.0, 13.0), (-36.0, -14.0, 13.0),   # the walk up
-         (8.0, -9.0, 12.0))                                                                     # the lean
-RIM_AT = (3.0, -30.0, 21.0)   # the night rim, low behind the giant's scare spot: it grazes edges, not tops
-
-
 def _cues(tl, name):
-    return [c for c in tl.get("cues", []) if c["name"] == name]
+    return sorted((c for c in tl.get("cues", []) if c["name"] == name), key=lambda c: c["t"])
 
 
 def _switch(cs, attr, t, default):
@@ -601,40 +569,36 @@ def block_stone_mat(kit, name="block stone", hexc="#7e8378"):
     return m
 
 
+def glow_mat(kit, name, hexc, strength):
+    """A plain emission that no fog hides: a light seen through the valley's fog."""
+    if name in kit.MATS:
+        return kit.MATS[name]
+    m = kit._new(name)
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    e = nt.nodes.new("ShaderNodeEmission")
+    e.inputs["Color"].default_value = kit.col(hexc)
+    e.inputs["Strength"].default_value = strength
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    nt.links.new(e.outputs[0], out.inputs["Surface"])
+    try:
+        m.emission_sampling = "NONE"
+    except Exception:
+        pass
+    return m
+
+
 def materials(kit):
     return {
-        "bark": bark_mat(kit, "bark", cell=3.2),
-        "bark_limb": bark_mat(kit, "bark limb", stretch=(0.7, 0.7, 0.22), cell=2.6),
-        "logend": logend_mat(kit),
-        "stump": bark_mat(kit, "stump bark", "#3b2a1e", stretch=(0.75, 0.75, 0.14), cell=3.6, bump=0.8,
-                          spill=(HEAD_H - 0.05, 0.35)),
-        "hollow": hollow_mat(kit),
-        "lip": bark_mat(kit, "hollow lip", "#24180f", moss=False, stretch=(1.2, 1.2, 1.2), cell=3.0),
-        "stone": stone_mat(kit),
         "needles": matte(kit, "needles", "#1e2a22", 0.9, (4.0, 0.6)),
         "trunk": bark_mat(kit, "pine trunk", "#2b2019", moss=False, cell=6.0),
-        "eyes": ember_mat(kit, "giant lights"),
-        "tbark": block_bark_mat(kit, "timber bark"),
-        "tbark_limb": block_bark_mat(kit, "limb bark", streak=(2.4, 2.4, 0.3)),
-        "tend": block_end_mat(kit),
-        "sbark": block_bark_mat(kit, "stump block bark", streak=(3.0, 3.0, 0.35), bump=0.3),
-        "bstone": block_stone_mat(kit),
-        "gstone": block_stone_mat(kit, "giant stone", "#4a5445"),
-        "sprout": matte(kit, "spring needles", "#4f8f36", 0.9, (4.0, 0.6)),
-        "core": matte(kit, "giant core", "#120c08", 1.0),
         "ground": ground_mat(kit),
-        "road": road_mat(kit),
-        "river": river_mat(kit),
-        "smoke": smoke_mat(kit),
-        "smudge": smoke_mat(kit, "burn smudge", "#7a6e62"),
+        "smoke": smoke_mat(kit, "valley fog"),
         "stair": kit.planks("#5a4b3b", "#3d3328", 1.0, "X", "stair planks"),
         "fence": matte(kit, "fence wood", "#4a3c2e", 0.9, (2.0, 0.7)),
         "radio": kit.plastic("#121214", 0.55, "radio body"),
         "led": kit.emit("#3cff7a", 3.0, "radio light"),
         "logsheet": ruled_mat(kit),
-        "water": matte(kit, "print water", "#0c0f10", 0.55),
-        "mud": matte(kit, "mud", "#2a2219", 0.95, (1.5, 0.6)),
-        "moss": matte(kit, "moss patch", "#3b4f1e", 0.95, (4.0, 0.6)),
         "larch": matte(kit, "larch needles", "#c8962e", 0.9, (4.0, 0.7)),
         "bino": bino_mat(kit),
         "planks": kit.planks("#6a5a48", "#45392d", 1.0, "X", "deck planks"),
@@ -648,277 +612,47 @@ def materials(kit):
         "lamp_body": kit.metal("#2a2a28", 0.75, "lamp body"),
         "lamp_glow": kit.emit("#ffc884", 0.12, "lamp glow"),
         "cot": matte(kit, "cot", "#4d5244", 0.95, (2.0, 0.7)),
+        "iron": kit.metal("#2e2c2a", 0.5, "iron key"),
         "fog_near": fog_card_mat(kit, "fog near", "#3a4550", 0.75),
         "fog_far": fog_card_mat(kit, "fog far", "#46525c", 0.85, (0.08, 0.08, 0.3), 5.0),
         "fog_neck": fog_card_mat(kit, "fog neck", "#3c4852", 0.92, (0.18, 0.18, 0.45), 4.0),
         "fog_day": fog_card_mat(kit, "fog day", "#cdd0cc", 0.8, (0.05, 0.05, 0.35), 4.0, ("#b8bcb8", 0.0045, 20.0)),
         "fog_dayback": fog_card_mat(kit, "fog dayback", "#c3c7c3", 0.97, (0.02, 0.02, 0.05), 60.0,
                                     ("#b8bcb8", 0.0045, 20.0)),
+        # the marker
+        "brass": kit.metal("#d8c690", 0.3, "hourglass brass"),
+        "hgglass": kit.glass("#e8f2f4", "hourglass glass"),
+        "sand": glow_mat(kit, "sand glow", "#ffd98a", 1.6),
+        # the town (day)
+        "t_road": matte(kit, "t road", "#5b5e63", 0.95),
+        "t_pave": matte(kit, "t pave", "#d2ccbd", 0.9),
+        "t_grass": matte(kit, "t grass", "#6aa84f", 0.95),
+        "t_brick": matte(kit, "t brick", "#b04a36", 0.9, (6.0, 0.8)),
+        "t_roof": matte(kit, "t roof", "#3f4654", 0.8),
+        "t_roofred": matte(kit, "t roofred", "#8e3a2c", 0.8),
+        "t_cream": matte(kit, "t cream", "#eadfbf", 0.9),
+        "t_blue": matte(kit, "t blue", "#6f93c4", 0.9),
+        "t_stone": matte(kit, "t stone", "#a9a49a", 0.9),
+        "t_win": matte(kit, "t window", "#27384c", 0.4),
+        "t_door": matte(kit, "t door", "#7a4a2a", 0.8),
+        "t_lemon": matte(kit, "t lemon", "#f1d24a", 0.85),
+        "t_wood": matte(kit, "t wood", "#a0764a", 0.85),
+        "t_dark": matte(kit, "t dark", "#2a2d33", 0.9),
+        "t_parcel": matte(kit, "t parcel", "#8a6240", 0.9),
+        "t_string": matte(kit, "t string", "#d9c9a0", 0.9),
+        "t_hill": matte(kit, "t hill", "#5f9a4a", 0.95),
+        "t_flower": matte(kit, "t flower", "#e0527a", 0.9),
+        # night lights (never fogged)
+        "town_glow": glow_mat(kit, "town glow", "#ffc27a", 5.0),
+        "ollie_glow": glow_mat(kit, "ollie glow", "#ffb45a", 9.0),
+        "mover_glow": glow_mat(kit, "mover glow", "#ffcf8a", 8.0),
+        "hut": matte(kit, "hut wood", "#3a2d22", 0.9),
+        "hutroof": matte(kit, "hut roof", "#232526", 0.9),
+        "badge": kit.metal("#c9a24a", 0.35, "brass badge"),
     }
 
 
-# ------------------------------------------------------------------------------------------------ meshes
-
-
-def _set_mats(ob, mats, index_of):
-    for m in mats[1:]:
-        ob.data.materials.append(m)
-    for p in ob.data.polygons:
-        p.material_index = index_of(p)
-
-
-def log_mesh(kit, name, r, length, M, parent=None, loc=(0, 0, 0), rot=(0, 0, 0), seed=0, n=14, segs=6,
-             taper=0.05, bow=0.02, wobble=0.05, side="bark"):
-    """One round log along its own z: a slightly bowed, tapering, lumpy cylinder with cut ends (end grain)."""
-    rng = np.random.default_rng(seed)
-    ph = rng.uniform(0, 100, 3)
-    verts, faces = [], []
-    for k in range(segs + 1):
-        u = k / segs
-        z = -length / 2 + length * u
-        rr = r * (1 + taper / 2 - taper * u)
-        ox = bow * length * (1 - (2 * u - 1) ** 2)
-        for j in range(n):
-            a = 2 * math.pi * j / n
-            w = 1 + wobble * mnoise.noise(V((math.cos(a) * 1.4 + ph[0], math.sin(a) * 1.4 + ph[1], z * 0.9 + ph[2])))
-            verts.append((ox + rr * w * math.cos(a), rr * w * math.sin(a), z))
-    for k in range(segs):
-        for j in range(n):
-            j2 = (j + 1) % n
-            faces.append((k * n + j, k * n + j2, (k + 1) * n + j2, (k + 1) * n + j))
-    nside = len(faces)
-    faces.append(tuple(reversed(range(n))))
-    faces.append(tuple(range(segs * n, segs * n + n)))
-    ob = kit.mesh_obj(name, verts, faces, M[side], parent, loc, rot)
-    _set_mats(ob, [M[side], M["logend"]], lambda p: 0 if p.index < nside else 1)
-    for p in ob.data.polygons:
-        p.use_smooth = p.index < nside
-    return ob
-
-
-ALONG_X = (0.0, math.pi / 2, 0.0)
-ALONG_Y = (-math.pi / 2, 0.0, 0.0)
-
-
-def timber(kit, name, w, d, length, M, parent, loc, rot=(0, 0, 0), side="tbark", end="tend", bevel=0.12,
-           taper=0.0):
-    """One block-world timber along its own z: a square-ish bevelled box (w x d, `length` long), its two cut ends
-    in end grain. `taper` narrows the far (+z) end (root toes)."""
-    hw, hd, hl, k = w / 2, d / 2, length / 2, 1.0 - taper
-    verts = [(-hw, -hd, -hl), (hw, -hd, -hl), (hw, hd, -hl), (-hw, hd, -hl),
-             (-hw * k, -hd * k, hl), (hw * k, -hd * k, hl), (hw * k, hd * k, hl), (-hw * k, hd * k, hl)]
-    ob = kit.mesh_obj(name, verts, kit.BOX_FACES, M[side], parent, loc, rot)
-    _set_mats(ob, [M[side], M[end]], lambda p: 1 if p.index < 2 else 0)
-    if bevel > 0:
-        md = ob.modifiers.new("bevel", "BEVEL")
-        md.width = min(bevel, min(w, d) * k * 0.4)
-        md.segments = 2
-        md.limit_method = "NONE"
-        for p in ob.data.polygons:
-            p.use_smooth = True
-        try:
-            ob.modifiers.new("wn", "WEIGHTED_NORMAL").keep_sharp = True
-        except Exception:
-            pass
-    return ob
-
-
-def _icosphere(sub=1):
-    t = (1 + 5 ** 0.5) / 2
-    vs = [(-1, t, 0), (1, t, 0), (-1, -t, 0), (1, -t, 0), (0, -1, t), (0, 1, t), (0, -1, -t), (0, 1, -t),
-          (t, 0, -1), (t, 0, 1), (-t, 0, -1), (-t, 0, 1)]
-    vs = [V(v).normalized() for v in vs]
-    fs = [(0, 11, 5), (0, 5, 1), (0, 1, 7), (0, 7, 10), (0, 10, 11), (1, 5, 9), (5, 11, 4), (11, 10, 2), (10, 7, 6),
-          (7, 1, 8), (3, 9, 4), (3, 4, 2), (3, 2, 6), (3, 6, 8), (3, 8, 9), (4, 9, 5), (2, 4, 11), (6, 2, 10),
-          (8, 6, 7), (9, 8, 1)]
-    for _ in range(sub):
-        cache, nf = {}, []
-
-        def mid(i, j):
-            key = (min(i, j), max(i, j))
-            if key not in cache:
-                vs.append((vs[i] + vs[j]).normalized())
-                cache[key] = len(vs) - 1
-            return cache[key]
-        for a, b, c in fs:
-            ab, bc, ca = mid(a, b), mid(b, c), mid(c, a)
-            nf += [(a, ab, ca), (b, bc, ab), (c, ca, bc), (ab, bc, ca)]
-        fs = nf
-    return vs, fs
-
-
-def block_boulder(kit, name, r, M, parent, loc, seed, squash=0.82):
-    """A faceted block boulder (pass 2, note 21): an icosphere subdivided once (80 flat facets), each corner pushed
-    in or out a little and the bottom cut flat, flat-shaded so every facet reads as a plane, moss on the facets
-    that face up."""
-    rng = np.random.default_rng(seed)
-    vs, fs = _icosphere(1)
-    verts = []
-    for v in vs:
-        k = rng.uniform(0.86, 1.1)
-        p = v * r * k
-        verts.append((p.x * 1.05, p.y * 0.95, max(p.z * squash, -r * 0.5)))
-    ob = kit.mesh_obj(name, verts, fs, M["bstone"], parent, loc)
-    for p in ob.data.polygons:
-        p.use_smooth = False
-    return ob
-
-
-def stump_mesh(kit, name, M, parent, seed=5, n=112, rows=18, facets=14):
-    """The head: a thick-walled hollow stump (an outer shell with a broken, mossy rim and a sunken top, and a cavity
-    inside it), opened at the front by `hollow_cutter`. Local z = 0 is its base, its front is -y."""
-    rng = np.random.default_rng(seed)
-    ph = float(rng.uniform(0, 50))
-    Ri, Hcap = 1.95, HEAD_H - 0.5
-    Rc, Zf, Zc = 1.92, 0.45, Hcap - 0.45
-
-    def g(d, w):
-        return math.exp(-(d / w) ** 2)
-
-    def ang(a, b):
-        return math.atan2(math.sin(a - b), math.cos(a - b))
-
-    def rim(th):
-        """A broken top (theta 0 is local +x, its left; the front, -y, is 3 pi / 2): it slopes from high on its
-        right-back to low on its left-front, ragged all round, two broad splinters at the back, a deep notch where
-        the split from the hollow reaches the rim, and a smaller one on its left."""
-        h = 0.5 * math.cos(ang(th, 2.36))
-        h += 0.16 * mnoise.noise(V((math.cos(th) * 3.0 + ph, math.sin(th) * 3.0, 0.0)))
-        h += 0.1 * max(0.0, mnoise.noise(V((math.cos(th) * 7.0, math.sin(th) * 7.0, ph))) - 0.05)
-        for c, w, d in ((2.0, 0.16, 0.32), (2.7, 0.1, 0.18), (4.28, 0.09, -0.8), (0.6, 0.1, -0.3)):
-            h += d * g(ang(th, c), w)
-        return HEAD_H + h
-
-    def r_out(th, z):
-        base = HEAD_R + 0.22 * math.exp(-z / 0.55) + 0.06 - 0.025 * z      # a stump's flare at the base, a taper
-        lump = 0.055 * mnoise.noise(V((math.cos(th) * 2.2 + ph, math.sin(th) * 2.2, z * 0.35)))
-        lump += 0.03 * mnoise.noise(V((math.cos(th) * 5.0, math.sin(th) * 5.0, z * 0.9 + ph)))
-        for c, zc, d in ((1.2, 3.4, 0.16), (3.9, 1.6, 0.14), (5.9, 3.9, 0.12), (0.2, 1.0, 0.1), (2.6, 2.4, 0.12)):
-            lump += d * g(ang(th, c), 0.3) * g(z - zc, 0.6)
-        if facets:
-            # pass 2 (note 21): a faceted stump, flat facets like a game part; every column sits on its facet's
-            # straight edge, so the sides are planes and only the rim stays broken
-            fa = 2 * math.pi / facets
-            fc = (math.floor(th / fa) + 0.5) * fa
-            return max(base * math.cos(fa / 2) / math.cos(th - fc), Ri + 0.5)
-        return max(base * (1 + lump), Ri + 0.5)        # never inside the rim's inner wall (a fold breaks the cut)
-
-    cols = []
-    for j in range(n):
-        th = 2 * math.pi * j / n
-        H = rim(th)
-        prof = []
-        for k in range(rows + 1):
-            z = (H - 0.12) * k / rows
-            prof.append((r_out(th, z), z))
-        ro = prof[-1][0]
-        prof += [(ro - 0.1, H - 0.02), (ro - 0.25, H + 0.03), ((ro + Ri) / 2, H + 0.02), (Ri + 0.12, H - 0.04),
-                 (Ri, H - 0.22), (Ri - 0.02, Hcap + 0.15), (Ri - 0.2, Hcap + 0.02),
-                 (Ri * 0.6, Hcap + 0.05 + 0.04 * math.sin(th * 3)), (Ri * 0.25, Hcap + 0.02)]
-        cols.append([(r * math.cos(th), r * math.sin(th), z) for r, z in prof])
-    m = len(cols[0])
-    verts = [v for c in cols for v in c]
-    bot, top = len(verts), len(verts) + 1
-    verts += [(0, 0, 0), (0, 0, Hcap)]
-    faces = []
-    for j in range(n):
-        j2 = (j + 1) % n
-        for i in range(m - 1):
-            faces.append((j * m + i, j2 * m + i, j2 * m + i + 1, j * m + i + 1))
-        faces.append((bot, j2 * m, j * m))
-        faces.append((j * m + m - 1, j2 * m + m - 1, top))
-    nshell = len(faces)
-    # the cavity, its faces turned inward
-    off = len(verts)
-    cz = [Zf, Zf + 0.12] + [Zf + 0.12 + (Zc - Zf - 0.24) * k / 8 for k in range(1, 8)] + [Zc - 0.12, Zc]
-    cr = []
-    for j in range(n):
-        th = 2 * math.pi * j / n
-        for k, z in enumerate(cz):
-            edge = 0.92 if k in (0, len(cz) - 1) else 1.0
-            r = Rc * edge * (1 + 0.04 * mnoise.noise(V((math.cos(th) * 2.5, math.sin(th) * 2.5, z * 0.8 + ph))))
-            cr.append((r * math.cos(th), r * math.sin(th), z))
-    mc = len(cz)
-    verts += cr
-    cb, ct = len(verts), len(verts) + 1
-    verts += [(0, 0, Zf), (0, 0, Zc)]
-    for j in range(n):
-        j2 = (j + 1) % n
-        for i in range(mc - 1):
-            faces.append((off + j * mc + i, off + j * mc + i + 1, off + j2 * mc + i + 1, off + j2 * mc + i))
-        faces.append((cb, off + j * mc, off + j2 * mc))
-        faces.append((off + j2 * mc + mc - 1, off + j * mc + mc - 1, ct))
-    ob = kit.mesh_obj(name, verts, faces, M["sbark"], parent)
-    _set_mats(ob, [M["sbark"], M["hollow"]], lambda p: 0 if p.index < nshell else 1)
-    for p in ob.data.polygons:
-        p.use_smooth = p.index >= nshell or not facets
-    return ob
-
-
-def hollow_cutter(kit, name, M, parent, seed=8, n=240):
-    """The hollow's mouth, pushed through the stump's front wall: a lopsided, ragged opening about 2.8 x 3 m,
-    fuller low on its right (my left as I face it), and a narrow split running up from its top-right to the rim."""
-    ph = float(np.random.default_rng(seed).uniform(0, 50))
-    a, b = HOLLOW_W / 2, HOLLOW_H / 2
-
-    def g(d, w):
-        return math.exp(-(d / w) ** 2)
-
-    def ang(x, y):
-        return math.atan2(math.sin(x - y), math.cos(x - y))
-
-    ring = []
-    for i in range(n):
-        t = 2 * math.pi * i / n
-        # an almond, pointed at the top and the bottom (x ~ cos t |cos t|): a split in the wood, not a doorway
-        x, z = a * math.cos(t) * abs(math.cos(t)) ** 0.55, b * math.sin(t)
-        f = math.atan2(z, x)
-        up = max(0.0, math.sin(t))
-        k = 1 + 0.08 * mnoise.noise(V((math.cos(t) * 1.6 + ph, math.sin(t) * 1.6, 0.0)))
-        k *= 1 + 0.07 * mnoise.noise(V((math.cos(t) * 6.0, math.sin(t) * 6.0, ph))) * (0.4 + 0.6 * up)
-        k *= 1 + 0.04 * mnoise.noise(V((math.cos(t) * 13.0, math.sin(t) * 13.0, ph + 3.0)))
-        k *= 1 + 0.12 * g(ang(f, math.pi + 0.55), 0.5) - 0.08 * g(ang(f, 0.6), 0.5)   # lopsided
-        r = math.hypot(x, z) * k
-        # the split runs on up from its top point to the rim: a radial spike, so the outline stays star-shaped round
-        # its middle (the fan caps and the exact boolean need that)
-        r += 1.6 * g(ang(f, math.pi / 2 + 0.1), 0.045)
-        ring.append((r * math.cos(f), r * math.sin(f)))
-    y0, y1 = -HEAD_R - 1.0, -0.9
-    verts = [(x, y0, HOLLOW_Z + z) for x, z in ring] + [(x, y1, HOLLOW_Z + z) for x, z in ring]
-    verts += [(0.0, y0, HOLLOW_Z), (0.0, y1, HOLLOW_Z)]
-    c0, c1 = 2 * n, 2 * n + 1
-    # every face points out of the prism (the exact boolean needs it closed and consistent); the outline is star-
-    # shaped round its middle, so each cap is a fan from the middle
-    faces = [(i, n + i, n + (i + 1) % n, (i + 1) % n) for i in range(n)]
-    faces += [(c0, i, (i + 1) % n) for i in range(n)]
-    faces += [(c1, n + (i + 1) % n, n + i) for i in range(n)]
-    ob = kit.mesh_obj(name, verts, faces, M["lip"], parent)
-    ob.hide_render = True
-    ob.hide_viewport = True
-    return ob
-
-
-def boulder_mesh(kit, name, r, M, parent, loc, seed, squash=0.86):
-    rng = np.random.default_rng(seed)
-    ph = V(tuple(rng.uniform(0, 50, 3)))
-    seg, rings = 36, 20
-    verts, faces = [], []
-    for i in range(rings + 1):
-        th = math.pi * i / rings
-        for j in range(seg):
-            f = 2 * math.pi * j / seg
-            d = V((math.sin(th) * math.cos(f), math.sin(th) * math.sin(f), math.cos(th)))
-            k = 1 + 0.13 * mnoise.noise(d * 1.1 + ph) + 0.05 * mnoise.noise(d * 3.2 + ph) + 0.08 * max(0.0, d.z) ** 3
-            p = d * r * k
-            verts.append((p.x * 1.04, p.y * 0.96, max(p.z * squash, -r * 0.55)))
-    for i in range(rings):
-        for j in range(seg):
-            a, b2 = i * seg + j, i * seg + (j + 1) % seg
-            faces.append((a, a + seg, b2 + seg, b2))
-    ob = kit.mesh_obj(name, verts, faces, M["stone"], parent, loc, smooth=True)
-    return ob
-
-
+# ---- meshes
 def pine_data(kit, name, M, h=1.0, tiers=4, sides=7, seed=0):
     """A blocky pine (faceted cone tiers on a trunk), height h. One mesh, shared by every tree of that kind:
     the forest, the saplings on the giant's stones and the spring trees are all this."""
@@ -969,157 +703,6 @@ def place_pine(kit, me, name, loc, scale, yaw=0.0, parent=None, lean=(0.0, 0.0))
     ob.rotation_euler = (lean[0], lean[1], yaw)
     ob.scale = (scale, scale, scale)
     return kit.link(ob, parent)
-
-
-# ------------------------------------------------------------------------------------------------ the giant
-
-
-def build_giant(kit, ctx, M):
-    """Built once. pose_giant() only moves these same parts."""
-    rng = np.random.default_rng(14)
-    root = kit.empty("giant", (0, 0, 0))
-    g = {"root": root}
-    seed = [100]
-
-    def nxt():
-        seed[0] += 1
-        return seed[0]
-
-    def limb(parent, name, top, length, flip=1.0):
-        """Four upright square timbers, 4.6 x 4.6 m together, hanging from `top` (local z) for `length` metres."""
-        for k, (sx, sy) in enumerate(((-1, -1), (1, -1), (-1, 1), (1, 1))):
-            w = 2.18 + rng.uniform(-0.1, 0.04)
-            dl = rng.uniform(-0.25, 0.25)
-            L = length + dl
-            timber(kit, f"{name}.log{k}", w, w * rng.uniform(0.96, 1.02), L, M, parent,
-                   (sx * 1.16 + rng.uniform(-0.03, 0.03), sy * 1.16 + rng.uniform(-0.03, 0.03), top - L / 2 + dl / 2),
-                   (rng.uniform(-0.012, 0.012), rng.uniform(-0.012, 0.012), rng.uniform(-0.03, 0.03)),
-                   side="tbark_limb", bevel=0.22)
-
-    # the legs: from the hips (z = HIP_Z) down to the ground, with four root toes at the front of each foot
-    g["hips"] = kit.empty("giant.hips", (0, 0, HIP_Z), root)
-    for side, sx in (("l", 1), ("r", -1)):
-        leg = kit.empty(f"giant.leg_{side}", (sx * LEG[0] / 2, 0, 0), g["hips"])
-        limb(leg, f"giant.leg_{side}", 0.0, HIP_Z - 0.05)
-        for k, tx in enumerate((-1.7, -0.57, 0.57, 1.7)):
-            ln = 1.5 + rng.uniform(-0.15, 0.2)
-            timber(kit, f"giant.toe_{side}{k}", 1.0, 1.0, ln + 1.0, M, leg,
-                   (tx, -LEG[1] / 2 - ln / 2 + 0.45, -HIP_Z + 0.48),
-                   (math.radians(90 - 8 + rng.uniform(-3, 3)), 0, math.radians(rng.uniform(-6, 6))),
-                   bevel=0.12, taper=0.38)
-        g[f"leg_{side}"] = leg
-
-    # the torso: a log-cabin wall of square timbers, crossed ends at its corners, closed on top by two timbers
-    torso = kit.empty("giant.torso", (0, 0, HIP_Z), root)
-    g["torso"] = torso
-    W, D, H = TORSO
-    r = LOG_D / 2
-    fy = D / 2 - r - 0.5                     # the front and back walls' timber centres
-    sx_ = W / 2 - r - 0.5                    # the side walls' timber centres
-    courses = int(round(H / LOG_D))
-    for k in range(courses):
-        z = r + k * LOG_D
-        for side, y in (("f", -fy), ("b", fy)):
-            ln = W + rng.uniform(-0.12, 0.05)
-            dd = LOG_D * rng.uniform(0.93, 1.0)
-            timber(kit, f"giant.t{side}{k}", dd, dd, ln, M, torso,
-                   (rng.uniform(-0.08, 0.08), y + rng.uniform(-0.03, 0.03), z), (0, math.pi / 2, rng.uniform(-0.01, 0.01)))
-        if k < courses - 1:
-            for side, x in (("l", -sx_), ("r", sx_)):
-                ln = D + rng.uniform(-0.1, 0.05)
-                dd = LOG_D * rng.uniform(0.93, 1.0)
-                timber(kit, f"giant.t{side}{k}", dd, dd, ln, M, torso,
-                       (x + rng.uniform(-0.03, 0.03), rng.uniform(-0.05, 0.05), z + r), (-math.pi / 2, 0, 0))
-    for k, y in enumerate((-0.46, 0.46)):
-        timber(kit, f"giant.ttop{k}", LOG_D, LOG_D, W - 1.4, M, torso, (0, y, H - r), (0, math.pi / 2, 0))
-    kit.box("giant.core", (2 * sx_, 2 * fy, H - 0.4), (0, 0, H / 2), M["core"], torso)
-
-    # the shoulders: two faceted block boulders on the torso's top corners, up to the middle of the head,
-    # saplings on them
-    stones = {"l": (3.9, 4.15, 0.25, 1.05), "r": (3.6, -4.2, 0.2, 0.95)}
-    pine = ctx["pine"]
-    for side, (dia, x, y, dz) in stones.items():
-        b = block_boulder(kit, f"giant.stone_{side}", dia / 2, M, torso, (x, y, H + dz), 31 if side == "l" else 47)
-        b.data.materials[0] = M["gstone"]
-        g[f"stone_{side}"] = b
-    # the giant's own left is +x in its local frame (it faces -y, so +x is on its left hand)
-    for k, (dx, dy, s, yaw) in enumerate(((-0.3, -0.4, 1.45, 0.3), (0.55, 0.3, 1.1, 1.4), (-0.05, 0.75, 1.25, 2.2))):
-        place_pine(kit, pine, f"giant.sapling_l{k}", (4.15 + dx, 0.25 + dy, H + 1.05 + 1.5), s, yaw, torso,
-                   (math.radians(dx * 12), math.radians(-dy * 10)))
-    place_pine(kit, pine, "giant.sapling_r0", (-4.0, 0.45, H + 0.95 + 1.4), 1.2, 0.8, torso)
-
-    # the arms: hanging at its sides to the hip, never longer
-    for side, sx in (("l", 1), ("r", -1)):
-        arm = kit.empty(f"giant.arm_{side}", (sx * ARM_X, 0, ARM_PIVOT), torso)
-        limb(arm, f"giant.arm_{side}", H - ARM_PIVOT, H - 0.1, flip=-1.0)
-        g[f"arm_{side}"] = arm
-
-    # the head: a hollow stump with two warm lights deep in its hollow
-    neck = kit.empty("giant.neck", (0, 0, H), torso)
-    head = kit.empty("giant.head", (0, 0, 0), neck)
-    g["neck"], g["head"] = neck, head
-    shell = stump_mesh(kit, "giant.stump", M, head, n=STUMP_FACETS * 6, facets=STUMP_FACETS)
-    cut = hollow_cutter(kit, "giant.hollow_cut", M, head)
-    mod = shell.modifiers.new("hollow", "BOOLEAN")
-    mod.operation = "DIFFERENCE"
-    mod.object = cut
-    mod.solver = "EXACT"
-    try:
-        mod.material_mode = "TRANSFER"
-    except Exception:
-        pass
-    g["stump"] = shell
-    _check_cut(shell)
-    g["lights"] = []
-    for k, sx in enumerate((-1, 1)):
-        p = (sx * LIGHT_SEP / 2, -HEAD_R + LIGHT_IN, LIGHT_Z)
-        e = kit.sphere(f"giant.light{k}", LIGHT_R, p, M["eyes"], head, seg=16)
-        e.visible_shadow = False
-        g["lights"].append(e)
-        kit.light(f"giantglow{k}", "POINT", p, 14.0, "#ffb860", size=0.17, parent=head)
-    # a shadow-only curtain just inside the mouth: no light from outside (my lamp) reaches into the hollow, so it
-    # stays dark round its own two lights. Nothing sees it but shadow rays.
-    cur = kit.plane("giant.curtain", (HOLLOW_W + 0.8, HOLLOW_H + 3.2), (0, -HEAD_R + 0.4, HOLLOW_Z + 1.0), M["hollow"],
-                    head, rot=(math.pi / 2, 0, 0))
-    for k in ("visible_camera", "visible_diffuse", "visible_glossy", "visible_transmission", "visible_volume_scatter"):
-        setattr(cur, k, False)
-    g["curtain"] = cur
-    ctx["giant"] = g
-    return g
-
-
-def _check_cut(shell):
-    """The hollow must open the front wall and leave the rest: warn loudly if the boolean ate the shell."""
-    try:
-        dg = bpy.context.evaluated_depsgraph_get()
-        me = shell.evaluated_get(dg).to_mesh()
-        bark = sum(p.area for p in me.polygons if p.material_index == 0)
-        lip = sum(p.area for p in me.polygons if p.material_index == 2)
-        shell.evaluated_get(dg).to_mesh_clear()
-        if bark < 60.0 or lip < 2.0:
-            print(f"WARNING lookout set: the hollow's cut looks wrong (bark {bark:.0f} m2, lip {lip:.1f} m2)", flush=True)
-    except Exception as e:  # never stop a render over the check
-        print("WARNING lookout set: cut check failed:", e, flush=True)
-
-
-def pose_giant(g, pos, yaw=180.0, head=0.0, pitch=0.0, hidden=False, stride=0.0):
-    """stride: degrees each leg swings from the hip (R6-stiff, the arms swing the other way)."""
-    st = math.radians(stride)
-    g["leg_l"].rotation_euler = (st, 0, 0)
-    g["leg_r"].rotation_euler = (-st, 0, 0)
-    g["arm_l"].rotation_euler = (-st, 0, 0)        # the arms swing as far as the legs, the other way (R6)
-    g["arm_r"].rotation_euler = (st, 0, 0)
-    g["root"].location = pos
-    g["root"].rotation_euler = (0, 0, math.radians(yaw))
-    g["torso"].rotation_euler = (math.radians(pitch), 0, 0)     # + leans it forward (its front is local -y)
-    g["head"].rotation_euler = (0, 0, math.radians(max(-60.0, min(60.0, head))))
-    for ob in [g["root"]] + list(g["root"].children_recursive):
-        if ob.type != "EMPTY" and not ob.name.endswith("hollow_cut"):
-            ob.hide_render = hidden
-
-
-def giant_objects(g):
-    return [o for o in [g["root"]] + list(g["root"].children_recursive) if o.type == "MESH"]
 
 
 # ------------------------------------------------------------------------------------------------ the tower
@@ -1264,83 +847,6 @@ def build_lamp(kit, ctx, M):
     return root
 
 
-def build_forest(kit, ctx, M, rng, n=420, r0=10.0, r1=260.0):
-    """Pines on the ground, 14 to 17 m, with gold larch in patches: clear of the giant's spots (CLEAR), the road
-    (5 m either side), the fence, the shelf and the open fog down the ridge in front of the scale wide's camera. The
-    far ones sink in fog."""
-    pine, larch = ctx["pine"], ctx["larch"]
-    trees = []
-    k = 0
-    while len(trees) < n and k < n * 40:
-        k += 1
-        a = rng.uniform(0, 2 * math.pi)
-        d = math.sqrt(rng.uniform(r0 ** 2, r1 ** 2))
-        x, y = d * math.cos(a), d * math.sin(a)
-        if any(math.hypot(x - cx, y - cy) < cr for cx, cy, cr in CLEAR):
-            continue
-        below_shelf = 25.0 < x < 130.0 and -390.0 < y < -282.0
-        if road_dist(x, y) < 7.5 or (abs(x) < FENCE + 3 and abs(y) < FENCE + 3) or (y < -268 and not below_shelf):
-            continue
-        if math.hypot(x - SHELF[0], y - SHELF[1]) < 16:
-            continue
-        if any(math.hypot(x - tx, y - ty) < 4.6 for tx, ty in trees):
-            continue
-        trees.append((x, y))
-        gold = mnoise.noise(V((x * 0.03, y * 0.03, 7.0))) > 0.32
-        ob = place_pine(kit, larch if gold else pine, f"pine{len(trees)}", (x, y, terrain_z(x, y) - 0.2),
-                        rng.uniform(14, 17), rng.uniform(0, 6.3))
-        ctx.setdefault("tree_objs", []).append(ob)
-    # pines round the giant's spots whose tops reach only its chest (the scale read in the wides); none closer
-    # than 4 m to it, so it's never seen between trees at arm's length
-    for k, (x, y, h) in enumerate(HERO_PINES):
-        ob = place_pine(kit, pine, f"pine.hero{k}", (x, y, terrain_z(x, y) - 0.2), h, 0.7 * k)
-        ctx.setdefault("tree_objs", []).append(ob)
-        trees.append((x, y))
-    # a stand east of the shelf and down the slope below it, so the giant walking off along it is lost among trees (L72)
-    walk_to = ((82.0, -258.0), (108.0, -250.0), (134.0, -244.0))
-    for k in range(260):
-        x, y = rng.uniform(62.0, 210.0), rng.uniform(-300.0, -214.0)
-        if (y < -266.0 and x > 150.0) or any(math.hypot(x - tx, y - ty) < 4.8 for tx, ty in trees) \
-                or any(math.hypot(x - wx, y - wy) < 8.0 for wx, wy in walk_to):
-            continue
-        trees.append((x, y))
-        ob = place_pine(kit, pine, f"grove{k}", (x, y, terrain_z(x, y) - 0.2), rng.uniform(15, 19), rng.uniform(0, 6.3))
-        ctx.setdefault("tree_objs", []).append(ob)
-    ctx["trees"] = trees
-    return trees
-
-
-FOG_CARDS = {
-    # name: (material, (x, y, top, width, height, yaw degrees)). Night: round the tower and behind the giant's scare
-    # spot. Day: banks across the view up the ridge from the south, their tops at 9 to 12 m so the pine tops and the
-    # giant's chest stand out of them, and a pale backdrop far behind the tower.
-    "fog.near": ("fog_near", (6.0, 16.0, 8.5, 60.0, 9.0, 20.0)),
-    "fog.tower": ("fog_near", (0.0, -1.0, 10.5, 50.0, 11.0, 20.0)),
-    "fog.neck": ("fog_neck", (-4.2, -3.9, CAB_Z - 2.7, 16.0, 9.0, 48.0)),
-    "fog.behind": ("fog_near", (0.0, -15.0, 13.0, 80.0, 14.0, 20.0)),
-    "fog.far": ("fog_far", (0.0, -45.0, 60.0, 220.0, 70.0, 20.0)),
-    "fog.day1": ("fog_day", (0.0, -95.0, 9.0, 320.0, 9.0, 0.0)),
-    "fog.day2": ("fog_day", (0.0, -55.0, 10.0, 300.0, 10.0, 0.0)),
-    "fog.day3": ("fog_day", (0.0, -24.0, 11.0, 260.0, 11.0, 0.0)),
-    "fog.day4": ("fog_day", (0.0, 14.0, 11.5, 260.0, 11.5, 0.0)),
-    "fog.day5": ("fog_day", (0.0, 48.0, 12.5, 300.0, 12.5, 0.0)),
-    "fog.dayback": ("fog_dayback", (0.0, 170.0, 140.0, 700.0, 150.0, 0.0)),
-}
-
-
-def build_fog(kit, ctx, M):
-    """The fog banks: vertical noise cards with a soft visible top. A look shows six at most (brief)."""
-    cards = []
-    for nm, (mat, (x, y, top, w, h, yaw)) in FOG_CARDS.items():
-        verts = [(-w / 2, 0, -h), (w / 2, 0, -h), (w / 2, 0, 0), (-w / 2, 0, 0)]
-        ob = kit.mesh_obj(nm, verts, [(0, 1, 2, 3)], M[mat], loc=(x, y, top), rot=(0, 0, math.radians(yaw)))
-        ob.visible_shadow = False
-        ob.visible_diffuse = False
-        ob.visible_glossy = False
-        cards.append(ob)
-    ctx["fog"] = cards
-    return cards
-
 
 def link_lights(kit, coll, light_names, objs, state="INCLUDE"):
     """Light linking: these lights light only `objs` (INCLUDE) or everything but them (EXCLUDE)."""
@@ -1353,50 +859,6 @@ def link_lights(kit, coll, light_names, objs, state="INCLUDE"):
     for nm in light_names:
         kit.LIGHTS[nm]["obj"].light_linking.receiver_collection = col
 
-
-def build_lights(kit, ctx):
-    """Night: the giant is a silhouette, not a lit object (critic, pass 2). My lamp's throw touches only its stump
-    (never its stones), the night fill never reaches it, and a thin cold rim from behind traces its stump and stones
-    against the lifted fog. Day: a soft sun from behind it (the side the wide never sees), so it reads dark against
-    pearl fog."""
-    lp = ctx["lamp"].location
-    key = kit.light("lampkey", "POINT", (lp.x, lp.y, lp.z + 0.2), 60.0, "#ffd9a0", size=0.12)
-    # my lamp's light on my own face from below and in front (placed from my head each frame): my raised arm sits
-    # between the hanging lantern and my face, so this does the lantern's work on me only
-    face = kit.light("facekey", "POINT", (0, 0, 0), 12.0, "#ffd9a0", size=0.15, shadow=False)
-    face.visible_glossy = False
-    ctx["key_obj"] = key
-    fill = kit.light("fill", "SUN", (0, 0, 60), 1.5, "#8ea6c4", rot=(math.radians(66), 0, math.radians(70)))
-    fill.data.angle = math.radians(25)
-    sun = kit.light("sun", "SUN", (0, 0, 60), 0.0, "#efeadc", rot=(math.radians(66), 0, math.radians(195)))
-    sun.data.angle = math.radians(30)
-    rim = kit.light("rim", "SPOT", RIM_AT, 60000.0, "#9fb4cc", size=1.0, spot=26, blend=0.35)
-    ctx["rim_obj"] = rim
-    for nm in ("lampkey", "fill", "rim", "lamp", "sun"):
-        kit.LIGHTS[nm]["obj"].visible_glossy = nm not in ("lamp", "lampkey")
-    g = ctx["giant"]
-    gi = giant_objects(g)
-    stones = [o for o in gi if ".stone_" in o.name or ".sapling_" in o.name]
-    moss = kit.light("moss", "POINT", (0, 0, 30), 1800.0, "#c9cfa4", size=2.5)
-    moss.visible_glossy = False
-    link_lights(kit, "stones only", ["moss"], stones, "INCLUDE")
-    link_lights(kit, "giant only", ["rim"], gi, "INCLUDE")
-    link_lights(kit, "stump and limbs only", ["lampkey"], [o for o in gi if o not in stones], "INCLUDE")
-    me = [o for o in bpy.data.objects if o.type == "MESH" and o.name.startswith("me.")]
-    link_lights(kit, "not the giant", ["fill"], gi, "EXCLUDE")
-    # a warm light for the giant's foot only: it lights the toes in my pool and nothing of mine (L65)
-    toe = kit.light("toelight", "POINT", (0, 0, 3), 2500.0, "#ffd9a0", size=0.6)
-    toe.visible_glossy = False
-    link_lights(kit, "toes only", ["toelight"], [o for o in gi if ".toe_" in o.name or ".leg_" in o.name], "INCLUDE")
-    ctx["need_me_links"] = True
-    # the lantern's own frame isn't lit by the flame inside it (it would blow out at 10 cm), and the lamp never
-    # lights the stones (they stay part of the dark mass)
-    lamp_parts = [o for o in ctx["lamp"].children if o.type == "MESH"]
-    link_lights(kit, "not the lantern or stones", ["lamp"], lamp_parts + stones, "EXCLUDE")
-
-
-def aim_at(ob, target):
-    ob.rotation_euler = (V(target) - ob.location).to_track_quat("-Z", "Y").to_euler()
 
 
 # ------------------------------------------------------------------------------------------------ the land
@@ -1428,44 +890,6 @@ def ground_mat(kit, name="ground"):
     kit._fogged(m, b.outputs[0])
     return m
 
-
-def road_mat(kit, name="fire road"):
-    """The rutted track: dry packed dirt, two darker wheel ruts along it (its UV u runs across the road)."""
-    if name in kit.MATS:
-        return kit.MATS[name]
-    m = kit._new(name)
-    N, L = m.node_tree.nodes, m.node_tree.links
-    b = N["Principled BSDF"]
-    uv = N.new("ShaderNodeUVMap")
-    sep = N.new("ShaderNodeSeparateXYZ")
-    L.new(uv.outputs["UV"], sep.inputs[0])
-    rut = _math(N, L, "MINIMUM", _math(N, L, "ABSOLUTE", _math(N, L, "SUBTRACT", sep.outputs["X"], 0.3)),
-                _math(N, L, "ABSOLUTE", _math(N, L, "SUBTRACT", sep.outputs["X"], 0.7)))
-    nz = _noise(N, L, _scaled(N, L, "Object", (1, 1, 1)), 0.6, 4.0)
-    dirt = _mix(N, L, kit.col("#3a3026"), kit.col("#55473a"), _range(N, L, nz, 0.3, 0.7))
-    L.new(_mix(N, L, kit.col("#211b15"), dirt, _range(N, L, rut, 0.03, 0.09)), b.inputs["Base Color"])
-    b.inputs["Roughness"].default_value = 0.95
-    kit._fogged(m, b.outputs[0])
-    return m
-
-
-def river_mat(kit, name="river"):
-    """The river from far up: a thin silver line (emissive), as bright as each look says (0 under the smoke)."""
-    if name in kit.MATS:
-        return kit.MATS[name]
-    m = kit._new(name)
-    N, L = m.node_tree.nodes, m.node_tree.links
-    N.remove(N["Principled BSDF"])
-    em = N.new("ShaderNodeEmission")
-    em.inputs["Color"].default_value = kit.col("#dbe6ee")
-    L.new(_math(N, L, "MULTIPLY", _value(N, 0.0, "river"), 2.4), em.inputs["Strength"])
-    out = next(n for n in N if n.type == "OUTPUT_MATERIAL")
-    L.new(em.outputs[0], out.inputs["Surface"])
-    try:
-        m.emission_sampling = "NONE"
-    except Exception:
-        pass
-    return m
 
 
 def smoke_mat(kit, name="smoke layer", hexc="#8a8178"):
@@ -1516,16 +940,83 @@ def ruled_mat(kit, name="log sheet"):
     return m
 
 
+
+# ------------------------------------------------------------------------------------------------ the forest and land
+PINE_SCALE = {1: 1.0, 2: 1.12, 3: 1.28, 4: 1.28}     # the pines grow a night at a time (L18, L21)
+SCRAPE_BASE = (-2.5, -11.0)
+SCRAPE_LEAN = -19.8                                   # degrees about x: its top leans in toward the catwalk rail
+SCRAPE_H = 17.0
+
+
+def build_forest(kit, ctx, M, rng, n=380, r0=10.0, r1=240.0):
+    """Pines on the ground, 14 to 17 m (grown by night in animate), gold larch in patches, clear of the tower's foot
+    (the fence line plus 3 m) and of the scraping pine's patch."""
+    pine, larch = ctx["pine"], ctx["larch"]
+    trees = []
+    k = 0
+    while len(trees) < n and k < n * 40:
+        k += 1
+        a = rng.uniform(0, 2 * math.pi)
+        d = math.sqrt(rng.uniform(r0 ** 2, r1 ** 2))
+        x, y = d * math.cos(a), d * math.sin(a)
+        if abs(x) < FENCE + 3 and abs(y) < FENCE + 3:
+            continue
+        if math.hypot(x - SCRAPE_BASE[0], y - SCRAPE_BASE[1]) < 7.0 or y < -268:
+            continue
+        if any(math.hypot(x - tx, y - ty) < 4.6 for tx, ty in trees):
+            continue
+        trees.append((x, y))
+        gold = mnoise.noise(V((x * 0.03, y * 0.03, 7.0))) > 0.32
+        s = rng.uniform(14, 17)
+        ob = place_pine(kit, larch if gold else pine, f"pine{len(trees)}", (x, y, terrain_z(x, y) - 0.2), s,
+                        rng.uniform(0, 6.3))
+        ob["s0"] = s
+        ctx.setdefault("tree_objs", []).append(ob)
+    # the one that scrapes the catwalk on the third night: it leans in at the tower
+    sx, sy = SCRAPE_BASE
+    ob = place_pine(kit, pine, "pine.scrape", (sx, sy, 0.0), SCRAPE_H, 0.0, lean=(math.radians(SCRAPE_LEAN), 0.0))
+    ob["s0"] = SCRAPE_H
+    ctx["tree_objs"].append(ob)
+    ctx["trees"] = trees
+    return trees
+
+
+FOG_CARDS = {
+    "fog.near": ("fog_near", (6.0, 16.0, 8.5, 60.0, 9.0, 20.0)),
+    "fog.tower": ("fog_near", (0.0, -1.0, 10.5, 50.0, 11.0, 20.0)),
+    "fog.neck": ("fog_neck", (-4.2, -3.9, CAB_Z - 2.7, 16.0, 9.0, 48.0)),
+    "fog.behind": ("fog_near", (0.0, -15.0, 13.0, 80.0, 14.0, 20.0)),
+    "fog.far": ("fog_far", (0.0, -45.0, 60.0, 220.0, 70.0, 20.0)),
+    "fog.day1": ("fog_day", (0.0, -95.0, 9.0, 320.0, 9.0, 0.0)),
+    "fog.day2": ("fog_day", (0.0, -55.0, 10.0, 300.0, 10.0, 0.0)),
+    "fog.day3": ("fog_day", (0.0, -24.0, 11.0, 260.0, 11.0, 0.0)),
+    "fog.day4": ("fog_day", (0.0, 14.0, 11.5, 260.0, 11.5, 0.0)),
+    "fog.day5": ("fog_day", (0.0, 48.0, 12.5, 300.0, 12.5, 0.0)),
+    "fog.dayback": ("fog_dayback", (0.0, 170.0, 140.0, 700.0, 150.0, 0.0)),
+}
+
+
+def build_fog(kit, ctx, M):
+    cards = []
+    for nm, (mat, (x, y, top, w, h, yaw)) in FOG_CARDS.items():
+        verts = [(-w / 2, 0, -h), (w / 2, 0, -h), (w / 2, 0, 0), (-w / 2, 0, 0)]
+        ob = kit.mesh_obj(nm, verts, [(0, 1, 2, 3)], M[mat], loc=(x, y, top), rot=(0, 0, math.radians(yaw)))
+        ob.visible_shadow = False
+        ob.visible_diffuse = False
+        ob.visible_glossy = False
+        cards.append(ob)
+    ctx["fog"] = cards
+    return cards
+
+
 def build_land(kit, ctx, M):
-    """The terrain (10 m grid), the fire road (a ribbon on it with ruts), the valley's river and smoke, the burn's
-    grey smudge far off east, and the rocky shelf at the road's end."""
-    # 10 m near the tower and the road, 20 m out over the far valley and its far hills
+    """The terrain (10 m grid near the tower, 20 m out over the valley and the far ridge), the tower's flat pad, and
+    the valley's fog sheet."""
     xs = np.concatenate([np.arange(-760.0, -320.0, 20.0), np.arange(-320.0, 321.0, 10.0), np.arange(340.0, 761.0, 20.0)])
-    ys = np.concatenate([np.arange(-1400.0, -720.0, 20.0), np.arange(-720.0, 441.0, 10.0)])
+    ys = np.concatenate([np.arange(-1100.0, -720.0, 20.0), np.arange(-720.0, 441.0, 10.0)])
     verts, faces = [], []
     for y in ys:
         for x in xs:
-            # flatten the plateau under the tower and the road a little, so nothing floats or sinks
             verts.append((float(x), float(y), terrain_z(x, y) - 0.05))
     nx = len(xs)
     for j in range(len(ys) - 1):
@@ -1534,56 +1025,129 @@ def build_land(kit, ctx, M):
     ground = kit.mesh_obj("ground", verts, faces, M["ground"])
     for p in ground.data.polygons:
         p.use_smooth = True
-    # the plateau under the tower: an exact flat pad, so the legs and the fence stand on z = 0
     _wbox(kit, "plateau", (-24, -24, -0.6), (24, 24, 0.0), M["ground"])
-    # the road: a ribbon 3.6 m wide just above the ground
-    n = 260
-    rv, rf, ruv = [], [], []
-    for k in range(n + 1):
-        (x, y, zz), (dx, dy) = road_pos(k / n)
-        nxp, nyp = -dy, dx
-        for side in (-1, 1):
-            px, py = x + side * nxp * ROAD_W / 2, y + side * nyp * ROAD_W / 2
-            pz = (0.0 if math.hypot(px, py) < 22 else terrain_z(px, py)) + 0.06
-            rv.append((px, py, max(pz, terrain_z(px, py) + 0.06)))
-            ruv.append((0.0 if side < 0 else 1.0, k / n * 40))
-    for k in range(n):
-        rf.append((2 * k, 2 * k + 1, 2 * k + 3, 2 * k + 2))
-    road = kit.mesh_obj("fire road", rv, rf, M["road"])
-    uvl = road.data.uv_layers.new(name="UVMap")
-    for poly in road.data.polygons:
-        for li in poly.loop_indices:
-            uvl.data[li].uv = ruv[road.data.loops[li].vertex_index]
-    ctx["road"] = road
-    # the shelf: flat rocks at the road's end, faceted like the giant's stones
-    sx, sy = SHELF
-    sz = terrain_z(sx, sy)
-    rng = np.random.default_rng(5)
-    # rocks round the shelf's back and sides (none on its open front edge over the valley, none where I stand)
-    for k in range(7):
-        a = math.radians(-10 + 200 * k / 6)          # from east round the back (north) to west
-        r = rng.uniform(6.5, 8.0)
-        block_boulder(kit, f"shelf.rock{k}", rng.uniform(0.9, 1.7), M, None,
-                      (sx + r * math.cos(a), sy - 2.0 + r * math.sin(a), sz - 0.3), 200 + k, squash=0.5)
-    _wbox(kit, "shelf.slab", (sx - 6, sy - 8, sz - 3.0), (sx + 6, sy + 3, sz + 0.05), M["bstone"])
-    # the valley: the river winding through it, the smoke sheet over it
-    rv, rf = [], []
-    pts = [(-740 + 10 * k, RIVER_Y + 70 * math.sin(k * 0.045) + 30 * math.sin(k * 0.13)) for k in range(149)]
-    for k, (x, y) in enumerate(pts):
-        for side in (-1, 1):
-            rv.append((x, y + side * 7.0, VALLEY_Z + 2.2))
-    for k in range(len(pts) - 1):
-        rf.append((2 * k, 2 * k + 1, 2 * k + 3, 2 * k + 2))
-    river = kit.mesh_obj("river", rv, rf, M["river"])
+    fog = kit.plane("valley fog", (1500, 900), (0, -640, VALLEY_Z + 36), M["smoke"])
     for k in ("visible_shadow", "visible_diffuse", "visible_glossy"):
-        setattr(river, k, False)
-    smoke = kit.plane("valley smoke", (1500, 820), (0, RIVER_Y, VALLEY_Z + 30), M["smoke"])
-    for k in ("visible_shadow", "visible_diffuse", "visible_glossy"):
-        setattr(smoke, k, False)
-    smudge = kit.mesh_obj("burn smudge", [(-90, 0, 0), (90, 0, 0), (90, 0, 55), (-90, 0, 55)], [(0, 1, 2, 3)],
-                          M["smudge"], loc=(520.0, -60.0, -20.0), rot=(0, 0, math.radians(90)))
-    smudge.visible_shadow = False
-    ctx["smudge"] = smudge
+        setattr(fog, k, False)
+
+
+# ------------------------------------------------------------------------------------------------ the valley at night
+def build_valley(kit, ctx, M):
+    """The town's night lights on the valley floor, its hillside and the far ridge (never fogged, never blinking),
+    Ollie's three places, the ranger's hut, and the lamp that crosses the valley."""
+    rng = np.random.default_rng(16)
+    pts = []          # (level, x, y)
+
+    def spread(level, count, cx, cy, rx, ry):
+        for _ in range(count):
+            for _try in range(30):
+                x, y = rng.normal(cx, rx), rng.normal(cy, ry)
+                if -880.0 < y < -400.0 and abs(x) < 640.0 and all(math.hypot(x - a, y - b) > 14.0 for _l, a, b in pts):
+                    pts.append((level, x, y))
+                    break
+
+    spread(1, 34, 10.0, -560.0, 55.0, 40.0)
+    spread(2, 40, 0.0, -580.0, 120.0, 60.0)
+    spread(3, 90, 0.0, -600.0, 260.0, 90.0)
+    lights = []
+    for k, (lv, x, y) in enumerate(pts):
+        s = rng.uniform(3.4, 5.2)
+        ob = kit.box(f"town{k}", (s, s, s), (x, y, terrain_z(x, y) + s / 2), M["town_glow"])
+        ob.visible_shadow = False
+        ob["level"] = lv
+        lights.append(ob)
+    ctx["town_lights"] = lights
+    # Ollie's light: the warmest point in frame, always steady (win: valley floor, win2: the hillside, hut: the ridge)
+    ctx["ollie_at"] = {}
+    for nm, (x, y), s in (("win", (30.0, -560.0), 7.0), ("win2", (-410.0, -640.0), 7.0)):
+        ob = kit.box(f"ollie_{nm}", (s, s, s), (x, y, terrain_z(x, y) + s / 2), M["ollie_glow"])
+        ob.visible_shadow = False
+        ctx["ollie_at"][nm] = ob
+    # the ranger's hut on the far ridge: a small timber hut, one window facing the tower
+    hx, hy = -120.0, -900.0
+    hz = terrain_z(hx, hy)
+    _wbox(kit, "hut.walls", (hx - 11, hy - 8, hz - 1), (hx + 11, hy + 8, hz + 8), M["hut"])
+    rv = [(hx - 13, hy - 10, hz + 8), (hx + 13, hy - 10, hz + 8), (hx + 13, hy + 10, hz + 8), (hx - 13, hy + 10, hz + 8),
+          (hx - 13, hy, hz + 14), (hx + 13, hy, hz + 14)]
+    kit.mesh_obj("hut.roof", rv, [(0, 1, 5, 4), (3, 4, 5, 2), (0, 4, 3), (1, 2, 5), (3, 2, 1, 0)], M["hutroof"])
+    w = kit.box("ollie_hut", (6.5, 1.0, 4.6), (hx + 2.0, hy + 8.6, hz + 4.2), M["ollie_glow"])
+    w.visible_shadow = False
+    ctx["ollie_at"]["hut"] = w
+    # the lamp that crosses the valley (and climbs the stairs): a glow whose size and place a cue sets
+    mv = kit.sphere("mover", 1.0, (0, 0, -80), M["mover_glow"], seg=10)
+    mv.visible_shadow = False
+    ctx["mover"] = mv
+    kit.light("walklamp", "POINT", (0, 0, -80), 60.0, "#ffcf8a", size=0.2)
+
+
+# ------------------------------------------------------------------------------------------------ the marker
+HG_H = 0.62            # the hourglass's height in metres (a head is 0.41 wide)
+GRAINS = 14
+
+
+def build_hourglass(kit, ctx, M, who):
+    """A glass hourglass with pale brass caps and glowing pale-gold sand falling top to bottom, built once per
+    character and floated above the head in animate()."""
+    root = kit.empty(f"hg.{who}", (0, 0, -100))
+    h = HG_H
+    cap_w = 0.30
+    for z, nm in ((h / 2, "top"), (-h / 2, "bot")):
+        kit.box(f"hg.{who}.cap{nm}", (cap_w, cap_w, 0.05), (0, 0, z), M["brass"], root, bevel=0.01)
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            kit.cyl(f"hg.{who}.post{sx}{sy}", 0.012, h, (sx * cap_w * 0.44, sy * cap_w * 0.44, 0), M["brass"], root, n=6)
+    bulb = (h - 0.1) / 2
+    r = cap_w * 0.40
+    kit.cyl(f"hg.{who}.glass_t", 0.012, bulb, (0, 0, bulb / 2), M["hgglass"], root, n=14, r2=r).visible_shadow = False
+    kit.cyl(f"hg.{who}.glass_b", r, bulb, (0, 0, -bulb / 2), M["hgglass"], root, n=14, r2=0.012).visible_shadow = False
+    # the sand: a heap in the top bulb, a heap in the bottom one, and the falling grains between
+    kit.cyl(f"hg.{who}.heap_t", 0.012, 0.09, (0, 0, 0.07), M["sand"], root, n=10, r2=r * 0.6).visible_shadow = False
+    kit.cyl(f"hg.{who}.heap_b", r * 0.75, 0.10, (0, 0, -bulb + 0.05), M["sand"], root, n=10, r2=0.012).visible_shadow = False
+    grains = []
+    for k in range(GRAINS):
+        g = kit.sphere(f"hg.{who}.grain{k}", 0.014, (0, 0, 0), M["sand"], root, seg=6)
+        g.visible_shadow = False
+        grains.append(g)
+    ctx.setdefault("hg", {})[who] = (root, grains)
+
+
+SAND0 = {"me": 0.3, "ollie": 0.95, "ollie_old": 0.06, "balcony": 0.1, "walker": 0.95, "grandad": 0.1, "son": 0.8,
+         "cellarman": 1.0, "office1": 0.9, "office2": 0.9, "office3": 0.9}
+
+
+def sand_of(tl, t, who):
+    v = SAND0.get(who, 0.3)
+    for c in _cues(tl, "sand"):
+        if c.get("who") == who and c["t"] <= t + 1e-9:
+            v = c["v"]
+    return v
+
+
+def place_hourglass(ctx, tl, t, who, state):
+    root, grains = ctx["hg"][who]
+    head = bpy.data.objects.get(f"{who}.headg")
+    hidden = head is None or state["hidden"]
+    if ctx.setdefault("hg_hidden", {}).get(who) != hidden:
+        ctx["hg_hidden"][who] = hidden
+        for ob in root.children_recursive:
+            ob.hide_render = hidden
+    if hidden:
+        root.location = (0, 0, -100)
+        return
+    wp = head.matrix_world.translation
+    hs = ctx["story"]["cast"][who].get("height", 1.0)
+    root.location = (wp.x, wp.y, wp.z + (0.20 + 0.14) * hs + HG_H / 2 + 0.12)
+    sand = sand_of(tl, t, who)
+    n = 2 + int(round((GRAINS - 2) * min(1.0, max(0.0, (sand - 0.05) / 0.95))))
+    speed = 0.3 + 2.4 * sand
+    top, bot = 0.0, -(HG_H - 0.1) / 2 + 0.10
+    for k, g in enumerate(grains):
+        g.hide_render = k >= n
+        u = (k / n + t * speed + (sum(map(ord, who)) % 7) * 0.13) % 1.0
+        spread = 0.012 + 0.03 * sand * u
+        a = k * 2.399
+        g.location = (spread * math.cos(a), spread * math.sin(a), top - u * (top - bot))
+        g.scale = (1.0 + 0.5 * sand,) * 3
 
 
 def build_stairs(kit, ctx, M):
@@ -1667,75 +1231,6 @@ def build_cab_props(kit, ctx, M):
     ctx["door"] = hinge
 
 
-def print_parts(kit, name, M, x, y, heading):
-    """One footprint: a 4.6 m square heel and four toe grooves ahead of it, pointing `heading` (radians, 0 = -y,
-    downhill), each a mud rim round dark, rough rainwater (it reflects nobody) with moss in the toes. Returns an
-    empty with a sapling place in it for spring."""
-    # lying on the ground's slope (the road falls about 1 in 5) and a little above the road's ribbon, so its water
-    # shows and no edge floats or sinks
-    on_top = math.hypot(x, y) <= 22
-    root = kit.empty(name, (x, y, (0.0 if on_top else terrain_z(x, y)) + 0.05))
-    if on_top:
-        root.rotation_euler = (0, 0, heading)
-    else:
-        gx = (terrain_z(x + 1.0, y) - terrain_z(x - 1.0, y)) / 2.0
-        gy = (terrain_z(x, y + 1.0) - terrain_z(x, y - 1.0)) / 2.0
-        tilt = V((0.0, 0.0, 1.0)).rotation_difference(V((-gx, -gy, 1.0)).normalized())
-        root.rotation_euler = (tilt.to_matrix() @ Matrix.Rotation(heading, 3, "Z")).to_euler()
-    kit.box(f"{name}.water", (4.2, 4.2, 0.04), (0, 0, 0.02), M["water"], root)
-    for k, (w, d, px, py) in enumerate(((4.6, 0.3, 0, 2.2), (4.6, 0.3, 0, -2.2), (0.3, 4.6, 2.2, 0), (0.3, 4.6, -2.2, 0))):
-        kit.box(f"{name}.rim{k}", (w, d, 0.16), (px, py, 0.08), M["mud"], root, bevel=0.06)
-    for k, tx in enumerate((-1.7, -0.57, 0.57, 1.7)):
-        kit.box(f"{name}.toe{k}", (0.9, 1.4, 0.04), (tx, -2.2 - 0.85, 0.02), M["water"], root)
-        kit.box(f"{name}.toemoss{k}", (0.7, 0.5, 0.05), (tx, -3.3, 0.03), M["moss"], root)
-    return root
-
-
-def build_prints(kit, ctx, M):
-    """The prints: at the tower's foot heading off downhill (L22 to L26), and on down the fire road (its walk with
-    my lamp). Each gets a small pine in spring (L73)."""
-    prints = []
-    pts = [(2.5, -13.0), (-1.5, -19.5), (3.0, -27.0), (-0.5, -34.0), (4.5, -41.0)]
-    for k in range(10, 60):
-        (x, y, _z), (dx, dy) = road_pos(k / 60.0)
-        side = 0.9 if k % 2 else -0.9
-        pts.append((x - dy * side, y + dx * side))
-    for k, (x, y) in enumerate(pts):
-        # heading downhill along the road
-        (rx, ry, _z), (dx, dy) = road_pos(min(1.0, max(0.0, (-y - 6) / 270.0)))
-        h = math.atan2(-dx, dy) + math.pi
-        root = print_parts(kit, f"print{k}", M, x, y, h)
-        tree = place_pine(kit, ctx["sapling"], f"print{k}.sapling", (0.0, 0.0, 0.04), 3.6, 0.7 * k, root)
-        prints.append((root, tree))
-    ctx["prints"] = prints
-
-
-def build_snapped(kit, ctx, M):
-    """The snapped treetops on the far ridge, all broken at one height: a line that runs straight for the valley,
-    then bends toward my tower (L08 to L11)."""
-    pts = []
-    for a, b in zip(SNAPPED, SNAPPED[1:]):
-        for k in range(6):
-            u = k / 6
-            pts.append((a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u))
-    rng = np.random.default_rng(23)
-    for k, (x, y) in enumerate(pts):
-        z = terrain_z(x, y)
-        h = rng.uniform(14.5, 16.5)
-        place_pine(kit, ctx["snapped_pine"], f"snapped{k}", (x + rng.uniform(-2, 2), y, z), h, rng.uniform(0, 6.3))
-
-
-def snapped_pine_data(kit, M):
-    """A pine broken off at two thirds of its height: the lower tiers and a jagged trunk end."""
-    verts, faces = [], []
-    me = pine_data(kit, "snapped pine", M, tiers=4)
-    # cut the top: drop every vertex above 0.62 of the height to 0.62, so the upper tiers collapse into a stub
-    for v in me.vertices:
-        if v.co.z > 0.62:
-            v.co.z = 0.62 + (v.co.z - 0.62) * 0.08
-    me.update()
-    return me
-
 
 def build_binocular_mask(kit, ctx, M):
     """The binocular view (L08, L09, L11): a black card with two soft round holes, carried by the camera."""
@@ -1775,181 +1270,132 @@ def bino_mat(kit, name="binocular mask"):
     return m
 
 
-# ------------------------------------------------------------------------------------------------ looks
-# A "look" cue switches the whole light: the distance fog's colour and density (every kit-fogged material), the sky,
-# the exposure, which fog cards show, the suns and the other lights' gains. The story's own "look" in story.json
-# is the night's; materials are built with it and a day look retints them.
-# Looks (pass 3, the build). Every daylight look keeps the giant a dark mass against brighter fog (its ambient sky
-# is low, the fog cards and distance fog bright), and every night look keeps the fill off it.
-NIGHT_GAINS = {"sun": 0.0}
-DAY_GAINS = {"fill": 0.0, "rim": 0.0, "lampkey": 0.0, "lamp": 0.35, "facekey": 0.0}
-SCALE_VIEW = -40.0              # the scale wide's view bearing as a card yaw (cards face down its line)
-LOOKS = {
-    # pearl fog by day round the cab; the burn's smudge far off east
-    "day": {"fog": "#b8bcb8", "density": 0.012, "start": 6.0, "sky": "#c3c7c3", "sky_strength": 0.5, "exposure": 0.15,
-            "cards": {"fog.day3": (0.0, -30.0, 12.0, 0.0), "fog.day4": (0.0, 30.0, 12.0, 0.0),
-                      "fog.dayback": (0.0, 190.0, 140.0, 0.0)},
-            "gains": DAY_GAINS, "sun": 1.0, "smudge": True},
-    # the same, for the first shot: a fog bank in front of the giant's head, so only a faint mass and two points show
-    "dayfar": {"fog": "#b8bcb8", "density": 0.012, "start": 6.0, "sky": "#c3c7c3", "sky_strength": 0.5, "exposure": 0.5,
-               "cards": {"fog.day3": (0.0, -30.0, 12.0, 0.0), "fog.day4": (0.0, 30.0, 12.0, 0.0),
-                         "fog.day5": (0.0, 46.0, 26.5, 0.0), "fog.dayback": (0.0, 190.0, 140.0, 0.0)},
-               "gains": {**DAY_GAINS, "lamp": 1.2}, "sun": 1.0, "smudge": True},
-    # a clear morning before the smoke spreads: the valley far below, a silver line in it (L06, L07)
-    "clear": {"fog": "#c4ccd2", "density": 0.0022, "start": 40.0, "sky": "#c9d3da", "sky_strength": 0.7,
-              "exposure": 0.1, "cards": {}, "gains": DAY_GAINS, "sun": 1.6, "river": 2.5, "smudge": True},
-    # the binoculars on the far ridge (thinner fog far out)
-    "bino": {"fog": "#bcc0bc", "density": 0.0016, "start": 40.0, "sky": "#c3c7c3", "sky_strength": 0.6,
-             "exposure": 0.1, "cards": {}, "gains": DAY_GAINS, "sun": 1.2, "bino": True},
-    # dusk: the walk up the ridge over the fog top, the scale wide (L27 to L33)
-    "dusk": {"fog": "#b3aea6", "density": 0.0045, "start": 20.0, "sky": "#bdb6ab", "sky_strength": 0.45,
-             "exposure": 0.05, "gains": DAY_GAINS, "sun": 1.0,
-             "cards": {"fog.day1": (-60.0, -72.0, 7.0, SCALE_VIEW), "fog.day2": (-46.0, -52.0, 8.5, SCALE_VIEW),
-                       "fog.day3": (-30.0, -30.0, 10.0, SCALE_VIEW), "fog.day4": (-4.0, 6.0, 11.0, SCALE_VIEW),
-                       "fog.day5": (20.0, 40.0, 12.0, SCALE_VIEW), "fog.dayback": (90.0, 150.0, 140.0, SCALE_VIEW)}},
-    # night round the cab: blue-grey fog, one steady amber lamp
-    "night": {"fog": "#2a3238", "density": 0.034, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
-              "exposure": 1.6, "cards": ["fog.near", "fog.tower", "fog.neck", "fog.behind", "fog.far"],
-              "gains": NIGHT_GAINS},
-    # after dark, the fog top just under the catwalk, no trees showing (L34 to L41)
-    "nighthigh": {"fog": "#2a3238", "density": 0.04, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
-                  "exposure": 1.6, "gains": NIGHT_GAINS,
-                  "cards": {"fog.tower": (0.0, -12.0, CAB_Z - 1.2, 0.0), "fog.behind": (0.0, 14.0, CAB_Z - 1.0, 0.0),
-                            "fog.near": (16.0, 0.0, CAB_Z - 1.4, 90.0), "fog.far": (0.0, -45.0, 60.0, 20.0)}},
-    # the lean, seen from outside (L40): lifted so the legs, the tilt and the cab read against a paler fog
-    "nightlean": {"fog": "#33404a", "density": 0.02, "start": 6.0, "sky": "#3b4a55", "sky_strength": 1.6,
-                  "exposure": 2.1, "gains": {**NIGHT_GAINS, "rim": 0.6},
-                  "cards": {"fog.tower": (0.0, -12.0, CAB_Z - 6.0, 0.0), "fog.far": (0.0, 40.0, 60.0, 20.0)}},
-    # the valley from the cab at night: smoke lying in it like milk, no river (L56, L57)
-    "nightvalley": {"fog": "#2a3238", "density": 0.0035, "start": 20.0, "sky": "#2a3238", "sky_strength": 1.0,
-                    "exposure": 1.6, "cards": {}, "gains": NIGHT_GAINS, "smoke": 0.95, "smoke_col": "#9a9a96"},
-    # the fire road at night: fog to its waist (L63 to L67)
-    # (the giant's cold rim is off: it made the stump pale; a dim olive light shows the moss on its stones instead)
-    "nightroad": {"fog": "#2a3238", "density": 0.03, "start": 4.0, "sky": "#2c353c", "sky_strength": 1.0,
-                  "exposure": 1.6, "gains": {**NIGHT_GAINS, "rim": 0.0, "lamp": 14.0, "lampkey": 25.0}, "moss": 1.0, "waist": True,
-                  "cards": {"fog.tower": (0.0, -14.0, 9.5, 0.0), "fog.behind": (0.0, -70.0, 8.0, 0.0),
-                            "fog.far": (0.0, -140.0, 60.0, 0.0)}},
-    # the high wide down the road (L67): a pale bank behind the giant so it stands out, none over the lamp
-    "nightroadhi": {"fog": "#2a3238", "density": 0.012, "start": 8.0, "sky": "#2c353c", "sky_strength": 1.0,
-                    "exposure": 1.8, "gains": {**NIGHT_GAINS, "rim": 0.0, "lamp": 4.0}, "moss": 1.0, "waist": True,
-                    "cards": {"fog.tower": (0.0, -14.0, 9.5, 0.0), "fog.far": (0.0, -40.0, 60.0, 0.0)}},
-    # cold first light on the shelf: the smoke lifting, the river shining (L68 to L72)
-    "dawn": {"fog": "#a7b4bf", "density": 0.0035, "start": 20.0, "sky": "#b3c0cb", "sky_strength": 0.55,
-             "exposure": 0.2, "cards": {}, "gains": {**DAY_GAINS, "lamp": 0.6}, "sun": 1.4, "smoke": 0.5,
-             "smoke_col": "#59616a", "river": 3.0},
-    # spring: the same road, green and fogless, a small pine in every print (L73)
-    "spring": {"fog": "#c8d6de", "density": 0.0012, "start": 30.0, "sky": "#b8cfdf", "sky_strength": 0.9,
-               "exposure": 0.0, "cards": {}, "gains": DAY_GAINS, "sun": 2.6, "spring": 1.0, "river": 0.5},
-}
+
+# ------------------------------------------------------------------------------------------------ the town (day)
+TOWN = (1200.0, 0.0)
+PL = 3.2                       # the pavement's height over the road
 
 
-def _kit_fog_nodes():
-    """Every kit-fogged material's (start, density, fog emission) nodes (kit._fogged's own structure)."""
-    out = []
-    for m in bpy.data.materials:
-        if not m.use_nodes or m.name.startswith("fog "):
-            continue
-        for cam in [n for n in m.node_tree.nodes if n.type == "CAMERA"]:
-            try:
-                sub = cam.outputs["View Distance"].links[0].to_node
-                mx = sub.outputs[0].links[0].to_node
-                mul = mx.outputs[0].links[0].to_node
-                ex = mul.outputs[0].links[0].to_node
-                inv = ex.outputs[0].links[0].to_node
-                mix = inv.outputs[0].links[0].to_node
-                em = mix.inputs[2].links[0].from_node if mix.inputs[2].links else None
-                out.append((sub, mul, em))
-            except (IndexError, KeyError, AttributeError):
-                continue
-    return out
+def tb(kit, name, lo, hi, mat):
+    """A box from local town corners (x east along the street, y north, away from the road)."""
+    return _wbox(kit, name, (TOWN[0] + lo[0], TOWN[1] + lo[1], lo[2]), (TOWN[0] + hi[0], TOWN[1] + hi[1], hi[2]), mat)
 
 
-def apply_look(kit, ctx, name):
-    if ctx.get("look") == name:
-        return
-    lk = LOOKS[name]
-    c = kit.col(lk["fog"])
-    for sub, mul, em in ctx.setdefault("fog_nodes", _kit_fog_nodes()):
-        sub.inputs[1].default_value = lk["start"]
-        mul.inputs[1].default_value = -lk["density"]
-        if em is not None:
-            em.inputs["Color"].default_value = c
-    bg = bpy.context.scene.world.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = kit.col(lk["sky"])
-    bg.inputs["Strength"].default_value = lk["sky_strength"]
-    bpy.context.scene.view_settings.exposure = lk["exposure"]
-    cards = lk["cards"]
-    for ob in ctx["fog"]:
-        ob.hide_render = ob.name not in cards
-        if isinstance(cards, dict) and ob.name in cards:
-            x, y, top, yaw = cards[ob.name]
-            ob.location = (x, y, top)
-            ob.rotation_euler = (0, 0, math.radians(yaw))
-        elif ob.name in FOG_CARDS:
-            x, y, top, w, h, yaw = FOG_CARDS[ob.name][1]
-            ob.location = (x, y, top)
-            ob.rotation_euler = (0, 0, math.radians(yaw))
-    kit.LIGHTS["sun"]["base"] = lk.get("sun", 0.0)
-    for n in LOOK_NODES["spring"]:
-        n.outputs[0].default_value = lk.get("spring", 0.0)
-    for n in LOOK_NODES["river"]:
-        n.outputs[0].default_value = lk.get("river", 0.0)
-    for n in LOOK_NODES["smoke"]:
-        n.outputs[0].default_value = lk.get("smoke", 0.0)
-    sm = kit.MATS.get("smoke layer")
-    if sm is not None:
-        em = next(nd for nd in sm.node_tree.nodes if nd.type == "EMISSION")
-        em.inputs["Color"].default_value = kit.col(lk.get("smoke_col", "#8a8178"))
-    if ctx.get("smudge"):
-        ctx["smudge"].hide_render = not lk.get("smudge", False)
-    if ctx.get("bino"):
-        ctx["bino"].hide_render = not lk.get("bino", False)
-    for root, tree in ctx.get("prints", []):
-        tree.hide_render = lk.get("spring", 0.0) < 0.5
-    ctx["look"] = name
+def gable(kit, name, x0, x1, y0, y1, z0, zr, mat):
+    """A gable roof with its ridge along x."""
+    X0, X1, Y0, Y1, Ym = TOWN[0] + x0, TOWN[0] + x1, TOWN[1] + y0, TOWN[1] + y1, TOWN[1] + (y0 + y1) / 2
+    v = [(X0, Y0, z0), (X1, Y0, z0), (X1, Y1, z0), (X0, Y1, z0), (X0, Ym, zr), (X1, Ym, zr)]
+    return kit.mesh_obj(name, v, [(0, 1, 5, 4), (3, 4, 5, 2), (0, 4, 3), (1, 2, 5), (3, 2, 1, 0)], mat)
 
 
-# ------------------------------------------------------------------------------------------------ build
+def window(kit, name, x0, x1, y, z0, z1, M, frame="t_cream"):
+    tb(kit, name + ".f", (x0 - 0.15, y - 0.05, z0 - 0.15), (x1 + 0.15, y + 0.04, z1 + 0.15), M[frame])
+    tb(kit, name, (x0, y - 0.1, z0), (x1, y + 0.03, z1), M["t_win"])
 
 
-def build(kit, story, tl):
-    ctx = {"story": story}
-    bpy.context.scene.cycles.transparent_max_bounces = 8
-    M = materials(kit)
-    ctx["M"] = M
-    ctx["pine"] = pine_data(kit, "pine", M)
-    sp = pine_data(kit, "sapling", M)
-    sp.materials[0] = M["sprout"]
-    ctx["sapling"] = sp
-    lm = pine_data(kit, "larch", M)
-    lm.materials[0] = M["larch"]
-    ctx["larch"] = lm
-    ctx["snapped_pine"] = snapped_pine_data(kit, M)
-    rng = np.random.default_rng(14)
-    build_giant(kit, ctx, M)
-    before = set(bpy.data.objects)
-    build_tower(kit, ctx, M)
-    build_stairs(kit, ctx, M)
-    build_cab_props(kit, ctx, M)
-    # the tower is one group, pivoting at its foot, so it can lean a few degrees (L39)
-    tower = kit.empty("tower", (0, 0, 0))
-    for ob in set(bpy.data.objects) - before:
-        if ob.parent is None and ob is not tower and ob.name != "lamp":
-            ob.parent = tower
-    ctx["tower"] = tower
-    build_gate(kit, ctx, M)
-    build_land(kit, ctx, M)
-    build_forest(kit, ctx, M, rng)
-    build_snapped(kit, ctx, M)
-    build_prints(kit, ctx, M)
-    build_fog(kit, ctx, M)
-    build_binocular_mask(kit, ctx, M)
-    ctx["lamp"].location = LAMP_DECK
-    build_lights(kit, ctx)
-    return ctx
+def house(kit, name, x0, x1, y0, y1, h, wall, roofm, M, doors=(), wins=()):
+    tb(kit, name, (x0, y0, 0.0), (x1, y1, h), M[wall])
+    gable(kit, name + ".roof", x0 - 0.5, x1 + 0.5, y0 - 0.6, y1 + 0.6, h, h + (y1 - y0) * 0.4, M[roofm])
+    for i, (a, b, z0, z1) in enumerate(wins):
+        window(kit, f"{name}.w{i}", a, b, y0, z0, z1, M)
+    for i, a in enumerate(doors):
+        tb(kit, f"{name}.d{i}", (a - 0.6, y0 - 0.08, 0.0), (a + 0.6, y0 + 0.02, 2.3), M["t_door"])
 
 
-# ------------------------------------------------------------------------------------------------ animate
+def build_town(kit, ctx, M):
+    """The montage's street: balcony house (L01), cottage with a dormer and a garden (L03), a cellar with a stool and a
+    pavement hatch (L04), an office with a basement window row (L05). No text, signs or numbers."""
+    tb(kit, "t.base", (-90, -45, -PL - 0.6), (170, 50, -PL), M["t_road"])
+    # the plinth the pavement stands on, broken by the two bays that open onto the road
+    for k, (a, b) in enumerate(((-90, 55), (65, 76), (104, 170))):
+        tb(kit, f"t.pave{k}", (a, -4.0, -PL), (b, 0.0, 0.0), M["t_pave"])
+    tb(kit, "t.lawn", (-90, 0.0, -PL), (170, 50, 0.0), M["t_grass"])
+    tb(kit, "t.hill", (-90, 48, -PL), (170, 90, 14), M["t_hill"])
+    # the bays: a floor of boards, a back wall, a ceiling slab under the pavement
+    for k, (a, b) in enumerate(((55, 65), (76, 104))):
+        tb(kit, f"t.bayfloor{k}", (a, -4.0, -PL), (b, 0.0, -PL + 0.04), M["t_wood"])
+        tb(kit, f"t.bayback{k}", (a, -0.3, -PL), (b, 0.0, 0.0), M["t_cream"])
+        tb(kit, f"t.bayroof{k}", (a, -4.0, -0.6), (b, 0.0, 0.0), M["t_pave"])
+        tb(kit, f"t.baysidel{k}", (a - 0.02, -4.0, -PL), (a + 0.3, 0.0, -0.6), M["t_stone"])
+        tb(kit, f"t.bayside{k}", (b - 0.3, -4.0, -PL), (b + 0.02, 0.0, -0.6), M["t_stone"])
+    # the road's kerb and a pale centre line
+    tb(kit, "t.kerb", (-90, -4.2, -PL), (170, -4.0, 0.0), M["t_stone"])
+    # 1: the balcony house, bricks and lemon shutters; the balcony stands over the pavement
+    house(kit, "h1", -9, 9, 0.0, 10.0, 9.0, "t_brick", "t_roof", M, doors=(0.0,),
+          wins=((4.2, 6.2, 5.0, 7.0), (-7.4, -5.4, 5.0, 7.0), (-7.6, -5.8, 0.7, 1.9), (5.6, 7.4, 0.7, 1.9)))
+    for i, xx in enumerate((-8.2, -4.6, 3.3, 6.9)):
+        tb(kit, f"h1.shut{i}", (xx - 0.35, -0.12, 4.9), (xx + 0.35, 0.0, 7.1), M["t_lemon"])
+    tb(kit, "h1.bdoor", (-1.0, -0.1, 2.4), (1.0, 0.0, 4.7), M["t_win"])
+    tb(kit, "h1.bdoorf", (-1.2, -0.12, 2.4), (1.2, -0.05, 4.9), M["t_cream"])
+    tb(kit, "h1.slab", (-3.6, -2.2, 2.1), (3.6, 0.0, 2.4), M["t_wood"])
+    tb(kit, "h1.railtop", (-3.6, -2.2, 3.38), (3.6, -2.1, 3.44), M["t_cream"])
+    tb(kit, "h1.railmid", (-3.6, -2.2, 2.85), (3.6, -2.14, 2.9), M["t_cream"])
+    for i in range(7):
+        xx = -3.55 + i * 1.18
+        tb(kit, f"h1.post{i}", (xx - 0.05, -2.2, 2.4), (xx + 0.05, -2.1, 3.4), M["t_cream"])
+    # 2: the cottage, set back behind a garden; a dormer window in its front slope
+    tb(kit, "h2", (24, 4.0, 0.0), (38, 11.0, 3.4), M["t_cream"])
+    gable(kit, "h2.roof", 23.4, 38.6, 3.4, 11.6, 3.4, 6.4, M["t_roofred"])
+    tb(kit, "h2.chimney", (35.4, 7.0, 3.0), (36.8, 8.2, 7.4), M["t_brick"])
+    tb(kit, "h2.door", (26.4, 3.92, 0.0), (27.8, 4.02, 2.2), M["t_door"])
+    window(kit, "h2.w0", 30, 32.6, 3.98, 0.9, 2.3, M)
+    window(kit, "h2.w1", 33.6, 36, 3.98, 0.9, 2.3, M)
+    # the dormer (front face y = 4.9): sill, lintel, posts, a dark back, a little roof
+    tb(kit, "dorm.sill", (28.9, 4.7, 3.95), (33.1, 5.0, 4.75), M["t_cream"])
+    tb(kit, "dorm.lint", (28.9, 4.7, 5.75), (33.1, 5.0, 6.15), M["t_cream"])
+    tb(kit, "dorm.pl", (28.9, 4.7, 4.75), (29.3, 5.0, 5.75), M["t_cream"])
+    tb(kit, "dorm.pr", (32.7, 4.7, 4.75), (33.1, 5.0, 5.75), M["t_cream"])
+    tb(kit, "dorm.back", (28.9, 6.5, 4.0), (33.1, 6.7, 6.2), M["t_dark"])
+    tb(kit, "dorm.sidel", (28.9, 4.7, 4.0), (29.1, 6.7, 6.2), M["t_cream"])
+    tb(kit, "dorm.sider", (32.9, 4.7, 4.0), (33.1, 6.7, 6.2), M["t_cream"])
+    gable(kit, "dorm.roof", 28.6, 33.4, 4.6, 6.9, 6.15, 6.9, M["t_roofred"])
+    # the front garden: a low hedge, flower beds, a fence along the pavement
+    tb(kit, "gar.hedge", (22, 3.3, 0.0), (40, 3.8, 0.8), M["t_hill"])
+    for i in range(14):
+        xx = 22.3 + i * 1.3
+        tb(kit, f"gar.pale{i}", (xx, 0.2, 0.0), (xx + 0.14, 0.34, 0.9), M["t_cream"])
+    tb(kit, "gar.rail", (22, 0.2, 0.62), (40, 0.34, 0.74), M["t_cream"])
+    for i in range(6):
+        tb(kit, f"gar.flower{i}", (24 + i * 2.6, 2.4, 0.0), (24.5 + i * 2.6, 2.9, 0.5), M["t_flower"])
+    # neighbours, to fill the street
+    house(kit, "h3", -32, -12, 0.0, 9.0, 7.0, "t_blue", "t_roof", M, doors=(-22.0,),
+          wins=((-29, -27, 3.5, 5.0), (-17, -15, 3.5, 5.0), (-29, -27, 1.0, 2.4)))
+    house(kit, "h4", 12, 20, 0.0, 9.0, 6.0, "t_cream", "t_roofred", M, doors=(16.0,), wins=((13, 14.6, 3.2, 4.6),))
+    house(kit, "h5", 42, 54, 0.0, 9.0, 7.5, "t_brick", "t_roof", M, doors=(48.0,), wins=((43.4, 45.2, 3.6, 5.2), (50.6, 52.4, 3.6, 5.2)))
+    # 3: the cellar's house, its hatch in the pavement, a stool in the bay
+    house(kit, "h6", 54.5, 65.5, 0.0, 9.0, 7.0, "t_blue", "t_roof", M, wins=((56, 58, 3.4, 5.0), (61.4, 63.4, 3.4, 5.0)))
+    tb(kit, "hatch", (59.0, -3.1, 0.0), (61.0, -1.2, 0.06), M["t_dark"])
+    tb(kit, "hatch.f", (58.9, -3.2, 0.0), (61.1, -1.1, 0.03), M["t_stone"])
+    tb(kit, "stool", (59.75, -3.35, -PL), (60.25, -2.85, -PL + 0.6), M["t_wood"])
+    # 4: the office front, its basement window row on the road
+    tb(kit, "h7", (74, 0.0, 0.0), (106, 10.0, 10.0), M["t_stone"])
+    for i in range(8):
+        window(kit, f"h7.w{i}", 76.5 + i * 3.6, 78.5 + i * 3.6, 0.0, 3.2, 5.0, M)
+        window(kit, f"h7.v{i}", 76.5 + i * 3.6, 78.5 + i * 3.6, 0.0, 6.4, 8.2, M)
+    gable(kit, "h7.roof", 73.5, 106.5, -0.6, 10.6, 10.0, 11.5, M["t_roof"])
+    for i, xx in enumerate((76.0, 82.0, 88.0, 94.0, 100.0, 104.0)):
+        tb(kit, f"h7.mull{i}", (xx - 0.15, -4.0, -PL), (xx + 0.15, -3.7, -0.6), M["t_stone"])
+    tb(kit, "h7.sillrow", (76, -4.0, -PL), (104, -3.7, -PL + 0.7), M["t_stone"])
+    for i, xx in enumerate((79.0, 91.0, 97.0)):
+        tb(kit, f"desk{i}", (xx - 1.0, -3.4, -PL), (xx + 1.0, -2.6, -PL + 0.82), M["t_wood"])
+        tb(kit, f"desk{i}.top", (xx - 1.05, -3.45, -PL + 0.8), (xx + 1.05, -2.55, -PL + 0.86), M["t_cream"])
+    # a few round trees on the hill behind
+    rng = np.random.default_rng(3)
+    for k in range(14):
+        x, y = rng.uniform(-70, 150), rng.uniform(30, 70)
+        r = rng.uniform(2.5, 4.0)
+        kit.cyl(f"t.trunk{k}", 0.35, 3.0, (TOWN[0] + x, TOWN[1] + y, 1.5), M["t_door"])
+        kit.sphere(f"t.crown{k}", r, (TOWN[0] + x, TOWN[1] + y, 3.0 + r * 0.8), M["t_hill"], seg=8)
+    # a warm fill in the bays, where the plinth's shade keeps the sun out
+    kit.light("bayfill", "POINT", (TOWN[0] + 70.0, TOWN[1] - 3.0, -1.0), 4500.0, "#fff1d8", size=2.0, shadow=False)
+    kit.light("bayfill2", "POINT", (TOWN[0] + 90.0, TOWN[1] - 3.0, -1.0), 9000.0, "#fff1d8", size=2.0, shadow=False)
+    kit.light("bayfill3", "POINT", (TOWN[0] + 60.0, TOWN[1] - 3.0, -0.8), 2500.0, "#fff1d8", size=2.0, shadow=False)
+    # the parcel that drops onto the hatch (hidden until its cue)
+    p = kit.empty("parcel", (TOWN[0] + 60.0, TOWN[1] - 2.2, 50.0))
+    kit.box("parcel.box", (0.8, 0.6, 0.45), (0, 0, 0.225), M["t_parcel"], p, bevel=0.02)
+    kit.box("parcel.s1", (0.06, 0.62, 0.47), (0, 0, 0.225), M["t_string"], p)
+    kit.box("parcel.s2", (0.82, 0.06, 0.48), (0, 0, 0.225), M["t_string"], p)
+    ctx["parcel"] = p
 
 
 def open_hood(kit, who="me"):
@@ -2025,38 +1471,6 @@ def _ease_to(cs, t, key, default):
     return prev + (cur[key] - prev) * u
 
 
-def giant_state(tl, t):
-    """Where the giant is at t: the latest `giant` cue, walked along its "walk" (from, to, until) with a stiff R6
-    stride whose footfalls land on "beat0" + k * "beat" (the score's pulse), standing on the ground."""
-    from blocky.timeline import resolver
-    c = _last(_cues(tl, "giant"), t)
-    if c is None:
-        return None
-    at = resolver(tl["lines"], tl["duration"])
-    pos = list(c.get("pos", [0.0, -9.0, 0.0]))
-    yaw = c.get("yaw", 180.0)
-    stride = c.get("stride", 0.0)
-    w = c.get("walk")
-    if w:
-        t1 = at(w["until"]) if isinstance(w["until"], str) else w["until"]
-        u = min(1.0, max(0.0, (t - c["t"]) / max(1e-6, t1 - c["t"])))
-        pos = [w["from"][0] + (w["to"][0] - w["from"][0]) * u, w["from"][1] + (w["to"][1] - w["from"][1]) * u, 0.0]
-        dx, dy = w["to"][0] - w["from"][0], w["to"][1] - w["from"][1]
-        yaw = math.degrees(math.atan2(dx, -dy)) if w.get("face", True) else yaw    # its front (local -y) leads
-        b0 = at(w["beat0"]) if isinstance(w.get("beat0"), str) else w.get("beat0", c["t"])
-        beat = w.get("beat", 1.5)
-        stride = w.get("stride", 9.0) * math.cos(math.pi * (t - b0) / beat) if t < t1 else 0.0
-    ground = terrain_z(pos[0], pos[1]) if math.hypot(pos[0], pos[1]) > 22 else 0.0
-    z = ground + (pos[2] if len(pos) > 2 else 0.0)
-    r = c.get("rise")
-    if r:
-        z += r["from"] * (1 - _ss((t - c["t"]) / r["dur"]))
-    walking = (bool(w) and t < (at(w["until"]) if isinstance(w["until"], str) else w["until"]) if w else False) \
-        or bool(c.get("pines"))
-    return {"pos": (pos[0], pos[1], z), "yaw": yaw, "head": c.get("head", 0.0), "pitch": c.get("pitch", 0.0),
-            "stride": stride, "walking": walking, "hidden": c.get("hidden", False), "look_lamp": c.get("look_lamp", False),
-            "lights": c.get("lights", 1.0), "fade": c.get("fade"), "t0": c["t"]}
-
 
 def carry(ctx, tl, t, cue, key, home, off, both=False):
     """A prop in my hand (a cue's "hand", an arm's name; "both" holds it between both hands) or back home."""
@@ -2078,82 +1492,303 @@ def carry(ctx, tl, t, cue, key, home, off, both=False):
     ob.rotation_euler = (0, 0, rot.z)
 
 
-def part_pines(ctx, gs, t):
-    """The pines it passes lean apart and spring back (L28, L67): every pine within 12 m of its middle leans away
-    from it, more the closer it is."""
-    walking = gs is not None and gs.get("walking")
-    gx, gy = (gs["pos"][0], gs["pos"][1]) if gs else (0.0, 0.0)
-    for ob in ctx.get("tree_objs", []):
-        dx, dy = ob.location.x - gx, ob.location.y - gy
-        d = math.hypot(dx, dy)
-        if walking and d < 12.0:
-            k = math.radians(14.0) * (1.0 - d / 12.0)
-            ob.rotation_euler = (-dy / max(d, 1e-3) * k, dx / max(d, 1e-3) * k, ob.rotation_euler.z)
-        elif ob.rotation_euler.x or ob.rotation_euler.y:
-            ob.rotation_euler = (0.0, 0.0, ob.rotation_euler.z)
+# ------------------------------------------------------------------------------------------------ small props
+def build_lamp2(kit, ctx, M):
+    """Ollie's own lantern (the same design as mine): carried by a hand cue, otherwise put away under the ground."""
+    root = kit.empty("lamp2", (0, 0, -60))
+    kit.box("lamp2.base", (0.3, 0.3, 0.05), (0, 0, 0.025), M["lamp_body"], root, bevel=0.01)
+    kit.box("lamp2.cap", (0.3, 0.3, 0.06), (0, 0, 0.37), M["lamp_body"], root, bevel=0.01).visible_shadow = False
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            kit.box(f"lamp2.post{sx}{sy}", (0.025, 0.025, 0.3), (sx * 0.135, sy * 0.135, 0.2), M["lamp_body"], root)
+    kit.box("lamp2.glow", (0.24, 0.24, 0.29), (0, 0, 0.195), M["lamp_glow"], root).visible_shadow = False
+    kit.cyl("lamp2.bail", 0.012, 0.2, (0, 0, 0.52), M["lamp_body"], root, rot=(0, math.pi / 2, 0), n=8)
+    for sx in (-1, 1):
+        kit.box(f"lamp2.bailside{sx}", (0.015, 0.015, 0.1), (sx * 0.1, 0, 0.47), M["lamp_body"], root)
+    kit.light("lamp2light", "POINT", (0, 0, 0.2), 70.0, "#ffd0a0", size=0.2, parent=root)
+    ctx["lamp2"] = root
+
+
+def build_key_and_lock(kit, ctx, M):
+    """The plain iron key on its nail by the cab door, and the padlock on the gate."""
+    z = CAB_Z + 1.55
+    x, y = -CAB + 0.04, 1.0                      # on the west wall, north of the door
+    kit.cyl("nail", 0.012, 0.08, (x + 0.04, y, z + 0.1), M["iron"], rot=(0, math.pi / 2, 0), n=6)
+    key = kit.empty("key.cab", (x + 0.1, y, z))
+    kit.cyl("key.ring", 0.035, 0.012, (0, 0, 0.06), M["iron"], key, rot=(0, math.pi / 2, 0), n=14)
+    kit.box("key.stem", (0.012, 0.012, 0.16), (0, 0, -0.06), M["iron"], key)
+    kit.box("key.bit", (0.012, 0.04, 0.03), (0, 0.016, -0.12), M["iron"], key)
+    # the padlock: a body and a shackle, hung on the gate's hasp (closed) or swung open and hanging (open)
+    lock = kit.empty("padlock", (GATE_X[1] - 0.2, GATE_Y - 0.12, 0.85))
+    kit.box("padlock.body", (0.11, 0.05, 0.1), (0, 0, 0), M["iron"], lock, bevel=0.008)
+    kit.cyl("padlock.shackle", 0.035, 0.012, (0, 0, 0.07), M["iron"], lock, rot=(math.pi / 2, 0, 0), n=10)
+    ctx["padlock"] = lock
+
+
+def build_mask(kit, ctx, M):
+    build_binocular_mask(kit, ctx, M)
+
+
+# ------------------------------------------------------------------------------------------------ lights
+def build_lights(kit, ctx):
+    lp = ctx["lamp"].location
+    face = kit.light("facekey", "POINT", (0, 0, 0), 12.0, "#ffd9a0", size=0.15, shadow=False)
+    face.visible_glossy = False
+    fill = kit.light("fill", "SUN", (0, 0, 60), 1.5, "#8ea6c4", rot=(math.radians(66), 0, math.radians(70)))
+    fill.data.angle = math.radians(25)
+    sun = kit.light("sun", "SUN", (0, 0, 60), 0.0, "#efeadc", rot=SUN_NORTH)
+    sun.data.angle = math.radians(30)
+    for nm in ("fill", "lamp", "sun"):
+        kit.LIGHTS[nm]["obj"].visible_glossy = nm not in ("lamp",)
+    ctx["need_me_links"] = True
+    lamp_parts = [o for o in ctx["lamp"].children if o.type == "MESH"]
+    link_lights(kit, "not the lantern", ["lamp"], lamp_parts, "EXCLUDE")
+
+
+# ------------------------------------------------------------------------------------------------ looks
+NIGHT_GAINS = {"sun": 0.0, "bayfill": 0.0, "bayfill2": 0.0, "bayfill3": 0.0}
+DAY_GAINS = {"fill": 0.0, "lamp": 0.35, "facekey": 0.0, "bayfill": 0.0, "bayfill2": 0.0, "bayfill3": 0.0}
+SUN_NORTH = (math.radians(42), 0, math.radians(12))     # the sun in the south, shining north, on faces that look south
+LOOKS = {
+    # noon in the town: bright, a hard sun from the south, the bays lit by their own fill
+    "town": {"fog": "#d6e6f2", "density": 0.0012, "start": 60.0, "sky": "#9fcdf2", "sky_strength": 1.15, "exposure": 0.0,
+             "cards": {}, "gains": {"fill": 0.0, "lamp": 0.0, "facekey": 0.0, "bayfill": 1.0, "bayfill2": 1.0, "bayfill3": 1.0},
+             "sun": 4.0, "sun_rot": SUN_NORTH},
+    # a clear cool morning at the tower: pearl light, the sun low in the south on the faces at the gate
+    "clear": {"fog": "#c4ccd2", "density": 0.0022, "start": 40.0, "sky": "#cdd8e0", "sky_strength": 0.9,
+              "exposure": 0.15, "cards": {}, "gains": DAY_GAINS, "sun": 3.0, "sun_rot": SUN_NORTH},
+    # night round the cab: blue-grey fog, one steady amber lamp
+    "night": {"fog": "#2a3238", "density": 0.034, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
+              "exposure": 1.6, "cards": ["fog.near", "fog.tower", "fog.neck", "fog.behind", "fog.far"],
+              "gains": NIGHT_GAINS},
+    # the cab seen from outside and below, the fog top just under the catwalk
+    "nighthigh": {"fog": "#2a3238", "density": 0.04, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
+                  "exposure": 1.6, "gains": NIGHT_GAINS,
+                  "cards": {"fog.tower": (0.0, -12.0, CAB_Z - 1.2, 0.0), "fog.behind": (0.0, 14.0, CAB_Z - 1.0, 0.0),
+                            "fog.near": (16.0, 0.0, CAB_Z - 1.4, 90.0), "fog.far": (0.0, -45.0, 60.0, 20.0)}},
+    # the valley from the cab at night: thin air over the town's lights, fog lying on the floor
+    "nightvalley": {"fog": "#2a3238", "density": 0.0016, "start": 20.0, "sky": "#2a3238", "sky_strength": 1.0,
+                    "exposure": 1.5, "cards": {}, "gains": NIGHT_GAINS, "smoke": 0.8, "smoke_col": "#566168"},
+    # the same through the binoculars (the mask is a card on the camera)
+    "nightbino": {"fog": "#2a3238", "density": 0.0016, "start": 20.0, "sky": "#2a3238", "sky_strength": 1.0,
+                  "exposure": 1.5, "cards": {}, "gains": NIGHT_GAINS, "smoke": 0.8, "smoke_col": "#566168", "bino": True},
+}
+
+
+def _kit_fog_nodes():
+    out = []
+    for m in bpy.data.materials:
+        if not m.use_nodes or m.name.startswith("fog "):
+            continue
+        for cam in [n for n in m.node_tree.nodes if n.type == "CAMERA"]:
+            try:
+                sub = cam.outputs["View Distance"].links[0].to_node
+                mx = sub.outputs[0].links[0].to_node
+                mul = mx.outputs[0].links[0].to_node
+                ex = mul.outputs[0].links[0].to_node
+                inv = ex.outputs[0].links[0].to_node
+                mix = inv.outputs[0].links[0].to_node
+                em = mix.inputs[2].links[0].from_node if mix.inputs[2].links else None
+                out.append((sub, mul, em))
+            except (IndexError, KeyError, AttributeError):
+                continue
+    return out
+
+
+def apply_look(kit, ctx, name):
+    if ctx.get("look") == name:
+        return
+    lk = LOOKS[name]
+    c = kit.col(lk["fog"])
+    for sub, mul, em in ctx.setdefault("fog_nodes", _kit_fog_nodes()):
+        sub.inputs[1].default_value = lk["start"]
+        mul.inputs[1].default_value = -lk["density"]
+        if em is not None:
+            em.inputs["Color"].default_value = c
+    bg = bpy.context.scene.world.node_tree.nodes["Background"]
+    bg.inputs["Color"].default_value = kit.col(lk["sky"])
+    bg.inputs["Strength"].default_value = lk["sky_strength"]
+    bpy.context.scene.view_settings.exposure = lk["exposure"]
+    cards = lk["cards"]
+    for ob in ctx["fog"]:
+        ob.hide_render = ob.name not in cards
+        if isinstance(cards, dict) and ob.name in cards:
+            x, y, top, yaw = cards[ob.name]
+            ob.location = (x, y, top)
+            ob.rotation_euler = (0, 0, math.radians(yaw))
+        elif ob.name in FOG_CARDS:
+            x, y, top, w, h, yaw = FOG_CARDS[ob.name][1]
+            ob.location = (x, y, top)
+            ob.rotation_euler = (0, 0, math.radians(yaw))
+    kit.LIGHTS["sun"]["base"] = lk.get("sun", 0.0)
+    kit.LIGHTS["sun"]["obj"].rotation_euler = lk.get("sun_rot", SUN_NORTH)
+    for n in LOOK_NODES["smoke"]:
+        n.outputs[0].default_value = lk.get("smoke", 0.0)
+    sm = kit.MATS.get("valley fog")
+    if sm is not None:
+        em = next(nd for nd in sm.node_tree.nodes if nd.type == "EMISSION")
+        em.inputs["Color"].default_value = kit.col(lk.get("smoke_col", "#566168"))
+    if ctx.get("bino"):
+        ctx["bino"].hide_render = not lk.get("bino", False)
+    ctx["look"] = name
+
+
+# ------------------------------------------------------------------------------------------------ build
+def build(kit, story, tl):
+    ctx = {"story": story}
+    bpy.context.scene.cycles.transparent_max_bounces = 8
+    M = materials(kit)
+    ctx["M"] = M
+    ctx["pine"] = pine_data(kit, "pine", M)
+    lm = pine_data(kit, "larch", M)
+    lm.materials[0] = M["larch"]
+    ctx["larch"] = lm
+    rng = np.random.default_rng(14)
+    build_tower(kit, ctx, M)
+    build_stairs(kit, ctx, M)
+    build_cab_props(kit, ctx, M)
+    build_key_and_lock(kit, ctx, M)
+    build_gate(kit, ctx, M)
+    build_land(kit, ctx, M)
+    build_forest(kit, ctx, M, rng)
+    build_valley(kit, ctx, M)
+    build_town(kit, ctx, M)
+    build_fog(kit, ctx, M)
+    build_binocular_mask(kit, ctx, M)
+    ctx["lamp"].location = LAMP_DECK
+    build_lamp2(kit, ctx, M)
+    build_lights(kit, ctx)
+    for who in story.get("cast", {}):
+        build_hourglass(kit, ctx, M, who)
+    return ctx
+
+
+# ------------------------------------------------------------------------------------------------ animate
+def _cone_box(kit, name, size, loc, mat, parent, rot=(0, 0, 0)):
+    return kit.box(name, size, loc, mat, parent, rot=rot, bevel=0.0)
+
+
+def decor(kit, ctx):
+    """Once the cast exists: Ollie's chevron and beanie band, and the older Ollie's beard, badge, belt key and beanie
+    band. Everything stands 1 cm or more proud of what it sits on."""
+    from blocky import faces
+    if ctx.get("decor") or bpy.data.objects.get("ollie.torso") is None:
+        return
+    ctx["decor"] = True
+    M = ctx["M"]
+    cream = kit.plastic("#efe6c8", 0.7, "cream")
+    grey = kit.plastic("#7d838c", 0.8, "shirt grey")
+    R, H = faces.HEAD_R, faces.HEAD_H
+    top = H / 2
+    # the teen: a grey shirt showing down the open front with a cream chevron, and a cream band on the beanie
+    t = bpy.data.objects["ollie.torso"]
+    kit.box("ollie.shirtpanel", (0.74, 0.04, 1.86), (0, -0.52, 1.0), grey, t, bevel=0.01)
+    for sx in (-1, 1):
+        kit.box(f"ollie.chev{sx}", (0.42, 0.03, 0.11), (sx * 0.16, -0.555, 1.3 - 0.0), cream, t,
+                rot=(0, -sx * 0.62, 0), bevel=0.01)
+    hg = bpy.data.objects["ollie.headg"]
+    kit.box("ollie.band", (2 * R + 0.22, 2 * R + 0.22, 0.17), (0, 0.0, top - 0.15), cream, hg, bevel=0.05)
+    # the older Ollie
+    hg2 = bpy.data.objects["ollie_old.headg"]
+    t2 = bpy.data.objects["ollie_old.torso"]
+    fade = kit.plastic("#e3d2ae", 0.8, "faded cream")
+    kit.box("ollie_old.band", (2 * R + 0.22, 2 * R + 0.22, 0.17), (0, 0.0, top - 0.15), fade, hg2, bevel=0.05)
+    brown = kit.plastic("#3a2415", 0.85, "beard brown")
+    ash = kit.plastic("#8c8884", 0.85, "beard grey")
+    kit.box("ollie_old.chin", (0.84, 0.26, 0.2), (0, -R + 0.06, -top + 0.12), brown, hg2, bevel=0.06)
+    kit.box("ollie_old.jaw", (1.0, 0.34, 0.1), (0, -R + 0.16, -top + 0.03), brown, hg2, bevel=0.04)
+    for sx in (-1, 1):
+        kit.box(f"ollie_old.side{sx}", (0.17, 0.62, 0.62), (sx * (R - 0.03), -0.12, -0.22), ash, hg2, bevel=0.06)
+    brass = M["badge"]
+    kit.cyl("ollie_old.badge", 0.16, 0.025, (0.5, -0.52, 1.5), brass, t2, rot=(math.pi / 2, 0, 0), n=18)
+    kit.box("ollie_old.badgebar", (0.34, 0.03, 0.07), (0.5, -0.525, 1.18), brass, t2, bevel=0.01)
+    ring = kit.cyl("ollie_old.ring", 0.12, 0.03, (-0.78, -0.56, 0.42), M["iron"], t2, rot=(math.pi / 2, 0, 0), n=14)
+    kit.box("ollie_old.key", (0.07, 0.04, 0.62), (-0.78, -0.58, 0.04), M["iron"], t2, bevel=0.01)
+    kit.box("ollie_old.keybit", (0.2, 0.04, 0.1), (-0.7, -0.58, -0.2), M["iron"], t2)
+    # the cold fill keeps off me, my face key lights only me
+    me = [o for o in bpy.data.objects if o.type == "MESH" and o.name.startswith("me.")]
+    link_lights(kit, "not me", ["fill"], me, "EXCLUDE")
+    link_lights(kit, "me only", ["facekey"], me, "INCLUDE")
+
+
+def mover_state(tl, t):
+    """The crossing lamp: eased from key to key (a cue's pos, radius and dur), None when the last cue turned it off."""
+    ks = _cues(tl, "mover")
+    cur, prev = None, None
+    for c in ks:
+        if c["t"] <= t + 1e-9:
+            prev, cur = cur, c
+    if cur is None or not cur.get("on", True):
+        return None
+    p0 = prev["pos"] if prev and prev.get("on", True) else cur["pos"]
+    r0 = prev["r"] if prev and prev.get("on", True) else cur["r"]
+    d = cur.get("dur", 0.0)
+    u = min(1.0, max(0.0, (t - cur["t"]) / d)) if d > 0 else 1.0
+    return ([a + (b - a) * u for a, b in zip(p0, cur["pos"])], r0 + (cur["r"] - r0) * u)
 
 
 def animate(kit, story, tl, t, ctx):
+    from blocky import acting
     over = {}
     open_hood(kit)
-    apply_look(kit, ctx, _switch(_cues(tl, "look"), "id", t, "night"))
-    for k, v in LOOKS[ctx["look"]].get("gains", {}).items():
-        over[k] = v
-    over["moss"] = LOOKS[ctx["look"]].get("moss", 0.0)
-    # the engine's camera stops at 500 m: the river, 600 m out, needs more (only in the two looks that show it)
-    bpy.data.cameras["cam"].clip_end = 1500.0 if ctx["look"] in ("clear", "dawn") else 500.0
-    g = ctx["giant"]
-    gs = giant_state(tl, t)
-    if gs is None:
-        gs = {"pos": (0, -60, 0), "yaw": 180, "head": 0, "pitch": 0, "stride": 0, "hidden": True, "look_lamp": False,
-              "lights": 1.0, "fade": None, "t0": 0}
-    pose_giant(g, gs["pos"], gs["yaw"], gs["head"], gs["pitch"], gs["hidden"], gs["stride"])
-    # its lights: they fade up (never pop on) when it rises, and swell about 15% on each breath
-    lg = gs["lights"]
-    if gs["fade"]:
-        lg *= _ss((t - gs["t0"]) / gs["fade"])
-    br = 1.0
-    for c in _cues(tl, "breath"):
-        x = t - c["t"]
-        if 0 <= x < 5.0:
-            br = max(br, 1.0 + 0.15 * math.sin(math.pi * x / 5.0))
-    for k, e in enumerate(g["lights"]):
-        e.scale = (br, br, br)
-        e.hide_render = gs["hidden"] or lg <= 0.001
-        over[f"giantglow{k}"] = br * lg * (0.0 if gs["hidden"] else 1.0)
-    em = kit.MATS["giant lights"]
-    for nd in em.node_tree.nodes:
-        if nd.type == "MATH" and nd.operation == "MULTIPLY" and nd.inputs[1].default_value in (0.8, ctx.get("ember_s", -1)):
-            ctx["ember_node"] = nd
-    if ctx.get("ember_node") is not None:
-        ctx["ember_node"].inputs[1].default_value = 0.8 * lg
-        ctx["ember_s"] = 0.8 * lg
-    # the tower leans a few degrees as it rests its weight on the frame (L39), and settles back
-    lean = _ease_to(_cues(tl, "lean"), t, "deg", 0.0)
-    ctx["tower"].rotation_euler = (-math.radians(lean), 0, 0)
-    if abs(lean) > 1e-6:
-        # I ride the lean: the cast is posed in the world, so anyone up on the tower is carried round its foot by
-        # the tower's own rotation (the deck tilts under my boots, and the rail stays where my hands are)
-        bpy.context.view_layer.update()
-        tm = ctx["tower"].matrix_world.copy()
-        for who in story.get("cast", {}):
-            root = bpy.data.objects.get(who)
-            if root is not None and root.matrix_world.translation.z > CAB_Z - 1.0:
-                root.matrix_world = tm @ root.matrix_world
+    decor(kit, ctx)
+    look = _switch(_cues(tl, "look"), "id", t, "night")
+    apply_look(kit, ctx, look)
+    lk = LOOKS[look]
+    over.update(lk.get("gains", {}))
+    bpy.data.cameras["cam"].clip_end = 2600.0
+    # the pines grow a night at a time; the town's lights (and Ollie's) with them
+    night = _switch(_cues(tl, "night"), "n", t, 1)
+    if ctx.get("night") != night:
+        ctx["night"] = night
+        for ob in ctx["tree_objs"]:
+            s = ob["s0"] * PINE_SCALE[night]
+            ob.scale = (s, s, s)
+        for ob in ctx["town_lights"]:
+            ob.hide_render = ob["level"] > min(night, 3)
+    where = _switch(_cues(tl, "ollie"), "where", t, "none")
+    cue = [c for c in _cues(tl, "ollie") if c["t"] <= t + 1e-9]
+    k = _ss((t - cue[-1]["t"]) / max(1e-6, cue[-1].get("dur", 1.2))) if cue else 0.0
+    for nm, ob in ctx["ollie_at"].items():
+        ob.hide_render = nm != where or k <= 0.001
+    kit.MATS["ollie glow"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 9.0 * k
+    # the crossing lamp
+    ms = mover_state(tl, t)
+    mv = ctx["mover"]
+    if ms is None:
+        mv.location = (0, 0, -80)
+        kit.LIGHTS["walklamp"]["obj"].location = (0, 0, -80)
+        over["walklamp"] = 0.0
+    else:
+        pos, r = ms
+        mv.location = tuple(pos)
+        mv.scale = (r, r, r)
+        kit.LIGHTS["walklamp"]["obj"].location = (pos[0], pos[1], pos[2] + 0.1)
+        over["walklamp"] = 1.0 if r < 1.0 else 0.0
+    # the door, the gate, the padlock, the radio
     ctx["door"].rotation_euler = (0, 0, -math.radians(100) * _ease_to(_cues(tl, "door"), t, "open", 0.0))
     ctx["gate"].rotation_euler = (0, 0, -math.radians(95) * _ease_to(_cues(tl, "gate"), t, "open", 0.0))
+    lock_open = _switch(_cues(tl, "padlock"), "open", t, False)
+    pl = ctx["padlock"]
+    pl.location = (GATE_X[1] - 0.2, GATE_Y - 0.12, 0.85 - (0.12 if lock_open else 0.0))
+    pl.rotation_euler = (0, 0.5 if lock_open else 0.0, 0)
     radio = _switch(_cues(tl, "radio"), "on", t, False)
     over["radioglow"] = 1.0 if radio else 0.0
     ctx["led"].hide_render = not radio
-    # sitting (an acting key "sit": true): both legs forward, the root lowered by a leg's length
+    # the parcel drops onto the hatch
+    pc = _cues(tl, "parcel")
+    if pc and pc[0]["t"] <= t:
+        d = 1.0 - _ss((t - pc[0]["t"]) / 0.22)
+        ctx["parcel"].location = (TOWN[0] + 60.0, TOWN[1] - 2.2, 0.06 + 3.0 * d * d)
+    else:
+        ctx["parcel"].location = (TOWN[0] + 60.0, TOWN[1] - 2.2, 50.0)
+    # sitting (an acting key "sit": true), short steps on the steep stairs
     for who in story.get("cast", {}):
         sit = _switch(tl["acting"].get(who, []), "sit", t, False)
         for sx in (-1, 1):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg is not None and sit:
                 leg.rotation_euler = (-math.pi / 2, 0, 0)
-        # on the steep stairs (47 degrees) I take short, careful steps: a third of the walk's swing, so my boots
-        # keep off the treads behind and ahead of me
         root = bpy.data.objects.get(who)
         if root is not None:
             p = root.location
@@ -2163,58 +1798,29 @@ def animate(kit, story, tl, t, ctx):
                     if leg is not None:
                         r = leg.rotation_euler
                         leg.rotation_euler = (r.x / 3.0, r.y, r.z)
-    # matrix_world is only current after an update (the cast, the giant and the lamp were just moved)
     bpy.context.view_layer.update()
-    if gs["look_lamp"]:
-        # its head turns as one piece to keep its lights on my lamp (60 degrees at most)
-        hd = g["head"].matrix_world.translation
-        lp = ctx["lamp"].location
-        want = math.degrees(math.atan2(lp.x - hd.x, -(lp.y - hd.y)))
-        body = gs["yaw"]                    # its front (local -y) is at world yaw `yaw`, so the head's turn is want - yaw
-        turn = (want - body + 180.0) % 360.0 - 180.0
-        g["head"].rotation_euler = (0, 0, math.radians(max(-60.0, min(60.0, turn))))
     place_lamp(ctx, tl, t)
+    carry(ctx, tl, t, "lamp2", "lamp2", (0.0, 0.0, -60.0), (0.0, 0.0, -0.55))
     carry(ctx, tl, t, "radio", "radioset", RADIO_SHELF, (0.0, -0.06, 0.02))
     carry(ctx, tl, t, "binos", "binoculars", BINO_SILL, (0.0, -0.08, 0.05), both=True)
-    part_pines(ctx, gs, t)
-    # a dim olive light over the giant's stones, and fog to its waist that goes with it (L64 to L67)
-    gp = g["root"].location
-    kit.LIGHTS["moss"]["obj"].location = (gp.x, gp.y - 7.0, gp.z + 24.0)
-    lk = LOOKS[ctx["look"]]
-    fogt = next((o for o in ctx["fog"] if o.name == "fog.tower"), None)
-    if lk.get("waist") and not gs["hidden"] and fogt is not None:
-        fogt.location = (gp.x, gp.y - 2.0, gp.z + 9.0)
-    # the lantern's glass can glow brighter for the distant wide (a cue "lampglow", k times its usual strength)
+    k2 = 1.0 if _switch(_cues(tl, "lamp2"), "hand", t, None) else 0.0
+    over["lamp2light"] = k2
     k = _switch(_cues(tl, "lampglow"), "k", t, 1.0)
     for nd in kit.MATS["lamp glow"].node_tree.nodes:
         if nd.type == "EMISSION":
             nd.inputs["Strength"].default_value = 0.12 * k
-    sw = _last([c for c in _cues(tl, "lamp") if "swing" in c], t)
-    if sw is not None:
-        x = t - sw["t"]
-        a = math.radians(sw["swing"]) * math.exp(-x / sw.get("decay", 1.2)) * math.sin(2 * math.pi * x / 1.1)
-        ctx["lamp"].rotation_euler = (a, 0.3 * a, 0)
-    else:
-        ctx["lamp"].rotation_euler = (0, 0, 0)
+    ctx["lamp"].rotation_euler = (0, 0, 0)
+    ctx["lamp2"].rotation_euler = (0, 0, 0)
     bpy.context.view_layer.update()
-    lp = ctx["lamp"].matrix_world @ V((0, 0, 0.2))
-    ctx["key_obj"].location = (lp.x, lp.y, lp.z)
-    if ctx.pop("need_me_links", False):
-        # the cast is built after set.build: the cold fill keeps off me and the giant (I'm lamp-lit), and my face
-        # key lights only me
-        me = [o for o in bpy.data.objects if o.type == "MESH" and o.name.startswith("me.")]
-        link_lights(kit, "not the giant", ["fill"], me, "EXCLUDE")
-        link_lights(kit, "me only", ["facekey"], me, "INCLUDE")
+    # my face key rides my head
     hg = bpy.data.objects.get("me.headg")
     if hg is not None:
         m = hg.matrix_world
         fd = (m.to_3x3() @ V((0, -1, 0))).normalized()
         c = m.translation
         kit.LIGHTS["facekey"]["obj"].location = (c.x + fd.x * 0.6, c.y + fd.y * 0.6, c.z - 0.45)
-    toe_w = g["leg_l"].matrix_world @ V((0.0, -LEG[1] / 2 - 2.6, -HIP_Z + 0.5))
-    kit.LIGHTS["toelight"]["obj"].location = (toe_w.x, toe_w.y - 1.0, toe_w.z + 2.2)
-    over["toelight"] = _switch(_cues(tl, "footlit"), "gain", t, 0.0)
     over["facekey"] = over.get("facekey", 1.0) * _switch(_cues(tl, "facekey"), "gain", t, 1.0)
-    hd = g["head"].matrix_world.translation
-    aim_at(ctx["rim_obj"], (hd.x, hd.y, hd.z + 2.0))
+    # the marker over every head
+    for who in story.get("cast", {}):
+        place_hourglass(ctx, tl, t, who, acting.state(tl, who, t))
     return over

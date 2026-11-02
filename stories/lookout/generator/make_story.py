@@ -1,16 +1,14 @@
-"""Writes ../story.json for ep14 "Lookout" (brief 02-brief.md, script 02b-script.md, 2026-10-31).
+"""Writes ../story.json for ep16 "Lookout" (redo 2, 2026-11-02): in this valley time runs slower the higher up you are.
 
 Run from anywhere: python stories/lookout/generator/make_story.py
 The words are in lines.json next to this file (every line of the script, exactly). Everything else is here: the
-cast, the shots, the acting, the cues set.py reads, the effects, the score and the sound. Shot ids are numbered in
-order (S01, S02, ...), and every shot starts on a line reference, never a rounded time.
+cast, the shots, the acting, the cues set.py reads, the effects, the score and the sound. Every shot starts on a line
+reference, never a rounded time.
 
-Places (set.py's coordinates): the tower stands on (0, 0) and the ground at its foot is z = 0. The cab is 4 x 4 m
-(x, y in -2 .. 2) with its floor's top at CAB_Z = 19.6; the catwalk runs 1 m round it, its rail on the outer edge
-(the south rail's line is y = -2.96). The 112 stairs climb a square switchback inside the legs (corners at +-1.45)
-and come up through a hatch at the cab's south-west corner. The fence and its gate are 6.2 m south of the tower,
-and the fire road runs from the gate down the slope to the shelf at (44, -266), about 50 m lower, over the valley.
-A character facing -y has yaw 0, facing +x has yaw 90, facing -x yaw -90 and facing +y yaw 180.
+Places (set.py's coordinates): the tower stands on (0, 0), the ground at its foot is z = 0, the cab's floor is
+CAB_Z = 19.6. The valley falls away south (y < 0); the town's night lights lie on its floor near (0, -560); the
+ranger's hut is on the far ridge near (-120, -900). The day town is a separate slab at (1200, 0). A character
+facing -y has yaw 0, facing +x yaw 90, facing -x yaw -90, facing +y yaw 180.
 """
 import json
 import math
@@ -20,530 +18,418 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
-CAB_Z = 19.6
-A = 1.45                                  # the stairs' square
-RISE = CAB_Z / 112
-STAIR_W = 0.6                             # a flight's width (set.py)
-ROAD = ((0.0, -6.2), (0.0, -16.0), (3.0, -32.0), (-2.0, -52.0), (6.0, -80.0), (18.0, -120.0), (30.0, -170.0),
-        (38.0, -220.0), (42.0, -258.0))
-SHELF = (44.0, -266.0)
+Z = 19.6
+A = 1.45
+RISE = Z / 112
+PL = 3.2
+TX = 1200.0
 
 
-def ground(x, y):
-    """set.py's terrain_z without its small bumps (they're smoothed to nothing on the plateau, the road and the
-    shelf, which is everywhere I stand)."""
-    z = -0.2 * max(0.0, -y - 20.0) - 0.05 * max(0.0, abs(x) - 24.0)
-    z += 0.16 * max(0.0, y - 110.0) - 0.0006 * max(0.0, y - 260.0) ** 2
-    if y < -272.0:
-        z = max(-175.0, z - 1.6 * (-272.0 - y))
-    return 0.0 if math.hypot(x, y) < 22 else round(z, 3)
-
-
-def road(u, side=0.0):
-    """A point on the road (u 0..1 along it), `side` metres to the right of its middle, on the ground."""
-    segs = [math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(ROAD, ROAD[1:])]
-    d = u * sum(segs)
-    for (a, b), L in zip(zip(ROAD, ROAD[1:]), segs):
-        if d <= L or (a, b) == (ROAD[-2], ROAD[-1]):
-            k = min(1.0, d / L)
-            dx, dy = (b[0] - a[0]) / L, (b[1] - a[1]) / L
-            x, y = a[0] + (b[0] - a[0]) * k - dy * side, a[1] + (b[1] - a[1]) * k + dx * side
-            return [round(x, 3), round(y, 3), ground(x, y)]
-        d -= L
-
-
-def gpose(at, u, stride):
-    """The giant held in one pose at road position u, its front down the road, its head on my lamp."""
-    a, b = road(u), road(u + 0.002)
-    return {"at": at, "name": "giant", "pos": [a[0], a[1], 0.0], "yaw": round(math.degrees(math.atan2(b[0] - a[0], -(b[1] - a[1]))), 1),
-            "pitch": 3.0, "stride": 0.0, "look_lamp": True, "pines": True}
-
-
-def c(*keys):
-    return [list(k) for k in keys]
+def tw(x, y, z=0.0):
+    return [TX + x, y, z]
 
 
 def mv(p0, t0, l0, p1=None, t1=None, l1=None, roll=0.0):
-    """A camera: one key, or a move from the first key to the second over the shot."""
     if p1 is None:
-        return c([0, p0, t0, l0, roll])
-    return c([0, p0, t0, l0, roll], [1, p1, t1 if t1 is not None else t0, l1 if l1 is not None else l0, roll])
-
-
-def at_floor(p, z=CAB_Z):
-    return [p[0], p[1], z]
-
-
-# ---------------------------------------------------------------------------------------------------- the cast
-# Me, alone (brief): cobalt and black plaid flannel, the hood up in every shot, black cap hair under it, charcoal
-# canvas pants, honey-tan boots, warm tan skin, round eyes, thick black brows. No age is said or shown.
-cast = {
-    "me": {"age": "adult", "skin": "#b5794e", "shirt": "#2a56c6", "pattern": "plaid", "pattern_c": "#141821",
-           "collar": "#101216", "pants": "#2e2924", "shoes": "#a8733a", "sleeves": "long", "hair": "cap",
-           "hair_c": "#121214", "hat": "hood", "hat_c": "#4b4e57",
-           "face": {"eyes": "round", "brows": True, "ink": "#16100c"}},
-}
-
-# ---------------------------------------------------------------------------------------------------- places
-GLASS_S = at_floor([0.4, -1.55])          # at the cab's south glass
-# (the probe keeps me clear of the cot along the east wall, the table and radio shelf at the north wall, the stairs'
-# hatch at the south-west corner and the door: my arms make me 1.36 m wide)
-GLASS_E = at_floor([1.45, -1.25])         # at the east glass, south of the cot (the burn's smudge)
-GLASS_N = at_floor([-0.8, 1.0])           # at the north glass, clear of the table (the far ridge)
-GLASS_W = at_floor([-1.25, -0.8])         # by the west glass, clear of the hatch (03: the shoulders behind me)
-RADIO_AT = at_floor([0.8, 1.0])           # at the radio shelf, my left hand over the radio
-COT = [1.52, 0.3, CAB_Z - 0.03]           # sitting on the cot (my thighs on its top)
-RADIO_UP = at_floor([0.4, -1.15])         # L18 to L20: the radio held up to the dark, short of the glass
-DOOR_IN = at_floor([-1.3, 0.3])           # (clear of the open door, which stays open from L35 on)
-DOOR_OUT = at_floor([-2.45, 0.0])         # just out of the door, in the middle of the catwalk
-CORNER_SW = at_floor([-2.5, -2.45])
-RAIL = at_floor([0.74, -2.42])            # at the south rail, the creature test's place
-EAST_WIN = at_floor([0.45, -0.2])         # across the cab with the lamp to the far (east) window, short of the cot
-AT_COT = at_floor([0.73, -0.2])           # a step closer: my right hand at 67 degrees sets the lamp on the cot's top
-LAMP_SET = [1.278, -0.71, CAB_Z + 0.48]   # ... here (that hand's end, minus the bail's 0.56 m)
-CORNER_NW = at_floor([-1.35, 0.35])       # backed against the west wall by the door, clear of the table
-LAMP_COT = [1.5, -0.55, CAB_Z + 0.48]     # the lamp set down on the cot
-LAMP_TABLE = [-0.5, 1.5, CAB_Z + 0.76]    # on the table at night
-LAMP_HAND = {"hand": "me.arm-1", "offset": [0.0, 0.0, -0.56]}   # its bail hanging from my right hand
+        return [[0, p0, t0, l0, roll]]
+    return [[0, p0, t0, l0, roll], [1, p1, t1 if t1 is not None else t0, l1 if l1 is not None else l0, roll]]
 
 
 def stair_corner(k):
-    """The stairs' corners going down from the hatch: k = 0 is the top landing (19.6 m), k = 8 the ground."""
     order = [(-A, -A), (-A, A), (A, A), (A, -A)]
     x, y = order[k % 4]
-    return [x, y, round(CAB_Z - k * 14 * RISE, 3)]
+    return [x, y, round(Z - k * 14 * RISE, 3)]
 
 
-def flight(k, u, inward=0.1, lift=0.3):
-    """A point u (0..1) down the flight from corner k to corner k + 1, on the treads (set.py build_stairs: a 0.6 m
-    landing in each corner, then 14 treads over the 2.3 m between them, 47 degrees), `lift` over the line through
-    the treads' middles (a boot spans a tread and the back of the next one up) and `inward` toward the stairwell's
-    middle (my outer arm clears the handrail on the flight's outer side)."""
-    a, b = stair_corner(k), stair_corner(k + 1)
-    d = 2 * A * u                          # along the flight from the top corner
-    run, top = 2 * A - STAIR_W, CAB_Z - k * 14 * RISE
-    c0 = STAIR_W / 2 + run / 28            # the top tread's middle; the bottom tread's is 2A - c0
-    if d <= c0:
-        z = top
-    elif d >= 2 * A - c0:
-        z = top - 13 * RISE
-    else:
-        z = top - (d - c0) * (13 * RISE) / (2 * A - 2 * c0)
-    p = [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, z + lift]
-    if abs(a[0] - b[0]) > abs(a[1] - b[1]):    # it runs along x, at y = +-A: in toward y = 0
-        p[1] -= math.copysign(inward, p[1])
-    else:
-        p[0] -= math.copysign(inward, p[0])
-    return [round(v, 3) for v in p]
+# ---------------------------------------------------------------------------------------------------- the cast
+FACE = {"eyes": "round", "brows": True, "ink": "#16100c"}
+cast = {
+    "me": {"age": "adult", "skin": "#b5794e", "shirt": "#2a56c6", "pattern": "plaid", "pattern_c": "#141821",
+           "collar": "#101216", "pants": "#2e2924", "shoes": "#a8733a", "sleeves": "long", "hair": "cap",
+           "hair_c": "#121214", "hat": "hood", "hat_c": "#4b4e57", "face": dict(FACE)},
+    # my brother as a teen: a head shorter, a red knit beanie, a mustard rain jacket over grey, a quick grin
+    "ollie": {"age": "teen", "skin": "#b5794e", "shirt": "#d9a21b", "collar": "#8a8f96", "pants": "#262a33",
+              "shoes": "#f2efe6", "sleeves": "long", "hair": "cap", "hair_c": "#3a2415", "hat": "beanie",
+              "hat_c": "#c0392b", "extras": ["coat"], "height": 0.84, "face": dict(FACE)},
+    # the same face twenty years on: taller than me, a beard going grey, a faded beanie, a ranger's green jacket
+    "ollie_old": {"age": "adult", "skin": "#b5794e", "shirt": "#2f4a38", "collar": "#1c2a21", "pants": "#2b2b2b",
+                  "shoes": "#3a2c20", "sleeves": "long", "hair": "cap", "hair_c": "#3a2415", "hat": "beanie",
+                  "hat_c": "#c98a8a", "extras": ["coat"], "height": 1.1, "face": dict(FACE)},
+    "balcony": {"age": "adult", "skin": "#d9a074", "shirt": "#f2d94e", "pants": "#6b5b7b", "shoes": "#8a5a3a",
+                "sleeves": "long", "hair": "long", "hair_c": "#5a3a22", "face": {"eyes": "lashes", "brows": True, "ink": "#2a1a12"}},
+    "walker": {"age": "adult", "skin": "#e3b58a", "shirt": "#2f6fb5", "pants": "#3a3a40", "shoes": "#222222",
+               "sleeves": "long", "hair": "spiky", "hair_c": "#222222", "extras": ["coat"], "face": {"eyes": "round", "brows": True, "ink": "#1a1410"}},
+    "grandad": {"age": "adult", "skin": "#e8c19c", "shirt": "#8f6b4b", "pattern": "knit", "pattern_c": "#7a5a3d",
+                "pants": "#4a4038", "shoes": "#3a2c20", "sleeves": "long", "hair": "cap", "hair_c": "#1a1a1a",
+                "face": {"eyes": "round", "brows": True, "ink": "#1a1410"}},
+    "son": {"age": "adult", "skin": "#c98e62", "shirt": "#5f7f3f", "pants": "#4c4a3c", "shoes": "#5a4630",
+            "sleeves": "long", "hair": "cap", "hair_c": "#b4b4b0", "face": {"eyes": "round", "brows": True, "ink": "#1a1410"}},
+    "cellarman": {"age": "adult", "skin": "#a8693f", "shirt": "#6a6f7a", "pants": "#3a3a3a", "shoes": "#222222",
+                  "sleeves": "long", "hair": "buzz", "hair_c": "#3a2c20", "face": {"eyes": "round", "brows": True, "ink": "#1a1410"}},
+    "office1": {"age": "adult", "skin": "#e8c19c", "shirt": "#f0f0f0", "pants": "#2c3550", "shoes": "#222222",
+                "sleeves": "long", "hair": "swoop", "hair_c": "#6a3b1c", "extras": ["tie"], "extra_c": "#a02c2c",
+                "face": {"eyes": "round", "brows": True, "ink": "#1a1410"}},
+    "office2": {"age": "adult", "skin": "#8c5a38", "shirt": "#b7c9e8", "pants": "#2c3550", "shoes": "#222222",
+                "sleeves": "long", "hair": "buzz", "hair_c": "#1a1a1a", "extras": ["glasses", "tie"], "extra_c": "#20242c",
+                "face": {"eyes": "round", "brows": True, "ink": "#1a1410"}},
+    "office3": {"age": "adult", "skin": "#d9a074", "shirt": "#c9b3e0", "pants": "#3a3a40", "shoes": "#222222",
+                "sleeves": "long", "hair": "bun", "hair_c": "#2a1d15", "face": {"eyes": "lashes", "brows": True, "ink": "#2a1a12"}},
+}
+
+# ---------------------------------------------------------------------------------------------------- places
+def at_floor(p, z=Z):
+    return [p[0], p[1], z]
 
 
-GATE_IN, GATE_OUT = [-2.25, -1.4, 0.0], [-2.25, -3.05, 0.0]   # the stairs' foot, then through the gate (set.py GATE_X)
-ON_SHELF = [43.0, -270.0, ground(44.0, -266.0) + 0.05]       # on the shelf's slab (its top is 5 cm over the ground)
-U_ME = {"L64": (0.050, 0.062), "L65": (0.062, 0.078), "L66": (0.078, 0.090), "L67": (0.210, 0.225)}
-LAG = 0.03                                # its lag behind me down the road (7.7 m)
+GLASS_S = at_floor([0.4, -1.55])
+GLASS_E = at_floor([1.45, -1.25])
+GLASS_N = at_floor([-0.8, 1.0])
+RADIO_AT = at_floor([0.8, 1.0])
+COT_ME = [1.52, 0.95, Z - 0.03]          # sitting on the cot, my thighs on its top
+COT_OLD = [1.52, -0.35, Z - 0.03]
+COT1 = [1.52, 0.3, Z - 0.03]
+CORNER_NW = at_floor([-1.35, 0.4])
+FAR_GLASS = at_floor([-1.45, 0.2])
+DOOR_OUT = [-2.5, 0.0, Z]
+LAMP_TABLE = [-0.5, 1.5, Z + 0.76]
+LAMP_COT = [1.5, -0.55, Z + 0.48]
+LAMP_HAND = {"hand": "me.arm-1", "offset": [0.0, 0.0, -0.56]}
+HOLD = dict(arms=[20, 0])
+HIGH = dict(arms=[155, 0])
+RAILS = dict(arms=[82, 82])
+BINO = dict(arms=[102, 102])
+GATE_Y = -2.05
 
-# the giant's places (set.py CLEAR keeps the forest off them)
-FAR = [-25.0, 57.0, 5.0]                  # L01, far back behind the cab in fog
-WALK_UP = ([-31.5, -11.0], [-16.0, 1.0])  # 03: up the ridge toward the tower (the scale wide at L30)
-LEAN = [5.6, -7.6, -2.6]                  # L37 to L41: low, its right stone on the frame below the cab
-FEAR = [2.45, -8.0, 0.0]                  # L42 on: its hollow 1.3 m past the south rail
+# ---------------------------------------------------------------------------------------------------- the shots
+# Each shot: id-less dict. "at" a line ref, "cam", "look" (set.py LOOKS), "night" (1..3), "who" {name: state}, "lamp"
+# ("table" | "cot" | "hand" | [x, y, z]), "binos" (me holds the binoculars), "cues" (extras)
+S = []
 
-# ---------------------------------------------------------------------------------------------------- shots
-# (at, camera, options). step 1 = drawn on ones (the lights rising, its foot in my lamp's pool); hand = handheld drift.
-FEAR_CAM = mv([-0.12, -1.72, 21.95], [2.41, -5.16, 20.4], 15)        # critic pass 2: 20 deg down, 5 deg left
-SCALE_CAM = mv([-82.5, -85.8, 12.0], [-18.0, -5.0, 15.0], 38, [-81.0, -84.5, 12.0], [-18.0, -5.0, 15.2], 38)
-REVEAL_34 = mv([-10.2, 3.2, 21.3], [0.7, -5.6, 18.8], 18, roll=2.5)
-WINDOW_CLOSE = mv([0.25, 0.0, 21.4], [0.25, -6.0, 20.6], 17, roll=-3.0)
-SH = [
-    # ---- 01 the question. The lit cab from outside on a pearl-fog morning, me at the glass; far back in the fog a
-    # dark mass with two faint points (never mentioned). Slow push in
-    (0, mv([10.5, -14.0, 19.8], [0.0, 0.0, 21.2], 30, [8.2, -11.0, 20.2], [0.0, 0.0, 21.4], 32), {"hand": 0.004}),
-    ("L02", mv([1.65, 1.6, 21.1], [0.2, -0.7, 20.6], 22), {}),
-    ("L03", mv([4.6, -7.6, 1.3], [0.0, 0.0, 5.0], 16, [4.6, -7.6, 1.3], [0.0, 0.0, 19.0], 16), {}),
-    ("L04", mv([0.15, 1.05, 20.78], [0.3, 1.78, 20.66], 40), {"hand": 0.002}),
-    ("L05", mv([-1.2, -0.6, 21.6], [520.0, -36.0, 2.0], 26, [-1.0, -0.62, 21.6], [520.0, -36.0, 2.0], 28), {}),
-    ("L06", mv([0.5, -2.62, 21.1], [20.0, -880.0, -120.0], 30, [0.5, -2.62, 21.0], [20.0, -880.0, -122.0], 34), {}),
-    ("L06.2", mv([0.5, -2.62, 21.0], [-20.0, -880.0, -146.0], 90, [0.5, -2.62, 21.0], [-45.0, -880.0, -147.0], 105), {}),
-    ("L07", mv([0.42, -2.75, 21.18], [0.4, -1.55, 21.16], 30), {"hand": 0.003}),
-    # ---- 02 seen, heard. Binocular POV on the far ridge, the snapped line, my face behind the binoculars
-    ("L08", mv([-0.8, 1.75, 21.2], [-62.0, 282.0, 33.0], 140, [-0.8, 1.75, 21.2], [-72.0, 296.0, 34.5], 140), {}),
-    ("L09", mv([-0.8, 1.75, 21.2], [-100.0, 330.0, 38.0], 140, [-0.8, 1.75, 21.2], [-40.0, 240.0, 31.0], 140), {}),
-    ("L10", mv([-0.8, 2.7, 21.15], [-0.8, 1.0, 21.15], 30), {}),
-    ("L11", mv([0.3, -1.6, 21.7], [-40.0, 240.0, 30.0], 30, [0.25, -1.6, 21.7], [-20.0, 180.0, 26.0], 30), {}),
-    ("L12", mv([0.9, 3.1, 21.3], [0.55, 1.2, 20.9], 28), {}),
-    ("L13", mv([-0.3, 1.2, 20.95], [0.3, 1.77, 20.66], 35), {"hand": 0.002}),
-    ("L14", mv([17.0, -13.0, 24.0], [0.0, 0.0, 21.0], 28, [15.6, -12.0, 23.8], [0.0, 0.0, 21.0], 30), {}),
-    ("L15", mv([-0.6, -0.8, 20.9], [1.5, 0.3, 20.75], 26), {}),
-    ("L16", mv([-0.2, 1.2, 21.2], [0.0, -12.0, 20.5], 22, [-0.2, 1.0, 21.2], [0.0, -12.0, 20.5], 22), {}),
-    ("L18", mv([1.0, -4.5, 21.3], [0.4, -1.15, 21.15], 28), {"hand": 0.004}),
-    ("L19", mv([1.1, -2.75, 21.1], [0.9, -1.8, 21.0], 40), {"hand": 0.003}),
-    ("L20", mv([0.4, -2.8, 21.0], [0.75, -1.6, 20.95], 30), {"hand": 0.003}),
-    # ---- 03 traces, moving. The stairs, the prints, the catwalk at dusk, the pines parting, the scale wide
-    ("L21", mv([8.0, 6.0, 22.0], [1.2, 0.2, 15.0], 24), {}),
-    ("L22", mv([7.5, -8.5, 4.5], [2.6, -13.6, 0.0], 24), {}),
-    ("L23", mv([2.6, -7.4, 11.0], [2.5, -13.2, 0.0], 30), {}),
-    ("L24", mv([4.6, -14.2, 2.1], [2.5, -16.2, 0.0], 24, [4.2, -14.6, 1.6], [2.5, -16.4, 0.0], 26), {}),
-    ("L26", mv([1.0, -8.0, 2.0], [2.0, -30.0, -2.0], 24, [2.0, -9.0, 9.0], [2.0, -40.0, -5.0], 24), {}),
-    ("L27", mv([0.2, -1.4, 21.7], [-30.0, -40.0, 10.0], 24), {}),
-    ("L28", mv([-1.2, -2.6, 21.3], [-34.0, -24.0, 9.0], 40, [-1.2, -2.6, 21.3], [-30.0, -18.0, 9.5], 40), {}),
-    ("P02", mv([0.6, -3.6, 20.3], [0.05, -2.6, 20.0], 35), {"hand": 0.004}),
-    ("L30", SCALE_CAM, {"hand": 0.0}),
-    ("L31", mv([-55.0, -45.0, 21.0], [-25.0, -6.0, 20.0], 70, [-54.0, -44.0, 21.0], [-23.0, -4.5, 20.0], 70), {}),
-    ("L33", mv([0.7, -1.4, 21.3], [-6.0, -0.8, 20.0], 24), {}),
-    # ---- 04 close, felt (the scare). The fog top under the catwalk, the tower's foot, the catwalk, the lean, the
-    # lights rising on ones, the fear close, the 3/4, the window, the radio
-    ("L34", mv([20.0, -10.0, 21.0], [0.0, 0.0, 21.0], 28, [18.0, -9.0, 21.0], [0.0, 0.0, 21.0], 30), {}),
-    ("L35", mv([3.0, -7.0, 1.0], [0.0, 0.0, 6.0], 18), {}),
-    ("L36", mv([-2.5, -2.6, 21.3], [-2.0, 0.0, 20.9], 20), {}),
-    ("L37", mv([1.3, -1.6, 21.75], [-1.5, -9.0, 20.2], 22), {"hand": 0.004}),
-    ("L38", mv([-5.0, 4.0, 5.0], [0.0, 0.0, 14.0], 20), {}),
-    ("L39", mv([-24.0, -3.0, 12.0], [0.0, -1.0, 14.0], 26), {}),
-    ("L40", mv([15.0, -16.0, 4.0], [1.0, -3.0, 13.5], 20, [14.0, -15.0, 4.5], [1.0, -3.0, 14.0], 20, roll=5.0), {}),
-    ("L41", mv([1.6, -3.5, 20.7], [0.75, -2.8, 20.4], 30), {"hand": 0.003}),
-    ("L42", mv([0.95, -1.6, 21.55], [2.45, -6.5, 19.6], 24), {"step": 1, "hand": 0.003}),
-    ("L43", FEAR_CAM, {"hand": 0.002}),
-    ("L44", mv([1.6, -2.8, 21.35], [2.3, -6.0, 21.3], 20), {"hand": 0.002}),
-    ("L45", mv([10.0, -4.0, 23.0], [2.4, -7.0, 18.0], 24), {"hand": 0.003}),
-    ("L46", mv([0.4, 1.7, 21.3], [0.8, -6.0, 20.8], 18), {"hand": 0.002}),
-    ("L47", mv([1.4, -2.6, 21.2], [2.35, -6.2, 21.35], 26), {"hand": 0.002}),
-    ("L49", mv([0.62, -3.35, 21.15], [0.74, -2.42, 21.15], 30), {"hand": 0.003}),
-    ("L50", mv([1.2, -3.9, 21.1], [1.1, -3.0, 21.1], 40), {"hand": 0.003}),
-    ("L51", mv([-0.3, -3.7, 21.2], [0.8, -2.5, 21.15], 28), {"hand": 0.003}),
-    # ---- 05 the lamp test, inside the cab at night
-    ("L52", mv([1.7, 1.6, 21.3], [-0.3, -2.6, 20.8], 18), {}),
-    # (the giant faces the tower, so its lights are seen from the north: the lit cab, the lamp moving along the
-    # glass, the two warm points beyond it, level with the lamp's line)
-    ("L53", mv([-5.0, 8.0, 21.4], [0.0, -0.7, 21.0], 36), {}),
-    ("L54", mv([-1.6, -1.6, 21.4], [1.0, -0.3, 20.3], 20), {}),
-    # (L55: from behind the cot, the lamp low and the lights through the south glass above and beyond it)
-    ("L55", mv([0.6, 0.9, 20.8], [2.05, -3.9, 20.5], 30), {}),
-    ("L56", mv([1.5, 0.6, 21.2], [500.0, -700.0, -110.0], 26), {}),
-    ("L58", mv([-0.3, -0.3, 21.2], [-1.35, 0.35, 21.15], 30), {}),
-    ("L59", mv([0.2, 1.0, 20.8], [2.15, -3.7, 20.5], 22, [0.55, 0.9, 20.8], [2.1, -3.9, 20.5], 24), {}),
-    # ---- 06 the walk. The stairs, the gate, the road low wide, its foot in my pool (on ones), the shelf at first light
-    ("L61", mv([3.0, -1.8, 21.0], [0.8, -0.4, 20.9], 24), {}),
-    ("L62", mv([-6.0, 5.0, 13.0], [1.5, -6.0, 11.0], 22), {}),
-    ("L63", mv([-2.0, 0.6, 1.7], [-1.8, -8.0, 0.6], 22), {}),
-    # it's never seen walking: each shot holds one pose of it, and it steps between the cuts (RULES, the creature)
-    ("L64", mv([0.6, -33.0, -1.6], [0.0, -11.1, 15.0], 34, [0.6, -32.0, -1.5], [0.0, -11.1, 15.6], 34), {"hand": 0.004}),
-    ("L64.1", mv([-2.5, -36.0, -2.2], [0.0, -12.5, 15.0], 34), {"hand": 0.003}),
-    ("L64b", mv([2.8, -36.0, -2.2], [0.3, -14.2, 16.0], 34), {"hand": 0.003}),
-    ("L65", mv([5.0, -30.0, 1.0], [2.2, -21.0, 0.2], 24), {"step": 1, "hand": 0.003}),
-    ("L65.2", mv([-4.0, -30.0, 1.2], [2.3, -21.0, 0.1], 24), {"step": 1, "hand": 0.003}),
-    ("L66", mv([3.6, -35.5, -1.7], [3.2, -31.5, -0.3], 30), {"hand": 0.003}),
-    ("L67", mv([-6.0, -76.0, -8.0], [0.5, -53.0, 3.5], 22), {}),
-    ("L67.1", mv([5.0, -100.0, 2.0], [1.0, -58.0, 3.0], 34), {}),
-    ("L68", mv([62.0, -300.0, -40.0], [43.0, -268.0, -52.0], 22), {}),
-    ("L69", mv([41.0, -262.0, -46.0], [55.0, -880.0, -150.0], 34), {}),
-    ("L70", mv([34.0, -240.0, -26.0], [52.0, -880.0, -150.0], 36), {}),
-    # it's seen in poses, cut by cut: behind me, past me, then down the slope into the trees
-    ("L71", mv([46.0, -279.0, -47.5], [46.0, -256.0, -29.0], 30), {}),
-    ("L71.1", mv([30.0, -258.0, -46.0], [57.0, -268.0, -38.0], 22), {}),
-    ("L71.2", mv([45.2, -272.7, -48.6], [43.0, -270.0, -48.7], 40), {}),
-    ("L72", mv([47.0, -270.0, -37.5], [82.0, -258.0, -36.0], 24), {}),
-    ("L72.2", mv([47.0, -270.0, -37.5], [108.0, -250.0, -33.0], 30), {}),
-    ("L72.3", mv([47.0, -270.0, -37.5], [134.0, -244.0, -34.0], 40), {}),
-    # ---- 07 spring: low on the road, a small pine in a print, a slow tilt up the line of them to the tower's gate
-    ("L73", mv([6.5, -52.0, -4.3], [1.0, -27.0, -1.2], 26, [5.5, -50.0, -4.0], [0.0, -12.0, 3.0], 26), {}),
-    ("L73.3", mv([1.0, -30.5, 4.0], [0.5, -16.0, 0.5], 26, [1.0, -30.5, 4.0], [0.0, -4.0, 3.5], 26), {}),
-]
+
+def shot(at, cam, look, who=None, lamp="table", **kw):
+    S.append(dict(at=at, cam=cam, look=look, who=who or {}, lamp=lamp, **kw))
+
+
+def st(pos, yaw=0, expr="neutral", **kw):
+    return dict(pos=pos, yaw=yaw, expr=expr, **kw)
+
+
+BAL = st([TX + 0.0, -1.45, 2.4], 0, "smile", **RAILS, head=[0, 0])
+WALK = st(tw(1.7, -3.3), 10, "wide", arms=[0, 0], head=[0, 14])
+# ---- 01 the rule: a noon street (0 to about 20 s)
+shot(0, mv(tw(0.6, -8.4, 1.8), tw(0.85, -2.4, 3.0), 26, tw(0.7, -7.6, 1.9), tw(0.85, -2.4, 3.0), 26), "town",
+     {"balcony": BAL, "walker": WALK}, sand=[("balcony", 0.1), ("walker", 0.95)], hand=0.003)
+shot("L01.2", mv(tw(0.9, -5.4, 2.5), tw(0.9, -2.4, 3.1), 30, tw(0.9, -5.0, 2.7), tw(0.9, -2.4, 3.4), 30), "town",
+     {"balcony": BAL, "walker": WALK})
+shot("L02", mv(tw(-24, -9, 1.7), tw(-12, -1.5, 1.8), 22, tw(14, -9, 1.7), tw(24, -1.5, 2.0), 22), "town",
+     {"balcony": BAL, "walker": WALK,
+      "grandad": st(tw(31, 5.7, 4.05), 0, "grin", arms=[0, 150]),
+      "son": st(tw(33, 2.0), 0, "smirk")})
+shot("L03", mv(tw(31, -6.0, 1.4), tw(31.0, 5.0, 5.0), 34, tw(31, -5.6, 1.6), tw(31.0, 5.0, 5.3), 34), "town",
+     {"grandad": st(tw(31, 5.7, 4.05), 0, "grin", arms=[0, 150])})
+shot("L03.2", mv(tw(34.5, -4.2, 1.2), tw(33.2, 2.0, 1.2), 28, tw(34.2, -4.0, 1.3), tw(33.2, 2.0, 1.4), 28), "town",
+     {"son": st(tw(33, 2.0), 0, "smirk", arms=[40, 40], head=[0, -8]),
+      "grandad": st(tw(31, 5.7, 4.05), 0, "grin", arms=[0, 150])}, sand=[("son", 0.8)])
+shot("L04", mv(tw(60, -11.5, -2.2), tw(60, -3.0, -1.6), 26, tw(60, -10.5, -2.2), tw(60, -3.0, -1.5), 26), "town",
+     {"cellarman": st(tw(60, -3.0, -PL + 0.1), 0, "worried", sit=True, arms=[30, 0])})
+shot("L04.2", mv(tw(60, -9.5, -0.3), tw(60, -2.2, 0.6), 30, tw(60, -8.0, 0.3), tw(60, -2.2, 0.4), 30), "town",
+     {}, parcel=True)
+shot("L05", mv(tw(86, -12.5, -2.4), tw(88, -3.0, -1.4), 24, tw(92, -12.5, -2.4), tw(92, -3.0, -1.4), 24), "town",
+     {"office1": st(tw(79, -2.0, -PL), 0, "grin"), "office2": st(tw(91, -2.0, -PL), 0, "grin"),
+      "office3": st(tw(97, -2.0, -PL), 0, "grin")})
+shot("L05.2", mv(tw(94, -8.2, -2.2), tw(94.5, -2.6, -1.5), 30), "town",
+     {"office2": st(tw(91, -2.0, -PL), 0, "grin"), "office3": st(tw(97, -2.0, -PL), 0, "laugh")})
+# ---- the lookout (L06 to L12)
+shot("L06", mv([26, -75, 12], [0, 0, 13], 34, [22, -70, 12.5], [0, 0, 13.5], 36), "clear", {})
+shot("L06.1", mv([-1.4, -7.2, 1.45], [-2.1, -2.2, 1.3], 26), "clear",
+     {"me": st([-2.1, -3.2, 0.0], 0, "smile", arms=[0, 0])}, sand=[("me", 0.3)])
+shot("L07", mv([3.0, -6.0, 1.0], [0.0, 0.0, 11.0], 20, [3.0, -6.0, 1.0], [0.0, -1.0, 19.0], 20), "clear", {})
+shot("L07.3", mv([3.0, 3.4, 9.5], [-0.4, -0.2, 17.0], 24, [3.0, 3.4, 12.5], [-0.4, -0.2, 20.2], 24), "clear", {})
+shot("L08", mv([-2.0, -8.2, 1.25], [-2.1, -2.2, 1.0], 26), "clear",
+     {"me": st([-1.7, -3.3, 0.0], 0, "smile"), "ollie": st([-2.85, -3.3, 0.0], 0, "grin")},
+     sand=[("me", 0.3)])
+shot("L09", mv([-2.5, -5.9, 1.25], [-2.88, -3.3, 1.1], 36), "clear",
+     {"ollie": st([-2.85, -3.3, 0.0], 0, "smile")}, flap=("ollie", "L09", "L09>"))
+shot("L10", mv([-1.2, -6.2, 1.4], [-2.9, -3.6, 1.0], 28), "clear",
+     {"ollie": st([-2.85, -3.4, 0.0], -20, "smile", arms=[0, 100]), "me": st([-1.7, -3.2, 0.0], 0, "smile")},
+     flap=("ollie", "L10", "L10>"))
+shot("L10.2", mv([-3.4, -3.0, 1.7], [-1.0, -90.0, -20.0], 30), "clear", {"ollie": st([-2.9, -3.5, 0.0], 0, "grin", arms=[0, 100])},
+     flap=("ollie", "L10.2", "L10>"))
+shot("L11", mv([-2.3, -9.0, 1.4], [-2.4, -2.2, 1.1], 26), "clear",
+     {"me": st([-2.2, -1.2, 0.0], 0, "smile"), "ollie": st([-3.9, -4.6, 0.0], 0, "grin", arms=[0, 160])},
+     gate=("L11", 0.0, 0.6))
+shot("L11.2", mv([-1.1, -3.3, 1.0], [-1.55, -2.1, 0.88], 60), "clear", {}, padlock=False)
+shot("L12", mv([-0.9, 1.5, 21.6], [-1.95, 1.0, 21.25], 26), "clear", {})
+# ---- 02 the nights (L13 to L21)
+shot("L13", mv([14.0, -14.0, 22.0], [0.0, 0.0, 21.0], 28, [12.5, -12.5, 22.0], [0.0, 0.0, 21.0], 30), "nighthigh", {},
+     lamp="cot")
+shot("L13.2", mv([0.9, -4.7, 21.4], [0.45, -1.5, 21.15], 30), "night",
+     {"me": st(GLASS_S, 0, "neutral", **HIGH)}, lamp="hand", sand=[("me", 0.06)])
+shot("L14", mv([0.4, -1.5, 21.15], [30.0, -560.0, -148.0], 80), "nightbino", {}, night=1,
+     ollie=("win", 0.2, 1.2))
+shot("L14.3", mv([0.9, -4.7, 21.4], [0.45, -1.5, 21.15], 30), "night",
+     {"me": st(GLASS_S, 0, "smile", **HOLD)}, lamp="hand", night=1)
+shot("L15", mv([0.5, 0.2, 21.0], [0.4, 1.6, 20.8], 30), "night", {}, radio_on=("L15", "L15.3"))
+shot("L16", mv([0.4, -1.5, 21.15], [30.0, -560.0, -148.0], 80), "nightbino", {}, night=1)
+shot("L16.2", mv([-1.3, -1.2, 21.1], [1.4, 0.3, 20.6], 26), "night",
+     {"me": st(COT1, -90, "puzzled", sit=True, arms=[0, 0])}, lamp="cot", sand=[("me", 0.06)])
+shot("L17", mv([0.4, -1.5, 21.15], [-410.0, -640.0, -125.0], 70), "nightbino", {}, night=2, ollie=("win2", 0.0, 1.0))
+shot("L17.3", mv([0.9, -4.7, 21.4], [0.0, -1.5, 21.15], 30), "night",
+     {"me": st(GLASS_S, 0, "worried", arms=[0, 0])}, night=2)
+shot("L18", mv([-2.6, -2.2, 22.2], [-2.6, -9.0, 14.0], 40), "night", {}, night=2)
+shot("L19", mv([0.5, -2.7, 21.9], [10.0, -560.0, -120.0], 22), "nightvalley", {}, night=3)
+shot("L20", mv([0.4, -1.5, 21.15], [-120.0, -891.0, -20.0], 100), "nightbino", {}, night=3, ollie=("hut", 0.0, 1.0))
+shot("L20.4", mv([0.9, -4.7, 21.4], [0.4, -1.5, 21.15], 30), "night",
+     {"me": st(GLASS_S, 0, "worried", **BINO)}, night=3, binos="me.arm-1")
+shot("L21", mv([-3.4, -2.2, 20.9], [-1.6, -4.9, 20.4], 24), "night", {}, night=3, scrape=True)
+shot("L21.2", mv([1.3, 0.4, 21.2], [0.0, -1.8, 20.6], 30), "night",
+     {"me": st(GLASS_S, 0, "scared", arms=[0, 0], head=[0, -10])}, night=3)
+# ---- 03 the fourth night (L22 to L33)
+shot("L22", mv([-0.9, 1.0, 21.2], [0.55, 1.8, 20.9], 30), "night", {}, night=4, radio_on=("L22", "L24>+0.3"))
+shot("L23", mv([-0.6, -1.2, 21.1], [0.5, 0.9, 20.5], 26), "night",
+     {"me": st(GLASS_N, 180, "worried", **HOLD)}, lamp="hand", night=4)
+shot("L24", mv([0.7, 0.3, 21.0], [0.45, 1.8, 20.9], 40), "night", {}, night=4)
+shot("L25", mv([-0.8, -0.1, 21.3], [0.4, 1.0, 20.9], 30), "night",
+     {"me": st(GLASS_N, 180, "terrified", **HOLD)}, lamp="hand", night=4)
+shot("P01", mv([0.5, -1.0, 21.2], [-120.0, -891.0, -20.0], 60), "nightvalley", {}, night=4, ollie=("hut", 0.0, 0.01))
+shot("L26", mv([0.4, -1.5, 21.15], [-120.0, -891.0, -20.0], 100), "nightbino", {}, night=4, mover="L26")
+shot("L27", mv([0.5, -2.7, 21.9], [-40.0, -450.0, -120.0], 22), "nightvalley", {}, night=4)
+shot("L27.3", mv([0.5, -2.7, 21.5], [-2.0, -90.0, -10.0], 24, [0.5, -2.7, 21.5], [-2.3, -50.0, -6.0], 24), "nightvalley", {},
+     night=4)
+shot("L28", mv([-3.4, -6.2, 0.8], [-2.25, -2.1, 0.7], 30), "night", {}, night=4, padlock=True, gate=("L28.2", 1.0, 0.5))
+shot("L29", mv([-1.2, -0.9, 20.4], [-1.45, -1.45, 17.5], 26), "night", {}, night=4)
+shot("L30", mv([1.1, 0.7, 21.1], [-1.4, -1.3, 20.2], 22), "night",
+     {"me": st(at_floor([1.2, 0.9]), 0, "terrified", arms=[20, 85])}, lamp="hand", night=4)
+shot("L30.3", mv([0.3, 0.4, 21.0], [-2.0, 0.0, 20.2], 24), "night", {}, night=4, mover="door")
+shot("P02", mv([0.1, 0.0, 21.0], [-2.0, 0.0, 20.6], 30), "night",
+     {"me": st(at_floor([1.2, 0.9]), 180, "terrified", **HOLD)}, lamp="hand", night=4, door=("P02", 1.0, 0.5))
+shot("L31", mv([0.2, 0.3, 20.95], [-2.4, 0.0, 20.75], 26), "night",
+     {"ollie_old": st([-2.5, 0.0, Z], 90, "neutral", arms=[25, 0], head=[0, -4]),
+      "me": st(at_floor([1.2, 0.9]), 180, "terrified", **HOLD)}, lamp="hand", night=4, lamp2=True)
+shot("L32", mv([-1.55, 0.05, 22.0], [-2.5, 0.0, 22.0], 36), "night",
+     {"ollie_old": st([-2.5, 0.0, Z], 90, "neutral", arms=[25, 0], head=[0, -4])}, night=4, lamp2=True)
+shot("L33", mv([-0.9, 0.0, 20.9], [-2.5, 0.0, 20.95], 30), "night",
+     {"ollie_old": st([-2.5, 0.0, Z], 90, "neutral", arms=[125, 0], head=[0, 0])}, night=4, lamp2=True)
+shot("P03", mv([-1.6, 0.0, 21.15], [-2.5, 0.0, 21.15], 50), "night",
+     {"ollie_old": st([-2.5, 0.0, Z], 90, "neutral", arms=[125, 0], head=[0, 0])}, night=4, lamp2=True)
+# ---- 04 the reveal (L34 to the end)
+shot("L34", mv([-1.4, 0.0, 21.2], [-2.5, 0.0, 21.2], 52), "night",
+     {"ollie_old": st([-2.5, 0.0, Z], 90, "soft", arms=[125, 0])}, night=4, lamp2=True)
+shot("L35", mv([-0.3, -2.0, 21.2], [-1.0, 0.0, 21.0], 22), "night",
+     {"ollie_old": st([-1.55, 0.0, Z], 90, "soft", arms=[25, 0]), "me": st(at_floor([-0.3, 0.9]), -90, "wide", **HOLD)},
+     lamp="hand", night=4, lamp2=True, door=("L35", 1.0, 0.1))
+shot("L36", mv([0.5, -0.5, 21.4], [0.0, -560.0, -120.0], 24), "nightvalley", {}, night=3)
+shot("L36.3", mv([-0.8, -1.4, 21.15], [-0.3, 0.5, 21.15], 34), "night",
+     {"me": st(at_floor([-0.3, 0.9]), 0, "wide", **HOLD)}, lamp="hand", night=3)
+shot("L37", mv([0.4, -1.5, 21.15], [30.0, -560.0, -148.0], 80), "nightbino", {}, night=1, ollie=("win", 0.0, 0.3))
+shot("L38", mv([-1.7, -0.3, 21.2], [-2.5, 0.0, 21.1], 32), "night",
+     {"ollie_old": st([-1.55, 0.0, Z], 90, "soft", arms=[25, 0], head=[0, -4])}, night=4, lamp2=True)
+shot("L38.3", mv([0.5, -1.5, 21.15], [20.0, -560.0, -148.0], 60), "nightvalley", {}, night=1)
+shot("L39", mv([-0.4, -2.3, 21.6], [-120.0, -560.0, -80.0], 20, [0.0, -2.3, 21.6], [-60.0, -600.0, -90.0], 20), "nightvalley", {}, night=3, ollie=("hut", 0.0, 0.01))
+shot("L39.3", mv([0.4, -1.5, 21.15], [-120.0, -891.0, -20.0], 100), "nightbino", {}, night=3, ollie=("hut", 0.0, 0.01))
+shot("L40", mv([-0.2, -1.8, 21.9], [0.9, 0.5, 21.9], 22), "night",
+     {"ollie_old": st([-0.4, 0.2, Z], 90, "soft", arms=[0, 0]), "me": st(at_floor([0.6, 0.2]), -90, "soft", arms=[0, 0])},
+     night=3, lamp="table")
+shot("L41", mv([-1.6, -1.2, 20.35], [-1.4, 0.1, 19.95], 40), "night",
+     {"ollie_old": st([-1.2, 0.5, Z], 90, "soft", arms=[0, 0])}, night=3, lamp2=True)
+shot("L41.3", mv([-1.2, 0.1, 21.5], [-1.97, 1.0, 21.15], 40), "night", {}, night=3)
+shot("L42", mv([-0.6, 0.45, 21.2], [1.55, 0.3, 20.7], 24), "night",
+     {"ollie_old": st(COT_OLD, -90, "smile", sit=True), "me": st(COT_ME, -90, "soft", sit=True)},
+     lamp=[1.2, 0.3, Z + 0.48], night=3)
+shot("L43", mv([-0.1, 0.3, 21.4], [1.55, 0.3, 21.9], 30), "night",
+     {"ollie_old": st(COT_OLD, -90, "smile", sit=True), "me": st(COT_ME, -90, "soft", sit=True)},
+     lamp=[1.2, 0.3, Z + 0.48], night=3, sand=[("me", 0.06), ("ollie_old", 0.06)])
+shot("P04", mv([-1.2, 0.3, 21.15], [1.55, 0.3, 20.7], 26, [-0.9, 0.3, 21.15], [1.55, 0.3, 20.75], 26), "night",
+     {"ollie_old": st(COT_OLD, -90, "smile", sit=True), "me": st(COT_ME, -90, "soft", sit=True)},
+     lamp=[1.2, 0.3, Z + 0.48], night=3)
+shot("L44", mv([14.0, -14.0, 22.0], [0.0, 0.0, 21.0], 28, [12.5, -12.5, 22.0], [0.0, 0.0, 21.0], 30), "nighthigh",
+     {}, lamp="cot", night=3)
+shot("L44.3", mv([8.0, -8.0, 21.8], [0.0, 0.0, 21.0], 30, [6.5, -6.6, 21.6], [0.0, 0.0, 21.0], 32), "nighthigh",
+     {}, lamp="cot", night=3)
+shot("L45", mv([0.5, -2.7, 21.9], [10.0, -560.0, -120.0], 22), "nightvalley", {}, night=3, shift=True)
+shot("L46", mv([0.4, -2.2, 21.3], [0.4, -1.5, 21.15], 30), "night",
+     {"me": st(GLASS_S, 0, "soft", arms=[0, 0])}, night=3)
+
+# ---------------------------------------------------------------------------------------------------- build
 shots = []
-for i, (at, cam, opt) in enumerate(SH):
-    s = {"id": f"S{i + 1:02d}", "cam": cam, "step": opt.get("step", 2)}
+acting = {k: [] for k in cast}
+cues = []
+fx = []
+vis = {k: False for k in cast}
+last = {}
+
+
+def key(who, at, **kw):
+    acting[who].append({"at": at, **kw})
+
+
+for k in cast:
+    key(k, 0, pos=[0, 0, -60], hidden=True, yaw=0, expr="neutral")
+    last[k] = [0, 0, -60]
+
+lamp_cue = None
+for i, s in enumerate(S):
+    sid = f"S{i + 1:02d}"
+    at = s["at"]
+    d = {"id": sid, "cam": s["cam"], "step": 2}
     if i:
-        s["at"] = at
-    if "hand" in opt:
-        s["hand"] = opt["hand"]
-    shots.append(s)
+        d["at"] = at
+    if s.get("hand") is not None:
+        d["hand"] = s["hand"]
+    shots.append(d)
+    t_at = at if i else 0
+    for who in cast:
+        st_ = s["who"].get(who)
+        if st_ is None:
+            if vis[who]:
+                key(who, t_at, pos=last[who], hidden=True)
+                vis[who] = False
+            continue
+        extra = {k2: v for k2, v in st_.items() if k2 not in ("pos", "yaw", "expr")}
+        base = {"pos": st_["pos"], "yaw": st_["yaw"], "expr": st_["expr"], "blend": 0.0}
+        if "sit" not in extra:
+            extra["sit"] = False
+        extra.setdefault("arms", [0, 0])
+        extra.setdefault("head", [0, 0])
+        if i:
+            key(who, t_at, pos=last[who] if vis[who] else st_["pos"])
+        key(who, t_at, **base, hidden=False, **extra)
+        last[who] = st_["pos"]
+        vis[who] = True
+    # cues: look, night, lamp, sand
+    cues.append({"at": t_at, "name": "look", "id": s["look"]})
+    cues.append({"at": t_at, "name": "night", "n": s.get("night", 1)})
+    lp = s["lamp"]
+    if lp == "hand":
+        cues.append({"at": t_at, "name": "lamp", **LAMP_HAND})
+    elif lp == "table":
+        cues.append({"at": t_at, "name": "lamp", "pos": LAMP_TABLE})
+    elif lp == "cot":
+        cues.append({"at": t_at, "name": "lamp", "pos": LAMP_COT})
+    else:
+        cues.append({"at": t_at, "name": "lamp", "pos": lp})
+    cues.append({"at": t_at, "name": "binos", "hand": s.get("binos")})
+    cues.append({"at": t_at, "name": "lamp2", "hand": "ollie_old.arm-1", "offset": [0.0, 0.0, -0.55]} if s.get("lamp2")
+                else {"at": t_at, "name": "lamp2", "hand": None})
+    cues[-1]["at"] = t_at
+    for who, v in s.get("sand", []):
+        cues.append({"at": t_at, "name": "sand", "who": who, "v": v})
+    if s.get("parcel"):
+        cues.append({"at": t_at + 0 if isinstance(t_at, (int, float)) else t_at, "name": "parcel", "on": True})
+    if s.get("ollie"):
+        w, _x, dur = s["ollie"]
+        cues.append({"at": t_at, "name": "ollie", "where": w, "dur": dur})
+    if s.get("padlock") is not None:
+        cues.append({"at": t_at, "name": "padlock", "open": bool(s["padlock"])})
+    if s.get("gate"):
+        ref, op, dur = s["gate"]
+        cues.append({"at": ref, "name": "gate", "open": op, "dur": dur})
+    if s.get("door"):
+        ref, op, dur = s["door"]
+        cues.append({"at": ref, "name": "door", "open": op, "dur": dur})
+    if s.get("flap"):
+        who, a, b = s["flap"]
+        acting[who].append({"from": a, "to": b, "mouth": [0.7, 0.7], "flap": True})
+    if s.get("radio_on"):
+        a, b = s["radio_on"]
+        cues.append({"at": a, "name": "radio", "on": True})
+        cues.append({"at": b, "name": "radio", "on": False})
 
-# ---------------------------------------------------------------------------------------------------- acting
+# the gate is shut and the lock hangs shut until the shots that open them
+cues.insert(0, {"at": 0, "name": "gate", "open": 1.0, "dur": 0.0})
+cues.insert(0, {"at": 0, "name": "door", "open": 0.0, "dur": 0.0})
+cues.insert(0, {"at": 0, "name": "padlock", "open": False})
+cues.insert(0, {"at": 0, "name": "parcel_reset"})
 
+# the lamp that crosses the valley, then climbs the stairs (L26 to L30)
+hut_win = [-118.0, -891.4, -19.8]
+path = [("L26", hut_win, 3.2, 0.0), ("L26.2", [-90.0, -700.0, -135.0], 3.2, 1.3), ("L27", [-30.0, -450.0, -146.0], 3.0, 1.4),
+        ("L27.1", [-4.0, -200.0, -34.0], 2.0, 1.3), ("L27.3", [-2.4, -60.0, -8.0], 0.7, 0.9),
+        ("L28", [-2.4, -9.0, 1.2], 0.14, 0.9), ("L28.2", [-2.25, -3.4, 1.0], 0.12, 0.4), ("L28.2+0.45", [-2.25, -1.4, 1.1], 0.12, 0.5)]
+for ref, pos, r, dur in path:
+    cues.append({"at": ref, "name": "mover", "pos": pos, "r": r, "dur": dur, "on": True})
+# up the stairs, flight by flight (the glow rises as the steps do), 8 flights over L29 to L30>
+for f in range(8):
+    a, b = stair_corner(f), stair_corner(f + 1)
+    cues.append({"at": f"L29+{f * 0.45:.2f}", "name": "mover", "pos": [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2 + 1.1],
+                 "r": 0.12, "dur": 0.45, "on": True})
+cues.append({"at": "L30.3", "name": "mover", "pos": [-2.5, 0.0, Z + 1.0], "r": 0.12, "dur": 0.4, "on": True})
+cues.append({"at": "P02", "name": "mover", "pos": [-2.5, 0.0, -80.0], "r": 0.12, "dur": 0.0, "on": False})
+# the hut's own window goes dark as the lamp leaves it
+cues.append({"at": "L26", "name": "ollie", "where": "none", "dur": 0.4})
+cues = [c for c in cues if c["name"] != "parcel_reset"]
+# the parcel only drops once
+seen = False
+out_cues = []
+for c in cues:
+    if c["name"] == "parcel":
+        if seen:
+            continue
+        seen = True
+    if c["name"] == "binos" and c.get("hand") is None:
+        c = {"at": c["at"], "name": "binos", "hand": None}
+    out_cues.append(c)
+cues = out_cues
+cues.sort(key=lambda c: 0 if c["at"] == 0 else 1)
 
-def jump(at, frm, to, **kw):
-    """A move on a cut: two keys at the same moment, so nobody walks on film."""
-    return [{"at": at, "pos": frm}, {"at": at, "pos": to, "blend": 0.0, **kw}]
-
-
-HOLD = dict(arms=[20, 0])                 # the lamp at my side on its bail
-HIGH = dict(arms=[155, 0])                # the lamp held high
-RAILS = dict(arms=[82, 82])               # both hands resting on the rail's top (at 0.54 m from it)
-BINO = dict(arms=[102, 102])              # binoculars up to my eyes
-me = [
-    # 01
-    {"at": 0, "pos": GLASS_S, "yaw": 0, "expr": "neutral", "arms": [0, 0], "head": [0, 4]},
-    *jump("L02", GLASS_S, [0.25, -0.65, CAB_Z], yaw=160, expr="neutral", head=[0, -2], **HOLD),
-    *jump("L05", [0.25, -0.65, CAB_Z], GLASS_E, yaw=90, expr="neutral", head=[0, 2], arms=[0, 0]),
-    *jump("L06", GLASS_E, GLASS_S, yaw=0, expr="neutral", head=[0, -6]),
-    {"at": "L07", "pos": GLASS_S, "yaw": 0, "expr": "neutral", "head": [0, 0]},
-    # 02
-    *jump("L08", GLASS_S, GLASS_N, yaw=180, expr="neutral", head=[0, 2], **BINO),
-    {"at": "L10", "pos": GLASS_N, "expr": "worried"},
-    {"at": "L11", "pos": GLASS_N},
-    *jump("L12", GLASS_N, RADIO_AT, yaw=180, expr="worried", arms=[0, 72], head=[0, -8]),
-    *jump("L14", RADIO_AT, COT, yaw=-90, sit=True, expr="neutral", arms=[0, 0], head=[0, 0]),
-    {"at": "L15", "pos": COT, "expr": "worried", "head": [-10, 6]},
-    # (back from the glass: the radio held up toward the dark stops short of it)
-    *jump("L18", COT, RADIO_UP, yaw=0, sit=False, expr="worried", arms=[0, 85], head=[0, 4]),
-    {"at": "L20", "pos": RADIO_UP, "expr": "scared", "arms": [0, 85]},
-    {"at": "L20.1", "pos": RADIO_UP, "expr": "scared", "arms": [0, 30]},
-    # 03: down the stairs in the morning, the prints, then back up on the catwalk at dusk
-    # (a flight below the top one: the top flight runs under the cab floor)
-    # (the third flight down: higher up, the tower's braced faces come in close to the stairs)
-    *jump("L21", RADIO_UP, flight(2, 0.16), yaw=0, expr="neutral", arms=[0, 0], head=[0, -20]),
-    {"at": "L21>", "pos": flight(2, 0.5)},
-    *jump("L22", flight(2, 0.5), [5.0, -11.5, 0.0], yaw=-130, expr="worried", head=[0, -14]),
-    *jump("L23", [5.0, -11.5, 0.0], [2.5, -13.2, 0.1], yaw=0, expr="worried", head=[0, -30]),
-    *jump("L26", [2.5, -13.2, 0.1], [3.8, -9.5, 0.0], yaw=10, expr="worried", head=[0, -6]),
-    *jump("L27", [3.8, -9.5, 0.0], at_floor([-0.6, -2.45]), yaw=-35, expr="neutral", **RAILS, head=[0, -14]),
-    {"at": "L28", "pos": at_floor([-0.6, -2.45]), "expr": "worried"},
-    *jump("P02", at_floor([-0.6, -2.45]), at_floor([0.55, -2.4]), yaw=0, expr="scared", **HOLD, head=[0, -10]),
-    *jump("L33", at_floor([0.55, -2.4]), GLASS_W, yaw=95, expr="scared", arms=[0, 0], head=[0, 0]),
-    # 04: the cab at night, out the door onto the catwalk with the lamp, the lean, the lights
-    *jump("L34", GLASS_W, at_floor([0.4, -1.3]), yaw=0, expr="terrified", **HOLD, head=[0, -4]),
-    # out of the door onto the catwalk (the shot cuts before I'd walk along it: it's 1 m wide and I'm 1.36)
-    # (I start outside the door's swing, 1.6 m round its hinge, and reach it as it finishes opening)
-    *jump("L36", at_floor([0.4, -1.3]), at_floor([0.3, 0.35]), yaw=-90, expr="scared", **HOLD),
-    {"at": "L36>", "pos": DOOR_OUT},
-    # the lamp held up high at the rail (inside its line: lowered from out over the rail it would cross it)
-    *jump("L37", DOOR_OUT, RAIL, yaw=0, expr="scared", arms=[160, 0], head=[0, -4]),
-    # on the cut: my left hand grips the rail; the lamp hangs from my right at my side, swinging clear of the toe
-    # board (both keys carry arms, so nothing blends across L37 to L41)
-    {"at": "L41", "pos": RAIL, "arms": [160, 0]},
-    {"at": "L41", "pos": RAIL, "blend": 0.0, "yaw": 0, "expr": "terrified", "arms": [20, 82], "head": [0, -6]},
-    {"at": "L43", "pos": RAIL, "yaw": -57, "arms": [64, 84], "head": [-56, 4], "look": [0.95, -0.05],
-     "expr": "terrified", "blink": False, "tremble": 1.2},
-    # hold the fear close's pose to its cut, then both hands on the rail (the lamp set down at my side)
-    {"at": "L44", "pos": RAIL, "yaw": -57, "arms": [64, 84], "head": [-56, 4], "look": [0.95, -0.05]},
-    {"at": "L44", "pos": RAIL, "blend": 0.0, "yaw": 0, **RAILS, "head": [0, 2], "look": [0, 0]},
-    {"at": "L49", "pos": RAIL, "yaw": 0, "head": [8, 0], "expr": "terrified", "tremble": 2.0},
-    # the radio off my belt as it clicks (L50), up to my mouth, my eyes on the lights
-    {"at": "L50", "pos": RAIL, "tremble": 0.6, "arms": [82, 82]},
-    {"at": "L50+0.4", "pos": RAIL, "arms": [82, 115]},
-    {"at": "L51", "pos": RAIL, "yaw": 0, "arms": [82, 115], "head": [0, 2], "expr": "terrified", "blink": True},
-    # 05: back inside, the lamp to the far window, onto the cot, me into the corner
-    *jump("L52", RAIL, DOOR_IN, yaw=90, expr="scared", **HOLD, head=[0, 0]),
-    {"at": "L52.2", "pos": EAST_WIN, "yaw": 90},
-    # the lamp onto the cot: up over its edge first (the lamp hangs 0.56 m under my hand and the cot is 0.48 m
-    # high), a step in, then down onto it; then I back away into the corner
-    {"at": "L54", "pos": EAST_WIN, "yaw": 90, "arms": [20, 0]},
-    {"at": "L54+0.3", "pos": EAST_WIN, "yaw": 90, "arms": [74, 0]},
-    {"at": "L54+0.6", "pos": AT_COT, "yaw": 90, "arms": [74, 0]},
-    {"at": "L54.1", "pos": AT_COT, "yaw": 90, "arms": [67, 0]},
-    {"at": "L54.1+0.3", "pos": AT_COT, "yaw": 90, "arms": [30, 0]},
-    {"at": "L54>", "pos": CORNER_NW, "arms": [0, 0], "yaw": 60, "expr": "scared"},
-    {"at": "L58", "pos": CORNER_NW, "yaw": 60, "expr": "wide", "head": [0, 0]},
-    {"at": "L59", "pos": CORNER_NW, "expr": "worried"},
-    # 06: the lamp held high, down the stairs, out the gate, down the road all night, the shelf at first light
-    # its reverse: my hand on the lamp at the cot, then up (it clears the cot's top above 67 degrees) and back a step
-    *jump("L61", CORNER_NW, AT_COT, yaw=90, expr="neutral", arms=[67, 0], head=[0, -10]),
-    {"at": "L61.1", "pos": AT_COT, "yaw": 90, "arms": [67, 0], "keep_yaw": True},   # (stepping back, still facing it)
-    {"at": "L61.1+0.5", "pos": EAST_WIN, "yaw": 90, **HIGH, "head": [0, 6]},
-    *jump("L62", EAST_WIN, flight(3, 0.18), yaw=-90, expr="neutral", **HIGH, head=[0, 0]),
-    {"at": "L62>", "pos": flight(3, 0.6)},
-    # the gate at the stairs' foot: off the last flight, I turn south through it
-    *jump("L63", flight(3, 0.6), GATE_IN, yaw=0, **HIGH, expr="neutral"),
-    {"at": "L63.1", "pos": GATE_IN}, {"at": "L63>", "pos": GATE_OUT},
-    # down the road at a walk (about 2 m/s), it 7.7 m behind me (road u 0.03), so its toes stay 3 m behind my heels
-    *jump("L64", GATE_OUT, road(U_ME["L64"][0], 1.2), yaw=0, **HIGH, expr="neutral"),
-    {"at": "L64>", "pos": road(U_ME["L64"][1], 1.2)},
-    {"at": "L65>", "pos": road(U_ME["L65"][1], 1.2)},
-    {"at": "L66", "pos": road(U_ME["L66"][0], 1.2), "expr": "neutral"},
-    {"at": "L66>", "pos": road(U_ME["L66"][1], 1.2)},
-    *jump("L67", road(U_ME["L66"][1], 1.2), road(U_ME["L67"][0], 1.2), **HIGH),
-    {"at": "L67>", "pos": road(U_ME["L67"][1], 1.2)},
-    *jump("L68", road(U_ME["L67"][1], 1.2), ON_SHELF, yaw=0, **HOLD, expr="neutral", head=[0, -16]),
-    {"at": "L71", "pos": ON_SHELF, "yaw": 40, "expr": "neutral", "head": [10, -6]},
-    {"at": "L71.1", "pos": ON_SHELF, "expr": "soft"},
-    # 07: not in frame
-    {"at": "L73", "pos": ON_SHELF, "hidden": True},
-]
-acting = {"me": me}
-
-# ---------------------------------------------------------------------------------------------------- cues
-LIGHTS_ON = "L04.2"
-cues = [
-    # the whole light (set.py LOOKS)
-    {"at": 0, "name": "look", "id": "dayfar"}, {"at": "L02", "name": "look", "id": "day"},
-    {"at": "L06", "name": "look", "id": "clear"},
-    {"at": "L07", "name": "look", "id": "day"}, {"at": "L08", "name": "look", "id": "bino"},
-    {"at": "L10", "name": "look", "id": "day"}, {"at": "L11", "name": "look", "id": "bino"},
-    {"at": "L12", "name": "look", "id": "day"}, {"at": "L14", "name": "look", "id": "night"},
-    {"at": "L21", "name": "look", "id": "day"}, {"at": "L27", "name": "look", "id": "dusk"},
-    {"at": "L34", "name": "look", "id": "nighthigh"}, {"at": "L40", "name": "look", "id": "nightlean"},
-    {"at": "L41", "name": "look", "id": "nighthigh"}, {"at": "P03", "name": "look", "id": "night"},
-    {"at": "L56", "name": "look", "id": "nightvalley"}, {"at": "L58", "name": "look", "id": "night"},
-    {"at": "L63", "name": "look", "id": "nightroad"}, {"at": "L67.1", "name": "look", "id": "nightroadhi"},
-    {"at": "L68", "name": "look", "id": "dawn"},
-    {"at": "L73", "name": "look", "id": "spring"},
-    # the lantern: in my hand, set down, held high (it never flickers or goes out)
-    {"at": 0, "name": "lamp", "pos": [0.9, -1.3, CAB_Z]},
-    {"at": "L02", "name": "lamp", **LAMP_HAND},
-    {"at": "L05", "name": "lamp", "pos": [0.9, -1.3, CAB_Z]},
-    {"at": "L14", "name": "lamp", "pos": LAMP_TABLE},
-    {"at": "L21", "name": "lamp", "pos": LAMP_COT},
-    {"at": "P02", "name": "lamp", **LAMP_HAND, "swing": 6.0, "decay": 1.0},
-    {"at": "L33", "name": "lamp", "pos": LAMP_TABLE},
-    {"at": "L34", "name": "lamp", **LAMP_HAND},
-    {"at": "L41", "name": "lamp", "hand": "me.arm-1", "offset": [0.0, 0.0, -0.56], "swing": 12.0, "decay": 1.4},
-    {"at": "L43", "name": "lamp", **LAMP_HAND},
-    # set down on the catwalk at my right side, inside the toe board: it rakes the bark from behind me (L44)
-    {"at": "L44", "name": "lamp", "pos": [0.05, -2.62, CAB_Z]},
-    {"at": "L52", "name": "lamp", **LAMP_HAND},
-    {"at": "L54.1", "name": "lamp", "pos": LAMP_SET},
-    {"at": "L61.1", "name": "lamp", **LAMP_HAND},
-    {"at": "L62", "name": "lamp", **LAMP_HAND, "swing": 5.0, "decay": 1.5},
-    {"at": "L68", "name": "lamp", **LAMP_HAND},
-    {"at": "L73", "name": "lamp", "pos": LAMP_COT},
-    {"at": "L67.1", "name": "lampglow", "k": 18.0}, {"at": "L68", "name": "lampglow", "k": 1.0},
-    # the radio's green light while she transmits (none of her audio plays), and the radio in my hand at L18 to L20
-    {"at": 0, "name": "radio", "on": False},
-    {"at": LIGHTS_ON, "name": "radio", "on": True}, {"at": "L04>+0.2", "name": "radio", "on": False},
-    {"at": "L13.1", "name": "radio", "on": True}, {"at": "L13>+0.35", "name": "radio", "on": False},
-    {"at": "L19.1", "name": "radio", "on": True}, {"at": "L19>+0.2", "name": "radio", "on": False},
-    {"at": "L50", "name": "radio", "on": True}, {"at": "P04+0.6", "name": "radio", "on": False},
-    {"at": "L18", "name": "radio", "hand": "me.arm1"}, {"at": "L21", "name": "radio", "hand": None},
-    {"at": "L50", "name": "radio", "hand": "me.arm1"}, {"at": "L52", "name": "radio", "hand": None},
-    {"at": "L08", "name": "binos", "hand": "me.arm-1"}, {"at": "L12", "name": "binos", "hand": None},
-    # the door onto the catwalk, the gate onto the road, the tower's lean
-    {"at": 0, "name": "door", "open": 0.0}, {"at": "L35>", "name": "door", "open": 1.0, "dur": 0.4},
-    {"at": 0, "name": "gate", "open": 0.0}, {"at": "L63", "name": "gate", "open": 1.0, "dur": 0.7},
-    {"at": "L73", "name": "gate", "open": 0.0},
-    {"at": 0, "name": "lean", "deg": 0.0}, {"at": "L39", "name": "lean", "deg": 2.4, "dur": 0.7},
-    {"at": "L41", "name": "lean", "deg": 0.0, "dur": 1.0},
-    # its breaths: the lights swell about 15% (L47, P04); the first ones are heard only
-    {"at": "L47", "name": "breath"}, {"at": "P04", "name": "breath"},
-    # the giant (set.py giant_state). Its walks put a footfall on every beat of the score's pulse (40 bpm, from the
-    # section's start), so the score walks with it
-    {"at": 0, "name": "giant", "pos": FAR, "yaw": 22.6, "pitch": 3.0, "lights": 0.7},
-    {"at": "L02", "name": "giant", "pos": FAR, "hidden": True},
-    {"at": "L28", "name": "giant", "hidden": True,
-     "walk": {"from": [-80.0, -50.0], "to": [-36.0, -15.0], "until": "P02", "beat0": "P02", "stride": -12.0}},
-    {"at": "P02", "name": "giant",
-     "walk": {"from": WALK_UP[0], "to": WALK_UP[1], "until": "L34", "beat0": "P02", "stride": -14.0}},
-    {"at": "L34", "name": "giant", "pos": FEAR, "hidden": True},
-    {"at": "L37", "name": "giant", "pos": LEAN, "yaw": 205.0, "pitch": 10.0, "head": -20.0, "lights": 0.0},
-    {"at": "L42", "name": "giant", "pos": FEAR, "yaw": 180.0, "pitch": 7.0, "head": 12.0, "rise": {"from": -4.0, "dur": 1.8},
-     "fade": 1.3},
-    {"at": "L43", "name": "giant", "pos": FEAR, "yaw": 180.0, "pitch": 7.0, "head": 12.0},
-    {"at": "L52", "name": "giant", "pos": FEAR, "yaw": 180.0, "pitch": 7.0, "look_lamp": True},
-    {"at": "L62", "name": "giant", "pos": [2.0, -13.0, -6.0], "yaw": 180.0, "pitch": 7.0, "look_lamp": True,
-     "rise": {"from": 6.0, "dur": 1.6}},
-    {"at": "L63", "name": "giant", "pos": [0.0, -2.0, 0.0], "hidden": True},
-    # down the road, one held pose per shot (it steps between the cuts, never on screen), about 8 m behind me, on
-    # the road's middle (I walk 1.2 m to its side, so its left foot comes down in my path, where my light just was)
-    {**gpose("L64", 0.019, 0.0), "look_lamp": False, "head": 0.0}, gpose("L64.1", 0.0245, -6.0), gpose("L64b", 0.031, 6.0), gpose("L65", 0.036, 6.0),
-    gpose("L65.2", 0.043, -6.0), gpose("L66", 0.051, 6.0), gpose("L67", 0.179, -6.0), gpose("L67.1", 0.187, 6.0),
-    {"at": "L68", "name": "giant", "pos": [40.5, -254.0, 0.0], "yaw": 190.0, "pitch": 3.0, "head": 0.0},
-    # behind me, past me (9 m clear of me at the nearest), then down the slope into the trees, a pose to a shot
-    {"at": "L71", "name": "giant", "pos": [46.0, -256.0, 0.0], "yaw": 0.0, "pitch": 3.0, "stride": 0.0, "pines": True},
-    {"at": "L71.1", "name": "giant", "pos": [57.0, -268.0, 0.0], "yaw": 35.0, "pitch": 3.0, "stride": 0.0, "pines": True},
-    {"at": "L71.2", "name": "giant", "pos": [64.0, -278.0, 0.0], "yaw": 45.0, "pitch": 3.0, "stride": 0.0, "pines": True},
-    {"at": "L72", "name": "giant", "pos": [82.0, -258.0, 0.0], "yaw": 90.0, "pitch": 3.0, "stride": 0.0, "pines": True},
-    {"at": "L72.2", "name": "giant", "pos": [108.0, -250.0, -4.0], "yaw": 90.0, "pitch": 3.0, "stride": 0.0, "pines": True},
-    {"at": "L72.3", "name": "giant", "pos": [134.0, -244.0, -9.0], "yaw": 90.0, "pitch": 3.0, "stride": 0.0, "pines": True},
-    {"at": "L73", "name": "giant", "pos": [134.0, -244.0, 0.0], "hidden": True},
-]
-
-cues_foot = [{"at": "L65", "name": "footlit", "gain": 1.0}, {"at": "L66", "name": "footlit", "gain": 0.0}]
-fx = [{"at": "L39", "kind": "shake", "dur": 0.8, "amp": 0.45}]
+# me, once: the mouth of Ollie and his hands are acted above. Sand for the town stays at its default values.
+cues += [{"at": "L08", "name": "sand", "who": "me", "v": 0.3}, {"at": "L12", "name": "sand", "who": "me", "v": 0.06},
+         {"at": "L08", "name": "sand", "who": "ollie", "v": 0.95}]
 
 # ---------------------------------------------------------------------------------------------------- sound
-BEAT = 1.5                                # 40 bpm
-
-
-def beats(start, until_s, every=BEAT):
-    """Footfall references every beat from a line reference, for `until_s` seconds."""
-    return [f"{start}+{k * every:.2f}" for k in range(int(until_s / every) + 1)]
-
-
-steps1 = beats("P02", 9.0)                # the walk up the ridge, P02 to L35 (heard only from L34)
-steps2 = beats("L64.1", 6.4)              # down the road (L64.1 to L68)
-steps3 = beats("L71", 4.4)                # past me and down the slope, fading
 sfx = [
-    # the radio: a click, a static burst, the green light (none of the ranger's audio plays)
-    *[{"at": a, "kind": "radio", "db": -15} for a in (LIGHTS_ON, "L13.1", "L19.1", "L50")],
-    {"at": "L04>+0.15", "kind": "click", "db": -14}, {"at": "L13>+0.3", "kind": "click", "db": -13},
-    {"at": "P04+0.6", "kind": "click", "db": -14},
-    {"at": "L12", "kind": "click", "db": -14}, {"at": "L18", "kind": "click", "db": -14},
-    {"at": "L20", "kind": "click", "db": -12},
-    # its breath, slow and heavy, ending in a trunk's creak
-    {"at": "L15.1", "kind": "breath", "db": -15, "dur": 2.6}, {"at": "L17.1", "kind": "creak", "db": -16, "dur": 0.9},
-    {"at": "P01", "kind": "breath", "db": -13, "dur": 2.2}, {"at": "P01+0.55", "kind": "creak", "db": -15, "dur": 0.9},
-    {"at": "L47", "kind": "breath", "db": -10, "dur": 2.4}, {"at": "L48", "kind": "creak", "db": -12, "dur": 1.0},
-    {"at": "P04", "kind": "breath", "db": -11, "dur": 2.0}, {"at": "P04+0.5", "kind": "creak", "db": -13, "dur": 0.9},
-    # its footfalls: a deep thud, a timber creak and a rustle, on the pulse
-    *[{"at": a, "kind": "thud", "db": -6 if k == 0 else -10} for k, a in enumerate(steps1)],
-    *[{"at": a, "kind": "creak", "db": -18, "dur": 0.5} for a in steps1],
-    *[{"at": a, "kind": "whoosh", "db": -24} for a in steps1],
-    {"at": "L35.2", "kind": "thud", "db": -5},
-    *[{"at": a, "kind": "thud", "db": -6 if k == 0 else -9} for k, a in enumerate(steps2)],
-    *[{"at": a, "kind": "creak", "db": -18, "dur": 0.5} for a in steps2],
-    *[{"at": a, "kind": "thud", "db": -12 - 2 * k} for k, a in enumerate(steps3)],
-    # the scare: the door, the tower's long groan, the lean, the lamp's bail, the hole, the sting
-    {"at": "L35>", "kind": "door", "db": -16},
-    {"at": "L38", "kind": "creak", "db": -9, "dur": 2.2}, {"at": "L39", "kind": "creak", "db": -10, "dur": 1.4},
-    {"at": "L41.1", "kind": "creak", "db": -20, "dur": 0.5},
-    {"at": "P03", "kind": "creak", "db": -12, "dur": 1.6, "keep": True},
-    {"at": "L42-0.04", "kind": "sting", "db": -11, "dur": 2.4, "keep": True},
-    {"at": "L63", "kind": "door", "db": -16},
+    {"at": "L15", "kind": "radio", "db": -15}, {"at": "L15.3", "kind": "click", "db": -13},
+    {"at": "L22", "kind": "radio", "db": -15}, {"at": "L24>+0.2", "kind": "click", "db": -13},
+    {"at": "L21+0.1", "kind": "whoosh", "db": -20, "dur": 0.8}, {"at": "L21+0.6", "kind": "whoosh", "db": -20, "dur": 0.8},
+    {"at": "L28.2", "kind": "hit", "db": -14}, {"at": "L28.2+0.05", "kind": "creak", "db": -16, "dur": 0.7},
+    {"at": "P02", "kind": "door", "db": -12, "keep": True},
+    {"at": "P02+0.35", "kind": "hit", "db": -9, "keep": True},
+    {"at": "P03", "kind": "sting", "db": -11, "dur": 1.6, "keep": True},
 ]
+for k in range(9):          # heavy, slow wood steps up the 112 stairs, L29 to the door
+    sfx.append({"at": f"L29+{k * 0.42:.2f}", "kind": "thud", "db": -9 if k % 2 == 0 else -11})
+    sfx.append({"at": f"L29+{k * 0.42:.2f}", "kind": "creak", "db": -20, "dur": 0.4})
 story = {
     "slug": "ep16-lookout",
-    "title": "Every pine on the far ridge snapped at the same height",
+    "title": "In This Valley Time Runs SLOWER the Higher You Are",
     "made_for_kids": False,
-    "premise": "Alone in a fire lookout's glass cab above an autumn forest, with a lamp, binoculars and a radio, I watch a giant made of the forest walk the ridges in thick fog, and each sign of it is nearer than the last: seen, heard, traces, moving, close, felt.",
-    "twist": "It isn't hunting me. It steers by the river, the smoke has hidden the river, and my lamp is the only light that keeps still. I carry the lamp down the fire road at first light until it can see the river again.",
-    "world": "A fire lookout tower: a 4 m glass cab on braced steel legs 19.6 m up, a plank catwalk and rail, an autumn forest of dark pines and gold larch in fog, a fire road down to a rocky shelf over a smoky valley.",
+    "premise": "In a valley where time runs slower the higher up you are, I take a one-week shift alone in the fire lookout on the highest ridge. My brother Ollie, still a teenager, walks me to the gate and makes me promise to flash my lamp at ten every night so he can flash back. His window light answers, then never goes dark, and each night it's somewhere higher up the valley.",
+    "twist": "The tall stranger who climbs my 112 stairs on the fourth night is Ollie, older than me now: four nights for me were twenty years for him. His window never went dark because he flashed it every night, seven thousand times, and from up here it blurred into one light. Every year he moved a little higher to slow his own sand, so he would never get too far ahead of me, and he became the ranger to get the other key.",
+    "world": "A valley town of blocky houses in noon sun with an hourglass of falling sand over every head, and above it, on the highest ridge, a fire lookout: a glass cab on steel legs 112 stairs up, a catwalk, a lamp, a radio, autumn pines that grow taller each night, and the town's lights spreading below in the fog.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ffb22e",
     "gap": 0.12,
     "tail": 0.25,
-    "look": {"fog": "#2a3238", "fog_density": 0.034, "fog_start": 3.0, "sky": "#2a3238", "exposure": 1.6},
-    "grade": {"shadows": [-0.02, 0.01, 0.02], "highlights": [0.04, 0.015, -0.03], "saturation": 0.9,
-              "contrast": 1.08, "vignette": 0.35, "bloom": 0.45, "grain": 0.014, "red_line": 0.79},
+    "look": {"fog": "#2a3238", "fog_density": 0.034, "fog_start": 3.0, "sky": "#2a3238", "exposure": 1.6,
+             "flash_safe": True},
+    "grade": {"shadows": [-0.02, 0.01, 0.02], "highlights": [0.04, 0.015, -0.03], "saturation": 0.95,
+              "contrast": 1.06, "vignette": 0.3, "bloom": 0.4, "grain": 0.012, "red_line": 0.79},
     "phonemes": {},
     "cast": cast,
     "lines": lines,
     "shots": shots,
     "acting": acting,
-    "cues": cues + cues_foot,
+    "cues": cues,
     "fx": fx,
-    # dorian on E2, 40 bpm (brief). The pulse plays only while it walks, so its sections are its walks and their
-    # footfalls are the pulse's beats. Piano only on the walk down; the low choir once, at first light. No music box
-    "music": {"root": 40, "mode": "dorian", "bpm": 40, "seed": 14,
+    "music": {"root": 40, "mode": "dorian", "bpm": 72, "seed": 16,
               "sections": [
-                  {"at": 0, "voices": ["drone", "pad"], "energy": 0.25},
-                  {"at": "L14", "voices": ["drone", "pad"], "energy": 0.32},
-                  {"at": "L21", "voices": ["drone", "pad"], "energy": 0.28},
-                  {"at": "P02", "voices": ["drone", "pad", "pulse"], "energy": 0.75},
-                  {"at": "L35.2", "voices": ["drone", "pad"], "energy": 0.3},
-                  {"at": "L42", "voices": ["drone", "pad"], "energy": 0.4},
-                  {"at": "L52", "voices": ["drone", "pad"], "energy": 0.3},
-                  {"at": "L64.1", "voices": ["drone", "pad", "pulse", "piano"], "energy": 0.75},
-                  {"at": "L68", "voices": ["pad", "piano"], "energy": 0.4},
-                  {"at": "P06", "voices": ["pad", "choir"], "energy": 0.45},
-                  {"at": "L71", "voices": ["pad", "pulse", "piano"], "energy": 0.72},
-                  {"at": "L73", "voices": ["pad"], "energy": 0.3},
+                  {"at": 0, "voices": ["pad", "piano"], "energy": 0.4},
+                  {"at": "L13", "voices": ["drone", "pad"], "energy": 0.3},
+                  {"at": "L24", "voices": ["drone", "pad"], "energy": 0.75},
+                  {"at": "L28", "voices": ["drone", "pad", "pulse"], "energy": 0.8},
+                  {"at": "L31", "voices": ["drone", "pad"], "energy": 0.6},
+                  {"at": "L42", "voices": ["drone", "pad", "piano"], "energy": 0.45},
+                  {"at": "L45", "voices": ["drone"], "energy": 0.5},
               ]},
     "sound": {"floor": "wood", "steps_db": -22,
-              # opt-in (sound.py): soft dirt on the road and at the tower's foot, wood in the tower
-              "floor_spans": [{"from": "L22", "to": "L27", "floor": "grass"}, {"from": "L63", "to": "L73", "floor": "grass"}],
               "ambience": [
-                  {"kind": "wind", "from": 0, "to": "L14", "lufs": -36},
-                  {"kind": "static", "from": "L14", "to": "L21", "lufs": -44},
-                  {"kind": "drips", "from": "L14", "to": "L21", "lufs": -40},
-                  {"kind": "wind", "from": "L21", "to": "L34", "lufs": -37},
-                  {"kind": "wind", "from": "L34", "to": "L63", "lufs": -40},
-                  {"kind": "drone", "from": "L38", "to": "P04", "lufs": -38},
-                  {"kind": "static", "from": "L50", "to": "P05", "lufs": -45},
-                  {"kind": "drips", "from": "L52", "to": "L61", "lufs": -42},
-                  {"kind": "wind", "from": "L63", "to": "L68", "lufs": -38},
-                  {"kind": "water", "from": "L68", "to": "L73", "lufs": -40},
-                  {"kind": "wind", "from": "L73", "to": "end", "lufs": -42},
+                  {"kind": "wind", "from": 0, "to": "L13", "lufs": -38},
+                  {"kind": "wind", "from": "L13", "to": "end", "lufs": -37},
+                  {"kind": "static", "from": "P01", "to": "L26", "lufs": -42},
               ],
               "sfx": sfx,
-              # the one hole (brief): 0.6 s at -40 dB before the lights rise, keeping the creak and the sting
-              "music_drops": [{"from": "P03", "to": "L42", "keep": ["creak", "sting"]}]},
+              "music_drops": [{"from": "P02", "to": "L31", "keep": ["door", "hit"]},
+                              {"from": "P03", "to": "L34", "keep": ["sting"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")
