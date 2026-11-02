@@ -20,7 +20,7 @@
   - Plant 2, the collar: L18 to L19, when Ros straightens my collar after class her half glows bright for a second. She blames the lighting (L20).
   - Rewatch reward, not narrated: under L13, my gloved hand rests on the record player lid as she dances past, and a faint gold shows through the cotton at the palm for about 0.8 s.
 - **How the last 15 seconds turn over the first line:** L71 repeats L01 word for word over the two of us in hold. Now "your match" is my aunt and "the rest" was on my palm, so the line the hook sold as romance is about kin. The sting (L73) lands cold: the place in the middle of the floor still gets filled whenever I'm late.
-- **The first person taken:** Ros, at about 44 s (L24 to L27). Gone off-screen, her dance shoes left side by side in the middle of the floor, toes toward where her partner would stand, the record still turning. She went to the station to meet a stranger whose half might match, an ordinary reason. Back by midnight (L34), unhurt. The Keeper never takes or touches anyone.
+- **The first person taken:** Ros, at about 44 s (L24 to L27). Gone off-screen, her dance shoes left side by side in the middle of the floor, toes toward where her partner would stand, the record still turning. She went to the station to meet a stranger whose half might match, an ordinary reason. Back out of breath (L34), unhurt. The Keeper never takes or touches anyone.
 - **Ending shape:** two in dance hold in the middle of the floor, one whole glyph glowing between her hand and my palm, then a cold low shot of Ros warming up alone before class, her partner's spot empty, and a creak too far from the last.
 - **Warmth:** kinship. We're each other's match. Shown as the two of us dancing the demonstration badly while the class laughs and claps, and her straightening my collar with our halves whole.
 
@@ -202,7 +202,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the narrow stair, looking down to the street door, a slice of street light]
 - `L33` narrator: When I look BACK, / the shadows are GONE.
   - [the same low angle as L31: bare boards, the shoes, no shadows]
-- `L34` narrator: It's Ros, / in her outdoor COAT, / just before MIDNIGHT.
+- `L34` narrator: It's Ros, / in her outdoor COAT, / out of BREATH.
   - [Ros at the top of the stair, `sad`, in the long plum coat and brown lace-ups, out of breath]
 - `L35` narrator: She went to the STATION / to meet a stranger / whose half / might MATCH.
   - [two shot, Ros and me by the door. Then a close on her face, `sad`, catching her breath]
