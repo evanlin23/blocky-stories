@@ -4,16 +4,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "My plot",
-    "My plot"
+    "On this HILL,",
+    "On this hill,"
    ],
    [
-    "SMELLS",
-    "smells"
+    "whatever you FORGET",
+    "whatever you forget"
    ],
    [
-    "like RAIN.",
-    "like rain."
+    "comes back UP",
+    "comes back up"
+   ],
+   [
+    "out of the GROUND.",
+    "out of the ground."
    ]
   ]
  },
@@ -22,12 +26,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "It hasn't RAINED",
-    "It hasn't rained"
+    "Forget your KEYS",
+    "Forget your keys"
    ],
    [
-    "in six WEEKS.",
-    "in six weeks."
+    "in the LETTUCE,",
+    "in the lettuce,"
+   ],
+   [
+    "and by THURSDAY",
+    "and by Thursday"
+   ],
+   [
+    "there's a KEY PLANT.",
+    "there's a key plant."
    ]
   ]
  },
@@ -36,20 +48,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every other plot",
-    "Every other plot"
+    "Nobody up here",
+    "Nobody up here"
    ],
    [
-    "on the HILL",
-    "on the hill"
+    "owns a SECOND",
+    "owns a second"
    ],
    [
-    "is CRACKED",
-    "is cracked"
-   ],
-   [
-    "like old TOAST.",
-    "like old toast."
+    "UMBRELLA.",
+    "umbrella."
    ]
   ]
  },
@@ -58,16 +66,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mine is DARK",
-    "Mine is dark"
+    "Plot TWO",
+    "Plot two"
    ],
    [
-    "and WET",
-    "and wet"
-   ],
-   [
-    "every DAWN.",
-    "every dawn."
+    "grows FLASKS.",
+    "grows flasks."
    ]
   ]
  },
@@ -76,20 +80,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Six weeks AGO,",
-    "Six weeks ago,"
+    "Go and FIND it,",
+    "Go and find it,"
    ],
    [
-    "old Mr. CARTER",
-    "old Mr. Carter"
-   ],
-   [
-    "gave me",
-    "gave me"
-   ],
-   [
-    "the KEY.",
-    "the key."
+    "and it's YOURS again.",
+    "and it's yours again."
    ]
   ]
  },
@@ -98,24 +94,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "He said,",
-    "He said,"
+    "Nothing EVER",
+    "Nothing ever"
    ],
    [
-    "\"Time for",
-    "time for"
+    "comes up",
+    "comes up"
    ],
    [
-    "somebody NEW,\"",
-    "somebody new,"
-   ],
-   [
-    "and walked OUT",
-    "and walked out"
-   ],
-   [
-    "without a WAVE.",
-    "without a wave."
+    "in MY plot.",
+    "in my plot."
    ]
   ]
  },
@@ -124,20 +112,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "His SHED",
-    "His shed"
+    "I don't FORGET",
+    "I don't forget"
    ],
    [
-    "still smells",
-    "still smells"
-   ],
-   [
-    "of OIL",
-    "of oil"
-   ],
-   [
-    "and TWINE.",
-    "and twine."
+    "things.",
+    "things."
    ]
   ]
  },
@@ -146,28 +126,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "One HOOK",
-    "One hook"
+    "GRANDAD has",
+    "Grandad has"
    ],
    [
-    "in his shed",
-    "in his shed"
+    "plot NINE,",
+    "plot nine,"
    ],
    [
-    "is EMPTY.",
-    "is empty."
-   ],
-   [
-    "The one",
-    "The one"
-   ],
-   [
-    "for his",
-    "for his"
-   ],
-   [
-    "WATERING CAN.",
-    "watering can."
+    "across the PATH.",
+    "across the path."
    ]
   ]
  },
@@ -176,498 +144,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "On my",
-    "On my"
+    "Every MORNING,",
+    "Every morning,"
    ],
    [
-    "way OUT,",
-    "way out,"
+    "he says HELLO",
+    "he says hello"
    ],
    [
-    "the gate PADLOCK",
-    "the gate padlock"
-   ],
-   [
-    "is BEADED",
-    "is beaded"
-   ],
-   [
-    "with WATER.",
-    "with water."
-   ]
-  ]
- },
- {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I put",
-    "I put"
-   ],
-   [
-    "it DOWN",
-    "it down"
-   ],
-   [
-    "to the FOG.",
-    "to the fog."
-   ]
-  ]
- },
- {
-  "id": "L11",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On MONDAY,",
-    "On Monday,"
-   ],
-   [
-    "there's a HEAD",
-    "there's a head,"
-   ],
-   [
-    "in plot ONE,",
-    "in plot one,"
-   ],
-   [
-    "by the GATE.",
-    "by the gate."
-   ]
-  ]
- },
- {
-  "id": "L12",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Just a HEAD",
-    "Just a head"
-   ],
-   [
-    "and SHOULDERS,",
-    "and shoulders,"
-   ],
-   [
-    "sticking UP",
-    "sticking up"
-   ],
-   [
-    "out of",
-    "out of"
-   ],
-   [
-    "the SOIL.",
-    "the soil."
-   ]
-  ]
- },
- {
-  "id": "L13",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It's BROWN",
-    "It's brown"
-   ],
-   [
-    "as the EARTH,",
-    "as the earth,"
-   ],
-   [
-    "and WRAPPED",
-    "and wrapped"
-   ],
-   [
-    "in ROOTS.",
-    "in roots."
-   ]
-  ]
- },
- {
-  "id": "L14",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Two tiny",
-    "Two tiny"
-   ],
-   [
-    "GREEN POINTS",
-    "green points"
-   ],
-   [
-    "for EYES,",
-    "for eyes,"
-   ],
-   [
-    "like SEEDS",
-    "like seeds"
-   ],
-   [
-    "just SPLIT.",
-    "just split."
-   ]
-  ]
- },
- {
-  "id": "L15",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I tell myself",
-    "I tell myself"
-   ],
-   [
-    "it's somebody's",
-    "it's somebody's"
-   ],
-   [
-    "SCARECROW.",
-    "scarecrow."
-   ]
-  ]
- },
- {
-  "id": "L16",
-  "who": "narrator",
-  "chunks": [
-   [
-    "But scarecrows",
-    "But scarecrows"
-   ],
-   [
-    "don't have",
-    "don't have"
-   ],
-   [
-    "WET SHOULDERS",
-    "wet shoulders"
-   ],
-   [
-    "in a DROUGHT.",
-    "in a drought."
-   ]
-  ]
- },
- {
-  "id": "L17",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On TUESDAY,",
-    "On Tuesday,"
-   ],
-   [
-    "plot ONE",
-    "plot one"
-   ],
-   [
-    "is just",
-    "is just"
-   ],
-   [
-    "a HOLE.",
-    "a hole."
-   ]
-  ]
- },
- {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A ROUND HOLE,",
-    "A round hole,"
-   ],
-   [
-    "exactly the WIDTH",
-    "exactly the width"
-   ],
-   [
-    "of those SHOULDERS.",
-    "of those shoulders."
-   ]
-  ]
- },
- {
-  "id": "L19",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I drop",
-    "I drop"
-   ],
-   [
-    "a PEBBLE",
-    "a pebble"
-   ],
-   [
-    "in.",
-    "in."
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I never",
-    "I never"
-   ],
-   [
-    "hear it",
-    "hear it"
-   ],
-   [
-    "LAND.",
-    "land."
-   ]
-  ]
- },
- {
-  "id": "L21",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Now the HEAD",
-    "Now the head"
-   ],
-   [
-    "is in",
-    "is in"
-   ],
-   [
-    "plot FOUR,",
-    "plot four,"
-   ],
-   [
-    "three plots NEARER",
-    "three plots nearer"
-   ],
-   [
-    "along the PATH.",
-    "along the path."
-   ]
-  ]
- },
- {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And my plot",
-    "And my plot"
-   ],
-   [
-    "is DRIPPING",
-    "is dripping"
-   ],
-   [
-    "again.",
-    "again."
-   ]
-  ]
- },
- {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On WEDNESDAY,",
-    "On Wednesday,"
-   ],
-   [
-    "it's in",
-    "it's in"
-   ],
-   [
-    "plot SEVEN.",
-    "plot seven."
-   ]
-  ]
- },
- {
-  "id": "L24",
-  "who": "narrator",
-  "chunks": [
-   [
-    "HIGHER",
-    "Higher"
-   ],
-   [
-    "out of",
-    "out of"
-   ],
-   [
-    "the dirt",
-    "the dirt"
-   ],
-   [
-    "than BEFORE.",
-    "than before."
-   ]
-  ]
- },
- {
-  "id": "L25",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I feed",
-    "I feed"
-   ],
-   [
-    "the longest",
-    "the longest"
-   ],
-   [
-    "bean CANE",
-    "bean cane"
-   ],
-   [
-    "into the HOLE",
-    "into the hole"
-   ],
-   [
-    "in plot FOUR.",
-    "in plot four."
-   ]
-  ]
- },
- {
-  "id": "L26",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It never finds",
-    "It never finds"
-   ],
-   [
-    "the BOTTOM.",
-    "the bottom."
-   ]
-  ]
- },
- {
-  "id": "L27",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So I start",
-    "So I start"
-   ],
-   [
-    "coming EARLIER.",
-    "coming earlier."
-   ]
-  ]
- },
- {
-  "id": "L28",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And the EARLIER",
-    "And the earlier"
-   ],
-   [
-    "I COME,",
-    "i come,"
-   ],
-   [
-    "the WETTER",
-    "the wetter"
-   ],
-   [
-    "the PADLOCK.",
-    "the padlock."
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Only one plot",
-    "Only one plot"
-   ],
-   [
-    "is left",
-    "is left"
-   ],
-   [
-    "between that thing",
-    "between that thing"
-   ],
-   [
-    "and MINE.",
-    "and mine."
-   ]
-  ]
- },
- {
-  "id": "L30",
-  "who": "narrator",
-  "chunks": [
-   [
-    "On FRIDAY,",
-    "On Friday,"
-   ],
-   [
-    "the FOG",
-    "the fog"
-   ],
-   [
-    "comes UP",
-    "comes up"
-   ],
-   [
-    "from the VALLEY.",
-    "from the valley."
-   ]
-  ]
- },
- {
-  "id": "L31",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The padlock",
-    "The padlock"
-   ],
-   [
-    "DRIPS",
-    "drips"
-   ],
-   [
-    "on my SHOES.",
-    "on my shoes."
-   ]
-  ]
- },
- {
-  "id": "L32",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I walk",
-    "I walk"
-   ],
-   [
-    "the PATH",
-    "the path"
-   ],
-   [
-    "counting HOLES.",
-    "counting holes."
+    "to three old STAKES.",
+    "to three old stakes."
    ],
    [
     "ONE,",
-    "One,"
+    "one,"
    ],
    [
     "FOUR,",
@@ -680,28 +170,434 @@
   ]
  },
  {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Gran's green SCARF",
+    "Gran's green scarf"
+   ],
+   [
+    "still hangs",
+    "still hangs"
+   ],
+   [
+    "in his SHED.",
+    "in his shed."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "This WEEK,",
+    "This week,"
+   ],
+   [
+    "his GLASSES",
+    "his glasses"
+   ],
+   [
+    "come up",
+    "come up"
+   ],
+   [
+    "in his BEANS.",
+    "in his beans."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then his CAP.",
+    "Then his cap."
+   ],
+   [
+    "He LAUGHS it off.",
+    "He laughs it off."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "On MONDAY,",
+    "On Monday,"
+   ],
+   [
+    "something BIGGER",
+    "something bigger"
+   ],
+   [
+    "comes up",
+    "comes up"
+   ],
+   [
+    "in plot ONE.",
+    "in plot one."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A HEAD",
+    "A head"
+   ],
+   [
+    "and SHOULDERS",
+    "and shoulders"
+   ],
+   [
+    "of SOIL",
+    "of soil"
+   ],
+   [
+    "and ROOTS.",
+    "and roots."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "No FACE.",
+    "No face."
+   ],
+   [
+    "Two green POINTS",
+    "Two green points"
+   ],
+   [
+    "for EYES.",
+    "for eyes."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Grandad",
+    "Grandad"
+   ],
+   [
+    "just goes QUIET.",
+    "just goes quiet."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "TUESDAY,",
+    "Tuesday,"
+   ],
+   [
+    "plot one",
+    "plot one"
+   ],
+   [
+    "is a HOLE.",
+    "is a hole."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I drop a PEBBLE",
+    "I drop a pebble"
+   ],
+   [
+    "IN.",
+    "in."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It never LANDS.",
+    "It never lands."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The head is in",
+    "The head is in"
+   ],
+   [
+    "plot FOUR,",
+    "plot four,"
+   ],
+   [
+    "out to the ARMS.",
+    "out to the arms."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "WEDNESDAY,",
+    "Wednesday,"
+   ],
+   [
+    "plot SEVEN,",
+    "plot seven,"
+   ],
+   [
+    "out to the CHEST.",
+    "out to the chest."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Grandad talks",
+    "Grandad talks"
+   ],
+   [
+    "to his BEANS",
+    "to his beans"
+   ],
+   [
+    "like Gran's still THERE.",
+    "like Gran's still there."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Today,",
+    "Today,"
+   ],
+   [
+    "he STOPS.",
+    "he stops."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He can't find",
+    "He can't find"
+   ],
+   [
+    "her NAME.",
+    "her name."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "FRIDAY,",
+    "Friday,"
+   ],
+   [
+    "FOG comes UP",
+    "fog comes up"
+   ],
+   [
+    "from the VALLEY.",
+    "from the valley."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Between his BEANS,",
+    "Between his beans,"
+   ],
+   [
+    "something STANDS,",
+    "something stands,"
+   ],
+   [
+    "out to the WAIST.",
+    "out to the waist."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its HEAD",
+    "Its head"
+   ],
+   [
+    "is turned",
+    "is turned"
+   ],
+   [
+    "too far ROUND,",
+    "too far round,"
+   ],
+   [
+    "looking at GRANDAD.",
+    "looking at Grandad."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And Grandad",
+    "And Grandad"
+   ],
+   [
+    "looks right BACK.",
+    "looks right back."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then I see",
+    "Then I see"
+   ],
+   [
+    "the ROOTS",
+    "the roots"
+   ],
+   [
+    "round its HEAD,",
+    "round its head,"
+   ],
+   [
+    "KNOTTED",
+    "knotted"
+   ],
+   [
+    "like Gran's SCARF.",
+    "like Gran's scarf."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's GRAN.",
+    "It's Gran."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "ONE, FOUR, SEVEN, NINE.",
+    "one, four, seven, nine."
+   ],
+   [
+    "Every plot",
+    "Every plot"
+   ],
+   [
+    "they've HAD",
+    "they've had"
+   ],
+   [
+    "in FIFTY YEARS.",
+    "in fifty years."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He's forgetting her",
+    "He's forgetting her"
+   ],
+   [
+    "a year",
+    "a year"
+   ],
+   [
+    "at a TIME,",
+    "at a time,"
+   ],
+   [
+    "and the hill",
+    "and the hill"
+   ],
+   [
+    "gives every year BACK.",
+    "gives every year back."
+   ]
+  ]
+ },
+ {
   "id": "L33",
   "who": "narrator",
   "chunks": [
    [
-    "My bean CANES",
-    "My bean canes"
+    "When she's all",
+    "When she's all"
    ],
    [
-    "come out",
-    "come out"
+    "the way OUT,",
+    "the way out,"
    ],
    [
-    "of the FOG",
-    "of the fog"
+    "he won't remember her",
+    "he won't remember her"
    ],
    [
-    "one at",
-    "one at"
-   ],
-   [
-    "a TIME.",
-    "a time."
+    "at ALL.",
+    "at all."
    ]
   ]
  },
@@ -710,20 +606,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Between the BEANS,",
-    "Between the beans,"
+    "But what comes BACK",
+    "But what comes back"
    ],
    [
-    "with its BACK",
-    "with its back"
+    "is yours AGAIN",
+    "is yours again"
    ],
    [
-    "to me,",
-    "to me,"
-   ],
-   [
-    "something is STANDING.",
-    "something is standing."
+    "if you FIND it.",
+    "if you find it."
    ]
   ]
  },
@@ -732,12 +624,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "It's out",
-    "It's out"
+    "So I walk him",
+    "So I walk him"
    ],
    [
-    "to the CHEST.",
-    "to the chest."
+    "back up the PATH.",
+    "back up the path."
    ]
   ]
  },
@@ -746,20 +638,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Its arms",
-    "Its arms"
+    "At every HOLE,",
+    "At every hole,"
    ],
    [
-    "hang DOWN",
-    "hang down"
+    "I tell him",
+    "I tell him"
    ],
    [
-    "and go on",
-    "and go on"
-   ],
-   [
-    "INTO the SOIL.",
-    "into the soil."
+    "what he told ME.",
+    "what he told me."
    ]
   ]
  },
@@ -768,20 +656,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "They're far",
-    "They're far"
+    "Their first PEAS.",
+    "Their first peas."
    ],
    [
-    "too LONG",
-    "too long"
+    "The SHED",
+    "The shed"
    ],
    [
-    "to have",
-    "to have"
+    "they built",
+    "they built"
    ],
    [
-    "an END.",
-    "an end."
+    "in the RAIN.",
+    "in the rain."
    ]
   ]
  },
@@ -790,16 +678,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I look DOWN",
-    "I look down"
+    "At plot NINE,",
+    "At plot nine,"
    ],
    [
-    "at my FEET",
-    "at my feet"
+    "he looks her",
+    "he looks her"
    ],
    [
-    "for one SECOND.",
-    "for one second."
+    "in the EYES",
+    "in the eyes"
+   ],
+   [
+    "and says her NAME.",
+    "and says her name."
    ]
   ]
  },
@@ -808,24 +700,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "When I",
-    "When I"
+    "The soil",
+    "The soil"
    ],
    [
-    "look BACK,",
-    "look back,"
+    "SETTLES",
+    "settles"
    ],
    [
-    "its HEAD",
-    "its head"
-   ],
-   [
-    "is turned",
-    "is turned"
-   ],
-   [
-    "too far ROUND.",
-    "too far around."
+    "back DOWN.",
+    "back down."
    ]
   ]
  },
@@ -834,20 +718,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Those green EYES",
-    "Those green eyes"
+    "That night,",
+    "That night,"
    ],
    [
-    "are on",
-    "are on"
+    "he hangs his CAP",
+    "he hangs his cap"
    ],
    [
-    "the SHED",
-    "the shed"
-   ],
-   [
-    "behind ME.",
-    "behind me."
+    "by her SCARF.",
+    "by her scarf."
    ]
   ]
  },
@@ -856,20 +736,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'm the",
-    "I'm the"
+    "On this HILL,",
+    "On this hill,"
    ],
    [
-    "only thing",
-    "only thing"
+    "whatever you FORGET",
+    "whatever you forget"
    ],
    [
-    "between it",
-    "between it"
-   ],
-   [
-    "and that DOOR.",
-    "and that door."
+    "comes back UP.",
+    "comes back up."
    ]
   ]
  },
@@ -878,16 +754,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Behind me,",
-    "Behind me,"
+    "This MORNING,",
+    "This morning,"
    ],
    [
-    "the shed door",
-    "the shed door"
+    "something came up",
+    "something came up"
    ],
    [
-    "CREAKS OPEN.",
-    "creaks open."
+    "in MY plot.",
+    "in my plot."
    ]
   ]
  },
@@ -896,578 +772,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "It's Mr. CARTER,",
-    "It's Mr. Carter,"
+    "I can't remember",
+    "I can't remember"
    ],
    [
-    "holding his old",
-    "holding his old"
-   ],
-   [
-    "WATERING CAN.",
-    "watering can."
-   ]
-  ]
- },
- {
-  "id": "L44",
-  "who": "narrator",
-  "chunks": [
-   [
-    "His trouser legs",
-    "His trouser legs"
-   ],
-   [
-    "are SOAKED",
-    "are soaked"
-   ],
-   [
-    "THROUGH.",
-    "through."
-   ]
-  ]
- },
- {
-  "id": "L45",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He sees",
-    "He sees"
-   ],
-   [
-    "the thing",
-    "the thing"
-   ],
-   [
-    "in my BEANS,",
-    "in my beans,"
-   ],
-   [
-    "and his MOUTH",
-    "and his mouth"
-   ],
-   [
-    "drops OPEN.",
-    "drops open."
-   ]
-  ]
- },
- {
-  "id": "L46",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He's never",
-    "He's never"
-   ],
-   [
-    "SEEN it.",
-    "seen it."
-   ],
-   [
-    "He only comes",
-    "He only comes"
-   ],
-   [
-    "in the DARK.",
-    "in the dark."
-   ]
-  ]
- },
- {
-  "id": "L47",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every night",
-    "Every night"
-   ],
-   [
-    "for SIX WEEKS,",
-    "for six weeks,"
-   ],
-   [
-    "he's let",
-    "he's let"
-   ],
-   [
-    "himself IN",
-    "himself in"
-   ],
-   [
-    "with his",
-    "with his"
-   ],
-   [
-    "OLD KEY.",
-    "old key."
-   ]
-  ]
- },
- {
-  "id": "L48",
-  "who": "narrator",
-  "chunks": [
-   [
-    "To water",
-    "To water"
-   ],
-   [
-    "the plot",
-    "the plot"
-   ],
-   [
-    "he GAVE me.",
-    "he gave me."
-   ]
-  ]
- },
- {
-  "id": "L49",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He says,",
-    "He says,"
-   ],
-   [
-    "\"I couldn't",
-    "i couldn't"
-   ],
-   [
-    "stay AWAY.\"",
-    "stay away."
-   ]
-  ]
- },
- {
-  "id": "L50",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And every night,",
-    "And every night,"
-   ],
-   [
-    "that thing",
-    "that thing"
-   ],
-   [
-    "has come UP",
-    "has come up"
-   ],
-   [
-    "a little NEARER,",
-    "a little nearer,"
-   ],
-   [
-    "along the path",
-    "along the path"
-   ],
-   [
-    "HE walks.",
-    "he walks."
-   ]
-  ]
- },
- {
-  "id": "L51",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Following HIM in",
-    "Following him in"
-   ],
-   [
-    "to plot NINE.",
-    "to plot nine."
-   ]
-  ]
- },
- {
-  "id": "L52",
-  "who": "narrator",
-  "chunks": [
-   [
-    "That smell",
-    "That smell"
-   ],
-   [
-    "of RAIN",
-    "of rain"
-   ],
-   [
-    "was HIS CAN.",
-    "was his can."
-   ],
-   [
-    "Every NIGHT.",
-    "Every night."
-   ]
-  ]
- },
- {
-  "id": "L53",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Six weeks",
-    "Six weeks"
-   ],
-   [
-    "without RAIN",
-    "without rain"
-   ],
-   [
-    "is six weeks",
-    "is six weeks"
-   ],
-   [
-    "since he",
-    "since he"
-   ],
-   [
-    "GAVE me",
-    "gave me"
-   ],
-   [
-    "the KEY.",
-    "the key."
-   ]
-  ]
- },
- {
-  "id": "L54",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I tell him",
-    "I tell him"
-   ],
-   [
-    "to KEEP",
-    "to keep"
-   ],
-   [
-    "his old KEY.",
-    "his old key."
-   ]
-  ]
- },
- {
-  "id": "L55",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And to come",
-    "And to come"
-   ],
-   [
-    "in DAYLIGHT.",
-    "in daylight."
-   ]
-  ]
- },
- {
-  "id": "L56",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Behind us,",
-    "Behind us,"
-   ],
-   [
-    "the SOIL",
-    "the soil"
-   ],
-   [
-    "SETTLES.",
-    "settles."
-   ]
-  ]
- },
- {
-  "id": "L57",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At the",
-    "At the"
-   ],
-   [
-    "next DAWN,",
-    "next dawn,"
-   ],
-   [
-    "there's no HEAD",
-    "there's no head"
-   ],
-   [
-    "in my BEANS.",
-    "in my beans."
-   ]
-  ]
- },
- {
-  "id": "L58",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Just one HOLE.",
-    "Just one hole."
-   ]
-  ]
- },
- {
-  "id": "L59",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I shine",
-    "I shine"
-   ],
-   [
-    "my TORCH",
-    "my torch"
-   ],
-   [
-    "straight DOWN it.",
-    "straight down it."
-   ]
-  ]
- },
- {
-  "id": "L60",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then I",
-    "Then I"
-   ],
-   [
-    "FILL it,",
-    "fill it,"
-   ],
-   [
-    "one SPADE",
-    "one spade"
-   ],
-   [
-    "at a TIME.",
-    "at a time."
-   ]
-  ]
- },
- {
-  "id": "L61",
-  "who": "narrator",
-  "chunks": [
-   [
-    "All SPRING,",
-    "All spring,"
-   ],
-   [
-    "Mr. Carter sits",
-    "mr. Carter sits"
-   ],
-   [
-    "on an",
-    "on an"
-   ],
-   [
-    "upturned BUCKET",
-    "upturned bucket"
-   ],
-   [
-    "and TEACHES me.",
-    "and teaches me."
-   ]
-  ]
- },
- {
-  "id": "L62",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Water at DUSK.",
-    "Water at dusk."
-   ],
-   [
-    "Never at NOON.",
-    "Never at noon."
-   ]
-  ]
- },
- {
-  "id": "L63",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And SNIFF",
-    "And sniff"
-   ],
-   [
-    "the SOIL.",
-    "the soil."
-   ],
-   [
-    "If it smells",
-    "If it smells"
-   ],
-   [
-    "like RAIN,",
-    "like rain,"
-   ],
-   [
-    "leave it ALONE.",
-    "leave it alone."
-   ]
-  ]
- },
- {
-  "id": "L64",
-  "who": "narrator",
-  "chunks": [
-   [
-    "By AUGUST,",
-    "By August,"
-   ],
-   [
-    "every bed",
-    "every bed"
-   ],
-   [
-    "on plot NINE",
-    "on plot nine"
-   ],
-   [
-    "is FULL.",
-    "is full."
-   ]
-  ]
- },
- {
-  "id": "L65",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A woman",
-    "A woman"
-   ],
-   [
-    "with a",
-    "with a"
-   ],
-   [
-    "red BIKE",
-    "red bike"
-   ],
-   [
-    "gets the key",
-    "gets the key"
-   ],
-   [
-    "to plot TEN.",
-    "to plot ten."
-   ]
-  ]
- },
- {
-  "id": "L66",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Her shed",
-    "Her shed"
-   ],
-   [
-    "has an",
-    "has an"
-   ],
-   [
-    "EMPTY HOOK.",
-    "empty hook."
-   ]
-  ]
- },
- {
-  "id": "L67",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So I",
-    "So I"
-   ],
-   [
-    "hand her",
-    "hand her"
-   ],
-   [
-    "MY CAN.",
-    "my can."
-   ]
-  ]
- },
- {
-  "id": "L68",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mr. Carter",
-    "Mr. Carter"
-   ],
-   [
-    "watches from",
-    "watches from"
-   ],
-   [
-    "his BUCKET,",
-    "his bucket,"
-   ],
-   [
-    "and NODS.",
-    "and nods."
-   ]
-  ]
- },
- {
-  "id": "L69",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Tomorrow,",
-    "Tomorrow,"
-   ],
-   [
-    "I'll teach her",
-    "i'll teach her"
-   ],
-   [
-    "to SNIFF",
-    "to sniff"
-   ],
-   [
-    "the SOIL.",
-    "the soil."
-   ]
-  ]
- },
- {
-  "id": "L70",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My plot",
-    "My plot"
-   ],
-   [
-    "smells like RAIN.",
-    "smells like rain."
-   ],
-   [
-    "It always WILL.",
-    "It always will."
+    "WHO it is.",
+    "who it is."
    ]
   ]
  }

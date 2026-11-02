@@ -1,10 +1,10 @@
 {
  "slug": "ep25-plot-nine",
- "title": "In a six-week drought, my allotment plot is wet every single dawn.",
+ "title": "On This Hill, Whatever You FORGET Comes Back Up",
  "made_for_kids": false,
- "premise": "In the driest spring on the hill, I take over old Mr. Carter's allotment plot when he says it's time for somebody new. Every plot cracks in the sun but mine, which is dark and wet at every dawn. A head and shoulders of root-wrapped soil rises out of plot one by the gate, and each dawn it is in a bed further down the path, nearer to my beans, leaving a round hole that no cane can find the bottom of.",
- "twist": "Mr. Carter never stopped coming. Every night since he gave me the key he has let himself in with his old key and his old can to water the plot he couldn't let go of, and the thing in the soil rises along the path he walks, following him in to plot nine. The smell of rain was his can, and six weeks is how long since he gave me the key.",
- "world": "allotment gardens on a gentle hillside at dawn in a dry spring: a five-bar gate and an iron padlock, a dusty path, ten plots of cracked clay, tarred sheds, one dark wet plot of bean canes, and mist filling the valley below",
+ "premise": "On an allotment hill where whatever you forget comes back up out of the ground, where you left it, I'm the one gardener nothing ever comes up for. Grandad has plot nine across the path from mine. This week his glasses and his cap come up in his beans. Then a head and shoulders of soil and roots with no face comes up in plot one by the gate, and every dawn it's in a plot further down the path, higher out of the ground, nearer to his.",
+ "twist": "The faceless thing is Gran: Grandad is forgetting her a year at a time, and the hill gives each year back in the plot where they spent it. Its roots are knotted under its chin like her green headscarf, it rises in plots one, four and seven, then nine, and when I walk him to every hole and tell him what he told me, he says her name and the soil settles. Then I find something in my own plot, and I can't remember who it is.",
+ "world": "allotment gardens on a hillside at dawn in a dry spring: a five-bar gate with a chain and padlock, a dusty path, ten plots of pale cracked clay, tarred sheds, one dark worked plot of bean canes with a creosote shed, a bare raked bed, and mist filling the valley below",
  "voice": {
   "voice": "am_adam",
   "tempo": 1.03,
@@ -25,7 +25,8 @@
   "fog_start": 4.0,
   "sky": "#e7b896",
   "sky_strength": 1.0,
-  "exposure": 0.0
+  "exposure": 0.0,
+  "flash_safe": true
  },
  "grade": {
   "shadows": [
@@ -112,16 +113,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "My plot",
-     "My plot"
+     "On this HILL,",
+     "On this hill,"
     ],
     [
-     "SMELLS",
-     "smells"
+     "whatever you FORGET",
+     "whatever you forget"
     ],
     [
-     "like RAIN.",
-     "like rain."
+     "comes back UP",
+     "comes back up"
+    ],
+    [
+     "out of the GROUND.",
+     "out of the ground."
     ]
    ]
   },
@@ -130,12 +135,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "It hasn't RAINED",
-     "It hasn't rained"
+     "Forget your KEYS",
+     "Forget your keys"
     ],
     [
-     "in six WEEKS.",
-     "in six weeks."
+     "in the LETTUCE,",
+     "in the lettuce,"
+    ],
+    [
+     "and by THURSDAY",
+     "and by Thursday"
+    ],
+    [
+     "there's a KEY PLANT.",
+     "there's a key plant."
     ]
    ]
   },
@@ -144,20 +157,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Every other plot",
-     "Every other plot"
+     "Nobody up here",
+     "Nobody up here"
     ],
     [
-     "on the HILL",
-     "on the hill"
+     "owns a SECOND",
+     "owns a second"
     ],
     [
-     "is CRACKED",
-     "is cracked"
-    ],
-    [
-     "like old TOAST.",
-     "like old toast."
+     "UMBRELLA.",
+     "umbrella."
     ]
    ]
   },
@@ -166,39 +175,26 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mine is DARK",
-     "Mine is dark"
+     "Plot TWO",
+     "Plot two"
     ],
     [
-     "and WET",
-     "and wet"
-    ],
-    [
-     "every DAWN.",
-     "every dawn."
+     "grows FLASKS.",
+     "grows flasks."
     ]
-   ],
-   "gap": 0.5
+   ]
   },
   {
    "id": "L05",
    "who": "narrator",
    "chunks": [
     [
-     "Six weeks AGO,",
-     "Six weeks ago,"
+     "Go and FIND it,",
+     "Go and find it,"
     ],
     [
-     "old Mr. CARTER",
-     "old Mr. Carter"
-    ],
-    [
-     "gave me",
-     "gave me"
-    ],
-    [
-     "the KEY.",
-     "the key."
+     "and it's YOURS again.",
+     "and it's yours again."
     ]
    ]
   },
@@ -207,24 +203,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "He said,",
-     "He said,"
+     "Nothing EVER",
+     "Nothing ever"
     ],
     [
-     "\"Time for",
-     "time for"
+     "comes up",
+     "comes up"
     ],
     [
-     "somebody NEW,\"",
-     "somebody new,"
-    ],
-    [
-     "and walked OUT",
-     "and walked out"
-    ],
-    [
-     "without a WAVE.",
-     "without a wave."
+     "in MY plot.",
+     "in my plot."
     ]
    ]
   },
@@ -233,20 +221,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "His SHED",
-     "His shed"
+     "I don't FORGET",
+     "I don't forget"
     ],
     [
-     "still smells",
-     "still smells"
-    ],
-    [
-     "of OIL",
-     "of oil"
-    ],
-    [
-     "and TWINE.",
-     "and twine."
+     "things.",
+     "things."
     ]
    ]
   },
@@ -255,28 +235,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "One HOOK",
-     "One hook"
+     "GRANDAD has",
+     "Grandad has"
     ],
     [
-     "in his shed",
-     "in his shed"
+     "plot NINE,",
+     "plot nine,"
     ],
     [
-     "is EMPTY.",
-     "is empty."
-    ],
-    [
-     "The one",
-     "The one"
-    ],
-    [
-     "for his",
-     "for his"
-    ],
-    [
-     "WATERING CAN.",
-     "watering can."
+     "across the PATH.",
+     "across the path."
     ]
    ]
   },
@@ -285,507 +253,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "On my",
-     "On my"
+     "Every MORNING,",
+     "Every morning,"
     ],
     [
-     "way OUT,",
-     "way out,"
+     "he says HELLO",
+     "he says hello"
     ],
     [
-     "the gate PADLOCK",
-     "the gate padlock"
-    ],
-    [
-     "is BEADED",
-     "is beaded"
-    ],
-    [
-     "with WATER.",
-     "with water."
-    ]
-   ]
-  },
-  {
-   "id": "L10",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I put",
-     "I put"
-    ],
-    [
-     "it DOWN",
-     "it down"
-    ],
-    [
-     "to the FOG.",
-     "to the fog."
-    ]
-   ],
-   "gap": 0.5
-  },
-  {
-   "id": "L11",
-   "who": "narrator",
-   "chunks": [
-    [
-     "On MONDAY,",
-     "On Monday,"
-    ],
-    [
-     "there's a HEAD",
-     "there's a head,"
-    ],
-    [
-     "in plot ONE,",
-     "in plot one,"
-    ],
-    [
-     "by the GATE.",
-     "by the gate."
-    ]
-   ],
-   "tempo": 0.93
-  },
-  {
-   "id": "L12",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Just a HEAD",
-     "Just a head"
-    ],
-    [
-     "and SHOULDERS,",
-     "and shoulders,"
-    ],
-    [
-     "sticking UP",
-     "sticking up"
-    ],
-    [
-     "out of",
-     "out of"
-    ],
-    [
-     "the SOIL.",
-     "the soil."
-    ]
-   ]
-  },
-  {
-   "id": "L13",
-   "who": "narrator",
-   "chunks": [
-    [
-     "It's BROWN",
-     "It's brown"
-    ],
-    [
-     "as the EARTH,",
-     "as the earth,"
-    ],
-    [
-     "and WRAPPED",
-     "and wrapped"
-    ],
-    [
-     "in ROOTS.",
-     "in roots."
-    ]
-   ]
-  },
-  {
-   "id": "L14",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Two tiny",
-     "Two tiny"
-    ],
-    [
-     "GREEN POINTS",
-     "green points"
-    ],
-    [
-     "for EYES,",
-     "for eyes,"
-    ],
-    [
-     "like SEEDS",
-     "like seeds"
-    ],
-    [
-     "just SPLIT.",
-     "just split."
-    ]
-   ]
-  },
-  {
-   "id": "L15",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I tell myself",
-     "I tell myself"
-    ],
-    [
-     "it's somebody's",
-     "it's somebody's"
-    ],
-    [
-     "SCARECROW.",
-     "scarecrow."
-    ]
-   ]
-  },
-  {
-   "id": "L16",
-   "who": "narrator",
-   "chunks": [
-    [
-     "But scarecrows",
-     "But scarecrows"
-    ],
-    [
-     "don't have",
-     "don't have"
-    ],
-    [
-     "WET SHOULDERS",
-     "wet shoulders"
-    ],
-    [
-     "in a DROUGHT.",
-     "in a drought."
-    ]
-   ],
-   "tempo": 0.93
-  },
-  {
-   "id": "L17",
-   "who": "narrator",
-   "chunks": [
-    [
-     "On TUESDAY,",
-     "On Tuesday,"
-    ],
-    [
-     "plot ONE",
-     "plot one"
-    ],
-    [
-     "is just",
-     "is just"
-    ],
-    [
-     "a HOLE.",
-     "a hole."
-    ]
-   ]
-  },
-  {
-   "id": "L18",
-   "who": "narrator",
-   "chunks": [
-    [
-     "A ROUND HOLE,",
-     "A round hole,"
-    ],
-    [
-     "exactly the WIDTH",
-     "exactly the width"
-    ],
-    [
-     "of those SHOULDERS.",
-     "of those shoulders."
-    ]
-   ]
-  },
-  {
-   "id": "L19",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I drop",
-     "I drop"
-    ],
-    [
-     "a PEBBLE",
-     "a pebble"
-    ],
-    [
-     "in.",
-     "in."
-    ]
-   ]
-  },
-  {
-   "id": "P01",
-   "pause": 1.5,
-   "chunks": []
-  },
-  {
-   "id": "L20",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I never",
-     "I never"
-    ],
-    [
-     "hear it",
-     "hear it"
-    ],
-    [
-     "LAND.",
-     "land."
-    ]
-   ]
-  },
-  {
-   "id": "L21",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Now the HEAD",
-     "Now the head"
-    ],
-    [
-     "is in",
-     "is in"
-    ],
-    [
-     "plot FOUR,",
-     "plot four,"
-    ],
-    [
-     "three plots NEARER",
-     "three plots nearer"
-    ],
-    [
-     "along the PATH.",
-     "along the path."
-    ]
-   ]
-  },
-  {
-   "id": "L22",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And my plot",
-     "And my plot"
-    ],
-    [
-     "is DRIPPING",
-     "is dripping"
-    ],
-    [
-     "again.",
-     "again."
-    ]
-   ]
-  },
-  {
-   "id": "L23",
-   "who": "narrator",
-   "chunks": [
-    [
-     "On WEDNESDAY,",
-     "On Wednesday,"
-    ],
-    [
-     "it's in",
-     "it's in"
-    ],
-    [
-     "plot SEVEN.",
-     "plot seven."
-    ]
-   ]
-  },
-  {
-   "id": "L24",
-   "who": "narrator",
-   "chunks": [
-    [
-     "HIGHER",
-     "Higher"
-    ],
-    [
-     "out of",
-     "out of"
-    ],
-    [
-     "the dirt",
-     "the dirt"
-    ],
-    [
-     "than BEFORE.",
-     "than before."
-    ]
-   ]
-  },
-  {
-   "id": "L25",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I feed",
-     "I feed"
-    ],
-    [
-     "the longest",
-     "the longest"
-    ],
-    [
-     "bean CANE",
-     "bean cane"
-    ],
-    [
-     "into the HOLE",
-     "into the hole"
-    ],
-    [
-     "in plot FOUR.",
-     "in plot four."
-    ]
-   ]
-  },
-  {
-   "id": "L26",
-   "who": "narrator",
-   "chunks": [
-    [
-     "It never finds",
-     "It never finds"
-    ],
-    [
-     "the BOTTOM.",
-     "the bottom."
-    ]
-   ]
-  },
-  {
-   "id": "L27",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So I start",
-     "So I start"
-    ],
-    [
-     "coming EARLIER.",
-     "coming earlier."
-    ]
-   ]
-  },
-  {
-   "id": "L28",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And the EARLIER",
-     "And the earlier"
-    ],
-    [
-     "I COME,",
-     "i come,"
-    ],
-    [
-     "the WETTER",
-     "the wetter"
-    ],
-    [
-     "the PADLOCK.",
-     "the padlock."
-    ]
-   ]
-  },
-  {
-   "id": "L29",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Only one plot",
-     "Only one plot"
-    ],
-    [
-     "is left",
-     "is left"
-    ],
-    [
-     "between that thing",
-     "between that thing"
-    ],
-    [
-     "and MINE.",
-     "and mine."
-    ]
-   ],
-   "gap": 0.5
-  },
-  {
-   "id": "L30",
-   "who": "narrator",
-   "chunks": [
-    [
-     "On FRIDAY,",
-     "On Friday,"
-    ],
-    [
-     "the FOG",
-     "the fog"
-    ],
-    [
-     "comes UP",
-     "comes up"
-    ],
-    [
-     "from the VALLEY.",
-     "from the valley."
-    ]
-   ]
-  },
-  {
-   "id": "L31",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The padlock",
-     "The padlock"
-    ],
-    [
-     "DRIPS",
-     "drips"
-    ],
-    [
-     "on my SHOES.",
-     "on my shoes."
-    ]
-   ]
-  },
-  {
-   "id": "L32",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I walk",
-     "I walk"
-    ],
-    [
-     "the PATH",
-     "the path"
-    ],
-    [
-     "counting HOLES.",
-     "counting holes."
+     "to three old STAKES.",
+     "to three old stakes."
     ],
     [
      "ONE,",
-     "One,"
+     "one,"
     ],
     [
      "FOUR,",
@@ -795,32 +276,447 @@
      "SEVEN.",
      "seven."
     ]
-   ],
-   "tempo": 0.8
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Gran's green SCARF",
+     "Gran's green scarf"
+    ],
+    [
+     "still hangs",
+     "still hangs"
+    ],
+    [
+     "in his SHED.",
+     "in his shed."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "This WEEK,",
+     "This week,"
+    ],
+    [
+     "his GLASSES",
+     "his glasses"
+    ],
+    [
+     "come up",
+     "come up"
+    ],
+    [
+     "in his BEANS.",
+     "in his beans."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then his CAP.",
+     "Then his cap."
+    ],
+    [
+     "He LAUGHS it off.",
+     "He laughs it off."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "On MONDAY,",
+     "On Monday,"
+    ],
+    [
+     "something BIGGER",
+     "something bigger"
+    ],
+    [
+     "comes up",
+     "comes up"
+    ],
+    [
+     "in plot ONE.",
+     "in plot one."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A HEAD",
+     "A head"
+    ],
+    [
+     "and SHOULDERS",
+     "and shoulders"
+    ],
+    [
+     "of SOIL",
+     "of soil"
+    ],
+    [
+     "and ROOTS.",
+     "and roots."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "No FACE.",
+     "No face."
+    ],
+    [
+     "Two green POINTS",
+     "Two green points"
+    ],
+    [
+     "for EYES.",
+     "for eyes."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Grandad",
+     "Grandad"
+    ],
+    [
+     "just goes QUIET.",
+     "just goes quiet."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "TUESDAY,",
+     "Tuesday,"
+    ],
+    [
+     "plot one",
+     "plot one"
+    ],
+    [
+     "is a HOLE.",
+     "is a hole."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I drop a PEBBLE",
+     "I drop a pebble"
+    ],
+    [
+     "IN.",
+     "in."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 1.0,
+   "chunks": []
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It never LANDS.",
+     "It never lands."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The head is in",
+     "The head is in"
+    ],
+    [
+     "plot FOUR,",
+     "plot four,"
+    ],
+    [
+     "out to the ARMS.",
+     "out to the arms."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "WEDNESDAY,",
+     "Wednesday,"
+    ],
+    [
+     "plot SEVEN,",
+     "plot seven,"
+    ],
+    [
+     "out to the CHEST.",
+     "out to the chest."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Grandad talks",
+     "Grandad talks"
+    ],
+    [
+     "to his BEANS",
+     "to his beans"
+    ],
+    [
+     "like Gran's still THERE.",
+     "like Gran's still there."
+    ]
+   ]
+  },
+  {
+   "id": "L23",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Today,",
+     "Today,"
+    ],
+    [
+     "he STOPS.",
+     "he stops."
+    ]
+   ]
+  },
+  {
+   "id": "L24",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He can't find",
+     "He can't find"
+    ],
+    [
+     "her NAME.",
+     "her name."
+    ]
+   ]
+  },
+  {
+   "id": "L25",
+   "who": "narrator",
+   "chunks": [
+    [
+     "FRIDAY,",
+     "Friday,"
+    ],
+    [
+     "FOG comes UP",
+     "fog comes up"
+    ],
+    [
+     "from the VALLEY.",
+     "from the valley."
+    ]
+   ]
+  },
+  {
+   "id": "L26",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Between his BEANS,",
+     "Between his beans,"
+    ],
+    [
+     "something STANDS,",
+     "something stands,"
+    ],
+    [
+     "out to the WAIST.",
+     "out to the waist."
+    ]
+   ]
+  },
+  {
+   "id": "P02",
+   "pause": 0.7,
+   "chunks": []
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Its HEAD",
+     "Its head"
+    ],
+    [
+     "is turned",
+     "is turned"
+    ],
+    [
+     "too far ROUND,",
+     "too far round,"
+    ],
+    [
+     "looking at GRANDAD.",
+     "looking at Grandad."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And Grandad",
+     "And Grandad"
+    ],
+    [
+     "looks right BACK.",
+     "looks right back."
+    ]
+   ]
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then I see",
+     "Then I see"
+    ],
+    [
+     "the ROOTS",
+     "the roots"
+    ],
+    [
+     "round its HEAD,",
+     "round its head,"
+    ],
+    [
+     "KNOTTED",
+     "knotted"
+    ],
+    [
+     "like Gran's SCARF.",
+     "like Gran's scarf."
+    ]
+   ]
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It's GRAN.",
+     "It's Gran."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "ONE, FOUR, SEVEN, NINE.",
+     "one, four, seven, nine."
+    ],
+    [
+     "Every plot",
+     "Every plot"
+    ],
+    [
+     "they've HAD",
+     "they've had"
+    ],
+    [
+     "in FIFTY YEARS.",
+     "in fifty years."
+    ]
+   ]
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He's forgetting her",
+     "He's forgetting her"
+    ],
+    [
+     "a year",
+     "a year"
+    ],
+    [
+     "at a TIME,",
+     "at a time,"
+    ],
+    [
+     "and the hill",
+     "and the hill"
+    ],
+    [
+     "gives every year BACK.",
+     "gives every year back."
+    ]
+   ]
   },
   {
    "id": "L33",
    "who": "narrator",
    "chunks": [
     [
-     "My bean CANES",
-     "My bean canes"
+     "When she's all",
+     "When she's all"
     ],
     [
-     "come out",
-     "come out"
+     "the way OUT,",
+     "the way out,"
     ],
     [
-     "of the FOG",
-     "of the fog"
+     "he won't remember her",
+     "he won't remember her"
     ],
     [
-     "one at",
-     "one at"
-    ],
-    [
-     "a TIME.",
-     "a time."
+     "at ALL.",
+     "at all."
     ]
    ]
   },
@@ -829,39 +725,30 @@
    "who": "narrator",
    "chunks": [
     [
-     "Between the BEANS,",
-     "Between the beans,"
+     "But what comes BACK",
+     "But what comes back"
     ],
     [
-     "with its BACK",
-     "with its back"
+     "is yours AGAIN",
+     "is yours again"
     ],
     [
-     "to me,",
-     "to me,"
-    ],
-    [
-     "something is STANDING.",
-     "something is standing."
+     "if you FIND it.",
+     "if you find it."
     ]
    ]
-  },
-  {
-   "id": "P02",
-   "pause": 0.9,
-   "chunks": []
   },
   {
    "id": "L35",
    "who": "narrator",
    "chunks": [
     [
-     "It's out",
-     "It's out"
+     "So I walk him",
+     "So I walk him"
     ],
     [
-     "to the CHEST.",
-     "to the chest."
+     "back up the PATH.",
+     "back up the path."
     ]
    ]
   },
@@ -870,20 +757,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Its arms",
-     "Its arms"
+     "At every HOLE,",
+     "At every hole,"
     ],
     [
-     "hang DOWN",
-     "hang down"
+     "I tell him",
+     "I tell him"
     ],
     [
-     "and go on",
-     "and go on"
-    ],
-    [
-     "INTO the SOIL.",
-     "into the soil."
+     "what he told ME.",
+     "what he told me."
     ]
    ]
   },
@@ -892,20 +775,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "They're far",
-     "They're far"
+     "Their first PEAS.",
+     "Their first peas."
     ],
     [
-     "too LONG",
-     "too long"
+     "The SHED",
+     "The shed"
     ],
     [
-     "to have",
-     "to have"
+     "they built",
+     "they built"
     ],
     [
-     "an END.",
-     "an end."
+     "in the RAIN.",
+     "in the rain."
     ]
    ]
   },
@@ -914,16 +797,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I look DOWN",
-     "I look down"
+     "At plot NINE,",
+     "At plot nine,"
     ],
     [
-     "at my FEET",
-     "at my feet"
+     "he looks her",
+     "he looks her"
     ],
     [
-     "for one SECOND.",
-     "for one second."
+     "in the EYES",
+     "in the eyes"
+    ],
+    [
+     "and says her NAME.",
+     "and says her name."
     ]
    ]
   },
@@ -932,24 +819,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "When I",
-     "When I"
+     "The soil",
+     "The soil"
     ],
     [
-     "look BACK,",
-     "look back,"
+     "SETTLES",
+     "settles"
     ],
     [
-     "its HEAD",
-     "its head"
-    ],
-    [
-     "is turned",
-     "is turned"
-    ],
-    [
-     "too far ROUND.",
-     "too far around."
+     "back DOWN.",
+     "back down."
     ]
    ]
   },
@@ -958,20 +837,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Those green EYES",
-     "Those green eyes"
+     "That night,",
+     "That night,"
     ],
     [
-     "are on",
-     "are on"
+     "he hangs his CAP",
+     "he hangs his cap"
     ],
     [
-     "the SHED",
-     "the shed"
-    ],
-    [
-     "behind ME.",
-     "behind me."
+     "by her SCARF.",
+     "by her scarf."
     ]
    ]
   },
@@ -980,20 +855,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'm the",
-     "I'm the"
+     "On this HILL,",
+     "On this hill,"
     ],
     [
-     "only thing",
-     "only thing"
+     "whatever you FORGET",
+     "whatever you forget"
     ],
     [
-     "between it",
-     "between it"
-    ],
-    [
-     "and that DOOR.",
-     "and that door."
+     "comes back UP.",
+     "comes back up."
     ]
    ]
   },
@@ -1002,16 +873,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Behind me,",
-     "Behind me,"
+     "This MORNING,",
+     "This morning,"
     ],
     [
-     "the shed door",
-     "the shed door"
+     "something came up",
+     "something came up"
     ],
     [
-     "CREAKS OPEN.",
-     "creaks open."
+     "in MY plot.",
+     "in my plot."
     ]
    ]
   },
@@ -1020,590 +891,14 @@
    "who": "narrator",
    "chunks": [
     [
-     "It's Mr. CARTER,",
-     "It's Mr. Carter,"
+     "I can't remember",
+     "I can't remember"
     ],
     [
-     "holding his old",
-     "holding his old"
-    ],
-    [
-     "WATERING CAN.",
-     "watering can."
+     "WHO it is.",
+     "who it is."
     ]
    ]
-  },
-  {
-   "id": "L44",
-   "who": "narrator",
-   "chunks": [
-    [
-     "His trouser legs",
-     "His trouser legs"
-    ],
-    [
-     "are SOAKED",
-     "are soaked"
-    ],
-    [
-     "THROUGH.",
-     "through."
-    ]
-   ],
-   "gap": 0.5
-  },
-  {
-   "id": "L45",
-   "who": "narrator",
-   "chunks": [
-    [
-     "He sees",
-     "He sees"
-    ],
-    [
-     "the thing",
-     "the thing"
-    ],
-    [
-     "in my BEANS,",
-     "in my beans,"
-    ],
-    [
-     "and his MOUTH",
-     "and his mouth"
-    ],
-    [
-     "drops OPEN.",
-     "drops open."
-    ]
-   ]
-  },
-  {
-   "id": "L46",
-   "who": "narrator",
-   "chunks": [
-    [
-     "He's never",
-     "He's never"
-    ],
-    [
-     "SEEN it.",
-     "seen it."
-    ],
-    [
-     "He only comes",
-     "He only comes"
-    ],
-    [
-     "in the DARK.",
-     "in the dark."
-    ]
-   ]
-  },
-  {
-   "id": "L47",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Every night",
-     "Every night"
-    ],
-    [
-     "for SIX WEEKS,",
-     "for six weeks,"
-    ],
-    [
-     "he's let",
-     "he's let"
-    ],
-    [
-     "himself IN",
-     "himself in"
-    ],
-    [
-     "with his",
-     "with his"
-    ],
-    [
-     "OLD KEY.",
-     "old key."
-    ]
-   ]
-  },
-  {
-   "id": "L48",
-   "who": "narrator",
-   "chunks": [
-    [
-     "To water",
-     "To water"
-    ],
-    [
-     "the plot",
-     "the plot"
-    ],
-    [
-     "he GAVE me.",
-     "he gave me."
-    ]
-   ]
-  },
-  {
-   "id": "L49",
-   "who": "narrator",
-   "chunks": [
-    [
-     "He says,",
-     "He says,"
-    ],
-    [
-     "\"I couldn't",
-     "i couldn't"
-    ],
-    [
-     "stay AWAY.\"",
-     "stay away."
-    ]
-   ]
-  },
-  {
-   "id": "L50",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And every night,",
-     "And every night,"
-    ],
-    [
-     "that thing",
-     "that thing"
-    ],
-    [
-     "has come UP",
-     "has come up"
-    ],
-    [
-     "a little NEARER,",
-     "a little nearer,"
-    ],
-    [
-     "along the path",
-     "along the path"
-    ],
-    [
-     "HE walks.",
-     "he walks."
-    ]
-   ]
-  },
-  {
-   "id": "L51",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Following HIM in",
-     "Following him in"
-    ],
-    [
-     "to plot NINE.",
-     "to plot nine."
-    ]
-   ]
-  },
-  {
-   "id": "L52",
-   "who": "narrator",
-   "chunks": [
-    [
-     "That smell",
-     "That smell"
-    ],
-    [
-     "of RAIN",
-     "of rain"
-    ],
-    [
-     "was HIS CAN.",
-     "was his can."
-    ],
-    [
-     "Every NIGHT.",
-     "Every night."
-    ]
-   ]
-  },
-  {
-   "id": "L53",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Six weeks",
-     "Six weeks"
-    ],
-    [
-     "without RAIN",
-     "without rain"
-    ],
-    [
-     "is six weeks",
-     "is six weeks"
-    ],
-    [
-     "since he",
-     "since he"
-    ],
-    [
-     "GAVE me",
-     "gave me"
-    ],
-    [
-     "the KEY.",
-     "the key."
-    ]
-   ]
-  },
-  {
-   "id": "L54",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I tell him",
-     "I tell him"
-    ],
-    [
-     "to KEEP",
-     "to keep"
-    ],
-    [
-     "his old KEY.",
-     "his old key."
-    ]
-   ]
-  },
-  {
-   "id": "L55",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And to come",
-     "And to come"
-    ],
-    [
-     "in DAYLIGHT.",
-     "in daylight."
-    ]
-   ]
-  },
-  {
-   "id": "L56",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Behind us,",
-     "Behind us,"
-    ],
-    [
-     "the SOIL",
-     "the soil"
-    ],
-    [
-     "SETTLES.",
-     "settles."
-    ]
-   ],
-   "gap": 0.6
-  },
-  {
-   "id": "L57",
-   "who": "narrator",
-   "chunks": [
-    [
-     "At the",
-     "At the"
-    ],
-    [
-     "next DAWN,",
-     "next dawn,"
-    ],
-    [
-     "there's no HEAD",
-     "there's no head"
-    ],
-    [
-     "in my BEANS.",
-     "in my beans."
-    ]
-   ]
-  },
-  {
-   "id": "L58",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Just one HOLE.",
-     "Just one hole."
-    ]
-   ],
-   "gap": 0.4
-  },
-  {
-   "id": "L59",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I shine",
-     "I shine"
-    ],
-    [
-     "my TORCH",
-     "my torch"
-    ],
-    [
-     "straight DOWN it.",
-     "straight down it."
-    ]
-   ]
-  },
-  {
-   "id": "P03",
-   "pause": 2.0,
-   "chunks": []
-  },
-  {
-   "id": "L60",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Then I",
-     "Then I"
-    ],
-    [
-     "FILL it,",
-     "fill it,"
-    ],
-    [
-     "one SPADE",
-     "one spade"
-    ],
-    [
-     "at a TIME.",
-     "at a time."
-    ]
-   ]
-  },
-  {
-   "id": "L61",
-   "who": "narrator",
-   "chunks": [
-    [
-     "All SPRING,",
-     "All spring,"
-    ],
-    [
-     "Mr. Carter sits",
-     "mr. Carter sits"
-    ],
-    [
-     "on an",
-     "on an"
-    ],
-    [
-     "upturned BUCKET",
-     "upturned bucket"
-    ],
-    [
-     "and TEACHES me.",
-     "and teaches me."
-    ]
-   ]
-  },
-  {
-   "id": "L62",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Water at DUSK.",
-     "Water at dusk."
-    ],
-    [
-     "Never at NOON.",
-     "Never at noon."
-    ]
-   ]
-  },
-  {
-   "id": "L63",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And SNIFF",
-     "And sniff"
-    ],
-    [
-     "the SOIL.",
-     "the soil."
-    ],
-    [
-     "If it smells",
-     "If it smells"
-    ],
-    [
-     "like RAIN,",
-     "like rain,"
-    ],
-    [
-     "leave it ALONE.",
-     "leave it alone."
-    ]
-   ]
-  },
-  {
-   "id": "L64",
-   "who": "narrator",
-   "chunks": [
-    [
-     "By AUGUST,",
-     "By August,"
-    ],
-    [
-     "every bed",
-     "every bed"
-    ],
-    [
-     "on plot NINE",
-     "on plot nine"
-    ],
-    [
-     "is FULL.",
-     "is full."
-    ]
-   ]
-  },
-  {
-   "id": "L65",
-   "who": "narrator",
-   "chunks": [
-    [
-     "A woman",
-     "A woman"
-    ],
-    [
-     "with a",
-     "with a"
-    ],
-    [
-     "red BIKE",
-     "red bike"
-    ],
-    [
-     "gets the key",
-     "gets the key"
-    ],
-    [
-     "to plot TEN.",
-     "to plot ten."
-    ]
-   ]
-  },
-  {
-   "id": "L66",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Her shed",
-     "Her shed"
-    ],
-    [
-     "has an",
-     "has an"
-    ],
-    [
-     "EMPTY HOOK.",
-     "empty hook."
-    ]
-   ]
-  },
-  {
-   "id": "L67",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So I",
-     "So I"
-    ],
-    [
-     "hand her",
-     "hand her"
-    ],
-    [
-     "MY CAN.",
-     "my can."
-    ]
-   ]
-  },
-  {
-   "id": "L68",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Mr. Carter",
-     "Mr. Carter"
-    ],
-    [
-     "watches from",
-     "watches from"
-    ],
-    [
-     "his BUCKET,",
-     "his bucket,"
-    ],
-    [
-     "and NODS.",
-     "and nods."
-    ]
-   ]
-  },
-  {
-   "id": "L69",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Tomorrow,",
-     "Tomorrow,"
-    ],
-    [
-     "I'll teach her",
-     "i'll teach her"
-    ],
-    [
-     "to SNIFF",
-     "to sniff"
-    ],
-    [
-     "the SOIL.",
-     "the soil."
-    ]
-   ],
-   "gap": 0.4
-  },
-  {
-   "id": "L70",
-   "who": "narrator",
-   "chunks": [
-    [
-     "My plot",
-     "My plot"
-    ],
-    [
-     "smells like RAIN.",
-     "smells like rain."
-    ],
-    [
-     "It always WILL.",
-     "It always will."
-    ]
-   ],
-   "gap": 0.0
   },
   {
    "id": "P04",
@@ -1618,35 +913,35 @@
     [
      0,
      [
-      3.6,
-      -28.7,
-      0.9
+      -1.0,
+      -13.6,
+      0.7
      ],
      [
-      3.75,
-      -27.3,
-      0.95
+      -3.5,
+      -16.8,
+      1.15
      ],
-     20
+     46
     ],
     [
      1,
      [
-      3.6,
-      -28.5,
-      0.9
+      -1.05,
+      -13.65,
+      0.7
      ],
      [
-      3.75,
-      -27.3,
-      0.95
+      -3.5,
+      -16.8,
+      1.15
      ],
-     19
+     44
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "me bent over the wet soil, face lit, a drop falls off the leaf beside me"
+   "what": "plot six: keys on a stalk, the woman behind"
   },
   {
    "id": "S02",
@@ -1654,35 +949,21 @@
     [
      0,
      [
-      0.25,
-      -0.5,
-      1.9
+      -1.5,
+      -14.6,
+      0.78
      ],
      [
-      0.0,
-      -14,
-      0.9
+      -2.75,
+      -15.6,
+      0.74
      ],
-     19
-    ],
-    [
-     1,
-     [
-      0.25,
-      -1.4,
-      1.9
-     ],
-     [
-      0.0,
-      -14,
-      0.9
-     ],
-     19
+     36
     ]
    ],
    "hand": 0.004,
    "step": 4,
-   "what": "wide from the gate: cracked hill, peach sky",
+   "what": "close on the keys on the stalk, dew",
    "at": "L02"
   },
   {
@@ -1691,21 +972,35 @@
     [
      0,
      [
-      3.5,
-      -9.9,
-      2.7
+      3.3,
+      -2.5,
+      0.55
      ],
      [
-      3.5,
-      -10.05,
-      0.0
+      1.9,
+      -0.6,
+      0.35
      ],
-     22
+     26
+    ],
+    [
+     1,
+     [
+      3.1,
+      -2.3,
+      0.55
+     ],
+     [
+      1.9,
+      -0.6,
+      0.35
+     ],
+     26
     ]
    ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "overhead on a neighbour's cracked bed",
+   "hand": 0.006,
+   "step": 2,
+   "what": "three umbrella handles by the gate",
    "at": "L03"
   },
   {
@@ -1714,35 +1009,35 @@
     [
      0,
      [
-      0.0,
-      0.6,
-      4.6
+      -0.4,
+      -6.4,
+      0.95
      ],
      [
-      0.6,
-      -22,
-      0.3
+      -3.1,
+      -4.1,
+      0.65
      ],
-     19
+     26
     ],
     [
      1,
      [
-      0.0,
-      -0.4,
-      4.2
+      -0.5,
+      -6.2,
+      0.95
      ],
      [
-      0.6,
-      -22,
-      0.3
+      -3.1,
+      -4.1,
+      0.65
      ],
-     19
+     26
     ]
    ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "high wide down the path to plot nine, wet prints",
+   "hand": 0.006,
+   "step": 2,
+   "what": "plot two's flask bush",
    "at": "L04"
   },
   {
@@ -1751,21 +1046,35 @@
     [
      0,
      [
-      0.0,
-      3.5,
-      1.3
+      3.6,
+      -13.4,
+      1.05
      ],
      [
-      0.0,
-      0.4,
-      1.2
+      -0.2,
+      -11.6,
+      0.8
      ],
-     22
+     30
+    ],
+    [
+     1,
+     [
+      3.6,
+      -13.3,
+      1.05
+     ],
+     [
+      -0.2,
+      -11.3,
+      0.8
+     ],
+     30
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "day one, the gate: Mr. Carter and me, the key on twine",
+   "what": "the woman wheels her bike up the path, keys on the bars",
    "at": "L05"
   },
   {
@@ -1774,35 +1083,21 @@
     [
      0,
      [
-      0.55,
-      -1.5,
-      1.35
+      -0.9,
+      -25.0,
+      3.0
      ],
      [
-      0,
-      3.0,
-      1.15
-     ],
-     24
-    ],
-    [
-     1,
-     [
-      0.55,
-      -1.5,
-      1.35
-     ],
-     [
-      0,
-      5.0,
-      1.15
+      -2.3,
+      -27.2,
+      0.0
      ],
      24
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "Mr. Carter from behind, walking out",
+   "hand": 0.004,
+   "step": 4,
+   "what": "plot ten from above: bare raked soil, my wellies",
    "at": "L06"
   },
   {
@@ -1811,35 +1106,21 @@
     [
      0,
      [
-      60.4,
-      0.3,
-      1.2
+      0.9,
+      -26.2,
+      1.55
      ],
      [
-      60.6,
-      1.8,
-      1.0
-     ],
-     28
-    ],
-    [
-     1,
-     [
-      60.5,
-      0.5,
-      1.2
-     ],
-     [
-      60.6,
-      1.8,
-      1.0
+      -2.3,
+      -27.0,
+      1.4
      ],
      28
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "in the shed, dim: twine, oil can, seed packets",
+   "what": "me at plot ten, pleased with myself",
    "at": "L07"
   },
   {
@@ -1848,35 +1129,21 @@
     [
      0,
      [
-      60.0,
-      0.3,
-      1.35
+      0.4,
+      -23.4,
+      1.45
      ],
      [
-      60.0,
-      1.9,
-      1.35
+      3.2,
+      -25.3,
+      1.15
      ],
-     26
-    ],
-    [
-     1,
-     [
-      60.0,
-      0.6,
-      1.35
-     ],
-     [
-      60.0,
-      1.9,
-      1.35
-     ],
-     26
+     50
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the tool wall, one bare hook",
+   "what": "across the path: Grandad on his bucket, a small wave",
    "at": "L08"
   },
   {
@@ -1885,35 +1152,35 @@
     [
      0,
      [
-      0.45,
-      -0.55,
-      1.12
+      0.1,
+      1.8,
+      1.55
      ],
      [
       0.1,
-      0.0,
-      1.05
+      -4.0,
+      1.0
      ],
-     38
+     26
     ],
     [
      1,
      [
-      0.4,
-      -0.45,
-      1.1
+      0.1,
+      0.8,
+      1.55
      ],
      [
       0.1,
-      0.0,
-      1.05
+      -4.0,
+      1.0
      ],
-     38
+     26
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the padlock, beaded",
+   "what": "walking down the path at dawn, the two of us",
    "at": "L09"
   },
   {
@@ -1922,22 +1189,22 @@
     [
      0,
      [
-      1.5,
-      -3.2,
-      1.55
+      1.9,
+      -0.9,
+      1.35
      ],
      [
-      0.2,
-      -0.9,
-      1.5
+      0.3,
+      -1.8,
+      1.35
      ],
-     30
+     36
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "me at the gate looking down the valley",
-   "at": "L10"
+   "what": "Grandad tips his cap to the stake at plot one",
+   "at": "L09.3-0.25"
   },
   {
    "id": "S11",
@@ -1945,22 +1212,22 @@
     [
      0,
      [
-      0.55,
-      2.2,
-      1.7
+      -1.9,
+      -6.8,
+      1.35
      ],
      [
-      3.0,
-      -3.8,
-      0.35
+      -0.3,
+      -7.6,
+      1.35
      ],
-     22
+     36
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "over my shoulder: a lump in plot one",
-   "at": "L11"
+   "what": "...at plot four",
+   "at": "L09.3+0.2"
   },
   {
    "id": "S12",
@@ -1968,22 +1235,22 @@
     [
      0,
      [
-      1.3,
-      -5.3,
-      0.55
+      1.9,
+      -18.9,
+      1.35
      ],
      [
-      3.4,
-      -3.7,
-      0.3
+      0.3,
+      -19.6,
+      1.35
      ],
-     24
+     36
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "plot one, head and shoulders",
-   "at": "L12"
+   "what": "...at plot seven",
+   "at": "L09.3+0.65"
   },
   {
    "id": "S13",
@@ -1991,22 +1258,36 @@
     [
      0,
      [
-      2.2,
-      -5.0,
-      0.55
+      60.4,
+      0.1,
+      1.42
      ],
      [
-      3.4,
-      -3.65,
-      0.28
+      60.45,
+      1.8,
+      1.38
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      60.4,
+      0.3,
+      1.42
+     ],
+     [
+      60.45,
+      1.8,
+      1.38
      ],
      30
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the roots on the head and shoulders",
-   "at": "L13"
+   "hand": 0.004,
+   "step": 4,
+   "what": "the tool wall: the green scarf on its hook",
+   "at": "L10"
   },
   {
    "id": "S14",
@@ -2014,22 +1295,22 @@
     [
      0,
      [
-      3.55,
-      -5.7,
-      0.27
+      2.9,
+      -24.6,
+      0.85
      ],
      [
-      3.4,
-      -3.6,
-      0.27
+      3.8,
+      -26.85,
+      0.6
      ],
-     26
+     34
     ]
    ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "its face: two green points",
-   "at": "L14"
+   "hand": 0.006,
+   "step": 2,
+   "what": "glasses on a stalk in the beans",
+   "at": "L11"
   },
   {
    "id": "S15",
@@ -2037,22 +1318,22 @@
     [
      0,
      [
-      -1.4,
-      -4.2,
-      1.55
+      4.7,
+      -22.9,
+      1.35
      ],
      [
-      0.9,
-      -2.3,
-      1.3
+      3.2,
+      -25.3,
+      1.1
      ],
-     24
+     32
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "me on the path, a careful distance",
-   "at": "L15"
+   "what": "Grandad, peering at them",
+   "at": "L11.2"
   },
   {
    "id": "S16",
@@ -2060,22 +1341,22 @@
     [
      0,
      [
-      2.5,
-      -4.6,
-      0.4
+      3.3,
+      -24.6,
+      0.85
      ],
      [
-      3.6,
-      -3.7,
-      0.12
+      3.85,
+      -27.45,
+      0.6
      ],
      34
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the wet shoulder",
-   "at": "L16"
+   "what": "his cap on a stalk",
+   "at": "L12"
   },
   {
    "id": "S17",
@@ -2083,16 +1364,131 @@
     [
      0,
      [
-      0.7,
-      -6.0,
-      0.55
+      4.2,
+      -22.6,
+      1.4
+     ],
+     [
+      3.2,
+      -25.3,
+      1.2
+     ],
+     32
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "Grandad bareheaded, laughing",
+   "at": "L12.1"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      2.3,
+      1.65
      ],
      [
       3.4,
-      -3.7,
-      0.2
+      -3.6,
+      0.4
      ],
-     26
+     24
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "over my shoulder: a lump in plot one",
+   "at": "L13"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      1.1,
+      -3.7,
+      0.5
+     ],
+     [
+      3.4,
+      -3.6,
+      0.38
+     ],
+     30
+    ]
+   ],
+   "hand": 0.004,
+   "step": 4,
+   "what": "plot one: the head and shoulders in profile, the knot",
+   "at": "L14"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      3.5,
+      -5.5,
+      0.4
+     ],
+     [
+      3.4,
+      -3.6,
+      0.38
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 4,
+   "what": "its face: two green points",
+   "at": "L15"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      1.75,
+      -2.5,
+      1.45
+     ],
+     [
+      0.45,
+      -0.9,
+      1.4
+     ],
+     36
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "Grandad at the gate, still",
+   "at": "L16"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      1.1,
+      -3.7,
+      0.5
+     ],
+     [
+      3.4,
+      -3.6,
+      0.0
+     ],
+     28
     ]
    ],
    "hand": 0.004,
@@ -2101,53 +1497,30 @@
    "at": "L17"
   },
   {
-   "id": "S18",
+   "id": "S23",
    "cam": [
     [
      0,
      [
-      3.4,
-      -3.5,
-      2.5
-     ],
-     [
-      3.4,
-      -3.62,
-      0.0
-     ],
-     24
-    ]
-   ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "overhead on the hole",
-   "at": "L18"
-  },
-  {
-   "id": "S19",
-   "cam": [
-    [
-     0,
-     [
-      2.1,
-      -4.7,
-      0.7
+      2.4,
+      -4.8,
+      0.9
      ],
      [
       3.4,
       -3.6,
-      0.45
+      0.1
      ],
      28
     ]
    ],
-   "hand": 0.006,
-   "step": 1,
-   "what": "beside the hole: a pebble drops in",
-   "at": "L19"
+   "hand": 0.004,
+   "step": 4,
+   "what": "over the hole: a pebble drops in",
+   "at": "L18"
   },
   {
-   "id": "S20",
+   "id": "S24",
    "cam": [
     [
      0,
@@ -2170,7 +1543,7 @@
    "at": "P01"
   },
   {
-   "id": "S21",
+   "id": "S25",
    "cam": [
     [
      0,
@@ -2180,109 +1553,17 @@
       1.4
      ],
      [
-      2.8,
-      -4.2,
-      1.15
-     ],
-     22
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "me at the hole, scared",
-   "at": "L20"
-  },
-  {
-   "id": "S22",
-   "cam": [
-    [
-     0,
-     [
-      -1.0,
-      -7.2,
-      0.8
-     ],
-     [
-      -3.6,
-      -10.0,
-      0.4
+      2.6,
+      -4.3,
+      1.0
      ],
      24
     ]
    ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "wide down the path: the hole and the head in plot four",
-   "at": "L21"
-  },
-  {
-   "id": "S23",
-   "cam": [
-    [
-     0,
-     [
-      3.0,
-      -26.4,
-      0.75
-     ],
-     [
-      3.6,
-      -27.7,
-      0.62
-     ],
-     36
-    ]
-   ],
    "hand": 0.006,
    "step": 2,
-   "what": "plot nine dripping in the low gold sun",
-   "at": "L22"
-  },
-  {
-   "id": "S24",
-   "cam": [
-    [
-     0,
-     [
-      0.5,
-      -17.0,
-      0.9
-     ],
-     [
-      3.4,
-      -22.0,
-      0.35
-     ],
-     28
-    ]
-   ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "long lens from the gate: the head in plot seven",
-   "at": "L23"
-  },
-  {
-   "id": "S25",
-   "cam": [
-    [
-     0,
-     [
-      0.9,
-      -24.6,
-      0.65
-     ],
-     [
-      3.4,
-      -22.0,
-      0.45
-     ],
-     26
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "plot seven, higher out of the dirt",
-   "at": "L24"
+   "what": "me crouched by the hole, scared",
+   "at": "L19"
   },
   {
    "id": "S26",
@@ -2290,22 +1571,22 @@
     [
      0,
      [
-      -1.8,
-      -8.7,
-      1.0
+      4.0,
+      -1.6,
+      0.55
      ],
      [
-      -3.55,
-      -9.95,
-      0.35
+      -2.0,
+      -9.6,
+      0.6
      ],
-     26
+     22
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the cane going into plot four's hole",
-   "at": "L25"
+   "hand": 0.004,
+   "step": 4,
+   "what": "wide: the hole, and the head in plot four",
+   "at": "L20"
   },
   {
    "id": "S27",
@@ -2313,22 +1594,22 @@
     [
      0,
      [
-      -3.0,
-      -9.3,
-      0.55
+      0.5,
+      -1.0,
+      1.0
      ],
      [
-      -3.55,
-      -9.95,
-      0.3
+      3.4,
+      -22.0,
+      0.5
      ],
-     40
+     70
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the cane's top end sinking",
-   "at": "L26"
+   "hand": 0.004,
+   "step": 4,
+   "what": "long lens from the gate: the head in plot seven",
+   "at": "L21"
   },
   {
    "id": "S28",
@@ -2336,22 +1617,22 @@
     [
      0,
      [
-      -1.6,
-      -2.6,
-      1.5
+      0.8,
+      -22.0,
+      0.85
      ],
      [
-      0.0,
-      0.7,
-      1.25
+      3.4,
+      -22.0,
+      0.75
      ],
-     22
+     34
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the gate at an earlier, bluer dawn",
-   "at": "L27"
+   "what": "plot seven: out to the chest, knot in profile",
+   "at": "L21.2"
   },
   {
    "id": "S29",
@@ -2359,22 +1640,22 @@
     [
      0,
      [
-      0.4,
-      -0.5,
-      1.0
+      3.7,
+      -27.4,
+      1.25
      ],
      [
-      0.1,
-      0.0,
-      0.95
+      3.2,
+      -25.3,
+      1.05
      ],
-     40
+     38
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the padlock running with water",
-   "at": "L28"
+   "what": "Grandad on his bucket, chatting to the beans",
+   "at": "L22"
   },
   {
    "id": "S30",
@@ -2382,25 +1663,48 @@
     [
      0,
      [
-      0.6,
-      -19.0,
-      1.5
+      2.1,
+      -22.9,
+      1.25
      ],
      [
       3.2,
-      -23.0,
-      0.5
+      -25.3,
+      1.1
      ],
-     22
+     40
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "Grandad, worried, mid-sentence",
+   "at": "L23"
+  },
+  {
+   "id": "S31",
+   "cam": [
+    [
+     0,
+     [
+      -0.8,
+      -28.4,
+      1.6
+     ],
+     [
+      0.5,
+      -26.4,
+      1.5
+     ],
+     40
     ]
    ],
    "hand": 0.004,
    "step": 4,
-   "what": "high wide: plot seven, eight, nine and the shed",
-   "at": "L29"
+   "what": "me, worried; far up the path the head in plot seven",
+   "at": "L24"
   },
   {
-   "id": "S31",
+   "id": "S32",
    "cam": [
     [
      0,
@@ -2434,30 +1738,7 @@
    "hand": 0.004,
    "step": 4,
    "what": "wide over the bottom fence: mist coming up",
-   "at": "L30"
-  },
-  {
-   "id": "S32",
-   "cam": [
-    [
-     0,
-     [
-      0.95,
-      -1.0,
-      0.55
-     ],
-     [
-      0.12,
-      -0.05,
-      0.55
-     ],
-     28
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "drops from the padlock onto green wellies",
-   "at": "L31"
+   "at": "L25"
   },
   {
    "id": "S33",
@@ -2465,22 +1746,22 @@
     [
      0,
      [
-      0.2,
-      1.6,
-      1.7
+      0.45,
+      -28.2,
+      1.45
      ],
      [
-      0.0,
-      -6.0,
-      0.8
+      3.85,
+      -28.8,
+      0.7
      ],
      24
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "me walking the path",
-   "at": "L32"
+   "what": "between the beans, a shape with its back to us",
+   "at": "L26"
   },
   {
    "id": "S34",
@@ -2488,22 +1769,22 @@
     [
      0,
      [
-      1.2,
-      -1.2,
-      1.4
+      0.45,
+      -28.2,
+      1.45
      ],
      [
-      3.4,
-      -3.6,
-      0.0
+      3.85,
+      -28.8,
+      0.7
      ],
      24
     ]
    ],
    "hand": 0.004,
    "step": 4,
-   "what": "the hole in plot one, in fog",
-   "at": "L32.2"
+   "what": "hold",
+   "at": "P02"
   },
   {
    "id": "S35",
@@ -2511,22 +1792,22 @@
     [
      0,
      [
-      -1.2,
-      -7.0,
-      1.4
+      0.9,
+      -28.5,
+      1.1
      ],
      [
-      -3.6,
-      -10.0,
-      0.0
+      3.85,
+      -28.8,
+      0.88
      ],
      24
     ]
    ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "the hole in plot four, in fog",
-   "at": "L32.3+0.12"
+   "hand": 0.006,
+   "step": 1,
+   "what": "its head turned all the way round",
+   "at": "L27"
   },
   {
    "id": "S36",
@@ -2534,9 +1815,147 @@
     [
      0,
      [
-      1.2,
-      -19.2,
+      4.7,
+      -29.5,
       1.4
+     ],
+     [
+      2.95,
+      -26.25,
+      1.45
+     ],
+     65
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "over its shoulder: Grandad by his shed door",
+   "at": "L27.3"
+  },
+  {
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      3.9,
+      -27.6,
+      1.5
+     ],
+     [
+      2.95,
+      -26.25,
+      1.45
+     ],
+     36
+    ]
+   ],
+   "hand": 0.006,
+   "step": 2,
+   "what": "Grandad looks right back",
+   "at": "L28"
+  },
+  {
+   "id": "S38",
+   "cam": [
+    [
+     0,
+     [
+      2.75,
+      -28.8,
+      0.92
+     ],
+     [
+      3.85,
+      -28.8,
+      0.78
+     ],
+     34
+    ]
+   ],
+   "hand": 0.004,
+   "step": 4,
+   "what": "close on the root knot under its chin",
+   "at": "L29.1"
+  },
+  {
+   "id": "S39",
+   "cam": [
+    [
+     0,
+     [
+      60.0,
+      0.2,
+      1.5
+     ],
+     [
+      60.28,
+      1.8,
+      1.32
+     ],
+     34
+    ]
+   ],
+   "hand": 0.004,
+   "step": 4,
+   "what": "the scarf's knot on the hook, same framing",
+   "at": "L29.4"
+  },
+  {
+   "id": "S40",
+   "cam": [
+    [
+     0,
+     [
+      3.2,
+      -31.8,
+      2.4
+     ],
+     [
+      3.2,
+      -28.8,
+      0.9
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 4,
+   "what": "side-on wide: Grandad and the head across the bean row",
+   "at": "L30"
+  },
+  {
+   "id": "S41",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.0,
+      7.0
+     ],
+     [
+      0.2,
+      -20.0,
+      0.0
+     ],
+     22
+    ]
+   ],
+   "hand": 0.004,
+   "step": 4,
+   "what": "high wide down the path: holes in a line, the head in nine",
+   "at": "L31"
+  },
+  {
+   "id": "S42",
+   "cam": [
+    [
+     0,
+     [
+      3.4,
+      -21.9,
+      2.6
      ],
      [
       3.4,
@@ -2548,160 +1967,8 @@
    ],
    "hand": 0.004,
    "step": 4,
-   "what": "the hole in plot seven, in fog",
-   "at": "L32.5"
-  },
-  {
-   "id": "S37",
-   "cam": [
-    [
-     0,
-     [
-      0.1,
-      -27.6,
-      1.55
-     ],
-     [
-      3.5,
-      -29.5,
-      0.9
-     ],
-     22
-    ],
-    [
-     1,
-     [
-      0.15,
-      -28.5,
-      1.55
-     ],
-     [
-      3.5,
-      -29.2,
-      0.9
-     ],
-     22
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "my walk: the cane wigwams come out of the fog",
-   "at": "L33"
-  },
-  {
-   "id": "S38",
-   "cam": [
-    [
-     0,
-     [
-      0.45,
-      -28.2,
-      1.45
-     ],
-     [
-      3.85,
-      -28.8,
-      0.55
-     ],
-     24
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "between the beans, a shape with its back to us",
-   "at": "L34"
-  },
-  {
-   "id": "S39",
-   "cam": [
-    [
-     0,
-     [
-      0.45,
-      -28.2,
-      1.45
-     ],
-     [
-      3.85,
-      -28.8,
-      0.55
-     ],
-     24
-    ]
-   ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "hold",
-   "at": "P02"
-  },
-  {
-   "id": "S40",
-   "cam": [
-    [
-     0,
-     [
-      1.1,
-      -28.3,
-      1.15
-     ],
-     [
-      3.85,
-      -28.8,
-      0.55
-     ],
-     22
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "from behind it: out to the chest",
-   "at": "L35"
-  },
-  {
-   "id": "S41",
-   "cam": [
-    [
-     0,
-     [
-      3.9,
-      -31.2,
-      0.6
-     ],
-     [
-      3.85,
-      -28.8,
-      0.35
-     ],
-     24
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "side-on: the arms go into the soil",
-   "at": "L36"
-  },
-  {
-   "id": "S42",
-   "cam": [
-    [
-     0,
-     [
-      4.7,
-      -30.2,
-      0.14
-     ],
-     [
-      3.85,
-      -29.3,
-      0.1
-     ],
-     30
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "low at the soil line where an arm goes in",
-   "at": "L37"
+   "what": "overhead on plot seven's hole",
+   "at": "L32"
   },
   {
    "id": "S43",
@@ -2709,22 +1976,22 @@
     [
      0,
      [
-      -0.3,
-      -26.5,
-      0.6
+      2.8,
+      -29.9,
+      0.55
      ],
      [
-      0.5,
-      -28.2,
-      0.2
+      3.85,
+      -28.8,
+      0.5
      ],
-     22
+     30
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "my wellies on the wet path",
-   "at": "L38"
+   "hand": 0.004,
+   "step": 4,
+   "what": "where its waist meets the soil",
+   "at": "L32.2"
   },
   {
    "id": "S44",
@@ -2732,22 +1999,22 @@
     [
      0,
      [
-      0.9,
-      -28.5,
-      1.0
+      2.9,
+      -30.9,
+      1.5
      ],
      [
-      3.85,
-      -28.8,
-      0.62
+      3.0,
+      -29.3,
+      1.45
      ],
-     24
+     34
     ]
    ],
    "hand": 0.006,
-   "step": 1,
-   "what": "its head turned all the way round",
-   "at": "L39"
+   "step": 2,
+   "what": "me, from the head to Grandad",
+   "at": "L33"
   },
   {
    "id": "S45",
@@ -2755,22 +2022,22 @@
     [
      0,
      [
-      5.5,
-      -28.2,
-      1.4
+      3.9,
+      -29.7,
+      1.5
      ],
      [
-      3.1,
-      -27.9,
-      1.35
+      3.0,
+      -29.3,
+      1.45
      ],
-     28
+     34
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "over its shoulder: me, the shed door behind me",
-   "at": "L40"
+   "what": "me, resolved, turning to Grandad",
+   "at": "L34"
   },
   {
    "id": "S46",
@@ -2778,22 +2045,36 @@
     [
      0,
      [
-      -1.0,
-      -30.7,
-      1.2
+      0.0,
+      -24.8,
+      1.5
      ],
      [
-      3.0,
-      -27.5,
-      0.9
+      0.0,
+      -14.0,
+      1.0
      ],
-     19
+     26
+    ],
+    [
+     1,
+     [
+      0.0,
+      -23.0,
+      1.5
+     ],
+     [
+      0.0,
+      -13.0,
+      1.0
+     ],
+     26
     ]
    ],
    "hand": 0.004,
    "step": 4,
-   "what": "side-on wide: the Digger, me, the shed in a line",
-   "at": "L41"
+   "what": "from behind: the two of us walking up the path",
+   "at": "L35"
   },
   {
    "id": "S47",
@@ -2801,22 +2082,22 @@
     [
      0,
      [
-      4.5,
-      -26.9,
+      0.7,
+      -2.6,
       1.5
      ],
      [
-      3.0,
-      -27.6,
+      2.4,
+      -4.6,
       1.3
      ],
-     20
+     30
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "my face; the door opens behind me",
-   "at": "L42"
+   "what": "at plot one's hole, me telling him",
+   "at": "L36"
   },
   {
    "id": "S48",
@@ -2824,22 +2105,22 @@
     [
      0,
      [
-      3.2,
-      -24.4,
-      1.45
+      -0.3,
+      -8.0,
+      1.55
      ],
      [
-      2.65,
-      -26.95,
-      1.25
+      -2.4,
+      -8.8,
+      1.45
      ],
-     26
+     38
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Mr. Carter in the doorway with the can",
-   "at": "L43"
+   "what": "plot four's hole: his face starts to change",
+   "at": "L36.2"
   },
   {
    "id": "S49",
@@ -2847,22 +2128,22 @@
     [
      0,
      [
-      3.7,
-      -24.9,
-      0.5
+      0.4,
+      -20.2,
+      1.5
      ],
      [
-      2.7,
-      -26.9,
-      0.4
+      2.2,
+      -21.6,
+      1.4
      ],
-     26
+     34
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "his soaked trousers",
-   "at": "L44"
+   "what": "plot seven: Grandad nods",
+   "at": "L37"
   },
   {
    "id": "S50",
@@ -2870,22 +2151,22 @@
     [
      0,
      [
-      3.9,
-      -24.5,
-      1.5
+      0.6,
+      -21.0,
+      1.3
      ],
      [
-      2.95,
-      -26.3,
-      1.4
+      1.7,
+      -26.7,
+      1.0
      ],
-     24
+     28
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "Mr. Carter sees it",
-   "at": "L45"
+   "hand": 0.004,
+   "step": 4,
+   "what": "his shed down the hill in the fog",
+   "at": "L37.1"
   },
   {
    "id": "S51",
@@ -2893,232 +2174,25 @@
     [
      0,
      [
-      0.65,
-      -0.75,
-      1.1
+      3.2,
+      -31.0,
+      1.45
      ],
      [
-      0.1,
-      0.0,
-      1.05
-     ],
-     32
-    ]
-   ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "the gate at night: the key in the padlock",
-   "at": "L46"
-  },
-  {
-   "id": "S52",
-   "cam": [
-    [
-     0,
-     [
-      0.5,
-      3.0,
-      1.6
-     ],
-     [
-      0.0,
-      -14.0,
-      0.6
-     ],
-     19
-    ]
-   ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "night wide down the path, the gate open",
-   "at": "L47"
-  },
-  {
-   "id": "S53",
-   "cam": [
-    [
-     0,
-     [
-      3.0,
-      -26.3,
-      0.85
-     ],
-     [
-      3.6,
-      -28.4,
-      0.6
+      3.2,
+      -28.8,
+      1.3
      ],
      28
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "plot nine at night: water on the leaves",
-   "at": "L48"
-  },
-  {
-   "id": "S54",
-   "cam": [
-    [
-     0,
-     [
-      3.9,
-      -24.6,
-      1.3
-     ],
-     [
-      2.95,
-      -26.3,
-      1.4
-     ],
-     26
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "Friday: Mr. Carter, the can at his side",
-   "at": "L49"
-  },
-  {
-   "id": "S55",
-   "cam": [
-    [
-     0,
-     [
-      1.0,
-      -1.0,
-      4.5
-     ],
-     [
-      0.0,
-      -19.0,
-      0.0
-     ],
-     19
-    ]
-   ],
    "hand": 0.004,
    "step": 4,
-   "what": "high wide of the path in fog: holes beside the prints",
-   "at": "L50"
+   "what": "face to face across the bean row, the fog thinning",
+   "at": "L38"
   },
   {
-   "id": "S56",
-   "cam": [
-    [
-     0,
-     [
-      3.2,
-      -25.3,
-      1.55
-     ],
-     [
-      3.85,
-      -28.8,
-      0.75
-     ],
-     24
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "over Mr. Carter's shoulder: its green eyes on him",
-   "at": "L51"
-  },
-  {
-   "id": "S57",
-   "cam": [
-    [
-     0,
-     [
-      3.3,
-      -25.5,
-      0.85
-     ],
-     [
-      2.95,
-      -26.0,
-      0.72
-     ],
-     38
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the can's rose, dripping",
-   "at": "L52"
-  },
-  {
-   "id": "S58",
-   "cam": [
-    [
-     0,
-     [
-      4.4,
-      -29.3,
-      1.5
-     ],
-     [
-      3.1,
-      -27.9,
-      1.4
-     ],
-     22
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "me, from him to the plot",
-   "at": "L53"
-  },
-  {
-   "id": "S59",
-   "cam": [
-    [
-     0,
-     [
-      4.0,
-      -24.6,
-      1.45
-     ],
-     [
-      3.1,
-      -27.0,
-      1.3
-     ],
-     22
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "two shot by the shed; the fog thins",
-   "at": "L54"
-  },
-  {
-   "id": "S60",
-   "cam": [
-    [
-     0,
-     [
-      3.5,
-      -24.4,
-      1.3
-     ],
-     [
-      2.95,
-      -26.25,
-      1.42
-     ],
-     24
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "Mr. Carter, a small smile",
-   "at": "L55"
-  },
-  {
-   "id": "S61",
+   "id": "S52",
    "cam": [
     [
      0,
@@ -3128,427 +2202,194 @@
       1.1
      ],
      [
-      3.85,
+      3.5,
       -28.8,
-      0.4
+      0.5
      ],
      21
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "wide from the path: the soil settles",
-   "at": "L56"
-  },
-  {
-   "id": "S62",
-   "cam": [
-    [
-     0,
-     [
-      0.45,
-      -28.2,
-      1.45
-     ],
-     [
-      3.85,
-      -28.8,
-      0.55
-     ],
-     24
-    ]
-   ],
    "hand": 0.004,
    "step": 4,
-   "what": "the same angle as L34, clear morning: nothing",
-   "at": "L57"
+   "what": "the head sinks to the shoulders",
+   "at": "L39"
   },
   {
-   "id": "S63",
-   "cam": [
-    [
-     0,
-     [
-      3.85,
-      -28.7,
-      2.3
-     ],
-     [
-      3.85,
-      -28.82,
-      0.0
-     ],
-     24
-    ]
-   ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "overhead on the hole",
-   "at": "L58"
-  },
-  {
-   "id": "S64",
+   "id": "S53",
    "cam": [
     [
      0,
      [
       3.5,
-      -27.0,
-      1.3
+      -26.9,
+      1.2
      ],
      [
-      3.7,
+      3.85,
       -28.8,
-      0.6
+      0.0
      ],
-     24
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the torch over the hole",
-   "at": "L59"
-  },
-  {
-   "id": "S65",
-   "cam": [
-    [
-     0,
-     [
-      120.0,
-      0.0,
-      1.0
-     ],
-     [
-      120.0,
-      0.02,
-      -5
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      120.0,
-      0.0,
-      -2.2
-     ],
-     [
-      120.0,
-      0.02,
-      -8
-     ],
-     30
+     26
     ]
    ],
    "hand": 0.004,
    "step": 4,
-   "what": "down the shaft: the pale floor and a hand",
-   "at": "P03"
+   "what": "flat dark soil, a round dent",
+   "at": "L39.2"
   },
   {
-   "id": "S66",
+   "id": "S54",
    "cam": [
     [
      0,
      [
-      2.0,
-      -30.0,
+      60.35,
+      0.3,
+      1.45
+     ],
+     [
+      60.45,
+      1.8,
+      1.4
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      60.4,
+      0.2,
+      1.45
+     ],
+     [
+      60.45,
+      1.8,
+      1.4
+     ],
+     32
+    ]
+   ],
+   "hand": 0.004,
+   "step": 4,
+   "what": "the shed wall: his cap by her scarf",
+   "at": "L40"
+  },
+  {
+   "id": "S55",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.0,
+      6.5
+     ],
+     [
+      0.2,
+      -18.0,
+      0.0
+     ],
+     20
+    ]
+   ],
+   "hand": 0.004,
+   "step": 4,
+   "what": "high wide down the hill, grey dawn",
+   "at": "L41"
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      -30.4,
       1.4
      ],
      [
-      3.4,
-      -29.0,
-      0.7
-     ],
-     24
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "I fill it, one spade at a time",
-   "at": "L60"
-  },
-  {
-   "id": "S67",
-   "cam": [
-    [
-     0,
-     [
-      3.4,
-      -27.6,
-      1.05
-     ],
-     [
-      3.2,
-      -25.3,
-      0.95
+      -3.0,
+      -28.0,
+      0.4
      ],
      26
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Mr. Carter on his bucket, teaching",
-   "at": "L61"
+   "what": "plot ten: a crown just breaks the soil",
+   "at": "L42"
   },
   {
-   "id": "S68",
+   "id": "S57",
    "cam": [
     [
      0,
      [
-      4.9,
-      -27.7,
-      1.2
+      -1.8,
+      -28.0,
+      0.3
      ],
      [
-      3.1,
-      -27.3,
-      1.0
-     ],
-     24
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "me watering at dusk",
-   "at": "L62"
-  },
-  {
-   "id": "S69",
-   "cam": [
-    [
-     0,
-     [
-      4.4,
-      -28.2,
-      1.1
-     ],
-     [
-      3.1,
-      -27.0,
-      0.9
-     ],
-     22
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "I sniff the soil; Mr. Carter nods behind",
-   "at": "L63"
-  },
-  {
-   "id": "S70",
-   "cam": [
-    [
-     0,
-     [
-      -2.0,
-      -17.5,
-      7.0
-     ],
-     [
-      3.0,
-      -27.0,
-      0.4
-     ],
-     22
-    ]
-   ],
-   "hand": 0.004,
-   "step": 4,
-   "what": "high wide: plot nine full, the others green",
-   "at": "L64"
-  },
-  {
-   "id": "S71",
-   "cam": [
-    [
-     0,
-     [
-      2.3,
-      -19.6,
-      1.3
-     ],
-     [
-      -0.4,
-      -19.6,
-      1.2
-     ],
-     22
-    ],
-    [
-     1,
-     [
-      2.3,
-      -19.7,
-      1.3
-     ],
-     [
-      -0.4,
-      -19.7,
-      1.2
-     ],
-     22
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "the newcomer wheels her bike down the path, side-on",
-   "at": "L65"
-  },
-  {
-   "id": "S72",
-   "cam": [
-    [
-     0,
-     [
-      80.15,
-      0.5,
-      1.45
-     ],
-     [
-      80.28,
-      1.9,
-      1.42
-     ],
-     34
-    ],
-    [
-     1,
-     [
-      80.2,
-      0.8,
-      1.45
-     ],
-     [
-      80.28,
-      1.9,
-      1.42
-     ],
-     34
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "plot ten's shed: an empty hook with its clean outline",
-   "at": "L66"
-  },
-  {
-   "id": "S73",
-   "cam": [
-    [
-     0,
-     [
-      0.0,
-      -24.0,
-      1.2
-     ],
-     [
-      -0.03,
-      -26.4,
-      1.15
+      -3.5,
+      -28.0,
+      0.2
      ],
      30
     ]
    ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "my sleeve and the can toward her sleeve",
-   "at": "L67"
-  },
-  {
-   "id": "S74",
-   "cam": [
-    [
-     0,
-     [
-      3.3,
-      -27.5,
-      1.0
-     ],
-     [
-      3.2,
-      -25.3,
-      0.95
-     ],
-     28
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "Mr. Carter nods from his bucket",
-   "at": "L68"
-  },
-  {
-   "id": "S75",
-   "cam": [
-    [
-     0,
-     [
-      -1.4,
-      -23.8,
-      1.5
-     ],
-     [
-      -0.1,
-      -26.2,
-      1.3
-     ],
-     22
-    ]
-   ],
-   "hand": 0.006,
-   "step": 2,
-   "what": "me and the newcomer at plot ten's edge",
-   "at": "L69"
-  },
-  {
-   "id": "S76",
-   "cam": [
-    [
-     0,
-     [
-      6.9,
-      -23.4,
-      2.3
-     ],
-     [
-      3.5,
-      -28.2,
-      0.6
-     ],
-     20
-    ],
-    [
-     1,
-     [
-      6.9,
-      -23.9,
-      2.3
-     ],
-     [
-      3.5,
-      -28.2,
-      0.6
-     ],
-     20
-    ]
-   ],
    "hand": 0.004,
    "step": 4,
-   "what": "plot nine, wet and gold at sunrise",
-   "at": "L70"
+   "what": "the crown, low and close",
+   "at": "L43"
   }
  ],
  "acting": {
   "me": [
    {
     "at": 0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L06",
     "pos": [
-     3.95,
-     -27.1
+     -0.8,
+     -26.9
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     20
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": -90
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -0.8,
+     -26.9
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
+     -2.2,
+     -27.0
     ],
     "blend": 0,
     "hidden": false,
@@ -3564,39 +2405,25 @@
      0,
      4
     ],
-    "lean": 6,
+    "lean": 0,
     "tremble": 0,
     "blink": true,
     "sit": false,
-    "expr": "neutral",
-    "yaw": 0
+    "expr": "smile",
+    "yaw": 90
    },
    {
-    "at": "L01.1",
-    "head": [
-     0,
-     8
-    ],
-    "lean": 0,
-    "blend": 0.6
-   },
-   {
-    "at": "L02",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L05",
+    "at": "L08",
     "pos": [
-     3.95,
-     -27.1
+     -2.2,
+     -27.0
     ]
    },
    {
-    "at": "L05",
+    "at": "L08",
     "pos": [
-     0.5,
-     0.4
+     -0.2,
+     -24.2
     ],
     "blend": 0,
     "hidden": false,
@@ -3610,66 +2437,27 @@
     ],
     "head": [
      0,
-     0
+     -4
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": -90
+    "yaw": 90
    },
    {
-    "at": "L06",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L10",
+    "at": "L09",
     "pos": [
-     0.5,
-     0.4
+     -0.2,
+     -24.2
     ]
    },
    {
-    "at": "L10",
+    "at": "L09",
     "pos": [
-     0.35,
-     -0.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 26.6
-   },
-   {
-    "at": "L11",
-    "pos": [
-     0.35,
-     -0.9
-    ]
-   },
-   {
-    "at": "L11",
-    "pos": [
-     0.15,
-     0.9
+     -0.38,
+     -0.2
     ],
     "blend": 0,
     "hidden": false,
@@ -3693,22 +2481,29 @@
     "yaw": 0
    },
    {
-    "at": "L11.1",
+    "at": "L09.3-0.55",
+    "pos": [
+     -0.38,
+     -3.0
+    ]
+   },
+   {
+    "at": "L09.3-0.25",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L15",
+    "at": "L13",
     "pos": [
-     0.15,
-     0.9
+     -0.38,
+     -3.0
     ]
    },
    {
-    "at": "L15",
+    "at": "L13",
     "pos": [
-     0.3,
-     -2.2
+     0.55,
+     0.9
     ],
     "blend": 0,
     "hidden": false,
@@ -3722,29 +2517,29 @@
     ],
     "head": [
      0,
-     0
+     4
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
     "sit": false,
-    "expr": "worried",
-    "yaw": 65.7
+    "expr": "neutral",
+    "yaw": 0
    },
    {
-    "at": "L16",
+    "at": "L14",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L20",
+    "at": "L19",
     "pos": [
-     0.3,
-     -2.2
+     0.55,
+     0.9
     ]
    },
    {
-    "at": "L20",
+    "at": "L19",
     "pos": [
      2.45,
      -4.1
@@ -3771,22 +2566,178 @@
     "yaw": 117.8
    },
    {
-    "at": "L21",
+    "at": "L20",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L27",
+    "at": "L24",
     "pos": [
      2.45,
      -4.1
     ]
    },
    {
-    "at": "L27",
+    "at": "L24",
     "pos": [
-     0.0,
-     3.2
+     0.5,
+     -26.4
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "worried",
+    "yaw": -33.0
+   },
+   {
+    "at": "L25",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L30",
+    "pos": [
+     0.5,
+     -26.4
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     4.9,
+     -30.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "worried",
+    "yaw": 180
+   },
+   {
+    "at": "L33",
+    "pos": [
+     4.9,
+     -30.0
+    ]
+   },
+   {
+    "at": "L33",
+    "pos": [
+     2.9,
+     -29.5
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     12
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "scared",
+    "yaw": 126.4
+   },
+   {
+    "at": "L33.1",
+    "yaw": -153.4,
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.7
+   },
+   {
+    "at": "L34",
+    "pos": [
+     2.9,
+     -29.5
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     3.2,
+     -30.1
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": -153.4
+   },
+   {
+    "at": "L34.1",
+    "expr": "neutral",
+    "yaw": -153.4,
+    "blend": 0.4
+   },
+   {
+    "at": "L35",
+    "pos": [
+     3.2,
+     -30.1
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     -0.4,
+     -22.0
     ],
     "blend": 0,
     "hidden": false,
@@ -3810,29 +2761,24 @@
     "yaw": 180
    },
    {
-    "at": "L27+1.4",
+    "at": "L35>",
     "pos": [
-     0.0,
-     0.9
+     -0.4,
+     -19.2
     ]
    },
    {
-    "at": "L28",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L31",
+    "at": "L36",
     "pos": [
-     0.0,
-     0.9
+     -0.4,
+     -19.2
     ]
    },
    {
-    "at": "L31",
+    "at": "L36",
     "pos": [
-     0.12,
-     -0.15
+     1.7,
+     -4.5
     ],
     "blend": 0,
     "hidden": false,
@@ -3853,291 +2799,11 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": 180
+    "yaw": 90.0
    },
    {
-    "at": "L32",
-    "pos": [
-     0.12,
-     -0.15
-    ]
-   },
-   {
-    "at": "L32",
-    "pos": [
-     0.12,
-     -0.8
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 0
-   },
-   {
-    "at": "L32+2.0",
-    "pos": [
-     0.12,
-     -5.8
-    ]
-   },
-   {
-    "at": "L32.2",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L38",
-    "pos": [
-     0.12,
-     -5.8
-    ]
-   },
-   {
-    "at": "L38",
-    "pos": [
-     0.5,
-     -28.2
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "scared",
-    "yaw": 79.8
-   },
-   {
-    "at": "L39",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L40",
-    "pos": [
-     0.5,
-     -28.2
-    ]
-   },
-   {
-    "at": "L40",
-    "pos": [
-     3.1,
-     -27.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "scared",
-    "yaw": 39.8
-   },
-   {
-    "at": "L43",
-    "expr": "worried",
-    "blend": 0.3
-   },
-   {
-    "at": "L44",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L45",
-    "pos": [
-     3.1,
-     -27.9
-    ]
-   },
-   {
-    "at": "L45",
-    "pos": [
-     3.1,
-     -27.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "worried",
-    "yaw": -174.8
-   },
-   {
-    "at": "L46",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L49",
-    "pos": [
-     3.1,
-     -27.9
-    ]
-   },
-   {
-    "at": "L49",
-    "pos": [
-     3.1,
-     -27.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "worried",
-    "yaw": -174.8
-   },
-   {
-    "at": "L50",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L53",
-    "pos": [
-     3.1,
-     -27.9
-    ]
-   },
-   {
-    "at": "L53",
-    "pos": [
-     3.1,
-     -27.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": -174.8
-   },
-   {
-    "at": "L53.1",
-    "yaw": 39.8,
-    "blend": 0.6
-   },
-   {
-    "at": "L54",
-    "pos": [
-     3.1,
-     -27.9
-    ]
-   },
-   {
-    "at": "L54",
-    "pos": [
-     3.1,
-     -27.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": -174.8
-   },
-   {
-    "from": "L54",
-    "to": "L54>",
+    "from": "L36",
+    "to": "L36.2",
     "mouth": [
      0.55,
      0.55
@@ -4145,211 +2811,138 @@
     "flap": true
    },
    {
-    "at": "L55",
-    "expr": "soft",
-    "blend": 0.4
+    "at": "L36.2",
+    "pos": [
+     1.7,
+     -4.5
+    ]
    },
    {
-    "at": "L57",
+    "at": "L36.2",
+    "pos": [
+     -2.2,
+     -10.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": -171.3
+   },
+   {
+    "at": "L37",
+    "pos": [
+     -2.2,
+     -10.0
+    ]
+   },
+   {
+    "at": "L37",
+    "pos": [
+     2.3,
+     -22.9
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": -175.6
+   },
+   {
+    "at": "L37.1",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L59",
+    "at": "L38",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L39",
     "pos": [
-     3.1,
-     -27.9
+     2.3,
+     -22.9
     ]
    },
    {
-    "at": "L59",
+    "at": "L39",
     "pos": [
-     3.0,
+     2.5,
+     -30.4
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "soft",
+    "yaw": 139.8
+   },
+   {
+    "at": "L39.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L42",
+    "pos": [
+     2.5,
+     -30.4
+    ]
+   },
+   {
+    "at": "L42",
+    "pos": [
+     -0.6,
      -28.8
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     60,
-     60
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     24
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 90
-   },
-   {
-    "at": "L60",
-    "pos": [
-     3.0,
-     -28.8
-    ]
-   },
-   {
-    "at": "L60",
-    "pos": [
-     3.0,
-     -29.7
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     48,
-     48
-    ],
-    "side": [
-     -8,
-     -8
-    ],
-    "head": [
-     0,
-     24
-    ],
-    "lean": 14,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 136.6
-   },
-   {
-    "at": "L61",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L62",
-    "pos": [
-     3.0,
-     -29.7
-    ]
-   },
-   {
-    "at": "L62",
-    "pos": [
-     3.1,
-     -27.3
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     40,
-     40
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     14
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 41.6
-   },
-   {
-    "at": "L63",
-    "pos": [
-     3.1,
-     -27.3
-    ]
-   },
-   {
-    "at": "L63",
-    "pos": [
-     3.1,
-     -26.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     20
-    ],
-    "lean": 36,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "soft",
-    "yaw": 37.9
-   },
-   {
-    "at": "L64",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L67",
-    "pos": [
-     3.1,
-     -26.9
-    ]
-   },
-   {
-    "at": "L67",
-    "pos": [
-     0.5,
-     -26.3
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     80,
-     80
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": -90
-   },
-   {
-    "at": "L69",
-    "pos": [
-     0.5,
-     -26.3
-    ]
-   },
-   {
-    "at": "L69",
-    "pos": [
-     -0.45,
-     -25.9
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
      0,
      0
     ],
@@ -4365,16 +2958,11 @@
     "tremble": 0,
     "blink": true,
     "sit": false,
-    "expr": "neutral",
-    "yaw": -100
+    "expr": "worried",
+    "yaw": 29.4
    },
    {
-    "at": "L69.1",
-    "expr": "soft",
-    "blend": 0.3
-   },
-   {
-    "at": "L70",
+    "at": "L43",
     "hidden": true,
     "blend": 0
    }
@@ -4386,310 +2974,7 @@
     "blend": 0
    },
    {
-    "at": "L05",
-    "pos": [
-     -0.5,
-     0.4
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     70
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 90
-   },
-   {
-    "from": "L06.1",
-    "to": "L06.2>",
-    "mouth": [
-     0.55,
-     0.55
-    ],
-    "flap": true
-   },
-   {
-    "at": "L06",
-    "pos": [
-     -0.5,
-     0.4
-    ]
-   },
-   {
-    "at": "L06",
-    "pos": [
-     0.0,
-     0.2
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 180
-   },
-   {
-    "at": "L06+2.0",
-    "pos": [
-     0.0,
-     5.5
-    ]
-   },
-   {
-    "at": "L07",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L43",
-    "pos": [
-     0.0,
-     5.5
-    ]
-   },
-   {
-    "at": "L43",
-    "pos": [
-     2.65,
-     -26.95
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     10
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "smirk",
-    "yaw": 90
-   },
-   {
-    "at": "L45",
-    "pos": [
-     2.65,
-     -26.95
-    ]
-   },
-   {
-    "at": "L45",
-    "pos": [
-     2.95,
-     -26.25
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "wide",
-    "yaw": 152.7
-   },
-   {
-    "from": "L45.4",
-    "to": "L45>",
-    "mouth": [
-     0.0,
-     0.9
-    ]
-   },
-   {
-    "at": "L46",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L49",
-    "pos": [
-     2.95,
-     -26.25
-    ]
-   },
-   {
-    "at": "L49",
-    "pos": [
-     2.95,
-     -26.25
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "smirk",
-    "yaw": 152.7
-   },
-   {
-    "from": "L49.1",
-    "to": "L49>",
-    "mouth": [
-     0.55,
-     0.55
-    ],
-    "flap": true
-   },
-   {
-    "at": "L51",
-    "yaw": 19.4,
-    "expr": "wide",
-    "blend": 0.5
-   },
-   {
-    "at": "L52",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L53",
-    "pos": [
-     2.95,
-     -26.25
-    ]
-   },
-   {
-    "at": "L53",
-    "pos": [
-     2.95,
-     -26.25
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "wide",
-    "yaw": 152.7
-   },
-   {
-    "at": "L54",
-    "pos": [
-     2.95,
-     -26.25
-    ]
-   },
-   {
-    "at": "L54",
-    "pos": [
-     2.95,
-     -26.25
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 5.2
-   },
-   {
-    "at": "L55",
-    "expr": "soft",
-    "yaw": 163.4,
-    "blend": 0.2
-   },
-   {
-    "at": "L57",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L61",
-    "pos": [
-     2.95,
-     -26.25
-    ]
-   },
-   {
-    "at": "L61",
+    "at": "L08",
     "pos": [
      3.2,
      -25.3,
@@ -4699,7 +2984,7 @@
     "hidden": false,
     "arms": [
      0,
-     74
+     40
     ],
     "side": [
      0,
@@ -4713,16 +2998,27 @@
     "tremble": 0,
     "blink": true,
     "sit": true,
-    "expr": "neutral",
-    "yaw": 0
+    "expr": "smile",
+    "yaw": -90
    },
    {
-    "at": "L62",
-    "hidden": true,
-    "blend": 0
+    "at": "L08.1",
+    "arms": [
+     0,
+     40
+    ],
+    "blend": 0.2
    },
    {
-    "at": "L63",
+    "at": "L08.2",
+    "arms": [
+     0,
+     0
+    ],
+    "blend": 0.4
+   },
+   {
+    "at": "L09",
     "pos": [
      3.2,
      -25.3,
@@ -4730,7 +3026,321 @@
     ]
    },
    {
-    "at": "L63",
+    "at": "L09",
+    "pos": [
+     0.38,
+     -0.2
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 0
+   },
+   {
+    "at": "L09.3-0.55",
+    "pos": [
+     0.38,
+     -3.0
+    ]
+   },
+   {
+    "at": "L09.3-0.25",
+    "pos": [
+     0.38,
+     -3.0
+    ]
+   },
+   {
+    "at": "L09.3-0.25",
+    "pos": [
+     0.25,
+     -1.8
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     100
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "smile",
+    "yaw": 90
+   },
+   {
+    "at": "L09.3+0.2",
+    "pos": [
+     0.25,
+     -1.8
+    ]
+   },
+   {
+    "at": "L09.3+0.2",
+    "pos": [
+     -0.25,
+     -7.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     100
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "smile",
+    "yaw": -90
+   },
+   {
+    "at": "L09.3+0.65",
+    "pos": [
+     -0.25,
+     -7.6
+    ]
+   },
+   {
+    "at": "L09.3+0.65",
+    "pos": [
+     0.25,
+     -19.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     100
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     14
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "smile",
+    "yaw": 90
+   },
+   {
+    "at": "L10",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L11.2",
+    "pos": [
+     0.25,
+     -19.6
+    ]
+   },
+   {
+    "at": "L11.2",
+    "pos": [
+     3.2,
+     -25.3,
+     -0.38
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     16
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": true,
+    "expr": "smirk",
+    "yaw": -171.3
+   },
+   {
+    "at": "L12",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L12.1",
+    "pos": [
+     3.2,
+     -25.3,
+     -0.38
+    ]
+   },
+   {
+    "at": "L12.1",
+    "pos": [
+     3.2,
+     -25.3,
+     -0.38
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -8
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": true,
+    "expr": "laugh",
+    "yaw": -150.3
+   },
+   {
+    "at": "L13",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L16",
+    "pos": [
+     3.2,
+     -25.3,
+     -0.38
+    ]
+   },
+   {
+    "at": "L16",
+    "pos": [
+     0.45,
+     -0.9
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 47.5
+   },
+   {
+    "at": "L17",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L22",
+    "pos": [
+     0.45,
+     -0.9
+    ]
+   },
+   {
+    "at": "L22",
+    "pos": [
+     3.2,
+     -25.3,
+     -0.38
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": true,
+    "expr": "smile",
+    "yaw": 0
+   },
+   {
+    "from": "L22",
+    "to": "L22>",
+    "mouth": [
+     0.55,
+     0.55
+    ],
+    "flap": true
+   },
+   {
+    "at": "L23",
+    "pos": [
+     3.2,
+     -25.3,
+     -0.38
+    ]
+   },
+   {
+    "at": "L23",
     "pos": [
      3.2,
      -25.3,
@@ -4754,32 +3364,24 @@
     "tremble": 0,
     "blink": true,
     "sit": true,
-    "expr": "soft",
-    "yaw": -30
+    "expr": "worried",
+    "yaw": -155.4
    },
    {
-    "at": "L63.3",
-    "head": [
-     0,
-     12
-    ],
-    "blend": 0.3
+    "from": "L23",
+    "to": "L23.1",
+    "mouth": [
+     0.0,
+     0.5
+    ]
    },
    {
-    "at": "L63.4",
-    "head": [
-     0,
-     0
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L64",
+    "at": "L24",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L68",
+    "at": "L27.3",
     "pos": [
      3.2,
      -25.3,
@@ -4787,11 +3389,10 @@
     ]
    },
    {
-    "at": "L68",
+    "at": "L27.3",
     "pos": [
-     3.2,
-     -25.3,
-     -0.38
+     2.95,
+     -26.25
     ],
     "blend": 0,
     "hidden": false,
@@ -4810,48 +3411,415 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "sit": true,
-    "expr": "soft",
-    "yaw": -35
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 28.3
    },
    {
-    "at": "L68.1",
-    "head": [
-     0,
-     14
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L68.2",
-    "head": [
-     0,
-     0
-    ],
-    "blend": 0.35
-   },
-   {
-    "at": "L69",
-    "hidden": true,
-    "blend": 0
-   }
-  ],
-  "newcomer": [
-   {
-    "at": 0,
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L65",
+    "at": "L28",
     "pos": [
-     -0.45,
-     -18.8
+     2.95,
+     -26.25
+    ]
+   },
+   {
+    "at": "L28",
+    "pos": [
+     2.95,
+     -26.25
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     60,
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": false,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 19.4
+   },
+   {
+    "at": "L29.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L30",
+    "pos": [
+     2.95,
+     -26.25
+    ]
+   },
+   {
+    "at": "L30",
+    "pos": [
+     2.55,
+     -28.8
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 90
+   },
+   {
+    "at": "L33",
+    "pos": [
+     2.55,
+     -28.8
+    ]
+   },
+   {
+    "at": "L33",
+    "pos": [
+     2.55,
+     -28.8
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "worried",
+    "yaw": 90
+   },
+   {
+    "at": "L34",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L34.1",
+    "pos": [
+     2.55,
+     -28.8
+    ]
+   },
+   {
+    "at": "L34.1",
+    "pos": [
+     2.55,
+     -28.9
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 28.4
+   },
+   {
+    "at": "L35",
+    "pos": [
+     2.55,
+     -28.9
+    ]
+   },
+   {
+    "at": "L35",
+    "pos": [
+     0.4,
+     -22.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 180
+   },
+   {
+    "at": "L35>",
+    "pos": [
+     0.4,
+     -19.2
+    ]
+   },
+   {
+    "at": "L36",
+    "pos": [
+     0.4,
+     -19.2
+    ]
+   },
+   {
+    "at": "L36",
+    "pos": [
+     2.5,
+     -5.2
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": -131.2
+   },
+   {
+    "at": "L36.2",
+    "pos": [
+     2.5,
+     -5.2
+    ]
+   },
+   {
+    "at": "L36.2",
+    "pos": [
+     -2.4,
+     -8.7
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 108.4
+   },
+   {
+    "at": "L36.2+0.8",
+    "expr": "smile",
+    "blend": 0.5
+   },
+   {
+    "at": "L37",
+    "pos": [
+     -2.4,
+     -8.7
+    ]
+   },
+   {
+    "at": "L37",
+    "pos": [
+     2.2,
+     -21.6
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     10
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "smile",
+    "yaw": -127.9
+   },
+   {
+    "at": "L37+0.7",
+    "head": [
+     0,
+     0
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L37+1.2",
+    "head": [
+     0,
+     10
+    ],
+    "blend": 0.3
+   },
+   {
+    "at": "L37.1",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L38",
+    "pos": [
+     2.2,
+     -21.6
+    ]
+   },
+   {
+    "at": "L38",
+    "pos": [
+     2.55,
+     -28.8
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "smile",
+    "yaw": 90
+   },
+   {
+    "at": "L39",
+    "pos": [
+     2.55,
+     -28.8
+    ]
+   },
+   {
+    "at": "L39",
+    "pos": [
+     2.55,
+     -28.8
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "smile",
+    "yaw": 90
+   },
+   {
+    "at": "L39.2",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L42",
+    "pos": [
+     2.55,
+     -28.8
+    ]
+   },
+   {
+    "at": "L42",
+    "pos": [
+     0.0,
+     -26.0
+    ],
+    "blend": 0,
+    "hidden": true,
+    "arms": [
+     0,
      0
     ],
     "side": [
@@ -4870,43 +3838,67 @@
     "yaw": 0
    },
    {
-    "at": "L65+2.4",
+    "at": "L40",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "newcomer": [
+   {
+    "at": 0,
     "pos": [
-     -0.45,
-     -20.6
+     -3.75,
+     -16.9
     ],
+    "blend": 0,
+    "hidden": false,
     "arms": [
-     60,
+     0,
      0
-    ]
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": false,
+    "expr": "neutral",
+    "yaw": 140.2
    },
    {
-    "at": "L65",
-    "expr": "neutral"
+    "at": "L01.2",
+    "expr": "smile",
+    "blend": 0.5
    },
    {
-    "at": "L66",
+    "at": "L02",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L67",
+    "at": "L05",
+    "pos": [
+     -3.75,
+     -16.9
+    ]
+   },
+   {
+    "at": "L05",
     "pos": [
      -0.45,
-     -20.6
-    ]
-   },
-   {
-    "at": "L67",
-    "pos": [
-     -0.55,
-     -26.3
+     -12.6
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     80,
-     80
+     0,
+     60
     ],
     "side": [
      0,
@@ -4921,49 +3913,25 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": 90
+    "yaw": 180
    },
    {
-    "at": "L69",
+    "at": "L05>",
     "pos": [
-     -0.55,
-     -26.3
+     -0.45,
+     -10.6
+    ],
+    "arms": [
+     0,
+     60
     ]
    },
    {
-    "at": "L69",
-    "pos": [
-     -1.0,
-     -26.2
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "sit": false,
-    "expr": "neutral",
-    "yaw": 118.6
+    "at": "L05",
+    "expr": "smile"
    },
    {
-    "at": "L69.1",
-    "expr": "soft",
-    "blend": 0.3
-   },
-   {
-    "at": "L70",
+    "at": "L06",
     "hidden": true,
     "blend": 0
    }
@@ -4973,99 +3941,49 @@
   {
    "at": 0,
    "name": "tod",
-   "set": "gold"
+   "set": "bright"
   },
   {
-   "at": "L02",
+   "at": "L13",
    "name": "tod",
-   "set": "dawn"
+   "set": "dawn",
+   "dur": 0.3
   },
   {
-   "at": "L05",
+   "at": "L17",
    "name": "tod",
-   "set": "day"
+   "set": "tue",
+   "dur": 0.3
   },
   {
-   "at": "L11",
+   "at": "L21",
    "name": "tod",
-   "set": "dawn"
+   "set": "wed",
+   "dur": 0.3
   },
   {
-   "at": "L22",
-   "name": "tod",
-   "set": "gold"
-  },
-  {
-   "at": "L23",
-   "name": "tod",
-   "set": "dawn"
-  },
-  {
-   "at": "L27",
-   "name": "tod",
-   "set": "early"
-  },
-  {
-   "at": "L28",
-   "name": "tod",
-   "set": "dawn"
-  },
-  {
-   "at": "L30+0.2",
+   "at": "L25",
    "name": "tod",
    "set": "fog",
-   "dur": 4.0
+   "dur": 3.0
   },
   {
-   "at": "L45+1.0",
-   "name": "tod",
-   "set": "night",
-   "dur": 1.5
-  },
-  {
-   "at": "L48+0.8",
-   "name": "tod",
-   "set": "fog",
-   "dur": 1.0
-  },
-  {
-   "at": "L54",
+   "at": "L38",
    "name": "tod",
    "set": "fogthin",
-   "dur": 3.0
+   "dur": 2.5
   },
   {
-   "at": "L57",
-   "name": "tod",
-   "set": "clear"
-  },
-  {
-   "at": "L61",
-   "name": "tod",
-   "set": "day"
-  },
-  {
-   "at": "L61.2",
+   "at": "L40",
    "name": "tod",
    "set": "dusk",
-   "dur": 1.5
+   "dur": 0.3
   },
   {
-   "at": "L62.1",
+   "at": "L41",
    "name": "tod",
-   "set": "day",
-   "dur": 1.0
-  },
-  {
-   "at": "L65",
-   "name": "tod",
-   "set": "sunrise"
-  },
-  {
-   "at": "L70",
-   "name": "tod",
-   "set": "goldend",
-   "dur": 3.0
+   "set": "grey",
+   "dur": 0.3
   },
   {
    "at": 0,
@@ -5073,14 +3991,14 @@
    "hidden": true
   },
   {
-   "at": "L11",
+   "at": "L13",
    "name": "digger",
    "plot": 1,
-   "up": -0.3,
+   "up": -0.12,
    "yaw": 0
   },
   {
-   "at": "L12",
+   "at": "L14",
    "name": "digger",
    "plot": 1,
    "up": 0.2,
@@ -5092,25 +4010,25 @@
    "hidden": true
   },
   {
-   "at": "L21",
+   "at": "L20",
    "name": "digger",
    "plot": 4,
-   "up": 0.2,
+   "up": 0.38,
    "yaw": 0
   },
   {
-   "at": "L23",
+   "at": "L21",
    "name": "digger",
    "plot": 7,
-   "up": 0.2,
+   "up": 0.5,
    "yaw": 0
   },
   {
    "at": "L24",
    "name": "digger",
    "plot": 7,
-   "up": 0.42,
-   "yaw": 0
+   "up": 0.5,
+   "yaw": -33.3
   },
   {
    "at": "L25",
@@ -5118,48 +4036,23 @@
    "hidden": true
   },
   {
-   "at": "L29",
-   "name": "digger",
-   "plot": 7,
-   "up": 0.42,
-   "yaw": 0
-  },
-  {
-   "at": "L30",
-   "name": "digger",
-   "hidden": true
-  },
-  {
-   "at": "L34",
+   "at": "L26",
    "name": "digger",
    "plot": 9,
-   "up": 0.5,
+   "up": 0.66,
    "yaw": 90,
    "head": 0
   },
   {
+   "at": "L27",
+   "name": "digger",
+   "plot": 9,
+   "up": 0.66,
+   "yaw": 90,
+   "head": 180
+  },
+  {
    "at": "L39",
-   "name": "digger",
-   "plot": 9,
-   "up": 0.5,
-   "yaw": 90,
-   "head": 180
-  },
-  {
-   "at": "L46",
-   "name": "digger",
-   "hidden": true
-  },
-  {
-   "at": "L49",
-   "name": "digger",
-   "plot": 9,
-   "up": 0.5,
-   "yaw": 90,
-   "head": 180
-  },
-  {
-   "at": "L56",
    "name": "digger",
    "plot": 9,
    "up": 0.2,
@@ -5167,9 +4060,25 @@
    "head": 180
   },
   {
-   "at": "L57",
+   "at": "L39.2",
    "name": "digger",
    "hidden": true
+  },
+  {
+   "at": "L42",
+   "name": "digger",
+   "plot": 10,
+   "up": -0.34,
+   "yaw": 90,
+   "head": 0
+  },
+  {
+   "at": "L43",
+   "name": "digger",
+   "plot": 10,
+   "up": -0.24,
+   "yaw": 90,
+   "head": 0
   },
   {
    "at": 0,
@@ -5184,7 +4093,7 @@
    ]
   },
   {
-   "at": "L22",
+   "at": "L21",
    "name": "holes",
    "plots": [
     1,
@@ -5193,22 +4102,6 @@
   },
   {
    "at": "L25",
-   "name": "holes",
-   "plots": [
-    1,
-    4
-   ]
-  },
-  {
-   "at": "L29",
-   "name": "holes",
-   "plots": [
-    1,
-    4
-   ]
-  },
-  {
-   "at": "L30",
    "name": "holes",
    "plots": [
     1,
@@ -5217,301 +4110,93 @@
    ]
   },
   {
-   "at": "L57",
-   "name": "holes",
-   "plots": [
-    9
-   ]
-  },
-  {
-   "at": "L61",
+   "at": "L39",
    "name": "holes",
    "plots": []
   },
   {
-   "at": "L60+0.4",
-   "name": "mound",
+   "at": 0,
+   "name": "dent",
+   "on": false
+  },
+  {
+   "at": "L39.2",
+   "name": "dent",
    "on": true
   },
   {
+   "at": "L40",
+   "name": "dent",
+   "on": false
+  },
+  {
    "at": 0,
-   "name": "key",
-   "where": "off"
+   "name": "bucket",
+   "on": true
   },
   {
    "at": "L05",
-   "name": "key",
-   "where": "carter"
+   "name": "keystalk",
+   "on": false
+  },
+  {
+   "at": 0,
+   "name": "bike",
+   "on": false
+  },
+  {
+   "at": "L05",
+   "name": "bike",
+   "on": true
   },
   {
    "at": "L06",
-   "name": "key",
-   "where": "off"
-  },
-  {
-   "at": "L46",
-   "name": "key",
-   "where": "padlock"
-  },
-  {
-   "at": "L47",
-   "name": "key",
-   "where": "off"
-  },
-  {
-   "at": 0,
-   "name": "can",
-   "where": "off"
-  },
-  {
-   "at": "L43",
-   "name": "can",
-   "where": "carter"
-  },
-  {
-   "at": "L46",
-   "name": "can",
-   "where": "off"
-  },
-  {
-   "at": "L49",
-   "name": "can",
-   "where": "carter"
-  },
-  {
-   "at": "L52",
-   "name": "can",
-   "where": "world",
-   "pos": [
-    2.95,
-    -26.0,
-    0.72
-   ],
-   "rot": [
-    0.0,
-    0.0,
-    70.0
-   ]
-  },
-  {
-   "at": "L53",
-   "name": "can",
-   "where": "carter"
-  },
-  {
-   "at": "L56",
-   "name": "can",
-   "where": "off"
-  },
-  {
-   "at": "L62",
-   "name": "can",
-   "where": "me",
-   "water": true
-  },
-  {
-   "at": "L63",
-   "name": "can",
-   "where": "off"
-  },
-  {
-   "at": "L67",
-   "name": "can",
-   "where": "world",
-   "pos": [
-    -0.03,
-    -25.3,
-    1.3
-   ],
-   "rot": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "scale": 1.8
-  },
-  {
-   "at": "L68",
-   "name": "can",
-   "where": "off"
-  },
-  {
-   "at": 0,
-   "name": "torch",
-   "on": 0.0
-  },
-  {
-   "at": "L59",
-   "name": "torch",
-   "on": 1.0,
-   "dur": 0.8
-  },
-  {
-   "at": "L60",
-   "name": "torch",
-   "on": 0.0,
-   "dur": 0.8
-  },
-  {
-   "at": 0,
-   "name": "spade",
-   "on": false
-  },
-  {
-   "at": "L60",
-   "name": "spade",
-   "on": true
-  },
-  {
-   "at": "L61",
-   "name": "spade",
-   "on": false
-  },
-  {
-   "at": "L19+0.45",
-   "name": "pebble",
-   "on": true
-  },
-  {
-   "at": "L25",
-   "name": "cane",
-   "on": true,
-   "sink": "L26"
-  },
-  {
-   "at": "L27",
-   "name": "cane",
-   "on": false
-  },
-  {
-   "at": 0,
-   "name": "bucket",
-   "on": false
-  },
-  {
-   "at": "L61",
-   "name": "bucket",
-   "on": true
-  },
-  {
-   "at": 0,
    "name": "bike",
    "on": false
-  },
-  {
-   "at": "L65",
-   "name": "bike",
-   "on": true
-  },
-  {
-   "at": "L67",
-   "name": "bike",
-   "on": true,
-   "pos": [
-    -1.0,
-    -27.0
-   ],
-   "yaw": 80
-  },
-  {
-   "at": "L70",
-   "name": "bike",
-   "on": false
-  },
-  {
-   "at": 0,
-   "name": "padlock",
-   "wet": 0
-  },
-  {
-   "at": "L09",
-   "name": "padlock",
-   "wet": 1
-  },
-  {
-   "at": "L10",
-   "name": "padlock",
-   "wet": 1
   },
   {
    "at": "L11",
-   "name": "padlock",
-   "wet": 1
-  },
-  {
-   "at": "L28",
-   "name": "padlock",
-   "wet": 2
-  },
-  {
-   "at": "L29",
-   "name": "padlock",
-   "wet": 2
-  },
-  {
-   "at": "L31",
-   "name": "padlock",
-   "wet": 3
-  },
-  {
-   "at": "L32",
-   "name": "padlock",
-   "wet": 3
-  },
-  {
-   "at": 0,
-   "name": "sprinkle",
-   "on": false
-  },
-  {
-   "at": "L48",
-   "name": "sprinkle",
+   "name": "glasses",
    "on": true
   },
   {
-   "at": "L49",
-   "name": "sprinkle",
+   "at": "L12",
+   "name": "capstalk",
+   "on": true
+  },
+  {
+   "at": "L12.1",
+   "name": "capstalk",
    "on": false
   },
   {
-   "at": 0,
-   "name": "gate",
-   "open": 0.0
-  },
-  {
-   "at": "L47",
-   "name": "gate",
-   "open": 1.0
-  },
-  {
-   "at": "L48",
-   "name": "gate",
-   "open": 0.0
-  },
-  {
-   "at": 0,
-   "name": "shed",
-   "open": 0.0
-  },
-  {
-   "at": "L42+0.35",
-   "name": "shed",
-   "open": 1.0,
-   "dur": 0.8
-  },
-  {
-   "at": "L46",
-   "name": "shed",
-   "open": 1.0
-  },
-  {
-   "at": 0,
-   "name": "greens",
+   "at": "L12.1",
+   "name": "grandcap",
    "on": false
   },
   {
-   "at": "L64",
-   "name": "greens",
+   "at": "L13",
+   "name": "grandcap",
+   "on": true
+  },
+  {
+   "at": "L40",
+   "name": "intcap",
+   "on": true
+  },
+  {
+   "at": "L29.1",
+   "name": "knotlight",
+   "on": true
+  },
+  {
+   "at": "L29.4",
+   "name": "knotlight",
+   "on": false
+  },
+  {
+   "at": "L18+0.35",
+   "name": "pebble",
    "on": true
   }
  ],
@@ -5525,30 +4210,30 @@
    {
     "at": 0,
     "voices": [
-     "drone",
+     "pluck",
      "pad"
     ],
     "energy": 0.3
    },
    {
-    "at": "L11",
+    "at": "L13",
     "voices": [
      "drone",
      "pad",
      "pulse"
     ],
     "energy": 0.36
+   },
+   {
+    "at": "P01",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.25
    },
    {
     "at": "L19",
     "voices": [
-     "drone"
-    ],
-    "energy": 0.25
-   },
-   {
-    "at": "L21",
-    "voices": [
      "drone",
      "pad",
      "pulse"
@@ -5556,7 +4241,14 @@
     "energy": 0.42
    },
    {
-    "at": "L30",
+    "at": "L26>",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.25
+   },
+   {
+    "at": "L27",
     "voices": [
      "drone",
      "pad",
@@ -5565,48 +4257,7 @@
     "energy": 0.5
    },
    {
-    "at": "L34",
-    "voices": [
-     "drone"
-    ],
-    "energy": 0.25
-   },
-   {
-    "at": "L35",
-    "voices": [
-     "drone",
-     "pad",
-     "choir"
-    ],
-    "energy": 0.5
-   },
-   {
-    "at": "L43",
-    "voices": [
-     "drone",
-     "pad"
-    ],
-    "energy": 0.36
-   },
-   {
-    "at": "L46",
-    "voices": [
-     "pad",
-     "drone"
-    ],
-    "energy": 0.3
-   },
-   {
-    "at": "L49",
-    "voices": [
-     "drone",
-     "pad",
-     "pulse"
-    ],
-    "energy": 0.42
-   },
-   {
-    "at": "L54",
+    "at": "L38",
     "voices": [
      "piano",
      "pad",
@@ -5617,21 +4268,13 @@
     "root": 50
    },
    {
-    "at": "L61",
+    "at": "L41",
     "voices": [
-     "piano",
-     "pad"
-    ],
-    "energy": 0.4
-   },
-   {
-    "at": "L67",
-    "voices": [
-     "piano",
-     "pad",
      "drone"
     ],
-    "energy": 0.45
+    "energy": 0.28,
+    "mode": "dorian",
+    "root": 50
    }
   ]
  },
@@ -5644,65 +4287,13 @@
     "from": 0,
     "to": "end",
     "lufs": -36
-   },
-   {
-    "kind": "drips",
-    "from": "L09",
-    "to": "L11",
-    "lufs": -40
-   },
-   {
-    "kind": "drips",
-    "from": "L28",
-    "to": "L29",
-    "lufs": -40
-   },
-   {
-    "kind": "drips",
-    "from": "L31",
-    "to": "L32",
-    "lufs": -40
-   },
-   {
-    "kind": "drips",
-    "from": "L48",
-    "to": "L49",
-    "lufs": -38
-   },
-   {
-    "kind": "drips",
-    "from": "L52",
-    "to": "L53",
-    "lufs": -40
-   },
-   {
-    "kind": "crickets",
-    "from": "L46",
-    "to": "L49",
-    "lufs": -40
    }
   ],
   "sfx": [
    {
-    "at": "L09",
-    "kind": "click",
-    "db": -20
-   },
-   {
-    "at": "L09+0.7",
-    "kind": "click",
-    "db": -24
-   },
-   {
     "at": "P01+0.55",
     "kind": "click",
     "db": -22
-   },
-   {
-    "at": "L21",
-    "kind": "whoosh",
-    "db": -30,
-    "dur": 0.8
    },
    {
     "at": "P02+0.3",
@@ -5710,74 +4301,40 @@
     "db": -9
    },
    {
-    "at": "L39",
-    "kind": "sting",
-    "db": -11
-   },
-   {
-    "at": "L42+0.3",
-    "kind": "door",
-    "db": -15,
-    "dur": 1.0
-   },
-   {
-    "at": "L56+0.5",
+    "at": "L39+0.3",
     "kind": "glide",
     "db": -17,
     "dur": 1.6
    },
    {
-    "at": "L56+0.5",
+    "at": "L39+0.3",
     "kind": "thud",
     "db": -24
    },
    {
-    "at": "L59",
+    "at": "L42.2",
     "kind": "click",
-    "db": -15
+    "db": -17
    },
    {
-    "at": "L60+0.4",
+    "at": "L42.2+0.1",
     "kind": "thud",
-    "db": -22
-   },
-   {
-    "at": "L60+1.2",
-    "kind": "thud",
-    "db": -22
-   },
-   {
-    "at": "L60+2.0",
-    "kind": "thud",
-    "db": -22
-   },
-   {
-    "at": "L70.2",
-    "kind": "bell",
-    "db": -8,
-    "dur": 2.0
+    "db": -26
    }
   ],
   "music_drops": [
    {
-    "from": "P01-0.3",
-    "to": "L20",
+    "from": "P01-0.2",
+    "to": "L19",
     "keep": [
      "click"
     ]
    },
    {
-    "from": "L34+0.8",
-    "to": "L35",
+    "from": "P02",
+    "to": "L27+0.5",
     "keep": [
      "hit"
-    ]
-   },
-   {
-    "from": "L38+0.4",
-    "to": "L39+0.35",
-    "keep": [
-     "sting"
     ]
    }
   ]
