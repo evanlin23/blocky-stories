@@ -306,7 +306,7 @@ def build_shrug(kit, M, ctx):
     orange2 = kit.plastic("#d9631c", 0.7, "shrug orange dark")
     cream = kit.plastic("#efe3c4", 0.7, "shrug cream")
     root = kit.empty("shrug", (0, 0, -60))
-    root.scale = (S, S, S)
+    root.scale = (S * 1.22, S * 1.22, S * 1.22)   # taller than the cast
     hips = kit.empty("shrug.hips", (0, 0, 2.0), root)
     ctx["shrug"] = {"root": root, "hips": hips}
     legs = []
@@ -367,8 +367,8 @@ def pose_shrug(ctx, c):
     lean = math.radians(float(c.get("lean", 0.0)))     # about the hips; positive leans toward world -y (toward Gran)
     sg["upper"].rotation_euler = (0, -lean, 0)
     for sx in (-1, 1):
-        sg["hump"][sx].location = (sx * (1.62 - 0.45 * u), 0, 1.62 + 0.4 * u)
-        sg["arm"][sx].location = (sx * 0.45 * u, 0, 0.35)
+        sg["hump"][sx].location = (sx * (1.5 - 0.4 * u), 0, 1.62 + 0.4 * u)
+        sg["arm"][sx].location = (sx * (0.55 * u + 0.1), 0, 0.35)
         sg["arm"][sx].rotation_euler = (math.radians(c.get("armfwd", 0.0)), lean, 0)
     sg["neck"].location = (0, 0, 2.0 - 0.34 * u)
     sg["neck"].rotation_euler = (0, 0, math.radians(c.get("head", 0.0)))
@@ -1134,7 +1134,7 @@ def animate(kit, story, tl, t, ctx):
     over["d lamp"] = 28.0
     over["d fill"] = 55.0
     over["b lamp"] = 110.0
-    over["h lamp"] = 70.0
+    over["h lamp"] = 240.0
     over["blue lamp"] = 22.0
     over["deck lamp 0"] = over["deck lamp 1"] = over["deck lamp 2"] = 90.0
     over["lounge a"] = 26.0

@@ -16,7 +16,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 F, X = 1000.0, 300.0
 ME_SEAT = [F + 1.7, 4.75, 3.87]
 GR_SEAT = [F + 1.7, 3.25, 3.91]
-SH_SEAT = [F + 1.7, 4.75, 3.87]
+SH_SEAT = [F + 1.7, 4.85, 3.75]
 
 PAUSES = {"L26": ("P01", 0.6), "L44": ("P02", 0.7)}
 HOLDS = {"L08": 0.5, "L14": 0.45, "L17": 0.45, "L20": 0.45, "L24b": 0.5, "L28": 0.45, "L33": 0.45, "L39": 0.5,
@@ -123,8 +123,8 @@ shot("L02", "low: the glove hopping up after the raincoat hem",
      c([0, [0.9, 2.9, 0.3], [-0.4, -1.0, 0.2], 30], [1, [0.9, 2.7, 0.3], [-0.4, -1.0, 0.2], 30]),
      {"glove_woman": P([-0.5, -4.6], walk=[("L02>", [-0.45, 0.2])])})
 shot("L03", "side tracking: umbrella man",
-     c([0, [-2.5, -3.2, 1.1], [0.4, -3.2, 1.0], 28], [1, [-2.5, 2.6, 1.1], [0.4, 2.6, 1.0], 28]),
-     {"umbrella_man": P([0.4, -3.2], walk=[("L03>", [0.4, 2.6])])})
+     c([0, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22], [1, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22]),
+     {"umbrella_man": P([0.4, -2.4], walk=[("L03>", [0.4, 2.8])])})
 shot("L04", "inside the ticket hut: the empty shelf",
      c([0, [700.4, -1.2, 1.3], [700, 1.4, 1.2], 24], [1, [700.2, -1.0, 1.3], [700, 1.4, 1.2], 24]))
 shot("L05", "the jumper man at the bin",
@@ -234,15 +234,15 @@ shot("L45", "the Shrug in my seat, clearly lit", still([F + 4.3, 5.7, 5.4], [F +
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="neutral")})
 shot("L46", "side-on: shoulders level with its eyes", still([F + 4.0, 7.0, 5.2], [F + 1.7, 4.75, 5.0], 24),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="neutral")})
-shot("L47", "close: the eyes between the humps", still([F + 3.3, 5.3, 5.3], [F + 1.7, 4.75, 5.3], 30),
+shot("L47", "close: the eyes between the humps", still([F + 4.5, 5.4, 5.45], [F + 1.7, 4.85, 5.4], 34),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="neutral")})
 shot("L48", "Gran squinting, looking out", still([F + 4.6, 2.8, 5.3], [F + 1.7, 3.2, 5.3], 34),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze")})
 shot("L48.2", "two-shot from the aisle", still([F + 5.6, 4.0, 5.3], [F + 1.7, 4.0, 5.1], 17),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze")})
-shot("L49", "the humps lowering", still([F + 3.6, 5.5, 5.25], [F + 1.7, 4.75, 5.05], 28),
+shot("L49", "the humps lowering", still([F + 4.8, 5.7, 5.3], [F + 1.7, 4.85, 5.2], 30),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze")})
-shot("L50", "the full face", still([F + 3.0, 5.2, 5.1], [F + 1.7, 4.75, 5.05], 30),
+shot("L50", "the full face", still([F + 4.3, 5.3, 5.35], [F + 1.7, 4.85, 5.3], 32),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze")})
 shot("L51", "the head turns to Gran", still([F + 4.0, 6.2, 5.2], [F + 1.7, 4.4, 5.05], 26),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze")})
@@ -420,8 +420,8 @@ cue("L48", "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=12)
 cue("L49", "shrug", pos=SH_SEAT, yaw=90, u=0.55, head=0, lean=0, tilt=0, dur=1.6)
 cue("L50", "shrug", pos=SH_SEAT, yaw=90, u=0.0, head=0, lean=0, tilt=0, dur=2.4)
 cue("L51", "shrug", pos=SH_SEAT, yaw=90, u=0.0, head=-90, lean=0, tilt=0, dur=2.2)
-cue("L51.2", "shrug", pos=[F + 1.7, 4.75, 3.87], yaw=90, u=0.0, head=-90, lean=60, tilt=-10, dur=3.2)
-cue("L51.2+3.4", "shrug", pos=[F + 1.7, 4.45, 3.87], yaw=90, u=0.0, head=-90, lean=60, tilt=-10)
+cue("L51.2", "shrug", pos=[F + 1.7, 4.85, 3.75], yaw=90, u=0.0, head=-90, lean=55, tilt=-10, dur=3.2)
+cue("L51.2+3.4", "shrug", pos=[F + 1.7, 4.55, 3.75], yaw=90, u=0.0, head=-90, lean=60, tilt=-10)
 cue("L58.2", "shrug", hidden=True)
 # props
 for pid in ("binglove", "mglove", "glasses", "kite", "jumper"):
