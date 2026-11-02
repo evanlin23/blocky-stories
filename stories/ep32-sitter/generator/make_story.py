@@ -514,8 +514,8 @@ sfx = [
     {"at": "L45", "kind": "sting", "db": -14},
     {"at": "L47", "kind": "door", "db": -12},
     {"at": "L68", "kind": "thud", "db": -22},
-    {"at": "L76>-0.55", "kind": "knock", "pattern": [0.0], "tone": "soft", "db": -10},
-    {"at": "L76>-0.5", "kind": "glide", "db": -16, "dur": 0.8},
+    {"at": "L76>-0.02", "kind": "knock", "pattern": [0.0], "tone": "soft", "db": -8},
+    {"at": "L76>-0.05", "kind": "glide", "db": -12, "dur": 0.9},
 ]
 
 story = {

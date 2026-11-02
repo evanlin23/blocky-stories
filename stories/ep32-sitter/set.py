@@ -993,7 +993,7 @@ def animate(kit, story, tl, t, ctx):
     for o in ctx["hall"]["jar"]:
         o.hide_render = hs != "hung"
     if hs == "hung":
-        t0 = tl["lines"]["L76"]["end"] - 0.55
+        t0 = tl["lines"]["L76"]["end"] - 0.04
         k = math.exp(-max(0.0, t - t0) * 7.0) * math.cos(max(0.0, t - t0) * 24.0) if t > t0 else 0.0
         pf.rotation_euler = (math.radians(4.0 * k), 0, 0)
         pf.location = (HX - 0.97, 1.2, 1.55)
