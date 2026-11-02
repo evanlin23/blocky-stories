@@ -58,7 +58,8 @@ def _ss(x):
 
 
 def _cues(tl, name):
-    return [c for c in tl.get("cues", []) if c["name"] == name]
+    # in time order: later-listed cues (e.g. the L45/L46 stacks) must not shadow earlier-timed ones in _last/_ramp
+    return sorted((c for c in tl.get("cues", []) if c["name"] == name), key=lambda c: c["t"])
 
 
 def _last(cs, t):
@@ -221,7 +222,7 @@ def materials(kit, wd):
             im = pil_image(f"box-{st}-{v}", scribble_image(st, 31 * v + (7 if st == "round" else 19)),
                            wd / f"box-{st}-{v}.png")
             M[f"{st}{v}"] = image_mat(kit, f"box {st} {v}", im)
-    for n in list(range(1, 13)):
+    for n in list(range(1, 13)) + list(range(21, 27)):
         im = pil_image(f"plate-{n}", digits_image(str(n)), wd / f"plate-{n}.png")
         M[f"plate{n}"] = image_mat(kit, f"plate {n}", im, rough=0.6)
     for nm, hexc, s in (("emit_tube", "#eaf2ff", 6.0), ("emit_lamp", "#ffd28a", 6.0), ("emit_sod", "#ffa845", 8.0),
@@ -294,7 +295,7 @@ def build_door(kit, ctx, M, side, k, yc):
     """One roller door with its steel frame, header, number plate and hasp. side "B" (x>0.9) or "A"."""
     f = -1.0 if side == "B" else 1.0
     P = 0.9 if side == "B" else -1.1
-    n = k
+    n = k if side == "B" else 20 + k   # side A reads 21..26 so no plate across from seven reads "1"
     root = kit.empty(f"door {n}", (P + (0.03 if side == "B" else 0.0) * 1.0, yc, 0))
     corrugated(kit, f"panel {n}", 2.0, UNIT_H, f, M["blue"], root)
     kit.box(f"rail {n}", (0.05, 2.0, 0.09), (f * 0.03, 0, 0.05), M["bluedk"], root)
@@ -381,14 +382,18 @@ def build_unit_seven(kit, ctx, M):
                 z = BOX[2] / 2 + row * BOX[2]
                 ob = kit.box(f"box {side}{idx}", (BOX[0] - 0.01, BOX[1] - 0.01, BOX[2] - 0.01), (x, y, z), M["card"],
                              rot=(0, 0, math.radians(rnd.uniform(-1.4, 1.4))), bevel=0.012)
+                vv = rnd.randint(0, 2)
                 dec = uvplane(kit, f"dec {side}{idx}", (BOX[0] - 0.03, BOX[2] - 0.03), (x, y - sgn * (BOX[1] / 2 + 0.004), z),
-                                M[f"{st}{rnd.randint(0, 2)}"], None,
+                                M[f"{st}{vv}"], None,
                                 rot=(math.pi / 2, 0, math.pi if sgn < 0 else 0))
+                ctx.setdefault("decvar", {})[dec.name] = (st, vv)
                 ctx["boxes"][side].append((ob, dec, idx))
                 if col == 5:   # the frontmost boxes also show their scribble to the corridor
+                    vv = rnd.randint(0, 2)
                     fd = uvplane(kit, f"fdec {side}{idx}", (BOX[1] - 0.03, BOX[2] - 0.03),
-                                   (x - BOX[0] / 2 - 0.004, y, z), M[f"{st}{rnd.randint(0, 2)}"], None,
+                                   (x - BOX[0] / 2 - 0.004, y, z), M[f"{st}{vv}"], None,
                                    rot=(math.pi / 2, 0, -math.pi / 2))
+                    ctx.setdefault("decvar", {})[fd.name] = (st, vv)
                     ctx["boxes"][side].append((ob, fd, idx))
                 idx += 1
     # corrugated steel on unit seven's side walls (the wall the scrape runs along)
@@ -678,8 +683,14 @@ def animate(kit, story, tl, t, ctx):
     sc = _last(_cues(tl, "stacks"), t)
     nl = sc["left"] if sc else STACK_N
     nr = sc["right"] if sc else STACK_N
+    scr = _last(_cues(tl, "scribble"), t)    # {"left": "round"}: the hook's boxes show round loops to the corridor
     for side, n in (("left", nl), ("right", nr)):
         for ob, dec, idx in ctx["boxes"][side]:
+            st, vv = ctx["decvar"][dec.name]
+            if side == "left" and scr and scr.get("left") == "round":
+                st = "round"
+            dec.data.materials.clear()
+            dec.data.materials.append(M[f"{st}{vv}"])
             on = idx < n
             ob.hide_render = not on
             dec.hide_render = not on

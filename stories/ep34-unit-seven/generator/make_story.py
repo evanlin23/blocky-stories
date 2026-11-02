@@ -76,7 +76,7 @@ KEYCAM = still([1.62, 2.14, 1.6], [1.62, 2.18, 1.2], 28)
 
 SHOTS = [
     (0, "L01 low in the corridor: me walking toward the lamp-lit open door seven, round-scribbled boxes inside it",
-     move(([-0.95, 1.0, 1.4], [0.6, 3.6, 1.1]), ([-0.95, 1.2, 1.4], [0.6, 3.6, 1.1]), 18, 18)),
+     move(([-0.95, 1.0, 1.4], [0.8, 3.5, 1.15]), ([-0.95, 1.2, 1.4], [0.8, 3.5, 1.15]), 18, 18)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
     ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.95, 1.3], [1.0, 3.0, 1.15], 22)),
@@ -105,11 +105,11 @@ SHOTS = [
     ("L23", "me walking down the corridor with the torch", still([-0.1, -0.9, 1.5], [-0.2, 7.0, 1.2], 30)),
     ("L24", "from two metres off: its face and the start of its flank", still([0.2, 7.95, 1.5], [1.2, 9.9, 1.3], 30)),
     ("L25", "low side angle: the flank runs back the whole depth in a cold rim",
-     move(([0.55, 9.2, 0.4], [3.6, 9.55, 1.05]), ([0.6, 9.18, 0.36], [3.6, 9.5, 1.05]), 18)),
+     move(([-0.9, 8.4, 0.5], [3.1, 10.0, 1.0]), ([-0.9, 8.45, 0.5], [3.1, 10.0, 1.0]), 20)),
     ("L26", "close on the ribbed flank and the grime", still([2.2, 10.84, 0.78], [2.0, 10.38, 0.78], 17)),
     ("L27", "front-on again, from beside it: the face to the corridor", still([-0.3, 9.55, 1.55], [1.1, 9.9, 1.55], 42)),
     ("L28", "long lens: unit nine's door is up", LONG_LENS(7.6)),
-    ("L29", "closer: the body side-on, the head turned square round to me, both eyes on the camera", still([-0.9, 3.6, 1.55], [1.2, 7.9, 1.55], 70)),
+    ("L29", "closer: the body side-on, the head turned square round to me, both eyes on the camera", still([-1.0, 5.6, 1.5], [1.7, 7.8, 1.5], 34)),
     ("L30", "the hasp, door seven already down", still([-0.1, 3.5, 0.45], [0.9, 3.0, 0.15], 30)),
     ("L31", "the corridor, lit, door eight next to mine", still([-0.35, 0.8, 1.5], [0.9, 5.0, 1.25], 28)),
     ("L32", "door eight's foot, no lock", still([-0.1, 5.7, 0.5], [0.9, 5.3, 0.22], 32)),
@@ -129,7 +129,7 @@ SHOTS = [
     ("L44", "its face right at my open door", still([-0.3, 3.45, 1.58], [1.0, 3.0, 1.58], 44)),
     ("L45", "low from the doorway's edge: the cold-rimmed flank running back to the wall",
      still([0.45, 2.22, 0.42], [3.4, 2.7, 1.05], 18)),
-    ("L46", "the lamp beside its boot", still([0.6, 2.05, 0.5], [1.2, 2.6, 0.2], 28)),
+    ("L46", "the lamp beside its boot", still([0.3, 1.7, 0.55], [1.3, 2.7, 0.35], 24)),
     ("L47", "my face, terrified, then my eyes drop", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
     ("L48", "down the aisle line: its head in profile, one eye, facing the round stack", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
     ("L49", "hard cut, same framing, held: the head still toward the round stack, never toward me", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
@@ -229,7 +229,7 @@ hide("me", "L21")
 put("me", "L23", [-0.1, 2.0], yaw=180)
 walk("me", "L23+1.9", [-0.3, 6.4])
 put("me", "L24", [-0.45, 7.2], yaw=yaw_to([-0.45, 7.2], [1.2, 9.9]), expr="worried")
-put("me", "L25", [0.4, 8.7], yaw=yaw_to([0.4, 8.7], [3.9, 9.4]), expr="worried")
+put("me", "L25", [-0.5, 7.4], yaw=yaw_to([-0.5, 7.4], [3.9, 9.4]), expr="worried")
 put("me", "L26", [0.5, 10.75], yaw=yaw_to([0.5, 10.75], [2.3, 10.4]), expr="worried")
 put("me", "L27", [-0.6, 8.4], yaw=yaw_to([-0.6, 8.4], [1.1, 9.9]), expr="worried")
 hide("me", "L28")
@@ -334,6 +334,8 @@ cues = [
     {"at": "L73>-2.2", "name": "door", "unit": 7, "open": 0.0, "dur": 2.4},
     # unit seven's stacks (18 each when full)
     {"at": 0, "name": "stacks", "left": 18, "right": 18},
+    {"at": 0, "name": "scribble", "left": "round"},
+    {"at": "L02", "name": "scribble", "left": "jagged"},
     {"at": "L03", "name": "stacks", "left": 9, "right": 9},
     {"at": "L06", "name": "stacks", "left": 18, "right": 18},
     {"at": "L61", "name": "stacks", "left": 12, "right": 18},

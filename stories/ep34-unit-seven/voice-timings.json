@@ -202,34 +202,34 @@
    ]
   },
   "L08": {
-   "text": "The boxes don't have labels, just scribbles. Some round, some jagged.",
+   "text": "The boxes have scribbles on them. Some round, some jagged.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.138,
+   "dur": 2.707,
    "onset": 0.155,
-   "end": 2.931,
+   "end": 2.5,
    "chunks": [
     [
      0.155,
-     0.672
+     0.5
     ],
     [
-     0.672,
-     1.069
+     0.5,
+     0.922
     ],
     [
-     1.094,
-     1.69
+     0.922,
+     1.259
     ],
     [
-     1.767,
-     2.19
+     1.337,
+     1.759
     ],
     [
-     2.224,
-     2.931
+     1.793,
+     2.5
     ]
    ]
   },
@@ -1234,14 +1234,14 @@
    ]
   },
   "L48": {
-   "text": "Its head was turned to the left stack.",
+   "text": "Its head was turned to the round stack.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.759,
+   "dur": 1.793,
    "onset": 0.155,
-   "end": 1.552,
+   "end": 1.586,
    "chunks": [
     [
      0.155,
@@ -1257,39 +1257,39 @@
     ],
     [
      0.879,
-     1.552
+     1.586
     ]
    ]
   },
   "L49": {
-   "text": "I blinked. Now it faced the right stack, like it was counting.",
+   "text": "It never looked at me. Only at the stack I sat on.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.8240000000000001,
-   "dur": 3.086,
+   "dur": 2.931,
    "onset": 0.207,
-   "end": 2.862,
+   "end": 2.69,
    "chunks": [
     [
      0.207,
-     0.741
+     0.517
     ],
     [
-     0.819,
-     1.25
+     0.517,
+     1.052
     ],
     [
-     1.25,
-     1.81
+     1.164,
+     1.439
     ],
     [
-     1.837,
-     1.992
+     1.439,
+     1.801
     ],
     [
-     1.992,
-     2.862
+     1.801,
+     2.69
     ]
    ]
   },
