@@ -19,7 +19,7 @@ You're asked for N stories. Plan them together, so they differ from each other a
      - the world's rule as the first line ("In this world/town, …", under 16 words), the marker that shows it on screen by 2 s, the 3 to 5 example montage, how the narrator is the exception, the loved one at stake, and the loophole the climax turns (RULES.md → What the hits do)
      - the twist: how the last 15 seconds turn over the first line, and the two plants a rewatch catches. Prefer a shape other than `stand-in` (a Keeper keeping a missing person's place), which more than ten stories already use (the owner allows repeats, so it isn't banned). `stories/lore.md` → "Other things a count can do" has other shapes
      - the one connection to `stories/lore.md` it plants (what, which line or shot)
-     - the full narration as numbered lines, about 560 to 640 words at roughly 290 wpm, so 2:15 to 2:30. Every line is the narrator's, and characters speak in reported speech.
+     - the full narration as numbered lines, as long as the big idea needs, and shorter is better: about 290 to 640 words at roughly 290 wpm (60 s to 2:15). Write about a third of each batch at 60 to 90 s (RULES → length test). Every line is the narrator's, and characters speak in reported speech.
    - `package.json` per RULES.md → Packaging.
 3. Update `stories/lore.md`: add what this batch makes true, a row per story under "Planted so far", and any open threads.
 4. Move the used ideas to "Made" in `stories/ideas.md`, and add a fresh idea for each one you used, so the backlog never runs dry.
