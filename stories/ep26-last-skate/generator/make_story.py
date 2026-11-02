@@ -112,7 +112,7 @@ MESEAT = [ME_X, SEAT_Y, 1.25]
 
 SHOTS = [
     # 01 the dedication (dim; the spotlight slides along the rail)
-    (0, "the pool slides slowly along the rail onto Nan, alone, her face in frame", 2, C([1.7, -1.5, 1.3], [3.0, -3.75, 1.25], 2.4)),
+    (0, "dark: the pool slides slowly onto Nan, alone at the rail, her face in frame", 2, C([3.0, -6.3, 1.3], [3.0, -3.75, 1.25], 2.3)),
     ("L01.2", "the booth lamp, Lenny at the mic, his face in frame", 2, C([-0.9, 0.6, 3.0], [0.0, 5.4, 2.95], 2.3)),
     ("L02", "the pool settles on Nan, from behind (over the rail from the concourse)", 2,
      C([3.0, -7.2, 1.5], [3.0, -3.8, 1.0], 2.7)),
@@ -180,7 +180,7 @@ SHOTS = [
     ("L50", "THE TEST STILL: its arm held out to her, folded twice, the hand at the end of the sleeve", 1,
      still([2.3, -6.9, 1.0], [2.3, -3.75, 1.45], 21)),
     ("L51", "Nan looks at the hand", 2, C([2.5, -5.4, 1.45], [3.0, -3.75, 1.35], 1.7)),
-    ("L52", "Nan's hand rising, a hand's width from its hand", 2, C([2.45, -5.5, 1.25], [2.5, -3.75, 1.25], 1.5)),
+    ("L52", "Nan's hand rising, a hand's width from its hand", 2, C([2.6, -6.4, 1.3], [2.6, -3.75, 1.3], 2.4)),
     ("L53", "me standing, terrified, the waltz swelling", 2, C([-2.9, -4.3, 1.6], [ME_X, -6.4, 1.4], 2.8)),
     ("L54", "the booth: Lenny at the mic, smiling", 2, BOOTH),
     # 08 Pop
@@ -203,14 +203,14 @@ SHOTS = [
     ("L70", "the pair coming past the snack bar, laughing", 2, still([-6.2, -4.9, 1.4], [-2.6, -2.8, 1.2], 26)),
     ("L71", "me on the chrome stool, chin on my hand", 2, C([-2.0, -4.2, 1.5], [POP_X, SEAT_Y, 1.35], 2.6)),
     ("L72", "crane up to the overhead wide", 2,
-     c([0, [-3.4, -4.4, 1.5], [-1.5, -1.0, 1.0], 26, 0], [0.85, [0.0, -2.4, 8.2], [0.0, 0.3, 0.0], 15, 90],
-       [1, [0.0, -2.4, 8.2], [0.0, 0.3, 0.0], 15, 90])),
-    ("L73", "hold the overhead wide, the fans at the frame's edge", 2, still([0.0, -2.4, 8.2], [0.0, 0.3, 0.0], 15, 90)),
+     c([0, [-3.4, -4.6, 1.5], [-3.0, -1.0, 1.0], 26, 0], [0.85, [-2.0, -7.4, 7.4], [-2.4, 0.6, 0.8], 38, 0],
+       [1, [-2.0, -7.4, 7.4], [-2.4, 0.6, 0.8], 38, 0])),
+    ("L73", "hold the overhead wide, the fans at the frame's edge", 2, still([-2.0, -7.4, 7.4], [-2.4, 0.6, 0.8], 38, 0)),
 ]
 
 # per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
 # flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
-EXPO = {"S09": 0.55, "S01": 1.5, "S02": 1.1, "S19": 1.4, "S20": 1.18, "S21": 1.03, "S22": 1.53, "S23": 1.09, "S24": 0.77, "S25": 0.87, "S26": 1.49, "S31": 0.55, "S32": 0.77, "S33": 1.18, "S34": 0.81, "S35": 0.77, "S36": 1.08, "S37": 1.51, "S38": 1.04, "S39": 1.17, "S40": 0.92, "S41": 1.13, "S42": 1.42, "S43": 2.5, "S44": 0.99, "S45": 1.19, "S46": 1.5, "S47": 1.7, "S48": 0.93, "S49": 0.96, "S50": 0.72, "S51": 1.34, "S52": 2.49, "S53": 2.13, "S54": 1.26, "S55": 1.21, "S56": 0.79, "S57": 1.13, "S58": 2.1, "S59": 0.89, "S60": 1.28, "S61": 1.22, "S62": 1.12, "S63": 0.86, "S64": 0.84, "S65": 1.86, "S66": 1.47, "S67": 1.04, "S68": 0.99, "S69": 1.32, "S70": 0.89, "S71": 0.95, "S72": 0.8, "S73": 0.87, "S74": 0.7, "S75": 1.33, "S76": 1.49, "S77": 0.7, "S78": 0.76}
+EXPO = {"S09": 0.55, "S01": 1.0, "S02": 1.1, "S19": 1.4, "S20": 1.18, "S21": 1.03, "S22": 1.53, "S23": 1.09, "S24": 0.77, "S25": 0.87, "S26": 1.49, "S31": 0.55, "S32": 0.77, "S33": 1.18, "S34": 0.81, "S35": 0.77, "S36": 1.08, "S37": 1.51, "S38": 1.04, "S39": 1.17, "S40": 0.92, "S41": 1.13, "S42": 1.42, "S43": 2.5, "S44": 0.99, "S45": 1.19, "S46": 1.5, "S47": 1.7, "S48": 0.93, "S49": 0.96, "S50": 0.72, "S51": 1.34, "S52": 2.49, "S53": 2.13, "S54": 1.26, "S55": 1.21, "S56": 0.79, "S57": 1.13, "S58": 2.1, "S59": 0.89, "S60": 1.28, "S61": 1.22, "S62": 1.12, "S63": 0.86, "S64": 0.84, "S65": 1.86, "S66": 1.47, "S67": 1.04, "S68": 0.99, "S69": 1.32, "S70": 0.89, "S71": 0.95, "S72": 0.8, "S73": 0.87, "S74": 0.7, "S75": 1.33, "S76": 1.49, "S77": 0.7, "S78": 0.76}
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
@@ -306,8 +306,8 @@ key("pop", "L63+1.3", yaw=90, blend=0.3)
 hide("pop", "L65")
 put("pop", "L66", [SKR[0], SKR[1]], yaw=90, wobble=1, expr="grin", arms=[0, 72])
 # skating off with Nan from L68: waypoints of the lap (seconds after L68) and the two partners' lateral offsets
-LAP = [(0.0, (2.0, -3.7)), (2.0, (-0.6, -2.7)), (4.0, (-3.2, -2.8)), (6.0, (-4.6, -1.4)), (8.0, (-2.8, 0.3)),
-       (10.0, (-0.4, 0.9)), (12.0, (1.6, 0.4)), (14.0, (3.0, -1.0)), (16.0, (2.0, -2.4))]
+LAP = [(0.0, (2.0, -3.7)), (2.0, (-0.6, -2.7)), (4.0, (-3.2, -2.8)), (6.0, (-4.8, 0.4)), (8.0, (-3.6, 2.2)),
+       (10.0, (-2.8, 1.5)), (12.0, (-2.2, 0.2)), (14.0, (-1.7, -1.0)), (16.0, (-1.0, -2.0))]
 
 
 def lap_pos(i, who):
@@ -318,7 +318,7 @@ def lap_pos(i, who):
     dx, dy = b[0] - a[0], b[1] - a[1]
     n = math.hypot(dx, dy)
     nx, ny = -dy / n, dx / n          # left of travel
-    k = 0.7 if who == "nan" else -0.7
+    k = 0.62 if who == "nan" else -0.62
     return t, [round(x + nx * k, 3), round(y + ny * k, 3)]
 
 
@@ -328,10 +328,13 @@ for i in range(len(LAP)):
         key("pop", "L67", yaw=90)
         walk("pop", f"L68+{t:.1f}", p, side=[0, 0], arms=[0, 40], wobble=4)
     else:
-        walk("pop", f"L68+{t:.1f}", p, side=[0, 0], arms=[0, 40], wobble=4 if i % 2 else 2)
+        joined = i >= 5
+        walk("pop", f"L68+{t:.1f}", p, side=[0, 70] if joined else [0, 0], arms=[0, 0] if joined else [0, 40],
+             wobble=1.5 if joined else (4 if i % 2 else 2))
 
 # ---- Nan
-put("nan", 0, list(NAN), yaw=180, expr="soft")
+put("nan", 0, list(NAN), yaw=0, expr="soft")
+key("nan", "L02", yaw=180, blend=0)
 key("nan", "L03", head=[62, 0], blend=0.3)
 key("nan", "L04", head=[0, 0], expr="grin", blend=0.3)
 put("nan", "L07", [-9.0, -6.5], yaw=90, expr="grin")
@@ -359,7 +362,9 @@ for i in range(len(LAP)):
     if i == 0:
         key("nan", "L67+1.5", arms=[0, 40])
         put("nan", "L68", [NAN[0] - 0.8, NAN[1] + 0.0], yaw=-90, skate=True, arms=[0, 40], expr="grin")
-    walk("nan", f"L68+{max(t, 0.9):.1f}" if i == 0 else f"L68+{t:.1f}", p, skate=True, arms=[0, 40], expr="grin")
+    jn = i >= 5
+    walk("nan", f"L68+{max(t, 0.9):.1f}" if i == 0 else f"L68+{t:.1f}", p, skate=True, arms=[0, 0] if jn else [0, 40],
+         side=[70, 0] if jn else [0, 0], expr="grin")
 
 # ---- Lenny at the booth
 put("lenny", 0, [0.0, 5.5, 1.74], yaw=0, expr="neutral")
@@ -410,9 +415,9 @@ for who, dx, p0, lag in (("c1a", -0.4, (-0.8, 0.0), 0.0), ("c1b", 0.4, (-0.8, 0.
     put(who, "L47", [p0[0] + dx, p0[1]], yaw=180, skate=True, expr="grin", arms=[18, 18])
     walk(who, f"L47+{1.0 + lag:.1f}", [p0[0] + dx + 0.6, p0[1] - 1.2], skate=True, arms=[18, 18])
     walk(who, f"L47+{2.2 + lag:.1f}", [dx * 0.8, -3.7], skate=True, arms=[18, 18])
-    walk(who, f"L47+{3.3 + lag:.1f}", [dx * 0.8 + 0.5, -5.4], skate=True, arms=[18, 18])
-    walk(who, f"L47+{4.5 + lag:.1f}", [dx * 0.8 + 2.0, -7.2], skate=True, arms=[18, 18])
-    hide(who, f"L47+{4.7 + lag:.1f}")
+    walk(who, f"L47+{3.3 + lag:.1f}", [dx * 0.8 - 0.3, -5.0], skate=True, arms=[18, 18])
+    walk(who, f"L47+{4.6 + lag:.1f}", [dx * 0.8 - 3.2, -5.0], skate=True, arms=[18, 18])
+    hide(who, f"L47+{4.8 + lag:.1f}")
 
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [{"at": 0, "name": "skates", "who": w, "on": True} for w in ("c1a", "c1b", "c2a", "c2b")]

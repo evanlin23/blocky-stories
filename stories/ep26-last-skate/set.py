@@ -417,12 +417,12 @@ def build_lights(kit, ctx):
 
 def skater_face(path: Path):
     W, H = faces.TEX_W, faces.TEX_H
-    cream = (233, 223, 201)
+    cream = (214, 204, 182)
     im = Image.new("RGB", (W, H), cream)
     d = ImageDraw.Draw(im)
     cx = W // 2
     # a smooth, very slightly paler oval plate: no nose, no brows, no mouth but the painted smile
-    d.ellipse([cx - 250, int(H * 0.06), cx + 250, int(H * 0.96)], fill=(241, 233, 213))
+    d.ellipse([cx - 250, int(H * 0.06), cx + 250, int(H * 0.96)], fill=(224, 214, 192))
     im = im.filter(ImageFilter.GaussianBlur(5))
     d = ImageDraw.Draw(im)
     ink = (22, 16, 15)
@@ -436,16 +436,14 @@ def skater_face(path: Path):
         d.ellipse([ex - 14 + sx * 3, ey - 20, ex + 2 + sx * 3, ey - 2], fill=(255, 255, 255))
     my = int(H * 0.73)
     for sx in (-1, 1):                                                              # cherry cheek dots
-        d.ellipse([cx + sx * 205 - 26, my - 88 - 26, cx + sx * 205 + 26, my - 88 + 26], fill=(196, 74, 84))
-    half = 232
+        d.ellipse([cx + sx * 205 - 22, my - 88 - 22, cx + sx * 205 + 22, my - 88 + 22], fill=(128, 50, 58))
+    half = 236
     xs = [-half + i * (2 * half) / 40 for i in range(41)]
-    up = [(cx + x, my - 44 + 58 * (1 - (x / half) ** 2)) for x in xs]               # the upper lip: a wide smile
-    lo = [(cx + x, my - 40 + 138 * (1 - (x / half) ** 2)) for x in xs]              # the hard lower edge
-    mid = [(cx + x, uy + 0.42 * (ly - uy)) for (x, uy), (_, ly) in zip(zip(xs, [u[1] for u in up]), lo)]
-    d.polygon(up + lo[::-1], fill=(96, 14, 26))                                     # the dark cherry mouth
-    d.polygon(up + mid[::-1], fill=(250, 245, 232))                                 # a cream band of teeth along the top
-    d.line(up, fill=ink, width=7, joint="curve")
-    d.line(lo, fill=ink, width=8, joint="curve")
+    sm = [(cx + x, my - 30 + 78 * (1 - (x / half) ** 2)) for x in xs]               # one thin painted line, wide
+    d.line(sm, fill=(70, 12, 22), width=8, joint="curve")
+    for sx in (-1, 1):                                                              # a small painted curl at each end
+        ex_, ey_ = sm[0] if sx < 0 else sm[-1]
+        d.line([(ex_, ey_ - 22), (ex_ + sx * 3, ey_ + 4)], fill=(70, 12, 22), width=8)
     im.save(path)
     return im
 
@@ -536,12 +534,12 @@ def build_skater(kit, ctx):
     for ob in objs:
         pass
     # lights that follow it
-    kit.light("sk_up", "POINT", (0, 0, 0.2), 190, "#ffe0c0", size=0.15)
+    kit.light("sk_up", "POINT", (0, 0, 0.2), 320, "#ffe0c0", size=0.15)
     kit.light("sk_rim", "SPOT", (0, 0, 3), 520, "#f27a88", size=0.1, spot=38, blend=0.8)
     allobjs = objs + list(root.children_recursive)
     link_only(kit, "skater_up", "sk_up", [o for o in allobjs if o.type == "MESH"], "only")
     link_only(kit, "skater_rim", "sk_rim", [o for o in allobjs if o.type == "MESH"], "only")
-    for n in ("conc0", "conc1", "amber", "hirefill", "closet", "tube", "house0", "house1", "house2", "dusk", "flood", "lot", "lot2"):
+    for n in ("conc0", "conc1", "amber", "hirefill", "closet", "tube", "spot", "house0", "house1", "house2", "dusk", "flood", "lot", "lot2"):
         link_only(kit, f"skater_not_{n}", n, [o for o in allobjs if o.type == "MESH"], "except")
 
 
@@ -596,7 +594,7 @@ def build(kit, story, tl):
     return ctx
 
 
-SPOT0 = {"to": [-6.5, -3.9], "gain": 1.0, "size": 38.0}
+SPOT0 = {"to": [0.3, -3.9], "gain": 1.0, "size": 34.0}
 DIM0 = {"level": 0.2}
 
 
