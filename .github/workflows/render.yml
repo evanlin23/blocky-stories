@@ -8,7 +8,7 @@ on:
     paths: ["stories/*/**"]   # files inside a story folder only (not stories/lore.md or ideas.md)
   workflow_dispatch:
     inputs:
-      story: {description: "story folder (blank = every story that's ready)", default: ""}
+      story: {description: "story folder (blank = every story that's ready, at most 15 a run)", default: ""}
 concurrency: {group: render, cancel-in-progress: false}
 permissions: {contents: read, actions: read}
 env:
@@ -20,8 +20,10 @@ jobs:
       matrix: ${{ steps.p.outputs.matrix }}
       stories: ${{ steps.p.outputs.stories }}
       any: ${{ steps.p.outputs.any }}
+      more: ${{ steps.p.outputs.more }}
     steps:
       - uses: actions/checkout@v4
+        with: {fetch-depth: 0}   # changed_since() compares the story's last commit with its film
       - uses: actions/setup-python@v5
         with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
       - run: pip install -r requirements.txt
@@ -29,13 +31,43 @@ jobs:
         env: {GH_TOKEN: "${{ github.token }}"}
         run: python scripts/plan_renders.py --story "${{ inputs.story }}" --shards $SHARDS >> "$GITHUB_OUTPUT"
 
-  draw:
+  voice:   # the narration is made once, here: the picture is drawn to it and the mix uses it, so they can't drift
     needs: plan
     if: needs.plan.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        story: ${{ fromJSON(needs.plan.outputs.stories) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: sudo apt-get update -q && sudo apt-get install -yq espeak-ng
+      - run: pip install -r requirements.txt -r requirements-tts.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - uses: actions/cache@v4
+        with: {path: ~/.cache/huggingface, key: hf-kokoro-v1}
+      - name: narrate
+        run: |
+          export BLOCKY_TTS=$(which python)
+          python -m blocky voice ${{ matrix.story }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-${{ matrix.story }}
+          path: |
+            out/work/${{ matrix.story }}/vo/
+            stories/${{ matrix.story }}/voice-timings.json
+          retention-days: 5
+
+  draw:
+    needs: [plan, voice]
+    if: ${{ !cancelled() && needs.plan.outputs.any == 'true' }}   # one story's failure doesn't stop the others
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:
       fail-fast: false
+      max-parallel: 16   # the free plan runs 20 jobs at once: leave 4 for the test checks on story PRs
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
@@ -43,6 +75,8 @@ jobs:
         with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
       - run: sudo apt-get update -q && sudo apt-get install -yq libegl1 libgl1 libxi6 libxxf86vm1 libxfixes3 libxrender1 libxkbcommon0 libsm6
       - run: pip install -r requirements.txt -r requirements-bpy.txt
+      - uses: actions/download-artifact@v4
+        with: {name: "voice-${{ matrix.story }}", path: .}
       - name: draw shard ${{ matrix.shard }}
         run: |
           export BLOCKY_BPY=$(which python)
@@ -56,7 +90,8 @@ jobs:
           compression-level: 0
 
   assemble:
-    needs: [plan, draw]
+    needs: [plan, voice, draw]
+    if: ${{ !cancelled() && needs.plan.outputs.any == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 300
     strategy:
@@ -77,12 +112,12 @@ jobs:
           pattern: frames-${{ matrix.story }}-*
           path: out/work/${{ matrix.story }}/frames
           merge-multiple: true
-      - name: finish, narrate, mix
+      - uses: actions/download-artifact@v4
+        with: {name: "voice-${{ matrix.story }}", path: .}
+      - name: finish and mix (with the narration the picture was drawn to)
         run: |
-          export BLOCKY_TTS=$(which python)
           S=${{ matrix.story }}
           python -m blocky timeline $S
-          python -m blocky voice $S --verify
           python -m blocky finish $S
           python -m blocky mix $S
       - name: flash measure
@@ -126,3 +161,12 @@ jobs:
             exit 1
           fi
           echo "film-${{ matrix.story }} is ready for the daily upload"
+
+  again:   # more stories were ready than one run can hold: start another run for the rest
+    needs: [plan, assemble]
+    if: always() && needs.plan.outputs.more == 'true'
+    runs-on: ubuntu-latest
+    permissions: {actions: write}
+    env: {GH_TOKEN: "${{ github.token }}"}
+    steps:
+      - run: gh workflow run render.yml --repo "${{ github.repository }}" --ref main

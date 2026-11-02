@@ -464,6 +464,7 @@ def hollow_mat(kit, name="hollow", hexc="#22170e"):
             break
     nz = _noise(N, L, _scaled(N, L, "Object", (1.0, 1.0, 0.4)), 3.0, 6.0)
     L.new(_mix(N, L, _dark(kit.col(hexc), 0.4), kit.col(hexc), _range(N, L, nz, 0.35, 0.65)), b.inputs["Base Color"])
+    kit._fogged(m, b.outputs[0])      # (a far hollow fades like the rest: unfogged it was a flat black egg, S01)
     return m
 
 
@@ -618,6 +619,8 @@ def materials(kit):
         "tend": block_end_mat(kit),
         "sbark": block_bark_mat(kit, "stump block bark", streak=(3.0, 3.0, 0.35), bump=0.3),
         "bstone": block_stone_mat(kit),
+        "gstone": block_stone_mat(kit, "giant stone", "#4a5445"),
+        "sprout": matte(kit, "spring needles", "#4f8f36", 0.9, (4.0, 0.6)),
         "core": matte(kit, "giant core", "#120c08", 1.0),
         "ground": ground_mat(kit),
         "road": road_mat(kit),
@@ -1037,6 +1040,7 @@ def build_giant(kit, ctx, M):
     pine = ctx["pine"]
     for side, (dia, x, y, dz) in stones.items():
         b = block_boulder(kit, f"giant.stone_{side}", dia / 2, M, torso, (x, y, H + dz), 31 if side == "l" else 47)
+        b.data.materials[0] = M["gstone"]
         g[f"stone_{side}"] = b
     # the giant's own left is +x in its local frame (it faces -y, so +x is on its left hand)
     for k, (dx, dy, s, yaw) in enumerate(((-0.3, -0.4, 1.45, 0.3), (0.55, 0.3, 1.1, 1.4), (-0.05, 0.75, 1.25, 2.2))):
@@ -1292,6 +1296,16 @@ def build_forest(kit, ctx, M, rng, n=420, r0=10.0, r1=260.0):
         ob = place_pine(kit, pine, f"pine.hero{k}", (x, y, terrain_z(x, y) - 0.2), h, 0.7 * k)
         ctx.setdefault("tree_objs", []).append(ob)
         trees.append((x, y))
+    # a stand east of the shelf and down the slope below it, so the giant walking off along it is lost among trees (L72)
+    walk_to = ((82.0, -258.0), (108.0, -250.0), (134.0, -244.0))
+    for k in range(260):
+        x, y = rng.uniform(62.0, 210.0), rng.uniform(-300.0, -214.0)
+        if (y < -266.0 and x > 150.0) or any(math.hypot(x - tx, y - ty) < 4.8 for tx, ty in trees) \
+                or any(math.hypot(x - wx, y - wy) < 8.0 for wx, wy in walk_to):
+            continue
+        trees.append((x, y))
+        ob = place_pine(kit, pine, f"grove{k}", (x, y, terrain_z(x, y) - 0.2), rng.uniform(15, 19), rng.uniform(0, 6.3))
+        ctx.setdefault("tree_objs", []).append(ob)
     ctx["trees"] = trees
     return trees
 
@@ -1363,10 +1377,17 @@ def build_lights(kit, ctx):
     g = ctx["giant"]
     gi = giant_objects(g)
     stones = [o for o in gi if ".stone_" in o.name or ".sapling_" in o.name]
+    moss = kit.light("moss", "POINT", (0, 0, 30), 1800.0, "#c9cfa4", size=2.5)
+    moss.visible_glossy = False
+    link_lights(kit, "stones only", ["moss"], stones, "INCLUDE")
     link_lights(kit, "giant only", ["rim"], gi, "INCLUDE")
     link_lights(kit, "stump and limbs only", ["lampkey"], [o for o in gi if o not in stones], "INCLUDE")
     me = [o for o in bpy.data.objects if o.type == "MESH" and o.name.startswith("me.")]
     link_lights(kit, "not the giant", ["fill"], gi, "EXCLUDE")
+    # a warm light for the giant's foot only: it lights the toes in my pool and nothing of mine (L65)
+    toe = kit.light("toelight", "POINT", (0, 0, 3), 2500.0, "#ffd9a0", size=0.6)
+    toe.visible_glossy = False
+    link_lights(kit, "toes only", ["toelight"], [o for o in gi if ".toe_" in o.name or ".leg_" in o.name], "INCLUDE")
     ctx["need_me_links"] = True
     # the lantern's own frame isn't lit by the flame inside it (it would blow out at 10 cm), and the lamp never
     # lights the stones (they stay part of the dark mass)
@@ -1550,7 +1571,7 @@ def build_land(kit, ctx, M):
     pts = [(-740 + 10 * k, RIVER_Y + 70 * math.sin(k * 0.045) + 30 * math.sin(k * 0.13)) for k in range(149)]
     for k, (x, y) in enumerate(pts):
         for side in (-1, 1):
-            rv.append((x, y + side * 5.0, VALLEY_Z + 0.4))
+            rv.append((x, y + side * 7.0, VALLEY_Z + 2.2))
     for k in range(len(pts) - 1):
         rf.append((2 * k, 2 * k + 1, 2 * k + 3, 2 * k + 2))
     river = kit.mesh_obj("river", rv, rf, M["river"])
@@ -1684,7 +1705,7 @@ def build_prints(kit, ctx, M):
         (rx, ry, _z), (dx, dy) = road_pos(min(1.0, max(0.0, (-y - 6) / 270.0)))
         h = math.atan2(-dx, dy) + math.pi
         root = print_parts(kit, f"print{k}", M, x, y, h)
-        tree = place_pine(kit, ctx["pine"], f"print{k}.sapling", (0.0, 0.0, 0.04), 1.3, 0.7 * k, root)
+        tree = place_pine(kit, ctx["sapling"], f"print{k}.sapling", (0.0, 0.0, 0.04), 3.6, 0.7 * k, root)
         prints.append((root, tree))
     ctx["prints"] = prints
 
@@ -1769,9 +1790,14 @@ LOOKS = {
             "cards": {"fog.day3": (0.0, -30.0, 12.0, 0.0), "fog.day4": (0.0, 30.0, 12.0, 0.0),
                       "fog.dayback": (0.0, 190.0, 140.0, 0.0)},
             "gains": DAY_GAINS, "sun": 1.0, "smudge": True},
+    # the same, for the first shot: a fog bank in front of the giant's head, so only a faint mass and two points show
+    "dayfar": {"fog": "#b8bcb8", "density": 0.012, "start": 6.0, "sky": "#c3c7c3", "sky_strength": 0.5, "exposure": 0.5,
+               "cards": {"fog.day3": (0.0, -30.0, 12.0, 0.0), "fog.day4": (0.0, 30.0, 12.0, 0.0),
+                         "fog.day5": (0.0, 46.0, 26.5, 0.0), "fog.dayback": (0.0, 190.0, 140.0, 0.0)},
+               "gains": {**DAY_GAINS, "lamp": 1.2}, "sun": 1.0, "smudge": True},
     # a clear morning before the smoke spreads: the valley far below, a silver line in it (L06, L07)
     "clear": {"fog": "#c4ccd2", "density": 0.0022, "start": 40.0, "sky": "#c9d3da", "sky_strength": 0.7,
-              "exposure": 0.1, "cards": {}, "gains": DAY_GAINS, "sun": 1.6, "river": 1.0, "smudge": True},
+              "exposure": 0.1, "cards": {}, "gains": DAY_GAINS, "sun": 1.6, "river": 2.5, "smudge": True},
     # the binoculars on the far ridge (thinner fog far out)
     "bino": {"fog": "#bcc0bc", "density": 0.0016, "start": 40.0, "sky": "#c3c7c3", "sky_strength": 0.6,
              "exposure": 0.1, "cards": {}, "gains": DAY_GAINS, "sun": 1.2, "bino": True},
@@ -1790,18 +1816,27 @@ LOOKS = {
                   "exposure": 1.6, "gains": NIGHT_GAINS,
                   "cards": {"fog.tower": (0.0, -12.0, CAB_Z - 1.2, 0.0), "fog.behind": (0.0, 14.0, CAB_Z - 1.0, 0.0),
                             "fog.near": (16.0, 0.0, CAB_Z - 1.4, 90.0), "fog.far": (0.0, -45.0, 60.0, 20.0)}},
+    # the lean, seen from outside (L40): lifted so the legs, the tilt and the cab read against a paler fog
+    "nightlean": {"fog": "#33404a", "density": 0.02, "start": 6.0, "sky": "#3b4a55", "sky_strength": 1.6,
+                  "exposure": 2.1, "gains": {**NIGHT_GAINS, "rim": 0.6},
+                  "cards": {"fog.tower": (0.0, -12.0, CAB_Z - 6.0, 0.0), "fog.far": (0.0, 40.0, 60.0, 20.0)}},
     # the valley from the cab at night: smoke lying in it like milk, no river (L56, L57)
     "nightvalley": {"fog": "#2a3238", "density": 0.0035, "start": 20.0, "sky": "#2a3238", "sky_strength": 1.0,
                     "exposure": 1.6, "cards": {}, "gains": NIGHT_GAINS, "smoke": 0.95, "smoke_col": "#9a9a96"},
     # the fire road at night: fog to its waist (L63 to L67)
+    # (the giant's cold rim is off: it made the stump pale; a dim olive light shows the moss on its stones instead)
     "nightroad": {"fog": "#2a3238", "density": 0.03, "start": 4.0, "sky": "#2c353c", "sky_strength": 1.0,
-                  "exposure": 1.6, "gains": NIGHT_GAINS,
+                  "exposure": 1.6, "gains": {**NIGHT_GAINS, "rim": 0.0, "lamp": 14.0, "lampkey": 25.0}, "moss": 1.0, "waist": True,
                   "cards": {"fog.tower": (0.0, -14.0, 9.5, 0.0), "fog.behind": (0.0, -70.0, 8.0, 0.0),
                             "fog.far": (0.0, -140.0, 60.0, 0.0)}},
+    # the high wide down the road (L67): a pale bank behind the giant so it stands out, none over the lamp
+    "nightroadhi": {"fog": "#2a3238", "density": 0.012, "start": 8.0, "sky": "#2c353c", "sky_strength": 1.0,
+                    "exposure": 1.8, "gains": {**NIGHT_GAINS, "rim": 0.0, "lamp": 4.0}, "moss": 1.0, "waist": True,
+                    "cards": {"fog.tower": (0.0, -14.0, 9.5, 0.0), "fog.far": (0.0, -40.0, 60.0, 0.0)}},
     # cold first light on the shelf: the smoke lifting, the river shining (L68 to L72)
     "dawn": {"fog": "#a7b4bf", "density": 0.0035, "start": 20.0, "sky": "#b3c0cb", "sky_strength": 0.55,
-             "exposure": 0.2, "cards": {}, "gains": {**DAY_GAINS, "lamp": 0.6}, "sun": 1.4, "smoke": 0.4,
-             "smoke_col": "#b8b6b0", "river": 1.2},
+             "exposure": 0.2, "cards": {}, "gains": {**DAY_GAINS, "lamp": 0.6}, "sun": 1.4, "smoke": 0.5,
+             "smoke_col": "#59616a", "river": 3.0},
     # spring: the same road, green and fogless, a small pine in every print (L73)
     "spring": {"fog": "#c8d6de", "density": 0.0012, "start": 30.0, "sky": "#b8cfdf", "sky_strength": 0.9,
                "exposure": 0.0, "cards": {}, "gains": DAY_GAINS, "sun": 2.6, "spring": 1.0, "river": 0.5},
@@ -1883,6 +1918,9 @@ def build(kit, story, tl):
     M = materials(kit)
     ctx["M"] = M
     ctx["pine"] = pine_data(kit, "pine", M)
+    sp = pine_data(kit, "sapling", M)
+    sp.materials[0] = M["sprout"]
+    ctx["sapling"] = sp
     lm = pine_data(kit, "larch", M)
     lm.materials[0] = M["larch"]
     ctx["larch"] = lm
@@ -2013,7 +2051,8 @@ def giant_state(tl, t):
     r = c.get("rise")
     if r:
         z += r["from"] * (1 - _ss((t - c["t"]) / r["dur"]))
-    walking = bool(w) and t < (at(w["until"]) if isinstance(w["until"], str) else w["until"]) if w else False
+    walking = (bool(w) and t < (at(w["until"]) if isinstance(w["until"], str) else w["until"]) if w else False) \
+        or bool(c.get("pines"))
     return {"pos": (pos[0], pos[1], z), "yaw": yaw, "head": c.get("head", 0.0), "pitch": c.get("pitch", 0.0),
             "stride": stride, "walking": walking, "hidden": c.get("hidden", False), "look_lamp": c.get("look_lamp", False),
             "lights": c.get("lights", 1.0), "fade": c.get("fade"), "t0": c["t"]}
@@ -2060,6 +2099,9 @@ def animate(kit, story, tl, t, ctx):
     apply_look(kit, ctx, _switch(_cues(tl, "look"), "id", t, "night"))
     for k, v in LOOKS[ctx["look"]].get("gains", {}).items():
         over[k] = v
+    over["moss"] = LOOKS[ctx["look"]].get("moss", 0.0)
+    # the engine's camera stops at 500 m: the river, 600 m out, needs more (only in the two looks that show it)
+    bpy.data.cameras["cam"].clip_end = 1500.0 if ctx["look"] in ("clear", "dawn") else 500.0
     g = ctx["giant"]
     gs = giant_state(tl, t)
     if gs is None:
@@ -2128,13 +2170,25 @@ def animate(kit, story, tl, t, ctx):
         hd = g["head"].matrix_world.translation
         lp = ctx["lamp"].location
         want = math.degrees(math.atan2(lp.x - hd.x, -(lp.y - hd.y)))
-        body = gs["yaw"] - 180.0
+        body = gs["yaw"]                    # its front (local -y) is at world yaw `yaw`, so the head's turn is want - yaw
         turn = (want - body + 180.0) % 360.0 - 180.0
         g["head"].rotation_euler = (0, 0, math.radians(max(-60.0, min(60.0, turn))))
     place_lamp(ctx, tl, t)
     carry(ctx, tl, t, "radio", "radioset", RADIO_SHELF, (0.0, -0.06, 0.02))
     carry(ctx, tl, t, "binos", "binoculars", BINO_SILL, (0.0, -0.08, 0.05), both=True)
     part_pines(ctx, gs, t)
+    # a dim olive light over the giant's stones, and fog to its waist that goes with it (L64 to L67)
+    gp = g["root"].location
+    kit.LIGHTS["moss"]["obj"].location = (gp.x, gp.y - 7.0, gp.z + 24.0)
+    lk = LOOKS[ctx["look"]]
+    fogt = next((o for o in ctx["fog"] if o.name == "fog.tower"), None)
+    if lk.get("waist") and not gs["hidden"] and fogt is not None:
+        fogt.location = (gp.x, gp.y - 2.0, gp.z + 9.0)
+    # the lantern's glass can glow brighter for the distant wide (a cue "lampglow", k times its usual strength)
+    k = _switch(_cues(tl, "lampglow"), "k", t, 1.0)
+    for nd in kit.MATS["lamp glow"].node_tree.nodes:
+        if nd.type == "EMISSION":
+            nd.inputs["Strength"].default_value = 0.12 * k
     sw = _last([c for c in _cues(tl, "lamp") if "swing" in c], t)
     if sw is not None:
         x = t - sw["t"]
@@ -2157,6 +2211,9 @@ def animate(kit, story, tl, t, ctx):
         fd = (m.to_3x3() @ V((0, -1, 0))).normalized()
         c = m.translation
         kit.LIGHTS["facekey"]["obj"].location = (c.x + fd.x * 0.6, c.y + fd.y * 0.6, c.z - 0.45)
+    toe_w = g["leg_l"].matrix_world @ V((0.0, -LEG[1] / 2 - 2.6, -HIP_Z + 0.5))
+    kit.LIGHTS["toelight"]["obj"].location = (toe_w.x, toe_w.y - 1.0, toe_w.z + 2.2)
+    over["toelight"] = _switch(_cues(tl, "footlit"), "gain", t, 0.0)
     over["facekey"] = over.get("facekey", 1.0) * _switch(_cues(tl, "facekey"), "gain", t, 1.0)
     hd = g["head"].matrix_world.translation
     aim_at(ctx["rim_obj"], (hd.x, hd.y, hd.z + 2.0))
