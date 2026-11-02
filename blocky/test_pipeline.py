@@ -104,3 +104,28 @@ def test_metrics_status_says_why_there_are_no_numbers():
     md = metrics.summary([{"story": "back-row", "title": "x", "published": "2026-10-31", "length_s": 147, "privacy": "public",
                            "totals": {}}], "2026-11-01")
     assert "no data yet" in md and "| ? |" not in md
+
+
+def test_film_artifact_lookup(monkeypatch):
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import subprocess
+
+    import stories
+
+    payload = {"artifacts": [
+        {"id": 1, "expired": False, "created_at": "2026-11-01T10:00:00Z", "workflow_run": {"id": 11}},
+        {"id": 2, "expired": False, "created_at": "2026-11-02T10:00:00Z", "workflow_run": {"id": 22}},
+        {"id": 3, "expired": True, "created_at": "2026-11-03T10:00:00Z", "workflow_run": {"id": 33}}]}
+
+    class R:
+        returncode = 0
+
+        @property
+        def stdout(self):
+            return json.dumps(payload)
+
+    monkeypatch.setattr(subprocess, "run", lambda *a, **k: R())
+    f = stories.film("photo-strip")
+    assert f["id"] == 2 and f["run_id"] == 22 and f["url"].endswith("/actions/runs/22")
+    payload["artifacts"] = []
+    assert stories.film("photo-strip") is None
