@@ -29,9 +29,10 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
   - The lore never makes two stories alike: rule 5 still holds for setting, creature, twist and ending shape.
 - **Vary the warmth** (owner, 2026-10-31: "We can have other heartwarming endings"): friendship, loyalty, helping, home. Never again "the monster was kind/lonely all along" or the ritual done back.
 - **Never reuse what batch 1 shared:** the "At the PLACE, rule" first line (start mid-scare, on a sound, a question or dialogue instead). A knowing elder who explains in cryptic quotes. A night-shift or one-summer narrator. A pale grey blank-faced creature. "Pressed FLAT" against glass. A closing-section opener like "Last NIGHT,". An on-screen age. "It didn't touch me". "Not X, it was Y" cadences.
-- **Within a batch** no two stories share a setting, creature type, first-line type, ending shape or kind of warmth. `stories/ideas.md` lists what's been used.
+- **Within a batch** no two stories share a setting, creature type, first-line type or kind of warmth (ending shapes may repeat, owner 2026-11-02). `stories/ideas.md` lists what's been used.
 - **Read every line against the picture under it.** Watch for self-contradictions ("TALL... WIDER than it's TALL"), a count that doesn't match the knocks we hear, and a line about skin landing on a character it doesn't fit.
 - **Titles** are a question or a statement, never an imperative rule ("When the floor knocks, knock back" was wrong). They don't spoil the reveal or reuse an earlier title's shape.
+- **Volume** (owner, 2026-11-02: "we should just be trying to pump out as many as possible right now and then I'll just rate limit and upload once per day manually"): make as many stories as we can in parallel sessions. Similar ending shapes across a batch are fine (owner, same day: "We don't need to limit how many are like that"), but the hard rules and the originality check still apply. The owner paces the uploads, one a day.
 
 ## The look
 - **Characters** (`blocky/rig.py`, `faces.py`): R6 blocky bodies, a soft rounded-cylinder head, flat drawn faces with thick black strokes, block hair, hats, patterned shirts. A face at phone size is at least 1/5 of the frame width, out of the caption band.
