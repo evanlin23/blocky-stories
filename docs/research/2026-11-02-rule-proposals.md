@@ -1,8 +1,9 @@
-# Rule proposals from reel research round 1 (not adopted)
+# Rule proposals from reel research (decided 2026-11-02)
 
-**Status: proposals for the owner to decide.** Nothing here is in RULES.md. The owner, 2026-11-01: "wait for more research to come in. We want to keep a similar length target. We don't want to copy 1 person specifically." Each proposal below rests on a pattern seen on **at least 3 different accounts** in `2026-11-01-reel-watch-notes.md` (15 hits and 4 flops across 7 Instagram accounts; plays from 1.5M to 11M). Round 2 (YouTube Shorts plus audio) should confirm or kill each one before it's adopted.
-
-Each proposal says what it is, the evidence, whether it conflicts with a current rule, and a recommendation.
+**Status: decided.** Round 2 (`2026-11-02-reel-watch-notes-2.md`: 12 YouTube Shorts hits at 9.6M to 36M views, plus 3 low performers, measured with sound) confirmed every A-list pattern on at least 3 YouTube channels. The owner then said, 2026-11-02: "Please update everything based on the stuff we've seen."
+- **Adopted into RULES.md → "What the hits do":** proposals 1 to 9 (9 with adult or teen loved ones only).
+- **Kept as the owner decided:** 10 (no child narrator), 11 (two or three word captions; YouTube's hits mostly use phrase blocks with a coloured key word too) and 12 (the 2:15 to 2:30 length).
+- **Also adopted from round 2:** titles state the world's rule, and the pin is a question the viewer answers about themselves, which the owner posts as their own first comment.
 
 ## A. No conflict with current rules (adopt after round 2 confirms them on YouTube)
 
