@@ -25,6 +25,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S63, under L59 ("Wren tore it in half"), held about 1.8 s, not narrated |
 | ep25 `plot-nine` | the Bench, one glimpse: down the Digger's hole in torchlight, far below, a flat pale floor with one unfinished blocky hand lying on it, palm up. No tally. (The Digger is the allotments' Keeper. It rose in Mr. Carter's footsteps, standing in the gap he left when he gave up his plot but kept coming, and sank once he was a plot-holder again.) | under P03, after L59 ("I shine my TORCH / straight DOWN it."), held 1.6 s, not narrated |
+| ep47 `fitting-room` | a plain tally: two charcoal strokes pressed into the brass front-left foot of the second cutting bench (mine), two for a shop built for two. No extra stroke. (The Empty is the shop's Keeper. It stood in my place at my bench, my measurements and my shoe size, while the shop was one short, and dropped into a heap when I stepped back up to the bench.) | S87, under L68 ("He CHALKS me / for a new APRON."), held 1.8 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
 
