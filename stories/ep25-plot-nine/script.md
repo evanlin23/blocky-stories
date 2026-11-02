@@ -9,7 +9,7 @@
 
 ## The story
 
-- **Premise:** In the driest spring on the hill, I take over old Mr. Carter's allotment plot when his knees give out. Every other plot cracks in the sun, but mine is dark and wet at every dawn. Then a head and shoulders of root-wrapped soil rises out of plot one by the gate, and each dawn it's in a bed further down the path, nearer to my beans, leaving a round hole behind it that no cane can find the bottom of.
+- **Premise:** In the driest spring on the hill, I take over old Mr. Carter's allotment plot when he says it's time for somebody new. Every other plot cracks in the sun, but mine is dark and wet at every dawn. Then a head and shoulders of root-wrapped soil rises out of plot one by the gate, and each dawn it's in a bed further down the path, nearer to my beans, leaving a round hole behind it that no cane can find the bottom of.
 - **Rule / hook:** no rule is posted. The hook is a smell that can't be there: rain on a plot in a six-week drought. The only spoken rule is Mr. Carter's own "water at dusk, never at noon", which he keeps by coming in the dark.
 - **Twist:** Mr. Carter never stopped coming. Every night since he gave me the key, he's let himself in with his old key and his old can to water the plot he couldn't let go of. The Digger rises along the path he walks, a bed nearer each night, following him in to plot nine, because he's still counted there. "It hasn't rained in six weeks" turns over: six weeks is exactly how long since he gave me the key. The smell of rain was his can.
 - **Where the twist is planted:**
@@ -33,7 +33,7 @@ All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 
 - `me` (adult): first plot ever. Short dark block hair, a moss-green knit jumper with a cable pattern, brown work trousers, green wellies. Faces: `neutral`, `worried`, `scared`, `smile`. No age on screen.
 - `carter` (adult, older): Mr. Carter. A tweed flat cap, a drawn grey moustache, a brown cardigan with leather elbow patches over a check shirt, wellies. Practical and gruff, never a guide, never cryptic. He's never seen the Digger and explains nothing about it. Faces: `neutral`, `shocked` (mouth open), `sheepish`, `smile`.
-- `newcomer` (adult): a woman with a block ponytail, a teal windbreaker and grey jeans, wheeling a brick-red bike. Two shots only.
+- `newcomer` (adult): a woman with a block ponytail, a mustard windbreaker with a cream zip stripe and stone jeans, wheeling a brick-red bike. Two shots only.
 
 Every word is the narrator's. Mr. Carter's two quotes (L06, L49) are reported in my lines.
 
@@ -100,7 +100,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [high wide down the path: one dark rectangle near the bottom, plot nine. Faint wet boot prints come in from the gate along the dusty path and turn into it. Not mentioned]
 - `L05` narrator: Six weeks AGO, / old Mr. CARTER / gave me the KEY.
   - [day one, the gate: Mr. Carter, `neutral`, and me. The key on a loop of twine hangs from his sleeve end toward my hand. Cut before any hand-over]
-- `L06` narrator: He said, / "My KNEES / are DONE," / and walked OUT / without a WAVE.
+- `L06` narrator: He said, / "Time for / somebody NEW," / and walked OUT / without a WAVE.
   - [Mr. Carter from behind, walking up past the gate, stiff in the legs, not looking back]
 - `L07` narrator: His SHED / still smells / of OIL / and TWINE.
   - [inside the shed, dim: a ball of twine, an oil can, seed packets with drawn pods, no writing]
@@ -193,7 +193,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [on my face, `scared`. Behind me the door swings slowly open onto the dark inside, over about 0.8 s. No light comes out]
 - `L43` narrator: It's Mr. CARTER, / holding his old / WATERING CAN.
   - [Mr. Carter in the doorway, `sheepish`, the green can hanging from his sleeve end]
-- `L44` narrator: His trousers / are SOAKED / to the KNEE.
+- `L44` narrator: His trouser legs / are SOAKED / THROUGH.
   - [down on his wet trouser legs and wellies]
 
 ## 04 The can (L45 to L56)
