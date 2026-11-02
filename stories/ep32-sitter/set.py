@@ -673,9 +673,8 @@ def build_hall(kit, ctx, M, wd):
     for k in range(5):
         kit.box("brush", (0.012, 0.012, 0.22), (0.12 + 0.04 * (k - 2) * 0.0, 0.2 + 0.015 * (k - 2), -0.04), M["brush"], dr, rot=(0, math.pi / 2, 0.3 + 0.05 * k))
     ctx["hall"]["drawer"] = dr
-    kit.light("hall sun", "AREA", (HX + 0.1, -1.4, 1.5), 260.0, "#ffe3b0", size=1.2).rotation_euler = (math.radians(-90), 0, 0)
-    kit.light("hall sun", "AREA", (HX + 0.1, -1.4, 1.5), 1.0, "#ffe3b0", size=0.1)
-    kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 2.55), 150.0, "#fff2dc", size=2.0).rotation_euler = (0, 0, 0)
+    kit.light("hall sun", "AREA", (HX + 0.1, -1.3, 1.5), 70.0, "#ffe3b0", size=1.0).rotation_euler = (math.radians(-90), 0, 0)
+    kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 2.55), 60.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
 
 
 def build_kitchen(kit, ctx, M, wd):
@@ -716,16 +715,19 @@ def build_props(kit, ctx, M):
 
 def build_lights(kit, ctx):
     # the room: dim warm fill from the ceiling, floor-level work lights round the dais, a cold rim from the north window
-    for k, (x, y) in enumerate(((-3.0, -1.0), (3.0, -1.0), (0.0, -3.5), (0.0, 2.8))):
-        kit.light(f"room fill {k}", "POINT", (x, y, 3.0), 10.0, "#ffcf9a", size=0.4)
+    for k, th in enumerate(ctx["TH"]):
+        x, y = 4.5 * math.cos(math.radians(th)), 4.5 * math.sin(math.radians(th))
+        kit.light(f"room fill {k}", "POINT", (x, y, 2.7), 26.0, "#ffcf9a", size=0.4)
+    for k, (x, y) in enumerate(((-1.4, -1.6), (1.4, -1.6), (0.0, 2.4))):
+        kit.light(f"room fill c{k}", "POINT", (x, y, 2.9), 16.0, "#ffd7aa", size=0.4)
     for k, (x, y, z) in enumerate(((1.3, -1.3, 0.25), (-1.3, -1.2, 0.25))):
         kit.light(f"foot {k}", "POINT", (x, y, z), 14.0, "#ffa860", size=0.15)
     rim = kit.light("north rim", "AREA", (0.0, 4.6, 2.3), 260.0, "#6f93d8", size=2.4)
     rim.rotation_euler = (V((0, -1.5, -1.2)).to_track_quat("-Z", "Y").to_euler())
     # daylight, for the show: ceiling panels and the window
     for k, (x, y) in enumerate(((-2.5, -1.0), (2.5, -1.0), (0.0, 2.0), (0.0, -3.5))):
-        kit.light(f"show ceil {k}", "AREA", (x, y, 3.1), 0.0001, "#fff6e6", size=2.0).rotation_euler = (math.pi, 0, 0)
-    kit.light("show day", "AREA", (0.0, 4.0, 2.3), 0.0001, "#f2f6ff", size=3.0).rotation_euler = (V((0, -1, -0.5)).to_track_quat("-Z", "Y").to_euler())
+        kit.light(f"show ceil {k}", "AREA", (x, y, 3.1), 420.0, "#fff6e6", size=2.0).rotation_euler = (math.pi, 0, 0)
+    kit.light("show day", "AREA", (0.0, 4.0, 2.3), 900.0, "#f2f6ff", size=3.0).rotation_euler = (V((0, -1, -0.5)).to_track_quat("-Z", "Y").to_euler())
     # outside: the lamp post, a cold wash on the building
     kit.light("post light", "POINT", (-2.6, -9.0, GROUND + 3.4), 700.0, "#ffbf78", size=0.3)
     kit.light("ext wash", "AREA", (-12.0, -20.0, 14.0), 700.0, "#5a73a8", size=6.0).rotation_euler = (V((12, 20, -14)).to_track_quat("-Z", "Y").to_euler())
@@ -895,8 +897,7 @@ def animate(kit, story, tl, t, ctx):
                 g = 0.25
         if name.startswith("show "):
             g = 1.0 if show_on else 0.0
-            over[name] = g * (1.0 if name == "show day" else 1.0)
-            kit.LIGHTS[name]["light"].energy = (900.0 if name == "show day" else 420.0) * g
+            over[name] = g
             continue
         if name == "north rim":
             g = 0.15 if show_on else 1.0
@@ -954,7 +955,7 @@ def animate(kit, story, tl, t, ctx):
     for o in ctx["hall"]["jar"]:
         o.hide_render = hs != "hung"
     if hs == "hung":
-        t0 = _line_t(tl, "L76") + 1.1
+        t0 = tl["lines"]["L76"]["end"] - 0.55
         k = math.exp(-max(0.0, t - t0) * 7.0) * math.cos(max(0.0, t - t0) * 24.0) if t > t0 else 0.0
         pf.rotation_euler = (math.radians(4.0 * k), 0, 0)
         pf.location = (HX - 0.97, 1.2, 1.55)

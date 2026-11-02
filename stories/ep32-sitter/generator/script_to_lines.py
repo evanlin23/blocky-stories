@@ -35,5 +35,24 @@ for ln in OUT:
         pass
 for (lid, k), v in {("L17", 2): 'saying, "Halfway again?"', ("L66", 1): 'about to say, "Not bad."'}.items():
     next(l for l in OUT if l["id"] == lid)["chunks"][k][1] = v
+def split3(cap, spk):
+    cw, sw = cap.split(" "), spk.split(" ")
+    n = len(cw)
+    if n <= 3 or len(sw) != n:
+        return [[cap, spk]]
+    k = -(-n // 3)
+    base, extra = divmod(n, k)
+    sizes = [base + (1 if i >= k - extra else 0) for i in range(k)]
+    out, i = [], 0
+    for z in sizes:
+        out.append([" ".join(cw[i:i + z]), " ".join(sw[i:i + z])])
+        i += z
+    return out
+
+
+for ln in OUT:
+    ln["chunks"] = [p for ch in ln["chunks"] for p in split3(*ch)]
+l17 = next(l for l in OUT if l["id"] == "L17")
+l17["chunks"] = [ch for ch in l17["chunks"] if "saying" not in ch[0]] + [["saying,", "saying,"], ['"HALFWAY again?"', '"Halfway again?"']]
 (HERE / "lines.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")
 print(len(OUT), "lines")
