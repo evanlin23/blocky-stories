@@ -310,7 +310,7 @@ def _dress(kit, ctx):
                 if arm is not None:
                     kit.box(f"sam.cuff{sx}", (1.02, 1.04, 0.4), (0, 0, -1.3), kit.plastic("#e6e6e0", 0.9), arm, bevel=0.05)
             arm = obs.get("sam.arm-1")
-            ctx["tag2"] = kit.box("sam.tag", (0.66, 0.9, 0.08), (0.0, -0.7, -2.1), kit.plastic("#c8322a", 0.55), arm, bevel=0.02)
+            ctx["tag2"] = kit.box("sam.tag", (0.26, 0.03, 0.38), (0, 0, -9), kit.plastic("#c8322a", 0.5), None, bevel=0.01)
         if bag:
             kit.box(f"{who}.bag", (0.8, 0.55, 0.8), (0.8, 0.8, 0.28), kit.plastic("#f2f0ea", 0.85), tor, bevel=0.1)
             kit.box(f"{who}.bagt", (0.8, 0.5, 0.12), (0.8, 0.8, 0.74), kit.plastic("#d8d4c8", 0.85), tor, bevel=0.04)
@@ -356,7 +356,11 @@ def animate(kit, story, tl, t, ctx):
     for k in ctx.get("knots", []):
         k.hide_render = not (_last(_cues(tl, "knot"), t) or {}).get("on", False)
     if "tag2" in ctx:
-        ctx["tag2"].hide_render = not (_last(_cues(tl, "tag2"), t) or {}).get("on", False)
+        on2 = (_last(_cues(tl, "tag2"), t) or {}).get("on", False)
+        ctx["tag2"].hide_render = not on2
+        sm = acting.state(tl, "sam", t)
+        ctx["tag2"].location = (sm["x"] - 0.5, sm["y"] - 0.8, sm["z"] + 1.12)
+        ctx["tag2"].rotation_euler = (0.25, 0, 0.2)
     # the rope
     mode = (_last(_cues(tl, "rope"), t) or {}).get("mode", "me")
     me = acting.state(tl, "me", t)

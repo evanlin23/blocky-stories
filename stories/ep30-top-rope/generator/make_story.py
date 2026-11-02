@@ -127,7 +127,7 @@ shot("S66", "L66", still((-0.3, -1.7, 8.5), (0.62, -0.4, 8.8), 36), step=1)
 shot("S67", "L67", still((-3.0, -3.0, 7.7), (0.2, -0.4, 7.9), 20))
 shot("S68", "L68", still((0, -8.5, 5.0), (0, -0.5, 5.5), 18))
 shot("S69", "L69", still((-1.0, -5.2, 1.5), (-1.5, -2.0, 1.5), 34))
-shot("S70", "L70", still((-1.2, -3.8, 1.9), (-1.7, -2.4, 1.45), 42))
+shot("S70", "L70", still((-1.7, -4.8, 1.8), (-1.9, -2.6, 1.4), 30))
 shot("S71", "L71", still((-1.5, -5.0, 1.5), (-1.5, -2.0, 1.6), 40))
 shot("S72", "L72", still((-1.2, -5.0, 1.5), (-1.5, -2.0, 1.6), 40))
 shot("S73", "L73", still((-0.4, -4.3, 1.6), (-0.2, -2.0, 1.25), 38))
@@ -299,7 +299,7 @@ cues = [
 ]
 
 # per-shot lights. The creature's close shots: the front lamps dead, a key from below, a cold blue rim (set.py places them)
-DARK = {"lamps": 0.02, "flood": 0.15, "fill": 0.35}
+DARK = {"lamps": 0.06, "flood": 0.3, "fill": 0.6}
 WIDE_C = {"ckey_g": 0.5, "crim_g": 0.6}
 looks = {}
 for sid in ("S21", "S22", "S23", "S24", "S25", "S26", "S33", "S34", "S40", "S41", "S54", "S55", "S56", "S57", "S66", "S67", "S75"):
@@ -309,6 +309,10 @@ for sid in ("S27", "S62", "S68"):
 looks["S27"].update({"lamps": 0.7})
 for sid in ("S10", "S11", "S12"):      # memory: soft and dim
     looks[sid] = {"lamps": 0.35, "flood": 0.35, "fill": 1.0}
+for sid in ("S33", "S34", "S40", "S41", "S75"):
+    looks[sid]["glow"] = [[0.2, -1.6, 9.3], 90.0]
+looks["S75"].update({"lamps": 0.3, "flood": 0.6})
+looks["S83"] = {"glow": [[1.0, -6.0, 10.4], 600.0]}
 looks["S82"] = {"glow": [[0.3, -1.4, 9.0], 260.0]}
 
 # ---------------------------------------------------------------------------------------------------- sound
