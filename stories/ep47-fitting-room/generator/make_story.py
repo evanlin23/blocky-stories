@@ -182,7 +182,7 @@ SHOTS = [
     ("L50", "the open collar", 1, still((-12.0, 1.4, 1.6), (EM[0], EM[1], 1.7), 40)),
     ("L51", "wide: both of us bare", 1, still((-7.4, 0.2, 1.55), (-12.0, 1.8, 1.3), 32)),
     ("L52", "sleeves lift, side-on", 1, still((-8.7, 2.5, 1.3), (EM[0], 2.5, 1.15), 40)),
-    ("L52.3", "the space between its cuffs, three-quarter", 1, still((-10.2, 0.8, 1.35), (EM[0], 2.4, 1.15), 40)),
+    ("L52.3", "the space between its cuffs, three-quarter", 1, still((-9.4, 1.0, 1.35), (EM[0], 2.4, 1.15), 40)),
     ("L53", "it leans, 12", 1, still((-10.6, 0.8, 1.5), (-12.6, 2.2, 1.45), 50)),
     ("L53.2", "it leans, 24", 1, still((-10.7, 0.9, 1.5), (-12.6, 2.2, 1.45), 55)),
     ("L53.3", "35: eyes level with mine", 1, still((-12.0, 0.4, 1.58), (-12.8, 2.3, 1.5), 32)),

@@ -738,6 +738,38 @@ def funnel_mesh(kit, name, r0, r1, thick, h, hf, mat_out, mat_in, parent, n=48):
     return ob
 
 
+def sleeve_mesh(kit, name, mat_out, mat_in, parent, n=20):
+    """An empty cloth sleeve: a softened tube tapering from the shoulder to a narrower open cuff, with a dark lining
+    running up inside the cuff and a slight sag at the elbow."""
+    prof = [(0.28, 0.54, 0.0), (-0.1, 0.52, 0.0), (-0.7, 0.47, 0.03), (-1.2, 0.42, 0.07), (-1.65, 0.38, 0.1)]  # z, r, y-sag
+    verts, faces_ = [], []
+    rings = [(z, r, yo) for z, r, yo in prof]
+    for z, r, yo in rings:
+        for k in range(n):
+            a = 2 * math.pi * k / n
+            verts.append((r * math.cos(a), r * 0.92 * math.sin(a) + yo, z))
+    for z, r, yo in (rings[-1], (-1.5, 0.3, 0.1), (-1.15, 0.27, 0.08)):   # the inner lining, going up inside
+        rr = r - 0.04 if z == rings[-1][0] else r
+        for k in range(n):
+            a = 2 * math.pi * k / n
+            verts.append((rr * math.cos(a), rr * 0.92 * math.sin(a) + yo, z))
+    rows = len(rings) + 3
+    for i in range(rows - 1):
+        for k in range(n):
+            a, b = i * n + k, i * n + (k + 1) % n
+            faces_.append((a, b, b + n, a + n))
+    # the last ring of the outer (index len(rings)-1) joins the first inner ring through the cuff rim
+    ob = kit.mesh_obj(name, verts, faces_, mat_out, parent, smooth=True)
+    ob.data.materials.append(mat_in)
+    nout = len(rings) - 1
+    for i, p_ in enumerate(ob.data.polygons):
+        p_.material_index = 1 if i >= (nout + 1) * n else 0
+    # cap the shoulder end
+    cap = kit.mesh_obj(name + "cap", [(0, 0, 0.28)] + [verts[k] for k in range(n)],
+                       [(0, 1 + (k + 1) % n, 1 + k) for k in range(n)], mat_out, parent, smooth=True)
+    return ob
+
+
 def build_empty(kit, M, ctx):
     sc = S * 1.2
     root = kit.empty("empty", (0, 0, 0))
@@ -759,19 +791,20 @@ def build_empty(kit, M, ctx):
     arms = []
     for sx in (-1, 1):
         arm = kit.empty(f"empty.arm{sx}", (sx * 1.5, 0, 1.75), torso)
-        kit.box(f"empty.sleeve{sx}", (0.98, 1.0, 2.0), (0, 0, -0.75), M["pin_arm"], arm, bevel=0.08)
-        kit.box(f"empty.cuffb{sx}", (1.02, 1.04, 0.16), (0, 0, -1.67), M["pin_arm"], arm, bevel=0.04)
-        kit.box(f"empty.cuffin{sx}", (0.72, 0.72, 0.02), (0, 0, -1.76), M["void"], arm)
+        sleeve_mesh(kit, f"empty.sleeve{sx}", M["pin_arm"], M["void"], arm)
         arms.append(arm)
     # no head: a tall raised charcoal collar, flared, open and notched at the front. The dark notch is its mouth; the
     # two glints sit deep inside the back wall and only show down the notch (and only once the cue turns them on)
     neck = kit.empty("empty.neck", (0, 0, 2.0), torso)
-    funnel_mesh(kit, "empty.collar", 0.56, 0.86, 0.09, 1.6, 0.5, M["pin_collar"], M["lining"], neck)
-    floor_ = kit.cyl("empty.voidfloor", 0.5, 0.02, (0, 0, 0.03), M["void"], neck, n=24)
+    col = funnel_mesh(kit, "empty.collar", 0.52, 0.56, 0.1, 1.05, 0.42, M["pin_collar"], M["lining"], neck)
+    for sx in (-1, 1):   # sloped suit shoulders into the collar, and two pointed collar tips lying out over the chest
+        kit.box(f"empty.shoulder{sx}", (0.95, 1.0, 0.3), (sx * 0.78, 0, 0.02), M["pin"], neck, rot=(0, sx * -0.32, 0), bevel=0.1)
+        kit.box(f"empty.tip{sx}", (0.34, 0.05, 0.6), (sx * 0.42, -0.5, 0.3), M["pin_collar"], neck, rot=(0, sx * 0.5, 0), bevel=0.02)
+    floor_ = kit.cyl("empty.voidfloor", 0.42, 0.02, (0, 0, 0.03), M["void"], neck, n=24)
     glints = []
     gm = kit.emit("#f4f0e2", 12.0, name="glint")
     for sx in (-1, 1):
-        glints.append(kit.sphere(f"empty.glint{sx}", 0.05, (sx * 0.16, 0.5, 0.95), gm, neck, seg=10))
+        glints.append(kit.sphere(f"empty.glint{sx}", 0.05, (sx * 0.12, 0.3, 0.85), gm, neck, seg=10))
     e.update(legs=legs, torso=torso, arms=arms, neck=neck, void=[floor_], glints=glints)
     ctx["empty"] = e
 
@@ -780,7 +813,7 @@ POSES = {
     #        arms (fwd deg, out deg) l/r,           torso lean, head-neck tilt back, legs
     "hang": {"arm": (3, 2), "lean": 3, "tilt": 0},
     "stand": {"arm": (0, 2), "lean": 0, "tilt": 0},
-    "sleeves_up": {"arm": (66, 16), "lean": 0, "tilt": 0},
+    "sleeves_up": {"arm": (56, 24), "lean": 0, "tilt": 0},
     "lean": {"arm": (12, 4), "lean": 12, "tilt": 0},
 }
 
