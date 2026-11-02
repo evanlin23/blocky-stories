@@ -6,13 +6,13 @@
 In this town every favour you owe sits on your head as a small gold block. It lands the moment you say thanks and drops off when you do a favour back. My head has always been bare, because I never say thanks. My cousin Ilan has the tallest stack in town, and this summer people whisper that he owes everyone and never pays it back. We always ate Saturday lunch in the arch seat, a stone seat cut into the old clock arch on the square, room for two. This summer I stopped going. Each Saturday his stack is taller, and on my empty half of the seat lies a shadow with shoulders as wide as the arch, then the thing itself, a person built exactly as wide as the seat.
 
 ## Rule
-A favour lands as a block on the head of whoever says thanks for it (L02, L03), and it drops when a favour is done back (L04). One favour is one block (L55). I'm the exception: I never say thanks, so I've never carried one (L10, L11).
+A favour lands as a block on the head of whoever says thanks for it (L02, L03), and it drops when a favour is done back (L04). One favour is one block (L04, L55). I'm the exception: I never say thanks, so I've never carried one (L10, L11).
 
 ## Twist
 Every block on Ilan's head was a favour done for me. All summer the town quietly helped me (free bread, a mended bike, the rent left to wait), and because I never said thanks, Ilan went round after me and said it for me, so every block landed on him. The first line first reads as a debt rule that has caught a scrounger. In the last 15 seconds it reads as a picture of who carried whom: his stack was loyalty, and my bare head was him holding it up. L70 says it plainly over the S48 picture of him bent double: every favour you owe sits on somebody's head, and mine were all on his. The last lines turn it into a sting: the thing in my half kept my seat all summer, and that is one favour I will never say thanks for.
 - **Plant 1 (L26, S31 to S32):** in the bakery queue Mrs Varga hands me my loaf. Behind me, in focus at the edge of frame, Ilan says "thanks" (mouth open, no line of his own) and a block clicks onto his stack. Not narrated.
 - **Plant 2 (L30, S36 to S37):** the Saturday right after my run of "luck" (L26 to L29), his stack is taller again, and I'm sure it means he's scrounging.
-- Bonus (L11): "I've never NEEDED to" plays straight first, and on a rewatch means someone always did it for me.
+- Bonus (L37, S45 to S46): he comes back at dusk and won't say where he's been, and his stack is one block higher (20), not lower. It plays as him hiding his scrounging. On a rewatch he was going round the town saying thanks for me.
 
 ## World
 One small hill town, high summer, four Saturdays.
@@ -22,7 +22,7 @@ One small hill town, high summer, four Saturdays.
 
 ## Cast (all adults, nobody in peril or hurt)
 - **me** (adult man, about thirty, narrator): mustard-yellow hoodie, dark green jeans, short brown block hair, a canvas tote. Round eyes, flat brows. My head is bare of blocks until L59.
-- **Ilan** (adult man, about thirty, my cousin): sky-blue short-sleeve shirt with a small white dot pattern, tan chinos, black curly block hair, a red cap he takes off to sit. Easy wide smile. His stack starts at 12 blocks (S12) and climbs: 16 (Saturday 1), 19 (Saturday 2), 22 (Saturday 3), then down to 0 by L63. He's bowed further under it each Saturday (neck tilt 10°, 20°, 35°, sitting bent almost double), never hurt, never in pain on screen, just heavy and tired.
+- **Ilan** (adult man, about thirty, my cousin): sky-blue short-sleeve shirt with a small white dot pattern, tan chinos, black curly block hair, a red cap he takes off to sit. Easy wide smile. His stack starts at 12 blocks (S12) and climbs: 16 (Saturday 1), 19 (Saturday 2, 20 by dusk), 22 (Saturday 3), then down to 0 by L63. He's bowed further under it each Saturday (neck tilt 10°, 20°, 35°, sitting bent almost double), never hurt, never in pain on screen, just heavy and tired.
 - **Mrs Varga** (adult, sixties, baker): flour-white apron over a plum dress, grey bun.
 - **Mr Ode** (adult, fifties, bike repair): green overalls, round glasses, bald.
 - **My landlady** (adult, seventies): lilac cardigan, white block hair, seen only at her door.
@@ -66,20 +66,20 @@ One small hill town, high summer, four Saturdays.
 - **Narrator the exception:** L09 to L11, my bare head in the bright square, right beside Ilan's stack.
 - **Loved one at stake, clear by 0:20 (RULES → Make them feel something):** Ilan, my adult cousin, is on screen beside me from L09 (about 0:20), his 12-block stack already tipping his head. What I could lose is shown, not explained: him bowed lower each Saturday, and our seat for two with my half empty (S16 to S17). One forward timeline: the history is one line (L13), no flashback grade, no age (L09 to L20, L30, L39, L40).
 - **15 to 30 s:** the rule at work, nobody explaining it: L15 to L20, his stack taller than the awnings, swaying, people stepping round him.
-- **Scare and creature timing:** the first scare is the too-wide shadow at about 46 s (L22 to L24). Ilan gone, his cap left behind, at about 60 s (L31 to L36): he's away for an ordinary reason (doing favours back all day) and back at dusk. The creature is shown clearly from about 81 s (L41 to L47), about 58% in, then close and lit. It never chases, never touches.
+- **Scare and creature timing:** the first scare is the too-wide shadow at about 46 s (L22 to L24). Ilan gone, his cap left behind, at about 60 s (L31 to L36): he's away somewhere he won't name (going round saying thanks for me, which L51 explains) and back at dusk. The creature is shown clearly from about 81 s (L41 to L47), about 58% in, then close and lit. It never chases, never touches.
 - **Loophole (rule logic, never new magic):** a block lands on whoever says thanks, and one favour is one block (L54 to L55, set up at L02 to L04). When I say thanks for my own favours, each block has to leave Ilan's head and land on mine (L59 to L63).
 - **Warmth (loyalty, shown):** I sit back in my half beside him in front of the whole square (L56), take his load as mine (L59 to L65), and I'm there every Saturday since (L67), our stacks clonking under the arch (L68).
 - **Ending shape:** a weight handed over in public. The town watches the blocks arc from his head to mine, then a later bright Saturday with two ordinary stacks clonking under the arch, then a cold hold on the empty seat.
 - **The big idea, said plainly in the last 15 s (RULES → The lore is the point):** L70, "In this town, every favour you owe sits on SOMEBODY'S head. Mine were all on HIS." over S85, the S48 picture of him bent double in the rain. The stacks never showed who scrounges. They showed who was carrying whom.
 - **Last line echoes the first, lands cold:** L70 to L72. The rule line comes back reframed, then the sting: something kept my seat all summer, and I'll never say thanks for that one, because then I'd owe it.
-- **Cuts:** 88 shots over about 141 s, about 1.6 s a shot. No shot is held over 2.3 s except S17 (lore plant, 1.8 s) and S88 (the last line).
+- **Cuts:** 89 shots over about 141 s, about 1.6 s a shot. No shot is held over 2.3 s except S17 (lore plant, 1.8 s) and S88 (the last line).
 
 ## Lore plant (lore.md → Open threads → Third parallel batch)
 A plain tally: **two faded-rose strokes scratched into the stone lip of the arch seat**, between its two worn hollows, two for a seat built for two, in the Span's colour. No extra stroke, no open thread touched. Seen once in S17, under L14 ("Room for TWO."), a low close on the empty seat, held 1.8 s, not narrated. Nobody names the Makers, Keepers or Bench.
 
 The Span is the arch seat's Keeper. When I stopped coming, my half stood empty, so it sat in it to keep the count at two. Built as wide as the seat, it fills the whole thing whenever any of it is empty. It's gone the moment I sit down in my half. It carries no blocks, never touches Ilan, and isn't the one taking his thanks: the blocks are only the town's rule.
 
-## Shot plan (88 shots)
+## Shot plan (89 shots)
 | Shot | Line | Picture |
 |---|---|---|
 | S01 | L01 | Bright square, mid shot: a woman holds the bakery door, the man behind her mid-"thanks", a gold block dropping onto his three-block stack at 1.6 s. Both faces large, passers-by behind with one and two blocks. |
@@ -87,7 +87,8 @@ The Span is the arch seat's Keeper. When I stopped coming, my half stood empty, 
 | S03 | L02 | Close: the hand at the end of a sleeve on the door edge (no grip), the door held open. |
 | S04 | L02 | The block lands on the man's stack. CLICK. |
 | S05 | L03 | His face, mid "thanks", eyes going up to his stack. |
-| S06 | L04 | He holds the next door for her. Her top block slides off and fades. She grins. |
+| S06 | L04 | He holds the next door for her. His top block slides off and fades (4 to 3). He grins. |
+| S06b | L04 | Close on his stack, back to three, then on the woman's face: square with him. Under "One favour, one BLOCK." |
 | S07 | L05 | A man carrying a lamp across the square under a 14-block tower, neighbours waving. |
 | S08 | L06 | He bends at the knees to get under the bus shelter roof, tower scraping the edge. |
 | S09 | L07 | Two neighbours at a low fence, one block passing over it from one stack to the other. |
@@ -96,7 +97,7 @@ The Span is the arch seat's Keeper. When I stopped coming, my half stood empty, 
 | S12 | L09 | Me and Ilan side by side at the fountain in the bright square: my mustard hoodie and tote, my head bare, his red cap, sky-blue shirt and 12-block stack, his wide smile, his head tipped 5° under it. Both faces at least 1/5 frame width. |
 | S13 | L10 | Close on my bare head, sun on my hair, Ilan's stack rising out of frame beside it. |
 | S14 | L11 | I take a coffee from the café counter and just nod. No block. |
-| S15 | L12 | Tilt up Ilan's 12-block stack from his grin to the top block, over the café umbrellas. |
+| S15 | L12 | Tilt up Ilan's 12-block stack from his grin to the top block, over the café umbrellas. Behind him at the café tables, three townsfolk with one, two and one block, plainly fewer than his. |
 | S16 | L13 | The clock arch today, same sunny grade (no memory grade, no flashback), a slow push in: the stone seat cut into the wall, Ilan in his half with two buns in a paper bag, my half empty. |
 | S17 | L14 | Low close on the empty seat's stone lip: two worn hollows, and between them two short faded-rose strokes scratched in the stone. Held 1.8 s. Lore plant, not narrated. |
 | S18 | L15 | Me walking the far side of the square, not looking at the arch. |
@@ -126,8 +127,8 @@ The Span is the arch seat's Keeper. When I stopped coming, my half stood empty, 
 | S42 | L34 | Me at the fountain, looking. |
 | S43 | L35 | Insert: his phone on the stone beside the cap, buzzing. |
 | S44 | L36 | Me with my phone to my ear, realising. |
-| S45 | L37 | Dusk (2 s grade ramp across S44 to S45): Ilan back in the square, sleeves rolled, tired, stack the same. |
-| S46 | L38 | Close: his stack, every block still there. |
+| S45 | L37 | Dusk (2 s grade ramp across S44 to S45): Ilan back in the square, sleeves rolled, tired. I ask, and he shrugs and looks off across the square. Stack 20, one higher. |
+| S46 | L38 | Close: his stack, every block still there, plus one. |
 | S47 | L39 | Saturday 3: the square in grey rain, puddles, the fountain spilling, nearly empty. |
 | S48 | L40 | Arch mouth: Ilan in the seat, bent almost double under a 22-block stack that touches the arch roof. |
 | S49 | L41 | Wider: beside him, in my half, a shape sitting up straight, backlit by the rainy square. |
@@ -146,7 +147,7 @@ The Span is the arch seat's Keeper. When I stopped coming, my half stood empty, 
 | S62 | L50 | Insert: Mr Ode waving me off, and Ilan at the stand behind me (soft edges). |
 | S63 | L51 | Me, rain on my face, putting it together. |
 | S64 | L52 | Close on me. |
-| S65 | L53 | Pan up Ilan's stack, block by block, to the arch roof. |
+| S65 | L53 | Pan up Ilan's stack, block by block, to the arch roof. The bakery awning, the bike stand and the landlady's door sit soft in the rainy square behind it. |
 | S66 | L54 | Insert: a block over a head, the click (a rerun of S04, regraded for rain). |
 | S67 | L55 | Me looking from his stack to my bare head reflected in a puddle. |
 | S68 | L56 | Wide: I walk into the arch mouth where it stood and sit in my half. No contact, it's simply no longer there as I reach it. |
@@ -171,21 +172,21 @@ The Span is the arch seat's Keeper. When I stopped coming, my half stood empty, 
 | S87 | L72 | The cobbles under my half: no shadow. Drone holds low. |
 | S88 | L72 | Hold on the empty seat, then cut back to S01. Leave 0.25 s after the last word. |
 
-## Narration (72 lines, 632 words, about 2:11 of speech at 290 wpm, about 2:42 with gaps as voiced)
-Every line is `who: narrator`. CAPS are the caption key words. Ilan speaks only in reported speech (L37, L49, L50, L64).
+## Narration (72 lines, 640 words, about 2:12 of speech at 290 wpm, about 2:44 with gaps as voiced)
+Every line is `who: narrator`. CAPS are the caption key words. Ilan speaks only in reported speech (L49, L50, L64).
 
 L01. In this town, every favour you owe sits on your head as a gold BLOCK.
 L02. Hold a door for someone. CLICK. A block lands on THEIR head.
 L03. It lands the second they say THANKS.
-L04. Do them a favour back, and it drops OFF.
+L04. Do them a favour back, and it drops OFF. One favour, one BLOCK.
 L05. This man's street helped him move HOUSE.
 L06. Now he has to duck under the bus SHELTER.
 L07. These two neighbours have passed the same block over the fence for TEN years.
 L08. And the best man at a wedding never fits in the PHOTO.
 L09. Then there's ME.
 L10. My head is BARE. Always HAS been.
-L11. I don't say thanks. I've never NEEDED to.
-L12. My cousin Ilan has the tallest stack in TOWN.
+L11. Thanks just isn't a word I SAY.
+L12. My cousin Ilan carries more blocks than the rest of the square PUT together.
 L13. We always had Saturday lunch in the stone seat under the clock ARCH.
 L14. Room for TWO.
 L15. This summer, I stopped GOING.
@@ -210,7 +211,7 @@ L33. On my half, the shadow was SITTING up.
 L34. I searched the cafe tables and around the FOUNTAIN.
 L35. His phone was ringing on the stone beside his CAP.
 L36. It was ME calling.
-L37. He came back at dusk. He said he'd been doing favours back all DAY.
+L37. He came back at dusk. He wouldn't say where he'd BEEN.
 L38. His stack hadn't dropped a single BLOCK.
 L39. The third Saturday it rained. The square was nearly EMPTY.
 L40. Ilan was in the arch seat, bent almost DOUBLE.
@@ -226,7 +227,7 @@ L49. He said, "Thanks for his bread, Mrs VARGA."
 L50. "Thanks for fixing his bike, Mr ODE."
 L51. Every time anyone helped me, Ilan went around after and said THANKS.
 L52. For ME.
-L53. Every block on his head was MINE.
+L53. His whole stack was my bread, my bike, my RENT.
 L54. And a block lands on whoever says THANKS.
 L55. One favour, one block. It can't sit on two HEADS.
 L56. So I walked into the arch and sat in my HALF.
