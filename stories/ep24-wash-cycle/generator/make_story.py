@@ -71,9 +71,9 @@ cast = {
     "arthur": {"age": "adult", "skin": "#e6bc9c", "shirt": "#8c9096", "pattern": "knit", "pattern_c": "#6a6e74",
                "pants": "#5b4331", "shoes": "#43301f", "sleeves": "long", "hair": "cap", "hair_c": "#ecebe6",
                "face": {"eyes": "tired", "brows": True, "ink": "#1a1416", "cheeks": "#eba094"}},
-    "turned": {"age": "adult", "skin": "#b3aa9a", "shirt": "#efece4", "pattern": "solid", "pants": "#3f7fd0",
-               "shoes": "#e6e1d2", "sleeves": "short", "hair": "none", "hair_c": "#3a2618", "width": 1.1,
-               "face": {"eyes": "tired", "brows": False, "ink": "#0a0707", "mouth": "line"}},
+    "turned": {"age": "adult", "skin": "#9d8163", "shirt": "#efece4", "pattern": "solid", "pants": "#3f7fd0",
+               "shoes": "#141414", "sleeves": "short", "hair": "swoop", "hair_c": "#5a3118", "width": 1.1,
+               "face": {"eyes": "tired", "brows": False, "ink": "#1c0f08", "mouth": "gape"}},
 }
 
 # ---------------------------------------------------------------------------------------------------- shots
@@ -108,7 +108,7 @@ shot("L19", mv(*ROW[:2], ROW[2]), hand=0.002)                                   
 shot("L20", mv([0.6, -1.7, 1.35], [2.9, 0.1, 1.15], 22, [0.8, -1.7, 1.35], [2.9, 0.1, 1.15], 23), hand=0.003)       # S21 two backs
 shot("L21", mv([1.7, -1.7, 1.4], [2.2, 0.0, 1.15], 24, [1.85, -1.55, 1.4], [2.2, 0.0, 1.15], 25), hand=0.003)        # S22 the figure from behind
 shot("L22", mv([2.2, -0.95, 1.12], [2.2, -0.15, 1.12], 17, [2.2, -0.85, 1.12], [2.2, -0.15, 1.12], 17), hand=0.002)  # S23 the bib on its back
-shot("L23", c([0, [3.2, -1.9, 0.2], [2.95, 0.3, 0.15], 16], [1, [3.2, -1.8, 0.2], [2.95, 0.3, 0.15], 16.5]), hand=0.002)   # S23 low: its heels-forward shoes beside Arthur's
+shot("L23", c([0, [4.7, 1.55, 0.2], [2.95, 0.42, 0.1], 26], [1, [4.55, 1.5, 0.2], [2.95, 0.42, 0.1], 27]), hand=0.002)   # S23 low: its heels-forward shoes beside Arthur's
 shot("L24", mv([2.5, -1.0, 1.0], [2.2, -0.2, 1.1], 28, [2.35, -1.5, 1.4], [2.2, -0.15, 1.5], 34))                     # S25 tilt up to the face
 shot("L25", front(F(4), 0, 1.95, -0.1, 36, push=0.06), hand=0.002)                               # S26 its face
 shot("L26", front(ME_F, 180, 1.6, 0.0, 34), hand=0.003)                                          # S27 me, still

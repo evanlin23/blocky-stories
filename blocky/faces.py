@@ -41,7 +41,9 @@ EYES = ("round", "classic", "dot", "tired", "lashes", "button", "hollow", "none"
 MIRROR_BLACK = (7, 7, 10)
 # "auto" is the mood mouth; "line" is one long hairline that only parts into a dark slit when it talks (a
 # mannequin's seam, no lips or teeth); "none" draws no mouth
-MOUTHS = ("auto", "line", "none")
+# "gape" (opt-in, ep24's Turned): a wide black open mouth, a rounded hole with a dark lip and no teeth, always open, so a
+# face hung upside down still reads as a mouth
+MOUTHS = ("auto", "line", "none", "gape")
 
 
 def hexrgb(h: str) -> tuple[int, int, int]:
@@ -254,7 +256,16 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
         for side in (-1, 1):
             for k, (fx, fy) in enumerate(((0.21, 0.58), (0.25, 0.61), (0.19, 0.63), (0.24, 0.66))):
                 _ellipse(d, _fx(0.5) + side * (fx + 0.06) * s, _fy(fy), 6, 6, fill=tuple(int(c * 0.72) for c in hexrgb(skin)))
-    if mouth == "line":
+    if mouth == "gape":
+        mx, my, rx, ry = _fx(0.5), _fy(0.68), 0.25 * s, 0.1 * s
+        _ellipse(d, mx, my, rx, ry, fill=(5, 2, 3), outline=tuple(int(c * 0.4) for c in hexrgb(skin)), width=max(6, int(0.02 * s)))
+        # a row of top teeth along the upper edge, so a face hung upside down reads as one (the teeth hang at the bottom)
+        for k in range(-3, 4):
+            x = mx + k * rx * 0.27
+            hw = rx * 0.11
+            top = my - ry * math.sqrt(max(0.0, 1 - (k * 0.27) ** 2)) * 0.92
+            d.rectangle([x - hw, top, x + hw, top + ry * 0.42], fill=(226, 218, 196))
+    elif mouth == "line":
         _line_mouth(d, _fx(0.5), _fy(0.7), s, inkc, open_)
     elif mouth != "none":
         _mouth(d, expr, _fx(0.5), _fy(0.74), s, inkc, open_, (90, 30, 36) if inside is None else hexrgb(inside),
@@ -282,7 +293,7 @@ def mouth_steps(face: dict) -> int:
 def face_key(face: dict, skin: str, expr: str, open_: float, look, blink: float) -> str:
     q = lambda x, n: round(x * n) / n
     # a non-default eye or mouth style is in the key, so a cached texture of the old style is never reused
-    style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror"))
+    style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror", "gape"))
     if face.get("mouth_inside"):   # an open mouth's own inside colour (the copy's opens onto black)
         style += f"in{face['mouth_inside'].lstrip('#')}-"
     return f"{style}{expr}-{q(open_, mouth_steps(face))}-{q(look[0], 2)}-{q(look[1], 2)}-{int(blink > 0.5)}"

@@ -41,6 +41,7 @@ SEAT = 0.465
 SIT_Z = -0.045
 TB_Y0, TB_Y1, TB_Z = -2.05, -1.25, 0.9
 ST = (-40.0, 0.0)
+SKIN_T = "#9d8163"                           # the Turned's skin: a waxy tan, the same in every shot (cast "skin" matches)
 BLUE, ORANGE, GREEN = "#3f7fd0", "#e2742b", "#2f5d43"
 TUBE_STRENGTH = 3.0
 TUBE_W = 62.0
@@ -465,13 +466,19 @@ def dress(kit, ctx, story):
         pants = rig.cloth(spec, "pants")
         shoes = kit.plastic(spec.get("shoes", spec.get("pants", "#222222")), 0.6)
         back = who == "turned"
+        cream = kit.plastic("#d9d2bf", 0.6, "wc lace")
         sh = []
         for sx in (-1, 1):
             shin = B(kit, f"{who}.shin{sx}", (0.98, 1.0, 1.07), (sx * 0.5, -0.8, 0.965), pants, root, bevel=0.08)
             shoe = B(kit, f"{who}.sshoe{sx}", (0.99, 1.01, 0.3), (sx * 0.5, -0.8, 0.28), shoes, root, bevel=0.08)
             toe_y = -0.8 + (0.78 if back else -0.78)       # the Turned's toes point back toward the chair
             toe = B(kit, f"{who}.toe{sx}", (0.9, 0.58, 0.27), (sx * 0.5, toe_y, 0.27), shoes, root, bevel=0.08)
-            sh += [shin, shoe, toe]
+            # a cream lace panel on the toe cap and a pale sole edge: which end is the toe reads at a glance
+            lace = B(kit, f"{who}.lace{sx}", (0.55, 0.42, 0.06), (sx * 0.5, toe_y + (0.1 if back else -0.1), 0.42), cream, root, bevel=0.02)
+            sole = B(kit, f"{who}.sole{sx}", (1.0, 1.5 if not back else 1.5, 0.06), (sx * 0.5, -0.8 + (0.39 if back else -0.39), 0.1), cream, root, bevel=0.01)
+            sh += [shin, shoe, toe, lace, sole]
+            if back:   # a pull-tab on the heel, which is the end facing the dryers
+                sh.append(B(kit, f"{who}.heel{sx}", (0.5, 0.09, 0.34), (sx * 0.5, -0.8 - 0.53, 0.36), cream, root, bevel=0.02))
         ctx["shins"][who] = sh
     if "turned" in cast:
         tor = bpy.data.objects["turned.torso"]
@@ -502,7 +509,7 @@ def dress(kit, ctx, story):
         nt.links.new(ramp.outputs["Color"], bsdf.inputs["Emission Color"])
         bsdf.inputs["Emission Strength"].default_value = EYE_GLOW
         bpy.data.objects["turned.head"].scale = (1.0, 1.0, 1.24)
-        skin_t = kit.plastic("#b3aa9a", 0.7, "wc turned neck")
+        skin_t = kit.plastic(SKIN_T, 0.7, "wc turned neck")
         # a thick neck bent back from the shoulders to the pivot at the base of the head
         nl = math.hypot(HEAD_P[1], HEAD_P[2] - 2.0)
         na = math.atan2(HEAD_P[1], HEAD_P[2] - 2.0)
@@ -515,9 +522,9 @@ def dress(kit, ctx, story):
             old.hide_render = True
             old.name = f"turned.skinarm_old{sx}"
             arm = bpy.data.objects[f"turned.arm{sx}"]
-            B(kit, f"turned.upper{sx}", (0.96, 0.98, 0.55), (0, 0, -0.725), kit.plastic("#b3aa9a", 0.5), arm, bevel=0.08)
+            B(kit, f"turned.upper{sx}", (0.96, 0.98, 0.55), (0, 0, -0.725), kit.plastic(SKIN_T, 0.5), arm, bevel=0.08)
             el = kit.empty(f"turned.elbow{sx}", (0, 0, -0.99), arm)
-            B(kit, f"turned.fore{sx}", (0.96, 0.98, 0.95), (0, 0, -0.42), kit.plastic("#b3aa9a", 0.5), el, bevel=0.08)
+            B(kit, f"turned.fore{sx}", (0.96, 0.98, 0.95), (0, 0, -0.42), kit.plastic(SKIN_T, 0.5), el, bevel=0.08)
             ctx["forearm"][sx] = el
     if "me" in cast:
         tor = bpy.data.objects["me.torso"]
