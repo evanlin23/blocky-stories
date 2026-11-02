@@ -106,8 +106,12 @@
     "Then there's me."
    ],
    [
-    "I'm the LOOKOUT.",
-    "I'm the lookout."
+    "I am",
+    "I am"
+   ],
+   [
+    "the LOOKOUT.",
+    "the lookout."
    ]
   ]
  },
@@ -757,12 +761,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "SEVEN THOUSAND",
-    "Seven thousand"
+    "THOUSANDS",
+    "Thousands"
    ],
    [
-    "TIMES.",
-    "times."
+    "of TIMES.",
+    "of times."
    ],
    [
     "From up here,",

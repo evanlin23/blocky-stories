@@ -134,22 +134,26 @@
    ]
   },
   "L06": {
-   "text": "Then there's me. I'm the lookout.",
+   "text": "Then there's me. I am the lookout.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.586,
+   "dur": 1.672,
    "onset": 0.172,
-   "end": 1.397,
+   "end": 1.483,
    "chunks": [
     [
      0.172,
-     0.603
+     0.586
     ],
     [
      0.655,
-     1.397
+     0.854
+    ],
+    [
+     0.854,
+     1.483
     ]
    ]
   },
@@ -966,34 +970,34 @@
    ]
   },
   "L38": {
-   "text": "Seven thousand times. From up here, it looked like one.",
+   "text": "Thousands of times. From up here, it looked like one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.638,
-   "onset": 0.19,
-   "end": 2.448,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
    "chunks": [
     [
-     0.19,
-     0.707
+     0.172,
+     0.439
     ],
     [
-     0.707,
-     1.155
+     0.439,
+     0.948
     ],
     [
-     1.224,
-     1.586
+     1.017,
+     1.379
+    ],
+    [
+     1.406,
+     1.612
     ],
     [
      1.612,
-     1.801
-    ],
-    [
-     1.801,
-     2.448
+     2.241
     ]
    ]
   },

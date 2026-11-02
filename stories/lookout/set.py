@@ -85,7 +85,7 @@ SNAPPED = ((-140.0, 380.0), (-100.0, 330.0), (-62.0, 282.0), (-40.0, 240.0), (-2
 def terrain_z(x, y):
     """The ground's height: the summit plateau, the long fall south, the drop to the valley floor (VALLEY_Z), the
     valley's two sides and the far ridge, and the higher ridge to the north."""
-    z = -0.2 * max(0.0, -y - 20.0) - 0.05 * max(0.0, abs(x) - 24.0)
+    z = -0.3 * max(0.0, -y - 20.0) - 0.05 * max(0.0, abs(x) - 24.0)
     z += 0.16 * max(0.0, y - 110.0) - 0.0006 * max(0.0, y - 260.0) ** 2
     if y < -272.0:
         z = max(VALLEY_Z, z - 1.6 * (-272.0 - y))
@@ -643,8 +643,8 @@ def materials(kit):
         "t_hill": matte(kit, "t hill", "#5f9a4a", 0.95),
         "t_flower": matte(kit, "t flower", "#e0527a", 0.9),
         # night lights (never fogged)
-        "town_glow": glow_mat(kit, "town glow", "#ffc27a", 5.0),
-        "ollie_glow": glow_mat(kit, "ollie glow", "#ffb45a", 9.0),
+        "town_glow": glow_mat(kit, "town glow", "#ffc27a", 8.0),
+        "ollie_glow": glow_mat(kit, "ollie glow", "#ffb45a", 14.0),
         "mover_glow": glow_mat(kit, "mover glow", "#ffcf8a", 8.0),
         "hut": matte(kit, "hut wood", "#3a2d22", 0.9),
         "hutroof": matte(kit, "hut roof", "#232526", 0.9),
@@ -961,7 +961,7 @@ def build_forest(kit, ctx, M, rng, n=380, r0=10.0, r1=240.0):
         x, y = d * math.cos(a), d * math.sin(a)
         if abs(x) < FENCE + 3 and abs(y) < FENCE + 3:
             continue
-        if math.hypot(x - SCRAPE_BASE[0], y - SCRAPE_BASE[1]) < 7.0 or y < -268:
+        if math.hypot(x - SCRAPE_BASE[0], y - SCRAPE_BASE[1]) < 7.0 or y < -28:
             continue
         if any(math.hypot(x - tx, y - ty) < 4.6 for tx, ty in trees):
             continue
@@ -1051,7 +1051,7 @@ def build_valley(kit, ctx, M):
     spread(3, 90, 0.0, -600.0, 260.0, 90.0)
     lights = []
     for k, (lv, x, y) in enumerate(pts):
-        s = rng.uniform(3.4, 5.2)
+        s = rng.uniform(5.5, 8.0)
         ob = kit.box(f"town{k}", (s, s, s), (x, y, terrain_z(x, y) + s / 2), M["town_glow"])
         ob.visible_shadow = False
         ob["level"] = lv
@@ -1059,7 +1059,7 @@ def build_valley(kit, ctx, M):
     ctx["town_lights"] = lights
     # Ollie's light: the warmest point in frame, always steady (win: valley floor, win2: the hillside, hut: the ridge)
     ctx["ollie_at"] = {}
-    for nm, (x, y), s in (("win", (30.0, -560.0), 7.0), ("win2", (-410.0, -640.0), 7.0)):
+    for nm, (x, y), s in (("win", (30.0, -560.0), 11.0), ("win2", (-410.0, -640.0), 11.0)):
         ob = kit.box(f"ollie_{nm}", (s, s, s), (x, y, terrain_z(x, y) + s / 2), M["ollie_glow"])
         ob.visible_shadow = False
         ctx["ollie_at"][nm] = ob
@@ -1070,7 +1070,7 @@ def build_valley(kit, ctx, M):
     rv = [(hx - 13, hy - 10, hz + 8), (hx + 13, hy - 10, hz + 8), (hx + 13, hy + 10, hz + 8), (hx - 13, hy + 10, hz + 8),
           (hx - 13, hy, hz + 14), (hx + 13, hy, hz + 14)]
     kit.mesh_obj("hut.roof", rv, [(0, 1, 5, 4), (3, 4, 5, 2), (0, 4, 3), (1, 2, 5), (3, 2, 1, 0)], M["hutroof"])
-    w = kit.box("ollie_hut", (6.5, 1.0, 4.6), (hx + 2.0, hy + 8.6, hz + 4.2), M["ollie_glow"])
+    w = kit.box("ollie_hut", (9.0, 1.0, 6.0), (hx + 2.0, hy + 8.6, hz + 4.2), M["ollie_glow"])
     w.visible_shadow = False
     ctx["ollie_at"]["hut"] = w
     # the lamp that crosses the valley (and climbs the stairs): a glow whose size and place a cue sets
@@ -1319,7 +1319,8 @@ def build_town(kit, ctx, M):
         tb(kit, f"t.baysidel{k}", (a - 0.02, -4.0, -PL), (a + 0.3, 0.0, -0.6), M["t_stone"])
         tb(kit, f"t.bayside{k}", (b - 0.3, -4.0, -PL), (b + 0.02, 0.0, -0.6), M["t_stone"])
     # the road's kerb and a pale centre line
-    tb(kit, "t.kerb", (-90, -4.2, -PL), (170, -4.0, 0.0), M["t_stone"])
+    for k, (a, b) in enumerate(((-90, 55), (65, 76), (104, 170))):
+        tb(kit, f"t.kerb{k}", (a, -4.2, -PL), (b, -4.0, 0.0), M["t_stone"])
     # 1: the balcony house, bricks and lemon shutters; the balcony stands over the pavement
     house(kit, "h1", -9, 9, 0.0, 10.0, 9.0, "t_brick", "t_roof", M, doors=(0.0,),
           wins=((4.2, 6.2, 5.0, 7.0), (-7.4, -5.4, 5.0, 7.0), (-7.6, -5.8, 0.7, 1.9), (5.6, 7.4, 0.7, 1.9)))
@@ -1505,7 +1506,7 @@ def build_lamp2(kit, ctx, M):
     kit.cyl("lamp2.bail", 0.012, 0.2, (0, 0, 0.52), M["lamp_body"], root, rot=(0, math.pi / 2, 0), n=8)
     for sx in (-1, 1):
         kit.box(f"lamp2.bailside{sx}", (0.015, 0.015, 0.1), (sx * 0.1, 0, 0.47), M["lamp_body"], root)
-    kit.light("lamp2light", "POINT", (0, 0, 0.2), 70.0, "#ffd0a0", size=0.2, parent=root)
+    kit.light("lamp2light", "POINT", (0, 0, 0.2), 160.0, "#ffd0a0", size=0.2, parent=root)
     ctx["lamp2"] = root
 
 
@@ -1556,7 +1557,7 @@ LOOKS = {
              "sun": 4.0, "sun_rot": SUN_NORTH},
     # a clear cool morning at the tower: pearl light, the sun low in the south on the faces at the gate
     "clear": {"fog": "#c4ccd2", "density": 0.0022, "start": 40.0, "sky": "#cdd8e0", "sky_strength": 0.9,
-              "exposure": 0.15, "cards": {}, "gains": DAY_GAINS, "sun": 3.0, "sun_rot": SUN_NORTH},
+              "exposure": 0.8, "cards": {}, "gains": DAY_GAINS, "sun": 5.0, "sun_rot": SUN_NORTH},
     # night round the cab: blue-grey fog, one steady amber lamp
     "night": {"fog": "#2a3238", "density": 0.034, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
               "exposure": 1.6, "cards": ["fog.near", "fog.tower", "fog.neck", "fog.behind", "fog.far"],
@@ -1751,7 +1752,7 @@ def animate(kit, story, tl, t, ctx):
     k = _ss((t - cue[-1]["t"]) / max(1e-6, cue[-1].get("dur", 1.2))) if cue else 0.0
     for nm, ob in ctx["ollie_at"].items():
         ob.hide_render = nm != where or k <= 0.001
-    kit.MATS["ollie glow"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 9.0 * k
+    kit.MATS["ollie glow"].node_tree.nodes["Emission"].inputs["Strength"].default_value = 14.0 * k
     # the crossing lamp
     ms = mover_state(tl, t)
     mv = ctx["mover"]
