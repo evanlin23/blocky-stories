@@ -163,6 +163,15 @@ def test_trend_scan_ranks_by_views_per_day():
     assert "| rule premise | 300 | -50% |" in md and "Sad / one" in md and md.index("In This Town X") < md.index("Sad / one")
 
 
+def test_comments_wait_for_public_and_post_once():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import comment
+
+    done = {"a": {"video_id": "v1"}, "b": {"video_id": "v2"}, "c": {"video_id": "v3", "commented": True},
+            "d": {"manual": True}}
+    assert comment.due(done, {"v1": "public", "v2": "private", "v3": "public"}) == ["a"]
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics

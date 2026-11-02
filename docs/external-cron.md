@@ -27,6 +27,7 @@ Create a free account, then **Create cronjob** for each row. Every job uses:
 |---|---|---|
 | blocky upload | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/upload.yml/dispatches` | every day, 6:47 |
 | blocky metrics | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/metrics.yml/dispatches` | Mondays, 14:37 |
+| blocky comments | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/comments.yml/dispatches` | every day, 16:17 |
 | blocky render catch-up | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/render.yml/dispatches` | every day, 3:17 |
 
 A successful run returns **HTTP 204**. Use **Test run** on each job once, then check the repo's Actions tab
