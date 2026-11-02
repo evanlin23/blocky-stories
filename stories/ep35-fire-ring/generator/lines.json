@@ -422,12 +422,20 @@
     "down the hill"
    ],
    [
-    "to make a CALL,",
-    "to make a call,"
+    "to make",
+    "to make"
    ],
    [
-    "where I couldn't HEAR.",
-    "where I couldn't hear."
+    "a CALL,",
+    "a call,"
+   ],
+   [
+    "where I",
+    "where I"
+   ],
+   [
+    "couldn't HEAR.",
+    "couldn't hear."
    ]
   ],
   "orig": [
@@ -436,6 +444,8 @@
    1,
    2,
    3,
+   3,
+   4,
    4
   ]
  },
@@ -1596,8 +1606,12 @@
     "every night,"
    ],
    [
-    "where I couldn't HEAR,",
-    "where I couldn't hear,"
+    "where I",
+    "where I"
+   ],
+   [
+    "couldn't HEAR,",
+    "couldn't hear,"
    ],
    [
     "to get",
@@ -1615,6 +1629,7 @@
   "orig": [
    0,
    1,
+   2,
    2,
    3,
    3,
