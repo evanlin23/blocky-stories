@@ -123,7 +123,7 @@ SHOTS = [
     ("L06", "wide inside: floor, couples, stripes", 2, still([-6.6, -2.4, 1.9], [2.0, 0.8, 1.0], 20)),
     ("L07", "the three of us coming in through the doors", 2, C([-1.6, -4.7, 1.6], [-7.4, -7.0, 1.2], 5.2)),
     ("L08", "under the ceiling fans, then down to the shine of the floor", 2,
-     move(([-1.0, -2.4, 1.0], [0.0, 2.7, 4.4]), ([-1.0, -2.4, 1.0], [0.5, 0.5, 0.0]), 22)),
+     move(([-1.0, -5.3, 1.0], [0.0, 2.7, 4.4]), ([-1.0, -5.3, 1.0], [0.5, 0.5, 0.0]), 24)),
     ("L09", "the painted stripes, locked off", 4, still([5.6, 0.2, 1.4], [8.0, 0.8, 1.5], 30)),
     ("L10", "Nan at the hire counter, the cubby wall behind", 2, C([3.6, -4.9, 1.7], [4.5, -8.4, 1.8], 3.6)),
     ("L10.2", "the lore shot: the bottom-row end cubby, the far-too-long cherry skates, the tally on the near heel", 2,
@@ -131,8 +131,8 @@ SHOTS = [
     ("L11", "Pop beside her, shaking his head, smiling", 2, C([4.5, -4.8, 1.5], [5.0, -6.9, 1.2], 2.6)),
     ("L12", "Pop settling on the stool under the amber lamp", 2, C([-1.5, -4.4, 1.6], [POP_X, SEAT_Y, 1.0], 2.8)),
     ("L13", "close on his knees and the tape", 2, C([-2.0, -6.4, 0.85], [POP_X, -6.4, 0.8], 1.4)),
-    ("L14", "Pop to Nan: 'You skate for both of us'", 2, C([-1.2, -4.4, 1.6], [-3.3, -6.5, 1.3], 2.8)),
-    ("L15", "Nan from behind, gliding to the rail", 2, still([-3.4, -7.8, 1.15], [0.2, -4.4, 0.9], 28)),
+    ("L14", "Pop to Nan: 'You skate for both of us'", 2, C([-2.0, -3.3, 1.7], [-3.2, -6.4, 1.3], 3.0)),
+    ("L15", "Nan from behind, gliding to the rail", 2, still([-1.2, -7.6, 1.3], [0.2, -4.4, 0.9], 28)),
     # 03 slow song one
     ("L16", "the room dims for a slow song, seen from the snack bar", 2, FLOOR),
     ("L17", "couples gliding past, seen at the elbows", 2, still([-6.4, -3.6, 1.3], [-1.0, 0.0, 1.0], 24)),
@@ -141,7 +141,7 @@ SHOTS = [
     ("L20", "me and Pop at the snack bar, the tub between us", 2, C([-1.7, -3.7, 1.55], [-4.4, -6.4, 1.2], 3.0)),
     ("L21", "the pool sliding along the far rail, then onto a tall striped shape", 2, FARCAM),
     ("L22", "medium on the Skater at the far rail, face toward the floor", 2,
-     C([-4.2, -3.5, 1.3], [FAR[0], FAR[1], 1.25], 3.4)),
+     C([-3.0, -5.4, 1.3], [FAR[0], FAR[1], 1.25], 3.4)),
     ("L23", "side view of its legs: two bends, a hard shadow under each", 2, C([-6.4, 3.6, 0.9], [FAR[0], FAR[1] - 0.2, 1.2], 3.2)),
     ("L24", "the pool slides away, the room passes, the pool returns: nothing there", 2, FARCAM),
     # 04 Lenny
@@ -160,7 +160,7 @@ SHOTS = [
     ("L33", "close on Pop's wrist and the plain watch", 2, C([-3.0, -5.3, 1.9], [-3.23, -6.1, 1.5], 0.9)),
     # 06 slow song three
     ("L34", "the chip tub untouched, my face worried", 2, C([-2.8, -4.6, 1.6], [-4.6, -6.4, 1.3], 2.3)),
-    ("L35", "low on the floor boards as the pool edges across them", 2, move(([-1.8, -1.6, 0.18], [1.2, -3.2, 0.0]), ([-1.8, -1.6, 0.18], [1.8, -3.5, 0.0]), 28)),
+    ("L35", "low on the floor boards as the pool edges across them", 2, move(([-4.0, -3.7, 0.18], [1.2, -3.2, 0.0]), ([-4.0, -3.7, 0.18], [1.8, -3.5, 0.0]), 34)),
     ("L36", "along the rail: Nan, a cream post, the Skater folded and facing her", 2, RAIL34),
     ("L37", "up close, its stripes faded almost to pink", 2, C([3.0, -5.0, 1.55], [2.0, -3.75, 1.4], 1.4)),
     ("L38", "its face, the eye highlights the brightest thing, key from below", 2, still([2.9, -4.7, 1.1], [1.75, -3.75, 2.0], 36)),
@@ -210,7 +210,7 @@ SHOTS = [
 
 # per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
 # flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
-EXPO = {"S09": 0.55, "S01": 1.0, "S02": 1.1, "S19": 1.4, "S20": 1.18, "S21": 1.03, "S22": 1.53, "S23": 1.09, "S24": 0.77, "S25": 0.87, "S26": 1.49, "S31": 0.55, "S32": 0.77, "S33": 1.18, "S34": 0.81, "S35": 0.77, "S36": 1.08, "S37": 1.51, "S38": 1.04, "S39": 1.17, "S40": 0.92, "S41": 1.13, "S42": 1.42, "S43": 2.5, "S44": 0.99, "S45": 1.19, "S46": 1.5, "S47": 1.7, "S48": 0.93, "S49": 0.96, "S50": 0.72, "S51": 1.34, "S52": 2.49, "S53": 2.13, "S54": 1.26, "S55": 1.21, "S56": 0.79, "S57": 1.13, "S58": 2.1, "S59": 0.89, "S60": 1.28, "S61": 1.05, "S62": 0.75, "S63": 0.8, "S64": 0.84, "S65": 1.86, "S66": 1.47, "S67": 1.04, "S68": 0.99, "S69": 1.32, "S70": 0.89, "S71": 0.95, "S72": 0.8, "S73": 0.87, "S74": 0.7, "S75": 1.33, "S76": 1.49, "S77": 0.7, "S78": 0.76}
+EXPO = {"S15": 1.9, "S16": 0.8, "S17": 0.7, "S09": 0.55, "S01": 1.0, "S02": 1.1, "S19": 1.4, "S20": 1.18, "S21": 1.03, "S22": 1.53, "S23": 1.09, "S24": 0.77, "S25": 0.87, "S26": 1.49, "S31": 0.55, "S32": 0.77, "S33": 1.18, "S34": 0.81, "S35": 0.77, "S36": 1.08, "S37": 1.51, "S38": 1.04, "S39": 1.17, "S40": 0.92, "S41": 1.13, "S42": 1.42, "S43": 2.5, "S44": 0.99, "S45": 1.19, "S46": 1.5, "S47": 1.7, "S48": 0.93, "S49": 0.96, "S50": 0.72, "S51": 1.34, "S52": 2.49, "S53": 2.13, "S54": 1.26, "S55": 1.21, "S56": 0.79, "S57": 1.13, "S58": 2.1, "S59": 0.89, "S60": 1.28, "S61": 1.05, "S62": 0.75, "S63": 0.8, "S64": 0.84, "S65": 1.86, "S66": 1.47, "S67": 1.04, "S68": 0.99, "S69": 1.32, "S70": 0.89, "S71": 0.95, "S72": 0.8, "S73": 0.87, "S74": 0.7, "S75": 1.33, "S76": 1.49, "S77": 0.7, "S78": 0.76}
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
@@ -343,6 +343,7 @@ walk("nan", "L07>", [-6.0, -6.6])
 hide("nan", "L08")
 put("nan", "L10", [4.4, -6.8], yaw=0, expr="neutral")
 put("nan", "L14", [-2.7, -6.2], yaw=-90, expr="soft")
+walk("nan", "L14.4", [-2.7, -6.2], skate=True)
 walk("nan", "L15+0.4", [-0.3, -4.6], skate=True)
 walk("nan", "L15>", [NAN[0], NAN[1]], skate=True)
 put("nan", "L16", list(NAN), yaw=180, expr="soft", skate=False)
@@ -406,8 +407,8 @@ orbit("L16", 23.0, 2.0, "c1a", "c1b")
 orbit("L16", 23.0, 5.3, "c2a", "c2b")
 orbit("L28", 11.4, 3.4, "c1a", "c1b")
 orbit("L28", 11.4, 0.4, "c2a", "c2b")
-orbit("L35", 18.0, 4.6, "c1a", "c1b")
-orbit("L35", 18.0, 1.6, "c2a", "c2b")
+orbit("L35", 18.0, 5.6, "c1a", "c1b")
+orbit("L35", 18.0, 2.6, "c2a", "c2b")
 orbit("L45", 2.9, 2.5, "c1a", "c1b")
 orbit("L45", 2.9, 5.5, "c2a", "c2b")
 # L47: they roll off through the gap in the south rail, one couple after the other

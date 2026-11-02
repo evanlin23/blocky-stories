@@ -28,7 +28,7 @@ import bpy
 from mathutils import Vector
 from PIL import Image, ImageDraw, ImageFilter
 
-from blocky import faces, rig
+from blocky import acting, faces, rig
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -730,6 +730,14 @@ def animate(kit, story, tl, t, ctx):
                 leg = bpy.data.objects.get(f"{who}.leg{sx}")
                 if leg is not None:
                     leg.rotation_euler = (sg * 0.3 * math.sin(ph), 0, 0)
+            # a skater glides: no walking arm swing or step bob on top of the pose
+            wl = acting.state(tl, who, t)
+            for sx, sg in ((-1, 1), (1, -1)):
+                arm = bpy.data.objects.get(f"{who}.arm{sx}")
+                if arm is not None:
+                    e = arm.rotation_euler
+                    arm.rotation_euler = (e[0] + sg * wl["legs"] * 0.9, e[1], e[2])
+            root.location.z -= wl["bob"]
         if on and not _switch(keys, "sit", t, False):
             root.location.z += lift
         amp = _switch(keys, "wobble", t, 0.0)
