@@ -35,7 +35,7 @@ Four stories for PandaNanoAdventures. The writer reads all four so none drifts i
 | # | Story (name for the story folder) | Setting | Creature | First line is... | Kind of warmth |
 |---|---|---|---|---|---|
 | 1 | `floor-thirteen` (in production elsewhere, ep14 to ep17) | apartment-tower lift | the Attendant, a button-panel face | a sound | two strangers become friends |
-| 2 | `mirror-maze` (in production elsewhere, ep14 to ep17) | an end-of-season fairground mirror maze | the copy, my best friend gone slightly wrong | an inside joke | loyalty: I go back in for my friend |
+| 2 | `mirror-maze` (ep15, redone 2026-11-02) | an end-of-season fairground mirror maze | the dark one, an old leftover reflection a head too tall with no shine; the narrator is a leftover reflection | the rule: "In this town, your reflection stays behind when you walk away." | loyalty: she leaves her own reflection with me |
 | 3 | `lookout` (in production elsewhere, ep14 to ep17) | a forest fire-lookout tower, alone, in autumn | the Walker, a huge giant of logs and moss | a question | I'm the one who helps: I guide it home |
 | 4 | `moving-day` (in production elsewhere, ep14 to ep17) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes | mid-scare | home: Mum laughs again |
 
@@ -78,6 +78,9 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - "Late wife" is fine. Never say "dead" or "died".
 
 ## 2. `mirror-maze`: "Me and Tasha went into the mirror maze. Only one of us walked out"
+
+**Redone 2026-11-02 (held: the first line wasn't the rule).** The pitch below is the old version. The new one: in a town where your reflection stays behind in the glass when you walk away, I meet Tasha at the fair's mirror maze every night, and on the last night the maze guy loads the panes on the truck. Twist: I'm the reflection the real me left in a pane last year before moving away ("I've never left a reflection, because I AM one"). Tasha looks at herself in my pane on purpose so her reflection goes with me. Shape `echo`. Watch the overlap with #34 `beach-huts` (also a reflection rule). See `stories/mirror-maze/script.md`.
+
 
 - **First line, an inside joke:** "Tasha and I / have a RULE. / Whoever says / 'PICKLE' first / pays for FRIES."
   - The joke is the proof of who's real later.
