@@ -670,6 +670,10 @@ def build_lights(kit, ctx):
     kit.light("shadowL", "SPOT", (-1.8, -9.0, 0.9), 0.0, "#ffc68a", spot=75, blend=0.25, size=0.05)
     kit.LIGHTS["shadowL"]["base"] = 3500.0
     kit.aim(kit.LIGHTS["shadowL"]["obj"], (-1.8, 6.0, 0.0))
+    # the opening: a soft warm light on my face for the first seconds, so the first frame reads on a phone
+    kit.light("open", "AREA", (-0.3, -3.4, 2.4), 0.0, "#ffd4a6", size=2.2, shadow=False)
+    kit.LIGHTS["open"]["base"] = 130.0
+    kit.aim(kit.LIGHTS["open"]["obj"], (-0.3, -1.5, 1.4))
     kit.light("fill", "AREA", (-4.0, 6.0, 3.3), 90.0, "#7c86b8", size=10.0, shadow=False)
     for k, (hx, hy) in enumerate(((0.0, -3.0), (-3.5, -3.0), (-0.8, 3.0), (-4.0, 4.0))):
         kit.light(f"house{k}", "AREA", (hx, hy, 3.3), 0.0, "#ffe2b5", size=5.0, shadow=True)
@@ -859,6 +863,7 @@ def animate(kit, story, tl, t, ctx):
     animate_pins(ctx, tl, t)
     pose_spare(kit, ctx, tl, t, over)
     animate_ball(ctx, tl, t)
+    over["open"] = 1.0 - _ss((t - 2.0) / 1.0)
     for st in ctx["bulbs"]:
         st.default_value = 6.0 * g
     sc = _last(_cues(tl, "shadowlight"), t)
