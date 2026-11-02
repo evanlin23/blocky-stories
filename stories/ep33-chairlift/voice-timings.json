@@ -1578,34 +1578,30 @@
    ]
   },
   "L64": {
-   "text": "on my last dawn, the Halvors are at the gate.",
+   "text": "on Saturday, the Halvors are at the gate.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.121,
-   "onset": 0.155,
-   "end": 1.931,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
    "chunks": [
     [
-     0.155,
-     0.328
+     0.172,
+     0.707
     ],
     [
-     0.328,
-     0.81
+     0.732,
+     1.155
     ],
     [
-     0.836,
-     1.241
+     1.155,
+     1.301
     ],
     [
-     1.241,
-     1.388
-    ],
-    [
-     1.388,
-     1.931
+     1.301,
+     1.845
     ]
    ]
   },
@@ -1782,26 +1778,22 @@
    ]
   },
   "L73": {
-   "text": "the down chairs come back empty. all of them.",
+   "text": "the down chairs come back empty.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
+   "dur": 1.776,
    "onset": 0.172,
-   "end": 2.086,
+   "end": 1.586,
    "chunks": [
     [
      0.172,
-     0.724
+     0.707
     ],
     [
-     0.724,
-     1.362
-    ],
-    [
-     1.457,
-     2.086
+     0.707,
+     1.586
     ]
    ]
   },

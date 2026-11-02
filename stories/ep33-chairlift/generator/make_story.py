@@ -25,12 +25,12 @@ lines = json.loads((HERE / "lines.json").read_text())
 # ---------------------------------------------------------------------------------------------------- holds
 # If the voice lands under 2:15 the holds are added in this order, never words: P01 up to 1.0 s, the beat after L21
 # (L21's gap), L61's gap, L73's gap. A pause beat P01 is the music_drops hole (0.7 s). The loop tail is 0.3 s.
-HOLDS = {"P01": 1.0}
+HOLDS = {"P01": 0.5}
 LOOP = 0.3
 out_lines = []
 for ln in lines:
     out_lines.append(ln)
-    if ln["id"] == "L51":
+    if ln["id"] == "L52":
         out_lines.append({"id": "P01", "pause": HOLDS["P01"], "chunks": []})
 lines = out_lines
 GAPS = {"L17": 0.55, "L21": 0.8, "L27": 0.5, "L36": 0.55, "L41": 0.5, "L42": 0.6, "L51": 0.25, "L59": 0.6,
@@ -174,7 +174,7 @@ shot("L02", mv((-7.5, -13.0, 9.5), (0, 40, 8.0), 20, (-5.5, -13.0, 10.0), (0, 40
 shot("L03", front(hd(ME0), 180, 18, 3.0, 0.0, 32, push=0.15))
 shot("L04", mv((-0.1, -7.0, 1.5), (0.2, -1.2, 1.4), 30, (-0.1, -7.0, 1.5), (0.4, -1.2, 1.4), 30), hand=0.003)
 shot("L05", front(hd(ME0), 180, -14, 2.7, 0.0, 32, push=0.1))
-shot("L06", mv((1.5, 0.6, 1.5), (-1.7, -3.4, 1.25), 26, (1.4, 0.5, 1.5), (-1.7, -3.4, 1.25), 26))
+shot("L06", mv((-1.9, 0.7, 1.5), (-1.55, -3.4, 1.25), 17, (-2.0, 0.6, 1.5), (-1.55, -3.4, 1.25), 17))
 shot("L07", mv((-2.05, -0.4, 1.5), (-2.05, -3.95, 1.45), 30, (-2.05, -0.55, 1.5), (-2.05, -3.95, 1.45), 31))
 shot("L08", mv((8.5, -4.0, 1.7), (1.8, 16, 7.0), 28, (8.5, -4.0, 1.7), (1.8, 22, 8.5), 28))
 shot("L09", mv((-2.0, -2.0, 0.42), (-2.02, -3.95, 0.3), 22, (-2.0, -2.15, 0.4), (-2.02, -3.95, 0.3), 22), hand=0.002)
@@ -232,8 +232,8 @@ shot("L48", ride_cam(2.4, 4.0, 2.2, -0.7, 0.0, 1.2, 28), follow=FL, hand=0.006)
 shot("L49", ride_cam(*P0, 0.0, 6.0, 1.85, 34), follow=FL, hand=0.006)
 shot("L50", ride_cam(-0.7, 3.4, 1.15, -0.7, 0.0, 1.0, 30), follow=FL, hand=0.002)
 shot("L51", ride_cam(0.5, 2.0, 1.7, -0.2, 0.0, HEAD, 34), follow=FL, hand=0.003)
-shot("P01", ride_cam(0.5, 2.0, 1.7, -0.2, 0.0, HEAD, 34, lens2=36), follow=FL, hand=0.003)
 shot("L52", ride_cam(-0.7, 4.0, 1.7, -0.7, 0.0, 1.5, 26), follow=FL, hand=0.003)
+shot("P01", ride_cam(-0.7, 4.0, 1.7, -0.7, 0.0, 1.5, 26, lens2=27), follow=FL, hand=0.003)
 # the reveal: from in front, the two of us in one frame, its cube toward me, the glints the brightest thing
 shot("L53", ride_cam(1.40, 3.03, 1.9, -0.72, 0.0, 1.25, 23, lens2=24), follow=FL, hand=0.002, cfill=0.2)
 shot("L54", ride_cam(-0.1, 1.7, 1.2, -0.75, 0.0, 0.95, 40), follow=FL, hand=0.002, cfill=0.2)
@@ -577,7 +577,7 @@ story = {
     "key_color": "#ff8fb1",
     "gap": 0.12,
     "tail": LOOP,
-    "look": {"fog": "#47597a", "fog_density": 0.010, "fog_start": 12.0, "sky": "#3d5170", "exposure": 0.0},
+    "look": {"fog": "#47597a", "fog_density": 0.010, "fog_start": 12.0, "sky": "#3d5170", "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.05], "highlights": [0.04, 0.012, -0.03], "saturation": 1.0,
               "contrast": 1.06, "vignette": 0.3, "bloom": 0.35, "grain": 0.012},
     "phonemes": {"Halvor": "hˈælvɚ", "Halvors": "hˈælvɚz", "cagoule": "kəɡˈul", "Bo": "bˈO"},
@@ -609,7 +609,7 @@ story = {
                   {"kind": "wind", "from": "L43", "to": "L60", "lufs": -40},
               ],
               "sfx": sfx,
-              "music_drops": [{"from": "L51>", "to": "L53", "keep": ["hit", "sting"]}]},
+              "music_drops": [{"from": "L52>", "to": "L53", "keep": ["hit", "sting"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")

@@ -53,7 +53,7 @@ LOOKS = {
     # the warm turn (L64 on): brighter than the rides' dawn, so every face reads
     "warm1": dict(sky="#d9a0b4", sky_s=3.6, fog="#d9a9b8", fogd=0.011, sun_e=3.0, sun_c="#ffb898", sun_el=16.0, disc=2.4,
                   cam=1.5, cam_c="#ffe0d8"),
-    "warm2": dict(sky="#e3b98f", sky_s=3.6, fog="#e8c295", fogd=0.011, sun_e=4.0, sun_c="#ffd391", sun_el=22.0, disc=3.0,
+    "warm2": dict(sky="#d9a67c", sky_s=1.6, fog="#dfb083", fogd=0.011, sun_e=2.2, sun_c="#ffd391", sun_el=22.0, disc=1.2,
                   cam=1.3, cam_c="#fff0d0"),
     "fog": dict(sky="#8e959f", sky_s=1.0, fog="#9aa1ab", fogd=0.075, sun_e=0.0, sun_c="#e6e8ee", sun_el=20.0, disc=0.0,
                 cam=0.3, cam_c="#e6eaf2"),
@@ -61,7 +61,7 @@ LOOKS = {
                  cam=0.06, cam_c="#f1e6e6"),
 }
 
-CREATURE_ORANGE, PUTTY = "#c97c4a", "#64635f"
+CREATURE_ORANGE, PUTTY = "#c97c4a", "#9a7f62"
 GLINT = 7.0
 HANG = G.HANG
 SPACING = 22.0
@@ -375,7 +375,7 @@ def face_png():
         g = W * 0.011
         gx, gy = cx + r * 0.35, cy - r * 0.38
         d.ellipse([gx - g, gy - g, gx + g, gy + g], fill=(255, 251, 238))
-    x0, x1, y, h = W * 0.07, W * 0.93, W * 0.80, W * 0.05
+    x0, x1, y, h = W * 0.07, W * 0.93, W * 0.80, W * 0.075
     d.rounded_rectangle([x0, y - h / 2, x1, y + h / 2], radius=h / 2, fill=ink)
     return im
 
