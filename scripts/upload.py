@@ -28,6 +28,13 @@ from blocky.gate import load_package
 REPO = os.environ.get("GITHUB_REPOSITORY", "evanlin23/blocky-stories")
 
 
+def queue() -> list[str]:
+    """queue.txt: story folders to upload first, in order (blank lines and # comments ignored)."""
+    q = ROOT / "queue.txt"
+    names = [ln.strip() for ln in q.read_text().splitlines()] if q.exists() else []
+    return [n for n in names if n and not n.startswith("#") and (ROOT / "stories" / n / "story.json").exists()]
+
+
 def shape(story: str) -> str:
     """package.json's optional `shape`: a short tag for the twist's shape (e.g. "stand-in")."""
     try:
@@ -42,7 +49,7 @@ def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
     never end the same way (a story is only held back while another ready one can go first)."""
     last = shape(next(reversed(done))) if done else ""
     held = None
-    for s in all_stories():
+    for s in queue() + [x for x in all_stories() if x not in queue()]:
         if s in done or s in skip:
             continue
         if film(s) and gate_open(s):

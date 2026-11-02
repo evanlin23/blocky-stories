@@ -88,11 +88,25 @@ def test_upload_spaces_out_twist_shapes(monkeypatch):
     monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1})
     monkeypatch.setattr(upload, "gate_open", lambda s: True)
     monkeypatch.setattr(upload, "shape", lambda s: shapes[s])
+    monkeypatch.setattr(upload, "queue", lambda: [])
     assert upload.next_story({}) == "a"
     assert upload.next_story({"a": {}}) == "c"            # b would repeat a's shape, so c goes first
     assert upload.next_story({"a": {}, "c": {}}) == "b"
     monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1} if s == "b" else None)
     assert upload.next_story({"a": {}}) == "b"            # nothing else is ready: it goes anyway
+
+
+def test_upload_queue_goes_first(monkeypatch):
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    monkeypatch.setattr(upload, "all_stories", lambda: ["a", "b", "c"])
+    monkeypatch.setattr(upload, "queue", lambda: ["c"])
+    monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1})
+    monkeypatch.setattr(upload, "gate_open", lambda s: True)
+    monkeypatch.setattr(upload, "shape", lambda s: "")
+    assert upload.next_story({}) == "c"
+    assert upload.next_story({"c": {}}) == "a"
 
 
 def test_metrics_summary_and_titles():
