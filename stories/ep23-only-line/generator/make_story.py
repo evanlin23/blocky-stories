@@ -280,11 +280,11 @@ SHOTS = [
     ("L76", "my face at the table", 2, FLAT_FACE),
     ("L77", "the lamp, my hand flat on the script", 2, still([FLAT[0] + 0.5, FLAT[1] + 1.3, 1.3], [FLAT[0], FLAT[1] - 0.5, 1.15], 28)),
     # 08 opening night
-    ("L78", "from the back of the house over the heads", 2, still([0.0, -12.8, 2.6], [0.0, 3.0, 1.1], 27)),
+    ("L78", "from the back of the house over the heads", 2, still([0.0, -6.2, 1.5], [0.0, 3.0, 1.15], 22)),
     ("L79", "my knees shaking under the cloak", 2, still([YEL[0] + 0.3, YEL[1] - 2.8, 0.7], [YEL[0], YEL[1], 0.6], 30)),
     ("L80", "me in the wings, looking up the row of legs", 2, still([3.2, 0.2, 1.6], [4.35, 3.0, 1.35], 22)),
     ("L82", "a slow track past the legs to the brick", 2,
-     c([0, [3.1, 2.6, 1.5], [4.4, 6.0, 1.3], 28], [1, [3.3, 4.8, 1.5], [4.0, 7.2, 1.2], 28])),
+     c([0, [3.1, 2.6, 1.5], [4.4, 6.0, 1.3], 28], [1, [3.3, 5.0, 1.5], [4.1, 7.2, 1.3], 28])),
     ("L83", "my face, a small breath", 2, face([3.2, 2.0], 3.0, 50, 6)),
     ("L84", "my feet land on the cross", 2, still([YEL[0] + 0.5, YEL[1] - 2.3, 0.28], [YEL[0], YEL[1], 0.3], 24)),
     ("L85", "Walt asks, robe and crown", 2, face(KING, 3.4, 44, 6, tz=1.36)),
@@ -538,7 +538,7 @@ cues = [
     {"at": "L64", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 180, "mouth": 1, "key_gain": 1.8, "rim_gain": 0.9,
      "key": [-0.6, 1.0, 0.2], "rim": [0.6, -0.9, 2.4]},
     {"at": "L68", "name": "prompter", "hidden": True},
-    {"at": "L75", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 0, "mouth": 0, "key_gain": 0.9, "rim_gain": 0.9,
+    {"at": "L75", "name": "prompter", "pos": PP["fri"], "yaw": 0, "head": 0, "mouth": 1, "key_gain": 0.9, "rim_gain": 0.9,
      "key": [-0.9, -0.9, 0.35]},
     {"at": "L76", "name": "prompter", "hidden": True},
     # costumes: the king's crown (a prop from Wednesday) and robe (dress rehearsal on), my cloak
@@ -555,6 +555,9 @@ cues = [
     {"at": 0, "name": "chairs", "on": False},
     {"at": "L04", "name": "chairs", "on": True},
     {"at": "L06", "name": "chairs", "on": False},
+    {"at": 0, "name": "brick", "on": False},
+    {"at": "L82", "name": "brick", "on": True},
+    {"at": "L83", "name": "brick", "on": False},
     {"at": 0, "name": "audience", "on": False},
     {"at": "L78", "name": "audience", "on": True},
 ]

@@ -217,6 +217,12 @@ def build_stage(kit, ctx, M):
         x = 5.05 + 0.07 * k + 0.004 * math.sin(k * 2.3)
         kit.box(f"chalk {k}", (0.02, 0.012, 0.25 + 0.015 * math.sin(k * 1.9)), (x, 7.195, 1.04), M["chalk"],
                 rot=(0, 0.035 * math.sin(k * 3.1), 0), bevel=0.004)
+    # a brick patch, built so its courses run level (the wall box above stretches its bricks into streaks); shown
+    # only for the track to the brick (L82), chalk out of frame
+    bp = kit.box("brick patch", (6.0, 3.0, 0.02), (5.0, 7.18, 1.5), kit.bricks("#3b4660", "#2c3448", mortar="#161a26", scale=1.0, name="brick patch", grime_amt=0.4),
+                 rot=(math.pi / 2, 0, 0))
+    bp.hide_render = True
+    ctx["brick_patch"] = bp
     # paper cups on the stage edge
     for k, x in enumerate((-0.05, 0.9)):
         kit.cyl(f"cup {k}", 0.04, 0.1, (x, 0.18, 0.05), M["paper"], n=14, r2=0.03)
@@ -248,8 +254,8 @@ def build_house(kit, ctx, M):
             if kit.hash01(r, i, 5) < 0.12 or (r == 2 and abs(x + 0.58) < 0.1):
                 continue
             h = 0.02 * kit.hash01(r, i, 9)
-            hd = kit.sphere(f"aud head {r} {i}", 0.12, (x, row_y(r) - 0.12, row_z(r) + 0.95 + h), M["head_dark"], seg=8)
-            bd = kit.box(f"aud body {r} {i}", (0.44, 0.26, 0.5), (x, row_y(r) - 0.12, row_z(r) + 0.66), M["body_dark"], bevel=0.05)
+            hd = kit.sphere(f"aud head {r} {i}", 0.12, (x, row_y(r) - 0.12, row_z(r) + 1.4 + h), M["head_dark"], seg=8)
+            bd = kit.box(f"aud body {r} {i}", (0.48, 0.26, 0.5), (x, row_y(r) - 0.12, row_z(r) + 1.1), M["body_dark"], bevel=0.05)
             aud += [hd, bd]
             hd.hide_render = bd.hide_render = True
     ctx["aud"] = aud
@@ -478,7 +484,7 @@ MOODS = {
                        "run3": 1.8, "ghost": 0.3, "aud": 1.0, "aud_back": 1.0, "wing_fill": 2.0, "wing_fill2": 4.0},
              "wash": "#ffb868", "exp": 0.0},
     # the flat and the car are far from the stage: the stage keeps its light, so the next stage shot starts where it was
-    "flat": {"gains": {"wash_l": 0.25, "wash_r": 0.25, "wash_top": 0.25, "wash_back": 0.25, "run1": 1.0, "run3": 1.0, "ghost": 0.3, "flat_lamp": 1.0, "flat_fill": 1.0}, "wash": "#a9b9e6", "exp": 0.0},
+    "flat": {"gains": {"wash_l": 0.25, "wash_r": 0.25, "wash_top": 0.25, "wash_back": 0.25, "run1": 1.0, "run3": 1.0, "ghost": 0.3, "aud": 0.3, "aud_back": 0.3, "wing_fill": 0.9, "wing_fill2": 0.4, "flat_lamp": 1.0, "flat_fill": 1.0}, "wash": "#a9b9e6", "exp": 0.0},
     "car": {"gains": {**_WARM, "car_lamp": 1.0, "car_fill": 1.0}, "wash": "#ffb868", "exp": 0.0},
 }
 
@@ -628,6 +634,8 @@ def animate(kit, story, tl, t, ctx):
                 _show(o, on)
     if ctx.get("flask") is not None:
         _show(ctx["flask"], not bpy.data.objects["marion"].hide_render)
+    bc = _last(_cues(tl, "brick"), t)
+    ctx["brick_patch"].hide_render = not bool(bc and bc.get("on"))
     # chairs and audience
     cc = _last(_cues(tl, "chairs"), t)
     for ch in ctx["chairs"]:
