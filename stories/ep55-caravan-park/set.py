@@ -58,7 +58,7 @@ PRESETS = {   # sun strength, sun colour, elevation, azimuth, sky colour, sky st
     "dusk": (2.4, "#ff9d5e", 6, 220, "#f2b17c", 0.85, "#dcab8c", 2.0, 0.55),
     "morn": (2.6, "#ffe9d2", 13, 140, "#cfd9dd", 1.1, "#cbd5d8", 3.0, 0.0),
     "fog": (1.5, "#f0e8dc", 22, 205, "#a3adb3", 0.95, "#a3adb3", 14.0, 0.0),
-    "fogdusk": (0.9, "#f0d8c0", 12, 205, "#8d979f", 0.7, "#8a949c", 14.0, 0.9),
+    "fogdusk": (0.7, "#f0d8c0", 12, 205, "#848e96", 0.5, "#8a949c", 14.0, 0.9),
     "foglift": (3.2, "#fff0dc", 26, 205, "#c0cacd", 1.1, "#c0cacd", 2.5, 0.0),
     "grey": (1.3, "#e6e8ea", 28, 205, "#aab3b8", 1.0, "#aab3b8", 3.0, 0.0),
     "gold2": (4.0, "#ffc27a", 15, 215, "#ecc49a", 0.95, "#e6c9a6", 1.6, 0.2),
