@@ -20,7 +20,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 # ------------------------------------------------------------------------------------------------ pauses
 PAUSES = {"L19": ("P01", 1.5), "L34": ("P02", 0.9), "L59": ("P03", 2.0)}
 # holds (seconds after a line) that bring the film to the 2:15 floor without touching the words
-HOLDS = {"L04": 0.5, "L10": 0.5, "L29": 0.5, "L44": 0.5, "L56": 0.6, "L58": 0.4, "L69": 0.4}
+HOLDS = {"L04": 0.5, "L10": 0.5, "L29": 0.5, "L44": 0.5, "L56": 0.6, "L58": 0.4, "L69": 0.4, "L70": 0.0}
 full = []
 for ln in lines:
     if ln["id"] in HOLDS:
@@ -33,7 +33,7 @@ LOOP = 0.25
 full.append({"id": "P04", "pause": LOOP, "chunks": []})
 lines = full
 
-TEMPO = {"L11": 0.93, "L16": 0.93}   # Whisper heard 'in' as 'and' at full pace
+TEMPO = {"L11": 0.93, "L16": 0.93, "L32": 0.8}   # Whisper heard 'in' as 'and' at full pace
 for ln in lines:
     if ln['id'] in TEMPO:
         ln['tempo'] = TEMPO[ln['id']]
@@ -52,8 +52,8 @@ cast = {
                "collar": "#b9b29a", "pants": "#4a463e", "shoes": "#2a2a22", "sleeves": "long", "hair": "cap",
                "hair_c": "#7b6d58", "hat": "none", "height": 0.97,
                "face": {"eyes": "tired", "brows": True, "ink": "#1c1613", "bags": True}},
-    "newcomer": {"age": "adult", "skin": "#8c5c40", "shirt": "#2f7f84", "pattern": "solid", "collar": "#276d72",
-                 "pants": "#6c7076", "shoes": "#33353a", "sleeves": "long", "hair": "long", "hair_c": "#18120f",
+    "newcomer": {"age": "adult", "skin": "#8c5c40", "shirt": "#c4872c", "pattern": "solid", "collar": "#a8721f",
+                 "pants": "#cfc4ab", "shoes": "#33353a", "sleeves": "long", "hair": "cap", "hair_c": "#4a2e1c",
                  "hat": "none", "height": 0.96, "face": {"eyes": "lashes", "brows": True, "ink": "#161012"}},
 }
 
@@ -87,8 +87,9 @@ EYE = 1.55
 # (at, what, step, camera). The interiors are set.py's: the shed at x 60 and plot ten's at x 80, the shaft at x 120.
 SHOTS = [
     # 01 the smell, L01 to L10
-    (0, "close, low, a drop off a leaf, push up to me breathing in", 2,
-     c([0, [3.6, -26.5, 0.4], [3.55, -27.5, 0.5], 30], [1, [3.6, -26.2, 1.2], [4.05, -28.3, 1.45], 24])),
+    (0, "close on wet soil, a drop falls off a leaf", 2,
+     c([0, [3.9, -26.9, 0.22], [3.55, -27.62, 0.3], 34], [1, [3.85, -26.8, 0.4], [3.55, -27.62, 0.3], 34])),
+    ("L01.2", "me breathing in", 2, still([3.6, -26.2, 1.4], [4.05, -28.3, 1.5], 26)),
     ("L02", "wide from the gate: cracked hill, peach sky", 4, move(([0.25, -0.5, 1.9], [0.0, -14, 0.9]),
                                                                   ([0.25, -1.4, 1.9], [0.0, -14, 0.9]), 19)),
     ("L03", "overhead on a neighbour's cracked bed", 4, still([3.5, -9.9, 2.7], [3.5, -10.05, 0.0], 22)),
@@ -108,7 +109,7 @@ SHOTS = [
      still([1.5, -3.2, 1.55], [0.2, -0.9, 1.5], 30)),
     # 02 the head, L11 to L29
     ("L11", "over my shoulder: a lump in plot one", 2, still([0.55, 2.2, 1.7], [3.0, -3.8, 0.35], 22)),
-    ("L12", "plot one, head and shoulders", 2, still([0.7, -6.0, 0.55], [3.4, -3.7, 0.35], 26)),
+    ("L12", "plot one, head and shoulders", 2, still([1.3, -5.3, 0.55], [3.4, -3.7, 0.3], 24)),
     ("L13", "the roots on the head and shoulders", 2, still([2.2, -5.0, 0.55], [3.4, -3.65, 0.28], 30)),
     ("L14", "its face: two green points", 4, still([3.55, -5.7, 0.27], [3.4, -3.6, 0.27], 26)),
     ("L15", "me on the path, a careful distance", 2, still([-1.4, -4.2, 1.55], [0.9, -2.3, 1.3], 24)),
@@ -119,23 +120,23 @@ SHOTS = [
     ("P01", "the black hole, held", 4, still([3.4, -3.55, 2.0], [3.4, -3.62, 0.0], 24)),
     ("L20", "me at the hole, scared", 2, still([0.9, -6.9, 1.4], [2.8, -4.2, 1.15], 22)),
     ("L21", "wide down the path: the hole and the head in plot four", 4,
-     still([1.1, -1.4, 1.35], [-1.6, -12.0, 0.7], 20)),
+     still([-1.0, -7.2, 0.8], [-3.6, -10.0, 0.4], 24)),
     ("L22", "plot nine dripping in the low gold sun", 2, still([3.0, -26.4, 0.75], [3.6, -27.7, 0.62], 36)),
-    ("L23", "long lens from the gate: the head in plot seven", 4, still([0.2, -0.4, 1.45], [2.4, -22.0, 0.45], 55)),
+    ("L23", "long lens from the gate: the head in plot seven", 4, still([0.5, -17.0, 0.9], [3.4, -22.0, 0.35], 28)),
     ("L24", "plot seven, higher out of the dirt", 2, still([0.9, -24.6, 0.65], [3.4, -22.0, 0.45], 26)),
     ("L25", "the cane going into plot four's hole", 2, still([-1.8, -8.7, 1.0], [-3.55, -9.95, 0.35], 26)),
     ("L26", "the cane's top end sinking", 2, still([-3.0, -9.3, 0.55], [-3.55, -9.95, 0.3], 40)),
     ("L27", "the gate at an earlier, bluer dawn", 2, still([-1.6, -2.6, 1.5], [0.0, 0.7, 1.25], 22)),
     ("L28", "the padlock running with water", 2, still([0.4, -0.5, 1.0], [0.1, 0.0, 0.95], 40)),
     ("L29", "high wide: plot seven, eight, nine and the shed", 4,
-     still([-1.8, -14.5, 5.8], [2.4, -25.0, 0.4], 24)),
+     still([0.6, -19.0, 1.5], [3.2, -23.0, 0.5], 22)),
     # 03 Friday, L30 to L44
     ("L30", "wide over the bottom fence: mist coming up", 4,
      move(([0.0, -33.2, 1.5], [0.0, -10.0, 1.0]), ([0.0, -33.2, 1.5], [0.0, -10.0, 1.0]), 19)),
     ("L31", "drops from the padlock onto green wellies", 2, still([0.95, -1.0, 0.55], [0.12, -0.05, 0.55], 28)),
     ("L32", "me walking the path", 2, still([0.2, 1.6, 1.7], [0.0, -6.0, 0.8], 24)),
-    ("L32.3", "the hole in plot one, in fog", 4, still([1.2, -1.2, 1.4], [3.4, -3.6, 0.0], 24)),
-    ("L32.4", "the hole in plot four, in fog", 4, still([-1.2, -7.0, 1.4], [-3.6, -10.0, 0.0], 24)),
+    ("L32.2", "the hole in plot one, in fog", 4, still([1.2, -1.2, 1.4], [3.4, -3.6, 0.0], 24)),
+    ("L32.3+0.12", "the hole in plot four, in fog", 4, still([-1.2, -7.0, 1.4], [-3.6, -10.0, 0.0], 24)),
     ("L32.5", "the hole in plot seven, in fog", 4, still([1.2, -19.2, 1.4], [3.4, -22.0, 0.0], 24)),
     ("L33", "my walk: the cane wigwams come out of the fog", 2,
      move(([0.1, -27.6, EYE], [3.5, -29.5, 0.9]), ([0.15, -28.5, EYE], [3.5, -29.2, 0.9]), 22)),
@@ -156,14 +157,14 @@ SHOTS = [
     ("L46", "the gate at night: the key in the padlock", 4, still([0.65, -0.75, 1.1], [0.1, 0.0, 1.05], 32)),
     ("L47", "night wide down the path, the gate open", 4, still([0.5, 3.0, 1.6], [0.0, -14.0, 0.6], 19)),
     ("L48", "plot nine at night: water on the leaves", 2, still([3.0, -26.3, 0.85], [3.6, -28.4, 0.6], 28)),
-    ("L49", "Friday: Mr. Carter, the can at his side", 2, still([3.9, -24.6, 1.45], [2.95, -26.3, 1.35], 26)),
+    ("L49", "Friday: Mr. Carter, the can at his side", 2, still([3.9, -24.6, 1.3], [2.95, -26.3, 1.4], 26)),
     ("L50", "high wide of the path in fog: holes beside the prints", 4,
      still([1.0, -1.0, 4.5], [0.0, -19.0, 0.0], 19)),
     ("L51", "over Mr. Carter's shoulder: its green eyes on him", 2, still([3.2, -25.3, 1.55], [3.85, -28.8, 0.75], 24)),
     ("L52", "the can's rose, dripping", 2, still([3.3, -25.5, 0.85], [2.95, -26.0, 0.72], 38)),
     ("L53", "me, from him to the plot", 2, still([4.4, -29.3, 1.5], [3.1, -27.9, 1.4], 22)),
     ("L54", "two shot by the shed; the fog thins", 2, still([4.0, -24.6, 1.45], [3.1, -27.0, 1.3], 22)),
-    ("L55", "Mr. Carter, a small smile", 2, still([3.4, -24.4, 1.5], [2.95, -26.25, 1.4], 24)),
+    ("L55", "Mr. Carter, a small smile", 2, still([3.5, -24.4, 1.3], [2.95, -26.25, 1.42], 24)),
     ("L56", "wide from the path: the soil settles", 2, still([0.3, -29.3, 1.3], [3.85, -28.8, 0.3], 21)),
     # 05 passing it on, L57 to L70
     ("L57", "the same angle as L34, clear morning: nothing", 4, still([0.45, -28.2, 1.45], [3.85, -28.8, 0.55], 24)),
@@ -177,9 +178,9 @@ SHOTS = [
     ("L63", "I sniff the soil; Mr. Carter nods behind", 2, still([4.4, -28.2, 1.1], [3.1, -27.0, 0.9], 22)),
     ("L64", "high wide: plot nine full, the others green", 4, still([-2.0, -17.5, 7.0], [3.0, -27.0, 0.4], 22)),
     ("L65", "the newcomer wheels her bike down the path", 2, still([0.7, -26.0, 1.4], [0.0, -21.0, 1.1], 26)),
-    ("L66", "plot ten's shed: an empty hook", 2, move(([79.9, 0.2, 1.35], [79.9, 1.9, 1.15]),
-                                                      ([79.9, 0.5, 1.35], [79.9, 1.9, 1.15]), 20)),
-    ("L67", "my sleeve and the can toward her sleeve", 2, still([0.0, -24.4, 1.15], [0.0, -26.3, 1.1], 44)),
+    ("L66", "plot ten's shed: an empty hook", 2, move(([80.2, 0.2, 1.4], [80.2, 1.9, 1.45]),
+                                                      ([80.2, 0.5, 1.4], [80.2, 1.9, 1.45]), 22)),
+    ("L67", "my sleeve and the can toward her sleeve", 2, still([0.0, -24.0, 1.2], [-0.03, -26.4, 1.15], 30)),
     ("L68", "Mr. Carter nods from his bucket", 2, still([3.3, -27.5, 1.0], [3.2, -25.3, 0.95], 28)),
     ("L69", "me and the newcomer at plot ten's edge", 2, still([-1.4, -23.8, 1.5], [-0.1, -26.2, 1.3], 22)),
     ("L70", "plot nine, wet and gold at sunrise", 4, move(([6.9, -23.4, 2.3], [3.5, -28.2, 0.6]),
@@ -243,7 +244,7 @@ hide("me", "L28")
 put("me", "L31", [0.12, -0.15], yaw=180)
 put("me", "L32", [0.12, -0.8], yaw=0)
 walk("me", "L32+2.0", [0.12, -5.8])
-hide("me", "L32.3")
+hide("me", "L32.2")
 put("me", "L38", [0.5, -28.2], yaw=yaw_to([0.5, -28.2], DIG[9]), expr="scared")
 hide("me", "L39")
 put("me", "L40", ME_F, yaw=yaw_to(ME_F, DIG[9]), expr="scared")
@@ -281,13 +282,13 @@ put("carter", "L43", DOOR, yaw=90, expr="smirk", head=[0, 10])
 put("carter", "L45", CAR_F, yaw=yaw_to(CAR_F, (3.7, -24.8)), expr="wide")
 acting["carter"].append({"from": "L45.4", "to": "L45>", "mouth": [0.0, 0.9]})
 hide("carter", "L46")
-put("carter", "L49", CAR_F, yaw=yaw_to(CAR_F, ME_F), expr="smirk", head=[0, 8])
+put("carter", "L49", CAR_F, yaw=yaw_to(CAR_F, (3.7, -24.8)), expr="smirk")
 talk("carter", "L49.1", "L49>")
 key("carter", "L51", yaw=yaw_to(CAR_F, DIG[9]), expr="wide", blend=0.5)
 hide("carter", "L52")
 put("carter", "L53", CAR_F, yaw=yaw_to(CAR_F, (3.7, -24.8)), expr="wide")
 put("carter", "L54", CAR_F, yaw=yaw_to(CAR_F, ME_F))
-key("carter", "L55", expr="soft")
+key("carter", "L55", expr="soft", yaw=yaw_to(CAR_F, (3.5, -24.4)), blend=0.2)
 hide("carter", "L57")
 BUCKET_SEAT = [BUCKET[0], BUCKET[1], -0.38]
 put("carter", "L61", BUCKET_SEAT, yaw=0, arms=[0, 74], sit=True)
@@ -373,7 +374,7 @@ cues = [
     {"at": "L56", "name": "can", "where": "off"},
     {"at": "L62", "name": "can", "where": "me", "water": True},
     {"at": "L63", "name": "can", "where": "off"},
-    {"at": "L67", "name": "can", "where": "me"},
+    {"at": "L67", "name": "can", "where": "me", "arm": "arm-1"},
     {"at": "L68", "name": "can", "where": "off"},
     {"at": 0, "name": "torch", "on": 0.0},
     {"at": "L59", "name": "torch", "on": 1.0, "dur": 0.8},
@@ -430,7 +431,7 @@ sfx = [
     {"at": "L60+0.4", "kind": "thud", "db": -22},
     {"at": "L60+1.2", "kind": "thud", "db": -22},
     {"at": "L60+2.0", "kind": "thud", "db": -22},
-    {"at": "L70+0.3", "kind": "bell", "db": -14, "dur": 2.0},
+    {"at": "L70.2", "kind": "bell", "db": -8, "dur": 2.0},
 ]
 
 story = {

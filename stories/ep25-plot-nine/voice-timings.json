@@ -762,7 +762,7 @@
    ]
   },
   "L29": {
-   "text": "Only plot eight is left between that thing and mine.",
+   "text": "Only one plot is left between that thing and mine.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -773,10 +773,10 @@
    "chunks": [
     [
      0.172,
-     0.69
+     0.698
     ],
     [
-     0.69,
+     0.698,
      0.983
     ],
     [
@@ -846,34 +846,34 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.517,
-   "onset": 0.155,
-   "end": 2.31,
+   "tempo": 0.8240000000000001,
+   "dur": 2.983,
+   "onset": 0.224,
+   "end": 2.741,
    "chunks": [
     [
-     0.155,
-     0.388
+     0.224,
+     0.5
     ],
     [
-     0.388,
-     0.655
+     0.5,
+     0.828
     ],
     [
-     0.655,
-     1.259
+     0.828,
+     1.569
     ],
     [
-     1.328,
-     1.483
+     1.664,
+     1.828
     ],
     [
-     1.526,
-     1.724
+     1.87,
+     2.086
     ],
     [
-     1.767,
-     2.31
+     2.129,
+     2.741
     ]
    ]
   },

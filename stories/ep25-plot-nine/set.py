@@ -230,7 +230,7 @@ def materials(kit):
     M["clay"] = cracked(kit, "clay", "#a89878", "#6e5c44", 7.5)
     M["clay2"] = cracked(kit, "clay2", "#b3a384", "#74634a", 6.0)
     M["wet"] = pbr(kit, "wet soil", "#4c3827", 0.38, spec=0.55, noise=(3.0, 0.6, 0.12), bump=0.4)
-    M["print"] = pbr(kit, "boot print", "#a99870", 0.9)
+    M["print"] = pbr(kit, "boot print", "#9c8c68", 0.9)
     M["dust"] = pbr(kit, "dust path", "#cdb88c", 0.95, noise=(2.5, 0.82, 0.0), bump=0.2)
     M["grass"] = pbr(kit, "dry grass", "#8d8458", 0.95, noise=(1.8, 0.7, 0.0))
     M["verge"] = pbr(kit, "verge", "#7a7a4c", 0.95, noise=(3.5, 0.6, 0.0))
@@ -271,6 +271,9 @@ def materials(kit):
     M["wellig"] = pbr(kit, "welly green", "#2d6a38", 0.35, spec=0.6)
     M["wellid"] = pbr(kit, "welly dark", "#1f2c20", 0.4, spec=0.5)
     M["wetpants"] = pbr(kit, "wet trousers", "#2a2926", 0.4, spec=0.5)
+    M["capwool"] = pbr(kit, "tweed cap", "#7b6d58", 0.95, noise=(25.0, 0.7, 0.0))
+    M["pony"] = pbr(kit, "pony", "#4a2e1c", 0.7)
+    M["zipstripe"] = pbr(kit, "zip stripe", "#efe4c4", 0.6)
     M["mous"] = pbr(kit, "moustache", "#9a9a98", 0.9)
     M["greenbed"] = pbr(kit, "green crop bed", "#44693a", 0.9, noise=(8.0, 0.55, 0.0))
     M["glow"] = kit.emit("#ffcf8a", 3.0, name="torch lens")
@@ -418,6 +421,8 @@ def build_plots(kit, M, ctx):
         kit.box(f"row{rx}", (0.9, 4.6, 0.12), (rx, (y0 + y1) / 2, 0.06), M["wet"], bevel=0.05)
         for k in range(4):
             wy = y1 - 0.9 - k * 1.2
+            if rx == 2.9 and k in (0, 2):
+                continue
             wig = kit.empty(f"wig{rx}_{k}", (rx, wy, 0))
             for j, (ax, ay) in enumerate(((0.32, 0.32), (-0.32, 0.32), (0.32, -0.32), (-0.32, -0.32))):
                 rod(kit, f"cane{rx}_{k}_{j}", (ax, ay, 0.0), (0, 0, 2.05), 0.011, M["cane"], wig, n=5)
@@ -450,8 +455,10 @@ def build_plots(kit, M, ctx):
     pr = random.Random(2)
     k, y = 0, -0.9
     while y > -25.2:
-        kit.box(f"print{k}", (0.12, 0.3, 0.004), ((0.14 if k % 2 else -0.12) + pr.uniform(-0.03, 0.03), y, 0.004),
-                M["wet"], rot=(0, 0, pr.uniform(-0.1, 0.1)), bevel=0.0)
+        px_ = (0.14 if k % 2 else -0.12) + pr.uniform(-0.03, 0.03)
+        a_ = pr.uniform(-0.12, 0.12)
+        kit.box(f"print{k}", (0.1, 0.17, 0.004), (px_, y + 0.07, 0.004), M["print"], rot=(0, 0, a_))
+        kit.box(f"printh{k}", (0.08, 0.06, 0.004), (px_, y - 0.1, 0.004), M["print"], rot=(0, 0, a_))
         y -= 0.62
         k += 1
     for j in range(3):
@@ -508,6 +515,15 @@ def build_digger(kit, M, ctx):
         pit.scale = (0.8, 0.5, 1.5)
         eye = kit.sphere(f"digger.eye{sx}", 0.03, (sx * 0.15, -R - 0.012, 0.08), M["eye"], headg, seg=10)
         eye.scale = (0.7, 0.6, 1.8)
+    nr = kit.empty("digger.neckroots", (0, 0, 0.02), body)
+    for k in range(6):
+        a = 2 * math.pi * k / 6
+        rod(kit, f"digger.nroot{k}", (0.19 * math.cos(a), 0.12 * math.sin(a), -0.02),
+            (0.15 * math.cos(a + 0.9), 0.1 * math.sin(a + 0.9), 0.16), 0.022, M["root"], nr, n=6)
+    for sx in (-1, 1):   # a seam between torso and arm
+        for yy in (-0.171, 0.171):
+            kit.box(f"digger.seam{sx}{yy}", (0.012, 0.012, 1.3), (sx * 0.34, yy, -0.65), M["pit"], body)
+    ctx["neckroots"] = nr
     ctx["digger"] = {"root": root, "body": body, "neck": neck}
     # the site: a ring of loosened soil and cracks round the base (travels with the root, flat on the ground)
     site = kit.empty("digger.site", (0, 0, 0), root)
@@ -625,7 +641,7 @@ EMITTERS = [("leaf", (3.55, -27.62, 0.57), 1.55, 0.0, "always"),
 def build_interior(kit, M, x0, ctx, plot_ten=False):
     """A small shed from inside: the camera looks +y at the back wall (y = 1.9). The tool wall on the left, a shelf
     on the right. In Mr. Carter's one hook is bare, with a clean can-shaped outline in the dust."""
-    wood = M["creosote"] if not plot_ten else M["tar"]
+    wood = M["creosote"]
     kit.box(f"in{x0}.floor", (2.8, 3.0, 0.05), (x0, 0.6, -0.025), M["post"])
     kit.box(f"in{x0}.back", (2.8, 0.06, 2.4), (x0, 1.9, 1.2), wood)
     kit.box(f"in{x0}.front", (2.8, 0.06, 2.4), (x0, -0.9, 1.2), wood)
@@ -647,7 +663,7 @@ def build_interior(kit, M, x0, ctx, plot_ten=False):
         else:
             kit.box(f"in{x0}.hoe{dx}", (0.22, 0.015, 0.05), (x, 1.78, 0.57), M["iron2"], rot=(0, 0.2, 0))
     bare = x0 + 0.28
-    kit.box(f"in{x0}.hookbare", (0.03, 0.06, 0.03), (bare, 1.84, 1.55), M["iron"])
+    kit.box(f"in{x0}.hookbare", (0.045, 0.09, 0.045), (bare, 1.82, 1.55), M["iron2"], bevel=0.008)
     if not plot_ten:
         # dust on the boards, and the clean can-shaped patch where the can hung
         kit.box(f"in{x0}.dust", (0.95, 0.004, 0.85), (bare, 1.867, 1.28), pbr(kit, "wall dust", "#6b5a44", 0.95))
@@ -668,13 +684,17 @@ def build_interior(kit, M, x0, ctx, plot_ten=False):
                 rot=(0, 0.1 * (k - 1.5), 0))
     kit.light(f"lamp{x0}", "POINT", (x0 + 0.1, 0.3, 2.0), 38.0, "#ffd9a8", size=0.12)
     kit.light(f"lamp{x0}b", "POINT", (x0 + 0.8, 1.2, 1.6), 14.0, "#ffd0a0", size=0.1)
+    kit.light(f"lamp{x0}c", "POINT", (x0 + 0.3, 1.1, 1.5), 60.0 if plot_ten else 25.0, "#ffd9a8", size=0.1)
 
 
 def build_shaft(kit, M, ctx):
     """Under the hole (x = 120): a 5 m shaft that opens onto the Bench, a flat pale floor 11 m below, with one
     unfinished hand lying palm up. The torch beam is the only light."""
     x0 = 120.0
-    wall = kit.cyl("shaft.wall", HOLE_R, 5.0, (x0, 0, -2.5), M["soil"], n=28)
+    n_ = 28    # an open tube, no caps: the camera looks down it
+    tv = [(HOLE_R * math.cos(2 * math.pi * i / n_), HOLE_R * math.sin(2 * math.pi * i / n_), z) for z in (0.0, -5.0) for i in range(n_)]
+    tf = [(i, (i + 1) % n_, n_ + (i + 1) % n_, n_ + i) for i in range(n_)]
+    kit.mesh_obj("shaft.wall", tv, tf, M["soil"], None, (x0, 0, 0), smooth=True)
     for k in range(6):
         torus(kit, f"shaft.root{k}", HOLE_R - 0.02, 0.03, (x0, 0, -0.5 - k * 0.8), M["root"], n=28, m=5)
     kit.plane("shaft.floor", (90, 90), (x0, 0, -11.0), M["floor"])
@@ -768,10 +788,17 @@ def decorate(kit, story, ctx):
             kit.box(f"{who}.welly{sx}", (1.04, 1.06, 0.9 * lo), (0, 0, -1.4 + (1 - lo) * 0.45), mat, leg, bevel=0.08)
     hg = bpy.data.objects.get("carter.headg")
     if hg is not None:
-        kit.box("carter.capbrim", (0.9, 0.3, 0.05), (0, -faces.HEAD_R - 0.08, 0.5), M["mous"] if False else M["wellid"], hg, bevel=0.02)
+        kit.box("carter.capc", (2 * faces.HEAD_R + 0.16, 2 * faces.HEAD_R + 0.2, 0.17), (0, 0.02, 0.58), M["capwool"], hg, bevel=0.06)
         kit.box("carter.mous", (0.4, 0.09, 0.09), (0, -faces.HEAD_R - 0.01, -0.15), M["mous"], hg, bevel=0.03)
         for sx in (-1, 1):
             kit.box(f"carter.mousend{sx}", (0.1, 0.08, 0.15), (sx * 0.2, -faces.HEAD_R + 0.0, -0.2), M["mous"], hg, bevel=0.03)
+    hg2 = bpy.data.objects.get("newcomer.headg")
+    if hg2 is not None:
+        kit.box("newcomer.tail", (0.42, 0.4, 1.0), (0, faces.HEAD_R + 0.2, -0.05), M["pony"], hg2, bevel=0.1)
+        kit.box("newcomer.tailtie", (0.46, 0.44, 0.1), (0, faces.HEAD_R + 0.17, 0.38), M["capwool"], hg2, bevel=0.03)
+    tor2 = bpy.data.objects.get("newcomer.torso")
+    if tor2 is not None:
+        kit.box("newcomer.zip", (0.14, 0.04, 1.9), (0, -0.52, 1.0), M["zipstripe"], tor2, bevel=0.01)
     chars = []
     for who in ("me", "carter", "newcomer"):
         r = bpy.data.objects.get(who)
@@ -865,6 +892,7 @@ def animate(kit, story, tl, t, ctx):
         dg["root"].rotation_euler = (0, 0, math.radians(c.get("yaw", 0)))
         dg["body"].location = (0, 0, c["up"])
         dg["neck"].rotation_euler = (0, 0, math.radians(c.get("head", 0)))
+        ctx["neckroots"].rotation_euler = (0, 0, math.radians(c.get("head", 0)) * 0.5)
         # the loosened ring stays at the ground whatever the height
         ctx["site"].location = (0, 0, -c["up"])
     hc = _last(_cues(tl, "holes"), t) or {"plots": []}
@@ -900,7 +928,7 @@ def animate(kit, story, tl, t, ctx):
     can_world = None
     stream.location = (0, 0, -9)
     if cc["where"] in ("carter", "me"):
-        f = _frame(cc["where"], "arm1", (0, 0, -1.9))
+        f = _frame(cc["where"], cc.get("arm", "arm1"), (0, 0, -1.9))
         if f:
             _place(can, f[0], f[1], (0, 0, 0 if cc["where"] == "carter" else 0))
             if cc.get("water") or cc["where"] == "me" and cc.get("water"):
