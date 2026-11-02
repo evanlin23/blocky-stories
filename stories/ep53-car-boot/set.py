@@ -42,13 +42,13 @@ COAT_COLS = ["#46a7d6", "#f2c230", "#8456c8", "#e86aa0", "#2fb3a3", "#f0902a"]
 TOD = {
     "day":    dict(sun=7.0, sunc="#fff0d8", az=-50, el=48, fill=1.2, fillc="#b4c6ea", sky=1.3, hor="#cfd6e0", zen="#7fa6dc", fogd=0.004, fogb=1.0),
     "flat":   dict(sun=2.0, sunc="#dfe6f0", az=-60, el=40, fill=2.2, fillc="#c8d4e8", sky=1.5, hor="#cdd3da", zen="#9fb3cf", fogd=0.006, fogb=1.0),
-    "dawn":   dict(sun=1.6, sunc="#a8bcff", az=-70, el=10, fill=1.8, fillc="#8fa6e0", sky=0.85, hor="#aeb6d8", zen="#5f78b0", fogd=0.012, fogb=0.8),
-    "fog":    dict(sun=1.6, sunc="#e0e6f8", az=80, el=9, fill=1.9, fillc="#b4c0e0", sky=1.0, hor="#b0b6c4", zen="#8b9ab8", fogd=0.07, fogb=0.85),
-    "sil":    dict(sun=1.6, sunc="#e0e6f8", az=80, el=9, fill=0.1, fillc="#b4c0e0", sky=1.0, hor="#b0b6c4", zen="#8b9ab8", fogd=0.07, fogb=0.85),
+    "dawn":   dict(sun=3.0, sunc="#b8c8ff", az=-70, el=10, fill=2.4, fillc="#a0b4e8", sky=1.4, hor="#aeb6d8", zen="#5f78b0", fogd=0.012, fogb=0.8),
+    "fog":    dict(sun=3.0, sunc="#e8ecfa", az=80, el=9, fill=2.6, fillc="#c0cae8", sky=1.7, hor="#b8bece", zen="#98a6c0", fogd=0.055, fogb=1.0),
+    "sil":    dict(sun=4.0, sunc="#e8ecfa", az=80, el=9, fill=0.3, fillc="#c0cae8", sky=1.8, hor="#c4c9d6", zen="#98a6c0", fogd=0.055, fogb=1.0),
     "fogmid": dict(sun=1.0, sunc="#cdd7f2", az=200, el=12, fill=1.7, fillc="#b4c0e0", sky=0.95, hor="#aab0bf", zen="#8794b0", fogd=0.035, fogb=0.8),
-    "gold":   dict(sun=7.5, sunc="#ffc47c", az=205, el=17, fill=1.5, fillc="#8fa6e0", sky=1.0, hor="#f0c496", zen="#8aa4c8", fogd=0.004, fogb=1.0),
+    "gold":   dict(sun=8.5, sunc="#ffbd6e", az=215, el=11, fill=0.55, fillc="#8fa6e0", sky=1.0, hor="#f0c496", zen="#8aa4c8", fogd=0.004, fogb=1.0),
     "morn":   dict(sun=7.5, sunc="#ffd49a", az=-40, el=30, fill=1.4, fillc="#a5b8e6", sky=1.1, hor="#e8c9a8", zen="#86a8d4", fogd=0.004, fogb=1.0),
-    "house":  dict(sun=1.6, sunc="#a8bcff", az=-70, el=10, fill=1.6, fillc="#8fa6e0", sky=0.85, hor="#aeb6d8", zen="#5f78b0", fogd=0.01, fogb=0.8),
+    "house":  dict(sun=3.0, sunc="#b8c8ff", az=-70, el=10, fill=1.6, fillc="#8fa6e0", sky=1.4, hor="#aeb6d8", zen="#5f78b0", fogd=0.01, fogb=0.8),
     "inside": dict(sun=0.0, sunc="#ffffff", az=-50, el=48, fill=0.0, fillc="#b4c6ea", sky=0.3, hor="#cfd6e0", zen="#7fa6dc", fogd=0.002, fogb=1.0),
 }
 ROOMS = {"kitchen": 100.0, "bedroom": 130.0}
@@ -385,7 +385,7 @@ def build_row(kit, M, ctx):
                         kit.plastic(["#7a4a2a", "#202226", "#a4793a", "#5a3a2a", "#3d4a5a", "#8a6a4a", "#2a2a2a"][q], 0.6), bevel=0.03)
         elif k == -5:   # the end stall: one teapot
             kit.cyl("wt.body", 0.12, 0.2, (x, 0.0, 0.89), M.teap, n=14)
-            kit.sphere("wt.top", 0.08, (x, 0.0, 1.03), M.teap, 10)
+            kit.sphere("wt.top", 0.08, (x, 0.0, 1.03), M.teap, seg=10)
             kit.box("wt.spout", (0.05, 0.14, 0.05), (x, -0.17, 0.93), M.teap, rot=(math.radians(25), 0, 0))
             kit.box("wt.handle", (0.04, 0.05, 0.14), (x, 0.16, 0.91), M.teap)
         else:
@@ -418,7 +418,7 @@ def build_goods(kit, M, ctx):
         root = kit.empty(f"g.{nm}", (gx, gy, 0.785))
         if nm == "teapot":
             kit.cyl("tp.body", 0.1, 0.16, (0, 0, 0.09), M.teap, root, n=14)
-            kit.sphere("tp.top", 0.07, (0, 0, 0.2), M.teap, root, 10)
+            kit.sphere("tp.top", 0.07, (0, 0, 0.2), M.teap, root, seg=10)
             kit.box("tp.spout", (0.04, 0.12, 0.04), (0, -0.14, 0.12), M.teap, root, rot=(math.radians(25), 0, 0))
             kit.box("tp.handle", (0.03, 0.04, 0.12), (0, 0.13, 0.11), M.teap, root)
         elif nm == "lamp":
@@ -506,7 +506,7 @@ def build_room(kit, M, ctx, x0, kind):
     kit.box(f"{kind}.winp", (1.5, 0.04, 1.2), (x0 + 1.2, D / 2 - 0.07, 1.6), win)
     for k, (wx, wz, ww, wh) in enumerate(((0, 0.62, 1.7, 0.08), (0, -0.62, 1.7, 0.08))):
         kit.box(f"{kind}.winf{k}", (ww, 0.06, wh), (x0 + 1.2, D / 2 - 0.08, 1.6 + wz), M.woodd)
-    lamp = kit.light(f"{kind} lamp", "POINT", (x0, 0.0, 2.55), 520 if kind == "kitchen" else 130,
+    lamp = kit.light(f"{kind} lamp", "POINT", (x0, 0.0, 2.55), 520 if kind == "kitchen" else 480,
                      "#ffd2a0" if kind == "kitchen" else "#ffb878", size=0.4)
     ctx[f"{kind}_lamp"] = lamp
     kit.box(f"{kind}.shade", (0.5, 0.5, 0.18), (x0, 0.0, 2.7), kit.plastic("#e8dcc0", 0.9))
@@ -552,6 +552,7 @@ def build_coachwin(kit, M, ctx):
     kit.box("cw.fr2", (0.05, 1.5, 0.08), (x0 + 1.58, -0.05, 0.94), M.black)
     kit.box("cw.fr3", (0.05, 0.08, 1.1), (x0 + 1.58, -0.78, 1.45), M.black)
     kit.box("cw.fr4", (0.05, 0.08, 1.1), (x0 + 1.58, 0.68, 1.45), M.black)
+    kit.light("boot lamp", "POINT", (0.0, 3.0, 1.9), 60, "#fff0d8", size=0.4)
     kit.light("coach lamp", "POINT", (x0 + 0.2, -0.9, 2.3), 150, "#ffe6c4", size=0.5)
 
 
@@ -831,7 +832,7 @@ def animate(kit, story, tl, t, ctx):
     _show([ctx["tarpstrip"]], bool((_last(_cues(tl, "tarp"), t) or {}).get("on")))
     # the radio's dial lamp ramps (0.5 s) and the bus beams ramp (1 s)
     lv = ramp_level(_cues(tl, "lamp"), t)
-    _set_emit(ctx["dial"], 2.2 * lv)
+    _set_emit(ctx["dial"], 0.9 * lv)
     # ---------------------------------------------------------------- Pip's coat laid on the table, an arm or the bench
     pf = ctx["pipflat"]
     pc = _last(_cues(tl, "pipflat"), t) or {"where": "off"}
