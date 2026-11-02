@@ -195,7 +195,7 @@ def materials(kit):
     M["granite"] = _mixed(kit, "granite", "#8c8a84", "#6c6a66", 0.5, 7.0, 0.85)
     M["white"] = kit.plastic("#f1efe6", 0.6, name="picket white")
     M["canvas"] = kit.plastic("#c8b58a", 0.9, name="canvas")
-    M["canvas2"] = kit.plastic("#b35d45", 0.9, name="canvas rust")
+    M["canvas2"] = kit.plastic("#8a5f4a", 0.9, name="canvas rust")
     M["chairframe"] = kit.plastic("#5b4a38", 0.6, name="chair frame")
     M["wood"] = _mixed(kit, "weathered wood", "#7b6a58", "#5a4d3f", 0.4, 6.0, 0.9)
     M["gorse"] = _mixed(kit, "gorse", "#3e4a2c", "#566236", 0.4, 4.0, 0.9)
@@ -379,7 +379,7 @@ def caravan(kit, ctx, M, name, cx, y0, stripe, ours=False, lit=False, door_x=0.0
         out["step_x"] = sx0
         # the bottom step's plate (y1+0.78..1.08, top at 0.24) is where the two lichen tally strokes go
         for k, dx in enumerate((-0.14, 0.14)):
-            wbox(kit, f"{name}.tally{k}", (sx0 + dx - 0.022, y1 + 0.86, 0.236 + 0.008), (sx0 + dx + 0.022, y1 + 1.02, 0.236 + 0.022),
+            wbox(kit, f"{name}.tally{k}", (sx0 + dx - 0.035, y1 + 0.84, 0.236 + 0.008), (sx0 + dx + 0.035, y1 + 1.04, 0.236 + 0.03),
                  M["lichen"])
         mat = wbox(kit, f"{name}.mat", (sx0 - 0.46, y1 + 0.82, 0.236), (sx0 + 0.46, y1 + 1.04, 0.28), M["coir"], bevel=0.01)
         out["mat"] = mat
@@ -389,7 +389,7 @@ def caravan(kit, ctx, M, name, cx, y0, stripe, ours=False, lit=False, door_x=0.0
         lamp = kit.sphere(f"{name}.lamp", 0.1, (sx0 + 0.86, y1 + 0.14, 2.0), M["lampglass"], seg=10)
         kit.cyl(f"{name}.lampbase", 0.06, 0.05, (sx0 + 0.86, y1 + 0.06, 2.0), M["dark"], rot=(math.pi / 2, 0, 0), n=10)
         out["lamp"] = lamp
-        L = kit.light("lamp", "POINT", (sx0 + 0.86, y1 + 0.4, 2.0), 90.0, "#f2c47c", size=0.12)
+        L = kit.light("lamp", "POINT", (sx0 + 0.86, y1 + 0.4, 2.0), 50.0, "#f2c47c", size=0.12)
         # the kitchen window's light (left window), spilling out
         kit.light("window", "AREA", (cx - 2.0, y1 + 0.5, 1.9), 60.0, "#ffc98a", size=1.1)
         kit.aim(kit.LIGHTS["window"]["obj"], (cx - 2.0, y1 + 5.0, 0.6))
@@ -699,28 +699,27 @@ def build_moss(kit, ctx, M, cast):
 # ------------------------------------------------------------------------------------------------ the Kneeler
 
 K_THIGH_W, K_THIGH_H = 0.34, 0.74
-K_HIP = 0.86
-K_TORSO = 0.74
-HEAD_SC = 0.36
+K_HIP = 0.9
+K_TORSO = 0.8
+HEAD_SC = 0.42
 
 
 def kneeler_face():
     from PIL import Image, ImageDraw, ImageFilter
 
-    cream = (226, 214, 184)
+    cream = (214, 202, 172)
     im = Image.new("RGB", (faces.TEX_W, faces.TEX_H), cream)
     d = ImageDraw.Draw(im)
     s = faces.FX1 - faces.FX0
-    ink = (10, 8, 8)
-    ey, ex = faces._fy(0.5), 0.078 * s
-    rx = 0.052 * s
-    for side in (-1, 1):
-        cx = faces._fx(0.5) + side * ex
-        faces._ellipse(d, cx, ey, rx, rx, fill=ink)
-        faces._ellipse(d, cx - rx * 0.28, ey - rx * 0.3, rx * 0.17, rx * 0.17, fill=(255, 250, 235))
-    cx, my = faces._fx(0.5), faces._fy(0.79)
-    th = max(10, int(0.022 * s))
-    d.line([(cx - 0.05 * s, my), (cx + 0.05 * s, my)], fill=(30, 22, 20), width=th)
+    ink = (6, 5, 5)
+    # eyes set wrong: one huge and high, one small and low, hollow, with a pinprick
+    for cxn, cyn, rr in ((0.5 - 0.2, 0.36, 0.115), (0.5 + 0.2, 0.55, 0.062)):
+        cx, cy = faces._fx(cxn), faces._fy(cyn)
+        faces._ellipse(d, cx, cy, rr * s, rr * s * 1.5, fill=ink)
+        faces._ellipse(d, cx + rr * s * 0.1, cy + rr * s * 0.3, rr * s * 0.1, rr * s * 0.1, fill=(255, 250, 235))
+    # a wide dark gape, stretched across the lower face
+    cx, cy = faces._fx(0.5 - 0.02), faces._fy(0.83)
+    faces._ellipse(d, cx, cy, 0.19 * s, 0.1 * s, fill=ink)
     return im.filter(ImageFilter.SMOOTH)
 
 
@@ -757,7 +756,7 @@ def build_kneeler(kit, ctx, M):
     ctx["kn_neck"] = neck
     head = kit.empty("kn.head", (0, 0, 0.06 + 0.25), neck)
     hs = kit.empty("kn.heads", (0, 0, 0), head)
-    hs.scale = (HEAD_SC, HEAD_SC, HEAD_SC * 1.15)
+    hs.scale = (HEAD_SC, HEAD_SC, HEAD_SC * 1.3)
     hm, tex = rig.head_material("kneeler", "#e2d6b8")
     hm.node_tree.nodes["Principled BSDF"].inputs["Roughness"].default_value = 0.6
     pil = kneeler_face()
@@ -778,9 +777,10 @@ def build_kneeler(kit, ctx, M):
     ramp.color_ramp.elements[1].color = (1.0, 0.82, 0.55, 1)
     nt.links.new(sep.outputs["Val"], ramp.inputs["Fac"])
     nt.links.new(ramp.outputs["Color"], bsdf.inputs["Emission Color"])
-    bsdf.inputs["Emission Strength"].default_value = 6.0
+    bsdf.inputs["Emission Strength"].default_value = 3.0
     rig.head_mesh("kn.headm", hm, hs)
     ctx["kn_head"] = head
+    head.rotation_euler = (math.radians(-6), math.radians(11), 0)
     ctx["kn_parts"] = [root] + list(root.children_recursive)
 
 
@@ -917,7 +917,7 @@ def animate(kit, story, tl, t, ctx):
     for which, ws_ in ctx["water"].items():
         wv = _ramped([c for c in _cues(tl, "water") if c.get("which") == which], t, "v", 0.0)
         for ob, (x, y, rx, ry, dp) in zip(ws_, HOLLOWS[which][:2]):
-            ob.hide_render = wv < 0.05 or amt[which] < 0.3
+            ob.hide_render = True   # the dents stay plain grass (the dark discs read as lumps)
             ob.location = (x, y, -dp * amt[which] * (1.0 - 0.55 * wv) + 0.004)
             ob.scale = (1, 1, 1)
     # ---- things

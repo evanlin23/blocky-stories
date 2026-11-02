@@ -1250,14 +1250,14 @@
    ]
   },
   "L48": {
-   "text": "It doesn't blink. It just waits, in my place.",
+   "text": "It doesn't blink. It just waits, by my chair.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.172,
+   "dur": 2.19,
    "onset": 0.155,
-   "end": 1.983,
+   "end": 2.0,
    "chunks": [
     [
      0.155,
@@ -1265,11 +1265,11 @@
     ],
     [
      0.793,
-     1.241
+     1.207
     ],
     [
-     1.267,
-     1.983
+     1.233,
+     2.0
     ]
    ]
   },
@@ -1554,7 +1554,7 @@
    ]
   },
   "L59": {
-   "text": "And we wait for the fog to lift.",
+   "text": "And I wait for him to be ready.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1565,14 +1565,14 @@
    "chunks": [
     [
      0.155,
-     0.5
+     0.534
     ],
     [
-     0.5,
-     0.914
+     0.534,
+     0.776
     ],
     [
-     0.914,
+     0.776,
      1.483
     ]
    ]
