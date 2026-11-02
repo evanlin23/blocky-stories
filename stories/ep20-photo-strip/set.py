@@ -264,7 +264,7 @@ def materials(kit):
     b = m.node_tree.nodes["Principled BSDF"]
     b.inputs["Base Color"].default_value = kit.col("#5a2448")
     b.inputs["Roughness"].default_value = 0.95
-    b.inputs["Emission Color"].default_value = kit.col("#d4683e")
+    b.inputs["Emission Color"].default_value = kit.col("#dcaa72")
     b.inputs["Emission Strength"].default_value = 0.0
     kit._fogged(m, b.outputs[0])
     M["curtain"], M["curtain_bsdf"] = m, b
@@ -514,7 +514,7 @@ def build_strips(kit, ctx, M):
     make("s5b", prints.strip(5, (2, 3)), prints.back(True))
     # the black table the inserts are laid on
     kit.mesh_obj("stage", kit.box_verts(5.0, 3.0, 0.1, (STAGE[0], STAGE[1], -0.05)), kit.BOX_FACES, M["stage"])
-    kit.light("stage", "AREA", (STAGE[0] - 0.1, STAGE[1] - 0.25, 1.1), 22.0, "#fff0dc", size=1.3)
+    kit.light("stage", "AREA", (STAGE[0] - 0.1, STAGE[1] - 0.25, 1.1), 14.0, "#fff0dc", size=1.3)
     kit.aim(kit.LIGHTS["stage"]["obj"], (STAGE[0], STAGE[1], 0.0))
 
 

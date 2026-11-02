@@ -32,7 +32,8 @@
   "vignette": 0.42,
   "bloom": 0.3,
   "grain": 0.014,
-  "red_line": 0.8
+  "red_line": 0.79,
+  "red_lift_blue": 0.5
  },
  "phonemes": {
   "But": "bˈʌt"
