@@ -52,6 +52,13 @@ def road(u, side=0.0):
         d -= L
 
 
+def gpose(at, u, stride):
+    """The giant held in one pose at road position u, its front down the road, its head on my lamp."""
+    a, b = road(u), road(u + 0.002)
+    return {"at": at, "name": "giant", "pos": [a[0], a[1], 0.0], "yaw": round(math.degrees(math.atan2(b[0] - a[0], -(b[1] - a[1]))), 1),
+            "pitch": 3.0, "stride": 0.0, "look_lamp": True, "pines": True}
+
+
 def c(*keys):
     return [list(k) for k in keys]
 
@@ -136,7 +143,7 @@ U_ME = {"L64": (0.050, 0.062), "L65": (0.062, 0.078), "L66": (0.078, 0.090), "L6
 LAG = 0.03                                # its lag behind me down the road (7.7 m)
 
 # the giant's places (set.py CLEAR keeps the forest off them)
-FAR = [-25.0, 60.0, 0.0]                  # L01, far back behind the cab in fog
+FAR = [-25.0, 57.0, 5.0]                  # L01, far back behind the cab in fog
 WALK_UP = ([-31.5, -11.0], [-16.0, 1.0])  # 03: up the ridge toward the tower (the scale wide at L30)
 LEAN = [5.6, -7.6, -2.6]                  # L37 to L41: low, its right stone on the frame below the cab
 FEAR = [2.45, -8.0, 0.0]                  # L42 on: its hollow 1.3 m past the south rail
@@ -150,7 +157,7 @@ WINDOW_CLOSE = mv([0.25, 0.0, 21.4], [0.25, -6.0, 20.6], 17, roll=-3.0)
 SH = [
     # ---- 01 the question. The lit cab from outside on a pearl-fog morning, me at the glass; far back in the fog a
     # dark mass with two faint points (never mentioned). Slow push in
-    (0, mv([16.0, -22.0, 21.0], [-1.0, 3.0, 21.6], 30, [14.2, -19.6, 21.0], [-1.0, 3.0, 21.6], 34), {"hand": 0.005}),
+    (0, mv([10.5, -14.0, 19.8], [0.0, 0.0, 21.2], 30, [8.2, -11.0, 20.2], [0.0, 0.0, 21.4], 32), {"hand": 0.004}),
     ("L02", mv([1.65, 1.6, 21.1], [0.2, -0.7, 20.6], 22), {}),
     ("L03", mv([4.6, -7.6, 1.3], [0.0, 0.0, 5.0], 16, [4.6, -7.6, 1.3], [0.0, 0.0, 19.0], 16), {}),
     ("L04", mv([0.15, 1.05, 20.78], [0.3, 1.78, 20.66], 40), {"hand": 0.002}),
@@ -191,7 +198,7 @@ SH = [
     ("L37", mv([1.3, -1.6, 21.75], [-1.5, -9.0, 20.2], 22), {"hand": 0.004}),
     ("L38", mv([-5.0, 4.0, 5.0], [0.0, 0.0, 14.0], 20), {}),
     ("L39", mv([-24.0, -3.0, 12.0], [0.0, -1.0, 14.0], 26), {}),
-    ("L40", mv([10.0, -3.0, 9.0], [3.0, -4.5, 16.0], 24), {}),
+    ("L40", mv([15.0, -16.0, 4.0], [1.0, -3.0, 13.5], 20, [14.0, -15.0, 4.5], [1.0, -3.0, 14.0], 20, roll=5.0), {}),
     ("L41", mv([1.6, -3.5, 20.7], [0.75, -2.8, 20.4], 30), {"hand": 0.003}),
     ("L42", mv([0.95, -1.6, 21.55], [2.45, -6.5, 19.6], 24), {"step": 1, "hand": 0.003}),
     ("L43", FEAR_CAM, {"hand": 0.002}),
@@ -204,28 +211,41 @@ SH = [
     ("L51", mv([-0.3, -3.7, 21.2], [0.8, -2.5, 21.15], 28), {"hand": 0.003}),
     # ---- 05 the lamp test, inside the cab at night
     ("L52", mv([1.7, 1.6, 21.3], [-0.3, -2.6, 20.8], 18), {}),
-    ("L53", mv([-7.0, -12.0, 24.0], [1.0, -2.0, 20.5], 24), {}),
+    # (the giant faces the tower, so its lights are seen from the north: the lit cab, the lamp moving along the
+    # glass, the two warm points beyond it, level with the lamp's line)
+    ("L53", mv([-5.0, 8.0, 21.4], [0.0, -0.7, 21.0], 36), {}),
     ("L54", mv([-1.6, -1.6, 21.4], [1.0, -0.3, 20.3], 20), {}),
-    ("L55", mv([-1.7, -0.6, 21.4], [1.6, -2.5, 20.6], 22), {}),
+    # (L55: from behind the cot, the lamp low and the lights through the south glass above and beyond it)
+    ("L55", mv([0.6, 0.9, 20.8], [2.05, -3.9, 20.5], 30), {}),
     ("L56", mv([1.5, 0.6, 21.2], [500.0, -700.0, -110.0], 26), {}),
     ("L58", mv([-0.3, -0.3, 21.2], [-1.35, 0.35, 21.15], 30), {}),
-    ("L59", mv([-0.6, 0.9, 20.9], [1.4, -1.2, 20.4], 24), {}),
+    ("L59", mv([0.2, 1.0, 20.8], [2.15, -3.7, 20.5], 22, [0.55, 0.9, 20.8], [2.1, -3.9, 20.5], 24), {}),
     # ---- 06 the walk. The stairs, the gate, the road low wide, its foot in my pool (on ones), the shelf at first light
     ("L61", mv([3.0, -1.8, 21.0], [0.8, -0.4, 20.9], 24), {}),
     ("L62", mv([-6.0, 5.0, 13.0], [1.5, -6.0, 11.0], 22), {}),
     ("L63", mv([-2.0, 0.6, 1.7], [-1.8, -8.0, 0.6], 22), {}),
-    ("L64", mv([0.6, -40.0, -3.2], [0.0, -16.0, 8.0], 18, [0.6, -39.0, -3.0], [0.0, -16.0, 8.5], 18), {"hand": 0.004}),
-    ("L65", mv([6.2, -25.5, -0.4], [2.6, -24.5, -0.5], 24), {"step": 1, "hand": 0.003}),
-    ("L66", mv([3.6, -33.5, -1.7], [3.2, -29.5, -0.3], 30), {"hand": 0.003}),
-    ("L67", mv([-22.0, -58.0, 4.0], [1.0, -58.0, -2.0], 26, [-22.0, -61.0, 4.0], [1.0, -61.0, -2.0], 26), {}),
+    # it's never seen walking: each shot holds one pose of it, and it steps between the cuts (RULES, the creature)
+    ("L64", mv([0.6, -33.0, -1.6], [0.0, -11.1, 15.0], 34, [0.6, -32.0, -1.5], [0.0, -11.1, 15.6], 34), {"hand": 0.004}),
+    ("L64.1", mv([-2.5, -36.0, -2.2], [0.0, -12.5, 15.0], 34), {"hand": 0.003}),
+    ("L64b", mv([2.8, -36.0, -2.2], [0.3, -14.2, 16.0], 34), {"hand": 0.003}),
+    ("L65", mv([5.0, -30.0, 1.0], [2.2, -21.0, 0.2], 24), {"step": 1, "hand": 0.003}),
+    ("L65.2", mv([-4.0, -30.0, 1.2], [2.3, -21.0, 0.1], 24), {"step": 1, "hand": 0.003}),
+    ("L66", mv([3.6, -35.5, -1.7], [3.2, -31.5, -0.3], 30), {"hand": 0.003}),
+    ("L67", mv([-6.0, -76.0, -8.0], [0.5, -53.0, 3.5], 22), {}),
+    ("L67.1", mv([5.0, -100.0, 2.0], [1.0, -58.0, 3.0], 34), {}),
     ("L68", mv([62.0, -300.0, -40.0], [43.0, -268.0, -52.0], 22), {}),
-    ("L69", mv([41.0, -262.0, -46.0], [60.0, -880.0, -140.0], 28), {}),
-    ("L70", mv([34.0, -240.0, -26.0], [55.0, -880.0, -150.0], 32), {}),
-    ("L71", mv([47.0, -278.0, -48.0], [44.0, -266.0, -44.0], 22), {}),
-    ("L72", mv([44.0, -271.0, -47.0], [85.0, -320.0, -120.0], 35), {}),
+    ("L69", mv([41.0, -262.0, -46.0], [55.0, -880.0, -150.0], 34), {}),
+    ("L70", mv([34.0, -240.0, -26.0], [52.0, -880.0, -150.0], 36), {}),
+    # it's seen in poses, cut by cut: behind me, past me, then down the slope into the trees
+    ("L71", mv([46.0, -279.0, -47.5], [46.0, -256.0, -29.0], 30), {}),
+    ("L71.1", mv([30.0, -258.0, -46.0], [57.0, -268.0, -38.0], 22), {}),
+    ("L71.2", mv([45.2, -272.7, -48.6], [43.0, -270.0, -48.7], 40), {}),
+    ("L72", mv([47.0, -270.0, -37.5], [82.0, -258.0, -36.0], 24), {}),
+    ("L72.2", mv([47.0, -270.0, -37.5], [108.0, -250.0, -33.0], 30), {}),
+    ("L72.3", mv([47.0, -270.0, -37.5], [134.0, -244.0, -34.0], 40), {}),
     # ---- 07 spring: low on the road, a small pine in a print, a slow tilt up the line of them to the tower's gate
-    ("L73", mv([1.2, -38.0, -2.3], [-0.5, -34.0, -2.4], 26, [1.2, -38.0, -2.1], [-1.0, -2.0, 3.0], 26), {}),
-    ("L73.3", mv([-2.5, -12.0, 1.6], [-2.0, -2.0, 1.0], 30), {}),
+    ("L73", mv([6.5, -52.0, -4.3], [1.0, -27.0, -1.2], 26, [5.5, -50.0, -4.0], [0.0, -12.0, 3.0], 26), {}),
+    ("L73.3", mv([1.0, -30.5, 4.0], [0.5, -16.0, 0.5], 26, [1.0, -30.5, 4.0], [0.0, -4.0, 3.5], 26), {}),
 ]
 shots = []
 for i, (at, cam, opt) in enumerate(SH):
@@ -343,14 +363,17 @@ acting = {"me": me}
 LIGHTS_ON = "L04.2"
 cues = [
     # the whole light (set.py LOOKS)
-    {"at": 0, "name": "look", "id": "day"}, {"at": "L06", "name": "look", "id": "clear"},
+    {"at": 0, "name": "look", "id": "dayfar"}, {"at": "L02", "name": "look", "id": "day"},
+    {"at": "L06", "name": "look", "id": "clear"},
     {"at": "L07", "name": "look", "id": "day"}, {"at": "L08", "name": "look", "id": "bino"},
     {"at": "L10", "name": "look", "id": "day"}, {"at": "L11", "name": "look", "id": "bino"},
     {"at": "L12", "name": "look", "id": "day"}, {"at": "L14", "name": "look", "id": "night"},
     {"at": "L21", "name": "look", "id": "day"}, {"at": "L27", "name": "look", "id": "dusk"},
-    {"at": "L34", "name": "look", "id": "nighthigh"}, {"at": "P03", "name": "look", "id": "night"},
+    {"at": "L34", "name": "look", "id": "nighthigh"}, {"at": "L40", "name": "look", "id": "nightlean"},
+    {"at": "L41", "name": "look", "id": "nighthigh"}, {"at": "P03", "name": "look", "id": "night"},
     {"at": "L56", "name": "look", "id": "nightvalley"}, {"at": "L58", "name": "look", "id": "night"},
-    {"at": "L63", "name": "look", "id": "nightroad"}, {"at": "L68", "name": "look", "id": "dawn"},
+    {"at": "L63", "name": "look", "id": "nightroad"}, {"at": "L67.1", "name": "look", "id": "nightroadhi"},
+    {"at": "L68", "name": "look", "id": "dawn"},
     {"at": "L73", "name": "look", "id": "spring"},
     # the lantern: in my hand, set down, held high (it never flickers or goes out)
     {"at": 0, "name": "lamp", "pos": [0.9, -1.3, CAB_Z]},
@@ -371,6 +394,7 @@ cues = [
     {"at": "L62", "name": "lamp", **LAMP_HAND, "swing": 5.0, "decay": 1.5},
     {"at": "L68", "name": "lamp", **LAMP_HAND},
     {"at": "L73", "name": "lamp", "pos": LAMP_COT},
+    {"at": "L67.1", "name": "lampglow", "k": 18.0}, {"at": "L68", "name": "lampglow", "k": 1.0},
     # the radio's green light while she transmits (none of her audio plays), and the radio in my hand at L18 to L20
     {"at": 0, "name": "radio", "on": False},
     {"at": LIGHTS_ON, "name": "radio", "on": True}, {"at": "L04>+0.2", "name": "radio", "on": False},
@@ -390,7 +414,7 @@ cues = [
     {"at": "L47", "name": "breath"}, {"at": "P04", "name": "breath"},
     # the giant (set.py giant_state). Its walks put a footfall on every beat of the score's pulse (40 bpm, from the
     # section's start), so the score walks with it
-    {"at": 0, "name": "giant", "pos": FAR, "yaw": 22.6, "pitch": 3.0},
+    {"at": 0, "name": "giant", "pos": FAR, "yaw": 22.6, "pitch": 3.0, "lights": 0.7},
     {"at": "L02", "name": "giant", "pos": FAR, "hidden": True},
     {"at": "L28", "name": "giant", "hidden": True,
      "walk": {"from": [-80.0, -50.0], "to": [-36.0, -15.0], "until": "P02", "beat0": "P02", "stride": -12.0}},
@@ -405,21 +429,22 @@ cues = [
     {"at": "L62", "name": "giant", "pos": [2.0, -13.0, -6.0], "yaw": 180.0, "pitch": 7.0, "look_lamp": True,
      "rise": {"from": 6.0, "dur": 1.6}},
     {"at": "L63", "name": "giant", "pos": [0.0, -2.0, 0.0], "hidden": True},
-    # down the road LAG behind me, on the road's middle (I walk 1.2 m to its side, so its left foot comes down in my
-    # path, where my light just was)
-    *[{"at": ln, "name": "giant",
-       "walk": {"from": road(U_ME[ln][0] - LAG)[:2], "to": road(U_ME[ln][1] - LAG)[:2], "until": nxt, "beat0": "L64.1",
-                "stride": 9.0}}
-      for ln, nxt in (("L64", "L65"), ("L65", "L66"), ("L66", "L67"), ("L67", "L68"))],
+    # down the road, one held pose per shot (it steps between the cuts, never on screen), about 8 m behind me, on
+    # the road's middle (I walk 1.2 m to its side, so its left foot comes down in my path, where my light just was)
+    {**gpose("L64", 0.019, 0.0), "look_lamp": False, "head": 0.0}, gpose("L64.1", 0.0245, -6.0), gpose("L64b", 0.031, 6.0), gpose("L65", 0.036, 6.0),
+    gpose("L65.2", 0.043, -6.0), gpose("L66", 0.051, 6.0), gpose("L67", 0.179, -6.0), gpose("L67.1", 0.187, 6.0),
     {"at": "L68", "name": "giant", "pos": [40.5, -254.0, 0.0], "yaw": 190.0, "pitch": 3.0, "head": 0.0},
-    # past me on the shelf, 8.5 m to my side at its closest (its feet spread 4.5 m each side of its middle)
-    {"at": "L71", "name": "giant",
-     "walk": {"from": [40.5, -254.0], "to": [68.0, -286.0], "until": "L72", "beat0": "L71", "stride": 9.0}},
-    {"at": "L72", "name": "giant",
-     "walk": {"from": [68.0, -286.0], "to": [100.0, -338.0], "until": "L73", "beat0": "L71", "stride": 9.0}},
-    {"at": "L73", "name": "giant", "pos": [100.0, -338.0, 0.0], "hidden": True},
+    # behind me, past me (9 m clear of me at the nearest), then down the slope into the trees, a pose to a shot
+    {"at": "L71", "name": "giant", "pos": [46.0, -256.0, 0.0], "yaw": 0.0, "pitch": 3.0, "stride": 0.0, "pines": True},
+    {"at": "L71.1", "name": "giant", "pos": [57.0, -268.0, 0.0], "yaw": 35.0, "pitch": 3.0, "stride": 0.0, "pines": True},
+    {"at": "L71.2", "name": "giant", "pos": [64.0, -278.0, 0.0], "yaw": 45.0, "pitch": 3.0, "stride": 0.0, "pines": True},
+    {"at": "L72", "name": "giant", "pos": [82.0, -258.0, 0.0], "yaw": 90.0, "pitch": 3.0, "stride": 0.0, "pines": True},
+    {"at": "L72.2", "name": "giant", "pos": [108.0, -250.0, -4.0], "yaw": 90.0, "pitch": 3.0, "stride": 0.0, "pines": True},
+    {"at": "L72.3", "name": "giant", "pos": [134.0, -244.0, -9.0], "yaw": 90.0, "pitch": 3.0, "stride": 0.0, "pines": True},
+    {"at": "L73", "name": "giant", "pos": [134.0, -244.0, 0.0], "hidden": True},
 ]
 
+cues_foot = [{"at": "L65", "name": "footlit", "gain": 1.0}, {"at": "L66", "name": "footlit", "gain": 0.0}]
 fx = [{"at": "L39", "kind": "shake", "dur": 0.8, "amp": 0.45}]
 
 # ---------------------------------------------------------------------------------------------------- sound
@@ -464,7 +489,7 @@ sfx = [
 ]
 story = {
     "slug": "ep16-lookout",
-    "title": "It walked out of the fog toward my fire tower",
+    "title": "Every pine on the far ridge snapped at the same height",
     "made_for_kids": False,
     "premise": "Alone in a fire lookout's glass cab above an autumn forest, with a lamp, binoculars and a radio, I watch a giant made of the forest walk the ridges in thick fog, and each sign of it is nearer than the last: seen, heard, traces, moving, close, felt.",
     "twist": "It isn't hunting me. It steers by the river, the smoke has hidden the river, and my lamp is the only light that keeps still. I carry the lamp down the fire road at first light until it can see the river again.",
@@ -481,7 +506,7 @@ story = {
     "lines": lines,
     "shots": shots,
     "acting": acting,
-    "cues": cues,
+    "cues": cues + cues_foot,
     "fx": fx,
     # dorian on E2, 40 bpm (brief). The pulse plays only while it walks, so its sections are its walks and their
     # footfalls are the pulse's beats. Piano only on the walk down; the low choir once, at first light. No music box

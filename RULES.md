@@ -46,6 +46,7 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
   - **The stories share one hidden world.** `stories/lore.md` is the canon: what's under the town, who keeps the rules, what the creatures are to each other. Each story is still complete on its own, with its own setting, creature and ending. It plants **one** small connection to the canon (a symbol, a name, a sound, an object in the background) that only a repeat viewer spots. It's never needed to follow the story, and it's never a "Part 2" or a cliffhanger.
   - **The pin can invite theories** ("what was on the back of the ticket?"). The answer is in the canon, never in the comments.
   - The lore never makes two stories alike: rule 5 still holds for setting, creature, twist and ending shape.
+  - **The canon isn't the twist.** `stand-in` (a Keeper keeps someone's empty place until they come back) is already in more than ten stories. Pick a twist that turns the story over on its own, and let the Keeper fit around it. `stories/lore.md` → "Other things a count can do" lists shapes the canon supports.
 - **Vary the warmth** (owner, 2026-10-31: "We can have other heartwarming endings"): friendship, loyalty, helping, home. Never again "the monster was kind/lonely all along" or the ritual done back.
 - **Never reuse what batch 1 shared:** a knowing elder who explains in cryptic quotes. A night-shift or one-summer narrator. A pale grey blank-faced creature. "Pressed FLAT" against glass. A closing-section opener like "Last NIGHT,". An on-screen age. "It didn't touch me". "Not X, it was Y" cadences.
 - **Within a batch** no two stories share a setting, creature type, rule type (what the world's rule is about) or kind of warmth (ending shapes may repeat, owner 2026-11-02). `stories/ideas.md` lists what's been used.
@@ -75,13 +76,14 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
 
 ## Packaging (`stories/<story>/package.json`)
 ```json
-{"title": "...", "description": "...", "pin": "...", "made_for_kids": false, "cover_s": 107.0}
+{"title": "...", "description": "...", "pin": "...", "made_for_kids": false, "cover_s": 107.0, "shape": "stand-in"}
 ```
 - **Title:** under 100 characters, by the rules above.
 - **Description:** two or three short paragraphs. It sets up the story without spoiling it, says "It's made up.", and can say it's "built with code and Blender". The upload adds the measured flashing line on top by itself. Never: game or toy names, true, real, based on, kid, teen, child, baby, school, AI voice, no AI, made by hand, Kokoro, another franchise's monster.
 - **Title:** state the world's rule, the way the hits do ("In this town, everyone has a price"). It's a statement, never an imperative, and it never spoils the twist.
 - **Pin:** a question the viewer answers about themselves under the rule ("How many lies would your number show?"), or one about a detail planted early ("would you have sat back there?"). The owner posts it as their own first comment and pins it: on YouTube, the creator's own question sits in the top comments of 8 of the 15 Shorts studied.
 - **Cover (`cover_s`):** the second of the frame that becomes the thumbnail. Pick the creature or the rule marker clearly lit, with a face if possible and the caption tying back to the title (ep20: 1:47, "stood in the MIDDLE."). Without it, the render picks 78% of the way in. The upload issue shows the cover, and the owner picks that moment in the YouTube app.
+- **Shape (`shape`):** a short tag for the twist's shape, such as `stand-in` (a Keeper keeps a missing person's place until they come back), `never-left`, `trick`, `about-me`, `double`, `misread` or `rule-logic`. Reuse a tag when the shape matches, or coin a new one. The daily upload never puts two stories with the same shape back to back while another one is ready (2026-11-02: ten stories in the parallel batches share `stand-in`).
 - No hashtags or tags for now. Altered or synthetic content: No (it's animated fiction).
 
 ## Budget and craft
