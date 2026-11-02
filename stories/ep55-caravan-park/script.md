@@ -258,7 +258,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [mid close from the front-side: its head tilting very slowly down and to the right, about 15 degrees over 2 s, toward Jory's green chair]
 - `L47` narrator: Then it TURNS, / and leans IN, / until its FACE / is level with MINE.
   - [two shots, across a cut: me, `scared`, frozen by the gate. Then its face, leaned forward from the knees, turned to camera, 40 cm away, the two small black eyes with their warm points, the short drawn mouth]
-- `L48` narrator: It doesn't BLINK. / It just WAITS, / in MY place.
+- `L48` narrator: It doesn't BLINK. / It just WAITS, / by MY CHAIR.
   - [close two shot, side-on: my face and its face level, almost nose to nose, nothing touching. Hold]
 
 ## 07 Arrived (L49 to L62, about 87 to 116 s)
@@ -286,7 +286,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [Jory on the bench, looking down the path, the gorse behind, the edge far off and out of frame]
 - `L58` narrator: I don't say HURRY. / I sit down / on his LEFT.
   - [wide: me sitting on the bench on his left, `smile`. The warm lead comes in]
-- `L59` narrator: And we wait / for the FOG / to LIFT.
+- `L59` narrator: And I wait / for HIM / to be READY.
   - [from behind the bench: the two of us, the fog starting to thin over 4 s]
 - `L60` narrator: It takes AGES. / The GULLS / come and GO.
   - [two shots: close side two shot, both `neutral`, still. Then gulls drifting past in the thinning fog]
