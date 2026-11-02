@@ -217,7 +217,7 @@ LINE_ALL = {f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(5)}
 shot("L44", "dusk", dict(LINE_ALL), still([-0.9, 3.0, 1.45], [-3.0, 4.5, 1.3], 20), "five of them, in a line")
 shot("L45", "dusk", dict(LINE_ALL), still([-3.2, 1.15, 1.72], [-3.0, 5.0, 1.45], 26), "down the line, from the booth")
 shot("L45.2", "dusk", dict(LINE_ALL), still([-3.1, 1.25, 1.45], [-3.1, 2.7, 1.68], 32), "the front one's face, from the booth")
-shot("L46", "dusk", dict(LINE_ALL), still([-3.1, 0.6, 1.3], [-3.1, 2.7, 1.5], 30), "its bare collar")
+shot("L46", "dusk", dict(LINE_ALL), still([-3.1, 1.0, 1.4], [-3.1, 2.7, 1.62], 25), "its bare collar")
 shot("L47", "dusk", dict(LINE_ALL), still([-0.5, 3.2, 1.55], [-3.1, 2.75, 1.4], 28), "in the booth door")
 shot("L48", "dusk", {**LINE_ALL, "me": P(-1.5, 1.0, 180, "scared"), "ruben": P(-0.7, 1.0, 180, "scared")},
      still([-0.3, 4.3, 1.55], [-1.1, 1.0, 1.4], 26), "I stand where I used to")
