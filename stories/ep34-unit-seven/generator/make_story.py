@@ -81,17 +81,17 @@ SHOTS = [
     (0, "L74 the rule: me front-on at door seven, its lamp lit pale blue above my head, the door rising behind me",
      move(([-1.0, 3.0, 1.2], [0.5, 3.0, 1.45]), ([-0.95, 3.0, 1.22], [0.5, 3.0, 1.47]), 15, 15)),
     ("L75", "a narrow hallway through an open front door, lamp lit: one striped sock on a shoe rack",
-     move(([HX + 0.7, -4.5, 1.2], [HX + 0.7, 1.95, 1.3]), ([HX + 0.7, -4.2, 1.2], [HX + 0.7, 1.95, 1.3]), 44)),
+     move(([HX + 0.7, -4.5, 1.2], [HX + 0.7, 1.95, 1.3]), ([HX + 0.7, -4.2, 1.2], [HX + 0.7, 1.95, 1.3]), 40)),
     ("L76", "inside a high kitchen cupboard, door open: bare shelves, one spoon at the back",
      move(([CX + 0.05, -2.2, 1.55], [CX, 0.4, 1.5]), ([CX + 0.0, -2.0, 1.55], [CX, 0.4, 1.5]), 30)),
     ("L77", "a front step at evening, lamp lit: through the open door one taped box alone in an empty hall",
-     move(([HX + 0.7, -4.5, 1.2], [HX + 0.7, 1.7, 1.3]), ([HX + 0.7, -4.2, 1.2], [HX + 0.7, 1.7, 1.3]), 42)),
+     move(([HX + 0.7, -4.5, 1.2], [HX + 0.7, 1.7, 1.3]), ([HX + 0.7, -4.2, 1.2], [HX + 0.7, 1.7, 1.3]), 40)),
     ("L78", "now, dusk: Jo at her lit window, her door and its dark lamp, me on the pavement looking up",
      move(([HX - 0.5, -2.6, 1.55], [HX - 0.6, 0.0, 1.6]), ([HX - 0.5, -2.5, 1.55], [HX - 0.6, 0.0, 1.6]), 25)),
     ("L78.3", "me on the pavement looking up at her window",
      move(([HX - 1.6, -3.0, 1.55], [HX - 0.1, -0.9, 1.6]), ([HX - 1.5, -2.9, 1.55], [HX - 0.1, -0.9, 1.6]), 24)),
     ("L79", "seven's lamp glowing in its ring, tilting down to the open door and the two stacks",
-     move(([0.0, 2.35, 2.1], [0.8, 3.0, 2.5]), ([0.05, 2.6, 1.5], [1.9, 3.0, 0.75]), 32, 26)),
+     move(([-0.6, 2.2, 1.9], [0.8, 3.0, 2.45]), ([0.05, 2.6, 1.5], [1.9, 3.0, 0.75]), 30, 26)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp, me walking in",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
     ("L07", "inside seven: the stacks and the aisle, the lamp on the floor", still([0.95, 3.0, 1.15], [3.0, 3.0, 0.85], 22)),
@@ -280,7 +280,7 @@ hide("me", "L67")
 put("me", "L70", [1.25, 3.0], yaw=-90, expr="soft", **CARRY)
 put("me", "L71", [0.3, 3.75], yaw=90, expr="soft", **CARRY)
 put("me", "L81", [0.25, 3.4], yaw=180, expr="soft", **CARRY)
-walk("me", "L81+0.1", [0.0, 0.2], yaw=0)
+walk("me", "L81>", [0.05, 1.55], yaw=0)
 
 # Jo
 hide("jo", 0)
@@ -316,9 +316,10 @@ cues = [
     {"at": 0, "name": "time", "set": "open"},
     {"at": "L75", "name": "time", "set": "day", "dur": 0.01},
     {"at": "L77", "name": "time", "set": "sun", "dur": 0.01},
-    {"at": "L78", "name": "time", "set": "dusk", "dur": 0.01},
+    {"at": "L78", "name": "time", "set": "eve", "dur": 0.01},
     {"at": "L79", "name": "time", "set": "open", "dur": 0.01},
-    {"at": "L02", "name": "time", "set": "dusk", "dur": 0.01},
+    {"at": "L02", "name": "time", "set": "eve", "dur": 0.01},
+    {"at": "L07", "name": "time", "set": "dusk", "dur": 0.01},
     # the town: which little set is lit (set.py "scene")
     {"at": "L75", "name": "scene", "set": "sock"},
     {"at": "L76", "name": "scene", "set": "cupboard"},

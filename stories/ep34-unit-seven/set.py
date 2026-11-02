@@ -58,7 +58,7 @@ SCENES = {
     "sock": (1.0, 1.0, 0.5, 0.0, 1.0, 1, 0, 1),
     "cupboard": (0.0, 0.0, 0.0, 1.0, 0.0, 0, 0, 1),
     "box": (0.7, 1.0, 0.4, 0.0, 1.0, 0, 1, 1),
-    "street": (0.9, 0.35, 1.0, 0.0, 0.0, 0, 0, 0),
+    "street": (1.7, 0.35, 1.0, 0.0, 0.0, 0, 0, 0),
 }
 
 
@@ -555,7 +555,7 @@ def build_town(kit, ctx, M):
         kit.box(f"t wpost{sx}", (0.06, 0.05, 1.2), (cxw + sx * 0.68, -0.03, 1.5), M["trim"])
         kit.box(f"t dpost{sx}", (0.07, 0.05, 2.15), (X + 0.7 + sx * 0.535, -0.03, 1.075), M["trim"])
     kit.box("t dhead", (1.14, 0.05, 0.07), (X + 0.7, -0.03, 2.18), M["trim"])
-    door_lamp(kit, ctx, M, "H", (X + 0.7, -0.01, 2.62), "y-", light=True)
+    door_lamp(kit, ctx, M, "H", (X + 0.7, -0.01, 2.42), "y-", light=True)
     bpy.data.lights["dlH"].energy = 7
     # the door leaf: hinged at its left edge, closed in the opening or swung back against the hall wall
     piv = kit.empty("t door pivot", (X + 0.2, 0.12, 0.55))
@@ -581,10 +581,10 @@ def build_town(kit, ctx, M):
     stripes = []
     top = FZ + 0.42 + 0.015
     for j in range(4):    # the foot, along x
-        stripes.append(kit.box(f"t sock foot{j}", (0.1, 0.15, 0.1), (X + 0.4 + j * 0.1, 2.15, top + 0.05),
+        stripes.append(kit.box(f"t sock foot{j}", (0.13, 0.19, 0.12), (X + 0.3 + j * 0.13, 2.15, top + 0.06),
                                M["sock_r"] if j % 2 == 0 else M["sock_w"], bevel=0.02))
     for j in range(3):    # the leg, standing up at the heel
-        stripes.append(kit.box(f"t sock leg{j}", (0.1, 0.15, 0.1), (X + 0.7, 2.15, top + 0.15 + j * 0.1),
+        stripes.append(kit.box(f"t sock leg{j}", (0.13, 0.19, 0.12), (X + 0.69, 2.15, top + 0.18 + j * 0.12),
                                M["sock_w"] if j % 2 == 0 else M["sock_r"], bevel=0.02))
     ctx["rack"] = rk + stripes
     # the last taped box in the empty hall
@@ -787,6 +787,7 @@ TIMES = {
     "open": ("#1d2740", 0.8, 0.0, 1.0, 0.7, 0.7, 1.0, 0.45),   # sky colour, sky strength, sun gain, sodium, yard fill, mem fill, batten multiplier, exposure
     "dusk": ("#1d2740", 0.8, 0.0, 1.0, 0.7, 0.0, 1.0, 0.0),
     "mem": ("#bcd0ee", 1.6, 0.5, 0.0, 1.0, 1.0, 1.0, 0.1),
+    "eve": ("#4d5f8c", 1.7, 0.0, 1.0, 1.3, 0.0, 1.0, 0.7),       # a brighter dusk for the street and the yard at the start
     "day": ("#a9c4ea", 1.5, 0.9, 0.0, 1.0, 0.0, 0.85, 0.0),
     "sun": ("#f3b574", 1.5, 1.0, 0.0, 0.8, 0.5, 1.0, 0.0),
 }
