@@ -517,7 +517,7 @@ story = {
               "sfx": sfx,
               "music_drops": [{"from": "L15-0.6", "to": "L15.1", "keep": ["whoosh"]},
                               {"from": "L33-0.6", "to": "L33.1", "keep": ["sting"]},
-                              {"from": "L42-0.8", "to": "L42.2", "keep": ["sting"]}]},
+                              {"from": "L42-0.8", "to": "L42>", "keep": ["sting"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")
