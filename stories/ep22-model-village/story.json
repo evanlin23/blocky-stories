@@ -1347,12 +1347,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "There was a",
-     "There was a"
-    ],
-    [
-     "little MAN",
-     "little man"
+     "There was a little MAN",
+     "There was a little man"
     ],
     [
      "in the WINDOW,",
@@ -1708,7 +1704,7 @@
   },
   {
    "id": "P02",
-   "pause": 0.4,
+   "pause": 0.25,
    "chunks": []
   }
  ],

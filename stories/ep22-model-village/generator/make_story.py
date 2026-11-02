@@ -51,7 +51,7 @@ HOLDS = {"L09": 0.25, "L10": 0.3, "L12": 0.3, "L16": 0.3, "L17": 1.1, "L31": 0.4
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
-lines = lines + [{"id": "P02", "pause": 0.4, "chunks": []}]    # the loop cut comes 0.4 s after "me", the closing sound under it
+lines = lines + [{"id": "P02", "pause": 0.25, "chunks": []}]    # the loop cut comes 0.25 s after "me", the closing sound under it
 
 R = LAY.room
 TX, CX = LAY.TX, LAY.CX

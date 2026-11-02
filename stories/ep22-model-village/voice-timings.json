@@ -886,34 +886,34 @@
    ]
   },
   "L33": {
-   "text": "That night, in my real cottage, I shut every curtain.",
+   "text": "That night, in my own cottage, I shut every curtain.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.534,
+   "dur": 2.466,
    "onset": 0.172,
-   "end": 2.328,
+   "end": 2.259,
    "chunks": [
     [
      0.172,
-     0.414
+     0.397
     ],
     [
-     0.439,
-     0.603
+     0.423,
+     0.586
     ],
     [
-     0.603,
-     1.207
+     0.586,
+     1.155
     ],
     [
-     1.276,
-     1.569
+     1.224,
+     1.517
     ],
     [
-     1.569,
-     2.328
+     1.517,
+     2.259
     ]
    ]
   },
@@ -1453,10 +1453,6 @@
    "chunks": [
     [
      0.155,
-     0.345
-    ],
-    [
-     0.345,
      0.681
     ],
     [
@@ -1498,14 +1494,14 @@
    ]
   },
   "L57": {
-   "text": "I put the brush down and walked into the real tea shop.",
+   "text": "I put the brush down and walked into the big tea shop.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.431,
+   "dur": 2.379,
    "onset": 0.155,
-   "end": 2.224,
+   "end": 2.172,
    "chunks": [
     [
      0.155,
@@ -1521,11 +1517,11 @@
     ],
     [
      1.285,
-     1.578
+     1.526
     ],
     [
-     1.578,
-     2.224
+     1.526,
+     2.172
     ]
    ]
   },
