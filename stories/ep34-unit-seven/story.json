@@ -1110,7 +1110,7 @@
      "was counting."
     ]
    ],
-   "tempo": 0.88
+   "tempo": 0.8
   },
   {
    "id": "L50",
@@ -1193,20 +1193,28 @@
      "I'd just pretended"
     ],
     [
-     "they were all JO'S,",
-     "they were all Jo's,"
+     "they were all",
+     "they were all"
     ],
     [
-     "so I'd have a reason",
-     "so I'd have a reason"
+     "JO'S,",
+     "Jo's,"
+    ],
+    [
+     "so I'd have",
+     "so I'd have"
+    ],
+    [
+     "a reason",
+     "a reason"
     ],
     [
      "to keep COMING.",
      "to keep coming."
     ]
    ],
-   "tempo": 0.93,
-   "gap": 0.4
+   "tempo": 0.7,
+   "gap": 0.7
   },
   {
    "id": "L55",
@@ -1481,12 +1489,12 @@
      "My half"
     ],
     [
-     "went to",
-     "went to"
+     "went to the",
+     "went to the"
     ],
     [
-     "the charity SHOP.",
-     "the charity shop."
+     "charity SHOP.",
+     "charity shop."
     ]
    ]
   },
@@ -1507,6 +1515,7 @@
      "small box."
     ]
    ],
+   "tempo": 0.88,
    "gap": 0.35
   },
   {
@@ -1522,8 +1531,12 @@
      "was empty"
     ],
     [
-     "for the first time",
-     "for the first time"
+     "for the",
+     "for the"
+    ],
+    [
+     "first TIME",
+     "first time"
     ],
     [
      "since we SIGNED.",

@@ -16,8 +16,8 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
-TEMPO = {"L49": 0.88, "L64": 0.9, "L73": 0.95, "L54": 0.93, "L57": 0.95, "L19": 0.95}
-GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.4, "L69": 0.7, "L60": 0.55, "L67": 0.35, "L68": 0.4, "L58": 0.2}
+TEMPO = {"L49": 0.8, "L67": 0.88, "L64": 0.9, "L73": 0.95, "L54": 0.7, "L57": 0.95, "L19": 0.95}
+GAPS = {"L12": 0.35, "L37": 0.4, "L54": 0.7, "L69": 0.7, "L60": 0.55, "L67": 0.35, "L68": 0.4, "L58": 0.2}
 LOOP = 0.45          # seconds after the last word: the door's thud lands in it
 for ln in lines:
     if ln["id"] == "L42":
