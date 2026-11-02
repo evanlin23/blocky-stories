@@ -650,7 +650,7 @@ def quilt_material(kit):
     m = kit._new(name)
     nt = m.node_tree
     b = nt.nodes["Principled BSDF"]
-    b.inputs["Base Color"].default_value = kit.col(LANTERN_RED)
+    b.inputs["Base Color"].default_value = kit.col("#a8443a")
     b.inputs["Roughness"].default_value = 0.7
     tc = nt.nodes.new("ShaderNodeTexCoord")
     sep = nt.nodes.new("ShaderNodeSeparateXYZ")

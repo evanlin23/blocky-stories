@@ -137,8 +137,8 @@ SHOTS = [
     ("S40", "L34", "closer: it has turned front on", still((-0.3, 10.55, 1.45), (1.5, 10.5, 1.4), 34)),
     ("S41", "L35", "front on, full figure: only the left half", still((-1.9, 10.55, 1.2), (1.5, 10.5, 0.9), 27)),
     ("S42", "L36", "close on its half face: one eye, half a smile", still((0.1, 10.5, 1.65), (1.5, 10.5, 1.62), 42)),
-    ("S43", "L36.2", "its one arm hanging at its side", still((-0.1, 10.1, 1.0), (1.5, 10.1, 0.85), 34)),
-    ("S44", "L37.2", "three-quarter on the flat indigo plane", still((0.4, 12.3, 1.35), (1.5, 10.55, 1.1), 34)),
+    ("S43", "L36.2", "its one arm hanging at its side", still((-1.6, 9.6, 1.2), (1.5, 10.3, 0.9), 26)),
+    ("S44", "L37.2", "three-quarter on the flat indigo plane", still((-0.2, 12.6, 1.4), (1.5, 10.55, 1.1), 28)),
     ("S45", "L38", "its POV: across to our stall, Bea, the empty space", still((1.45, 10.45, 1.55), (-3.35, 10.0, 1.3), 30)),
     ("S46", "L39", "the iron bell on the arch pole swinging", still((0.0, 1.4, 1.9), (-2.6, -0.8, 2.3), 38)),
     ("S47", "L40", "wide down the row: the lanterns fading", still((0.0, -1.6, 1.95), (0.0, 10.0, 2.1), 26)),
@@ -441,7 +441,7 @@ story = {
               ],
               "sfx": sfx,
               "music_drops": [{"from": "L35-0.6", "to": "L35.1", "keep": ["sting"]},
-                              {"from": "L44-0.6", "to": "L44.4", "keep": ["hit"]}]},
+                              {"from": "L44-0.6", "to": "L44+0.5", "keep": ["hit"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")
