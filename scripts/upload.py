@@ -28,13 +28,28 @@ from blocky.gate import load_package
 REPO = os.environ.get("GITHUB_REPOSITORY", "evanlin23/blocky-stories")
 
 
+def shape(story: str) -> str:
+    """package.json's optional `shape`: a short tag for the twist's shape (e.g. "stand-in")."""
+    try:
+        pkg = load_package(story) or {}
+    except FileNotFoundError:   # an uploaded story whose folder is gone
+        pkg = {}
+    return str(pkg.get("shape", "")).strip().lower()
+
+
 def next_story(done: dict) -> str | None:
+    """The oldest ready story, skipping past one whose twist shape matches the last upload's, so two in a row
+    never end the same way (a story is only held back while another ready one can go first)."""
+    last = shape(next(reversed(done))) if done else ""
+    held = None
     for s in all_stories():
         if s in done:
             continue
         if film(s) and gate_open(s):
-            return s
-    return None
+            if not last or shape(s) != last:
+                return s
+            held = held or s
+    return held
 
 
 def cover(d: Path, s: str) -> tuple[str, str] | None:

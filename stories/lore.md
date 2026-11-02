@@ -17,6 +17,16 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 - **What's under the towns.** Far below every town is the Bench: the Makers' workbench floor, flat and endless, with unfinished pieces lying on it. Keepers that come up from below (ep12's) come from there. No story has shown it, and none should show more than a glimpse.
 - **What the Keepers are to each other.** Kin, all the same first batch. They never meet, because each is tied to its own place. They're never evil. They're also never "kind all along": they're doing a job, and it's eerie because they do it without caring how it looks to us.
 
+## Other things a count can do
+(Added 2026-11-02, because most of the parallel batches used the same shape: a Keeper standing in someone's empty place until they come back. These are all true in the canon, and each makes a different twist.)
+- **The count is too high, and the extra one is us.** The narrator, or someone they love, is the stroke that shouldn't be there, and the Keeper's job is to make the number right.
+- **Leaving breaks the count.** A Keeper can't stop anyone leaving, but a place built for four goes on counting four. The empty chair is set, the coat is hung, and the person who left starts to fade from photos instead.
+- **A count kept for someone who's gone for good.** The Keeper isn't waiting. It's mourning, the only way a counter knows how.
+- **A count that's wrong on purpose.** People lie to a Keeper (a name on a list, a ticket bought for nobody) to protect someone. The twist is the lie.
+- **Two places count the same person.** Someone belongs to two places at once (two homes, two crews), and two Keepers' tallies both include them.
+- **The Keeper is the one being counted.** Something bigger than the Keeper keeps a count too, and the story ends on the Keeper's own stroke.
+- **The rule was never about the Keeper.** The town's rule protects people from something else entirely, and the Keeper is just standing nearby, counting.
+
 ## Planted so far
 | Story | The connection it plants | Where (line, shot) |
 |---|---|---|
@@ -29,6 +39,8 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | ep33 `chairlift` (#17) | a plain tally of two faded-orange strokes pressed into the black rubber footrest of my chair, two for a chair built for two, in the Four-Face's colour. No extra stroke, no open thread touched | shot 15, under L15 ("My BOOTS / on the FOOTREST..."), top-down close, held 2.0 s, not narrated |
 | ep30 `top-rope` | two lilac strokes scratched into the steel anchor plate at the top of the climbing route, one for the climber and one for the belayer (the Headstander stands in as the belayer until Sam does) | S19, under L19 ("I reached toward / the ANCHOR"), held 1.6 s, not narrated |
 | ep32 `sitter` | a plain graphite tally of nine strokes on the underside of the life-room dais (eight easels and one sitter), seen when the dais is stood on its edge at the end-of-term show. The Unpainted's face lines are the same graphite | S70, under L70 ("Kofi had stood the DAIS against the WALL"), upper middle of frame, held 1.6 s, not narrated |
+| ep31 `dawn-flight` | a plain tally: four slate-blue strokes stamped into the leather rim of the balloon basket's fourth corner, four for a basket built for four (no extra stroke). The Loose One is the basket's Keeper, standing in the corner I left empty, and it leaves once Callum is coming | S19, under L19 ("The RIM / was old LEATHER, / worn SMOOTH / by HANDS."), held 1.6 s in the upper third, not narrated |
+| ep45 `bee-yard` | two honey-gold strokes scratched into the wooden board between the two veil hooks, two for a yard built for two (plain tally, no extra stroke) | S42, under L35 ("One is Lena's. The other is mine."), held about 1.8 s, not narrated |
 | ep50 `beach-huts` | a plain tally: two faded-blue strokes scratched into the brass door hasp of our beach hut, two for a hut built for two. (The Small Head is the hut's Keeper. It sits in the second deckchair, my place beside Remi, while I sit in the doorway on my laptop, and it's gone once I sit there. It has no reflection.) | under L28 ("The hut DOOR / swings OPEN / in the WIND."), held about 1.6 s, not narrated |
 
 ep14 to ep17 are being written elsewhere. When they land, add their rows here and fit what they plant into "What's true" without changing what's above.
