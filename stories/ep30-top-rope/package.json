@@ -1,8 +1,9 @@
 {
-  "title": "Since my slip last year, nobody holds my rope",
-  "description": "Every Thursday I climb late in an old brick mill, alone, on the machine at the top of the wall. Since my slip last year, nobody holds my rope.\n\nThen one night I looked up from the top hold, and someone was standing on the ceiling. Upside down. One hold closer every week.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
-  "pin": "Would you have let Sam hold your rope?",
+  "title": "In This Town, When You Fall, Someone Goes UP",
+  "description": "In this town, when you fall, the one who loves you most goes up. Trip on the stairs, and somewhere a person floats off the floor.\n\nI only started climbing this autumn, on a wall inside an old brick mill. Mum comes every Thursday to watch. And every time I came off the top of the wall, someone was standing upside down on the ceiling above me, one hold closer each week.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+  "pin": "If you fell right now, who do you think would go up?",
   "made_for_kids": false,
-  "shape": "stand-in",
+  "cover_s": 2.4,
+  "shape": "it-was-them",
   "hold": "redo: the first line must state the world's rule (owner, 2026-11-02)"
 }
