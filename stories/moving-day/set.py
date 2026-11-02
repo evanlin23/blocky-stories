@@ -1536,19 +1536,19 @@ def time_lights(kit, ctx):
 TIME_LIGHTS = {   # light: gain, per time of day. Every light not listed is off
     "dawn": {"dawn mum": 1.0, "dawn mine": 1.0, "dawn front": 1.0, "dawn kitchen": 0.55, "spill kitchen": 1.0,
              "spill front": 1.0, "hall fill": 1.0, "face key": 1.0, "body key": 1.0, "fill mum": 1.0, "fill mine": 1.0,
-             "fill hall": 1.0, "fill front": 1.0, "fill kitchen": 1.0},
+             "fill hall": 1.0, "fill front": 1.8, "fill kitchen": 1.0},
     "night": {"night mine": 1.0, "night front": 1.0, "face key": 0.45, "body key": 0.5, "me fill": 1.0},
     "night3": {"nightlight": 1.0, "nightlight kick": 1.0, "nightlight rim": 1.0, "window": 1.0, "window ceiling": 1.0,
                "window rake": 1.0, "window edge": 1.0, "mum fill": 1.0, "pillow fill": 1.0, "arm fill": 1.0, "door glow": 1.0, "lamp": 1.0, "night mine": 1.0, "me fill": 1.0,
                "night front": 1.0},
-    "sun": {"sun": 1.0, "sun ceiling": 1.0, "dawn front": 0.3, "dawn kitchen": 0.8, "dawn mum": 0.7, "dawn mine": 0.7,
+    "sun": {"sun": 1.0, "sun ceiling": 1.0, "face key": 0.9, "body key": 0.6, "dawn front": 0.6, "dawn kitchen": 0.8, "dawn mum": 0.7, "dawn mine": 0.7,
             "spill kitchen": 0.8, "spill front": 0.5, "spill sun": 1.0, "hall fill": 1.2, "fill mum": 0.8, "fill mine": 0.8,
-            "fill hall": 1.0, "fill front": 0.6, "fill kitchen": 1.0},
+            "fill hall": 1.0, "fill front": 1.8, "fill kitchen": 1.0},
     "end": {"dawn front": 0.9, "dawn kitchen": 0.9, "dawn mum": 0.8, "dawn mine": 0.8, "spill kitchen": 1.0,
             "spill front": 1.0, "hall fill": 1.4, "face key": 1.0, "body key": 0.0, "fill hall": 1.2, "fill front": 1.0,
             "fill kitchen": 1.0, "fill mum": 1.0, "fill mine": 1.0},
 }
-EXPOSURE = {"dawn": 0.45, "night": 1.0, "night3": 1.0, "sun": 0.35, "end": 0.45}   # the view's exposure by time
+EXPOSURE = {"dawn": 0.45, "night": 1.0, "night3": 1.0, "sun": 0.5, "end": 0.45}   # the view's exposure by time
 OUTSIDE = {"dawn": ("#7f8fa8", 1.3), "night": ("#1f242c", 0.4), "night3": ("#262b33", 0.7), "sun": ("#ffd9a0", 2.4),
            "end": ("#a9b4c2", 1.5)}
 

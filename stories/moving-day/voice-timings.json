@@ -737,6 +737,30 @@
     ]
    ]
   },
+  "L29b": {
+   "text": "And Mum was still asleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.707
+    ],
+    [
+     0.707,
+     1.276
+    ]
+   ]
+  },
   "L30": {
    "text": "So I tried to pull it apart.",
    "who": "narrator",
@@ -846,6 +870,58 @@
     [
      0.698,
      1.31
+    ]
+   ]
+  },
+  "L34b": {
+   "text": "In the kitchen, every tape roll was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.655,
+     1.25
+    ],
+    [
+     1.25,
+     1.948
+    ]
+   ]
+  },
+  "L34c": {
+   "text": "Just cardboard rings, stood up in a row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.897
+    ],
+    [
+     0.931,
+     1.199
+    ],
+    [
+     1.199,
+     1.793
     ]
    ]
   },
@@ -1898,82 +1974,6 @@
     [
      1.034,
      1.534
-    ]
-   ]
-  },
-  "L29b": {
-   "text": "And Mum was still asleep.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.483,
-   "onset": 0.155,
-   "end": 1.276,
-   "chunks": [
-    [
-     0.155,
-     0.448
-    ],
-    [
-     0.448,
-     0.707
-    ],
-    [
-     0.707,
-     1.276
-    ]
-   ]
-  },
-  "L34b": {
-   "text": "In the kitchen, every tape roll was empty.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.172,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.655,
-     1.25
-    ],
-    [
-     1.25,
-     1.948
-    ]
-   ]
-  },
-  "L34c": {
-   "text": "Just cardboard rings, stood up in a row.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.172,
-   "end": 1.793,
-   "chunks": [
-    [
-     0.172,
-     0.655
-    ],
-    [
-     0.655,
-     0.897
-    ],
-    [
-     0.931,
-     1.199
-    ],
-    [
-     1.199,
-     1.793
     ]
    ]
   }
