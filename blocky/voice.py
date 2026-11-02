@@ -164,7 +164,9 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite"}   # Bri
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
 HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
-              "wren": "ren", "wrens": "rens"}
+              "wren": "ren", "wrens": "rens",
+              # ep33 (opt-in: only a story with these words is affected): made-up names Whisper spells its own way
+              "halvor": "halver", "halvors": "halvers", "cagoule": "kagool", "40": "forty"}
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 
