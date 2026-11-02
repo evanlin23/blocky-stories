@@ -26,7 +26,7 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_CHANNEL_ID: ${{ vars.YT_CHANNEL_ID }}
-          YT_AUDITED: ${{ vars.YT_AUDITED }}
+          YT_AUDITED: ${{ vars.YT_AUDITED || secrets.YT_AUDITED }}   # a variable, or a secret if it was saved there
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898729+github-actions[bot]@users.noreply.github.com"

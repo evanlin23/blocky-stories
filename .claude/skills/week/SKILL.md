@@ -20,6 +20,8 @@ You're the orchestrator. Keep your own context small: you read reports and verdi
 ## 1. Write (1 writer call)
 "Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
 
+**Blind premise check** (the scope research's H2 test): before any building, a fresh general-purpose agent that has read nothing in the repo gets only the batch's titles and first lines, mixed with 5 known hits' first lines (from `docs/research/2026-11-02-reel-watch-notes-2.md`) and with no labels. It scores each 1 to 10 for "would I stop scrolling for this?". Any of ours that scores below the hits' median goes back to the writer once.
+
 ## 2. Build (a fresh builder call per phase)
 Start a **fresh builder agent for each phase** (the build, then each fix round). Never reuse one builder across phases: a long-lived builder's context passed 350K tokens and made every step expensive (pilot 1). One story at a time, because Blender takes the CPU. When a builder's preview is done, start the next builder while that story is in review. Retry a crashed step. Never drop a story for a crash.
 
@@ -29,7 +31,7 @@ Start a **fresh builder agent for each phase** (the build, then each fix round).
 - Read only each review's `Verdict:` line and its numbered must-fixes.
 - If the two reviews' must-fixes contradict each other, standards wins on rules (lore, kids, IP, fiction, flashing) and the critic wins on craft. Drop the losing note before you send the list on (ep17: the critic wanted a six-mark tally, but standards had ruled the story out of lore).
 - **revise:** send every must-fix from both reviews to the builder in one call. If any are about words or package, send them to the writer first, in one call, and pass its changed line ids on. Round 2 re-runs **only** the reviewers who said revise, with standards again batched over every story it sent back.
-- **Two rounds at most, firmly** (pilot 1 ran a third and slipped hours). If a story is still not approved after round 2, or a reviewer says kill, drop it: delete its folder, add a "killed: why" line to `stories/ideas.md`, and have the writer and builder make one replacement if the week is short. Never retry an idea killed for a hard rule.
+- **Two rounds at most, firmly** (pilot 1 ran a third and slipped hours). If a story is still not approved after round 2, or a reviewer says kill, drop it: delete its folder, add a "killed: why" line to `stories/ideas.md`, and have the writer and builder make one replacement if the week is short. Never retry an idea killed for a hard rule. **One rescue round:** when a story fails round 2 but a review names a single concrete fix (a light level, one creature shot), the builder applies just that, and only the reviewer who blocked looks once more. Then it ships or stays killed (ep37, ep41).
 - Done when `python -m blocky gate <name>` says OPEN.
 
 ## 4. Ship (no agents)
