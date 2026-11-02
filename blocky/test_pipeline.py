@@ -113,6 +113,65 @@ def test_upload_queue_goes_first(monkeypatch):
     assert upload.next_story({"c": {}}) == "b"            # a is held for a redo
 
 
+def test_upload_publishes_at_4pm_central(monkeypatch):
+    import datetime as dt
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    morning = dt.datetime(2026, 11, 3, 12, 47, tzinfo=dt.timezone.utc)      # 6:47 am Central (CST, UTC-6)
+    assert upload.publish_at(morning) == "2026-11-03T22:00:00Z"
+    late = dt.datetime(2026, 11, 3, 22, 10, tzinfo=dt.timezone.utc)         # past 4 pm: an hour from now
+    assert upload.publish_at(late) == "2026-11-03T23:10:00Z"
+    summer = dt.datetime(2027, 6, 1, 13, 0, tzinfo=dt.timezone.utc)         # CDT, UTC-5
+    assert upload.publish_at(summer) == "2027-06-01T21:00:00Z"
+    monkeypatch.setenv("YT_AUTOPUBLISH", "false")
+    assert upload.publish_at(morning) is None
+
+
+def test_upload_finds_a_title_already_on_the_channel():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    class Q:
+        def __init__(self, r): self.r = r
+        def execute(self): return self.r
+    class YT:
+        def channels(self):
+            return type("C", (), {"list": lambda s, **k: Q({"items": [{"contentDetails": {"relatedPlaylists": {"uploads": "UU1"}}}]})})()
+        def playlistItems(self):
+            items = [{"snippet": {"title": "In This Town a Bell RINGS Before Every Mistake", "resourceId": {"videoId": "abc"}}}]
+            return type("P", (), {"list": lambda s, **k: Q({"items": items})})()
+    assert upload.already_on_channel(YT(), "In This Town a Bell RINGS Before Every Mistake ") == "abc"
+    assert upload.already_on_channel(YT(), "Something else") is None
+
+
+def test_trend_scan_ranks_by_views_per_day():
+    import datetime as dt
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import trends
+
+    assert trends.seconds("PT1M5S") == 65 and trends.seconds("PT45S") == 45 and trends.seconds("") == 0
+    now = dt.datetime(2026, 11, 9, tzinfo=dt.timezone.utc)
+    assert round(trends.rate(1000, "2026-11-07T00:00:00Z", now)) == 500
+    rows = [{"id": "a", "title": "In This Town X", "channel": "C1", "views": 900, "seconds": 60, "age": 3.0,
+             "per_day": 300.0, "queries": ["rule premise"]},
+            {"id": "b", "title": "Sad | one", "channel": "C2", "views": 100, "seconds": 70, "age": 1.0,
+             "per_day": 100.0, "queries": ["sad / emotional"]}]
+    mom = trends.momentum(rows)
+    assert mom["rule premise"] == 300 and mom["comedy"] == 0
+    md = trends.report(rows, mom, {"momentum": {"rule premise": 600}}, "2026-11-09")
+    assert "| rule premise | 300 | -50% |" in md and "Sad / one" in md and md.index("In This Town X") < md.index("Sad / one")
+
+
+def test_comments_wait_for_public_and_post_once():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import comment
+
+    done = {"a": {"video_id": "v1"}, "b": {"video_id": "v2"}, "c": {"video_id": "v3", "commented": True},
+            "d": {"manual": True}}
+    assert comment.due(done, {"v1": "public", "v2": "private", "v3": "public"}) == ["a"]
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics

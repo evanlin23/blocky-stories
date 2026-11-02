@@ -176,6 +176,7 @@ HOMOPHONES = {"threw": "through", "creek": "creak", "shown": "shone", "haul": "h
               "okoffor": "okafor", "okoffors": "okafors", "ocoffor": "okafor", "ocoffors": "okafors",
               "okofor": "okafor", "okofors": "okafors",   # ep14: Okafor
               "ossie": "ozzy",   # ossie/ozzy (ep43)
+              "oral": "aurel",   # ep47: Uncle Aurel
               # ep57: British spellings, Whisper's Elon for Ilan, Mrs Varga
               "favour": "favor", "favours": "favors", "neighbours": "neighbors", "elon": "ilan", "elons": "ilans",
               "vargas": "varga", "missus": "mrs", "mister": "mr", "caffay": "cafe"}
