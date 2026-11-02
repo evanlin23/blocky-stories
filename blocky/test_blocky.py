@@ -150,7 +150,7 @@ def test_the_seam_never_goes_round_and_opens_in_fine_steps():
 
 
 def test_new_expressions_are_drawn():
-    for e in ("terrified", "squeeze", "fish"):
+    for e in ("terrified", "squeeze", "fish", "laugh"):
         assert e in faces.EXPRESSIONS
         assert faces.face_image({"eyes": "round"}, "#f1c9a0", e).size == (faces.TEX_W, faces.TEX_H)
 
