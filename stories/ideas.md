@@ -11,6 +11,9 @@ The writer takes the next ideas from here, and adds new ones. When a story is ma
 | ep20 `ep20-photo-strip` | a coin photo booth in an old hotel hall at a wedding | the Third, a far-too-tall paper-flat sepia figure with a slot smile; a whispered line as the first line ("It's getting CLOSER."); the "it never moved, we moved apart" twist; ending on a strip torn in half and shared, looping on a whisper; warmth: two estranged grown siblings make up; the tally mark on the back of a photo |
 | ep24 `ep24-wash-cycle` | a 24-hour laundromat on cold wet nights (I'm a customer) | the Turned, a broad person built backwards (bib, heels, elbows and face on the back), in laundry-blue overalls, one orange chair nearer each night; a confession as the first line ("I've been WEARING / a stranger's COAT."); the twist that the "stranger's" coat was the quiet neighbour's, given in secret, with the creature counting coat against his empty chair; lights fading slowly to a glow and its face an inch away; ending on the coat handed back folded on his wash at his door, then two coats on the hook; warmth: gratitude, I thank the man who looked after me and learn his name; a plain six-stroke tally under a chair seat |
 
+killed (ep24 build 1, 2026-11-02): after two review rounds the critic still read the Turned as a man sitting backwards (creature 3/10). Not a hard-rule kill, so the replacement remakes the same pitch on the approved script with a new creature build and fresh reviews.
+
+
 The premise and twist of each are in its `story.json`; `check` compares every new story against them.
 
 ## Next (batch 2 pitches, 2026-10-31): in production elsewhere (ep14 to ep17)
