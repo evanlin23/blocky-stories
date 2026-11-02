@@ -12,6 +12,7 @@
  },
  "key_color": "#3ad6c0",
  "gap": 0.12,
+ "min_read": 0.12,
  "tail": 0,
  "look": {
   "fog": "#15131c",
@@ -37,7 +38,9 @@
   "bloom": 0.25,
   "grain": 0.012
  },
- "phonemes": {},
+ "phonemes": {
+  "nachos": "nˈɑtʃOz"
+ },
  "cast": {
   "me": {
    "age": "adult",
@@ -158,12 +161,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "From my FIRST FRAME,",
-     "From my first frame,"
+     "From my",
+     "From my"
     ],
     [
-     "that's been my NAME.",
-     "that's been my name."
+     "FIRST FRAME,",
+     "first frame,"
+    ],
+    [
+     "that's been",
+     "that's been"
+    ],
+    [
+     "my NAME.",
+     "my name."
     ]
    ]
   },
@@ -184,8 +195,12 @@
      "and on Thursdays"
     ],
     [
-     "the team goes BOWLING.",
-     "the team goes bowling."
+     "the team",
+     "the team"
+    ],
+    [
+     "goes BOWLING.",
+     "goes bowling."
     ]
    ]
   },
@@ -210,8 +225,12 @@
      "and Tomasz,"
     ],
     [
-     "all in TEAL SHIRTS.",
-     "all in teal shirts."
+     "all in",
+     "all in"
+    ],
+    [
+     "TEAL SHIRTS.",
+     "teal shirts."
     ]
    ]
   },
@@ -220,8 +239,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "They DRAGGED me along",
-     "They dragged me along"
+     "They DRAGGED",
+     "They dragged"
+    ],
+    [
+     "me along",
+     "me along"
     ],
     [
      "my first WEEK.",
@@ -238,8 +261,12 @@
      "The alley's old,"
     ],
     [
-     "and the lane lights BUZZ.",
-     "and the lane lights buzz."
+     "and the lane",
+     "and the lane"
+    ],
+    [
+     "lights BUZZ.",
+     "lights buzz."
     ]
    ]
   },
@@ -256,8 +283,12 @@
      "house shoes"
     ],
     [
-     "from the team BAG.",
-     "from the team bag."
+     "from the",
+     "from the"
+    ],
+    [
+     "team BAG.",
+     "team bag."
     ]
    ]
   },
@@ -267,7 +298,7 @@
    "chunks": [
     [
      "They were WARM.",
-     "They were warm."
+     "They were, warm."
     ],
     [
      "Like somebody",
@@ -288,12 +319,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Up on the SCREEN,",
-     "Up on the screen,"
+     "Up on",
+     "Up on"
     ],
     [
-     "our scores came up",
-     "our scores came up"
+     "the SCREEN,",
+     "the screen,"
+    ],
+    [
+     "our scores",
+     "our scores"
+    ],
+    [
+     "came up",
+     "came up"
     ],
     [
      "in SIX ROWS.",
@@ -306,8 +345,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "FOUR rows had tiny PICTURES",
-     "Four rows had tiny pictures"
+     "FOUR rows had",
+     "Four rows had"
+    ],
+    [
+     "tiny PICTURES",
+     "tiny pictures"
     ],
     [
      "of the TEAM.",
@@ -342,8 +385,12 @@
      "had no picture,"
     ],
     [
-     "and it was ALREADY SCORING.",
-     "and it was already scoring."
+     "and it was",
+     "and it was"
+    ],
+    [
+     "ALREADY SCORING.",
+     "already scoring."
     ]
    ]
   },
@@ -352,8 +399,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dev said the team",
-     "Dev said the team"
+     "Dev said",
+     "Dev said"
+    ],
+    [
+     "the team",
+     "the team"
     ],
     [
      "had ONE RULE.",
@@ -366,8 +417,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "\"When the FIFTH ROW",
-     "When the fifth row"
+     "\"When the",
+     "When the"
+    ],
+    [
+     "FIFTH ROW",
+     "fifth row"
     ],
     [
      "LIGHTS UP,",
@@ -388,8 +443,12 @@
      "So we waited,"
     ],
     [
-     "and the fifth row",
-     "and the fifth row"
+     "and the",
+     "and the"
+    ],
+    [
+     "fifth row",
+     "fifth row"
     ],
     [
      "SCORED.",
@@ -402,18 +461,27 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then Dev pointed at ME",
-     "Then Dev pointed at me"
+     "Then Dev pointed",
+     "Then, Dev pointed"
+    ],
+    [
+     "at ME",
+     "at me"
     ],
     [
      "and said,",
      "and said,"
     ],
     [
-     "\"Go on then, SPARE.\"",
-     "Go on then, spare."
+     "\"Go on",
+     "Go on"
+    ],
+    [
+     "then, SPARE.\"",
+     "then, spare."
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L17",
@@ -424,8 +492,12 @@
      "I heard it"
     ],
     [
-     "like a SPARE PART.",
-     "like a spare part."
+     "like a",
+     "like a"
+    ],
+    [
+     "SPARE PART.",
+     "spare part."
     ],
     [
      "The one",
@@ -446,8 +518,12 @@
      "I rolled it"
     ],
     [
-     "straight into the GUTTER.",
-     "straight into the gutter."
+     "straight into",
+     "straight into"
+    ],
+    [
+     "the GUTTER.",
+     "the gutter."
     ]
    ]
   },
@@ -456,18 +532,27 @@
    "who": "narrator",
    "chunks": [
     [
-     "My ball came back up",
-     "My ball came back up"
+     "My ball came",
+     "My ball came"
+    ],
+    [
+     "back up",
+     "back up"
     ],
     [
      "the BALL RETURN",
      "the ball return"
     ],
     [
-     "with a big wooden THUNK.",
-     "with a big wooden thunk."
+     "with a big",
+     "with a big"
+    ],
+    [
+     "wooden THUNK.",
+     "wooden thunk."
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L20",
@@ -496,8 +581,12 @@
      "behind the pins,"
     ],
     [
-     "where it's always DARK,",
-     "where it's always dark,"
+     "where it's",
+     "where it's"
+    ],
+    [
+     "always DARK,",
+     "always dark,"
     ]
    ]
   },
@@ -520,8 +609,12 @@
      "A bowler"
     ],
     [
-     "in a TEAL SHIRT,",
-     "in a teal shirt,"
+     "in a",
+     "in a"
+    ],
+    [
+     "TEAL SHIRT,",
+     "teal shirt,"
     ],
     [
      "like OURS,",
@@ -560,8 +653,12 @@
      "The bottom face"
     ],
     [
-     "stared down the LANE.",
-     "stared down the lane."
+     "stared down",
+     "stared down"
+    ],
+    [
+     "the LANE.",
+     "the lane."
     ]
    ]
   },
@@ -574,12 +671,20 @@
      "The top face"
     ],
     [
-     "had its EYES SHUT,",
-     "had its eyes shut,"
+     "had its",
+     "had its"
     ],
     [
-     "like it was ASLEEP.",
-     "like it was asleep."
+     "EYES SHUT,",
+     "eyes shut,"
+    ],
+    [
+     "like it",
+     "like it"
+    ],
+    [
+     "was ASLEEP.",
+     "was asleep."
     ]
    ]
   },
@@ -598,12 +703,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "She looked RIGHT AT it,",
-     "She looked right at it,"
+     "She looked RIGHT",
+     "She looked right"
     ],
     [
-     "and asked what I was",
-     "and asked what I was"
+     "AT it,",
+     "at it,"
+    ],
+    [
+     "and asked what",
+     "and asked what"
+    ],
+    [
+     "I was",
+     "I was"
     ],
     [
      "POINTING at.",
@@ -660,8 +773,12 @@
      "The next Thursday,"
     ],
     [
-     "it was TWO lanes down.",
-     "it was two lanes down."
+     "it was TWO",
+     "it was two"
+    ],
+    [
+     "lanes down.",
+     "lanes down."
     ]
    ]
   },
@@ -674,8 +791,12 @@
      "Same teal shirt,"
     ],
     [
-     "and the same HOUSE SHOES",
-     "and the same house shoes"
+     "and the same",
+     "and the same"
+    ],
+    [
+     "HOUSE SHOES",
+     "house shoes"
     ],
     [
      "as MINE.",
@@ -688,8 +809,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And the top head's EYES",
-     "And the top head's eyes"
+     "And the top",
+     "And the top"
+    ],
+    [
+     "head's EYES",
+     "head's eyes"
     ],
     [
      "were open",
@@ -714,8 +839,12 @@
      "lit up,"
     ],
     [
-     "and we all STOOD BACK.",
-     "and we all stood back."
+     "and we all",
+     "and we all"
+    ],
+    [
+     "STOOD BACK.",
+     "stood back."
     ]
    ]
   },
@@ -734,12 +863,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "But down that DARK lane,",
-     "But down that dark lane,"
+     "But down that",
+     "But down that"
     ],
     [
-     "the pins went DOWN.",
-     "the pins went down."
+     "DARK lane,",
+     "dark lane,"
+    ],
+    [
+     "the pins",
+     "the pins"
+    ],
+    [
+     "went DOWN.",
+     "went down."
     ]
    ]
   },
@@ -752,8 +889,12 @@
      "The team"
     ],
     [
-     "were all very BUSY",
-     "were all very busy"
+     "were all",
+     "were all"
+    ],
+    [
+     "very BUSY",
+     "very busy"
     ],
     [
      "with the NACHOS.",
@@ -770,14 +911,19 @@
      "Week three,"
     ],
     [
-     "it was in the lane",
-     "it was in the lane"
+     "it was in",
+     "it was in"
+    ],
+    [
+     "the lane",
+     "the, lane"
     ],
     [
      "NEXT to OURS.",
      "next to ours."
     ]
-   ]
+   ],
+   "tempo": 0.93
   },
   {
    "id": "L39",
@@ -788,8 +934,12 @@
      "The top head"
     ],
     [
-     "was HALF OPEN now.",
-     "was half open now."
+     "was HALF",
+     "was half"
+    ],
+    [
+     "OPEN now.",
+     "open now."
     ]
    ]
   },
@@ -824,8 +974,12 @@
      "the lights buzzed,"
     ],
     [
-     "it faced a little more",
-     "it faced a little more"
+     "it faced a",
+     "it faced a"
+    ],
+    [
+     "little more",
+     "little more"
     ],
     [
      "toward ME.",
@@ -864,8 +1018,12 @@
      "Week four,"
     ],
     [
-     "the lane next door",
-     "the lane next door"
+     "the lane",
+     "the lane"
+    ],
+    [
+     "next door",
+     "next door"
     ],
     [
      "was EMPTY.",
@@ -886,8 +1044,12 @@
      "lit up,"
     ],
     [
-     "and EVERYONE stood BACK.",
-     "and everyone stood back."
+     "and EVERYONE",
+     "and everyone"
+    ],
+    [
+     "stood BACK.",
+     "stood back."
     ]
    ]
   },
@@ -909,21 +1071,26 @@
     ],
     [
      "\"Your GO,",
-     "Your go,"
+     "Your, go,"
     ],
     [
      "SPARE.\"",
      "spare."
     ]
-   ]
+   ],
+   "tempo": 0.9
   },
   {
    "id": "L46",
    "who": "narrator",
    "chunks": [
     [
-     "It was the ONE RULE.",
-     "It was the one rule."
+     "It was the",
+     "It was the"
+    ],
+    [
+     "ONE RULE.",
+     "one rule."
     ]
    ]
   },
@@ -1015,8 +1182,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The top head's EYES",
-     "The top head's eyes"
+     "The top",
+     "The top"
+    ],
+    [
+     "head's EYES",
+     "head's eyes"
     ],
     [
      "were WIDE OPEN.",
@@ -1029,8 +1200,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The lane lights BUZZED",
-     "The lane lights buzzed"
+     "The lane",
+     "The lane"
+    ],
+    [
+     "lights BUZZED",
+     "lights buzzed"
     ],
     [
      "and DIPPED.",
@@ -1043,8 +1218,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "When they came BACK,",
-     "When they came back,"
+     "When they",
+     "When they"
+    ],
+    [
+     "came BACK,",
+     "came back,"
     ],
     [
      "it was HALFWAY",
@@ -1135,8 +1314,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Up on the SCREEN,",
-     "Up on the screen,"
+     "Up on",
+     "Up on"
+    ],
+    [
+     "the SCREEN,",
+     "the screen,"
     ],
     [
      "my picture",
@@ -1147,8 +1330,12 @@
      "slid up"
     ],
     [
-     "into the FIFTH ROW.",
-     "into the fifth row."
+     "into the",
+     "into the"
+    ],
+    [
+     "FIFTH ROW.",
+     "fifth row."
     ]
    ]
   },
@@ -1171,8 +1358,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Rosie said their friend JUNO",
-     "Rosie said their friend Juno"
+     "Rosie said their",
+     "Rosie said their"
+    ],
+    [
+     "friend JUNO",
+     "friend Juno"
     ],
     [
      "moved away",
@@ -1189,8 +1380,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "They'd been a team",
-     "They'd been a team"
+     "They'd been",
+     "They'd been"
+    ],
+    [
+     "a team",
+     "a team"
     ],
     [
      "of FIVE.",
@@ -1207,8 +1402,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And every Thursday since,",
-     "And every Thursday since,"
+     "And every",
+     "And every"
+    ],
+    [
+     "Thursday since,",
+     "Thursday since,"
     ],
     [
      "the FIFTH ROW",
@@ -1229,12 +1428,20 @@
      "They never saw"
     ],
     [
-     "what was bowling it.",
-     "what was bowling it."
+     "what was",
+     "what was"
     ],
     [
-     "They just CALLED it",
-     "They just called it"
+     "bowling it.",
+     "bowling it."
+    ],
+    [
+     "They just",
+     "They just"
+    ],
+    [
+     "CALLED it",
+     "called it"
     ],
     [
      "the SPARE.",
@@ -1259,8 +1466,12 @@
      "were always warm"
     ],
     [
-     "when she got them OUT.",
-     "when she got them out."
+     "when she got",
+     "when she got"
+    ],
+    [
+     "them OUT.",
+     "them out."
     ]
    ]
   },
@@ -1277,8 +1488,12 @@
      "We were hoping"
     ],
     [
-     "you'd take its PLACE.\"",
-     "you'd take its place."
+     "you'd take",
+     "you'd take"
+    ],
+    [
+     "its PLACE.\"",
+     "its place."
     ]
    ]
   },
@@ -1341,12 +1556,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "And the whole team",
-     "And the whole team"
+     "And the",
+     "And the"
     ],
     [
-     "put their arms out FLAT",
-     "put their arms out flat"
+     "whole team",
+     "whole team"
+    ],
+    [
+     "put their arms",
+     "put their arms"
+    ],
+    [
+     "out FLAT",
+     "out flat"
     ],
     [
      "and REVERSED",
@@ -1371,8 +1594,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It was the SILLIEST thing",
-     "It was the silliest thing"
+     "It was the",
+     "It was the"
+    ],
+    [
+     "SILLIEST thing",
+     "silliest thing"
     ],
     [
      "I've EVER SEEN.",
@@ -1385,8 +1612,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "So I did it",
-     "So I did it"
+     "So I",
+     "So I"
+    ],
+    [
+     "did it",
+     "did it"
     ],
     [
      "TOO.",
@@ -1407,8 +1638,12 @@
      "beeping backwards"
     ],
     [
-     "on a bowling LANE.",
-     "on a bowling lane."
+     "on a",
+     "on a"
+    ],
+    [
+     "bowling LANE.",
+     "bowling lane."
     ]
    ]
   },
@@ -1442,7 +1677,8 @@
      "I'm the FIFTH.",
      "I'm the fifth."
     ]
-   ]
+   ],
+   "tempo": 0.9
   },
   {
    "id": "P99",
@@ -1729,13 +1965,13 @@
      0,
      [
       -1.0,
-      -5.3,
-      1.45
+      -6.0,
+      1.5
      ],
      [
       -1.0,
       -3.7,
-      1.0293756091623723
+      1.069132072387696
      ],
      24
     ]
@@ -1752,13 +1988,13 @@
      0,
      [
       -1.0,
-      -4.4,
-      0.55
+      -5.4,
+      0.7
      ],
      [
       -1.0,
       -3.2,
-      0.12
+      0.15
      ],
      30
     ],
@@ -1766,13 +2002,13 @@
      1,
      [
       -1.0,
-      -4.1,
-      0.5
+      -5.0,
+      0.6
      ],
      [
       -1.0,
       -3.2,
-      0.12
+      0.15
      ],
      34
     ]
@@ -2277,7 +2513,7 @@
    "hand": 0.004,
    "step": 2,
    "note": "S28 her puzzled face",
-   "at": "L28.2"
+   "at": "L28.4"
   },
   {
    "id": "S34",
@@ -2447,21 +2683,21 @@
      0,
      [
       -1.5,
-      -5.1,
-      0.35
+      -6.0,
+      0.7
      ],
      [
       -1.5,
       -4.0,
-      0.12
+      0.2
      ],
-     30
+     28
     ]
    ],
    "hand": 0.004,
    "step": 2,
    "note": "S32 my matching shoes",
-   "at": "L32.2"
+   "at": "L32.3"
   },
   {
    "id": "S42",
@@ -2622,7 +2858,7 @@
    "hand": 0.004,
    "step": 2,
    "note": "S37 nachos 2",
-   "at": "L37.2"
+   "at": "L37.3"
   },
   {
    "id": "S49",
@@ -2934,16 +3170,16 @@
     [
      0,
      [
-      1.7,
-      -1.1,
+      2.1,
+      -1.0,
       1.3
      ],
      [
       0.0,
-      -1.1,
-      1.0
+      -0.9,
+      1.1
      ],
-     22
+     17
     ]
    ],
    "hand": 0.004,
@@ -3124,7 +3360,7 @@
    "hand": 0,
    "step": 1,
    "note": "S54 halfway up",
-   "at": "L53.1"
+   "at": "L53.2"
   },
   {
    "id": "S69",
@@ -3155,9 +3391,9 @@
     [
      0,
      [
-      0.15,
-      -1.9,
-      0.4
+      0.45,
+      -3.4,
+      0.55
      ],
      [
       0.0,
@@ -3423,15 +3659,15 @@
      0,
      [
       -1.5,
-      -5.1,
-      0.35
+      -6.0,
+      0.7
      ],
      [
       -1.5,
       -4.0,
-      0.12
+      0.2
      ],
-     30
+     28
     ]
    ],
    "hand": 0.004,
@@ -3492,13 +3728,13 @@
      0,
      [
       -1.0,
-      -5.5,
-      1.45
+      -6.2,
+      1.5
      ],
      [
       -1.0,
       -3.9,
-      0.978596826400236
+      1.069132072387696
      ],
      24
     ]
@@ -3652,14 +3888,14 @@
     [
      0,
      [
-      -1.5,
-      -4.6,
-      3.0
+      -1.7,
+      -6.8,
+      3.25
      ],
      [
       -1.7,
-      4.0,
-      0.2
+      3.0,
+      0.1
      ],
      24
     ]
@@ -4181,7 +4417,7 @@
     "blend": 0
    },
    {
-    "at": "L28.2",
+    "at": "L28.4",
     "hidden": true,
     "blend": 0
    },
@@ -4253,7 +4489,7 @@
     "blend": 0
    },
    {
-    "at": "L32.2",
+    "at": "L32.3",
     "pos": [
      -3.9,
      -5.62,
@@ -4261,7 +4497,7 @@
     ]
    },
    {
-    "at": "L32.2",
+    "at": "L32.3",
     "pos": [
      -1.5,
      -4.0
@@ -4349,7 +4585,7 @@
     "blend": 0
    },
    {
-    "at": "L37.2",
+    "at": "L37.3",
     "hidden": true,
     "blend": 0
    },
@@ -4557,7 +4793,7 @@
     "blend": 0
    },
    {
-    "at": "L53.1",
+    "at": "L53.2",
     "hidden": true,
     "blend": 0
    },
@@ -5401,7 +5637,7 @@
     "expr": "smirk"
    },
    {
-    "from": "L16.2",
+    "from": "L16.3",
     "to": "L16>",
     "mouth": [
      0.55,
@@ -5470,7 +5706,7 @@
     "blend": 0
    },
    {
-    "at": "L28.2",
+    "at": "L28.4",
     "hidden": true,
     "blend": 0
    },
@@ -5510,7 +5746,7 @@
     "blend": 0
    },
    {
-    "at": "L32.2",
+    "at": "L32.3",
     "hidden": true,
     "blend": 0
    },
@@ -5605,7 +5841,7 @@
     "expr": "neutral"
    },
    {
-    "at": "L37.2",
+    "at": "L37.3",
     "hidden": true,
     "blend": 0
    },
@@ -5765,7 +6001,7 @@
     "blend": 0
    },
    {
-    "at": "L53.1",
+    "at": "L53.2",
     "hidden": true,
     "blend": 0
    },
@@ -6729,7 +6965,7 @@
     "expr": "neutral"
    },
    {
-    "at": "L28.2",
+    "at": "L28.4",
     "pos": [
      -2.85,
      -5.62,
@@ -6737,7 +6973,7 @@
     ]
    },
    {
-    "at": "L28.2",
+    "at": "L28.4",
     "pos": [
      -2.85,
      -5.62,
@@ -6766,7 +7002,7 @@
     "expr": "worried"
    },
    {
-    "from": "L28.2",
+    "from": "L28.4",
     "to": "L28>",
     "mouth": [
      0.55,
@@ -6810,7 +7046,7 @@
     "blend": 0
    },
    {
-    "at": "L32.2",
+    "at": "L32.3",
     "hidden": true,
     "blend": 0
    },
@@ -6876,14 +7112,14 @@
     "blend": 0
    },
    {
-    "at": "L37.2",
+    "at": "L37.3",
     "pos": [
      -2.8,
      -4.5
     ]
    },
    {
-    "at": "L37.2",
+    "at": "L37.3",
     "pos": [
      -2.7,
      -4.95
@@ -7066,7 +7302,7 @@
     "blend": 0
    },
    {
-    "at": "L53.1",
+    "at": "L53.2",
     "hidden": true,
     "blend": 0
    },
@@ -7657,11 +7893,11 @@
     "keep_yaw": true,
     "arms": [
      0,
-     82
+     84
     ],
     "side": [
      0,
-     0
+     34
     ],
     "head": [
      0,
@@ -7912,7 +8148,7 @@
     "blend": 0
    },
    {
-    "at": "L28.2",
+    "at": "L28.4",
     "hidden": true,
     "blend": 0
    },
@@ -7952,7 +8188,7 @@
     "blend": 0
    },
    {
-    "at": "L32.2",
+    "at": "L32.3",
     "hidden": true,
     "blend": 0
    },
@@ -8017,14 +8253,14 @@
     "blend": 0
    },
    {
-    "at": "L37.2",
+    "at": "L37.3",
     "pos": [
      -1.8,
      -4.5
     ]
    },
    {
-    "at": "L37.2",
+    "at": "L37.3",
     "pos": [
      -1.7,
      -4.95
@@ -8216,7 +8452,7 @@
     "blend": 0
    },
    {
-    "at": "L53.1",
+    "at": "L53.2",
     "hidden": true,
     "blend": 0
    },
@@ -8481,11 +8717,11 @@
     "keep_yaw": true,
     "arms": [
      0,
-     82
+     84
     ],
     "side": [
      0,
-     0
+     34
     ],
     "head": [
      0,
@@ -9053,7 +9289,7 @@
     "blend": 0
    },
    {
-    "at": "L28.2",
+    "at": "L28.4",
     "hidden": true,
     "blend": 0
    },
@@ -9197,7 +9433,7 @@
     "blend": 0
    },
    {
-    "at": "L32.2",
+    "at": "L32.3",
     "hidden": true,
     "blend": 0
    },
@@ -9293,7 +9529,7 @@
     "expr": "neutral"
    },
    {
-    "at": "L37.2",
+    "at": "L37.3",
     "hidden": true,
     "blend": 0
    },
@@ -9453,7 +9689,7 @@
     "blend": 0
    },
    {
-    "at": "L53.1",
+    "at": "L53.2",
     "hidden": true,
     "blend": 0
    },
@@ -9998,7 +10234,7 @@
    "top": 0
   },
   {
-   "at": "L53.1",
+   "at": "L53.2",
    "name": "spare",
    "lane": 0,
    "pos": [
@@ -10020,12 +10256,12 @@
    "act": "up"
   },
   {
-   "at": "L36.1",
+   "at": "L36.2",
    "name": "pins",
    "act": "fall"
   },
   {
-   "at": "L37.2",
+   "at": "L37.3",
    "name": "pins",
    "act": "hide"
   },
@@ -10181,6 +10417,12 @@
    "on": 1.0
   },
   {
+   "at": "L75-0.1",
+   "name": "show",
+   "what": "noscreen",
+   "on": true
+  },
+  {
    "at": "L07",
    "name": "show",
    "what": "shoes",
@@ -10304,14 +10546,14 @@
    "n5": 5
   },
   {
-   "at": "L14.1",
+   "at": "L14.2",
    "name": "screen",
    "lit5": 1,
    "dim": 1,
    "dur": 0.5
   },
   {
-   "at": "L15.2",
+   "at": "L15.3",
    "name": "screen",
    "n5": 6,
    "sym5": [
@@ -10371,14 +10613,14 @@
    "dur": 0.6
   },
   {
-   "at": "L60.1",
+   "at": "L60.2",
    "name": "screen",
    "slide": 1,
    "sixth": 0,
    "dur": 1.0
   },
   {
-   "at": "L60.2",
+   "at": "L60.3",
    "name": "screen",
    "n5": 6,
    "sym5": [
@@ -10403,7 +10645,7 @@
    "sym5": []
   },
   {
-   "at": "L64.1",
+   "at": "L64.2",
    "name": "screen",
    "n5": 5,
    "sym5": [
@@ -10415,7 +10657,7 @@
    ]
   },
   {
-   "at": "L64.2",
+   "at": "L64.3",
    "name": "screen",
    "n5": 6,
    "sym5": [
@@ -10571,12 +10813,12 @@
     "dur": 1.3
    },
    {
-    "at": "L19.2+0.3",
+    "at": "L19.3+0.3",
     "kind": "alley_thunk",
     "db": -14
    },
    {
-    "at": "L36.1",
+    "at": "L36.2",
     "kind": "alley_clatter",
     "db": -12,
     "dur": 1.5
@@ -10628,12 +10870,12 @@
     "dur": 1.5
    },
    {
-    "at": "L60.2",
+    "at": "L60.3",
     "kind": "bell",
     "db": -26
    },
    {
-    "at": "L71.2",
+    "at": "L71.4",
     "kind": "alley_beep",
     "db": -21,
     "pattern": [

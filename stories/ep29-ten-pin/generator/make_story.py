@@ -18,7 +18,55 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
+# captions show two or three words: a longer chunk of the script is split (the spoken words split with it), and
+# every "Lxx.n" reference below is moved to the new chunk numbering
+CHUNK_MAP = {}
+
+
+def _split(cap, sp):
+    cw, sw = cap.split(" "), sp.split(" ")
+    n = len(cw)
+    if n <= 3 or len(sw) != n:
+        return [(cap, sp)]
+    k = -(-n // 3)
+    sizes = [n // k + (1 if i < n % k else 0) for i in range(k)]
+    out, i = [], 0
+    for z in sizes:
+        out.append((" ".join(cw[i:i + z]), " ".join(sw[i:i + z])))
+        i += z
+    return out
+
+
+for ln in lines:
+    new = []
+    for old, (cap, sp) in enumerate(ln.get("chunks", [])):
+        CHUNK_MAP[(ln["id"], old)] = len(new)
+        new += [list(x) for x in _split(cap, sp)]
+    if "chunks" in ln:
+        ln["chunks"] = new
+TEMPO = {"L16": 0.93, "L19": 0.93, "L38": 0.93, "L45": 0.9, "L76": 0.9}   # the word check: a swallowed word comes through
+for ln in lines:
+    if ln["id"] in TEMPO:
+        ln["tempo"] = TEMPO[ln["id"]]
 lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
+
+
+def _fixref(v):
+    import re
+    m = re.match(r"^(L\d+)\.(\d+)(.*)$", v) if isinstance(v, str) else None
+    if not m:
+        return v
+    return f"{m.group(1)}.{CHUNK_MAP.get((m.group(1), int(m.group(2))), int(m.group(2)))}{m.group(3)}"
+
+
+def _walk(o):
+    if isinstance(o, dict):
+        return {k: (_fixref(v) if k in ("at", "from", "to") else _walk(v)) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_walk(x) for x in o]
+    return o
+
+
 
 TEAL, CREAM = "#1f8f86", "#efe6d2"
 # ---------------------------------------------------------------------------------------------------- cast
@@ -120,10 +168,10 @@ shot("L04.4", {w: seat(w) for w in ("dev", "tomasz", "mags", "rosie")},
 shot("L05", {"me": seat("me", expr="worried"), "rosie": seat("rosie")},
      cam([-2.9, -3.3, 1.45], [-3.7, -5.6, 1.4], 24, 0.12), note="S5 me on the end seat, a little apart")
 shot("L06", {}, mv([-1.0, -5.2, 0.4], [0.0, -1.4, 3.0], [-0.6, -5.2, 0.4], [0.0, -1.4, 3.1], 22), note="S6 lamp housing")
-shot("L07", {"mags": ([-1.0, -3.7], 0, {"arms": [0, 82], "expr": "soft", "talk": ("L07", "L07>")})},
-     cam([-1.0, -5.3, 1.45], [-1.0, -3.7, 1.35], 24, 0.2), note="S7 Mags holds out the shoes (plant 2)")
+shot("L07", {"mags": ([-1.0, -3.7], 0, {"arms": [0, 84], "side": [0, 34], "expr": "soft", "talk": ("L07", "L07>")})},
+     cam([-1.0, -6.0, 1.5], [-1.0, -3.7, 1.3], 24, 0.1), note="S7 Mags holds out the shoes (plant 2)")
 shot("L08", {"me": ([-1.0, -3.2], 0, {"expr": "worried"})},
-     mv([-1.0, -4.4, 0.55], [-1.0, -3.2, 0.12], [-1.0, -4.1, 0.5], [-1.0, -3.2, 0.12], 30, 34), note="S8 warm shoes")
+     mv([-1.0, -5.4, 0.7], [-1.0, -3.2, 0.15], [-1.0, -5.0, 0.6], [-1.0, -3.2, 0.15], 30, 34), note="S8 warm shoes")
 shot("L09", {w: seat(w) for w in WHO},
      cam([SCR_X, -7.2, 1.25], [SCR_X, -3.4, 2.1], 30, 0.0), note="S9 the screen, six rows (plant 1)")
 shot("L10", {}, cam([SCR_X, -5.6, 2.3], [SCR_X - 0.2, -3.4, 2.5], 26, 0.0), note="S10 rows one to four")
@@ -172,7 +220,7 @@ shot("L30.1", {"me": seat("me", expr="worried")}, face_cam([SEAT_X["me"], SEAT_Y
 shot("L31", {}, cam([-1.0, -5.0, 1.1], [-2.7, 15.0, 1.5], 40, 0.0), hand=0.003, note="S31 two lanes down")
 shot("L32", {}, cam([-1.2, -1.0, 0.3], [-3.2, 15.9, 0.18], 110, 0.0), hand=0, note="S32 its shoes")
 shot("L32.2", {"me": ([-1.5, -4.0], 0, {"expr": "worried"})},
-     cam([-1.5, -5.1, 0.35], [-1.5, -4.0, 0.12], 30, 0.0), note="S32 my matching shoes")
+     cam([-1.5, -6.0, 0.7], [-1.5, -4.0, 0.2], 28, 0.0), note="S32 my matching shoes")
 shot("L33", {}, cam([-1.0, -0.5, 1.2], [-3.1, 15.9, 1.99], 200, 0.0), hand=0, note="S33 top head, a slit")
 shot("L34", {}, cam([SCR_X, -5.4, 1.9], [SCR_X - 0.45, -3.4, 2.1], 22, 0.0), hand=0, note="S34 the fifth row lights up")
 shot("L34.2", {w: stand(w) for w in WHO}, cam([-2.6, -8.0, 1.3], [SCR_X, -3.4, 1.8], 22, 0.0), note="S34 we all stand back")
@@ -206,7 +254,7 @@ shot("L46", {"dev": ([-0.6, -4.9], 180 + 0, {"expr": "neutral"}), "rosie": ([-1.
              "tomasz": ([-2.5, -4.9], 180, {"expr": "neutral"})},
      mv([-0.6, -2.6, 1.5], [-0.6, -4.9, 1.45], [-2.5, -2.6, 1.5], [-2.5, -4.9, 1.45], 24, 24, 0.1), note="S46 nobody stops me")
 shot("L47", {"me": ([0.0, -1.5], 180, {"arms": [62, 62], "side": [-8, -8], "expr": "worried"})},
-     cam([1.7, -1.1, 1.3], [0.0, -1.1, 1.0], 22, 0.0), note="S47 I step on, ball at my chest")
+     cam([2.1, -1.0, 1.3], [0.0, -0.9, 1.1], 17, 0.0), note="S47 I step on, ball at my chest")
 shot("L48", {}, cam([0.0, -0.6, 0.5], [0.0, 14.6, 0.55], 95, 0.0), hand=0.002, note="S48 a fresh rack")
 shot("L49", {}, cam([0.0, -0.6, 0.5], [0.0, 14.6, 0.9], 75, 0.0), hand=0.002, note="S49 the sweep lifts")
 shot("L50", {}, cam([0.0, -0.6, 0.45], [0.0, 15.2, 1.35], 95, 0.0), hand=0, step=1, note="S50 THE REVEAL")
@@ -220,7 +268,7 @@ shot("L55", {"me": ([0.0, -0.9], 180, {"expr": "scared"}),
              "mags": ([-2.4, -4.4], 180, {"expr": "neutral"}), "tomasz": ([-3.4, -4.4], 180, {"expr": "neutral"})},
      cam([1.6, -1.6, 1.5], [-1.2, -4.3, 1.4], 20, 0.0), note="S55 behind me, still")
 shot("L56", {"me": ([0.0, -0.9], 180, {"arms": [10, 10], "expr": "scared"})},
-     cam([0.15, -1.9, 0.4], [0.0, 8.0, 0.25], 26, 0.0), step=1, hand=0.002, note="S56 I bowled")
+     cam([0.45, -3.4, 0.55], [0.0, 8.0, 0.25], 26, 0.0), step=1, hand=0.002, note="S56 I bowled")
 shot("L57", {}, cam([1.0, 5.5, 0.35], [0.0, 7.6, 0.45], 30, 0.0), step=1, hand=0.002, note="S57 through where it stood")
 shot("L58", {}, mv([0.4, 10.6, 0.5], [0.0, 15.0, 0.4], [0.2, 10.8, 0.5], [0.0, 15.0, 0.45], 45, 45), step=1,
      note="S58 all ten down")
@@ -242,12 +290,12 @@ shot("L65", {"tomasz": seat("tomasz", expr="smirk", side=[28, 28], head=[0, 8]),
 shot("L66", {"mags": seat("mags", expr="soft", talk=("L66", "L66.2"))},
      face_cam([SEAT_X["mags"], SEAT_Y], 180, 2.2, 22), note="S66 Mags with the bag")
 shot("L66.3", {"me": ([-1.5, -4.0], 0, {"expr": "soft"})},
-     cam([-1.5, -5.1, 0.35], [-1.5, -4.0, 0.12], 30, 0.0), note="S66 my shoes")
+     cam([-1.5, -6.0, 0.7], [-1.5, -4.0, 0.2], 28, 0.0), note="S66 my shoes")
 shot("L67", {"dev": ([SEAT_X["dev"], SEAT_Y, SEAT_Z], -140, {"sit": True, "expr": "soft", "talk": ("L67.1", "L67>")})},
      cam([-1.3, -3.7, 1.55], [0.15, -5.6, 1.5], 24, 0.1), note="S67 Dev, take its place")
 shot("L68", {"me": seat("me", expr="soft", head=[0, -4])}, face_cam([SEAT_X["me"], SEAT_Y], 180, 2.0, 22), note="S68 my grin")
-shot("L69", {"mags": ([-1.0, -3.9], 0, {"arms": [0, 82], "expr": "soft"})},
-     cam([-1.0, -5.5, 1.45], [-1.0, -3.9, 1.3], 24, 0.2), note="S69 the fifth teal shirt")
+shot("L69", {"mags": ([-1.0, -3.9], 0, {"arms": [0, 84], "side": [0, 34], "expr": "soft"})},
+     cam([-1.0, -6.2, 1.5], [-1.0, -3.9, 1.3], 24, 0.1), note="S69 the fifth teal shirt")
 shot("L69.2", {"me": ([-1.0, -3.9], 0, {"expr": "soft"})}, face_cam([-1.0, -3.9], 0, 2.0, 24), note="S69 me in it")
 
 # 07 the warm turn and the freeze (bright) ----------------------------------------------------------------
@@ -267,7 +315,7 @@ shot("L74", {**{w: ([x - 0.2, -2.2], 0, {"arms": [88, 88], "expr": "soft"}) for 
      cam([-1.4, 5.5, 1.4], [-1.4, -2.2, 1.3], 24, 0.0), hand=0.003, note="S74 five grown-ups")
 FIVE = {"dev": 0.6, "tomasz": -0.5, "mags": -1.6, "rosie": -2.7, "me": -3.8}
 shot("L75", {w: ([x, -1.2], 0, {"arms": [88, 88], "expr": "soft", "freeze": True}) for w, x in FIVE.items()},
-     cam([-1.5, -4.6, 3.0], [-1.7, 4.0, 0.2], 24, 0.0), hand=0, note="S75 FREEZE: five shadows")
+     cam([-1.7, -6.8, 3.25], [-1.7, 3.0, 0.1], 24, 0.0), hand=0, note="S75 FREEZE: five shadows")
 
 shots = []
 for i, s in enumerate(SHOTS):
@@ -391,6 +439,7 @@ cues = [
     {"at": "L53", "name": "dip", "down": 0.6, "hold": 0.3, "up": 0.8, "depth": 0.55},
     {"at": "L58", "name": "house", "rise": 1.5},
     {"at": "L75-1.0", "name": "shadowlight", "on": 1.0},
+    {"at": "L75-0.1", "name": "show", "what": "noscreen", "on": True},
     # props
     {"at": "L07", "name": "show", "what": "shoes", "on": True},
     {"at": "L08", "name": "show", "what": "shoes", "on": False},
@@ -461,11 +510,12 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#3ad6c0",
     "gap": 0.12,
+    "min_read": 0.12,
     "tail": 0,
     "look": {"fog": "#15131c", "fog_density": 0.03, "fog_start": 8.0, "sky": "#0c0b10", "exposure": 0.6},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.03, 0.01, -0.02], "saturation": 1.0, "contrast": 1.05,
               "vignette": 0.3, "bloom": 0.25, "grain": 0.012},
-    "phonemes": {},
+    "phonemes": {"nachos": "nˈɑtʃOz"},
     "cast": cast,
     "lines": lines,
     "shots": shots,
@@ -494,5 +544,6 @@ story = {
               "sfx": sfx,
               "music_drops": [{"from": "L49>", "to": "L50+0.7", "keep": ["hit"]}]},
 }
+story = _walk(story)
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")

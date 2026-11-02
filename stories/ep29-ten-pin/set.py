@@ -669,12 +669,12 @@ def build_lights(kit, ctx):
         kit.light(f"strip{i}", "AREA", (lane_x(i), 15.0, 2.9), 60.0, "#a9f0e2", size=1.3, shadow=False)
     kit.light("seats", "AREA", (-1.8, SEAT_Y + 1.5, 3.2), 260.0, "#ffc58a", size=5.0, shadow=False)
     kit.light("shadowL", "SPOT", (-1.8, -9.0, 0.9), 0.0, "#ffc68a", spot=75, blend=0.25, size=0.05)
-    kit.LIGHTS["shadowL"]["base"] = 5000.0
+    kit.LIGHTS["shadowL"]["base"] = 3500.0
     kit.aim(kit.LIGHTS["shadowL"]["obj"], (-1.8, 6.0, 0.0))
     kit.light("fill", "AREA", (-4.0, 6.0, 3.3), 45.0, "#7c86b8", size=10.0, shadow=False)
     for k, (hx, hy) in enumerate(((0.0, -3.0), (-3.5, -3.0), (-0.8, 3.0), (-4.0, 4.0))):
         kit.light(f"house{k}", "AREA", (hx, hy, 3.3), 0.0, "#ffe2b5", size=5.0, shadow=True)
-        kit.LIGHTS[f"house{k}"]["base"] = 1500.0
+        kit.LIGHTS[f"house{k}"]["base"] = 380.0
 
 
 def dip_gain(tl, t):
@@ -741,9 +741,9 @@ def lazy(kit, ctx, M, story):
     ctx["p_shoes"], ctx["p_shirt"] = [], []
     if arm is not None:
         for sx in (-1, 1):
-            ctx["p_shoes"].append(kit.box(f"mags.shoe{sx}", (0.48, 0.34, 0.95), (sx * 0.27, 0.0, -2.35), M["tealshoe"], arm,
+            ctx["p_shoes"].append(kit.box(f"mags.shoe{sx}", (0.48, 0.34, 0.95), (sx * 0.27, 0.0, -2.05), M["tealshoe"], arm,
                                           bevel=0.06))
-            ctx["p_shoes"].append(kit.box(f"mags.shoetoe{sx}", (0.46, 0.36, 0.34), (sx * 0.27, 0.0, -2.62), M["creamshoe"],
+            ctx["p_shoes"].append(kit.box(f"mags.shoetoe{sx}", (0.46, 0.36, 0.34), (sx * 0.27, 0.0, -2.32), M["creamshoe"],
                                           arm, bevel=0.05))
         ctx["p_shirt"].append(kit.box("mags.shirtp", (1.7, 0.3, 1.5), (0, 0, -2.5), M["tealshirt"], arm, bevel=0.06))
         ctx["p_shirt"].append(kit.box("mags.shirtc", (0.45, 0.32, 1.52), (0.5, 0, -2.5), M["cream"], arm, bevel=0.04))
@@ -877,6 +877,10 @@ def animate(kit, story, tl, t, ctx):
             ob.hide_render = not on
     for ob in ctx.get("p_bag", []):
         ob.hide_render = not show_flag(tl, t, "bag")
+    ns = show_flag(tl, t, "noscreen")
+    for ob in bpy.data.objects:
+        if ob.name.startswith("scr."):
+            ob.hide_render = ns
     on = show_flag(tl, t, "nachos")
     for ob in ctx.get("p_nachos", []):
         ob.hide_render = not on
