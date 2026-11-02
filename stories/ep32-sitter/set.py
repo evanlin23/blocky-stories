@@ -37,7 +37,7 @@ X0, X1, Y0, Y1, CEIL = -5.6, 5.6, -5.2, 5.0, 3.2
 GROUND = -0.45
 DAIS_H = 0.22
 HX, KX = 40.0, -40.0
-GRAPHITE = (74, 77, 84)
+GRAPHITE = (44, 42, 42)
 
 
 # ------------------------------------------------------------------------------------------ small helpers
@@ -97,6 +97,17 @@ def img_mat(kit, name, im: Image.Image, wd: Path, rough=0.85, alpha=False, emit=
     kit._fogged(m, b.outputs[0])
     m["tex_name"] = tex.name
     return m
+
+
+def uvplane(kit, name, size, loc, mat, parent, rot):
+    """kit.plane with UVs (kit's planes have none, so a picture on one would sample a single pixel)."""
+    ob = kit.plane(name, size, loc, mat, parent, rot)
+    uv = ob.data.uv_layers.new(name="UVMap")
+    corner = {0: (0, 0), 1: (1, 0), 2: (1, 1), 3: (0, 1)}
+    for poly in ob.data.polygons:
+        for li in poly.loop_indices:
+            uv.data[li].uv = corner[ob.data.loops[li].vertex_index]
+    return ob
 
 
 def set_img(m, im_path_img):
@@ -335,6 +346,18 @@ def pine_mat(kit, name="pine", c1="#d6c3a0", c2="#a98c62", scale=11.0):
     return m
 
 
+def clear_lens(kit):
+    """The rig's glasses use kit.glass, which goes dark at our low sample counts and hides the eyes. Register a clear lens
+    under the name the rig asks for, before the cast is built."""
+    name = "glass #dde6ea"
+    m = kit._new(name)
+    nt = m.node_tree
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    nt.links.new(tr.outputs[0], out.inputs["Surface"])
+    return m
+
+
 def materials(kit, wd):
     M = {}
     M["plaster"] = kit.grime("#ece3cd", 0.86, 2.0, "plaster", 0.92)
@@ -414,12 +437,12 @@ def build_room(kit, ctx, M):
     ctx["ceiling"] = slab(kit, "ceiling", X0, X1, Y0, Y1, CEIL, CEIL + 0.04, M["plaster"])
     ctx["roof"] = slab(kit, "roof", X0 - 0.35, X1 + 0.35, Y0 - 0.35, Y1 + 0.35, CEIL + 0.04, CEIL + 0.36, M["roof"])
     # south wall (inner face at y = Y0; room is to +y), big open window for the car park view
-    wall(kit, M, "wall s", "x", Y0, X0 - 0.3, X1 + 0.3, zb, CEIL, hole=(-2.6, 2.6, 0.9, 2.5), inner_sign=-1)
+    wall(kit, M, "wall s", "x", Y0, X0 - 0.3, X1 + 0.3, zb, CEIL, hole=(-2.6, 2.6, 0.9, 2.5), inner_sign=1)
     # north wall, the rainy window behind the dais
-    wall(kit, M, "wall n", "x", Y1, X0 - 0.3, X1 + 0.3, zb, CEIL, hole=(-1.7, 1.7, 0.8, 2.95), inner_sign=1)
+    wall(kit, M, "wall n", "x", Y1, X0 - 0.3, X1 + 0.3, zb, CEIL, hole=(-1.7, 1.7, 0.8, 2.95), inner_sign=-1)
     # west wall: the door
-    wall(kit, M, "wall w", "y", X0, Y0 - 0.3, Y1 + 0.3, zb, CEIL, hole=(-3.3, -2.4, zb, 2.15), inner_sign=-1)
-    wall(kit, M, "wall e", "y", X1, Y0 - 0.3, Y1 + 0.3, zb, CEIL, inner_sign=1)
+    wall(kit, M, "wall w", "y", X0, Y0 - 0.3, Y1 + 0.3, zb, CEIL, hole=(-3.3, -2.4, zb, 2.15), inner_sign=1)
+    wall(kit, M, "wall e", "y", X1, Y0 - 0.3, Y1 + 0.3, zb, CEIL, inner_sign=-1)
     # window frames
     for x in (-2.6, -0.87, 0.87, 2.6):
         slab(kit, "mullion s", x - 0.04, x + 0.04, Y0 - 0.05, Y0 + 0.05, 0.9, 2.5, M["white"])
@@ -428,7 +451,7 @@ def build_room(kit, ctx, M):
         slab(kit, "mullion n", x - 0.04, x + 0.04, Y1 - 0.05, Y1 + 0.05, 0.8, 2.95, M["white"])
     slab(kit, "transom n", -1.7, 1.7, Y1 - 0.05, Y1 + 0.05, 1.85, 1.92, M["white"])
     # the rain on the north window: a glowing dark pane with streaks
-    pane = kit.plane("north pane", (3.4, 2.15), (0, Y1 + 0.02, 1.875), None, rot=(math.pi / 2, 0, math.pi))
+    pane = uvplane(kit, "north pane", (3.4, 2.15), (0, Y1 - 0.02, 1.875), None, None, (math.pi / 2, 0, 0))
     ctx["pane_mat"] = img_mat(kit, "rain", rain_image(), ctx["wd"], rough=0.3, emit=0.55)
     pane.data.materials.append(ctx["pane_mat"])
     ctx["pane"] = pane
@@ -466,7 +489,7 @@ def build_dais(kit, ctx, M):
     kit.box("dais top", (2.0, 2.0, DAIS_H), (0, 0, DAIS_H / 2), M["dais"], d, bevel=0.02)
     # the tally under it (hidden unless the dais is on its edge): nine strokes
     mt = img_mat(kit, "tally", tally_image(), ctx["wd"], rough=0.9, alpha=True)
-    pl = kit.plane("tally", (1.7, 1.7), (0, 0, -0.0015 + 0.0), mt, d, rot=(math.pi, 0, math.radians(90)))
+    pl = uvplane(kit, "tally", (1.7, 1.7), (0, 0, -0.002), mt, d, (math.pi, 0, math.radians(90)))
     pl.location = (0, 0, 0.0)
     ctx["dais"], ctx["tally"] = d, pl
     # the stool and the cushion
@@ -479,14 +502,14 @@ def build_dais(kit, ctx, M):
     ctx["dais_stool"] = st
     ctx["cushions"] = []
     for dent in (0.0, 1.0):
-        n_r, n_a, T, R = 7, 28, 0.1, 0.27
+        n_r, n_a, T, R = 7, 28, 0.11, 0.36
         verts, fcs = [], []
         for i in range(n_r + 1):
             r = R * i / n_r
             z = T * (1.0 - 0.0)
             for j in range(n_a):
                 a = 2 * math.pi * j / n_a
-                zz = top + T * 0.92 - dent * 0.055 * math.exp(-((r / 0.14) ** 2)) * 1.0 - (T * 0.25) * (r / R) ** 4
+                zz = top + T * 0.92 - dent * 0.085 * math.exp(-((r / 0.2) ** 2)) * 1.0 - (T * 0.25) * (r / R) ** 4
                 verts.append((r * math.cos(a), r * math.sin(a), zz))
         for j in range(n_a):
             verts.append((R * math.cos(2 * math.pi * j / n_a), R * math.sin(2 * math.pi * j / n_a), top))
@@ -511,7 +534,7 @@ def build_easel(kit, ctx, M, i, th, wd):
     kit.box("easel back leg", (0.05, 0.05, 1.7), (0, 0.4, 0.85), M["easel"], e, rot=(math.radians(-13), 0, 0))
     cv = kit.empty("canvas", (0, -0.05, 1.3), e)
     kit.box("canvas frame", (0.6, 0.03, 0.75), (0, 0, 0), M["canvas_back"], cv)
-    face = kit.plane("canvas face", (0.6, 0.75), (0, -0.0165, 0), None, cv, rot=(math.pi / 2, 0, math.pi))
+    face = uvplane(kit, "canvas face", (0.6, 0.75), (0, -0.0165, 0), None, cv, (math.pi / 2, 0, 0))
     mat = img_mat(kit, f"canvas {i}", fruit_image("oil", i), wd, rough=0.88)
     face.data.materials.append(mat)
     # the clamp lamp on the top bar
@@ -638,7 +661,7 @@ def build_hall(kit, ctx, M, wd):
         f = kit.empty("hall frame", (HX - 0.995, y, z))
         kit.box("frame", (0.04, w + 0.05, h + 0.05), (0, 0, 0), M["frame"], f)
         pm = img_mat(kit, f"art{k}", art_image(k), wd, rough=0.7)
-        pl = kit.plane("art", (w, h), (0.0215, 0, 0), None, f, rot=(math.pi / 2, 0, math.pi / 2 * 3))
+        pl = uvplane(kit, "art", (w, h), (0.0215, 0, 0), None, f, (math.pi / 2, 0, math.pi / 2))
         pl.data.materials.append(pm)
         frames.append(f)
         sq = kit.box("pale square", (0.005, w + 0.06, h + 0.06), (HX - 0.998, y, z), M["square"])
@@ -649,7 +672,7 @@ def build_hall(kit, ctx, M, wd):
     pf = kit.empty("hall portrait", (HX - 0.97, 1.2, 1.55))
     kit.box("portrait frame", (0.04, 0.66, 0.81), (0, 0, 0), M["frame"], pf)
     pm = img_mat(kit, "portrait", finished_portrait(), wd, rough=0.7)
-    pl = kit.plane("portrait face", (0.6, 0.75), (0.0215, 0, 0), None, pf, rot=(math.pi / 2, 0, math.pi / 2 * 3))
+    pl = uvplane(kit, "portrait face", (0.6, 0.75), (0.0215, 0, 0), None, pf, (math.pi / 2, 0, math.pi / 2))
     pl.data.materials.append(pm)
     ctx["hall"]["portrait"] = pf
     # the table and the jar of brushes below it; the drawer at the north end
@@ -669,12 +692,12 @@ def build_hall(kit, ctx, M, wd):
     kit.box("drawer floor", (0.74, 0.4, 0.02), (0, 0.2, -0.09), M["frame"], dr)
     kit.box("drawer side", (0.02, 0.4, 0.16), (-0.36, 0.2, 0), M["frame"], dr)
     kit.box("drawer side", (0.02, 0.4, 0.16), (0.36, 0.2, 0), M["frame"], dr)
-    kit.cyl("jar lying", 0.05, 0.16, (0.0, 0.2, -0.03), M["jar"], dr, rot=(0, math.pi / 2, 0.3))
+    kit.cyl("jar lying", 0.05, 0.16, (-0.1, 0.1, -0.03), M["jar"], dr, rot=(0, math.pi / 2, 0.3))
     for k in range(5):
-        kit.box("brush", (0.012, 0.012, 0.22), (0.12 + 0.04 * (k - 2) * 0.0, 0.2 + 0.015 * (k - 2), -0.04), M["brush"], dr, rot=(0, math.pi / 2, 0.3 + 0.05 * k))
+        kit.box("brush", (0.012, 0.012, 0.22), (0.1, 0.07 + 0.03 * (k - 2), -0.07), M["brush"], dr, rot=(0, math.pi / 2, 0.3 + 0.05 * k))
     ctx["hall"]["drawer"] = dr
-    kit.light("hall sun", "AREA", (HX + 0.1, -1.3, 1.5), 70.0, "#ffe3b0", size=1.0).rotation_euler = (math.radians(-90), 0, 0)
-    kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 2.55), 60.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
+    kit.light("hall sun", "AREA", (HX + 0.1, -1.3, 1.5), 140.0, "#ffe3b0", size=1.0).rotation_euler = (math.radians(-90), 0, 0)
+    kit.light("hall fill", "AREA", (HX + 0.1, 1.0, 2.55), 150.0, "#fff2dc", size=2.0).rotation_euler = (math.pi, 0, 0)
 
 
 def build_kitchen(kit, ctx, M, wd):
@@ -730,7 +753,8 @@ def build_lights(kit, ctx):
     kit.light("show day", "AREA", (0.0, 4.0, 2.3), 900.0, "#f2f6ff", size=3.0).rotation_euler = (V((0, -1, -0.5)).to_track_quat("-Z", "Y").to_euler())
     # outside: the lamp post, a cold wash on the building
     kit.light("post light", "POINT", (-2.6, -9.0, GROUND + 3.4), 700.0, "#ffbf78", size=0.3)
-    kit.light("ext wash", "AREA", (-12.0, -20.0, 14.0), 700.0, "#5a73a8", size=6.0).rotation_euler = (V((12, 20, -14)).to_track_quat("-Z", "Y").to_euler())
+    kit.light("ext wash", "AREA", (-12.0, -20.0, 14.0), 1400.0, "#5a73a8", size=6.0).rotation_euler = (V((12, 20, -14)).to_track_quat("-Z", "Y").to_euler())
+    kit.light("step fill", "POINT", (-8.0, -4.6, 1.6), 70.0, "#ffb878", size=0.3)
     kit.light("door spill", "POINT", (X0 + 0.5, -2.85, 1.7), 40.0, "#ffbf80", size=0.2)
 
 
@@ -740,6 +764,7 @@ def build(kit, story, tl):
     RE_, ths = g["RE"], g["TH"]
     wd = workdir(tl)
     ctx = {"story": story, "wd": wd, "TH": ths}
+    clear_lens(kit)
     M = materials(kit, wd)
     ctx["M"] = M
     build_room(kit, ctx, M)
@@ -778,13 +803,13 @@ def build(kit, story, tl):
         f = kit.empty("show frame", (X0 + 0.08, y, 1.55))
         kit.box("sf", (0.04, 0.5, 0.64), (0, 0, 0), M["frame"], f)
         pm = img_mat(kit, f"showart{k}", fruit_image("oil", 10 + k), wd, rough=0.7)
-        pl = kit.plane("sfp", (0.44, 0.58), (0.0215, 0, 0), None, f, rot=(math.pi / 2, 0, math.pi / 2 * 3))
+        pl = uvplane(kit, "sfp", (0.44, 0.58), (0.0215, 0, 0), None, f, (math.pi / 2, 0, math.pi / 2))
         pl.data.materials.append(pm)
         show.append(f)
     sp = kit.empty("show portrait", (X0 + 0.09, -0.9, 1.55))
     kit.box("spf", (0.05, 0.7, 0.85), (0, 0, 0), M["frame"], sp)
     pm = img_mat(kit, "showportrait", finished_portrait(), wd, rough=0.7)
-    pl = kit.plane("spp", (0.6, 0.75), (0.026, 0, 0), None, sp, rot=(math.pi / 2, 0, math.pi / 2 * 3))
+    pl = uvplane(kit, "spp", (0.6, 0.75), (0.026, 0, 0), None, sp, (math.pi / 2, 0, math.pi / 2))
     pl.data.materials.append(pm)
     ctx["show_wall"] = show + [sp]
     build_lights(kit, ctx)
@@ -910,6 +935,18 @@ def animate(kit, story, tl, t, ctx):
     for name in kit.LIGHTS:
         if name.startswith("lamp "):
             kit.LIGHTS[name]["obj"].hide_render = show_on
+    # a shot can hide what stands in front of its lens
+    for i in spec.get("hide_easels", []):
+        e = ctx["easels"][i - 1]
+        e.hide_render = True
+        for c_ in e.children_recursive:
+            c_.hide_render = True
+    for who in spec.get("hide_cast", []):
+        r = bpy.data.objects.get(who)
+        if r is not None:
+            r.hide_render = True
+            for c_ in r.children_recursive:
+                c_.hide_render = True
     # the ceiling and roof come off for overhead shots
     ov = bool(spec.get("noceil"))
     ctx["ceiling"].hide_render = ov
@@ -962,7 +999,7 @@ def animate(kit, story, tl, t, ctx):
     elif hs == "lift":
         pf.location = (HX - 0.55, 1.2, 1.5)
         pf.rotation_euler = (0, math.radians(-8), 0)
-    ctx["hall"]["drawer"].location = (HX + 0.2, 3.0 - 0.3 * _last(_cues(tl, "drawer"), t)["open"], 0.55) if _cues(tl, "drawer") else (HX + 0.2, 3.0, 0.55)
+    ctx["hall"]["drawer"].location = (HX + 0.2, 3.0 - 0.4 * _last(_cues(tl, "drawer"), t)["open"], 0.55) if _cues(tl, "drawer") else (HX + 0.2, 3.0, 0.55)
     # the door swings after I run
     tl47 = _line_t(tl, "L47")
     ang = -72.0
@@ -975,21 +1012,27 @@ def animate(kit, story, tl, t, ctx):
         if c_["t"] <= t:
             pr[c_["which"]] = c_["on"]
     ep = ctx["easels"][7]
+    th8 = math.radians(ctx["TH"][7])
+    n8, t8 = (math.cos(th8), math.sin(th8)), (-math.sin(th8), math.cos(th8))
+    ex, ey = ep.location.x, ep.location.y
     place = {
-        "bag": ((3.9, 0.55, 0.55), (0, 0, math.radians(20))),
-        "phone": ((_e8(ctx, 0.02, 0.1)[0], _e8(ctx, 0.02, 0.1)[1], 0.845), (0, 0, math.radians(75))),
-        "coat": ((3.4, -0.55, 1.45), (0, 0, math.radians(-8))),
+        "bag": ((ex + n8[0] * 0.55 + t8[0] * 0.3, ey + n8[1] * 0.55 + t8[1] * 0.3, 0.2), (0, 0, th8 + 0.4)),
+        "phone": ((ex + n8[0] * 0.1 + t8[0] * 0.15, ey + n8[1] * 0.1 + t8[1] * 0.15, 0.845), (0, 0, th8 + math.pi / 2 + 0.3)),
+        "coat": None,
     }
     for k, objs in ctx["props"].items():
         on = bool(pr.get(k))
         for o in objs:
             o.hide_render = not on
-    for k, (loc, rot) in place.items():
+    for k, v in place.items():
         if k == "coat":
             c0 = ctx["props"]["coat"]
-            base = V((3.12, -0.2, 1.1))
-            c0[0].location, c0[1].location, c0[2].location = base, base + V((0.27, 0, -0.05)), base + V((-0.27, 0, -0.05))
+            base = V((X0 + 0.12, -3.85, 1.45))
+            for o, off in zip(c0, ((0, 0, 0), (0, 0.27, -0.05), (0, -0.27, -0.05))):
+                o.location = base + V(off)
+                o.rotation_euler = (0, 0, math.pi / 2)
             continue
+        loc, rot = v
         for o in ctx["props"][k]:
             o.location = loc
             o.rotation_euler = rot

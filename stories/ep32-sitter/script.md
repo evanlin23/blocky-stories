@@ -15,7 +15,7 @@ Paint what you see (Kofi's only instruction, said once, flat, like it's obvious)
 The stool has been empty since the hired sitter moved away in spring. Everyone else paints the bowl of fruit. A class is a place built for its painters and its sitter, so the Unpainted sat in to keep the count of nine, but a sitter with no face isn't really there, and I was the only one painting it. Every face I left half done was its face, and it came nearer each week so I could see it better. "I never finish a face" turns from Mum's old complaint into the reason it kept coming. When I finish it, its spare stool is empty and the cushion on the dais has a dent at last. Mum, at the show, asks if the class still needs a sitter, so a person fills the stool.
 
 - **Where it's planted:**
-  - **Plant 1, the fruit:** every other canvas shows the bowl of fruit, never the stool. Seen on Petra's canvas at L13 (a pencil outline of the bowl), on Mr Ade's at L22 and Petra's pear at L34. Paid at L53 and L54.
+  - **Plant 1, the fruit:** every other canvas shows the bowl of fruit, never the stool. Seen on Petra's canvas at L13 (a pencil outline of the bowl), on Mr Dobbs's at L22 and Petra's pear at L34. Paid at L53 and L54.
   - **Plant 2, the flat cushion:** the green cushion under it never dents. Named at L19, visible from L09. Paid at L55, and turned over at L68 when it finally dents.
   - **Bonus for the rewatch:** its face is always exactly my canvas. L01's canvas (cross, two ovals) is its face at L12, and the nose I stop on at L16 to L18 is on it at L20.
 
@@ -30,7 +30,7 @@ A community arts centre on a hill, in a squat brick building, on rainy Wednesday
 - **Mum (`mum`):** in her fifties. Silver block bob, round tortoiseshell glasses, a teal cardigan in a small check over a cream top. Her drawn eyes have little lines at the corners (I paint those eyes at L65).
 - **Kofi (`kofi`):** runs the class, forties. Shaved head, round black glasses, a rust shirt under a denim apron. Says "paint what you see" once and goes to make tea. He doesn't know anything and explains nothing.
 - **Petra (`petra`):** classmate at easel 7, thirties. Copper block hair in a bun, a navy and white striped top, a paint rag over one shoulder.
-- **Mr Ade (`ade`):** classmate at easel 1, sixties. Grey block beard, brown flat cap, olive tweed jacket.
+- **Mr Dobbs (`ade`):** classmate at easel 1, sixties. Grey block beard, brown flat cap, olive tweed jacket.
 - **Five more painters:** background adults at easels 2 to 6, seen mostly from behind, plain knit and shirt colours (plum, slate, mustard-free).
 
 ## The creature: the Unpainted
@@ -39,7 +39,7 @@ A community arts centre on a hill, in a squat brick building, on rainy Wednesday
 - **Light it for fear:** easel clamp lamps from below and the side, a cold rim from the north window, front fill dead. The empty eye ovals are the palest spot on it. It's never seen moving, only already somewhere nearer.
 - **Continuity list:**
   - L09 to L19 (week 1): on the dais stool, on the green cushion, which stays flat. Facing the easels, hands on knees.
-  - L20 to L25 (week 2): on a paint-spattered spare stool beside easel 1 (Mr Ade), body toward the curve.
+  - L20 to L25 (week 2): on a paint-spattered spare stool beside easel 1 (Mr Dobbs), body toward the curve.
   - L26 to L30 (week 3): on a spare stool between easels 4 and 5, in the middle of the curve, head turned toward my corner.
   - L31 to L35 (week 4): on a spare stool beside easel 7 (Petra), its knee level with her palette shelf, a hand's width clear of her.
   - L36 to L40 (week 5): beside Petra at first, gone from there when the lights come back (her spare stool empty, L38).
@@ -108,8 +108,8 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S20: close on its face: the same short nose line I stopped on, then a cut to my canvas, same line, same length]
 - `L21` narrator: And it had moved / to a SPARE STOOL / by the FIRST EASEL.
   - [S21: the empty dais stool, cushion flat, then pan to the Unpainted on a paint-spattered stool beside easel 1]
-- `L22` narrator: Mr Ade, at that easel, / painted RIGHT PAST it.
-  - [S22: over Mr Ade's shoulder: his canvas is the fruit bowl in oils. Its pine shoulder at frame edge. Plant 1]
+- `L22` narrator: Mr Dobbs, at the first easel, / painted RIGHT PAST it.
+  - [S22: over Mr Dobbs's shoulder: his canvas is the fruit bowl in oils. Its pine shoulder at frame edge. Plant 1]
 - `L23` narrator: Mum PHONED. / I told her I was / working LATE.
   - [S23: my phone face up on the easel shelf, buzzing, a plain glow, no text. Cut to Mum in her bright kitchen, phone to her ear, puzzled]
 - `L24` narrator: I started its MOUTH, / got one CORNER in, / and FROZE.
@@ -130,9 +130,9 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S31: close on its face: one eyebrow]
 - `L32` narrator: And it was sitting / beside PETRA.
   - [S32: over my shoulder: Petra at easel 7 and the Unpainted beside her, one easel from me]
-- `L33` narrator: Right next to her, / its knee by her PALETTE.
+- `L33` narrator: Right next to her, / one pine knee / by her PALETTE.
   - [S33: low on its pine knee level with her palette shelf, a hand's width from her arm]
-- `L34` narrator: Petra HUMMED, / and painted a PEAR.
+- `L34` narrator: Petra HUMMED, / and painted / a GREEN PEAR.
   - [S34: Petra's canvas: a green pear. Plant 1]
 - `L35` narrator: I couldn't look at my CANVAS, / or at IT.
   - [S35: me staring at the floor between us]
@@ -150,7 +150,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S40: second slow ramp down. Cut while dim. Music drop 0.6 s before L51]
 - `L41` narrator: And when they STEADIED, / it was sitting / RIGHT BESIDE ME.
   - [S41: lamps back up: wide from the window side, the Unpainted on a spare stool at my elbow, taller than me even seated. The hit]
-- `L42` narrator: Its pine KNEE / against my EASEL LEG.
+- `L42` narrator: One pine KNEE / against my EASEL LEG.
   - [S42: low on its knee against the easel leg]
 - `L43` narrator: Its head had turned / ALL the way ROUND,
   - [S43: from behind it: its body faces the dais, its head faces backward toward my canvas]
@@ -168,7 +168,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S48: rain, a lamp post, Petra jogging over with my coat]
 - `L49` narrator: I asked her who our SITTER was.
   - [S49: two-shot under the lamp]
-- `L50` narrator: She LAUGHED. / "Nobody's sat on that stool / since SPRING."
+- `L50` narrator: She LAUGHED. / "Nobody has sat on that stool / since SPRING."
   - [S50: Petra, amused, rain on her bun]
 - `L51` narrator: The hired sitter / MOVED AWAY.
   - [S51: me, the words landing]

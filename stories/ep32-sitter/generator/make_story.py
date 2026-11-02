@@ -33,7 +33,7 @@ for ln in lines:
         out_lines.append({"id": pid, "pause": dur, "chunks": []})
 lines = out_lines + [{"id": "PEND", "pause": LOOP, "chunks": []}]
 
-TEMPO = {}
+TEMPO = {"L05": 0.93, "L22": 0.95, "L50": 0.94}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -130,13 +130,13 @@ def over(i, rc, dth, z, tz=1.3):
     return [p[0], p[1], z], [e[0], e[1], tz]
 
 
-def canvas_cam(i, dist, z=1.3, lens=30, push=0.0, side=0.0):
+def canvas_cam(i, dist, z=1.3, lens=30, push=0.0, side=0.0, cs=0.0):
     e = E(i)
     n = (math.cos(math.radians(TH[i - 1])), math.sin(math.radians(TH[i - 1])))
     t = (-n[1], n[0])
     tgt = [e[0] + t[0] * side, e[1] + t[1] * side, z]
-    a = [tgt[0] + n[0] * dist, tgt[1] + n[1] * dist, z]
-    b = [tgt[0] + n[0] * (dist - push), tgt[1] + n[1] * (dist - push), z]
+    a = [tgt[0] + n[0] * dist + t[0] * cs, tgt[1] + n[1] * dist + t[1] * cs, z]
+    b = [tgt[0] + n[0] * (dist - push) + t[0] * cs, tgt[1] + n[1] * (dist - push) + t[1] * cs, z]
     return c([0, a, tgt, lens], [1, b, tgt, lens]) if push else still(a, tgt, lens)
 
 
@@ -157,10 +157,26 @@ C8 = E(8)
 MD8 = [(C8[0] + U5[0]) / 2, (C8[1] + U5[1]) / 2]                          # between my canvas and its head
 
 
+def o5(d, z, along=0.0, side=False):
+    """A camera d metres out from its head along the way its head faces (away from the dais); side: d out and `along` to the north."""
+    L = math.hypot(*U5)
+    f = (U5[0] / L, U5[1] / L)
+    t = (-f[1], f[0])
+    if side:
+        return [U5[0] + t[0] * along + f[0] * d, U5[1] + t[1] * along + f[1] * d, z]
+    return [U5[0] + f[0] * d + t[0] * along, U5[1] + f[1] * d + t[1] * along, z]
+
+
 def out8(d, z, along=0.0):
     return [MD8[0] + N8[0] * d + T8[0] * along, MD8[1] + N8[1] * d + T8[1] * along, z]
 
 Y1 = yaw_to(U1, ME)
+
+
+def mid_yaw(a, b):
+    """The yaw halfway between a and b along the short way round."""
+    d = (b - a + 180) % 360 - 180
+    return a + d / 2
 
 
 def fc(U, yaw_face, d, z, off=0.0):
@@ -185,83 +201,80 @@ def shot(sid, at, what, cam, step=2, **flags):
 shot("S01", 0, "my canvas: cross and two ovals", canvas_cam(8, 1.25, 1.25, 30, push=0.3), 2)
 shot("S02", "L02", "Mum's hall, then: frames edge to edge, Mum hanging one", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
 shot("S03", "L03", "the hall now: bare hooks, pale squares", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
-shot("S03b", "L03.1", "a drawer half open, brushes in a jar on their side", still([HX + 0.2, 1.8, 1.25], [HX + 0.2, 3.0, 0.5], 30))
+shot("S03b", "L03.1", "a drawer half open, brushes in a jar on their side", still([HX + 0.3, 1.9, 1.35], [HX + 0.2, 2.7, 0.5], 30))
 shot("S04", "L04", "the arts centre on its hill in rain",
      still([-15.0, -17.0, 9.0], [-1.0, -2.0, 1.6], 22), rain=True)
 shot("S04b", "L04.2", "me on the rain-dark steps with a canvas",
      still([-8.7, -4.5, 1.55], [-6.2, -3.0, 1.1], 26), rain=True)
 # 02 week one
 shot("S05", "L05", "overhead of the life room", still([0.01, -3.2, 9.4], [0, -0.6, 0.5], 20), noceil=True)
-shot("S06", "L06", "Kofi sets the stool and plumps the cushion", still([2.4, -3.0, 1.55], [-0.4, -0.5, 0.95], 28))
+shot("S06", "L06", "Kofi sets the stool and plumps the cushion", still([2.6, 2.4, 1.6], [-0.4, -0.3, 0.9], 28))
 shot("S07", "L07", "Kofi's face", still(front((-1.0, -0.4), 40, 1.9, 1.6), [-1.0, -0.4, 1.5], 36))
 shot("S08", "L08", "the fruit bowl, Kofi going out", still([-2.6, -4.2, 1.45], [-5.05, -2.0, 1.0], 27))
 shot("S09", "L09", "over my shoulder to the dais", still([4.4, -0.9, 1.75], [0.0, 0.0, 1.15], 26))
 shot("S10", "L10", "low wide on the Unpainted", still(front(U1, Y1 - 25, 3.2, 0.75), [0.0, 0.0, 1.3], 24))
 shot("S11", "L11", "push on its head", move((front(U1, Y1, 2.6, 1.95), [0, 0, 1.75]), (front(U1, Y1, 1.8, 1.9), [0, 0, 1.75]), 38, 38))
 shot("S12", "L12", "its face: the cross and two ovals", still(front(U1, Y1, 1.15, 1.85), z3(U1, 1.78), 44))
-shot("S13", "L13", "Petra's canvas: a pencil bowl of fruit", canvas_cam(7, 1.5, 1.3, 30, side=-0.1))
+shot("S13", "L13", "Petra's canvas: a pencil bowl of fruit", canvas_cam(7, 1.3, 1.3, 30), hide_cast=["petra"])
 shot("S14", "L14", "the curve from behind the dais", still([0.0, 3.0, 1.9], [0.0, -3.4, 1.2], 22))
 shot("S15", "L15", "me at my easel, side on", still([4.6, 1.2, 1.55], [3.5, -0.5, 1.4], 30))
-shot("S16", "L16", "my canvas: the nose begins", canvas_cam(8, 1.2, 1.25, 30))
-shot("S17", "L17", "my face, eyes wide", still(front(ME, yaw_to(ME, DAIS) + 55, 1.5, 1.6), z3(ME, 1.55), 36))
+shot("S16", "L16", "my canvas: the nose begins", canvas_cam(8, 1.3, 1.25, 30), hide_cast=["me"])
+shot("S17", "L17", "my face, eyes wide", still(front(ME, yaw_to(ME, DAIS) - 50, 1.5, 1.6), z3(ME, 1.55), 36))
 shot("S17b", "L17.1", "Mum at a kitchen table, years ago", still([KX + 0.4, -1.1, 1.45], [KX - 0.2, 0.3, 1.5], 38))
-shot("S17c", "L17.2", "my face again", still(front(ME, yaw_to(ME, DAIS) + 55, 1.4, 1.58), z3(ME, 1.55), 38))
-shot("S18", "L18", "the canvas: a nose stopped short", canvas_cam(8, 1.0, 1.25, 34, side=0.0))
-shot("S19", "L19", "Kofi in the doorway with a mug", still([-2.4, -1.0, 1.55], [-5.0, -2.9, 1.4], 30))
-shot("S19b", "L19.1", "the cushion under it, flat", still([1.0, -1.2, 0.55], [0.0, 0.0, 0.5], 34))
+shot("S17c", "L17.2", "my face again", still(front(ME, yaw_to(ME, DAIS) - 50, 1.4, 1.58), z3(ME, 1.55), 38))
+shot("S18", "L18", "the canvas: a nose stopped short", canvas_cam(8, 1.2, 1.25, 34), hide_cast=["me"])
+shot("S19", "L19", "Kofi in the doorway with a mug", still([-2.0, -3.5, 1.5], [-4.9, -3.0, 1.4], 30))
+shot("S19b", "L19.1", "the cushion under it, flat", still([1.0, -0.7, 0.95], [0.0, 0.0, 0.62], 34))
 # 03 weeks two to four
 shot("S20", "L20", "its face: the nose", still(fc(U2, yaw_to(U2, ME), 1.2, 1.7), z3(U2, 1.55), 40))
-shot("S20b", "L20.2", "my canvas: the same short nose", canvas_cam(8, 1.0, 1.25, 34))
+shot("S20b", "L20.2", "my canvas: the same short nose", canvas_cam(8, 1.2, 1.25, 34), hide_cast=["me"])
 shot("S21", "L21", "the empty dais stool, pan to the first easel",
      c([0, [2.9, -0.2, 1.3], [0, 0, 0.7], 24], [1, [2.9, -0.2, 1.3], [-3.6, 0.3, 1.2], 24]))
-shot("S22", "L22", "over Mr Ade's shoulder: fruit in oils",
-     c([0, *over(1, 4.4, 8, 1.65, 1.3), 28]) if False else still(*over(1, 4.6, 7, 1.6, 1.3), 28))
-shot("S23", "L23", "my phone on the easel shelf, glowing",
-     still([ME[0] + 0.75, ME[1] + 0.25, 1.0], [E(8)[0] + 0.02, E(8)[1] + 0.1, 0.84], 34))
+shot("S22", "L22", "over Mr Ade's shoulder: fruit in oils", canvas_cam(1, 1.3, 1.3, 28, cs=-0.5), hide_cast=["ade"])
+shot("S23", "L23", "my phone on the easel shelf, glowing", still([C8[0] + N8[0] * 0.8 + T8[0] * 0.3, C8[1] + N8[1] * 0.8 + T8[1] * 0.3, 1.15], [C8[0] + N8[0] * 0.15, C8[1] + N8[1] * 0.15, 0.85], 36), hide_cast=["me"])
 shot("S23b", "L23.1", "Mum in her kitchen, phone to her ear", still([KX + 0.7, -0.3, 1.45], [KX - 0.3, 1.0, 1.45], 36))
-shot("S24", "L24", "one mouth corner", canvas_cam(8, 1.0, 1.2, 34))
-shot("S25", "L25", "my face, jaw tight", still(front(ME, yaw_to(ME, DAIS) + 55, 1.3, 1.5), z3(ME, 1.5), 40))
-shot("S26", "L26", "its face: the mouth corner", still(fc(U3, yaw_to(U3, ME), 1.2, 1.7), z3(U3, 1.55), 40))
+shot("S24", "L24", "one mouth corner", canvas_cam(8, 1.2, 1.2, 34), hide_cast=["me"])
+shot("S25", "L25", "my face, jaw tight", still(front(ME, yaw_to(ME, DAIS) - 50, 1.3, 1.5), z3(ME, 1.5), 40))
+shot("S26", "L26", "its face: the mouth corner", still(fc(U3, mid_yaw(yaw_to(U3, ME), Y3), 1.4, 1.7), z3(U3, 1.55), 40), hide_easels=[4, 5], hide_cast=["bg3", "bg4"])
 shot("S27", "L27", "overhead: it sits mid curve", still([0.01, -1.4, 9.4], [0, -1.6, 0.5], 20), noceil=True)
-shot("S28", "L28", "its head turned to my corner", still(fc(U3, yaw_to(U3, ME), 2.2, 1.75), z3(U3, 1.72), 34))
-shot("S29", "L29", "an eyebrow on my canvas", canvas_cam(8, 1.0, 1.35, 34, side=-0.05))
-shot("S30", "L30", "my bag zipped on the stool", still([ME[0] + 0.5, ME[1] + 1.0, 1.0], [ME[0] - 0.1, ME[1] + 0.1, 0.5], 32))
-shot("S31", "L31", "its face: an eyebrow", still(fc(U4, yaw_to(U4, ME), 1.2, 1.7), z3(U4, 1.55), 40))
-shot("S32", "L32", "Petra, and the Unpainted beside her",
-     still([ME[0] + 0.8, ME[1] + 0.2, 1.62], [mid(U4, PETRA, 1.2)[0], mid(U4, PETRA, 1.2)[1], 1.3], 24))
-shot("S33", "L33", "its knee by her palette", still([1.1, -1.5, 0.65], [U4[0] - 0.1, U4[1] + 0.2, 0.7], 30))
-shot("S34", "L34", "Petra's pear", canvas_cam(7, 1.4, 1.3, 30))
-shot("S35", "L35", "me, eyes on the floor", still(front(ME, yaw_to(ME, DAIS) + 55, 1.4, 1.5), z3(ME, 1.5), 40))
+shot("S28", "L28", "its head turned to my corner", still(fc(U3, mid_yaw(yaw_to(U3, ME), Y3), 2.4, 1.75), z3(U3, 1.72), 34), hide_easels=[5], hide_cast=["bg4"])
+shot("S29", "L29", "an eyebrow on my canvas", canvas_cam(8, 1.2, 1.35, 34), hide_cast=["me"])
+shot("S30", "L30", "my bag zipped on the stool", canvas_cam(8, 1.9, 0.95, 30), hide_cast=["me"])
+shot("S31", "L31", "its face: an eyebrow", still(fc(U4, mid_yaw(yaw_to(U4, ME), Y4), 1.4, 1.7), z3(U4, 1.55), 40), hide_easels=[6, 7], hide_cast=["bg5"])
+shot("S32", "L32", "Petra, and the Unpainted beside her", still([1.3, -0.5, 1.75], [mid(U4, PETRA, 1.2)[0], mid(U4, PETRA, 1.2)[1], 1.3], 26), hide_easels=[7])
+shot("S33", "L33", "its knee by her palette", still(front(U4, Y4, 1.5, 0.62), [U4[0] + (PETRA[0] - U4[0]) * 0.5, U4[1] + (PETRA[1] - U4[1]) * 0.5, 0.75], 30), hide_easels=[7])
+shot("S34", "L34", "Petra's pear", canvas_cam(7, 1.3, 1.3, 30), hide_cast=["petra"])
+shot("S35", "L35", "me, eyes on the floor", still(front(ME, yaw_to(ME, DAIS) - 50, 1.3, 0.85), z3(ME, 1.45), 40))
 # 04 week five
 shot("S36", "L36", "the rain on the north window", still([0.0, -1.0, 1.6], [0.0, 5.0, 1.9], 24))
 shot("S37", "L37", "wide of the room, the lamps sag", still([-4.6, -4.2, 1.9], [0.8, 0.3, 1.3], 20))
-shot("S38", "L38", "Petra painting, her spare stool empty", still([ME[0] + 0.8, ME[1] + 0.2, 1.62], [U4[0] + 0.1, U4[1], 0.9], 24))
-shot("S39", "L39", "me, eyes to the side", still(front(ME, yaw_to(ME, DAIS) + 50, 1.2, 1.55), z3(ME, 1.5), 40))
+shot("S38", "L38", "Petra painting, her spare stool empty", still([1.3, -0.5, 1.75], [mid(U4, PETRA, 1.0)[0], mid(U4, PETRA, 1.0)[1], 1.0], 26), hide_easels=[7])
+shot("S39", "L39", "me, eyes to the side", still(front(ME, yaw_to(ME, DAIS) - 65, 1.2, 1.55), z3(ME, 1.5), 40))
 shot("S40", "L40", "the second dip", still([-4.6, -4.2, 1.9], [0.8, 0.3, 1.3], 20))
 shot("S40b", "P41", "dim, held", still([-4.6, -4.2, 1.9], [0.8, 0.3, 1.3], 20))
 shot("S41", "L41", "it is right beside me", still([0.9, -0.1, 1.5], [3.1, 0.1, 1.5], 24))
 shot("S42", "L42", "its knee against my easel leg", still([1.6, 1.0, 0.55], [U5[0] - 0.35, U5[1] - 0.2, 0.5], 32))
-shot("S43", "L43", "from behind: its head turned right round", still(out8(2.4, 2.0, 0.9), [U5[0], U5[1], 1.65], 26))
-shot("S44", "L44", "profile: its face an inch from my canvas", still([MD8[0] - T8[0] * 2.0 + N8[0] * 0.3, MD8[1] - T8[1] * 2.0 + N8[1] * 0.3, 1.6], [MD8[0], MD8[1], 1.6], 40))
-shot("S45", "L45", "straight on: the two faces", still(out8(2.2, 1.6), out8(0, 1.55), 30))
-shot("S46", "L46", "its empty ovals", still([U5[0] + N8[0] * 0.95, U5[1] + N8[1] * 0.95, 1.8], [U5[0], U5[1], 1.76], 44))
-shot("S46b", "P46", "its ovals, held", still([U5[0] + N8[0] * 0.8, U5[1] + N8[1] * 0.8, 1.8], [U5[0], U5[1], 1.76], 52))
-shot("S47", "L47", "my coat on the peg, the door swinging", still([-3.3, -4.0, 1.5], [-5.6, -2.85, 1.0], 24))
+shot("S43", "L43", "from behind: its head turned right round", still(o5(1.9, 1.95, 0.7), [U5[0], U5[1], 1.7], 26))
+shot("S44", "L44", "profile: its face an inch from my canvas", still(o5(0.4, 1.6, 2.0, side=True), [MD8[0], MD8[1], 1.6], 40))
+shot("S45", "L45", "straight on: the two faces", still(o5(2.3, 1.6), [MD8[0], MD8[1], 1.55], 30))
+shot("S46", "L46", "its empty ovals", still(o5(1.4, 1.8), [U5[0], U5[1], 1.74], 44))
+shot("S46b", "P46", "its ovals, held", still(o5(1.2, 1.8), [U5[0], U5[1], 1.74], 50))
+shot("S47", "L47", "my coat on the peg, the door swinging", still([-3.0, -4.1, 1.5], [-5.5, -3.0, 1.2], 26))
 # 05 the car park
 PETRA_C, ME_C = (-2.5, -8.9), (-1.2, -8.5)
-shot("S48", "L48", "car park, rain, Petra jogging over with my coat", still([-6.5, -12.5, 1.4], [-2.3, -9.0, 1.2], 26), rain=True)
-shot("S49", "L49", "two-shot under the lamp", still([-1.9, -12.0, 1.1], [-1.8, -8.9, 1.3], 36), rain=True)
-shot("S50", "L50", "Petra amused", still(front(PETRA_C, yaw_to(PETRA_C, ME_C) - 60, 1.3, 1.5), z3(PETRA_C, 1.5), 40), rain=True)
-shot("S51", "L51", "me, the words landing", still(front(ME_C, yaw_to(ME_C, PETRA_C) + 60, 1.3, 1.5), z3(ME_C, 1.5), 40), rain=True)
-shot("S52", "L52", "Petra shrugging", still(front(PETRA_C, yaw_to(PETRA_C, ME_C) + 55, 1.4, 1.5), z3(PETRA_C, 1.45), 38), rain=True)
+shot("S48", "L48", "car park, rain, Petra jogging over with my coat", still([-6.5, -12.5, 1.0], [-2.3, -9.0, 0.9], 26), rain=True)
+shot("S49", "L49", "two-shot under the lamp", still([-1.9, -12.0, 0.8], [-1.8, -8.9, 0.95], 36), rain=True)
+shot("S50", "L50", "Petra amused", still(front(PETRA_C, yaw_to(PETRA_C, ME_C) - 60, 1.3, 1.15), z3(PETRA_C, 1.05), 40), rain=True)
+shot("S51", "L51", "me, the words landing", still(front(ME_C, yaw_to(ME_C, PETRA_C) + 60, 1.3, 1.15), z3(ME_C, 1.05), 40), rain=True)
+shot("S52", "L52", "Petra shrugging", still(front(PETRA_C, yaw_to(PETRA_C, ME_C) + 55, 1.5, 1.1), z3(PETRA_C, 1.0), 38), rain=True)
 shot("S53", "L53", "through the window, every canvas", still([0.2, -9.5, 1.9], [0.0, -2.0, 1.3], 24), rain=True)
 shot("S54", "L54", "push in: seven bowls of fruit, then mine", c([0, [0.5, -9.0, 1.7], [0.5, -2.0, 1.3], 28], [1, [1.0, -7.0, 1.6], [2.4, -0.8, 1.4], 36]), rain=True)
 shot("S55", "L55", "the empty stool, the flat cushion", c([0, [0.3, -9.0, 1.4], [0.0, 0.0, 0.8], 30], [1, [0.2, -7.0, 1.2], [0.0, 0.0, 0.75], 34]), rain=True)
 shot("S56", "L56", "overhead: eight easels and a stool", still([0.01, -3.0, 9.4], [0, -0.6, 0.5], 20), noceil=True)
 shot("S57", "L57", "it sits in, seen through the glass", still([0.5, -8.0, 1.6], [U5[0], U5[1], 1.45], 40), rain=True)
-shot("S58", "L58", "its blank face behind wet glass", still([0.5, -8.0, 1.78], [U5[0], U5[1], 1.76], 75), rain=True)
-shot("S59", "L59", "my canvas and its face, side by side", still(out8(2.0, 1.55), out8(0, 1.55), 30))
-shot("S60", "L60", "me in the rain, understanding", still(front(ME_C, yaw_to(ME_C, PETRA_C) + 40, 1.2, 1.55), z3(ME_C, 1.5), 40), rain=True)
+shot("S58", "L58", "its blank face behind wet glass", still([0.5, -8.0, 1.78], [U5[0], U5[1], 1.76], 100), rain=True)
+shot("S59", "L59", "my canvas and its face, side by side", still(o5(2.1, 1.55), [MD8[0], MD8[1], 1.55], 30))
+shot("S60", "L60", "me in the rain, understanding", still(front(ME_C, yaw_to(ME_C, PETRA_C) + 40, 1.2, 1.15), z3(ME_C, 1.05), 40), rain=True)
 shot("S61a", "L61", "its four places: the dais", still(front(U1, Y1, 2.2, 1.7), z3(U1, 1.4), 32))
 shot("S61b", "L61.1", "its four places: by easel 1", still(front(U2, Y2, 2.2, 1.7), z3(U2, 1.4), 32))
 shot("S61c", "L61.2", "its four places: the gap", still(front(U3, Y3, 2.2, 1.7), z3(U3, 1.4), 32))
@@ -270,8 +283,8 @@ shot("S61d", "L61.3", "its four places: beside Petra", still(front(U4, Y4, 2.2, 
 shot("S62", "L62", "the room, warm, me walking in", still([-3.4, -3.6, 1.65], [2.6, -0.4, 1.35], 22))
 shot("S63", "L63", "it at my elbow, waiting", still([1.3, 1.1, 1.6], [3.1, 0.0, 1.45], 26))
 shot("S64", "L64", "me painting, steady", still([4.6, -2.3, 1.55], [3.7, -0.7, 1.4], 30))
-shot("S65", "L65", "Mum's eyes on my canvas", canvas_cam(8, 0.95, 1.3, 36))
-shot("S66", "L66", "the finished portrait", canvas_cam(8, 1.25, 1.25, 30, push=0.2))
+shot("S65", "L65", "Mum's eyes on my canvas", canvas_cam(8, 1.0, 1.3, 34), hide_cast=["me"])
+shot("S66", "L66", "the finished portrait", canvas_cam(8, 1.1, 1.25, 30, push=0.1), hide_cast=["me"])
 shot("S67", "L67", "the spare stool, empty", still([2.0, 0.9, 1.1], [U5[0], U5[1], 0.45], 30))
 shot("S68", "L68", "the dais stool: a dent in the cushion", still([1.1, -1.6, 1.3], [0.0, 0.0, 0.55], 30))
 # 07 the show
@@ -288,7 +301,7 @@ shot("S76", "L76", "the portrait hung alone, the jar below", still([HX + 1.1, 0.
 shots = []
 for i, (sid, at, what, step, cam, fl) in enumerate(SH):
     s = {"id": sid, "cam": cam, "hand": 0.0 if sid in ("S70", "S12", "S46", "S46b", "S45") else 0.006, "step": step, "what": what}
-    s.update({k: v for k, v in fl.items() if k == "noceil"})
+    s.update({k: v for k, v in fl.items() if k in ("noceil", "hide_easels", "hide_cast")})
     if i:
         s["at"] = at
     shots.append(s)
@@ -351,7 +364,7 @@ key("me", "L24", expr="worried", head=[0, 12])
 key("me", "L25", expr="angry", blend=0.3)
 key("me", "L29", expr="scared", blend=0.3)
 key("me", "L35", expr="worried", head=[0, 38], blend=0.4)
-key("me", "L39", expr="terrified", head=[28, 6], look=[1, 0], blend=0.3)
+key("me", "L39", expr="terrified", head=[-30, 6], look=[1, 0], blend=0.3)
 key("me", "L41", expr="terrified", head=[0, 0], look=[0, 0], blend=0.1)
 key("me", "L46", expr="scared")
 hide("me", "L47")
@@ -522,7 +535,7 @@ story = {
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012},
     "rain_shots": rain_shots,
-    "phonemes": {"dais": "dˈAᵻs", "Kofi": "kˈOfi", "Ade": "ˈAd"},
+    "phonemes": {"dais": "dˈAᵻs", "Kofi": "kˈOfi"},
     "geom": {"RE": RE, "RP": RP, "TH": TH},
     "cast": cast,
     "lines": lines,
