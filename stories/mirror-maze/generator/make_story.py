@@ -29,8 +29,8 @@ LOOP = 0.25
 
 # ---------------------------------------------------------------------------------------------------- the words
 # Word-check pins and the script's own holds are all in lines.json (gap) and here (pauses)
-TEMPO = {"L16": 0.95, "L77": 0.92, "L81": 0.92}
-SPOKEN = {("L77", 1): "back also", ("L16", 1): "Tasha's"}
+TEMPO = {"L16": 0.95, "L81": 0.92}
+SPOKEN = {("L16", 1): "Tasha's"}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -55,7 +55,7 @@ cast = {
 # ---------------------------------------------------------------------------------------------------- time
 voice = json.loads((HERE.parent / "voice-timings.json").read_text())
 # the pauses' lengths are set below; they don't move any line's own timing before them, so use a first pass
-PAUSE = {"P01": 1.8, "P02": 0.5, "P03": 1.8}
+PAUSE = {"P01": 0.8, "P02": 0.5, "P03": 1.8}
 for ln in lines:
     if ln["id"] in PAUSE:
         ln["pause"] = PAUSE[ln["id"]]
@@ -181,7 +181,9 @@ TASHA_A, ME_A = [2.4, 8.4], [3.6, 8.4]     # the open: facing each other under t
 CAM_OPEN = ((3.0, 3.6, 1.38), (3.0, 8.4, 1.5), 34)
 put("tasha", 0, TASHA_A, yaw=90, expr="smirk", head=[-45, 0], arms=[0, 82])
 put("me", 0, ME_A, yaw=-90, expr="neutral", head=[40, 0])
-hide("copy", 0)
+# the open's oddity: in the dark arch behind us a yellow figure stands facing the lens, dead still, while Tasha points
+put("copy", 0, [3.0, 11.2, 1.05], yaw=0, expr="blank", blink=False, head=[0, 0], arms=[0, 0])
+hide("copy", "L02")
 hide("guy", 0)
 S(0, one(*CAM_OPEN), 2, note="the open: side-on two-shot, Tasha points at my green hat")
 mouth("tasha", "L01.3", "L01>", 0.1, 0.8)
@@ -206,7 +208,12 @@ S("L06", mv(((0.9, 0.3, 1.45), (1.0, 6.5, 1.4)), ((0.9, 1.6, 1.45), (1.0, 7.5, 1
 put("tasha", "L07", [0.4, 6.6], yaw=180)
 hide("tasha", "L07")
 hide("me", "L07")
-S("L07", mv(((-1.8, -2.8, 1.7), (-6.5, 8.0, 1.9)), ((-1.8, -2.8, 1.7), (-5.5, 8.0, 1.9)), 20), 2,
+# the fair in the dark: pale moonlight spots on the tarps and the big wheel so they read as shapes, nothing warm
+LOOK_FAIR = {"exposure": 1.4, "camfill": 1.0, "amb": 2.2, "bulbs": 0.5,
+             "rim": [[-2.5, 0.5, 6.5], [-9.0, 3.0, 1.4], 9000, 55, "#9aa6d8"],
+             "rim2": [[-5.0, 6.0, 7.5], [-12.5, 9.0, 1.6], 9000, 55, "#9aa6d8"],
+             "kick": [[-8.0, 9.0, 8.0], [-12.0, 21.0, 6.5], 40000, 30, "#aab4e6"]}
+S("L07", mv(((-1.8, -2.8, 1.7), (-6.5, 8.0, 1.9)), ((-1.8, -2.8, 1.7), (-5.5, 8.0, 1.9)), 20), 2, look=LOOK_FAIR,
   note="the fair packing up: rides under tarps, the flatbed, the dark big wheel far back")
 S("L08", one((1.0, 0.0, 0.4), (0.7, 6.0, 0.5), 26), 2, note="pouring: the puddle across the boards")
 S("L08.2", one((-5.5, 1.0, 1.4), (-9.5, 5.0, 1.8), 22), 2, note="half the rides under tarps")
@@ -342,9 +349,12 @@ raw("me", "L37+0.7", bow=0, blend=0.5)
 S("L37", one((-1.4, 9.2, 1.55), (1.8, 7.9, 1.15), 30), 2, note="when I stood up she was frozen")
 S("L38", one((3.6, 6.0, 0.7), (1.8, 7.9, 0.8), 30), 2, note="mid-step, one foot in the air")
 S("L39", one((3.6, 9.2, 1.4), (1.8, 7.9, 1.35), 36), 2, note="rain running off her coat")
+# frozen: its eyes go black and its mouth flat for the close on its shoulder and face (as at L54)
+raw("copy", "L37", expr="blank", blink=False)
+# the dip and the catch-up happen while the camera is on my face: it is never seen moving
 raw("copy", "L40", stride=0, blend=0.15)
-S("L40", one((0.3, 5.9, 1.3), (1.8, 7.9, 1.0), 34), 2, note="her foot comes down fast; the dip itself is never shown")
-S("L40.1", one((0.6, 7.6, 1.5), (-1.5, 9.5, 1.55), 26), 2, note="my face: the narrator seeing it")
+S("L40", one((-3.4, 7.2, 1.5), (-1.5, 9.5, 1.55), 30), 2, note="my face: the narrator seeing it (the motion is off screen)")
+S("L40.1", one((0.3, 5.9, 1.3), (1.8, 7.9, 1.0), 34), 2, note="she's standing again, both feet down")
 put("me", "L42", [X0, 2.4], yaw=0, expr="worried")
 MIR = 1.0
 put("copy", "L42", refl([X0, 2.4], MIR), yaw=0, expr="worried")
@@ -384,15 +394,16 @@ S("L49", one((2.8, 1.2, 1.45), (1.0, 4.3, 1.2), 34), 2, look="SCARE_WIDE", note=
 S("L50", one((-1.8, 2.4, 1.3), (1.0, 4.3, 1.35), 34), 2, look="SCARE_WIDE", note="in the rain, one hand half up")
 # P01: the replay, the brief's fallback: frozen, the hand comes down, one short step along the glass, the head comes round
 put("me", "L51", ME_FACE, yaw=150, expr="wide", arms=[62, 6], side=[-6, 0], head=[0, 0])
-CAM_P01 = ((-2.19, 2.23, 1.4), (1.0, 4.3, 1.1), 24)
-S("L51", one(*CAM_P01), 2, look="SCARE_WIDE", note="then she saw me")
+S("L51", one((-2.19, 2.23, 1.4), (1.0, 4.3, 1.1), 24), 2, look="SCARE_WIDE", note="then she saw me")
 STEP_TO = [1.2, 4.34]
+# P01 is one still, silent, held shot: she's frozen, hand half up. The hand, the step and the head all happen between
+# the cuts: the next shot (P02) is her face, already turned onto the lens
+CAM_P01 = ((2.9, 2.3, 1.5), (1.0, 4.3, 1.45), 32)
+S("P01", one(*CAM_P01), 1, look="SCARE_WIDE", note="frozen, hand half up, the room tone only: then the cut")
 raw("copy", "P01", blink=False)
-raw("copy", "P01+0.4", arms=[62, 6], blend=0.65)
-raw("copy", "P01+1.05", pos=COPY_AT, keep_yaw=True)
-raw("copy", "P01+1.35", pos=STEP_TO)
-raw("copy", "P01+1.35", head=[75, 8], blend=0.45)
-S("P01", one(*CAM_P01), 1, look="SCARE_WIDE", note="the replay, silent: the hand comes down, one short step, the head comes round")
+raw("copy", "P02", pos=COPY_AT)
+raw("copy", "P02", arms=[62, 6], blend=0, pos=STEP_TO, keep_yaw=True)
+raw("copy", "P02", head=[75, 8], blend=0)
 S("P02", one((-0.34, 2.81, 1.45), (1.0, 4.3, 1.41), 40), 1, look="SCARE_FACE", dof=[2.0, 1.0],
   note="the stop: her face, lit from below, 72% of the frame width")
 put("copy", "L52", [1.2, 4.34], yaw=33, **{"arms": [62, 6], "side": [-6, 0], "head": [75, 8], "expr": "blank", "blink": False})
@@ -429,17 +440,18 @@ hide("tasha", "L62")
 LOOK_IN2 = {"camfill": 0.3, "maze": 0, "inside": 0, "wash": 0, "amb": 0.5, "room": 1.1, "roomb": 1.1}
 S("L62", mv(((IN, 1.0, 1.0), (IN, 3.5, 3.4)), ((IN, 1.4, 1.0), (IN, 4.5, 3.9)), 20), 2, look=LOOK_IN2,
   note="the roof off, rain coming straight in through the open grid")
-cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 4.0}]
-raw("me", "L63", head=[40, 0], arms=[0, 40])
+cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 8.0, "spread": 0.05}]
+# I stand behind the lens for the gallery, so no pane shows me (and the real glass has none of me to reflect)
+put("me", "L63", [IN, -1.95], yaw=180, expr="scared", head=[40, 0], arms=[0, 40])
 raw("me", "L63.2", head=[-40, 0], arms=[40, 0], blend=0.4)
 raw("me", "L63>-0.3", head=[0, 0], arms=[0, 0], blend=0.4)
-S("L63", one((IN - 0.2, -1.5, 1.4), (IN + 0.1, 9.5, 1.45), 24), 2, look=LOOK_IN2,
+S("L63", one((IN, -1.9, 1.6), (IN, 6.0, 1.5), 9), 2, look={**LOOK_IN2, "camfill": 1.0, "amb": 0.9},
   note="a wide of panes, every one her, each copying me half a beat late")
-S("L64", one((IN + 0.5, -0.3, 1.5), (IN - 0.3, 2.4, 1.55), 26), 2, look=LOOK_IN2, note="none of them showed me")
+S("L64", one((IN + 0.35, 0.6, 1.5), (IN - 1.4, 4.6, 1.4), 24), 2, look=LOOK_IN2, note="none of them showed me")
 # L65 I hide behind the stacked frame; every Tasha stops
 put("me", "L65", [IN + 0.5, 5.2], yaw=180, expr="scared")
 raw("me", "L65.2", pos=[IN + 0.45, 6.9])
-cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 4.0, "hide": "L65.2+0.2", "until": "L69-0.395"}]
+cues += [{"at": "L63", "name": "ghosts", "me": "off", "ta": "copy", "dy": 8.0, "spread": 0.05, "hide": "L65.2+0.2", "until": "L69-0.395"}]
 S("L65", one((IN - 0.35, 1.6, 1.5), (IN + 0.2, 6.3, 1.4), 26), 2, look=LOOK_IN2, note="behind a stacked steel frame, where nothing could see me")
 raw("me", "L66", pos=[IN + 0.45, 6.5], yaw=180)
 S("L66", one((IN - 0.35, 2.8, 1.5), (IN, 10.0, 1.45), 26), 2, look=LOOK_IN2, note="the frozen gallery")
@@ -449,10 +461,10 @@ put("tasha", "L68.2", SPOT, yaw=0, expr="worried", arms=[0, 0])
 for i, r in enumerate(("L68.2+0.3", "L68.2+0.9", "L68.2+1.5")):
     raw("tasha", r, arms=[150, 150] if i % 2 == 0 else [110, 110], blend=0.25)
 S("L68", one((IN - 0.35, 3.0, 1.5), (IN, 11.0, 1.45), 24), 2, look=LOOK_IN2, note="every Tasha frozen")
-S("L68.2", one((IN - 0.2, 7.0, 1.6), (IN, 13.5, 1.4), 46), 2, look=LOOK_IN2,
+S("L68.2", one((IN - 0.4, 4.4, 1.5), (IN, 13.5, 1.4), 40), 2, look=LOOK_IN2,
   note="the real Tasha far down the glass, waving both arms, everything else still")
 raw("tasha", "L69", arms=[0, 0], blend=0.4)
-S("L69", one((IN - 0.2, 7.0, 1.6), (IN, 13.5, 1.4), 46), 2, look=LOOK_IN2, note="in the same spot as before")
+S("L69", one((IN - 0.4, 4.4, 1.5), (IN, 13.5, 1.4), 40), 2, look=LOOK_IN2, note="in the same spot as before")
 # L70 I've run down the glass to her pane; it stands between us
 cues += [{"at": "L70", "name": "ghosts", "me": "off", "ta": "off"}]
 put("me", "L70", [IN + 0.35, 10.4], yaw=180, expr="wide")
@@ -471,14 +483,14 @@ mouth("tasha", "L73.1" if False else "L73", "L73>", 0.2, 0.9)
 S("L73", one((IN + 0.6, 10.8, 1.5), (IN, 13.5, 1.55), 36), 2, look=LOOK_IN2, note="her FRIES yell through the glass, a mouth flap, her grin")
 raw("tasha", "L74", arms=[0, 0], expr="grin", blend=0.3)
 S("L74", one((IN + 0.55, 10.8, 1.5), (IN, 13.5, 1.55), 36), 2, look=LOOK_IN2, note="she's still Tasha, and she's still winning")
-S("L75", one((IN + 0.5, 6.4, 1.6), (IN - 0.1, 12.4, 1.45), 30), 2, look=LOOK_IN2,
+S("L75", one((IN - 0.55, 7.2, 2.15), (IN - 0.05, 12.4, 1.1), 28), 2, look=LOOK_IN2,
   note="a wide where the plane between us is easy to read: me, then it facing me, then her pane right behind")
 raw("me", "L75>", pos=[IN + 0.35, 10.4], keep_yaw=True)
 raw("copy", "L75>", pos=[IN - 0.4, 12.0], keep_yaw=True)
-raw("me", "L76+0.5", pos=[IN + 0.45, 9.3])
-raw("copy", lag("L76+0.5"), pos=[IN - 0.4, 12.9])
-S("L76", one((IN + 0.5, 6.4, 1.6), (IN - 0.1, 12.4, 1.45), 30), 2, look=LOOK_IN2, note="so I stepped back")
-S("L77", one((IN + 0.5, 6.4, 1.6), (IN - 0.1, 12.4, 1.45), 30), 2, look=LOOK_IN2, note="it stepped back too, half a beat late")
+raw("me", ("L77", -0.345), pos=[IN + 0.45, 9.3])
+raw("copy", ("L77", 0.05), pos=[IN - 0.4, 12.9])
+S("L76", one((IN - 0.55, 7.2, 2.15), (IN - 0.05, 12.4, 1.1), 28), 2, look=LOOK_IN2, note="so I stepped back")
+S("L77", one((IN - 0.55, 7.2, 2.15), (IN - 0.05, 12.4, 1.1), 28), 2, look=LOOK_IN2, note="it stepped back too, half a beat late")
 cues += [{"at": "L78", "name": "props", "roll": False, "trip": 2, "coins": 0, "end1": False, "carry": False, "wet": True}]
 put("tasha", "L78", SPOT, yaw=0, expr="grin", arms=[0, 0])
 raw("tasha", "L78>", pos=[IN - 0.05, 11.0])
@@ -504,7 +516,9 @@ put("copy", "L82", [0.0, 0.0], yaw=0, expr="blank", **{"head": [0, 0], "arms": [
 raw("copy", "L82+0.6", head=[40, 0], blend=0.5)
 raw("copy", "L82.3", head=[0, 0], blend=0.5)
 S("L81", one((7.8, 8.3, 1.4), (1.5, 9.6, 1.25), 30), 2, note="the maze guy carries that pane to the truck, his back to us")
-S("L82", one((4.2, 8.7, 1.4), (-0.5, 9.7, 1.3), 34), 2, note="in the glass it watched us go, late, like always")
+FACE82 = {"face": [[-1.0, 6.0, 1.9], [-1.7, 9.1, 1.5], 250, 0.8], "camfill": 0.9}
+S("L82", mv(((-0.2, 5.4, 1.5), (-0.56, 9.0, 1.5)), ((-2.5, 5.4, 1.5), (-2.9, 9.0, 1.5)), 34), 2, look=FACE82,
+  note="the carried pane seen from the front, the copy's face in the glass: in the glass it watched us go, late, like always")
 cues += [{"at": "P03", "name": "fade", "dur": 1.6}]
 hide("copy", "P03+0.7")
 S("P03", one((3.0, 2.0, 1.4), (3.0, 12.0, 3.2), 22), 4, note="the maze's bulbs go off in one slow fade")
@@ -647,7 +661,9 @@ story = {
                   {"at": "L83", "kind": "click", "db": -14},
                   {"at": "P03", "kind": "hum_sweep", "db": -16, "dur": 2.4},
               ],
-              "music_drops": [{"from": "L51", "to": "P02>", "keep": ["hit", "sting"]}]},
+              "music_drops": [{"from": "L51", "to": "P01", "keep": ["hit", "sting"]},
+                              # P01: only the room tone is left (the rain, about -40 dB), not dead silence
+                              {"from": "P01", "to": "P02>", "keep": ["hit", "sting"], "db": -8}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(out_shots)} shots)")

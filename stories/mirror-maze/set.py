@@ -349,6 +349,12 @@ def build_maze(kit, ctx, M):
         seg = math.hypot(x1 - x0, z1 - z0)
         kit.box(f"maze.archf{i}", (seg + 0.02, 0.08, 0.08), ((x0 + x1) / 2, fy - 0.06, (z0 + z1) / 2), M["silver"],
                 rot=(0, -math.atan2(z1 - z0, x1 - x0), 0))
+    # a small tally scratched into the wing's paint, by the arch: five short strokes, the fifth across the four
+    tal = pbr(kit, "tally", "#b7b2c6", 0.8)
+    for i in range(4):
+        kit.box(f"maze.tally{i}", (0.012, 0.012, 0.34), (xr + 0.55 + i * 0.07, fy - 0.045, PLAT_Z + 0.75), tal)
+    kit.box("maze.tally4", (0.012, 0.012, 0.42), (xr + 0.55 + 0.105, fy - 0.05, PLAT_Z + 0.75), tal,
+            rot=(0, math.radians(68), 0))
     # the bulbs: two rows round the arch and one along the roofline. Steady, never chasing
     bulbs = []
     for row, off, step in (("a", 0.2, 0.26), ("b", 0.44, 0.28)):
@@ -436,7 +442,7 @@ def build_far(kit, ctx, M):
         kit.box(f"ride{i}", (w, d, h), (x, y, h / 2), tarp, bevel=0.35)
         kit.box(f"ride{i}.top", (w * 0.6, d * 0.6, h * 0.5), (x, y, h + h * 0.18), tarp, bevel=0.3)
     # the dark big wheel, far back, a silhouette: a rim, spokes, a few cars
-    wx, wy, wz, R = -16.0, 30.0, 8.5, 7.0
+    wx, wy, wz, R = -12.0, 21.0, 6.5, 5.0
     for k in range(40):
         a = 2 * math.pi * k / 40
         kit.box(f"wheel.rim{k}", (0.22, 0.22, 2 * math.pi * R / 40 + 0.05), (wx, wy, wz), M["steel_d"],
@@ -448,8 +454,8 @@ def build_far(kit, ctx, M):
     for k in range(10):
         a = math.pi * k / 10
         kit.box(f"wheel.spoke{k}", (0.1, 0.1, 2 * R), (wx, wy, wz), M["steel_d"], rot=(0, math.pi / 2 - a, 0))
-    kit.box("wheel.legL", (0.4, 0.4, wz + 0.3), (wx - 3.5, wy, (wz) / 2), M["steel_d"], rot=(0, math.radians(-22), 0))
-    kit.box("wheel.legR", (0.4, 0.4, wz + 0.3), (wx + 3.5, wy, (wz) / 2), M["steel_d"], rot=(0, math.radians(22), 0))
+    kit.box("wheel.legL", (0.4, 0.4, wz + 0.3), (wx - 2.5, wy, (wz) / 2), M["steel_d"], rot=(0, math.radians(-22), 0))
+    kit.box("wheel.legR", (0.4, 0.4, wz + 0.3), (wx + 2.5, wy, (wz) / 2), M["steel_d"], rot=(0, math.radians(22), 0))
     for k in (1, 4, 6, 9, 13, 16, 22, 29, 34):   # half its cars already off
         a = 2 * math.pi * k / 40
         kit.box(f"wheel.car{k}", (1.0, 0.8, 0.8), (wx + R * math.cos(a), wy, wz + R * math.sin(a) - 0.5), M["trailer"], bevel=0.1)
@@ -514,7 +520,8 @@ def build_far(kit, ctx, M):
 GHOSTS = (("gm0", "me", (IX - 0.75,)), ("gm1", "me", (IX + 0.75,)), ("gm2", "me", (IX + 0.75, IX + 2.25)),
           ("gm3", "me", (IX - 0.75, IX - 2.25)),
           ("gt0", "tasha", (IX - 0.75,)), ("gt1", "tasha", (IX + 0.75,)), ("gt2", "tasha", (IX + 0.75, IX + 2.25)),
-          ("gt3", "tasha", (IX - 0.75, IX - 2.25)))
+          ("gt3", "tasha", (IX - 0.75, IX - 2.25)),
+          ("gt4", "tasha", (IX + 0.75, IX + 2.25, IX + 3.75)), ("gt5", "tasha", (IX - 0.75, IX - 2.25, IX - 3.75)))
 
 
 def build_inside(kit, ctx, M):
@@ -637,7 +644,7 @@ def pose_ghosts(story, tl, t, ctx):
         x, yaw = reflect_x(s["x"], s["yaw"], planes)
         dy = 0.0
         if src == "tasha" and mode == "copy":   # the copies stand far down the glass, each a different way down
-            dy = float(gm.get("dy", 0.0)) * (0.7 + 0.3 * int(nm[-1]))
+            dy = float(gm.get("dy", 0.0)) * (0.7 + float(gm.get("spread", 0.3)) * int(nm[-1]))
         blink = s["blink"]
         g.pose(x, s["y"] + dy, s["z"], yaw, s["legs"], s["arms"], s["arms_side"], s["head_yaw"], s["head_pitch"], s["lean"],
                s["bob"], s["expr"], s["mouth"], s["look"], blink, s["hidden"])
