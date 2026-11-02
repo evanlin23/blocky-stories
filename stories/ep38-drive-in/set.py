@@ -20,6 +20,7 @@ side, open, dur), roll, tub (slide), cap (on), turn (who, deg).
 from __future__ import annotations
 
 import math
+from mathutils import Euler
 import random
 import sys
 
@@ -180,7 +181,7 @@ def sil_shapes(kind):
     if kind in ("cap", "cap_tuft"):
         base += [CROWN, [(-0.40, 0.58), (-0.93, 0.52), (-0.93, 0.44), (-0.4, 0.44)]]
         if kind == "cap_tuft":      # the tuft pokes out under the back of the cap
-            base += [[(0.3, 0.50), (0.68, 0.7), (0.6, 0.52), (0.72, 0.42), (0.46, 0.32)]]
+            base += [[(0.2, 0.7), (0.4, 1.22), (0.5, 0.66), (0.4, 0.5)]]   # up and back, like Theo's tuft in S12
     elif kind == "bride":
         base = [[(0.0, 1.0), (0.3, 0.85), (0.78, -0.3), (0.92, -0.95), (-0.92, -0.95), (-0.78, -0.3), (-0.3, 0.85)],
                 HEAD, [(-0.3, 0.7), (-0.15, 0.98), (0.0, 0.8), (0.15, 0.98), (0.3, 0.7)]]
@@ -572,6 +573,7 @@ def build_markers(kit, ctx, story):
     # the giant ones on the screen: two shadows (mine, then Theo's) with a giant ring and the other's outline
     ctx["giants"] = {}
     gring, _ = flat_emit(kit, "giant ring", GOLD, 2.2)
+    gdisc, _ = flat_emit(kit, "giant disc", "#d9c9a0", 1.0)
     for who, other, kind, x in (("me", "theo", "cap_tuft", -3.2), ("theo", "me", "cap", 3.2)):
         root = kit.empty(f"giant.{who}", (x, SCREEN_Y - 0.55, SCREEN_Z0 + 0.4))
         sm, _, smx = fade_emit(kit, f"shadow.{who}", "#06060a")
@@ -595,13 +597,16 @@ def build_markers(kit, ctx, story):
                                  [(d * 0.5, 5.2), (d * 1.15, 5.12), (d * 1.15, 5.02), (d * 0.5, 5.02)]]):
             poly(kit, f"giant.{who}.p{i}", pts, sm, prof)
         # tuft on Theo's shadow? No: Theo's shadow is plain; his tuft is on the cap in my ring (the outline of Theo)
-        ring = kit.empty(f"giant.{who}.ring", (0, 0, 6.1), root)
-        ring.scale = (0.7, 1.0, 0.7)
-        for i, quad in enumerate(ellipse_band(0, 0, 0.62, 0.8, 0.07)):
+        ring = kit.empty(f"giant.{who}.ring", (0, 0, 6.55), root)
+        ring.scale = (1.26, 1.0, 1.1)       # 1.5 x the shadow's head width
+        for i, quad in enumerate(ellipse_band(0, 0, 0.62, 0.8, 0.085)):
             poly(kit, f"giant.{who}.r{i}", quad, gring, ring, y=-0.02)
-        gs = kit.empty(f"giant.{who}.sil", (0, 0, 0), ring)
-        gs.scale = (0.56, 1.0, 0.56)
-        gm, _, _ = fade_emit(kit, f"giantsil.{who}", "#0b0b0e")
+        # a pale lit disc inside the ring so the black outline reads against it (the sky behind is dark)
+        poly(kit, f"giant.{who}.disc", circle(0, 0, 0.6, n=40, sx=1.0) if False else [(0.62 * math.cos(2 * math.pi * k / 48), 0.8 * math.sin(2 * math.pi * k / 48)) for k in range(48)],
+             gdisc, ring, y=-0.01)
+        gs = kit.empty(f"giant.{who}.sil", (0, 0.0, 0.0), ring)
+        gs.scale = (0.62 / 1.26, 1.0, 0.62 / 1.1)
+        gm, _, _ = fade_emit(kit, f"giantsil.{who}", "#050507")
         for i, pts in enumerate(sil_shapes("cap_tuft" if who == "me" else "cap")):
             poly(kit, f"giant.{who}.s{i}", pts, gm, gs, y=-0.04)
         ctx["giants"][who] = {"root": root, "front": front, "prof": prof, "x": x, "ring": ring}
@@ -648,6 +653,7 @@ def ready_unlit(kit, ctx):
         bv = nt.nodes.new("ShaderNodeBevel")
         bv.inputs["Radius"].default_value = 0.03
         bv.samples = 6
+        ctx.setdefault("bevels", []).append(bv)
 
         def _adot(nrm):
             dt = nt.nodes.new("ShaderNodeVectorMath")
@@ -896,12 +902,24 @@ def animate(kit, story, tl, t, ctx):
         over["unlit.back"] = 0.0
     else:
         over["unlit.back"] = 0.0
+    # seated in the car: the head bends FORWARD (top toward the windscreen) against the roof lining, face turned back to me
+    neck = bpy.data.objects.get("unlit.neck")
+    if neck is not None and seated_u:
+        ust = acting_mod.state(tl, "unlit", t)
+        neck.rotation_mode = "QUATERNION"
+        qz = Euler((0, 0, ust["head_yaw"])).to_quaternion()
+        qx = Euler((ust["head_pitch"] * 0.8, 0, 0)).to_quaternion()
+        neck.rotation_quaternion = qx @ qz
+    elif neck is not None:
+        neck.rotation_mode = "XYZ"
     # ---- the Unlit's glints follow its hidden state; its rim and glints grow with the distance from the camera
     root = bpy.data.objects.get("unlit")
     if cam_early is not None and root is not None:
         dd = (cam_early - root.matrix_world.translation).length
         for pmn in ctx.get("rimnodes", []):
-            pmn.inputs[1].default_value = 2.0 * (1.0 + dd / 4.0)
+            pmn.inputs[1].default_value = (0.5 if seated_u else 1.0) * 2.0 * (1.0 + dd / 4.0)
+        for bv in ctx.get("bevels", []):
+            bv.inputs["Radius"].default_value = 0.015 if seated_u else 0.03
         ctx["glintem"].inputs["Strength"].default_value = 3.5 * (1.0 + dd / 15.0)
     gsc = 1.0 + (min(1.6, dd / 8.0) if cam_early is not None and root is not None else 0.0)
     for g in ctx.get("glints", []):

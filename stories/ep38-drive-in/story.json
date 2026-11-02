@@ -3989,7 +3989,7 @@
    },
    {
     "at": "L42",
-    "expr": "terrified",
+    "expr": "scared",
     "tremble": 1.2
    },
    {
@@ -5798,6 +5798,12 @@
    "at": "L31",
    "name": "ring",
    "v": 0.14,
+   "dur": 0.0
+  },
+  {
+   "at": "L40",
+   "name": "ring",
+   "v": 0.008,
    "dur": 0.0
   },
   {

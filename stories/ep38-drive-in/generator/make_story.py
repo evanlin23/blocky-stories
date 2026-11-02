@@ -138,7 +138,7 @@ acting["me"] = [
     key("S26", expr="worried"),
     key("S28", head=[40, 0]),
     key("S34", head=[0, 0]),
-    key("S46", expr="terrified", tremble=1.2),
+    key("S46", expr="scared", tremble=1.2),
     key("S48", expr="scared"),
     jump("S50", seat(ME, -1)["pos"], yaw=180, sit=True, expr="scared", tremble=0.0, arms=[60, 60]),
     jump("S51", [0.0, -21.0, 0.0], yaw=180, sit=False, arms=[0, 0], expr="worried", head=[0, 0], hidden=False),
@@ -447,6 +447,7 @@ cues = [
     {"at": SHOT_T("S27"), "name": "ring", "v": 0.38, "dur": 0.0},
     {"at": SHOT_T("S33"), "name": "ring", "v": 0.30, "dur": 0.0},
     {"at": SHOT_T("S35"), "name": "ring", "v": 0.14, "dur": 0.0},
+    {"at": SHOT_T("S44"), "name": "ring", "v": 0.008, "dur": 0.0},
     {"at": SHOT_T("S45"), "name": "ring", "v": 0.0, "dur": 0.0},
     {"at": "L57", "name": "ring", "v": 1.0, "dur": 1.5},
     # the giant shadows on the screen
