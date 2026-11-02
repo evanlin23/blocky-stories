@@ -429,6 +429,8 @@ def build_village(kit, M, ctx):
     ctx["rooms"] = {"bakery": room_bakery(kit, M), "blue": room_blue(kit, M), "chapel": room_chapel(kit, M),
                     "next": room_next(kit, M), "cottage": room_cottage(kit, M)}
     ctx["tea"] = room_tea(kit, M)
+    rb = LAY.room("bakery")
+    kit.light("open key", "POINT", (rb["win_x"] - 0.035, rb["front_y"] - 0.035, rb["floor_z"] + 0.05), 0.5, "#ffe0bc", size=0.006)
 
 
 def build_stone(kit, M):
@@ -672,7 +674,7 @@ def build_figures(kit, M, ctx):
 
 # ---------------------------------------------------------------------------------------------- build
 def build(kit, story, tl):
-    ctx = {"tl": tl}
+    ctx = {"tl": tl, "open_end": next((c["t"] for c in tl["cues"] if c["name"] == "bakerylight" and c.get("gain") == 1.0), 2.0)}
     # the camera can get very close to tiny things
     cam = kit.OBJ["cam"]
     cam.data.clip_start = 0.004
@@ -744,6 +746,7 @@ def animate(kit, story, tl, t, ctx):
     w.inputs["Strength"].default_value = sk * (0.62 + 0.38 * lvl)
     over["sun"] = lvl * (sky or {}).get("sun", 1.0)
     over["light bakery"] = val(tl, "bakerylight", "gain", t, 1.0)
+    over["open key"] = 1.0 if t < ctx["open_end"] else 0.0
     # --- the lore stone (from L17), the tea shop's roof (lifted for S65), the fog on the bakery glass
     for ob in ctx["stone_objs"]:
         ob.hide_render = not flag(tl, "stone", t, False)
