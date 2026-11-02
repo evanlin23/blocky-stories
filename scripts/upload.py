@@ -101,7 +101,25 @@ def youtube():
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
-def upload(yt, mp4: Path, title: str, desc: str) -> str:
+PUBLISH_AT_CENTRAL = 16   # 4:00 PM Central: after school for the Shorts audience, and a window for the owner to stop one
+
+
+def publish_at(now: dt.datetime | None = None) -> str | None:
+    """When the upload goes public on its own (YouTube's scheduled publish), as RFC 3339 UTC: today at 4:00 PM
+    Central, or an hour from now if that's already past. None when YT_AUTOPUBLISH=false (stays private)."""
+    if os.environ.get("YT_AUTOPUBLISH", "true").strip().lower() == "false":
+        return None
+    from zoneinfo import ZoneInfo
+
+    tz = ZoneInfo("America/Chicago")
+    now = (now or dt.datetime.now(dt.timezone.utc)).astimezone(tz)
+    at = now.replace(hour=PUBLISH_AT_CENTRAL, minute=0, second=0, microsecond=0)
+    if at < now + dt.timedelta(minutes=30):
+        at = now + dt.timedelta(hours=1)
+    return at.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def upload(yt, mp4: Path, title: str, desc: str, when: str | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
 
     want = os.environ.get("YT_CHANNEL_ID", "").strip()
@@ -114,6 +132,8 @@ def upload(yt, mp4: Path, title: str, desc: str) -> str:
         "snippet": {"title": title, "description": desc, "categoryId": "24"},   # Entertainment
         "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": False},
     }
+    if when:   # YouTube makes it public at this time on its own
+        body["status"]["publishAt"] = when
     req = yt.videos().insert(part="snippet,status", body=body,
                              media_body=MediaFileUpload(str(mp4), mimetype="video/mp4", chunksize=16 << 20,
                                                         resumable=True))
@@ -178,15 +198,22 @@ def main() -> None:
         # every API upload as private for good, so the owner uploads by hand from the issue instead
         audited = os.environ.get("YT_AUDITED", "").strip().lower() == "true"
         if audited and all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
-            vid = upload(youtube(), mp4, title, desc)
-            record(story, {"video_id": vid, "uploaded": today, "title": title})
-            issue(f"Ready to publish: {title}",
-                  f"**{s}** is uploaded to PandaNanoAdventures as **private**.\n\n"
-                  f"1. Watch it: https://studio.youtube.com/video/{vid}/edit\n"
-                  f"2. Set visibility to Public (or schedule it).\n"
-                  f"3. Pin this comment:\n\n> {pin}\n\n"
-                  f"If Studio shows it as *locked* private, the API audit isn't approved yet: download the film "
-                  f"from {rel} and upload it by hand with the text below.\n\n"
+            when = publish_at()
+            vid = upload(youtube(), mp4, title, desc, when)
+            record(story, {"video_id": vid, "uploaded": today, "title": title, "publish_at": when})
+            from zoneinfo import ZoneInfo
+            local = (dt.datetime.strptime(when, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
+                     .astimezone(ZoneInfo("America/Chicago")).strftime("%-I:%M %p Central") if when else "")
+            steps = (f"It goes **public on its own at {local}**. To stop it, set it to Private in Studio before then.\n\n"
+                     f"1. Watch it if you like: https://studio.youtube.com/video/{vid}/edit\n"
+                     f"2. Once it's public, post and pin this comment:\n\n> {pin}\n\n" if when else
+                     f"1. Watch it: https://studio.youtube.com/video/{vid}/edit\n"
+                     f"2. Set visibility to Public (or schedule it).\n"
+                     f"3. Pin this comment:\n\n> {pin}\n\n")
+            issue(f"{'Going public' if when else 'Ready to publish'}: {title}",
+                  f"**{s}** is uploaded to PandaNanoAdventures.\n\n" + steps +
+                  f"If Studio shows it as *locked* private, API uploads aren't allowed after all: download the film "
+                  f"from {rel}, upload it by hand with the text below, and tell Claude.\n\n"
                   f"<details><summary>Title and description</summary>\n\n```\n{title}\n\n{desc}```\n</details>\n\n"
                   f"Close this issue once it's public.")
         else:
