@@ -939,6 +939,8 @@ def animate(kit, story, tl, t, ctx):
             g = 1.0 if show_on else 0.0
             over[name] = g
             continue
+        if name == "unp key" and spec.get("unp_gain") is not None:
+            g *= float(spec["unp_gain"])
         if name == "shot fill":
             fl = spec.get("fill")
             if fl:
@@ -969,6 +971,7 @@ def animate(kit, story, tl, t, ctx):
                 c_.hide_render = True
     # the ceiling and roof come off for overhead shots
     ov = bool(spec.get("noceil"))
+    ctx["easels"][7].rotation_euler = (0, 0, 0.0 if spec.get("turn8") else math.radians(ctx["TH"][7] + 90))
     ctx["ceiling"].hide_render = ov
     ctx["roof"].hide_render = ov
     # the dais: on its feet, or on its edge against the west wall for the show
@@ -1017,7 +1020,7 @@ def animate(kit, story, tl, t, ctx):
         pf.rotation_euler = (math.radians(4.0 * k), 0, 0)
         pf.location = (HX - 0.97, 1.2, 1.55)
     elif hs == "lift":
-        pf.location = (HX - 0.55, 1.2, 1.5)
+        pf.location = (HX - 0.55, 1.35, 1.0)
         pf.rotation_euler = (0, math.radians(-8), 0)
     ctx["hall"]["drawer"].location = (HX + 0.2, 3.0 - 0.4 * _last(_cues(tl, "drawer"), t)["open"], 0.55) if _cues(tl, "drawer") else (HX + 0.2, 3.0, 0.55)
     # the door swings after I run

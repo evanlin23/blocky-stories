@@ -20,7 +20,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 
 # ---------------------------------------------------------------------------------------------------- holds
 HOLDS = {}                       # id -> seconds (a line's gap, or a pause beat's length)
-LOOP = 0.25
+LOOP = 0.13          # with the 0.12 s gap, 0.25 s after the last word
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
@@ -268,9 +268,9 @@ shot("S39", "L39", "me, eyes to the side", still(front(ME, yaw_to(ME, DAIS) - 65
 shot("S40", "L40", "the second dip", still([-4.6, -4.2, 1.9], [0.8, 0.3, 1.3], 20))
 shot("S40b", "P41", "dim, held", still([-4.6, -4.2, 1.9], [0.8, 0.3, 1.3], 20))
 shot("S41", "L41", "it is right beside me", still([0.9, -0.1, 1.5], [3.4, 0.05, 1.5], 24))
-shot("S42", "L42", "its knee against my easel leg", still([2.2, 1.0, 0.5], [3.4, 0.0, 0.5], 32))
+shot("S42", "L42", "its wooden knee against my easel leg", still([U5[0] + DU[0] * 0.62 + N8[0] * 1.6 - T8[0] * 0.6, U5[1] + DU[1] * 0.62 + N8[1] * 1.6 - T8[1] * 0.6, 0.75], [U5[0] + DU[0] * 0.55 - T8[0] * 0.1, U5[1] + DU[1] * 0.55 - T8[1] * 0.1, 0.62], 36), hide_cast=["me"], unp_gain=0.25)
 shot("S43", "L43", "3/4: it leans into my canvas like a mirror", still(fa(1.7, 35, 1.7), [HU[0], HU[1], 1.45], 28), hide_cast=["me"], fill=fa(1.8, 50, 1.6))
-shot("S45", "L45", "its face and my canvas, side by side", still(fa(1.4, 30, 1.6), [HU[0] + (C8[0] - HU[0]) * 0.3, HU[1] + (C8[1] - HU[1]) * 0.3, 1.5], 32), hide_cast=["me"])
+shot("S45", "L45", "its face and my whole canvas, side by side, above the captions", still(fa(1.6, 30, 1.85), [HU[0] + (C8[0] - HU[0]) * 0.45, HU[1] + (C8[1] - HU[1]) * 0.45, 1.0], 28), hide_cast=["me"])
 shot("S46", "L46", "its empty ovals", still(fa(1.15, 15, 1.75), [HU[0], HU[1], 1.3], 44), hide_cast=["me"])
 shot("S46b", "P46", "its ovals, held", still(fa(1.0, 15, 1.75), [HU[0], HU[1], 1.3], 50), hide_cast=["me"])
 shot("S47", "L47", "my coat on the peg, the door swinging", still([-3.0, -4.1, 1.5], [-5.5, -3.0, 1.2], 26))
@@ -282,15 +282,15 @@ shot("S50", "L50", "Petra amused", still(front(PETRA_C, yaw_to(PETRA_C, ME_C) - 
 shot("S51", "L51", "me, the words landing", still(front(ME_C, yaw_to(ME_C, PETRA_C) + 60, 1.3, 1.15), z3(ME_C, 1.05), 40), rain=True)
 shot("S52", "L52", "Petra shrugging", still(front(PETRA_C, yaw_to(PETRA_C, ME_C) + 55, 1.5, 1.1), z3(PETRA_C, 1.0), 38), rain=True)
 shot("S53", "L53", "through the window, every canvas", still([0.2, -9.5, 1.9], [0.0, -2.0, 1.3], 24), rain=True)
-shot("S54", "L54", "push in: seven bowls of fruit, then mine", c([0, [0.5, -9.0, 1.7], [0.5, -2.0, 1.3], 28], [1, [1.0, -7.0, 1.6], [2.4, -0.8, 1.4], 36]), rain=True)
+shot("S54", "L54", "push in: seven bowls of fruit, then mine", c([0, [0.5, -9.0, 1.7], [0.5, -2.0, 1.3], 28], [1, [1.9, -7.4, 1.5], [3.3, -0.2, 1.1], 40]), rain=True, turn8=True)
 shot("S55", "L55", "the empty stool, the flat cushion", c([0, [0.3, -9.0, 1.9], [0.0, 0.0, 0.7], 34], [1, [0.2, -7.4, 1.9], [0.0, 0.0, 0.65], 40]), rain=True)
 shot("S58", "L58", "its blank face behind wet glass", still([0.5, -8.0, 1.78], [U5[0], U5[1], 1.76], 100), rain=True)
 shot("S59", "L59", "my canvas and its face, side by side", still(fa(1.8, 30, 1.6), [HU[0] + (C8[0] - HU[0]) * 0.3, HU[1] + (C8[1] - HU[1]) * 0.3, 1.5], 30), hide_cast=["me"])
 shot("S60", "L60", "me in the rain, understanding", still(front(ME_C, yaw_to(ME_C, PETRA_C) + 40, 1.2, 1.15), z3(ME_C, 1.05), 40), rain=True)
 shot("S61a", "L61", "its four places: the dais", still(front(U1, Y1, 2.2, 1.7), z3(U1, 1.4), 32))
-shot("S61b", "L61.1", "its four places: by easel 1", still(front(U2, Y2, 2.2, 1.7), z3(U2, 1.4), 32))
-shot("S61c", "L61.2", "its four places: the gap", still(front(U3, Y3, 2.2, 1.7), z3(U3, 1.4), 32))
-shot("S61d", "L61.3", "its four places: beside Petra", still(front(U4, Y4, 2.2, 1.7), z3(U4, 1.4), 32))
+shot("S61b", "L61+0.5", "its four places: by easel 1", still(front(U2, Y2, 2.2, 1.7), z3(U2, 1.4), 32))
+shot("S61c", "L61+1.0", "its four places: the gap", still(front(U3, Y3, 2.2, 1.7), z3(U3, 1.4), 32))
+shot("S61d", "L61+1.5", "its four places: beside Petra", still(front(U4, Y4, 2.2, 1.7), z3(U4, 1.4), 32))
 # 06 week six
 shot("S62", "L62", "the room, warm, me walking in", still([-3.4, -3.6, 1.65], [2.6, -0.4, 1.35], 22))
 shot("S63", "L63", "it at my elbow, waiting", still([1.3, 1.1, 1.6], [3.5, 0.0, 1.45], 26))
@@ -303,17 +303,17 @@ shot("S68", "L68", "the dais stool: a dent in the cushion", still([1.1, -1.6, 1.
 shot("S69", "L69", "Mum at the door in daylight", still([-1.8, -1.0, 1.6], [-5.2, -2.85, 1.45], 26))
 shot("S70", "L70", "the dais on its edge: nine strokes", still([-1.2, 1.8, 1.1], [-5.3, 1.8, 0.75], 22))
 shot("S71", "L71", "Mum before my painting", still([-1.4, -0.9, 1.65], [-5.5, -0.9, 1.5], 26))
-shot("S72", "L72", "Mum's face", still([-4.95, -1.9, 1.55], [-4.2, -0.9, 1.55], 38))
+shot("S72", "L72", "Mum's whole face", still(front((-4.2, -0.9), -50, 1.5, 1.6), [-4.2, -0.9, 1.45], 28))
 shot("S73", "L73", "me and Mum, the painting between us", still([-1.8, -0.8, 1.6], [-5.2, -0.8, 1.45], 26))
-shot("S74", "L74", "Kofi smiling, Mum's hand up", still([-5.2, -0.1, 1.55], [-2.2, 0.05, 1.5], 26))
+shot("S74", "L74", "Kofi smiling, Mum smiling, her hand up", still([-5.3, -0.05, 1.55], [-2.9, -0.05, 1.1], 18))
 # 08 Mum's hall
-shot("S75", "L75", "Mum's hall, bright morning, lifting the painting", still([HX + 1.1, 0.5, 1.5], [HX - 1.0, 1.4, 1.45], 18))
+shot("S75", "L75", "Mum's hall, bright morning, lifting the painting", still([HX + 1.1, 0.5, 1.5], [HX - 0.8, 1.7, 1.35], 18))
 shot("S76", "L76", "the portrait hung alone, the jar below", still([HX + 1.1, 0.3, 1.45], [HX - 1.0, 1.2, 1.4], 18))
 
 shots = []
 for i, (sid, at, what, step, cam, fl) in enumerate(SH):
     s = {"id": sid, "cam": cam, "hand": 0.0 if sid in ("S70", "S12", "S46", "S46b", "S45") else 0.006, "step": step, "what": what}
-    s.update({k: v for k, v in fl.items() if k in ("noceil", "hide_easels", "hide_cast", "fill", "ev", "hide_unp")})
+    s.update({k: v for k, v in fl.items() if k in ("noceil", "hide_easels", "hide_cast", "fill", "ev", "hide_unp", "turn8", "unp_gain")})
     if i:
         s["at"] = at
     shots.append(s)
@@ -404,12 +404,12 @@ hide("mum", "L24")
 put("mum", "L69", (-4.1, -2.75), yaw=90, expr="wide")
 walk("mum", "L70", (-4.1, -2.0), expr="wide")
 put("mum", "L71", (-4.2, -0.9), yaw=-90, expr="soft")
-put("mum", "L72", (-4.2, -0.9), yaw=-90, expr="soft", head=[0, 0])
-key("mum", "L72", expr="soft", blend=0.4)
+put("mum", "L72", (-4.2, -0.9), yaw=-90, expr="smile", head=[0, 0])
+key("mum", "L72", expr="smile", blend=0.4)
 put("mum", "L73", (-4.2, -1.7), yaw=-90, expr="grin")
-put("mum", "L74", (-2.2, -0.5), yaw=-90, expr="grin", arms=[0, 110])
+put("mum", "L74", (-2.9, -0.4), yaw=-90, expr="smile", arms=[0, 0], side=[0, 140])
 hide("mum", "L75")
-put("mum", "L75", (HX - 0.3, 1.55), yaw=-35, expr="grin", arms=[75, 75])
+put("mum", "L75", (HX - 0.15, 1.75), yaw=-20, expr="smile", arms=[40, 40])
 hide("mum", "L76")
 # Kofi
 put("kofi", "L06", (-1.2, -0.7), yaw=yaw_to((-1.2, -0.7), DAIS), arms=[48, 48], expr="grin")
@@ -420,7 +420,7 @@ walk("kofi", "L08+1.3", (-5.2, -3.0), arms=[0, 0])
 hide("kofi", "L08>")
 put("kofi", "L19", (-4.6, -3.05), yaw=60, arms=[0, 62], expr="grin")
 hide("kofi", "L19.1")
-put("kofi", "L74", (-2.2, 0.7), yaw=-90, expr="soft", arms=[0, 0])
+put("kofi", "L74", (-2.9, 0.4), yaw=-90, expr="smile", arms=[0, 0])
 hide("kofi", "L75")
 # the characters in the hall/kitchen are hidden again after their shots
 for who in acting:
@@ -473,9 +473,9 @@ cues = [
     U("L58", on=True, pos=list(U5), yaw=Y5, look=[0.5, -8.0], lean=0, dais=False, stage=4),
     U("L59", on=True, pos=list(U5), yaw=Y5, head=0, lean=14, dais=False, stage=4),
     U("L61", on=True, pos=list(U1), yaw=Y1, head=0, dais=True, stage=0, look=list(ME)),
-    U("L61.1", on=True, pos=list(U2), yaw=Y2, head=0, dais=False, stage=1, look=list(ME)),
-    U("L61.2", on=True, pos=list(U3), yaw=Y3, head=0, dais=False, stage=2, look=list(ME)),
-    U("L61.3", on=True, pos=list(U4), yaw=Y4, head=0, dais=False, stage=3, look=list(ME)),
+    U("L61+0.5", on=True, pos=list(U2), yaw=Y2, head=0, dais=False, stage=1, look=list(ME)),
+    U("L61+1.0", on=True, pos=list(U3), yaw=Y3, head=0, dais=False, stage=2, look=list(ME)),
+    U("L61+1.5", on=True, pos=list(U4), yaw=Y4, head=0, dais=False, stage=3, look=list(ME)),
     U("L62", on=True, pos=list(U5), yaw=Y5, head=0, lean=10, dais=False, stage=4),
     U("L66", on=True, pos=list(U5), yaw=Y5, head=0, lean=10, dais=False, stage=4),
     U("L67", on=False),
@@ -486,9 +486,9 @@ cues = [
     {"at": "L31", "name": "stool", "on": True, "pos": list(U4), "yaw": Y4},
     {"at": "L41", "name": "stool", "on": True, "pos": list(U5), "yaw": Y5},
     {"at": "L61", "name": "stool", "on": False},
-    {"at": "L61.1", "name": "stool", "on": True, "pos": list(U2), "yaw": Y2},
-    {"at": "L61.2", "name": "stool", "on": True, "pos": list(U3), "yaw": Y3},
-    {"at": "L61.3", "name": "stool", "on": True, "pos": list(U4), "yaw": Y4},
+    {"at": "L61+0.5", "name": "stool", "on": True, "pos": list(U2), "yaw": Y2},
+    {"at": "L61+1.0", "name": "stool", "on": True, "pos": list(U3), "yaw": Y3},
+    {"at": "L61+1.5", "name": "stool", "on": True, "pos": list(U4), "yaw": Y4},
     {"at": "L62", "name": "stool", "on": True, "pos": list(U5), "yaw": Y5},
     {"at": "L69", "name": "stool", "on": False},
     # the dais cushion, the show
@@ -529,8 +529,8 @@ sfx = [
     {"at": "L45", "kind": "sting", "db": -14},
     {"at": "L47", "kind": "door", "db": -12},
     {"at": "L68", "kind": "thud", "db": -22},
-    {"at": "L76>-0.02", "kind": "knock", "pattern": [0.0], "tone": "soft", "db": -8},
-    {"at": "L76>-0.05", "kind": "glide", "db": -12, "dur": 0.9},
+    {"at": "L76>", "kind": "knock", "pattern": [0.0], "tone": "soft", "db": -8},
+    {"at": "L76>", "kind": "glide", "db": -12, "dur": 0.9},
 ]
 
 story = {

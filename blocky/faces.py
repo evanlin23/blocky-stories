@@ -26,7 +26,7 @@ TEX_H = int(round(TEX_W * HEAD_H / (2 * math.pi * HEAD_R)))
 FX0, FX1 = int(TEX_W * (0.5 - 50 / 360)), int(TEX_W * (0.5 + 50 / 360))
 FY0, FY1 = int(TEX_H * 0.08), int(TEX_H * 0.92)
 
-EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blank", "wide", "shut", "grin",
+EXPRESSIONS = ("smile", "neutral", "worried", "scared", "crying", "angry", "smirk", "blank", "wide", "shut", "grin",
                "terrified", "squeeze", "soft", "asleep")
 # terrified: the widest eyes with pin pupils, brows high and pulled up in the middle, the wavy worried mouth.
 # soft: eyes gently closed (the content up-arcs), relaxed brows and a small closed smile: touched, not scared.
@@ -139,6 +139,8 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
             x = cx - ww / 2 + k * ww / 10
             d.line([(x, cy - w * 0.18), (x, cy + w * 0.26)], fill=ink, width=max(4, th // 3))
         d.line([(cx - ww / 2, cy + w * 0.04), (cx + ww / 2, cy + w * 0.04)], fill=ink, width=max(4, th // 3))
+    elif expr == "smile":   # eyes open, brows level, a plain smile (ep32; opt-in)
+        _stroke(d, _curve(cx, cy - 0.012 * s, w * 0.95, 0.05 * s), ink, th)
     elif expr == "soft":   # a small closed smile
         _stroke(d, _curve(cx, cy - 0.006 * s, w * 0.6, 0.026 * s), ink, th)
     elif expr == "blank" or expr == "shut" or expr == "asleep":

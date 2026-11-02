@@ -1817,7 +1817,7 @@
   },
   {
    "id": "PEND",
-   "pause": 0.25,
+   "pause": 0.13,
    "chunks": []
   }
  ],
@@ -3074,21 +3074,25 @@
     [
      0,
      [
-      2.2,
-      1.0,
-      0.5
+      4.9371347677706,
+      -0.9319767291359459,
+      0.75
      ],
      [
-      3.4,
-      0.0,
-      0.5
+      3.444297569132333,
+      -0.17969324223930067,
+      0.62
      ],
-     32
+     36
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "its knee against my easel leg",
+   "what": "its wooden knee against my easel leg",
+   "hide_cast": [
+    "me"
+   ],
+   "unp_gain": 0.25,
    "at": "L42"
   },
   {
@@ -3128,21 +3132,21 @@
     [
      0,
      [
-      3.497,
-      -1.437,
-      1.6
+      3.499,
+      -1.637,
+      1.85
      ],
      [
-      3.3598,
-      -0.1393,
-      1.5
+      3.2992,
+      -0.19045,
+      1.0
      ],
-     32
+     28
     ]
    ],
    "hand": 0.0,
    "step": 2,
-   "what": "its face and my canvas, side by side",
+   "what": "its face and my whole canvas, side by side, above the captions",
    "hide_cast": [
     "me"
    ],
@@ -3381,21 +3385,22 @@
     [
      1,
      [
-      1.0,
-      -7.0,
-      1.6
+      1.9,
+      -7.4,
+      1.5
      ],
      [
-      2.4,
-      -0.8,
-      1.4
+      3.3,
+      -0.2,
+      1.1
      ],
-     36
+     40
     ]
    ],
    "hand": 0.006,
    "step": 2,
    "what": "push in: seven bowls of fruit, then mine",
+   "turn8": true,
    "at": "L54"
   },
   {
@@ -3551,7 +3556,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "its four places: by easel 1",
-   "at": "L61.1"
+   "at": "L61+0.5"
   },
   {
    "id": "S61c",
@@ -3574,7 +3579,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "its four places: the gap",
-   "at": "L61.2"
+   "at": "L61+1.0"
   },
   {
    "id": "S61d",
@@ -3597,7 +3602,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "its four places: beside Petra",
-   "at": "L61.3"
+   "at": "L61+1.5"
   },
   {
    "id": "S62",
@@ -3866,21 +3871,21 @@
     [
      0,
      [
-      -4.95,
-      -1.9,
-      1.55
+      -5.349,
+      -1.864,
+      1.6
      ],
      [
       -4.2,
       -0.9,
-      1.55
+      1.45
      ],
-     38
+     28
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Mum's face",
+   "what": "Mum's whole face",
    "at": "L72"
   },
   {
@@ -3912,21 +3917,21 @@
     [
      0,
      [
-      -5.2,
-      -0.1,
+      -5.3,
+      -0.05,
       1.55
      ],
      [
-      -2.2,
-      0.05,
-      1.5
+      -2.9,
+      -0.05,
+      1.1
      ],
-     26
+     18
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Kofi smiling, Mum's hand up",
+   "what": "Kofi smiling, Mum smiling, her hand up",
    "at": "L74"
   },
   {
@@ -3940,9 +3945,9 @@
       1.5
      ],
      [
-      39.0,
-      1.4,
-      1.45
+      39.2,
+      1.7,
+      1.35
      ],
      18
     ]
@@ -4543,12 +4548,12 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "expr": "soft",
+    "expr": "smile",
     "yaw": -90
    },
    {
     "at": "L72",
-    "expr": "soft",
+    "expr": "smile",
     "blend": 0.4
    },
    {
@@ -4594,18 +4599,18 @@
    {
     "at": "L74",
     "pos": [
-     -2.2,
-     -0.5
+     -2.9,
+     -0.4
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
      0,
-     110
+     0
     ],
     "side": [
      0,
-     0
+     140
     ],
     "head": [
      0,
@@ -4614,7 +4619,7 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "expr": "grin",
+    "expr": "smile",
     "yaw": -90
    },
    {
@@ -4625,21 +4630,21 @@
    {
     "at": "L75",
     "pos": [
-     -2.2,
-     -0.5
+     -2.9,
+     -0.4
     ]
    },
    {
     "at": "L75",
     "pos": [
-     39.7,
-     1.55
+     39.85,
+     1.75
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     75,
-     75
+     40,
+     40
     ],
     "side": [
      0,
@@ -4652,8 +4657,8 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "expr": "grin",
-    "yaw": -35
+    "expr": "smile",
+    "yaw": -20
    },
    {
     "at": "L76",
@@ -4831,8 +4836,8 @@
    {
     "at": "L74",
     "pos": [
-     -2.2,
-     0.7
+     -2.9,
+     0.4
     ],
     "blend": 0,
     "hidden": false,
@@ -4851,7 +4856,7 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "expr": "soft",
+    "expr": "smile",
     "yaw": -90
    },
    {
@@ -5465,7 +5470,7 @@
    ]
   },
   {
-   "at": "L61.1",
+   "at": "L61+0.5",
    "name": "unp",
    "on": true,
    "pos": [
@@ -5482,7 +5487,7 @@
    ]
   },
   {
-   "at": "L61.2",
+   "at": "L61+1.0",
    "name": "unp",
    "on": true,
    "pos": [
@@ -5499,7 +5504,7 @@
    ]
   },
   {
-   "at": "L61.3",
+   "at": "L61+1.5",
    "name": "unp",
    "on": true,
    "pos": [
@@ -5599,7 +5604,7 @@
    "on": false
   },
   {
-   "at": "L61.1",
+   "at": "L61+0.5",
    "name": "stool",
    "on": true,
    "pos": [
@@ -5609,7 +5614,7 @@
    "yaw": 80.0
   },
   {
-   "at": "L61.2",
+   "at": "L61+1.0",
    "name": "stool",
    "on": true,
    "pos": [
@@ -5619,7 +5624,7 @@
    "yaw": 174.2
   },
   {
-   "at": "L61.3",
+   "at": "L61+1.5",
    "name": "stool",
    "on": true,
    "pos": [
@@ -5977,7 +5982,7 @@
     "db": -22
    },
    {
-    "at": "L76>-0.02",
+    "at": "L76>",
     "kind": "knock",
     "pattern": [
      0.0
@@ -5986,7 +5991,7 @@
     "db": -8
    },
    {
-    "at": "L76>-0.05",
+    "at": "L76>",
     "kind": "glide",
     "db": -12,
     "dur": 0.9
