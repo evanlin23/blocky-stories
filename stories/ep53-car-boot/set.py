@@ -163,7 +163,7 @@ class Pal:
         self.greyc = P("#8f9296", 0.8)
         self.brass = P("#b58a3a", 0.3)
         self.teap = P("#e8e4da", 0.3)
-        self.rust = P("#9a4a26", 0.8)
+        self.rust = P("#85533a", 0.8)
         self.lampr = kit.emit("#ff2a10", 2.2, "tail")
         self.bag = P("#7d7a52", 0.9)
         self.black = P("#161618", 0.6)
@@ -252,6 +252,7 @@ def build_shelter(kit, M):
     kit.box("sh.bench", (0.45, 2.2, 0.08), (0.45, 0, 0.5), M.wood, root, bevel=0.02)
     for sgn in (-1, 1):
         kit.box(f"sh.bleg{sgn}", (0.4, 0.08, 0.5), (0.45, sgn * 1.0, 0.25), M.woodd, root)
+    kit.light("shelter lamp", "POINT", (-14.0, -28.0, 1.9), 700, "#ffe8c8", size=0.5)
     return root
 
 
@@ -552,7 +553,7 @@ def build_coachwin(kit, M, ctx):
     kit.box("cw.fr2", (0.05, 1.5, 0.08), (x0 + 1.58, -0.05, 0.94), M.black)
     kit.box("cw.fr3", (0.05, 0.08, 1.1), (x0 + 1.58, -0.78, 1.45), M.black)
     kit.box("cw.fr4", (0.05, 0.08, 1.1), (x0 + 1.58, 0.68, 1.45), M.black)
-    kit.light("boot lamp", "POINT", (0.0, 3.0, 1.9), 60, "#fff0d8", size=0.4)
+    kit.light("boot lamp", "POINT", (0.0, 3.0, 1.9), 200, "#fff0d8", size=0.4)
     kit.light("coach lamp", "POINT", (x0 + 0.2, -0.9, 2.3), 150, "#ffe6c4", size=0.5)
 
 

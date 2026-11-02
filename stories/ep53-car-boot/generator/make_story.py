@@ -18,6 +18,38 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
+# captions show two or three words: a longer chunk of the script is split in two, and a reference to a chunk of the
+# script's numbering ("L02.2") is moved to the same words in the split lines
+CHUNK_MAP = {}
+for ln in lines:
+    out = []
+    for k, (cap, said) in enumerate(ln["chunks"]):
+        cw, sw = cap.split(), said.split()
+        CHUNK_MAP[(ln["id"], k)] = len(out)
+        n = len(cw)
+        if n <= 3:
+            out.append([cap, said])
+        else:
+            a = (n + 1) // 2
+            out.append([" ".join(cw[:a]), " ".join(sw[:a])])
+            out.append([" ".join(cw[a:]), " ".join(sw[a:])])
+    ln["chunks"] = out
+
+
+def remap(x):
+    import re
+    if isinstance(x, str):
+        m = re.match(r"^(L\d+)\.(\d+)(.*)$", x)
+        if m and (m.group(1), int(m.group(2))) in CHUNK_MAP:
+            return f"{m.group(1)}.{CHUNK_MAP[(m.group(1), int(m.group(2)))]}{m.group(3)}"
+        return x
+    if isinstance(x, list):
+        return [remap(v) for v in x]
+    if isinstance(x, dict):
+        return {k: (remap(v) if k in ("at", "from", "to") else (remap(v) if isinstance(v, (dict, list)) else v)) for k, v in x.items()}
+    return x
+
+
 # ------------------------------------------------------------------------------------------------ pauses and holds
 PAUSES = {"L26": ("P01", 0.7), "L43": ("P02", 0.6)}
 HOLDS = {"L57": 0.5, "L70": 0.75}
@@ -67,7 +99,7 @@ cast = {
     "bg2": person("#2fb3a4", "#e8c09c", "spiky", "#7a4a2a"),
     "bg3": person("#e86aa1", "#8c5c40", "long", "#1c1612", face={"eyes": "lashes", "brows": True, "ink": "#161012"}),
     "bg4": person("#47a9d7", "#f1c9a0", "cap", "#8a6a3a", height=0.97),
-    "tilted": {"age": "adult", "skin": "#8a7556", "shirt": "#9a4a26", "pattern": "solid", "pants": "#8c4422",
+    "tilted": {"age": "adult", "skin": "#8a7556", "shirt": "#85533a", "pattern": "solid", "pants": "#7a4a30",
                "shoes": "#2a2420", "sleeves": "long", "hair": "none", "hat": "none", "extras": [],
                "face": {"eyes": "round", "brows": False, "ink": "#0a0807", "pupil": "#050404", "mouth": "line"}},
 }
@@ -130,7 +162,7 @@ SHOTS = [
     ("L18", "close on my cream sleeve on the table: nothing changes", 2,
      move(([KC + 0.8, -0.7, 1.3], [KC + 0.1, 0.5, 1.0]), ([KC + 0.7, -0.6, 1.25], [KC + 0.1, 0.5, 1.0]), 32)),
     ("L19", "Pip in the doorway, coat fading to flat grey", 2, still([KC - 0.5, -0.3, 1.45], [KC - 2.5, -0.8, 1.4], 30)),
-    ("L20", "unpriced junk heaped in a box", 2, still([BC + 1.5, -1.6, 1.25], [BC + 0.9, -0.6, 0.3], 34)),
+    ("L20", "unpriced junk heaped in a box", 2, still([BC + 1.8, -1.8, 1.3], [BC + 0.9, -0.6, 0.4], 26)),
     ("L20.1", "Pip sitting up in bed in the dark-blue night, the grey coat round her", 2, still([BC - 1.0, -1.5, 1.3], [BC - 0.6, 1.2, 1.1], 34)),
     ("L21", "the stall in sun: Pip far off by the hedge in grey, looking up the lane", 2,
      still([-9.0, -6.8, 1.35], [-13.8, -14.4, 1.3], 40)),
@@ -140,7 +172,7 @@ SHOTS = [
     ("L24", "three mugs on the tailgate, the third cold", 2, still([1.5, 2.0, 1.45], [0.0, 2.5, 1.08], 34)),
     # 03 dawn, L25 to L42 ----------------------------------------------------------------------------------------
     ("L25", "the estate pulling away from a plain house front, tail lights steady", 2,
-     still([268.0, -7.0, 1.35], [260.0, -7.0, 1.0], 30)),
+     still([266.0, -14.0, 1.4], [260.0, -4.0, 1.2], 30)),
     ("L26", "me at the field gate, fog thickening; down the row, our stall, both chairs empty", 2,
      still([-16.5, -15.9, 1.72], [-5.0, -4.0, 1.0], 30)),
     ("P01", "hold on the empty stall in fog", 4, still([-1.0, -5.5, 1.45], [0.0, 1.2, 0.95], 26)),
@@ -150,7 +182,7 @@ SHOTS = [
     ("L30", "the radio clicks on", 2, still([-0.1, -0.95, 1.25], [-0.95, 0.1, 0.95], 38)),
     ("L31", "low across the table: all turned to her chair, half hidden in fog", 2,
      still([1.5, -0.9, 0.98], [-0.65, 1.4, 0.8], 30)),
-    ("L32", "from the hedge, long lens: a dark seated silhouette in her chair", 4, still([-10.0, -14.0, 1.25], [-0.7, 1.3, 1.3], 75)),
+    ("L32", "from the hedge, long lens: a dark seated silhouette in her chair", 4, still([-12.0, -8.0, 1.3], [-0.7, 1.3, 1.3], 75)),
     ("L33", "tighter: the sideways head, the only clear thing", 4, still([-5.5, -7.0, 1.3], [-0.9, 1.3, 1.5], 70)),
     ("L34", "the same angle: the chair is empty", 4, still([-5.5, -7.0, 1.3], [-0.9, 1.3, 1.5], 70)),
     ("L35", "a strip of tarp-green canvas on the chair arm", 2, still([-1.15, 0.7, 0.75], [-0.98, 1.35, 0.42], 40)),
@@ -159,7 +191,7 @@ SHOTS = [
      still([-18.2, -22.5, 1.5], [-14.0, -27.8, 1.0], 30)),
     ("L37", "Pip in her jumper, a holdall at her feet; a bus's headlamps come up behind", 2,
      still([-17.9, -30.3, 1.3], [-13.4, -28.4, 1.0], 32)),
-    ("L38", "the bus pulling away up the lane without her", 2, still([-12.4, -24.8, 1.6], [-16.2, -32.0, 1.4], 28)),
+    ("L38", "the bus pulling away up the lane without her", 2, still([-18.7, -26.0, 1.8], [-16.2, -36.5, 1.4], 28)),
     ("L39", "Pip's face, worried, looking up at me", 2, still([-16.6, -26.6, 1.5], [-13.25, -28.3, 1.1], 32)),
     ("L40", "me, worried, my coat flat and still", 2, still([-15.9, -26.0, 1.5], [-15.0, -28.3, 1.5], 34)),
     ("L41", "Pip settles back; I lay her coat on the bench", 2, still([-15.5, -26.2, 1.3], [-13.3, -28.4, 0.95], 34)),
@@ -173,14 +205,14 @@ SHOTS = [
     ("L45", "full figure seated", 2, still([0.05, -2.6, 1.2], [-0.65, 1.3, 1.1], 30)),
     ("L45.1", "close on the tarp knotted at its chest, the rust overalls", 2, still([-0.2, -0.5, 1.2], [-0.65, 1.3, 1.05], 44)),
     ("L46", "close on its face: two stacked eyes, the mouth beside them", 2, still([0.05, -0.1, 1.5], [-0.95, 1.3, 1.5], 32)),
-    ("L47", "its tarp in the sun, never shifting", 2, still([-1.55, 0.3, 1.2], [-0.95, 1.3, 1.2], 40)),
+    ("L47", "its tarp in the sun, never shifting", 2, still([-2.2, -0.6, 1.4], [-0.95, 1.3, 1.4], 36)),
     ("L47.2", "my cream sleeve in the same light", 2, still([-1.9, -1.45, 1.2], [-1.25, -0.6, 1.15], 40)),
     ("L48", "me a step nearer, scared", 2, still([-2.4, -1.7, 1.5], [-0.65, -1.75, 1.5], 34)),
     ("L48.2", "its head hanging below the shoulder line, eyes still on me", 2, still([0.3, -3.1, 1.3], [-0.8, 1.3, 1.2], 36)),
     ("L49", "the tipped face, held, as Pip's at the shelter", 2, still([-0.1, -1.8, 1.25], [-0.85, 1.3, 1.25], 36)),
     ("L50", "side-on: it leans over the table, face to face with me", 2, still([3.2, -0.15, 1.5], [-0.65, -0.1, 1.38], 30)),
     ("L51", "extreme close on its stacked eyes", 2, still([-0.75, -0.6, 1.4], [-0.95, 0.1, 1.35], 50)),
-    ("L52", "my face, scared turning to worried", 2, still([0.7, -0.1, 1.5], [-0.65, -0.62, 1.5], 34)),
+    ("L52", "my face, scared turning to worried", 2, still([1.7, 0.3, 1.55], [-0.65, -0.62, 1.5], 34)),
     ("L53", "my sleeve, still white, gold sun on it", 2, still([-1.6, -1.4, 1.25], [-1.2, -0.62, 1.2], 42)),
     ("L54", "me in the foreground, and far down the row the white seller's cream coat", 2,
      still([5.6, -1.2, 1.6], [-23.0, 0.9, 1.4], 34)),
@@ -195,13 +227,13 @@ SHOTS = [
     ("L60", "me to Pip: Go, I'll be fine", 2, still([-16.7, -26.8, 1.55], [-14.6, -28.3, 1.45], 30)),
     ("L60.2", "Pip's face easing", 2, still([-15.7, -27.6, 1.55], [-14.0, -28.3, 1.5], 38)),
     ("L61", "my anorak fills with colour for the first time", 2,
-     move(([-16.5, -27.0, 1.5], [-15.0, -28.3, 1.45]), ([-16.0, -27.2, 1.5], [-15.0, -28.3, 1.45]), 34)),
+     move(([-15.9, -25.6, 1.5], [-15.0, -28.3, 1.45]), ([-15.4, -25.9, 1.5], [-15.0, -28.3, 1.45]), 34)),
     ("L62", "Pip in her duffle: grey melts into marigold", 2, still([-17.4, -23.8, 1.6], [-14.5, -28.2, 1.2], 26)),
-    ("L63", "Pip laughing, the bus pulling away behind her", 2, still([-13.2, -27.4, 1.55], [-14.4, -28.4, 1.55], 34)),
+    ("L63", "Pip laughing, the bus pulling away behind her", 2, still([-17.0, -26.5, 1.55], [-14.4, -28.3, 1.55], 34)),
     ("L64", "the stall in full sun: Pip drops into her chair", 2, still([-2.2, -2.8, 1.3], [-0.65, 1.2, 1.0], 28)),
     ("L65", "Pip in the chair, no tarp on the arm, the goods facing every which way", 2, still([-1.9, -0.9, 1.0], [-0.75, 1.3, 0.9], 34)),
     ("L66", "the holdall in the boot, me beside it", 2, still([2.9, 2.0, 1.45], [0.2, 3.0, 1.15], 28)),
-    ("L67", "the cream estate climbing the lane in morning sun", 2, still([-12.5, -12.0, 1.4], [-16.0, -46.0, 4.0], 38)),
+    ("L67", "the cream estate climbing the lane in morning sun", 2, still([-15.8, -13.0, 1.4], [-16.0, -46.0, 4.0], 34)),
     ("L68", "Pip at a coach window in marigold, happy tears", 2, still([160.2, -1.7, 1.3], [161.0, 0.0, 1.2], 34)),
     ("L68.2", "the coach going over the brow of the hill, small", 2, still([-16.0, -29.0, 1.8], [-16.0, -96.0, 8.0], 44)),
     # 06 one chair, L69 to L75 -----------------------------------------------------------------------------------
@@ -214,7 +246,7 @@ SHOTS = [
     ("L73", "slow push on the closed boot", 2,
      move(([0.3, -1.6, 1.4], [0.0, 2.4, 1.1]), ([0.1, -0.2, 1.35], [0.0, 2.4, 1.1]), 28, 34)),
     ("L74", "mid close on me, the haggler's framing, my blue coat flat", 2, still([-0.7, 1.9, 1.7], [0.2, -0.65, 1.55], 32)),
-    ("L75", "close on my face, neutral", 2, still([0.2, -1.4, 1.58], [0.2, -0.65, 1.56], 40)),
+    ("L75", "close on my face, neutral", 2, still([-0.1, 1.7, 1.58], [0.2, -0.65, 1.56], 40)),
     ("L75>", "hold on the shut tailgate", 2, still([0.0, -1.5, 1.2], [0.0, 2.4, 1.2], 30)),
 ]
 
@@ -513,9 +545,9 @@ story = {
     "phonemes": {},
     "cast": cast,
     "lines": lines,
-    "shots": shots,
-    "acting": acting,
-    "cues": cues,
+    "shots": remap(shots),
+    "acting": remap(acting),
+    "cues": remap(cues),
     "fx": [],
     "music": {"root": 52, "mode": "minor", "bpm": 76, "seed": 53,
               "sections": [
@@ -541,7 +573,7 @@ story = {
                   {"kind": "hum", "from": "L58", "to": "L64", "lufs": -40},
                   {"kind": "crickets", "from": "L69", "to": "L71", "lufs": -46},
               ],
-              "sfx": sfx,
+              "sfx": remap(sfx),
               "music_drops": [{"from": "P01", "to": "L27", "keep": ["whoosh", "thud"]},
                               {"from": "P02-0.1", "to": "L44", "keep": ["creak"]}]},
 }

@@ -318,9 +318,9 @@
   "tilted": {
    "age": "adult",
    "skin": "#8a7556",
-   "shirt": "#9a4a26",
+   "shirt": "#85533a",
    "pattern": "solid",
-   "pants": "#8c4422",
+   "pants": "#7a4a30",
    "shoes": "#2a2420",
    "sleeves": "long",
    "hair": "none",
@@ -345,8 +345,12 @@
      "in this town,"
     ],
     [
-     "your COAT changes colour",
-     "your coat changes colour"
+     "your COAT",
+     "your coat"
+    ],
+    [
+     "changes colour",
+     "changes colour"
     ],
     [
      "when you change",
@@ -393,8 +397,12 @@
      "in the field"
     ],
     [
-     "is one clear COLOUR.",
-     "is one clear colour."
+     "is one",
+     "is one"
+    ],
+    [
+     "clear COLOUR.",
+     "clear colour."
     ]
    ]
   },
@@ -403,12 +411,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "A couple buying a SOFA",
-     "a couple buying a sofa"
+     "A couple buying",
+     "a couple buying"
     ],
     [
-     "go through every COLOUR",
-     "go through every colour"
+     "a SOFA",
+     "a sofa"
+    ],
+    [
+     "go through",
+     "go through"
+    ],
+    [
+     "every COLOUR",
+     "every colour"
     ],
     [
      "by LUNCH.",
@@ -461,12 +477,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "The man on the end STALL",
-     "the man on the end stall"
+     "The man on",
+     "the man on"
     ],
     [
-     "stays WHITE all MORNING,",
-     "stays white all morning,"
+     "the end STALL",
+     "the end stall"
+    ],
+    [
+     "stays WHITE",
+     "stays white"
+    ],
+    [
+     "all MORNING,",
+     "all morning,"
     ],
     [
      "pricing one TEAPOT.",
@@ -479,8 +503,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He picks a PRICE",
-     "he picks a price"
+     "He picks",
+     "he picks"
+    ],
+    [
+     "a PRICE",
+     "a price"
     ],
     [
      "and goes YELLOW.",
@@ -493,8 +521,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "My coat has been WHITE",
-     "my coat has been white"
+     "My coat has",
+     "my coat has"
+    ],
+    [
+     "been WHITE",
+     "been white"
     ],
     [
      "my whole LIFE.",
@@ -515,8 +547,12 @@
      "i say"
     ],
     [
-     "I know my own MIND.",
-     "i know my own mind."
+     "I know my",
+     "i know my"
+    ],
+    [
+     "own MIND.",
+     "own mind."
     ]
    ]
   },
@@ -539,8 +575,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "We run a STALL",
-     "we run a stall"
+     "We run",
+     "we run"
+    ],
+    [
+     "a STALL",
+     "a stall"
     ],
     [
      "off the back",
@@ -561,8 +601,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then Pip gets offered",
-     "then pip gets offered"
+     "Then Pip",
+     "then pip"
+    ],
+    [
+     "gets offered",
+     "gets offered"
     ],
     [
      "a JOB",
@@ -601,8 +645,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "For a whole WEEK,",
-     "for a whole week,"
+     "For a",
+     "for a"
+    ],
+    [
+     "whole WEEK,",
+     "whole week,"
     ],
     [
      "it never SETTLES.",
@@ -623,8 +671,12 @@
      "she asks me,"
     ],
     [
-     "\"What do you THINK?\"",
-     "what do you think?"
+     "\"What do",
+     "what do"
+    ],
+    [
+     "you THINK?\"",
+     "you think?"
     ]
    ]
   },
@@ -677,8 +729,12 @@
      "her coat lands"
     ],
     [
-     "on a flat GREY,",
-     "on a flat grey,"
+     "on a",
+     "on a"
+    ],
+    [
+     "flat GREY,",
+     "flat grey,"
     ],
     [
      "and STAYS.",
@@ -691,8 +747,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She stops PRICING things.",
-     "she stops pricing things."
+     "She stops",
+     "she stops"
+    ],
+    [
+     "PRICING things.",
+     "pricing things."
     ],
     [
      "She stops SLEEPING.",
@@ -709,8 +769,12 @@
      "on sunday,"
     ],
     [
-     "she won't sit DOWN",
-     "she won't sit down"
+     "she won't",
+     "she won't"
+    ],
+    [
+     "sit DOWN",
+     "sit down"
     ],
     [
      "once.",
@@ -767,8 +831,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "There's a third MUG",
-     "there's a third mug"
+     "There's a",
+     "there's a"
+    ],
+    [
+     "third MUG",
+     "third mug"
     ],
     [
      "on the TAILGATE,",
@@ -779,8 +847,12 @@
      "cold."
     ],
     [
-     "We only own TWO.",
-     "we only own two."
+     "We only",
+     "we only"
+    ],
+    [
+     "own TWO.",
+     "own two."
     ]
    ]
   },
@@ -811,8 +883,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "When I GET there,",
-     "when i get there,"
+     "When I",
+     "when i"
+    ],
+    [
+     "GET there,",
+     "get there,"
     ],
     [
      "she isn't",
@@ -878,8 +954,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I shout her NAME",
-     "i shout her name"
+     "I shout",
+     "i shout"
+    ],
+    [
+     "her NAME",
+     "her name"
     ],
     [
      "across the FIELD.",
@@ -918,8 +998,12 @@
      "our whole table"
     ],
     [
-     "is facing her CHAIR",
-     "is facing her chair"
+     "is facing",
+     "is facing"
+    ],
+    [
+     "her CHAIR",
+     "her chair"
     ],
     [
      "AGAIN.",
@@ -932,8 +1016,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And through the FOG,",
-     "and through the fog,"
+     "And through",
+     "and through"
+    ],
+    [
+     "the FOG,",
+     "the fog,"
     ],
     [
      "somebody is sitting",
@@ -1012,8 +1100,12 @@
      "i find pip"
     ],
     [
-     "at the BUS SHELTER",
-     "at the bus shelter"
+     "at the",
+     "at the"
+    ],
+    [
+     "BUS SHELTER",
+     "bus shelter"
     ],
     [
      "up the LANE.",
@@ -1066,8 +1158,12 @@
      "she asks me,"
     ],
     [
-     "\"What do you THINK?\"",
-     "what do you think?"
+     "\"What do",
+     "what do"
+    ],
+    [
+     "you THINK?\"",
+     "you think?"
     ]
    ]
   },
@@ -1076,8 +1172,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I hear myself SAY,",
-     "i hear myself say,"
+     "I hear",
+     "i hear"
+    ],
+    [
+     "myself SAY,",
+     "myself say,"
     ],
     [
      "\"Whatever you WANT.\"",
@@ -1122,8 +1222,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The fog is LIFTING",
-     "the fog is lifting"
+     "The fog",
+     "the fog"
+    ],
+    [
+     "is LIFTING",
+     "is lifting"
     ],
     [
      "off the FIELD.",
@@ -1141,8 +1245,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And in Pip's CHAIR,",
-     "and in pip's chair,"
+     "And in",
+     "and in"
+    ],
+    [
+     "Pip's CHAIR,",
+     "pip's chair,"
     ],
     [
      "behind our STALL,",
@@ -1163,8 +1271,12 @@
      "rust overalls,"
     ],
     [
-     "and a green TARP",
-     "and a green tarp"
+     "and a",
+     "and a"
+    ],
+    [
+     "green TARP",
+     "green tarp"
     ],
     [
      "tied on",
@@ -1185,16 +1297,24 @@
      "its head"
     ],
     [
-     "lies on its SHOULDER,",
-     "lies on its shoulder,"
+     "lies on",
+     "lies on"
+    ],
+    [
+     "its SHOULDER,",
+     "its shoulder,"
     ],
     [
      "EYES stacked",
      "eyes stacked"
     ],
     [
-     "one above the OTHER.",
-     "one above the other."
+     "one above",
+     "one above"
+    ],
+    [
+     "the OTHER.",
+     "the other."
     ]
    ]
   },
@@ -1211,8 +1331,12 @@
      "never shifts."
     ],
     [
-     "Same as my COAT.",
-     "same as my coat."
+     "Same as",
+     "same as"
+    ],
+    [
+     "my COAT.",
+     "my coat."
     ]
    ]
   },
@@ -1221,8 +1345,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "As I get NEARER,",
-     "as i get nearer,"
+     "As I",
+     "as i"
+    ],
+    [
+     "get NEARER,",
+     "get nearer,"
     ],
     [
      "its head",
@@ -1247,8 +1375,12 @@
      "like pip,"
     ],
     [
-     "waiting for an ANSWER.",
-     "waiting for an answer."
+     "waiting for",
+     "waiting for"
+    ],
+    [
+     "an ANSWER.",
+     "an answer."
     ]
    ]
   },
@@ -1283,8 +1415,12 @@
      "are full"
     ],
     [
-     "of my white COAT.",
-     "of my white coat."
+     "of my",
+     "of my"
+    ],
+    [
+     "white COAT.",
+     "white coat."
     ]
    ]
   },
@@ -1293,8 +1429,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And I GET it.",
-     "and i get it."
+     "And I",
+     "and i"
+    ],
+    [
+     "GET it.",
+     "get it."
     ]
    ]
   },
@@ -1329,8 +1469,12 @@
      "a mind"
     ],
     [
-     "you never MADE UP.",
-     "you never made up."
+     "you never",
+     "you never"
+    ],
+    [
+     "MADE UP.",
+     "made up."
     ]
    ]
   },
@@ -1440,8 +1584,12 @@
      "fills with colour"
     ],
     [
-     "for the first time",
-     "for the first time"
+     "for the",
+     "for the"
+    ],
+    [
+     "first time",
+     "first time"
     ],
     [
      "in my LIFE.",
@@ -1490,8 +1638,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Back at the STALL,",
-     "back at the stall,"
+     "Back at",
+     "back at"
+    ],
+    [
+     "the STALL,",
+     "the stall,"
     ],
     [
      "she drops",
@@ -1522,8 +1674,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I load her BAG",
-     "i load her bag"
+     "I load",
+     "i load"
+    ],
+    [
+     "her BAG",
+     "her bag"
     ],
     [
      "in the CAR.",
@@ -1562,8 +1718,12 @@
      "till the coach"
     ],
     [
-     "goes over the TOP.",
-     "goes over the top."
+     "goes over",
+     "goes over"
+    ],
+    [
+     "the TOP.",
+     "the top."
     ]
    ]
   },
@@ -1590,8 +1750,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I fold it FLAT",
-     "i fold it flat"
+     "I fold",
+     "i fold"
+    ],
+    [
+     "it FLAT",
+     "it flat"
     ],
     [
      "and shut it",
@@ -1609,8 +1773,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "A stall for ONE",
-     "a stall for one"
+     "A stall",
+     "a stall"
+    ],
+    [
+     "for ONE",
+     "for one"
     ],
     [
      "doesn't need",
@@ -1653,8 +1821,12 @@
      "what sits"
     ],
     [
-     "in an EMPTY one.",
-     "in an empty one."
+     "in an",
+     "in an"
+    ],
+    [
+     "EMPTY one.",
+     "empty one."
     ]
    ]
   },
@@ -1667,8 +1839,12 @@
      "in this town,"
     ],
     [
-     "your COAT changes colour",
-     "your coat changes colour"
+     "your COAT",
+     "your coat"
+    ],
+    [
+     "changes colour",
+     "changes colour"
     ],
     [
      "when you change",
@@ -1872,7 +2048,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "the couple standing beside it, other colours, mid-fade",
-   "at": "L04.1"
+   "at": "L04.2"
   },
   {
    "id": "S07",
@@ -2318,16 +2494,16 @@
     [
      0,
      [
-      131.5,
-      -1.6,
-      1.25
+      131.8,
+      -1.8,
+      1.3
      ],
      [
       130.9,
       -0.6,
-      0.3
+      0.4
      ],
-     34,
+     26,
      0
     ]
    ],
@@ -2358,7 +2534,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "Pip sitting up in bed in the dark-blue night, the grey coat round her",
-   "at": "L20.1"
+   "at": "L20.2"
   },
   {
    "id": "S26",
@@ -2486,14 +2662,14 @@
     [
      0,
      [
-      268.0,
-      -7.0,
-      1.35
+      266.0,
+      -14.0,
+      1.4
      ],
      [
       260.0,
-      -7.0,
-      1.0
+      -4.0,
+      1.2
      ],
      30,
      0
@@ -2678,9 +2854,9 @@
     [
      0,
      [
-      -10.0,
-      -14.0,
-      1.25
+      -12.0,
+      -8.0,
+      1.3
      ],
      [
       -0.7,
@@ -2846,13 +3022,13 @@
     [
      0,
      [
-      -12.4,
-      -24.8,
-      1.6
+      -18.7,
+      -26.0,
+      1.8
      ],
      [
       -16.2,
-      -32.0,
+      -36.5,
       1.4
      ],
      28,
@@ -3125,16 +3301,16 @@
     [
      0,
      [
-      -1.55,
-      0.3,
-      1.2
+      -2.2,
+      -0.6,
+      1.4
      ],
      [
       -0.95,
       1.3,
-      1.2
+      1.4
      ],
-     40,
+     36,
      0
     ]
    ],
@@ -3213,7 +3389,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "its head hanging below the shoulder line, eyes still on me",
-   "at": "L48.2"
+   "at": "L48.3"
   },
   {
    "id": "S61",
@@ -3293,9 +3469,9 @@
     [
      0,
      [
-      0.7,
-      -0.1,
-      1.5
+      1.7,
+      0.3,
+      1.55
      ],
      [
       -0.65,
@@ -3533,8 +3709,8 @@
     [
      0,
      [
-      -16.5,
-      -27.0,
+      -15.9,
+      -25.6,
       1.5
      ],
      [
@@ -3548,8 +3724,8 @@
     [
      1,
      [
-      -16.0,
-      -27.2,
+      -15.4,
+      -25.9,
       1.5
      ],
      [
@@ -3596,13 +3772,13 @@
     [
      0,
      [
-      -13.2,
-      -27.4,
+      -17.0,
+      -26.5,
       1.55
      ],
      [
       -14.4,
-      -28.4,
+      -28.3,
       1.55
      ],
      34,
@@ -3692,8 +3868,8 @@
     [
      0,
      [
-      -12.5,
-      -12.0,
+      -15.8,
+      -13.0,
       1.4
      ],
      [
@@ -3701,7 +3877,7 @@
       -46.0,
       4.0
      ],
-     38,
+     34,
      0
     ]
    ],
@@ -3828,7 +4004,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "the tailgate coming down",
-   "at": "L70.1"
+   "at": "L70.2"
   },
   {
    "id": "S86",
@@ -3852,7 +4028,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "the latch: two short upright strokes",
-   "at": "L70.2"
+   "at": "L70.3"
   },
   {
    "id": "S87",
@@ -3971,8 +4147,8 @@
     [
      0,
      [
-      0.2,
-      -1.4,
+      -0.1,
+      1.7,
       1.58
      ],
      [
@@ -4504,7 +4680,7 @@
     "yaw": 180
    },
    {
-    "at": "L48.2",
+    "at": "L48.3",
     "hidden": true,
     "blend": 0
    },
@@ -5363,14 +5539,14 @@
     "blend": 0
    },
    {
-    "at": "L20.1",
+    "at": "L20.2",
     "pos": [
      97.6,
      -0.8
     ]
    },
    {
-    "at": "L20.1",
+    "at": "L20.2",
     "pos": [
      129.4,
      1.1,
@@ -5803,7 +5979,7 @@
     "yaw": 0
    },
    {
-    "at": "L04.1",
+    "at": "L04.2",
     "pos": [
      10.45,
      -4.55,
@@ -5811,7 +5987,7 @@
     ]
    },
    {
-    "at": "L04.1",
+    "at": "L04.2",
     "pos": [
      12.55,
      -4.7
@@ -5878,7 +6054,7 @@
     "yaw": 0
    },
    {
-    "at": "L04.1",
+    "at": "L04.2",
     "pos": [
      11.55,
      -4.55,
@@ -5886,7 +6062,7 @@
     ]
    },
    {
-    "at": "L04.1",
+    "at": "L04.2",
     "pos": [
      13.35,
      -4.6
@@ -6526,14 +6702,14 @@
    "dur": 1.4
   },
   {
-   "at": "L04.1",
+   "at": "L04.2",
    "name": "coat",
    "who": "sofa_a",
    "to": "#f2c230",
    "dur": 1.3
   },
   {
-   "at": "L04.1+0.1",
+   "at": "L04.2+0.1",
    "name": "coat",
    "who": "sofa_b",
    "to": "#e86aa0",
@@ -6961,7 +7137,7 @@
    "dur": 3.4
   },
   {
-   "at": "L70.1",
+   "at": "L70.2",
    "name": "hatch",
    "to": 0.0,
    "dur": 0.9
@@ -6977,7 +7153,7 @@
    "on": true
   },
   {
-   "at": "L70.1",
+   "at": "L70.2",
    "name": "fold",
    "on": false
   },
@@ -6987,7 +7163,7 @@
    "on": false
   },
   {
-   "at": "L70.2",
+   "at": "L70.3",
    "name": "strokes",
    "on": true
   },
@@ -7007,7 +7183,7 @@
    "roll": -90.0
   },
   {
-   "at": "L48.2",
+   "at": "L48.3",
    "name": "tilted",
    "roll": -122.0,
    "lift": 0.45,
@@ -7235,7 +7411,7 @@
     "dur": 2.0
    },
    {
-    "at": "L70.1+0.8",
+    "at": "L70.2+0.8",
     "kind": "door",
     "db": -12,
     "dur": 1.0
