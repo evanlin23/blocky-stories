@@ -6,323 +6,115 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Something held me at the top of the wall.",
+   "text": "In this town, when you fall, the one who loves you most goes up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.862,
+   "dur": 2.741,
    "onset": 0.172,
-   "end": 1.672,
+   "end": 2.534,
    "chunks": [
     [
      0.172,
-     0.724
+     0.569
     ],
     [
-     0.724,
-     1.043
+     0.595,
+     1.103
     ],
     [
-     1.043,
-     1.672
+     1.172,
+     1.431
+    ],
+    [
+     1.431,
+     1.931
+    ],
+    [
+     1.931,
+     2.534
     ]
    ]
   },
   "L02": {
-   "text": "Both my hands were off it.",
+   "text": "He comes down soft. She goes up a meter.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.483,
-   "onset": 0.172,
-   "end": 1.293,
-   "chunks": [
-    [
-     0.172,
-     0.698
-    ],
-    [
-     0.698,
-     1.293
-    ]
-   ]
-  },
-  "L03": {
-   "text": "And nobody was holding my rope.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.155,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.155,
-     0.621
-    ],
-    [
-     0.621,
-     0.983
-    ],
-    [
-     0.983,
-     1.569
-    ]
-   ]
-  },
-  "L04": {
-   "text": "I climb, Thursdays, late, in an old mill.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9991,
-   "dur": 2.224,
+   "tempo": 0.9784999999999999,
+   "dur": 2.241,
    "onset": 0.172,
    "end": 2.034,
    "chunks": [
     [
      0.172,
-     0.897
+     0.448
     ],
     [
-     0.931,
-     1.172
+     0.448,
+     1.034
     ],
     [
-     1.224,
-     1.345
+     1.112,
+     1.474
     ],
     [
-     1.345,
+     1.474,
      2.034
     ]
    ]
   },
-  "L05": {
-   "text": "Iron lamps on the beams, and a wall right up into the roof.",
+  "L03": {
+   "text": "First dates come here to fall off on purpose.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.862,
-   "onset": 0.19,
-   "end": 2.672,
-   "chunks": [
-    [
-     0.19,
-     0.647
-    ],
-    [
-     0.647,
-     1.207
-    ],
-    [
-     1.276,
-     1.698
-    ],
-    [
-     1.698,
-     2.672
-    ]
-   ]
-  },
-  "L06": {
-   "text": "Near the top it leans out into a ceiling of holds.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.259,
+   "dur": 2.155,
    "onset": 0.172,
-   "end": 2.069,
+   "end": 1.966,
    "chunks": [
     [
      0.172,
-     0.543
+     0.586
     ],
     [
-     0.543,
-     0.957
+     0.586,
+     0.836
     ],
     [
-     0.957,
-     1.422
-    ],
-    [
-     1.422,
-     2.069
-    ]
-   ]
-  },
-  "L07": {
-   "text": "I climb alone on the auto-belay.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.155,
-   "end": 1.5,
-   "chunks": [
-    [
-     0.155,
-     0.664
-    ],
-    [
-     0.664,
-     1.5
-    ]
-   ]
-  },
-  "L08": {
-   "text": "A grey box bolted at the top.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.172,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.172,
-     0.69
-    ],
-    [
-     0.69,
-     1.569
-    ]
-   ]
-  },
-  "L09": {
-   "text": "You clip in, Climb, and it lowers you down.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.172,
-   "end": 1.879,
-   "chunks": [
-    [
-     0.172,
-     0.517
-    ],
-    [
-     0.552,
-     0.828
-    ],
-    [
-     0.879,
-     1.259
-    ],
-    [
-     1.259,
-     1.879
-    ]
-   ]
-  },
-  "L10": {
-   "text": "Last year I slipped near the top.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.172,
-   "end": 1.5,
-   "chunks": [
-    [
-     0.172,
-     0.5
-    ],
-    [
-     0.5,
-     0.845
-    ],
-    [
-     0.845,
-     1.5
-    ]
-   ]
-  },
-  "L11": {
-   "text": "The guy on my rope was on his phone.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.172,
-   "end": 1.586,
-   "chunks": [
-    [
-     0.172,
-     0.784
-    ],
-    [
-     0.784,
-     1.586
-    ]
-   ]
-  },
-  "L12": {
-   "text": "The rope ran, and I stopped an arm's length above the mat.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.621,
-   "onset": 0.172,
-   "end": 2.431,
-   "chunks": [
-    [
-     0.172,
-     0.759
-    ],
-    [
-     0.81,
+     0.836,
      1.215
     ],
     [
      1.215,
-     1.698
-    ],
-    [
-     1.698,
-     2.431
+     1.966
     ]
    ]
   },
-  "L13": {
-   "text": "I was fine. My hands shook for a month.",
+  "L04": {
+   "text": "Sometimes it's his Mum.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.155,
-   "end": 1.776,
+   "dur": 1.534,
+   "onset": 0.19,
+   "end": 1.345,
    "chunks": [
     [
-     0.155,
-     0.621
+     0.19,
+     0.603
     ],
     [
-     0.672,
-     1.19
-    ],
-    [
-     1.19,
-     1.776
+     0.603,
+     1.345
     ]
    ]
   },
-  "L14": {
-   "text": "Since then nobody holds my rope.",
+  "L05": {
+   "text": "My Mum comes every Thursday.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -337,84 +129,168 @@
     ],
     [
      0.466,
-     0.741
-    ],
-    [
-     0.741,
      1.552
     ]
    ]
   },
-  "L15": {
-   "text": "There's a quiet regular, Sam, with chalky sleeves.",
+  "L06": {
+   "text": "She won't even stand on a chair.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.362,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.768
+    ],
+    [
+     0.768,
+     1.431
+    ]
+   ]
+  },
+  "L07": {
+   "text": "When she trips, I go up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
    "onset": 0.155,
-   "end": 2.172,
+   "end": 1.224,
    "chunks": [
     [
      0.155,
-     0.862
+     0.586
     ],
     [
-     0.897,
-     1.121
-    ],
-    [
-     1.155,
-     2.172
+     0.612,
+     1.224
     ]
    ]
   },
-  "L16": {
-   "text": "Every Thursday she asked if she could belay me.",
+  "L08": {
+   "text": "That's how I know.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.259,
+   "dur": 1.224,
    "onset": 0.172,
-   "end": 2.052,
+   "end": 1.017,
    "chunks": [
     [
      0.172,
-     0.724
+     0.483
     ],
     [
-     0.724,
-     1.103
-    ],
-    [
-     1.103,
-     2.052
+     0.483,
+     1.017
     ]
    ]
   },
-  "L17": {
-   "text": "Every Thursday I said no.",
+  "L09": {
+   "text": "I only started climbing this autumn.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.69,
+   "dur": 1.862,
    "onset": 0.172,
-   "end": 1.483,
+   "end": 1.672,
    "chunks": [
     [
      0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.672
+    ]
+   ]
+  },
+  "L10": {
+   "text": "And when I fall, I've never seen anyone go up for me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.336
+    ],
+    [
+     0.336,
      0.759
     ],
     [
-     0.759,
-     1.483
+     0.81,
+     1.362
+    ],
+    [
+     1.362,
+     1.793
+    ],
+    [
+     1.793,
+     2.276
     ]
    ]
   },
-  "L18": {
-   "text": "The first night I made it to the top hold.",
+  "L11": {
+   "text": "Not even Mum.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ]
+   ]
+  },
+  "L12": {
+   "text": "I never look down on the wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.7828,
+   "dur": 2.052,
+   "onset": 0.241,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.241,
+     0.578
+    ],
+    [
+     0.578,
+     1.008
+    ],
+    [
+     1.008,
+     1.828
+    ]
+   ]
+  },
+  "L13": {
+   "text": "The first Thursday I came off at the top.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -425,63 +301,43 @@
    "chunks": [
     [
      0.155,
-     0.672
+     0.793
     ],
     [
-     0.672,
-     0.966
+     0.793,
+     1.199
     ],
     [
-     0.966,
+     1.199,
      1.81
     ]
    ]
   },
-  "L19": {
-   "text": "I reached toward the anchor, the steel ring at the top.",
+  "L14": {
+   "text": "The rope caught me. I looked up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.31,
-   "onset": 0.172,
-   "end": 2.103,
+   "tempo": 0.8446,
+   "dur": 1.81,
+   "onset": 0.207,
+   "end": 1.569,
    "chunks": [
     [
-     0.172,
-     0.578
+     0.207,
+     0.448
     ],
     [
-     0.578,
-     0.983
+     0.448,
+     0.759
     ],
     [
-     1.034,
-     1.492
-    ],
-    [
-     1.492,
-     2.103
+     0.81,
+     1.569
     ]
    ]
   },
-  "L20": {
-   "text": "Then I looked up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.172,
-   "onset": 0.172,
-   "end": 0.966,
-   "chunks": [
-    [
-     0.172,
-     0.966
-    ]
-   ]
-  },
-  "L21": {
+  "L15": {
    "text": "Someone was standing on the ceiling.",
    "who": "narrator",
    "voice": "am_adam",
@@ -501,7 +357,7 @@
     ]
    ]
   },
-  "L22": {
+  "L16": {
    "text": "Upside down, its feet flat on the overhang.",
    "who": "narrator",
    "voice": "am_adam",
@@ -525,207 +381,171 @@
     ]
    ]
   },
-  "L23": {
-   "text": "Lilac like chalk dust, with a black harness round its middle.",
+  "L17": {
+   "text": "A knot of hair hung off its head like a weight.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.862,
-   "onset": 0.19,
-   "end": 2.672,
-   "chunks": [
-    [
-     0.19,
-     0.629
-    ],
-    [
-     0.629,
-     1.207
-    ],
-    [
-     1.276,
-     1.397
-    ],
-    [
-     1.397,
-     1.897
-    ],
-    [
-     1.897,
-     2.672
-    ]
-   ]
-  },
-  "L24": {
-   "text": "Its arms hung up toward the ceiling, like that was down.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.5,
-   "onset": 0.155,
-   "end": 2.31,
-   "chunks": [
-    [
-     0.155,
-     0.483
-    ],
-    [
-     0.483,
-     0.724
-    ],
-    [
-     0.724,
-     1.31
-    ],
-    [
-     1.379,
-     2.31
-    ]
-   ]
-  },
-  "L25": {
-   "text": "Its face was a big grin, the wrong way up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.155,
-   "onset": 0.155,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.155,
-     0.492
-    ],
-    [
-     0.492,
-     1.052
-    ],
-    [
-     1.103,
-     1.948
-    ]
-   ]
-  },
-  "L26": {
-   "text": "So to me it was a frown.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.483,
+   "dur": 2.121,
    "onset": 0.172,
-   "end": 1.276,
+   "end": 1.931,
    "chunks": [
     [
      0.172,
-     0.5
+     0.37
     ],
     [
-     0.5,
-     1.276
-    ]
-   ]
-  },
-  "L27": {
-   "text": "I let the box lower me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.5,
-   "onset": 0.172,
-   "end": 1.293,
-   "chunks": [
-    [
-     0.172,
-     0.655
-    ],
-    [
-     0.655,
-     1.293
-    ]
-   ]
-  },
-  "L28": {
-   "text": "It was slow. Slower than a machine should be.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.155,
-   "end": 1.879,
-   "chunks": [
-    [
-     0.155,
+     0.37,
      0.638
     ],
     [
-     0.716,
-     1.328
+     0.638,
+     0.94
     ],
     [
-     1.328,
-     1.879
+     0.94,
+     1.259
+    ],
+    [
+     1.259,
+     1.931
     ]
    ]
   },
-  "L29": {
-   "text": "And the rope came down cold, dusted in lilac.",
+  "L18": {
+   "text": "Was that who went up for me?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.328,
+   "dur": 1.379,
    "onset": 0.155,
-   "end": 2.121,
+   "end": 1.172,
    "chunks": [
     [
      0.155,
-     0.431
+     0.439
     ],
     [
-     0.431,
-     1.138
-    ],
-    [
-     1.207,
-     2.121
-    ]
-   ]
-  },
-  "L30": {
-   "text": "Our gym chalk is white.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.5,
-   "onset": 0.155,
-   "end": 1.31,
-   "chunks": [
-    [
-     0.155,
+     0.439,
      0.724
     ],
     [
      0.724,
-     1.31
+     1.172
     ]
    ]
   },
-  "L31": {
-   "text": "A red tag swung from the box.",
+  "L19": {
+   "text": "The box lowered me, slower than a machine should be.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.155,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.948
+    ],
+    [
+     1.043,
+     1.337
+    ],
+    [
+     1.337,
+     1.672
+    ],
+    [
+     1.672,
+     2.224
+    ]
+   ]
+  },
+  "L20": {
+   "text": "When I landed, it was gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.647,
+     1.345
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Mum was on her bench with her flask.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.19,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.19,
+     0.543
+    ],
+    [
+     0.543,
+     0.87
+    ],
+    [
+     0.87,
+     1.603
+    ]
+   ]
+  },
+  "L22": {
+   "text": "There was lilac dust in her hair.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.776,
-   "onset": 0.172,
+   "onset": 0.155,
    "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.948
+    ],
+    [
+     0.948,
+     1.586
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Next Thursday I fell again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.466,
    "chunks": [
     [
      0.172,
@@ -733,391 +553,283 @@
     ],
     [
      0.69,
-     1.586
+     1.466
     ]
    ]
   },
-  "L32": {
-   "text": "I never asked what it meant.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.534,
-   "onset": 0.172,
-   "end": 1.345,
-   "chunks": [
-    [
-     0.172,
-     0.732
-    ],
-    [
-     0.732,
-     1.345
-    ]
-   ]
-  },
-  "L33": {
-   "text": "Next thursday, it was back.",
+  "L24": {
+   "text": "It was one hold closer.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.517,
-   "onset": 0.172,
-   "end": 1.31,
-   "chunks": [
-    [
-     0.172,
-     0.672
-    ],
-    [
-     0.698,
-     1.31
-    ]
-   ]
-  },
-  "L34": {
-   "text": "One hold closer to my route.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.172,
-   "end": 1.466,
-   "chunks": [
-    [
-     0.172,
-     0.828
-    ],
-    [
-     0.828,
-     1.466
-    ]
-   ]
-  },
-  "L35": {
-   "text": "Sam was taping her fingers by the mats.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.931,
-   "onset": 0.19,
-   "end": 1.741,
-   "chunks": [
-    [
-     0.19,
-     0.664
-    ],
-    [
-     0.664,
-     1.034
-    ],
-    [
-     1.034,
-     1.741
-    ]
-   ]
-  },
-  "L36": {
-   "text": "She asked again.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.241,
-   "onset": 0.19,
-   "end": 1.052,
-   "chunks": [
-    [
-     0.19,
-     1.052
-    ]
-   ]
-  },
-  "L37": {
-   "text": "I said no again.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.31,
-   "onset": 0.172,
-   "end": 1.121,
-   "chunks": [
-    [
-     0.172,
-     0.621
-    ],
-    [
-     0.621,
-     1.121
-    ]
-   ]
-  },
-  "L38": {
-   "text": "She looked up past me, at the box.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.172,
-   "end": 1.466,
-   "chunks": [
-    [
-     0.172,
-     0.517
-    ],
-    [
-     0.517,
-     0.793
-    ],
-    [
-     0.819,
-     1.466
-    ]
-   ]
-  },
-  "L39": {
-   "text": "I clipped in before she could say it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.741,
    "onset": 0.155,
-   "end": 1.552,
+   "end": 1.328,
    "chunks": [
     [
      0.155,
-     0.586
+     0.353
     ],
     [
-     0.586,
-     1.043
+     0.353,
+     0.724
     ],
     [
-     1.043,
-     1.552
+     0.724,
+     1.328
     ]
    ]
   },
-  "L40": {
-   "text": "The third Thursday it was one hold from the edge.",
+  "L25": {
+   "text": "Its arms hung up at the ceiling, like that was down.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.293,
+   "dur": 2.431,
    "onset": 0.155,
-   "end": 2.086,
+   "end": 2.241,
    "chunks": [
     [
      0.155,
-     0.845
-    ],
-    [
-     0.845,
-     1.397
-    ],
-    [
-     1.397,
-     2.086
-    ]
-   ]
-  },
-  "L41": {
-   "text": "Right over my route.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.276,
-   "onset": 0.19,
-   "end": 1.086,
-   "chunks": [
-    [
-     0.19,
      0.5
     ],
     [
      0.5,
-     1.086
+     0.732
+    ],
+    [
+     0.732,
+     1.241
+    ],
+    [
+     1.31,
+     1.578
+    ],
+    [
+     1.578,
+     2.241
     ]
    ]
   },
-  "L42": {
-   "text": "When I climbed I could hear it.",
+  "L26": {
+   "text": "Its mouth curved down in a frown.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.94
+    ],
+    [
+     0.94,
+     1.603
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Mum asked to hold my rope.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.586,
+   "onset": 0.19,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.19,
+     0.595
+    ],
+    [
+     0.595,
+     0.819
+    ],
+    [
+     0.819,
+     1.379
+    ]
+   ]
+  },
+  "L28": {
+   "text": "I said no. I didn't want her watching me fall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.793,
+     1.008
+    ],
+    [
+     1.008,
+     1.207
+    ],
+    [
+     1.207,
+     2.069
+    ]
+   ]
+  },
+  "L29": {
+   "text": "The third Thursday she'd moved her bench right under my route.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
    "onset": 0.155,
-   "end": 1.397,
+   "end": 2.5,
    "chunks": [
     [
      0.155,
-     0.672
+     0.87
     ],
     [
-     0.672,
-     1.397
+     0.87,
+     1.215
+    ],
+    [
+     1.215,
+     1.594
+    ],
+    [
+     1.594,
+     1.888
+    ],
+    [
+     1.888,
+     2.5
     ]
    ]
   },
-  "L43": {
-   "text": "A soft creak every time I moved.",
+  "L30": {
+   "text": "I came off at the top.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.862,
+   "dur": 1.362,
    "onset": 0.172,
-   "end": 1.672,
+   "end": 1.155,
    "chunks": [
     [
      0.172,
-     0.672
+     0.578
     ],
     [
-     0.672,
-     1.061
-    ],
-    [
-     1.061,
-     1.672
+     0.578,
+     1.155
     ]
    ]
   },
-  "L44": {
-   "text": "Like a rope going tight.",
+  "L31": {
+   "text": "It was one hold from the edge, right over me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.172,
-   "end": 1.276,
-   "chunks": [
-    [
-     0.172,
-     0.569
-    ],
-    [
-     0.569,
-     1.276
-    ]
-   ]
-  },
-  "L45": {
-   "text": "I told myself it was the old beams.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.931,
+   "dur": 2.19,
    "onset": 0.155,
-   "end": 1.741,
+   "end": 2.0,
    "chunks": [
     [
      0.155,
-     0.732
+     0.328
     ],
     [
-     0.732,
-     1.741
+     0.328,
+     0.638
+    ],
+    [
+     0.638,
+     1.138
+    ],
+    [
+     1.233,
+     2.0
     ]
    ]
   },
-  "L46": {
-   "text": "The fourth Thursday I climbed fast.",
+  "L32": {
+   "text": "I could hear it breathing, fast.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.9476000000000001,
-   "dur": 1.931,
-   "onset": 0.172,
-   "end": 1.707,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
    "chunks": [
     [
-     0.172,
-     0.768
+     0.155,
+     0.345
     ],
     [
-     0.768,
+     0.345,
+     0.534
+    ],
+    [
+     0.534,
+     0.793
+    ],
+    [
+     0.828,
+     1.345
+    ]
+   ]
+  },
+  "L33": {
+   "text": "The fourth Thursday, at the top hold, the lamps went out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.828
+    ],
+    [
+     0.879,
+     1.0
+    ],
+    [
+     1.0,
+     1.379
+    ],
+    [
+     1.406,
      1.707
+    ],
+    [
+     1.707,
+     2.276
     ]
    ]
   },
-  "L47": {
-   "text": "I kept my eyes on the wall.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.155,
-   "end": 1.414,
-   "chunks": [
-    [
-     0.155,
-     0.431
-    ],
-    [
-     0.431,
-     0.802
-    ],
-    [
-     0.802,
-     1.414
-    ]
-   ]
-  },
-  "L48": {
-   "text": "I reached the top hold.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.397,
-   "onset": 0.172,
-   "end": 1.19,
-   "chunks": [
-    [
-     0.172,
-     0.439
-    ],
-    [
-     0.439,
-     1.19
-    ]
-   ]
-  },
-  "L49": {
-   "text": "And the lamps went out.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.31,
-   "onset": 0.155,
-   "end": 1.121,
-   "chunks": [
-    [
-     0.155,
-     0.569
-    ],
-    [
-     0.569,
-     1.121
-    ]
-   ]
-  },
-  "L50": {
+  "L34": {
    "text": "Only the blue from the windows.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1137,67 +849,47 @@
     ]
    ]
   },
-  "L51": {
-   "text": "I stayed still.",
+  "L35": {
+   "text": "My foot slipped.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.19,
+   "dur": 1.172,
    "onset": 0.172,
-   "end": 1.0,
+   "end": 0.983,
    "chunks": [
     [
      0.172,
-     1.0
+     0.983
     ]
    ]
   },
-  "L52": {
-   "text": "Then the creak. Right in front of my face.",
+  "L36": {
+   "text": "Something breathed right in front of my face.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.948,
-   "onset": 0.172,
-   "end": 1.741,
+   "tempo": 0.8755,
+   "dur": 2.224,
+   "onset": 0.207,
+   "end": 2.0,
    "chunks": [
     [
-     0.172,
-     0.621
+     0.207,
+     0.732
     ],
     [
-     0.681,
-     1.043
+     0.732,
+     1.199
     ],
     [
-     1.043,
-     1.741
+     1.199,
+     2.0
     ]
    ]
   },
-  "L53": {
-   "text": "The lamps came back.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.172,
-   "end": 1.138,
-   "chunks": [
-    [
-     0.172,
-     0.517
-    ],
-    [
-     0.517,
-     1.138
-    ]
-   ]
-  },
-  "L54": {
+  "L37": {
    "text": "Its face was level with mine.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1221,787 +913,479 @@
     ]
    ]
   },
-  "L55": {
-   "text": "A hand's width away.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.448,
-   "onset": 0.172,
-   "end": 1.241,
-   "chunks": [
-    [
-     0.172,
-     0.741
-    ],
-    [
-     0.741,
-     1.241
-    ]
-   ]
-  },
-  "L56": {
-   "text": "That grin that looks like a frown.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.172,
-   "end": 1.586,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.603,
-     0.87
-    ],
-    [
-     0.87,
-     1.586
-    ]
-   ]
-  },
-  "L57": {
-   "text": "Its eyes were the brightest thing in the mill.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.914,
-   "onset": 0.155,
-   "end": 1.724,
-   "chunks": [
-    [
-     0.155,
-     0.578
-    ],
-    [
-     0.578,
-     1.129
-    ],
-    [
-     1.129,
-     1.724
-    ]
-   ]
-  },
-  "L58": {
-   "text": "I let go.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.052,
-   "onset": 0.172,
-   "end": 0.828,
-   "chunks": [
-    [
-     0.172,
-     0.828
-    ]
-   ]
-  },
-  "L59": {
-   "text": "Both hands.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.103,
-   "onset": 0.172,
-   "end": 0.897,
-   "chunks": [
-    [
-     0.172,
-     0.897
-    ]
-   ]
-  },
-  "L60": {
-   "text": "I dropped maybe a foot.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.414,
-   "onset": 0.172,
-   "end": 1.224,
-   "chunks": [
-    [
-     0.172,
-     0.534
-    ],
-    [
-     0.534,
-     1.224
-    ]
-   ]
-  },
-  "L61": {
-   "text": "And something held me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.379,
-   "onset": 0.155,
-   "end": 1.19,
-   "chunks": [
-    [
-     0.155,
-     0.586
-    ],
-    [
-     0.586,
-     1.19
-    ]
-   ]
-  },
-  "L62": {
-   "text": "I hung there, turning slowly.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.569,
-   "onset": 0.172,
-   "end": 1.379,
-   "chunks": [
-    [
-     0.172,
-     0.552
-    ],
-    [
-     0.586,
-     0.819
-    ],
-    [
-     0.819,
-     1.379
-    ]
-   ]
-  },
-  "L63": {
-   "text": "I looked up along my rope.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.534,
-   "onset": 0.172,
-   "end": 1.328,
-   "chunks": [
-    [
-     0.172,
-     0.534
-    ],
-    [
-     0.534,
-     1.328
-    ]
-   ]
-  },
-  "L64": {
-   "text": "It ran past the box, over the anchor, and up into the dark.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.776,
-   "onset": 0.155,
-   "end": 2.569,
-   "chunks": [
-    [
-     0.155,
-     0.647
-    ],
-    [
-     0.647,
-     1.069
-    ],
-    [
-     1.138,
-     1.638
-    ],
-    [
-     1.672,
-     1.87
-    ],
-    [
-     1.87,
-     2.569
-    ]
-   ]
-  },
-  "L65": {
-   "text": "All the way to the ceiling.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.431,
-   "onset": 0.19,
-   "end": 1.241,
-   "chunks": [
-    [
-     0.19,
-     0.534
-    ],
-    [
-     0.534,
-     1.241
-    ]
-   ]
-  },
-  "L66": {
-   "text": "And it was tied round its waist.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.155,
-   "end": 1.5,
-   "chunks": [
-    [
-     0.155,
-     0.302
-    ],
-    [
-     0.302,
-     0.707
-    ],
-    [
-     0.707,
-     1.5
-    ]
-   ]
-  },
-  "L67": {
-   "text": "It was leaning back, feet planted, like a belayer.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.362,
-   "onset": 0.155,
-   "end": 2.172,
-   "chunks": [
-    [
-     0.155,
-     0.793
-    ],
-    [
-     0.87,
-     1.379
-    ],
-    [
-     1.406,
-     2.172
-    ]
-   ]
-  },
-  "L68": {
-   "text": "It let me down slowly, all the way to the mat.",
+  "L38": {
+   "text": "A hand's width away. Its eyes were wet.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.224,
-   "onset": 0.155,
-   "end": 2.017,
-   "chunks": [
-    [
-     0.155,
-     0.612
-    ],
-    [
-     0.612,
-     1.017
-    ],
-    [
-     1.086,
-     1.414
-    ],
-    [
-     1.414,
-     2.017
-    ]
-   ]
-  },
-  "L69": {
-   "text": "Sam was waiting at the bottom.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.19,
-   "end": 1.466,
-   "chunks": [
-    [
-     0.19,
-     0.784
-    ],
-    [
-     0.784,
-     1.466
-    ]
-   ]
-  },
-  "L70": {
-   "text": "She had the red tag in her hand.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
    "onset": 0.172,
-   "end": 1.5,
+   "end": 2.034,
    "chunks": [
     [
      0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.983
+    ],
+    [
+     1.052,
+     1.474
+    ],
+    [
+     1.474,
+     2.034
+    ]
+   ]
+  },
+  "L39": {
+   "text": "I shut my eyes the whole way down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.75
+    ],
+    [
+     0.75,
+     0.983
+    ],
+    [
+     0.983,
+     1.638
+    ]
+   ]
+  },
+  "L40": {
+   "text": "The lamps came back as I touched the mat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
      0.836
     ],
     [
      0.836,
-     1.5
+     1.199
+    ],
+    [
+     1.199,
+     1.724
     ]
    ]
   },
-  "L71": {
-   "text": "She said, \"That box has been broken for weeks.\"",
+  "L41": {
+   "text": "Mum was on her bench, white as chalk.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.19,
+   "dur": 1.879,
    "onset": 0.19,
-   "end": 1.983,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     0.828
+    ],
+    [
+     0.879,
+     1.672
+    ]
+   ]
+  },
+  "L42": {
+   "text": "The soles of her shoes were lilac.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.931
+    ],
+    [
+     0.931,
+     1.603
+    ]
+   ]
+  },
+  "L43": {
+   "text": "I looked up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.0,
+   "onset": 0.172,
+   "end": 0.793,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Two shoe prints, in the lilac dust, right over her bench.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 2.69,
+   "onset": 0.19,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ],
+    [
+     0.732,
+     0.845
+    ],
+    [
+     0.845,
+     1.483
+    ],
+    [
+     1.561,
+     1.87
+    ],
+    [
+     1.87,
+     2.483
+    ]
+   ]
+  },
+  "L45": {
+   "text": "When I fall, Mum goes up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.603,
+     1.328
+    ]
+   ]
+  },
+  "L46": {
+   "text": "All the way up. Every time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.621
+    ],
+    [
+     0.672,
+     1.414
+    ]
+   ]
+  },
+  "L47": {
+   "text": "She said, \"I didn't want you to stop climbing.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.19,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.586,
+     0.784
+    ],
+    [
+     0.784,
+     0.94
+    ],
+    [
+     0.94,
+     1.828
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Upside down, her smile looks like a frown.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.052
+    ],
+    [
+     1.052,
+     1.285
+    ],
+    [
+     1.285,
+     1.897
+    ]
+   ]
+  },
+  "L49": {
+   "text": "The next Thursday Mum held my rope.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.103
+    ],
+    [
+     1.103,
+     1.69
+    ]
+   ]
+  },
+  "L50": {
+   "text": "At the top I let go on purpose.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.836
+    ],
+    [
+     0.836,
+     1.569
+    ]
+   ]
+  },
+  "L51": {
+   "text": "She went up as I came down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.19,
+   "end": 1.397,
    "chunks": [
     [
      0.19,
      0.5
     ],
     [
-     0.552,
-     0.922
-    ],
-    [
-     0.922,
-     1.362
-    ],
-    [
-     1.362,
-     1.983
-    ]
-   ]
-  },
-  "L72": {
-   "text": "\"I kept trying to tell you.\"",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.552,
-   "onset": 0.172,
-   "end": 1.276,
-   "chunks": [
-    [
-     0.172,
+     0.5,
      0.672
     ],
     [
      0.672,
-     1.276
+     1.397
     ]
    ]
   },
-  "L73": {
-   "text": "I unclipped.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.069,
-   "onset": 0.172,
-   "end": 0.879,
-   "chunks": [
-    [
-     0.172,
-     0.879
-    ]
-   ]
-  },
-  "L74": {
-   "text": "The rope went slack, and slid up into the dark.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.19,
-   "onset": 0.172,
-   "end": 1.983,
-   "chunks": [
-    [
-     0.172,
-     0.862
-    ],
-    [
-     0.914,
-     1.301
-    ],
-    [
-     1.301,
-     1.983
-    ]
-   ]
-  },
-  "L75": {
-   "text": "Every rope has two ends. Mine was never loose.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.414,
-   "onset": 0.172,
-   "end": 2.224,
-   "chunks": [
-    [
-     0.172,
-     0.509
-    ],
-    [
-     0.509,
-     1.103
-    ],
-    [
-     1.181,
-     1.724
-    ],
-    [
-     1.724,
-     2.224
-    ]
-   ]
-  },
-  "L76": {
-   "text": "Every Thursday I thought I was alone.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.948,
-   "onset": 0.172,
-   "end": 1.759,
-   "chunks": [
-    [
-     0.172,
-     0.776
-    ],
-    [
-     0.776,
-     1.026
-    ],
-    [
-     1.026,
-     1.759
-    ]
-   ]
-  },
-  "L77": {
-   "text": "The next Thursday I tied in.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.672,
-   "onset": 0.155,
-   "end": 1.483,
-   "chunks": [
-    [
-     0.155,
-     0.707
-    ],
-    [
-     0.707,
-     1.483
-    ]
-   ]
-  },
-  "L78": {
-   "text": "And I handed Sam the other end.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.741,
-   "onset": 0.155,
-   "end": 1.534,
-   "chunks": [
-    [
-     0.155,
-     0.612
-    ],
-    [
-     0.612,
-     0.819
-    ],
-    [
-     0.819,
-     1.534
-    ]
-   ]
-  },
-  "L79": {
-   "text": "She checked my rope twice.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.5,
-   "onset": 0.172,
-   "end": 1.293,
-   "chunks": [
-    [
-     0.172,
-     0.586
-    ],
-    [
-     0.586,
-     1.293
-    ]
-   ]
-  },
-  "L80": {
-   "text": "I climbed slowly this time.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.621,
-   "onset": 0.155,
-   "end": 1.431,
-   "chunks": [
-    [
-     0.155,
-     0.793
-    ],
-    [
-     0.793,
-     1.431
-    ]
-   ]
-  },
-  "L81": {
-   "text": "At the top I looked up.",
+  "L52": {
+   "text": "That's all a belay is.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9476000000000001,
    "dur": 1.483,
-   "onset": 0.172,
-   "end": 1.259,
+   "onset": 0.19,
+   "end": 1.276,
    "chunks": [
     [
-     0.172,
-     0.578
+     0.19,
+     0.474
     ],
     [
-     0.578,
-     1.259
+     0.474,
+     1.276
     ]
    ]
   },
-  "L82": {
-   "text": "The ceiling was empty.",
+  "L53": {
+   "text": "And halfway up the wall, we met.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.466,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.862
+    ],
+    [
+     0.888,
+     1.414
+    ]
+   ]
+  },
+  "L54": {
+   "text": "The right way up. She was smiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
    "onset": 0.172,
-   "end": 1.276,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.672
+    ],
+    [
+     0.724,
+     1.534
+    ]
+   ]
+  },
+  "L55": {
+   "text": "In this town, when you fall, the one who loves you most goes up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.534,
    "chunks": [
     [
      0.172,
      0.569
     ],
     [
-     0.569,
-     1.276
+     0.595,
+     1.103
+    ],
+    [
+     1.172,
+     1.431
+    ],
+    [
+     1.431,
+     1.931
+    ],
+    [
+     1.931,
+     2.534
     ]
    ]
   },
-  "L83": {
-   "text": "Just holds and old beams.",
+  "L56": {
+   "text": "So next time you fall, look up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.638,
+   "dur": 1.621,
    "onset": 0.172,
-   "end": 1.448,
+   "end": 1.414,
    "chunks": [
     [
      0.172,
-     0.638
+     0.56
     ],
     [
-     0.638,
-     1.448
-    ]
-   ]
-  },
-  "L84": {
-   "text": "I looked down. Sam nodded.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.569,
-   "onset": 0.172,
-   "end": 1.362,
-   "chunks": [
-    [
-     0.172,
-     0.586
-    ],
-    [
-     0.629,
-     1.362
-    ]
-   ]
-  },
-  "L85": {
-   "text": "And I let go on purpose.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.534,
-   "onset": 0.155,
-   "end": 1.345,
-   "chunks": [
-    [
-     0.155,
-     0.603
-    ],
-    [
-     0.603,
-     1.345
-    ]
-   ]
-  },
-  "L86": {
-   "text": "The rope went tight. She leaned back.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.172,
-   "end": 1.586,
-   "chunks": [
-    [
-     0.172,
-     0.741
-    ],
-    [
-     0.802,
-     1.586
-    ]
-   ]
-  },
-  "L87": {
-   "text": "She caught me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.069,
-   "onset": 0.19,
-   "end": 0.862,
-   "chunks": [
-    [
-     0.19,
+     0.56,
      0.862
-    ]
-   ]
-  },
-  "L88": {
-   "text": "She lowered me slowly, and the rope was warm for once.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.603,
-   "onset": 0.19,
-   "end": 2.414,
-   "chunks": [
-    [
-     0.19,
-     0.612
     ],
     [
-     0.612,
-     1.052
-    ],
-    [
-     1.121,
-     1.439
-    ],
-    [
-     1.439,
-     1.793
-    ],
-    [
-     1.793,
-     2.414
-    ]
-   ]
-  },
-  "L89": {
-   "text": "Something held me at the top of the wall.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.862,
-   "onset": 0.172,
-   "end": 1.672,
-   "chunks": [
-    [
-     0.172,
-     0.724
-    ],
-    [
-     0.724,
-     1.043
-    ],
-    [
-     1.043,
-     1.672
-    ]
-   ]
-  },
-  "L90": {
-   "text": "Now it's Sam.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.138,
-   "onset": 0.19,
-   "end": 0.931,
-   "chunks": [
-    [
-     0.19,
-     0.931
+     0.897,
+     1.414
     ]
    ]
   }

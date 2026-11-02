@@ -1,27 +1,30 @@
-"""Top Rope (ep30): a climbing wall built inside a tall old brick mill, and the Headstander. Built from kit.py's
-parts (nothing here is shared with another story's set). There is no text anywhere in it: no signs, grades or brands.
+"""Top Rope (ep30, redo): a climbing wall built inside a tall old brick mill. Built from kit.py's parts (nothing here
+is shared with another story's set). There is no text anywhere in it: no signs, grades or brands.
 
 Coordinates (metres): the floor is z = 0. The climbing wall is the plane y = 0 (the panels, x -2.6 .. 2.6, z 0 .. 9.8),
 and the room is on the -y side, so the camera usually looks toward +y. A climber faces the wall, i.e. yaw 180. At
 z = 9.8 the wall meets the overhang roof, a 3 m slab (y -3 .. 0) whose underside is the "ceiling" of holds. The
 top hold is at TOP_HOLD (z 8.35), the anchor plate and ring at x = ANCHOR_X (z about 8.9), the grey auto-belay box
-at x = +0.55 with the red tag hanging from it.
+at x = +0.4. The crash mats are z 0.3 high over x +-3.3.
 
-THE HEADSTANDER: an ordinary blocky person, its down set the wrong way. It is a rig.Character built once here
-(`story["creature"]` is its spec) and flipped over (a half turn about x) so its soles stand flat on the roof's
-underside, arms hanging toward the ceiling. Its whole body is chalk-dust lilac and matte, with a black harness round
-the waist, and a drawn grin that, seen from below, reads as a frown. It is never seen moving: a "head" cue names its
-POSE (where it stands) and the story only ever cuts from one pose to the next. Its key is a lamp from below and a cold
-blue rim from the windows (see `looks`), its eyes are the brightest thing on it.
+THE FIGURE ON THE CEILING is Mum: a second rig.Character ("ceil", built from the cast's `mum` spec) flipped over (a half
+turn about x) so her soles stand flat on the roof's underside. The `head` cue names her POSE (where she stands) and
+the story only ever cuts from one pose to the next. While she is up there the real `mum` is hidden. Her key is a lamp
+from below and a cold blue rim from the windows (see `looks`); her eyes are the brightest thing on her.
 
 Cues read here (all optional; times from the timeline):
 - head: {"pose": a name in POSES} or {"hidden": true}
-- lamps: {"to": 0..1, "dur": s} the iron lamps' level, ramped from where it was. flood: the same for the floodlights.
-- rope: {"mode": "me" | "creature" | "sam" | "end_up" | "end_down" | "none"} what the rope joins:
-  me = my harness to the anchor ring and up to the roof; creature = the same, and on to its waist;
-  sam = my harness to the ring and down to Sam's harness; end_up / end_down = the free end sliding.
+- lamps / flood: {"to": 0..1, "dur": s} the level of the iron lamps / floodlights, ramped from where it was.
+- bench: {"spot": "home" | "t1" | "t2" | "t3" | "lip"} where Mum's bench stands (flask, cup and tape roll go with it)
+- sit: {"who": name, "on": bool} legs straight out forward, as in the game's sit pose (chairs and benches)
+- ring: {"who": name | "bench", "on": bool, "level": 0..1} the amber lift ring on the floor where that person stood when it
+  came on; it ramps on over 0.4 s and off over 0.6 s. The person's rise itself is an acting z key (a "lift").
+- mum_dust: {"hair": bool, "soles": bool} lilac dust on the top of Mum's bun / the soles of her shoes
+- harness: {"on": bool} Mum's navy harness
+- prints: {"lip": bool, "all": bool} the bare shoe prints in the roof's lilac dust
+- rope: {"mode": "me" | "offer" | "mum" | "none"}: me = my harness to the anchor ring and up; offer = a rope end laid
+  over Mum's forearm and down to the mat; mum = Mum's harness up through the ring and down to mine.
 - tag: {"swing": amplitude in degrees}
-- coil: {"on": bool} the rope end lying on the mat (the lilac-dusted end)
 Story keys: "looks": {shot id: {"lamps": g, "flood": g, "key": [pos, aim, watts], "rim": [...], "fill": g}}.
 """
 
@@ -44,15 +47,17 @@ LILAC = "#b9a3d9"
 ROPE_C = "#d4cae4"
 S = rig.S
 
-# where the Headstander stands on the roof: x, y of its feet, yaw (degrees, 0 faces the wall), lean (degrees past a half
-# turn: + leans its body toward the room), head pitch
+# where Mum stands on the roof: x, y of her feet, yaw (degrees, 0 faces the wall), lean (degrees past a half turn)
 POSES = {
     "t1": {"pos": (0.15, -2.55), "yaw": 0, "lean": 0},        # three holds back from the lip
     "t2": {"pos": (0.15, -1.75), "yaw": 0, "lean": 0},        # two holds back
     "t3": {"pos": (0.15, -1.05), "yaw": 0, "lean": 0},        # one hold back, right over my route
-    "lip": {"pos": (0.66, -0.4), "yaw": 125, "lean": 0},      # at my shoulder, face level with mine
-    "belay": {"pos": (0.66, -0.4), "yaw": 125, "lean": -22},  # leaning back from the lip, the rope tied round it
+    "lip": {"pos": (0.55, -0.55), "yaw": 90, "lean": 0},      # at my shoulder, face level with mine
 }
+# where the bench stands (centre x, y, z of its base); Mum sits 0.35 m left of its centre
+BENCH = {"home": (4.4, -4.6, 0.0), "t1": (0.5, -2.55, 0.3), "t2": (0.5, -1.75, 0.3), "t3": (0.5, -1.05, 0.3),
+         "lip": (0.9, -0.55, 0.3)}
+RING_C = "#ff9a26"
 
 
 def _ss(x):
@@ -213,26 +218,68 @@ def build(kit, story, tl):
     kit.box("tag", (0.13, 0.02, 0.21), (0, 0, -0.24), kit.plastic("#c8322a", 0.55, spec=0.2), tag, bevel=0.008)
     ctx["tag"] = tag
 
-    # --- the base: crash mats, bench, chalk bucket, a coil of rope, the lilac-dusted rope end
+
+    # --- the base: crash mats, Mum's bench (it moves), chalk bucket, a coil of rope, a chair across the hall
     kit.box("mat", (6.6, 3.6, 0.3), (0, -1.9, 0.15), mat_blue, bevel=0.04)
     kit.box("matb", (6.6, 3.0, 0.3), (0, -5.1, 0.15), mat_blue, bevel=0.04)
-    kit.box("benchs", (1.9, 0.5, 0.08), (4.4, -4.6, 0.46), timber)
+    bench = kit.empty("bench", BENCH["home"])
+    kit.box("benchs", (1.9, 0.5, 0.08), (0, 0, 0.46), timber, bench)
     for sx in (-0.8, 0.8):
-        kit.box(f"benchl{sx}", (0.1, 0.45, 0.45), (4.4 + sx, -4.6, 0.22), timber)
+        kit.box(f"benchl{sx}", (0.1, 0.45, 0.45), (sx, 0, 0.22), timber, bench)
+    kit.cyl("tape", 0.06, 0.04, (0.8, 0.0, 0.52), kit.plastic("#e8e2d0", 0.8), bench, n=16)
+    kit.cyl("flask", 0.055, 0.24, (0.55, 0.05, 0.62), kit.plastic("#1f4a33", 0.4, spec=0.3), bench, n=16)
+    kit.cyl("flaskcap", 0.058, 0.05, (0.55, 0.05, 0.765), kit.plastic("#b8bcc0", 0.35, spec=0.4), bench, n=16)
+    kit.cyl("cup", 0.045, 0.085, (0.33, 0.0, 0.545), kit.plastic("#e6e0d0", 0.6), bench, n=16)
+    ctx["bench"] = bench
+    # a plain wooden chair across the hall, for his_mum
+    CH = (-3.8, -7.0)
+    kit.box("chair.seat", (0.52, 0.5, 0.06), (CH[0], CH[1], 0.47), timber)
+    kit.box("chair.back", (0.52, 0.06, 0.55), (CH[0], CH[1] + 0.22, 0.8), timber)
+    for sx in (-0.22, 0.22):
+        for sy in (-0.2, 0.2):
+            kit.box(f"chair.leg{sx}{sy}", (0.05, 0.05, 0.45), (CH[0] + sx, CH[1] + sy, 0.225), timber)
     kit.cyl("bucket", 0.22, 0.4, (3.3, -4.9, 0.2), kit.plastic("#ddd9cf", 0.8), n=20)
     kit.cyl("coil", 0.34, 0.14, (-4.6, -4.4, 0.07), rope_m, n=24)
     kit.cyl("coil2", 0.2, 0.15, (-4.6, -4.4, 0.08), kit.plastic("#222222", 0.9), n=16)
-    coil = []
-    for k in range(5):
-        o = kit.cyl(f"coilend{k}", 0.026, 1.0, (0, 0, -9), kit.emit("#a07bd9", 0.55), n=8)
-        coil.append(o)
-    ctx["coil"] = coil
-    kit.box("phone", (0.075, 0.155, 0.012), (1.9, -3.55, 0.306), kit.emit("#bfe0ff", 2.2), rot=(0, 0, 0.4))
-    kit.cyl("tape", 0.06, 0.04, (4.0, -4.6, 0.52), kit.plastic("#e8e2d0", 0.8), n=16)
     # --- the rope: a pool of thin rods between points
     for k in range(7):
         ctx["rope"].append(kit.cyl(f"rope{k}", 0.016, 1.0, (0, 0, -9), rope_m, n=8))
         ctx["rope"][-1].hide_render = True
+
+    # --- lilac dust on the roof's underside: thin matte tiles 1.2 cm proud, patchy, never glowing
+    dust = kit.plastic(LILAC, 0.97, spec=0.02)
+    k = 0
+    for gx in range(-6, 7):
+        for gy in range(0, 8):
+            x, y = gx * 0.4, -0.2 - gy * 0.37
+            r = (math.sin(k * 12.9898 + 4.1) * 43758.5453) % 1.0
+            k += 1
+            keep_clear = -0.35 < x < 1.0 and y > -3.0
+            if r < 0.28 and not keep_clear:
+                continue
+            kit.box(f"dust{k}", (0.43 + 0.05 * r, 0.4 + 0.04 * r, 0.012), (x, y, ROOF_Z - 0.006 - 0.0004 * (k % 5)), dust)
+    # the bare shoe prints (a flat bit of the roof panel showing through the dust)
+    bare = kit.plastic("#2e3832", 0.8, spec=0.1)
+    ctx["prints"] = {"lip": [], "all": []}
+    for key, grp in (("lip", "lip"), ("t1", "all"), ("t2", "all"), ("t3", "all")):
+        px, py = POSES[key]["pos"]
+        if key == "lip":      # facing -x: soles side by side along y
+            offs = ((0, -0.17), (0, 0.17))
+        else:
+            offs = ((-0.17, 0), (0.17, 0))
+        for n, (ox, oy) in enumerate(offs):
+            ob = kit.box(f"print.{key}{n}", (0.3, 0.38, 0.012), (px + ox, py + oy, ROOF_Z - 0.018), bare, bevel=0.05)
+            ob.hide_render = True
+            ctx["prints"][grp].append(ob)
+
+    # --- the amber lift rings (a glowing line on a soft pool of amber), one per person who can go up
+    ctx["rings"] = {}
+    for who in ("date", "his_mum", "me", "mum", "bench"):
+        em = kit.emit(RING_C, 3.0, name=f"ring line {who}")
+        em2 = kit.emit(RING_C, 0.6, name=f"ring pool {who}")
+        line = torus(kit, f"ringline.{who}", 0.45, 0.034, (0, 0, -9), em)
+        pool = kit.cyl(f"ringpool.{who}", 0.45, 0.004, (0, 0, -9), em2, n=36)
+        ctx["rings"][who] = (line, pool, em, em2)
 
     # --- lamps on chains, floodlights, the window fill
     lamp_pos = ((-5.2, -5.2), (5.2, -5.2), (0.0, -8.4), (-5.2, -11.4), (5.2, -11.4), (-3.0, -3.6), (3.0, -3.6))
@@ -261,23 +308,20 @@ def build(kit, story, tl):
     kit.aim(kit.LIGHTS["hall"]["obj"], (0.0, 0.0, 4.5))
     kit.light("glow", "POINT", (0, -1.4, 9.0), 0.0, "#ffd7a0", size=0.4)
 
-    # --- the Headstander
-    spec = story["creature"]
-    fdir = Path(bpy.app.tempdir or tempfile.gettempdir()) / "head-faces"
+    # --- Mum on the ceiling: a second rig.Character from the cast's `mum`, flipped. Silhouette lighting is in animate.
+    spec = dict(story["cast"]["mum"])
+    spec["face"] = dict(spec.get("ceil_face", spec["face"]), glow="#fffdf0")
+    fdir = Path(bpy.app.tempdir or tempfile.gettempdir()) / "ceil-faces"
     fdir.mkdir(parents=True, exist_ok=True)
-    c = rig.Character("head", spec, fdir)
+    c = rig.Character("ceil", spec, fdir)
     ctx["head"] = c
-    # powdery, matte; the face glows a little so the eyes are the brightest thing on it
-    for key, m in kit.MATS.items():
-        if key.startswith("plastic " + LILAC.lower()) or key.startswith("plastic " + LILAC):
-            m.node_tree.nodes["Principled BSDF"].inputs["Roughness"].default_value = 0.9
     hb = c.head_mat.node_tree
     pb = hb.nodes["Principled BSDF"]
     pb.inputs["Roughness"].default_value = 0.85
     em_in = pb.inputs.get("Emission Color")
     if em_in is not None:
         # only the bright pinpoints and whites of the face glow (skin and ink stay lit by the lamps): the eye highlights
-        # are the brightest thing on the creature
+        # are the brightest thing on her
         bw = hb.nodes.new("ShaderNodeRGBToBW")
         gt = hb.nodes.new("ShaderNodeMath")
         gt.operation = "GREATER_THAN"
@@ -290,42 +334,42 @@ def build(kit, story, tl):
         hb.links.new(gt.outputs["Value"], mul.inputs[0])
         hb.links.new(mul.outputs["Value"], pb.inputs["Emission Strength"])
         em_in.default_value = (1.0, 1.0, 1.0, 1.0)
-    black = kit.plastic("#141414", 0.6)
-    kit.box("head.harness", (2.12, 1.12, 0.42), (0, 0, 0.32), black, c.torso, bevel=0.05)
-    ctx["knot"] = kit.box("head.knot", (0.5, 0.45, 0.45), (-0.9, -0.62, 0.32), kit.plastic("#d4cae4", 0.9), c.torso, bevel=0.06)
     return ctx
 
 
 def _dress(kit, ctx):
-    """Harnesses and the chalk bag on the two climbers (made by bl_story before the first frame)."""
+    """Harnesses and the chalk bag on the two climbers, Mum's dust and soles (made by bl_story before the first frame)."""
     if ctx["extras"]:
         return
     ctx["extras"] = True
     obs = bpy.data.objects
-    spec = {"me": ("#cdb98e", True), "sam": ("#26344f", False)}
+    lil = kit.plastic(LILAC, 0.97, spec=0.02)
+    spec = {"me": ("#cdb98e", True), "mum": ("#26344f", False)}
+    ctx["mum_harness"] = []
     for who, (hc, bag) in spec.items():
         tor = obs.get(f"{who}.torso")
         if tor is None:
             continue
         hm = kit.plastic(hc, 0.7)
-        kit.box(f"{who}.harness", (2.1, 1.1, 0.42), (0, 0, 0.28), hm, tor, bevel=0.05)
+        parts = [kit.box(f"{who}.harness", (2.1, 1.1, 0.42), (0, 0, 0.28), hm, tor, bevel=0.05)]
         for sx in (-1, 1):
             leg = obs.get(f"{who}.leg{sx}")
             if leg is not None:
-                kit.box(f"{who}.hloop{sx}", (1.04, 1.06, 0.3), (0, 0, -0.18), hm, leg, bevel=0.05)
-        if who == "me":
-            ctx["knots"] = [kit.box("me.knot", (0.62, 0.3, 0.5), (0.0, -0.66, 0.28), kit.plastic("#d4cae4", 0.9), tor, bevel=0.1),
-                            kit.box("me.knot2", (0.4, 0.32, 0.34), (0.1, -0.7, 0.28), kit.plastic("#c2b6d6", 0.9), tor, bevel=0.08)]
-        if who == "sam":
-            for sx in (-1, 1):
-                arm = obs.get(f"sam.arm{sx}")
-                if arm is not None:
-                    kit.box(f"sam.cuff{sx}", (1.02, 1.04, 0.4), (0, 0, -1.3), kit.plastic("#e6e6e0", 0.9), arm, bevel=0.05)
-            arm = obs.get("sam.arm-1")
-            ctx["tag2"] = kit.box("sam.tag", (0.26, 0.03, 0.38), (0, 0, -9), kit.plastic("#c8322a", 0.5), None, bevel=0.01)
+                parts.append(kit.box(f"{who}.hloop{sx}", (1.04, 1.06, 0.3), (0, 0, -0.18), hm, leg, bevel=0.05))
+        if who == "mum":
+            ctx["mum_harness"] = parts
         if bag:
             kit.box(f"{who}.bag", (0.8, 0.55, 0.8), (0.8, 0.8, 0.28), kit.plastic("#f2f0ea", 0.85), tor, bevel=0.1)
-            kit.box(f"{who}.bagt", (0.8, 0.5, 0.12), (0.8, 0.8, 0.74), kit.plastic("#d8d4c8", 0.85), tor, bevel=0.04)
+            kit.box(f"{who}.bagt", (0.8, 0.5, 0.12), (0.8, 0.5, 0.74), kit.plastic("#d8d4c8", 0.85), tor, bevel=0.04)
+    # Mum's dust (top of the bun) and lilac soles
+    hg = obs.get("mum.headg")
+    top = rig.faces.HEAD_H / 2
+    ctx["mum_dust_hair"] = kit.box("mum.dust", (0.4, 0.4, 0.07), (0, 0.15, top + 0.3 + 0.245), lil, hg, bevel=0.03)
+    ctx["mum_soles"] = []
+    for sx in (-1, 1):
+        leg = obs.get(f"mum.leg{sx}")
+        if leg is not None:
+            ctx["mum_soles"].append(kit.box(f"mum.sole{sx}", (0.9, 0.9, 0.05), (0, 0, -2.025), lil, leg, bevel=0.02))
 
 
 # ------------------------------------------------------------------------------------------------ animate
@@ -335,23 +379,50 @@ def _shot(tl, t):
     return next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
 
 
-def waist(who, tl, t):
-    s = acting.state(tl, who, t)
-    return V((s["x"], s["y"], s["z"] + 0.78))
+def bench_spot(tl, t):
+    cu = _last(_cues(tl, "bench"), t)
+    return BENCH[(cu or {}).get("spot", "home")]
+
+
+def _hide(root, on):
+    root.hide_render = on
+    for ob in root.children_recursive:
+        ob.hide_render = on
+
+
+def ring_level(cs, t):
+    v = 0.0
+    for c in cs:
+        if c["t"] > t:
+            break
+        tgt = c.get("level", 1.0) if c["on"] else 0.0
+        d = 0.4 if c["on"] else 0.6
+        u = _ss((t - c["t"]) / d)
+        if u < 1:
+            return v + (tgt - v) * u
+        v = tgt
+    return v
+
+
+def floor_z(x, y):
+    return 0.3 if (abs(x) < 3.25 and -6.55 < y < -0.12) else 0.0
 
 
 def place_head(kit, story, tl, t, ctx):
     c = ctx["head"]
     cu = _last(_cues(tl, "head"), t)
+    mum = bpy.data.objects.get("mum")
     if cu is None or cu.get("hidden"):
         c.pose(0, 0, -50, 0, hidden=True)
         ctx["head_state"] = None
         return
     p = POSES[cu["pose"]]
     x, y = p["pos"]
-    c.pose(x, y, ROOF_Z - 0.0, math.radians(p["yaw"]), 0, (0, 0), (0, 0), 0, cu.get("pitch", 0.0), math.pi + math.radians(p["lean"]),
-           0, "grin", 0.0, (0, 0), 0.0, False)
+    c.pose(x, y, ROOF_Z, math.radians(p["yaw"]), 0, (0, 0), (0.06, 0.06), cu.get("yaw_head", 0.0), cu.get("pitch", 0.0),
+           math.pi + math.radians(p["lean"]), 0, cu.get("expr", "smile"), 0.0, (0, 0), 0.0, False)
     ctx["head_state"] = (x, y, p["yaw"])
+    if mum is not None:       # while she is up there, she is not on the bench
+        _hide(mum, True)
 
 
 def animate(kit, story, tl, t, ctx):
@@ -365,64 +436,81 @@ def animate(kit, story, tl, t, ctx):
     amp = (sw or {}).get("swing", 3.0)
     ctx["tag"].rotation_euler = (math.radians(amp * math.sin(t * 2.1)), math.radians(amp * 0.6 * math.sin(t * 1.3 + 1)), 0)
 
-    for k in ctx.get("knots", []):
-        k.hide_render = not (_last(_cues(tl, "knot"), t) or {}).get("on", False)
-    if "tag2" in ctx:
-        on2 = (_last(_cues(tl, "tag2"), t) or {}).get("on", False)
-        ctx["tag2"].hide_render = not on2
-        sm = acting.state(tl, "sam", t)
-        ctx["tag2"].location = (sm["x"] - 0.5, sm["y"] - 0.8, sm["z"] + 1.12)
-        ctx["tag2"].rotation_euler = (0.25, 0, 0.2)
+    # sitting: legs straight out forward (benches and the chair)
+    sits = {}
+    for cu in _cues(tl, "sit"):
+        if cu["t"] <= t + 1e-9:
+            sits[cu["who"]] = cu["on"]
+    for who, on in sits.items():
+        if on:
+            for sx in (-1, 1):
+                ob = bpy.data.objects.get(f"{who}.leg{sx}")
+                if ob is not None:
+                    ob.rotation_euler = (-1.5708, 0, 0)
+
+    # Mum's bench, flask and cup go to where it is this Thursday
+    bx, by, bz = bench_spot(tl, t)
+    ctx["bench"].location = (bx, by, bz)
+
+    # Mum's dust, soles, harness
+    md = _last(_cues(tl, "mum_dust"), t) or {}
+    ctx["mum_dust_hair"].hide_render = not md.get("hair", False)
+    for s in ctx["mum_soles"]:
+        s.hide_render = not md.get("soles", False)
+    hon = (_last(_cues(tl, "harness"), t) or {}).get("on", False)
+    for p in ctx["mum_harness"]:
+        p.hide_render = not hon
+    pr = _last(_cues(tl, "prints"), t) or {}
+    for key in ("lip", "all"):
+        for ob in ctx["prints"][key]:
+            ob.hide_render = not pr.get(key, False)
+
+    # the lift rings
+    for who, (line, pool, em, em2) in ctx["rings"].items():
+        cs = [c for c in _cues(tl, "ring") if c["who"] == who]
+        lv = ring_level(cs, t)
+        on_cues = [c for c in cs if c["on"] and c["t"] <= t + 1e-9]
+        if lv < 0.004 or not on_cues:
+            line.hide_render = pool.hide_render = True
+            continue
+        c0 = on_cues[-1]
+        if who == "bench":
+            x, y = bench_spot(tl, c0["t"])[:2]
+            x -= 0.35
+        else:
+            s0 = acting.state(tl, who, c0["t"])
+            x, y = s0["x"], s0["y"]
+        fz = floor_z(x, y)
+        line.location = (x, y, fz + 0.045)
+        pool.location = (x, y, fz + 0.012)
+        line.hide_render = pool.hide_render = False
+        for m, k in ((em, 3.0), (em2, 0.6)):
+            for n in m.node_tree.nodes:
+                if n.type == "EMISSION":
+                    n.inputs["Strength"].default_value = k * lv
+
     # the rope
     mode = (_last(_cues(tl, "rope"), t) or {}).get("mode", "me")
     me = acting.state(tl, "me", t)
+    mu = acting.state(tl, "mum", t)
     ring = V((ANCHOR_X, -0.2, ANCHOR_Z + 0.1))
     roof = V((ANCHOR_X, -0.14, ROOF_Z - 0.06))
-    hip_me = V((me["x"] - 0.4, me["y"], me["z"] + 0.78))
     pts = []
-    hs = ctx.get("head_state")
-    kpos = None
-    if hs:
-        bpy.context.view_layer.update()
-        kpos = ctx["knot"].matrix_world.translation.copy()
-    if mode in ("me", "creature"):
-        pts = [hip_me, ring, roof]
-        if mode == "creature" and hs:
-            pose = _last(_cues(tl, "head"), t)["pose"]
-            hx, hy = POSES[pose]["pos"]
-            pts += [V((kpos.x, kpos.y, ROOF_Z - 0.35)), kpos]
-    elif mode == "sam":
-        sm = acting.state(tl, "sam", t)
-        hip_sam = V((sm["x"], sm["y"] + 0.15, sm["z"] + 0.8))
-        pts = [hip_sam, ring, hip_me]
-    elif mode == "gathered":
-        hx, hy = POSES["belay"]["pos"]
-        pts = [ring, roof, V((hx - 0.15, hy + 0.1, ROOF_Z - 0.35)), V((hx - 0.2, hy, ROOF_Z - 0.95))]
-    elif mode in ("end_up", "end_down"):
-        cu = _last(_cues(tl, "rope"), t)
-        u = _ss((t - cu["t"]) / cu.get("dur", 1.0))
-        u = u if mode == "end_up" else 1 - u
-        hx, hy = POSES["belay"]["pos"]
-        end = V((ANCHOR_X - 0.6, -1.6, 0.4)).lerp(V((ANCHOR_X, -0.2, ANCHOR_Z)), u)
-        pts = [end, ring, roof, V((hx - 0.15, hy + 0.1, ROOF_Z - 0.35)), V((hx - 0.2, hy, ROOF_Z - 0.95))]
-        if u > 0.01 and mode == "end_up":
-            pts = [end, ring, roof, V((hx - 0.15, hy + 0.1, ROOF_Z - 0.35)), V((hx - 0.2, hy, ROOF_Z - 0.95))]
+    if mode == "me":
+        pts = [V((me["x"] - 0.4, me["y"], me["z"] + 0.78)), ring, roof]
+    elif mode == "mum":
+        pts = [V((mu["x"], mu["y"] - 0.2, mu["z"] + 0.8)), ring, V((me["x"], me["y"] - 0.2, me["z"] + 0.8))]
+    elif mode == "offer":
+        pts = [V((mu["x"] - 0.15, mu["y"] - 0.4, mu["z"] + 1.0)), V((mu["x"] - 0.3, mu["y"] - 0.55, mu["z"] + 0.45)),
+               V((mu["x"] - 0.7, mu["y"] - 0.8, 0.33)), V((mu["x"] - 1.2, mu["y"] - 0.7, 0.33))]
     for k, ob in enumerate(ctx["rope"]):
         if k < len(pts) - 1:
             seg_between(ob, pts[k], pts[k + 1])
         else:
             ob.hide_render = True
 
-    # the lilac-dusted rope end on the mat
-    on = (_last(_cues(tl, "coil"), t) or {}).get("on", False)
-    cpts = [(-1.4, -2.4), (-1.0, -2.1), (-0.5, -2.2), (-0.1, -2.0), (0.3, -2.3), (0.7, -2.1)]
-    for k, ob in enumerate(ctx["coil"]):
-        if on and k < len(cpts) - 1:
-            seg_between(ob, (cpts[k][0], cpts[k][1], 0.33), (cpts[k + 1][0], cpts[k + 1][1], 0.33))
-        else:
-            ob.hide_render = True
-
     # lights
+    hs = ctx.get("head_state")
     lamps = level(_cues(tl, "lamps"), t, 1.0) * look.get("lamps", 1.0)
     flood = level(_cues(tl, "flood"), t, 1.0) * look.get("flood", 1.0)
     over = {k: lamps for k in kit.LIGHTS if k.startswith("lamp")}
@@ -435,7 +523,6 @@ def animate(kit, story, tl, t, ctx):
         spec = look.get(key)
         if spec is None and hs and nm != "cfill":
             hx, hy, hyaw = hs
-            head_c = V((hx, hy, ROOF_Z - 1.55))
             if nm == "ckey":
                 spec = [[hx - 0.9, hy - 1.4, 6.9], [hx, hy, ROOF_Z - 1.2], 150.0]
             else:

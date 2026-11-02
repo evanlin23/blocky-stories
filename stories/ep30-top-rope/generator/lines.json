@@ -12,8 +12,12 @@
     "when you fall,"
    ],
    [
-    "the one who LOVES you most",
-    "the one who loves you most"
+    "the one who",
+    "the one who"
+   ],
+   [
+    "LOVES you most",
+    "loves you most"
    ],
    [
     "goes UP.",
@@ -26,8 +30,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "He comes down SOFT.",
-    "He comes down soft."
+    "He comes",
+    "He comes"
+   ],
+   [
+    "down SOFT.",
+    "down soft."
    ],
    [
     "She goes up",
@@ -35,7 +43,7 @@
    ],
    [
     "a METRE.",
-    "a metre."
+    "a meter."
    ]
   ]
  },
@@ -94,8 +102,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "She won't even stand",
-    "She won't even stand"
+    "She won't",
+    "She won't"
+   ],
+   [
+    "even stand",
+    "even stand"
    ],
    [
     "on a CHAIR.",
@@ -122,8 +134,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "That's how I KNOW.",
-    "That's how I know."
+    "That's how",
+    "That's how"
+   ],
+   [
+    "I KNOW.",
+    "I know."
    ]
   ]
  },
@@ -146,8 +162,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And when I FALL,",
-    "And when I fall,"
+    "And when",
+    "And when"
+   ],
+   [
+    "I FALL,",
+    "I fall,"
    ],
    [
     "I've never SEEN",
@@ -178,8 +198,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I never look DOWN",
-    "I never look down"
+    "I never",
+    "I never"
+   ],
+   [
+    "look DOWN",
+    "look down"
    ],
    [
     "on the wall.",
@@ -210,8 +234,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The rope CAUGHT me.",
-    "The rope caught me."
+    "The rope",
+    "The rope"
+   ],
+   [
+    "CAUGHT me.",
+    "caught me."
    ],
    [
     "I looked UP.",
@@ -256,12 +284,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "A knot of HAIR",
-    "A knot of hair"
+    "A knot",
+    "A knot"
    ],
    [
-    "hung off its head",
-    "hung off its head"
+    "of HAIR",
+    "of hair"
+   ],
+   [
+    "hung off",
+    "hung off"
+   ],
+   [
+    "its head",
+    "its head"
    ],
    [
     "like a WEIGHT.",
@@ -292,12 +328,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "The box LOWERED me,",
-    "The box lowered me,"
+    "The box",
+    "The box"
    ],
    [
-    "slower than a MACHINE",
-    "slower than a machine"
+    "LOWERED me,",
+    "lowered me,"
+   ],
+   [
+    "slower than",
+    "slower than"
+   ],
+   [
+    "a MACHINE",
+    "a machine"
    ],
    [
     "should be.",
@@ -324,8 +368,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum was on her BENCH",
-    "Mum was on her bench"
+    "Mum was on",
+    "Mum was on"
+   ],
+   [
+    "her BENCH",
+    "her bench"
    ],
    [
     "with her FLASK.",
@@ -338,8 +386,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "There was lilac DUST",
-    "There was lilac dust"
+    "There was",
+    "There was"
+   ],
+   [
+    "lilac DUST",
+    "lilac dust"
    ],
    [
     "in her HAIR.",
@@ -366,8 +418,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "It was one hold",
-    "It was one hold"
+    "It was",
+    "It was"
+   ],
+   [
+    "one hold",
+    "one hold"
    ],
    [
     "CLOSER.",
@@ -380,16 +436,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Its arms hung UP",
-    "Its arms hung up"
+    "Its arms",
+    "Its arms"
+   ],
+   [
+    "hung UP",
+    "hung up"
    ],
    [
     "at the ceiling,",
     "at the ceiling,"
    ],
    [
-    "like that was DOWN.",
-    "like that was down."
+    "like that",
+    "like that"
+   ],
+   [
+    "was DOWN.",
+    "was down."
    ]
   ]
  },
@@ -420,8 +484,12 @@
     "Mum asked"
    ],
    [
-    "to hold my ROPE.",
-    "to hold my rope."
+    "to hold",
+    "to hold"
+   ],
+   [
+    "my ROPE.",
+    "my rope."
    ]
   ]
  },
@@ -434,8 +502,12 @@
     "I said no."
    ],
    [
-    "I didn't want her",
-    "I didn't want her"
+    "I didn't",
+    "I didn't"
+   ],
+   [
+    "want her",
+    "want her"
    ],
    [
     "watching me FALL.",
@@ -452,12 +524,20 @@
     "The third Thursday"
    ],
    [
-    "she'd moved her BENCH",
-    "she'd moved her bench"
+    "she'd moved",
+    "she'd moved"
    ],
    [
-    "right under my ROUTE.",
-    "right under my route."
+    "her BENCH",
+    "her bench"
+   ],
+   [
+    "right under",
+    "right under"
+   ],
+   [
+    "my ROUTE.",
+    "my route."
    ]
   ]
  },
@@ -480,8 +560,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "It was one hold",
-    "It was one hold"
+    "It was",
+    "It was"
+   ],
+   [
+    "one hold",
+    "one hold"
    ],
    [
     "from the EDGE,",
@@ -498,8 +582,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I could hear it",
-    "I could hear it"
+    "I could",
+    "I could"
+   ],
+   [
+    "hear it",
+    "hear it"
    ],
    [
     "BREATHING,",
@@ -520,12 +608,20 @@
     "The fourth Thursday,"
    ],
    [
-    "at the top HOLD,",
-    "at the top hold,"
+    "at the",
+    "at the"
    ],
    [
-    "the lamps went OUT.",
-    "the lamps went out."
+    "top HOLD,",
+    "top hold,"
+   ],
+   [
+    "the lamps",
+    "the lamps"
+   ],
+   [
+    "went OUT.",
+    "went out."
    ]
   ]
  },
@@ -599,12 +695,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "A hand's width AWAY.",
-    "A hand's width away."
+    "A hand's",
+    "A hand's"
    ],
    [
-    "Its eyes were WET.",
-    "Its eyes were wet."
+    "width AWAY.",
+    "width away."
+   ],
+   [
+    "Its eyes",
+    "Its eyes"
+   ],
+   [
+    "were WET.",
+    "were wet."
    ]
   ]
  },
@@ -613,12 +717,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I shut my EYES",
-    "I shut my eyes"
+    "I shut",
+    "I shut"
    ],
    [
-    "the whole way DOWN.",
-    "the whole way down."
+    "my EYES",
+    "my eyes"
+   ],
+   [
+    "the whole",
+    "the whole"
+   ],
+   [
+    "way DOWN.",
+    "way down."
    ]
   ]
  },
@@ -627,12 +739,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "The lamps came BACK",
-    "The lamps came back"
+    "The lamps",
+    "The lamps"
    ],
    [
-    "as I touched the MAT.",
-    "as I touched the mat."
+    "came BACK",
+    "came back"
+   ],
+   [
+    "as I touched",
+    "as I touched"
+   ],
+   [
+    "the MAT.",
+    "the mat."
    ]
   ]
  },
@@ -641,8 +761,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum was on her BENCH,",
-    "Mum was on her bench,"
+    "Mum was on",
+    "Mum was on"
+   ],
+   [
+    "her BENCH,",
+    "her bench,"
    ],
    [
     "white as CHALK.",
@@ -684,15 +808,23 @@
   "chunks": [
    [
     "Two SHOE PRINTS",
-    "Two shoe prints"
+    "Two shoe prints,"
    ],
    [
-    "in the lilac DUST,",
-    "in the lilac dust,"
+    "in the",
+    "in the"
    ],
    [
-    "right over her BENCH.",
-    "right over her bench."
+    "lilac DUST,",
+    "lilac dust,"
+   ],
+   [
+    "right over",
+    "right over"
+   ],
+   [
+    "her BENCH.",
+    "her bench."
    ]
   ]
  },
@@ -720,8 +852,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "All the way UP.",
-    "All the way up."
+    "All the",
+    "All the"
+   ],
+   [
+    "way UP.",
+    "way up."
    ],
    [
     "Every TIME.",
@@ -738,8 +874,12 @@
     "She said,"
    ],
    [
-    "\"I didn't want you",
-    "\"I didn't want you"
+    "\"I didn't",
+    "\"I didn't"
+   ],
+   [
+    "want you",
+    "want you"
    ],
    [
     "to stop CLIMBING.\"",
@@ -760,8 +900,12 @@
     "her smile"
    ],
    [
-    "looks like a FROWN.",
-    "looks like a frown."
+    "looks like",
+    "looks like"
+   ],
+   [
+    "a FROWN.",
+    "a frown."
    ]
   ]
  },
@@ -774,8 +918,12 @@
     "The next Thursday"
    ],
    [
-    "Mum held my ROPE.",
-    "Mum held my rope."
+    "Mum held",
+    "Mum held"
+   ],
+   [
+    "my ROPE.",
+    "my rope."
    ]
   ]
  },
@@ -806,8 +954,12 @@
     "She went up"
    ],
    [
-    "as I came DOWN.",
-    "as I came down."
+    "as I",
+    "as I"
+   ],
+   [
+    "came DOWN.",
+    "came down."
    ]
   ]
  },
@@ -848,8 +1000,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The right way UP.",
-    "The right way up."
+    "The right",
+    "The right"
+   ],
+   [
+    "way UP.",
+    "way up."
    ],
    [
     "She was SMILING.",
@@ -870,8 +1026,12 @@
     "when you fall,"
    ],
    [
-    "the one who LOVES you most",
-    "the one who loves you most"
+    "the one who",
+    "the one who"
+   ],
+   [
+    "LOVES you most",
+    "loves you most"
    ],
    [
     "goes UP.",
@@ -884,8 +1044,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "So next time you FALL,",
-    "So next time you fall,"
+    "So next time",
+    "So next time"
+   ],
+   [
+    "you FALL,",
+    "you fall,"
    ],
    [
     "look UP.",
