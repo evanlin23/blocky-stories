@@ -148,7 +148,7 @@ SHOTS = [
     ("S49", "L42", "same frame, the sound stops", still((0.2, 9.45, 1.5), (-3.35, 9.45, 1.58), 46)),
     ("S50", "L43", "the lanterns fading back up over our stall", still((1.8, 10.0, 1.5), (-3.0, 10.0, 1.75), 27)),
     ("S51", "L44", "front on our stall: the Half behind our counter. Scare", still((1.5, 10.1, 1.5), (-3.2, 10.1, 1.65), 32)),
-    ("S52", "L45", "close two-shot: its flat side a hand's width from Bea's shoulder", still((0.3, 9.95, 1.55), (-3.35, 9.95, 1.5), 32)),
+    ("S52", "L45", "close two-shot: its flat side a hand's width from Bea's shoulder", still((0.3, 9.95, 1.55), (-3.35, 9.95, 1.5), 26)),
     ("S53", "L46", "wide: Bea and the Half filling the stall like two stallholders", still((2.0, 10.1, 1.45), (-3.3, 10.1, 1.35), 24)),
     ("S54", "L47", "Bea, very still, her eyes sliding toward me", still((0.0, 9.45, 1.6), (-3.35, 9.45, 1.6), 46)),
     ("S55", "L48", "the glyph on the front board", still(*BOARD)),
@@ -177,8 +177,8 @@ SHOTS = [
     ("S74", "L64.3", "long lens down the queue: at the very back a customer side on, empty air over its head",
      still((1.8, 9.0, 3.4), (-1.5, -1.7, 1.5), 85)),
     ("S75", "L65", "slow push in on it: the one eye toward our stall",
-     move(((1.8, 8.0, 2.7), (-1.5, -1.7, 1.5)), ((1.8, 6.0, 2.3), (-1.5, -1.7, 1.55)), 95)),
-    ("S76", "L66", "hold on it, side on, still", still((1.8, 6.0, 2.3), (-1.5, -1.7, 1.55), 95)),
+     move(((1.8, 9.2, 2.7), (-1.5, -1.7, 1.5)), ((1.8, 8.2, 2.3), (-1.5, -1.7, 1.55)), 100)),
+    ("S76", "L66", "hold on it, side on, still", still((1.8, 8.2, 2.3), (-1.5, -1.7, 1.55), 100)),
 ]
 
 shots = []

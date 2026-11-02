@@ -734,7 +734,7 @@ def build_lights(kit, ctx):
     kit.aim(ctx["shadowlamp"], (0.9, 5.5, 0.3))
     # the Half's lights follow the camera: a warm key from the side, a cool rim from behind it
     kit.light("under", "POINT", (-3.3, 9.9, 0.95), 100.0, LANTERN_GLOW, size=0.2)
-    kit.light("half_key", "SPOT", (0, 0, 1.5), 0.0, "#ffb060", spot=34, blend=0.5, size=0.05)
+    kit.light("half_key", "SPOT", (0, 0, 1.5), 0.0, "#ffcf9a", spot=34, blend=0.5, size=0.05)
     kit.light("half_rim", "SPOT", (0, 0, 1.8), 0.0, "#8fb0ff", spot=26, blend=0.5, size=0.05)
 
 
@@ -812,7 +812,7 @@ SHOT_COINS = {            # one shot's own faces (a different person in a differ
 EDGE = ("me", "me_hood", "me_office", "me_apron")
 HALF_SHOTS = {"S41", "S42", "S43", "S44", "S51", "S52", "S53", "S74", "S75", "S76"}
 HALF_FILL = 0.25
-COIN_SHOT = {"S20": (1.0, 0.6), "S01": (0.62, 0.5), "S02": (1.0, 0.5), "S03": (0.62, 0.5)}      # (scale, level): small, dark coins in the hook
+COIN_SHOT = {"S04": (1.0, 0.72), "S20": (1.0, 0.6), "S01": (0.62, 0.5), "S02": (1.0, 0.5), "S03": (0.62, 0.5)}      # (scale, level): small, dark coins in the hook
 
 
 def crowd_face(m, phase, queue):
@@ -866,7 +866,7 @@ def cool_level(m):
     if m >= 0.55:
         return full
     k = max(0.0, (m - 0.15) / 0.4)
-    return 0.17 + (full - 0.17) * k
+    return 0.27 + (full - 0.27) * k
 
 
 def this_camera(story, shot, t):
@@ -901,7 +901,7 @@ def animate(kit, story, tl, t, ctx):
             over[name] = m * fill
         elif name.startswith("lamp"):
             over[name] = m
-    over["cool"] = cool_level(m) * (0.5 if (sid in HALF_SHOTS or sid == "S36") else 1.0)
+    over["cool"] = cool_level(m) * (0.5 if (sid in HALF_SHOTS or sid == "S36") and sid not in ("S51", "S52", "S53") else 1.0)
     over["under"] = 1.0 if sid in ("S69", "S70") else 0.0
     # ---- one-time bits
     if not ctx.get("fitted"):
@@ -950,7 +950,7 @@ def animate(kit, story, tl, t, ctx):
             if "queue" in mem:
                 k = mem["queue"]
                 tab = QUEUE_OURS if which in ("ours", "ours_gap") else QUEUE_NOODLE
-                hide = k >= len(tab) or (which == "far" and 2 <= k <= 5) or (which == "ours_gap" and k >= 10)
+                hide = k >= len(tab) or (which == "far" and 2 <= k <= 5) or (which == "ours_gap" and (k >= 10 or k < 8))
                 if which in ("noodle", "far"):
                     pos = tab[min(k, len(tab) - 1)]
                     yaw = -90 if k == 0 else 180
