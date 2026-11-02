@@ -4,7 +4,7 @@
 - **Working title:** The dryer nobody started had a warm coat inside (the packager may change it, never to an imperative or a spoiler).
 - **Pitch:** #8 `wash-cycle` in `stories/ideas.md`. Setting, creature, first-line type and kind of warmth are kept.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 630 spoken words in 76 lines, all `narrator` in voice A, plus 1 pause beat (0.7 s).
+- **Word count:** 637 spoken words in 77 lines, all `narrator` in voice A, plus 3 pause beats (P02 0.9 s, P01 0.7 s, P03 0.8 s).
 - **Estimated length:** about 2:19 to 2:25. At 290 wpm the speech is about 2:10. The 0.12 s gaps add about 9 s, P01 0.7 s and the loop tail 0.25 s. If the retime lands under 2:15, add back "I read the same PAGE / TEN TIMES." after L31. If it lands over 2:30, L43 goes first, then L74.
 - **Shots:** 68 (S01 to S68).
 - **Name change:** the pitch's "Mr Amadi" is now **Arthur**, and he has no name at all until L68. "Amadi" risks Whisper spellings, and "Mr." reads as "mister" in Kokoro but comes back "Mr." from Whisper, which `asr` counts as a wrong word. "Arthur" is a common word in Whisper's training and Kokoro says it plainly. Until L68 he's "the old man".
@@ -46,7 +46,7 @@
 | L45 to P01 | chair six, then dark | the tubes ramp down over one held shot. In the near-dark it's a shape |
 | L48 to L58 | chair one, against the table edge | its head tipped back over the chair back, its face an inch from mine. Eyes go down to the coat (L51), to chair six and back (L53) |
 | L59 | chair one | it stays sitting as I stand. It never follows |
-| L69 to L76 | gone | chair five is just a chair |
+| L69 to L76 | gone | the chairs are just chairs |
 
 - **Test still:** L48, phone size: its upside-down-feeling face filling the top half of frame, my face in the lower third, the green collar between. Iterate until it frightens.
 
@@ -85,13 +85,13 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S03: rain on black glass from inside, the street a blur of cold light]
 - `L04` narrator: So I went / to the all-night LAUNDROMAT.
   - [S04: outside the shop at night, warm windows, rain, me with a bag. No sign text]
-- `L05` narrator: SIX orange CHAIRS / face the DRYERS.
+- `L05` narrator: A row of orange CHAIRS / faces the DRYERS.
   - [S05: wide down the row of six bolted orange chairs facing six dryer doors]
 - `L06` narrator: I sat BEHIND them / at the FOLDING TABLE.
   - [S06: reverse, me sitting at the near end of the table behind chair one]
 - `L07` narrator: That first night, / I came in SOAKED / to the SKIN.
   - [S07: me at the door, mustard hoodie dark with rain, dripping on the chequered floor]
-- `L08` narrator: There was ONE other person, / an OLD MAN / in chair SIX.
+- `L08` narrator: There was ONE other person, / an OLD MAN / in the END chair.
   - [S08: down the row, the old man small in chair six at the far end, watching his drum]
 - `L09` narrator: He had a grey JUMPER on. / That was ALL. / On a FREEZING NIGHT.
   - [S09: medium on him, grey cable-knit, no coat, the hook by the door empty behind me. Plant 1]
@@ -101,8 +101,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S11: me at the table, shoulders up, breath faint]
 - `L12` narrator: I'd only got UP once, / for CHANGE.
   - [S12: the change machine, steady light, coins rattling down. Cut away before any hand]
-- `L13` narrator: Then a DRYER / BUZZED / behind me.
-  - [S13: wide from behind me: the end dryer's light goes off. In the background the old man is walking back from the dryers to his towels at the table's far end. Plant 3, unnarrated]
+- `L13` narrator: Then a DRYER / BUZZED / across the ROOM.
+  - [S13: wide from behind me across the chairs to the dryers: the end dryer's light goes off. In the same wide, Arthur is walking back from the dryers to his towels at the table's far end. Plant 3, unnarrated]
 - `L14` narrator: I hadn't USED it. / The old man / was FOLDING TOWELS.
   - [S14: him at the far end of the table, folding, back half to me]
 - `L15` narrator: Inside was a COAT. / Dark GREEN WOOL, / still WARM.
@@ -149,6 +149,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S30: from my seat, the row: the old man in six, five empty, the Turned in four]
 - `L31` narrator: Its face / didn't BLINK.
   - [S31: the lore plant. Low from the floor, the underside of chair four's seat: six short laundry-blue strokes. Held 1.5 s, not narrated]
+- `L31b` narrator: I read the / same PAGE / TEN TIMES.
+  - [S31 held into S32]
 - `L32` narrator: ONE chair NEARER. / I never SAW it move.
   - [S32: close on its face over the chair back, a little bigger in frame than S25]
 - `L33` narrator: I thought, / it wants the COAT BACK.
@@ -180,6 +182,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S43: wide from my seat, it small at the far end, five empty chairs between us]
 - `L44` narrator: I let out a BREATH.
   - [S44: me, shoulders dropping]
+- `P02` pause: 0.9 s, no word.
+  - [S44 held]
 - `L45` narrator: Then the TUBES / began to FADE.
   - [S45: one held shot from my seat down the row. The tubes start their 1.0 s ramp down, a soft crackle in the hum]
 - `L46` narrator: Down to a brown GLOW.
@@ -196,10 +200,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S48: me, frozen, the green collar]
 - `L51` narrator: Its eyes / slid DOWN / to the COAT.
   - [S49: over its head, its gaze on the coat's buttons]
-- `L52` narrator: Then over to / chair SIX, / and BACK.
+- `L52` narrator: Then over to / HIS chair, / and BACK.
   - [S50: its face, eyes to the far end, the empty chair six soft behind]
 - `L53` narrator: Coat. / Chair. / Coat. / Like it was COUNTING.
   - [S51: alternating the coat and chair six, held, slow, no fast cutting]
+- `P03` pause: 0.8 s, no word.
+  - [S51 held]
 
 ## 05 The coat was his
 
@@ -211,7 +217,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S53: a soft replay of S13's wide, the old man walking back from the dryers. Slowed, slightly cooler]
 - `L56` narrator: While I was at the CHANGE MACHINE, / he put his COAT / in that DRYER.
   - [S54: replay of S12 from a wider angle: the old man at the end dryer behind me, the door closing. Cut away before any hand]
-- `L57` narrator: Then he sat / in a JUMPER / for a WEEK, / so I wouldn't ASK.
+- `L57` narrator: Then he sat / in a JUMPER / for DAYS, / so I wouldn't ASK.
   - [S55: his empty chair six, the jumper's grey fluff on the seat]
 - `L58` narrator: And now he had a COLD, / and his chair / was EMPTY.
   - [S56: back to the Turned's face, eyes on the coat]
@@ -220,9 +226,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - **Where:** the laundromat, then the stair and his door. **Shots:** 9.
 
-- `L59` narrator: I stood UP. / The Turned / didn't FOLLOW.
+- `L59` narrator: I stood UP. / It didn't / FOLLOW.
   - [S57: me standing, it staying in chair one, its face turning only with my coat. Music turns to C major here]
-- `L60` narrator: His last LOAD / sat FINISHED / in machine SIX.
+- `L60` narrator: His last LOAD / sat FINISHED / in the END MACHINE.
   - [S58: a front-loader, grey towels and jumpers resting in the drum]
 - `L61` narrator: I DRIED it. / I FOLDED it / the way he DOES, / CORNERS FIRST.
   - [S59: me at the table folding towels, the stack neat, a slow push]
@@ -245,9 +251,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - **Where:** the laundromat, a few nights later. **Shots:** 3 (S66, S67, S68).
 
-- `L69` narrator: Two nights LATER, / he was back in chair SIX.
+- `L69` narrator: ARTHUR sat / in his own CHAIR again.
   - [S66: the row from my seat, Arthur in six, the other five chairs empty and plain]
-- `L70` narrator: Chair FIVE / is just a CHAIR now.
+- `L70` narrator: The chairs / are just CHAIRS now.
   - [S66 held]
 - `L71` narrator: I pass him / his TOWELS.
   - [S67: the towels set on the table between us. Cut away before any hand]
@@ -282,5 +288,5 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **"LAUNDROMAT"** (L04) is LAWN-druh-mat. Whisper may split nothing. Fine.
 - **"Laundry-BLUE"** (L21) may come back "laundry blue". A spelling, not a mishear.
 - **"ARTHUR"** (L68) is plain, AR-thur.
-- **Homophones:** "TURNED" (L26) is said once as a name, could come back lower case, fine. "DOES" (L61) is the verb, "duz". "TOWELS" is two syllables. "STAIRS" and "stares" (L62). "SIX" is a number, `asr` maps digits.
+- **Homophones:** "TURNED" (L26) is said once as a name, could come back lower case, fine. "DOES" (L61) is the verb, "duz". "TOWELS" is two syllables. "STAIRS" and "stares" (L62). The number six is never spoken (the six-stroke tally stays picture only).
 - **L53 "Coat. / Chair. / Coat."** Three one-word beats, each its own caption. If Kokoro runs them together, give the line `tempo` 0.95.
