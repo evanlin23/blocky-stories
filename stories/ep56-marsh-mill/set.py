@@ -764,6 +764,20 @@ def animate(kit, story, tl, t, ctx):
         over["lfill"] = 0.0 if n < 40 else 170.0           # no cool fill: the face is warm from below, the moon only rims it
         over["moon"] = over["moon"] * 0.12
         over["moon2"] = over["moon2"] * 1.5
+    if sid == "S67":   # warm low bounce on the floury boots (constant for the shot, cut in/out)
+        L = kit.LIGHTS["lkey"]["obj"]
+        L.location = (MX + 0.9, MY - 1.3, 0.7)
+        kit.aim(L, (MX + 0.4, MY - 0.15, 0.1))
+        over["lkey"] = 700.0
+        over["lfill"] = 60.0
+    for _sx in (-1, 1):   # flour dusting on the boots, only in S67
+        _fl = bpy.data.objects.get(f"me.flour{_sx}")
+        if _fl is None:
+            _lg = bpy.data.objects.get(f"me.leg{_sx}")
+            if _lg is not None:
+                _fl = kit.box(f"me.flour{_sx}", (1.04, 1.06, 0.2), (0, 0.0, -1.9), kit.plastic("#e8e2d2", 0.95, name="boot_flour"), _lg, bevel=0.05)
+        if _fl is not None:
+            _fl.hide_render = sid != "S67"
     # ---- spill of light on the marsh from an open door at night
     ctx["spill"].hide_render = not (sid in ("S20", "S20b", "S59", "S11", "S74"))
     ctx["doorglow"].hide_render = not (sid in ("S11", "S20", "S20b", "S59", "S74"))

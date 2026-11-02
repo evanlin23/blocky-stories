@@ -250,7 +250,7 @@ sh("S39", 29, "L29", C([MX + 2.6, MY - 9.6, 1.7], [MX, MY - 3.8, 1.3], 28),
    {"me": P(MX + 0.4, MY - 5.8, 180, expr="worried")}, hand=0.006)
 sh("S40", 30, "L30", through(0.4, 3.0, 1.6, cz=1.6, dist=1.1, lens=26), {}, hand=0.003)
 sh("S41", 31, "L31", through(0.4, 3.0, 1.6, cz=1.6, dist=1.1, lens=26), {}, hand=0.003)
-sh("S42", 32, "L32", through(0.4, 3.0, 2.0, cz=1.7, dist=1.2, lens=26), {}, hand=0.003)
+sh("S42", 32, "L32", through(0.4, 3.0, 2.5, cz=1.35, dist=0.8, lens=24), {}, hand=0.003)
 sh("S43", 33, "L33", C([KX, KY - 1.4, 1.35], [KX, KY + 1.4, 1.15], 26),
    {"me": P(KX, KY + 1.4, 0, arms=[75, 0], expr="neutral", blink=False)}, hand=0.003)
 sh("S44", 34, "L34", C([MX + 1.5, MY - 20, 1.5], [MX, MY - 3, 2.5], 22),
