@@ -36,7 +36,9 @@
   "contrast": 1.05,
   "vignette": 0.3,
   "bloom": 0.22,
-  "grain": 0.01
+  "grain": 0.01,
+  "red_line": 0.75,
+  "red_lift_blue": 0.35
  },
  "cast": {
   "me": {
