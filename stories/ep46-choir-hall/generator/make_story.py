@@ -547,9 +547,9 @@ shot("L83", "close on Mum's ten lit beads",
      front((-3.7, -17.5), 90, 1.6, 1.5, 1.35, 34, -14),
      {"mum": P((-3.7, -17.5), 90, "smile")})
 shot("L84", "night, through the hall's high window: twelve heads in maroon",
-     still((HX + 0.2, -13.4, 4.2), (HX - 0.55, -7.0, 2.0), 19),
+     still((HX - 1.5, -17.0, 2.4), (HX - 2.7, -7.0, 1.9), 26),
      {**choir(), "grin": G(),
-      "me": P((HX - 0.9, -13.3), 180, "worried", walks=[("L84>", (HX - 0.6, -13.0))])}, fill=None)
+      "me": P((HX - 0.5, -9.0), 180, "worried", walks=[("L84>", (HX - 0.5, -8.9))])}, fill=[150, "#a8bce8"])
 
 # ------------------------------------------------------------------------------------------------ build the shots
 shots = []
