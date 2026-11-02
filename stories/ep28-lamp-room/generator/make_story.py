@@ -148,7 +148,7 @@ def POV(n, tgt, lens, push=0):
 # the lamp room: the cot, the lens, the glass
 COT_FACE = still([-1.3, -1.6, LF + 1.6], [-1.3, 0.4, LF + 1.38], 32)
 COT_WIDE = still([0.4, -1.7, LF + 1.5], [-1.3, 0.3, LF + 0.9], 28)
-SOCKS = still([0.6, -2.1, LF + 0.45], [-0.3, -1.15, LF + 0.2], 30)
+SOCKS = still([0.9, -2.5, LF + 0.55], [-0.3, -1.15, LF + 0.12], 24)
 PLATE_CAM = still([0.8, 0.34, 16.34], [2.4, 0.34, 16.34], 40)
 PLATE_C = [2.365, 0.34, 16.45]
 
@@ -198,9 +198,9 @@ shot("L23", "the glow fades", COT_FACE)
 shot("L24", "my socks on the clean boards, sand", SOCKS, hand=0.003)
 shot("L25", "through the glass: the beach far below", still([0.0, 1.8, LF + 1.7], [0.0, 180.0, LF - 3.0], 24))
 shot("L26", "kitchen: toast", still([KX + 2.15, 0.1, 1.5], [KX, 0.1, 1.0], 24))
-shot("L27", "close on Ines, looking", still([KX + 0.1, -1.05, 1.5], [KX, 0.95, 1.36], 34))
+shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
 shot("L27.1", "insert: my socks under the table", still([KX + 1.4, -0.5, 0.62], [KX, -0.2, 0.62], 38), hand=0.003)
-shot("L27.1+0.7", "close on Ines, the look", still([KX + 0.1, -1.05, 1.5], [KX, 0.95, 1.36], 34))
+shot("L27.1+0.7", "close on Ines, the look", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
 shot("L28", "close on me, misreading", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30))
 shot("L29", "me looking past her", still([KX + 0.9, 0.3, 1.5], [KX, -0.75, 1.38], 30))
 shot("L29.2", "the stair foot through the doorway: empty", still([KX + 1.2, -1.3, 1.35], [KX + 3.4, -1.3, 0.8], 24))
@@ -217,7 +217,7 @@ shot("L37.1", "the bolt slides", PLATE_CAM, hand=0)
 # 06 morning two
 shot("L38", "more sand on my socks", SOCKS, hand=0.003)
 shot("L39", "kitchen: Ines with two mugs", still([KX + 2.0, 1.2, 1.6], [KX, 0.2, 1.05], 24))
-shot("L40", "close on Ines: her eyes on my sandy socks, then me", still([KX + 0.1, -1.05, 1.5], [KX, 0.95, 1.36], 34))
+shot("L40", "close on Ines: her eyes on my sandy socks, then me", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
 # 07 night three
 shot("L41", "me in the camp bed, trying to stay awake", COT_WIDE)
 shot("L42", "buzz, glow, the rail: a coil of rope behind me", RF(5, d=2.2, lens=28))
@@ -235,7 +235,7 @@ shot("L50", "POV: the Upward one turn below", still([1.3, 0.0, Z4 + 1.55], [1.6,
 shot("L51", "tight on the crown face, the mouth wide",
      c([0, [1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 32], [1, [1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 36]),
      step=1, hand=0.004)
-shot("L52", "buzz: close on my face lit by the phone, terrified", RF(4, d=1.25, lens=34), step=1)
+shot("L52", "buzz: close on my face lit by the phone, terrified", RF(4, d=1.5, lens=32, tz=-0.3), step=1)
 shot("L53", "back to the crown face, held",
      still([1.3, 0.0, Z4 + 1.55], [1.6, 0.0, 3 * RISE + 1.78], 36), step=1, hand=0.003)
 shot("L54", "running up, one", still([0.0, -0.3, 10.1], [0.7, 0.4, 9.6], 18), step=1)
@@ -245,33 +245,33 @@ shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
 shot("L55", "kitchen, flat bright daylight", still([KX + 2.15, 0.6, 1.5], [KX, 0.1, 1.15], 24))
 shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.2, 1.0], 20))
-shot("L57", "Ines says goodnight at her door, lamp on", still([-0.4, -0.5, Z4 + 1.5], [1.7, -0.45, Z4 + 1.3], 24))
+shot("L57", "Ines says goodnight at her door, lamp on", still([-1.0, -0.6, Z4 + 1.6], [1.7, -0.45, Z4 + 1.25], 24))
 shot("L58", "me in the camp bed, listening", COT_WIDE)
 shot("L59", "the lamp room in the dark, rain settling", still([0.5, -2.0, LF + 1.8], [-0.8, 0.5, LF + 1.0], 22), rain=True)
 # 10 dawn
 SIT_ME, YAW_ME, SEAT_ME = sit_at(42)
 SIT_IN, YAW_IN, SEAT_IN = sit_at(40)
-shot("L60", "gold sun rises on my face, eyes open", still(local(SEAT_ME, YAW_ME, 1.35, -0.1, 1.45), local(SEAT_ME, YAW_ME, 0, 0, 1.2), 30))
-shot("L61", "wider: me slumped on a step in the sun", still(local(SEAT_ME, YAW_ME, 3.2, 0.8, 1.7), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 24))
+shot("L60", "gold sun rises on my face, eyes open", still(local(SEAT_ME, YAW_ME, 1.7, -0.1, 1.2), local(SEAT_ME, YAW_ME, 0, 0, 0.92), 30))
+shot("L61", "wider: me slumped on a step in the sun", still(local(SEAT_ME, YAW_ME, 3.0, 0.9, 1.6), local(SEAT_ME, YAW_ME, 0, 0, 0.8), 24))
 shot("L62", "below her door, open, the room empty", still([-1.5, -0.2, 8.4], [2.3, 0.6, 9.6], 24))
 shot("L63", "Ines asleep two steps down in the blanket",
-     still(local(SEAT_IN, YAW_IN, 2.0, -0.35, 1.6), local(SEAT_IN, YAW_IN, 0, 0, 1.1), 30))
+     still(local(SEAT_IN, YAW_IN, 2.0, -0.35, 1.4), local(SEAT_IN, YAW_IN, 0, 0, 0.85), 30))
 shot("L64", "her coat over my feet", still(local(SEAT_ME, YAW_ME, 0.5, 0.95, 1.1), local(SEAT_ME, YAW_ME, 0.85, 0, 0.1), 32), hand=0.004)
 shot("L65", "high: me, Ines, the stair winding down", still([-0.2, -0.4, 10.4], [-1.9, 1.2, 6.8], 22))
 shot("L66", "POV down the sunlit well: empty", still([-0.8, -0.9, 8.7], [0.0, 1.8, 0.2], 24), hand=0.004)
-shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 1.2, -0.3, 1.45), local(SEAT_ME, YAW_ME, 0, 0, 1.15), 34))
+shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 1.7, -0.3, 1.3), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 32))
 shot("L68", "memory: me walking down asleep",
      c([0, [0.2, -0.9, 8.2], [-1.6, 0.4, 7.9], 22], [1, [0.2, -0.9, 8.2], [-1.6, 0.4, 7.9], 22]), hand=0.004)
 shot("L69", "memory: the Upward on the step below the sleeping me",
      still([0.1, 0.4, 9.6], [-0.85, 1.47, 7.0 + 1.0], 28), hand=0.004)
-shot("L70", "memory: from Ines's door gap, me walking past", still([2.3, 0.7, Z4 + 1.45], [1.55, -0.15, Z4 + 1.2], 30))
+shot("L70", "memory: from Ines's door gap, me walking past", still([1.95, 0.95, Z4 + 1.5], [1.45, -0.4, Z4 + 1.25], 28))
 shot("L71", "memory: Ines frightened, phone glow", still([0.1, 0.55, Z4 + 1.55], [2.0, 0.55, Z4 + 1.4], 30))
 shot("L72", "memory: Ines worried and soft, me waking at the rail", still([-0.3, 0.0, Z4 + 1.6], [1.9, 0.0, Z4 + 1.3], 26))
 shot("L73", "dawn: Ines asleep in the blanket in the sun",
-     still(local(SEAT_IN, YAW_IN, 1.5, -0.3, 1.35), local(SEAT_IN, YAW_IN, 0, 0, 1.1), 32))
+     still(local(SEAT_IN, YAW_IN, 1.9, -0.3, 1.3), local(SEAT_IN, YAW_IN, 0, 0, 0.88), 32))
 shot("L74", "Ines opens her eyes, a small smile, lifts her phone",
-     still(local(SEAT_IN, YAW_IN, 1.4, 0.0, 1.35), local(SEAT_IN, YAW_IN, 0, 0, 1.15), 32))
-shot("L75", "close on me grinning at my phone", still(local(SEAT_ME, YAW_ME, 1.2, 0.0, 1.45), local(SEAT_ME, YAW_ME, 0, 0, 1.1), 34))
+     still(local(SEAT_IN, YAW_IN, 1.8, 0.0, 1.3), local(SEAT_IN, YAW_IN, 0, 0, 0.9), 32))
+shot("L75", "close on me grinning at my phone", still(local(SEAT_ME, YAW_ME, 1.7, 0.0, 1.3), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 32))
 shot("L76", "two-shot from above in full sun", still([0.3, -0.2, 9.9], [-1.7, 1.0, 6.9], 24))
 
 shots = []
@@ -371,7 +371,7 @@ key("me", "L47.1", expr="wide", blend=0.1)
 at_rail(4, "L48", head=[0, 30], lean=18, expr="wide", blink=False)
 hide("me", "L49")
 at_rail(4, "L52", head=[0, 22], lean=10, expr="terrified", blink=False, arms=[40, 40])
-key("me", "L53", expr="terrified")
+hide("me", "L53")
 put("me", "L54", tread(48), yaw=yaw_to(tread(48), tread(49)), expr="terrified")
 walk("me", "L54+0.9", tread(52, 1.9))
 put("me", "L54.1", tread(60), yaw=yaw_to(tread(60), tread(61)), expr="terrified")
@@ -525,15 +525,15 @@ cues = [
     {"at": 0, "name": "clear", "az": None},
     {"at": "L13>", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L14.2", "name": "clear", "az": None},
-    {"at": "L17", "name": "clear", "az": 90, "span": 50, "z0": 2.0, "z1": 9.0, "rails": [Z7 - 0.2, Z7 + 1.7], "rail_az": 0, "rail_span": 70},
+    {"at": "L17", "name": "clear", "az": 60, "span": 100, "z0": 2.0, "z1": 15.6, "rails": [Z7 - 0.2, Z7 + 1.7], "rail_az": 60, "rail_span": 110},
     {"at": "L21", "name": "clear", "az": None},
     {"at": "L21.1", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L22", "name": "clear", "az": None},
-    {"at": "L35", "name": "clear", "az": 0, "span": 55, "z0": RISE + 0.8, "z1": Z6, "rails": [Z6 - 0.2, Z6 + 1.7], "rail_span": 70},
+    {"at": "L35", "name": "clear", "az": 0, "span": 55, "z0": RISE + 0.8, "z1": Z6 + 0.4, "rails": [Z6 - 0.2, Z6 + 1.7], "rail_span": 70},
     {"at": "L37", "name": "clear", "az": None},
     {"at": "L37.1", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
     {"at": "L38", "name": "clear", "az": None},
-    {"at": "L43", "name": "clear", "az": 0, "span": 55, "z0": 2 * RISE + 0.8, "z1": Z5, "rails": [Z5 - 0.2, Z5 + 1.7], "rail_span": 70},
+    {"at": "L43", "name": "clear", "az": 0, "span": 55, "z0": 2 * RISE + 0.8, "z1": Z5 + 0.4, "rails": [Z5 - 0.2, Z5 + 1.7], "rail_span": 70},
     {"at": "L47", "name": "clear", "az": None},
     {"at": "L49", "name": "clear", "az": 0, "span": 55, "z0": 3 * RISE + 0.6, "z1": Z4 + 0.5, "rails": [Z4 - 0.5, Z4 + 0.9], "rail_span": 70},
     {"at": "L54", "name": "clear", "az": None},

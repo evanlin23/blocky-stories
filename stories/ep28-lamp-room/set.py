@@ -260,7 +260,6 @@ def build_tower(kit, ctx, M):
     kit.cyl("slate floor", WALL_R0, 0.2, (0, 0, -0.1), M["slate"], None, n=48)
     disc(kit, "stair ceiling", WALL_R1, LF - 0.01, M["white"])
     ring_wall(kit, "plinth", WALL_R0 + 0.35, WALL_R0 + 0.15, 0.0, 1.1, M["stone"])
-    disc(kit, "plinth top", WALL_R0 + 0.35, 0.0, M["stone"])
     disc(kit, "plinth cap", WALL_R0 + 0.35, 1.1, M["stone"], r_in=WALL_R0 + 0.1)
     # a dark band round the middle so the tower isn't one white tube
     ring_wall(kit, "band", wall_r(7.0) + 0.04, wall_r(9.0) + 0.04, 7.0, 9.0, pbr(kit, "band", "#3a4652", 0.8))
@@ -680,9 +679,9 @@ MODES = {
     "dawn": {"win": (0.4, "#ffd59a"), "shaft": (0.6, "#ffd0a0"), "foot": (0.4, "#ffd59a"), "lroom": (0.5, "#ffd59a"),
              "lamp": (0.2, None), "sun": (0.7, "#ffd59a"), "gold": (0.0, None), "bounce": (0.5, None), "mem": (0.0, None),
              "kit": (0.0, None), "cot": (0.0, None), "exp": 0.3, "pane": ("#ffd59a", 2.2), "world": 0.8},
-    "gold": {"win": (0.8, "#ffd59a"), "shaft": (1.0, "#ffd0a0"), "foot": (1.2, "#ffd59a"), "lroom": (3.0, "#ffd59a"),
-             "lamp": (0.2, None), "sun": (1.0, "#ffd59a"), "gold": (1.0, None), "bounce": (1.0, None), "mem": (0.0, None),
-             "kit": (0.0, None), "cot": (0.0, None), "exp": 0.6, "pane": ("#ffe0a8", 3.0), "world": 1.2},
+    "gold": {"win": (0.4, "#ffc47a"), "shaft": (0.3, "#ffc888"), "foot": (0.8, "#ffc47a"), "lroom": (1.5, "#ffc47a"),
+             "lamp": (0.2, None), "sun": (1.0, "#ffc47a"), "gold": (0.8, "#ffc27a"), "bounce": (0.35, "#ffcc90"), "mem": (0.0, None),
+             "kit": (0.0, None), "cot": (0.0, None), "exp": -0.1, "pane": ("#ffc47a", 1.6), "world": 1.0},
     "memory": {"win": (0.3, "#4a6aa0"), "shaft": (0.6, "#6a88c0"), "foot": (0.5, None), "lroom": (0.5, None),
                "lamp": (0.8, None), "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None),
                "mem": (1.0, None), "kit": (0.0, None), "cot": (1.0, None), "exp": 0.2, "pane": ("#2a3c58", 0.6), "world": 0.4},
@@ -916,7 +915,7 @@ def animate(kit, story, tl, t, ctx):
     # the faces' fill: a soft light a metre in front of each character, toward the middle of the room
     from blocky import acting as _act
     mode_a, mode_b, u_ = mode_state(tl, t)
-    fg = {"night": 1.0, "doorlamp": 1.2, "memory": 1.5, "day": 5.0, "gold": 3.0}
+    fg = {"night": 1.0, "doorlamp": 1.2, "memory": 1.5, "day": 5.0, "gold": 1.6}
     cur = _last(_cues(tl, "mode"), t)
     gain_f = fg.get(cur["set"], 1.0) if cur else 1.0
     for who, ln in (("me", "me fill"), ("ines", "ines fill")):
@@ -951,4 +950,6 @@ def animate(kit, story, tl, t, ctx):
         if pc.get("color"):
             kit.LIGHTS["phone"]["light"].color = tuple(kit.srgb(c) for c in _hex(pc["color"]))
     out["phone"] = pon
+    if __import__("os").environ.get("LR_DEBUG"):
+        print("DEBUG", round(t, 2), {k: round(v, 2) for k, v in out.items() if k in ("foot", "shaft0", "win0", "me fill")}, tuple(kit.LIGHTS["foot"]["obj"].location), kit.LIGHTS["foot"]["light"].energy)
     return out
