@@ -8,9 +8,9 @@
   - The second deckchair's sag is shown as the trace of someone heavy who just got up (L22), so the chair is never seen sagging under nobody. At dusk the sag is heard off-frame (L39).
   - The sting shot keeps the lore limit: the chair is out and empty, canvas flat, so it hints the place is open again, never that the Keeper stayed.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 619 spoken words in 76 lines, all `narrator`, plus 2 pause beats (1.3 s in all).
+- **Word count:** 586 spoken words in 73 lines (L03, L05, L08 cut 2026-11-02 so Remi and the stake land by 0:20), all `narrator`, plus 2 pause beats (1.3 s in all).
 - **Estimated length:** about 2:19 to 2:25. At 290 wpm the speech is 2:08, at 278 wpm (the measured rate on short lines) 2:14. The 0.12 s gaps add about 9 s, the pauses 1.3 s and the loop tail 0.25 s. If it lands under 2:15, add "The wind SINGS / in the hut ROOFS." after L13. If it lands over 2:30, cut L46 first, then L54.
-- **Timing targets:** the montage ends by about 18 s. Remi's reflection is facing down the shore in the window from L12 (about 23 s, shown, not narrated) and walking from L14. The first taking is L25 at about 51 s (36%). The Small Head is shown clearly from L45 at about 84 s (59%).
+- **Timing targets:** the montage ends by about 12 s. Remi is on screen from L10 (about 17 s) and her reflection faces down the shore in the window under L10b (about 18 s, shown, not narrated) and walking from L14. The first taking is L25 at about 51 s (36%). The Small Head is shown clearly from L45 at about 84 s (59%).
 
 ## The story
 
@@ -41,9 +41,9 @@ All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 - `me` (adult, the narrator): sandy-brown block hair with a side part, a rust duffel coat (`#a8552e`) with cream toggles, a grey jumper, dark jeans. The coat must read as a small rust shape at a distance (plant 1). Faces: `neutral`, `worried`, `scared`, `sheepish`, `smile`. No age on screen.
 - `remi` (adult, my fiancée): dark curly block hair, a cream cable jumper, denim dungarees flecked with blue paint, a mustard scarf (`#d9a441`). Faces: `neutral`, `smile`, `worried`, `faraway` (eyes on the distance). Never quoted directly. Her one quote (L64) is reported.
 - `neighbour` (adult, older): a navy and white fisherman's stripe jumper, a red bobble hat, a grey drawn beard. L01 and L02 only.
-- `office` (three adults): plain shirts in pale blue, white and olive. L03 only.
+- `office` (three adults): plain shirts in pale blue, white and olive. Unused since L03 was cut (2026-11-02).
 - `dieter` (adult): a grey tracksuit, short black block hair. L04 only.
-- `shopper` (adult): a lilac coat. L05 only.
+- `shopper` (adult): a lilac coat. Unused since L05 was cut (2026-11-02).
 - `date` (two adults): a woman with a block bun in a bottle-green coat, a man in a brown corduroy jacket. L06 only.
 
 Every word is the narrator's.
@@ -97,10 +97,10 @@ Every word is the narrator's.
 
 - **First line:** "In this town, your reflection does what you really want to do." (L01, 12 words.)
 - **Marker by 2 s:** the neighbour stands still at his hut window while his reflection in the glass is mid-cartwheel, face and reflection in one frame from the first frame.
-- **Montage (5 examples, L01 to L06, done by about 18 s):** the neighbour's cartwheels, a meeting where every reflection in the glass table is asleep, a dieter whose reflection is face down in a cake, changing rooms with the mirrors taken out because reflections kept walking off, a first date whose reflections are already holding hands.
-- **The narrator is the exception:** I have no reflection at all (L07 to L08), and took it to mean I don't want anything (L09).
+- **Montage (3 examples, L01 to L06, done by about 12 s):** the neighbour's cartwheels, a dieter whose reflection is face down in a cake, a first date whose reflections are already holding hands.
+- **The narrator is the exception:** I have no reflection at all (L07), and took it to mean I don't want anything (L09).
 - **The loved one at stake:** Remi, my fiancée (L10). Her reflection walks away a little more each day (L14 to L18), and at dusk she's gone (L25).
-- **Seconds 15 to 30:** the rule works on Remi, shown: her reflection in the window gazing down the shore under L12 and L13, walking from L14. Nobody explains anything.
+- **Seconds 15 to 30:** the rule works on Remi, shown: Remi from L10 (about 17 s), her reflection in the window gazing down the shore under L10b, walking from L14. Nobody explains anything.
 - **The loophole the climax turns:** the rule itself. My reflection does what I really want, so it isn't missing. It's somewhere I never looked, already doing it: walking the shore with her (L57 to L59). I go and do it in person, and from then on I'm in every window I pass (L62).
 
 ## The lore connection (one only)
@@ -113,8 +113,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 01 The rule (L01 to L09)
 
-- **Where:** the hut row on a bright windy morning, then four town scenes, then our hut.
-- **Shots:** 14.
+- **Where:** the hut row on a bright windy morning, then two town scenes, then our hut.
+- **Shots:** 10.
 
 - `L01` narrator: In this TOWN, / your REFLECTION does / what you really WANT / to DO.
   - [a: mid shot, bright: the neighbour stands still at his butter-yellow hut window, `neutral`, face large in frame. In the glass beside him his reflection is mid-cartwheel, upside down, arms out]
@@ -122,21 +122,14 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L02` narrator: My NEIGHBOUR / stands perfectly STILL. / In the glass, / he's doing CARTWHEELS.
   - [a: close on the neighbour, bobble hat, blinking at the sea]
   - [b: the window glass alone: his reflection, right way up now, landing a cartwheel and starting another]
-- `L03` narrator: At WORK, / every reflection / in the MEETING table / is ASLEEP.
-  - [an office: three people upright at a glass-topped table, `neutral`. In the glass top, all three reflections are slumped forward, heads down, fast asleep]
 - `L04` narrator: A man on a DIET / passes the BAKERY. / His reflection / is face DOWN / in a CAKE.
   - [a: the dieter in a grey tracksuit walks past a bakery window, chin up, not looking]
   - [b: the window glass: his reflection has stopped and is face down in a huge drawn cream cake on the display stand]
-- `L05` narrator: The shops took the MIRRORS / out of the CHANGING rooms. / The reflections / kept WALKING OUT.
-  - [a: a changing room cubicle with a pale clean rectangle on the wall where a mirror hung]
-  - [b: a shop window: the shopper in lilac stands still, and her reflection walks off out of the glass's edge wearing a coat she hasn't paid for]
 - `L06` narrator: On a first DATE, / their reflections / are already / holding HANDS.
   - [a: the date couple at a café table, side by side, both glancing at the window, `sheepish`]
   - [b: the café window glass: their reflections sit close, sleeve ends touching between them on the table]
 - `L07` narrator: ME? / I have no REFLECTION / at ALL.
   - [our faded-blue hut, morning: me at the window, `neutral`. The glass shows the shore behind me, and no me]
-- `L08` narrator: In PUDDLES / and SHOP windows, / I'm just / not THERE.
-  - [low on a puddle on the deck boards: the sky, a gull, the hut eave. My boots stand at its edge and nothing of me is in it]
 - `L09` narrator: I always took it / to MEAN / I don't WANT / ANYTHING.
   - [me sitting on the hut's doorway step, `neutral`, a laptop open on my knees, wind in my hair]
 
@@ -146,12 +139,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Shots:** 17.
 
 - `L10` narrator: REMI, / my FIANCÉE, / wants a SUMMER / in our beach HUT.
-  - [Remi on the deck, `smile`, mustard scarf blowing, a pot of blue paint at her feet]
+  - [a: Remi on the deck, `smile`, mustard scarf blowing, a pot of blue paint at her feet]
+  - [b: the window: Remi's reflection has stopped and stands facing down the shore, `faraway`. Not mentioned]
 - `L11` narrator: She SANDS / the hut / for the SUMMER / we PLANNED.
   - [Remi at the window frame, a sanding block against the wood (cut away from her hand). Dust lifts off in the wind]
 - `L12` narrator: I sit / in the DOORWAY / on my LAPTOP.
-  - [a: me on the step, `neutral`, eyes on the screen. Beside me, in front of the window, the second deckchair stands folded against the wall]
-  - [b: the window: Remi's reflection has stopped sanding and stands facing down the shore, `faraway`. Not mentioned]
+  - [me on the step, `neutral`, eyes on the screen. Beside me, in front of the window, the second deckchair stands folded against the wall]
 - `L13` narrator: Just one more EMAIL.
   - [close on the laptop screen's glow on my face. The screen shows only grey blocks]
 - `L14` narrator: Then her REFLECTION / starts to WALK.
@@ -334,7 +327,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## Shot count
 
-99 shots (including the two pause holds) over about 2:21, so a new shot every 1.43 s on average. The longest holds are the lore hasp (L28, about 1.6 s) and the sting (L76, about 2.2 s with the tail).
+95 shots (including the two pause holds), about 1.6 s each on average at the measured length. The longest holds are the lore hasp (L28, about 1.6 s) and the sting (L76, about 2.2 s with the tail).
 
 ## Risks for the builder
 
