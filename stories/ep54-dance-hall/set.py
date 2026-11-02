@@ -74,8 +74,9 @@ def _ramped(cs, key, t, default):
 
 def _show(objs, on):
     for o in objs:
-        o.hide_render = not on
-        o.hide_viewport = not on
+        for q in _all(o):
+            q.hide_render = not on
+            q.hide_viewport = not on
 
 
 def _all(ob):
@@ -205,11 +206,11 @@ def materials(kit):
     M["cream"] = kit.plastic("#f4ecd6", 0.7)
     M["brass"] = kit.metal("#b8893a", 0.35)
     M["dark"] = kit.plastic("#4a2f1c", 0.55)
-    M["ceiling"] = kit.plastic("#e8dcb0", 0.9)
+    M["ceiling"] = kit.plastic("#8f8260", 0.9)
     M["win"] = kit.emit("#26305a", 1.1, "win")
     M["wood"] = kit.planks("#8a5a30", "#6b4222", 1.0, "X", name="wood a")
-    M["drop"] = kit.emit("#fff0cc", 0.8, "drop")
-    M["bulb"] = kit.emit("#ffe6b8", 6.0, "bulb")
+    M["drop"] = kit.emit("#f6e6c0", 0.4, "drop")
+    M["bulb"] = kit.emit("#ffe6b8", 3.0, "bulb")
     M["burg"] = kit.plastic(BURG, 0.5)
     M["gold"] = kit.plastic("#d9a640", 0.35)
     M["black"] = kit.plastic("#0b0b0e", 0.7)
@@ -361,13 +362,13 @@ def build_hall(kit, M, ctx):
                 continue
             if k % 4 and rr == 0.5:
                 continue
-            d = B(kit, f"drop {k},{rr}", (0.05, 0.05, ln), (rr * math.cos(a), rr * math.sin(a), zr - ln / 2 - 0.03), M["drop"], chan, bevel=0.012)
+            d = B(kit, f"drop {k},{rr}", (0.03, 0.03, ln), (rr * math.cos(a), rr * math.sin(a), zr - ln / 2 - 0.03), M["drop"], chan, bevel=0.012)
             drops.append((d, rr, a, zr - ln / 2 - 0.03))
     ctx["drops"] = drops
     gap = B(kit, "dark gap", (0.62, 0.4, 1.5), (0, PY - 0.1, zr - 0.15), M["black"], chan)
     ctx["gap"] = gap
     ctx["chan"] = chan
-    kit.light("chan", "POINT", (0, 0, -1.7), 520.0, "#ffe2b0", size=0.35, parent=chan)
+    kit.light("chan", "POINT", (0, 0, -1.7), 360.0, "#ffe2b0", size=0.35, parent=chan)
     kit.light("hallfill", "POINT", (0, -5.5, 4.2), 230.0, "#ffe6c0", size=0.6)
     kit.light("hallfill2", "POINT", (0, 5.0, 4.2), 150.0, "#ffe6c0", size=0.6)
     # the scuffs in the rosin dust, one set per week (the last pair either side of the spot)
@@ -419,6 +420,7 @@ def build_stair(kit, M, ctx):
     B(kit, "stair frame", (1.5, 0.12, 0.2), (X, 9.4, 6.1), M["cream"])
     kit.light("stairlamp", "POINT", (X + 0.6, 2.5, 3.6), 90.0, "#ffd9a0", size=0.2)
     kit.light("landlamp", "POINT", (X + 0.4, 7.4, 5.2), 130.0, "#ffd9a0", size=0.2)
+    kit.light("stairfront", "POINT", (X, 10.2, 5.6), 160.0, "#ffe2b8", size=0.3)
     kit.light("stairlow", "POINT", (X, 0.6, 1.6), 40.0, "#ffe6c0", size=0.2)
     B(kit, "lamp sc", (0.1, 0.2, 0.3), (X + 0.72, 2.5, 3.5), M["brass"], bevel=0.03)
 
@@ -492,10 +494,10 @@ def build_bus(kit, M, ctx):
 def build_keeper(kit, M, ctx):
     root = kit.empty("keeper", (0, 0, -30))
     skin = kit.plastic("#d9a883", 0.5)
-    LL = math.hypot(KEEP_LEG, 0.6)
-    ang = math.atan2(0.6, KEEP_LEG)
+    LL = math.hypot(KEEP_LEG, 0.95)
+    ang = math.atan2(0.95, KEEP_LEG)
     for sx in (-1, 1):
-        lg = kit.empty(f"keeper.legp{sx}", (sx * 0.2, 0, KEEP_LEG), root, rot=(0, sx * ang, 0))
+        lg = kit.empty(f"keeper.legp{sx}", (sx * 0.35, 0, KEEP_LEG), root, rot=(0, sx * ang, 0))
         B(kit, f"keeper.leg{sx}", (0.3, 0.3, LL - 0.05), (0, 0, -LL / 2 + 0.0), M["burg"], lg, bevel=0.03)
         B(kit, f"keeper.gstripe{sx}", (0.03, 0.31, LL - 0.1), (sx * 0.16, 0, -LL / 2), M["gold"], lg)
         B(kit, f"keeper.shoe{sx}", (0.32, 0.5, 0.1), (0, -0.08, -LL + 0.03), M["black"], lg, rot=(0, -sx * ang, 0), bevel=0.03)
@@ -543,7 +545,7 @@ def build_keeper(kit, M, ctx):
     # its own key (warm, above and to the side) and a cool rim from the windows: they light the Stilted and nothing else
     kit.light("kkey", "POINT", (2.2, 1.2, 4.4), 300.0, "#ffc890", size=0.5)
     kit.light("krim", "POINT", (-3.4, 2.2, 3.4), 260.0, "#9fb8ff", size=0.5)
-    kit.light("kfront", "POINT", (0.0, -1.7, 2.0), 60.0, "#ffd8a8", size=0.4)
+    kit.light("kfront", "POINT", (0.9, -1.3, 1.9), 140.0, "#ffd8a8", size=0.3)
     for ln in ("kkey", "krim", "kfront"):
         light_only(kit, "keeper", ln, ctx["k_objs"])
     _show(ctx["k_objs"], False)
@@ -694,11 +696,10 @@ def animate(kit, story, tl, t, ctx):
     kc_ = _last(_cues(tl, "keeper"), t)
     _show([ctx["gap"]], pc > 0.01 and (kc_ is None or kc_.get("hidden", False)))
     for d, rr, ang, zc in ctx["drops"]:
-        if rr <= 0.5 and pc > 0.0:
-            k = rr + (1.05 - rr) * pc
-            d.location = (k * math.cos(ang), k * math.sin(ang), zc)
-        else:
-            d.location = (rr * math.cos(ang), rr * math.sin(ang), zc)
+        x, y = rr * math.cos(ang), rr * math.sin(ang)
+        gapped = pc > 0.5 and (x * x + (y - 0.35) ** 2 < 0.65 ** 2 or (y < 0 and abs(x) < 0.5))
+        d.hide_render = bool(gapped)
+        d.location = (x, y, zc)
     # ---- the record
     spin = bool((_last(_cues(tl, "spin"), t) or {"on": True}).get("on", True))
     ctx["disc"].rotation_euler = (0, 0, -t * 3.5 if spin else 0.0)
