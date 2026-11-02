@@ -222,8 +222,8 @@ S("L60", "the lid comes down", still((0.2, -1.4, 1.1), (-0.35, -1.0, 0.8), 45), 
 S("L61", "stepping down", still((-2.4, -5.0, 1.3), (-0.5, -2.2, 1.0), 26), 2)
 S("L61.2", "over my shoulder", still((-0.7, -5.7, 1.5), (1.2, -1.5, 1.0), 28), 2)
 # 06 the bench
-S("L62", "coral window: my reflection beside me", still((13.0, -1.9, 1.45), (13.0, 0, 1.4), 28), 2, **NSTAGE(8, r_me="stage"))
-S("L62.2", "mint window: there again", still((17.0, -1.9, 1.45), (17.0, 0, 1.4), 28), 2, **NSTAGE(9, r_me="stage"))
+S("L62", "coral window: my reflection beside me", still((13.0, -6.8, 1.6), (13.0, 0, 1.4), 40), 2, **NSTAGE(8, r_me="stage"))
+S("L62.2", "mint window: there again", still((17.0, -6.8, 1.6), (17.0, 0, 1.4), 40), 2, **NSTAGE(9, r_me="stage"))
 S("L63", "Remi on the bench", still((46.0, -9.6, 1.25), (46.6, -5.6, 1.0), 32))
 S("L64", "me arriving", still((44.4, -8.3, 1.4), (47.0, -6.2, 1.25), 26))
 S("L65", "two reflections in the sand", still((44.9, -8.6, 0.45), (46.8, -5.6, -0.4), 26), 2,
