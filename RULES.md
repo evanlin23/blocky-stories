@@ -75,12 +75,13 @@ A crazy, strange, made-up story, 2:15 to 2:30 long (3:00 at most), told in first
 
 ## Packaging (`stories/<story>/package.json`)
 ```json
-{"title": "...", "description": "...", "pin": "...", "made_for_kids": false}
+{"title": "...", "description": "...", "pin": "...", "made_for_kids": false, "cover_s": 107.0}
 ```
 - **Title:** under 100 characters, by the rules above.
 - **Description:** two or three short paragraphs. It sets up the story without spoiling it, says "It's made up.", and can say it's "built with code and Blender". The upload adds the measured flashing line on top by itself. Never: game or toy names, true, real, based on, kid, teen, child, baby, school, AI voice, no AI, made by hand, Kokoro, another franchise's monster.
 - **Title:** state the world's rule, the way the hits do ("In this town, everyone has a price"). It's a statement, never an imperative, and it never spoils the twist.
 - **Pin:** a question the viewer answers about themselves under the rule ("How many lies would your number show?"), or one about a detail planted early ("would you have sat back there?"). The owner posts it as their own first comment and pins it: on YouTube, the creator's own question sits in the top comments of 8 of the 15 Shorts studied.
+- **Cover (`cover_s`):** the second of the frame that becomes the thumbnail. Pick the creature or the rule marker clearly lit, with a face if possible and the caption tying back to the title (ep20: 1:47, "stood in the MIDDLE."). Without it, the render picks 78% of the way in. The upload issue shows the cover, and the owner picks that moment in the YouTube app.
 - No hashtags or tags for now. Altered or synthetic content: No (it's animated fiction).
 
 ## Budget and craft
