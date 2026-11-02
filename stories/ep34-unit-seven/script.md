@@ -2,8 +2,8 @@
 
 - **Slug:** `ep34-unit-seven` (folder `stories/ep34-unit-seven/`), pitch #18 in `stories/ideas.md`.
 - **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 619 spoken words in 73 lines, all `narrator`, plus one 0.7 s pause beat (P01).
-- **Estimated length:** about 2:20. At 290 wpm the speech is 2:08. At 278 wpm, the rate measured on short lines like these, it's 2:14. The 0.12 s gaps add about 9 s, P01 0.7 s and the tail 0.25 s, so 2:18 to 2:24. If the retime lands under 2:15, add back "Unit SEVEN / was EMPTY / for the first time / since we SIGNED." at L68. If it lands over 2:30, cut L36 first, then L69.
+- **Word count:** 624 spoken words in 73 lines, all `narrator`, plus one 0.7 s pause beat (P01).
+- **Estimated length:** about 2:20. At 290 wpm the speech is 2:08. At 278 wpm, the rate measured on short lines like these, it's 2:14. The 0.12 s gaps add about 9 s, P01 0.7 s and the tail 0.25 s, so 2:19 to 2:25. If the retime lands under 2:15, add back "Unit SEVEN / was EMPTY / for the first time / since we SIGNED." at L68. If it lands over 2:30, cut L36 first, then L69.
 - **Tense:** L01 is the present ("I visit", the habit). Everything after it is told in the past, as it happened. L73, the last line, turns the habit into the past ("I USED to visit").
 
 ## Premise
@@ -13,16 +13,16 @@ Every Tuesday at seven, after work, I let myself into unit seven of a self-stora
 Nobody states it. The block's only rule is the light timer: press the button, get one minute. The rule the narrator keeps without knowing it is the one they made up themselves: come every Tuesday at seven and keep the unit as it was, as if Jo might still come for her things.
 
 ## The twist (and where it's planted)
-The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribbles and Jo marks hers with jagged ones, and I've spent every Tuesday sitting on my own half, keeping hers, and keeping her place. A unit taken by two is counted for two, and the Deep One has come to stand in the gap she left: the aisle between the stacks, exactly where Jo stood the night we packed it.
+The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribbles and Jo marks hers with jagged ones, and I hold both keys, so the only person who has opened this room since the split is me. I haven't been minding my ex's things. I've been visiting my own, every Tuesday, and calling them hers, because a room of her things is something to wait beside and a room of mine is something I'd have to sort. The Deep One doesn't reveal a place kept for anyone. Inside my unit it looks at one stack, then (between cuts) the other, as if counting, and that count is what makes me read my own scribbles. It's never seen again after that night, and nobody ever stands where it stood: the unit ends empty, with the door down.
 
-"A room full of someone else's things" turns over. Half the room was my own things, and the only thing in there that was someone else's was the space Jo left, and the someone standing in it.
+"A room full of someone else's things" turns over. The someone else was me.
 
 - **Plant 1 (L08, about 16 s):** two kinds of marker scribble on the boxes, round loops and jagged zigzags, both fully in frame above the caption band. Never words. L09 then shows me sitting on a round-scribbled stack.
 - **Plant 2 (L11 to L12, about 19 s):** two keys on my ring, both visible on the box top. Jo left hers on the kitchen counter.
-- **Plant 3, the picture (L03 to L04):** Jo standing at the back of the unit in the aisle between the stacks, passing a box forward. The scare puts the Deep One in exactly that spot (L48 to L49).
+- **Plant 3, the line (L07):** "I told myself / it was all HER stuff." A rewatch hears "told myself".
 
 ## How the last 15 seconds turn the first line
-From L66 on (the last 64 words): my half goes to the charity shop, what's left fits one small box, the door comes down on an empty room, and L72 says it outright in picture and line: I'd sat with the gap Jo left every Tuesday, and so had it. L73 loops: "Every TUESDAY / at SEVEN, / I USED to visit / a ROOM." On a rewatch, L01's "someone ELSE'S things" lands on round-scribbled boxes (mine) in the very first shot, and the two keys and the round stack I sit on read as a person keeping a place.
+From L66 on (the last 64 words): my half goes to the charity shop, what's left fits one small box, the door comes down on an empty room, and L72 says it outright: every week I'd been visiting my own things and calling them hers. L73 loops: "Every TUESDAY / at SEVEN, / I USED to visit / a ROOM." On a rewatch, L01's "someone ELSE'S things" lands on round-scribbled boxes (mine) in the very first shot, the round stack I sit on is my own, and the two keys say nobody else could have opened the room.
 
 ## World
 A low self-storage block on the edge of a made-up town. One long indoor corridor of twelve identical roller doors, six a side, corrugated and painted roller-door blue, in galvanised steel frames, each with a small stencilled numeral (digits only, no words) and a padlock hasp at the foot. Painted concrete floor, scuffed. Cold fluorescent battens overhead on a timer. By the entrance, a single round push button with a dim green ring that glows in the dark. At the entrance end, a wide yard door onto an asphalt yard with one sodium lamp. Beside the entrance, the site office's steel key-return slot in the wall (no text, no logo).
@@ -49,7 +49,7 @@ Time passes: late winter (dark at seven, corridor lights the only light) to spri
   - L28 to L30 (Tuesday 3): unit nine, body still facing out, head turned 90 degrees round toward unit seven. The head stays square-on to its own body everywhere else.
   - L31 to L37 (Tuesday 4): unit eight, door down. Never seen. Only the scrape along the shared wall.
   - L38 to L42: gone. Unit eight shut, corridor empty.
-  - L43 to L54 (the scare): inside unit seven, face just inside my door frame, body filling the aisle to the back wall, the jagged stack on its left, the round stack on its right. It touches neither stack and nothing touches it. My lamp on the floor by the round stack lights it from below.
+  - L43 to L54 (the scare): inside unit seven, face just inside my door frame, body filling the aisle to the back wall, the jagged stack on its left, the round stack on its right. It touches neither stack and nothing touches it. My lamp on the floor by the round stack lights it from below. Its head is square to its body except at L48 (turned 90 degrees to its own left, toward the jagged stack) and L49 and L54 (turned 90 degrees to its right, toward the round stack). It's never seen turning: each pose is its own cut.
   - L55 on: gone, and never seen again. At L60 the aisle is empty in bright light.
 
 ## Palette and key colour
@@ -190,10 +190,10 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [the lamp on the floor beside its boot, the dent in the round stack's top box where I sat]
 - `L47` narrator: I wanted to RUN, / but I was looking / at the BOXES.
   - [my face, `terrified`, then my eyes drop]
-- `L48` narrator: It stood in the GAP / between the stacks.
-  - [straight down the aisle line from just outside: the Deep One's front, a stack each side]
-- `L49` narrator: Exactly where Jo STOOD / the night we PACKED.
-  - [the same framing as L04, matched: Jo's warm memory dissolves into the Deep One in the same spot, lamp-lit]
+- `L48` narrator: Its HEAD was turned / to the LEFT stack.
+  - [straight down the aisle line from just outside: the Deep One's body square to the door, a stack each side, its head turned 90 degrees to its own left, flat toward the jagged stack, one eye highlight catching my lamp]
+- `L49` narrator: I BLINKED. / Now it faced / the RIGHT stack, / like it was COUNTING.
+  - [hard cut, the same framing as L48, held still: the body unchanged, the head now turned 90 degrees to its own right, flat toward the round stack. Never seen turning]
 - `L50` narrator: On its LEFT, / the JAGGED boxes. / JO'S.
   - [close on the left stack's zigzags beside its flank]
 - `L51` narrator: On its RIGHT, / the ROUND ones. / The ones I SAT on.
@@ -204,8 +204,8 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [memory flash, bright: me drawing a round scribble on a fresh box at our old kitchen table, cut before the marker touches]
 - `L53` narrator: Half that room / was MINE.
   - [back to the scare framing, my face, `sad` more than scared]
-- `L54` narrator: I'd kept a PLACE / for Jo / every Tuesday. / Something was STANDING in it.
-  - [the Deep One's face in my door, held, quiet. Pulse gone]
+- `L54` narrator: I came every Tuesday / to sit with Jo's THINGS. / I'd been sitting on MINE.
+  - [close on the round stack, the dent in its top box where I sat, my lamp at its foot, the Deep One's ribbed flank at the left edge of frame and its turned head still facing the stack. Quiet, pulse gone]
 - `L55` narrator: That night / I slid her key / off my RING.
   - [cut: that night at my kitchen table under a warm ceiling light, bright enough to read. Top-down: my ring with one key, and the second key on its own beside it]
 - `L56` narrator: Then I rang JO.
@@ -246,7 +246,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [me in the doorway with the small box hugged to my chest, `smile`, sunlit]
 - `L71` narrator: Then I pulled the door DOWN.
   - [corridor wide, bright: the blue door rolling down (already moving, hand out of frame), me beside it with the box. The rattle starts]
-- `L72` narrator: Every week, / I'd sat with the GAP / Jo left. / So had IT.
+- `L72` narrator: Every week, / I'd been visiting / my OWN things, / and calling them HERS.
   - [low on the door coming down over the empty floor, the gap under it shrinking, sun on the concrete]
 - `L73` narrator: Every TUESDAY / at SEVEN, / I USED to visit / a ROOM.
   - [the corridor wide from the entrance end, lit and sunny, me walking toward the camera with the small box, door seven landing behind me. The thud lands 0.2 s after "ROOM", and the loop cut comes 0.25 s after the word, on the thud]
@@ -257,11 +257,11 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - The scare's hole is the music drop before L43, not a pause beat.
 - **Pronoun:** I call it "they" through L27, while it still looks like a person, and "it" from L29 on, once the head is wrong. Keep that split.
 - **L43 to L46** get quieter, line by line.
-- **L54:** the twist line. Slow, even, no push.
+- **L49:** "COUNTING" lands flat and quiet. **L54:** the twist line. Slow, even, no push, a small weight on "MINE".
 - **L57** "TUESDAY?" is a small lift, almost a joke.
 - **L63** "obviously," has a smile in it.
 - **P01:** the one clink alone, music low.
 - **L72:** slower and soft. **L73:** plain and warm, not a whisper, no trail-off. The door's thud is the last sound.
-- **Words to check:** "Jo" (jō) at L03, L12, L49, L54, L56, L59, L72. "Jo'S" at L50 ("Joe's" is the mishear, which is fine to read). "SEVEN" and "eleven" are numbers, read in full. "boiler suit" (L18). "fit" (L67) is the past tense, said "fit". "EVENING" at L19 can come out "evening" or "even" by Whisper: slow the line if so.
-- **Homophones Whisper could get wrong:** "PLACE" and "plaice", "PASSED" (L04) and "past" (L41), "SCRAPED", "RIDGES", "TORCH". "ROLLED up" and "rode up" (L59).
+- **Words to check:** "Jo" (jō) at L03, L12, L54, L56, L59. "Jo'S" at L50 ("Joe's" is the mishear, which is fine to read). "SEVEN" and "eleven" are numbers, read in full. "boiler suit" (L18). "fit" (L67) is the past tense, said "fit". "EVENING" at L19 can come out "evening" or "even" by Whisper: slow the line if so.
+- **Homophones Whisper could get wrong:** "PASSED" (L04) and "past" (L41), "SCRAPED", "RIDGES", "TORCH". "ROLLED up" and "rode up" (L59).
 
