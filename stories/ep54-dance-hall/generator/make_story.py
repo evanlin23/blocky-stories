@@ -465,7 +465,7 @@ story = {
     "title": "In this town, you're born with half a mark",
     "made_for_kids": False,
     "premise": "In a town where everyone is born with half a glowing glyph on one hand and a match out there with the rest, I play the records for Aunt Ros's Tuesday ballroom class in white gloves and never dance. Her half is fading, she dances every demonstration with her arms round nobody, and the floor starts to creak behind her in a stride far too long.",
-    "twist": "The rule never says which side of the hand. Mine is on my palm, hidden under my record gloves, and Ros's match has been carrying her records for forty years: a match was never only for love, it is whoever you fit with.",
+    "twist": "The rule never says which side of the hand. Mine is on my palm, hidden under my record gloves, and Ros's match has been carrying her records for forty years: a match can be family. It's whoever you fit with.",
     "world": "An old upstairs dance hall above a row of shops on Tuesday nights in autumn: a honey maple floor worn pale in a ring, primrose plaster, three tall arched windows of indigo night, bentwood chairs and one low brass chandelier of glass drops, with a sunny bus stop street for the opener.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ffcf66",
