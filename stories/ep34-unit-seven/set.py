@@ -50,6 +50,16 @@ BOX = (0.43, 0.5, 0.4)  # one box: along x, across y, tall
 STACK_N = 18
 
 SUN_DIR = (-0.55, 0.8, -0.28)
+HX = 100.0             # the town house front (the montage and Jo's door): wall front face at y 0, street toward -y
+CX = 140.0             # the high kitchen cupboard
+# which little set is lit: (street fill, hall light, Jo's room, cupboard, house lamp, sock rack shown, taped box shown, door open)
+SCENES = {
+    "none": (0.0, 0.0, 0.0, 0.0, 0.0, 0, 0, 1),
+    "sock": (1.0, 1.0, 0.5, 0.0, 1.0, 1, 0, 1),
+    "cupboard": (0.0, 0.0, 0.0, 1.0, 0.0, 0, 0, 1),
+    "box": (0.7, 1.0, 0.4, 0.0, 1.0, 0, 1, 1),
+    "street": (0.9, 0.35, 1.0, 0.0, 0.0, 0, 0, 0),
+}
 
 
 def _ss(x):
@@ -217,6 +227,18 @@ def materials(kit, wd):
     M["car"] = kit.plastic("#2e7d84", 0.35, name="car", spec=0.8)
     M["tyre"] = kit.plastic("#101114", 0.8, name="tyre")
     M["glassd"] = kit.plastic("#1b2b36", 0.1, name="cabin", spec=1.0)
+    M["brick"] = kit.grime("#8a4c3a", 0.55, 2.2, name="town brick", rough=0.85)
+    M["pave"] = kit.concrete("#a29f98", scale=1.5, stains=0.3, name="pavement")
+    M["trim"] = kit.plastic("#e4dfd2", 0.6, name="trim")
+    M["hdoor"] = kit.plastic("#6e2a38", 0.45, name="house door", spec=0.5)
+    M["hwall"] = kit.plastic("#d9ccb0", 0.9, name="hall wall")
+    M["roomwall"] = kit.plastic("#cfa57e", 0.9, name="room wall")
+    M["cupout"] = kit.plastic("#b99a6e", 0.7, name="cupboard wood")
+    M["cupin"] = kit.plastic("#efe7d6", 0.8, name="cupboard inside")
+    M["sock_r"] = kit.plastic("#e0453f", 0.8, name="sock red")
+    M["sock_w"] = kit.plastic("#f4f1ea", 0.8, name="sock white")
+    M["tape"] = kit.plastic("#dccb9c", 0.35, name="tape")
+    M["spoon"] = kit.metal("#cfd3d6", 0.25, name="spoon")
     for st in ("round", "jagged"):
         for v in range(3):
             im = pil_image(f"box-{st}-{v}", scribble_image(st, 31 * v + (7 if st == "round" else 19)),
@@ -227,7 +249,8 @@ def materials(kit, wd):
         M[f"plate{n}"] = image_mat(kit, f"plate {n}", im, rough=0.6)
     for nm, hexc, s in (("emit_tube", "#eaf2ff", 6.0), ("emit_lamp", "#ffd28a", 6.0), ("emit_sod", "#ffa845", 8.0),
                         ("emit_ring", "#3fdc7a", 1.6), ("emit_phone", "#dff0ff", 3.0), ("emit_win", "#fff3d8", 3.0),
-                        ("emit_bulb", "#ffe0a8", 6.0)):
+                        ("emit_bulb", "#ffe0a8", 6.0), ("emit_hbulb", "#ffe0a8", 6.0),
+                        ("emit_roombulb", "#ffd9a0", 5.0)):
         M[nm] = _own_emit(kit, nm, hexc, s)
     return M
 
@@ -478,6 +501,140 @@ def build_corridor_props(kit, ctx, M):
         kit.box(f"far {i}", (w, d, h), (x, y, h / 2), kit.plastic("#3a414d", 0.9, name="far roof"))
 
 
+def door_lamp(kit, ctx, M, n, loc, axis, light=None):
+    """The town's door lamp (our own design): a round lens in a galvanised ring on a dark plate, 17 cm across,
+    dark unless it is lit for someone. axis: "x+" faces +x, "x-" faces -x, "y-" faces -y."""
+    x, y, z = loc
+    if axis == "y-":
+        rot, d = (math.pi / 2, 0, 0), (0, -1, 0)
+    elif axis == "x-":
+        rot, d = (0, math.pi / 2, 0), (-1, 0, 0)
+    else:
+        rot, d = (0, math.pi / 2, 0), (1, 0, 0)
+
+    def at(k):
+        return (x + d[0] * k, y + d[1] * k, z + d[2] * k)
+    m = _own_emit(kit, f"dlens{n}", "#52b4ff", 0.05)
+    kit.cyl(f"dlbase{n}", 0.125, 0.02, at(0.0), M["dark"], rot=rot, n=28)
+    kit.cyl(f"dlens{n}", 0.085, 0.03, at(0.03), m, rot=rot, n=28)
+    torus(kit, f"dlring{n}", 0.105, 0.014, at(0.02), M["steel"], rot=rot, seg=32, tube=8)
+    lname = None
+    if light:
+        lname = f"dl{n}"
+        lx, ly, lz = at(0.25)
+        kit.light(lname, "POINT", (lx, ly, lz), 3, "#6cc3ff", size=0.06, shadow=False)
+    ctx.setdefault("dl", {})[n] = {"mat": m, "light": lname}
+
+
+def build_dlamps(kit, ctx, M):
+    for k, yc in YC.items():     # side B: on the header's corridor face (x 0.78), lit lights for the doors the story lifts
+        door_lamp(kit, ctx, M, k, (0.775, yc, 2.55), "x-", light=k in (7, 9, 10, 11))
+    for k, yc in YA.items():
+        door_lamp(kit, ctx, M, 20 + k, (-0.975, yc, 2.55), "x+")
+
+
+def build_town(kit, ctx, M):
+    """A terrace front for the montage and Jo's door (wall front face at y 0, pavement and street at -y), and a cupboard."""
+    X = HX
+    kit.plane("t pave", (20, 2.5), (X, -1.25, 0.0), M["pave"])
+    kit.plane("t road", (60, 14), (X, -9.5, -0.01), M["asphalt"])
+    kit.plane("t ground", (60, 30), (X, 8, -0.02), M["grass"])
+    kit.box("t kerb", (20, 0.25, 0.14), (X, -2.6, 0.07), M["wall"])
+    for j, (dy, h) in enumerate(((1.05, 0.18), (0.7, 0.37), (0.35, 0.55))):   # three steps up to the door
+        kit.box(f"t step{j}", (1.5, dy, h), (X + 0.7, -dy / 2, h / 2), M["pave"])
+    # facade, with a door opening (x +0.2 .. +1.2, to 2.15) and a window (x -2.15 .. -0.85, z 0.9 .. 2.1)
+    H3 = 3.4
+    for nm, (x0, x1, z0, z1) in {"l": (-3.8, -2.15, 0, H3), "m": (-0.85, 0.2, 0, H3), "r": (1.2, 3.8, 0, H3),
+                                 "wb": (-2.15, -0.85, 0, 0.9), "wt": (-2.15, -0.85, 2.1, H3),
+                                 "dt": (0.2, 1.2, 2.15, H3), "db": (0.2, 1.2, 0, 0.55)}.items():
+        kit.box(f"t wall {nm}", (x1 - x0, 0.3, z1 - z0), (X + (x0 + x1) / 2, 0.15, (z0 + z1) / 2), M["brick"])
+    cxw = X - 1.5
+    kit.box("t sill", (1.5, 0.14, 0.06), (cxw, -0.06, 0.88), M["trim"])
+    kit.box("t whead", (1.4, 0.05, 0.06), (cxw, -0.03, 2.13), M["trim"])
+    for sx in (-1, 1):
+        kit.box(f"t wpost{sx}", (0.06, 0.05, 1.2), (cxw + sx * 0.68, -0.03, 1.5), M["trim"])
+        kit.box(f"t dpost{sx}", (0.07, 0.05, 2.15), (X + 0.7 + sx * 0.535, -0.03, 1.075), M["trim"])
+    kit.box("t dhead", (1.14, 0.05, 0.07), (X + 0.7, -0.03, 2.18), M["trim"])
+    door_lamp(kit, ctx, M, "H", (X + 0.7, -0.01, 2.62), "y-", light=True)
+    bpy.data.lights["dlH"].energy = 7
+    # the door leaf: hinged at its left edge, closed in the opening or swung back against the hall wall
+    piv = kit.empty("t door pivot", (X + 0.2, 0.12, 0.55))
+    kit.box("t door leaf", (0.98, 0.05, 1.6), (0.5, 0, 0.8), M["hdoor"], piv, bevel=0.01)
+    kit.cyl("t knob", 0.035, 0.05, (0.86, -0.05, 0.5), M["brass"], piv, rot=(math.pi / 2, 0, 0))
+    ctx["hdoor"] = piv
+    # the hall: 1 m wide, 3.2 m deep
+    kit.plane("t hall floor", (1.0, 2.1), (X + 0.7, 1.35, 0.55), M["wood"])
+    kit.box("t hall wl", (0.15, 2.2, 2.6), (X + 0.125, 1.35, 1.3), M["hwall"])
+    kit.box("t hall wr", (0.15, 2.2, 2.6), (X + 1.275, 1.35, 1.3), M["hwall"])
+    kit.box("t hall back", (1.5, 0.1, 2.6), (X + 0.7, 2.45, 1.3), M["hwall"])
+    kit.box("t hall ceil", (1.5, 2.3, 0.1), (X + 0.7, 1.35, 2.65), M["hwall"])
+    kit.cyl("t hall bulb", 0.07, 0.08, (X + 0.7, 1.2, 2.56), M["emit_hbulb"])
+    kit.light("hall", "POINT", (X + 0.7, 1.0, 2.3), 110, "#ffdca0", size=0.2)
+    kit.light("hall back", "POINT", (X + 0.7, 1.4, 1.5), 60, "#ffdca0", size=0.3, shadow=False)
+    # shoe rack on the right wall, one striped sock on its top shelf
+    rk = []
+    FZ = 0.55
+    for j, z in enumerate((FZ + 0.16, FZ + 0.42)):
+        rk.append(kit.box(f"t rack shelf{j}", (0.84, 0.26, 0.03), (X + 0.7, 2.15, z), M["table"]))
+    for j, xx in enumerate((X + 0.3, X + 1.1)):
+        rk.append(kit.box(f"t rack end{j}", (0.03, 0.26, 0.46), (xx, 2.15, FZ + 0.23), M["table"]))
+    stripes = []
+    top = FZ + 0.42 + 0.015
+    for j in range(4):    # the foot, along x
+        stripes.append(kit.box(f"t sock foot{j}", (0.1, 0.15, 0.1), (X + 0.4 + j * 0.1, 2.15, top + 0.05),
+                               M["sock_r"] if j % 2 == 0 else M["sock_w"], bevel=0.02))
+    for j in range(3):    # the leg, standing up at the heel
+        stripes.append(kit.box(f"t sock leg{j}", (0.1, 0.15, 0.1), (X + 0.7, 2.15, top + 0.15 + j * 0.1),
+                               M["sock_w"] if j % 2 == 0 else M["sock_r"], bevel=0.02))
+    ctx["rack"] = rk + stripes
+    # the last taped box in the empty hall
+    bx = []
+    bx.append(kit.box("t tbox", (0.62, 0.52, 0.5), (X + 0.7, 1.5, 0.55 + 0.25), M["card"], bevel=0.015))
+    bx.append(kit.box("t tape top", (0.07, 0.53, 0.012), (X + 0.7, 1.5, 0.55 + 0.505), M["tape"]))
+    bx.append(kit.box("t tape front", (0.07, 0.01, 0.5), (X + 0.7, 1.5 - 0.265, 0.55 + 0.25), M["tape"]))
+    ctx["tbox"] = bx
+    # Jo's room behind the window, warm
+    kit.plane("t room floor", (3.2, 3.3), (X - 1.8, 1.9, 0.0), M["wood"])
+    kit.box("t room back", (3.4, 0.1, 2.6), (X - 1.8, 3.55, 1.3), M["roomwall"])
+    kit.box("t room wall L", (0.1, 3.3, 2.6), (X - 3.45, 1.9, 1.3), M["roomwall"])
+    kit.box("t room wall R", (0.1, 3.3, 2.6), (X - 0.1, 1.9, 1.3), M["roomwall"])
+    kit.box("t room ceil", (3.5, 3.3, 0.1), (X - 1.8, 1.9, 2.65), M["roomwall"])
+    kit.cyl("t room bulb", 0.08, 0.09, (X - 1.5, 1.8, 2.56), M["emit_roombulb"])
+    kit.light("room", "POINT", (X - 1.5, 1.7, 2.3), 260, "#ffd29a", size=0.25)
+    kit.light("room face", "AREA", (X - 1.5, -0.9, 1.9), 110, "#ffe3bd", size=1.0, shadow=False)
+    kit.aim(bpy.data.objects["room face"], (X - 1.5, 0.9, 1.6))
+    kit.box("t shelf", (1.4, 0.3, 0.05), (X - 2.3, 3.38, 1.5), M["table"])
+    kit.cyl("t floorlamp", 0.03, 1.5, (X - 3.0, 3.0, 0.75), M["pole"])
+    kit.cyl("t floorlamp shade", 0.18, 0.28, (X - 3.0, 3.0, 1.6), M["emit_roombulb"])
+    # across the street: a few dim low roofs, so the dusk wide has a skyline
+    for i, (dx, w, h) in enumerate(((-8, 6, 4.2), (-1, 7, 5.0), (7, 6, 3.8))):
+        kit.box(f"t far{i}", (w, 5, h), (X + dx, -17, h / 2), kit.plastic("#2a303c", 0.9, name="far houses"))
+    kit.light("h fill", "AREA", (X + 0.6, -4.2, 3.0), 420, "#c9d6ee", size=4.0, shadow=False)
+    kit.aim(bpy.data.objects["h fill"], (X + 0.4, 0.0, 1.5))
+    # the cupboard: a carcass 1.2 m wide on a kitchen wall, two doors open, one spoon at the very back
+    C = CX
+    kit.box("c wall", (5, 0.1, 3.2), (C, 0.75, 1.6), M["kwall"])
+    kit.box("c floor", (5, 3, 0.05), (C, -1.0, 0.0), M["wood"])
+    kit.box("c back", (1.2, 0.02, 1.05), (C, 0.68, 1.55), M["cupin"])
+    for sx in (-1, 1):
+        kit.box(f"c side{sx}", (0.03, 0.4, 1.05), (C + sx * 0.615, 0.48, 1.55), M["cupout"])
+    kit.box("c top", (1.26, 0.4, 0.03), (C, 0.48, 2.085), M["cupout"])
+    kit.box("c bottom", (1.2, 0.38, 0.03), (C, 0.49, 1.035), M["cupin"])
+    for j, z in enumerate((1.4, 1.75)):
+        kit.box(f"c shelf{j}", (1.2, 0.36, 0.025), (C, 0.5, z), M["cupin"])
+    for sx in (-1, 1):
+        pv = kit.empty(f"c door pivot{sx}", (C + sx * 0.6, 0.29, 1.55))
+        kit.box(f"c door leaf{sx}", (0.6, 0.025, 1.0), (-sx * 0.3, 0, 0), M["cupout"], pv, bevel=0.008)
+        pv.rotation_euler = (0, 0, math.radians(-sx * 108))
+    kit.box("c spoon handle", (0.26, 0.022, 0.009), (C + 0.18, 0.6, 1.0505), M["spoon"], bevel=0.003)
+    bowl = kit.sphere("c spoon bowl", 0.05, (C + 0.02, 0.6, 1.052), M["spoon"], seg=14)
+    bowl.scale = (1.45, 1.0, 0.22)
+    kit.light("cup", "AREA", (C + 0.1, -1.8, 2.0), 55, "#fff1dc", size=2.5, shadow=False)
+    kit.aim(bpy.data.objects["cup"], (C, 0.4, 1.4))
+    kit.light("cup in", "AREA", (C, 0.2, 1.7), 8, "#fff1dc", size=0.9, shadow=False)
+    kit.aim(bpy.data.objects["cup in"], (C, 0.6, 1.1))
+
+
 def build_car(kit, ctx, M):
     car = kit.empty("car", (0, -14, 0))
     kit.box("car body", (1.7, 3.6, 0.6), (0, 0, 0.55), M["car"], car, bevel=0.1)
@@ -558,6 +715,8 @@ def build(kit, story, tl):
     build_car(kit, ctx, M)
     build_kitchen(kit, ctx, M)
     build_carry(kit, ctx, M)
+    build_dlamps(kit, ctx, M)
+    build_town(kit, ctx, M)
     # the number-plate planes need their images the right way up; that is checked in the stills
     ctx["wd"] = wd
     return ctx
@@ -816,6 +975,26 @@ def animate(kit, story, tl, t, ctx):
     else:
         _show(pp, False)
     _plates(kit, story, tl, t, ctx)
+    # the town's door lamps: a 0.6 s ramp up, a 1.0 s ramp down, from the dlamp cues
+    dcs = _cues(tl, "dlamp")
+    scn = (_last(_cues(tl, "scene"), t) or {"set": "none"})["set"]
+    S = SCENES[scn]
+    for n, d in ctx["dl"].items():
+        v = S[4] if n == "H" else _ramp([c for c in dcs if c.get("unit") == n], t, "on", 0.0)
+        set_emit(d["mat"], 0.05 + 2.6 * v)
+        if d["light"]:
+            over[d["light"]] = v
+    over["h fill"], over["hall"], over["room"], over["cup"] = S[0], S[1], S[2], S[3]
+    over["hall back"] = S[1]
+    over["room face"] = S[2]
+    over["cup in"] = S[3]
+    set_emit(M["emit_hbulb"], 6.0 * S[1])
+    set_emit(M["emit_roombulb"], 5.0 * max(S[2], 0.3))
+    for ob in ctx["rack"]:
+        ob.hide_render = not S[5]
+    for ob in ctx["tbox"]:
+        ob.hide_render = not S[6]
+    ctx["hdoor"].rotation_euler = (0, 0, math.radians(90 if S[7] else 0))
     # the Deep One: the tube behind its head, and its edge light
     rc = _last(_cues(tl, "rim"), t)
     over["deep rim"] = float(rc["on"]) if rc else 0.0
@@ -859,7 +1038,7 @@ def _plates(kit, story, tl, t, ctx):
             ok = False                   # a speck is a smear, not a number
         if root.hide_render:
             continue
-        if shot["id"] == "S65":   # side A reads 21..26, the block has twelve units, and this shot sees a plate big
+        if spec.get("at") == "L63.3":   # side A reads 21..26, the block has twelve units, and this shot sees a plate big
             ok = False
         for o in obs:
             o.hide_render = not ok

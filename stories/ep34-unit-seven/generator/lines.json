@@ -1,35 +1,153 @@
 [
  {
-  "id": "L01",
+  "id": "L74",
   "who": "narrator",
   "chunks": [
    [
-    "Every TUESDAY",
-    "Every Tuesday"
+    "In this TOWN,",
+    "In this town,"
    ],
    [
-    "at SEVEN,",
-    "at seven,"
+    "a door",
+    "a door"
    ],
    [
-    "I visit",
-    "I visit"
+    "won't OPEN",
+    "won't open"
    ],
    [
-    "a ROOM",
-    "a room"
+    "unless something",
+    "unless something"
    ],
    [
-    "full of",
-    "full of"
+    "of YOURS",
+    "of yours"
    ],
    [
-    "someone ELSE'S",
-    "someone else's"
+    "is INSIDE.",
+    "is inside."
+   ]
+  ]
+ },
+ {
+  "id": "L75",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So you leave",
+    "So you leave"
    ],
    [
-    "THINGS.",
-    "things."
+    "a SOCK",
+    "a sock"
+   ],
+   [
+    "at a friend's",
+    "at a friend's"
+   ],
+   [
+    "place,",
+    "place,"
+   ],
+   [
+    "to get asked",
+    "to get asked"
+   ],
+   [
+    "BACK.",
+    "back."
+   ]
+  ]
+ },
+ {
+  "id": "L76",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Landlords hide",
+    "Landlords hide"
+   ],
+   [
+    "a SPOON",
+    "a spoon"
+   ],
+   [
+    "in every flat",
+    "in every flat"
+   ],
+   [
+    "they've ever",
+    "they've ever"
+   ],
+   [
+    "RENTED.",
+    "rented."
+   ]
+  ]
+ },
+ {
+  "id": "L77",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Breakups",
+    "Breakups"
+   ],
+   [
+    "take FOREVER",
+    "take forever"
+   ],
+   [
+    "around HERE.",
+    "around here."
+   ]
+  ]
+ },
+ {
+  "id": "L78",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Jo's front door",
+    "Jo's front door"
+   ],
+   [
+    "doesn't",
+    "doesn't"
+   ],
+   [
+    "LIGHT UP",
+    "light up"
+   ],
+   [
+    "for me",
+    "for me"
+   ],
+   [
+    "any MORE.",
+    "any more."
+   ]
+  ]
+ },
+ {
+  "id": "L79",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But ONE door",
+    "But one door"
+   ],
+   [
+    "still opens",
+    "still opens"
+   ],
+   [
+    "for BOTH",
+    "for both"
+   ],
+   [
+    "of us.",
+    "of us."
    ]
   ]
  },
@@ -38,96 +156,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "It's unit SEVEN,",
-    "It's unit seven,"
+    "It's a STORAGE",
+    "It's a storage"
    ],
    [
-    "in a",
-    "in a"
+    "unit we rented",
+    "unit we rented"
    ],
    [
-    "STORAGE block",
-    "storage block"
+    "TOGETHER.",
+    "together."
    ],
    [
-    "on the EDGE",
-    "on the edge"
+    "I go every",
+    "I go every"
    ],
    [
-    "of town.",
-    "of town."
-   ]
-  ]
- },
- {
-  "id": "L03",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Jo and I",
-    "Jo and I"
+    "TUESDAY",
+    "Tuesday"
    ],
    [
-    "rented it TOGETHER,",
-    "rented it together,"
-   ],
-   [
-    "the week we",
-    "the week we"
-   ],
-   [
-    "MOVED IN.",
-    "moved in."
-   ]
-  ]
- },
- {
-  "id": "L04",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She stood at",
-    "She stood at"
-   ],
-   [
-    "the BACK",
-    "the back"
-   ],
-   [
-    "and passed the",
-    "and passed the"
-   ],
-   [
-    "boxes FORWARD.",
-    "boxes forward."
-   ]
-  ]
- },
- {
-  "id": "L05",
-  "who": "narrator",
-  "chunks": [
-   [
-    "We split up",
-    "We split up"
-   ],
-   [
-    "last SPRING.",
-    "last spring."
-   ]
-  ]
- },
- {
-  "id": "L06",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I kept PAYING",
-    "I kept paying"
-   ],
-   [
-    "for the unit.",
-    "for the unit."
+    "at SEVEN.",
+    "at seven."
    ]
   ]
  },
@@ -1048,6 +1098,32 @@
   ]
  },
  {
+  "id": "L80",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And SEVEN",
+    "And seven"
+   ],
+   [
+    "had lit up",
+    "had lit up"
+   ],
+   [
+    "for ME",
+    "for me"
+   ],
+   [
+    "every single",
+    "every single"
+   ],
+   [
+    "TUESDAY.",
+    "Tuesday."
+   ]
+  ]
+ },
+ {
   "id": "L53",
   "who": "narrator",
   "chunks": [
@@ -1464,28 +1540,24 @@
   ]
  },
  {
-  "id": "L73",
+  "id": "L81",
   "who": "narrator",
   "chunks": [
    [
-    "Every TUESDAY",
-    "Every Tuesday"
+    "And NOW,",
+    "And now,"
    ],
    [
-    "at SEVEN,",
-    "at seven,"
+    "NOTHING",
+    "nothing"
    ],
    [
-    "I USED",
-    "I used"
+    "of mine",
+    "of mine"
    ],
    [
-    "to visit",
-    "to visit"
-   ],
-   [
-    "a ROOM.",
-    "a room."
+    "is INSIDE.",
+    "is inside."
    ]
   ]
  }

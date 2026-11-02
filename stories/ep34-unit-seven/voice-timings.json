@@ -46,34 +46,38 @@
    ]
   },
   "L02": {
-   "text": "It's unit seven, in a storage block on the edge of town.",
+   "text": "It's a storage unit we rented together. I go every Tuesday at seven.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.672,
+   "dur": 3.31,
    "onset": 0.155,
-   "end": 2.483,
+   "end": 3.103,
    "chunks": [
     [
      0.155,
-     0.862
+     0.69
     ],
     [
-     0.931,
-     1.034
+     0.69,
+     1.207
     ],
     [
-     1.034,
-     1.543
+     1.207,
+     1.621
     ],
     [
-     1.543,
-     1.837
+     1.707,
+     2.095
     ],
     [
-     1.837,
-     2.483
+     2.095,
+     2.448
+    ],
+    [
+     2.448,
+     3.103
     ]
    ]
   },
@@ -1914,6 +1918,254 @@
     [
      1.819,
      2.414
+    ]
+   ]
+  },
+  "L74": {
+   "text": "In this town, a door won't open unless something of yours is inside.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.086,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     0.879
+    ],
+    [
+     0.879,
+     1.406
+    ],
+    [
+     1.406,
+     1.819
+    ],
+    [
+     1.819,
+     2.138
+    ],
+    [
+     2.138,
+     2.879
+    ]
+   ]
+  },
+  "L75": {
+   "text": "So you leave a sock at a friend's place, to get asked back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.681
+    ],
+    [
+     0.681,
+     1.0
+    ],
+    [
+     1.0,
+     1.328
+    ],
+    [
+     1.379,
+     1.81
+    ],
+    [
+     1.81,
+     2.293
+    ]
+   ]
+  },
+  "L76": {
+   "text": "Landlords hide a spoon in every flat they've ever rented.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     0.966
+    ],
+    [
+     0.966,
+     1.517
+    ],
+    [
+     1.517,
+     1.828
+    ],
+    [
+     1.828,
+     2.379
+    ]
+   ]
+  },
+  "L77": {
+   "text": "Breakups take forever around here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.931
+    ],
+    [
+     0.931,
+     1.569
+    ]
+   ]
+  },
+  "L78": {
+   "text": "Jo's front door doesn't light up for me any more.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 2.224,
+   "onset": 0.19,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ],
+    [
+     0.759,
+     0.966
+    ],
+    [
+     0.966,
+     1.259
+    ],
+    [
+     1.259,
+     1.406
+    ],
+    [
+     1.406,
+     2.017
+    ]
+   ]
+  },
+  "L79": {
+   "text": "But one door still opens for both of us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.052
+    ],
+    [
+     1.052,
+     1.337
+    ],
+    [
+     1.337,
+     1.793
+    ]
+   ]
+  },
+  "L80": {
+   "text": "And seven had lit up for me every single Tuesday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9579000000000001,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.879
+    ],
+    [
+     0.879,
+     1.138
+    ],
+    [
+     1.138,
+     1.681
+    ],
+    [
+     1.681,
+     2.379
+    ]
+   ]
+  },
+  "L81": {
+   "text": "And now, nothing of mine is inside.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.466,
+     0.698
+    ],
+    [
+     0.698,
+     0.966
+    ],
+    [
+     0.966,
+     1.707
     ]
    ]
   }

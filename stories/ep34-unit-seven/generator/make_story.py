@@ -16,8 +16,8 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
-TEMPO = {"L50": 0.9, "L49": 0.8, "L67": 0.88, "L64": 0.9, "L73": 0.95, "L54": 0.7, "L57": 0.95, "L19": 0.95}
-GAPS = {"L50": 0.06, "L12": 0.35, "L37": 0.4, "L54": 0.7, "L69": 0.7, "L60": 0.55, "L67": 0.35, "L68": 0.4, "L58": 0.13}
+TEMPO = {"L50": 0.9, "L49": 0.8, "L67": 0.88, "L64": 0.9, "L78": 0.95, "L80": 0.93, "L54": 0.7, "L57": 0.95, "L19": 0.95}
+GAPS = {"L78": 0.2, "L79": 0.15, "L50": 0.06, "L12": 0.35, "L37": 0.4, "L54": 0.7, "L69": 0.7, "L60": 0.55, "L67": 0.35, "L68": 0.4, "L58": 0.13}
 LOOP = 0.45          # seconds after the last word: the door's thud lands in it
 for ln in lines:
     if ln["id"] == "L42":
@@ -74,15 +74,26 @@ SIT = (2.3, 2.25)
 SIT_Z = 0.46
 KEYCAM = still([1.62, 2.14, 1.6], [1.62, 2.18, 1.2], 28)
 
+HX, HY = 100.0, 0.0     # the town house front (montage and Jo's door)
+CX, CY = 140.0, 0.0     # the high kitchen cupboard
+
 SHOTS = [
-    (0, "L01 low in the corridor: me walking toward the lamp-lit open door seven, round-scribbled boxes inside it",
-     move(([-0.95, 1.0, 1.55], [0.8, 3.5, 0.3]), ([-0.95, 1.2, 1.55], [0.8, 3.5, 0.3]), 18, 18)),
-    ("L02", "outside at dusk: the low block, the yard, the sodium lamp",
+    (0, "L74 the rule: me front-on at door seven, its lamp lit pale blue above my head, the door rising behind me",
+     move(([-1.0, 3.0, 1.2], [0.5, 3.0, 1.45]), ([-0.95, 3.0, 1.22], [0.5, 3.0, 1.47]), 15, 15)),
+    ("L75", "a narrow hallway through an open front door, lamp lit: one striped sock on a shoe rack",
+     move(([HX + 0.7, -4.5, 1.2], [HX + 0.7, 1.95, 1.3]), ([HX + 0.7, -4.2, 1.2], [HX + 0.7, 1.95, 1.3]), 44)),
+    ("L76", "inside a high kitchen cupboard, door open: bare shelves, one spoon at the back",
+     move(([CX + 0.05, -2.2, 1.55], [CX, 0.4, 1.5]), ([CX + 0.0, -2.0, 1.55], [CX, 0.4, 1.5]), 30)),
+    ("L77", "a front step at evening, lamp lit: through the open door one taped box alone in an empty hall",
+     move(([HX + 0.7, -4.5, 1.2], [HX + 0.7, 1.7, 1.3]), ([HX + 0.7, -4.2, 1.2], [HX + 0.7, 1.7, 1.3]), 42)),
+    ("L78", "now, dusk: Jo at her lit window, her door and its dark lamp, me on the pavement looking up",
+     move(([HX - 0.5, -2.6, 1.55], [HX - 0.6, 0.0, 1.6]), ([HX - 0.5, -2.5, 1.55], [HX - 0.6, 0.0, 1.6]), 25)),
+    ("L78.3", "me on the pavement looking up at her window",
+     move(([HX - 1.6, -3.0, 1.55], [HX - 0.1, -0.9, 1.6]), ([HX - 1.5, -2.9, 1.55], [HX - 0.1, -0.9, 1.6]), 24)),
+    ("L79", "seven's lamp glowing in its ring, tilting down to the open door and the two stacks",
+     move(([0.0, 2.35, 2.1], [0.8, 3.0, 2.5]), ([0.05, 2.6, 1.5], [1.9, 3.0, 0.75]), 32, 26)),
+    ("L02", "outside at dusk: the low block, the yard, the sodium lamp, me walking in",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
-    ("L03", "memory: unit seven half full, me at the door, Jo smiling", still([3.95, 2.95, 1.3], [1.0, 3.0, 1.15], 22)),
-    ("L04", "Jo at the back of the aisle with a box, me at the front", AISLE_CAM),
-    ("L05", "the yard by day: Jo walking to her car, me at the yard door", still([-4.2, -8.0, 1.5], [0.8, -4.5, 1.0], 24)),
-    ("L06", "the corridor at night, me at door seven", still([-0.45, -1.0, 1.5], [0.6, 3.0, 1.3], 26)),
     ("L07", "inside seven: the stacks and the aisle, the lamp on the floor", still([0.95, 3.0, 1.15], [3.0, 3.0, 0.85], 22)),
     ("L08", "the two box faces, round on the right, zigzag on the left", still([-1.0, 3.0, 0.85], [1.45, 3.0, -0.25], 14)),
     ("L09", "me on the round stack looking at the jagged one", still([0.95, 3.45, 1.65], [2.3, 2.4, 1.3], 18)),
@@ -137,6 +148,8 @@ SHOTS = [
     ("L51", "the round boxes beside its flank, the lamp at the foot", still([0.1, 2.6, 1.1], [1.5, 2.3, 0.8], 30)),
     ("L52", "memory: a round scribble on a fresh box, the kitchen table",
      still([KX + 2.0, -2.0, 1.55], [KX - 0.2, 0.1, 1.15], 30)),
+    ("L80", "low from the corridor: seven's lamp glowing over the open door, only its ribbed flank at the frame's edge",
+     still([-0.6, 4.7, 0.35], [1.0, 3.05, 2.2], 24)),
     ("L53", "my face, sad", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
     ("L54", "close on the round stack and my lamp, its flank at the left edge, head still turned to the stack",
      still([0.15, 2.85, 1.0], [1.5, 2.3, 0.8], 30)),
@@ -162,7 +175,7 @@ SHOTS = [
     ("L70", "me in the doorway with the small box", still([-0.9, 3.0, 1.55], [1.2, 3.0, 1.45], 38)),
     ("L71", "the blue door rolling down, me beside it with the box", still([-0.9, 1.3, 1.5], [0.6, 3.4, 1.15], 26)),
     ("L71+0.7", "low on the door coming down over the empty floor", still([-0.5, 2.1, 0.22], [0.9, 3.0, 0.3], 20)),
-    ("L73", "the corridor from the entrance, sunny: me walking toward the camera, the door landing behind",
+    ("L81", "the corridor from the entrance, sunny: me walking toward the camera, the door landing behind",
      still([-0.3, -1.0, 1.45], [0.25, 5.0, 1.15], 21)),
 ]
 
@@ -203,13 +216,13 @@ CARRY = {"arms": [80, 80], "side": [-6, -6]}
 SITTING = {"sit": True, "arms": [10, 10], "side": [-8, -8]}
 
 # me
-put("me", 0, [-0.5, 2.4], yaw=-15, expr="neutral")
-walk("me", "L01>", [-0.55, 1.9])
-hide("me", "L02")
-put("me", "L03", [1.2, 2.5], yaw=90, expr="soft")
-put("me", "L04", [1.7, 3.3], yaw=90, expr="neutral", arms=[20, 20])
-put("me", "L05", [-0.45, -1.75], yaw=0, expr="neutral")
-put("me", "L06", [0.45, 2.7], yaw=90, expr="worried")
+put("me", 0, [0.5, 3.0], yaw=-90, expr="neutral")
+hide("me", "L75")
+put("me", "L78", [HX - 0.1, -0.9], yaw=-85, expr="worried", head=[0, -10])
+hide("me", "L79")
+put("me", "L02", [-0.3, -6.5], yaw=180, expr="neutral")
+walk("me", "L02+0.1", [-0.3, -1.6])
+walk("me", "L02>", [-0.1, 1.4])
 hide("me", "L07")
 put("me", "L09", [SIT[0], SIT[1], SIT_Z], yaw=180, expr="worried", **SITTING)
 put("me", "L12", [SIT[0], SIT[1], SIT_Z], yaw=180, expr="worried", **SITTING)
@@ -266,17 +279,13 @@ walk("me", "L66+1.9", [-0.1, -4.2], **CARRY)
 hide("me", "L67")
 put("me", "L70", [1.25, 3.0], yaw=-90, expr="soft", **CARRY)
 put("me", "L71", [0.3, 3.75], yaw=90, expr="soft", **CARRY)
-put("me", "L73", [0.25, 3.4], yaw=180, expr="soft", **CARRY)
-walk("me", "L73+0.1", [0.0, 0.2], yaw=0)
+put("me", "L81", [0.25, 3.4], yaw=180, expr="soft", **CARRY)
+walk("me", "L81+0.1", [0.0, 0.2], yaw=0)
 
 # Jo
 hide("jo", 0)
-put("jo", "L03", [1.95, 3.2], yaw=90, expr="soft")
-put("jo", "L04", [3.45, 2.75], yaw=-90, expr="soft", **CARRY)
-put("jo", "L05", [0.5, -2.0], yaw=0, expr="neutral")
-walk("jo", "L05+0.1", [0.5, -2.0], yaw=0)
-walk("jo", "L05>", [1.9, -5.0])
-hide("jo", "L06")
+put("jo", "L78", [HX - 1.2, 1.0], yaw=0, expr="smile")
+hide("jo", "L79")
 put("jo", "L59", [0.3, 2.6], yaw=50, expr="soft")
 hide("jo", "L60")
 put("jo", "L61", [0.5, 2.4], yaw=0, expr="soft", **CARRY)
@@ -298,16 +307,42 @@ put("deep", "L43", [1.2, 3.0], yaw=-90, expr="neutral")
 key("deep", "L48", head=[90, 0], blend=0)
 key("deep", "L49", head=[90, 0], blend=0)
 hide("deep", "L52")
+put("deep", "L80", [1.2, 3.0], yaw=-90, head=[90, 0])
 put("deep", "L53", [1.2, 3.0], yaw=-90, head=[90, 0])
 hide("deep", "L55")
 
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [
     {"at": 0, "name": "time", "set": "open"},
+    {"at": "L75", "name": "time", "set": "day", "dur": 0.01},
+    {"at": "L77", "name": "time", "set": "sun", "dur": 0.01},
+    {"at": "L78", "name": "time", "set": "dusk", "dur": 0.01},
+    {"at": "L79", "name": "time", "set": "open", "dur": 0.01},
     {"at": "L02", "name": "time", "set": "dusk", "dur": 0.01},
-    {"at": "L03", "name": "time", "set": "mem", "dur": 0.01},
-    {"at": "L05", "name": "time", "set": "day", "dur": 0.01},
-    {"at": "L06", "name": "time", "set": "dusk", "dur": 0.01},
+    # the town: which little set is lit (set.py "scene")
+    {"at": "L75", "name": "scene", "set": "sock"},
+    {"at": "L76", "name": "scene", "set": "cupboard"},
+    {"at": "L77", "name": "scene", "set": "box"},
+    {"at": "L78", "name": "scene", "set": "street"},
+    {"at": "L79", "name": "scene", "set": "none"},
+    # the door lamps: pale blue when the rule lets the door lift. Every lamp ramps (0.6 s up, 1.0 s down), never a flick
+    {"at": 0, "name": "dlamp", "unit": 7, "on": 0.0, "dur": 0.01},
+    {"at": 0.05, "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.5},
+    {"at": "L75", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 0.4},
+    {"at": "L79", "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.6},
+    {"at": "L07", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 0.5},
+    {"at": "L19", "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.6},
+    {"at": "L20.2", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 1.0},
+    {"at": "L39", "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.6},
+    {"at": "L55", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 1.0},
+    {"at": "L59", "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.6},
+    {"at": "L81.1", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 1.6},
+    {"at": "L16", "name": "dlamp", "unit": 11, "on": 1.0, "dur": 0.6},
+    {"at": "L21", "name": "dlamp", "unit": 11, "on": 0.0, "dur": 0.5},
+    {"at": "L21", "name": "dlamp", "unit": 10, "on": 1.0, "dur": 0.6},
+    {"at": "L28", "name": "dlamp", "unit": 10, "on": 0.0, "dur": 0.5},
+    {"at": "L28", "name": "dlamp", "unit": 9, "on": 1.0, "dur": 0.6},
+    {"at": "L31", "name": "dlamp", "unit": 9, "on": 0.0, "dur": 0.5},
     {"at": "L58", "name": "time", "set": "sun", "dur": 0.01},
     # the corridor timer: slow ramps only (1.2 s down to 12%, 1.0 s up)
     {"at": "L15.1", "name": "corr", "level": 0.12, "dur": 1.2},
@@ -317,7 +352,8 @@ cues = [
     {"at": "L43+0.3", "name": "corr", "level": 0.09, "dur": 2.4},
     {"at": "L55", "name": "corr", "level": 1.0, "dur": 0.01},
     # doors
-    {"at": 0, "name": "door", "unit": 7, "open": 1.0},
+    {"at": 0, "name": "door", "unit": 7, "open": 0.5},
+    {"at": 0.35, "name": "door", "unit": 7, "open": 1.0, "dur": 2.5},
     {"at": "L16", "name": "door", "unit": 11, "open": 1.0},
     {"at": "L20.2", "name": "door", "unit": 7, "open": 0.0, "dur": 1.4},
     {"at": "L21", "name": "door", "unit": 11, "open": 0.0},
@@ -331,13 +367,11 @@ cues = [
     {"at": "L55", "name": "door", "unit": 7, "open": 0.0},
     {"at": "L59.3", "name": "door", "unit": 7, "open": 1.0, "dur": 1.4},
     {"at": "L71+0.2", "name": "door", "unit": 7, "open": 0.5, "dur": 2.4},
-    {"at": "L73>-2.2", "name": "door", "unit": 7, "open": 0.0, "dur": 2.4},
+    {"at": "L81>-2.2", "name": "door", "unit": 7, "open": 0.0, "dur": 2.4},
     # unit seven's stacks (18 each when full)
     {"at": 0, "name": "stacks", "left": 18, "right": 18},
     {"at": 0, "name": "scribble", "left": "round"},
-    {"at": "L02", "name": "scribble", "left": "jagged"},
-    {"at": "L03", "name": "stacks", "left": 9, "right": 9},
-    {"at": "L06", "name": "stacks", "left": 18, "right": 18},
+    {"at": "L75", "name": "scribble", "left": "jagged"},
     {"at": "L61", "name": "stacks", "left": 12, "right": 18},
     {"at": "L61.4", "name": "stacks", "left": 6, "right": 18},
     {"at": "L62", "name": "stacks", "left": 3, "right": 18},
@@ -345,8 +379,6 @@ cues = [
     {"at": "L66", "name": "stacks", "left": 0, "right": 9},
     {"at": "L67", "name": "stacks", "left": 0, "right": 0},
     # the lamp
-    {"at": "L03", "name": "lamp", "on": 0.0},
-    {"at": "L06", "name": "lamp", "on": 1.0},
     {"at": "L55", "name": "lamp", "on": 0.0},
     {"at": "L67", "name": "lamp", "on": 1.0},
     # my phone's glow and torch
@@ -362,8 +394,6 @@ cues = [
     {"at": "L41", "name": "phone", "on": 1.0},
     {"at": "L43", "name": "phone", "on": 0.0},
     # boxes in arms
-    {"at": "L04", "name": "carry", "who": "jo", "style": "jagged", "on": True},
-    {"at": "L05", "name": "carry", "who": "jo", "style": "jagged", "on": False},
     {"at": "L61", "name": "carry", "who": "jo", "style": "jagged", "on": True},
     {"at": "L61", "name": "carry", "who": "me", "style": "jagged", "on": True},
     {"at": "L61.4", "name": "carry", "who": "jo", "style": "jagged", "on": False},
@@ -394,8 +424,6 @@ cues = [
     {"at": "L56", "name": "call", "on": True},
     {"at": "L58", "name": "call", "on": False},
     # Jo's car
-    {"at": "L05", "name": "car", "pos": [3.4, -8.6], "yaw": 90},
-    {"at": "L06", "name": "car", "pos": [3.4, -8.6], "yaw": 90, "hide": True},
     {"at": "L58", "name": "car", "pos": [10.0, -8.6], "yaw": 90},
     {"at": "L58+0.3", "name": "car", "pos": [3.4, -8.6], "yaw": 90, "dur": 2.2},
     {"at": "L65+0.2", "name": "car", "pos": [20.0, -8.6], "yaw": 90, "dur": 3.5},
@@ -427,13 +455,13 @@ sfx = [
     {"at": "L43", "kind": "hit", "db": -7},
     {"at": "P01+0.2", "kind": "bell", "db": -16, "dur": 1.5},
     {"at": "L71+0.2", "kind": "rattle", "db": -16, "dur": 1.6},
-    {"at": "L73>-2.2", "kind": "rattle", "db": -12, "dur": 2.4},
-    {"at": "L73>+0.12", "kind": "thud", "db": -9},
+    {"at": "L81>-2.2", "kind": "rattle", "db": -12, "dur": 2.4},
+    {"at": "L81>+0.12", "kind": "thud", "db": -9},
 ]
 
 story = {
     "slug": "ep34-unit-seven",
-    "title": "Every Tuesday at seven, I visit a room",
+    "title": "In this town, a door won't open unless something of yours is inside",
     "made_for_kids": False,
     "premise": "Every Tuesday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Tuesday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Tuesday they are one door nearer mine.",
     "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit stares only at the round stack I sit on, and that makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.", "twist_old": "Half the boxes are mine. The thing that has come to stand in the aisle is standing exactly where Jo stood the night we packed, because a unit rented by two is counted for two and I have been keeping her place empty. When Jo takes her half and I give mine away, the room is finally empty of anyone's things.",
@@ -445,7 +473,7 @@ story = {
     "gap": 0.12,
     "tail": LOOP,
     "look": {"fog": "#2a3140", "fog_density": 0.012, "fog_start": 6.0, "sky": "#161d2e", "sky_strength": 0.5,
-             "exposure": 0.0},
+             "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.32, "bloom": 0.2, "grain": 0.012},
     "phonemes": {"Jo": "ʤˈO", "Jo's": "ʤˈOz"},
