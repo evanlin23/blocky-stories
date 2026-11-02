@@ -33,7 +33,7 @@
    0.015,
    -0.03
   ],
-  "saturation": 1.0,
+  "saturation": 0.92,
   "contrast": 1.06,
   "vignette": 0.34,
   "bloom": 0.2,
@@ -87,9 +87,9 @@
   "mumr": {
    "age": "adult",
    "skin": "#e8bd98",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "bun",
@@ -105,7 +105,7 @@
    "extras": [
     "coat"
    ],
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "ron": {
    "age": "adult",
@@ -303,9 +303,9 @@
   "c1": {
    "age": "adult",
    "skin": "#e0b08a",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "cap",
@@ -320,14 +320,14 @@
    "extras": [
     "coat"
    ],
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c2": {
    "age": "adult",
    "skin": "#c68a62",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "spiky",
@@ -343,14 +343,14 @@
     "coat"
    ],
    "height": 0.96,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c3": {
    "age": "adult",
    "skin": "#8c5c40",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "swoop",
@@ -366,14 +366,14 @@
     "coat"
    ],
    "height": 1.03,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c4": {
    "age": "adult",
    "skin": "#f0c8a0",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "long",
@@ -389,14 +389,14 @@
     "coat"
    ],
    "height": 0.98,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c5": {
    "age": "adult",
    "skin": "#d9a07c",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "bun",
@@ -412,14 +412,14 @@
     "coat"
    ],
    "height": 1.02,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c6": {
    "age": "adult",
    "skin": "#a8744e",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "buzz",
@@ -435,14 +435,14 @@
     "coat"
    ],
    "height": 0.95,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c7": {
    "age": "adult",
    "skin": "#e8bd98",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "cap",
@@ -457,14 +457,14 @@
    "extras": [
     "coat"
    ],
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c8": {
    "age": "adult",
    "skin": "#7a4a34",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "long",
@@ -480,14 +480,14 @@
     "coat"
    ],
    "height": 1.04,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c9": {
    "age": "adult",
    "skin": "#e0b08a",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "bun",
@@ -503,14 +503,14 @@
     "coat"
    ],
    "height": 0.97,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c10": {
    "age": "adult",
    "skin": "#c68a62",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "swoop",
@@ -526,14 +526,14 @@
     "coat"
    ],
    "height": 1.01,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "c11": {
    "age": "adult",
    "skin": "#8c5c40",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "spiky",
@@ -549,14 +549,14 @@
     "coat"
    ],
    "height": 0.99,
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   },
   "grin": {
    "age": "adult",
    "skin": "#d8c0a6",
-   "shirt": "#6e1f2c",
+   "shirt": "#5a2f3a",
    "pattern": "solid",
-   "pants": "#6e1f2c",
+   "pants": "#5a2f3a",
    "shoes": "#2a2022",
    "sleeves": "long",
    "hair": "buzz",
@@ -572,7 +572,7 @@
    "extras": [
     "coat"
    ],
-   "zip_c": "#5a1824"
+   "zip_c": "#4a2230"
   }
  },
  "lines": [

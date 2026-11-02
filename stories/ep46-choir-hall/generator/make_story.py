@@ -72,8 +72,8 @@ cast = {
     "me": person("#e0b08a", "#22304a", "#7b7f86", "#5a3b24", "cap", "#3a2418", "knit", "#1a2438", "#22304a"),
     "mum": person("#e8bd98", "#6b4a6e", "#4a4a52", "#3a2a22", "bun", "#7a6858", "knit", "#563a58", "#f0e6d0", TIRED,
                   ["coat"], zip_c="#563a58"),
-    "mumr": person("#e8bd98", "#6e1f2c", "#6e1f2c", "#2a2022", "bun", "#7a6858", "solid", None, "#f3efe6", TIRED,
-                   ["coat"], zip_c="#5a1824"),
+    "mumr": person("#e8bd98", "#5a2f3a", "#5a2f3a", "#2a2022", "bun", "#7a6858", "solid", None, "#f3efe6", TIRED,
+                   ["coat"], zip_c="#4a2230"),
     "ron": person("#e2b896", "#6b4a2e", "#4a463e", "#2a2a22", "none", "#e8e6e0", "knit", "#563a22", "#d8d0be", TIRED,
                   ["coat"], zip_c="#5a3a22", height=0.97),
     "postman": person("#d9a07c", "#22304a", "#22304a", "#1a1a1a", "cap", "#2a1d15", "solid", None, "#b0302a", None, None,
@@ -93,10 +93,10 @@ SKINS = ["#e0b08a", "#c68a62", "#8c5c40", "#f0c8a0", "#d9a07c", "#a8744e", "#e8b
 STYLES = ["cap", "spiky", "swoop", "long", "bun", "buzz", "cap", "long", "bun", "swoop", "spiky"]
 HAIRS = ["#2a1d15", "#6a5a3a", "#1a1412", "#9a5a32", "#8a8a8a", "#3a2a22", "#4a3a2a", "#171717", "#7a4a2a", "#c8b48a", "#2a1d15"]
 for i in range(11):
-    cast[f"c{i + 1}"] = person(SKINS[i % 8], "#6e1f2c", "#6e1f2c", "#2a2022", STYLES[i], HAIRS[i], "solid", None, "#f3efe6",
-                               dict(FACE), ["coat"], zip_c="#5a1824", height=[1.0, 0.96, 1.03, 0.98, 1.02, 0.95, 1.0, 1.04, 0.97, 1.01, 0.99][i])
-cast["grin"] = person("#d8c0a6", "#6e1f2c", "#6e1f2c", "#2a2022", "buzz", "#5a4030", "solid", None, "#f3efe6",
-                      {"eyes": "round", "brows": True, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#5a1824")
+    cast[f"c{i + 1}"] = person(SKINS[i % 8], "#5a2f3a", "#5a2f3a", "#2a2022", STYLES[i], HAIRS[i], "solid", None, "#f3efe6",
+                               dict(FACE), ["coat"], zip_c="#4a2230", height=[1.0, 0.96, 1.03, 0.98, 1.02, 0.95, 1.0, 1.04, 0.97, 1.01, 0.99][i])
+cast["grin"] = person("#d8c0a6", "#5a2f3a", "#5a2f3a", "#2a2022", "buzz", "#5a4030", "solid", None, "#f3efe6",
+                      {"eyes": "round", "brows": True, "ink": "#1a1214", "mouth": "none"}, ["coat"], zip_c="#4a2230")
 NAMES = list(cast)
 
 # the twelve chairs (set.py's STEPS and CHX)
@@ -740,7 +740,7 @@ story = {
     "tail": 0,
     "look": {"fog": "#c8d4de", "fog_density": 0.01, "fog_start": 6.0, "sky": "#b6cde0", "sky_strength": 1.0,
              "exposure": 0.0, "flash_safe": True},
-    "grade": {"shadows": [-0.01, 0.0, 0.05], "highlights": [0.04, 0.015, -0.03], "saturation": 1.0, "contrast": 1.06,
+    "grade": {"shadows": [-0.01, 0.0, 0.05], "highlights": [0.04, 0.015, -0.03], "saturation": 0.92, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.2, "grain": 0.012},
     "phonemes": {},
     "cast": cast,
