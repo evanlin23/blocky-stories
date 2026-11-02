@@ -463,7 +463,7 @@ cues = [
     {"at": "L68", "name": "mode", "set": "memory", "dur": 0.8},
     {"at": "L73", "name": "mode", "set": "gold", "dur": 0.9},
     # the phone: the glow comes on over 0.5 s, fades over 0.6 s
-    {"at": 0.1, "name": "phone", "on": 1.0, "dur": 0.5, "pos": [-1.3, 0.2, LF + 0.98], "color": "#cfe9e0"},
+    {"at": 0.0, "name": "phone", "on": 1.9, "dur": 0.4, "pos": [-1.3, 0.2, LF + 0.98], "color": "#cfe9e0"},
     {"at": "L02", "name": "phone", "on": 0.0, "dur": 0.0},
     {"at": "L15", "name": "phone", "on": 1.0, "dur": 0.5, "pos": [-0.7, -0.95, LF + 1.22], "color": "#cfe9e0"},
     {"at": "L16", "name": "phone", "on": 0.0, "dur": 0.0},
