@@ -199,7 +199,7 @@ shot("L24", "my socks on the clean boards, sand", SOCKS, hand=0.003)
 shot("L25", "through the glass: the beach far below", still([0.0, 1.8, LF + 1.7], [0.0, 180.0, LF - 3.0], 24))
 shot("L26", "kitchen: toast", still([KX + 2.15, 0.1, 1.5], [KX, 0.1, 1.0], 24))
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
-shot("L27.1", "insert: my socks under the table", still([KX + 1.4, -0.5, 0.62], [KX, -0.2, 0.62], 38), hand=0.003)
+shot("L27.1", "insert: my socks under the table", still([KX + 1.3, -0.04, 0.6], [KX, -0.1, 0.6], 36), hand=0.003)
 shot("L27.1+0.7", "close on Ines, the look", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34))
 shot("L28", "close on me, misreading", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30))
 shot("L29", "me looking past her", still([KX + 0.9, 0.3, 1.5], [KX, -0.75, 1.38], 30))
@@ -245,7 +245,7 @@ shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
 shot("L55", "kitchen, flat bright daylight", still([KX + 2.15, 0.6, 1.5], [KX, 0.1, 1.15], 24))
 shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.2, 1.0], 20))
-shot("L57", "Ines says goodnight at her door, lamp on", still([-1.0, -0.6, Z4 + 1.6], [1.7, -0.45, Z4 + 1.25], 24))
+shot("L57", "Ines says goodnight at her door, lamp on", still([-1.3, -0.6, Z4 + 1.6], [1.7, -0.45, Z4 + 1.25], 21))
 shot("L58", "me in the camp bed, listening", COT_WIDE)
 shot("L59", "the lamp room in the dark, rain settling", still([0.5, -2.0, LF + 1.8], [-0.8, 0.5, LF + 1.0], 22), rain=True)
 # 10 dawn
@@ -256,7 +256,7 @@ shot("L61", "wider: me slumped on a step in the sun", still(local(SEAT_ME, YAW_M
 shot("L62", "below her door, open, the room empty", still([-1.5, -0.2, 8.4], [2.3, 0.6, 9.6], 24))
 shot("L63", "Ines asleep two steps down in the blanket",
      still(local(SEAT_IN, YAW_IN, 2.0, -0.35, 1.4), local(SEAT_IN, YAW_IN, 0, 0, 0.85), 30))
-shot("L64", "her coat over my feet", still(local(SEAT_ME, YAW_ME, 0.5, 0.95, 1.1), local(SEAT_ME, YAW_ME, 0.85, 0, 0.1), 32), hand=0.004)
+shot("L64", "her coat over my feet", still(local(SEAT_ME, YAW_ME, 0.9, 0.9, 0.9), local(SEAT_ME, YAW_ME, 0.55, 0, 0.1), 30), hand=0.004)
 shot("L65", "high: me, Ines, the stair winding down", still([-0.2, -0.4, 10.4], [-1.9, 1.2, 6.8], 22))
 shot("L66", "POV down the sunlit well: empty", still([-0.8, -0.9, 8.7], [0.0, 1.8, 0.2], 24), hand=0.004)
 shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 1.7, -0.3, 1.3), local(SEAT_ME, YAW_ME, 0, 0, 0.9), 32))
@@ -570,7 +570,7 @@ cues = [
     {"at": 0, "name": "coat", "where": "off"},
     {"at": "L57", "name": "coat", "where": "worn"},
     {"at": "L58", "name": "coat", "where": "off"},
-    {"at": "L64-0.2", "name": "coat", "where": "feet", "pos": local(SEAT_ME, YAW_ME, 0.3, 0.0, 0.26), "yaw": YAW_ME},
+    {"at": "L64-0.2", "name": "coat", "where": "feet", "pos": local(SEAT_ME, YAW_ME, 0.2, 0.0, 0.27), "yaw": YAW_ME},
     {"at": 0, "name": "blanket", "state": "none"},
     {"at": "L57", "name": "blanket", "state": "arm"},
     {"at": "L58", "name": "blanket", "state": "none"},

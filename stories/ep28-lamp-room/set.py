@@ -113,7 +113,7 @@ def materials(kit):
     M["storm"] = kit.planks("#3d3226", "#2a2119", 1.2, "Z", name="storm door")
     M["boards"] = kit.planks("#d8d1c0", "#bdb5a2", 1.0, "X", name="white boards", rough=0.8)
     M["blue"] = pbr(kit, "sea blue door", "#2c6a9a", 0.5)
-    M["sand"] = pbr(kit, "sand", "#a8946a", 0.95, noise=(9.0, 0.7))
+    M["sand"] = pbr(kit, "sand", "#8f7a50", 0.95, noise=(9.0, 0.7))
     M["scratch"] = pbr(kit, "oilskin scratch", "#f0bd30", 0.35)
     M["grass"] = pbr(kit, "grass", "#3a4a2e", 0.95, noise=(1.2, 0.6))
     M["rock"] = pbr(kit, "cliff rock", "#4a4540", 0.95, noise=(0.5, 0.6))
@@ -655,6 +655,7 @@ def build_lights(kit, ctx):
     add_light(kit, "kit", "kitwin", "AREA", (kx, ky + 1.8, 1.7), 140.0, "#dfe8ee", rot=(math.radians(90), 0, math.pi), size=2.0)
     add_light(kit, "kit", "kitfill", "POINT", (kx, ky - 0.2, 2.3), 60.0, "#e6ecef", size=0.6)
     add_light(kit, "kit", "kitfill2", "POINT", (kx + 0.3, ky - 1.7, 1.6), 25.0, "#f1efe6", size=0.6)
+    add_light(kit, "kit", "kitlow", "POINT", (kx + 1.0, ky - 0.1, 0.5), 45.0, "#f1efe6", size=0.4)
     add_light(kit, "kit", "kitvest", "POINT", (kx + 3.3, ky - 1.3, 2.0), 40.0, "#cfd8e0", size=0.5)
     add_light(kit, "mefill", "me fill", "POINT", (0, 0, -40), 30.0, "#9db4e0", size=0.5, shadow=False)
     add_light(kit, "mefill", "ines fill", "POINT", (0, 0, -40), 30.0, "#9db4e0", size=0.5, shadow=False)
@@ -792,8 +793,8 @@ def _dress(kit, story, ctx):
         leg = bpy.data.objects[f"me.leg{sx}"]
         kit.box(f"me.sock{sx}", (1.0, 1.04, 0.78), (0, 0, -1.47), M["sock"], leg, bevel=0.1)
         # sand: level 1 a little at the heel, 2 the soles grey, 3 more and up the sides
-        for size, loc, lv in (((1.04, 0.55, 0.3), (0, 0.28, -1.9), 0), ((1.05, 1.1, 0.24), (0, 0, -1.92), 1),
-                              ((1.06, 1.12, 0.6), (0, 0, -1.65), 2)):
+        for size, loc, lv in (((1.07, 1.1, 0.4), (0, 0, -1.86), 0), ((1.08, 1.12, 0.7), (0, 0, -1.7), 1),
+                              ((1.09, 1.14, 1.0), (0, 0, -1.55), 2)):
             ob = kit.box(f"me.sand{sx}_{lv}", size, loc, M["sand"], leg, bevel=0.03)
             sand[lv].append(ob)
     ctx["sand"] = sand
@@ -810,7 +811,7 @@ def _dress(kit, story, ctx):
         coat.append(kit.box("ines.coatb", (1.9, 0.2, 2.1), (0, 0.5, 1.0), M["camel"], tor, bevel=0.08))
         ctx["coat_worn"] = coat
         blk = rig.cloth({"shirt": "#6b3d3a", "pattern": "plaid", "pattern_c": "#c9b79a"}, "shirt")
-        arm = kit.box("ines.blanket arm", (0.5, 0.5, 0.18), (-0.1, -0.6, 0.3), blk, bpy.data.objects["ines.arm-1"], bevel=0.05)
+        arm = kit.box("ines.blanket arm", (0.9, 0.8, 0.55), (0.1, -0.5, -0.4), blk, bpy.data.objects["ines.arm-1"], bevel=0.08)
         arm.rotation_euler = (0, 0, 0)
         wrap = [kit.box("ines.wrap torso", (2.5, 1.5, 2.3), (0, -0.02, 0.9), blk, tor, bevel=0.2),
                 kit.box("ines.wrap hood", (1.8, 0.4, 1.1), (0, 0.55, 2.6), blk, tor, bevel=0.2)]
@@ -819,7 +820,7 @@ def _dress(kit, story, ctx):
         ctx["blanket_arm"] = [arm]
         ctx["blanket_wrap"] = wrap
     # the coat laid over my feet, a prop in the world
-    ctx["coat_feet"] = [kit.box("coat feet", (0.9, 0.95, 0.12), (0, 0, -80), M["camel"], None, bevel=0.05)]
+    ctx["coat_feet"] = [kit.box("coat feet", (0.9, 0.5, 0.14), (0, 0, -80), M["camel"], None, bevel=0.05)]
 
 
 def _show(obs, on):
