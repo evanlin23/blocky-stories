@@ -187,7 +187,7 @@ def build_hall(kit, ctx):
     stripe = wstripes(kit, "wall stripes", "#9f2a31", "#e3d6bb", 1.0)
     stripe2 = wstripes(kit, "wall stripes out", "#8f2830", "#d9cdb4", 1.0)
     # floors
-    kit.box("rink floor", (14.0, 8.8, 0.1), (0, 0, -0.05), kit.planks("#d4a05c", "#bd8446", 1.0, "X", rough=0.3))
+    kit.box("rink floor", (14.0, 8.8, 0.1), (0, 0, -0.05), kit.planks("#d4a05c", "#bd8446", 1.0, "X", rough=0.42))
     kit.box("concourse", (16.0, 4.6, 0.1), (0, -6.7, -0.05), kit.checker("#6c2128", "#cdbf9f", 1.4, rough=0.45))
     kit.box("north strip", (16.0, 1.9, 0.1), (0, 5.45, -0.05), kit.planks("#a97b44", "#8f6535", 1.0, "X"))
     kit.box("floor w", (1.0, 8.8, 0.1), (-7.5, 0, -0.05), kit.planks("#a97b44", "#8f6535", 1.0, "Y"))
@@ -297,7 +297,7 @@ def build_snack(kit, ctx):
         kit.cyl(f"stoolbase{i}", 0.18, 0.03, (sx, STOOL_Y, 0.015), chrome, n=18)
         kit.cyl(f"stoolseat{i}", 0.2, 0.09, (sx, STOOL_Y, SEAT_Z - 0.045), cherry, n=22)
     # the amber lamp over Pop's stool
-    kit.cyl("lampcord", 0.01, 1.0, (STOOLS["pop"], STOOL_Y, 2.85), kit.metal("#222"))
+    kit.cyl("lampcord", 0.01, 1.0, (STOOLS["pop"], STOOL_Y, 2.85), kit.metal("#222222"))
     kit.cyl("lampshade", 0.05, 0.22, (STOOLS["pop"], STOOL_Y, 2.25), kit.emit("#ffb050", 5.0), n=18, r2=0.24)
     kit.sphere("lampbulb", 0.07, (STOOLS["pop"], STOOL_Y, 2.12), kit.emit("#ffd9a0", 14.0))
     # the chips: a tub on the ledge, between the stools
@@ -310,8 +310,8 @@ def build_snack(kit, ctx):
     ctx["steam"] = []
     for i in range(3):
         m, mix = ghost(f"steam{i}", 0.0)
-        s = kit.sphere(f"steam{i}", 0.05, (-4.4 + 0.02 * (i - 1), LEDGE_Y, LEDGE_Z + 0.35), m, seg=10)
-        s.scale = (1.0, 1.0, 2.0)
+        s = kit.sphere(f"steam{i}", 0.045, (-4.4 + 0.02 * (i - 1), LEDGE_Y, LEDGE_Z + 0.35), m, seg=20)
+        s.scale = (1.0, 1.0, 2.6)
         ctx["steam"].append((s, mix, i))
     # lights
     kit.light("amber", "POINT", (STOOLS["pop"], STOOL_Y, 2.0), 170, "#ffa845", size=0.1)
@@ -360,7 +360,7 @@ def build_hire(kit, ctx):
                 kit.box(f"bow{k}{j}{sl}", (0.045, 0.02, 0.03), (bx + sl * 0.045, ly, lz + 0.012), kit.plastic("#efe6d0", 0.8),
                         rot=(0, 0.5 * sl, 0))
     heel_y = -8.5 + 0.475
-    ink = kit.plastic("#6e1218", 0.7)
+    ink = kit.plastic("#5a0f15", 0.7)
     for sx in (-1, 1):   # a plain tally of two upright strokes, one per partner
         kit.box(f"tally{sx}", (0.016, 0.006, 0.085), (cx - 0.12 + sx * 0.026, heel_y + 0.001, z0 + 0.17), ink)
     # the neon-style tube over the counter: steady, soft
@@ -392,7 +392,7 @@ def build_booth(kit, ctx):
     kit.box("booth roof", (4.8, 2.2, 0.12), (0, 5.4, 4.0), kit.plastic("#3a2a2c", 0.8))
     for sx in (-2.3, 2.3):
         kit.box(f"boothpost{sx}", (0.1, 0.1, 2.3), (sx, 4.5, 2.85), cream)
-    kit.cyl("micpole", 0.012, 0.5, (0.25, 4.85, 2.95), kit.metal("#333"))
+    kit.cyl("micpole", 0.012, 0.5, (0.25, 4.85, 2.95), kit.metal("#333333"))
     kit.sphere("micball", 0.045, (0.25, 4.85, 3.22), dark)
     kit.sphere("boothbulb", 0.08, (0.5, 5.0, 3.55), kit.emit("#ffd9a0", 14.0))
     kit.light("booth", "POINT", (0.5, 5.0, 3.4), 160, "#ffbf70", size=0.15)
@@ -400,10 +400,11 @@ def build_booth(kit, ctx):
 
 def build_lights(kit, ctx):
     for i, hx in enumerate((-4.5, 0.0, 4.5)):
-        kit.light(f"house{i}", "AREA", (hx, 0.4, 4.9), 900, "#ffd7a3", rot=(0, 0, 0), size=3.2)
+        kit.light(f"house{i}", "AREA", (hx, 0.4, 4.9), 720, "#ffd7a3", rot=(0, 0, 0), size=3.2)
     for i, cx in enumerate((-3.0, 3.5)):
         kit.light(f"conc{i}", "AREA", (cx, -6.6, 4.8), 520, "#ffd7a3", size=2.6)
-    kit.light("dusk", "SUN", (0, 0, 10), 1.6, "#6fb0b8", rot=(math.radians(60), 0, math.radians(-70)))
+    kit.aim(kit.light("flood", "SPOT", (-17.0, -3.0, 4.6), 2600, "#9fd3da", size=0.6, spot=75, blend=0.8), (-8.4, -6.0, 1.4))
+    kit.light("dusk", "SUN", (0, 0, 10), 2.2, "#6fb0b8", rot=(math.radians(60), 0, math.radians(-70)))
     kit.light("spot", "SPOT", (0, 0, 4.7), 3200, "#fff0dc", rot=(0, 0, 0), size=0.4, spot=40, blend=1.0)
     for n in ("house0", "house1", "house2", "conc0", "conc1"):
         pass
@@ -425,12 +426,12 @@ def skater_face(path: Path):
     ink = (22, 16, 15)
     ey = int(H * 0.40)
     for sx in (-1, 1):
-        ex = cx + sx * 96
-        d.ellipse([ex - 27, ey - 52, ex + 27, ey + 52], fill=ink)
-        d.ellipse([ex - 12 + sx * 3, ey - 34, ex + 3 + sx * 3, ey - 18], fill=(255, 255, 255))
-    my = int(H * 0.70)
-    pts = [(cx + (i / 24 - 0.5) * 300, my - 20 * math.cos((i / 24 - 0.5) * math.pi) + 6) for i in range(25)]
-    d.line(pts, fill=ink, width=7, joint="curve")
+        ex = cx + sx * 92
+        d.ellipse([ex - 44, ey - 88, ex + 44, ey + 88], fill=ink)
+        d.ellipse([ex - 20 + sx * 4, ey - 62, ex + 4 + sx * 4, ey - 38], fill=(255, 255, 255))
+    my = int(H * 0.72)
+    pts = [(cx + (i / 24 - 0.5) * 460, my + 70 * math.cos((i / 24 - 0.5) * math.pi) - 46) for i in range(25)]
+    d.line(pts, fill=ink, width=9, joint="curve")
     im.save(path)
     return im
 
@@ -483,7 +484,7 @@ def build_skater(kit, ctx):
         chain = [j]
         parent = j
         for k, L in enumerate((UPPER, FORE, FORE2)):
-            add(kit.box(f"sk.arm{sx}{k}", (0.17, 0.17, L), (0, 0, -L / 2), sm2 if k != 1 else sm, parent, bevel=0.02))
+            add(kit.box(f"sk.arm{sx}{k}", (0.2, 0.2, L), (0, 0, -L / 2), sm2 if k != 1 else sm, parent, bevel=0.02))
             nx = kit.empty(f"sk.el{sx}{k}", (0, 0, -L), parent)
             if k < 2:
                 add(kit.box(f"sk.elb{sx}{k}", (0.23, 0.23, 0.17), (0, 0, -L), joint, parent, bevel=0.03))
@@ -496,7 +497,7 @@ def build_skater(kit, ctx):
     neck = kit.empty("sk.neck", (0, 0, TORSO[2] + 0.05), torso)
     add(kit.box("sk.neckb", (0.14, 0.14, 0.16), (0, 0, 0.06), joint, neck))
     headp = kit.empty("sk.head", (0, 0, 0.12), neck)
-    hs = (0.36, 0.36, 0.40)       # a tall, narrow oval: R 0.22 m, H 0.48 m
+    hs = (0.40, 0.40, 0.46)       # a tall, narrow oval: R 0.22 m, H 0.48 m
     headg = kit.empty("sk.headg", (0, 0, 0.01), headp)
     headg.scale = hs
     hm, tex = rig.head_material("skater", "#e9dfc9")
@@ -510,19 +511,19 @@ def build_skater(kit, ctx):
     # the eye highlights: two tiny emissive points, the brightest thing in frame
     R, Hh = faces.HEAD_R, faces.HEAD_H
     for sx in (-1, 1):
-        th = (96 / (faces.TEX_W / (2 * math.pi * 1.0)))      # radians round the head
+        th = (92 / (faces.TEX_W / (2 * math.pi * 1.0)))      # radians round the head
         ang = sx * th
         px, py = R * math.sin(ang), -R * math.cos(ang)
-        v = 1.0 - (faces.TEX_H * 0.40 - 26) / faces.TEX_H
+        v = 1.0 - (faces.TEX_H * 0.40 - 50) / faces.TEX_H
         pz = 0.08 + v * (Hh - 0.16) - Hh / 2
         pr = 1.006
-        hl = kit.sphere(f"sk.hl{sx}", 0.032, (px * pr, py * pr, pz), kit.emit("#fff8ee", 40.0), inner, seg=8)
+        hl = kit.sphere(f"sk.hl{sx}", 0.045, (px * pr, py * pr, pz), kit.emit("#fff8ee", 40.0), inner, seg=8)
         objs.append(hl)
     for ob in objs:
         pass
     # lights that follow it
-    kit.light("sk_up", "POINT", (0, 0, 0.2), 38, "#ffe6c8", size=0.2)
-    kit.light("sk_rim", "SPOT", (0, 0, 3), 210, "#f08a94", size=0.1, spot=34, blend=0.8)
+    kit.light("sk_up", "POINT", (0, 0, 0.2), 110, "#ffe0c0", size=0.15)
+    kit.light("sk_rim", "SPOT", (0, 0, 3), 520, "#f27a88", size=0.1, spot=38, blend=0.8)
     allobjs = objs + list(root.children_recursive)
     link_only(kit, "skater_up", "sk_up", [o for o in allobjs if o.type == "MESH"], "only")
     link_only(kit, "skater_rim", "sk_rim", [o for o in allobjs if o.type == "MESH"], "only")
@@ -653,7 +654,7 @@ def animate(kit, story, tl, t, ctx):
     # ---- the room: a slow ramp between levels
     dim = _ramp(_cues(tl, "dim"), t, DIM0, ["level"])["level"]
     for n in ("house0", "house1", "house2"):
-        over[n] = dim
+        over[n] = dim ** 1.5
     over["conc0"] = over["conc1"] = 0.15 + 0.85 * dim
     over["amber"] = 0.55 + 0.45 * dim
     over["hirefill"] = 0.3 + 0.7 * dim
@@ -727,5 +728,5 @@ def animate(kit, story, tl, t, ctx):
         ph = ((t * 0.18 + i / 3.0) % 1.0)
         ob.hide_render = not steam_on
         ob.location = (-4.4 + 0.03 * math.sin(ph * 6 + i), LEDGE_Y, LEDGE_Z + 0.3 + 0.28 * ph)
-        mix.inputs[0].default_value = 0.0 if not steam_on else 0.16 * math.sin(math.pi * ph)
+        mix.inputs[0].default_value = 0.0 if not steam_on else 0.07 * math.sin(math.pi * ph)
     return over
