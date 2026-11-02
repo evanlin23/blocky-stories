@@ -176,7 +176,7 @@ POSES = {
     "over_bed": {"at": [0.36, 2.9], "yaw": -30, "neck": 3, "hip": [[2, 12], [0, 14]], "knee": [4, 3],
                  "press": True, "waist": [12, 2, -3], "spine1": [12, -3, 3], "spine2": [16, 4, -2],
                  "chain": {"to": [-0.82, 1.95]}, "face": {"dir": [-0.1, -0.6, -0.8], "roll": 4}, "flip": True,
-                 "hands": {"-1": [-0.86, 2.38, 0.86], "1": [-0.26, 2.54, 0.7]},
+                 "hands": {"-1": [-0.12, 2.28, 0.72], "1": [0.2, 2.42, 0.66]},
                  "pole": {"-1": [-0.6, 0.6, 0.3], "1": [0.6, 0.6, 0.2]},
                  "flaps": {"-1": [34, 70, 38, 72], "1": [36, 68, 34, 72]}, "curl": 6,
                  "wrist_roll": {"-1": 42, "1": -45},
@@ -1712,7 +1712,7 @@ def build_lights(kit, ctx):
     xf.visible_glossy = False
     ctx["xfill"] = xf
     # the lamp on the chest of drawers (off until L51)
-    lamp = kit.light("lamp", "POINT", (DRAWERS[0] - 0.12, DRAWERS[1] + 0.2, 1.08), 12.0, "#ffc890", size=0.06)
+    lamp = kit.light("lamp", "POINT", (DRAWERS[0] - 0.12, DRAWERS[1] + 0.2, 1.08), 28.0, "#ffc890", size=0.06)
     ctx["lamp"] = lamp
 
 
@@ -2075,9 +2075,9 @@ def animate_props(kit, story, tl, t, ctx):
     where = c.get("where", "sill")
     _show([mug], where != "none")
     if where == "sill":
-        mug.matrix_world = Matrix.Translation(SILL)
+        mug.matrix_world = Matrix.Translation(SILL) @ Matrix.Rotation(math.radians(110), 4, "Z")   # the handle toward the room
     elif where == "counter":
-        mug.matrix_world = Matrix.Translation(tuple(c.get("pos", (0.95, -3.55))) + (COUNTER["z"],))
+        mug.matrix_world = Matrix.Translation(tuple(c.get("pos", (0.95, -3.55))) + (COUNTER["z"],)) @ Matrix.Rotation(math.radians(110), 4, "Z")
     elif where == "hand":
         f = _rig_frame(c.get("who", "mum"), (0.0, -0.2, -1.85), c.get("arm", "arm-1"))
         if f is not None:

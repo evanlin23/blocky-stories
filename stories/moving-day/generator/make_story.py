@@ -18,7 +18,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 # If the voice lands short of the owner's 2:15 floor, holds are added in the brief's order, never words:
 # P02 up to 2.4 s, the photos after L66 +0.3 s, the smile after L77 +0.2 s, L61's gap up to 0.7 s, P01 up to 1.4 s.
 HOLDS = {"P02": 2.4, "L66": 0.42, "L77": 0.65, "L61": 0.7, "P01": 1.4}
-LOOP = 0.25          # the brief: a hard cut 0.25 s after the last word, into L01 (no fade at either end)
+LOOP = 0.12          # the last word ends 0.25 s before the hard cut (the voice's own tail is 0.13 s of it), into L01 (no fade at either end)
 
 for ln in lines:
     lid = ln["id"]
@@ -34,7 +34,7 @@ lines = lines + [{"id": "P03", "pause": LOOP, "chunks": []}]
 # round" isn't heard as "tucked around"; L64 gets a breath after "wrapped", as Whisper heard "in a quilt"
 # at either tempo and with "thee". The captions don't change
 TEMPO = {"L02": 0.95, "L23": 0.92, "L53": 0.94}
-SPOKEN = {("L53", 0): "Tucked, round", ("L64", 1): "wrapped,"}
+SPOKEN = {("L64", 1): "wrapped,", ("L54", 1): "she had left"}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -89,12 +89,12 @@ WIDE = still([-1.3, -0.25, 1.43], [-0.76, 2.5, 0.95], 18)
 FACE_BELOW = c([0, [-0.95, 1.0, 0.75], [-0.6, 2.2, 1.95], 24], [1, [-0.92, 1.12, 0.74], [-0.6, 2.2, 1.95], 25])
 ARMS_SIDE = still([0.95, 1.15, 1.05], [-0.45, 2.45, 0.95], 28)
 LAMP = still([-0.15, 1.15, 1.45], [-0.55, 0.38, 0.95], 26)
-HAND_NEAR = still([-0.6, 1.3, 1.25], [-0.86, 2.38, 0.8], 32)
+HAND_NEAR = still([-0.75, 1.15, 1.2], [-0.1, 2.3, 0.72], 28)
 MUM_FACE = still([-0.9, 0.9, 1.3], [-1.3, 1.85, 0.75], 32)
 QUILT = still([0.12, 0.72, 1.3], [-0.6, 1.62, 0.55], 26)
 MUM_SLEEP = still([-1.35, 0.6, 1.0], [-1.3, 1.92, 0.75], 40)
 SHOULDERS = still([-0.9, 1.0, 1.2], [-1.05, 1.9, 0.7], 35)
-JOINTS = c([0, [-0.35, 1.4, 1.45], [-0.75, 2.45, 1.45], 28], [1, [-0.38, 1.52, 1.45], [-0.75, 2.45, 1.45], 30])
+JOINTS = c([0, [0.75, 0.9, 1.25], [0.15, 2.6, 1.15], 22], [1, [0.7, 1.0, 1.25], [0.15, 2.6, 1.15], 24])
 FROWN = still([-1.25, -0.82, 1.55], [-0.13, -0.75, 2.02], 26)
 STARE = still([1.75, -2.55, 1.45], [0.62, -2.94, 1.95], 26)
 SIDEWAYS = still([-2.38, -2.87, 1.16], [-2.5, -2.03, 1.97], 26)
@@ -165,7 +165,7 @@ SHOTS = [
     ("L29b", "front", "Mum's shut door, quiet in grey light, the sideways face at the frame's edge, closer", 4,
      still([-4.2, -3.4, 1.45], [-1.22, -0.06, 1.0], 28)),
     ("L30", "front", "my hands flat on a joint, leaning back", 2, still([-0.75, -3.65, 1.45], [-1.45, -2.65, 1.2], 22)),
-    ("L31", "front", "my arms trembling", 2, still([-0.85, -3.35, 1.4], [-1.4, -2.6, 1.15], 28)),
+    ("L31", "front", "my arms trembling: over my shoulder, the joint ahead", 2, still([-1.7, -4.6, 1.5], [-1.5, -2.6, 1.3], 15)),
     ("L32", "front", "a bare joint, no tape", 2, still([-1.65, -3.05, 1.45], [-1.6, -2.3, 1.42], 35)),
     ("L33", "front", "a slow push into the joint, tape glinting inside", 2,
      move(([-1.6, -3.0, 1.45], [-1.6, -2.3, 1.42]), ([-1.6, -2.82, 1.44], [-1.6, -2.3, 1.42]), 40)),
@@ -186,7 +186,7 @@ SHOTS = [
      still([0.15, -1.85, 1.55], [1.5, -3.45, 1.05], 18)),
     # 05 three a.m., L44 to L55 (from L48 on ones)
     ("L44", "mine", "my eyes open in the dark", 2, still([-4.0, 1.95, 1.2], [-4.12, 2.88, 0.78], 22)),
-    ("L45", "hall", "the dark hall, a cold glow at Mum's door", 2, still([-3.5, -0.95, 1.45], [-1.3, -0.35, 1.05], 20)),
+    ("L45", "hall", "the dark hall, a cold glow at Mum's door, me small in it", 2, still([-4.5, -0.55, 1.45], [-1.3, -0.45, 1.1], 15)),
     ("L46", "hall", "the square shadow up the hall wall and over the ceiling", 2,
      still([-1.2, -0.15, 1.25], [-1.85, -1.42, 1.75], 16)),
     ("L47.2", "hall", "her open door, over my shoulder", 2, still([-0.75, -1.1, 1.75], [-1.15, 1.2, 1.3], 22)),
@@ -200,9 +200,8 @@ SHOTS = [
     ("L54", "mum", "the quilt in lamp light, her arm and hand on it", 1, QUILT),
     ("L55", "mum", "Mum sleeping", 1, MUM_SLEEP),
     # 06 where it lived, L56 to L61
-    ("L56", "mum", "me in the doorway, the Boxes over the bed in lamp light", 2,
-     still([1.1, 3.15, 1.75], [-0.9, 0.6, 1.25], 16)),
-    ("L57", "mum", "the quilt at her shoulders", 2, SHOULDERS),
+    ("L56", "mum", "the Boxes over the bed in lamp light", 2, still([-1.0, 0.25, 1.4], [-0.35, 2.5, 1.25], 19)),
+    ("L57", "mum", "Mum asleep, one arm out on the quilt", 2, still([-0.5, 0.55, 1.25], [-0.95, 1.95, 0.62], 28)),
     ("L58", "front", "the mug on the dark sill, at night", 4, still([-1.3, -4.2, 1.0], [-0.8, -4.45, 0.86], 35)),
     ("L59", "front", "the frames on the dark ceiling, at night", 4, still([-3.55, -3.0, 0.75], [-4.3, -3.2, 2.35], 18)),
     ("L60", "mum", "the joints in lamp light", 2, JOINTS),
@@ -216,8 +215,8 @@ SHOTS = [
     ("L66", "front", "her head tilting up, then her eyeline to the frames on the ceiling", 2,
      c([0, [-2.25, -3.45, 1.3], [-1.3, -3.96, 1.5], 30], [0.5, [-2.25, -3.45, 1.3], [-1.3, -3.96, 1.5], 30],
        [1, [-2.25, -3.45, 1.3], [-4.25, -3.2, 2.3], 22])),
-    ("L67", "front", "\"That's LADDER HEIGHT\"", 2, still([-2.3, -3.35, 1.45], [-1.35, -3.95, 1.45], 30)),
-    ("P02", "front", "the two-shot in gold sun, the laugh", 2, still([-1.0, -2.0, 1.5], [-2.0, -3.95, 1.25], 15)),
+    ("L67", "front", "\"That's LADDER HEIGHT\": a medium close on Mum's laughing face", 2, still([-2.12, -3.62, 1.52], [-1.3, -3.85, 1.48], 22)),
+    ("P02", "front", "a medium close on Mum laughing in the gold sun", 2, still([-1.1, -3.3, 1.52], [-1.6, -4.1, 1.47], 22)),
     ("L68", "front", "Mum sitting on a box (to L69)", 2, still([-2.5, -2.8, 1.3], [-1.6, -4.2, 0.95], 17)),
     ("L70", "front", "both of us laughing", 2, still([-0.8, -2.5, 1.45], [-1.95, -4.0, 1.1], 15)),
     ("L71", "front", "unpacking the stack the old way: a two-shot", 2, still([-0.85, -2.3, 1.5], [-2.2, -4.1, 1.1], 15)),
@@ -326,10 +325,10 @@ key("me", "L51+0.3", arms=[38, 0], side=[-6, 0], blend=0.2)
 hide("me", "L52")
 put("me", "L56", [-1.22, -0.35], yaw=180, expr="wide")
 hide("me", "L57")
-put("me", "P02", [-2.4, -3.75], yaw=yaw_to([-2.4, -3.75], [-1.6, -4.1]), expr="grin")
+put("me", "P02", [-2.4, -3.75], yaw=yaw_to([-2.4, -3.75], [-1.6, -4.1]), expr="laugh")
 hide("me", "L68")
-put("me", "L70", [-2.3, -3.7], yaw=yaw_to([-2.3, -3.7], [-1.6, -4.3]), expr="grin", tremble=1.2)
-put("me", "L71", [-2.8, -3.94], yaw=0, arms=[78, 78], side=[-10, -10], expr="grin")
+put("me", "L70", [-2.3, -3.7], yaw=yaw_to([-2.3, -3.7], [-1.6, -4.3]), expr="laugh", tremble=1.2)
+put("me", "L71", [-2.8, -3.94], yaw=0, arms=[78, 78], side=[-10, -10], expr="soft")
 put("me", "L72", [-2.9, -4.0], yaw=-60, arms=[78, 78], side=[-10, -10], expr="soft")
 walk("me", "L72+1.0", [-3.6, -3.6], arms=[78, 78], side=[-10, -10])
 put("me", "L73", [-3.85, -4.15], yaw=-90, arms=[0, 92], expr="soft")             # a coat on its hook
@@ -369,11 +368,10 @@ walk("mum", "L65+1.1", [-1.3, -3.9], arms=[22, 22], side=[-12, -12])
 key("mum", "L65+1.1", yaw=90, arms=[70, 22], blend=0.3)
 put("mum", "L66", [-1.3, -3.85], yaw=90, arms=[70, 22], side=[-12, -12], head=[0, 10])
 key("mum", "L66.1", yaw=-105, head=[0, -34], blend=0.5)                           # for once, she looks up
-put("mum", "L67", [-1.3, -3.85], yaw=-105, arms=[70, 22], side=[-12, -12], head=[0, -30], expr="grin")
-talk("mum", "L67.1", "L67>")
-put("mum", "P02", [-1.6, -4.1], yaw=150, arms=[60, 30], side=[-12, -12], head=[0, 6], expr="squeeze", tremble=2.4)
-put("mum", "L68", [-1.6, -4.3, -0.085], yaw=180, arms=[50, 25], side=[-10, -10], expr="squeeze", tremble=2.0, sit=True)
-put("mum", "L70", [-1.6, -4.3, -0.085], yaw=165, arms=[50, 25], side=[-10, -10], expr="grin", tremble=1.6, sit=True)
+put("mum", "L67", [-1.3, -3.85], yaw=-105, arms=[70, 22], side=[-12, -12], head=[0, -30], expr="laugh")
+put("mum", "P02", [-1.6, -4.1], yaw=150, arms=[60, 30], side=[-12, -12], head=[0, 6], expr="laugh", tremble=2.4)
+put("mum", "L68", [-1.6, -4.3, -0.085], yaw=180, arms=[50, 25], side=[-10, -10], expr="laugh", tremble=2.0, sit=True)
+put("mum", "L70", [-1.6, -4.3, -0.085], yaw=165, arms=[50, 25], side=[-10, -10], expr="laugh", tremble=1.6, sit=True)
 put("mum", "L71", [-1.6, -4.1], yaw=0, arms=[45, 45], side=[-10, -10], expr="soft")
 put("mum", "L72", [-2.1, -2.6], yaw=-90, arms=[0, 95], expr="soft")               # she points
 put("mum", "L73", [-3.15, -3.55], yaw=-90, arms=[20, 20], expr="soft")
@@ -381,6 +379,7 @@ put("mum", "L73.2", [0.95, -2.89], yaw=0, arms=[78, 78], head=[0, 15], expr="sof
 put("mum", "L75", [0.2, -0.74], yaw=90, arms=[0, 0], head=[0, 5])                  # the hall cupboard
 key("mum", "L75.2", arms=[0, 18], blend=0.2)
 key("mum", "L75.2+0.7", arms=[0, 4], blend=0.5)
+hide("mum", "L77")
 put("mum", "L78", [0.2, -0.74], yaw=90, arms=[0, 18], head=[0, 5])                 # she swings it shut
 key("mum", "L78.2", arms=[0, 6], blend=0.6)
 
@@ -470,10 +469,18 @@ cues = [
     {"at": "L26", "name": "door", "door": "mum", "open": 0.0},
     {"at": "L44", "name": "door", "door": "mum", "open": 1.0},
     {"at": "L75.2", "name": "door", "door": "cupboard", "open": 1.0, "dur": 0.9},
-    {"at": "L78.2-0.85", "name": "door", "door": "cupboard", "open": 0.0, "dur": 1.1},
+    {"at": "L78>-1.3", "name": "door", "door": "cupboard", "open": 0.0, "dur": 1.1},   # shut on "it"
     # the relights ("xfill": one soft light, placed and aimed per beat, off between)
-    {"at": "L31", "name": "xfill", "pos": [-0.1, -3.7, 1.9], "aim": [-1.3, -3.0, 1.2], "gain": 1.6},
+    {"at": "L31", "name": "xfill", "pos": [-0.9, -4.7, 1.9], "aim": [-1.4, -3.0, 1.2], "gain": 1.2},
     {"at": "L32", "name": "xfill", "gain": 0},
+    {"at": "L45", "name": "xfill", "pos": [-3.6, -0.8, 2.2], "aim": [-2.2, -0.8, 0.9], "gain": 0.5},
+    {"at": "L46", "name": "xfill", "pos": [-3.0, -0.8, 2.2], "aim": [-1.0, -0.8, 1.2], "gain": 0.3},
+    {"at": "L47.2", "name": "xfill", "gain": 0},
+    {"at": "L59", "name": "xfill", "pos": [-3.0, -3.3, 0.5], "aim": [-4.2, -3.2, 2.3], "gain": 0.9},
+    {"at": "L60", "name": "xfill", "pos": [0.9, 0.3, 1.9], "aim": [-0.5, 2.3, 1.5], "gain": 1.0},
+    {"at": "L61", "name": "xfill", "gain": 0},
+    {"at": "L62", "name": "xfill", "pos": [0.6, 0.3, 2.0], "aim": [-0.6, 2.0, 0.8], "gain": 1.6},
+    {"at": "L63", "name": "xfill", "gain": 0},
     # Mum's room at 3 a.m.
     {"at": 0, "name": "nightlight", "on": False},
     {"at": "L44", "name": "nightlight", "on": True},
@@ -494,6 +501,7 @@ sfx = [
     {"at": "P01+0.2", "kind": "creak", "tone": "cardboard", "db": -20, "dur": 1.0},   # one slow papery flex
     {"at": "L51.1", "kind": "click", "db": -12},                             # the lamp switch, audible
     {"at": "L75.3", "kind": "door", "db": -18},                              # the cupboard, soft
+    {"at": "L78>-0.2", "kind": "thud", "db": -18, "dur": 0.6},               # it shuts on the last word, "it"
 ]
 
 story = {

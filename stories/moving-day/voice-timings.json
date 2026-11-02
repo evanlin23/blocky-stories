@@ -1350,38 +1350,38 @@
    ]
   },
   "L53": {
-   "text": "Tucked, round her bed the old way.",
+   "text": "Laid over her bed the old way.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9682,
    "dur": 1.793,
-   "onset": 0.19,
+   "onset": 0.207,
    "end": 1.586,
    "chunks": [
     [
-     0.19,
-     0.595
+     0.207,
+     0.492
     ],
     [
-     0.595,
-     0.854
+     0.492,
+     0.81
     ],
     [
-     0.854,
+     0.81,
      1.586
     ]
    ]
   },
   "L54": {
-   "text": "The quilt she'd left packed.",
+   "text": "The quilt she had left packed.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.431,
+   "dur": 1.466,
    "onset": 0.155,
-   "end": 1.224,
+   "end": 1.259,
    "chunks": [
     [
      0.155,
@@ -1389,11 +1389,11 @@
     ],
     [
      0.414,
-     0.707
+     0.741
     ],
     [
-     0.707,
-     1.224
+     0.741,
+     1.259
     ]
    ]
   },

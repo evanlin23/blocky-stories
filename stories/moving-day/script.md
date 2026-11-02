@@ -58,7 +58,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [close on the bottom box of a stack in the hall. Its outer tape is peeled back along the seam, but the flaps still hold. Through a gap at one corner, tape shines on the inside. The box stays shut]
 - `L02` narrator: I'd PEELED / the outside TAPE. / The flaps / still HELD.
   - [my hands flat on the flaps, pressing. They don't give]
-- `L03` narrator: It was / the BOTTOM box / of a STACK / TALLER than the DOOR.
+- `L03` narrator: It was / the BOTTOM box / of a STACK / TALLER than / the DOOR.
   - [a slow tilt up the Boxes, standing still in the hall beside a doorway, its top above the door frame. Its top box just touches the ceiling. This is twist plant 1: the bottom box is L01's]
 - `L04` narrator: And on / the TOP box, / in black MARKER, / a FROWN.
   - [close on the front box. Face: the frown, aimed down the hall at nothing]
