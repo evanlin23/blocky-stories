@@ -701,14 +701,14 @@ SCENES = {
     "day": ("#9cc3e0", 1.5, {"sun": 6.5, "skyfill": 1500, "mirrorfill": 120, "sinklamp": 80}),
     "dusk": ("#2b3a55", 0.8, {"dusk": 1100, "winglow": 90, "mirrorfill": 200, "sinklamp": 120}),
     "shop": ("#10141c", 0.2, {"mirrorfill": 300, "sinklamp": 160}),
-    "shopday": ("#9cc3e0", 1.2, {"daywin": 1100, "mirrorfill": 240, "sinklamp": 100}),
+    "shopday": ("#9cc3e0", 0.7, {"daywin": 450, "mirrorfill": 300, "sinklamp": 160}),
     "flash": ("#d8b890", 1.2, {"daywin": 800, "mirrorfill": 440, "sinklamp": 240, "warmkey": 600}),
     "cafe": ("#10141c", 0.3, {"cafe_l1": 520, "cafe_l2": 460}),
     "bus": ("#10141c", 0.3, {"bus_l1": 420, "bus_l2": 420}),
     "flat": ("#10141c", 0.3, {"flat_l": 420}),
     "kitchen": ("#10141c", 0.3, {"kit_l": 420}),
 }
-ROWF = {"day": 0.45, "dusk": 1.0, "shop": 1.0, "shopday": 0.6, "flash": 1.0}
+ROWF = {"day": 0.45, "dusk": 1.0, "shop": 1.0, "shopday": 1.0, "flash": 1.0}
 SHOW = {"day": ["street", "shop"], "dusk": ["street", "shop"], "shop": ["shop", "street"], "shopday": ["shop", "street"],
         "flash": ["shop", "street"], "cafe": ["cafe"], "bus": ["bus"], "flat": ["flat"], "kitchen": ["kitchen"]}
 ROW_W = (220.0, 220.0, 220.0)

@@ -206,7 +206,7 @@ shot("L34", "shop", C([-0.5, 5.7, 1.5], [1.2, 2.6, 1.5], 30), {"me": at(1.2, 2.6
 shot("L35", "shop", M([1.0, 3.0, 1.5], [-0.2, 8.4, 1.2], [0.4, 5.4, 1.4], [-0.2, 8.4, 1.2], 26),
      {"len": at(*LEN_SINK, 180, expr="neutral", arms=[30, 30])}, {"rows": [0, 0, 0.7], "show_creature": True})
 shot("L36", "shop", C([1.35, 6.0, 2.0], [-0.2, 7.8, 1.2], 34), {"len": at(*LEN_SINK, 180, arms=[30, 30])}, {"rows": [0, 0, 0.3]})
-shot("L37", "shop", C([1.6, 7.8, 1.3], [-0.2, 7.8, 1.1], 32), {"len": at(*LEN_SINK, 180, arms=[30, 30])},
+shot("L37", "shop", C([1.9, 6.6, 1.5], [-0.2, 7.8, 1.1], 30), {"len": at(*LEN_SINK, 180, arms=[30, 30])},
      {"rows": [0, 0, 0.2], "ckey": [[1.5, 7.0, 1.7], [-0.2, 7.9, 1.0], 90, 40]})
 shot("L38", "shop", C([1.7, 11.0, 1.55], [-0.2, 8.0, 1.0], 28), {"len": at(0.9, 10.35, 200, expr="neutral", arms=[30, 30])},
      {"rows": [0, 0, 0.5], "ckey": [[1.6, 9.0, 1.6], [-0.2, 8.1, 1.0], 80, 40]})
@@ -220,7 +220,7 @@ shot("L42", "shop", C([1.8, 9.0, 1.45], [0.25, 9.1, 1.2], 22), {"len": at(*LEN_S
 shot("L43", "shop", C([-0.4, 5.2, 1.5], [1.1, 2.6, 1.5], 30), {"me": at(1.1, 2.7, 180, expr="scared", head=[0, 0])}, {"rows": [0, 0, 1]})
 shot("L44", "shop", front(1.1, 2.7, 180, 1.5, 0, 0.0, 36, push=0.1), {"me": at(1.1, 2.7, 180, expr="shut", head=[0, 0])}, {"rows": [0, 0, 1]})
 shot("L45", "shop", C([0.25, 9.2, 2.0], [0.7, 10.35, 1.94], 40), {"len": at(*LEN_SINK, 180, expr="neutral", arms=[30, 30])}, {"rows": [0, 0, 1]})
-shot("L45.2", "shop", C([1.2, 5.3, 1.3], [-0.2, 6.1, 0.9], 30), {}, {"rows": [0, 0, 1]})
+shot("L45.2", "shop", C([0.7, 3.4, 1.6], [-0.2, 6.1, 0.9], 34), {}, {"rows": [0, 0, 1]})
 shot("L46.1", "shop", C([1.5, 4.0, 1.7], [0.3, 10.2, 1.2], 22), {"len": at(*LEN_SINK, 180, expr="neutral", arms=[30, 30]), "me": at(1.1, 2.7, 180, expr="shut")},
      {"rows": [0, 0, 1]})
 shot("L46.4", "shop", C([1.0, 2.0, 2.2], [1.1, 2.7, 1.93], 55), {"me": at(1.1, 2.7, 180, expr="shut")}, {"rows": [0, 0, 1], "inside": True}, step=1)
@@ -454,7 +454,7 @@ story = {
     "tail": 0.3,
     "look": {"fog": "#2b3550", "fog_density": 0.012, "fog_start": 12.0, "sky": "#10141c", "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.04, 0.012, -0.03], "saturation": 1.05, "contrast": 1.06, "vignette": 0.36,
-              "bloom": 0.4, "grain": 0.012},
+              "bloom": 0.4, "grain": 0.012, "red_line": 0.74, "red_lift_blue": 0.5},
     "shot_grades": {SID["L24"]: {"shadows": [0.06, 0.02, -0.04], "highlights": [0.08, 0.04, -0.06], "saturation": 1.18, "exposure": 1.06,
                                  "vignette": 0.22, "bloom": 0.5},
                     SID["L24.5"]: {"shadows": [0.06, 0.02, -0.04], "highlights": [0.08, 0.04, -0.06], "saturation": 1.18, "exposure": 1.06,
