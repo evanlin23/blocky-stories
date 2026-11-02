@@ -106,7 +106,7 @@ def materials(kit):
     M = {}
     M["white"] = pbr(kit, "whitewash", "#e6e1d6", 0.85, noise=(2.5, 0.8))
     M["stone"] = pbr(kit, "stair stone", "#8a949c", 0.8, noise=(5.0, 0.62))
-    M["slate"] = pbr(kit, "slate", "#3d4752", 0.55, noise=(3.0, 0.7))
+    M["slate"] = pbr(kit, "slate", "#56626e", 0.7, noise=(3.0, 0.75))
     M["iron"] = pbr(kit, "iron", "#2c3036", 0.5, metal=0.6)
     M["brass"] = pbr(kit, "brass", "#b08d57", 0.35, metal=1.0)
     M["oak"] = kit.planks("#6b4a2e", "#4a3220", 1.5, "Z", name="oak door")
@@ -257,7 +257,7 @@ def window(kit, M, name, az, z, w=0.5, h=0.9, round_=False, pane="pane"):
 def build_tower(kit, ctx, M):
     # the wall: one tapered shell seen from both sides, a floor, the plinth and the top of the stair shaft
     ring_wall(kit, "wall", WALL_R0, WALL_R1, 0.0, LF, M["white"])
-    disc(kit, "slate floor", WALL_R0, 0.0, M["slate"])
+    kit.cyl("slate floor", WALL_R0, 0.2, (0, 0, -0.1), M["slate"], None, n=48)
     disc(kit, "stair ceiling", WALL_R1, LF - 0.01, M["white"])
     ring_wall(kit, "plinth", WALL_R0 + 0.35, WALL_R0 + 0.15, 0.0, 1.1, M["stone"])
     disc(kit, "plinth top", WALL_R0 + 0.35, 0.0, M["stone"])
@@ -266,6 +266,7 @@ def build_tower(kit, ctx, M):
     ring_wall(kit, "band", wall_r(7.0) + 0.04, wall_r(9.0) + 0.04, 7.0, 9.0, pbr(kit, "band", "#3a4652", 0.8))
     # treads, rail and balusters
     ctx["treads"] = []
+    ctx["rails"] = []
     top = TURNS * PER
     for i in range(top + 4):
         zt = min(i, top) * STEP
@@ -280,10 +281,10 @@ def build_tower(kit, ctx, M):
         az = 30.0 * i
         p = pol(WELL + 0.02, az, zt)
         pts.append((p[0], p[1], zt))
-        beam(kit, f"bal{i}", (p[0], p[1], zt), (p[0], p[1], zt + 0.92), 0.035, M["iron"])
+        ctx["rails"].append((beam(kit, f"bal{i}", (p[0], p[1], zt), (p[0], p[1], zt + 0.92), 0.035, M["iron"]), (30.0 * i) % 360.0, zt))
     for i in range(len(pts) - 1):
         a, b = pts[i], pts[i + 1]
-        beam(kit, f"rail{i}", (a[0], a[1], a[2] + 0.94), (b[0], b[1], b[2] + 0.94), 0.05, M["iron"])
+        ctx["rails"].append((beam(kit, f"rail{i}", (a[0], a[1], a[2] + 0.94), (b[0], b[1], b[2] + 0.94), 0.05, M["iron"]), (30.0 * i + 15) % 360.0, a[2]))
     # windows: two a turn, with a light just inside each (animate() switches them)
     ctx["wins"] = []
     for k in range(TURNS):
@@ -436,7 +437,7 @@ def build_ground(kit, ctx, M):
     # the cliff top (grass), the cliff to the north, the beach far below and the sea beyond
     kit.plane("grass", (160, 90), (0, -21, -0.02), M["grass"])
     kit.box("cliff", (160, 0.5, 30), (0, 24.2, -15), M["rock"])
-    kit.plane("beach", (160, 14), (0, 31, -30), M["beach"])
+    kit.plane("beach", (400, 24), (0, 180, -30.2), M["beach"])
     kit.plane("sea", (800, 500), (0, 270, -30.4), M["sea"])
     # a gravel path from the foot door
     kit.plane("path", (2.2, 12), (0, 8, 0.0), pbr(kit, "path", "#6b665c", 0.95), rot=(0, 0, 0))
@@ -496,7 +497,6 @@ def build_kitchen(kit, ctx, M):
     kit.box("v ceiling", (2.2, 2.4, 0.05), (vx, ky - 1.3, H), wall)
     sb = kit.sphere("v sand", 0.6, (vx + 0.8, ky - 1.3, 0.0), M["sand"], seg=10)
     sb.scale = (1.0, 1.3, 0.12)
-    kit.box("k door opening", (0.12, 1.1, 2.1), P(W / 2, -1.3, 1.05), M["dark"])
     ctx["k_door"] = ctx.get("k_door")
 
 
@@ -592,7 +592,7 @@ def build_upward(kit, ctx, M, workdir):
     nt.links.new(tex.outputs["Color"], bsdf.inputs["Base Color"])
     # the whites glow a little so the eyes stay the brightest thing
     nt.links.new(tex.outputs["Color"], bsdf.inputs["Emission Color"])
-    bsdf.inputs["Emission Strength"].default_value = 0.3
+    bsdf.inputs["Emission Strength"].default_value = 0.12
     kit._fogged(m, bsdf.outputs[0])
     n = 40
     verts = [(0, 0, 0)] + [(HR * 0.985 * math.cos(2 * math.pi * i / n), HR * 0.985 * math.sin(2 * math.pi * i / n), 0) for i in range(n)]
@@ -623,14 +623,14 @@ def build_lights(kit, ctx):
     # window lights: a point just inside each stair window (blue at night, gold sun at dawn)
     for k, (az, z) in enumerate(ctx["wins"]):
         p = pol(wall_r(z) - 0.35, az, z)
-        add_light(kit, "win", f"win{k}", "POINT", p, 6.0, "#5a78b0", size=0.3)
+        add_light(kit, "win", f"win{k}", "POINT", p, 30.0, "#5a78b0", size=0.3)
     # the shaft: a dim bluish fill along the well
     for k, z in enumerate((1.5, 5.0, 8.5, 12.0, 15.8)):
-        add_light(kit, "shaft", f"shaft{k}", "POINT", (0.2, -0.2, z), 14.0, "#5a78a8", size=0.5)
+        add_light(kit, "shaft", f"shaft{k}", "POINT", (0.2, -0.2, z), 12.0, "#5a78a8", size=0.5)
     # the foot (storm door side), the lamp room, the practicals
-    add_light(kit, "foot", "foot", "POINT", (0.0, -0.5, 0.6), 30.0, "#6a88b8", size=0.4)
-    add_light(kit, "lroom", "lroom", "POINT", (0.2, -0.3, LF + 2.6), 60.0, "#5a78b0", size=0.4)
-    add_light(kit, "lroom", "lroom2", "POINT", (-1.0, 1.6, LF + 1.8), 30.0, "#5a78b0", size=0.4)
+    add_light(kit, "foot", "foot", "POINT", (0.0, -0.5, 0.6), 120.0, "#6a88b8", size=0.4)
+    add_light(kit, "lroom", "lroom", "POINT", (0.2, -0.3, LF + 2.6), 180.0, "#5a78b0", size=0.4)
+    add_light(kit, "lroom", "lroom2", "POINT", (-1.0, 1.6, LF + 1.8), 90.0, "#5a78b0", size=0.4)
     add_light(kit, "lamp", "wall lamp", "POINT", ctx["lamp_pos"], 40.0, "#ffb866", size=0.12)
     # the torch and the phone are moved by cues
     add_light(kit, "torch", "torch", "SPOT", (0, 0, 20), 100.0, "#fff1c4", spot=26, blend=0.85, size=0.05)
@@ -647,16 +647,18 @@ def build_lights(kit, ctx):
         kit.aim(ob, pol(*aim_[:1], aim_[1], aim_[2]))
     ob = add_light(kit, "gold", "foot sun", "SPOT", pol(2.15, 270, 1.9), 900.0, "#ffd59a", spot=44, blend=0.6, size=0.3)
     kit.aim(ob, (0.0, 0.0, 0.0))
-    add_light(kit, "bounce", "bounce", "POINT", (0.0, 0.0, 8.0), 300.0, "#ffe4b8", size=0.8)
-    add_light(kit, "bounce", "bounce2", "POINT", (0.0, 0.0, 3.0), 200.0, "#ffe4b8", size=0.8)
+    add_light(kit, "bounce", "bounce", "POINT", (0.0, 0.0, 8.0), 900.0, "#ffe4b8", size=0.8)
+    add_light(kit, "bounce", "bounce2", "POINT", (0.0, 0.0, 3.0), 600.0, "#ffe4b8", size=0.8)
     # the memory fill: cool blue, enough for faces to read
-    add_light(kit, "mem", "mem", "POINT", (0.0, 0.0, 6.0), 260.0, "#7f9fd8", size=0.8)
+    add_light(kit, "mem", "mem", "POINT", (0.0, 0.0, 6.0), 800.0, "#7f9fd8", size=0.8)
     # kitchen
     kx, ky = KITCHEN
     add_light(kit, "kit", "kitwin", "AREA", (kx, ky + 1.8, 1.7), 140.0, "#dfe8ee", rot=(math.radians(90), 0, math.pi), size=2.0)
     add_light(kit, "kit", "kitfill", "POINT", (kx, ky - 0.2, 2.3), 60.0, "#e6ecef", size=0.6)
     add_light(kit, "kit", "kitfill2", "POINT", (kx + 0.3, ky - 1.7, 1.6), 25.0, "#f1efe6", size=0.6)
     add_light(kit, "kit", "kitvest", "POINT", (kx + 3.3, ky - 1.3, 2.0), 40.0, "#cfd8e0", size=0.5)
+    add_light(kit, "mefill", "me fill", "POINT", (0, 0, -40), 30.0, "#9db4e0", size=0.5, shadow=False)
+    add_light(kit, "mefill", "ines fill", "POINT", (0, 0, -40), 30.0, "#9db4e0", size=0.5, shadow=False)
     # the camp-bed fill that keeps faces readable in the lamp room at night
     add_light(kit, "cot", "cot", "POINT", (-0.4, 0.6, LF + 1.2), 12.0, "#7a96c8", size=0.3)
 
@@ -842,17 +844,24 @@ def animate(kit, story, tl, t, ctx):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg is not None and sit:
                 leg.rotation_euler = (math.radians(-90), 0, 0)
+    from blocky import acting as _a2
+    me_h = _a2.state(tl, "me", t)["hidden"]
+    in_h = _a2.state(tl, "ines", t)["hidden"]
+    for who_, h_ in (("me", me_h), ("ines", in_h)):   # parts made after the first pose (socks, coat) follow the hiding
+        if h_ and bpy.data.objects.get(who_) is not None:
+            for ob in bpy.data.objects[who_].children_recursive:
+                ob.hide_render = True
     # sand on my socks
     lv = _last(_cues(tl, "sand"), t)
     lvl = int(lv["level"]) if lv else 0
     if ctx.get("sand"):
         for i, obs in enumerate(ctx["sand"]):
-            _show(obs, lvl > i)
+            _show(obs, lvl > i and not me_h)
     # the coat and the blanket
     cc = _last(_cues(tl, "coat"), t)
     where = cc["where"] if cc else "off"
     if ctx.get("coat_worn"):
-        _show(ctx["coat_worn"], where == "worn")
+        _show(ctx["coat_worn"], where == "worn" and not in_h)
         feet = ctx["coat_feet"][0]
         if where == "feet" and cc.get("pos"):
             feet.location = cc["pos"]
@@ -863,8 +872,8 @@ def animate(kit, story, tl, t, ctx):
     bc = _last(_cues(tl, "blanket"), t)
     bl = bc["state"] if bc else "none"
     if ctx.get("blanket_arm"):
-        _show(ctx["blanket_arm"], bl == "arm")
-        _show(ctx["blanket_wrap"], bl == "wrap")
+        _show(ctx["blanket_arm"], bl == "arm" and not in_h)
+        _show(ctx["blanket_wrap"], bl == "wrap" and not in_h)
     # the bolt and Ines's door
     bo = _ramped(_cues(tl, "bolt"), t, "open", 0.0)
     ctx["bolt"].location = (-0.02, -0.34 * bo - 0.0 + 0.0, 0.0) if False else (-0.02, 0.0 - 0.3 * bo, 0.0)
@@ -900,6 +909,24 @@ def animate(kit, story, tl, t, ctx):
             d = abs((az - cl["az"] + 180.0) % 360.0 - 180.0)
             hide = d < cl.get("span", 50.0) and cl["z0"] < zt < cl["z1"]
         ob.hide_render = hide
+    for ob, az, zt in ctx["rails"]:
+        hide = bool(cl and cl.get("rails") and abs((az - cl.get("rail_az", cl["az"]) + 180.0) % 360.0 - 180.0) < cl.get("rail_span", 40.0)
+                    and cl["rails"][0] < zt < cl["rails"][1])
+        ob.hide_render = hide
+    # the faces' fill: a soft light a metre in front of each character, toward the middle of the room
+    from blocky import acting as _act
+    mode_a, mode_b, u_ = mode_state(tl, t)
+    fg = {"night": 1.0, "doorlamp": 1.2, "memory": 1.5, "day": 5.0, "gold": 3.0}
+    cur = _last(_cues(tl, "mode"), t)
+    gain_f = fg.get(cur["set"], 1.0) if cur else 1.0
+    for who, ln in (("me", "me fill"), ("ines", "ines fill")):
+        st_ = _act.state(tl, who, t)
+        if st_["hidden"]:
+            out[ln] = 0.0
+            continue
+        dx, dy = math.sin(st_["yaw"]), -math.cos(st_["yaw"])   # the way they face: the camera is usually there
+        kit.LIGHTS[ln]["obj"].location = (st_["x"] + dx * 1.1, st_["y"] + dy * 1.1, st_["z"] + 1.7)
+        out[ln] = gain_f
     # the torch and the phone
     tc = _last(_cues(tl, "torch"), t)
     tl_on = _ramped(_cues(tl, "torch"), t, "on", 0.0)
@@ -911,11 +938,13 @@ def animate(kit, story, tl, t, ctx):
             u = ss((t - tc["t"]) / tc.get("aim_dur", 1.0))
             aim = [x + (y - x) * u for x, y in zip(aim, tc["aim_to"])]
         kit.aim(tor, aim)
+        kit.LIGHTS["torch"]["light"].spot_size = math.radians(tc.get("spot", 26))
+        kit.LIGHTS["torch"]["light"].spot_blend = tc.get("blend", 0.85)
     out["torch"] = tl_on * (tc.get("gain", 1.0) if tc else 1.0)
     out["torch spill"] = tl_on * (tc.get("spill", 1.0) if tc else 1.0)
     if tc:
         kit.LIGHTS["torch spill"]["obj"].location = tc.get("spill_at", tc["from"])
-    pc = _last(_cues(tl, "phone"), t)
+    pc = _last([c for c in _cues(tl, "phone") if "pos" in c], t)
     pon = _ramped(_cues(tl, "phone"), t, "on", 0.0)
     if pc:
         kit.LIGHTS["phone"]["obj"].location = pc["pos"]
