@@ -75,7 +75,7 @@ def _ss(x):
 
 
 def _cues(tl, name):
-    return [c for c in tl.get("cues", []) if c["name"] == name]
+    return sorted((c for c in tl.get("cues", []) if c["name"] == name), key=lambda c: c["t"])
 
 
 def _last(cs, t):
@@ -150,8 +150,8 @@ def _frosted(kit, m, N, L, b, color_out, up_only=True, amount=1.0):
     L.new(sep.outputs["Z"], up.inputs["Value"])
     nz = _noise(N, L, 9.0, 3.0)
     thr = N.new("ShaderNodeMapRange")
-    thr.inputs["From Min"].default_value = 0.30
-    thr.inputs["From Max"].default_value = 0.52
+    thr.inputs["From Min"].default_value = 0.18
+    thr.inputs["From Max"].default_value = 0.34
     L.new(nz, thr.inputs["Value"])
     m1 = N.new("ShaderNodeMath")
     m1.operation = "MULTIPLY"
@@ -170,7 +170,7 @@ def _frosted(kit, m, N, L, b, color_out, up_only=True, amount=1.0):
     L.new(thr.outputs["Result"], m2.inputs[1])
     mix = N.new("ShaderNodeMix")
     mix.data_type = "RGBA"
-    mix.inputs["B"].default_value = kit.col("#dfe6ee")
+    mix.inputs["B"].default_value = kit.col("#e4ebf2")
     L.new(color_out, mix.inputs["A"])
     L.new(m2.outputs[0], mix.inputs["Factor"])
     L.new(mix.outputs["Result"], b.inputs["Base Color"])
@@ -293,7 +293,7 @@ def steam_mat(kit):
     em.inputs["Strength"].default_value = 0.55
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mix = nt.nodes.new("ShaderNodeMixShader")
-    mix.inputs[0].default_value = 0.22
+    mix.inputs[0].default_value = 0.12
     nt.links.new(tr.outputs[0], mix.inputs[1])
     nt.links.new(em.outputs[0], mix.inputs[2])
     nt.links.new(mix.outputs[0], out.inputs["Surface"])
@@ -330,14 +330,14 @@ def materials(kit):
     M["flame"] = kit.emit("#ff9a3a", 6.0, "flame")
     M["flame2"] = kit.emit("#ffd27a", 9.0, "flame core")
     M["ember"] = kit.emit("#ff4a10", 3.0, "ember")
-    M["phonebody"] = kit.plastic("#101216", 0.4, "phone")
+    M["phonebody"] = kit.emit("#3a5470", 1.4, "phone")
     M["screen"] = kit.emit("#a8d4ff", 3.5, "screen")
     M["wood"] = kit.planks("#6b5a40", "#4a3c28", 1.2, "X", "gate wood")
     M["gatepost"] = stone_mat(kit, "gatepost", "#5a5c5e", "#8b8a84", 7.0)
     M["track"] = kit.plastic("#6b5e46", 0.95, "track")
     M["field"] = kit.plastic("#5c6a3a", 0.95, "field")
     M["hill"] = kit.plastic("#2c2a38", 1.0, "hill")
-    M["bighand"] = kit.plastic("#b8a27c", 0.5)
+    M["bighand"] = kit.plastic("#a8946e", 0.5)
     M["bigtop"] = kit.plastic("#b8a27c", 0.5)
     M["catch"] = kit.emit("#ffb060", 14.0, "catch light")
     M["frost"] = kit.plastic("#dfe6ee", 0.8, "frost sheet")
@@ -494,7 +494,7 @@ def build_ring(kit, M, rng):
     # steam: soft puffs that rise and fade, moved in animate
     steam = []
     for k in range(7):
-        steam.append(kit.sphere(f"steam{k}", 0.06, (POT[0], POT[1], HEARTH_TOP + 0.3), M["steam"], seg=8))
+        steam.append(kit.sphere(f"steam{k}", 0.03, (POT[0], POT[1], HEARTH_TOP + 0.3), M["steam"], seg=12))
     # the three stepping stones east
     for k, (x, y) in enumerate(STONES):
         kit.box(f"step{k}", (1.1 - 0.08 * k, 0.85, 0.7), (x, y, STONE_TOP - 0.35), M["seat"], rot=(0, 0, 0.25 * (k - 1)), bevel=0.06)
@@ -549,9 +549,9 @@ def build_shadows(kit, M):
     n_in = V((TENT_H, 0, -w)) / sl     # inward normal of the west panel (points into the tent, down and east)
     origin = V((TENT_X - w, TENT_Y, 0))
     objs = []
-    for hi, (uc, vc, mir) in enumerate(((-0.62, 0.78, 1), (0.66, 0.78, -1))):
+    for hi, (uc, vc, mir) in enumerate(((-0.34, 0.66, 1), (0.36, 0.66, -1))):
         verts, faces = [], []
-        for (bu, bv, du, dv, rot) in hand_shadow_boxes(0, 0, 0.78, 1.2, mir):
+        for (bu, bv, du, dv, rot) in hand_shadow_boxes(0, 0, 0.5, 0.82, mir):
             c, s = math.cos(rot), math.sin(rot)
             base = len(verts)
             for (px, py) in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
@@ -687,24 +687,24 @@ LOOKS = {
              "sun": (4.0, "#fff1d6", (55.0, 150.0)), "moon": (0.0, "#9db4d8", (50.0, 200.0)), "fire": 0.0, "rim": 0.0, "frost": 0.0},
     # night one at dusk: blue, the fire the warm key
     "dusk": {"fog": "#2a3550", "density": 0.02, "start": 6.0, "hor": "#3f4f76", "zen": "#101830", "sky_s": 1.2, "exposure": 0.55,
-             "sun": (0.0, "#ffd0a0", (60.0, 100.0)), "moon": (1.6, "#9db4e4", (45.0, 250.0)), "fire": 1.0, "rim": 1.0, "frost": 0.0},
+             "sun": (0.0, "#ffd0a0", (60.0, 100.0)), "moon": (1.6, "#9db4e4", (45.0, 250.0)), "fire": 1.0, "rim": 1.0, "frost": 0.0, "fill": 0.45},
     # night two, later dusk
     "dusk2": {"fog": "#222c46", "density": 0.022, "start": 6.0, "hor": "#33426a", "zen": "#0c1228", "sky_s": 1.15, "exposure": 0.55,
-              "sun": (0.0, "#ffd0a0", (60.0, 100.0)), "moon": (1.7, "#9db4e4", (45.0, 250.0)), "fire": 1.0, "rim": 1.0, "frost": 0.0},
+              "sun": (0.0, "#ffd0a0", (60.0, 100.0)), "moon": (1.7, "#9db4e4", (45.0, 250.0)), "fire": 1.0, "rim": 1.0, "frost": 0.0, "fill": 0.45},
     # night three: a hard frost starting
     "frostdusk": {"fog": "#2b3a58", "density": 0.02, "start": 6.0, "hor": "#44587e", "zen": "#101a34", "sky_s": 1.25, "exposure": 0.55,
-                  "sun": (0.0, "#ffd0a0", (60.0, 100.0)), "moon": (1.9, "#a8c0f0", (45.0, 250.0)), "fire": 1.0, "rim": 1.0, "frost": 0.6},
+                  "sun": (0.0, "#ffd0a0", (60.0, 100.0)), "moon": (1.9, "#a8c0f0", (45.0, 250.0)), "fire": 1.0, "rim": 1.0, "frost": 0.6, "fill": 0.55},
     # the embers (L34) and the tent night
     "night": {"fog": "#1e2842", "density": 0.022, "start": 5.0, "hor": "#2a3858", "zen": "#0a1024", "sky_s": 1.0, "exposure": 0.6,
-              "sun": (0.0, "#ffd0a0", (60.0, 100.0)), "moon": (1.8, "#a0b8ec", (45.0, 250.0)), "fire": 0.0, "rim": 1.0, "frost": 0.8},
+              "sun": (0.0, "#ffd0a0", (60.0, 100.0)), "moon": (1.4, "#a0b8ec", (45.0, 250.0)), "fire": 0.0, "rim": 1.0, "frost": 0.8, "fill": 0.6},
     # cold bright dawn, frost white on everything
-    "dawn": {"fog": "#c3d0e0", "density": 0.012, "start": 8.0, "hor": "#d8e0ea", "zen": "#8fb0d8", "sky_s": 1.4, "exposure": 0.45,
-             "sun": (3.2, "#fff0d8", (14.0, 100.0)), "moon": (0.0, "#9db4d8", (50.0, 200.0)), "fire": 0.0, "rim": 0.0, "frost": 1.0},
+    "dawn": {"fog": "#c3d0e0", "density": 0.012, "start": 8.0, "hor": "#d8e0ea", "zen": "#8fb0d8", "sky_s": 1.1, "exposure": -0.15,
+             "sun": (2.0, "#fff0d8", (14.0, 100.0)), "moon": (0.0, "#9db4d8", (50.0, 200.0)), "fire": 0.0, "rim": 0.0, "frost": 1.0},
     # bright overcast morning at the gate
     "morning": {"fog": "#b8c0c4", "density": 0.008, "start": 12.0, "hor": "#c4cacc", "zen": "#9aa4aa", "sky_s": 1.5, "exposure": 0.5,
                 "sun": (0.8, "#fff4e0", (50.0, 100.0)), "moon": (0.0, "#9db4d8", (50.0, 200.0)), "fire": 0.0, "rim": 0.0, "frost": 0.0},
     # sunset: low gold from the west, the fire bright
-    "sunset": {"fog": "#d89a5c", "density": 0.012, "start": 8.0, "hor": "#f0a860", "zen": "#6a7ab0", "sky_s": 1.3, "exposure": 0.5,
+    "sunset": {"fog": "#d89a5c", "density": 0.012, "start": 8.0, "hor": "#f0a860", "zen": "#6a7ab0", "sky_s": 1.4, "exposure": 0.7,
                "sun": (6.0, "#ffb060", (9.0, 0.0)), "moon": (0.0, "#9db4d8", (50.0, 200.0)), "fire": 1.4, "rim": 0.0, "frost": 0.0},
 }
 # sun direction: (elevation degrees above the horizon, bearing the light travels toward, degrees from +x ccw): the
@@ -780,6 +780,8 @@ def apply_look(kit, ctx, name):
     kit.LIGHTS["moon"]["base"] = e
     kit.LIGHTS["moon"]["light"].color = kit.col(col_)[:3]
     kit.LIGHTS["moon"]["obj"].rotation_euler = _sun_rot(el, br)
+    kit.LIGHTS["fill"]["base"] = lk.get("fill", 0.0)
+    kit.LIGHTS["fill"]["obj"].rotation_euler = _sun_rot(40.0, 80.0)
     for v in FROST_NODES:
         v.outputs[0].default_value = lk["frost"]
     ctx["look"] = name
@@ -815,11 +817,13 @@ def build(kit, story, tl):
     sun.data.angle = math.radians(4)
     moon = kit.light("moon", "SUN", (0, 0, 60), 0.0, "#9db4e4")
     moon.data.angle = math.radians(6)
+    fill = kit.light("fill", "SUN", (0, 0, 60), 0.0, "#8aa0d0")
+    fill.data.angle = math.radians(20)
     kit.light("rim", "SPOT", (12, 3, 3), 900.0, "#a8c0f0", size=0.4, spot=22, blend=0.4)
-    kit.light("hkey", "SPOT", (6, 0, 0.5), 200.0, "#ffa868", size=0.3, spot=30, blend=0.5, shadow=False)
-    kit.light("tentglow", "POINT", (TENT_X + 0.1, TENT_Y, 0.9), 30.0, "#ff8a3d", size=0.25)
-    kit.light("tentfill", "POINT", (TENT_X + 0.5, TENT_Y - 0.6, 1.0), 8.0, "#9db4e4", size=0.3, shadow=False)
-    kit.light("phoneglow", "POINT", (0, 0, 0), 2.0, "#a8d4ff", size=0.05, shadow=False)
+    kit.light("hkey", "SPOT", (6, 0, 0.5), 110.0, "#ffa868", size=0.3, spot=30, blend=0.5, shadow=False)
+    kit.light("tentglow", "POINT", (TENT_X - 0.3, TENT_Y - 1.0, 1.0), 40.0, "#ff8a3d", size=0.25)
+    kit.light("tentfill", "POINT", (TENT_X + 0.3, TENT_Y - 0.3, 1.1), 45.0, "#9db4e4", size=0.3, shadow=False)
+    kit.light("phoneglow", "POINT", (0, 0, 0), 10.0, "#a8d4ff", size=0.05, shadow=False)
     kit.light("flare", "POINT", (-0.4, 0.0, 1.0), 60.0, "#ff8a3d", size=0.3, shadow=False)
     apply_look(kit, ctx, "dusk")
     return ctx
@@ -883,15 +887,15 @@ def animate(kit, story, tl, t, ctx):
     else:
         kit.LIGHTS["fire"]["light"].color = kit.col("#ff8a3d")[:3]
     over["rim"] = lk["rim"]
-    over["hkey"] = lk["rim"]
+    over["hkey"] = lk["rim"] * _ease_to(_cues(tl, "hkey"), t, "v", 1.0)
     over["sun"] = 1.0
     over["moon"] = 1.0
     # steam from the pot: puffs rising, widening and fading, slowly
     for k, s in enumerate(ctx["steam"]):
         ph = ((t * 0.28) + k / len(ctx["steam"])) % 1.0
         s.location = (POT[0] + 0.05 * math.sin(ph * 6 + k), POT[1] + 0.04 * math.cos(ph * 5 + k * 2), HEARTH_TOP + 0.3 + ph * 0.7)
-        sc = 0.7 + ph * 2.4
-        s.scale = (sc, sc, sc * 1.2)
+        sc = 0.8 + ph * 1.0
+        s.scale = (sc, sc, sc * 1.3)
         s.hide_render = False
     on = _switch(_cues(tl, "turves"), "on", t, False)
     for o in ctx["turves"]:
