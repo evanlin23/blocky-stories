@@ -37,7 +37,7 @@ cast["pell2"] = dict(cast["pell"])
 # every character who wears a cloud; the cloud's size, colour, where rain stops
 clouds = {
     "me": {"size": 2.0, "color": "#f6f8fb", "under": "#c3c8d0", "grey": "#454c58", "drops": 90, "spread": 1.1},
-    "mum": {"size": 1.3, "color": "#6e7681", "grey": "#4d535c", "drops": 90, "emit": 0.1, "gap": 0.12},
+    "mum": {"size": 1.3, "color": "#6e7681", "grey": "#4d535c", "drops": 90, "emit": 0.1, "gap": 0.12, "off": (0, -0.1)},
     "pell": {"size": 1.0, "drops": 28, "fall": 2.0},
     "pell2": {"size": 1.0, "drops": 28, "fall": 2.0},
     "nb1": {"size": 0.95}, "nb2": {"size": 1.05}, "nb3": {"size": 0.9, "grey": "#5a6270"},

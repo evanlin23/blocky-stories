@@ -268,7 +268,7 @@ def materials(kit):
         "pot": P("#c8643c", 0.8),
         "soil": P("#3a2a1c", 0.95),
         "blanket": P("#e6dcc0", 0.95),
-        "leaf_dry": P("#8a6a3a", 0.9),
+        "leaf_dry": P("#cfae62", 0.9),
         "red": P("#8a2a2e", 0.8),
         "carpet": kit.grime("#5a1f2a", 0.6, 4.0, rough=0.95),
         "seat": P("#7a2a34", 0.75),
@@ -453,6 +453,8 @@ def build_kitchen(kit, ctx, M):
     kit.light("ki_win", "AREA", (x0 - 1.1, 4.8, 1.8), 600.0, "#d8e8ff", size=2.4, rot=(math.radians(90), 0, 0))
     kit.aim(kit.LIGHTS["ki_win"]["obj"], (x0 - 0.2, 1.8, 1.0))
     kit.light("ki_ceil", "AREA", (x0 + 0.3, 1.2, 2.5), 330.0, "#ffe2b8", size=2.6, rot=(math.pi, 0, 0))
+    kit.light("ki_hook", "AREA", (x0 + 2.6, 2.3, 2.1), 55.0, "#fff0dc", size=1.2)
+    kit.aim(kit.LIGHTS["ki_hook"]["obj"], (x0 + 2.8, 3.74, 1.1))
     kit.light("ki_fill", "AREA", (x0 + 0.5, -2.0, 2.2), 140.0, "#ffe8cc", size=3.0)
     kit.aim(kit.LIGHTS["ki_fill"]["obj"], (x0 + 0.5, 2.0, 1.0))
 
@@ -555,7 +557,9 @@ def build_glasshouse(kit, ctx, M):
     wbox(kit, "gh_wf1", (x0 - 2.3, y0, 0.0), (x0 - 0.5, y0 + 0.08, h), M["brick_pale"])
     wbox(kit, "gh_wf2", (x0 + 0.5, y0, 0.0), (x0 + 2.3, y0 + 0.08, h), M["brick_pale"])
     wbox(kit, "gh_floor", (x0 - 2.3, y0, -0.05), (x0 + 2.3, y1, 0.02), M["flag"])
-    wbox(kit, "gh_sill", (x0 - 2.34, y0 - 0.02, h), (x0 + 2.34, y1 + 0.02, h + 0.05), M["paint_w"])
+    for nm, lo, hi in (("l", (x0 - 2.34, y0 - 0.02), (x0 - 2.18, y1 + 0.02)), ("r", (x0 + 2.18, y0 - 0.02), (x0 + 2.34, y1 + 0.02)),
+                       ("f1", (x0 - 2.34, y0 - 0.02), (x0 - 0.5, y0 + 0.12)), ("f2", (x0 + 0.5, y0 - 0.02), (x0 + 2.34, y0 + 0.12)), ("b", (x0 - 2.34, y1 - 0.12), (x0 + 2.34, y1 + 0.02))):
+        wbox(kit, f"gh_sill{nm}", (lo[0], lo[1], h), (hi[0], hi[1], h + 0.05), M["paint_w"])
     # posts, rails and glass on both long sides and both gables
     for i in range(n + 1):
         y = y0 + i * (y1 - y0) / n
@@ -680,7 +684,7 @@ def build_glasshouse(kit, ctx, M):
     rng = np.random.default_rng(11)
     for i in range(16):
         lx, ly = tx + rng.uniform(-0.55, 0.45), ty + rng.uniform(-0.2, 0.2)
-        ob = kit.box(f"gh_dry{i}", (0.16, 0.08, 0.012), (lx, ly, 0.915), M["leaf_dry"], rot=(0, 0, rng.uniform(0, 3)))
+        ob = kit.box(f"gh_dry{i}", (0.2, 0.1, 0.012), (lx, ly, 0.915), M["leaf_dry"], rot=(0, 0, rng.uniform(0, 3)))
         ctx["leaves"].append((ob, (lx, ly, 0.915), rng.uniform(0, 6)))
     img_quad(kit, "gh_card", 0.2, 0.135, pil_mat(kit, "sea card", sea_card(), 0.6), (tx + 0.52, ty + 0.0, 0.99), rot=(math.radians(-72), 0, 0))
     # card is propped against the wall of a pot: a little block behind it
@@ -689,6 +693,8 @@ def build_glasshouse(kit, ctx, M):
     px, py = x0 - 1.93, y0 + 2.0
     bbox(kit, "gh_frame", (px - 0.13, py - 0.015, 0.76), (px + 0.13, py + 0.015, 1.07), M["brass"], 0.01)
     ob = img_quad(kit, "gh_photo", 0.2, 0.25, pil_mat(kit, "lou photo", lou_photo(), 0.5), (px, py - 0.017, 0.915))
+    kit.light("ga_tbl", "SPOT", (x0 - 0.1, 20.4, 1.7), 130.0, "#ffd6a8", size=0.2, spot=70, blend=0.8)
+    kit.aim(kit.LIGHTS["ga_tbl"]["obj"], (x0 - 0.3, 21.45, 0.9))
     # the hanging lamps
     ctx["lamp_mats"] = []
     for i, yy in enumerate((17.7, 20.6)):
@@ -867,7 +873,7 @@ def creature_face():
     # two small black eyes, set too close together, each with one tiny bright highlight
     for side in (-1, 1):
         cx, cy = fx(0.5) + side * 0.082 * s, fy(0.40)
-        r = 0.04 * s
+        r = 0.062 * s
         d.ellipse([cx - r, cy - r * 1.2, cx + r, cy + r * 1.2], fill=ink)
         hr = r * 0.36
         d.ellipse([cx - r * 0.3 - hr, cy - r * 0.45 - hr, cx - r * 0.3 + hr, cy - r * 0.45 + hr], fill=(255, 255, 250))
@@ -877,10 +883,10 @@ def creature_face():
     n = 16
     for i in range(n + 1):
         u = i / n
-        x = fx(0.5) + (u - 0.5) * 0.7 * s
+        x = fx(0.5) + (u - 0.5) * 0.88 * s
         y = fy(0.72) + 0.03 * s * math.sin(u * 3.4 - 1.0) + 0.02 * s * (rng.random() - 0.5) * 2 + 0.012 * s * (1 if i % 2 else -1)
         pts.append((x, y))
-    d.line(pts, fill=ink, width=max(8, int(0.026 * s)), joint="curve")
+    d.line(pts, fill=ink, width=max(12, int(0.042 * s)), joint="curve")
     x, y = pts[10]
     d.line([(x, y), (x + 0.03 * s, y + 0.07 * s), (x + 0.015 * s, y + 0.11 * s)], fill=ink, width=max(3, int(0.008 * s)))
     x, y = pts[4]
@@ -915,7 +921,7 @@ def build_creature(kit, ctx, M):
     tex.image = img
     head = kit.empty("nm.head", (0, 0, -60))
     hg = kit.empty("nm.headg", (0, 0, 0), head)
-    hg.scale = (S * 0.8, S * 0.92, S * 1.28)       # a narrow, too-tall head: wrong before anyone sees the face
+    hg.scale = (S, S, S)       # the standard rounded-cylinder head; the face is what is wrong
     rig.head_mesh("nm.headm", hm, hg)
     gm = kit.emit("#ffffff", 14.0, "glint")
     for side in (-1, 1):
