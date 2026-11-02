@@ -7,13 +7,13 @@
 - **Tense:** L01 is the present ("I visit", the habit). Everything after it is told in the past, as it happened. L73, the last line, turns the habit into the past ("I USED to visit").
 
 ## Premise
-Every Thursday at seven, after work, I let myself into unit seven of a self-storage block on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. We rented it together the week we moved in, and I've kept paying since we split last spring. The corridor lights run on a one-minute timer. One Thursday a person stands in the open doorway of unit eleven. From the front they're ordinary. From the side they run back the whole depth of the unit. Each Thursday they're one door nearer mine.
+Every Tuesday at seven, after work, I let myself into unit seven of a self-storage block on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. We rented it together the week we moved in, and I've kept paying since we split last spring. The corridor lights run on a one-minute timer. One Tuesday a person stands in the open doorway of unit eleven. From the front they're ordinary. From the side they run back the whole depth of the unit. Each Tuesday they're one door nearer mine.
 
 ## The rule
-Nobody states it. The block's only rule is the light timer: press the button, get one minute. The rule the narrator keeps without knowing it is the one they made up themselves: come every Thursday at seven and keep the unit as it was, as if Jo might still come for her things.
+Nobody states it. The block's only rule is the light timer: press the button, get one minute. The rule the narrator keeps without knowing it is the one they made up themselves: come every Tuesday at seven and keep the unit as it was, as if Jo might still come for her things.
 
 ## The twist (and where it's planted)
-The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribbles and Jo marks hers with jagged ones, and I've spent every Thursday sitting on my own half, keeping hers, and keeping her place. A unit taken by two is counted for two, and the Deep One has come to stand in the gap she left: the aisle between the stacks, exactly where Jo stood the night we packed it.
+The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribbles and Jo marks hers with jagged ones, and I've spent every Tuesday sitting on my own half, keeping hers, and keeping her place. A unit taken by two is counted for two, and the Deep One has come to stand in the gap she left: the aisle between the stacks, exactly where Jo stood the night we packed it.
 
 "A room full of someone else's things" turns over. Half the room was my own things, and the only thing in there that was someone else's was the space Jo left, and the someone standing in it.
 
@@ -22,7 +22,7 @@ The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribb
 - **Plant 3, the picture (L03 to L04):** Jo standing at the back of the unit in the aisle between the stacks, passing a box forward. The scare puts the Deep One in exactly that spot (L48 to L49).
 
 ## How the last 15 seconds turn the first line
-From L66 on (the last 64 words): my half goes to the charity shop, what's left fits one small box, the door comes down on an empty room, and L72 says it outright in picture and line: I'd sat with the gap Jo left every Thursday, and so had it. L73 loops: "Every THURSDAY / at SEVEN, / I USED to visit / a ROOM." On a rewatch, L01's "someone ELSE'S things" lands on round-scribbled boxes (mine) in the very first shot, and the two keys and the round stack I sit on read as a person keeping a place.
+From L66 on (the last 64 words): my half goes to the charity shop, what's left fits one small box, the door comes down on an empty room, and L72 says it outright in picture and line: I'd sat with the gap Jo left every Tuesday, and so had it. L73 loops: "Every TUESDAY / at SEVEN, / I USED to visit / a ROOM." On a rewatch, L01's "someone ELSE'S things" lands on round-scribbled boxes (mine) in the very first shot, and the two keys and the round stack I sit on read as a person keeping a place.
 
 ## World
 A low self-storage block on the edge of a made-up town. One long indoor corridor of twelve identical roller doors, six a side, corrugated and painted roller-door blue, in galvanised steel frames, each with a small stencilled numeral (digits only, no words) and a padlock hasp at the foot. Painted concrete floor, scuffed. Cold fluorescent battens overhead on a timer. By the entrance, a single round push button with a dim green ring that glows in the dark. At the entrance end, a wide yard door onto an asphalt yard with one sodium lamp. Beside the entrance, the site office's steel key-return slot in the wall (no text, no logo).
@@ -39,15 +39,15 @@ Time passes: late winter (dark at seven, corridor lights the only light) to spri
 ## The creature: the Deep One
 - **Front:** an ordinary-sized person, about my height, in a roller-door-blue boiler suit, dust-brown boots and a dust-brown flat cap. Flat drawn face, our own: two small round black eyes with a single tiny highlight each, set a little too far apart, no brows, a short straight mouth. Dust on the shoulders. From dead ahead it's just someone standing in a doorway, arms at its sides.
 - **Wrong in one dimension:** depth. Its head, body, arms and legs all run straight back 3 m, like a person pushed out of a mould and never cut off, so from above it's a 0.55 m by 3 m slab. The flanks carry shallow horizontal ribs, like a roller door, with dust-brown grime along the bottom 20 cm. The back end is flat and blank.
-- **Never seen moving.** It's only somewhere new each Thursday.
+- **Never seen moving.** It's only somewhere new each Tuesday.
 - **One model**, built once in `set.py` and posed per shot. Test still first: the L43 to L45 reveal, phone size, lit by my lamp from below and the corridor battens as a rim.
 - **Light it for fear:** front light dead. Key from below, my battery lamp on the floor (warm, low). Cold rim from the corridor battens along the ribbed flank. The eye highlights are the brightest thing on it.
 - **Continuity:**
   - L01 to L15: not there. Unit eleven's door is shut in L01's shot.
-  - L16 to L20 (Thursday 1): standing in unit eleven's open doorway, face at the door line, facing the corridor, its depth hidden by the angle.
-  - L21 to L27 (Thursday 2): unit ten, same pose. My torch from the side shows the ribbed flank running back to the unit's rear wall.
-  - L28 to L30 (Thursday 3): unit nine, body still facing out, head turned 90 degrees round toward unit seven. The head stays square-on to its own body everywhere else.
-  - L31 to L37 (Thursday 4): unit eight, door down. Never seen. Only the scrape along the shared wall.
+  - L16 to L20 (Tuesday 1): standing in unit eleven's open doorway, face at the door line, facing the corridor, its depth hidden by the angle.
+  - L21 to L27 (Tuesday 2): unit ten, same pose. My torch from the side shows the ribbed flank running back to the unit's rear wall.
+  - L28 to L30 (Tuesday 3): unit nine, body still facing out, head turned 90 degrees round toward unit seven. The head stays square-on to its own body everywhere else.
+  - L31 to L37 (Tuesday 4): unit eight, door down. Never seen. Only the scrape along the shared wall.
   - L38 to L42: gone. Unit eight shut, corridor empty.
   - L43 to L54 (the scare): inside unit seven, face just inside my door frame, body filling the aisle to the back wall, the jagged stack on its left, the round stack on its right. It touches neither stack and nothing touches it. My lamp on the floor by the round stack lights it from below.
   - L55 on: gone, and never seen again. At L60 the aisle is empty in bright light.
@@ -85,8 +85,8 @@ About 72 shots. Each line below carries its shot. Notes for the builder:
 ## The narration
 Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the key words in `#6cc3ff`.
 
-### 01 Thursdays (late winter, dark)
-- `L01` narrator: Every THURSDAY / at SEVEN, / I visit a ROOM / full of someone ELSE'S / THINGS.
+### 01 Tuesdays (late winter, dark)
+- `L01` narrator: Every TUESDAY / at SEVEN, / I visit a ROOM / full of someone ELSE'S / THINGS.
   - [low behind me walking down the lit corridor of blue roller doors, toward an open door halfway along. Through it, in the lamp's glow, a stack of boxes with round scribbles. Far end of the corridor dim, unit eleven's door shut. Slow push]
 - `L02` narrator: It's unit SEVEN, / in a STORAGE block / on the EDGE of town.
   - [outside at dusk: the low block, the asphalt yard, the one sodium lamp, the wide yard door]
@@ -111,7 +111,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - `L12` narrator: Jo LEFT hers / on the kitchen COUNTER.
   - [my face in the lamp's light, `sad`]
 
-### 02 Thursday one: unit eleven
+### 02 Tuesday one: unit eleven
 - `L13` narrator: The corridor lights / are on a TIMER.
   - [the round button by the entrance, its green ring dim. The pulse starts ticking]
 - `L14` narrator: You press the BUTTON, / and you get / ONE MINUTE.
@@ -129,8 +129,8 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - `L20` narrator: They just WATCHED me / lock up / and LEAVE.
   - [over its shoulder from the far end: me small at door seven, walking away. Its shoulder fills the frame edge]
 
-### 03 Thursday two: unit ten
-- `L21` narrator: The next THURSDAY, / unit TEN'S door / was up.
+### 03 Tuesday two: unit ten
+- `L21` narrator: The next TUESDAY, / unit TEN'S door / was up.
   - [the same long lens: one door nearer, rolled up]
 - `L22` narrator: The same PERSON, / in the same CAP, / facing OUT.
   - [front-on, as before, in unit ten]
@@ -145,7 +145,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - `L27` narrator: And the face / never stopped watching / the CORRIDOR.
   - [front-on again, from beside it: the face square to the corridor, toward the camera, eye highlights bright]
 
-### 04 Thursday three: unit nine
+### 04 Tuesday three: unit nine
 - `L28` narrator: Week THREE, / unit NINE.
   - [the long lens again, two doors from mine]
 - `L29` narrator: The body faced OUT. / But the HEAD / was turned ROUND / to MY door.
@@ -153,7 +153,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - `L30` narrator: I locked up / in about TEN SECONDS.
   - [the padlock hasp, a fast cut, door seven already down. Cut away from hands]
 
-### 05 Thursday four: unit eight
+### 05 Tuesday four: unit eight
 - `L31` narrator: Week FOUR, / unit EIGHT, / right NEXT to mine.
   - [the corridor, lit, door eight next to seven, shut]
 - `L32` narrator: Its door / was DOWN.
@@ -166,7 +166,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [slow pan along the wall front to back, following the sound]
 - `L36` narrator: Like something too BIG / for the SPACE it was in.
   - [my face, `scared`, eyes following along the wall]
-- `L37` narrator: I didn't come BACK / for TWO Thursdays.
+- `L37` narrator: I didn't come BACK / for TWO Tuesdays.
   - [door seven shut from the corridor, lights on, nobody]
 
 ### 06 The scare
@@ -204,13 +204,13 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [memory flash, bright: me drawing a round scribble on a fresh box at our old kitchen table, cut before the marker touches]
 - `L53` narrator: Half that room / was MINE.
   - [back to the scare framing, my face, `sad` more than scared]
-- `L54` narrator: I'd kept a PLACE / for Jo / every Thursday. / Something was STANDING in it.
+- `L54` narrator: I'd kept a PLACE / for Jo / every Tuesday. / Something was STANDING in it.
   - [the Deep One's face in my door, held, quiet. Pulse gone]
 - `L55` narrator: That night / I slid her key / off my RING.
   - [cut: that night at my kitchen table under a warm ceiling light, bright enough to read. Top-down: my ring with one key, and the second key on its own beside it]
 - `L56` narrator: Then I rang JO.
   - [me with my phone to my ear by a bright window, `neutral`]
-- `L57` narrator: She went QUIET / for a long time. / Then she said, / "THURSDAY?"
+- `L57` narrator: She went QUIET / for a long time. / Then she said, / "TUESDAY?"
   - [hold on my face, a small breath out]
 
 ### 08 Jo comes (spring, bright)
@@ -234,7 +234,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [from the yard door: her car going out of the gate in the low sun, me watching from the door]
 
 ### 09 The door comes down
-- `L66` narrator: The NEXT Thursday, / my half went / to the charity SHOP.
+- `L66` narrator: The NEXT Tuesday, / my half went / to the charity SHOP.
   - [me carrying round-scribbled boxes out into the sunny yard]
 - `L67` narrator: What was LEFT / fit in ONE / small BOX.
   - [one small round-scribbled box on the bare floor of seven, sun across it. The lamp beside it]
@@ -248,7 +248,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [corridor wide, bright: the blue door rolling down (already moving, hand out of frame), me beside it with the box. The rattle starts]
 - `L72` narrator: Every week, / I'd sat with the GAP / Jo left. / So had IT.
   - [low on the door coming down over the empty floor, the gap under it shrinking, sun on the concrete]
-- `L73` narrator: Every THURSDAY / at SEVEN, / I USED to visit / a ROOM.
+- `L73` narrator: Every TUESDAY / at SEVEN, / I USED to visit / a ROOM.
   - [the corridor wide from the entrance end, lit and sunny, me walking toward the camera with the small box, door seven landing behind me. The thud lands 0.2 s after "ROOM", and the loop cut comes 0.25 s after the word, on the thud]
 
 ## Voice and timing notes
@@ -258,7 +258,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - **Pronoun:** I call it "they" through L27, while it still looks like a person, and "it" from L29 on, once the head is wrong. Keep that split.
 - **L43 to L46** get quieter, line by line.
 - **L54:** the twist line. Slow, even, no push.
-- **L57** "THURSDAY?" is a small lift, almost a joke.
+- **L57** "TUESDAY?" is a small lift, almost a joke.
 - **L63** "obviously," has a smile in it.
 - **P01:** the one clink alone, music low.
 - **L72:** slower and soft. **L73:** plain and warm, not a whisper, no trail-off. The door's thud is the last sound.

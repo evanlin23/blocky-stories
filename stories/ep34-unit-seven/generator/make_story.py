@@ -39,7 +39,7 @@ cast = {
     "me": {"age": "adult", "skin": "#d9a67a", "shirt": "#2f5a3c", "pattern": "solid", "collar": "#294d34",
            "pants": "#33363b", "shoes": "#5b3d27", "sleeves": "long", "hair": "swoop", "hair_c": "#3a2a20",
            "hat": "none", "width": 0.9, "face": {"eyes": "round", "brows": True, "ink": "#1c1214"}},
-    "jo": {"age": "adult", "skin": "#e6bd96", "shirt": "#c4592a", "pattern": "solid", "collar": "#a94a22",
+    "jo": {"age": "adult", "skin": "#e6bd96", "shirt": "#a8603f", "pattern": "solid", "collar": "#92522f",
            "pants": "#232a3a", "shoes": "#ececec", "sleeves": "long", "hair": "long", "hair_c": "#141214",
            "hat": "none", "width": 0.9, "face": {"eyes": "lashes", "brows": True, "ink": "#1c1214"}},
     "deep": {"age": "adult", "skin": "#b3a187", "shirt": "#3d6fa8", "pattern": "solid", "collar": "#3d6fa8",
@@ -255,7 +255,7 @@ put("me", "L59", [0.3, 3.45], yaw=50, expr="soft")
 hide("me", "L60")
 put("me", "L61", [0.5, 4.0], yaw=0, expr="soft", **CARRY)
 walk("me", "L61+0.6", [0.1, 1.8], **CARRY)
-walk("me", "L62-0.05", [-0.1, 0.5], **CARRY)
+walk("me", "L62-0.05", [0.0, 2.2], **CARRY)
 hide("me", "L62")
 put("me", "L63.3", [1.5, 3.0], yaw=90, expr="soft")
 hide("me", "L64")
@@ -282,7 +282,7 @@ hide("jo", "L49.2")
 put("jo", "L59", [0.3, 2.6], yaw=50, expr="soft")
 hide("jo", "L60")
 put("jo", "L61", [0.5, 2.4], yaw=0, expr="soft", **CARRY)
-walk("jo", "L61+0.1", [-0.1, 0.3], **CARRY)
+walk("jo", "L61+0.1", [-0.1, 1.5], **CARRY)
 hide("jo", "L61.4")
 put("jo", "L62", [2.5, 3.0], yaw=-90, expr="wide", **CARRY)
 key("jo", "L63", expr="soft", blend=0.2)
