@@ -142,7 +142,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L10` narrator: Every couple / waltzes, hand-BACKS / TOUCHING.
   - [the class in hold, circling the worn ring, warm light]
 - `L11` narrator: Where the halves MEET, / they glow WHOLE.
-  - [close on a hand resting on a partner's hand, two halves meeting, the glow blooming to one whole glyph over 0.6 s]
+  - [close on the backs of two hands touching, back of hand to back of hand, two halves meeting, the glow blooming to one whole glyph over 0.6 s]
 - `L12` narrator: Ros dances / every DEMONSTRATION / with her arms / round NOBODY.
   - [Ros alone in the middle of the floor, arms up in hold round an empty space, the class watching from the chairs]
 - `L13` narrator: Eyes CLOSED, / the way she ALWAYS does.

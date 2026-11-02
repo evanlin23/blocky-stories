@@ -274,26 +274,26 @@
    ]
   },
   "L10": {
-   "text": "every couple waltzes hand on hand.",
+   "text": "every couple waltzes, hand backs touching.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.017,
+   "dur": 2.241,
    "onset": 0.172,
-   "end": 1.81,
+   "end": 2.052,
    "chunks": [
     [
      0.172,
-     0.603
+     0.586
     ],
     [
-     0.603,
-     1.164
+     0.586,
+     1.483
     ],
     [
-     1.164,
-     1.81
+     1.483,
+     2.052
     ]
    ]
   },
@@ -1690,26 +1690,22 @@
    ]
   },
   "L64": {
-   "text": "a match was never only for love.",
+   "text": "a match can be family.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.793,
+   "dur": 1.431,
    "onset": 0.172,
-   "end": 1.603,
+   "end": 1.241,
    "chunks": [
     [
      0.172,
-     0.466
+     0.448
     ],
     [
-     0.466,
-     1.017
-    ],
-    [
-     1.017,
-     1.603
+     0.448,
+     1.241
     ]
    ]
   },

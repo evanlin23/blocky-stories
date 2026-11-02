@@ -36,6 +36,8 @@ PX, PY = 0.0, 0.6            # Ros's partner's spot
 CEIL = 5.0
 HALL_LAMPS = [(-3.85, -4.2), (-3.85, 4.2), (3.85, -4.2), (3.85, 4.2)]
 STREET_X = -80.0
+import os
+_DEBUG = bool(os.environ.get('EP54_DEBUG'))
 
 
 # ------------------------------------------------------------------------------------------------ helpers
@@ -232,6 +234,7 @@ def materials(kit):
     M["butter"] = kit.plastic("#f6dc7a", 0.8)
     M["lilac"] = kit.plastic("#bfa8e0", 0.8)
     M["shopwin"] = kit.plastic("#3a5878", 0.2)
+    M["shelterback"] = kit.plastic("#f3e3a0", 0.8)
     M["grass"] = kit.plastic("#7fb35a", 0.9)
     M["fence"] = kit.plastic("#f4f0e6", 0.8)
     M["leaf"] = kit.plastic("#4f9a4a", 0.9)
@@ -444,7 +447,7 @@ def build_street(kit, M, ctx):
     # the bus stop: a shelter and a post with a coloured disc
     sx = X0
     B(kit, "shelter roof", (3.2, 1.3, 0.08), (sx, 0.4, 2.5), M["post"])
-    B(kit, "shelter back", (3.2, 0.05, 2.3), (sx, 1.0, 1.3), M["shopwin"])
+    B(kit, "shelter back", (3.2, 0.05, 2.3), (sx, 1.0, 1.3), M["shelterback"])
     for dx in (-1.55, 1.55):
         B(kit, "shelter post", (0.07, 0.07, 2.5), (sx + dx, 0.0, 1.25), M["post"])
     B(kit, "bench", (1.8, 0.4, 0.06), (sx, 0.65, 0.5), M["wood"])
@@ -549,6 +552,12 @@ def build_keeper(kit, M, ctx):
     kit.light("kfront", "POINT", (0.9, -1.3, 1.9), 140.0, "#ffd8a8", size=0.3)
     for ln in ("kkey", "krim", "kfront"):
         light_only(kit, "keeper", ln, ctx["k_objs"])
+    # face lights: a high one for the upright pose (its face is above the brass ring), a low one at eye height for the bend
+    # (it lights Ros's face too). Each switches only on a cut, with the keeper's pose.
+    kit.light("kface_hi", "POINT", (-1.3, -1.9, 3.9), 260.0, "#ffd9b0", size=0.4)
+    light_only(kit, "keeper", "kface_hi", ctx["k_objs"])
+    kit.light("kface_lo", "POINT", (1.6, -0.3, 2.0), 170.0, "#ffd9b0", size=0.4)
+    kit.light("khand", "POINT", (-1.1, -1.3, 1.9), 150.0, "#ffd9b0", size=0.4)
     _show(ctx["k_objs"], False)
 
 
@@ -695,6 +704,11 @@ def animate(kit, story, tl, t, ctx):
     # ---- the drops pushed apart round a dark gap
     pc = _ramped(_cues(tl, "parted"), "v", t, 0.0)
     kc_ = _last(_cues(tl, "keeper"), t)
+    kvis = kc_ is not None and not kc_.get("hidden", False)
+    kb = kc_.get("bend", 0) if kvis else 0
+    over["kface_hi"] = 1.0 if kvis and kb < 100 else 0.0
+    over["kface_lo"] = 1.0 if kvis and kb >= 100 else 0.0
+    over["khand"] = 1.0 if kvis and kb >= 100 else 0.0
     _show([ctx["gap"]], pc > 0.01 and (kc_ is None or kc_.get("hidden", False)))
     for d, rr, ang, zc in ctx["drops"]:
         x, y = rr * math.cos(ang), rr * math.sin(ang)
@@ -747,7 +761,7 @@ def animate(kit, story, tl, t, ctx):
             pl.hide_render = False
             mid = (pa + pb) / 2
             _billboard(pl, mid + (cam - mid).normalized() * 0.08, cam)
-            sz = 0.9 + 0.1 * w
+            sz = 1.5 + 0.15 * w
             pl.scale = (sz, 1, sz)
             em.inputs["Strength"].default_value = 7.0 * w * (levels.get("ros", 1.0) if "ros" in (a_, b_) else 1.0)
             if w * (levels.get("ros", 1.0) if "ros" in (a_, b_) else 1.0) > glow:
@@ -763,8 +777,18 @@ def animate(kit, story, tl, t, ctx):
             pl.hide_render = True
             continue
         pl.hide_render = False
-        _billboard(pl, p + (cam - p).normalized() * 0.07, cam)
-        em.inputs["Strength"].default_value = 5.0 * lv * (1.0 - w)
+        gloved = bool(on_g) and who == "me"
+        off = 0.22 if gloved else (0.13 if who == "me" else 0.1)
+        _billboard(pl, p + (cam - p).normalized() * off, cam)
+        sc_ = 1.8 if who == "me" and lv > 0.5 else 1.5
+        pl.scale = (sc_, 1, sc_)
+        em.inputs["Strength"].default_value = 6.0 * lv * (1.0 - w)
+        if who == "me" and lv > 0.5 and (1.0 - w) > 0.5 and glow < 0.6:
+            glow = 0.6
+            glow_p = p
+        if _DEBUG:
+            import sys
+            print(f"DBG t={t:.2f} {who} hand={tuple(round(x, 2) for x in p)} cam={tuple(round(x, 2) for x in cam)}", file=sys.stderr)
     over["glyphglow"] = 1.0
     gl = kit.LIGHTS["glyphglow"]
     gl["obj"].location = glow_p + (cam - glow_p).normalized() * 0.25 if glow_p is not None else V((0, 0, -20))
