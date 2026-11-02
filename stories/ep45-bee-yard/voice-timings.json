@@ -1342,54 +1342,58 @@
    ]
   },
   "L52": {
-   "text": "I pulled my veil on for the first time ever.",
+   "text": "I stepped past him, grabbed my veil off its hook and ran.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.138,
+   "dur": 2.724,
    "onset": 0.155,
-   "end": 1.931,
+   "end": 2.517,
    "chunks": [
     [
      0.155,
-     0.534
+     0.664
     ],
     [
-     0.534,
-     0.992
+     0.664,
+     1.31
     ],
     [
-     0.992,
-     1.259
+     1.31,
+     1.741
     ],
     [
-     1.259,
-     1.931
+     1.741,
+     2.517
     ]
    ]
   },
   "L53": {
-   "text": "I stepped past him into the yard and ran.",
+   "text": "I pulled it on as I ran, for the first time ever.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.034,
+   "dur": 2.431,
    "onset": 0.155,
-   "end": 1.828,
+   "end": 2.224,
    "chunks": [
     [
      0.155,
-     0.698
+     0.483
     ],
     [
-     0.698,
-     0.966
+     0.483,
+     0.81
     ],
     [
-     0.966,
-     1.828
+     0.81,
+     1.345
+    ],
+    [
+     1.345,
+     2.224
     ]
    ]
   },
@@ -1558,30 +1562,30 @@
    ]
   },
   "L61": {
-   "text": "Every time I said goodbye, her clock had dropped to seconds.",
+   "text": "Every time I nearly hugged her goodbye, it had dropped to seconds.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.81,
+   "dur": 3.0,
    "onset": 0.172,
-   "end": 2.621,
+   "end": 2.81,
    "chunks": [
     [
      0.172,
-     0.638
+     0.672
     ],
     [
-     0.638,
-     1.431
+     0.672,
+     1.138
     ],
     [
-     1.431,
-     1.931
+     1.138,
+     1.845
     ],
     [
-     1.931,
-     2.621
+     1.845,
+     2.81
     ]
    ]
   },

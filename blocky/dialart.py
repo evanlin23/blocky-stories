@@ -51,7 +51,7 @@ def _digit(d: ImageDraw.ImageDraw, ch: str, x: float, y: float, w: float, h: flo
 
 @lru_cache(maxsize=512)
 def dial(val: str = "", unit: int = 0, frac: float = 1.0, glow: float = 0.0, vis: float = 1.0,
-         tone: str = "coral", n: int = 512) -> np.ndarray:
+         tone: str = "coral", n: int = 512, mark: str = "") -> np.ndarray:
     k = 2                                   # supersample
     N = n * k
     c = N / 2
@@ -101,4 +101,16 @@ def dial(val: str = "", unit: int = 0, frac: float = 1.0, glow: float = 0.0, vis
         hi = np.array(GOLD_HI, np.float32) / 255.0
         tgt = gold[None, None, :] * (1 - g[..., None]) + hi[None, None, :] * g[..., None]
         arr = arr * (1 - glow) + tgt * glow
+        if mark:                             # opt-in: a deep amber digit on the glow, so a zero reads as a zero
+            m = Image.new("L", (n * 2, n * 2), 0)
+            md = ImageDraw.Draw(m)
+            R2 = n
+            nd = len(mark)
+            h, w, t = 1.0 * R2, 0.6 * R2, 0.15 * R2
+            gp = 0.16 * R2
+            tot = nd * w + (nd - 1) * gp
+            for i, ch in enumerate(mark):
+                _digit(md, ch, R2 - tot / 2 + i * (w + gp), R2 - h / 2, w, h, t, 255)
+            ma = np.asarray(m.resize((n, n), Image.LANCZOS), dtype=np.float32)[..., None] / 255.0 * min(1.0, glow * 1.2)
+            arr = arr * (1 - ma) + (np.array((120, 62, 6), np.float32) / 255.0)[None, None, :] * ma
     return np.clip(arr, 0, 1)

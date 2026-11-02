@@ -168,7 +168,7 @@ hv = lambda x, y, yaw=0, **kw: P(x, y, yaw, z=gz(y) + LIFT, arms=[0, 0], side=[0
 
 # ============================================================================================ the shots
 # ---- the pier opener and the montage (S01 to S11)
-cx0, cx1 = X - 0.38, X + 0.38
+cx0, cx1 = X - 0.46, X + 0.46
 hug = dict(arms=[55, 55], side=[18, 18], expr="grin")
 sh("S01", 1, 0, mv([X - 0.3, 4.9, 1.45], [X, 9.0, 1.62], 35, [X - 0.2, 5.2, 1.45], [X, 9.0, 1.62], 35),
    {"a1": P(cx0, 9.0, 90, z=PZ, head=[-72, 0], **hug), "a2": P(cx1, 9.0, 270, z=PZ, head=[72, 0], **hug),
@@ -242,7 +242,7 @@ sh("S27", 22, "L22.1", fc(hd(*LW), 0, -24, 2.6, 40), {"lena": P(LW[0], LW[1], 0,
 # ---- Wednesday: the Hover in the last row
 sh("S28", 23, "L23", mv([0.4, -0.8, 1.5], [2.4, 13.5, 1.9], 34, [0.5, -0.7, 1.5], [2.4, 13.5, 1.9], 38),
    {"hover": hv(*HOV_WED, 0), "lena": P(-1.5, 4.65, 180, lean=22, arms=[55, 55], side=[0, 0], expr="neutral")}, hand=0.004)
-sh("S29", 24, "L24", mv([0.6, 0.4, 1.5], [3.0, 13.5, 1.95], 70), {"hover": hv(*HOV_WED, 0)}, hand=0.002)
+sh("S29", 24, "L24", mv([0.0, 8.0, gz(8.0) + 0.4], [3.0, 13.5, gz(13.5) + 0.95], 34, [0.2, 8.4, gz(8.4) + 0.4], [3.0, 13.5, gz(13.5) + 1.0], 36), {"hover": hv(*HOV_WED, 0)}, hand=0.002)
 sh("S30", 25, "L25", mv([6.7, 9.7, gz(9.7) + 0.3], [3.0, 13.5, gz(13.5) + 0.62], 45, [6.4, 9.9, gz(9.9) + 0.28], [3.0, 13.5, gz(13.5) + 0.62], 45),
    {"hover": hv(*HOV_WED, 0)}, hand=0.0015)
 sh("S31", 25, "L25.3", mv([4.1, 12.2, gz(12.2) + 0.1], [3.0, 13.5, gz(13.5) + 0.12], 50, [3.9, 12.3, gz(12.3) + 0.1], [3.0, 13.5, gz(13.5) + 0.12], 52),
@@ -258,7 +258,7 @@ sh("S34", 28, "L28.2+0.2", mv([0.5, 0.1, 1.55], [-1.5, 4.3, 1.75], 38, [0.5, 0.3
 ex("lena", "L28.2+0.3", yaw=0, blend=0.4)
 sh("S35", 29, "L29", fc(hd(*LW), 0, 24, 2.6, 40), {"lena": P(LW[0], LW[1], 0, expr="neutral", arms=[0, 0], side=[0, 0])}, hand=0.004)
 # ---- Thursday
-sh("S36", 30, "L30", mv([0.2, 0.4, 1.55], [3.0, 9.5, 1.95], 46, [0.3, 0.4, 1.55], [3.0, 9.5, 1.95], 48), {"hover": hv(*HOV_THU, 0)}, hand=0.003)
+sh("S36", 30, "L30", mv([0.6, 5.2, gz(5.2) + 0.4], [3.0, 9.5, gz(9.5) + 0.95], 34, [0.8, 5.5, gz(5.5) + 0.4], [3.0, 9.5, gz(9.5) + 1.0], 36), {"hover": hv(*HOV_THU, 0)}, hand=0.003)
 sh("S37", 31, "L31", fc(hd(*HOV_THU, gz(9.5) + LIFT), 0, 16, 2.6, 40, dial=False, drop=0.0), {"hover": hv(*HOV_THU, 0)}, hand=0.002)
 sh("S37b", 31, "L31.2", fc(hd(*HOV_THU, gz(9.5) + LIFT), 0, -12, 1.7, 45, dial=False, drop=0.0, push=0.15), {"hover": hv(*HOV_THU, 0)}, hand=0.0015)
 sh("S38", 32, "L32", fc(hd(*LW), 0, -24, 2.6, 40), {"lena": P(LW[0], LW[1], 0, expr="neutral", arms=[0, 0], side=[0, 0])}, hand=0.004)
@@ -306,10 +306,10 @@ sh("S60", 50, "L50", mv([0.3, 0.0, 1.6], [-0.4, 6.2, 1.7], 38, [0.3, 0.2, 1.6], 
    {"lena": P(-0.4, 6.2, 180, arms=[40, 40], side=[0, 0], expr="neutral")}, hand=0.004)
 sh("S60b", 50, "L50.2", fc(hd(-0.4, 6.2), 180 + 180, 10, 3.3, 52), {"lena": P(-0.4, 6.2, 0, arms=[40, 40], side=[0, 0], expr="neutral")}, hand=0.004)
 sh("S61", 51, "L51", fc(hd(0.0, -1.0), 180, 24, 2.3, 42), {"me": P(0.0, -1.0, 180, arms=[0, 0], side=[0, 0], expr="angry")}, hand=0.004)
-sh("S62", 52, "L51.2+0.4", mv([-0.6, 2.3, BZ], BOARD_CAM_T, 28, [-0.7, 2.3, BZ], BOARD_CAM_T, 28), {}, hand=0.004)
-sh("S63", 52, "L52.2-0.1", fc(hd(0.0, -1.0), 180, 18, 2.4, 40), {"me": P(0.0, -1.0, 180, arms=[0, 0], side=[0, 0], expr="angry")}, hand=0.004)
-sh("S64", 53, "L53", mv([-4.4, -3.4, 1.4], [0.2, 0.8, 1.4], 28, [-4.0, -3.1, 1.4], [0.3, 1.4, 1.4], 28),
+sh("S64", 52, "L52", mv([-4.4, -3.4, 1.4], [0.2, 0.8, 1.4], 28, [-4.0, -3.1, 1.4], [0.3, 1.4, 1.4], 28),
    {"hover": HG, "me": P(0.9, -1.7, 180, to=(1.0, 2.6), arms=[0, 0], side=[0, 0], expr="angry")}, hand=0.004)
+sh("S62", 52, "L52.2", mv([-0.6, 2.3, BZ], BOARD_CAM_T, 28, [-0.7, 2.3, BZ], BOARD_CAM_T, 28), {}, hand=0.004)
+sh("S63", 53, "L53", fc(hd(0.0, -1.0), 180, 18, 2.4, 40), {"me": P(0.0, -1.0, 180, arms=[0, 0], side=[0, 0], expr="angry")}, hand=0.004)
 sh("S65", 54, "L54", fc(hd(*LENA_S), 0, 10, 3.0, 50), {"lena": P(LENA_S[0], LENA_S[1], 0, arms=[30, 30], side=[0, 0], expr="neutral")}, hand=0.004)
 sh("S66", 55, "L55", mv([3.7, 3.6, 1.5], [0.0, 5.7, 1.5], 35, [3.5, 3.8, 1.5], [0.0, 5.7, 1.5], 35),
    {"me": P(0.0, 5.4, 180, arms=[82, 82], side=[0, 0], expr="shut"), "lena": P(0.0, 6.0, 0, arms=[82, 82], side=[0, 0], expr="grin")}, hand=0.004)
@@ -347,19 +347,19 @@ sh("S81", 70, "L70", mv([0.0, 5.6, gz(5.6) + 2.3], [0.0, 2.2, 2.3], 44, [0.0, 5.
 # ================================================================================================== dials
 # unit pips: 1 seconds, 2 minutes, 3 hours, 4 days, 5 months, 6 years
 for who in ("a1", "a2"):
-    dial(who, 0, glow=1.0, vis=0.0, val="", unit=0, frac=1.0)
+    dial(who, 0, glow=1.0, vis=0.0, val="", unit=0, frac=1.0, mark="0")
     dial(who, "L02+0.55", glow=0.0, vis=1.0, val="5", unit=5, frac=1.0, ramp=1.0)
-    dial(who, "L11", glow=1.0, vis=0.0, ramp=0.8)
+    dial(who, "L11", glow=1.0, vis=0.0, ramp=0.8, mark="0")
 dial("b1", 0, val="12", unit=3, frac=0.62, glow=0.0, vis=1.0, tone="coral")
 dial("b2", 0, val="3", unit=4, frac=0.4, glow=0.0, vis=1.0, tone="coral")
 dial("b1", "L01.3+0.65", val="11", unit=3, frac=0.58)
 dial("b1", "L07+0.2", glow=0.0)
-dial("b1", "L07.1", glow=1.0, vis=0.0, ramp=0.8)
-dial("b2", "L07.1", glow=1.0, vis=0.0, ramp=0.8)
+dial("b1", "L07.1", glow=1.0, vis=0.0, ramp=0.8, mark="0")
+dial("b2", "L07.1", glow=1.0, vis=0.0, ramp=0.8, mark="0")
 dial("b1", "L08.2", glow=0.0, vis=1.0, ramp=1.0, val="3", unit=5, frac=1.0)
 dial("b2", "L08.2", glow=0.0, vis=1.0, ramp=1.0, val="8", unit=5, frac=1.0)
 for c in ("c1", "c2", "c3", "c4", "c5", "c6"):
-    dial(c, 0, glow=1.0, vis=0.0, val="", unit=0, frac=1.0)
+    dial(c, 0, glow=1.0, vis=0.0, val="", unit=0, frac=1.0, mark="0")
 dial("t", 0, val="9", unit=6, frac=1.0, glow=0.0, vis=1.0, tone="coral")
 for d_ in ("d1", "d2"):
     dial(d_, 0, val="4", unit=3, frac=0.5, glow=0.0, vis=1.0, tone="coral")
@@ -384,7 +384,7 @@ dial("lena", "L54.1", val="3", unit=1, frac=0.05)
 dial("lena", "L54.1+0.4", val="2", unit=1, frac=0.03)
 dial("lena", "L54.1+0.8", val="1", unit=1, frac=0.015)
 dial("lena", "L55+0.55", val="0", unit=1, frac=0.0)
-dial("lena", "L56.1", glow=1.0, vis=0.0, ramp=0.8)
+dial("lena", "L56.1", glow=1.0, vis=0.0, ramp=0.8, mark="0")
 dial("lena", "L57.1+0.8", glow=0.0, vis=1.0, ramp=1.0, val="9", unit=3, frac=1.0, tone="coral")
 dial("lena", "L61", val="1", unit=1, frac=0.05, tone="honey")
 dial("lena", "L62.2", val="4", unit=5, frac=0.92, tone="coral")
@@ -398,11 +398,11 @@ veil("lena", "L63", True)
 veil("lena", "L67", False)
 veil("lena", "L68", True)
 veil("me", 0, False)
-veil("me", "L52.2-0.1", True)
+veil("me", "L53", True)
 veil("me", "L61", False)
 veil("me", "L68", True)
 CUES += [{"at": "L40", "name": "smoke_in"}, {"at": "L59", "name": "smoke_out"},
-         {"at": "L40+0.1", "name": "puff", "dur": 6.5}]
+         {"at": "L40+0.1", "name": "puff", "dur": 6.5}, {"at": "L52.3-0.05", "name": "veil_take"}]
 
 # ================================================================================================== story
 shots, ids = [], []
@@ -508,7 +508,7 @@ fx_("L39", "latch", -18)
 for k, off in enumerate((0.15, 1.2, 2.3)):
     fx_(f"L40+{off}", "puff", -17, dur=0.6)
 fx_("L44", "sting", -11, dur=2.4, keep=True)
-fx_("L53", "whoosh", -17)
+fx_("L52.3+0.2", "whoosh", -17)
 fx_("L55+0.35", "thud", -26)
 fx_("L63", "chime", -26, dur=1.6)
 sfx.sort(key=lambda e: 0)

@@ -250,8 +250,15 @@ def build_yard(kit, ctx, M):
     kit.box("board", (0.06, 1.3, 0.62), (bx, 2.25, bz), M["board"], bevel=0.01)
     for k, yy in enumerate((1.75, 2.75)):
         kit.cyl(f"hook{k}", 0.018, 0.14, (bx + 0.08, yy, bz + 0.12), M["metal"], rot=(0, math.pi / 2, 0), n=10)
-    for k, yy in enumerate((2.2, 2.3)):
-        kit.box(f"tally{k}", (0.012, 0.025, 0.22), (bx + 0.033, yy, bz - 0.04), M["honey"])
+    tally_m = kit._new("tally_gold")
+    ntt = tally_m.node_tree
+    ntt.nodes.remove(ntt.nodes["Principled BSDF"])
+    emt = ntt.nodes.new("ShaderNodeEmission")
+    emt.inputs["Color"].default_value = kit.col("#ffbf30")
+    emt.inputs["Strength"].default_value = 1.6
+    ntt.links.new(emt.outputs[0], next(n for n in ntt.nodes if n.type == "OUTPUT_MATERIAL").inputs["Surface"])
+    for k, yy in enumerate((2.18, 2.32)):
+        kit.box(f"tally{k}", (0.016, 0.05, 0.3), (bx + 0.035, yy, bz - 0.02), tally_m)
     ctx["board_pos"] = (bx, bz)
     # crates and jars
     kit.box("crate_shed", (0.7, 0.5, 0.36), (-3.2, 1.2, gz(1.2) + 0.18), M["wood"], bevel=0.01)
@@ -465,10 +472,26 @@ def build(kit, story, tl):
     build_yard(kit, ctx, M)
     build_pier(kit, ctx, M)
     # bees: a few small dark dots, never a swarm
-    bee = kit.plastic("#2a2118", 0.7, name="bee")
-    ctx["bees"] = [kit.sphere(f"bee{i}", 0.02, (0, 0, -50), bee, seg=6) for i in range(14)]
-    ctx["hover_bees"] = [kit.sphere(f"hbee{i}", 0.02, (0, 0, -50), bee, seg=6) for i in range(4)]
-    ctx["lena_bees"] = [kit.sphere(f"lbee{i}", 0.02, (0, 0, -50), bee, seg=6) for i in range(3)]
+    bee = kit.plastic("#f0a82a", 0.5, name="bee")
+    ctx["bees"] = [kit.sphere(f"bee{i}", 0.05, (0, 0, -50), bee, seg=8) for i in range(14)]
+    ctx["hover_bees"] = [kit.sphere(f"hbee{i}", 0.06, (0, 0, -50), bee, seg=8) for i in range(9)]
+    ctx["lena_bees"] = [kit.sphere(f"lbee{i}", 0.05, (0, 0, -50), bee, seg=8) for i in range(3)]
+    # the reveal's smoke: big soft translucent puffs round the Hover (S52 to S55)
+    ctx["hpuffs"] = []
+    for i in range(12):
+        m = kit._new(f"hpuff{i}")
+        nt = m.node_tree
+        nt.nodes.remove(nt.nodes["Principled BSDF"])
+        tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+        em = nt.nodes.new("ShaderNodeEmission")
+        em.inputs["Color"].default_value = kit.col("#7d8288")
+        em.inputs["Strength"].default_value = 0.55
+        mix = nt.nodes.new("ShaderNodeMixShader")
+        mix.inputs[0].default_value = 0.16
+        nt.links.new(tr.outputs[0], mix.inputs[1])
+        nt.links.new(em.outputs[0], mix.inputs[2])
+        nt.links.new(mix.outputs[0], next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL").inputs["Surface"])
+        ctx["hpuffs"].append(kit.sphere(f"hpuff{i}", 0.5, (0, 0, -50), m, seg=20))
     # smoke puffs from the smoker: soft grey spheres that grow, rise and fade
     ctx["puffs"] = []
     for i in range(7):
@@ -545,11 +568,11 @@ def _dial_state(keys, t):
     ks = [k for k in keys if k["t"] <= t + 1e-9]
     if not ks:
         return None
-    cur = {"val": "", "unit": 0, "frac": 1.0, "glow": 0.0, "vis": 1.0, "tone": "coral", "off": False}
+    cur = {"val": "", "unit": 0, "frac": 1.0, "glow": 0.0, "vis": 1.0, "tone": "coral", "off": False, "mark": ""}
     hist = []
     for k in ks:
         before = dict(cur)
-        for f in ("val", "unit", "tone", "off"):
+        for f in ("val", "unit", "tone", "off", "mark"):
             if f in k:
                 cur[f] = k[f]
         tgt = {f: k[f] for f in ("frac", "glow", "vis") if f in k}
@@ -615,6 +638,8 @@ def animate(kit, story, tl, t, ctx):
     n = ctx["nmap"][sid]
     look = LOOKS[look_of(sid, n)]
     sky, sky_s, el, az, scol, spow, fcol, fd = look
+    if n in (44, 45, 46, 47) or sid == "S64":    # the reveal: the weak sun sits behind him, low, so nothing lights his front
+        el, az, spow = 16, 15, 1.6
     # ---- the smoke: a slow fade in over 3 s from L40, thinning over 3 s from L59 (no step anywhere)
     sin_ = _cues(tl, "smoke_in")
     sout = _cues(tl, "smoke_out")
@@ -656,7 +681,7 @@ def animate(kit, story, tl, t, ctx):
     hover_on = not hv["hidden"]
     cam, tgt = _cam_pos(story, tl, t)
     # the Hover's lights follow him and the camera
-    prof = _hover_light(n)
+    prof = _hover_light(n, sid)
     if hover_on and prof:
         hp = V((hv["x"], hv["y"], hv["z"]))
         toc = V((cam.x - hp.x, cam.y - hp.y, 0.0))
@@ -671,7 +696,7 @@ def animate(kit, story, tl, t, ctx):
     else:
         for nm in ("hv_fill", "hv_key", "hv_rim"):
             over[nm] = 0.0
-    over["board"] = 70.0 if n in (33, 34, 35, 36, 37, 52, 67) else 0.0
+    over["board"] = 300.0 if sid == "S42" else (70.0 if (n in (33, 34, 36, 37, 67) or sid == "S62") else 0.0)
     # ---- bees
     night = look_of(sid, n) in ("night", "dusk")
     for i, b in enumerate(ctx["bees"]):
@@ -680,11 +705,20 @@ def animate(kit, story, tl, t, ctx):
         r = 0.35 + 0.12 * (i % 3)
         p = hv_.location
         b.location = (p.x + r * math.cos(a) * 1.0, p.y - 0.3 + r * math.sin(a * 1.3) * 0.8, p.z + 0.55 + 0.25 * math.sin(a * 0.7 + i))
-        b.hide_render = night or n < 12 or n > 69
+        b.hide_render = night or n < 12 or n > 69 or (V(b.location) - cam).length < 1.6
     for i, b in enumerate(ctx["hover_bees"]):
         a = t * 0.9 + i * 1.57
-        b.location = (hv["x"] + 0.32 * math.cos(a), hv["y"] + 0.32 * math.sin(a), hv["z"] + 1.58 + 0.04 * math.sin(a * 2 + i))
-        b.hide_render = not hover_on
+        rr = 0.34 + 0.1 * (i % 3)
+        b.location = (hv["x"] + rr * math.cos(a), hv["y"] + rr * math.sin(a), hv["z"] + 1.0 + 0.14 * i + 0.05 * math.sin(a * 2 + i))
+        b.hide_render = (not hover_on) or (V(b.location) - cam).length < 0.9
+    revealing = hover_on and (n in (44, 45, 46, 47) or sid == "S64")
+    for i, sp in enumerate(ctx["hpuffs"]):
+        sp.hide_render = not revealing
+        if revealing:
+            a = i * 2.4 + t * 0.12
+            rr = 0.55 + 0.3 * (i % 4)
+            sp.location = (hv["x"] + rr * math.cos(a), hv["y"] + rr * math.sin(a), hv["z"] + 0.45 + 0.17 * i + 0.1 * math.sin(t * 0.5 + i))
+            sp.scale = (1.1 + 0.15 * (i % 3),) * 3
     ls = st["lena"]
     lena_work = (not ls["hidden"]) and (n in (17, 21, 23, 40, 41, 50))
     for i, b in enumerate(ctx["lena_bees"]):
@@ -727,7 +761,8 @@ def animate(kit, story, tl, t, ctx):
         for ch in ctx["lena_hat"].children_recursive:
             ch.hide_render = not hat_on
     for k, v in enumerate(ctx["board_veils"]):
-        hide = n >= 40 if k == 0 else n >= 52      # hers goes on Saturday morning; mine stays on its hook until S62
+        gone = _cues(tl, "veil_take")
+        hide = n >= 40 if k == 0 else (n >= 53 or (bool(gone) and t >= gone[0]["t"]))   # hers goes on Saturday morning; mine stays on its hook until it is taken in S62
         v.hide_render = hide
         for ch in v.children_recursive:
             ch.hide_render = hide
@@ -741,7 +776,7 @@ def animate(kit, story, tl, t, ctx):
     return over
 
 
-def _hover_light(n: int):
+def _hover_light(n: int, sid: str = ""):
     """Per shot: {light: (offset toward the camera, sideways, up, watts, colour)} relative to the Hover's feet."""
     if n in (23, 24, 25, 26, 27):    # Wednesday: front fill dead on, key low and side, cool rim
         return {"hv_fill": ((2.2, 0.0, 1.5), 55, "#fff4e0"), "hv_key": ((0.8, 1.3, 0.2), 70, "#ffe2a8"), "hv_rim": ((-1.4, -1.0, 1.9), 260, "#9fc4ff")}
@@ -751,8 +786,8 @@ def _hover_light(n: int):
         return {"hv_fill": ((2.4, 0.0, 1.5), 60, "#ffd9b0"), "hv_key": ((0.8, 1.3, 0.2), 40, "#ffb070"), "hv_rim": ((-1.4, -1.0, 1.9), 150, "#9fc4ff")}
     if n == 38:                      # moonlit close on his face
         return {"hv_fill": ((1.6, 0.0, 1.6), 30, "#cfe0ff"), "hv_key": ((0.6, 1.0, 1.2), 18, "#b8ccff"), "hv_rim": ((-1.2, -0.8, 2.0), 140, "#9fc4ff")}
-    if n in (44, 45, 46, 47, 53):    # in the smoke: lit from below and behind so he reads as a shape first
-        return {"hv_fill": ((2.0, 0.0, 1.6), 10, "#fff4e0"), "hv_key": ((-1.0, 0.4, 0.05), 380, "#ffd48a"), "hv_rim": ((-1.6, -1.1, 1.9), 260, "#9fc4ff")}
+    if n in (44, 45, 46, 47) or sid == "S64":    # in the smoke: no front fill; a warm key from below and behind, a cool rim
+        return {"hv_fill": ((2.0, 0.0, 1.6), 0.0, "#fff4e0"), "hv_key": ((-0.9, 0.5, 0.05), 520, "#ffcf7a"), "hv_rim": ((-1.5, -1.0, 2.1), 520, "#a9ccff")}
     return None
 
 
@@ -786,10 +821,10 @@ def _dials(kit, story, tl, t, ctx, st, cam, over):
         d["root"].location = pos
         look = (cam - pos)
         d["root"].rotation_euler = look.to_track_quat("Z", "Y").to_euler()
-        key = (state["val"], int(state["unit"]), round(state["frac"] * 60), round(state["glow"] * 10), round(state["vis"] * 10), state["tone"])
+        key = (state["val"], int(state["unit"]), round(state["frac"] * 60), round(state["glow"] * 10), round(state["vis"] * 10), state["tone"], state["mark"])
         if key != d["key"]:
             # a fresh image datablock for every new reading: Cycles (persistent data) doesn't see pixels changed in place
-            arr = dialart.dial(state["val"], int(state["unit"]), key[2] / 60.0, key[3] / 10.0, key[4] / 10.0, state["tone"], 512)
+            arr = dialart.dial(state["val"], int(state["unit"]), key[2] / 60.0, key[3] / 10.0, key[4] / 10.0, state["tone"], 512, state["mark"])
             rgba = np.ones((512, 512, 4), np.float32)
             rgba[..., :3] = arr
             d["n"] = d.get("n", 0) + 1
