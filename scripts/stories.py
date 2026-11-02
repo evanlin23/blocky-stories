@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 import sys
@@ -35,20 +36,23 @@ def gate_open(story: str) -> bool:
     return r.returncode == 0
 
 
-def release_tag(story: str) -> str:
-    return f"render-{story}"
+REPO = os.environ.get("GITHUB_REPOSITORY", "evanlin23/blocky-stories")
 
 
-def release_assets(story: str) -> list[str] | None:
-    """Asset names on the story's render release, or None when there's no release."""
-    r = subprocess.run(["gh", "release", "view", release_tag(story), "--json", "assets,isPrerelease"],
+def film(story: str) -> dict | None:
+    """The newest unexpired `film-<story>` artifact the render workflow saved: {id, run_id, url}, or None when the
+    story has never been rendered (or its film expired after 90 days). The film's flash report says whether it may
+    be uploaded."""
+    r = subprocess.run(["gh", "api", f"repos/{REPO}/actions/artifacts?name=film-{story}&per_page=30"],
                        capture_output=True, text=True)
     if r.returncode != 0:
         return None
-    d = json.loads(r.stdout)
-    if d.get("isPrerelease"):   # a failed render (flash bar) is kept as a prerelease for the record
-        return []
-    return [a["name"] for a in d["assets"]]
+    arts = [x for x in json.loads(r.stdout).get("artifacts", []) if not x.get("expired")]
+    if not arts:
+        return None
+    x = max(arts, key=lambda x: x["created_at"])
+    run = x["workflow_run"]["id"]
+    return {"id": x["id"], "run_id": run, "url": f"https://github.com/{REPO}/actions/runs/{run}"}
 
 
 def uploads() -> dict:

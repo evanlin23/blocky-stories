@@ -12,7 +12,7 @@ You're the orchestrator. Keep your own context small: you read reports and verdi
 
 ## 0. Preflight (no agents)
 - `git config user.name evanlin23 && git config user.email 113861384+evanlin23@users.noreply.github.com`, then work on a branch, never `main`.
-- **Health check:** list the repo's releases (GitHub MCP `list_releases`) and open issues. A `render-*` prerelease means a final failed the flash bar. Fix it first, with the builder redrawing the named shots and a `workflow_dispatch` of `render` for that story. Count the stories that are ready but not uploaded (gate open, not in `uploads.json`). **Keep a week ahead:** make N = 14 minus that count (this week's uploads plus next week's), at most 10, unless the request names a number.
+- **Health check:** list recent `render` workflow runs (GitHub MCP `actions_list`) and open issues. A failed `flash result` step means a final failed the flash bar (its film is kept as an artifact but never uploaded). Fix it first, with the builder redrawing the named shots and a `workflow_dispatch` of `render` for that story. Count the stories that are ready but not uploaded (gate open, not in `uploads.json`). **Keep a week ahead:** make N = 14 minus that count (this week's uploads plus next week's), at most 10, unless the request names a number.
 - **Numbers:** read `metrics/summary.md` (the weekly `metrics` workflow writes it). If its date is more than 3 days old, the schedule didn't fire: start the `metrics` workflow yourself (GitHub MCP `actions_run_trigger`, `metrics.yml` on `main`), wait for it, and pull. Pick out at most 5 lessons (what held viewers, where they dropped, what got shares and comments) and hand them to the writer in step 1.
 - If `BLOCKY_BPY` or `BLOCKY_TTS` is unset: `bash blocky/setup.sh` and export what it prints.
 - A container can be reclaimed at any time, so commit and push `WIP` checkpoints to the branch after each story's build.
@@ -34,7 +34,7 @@ One story at a time, because Blender takes the CPU. When a builder's preview is 
 ## 4. Ship (no agents)
 - `python -m pytest -q`, and `python -m blocky gate <name>` for every story in the batch.
 - Commit the story folders (never `out/`). Push, then open ONE PR with a table of slug, title and upload order. Merge it once the `test` check passes (the owner approved team merges).
-- The merge starts `render` on Actions, which draws each final in 16 shards and publishes a `render-<story>` release. Then `upload` puts one story a day on PandaNanoAdventures as **private** and opens an issue for the owner to publish it. The session doesn't wait for any of this.
+- The merge starts `render` on Actions, which draws each final in 16 shards and keeps the film as the artifact `film-<story>`. Then `upload` puts one story a day on PandaNanoAdventures as **private** and opens an issue for the owner to publish it. The session doesn't wait for any of this.
 - Tell the owner: the stories, their titles, the upload order, and that each one will arrive as a "Ready to publish" issue.
 
 ## Usage rules

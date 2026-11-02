@@ -6,7 +6,7 @@ Creepy blocky story Shorts for the owner's YouTube channel **PandaNanoAdventures
 - **Make stories:** `/week [n]` (`.claude/skills/week/SKILL.md`). The agents are writer, builder, standards and critic (`.claude/agents/`).
 - **Engine:** `blocky/` (`python -m blocky <step> <story>`; reference in `docs/engine.md`). Stories live in `stories/<name>/`. Working files go to `out/` (gitignored, never committed).
 - **Ship gate:** `python -m blocky gate <story>`: `check` passes, `package.json` lints clean, and the latest standards and critic reviews say `Verdict: approve`.
-- **After merge:** `.github/workflows/render.yml` draws the finals (16 shards), mixes, flash-measures and makes a `render-<story>` release. `.github/workflows/upload.yml` uploads the next ready story daily, private, and opens an issue for the owner. `uploads.json` records what's been uploaded. `.github/workflows/metrics.yml` writes `metrics/summary.md` every Monday, and `/week` feeds its lessons to the writer. Setup: `docs/youtube-setup.md`.
+- **After merge:** `.github/workflows/render.yml` draws the finals (16 shards), mixes, flash-measures and keeps the film as the run artifact `film-<story>` (90 days). `.github/workflows/upload.yml` uploads the next ready story daily, private, and opens an issue for the owner. `uploads.json` records what's been uploaded. `.github/workflows/metrics.yml` writes `metrics/summary.md` every Monday, and `/week` feeds its lessons to the writer. Setup: `docs/youtube-setup.md`.
 - **Tests:** `python -m pytest -q` (no Blender or TTS needed).
 - **Budget is $0:** free tools only.
 - **Times:** always tell the owner times in US Central (owner, 2026-11-01). Workflows run on UTC; convert. Central is UTC-6 from Nov 1 to early March and UTC-5 in summer.

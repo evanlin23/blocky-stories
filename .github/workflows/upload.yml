@@ -9,7 +9,7 @@ on:
     inputs:
       story: {description: "story folder (blank = the next ready one)", default: ""}
 concurrency: {group: upload, cancel-in-progress: false}
-permissions: {contents: write, issues: write}
+permissions: {contents: write, issues: write, actions: read}
 jobs:
   upload:
     runs-on: ubuntu-latest
