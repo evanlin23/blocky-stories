@@ -534,9 +534,6 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
-    if kind.startswith("alley_"):   # ep29 (ten-pin), opt-in: its own synthesized sounds live in sfx_alley.py
-        from blocky import sfx_alley
-        return sfx_alley.make(kind, seed, dur, opts)
     if kind == "silence":
         return np.zeros(1)
     raise ValueError(f"no sfx {kind!r}")
