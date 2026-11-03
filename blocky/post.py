@@ -206,6 +206,9 @@ def _vignette(h: int, w: int, amount: float) -> np.ndarray:
     return (1.0 - amount * np.clip(r - 0.4, 0, None) ** 1.5)[..., None]
 
 
+LIFT_SCALE_MAX = 3.0   # the most the polish lift may scale a pixel; the rest of its lift is added as grey
+
+
 def grade(img: np.ndarray, g: dict) -> np.ndarray:
     """The story's look: shadows and highlights tinted, contrast around mid-grey, saturation, vignette."""
     luma = (img @ np.array([0.2126, 0.7152, 0.0722], np.float32))[..., None]
@@ -221,9 +224,14 @@ def grade(img: np.ndarray, g: dict) -> np.ndarray:
     out = out * g.get("exposure", 1.0)
     if g.get("lift"):   # the polish grade's toe: the darkest tones come up, so a TV doesn't crush them. It scales each
         # pixel by the lift of its luma, so the colour keeps its saturation (adding grey washed it out: ep62, 0.19)
+        # Clamp first: contrast can push a dark pixel's channels below zero, and then its luma sits near the 1e-4
+        # floor, so l1 / l0 ran to about 1000x and blew the one positive channel up to pure red (ep47 r8, 2026-11-03).
+        # The scale is capped, and whatever lift it can't give comes in as grey, so near-blacks lift without colour.
+        out = np.clip(out, 0.0, None)
         l0 = np.clip(out @ np.array([0.2126, 0.7152, 0.0722], np.float32), 1e-4, None)[..., None]
         l1 = l0 + g["lift"] * np.clip(1 - l0, 0, 1) ** 3
-        out = out * (l1 / l0)
+        k = np.minimum(l1 / l0, LIFT_SCALE_MAX)
+        out = out * k + (l1 - l0 * k)
     return out * _vignette(*img.shape[:2], g.get("vignette", 0.35))
 
 
