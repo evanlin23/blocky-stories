@@ -1,4 +1,4 @@
-# House rules: creepy blocky stories for PandaNanoAdventures
+# House rules: creepy blocky stories for Buhtown
 
 Every agent reads this file, and only this file, for the rules. The owner's words outrank everything here. Note numbers (9, 18, 21) are the showrunner notes these came from in `evanlin23/content`. When the owner gives new feedback, add it here as a dated quote and change the rule it touches.
 
@@ -13,6 +13,9 @@ The owner, 2026-11-02: "I kinda want to just let you go by yourself and upload f
   4. 1,000 subscribers and 10M Shorts views in 90 days (ad revenue share).
   5. $200 earned back. Shorts pay roughly a few cents per 1,000 views, so this needs millions of monetized views.
 - **How to iterate:** change one thing at a time where you can (length, look, rule type, title style), and judge on day-7 numbers across several uploads, never on one (the scope research: about 20 Shorts before judging).
+
+## The channel is Buhtown (owner, 2026-11-03)
+The owner: "I kinda want something with Buh in the name", then "Buhtown or The Buhkeeper i think is funny". The channel was renamed from PandaNanoAdventures to **Buhtown** (@Buhtown), and its host and avatar is **the Buhkeeper**, who keeps Buhtown's rulebook (`docs/research/branding.md`, art in `brand/`). Stories don't have to say "Buhtown": "In this town" still works. The Buhkeeper's own Shorts say it once, in line 2, never line 1. The 94 old POV Shorts stay private on the channel (owner: "We can keep all of the old videos just privated").
 
 ## The 2026-11-03 reset: shorter, faster, lighter (outranks the story and packaging rules below)
 The owner, 2026-11-03: "you can do whatever you want, this is your channel to experiment with." Why: the uploads after back-row flopped. Today's trend scan has "sad / emotional" as the weakest format, falling 14% in a week, while rule premises and horror lead. A blocky channel 24 days old reached 178K subscribers with seven 50 to 57 s Shorts (`docs/research/2026-11-03-skylox-study.md`). Our stories ran 130 to 145 s, mostly sad family reveals.
@@ -49,7 +52,7 @@ The owner: "this niche might be oversaturated, but I think I'd like to keep this
   - **Examples in these rules never use a live hit's premise** (a check of the 2026-11-03 deep scan found one).
 
 ## What we make
-A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **PandaNanoAdventures** and no other channel (note 21).
+A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **Buhtown** and no other channel (note 21).
 - Owner: "it should be like creepy roblox shorts and the characters should look more like roblox. also the voice should be like the sped up roblox voice... it should not be educational, it should be like crazy stories" (note 18).
 - Owner: "the entire thing should be consistent blocky characters" (note 21). The characters, narrator, captions and game-world feel are the brand. They stay the same in every story. **Only the story changes.**
 - The owner's reference is "In this town touching the ground is forbidden" (`docs/reference.md`).
@@ -135,6 +138,8 @@ A crazy, strange, made-up story, as long as its big idea needs and no longer (sh
 - **No harsh sound effects** (owner, 2026-11-02, ep36: "there's some horrible like audio quality stuff... a horrible scratchy sound"). The grass footsteps were bright noise bursts and read as scratching. Effects sit low and soft (under about 4 kHz) unless the story needs a sting. The critic listens for hiss, scratch and clicks on every preview. Since 2026-11-03 steps and ambience are soft recordings from `assets/audio/` (owner, 2026-11-02: "yes go ahead with sfx and visuals"), kept under 5% of their energy above 4 kHz.
 
 ## The look
+- **The polish pack is on for every new story** (owner, 2026-11-03: "make them high quality or keep pushing the quality up... we cant upload stuff we know wont work or be good. the bar should be very high."). Set `"look": {"polish": true}` in story.json (`docs/engine.md` → The polish pack). It adds soft whooshes between lines, low hits on key words, risers into the silences before scares, a room bed, voice-first ducking, punch-ins so something changes every 1 to 2 s, drift on held shots, a quick caption pop and a bright grade that keeps shadows on a TV. On ep32-sitter the critic scored it better on sound, pace and picture and no worse anywhere (`docs/research/polish-pack.md`). Mark `quiet` over a warm beat that should stay still.
+- **Craft is measured, not judged by eye alone** (owner, 2026-11-03: "we should care a lot about the micro and the macro. Like making it so the animations feel real and clean and good and transitions and effects on top, making it look higher quality. we should do research on what this actually looks like, and actually measure it, not just vibes."). `scripts/measure.py` measures every final (cuts, picture changes, stills, camera and character motion, easing, brightness, faces, captions, sound events, the bed, loudness, harshness), and `qa` pastes its table into `qa/<story>.json`. The provisional targets in `docs/research/craft-metrics.md` warn until the browser study of 20 hits confirms them, and then they block. Builders can run it with `--story` alone before a render. The biggest gaps today: every walk starts and stops dead, characters hold still in about half the shots, and most frames are drawn on twos.
 - **Characters** (`blocky/rig.py`, `faces.py`): R6 blocky bodies, a soft rounded-cylinder head, flat drawn faces with thick black strokes, block hair, hats, patterned shirts. A face at phone size is at least 1/5 of the frame width, out of the caption band.
   - **The body type stays** (owner, 2026-11-01: "I kinda want them to be the same body type"). Research found that Roblox's terms restrict off-platform commercial use of "derivatives of the classic Roblox avatars" (R6/R15), and our proportions match R6 (`docs/research/2026-11-01-web-research.md`). The owner accepted that risk. Keep it small everywhere else: every face, hair piece, outfit and pattern is our own, never a catalogue item or the default face, and there's never the name, logo or UI anywhere.
 - **Sets:** realistic materials around the plastic avatars (brick, wood, cobbles, concrete), practical lights that flicker, long shadows, game-engine fog. Each story's `set.py` is new.

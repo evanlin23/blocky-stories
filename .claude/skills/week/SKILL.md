@@ -1,6 +1,6 @@
 ---
 name: week
-description: Make a week of creepy blocky stories for PandaNanoAdventures (default 7, one upload a day). The writer writes the batch, the builder builds and previews each story, standards and critic review it, and one PR merges them. After that GitHub Actions renders each final and uploads one a day as a private video for the owner to publish. Use when asked for the week's stories, a batch, more stories, or one story ("/week 1").
+description: Make a week of creepy blocky stories for Buhtown (default 7, one upload a day). The writer writes the batch, the builder builds and previews each story, standards and critic review it, and one PR merges them. After that GitHub Actions renders each final and uploads one a day as a private video for the owner to publish. Use when asked for the week's stories, a batch, more stories, or one story ("/week 1").
 argument-hint: "[how many, default 7] [an idea or premise, optional]"
 ---
 
@@ -48,7 +48,7 @@ Start a **fresh builder agent for each phase** (the build, then each fix round).
 ## 4. Ship (no agents)
 - `python -m pytest -q`, and `python -m blocky gate <name>` for every story in the batch.
 - Commit the story folders (never `out/`). Push, then open ONE PR with a table of slug, title and upload order. Merge it once the `test` check passes (the owner approved team merges). `test` runs `gate` on every story the PR touches, so a story whose reviews still say revise can't merge; drop it from the PR instead (or title the PR `WIP` for a checkpoint that must not render).
-- The merge starts `render` on Actions, which draws each final in 16 shards and keeps the film as the artifact `film-<story>`. Then `upload` puts one story a day on PandaNanoAdventures as **private** and opens an issue for the owner to publish it. The session doesn't wait for any of this.
+- The merge starts `render` on Actions, which draws each final in 16 shards and keeps the film as the artifact `film-<story>`. Then `upload` puts one story a day on Buhtown as **private** and opens an issue for the owner to publish it. The session doesn't wait for any of this.
 - Tell the owner: the stories, their titles, the upload order, and that each one will arrive as a "Ready to publish" issue.
 
 ## Usage rules
