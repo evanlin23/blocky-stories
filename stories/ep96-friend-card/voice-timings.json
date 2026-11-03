@@ -1,0 +1,1157 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "my card says my best friend and i stop being friends tonight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.25
+    ],
+    [
+     1.25,
+     1.509
+    ],
+    [
+     1.509,
+     1.939
+    ],
+    [
+     1.939,
+     2.724
+    ]
+   ]
+  },
+  "L02": {
+   "text": "at nine-fourteen. the cards are never wrong.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.19,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.19,
+     0.879
+    ],
+    [
+     0.948,
+     1.345
+    ],
+    [
+     1.345,
+     2.069
+    ]
+   ]
+  },
+  "L03": {
+   "text": "everybody here gets one card at eighteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.215
+    ],
+    [
+     1.215,
+     1.914
+    ]
+   ]
+  },
+  "L04": {
+   "text": "it tells you how your closest friendship ends.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.052
+    ],
+    [
+     1.052,
+     1.862
+    ]
+   ]
+  },
+  "L05": {
+   "text": "my dad's card said, over a parking spot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.914
+    ],
+    [
+     0.966,
+     1.155
+    ],
+    [
+     1.155,
+     1.914
+    ]
+   ]
+  },
+  "L06": {
+   "text": "he and mister reyes haven't spoken in thirty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.828
+    ],
+    [
+     0.828,
+     1.328
+    ],
+    [
+     1.328,
+     2.224
+    ]
+   ]
+  },
+  "L07": {
+   "text": "our neighbor missus abbott's card said, at gate nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.914
+    ],
+    [
+     0.914,
+     1.414
+    ],
+    [
+     1.483,
+     2.276
+    ]
+   ]
+  },
+  "L08": {
+   "text": "mine says maya.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.0
+    ]
+   ]
+  },
+  "L09": {
+   "text": "my best friend since we were six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     0.922
+    ],
+    [
+     0.922,
+     1.517
+    ]
+   ]
+  },
+  "L10": {
+   "text": "everybody says we fight like siblings.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.974
+    ],
+    [
+     0.974,
+     1.741
+    ]
+   ]
+  },
+  "L11": {
+   "text": "nine-fourteen p june twelfth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.431
+    ]
+   ]
+  },
+  "L12": {
+   "text": "and on the back, really tiny, it says, it won't hurt.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.603
+    ],
+    [
+     0.629,
+     1.017
+    ],
+    [
+     1.043,
+     1.293
+    ],
+    [
+     1.328,
+     1.983
+    ]
+   ]
+  },
+  "L13": {
+   "text": "that scared me more.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.086
+    ]
+   ]
+  },
+  "L14": {
+   "text": "so for ten years, i dodged it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.759
+    ],
+    [
+     0.793,
+     1.603
+    ]
+   ]
+  },
+  "L15": {
+   "text": "i never argued with her. not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.784
+    ],
+    [
+     0.784,
+     1.103
+    ],
+    [
+     1.172,
+     1.862
+    ]
+   ]
+  },
+  "L16": {
+   "text": "i never let us be alone long enough to fight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.655
+    ],
+    [
+     0.655,
+     1.034
+    ],
+    [
+     1.034,
+     1.362
+    ],
+    [
+     1.362,
+     1.948
+    ]
+   ]
+  },
+  "L17": {
+   "text": "i brought my big brother, nate, to everything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.155
+    ],
+    [
+     1.19,
+     1.914
+    ]
+   ]
+  },
+  "L18": {
+   "text": "her birthdays. her terrible band.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.698,
+     1.621
+    ]
+   ]
+  },
+  "L19": {
+   "text": "nate stood next to her at every one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.19,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.19,
+     0.732
+    ],
+    [
+     0.732,
+     0.897
+    ],
+    [
+     0.897,
+     1.655
+    ]
+   ]
+  },
+  "L20": {
+   "text": "two years ago, they started dating.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.716,
+     1.603
+    ]
+   ]
+  },
+  "L21": {
+   "text": "and maya got really busy.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.414
+    ]
+   ]
+  },
+  "L22": {
+   "text": "i thought, here it comes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     1.224
+    ]
+   ]
+  },
+  "L23": {
+   "text": "tonight is june twelfth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.276
+    ]
+   ]
+  },
+  "L24": {
+   "text": "i'm on a rooftop in a suit, next to nate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.681
+    ],
+    [
+     0.681,
+     1.017
+    ],
+    [
+     1.069,
+     1.793
+    ]
+   ]
+  },
+  "L25": {
+   "text": "it's their wedding.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L26": {
+   "text": "i'm the best man.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     1.017
+    ]
+   ]
+  },
+  "L27": {
+   "text": "and the whole time maya walks up the aisle,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.69
+    ],
+    [
+     0.69,
+     1.164
+    ],
+    [
+     1.164,
+     1.759
+    ]
+   ]
+  },
+  "L28": {
+   "text": "she's trying not to laugh at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     1.0
+    ],
+    [
+     1.0,
+     1.466
+    ]
+   ]
+  },
+  "L29": {
+   "text": "nine-twelve.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.19,
+   "end": 0.862,
+   "chunks": [
+    [
+     0.19,
+     0.862
+    ]
+   ]
+  },
+  "L30": {
+   "text": "is she going to leave him at the front?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.836
+    ],
+    [
+     0.836,
+     1.466
+    ]
+   ]
+  },
+  "L31": {
+   "text": "am i going to say something i can't take back?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.707
+    ],
+    [
+     0.707,
+     1.241
+    ],
+    [
+     1.241,
+     1.879
+    ]
+   ]
+  },
+  "L32": {
+   "text": "nine-thirteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L33": {
+   "text": "my hands are shaking.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.155
+    ]
+   ]
+  },
+  "L34": {
+   "text": "nine-fourteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.19,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.19,
+     0.966
+    ]
+   ]
+  },
+  "L35": {
+   "text": "the officiant said, you're married.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.784,
+     1.414
+    ]
+   ]
+  },
+  "L36": {
+   "text": "everybody cheered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ]
+   ]
+  },
+  "L37": {
+   "text": "maya pulled me into a hug with nate,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.026
+    ],
+    [
+     1.026,
+     1.603
+    ]
+   ]
+  },
+  "L38": {
+   "text": "and said, hi, brother.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.466,
+     1.19
+    ]
+   ]
+  },
+  "L39": {
+   "text": "the card was right.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.138
+    ]
+   ]
+  },
+  "L40": {
+   "text": "we stopped being friends at nine-fourteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.948
+    ],
+    [
+     0.948,
+     1.828
+    ]
+   ]
+  },
+  "L41": {
+   "text": "now she's my sister.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.19,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     1.172
+    ]
+   ]
+  },
+  "L42": {
+   "text": "then she showed me her card.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.379
+    ],
+    [
+     0.379,
+     0.629
+    ],
+    [
+     0.629,
+     1.276
+    ]
+   ]
+  },
+  "L43": {
+   "text": "it said the same time, and the same tiny words on the back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.017
+    ],
+    [
+     1.086,
+     1.474
+    ],
+    [
+     1.474,
+     1.939
+    ],
+    [
+     1.939,
+     2.552
+    ]
+   ]
+  },
+  "L44": {
+   "text": "she said there's only one way to stop being friends that doesn't hurt.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.19,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.19,
+     0.423
+    ],
+    [
+     0.423,
+     0.784
+    ],
+    [
+     0.784,
+     1.069
+    ],
+    [
+     1.069,
+     1.379
+    ],
+    [
+     1.379,
+     1.879
+    ],
+    [
+     1.879,
+     2.655
+    ]
+   ]
+  },
+  "L45": {
+   "text": "she figured it out at eighteen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.19,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     0.664
+    ],
+    [
+     0.664,
+     1.379
+    ]
+   ]
+  },
+  "L46": {
+   "text": "she just never told me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.19,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.19,
+     0.732
+    ],
+    [
+     0.732,
+     1.328
+    ]
+   ]
+  },
+  "L47": {
+   "text": "she let me bring nate to everything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     0.793
+    ],
+    [
+     0.793,
+     1.517
+    ]
+   ]
+  },
+  "L48": {
+   "text": "she wanted to see my face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.19,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.19,
+     0.423
+    ],
+    [
+     0.423,
+     0.638
+    ],
+    [
+     0.638,
+     1.31
+    ]
+   ]
+  },
+  "L49": {
+   "text": "every june twelfth, she makes me read mine out loud.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.948,
+     1.31
+    ],
+    [
+     1.31,
+     1.707
+    ],
+    [
+     1.707,
+     2.379
+    ]
+   ]
+  }
+ }
+}
