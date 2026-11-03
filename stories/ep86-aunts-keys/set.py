@@ -264,7 +264,7 @@ def build_house(kit, ctx, k):
 
 def build_court(kit, ctx):
     lawn = kit.texture("grass", 0.6, tint="#7ed25a")
-    B(None, (140, 140, 0.4), (0, 0, -0.25), lawn, "lawn")
+    B(None, (500, 500, 0.4), (0, 0, -0.25), lawn, "lawn")
     kit.cyl("courtfloor", 14.2, 0.12, (0, 0, -0.03), kit.texture("concrete", 0.5, tint="#e6d8bd"), None, n=48)
     kit.cyl("courtring", 6.6, 0.125, (0, 0, -0.025), P("#d3c4a8", 0.8), None, n=48)
     ctx["porch"] = []
@@ -300,7 +300,7 @@ def build_court(kit, ctx):
         B(None, (0.28, 0.28, 0.42), (lx, ly, 3.05), kit.emit(WARM, 7.0, name="lampbulb"), "lanternbulb")
         ctx["lamps"].append(kit.light(f"lamp{i}", "POINT", (lx, ly, 2.8), 520, WARM, size=0.2, shadow=(i < 2)))
     # trees round the open side and behind the houses
-    for i, (x, y, h) in enumerate(((-14, -14, 6.5), (15, -13, 7.0), (-20, 4, 7.5), (21, 6, 7.0), (0, 24, 8.0), (-9, -26, 7.0), (10, -28, 7.5))):
+    for i, (x, y, h) in enumerate(((-20, -20, 6.5), (15, -13, 7.0), (-20, 4, 7.5), (21, 6, 7.0), (0, 24, 8.0), (-9, -26, 7.0), (10, -28, 7.5))):
         try:
             kit.prop("commontree_1" if i % 2 == 0 else "birchtree_1", (x, y, 0), rot=37 * i, height=h, tint="#8fd860")
         except Exception:
@@ -546,7 +546,7 @@ def build_room(kit, ctx):
     B(parts["clock"], (0.13, 0.02, 0.02), (rx - 1.14, ry + 2.85, 2.1), P("#2b2f3a", 0.5), "mhand")
     parts["grass"] = E(None, (rx, ry, 0), "rgrass")
     for i in range(16):
-        B(parts["grass"], (0.03, 0.2, 0.012), (rx + 0.9 + 0.12 * ((i * 5) % 7) - 0.3, ry + 0.2 + 0.14 * ((i * 3) % 6), 0.01 + 0.002 * i),
+        B(parts["grass"], (0.06, 0.4, 0.02), (rx + 0.9 + 0.12 * ((i * 5) % 7) - 0.3, ry + 0.2 + 0.14 * ((i * 3) % 6), 0.01 + 0.002 * i),
           P("#4fae5a" if i % 2 else "#3f9a4c", 0.8), "blade", rot=(0, 0, 0.5 * ((i * 7) % 6) - 1.2))
     for i, (gx, gy) in enumerate(((1.15, 0.5), (1.7, 0.3), (1.35, 0.9))):
         kit.cyl(nm("wet"), 0.16 - 0.02 * i, 0.006, (rx + gx, ry + gy, 0.012), P("#8a7a62", 0.12, 0.9), parts["grass"], n=16)
@@ -577,8 +577,8 @@ def build_room(kit, ctx):
     parts["kitchen_ring"] = None
     ctx["room_parts"] = parts
     ctx["roomlights"] = [
-        kit.light("roomkey", "POINT", (rx - 1.0, ry - 1.5, 2.7), 380, "#fff0d8", size=0.4, shadow=False),
-        kit.light("roomwarm", "POINT", (rx + 2.6, ry + 1.8, 1.5), 90, "#ffb866", size=0.3, shadow=False),
+        kit.light("roomkey", "POINT", (rx - 1.0, ry - 1.5, 2.7), 260, "#fff0d8", size=0.4, shadow=False),
+        kit.light("roomwarm", "POINT", (rx + 2.6, ry + 1.8, 1.5), 25, "#ffb866", size=0.3, shadow=False),
     ]
 
 
@@ -704,7 +704,11 @@ def animate(kit, story, tl, t, ctx):
     bc = cue_at(tl, "bed", t)
     if bc.get("on"):
         hide(parts["bed"], False)
-        parts["bed"].location = tuple(bc["pos"])
+        pos_ = bc["pos"]
+        if "to" in bc:
+            u_ = ss((t - bc["t"]) / max(1e-3, bc["dur"]))
+            pos_ = [lerp(a, b, u_) for a, b in zip(bc["pos"], bc["to"])]
+        parts["bed"].location = tuple(pos_)
         parts["bed"].rotation_euler = (0, 0, math.radians(bc.get("yaw", 0)))
     # every door on the court swings on its hinge (cue "door<k>": a0 -> a1 degrees over dur)
     for k, hg in ctx["hinges"].items():
