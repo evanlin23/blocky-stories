@@ -30,11 +30,17 @@ from PIL import Image, ImageDraw
 from blocky import faces, rig  # noqa: F401
 
 SEAT_TOP = 0.38
-NUM_PITCH = 0.235
-NUM_H = 0.32
-NUM_W = 0.185
-NUM_T = 0.055
+NUM_PITCH = 0.31
+NUM_H = 0.36
+NUM_W = 0.24
+NUM_T = 0.052
+NUM_O = 0.08 * NUM_H          # the dark outline: 8% of the glyph's height
+NUM_LIFT = 2.2                # centre of the number above the feet
 NUM_GLOW = 3.4
+ROOM_BOOST = 1.0
+ROOM_EV = 0.9      # extra exposure in the reading room by day (dome level 1); the dark scene's dome level is 0.12
+SOFT_CUT = {"L17.2": -0.55}   # the bright dome cut: pull its exposure down so the jump is softer
+LAMP_BOOST = 0.5
 
 
 def _ss(x):
@@ -549,23 +555,32 @@ def scene_kitchen(kit, ctx, M, O):
 
 
 def scene_street(kit, ctx, M, O):
+    """A bright, saturated shopping street in daylight: light paving, painted facades with warm lit windows, no lettering."""
     ox, oy = O
-    kit.box("street ground", (50, 12, 0.2), (ox, oy, -0.1), M["cobble"])
-    sbrick = kit.bricks("#c9855f", "#b0704f", "#a59e92", 1.0, "street brick light", 0.8)
-    swin, _ = emission(kit, "street window dim", "#4d6f8f", 0.5)   # dim blue glass, so the white number reads against it
+    kit.box("street ground", (50, 12, 0.2), (ox, oy, -0.1), kit.concrete("#cfc9bb", 1.6, 0.15, "light paving"))
+    paints = ["#e3a93a", "#3fa6a0", "#e0705a", "#efe3c6", "#8fbf6a", "#d9849a", "#4f8fcf"]
+    winm, _ = emission(kit, "street window warm", "#fff0c8", 1.1)
     for sy, nm in ((4.6, "n"), (-4.6, "s")):
-        wbox(kit, f"row {nm}", (ox - 25, oy + sy - 0.4, 0.0), (ox + 25, oy + sy + 0.4, 6.5), sbrick)
-        for k in range(-9, 10):
-            kit.box(f"win{nm}{k}", (0.9, 0.05, 1.2), (ox + k * 2.6, oy + sy - math.copysign(0.42, sy), 2.6), swin)
+        face = -math.copysign(0.42, sy)
+        for k in range(-8, 9):
+            if nm == "n" and abs(k) <= 1:
+                pm0 = kit.plastic(paints[(k + 8) % len(paints)], 0.9, f"paint {nm}{k}", 0.05)
+                wbox(kit, f"fac {nm}{k}", (ox + k * 3.2 - 1.6, oy + sy - 0.4, 0.0), (ox + k * 3.2 + 1.6, oy + sy + 0.4, 6.5), pm0)
+                continue
+            pm = kit.plastic(paints[(k + 8 + (3 if nm == "s" else 0)) % len(paints)], 0.9, f"paint {nm}{k}", 0.05)
+            wbox(kit, f"fac {nm}{k}", (ox + k * 3.2 - 1.6, oy + sy - 0.4, 0.0), (ox + k * 3.2 + 1.6, oy + sy + 0.4, 6.5), pm)
+            kit.box(f"fwin{nm}{k}", (1.3, 0.06, 1.5), (ox + k * 3.2, oy + sy + face, 2.7), M["white"])
+            kit.box(f"fpane{nm}{k}", (1.1, 0.06, 1.3), (ox + k * 3.2, oy + sy + face - math.copysign(0.02, sy), 2.7), winm)
+            kit.box(f"fcor{nm}{k}", (3.2, 0.1, 0.18), (ox + k * 3.2, oy + sy + face, 4.9), M["white"])
     for k, lx in enumerate((-6.0, 3.2, 7.0)):
         kit.cyl(f"lamppost{k}", 0.06, 3.4, (ox + lx, oy + 3.7, 1.7), M["iron"], n=10)
         kit.sphere(f"streetglobe{k}", 0.16, (ox + lx, oy + 3.7, 3.5), M["lamp_glass_gold"], seg=10)
-    kit.light("overcast", "AREA", (ox, oy, 9), 2200.0, "#9fb0be", size=14.0)
+    kit.light("overcast", "AREA", (ox, oy, 9), 5200.0, "#fff4e0", size=14.0)
     kit.aim(kit.LIGHTS["overcast"]["obj"], (ox, oy, 0))
-    kit.light("sfront", "AREA", (ox + 1.5, oy - 5.5, 3.5), 700.0, "#e0e8f0", size=5.0)
+    kit.light("sfront", "AREA", (ox + 1.5, oy - 5.5, 3.5), 1500.0, "#fff2e2", size=5.0)
     kit.aim(kit.LIGHTS["sfront"]["obj"], (ox, oy, 1.6))
 
-    # CC0 props: planters behind the narrator's street, a plant and rug in the flat
+    # CC0 props: planters behind the narrator's street
     kit.prop("sub_planter", (ox - 2.4, oy + 3.5, 0.0), height=0.8)
     kit.prop("sub_planter", (ox + 2.6, oy + 3.5, 0.0), height=0.8)
     kit.prop("sub_planter", (ox + 4.4, oy + 3.5, 0.0), height=0.8)
@@ -608,15 +623,35 @@ def scene_flat(kit, ctx, M, O):
 # ------------------------------------------------------------------------------------------------ the numbers
 
 
-SEG = {"0": "abcdef", "1": "bc", "2": "abdeg", "3": "abcdg", "4": "bcfg", "5": "acdfg", "6": "acdefg", "7": "abc",
+SEG = {"0": "abcdef", "1": "spq", "2": "abdeg", "3": "abcdg", "4": "bcfg", "5": "acdfg", "6": "acdefg", "7": "abc",
        "8": "abcdefg", "9": "abcdfg"}
 
 
 def _segments():
-    w, h, t = NUM_W, NUM_H, NUM_T
-    return {"a": (0, h / 2 - t / 2, w, t), "d": (0, -h / 2 + t / 2, w, t), "g": (0, 0, w, t),
-            "b": (w / 2 - t / 2, h / 4, t, h / 2 + t / 2), "c": (w / 2 - t / 2, -h / 4, t, h / 2 + t / 2),
-            "f": (-w / 2 + t / 2, h / 4, t, h / 2 + t / 2), "e": (-w / 2 + t / 2, -h / 4, t, h / 2 + t / 2)}
+    """name -> (bar (cx, cy, sx, sy), outline (cx, cy, sx, sy), rotation in degrees). The outline is the bar grown by
+    NUM_O (8% of the glyph's height) on the outside and by 0.4 NUM_O on the side that faces a hole, so a 0 keeps its
+    open middle. The one is a centred stem with a top-left flag and a foot bar that reaches a stem-width either side."""
+    w, h, t, o = NUM_W, NUM_H, NUM_T, NUM_O
+    oi = 0.4 * o
+
+    def sg(cx, cy, sx, sy, l, r, bt, tp, rot=0.0):
+        return ((cx, cy, sx, sy), (cx + (r - l) / 2, cy + (tp - bt) / 2, sx + l + r, sy + bt + tp), rot)
+
+    vb = h / 2 + t / 2
+    return {"a": sg(0, h / 2 - t / 2, w, t, o, o, oi, o), "d": sg(0, -h / 2 + t / 2, w, t, o, o, o, oi),
+            "g": sg(0, 0, w, t, o, o, 0.7 * o, 0.7 * o),
+            "b": sg(w / 2 - t / 2, h / 4, t, vb, oi, o, o, o), "c": sg(w / 2 - t / 2, -h / 4, t, vb, oi, o, o, o),
+            "f": sg(-w / 2 + t / 2, h / 4, t, vb, o, oi, o, o), "e": sg(-w / 2 + t / 2, -h / 4, t, vb, o, oi, o, o),
+            "s": sg(0, 0, t, h, o, o, o, o),
+            "p": sg(-t / 2 - 0.03, h / 2 - 0.058, 0.115, 0.042, o, o, o, o, 35.0),
+            "q": sg(0, -h / 2 + 0.021, 3 * t, 0.042, o, o, o, o)}
+
+
+def _rot_box(kit, c, size, depth, zc, ang):
+    cx, cy, sx, sy = c[0], c[1], size[0], size[1]
+    vs = kit.box_verts(sx, sy, depth, (0, 0, zc))
+    ca, sa = math.cos(math.radians(ang)), math.sin(math.radians(ang))
+    return [(cx + x * ca - y * sa, cy + x * sa + y * ca, z) for x, y, z in vs]
 
 
 def build_numbers(kit, ctx, M, story):
@@ -636,9 +671,8 @@ def build_numbers(kit, ctx, M, story):
             for li in range(2):
                 lay = kit.empty(f"num.{who}.s{k}.l{li}", (0, 0, 0), sroot)
                 segs = {}
-                for sname, (cx, cy, sx, sy) in _segments().items():
-                    o = 0.012
-                    verts = kit.box_verts(sx + 2 * o, sy + 2 * o, 0.012, (cx, cy, -0.02)) + kit.box_verts(sx, sy, 0.03, (cx, cy, 0.0))
+                for sname, ((cx, cy, sx, sy), (ocx, ocy, osx, osy), rot) in _segments().items():
+                    verts = _rot_box(kit, (ocx, ocy), (osx, osy), 0.012, -0.021, rot) + _rot_box(kit, (cx, cy), (sx, sy), 0.03, 0.0, rot)
                     fcs = [tuple(i for i in f) for f in kit.BOX_FACES] + [tuple(8 + i for i in f) for f in kit.BOX_FACES]
                     ob = kit.mesh_obj(f"num.{who}.s{k}.l{li}.{sname}", verts, fcs, M["numdark"], lay)
                     ob.data.materials.append(mat)
@@ -683,7 +717,7 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
         sc, sp = _fmt(cur, n), _fmt(prev, n)
         st = states[who]
         nzc = _last([c for c in cues_by.get("_numz_" + who, [])], t)
-        base = V((st["x"], st["y"], st["z"] + 2.12 + (nzc["v"] if nzc else 0.0)))
+        base = V((st["x"], st["y"], st["z"] + NUM_LIFT + (nzc["v"] if nzc else 0.0)))
         shift_c = -(n - len(str(cur or ""))) * NUM_PITCH / 2 if cur is not None else 0.0
         shift_p = -(n - len(str(prev or ""))) * NUM_PITCH / 2 if prev is not None else 0.0
         shift = shift_c if u is None else shift_p + (shift_c - shift_p) * u
@@ -701,7 +735,7 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
                 lit = SEG.get(ch, "") if s > 0.02 else ""
                 lay.scale = (1, max(s, 0.001), 1)
                 lay.location.y = anchor * (1 - s) * NUM_H / 2
-                lay.location.x = -0.065 if ch == "1" else 0.0   # the one's bar sits at its cell's right edge: pull it in
+                lay.location.x = 0.0
                 for sn, o in segs.items():
                     o.hide_render = sn not in lit
 
@@ -838,17 +872,20 @@ def animate(kit, story, tl, t, ctx):
     # ---- the closing timer: every table lamp together; the dome's dusk
     lamps = _level(tl, "lamps", t, 1.0)
     dome = _level(tl, "dome", t, 1.0)
+    soft = sum(v for r, v in SOFT_CUT.items() if any(sh["id"] == shot and sh.get("at") == r for sh in story["shots"]))
+    bpy.context.scene.view_settings.exposure = story["look"].get("exposure", 0.0) + (ROOM_EV * _ss((dome - 0.12) / 0.38) + soft if scene == "room" else 0.0)
     dead_c = _last(_cues(tl, "dead"), t)
     dead = set(dead_c["tables"]) if dead_c else set()
     for lp in ctx["lamps"]:
         g = 0.0 if lp["table"] in dead else lamps
-        over[lp["light"]] = g
+        over[lp["light"]] = g * (1.0 + LAMP_BOOST * lamps)
         lp["em"].inputs["Strength"].default_value = lp["base_em"] * (0.04 if lp["table"] in dead else lamps) + 0.05
-    over["dome"] = dome * (0.4 + 0.6 * lamps)
-    over["fill"] = dome * (0.25 + 0.75 * lamps)
-    over["window"] = dome
+    boost = 1.0 + ROOM_BOOST * dome   # the room is brighter by day (r6: luma 60 -> about 100); the closing dusk stays dark
+    over["dome"] = dome * (0.4 + 0.6 * lamps) * boost
+    over["fill"] = dome * (0.25 + 0.75 * lamps) * boost
+    over["window"] = dome * boost
     over["seatglow"] = _level(tl, "seat", t, 0.0)
-    ctx["pane_em"].inputs["Strength"].default_value = 1.5 * (0.25 + 0.75 * dome)
+    ctx["pane_em"].inputs["Strength"].default_value = 1.2 * (0.25 + 0.75 * dome)
     ctx["M"]["win_em"].inputs["Strength"].default_value = 1.2 * (0.12 + 0.88 * dome ** 1.5)
     # ---- the old chair is pushed back, the extra chair slides in, the page turns
     oc = _last(_cues(tl, "oldchair"), t)

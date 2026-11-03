@@ -35,7 +35,6 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 ## Cast (all adults, nobody in peril or hurt)
 - **Luke** (me, narrator, a man, mid-twenties, never shown with an age, a one-syllable name that voices and transcribes cleanly and sounds nothing like Tam): deep maroon sweater #7a1f2e with a cable knit pattern, dark slate jeans #2b3550, short black block hair with a side part, slate-grey over-ear headphones (our own blocky design, no logo) round his neck or on. Round eyes, flat brows, a small closed mouth that rarely smiles until L69.
 - **Tam** (my brother, 19, never shown with an age): oatmeal hoodie #b9a98a, messy dark-brown block hair, round black-rimmed glasses, a pencil tucked behind his ear (a prop on the head, no grip needed). Sleepy eyes, slight frown.
-- **The baker** (adult): flour-white apron over a yellow shirt, a short baker's cap, big smile. Number 900.
 - **The woman off the train** (adult): a teal raincoat and a small suitcase standing beside her (not held). Numbers 0 then 1.
 - **The man who says hello** (adult): brown coat, flat cap. Number 63.
 - **The postman** (adult): navy cap and jacket, a satchel. Number 48113, wider than his head.
@@ -86,7 +85,7 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 |---|---|---|
 | S01 | L01 | (Opening recipe, 2026-11-03.) Close on the glowing 1 over my bowed head on the rainy street, lit to read on a phone, centred, pushing in through the line. Sound hit on "ONE". No wide. |
 | S02 | L02 | Punch in: my face under the 1, eyes down. |
-| S03 | L02 | Cut on "Mine says ONE": the 1 alone in frame, steady glow. The baker and the sunny steps are no longer narrated (builder may reuse them as a 1 s cutaway in the L03 montage, or drop them). |
+| S03 | L02 | Cut on "Mine says ONE": the 1 alone in frame, steady glow. The baker and the sunny steps are cut from the film. |
 | S04 | L03 | The party: four adults meet in a living room. Their numbers roll up one after another, staggered. |
 | S05 | L03 | Close on one guest laughing, her number rolling 87 to 88. |
 | S06 | L04 | The platform. The carriage door, the woman steps down beside her suitcase, a 0 over her head. Plant 1. |
@@ -177,7 +176,7 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 ## The world's rule and the hits' shape
 - **First line (warning, opening recipe v1):** "Don't let the number over your head drop to ONE." (10 words, about 2.1 s.) L02 tightens it: "It counts who knows your NAME. Mine says ONE." No names, places or backstory before 4 s.
 - **Quotable line:** L07, Ossie hitting five and buying himself a whole cake.
-- **Marker by 2 s:** S01 opens on three lit faces on sunny steps with glowing numbers over their heads.
+- **Marker by 2 s:** S01 opens on a bright wet street, my face above the captions with my 1 over it, and passers-by behind with 340 and 87.
 - **Montage (L03 to L07, 4 to 15 s):** a party where every number ticks up, the woman off the train going 0 to 1, the mailman's number past his ears, Ossie at 5 with a cake for one.
 - **The exception:** my number is 1 and has been for years, and I took it to be me (L08 to L10).
 - **The loved one at stake:** Tam, my brother, 19, whose number falls from 12 to 1 as the Negative comes nearer.
