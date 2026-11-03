@@ -178,7 +178,8 @@ HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
               "okofor": "okafor", "okofors": "okafors",   # ep14: Okafor
               "ossie": "ozzy",   # ossie/ozzy (ep43)
               "oral": "aurel",   # ep47: Uncle Aurel
-              "mr": "mister", "mrs": "missus"}   # ep14 redo: Whisper writes the titles short
+              "mr": "mister", "mrs": "missus",   # ep14 redo: Whisper writes the titles short
+              "grand": "gran", "girl": "gull"}   # ep33: Gran (heard as grand) and the gull
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 

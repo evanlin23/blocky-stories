@@ -1,27 +1,29 @@
-"""Chairlift: a two-seat lift on a still lake, from the timber station at the water's edge up a pine slope to a bare
-ridge, and the Four-Face. Built from kit.py's parts (ep33; nothing here is shared with another story's set).
+"""Chairlift: a two-seat lift on a still lake in spring, from the timber station at the water's edge up a pine slope to
+a bare ridge with a long bench facing the sunrise. Built from kit.py's parts (ep33 redo; nothing here is shared with
+another story's set).
 
 Coordinates (geometry.py is the one source of truth, shared with make_story.py): the line runs up +y from the bottom
 bull wheel at the origin to the top wheel at y = 128. The up rope is at x = +1.8, the down rope at x = -1.8. The deck
-top is z = 0, the lake at z = -0.45. A chair's origin is the middle of its seat top, its front is -y at yaw 0, and the
-rope is 1.9 m over it. No text, number or sign anywhere.
-
-THE FOUR-FACE: an ordinary R6 body in a faded orange cagoule (rig.Character, built from the cast spec "creature"),
-but the head is a hard-edged cube a little bigger than ours with the same face drawn on all four sides: two round
-black eyes with a white glint, a long straight black mouth, putty skin. It is built once; the rig's own head is hidden
-and the cube is parented to it, so it is one model in every shot. It is only ever seen moving nearer, never moving.
+top is z = 0, the lake at z = -0.45, the ridge top z = 39.5. The sun is beyond the ridge (+y). A chair's origin is the
+middle of its seat top, its front is -y at yaw 0, and the rope is 1.9 m over it. No text, number or sign anywhere.
 
 Acting keys read here (acting.py ignores them): "sit": true seats a rider on the chair under them (the chair is the
-one whose centre is `seat` (+1 / -1 along the rider's x) away), legs forward and down, hands on the lap.
+one whose centre is `seat` (+1 / -1 along the rider's x) away), legs forward and down, hands on the lap. "perch":
+true seats a character on the ridge bench (legs straight forward).
 
 Cues read here:
 - light: {"look": name, "ramp": s, plus any LOOKS key} the sky, fog, sun and fill ease to this look over `ramp`
-- lift: {"state": "stop" | "go"} the cable stops or starts (a 1.5 s ease), when nobody rides
+- sunsweep: {"az0", "az1", "dur"} the sun swings round in azimuth (the shadows sweep), level never changes
+- clouds: {"on": bool, "speed": m/s} the racing cloud cards (a smooth time-lapse sky)
+- mist: {"on": bool, "speed": m/s} the low fog cards drifting off the lake (L23)
 - sway: {"amp": degrees, "bias": degrees roll, "dur": s} how far the riders' chairs rock, easing over dur
-- card: {"me": bool, "mr": bool} the pink pass card on its cord at my neck or Mr Halvor's
-- cup: {"on": bool} the coffee on the deck rail
+- blanket: {"on": bool, "who": name | null, "local": [x, y, z] from that character's feet-root, "pos": [x, y, z]
+  (when no `who`), "size": [x, y, z], "yaw": degrees} Gran's blanket
+- gull: {"mode": "off" | "hat" | "fly", "dur": s, "to": [dx, dy, dz]} the gull on Gran's hat, or lifting off
+- summer: {} the land turns a richer green on the cut
+- arm_to, phase, upchairs: as in the earlier build (a hand held out, a chair put in the shot, chairs on the up line)
 - open: {"from": f, "dur": s} sky, sun and fill start at f of their level and ease up over dur (a soft opening)
-- ckey: {"gain": x} the creature's side key and rim (default 1)
+A shot's "scope": true puts the viewer's round soft-edged mask over it.
 """
 
 from __future__ import annotations
@@ -31,38 +33,36 @@ import sys
 from pathlib import Path
 
 import bpy
-import numpy as np
 from mathutils import Matrix, Vector as V
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "generator"))
 import geometry as G  # noqa: E402
 
-from blocky import faces, rig  # noqa: E402
+from blocky import faces, rig  # noqa: E402,F401
 
 WATER = -0.45
 BASE_FOG = 0.010
 
-# looks: the sky (world colour and strength), fog colour and density, the sun's lamp and disc, the follow-camera fill
+# looks: the sky (world colour and strength), fog colour and density, the sun's lamp and disc, the follow-camera fill.
+# Spring dawn, clear: "base" is the clear gold dawn the film opens on.
 LOOKS = {
-    "pre": dict(sky="#3d5170", sky_s=2.3, fog="#47597a", fogd=0.010, sun_e=0.0, sun_c="#ffb48a", sun_el=7.0, disc=0.0,
-                cam=1.0, cam_c="#9cb4e4"),
-    "pink": dict(sky="#b7899f", sky_s=2.0, fog="#c997aa", fogd=0.011, sun_e=1.6, sun_c="#ffb898", sun_el=20.0, disc=2.4,
-                 cam=0.8, cam_c="#ffd2cc"),
-    "gold": dict(sky="#d6aa84", sky_s=2.1, fog="#e0b98e", fogd=0.011, sun_e=3.2, sun_c="#ffd391", sun_el=24.0, disc=3.0,
-                 cam=0.7, cam_c="#ffe2b8"),
-    # the warm turn (L64 on): brighter than the rides' dawn, so every face reads
-    "warm1": dict(sky="#d9a0b4", sky_s=3.6, fog="#d9a9b8", fogd=0.011, sun_e=3.0, sun_c="#ffb898", sun_el=16.0, disc=2.4,
-                  cam=1.5, cam_c="#ffe0d8"),
-    "warm2": dict(sky="#d9a67c", sky_s=1.6, fog="#dfb083", fogd=0.011, sun_e=2.2, sun_c="#ffd391", sun_el=22.0, disc=1.2,
-                  cam=1.3, cam_c="#fff0d0"),
-    "fog": dict(sky="#8e959f", sky_s=1.0, fog="#9aa1ab", fogd=0.075, sun_e=0.0, sun_c="#e6e8ee", sun_el=20.0, disc=0.0,
-                cam=0.3, cam_c="#e6eaf2"),
-    "thin": dict(sky="#a8adb6", sky_s=0.38, fog="#b4b8c0", fogd=0.03, sun_e=0.0, sun_c="#ffd8c0", sun_el=20.0, disc=0.5,
-                 cam=0.06, cam_c="#f1e6e6"),
+    "base": dict(sky="#9ec1d6", sky_s=1.3, fog="#d9c2a8", fogd=0.004, sun_e=3.0, sun_c="#ffd391", sun_el=22.0, disc=2.6,
+                 cam=0.9, cam_c="#ffe2b8"),
+    "pink": dict(sky="#c99fb4", sky_s=1.3, fog="#d9a9b8", fogd=0.005, sun_e=2.4, sun_c="#ffb898", sun_el=17.0, disc=2.4,
+                 cam=1.0, cam_c="#ffd2cc"),
+    "gold": dict(sky="#a9c4d2", sky_s=1.3, fog="#e0b98e", fogd=0.004, sun_e=3.2, sun_c="#ffd391", sun_el=24.0, disc=3.0,
+                 cam=0.9, cam_c="#ffe2b8"),
+    # flat cool daylight, the viewer's close on Gran asleep: her face clearly lit, never dark
+    "flat": dict(sky="#b9c8d4", sky_s=1.6, fog="#c9cdd2", fogd=0.004, sun_e=1.4, sun_c="#e8eef6", sun_el=40.0, disc=0.0,
+                 cam=1.8, cam_c="#e6eef8"),
+    "fog": dict(sky="#b4bcc4", sky_s=1.2, fog="#c9cdd2", fogd=0.020, sun_e=1.2, sun_c="#ffe6cc", sun_el=22.0, disc=0.8,
+                cam=1.1, cam_c="#e6eaf2"),
 }
+LOOKS["pre"] = LOOKS["base"]
 
-CREATURE_ORANGE, PUTTY = "#c97c4a", "#9a7f62"
-GLINT = 7.0
+STROKE_ORANGE = "#d98a4c"
+Z0 = 39.5   # the ridge top
+BENCH_Y, BENCH_Z = 137.0, 0.46
 HANG = G.HANG
 SPACING = 22.0
 
@@ -102,10 +102,10 @@ def _hexl(kit, h):
 
 def materials(kit):
     M = {}
-    M["water"] = kit.plastic("#10171d", 0.05, name="lake", spec=0.9)
-    M["pine_ground"] = kit.grime("#22382c", 0.45, 0.12, name="pine ground", rough=0.95)
-    M["rock"] = kit.grime("#6f6f72", 0.45, 0.25, name="ridge rock", rough=0.95)
-    M["pine"] = kit.plastic("#1b3226", 0.9, name="pine", spec=0.1)
+    M["water"] = kit.plastic("#13232a", 0.05, name="lake", spec=0.9)
+    M["pine_ground"] = kit.grime("#37663c", 0.5, 0.12, name="pine ground", rough=0.95)
+    M["rock"] = kit.grime("#8c8a82", 0.5, 0.25, name="ridge rock", rough=0.95)
+    M["pine"] = kit.plastic("#22382c", 0.9, name="pine", spec=0.1)
     M["deck"] = kit.planks("#6b5a48", "#40342a", 1.3, "X", name="deck planks")
     M["timber"] = kit.planks("#5a4636", "#3a2d22", 1.0, "Z", name="timber wall")
     M["post"] = kit.plastic("#4b3a2d", 0.85, name="post")
@@ -116,14 +116,28 @@ def materials(kit):
     M["rubber"] = kit.plastic("#1b1b1d", 0.8, name="footrest rubber", spec=0.15)
     M["slat"] = kit.plastic("#7d7468", 0.7, name="seat slat")
     M["frame"] = kit.plastic("#7d858c", 0.5, name="chair frame")
-    M["tally"] = kit.plastic(CREATURE_ORANGE, 0.75, name="tally orange", spec=0.1)
+    M["tally"] = kit.plastic(STROKE_ORANGE, 0.75, name="tally orange", spec=0.1)
     M["concrete"] = kit.concrete("#7d7c78", 1.0, 0.4, name="pier concrete")
     M["lamp"] = kit.emit("#ffcf8a", 6.0, name="hut lamp")
-    M["gaterope"] = kit.plastic("#a08c66", 0.9, name="gate rope")
+    M["gaterope"] = kit.plastic("#4a3f2c", 1.0, name="gate rope")
     M["cup"] = kit.plastic("#e9e4da", 0.6, name="paper cup")
     M["steam"] = kit.emit("#dcdfe4", 0.5, name="steam")
-    M["card"] = kit.plastic("#f4a7b9", 0.5, name="pass card")
-    M["cord"] = kit.plastic("#e58aa2", 0.7, name="pass cord")
+    M["blanket"] = kit.checker("#3f6b4a", "#7aa36b", 7.0, name="blanket check", rough=0.95)
+    M["blanket_edge"] = kit.plastic("#3f6b4a", 0.95, name="blanket edge")
+    M["gull"] = kit.plastic("#f1f1ee", 0.7, name="gull white")
+    M["gull_wing"] = kit.plastic("#9aa0a6", 0.7, name="gull grey")
+    M["beak"] = kit.plastic("#e8a23a", 0.6, name="beak")
+    M["suitcase"] = kit.plastic("#7a4a2c", 0.6, name="suitcase leather")
+    M["brass"] = kit.metal("#b89a55", 0.35, name="brass")
+    M["plate"] = kit.plastic("#eee9dd", 0.35, name="plate")
+    M["table"] = kit.planks("#8a6a48", "#5e4630", 1.2, "X", name="table planks")
+    M["house_a"] = kit.plastic("#c9b99a", 0.8, name="house cream")
+    M["house_b"] = kit.plastic("#a96f55", 0.8, name="house clay")
+    M["house_c"] = kit.plastic("#8aa1a8", 0.8, name="house sage")
+    M["house_roof"] = kit.plastic("#4a4040", 0.7, name="house roof")
+    M["my_door"] = kit.plastic("#c23b3b", 0.6, name="my door")
+    M["viewer"] = kit.plastic("#3a4a44", 0.35, name="viewer green", spec=0.5)
+    M["lens"] = kit.plastic("#1c2a30", 0.1, name="viewer glass", spec=0.9)
     M["bench"] = kit.plastic("#7a5f45", 0.8, name="bench")
     M["window"] = kit.emit("#ffc479", 3.0, name="hut window")
     return M
@@ -258,12 +272,6 @@ def build_bottom(kit, ctx, M):
         kit.box(f"rail_post{x}", (0.1, 0.1, 1.05), (x, 3.45, 0.52), M["post"], bevel=0.01)
     kit.box("rail_top", (19.0, 0.1, 0.08), (-0.5, 3.45, 1.07), M["post"], bevel=0.01)
     kit.box("rail_mid", (19.0, 0.06, 0.06), (-0.5, 3.45, 0.55), M["post"], bevel=0.01)
-    # the cup (cue)
-    cup = kit.empty("cup", (0.6, 3.45, 1.11))
-    kit.cyl("cup.body", 0.075, 0.13, (0, 0, 0.065), M["cup"], cup, n=14, r2=0.06)
-    for k in range(3):
-        kit.box(f"cup.steam{k}", (0.018, 0.018, 0.2 + 0.05 * k), (0.03 * (k - 1), 0.0, 0.26 + 0.05 * k), M["steam"], cup)
-    ctx["cup"] = cup
     # the lake-edge lamp posts for the dawn
     ctx["bottom_wheel_angle"] = 0.0
 
@@ -353,78 +361,181 @@ def build_sky(kit, ctx, M):
     ctx["disc"] = kit.sphere("sundisc", 18.0, (60, 450, 60), m, seg=24)
     kit.light("sun", "SUN", (0, 0, 50), 1.0, "#ffb48a", rot=(0.5, 0, 0))
     kit.light("camfill", "AREA", (0, 0, 5), 10.0, "#9cb4e4", size=1.5, shadow=False)
-    kit.light("ckey", "SPOT", (0, 0, 5), 0.0, "#d9e4ff", size=0.15, spot=38, blend=0.5)
-    kit.light("crim", "SPOT", (0, 0, 5), 0.0, "#ffb7c4", size=0.15, spot=38, blend=0.5)
     kit.light("hutfill", "POINT", (-3.0, -6.0, 2.6), 40.0, "#ffc890", size=0.4, shadow=False)
 
 
-# ------------------------------------------------------------------------------------------------ the creature's head
+# ------------------------------------------------------------------------------------------------ props and the town
 
 
-def face_png():
-    """Two small black dots set wide and high with a pinpoint glint, and one long low dark slot of a mouth."""
-    from PIL import Image, ImageDraw
-
-    W = 512
-    im = Image.new("RGB", (W, W), faces.hexrgb(PUTTY))
-    d = ImageDraw.Draw(im)
-    ink = (10, 9, 9)
-    for sx in (-1, 1):
-        cx, cy, r = W * (0.5 + sx * 0.31), W * 0.30, W * 0.042
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=ink)
-        g = W * 0.011
-        gx, gy = cx + r * 0.35, cy - r * 0.38
-        d.ellipse([gx - g, gy - g, gx + g, gy + g], fill=(255, 251, 238))
-    x0, x1, y, h = W * 0.07, W * 0.93, W * 0.80, W * 0.075
-    d.rounded_rectangle([x0, y - h / 2, x1, y + h / 2], radius=h / 2, fill=ink)
-    return im
-
-
-def make_cube_head(kit, ctx):
-    """The cube, parented to the creature's head pivot, replacing the rig's rounded head."""
-    root = bpy.data.objects.get("creature")
-    hg = bpy.data.objects.get("creature.headg")
-    if root is None or hg is None:
-        return False
-    ctx["creature_head_rig"] = bpy.data.objects.get("creature.headm")
-    side = 1.75
-    skin = kit.plastic(PUTTY, 0.45, name="putty")
-    kit.box("creature.cube", (side, side, side), (0, 0, 0), skin, hg, bevel=0.012)
-    pil = face_png()
-    img = bpy.data.images.new("fourface", pil.width, pil.height)
-    a = np.asarray(pil.convert("RGBA")).astype(np.float32)[::-1] / 255
-    img.pixels.foreach_set(a.ravel())
-    img.pack()
-    img.colorspace_settings.name = "sRGB"
-    m = kit._new("fourface")
+def soft_card_mat(kit, name, color, strength, alpha, power=0.8):
+    """A flat emissive card whose edges fade to nothing (a cloud or a drift of mist). Not fogged: it is the sky."""
+    m = kit._new(name)
     nt = m.node_tree
-    b = nt.nodes["Principled BSDF"]
-    b.inputs["Roughness"].default_value = 0.4
-    tx = nt.nodes.new("ShaderNodeTexImage")
-    tx.image = img
-    nt.links.new(tx.outputs["Color"], b.inputs["Base Color"])
-    bw = nt.nodes.new("ShaderNodeRGBToBW")
-    nt.links.new(tx.outputs["Color"], bw.inputs["Color"])
-    ramp = nt.nodes.new("ShaderNodeValToRGB")
-    ramp.color_ramp.elements[0].position = 0.80
-    ramp.color_ramp.elements[0].color = (0, 0, 0, 1)
-    ramp.color_ramp.elements[1].position = 0.88
-    ramp.color_ramp.elements[1].color = (1.0, 0.96, 0.88, 1)
-    nt.links.new(bw.outputs["Val"], ramp.inputs["Fac"])
-    nt.links.new(ramp.outputs["Color"], b.inputs["Emission Color"])
-    b.inputs["Emission Strength"].default_value = GLINT
-    kit._fogged(m, b.outputs[0])
-    h = side / 2 + 0.004
-    for k in range(4):
-        verts = [(-side / 2, -h, -side / 2), (side / 2, -h, -side / 2), (side / 2, -h, side / 2), (-side / 2, -h, side / 2)]
-        pl = kit.mesh_obj(f"creature.face{k}", verts, [(0, 1, 2, 3)], m, hg, rot=(0, 0, k * math.pi / 2))
-        uv = pl.data.uv_layers.new(name="UVMap")
-        for li, uvv in zip(pl.data.polygons[0].loop_indices, [(0, 0), (1, 0), (1, 1), (0, 1)]):
-            uv.data[li].uv = uvv
-    for ob in root.children_recursive:
-        ob.hide_render = root.hide_render   # built mid-run: take the creature's hidden state at once
-    ctx["cube_ready"] = True
-    return True
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    sub = nt.nodes.new("ShaderNodeVectorMath")
+    sub.operation = "SUBTRACT"
+    sub.inputs[1].default_value = (0.5, 0.5, 0.0)
+    nt.links.new(tc.outputs["Generated"], sub.inputs[0])
+    flat = nt.nodes.new("ShaderNodeVectorMath")   # a flat card has no depth: drop z so only x and y count
+    flat.operation = "MULTIPLY"
+    flat.inputs[1].default_value = (1.0, 1.0, 0.0)
+    nt.links.new(sub.outputs[0], flat.inputs[0])
+    ln = nt.nodes.new("ShaderNodeVectorMath")
+    ln.operation = "LENGTH"
+    nt.links.new(flat.outputs[0], ln.inputs[0])
+    mr = nt.nodes.new("ShaderNodeMapRange")
+    mr.inputs["From Min"].default_value = 0.0
+    mr.inputs["From Max"].default_value = 0.5
+    mr.inputs["To Min"].default_value = 1.0
+    mr.inputs["To Max"].default_value = 0.0
+    nt.links.new(ln.outputs["Value"], mr.inputs["Value"])
+    pw = nt.nodes.new("ShaderNodeMath")
+    pw.operation = "POWER"
+    pw.inputs[1].default_value = 1.0 / power
+    nt.links.new(mr.outputs["Result"], pw.inputs[0])
+    am = nt.nodes.new("ShaderNodeMath")
+    am.operation = "MULTIPLY"
+    am.inputs[1].default_value = alpha
+    nt.links.new(pw.outputs[0], am.inputs[0])
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Color"].default_value = kit.col(color)
+    em.inputs["Strength"].default_value = strength
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(am.outputs[0], mx.inputs[0])
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(em.outputs[0], mx.inputs[2])
+    nt.links.new(mx.outputs[0], out.inputs["Surface"])
+    try:
+        m.emission_sampling = "NONE"
+    except Exception:
+        pass
+    return m
+
+
+def scope_mat(kit):
+    """The viewer's round soft-edged mask: black outside a circle, clear inside, fading over the rim."""
+    m = kit._new("viewer scope")
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    sub = nt.nodes.new("ShaderNodeVectorMath")
+    sub.operation = "LENGTH"
+    nt.links.new(tc.outputs["Object"], sub.inputs[0])
+    mr = nt.nodes.new("ShaderNodeMapRange")
+    mr.inputs["From Min"].default_value = 4.3
+    mr.inputs["From Max"].default_value = 5.5
+    mr.inputs["To Min"].default_value = 0.0
+    mr.inputs["To Max"].default_value = 1.0
+    nt.links.new(sub.outputs["Value"], mr.inputs["Value"])
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Color"].default_value = (0.01, 0.012, 0.012, 1)
+    em.inputs["Strength"].default_value = 1.0
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(mr.outputs["Result"], mx.inputs[0])
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(em.outputs[0], mx.inputs[2])
+    nt.links.new(mx.outputs[0], out.inputs["Surface"])
+    return m
+
+
+def house(kit, name, x, y, w, d, h, wall, roof, door=None):
+    z = G.ground(x, y)
+    kit.box(f"{name}.w", (w, d, h), (x, y, z + h / 2), wall, bevel=0.03)
+    for sx in (-1, 1):
+        r = kit.box(f"{name}.r{sx}", (w * 0.62, d + 0.5, 0.18), (x + sx * w * 0.24, y, z + h + w * 0.1), roof, bevel=0.02)
+        r.rotation_euler = (0, -sx * 0.42, 0)
+    if door is not None:
+        kit.box(f"{name}.d", (0.9, 0.06, 1.7), (x, y + d / 2 + 0.02, z + 0.85), door, bevel=0.0)
+
+
+def build_town(kit, ctx, M):
+    """The town on the flat ground behind the deck: a scatter of small houses, one with a red door (mine)."""
+    spots = [(-20, -24, 6, 5, 3.6, "house_a"), (-12, -30, 5, 5, 3.4, "house_b"), (-4, -22, 6, 5, 3.8, "house_c"),
+             (6, -26, 5, 5, 3.4, "house_a"), (14, -23, 6, 5, 3.6, "house_b"), (-26, -36, 6, 5, 3.6, "house_c"),
+             (-8, -40, 6, 5, 3.8, "house_b"), (2, -36, 5, 5, 3.4, "house_a"), (12, -39, 6, 5, 3.6, "house_c"),
+             (21, -33, 5, 5, 3.4, "house_b"), (-16, -46, 6, 5, 3.6, "house_a"), (8, -48, 6, 5, 3.6, "house_c"),
+             (-16, 96, 5, 4, 3.2, "house_a"), (-13, 74, 5, 4, 3.2, "house_c"), (13, 90, 5, 4, 3.2, "house_b"),
+             (15, 68, 5, 4, 3.2, "house_a"), (-17, 60, 5, 4, 3.2, "house_b"), (17, 55, 5, 4, 3.2, "house_c")]
+    for k, (x, y, w, d, h, c) in enumerate(spots):
+        house(kit, f"town{k}", x, y, w, d, h, M[c], M["house_roof"], M["my_door"] if k in (2, 13) else None)
+
+
+def build_props(kit, ctx, M):
+    # the viewer: a fixed sightseeing telescope on a steel post at the deck rail, no text, no coin slot
+    vx, vy = -5.5, 3.05
+    kit.box("viewer.post", (0.2, 0.2, 1.3), (vx, vy, 0.65), M["dark"], bevel=0.03)
+    kit.box("viewer.base", (0.5, 0.5, 0.1), (vx, vy, 0.05), M["dark"], bevel=0.03)
+    kit.box("viewer.yoke", (0.4, 0.2, 0.16), (vx, vy, 1.34), M["viewer"], bevel=0.03)
+    tube(kit, "viewer.tube", (vx, vy - 0.55, 1.42), (vx, vy + 0.75, 1.78), 0.1, M["viewer"], n=14)
+    tube(kit, "viewer.eye", (vx, vy - 0.62, 1.40), (vx, vy - 0.45, 1.45), 0.07, M["dark"], n=14)
+    tube(kit, "viewer.front", (vx, vy + 0.68, 1.76), (vx, vy + 0.9, 1.82), 0.13, M["dark"], n=14)
+    kit.cyl("viewer.glass", 0.09, 0.02, (vx, vy + 0.91, 1.825), M["lens"], rot=(math.radians(-72), 0, 0), n=14)
+    # the picnic table with two plates
+    tx, ty = -3.3, -8.0
+    kit.box("table.top", (2.2, 0.95, 0.08), (tx, ty, 0.76), M["table"], bevel=0.015)
+    for sx in (-1, 1):
+        kit.box(f"table.leg{sx}", (0.1, 0.8, 0.72), (tx + sx * 0.9, ty, 0.36), M["post"])
+        for sy in (-1, 1):
+            kit.box(f"table.bench{sx}{sy}", (2.2, 0.32, 0.06), (tx, ty + sy * 0.78, 0.44), M["table"], bevel=0.01)
+    for sy in (-1, 1):
+        kit.box(f"table.bleg{sy}", (1.9, 0.08, 0.44), (tx, ty + sy * 0.78, 0.22), M["post"])
+    for sx, sy in ((-0.55, -0.22), (0.55, 0.22)):
+        kit.cyl(f"plate{sx}", 0.19, 0.03, (tx + sx, ty + sy, 0.815), M["plate"], n=20)
+    # an old-fashioned suitcase by the gate rope: brown, brass corners and a handle, no mark on it
+    sx_, sy_ = -3.7, -3.95
+    kit.box("case.body", (0.75, 0.24, 0.5), (sx_, sy_, 0.25), M["suitcase"], bevel=0.03)
+    for dx in (-1, 1):
+        for dz in (0.03, 0.47):
+            kit.box(f"case.c{dx}{dz}", (0.08, 0.26, 0.08), (sx_ + dx * 0.36, sy_, dz), M["brass"], bevel=0.01)
+    kit.box("case.h", (0.2, 0.05, 0.05), (sx_, sy_, 0.55), M["brass"])
+    for dx in (-1, 1):
+        kit.box(f"case.hs{dx}", (0.03, 0.05, 0.07), (sx_ + dx * 0.1, sy_, 0.52), M["brass"])
+    # the long bench on the ridge, facing the sunrise (+y). The backrest stops short of the left end, where two
+    # people sit looking the other way
+    zs = Z0 + BENCH_Z
+    kit.box("bench.seat", (11.4, 0.52, 0.07), (0, BENCH_Y, zs - 0.035), M["bench"], bevel=0.015)
+    for x in (-5.3, -2.6, 0.0, 2.6, 5.3):
+        kit.box(f"bench.leg{x}", (0.1, 0.4, BENCH_Z - 0.07), (x, BENCH_Y, Z0 + (BENCH_Z - 0.07) / 2), M["post"])
+    kit.box("bench.back", (7.5, 0.05, 0.4), (1.9 + 0.0, BENCH_Y - 0.25, zs + 0.3), M["bench"], bevel=0.01)
+    for x in (-1.7, 5.4):
+        kit.box(f"bench.bp{x}", (0.07, 0.07, 0.5), (x, BENCH_Y - 0.25, zs + 0.2), M["post"])
+    # gull
+    g = kit.empty("gull", (0, 0, -60))
+    kit.box("gull.body", (0.22, 0.4, 0.17), (0, 0, 0), M["gull"], g, bevel=0.06)
+    kit.box("gull.tail", (0.14, 0.14, 0.04), (0, 0.24, 0.02), M["gull_wing"], g, bevel=0.01)
+    kit.box("gull.head", (0.13, 0.14, 0.13), (0, -0.23, 0.09), M["gull"], g, bevel=0.04)
+    kit.box("gull.beak", (0.04, 0.1, 0.03), (0, -0.33, 0.085), M["beak"], g)
+    for sx in (-1, 1):
+        kit.box(f"gull.wing{sx}", (0.04, 0.34, 0.12), (sx * 0.12, 0.02, 0.03), M["gull_wing"], g, bevel=0.015)
+    ctx["gull"] = g
+    # Gran's blanket: one slab, sized and placed by the blanket cue
+    ctx["blanket"] = kit.box("blanket", (1.0, 1.0, 1.0), (0, 0, -60), M["blanket"], bevel=0.0)
+    # the viewer's mask, parented to the camera
+    sc = kit.mesh_obj("scope", [(-4.5, -8, 0), (4.5, -8, 0), (4.5, 8, 0), (-4.5, 8, 0)], [(0, 1, 2, 3)], scope_mat(kit))
+    sc.parent = kit.OBJ["cam"]
+    sc.location = (0, 0, -0.4)
+    sc.hide_render = True
+    ctx["scope"] = sc
+    # racing cloud cards on a ring round the valley, and drifting mist cards over the lake
+    cm = soft_card_mat(kit, "cloud card", "#fff7ec", 1.6, 0.95)
+    ctx["clouds"] = []
+    n = 9
+    for k in range(n):
+        c = kit.plane(f"cloud{k}", (46.0 + 26 * kit.hash01(k, 1), 12.0 + 8 * kit.hash01(k, 2)), (0, 0, 90), cm)
+        c.rotation_euler = (math.pi / 2, 0, 0)
+        c.hide_render = True
+        ctx["clouds"].append((c, 360.0 * k / n + 11 * kit.hash01(k, 3), 72 + 40 * kit.hash01(k, 4)))
+    mm = soft_card_mat(kit, "mist card", "#e6e9ee", 0.9, 0.28)
+    ctx["mist"] = []
+    for k in range(14):
+        c = kit.plane(f"mist{k}", (44.0, 34.0), (0, 0, 0), mm)
+        c.hide_render = True
+        ctx["mist"].append((c, -50 + 100 * kit.hash01(k, 5), 4 + 78 * kit.hash01(k, 6), 0.4 + 5.0 * kit.hash01(k, 7)))
 
 
 # ------------------------------------------------------------------------------------------------ build
@@ -440,6 +551,8 @@ def build(kit, story, tl):
     build_line(kit, ctx, M)
     build_chairs(kit, ctx, M)
     build_sky(kit, ctx, M)
+    build_town(kit, ctx, M)
+    build_props(kit, ctx, M)
     # the lift clock: how far the cable has moved by time t (it can stop and start)
     stops = sorted([(c["t"], c["state"]) for c in _cues(tl, "lift")])
     dt, C, c_, v_ = 0.05, [0.0], 0.0, 1.0
@@ -454,32 +567,6 @@ def build(kit, story, tl):
         C.append(c_)
         t += dt
     ctx["clock"] = (dt, C)
-    ctx["card_ready"] = False
-    # opt-in camera aim: a shot's "aim": {"who", "off"} points its camera at that cast member's feet-root + off
-    import __main__
-    from blocky import acting as _a
-
-    if hasattr(__main__, "cam_at") and not getattr(__main__, "_aim_patched", False):
-        orig = __main__.cam_at
-
-        def cam_at2(spec, shot, t, chars, tl_):
-            loc, tgt, lens, roll = orig(spec, shot, t, chars, tl_)
-            orb = spec.get("orbit")
-            if orb:   # opt-in: a circle round the creature's head at an even speed, outside everything
-                u = (t - shot["start"]) / max(1e-6, shot["end"] - shot["start"])
-                st_ = _a.state(tl_, orb["who"], t)
-                ang = math.radians(orb["a0"] + (orb["a1"] - orb["a0"]) * min(1.0, max(0.0, u)))
-                loc = (st_["x"] + orb["r"] * math.sin(ang), st_["y"] - orb["r"] * math.cos(ang), st_["z"] + orb["z"])
-                tgt = (st_["x"], st_["y"], st_["z"] + orb["tz"])
-            aim = spec.get("aim")
-            if aim:
-                st = _a.state(tl_, aim["who"], t)
-                o = aim.get("off", [0.0, 0.0, 0.0])
-                tgt = (st["x"] + o[0], st["y"] + o[1], st["z"] + o[2])
-            return loc, tgt, lens, roll
-
-        __main__.cam_at = cam_at2
-        __main__._aim_patched = True
     return ctx
 
 
@@ -495,23 +582,23 @@ def clock(ctx, t):
 
 def look_state(tl, t):
     cs = _cues(tl, "light")
-    prev = dict(LOOKS["pre"])
+    prev = dict(LOOKS["base"])
     cur = dict(prev)
     for c in cs:
         if c["t"] > t:
             break
-        tgt = {**LOOKS[c.get("look", "pre")], **{k: v for k, v in c.items() if k in LOOKS["pre"]}}
+        tgt = {**LOOKS[c.get("look", "base")], **{k: v for k, v in c.items() if k in LOOKS["base"]}}
         u = _ss((t - c["t"]) / max(0.01, c.get("ramp", 3.0)))
         cur = {}
         for k, v in tgt.items():
             pv = prev[k]
-            if isinstance(v, str):
+            if isinstance(v, str) or isinstance(pv, tuple):
                 a, b = _rgb(pv), _rgb(v)
                 cur[k] = tuple(a[i] + (b[i] - a[i]) * u for i in range(3))
             else:
                 cur[k] = pv + (v - pv) * u
         if u >= 1:
-            prev = {k: (v if not isinstance(v, tuple) else v) for k, v in cur.items()}
+            prev = dict(cur)
     return cur
 
 
@@ -562,6 +649,22 @@ def _rot_about(ob, pivot, rx, ry):
     ob.matrix_world = M_ @ ob.matrix_basis   # these objects have no parent, and matrix_world isn't updated yet
 
 
+def _local(st, loc):
+    """A point in a character's own frame (x right, y forward as -y at yaw 0) from its feet-root, in world space."""
+    c, sn = math.cos(st["yaw"]), math.sin(st["yaw"])
+    return V((st["x"] + loc[0] * c - loc[1] * sn, st["y"] + loc[0] * sn + loc[1] * c, st["z"] + loc[2]))
+
+
+def _sweep(tl, t):
+    """The sun's azimuth: 8 degrees (just off the ridge line) unless a sunsweep cue is swinging it round."""
+    az = 8.0
+    for c in sorted(_cues(tl, "sunsweep"), key=lambda c_: c_["t"]):
+        if c["t"] <= t:
+            u = _ss((t - c["t"]) / max(0.01, c.get("dur", 3.0)))
+            az = c["az0"] + (c["az1"] - c["az0"]) * u
+    return az
+
+
 def animate(kit, story, tl, t, ctx):
     import __main__
     from blocky import acting as _ac
@@ -573,22 +676,22 @@ def animate(kit, story, tl, t, ctx):
     L = look_state(tl, t)
     w = bpy.context.scene.world.node_tree.nodes["Background"]
     w.inputs["Color"].default_value = (*_lin(L["sky"]), 1)
-    w.inputs["Strength"].default_value = L["sky_s"]
     for nd in ctx["fog_nodes"]:
         nd.inputs[1].default_value = -L["fogd"]
     for nd in ctx["fog_cols"]:
         nd.inputs["Color"].default_value = (*_lin(L["fog"]), 1)
     el = math.radians(L["sun_el"])
-    az = math.radians(8.0)
+    az = math.radians(_sweep(tl, t))
     s = V((math.sin(az) * math.cos(el), math.cos(az) * math.cos(el), math.sin(el)))
     sun = K.LIGHTS["sun"]
     sun["obj"].rotation_euler = (-s).to_track_quat("-Z", "Y").to_euler()
     sun["light"].color = _lin(L["sun_c"])
-    K.LIGHTS["sun"]["base"] = max(L["sun_e"] * _open(tl, t), 0.0001)
+    opn = _open(tl, t)
+    K.LIGHTS["sun"]["base"] = max(L["sun_e"] * opn, 0.0001)
     ctx["disc"].location = tuple(s * 450.0)
     ctx["disc_e"].inputs["Strength"].default_value = L["disc"]
     ctx["disc_e"].inputs["Color"].default_value = (*_lin(L["sun_c"]), 1)
-    # ---- the camera of this frame (the follow-camera fill and the creature's key)
+    # ---- the camera of this frame (the follow-camera fill, the viewer's mask)
     shot = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
     spec = next(x for x in story["shots"] if x["id"] == shot["id"])
     loc, tgt, lens, _ = __main__.cam_at(spec, shot, t, None, tl)
@@ -600,15 +703,33 @@ def animate(kit, story, tl, t, ctx):
     cf["obj"].rotation_euler = fwd.to_track_quat("-Z", "Y").to_euler()
     cf["light"].color = _lin(L["cam_c"])
     cf["light"].size = 1.5
-    # `open` cue (opt-in): sky and fill start at `from` of their level and ease up to it over `dur` s
-    opn = _open(tl, t)
     w.inputs["Strength"].default_value = L["sky_s"] * opn
     cf["base"] = 7.0 * min(dist, 12.0) ** 2 * L["cam"] * spec.get("cfill", 1.0) * opn
+    sc = ctx["scope"]
+    sc.hide_render = not spec.get("scope", False)
+    sc.scale = (1.5 * 0.4 / lens,) * 3
+    # ---- racing clouds and drifting mist (smooth, one direction, the light level never cycles)
+    cl = [c for c in _cues(tl, "clouds") if c["t"] <= t]
+    cl_on = bool(cl and cl[-1].get("on", True))
+    for ob, a0, hz in ctx["clouds"]:
+        ob.hide_render = not cl_on
+        if cl_on:
+            sp = cl[-1].get("speed", 40.0)
+            a = math.radians(a0) + (sp / 140.0) * (t - cl[-1]["t"])
+            ob.location = (140.0 * math.cos(a), 100.0 + 140.0 * math.sin(a), hz)
+            ob.rotation_euler = (math.pi / 2, 0, a + math.pi / 2 + math.pi)
+    ms = [c for c in _cues(tl, "mist") if c["t"] <= t]
+    ms_on = bool(ms and ms[-1].get("on", True))
+    for ob, x0, y0, z0 in ctx["mist"]:
+        ob.hide_render = not ms_on
+        if ms_on:
+            tt = t - ms[-1]["t"]
+            ob.location = (-60 + (x0 + 60 + ms[-1].get("speed", 6.0) * tt) % 120, y0, z0 + 0.35 * tt)
     # ---- the lift clock and the chairs
     P = clock(ctx, t)
     riders = []
     for who, keys in tl["acting"].items():
-        if _ac._switch(keys, "sit", t, False):
+        if _ac._switch(keys, "sit", t, False) and not _ac._switch(keys, "hidden", t, False):
             s_ = _ac.state(tl, who, t)
             riders.append((who, s_, _ac._switch(keys, "seat", t, 1.0)))
     amp, bias = sway_now(tl, t)
@@ -626,12 +747,11 @@ def animate(kit, story, tl, t, ctx):
                 break
         else:
             cents.append([cx, cy, cz, yaw, [who]])
+    cents.sort(key=lambda c: 0 if "me" in c[4] else 1)   # my chair is the one with the footrest strokes
     me_riding = next((r for r in riders if r[0] == "me"), None)
     if me_riding is not None:
         ycur = me_riding[1]["y"]
         P = ycur if me_riding[1]["yaw"] > 1.5 else (G.LL + G.ARC + (G.LL - ycur))
-    # opt-in "phase" cue: put cable chair 0 at loop position `u` `when` seconds after the cue (so a chair is in the
-    # shot), kept until the next phase cue (one with "off" puts it back)
     shift = 0.0
     for c in sorted(_cues(tl, "phase"), key=lambda c_: c_["t"]):
         if c["t"] <= t:
@@ -643,12 +763,21 @@ def animate(kit, story, tl, t, ctx):
         ob = ctx["special"][k]
         ob.location = (c[0], c[1], c[2])
         ob.rotation_euler = (0, 0, c[3])
-    # cable chairs: skip any that overlap a special chair
     up_on = _switch(_cues(tl, "upchairs"), "on", t, False)
+    bunch = _switch(_cues(tl, "bunch"), "on", t, False)
+    bt0 = max([c_["t"] for c_ in _cues(tl, "bunch") if c_.get("on") and c_["t"] <= t] or [0.0])
+    roof_on = _switch(_cues(tl, "toproof"), "on", t, True)
+    for ob in bpy.data.objects:
+        if ob.name.startswith(("troof", "tridge", "tpost", "wheelT", "twframe")):
+            ob.hide_render = not roof_on
+        elif ob.name.startswith("grope"):
+            ob.hide_render = bunch
     for k, ob in enumerate(ctx["cable"]):
         u = (ph + k * ctx["spacing"]) % G.TOT
+        if bunch:   # a run of empty chairs close together, swinging round the bull wheel
+            u = (257.65 + clock(ctx, t) - clock(ctx, bt0 + 0.8) + (k - 4) * 7.4) % G.TOT
         x, y, zr, yaw = G.path(u)
-        if not up_on and (u < G.LL or u >= G.BOTTOM_ARC):   # only the returning chairs are empty on the lift
+        if not up_on and not bunch and (u < G.LL or u >= G.BOTTOM_ARC):   # only the returning chairs are empty on the lift
             ob.location = (x, y, -60)
             continue
         ob.location = (x, y, zr - HANG)
@@ -656,7 +785,7 @@ def animate(kit, story, tl, t, ctx):
         for c in cents:
             if math.hypot(c[0] - x, c[1] - y) < 5.5:
                 ob.location = (x, y, -60)
-    # ---- seated riders: legs forward and down, hands on the lap
+    # ---- seated riders: legs forward and down, hands on the lap (unless the acting raises an arm)
     for who, s_, seat in riders:
         r = bpy.data.objects.get(who)
         if r is None:
@@ -668,8 +797,18 @@ def animate(kit, story, tl, t, ctx):
             arm = bpy.data.objects.get(f"{who}.arm{sx}")
             if leg is not None:
                 leg.rotation_euler = (-math.radians(55), 0, 0)
-            if arm is not None:
+            if arm is not None and not any(abs(a) > 0.05 for a in s_["arms"]):
                 arm.rotation_euler = (-math.radians(12), 0, 0)
+    # ---- the bench: legs straight forward, hands in the lap
+    for who, keys in tl["acting"].items():
+        if _ac._switch(keys, "perch", t, False):
+            for sx in (-1, 1):
+                leg = bpy.data.objects.get(f"{who}.leg{sx}")
+                arm = bpy.data.objects.get(f"{who}.arm{sx}")
+                if leg is not None:
+                    leg.rotation_euler = (-math.radians(84), 0, 0)
+                if arm is not None and not any(abs(a) > 0.05 for a in _ac.state(tl, who, t)["arms"]):
+                    arm.rotation_euler = (-math.radians(34), 0, 0)
     # sway: a chair and its riders rock about the grip
     for k, c in enumerate(cents[:3]):
         ob = ctx["special"][k]
@@ -677,7 +816,6 @@ def animate(kit, story, tl, t, ctx):
         a = math.radians(amp) * math.sin(2 * math.pi * 0.33 * t + k)
         roll = math.radians(bias) * 1.0 + a * 0.6
         pitch = a * 0.5
-        # the chair's roll is about its travel axis: world x for an up/down chair
         ob.rotation_euler = (0, 0, c[3])
         _rot_about(ob, pivot, pitch, roll)
         for who in c[4]:
@@ -686,35 +824,10 @@ def animate(kit, story, tl, t, ctx):
     # ---- the wheels
     ctx["wheel_b"].rotation_euler = (0, 0, P / G.R)
     ctx["wheel_t"].rotation_euler = (0, 0, P / G.R)
-    # ---- the cup, the pass card
-    ctx["cup"].hide_render = not _switch(_cues(tl, "cup"), "on", t, False)
-    for ob in ctx["cup"].children:
-        ob.hide_render = ctx["cup"].hide_render
-    if not ctx["card_ready"]:
-        ctx["card_ready"] = True
-        ctx["cards"] = {}
-        for key, who in (("me", "me"), ("mr", "mr_halvor")):
-            tor = bpy.data.objects.get(f"{who}.torso")
-            if tor is None:
-                continue
-            objs = []
-            objs.append(K.box(f"card.{key}", (0.78, 0.05, 1.0), (0, -0.55, 1.15), ctx["M"]["card"], tor, bevel=0.03))
-            for sx in (-1, 1):
-                b = K.box(f"cord.{key}{sx}", (0.07, 0.04, 1.2), (sx * 0.42, -0.53, 1.45), ctx["M"]["cord"], tor)
-                b.rotation_euler = (0, sx * 0.55, 0)
-                objs.append(b)
-            ctx["cards"][key] = objs
-    for key, objs in ctx.get("cards", {}).items():
-        on = _switch(_cues(tl, "card"), key, t, key == "me")
-        who = "me" if key == "me" else "mr_halvor"
-        root = bpy.data.objects.get(who)
-        hidden = root is None or root.hide_render
-        for ob in objs:
-            ob.hide_render = (not on) or hidden
-    # ---- props on people: the Halvors' laced boots, Mr Halvor's beard
+    # ---- props on people: boots, Mr Pell's beard, Gran's knit hat
     if not ctx.get("props_ready"):
         ctx["props_ready"] = True
-        for who, bc in (("mr_halvor", "#7a3b2a"), ("mrs_halvor", "#2c4a35")):
+        for who, bc in (("mr_pell", "#7a3b2a"), ("gran", "#2c4a35"), ("me", "#4a392c")):
             boot = K.plastic(bc, 0.7, name=f"boot {who}")
             lace = K.plastic("#e4dcc6", 0.8, name="laces")
             for sx in (-1, 1):
@@ -725,9 +838,10 @@ def animate(kit, story, tl, t, ctx):
                 for k in range(4):
                     K.box(f"{who}.lace{sx}{k}", (0.62, 0.05, 0.07), (0, -0.56, -1.2 - 0.18 * k), lace, leg)
                 K.box(f"{who}.lacev{sx}", (0.07, 0.05, 0.72), (0, -0.57, -1.52), lace, leg)
-        hg = bpy.data.objects.get("mr_halvor.headg")
+        hg = bpy.data.objects.get("mr_pell.headg")
         if hg is not None:
-            K.box("mr_halvor.beard", (0.98, 0.2, 0.42), (0, -0.55, -0.4), K.plastic("#f1f0ec", 0.9, name="beard"), hg, bevel=0.07)
+            K.box("mr_pell.beard", (0.98, 0.2, 0.42), (0, -0.55, -0.4), K.plastic("#f1f0ec", 0.9, name="beard"), hg, bevel=0.07)
+        # two faded-orange strokes pressed in the footrest are built into the first special chair (the lore plant)
     # ---- an arm stretched to a point (close-ups of a hand only)
     cs = [c for c in _cues(tl, "arm_to") if c["t"] <= t]
     if cs and cs[-1].get("to"):
@@ -741,41 +855,57 @@ def animate(kit, story, tl, t, ctx):
             z = -dv.normalized()
             xx = V((1, 0, 0)) - z.x * z
             xx.normalize()
-            sc = root.scale
-            k = dv.length / (1.75 * sc.z)
-            M2 = Matrix((tuple(xx), tuple(z.cross(xx)), tuple(z))).transposed().to_4x4() @ Matrix.Diagonal((sc.x, sc.y, sc.z * k, 1))
+            sc_ = root.scale
+            k = dv.length / (1.75 * sc_.z)
+            M2 = Matrix((tuple(xx), tuple(z.cross(xx)), tuple(z))).transposed().to_4x4() @ Matrix.Diagonal((sc_.x, sc_.y, sc_.z * k, 1))
             M2.translation = sh
             ob.matrix_world = M2
-    # ---- the creature
-    if not ctx.get("cube_ready"):
-        make_cube_head(kit, ctx)
-    cr = bpy.data.objects.get("creature")
-    on_screen = cr is not None and not cr.hide_render
-    if ctx.get("creature_head_rig") is not None:
-        ctx["creature_head_rig"].hide_render = True
-    ck = spec.get("ckey", _switch(_cues(tl, "ckey"), "gain", t, 1.0))
-    for nm in ("ckey", "crim"):
-        over[nm] = 0.0
-    if on_screen:
-        head = V(cr.matrix_world.translation) + V((0, 0, 1.62))
+    # ---- the blanket
+    bl = [c for c in _cues(tl, "blanket") if c["t"] <= t]
+    bo = ctx["blanket"]
+    if bl and bl[-1].get("on", True):
+        c = bl[-1]
+        yaw = math.radians(c.get("yaw", 0.0))
+        if c.get("who"):
+            st = _ac.state(tl, c["who"], t)
+            bo.location = tuple(_local(st, c["local"]))
+            yaw += st["yaw"]
+        else:
+            bo.location = tuple(c["pos"])
+        bo.scale = tuple(c["size"])
+        bo.rotation_euler = (0, 0, yaw)
+        bo.hide_render = False
+    else:
+        bo.hide_render = True
+    # ---- the gull
+    gc = [c for c in _cues(tl, "gull") if c["t"] <= t]
+    gull = ctx["gull"]
+    mode = gc[-1].get("mode", "off") if gc else "off"
+    if mode == "off":
+        gull.location = (0, 0, -60)
+    else:
+        hg = bpy.data.objects.get("gran.headg")
         bpy.context.view_layer.update()
-        head = cr.matrix_world @ V((0, 0, 4.6))
-        to_cam = (cam - head)
-        to_cam.z = 0
-        if to_cam.length < 1e-3:
-            to_cam = V((0, -1, 0))
-        to_cam.normalize()
-        side = to_cam.cross(V((0, 0, 1)))
-        key = K.LIGHTS["ckey"]
-        # from below, on the camera's side: a cold under-light that throws the brow and the dots into shadow
-        key["obj"].location = head + to_cam * 1.5 + side * 0.25 + V((0, 0, -1.35))
-        K.aim(key["obj"], tuple(head))
-        key["base"] = 300.0 * ck * (key["obj"].location - head).length ** 2 / 2.2 * min(1.0, max(0.3, (cam - head).length / 3.9) ** 1.4)
-        key["light"].color = (0.72, 0.84, 0.95)
-        over["ckey"] = 1.0
-        rim = K.LIGHTS["crim"]
-        rim["obj"].location = head - to_cam * 1.5 + V((0, 0, 0.8)) - side * 1.0
-        K.aim(rim["obj"], tuple(head))
-        rim["base"] = 220.0 * ck * (rim["obj"].location - head).length ** 2 / 2.5
-        over["crim"] = 1.0
+        hat = hg.matrix_world.translation + V((0, 0, 0.25)) if hg is not None else V((0, 0, -60))
+        if mode == "hat":
+            gull.location = tuple(hat)
+            gull.rotation_euler = (0, 0, math.radians(180))
+        else:
+            u = _ss((t - gc[-1]["t"]) / max(0.01, gc[-1].get("dur", 1.2)))
+            d = V(gc[-1].get("to", [2.0, 3.0, 2.5]))
+            gull.location = tuple(hat + d * u + V((0, 0, 0.35 * math.sin(math.pi * u))))
+            gull.rotation_euler = (math.radians(-18 * u), 0, math.radians(180))
+            for sx in (-1, 1):
+                wob = bpy.data.objects.get(f"gull.wing{sx}")
+                if wob is not None:
+                    wob.rotation_euler = (0, sx * math.radians(50) * math.sin(t * 22.0), 0)
+    # ---- summer (the last shot): a richer green
+    if _cues(tl, "summer") and _cues(tl, "summer")[0]["t"] <= t:
+        ctx["land"].data.materials[0].node_tree.nodes  # the same material, recoloured once
+        if not ctx.get("summered"):
+            ctx["summered"] = True
+            for nd in ctx["land"].data.materials[0].node_tree.nodes:
+                if nd.type == "VALTORGB":
+                    for e in nd.color_ramp.elements:
+                        e.color = (e.color[0] * 0.8, min(1.0, e.color[1] * 1.3), e.color[2] * 0.7, 1)
     return over
