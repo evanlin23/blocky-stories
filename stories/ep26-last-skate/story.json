@@ -2550,7 +2550,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "Pop: he hadn't been here in forty years, then the shrug (one shot, fewer cuts)",
-   "at": "L26"
+   "at": "L26+0.3"
   },
   {
    "id": "S30",
@@ -3137,7 +3137,8 @@
    "hand": 0.0,
    "step": 1,
    "what": "the pool widens and the Skater is in it, at her shoulder, a head taller",
-   "expo": 1.26,
+   "skboost": 3.2,
+   "expo": 1.5,
    "at": "L49"
   },
   {
@@ -3162,7 +3163,8 @@
    "hand": 0.0,
    "step": 1,
    "what": "THE TEST STILL: its arm held out to her, folded twice, the hand at the end of the sleeve",
-   "expo": 1.21,
+   "skboost": 3.2,
+   "expo": 1.5,
    "at": "L50"
   },
   {
@@ -3496,22 +3498,22 @@
     [
      0,
      [
-      -5.8,
-      -7.9,
-      3.9
+      2.4,
+      2.6,
+      3.2
      ],
      [
-      1.0,
-      0.5,
-      0.6
+      2.4,
+      -3.6,
+      1.0
      ],
-     20,
+     37.6,
      0
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "the pool sliding round them",
+   "what": "the pool sliding round them: Pop and Nan on the floor inside the spotlight, from the north",
    "expo": 1.32,
    "at": "L64"
   },
@@ -5471,7 +5473,7 @@
     "blend": 1.2
    },
    {
-    "at": "L26",
+    "at": "L26+0.3",
     "arms": [
      0,
      0

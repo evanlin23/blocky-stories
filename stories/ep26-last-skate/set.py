@@ -738,12 +738,13 @@ def animate(kit, story, tl, t, ctx):
     near = 1.0 - _ss((d - 1.4) / 2.2)
     side = 1.0 if px < 1.0 else -1.0
     up = kit.LIGHTS["sk_up"]["obj"]
-    up.location = (px + 1.4 * side, py + 0.1, 0.2)
-    over["sk_up"] = (0.3 + 0.7 * near) * expo
+    boost = next((sh.get("skboost", 1.0) for sh in story["shots"] if sh["id"] == shot), 1.0)
+    up.location = (px + 1.4 * side, py + 0.1, 0.2) if boost == 1.0 else (px + 1.3, py - 0.9, 0.15)   # the held-out arm: from below, camera side
+    over["sk_up"] = (0.3 + 0.7 * near) * expo * boost
     rim = kit.LIGHTS["sk_rim"]["obj"]
     rim.location = (px - 0.4, py + 2.6, 2.9)
     kit.aim(rim, (px, py, 1.5))
-    over["sk_rim"] = (0.35 + 0.65 * near) * expo
+    over["sk_rim"] = (0.35 + 0.65 * near) * expo * boost
     # ---- the cast: sitting, skating, wobbling, skates on and off
     steam_on = _switch(_cues(tl, "steam"), "on", t, False)
     for who, keys in tl["acting"].items():

@@ -159,7 +159,7 @@ SHOTS = [
     # 04 Lenny
     ("L25", "Pop waving up at the booth", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
     ("L25.3", "Lenny waves back", 2, BOOTH),
-    ("L26", "Pop: he hadn't been here in forty years, then the shrug (one shot, fewer cuts)", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
+    ("L26+0.3", "Pop: he hadn't been here in forty years, then the shrug (one shot, fewer cuts)", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
     ("L27.5", "Lenny in the booth: a plain cherry shirt, nothing on it", 2, C([-0.8, 0.6, 3.0], [0.0, 5.4, 3.0], 1.6)),
     # 05 slow song two
     ("L28", "high wide: the dim, the pool slides in from the edge and onto the Skater, dead centre", 2, HIGH),
@@ -203,7 +203,8 @@ SHOTS = [
     ("L61", "Lenny leaning out of the booth, a raised sleeve", 2, C([-0.8, 0.4, 3.0], [0.0, 5.3, 3.0], 2.3)),
     ("L62", "Pop wobbling, steady for one second, proud", 2, C([-0.6, -0.6, 1.4], [2.0, -2.8, 1.1], 2.9)),
     ("L63", "Pop at the rail, his hand out (cut away before the hands meet)", 2, C([4.3, -6.3, 1.45], [2.3, -3.75, 1.3], 3.0)),
-    ("L64", "the pool sliding round them", 2, HIGH),
+    ("L64", "the pool sliding round them: Pop and Nan on the floor inside the spotlight, from the north", 2,
+     C([2.4, 2.6, 3.2], [2.4, -3.6, 1.0], 4.2)),
     ("L65", "an empty, lit rail post, no bodies", 2, C([2.4, -5.6, 1.1], [2.4, -4.15, 0.95], 1.6)),
     ("L66", "wider: Pop standing in exactly that place, Nan beside him", 2, C([5.2, -6.4, 1.7], [2.3, -3.6, 1.2], 3.8)),
     # 09 two of them
@@ -220,11 +221,13 @@ SHOTS = [
 
 # per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
 # flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
-EXPO = {"L25.3": 0.55, "L04": 2.6, "L04.4": 0.8, "L13": 1.9, "L14": 0.8, "L15": 0.7, "L08": 1.0, "L17": 1.4, "L18": 1.18, "L19": 1.03, "L20": 1.53, "L21": 1.09, "L22": 0.77, "L23": 0.87, "L24": 1.49, "L27.5": 0.55, "L28": 1.18, "L30": 0.81, "L31": 0.77, "L31.2": 1.08, "L32": 1.51, "L33": 1.04, "L34": 1.17, "L35": 0.92, "L36": 1.13, "L37": 1.42, "L38": 2.5, "L39": 0.99, "L40": 1.19, "P01+0.55": 1.6, "L42": 1.7, "L43": 0.93, "L44": 0.96, "L45": 0.72, "L46": 1.34, "L47": 2.49, "L48": 2.13, "L49": 1.26, "L50": 1.21, "L51": 0.79, "L52": 1.13, "L53": 2.1, "L54": 0.89, "L55": 1.28, "L56": 1.05, "L57": 0.75, "L58": 0.8, "L59": 0.84, "L60": 1.86, "L61": 1.47, "L62": 1.04, "L63": 0.99, "L64": 1.32, "L65": 0.89, "L66": 0.95, "L67": 0.8, "L68": 0.87, "L69": 0.7, "L70": 1.33, "L71": 1.49, "L72": 0.7, "L73": 0.76}
+EXPO = {"L25.3": 0.55, "L04": 2.6, "L04.4": 0.8, "L13": 1.9, "L14": 0.8, "L15": 0.7, "L08": 1.0, "L17": 1.4, "L18": 1.18, "L19": 1.03, "L20": 1.53, "L21": 1.09, "L22": 0.77, "L23": 0.87, "L24": 1.49, "L27.5": 0.55, "L28": 1.18, "L30": 0.81, "L31": 0.77, "L31.2": 1.08, "L32": 1.51, "L33": 1.04, "L34": 1.17, "L35": 0.92, "L36": 1.13, "L37": 1.42, "L38": 2.5, "L39": 0.99, "L40": 1.19, "P01+0.55": 1.6, "L42": 1.7, "L43": 0.93, "L44": 0.96, "L45": 0.72, "L46": 1.34, "L47": 2.49, "L48": 2.13, "L49": 1.5, "L50": 1.5, "L51": 0.79, "L52": 1.13, "L53": 2.1, "L54": 0.89, "L55": 1.28, "L56": 1.05, "L57": 0.75, "L58": 0.8, "L59": 0.84, "L60": 1.86, "L61": 1.47, "L62": 1.04, "L63": 0.99, "L64": 1.32, "L65": 0.89, "L66": 0.95, "L67": 0.8, "L68": 0.87, "L69": 0.7, "L70": 1.33, "L71": 1.49, "L72": 0.7, "L73": 0.76}
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.0 if step == 1 else 0.004, "step": step, "what": what}
+    if str(at) in ("L49", "L50"):
+        s["skboost"] = 3.2
     if str(at) in EXPO:
         s["expo"] = EXPO[str(at)]
     if i:
@@ -387,7 +390,7 @@ for i in range(len(LAP)):
 # ---- Lenny at the booth
 put("lenny", 0, [0.0, 5.5, 1.74], yaw=0, expr="neutral")
 key("lenny", "L25.3", arms=[0, 70], expr="grin", blend=1.2)
-key("lenny", "L26", arms=[0, 0], blend=0.5)
+key("lenny", "L26+0.3", arms=[0, 0], blend=0.5)
 key("lenny", "L54", expr="grin", head=[10, 0])
 key("lenny", "L61", expr="grin", lean=14, arms=[0, 165], head=[0, 0], blend=0.4)
 key("lenny", "L61>", lean=0, arms=[0, 0], blend=0.5)
