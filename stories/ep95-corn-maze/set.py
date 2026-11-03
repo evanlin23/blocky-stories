@@ -1,295 +1,251 @@
-"""Corn Maze (ep95): the narrator is the maze itself. A big gold cornfield cut with straw paths.
+"""Corn Maze (ep95): the narrator is the maze itself. Gold corn, straw paths, twelve iron lanterns, one big face of paths.
 
-THE FIELD is a grid of 0.5 m cells (CELL). A "layout" is a set of path cells made from shapes (disc, ring, arc,
-polyline), so later shots reuse the same tiles: "face" (S34, the reveal), "entrance" (S01 close-up corridor), and
-stubs for "star", "tractor", "pig" and "partial" (S17's one curve of the smile). Each layout is built once as a pair of
-meshes (corn bodies and paler tassels) at its own place, and animate() shows the one a shot asks for (story
-"shot_layout": {"S34": "face"}), so a path is open in one shot and different in the next and never moves on screen.
+SCENES live 400 m apart (geo.ORG) so a shot never sees another's props. Each scene is a 40 x 64 m field of corn on a 0.5 m
+cell grid cut with path shapes (geo.layout_shapes). A "layout" is built lazily the first time a shot asks for it (story
+"shot_layout"), once, and shown only in the shots that name it, so a path is open in one shot and different in the next
+and never moves on screen. Stalks rustle (the leaf and tassel meshes shake against the stalks) and lean toward the paths.
 
-THE MARKER (the rule meter): twelve small lantern icons in the top-left corner, parented to the camera (a 3D panel,
-no text). The count lit comes from the cue "lanterns" {"n": 0..12} (default 12).
-Nothing here has text, and no two surfaces share a plane (the paths are a ground plane, the quilt stands 2 cm proud).
+THE MARKER (the rule meter): twelve lantern icons parented to the camera's top-left corner, each fading with its
+lantern (cues out0..out11 and icon_up). THE LOOKS (LOOKS) set the suns, the world and the corn colours per shot and blend
+from the lantern look into moonlight when the last lantern is out (cue "moon").
+Nothing here has text, and no two surfaces share a plane.
 """
 
 from __future__ import annotations
 
 import math
+import sys
+from pathlib import Path
 
 import bpy
 
-CELL = 0.5
-FW, FH = 40.0, 64.0           # field size in metres (x, y), centred on its layout origin
-BOX_FACES = [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import geo as G  # noqa: E402
+
+CELL = G.CELL
 
 
-def h01(*xs):
-    n = 0
-    for x in xs:
-        n = (n * 1103515245 + int(x) * 12345 + 12345) & 0x7FFFFFFF
-    return ((n >> 8) & 0xFFFF) / 65535.0
+def ss(x):
+    x = min(1.0, max(0.0, x))
+    return x * x * (3 - 2 * x)
 
 
-# ------------------------------------------------------------------------------------------------ layouts
-def disc(cx, cy, r):
-    return lambda x, y: (x - cx) ** 2 + (y - cy) ** 2 <= r * r
+# ------------------------------------------------------------------------------------------------ the corn
+BOX_FACES_NP = [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)]
 
 
-def ring(cx, cy, rx, ry, w):
-    def f(x, y):
-        d = math.hypot((x - cx) / rx, (y - cy) / ry)
-        return abs(d - 1.0) * min(rx, ry) <= w / 2
-    return f
-
-
-def arc(cx, cy, r, a0, a1, w):
-    """A band of width w along a circle of radius r from angle a0 to a1 (degrees), with round ends."""
-    def f(x, y):
-        dx, dy = x - cx, y - cy
-        d = math.hypot(dx, dy)
-        a = math.degrees(math.atan2(dy, dx)) % 360
-        lo, hi = a0 % 360, a1 % 360
-        inside = lo <= a <= hi if lo <= hi else (a >= lo or a <= hi)
-        if inside and abs(d - r) <= w / 2:
-            return True
-        for ang in (a0, a1):
-            ex, ey = cx + r * math.cos(math.radians(ang)), cy + r * math.sin(math.radians(ang))
-            if (x - ex) ** 2 + (y - ey) ** 2 <= (w / 2) ** 2:
-                return True
-        return False
-    return f
-
-
-def seg(x0, y0, x1, y1, w):
-    def f(x, y):
-        dx, dy = x1 - x0, y1 - y0
-        L2 = dx * dx + dy * dy or 1.0
-        u = max(0.0, min(1.0, ((x - x0) * dx + (y - y0) * dy) / L2))
-        return (x - (x0 + u * dx)) ** 2 + (y - (y0 + u * dy)) ** 2 <= (w / 2) ** 2
-    return f
-
-
-def poly(pts, w, closed=False):
-    segs = [seg(*pts[i], *pts[i + 1], w) for i in range(len(pts) - 1)]
-    if closed:
-        segs.append(seg(*pts[-1], *pts[0], w))
-    return lambda x, y: any(s(x, y) for s in segs)
-
-
-EYE_L, EYE_R = (-6.2, 12.0), (6.6, 11.0)
-HEAD = (0.0, -0.5, 14.5, 24.5)
-
-
-def _wob(th):
-    return 1 + 0.05 * math.sin(3 * th + 0.7) + 0.035 * math.sin(5 * th + 2.1) + 0.02 * math.sin(9 * th)
-
-
-def maze_nodes(seed=95, na=13, nb=21):
-    """A perfect maze (recursive backtracker) on a na x nb node grid. Returns the set of open edges."""
-    import random
-    rnd = random.Random(seed)
-    seen, edges, stack = {(0, 0)}, set(), [(0, 0)]
-    while stack:
-        a, b = stack[-1]
-        nb_ = [(a + dx, b + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
-               if 0 <= a + dx < na and 0 <= b + dy < nb and (a + dx, b + dy) not in seen]
-        if not nb_:
-            stack.pop()
-            continue
-        n = rnd.choice(nb_)
-        seen.add(n)
-        edges.add(frozenset(((a, b), n)))
-        stack.append(n)
-    for _ in range(14):     # a few loops so it is not a tree
-        a, b = rnd.randrange(na - 1), rnd.randrange(nb - 1)
-        edges.add(frozenset(((a, b), rnd.choice(((a + 1, b), (a, b + 1))))))
-    return edges
-
-
-def maze_fn(w=FW, h=FH):
-    """Path test of the field-wide maze: 1.5 m corridors between 1.5 m walls (a 6 cell pitch)."""
-    edges = maze_nodes()
+def build_corn(kit, name, origin, mats, shapes, lean=None, w=G.FW, h=G.FH, hmax=2.0, leaf=1.0, stalk=1.0, nbl=4):
+    """On every wall cell a stalk, a tassel and nbl long leaf blades arcing out and down. Returns (body, leaves, tassels).
+    lean: None, (lx, ly) or a function (x, y) -> (lx, ly): the top of a stalk shifts by lean * z / 2.5."""
+    import numpy as np
     nx, ny = int(w / CELL), int(h / CELL)
-
-    def f(x, y):
-        i, j = int((x + w / 2) / CELL), int((y + h / 2) / CELL)
-        ua, va, a, b = i % 6, j % 6, i // 6, j // 6
-        iu, iv = 1 <= ua <= 3, 1 <= va <= 3
-        if iu and iv:
-            return a < 13 and b < 21
-        if iv and not iu:
-            l = (i - 4) // 6
-            return frozenset(((l, b), (l + 1, b))) in edges
-        if iu and not iv:
-            l = (j - 4) // 6
-            return frozenset(((a, l), (a, l + 1))) in edges
-        return False
-    return f
-
-
-def head_outside(x, y):
-    cx, cy, rx, ry = HEAD
-    th = math.atan2((y - cy) / ry, (x - cx) / rx)
-    return math.hypot((x - cx) / rx, (y - cy) / ry) / _wob(th) > 1.0
-
-
-def outline_band(x, y):
-    cx, cy, rx, ry = HEAD
-    th = math.atan2((y - cy) / ry, (x - cx) / rx)
-    rho = math.hypot((x - cx) / rx, (y - cy) / ry) / _wob(th)
-    if abs(rho - 1.0) * rx > 1.0:
-        return False
-    d = math.degrees(th) % 360
-    return not any(lo <= d <= hi for lo, hi in ((20, 36), (98, 116), (158, 171), (222, 335)))
-
-
-def eye_paths(c, outer, inner, gap_o, gap_i, tilt=0.0, sq=1.0):
-    ex, ey = c
-    return [arc(ex, ey, outer, gap_o[1], gap_o[0] + 360, 1.9), arc(ex, ey, inner, gap_i[1], gap_i[0] + 360, 1.6),
-            seg(ex + outer * math.cos(math.radians(200)), ey + outer * math.sin(math.radians(200)),
-                ex + inner * math.cos(math.radians(200)), ey + inner * math.sin(math.radians(200)), 1.0),
-            seg(ex + inner * math.cos(math.radians(40 + tilt)), ey + inner * math.sin(math.radians(40 + tilt)), ex, ey, 1.0),
-            disc(ex, ey, 1.05)]
-
-
-def face_fn():
-    mz = maze_fn()
-    feats = []
-    feats += eye_paths(EYE_L, 4.3, 2.3, (95, 130), (290, 325))            # left eye: round, pupil room for June
-    ex, ey = EYE_R                                                       # right eye: smaller, lower, a different maze
-    feats += [arc(ex, ey, 4.0, 110, 60 + 360, 1.9), arc(ex + 0.4, ey - 0.3, 2.0, 220, 130 + 360, 1.5),
-              seg(ex + 4.0, ey - 1.0, ex + 4.0, ey - 3.2, 1.2), seg(ex - 3.5, ey + 1.9, ex - 3.5, ey + 3.6, 1.0),
-              seg(ex + 2.0, ey - 0.1, ex + 0.4, ey - 0.3, 1.0), disc(ex + 0.9, ey + 0.4, 0.8)]
-    pts = [(-10.8, -12.8), (-9.6, -15.8), (-7.0, -18.2), (-3.4, -19.6), (0.6, -20.0), (4.4, -19.2), (7.8, -16.8),
-           (10.0, -14.0), (10.9, -11.6)]
-    feats += [poly(pts, 2.7)]
-    for (sx, sy, ex2, ey2) in ((-9.0, -15.2, -9.0, -12.0), (-3.4, -19.6, -3.4, -22.6), (4.4, -19.2, 4.8, -16.2),
-                               (7.8, -16.8, 10.6, -17.2), (-5.4, -18.6, -6.6, -21.6), (0.6, -20.0, 0.6, -22.8)):
-        feats.append(seg(sx, sy, ex2, ey2, 1.1))
-    feats += [seg(-2.0, 3.0, 1.0, 3.0, 1.1), seg(1.0, 3.0, 1.0, -1.2, 1.1), seg(1.0, -1.2, 3.4, -1.2, 1.1),   # a nose-like branch
-              seg(-11.0, -3.0, -8.0, -3.0, 1.1), seg(-8.0, -3.0, -8.0, -7.2, 1.1), seg(9.0, 2.0, 6.0, 2.0, 1.1)]
-    cx, cy, rx, ry = HEAD
-    for ang, ln in ((60, 2.8), (205, 2.4), (285, 3.2), (130, 2.0)):       # dead-end stubs from the outline inward
-        th = math.radians(ang)
-        p0 = (cx + rx * _wob(th) * math.cos(th), cy + ry * _wob(th) * math.sin(th))
-        feats.append(seg(p0[0], p0[1], p0[0] - ln * math.cos(th), p0[1] - ln * math.sin(th) * 1.0, 1.1))
-    # inside the head everything is corn but the features; outside is the maze
-    return lambda x, y: (head_outside(x, y) and mz(x, y)) or outline_band(x, y) or any(f(x, y) for f in feats)
-
-
-def layout_shapes(name):
-    if name == "face":     # the face is a maze: see face_fn
-        return [face_fn()]
-    if name == "partial":  # S17: only one long curve, the edge of the smile
-        return [arc(0, 3.0, 14.0, 215, 300, 2.4)]
-    if name == "star":     # S42
-        pts = [(12 * math.sin(math.radians(144 * k)), 12 * math.cos(math.radians(144 * k)) + 2) for k in range(5)]
-        return [poly(pts + [pts[0]], 2.0), ring(0, 2, 15, 15, 1.6)]
-    if name == "tractor":  # S43: body, cab, two wheels, an exhaust (TODO: refine)
-        return [poly([(-9, -4), (9, -4), (9, 6), (-9, 6)], 1.8, True), poly([(-2, 6), (-2, 14), (7, 14), (7, 6)], 1.8, True),
-                ring(-7, -8, 6, 6, 1.8), ring(9, -7, 3.2, 3.2, 1.8)]
-    if name == "pig":      # S44: body, head, ear, snout, legs (TODO: refine)
-        return [ring(-2, 0, 12, 8, 1.8), ring(13, 3, 5, 5, 1.8), disc(15.5, 2, 1.6), seg(-8, -8, -8, -15, 1.8),
-                seg(4, -8, 4, -15, 1.8)]
-    if name == "entrance":  # S01/S02: a straight corridor, 3 m wide, that bends out of sight
-        return [seg(0, -40, 0, 0, 3.0), seg(0, 0, 8, 7, 3.0), seg(8, 7, 8, 40, 3.0)]
-    raise KeyError(name)
-
-
-def build_corn(kit, name, origin, mats, lean=(0.0, 0.0), w=FW, h=FH, hmax=2.0, leaf=1.0, stalk=1.0, nbl=4):
-    """Reusable corn: on every wall cell a stalk bundle, a tassel and five long leaf blades arcing out and down.
-    Returns (bodies, leaves+tassels) objects; ~25 faces a cell."""
-    shapes = layout_shapes(name)
-    ox, oy = origin
-    nx, ny = int(w / CELL), int(h / CELL)
-    bv, bf, lv, lf, tv, tf = [], [], [], [], [], []
-
-    def P(cx, cy, x, y, z):
-        return (cx + x + lean[0] * z / 2.5, cy + y + lean[1] * z / 2.5, z)
-
+    rng = np.random.default_rng(95)
+    R = rng.random((nx, ny, 32))
+    keep = []
+    xs = [-w / 2 + (i + 0.5) * CELL for i in range(nx)]
+    ys = [-h / 2 + (j + 0.5) * CELL for j in range(ny)]
     for i in range(nx):
         for j in range(ny):
-            x, y = -w / 2 + (i + 0.5) * CELL, -h / 2 + (j + 0.5) * CELL
-            if any(s(x, y) for s in shapes):
-                continue
-            cx, cy = ox + x, oy + y
-            hh = hmax + 0.4 * (h01(i, j, 1) - 0.5) * 2
-            hw = (0.15 + 0.03 * h01(i, j, 2)) * stalk
-            jx, jy = (h01(i, j, 3) - 0.5) * 0.12, (h01(i, j, 4) - 0.5) * 0.12
-            for (vs, fs, z0, z1, a0, a1) in ((bv, bf, 0.0, hh, hw, hw * 0.8), (tv, tf, hh - 0.05, hh + 0.16, hw * 0.9, 0.05)):
-                k = len(vs)
-                for (zz, aa) in ((z0, a0), (z1, a1)):
-                    for (sx, sy) in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
-                        vs.append(P(cx, cy, jx + sx * aa, jy + sy * aa, zz))
-                fs.extend([tuple(k + q for q in f) for f in BOX_FACES])
-            for b in range(nbl):    # leaf blades: a bent strip from the stalk, out and down
-                ang = (b / nbl + 0.15 * h01(i, j, 10 + b)) * 2 * math.pi + h01(i, j, 5) * 6.28
-                z0 = hh * (0.35 + 0.5 * b / nbl + 0.05 * h01(i, j, 20 + b))
-                ca, sa = math.cos(ang), math.sin(ang)
-                nxv, nyv = -sa, ca
-                prof = ((0.0, 0.0, 0.0), (0.22, 0.14, 0.10), (0.42, 0.18, 0.02), (0.55, 0.05, 0.0))   # out, up, half-width
-                prof = ((0.05, 0.0, 0.09), (0.26, 0.12, 0.13), (0.46, 0.1, 0.11), (0.62, -0.08, 0.03))
-                k = len(lv)
-                for (o, u, wd) in prof:
-                    for sgn in (-1, 1):
-                        lv.append(P(cx, cy, jx + ca * o * leaf + nxv * wd * leaf * sgn, jy + sa * o * leaf + nyv * wd * leaf * sgn, z0 + u * leaf))
-                for q in range(len(prof) - 1):
-                    lf.append((k + 2 * q, k + 2 * q + 1, k + 2 * q + 3, k + 2 * q + 2))
-    body = kit.mesh_obj(f"corn.{name}", bv, bf, mats["corn"], smooth=False)
-    tass = kit.mesh_obj(f"corn.{name}.leaf", lv, lf, mats["leaf"], smooth=False)
-    top = kit.mesh_obj(f"corn.{name}.top", tv, tf, mats["tassel"], smooth=False)
-    return body, tass, top
+            x, y = xs[i], ys[j]
+            if not any(s(x, y) for s in shapes):
+                keep.append((i, j))
+    ij = np.array(keep, dtype=int)
+    N = len(ij)
+    Rk = R[ij[:, 0], ij[:, 1]]
+    cx = np.array(xs)[ij[:, 0]] + origin[0]
+    cy = np.array(ys)[ij[:, 1]] + origin[1]
+    if lean is None:
+        lx = ly = np.zeros(N)
+    elif callable(lean):
+        L = np.array([lean(xs[i], ys[j]) for i, j in keep])
+        lx, ly = L[:, 0], L[:, 1]
+    else:
+        lx, ly = np.full(N, lean[0]), np.full(N, lean[1])
+    hh = hmax + 0.8 * (Rk[:, 0] - 0.5)
+    hw = (0.15 + 0.03 * Rk[:, 1]) * stalk
+    jx, jy = (Rk[:, 2] - 0.5) * 0.12, (Rk[:, 3] - 0.5) * 0.12
+    signs = np.array([(-1, -1), (1, -1), (1, 1), (-1, 1)], dtype=float)
+
+    def prism(z0, z1, a0, a1):
+        v = np.zeros((N, 8, 3))
+        for lvl, (z, a) in enumerate(((z0, a0), (z1, a1))):
+            for q in range(4):
+                v[:, lvl * 4 + q, 0] = cx + jx + signs[q, 0] * a + lx * z / 2.5
+                v[:, lvl * 4 + q, 1] = cy + jy + signs[q, 1] * a + ly * z / 2.5
+                v[:, lvl * 4 + q, 2] = z
+        return v
+
+    def faces_for(count, per, pattern):
+        base = (np.arange(count) * per)[:, None, None]
+        return (base + np.array(pattern)[None, :, :]).reshape(-1, 4)
+
+    body_v = prism(np.zeros(N), hh, hw, hw * 0.8)
+    top_v = prism(hh - 0.05, hh + 0.16, hw * 0.9, np.full(N, 0.05))
+    prof = ((0.05, 0.0, 0.09), (0.26, 0.12, 0.13), (0.46, 0.1, 0.11), (0.62, -0.08, 0.03))
+    lv = np.zeros((N, nbl, len(prof) * 2, 3))
+    for b in range(nbl):
+        ang = (b / nbl + 0.15 * Rk[:, 10 + b]) * 2 * np.pi + Rk[:, 5] * 6.28
+        z0 = hh * (0.35 + 0.5 * b / nbl + 0.05 * Rk[:, 16 + b])
+        ca, sa = np.cos(ang), np.sin(ang)
+        for p, (o, u, wd) in enumerate(prof):
+            for s_i, sg in enumerate((-1, 1)):
+                z = z0 + u * leaf
+                lv[:, b, p * 2 + s_i, 0] = cx + jx + ca * o * leaf + (-sa) * wd * leaf * sg + lx * z / 2.5
+                lv[:, b, p * 2 + s_i, 1] = cy + jy + sa * o * leaf + ca * wd * leaf * sg + ly * z / 2.5
+                lv[:, b, p * 2 + s_i, 2] = z
+    lpat = [(2 * q, 2 * q + 1, 2 * q + 3, 2 * q + 2) for q in range(len(prof) - 1)]
+    body = kit.mesh_obj(f"corn.{name}", body_v.reshape(-1, 3).tolist(), faces_for(N, 8, BOX_FACES_NP).tolist(), mats["corn"])
+    leaves = kit.mesh_obj(f"corn.{name}.leaf", lv.reshape(-1, 3).tolist(),
+                          faces_for(N * nbl, len(prof) * 2, lpat).tolist(), mats["leaf"])
+    tops = kit.mesh_obj(f"corn.{name}.top", top_v.reshape(-1, 3).tolist(), faces_for(N, 8, BOX_FACES_NP).tolist(), mats["tassel"])
+    return body, leaves, tops
 
 
-# ------------------------------------------------------------------------------------------------ the set
+def lean_in(shapes, k=0.5, reach=2.0):
+    """A stalk leans toward the nearest path (within reach metres), so the walls bow in over it."""
+    dirs = ((1, 0), (-1, 0), (0, 1), (0, -1))
+
+    def f(x, y):
+        for d in range(1, int(reach / CELL) + 1):
+            for dx, dy in dirs:
+                px, py = x + dx * d * CELL, y + dy * d * CELL
+                if any(s(px, py) for s in shapes):
+                    q = k * (1.0 if d <= 3 else 0.7)
+                    return (dx * q, dy * q)
+        return (0.0, 0.0)
+    return f
+
+
+LAYOUT_CFG = {
+    "face": dict(nbl=4), "partial": dict(nbl=3, hmax=1.35, leaf=0.9), "star": dict(nbl=3), "tractor": dict(nbl=3), "pig": dict(nbl=3),
+    "entrance": dict(nbl=5, leaf=1.25, stalk=0.8, lean=(0.0, -0.5)), "day": dict(nbl=4, leaf=1.1, lean="in"),
+    "closed": dict(nbl=4, leaf=1.1, lean="in", k=0.6), "open": dict(nbl=4, leaf=1.1, lean="in", k=0.6),
+    "summer": dict(nbl=4, hmax=1.3, leaf=0.9, lean="in", k=0.25), "dawn": dict(nbl=4, leaf=1.1, lean="in", k=0.35),
+    "new": dict(nbl=4, hmax=1.6, leaf=1.0, lean="in", k=0.3),
+}
+
+
+def make_layout(kit, name, M):
+    cfg = dict(LAYOUT_CFG[name])
+    shapes = G.layout_shapes(name)
+    lean = cfg.pop("lean", None)
+    k = cfg.pop("k", 0.45)
+    if lean == "in":
+        lean = lean_in(shapes, k)
+    w, h = G.SIZE.get(name, (G.FW, G.FH))
+    objs = build_corn(kit, name, G.ORG[name], M, shapes, lean=lean, w=w, h=h, **cfg)
+    for ob in objs:
+        ob.hide_render = True
+    return objs
+
+
+# ------------------------------------------------------------------------------------------------ materials
+CORN_KEYS = ("corn", "leaf", "tassel", "straw", "grass")
+
+
 def materials(kit):
-    return {
+    M = {
         "corn": kit.plastic("#d2ae3c", 0.85, "corn body", spec=0.1),
         "leaf": kit.plastic("#e6c552", 0.8, "corn leaf", spec=0.12),
         "tassel": kit.plastic("#d9b645", 0.8, "corn tassel", spec=0.1),
         "straw": kit.plastic("#e8d39a", 0.95, "straw", spec=0.05),
-        "grass": kit.plastic("#27443f", 0.95, "night grass", spec=0.05),
+        "grass": kit.plastic("#27443f", 0.95, "ground grass", spec=0.05),
         "iron": kit.plastic("#2b2b30", 0.5, "iron", spec=0.4),
         "pole": kit.plastic("#7a5230", 0.8, "pole", spec=0.1),
-        "flame": kit.emit("#ff7f10", 1.0, "flame"),
-        "flamecore": kit.emit("#ffb23a", 1.3, "flame core"),
-        "glass": kit.emit("#c9792a", 0.35, "lantern glass"),
+        "stroke": kit.emit("#f2c94c", 1.0, "stroke"),
         "quilt1": kit.plastic("#d8443a", 0.9, "quilt red", spec=0.05),
         "quilt2": kit.plastic("#f2c94c", 0.9, "quilt gold", spec=0.05),
         "quilt3": kit.plastic("#3d6ea6", 0.9, "quilt blue", spec=0.05),
-        "torch": kit.emit("#ffd8a0", 1.4, "torch"),
-        "stroke": kit.emit("#f2c94c", 1.0, "stroke"),
+        "quilt4": kit.plastic("#7ccf5a", 0.9, "quilt green", spec=0.05),
+        "torch": kit.emit("#ffd8a0", 1.6, "torch"),
+        "halo": kit.emit("#ffc070", 0.9, "halo"),
+        "halo2": kit.emit("#ffb050", 0.45, "halo2"),
         "plate": kit.plastic("#14121c", 0.9, "icon plate", spec=0.05),
         "i_pole": kit.plastic("#c99a62", 0.8, "icon pole", spec=0.05),
         "i_iron": kit.plastic("#9a98a6", 0.6, "icon iron", spec=0.1),
-        "i_glass_lit": kit.emit("#ff9a2a", 1.6, "icon glass lit"),
         "i_flame": kit.emit("#fff2a8", 1.8, "icon flame"),
         "i_glass_dark": kit.plastic("#1c1a24", 0.9, "icon glass dark", spec=0.05),
+        "wood": kit.plastic("#9a6a3c", 0.8, "wood", spec=0.05),
+        "wood2": kit.plastic("#c9a06a", 0.8, "pale wood", spec=0.05),
+        "orange": kit.plastic("#ff7a1f", 0.55, "pumpkin", spec=0.2),
+        "stem": kit.plastic("#5a7a2a", 0.8, "stem", spec=0.05),
+        "hay": kit.plastic("#e0bc58", 0.95, "hay", spec=0.03),
+        "strap": kit.plastic("#7a4a2a", 0.8, "strap", spec=0.05),
+        "cloth1": kit.plastic("#3d6ea6", 0.9, "scarecrow shirt", spec=0.05),
+        "sack": kit.plastic("#d8c08a", 0.95, "sack", spec=0.03),
+        "ink": kit.plastic("#1d1710", 0.9, "ink", spec=0.03),
+        "red": kit.plastic("#d8443a", 0.55, "truck red", spec=0.3),
+        "dark": kit.plastic("#23232a", 0.6, "dark", spec=0.2),
+        "glasswin": kit.plastic("#9fb8d0", 0.2, "cab glass", spec=0.6),
+        "box": kit.plastic("#b98a54", 0.9, "cardboard", spec=0.03),
+        "box2": kit.plastic("#cfa56c", 0.9, "cardboard light", spec=0.03),
+        "barn": kit.plastic("#a83a30", 0.8, "barn red", spec=0.05),
+        "roof": kit.plastic("#4a4f5c", 0.8, "roof", spec=0.05),
+        "wall": kit.plastic("#efe6d4", 0.8, "house wall", spec=0.05),
+        "wall2": kit.plastic("#7fa3c8", 0.8, "new house wall", spec=0.05),
+        "trim": kit.plastic("#fbf8f0", 0.7, "trim", spec=0.05),
+        "interior": kit.plastic("#f2dcc0", 0.9, "interior", spec=0.03),
+        "floor": kit.plastic("#8a6a48", 0.9, "floor", spec=0.03),
+        "mower": kit.plastic("#d8443a", 0.5, "mower red", spec=0.3),
+        "steel": kit.plastic("#b8bcc4", 0.35, "steel", spec=0.5),
+        "thermos": kit.plastic("#2f8f6a", 0.4, "thermos", spec=0.4),
+        "cup": kit.plastic("#f4efe4", 0.5, "cup", spec=0.3),
+        "cocoa": kit.plastic("#5a3322", 0.4, "cocoa", spec=0.3),
+        "steam": kit.emit("#f4f6ff", 0.9, "steam"),
+        "cob": kit.plastic("#f2c94c", 0.6, "cob", spec=0.2),
+        "husk": kit.plastic("#7ccf5a", 0.8, "husk", spec=0.05),
+        "shoot": kit.plastic("#7ccf5a", 0.7, "shoot", spec=0.1),
+        "flash_body": kit.plastic("#d8443a", 0.4, "flashlight", spec=0.4),
+        "lens": kit.emit("#fff0c8", 3.0, "flash lens"),
+        "glow": kit.emit("#ffb347", 0.7, "pane glow"),
     }
+    return M
 
 
-def build_lantern(kit, M, ox, oy):
-    kit.box("pole", (0.2, 0.2, 2.5), (ox, oy, 1.25), M["pole"], bevel=0.02)
-    for k in range(2):        # the lore tally: two strokes on the pole, proud of its face
-        kit.box(f"stroke{k}", (0.03, 0.03, 0.34), (ox - 0.1 - 0.015, oy - 0.04 + k * 0.08, 1.35), M["stroke"])
+# ------------------------------------------------------------------------------------------------ lanterns
+def build_lantern(kit, ctx, M, k, ox, oy, tally=False, energy=260.0):
+    """An iron lantern on a pole. Its flame, glass and light have their own materials so it can fade by itself."""
+    mats = {"fl": kit.emit("#ff8a1a", 1.7, f"lflame{k}"), "core": kit.emit("#fff1b8", 2.0, f"lcore{k}"),
+            "pane": kit.emit("#ffb347", 0.7, f"lpane{k}"), "side": kit.emit("#ffb347", 0.4, f"lside{k}")}
+    kit.box(f"lant{k}.pole", (0.2, 0.2, 2.5), (ox, oy, 1.25), M["pole"], bevel=0.02)
+    if tally:   # the lore tally: two gold strokes on the pole's front face, 1.5 cm proud
+        for q in range(2):
+            kit.box(f"lant{k}.stroke{q}", (0.035, 0.03, 0.34), (ox - 0.035 + q * 0.07, oy - 0.1 - 0.015, 1.35), M["stroke"])
     z = 2.55
-    kit.box("lant.base", (0.42, 0.42, 0.08), (ox, oy, z), M["iron"], bevel=0.015)
-    kit.box("lant.glass", (0.34, 0.02, 0.44), (ox, oy + 0.17, z + 0.27), M["glass"])   # the warm back pane; the front is open to see the flame
-    # a small amber flame sitting low in the glass, dipping to one side
-    kit.cyl("lant.wick", 0.03, 0.06, (ox, oy, z + 0.07), M["iron"], n=6)
-    kit.cyl("lant.flame", 0.075, 0.2, (ox + 0.015, oy, z + 0.17), M["flame"], n=8, r2=0.012, rot=(0, 0.08, 0))
-    kit.cyl("lant.core", 0.038, 0.1, (ox + 0.008, oy - 0.01, z + 0.13), M["flamecore"], n=8, r2=0.01, rot=(0, 0.08, 0))
+    kit.box(f"lant{k}.base", (0.42, 0.42, 0.08), (ox, oy, z), M["iron"], bevel=0.015)
+    kit.box(f"lant{k}.back", (0.34, 0.02, 0.44), (ox, oy + 0.17, z + 0.27), mats["pane"])
+    for sx in (-1, 1):
+        kit.box(f"lant{k}.side", (0.02, 0.34, 0.44), (ox + sx * 0.17, oy, z + 0.27), mats["side"])
+    kit.cyl(f"lant{k}.wick", 0.03, 0.06, (ox, oy, z + 0.07), M["iron"], n=6)
+    fl = kit.empty(f"lant{k}.fl", (ox, oy - 0.02, z + 0.1))
+    kit.sphere(f"lant{k}.bulb", 0.062, (0, 0, 0.02), mats["fl"], parent=fl, seg=10)
+    kit.cyl(f"lant{k}.tip", 0.056, 0.2, (0, 0, 0.12), mats["fl"], parent=fl, n=8, r2=0.006)
+    kit.sphere(f"lant{k}.cbulb", 0.034, (0, -0.02, 0.02), mats["core"], parent=fl, seg=8)
+    kit.cyl(f"lant{k}.ctip", 0.03, 0.12, (0, -0.02, 0.08), mats["core"], parent=fl, n=6, r2=0.004)
     for sx in (-1, 1):
         for sy in (-1, 1):
-            kit.box("lant.bar", (0.04, 0.04, 0.46), (ox + sx * 0.2, oy + sy * 0.2, z + 0.27), M["iron"])
-    kit.box("lant.cap", (0.5, 0.5, 0.07), (ox, oy, z + 0.53), M["iron"], bevel=0.015)
-    kit.cyl("lant.roof", 0.3, 0.2, (ox, oy, z + 0.67), M["iron"], n=4, r2=0.05, rot=(0, 0, math.pi / 4))
-    kit.box("lant.ring", (0.05, 0.3, 0.05), (ox, oy, z + 0.84), M["iron"])
-    kit.light("lant.light", "POINT", (ox, oy - 0.9, z + 0.9), 60, "#ffb347", size=0.15)
+            kit.box(f"lant{k}.bar", (0.04, 0.04, 0.46), (ox + sx * 0.2, oy + sy * 0.2, z + 0.27), M["iron"])
+    kit.box(f"lant{k}.cap", (0.5, 0.5, 0.07), (ox, oy, z + 0.53), M["iron"], bevel=0.015)
+    kit.cyl(f"lant{k}.roof", 0.3, 0.2, (ox, oy, z + 0.67), M["iron"], n=4, r2=0.05, rot=(0, 0, math.pi / 4))
+    kit.box(f"lant{k}.ring", (0.05, 0.3, 0.05), (ox, oy, z + 0.84), M["iron"])
+    kit.light(f"lant{k}.light", "POINT", (ox, oy - 0.1, z + 0.3), energy, "#ffb347", size=0.12)
+    ctx["lanterns"][k] = {"mats": mats, "fl": fl, "energy": energy,
+                          "base": {"fl": 1.7, "core": 2.0, "pane": 0.7, "side": 0.4}}
 
 
+def set_lantern(ctx, kit, k, g, wobble=1.0, light_mult=1.0):
+    d = ctx["lanterns"][k]
+    for key, base in d["base"].items():
+        d["mats"][key].node_tree.nodes["Emission"].inputs["Strength"].default_value = base * g
+    sc = max(0.001, g) * wobble
+    d["fl"].scale = (max(0.001, g) ** 0.5, max(0.001, g) ** 0.5, sc)
+    d["fl"].hide_render = g < 0.02
+    kit.LIGHTS[f"lant{k}.light"]["base"] = d["energy"] * g * light_mult
+
+
+# ------------------------------------------------------------------------------------------------ the marker
 def build_marker(kit, M, ctx):
-    """Twelve lantern-on-a-pole icons, 4 x 3, about 27% of the frame width, parented to the camera at its top-left.
-    Lit: amber glass and a bright flame. Out: dark glass, no flame (the iron and pole stay readable)."""
+    """Twelve lantern-on-a-pole icons, 4 x 3, about 27% of the frame width, parented to the camera's top-left."""
     cam = kit.OBJ["cam"]
     root = kit.empty("marker", (0, 0, 0), parent=cam)
     ctx["icons"] = []
@@ -301,72 +257,315 @@ def build_marker(kit, M, ctx):
         r, c = divmod(n, 4)
         e = kit.empty(f"icon{n}", (x0 + c * px, y0 + r * py, -d), parent=root)
         e.scale = (0.38, 0.38, 0.38)
+        glass = kit.emit("#ff9a2a", 1.6, f"icon glass lit {n}")
         kit.box(f"icon{n}.pole", (0.02, 0.05, 0.01), (0, -0.03, 0.0), M["i_pole"], parent=e)
         kit.box(f"icon{n}.base", (0.07, 0.012, 0.012), (0, -0.004, 0.002), M["i_iron"], parent=e)
-        gl = kit.box(f"icon{n}.glass", (0.056, 0.056, 0.012), (0, 0.032, 0.002), M["i_glass_lit"], parent=e)
-        gd = kit.box(f"icon{n}.glass.d", (0.056, 0.056, 0.012), (0, 0.032, 0.002), M["i_glass_dark"], parent=e)
-        fl = kit.cyl(f"icon{n}.flame", 0.014, 0.04, (0.002, 0.026, 0.01), M["i_flame"], n=6, r2=0.003, rot=(math.pi / 2, 0, 0), parent=e)
+        kit.box(f"icon{n}.glass.d", (0.056, 0.056, 0.012), (0, 0.032, 0.0), M["i_glass_dark"], parent=e)
+        kit.box(f"icon{n}.glass", (0.056, 0.056, 0.012), (0, 0.032, 0.004), glass, parent=e)
+        fl = kit.cyl(f"icon{n}.flame", 0.014, 0.04, (0.002, 0.026, 0.012), M["i_flame"], n=6, r2=0.003, rot=(math.pi / 2, 0, 0), parent=e)
         for sx in (-1, 1):
             kit.box(f"icon{n}.bar", (0.008, 0.06, 0.014), (sx * 0.03, 0.032, 0.004), M["i_iron"], parent=e)
         kit.box(f"icon{n}.cap", (0.07, 0.01, 0.012), (0, 0.064, 0.002), M["i_iron"], parent=e)
         kit.cyl(f"icon{n}.roof", 0.045, 0.014, (0, 0.078, 0.002), M["i_iron"], n=3, rot=(0, 0, math.pi / 2), parent=e)
-        ctx["icons"].append({"lit": [gl, fl], "dark": [gd]})
+        ctx["icons"].append({"glass": glass, "flame": fl})
 
 
-def build_farm(kit, M):
-    """Context at the field's edge (seen from above in S34): the red barn, the farmhouse and the truck."""
-    red = kit.plastic("#8a2e2a", 0.8, "barn red", spec=0.05)
-    roof = kit.plastic("#3a3f4c", 0.8, "roof", spec=0.05)
-    wall = kit.plastic("#d8d0c0", 0.8, "house wall", spec=0.05)
-    win = kit.emit("#ffb347", 3.0, "window")
-    kit.box("barn", (9, 7, 5), (-27, -37, 2.5), red)
-    kit.cyl("barn.roof", 5.6, 9.4, (-27, -37, 6.2), roof, n=4, r2=0.3, rot=(0, math.pi / 2, math.pi / 4))
-    kit.box("house", (9, 7, 4), (26, -38, 2.0), wall)
-    kit.cyl("house.roof", 6.2, 9.6, (26, -38, 5.4), roof, n=4, r2=0.3, rot=(0, math.pi / 2, math.pi / 4))
-    kit.box("house.win", (1.4, 0.1, 1.4), (24, -41.55, 2.2), win)
-    kit.box("truck", (2.2, 5.0, 1.6), (-27, -29, 0.8), kit.plastic("#d8443a", 0.6, "truck red"))
-    for k, (tx, ty) in enumerate(((-31, 38), (30, 36), (-33, 8), (33, -6))):
-        kit.prop("commontree_1", (tx, ty, 0), rot=40 * k, height=7.0, tint="#4f7a5a")
+# ------------------------------------------------------------------------------------------------ props
+def bx(kit, name, size, loc, mat, **kw):
+    return kit.box(name, size, loc, mat, **kw)
 
 
+def build_scarecrow(kit, M, ox, oy):
+    root = kit.empty("scarecrow", (ox, oy, 0))
+    kit.box("sc.post", (0.12, 0.12, 2.3), (0, 0, 1.15), M["wood"], parent=root)
+    kit.box("sc.body", (0.6, 0.34, 0.75), (0, 0, 1.45), M["cloth1"], parent=root, bevel=0.03)
+    kit.box("sc.belt", (0.62, 0.36, 0.08), (0, 0, 1.08), M["strap"], parent=root)
+    kit.box("sc.armL", (1.5, 0.12, 0.12), (-0.95, 0, 1.68), M["cloth1"], parent=root)       # pointing to its left (-x)
+    kit.box("sc.handL", (0.22, 0.2, 0.2), (-1.78, 0, 1.68), M["hay"], parent=root)
+    kit.box("sc.armR", (0.12, 0.12, 0.7), (0.4, 0, 1.4), M["cloth1"], parent=root)           # the other hangs
+    kit.box("sc.handR", (0.2, 0.2, 0.24), (0.4, 0, 1.0), M["hay"], parent=root)
+    kit.sphere("sc.head", 0.26, (0, 0, 2.02), M["sack"], parent=root, seg=12)
+    for sx in (-1, 1):
+        kit.box("sc.eye", (0.07, 0.03, 0.07), (sx * 0.1, -0.235, 2.06), M["ink"], parent=root)
+    kit.box("sc.mouth", (0.2, 0.03, 0.04), (0, -0.24, 1.94), M["ink"], parent=root)
+    kit.cyl("sc.brim", 0.44, 0.04, (0, 0, 2.2), M["hay"], parent=root, n=14)
+    kit.cyl("sc.crown", 0.22, 0.2, (0, 0, 2.32), M["hay"], parent=root, n=12)
+    for i in range(5):    # straw sticking out of the shirt hem
+        kit.box("sc.straw", (0.04, 0.04, 0.3), (-0.24 + i * 0.12, -0.05, 0.95), M["hay"], parent=root, rot=(0.15, 0, 0.1 * (i - 2)))
+
+
+def build_pumpkin(kit, M, ox, oy):
+    root = kit.empty("pumpkin", (ox, oy, 0))
+    p = kit.sphere("pk.body", 0.8, (0, 0, 0.62), M["orange"], parent=root, seg=20)
+    p.scale = (1.0, 1.0, 0.8)
+    for k in range(6):
+        a = k * math.pi / 3
+        r = kit.sphere("pk.rib", 0.34, (0.5 * math.cos(a), 0.5 * math.sin(a), 0.62), M["orange"], parent=root, seg=10)
+        r.scale = (0.55, 0.55, 1.5)
+    kit.box("pk.stem", (0.16, 0.16, 0.3), (0, 0, 1.28), M["stem"], parent=root, rot=(0.15, 0, 0.3))
+
+
+def build_bales(kit, M, ox, oy):
+    for i, (dx, dy, z) in enumerate(((0, 0, 0.25), (0, -1.1, 0.25), (0, -0.55, 0.75), (-1.1, 0.0, 0.25))):
+        kit.box(f"bale{i}", (0.5, 1.0, 0.5), (ox + dx, oy + dy, z), M["hay"], bevel=0.03)
+        for s in (-0.28, 0.28):
+            kit.box(f"bale{i}.strap", (0.52, 0.04, 0.52), (ox + dx, oy + dy + s, z), M["strap"])
+
+
+def build_board(kit, M, ox, oy):
+    """The entrance board: two posts and a pale board with one arrow glyph of our own (no letters)."""
+    for sx in (-0.62, 0.62):
+        kit.box("board.post", (0.12, 0.12, 2.0), (ox + sx, oy, 1.0), M["wood"])
+    kit.box("board", (1.4, 0.08, 0.95), (ox, oy, 1.55), M["wood2"], bevel=0.02)
+    kit.box("board.shaft", (0.7, 0.04, 0.14), (ox - 0.12, oy - 0.05, 1.55), M["orange"])
+    kit.cyl("board.head", 0.28, 0.04, (ox + 0.4, oy - 0.05, 1.55), M["orange"], n=3, rot=(math.pi / 2, 0, 0))
+
+
+def build_phone(kit, M, name, loc, up=False):
+    s = kit.box(name, (0.075, 0.15, 0.014), loc, M["dark"], bevel=0.005)
+    if up:
+        kit.box(name + ".scr", (0.065, 0.14, 0.004), (loc[0], loc[1], loc[2] + 0.009), M["lens"])
+    return s
+
+
+def build_truck(kit, M, name, with_boxes=True):
+    """A red pickup facing -y (front at -y), 2 m wide, 4.8 m long. Returns the root empty."""
+    root = kit.empty(name, (0, 0, 0))
+    kit.box(f"{name}.chassis", (1.9, 4.8, 0.55), (0, 0, 0.62), M["red"], parent=root, bevel=0.05)
+    kit.box(f"{name}.cab", (1.85, 1.9, 0.85), (0, -0.85, 1.3), M["red"], parent=root, bevel=0.08)
+    kit.box(f"{name}.glassF", (1.6, 0.04, 0.55), (0, -1.82, 1.37), M["glasswin"], parent=root)
+    for sx in (-1, 1):
+        kit.box(f"{name}.glassS", (0.04, 1.3, 0.5), (sx * 0.93, -0.85, 1.37), M["glasswin"], parent=root)
+        for sy in (-1, 1):
+            w = kit.cyl(f"{name}.wheel", 0.42, 0.28, (sx * 0.95, sy * 1.5, 0.42), M["dark"], parent=root, n=14, rot=(0, math.pi / 2, 0))
+            kit.cyl(f"{name}.hub", 0.2, 0.3, (sx * 0.96, sy * 1.5, 0.42), M["steel"], parent=root, n=10, rot=(0, math.pi / 2, 0))
+        kit.box(f"{name}.light", (0.3, 0.05, 0.16), (sx * 0.6, -2.42, 0.78), M["lens"], parent=root)
+    kit.box(f"{name}.bumper", (1.95, 0.12, 0.2), (0, -2.45, 0.5), M["steel"], parent=root)
+    for sx in (-1, 1):
+        kit.box(f"{name}.bedwall", (0.06, 1.9, 0.4), (sx * 0.92, 1.35, 1.1), M["red"], parent=root)
+    kit.box(f"{name}.bedback", (1.9, 0.06, 0.4), (0, 2.3, 1.1), M["red"], parent=root)
+    if with_boxes:
+        for i, (x, y, z, s) in enumerate(((-0.4, 1.0, 1.15, 0.6), (0.4, 1.0, 1.15, 0.6), (0.0, 1.7, 1.15, 0.7), (-0.4, 1.0, 1.75, 0.5), (0.35, 1.65, 1.8, 0.5))):
+            kit.box(f"{name}.crate{i}", (s, s, s), (x, y, z), M["box" if i % 2 == 0 else "box2"], parent=root, rot=(0, 0, 0.1 * i), bevel=0.02)
+    return root
+
+
+def build_barn(kit, M, ox, oy, rot=0.0):
+    kit.box("barn", (9, 7, 5), (ox, oy, 2.5), M["barn"], rot=(0, 0, rot))
+    kit.cyl("barn.roof", 5.6, 9.4, (ox, oy, 6.2), M["roof"], n=4, r2=0.3, rot=(0, math.pi / 2, math.pi / 4 + rot))
+    kit.box("barn.door", (3, 0.1, 3.6), (ox, oy - 3.55, 1.8), M["trim"])
+
+
+def build_house_front(kit, M, ox, oy):
+    """A house front at y = oy (its window at x = ox) with a porch roof, and a room behind the window stacked with moving boxes."""
+    t = 0.3
+    kit.box("hs.wallL", (5.0, t, 4.0), (ox - 3.3, oy, 2.0), M["wall"])
+    kit.box("hs.wallR", (5.0, t, 4.0), (ox + 3.3, oy, 2.0), M["wall"])
+    kit.box("hs.wallT", (1.6, t, 1.8), (ox, oy, 3.1), M["wall"])
+    kit.box("hs.wallB", (1.6, t, 0.9), (ox, oy, 0.45), M["wall"])
+    for sx in (-0.85, 0.85):
+        kit.box("hs.frame", (0.1, 0.4, 1.4), (ox + sx, oy - 0.05, 1.6), M["trim"])
+    for sz in (0.85, 2.35):
+        kit.box("hs.frame", (1.8, 0.4, 0.1), (ox, oy - 0.05, sz), M["trim"])
+    kit.box("hs.pane", (1.6, 0.04, 1.4), (ox, oy + 0.05, 1.6), M["glasswin"])
+    kit.box("hs.back", (8, 0.1, 4.0), (ox, oy + 4.0, 2.0), M["interior"])
+    kit.box("hs.floor", (8, 4.2, 0.1), (ox, oy + 2.0, 0.05), M["floor"])
+    kit.box("hs.side", (0.1, 4.0, 4.0), (ox - 3.9, oy + 2.0, 2.0), M["interior"])
+    kit.box("hs.side", (0.1, 4.0, 4.0), (ox + 3.9, oy + 2.0, 2.0), M["interior"])
+    kit.box("hs.ceil", (8, 4.2, 0.1), (ox, oy + 2.0, 4.0), M["interior"])
+    for i, (x, y, z, s) in enumerate(((-0.5, 1.4, 0.7, 1.1), (0.7, 1.5, 0.65, 1.0), (-0.4, 1.4, 1.75, 0.9), (0.9, 2.2, 0.6, 0.9), (0.1, 2.6, 0.6, 1.1))):
+        kit.box(f"hs.crate{i}", (s, s, s), (ox + x, oy + y, z), M["box" if i % 2 == 0 else "box2"], rot=(0, 0, 0.12 * i), bevel=0.02)
+    kit.light("hs.light", "POINT", (ox, oy + 2.0, 3.4), 220, "#ffd7a0", size=0.4)
+    # the porch roof, sloping out from the front, on two posts
+    kit.box("hs.porch", (7.4, 2.6, 0.18), (ox, oy - 1.45, 3.45), M["roof"], rot=(0.12, 0, 0))
+    for sx in (-3.4, 3.4):
+        kit.box("hs.postp", (0.2, 0.2, 3.5), (ox + sx, oy - 2.6, 1.75), M["trim"])
+    kit.box("hs.roofmain", (9.0, 5.0, 0.3), (ox, oy + 2.0, 4.3), M["roof"])
+
+
+def build_mower(kit, M):
+    root = kit.empty("mower", (0, 0, 0))
+    kit.box("mw.deck", (0.62, 0.8, 0.22), (0, 0, 0.26), M["mower"], parent=root, bevel=0.04)
+    kit.box("mw.top", (0.34, 0.4, 0.16), (0, 0.1, 0.45), M["dark"], parent=root, bevel=0.03)
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            kit.cyl("mw.wheel", 0.12, 0.08, (sx * 0.35, sy * 0.28, 0.12), M["dark"], parent=root, n=10, rot=(0, math.pi / 2, 0))
+    # a handle from the back of the deck up to where her hands are
+    kit.box("mw.handle", (0.04, 0.05, 0.9), (0, 0.55, 0.7), M["steel"], parent=root, rot=(-0.55, 0, 0))
+    kit.box("mw.bar", (0.55, 0.04, 0.04), (0, 0.78, 0.98), M["steel"], parent=root)
+    return root
+
+
+def build_quilt(kit, M, name, ox, oy, sz=1.0):
+    pats = ("quilt1", "quilt2", "quilt3", "quilt4")
+    objs = []
+    for a in range(3):
+        for b in range(3):
+            objs.append(kit.box(f"{name}.p", (0.5 * sz, 0.5 * sz, 0.04), (ox + (a - 1) * 0.5 * sz, oy + (b - 1) * 0.5 * sz, 0.02),
+                                M[pats[(a + b) % 4]]))
+    return objs
+
+
+def build_cups(kit, M, ox, oy):
+    objs = []
+    for k, dx in enumerate((-0.28, 0.28)):
+        objs.append(kit.cyl("cup", 0.065, 0.11, (ox + dx, oy - 0.75, 0.095), M["cup"], n=14))
+        objs.append(kit.cyl("cup.top", 0.052, 0.01, (ox + dx, oy - 0.75, 0.152), M["cocoa"], n=14))
+    objs.append(kit.cyl("thermos.g", 0.06, 0.3, (ox + 0.6, oy - 0.5, 0.19), M["thermos"], n=14))
+    return objs
+
+
+def hay_shoot(kit, M, name, x, y, sc=1.0):
+    kit.box(f"{name}", (0.03, 0.03, 0.32 * sc), (x, y, 0.16 * sc), M["shoot"], rot=(0.1, 0, 0.3))
+    kit.box(f"{name}.l", (0.2 * sc, 0.03, 0.02), (x + 0.07, y, 0.26 * sc), M["shoot"], rot=(0, 0.4, 0.2))
+    kit.box(f"{name}.r", (0.2 * sc, 0.03, 0.02), (x - 0.07, y, 0.2 * sc), M["shoot"], rot=(0, -0.4, -0.2))
+
+
+def trees(kit, ox, oy, n=9, ring=(55, 85)):
+    for k in range(n):
+        a = k * 2 * math.pi / n + 0.4 * math.sin(k * 7.1)
+        r = ring[0] + (ring[1] - ring[0]) * (0.5 + 0.5 * math.sin(k * 3.3))
+        kit.prop("commontree_1", (ox + r * math.cos(a), oy + r * math.sin(a), 0), rot=40 * k, height=6.0 + 2.5 * (k % 3) / 2, tint="#5a9a4a")
+
+
+# ------------------------------------------------------------------------------------------------ the set
 def build(kit, story, tl):
-    ctx = {"story": story, "kit": kit}
+    ctx = {"story": story, "kit": kit, "lanterns": {}, "built": {}, "tog": {}}
     M = materials(kit)
     ctx["M"] = M
-    # ground: grass far out, straw under the maze (the paths), with the field 2 cm proud of nothing
-    kit.plane("ground", (400, 400), (0, 0, -0.02), M["grass"])
-    ctx["layouts"] = {}
-    for name in story.get("layouts", ["face"]):
-        if name == "entrance":
-            ox = 200.0
-            kit.plane(f"straw.{name}", (FW, FH), (ox, 0, 0.0), M["straw"])
-            ctx["layouts"][name] = build_corn(kit, name, (ox, 0), M, lean=(0.0, -0.5), leaf=1.25, stalk=0.8, nbl=5)
-        else:
-            kit.plane(f"straw.{name}", (FW, FH), (0, 0, 0.0), M["straw"])
-            ctx["layouts"][name] = build_corn(kit, name, (0, 0), M)
-        for ob in ctx["layouts"][name]:
-            ob.hide_render = True
-    build_lantern(kit, M, 200.3, 0.0)
-    # June's dot in the middle of the left eye: a small lit quilt, a torch bead and a warm point light
-    ex, ey = EYE_L
+    for scene in sorted({tuple(v) for v in G.ORG.values()}):
+        kit.plane(f"ground{scene}", (300, 300), (scene[0], scene[1], -0.03), M["grass"])
+        trees(kit, scene[0], scene[1])
+    # one straw floor per scene (the paths show it between the corn)
+    done = set()
+    for name in story.get("layouts", []):
+        o = tuple(G.ORG[name])
+        w, h = G.SIZE.get(name, (G.FW, G.FH))
+        if (o, w, h) in done:
+            continue
+        done.add((o, w, h))
+        kit.plane(f"straw{o}", (w + 0.0, h + 0.0), (o[0], o[1], 0.0), M["straw"])
+    # --- the lanterns: day maze (0..11), the new maze (12..15), the entrance (16)
+    for k, (x, y) in enumerate(G.LANT_DAY):
+        ox, oy = G.ORG["day"]
+        build_lantern(kit, ctx, M, k, ox + x, oy + y, tally=(k == 0))
+    for q, (x, y) in enumerate(G.LANT_NEW):
+        ox, oy = G.ORG["new"]
+        build_lantern(kit, ctx, M, 12 + q, ox + x, oy + y, energy=140.0)
+    ox, oy = G.ORG["entrance"]
+    build_lantern(kit, ctx, M, 16, ox + G.LANT_ENT[0], oy + G.LANT_ENT[1], energy=200.0)
+    # --- the day maze props
+    d = G.ORG["day"]
+    build_scarecrow(kit, M, d[0] + G.SCARE[0], d[1] + G.SCARE[1])
+    build_pumpkin(kit, M, d[0] + G.PUMPKIN[0], d[1] + G.PUMPKIN[1])
+    build_bales(kit, M, d[0] + G.BALE[0], d[1] + G.BALE[1])
+    build_board(kit, M, d[0] - 2.4, d[1] - 29.0)
+    ctx["tog"]["phone_a"] = [build_phone(kit, M, "phone_a", (d[0] - 17.0, d[1] + 21.0, 0.012))]
+    ctx["tog"]["phone_b"] = [build_phone(kit, M, "phone_b", (d[0] + G.BALE[0], d[1] + G.BALE[1] + 0.2, 1.02))]
+    # --- the summer yard: house front, barn, truck, mower
+    s = G.ORG["summer"]
+    build_house_front(kit, M, s[0] + 6.0, s[1] - 40.0)
+    build_barn(kit, M, s[0] - 13.0, s[1] - 41.0)
+    ctx["truck_s"] = build_truck(kit, M, "truck_s")
+    ctx["truck_s"].location = (s[0] - 6.0, s[1] - 35.0, 0)
+    ctx["truck_s"].rotation_euler = (0, 0, math.radians(75))
+    ctx["mower"] = build_mower(kit, M)
+    # --- the dawn yard
+    w = G.ORG["dawn"]
+    build_barn(kit, M, w[0] - 16.0, w[1] - 43.0)
+    kit.box("dawn.house", (9, 7, 4), (w[0] + 17, w[1] - 42, 2.0), M["wall"])
+    kit.cyl("dawn.roof", 6.2, 9.6, (w[0] + 17, w[1] - 42, 5.4), M["roof"], n=4, r2=0.3, rot=(0, math.pi / 2, math.pi / 4))
+    ctx["truck"] = build_truck(kit, M, "truck", with_boxes=True)
+    ctx["truck"].location = (w[0] - 4.2, w[1] - 31.5, 0)
+    ctx["truck"].rotation_euler = (0, 0, math.pi / 2)
+    ctx["truck0"] = (w[0] - 4.2, w[1] - 31.5)
+    # --- the new place: a different house and a curving line of shoots
+    n = G.ORG["new"]
+    kit.box("new.house", (8, 6, 3.4), (n[0] + 2, n[1] + 24, 1.7), M["wall2"])
+    kit.cyl("new.roof", 5.4, 8.6, (n[0] + 2, n[1] + 24, 4.7), M["roof"], n=4, r2=0.3, rot=(0, math.pi / 2, math.pi / 4))
+    kit.box("new.door", (1.1, 0.1, 2.0), (n[0] + 2, n[1] + 20.95, 1.0), M["wood"])
+    shoots = []
+    for q, (x, y) in enumerate(G.NEW_SHOOTS):
+        hay_shoot(kit, M, f"shoot{q}", n[0] + x, n[1] + y, 1.0)
+    ctx["tog"]["shoots"] = [o for o in bpy.data.objects if o.name.startswith("shoot")]
+    # --- the clearing: quilt, cups, thermos (S30 on), and the held quilt, thermos and flashlight June carries
+    c = G.ORG["day"]
+    ctx["tog"]["ground_set"] = build_quilt(kit, M, "quilt", c[0] + G.QUILT[0], c[1] + G.QUILT[1], 1.4) \
+        + build_cups(kit, M, c[0] + G.QUILT[0], c[1] + G.QUILT[1])
+    ctx["steam"] = []
+    for q in range(8):
+        sp = kit.sphere("steam", 0.03, (c[0] + G.QUILT[0] + (-0.28 if q % 2 == 0 else 0.28), c[1] + G.QUILT[1] - 0.75, 0.2), M["steam"], seg=6)
+        ctx["steam"].append(sp)
+    ctx["tog"]["steam"] = ctx["steam"]
+    q = kit.box("held.quilt", (0.7, 0.46, 0.2), (0, 0, 0), M["quilt1"], bevel=0.03)
+    q2 = kit.box("held.quilt2", (0.72, 0.1, 0.2), (0, 0, 0), M["quilt2"])
+    th = kit.cyl("held.thermos", 0.065, 0.3, (0, 0, 0), M["thermos"], n=14)
+    ctx["tog"]["held"] = [q, q2, th]
+    ctx["held"] = {"q": q, "q2": q2, "th": th}
+    fb = kit.cyl("flash.body", 0.04, 0.22, (0, 0, 0), M["flash_body"], n=10, rot=(math.pi / 2, 0, 0))
+    fl = kit.cyl("flash.lens", 0.055, 0.04, (0, 0, 0), M["lens"], n=10, rot=(math.pi / 2, 0, 0))
+    ctx["flash"] = (fb, fl)
+    ctx["tog"]["flash"] = [fb, fl]
+    kit.light("flash.spot", "SPOT", (0, 0, 0), 160, "#ffd9a0", size=0.05, spot=55, blend=0.6)
+    # --- a cob in June's hands, kernels falling (S47)
+    cob = kit.cyl("cob", 0.045, 0.24, (0, 0, 0), M["cob"], n=8, rot=(math.pi / 2, 0, 0))
+    husk = kit.cyl("cob.husk", 0.05, 0.12, (0, 0, 0), M["husk"], n=8, rot=(math.pi / 2, 0, 0))
+    ctx["cob"] = (cob, husk)
+    ctx["kernels"] = [kit.box("kernel", (0.018, 0.018, 0.018), (0, 0, 0), M["cob"]) for _ in range(6)]
+    ctx["tog"]["cob"] = [cob, husk] + ctx["kernels"]
+    # --- the overhead dot: the quilt in the eye (S33, S34), and June's light walking a shape (S42 to S44)
+    ex, ey = G.EYE_L
+    eye = []
     for k, (qx, qy, m) in enumerate(((-0.42, -0.3, "quilt1"), (0.42, -0.3, "quilt2"), (-0.42, 0.3, "quilt3"), (0.42, 0.3, "quilt1"))):
-        kit.box(f"june.quilt{k}", (0.82, 0.58, 0.06), (ex + qx, ey + qy, 0.07), M[m])
-    kit.sphere("june.torch", 0.12, (ex + 0.55, ey - 0.35, 0.18), M["torch"], seg=10)
-    kit.light("june.light", "POINT", (ex + 0.4, ey - 0.3, 1.6), 350, "#ffb347", size=0.5)
+        eye.append(kit.box(f"june.quilt{k}", (0.82, 0.58, 0.06), (ex + qx, ey + qy, 0.07), M[m]))
+    eye.append(kit.sphere("june.torch", 0.12, (ex + 0.55, ey - 0.35, 0.18), M["torch"], seg=10))
+    for rr, mm, zz in ((0.95, "halo2", 0.02), (0.78, "halo", 0.035)):   # a soft glow on the straw that stays inside the centre path
+        eye.append(kit.cyl("june.halo", rr, 0.01, (ex, ey, zz), M[mm], n=28))
+    kit.light("june.light", "POINT", (ex + 0.4, ey - 0.3, 1.8), 520, "#ffb347", size=0.5)
     kit.light("june.cone", "SPOT", (ex + 0.55, ey - 0.35, 0.3), 150, "#ffcf8a", rot=(math.radians(100), 0, math.radians(35)), size=0.1, spot=60, blend=0.6)
-    build_farm(kit, M)
-    # the sky lights: the moon (S34) and a low gold sun (S01)
-    kit.light("moon", "SUN", (0, 0, 60), 2.7, "#d5e0ff", rot=(math.radians(42), 0, math.radians(-55)))
+    ctx["tog"]["eye"] = eye
+    dot = [kit.sphere("dot.bead", 0.55, (0, 0, 0.7), M["torch"], seg=10), kit.cyl("dot.halo", 1.5, 0.01, (0, 0, 0.04), M["halo2"], n=24),
+           kit.cyl("dot.halo2", 1.0, 0.01, (0, 0, 0.05), M["halo"], n=24)]
+    ctx["dot"] = dot
+    ctx["tog"]["dot"] = dot
+    kit.light("dot.light", "POINT", (0, 0, 2.5), 900, "#ffb347", size=0.6)
+    # --- the sky lights, and a camera fill so a face always reads
     kit.light("gold", "SUN", (0, 0, 60), 3.0, "#ffb870", rot=(math.radians(72), 0, math.radians(30)))
-    for nm in ("moon", "gold"):
-        kit.LIGHTS[nm]["light"].angle = math.radians(18)   # soft shadow edges
+    kit.light("moon", "SUN", (0, 0, 60), 2.7, "#d5e0ff", rot=(math.radians(42), 0, math.radians(-55)))
+    kit.light("rim", "SUN", (0, 0, 60), 1.0, "#8fb8ff", rot=(math.radians(76), 0, math.radians(170)))
+    for nm in ("moon", "gold", "rim"):
+        kit.LIGHTS[nm]["light"].angle = math.radians(14)
+    kit.light("camfill", "POINT", (0.15, 0.25, 0.3), 0.0, "#dfe8ff", size=0.4, parent=kit.OBJ["cam"], shadow=False)
     build_marker(kit, M, ctx)
     return ctx
 
 
-LOOKS = {   # per shot: which lights, the world colour and strength, exposure
-    "moon": {"moon": 1.0, "gold": 0.0, "lant.light": 0.0, "june.light": 1.0, "june.cone": 1.0, "world": ("#8aa0d0", 1.5), "exp": 0.15},
-    "dusk": {"moon": 0.0, "gold": 1.0, "lant.light": 1.0, "june.light": 0.0, "june.cone": 0.0, "world": ("#7fc8ff", 1.2), "exp": 0.2},
+# ------------------------------------------------------------------------------------------------ looks
+def _rgb(c):
+    from blocky import kit as K
+    return K.col(c)[:3] if isinstance(c, str) else tuple(c)
+
+
+def mix(a, b, u):
+    if isinstance(a, str):
+        return tuple(x + (y - x) * u for x, y in zip(_rgb(a), _rgb(b)))
+    if isinstance(a, (tuple, list)):
+        return tuple(mix(x, y, u) for x, y in zip(a, b))
+    return a + (b - a) * u
+
+
+GOLD = ("#d9b13a", "#ecc858", "#e0b743", "#ecd9a0", "#6bb04c")
+LOOKS = {
+    "dusk": dict(gold=(3.8, "#ffc27a", 68, 25), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(0.0, "#fff0d8"),
+                 world=("#8fd0ff", 1.25), exp=0.25, cols=GOLD, lant=0.1),
+    "summer": dict(gold=(3.4, "#fff0cf", 40, 20), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(0.0, "#fff0d8"),
+                   world=("#8fd0ff", 1.5), exp=0.25, cols=("#4f9a3a", "#78c455", "#8ed565", "#d6c188", "#5cb347"), lant=0.0),
+    "lantern": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(1.9, "#a9bdf0", 50, -35), rim=(1.0, "#8fb8ff", 78, 160), cam=(40.0, "#ffe2b8"),
+                    world=("#3c5290", 1.0), exp=0.45, cols=("#a58c3a", "#bba047", "#b39742", "#dcc47e", "#2c5a4a"), lant=1.0),
+    "moon": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(3.1, "#d2deff", 40, -35), rim=(2.0, "#8fb8ff", 76, 170), cam=(75.0, "#dce6ff"),
+                 world=("#5a76b8", 1.3), exp=0.35, cols=("#a28b38", "#b99f48", "#b39641", "#e4ca8c", "#2f5e55"), lant=0.0),
+    "dawn": dict(gold=(3.9, "#ffae62", 78, 0), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(55.0, "#ffe6c0"),
+                 world=("#ffd9b0", 1.7), exp=0.3, cols=GOLD, lant=0.0),
 }
 
 
@@ -377,29 +576,198 @@ def _shot(tl, t):
     return tl["shots"][-1]
 
 
-def cue_val(tl, name, t, key, default):
-    out = default
+def cue_t(tl, name, default=None):
     for c in tl.get("cues", []):
-        if c["name"] == name and c["t"] <= t + 1e-9:
-            out = c.get(key, out)
-    return out
+        if c["name"] == name:
+            return c["t"]
+    return default
+
+
+def lantern_gain(tl, k, t):
+    """1 until its cue out<k>, then a 0.45 s fade (0.6 s for the last lantern) to 0. In the new maze, lit throughout."""
+    to = cue_t(tl, f"out{k}")
+    if to is None:
+        return 1.0
+    dur = 0.6 if k == 11 else 0.45
+    return 1.0 - ss((t - to) / dur)
+
+
+def icon_gain(tl, k, t):
+    g = lantern_gain(tl, k, t)
+    up = cue_t(tl, "icon_up")
+    if up is not None and t >= up + 0.05 * k:
+        g = max(g, ss((t - up - 0.05 * k) / 0.45))
+    return g
+
+
+def apply_look(kit, ctx, name, b):
+    look = LOOKS[name]
+    if name in ("lantern", "moon"):   # the moonlight takes over as the last lantern goes out
+        look = {key: mix(LOOKS["lantern"][key], LOOKS["moon"][key], b) if key not in ("cols",) else
+                tuple(mix(c1, c2, b) for c1, c2 in zip(LOOKS["lantern"]["cols"], LOOKS["moon"]["cols"]))
+                for key in LOOKS["moon"]}
+        # mix of hex strings returns rgb tuples; of tuples (energy, rgb, tilt, az) is handled by mix recursion
+    for nm in ("gold", "moon", "rim"):
+        e, c, tilt, az = look[nm]
+        L = kit.LIGHTS[nm]
+        L["base"] = e
+        L["light"].color = _rgb(c)
+        L["obj"].rotation_euler = (math.radians(tilt), 0, math.radians(az))
+    e, c = look["cam"]
+    kit.LIGHTS["camfill"]["base"] = e
+    kit.LIGHTS["camfill"]["light"].color = _rgb(c)
+    w = bpy.context.scene.world.node_tree.nodes["Background"]
+    wc, ws = look["world"]
+    w.inputs["Color"].default_value = (*_rgb(wc), 1.0)
+    w.inputs["Strength"].default_value = ws
+    bpy.context.scene.view_settings.exposure = look["exp"]
+    M = ctx["M"]
+    for key, c in zip(CORN_KEYS, look["cols"]):
+        M[key].node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = (*_rgb(c), 1.0)
+    return look
+
+
+def attach(ob, tl, who, t, local=(0.0, -0.6), z=1.1, seed=0, yaw_extra=0.0):
+    from blocky import acting
+    s = acting.state(tl, who, t, seed)
+    c, sn = math.cos(s["yaw"]), math.sin(s["yaw"])
+    a, b = local
+    ob.location = (s["x"] + a * c - b * sn, s["y"] + a * sn + b * c, s["z"] + z + s["bob"] - 0.0)
+    ob.rotation_euler = (0, 0, s["yaw"] + yaw_extra)
+    return s
+
+
+def seated(tl, who, t):
+    """0..1: how far June has sat down (acting keys with "sit": true / false, eased over 0.5 s)."""
+    state, t0 = False, None
+    for k in sorted((k for k in tl["acting"].get(who, []) if "sit" in k), key=lambda k: k["t"]):
+        if k["t"] <= t + 1e-9 and bool(k["sit"]) != state:
+            state, t0 = bool(k["sit"]), k["t"]
+    if t0 is None:
+        return 0.0
+    u = ss((t - t0) / 0.5)
+    return u if state else 1.0 - u
 
 
 def animate(kit, story, tl, t, ctx):
+    from blocky import rig
     shot = _shot(tl, t)
-    want = story.get("shot_layout", {}).get(shot["id"])
-    for name, obs in ctx["layouts"].items():
+    sid = shot["id"]
+    # layouts: build lazily, show only the one this shot names
+    want = story.get("shot_layout", {}).get(sid)
+    if want and want not in ctx["built"]:
+        ctx["built"][want] = make_layout(kit, want, ctx["M"])
+    for name, obs in ctx["built"].items():
         for ob in obs:
             ob.hide_render = (name != want)
-    look = LOOKS[story.get("shot_look", {}).get(shot["id"], "moon")]
-    w = bpy.context.scene.world.node_tree.nodes["Background"]
-    w.inputs["Color"].default_value = kit.col(look["world"][0])
-    w.inputs["Strength"].default_value = look["world"][1]
-    bpy.context.scene.view_settings.exposure = look["exp"]
-    n = int(cue_val(tl, "lanterns", t, "n", 12))
-    for k, parts in enumerate(ctx["icons"]):
-        for ob in parts["lit"]:
-            ob.hide_render = k >= n
-        for ob in parts["dark"]:
-            ob.hide_render = k < n
-    return {k: v for k, v in look.items() if k not in ("world", "exp")}
+    # props shown only in the shots listed for them
+    for pname, shots in story.get("props_by_shot", {}).items():
+        for ob in ctx["tog"].get(pname, []):
+            ob.hide_render = sid not in shots
+    lookname = story.get("shot_look", {}).get(sid, "moon")
+    tm = cue_t(tl, "moon", 1e9)
+    b = ss((t - tm) / 0.7)
+    look = apply_look(kit, ctx, lookname, b if lookname in ("lantern", "moon") else 1.0)
+    # rustle: the leaves and tassels shake against the stalks
+    amp = story.get("shot_rustle", {}).get(sid, 0.0)
+    if want and amp:
+        body, leaves, tops = ctx["built"][want]
+        a = 0.05 * amp
+        leaves.location = (a * math.sin(2 * math.pi * 2.6 * t + 1.0), a * 0.7 * math.sin(2 * math.pi * 3.4 * t), 0.0)
+        tops.location = (a * 1.5 * math.sin(2 * math.pi * 2.9 * t + 0.4), a * math.sin(2 * math.pi * 3.9 * t + 2.0), 0.0)
+    elif want:
+        for ob in ctx["built"][want][1:]:
+            ob.location = (0, 0, 0)
+    # lanterns
+    lm = look["lant"]
+    for k in range(12):
+        g = lantern_gain(tl, k, t)
+        wob = 1.0 + 0.04 * math.sin(2 * math.pi * 1.3 * t + k) + 0.03 * math.sin(2 * math.pi * 2.1 * t + 2 * k)
+        set_lantern(ctx, kit, k, g, wob, lm)
+    n_dim = 1.0 - 0.35 * ss((t - (cue_t(tl, "dim", 1e9))) / 0.9) if cue_t(tl, "dim") is not None else 1.0
+    for k in range(12, 16):
+        set_lantern(ctx, kit, k, n_dim, 1.0 + 0.04 * math.sin(2 * math.pi * 1.3 * t + k), 0.8)
+    ts = cue_t(tl, "stay", 1e9)
+    dip = ss((t - (ts - 0.1)) / 0.3) * (1 - ss((t - (ts + 0.2)) / 0.5))
+    set_lantern(ctx, kit, 16, 1.0 - 0.3 * dip, (1.0 - 0.5 * dip) * (1.0 + 0.03 * math.sin(2 * math.pi * 1.7 * t)), 0.6)
+    # the marker: each icon fades with its lantern
+    dark = kit.col("#1c1a24")
+    lit = kit.col("#ff9a2a")
+    for k, ic in enumerate(ctx["icons"]):
+        g = icon_gain(tl, k, t)
+        nd = ic["glass"].node_tree.nodes["Emission"]
+        nd.inputs["Color"].default_value = tuple(dark[i] + (lit[i] - dark[i]) * g for i in range(3)) + (1.0,)
+        nd.inputs["Strength"].default_value = 0.2 + 1.4 * g
+        ic["flame"].scale = (max(0.001, g),) * 3
+        ic["flame"].hide_render = g < 0.03
+    # June: sitting, and what she carries
+    chars = rig.CHARS
+    J = chars.get("june")
+    seat = seated(tl, "june", t)
+    if J is not None and seat > 0:
+        J.root.location.z -= 0.66 * seat
+        J.P["leg-1"].rotation_euler = (1.5 * seat, 0, 0)
+        J.P["leg1"].rotation_euler = (1.5 * seat, 0, 0)
+    held = ctx["held"]
+    s = attach(held["q"], tl, "june", t, (0.0, -0.62), 1.08)
+    attach(held["q2"], tl, "june", t, (0.0, -0.62), 1.2)
+    attach(held["th"], tl, "june", t, (-0.42, -0.5), 1.0)
+    held["th"].rotation_euler = (0, 0, 0)
+    fb, fl_ = ctx["flash"]
+    attach(fb, tl, "june", t, (0.38, -0.55), 0.95 - 0.66 * seat)
+    attach(fl_, tl, "june", t, (0.38, -0.69), 0.95 - 0.66 * seat)
+    sp = kit.LIGHTS["flash.spot"]["obj"]
+    sp.location = (fl_.location[0], fl_.location[1], fl_.location[2])
+    sp.rotation_euler = (math.radians(88), 0, s["yaw"])
+    fon = sid in story.get("flash_on", [])
+    kit.LIGHTS["flash.spot"]["base"] = 160.0 if fon else 0.0
+    # the mower, in front of June in the summer shots
+    attach(ctx["mower"], tl, "june", t, (0.0, -0.95), 0.0)
+    ctx["mower"].hide_render = sid not in story.get("mower_shots", [])
+    for ch in ctx["mower"].children_recursive:
+        ch.hide_render = ctx["mower"].hide_render
+    # steam over the cups
+    for i, sp_ in enumerate(ctx["steam"]):
+        ph = ((t * 0.55 + i * 0.37) % 1.0)
+        base = G.ORG["day"]
+        cx = base[0] + G.QUILT[0] + (-0.28 if i % 2 == 0 else 0.28)
+        sp_.location = (cx + 0.025 * math.sin(6 * ph + i), base[1] + G.QUILT[1] - 0.75 + 0.02 * math.cos(5 * ph + i), 0.17 + 0.5 * ph)
+        k = (1 - ph) ** 0.6 * (0.6 + 0.8 * ph)
+        sp_.scale = (k, k, k)
+    # the cob and the kernels (S47)
+    cob, husk = ctx["cob"]
+    attach(cob, tl, "june", t, (0.0, -0.62), 1.2 + 0.03 * math.sin(2 * math.pi * 2.2 * t), yaw_extra=0.4 * math.sin(2 * math.pi * 2.2 * t))
+    attach(husk, tl, "june", t, (0.0, -0.5), 1.2)
+    for i, kn in enumerate(ctx["kernels"]):
+        ph = ((t * 1.1 + i / 6.0) % 1.0)
+        sc, sn = math.cos(s["yaw"]), math.sin(s["yaw"])
+        lx, ly = 0.05 * (i % 3 - 1), -0.6 + 0.0
+        kn.location = (s["x"] + lx * sc - ly * sn, s["y"] + lx * sn + ly * sc, s["z"] + 1.15 - 0.8 * ph * ph)
+        kn.hide_render = kn.hide_render or False
+    # the truck leaves (S48)
+    td = cue_t(tl, "drive", 1e9)
+    x0, y0 = ctx["truck0"]
+    dt = max(0.0, t - td)
+    ctx["truck"].location = (x0 + 0.5 * 2.4 * dt * dt, y0, 0.0)
+    # the overhead dot walks a shape (S42 to S44): story "dot_path": {shot: [[t0ref, t1ref, [pts]]]}
+    dp = story.get("dot_path", {}).get(sid)
+    if dp:
+        pts = dp["pts"]
+        u = ss((t - shot["start"]) / max(1e-6, shot["end"] - shot["start"]))
+        u = (t - shot["start"]) / max(1e-6, shot["end"] - shot["start"])
+        f = u * (len(pts) - 1)
+        i = min(len(pts) - 2, int(f))
+        v = f - i
+        px = pts[i][0] + (pts[i + 1][0] - pts[i][0]) * v
+        py = pts[i][1] + (pts[i + 1][1] - pts[i][1]) * v
+        ctx["dot"][0].location = (px, py, 0.7)
+        ctx["dot"][1].location = (px, py, 0.04)
+        ctx["dot"][2].location = (px, py, 0.05)
+        kit.LIGHTS["dot.light"]["obj"].location = (px, py, 2.5)
+        kit.LIGHTS["dot.light"]["base"] = 900.0
+    else:
+        kit.LIGHTS["dot.light"]["base"] = 0.0
+    eyeon = sid in story.get("eye_shots", [])
+    kit.LIGHTS["june.light"]["base"] = 520.0 if eyeon else 0.0
+    kit.LIGHTS["june.cone"]["base"] = 150.0 if eyeon else 0.0
+    return {}
