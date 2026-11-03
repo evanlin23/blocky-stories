@@ -369,13 +369,6 @@ CAM_FIX = {
 for s in SH:
     if s["ref"] in CAM_FIX:
         s["cam"] = CAM_FIX[s["ref"]]
-# quality pass: no shot is a still picture. Every single-key camera gets a slow 6% push toward its target.
-for s in SH:
-    c = s["cam"]
-    if len(c) == 3:
-        (lx, ly, lz), (tx, ty, tz), ln = c
-        k = 0.06
-        s["cam"] = (c[0], c[1], ln, [round(lx + (tx - lx) * k, 3), round(ly + (ty - ly) * k, 3), round(lz + (tz - lz) * k, 3)], c[1], ln)
 S_SEAT = {"at": "L64", "name": "seat", "to": 1.0, "dur": 0.6}
 
 # lines and chunk refs
@@ -534,16 +527,8 @@ rolls = [c for c in cues if c["name"] == "num" and not c.get("snap")]
 sfx = [{"at": c["at"], "kind": "click", "db": -27} for c in rolls]
 sfx += [
     {"at": "L01.3+0.4", "kind": "hit", "db": -19, "keep": True},   # the sound hit on "ONE" (recipe point 3)
-    {"at": "L01.2", "kind": "whoosh", "db": -27, "dur": 0.3},
-    {"at": "L02", "kind": "whoosh", "db": -27, "dur": 0.3},
     {"at": "L02.2", "kind": "hit", "db": -22, "keep": True},
-    {"at": "L41", "kind": "hit", "db": -17, "keep": True},
-    {"at": "L43", "kind": "thud", "db": -16},
     {"at": "L47", "kind": "hit", "db": -18, "keep": True},
-    {"at": "L60", "kind": "thud", "db": -17},
-    {"at": "L61.2", "kind": "whoosh", "db": -26, "dur": 0.5},
-    {"at": "L63", "kind": "whoosh", "db": -27, "dur": 0.3},
-    {"at": "L66", "kind": "thud", "db": -22},
     {"at": "L18+0.15", "kind": "whoosh", "db": -26, "dur": 0.3},
     {"at": "P01>", "kind": "hit", "db": -17, "keep": True},
     {"at": "L28.3", "kind": "riser", "db": -24, "dur": 2.0},
@@ -576,7 +561,8 @@ story = {
     "gap": 0.12,
     "tail": 0.25,
     "look": {"fog": "#8a9aa6", "fog_density": 0.006, "fog_start": 14.0, "sky": "#9fb3c2", "exposure": 0.2,
-             "flash_safe": True},
+             "flash_safe": True,
+             "polish": {"reveal": ["L43", "L60"], "quiet": [["L63", "L69"]]}},
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 0.96, "contrast": 1.06,
               "vignette": 0.32, "bloom": 0.42, "grain": 0.012},
     "rain_shots": sorted({s["id"] for s in SH if s.get("rain") or s["scene"] == "street"}),
