@@ -722,6 +722,7 @@ def main(argv=None) -> int:
     ap.add_argument("--timeline", type=Path, help="a timeline.json, instead of building one from --story")
     ap.add_argument("--mix", type=Path, help="mix.json from the film artifact (stem loudness)")
     ap.add_argument("--json", type=Path, help="write every number here")
+    ap.add_argument("--fail-on-block", action="store_true", help="exit 1 when a block metric fails (proof.yml)")
     a = ap.parse_args(argv)
     if not a.film and not a.story:
         ap.error("give a film, a story, or both")
@@ -732,7 +733,12 @@ def main(argv=None) -> int:
         a.json.parent.mkdir(parents=True, exist_ok=True)
         a.json.write_text(json.dumps(res, indent=1))
     print(table(res))
-    return 0
+    return 1 if a.fail_on_block and blocked(res) else 0
+
+
+def blocked(res: dict) -> list[dict]:
+    """The block metrics that fail (the four the hit data confirmed)."""
+    return [c for c in res.get("checks", []) if c["status"] == "block"]
 
 
 if __name__ == "__main__":
