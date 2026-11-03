@@ -40,7 +40,7 @@ Kept clear of ep62 (an office elevator): no elevator scene beyond one montage in
 - **First real scare:** L19 to L25 (29 to 37 s): the whole office stops, and I'm not alone: between the frozen desks there are others, frozen streaks of color even faster than me, filing and typing.
 - **The climax turns the rule's own logic:** the rule says every coffee makes you twice as fast, and it never wears off (L06a). It never says what decaf does. Kai's at ten, so ten decafs, each one undoing a cup, take him to zero cups and normal speed (L37 to L43). No new magic.
 - **Twist and reveal (L26 to L34, 38 to 54 s):** said plainly. "They're the TEN-cuppers. People who drank a tenth cup, and can't come DOWN." "KAI." "He was never too busy for me. He's been finishing MY work."
-- **How the last 15 seconds turn over the first line:** a two-hour lunch for him that lasts six weeks for me, Kai back down to zero cups, but that was every decaf in the building. I'm stuck at nine, and every day the tenth cup looks better (L44 to L45a), which runs into L01: "Every coffee makes you twice as fast. I've had nine."
+- **How the last 15 seconds turn over the first line:** a two-hour lunch for him that lasts six weeks for me, Kai back down to zero cups, but decaf only works from ten. I'm stuck at nine, and the only way down is to drink a tenth, and every day the tenth cup looks better (L44 to L45a), which runs into L01: "Every coffee makes you twice as fast. I've had nine."
 - **The plants a rewatch catches:**
   1. L02: "Nobody comes back from TEN."
   2. L10: "I never see him ARRIVE. I never see him LEAVE."
@@ -111,7 +111,7 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S01 | L01 | 0.0 | Centred close-up of my ninth paper cup, steam frozen in the air, the meter at x512. Push in. Hit on "NINE". |
 | S02 | L02 | 2.2 | The coffee machine's two spouts, a tenth cup under the left one. |
 | S03 | L03 | 4.2 | My hands at the end of my sleeves typing in a blur. Meter x2. |
-| S04 | L04 | 5.8 | The elevator doors closing and opening in one beat. Meter x4. |
+| S04 | L04 | 5.8 | My coffee pouring from the spout in a quick blur, the cup full in one beat, my hands already typing again. Meter x4. |
 | S05 | L05 | 7.4 | A coworker talking, mouth slow and wide. |
 | S06 | L06 | 9.2 | A row of people with two cups each, contented. |
 | S06a | L06a | 10.4 | A coworker's old cup ticks in the inset staying lit all evening as he leaves. |
@@ -154,7 +154,7 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S42 | L42 | 68.1 | A sunny lunch spot: Kai and me with sandwiches, `laugh`, the clock glyph moving slowly. |
 | S42a | L42a | 69.7 | Me at the lunch table in a frozen world, Kai holding a sandwich, my beard grown out, a tiny calendar glyph flipping through six weeks. |
 | S43 | L43 | 71.5 | Kai's meter at x1. |
-| S44 | L44 | 72.9 | The decaf spout dripping empty. |
+| S44 | L44 | 72.9 | Close on the hollow decaf glyph, then my meter's cup ticks: nine lit, the tenth empty. |
 | S45 | L45 | 74.5 | Me, my meter still at x512, the world around me frozen again. |
 | S45a | L45a | 75.7 | The coffee machine's left spout, close, steam frozen. Push in, then cut to the ninth cup close (S01's framing). Loop. |
 
@@ -167,7 +167,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L01: Every coffee / makes you / twice as FAST. / I've had NINE.
 - L02: Don't drink / a TENTH. / Nobody comes back / from TEN.
 - L03: One cup, / you type / twice as FAST.
-- L04: Two, / the elevator / takes half as LONG.
+- L04: Two, / four times FAST.
 - L05: Four, / everybody else / talks like a SLOW song.
 - L06: Most people / stop at TWO.
 - L06a: Because it never / WEARS off.
@@ -187,7 +187,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L20: The whole office / STOPPED.
 - L21: And I / wasn't ALONE.
 - L22: Between the desks / there were OTHERS,
-- L23: even FASTER than me, / leaving long streaks / of COLOR.
+- L23: TWICE as fast / as me. / Just a BLUR / of COLOR.
 - L24: FILING. / Typing. / Straightening every DESK.
 - L25: Doing / everybody's WORK.
 - L26: That's why / the office / is always DONE.
@@ -209,7 +209,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L42: We had LUNCH. / Two HOURS / for him.
 - L42a: For me, / at NINE, / it was / six WEEKS.
 - L43: He's back down / to ZERO cups.
-- L44: That was every decaf / in the BUILDING.
+- L44: But decaf / only works / at TEN.
 - L45: And I'm still / at NINE.
 - L45a: And every DAY, / that tenth cup / looks BETTER.
 
