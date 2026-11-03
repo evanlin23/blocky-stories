@@ -74,8 +74,8 @@ def person(skin, shirt, pants, shoes, hair, hair_c, **kw):
 cast = {
     "me": person("#f0c7a6", "#2c3f66", "#4a3d30", "#5a3a22", "buzz", "#a9a9ab", extras=["coat", "backpack"],
                  zip_c="#f2f0e8", extra_c="#6b4a2a"),
-    "jory": person("#e6b894", "#5a7494", "#6e4f6e", "#2b221b", "cap", "#f2f2ee", pattern="knit", pattern_c="#e8dfc6",
-                   hat="beanie", hat_c="#c2602a", face={"eyes": "round", "brows": True}, height=0.97),
+    "jory": person("#e6b894", "#5a7494", "#6e4f6e", "#2b221b", "long", "#f2f2ee", pattern="knit", pattern_c="#e8dfc6",
+                   hat="beanie", hat_c="#c2602a", face={"eyes": "lashes", "brows": True}, height=0.97),
     "neighbour": person("#f0c9a6", "#d1a031", "#3b3f4d", "#3a2a20", "bun", "#3a2a20", hat="bucket", hat_c="#c9b98a"),
     "busman": person("#d9a67e", "#7b7f86", "#3b3b40", "#2a2a2e", "cap", "#c8c8c8", extras=["coat"], zip_c="#505560"),
     "parcelman": person("#e2b48c", "#7a5434", "#3a3028", "#2a2018", "swoop", "#3a2a20", pattern="plaid",
@@ -85,7 +85,8 @@ cast = {
     "meeter3": person("#e0b08a", "#5b6a86", "#2c2c34", "#22201e", "cap", "#2a1d15", hat="ballcap", hat_c="#364055"),
     "trainwoman": person("#efc4a2", "#b04a5a", "#3a3a44", "#2a2a2e", "long", "#5a3a28", extras=["coat"], zip_c="#7a2a3a"),
     "benchman": person("#e0b28c", "#c2a074", "#4b4a52", "#3a2f26", "cap", "#d8d8d8"),
-    "benchwife": person("#efc4a2", "#7a3b5e", "#33343c", "#2a2a2e", "bun", "#b8b8b8", extras=["coat"], zip_c="#4e2440"),
+    "benchwife": person("#efc4a2", "#7a3b5e", "#33343c", "#2a2a2e", "bun", "#b8b8b8", extras=["coat"], zip_c="#4e2440",
+                        face={"eyes": "lashes", "brows": True}),
 }
 
 # ---------------------------------------------------------------------------------------------------- acting
@@ -146,8 +147,8 @@ set_("me", "L08.1", yaw=0, blend=0.6)
 walk("me", "L08>", [0.0, -0.9, 0.0])
 put("me", "L09", [-3.2, -2.9, 0.0], -90)
 walk("me", "L09>", [-8.4, -2.9, 0.0])
-put("jory", "L10", [0.5, -4.12, 0.71], 180, expr="smile", arms=[0, 0])
-put("me", "L10", [-0.5, -4.12, 0.71], 180, expr="smile", arms=[0, 0])
+put("jory", "L10", [0.5, -4.12, 0.71], 180, expr="smile", arms=[0, 0], head=[-25, 0])
+put("me", "L10", [-0.5, -4.12, 0.71], 180, expr="smile", arms=[0, 0], head=[25, 0])
 hide("me", "L11")
 put("me", "L13", [0.0, 1.0, 0.0], 180, expr="neutral")
 walk("me", "L13>", [0.0, 5.2, 0.0])

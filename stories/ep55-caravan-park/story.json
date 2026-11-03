@@ -73,11 +73,11 @@
    "pants": "#6e4f6e",
    "shoes": "#2b221b",
    "sleeves": "long",
-   "hair": "cap",
+   "hair": "long",
    "hair_c": "#f2f2ee",
    "hat": "beanie",
    "face": {
-    "eyes": "round",
+    "eyes": "lashes",
     "brows": true
    },
    "pattern": "knit",
@@ -237,7 +237,7 @@
    "hair_c": "#b8b8b8",
    "hat": "none",
    "face": {
-    "eyes": "round",
+    "eyes": "lashes",
     "brows": true
    },
    "extras": [
@@ -5063,6 +5063,10 @@
      0,
      0
     ],
+    "head": [
+     25,
+     0
+    ],
     "yaw": 180
    },
    {
@@ -5654,6 +5658,10 @@
     "expr": "smile",
     "arms": [
      0,
+     0
+    ],
+    "head": [
+     -25,
      0
     ],
     "yaw": 180

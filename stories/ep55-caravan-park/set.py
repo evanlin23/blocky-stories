@@ -679,7 +679,6 @@ def build_moss(kit, ctx, M, cast):
     if "jory" in cast:
         hg = bpy.data.objects["jory.headg"]
         white = kit.plastic("#f2f2ee", 0.8, name="white hair")
-        kit.box("jory.bun", (0.62, 0.5, 0.5), (0, R + 0.2, top - H * 0.78), white, hg, bevel=0.18)
         plum = kit.plastic("#6e4f6e", 0.8, name="heather plum")
         kit.box("jory.skirt", (2.12, 1.5, 1.7), (0, 0, 1.2), plum, bpy.data.objects["jory"], bevel=0.1)
         kit.box("jory.skirt2", (2.3, 1.6, 0.2), (0, 0, 0.45), plum, bpy.data.objects["jory"], bevel=0.05)
