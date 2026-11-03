@@ -1,367 +1,247 @@
-# ep14-floor-thirteen: the script (scriptwriter, 2026-10-31)
+# ep14-floor-thirteen: the script (redo r4, writer, 2026-11-02)
 
-- **Working title:** Our building doesn't have a thirteenth floor. It's a statement, not an imperative rule, and it spoils nothing. The upload title is the packager's.
-- **Takeaway:** none on purpose. It's a made-up blocky story for PandaNanoAdventures, under notes 16, 18 and 21.
-- **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 587 spoken words in 94 lines, all in voice A, plus 8 pause beats. By section it's 59, 55, 127, 80, 56, 133 and 77. Brief Amendment 1's line changes to L25, L56 and L57 are in. The table near the end has the same numbers.
-- **Estimated length:** about 2:04 of speech. That's 587 words at about 285 wpm, which is where voice A measured inside the lines of ep11 to ep13 (278 to 304). The engine's 0.12 s between lines adds about 11 s. The pause beats add 5.3 s and the held picture beats about 5 s more, all listed in the designer notes. So the cut should land about 2:26, somewhere from 2:23 to 2:29. If the voice pass lands over 2:28, cut L22 first. That's "with ONE cold LIGHT at the far END", 8 words. Then L67, "He STARED at it." Never speed the voice up.
-- **Shots:** about 71 before the designer's own pass. Each section gives its count.
-- **Built from:** pitch B, "Going Up", with A's light that moves from him to me and A's line "Even if there are TWO of you", as `02-brief.md` sets out. The brief's 14 script notes are all in. Anything I changed from the brief's wording is under "Where this departs from the brief" at the end.
+**The big idea:** in a building where everything you forget turns up on the thirteenth floor, the lift starts taking me there on its own, and the thing that's been forgotten is me: Grandad doesn't know who I am any more.
 
-## Format
+The test, said out loud: "Everything you forget ends up on floor thirteen, and the lift keeps taking her there, because her grandad has forgotten her." That gets an "oh no". It isn't a stand-in: nothing keeps my place. The rule acts on me.
 
-Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase, without the quote marks, the way `lines.json` stores them. CAPS are the key words, in brass gold `#ffbf3f`. The fallback is lilac `#b9a3ff`, and that switch is the designer's call.
+This replaces the 2026-10-31 script (held: its first line, a DING, stated no rule). The old script, brief and reviews are in git history and `reviews/` (history, don't edit).
 
-- **Who:** every line is `narrator`, read in voice A, which is `am_adam` at tempo 1.03 and rate 1.45. That's me, cast key `me`. Mr. Okafor (cast key `okafor`) has no voice of his own. His words are reported speech inside my lines, always as "He said" or "he said" with the quote, never "just said". That's note 18's one voice. His mouth moves under the words I quote. The thing on 13 never speaks and makes no sound of its own.
-- **Chunks** are two or three words, sometimes one. None is four, because `post.layout_problems` blocks a chunk over three words.
-- **Pause beats** (`P01` ...) are sound beats with no spoken words. Each gives a length and its one big on-screen word, or none. The DINGs and the two THUMPs are pause beats. Their big word is on screen only, so Whisper never has to hear it.
-- **Quoted lines** appear only in section 06, and there are exactly nine. Each one darkens one button. No other line in the film has a quote, so the viewer's count of quotes is the count of dark buttons.
-- **Where, Shots and Plants** head each section. A line that moves somewhere else says so in brackets under it.
+- **Slug:** `ep14-floor-thirteen` (kept, a redo, and the upload order is the orchestrator's).
+- **Title:** In This Building Everything You FORGET Goes To Floor 13 (55 characters).
+- **Shape:** `lost-property` (new tag): the narrator turns out to be the thing the rule acts on, and the climax uses the rule's own logic to fetch it back.
+- **Length:** 371 spoken words in 50 lines, plus 6 pause beats. About 77 s of speech at 290 wpm, about 6 s of line gaps, 4.1 s of pauses and 3 s of held picture: **about 90 s.** If it lands over 95 s, cut L12, then L26.
 
-## 01 Going up
+## Premise, rule, twist (for story.json, the builder copies these over)
 
-- **Where:** the lift car, going up from 12, and the 13 hall seen only through the door gap. P01 is the brief's first frame. L04 to L07 look out from the car. L08 is the doors closing on their own.
-- **Shots:** about 8.
-- **Plants:** the button face and its count. "NINE of them" at L07, about 10 s in, is the number the talk pays off.
+- **premise:** In an older apartment tower, everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it: keys, a forgotten anniversary as a cake, even a first boyfriend doing the crossword. I've never forgotten anything and never been up there. Then the lift starts going past my floor to a dark thirteen, where something in a black-and-brass lift attendant's uniform with a panel of lift buttons for a face is nearer each morning, a brass tag with my flat number hanging from its folded gloves.
+- **twist:** I was the thing that turned up on thirteen, because Grandad next door had forgotten me. Nothing on thirteen is gone, though, and what you fetch back you remember: I fetch the red scarf he knits me every winter from my shelf up there, put it in his hands, and he says my name. He forgets me most mornings now, so most mornings I go up and fetch myself back.
+- **world:** an older apartment tower in an unnamed city: a walnut-and-brass lift car, the thirteenth floor as a long umber hall of open shelves of forgotten things with brass tags (warm and busy when people fetch, dark with one cold light when the lift brings me), a beige twelfth-floor landing with two doors, and two side-by-side concrete balconies with a low wall and Grandad's crowd of terracotta pots.
 
-- `P01` pause 0.7 s: DING
-  - [first frame: over my shoulder from the back of the car, the doors parting on the DING, "13" lit on the indicator above them, one cold light in the dark gap. This DING is also the loop's sound]
-- `L01` narrator: I pressed LOBBY. / The lift / went UP.
-  - [insert: my finger on the lowest button, the one with the brass star. Then a second insert, the up triangle lit]
-- `L02` narrator: To floor / THIRTEEN.
-  - [insert: the indicator reading 13, at least 1/10 of the frame height]
-- `L03` narrator: Our building / doesn't / HAVE one.
-  - [my face, worried, hood up, headphones on]
-- `L04` narrator: Just LEFT / of the doors / stood SOMETHING / in a UNIFORM.
-  - [wide from the car through the gap: it stands just left of the gap, a step from the sill, side-lit, one button lit. Frame it chest up or let the door frame cut it at the waist, so the gloves stay unseen until L33]
-- `L05` narrator: Black and BRASS, / like it / WORKED here.
-  - [closer on the black jacket, the two rows of brass buttons, the brass piping and the peaked cap]
-- `L06` narrator: Where its FACE / should be / was a PANEL / of lift BUTTONS.
-  - [close on its head: the 3x3 panel at least 1/4 of the frame width, clear of the caption band]
-- `L07` narrator: NINE of them. / ONE was LIT, / pointed / at ME.
-  - [the panel: one button lit, sitting toward me where a pupil would be, the other eight dark glass. Then my face]
-- `L08` narrator: Then the doors / CLOSED / on their OWN.
-  - [from the car: after a breath the doors close by themselves, its one light on me through the narrowing gap. I haven't touched the panel. Then the indicator going from 13 to 12, and the floor tick starting again]
+## What the hits do, line by line
 
-## 02 Next door
+1. **Rule first:** L01, "In this BUILDING, / everything you FORGET / turns up / on floor THIRTEEN." (11 words.)
+2. **Visible by 2 s:** the first frame is the lift doors parting on a **bright, warm** thirteen. Shelves of forgotten things each hang a brass tag. A resident (Mr. Abel) turns to camera with a set of keys, his face at least 1/5 of the frame width, the lift indicator "13" lit above the doors in frame. The tags are the rule's marker: everything forgotten wears one. People don't (nothing marks you until you're forgotten, which is why the tag on the Attendant's gloves is the scare).
+3. **Montage, 0 to 15 s:** keys (L02), Mr. Abel's anniversary as a cake that he fetches and remembers (L03, L04), Mrs. Ruiz's first boyfriend still up there doing the crossword (L05, L06), then Grandad's glasses (L11, L12). Four, played for laughs.
+4. **The exception:** L07, "I've never forgotten a THING." I'm the only one who's never been up.
+5. **Loved one by 0:20, in a picture:** L08 to L09 (about 16 to 21 s): Grandad on his balcony passing me a tomato over the low wall, both faces in frame, morning sun.
+6. **Climax turns the rule:** L42 to L47. Nothing on thirteen is gone, and what you fetch back you remember (planted at L04 with the cake). I fetch what he forgot of me.
+7. **Twist planted early, last line echoes the first:** plants below. L50 lands on "THIRTEEN" and "FETCH", over the Attendant still holding my tag, and cuts to P01's DING.
+8. **First 2 s read on a phone:** warm sconces on, the hall bright, a face and the 13 in frame. Darkness only from P02 (about 27 s).
+9. **Cuts:** about 52 shots for about 90 s, about 1.7 s a shot.
 
-- **Where:** L09 to L10 the short 12 landing. L11 to L14 the two balconies at blue hour. L15 to L17 the car going down, then the lobby.
-- **Shots:** about 9.
-- **Plants:**
-  1. The balcony wall, L10 to L14, about 15 to 21 s. He talks all the time, just never to people.
-  2. The phone ride, L15 to L17, about 22 to 27 s. I talked the whole way down and the lift went straight to the lobby. It plays as relief, with no hold and no sting.
+## The plants (what a rewatch catches)
 
-- `L09` narrator: I live / on TWELVE.
-  - [the 12 landing: pale beige walls, slate-blue carpet, two front doors side by side with blank plates, the lift. Short and ordinary, so 13's long hall reads as wrong later]
-- `L10` narrator: Mr. Okafor / next DOOR / has never / said HELLO.
-  - [we pass at our doors. He looks at his keys and I look at the lift. Nobody nods]
-- `L11` narrator: But most EVENINGS, / over the / BALCONY wall,
-  - [blue hour: the two balconies side by side with the low wall between. His side is crowded with terracotta pots and vines. Mine is bare concrete]
-- `L12` narrator: I hear him / TALKING.
-  - [him bent over his pots, his mouth going]
-- `L13` narrator: To his / TOMATOES.
-  - [closer on him talking to a vine. Me on my side, pretending not to hear]
-- `L14` narrator: He tells them / the WEATHER.
-  - [his open hand toward the sky, still talking to the plants]
-- `L15` narrator: WEDNESDAY, / I was on / the PHONE / the whole RIDE,
-  - [the car: me mid-rant, the phone lying flat on my open palm in front of my mouth, on speaker, its screen dark. The headphones stay on. The rig can't grip, and a phone at the ear would clash with the headphones]
-- `L16` narrator: arguing with / my LANDLORD / about the HEATING.
-  - [the down triangle lit under the 12, the floor tick going. The indicator never shows a floor below 12]
-- `L17` narrator: Straight DOWN / to the LOBBY. / A NORMAL ride.
-  - [the doors open on the lobby: pale stone floor, glass street doors, soft daylight. I walk out, still arguing]
+1. **L06, about 12 s:** Mrs. Ruiz's first boyfriend is still on thirteen. It plays as a joke, and it's the rule saying out loud that a person can be forgotten and end up there.
+2. **L11 to L12, about 21 s:** Grandad rides up to thirteen twice a day for his glasses, which are on his head. A funny old-man beat, and the first sign he's forgetting.
+3. **L15 to L16, about 28 s:** thirteen is dark when the lift brings me, with nobody fetching. People who go up to fetch find the lights on. I wasn't fetching.
+4. **L25, about 43 s:** Grandad calls me by Dad's name, and I laugh it off.
+5. **L30 to L31:** the brass tag, like the ones on the keys, with my flat number. The Attendant tags what's been forgotten.
 
-## 03 Thursday and Saturday
+## The lore connection (one, never narrated)
 
-- **Where:** the car going up from 12 and the 13 hall through the gap, twice. L36 plays over a wide of me in the car. L37 is my bare balcony.
-- **Shots:** about 15.
-- **Plants:** the lit button watching my finger at L25 to L26. The gloves below its knees at L33, the one new wrong picture on the third trip. They're hidden in every shot before it.
+The brass tag hanging from the Attendant's gloves carries my flat number, 12, and under it **one upright tally stroke in the Attendant's cold button glow (`#c6dbff`)**: one forgotten person counted on thirteen. Seen at L31's insert, held 1.6 s, and again in the last shot. Never narrated. (lore.md: the Attendant is thirteen's Keeper. It doesn't make anyone forget. It only tags and counts what turns up.)
 
-- `L18` narrator: THURSDAY, / HEADPHONES on, / I pressed LOBBY.
-  - [insert: the star pressed again]
-- `L19` narrator: And it / went UP / AGAIN.
-  - [insert: the up triangle, lit]
+## The creature, the Attendant (same model as the old build)
+
+- The pass-2 model, unchanged: about 2.42 m with its flared cap, black jacket and trousers, brass buttons and piping, a black lacquer head with a 3x3 panel of ring-lit buttons (glow `#c6dbff`), arms 3.6 units long, off-white gloves folded right over left below its knees. Never seen moving, only somewhere new across a DING or a cut. Never touches anyone, never crosses the sill with its feet, never speaks.
+- **One new prop:** a brass luggage-style tag on a short loop, hanging from its folded gloves. The tag shows "12" stamped in the brass and the one cold stroke under it. Its hands never unfold (the rig can't grip, and the tag just hangs). It carries no other marker.
+- **Where it is, beat by beat:**
+
+| Lines | Where it stands | Lit | Seen |
+|---|---|---|---|
+| P01 to L12 | absent (bright thirteen, fetching) | | no |
+| P02 to L18 | far end of the dark hall, beside the one cold light | 1, toward me | only the lit button and a dark shape, small in frame |
+| P03 to L24 | halfway up the hall, between shelves | 1, toward me | chest up, side-lit, the panel face clear at L23 |
+| P04 to L32 | straight in front of the gap, a step from the sill | 1, toward me | full, gloves and tag at L29 to L31 |
+| P05 to L34 | bowed into the doorway, head under the door head | all 9 | the bump shot |
+| L35 | gone across a cut, the doorway empty | none | no |
+| L43 | standing still by the shelves as I walk past | 1, following me | side, mid-shot |
+| L50 | in the dark hall facing the open lift, tag hanging | 1, toward me | full, cold, last shot |
+
+## Cast (adults only, nobody in peril)
+
+- `me`: an adult, Grandad's grandchild, living next door to him on twelve. Same rig and outfit as the old build. Headphones optional (no line needs them). The builder may warm my skin tone so we read as family, builder's call.
+- `okafor`: now **Grandad**. Same model, with grey hair and a cardigan if cheap. Glasses pushed up on his head at L11 to L12. Never named on screen or in the voice, only "Grandad". He's never near the Attendant and never in peril. His one hard beat is the stranger's smile at L38.
+- `abel` (new): a resident, adult. Keys at P01, the cake at L03.
+- `abel_wife` (new): adult, arms folded at their door at L04, then softening.
+- `ruiz` (new): adult, a shrug in the lift at L05.
+- `crossword` (new): adult, Mrs. Ruiz's first boyfriend, in an armchair on bright thirteen with a folded paper (a blank grid, no printed words) at L06. Content, not stuck.
+
+## Look and sound
+
+- **Palette:** brass, black lacquer, walnut, umber carpet. Bright thirteen is warm amber sconces on umber and brass. Dark thirteen is the old look: sconces off, one cold light at the far end, fog within 8 m. Grandad's tomatoes and the scarf are the only reds.
+- **Caption key colour:** brass gold `#ffbf3f` (kept).
+- **Music:** A minor at 100 bpm, thin and plucky for the montage (0 to 25 s, light enough to be funny). At P02 the pluck stops and a low drone enters on A, Phrygian, half time, and holds to the end. Drop to voice and hit only for 0.6 s before P05's bump. Near silence for P06. A warm A Dorian pad over the drone from L45 to L47 (his hands on the scarf). L48 to L50: the pad leaves, the drone alone, and the cut to P01's DING.
+- **Flash:** `look.flash_safe: true`. Every light change ramps over 0.5 s or more (the sconces going dark, the buttons all lighting at P05).
+
+## The narration
+
+Every line is `narrator`. Chunks are split with ` / `, CAPS are key words. Characters speak only in reported speech.
+
+### 01 Floor thirteen (0 to 15 s)
+
+- `P01` pause 0.5 s: DING
+  - [first frame: the lift doors part on bright thirteen, shelves of tagged things, Mr. Abel turning with keys, "13" lit above the doors. This DING is also the loop's]
+- `L01` narrator: In this BUILDING, / everything you FORGET / turns up / on floor THIRTEEN.
+  - [hold the wide, then closer on a shelf: tagged keys, a kettle, a hat, each with a brass tag]
+- `L02` narrator: Lost your KEYS? / THIRTEEN.
+  - [insert: a hook board of keys, every ring with a brass tag. Mr. Abel lifts his set off a hook]
+- `L03` narrator: Mr. Abel / forgot his / ANNIVERSARY. / It turned up / as a CAKE.
+  - [Mr. Abel on thirteen holding a big iced cake on a stand, a brass tag on it, guilty face]
+- `L04` narrator: He FETCHED it / and REMEMBERED, / with an HOUR / to SPARE.
+  - [their front door: his wife, arms folded, then softening at the cake]
+- `L05` narrator: Mrs. Ruiz / forgot her / FIRST BOYFRIEND / years AGO.
+  - [Mrs. Ruiz in the lift, a shrug, her face to camera]
+- `L06` narrator: He's still / UP there, / doing the CROSSWORD.
+  - [bright thirteen: a man in an armchair between shelves, a folded paper, a pen, a brass tag on the chair arm. He gives a little wave]
+
+### 02 Grandad (15 to 25 s)
+
+- `L07` narrator: ME? / I've never / forgotten / a THING.
+  - [me in the lift, arms folded, pleased with myself]
+- `L08` narrator: Grandad / lives NEXT DOOR, / on TWELVE.
+  - [the twelve landing: two doors side by side. His opens, him smiling at me]
+- `L09` narrator: Every MORNING / he passes me / a TOMATO / over the BALCONY wall.
+  - [morning sun on the two balconies, his side crowded with pots. A tomato on his open palm over the low wall, both our faces in frame]
+- `L10` narrator: And he forgets / EVERYTHING.
+  - [him on his balcony patting his pockets]
+- `L11` narrator: He rides up / to THIRTEEN / for his GLASSES / twice a DAY.
+  - [the lift: Grandad, the indicator reading 13, his glasses pushed up on his head]
+- `L12` narrator: They're usually / on his HEAD.
+  - [close on his face, glasses on his forehead, puzzled]
+
+### 03 Tuesday (25 to 37 s)
+
+- `L13` narrator: TUESDAY, / I pressed TWELVE.
+  - [insert: my finger on the 12 button]
+- `L14` narrator: The lift / went PAST it.
+  - [insert: the indicator ticking from 12 to 13. My face]
 - `P02` pause 0.6 s: DING
-  - [the doors part on 13. The ceiling panel dims slowly, over at least 0.5 s, to about 5%]
-- `L20` narrator: This time / it stood / just RIGHT / of the doors.
-  - [wide from the car: it's just right of the gap, a step from the sill, chest up, one button lit on me]
-- `L21` narrator: Behind it, / the HALL / ran back / FURTHER / than our BUILDING / is WIDE,
-  - [through the gap: umber carpet, dark olive-brown walls, unlit sconces and shut doors with blank brass plates, fading into fog within about 8 m. The camera stays in the car]
-- `L22` narrator: with ONE / cold LIGHT / at the / far END.
-  - [the one dim cold light far down the hall, small in the frame]
-- `L23` narrator: And the doors / STAYED OPEN.
-  - [hold on the open gap. The pad holds its one note]
-- `L24` narrator: I pressed CLOSE.
-  - [insert: my finger on the close button with its brass arrows, one click. Press one]
-- `L25` narrator: Its LIGHT / MOVED DOWN / to the CORNER,
-  - [close on its panel: the light steps down to the bottom corner nearest the car's panel, one button at a time, never faster than a step every 0.4 s]
-- `L26` narrator: like it was / WATCHING / my FINGER.
-  - [over my hand on the close button, the lit corner button soft behind it]
-- `L27` narrator: They closed / on my / THIRD press.
-  - [inserts: press two with its click, then press three with its click. That's three presses and three clicks in all, and the doors start to close on the third]
-- `L28` narrator: Its light / stayed on ME / till the GAP / CLOSED.
-  - [from the car: the gap narrowing, its light stepping back up to sit toward me, still on me as the doors meet]
-- `L29` narrator: SATURDAY, / UP AGAIN.
-  - [the up triangle in close-up]
+  - [the doors part on thirteen with the sconces off. The pluck stops and the drone comes in]
+- `L15` narrator: THIRTEEN, / but DARK.
+  - [wide from the car through the gap: the shelves in shadow, fog]
+- `L16` narrator: Nobody FETCHING. / Just SHELVES / of forgotten THINGS.
+  - [the dark shelves, the brass tags catching a little light]
+- `L17` narrator: And way / down the HALL, / ONE small / cold LIGHT, / pointed / at ME.
+  - [the long hall, small in frame at the far end: one cold button glow and the dark shape around it, beside the one cold light]
+- `L18` narrator: Then the doors / CLOSED / on their OWN.
+  - [the gap narrowing, the light still on me. I haven't touched the panel]
+- `L19` narrator: At TWELVE, / Grandad was / at his DOOR, / waving a TOMATO.
+  - [the twelve landing, warm, him at his door, tomato on his palm. Relief]
+
+### 04 Wednesday (37 to 46 s)
+
+- `L20` narrator: WEDNESDAY, / PAST twelve / AGAIN.
+  - [insert: the indicator, 12 to 13]
 - `P03` pause 0.6 s: DING
-  - [the doors part. The ceiling dims the same slow way]
-- `L30` narrator: It was / RIGHT in FRONT / of the doors.
-  - [wide: it stands straight in front of the gap, a step from the sill, one button lit on me]
-- `L31` narrator: Now I could / see its HANDS.
-  - [a low shot, its waist down]
-- `L32` narrator: Its ARMS / were too LONG.
-  - [the black sleeve running down far past where a hand should be. Show the glove at the end of the sleeve, never the whole arm foreshortened toward camera]
-- `L33` narrator: The folded GLOVES / hung BELOW / its KNEES.
-  - [low and close: the off-white gloves folded right over left, below its knees, with the brass cuffs]
-- `L34` narrator: I pressed CLOSE / over and OVER.
-  - [inserts: a fast run of presses, a click each, too many to count]
-- `L35` narrator: I stopped COUNTING / before they SHUT.
-  - [the doors finally close on it]
-- `L36` narrator: I didn't / tell ANYONE.
-  - [wide: me small in the steady car light]
-- `L37` narrator: Who would / I TELL? / My LANDLORD?
-  - [my bare balcony, the low wall, his pots beyond it]
+  - [the doors part on dark thirteen]
+- `L21` narrator: It was / HALFWAY / up the HALL.
+  - [through the gap: the shape between shelves, halfway, chest up, side-lit]
+- `L22` narrator: Something / in a black / and BRASS / UNIFORM.
+  - [closer: the black jacket, brass buttons and piping, the peaked cap]
+- `L23` narrator: Where its FACE / should be / was a PANEL / of lift BUTTONS.
+  - [close on its head, the 3x3 panel at least 1/4 of the frame width, clear of the caption band]
+- `L24` narrator: ONE was LIT, / on ME.
+  - [the panel, one button lit toward me. Then my face]
+- `L25` narrator: That EVENING, / Grandad called me / by DAD'S name.
+  - [the balconies at blue hour, him talking over the wall, me pausing]
+- `L26` narrator: I LAUGHED / it OFF.
+  - [me smiling, a little too long]
 
-## 04 Next Monday
+### 05 Thursday (46 to 62 s)
 
-- **Where:** L38 to L40 the 12 landing, in the morning. L41 to L47 the car going up, in diagonal corners, me at the front by the panel and him at the back left. P04 to L51 the doors open on 13.
-- **Shots:** about 10.
-- **Plants:** none new. L39 sets up "TWO of you" at L82.
-
-- `L38` narrator: Next MONDAY, / Mr. Okafor's DOOR / and MINE / opened TOGETHER.
-  - [the 12 landing, a symmetrical two-shot: both front doors open at the same moment]
-- `L39` narrator: We'd lived / one WALL apart / since SPRING.
-- `L40` narrator: We waited / for the LIFT / without a WORD, / like ALWAYS.
-  - [both of us facing the lift doors, a body's width apart, neither looking over]
-- `L41` narrator: He went / to the BACK. / I stayed / by the BUTTONS.
-  - [inside: him in the back-left corner, me at the front by the panel]
-- `L42` narrator: I pressed LOBBY.
-  - [insert: my finger on the star once more]
-- `L43` narrator: And it / went UP.
-  - [the up triangle lighting]
-- `L44` narrator: His face / went STIFF.
-  - [his face, scared. Guarded, never angry]
-- `L45` narrator: He'd been / to THIRTEEN / BEFORE.
-  - [his eyes on the indicator, which reads 13]
-- `L46` narrator: I bet / he'd never / TOLD anyone / EITHER.
-  - [me looking at him, then away]
-- `L47` narrator: Then the lift / SLOWED.
-  - [the floor tick stops dead]
+- `L27` narrator: THURSDAY.
+  - [insert: the indicator, 12 to 13, no press]
 - `P04` pause 0.6 s: DING
-  - [the doors part. The ceiling dims]
-- `L48` narrator: It FILLED / the whole GAP.
-  - [from the back of the car past both of us: it stands straight in front of the gap and fills it, a step from the sill]
-- `L49` narrator: One LIGHT. / On HIM.
-  - [insert: its panel, the one lit button sitting toward him at the back]
-- `L50` narrator: Then on ME.
-  - [insert: the light steps across to sit toward me, a button at a time]
-- `L51` narrator: The doors / didn't even / TRY.
-  - [hold: the doors open and nothing moving]
+  - [the doors part]
+- `L28` narrator: It was RIGHT / in front / of the DOORS.
+  - [wide from the car: straight in front of the gap, a step from the sill, one button lit on me]
+- `L29` narrator: Its arms / were too LONG. / Its GLOVES / hung below / its KNEES.
+  - [low shot: the sleeves running far down, the folded gloves below the knees. Show the glove at the end of the sleeve, never the arm foreshortened toward camera]
+- `L30` narrator: From them / hung a / BRASS TAG, / like the ones / on the KEYS.
+  - [low close: the tag hanging from the folded gloves on its loop]
+- `L31` narrator: It had / my FLAT number / on it.
+  - [insert: the tag, "12" and the one cold stroke, held 1.6 s. This is the lore plant]
+- `L32` narrator: I pressed CLOSE / over and OVER.
+  - [inserts: a fast run of presses, a click each. The music drops out on the last one]
+- `P05` pause 0.9 s: THUMP
+  - [cut on the hit to the held centre-line frame from the back wall: it bows into the doorway, head under the door head, all nine buttons ramping on over 0.5 s, and the leaves stop dead on its shoulders at 0.80 m with the recoil and shudder from the old build. Me alone now, against the right wall. Locked off, no camera move]
+- `L33` narrator: It LEANED in. / The doors / BOUNCED / off its SHOULDERS.
+  - [the same held shot, the leaves rolling back]
+- `L34` narrator: ALL NINE / LIT UP, / on ME.
+  - [my face lit cold from below by its buttons]
+- `L35` narrator: Then the doors / SHUT, / and the lift / didn't MOVE.
+  - [cut to a wide where the doorway is empty across the cut, the doors closing with nothing in the way. The indicator stays on 13]
+- `L36` narrator: I took / the STAIRS / down to TWELVE.
+  - [insert: my orange shoes on concrete steps, fast. Cut away rather than show a hand on a rail]
 
-## 05 The doors
+### 06 Grandad's door (62 to 72 s)
 
-- **Where:** the car on 13. L52 and L53 are me at the panel, pressing CLOSE. At L54 I step back from it as the doors start to slide, seen in the wide. P06 cuts to the pass-2 centre-line frame, and P06 to P07 is one held, locked-off shot with no camera move across either bump. From P06 to L82 we hold the pass-2 places: me against the right wall, him against the left, level, about 1 m back, so it's equally near both of us. L61 is the close insert on my sleeve, then my face.
-- **Shots:** about 7.
-- **The silence:** the `music_drops` hole runs from the click at L53 to the hit at P06, at -40 dB or deeper. Only the voice, the door motor and the bump with its `hit` play through. No other drop in the film is this deep.
+- `L37` narrator: Grandad / OPENED / his door.
+  - [the twelve landing, his door opening, his face]
+- `L38` narrator: He smiled / the way you SMILE / at a STRANGER.
+  - [close on his face: polite, kind, nothing in it for me]
+- `L39` narrator: He said, / "Can I / HELP you?"
+  - [his mouth moving under the quote. Then my face]
+- `P06` pause 0.8 s: none
+  - [near silence. Hold on my face, the lift indicator over the doors behind me still lit 13]
+- `L40` narrator: Everything you FORGET / turns up / on THIRTEEN.
+  - [insert: the indicator over the lift doors, reading 13, cold]
+- `L41` narrator: And Grandad / had FORGOTTEN / ME.
+  - [wide on the landing: him in his doorway, me a step back, the space between us. Held 1 s after the last word]
 
-- `L52` narrator: I pressed CLOSE. / NOTHING.
-  - [me at the panel, then the insert on the close button, one click. The doors don't move]
-- `L53` narrator: I pressed it / AGAIN.
-  - [insert: the second click, my finger still at the panel. The music drops out on it]
-- `L54` narrator: The doors / started to / SLIDE.
-  - [wide from the back of the car: I step back from the panel to the right wall as the door leaves start in, and he's against the left wall. Its shape goes behind the leaves]
-- `P05` pause 0.6 s: none
-  - [near silence, the motor whine only, the leaves still sliding]
-- `P06` pause 0.9 s: THUMP
-  - [the bump, and cut on it to the pass-2 centre-line frame from the back wall: it's in the doorway, its head bowed under the door head and its panel facing the centre line between us, all nine buttons lit at once. We're level against the side walls about 1 m back. The leaves run in at normal speed and stop dead at a 0.80 m gap on the THUMP, as if they'd hit it, with a 2 to 3 cm recoil and a short shudder. Its feet never cross the sill. The low `hit`, then the low `choir`. This locked-off shot holds to P07]
-- `L55` narrator: It was IN / the DOORWAY.
-- `L56` narrator: BENT to FIT, / its HEAD / tipped DOWN / at US.
-- `L57` narrator: ALL NINE / LIT UP, / and ALL / on US.
-  - [the same held shot. Its cold glow rims both our faces]
-- `L58` narrator: The doors / BOUNCED off / its SHOULDERS.
-  - [the leaves roll back open. Its body, arms and head stay still]
-- `L59` narrator: It didn't / FLINCH.
-- `L60` narrator: They rolled BACK / and tried AGAIN.
-  - [the leaves slide in again]
-- `P07` pause 0.7 s: THUMP
-  - [the second bump in the same locked-off shot: the leaves stop dead at 0.80 m again, recoil and shudder. Two bumps in all, both a soft rubber `thud` with the motor's whine, never a knock]
-- `L61` narrator: His hand / found my SLEEVE, / SHAKING.
-  - [close insert: his hand resting on my sleeve, a small tremble. Then my face, lit cold from below by its buttons]
+### 07 Fetching (72 to 90 s)
 
-## 06 Nine lights
+- `L42` narrator: But nothing / up there / is GONE. / It just WAITS / to be FETCHED.
+  - [the lift doors parting on dark thirteen, me stepping out for the first time]
+- `L43` narrator: So I went / back UP, / right PAST it, / to a SHELF / with my NUMBER.
+  - [side mid-shot: me walking past the Attendant, its one lit button turning to follow me (the light steps, the head doesn't move). Then a shelf with a brass "12" tag]
+- `L44` narrator: On it / was the RED SCARF / he KNITS me / every WINTER.
+  - [the shelf: a folded red scarf with a brass tag, lit cold. My hands lifting it off on my open palms]
+- `L45` narrator: I put it / in his HANDS.
+  - [the twelve landing, warm: the scarf lying across his open palms]
+- `L46` narrator: He held it / a LONG time.
+  - [his face, looking down at it. The warm pad comes in]
+- `L47` narrator: Then he said / my NAME.
+  - [his face coming up to mine, knowing me. His hand on my shoulder. No line names a feeling]
+- `L48` narrator: He forgets me / most MORNINGS now.
+  - [the balconies next morning, a tomato on the wall top between us, him puzzled at me again]
+- `L49` narrator: Good thing / I never / forget ANYTHING.
+  - [me in the lift, the scarf round my neck, the indicator ticking 12 to 13. The pad leaves]
+- `L50` narrator: Every MORNING, / I go up / to THIRTEEN / and FETCH myself / BACK.
+  - [the doors part on dark thirteen: the Attendant standing in the hall facing the car, one button lit on me, my tag hanging from its gloves. "BACK" ends at least 0.25 s before the cut. Hard cut to P01's first frame and its DING, no black]
 
-- **Where:** the car on 13, with it held in the doorway pose. L62 to L64 match-cut to Wednesday's phone ride and back. L65 to L79 alternate shot and reverse with its panel, cutting back to the panel often enough that every return shows the right number dark. L80 is the empty doorway. L81 and L82 play over the ride down.
-- **Shots:** about 12.
-- **The count:** nine quoted turns at L65, L68, L69, L70, L72, L73, L75, L77 and L79. Each darkens one button on its last word, outside in, the middle last. L66, L71 and L78 report a light that's already out and darken nothing. The table after this section has the count after every line.
+## Word count
 
-- `L62` narrator: Then I thought / of WEDNESDAY.
-  - [match cut: me mid-rant on Wednesday, the phone on my palm]
-- `L63` narrator: The one ride / I TALKED / the whole WAY,
-- `L64` narrator: the lift / never went UP.
-  - [back on 13: my face, working it out. Across the cut into L65 my headphones go from my ears to round my neck, and they stay there to the end]
-- `L65` narrator: So I said, / "TALK / to me."
-  - [over his shoulder, my mouth going, its panel beyond. On "me" a corner button goes dark. Eight lit]
-- `L66` narrator: One LIGHT / went OUT.
-  - [insert: the panel with one corner dark, held long enough to read]
-- `L67` narrator: He STARED / at it.
-  - [his face, his eyes on the dark button]
-- `L68` narrator: Then he said, / "About WHAT?"
-  - [seven lit]
-- `L69` narrator: I said, / "ANYTHING. / The WEATHER."
-  - [six lit]
-- `L70` narrator: He said, / "I don't TALK / to PEOPLE."
-  - [five lit]
-- `L71` narrator: Even THAT / put one OUT.
-  - [insert: the panel, five lit and four dark]
-- `L72` narrator: I said, / "You talk / to your TOMATOES."
-  - [four lit. His brows go up. He knows now that I've heard him over the wall]
-- `L73` narrator: "They LISTEN," / he said.
-  - [three lit]
-- `L74` narrator: He looked / at his SHOES.
-- `L75` narrator: I told him, / "I don't know / ANYONE / in this CITY."
-  - [two lit]
-- `L76` narrator: He looked / UP.
-  - [his face, at me]
-- `L77` narrator: He said, / "The TOMATOES / were my WIFE'S. / It's been / FOUR YEARS."
-  - [one lit, the middle. Said gently, with no music change]
-- `L78` narrator: One light LEFT, / right in / the MIDDLE.
-  - [insert: the panel, only the middle button lit, on me]
-- `L79` narrator: Then he said, / "Come and / TRY one."
-  - [the middle goes dark on "one". All nine dark]
-- `L80` narrator: The doors / slid SHUT, / and nothing / STOPPED them.
-  - [cut to a wide where the doorway is empty. It's gone across the cut, never seen leaving. The doors close with nothing in the way]
-- `L81` narrator: It only COMES / when NOBODY / in the lift / is TALKING.
-  - [insert: the indicator going from 13 to 12, and the floor tick starting]
-- `L82` narrator: Even if / there are / TWO of you.
-  - [our two faces in the steady car light, him against the left wall and me against the right, level, looking at each other. A short hold before the lobby]
-
-### The buttons, line by line
-
-| Lines | Where it stands | Lit | Doors |
+| Section | Lines | Spoken words | Speech at about 290 wpm |
 |---|---|---|---|
-| P01 to L08 | just left of the gap, a step from the sill | 1, toward me | close on their own after a breath |
-| P02 to L28 | just right of the gap | 1, toward me, down to the bottom corner at L25, back toward me by L28 | stay open, close on my third press |
-| P03 to L35 | straight in front of the gap, gloves seen at L31 to L33 | 1, toward me | close after a run of presses |
-| P04 to L51 | straight in front, filling the gap | 1, toward him at L49, toward me at L50 | don't try |
-| L52 to P05 | hidden behind the closing leaves | 1, toward me | slide in |
-| P06 to L64 | in the doorway, head bowed, panel facing the centre line between us, feet never over the sill | all 9 | bump at P06, roll back, bump at P07, then stay open |
-| L65 to L66 | the same pose | 8 | open |
-| L67 to L68 | the same | 7 after L68 | open |
-| L69 | the same | 6 | open |
-| L70 to L71 | the same | 5 | open |
-| L72 | the same | 4 | open |
-| L73 to L74 | the same | 3 | open |
-| L75 to L76 | the same | 2 | open |
-| L77 to L78 | the same | 1, the middle | open |
-| L79 | the same | 0 | open |
-| L80 | gone across a cut | none | close, nothing in the way |
-| P08 to the end | absent | none | ordinary |
+| 01 Floor thirteen | L01 to L06 | 51 | about 10.5 s |
+| 02 Grandad | L07 to L12 | 43 | about 9 s |
+| 03 Tuesday | L13 to L19 | 48 | about 10 s |
+| 04 Wednesday | L20 to L26 | 45 | about 9.5 s |
+| 05 Thursday | L27 to L36 | 76 | about 15.5 s |
+| 06 Grandad's door | L37 to L41 | 31 | about 6.5 s |
+| 07 Fetching | L42 to L50 | 77 | about 16 s |
+| **Total** | **50 lines** | **371** | **about 77 s, so a cut of about 90 s** |
 
-## 07 Up to twenty
-
-- **Where:** P08 to L84 the lobby. L85 to L89 the balconies in low golden sun. L90 to L94 the car the next morning.
-- **Shots:** about 10.
-- **The warm turn is in the pictures.** Every line here says what's on screen. None names a feeling, and the words "friend", "lonely" and "alone" aren't in the film. The headphones have been round my neck since L65 and stay there to the end.
-
-- `P08` pause 0.6 s: none
-  - [the lobby DING, the same bell as every arrival, now sitting on the G dorian of the warm section]
-- `L83` narrator: At the LOBBY, / the doors / opened / on DAYLIGHT.
-  - [the lift doors part on the lobby, the glass street doors bright beyond]
-- `L84` narrator: We walked out / SIDE by SIDE.
-  - [from the street side: the two of us walking out together, my headphones round my neck]
-- `L85` narrator: That EVENING, / a TOMATO / came over / the WALL.
-  - [low golden sun on my balcony. A red tomato is on top of the low wall across a cut]
-- `L86` narrator: Then ANOTHER.
-  - [a second tomato beside it]
-- `L87` narrator: Then his / whole HEAD, / still TALKING.
-  - [his head rising above the wall, his mouth going]
-- `L88` narrator: He introduced me / to EVERY / PLANT.
-  - [the two-shot from my side, both of us leaning on the wall in warm light, him pointing along his pots. His hand comes to rest on the one big old pot and stays there a beat. No line says whose it is]
-- `L89` narrator: It took / an HOUR.
-  - [the same two-shot, the sun lower, a few tomatoes on the wall top between us]
-- `L90` narrator: The next MORNING, / we got in / the lift / MID-SENTENCE.
-  - [the car in the morning: both of us talking, me grinning, my headphones round my neck. We stand side by side near the front]
-- `L91` narrator: He was waving / a TOMATO / AROUND.
-  - [a tomato resting on his open palm, his arm swinging as he talks]
-- `L92` narrator: It BUMPED / the TOP / BUTTON.
-  - [insert: the tomato meets the top floor button, and it lights]
-- `L93` narrator: I pressed LOBBY.
-  - [insert: my finger on the star, framed exactly like the insert under L01]
-- `L94` narrator: We rode it / up to TWENTY / and back DOWN / before EITHER / of us / NOTICED.
-  - [the indicator runs 12, 14 and on up to 20, then back down, and it never shows 13. It changes at two a second or slower, or jumps across cuts. Then the two-shot, both still talking. "NOTICED" ends at least 0.25 s before the cut. Hard cut straight to P01's first frame and its DING, with no black]
-
-## Word count by section
-
-| Section | Lines | Spoken words | Speech at about 285 wpm |
-|---|---|---|---|
-| 01 Going up | L01 to L08 | 59 | about 12 s |
-| 02 Next door | L09 to L17 | 55 | about 12 s |
-| 03 Thursday and Saturday | L18 to L37 | 127 | about 27 s |
-| 04 Next Monday | L38 to L51 | 80 | about 17 s |
-| 05 The doors | L52 to L61 | 56 | about 12 s |
-| 06 Nine lights | L62 to L82 | 133 | about 28 s |
-| 07 Up to twenty | L83 to L94 | 77 | about 16 s |
-| **Total** | **94 lines** | **587** | **about 2:04, so a cut of about 2:26** |
-
-The scare at P06 lands at about 1:22 of a 2:26 cut, about 57% of the way in. The brief's shot plan put it near 65%. Nine turns of talk plus the twist run about 28 s after it, and I kept all nine rather than shrink the talk to move the scare later.
+The first scare (P02, dark thirteen) lands at about 27 s and the bump (P05) at about 55 s, 61% in. The reveal is L39 to L41, about 66 to 72 s, in the last 25 s.
 
 ## Lines that may trip Whisper
 
-Fix these with phonemes or word choice, never by slowing the voice (ep13 critic). Pairs marked "homophone" are the same sound, so the designer can add them to `HOMOPHONES` in `voice.py` (it's opt-in and changes no other story) rather than re-voice.
+- **L03 "Mr. Abel":** may come back as "Mr. Able". Add the homophone or phonemes AY-bul.
+- **L05 "Mrs. Ruiz":** roo-EESS. Whisper may write "Reese". Phonemes if needed.
+- **L13, L20 "TWELVE", L01 "THIRTEEN":** digits pass.
+- **L36 "STAIRS":** homophone "stares".
+- **L44 "he KNITS me":** may come back as "he needs me". If it does, use "he KNITTED / me".
+- **L50 "FETCH myself / BACK":** fine.
 
-- **L10 "Mr. Okafor" and L38 "Mr. Okafor's":** the name. Whisper may write "Okefor", "Oka for" or "O'Kafor". Phonemes: oh-KAH-for. If it writes "Mister" for "Mr.", that's a spelling, but `asr` will count it as a wrong word.
-- **L14 and L69 "the WEATHER":** homophone with "whether".
-- **L77 "my WIFE'S":** homophone with "wives".
-- **L77 "It's been FOUR YEARS":** "four" against "for". "It's been" in front should steer it to "four" or "4", and both of those pass.
-- **L82 "TWO of you":** "two" against "to" and "too". "2" passes.
-- **L89 "an HOUR":** homophone with "our".
-- **L15 "the whole RIDE", L48 "the whole GAP", L63 "the whole WAY" and L87 "whole HEAD":** homophone with "hole".
-- **L79 "TRY one":** at speed it may come back as "try on". If it does, say "TRY ONE" in the spoken text with a small gap only in the text ("try... one"), as the README's tricks allow.
-- **L56 "BENT to FIT":** may come back as "bend to fit".
-- **L33 "its KNEES":** may come back as "its needs".
-- **L39 "We'd lived" and L45 "He'd been":** contractions Whisper sometimes drops or expands. The apostrophe itself passes.
-- **L90 "MID-SENTENCE":** one word or two both pass, since `asr` treats the hyphen as a space.
-- **Numbers:** "THIRTEEN" at L02 and L45, "TWELVE" at L09 and "TWENTY" at L94 pass as digits too, because `same_spoken` maps numbers up to twenty.
+## Set and shot changes against the old build (for the builder)
 
-## Notes for the designer, sound and standards
-
-- **Cast used:** `me`, an adult, and `okafor`, an adult. Neither age is on screen or in the voice. Nobody else is in the building. Every word is voice A.
-- **Mr. Okafor:** named once at L10 and once at L38, never by a first name. He's never the threat, never nearer it than I am, and never in peril. His one scared beat is the hand on my sleeve. No line is about his voice, his size or his skin. He explains nothing, and L45 says only that he'd been to 13 before.
-- **The thing on 13:** the narration only ever calls it "it" or "SOMETHING". It's never named, never explained and never seen moving. It's somewhere new only across a DING or a cut, and its light is the only thing on it that changes on screen. It never crosses the sill, never touches anyone and is absent from all of section 07.
-- **Mornings and days:** every lift trip is on my way out in daylight. The only evenings are the balcony at L11 to L14 (blue hour) and L85 to L89 (golden sun). No line says night.
-- **Held picture beats** in the length estimate, about 5 s in all, set as line `gap` values: the doors closing after L08, the two extra clicks after L27, the run of presses at L34, the light moving at L49 to L50, the leaves rolling back between L58 and L60, the panel inserts at L66, L71 and L78, the empty doorway at L80, a beat after L82, the tomatoes at L85 to L86, the two-shot after L89, and 0.3 s after L94.
-- **Flashing:** there's no lights-out and nothing flickers. The two places to pre-check are the jump from one lit button to nine on the cut at P06, and the door leaves opening and closing on the lit doorway from P06 to P07.
-- **Words kept out (brief note 11 and `checks.py`):** none of these is spoken or captioned. "dead", "died", "death", "lost her", "trapped", "knock", "pressed flat", "pale" or "white" about a face, "first time", "night shift", "this summer", "every night", "the next night", "friend", "lonely", "alone", "true", "real", "just said", any age, and any child word. No real place, street, city, tower or lift maker is named. `checks.py`'s graphic, child, harm, true-claim and brand regexes find nothing in the spoken text. "took" at L89 is on its harm list, but no child word is anywhere in the film, so nothing pairs with it.
-- **Batch skeleton:** no "Last NIGHT," shape anywhere. The closing section opens on "At the LOBBY,". L85's "That EVENING," sits inside that section, not at its start. If standards reads it as the "That night," shape anyway, swap it for "On the BALCONY," (same chunk count) and let the gold light carry the time. No on-screen age. Nobody says "it didn't touch me". The ending is two people talking with the creature gone, so I make no gesture and nothing answers one.
-- **Batch 1 and the other batch-2 lanes:** there's no knowing elder here. Nothing comes closer each time. It's beside the doors from the first DING, and what grows is how long they stay open. The lights never go out and nobody knocks. From rows 2 to 4 there are none of the mirrors, copies or reflections, the lamp and the guiding, or the boxes, and nothing is kept unopened at the end. No line has the "not X, it was Y" shape. The three-word phrases shared with `back-row` are 1.6% and with `knock-back` 1.1%, well under `check`'s 12%.
-- **Avoided from ep11 to ep13's scripts:** "one by one", "very slowly", "a long time", "close enough to see", "blinked back", "Last week", "bus" and "the ... one" as a name.
-
-## Say-it-out-loud notes
-
-- **P01 into L01:** no gap after the DING. "I pressed LOBBY" should land by about 1.5 s.
-- **L03 "doesn't HAVE one."** Flat and matter-of-fact.
-- **L07 "pointed at ME."** Quieter than the lines round it.
-- **L13 and L14:** a little lift. It's funny, so keep it light.
-- **L17 "A NORMAL ride."** Plain relief. It's a plant, so don't lean on it and don't hold after it.
-- **L27 "THIRD press."** Clipped.
-- **L37 "My LANDLORD?"** Dry, a small joke against myself.
-- **L47 "Then the lift SLOWED."** A touch slower, then straight into P04.
-- **L52 "NOTHING."** Clipped. Hold about 0.3 s after it.
-- **L54:** even and quiet, then the silence of P05. Don't trail off.
-- **L55 to L57:** fast and breathless after the THUMP.
-- **L59 "It didn't FLINCH."** Flat.
-- **Every quoted turn in section 06:** it's my voice telling it, never a voice for Mr. Okafor. A tiny lift on the quote, nothing more.
-- **L71 "Even THAT put one OUT."** Almost a laugh, under the breath.
-- **L77 "It's been FOUR YEARS."** Gentle and a little slower. Then L78 quietly.
-- **L79 "Come and TRY one."** Warm and plain.
-- **L82 "TWO of you."** Let it land, with a beat before the lobby DING.
-- **L89 "It took an HOUR."** Dry.
-- **L94:** steady to the end. It cuts straight back to the DING, so "NOTICED" ends crisp and doesn't trail.
-- **Pronunciation:** "Okafor" is oh-KAH-for. "Mr." is "mister".
-
-## Where this departs from the brief
-
-- **The opener.** The brief keeps B's "From TWELVE / to a FLOOR / we don't HAVE." The handoff asked for "Floor THIRTEEN." and "Our building doesn't HAVE one." in some form. L02 and L03 use the row's words ("To floor THIRTEEN." and "Our building doesn't HAVE one."), and L09 "I live on TWELVE" carries the twelve. The loop still runs "...before EITHER of us NOTICED." into "DING. I pressed LOBBY."
-- **"Who would I TELL?"** is kept and gets "My LANDLORD?" after it. That's two words that pay off plant 2 and show I know nobody without saying so.
-- **The four-word chunk.** The handoff allowed four words at most, but `post.layout_problems` blocks anything over three, so every chunk is three or fewer.
-- **The last ride's cause** is the tomato bumping the top button before I press LOBBY. The lift answers the first call, so it goes up to 20 and then down, and nothing in it is strange.
-- **Brief Amendment 1, applied after the creature test.** L25 is now "Its LIGHT", because a button can't move, and the light steps from button to button. L56 is now "at US". L57 is now "ALL NINE / LIT UP, / and ALL / on US.", which pays off L49 and L50. The P06, P07, L52 to L54, L57 and L82 directions follow the pass-2 centre-line frame and blocking. L33 stays as written, and its fallback "hung DOWN / at its KNEES." is only for a Saturday still that doesn't show the gloves below the knee.
+- **Thirteen, re-dressed:** the long umber hall stays, now lined both sides with open shelves of forgotten things, each with a brass tag: a key hook board, kettles, hats, books with blank spines, a cake on a stand, an armchair. **Two light states:** bright (warm sconces on, for P01 to L06 and L11) and dark (sconces off, the one cold far light and fog, the old look, from P02). One shelf with a brass "12" tag and a folded red scarf (L43, L44). No umbrellas, socks or odd gloves (that's `ferry-crossing`'s lane).
+- **The lift panel:** add a 13 button (residents ride up to fetch). Inserts press 12, then CLOSE. The star/LOBBY inserts go.
+- **The Attendant:** same model and lights. New: the brass tag on a loop from its folded gloves (P02 on, only visible from L29). Poses: far end, halfway, in front of the gap, the bowed doorway bump (now with only me in the car), beside a shelf as I pass, facing the car in the last shot.
+- **Cast:** `okafor` becomes Grandad (grey hair, glasses on his head, cardigan if cheap). New adults `abel`, `abel_wife`, `ruiz`, `crossword`. `me` maybe a warmer skin tone (builder's call).
+- **Kept:** the lift car, the indicator, the doors and the bump rig, the twelve landing (now Grandad's door and mine), the two balconies and pots.
+- **New small pieces:** the Abels' front door (reuse a landing door), the cake, the folded paper, the red scarf, a stairs insert (concrete steps, my shoes).
+- **Gone:** the lobby, the phone ride, the nine-button talk countdown, the ride to twenty, the tomato pressing the top button.
+- **Cover:** about 54 s, L31's neighbour: L30's low close or L28's wide with the panel lit and the tag in frame, caption on "BRASS TAG" or "DOORS". The builder can refine to the frame with the panel face and the tag both lit.
