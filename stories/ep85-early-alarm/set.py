@@ -25,21 +25,21 @@ def rot_x90():
 
 def disc(kit, name, r, y, x, z, mat, parent, sx=1.0, sz=1.0, h=0.02):
     ob = kit.cyl(name, r, h, (x, y, z), mat, parent, rot=rot_x90(), n=40)
-    ob.scale = (sx, 1.0, sz)   # the cylinder's axis runs along y, so x and z are its width and height... via local axes
+    ob.scale = (sx, sz, 1.0)   # axis turned to world y: local x is width, local y is height
     return ob
 
 
 def build(kit, story, tl):
     ctx = {}
-    gold = kit.emit("#ffb000", 2.6, "sun shell")
-    core = kit.emit("#ffd25e", 9.0, "sun core")
-    sclera = kit.emit("#fff0b0", 5.0, "eye sclera")
-    iris = kit.emit("#ffa800", 3.2, "eye iris")
-    ring = kit.emit("#e07a00", 2.0, "eye ring")
+    gold = kit.emit("#c85a00", 0.55, "sun shell")
+    core = kit.emit("#ff9a20", 6.0, "sun core")
+    sclera = kit.emit("#ffe9a0", 1.8, "eye sclera")
+    iris = kit.emit("#ffb000", 1.6, "eye iris")
+    ring = kit.emit("#e07a00", 1.2, "eye ring")
     pupil = kit.emit("#4a1c00", 0.12, "eye pupil")
     glint = kit.emit("#ffffff", 6.0, "eye glint")
-    lid = kit.emit("#a85500", 0.9, "sun lid")
-    brow = kit.emit("#7a3a00", 0.5, "sun brow")
+    lid = kit.emit("#b04a00", 1.0, "sun lid")
+    brow = kit.emit("#5a2400", 0.35, "sun brow")
 
     # --- the ground: a dark lawn, a bare warm patch the size of a garage, and a back fence
     lawn = kit.plastic("#16423f", 0.95, "lawn")
@@ -65,16 +65,16 @@ def build(kit, story, tl):
     ex, ey, ez = EYE[0] - SUN[0], EYE[1] - SUN[1], EYE[2] - SUN[2]
     ctx["root"] = root
     ctx["eye_y"] = ey
-    kit.box("sun.socket", (1.9, 0.12, 1.45), (ex, ey - 0.0, ez), kit.emit("#7a3a00", 0.7, "socket"), root, bevel=0.05)
-    sc = disc(kit, "sun.sclera", 0.62, ey - 0.10, ex, ez, sclera, root, sx=1.0, sz=0.82, h=0.04)
-    disc(kit, "sun.ring", 0.42, ey - 0.13, ex, ez - 0.02, ring, root, h=0.03)
-    disc(kit, "sun.iris", 0.37, ey - 0.15, ex, ez - 0.02, iris, root, h=0.03)
-    disc(kit, "sun.pupil", 0.2, ey - 0.17, ex, ez - 0.02, pupil, root, sx=0.5, sz=1.0, h=0.03)
-    kit.sphere("sun.glint", 0.055, (ex + 0.13, ey - 0.20, ez + 0.1), glint, root, seg=10)
+    kit.box("sun.socket", (2.3, 0.12, 1.9), (ex, ey - 0.0, ez), kit.emit("#4a1400", 0.35, "socket"), root, bevel=0.05)
+    sc = disc(kit, "sun.sclera", 0.8, ey - 0.10, ex, ez, sclera, root, sx=1.0, sz=0.82, h=0.04)
+    disc(kit, "sun.ring", 0.55, ey - 0.13, ex, ez - 0.02, ring, root, h=0.03)
+    disc(kit, "sun.iris", 0.5, ey - 0.15, ex, ez - 0.02, iris, root, h=0.03)
+    disc(kit, "sun.pupil", 0.28, ey - 0.17, ex, ez - 0.02, pupil, root, sx=0.5, sz=1.0, h=0.03)
+    kit.sphere("sun.glint", 0.07, (ex + 0.2, ey - 0.20, ez + 0.1), glint, root, seg=10)
     # lids: the upper one half down (heavy, menacing), a thinner lower one; the brow ridge over both
-    ctx["lid"] = disc(kit, "sun.lid", 0.7, ey - 0.20, ex, ez + 0.55, lid, root, sx=1.0, sz=0.55, h=0.04)
-    disc(kit, "sun.lidlow", 0.7, ey - 0.20, ex, ez - 0.78, lid, root, sx=1.0, sz=0.4, h=0.04)
-    kit.box("sun.brow", (1.9, 0.28, 0.34), (ex, ey - 0.12, ez + 0.88), brow, root, bevel=0.1, seg=3)
+    ctx["lid"] = disc(kit, "sun.lid", 0.9, ey - 0.20, ex, ez + 0.62, lid, root, sx=1.0, sz=0.42, h=0.04)
+    disc(kit, "sun.lidlow", 0.9, ey - 0.20, ex, ez - 0.95, lid, root, sx=1.0, sz=0.26, h=0.04)
+    kit.box("sun.brow", (2.0, 0.26, 0.3), (ex, ey - 0.12, ez + 1.15), brow, root, bevel=0.1, seg=3)
     # --- the shed, barn red, with its door ajar and warm light spilling
     red = kit.plastic("#c4473a", 0.7, "barn red")
     dark = kit.plastic("#5a2620", 0.8, "shed roof")
@@ -93,11 +93,9 @@ def build(kit, story, tl):
         m = (p0 + p1) / 2
         seg = kit.cyl(f"rope{i}", 0.05, (p1 - p0).length * 1.05, tuple(m), rope, n=8)
         seg.rotation_euler = (p1 - p0).to_track_quat("Z", "Y").to_euler()
-    for j, zz in enumerate((1.0, 3.2)):   # the harness: loops round the body
-        kit.box(f"sun.harn{j}", (5.15, 5.15, 0.14), (0, 0, zz - SUN[2]), rope, root, bevel=0.05)
     # --- lights: the Sun's own warm light on the lawn and on whoever stands near, a cool rim from the dark sky
-    kit.light("sunlit", "POINT", (0.0, FRONT - 1.2, 1.9), 900.0, "#ffb347", size=0.9)
-    kit.light("sunfill", "AREA", (0.0, FRONT - 3.5, 3.5), 380.0, "#ffc060", rot=(math.radians(-15), 0, 0), size=6.0)
+    kit.light("sunlit", "POINT", (0.0, FRONT - 1.2, 1.9), 330.0, "#ffb347", size=0.9)
+    kit.light("sunfill", "AREA", (0.0, FRONT - 3.5, 3.5), 200.0, "#ffc060", rot=(math.radians(-15), 0, 0), size=6.0)
     kit.light("shedlamp", "POINT", (sx + 2.0, sy - 2.4, 1.6), 250.0, "#ffd18a", size=0.5)
     kit.light("rim", "SPOT", (-5.0, 0.5, 5.0), 700.0, "#9fb8ff", size=0.5, spot=60, blend=0.6)
     kit.aim(kit.LIGHTS["rim"]["obj"], (-0.5, 5.5, 1.6))
@@ -110,5 +108,5 @@ def animate(kit, story, tl, t, ctx):
     breathe = 1.0 + 0.012 * math.sin(2 * math.pi * t / 4.0)
     ctx["root"].scale = (breathe, breathe, breathe)
     # eye opening: the lid's cover slides up with the cue (this still holds it half-open)
-    ctx["lid"].location.z = 0.0 + (1.8 - 2.1) + 0.55 + 0.0
+    pass
     return {}
