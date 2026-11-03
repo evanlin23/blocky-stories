@@ -100,6 +100,37 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Most of a day's sessions.
     → Enforce the cap in code (gate refuses round 3), and score the creature test still before any other build work.
 
+19. **Pace is set in the edit but only measured on the drawn film.** The owner, 2026-11-03: "don't we control all of
+    this beforehand? like we are the ones that set hte pacing ande veyrthing so i dont understand how we are just
+    creating stuff that is bad." We set the cuts and camera keys, but "picture changes" and "motion energy" count how
+    much the whole frame changes every 0.5 s and 0.25 s, which depends on how much characters and the camera move
+    inside each shot once it's drawn. The preview (quarter size, every 4th drawing) can't measure it, so a builder first
+    sees the real number on a 30 to 40 minute proof. ep48 had 7.25 cuts per 10 s, near the 8.0 cap, and still came in at
+    12.0 against 12.5. The bar also arrived after most of the queue was built (entry 7).
+    → ep48 dropped after two proofs and 16 runners, and a near-miss band added (#201).
+    → Predict picture changes and motion energy from the edit before drawing (measure.py already reads the edit for
+    the `spec.*` metrics), build to a target with margin (15, not 12.5), and plan acting beats into every shot instead of
+    retrofitting punch-ins, which don't count as picture changes.
+
+20. **A change was broadcast before the owner had settled it.** About 4:15 PM, #1 reported the calm-opening fix (#209)
+    as the owner's choice, and the second orchestrator messaged about 30 sessions. Within minutes the owner reversed it
+    ("I meant that we should be doing the swoosh bc thats what ive seen online"), #209 closed unmerged, and a
+    correction went to 41 sessions. The 9 new batch 9 builds had already started with the wrong rule in their brief.
+    → About 70 messages, every session woken twice, and a rule in 9 briefs that had to be overridden.
+    → Broadcast a rule only once its PR has merged. Better: sessions read the current bar from one file on main at each
+    step, so a change needs no messages at all.
+21. **Times were guessed, not read from a clock.** The second orchestrator stamped messages "4:40 PM" and "4:45 PM", and
+    a #177 post "4:50 PM", when the clock said 4:15 to 4:26 PM. Relayed #1 posts carried times that hadn't happened yet
+    either.
+    → Times that don't line up, between two orchestrators who coordinate by them.
+    → Stamp every post and message from the clock (`TZ=America/Chicago date`), in a script, never by hand.
+22. **Long sessions drift from main.** About 10 rule and tool merges landed on main in one day: the flash bar, the near
+    band, proof fixes, render lanes. Sessions that started in the morning were judging with old `measure.py`, `qa.md` and
+    flash code until the owner asked: "Can we make sure that everything thats running has the latest on main?"
+    → A broadcast to every session, and judgments made against stale bars.
+    → Every brief has a "merge origin/main" step before each judge step (review, proof, qa, merge). Also, `proof.yml`
+    and qa should take their tools from main, not from the branch.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".

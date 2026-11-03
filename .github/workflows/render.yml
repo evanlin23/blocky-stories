@@ -1,6 +1,6 @@
 # Final render on GitHub's free runners (public repo). On every push to main, each story whose gate is open and
-# that has no film yet (at most 2 a run, slots a and b) is drawn in 16 parallel shards, then assembled: finish, narration, mix and the
-# flash measure. The film is kept as the run artifact `film-<story>` (90 days); the daily upload takes it from there.
+# that has no film yet (at most 2 a run, slots a and b) is drawn in 32 parallel shards, then assembled: finish, narration, mix and the
+# flash measure. A story is drawn only after a passed proof, and only the shards an earlier run hasn't already drawn at the same commit (all there: assemble only). The film is kept as the run artifact `film-<story>` (90 days); the daily upload takes it from there.
 name: render
 on:
   push:
@@ -12,7 +12,8 @@ on:
 concurrency: {group: render, cancel-in-progress: false}
 permissions: {contents: read, actions: read}
 env:
-  SHARDS: 16
+  REQUIRE_PROOF: "false"   # the proof gate is OFF until the pre-proof stories have uploaded or been proofed; then set "true" (plan skips unproofed stories and says why)
+  SHARDS: 32   # finer shards: a fast runner takes the next one (docs/research/render-throughput.md, change 6)
 jobs:
   plan:
     runs-on: ubuntu-latest
@@ -23,7 +24,12 @@ jobs:
       more: ${{ steps.p.outputs.more }}
       a: ${{ steps.p.outputs.a }}
       b: ${{ steps.p.outputs.b }}
-      shards: ${{ steps.p.outputs.shards }}
+      shards_a: ${{ steps.p.outputs.shards_a }}
+      todo_a: ${{ steps.p.outputs.todo_a }}
+      reuse_a: ${{ steps.p.outputs.reuse_a }}
+      shards_b: ${{ steps.p.outputs.shards_b }}
+      todo_b: ${{ steps.p.outputs.todo_b }}
+      reuse_b: ${{ steps.p.outputs.reuse_b }}
     steps:
       - uses: actions/checkout@v4
         with: {fetch-depth: 0}   # changed_since() compares the story's last commit with its film
@@ -32,7 +38,7 @@ jobs:
       - run: pip install -r requirements.txt
       - id: p
         env: {GH_TOKEN: "${{ github.token }}"}
-        run: python scripts/plan_renders.py --story "${{ inputs.story }}" --shards $SHARDS >> "$GITHUB_OUTPUT"
+        run: python scripts/plan_renders.py --story "${{ inputs.story }}" --shards $SHARDS --require-proof "$REQUIRE_PROOF" >> "$GITHUB_OUTPUT"
 
   voice:   # the narration is made once, here: the picture is drawn to it and the mix uses it, so they can't drift
     needs: plan
@@ -63,17 +69,19 @@ jobs:
             stories/${{ matrix.story }}/voice-timings.json
           retention-days: 5
 
-  # Two slots (plan_renders.py caps a run at 2 stories): each story's assemble waits only for its own shards.
+  # Two slots (plan_renders.py caps a run at 2 stories), both drawing at once: each story's assemble waits only for its own
+  # shards. 16 + 16 = 32 draw lanes of the account's ~40 (39 jobs ran together at 19:58:45 UTC on 2026-11-03); the other
+  # ~8 are for one proof (8 draws) and the PR test checks. Never cancel a run while it is drawing.
   draw-a:
     needs: [plan, voice]
-    if: ${{ !cancelled() && needs.plan.outputs.a != '' }}   # one story's failure doesn't stop the other
+    if: ${{ !cancelled() && needs.plan.outputs.a != '' && needs.plan.outputs.todo_a == 'true' }}   # one story's failure doesn't stop the other
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:
       fail-fast: false
-      max-parallel: 16   # the free plan runs 20 jobs at once: leave 4 for the test checks on story PRs
+      max-parallel: 16   # both slots together: at most 32 draw lanes of the account's ~40; the rest is for a proof and PR tests
       matrix:
-        shard: ${{ fromJSON(needs.plan.outputs.shards) }}
+        shard: ${{ fromJSON(needs.plan.outputs.shards_a) }}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/render-draw
@@ -84,25 +92,27 @@ jobs:
 
   assemble-a:
     needs: [plan, voice, draw-a]
-    if: ${{ !cancelled() && needs.plan.outputs.a != '' && needs.draw-a.result == 'success' }}   # a story with a missing shard gets no film (closing-time, run 87)
+    if: ${{ !cancelled() && needs.plan.outputs.a != '' && (needs.plan.outputs.todo_a == 'false' || needs.draw-a.result == 'success') }}   # a story with a missing shard gets no film (closing-time, run 87)
     runs-on: ubuntu-latest
     timeout-minutes: 300
     env: {GH_TOKEN: "${{ github.token }}"}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/render-assemble
-        with: {story: "${{ needs.plan.outputs.a }}"}
+        with:
+          story: ${{ needs.plan.outputs.a }}
+          reuse: ${{ needs.plan.outputs.reuse_a }}
 
   draw-b:
-    needs: [plan, voice, draw-a]
-    if: ${{ !cancelled() && needs.plan.outputs.b != '' }}   # one story's failure doesn't stop the other
+    needs: [plan, voice]   # not draw-a: both slots draw at once
+    if: ${{ !cancelled() && needs.plan.outputs.b != '' && needs.plan.outputs.todo_b == 'true' }}   # one story's failure doesn't stop the other
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:
       fail-fast: false
-      max-parallel: 16   # the free plan runs 20 jobs at once: leave 4 for the test checks on story PRs
+      max-parallel: 16   # both slots together: at most 32 draw lanes of the account's ~40; the rest is for a proof and PR tests
       matrix:
-        shard: ${{ fromJSON(needs.plan.outputs.shards) }}
+        shard: ${{ fromJSON(needs.plan.outputs.shards_b) }}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/render-draw
@@ -113,14 +123,16 @@ jobs:
 
   assemble-b:
     needs: [plan, voice, draw-b]
-    if: ${{ !cancelled() && needs.plan.outputs.b != '' && needs.draw-b.result == 'success' }}   # a story with a missing shard gets no film (closing-time, run 87)
+    if: ${{ !cancelled() && needs.plan.outputs.b != '' && (needs.plan.outputs.todo_b == 'false' || needs.draw-b.result == 'success') }}   # a story with a missing shard gets no film (closing-time, run 87)
     runs-on: ubuntu-latest
     timeout-minutes: 300
     env: {GH_TOKEN: "${{ github.token }}"}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/render-assemble
-        with: {story: "${{ needs.plan.outputs.b }}"}
+        with:
+          story: ${{ needs.plan.outputs.b }}
+          reuse: ${{ needs.plan.outputs.reuse_b }}
 
   again:   # more stories were ready than one run can hold: start another run for the rest
     needs: [plan, assemble-a, assemble-b]
