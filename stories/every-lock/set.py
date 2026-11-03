@@ -101,7 +101,7 @@ def mats(kit):
     M["black"] = pm("#15110e", 0.7)
     M["flap"] = pm("#a9741f", 0.35)
     M["steel"] = kit.metal("#aab2ba", 0.35, name="steel")
-    for nm, h, met, rough in (("brassm", P["brass"], 0.55, 0.32), ("chromem", P["chrome"], 0.7, 0.22)):
+    for nm, h, met, rough in (("brassm", "#d9962a", 0.85, 0.3), ("chromem", P["chrome"], 0.9, 0.2)):
         m = kit._new(nm)
         b = m.node_tree.nodes["Principled BSDF"]
         b.inputs["Base Color"].default_value = kit.col(h)
@@ -145,8 +145,12 @@ def bx(kit, name, size, loc, mat, parent=None, rot=(0, 0, 0), bevel=0.0):
     return kit.box(name, size, loc, mat, parent, rot, bevel)
 
 
-def wall(kit, M, name, axis, c, a0, a1, h, mat, openings=(), t=0.12, z0=0.0):
+def wall(kit, M, name, axis, c, a0, a1, h, mat=None, openings=(), t=0.12, z0=0.0):
     """A wall along `axis` ('x': at y = c, 'y': at x = c) from a0 to a1, with door openings (centre, width, height)."""
+    if not isinstance(h, (int, float)):   # called without a height: wall(..., a1, mat)
+        if mat is not None and not isinstance(mat, (int, float)) and openings == ():
+            pass
+        h, mat = WALL_H, h
     segs, cur = [], a0
     for (oc, ow, oh) in sorted(openings):
         if oc - ow / 2 > cur:
@@ -320,7 +324,7 @@ def build_lockset(kit, M, name, parent, n, x0, x1, z0, z1, y, s, seed, cols=None
         c, r = i % cols, i // cols
         x = x0 + (c + 0.5) * (x1 - x0) / cols
         z = z1 - (r + 0.5) * (z1 - z0) / rows
-        lk = make_lock(kit, M, f"{name}{i}", lock_kind(i + seed), parent, (x, y + 0.006 * rng.random(), z),
+        lk = make_lock(kit, M, f"{name}{i}", lock_kind(i + int(seed)), parent, (x, y + 0.006 * rng.random(), z),
                        s * (0.9 + 0.2 * rng.random()))
         lk.show(False)
         out.append(lk)
@@ -379,7 +383,7 @@ def build_h(kit, M, ctx):
     # beds and furniture
     kit.prop("bed_single", (-3.9, 5.6, 0), rot=0, tint="#ffd89a")
     kit.prop("nightstand_1", (-2.6, 6.55, 0))
-    kit.prop("bookshelf", (-1.2, 6.8, 0), rot=0)
+    kit.prop("bookshelf", (-2.2, 6.75, 0), rot=0)
     kit.prop("carpet_1", (-2.6, 4.8, 0.0), rot=90)
     kit.prop("bed_single", (3.9, 5.6, 0), rot=0, tint="#a0e6e0")
     kit.prop("nightstand_1", (2.6, 6.55, 0))
@@ -387,7 +391,7 @@ def build_h(kit, M, ctx):
     kit.prop("bed_king", (3.2, 1.8, 0), rot=90, tint="#ffc0a8")
     kit.prop("houseplant_1", (1.3, 0.5, 0), scale=1.5)
     kit.prop("shelf_1", (-0.78, 1.0, 0), rot=90)
-    kit.prop("light_floor1", (0.75, 6.6, 0), scale=1.4)
+    kit.prop("light_floor1", (1.6, 6.6, 0), scale=1.4)
     # phones
     bx(kit, "phone jade", (0.07, 0.14, 0.012), (3.3, 5.2, 0.62), M["phone"])
     bx(kit, "phone me", (0.07, 0.14, 0.012), (-3.3, 5.2, 0.62), M["phone"])
@@ -428,8 +432,8 @@ def build_h(kit, M, ctx):
         ctx["curtain"].append((ob, x0))
     # lights
     L = kit.light
-    L("h_a", "AREA", (0, 1.8, 2.5), 330, "#fff1d8", size=1.4)
-    L("h_b", "AREA", (0, 4.6, 2.5), 330, "#fff1d8", size=1.4)
+    L("h_a", "AREA", (0, 1.8, 2.5), 250, "#fff1d8", size=1.4)
+    L("h_b", "AREA", (0, 4.6, 2.5), 250, "#fff1d8", size=1.4)
     L("h_c", "AREA", (0, 6.2, 2.4), 200, "#fff1d8", size=1.0)
     L("h_bath", "AREA", (0, 8.4, 2.4), 180, "#ffffff", size=1.0)
     L("h_my", "AREA", (-2.9, 5.2, 2.4), 120, "#fff1d8", size=1.0)
@@ -699,20 +703,21 @@ def build_meter(kit, ctx, tl):
     cam = kit.OBJ["cam"]
     m = kit._new("meter")
     nt = m.node_tree
-    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    b = nt.nodes["Principled BSDF"]
     tex = nt.nodes.new("ShaderNodeTexImage")
-    em = nt.nodes.new("ShaderNodeEmission")
-    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
-    mix = nt.nodes.new("ShaderNodeMixShader")
-    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
-    nt.links.new(tex.outputs["Color"], em.inputs["Color"])
-    em.inputs["Strength"].default_value = 1.0
-    nt.links.new(tex.outputs["Alpha"], mix.inputs["Fac"])
-    nt.links.new(tr.outputs[0], mix.inputs[1])
-    nt.links.new(em.outputs[0], mix.inputs[2])
-    nt.links.new(mix.outputs[0], out.inputs["Surface"])
+    b.inputs["Roughness"].default_value = 1.0
+    for k in ("Specular IOR Level", "Specular"):
+        if k in b.inputs:
+            b.inputs[k].default_value = 0.0
+    b.inputs["Base Color"].default_value = (0, 0, 0, 1)
+    nt.links.new(tex.outputs["Color"], b.inputs["Emission Color"])
+    b.inputs["Emission Strength"].default_value = 0.95
+    nt.links.new(tex.outputs["Alpha"], b.inputs["Alpha"])
     plane = kit.plane("meter", (1.0, 260 / 960), (0, 0, -0.3), m, cam)
-    for a in ("visible_shadow", "visible_glossy", "visible_diffuse", "visible_transmission"):
+    uv = plane.data.uv_layers.new(name="UVMap")
+    for i, (u, v) in enumerate(((0, 0), (1, 0), (1, 1), (0, 1))):
+        uv.data[i].uv = (u, v)
+    for a in ("visible_shadow",):
         try:
             setattr(plane, a, False)
         except Exception:
@@ -751,16 +756,19 @@ def update_meter(kit, ctx, tl, t):
         img.alpha_mode = "STRAIGHT"
         M["tex"].image = img
         M["cur"] = n
-    cam = kit.OBJ["cam"]
-    lens = cam.data.lens
+    from blocky import bl_story
+    shot = next((x for x in tl["shots"] if x["start"] <= t < x["end"]), tl["shots"][-1])
+    spec = {x["id"]: x for x in ctx["story"]["shots"]}[shot["id"]]
+    lens = bl_story.cam_at(spec, shot, t, {}, tl)[2]
     dist = 0.3
     fh = 24.0 * dist / lens           # the frame's height at that distance (sensor 24 mm, vertical fit)
     fw = fh * 9.0 / 16.0
-    width = fw * 0.66
+    width = fw * 0.86
     pop = 1.0 + 0.2 * (math.sin(math.pi * min(1.0, since / 0.25)) if 0 <= since < 0.25 else 0.0)
     pl = M["plane"]
     pl.scale = (width * pop, width * pop, 1.0)
     pl.location = (0.0, fh * (0.5 - 0.115), -dist)
+
 
 
 # ------------------------------------------------------------------------------------------ build / animate
@@ -815,13 +823,11 @@ def animate(kit, story, tl, t, ctx):
     swing = float(track(dc, "swing", t, 0.0))
     B["swing"].rotation_euler.z = math.radians(swing)
     B["swing"].rotation_euler.x = math.radians(lean)
-    B["handle"].hide_render = L > 0.05 or float(last(dc, t)["n"] if last(dc, t) else 4) >= 512
-    # lock count n: the pool shows the first n, the ones that just arrived pop in over 0.2 s
-    cur = last(dc, t)
     n, n0, tn = 4, 4, -9.0
     for c in sorted(dc, key=lambda c: c["t"]):
         if "n" in c and c["t"] <= t + 1e-9:
             n0, n, tn = n, c["n"], c["t"]
+    B["handle"].hide_render = L > 0.05 or n >= 512
     pop = min(1.0, max(0.0, (t - tn) / 0.2))
     for i, lk in enumerate(B["pool"]):
         if i < min(n0, POOL_N):
@@ -861,13 +867,13 @@ def animate(kit, story, tl, t, ctx):
     ctx["leaf_dale"].set(float(track(_cues(tl, "daledoor"), "a", t, 85.0)))
     ctx["leaf_cup"].set(float(track(_cues(tl, "cupboard"), "a", t, 0.0)))
     ctx["leaf_fridge"].set(float(track(_cues(tl, "fridge"), "a", t, 0.0)))
-    cup_n = 2 if last(_cues(tl, "cuplock"), t) else 1
     cc = last(_cues(tl, "cuplock"), t)
     ctx["cup_locks"][1].show(bool(cc), ss((t - cc["t"]) / 0.2) if cc else 0)
     fh_ = float(track(_cues(tl, "frflap"), "a", t, 70.0))
     ctx["fr_hero"].flap_angle(fh_)
     ft = last(_cues(tl, "frtiny"), t)
-    ctx["fr_tiny"].show(bool(ft), ss((t - ft["t"]) / 0.2) if ft else 0)
+    ft_on = bool(ft and ft.get("on", True))
+    ctx["fr_tiny"].show(ft_on, ss((t - ft["t"]) / 0.2) if ft_on else 0)
     # the bucket (a cue moves it to the door) and its keys
     ctx["bucket"].location = track(_cues(tl, "bucketat"), "loc", t, (-0.55, 0.55, 0.0))
     ctx["stool"].location = track(_cues(tl, "stoolat"), "loc", t, (0.5, 5.7, -5.0))
