@@ -204,7 +204,7 @@ stage(0, *[E(w, p, 0, expr=e, rim=True) for w, p, e in (
 LOOK_HOOK = {"exposure": 1.1, "camfill": 1.5, "gal": 1.0, "inside": 1.6, "wash": 1.0}
 LOOK_WARN = {"exposure": 1.0, "camfill": 1.3, "gal": 1.2, "inside": 1.6, "wash": 1.0, "amb": 1.0, "bulbs": 0.8,
              "kick": [[2.2, 9.2, 2.4], [3.0, 14.3, 1.6], 900, 40, "#dfe4ff"]}
-S(0, mv(((3.0, 7.3, 1.55), (3.0, 14.3, 1.45)), ((3.0, 8.6, 1.6), (3.0, 14.3, 1.78)), 40, 44), 2, look=LOOK_WARN,
+S(0, mv(((3.0, 7.0, 2.4), (3.0, 14.3, 2.55)), ((3.0, 8.4, 2.45), (3.0, 14.3, 2.52)), 58, 78), 2, look=LOOK_WARN,
   note="the warned-of thing: one pane through the arch holds a lilac-rimmed stranger, nobody in front; pushes in")
 S("L01b", mv(((3.2, 3.9, 1.45), (3.0, 11.5, 2.2)), ((3.15, 4.3, 1.5), (3.0, 11.5, 2.2)), 34), 2, look=LOOK_HOOK,
   note="Tasha lit at the maze front, the panes behind her hold a lilac-rimmed crowd on no steps")
@@ -406,7 +406,9 @@ S("L31", one((2.0, -5.5, 1.7), (-1.4, 0.2, 1.4), 24), 2, follow="guy", look=LOOK
   note="the real me looked in this pane last year, then moved away")
 S("L32", one((-1.7, -0.7, 1.65), (0.0, 0.0, 1.65), 50), 2, follow="tasha", look=LOOK_WALK, rain2d=False,
   note="Tasha comes to see me anyway")
-S("L33", one((-0.55, -1.35, 1.45), (-0.55, 0.45, 1.4), 46), 2, follow="guy", look=LOOK_WALK, rain2d=False,
+raw("me", "L33", blink=False)
+raw("me", "L34", blink=True)
+S("L33", one((-0.55, -1.6, 1.45), (-0.55, 0.45, 1.4), 40), 2, follow="guy", look={**LOOK_WALK, "camfill": 1.1}, rain2d=False,
   note="the eye close: my glint the brightest point")
 
 # =========================================================================================== 12 the truck, L34 to L35
