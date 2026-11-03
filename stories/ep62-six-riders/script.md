@@ -4,8 +4,8 @@
 - **From:** batch 6 slot P7, pitch Z4 in `docs/research/2026-11-03-week.md` (the panel's #1 title and a 9 line score). The lead's puzzle design, kept as given.
 - **Lane:** experiment (horror puzzle, "find the wrong one", comment a letter). The 20 to 45 s arm of H1, and a count title for H3.
 - **Shape:** `swap` (new tag): the extra one trades places with the person it copied.
-- **Word count:** 109 spoken words in 19 lines, all `narrator`, plus one 3.0 s hold beat (P01) and one 0.6 s drop (P02).
-- **Estimated length:** 109 words at about 290 wpm is 22.6 s of speech. Gaps add about 2.2 s, P01 3.0 s, P02 0.6 s, the beat after "SIX" 0.3 s, the held corridor after L14 0.8 s and the loop tail 0.25 s, so about 30 to 32 s. If it lands under 27 s, stretch P01 to 3.5 s. If over 35 s, cut L03.
+- **Word count:** 118 spoken words in 19 lines, all `narrator`, plus one 3.0 s hold beat (P01) and one 0.6 s drop (P02).
+- **Estimated length:** 118 words at about 290 wpm is 24.4 s of speech. Gaps add about 2.2 s, P01 3.0 s, P02 0.6 s, the beat after "SIX" 0.3 s, the held corridor after L14 0.8 s and the loop tail 0.25 s, so about 32 to 34 s. If it lands under 27 s, stretch P01 to 3.5 s. If over 35 s, cut L03.
 - **Look:** bright and lit the whole way (no dark scene at all). `look.flash_safe: true`, the closer style, and `look.polish: true` if it has merged. No light switches. The doors' open and close are the only big changes, each over 0.8 s.
 
 ## The big idea
@@ -20,7 +20,7 @@ The extra face in the elevator mirror isn't a reflection. It's something standin
 - **The challenge (line 2):** "Find the EXTRA one." Then letters A to E pop over the five backs, and the floor display counts the last three floors while the picture holds.
 - **The answer:** C. Two figures in the glass wear C's blue jacket. A real reflection keeps C's orange bag on the same side of the screen as C's back. The extra one has it on the other side: it didn't flip, so it isn't a reflection.
 - **Twist:** C is my big brother. The doors open (the mirror splits into the walls and the reflections go), and close again. Now the C in front of me has his bag on the other shoulder and his floating letter is backwards. The thing in the glass swapped with him. My real brother is in the glass.
-- **How the last 15 seconds turn over line 1:** first time, "five people, six in the mirror" is a puzzle. On the loop, one of the five "people" in the car is the copy, and the sixth in the glass is my brother. "Count them AGAIN." plays straight into "Five people got in the elevator."
+- **How the last 15 seconds turn over line 1:** first time, "five people, six in the mirror" is a puzzle. On the loop, one of the five "people" in the car is the copy, and the sixth in the glass is my brother. "Now the EXTRA one's out HERE." plays straight into "Five people got in the elevator. The mirror shows six." as one thought.
 - **Plants a rewatch catches:**
   1. **The gap.** From frame 1 the front row has one empty spot, exactly one person wide, just left of C. In the glass, the copy stands in it. The car has room for the sixth and nobody in it.
   2. **The eyes.** Every reflection looks at its own rider's eyes. The copy alone looks straight into the lens (at me, D) from the first frame. Its eyes never change. (Its expression is `neutral` like C's, so it only reads on a second look.)
@@ -42,13 +42,14 @@ Each outfit is a different solid colour so every face in the doors matches a bac
 
 | Tag | Who | Look | Where (front row is next to the doors) |
 |---|---|---|---|
-| A | a woman, 30s | tomato-red puffer jacket `#e8433a`, black beanie, dark skin | front row, far left |
-| B | a man, 40s | sunflower-yellow raincoat `#ffd23f`, hood down, short black block hair | back row, left |
-| C | **my big brother**, about 24 | royal-blue jacket `#2f5bea` with white sleeves (plain, no lettering), brown block hair, a bright orange shoulder bag `#ff8a1f` on his **right** shoulder, so seen from behind it's on the **screen right** | front row, right of the gap |
-| D | **me**, the narrator, about 20 | green hoodie `#3fbf5a`, brown block hair like his | back row, middle, just behind C's left shoulder |
-| E | a woman, 60s | purple cardigan `#8e5bd6`, white block hair in a bun, round glasses | back row, right |
+| A | a woman, 30s, an office worker | tomato-red wool work coat `#e8433a` over a white shirt, black hair in a low bun, dark skin | front row, far left |
+| B | a man, 40s | sunflower-yellow raincoat `#ffd23f` over a shirt and dark tie, short black block hair, a grey moustache | back row, left |
+| C | **my big brother**, an adult, about 28 | royal-blue blazer `#2f5bea` over a white collared shirt (plain, no lettering), brown block hair, short block stubble, a bright orange shoulder bag `#ff8a1f` on his **right** shoulder, so seen from behind it's on the **screen right** | front row, right of the gap |
+| D | **me**, the narrator, an adult, about 24 | green zip work jacket `#3fbf5a` over a collared shirt, brown block hair like his | back row, middle, just behind C's left shoulder |
+| E | a woman, 60s | purple cardigan `#8e5bd6` over a work blouse, white block hair in a bun, round glasses | back row, right |
 
 - **Formation, screen left to right, from the camera at the back wall:** front row: A, **the gap**, C. Back row (one step back, half a slot over): B, D, E. The camera sits high (about 2.4 m) so every head and every reflection reads. If the builder needs a different layout to fit the frame, keep three things: the gap is in the front row, the gap is immediately left of C on screen, and every face shows in the doors.
+- **They read as adults:** a weekday-morning office elevator, everyone in work clothes, all at full adult rig height and build, no small or kid-scaled rider, nobody in hoodies, caps or backpacks. My brother's stubble shows in S13.
 - **Labels:** a flat game-style tag over each rider's head, a white rounded square with a teal `#20e3d2` rim and a black letter (A to E, our own lettering, no words). Draw them in post as overlays over the backs only, never in the glass. They appear on L04, one per letter, and stay on every shot that shows the backs.
 
 ## The copy (continuity)
@@ -82,7 +83,7 @@ It looks exactly like C: same jacket, hair, face, height and bag. Built once (C'
 - **The drone:** a heavy low drone on D enters on L08 ("There are TWO of C") and holds to the end.
 - **P02 (0.6 s, before L14):** everything but the drone drops, then a soft two-note falling ding (synth, -18 dB, not a music box or chime toy) and the doors' smooth slide.
 - **Ambience:** car hum, a soft cable creak, the doors' slide on L14 and L15.
-- **The loop:** 0.25 s after "AGAIN", cut to L01's first frame.
+- **The loop:** 0.25 s after "HERE", cut to L01's first frame.
 
 ## The lore connection
 None. The story stands alone, and the copy isn't a Keeper (it isn't keeping a count, it takes a place). No tally in the set.
@@ -119,10 +120,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S12: in the glass, push in on the two blue jackets side by side. A soft orange ring eases in around both (0.3 s). Drone enters]
 - `L09` narrator: C is my / big BROTHER.
   - [S13: from the side wall near the doors: my brother three-quarter front, `neutral`, me just behind his shoulder, same brown hair. The doors out of frame]
-- `L10` narrator: Look at / his BAG.
+- `L10` narrator: His BAG'S / on his / RIGHT shoulder.
   - [S14: close from behind on his right shoulder, the orange bag on the screen right]
-- `L11` narrator: His reflection / keeps it / on the / SAME side.
-  - [S15: tilt up from his back to his reflection straight ahead in the glass: the bag stays on the screen right]
+- `L11` narrator: His reflection / wears it / on its LEFT. / The other one, / on its RIGHT.
+  - [S15: in the glass, his reflection straight ahead, facing us, the bag on its left shoulder (screen right)]
+  - [S15b: the copy beside it, facing us, the bag on its right shoulder (screen left), just like him]
 - `L12` narrator: Mirrors / FLIP you. / That one / DIDN'T. **(quotable)**
   - [S16: the copy in the glass, mid close, bag on the screen left, eyes on the lens]
   - [S17: punch in on its face. It hasn't moved]
@@ -132,7 +134,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 ## 04 The swap (P02 to L19, about 22 to 31 s)
 - `P02` drop, 0.6 s.
   - [S19: close on the display: 1, the arrow goes out. The ding]
-- `L14` narrator: The doors / OPEN, / and the mirror's / GONE.
+- `L14` narrator: The doors / OPEN. / Nobody / gets ON.
   - [S20: the master: the door halves slide into the walls over 0.8 s, the faces going with them. Beyond, a bright empty white corridor with a teal floor stripe. Nobody there. Hold 0.8 s after the line]
 - `L15` narrator: The doors / CLOSE.
   - [S21: the halves meet again over 0.8 s, six faces back in the glass, too small to check yet]
@@ -143,10 +145,10 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S24: close on his tag: a mirrored C]
 - `L18` narrator: My REAL brother / is in / the GLASS.
   - [S25: in the glass, the gap: my brother, `worried`, standing in the gap facing out, eyes on me (no hand on the glass: batch 1 used "pressed flat against glass")]
-- `L19` narrator: Count them / AGAIN.
-  - [S26: the master, six faces in the glass, five backs, push in. 0.25 s, then loop to S01]
+- `L19` narrator: Now the / EXTRA one's / out HERE.
+  - [S26: the master, push in on the copy's back, standing where my brother stood in the car, its backwards tag and its bag on the screen left, six faces in the glass behind. 0.25 s, then loop to S01]
 
-About 26 shots in about 30 s, a cut or punch every 1.2 s on average, none still over 2 s (the hold is three 1 s punches).
+About 27 shots in about 33 s, a cut or punch every 1.2 s on average, none still over 2 s (the hold is three 1 s punches).
 
 ## Risks
 - **Can a phone viewer solve it?** Two blue jackets in the glass are easy to spot. The bag side is the "why". Test the hold frame at phone size before anything else: both blue jackets, both bags and the gap must read in the S09 frame.
