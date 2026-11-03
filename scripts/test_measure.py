@@ -117,3 +117,36 @@ def test_confirmed_targets_block_and_the_rest_warn():
     assert st["macro.brightness_mean"] == "warn"            # not confirmed
     assert st["macro.longest_still_q_s"] == "ok"
     assert "**block**" in measure.table({**res, "checks": measure.check(res)})
+
+
+def test_a_near_miss_on_a_pace_bar_reads_near_not_block():
+    # ep48-crazy-golf's proof (2026-11-03): 12.0, 13.7 and 5.78 against 12.5, 14.0 and 6.0
+    res = {"macro": {"picture_changes_per_10s": 12.0, "picture_changes_per_10s_q": 13.7, "motion_energy_q": 5.78,
+                     "longest_still_q_s": 1.25}}
+    st = {c["metric"]: c["status"] for c in measure.check(res)}
+    assert st["macro.picture_changes_per_10s"] == "near"
+    assert st["macro.picture_changes_per_10s_q"] == "near"
+    assert st["macro.motion_energy_q"] == "near"
+    assert st["macro.longest_still_q_s"] == "block"          # no band: 1.25 s is a flop's
+    md = measure.table({**res, "checks": measure.check(res)})
+    assert "**near**" in md and "1 block, 3 near" in md
+    # the band edge, and the flops stay blocked
+    edge = {"macro": {"picture_changes_per_10s": 11.25, "picture_changes_per_10s_q": 12.59, "motion_energy_q": 5.3}}
+    st = {c["metric"]: c["status"] for c in measure.check(edge)}
+    assert st == {"macro.picture_changes_per_10s": "near", "macro.picture_changes_per_10s_q": "block",
+                  "macro.motion_energy_q": "block"}
+    # knock-back (a flop): motion 5.5 is near, but its picture changes 10.1 and 10.3 still block
+    kb = {"macro": {"picture_changes_per_10s": 10.1, "picture_changes_per_10s_q": 10.3, "motion_energy_q": 5.5}}
+    st = {c["metric"]: c["status"] for c in measure.check(kb)}
+    assert st["macro.picture_changes_per_10s"] == st["macro.picture_changes_per_10s_q"] == "block"
+
+
+def test_a_near_row_passes_the_proof_verdict():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("proof_report", Path(__file__).parent / "proof_report.py")
+    pr = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(pr)
+    craft = {"checks": measure.check({"macro": {"picture_changes_per_10s": 12.0, "motion_energy_q": 5.8}})}
+    ok, why = pr.verdict(craft, {"house_bar": {"pass": True}}, {"file": {"lufs": -14.1, "true_peak_dbtp": -1.7}},
+                         {"hits": []})
+    assert ok and why == []
