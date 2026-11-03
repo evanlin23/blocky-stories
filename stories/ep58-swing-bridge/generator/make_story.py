@@ -491,7 +491,7 @@ story = {
 from blocky import timeline  # noqa: E402
 
 vp = HERE.parent / "voice-timings.json"
-if not vp.exists():
+if not vp.exists() or __import__("os").environ.get("DRAFT"):
     story["acting"] = {}
     story["cues"] = []
     OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")

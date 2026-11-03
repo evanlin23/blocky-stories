@@ -156,20 +156,42 @@
   ]
  },
  {
+  "id": "L08b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And something on",
+    "And something on"
+   ],
+   [
+    "the old bridge has",
+    "the old bridge has"
+   ],
+   [
+    "hands that never",
+    "hands that never"
+   ],
+   [
+    "glow at ALL.",
+    "glow at all."
+   ]
+  ]
+ },
+ {
   "id": "L09",
   "who": "narrator",
   "chunks": [
    [
-    "Ada's the strong",
-    "Ada's the strong"
+    "My wife, Ada,",
+    "My wife, Ada,"
    ],
    [
-    "one, so nobody",
-    "one, so nobody"
+    "is the strong one,",
+    "is the strong one,"
    ],
    [
-    "needs me.",
-    "needs me."
+    "so nobody needs me.",
+    "so nobody needs me."
    ],
    [
     "And I don't",
@@ -234,12 +256,12 @@
     "his hands went"
    ],
    [
-    "out, we'd lose",
-    "out, we'd lose"
+    "out, he'd never",
+    "out, he'd never"
    ],
    [
-    "HIM.",
-    "him."
+    "leave that CABIN.",
+    "leave that cabin."
    ]
   ]
  },
@@ -346,32 +368,6 @@
   ]
  },
  {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I sat by",
-    "I sat by"
-   ],
-   [
-    "the stove, and",
-    "the stove, and"
-   ],
-   [
-    "my hands went",
-    "my hands went"
-   ],
-   [
-    "ORANGE. That was",
-    "orange. That was"
-   ],
-   [
-    "the STOVE.",
-    "the stove."
-   ]
-  ]
- },
- {
   "id": "L19",
   "who": "narrator",
   "chunks": [
@@ -398,24 +394,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "There were two",
-    "There were two"
+    "At dusk, he still",
+    "At dusk, he still"
    ],
    [
-    "stools. Nobody had",
-    "stools. Nobody had"
+    "raised one hand",
+    "raised one hand"
    ],
    [
-    "sat on the",
-    "sat on the"
+    "to the empty",
+    "to the empty"
    ],
    [
-    "second in thirty",
-    "second in thirty"
-   ],
-   [
-    "YEARS.",
-    "years."
+    "RIVER.",
+    "river."
    ]
   ]
  },
@@ -544,24 +536,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the second",
-    "And the second"
+    "And wet handprints",
+    "And wet handprints"
    ],
    [
-    "stool was turned",
-    "stool was turned"
+    "ran along the rail,",
+    "ran along the rail,"
    ],
    [
-    "to face the",
-    "to face the"
+    "all the way",
+    "all the way"
    ],
    [
-    "DOOR.",
-    "door."
-   ],
-   [
-    "To face ME.",
-    "To face me."
+    "to the far BANK.",
+    "to the far bank."
    ]
   ]
  },
@@ -940,6 +928,20 @@
   ]
  },
  {
+  "id": "L46b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It comes for the",
+    "It comes for the"
+   ],
+   [
+    "ones nobody NEEDS.",
+    "ones nobody needs."
+   ]
+  ]
+ },
+ {
   "id": "L47",
   "who": "narrator",
   "chunks": [
@@ -994,12 +996,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "By the stove.",
-    "By the stove."
-   ],
-   [
     "In my POCKETS.",
     "In my pockets."
+   ],
+   [
+    "Every walk HOME.",
+    "Every walk home."
    ]
   ]
  },
@@ -1150,20 +1152,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "I sat on",
-    "I sat on"
+    "Between us, our",
+    "Between us, our"
    ],
    [
-    "the second stool,",
-    "the second stool,"
+    "hands lit the",
+    "hands lit the"
    ],
    [
-    "and the window",
-    "and the window"
+    "whole cabin.",
+    "whole cabin."
    ],
    [
-    "was EMPTY.",
-    "was empty."
+    "The window was",
+    "The window was"
+   ],
+   [
+    "EMPTY.",
+    "empty."
    ]
   ]
  },
@@ -1248,38 +1254,20 @@
   ]
  },
  {
-  "id": "L63",
-  "who": "narrator",
-  "chunks": [
-   [
-    "In this town,",
-    "In this town,"
-   ],
-   [
-    "your hands glow",
-    "your hands glow"
-   ],
-   [
-    "when somebody",
-    "when somebody"
-   ],
-   [
-    "NEEDS you.",
-    "needs you."
-   ]
-  ]
- },
- {
   "id": "L64",
   "who": "narrator",
   "chunks": [
    [
-    "Mine glow for",
-    "Mine glow for"
+    "At three this",
+    "At three this"
    ],
    [
-    "EMRYS.",
-    "Emrys."
+    "morning, my hands",
+    "morning, my hands"
+   ],
+   [
+    "woke me, GLOWING.",
+    "woke me, glowing."
    ]
   ]
  },
@@ -1288,24 +1276,46 @@
   "who": "narrator",
   "chunks": [
    [
-    "At three this",
-    "At three this"
+    "Everyone who needs",
+    "Everyone who needs"
    ],
    [
-    "morning, they woke",
-    "morning, they woke"
+    "me was asleep.",
+    "me was asleep."
    ],
    [
-    "me, GLOWING. Everyone",
-    "me, glowing. Everyone"
+    "But two dull,",
+    "But two dull,"
    ],
    [
-    "who needs me",
-    "who needs me"
+    "flat hands lay",
+    "flat hands lay"
    ],
    [
-    "was ASLEEP.",
-    "was asleep."
+    "on our WINDOWSILL.",
+    "on our windowsill."
+   ]
+  ]
+ },
+ {
+  "id": "L66",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody has ever",
+    "Nobody has ever"
+   ],
+   [
+    "needed it.",
+    "needed it."
+   ],
+   [
+    "Tonight, it",
+    "Tonight, it"
+   ],
+   [
+    "needs ME.",
+    "needs me."
    ]
   ]
  }
