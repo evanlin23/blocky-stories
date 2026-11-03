@@ -29,6 +29,7 @@ SPAN_X = 18.3          # the pivot
 RAIL_Y = 0.8
 RAIL_Z = 0.98
 FOG_NODES = {"built": False}
+CH = {}
 
 REACH_SPEC = {
     "age": "adult", "skin": CLAY, "shirt": OCHRE, "pattern": "solid", "collar": "#4a3c30", "pants": PEAT, "shoes": TAN,
@@ -106,6 +107,7 @@ def make_reach(kit, workdir, name, pos, yaw=0.0, lean=0.0, head_pitch=0.0, paths
     object, so a shot can show the one it wants."""
     n0 = set(bpy.data.objects.keys())
     ch = rig.Character(name, REACH_SPEC, workdir)
+    CH[name] = ch
     ch.pose(pos[0], pos[1], pos[2], yaw, lean=lean, head_pitch=head_pitch, expr="neutral")
     for sx in (-1, 1):
         for ob in ch.P[f"arm{sx}"].children_recursive:
@@ -491,7 +493,7 @@ def build_kitchen(kit, ctx):
         for sy in (-1, 1):
             kit.box(f"ki_tl{sx}{sy}", (0.07, 0.07, 0.74), (X + sx * 0.7, 3.4 + sy * 0.4, 0.37), kit.plastic("#6a4a30", 0.6))
     kit.box("ki_chair", (0.5, 0.5, 0.45), (X + 1.15, 3.4, 0.225), kit.plastic("#6a4a30", 0.7), bevel=0.03)
-    kit.box("ki_win", (1.4, 0.05, 1.3), (X - 2.0, 6.38, 1.7), kit.emit("#e4ecf0", 0.9))
+    kit.box("ki_win", (1.4, 0.05, 1.3), (X - 2.0, 6.38, 1.7), kit.emit("#e4ecf0", 0.35))
     kit.box("ki_chair2", (0.5, 0.5, 0.45), (X - 1.1, 3.4, 0.225), kit.plastic("#6a4a30", 0.7), bevel=0.03)
     ctx["kmug"] = kit.box("ki_mug1", (0.12, 0.12, 0.14), (X - 0.3, 3.3, 0.86), kit.plastic("#d8cdb4", 0.5), bevel=0.02)
     kit.box("ki_mug2", (0.1, 0.1, 0.1), (X + 0.3, 3.5, 0.84), kit.plastic("#d8cdb4", 0.5))
@@ -581,9 +583,9 @@ def build(kit, story, tl):
     R["far"] = two_sleeves("reach_far", lambda sd: [V((-16.0, RAIL_Y + sd * 0.12, 1.13)), V((1.4, RAIL_Y + sd * 0.12, 1.13))])
     # S91 and S92: the same two hands flat on our bedroom's outside sill, the sleeves running away over the garden into fog
     R["bed"] = two_sleeves("reach_bed", lambda sd: [V((350.0 + sd * 0.17, 45.0, 1.235)), V((350.0 + sd * 0.17, 5.95, 1.235))],
-                          skin_c="#d6cfd2", coat_c="#6f7896", em=("#a9b6dc", 0.55))
+                          skin_c="#aaa2aa", coat_c="#566080", em=("#a9b6dc", 0.12))
     R["far2"] = two_sleeves("reach_far2", lambda sd: [V((-16.0, RAIL_Y + sd * 0.12, 1.13)), V((1.4, RAIL_Y + sd * 0.12, 1.13))],
-                            skin_c="#dcd2cc", em=("#b8c4e0", 0.5))
+                            skin_c="#cdbda9", em=("#b8c4e0", 0.12))
     ctx["reach"] = R
     # lights (all off by default, switched by the look)
     L = kit.light
@@ -914,6 +916,8 @@ def animate(kit, story, tl, t, ctx):
     for k, obs in ctx["reach"].items():
         for o in obs:
             o.hide_render = k != rv
+    if "reach_lean" in CH:
+        CH["reach_lean"].neck.rotation_euler = (-0.62, 0, spec.get("hyaw", 0.0))
     over["farlamp"] = 0.0
     over["handlamp"] = 0.0
     over["sill"] = 0.0

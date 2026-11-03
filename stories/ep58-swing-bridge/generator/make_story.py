@@ -441,17 +441,17 @@ redo("S57", mv([17.0, -1.5, 1.3], [18.1, 0.8, 1.0], 32, [17.4, -1.3, 1.3], [18.1
 redo("S41", fill_k=0.6)
 
 # ---- picture fixes: no clipped whites, the lean read face to face, pale hands
-redo("S17", fill_k=0.3, lk={"ki_amb": 0.4, "ki_win": 0.25}, sky_k=0.4)
-redo("S19", fill_k=0.2, lk={"ki_amb": 0.3, "ki_win": 0.18}, sky_k=0.4)
-redo("S41", fill_k=0.3, lk={"cab_amb": 0.7})
-redo("S70", glow_k=2.2, fill_k=0.4, lk={"cab_lamp": 0.0, "cab_amb": 0.6}, em_k=0.7, halo_k=0.6)
+redo("S17", fill_k=0.2, lk={"ki_amb": 0.18, "ki_win": 0.12}, sky_k=0.3)
+redo("S19", fill_k=0.15, lk={"ki_amb": 0.15, "ki_win": 0.1}, sky_k=0.3)
+redo("S41", fill_k=0.1, lk={"cab_amb": 0.22})
+redo("S70", glow_k=1.5, fill_k=0.3, lk={"cab_lamp": 0.0, "cab_amb": 0.4}, em_k=0.6, halo_k=0.6)
 for _sid in ("S01", "S88", "S89", "S92"):
-    redo(_sid, em_k=0.55, halo_k=0.55)
-redo("S64", mv([4.6, -0.7, 1.45], [1.2, 0.8, 1.1], 34, [4.2, -0.6, 1.4], [1.2, 0.8, 1.1], 34), reach="far2", handlamp=1.2, sash=False,
-     nobar=True, look="fogreach", fd=0.02, hl_pos=(1.0, 0.1, 0.55))
-redo("S65", cam([0, [16.6, 0.1, 1.45], [20.3, 2.3, 1.3], 26], [1, [16.9, 0.2, 1.45], [20.3, 2.3, 1.3], 24]), {}, sill=2.5)
-redo("S66", cam([0, [20.2, 4.6, 1.3], [20.2, 2.2, 1.32], 26], [1, [20.2, 4.3, 1.3], [20.2, 2.2, 1.32], 26]), {}, sill=2.5)
-redo("S91", mv([349.9, 4.3, 1.45], [349.9, 5.9, 1.2], 30), bedreach=True, fd=0.03)
+    redo(_sid, glow_k=0.6, em_k=0.5, halo_k=0.55)
+redo("S64", mv([4.6, -0.6, 1.4], [1.2, 0.8, 1.0], 32, [4.2, -0.5, 1.35], [1.2, 0.8, 1.0], 32), reach="far2", handlamp=0.35, sash=False,
+     nobar=True, look="fogreach", fd=0.02, hl_pos=(1.0, 0.1, 0.6), moon_k=0.3, sky_k=0.5)
+redo("S65", cam([0, [17.4, -0.5, 1.8], [20.3, 2.3, 1.35], 30], [1, [17.7, -0.4, 1.8], [20.3, 2.3, 1.35], 28]), {}, sill=2.5, hyaw=0.9, moon_k=0.3, sky_k=0.5)
+redo("S66", cam([0, [20.2, 4.6, 1.3], [20.2, 2.2, 1.32], 40], [1, [20.2, 4.3, 1.3], [20.2, 2.2, 1.32], 40]), {}, sill=2.5, moon_k=0.3)
+redo("S91", mv([349.9, 3.7, 1.5], [349.9, 5.9, 1.15], 28), bedreach=True, fd=0.03)
 
 
 def nudge(sid, off):
