@@ -206,7 +206,7 @@ Every line is `narrator` (voice A, cast key `me`). Characters are quoted inside 
 - `L35` narrator: Every PIECE / of me / CLICKED back.
 
 ### 05 The truth
-- `L36` narrator: Dad turned SIXTY / FOUR YEARS / AGO.
+- `L36` narrator: Dad's SIXTIETH / was FOUR YEARS / AGO.
 - `L37` narrator: It's the last MORNING / he remembers WHOLE. / With ME in it.
 - `L38` narrator: So every DAWN, / Rosa takes us UP, / and it's his / SIXTIETH again.
 - `L39` narrator: Back at the TRAILER, / she pinned his BADGE / with the OTHERS.

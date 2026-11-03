@@ -930,26 +930,26 @@
    ]
   },
   "L36": {
-   "text": "Dad turned sixty four years ago.",
+   "text": "Dad's sixtieth was four years ago.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.845,
+   "dur": 1.897,
    "onset": 0.172,
-   "end": 1.638,
+   "end": 1.69,
    "chunks": [
     [
      0.172,
-     0.862
+     0.741
     ],
     [
-     0.862,
-     1.199
+     0.741,
+     1.233
     ],
     [
-     1.199,
-     1.638
+     1.233,
+     1.69
     ]
    ]
   },

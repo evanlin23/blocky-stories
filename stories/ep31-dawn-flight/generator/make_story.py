@@ -186,14 +186,14 @@ SHOTS = [
     ("L14.3", "Dad delighted: First time UP!",
      facecam(DAD, 0, 1.15, 14, 0.85, hz=1.64), 2, {"key": 16}),
     ("L15.1", "the leather rim: two worn patches, the slate tally between them",
-     view([0.0, 0.2, 1.88], [0.0, 1.21, RH], 0.9), 2, {"key": 6}),
+     view([0.0, 0.2, 1.95], [0.0, 1.21, RH], 1.5), 2, {"key": 110}),
     ("L16.2", "Dad's hand and mine land on the two patches",
-     view([0.0, -0.45, 1.9], [0.0, 1.0, 1.3], 2.0), 2, {"key": 10}),
+     view([0.0, 0.0, 1.85], [0.0, 1.15, 1.25], 1.3), 2, {"key": 30}),
     ("L17", "the basket lifts off the grass with no jolt",
      c([0, [-7.5, -10.0, 2.0], [0.0, 0.0, 3.0], 20], [1, [-7.5, -10.0, 2.0], [0.0, 0.0, 4.2], 20]), 2, {"frame": "world"}),
     # 03 loose
     ("L18", "the fields sinking under the mist",
-     c([0, [0.5, 0.3, 2.0], [9, 13, -4.0], 30], [1, [0.5, 0.3, 2.0], [9, 13, -14.0], 30]), 2, {"key": 0}),
+     c([0, [0.5, -1.5, 2.0], [30, -14, 0.0], 24], [1, [0.5, -1.5, 2.0], [30, -14, -3.5], 24]), 2, {"key": 0}),
     ("L19", "the burner roars", FLAME, 2, {"key": 0}),
     ("L19.1", "my sleeve: the hand block slides a finger's width off",
      view([1.12, 0.02, 1.62], [ME[0] + 0.2, 1.08, 1.4], 0.7), 2, {"key": 12}),
@@ -205,19 +205,19 @@ SHOTS = [
     ("L23", "Dad turning from the view to me, his face drops to polite",
      facecam(DAD, 60, 1.05, 0, 0.85, hz=1.62), 2, {"key": 14}),
     ("L24", "Dad leaning toward Rosa: And WHO'S this?",
-     view([-1.0, -0.15, 1.72], [DAD[0] + 0.1, DAD[1], 1.55], 0.95), 2, {"key": 12}),
-    ("L25", "the long roar swells", FLAME, 2, {"key": 0}),
-    ("L25.1", "my hands drifting off my sleeves",
-     view([ME[0] + 0.15, -0.3, 1.5], [ME[0], 1.1, 1.38], 0.95), 2, {"key": 12}),
+     view([-1.0, -0.15, 1.72], [DAD[0] + 0.1, DAD[1], 1.55], 0.95), 2, {"key": 18}),
+    ("L25", "the long roar swells", FLAME, 2, {"key": 3}),
+    ("L25+0.85", "my hands drifting off my sleeves",
+     view([1.6, 0.0, 1.6], [ME[0] - 0.1, 1.0, 1.36], 1.5), 2, {"key": 14}),
     ("L26", "wider: a hand's width off, then two",
-     view([0.45, SOUTH_Y, GZ], [ME[0], ME[1], GZ - 0.02], 1.5), 2, {"key": 14}),
+     view([0.15, 1.95, 1.7], [ME[0], 1.0, 1.4], 1.0), 2, {"key": 14}),
     ("L27", "my head, front on, four slices apart, pink mist through every gap",
      push([ME[0], SOUTH_Y, GZ8 + 0.03], [ME[0], -0.45, GZ8 + 0.03], [ME[0], ME[1], GZ8], [ME[0], ME[1], GZ8], 0.95, 0.85), 2,
      {"key": 14, "dsun": 2.0}),
     ("P01", "hold on the sliced face: only the burner",
      view([ME[0], -0.5, GZ8 + 0.03], [ME[0], ME[1], GZ8], 0.8), 2, {"key": 14, "dsun": 2.0}),
     ("L28", "over my shoulder, through the gap in my own face: Dad, smiling politely",
-     view([2.3, ME[1] + 0.03, 1.77], [DAD[0], DAD[1], 1.62], 0.5), 2, {"key": 4}),
+     view([1.6, ME[1], GZ8], [DAD[0], DAD[1], 1.62], 0.8), 2, {"key": 8}),
     ("L29", "Dad's polite smile, close",
      facecam(DAD, 70, 1.0, 0, 0.8, hz=1.63), 2, {"key": 14}),
     # 04 the words
@@ -225,7 +225,7 @@ SHOTS = [
      view([ME[0], -0.4, GZ8 + 0.02], [ME[0], ME[1], GZ8], 0.85), 2, {"key": 14, "dsun": 2.0}),
     ("L31", "me turned to Dad: Happy BIRTHDAY, Dad. Look at the SUN.",
      view([0.0, -0.45, 1.72], [0.0, 0.67, 1.64], 1.5), 2, {"key": 14, "dsun": 2.0}),
-    ("L32", "the sun breaks out of the mist, all gold", view([-0.3, -0.2, 1.7], [60.0, -3.0, 2.0], 12.0), 2, {"key": 0}),
+    ("L32", "the sun breaks out of the mist, all gold", c([0, [-0.3, -0.2, 1.7], [60.0, -3.0, -6.0], 12.0], [1, [-0.3, -0.2, 1.7], [60.0, -3.0, -1.0], 12.0]), 2, {"key": 0}),
     ("L33", "Dad in gold light, his whole face waking up",
      facecam(DAD, 45, 1.05, 0, 0.85, hz=1.64), 2, {"key": 10}),
     ("L34", "Dad: There's my BOY",
@@ -242,13 +242,13 @@ SHOTS = [
     ("L38.3", "the landing in the stubble field",
      view([-9.0, -8.0, 1.2], [0.0, 0.0, 1.9], 6.0), 2, {"frame": "world"}),
     ("L39", "Rosa's sleeve pinning today's badge on the wall inside the trailer",
-     view([TRAILER[0] + 0.1, -1.3, K0 + 1.45], [TRAILER[0] + 0.8, 1.2, K0 + 1.25], 1.0), 2,
+     view([TRAILER[0] + 0.55, -0.2, K0 + 1.3], [TRAILER[0] + 0.9, 1.3, K0 + 1.22], 0.6), 2,
      {"room": "trailer", "frame": "world", "key": 8}),
     ("L40", "pull back: the whole wall covered in identical balloon badges",
-     push([TRAILER[0] + 0.0, -0.55, K0 + 1.28], [TRAILER[0], -2.1, K0 + 1.28], [TRAILER[0], 1.3, K0 + 1.25], [TRAILER[0], 1.3, K0 + 1.25], 1.7, 2.1), 2,
+     push([TRAILER[0] + 0.55, -0.2, K0 + 1.3], [TRAILER[0], -2.1, K0 + 1.28], [TRAILER[0] + 0.9, 1.3, K0 + 1.22], [TRAILER[0], 1.3, K0 + 1.25], 0.6, 2.1), 2,
      {"room": "trailer", "frame": "world", "key": 6}),
     ("L41", "the landing field in late-morning light: Dad walking off beside Rosa, my sleeve in the foreground",
-     view([-0.55, -4.3, FG + 1.5], [1.0, -2.0, FG + 1.1], 1.9), 2, {"frame": "world", "key": 10}),
+     view([-0.55, -3.75, FG + 0.95], [0.5, -3.1, FG + 0.85], 1.0), 2, {"frame": "world", "key": 10}),
     ("L42", "the next dawn: the basket rising off the launch field",
      push([-6.0, -9.0, 0.7], [-6.0, -9.0, 1.4], [0.0, 0.0, 1.8], [0.0, 0.0, 3.6], 7.0, 6.0), 2, {"frame": "world", "dsun": 3.0}),
 ]
@@ -320,7 +320,7 @@ key("me", "L16.2", yaw=180, arms=[ARM_ME, ARM_ME], blend=0.5)
 key("me", "L19.1", expr="worried")
 key("me", "L23", expr="worried")
 key("me", "L25.1", expr="scared", blend=0.3)
-put("me", "L26", p3(ME), yaw=0, arms=[ARM_ME, ARM_ME], expr="scared")
+put("me", "L26", p3(ME), yaw=180, arms=[ARM_ME, ARM_ME], expr="scared")
 key("me", "L27", yaw=0, arms=[ARM_ME, ARM_ME], expr="scared")
 key("me", "L28", yaw=-90, arms=[0, 0], blend=0.0)
 key("me", "L30", yaw=0, expr="scared", arms=[ARM_ME, ARM_ME], blend=0.0)
@@ -330,7 +330,7 @@ talk("me", "L31.1", "L31>")
 key("me", "L35", yaw=0, expr="soft", arms=[0, 0], blend=0.0)
 key("me", "L37", yaw=180, arms=[ARM_ME, ARM_ME], expr="soft", blend=0.0)
 key("me", "L38.3", expr="soft")
-put("me", "L41", [-0.1, -3.0, FG], yaw=180, expr="worried", arms=[0, 0])
+put("me", "L41", [-0.1, -3.0, FG], yaw=90, expr="worried", arms=[0, 0])
 put("me", "L42", p3(ME), yaw=-8, expr="worried")
 
 # Dad
@@ -444,7 +444,7 @@ cue("L12", "roar", peak=0.8, up=1.0, hold=1.2, down=0.9)
 cue("L19", "roar", peak=1.0, up=0.6, hold=1.2, down=0.9)
 cue("L22", "roar", peak=0.9, up=0.6, hold=1.2, down=0.9)
 cue("L25", "roar", peak=1.0, up=0.8, hold=6.6, down=1.2)
-cue("end-1.15", "roar", peak=0.45, up=0.3, hold=0.1, down=0.75)
+cue("end-0.85", "roar", peak=0.45, up=0.25, hold=0.05, down=0.5)
 # the seams (cm). Everyone else stays at their hairline.
 seam("me", 0, 2.5)
 seam("me", "L19", 2.5, hand=5.0, dur=0.8)
@@ -453,7 +453,7 @@ seam("me", "L25", 5.0, body=6.0, head=5.0, hand=10.0, dur=0.8)
 seam("me", "L26", 5.0, body=6.0, head=5.0, hand=20.0, dur=0.9)
 seam("me", "L27", 8.0, body=8.0, head=10.0, hand=20.0, dur=1.0)
 seam("me", "L35", 0.5, dur=1.0)
-seam("me", "L41", 0.5, hand=1.5, dur=0.6)
+seam("me", "L41", 0.5, hand=8.0, dur=0.0)
 seam("me", "L42", 2.5, dur=0.0)
 seam("groom", "L02", 2.5)
 seam("groom", "L02.1", 0.5, dur=0.5)
@@ -473,7 +473,7 @@ sfx = [
     {"at": "L19", "kind": "burner", "db": -14, "dur": 3.6, "seed": 2},
     {"at": "L22", "kind": "burner", "db": -14, "dur": 3.4, "seed": 3},
     {"at": "L25", "kind": "burner", "db": -9, "dur": 9.4, "keep": True},
-    {"at": "end-1.15", "kind": "burner", "db": -18, "dur": 1.1, "fall": 7.0},
+    {"at": "end-0.85", "kind": "burner", "db": -18, "dur": 0.85, "fall": 7.0},
     {"at": "L02.1", "kind": "click", "db": -10},
     {"at": "L02.2", "kind": "latch", "db": -16},
     {"at": "L03.3", "kind": "knock", "db": -16, "pattern": [0, 0.07, 0.15, 0.2, 0.3, 0.36], "tone": "hand"},
@@ -516,7 +516,9 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff7e6b",
     "gap": 0.12,
-    "tail": 0.9,
+    "tail": 0.3,
+    "fade_out": False,
+    "fade_in": False,
     "look": {"fog": "#9d92b4", "fog_density": 0.0055, "fog_start": 14.0, "sky": "#8a6a92", "exposure": 0.0,
              "flash_safe": True},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, 0.0], "saturation": 1.0, "contrast": 1.04,

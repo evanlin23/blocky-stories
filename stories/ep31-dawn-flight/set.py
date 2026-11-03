@@ -357,7 +357,7 @@ def new_materials(kit, ctx):
     M["steel_dark"] = kit.plastic("#2a2d31", 0.5, name="steel dark")
     M["tank"] = kit.metal("#8a8f94", 0.35, name="tank")
     M["rope"] = kit.plastic("#c2a878", 0.9, name="rope")
-    M["tally"] = kit.plastic("#4a6378", 0.55, name="tally")
+    M["tally"] = kit.plastic("#7fa3c2", 0.55, name="tally")
     M["flame"] = kit.emit(ORANGE, 7.0, name="flame")
     M["flame_core"] = kit.emit("#ffc070", 9.0, name="flame core")
     M["pilot"] = kit.emit("#ffa04c", 6.0, name="pilot")
@@ -450,7 +450,7 @@ def build_basket(kit, ctx, M):
     for i, px in enumerate(PATCH_X):
         kit.box(f"worn{i}", (0.3, 0.17, 0.006), (px, RIM_Y, top + 0.004), M["worn"], Vg)
     for k, px in enumerate((-0.07, 0.07)):
-        kit.box(f"tally{k}", (0.034, 0.15, 0.006), (px, RIM_Y, top + 0.005), M["tally"], Vg)
+        kit.box(f"tally{k}", (0.04, 0.17, 0.008), (px, RIM_Y, top + 0.005), M["tally"], Vg)
 
 
 def build_landscape(kit, ctx, M):
@@ -576,19 +576,19 @@ def build_montage(kit, ctx, M):
     kit.cyl("t_cord", 0.008, 0.5, (0, 0.0, 2.3), M["steel_dark"], Z, n=6)
     kit.sphere("t_bulb", 0.07, (0, 0.0, 2.02), M["t_lamp"], Z, seg=10)
     cs = []
-    for j in range(16):
-        for i in range(13):
-            if (i, j) == (12, 7):          # the empty cell where today's badge goes
+    for j in range(1, 8):
+        for i in range(7):
+            if (i, j) == (6, 4):          # the empty cell where today's badge goes
                 continue
-            cs.append((-0.9 + i * 0.15, 0.17 + j * 0.15))
+            cs.append((-0.9 + i * 0.3, 0.02 + j * 0.3))
     yb = 1.35 - 0.012                      # each layer 1 cm proud of the one below, so nothing shares a plane
-    disc_mesh(kit, "badges_g", cs, 0.062, yb, M["b_green"], Z)
-    disc_mesh(kit, "badges_c", cs, 0.046, yb - 0.012, M["b_cream"], Z)
-    disc_mesh(kit, "badges_b", [(x, z + 0.01) for x, z in cs], 0.02, yb - 0.024, M["b_green"], Z, n=10)
-    new = [(0.9, 0.17 + 7 * 0.15)]
-    ctx["badge_new"] = [disc_mesh(kit, "badge_ng", new, 0.062, yb, M["b_green"], Z),
-                        disc_mesh(kit, "badge_nc", new, 0.046, yb - 0.012, M["b_cream"], Z),
-                        disc_mesh(kit, "badge_nb", [(0.9, new[0][1] + 0.01)], 0.02, yb - 0.024, M["b_green"], Z, n=10)]
+    disc_mesh(kit, "badges_g", cs, 0.124, yb, M["b_green"], Z)
+    disc_mesh(kit, "badges_c", cs, 0.092, yb - 0.012, M["b_cream"], Z)
+    disc_mesh(kit, "badges_b", [(x, z + 0.02) for x, z in cs], 0.04, yb - 0.024, M["b_green"], Z, n=10)
+    new = [(0.9, 0.02 + 4 * 0.3)]
+    ctx["badge_new"] = [disc_mesh(kit, "badge_ng", new, 0.124, yb, M["b_green"], Z),
+                        disc_mesh(kit, "badge_nc", new, 0.092, yb - 0.012, M["b_cream"], Z),
+                        disc_mesh(kit, "badge_nb", [(0.9, new[0][1] + 0.02)], 0.04, yb - 0.024, M["b_green"], Z, n=10)]
 
 
 def build(kit, story, tl):
