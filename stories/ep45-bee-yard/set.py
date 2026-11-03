@@ -711,6 +711,7 @@ def animate(kit, story, tl, t, ctx):
         rr = 0.34 + 0.1 * (i % 3)
         b.location = (hv["x"] + rr * math.cos(a), hv["y"] + rr * math.sin(a), hv["z"] + 1.0 + 0.14 * i + 0.05 * math.sin(a * 2 + i))
         b.hide_render = (not hover_on) or (V(b.location) - cam).length < 0.9
+        b.scale = (0.3 if sid == "S00" else 1.0,) * 3     # S00 is close: small dark-gold specks, not balls
     revealing = hover_on and (n in (44, 45, 46, 47) or sid == "S64")
     for i, sp in enumerate(ctx["hpuffs"]):
         sp.hide_render = not revealing

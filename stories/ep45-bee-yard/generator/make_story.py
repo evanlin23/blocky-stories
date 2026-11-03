@@ -174,8 +174,8 @@ hug = dict(arms=[55, 55], side=[18, 18], expr="grin")
 # Friday place), the empty air over his head where a dial should be, pushing in. Lena small behind him at row 1, her
 # dial in frame (24 hours, Friday's reading). Never his boots: the gap is saved for L25. n=33 gives it Friday's light.
 HV0 = (HOV_FRI[0], HOV_FRI[1], gz(HOV_FRI[1]) + LIFT)
-sh("S00", 33, 0, fc(hd(*HV0), 40, -24, 2.5, 40, push=0.7), {"hover": hv(HOV_FRI[0], HOV_FRI[1], 40),
-   "lena": P(-3.0, 4.6, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, hand=0.003)
+sh("S00", 33, 0, fc(hd(*HV0), 40, -24, 3.6, 40, dial=False, drop=0.0, el=-0.4, push=1.2), {"hover": hv(HOV_FRI[0], HOV_FRI[1], 40),
+   "lena": P(-2.35, 5.6, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, hand=0.003)
 sh("S01", 2, "L02", mv([X - 0.3, 4.9, 1.45], [X, 9.0, 1.62], 35, [X - 0.2, 5.4, 1.45], [X, 9.0, 1.62], 35),
    {"a1": P(cx0, 9.0, 90, z=PZ, head=[-72, 0], **hug), "a2": P(cx1, 9.0, 270, z=PZ, head=[72, 0], **hug),
     "b1": P(X - 1.7, 13.6, 0, z=PZ, to=(X - 1.7, 12.0, PZ), expr="neutral"), "b2": P(X + 1.8, 14.6, 0, z=PZ, to=(X + 1.8, 13.0, PZ), expr="neutral")}, hand=0.003)
@@ -410,6 +410,10 @@ CUES += [{"at": "L40", "name": "smoke_in"}, {"at": "L59", "name": "smoke_out"},
 # ================================================================================================== story
 shots, ids = [], []
 for sid, n, at, camera, opt in SH:
+    if len(camera) == 1:      # quality lift 2026-11-03: no shot is static, a slow drift toward what it looks at
+        _t, _p, _a, _l = camera[0]
+        _q = [_p[i] + (_a[i] - _p[i]) * 0.05 for i in range(3)]
+        camera = [camera[0], [1, [round(v, 3) for v in _q], list(_a), _l]]
     s = {"id": sid, "n": n, "cam": camera, "step": opt.get("step", 2)}
     if ids:
         s["at"] = at
@@ -429,6 +433,7 @@ story = {
     "key_color": "#ff86b8",
     "gap": 0.12,
     "tail": 0.25,
+    "fade_in": False,       # frame 1 is already the picture (opening recipe v1)
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "look": {"flash_safe": True, "fog": "#bcd6ea", "fog_density": 0.0035, "fog_start": 8.0, "sky": "#9cc8ea", "sky_strength": 1.0,
              "exposure": 0.0},
@@ -458,7 +463,7 @@ def put(who, ref, key):
 
 prev_end, visible = {}, {}
 for w in cast:
-    put(w, 0, {"pos": [0.0, 0.0, -50.0], "hidden": True})
+    put(w, -1.0, {"pos": [0.0, 0.0, -50.0], "hidden": True})
     prev_end[w] = [0.0, 0.0, -50.0]
     visible[w] = False
 DEF = dict(arms=[0, 0], side=[0, 0], head=[0, 0], lean=0, look=[0, 0], expr="neutral")
@@ -468,7 +473,8 @@ for i, sid in enumerate(ids):
     for w in cast:
         if w in pl:
             p = pl[w]
-            put(w, ref, {"pos": list(prev_end[w])})
+            if i:
+                put(w, ref, {"pos": list(prev_end[w])})     # (the first shot has nowhere to walk from)
             k = {**DEF, "yaw": p["yaw"], "pos": list(p["pos"]), "blend": 0.0, "hidden": False}
             for a in ("arms", "side", "head", "lean", "look", "expr", "blink"):
                 if a in p:
@@ -510,10 +516,19 @@ fx_("L13.3", "latch", -16)
 fx_("L39", "latch", -18)
 for k, off in enumerate((0.15, 1.2, 2.3)):
     fx_(f"L40+{off}", "puff", -17, dur=0.6)
-fx_("L01.4+0.1", "sting", -13, dur=1.6, keep=True)     # the hit on "LOVE"
+fx_("L01>-0.3", "sting", -13, dur=1.6, keep=True)     # the hit on "LOVE"
 fx_("L44", "sting", -11, dur=2.4, keep=True)
 fx_("L52.3+0.2", "whoosh", -17)
 fx_("L55+0.35", "thud", -26)
+# quality lift 2026-11-03: recorded latch, whoosh and thud where beats land
+fx_("L15>-0.4", "latch", -20)           # the gate, each evening
+fx_("L23", "thud", -30)                  # someone in the last row
+fx_("L28+1.0", "whoosh", -24)            # the row is empty
+fx_("L30+0.4", "whoosh", -24)            # back, two hives nearer
+fx_("L45", "thud", -28)                  # floating in the gateway
+fx_("L52+0.1", "thud", -24)              # the veil comes off its hook
+fx_("L59", "whoosh", -26)                # the smoke clears
+fx_("L68", "latch", -18)                 # at the gate now
 fx_("L63", "chime", -26, dur=1.6)
 sfx.sort(key=lambda e: 0)
 story["music"] = {
@@ -534,7 +549,7 @@ story["music"] = {
         {"at": "L66", "voices": ["drone", "pluck_hi", "pad"], "energy": 0.6},
     ]}
 story["sound"] = {
-    "floor": "grass", "steps_db": -26,
+    "floor": "grass", "steps_db": -26, "rev": 3,
     "ambience": [
         {"kind": "beehum", "from": 0, "to": "L02", "lufs": -42},
         {"kind": "gulls", "from": "L02", "to": "L15", "lufs": -41},

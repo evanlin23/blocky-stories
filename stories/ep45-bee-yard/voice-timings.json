@@ -6,82 +6,82 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this world, a clock over your head counts down to your next hug.",
+   "text": "Never let a man with no clock near someone you love.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.879,
+   "dur": 2.431,
    "onset": 0.172,
-   "end": 2.672,
+   "end": 2.224,
    "chunks": [
     [
      0.172,
-     0.672
+     0.423
     ],
     [
-     0.724,
-     1.164
+     0.423,
+     0.793
     ],
     [
-     1.164,
-     1.406
+     0.793,
+     1.241
     ],
     [
-     1.406,
-     1.888
+     1.241,
+     1.603
     ],
     [
-     1.888,
-     2.672
+     1.603,
+     2.224
     ]
    ]
   },
   "L02": {
-   "text": "That couple on the ferry pier just hit zero.",
+   "text": "Every clock counts down to your next hug.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
-   "onset": 0.155,
-   "end": 1.862,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
    "chunks": [
     [
-     0.155,
-     0.543
+     0.172,
+     0.586
     ],
     [
-     0.543,
-     1.052
+     0.586,
+     1.043
     ],
     [
-     1.052,
-     1.862
+     1.043,
+     1.793
     ]
    ]
   },
   "L03": {
-   "text": "So the arrivals end is a field of zeros.",
+   "text": "So the boat arrivals are a field of zeros.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.259,
+   "dur": 2.121,
    "onset": 0.172,
-   "end": 2.069,
+   "end": 1.931,
    "chunks": [
     [
      0.172,
-     0.698
+     0.466
     ],
     [
-     0.698,
-     1.112
+     0.466,
+     0.974
     ],
     [
-     1.112,
-     2.069
+     0.974,
+     1.931
     ]
    ]
   },
