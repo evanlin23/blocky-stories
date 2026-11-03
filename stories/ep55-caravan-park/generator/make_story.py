@@ -72,10 +72,10 @@ def person(skin, shirt, pants, shoes, hair, hair_c, **kw):
 
 
 cast = {
-    "me": person("#f0c7a6", "#2c3f66", "#4a3d30", "#5a3a22", "cap", "#a9a9ab", extras=["coat", "backpack"],
+    "me": person("#f0c7a6", "#2c3f66", "#4a3d30", "#5a3a22", "buzz", "#a9a9ab", extras=["coat", "backpack"],
                  zip_c="#f2f0e8", extra_c="#6b4a2a"),
-    "jory": person("#e6b894", "#5a7494", "#2c2c34", "#2b221b", "cap", "#f2f2ee", pattern="knit", pattern_c="#e8dfc6",
-                   hat="beanie", hat_c="#c2602a", face={"eyes": "round", "brows": False}, height=0.97),
+    "jory": person("#e6b894", "#5a7494", "#6e4f6e", "#2b221b", "cap", "#f2f2ee", pattern="knit", pattern_c="#e8dfc6",
+                   hat="beanie", hat_c="#c2602a", face={"eyes": "round", "brows": True}, height=0.97),
     "neighbour": person("#f0c9a6", "#d1a031", "#3b3f4d", "#3a2a20", "bun", "#3a2a20", hat="bucket", hat_c="#c9b98a"),
     "busman": person("#d9a67e", "#7b7f86", "#3b3b40", "#2a2a2e", "cap", "#c8c8c8", extras=["coat"], zip_c="#505560"),
     "parcelman": person("#e2b48c", "#7a5434", "#3a3028", "#2a2018", "swoop", "#3a2a20", pattern="plaid",
@@ -146,7 +146,9 @@ set_("me", "L08.1", yaw=0, blend=0.6)
 walk("me", "L08>", [0.0, -0.9, 0.0])
 put("me", "L09", [-3.2, -2.9, 0.0], -90)
 walk("me", "L09>", [-8.4, -2.9, 0.0])
-put("jory", "L10", [0.0, -4.12, 0.71], 180, expr="soft")
+put("jory", "L10", [0.5, -4.12, 0.71], 180, expr="smile", arms=[0, 0])
+put("me", "L10", [-0.5, -4.12, 0.71], 180, expr="smile", arms=[0, 0])
+hide("me", "L11")
 put("me", "L13", [0.0, 1.0, 0.0], 180, expr="neutral")
 walk("me", "L13>", [0.0, 5.2, 0.0])
 put("jory", "L14", [-0.45, 6.6, 0.0], 0, expr="neutral")
@@ -273,7 +275,7 @@ S("L07", front(BW_F, 180, -22, 2.2, 0.0, 34, push=0.15))
 ME_G = face_of(0.0, -0.9)
 S("L08", front(ME_G, 0, 14, 2.6, 0.05, 34, push=0.25), look=key(ME_G, [0.6, -3.5, 1.6], 160), hand=0.003)
 S("L09", mv([-4.5, 1.6, 1.5], [-6.2, -3.4, 1.15], 32, [-4.7, 1.5, 1.5], [-6.6, -3.4, 1.15], 32))
-S("L10", mv([5.5, 3.0, 1.8], [0.0, -3.9, 1.3], 26, [5.0, 2.6, 1.8], [0.0, -3.9, 1.3], 26))
+S("L10", mv([5.5, 3.0, 2.0], [0.0, -4.1, 1.75], 44, [4.2, 1.6, 1.9], [0.0, -4.1, 1.75], 50))
 S("L11", mv([0.0, 3.2, 1.3], [0.0, -1.8, 0.55], 30, [0.0, 2.8, 1.25], [0.0, -1.8, 0.55], 30))
 S("L12", mv([-0.5, 0.2, 0.95], [-0.7, -1.6, 0.5], 34, [-0.5, 0.0, 0.9], [-0.7, -1.6, 0.5], 34))
 S("L13", mv([0.0, -0.9, 1.5], [0.1, 10.0, 1.15], 30, [0.0, -1.1, 1.5], [0.1, 10.0, 1.15], 30))
@@ -568,8 +570,8 @@ story = {
     "slug": "ep55-caravan-park",
     "title": "In this town, moss grows on you while you wait",
     "made_for_kids": False,
-    "premise": "In a town where moss grows on you while you wait for someone, the narrator has never had a speck, because she is always early and never waits. Her husband Jory is coming up green on the headland caravan park, the moss won't come off when she gets back, and every morning there are two deep knee hollows in the wet grass by the step.",
-    "twist": "She came home every evening but never arrived: she put the kettle on and was out again, and never once sat in her own chair. Jory wasn't waiting for her to come back, he was waiting for her to stop. Her empty chair left the caravan's count short by one, and the Kneeler has been kneeling beside it every night, standing in her place. When she sits down and waits with him, his moss comes off and hers begins.",
+    "premise": "In a town where moss grows on you while you wait for someone, the narrator, an older man, has never had a speck, because he is always early and never waits. His wife Maggie is coming up green at their headland caravan park, the moss won't come off when he gets back, and every morning there are two deep knee hollows in the wet grass by the step.",
+    "twist": "He came home every evening but never arrived: he put the kettle on and was out again, and never once sat in his own chair. Maggie wasn't waiting for him to come back, she was waiting for him to stop. His empty chair left the caravan's count short by one, and the Kneeler has been kneeling beside it every night, standing in his place. When he sits down and waits with her, her moss comes off and his begins.",
     "world": "A static caravan park on a grassy headland in autumn: cream caravans with coloured stripes, a picket gate between two granite posts, two folding canvas chairs, gorse and bracken, a path up to an old bench above the grey sea, and the small town below with its bus shelter, shop bench and station.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#cfd66a",

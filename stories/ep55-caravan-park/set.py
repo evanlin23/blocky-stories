@@ -673,15 +673,34 @@ def build_moss(kit, ctx, M, cast):
     for who, zones in spec.items():
         if who in cast:
             moss_zones(kit, ctx, M, who, zones, seed=sum(map(ord, who)))
-    # Jory's big white eyebrows (where the flowers grow), and the one flower on the parcel man's nose
+    # Maggie (cast id jory): a low white bun under the cap, a long plum skirt, and flowers in her hair
+    R, H = faces.HEAD_R, faces.HEAD_H
+    top = H / 2
     if "jory" in cast:
         hg = bpy.data.objects["jory.headg"]
+        white = kit.plastic("#f2f2ee", 0.8, name="white hair")
+        kit.box("jory.bun", (0.62, 0.5, 0.5), (0, R + 0.2, top - H * 0.78), white, hg, bevel=0.18)
+        plum = kit.plastic("#6e4f6e", 0.8, name="heather plum")
+        kit.box("jory.skirt", (2.12, 1.5, 1.7), (0, 0, 1.2), plum, bpy.data.objects["jory"], bevel=0.1)
+        kit.box("jory.skirt2", (2.3, 1.6, 0.2), (0, 0, 0.45), plum, bpy.data.objects["jory"], bevel=0.05)
+        for k, (fx, fy, fz) in enumerate([(-0.6, -0.29, 0.13), (-0.52, -0.31, 0.27), (-0.68, -0.22, 0.3),
+                                           (0.6, -0.29, 0.13), (0.52, -0.31, 0.27), (0.68, -0.22, 0.3)]):
+            f = kit.cyl(f"jory.hairf{k}", 0.12, 0.05, (fx, fy, fz), M["flower"], hg, rot=(math.pi / 2, 0, 0), n=7)
+            f.hide_render = True
+            ctx["moss"]["jory"].append((f, 0.7 + 0.03 * (k % 3), (1, 1, 1), tuple(f.location)))
+            c = kit.cyl(f"jory.hairfc{k}", 0.04, 0.03, (fx, fy - 0.03, fz), kit.plastic("#e8b830", 0.6, name="flower eye"), hg, rot=(math.pi / 2, 0, 0), n=6)
+            c.hide_render = True
+            ctx["moss"]["jory"].append((c, 0.7 + 0.03 * (k % 3), (1, 1, 1), tuple(c.location)))
+    # the narrator: short grey block hair at the back and sides, and a short grey block beard
+    if "me" in cast:
+        hg = bpy.data.objects["me.headg"]
+        grey = kit.plastic("#a9a9ab", 0.85, name="grey hair")
+        kit.box("me.hback2", (2 * R + 0.08, 0.3, H * 0.4), (0, R - 0.08, top - H * 0.28), grey, hg, bevel=0.1)
         for sx in (-1, 1):
-            kit.box(f"jory.brow{sx}", (0.4, 0.1, 0.13), (sx * 0.24, -0.63, 0.27), kit.plastic("#f4f4f0", 0.8, name="white brow"), hg, bevel=0.04)
-            for k in range(3):
-                f = kit.cyl(f"jory.browf{sx}{k}", 0.05, 0.03, (sx * 0.24 + (k - 1) * 0.1, -0.665, 0.34), M["flower"], hg, rot=(math.pi / 2, 0, 0), n=7)
-                f.hide_render = True
-                ctx["moss"]["jory"].append((f, 0.85 + 0.04 * k, (1, 1, 1), tuple(f.location)))
+            kit.box(f"me.hside2{sx}", (0.2, 0.8, 0.45), (sx * (R - 0.02), 0.2, top - 0.3), grey, hg, bevel=0.08)
+        kit.box("me.beard", (1.0, 0.3, 0.3), (0, -R + 0.02, -H / 2 + 0.2), grey, hg, bevel=0.1)
+        for sx in (-1, 1):
+            kit.box(f"me.beardS{sx}", (0.2, 0.7, 0.5), (sx * (R - 0.02), -0.1, -0.25), grey, hg, bevel=0.07)
     if "parcelman" in cast:
         hg = bpy.data.objects["parcelman.headg"]
         kit.cyl("parcel.flower", 0.1, 0.05, (0.0, -0.64, -0.05), M["flower"], hg, rot=(math.pi / 2, 0, 0), n=8)
