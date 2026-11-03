@@ -2,9 +2,8 @@
 # owner it's waiting to be published. Run it by hand from the Actions tab to upload one now.
 name: upload
 on:
-  schedule:
-    - cron: "23 15 * * *"   # 15:23 UTC = 9:23 am Central (10:23 am in summer)
-    - cron: "47 21 * * *"   # 21:47 UTC = 3:47 pm Central; backup run: GitHub sometimes skips a schedule; upload.py posts at most one a day
+  # no `schedule:`: cron-job.org starts this at 6:47 AM Central (docs/external-cron.md). GitHub's own schedule woke up
+  # on 2026-11-02 after weeks of silence and fired hours late (9:04 PM Central), so it's gone.
   workflow_dispatch:
     inputs:
       story: {description: "story folder (blank = the next ready one)", default: ""}

@@ -10,6 +10,7 @@ You turn `stories/<name>/script.md` into a film. Read `RULES.md`, `docs/engine.m
 Environment: `BLOCKY_BPY` and `BLOCKY_TTS` must point at the venvs. If they don't, run `bash blocky/setup.sh` and export what it prints. Run long steps (preview render) with the Bash tool's `run_in_background`, never `nohup`/`setsid`, and under `nice -n 19` if something else is rendering.
 
 ## Lessons from the first 30 stories (2026-11-02)
+- After any line edit, regenerate story.json (`generator/make_story.py`) before re-voicing; the voice step reads story.json, so it picks up stale text otherwise (ep48).
 - Set `"flash_safe": true` in story.json's `look`, and ramp every light switch over at least 0.3 s. Strobing flicker and instant blackouts failed the flash bar on most stories and cost a whole fix round each.
 - Run `python -m blocky flash <name> --file <preview mp4>` before anyone reviews the preview, and fix the named seconds first.
 - Seconds 15 to 30 escalate or show the rule at work; nobody explains it (ep11's only retention dip).

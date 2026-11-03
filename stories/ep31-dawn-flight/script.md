@@ -1,199 +1,227 @@
-# ep31-dawn-flight: the script (writer, 2026-11-02)
+# ep31-dawn-flight: the script (writer, redo 2026-11-02)
 
-- **Slug:** `ep31-dawn-flight` (folder `stories/ep31-dawn-flight/`), from pitch #15 `dawn-flight` in `stories/ideas.md` and its notes.
-- **Target length:** 2:15 to 2:30, never over 3:00.
-- **Word count:** 631 spoken words in 82 lines, all `narrator` in voice A, plus 2 pause beats (1.5 s).
-- **Estimated length:** about 2:22. Speech at 290 wpm is about 2:11, the 0.12 s line gaps add about 10 s, the pauses 1.5 s, the loop tail 0.25 s. If the first `voice` run lands over 2:30, cut L46 first, then L21. If under 2:15, add "Dad POURED / his TEA / and HUMMED." after L32.
+- **Slug:** `ep31-dawn-flight` (folder `stories/ep31-dawn-flight/`), kept from pitch #15. This is a full redo: the old first line wasn't a rule, so the premise and twist are new. The set, Dad and Rosa carry over.
+- **Target length:** 60 to 90 s (this batch's length test). Aim 75 to 85 s.
+- **Word count:** 344 spoken words in 42 lines, all `narrator` in voice A, plus 1 pause beat (0.8 s).
+- **Estimated length:** about 78 s. Speech at 290 wpm is about 70 s, the 0.12 s line gaps add about 5 s, the pause 0.8 s, the tail 0.9 s. If the first `voice` run lands over 85 s, cut L26 first, then L04. If under 72 s, add "Rosa LET OUT / a long BREATH." after L35.
+
+## The big idea (first)
+**A son who comes apart as his dad forgets him takes Dad up for his sixtieth birthday balloon flight, and it turns out Dad turned sixty four years ago: it's the last morning Dad remembers whole, with the son in it, so they fly it again every single dawn.**
+
+- **Wait, what:** "Dad turned sixty four years ago." Then one picture: the inside of Rosa's trailer, its back wall covered in hundreds of identical balloon badges.
+- **How it reframes the rule** ("if your family forgets you, your body comes apart, block by block"): Dad can't remember me now, but he remembers me then. The only place I'm whole is inside his sixtieth, so every dawn I give it to him again. The flight that opens as a birthday treat is how I keep existing.
+- **What it reframes:** my "four years" of coming loose, Rosa never asking our names, Dad's "First time UP!", the badge on his scarf, the rim worn smooth in two places exactly under our hands, Rosa mouthing Dad's words, and why I "knew what to say". The last line, "Tomorrow, Dad turns sixty again," loops straight back into the first shot, which is the next morning's flight.
+- **Feeling:** sad and awed, then a cold bite (by lunch he'll ask who I am).
+- **The test:** a son who's falling apart because Dad is forgetting him keeps himself whole by giving Dad the same birthday every morning. That's an "oh no".
+
+### Ten pitches, one kept
+1. The mist is made of everything the valley forgets, and the barn roofs poking out are all Dad still remembers. (Strong picture, but no marker on people, and no loophole.)
+2. Happy people float, and Dad has held to the ground for years so I wouldn't be alone on it. (Too close to the owner's "touching the ground" reference.)
+3. The sun reaches everyone at a different time, by age. (Nice picture, no reveal.)
+4. Your breath comes out the colour of what you feel. (Marker strong, idea thin.)
+5. Your shadow on the morning mist shows who you'll lose next. (Too close to ep38 and ep48, and too dark.)
+6. The mist keeps whatever you let go of, and the pieces gathering are what Dad let go of. (Confusing in 80 s.)
+7. Everyone weighs what they're keeping secret, and the basket tilts toward Dad. (The secret had no "oh no" that wasn't another lie.)
+8. Every sixtieth birthday you go up and don't come down. (Death-adjacent, hard rule 2.)
+9. The sun only rises when everyone's counted. (A Keeper count again, close to stand-in.)
+10. **Kept:** if your family forgets you, your body comes apart block by block, and Dad's sixtieth is relived every dawn. It has a marker on every body (seams), a funny montage, an exception (me, coming loose), a loved one (Dad), a loophole (he remembers me then, so I give him then) and a plain reveal with one picture.
 
 ## Variety (against everything made)
 | Story | Setting | Creature | First line | Ending shape | Warmth |
 |---|---|---|---|---|---|
-| ep31 `dawn-flight` | a hot-air balloon basket at sunrise over misty farmland, Dad's sixtieth | the Loose One, a person in pieces (copper and slate blue), every block a hand's width from the next, hanging in the right shape | a weather report ("Rosa SAID / the wind / was ZERO.") | the next dawn, four in the basket, the sandbag left on the grass, the horizon level | honesty: I own up to a lie |
+| ep31 `dawn-flight` (redo) | a hot-air balloon basket at dawn over misty farmland, Dad's sixtieth | none: the eerie element is me, my own blocks drifting apart as Dad forgets me | a world rule about coming apart ("In this VALLEY, if your FAMILY FORGETS you, your body comes APART, BLOCK by BLOCK.") | `relived`: the birthday is replayed every dawn, and the last line hands the loop to tomorrow | devotion: I give Dad his best morning every day |
 
-Nothing here repeats a Made row or the batch-1 list. No night-shift or one-summer narrator (one morning, a birthday). No knowing elder: Rosa only flies the balloon and says pilot things. The creature is copper and slate blue and gapped, never pale grey or blank. Nothing is pressed against glass (there is no glass). The closing section opens on "Callum CAME.", not a "Last NIGHT," shape. No on-screen age: "sixtieth" is said, never shown. The twist isn't "kind all along", a ritual done back, or ep20's "it never moved, we moved apart": the creature fills a gap my lie left, and the fix is a confession.
+No other story's rule is about being held together, and no other twist is a day relived. No Keeper stands anywhere, so it isn't `stand-in`. No creature, so no "kind all along". No knowing elder: Rosa explains nothing and only says pilot things. No newcomer, mayor or midnight square. No night-shift or one-summer narrator. Nothing pale grey, nothing pressed against glass, no on-screen age (the badge has no number and "sixty" is only said), no "Last NIGHT," opener, no "Not X, it was Y". The old version's lie, sandbag, four flasks, Callum and the Loose One are all gone.
 
 ## Premise
-It's Dad's sixtieth, and the thing he's wanted for years is a balloon flight at dawn with both of us, me and my brother Callum. I told Dad that Callum couldn't make it, because of work. Our pilot Rosa launches us into a perfectly still sky over a sea of mist. The basket is built for four, a corner each. With no wind at all, it keeps leaning toward its empty fourth corner, and every time the burner roars and lights up the mist, a figure made of loose copper and slate-blue blocks is a little nearer and a little more put together.
+In this valley, every body is built in blocks with thin seams between them, and if your family forgets you, your body comes apart, block by block. I'm coming loose: my blocks hang a finger's width apart, because Dad, all the family I've got, is forgetting. For his sixtieth he wants a balloon flight at dawn, just him and me, and Rosa takes us up over the mist. With each burner roar I come further apart, until Dad looks at me and asks Rosa who I am.
 
 ## The rule
-Rosa's: a corner each, and stand still, because the basket has to hang level. A balloon basket is a place built for a number, and this one was booked for four.
+"In this valley, if your family forgets you, your body comes apart, block by block." Everyone's body is cut along the same seams (each limb in three blocks, the torso in two, the head in four slices). The better your family keeps you in mind, the tighter the seams. Newlyweds click shut. A son home from the city rattles. A grandad with a big family squeaks.
+- **Marker by 2 s:** the seams themselves, on every body in frame. Dad's are hairline dark lines. Mine are a finger's width of open air with pink mist showing through them.
+- **Montage (L02 to L04, about 3 to 8 s):** newlyweds click tight, a son home from the city rattles at his mum's door, a grandad with a big family squeaks along a lane. Played light.
+- **The narrator is the exception:** everyone else is snug. I've been coming loose for four years (L05, L06).
+- **The loved one at stake:** Dad, all the family I've got (L07 to L09, shown at the kitchen table by 16 s: Dad looking at me politely, like a guest).
+- **The loophole the climax turns:** the rule only counts whether you're forgotten, and it doesn't say when. Dad doesn't know me now, but he knows me on his sixtieth. So I say what I said that morning, Dad lands back in it, and I click whole (L30 to L35). Nothing new is added: it's the rule's own logic.
 
 ## The twist (and where it's planted)
-Callum never said he couldn't come. I forgot to ask him until it was too late, and I was too ashamed to tell Dad, so I blamed Callum's work. His corner was empty because of my lie. The Loose One is the basket's Keeper, standing in the gap I made, and its weight is what tips the basket. "The wind was zero, so why was the basket tilting?" opens as a mystery about the sky, and the twist turns it into my lie: the tilt was the place I'd left empty. When the count is made true by people (Callum, the next dawn), the basket flies level.
-- **How the last 15 seconds turn the first line over:** L78 to L82. Four of us, the sandbag left on the grass, the horizon flat, and the first line's own words, "Rosa said the wind was zero," now ending on "The basket flew LEVEL." The tilt was never weather.
-- **Plant 1 (L08, about 15 s):** "Callum couldn't MAKE it. WORK. That's what I told DAD." A rewatch hears "that's what I told Dad", not "that's what he said".
-- **Plant 2 (L14 to L16, about 24 s):** Dad unpacks four flasks for three people, says "habit", and stands the fourth in the empty corner. All four flasks are on screen in S14, and the fourth in its corner in S16.
-- **Plant 3 (L18, about 28 s):** Rosa ties a sandbag into the fourth corner "for balance". She was booked for four. The sandbag, tied in, and the fourth corner are both on screen in S18.
-- **For sharp eyes (L39):** Rosa says "Somebody's LEANING." Nobody in the basket is.
+Dad turned sixty four years ago. It's the last morning he remembers whole, with me in it, so Rosa flies us every dawn and it's his sixtieth again. The badges on her trailer wall are every one of those mornings.
+- **How the last 15 to 25 s turn the first line over:** L36 to L42. L01 sounds like a quirky town fact. After L38 it means that the only place I'm in one piece is one morning that Dad keeps, and L42 ("Tomorrow, Dad turns sixty AGAIN.") loops into S1, which is that next flight.
+- **Plant 1 (L05, about 8 s):** "coming LOOSE for FOUR YEARS". A rewatch hears the same four years as L36.
+- **Plant 2 (L13, about 22 s):** "Rosa never ASKED our NAMES."
+- **Plant 3 (L14, about 23 s):** Dad's balloon badge, and "First time UP!" The badge is the picture at L39.
+- **Plant 4 (L15 to L16, about 26 to 29 s):** the rim is worn smooth in two pale patches, exactly where our hands go. Thousands of mornings of the same two hands.
+- **Plant 5 (L21, about 38 s):** Rosa mouths "Look at that" along with Dad.
+- **Plant 6 (L30, about 53 s):** "I say it every TIME." This is the hinge into the reveal.
 
 ## World
-A flat farmland valley at dawn under a thick white ground mist, with hedge lines, a few barn roofs and lone trees poking through it like islands. A stubble launch field with a small trailer, a lamp on a pole and a cold-air fan. The balloon: a tall envelope in cream and deep forest-green vertical panels, a black mouth ring, a double burner on a steel frame over the basket's centre. The basket: square wicker, chest-high, divided into four corner compartments around a middle where two steel gas tanks stand, with a thick dark-brown leather rim, worn smooth, and rope handles. A second stubble field for the landing, edged with a hedge. The sky goes plum to pink to gold. No text anywhere: no lettering on the envelope, trailer, tanks, flasks or phone, and no real farm, valley or region named.
+A flat farmland valley at dawn under a thick white ground mist, with hedge lines, a few barn roofs and lone trees poking through it like islands. A stubble launch field with a small trailer (its back doors open onto a warm-lit inside wall), a lamp on a pole and a cold-air fan. The balloon: a tall envelope in cream and deep forest-green vertical panels, a black mouth ring, a double burner on a steel frame over the basket's centre. The basket: square wicker, chest-high, with a thick dark-brown leather rim and rope handles. A plain farm kitchen with a table and a window onto the misty field. For the montage only: a field gate, a cottage kitchen door, a short lane along a dry-stone wall. The sky goes plum to pink to gold. No text anywhere: no lettering on the envelope, trailer, badges or anything else, and no real farm, valley or region named.
 
 ## Cast (all adults)
-- **Me** (`me`): an adult in my late twenties, the elder of Dad's two. Mustard knit jumper under a navy gilet, short dark block hair, a grey beanie. Faces: `neutral`, `worried`, `scared`, `ashamed`, `relief`, `smile`.
-- **Dad** (`dad`): turning sixty, cheerful, easily thrilled. Waxed bottle-green jacket, a check scarf in cream and brown, grey block hair with a bald top. Faces: `smile`, `delighted`, `quiet`, `laugh`. Never in peril and never sees the creature: he watches the view and the sunrise the whole flight.
-- **Rosa** (`rosa`): our pilot, an adult in her forties, calm and practical. Cream fleece, burgundy beanie, black gloves. Faces: `neutral`, `frown`, `focus`, `smile`. She says only pilot things: weather, balance, "hold on". She explains nothing, knows nothing about the figure and never sees it.
-- **Callum** (`callum`): my younger brother, an adult in his twenties. Forest-green hoodie (darker than the envelope), a short block beard, a navy woolly hat. On screen only in section 08. At L73 to L75 he's a phone burble, and I report his words.
-- No cast clothing uses copper or slate blue, so the creature never reads as one of us.
+- **Me** (`me`): about thirty-four, Dad's only child. Mustard knit jumper under a navy gilet, short dark block hair, a grey beanie. Faces: `neutral`, `worried`, `scared`, `relief`, `smile`. My seams change by beat (continuity list below).
+- **Dad** (`dad`): turning sixty in his own mind, cheerful, easily thrilled. Waxed bottle-green jacket, a check scarf in cream and brown, grey block hair with a bald top. On the scarf, the balloon badge. Faces: `smile`, `delighted`, `polite` (a pleasant blank smile for a stranger, new), `laugh`. Hairline seams all the way through. Never in peril.
+- **Rosa** (`rosa`): our pilot, in her forties, calm and practical. Cream fleece, burgundy beanie, black gloves. Faces: `neutral`, `focus`, `smile`, `sad-smile` (new: a small closed smile, brows up). Hairline seams. She says nothing in the story's lines except what Dad says, mouthed along.
+- **Montage extras** (new, on screen about 1.5 s each, built from the shared extras with fresh outfits): two newlyweds (navy suit, cream jacket), a son with a holdall and his mum, a grandad with five grown relatives walking behind him.
+- No one wears copper or slate blue except the lore plant.
 
-## The creature: the Loose One
-One model, built once in `set.py` and posed per shot.
-- **What it is:** a person in pieces. An R6 body made of the usual blocks (head, torso, two arms, two legs), but each limb and the torso split into 3 or 4 short blocks, and the head cut into four horizontal slices, with a hand's width (about 10 cm) of empty air between every piece. Nothing joins them. They hang in exactly the right shape. The gaps make it far too tall, about 2.5 m from boots to crown, though the pieces alone would make a normal person.
-- **Colours:** torso and arm blocks in dull warm copper (`#b8693a`, satin, not mirror), legs and head slices in slate blue (`#4a6378`). The faces of each block that look across a gap are near-black, so the gaps read as dark lines even against mist.
-- **The face:** on the slate-blue head slices. Slice two carries two small round copper eyes with a tiny white highlight each (the brightest thing in its shots, never clipped). Slice four, two gaps below, carries a short flat black mouth line. Slices one and three are blank. Through the gaps you see whatever is behind it.
-- **Wrong in:** height, because of the gaps. It isn't blank or pale grey and has no thin rods or tentacles: every piece is a chunky block at least as thick as a normal R6 limb.
-- **Never seen moving.** Each sighting it's simply nearer and more put together. Between roars the grey mist hides it.
-- **Light it:** the burner flame overhead is its key, from above and a little behind, warm orange on the tops of the copper blocks. Mist bounce from below, cool. A thin cold rim from the plum sky on the far side. No front fill.
-- **Continuity, beat by beat:**
-  - L05 (hook glimpse): a field away, down in the mist, pieces scattered loosely in a rough cloud about 4 m across, no shape yet. Seen only while the roar lights the mist.
-  - L27 to L30 (roar 1): the same scatter, a field away, at the mist's top surface. Pieces at random angles. Gone when the roar stops (L30: plain grey mist).
-  - L34 to L38 (roar 2): one hedge off (about 40 m), at basket height, in a person's shape but slightly off (an arm block tilted, a leg block twisted). Head slices not yet lined up.
-  - L42 to L47 (roar 3): a rope's length off (about 8 m), at basket height, every piece exactly right, square to the basket. Head slices lined up. Pink mist through the gaps (L46). It fades with the roar at L47.
-  - L50 to L58 (the scare, the long roar and the short one at L56): inside the fourth corner, boots on the corner's floor beside the sandbag and the fourth flask, its upper pieces towering over the rim toward the burner frame. It never touches the frame, the ropes or anyone. Its nearest copper arm block is a hand's width from Dad's shoulder. At L54 all four head slices face Dad. At L57 the top slice faces me and the other three still face Dad. The test still is L54's frame.
-  - L59 to L70 (sunrise, the truth): still in the corner, unchanged from L58, now in gold light with gold through every gap. Bright and warm, so it reads as a figure standing in sun, not a dark shape.
-  - L76 to L77 (landing): gone. The fourth corner holds the sandbag and the fourth flask only.
-  - Never again after L70.
+## The eerie element: me, coming loose (continuity)
+No creature. The old Loose One model is retired, and **its cut is reused on every body**: each limb split into three blocks, the torso into two, the head into four horizontal slices, built once in `set.py` as a per-character `seam` value (the gap in cm) that can be keyed per shot. Seam faces (the faces that look across a gap) are near-black, so even a hairline reads as a dark line. Through a wide gap you see whatever's behind.
+- **Everyone else:** 0.5 cm, a hairline, in every shot. Dad never changes.
+- **Me, beat by beat:**
+  - S1 to S2 (L01): 2.5 cm, a finger's width. Pink mist shows through the gaps in my face and arms.
+  - L05 to L09 (kitchen): 2.5 cm, pale window light through the gaps.
+  - L10 to L18 (launch, lift-off): 2.5 cm.
+  - L19 (roar 1): my right hand block 5 cm off the sleeve. Everything else 2.5 cm.
+  - L23 to L24 (roar 2, Dad's polite smile): 4 cm everywhere.
+  - L25 to L26 (the long roar): both hand blocks 10 cm, then 20 cm, off the sleeves. Body 6 cm.
+  - L27 to L29 (the scare): head slices 10 cm apart (a hand's width), body 8 cm, hands 20 cm. Sunrise-pink mist through every gap. **The test still is L28's frame:** over my shoulder, through the gap between my second and third head slices, Dad smiling politely.
+  - L35 (the click): 2.5 cm closing to 0.5 cm over 0.4 s, with a soft wooden click per seam.
+  - L36 to L39: 0.5 cm, whole, in gold light.
+  - L40 to L41 (lunch, landing field): right hand block 1.5 cm off the sleeve again. The sting.
+  - L42 (the next dawn): 2.5 cm, matching S1 exactly.
+- Never seen moving fast: each widening happens under a roar's glow ramp, over 0.6 s or more, and it's never shown hurting. Nobody touches anybody.
 
 ## Lore connection (one, plain tally, no thread touched)
-- **What:** four short upright strokes stamped into the dark leather rim of the basket's fourth corner, in the Loose One's slate blue. Four for a basket built for four, no extra stroke. Never letters, never explained.
-- **Where:** S19, under L19 ("The RIM / was old LEATHER, / worn SMOOTH / by HANDS."). A close on the leather rim of the fourth corner in blue pre-dawn light. The four strokes are centred left to right, sit in the upper third of the frame, fully in frame with a clear margin, and stay well above the caption band (captions sit a little below the middle). Each stroke is about 1/8 of the frame width tall, so the count reads at phone size. Hold the shot at least 1.6 s. Light: the launch-field lamp, soft and steady, enough that slate blue reads against brown leather. Not narrated, and the pin doesn't ask about it.
-- It names nothing, touches no open thread and never points at another story.
+- **What:** two slate-blue strokes pressed into the leather rim, right between the two pale worn patches. Two for a basket flight built for two passengers, Dad and me. Plain tally, no extra stroke: the count has stayed true because we've never missed a dawn. Never letters, never explained.
+- **Where:** S18, under L16 ("Right where / Dad and I / put our HANDS."), the close on the rim with both worn patches, strokes centred in the upper third, above the caption band, each stroke about 1/8 of the frame width tall. Held 1.6 s. Not narrated, and the pin doesn't ask about it.
+- No Keeper appears. It names nothing and touches no open thread.
 
 ## Palette and sound
-- **Palette:** pre-dawn plum (`#3b2c4a`), mist blue-white (`#c9d3de`, at about 85%, never clipped), envelope cream (`#efe4cc`) and forest green (`#2f5a3c`), wicker tan (`#b48a55`), leather rim dark brown (`#4a2e1e`), burner flame orange (`#ff9a3c`, never a pure white core), creature copper `#b8693a` and slate blue `#4a6378`, sunrise gold (`#ffc46b`) and pink (`#f2a3a0`).
-- **Caption key colour:** sunrise coral `#ff7e6b`.
-- **Music:** D Lydian, 70 bpm. A high floating pad with a slow pulse like breathing, the raised fourth giving it lift. From L25 the pad thins and a low drone slides under it into D Aeolian. `music_drops` holes of 0.7 s at P01 (after "HOLD ON") and 0.6 s at P02 (after L58), voice and hit only. From L64 (the sun) the pad comes back in D major, warmer and a little slower. Ambience: the burner roar (filtered noise with a low throb), wicker creak, rope creak, sparse far-off bird chirps, and otherwise no wind at all. The sandbag rope's creak at L40 is the one sharp sound before the scare. All synthesized in `sound.py`.
-- **Closing sound:** after "flew LEVEL." hold 0.25 s, then the burner gives one short breath, a soft roar that falls a fifth in pitch over 0.6 s at -18 dB, and the loop cut lands on its tail into S1's wicker creak. Audible, never silence.
+- **Palette:** pre-dawn plum (`#3b2c4a`), mist blue-white (`#c9d3de`, never clipped), sunrise pink (`#f2a3a0`) and gold (`#ffc46b`), envelope cream (`#efe4cc`) and forest green (`#2f5a3c`), wicker tan (`#b48a55`), leather rim (`#4a2e1e`) with two worn patches (`#7a5a42`), burner orange (`#ff9a3c`, never a white core), badge cream and green to match the envelope, tally slate blue (`#4a6378`), trailer inside warm (`#e8b878`).
+- **Caption key colour:** sunrise coral `#ff7e6b` (kept).
+- **Music:** D Lydian, 72 bpm. Light and lifting for the montage (a plucked pulse and a high pad), so the opening is wonder. At L19 the pulse drops out and the pad thins. A heavy low drone (D, with a slow beat against it) enters at L23 and holds through the scare. `music_drops` hole of 0.8 s at P01, voice and hit only. At L32 (the sun) the drone opens into D major, warm and a little slower. Under L40 the low drone comes back alone, quiet, and holds to the end, so the last line lands cold.
+- **Ambience:** the burner roar (filtered noise with a low throb), wicker creak, far birds, no wind. Montage effects: a wooden click (L02), a loose rattle (L03), a small squeak on each step (L04). The seams: a soft wooden knock for each widening, and the click-back at L35. All synthesized in `sound.py`.
+- **Closing sound:** 0.25 s after "AGAIN", the burner gives one short breath that falls a fifth over 0.6 s at -18 dB, and the loop cut lands on its tail into S1's wicker creak.
 
-## Light plan (for the builder: read this first)
-ep20's reviews asked for slow light ramps, bright warm shots and no near-black warm turn. Every light change here is a slow ramp, and none sits on a cut.
-- **Burner roars:** the flame grows over 0.6 s, holds, and shrinks over 0.9 s. The orange glow on the envelope, the basket and the mist follows the same curve. Mean frame brightness rises by at most about 25% across a roar, and there's never more than one roar in any 3 s of film. A roar that crosses a cut is placed so the cut lands on the hold, never on a ramp. The roars: L05, L25 to L26 (roar 1), L33 (roar 2), L41 (roar 3), L49 into P01 (the long one, ramped up over 0.8 s), and short ones at L56 and L66.
-- **The creature is tied to the roars:** it fades up with the glow and down with it (L30, L47). Its eye highlights follow the same curve and never pop.
-- **Pre-dawn (L10 to L24):** plum and blue but readable. Faces are lit by the field lamp and the burner's pilot light, never near-black.
-- **Sunrise (L64 on):** the sun clears the mist as one continuous ramp over about 3 s of film, split across shots from one curve so cuts don't jump the level. From L64 to the end every shot is bright gold or full morning light, with a mean level well above the scare's and above the launch field's. The warm turn and the closing dawn must read clearly at phone size.
-- **No red light, no strobes, no flicker.** The phone screen at L72 is a soft steady glow with no text.
-- Run `python -m blocky flash` on the preview of S25 to S30 (roar 1), S48 to S58 (the scare) and S64 (sunrise), and on the last shot into the loop cut.
+## Light plan
+- **0:00 to 0:02:** S1 is pink dawn, bright enough to read on a phone: both faces lit from the low sun at the side, the mist behind them bright, my gaps showing that mist. No darkness before the hook.
+- **Montage and kitchen (L02 to L09):** soft morning daylight, warm and even.
+- **Launch (L10 to L17):** pre-dawn plum, faces lit by the field lamp and the pilot light, never near-black.
+- **Burner roars:** the flame grows over 0.6 s, holds and shrinks over 0.9 s. The glow on the envelope, basket and mist follows the curve, mean brightness up at most 25%, never more than one roar in any 3 s, no cut on a ramp. Roars at L12 (first fill), L19 (roar 1), L22 (roar 2), L25 (the long one, up over 0.8 s, holding through P01 to L29).
+- **Sunrise (L32):** one continuous 3 s ramp split across shots from one curve. From L32 to L39 every shot is bright gold.
+- **L40 to L41:** flat late-morning daylight, a little cooler. **L42:** pink dawn again, the same grade as S1.
+- No red, no strobes, no flicker. Rosa's burgundy beanie stays out of the burner's full glow (last round's red note).
+- Run `python -m blocky flash` on the preview of S27 to S33 (the scare) and S38 (sunrise), and on the last shot into the loop cut.
 
 ## Shot plan, beat by beat
-About 80 shots, a new shot on almost every line. Rig limits: no hand on the burner valve (cut to the flame overhead or Rosa's face), no hand on a flask or cup (they stand on the rim or the floor, and we cut from a sleeve to the result), no hand on the phone (it lies on the rim on speaker). Nobody leans out of the basket, ever. Everyone stays in their own corner the whole flight.
-- **01 The tilt (L01 to L05):** S1 a wide from outside, level camera: the balloon hanging over the mist in plum light, the envelope perfectly still, the basket visibly leaning about 6 degrees toward one corner. S2 a close on the still envelope (L03). S3 inside the basket, low on the empty fourth corner, the floor tipping toward it (L04). S4 the burner roaring overhead, then S5 the mist below lit orange with the loose scatter in it, far off (L05).
-- **02 Before (L06 to L20):** S6 Dad at the launch field, grinning. S7 me and Dad at a kitchen table at night, Dad hopeful (L07). S8 me looking down at my tea, not at Dad (L08). S9 Dad nodding, hiding a small disappointment (L09). S10 the launch field in the dark, our breath in the lamp light. S11 the burner's first flame into the envelope's mouth (slow ramp). S12 the envelope standing up off the grass. S13 a top-down on the four-corner basket with the tanks in the middle, clearly four corners (L13). S14 Dad's bag open on the basket floor and FOUR flasks standing along the leather rim of his corner, all four in frame (L14). S15 my face (L15). S16 Dad's sleeve and the fourth flask standing on the floor of the empty fourth corner (L16). S17 Rosa looking at the empty corner (L17). S18 the sandbag, a fat canvas bag, tied by its rope into the fourth corner beside the flask, Rosa's sleeve at the end of the rope, the bag and the corner both in frame (L18). S19 the lore close on the rim, held 1.6 s (L19). S20 a wide as the basket lifts off the grass with no jolt (L20).
-- **03 Up (L21 to L31):** S21 the fields sinking under the mist, hedge lines going one by one. S22 Rosa looking up at the sky (L22). S23 Dad's cup on the rim, sliding along it (L23). S24 the cup stopping at the fourth corner (L24). S25 Rosa frowning, then the flame overhead (roar 1, ramp). S26 the mist lit orange below. S27 a long lens across the mist: the scatter a field away (L27 to L28). S28 a closer long lens on the scatter, pieces at random angles (L29). S29 the glow fading to plain grey mist (L30). S30 a side wide of the basket, the lean a little steeper (L31).
-- **04 Nearer (L32 to L47):** S31 Dad delighted, barn roofs poking through the mist behind him, his mouth flapping under "LOOK at THAT" (L32). S32 the flame (roar 2, L33). S33 to S36 the figure one hedge off, shaped but slightly off, then closes: a gap between two arm blocks with mist behind, the sliced head not yet lined up (L34 to L38). S37 Rosa at the burner frame watching the basket's lean, her mouth under "Somebody's LEANING", then my eyeline across the basket: three people standing still (L39). S38 a close on the sandbag rope, taut (L40). S39 the flame (roar 3, L41). S40 to S44 the figure a rope's length off, exact, then a close on the face slices (L44 to L45), then pink mist through its gaps (L46). S45 the glow fading, and it with it (L47).
-- **05 The fourth corner (L48 to L58):** S46 a side wide, the basket tipping hard toward the fourth corner (about 12 degrees, L48). S47 Rosa's face, "HOLD ON" (L49). P01 the flame ramping up, long, voice and music out. S48 the reveal from my corner across the basket: the Loose One in the fourth corner, towering over the rim, sandbag and flask at its boots (L50 to L51). S49 a low angle up its pieces into the burner glow (L52). S50 a close: a copper arm block a hand's width from Dad's shoulder, Dad's scarf in frame (L53). S51 the test still: its sliced face turned to Dad, three-quarter view (L54). S52 Dad looking out at the brightening horizon, smiling (L55). S53 a short roar overhead (L56). S54 from my eyeline: its top slice now facing me, the three below still facing Dad (L57 to L58). P02 hold on my face.
-- **06 The truth (L59 to L70):** S55 a wide over my shoulder: me, the fourth corner, it, Dad beside it (L59), its pieces leaning their weight into Callum's corner. S56 a side wide of the lean (L60). S57 to S59 my face, `ashamed`, eyes down, through L61 to L63, cutting once to Dad's back. S60 the sun breaking out of the mist, gold flooding the frame (L64, the sunrise ramp). S61 me turned to Dad, my mouth moving, face `ashamed` and eyes on the basket floor, never on Dad, Dad turning to me (L65). S62 Dad quiet under a short roar (L66). S63 Dad laughing, Rosa startled at the burner (L67). S64 Dad's face under L68, gentle (`smile`), me still downcast, then my eyes come up at the end of the line. S65 Dad nodding at the fourth flask in its corner (L69). S66 a bright wide down the sunlit valley: the basket still leaning, the creature still in its corner, lit gold (L70).
-- **07 Landing (L71 to L77):** S67 the basket settling upright in a stubble field, gently (L71). S68 the phone lying on the leather rim, screen glowing, no text, Dad bent toward it (L72). S69 a close on the phone (L73). S70 Dad's mouth under L74. S71 Dad and me laughing (L75). S72 me looking across the basket (L76). S73 the fourth corner in bright morning light: the sandbag and the flask, nothing else (L77).
-- **08 Four (L78 to L82):** S74 the launch field the next dawn, bright pink and gold, four of us in the basket, Callum in the fourth corner (L78). S75 Rosa's sleeve and the sandbag lying on the grass outside the basket (L79). S76 Callum's flask standing on his corner's rim (L80). S77 a wide from outside: the balloon up, the basket level against a flat gold horizon (L81). S78 the same wide, held through the last line, then the burner's short falling breath as the closing sound (L82).
+About 48 shots for about 78 s (about 1.6 s a shot). Times are estimates from the word count. **[REUSE]** = a set, model or shot type from the approved build, used unchanged. **[CHANGED]** = an existing set or model with an edit. **[NEW]** = build it. Rig limits: no hand on the burner valve (cut to the flame), no hands on the badge (cut from Dad's sleeve to the pinned badge), no hugs (lean in, cut away), nobody leans out of the basket.
+
+**Global changes first:** **[CHANGED]** every character gets the seam cut (above). **[CHANGED]** the basket rim gets the two worn patches and the two-stroke tally (replacing the four-stroke tally in the fourth corner). **[CHANGED]** Dad gets the balloon badge on his scarf. **[REMOVED]** the Loose One, Callum, the sandbag, the four flasks, the phone, the old kitchen-table lie scene.
+
+- **01 The rule (L01 to L09, 0:00 to 0:16)**
+  - S1 0:00 (L01) **[NEW shot, REUSE set]** inside the basket at pink dawn, a two-shot at chest height: Dad on the left smiling out at the view, badge on his scarf, hairline seams. Me on the right facing camera, seams a finger's width, pink mist through the gaps in my face and arm. Both faces at least 1/5 of the frame, above the caption band. Envelope edge and mist behind. This is the hook frame.
+  - S2 0:01.6 (L01 end) **[NEW]** a close on my arm on the rim: three blocks a finger apart, the mist behind them.
+  - S3 0:02.8 (L02) **[NEW set: field gate]** the newlyweds side by side at a field gate, their seams snapping shut with a click.
+  - S4 0:04.4 (L03) **[CHANGED: kitchen set, door end]** a son with a holdall at a cottage kitchen door, rattling (tremble), his mum leaning in. Cut as his seams start to close.
+  - S5 0:06.4 (L04) **[NEW set: lane by a dry-stone wall]** a grandad walking toward camera, five grown relatives behind him, seams sealed tight, a squeak on each step.
+  - S6 0:08.1 (L05) **[CHANGED: kitchen set]** me at the kitchen window at dawn, side-on, gaps open.
+  - S7 0:09.9 (L06) **[NEW]** a close through the gap between my head slices: the misty field in it.
+  - S8 0:11.5 (L07) **[REUSE kitchen table]** Dad at the kitchen table, warm, smiling at his tea.
+  - S9 0:12.8 (L08) **[NEW]** a slow push on Dad's face as the smile goes `polite`.
+  - S10 0:13.7 (L09) **[NEW]** over Dad's shoulder: me across the table, seams open, waiting to be known. Dad's polite nod in the foreground. This is the loved-one picture, done by 0:16.
+- **02 Up (L10 to L17, 0:16 to 0:31)**
+  - S11 0:15.9 (L10) **[REUSE launch field]** the launch field in plum dark, the lamp on its pole, Dad grinning, me behind him.
+  - S12 0:17.1 (L11) **[REUSE]** the envelope lying on the grass, then S13 0:18.5 **[REUSE]** Dad and me side by side looking up at it.
+  - S14 0:19.9 (L12) **[REUSE]** the burner's first flame into the envelope's mouth (slow ramp), then S15 0:20.7 **[REUSE]** the envelope standing up.
+  - S16 0:21.5 (L13) **[NEW]** Rosa waving us into the basket without a word, `neutral`, pointing each of us to our corner.
+  - S17 0:22.6 (L14) **[CHANGED: Dad with badge]** Dad's sleeve, then a close on the badge pinned to his scarf, then Dad `delighted` under "First time UP!" (two cuts).
+  - S18 0:25.6 (L15 to L16) **[CHANGED: basket rim]** a close on the leather rim: two pale worn patches, the slate tally between them. Held 1.6 s (lore plant). Then S19 0:27.6 **[NEW]** wider: Dad's hand and my hand land exactly on the two patches.
+  - S20 0:29.4 (L17) **[REUSE]** the wide as the basket lifts off the grass with no jolt.
+- **03 Loose (L18 to L29, 0:31 to 0:53)**
+  - S21 0:31.0 (L18) **[REUSE]** the fields sinking under the mist, hedge lines going one by one.
+  - S22 0:32.3 (L19) **[REUSE]** the flame overhead (roar 1), then S23 0:33.5 **[NEW]** a close on my sleeve: the hand block slides from 2.5 to 5 cm off it under the glow.
+  - S24 0:35.1 (L20) **[REUSE]** Dad pointing at barn roofs poking through the mist, `delighted`, mouth under "LOOK at THAT".
+  - S25 0:38.1 (L21) **[NEW]** Rosa at the burner frame, her lips moving with Dad's, a small `sad-smile`.
+  - S26 0:40.3 (L22) **[REUSE]** the flame (roar 2).
+  - S27 0:41.3 (L23) **[NEW]** Dad turning from the view to me, and his face drops to `polite`. Drone enters.
+  - S28 0:43.5 (L24) **[NEW]** Dad leaning toward Rosa, mouth under "WHO'S this", Rosa looking down at the burner.
+  - S29 0:44.6 (L25) **[REUSE]** the long roar ramping up, then S30 0:45.5 **[NEW]** my two hand blocks drifting off my sleeves.
+  - S31 0:46.4 (L26) **[NEW]** wider: hands a hand's width off, then two. My face `scared`.
+  - S32 0:47.6 (L27) **[NEW]** my head, front on, the four slices sliding apart, pink mist through every gap, the burner key from above. (Cover frame, about 48.3 s, caption "came APART".)
+  - P01 0:48.9 **[NEW]** hold on my sliced face, voice and music out, only the burner.
+  - S33 0:49.7 (L28) **[NEW]** the test still: over my shoulder, Dad framed in the gap between my head slices, smiling politely.
+  - S34 0:52.1 (L29) **[NEW]** Dad's polite smile, close.
+- **04 The words (L30 to L35, 0:53 to 1:03)**
+  - S35 0:53.1 (L30) **[NEW]** my sliced face, eyes steady, the scared look going calm.
+  - S36 0:55.0 (L31) **[NEW]** a two-shot: me turned to Dad, mouth under "Happy BIRTHDAY", Dad's polite face.
+  - S37 0:56.8 (L32) **[REUSE]** the sun breaking out of the mist, gold flooding the frame (sunrise ramp).
+  - S38 0:58.8 (L33) **[NEW]** Dad in gold light, turning, his face going from `polite` to `delighted`.
+  - S39 1:00.6 (L34) **[NEW]** Dad's mouth under "There's my BOY", `laugh`.
+  - S40 1:01.7 (L35) **[NEW]** a close on me: every slice and block sliding home, click by click, to hairline. `relief`.
+- **05 The truth (L36 to L42, 1:03 to 1:18)**
+  - S41 1:03.1 (L36) **[NEW]** a bright wide down the sunlit valley, the basket level, both of us whole.
+  - S42 1:04.5 (L37) **[NEW]** Dad and me at the rim, his hand and mine on the two worn patches.
+  - S43 1:06.6 (L38) **[REUSE]** Rosa at the burner frame, `sad-smile`, the gold valley behind. Then S44 1:08.0 **[REUSE]** the landing in the stubble field.
+  - S45 1:09.2 (L39) **[NEW: trailer inside]** Rosa's sleeve at the trailer's open back doors, pinning today's badge on the inside wall.
+  - S46 1:11.6 (L40) **[NEW]** pull back: the whole wall, floor to roof, covered in hundreds of identical cream-and-green balloon badges, warm lit, readable at phone size. This is the reveal's one picture. Hold 2 s.
+  - S47 1:13.3 (L41) **[NEW]** the landing field in late-morning daylight: Dad walking off beside Rosa, chatting. In the foreground my sleeve, the hand block drifting 1.5 cm off it. Drone back.
+  - S48 1:15.1 (L42) **[NEW shot, REUSE set]** the next dawn: the basket rising off the launch field in pink light, Dad with a fresh badge, me with finger-width gaps, framed to match S1's light. Held 0.25 s past "AGAIN", the burner's falling breath, then the loop cut to S1.
 
 ## The narration
 
 Every line is `narrator` (voice A, cast key `me`). Characters are quoted inside the lines, and their mouths flap under the words. CAPS are the key words, in coral. Chunks split with ` / `.
 
-### 01 The tilt
-- `L01` narrator: Rosa SAID / the wind / was ZERO.
-- `L02` narrator: So WHY / was the BASKET / TILTING?
-- `L03` narrator: Not a RIPPLE / on the BALLOON. / Still as / a PAINTING.
-- `L04` narrator: But the BASKET / leaned, / toward its / EMPTY CORNER.
-- `L05` narrator: Then the burner ROARED. / Down in the MIST, / PIECES / caught the LIGHT.
+### 01 The rule
+- `L01` narrator: In this VALLEY, / if your FAMILY / FORGETS you, / your body comes APART, / BLOCK by BLOCK.
+- `L02` narrator: Get MARRIED, / and you CLICK / TIGHT / overnight.
+- `L03` narrator: Move to the CITY, / and you come HOME / RATTLING.
+- `L04` narrator: GRANDADS / with big FAMILIES / SQUEAK / when they WALK.
+- `L05` narrator: ME? / I've been / coming LOOSE / for FOUR YEARS.
+- `L06` narrator: You can see / the MIST / through my GAPS.
+- `L07` narrator: Dad's ALL / the FAMILY / I've GOT.
+- `L08` narrator: And Dad / FORGETS.
+- `L09` narrator: Some MORNINGS, / he looks at me / like I'm a GUEST.
 
-### 02 Before
-- `L06` narrator: It was Dad's / SIXTIETH. / A BALLOON flight / at DAWN.
-- `L07` narrator: He'd wanted it / for YEARS. / Me, him, / and my brother / CALLUM.
-- `L08` narrator: Callum couldn't / MAKE it. / WORK. / That's what / I told DAD.
-- `L09` narrator: Dad just NODDED. / He didn't / ASK AGAIN.
-- `L10` narrator: The launch field / was DARK / and COLD.
-- `L11` narrator: Rosa, our PILOT, / filled the balloon / with FIRE.
-- `L12` narrator: It stood UP / like a GIANT / WAKING.
-- `L13` narrator: The BASKET / was built / for FOUR. / A CORNER / EACH.
-- `L14` narrator: Dad UNPACKED / his bag. / FOUR FLASKS / of TEA.
-- `L15` narrator: I said, / "Dad, / there's THREE / of us."
-- `L16` narrator: He said, / "HABIT," / and stood the FOURTH / in the empty CORNER.
-- `L17` narrator: Rosa LOOKED / at that CORNER.
-- `L18` narrator: She tied / a SANDBAG / in there. / "For BALANCE."
-- `L19` narrator: The RIM / was old LEATHER, / worn SMOOTH / by HANDS.
-- `L20` narrator: Then the GROUND / LET GO / of us.
+### 02 Up
+- `L10` narrator: But TODAY / was his SIXTIETH.
+- `L11` narrator: All he'd ever WANTED / was a BALLOON / at DAWN, / just him / and ME.
+- `L12` narrator: Rosa, our PILOT, / filled it / with FIRE.
+- `L13` narrator: She never ASKED / our NAMES.
+- `L14` narrator: Dad pinned / a BALLOON BADGE / to his scarf / and said, / "First time UP!"
+- `L15` narrator: The leather RIM / was worn SMOOTH / in two PLACES.
+- `L16` narrator: Right where / Dad and I / put our HANDS.
+- `L17` narrator: Then the GROUND / LET GO / of us.
 
-### 03 Up
-- `L21` narrator: The fields / sank UNDER / the MIST.
-- `L22` narrator: Rosa looked UP / and said, / "Wind's ZERO. / PERFECT."
-- `L23` narrator: Then Dad's CUP / SLID / along the RIM.
-- `L24` narrator: All the way / to the / EMPTY CORNER.
-- `L25` narrator: Rosa FROWNED, / and gave the burner / a LONG ROAR.
-- `L26` narrator: The mist / lit ORANGE / under us.
-- `L27` narrator: And a FIELD AWAY, / something / HUNG in it.
-- `L28` narrator: BLOCKS. / COPPER ones, / and SLATE BLUE. / SCATTERED.
-- `L29` narrator: Like the PARTS / of somebody, / before anyone / had BUILT them.
-- `L30` narrator: The roar STOPPED, / and they / were GONE.
-- `L31` narrator: The basket / leaned / a little / FURTHER.
+### 03 Loose
+- `L18` narrator: The fields / sank UNDER / the MIST.
+- `L19` narrator: The burner ROARED, / and my HAND / slid a finger's WIDTH / off my SLEEVE.
+- `L20` narrator: Dad didn't SEE. / He pointed at / every BARN ROOF / and said, / "LOOK at THAT."
+- `L21` narrator: Rosa MOUTHED it / with him, / like she knew / the WORDS.
+- `L22` narrator: The burner / roared AGAIN.
+- `L23` narrator: Dad looked at ME, / and his smile / went POLITE.
+- `L24` narrator: He said, / "And WHO'S this, / ROSA?"
+- `L25` narrator: The long ROAR. / My HANDS / drifted OFF / my SLEEVES.
+- `L26` narrator: A hand's WIDTH. / Then TWO.
+- `L27` narrator: My HEAD / came APART / in SLICES.
+- `P01` pause, 0.8 s, no big word (the long roar holds, voice and music out)
+- `L28` narrator: Through the GAP / in my own FACE, / I could see DAD.
+- `L29` narrator: SMILING / at a STRANGER.
 
-### 04 Nearer
-- `L32` narrator: Dad kept POINTING / at BARN ROOFS, / saying, / "LOOK at THAT."
-- `L33` narrator: The burner / ROARED / AGAIN.
-- `L34` narrator: The pieces / were CLOSER. / One HEDGE off.
-- `L35` narrator: And they'd / come TOGETHER. / ALMOST. / A SHAPE.
-- `L36` narrator: Two LEGS. / A BODY. / Two ARMS. / A HEAD / in SLICES.
-- `L37` narrator: Every BLOCK / a hand's WIDTH / from the NEXT.
-- `L38` narrator: Far TALLER / than a PERSON, / because of / all the GAPS.
-- `L39` narrator: Rosa never SAW it. / She just said, / "Somebody's LEANING." / Nobody WAS.
-- `L40` narrator: The sandbag ROPE / CREAKED.
-- `L41` narrator: Then / the next ROAR.
-- `L42` narrator: It was / a ROPE'S LENGTH / from the BASKET.
-- `L43` narrator: Every piece / in the RIGHT place / now.
-- `L44` narrator: Its FACE / came in / SLICES.
-- `L45` narrator: The EYES / on one. / The MOUTH / two gaps BELOW.
-- `L46` narrator: Through the GAPS, / I could see / PINK MIST.
-- `L47` narrator: The roar FADED, / and it / FADED with it.
+### 04 The words
+- `L30` narrator: I knew / what to SAY. / I say it / every TIME.
+- `L31` narrator: I said, / "Happy BIRTHDAY, Dad. / Look at the SUN."
+- `L32` narrator: The SUN / broke out / of the MIST, / all GOLD.
+- `L33` narrator: Dad TURNED, / and his whole FACE / woke UP.
+- `L34` narrator: He said, / "There's my BOY."
+- `L35` narrator: Every PIECE / of me / CLICKED back.
 
-### 05 The fourth corner
-- `L48` narrator: Then the basket / TIPPED, / HARD, / toward the fourth CORNER.
-- `L49` narrator: Rosa said, / "HOLD ON," / and opened / the BURNER WIDE.
-- `P01` pause, 0.7 s, no big word (the long roar ramps up; voice and music out)
-- `L50` narrator: And it was / IN / the BASKET.
-- `L51` narrator: In the FOURTH / CORNER, / right beside / the SANDBAG.
-- `L52` narrator: Its pieces / TOWERED / over us.
-- `L53` narrator: A hand's WIDTH / from Dad's / SHOULDER.
-- `L54` narrator: Its sliced FACE / was turned / to DAD.
-- `L55` narrator: Dad was watching / the SUNRISE. / He never / TURNED.
-- `L56` narrator: The burner / roared / AGAIN.
-- `L57` narrator: And the TOP / of its HEAD / had turned / to ME.
-- `L58` narrator: The REST / of it / still faced / DAD.
-- `P02` pause, 0.8 s, no big word (hold on my face; music out)
-
-### 06 The truth
-- `L59` narrator: Its WEIGHT / was on / CALLUM'S / CORNER.
-- `L60` narrator: The basket / was leaning / toward the PLACE / I'd left EMPTY.
-- `L61` narrator: Callum never / said he was / BUSY.
-- `L62` narrator: I FORGOT / to ASK him / till it was / too LATE.
-- `L63` narrator: It felt EASIER / to blame CALLUM / than to say / I FORGOT.
-- `L64` narrator: The SUN / broke out / of the MIST, / all GOLD.
-- `L65` narrator: So I / told DAD. / ALL of it. / I couldn't / LOOK at him.
-- `L66` narrator: He went QUIET / for a whole / burner ROAR.
-- `L67` narrator: Then he LAUGHED / so LOUD / Rosa JUMPED.
-- `L68` narrator: He said, / "You could've / just TOLD me / you FORGOT."
-- `L69` narrator: Then he said, / "He'll want / his FLASK / TOMORROW."
-- `L70` narrator: The PIECES / stayed in that CORNER / all the way DOWN.
-
-### 07 Landing
-- `L71` narrator: Rosa set us / DOWN, / SOFT, / in a STUBBLE / FIELD.
-- `L72` narrator: Dad put / his PHONE / on the RIM / and rang CALLUM.
-- `L73` narrator: He picked UP / on the / FIRST RING.
-- `L74` narrator: Dad said, / "BALLOON. / TOMORROW. / DAWN."
-- `L75` narrator: Callum said, / "I'll bring / the BISCUITS."
-- `L76` narrator: I looked / at the / fourth CORNER.
-- `L77` narrator: Just a SANDBAG, / and a FLASK.
-
-### 08 Four
-- `L78` narrator: Callum CAME, / and we had / a CORNER EACH.
-- `L79` narrator: Rosa UNTIED / the SANDBAG / and left it / on the GRASS.
-- `L80` narrator: Callum's FLASK / stood / in Callum's / CORNER.
-- `L81` narrator: The HORIZON / sat FLAT / as a SHELF.
-- `L82` narrator: Rosa SAID / the wind / was ZERO. / The BASKET / flew LEVEL.
-  - [0.25 s after "LEVEL", then the burner's short falling breath at -18 dB, then the loop cut to S1's wicker creak]
+### 05 The truth
+- `L36` narrator: Dad's SIXTIETH / was FOUR YEARS / AGO.
+- `L37` narrator: It's the last MORNING / he remembers WHOLE. / With ME in it.
+- `L38` narrator: So every DAWN, / Rosa takes us UP, / and it's his / SIXTIETH again.
+- `L39` narrator: Back at the TRAILER, / she pinned his BADGE / with the OTHERS.
+- `L40` narrator: HUNDREDS / of them. / All the SAME.
+- `L41` narrator: By LUNCH, / he'll ask Rosa / who I AM.
+- `L42` narrator: TOMORROW, / Dad turns SIXTY / AGAIN.
+  - [0.25 s after "AGAIN", the burner's short falling breath at -18 dB, then the loop cut to S1's wicker creak]
 
 ## Line-against-picture checks
-- **Counts:** four corners, four flasks (three of us plus the fourth), four tally strokes, four people at the end. "Built for four" is said once (L13) and the tally matches it. Callum's flask at L80 is the same fourth flask from L16.
-- **Roars and sightings:** the L05 glimpse, roar 1 (L25 to L30), roar 2 (L33 to L38), roar 3 (L41 to L47), the long roar (L49, P01 to L55), the short roar at L56 that turns the top slice, and one at L66 while Dad is quiet. Each sighting sits under its own roar, and it's never seen in the act of moving.
-- **L52 "towered over us"** fits a 2.5 m figure standing on the basket floor beside chest-high wicker. **L38 "far taller"** is the only size word: nothing calls it wide or flat.
-- **No grips:** the cup slides by itself (L23), the flask is shown standing after Dad's sleeve (L16), Rosa's sleeve sits at the end of the rope (L18, L79), and the phone lies on the rim (L72).
-- **L55 "watching the sunrise"** is the sky brightening at the horizon. The sun itself breaks out at L64.
-- **Banned shapes checked:** no "Not X, it was Y" (L03 "Not a RIPPLE" is a plain description), no "It didn't touch me", no closing "Last NIGHT,". L39 "Nobody WAS." is the only one-line twist hint.
+- **Seams:** every body in every shot has them, and only mine change. Dad's stay hairline even at his most forgetful, because others remember him. The click at L35 is the only time mine close, and L41 opens them again.
+- **Counts:** two worn patches, two tally strokes, two passengers. Hundreds of badges (L40) fits four years of dawns.
+- **"Four years":** said at L05 and L36, nowhere else.
+- **Badge:** on Dad's scarf at S1, S17, S38 and S48 (a fresh one), on the trailer wall at S45 to S46. It never shows a number or any letters.
+- **Rosa:** never explains. Her only "lines" are Dad's words, mouthed (L21). At L24 she looks at the burner, not at Dad.
+- **No grips:** cut from Dad's sleeve to the pinned badge (L14), hands rest flat on the rim (S19, S42), Rosa's sleeve at the wall (S45).
+- **L01 over the next dawn:** S1 and S48 are the same morning in the loop. Nothing on screen dates it.
+- **Banned shapes checked:** no "Not X, it was Y", no "It didn't touch me", no closing "Last NIGHT,", no on-screen age, no dashes or semicolons.
+- **For the builder:** `story.json` needs the new `premise`, `twist`, `world` and `title` from this script and `package.json` (last round's standards note), and the old lines, acting and cues are replaced.

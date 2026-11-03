@@ -69,3 +69,10 @@ the hard way.
 - `test` gates every story a PR touches, so a story whose reviews say revise can't merge. A `WIP` title skips it.
 - Many sessions merge their own PRs. Shared files (`blocky/*.py`, `stories/lore.md`, `stories/ideas.md`) conflict
   often, and `stories/lore.md` uses `merge=union` (`.gitattributes`).
+
+## GitHub's schedule woke up (2026-11-02)
+After weeks of never firing, GitHub's `schedule:` triggers started on 2026-11-02, hours late: an upload run meant for
+3:47 PM ran at 9:04 PM Central and uploaded knock-back, public at 10:04 PM. upload.py counted days in UTC, so it saw
+a fresh day. Fixes: no workflow has a `schedule:` any more (cron-job.org is the only clock), the upload day is the
+Central date, and an automatic upload only starts between 5 AM and 7 PM Central. A manual run with a story still
+works any time.

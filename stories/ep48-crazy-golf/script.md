@@ -1,7 +1,14 @@
-# ep48-crazy-golf: the script (writer, 2026-11-02)
+# ep48-crazy-golf: the script (writer, 2026-11-02; recast 2026-11-03)
 
 - **Slug:** `ep48-crazy-golf`
 - **From:** pitch #32 `crazy-golf` in `stories/ideas.md` (Batch 5), with its notes. Kept: the rule, the setting, the Wrung One, Dad, celebration (a last round), the marker and the lore plant.
+- **Recast (2026-11-03, RULES: "The narrator is a man or a teen boy, always", "Relationships read at a glance", "The cold-viewer test"):**
+  - The narrator is now Dad's grown-up son, a man who moved to the city and is home for the closing week. No family word in the story needs a woman.
+  - Dad is named in plain words the first time: L09 "My DAD'S crazy golf". L11 (new) "I'm his SON, / home for the LAST week." says out loud, by about 19 s, that I'm his son and that I'm only home briefly (cold-viewer fix; "from the city" dropped in round 4, ep47 has the same setup).
+  - The twist is said, not read off silhouettes: L61 "The shadow on the green / is MINE" and L62 (new) "The one at my FEET / is DAD'S." The shadows still show it, but nothing depends on reading a head shape.
+  - My bun becomes a **thick full mop of dark brown hair**. L19 (new) "It has THICK HAIR. / Dad must have had / a MOP like MINE / back THEN." L58 (new) "It FITS me. / HAIR and ALL."
+  - Changed line ids, to re-voice: **L09, L11, L19, L58, L62.** Nothing else moves.
+- **Builder notes (recast):** `me` loses the bun. Give him a thick full head of dark brown (`#3a2618`) block hair: a tall, squared mop with a heavy front fringe and tufts over the ears, clearly taller and wider than a bare head, and no hat (Dad has no hat either, so nothing is shared). His face reads male: drop any lashes or lip colour the woman's rig had, add short drawn brows thicker than now. The shadow on the last green becomes my new silhouette: the same hug-knees pose, with its head a squared, tufted mop outline (taller than Dad's round bald head, no bun knob on top). In `set.py` the `bun` flag on that figure now means "the mop head". The shadow at my feet stays Dad's round bare head. Shots whose picture changes: every shot with `me` in it, and every shot of the green's shadow (L15.1, L17, L19, L29, L58, L61, L64.1 if it frames it, L74, L76).
 - **Changes from the pitch:**
   - **0:20 pass (owner, 2026-11-02):** Dad and what I could lose must be on screen by 0:20 on one forward timeline. L09 ("Dad has run... for DECADES", backstory) and L10 ("It's SOLD...") are now one line, L09 "DAD'S crazy golf / becomes a CAR PARK / on SUNDAY.", so Dad is on screen at about 16.4 s, the loss is said by about 18.2 s, and L11 (me home, Dad waving) lands at about 18.3 s. L10 is gone.
   - Dad leaves his **putter and flask** behind, not a cap. Dad is bald, and a cap would put a cap on his shadow and spoil plant 2.
@@ -9,20 +16,21 @@
   - The newlyweds were cut from the montage for length. It has three examples plus a callback ("It waves BACK").
   - The narration says "the LAST hole / the LAST GREEN" and never "eighteenth", so Whisper has no ordinal to mishear. The flags and hole posts carry the numbers.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 621 spoken words in 75 lines, all `narrator`, plus 3 pause beats (1.9 s in all).
+- **Word count:** 627 spoken words in 75 lines, all `narrator`, plus 3 pause beats (1.9 s in all).
 - **Shots:** 104, about 1.35 s each on average.
-- **Estimated length:** speech at 290 wpm is 2:11. The 0.12 s gaps add about 9 s, the pauses 1.9 s and the loop tail 0.25 s, so about 2:22. If it lands over 2:30, cut L41 first, then L06. (Measured before the 0:20 pass: 2:21.7. L09 and L10 merged into one line, so about 2:19.5 now.) If it lands under 2:15, add "The grass there / is always WARM." after L15.
+- **Estimated length:** speech at 290 wpm is 2:11. The 0.12 s gaps add about 9 s, the pauses 1.9 s and the loop tail 0.25 s, so about 2:22. If it lands over 2:30, cut L41 first, then L06. (Measured before the 0:20 pass: 2:21.7. L09 and L10 merged into one line, so about 2:19.5 now. The recast adds 6 words, about 1.3 s, all after L09 began: Dad still on screen at about 16.4 s, the loss said by about 18.4 s, the first taking (L24) and the reveal (L43) each about 0.7 s later, so the creature still lands near 58%.) If it lands under 2:15, add "The grass there / is always WARM." after L15.
 
 ## The story
 
-- **Premise:** In this town, nobody's shadow stays under them. Each one sits wherever its owner was happiest. Mine has never left my feet, and I took that to mean I'd never been happy anywhere. Dad has run the crazy golf in the park for thirty years. It's sold, and it shuts on Sunday. I'm home for the last week. Every evening he putts round alone and sits beside the last shadow left inside the fence, on the last green, and I think it's his. Something wrung like a cloth starts standing on the last hole's second tee.
+- **Premise:** In this town, nobody's shadow stays under them. Each one sits wherever its owner was happiest. Mine has never left my feet, and I took that to mean I'd never been happy anywhere. I'm a grown man, moved away to the city. My dad has run the crazy golf in the park for thirty years. It's sold, and it shuts on Sunday. I'm home for the last week. Every evening he putts round alone and sits beside the last shadow left inside the fence, on the last green, and I think it's his. Something wrung like a cloth starts standing on the last hole's second tee.
 - **The rule:** your shadow stays wherever you were happiest. Objects cast ordinary shadows. People don't: their shadows lie elsewhere, slowly moving like their owners, on lawns, doorsteps and pitches.
 - **The narrator as the exception:** a shadow that never leaves my feet.
 - **The loved one at stake:** Dad (older adult), never in peril, never touched.
 - **Twist:** the shadow on the last green is mine, from the summers he taught me the course. The shadow at my feet is Dad's. His happiest place is wherever I am, so his shadow has gone everywhere with me, the city included. Every evening he's been sitting with my shadow, and on Thursday night he sat under my window to be near his own.
 - **Where the twist is planted:**
-  - Plant 1, the bun (L19): the shadow on the green has a block bun, and Dad is bald. My cover line ("Dad must have had HAIR / back THEN") explains it away.
-  - Plant 2, my feet (L07): the shadow at my feet in the low sun has a round, bare head. I have a bun. Not narrated.
+  - Plant 1, the hair (L19): the shadow on the green has thick hair, and Dad is bald. My cover line ("Dad must have had / a MOP like MINE / back THEN") explains it away, and tells a cold viewer that I have thick hair.
+  - Plant 2, my feet (L07): the shadow at my feet in the low sun has a round, bare head. I have a thick mop. Not narrated.
+  - The twist itself never rests on these: L61 and L62 say it in plain words.
   - Rewatch extras: Dad sits with **two putters** (L17), and the last hole has **two tees** (L39).
 - **The loophole the climax turns (the rule's own logic, read again):** I took "your shadow stays where you were happiest" to mean mine had nowhere to go. Read again, the shadow at my feet is someone's whose happiest place is me. So the round on the last green was never meant for one player. I take the second putter, stand on the second tee, and the gap the Wrung One was keeping is filled by a person. No new magic.
 - **How the last 15 seconds turn over the first line:** from L70 the town plays a last round, the pavement shadows slide back in, and Dad's shadow stretches from my feet to his. Then L74 repeats L01 word for word, and "Dad's stays / with ME" makes "wherever you were happiest" mean a person, not a place. A second watch reads L07 and L08 ("I'd just never been HAPPY / ANYWHERE") as Dad's love the whole time.
@@ -42,7 +50,7 @@ A crazy-golf course in a fenced corner of a town park, in its closing week in la
 
 All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 
-- `me` (adult, woman): a dark brown block **bun** on top of short block hair, a rust anorak (`#b5532f`) with cream piping over a cream knit, dark jeans, white trainers. Faces: `neutral`, `worried`, `scared`, `smile`. Back from the city for the week. No age on screen.
+- `me` (adult man, Dad's son): a **thick full mop of dark brown block hair** (squared, tall, heavy fringe, no hat), short thick drawn brows, a rust anorak (`#b5532f`) with cream piping over a cream knit, dark jeans, white trainers. Faces: `neutral`, `worried`, `scared`, `smile`. Back from the city for the week. No age on screen.
 - `dad` (older adult): **bald**, a rounded head with no hair piece at all, thick grey drawn brows and a short grey drawn moustache, a navy cardigan over a lemon polo, tan trousers, brown shoes. Faces: `neutral`, `tired`, `sheepish`, `smile`. Quiet and cheerful, never a guide, never cryptic. He never sees the Wrung One.
 - `gordon` (adult, man): a brown block quiff, a green check shirt. One shot (L04), `sheepish`.
 - `gordon_wife` (adult, woman): a block bob in auburn, a plum coat, arms folded, `neutral` with a flat stare. One shot (L04).
@@ -57,8 +65,8 @@ Every word is the narrator's. Nobody is quoted directly except Dad's one reporte
 - **Nobody's body casts a shadow.** In Blender, every character's mesh has shadow casting off. Objects (the windmill, flags, fences, benches) cast ordinary shadows.
 - **Every person's shadow lies somewhere else:** a flat soft-edged silhouette of its owner on the ground, cool blue-grey (`#2f3a4a`, about 55% opacity, edge blur about 6 cm). Each one is posed like its owner would be there: sitting on a doorstep, lying on a lawn, standing on a pitch. They move only slowly, and only as the words say.
 - **By 2 s:** in L01 people walk across a sunny lawn with nothing under their feet, while lone shadows sit and lie on the grass round them with nobody there.
-- **My shadow** is attached to my feet and follows me like a normal one. Its silhouette is Dad's: the same R6 body, but **a round bare head with no bun.** In every shot where it's in frame, the head end is either readable as round (L07, L59, L60, L73) or out of frame. Never framed so the bun question comes up before L58.
-- **The shadow on the last green** is my silhouette, bun and all, sitting on the turf hugging its knees (a flat drawn pose, so the rig never sits cross-legged).
+- **My shadow** is attached to my feet and follows me like a normal one. Its silhouette is Dad's: the same R6 body, but **a round bare head with no hair.** In every shot where it's in frame, the head end is either readable as round (L07, L59, L60, L73) or out of frame. Never framed so the head question comes up before L58.
+- **The shadow on the last green** is my silhouette, thick mop and all, sitting on the turf hugging its knees (a flat drawn pose, so the rig never sits cross-legged).
 - **The Wrung One has no shadow at all,** under it or anywhere else, while the windmill beside it throws a long one.
 
 ## The creature: the Wrung One
@@ -133,7 +141,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L06` narrator: It waves BACK.
   - [close on the shadow on the grass: its arm slowly rises]
 - `L07` narrator: Mine has never LEFT / my FEET.
-  - [low shot behind me, sun in front of me: my shadow stretches back toward camera from my trainers. Its head end is round and bare, no bun. Not mentioned. Plant 2]
+  - [low shot behind me, sun in front of me: my shadow stretches back toward camera from my trainers. Its head end is round and bare, no hair, while my mop is in the top of frame. Not mentioned. Plant 2]
 - `L08` narrator: I thought / I'd just never been HAPPY / ANYWHERE.
   - [me on the path, `neutral`, looking down at my feet, a little sad]
 
@@ -142,10 +150,10 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the crazy-golf course across the closing week, late-afternoon to early-evening sun. The rule works and nobody explains it.
 - **Shots:** 20.
 
-- `L09` narrator: DAD'S crazy golf / becomes a CAR PARK / on SUNDAY.
+- `L09` narrator: My DAD'S crazy golf / becomes a CAR PARK / on SUNDAY.
   - [Dad in the kiosk hatch, `smile`, bald head shining a little in the sun, the white windmill behind, pond-green sails turning slowly]
   - [over the fence: a man in a hard hat setting down a bare survey post on the turf. No text on it]
-- `L11` narrator: I'm HOME / for the last WEEK.
+- `L11` narrator: I'm his SON, / home for the LAST week.
   - [me at the gate with a holdall, `smile`, Dad waving from the kiosk]
 - `L12` narrator: Every MORNING, / the builders / fence off another HOLE.
   - [two builders lifting a mesh panel into its concrete foot, clank]
@@ -164,8 +172,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [Dad on the pond-green bench beside the green, two putters leaning on the arm, the shadow on the turf at his feet]
 - `L18` narrator: I think / it's HIS.
   - [me at the fence, `neutral`, watching him]
-- `L19` narrator: It has a BUN. / Dad must have had / a MOP of HAIR / back THEN.
-  - [close, high: the shadow's head on the turf, a clear block bun on top. Plant 1]
+- `L19` narrator: It has THICK HAIR. / Dad must have had / a MOP like MINE / back THEN.
+  - [close, high: the shadow's head on the turf, a clear squared mop outline with tufts. Plant 1]
   - [Dad's bald head in profile, catching the low sun. Me in the background, `smile`]
 - `L20` narrator: On MONDAY, / the windmill SAILS / are wound BACKWARDS.
   - [the windmill, its sails creaking slowly round the wrong way, wind sound under them]
@@ -198,7 +206,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L28` narrator: Every FLAG on the course / is wound TIGHT.
   - [high wide in moonlight: every flag on every hole wound to its pole, down the whole course]
 - `L29` narrator: And the shadow / on the green / sits there ALONE.
-  - [the bun shadow on the last green, hugging its knees, facing the second tee. Lamp light across it]
+  - [the mop shadow on the last green, hugging its knees, facing the second tee. Lamp light across it]
 - `L30` narrator: I shout his name / at every HOLE.
   - [me walking along the mesh fences, `scared`, calling, moonlit]
 - `L31` narrator: Behind the FENCES, / something CREAKS, / like a CLOTH / being TWISTED.
@@ -276,17 +284,17 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [me edging through the mesh gap, `scared`]
 - `L57` narrator: I stand over / the SHADOW there.
   - [high: me standing on the green at the shadow's edge, the shadow at my feet]
-- `L58` narrator: It FITS me. / BUN and ALL.
-  - [top-down: I sit down beside it, knees up (no reach to the floor), and the bun shadow lines up with my outline exactly, bun to bun]
-  - [me, `worried`, touching my bun (cut before the hand reaches it)]
+- `L58` narrator: It FITS me. / HAIR and ALL.
+  - [top-down: I sit down beside it, knees up (no reach to the floor), and the mop shadow lines up with my outline exactly, hair to hair]
+  - [me, `worried`, touching my hair (cut before the hand reaches it)]
 - `L59` narrator: Then I look down / at MY FEET.
   - [me standing again, looking down]
 - `L60` narrator: Its head is ROUND / and BALD.
   - [top-down: the shadow at my trainers, its round bare head clear in the gold light. Payoff of plant 2]
 - `L61` narrator: The shadow on the green / is MINE, / from the summers / he taught me the COURSE.
-  - [the bun shadow on the turf, warm light on it]
+  - [the mop shadow on the turf, warm light on it]
   - [a slow push in on Dad at the hole, `neutral`, the second putter on the bench behind him]
-- `L62` narrator: The one under me / belongs to DAD.
+- `L62` narrator: The one at my FEET / is DAD'S.
   - [side-on: Dad and me on the green, the bald shadow stretched from my feet]
 - `L63` narrator: Wherever I AM / is where / he's HAPPIEST.
   - [me, `worried` softening to `smile`, looking at him]
@@ -324,11 +332,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [side-on wide: Dad and me on the last green, low sun, the bald shadow lying from my trainers to his shoes]
   - [high, looking down the green: the long shadow between our feet, both of us `smile`]
 - `L74` narrator: In this TOWN, / your SHADOW stays / where you're HAPPIEST.
-  - [late gold light: the bun shadow sitting alone on the last green, the people gone home]
+  - [late gold light: the mop shadow sitting alone on the last green, the people gone home]
 - `L75` narrator: Dad's SHADOW / stays with ME.
   - [me at the gate, my shadow trailing round-headed behind me]
 - `L76` narrator: Mine's under / the new CAR PARK.
-  - [a slow push in on the bun shadow on the turf, the bare survey post beside it, light cooling. The low note falls. Cut to L01 0.25 s after "PARK"]
+  - [a slow push in on the mop shadow on the turf, the bare survey post beside it, light cooling. The low note falls. Cut to L01 0.25 s after "PARK"]
 
 ## Risks
 
@@ -339,5 +347,5 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Shadows:** keep them soft-edged and mid-dark so they read at phone size in low sun. Nobody's body may cast a shadow in any shot, or the rule breaks on screen.
 - **The white shirt:** expose for it so it never clips at the reveal.
 - **Light:** three changes to pre-check (L24, L33, L51). No step changes.
-- **The bun reveal (L58):** I sit beside the shadow with knees up, never cross-legged and never reaching the floor.
+- **The hair reveal (L58):** I sit beside the shadow with knees up, never cross-legged and never reaching the floor.
 - **story.json** is the builder's to write. Set `look.flash_safe: true` there.

@@ -589,9 +589,14 @@ def build_shop(kit, M, ctx):
     ctx["phone"] = ph
     # the sign card hung on the door's inside: a spool on one side, plain on the other (turns at L69)
     sc = kit.empty("sign card", (-4.3, 1.9, 1.75))
-    B(kit, "card", (0.012, 0.3, 0.4), (0, 0, 0), M["leaf"], sc, bevel=0.004)
-    kit.cyl("card.spool", 0.05, 0.12, (-0.012, 0, 0), M["thread"], sc, n=10)
-    kit.cyl("card.fl1", 0.09, 0.012, (-0.012, 0, 0.07), M["brass"], sc, n=12, rot=(0, 0, 0))
+    # the plain face (toward the shop, x < 0) is bare; the face that turns to the camera at L69.3 (x > 0) carries a
+    # big spool-and-needle picture on a dark green panel, every part at least 1.2 cm proud (no shared planes)
+    B(kit, "card", (0.012, 0.34, 0.44), (0, 0, 0), M["leaf"], sc, bevel=0.004)
+    B(kit, "card.panel", (0.006, 0.26, 0.34), (0.012, 0, 0), M["green_d"], sc)
+    kit.cyl("card.spool", 0.055, 0.15, (0.024, 0, 0), M["thread"], sc, n=12)
+    for k, dz in enumerate((-0.085, 0.085)):
+        kit.cyl(f"card.fl{k}", 0.09, 0.02, (0.026, 0, dz), M["brass"], sc, n=14)
+    B(kit, "card.needle", (0.008, 0.012, 0.3), (0.03, 0.1, 0.0), M["brass"], sc)
     ctx["sign_card"] = sc
     # the lore tally: two short upright charcoal strokes pressed into the bench foot (one shot, not narrated)
     for k, dy in enumerate((-0.03, 0.03)):
@@ -968,28 +973,31 @@ FLOOR_LOCAL = {"torso": -2.0, "leg-1": -2.0, "leg1": -2.0, "arm-1": -3.75, "arm1
 
 def tag_state(events, i, t):
     """(visible, pop 0..1, fall 0..1) for tag i at t from the character's events."""
-    present, appear, fall0 = False, -9.0, None
+    present, appear, fall0, rest = False, -9.0, None, False
     for c in events:
         if c["t"] > t:
             break
         if c.get("fall"):
             if i >= c["n"] and present:
                 fall0 = c["t"] + 0.05 * (i % 9) + 0.02 * (i % 4)
+                rest = bool(c.get("rest"))
                 present = False
         else:
             n = c["n"]
             if i < n and not present:
-                present, appear, fall0 = True, c["t"] + (0.0 if c.get("pop", True) else -1.0), None
+                present, appear, fall0, rest = True, c["t"] + (0.0 if c.get("pop", True) else -1.0), None, False
             elif i >= n and present:
                 present = False
                 fall0 = None
     if present:
-        return True, ss((t - appear) / 0.3), 0.0
+        return True, ss((t - appear) / 0.3), 0.0, False
     if fall0 is not None and t >= fall0:
         u = (t - fall0) / FALL_DUR
         if u < 1.0:
-            return True, 1.0, u
-    return False, 0.0, 0.0
+            return True, 1.0, u, rest
+        if rest:     # opt-in (cue "rest": true): the tags stay lying on the floor
+            return True, 1.0, 1.0, True
+    return False, 0.0, 0.0, False
 
 
 def animate_tags(kit, ctx, tl, t):
@@ -1001,7 +1009,7 @@ def animate_tags(kit, ctx, tl, t):
             if hidden:
                 ob.hide_render = True
                 continue
-            vis, pop, fall = tag_state(ev, it["i"], t)
+            vis, pop, fall, rest = tag_state(ev, it["i"], t)
             if not vis:
                 ob.hide_render = True
                 continue
@@ -1018,7 +1026,13 @@ def animate_tags(kit, ctx, tl, t):
                 spin = roll + fall * 2.2 * (1 if it["i"] % 2 else -1)
                 ob.location = (x2, y2, z2)
                 ob.rotation_euler = (0.9 * fall + pitch, 0.4 * math.sin(fall * 6 + it["i"]), spin)
-                ob.scale = (1.0, 1.0, 1.0) if fall < 0.92 else (1 - (fall - 0.92) / 0.08,) * 3
+                ob.scale = (1.0, 1.0, 1.0) if (fall < 0.92 or rest) else (1 - (fall - 0.92) / 0.08,) * 3
+                if rest:     # opt-in: land lying flat, scattered round the feet, and stay
+                    f = fall ** 1.5
+                    xt = x * 1.4 + 0.5 * math.sin(it["i"] * 2.3)
+                    yt = 0.2 * y - 0.3 - 0.5 * ((it["i"] * 37) % 11) / 11
+                    ob.location = (x + (xt - x) * f, y + (yt - y) * f, z + (floor_z + 0.1 - z) * f)
+                    ob.rotation_euler = (1.5 * f + pitch * (1 - f), 0.0, roll + (roll * 2 + it["i"] - roll) * f)
             else:
                 ob.location = (x, y, z)
                 ob.rotation_euler = (pitch, 0, roll + flip)
