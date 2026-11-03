@@ -26,8 +26,11 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_CHANNEL_ID: ${{ vars.YT_CHANNEL_ID }}
-          YT_AUDITED: ${{ vars.YT_AUDITED || secrets.YT_AUDITED }}   # a variable, or a secret if it was saved there
+          YT_AUDITED: ${{ vars.YT_AUDITED || secrets.YT_AUDITED }}
+          UPLOADS_PER_DAY: ${{ vars.UPLOADS_PER_DAY || '2' }}   # a variable, or a secret if it was saved there
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
           python scripts/upload.py --story "${{ inputs.story }}"
+          # a second story the same day (it goes public at 7:30 PM) while the queue can afford it (UPLOADS_PER_DAY, default 2)
+          if [ -z "${{ inputs.story }}" ]; then python scripts/upload.py; fi

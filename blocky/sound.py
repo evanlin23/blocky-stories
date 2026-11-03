@@ -405,12 +405,13 @@ def amb(kind: str, dur: float, seed: int = 0) -> np.ndarray:
     if kind == "hum":
         return synth.hum(dur, 60.0, seed)
     if kind == "rain":
-        y = fft_filter(synth.noise(dur, seed), "band", 800, 7000) * 0.6
+        # a soft wash with gentle drops, low-passed at 3.5 kHz: the old 800 Hz to 7 kHz band hissed (critic, ep32 redo)
+        y = fft_filter(synth.noise(dur, seed), "band", 300, 3500) * 0.6
         drops = np.zeros(n)
         r = np.random.default_rng(seed)
         for i in r.integers(0, n - 2000, int(dur * 40)):
-            drops[i:i + 400] += synth.click(400 / SR, float(r.uniform(2500, 6000)), int(i))[:400] * r.uniform(0.2, 0.8)
-        return y + drops
+            drops[i:i + 400] += synth.click(400 / SR, float(r.uniform(1200, 3000)), int(i))[:400] * r.uniform(0.2, 0.8)
+        return fft_filter(y + drops, "low", 3500)
     if kind == "room":
         return fft_filter(synth.noise(dur, seed), "band", 60, 400) * 0.6
     if kind == "drips":
@@ -695,6 +696,17 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
+    if kind == "rattle":      # ep34, opt-in: a corrugated roller door running down its slats, slowing as it lands
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        rate = 46.0 * (1.0 - 0.8 * (t / dur) ** 1.3)          # slat knocks per second, falling
+        ph = np.cumsum(rate) / SR
+        gate = (np.sin(2 * np.pi * ph) > 0.55).astype(float)
+        gate = synth.one_pole_smooth(gate, 0.002)
+        body = fft_filter(synth.noise(dur, seed), "band", 500, 3600)[:n]
+        rumble = fft_filter(synth.noise(dur, seed + 1), "band", 70, 260)[:n]
+        env = np.clip(t / 0.08, 0, 1) * (1 - 0.35 * (t / dur))
+        return (body * gate * 0.9 + rumble * 0.5) * env
     if kind == "ding":        # ep49: a small brass collar bell. opts: pitch (Hz), lp (low-pass Hz, a muffled pocket ring), fall (pitch drop)
         o = opts or {}
         f = float(o.get("pitch", 2200.0))
