@@ -35,3 +35,9 @@ Branch `claude/opening-floor-thirteen`. No PR yet.
 - Keep this story's own `sfx` to 2 to 4 events per 10 s in all. This round added many sfx, so thin them.
 - Use `"hold": ["Sxx"]` for frame-exact shots.
 - Read builder.md and docs/engine.md, under The polish pack.
+
+## Update 2026-11-03 (rescue fix done)
+- L36 is now the lit twelve landing with the stairwell door open and me coming through (set.py stair_door cue, open before the shot). The 13 panel cue now clears at L14-0.25 (flash margin).
+- Also cleared 4 clip blocks: Grandad stands clear of the leaf (HIS_DOOR y -4.9), his door opens before the Abels' wife appears, and the stair door opens at L36-0.6. Sound rev 8.
+- Preview re-drawn, finished and mixed with the real voice: flash PASS, preflight 0 blocks (warn: sound events 5.89/10 s), clipcheck 0.
+- Next: critic re-check of L36 only, gate, PR, proof, qa.
