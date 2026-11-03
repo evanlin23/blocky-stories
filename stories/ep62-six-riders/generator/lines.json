@@ -1,0 +1,370 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Five people",
+    "five people"
+   ],
+   [
+    "got in",
+    "got in"
+   ],
+   [
+    "the ELEVATOR.",
+    "the elevator."
+   ],
+   [
+    "The mirror",
+    "the mirror"
+   ],
+   [
+    "shows SIX.",
+    "shows six."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Find the",
+    "find the"
+   ],
+   [
+    "EXTRA one.",
+    "extra one."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "We're all",
+    "we're all"
+   ],
+   [
+    "facing the",
+    "facing the"
+   ],
+   [
+    "MIRROR doors.",
+    "mirror doors."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A.",
+    "ay."
+   ],
+   [
+    "B.",
+    "bee."
+   ],
+   [
+    "C.",
+    "see."
+   ],
+   [
+    "D.",
+    "dee."
+   ],
+   [
+    "E.",
+    "ee."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I'm D.",
+    "i'm dee."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Match every",
+    "match every"
+   ],
+   [
+    "FACE",
+    "face"
+   ],
+   [
+    "to a BACK.",
+    "to a back."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "You've got",
+    "you've got"
+   ],
+   [
+    "three FLOORS.",
+    "three floors."
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 3.0,
+  "chunks": []
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "There are",
+    "there are"
+   ],
+   [
+    "TWO of C.",
+    "two of see."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "C is my",
+    "see is my"
+   ],
+   [
+    "big BROTHER.",
+    "big brother."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "His BAG'S",
+    "his bag's"
+   ],
+   [
+    "on his",
+    "on his"
+   ],
+   [
+    "RIGHT shoulder.",
+    "right shoulder."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "His reflection",
+    "his reflection"
+   ],
+   [
+    "wears it",
+    "wears it"
+   ],
+   [
+    "on its LEFT.",
+    "on its left."
+   ],
+   [
+    "The other one,",
+    "the other one,"
+   ],
+   [
+    "on its RIGHT.",
+    "on its right."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mirrors",
+    "mirrors"
+   ],
+   [
+    "FLIP you.",
+    "flip you."
+   ],
+   [
+    "That one",
+    "that one"
+   ],
+   [
+    "DIDN'T.",
+    "didn't."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Something",
+    "something"
+   ],
+   [
+    "in the GLASS",
+    "in the glass"
+   ],
+   [
+    "is PRACTICING",
+    "is practicing"
+   ],
+   [
+    "being HIM.",
+    "being him."
+   ]
+  ]
+ },
+ {
+  "id": "P02",
+  "pause": 0.6,
+  "chunks": []
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The doors",
+    "the doors"
+   ],
+   [
+    "OPEN.",
+    "open."
+   ],
+   [
+    "Nobody",
+    "nobody"
+   ],
+   [
+    "gets ON.",
+    "gets on."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The doors",
+    "the doors"
+   ],
+   [
+    "CLOSE.",
+    "close."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The C",
+    "the see"
+   ],
+   [
+    "in front",
+    "in front"
+   ],
+   [
+    "of me",
+    "of me"
+   ],
+   [
+    "has his bag",
+    "has his bag"
+   ],
+   [
+    "on the",
+    "on the"
+   ],
+   [
+    "OTHER shoulder.",
+    "other shoulder."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "His letter's",
+    "his letter's"
+   ],
+   [
+    "BACKWARDS.",
+    "backwards."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My REAL brother",
+    "my real brother"
+   ],
+   [
+    "is in",
+    "is in"
+   ],
+   [
+    "the GLASS.",
+    "the glass."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Now the",
+    "now the"
+   ],
+   [
+    "EXTRA one's",
+    "extra one's"
+   ],
+   [
+    "out HERE.",
+    "out here."
+   ]
+  ]
+ }
+]

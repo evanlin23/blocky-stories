@@ -1,0 +1,1782 @@
+{
+ "slug": "ep62-six-riders",
+ "title": "Five Riders, SIX In The Mirror",
+ "made_for_kids": false,
+ "premise": "Five office workers ride a steel elevator and its mirror doors show six faces. You get three floors to find the extra one: two reflections wear the same blue jacket, and the bag on one of them is on the wrong side of the glass.",
+ "twist": "The extra face was never a reflection. It was something standing in the glass, practicing being my brother. When the doors open and close it trades places with him: the brother in the car has his bag on the other shoulder and a backwards letter, and my real brother is the one inside the glass.",
+ "world": "a bright brushed-steel office elevator with a white LED ceiling and a teal floor display counting down, mirror doors, and an empty white corridor beyond them",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#ff8a1f",
+ "gap": 0.12,
+ "tail": 0,
+ "fade_in": false,
+ "look": {
+  "fog": "#cfd8de",
+  "fog_density": 0,
+  "fog_start": 5.0,
+  "sky": "#cfd8de",
+  "sky_strength": 1.0,
+  "exposure": -0.5,
+  "flash_safe": true
+ },
+ "grade": {
+  "shadows": [
+   0.0,
+   0.0,
+   0.02
+  ],
+  "highlights": [
+   0.0,
+   0.0,
+   0.01
+  ],
+  "saturation": 1.05,
+  "contrast": 1.04,
+  "vignette": 0.2,
+  "bloom": 0.12,
+  "grain": 0.008
+ },
+ "phonemes": {},
+ "cast": {
+  "a": {
+   "age": "adult",
+   "skin": "#6b4429",
+   "shirt": "#e8433a",
+   "pattern": "solid",
+   "pants": "#22252d",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#141414",
+   "hat": "none",
+   "height": 0.97,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4"
+  },
+  "b": {
+   "age": "adult",
+   "skin": "#d9a679",
+   "shirt": "#ffd23f",
+   "pattern": "solid",
+   "pants": "#2b2f3a",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#141414",
+   "hat": "none",
+   "height": 1.02,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#1d2a44",
+   "extras": [
+    "tie"
+   ]
+  },
+  "c": {
+   "age": "adult",
+   "skin": "#c58c63",
+   "shirt": "#2f5bea",
+   "pattern": "solid",
+   "pants": "#2a2d3a",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#6b4423",
+   "hat": "none",
+   "height": 1.04,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4"
+  },
+  "d": {
+   "age": "adult",
+   "skin": "#c58c63",
+   "shirt": "#3fbf5a",
+   "pattern": "solid",
+   "pants": "#2a2d3a",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#6b4423",
+   "hat": "none",
+   "height": 1.0,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4"
+  },
+  "e": {
+   "age": "adult",
+   "skin": "#e0b48c",
+   "shirt": "#8e5bd6",
+   "pattern": "solid",
+   "pants": "#2b2b33",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#f1f1f1",
+   "hat": "none",
+   "height": 0.9,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4",
+   "extras": [
+    "glasses"
+   ],
+   "glasses_c": "#3a3a40"
+  },
+  "ra": {
+   "age": "adult",
+   "skin": "#6b4429",
+   "shirt": "#e8433a",
+   "pattern": "solid",
+   "pants": "#22252d",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#141414",
+   "hat": "none",
+   "height": 1.067,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4"
+  },
+  "rb": {
+   "age": "adult",
+   "skin": "#d9a679",
+   "shirt": "#ffd23f",
+   "pattern": "solid",
+   "pants": "#2b2f3a",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#141414",
+   "hat": "none",
+   "height": 1.122,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#1d2a44",
+   "extras": [
+    "tie"
+   ]
+  },
+  "rc": {
+   "age": "adult",
+   "skin": "#c58c63",
+   "shirt": "#2f5bea",
+   "pattern": "solid",
+   "pants": "#2a2d3a",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#6b4423",
+   "hat": "none",
+   "height": 1.144,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4"
+  },
+  "rd": {
+   "age": "adult",
+   "skin": "#c58c63",
+   "shirt": "#3fbf5a",
+   "pattern": "solid",
+   "pants": "#2a2d3a",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#6b4423",
+   "hat": "none",
+   "height": 1.1,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4"
+  },
+  "re": {
+   "age": "adult",
+   "skin": "#e0b48c",
+   "shirt": "#8e5bd6",
+   "pattern": "solid",
+   "pants": "#2b2b33",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#f1f1f1",
+   "hat": "none",
+   "height": 0.99,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4",
+   "extras": [
+    "glasses"
+   ],
+   "glasses_c": "#3a3a40"
+  },
+  "x": {
+   "age": "adult",
+   "skin": "#c58c63",
+   "shirt": "#2f5bea",
+   "pattern": "solid",
+   "pants": "#2a2d3a",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#6b4423",
+   "hat": "none",
+   "height": 1.144,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4"
+  },
+  "bro": {
+   "age": "adult",
+   "skin": "#c58c63",
+   "shirt": "#2f5bea",
+   "pattern": "solid",
+   "pants": "#2a2d3a",
+   "shoes": "#2b2d33",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#6b4423",
+   "hat": "none",
+   "height": 1.144,
+   "body_width": 0.52,
+   "face": {
+    "eyes": "round",
+    "brows": true
+   },
+   "collar": "#f4f4f4"
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Five people",
+     "five people"
+    ],
+    [
+     "got in",
+     "got in"
+    ],
+    [
+     "the ELEVATOR.",
+     "the elevator."
+    ],
+    [
+     "The mirror",
+     "the mirror"
+    ],
+    [
+     "shows SIX.",
+     "shows six."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Find the",
+     "find the"
+    ],
+    [
+     "EXTRA one.",
+     "extra one."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "We're all",
+     "we're all"
+    ],
+    [
+     "facing the",
+     "facing the"
+    ],
+    [
+     "MIRROR doors.",
+     "mirror doors."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A.",
+     "ay."
+    ],
+    [
+     "B.",
+     "bee."
+    ],
+    [
+     "C.",
+     "see."
+    ],
+    [
+     "D.",
+     "dee."
+    ],
+    [
+     "E.",
+     "ee."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I'm D.",
+     "i'm dee."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Match every",
+     "match every"
+    ],
+    [
+     "FACE",
+     "face"
+    ],
+    [
+     "to a BACK.",
+     "to a back."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "You've got",
+     "you've got"
+    ],
+    [
+     "three FLOORS.",
+     "three floors."
+    ]
+   ]
+  },
+  {
+   "id": "P01",
+   "pause": 3.0,
+   "chunks": []
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "There are",
+     "there are"
+    ],
+    [
+     "TWO of C.",
+     "two of see."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "C is my",
+     "see is my"
+    ],
+    [
+     "big BROTHER.",
+     "big brother."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His BAG'S",
+     "his bag's"
+    ],
+    [
+     "on his",
+     "on his"
+    ],
+    [
+     "RIGHT shoulder.",
+     "right shoulder."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His reflection",
+     "his reflection"
+    ],
+    [
+     "wears it",
+     "wears it"
+    ],
+    [
+     "on its LEFT.",
+     "on its left."
+    ],
+    [
+     "The other one,",
+     "the other one,"
+    ],
+    [
+     "on its RIGHT.",
+     "on its right."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mirrors",
+     "mirrors"
+    ],
+    [
+     "FLIP you.",
+     "flip you."
+    ],
+    [
+     "That one",
+     "that one"
+    ],
+    [
+     "DIDN'T.",
+     "didn't."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Something",
+     "something"
+    ],
+    [
+     "in the GLASS",
+     "in the glass"
+    ],
+    [
+     "is PRACTICING",
+     "is practicing"
+    ],
+    [
+     "being HIM.",
+     "being him."
+    ]
+   ]
+  },
+  {
+   "id": "P02",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The doors",
+     "the doors"
+    ],
+    [
+     "OPEN.",
+     "open."
+    ],
+    [
+     "Nobody",
+     "nobody"
+    ],
+    [
+     "gets ON.",
+     "gets on."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The doors",
+     "the doors"
+    ],
+    [
+     "CLOSE.",
+     "close."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The C",
+     "the see"
+    ],
+    [
+     "in front",
+     "in front"
+    ],
+    [
+     "of me",
+     "of me"
+    ],
+    [
+     "has his bag",
+     "has his bag"
+    ],
+    [
+     "on the",
+     "on the"
+    ],
+    [
+     "OTHER shoulder.",
+     "other shoulder."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "His letter's",
+     "his letter's"
+    ],
+    [
+     "BACKWARDS.",
+     "backwards."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My REAL brother",
+     "my real brother"
+    ],
+    [
+     "is in",
+     "is in"
+    ],
+    [
+     "the GLASS.",
+     "the glass."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Now the",
+     "now the"
+    ],
+    [
+     "EXTRA one's",
+     "extra one's"
+    ],
+    [
+     "out HERE.",
+     "out here."
+    ]
+   ]
+  },
+  {
+   "id": "P03",
+   "pause": 0.12,
+   "chunks": []
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      4.1,
+      3.7
+     ],
+     [
+      0,
+      -0.5,
+      1.3
+     ],
+     13
+    ],
+    [
+     1,
+     [
+      0,
+      3.6,
+      3.7
+     ],
+     [
+      0,
+      -0.5,
+      1.3
+     ],
+     15
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "close on the doors: six faces, push in"
+  },
+  {
+   "id": "S02",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      4.0,
+      3.7
+     ],
+     [
+      0,
+      -0.6,
+      1.4
+     ],
+     20
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "punch in on the six faces, the hit on SIX",
+   "at": "L01.4"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.25,
+      3.8
+     ],
+     [
+      0.0,
+      0.0,
+      0.5
+     ],
+     14.5
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the master",
+   "at": "L02"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      1.6,
+      3.9,
+      1.7
+     ],
+     [
+      0.0,
+      0.3,
+      1.2
+     ],
+     18
+    ],
+    [
+     1,
+     [
+      1.55,
+      3.8,
+      1.7
+     ],
+     [
+      -0.1,
+      0.3,
+      1.2
+     ],
+     18
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "side view along the car",
+   "at": "L03"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.25,
+      3.8
+     ],
+     [
+      0.0,
+      0.0,
+      0.5
+     ],
+     14.5
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the master, tags pop",
+   "at": "L04"
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      2.45,
+      1.75
+     ],
+     [
+      -0.8,
+      0.35,
+      1.15
+     ],
+     17
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "over my shoulder",
+   "at": "L05"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.25,
+      3.8
+     ],
+     [
+      0.0,
+      0.0,
+      0.5
+     ],
+     14.5
+    ],
+    [
+     1,
+     [
+      0.0,
+      3.75,
+      2.3
+     ],
+     [
+      0,
+      0,
+      0.85
+     ],
+     12.0
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the master, slow push",
+   "at": "L06"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      1.3,
+      2.9
+     ],
+     [
+      0,
+      0.15,
+      2.92
+     ],
+     42
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "close on the display",
+   "at": "L07"
+  },
+  {
+   "id": "S09",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.25,
+      3.8
+     ],
+     [
+      0.0,
+      0.0,
+      0.5
+     ],
+     14.5
+    ]
+   ],
+   "hand": 0.0,
+   "step": 2,
+   "what": "the hold master, display 3",
+   "at": "P01"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.25,
+      3.8
+     ],
+     [
+      0.0,
+      0.0,
+      0.5
+     ],
+     15.370000000000001
+    ]
+   ],
+   "hand": 0.0,
+   "step": 2,
+   "what": "punch in 6 percent, display 2",
+   "at": "P01+1"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.25,
+      3.8
+     ],
+     [
+      0.0,
+      0.0,
+      0.5
+     ],
+     16.240000000000002
+    ]
+   ],
+   "hand": 0.0,
+   "step": 2,
+   "what": "punch in another 6 percent, display 1",
+   "at": "P01+2"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      -1.3,
+      3.9,
+      3.7
+     ],
+     [
+      -0.45,
+      -0.5,
+      1.25
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      -1.15,
+      3.4,
+      3.7
+     ],
+     [
+      -0.45,
+      -0.5,
+      1.25
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "push in on the two blue jackets in the glass",
+   "at": "L08"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      0.14,
+      1.55
+     ],
+     [
+      -0.9,
+      0.5,
+      1.4
+     ],
+     24
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "my brother three-quarter front, me behind him",
+   "at": "L09"
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      -1.35,
+      1.05,
+      1.4
+     ],
+     [
+      -1.55,
+      0.35,
+      0.95
+     ],
+     26
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "his right shoulder, the bag",
+   "at": "L10"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      -1.2,
+      3.9,
+      3.7
+     ],
+     [
+      -0.9,
+      -0.35,
+      1.3
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "his reflection, bag on screen right",
+   "at": "L11"
+  },
+  {
+   "id": "S15b",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.9,
+      3.7
+     ],
+     [
+      0.0,
+      -0.35,
+      1.4
+     ],
+     28
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the copy beside it, bag on screen left",
+   "at": "L11.3"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.9,
+      3.7
+     ],
+     [
+      0.0,
+      -0.35,
+      1.45
+     ],
+     36
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the copy, mid close",
+   "at": "L12"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.9,
+      3.7
+     ],
+     [
+      0.0,
+      -0.35,
+      1.58
+     ],
+     55
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "punch in on its face",
+   "at": "L12.2"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      3.9,
+      3.7
+     ],
+     [
+      -0.45,
+      -0.35,
+      1.35
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -0.6,
+      3.5,
+      3.7
+     ],
+     [
+      -0.45,
+      -0.35,
+      1.35
+     ],
+     27
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "slow push on the copy and C's reflection",
+   "at": "L13"
+  },
+  {
+   "id": "S19",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      1.3,
+      2.9
+     ],
+     [
+      0,
+      0.15,
+      2.92
+     ],
+     42
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "close on the display: 1",
+   "at": "P02"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.25,
+      3.8
+     ],
+     [
+      0.0,
+      0.0,
+      0.5
+     ],
+     14.5
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the doors open on an empty corridor",
+   "at": "L14"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.25,
+      3.8
+     ],
+     [
+      0.0,
+      0.0,
+      0.5
+     ],
+     14.5
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the doors close",
+   "at": "L15"
+  },
+  {
+   "id": "S22",
+   "cam": [
+    [
+     0,
+     [
+      -0.3,
+      2.45,
+      1.75
+     ],
+     [
+      -0.8,
+      0.35,
+      1.15
+     ],
+     17
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "over my shoulder again, the bag on screen left",
+   "at": "L16"
+  },
+  {
+   "id": "S23",
+   "cam": [
+    [
+     0,
+     [
+      0.15,
+      0.95,
+      1.5
+     ],
+     [
+      -0.4,
+      1.55,
+      1.45
+     ],
+     26
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "me from the side, wide",
+   "at": "L16.3"
+  },
+  {
+   "id": "S24",
+   "cam": [
+    [
+     0,
+     [
+      -1.1,
+      1.25,
+      2.0
+     ],
+     [
+      -0.9,
+      0.35,
+      2.12
+     ],
+     38
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "close on his tag, a backwards C",
+   "at": "L17"
+  },
+  {
+   "id": "S25",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      3.9,
+      3.7
+     ],
+     [
+      0.0,
+      -0.35,
+      1.45
+     ],
+     34
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "my real brother in the glass",
+   "at": "L18"
+  },
+  {
+   "id": "S26",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      4.2,
+      3.7
+     ],
+     [
+      -0.5,
+      0.0,
+      1.0
+     ],
+     12
+    ],
+    [
+     1,
+     [
+      -1.0,
+      3.5,
+      3.7
+     ],
+     [
+      -0.9,
+      0.35,
+      1.2
+     ],
+     19
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "the master, push in on the copy's back",
+   "at": "L19"
+  }
+ ],
+ "corner": [
+  "S02",
+  "S04",
+  "S06",
+  "S12",
+  "S13",
+  "S14",
+  "S15",
+  "S15b",
+  "S16",
+  "S17",
+  "S18",
+  "S22",
+  "S23",
+  "S24",
+  "S25",
+  "S26"
+ ],
+ "acting": {
+  "a": [
+   {
+    "at": 0,
+    "pos": [
+     1.35,
+     0.35
+    ],
+    "yaw": 0,
+    "expr": "neutral"
+   }
+  ],
+  "b": [
+   {
+    "at": 0,
+    "pos": [
+     0.9,
+     1.6
+    ],
+    "yaw": 0,
+    "expr": "neutral"
+   }
+  ],
+  "c": [
+   {
+    "at": 0,
+    "pos": [
+     -1.1,
+     0.35
+    ],
+    "yaw": 0,
+    "expr": "neutral"
+   }
+  ],
+  "d": [
+   {
+    "at": 0,
+    "pos": [
+     -0.6,
+     1.6
+    ],
+    "yaw": 0,
+    "expr": "neutral"
+   },
+   {
+    "at": "L16.3",
+    "expr": "wide",
+    "blend": 0
+   },
+   {
+    "at": "L17",
+    "expr": "neutral",
+    "blend": 0
+   }
+  ],
+  "e": [
+   {
+    "at": 0,
+    "pos": [
+     -1.5,
+     1.6
+    ],
+    "yaw": 0,
+    "expr": "neutral"
+   }
+  ],
+  "ra": [
+   {
+    "at": 0,
+    "pos": [
+     1.35,
+     -0.35
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   }
+  ],
+  "rb": [
+   {
+    "at": 0,
+    "pos": [
+     0.9,
+     -1.6
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   }
+  ],
+  "rc": [
+   {
+    "at": 0,
+    "pos": [
+     -1.1,
+     -0.35
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   }
+  ],
+  "rd": [
+   {
+    "at": 0,
+    "pos": [
+     -0.6,
+     -1.6
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   }
+  ],
+  "re": [
+   {
+    "at": 0,
+    "pos": [
+     -2.35,
+     -1.6
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   }
+  ],
+  "x": [
+   {
+    "at": 0,
+    "pos": [
+     0.1,
+     -0.35
+    ],
+    "yaw": 180,
+    "expr": "neutral",
+    "look": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L14+0.4",
+    "hidden": true,
+    "blend": 0
+   }
+  ],
+  "bro": [
+   {
+    "at": 0,
+    "pos": [
+     0.1,
+     -0.35
+    ],
+    "yaw": 180,
+    "expr": "worried",
+    "hidden": true
+   },
+   {
+    "at": "L15+0.2",
+    "hidden": false,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "digit",
+   "d": 7
+  },
+  {
+   "at": "L02",
+   "name": "digit",
+   "d": 6
+  },
+  {
+   "at": "L05",
+   "name": "digit",
+   "d": 5
+  },
+  {
+   "at": "L07.1",
+   "name": "digit",
+   "d": 4
+  },
+  {
+   "at": "P01",
+   "name": "digit",
+   "d": 3
+  },
+  {
+   "at": "P01+1",
+   "name": "digit",
+   "d": 2
+  },
+  {
+   "at": "P01+2",
+   "name": "digit",
+   "d": 1
+  },
+  {
+   "at": 0,
+   "name": "bags",
+   "sides": {
+    "c": -1,
+    "rc": 1,
+    "x": -1
+   }
+  },
+  {
+   "at": "L14+0.4",
+   "name": "bags",
+   "sides": {
+    "c": 1,
+    "rc": -1,
+    "bro": -1
+   }
+  },
+  {
+   "at": 0,
+   "name": "door",
+   "open": 0.0
+  },
+  {
+   "at": "L14",
+   "name": "door",
+   "open": 1.0,
+   "dur": 0.8
+  },
+  {
+   "at": "L15",
+   "name": "door",
+   "open": 0.0,
+   "dur": 0.8
+  },
+  {
+   "at": "L08",
+   "name": "ring",
+   "on": true
+  },
+  {
+   "at": "L14",
+   "name": "ring",
+   "on": false
+  },
+  {
+   "at": "L04.0",
+   "name": "tag",
+   "who": "A"
+  },
+  {
+   "at": "L04.1",
+   "name": "tag",
+   "who": "B"
+  },
+  {
+   "at": "L04.2",
+   "name": "tag",
+   "who": "C"
+  },
+  {
+   "at": "L04.3",
+   "name": "tag",
+   "who": "D"
+  },
+  {
+   "at": "L04.4",
+   "name": "tag",
+   "who": "E"
+  },
+  {
+   "at": "L14+0.4",
+   "name": "tagflip",
+   "who": "C"
+  }
+ ],
+ "fx": [],
+ "music": {
+  "root": 50,
+  "mode": "phrygian",
+  "bpm": 112,
+  "seed": 62,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "pulse"
+    ],
+    "energy": 0.3
+   },
+   {
+    "at": "L04",
+    "voices": [
+     "pulse",
+     "pad"
+    ],
+    "energy": 0.35
+   },
+   {
+    "at": "P01",
+    "voices": [
+     "pad"
+    ],
+    "energy": 0.2
+   },
+   {
+    "at": "L08",
+    "voices": [
+     "drone",
+     "pad"
+    ],
+    "energy": 0.4
+   },
+   {
+    "at": "L14",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.45
+   }
+  ]
+ },
+ "sound": {
+  "floor": "metal",
+  "steps_db": -22,
+  "ambience": [
+   {
+    "kind": "hum",
+    "from": 0,
+    "to": "end",
+    "lufs": -36
+   },
+   {
+    "kind": "room",
+    "from": 0,
+    "to": "end",
+    "lufs": -38
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L01.4",
+    "kind": "thud",
+    "db": -6,
+    "dur": 0.8
+   },
+   {
+    "at": "P01",
+    "kind": "thud",
+    "db": -22,
+    "dur": 0.2
+   },
+   {
+    "at": "P01+1",
+    "kind": "thud",
+    "db": -22,
+    "dur": 0.2
+   },
+   {
+    "at": "P01+2",
+    "kind": "thud",
+    "db": -22,
+    "dur": 0.2
+   },
+   {
+    "at": "P02+0.1",
+    "kind": "bell",
+    "db": -18,
+    "dur": 0.6
+   },
+   {
+    "at": "L14",
+    "kind": "whoosh",
+    "db": -22,
+    "dur": 0.9
+   },
+   {
+    "at": "L15",
+    "kind": "whoosh",
+    "db": -22,
+    "dur": 0.9
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "P01",
+    "to": "P01>",
+    "keep": [
+     "thud"
+    ]
+   },
+   {
+    "from": "P02",
+    "to": "P02>",
+    "keep": [
+     "bell"
+    ]
+   }
+  ]
+ }
+}
