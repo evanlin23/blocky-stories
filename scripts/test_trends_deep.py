@@ -105,9 +105,9 @@ def test_cap_is_never_exceeded():
 
 
 def test_daily_total_stays_far_under_the_free_quota():
-    from trends import QUERIES
-    scan = td.scan_cost(250, len(QUERIES))      # trends.py worst case
-    assert scan == 1005
+    from trends import QUERIES, QUERIES_WIDE
+    scan = td.scan_cost(250 + 300, len(QUERIES) + len(QUERIES_WIDE)) + 6   # trends.py worst case, both sets + channels
+    assert scan == 2217
     assert scan + td.CAP < 10_000 - 1_700        # leaves the daily upload its ~1,600
 
 
