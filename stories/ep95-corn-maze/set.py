@@ -203,25 +203,25 @@ def materials(kit):
 
 
 # ------------------------------------------------------------------------------------------------ lanterns
-def build_lantern(kit, ctx, M, k, ox, oy, tally=False, energy=260.0):
+def build_lantern(kit, ctx, M, k, ox, oy, tally=False, energy=260.0, zb=2.55):
     """An iron lantern on a pole. Its flame, glass and light have their own materials so it can fade by itself."""
-    mats = {"fl": kit.emit("#ff8a1a", 1.7, f"lflame{k}"), "core": kit.emit("#fff1b8", 2.0, f"lcore{k}"),
-            "pane": kit.emit("#ffb347", 0.7, f"lpane{k}"), "side": kit.emit("#ffb347", 0.4, f"lside{k}")}
-    kit.box(f"lant{k}.pole", (0.2, 0.2, 2.5), (ox, oy, 1.25), M["pole"], bevel=0.02)
+    mats = {"fl": kit.emit("#ff7a12", 1.8, f"lflame{k}"), "core": kit.emit("#ffe888", 2.0, f"lcore{k}"),
+            "pane": kit.emit("#ffb347", 0.4, f"lpane{k}"), "side": kit.emit("#ffb347", 0.25, f"lside{k}")}
+    kit.box(f"lant{k}.pole", (0.2, 0.2, zb - 0.05), (ox, oy, (zb - 0.05) / 2), M["pole"], bevel=0.02)
     if tally:   # the lore tally: two gold strokes on the pole's front face, 1.5 cm proud
         for q in range(2):
             kit.box(f"lant{k}.stroke{q}", (0.035, 0.03, 0.34), (ox - 0.035 + q * 0.07, oy - 0.1 - 0.015, 1.35), M["stroke"])
-    z = 2.55
+    z = zb
     kit.box(f"lant{k}.base", (0.42, 0.42, 0.08), (ox, oy, z), M["iron"], bevel=0.015)
     kit.box(f"lant{k}.back", (0.34, 0.02, 0.44), (ox, oy + 0.17, z + 0.27), mats["pane"])
     for sx in (-1, 1):
         kit.box(f"lant{k}.side", (0.02, 0.34, 0.44), (ox + sx * 0.17, oy, z + 0.27), mats["side"])
     kit.cyl(f"lant{k}.wick", 0.03, 0.06, (ox, oy, z + 0.07), M["iron"], n=6)
     fl = kit.empty(f"lant{k}.fl", (ox, oy - 0.02, z + 0.1))
-    kit.sphere(f"lant{k}.bulb", 0.062, (0, 0, 0.02), mats["fl"], parent=fl, seg=10)
-    kit.cyl(f"lant{k}.tip", 0.056, 0.2, (0, 0, 0.12), mats["fl"], parent=fl, n=8, r2=0.006)
-    kit.sphere(f"lant{k}.cbulb", 0.034, (0, -0.02, 0.02), mats["core"], parent=fl, seg=8)
-    kit.cyl(f"lant{k}.ctip", 0.03, 0.12, (0, -0.02, 0.08), mats["core"], parent=fl, n=6, r2=0.004)
+    kit.sphere(f"lant{k}.bulb", 0.09, (0, 0, 0.03), mats["fl"], parent=fl, seg=10)
+    kit.cyl(f"lant{k}.tip", 0.08, 0.28, (0, 0, 0.15), mats["fl"], parent=fl, n=8, r2=0.006)
+    kit.sphere(f"lant{k}.cbulb", 0.038, (0, -0.06, 0.02), mats["core"], parent=fl, seg=8)
+    kit.cyl(f"lant{k}.ctip", 0.032, 0.14, (0, -0.06, 0.07), mats["core"], parent=fl, n=6, r2=0.004)
     for sx in (-1, 1):
         for sy in (-1, 1):
             kit.box(f"lant{k}.bar", (0.04, 0.04, 0.46), (ox + sx * 0.2, oy + sy * 0.2, z + 0.27), M["iron"])
@@ -230,7 +230,7 @@ def build_lantern(kit, ctx, M, k, ox, oy, tally=False, energy=260.0):
     kit.box(f"lant{k}.ring", (0.05, 0.3, 0.05), (ox, oy, z + 0.84), M["iron"])
     kit.light(f"lant{k}.light", "POINT", (ox, oy - 0.1, z + 0.3), energy, "#ffb347", size=0.12)
     ctx["lanterns"][k] = {"mats": mats, "fl": fl, "energy": energy,
-                          "base": {"fl": 1.7, "core": 2.0, "pane": 0.7, "side": 0.4}}
+                          "base": {"fl": 1.8, "core": 2.0, "pane": 0.4, "side": 0.25}}
 
 
 def set_lantern(ctx, kit, k, g, wobble=1.0, light_mult=1.0):
@@ -317,8 +317,8 @@ def build_board(kit, M, ox, oy):
     for sx in (-0.62, 0.62):
         kit.box("board.post", (0.12, 0.12, 2.0), (ox + sx, oy, 1.0), M["wood"])
     kit.box("board", (1.4, 0.08, 0.95), (ox, oy, 1.55), M["wood2"], bevel=0.02)
-    kit.box("board.shaft", (0.7, 0.04, 0.14), (ox - 0.12, oy - 0.05, 1.55), M["orange"])
-    kit.cyl("board.head", 0.28, 0.04, (ox + 0.4, oy - 0.05, 1.55), M["orange"], n=3, rot=(math.pi / 2, 0, 0))
+    kit.box("board.shaft", (0.7, 0.04, 0.14), (ox - 0.12, oy - 0.05, 1.55), M["strap"])
+    kit.cyl("board.head", 0.28, 0.04, (ox + 0.4, oy - 0.05, 1.55), M["strap"], n=3, rot=(math.pi / 2, 0, 0))
 
 
 def build_phone(kit, M, name, loc, up=False):
@@ -453,7 +453,7 @@ def build(kit, story, tl):
         ox, oy = G.ORG["new"]
         build_lantern(kit, ctx, M, 12 + q, ox + x, oy + y, energy=140.0)
     ox, oy = G.ORG["entrance"]
-    build_lantern(kit, ctx, M, 16, ox + G.LANT_ENT[0], oy + G.LANT_ENT[1], energy=200.0)
+    build_lantern(kit, ctx, M, 16, ox + G.LANT_ENT[0], oy + G.LANT_ENT[1], energy=200.0, zb=1.6)
     # --- the day maze props
     d = G.ORG["day"]
     build_scarecrow(kit, M, d[0] + G.SCARE[0], d[1] + G.SCARE[1])
@@ -500,7 +500,10 @@ def build(kit, story, tl):
     q = kit.box("held.quilt", (0.7, 0.46, 0.2), (0, 0, 0), M["quilt1"], bevel=0.03)
     q2 = kit.box("held.quilt2", (0.72, 0.1, 0.2), (0, 0, 0), M["quilt2"])
     th = kit.cyl("held.thermos", 0.065, 0.3, (0, 0, 0), M["thermos"], n=14)
-    ctx["tog"]["held"] = [q, q2, th]
+    ctx["tog"]["held_q"] = [q, q2]
+    ctx["tog"]["held_th"] = [th]
+    ctx["tog"]["cup_s"] = [kit.cyl("cup_s", 0.065, 0.11, (s[0] + 1.6, s[1] - 4.9, 0.055), M["cup"], n=14),
+                           kit.cyl("cup_s.top", 0.052, 0.01, (s[0] + 1.6, s[1] - 4.9, 0.115), M["cocoa"], n=14)]
     ctx["held"] = {"q": q, "q2": q2, "th": th}
     fb = kit.cyl("flash.body", 0.04, 0.22, (0, 0, 0), M["flash_body"], n=10, rot=(math.pi / 2, 0, 0))
     fl = kit.cyl("flash.lens", 0.055, 0.04, (0, 0, 0), M["lens"], n=10, rot=(math.pi / 2, 0, 0))
@@ -537,6 +540,18 @@ def build(kit, story, tl):
         kit.LIGHTS[nm]["light"].angle = math.radians(14)
     kit.light("camfill", "POINT", (0.15, 0.25, 0.3), 0.0, "#dfe8ff", size=0.4, parent=kit.OBJ["cam"], shadow=False)
     build_marker(kit, M, ctx)
+    # the world: the camera sees the sky colour, the scene is lit by a separate ambient colour (so gold corn stays gold)
+    nt = bpy.context.scene.world.node_tree
+    bg = nt.nodes["Background"]
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_WORLD")
+    sky = nt.nodes.new("ShaderNodeBackground")
+    sky.name = "SkyBG"
+    lp = nt.nodes.new("ShaderNodeLightPath")
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(lp.outputs["Is Camera Ray"], mx.inputs[0])
+    nt.links.new(bg.outputs[0], mx.inputs[1])
+    nt.links.new(sky.outputs[0], mx.inputs[2])
+    nt.links.new(mx.outputs[0], out.inputs["Surface"])
     return ctx
 
 
@@ -554,18 +569,18 @@ def mix(a, b, u):
     return a + (b - a) * u
 
 
-GOLD = ("#d9b13a", "#ecc858", "#e0b743", "#ecd9a0", "#6bb04c")
+GOLD = ("#dcae32", "#efc94c", "#e3b63c", "#efd488", "#6bb04c")
 LOOKS = {
-    "dusk": dict(gold=(3.8, "#ffc27a", 68, 25), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(0.0, "#fff0d8"),
-                 world=("#8fd0ff", 1.25), exp=0.25, cols=GOLD, lant=0.1),
-    "summer": dict(gold=(3.4, "#fff0cf", 40, 20), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(0.0, "#fff0d8"),
-                   world=("#8fd0ff", 1.5), exp=0.25, cols=("#4f9a3a", "#78c455", "#8ed565", "#d6c188", "#5cb347"), lant=0.0),
-    "lantern": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(1.9, "#a9bdf0", 50, -35), rim=(1.0, "#8fb8ff", 78, 160), cam=(40.0, "#ffe2b8"),
-                    world=("#3c5290", 1.0), exp=0.45, cols=("#a58c3a", "#bba047", "#b39742", "#dcc47e", "#2c5a4a"), lant=1.0),
-    "moon": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(3.1, "#d2deff", 40, -35), rim=(2.0, "#8fb8ff", 76, 170), cam=(75.0, "#dce6ff"),
-                 world=("#5a76b8", 1.3), exp=0.35, cols=("#a28b38", "#b99f48", "#b39641", "#e4ca8c", "#2f5e55"), lant=0.0),
-    "dawn": dict(gold=(3.9, "#ffae62", 78, 0), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(55.0, "#ffe6c0"),
-                 world=("#ffd9b0", 1.7), exp=0.3, cols=GOLD, lant=0.0),
+    "dusk": dict(gold=(4.2, "#ffc27a", 62, 25), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(0.0, "#fff0d8"),
+                 sky=("#86cdff", 1.2), amb=("#ffeedd", 0.9), exp=0.25, cols=GOLD, lant=0.1),
+    "summer": dict(gold=(3.8, "#fff0cf", 40, 20), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(0.0, "#fff0d8"),
+                   sky=("#86cdff", 1.2), amb=("#f4f8ee", 1.0), exp=0.25, cols=("#4f9a3a", "#78c455", "#8ed565", "#d6c188", "#5cb347"), lant=0.0),
+    "lantern": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(2.2, "#b4c6f4", 50, -35), rim=(1.0, "#8fb8ff", 78, 160), cam=(40.0, "#ffe2b8"),
+                    sky=("#34498a", 1.0), amb=("#9aa4c0", 0.8), exp=0.45, cols=("#b89638", "#ceac48", "#c4a240", "#e8cc7e", "#2c5a4a"), lant=1.0),
+    "moon": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(3.4, "#d2deff", 40, -35), rim=(2.2, "#8fb8ff", 76, 170), cam=(75.0, "#dce6ff"),
+                 sky=("#4c68ac", 1.1), amb=("#a8b2d0", 1.0), exp=0.35, cols=("#b08f34", "#c8a442", "#bf9c3a", "#ecce84", "#2f5e55"), lant=0.0),
+    "dawn": dict(gold=(4.2, "#ffae62", 78, 0), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(55.0, "#ffe6c0"),
+                 sky=("#ffd2a8", 1.7), amb=("#ffe6cc", 0.9), exp=0.3, cols=GOLD, lant=0.0),
 }
 
 
@@ -616,10 +631,13 @@ def apply_look(kit, ctx, name, b):
     e, c = look["cam"]
     kit.LIGHTS["camfill"]["base"] = e
     kit.LIGHTS["camfill"]["light"].color = _rgb(c)
-    w = bpy.context.scene.world.node_tree.nodes["Background"]
-    wc, ws = look["world"]
-    w.inputs["Color"].default_value = (*_rgb(wc), 1.0)
-    w.inputs["Strength"].default_value = ws
+    nodes = bpy.context.scene.world.node_tree.nodes
+    ac, as_ = look["amb"]
+    nodes["Background"].inputs["Color"].default_value = (*_rgb(ac), 1.0)
+    nodes["Background"].inputs["Strength"].default_value = as_
+    sc_, ss_ = look["sky"]
+    nodes["SkyBG"].inputs["Color"].default_value = (*_rgb(sc_), 1.0)
+    nodes["SkyBG"].inputs["Strength"].default_value = ss_
     bpy.context.scene.view_settings.exposure = look["exp"]
     M = ctx["M"]
     for key, c in zip(CORN_KEYS, look["cols"]):
