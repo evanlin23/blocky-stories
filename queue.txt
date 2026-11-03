@@ -1,9 +1,16 @@
 # Upload order: the daily upload takes the first ready story listed here, then any other in episode order.
 # New-shape openers ("In this town...", a marker on people) go first, after ep20's weak numbers (owner, 2026-11-02).
-ep38-drive-in
+# being-forgotten stories (ep32, floor-thirteen, ep31) are spaced apart; don't queue them together
+knock-back
+closing-time
 ep42-barber-chair
 ep43-reading-room
 ep45-bee-yard
+ep32-sitter
 ep49-car-wash
 ep55-caravan-park
 ep36-ice-huts
+moving-day
+floor-thirteen
+ep33-chairlift
+ep31-dawn-flight
