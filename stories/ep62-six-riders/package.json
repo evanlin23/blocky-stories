@@ -5,5 +5,7 @@
   "made_for_kids": false,
   "cover_s": 1.8,
   "shape": "swap",
-  "lane": "experiment"
+  "lane": "experiment",
+  "hold": "dropped 2026-11-03: failed final-film qa twice (rev 1: weak frame 1 and inaudible hit; rev 2 re-cut: S13 continuity slip and C spoken over no C tag)",
+  "opening": "count"
 }
