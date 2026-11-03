@@ -233,14 +233,14 @@ LV = 180.0
 # the sofa glowing lamp-bright, face above the sofa back, guests either side. Camera under 4 m, lens 27+, pushing in.
 OPEN_WHO = {"planner": P(LV, 2.0, 0, z=-0.42, expr=SHEEPISH, arms=[30, 30]),
             "c3": P(LV - 1.05, 2.0, 0, z=-0.62, expr=SMILE), "c5": P(LV + 1.1, 2.0, 0, z=-0.62, expr="soft")}
-shot(0, "lv", MV(([LV, -1.9, 1.3], [LV, 2.0, 1.1]), ([LV, -0.9, 1.25], [LV, 2.0, 1.12]), 27, 29), OPEN_WHO,
+shot(0, "lv", MV(([LV, -2.0, 1.4], [LV, 2.0, 1.3]), ([LV, -1.0, 1.4], [LV, 2.0, 1.34]), 27, 29), OPEN_WHO,
      "the surprise party going wrong: the planner lamp-bright behind the sofa, face in frame, pushing in", step=1)
 glow(0, "planner", 4.0)
 glow(0, "c3", 1.5)
 glow(0, "c5", 1.5)
-shot("L01.2", "lv", MV(([LV - 0.6, -0.3, 1.2], [LV, 2.0, 1.12]), ([LV - 0.3, 0.5, 1.16], [LV, 2.0, 1.12]), 36, 40), OPEN_WHO,
+shot("L01.2", "lv", MV(([LV - 0.6, -0.3, 1.38], [LV, 2.0, 1.36]), ([LV - 0.3, 0.5, 1.38], [LV, 2.0, 1.36]), 36, 40), OPEN_WHO,
      "closer on the planner's wide eyes, the guests' glow either side", step=1)
-shot("L02", "lv", MV(([LV + 0.2, 0.55, 1.18], [LV, 2.0, 1.14]), ([LV + 0.1, 1.0, 1.16], [LV, 2.0, 1.14]), 46, 52), OPEN_WHO,
+shot("L02", "lv", MV(([LV + 0.2, 0.55, 1.4], [LV, 2.0, 1.4]), ([LV + 0.1, 1.0, 1.4], [LV, 2.0, 1.4]), 34, 38), OPEN_WHO,
      "tight on the planner's face as his glow brightens over 1.2 s, no flash", step=1)
 glow("L02", "planner", 5.0, 1.2)
 shot("L02.2", "st", C([SXC - 0.25, -0.1, 1.62], [SXC - 0.1, 1.9, 1.55], 30), {
