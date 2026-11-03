@@ -842,26 +842,26 @@
    ]
   },
   "L31": {
-   "text": "Night two, the storm got worse.",
+   "text": "Night. Two, the storm got worse.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.172,
-   "end": 1.448,
+   "dur": 1.724,
+   "onset": 0.19,
+   "end": 1.517,
    "chunks": [
     [
-     0.172,
-     0.483
+     0.19,
+     0.552
     ],
     [
-     0.509,
-     0.793
+     0.578,
+     0.862
     ],
     [
-     0.793,
-     1.448
+     0.862,
+     1.517
     ]
    ]
   },

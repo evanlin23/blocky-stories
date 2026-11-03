@@ -21,7 +21,7 @@ LF = TURNS * RISE + 2.4
 KX = 40.0
 Z4, Z5, Z6, Z7 = 4 * RISE, 5 * RISE, 6 * RISE, 7 * RISE
 LOOP = 0.25   # a hard cut 0.25 s after the last word, into L01 (no fade at either end)
-HOLDS = {"L11": 0.85, "L59": 0.5, "L45": 0.4, "L66": 0.4, "L76": 0.0}   # a breath after the quiet beats (keeps the film over 2:15)
+HOLDS = {"L11": 0.9, "L59": 0.5, "L45": 0.4, "L66": 0.4, "L76": 0.0}   # a breath after the quiet beats (keeps the film over 2:15)
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
@@ -59,7 +59,7 @@ lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
 # `asr` to forgive those, and the lines Whisper dropped words from are slowed or given a breath in their spoken text
 # (the captions don't change)
 TEMPO = {"L68": 0.8, "L32": 0.85}
-SPOKEN = {("L51", "Its flat face"): "Its, flat face",
+SPOKEN = {("L31", "Night TWO,"): "Night. Two,", ("L51", "Its flat face"): "Its, flat face",
           ("L68", "FAST ASLEEP,"): "Fast asleep,", ("L16", "torch in"): "torch, in", ("L14", "I slid it SHUT"): "I slid it, shut"}
 CAPTION = {("L68", "ASLEEP,"): "FAST ASLEEP,"}
 for ln in lines:
