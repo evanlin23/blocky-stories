@@ -247,10 +247,10 @@ stage("L29", dadn=((-8.2, 10.8, 0.2), 90, "scared", {"arms": [45, 45], "tremble"
 shot("S36", "L30", C((7.6, 1.4, 5.3), (7.2, 8.5, -0.2), 20, (7.4, 2.4, 4.8), (7.2, 8.5, -0.2), 22),
      "the eye, the highlight now aimed toward our porch", step=1, hand=0.004, flood=0.55)
 stage("L30", odell=((10.0, 6.6, 0), 90, "shut"))
-shot("S37", "L31", C((-7.5, -2.0, 1.1), (-7.5, 5.0, 1.15), 15, (-7.5, -1.5, 1.1), (-7.5, 5.0, 1.15), 15),
+shot("S37", "L31", C((-7.5, -6.0, 1.1), (-7.5, 5.0, 1.15), 14, (-7.5, -5.5, 1.1), (-7.5, 5.0, 1.15), 14),
      "the street at night: a row of five plain mailboxes tipping toward our house", step=1)
 stage("L31")
-shot("S38", "L31.2", C((-7.2, 7.2, 1.5), (-7.2, 11.1, 1.95), 28, (-7.2, 7.5, 1.5), (-7.2, 11.1, 1.95), 30),
+shot("S38", "L31.2", C((-9.6, 11.5, 1.6), (-6.2, 10.65, 1.8), 24, (-9.45, 11.45, 1.6), (-6.2, 10.65, 1.8), 26),
      "outside: our porch light hanging under the porch roof, swaying toward the lawn", step=1)
 stage("L31.2")
 
