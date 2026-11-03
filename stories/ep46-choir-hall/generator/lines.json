@@ -4,20 +4,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this WORLD,",
-    "in this world,"
+    "If someone's",
+    "if someone's"
    ],
    [
-    "everyone gets",
-    "everyone gets"
+    "still TALKING",
+    "still talking"
    ],
    [
-    "TEN WORDS",
-    "ten words"
+    "after your tenth bead",
+    "after your tenth bead"
    ],
    [
-    "a DAY.",
-    "a day."
+    "goes DARK,",
+    "goes dark,"
+   ],
+   [
+    "it isn't THEM.",
+    "it isn't them."
    ]
   ]
  },
@@ -26,12 +30,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Ten glass BEADS",
-    "ten glass beads"
+    "Everyone here",
+    "everyone here"
    ],
    [
-    "round your NECK.",
-    "round your neck."
+    "gets TEN WORDS",
+    "gets ten words"
+   ],
+   [
+    "a DAY.",
+    "a day."
    ]
   ]
  },
@@ -40,16 +48,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every word you SAY,",
-    "every word you say,"
+    "Ten glass BEADS.",
+    "ten glass beads."
    ],
    [
-    "one bead",
-    "one bead"
+    "Every WORD,",
+    "every word,"
    ],
    [
-    "goes DARK.",
-    "goes dark."
+    "one goes DARK.",
+    "one goes dark."
    ]
   ]
  },
@@ -58,16 +66,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "A proposal",
-    "a proposal"
+    "After TEN,",
+    "after ten,"
    ],
    [
-    "is \"Marry ME?\"",
-    "is marry me?"
+    "no more WORDS",
+    "no more words"
    ],
    [
-    "and a NOD.",
-    "and a nod."
+    "get THROUGH.",
+    "get through."
    ]
   ]
  },
@@ -76,16 +84,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "He saves",
-    "he saves"
+    "Only the VOICE",
+    "only the voice"
    ],
    [
-    "the other EIGHT",
-    "the other eight"
+    "you love MOST",
+    "you love most"
    ],
    [
-    "for the HONEYMOON.",
-    "for the honeymoon."
+    "still does.",
+    "still does."
    ]
   ]
  },
@@ -94,20 +102,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Our POSTMAN",
-    "our postman"
+    "And this week,",
+    "and this week,"
    ],
    [
-    "spends all TEN",
-    "spends all ten"
+    "my MOM",
+    "my mom"
    ],
    [
-    "on the WEATHER",
-    "on the weather"
+    "keeps thanking me",
+    "keeps thanking me"
    ],
    [
-    "before NINE.",
-    "before nine."
+    "for talks",
+    "for talks"
+   ],
+   [
+    "we never HAD.",
+    "we never had."
    ]
   ]
  },
@@ -116,16 +128,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then he MIMES",
-    "then he mimes"
+    "By NINE,",
+    "by nine,"
    ],
    [
-    "the rest",
-    "the rest"
+    "the whole street",
+    "the whole street"
    ],
    [
-    "of his ROUND.",
-    "of his round."
+    "has told our POSTMAN",
+    "has told our postman"
+   ],
+   [
+    "about the FROST.",
+    "about the frost."
    ]
   ]
  },
@@ -134,20 +150,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Rows END",
-    "rows end"
+    "He does the rest",
+    "he does the rest"
    ],
    [
-    "by BEDTIME,",
-    "by bedtime,"
+    "of his ROUND",
+    "of his round"
    ],
    [
-    "because both sides",
-    "because both sides"
-   ],
-   [
-    "run OUT.",
-    "run out."
+    "in a DAZE.",
+    "in a daze."
    ]
   ]
  },
@@ -156,8 +168,48 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the village CHOIR",
-    "and the village choir"
+    "Old RON",
+    "old ron"
+   ],
+   [
+    "next door",
+    "next door"
+   ],
+   [
+    "wears EARMUFFS",
+    "wears earmuffs"
+   ],
+   [
+    "all WINTER.",
+    "all winter."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He hasn't run out",
+    "he hasn't run out"
+   ],
+   [
+    "of words",
+    "of words"
+   ],
+   [
+    "in forty YEARS.",
+    "in forty years."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And the CHOIR",
+    "and the choir"
    ],
    [
     "only sings",
@@ -170,48 +222,24 @@
   ]
  },
  {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then there's ME.",
-    "then there's me."
-   ]
-  ]
- },
- {
-  "id": "L11",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I haven't spent",
-    "i haven't spent"
-   ],
-   [
-    "a single WORD",
-    "a single word"
-   ],
-   [
-    "in three YEARS.",
-    "in three years."
-   ]
-  ]
- },
- {
   "id": "L12",
   "who": "narrator",
   "chunks": [
    [
-    "All TEN of my beads",
-    "all ten of my beads"
+    "Twelve SINGERS,",
+    "twelve singers,"
    ],
    [
-    "are LIT",
-    "are lit"
+    "and the one",
+    "and the one"
    ],
    [
-    "every NIGHT.",
-    "every night."
+    "at the far END",
+    "at the far end"
+   ],
+   [
+    "wears no BEADS.",
+    "wears no beads."
    ]
   ]
  },
@@ -220,12 +248,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "People call me",
-    "people call me"
+    "Then there's ME.",
+    "then there's me."
    ],
    [
-    "the CAREFUL one.",
-    "the careful one."
+    "I talk",
+    "i talk"
+   ],
+   [
+    "ALL DAY.",
+    "all day."
    ]
   ]
  },
@@ -234,20 +266,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Old RON",
-    "old ron"
+    "My beads",
+    "my beads"
    ],
    [
-    "next door",
-    "next door"
-   ],
-   [
-    "hasn't spoken",
-    "hasn't spoken"
-   ],
-   [
-    "in years EITHER.",
-    "in years either."
+    "never go DARK.",
+    "never go dark."
    ]
   ]
  },
@@ -256,16 +280,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "His cord",
-    "his cord"
+    "Nobody",
+    "nobody"
    ],
    [
-    "goes round his NECK",
-    "goes round his neck"
-   ],
-   [
-    "THREE TIMES.",
-    "three times."
+    "gets a WORD in.",
+    "gets a word in."
    ]
   ]
  },
@@ -274,16 +294,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I keep MINE",
-    "i keep mine"
+    "The village",
+    "the village"
    ],
    [
-    "tucked under",
-    "tucked under"
-   ],
-   [
-    "my JUMPER.",
-    "my jumper."
+    "calls me LUCKY.",
+    "calls me lucky."
    ]
   ]
  },
@@ -292,12 +308,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "MUM",
-    "mum"
+    "I've got my own place",
+    "i've got my own place"
    ],
    [
-    "leads the CHOIR.",
-    "leads the choir."
+    "down the LANE.",
+    "down the lane."
    ]
   ]
  },
@@ -306,24 +322,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every NIGHT,",
-    "every night,"
+    "But I still walk up",
+    "but i still walk up"
    ],
    [
-    "she stops",
-    "she stops"
+    "for BREAKFAST",
+    "for breakfast"
    ],
    [
-    "at my DOOR",
-    "at my door"
+    "at Mom's,",
+    "at mom's,"
    ],
    [
-    "and spends",
-    "and spends"
-   ],
-   [
-    "her whole TEN.",
-    "her whole ten."
+    "before WORK.",
+    "before work."
    ]
   ]
  },
@@ -332,24 +344,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "\"Night, LOVE.",
-    "night, love."
+    "She leads",
+    "she leads"
    ],
    [
-    "Thursday's CHOIR.",
-    "thursday's choir."
-   ],
-   [
-    "Come and SING",
-    "come and sing"
-   ],
-   [
-    "with us.",
-    "with us."
-   ],
-   [
-    "PLEASE.\"",
-    "please."
+    "the village CHOIR.",
+    "the village choir."
    ]
   ]
  },
@@ -358,8 +358,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I never ANSWER.",
-    "i never answer."
+    "She says",
+    "she says"
+   ],
+   [
+    "I never LISTEN.",
+    "i never listen."
    ]
   ]
  },
@@ -368,20 +372,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "This WEEK,",
-    "this week,"
+    "It's our FIGHT,",
+    "it's our fight,"
    ],
    [
-    "her beads",
-    "her beads"
-   ],
-   [
-    "are dark",
-    "are dark"
-   ],
-   [
-    "by SUPPER.",
-    "by supper."
+    "every MORNING.",
+    "every morning."
    ]
   ]
  },
@@ -390,16 +386,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "She conducts",
-    "she conducts"
+    "Every time",
+    "every time"
    ],
    [
-    "with just",
-    "with just"
+    "she starts a SENTENCE,",
+    "she starts a sentence,"
    ],
    [
-    "her HANDS.",
-    "her hands."
+    "I talk",
+    "i talk"
+   ],
+   [
+    "right OVER it.",
+    "right over it."
    ]
   ]
  },
@@ -408,16 +408,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The choir",
-    "the choir"
+    "Her beads go dark",
+    "her beads go dark"
    ],
    [
-    "has been ELEVEN",
-    "has been eleven"
-   ],
-   [
-    "for YEARS.",
-    "for years."
+    "before the KETTLE boils.",
+    "before the kettle boils."
    ]
   ]
  },
@@ -426,20 +422,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "The twelfth CHAIR",
-    "the twelfth chair"
+    "On MONDAY,",
+    "on monday,"
    ],
    [
-    "sits EMPTY",
-    "sits empty"
+    "she says",
+    "she says"
    ],
    [
-    "at the end",
-    "at the end"
+    "we sat up",
+    "we sat up"
    ],
    [
-    "of the RISER.",
-    "of the riser."
+    "in her KITCHEN",
+    "in her kitchen"
+   ],
+   [
+    "till ONE.",
+    "till one."
    ]
   ]
  },
@@ -448,16 +448,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I listen",
-    "i listen"
+    "I was in BED",
+    "i was in bed"
    ],
    [
-    "at the hall WINDOW",
-    "at the hall window"
+    "down the LANE",
+    "down the lane"
    ],
    [
-    "on my way HOME.",
-    "on my way home."
+    "by TEN.",
+    "by ten."
    ]
   ]
  },
@@ -466,12 +466,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Eleven MOUTHS",
-    "eleven mouths"
+    "At REHEARSAL,",
+    "at rehearsal,"
    ],
    [
-    "on one long \"AH.\"",
-    "on one long, ah."
+    "she conducts",
+    "she conducts"
+   ],
+   [
+    "toward the FAR END.",
+    "toward the far end."
    ]
   ]
  },
@@ -480,24 +484,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "And every week,",
-    "and every week,"
+    "Nodding along",
+    "nodding along"
    ],
    [
-    "the chair",
-    "the chair"
+    "to a beat",
+    "to a beat"
    ],
    [
-    "has turned",
-    "has turned"
-   ],
-   [
-    "a little FURTHER",
-    "a little further"
-   ],
-   [
-    "toward MUM.",
-    "toward mum."
+    "nobody's SINGING.",
+    "nobody's singing."
    ]
   ]
  },
@@ -510,30 +506,12 @@
     "on thursday,"
    ],
    [
-    "Mum doesn't",
-    "mum doesn't"
+    "Mom doesn't",
+    "mom doesn't"
    ],
    [
     "come HOME.",
     "come home."
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The hall is DARK.",
-    "the hall is dark."
-   ],
-   [
-    "The door",
-    "the door"
-   ],
-   [
-    "is wide OPEN.",
-    "is wide open."
    ]
   ]
  },
@@ -543,20 +521,34 @@
   "chunks": []
  },
  {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Through the hall WINDOW,",
+    "through the hall window,"
+   ],
+   [
+    "I see her",
+    "i see her"
+   ],
+   [
+    "in the front ROW.",
+    "in the front row."
+   ]
+  ]
+ },
+ {
   "id": "L30",
   "who": "narrator",
   "chunks": [
    [
-    "Her SCARF",
-    "her scarf"
+    "She's NODDING,",
+    "she's nodding,"
    ],
    [
-    "is on",
-    "is on"
-   ],
-   [
-    "the twelfth CHAIR.",
-    "the twelfth chair."
+    "and ANSWERING someone.",
+    "and answering someone."
    ]
   ]
  },
@@ -565,20 +557,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the other",
-    "and the other"
+    "And all I can hear",
+    "and all i can hear"
    ],
    [
-    "ELEVEN chairs",
-    "eleven chairs"
-   ],
-   [
-    "have all been TURNED",
-    "have all been turned"
-   ],
-   [
-    "to FACE it.",
-    "to face it."
+    "is HER side.",
+    "is her side."
    ]
   ]
  },
@@ -587,12 +571,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I walk the VILLAGE",
-    "i walk the village"
+    "Up on the RISER,",
+    "up on the riser,"
    ],
    [
-    "all NIGHT.",
-    "all night."
+    "the twelfth singer's FACE",
+    "the twelfth singer's face"
+   ],
+   [
+    "is turned toward HER.",
+    "is turned toward her."
    ]
   ]
  },
@@ -601,16 +589,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I could call",
-    "i could call"
+    "I go IN,",
+    "i go in,"
    ],
    [
-    "her NAME.",
-    "her name."
-   ],
-   [
-    "I have the WORDS.",
-    "i have the words."
+    "and walk her HOME.",
+    "and walk her home."
    ]
   ]
  },
@@ -619,185 +603,25 @@
   "who": "narrator",
   "chunks": [
    [
-    "My mouth",
-    "my mouth"
+    "The whole way,",
+    "the whole way,"
    ],
    [
-    "just won't DO it.",
-    "just won't do it."
+    "she chats",
+    "she chats"
+   ],
+   [
+    "to the empty AIR",
+    "to the empty air"
+   ],
+   [
+    "on my other SIDE.",
+    "on my other side."
    ]
   ]
  },
  {
   "id": "L35",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At DAWN,",
-    "at dawn,"
-   ],
-   [
-    "Mum is HOME,",
-    "mum is home,"
-   ],
-   [
-    "asleep in her COAT.",
-    "asleep in her coat."
-   ]
-  ]
- },
- {
-  "id": "L36",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Old RON",
-    "old ron"
-   ],
-   [
-    "is at our GATE.",
-    "is at our gate."
-   ]
-  ]
- },
- {
-  "id": "L37",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He spends SEVEN words,",
-    "he spends seven words,"
-   ],
-   [
-    "his first",
-    "his first"
-   ],
-   [
-    "in YEARS.",
-    "in years."
-   ]
-  ]
- },
- {
-  "id": "L38",
-  "who": "narrator",
-  "chunks": [
-   [
-    "\"She knocked",
-    "she knocked"
-   ],
-   [
-    "all NIGHT.",
-    "all night."
-   ],
-   [
-    "Asking",
-    "asking"
-   ],
-   [
-    "for YOU.\"",
-    "for you."
-   ]
-  ]
- },
- {
-  "id": "L39",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The winter CONCERT",
-    "the winter concert"
-   ],
-   [
-    "is SATURDAY.",
-    "is saturday."
-   ]
-  ]
- },
- {
-  "id": "L40",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The winter song",
-    "the winter song"
-   ],
-   [
-    "has ONE verse",
-    "has one verse"
-   ],
-   [
-    "with WORDS in it.",
-    "with words in it."
-   ]
-  ]
- },
- {
-  "id": "L41",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nobody's AFFORDED it",
-    "nobody's afforded it"
-   ],
-   [
-    "in YEARS.",
-    "in years."
-   ]
-  ]
- },
- {
-  "id": "L42",
-  "who": "narrator",
-  "chunks": [
-   [
-    "This year,",
-    "this year,"
-   ],
-   [
-    "Mum is going",
-    "mum is going"
-   ],
-   [
-    "to SING it.",
-    "to sing it."
-   ]
-  ]
- },
- {
-  "id": "L43",
-  "who": "narrator",
-  "chunks": [
-   [
-    "That night,",
-    "that night,"
-   ],
-   [
-    "she doesn't stop",
-    "she doesn't stop"
-   ],
-   [
-    "at my DOOR.",
-    "at my door."
-   ]
-  ]
- },
- {
-  "id": "L44",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She's SAVING",
-    "she's saving"
-   ],
-   [
-    "her TEN.",
-    "her ten."
-   ]
-  ]
- },
- {
-  "id": "L45",
   "who": "narrator",
   "chunks": [
    [
@@ -815,9 +639,13 @@
   ]
  },
  {
-  "id": "L46",
+  "id": "L36",
   "who": "narrator",
   "chunks": [
+   [
+    "Mom CONDUCTS.",
+    "mom conducts."
+   ],
    [
     "I stand",
     "i stand"
@@ -829,7 +657,25 @@
   ]
  },
  {
-  "id": "L47",
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Her beads",
+    "her beads"
+   ],
+   [
+    "have been dark",
+    "have been dark"
+   ],
+   [
+    "since BREAKFAST.",
+    "since breakfast."
+   ]
+  ]
+ },
+ {
+  "id": "L38",
   "who": "narrator",
   "chunks": [
    [
@@ -843,7 +689,7 @@
   ]
  },
  {
-  "id": "L48",
+  "id": "L39",
   "who": "narrator",
   "chunks": [
    [
@@ -861,71 +707,21 @@
   ]
  },
  {
-  "id": "L49",
+  "id": "L40",
   "who": "narrator",
   "chunks": [
    [
-    "Eleven singers",
-    "eleven singers"
+    "And the twelfth SINGER",
+    "and the twelfth singer"
    ],
    [
-    "in MAROON.",
-    "in maroon."
+    "turns its HEAD.",
+    "turns its head."
    ]
   ]
  },
  {
-  "id": "L50",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And in the twelfth CHAIR,",
-    "and in the twelfth chair,"
-   ],
-   [
-    "someone in MAROON",
-    "someone in maroon"
-   ],
-   [
-    "AS WELL.",
-    "as well."
-   ]
-  ]
- },
- {
-  "id": "L51",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It looks like",
-    "it looks like"
-   ],
-   [
-    "anyone ELSE",
-    "anyone else"
-   ],
-   [
-    "in the choir.",
-    "in the choir."
-   ]
-  ]
- },
- {
-  "id": "L52",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Until it turns",
-    "until it turns"
-   ],
-   [
-    "its HEAD.",
-    "its head."
-   ]
-  ]
- },
- {
-  "id": "L53",
+  "id": "L41",
   "who": "narrator",
   "chunks": [
    [
@@ -943,16 +739,12 @@
   ]
  },
  {
-  "id": "L54",
+  "id": "L42",
   "who": "narrator",
   "chunks": [
    [
-    "Right round the BACK",
-    "right round the back"
-   ],
-   [
-    "of its head,",
-    "of its head,"
+    "Right round the BACK,",
+    "right round the back,"
    ],
    [
     "where the two ENDS",
@@ -965,138 +757,74 @@
   ]
  },
  {
-  "id": "L55",
+  "id": "L43",
   "who": "narrator",
   "chunks": [
    [
-    "There's no CORD",
-    "there's no cord"
-   ],
-   [
-    "round its neck",
-    "round its neck"
-   ],
-   [
-    "at ALL.",
-    "at all."
-   ]
-  ]
- },
- {
-  "id": "L56",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mum STANDS",
-    "mum stands"
-   ],
-   [
-    "for the VERSE.",
-    "for the verse."
-   ]
-  ]
- },
- {
-  "id": "L57",
-  "who": "narrator",
-  "chunks": [
-   [
-    "She SINGS,",
-    "she sings,"
-   ],
-   [
-    "and her beads",
-    "and her beads"
-   ],
-   [
-    "go dark",
-    "go dark"
-   ],
-   [
-    "one by ONE.",
-    "one by one."
-   ]
-  ]
- },
- {
-  "id": "L58",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It TILTS",
-    "it tilts"
-   ],
-   [
-    "toward her.",
-    "toward her."
-   ]
-  ]
- },
- {
-  "id": "L59",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every WORD,",
-    "every word,"
-   ],
-   [
-    "it leans",
+    "It leans",
     "it leans"
    ],
    [
-    "a little CLOSER.",
-    "a little closer."
+    "to Mom's EAR.",
+    "to mom's ear."
    ]
   ]
  },
  {
-  "id": "L60",
+  "id": "L44",
   "who": "narrator",
   "chunks": [
    [
-    "Her NINTH bead",
-    "her ninth bead"
+    "I can't hear a THING.",
+    "i can't hear a thing."
    ],
    [
-    "goes DARK.",
-    "goes dark."
+    "But she smiles",
+    "but she smiles"
+   ],
+   [
+    "the way she smiles",
+    "the way she smiles"
+   ],
+   [
+    "at ME.",
+    "at me."
    ]
   ]
  },
  {
-  "id": "L61",
+  "id": "L45",
   "who": "narrator",
   "chunks": [
    [
-    "The verse",
-    "the verse"
+    "Mom starts up",
+    "mom starts up"
    ],
    [
-    "still has",
-    "still has"
+    "the riser STEPS,",
+    "the riser steps,"
    ],
    [
-    "a whole LINE",
-    "a whole line"
-   ],
-   [
-    "to GO.",
-    "to go."
+    "toward IT.",
+    "toward it."
    ]
   ]
  },
  {
-  "id": "L62",
+  "id": "L46",
   "who": "narrator",
   "chunks": [
    [
-    "That grin",
-    "that grin"
+    "I call her NAME",
+    "i call her name"
    ],
    [
-    "is at her EAR.",
-    "is at her ear."
+    "across the HALL.",
+    "across the hall."
+   ],
+   [
+    "She doesn't even BLINK.",
+    "she doesn't even blink."
    ]
   ]
  },
@@ -1106,378 +834,316 @@
   "chunks": []
  },
  {
+  "id": "L47",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The beads never counted",
+    "the beads never counted"
+   ],
+   [
+    "the words you SAY.",
+    "the words you say."
+   ]
+  ]
+ },
+ {
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   [
+    "They count",
+    "they count"
+   ],
+   [
+    "the words",
+    "the words"
+   ],
+   [
+    "that REACH you.",
+    "that reach you."
+   ]
+  ]
+ },
+ {
+  "id": "L49",
+  "who": "narrator",
+  "chunks": [
+   [
+    "After TEN,",
+    "after ten,"
+   ],
+   [
+    "the only voice",
+    "the only voice"
+   ],
+   [
+    "that gets THROUGH",
+    "that gets through"
+   ],
+   [
+    "is ITS.",
+    "is its."
+   ]
+  ]
+ },
+ {
+  "id": "L50",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Wearing",
+    "wearing"
+   ],
+   [
+    "whoever you love MOST.",
+    "whoever you love most."
+   ]
+  ]
+ },
+ {
+  "id": "L51",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mine never go DARK,",
+    "mine never go dark,"
+   ],
+   [
+    "because I talk",
+    "because i talk"
+   ],
+   [
+    "over EVERYONE.",
+    "over everyone."
+   ]
+  ]
+ },
+ {
+  "id": "L52",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody's ever",
+    "nobody's ever"
+   ],
+   [
+    "got a WORD in.",
+    "got a word in."
+   ]
+  ]
+ },
+ {
+  "id": "L53",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The choir",
+    "the choir"
+   ],
+   [
+    "is singing \"AH\"",
+    "is singing ah"
+   ],
+   [
+    "all around HER.",
+    "all around her."
+   ]
+  ]
+ },
+ {
+  "id": "L54",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It isn't the VOICE",
+    "it isn't the voice"
+   ],
+   [
+    "she loves MOST.",
+    "she loves most."
+   ]
+  ]
+ },
+ {
+  "id": "L55",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And my WORDS",
+    "and my words"
+   ],
+   [
+    "can't reach her.",
+    "can't reach her."
+   ],
+   [
+    "Her ten",
+    "her ten"
+   ],
+   [
+    "are SPENT.",
+    "are spent."
+   ]
+  ]
+ },
+ {
+  "id": "L56",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But \"AH\"",
+    "but ah"
+   ],
+   [
+    "isn't a WORD,",
+    "isn't a word,"
+   ],
+   [
+    "and it's my real VOICE.",
+    "and it's my real voice."
+   ]
+  ]
+ },
+ {
+  "id": "L57",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So for once,",
+    "so for once,"
+   ],
+   [
+    "I stop TALKING,",
+    "i stop talking,"
+   ],
+   [
+    "and I sing \"AH.\"",
+    "and i sing ah."
+   ]
+  ]
+ },
+ {
+  "id": "L58",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mom TURNS",
+    "mom turns"
+   ],
+   [
+    "to the one sound",
+    "to the one sound"
+   ],
+   [
+    "that's really ME.",
+    "that's really me."
+   ]
+  ]
+ },
+ {
+  "id": "L59",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The next night,",
+    "the next night,"
+   ],
+   [
+    "at SUPPER,",
+    "at supper,"
+   ],
+   [
+    "for the first time",
+    "for the first time"
+   ],
+   [
+    "in my LIFE,",
+    "in my life,"
+   ],
+   [
+    "I let Mom FINISH.",
+    "i let mom finish."
+   ]
+  ]
+ },
+ {
+  "id": "L60",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She has",
+    "she has"
+   ],
+   [
+    "a LOT",
+    "a lot"
+   ],
+   [
+    "to say.",
+    "to say."
+   ]
+  ]
+ },
+ {
+  "id": "L61",
+  "who": "narrator",
+  "chunks": [
+   [
+    "All ten",
+    "all ten"
+   ],
+   [
+    "of my beads",
+    "of my beads"
+   ],
+   [
+    "go DARK.",
+    "go dark."
+   ]
+  ]
+ },
+ {
+  "id": "L62",
+  "who": "narrator",
+  "chunks": [
+   [
+    "LATER,",
+    "later,"
+   ],
+   [
+    "from the HALL",
+    "from the hall"
+   ],
+   [
+    "up the hill,",
+    "up the hill,"
+   ],
+   [
+    "Mom's voice",
+    "mom's voice"
+   ],
+   [
+    "calls my NAME.",
+    "calls my name."
+   ]
+  ]
+ },
+ {
   "id": "L63",
   "who": "narrator",
   "chunks": [
    [
-    "Then I REMEMBER.",
-    "then i remember."
-   ]
-  ]
- },
- {
-  "id": "L64",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Words you don't SPEND",
-    "words you don't spend"
+    "And Mom",
+    "and mom"
    ],
    [
-    "never go AWAY.",
-    "never go away."
-   ]
-  ]
- },
- {
-  "id": "L65",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And I have",
-    "and i have"
+    "is asleep",
+    "is asleep"
    ],
    [
-    "three YEARS",
-    "three years"
-   ],
-   [
-    "of them.",
-    "of them."
-   ]
-  ]
- },
- {
-  "id": "L66",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I walk up",
-    "i walk up"
-   ],
-   [
-    "the AISLE",
-    "the aisle"
-   ],
-   [
-    "to MUM.",
-    "to mum."
-   ]
-  ]
- },
- {
-  "id": "L67",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I sing her",
-    "i sing her"
-   ],
-   [
-    "last LINE",
-    "last line"
-   ],
-   [
-    "for HER.",
-    "for her."
-   ]
-  ]
- },
- {
-  "id": "L68",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The grin",
-    "the grin"
-   ],
-   [
-    "sits BACK",
-    "sits back"
-   ],
-   [
-    "in its CHAIR.",
-    "in its chair."
-   ]
-  ]
- },
- {
-  "id": "L69",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then I sing",
-    "then i sing"
-   ],
-   [
-    "the whole VERSE",
-    "the whole verse"
-   ],
-   [
-    "AGAIN,",
-    "again,"
-   ],
-   [
-    "right BESIDE her.",
-    "right beside her."
-   ]
-  ]
- },
- {
-  "id": "L70",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My cord",
-    "my cord"
-   ],
-   [
-    "comes OUT",
-    "comes out"
-   ],
-   [
-    "from my JUMPER.",
-    "from my jumper."
-   ]
-  ]
- },
- {
-  "id": "L71",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Bead after BEAD",
-    "bead after bead"
-   ],
-   [
-    "goes DARK,",
-    "goes dark,"
-   ],
-   [
-    "all the way",
-    "all the way"
-   ],
-   [
-    "to my KNEES.",
-    "to my knees."
-   ]
-  ]
- },
- {
-  "id": "L72",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mum doesn't LOOK",
-    "mum doesn't look"
-   ],
-   [
-    "at me.",
-    "at me."
-   ],
-   [
-    "She just SMILES",
-    "she just smiles"
-   ],
-   [
-    "at the HALL.",
-    "at the hall."
-   ]
-  ]
- },
- {
-  "id": "L73",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I was never",
-    "i was never"
-   ],
-   [
-    "CAREFUL.",
-    "careful."
-   ]
-  ]
- },
- {
-  "id": "L74",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Three years AGO,",
-    "three years ago,"
-   ],
-   [
-    "I stopped",
-    "i stopped"
-   ],
-   [
-    "talking to HER.",
-    "talking to her."
-   ]
-  ]
- },
- {
-  "id": "L75",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And every word",
-    "and every word"
-   ],
-   [
-    "I DIDN'T say",
-    "i didn't say"
-   ],
-   [
-    "piled UP.",
-    "piled up."
-   ]
-  ]
- },
- {
-  "id": "L76",
-  "who": "narrator",
-  "chunks": [
-   [
-    "All the way",
-    "all the way"
-   ],
-   [
-    "down the HILL,",
-    "down the hill,"
-   ],
-   [
-    "I TALK.",
-    "i talk."
-   ]
-  ]
- },
- {
-  "id": "L77",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mum LAUGHS,",
-    "mum laughs,"
-   ],
-   [
-    "which is FREE.",
-    "which is free."
-   ]
-  ]
- },
- {
-  "id": "L78",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At our GATE,",
-    "at our gate,"
-   ],
-   [
-    "she spends",
-    "she spends"
-   ],
-   [
-    "her LAST bead.",
-    "her last bead."
-   ]
-  ]
- },
- {
-  "id": "L79",
-  "who": "narrator",
-  "chunks": [
-   [
-    "\"THURSDAY?\"",
-    "thursday?"
-   ]
-  ]
- },
- {
-  "id": "L80",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I say,",
-    "i say,"
-   ],
-   [
-    "\"YES.\"",
-    "yes."
-   ]
-  ]
- },
- {
-  "id": "L81",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Under the STREETLIGHT,",
-    "under the streetlight,"
-   ],
-   [
-    "both our cords",
-    "both our cords"
-   ],
-   [
-    "are DARK.",
-    "are dark."
-   ]
-  ]
- },
- {
-  "id": "L82",
-  "who": "narrator",
-  "chunks": [
-   [
-    "In this WORLD,",
-    "in this world,"
-   ],
-   [
-    "everyone gets",
-    "everyone gets"
-   ],
-   [
-    "TEN WORDS",
-    "ten words"
-   ],
-   [
-    "a DAY.",
-    "a day."
-   ]
-  ]
- },
- {
-  "id": "L83",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Mum spent hers",
-    "mum spent hers"
-   ],
-   [
-    "on ME.",
-    "on me."
-   ]
-  ]
- },
- {
-  "id": "L84",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And when I'm LATE,",
-    "and when i'm late,"
-   ],
-   [
-    "the choir",
-    "the choir"
-   ],
-   [
-    "is still TWELVE.",
-    "is still twelve."
+    "in her CHAIR.",
+    "in her chair."
    ]
   ]
  }

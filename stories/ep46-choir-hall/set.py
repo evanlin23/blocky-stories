@@ -49,7 +49,7 @@ TOD = {
 }
 # every named light and its nominal full strength (the story's lt cues set a level 0..n; the level defaults are DEF)
 DEF = {"hall_house": 0.0, "riser": 0.0, "grin_key": 0.0, "grin_rim": 0.0, "hall_low": 0.0, "door_wedge": 0.0, "back_wash": 0.0,
-       "kitchen_day": 0.0, "kitchen_lamp": 0.0, "bed_lamp": 0.0, "landing": 0.0, "mum_key": 0.0}
+       "kitchen_day": 0.0, "kitchen_lamp": 0.0, "bed_lamp": 0.0, "landing": 0.0, "mum_key": 0.0, "front_key": 0.0}
 
 
 # ------------------------------------------------------------------------------------------------ helpers
@@ -205,7 +205,7 @@ def materials(kit):
     M["enamel"] = pbr(kit, "enamel", "#e8e4d4", 0.22, spec=0.7)
     M["flex"] = pbr(kit, "flex", "#141414", 0.5)
     M["bulb"] = pbr(kit, "bulb", "#ffe2b0", 0.4, emit="#ffd8a0", emit_s=9.0)
-    M["stroke"] = pbr(kit, "stroke", "#1c1014", 0.9)
+    M["stroke"] = pbr(kit, "stroke", "#7a1f2e", 0.9)
     M["scarf"] = pbr(kit, "scarf", "#d9a23a", 0.9, noise=(14.0, 0.7, 0.0))
     M["stand"] = pbr(kit, "stand", "#25272a", 0.5, metal=0.5)
     M["bunting_a"] = pbr(kit, "bunt a", "#d96b5a", 0.8)
@@ -379,6 +379,22 @@ def build_kitchen(kit, M, ctx):
     kit.box("k.top", (3.3, 0.66, 0.05), (x0 + 0.3, y0 - 1.95, 0.92), M["white"])
     kit.cyl("k.cup", 0.06, 0.09, (x0 - 0.45, y0 - 0.25, 0.86), M["cup"], None, n=14)
     kit.cyl("k.tea", 0.05, 0.01, (x0 - 0.45, y0 - 0.25, 0.9), M["tea"], None, n=14)
+    kit.cyl("k.cup2", 0.06, 0.09, (x0 + 0.12, y0 - 0.4, 0.86), M["cup"], None, n=14)
+    kit.cyl("k.tea2", 0.05, 0.01, (x0 + 0.12, y0 - 0.4, 0.9), M["tea"], None, n=14)
+    # a stove ring and a kettle on the counter
+    kit.box("k.ring", (0.5, 0.45, 0.03), (x0 + 0.95, y0 - 1.95, 0.945), M["post"], None, bevel=0.01)
+    kit.cyl("k.kettle", 0.16, 0.22, (x0 + 0.95, y0 - 1.95, 1.07), M["enamel"], None, n=20, r2=0.12)
+    kit.box("k.spout", (0.14, 0.06, 0.06), (x0 + 0.95, y0 - 1.78, 1.1), M["enamel"], None, rot=(0, 0, 0.4))
+    kit.box("k.khandle", (0.04, 0.22, 0.14), (x0 + 0.95, y0 - 2.12, 1.14), M["post"], None, bevel=0.01)
+    # the hall, far up the hill, seen through the kitchen window at night (cue farwin)
+    far = []
+    far.append(kit.box("far.body", (11.0, 2.0, 7.0), (x0 + 1.3, 26.2, 3.5), pbr(kit, "far hall", "#1a1d28", 0.9)))
+    fm = pbr(kit, "far glow", "#ffcf8a", 0.6, emit="#ffb860", emit_s=22.0)
+    far.append(kit.box("far.glow", (4.6, 0.1, 2.6), (x0 + 1.3, 25.1, 3.3), fm))
+    for i in range(5):
+        far.append(kit.box(f"far.bar{i}", (0.07, 0.12, 2.6), (x0 - 0.7 + i * 1.15, 25.05, 3.3), pbr(kit, "far bar", "#3a2c22", 0.9)))
+    far.append(kit.box("far.barh", (4.6, 0.12, 0.07), (x0 + 1.3, 25.05, 3.3), pbr(kit, "far bar", "#3a2c22", 0.9)))
+    ctx["far"] = far
     kit.light("kitchen_day", "AREA", (x0, y0 + 3.4, 1.6), 90.0, "#cfe0f4", (math.pi / 2, 0, math.pi), size=1.4)
     kit.light("kitchen_lamp", "POINT", (x0 - 0.2, y0 - 0.3, 2.1), 150.0, "#ffd49a", size=0.3)
     # the table lamp shade, hanging
@@ -469,7 +485,18 @@ def build_hall(kit, M, ctx):
     kit.box("h.ceil", (10.4, yhi - ylo + 0.4, 0.2), (HX, ym, 5.1), M["ceil"])
     for i in range(6):
         kit.box(f"h.beam{i}", (10.4, 0.25, 0.3), (HX, ylo + 2.0 + i * 3.4, 4.85), M["beam"])
-    kit.box("h.wall_w", (0.3, yhi - ylo, 5.0), (HX - 5.15, ym, 2.5), M["hallwall"])
+    # the low side window on the west wall (y -5.2 .. -2.2, z 0.95 .. 2.25), small square panes, seen from the gravel strip
+    wy0, wy1, wz0, wz1 = -5.2, -2.2, 0.95, 2.25
+    wx = HX - 5.15
+    kit.box("h.ww_s", (0.3, wy0 - ylo, 5.0), (wx, (ylo + wy0) / 2, 2.5), M["hallwall"])
+    kit.box("h.ww_n", (0.3, yhi - wy1, 5.0), (wx, (wy1 + yhi) / 2, 2.5), M["hallwall"])
+    kit.box("h.ww_b", (0.3, wy1 - wy0, wz0), (wx, (wy0 + wy1) / 2, wz0 / 2), M["hallwall"])
+    kit.box("h.ww_t", (0.3, wy1 - wy0, 5.0 - wz1), (wx, (wy0 + wy1) / 2, (wz1 + 5.0) / 2), M["hallwall"])
+    for i in range(7):
+        kit.box(f"h.wwv{i}", (0.1, 0.05, wz1 - wz0), (wx, wy0 + i * (wy1 - wy0) / 6, (wz0 + wz1) / 2), M["white"])
+    for j in range(4):
+        kit.box(f"h.wwh{j}", (0.1, wy1 - wy0, 0.05), (wx, (wy0 + wy1) / 2, wz0 + j * (wz1 - wz0) / 3), M["white"])
+    kit.box("h.wwsill", (0.4, wy1 - wy0 + 0.2, 0.06), (wx - 0.2, (wy0 + wy1) / 2, wz0 - 0.03), M["white"])
     kit.box("h.wall_e", (0.3, yhi - ylo, 5.0), (HX + 5.15, ym, 2.5), M["hallwall"])
     # the stage-end wall has one high window behind the twelfth chair (seen from the gravel strip outside)
     wall_x(kit, "h.wall_s", M["hallwall"], ylo - 0.15, HX - 5.3, HX + 5.3, 5.0, [(HX - 3.4, HX + 1.9, 1.7, 4.4)])
@@ -510,9 +537,10 @@ def build_hall(kit, M, ctx):
     for k, (z, yc) in enumerate(STEPS):
         kit.box(f"h.step{k}", (7.6, 1.5, z), (HX - 0.5, yc, z / 2), M["pine_y"])
     kit.box("h.back", (7.6, 0.06, 0.7), (HX - 0.5, -9.5, 1.25), M["pine"])
-    # twelve short upright maroon strokes scratched into the backboard (the lore plant: no thirteenth)
-    for i in range(12):
-        kit.box(f"h.stroke{i}", (0.04, 0.03, 0.3), (TWELFTH_X - 0.55 + i * 0.1, -9.55, 1.25), M["stroke"])
+    # eleven short upright maroon strokes scratched into the backboard, one behind each singer; the stretch behind the
+    # twelfth chair (the far -x end) is bare
+    for i in range(11):
+        kit.box(f"h.stroke{i}", (0.05, 0.03, 0.32), (HX - 1.15 + i * 0.25, -9.55, 1.25), M["stroke"])
     # the twelve chairs
     twelfth, rest = chair_slots()
     ctx["c12"] = hall_chair(kit, M, "ch12", twelfth, 180)
@@ -529,6 +557,7 @@ def build_hall(kit, M, ctx):
     sp = kit.light("riser", "SPOT", (lx, ly, 3.5), 1500.0, "#ffe6c4", spot=75, blend=0.6, size=0.1)
     kit.aim(sp, (HX - 0.4, -7.2, 0.8))
     kit.light("camfill", "POINT", (0, 0, 0), 1.0, "#a8bce8", size=0.3)
+    kit.light("front_key", "POINT", (HX - 3.2, -0.2, 2.9), 300.0, "#ffd9a0", size=0.4)
     k = kit.light("grin_key", "SPOT", (twelfth[0] + 2.4, -4.6, 1.3), 520.0, "#ffe2c4", spot=26, blend=0.7, size=0.2)
     kit.aim(k, (twelfth[0], twelfth[1], twelfth[2] + 1.35))
     r = kit.light("grin_rim", "SPOT", (twelfth[0] - 1.6, -10.0, 3.6), 650.0, "#ffc890", spot=24, blend=0.7, size=0.2)
@@ -551,9 +580,11 @@ def build_hall(kit, M, ctx):
     kit.box("h.postbulb", (0.24, 0.24, 0.28), (HX - 3.8, 14.2, 3.86), ctx["lampbulb"], bevel=0.03)
     kit.light("post", "POINT", (HX - 3.6, 14.0, 3.5), 900.0, "#e8b060", size=0.15)
     # the music stand for Mum, and the audience rows (off until the concert), and bunting
-    kit.cyl("h.standpole", 0.015, 1.3, (HX + 1.2, -3.5, 0.65), M["stand"], None, n=6)
-    kit.box("h.standtop", (0.5, 0.03, 0.34), (HX + 1.2, -3.52, 1.4), M["stand"], None, rot=(math.radians(-18), 0, 0))
-    kit.box("h.standbase", (0.5, 0.5, 0.03), (HX + 1.2, -3.5, 0.02), M["stand"])
+    stand = kit.empty("h.stand", (HX + 1.2, -3.5, 0.0))
+    kit.cyl("h.standpole", 0.015, 1.3, (0, 0, 0.65), M["stand"], stand, n=6)
+    kit.box("h.standtop", (0.5, 0.03, 0.34), (0, -0.02, 1.4), M["stand"], stand, rot=(math.radians(-18), 0, 0))
+    kit.box("h.standbase", (0.5, 0.5, 0.03), (0, 0, 0.02), M["stand"], stand)
+    ctx["stand"] = stand
     rows = []
     for r_ in range(6):
         for c_ in range(7):
@@ -760,13 +791,12 @@ def decorate(kit, story, ctx):
     ctx["ron_fade"] = list(range(34, 41))      # seven beads at the bottom of Ron's third loop, middle of the row
     ctx["bead_mats"] = {}
     ctx["bead_specs"] = {"me": {"own": True}, "mum": {"own": True, "share": "mum"}, "mumr": {"own": True, "share": "mum"},
-                         "postman": {"own": True}, "groom": {"own": True}, "gateman": {"own": True},
-                         "ron": {"own": True}, "gatewoman": {"dark": 3}, "nb1": {"dark": 2}, "nb2": {"dark": 4},
-                         "rowa": {"dark": 10}, "rowb": {"dark": 10}, "bride": {}}
+                         "postman": {"own": True}, "gateman": {"own": True}, "gatewoman": {"own": True},
+                         "nb1": {"own": True}, "nb2": {"own": True}}
     for who in names:
         if who == "grin":
             continue
-        style = "ron" if who == "ron" else "collar" if who == "me" else "chest"
+        style = "collar" if who == "me" else "chest"
         attach_beads(kit, M, who, style, ctx)
     # per-owner animated material lists, ordered by bead index
     ctx["bm"] = {k: [m for _, m in sorted(v, key=lambda e: e[0])] for k, v in ctx["bead_mats"].items()}
@@ -818,6 +848,19 @@ def decorate(kit, story, ctx):
         # the seam where the grin's line meets itself: a black strip down the back of the head, so it reads from far off
         bx(kit, "grin.seam", (0.07, 0.04, faces.HEAD_H * 0.92), (0, faces.HEAD_R - 0.01, 0.0),
            pbr(kit, "grin seam", "#050304", 0.9), gh, bevel=0.012)
+    # Ron's earmuffs: two fat knitted cranberry cups and a band over the crown, on his head
+    rg = bpy.data.objects.get("ron.headg")
+    if rg is not None:
+        knit = pbr(kit, "earmuff knit", "#b8324a", 0.97, noise=(26.0, 0.62, 0.0), bump=0.3)
+        band = pbr(kit, "earmuff band", "#a02a40", 0.97, noise=(30.0, 0.66, 0.0))
+        for sx in (-1, 1):
+            kit.cyl(f"ron.muff{sx}", 0.47, 0.34, (sx * (faces.HEAD_R + 0.1), 0.02, 0.02), knit, rg,
+                    rot=(0, math.pi / 2, 0), n=20)
+        for i in range(9):
+            th = math.pi * i / 8
+            r_ = faces.HEAD_R + 0.1
+            bx(kit, f"ron.band{i}", (0.3, 0.2, 0.14), (r_ * math.cos(th), 0.02, 0.02 + (r_ + 0.02) * math.sin(th)), band, rg,
+               rot=(0, -(th + math.pi / 2), 0), bevel=0.03)
     ctx["grin_tex"] = None
     mat = bpy.data.materials.get("head grin")
     if mat is not None:
@@ -962,6 +1005,11 @@ def animate(kit, story, tl, t, ctx):
     _sm = bpy.data.objects.get("grin.seam")
     if _sm is not None:
         _sm.scale = (1.7, 1.4, 1.0) if shot_id == tl["shots"][-1]["id"] else (1.0, 1.0, 1.0)
+    st_ = _last(_cues(tl, "stand"), t)
+    if st_ is not None:
+        ctx["stand"].location = tuple(st_["pos"])
+    fw_ = _last(_cues(tl, "farwin"), t)
+    show(ctx["far"], bool(fw_ and fw_.get("on")))
     show(ctx["rows"], bool((_last(_cues(tl, "rows"), t) or {}).get("on")))
     show(ctx["people"], bool((_last(_cues(tl, "audience"), t) or {}).get("on")))
     show(ctx["bunting"], bool((_last(_cues(tl, "bunting"), t) or {}).get("on")))
