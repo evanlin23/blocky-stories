@@ -13,7 +13,7 @@
 ## Variety table (batch of 1, checked against "Made", the batch-1 list and the other six slots)
 | Setting | Creature | First-line type | Ending shape | Kind of warmth |
 |---|---|---|---|---|
-| a bright all-night laundromat, one night and the next | the Night: the night itself, a folded blocky figure of starry navy cloth with the moon for a face, tumbling in a dryer drum | a warning to "you" about one machine ("you NEVER use DRYER NINE") | two brothers sitting with their backs against a dryer door until the timer runs out at dawn, then a cold sting (a hand inside holding a quarter up to the glass) and a loop | brothers: the last night before my big brother moves out, spent talking |
+| a bright all-night laundromat, one night and the next | the Night: the night itself, a folded blocky figure of starry navy cloth with the moon for a face, tumbling in a dryer drum | the place's rule and its price, the `cost` opening ("NOBODY at this laundromat uses dryer NINE.") | two brothers sitting with their backs against a dryer door until the timer runs out at dawn, then a cold sting (a hand inside holding a quarter up to the glass) and a loop | brothers: the last night before my big brother moves out, spent talking |
 
 Against the other six: no warm object (P1's shoes, and nothing here is warm), no second window or place that shouldn't exist (P2), no 3 AM neighbor (P3), no locks or doors that multiply (P5, and a dryer door held shut by two backs is the only door), no rulebook (P6), no extra rider or count of people (P7). The earlier laundromat pitch (`wash-cycle`, killed, never made) used a backwards man, a coat and gratitude: none of that is here, and the narrator is a customer, never staff.
 
