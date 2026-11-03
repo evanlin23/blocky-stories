@@ -47,13 +47,18 @@ ROWS = {"c": (-1.2, 0.6), "a": (1.35, 0.6), "b": (0.95, 2.1), "d": (-1.0, 2.1)}
 GAP = (-0.5, 0.6)
 acting = {k: [] for k in cast}
 for k, (x, y) in ROWS.items():
-    acting[k].append({"at": 0, "pos": [x, y], "yaw": 0, "expr": "neutral"})
-    acting["r" + k].append({"at": 0, "pos": [x, -y], "yaw": 180, "expr": "neutral"})
+    # the real riders stand out of the first 3 s so the five faces in the glass are all clear (S01, S02)
+    acting[k].append({"at": 0, "pos": [x, y], "yaw": 0, "expr": "neutral", "hidden": True})
+    acting[k].append({"at": "L02+0.45", "pos": [x, y], "yaw": 0, "hidden": False, "blend": 0})
+    # D's reflection stands a little right of his true x (-1.0) so his face is not behind the two blue jackets
+    acting["r" + k].append({"at": 0, "pos": [0.4 if k == "d" else x, -y], "yaw": 180, "expr": "neutral"})
 acting["x"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "neutral", "look": [0, 0]})
 acting["bro"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "worried", "hidden": True})
 acting["c"].append({"at": "L09", "yaw": 40, "blend": 0})     # S13: he turns his face toward the lens
 acting["c"].append({"at": "L10", "yaw": 0, "blend": 0})
-acting["d"].append({"at": "L09", "pos": [-0.8, 1.05], "blend": 0})     # S13: half a step behind his shoulder
+# keys with a pos walk to it from the key before, so D is held at his spot and moved while hidden (he used to drift all film)
+acting["d"].append({"at": "L09-0.06", "pos": list(ROWS["d"]), "hidden": True, "blend": 0})
+acting["d"].append({"at": "L09", "pos": [-0.8, 1.05], "hidden": False, "blend": 0})     # S13: half a step behind his shoulder
 acting["d"].append({"at": "L10", "pos": [ROWS["d"][0], ROWS["d"][1]], "blend": 0})
 # S15: the glass shot is clear of the two riders in front of it, they stand aside for one shot
 for k in "abcd":
@@ -73,27 +78,30 @@ def move(a, b, la, lb=None):
     return [[0, a[0], a[1], la], [1, b[0], b[1], lb or la]]
 
 
-MAS = [-0.35, 4.25, 3.8]
-MT = [-0.35, 0.0, 0.5]
-ML = 15.0
+MAS = [0.0, 4.25, 3.8]      # wide enough for A and B tags and both glass bags; D never hides the C tag
+MT = [0.0, 0.0, 0.5]
+ML = 14.0
 MASTER = still(MAS, MT, ML)
 GX, CX = GAP[0], ROWS["c"][0]
 BLUE = (GX + CX) / 2          # the glass between the two blue jackets
 S06 = still([-1.5, 3.0, 2.0], [-1.25, 0.6, 1.2], 15)
 S14 = still([-1.5, 2.4, 3.3], [-1.5, 0.6, 1.45], 18)
+S01A = ([0.05, 4.1, 2.9], [0.05, -0.6, 1.3])    # the five faces sit in the upper middle of the glass, under the door top
+S01B = ([0.05, 4.0, 2.8], [0.05, -0.6, 1.3])
+S02C = [0.05, 3.95, 2.65]
 SHOTS = [
-    (0, "S01", "close on the doors: five faces, push in until they fill the width", move(([-0.05, 4.1, 3.7], [-0.05, -0.6, 1.6]), ([-0.05, 3.9, 3.65], [-0.05, -0.6, 1.6]), 18, 21)),
-    ("L01.4", "S02", "punch in on the five faces, the hit on FIVE", still([-0.05, 4.0, 3.7], [-0.05, -0.6, 1.6], 26)),
-    ("L02", "S03", "the master", MASTER),
+    (0, "S01", "close on the doors: five faces, push in until they fill the width", move(S01A, S01B, 19, 20)),
+    ("L01.4", "S02", "the five faces, lower and closer, the hit on FIVE; held until after 3 s", still(S02C, [0.05, -0.6, 1.3], 20)),
+    ("L02+0.45", "S03", "the master", MASTER),
     ("L03", "S04", "side view along the car", move(([1.6, 3.9, 1.7], [0.0, 0.3, 1.2]), ([1.55, 3.8, 1.7], [-0.1, 0.3, 1.2]), 18)),
     ("L04", "S05", "the master, tags pop", MASTER),
     ("L04c", "S05b", "punch in on C and D", still(MAS, MT, ML * 1.1)),
     ("L05", "S06", "over my shoulder", S06),
     ("L06", "S07", "the master, slow push", move((MAS, MT), ([0.0, 3.75, 2.3], [0, 0, 0.85]), ML, 12.0)),
     ("L07", "S08", "the display, wide enough that the dark plate is a small part of the frame", still([0, 2.0, 2.95], [0, 0.15, 2.85], 26)),
-    ("P01", "S09", "the hold master, display 4", MASTER),
-    ("P01+1", "S10", "punch in 6 percent", still(MAS, MT, ML * 1.06)),
-    ("P01+2", "S11", "punch in another 6 percent", still(MAS, MT, ML * 1.12)),
+    ("P01", "S09", "the hold master, display 4 (two equal keys: the polish camera leaves it still so both bags stay in the glass)", move((MAS, MT), (MAS, MT), ML)),
+    ("P01+1", "S10", "punch in 6 percent", move((MAS, MT), (MAS, MT), ML * 1.06)),
+    ("P01+2", "S11", "punch in another 6 percent", move((MAS, MT), (MAS, MT), ML * 1.12)),
     ("L08", "S12", "push in on the two blue jackets in the glass", move(([BLUE, 4.0, 3.7], [BLUE, -0.6, 1.4]), ([BLUE, 3.7, 3.6], [BLUE, -0.6, 1.4]), 20, 24)),
     ("L09", "S13", "two-shot: my brother three-quarter front, me behind his shoulder", still([0.9, 0.2, 1.8], [-1.0, 0.9, 1.35], 20)),
     ("L10", "S14", "his right shoulder, the bag", S14),
@@ -167,7 +175,7 @@ cues.append({"at": "L16", "name": "tagflip", "who": "C"})
 
 # ------------------------------------------------------------------------------------------------ sound
 sfx = [
-    {"at": "L01.4", "kind": "thud", "db": -6, "dur": 0.8},
+    {"at": "L01.4+0.39", "kind": "sting", "db": -7, "dur": 0.8},    # the FIVE hit: a mid cluster (D4 to A4), phones play it; a thud is under 150 Hz
     {"at": "P01", "kind": "thud", "db": -22, "dur": 0.2},
     {"at": "P01+1", "kind": "thud", "db": -22, "dur": 0.2},
     {"at": "P01+2", "kind": "thud", "db": -22, "dur": 0.2},
@@ -179,6 +187,7 @@ sfx = [
     {"at": "L15", "kind": "whoosh", "db": -22, "dur": 0.9},
 ]
 story = {
+    "rev": 2,
     "slug": "ep62-six-riders",
     "title": "The Elevator Mirror Shows FIVE",
     "made_for_kids": False,
@@ -191,7 +200,9 @@ story = {
     "tail": 0,
     "fade_in": False,
     "look": {"fog": "#cfd8de", "fog_density": 0, "fog_start": 5.0, "sky": "#cfd8de", "sky_strength": 1.0,
-             "exposure": -0.5, "flash_safe": True, "polish": True},
+             "exposure": -0.5, "flash_safe": True,
+             # the polish pack: punch-in on the hook, a reveal on the quotable line, a riser into the twist, tense sway on the copy
+             "polish": {"emph": ["L01"], "reveal": ["L12"], "twist": "L17", "sway": ["S16", "S17", "S18", "S25"]}},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.0, 0.0, 0.01], "saturation": 1.05, "contrast": 1.04,
               "vignette": 0.2, "bloom": 0.12, "grain": 0.008},
     "asr_forgive": ["ay bee see dee"],

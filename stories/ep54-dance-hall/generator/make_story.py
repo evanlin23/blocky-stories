@@ -26,7 +26,7 @@ EYES_SHUT = "shut"
 FACE = {"eyes": "round", "brows": True, "ink": "#16100c"}
 cast = {
     # me: short dark curly hair, a mustard cardigan over a white shirt with a big pointed collar (set.py), brown trousers
-    "me": {"age": "adult", "skin": "#d9a77c", "shirt": "#c9a23a", "pants": "#5a3d28", "shoes": "#6b4226", "sleeves": "long",
+    "me": {"age": "adult", "skin": "#d9a77c", "shirt": "#c9a23a", "pants": "#4a3424", "shoes": "#9a6234", "sleeves": "long",
            "hair": "cap", "hair_c": "#1d1612", "face": dict(FACE)},
     # Aunt Ros: a silver bob, a teal blouse with a drawn ripple, navy trousers, silver low-heeled dance shoes
     "ros": {"age": "adult", "skin": "#e8b98e", "shirt": "#2f8a8a", "pattern": "knit", "pattern_c": "#1f6666",
@@ -47,14 +47,14 @@ cast = {
            "hair": "bun", "hair_c": "#14100e", "face": {"eyes": "lashes", "brows": True, "ink": "#16100c"}},
     "d1": {"age": "adult", "skin": "#d9a77c", "shirt": "#3b3f46", "pants": "#22242a", "shoes": "#141414", "sleeves": "long",
            "hair": "spiky", "hair_c": "#14100e", "face": dict(FACE)},
-    "d2": {"age": "adult", "skin": "#e8b98e", "shirt": "#3b3f46", "pants": "#22242a", "shoes": "#141414", "sleeves": "long",
-           "hair": "long", "hair_c": "#a9712f", "face": {"eyes": "lashes", "brows": True, "ink": "#16100c"}},
-    # the opener's gate: an older man, and his postman (blue cap, satchel, a parcel)
-    "gm": {"age": "adult", "skin": "#e8b98e", "shirt": "#7aa86a", "pattern": "stripes", "pattern_c": "#e8e0c0",
-           "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "buzz", "hair_c": "#c8c8c8",
-           "extras": ["tie"], "extra_c": "#a03a2c", "face": dict(FACE)},
-    "pm": {"age": "adult", "skin": "#8d5a3b", "shirt": "#3b6aa8", "pants": "#2a3550", "shoes": "#1c1c20", "sleeves": "long",
-           "hat": "ballcap", "hat_c": "#2a5fc4", "hair": "none", "extras": ["backpack"], "extra_c": "#7a5a38",
+    "d2": {"age": "adult", "skin": "#d9a77c", "shirt": "#3b3f46", "pants": "#22242a", "shoes": "#141414", "sleeves": "long",
+           "hair": "long", "hair_c": "#14100e", "face": {"eyes": "lashes", "brows": True, "ink": "#16100c"}},
+    # the opener's gate: two old brothers who look alike (same buzz cut, skin, build, striped shirt in two colours)
+    "gm": {"age": "adult", "skin": "#dcae85", "shirt": "#7aa86a", "pattern": "stripes", "pattern_c": "#e8e0c0",
+           "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "swoop", "hair_c": "#8f8f96",
+           "face": dict(FACE)},
+    "pm": {"age": "adult", "skin": "#dcae85", "shirt": "#3b6aa8", "pattern": "stripes", "pattern_c": "#e8e0c0",
+           "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "swoop", "hair_c": "#8f8f96",
            "face": dict(FACE)},
 }
 MEN = ("me", "a1", "b1", "c1", "d1", "gm")
@@ -66,6 +66,7 @@ pairs = {"ros": [0, "ros", "me"], "a": [1, "a1", "a2"], "b": [2, "b1", "b2"], "c
          "g": [5, "gm", "pm"]}
 
 # ---------------------------------------------------------------------------------------------------- helpers
+HT = 55.0                                 # L62: both heads turned to the camera
 ROS_AT = (0.0, -0.6)
 P_AT = (0.0, 0.6)
 KP = (0.0, 0.5)                           # where the Stilted stands: its legs straddle the spot
@@ -117,14 +118,14 @@ def class_circling(expr=SM, rot=0.0):
     return out
 
 
-def class_wall(expr="neutral", clap=False, far=False):
+def class_wall(expr="neutral", clap=False, far=False, x=3.0, dy=0.0):
     """The class standing in front of the chairs, watching (west: a, b; east: c, d)."""
     out = {}
     ys = (-3.6, -2.4, -1.2, 0.0)
     for i, n in enumerate(("a1", "a2", "b1", "b2")):
-        out[n] = D((-3.0, ys[i] + (6 if far else 0)), 90, expr, arms=(70, 70) if clap else (0, 0))
+        out[n] = D((-x, ys[i] + dy + (6 if far else 0)), 90, expr, arms=(70, 70) if clap else (0, 0))
     for i, n in enumerate(("c1", "c2", "d1", "d2")):
-        out[n] = D((3.0, ys[i] + (6 if far else 0)), -90, expr, arms=(70, 70) if clap else (0, 0))
+        out[n] = D((x, ys[i] + dy + (6 if far else 0)), -90, expr, arms=(70, 70) if clap else (0, 0))
     return out
 
 
@@ -148,18 +149,23 @@ def S(at, cam, people, **opt):
 BS = -80.0       # the bus stop
 STRANGERS = {"a1": D((BS - 0.55, 0.3), 62, SM, arms=(85, 0), head=(-30, 0)),
              "a2": D((BS + 0.55, 0.3), -62, SM, arms=(0, 85), head=(30, 0))}
-S(0, cm((BS, -2.7, 1.5), (BS, 0.3, 1.4), 24, (BS, -2.4, 1.5), (BS, 0.3, 1.4), 25), STRANGERS, hand=0.004)
-S("L01.4", cm((BS, -2.1, 1.5), (BS, 0.3, 1.4), 26, (BS, -1.9, 1.5), (BS, 0.3, 1.4), 27), STRANGERS)
+# Frame 1 (opening pass, 2026-11-03): straight at the thing the warning names. In the hall, lit full, tight on the
+# back of Ros's raised left hand in hold, her half already dim, round nobody: no partner's hand where one should be.
+# Her face beyond it, eyes shut, pushing in. No wide before 3 s. (Builder: check the still, adjust to frame the hand.)
+S(0, cm((-1.55, 0.95, 1.3), (-0.4, -0.35, 1.32), 30, (-1.3, 0.75, 1.3), (-0.4, -0.35, 1.32), 36),
+  {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(75, 75))}, hand=0.004)
+S("L01.3", cm((BS, -2.7, 1.5), (BS, 0.3, 1.4), 24, (BS, -2.4, 1.5), (BS, 0.3, 1.4), 25), STRANGERS)
+S("L02", cm((BS, -2.1, 1.5), (BS, 0.3, 1.4), 26, (BS, -1.9, 1.5), (BS, 0.3, 1.4), 27), STRANGERS)
 CAFE = -64.0
 CAFE_ROW = {"b1": D((CAFE - 1.9, 3.5), 0, SM, arms=(85, 0)), "b2": D((CAFE - 1.2, 3.5), 0, SM, arms=(0, 70)),
             "c2": D((CAFE - 0.25, 3.5), 0, SM, arms=(0, 85)), "c1": D((CAFE + 0.55, 3.5), 0, SM, arms=(85, 0)),
             "d1": D((CAFE + 1.3, 3.5), 0, SM, arms=(60, 0)), "d2": D((CAFE + 2.0, 3.5), 0, SM, arms=(0, 85))}
-S("L02", cm((CAFE - 2.6, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20, (CAFE - 2.0, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20), CAFE_ROW)
-S("L02.2", cm((CAFE + 3.6, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22, (CAFE + 3.0, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22), CAFE_ROW)
+S("L03", cm((CAFE - 2.6, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20, (CAFE - 2.0, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20), CAFE_ROW)
+S("L03.2+0.3", cm((CAFE + 3.6, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22, (CAFE + 3.0, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22), CAFE_ROW)
 GATE = -52.0
-GATE_P = {"gm": D((GATE + 0.55, 4.4), 15, SM, arms=(85, 0)), "pm": D((GATE - 0.55, 4.4), -15, SM, arms=(0, 85))}
-S("L03", cm((GATE, 1.2, 1.5), (GATE, 4.4, 1.35), 20, (GATE, 1.6, 1.5), (GATE, 4.4, 1.35), 20), GATE_P)
-S("L03.2", cm((GATE + 0.3, 2.0, 1.5), (GATE, 4.4, 1.5), 28), GATE_P)
+GATE_P = {"gm": D((GATE + 0.55, 4.4), 8, SM, arms=(85, 0)), "pm": D((GATE - 0.55, 4.4), -4, SM, arms=(0, 85))}
+S("L03.4", cm((GATE, 1.2, 1.5), (GATE, 4.4, 1.35), 20, (GATE, 1.6, 1.5), (GATE, 4.4, 1.35), 20), GATE_P)
+S("L03.6", cm((GATE + 0.3, 2.0, 1.5), (GATE, 4.4, 1.5), 28), GATE_P)
 BUSX = -140.0
 BUS_PAIR = {"b1": D((BUSX + 0.6, 0.3), -90, SM, arms=(85, 0)), "b2": D((BUSX - 0.6, 0.3), 90, SM, arms=(0, 85))}
 BUS_CROWD = {**BUS_PAIR,
@@ -191,9 +197,9 @@ CLOSE_C = {**couple((1.5, -1.5), 90, ("c1", "c2"), SM)}
 S("L11", cm((-0.2, -1.5, 1.3), (1.0, -1.5, 1.1), 30, (-0.1, -1.5, 1.25), (1.0, -1.5, 1.1), 32), CLOSE_C)
 S("L12", cm((0.2, 2.9, 1.65), (0, -0.6, 1.3), 21), {"ros": ros_demo(), **class_wall("neutral")})
 S("L12.2", cm((-2.0, 3.5, 1.0), (0, -0.6, 1.3), 20, (-1.6, 3.2, 1.0), (0, -0.6, 1.3), 20), {"ros": ros_demo(), **class_wall("neutral")})
-S("L13", cm((0, 0.4, 1.7), (0, -0.6, 1.55), 34), {"ros": D(ROS_AT, 170, EYES_SHUT, arms=(75, 75))})
+S("L13", cm((0, 0.2, 1.7), (0, -0.6, 1.5), 28), {"ros": D(ROS_AT, 170, EYES_SHUT, arms=(75, 75))})
 S("L13.2+0.35", cm((1.3, 4.9, 1.4), (0.45, 7.0, 1.0), 30), {"me": D((0.04, 6.8), 180, "neutral", arms=(55, 0))})
-S("L14+0.35", cm((-1.3, -0.5, 1.15), (-0.5, 0.05, 1.0), 40), {"ros": ros_demo()})
+S("L14+0.75", cm((-1.3, -0.5, 1.15), (-0.5, 0.05, 1.0), 40), {"ros": ros_demo()})
 S("L15", cm((0.9, 0.3, 0.16), (-0.3, -5.0, 0.1), 24, (0.9, 0.0, 0.16), (-0.3, -5.0, 0.1), 24), {"ros": ros_demo()})
 S("L16", cm((-0.5, -3.0, 0.15), (0.4, -7.2, 0.2), 24), {})
 S("L17", cm((0.8, 5.2, 1.5), (-0.3, 6.6, 1.45), 24), {"me": me_at_player((-0.4, 6.6), -20, "worried", head=(20, 0))})
@@ -266,34 +272,55 @@ S("P03", cm((1.0, 6.85, 1.0), (0.82, 7.1, 0.89), 55), {})
 S("L57", cm((-0.3, 4.9, 1.3), (-0.3, 6.4, 1.3), 28), {"me": D((-0.3, 6.4), 0, "neutral", arms=(75, 0), head=(0, -12))})
 S("L58", cm((-0.8, 5.0, 1.3), (-0.81, 5.9, 1.2), 30), {"me": D((-0.3, 6.4), 0, "neutral", arms=(80, 0), head=(0, -12))})
 S("L59", cm((0.0, 4.6, 0.6), (0, 0.4, 1.55), 20), {"me": D((0.0, 3.8), 0, "worried", extra_walk=True)})
-S("L60", cm((-2.0, 0.0, 1.25), (-0.5, 0.0, 1.12), 24),
+# the meeting of the halves: Ros at (0,-0.6) facing +y, me at (0,0.6) facing -y, a pace and a bit (1.2 m) apart, palm on hand-back
+S("L60", cm((-1.6, 0.0, 0.95), (-0.5, 0.0, 0.95), 40),
   {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))})
-S("L61", cm((-2.6, 0.0, 1.3), (-0.5, 0.0, 1.12), 20),
+S("L61", cm((-1.7, 0.0, 0.95), (-0.5, 0.0, 0.95), 36),
   {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))})
-S("L62", cm((-1.3, 0.6, 1.55), (0, -0.45, 1.45), 38, (-1.2, 0.6, 1.55), (0, -0.45, 1.45), 42),
-  {"ros": D(ROS_AT, 180, "wide", arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))})
+S("L62", cm((-1.7, -1.7, 1.55), (0, -0.15, 1.5), 24, (-1.6, -1.6, 1.55), (0, -0.15, 1.5), 25),
+  {"ros": D(ROS_AT, 180, "wide", arms=(70, 70), head=(HT, 0)), "me": D(P_AT, 0, "neutral", arms=(70, 0), head=(-HT, 0))},
+  late={"ros": [("L62.3", {"expr": SM})]})
 S("L63", cm((0, -1.4, 0.9), (0, 0.4, 3.2), 22), {})
-S("L63.2", cm((-2.7, -3.3, 1.7), (0, 0.0, 1.25), 20), {"ros": D(ROS_AT, 180, SM, arms=(70, 70)),
-                                                      "me": D(P_AT, 0, SM, arms=(70, 0))})
-
-# ---------------------------------------------------------------------------------------------------- 08 kin
-S("L64", cm((0.6, 2.0, 1.55), (0, -0.6, 1.45), 28), {"ros": D(ROS_AT, 180, SM, arms=(70, 70)), "me": D(P_AT, 0, SM, arms=(70, 0))})
-S("L65", cm((-1.6, 0.0, 1.2), (-0.51, 0.0, 1.05), 30), {"ros": D(ROS_AT, 180, SM, arms=(70, 70)), "me": D(P_AT, 0, SM, arms=(70, 0))})
+# out of hold from here: the pair stands a pace apart along x, her hand-back on my palm between us, the class at the chairs watching
+PACE = {"ros": D((-0.6, 0.0), 90, SM, arms=(70, 70)), "me": D((0.6, 0.0), -90, SM, arms=(70, 0))}
+S("L63.2", cm((0.0, -6.8, 2.2), (0, 0.0, 1.2), 15), {**class_wall("neutral", x=2.2, dy=1.8), **PACE})
+S("L64", cm((0.9, -2.5, 1.55), (-0.3, 0.0, 1.45), 24), {**class_wall(SM, x=2.0, dy=1.8), **PACE})
+S("L65", cm((0.0, -1.3, 1.2), (0, 0.5, 1.08), 34), {**PACE})
 S("L66", cm((-0.2, 6.2, 1.4), (-0.5, 7.3, 1.0), 34), {})
 S("L66.3", cm((0.8, 5.5, 1.5), (-0.3, 6.5, 1.5), 28), {"me": me_at_player((-0.4, 6.5), 0, SM)})
-KIN = {"ros": D((0.0, -0.35), 180, SM, arms=(36, 36), side=(0, 30)), "me": D((0.0, 0.35), 0, SM, arms=(36, 0), side=(30, 0))}
-S("L67", cm((0, -5.2, 2.3), (0, 0.3, 1.4), 18), {**KIN, **class_wall(SM)})
-S("L68", cm((1.7, -0.2, 0.32), (0, 0.0, 0.12), 28),
-  {"ros": D((0.0, -0.2), 180, "worried", arms=(36, 36)), "me": D((0.0, 0.02), 0, SM, arms=(36, 0), z=0.09)})
-S("L68.2", cm((1.6, 0.15, 1.5), (0, -0.2, 1.45), 32),
-  {"ros": D((0.0, -0.2), 120, "worried", arms=(36, 36)), "me": D((0.0, 0.02), 0, SM, arms=(36, 0), z=0.09)})
-S("L69", cm((-0.4, -4.4, 1.6), (-3.0, -1.4, 1.4), 22), class_wall(SM, clap=True))
-S("L70", cm((1.5, -0.9, 1.55), (0, 0.0, 1.35), 24),
-  {"ros": D((0.0, -0.35), 180, SM, arms=(100, 36)), "me": D((0.0, 0.35), 0, SM, arms=(36, 0))})
+# L67: the demonstration. I lead Ros out by the hand (they walk in from the south end), then an open, upright teaching hold at
+# arm's length (1.2 m), heads apart, faces turned toward the class (the camera at the north end). Nobody closes their eyes.
+TEACH = {"ros": D((-0.6, 0.0), 90, SM, arms=(70, 70), head=(50, 0)), "me": D((0.6, 0.0), -90, SM, arms=(70, 0), head=(-50, 0))}
+S("L67", cm((0.0, 3.4, 1.9), (0, -1.2, 1.3), 21),
+  {"ros": D((-0.35, -3.6), 180, SM, arms=(0, 70)), "me": D((0.35, -3.6), 180, SM, arms=(70, 0)), **class_wall(SM, x=2.2, dy=1.8)},
+  walk={"ros": [("L67.4", (-0.6, 0.0), 90, dict(arms=[70, 70], head=[50, 0]))],
+        "me": [("L67.4", (0.6, 0.0), -90, dict(arms=[70, 0], head=[-50, 0]))]})
+# the comic feet: the frame is on the shoes alone; my shoe lands on her toe
+S("L68", cm((1.6, -0.1, 0.16), (0, -0.08, 0.1), 38, (1.45, -0.1, 0.15), (0, -0.08, 0.1), 44),
+  {"ros": D((0.0, -0.2), 180, "worried", arms=(0, 0)), "me": D((0.0, 0.02), 0, SM, arms=(0, 0), z=0.09)})
+# the same at arm's length: Ros winces and hops, I wince back, the class behind
+S("L68.2", cm((0.0, -3.4, 1.6), (0, 0.0, 1.35), 24),
+  {"ros": D((-0.6, 0.0), 90, "worried", arms=(70, 70), head=(40, 10)), "me": D((0.6, 0.0), -90, "worried", arms=(70, 0), head=(-40, 10)),
+   **class_wall(SM, x=2.2, dy=1.8)})
+# L69: Ros faces the class and points at my feet like a teacher, me beside her, the class laughing and clapping
+CLASS_ROW = {}
+for _i, _n in enumerate(("a1", "a2", "b1", "b2", "c1", "c2", "d1", "d2")):
+    CLASS_ROW[_n] = D((-1.75 + 0.5 * _i, -2.1), 180, SM, arms=(70, 70) if _i % 2 else (0, 0))
+L69_CLASS = {"c2": D((-1.3, 1.4), 0, SM, arms=(70, 70)), "a1": D((-0.85, 1.9), 0, SM, arms=(0, 70)),
+             "a2": D((-1.75, 2.0), 0, SM, arms=(70, 0))}
+S("L69", cm((0.0, -2.6, 1.3), (-0.05, 0.7, 0.95), 18),
+  {"ros": D((-0.7, 0.7), 80, SM, arms=(0, 42), head=(-50, 0)), "me": D((0.6, 0.7), -90, "worried", head=(10, 0)), **L69_CLASS})
+# L70: she straightens my collar (brief), then we both face the class, her hand-back on my palm
+S("L70", cm((0.0, -2.6, 1.55), (0, 0.5, 1.4), 28),
+  {"ros": D((-0.4, 0.5), 90, SM, arms=(100, 36)), "me": D((0.4, 0.5), -90, SM, arms=(36, 0)), **class_wall(SM, x=2.2, dy=1.8)},
+  walk={"ros": [("L70.3", (-0.45, 0.5), 0, dict(arms=[36, 36]))],
+        "me": [("L70.3", (0.45, 0.5), 0, dict(arms=[36, 0]))]})
 
 # ---------------------------------------------------------------------------------------------------- 09 the loop
-S("L71", cm((0.0, -3.4, 4.3), (0, 0.0, 0.9), 17), {"ros": D((0.0, -0.35), 180, SM, arms=(36, 36)),
-                                                  "me": D((0.0, 0.35), 0, SM, arms=(36, 0))})
+# L71: side by side facing the class, our joined hands raised the way the bus-stop strangers held theirs. No hold.
+S("L71", cm((0.0, -3.0, 1.8), (0, 0.2, 1.25), 19),
+  {"me": D((-0.55, 0.3), 62, SM, arms=(85, 0), head=(-30, 0)), "ros": D((0.55, 0.3), -62, SM, arms=(0, 85), head=(30, 0)),
+   **class_wall(SM, x=2.2, dy=1.8)})
 S("L72", cm((-0.7, -1.3, 1.3), (-0.55, 0.0, 1.2), 30), {"me": D((0.0, 0.35), 0, SM, arms=(88, 0))})
 S("L73", cm((0.0, 3.6, 0.9), (0, -0.6, 1.35), 20), {"ros": ros_demo()})
 S("L73.3", cm((0.5, -0.3, 0.15), (-0.2, -6.5, 0.1), 24), {"ros": ros_demo()})
@@ -324,6 +351,11 @@ for i, (at, cam, people, opt) in enumerate(SH):
             keys.append(k)
             last_pos[w] = sp["pos"]
             hidden_now[w] = False
+            for ref, extra in opt.get("late", {}).get(w, []):
+                keys.append({"at": ref, **extra})
+            for ref, wpos, wyaw, extra in opt.get("walk", {}).get(w, []):
+                keys.append({"at": ref, "pos": [wpos[0], wpos[1], 0.0], "yaw": wyaw, "blend": 0.5, **extra})
+                last_pos[w] = [wpos[0], wpos[1], 0.0]
             if walk:                      # L59: I walk toward the spot between its legs; cut before I get there
                 keys.append({"at": "L59+1.2", "pos": [0.0, 2.6, 0.0]})
                 last_pos[w] = [0.0, 2.6, 0.0]
@@ -347,7 +379,8 @@ cues = [
     {"at": "L65", "name": "hall", "chan": 1.0, "lamps": 1.0, "dur": 0.9},
     {"at": "L73", "name": "hall", "chan": 0.33, "lamps": 0.15, "dur": 1.2},
     # Ros's half dims across the story (every change over 0.4 s or more)
-    {"at": 0, "name": "ros_mark", "v": 1.0},
+    {"at": 0, "name": "ros_mark", "v": 0.45},
+    {"at": "L01.3", "name": "ros_mark", "v": 1.0, "dur": 0.6},   # off screen from the cut
     {"at": "L13.2", "name": "ros_mark", "v": 0.7, "dur": 0.5},
     {"at": "L17", "name": "ros_mark", "v": 0.5, "dur": 0.5},
     {"at": "L19", "name": "ros_mark", "v": 0.9, "dur": 0.4},
@@ -357,15 +390,15 @@ cues = [
     {"at": "L60", "name": "ros_mark", "v": 1.0, "dur": 0.6},
     # my half: a faint gold through the glove for a second at L13, then on my palm from L57
     {"at": 0, "name": "me_mark", "v": 0.0},
-    {"at": "L13.2", "name": "me_mark", "v": 0.7, "dur": 0.4},
-    {"at": "L13.2+0.8", "name": "me_mark", "v": 0.0, "dur": 0.4},
+    {"at": "L13.2", "name": "me_mark", "v": 0.3, "dur": 0.6},
+    {"at": "L13.2+0.8", "name": "me_mark", "v": 0.0, "dur": 0.6},
     {"at": "L58", "name": "me_mark", "v": 1.0, "dur": 0.6},
     # whole glyphs where two halves meet (0.6 s or more)
     {"at": 0, "name": "whole", "pair": "a", "v": 0.0},
-    {"at": "L01.4", "name": "whole", "pair": "a", "v": 1.0, "dur": 0.8},
-    {"at": "L02", "name": "whole", "pair": "a", "v": 0.0, "dur": 0.3},
-    {"at": "L02.1", "name": "whole", "pair": "c", "v": 1.0, "dur": 0.7},
-    {"at": "L03", "name": "whole", "pair": "g", "v": 1.0, "dur": 0.7},
+    {"at": "L01.4", "name": "whole", "pair": "a", "v": 1.0, "dur": 0.6},
+    {"at": "L03", "name": "whole", "pair": "a", "v": 0.0, "dur": 0.3},
+    {"at": "L03.1", "name": "whole", "pair": "c", "v": 1.0, "dur": 0.7},
+    {"at": "L03.4", "name": "whole", "pair": "g", "v": 1.0, "dur": 0.7},
     {"at": "L04.4", "name": "whole", "pair": "b", "v": 1.0, "dur": 0.7},
     {"at": "L05", "name": "whole", "pair": "d", "v": 1.0, "dur": 0.7},
     {"at": "L06", "name": "whole", "pair": "d", "v": 0.0, "dur": 0.6},
@@ -434,6 +467,7 @@ cues = [
 sfx = [
     # the street opener: a bus hiss under the bus line, a swell of cheering
     {"at": "L04.4", "kind": "whoosh", "db": -20, "dur": 1.4},
+    {"at": "L01.4+0.2", "kind": "hit", "db": -10, "dur": 1.0},   # the sound hit on "REST"
     {"at": "L01.4", "kind": "bell", "db": -26, "dur": 1.2},
     {"at": "L11", "kind": "bell", "db": -24, "dur": 1.2},
     # the creaks: a long low groan, lower each time it nears Ros
@@ -464,10 +498,10 @@ sfx = [
 ]
 story = {
     "slug": "ep54-dance-hall",
-    "title": "In this town, you're born with half a mark",
+    "title": "Someone has the other half of my mark",
     "made_for_kids": False,
-    "premise": "In a town where everyone is born with half a glowing glyph on one hand and a match out there with the rest, I play the records for Aunt Ros's Tuesday ballroom class in white gloves and never dance. Her half is fading, she dances every demonstration with her arms round nobody, and the floor starts to creak behind her in a stride far too long.",
-    "twist": "The rule never says which side of the hand. Mine is on my palm, hidden under my record gloves, and Ros's match has been carrying her records for forty years: a match can be family. It's whoever you fit with.",
+    "premise": "In a town where everyone is born with half a glowing glyph on one hand and a match out there with the rest, a friend or family, whoever you fit with, I play the records for my aunt Ros's Tuesday ballroom class in white gloves and never dance. Her half is fading, she dances every demonstration with her arms round nobody, and the floor starts to creak behind her in a stride far too long.",
+    "twist": "The rule never says which side of the hand. Mine is on my palm, hidden under my record gloves, so my aunt's match was her own nephew all along, carrying her records every Tuesday. We're a family match.",
     "world": "An old upstairs dance hall above a row of shops on Tuesday nights in autumn: a honey maple floor worn pale in a ring, primrose plaster, three tall arched windows of indigo night, bentwood chairs and one low brass chandelier of glass drops, with a sunny bus stop street for the opener.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ffcf66",
@@ -476,7 +510,7 @@ story = {
     "look": {"fog": "#c9d8e4", "fog_density": 0.012, "fog_start": 14.0, "sky": "#8fc6ea", "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.04, 0.02, -0.03], "saturation": 1.0,
               "contrast": 1.05, "vignette": 0.3, "bloom": 0.45, "grain": 0.01},
-    "phonemes": {},
+    "phonemes": {"her": "hˈɜɹ"},
     "cast": cast,
     "marks": marks,
     "pairs": pairs,
@@ -497,11 +531,12 @@ story = {
                   {"at": "L64", "mode": "major", "voices": ["drone", "pad", "piano", "pulse"], "energy": 0.6},
                   {"at": "L71", "mode": "minor", "voices": ["drone"], "energy": 0.3},
               ]},
-    "sound": {"floor": "wood", "steps_db": -24,
-              "floor_spans": [{"from": "L01", "to": "L08", "floor": "grass"}],
+    "sound": {"floor": "wood", "steps_db": -24, "rev": 3,
+              "floor_spans": [{"from": "L01.3", "to": "L08", "floor": "grass"}],
               "ambience": [
-                  {"kind": "wind", "from": 0, "to": "L08", "lufs": -40},
-                  {"kind": "hum", "from": 0, "to": "L08", "lufs": -44},
+                  {"kind": "room", "from": 0, "to": "L01.3", "lufs": -40},
+                  {"kind": "wind", "from": "L01.3", "to": "L08", "lufs": -40},
+                  {"kind": "hum", "from": "L01.3", "to": "L08", "lufs": -44},
                   {"kind": "room", "from": "L08", "to": "L24", "lufs": -40},
                   {"kind": "drone", "from": "L24", "to": "end", "lufs": -34},
                   {"kind": "room", "from": "L24", "to": "end", "lufs": -42},

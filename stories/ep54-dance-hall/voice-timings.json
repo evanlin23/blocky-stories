@@ -6,7 +6,7 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "in this town, you're born with half a mark. your match has the rest.",
+   "text": "everyone's born with half a mark. someone out there has the rest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -17,22 +17,18 @@
    "chunks": [
     [
      0.172,
-     0.534
+     0.698
     ],
     [
-     0.56,
-     0.836
+     0.698,
+     0.922
     ],
     [
-     0.836,
-     1.061
+     0.922,
+     1.293
     ],
     [
-     1.061,
-     1.448
-    ],
-    [
-     1.517,
+     1.371,
      1.828
     ],
     [
@@ -42,54 +38,66 @@
    ]
   },
   "L02": {
-   "text": "speed dating is one wave down the line.",
+   "text": "never cover yours. not even in winter.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
-   "onset": 0.172,
-   "end": 1.862,
+   "dur": 2.172,
+   "onset": 0.19,
+   "end": 1.966,
    "chunks": [
     [
-     0.172,
-     0.638
+     0.19,
+     0.966
     ],
     [
-     0.638,
-     1.172
+     1.017,
+     1.301
     ],
     [
-     1.172,
-     1.862
+     1.301,
+     1.966
     ]
    ]
   },
   "L03": {
-   "text": "one man's match is his postman. they've never been happier.",
+   "text": "a match is whoever you fit with, friend or family. one old man's match is his brother.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.793,
+   "dur": 3.914,
    "onset": 0.172,
-   "end": 2.586,
+   "end": 3.707,
    "chunks": [
     [
      0.172,
-     0.793
+     0.448
     ],
     [
-     0.793,
-     1.431
+     0.448,
+     0.716
     ],
     [
-     1.5,
-     1.828
+     0.716,
+     1.103
     ],
     [
-     1.828,
-     2.586
+     1.164,
+     2.121
+    ],
+    [
+     2.215,
+     2.768
+    ],
+    [
+     2.768,
+     3.0
+    ],
+    [
+     3.0,
+     3.707
     ]
    ]
   },
@@ -130,30 +138,34 @@
    ]
   },
   "L05": {
-   "text": "my neighbors match. they argue every day, and love it.",
+   "text": "the twins next door match. they argue every day, and love it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.517,
-   "onset": 0.172,
-   "end": 2.328,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.707,
    "chunks": [
     [
-     0.172,
-     0.862
+     0.155,
+     0.5
     ],
     [
-     0.931,
-     1.276
+     0.5,
+     1.207
     ],
     [
-     1.276,
-     1.655
+     1.293,
+     1.638
     ],
     [
-     1.681,
-     2.328
+     1.638,
+     2.034
+    ],
+    [
+     2.06,
+     2.707
     ]
    ]
   },
@@ -182,34 +194,30 @@
    ]
   },
   "L07": {
-   "text": "aunt ross has looked for her other half for 40 years.",
+   "text": "my aunt, ross, has looked for her match for 40 years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.466,
+   "dur": 2.534,
    "onset": 0.172,
-   "end": 2.276,
+   "end": 2.345,
    "chunks": [
     [
      0.172,
-     0.578
+     0.724
     ],
     [
-     0.578,
-     0.862
-    ],
-    [
-     0.862,
+     0.776,
      1.017
     ],
     [
      1.017,
-     1.414
+     1.483
     ],
     [
-     1.414,
-     2.276
+     1.483,
+     2.345
     ]
    ]
   },
@@ -274,26 +282,26 @@
    ]
   },
   "L10": {
-   "text": "every couple waltzes, hand backs touching.",
+   "text": "every pair waltzes, hand backs touching.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 2.121,
    "onset": 0.172,
-   "end": 2.052,
+   "end": 1.931,
    "chunks": [
     [
      0.172,
-     0.586
+     0.517
     ],
     [
-     0.586,
-     1.483
+     0.517,
+     1.362
     ],
     [
-     1.483,
-     2.052
+     1.362,
+     1.931
     ]
    ]
   },
@@ -327,49 +335,49 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.052,
+   "dur": 3.103,
    "onset": 0.172,
-   "end": 2.862,
+   "end": 2.914,
    "chunks": [
     [
      0.172,
-     0.75
+     0.716
     ],
     [
-     0.75,
-     1.569
+     0.716,
+     1.552
     ],
     [
-     1.569,
-     2.017
+     1.552,
+     2.069
     ],
     [
-     2.017,
-     2.862
+     2.069,
+     2.914
     ]
    ]
   },
   "L13": {
-   "text": "eyes closed, the way she always does.",
+   "text": "eyes closed, counting the steps.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.948,
+   "dur": 1.707,
    "onset": 0.19,
-   "end": 1.741,
+   "end": 1.517,
    "chunks": [
     [
      0.19,
      0.655
     ],
     [
-     0.681,
-     0.862
+     0.69,
+     0.922
     ],
     [
-     0.862,
-     1.741
+     0.922,
+     1.517
     ]
    ]
   },
@@ -385,18 +393,18 @@
    "chunks": [
     [
      0.172,
-     0.672
+     0.638
     ],
     [
-     0.698,
-     1.034
+     0.672,
+     1.069
     ],
     [
-     1.034,
-     1.147
+     1.069,
+     1.181
     ],
     [
-     1.147,
+     1.181,
      1.828
     ]
    ]
@@ -407,9 +415,9 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
+   "dur": 2.138,
    "onset": 0.172,
-   "end": 1.879,
+   "end": 1.931,
    "chunks": [
     [
      0.172,
@@ -417,11 +425,11 @@
     ],
     [
      0.732,
-     1.241
+     1.224
     ],
     [
-     1.241,
-     1.879
+     1.224,
+     1.931
     ]
    ]
   },
@@ -503,21 +511,21 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.759,
+   "dur": 1.81,
    "onset": 0.172,
-   "end": 1.569,
+   "end": 1.621,
    "chunks": [
     [
      0.172,
      0.483
     ],
     [
-     0.509,
-     0.776
+     0.517,
+     0.862
     ],
     [
-     0.776,
-     1.569
+     0.862,
+     1.621
     ]
    ]
   },
@@ -651,61 +659,61 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.931,
+   "dur": 3.034,
    "onset": 0.155,
-   "end": 2.741,
+   "end": 2.845,
    "chunks": [
     [
      0.155,
-     0.647
+     0.707
     ],
     [
-     0.647,
-     1.121
+     0.707,
+     1.19
     ],
     [
-     1.121,
-     1.552
+     1.19,
+     1.638
     ],
     [
-     1.552,
-     1.837
+     1.638,
+     1.923
     ],
     [
-     1.837,
-     1.966
+     1.923,
+     2.069
     ],
     [
-     1.966,
-     2.741
+     2.069,
+     2.845
     ]
    ]
   },
   "L26": {
-   "text": "toes pointed at where her partner would stand.",
+   "text": "toes pointed at where a partner would stand.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
+   "dur": 2.052,
    "onset": 0.172,
-   "end": 1.897,
+   "end": 1.845,
    "chunks": [
     [
      0.172,
-     0.724
+     0.707
     ],
     [
-     0.724,
-     0.87
+     0.707,
+     0.854
     ],
     [
-     0.87,
-     1.215
+     0.854,
+     1.164
     ],
     [
-     1.215,
-     1.897
+     1.164,
+     1.845
     ]
    ]
   },
@@ -739,25 +747,25 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.19,
-   "end": 1.793,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
    "chunks": [
     [
-     0.19,
-     0.439
+     0.172,
+     0.448
     ],
     [
-     0.439,
-     0.81
+     0.448,
+     0.845
     ],
     [
-     0.879,
-     1.138
+     0.914,
+     1.172
     ],
     [
-     1.138,
-     1.793
+     1.172,
+     1.828
     ]
    ]
   },
@@ -895,37 +903,37 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
+   "dur": 2.19,
    "onset": 0.172,
-   "end": 1.879,
+   "end": 1.983,
    "chunks": [
     [
      0.172,
-     0.534
+     0.552
     ],
     [
-     0.56,
-     0.69
+     0.586,
+     0.81
     ],
     [
-     0.69,
-     1.172
+     0.81,
+     1.293
     ],
     [
-     1.207,
-     1.879
+     1.328,
+     1.983
     ]
    ]
   },
   "L35": {
-   "text": "she went to the station to meet a stranger whose half might match.",
+   "text": "she went to the station to meet a cousin whose half might match.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.569,
+   "dur": 2.534,
    "onset": 0.19,
-   "end": 2.362,
+   "end": 2.328,
    "chunks": [
     [
      0.19,
@@ -941,15 +949,15 @@
     ],
     [
      0.974,
-     1.362
+     1.31
     ],
     [
-     1.362,
-     1.707
+     1.31,
+     1.672
     ],
     [
-     1.707,
-     2.362
+     1.672,
+     2.328
     ]
    ]
   },
@@ -959,9 +967,9 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.724,
+   "dur": 1.741,
    "onset": 0.172,
-   "end": 1.534,
+   "end": 1.552,
    "chunks": [
     [
      0.172,
@@ -969,11 +977,11 @@
     ],
     [
      0.5,
-     0.784
+     0.802
     ],
     [
-     0.784,
-     1.534
+     0.802,
+     1.552
     ]
    ]
   },
@@ -1230,38 +1238,46 @@
    ]
   },
   "L46": {
-   "text": "two burgundy legs, three times too long, stand either side of her partner's spot.",
+   "text": "two burgundy legs, three times too long, stand either side of the empty spot in front of her.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.672,
+   "dur": 4.172,
    "onset": 0.172,
-   "end": 3.466,
+   "end": 3.983,
    "chunks": [
     [
      0.172,
-     0.828
+     0.897
     ],
     [
-     0.862,
-     1.276
+     0.948,
+     1.362
     ],
     [
-     1.276,
-     1.724
+     1.362,
+     1.862
     ],
     [
-     1.81,
-     2.457
+     1.957,
+     2.595
     ],
     [
-     2.457,
-     2.586
+     2.595,
+     2.741
     ],
     [
-     2.586,
-     3.466
+     2.741,
+     3.215
+    ],
+    [
+     3.215,
+     3.439
+    ],
+    [
+     3.439,
+     3.983
     ]
    ]
   },
@@ -1538,58 +1554,54 @@
    ]
   },
   "L58": {
-   "text": "on my palm, glowing gold, is the other half.",
+   "text": "on, my palm, glowing gold, is the rest of hers.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.293,
-   "onset": 0.155,
-   "end": 2.103,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.293,
    "chunks": [
     [
-     0.155,
-     0.638
+     0.172,
+     0.655
     ],
     [
-     0.672,
-     1.259
+     0.69,
+     1.293
     ],
     [
-     1.31,
-     1.457
+     1.345,
+     1.681
     ],
     [
-     1.457,
-     2.103
+     1.681,
+     2.293
     ]
    ]
   },
   "L59": {
-   "text": "i walk out between those legs, into her partner's spot.",
+   "text": "i walk out between those legs, to my aunt.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.672,
+   "dur": 2.069,
    "onset": 0.19,
-   "end": 2.483,
+   "end": 1.879,
    "chunks": [
     [
      0.19,
-     0.56
+     0.543
     ],
     [
-     0.56,
-     1.293
+     0.543,
+     1.172
     ],
     [
-     1.362,
-     1.603
-    ],
-    [
-     1.603,
-     2.483
+     1.207,
+     1.879
     ]
    ]
   },
@@ -1599,9 +1611,9 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.966,
+   "dur": 2.0,
    "onset": 0.172,
-   "end": 1.759,
+   "end": 1.793,
    "chunks": [
     [
      0.172,
@@ -1609,15 +1621,15 @@
     ],
     [
      0.406,
-     0.784
+     0.768
     ],
     [
-     0.784,
-     1.077
+     0.768,
+     1.061
     ],
     [
-     1.077,
-     1.759
+     1.061,
+     1.793
     ]
    ]
   },
@@ -1642,22 +1654,30 @@
    ]
   },
   "L62": {
-   "text": "ross opens her eyes.",
+   "text": "ross opens her eyes and sees her nephew.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.19,
-   "end": 1.259,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.879,
    "chunks": [
     [
-     0.19,
-     0.629
+     0.172,
+     0.56
     ],
     [
-     0.629,
-     1.259
+     0.56,
+     0.983
+    ],
+    [
+     0.983,
+     1.25
+    ],
+    [
+     1.25,
+     1.879
     ]
    ]
   },
@@ -1690,54 +1710,58 @@
    ]
   },
   "L64": {
-   "text": "a match can be family.",
+   "text": "we're a family match.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.431,
+   "dur": 1.328,
    "onset": 0.172,
-   "end": 1.241,
+   "end": 1.121,
    "chunks": [
     [
      0.172,
-     0.448
+     0.336
     ],
     [
-     0.448,
-     1.241
+     0.336,
+     1.121
     ]
    ]
   },
   "L65": {
-   "text": "it's whoever you fit with.",
+   "text": "nobody thinks to check a palm.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.431,
-   "onset": 0.172,
-   "end": 1.224,
+   "dur": 1.672,
+   "onset": 0.19,
+   "end": 1.483,
    "chunks": [
     [
-     0.172,
-     0.517
+     0.19,
+     0.457
     ],
     [
-     0.517,
-     1.224
+     0.457,
+     0.888
+    ],
+    [
+     0.888,
+     1.483
     ]
    ]
   },
   "L66": {
-   "text": "40 years, and her other half was carrying her records.",
+   "text": "40 years, and her match was carrying her records.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.552,
+   "dur": 2.466,
    "onset": 0.172,
-   "end": 2.362,
+   "end": 2.276,
    "chunks": [
     [
      0.172,
@@ -1745,47 +1769,47 @@
     ],
     [
      0.707,
-     0.862
+     1.129
     ],
     [
-     0.862,
-     1.267
+     1.129,
+     1.517
     ],
     [
-     1.267,
-     1.664
-    ],
-    [
-     1.664,
-     2.362
+     1.517,
+     2.276
     ]
    ]
   },
   "L67": {
-   "text": "next tuesday, we dance the demonstration together.",
+   "text": "next tuesday, i walk my aunt out for the demonstration.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.586,
+   "dur": 2.655,
    "onset": 0.172,
-   "end": 2.379,
+   "end": 2.466,
    "chunks": [
     [
      0.172,
      0.793
     ],
     [
-     0.845,
-     1.259
+     0.862,
+     1.138
     ],
     [
-     1.259,
-     1.81
+     1.138,
+     1.397
     ],
     [
-     1.81,
-     2.379
+     1.397,
+     1.594
+    ],
+    [
+     1.594,
+     2.466
     ]
    ]
   },
@@ -1795,9 +1819,9 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
+   "dur": 1.724,
    "onset": 0.172,
-   "end": 1.5,
+   "end": 1.517,
    "chunks": [
     [
      0.172,
@@ -1805,35 +1829,43 @@
     ],
     [
      0.423,
-     0.759
+     0.776
     ],
     [
-     0.759,
-     1.5
+     0.776,
+     1.517
     ]
    ]
   },
   "L69": {
-   "text": "the whole class laughs and claps.",
+   "text": "the class laughs as ross shows them what not to do.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.672,
+   "dur": 2.328,
    "onset": 0.155,
-   "end": 1.483,
+   "end": 2.103,
    "chunks": [
     [
      0.155,
-     0.603
+     0.672
     ],
     [
-     0.603,
-     0.854
+     0.672,
+     1.008
     ],
     [
-     0.854,
-     1.483
+     1.008,
+     1.345
+    ],
+    [
+     1.345,
+     1.603
+    ],
+    [
+     1.603,
+     2.103
     ]
    ]
   },
@@ -1866,7 +1898,7 @@
    ]
   },
   "L71": {
-   "text": "in this town, you're born with half a mark. your match has the rest.",
+   "text": "everyone's born with half a mark. someone out there has the rest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1877,22 +1909,18 @@
    "chunks": [
     [
      0.172,
-     0.534
+     0.698
     ],
     [
-     0.56,
-     0.836
+     0.698,
+     0.922
     ],
     [
-     0.836,
-     1.061
+     0.922,
+     1.293
     ],
     [
-     1.061,
-     1.448
-    ],
-    [
-     1.517,
+     1.371,
      1.828
     ],
     [
@@ -1902,22 +1930,22 @@
    ]
   },
   "L72": {
-   "text": "mine was on my palm.",
+   "text": "mine is my aunt.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.414,
+   "dur": 1.259,
    "onset": 0.19,
-   "end": 1.224,
+   "end": 1.069,
    "chunks": [
     [
      0.19,
-     0.457
+     0.397
     ],
     [
-     0.457,
-     1.224
+     0.397,
+     1.069
     ]
    ]
   },

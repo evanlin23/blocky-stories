@@ -39,22 +39,23 @@ DEFAULTS = {
     "whoosh": True, "whoosh_db": -19.0, "whoosh_gap": 1.4, "whoosh_lp": 3000.0,
     "hits": True, "hit_db": -17.0, "reveal_db": -11.0,
     "riser": True, "riser_db": -15.0, "riser_dur": 1.8,
-    "bed": True, "bed_kind": None, "bed_lufs": -41.0, "bed_drop_db": -12.0,
+    "bed": True, "bed_kind": None, "bed_lufs": -44.0, "bed_drop_db": -12.0,
     "marks": True, "mark_db": -14.0,
-    "duck": True, "duck_db": 6.0,
+    "duck": True, "duck_db": 8.0, "music_duck_db": "auto", "voice_gap_db": 10.5,
     # captions
     "pop": True,
     # motion
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
-    "ones": "walk", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
+    "ones": "moving", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
     # picture
     "grade": "bright",
     # builder marks
     "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [],
+    "punch_cap": {},     # opt-in: {shot id: most the punch-in may zoom there} (a head that must stay in frame)
 }
 GRADES = {
     # lift: a toe that raises the darkest tones (out + lift * (1 - out)^3), so shadows keep their detail on a TV
-    "bright": {"exposure_min": 1.04, "saturation_min": 1.06, "contrast_max": 1.05, "vignette_max": 0.2,
+    "bright": {"exposure_min": 1.04, "saturation_min": 1.1, "contrast_max": 1.05, "vignette_max": 0.2,
                "grain_max": 0.009, "lift": 0.035},
     "none": {},
 }
@@ -261,10 +262,21 @@ def _static(shot_spec: dict | None) -> bool:
     return len(cam) <= 1 or all(c[1:] == cam[0][1:] for c in cam)
 
 
+def ones_for_moving(tl: dict, st: dict, p: dict) -> None:
+    """`ones: "moving"`: shots on twos where the camera moves (its own keys, a follow, or the pack's move) or
+    somebody walks are drawn on every frame, so a move doesn't judder at 15 drawings a second. With the pack's
+    camera moves that's nearly every shot: 1.7 to 2.0 times the drawing (docs/research/polish-pack.md → v2.1)."""
+    ones_for_walks(tl, st)
+    specs = cam_specs(st, tl, p)
+    for s in tl["shots"]:
+        if s["step"] == 2 and not _static(specs.get(s["id"])):
+            s["step"] = 1
+
+
 def ones_for_walks(tl: dict, st: dict) -> None:
-    """`ones: "walk"`: shots on twos where somebody walks are drawn on every frame instead (legs on twos read
-    choppy). It adds about 7% to the drawing on our stories, where every shot on ones would add 70 to 100%
-    (docs/research/polish-pack.md)."""
+    """`ones: "walk"` (the opt-out from the default "moving"): shots on twos where somebody walks are drawn on every
+    frame instead (legs on twos read choppy). It adds about 9% to the drawing on our stories, where "moving" adds 87
+    to 98% (docs/research/polish-pack.md)."""
     from blocky import acting
     for s in tl["shots"]:
         if s["step"] != 2:
@@ -363,7 +375,7 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
                 # held to the cut (no zoom back out mid-shot), at most 2.5 s, then it eases back over 0.4 s
                 x = t - te
                 amt = _ease(x / 0.12) * (1 - _ease((x - 2.5) / 0.4))
-                zoom *= 1 + p["punch"] * amt
+                zoom *= 1 + min(p["punch"], (p.get("punch_cap") or {}).get(shot["id"], p["punch"])) * amt
     sway = p.get("sway")
     if sway and (sway is True or shot["id"] in sway):
         a = p["sway_amp"]
