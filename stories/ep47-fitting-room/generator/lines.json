@@ -4,20 +4,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this town,",
-    "In this town,"
+    "Don't LIE",
+    "Don't lie"
    ],
    [
-    "every LIE you tell",
-    "every lie you tell"
+    "in this TOWN.",
+    "in this town."
    ],
    [
-    "pins a white TAG",
-    "pins a white tag"
+    "Every lie pins",
+    "Every lie pins"
    ],
    [
-    "to your CLOTHES.",
-    "to your clothes."
+    "a TAG on you.",
+    "a tag on you."
    ]
   ]
  },
@@ -26,12 +26,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "The man who sells SHOES",
-    "The man who sells shoes"
+    "My UNCLE never lies.",
+    "My uncle never lies."
    ],
    [
-    "looks like a SNOWMAN.",
-    "looks like a snowman."
+    "He's COVERED in them.",
+    "He's covered in them."
    ]
   ]
  },
@@ -621,12 +621,12 @@
     "he tells me,"
    ],
    [
-    "\"It's a lovely place,",
-    "it's a lovely place,"
+    "\"It's a nice place,",
+    "it's a nice place,"
    ],
    [
-    "LAD.\"",
-    "lad."
+    "KID.\"",
+    "kid."
    ]
   ]
  },
@@ -1245,6 +1245,14 @@
    [
     "every WORD.",
     "every word."
+   ],
+   [
+    "So take it",
+    "so take it"
+   ],
+   [
+    "from a LIAR.",
+    "from a liar."
    ]
   ]
  }

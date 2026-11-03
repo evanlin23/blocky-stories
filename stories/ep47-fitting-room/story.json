@@ -1,6 +1,6 @@
 {
  "slug": "ep47-fitting-room",
- "title": "In This Town Every LIE Pins a Tag to Your Clothes",
+ "title": "In this town, every lie you tell pins a tag to your clothes",
  "made_for_kids": false,
  "premise": "In a town where every lie you tell pins a small white tag to your clothes, I've never had one. I'm back for a week to help Uncle Aurel shut the alterations shop where he taught me to cut. He has never told a lie in his life, but every time a customer asks after me, a tag pins onto him. By night the fitting-room curtain draws itself, my old bench gets chalked up for a suit, and a tape measure lies on the floor in the shape of a person where I used to stand.",
  "twist": "A lie you believe never gets a tag. I never had one because for two years I told myself I was happy in the city, and believed it. Uncle knew all along, and every tag on him is the same lie, my nephew's happy in the city, told to every customer so I could stay away without guilt. A suit with nobody in it stands in my place until I say the truth out loud and step back up to my bench.",
@@ -379,28 +379,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this town,",
-     "In this town,"
+     "Don't LIE",
+     "Don't lie"
     ],
     [
-     "every LIE",
-     "every lie"
+     "in this TOWN.",
+     "in this town."
     ],
     [
-     "you tell",
-     "you tell"
+     "Every lie pins",
+     "Every lie pins"
     ],
     [
-     "pins a",
-     "pins a"
+     "a TAG",
+     "a tag"
     ],
     [
-     "white TAG",
-     "white tag"
-    ],
-    [
-     "to your CLOTHES.",
-     "to your clothes."
+     "on you.",
+     "on you."
     ]
    ]
   },
@@ -409,20 +405,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "The man who",
-     "The man who"
+     "My UNCLE",
+     "My uncle"
     ],
     [
-     "sells SHOES",
-     "sells shoes"
+     "never lies.",
+     "never lies."
     ],
     [
-     "looks like",
-     "looks like"
+     "He's COVERED",
+     "He's covered"
     ],
     [
-     "a SNOWMAN.",
-     "a snowman."
+     "in them.",
+     "in them."
     ]
    ]
   },
@@ -1106,12 +1102,12 @@
      "it's a"
     ],
     [
-     "lovely place,",
-     "lovely place,"
+     "nice place,",
+     "nice place,"
     ],
     [
-     "LAD.\"",
-     "lad."
+     "KID.\"",
+     "kid."
     ]
    ]
   },
@@ -1810,6 +1806,14 @@
     [
      "every WORD.",
      "every word."
+    ],
+    [
+     "So take it",
+     "so take it"
+    ],
+    [
+     "from a LIAR.",
+     "from a liar."
     ]
    ]
   }
@@ -1872,7 +1876,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "wide down the arcade",
-   "at": "L01.3"
+   "at": "L01.2"
   },
   {
    "id": "S03",
@@ -7116,7 +7120,7 @@
     "yaw": 180
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      -0.5,
      1.8
@@ -7129,7 +7133,7 @@
    },
    {
     "from": 0,
-    "to": "L01.3",
+    "to": "L01.2",
     "mouth": [
      0.55,
      0.55
@@ -7137,14 +7141,14 @@
     "flap": true
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      -0.5,
      1.8
     ]
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      0.8,
      -3.0
@@ -7372,7 +7376,7 @@
     "yaw": 180
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      0.5,
      1.8
@@ -7526,14 +7530,14 @@
     "blend": 0
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      0,
      40
     ]
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      -1.5,
      -6
@@ -7748,14 +7752,14 @@
     "blend": 0
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      0,
      40
     ]
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      1.8,
      -9
@@ -7851,14 +7855,14 @@
     "blend": 0
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      0,
      40
     ]
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      -2.2,
      -12
@@ -7908,14 +7912,14 @@
     "blend": 0
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      0,
      40
     ]
    },
    {
-    "at": "L01.3",
+    "at": "L01.2",
     "pos": [
      2.2,
      -14
@@ -8673,7 +8677,7 @@
    }
   ]
  },
- "sound": {"rev": 2, 
+ "sound": {
   "floor": "wood",
   "steps_db": -22,
   "ambience": [
