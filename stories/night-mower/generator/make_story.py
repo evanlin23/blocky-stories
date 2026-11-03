@@ -24,7 +24,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
 GAP = 0.12
 # word-check pins: the voice's own spelling for lines the word check mishears (captions stay as written)
-TEMPO = {"L05": 0.82, "L37": 0.9, "L40": 0.94, "L29": 0.9}
+TEMPO = {"L05": 1.15, "L34": 0.85, "L37": 0.9, "L40": 0.94, "L29": 0.9}
 for ln in lines:
     if ln["id"] == "L29":
         ln["chunks"][0][1] = "Straight. At Dad."     # the word check hears "to" at this speed
@@ -75,6 +75,8 @@ def stage(at, **ents):
             kw = dict(rest[0]) if rest else {}
             if who == "odell" and expr == "shut" and "arms" not in kw:
                 kw["arms"] = [62, 62]          # his hands on the mower's handle bar
+            if expr == "shut":
+                expr = "asleep"            # flat drooping lids, never the up-arcs that read as a smile
             _put(who, at, pos, yaw=yaw, expr=expr, **kw)
         else:
             acting[who].append({"at": at, "hidden": True, "blend": 0})
@@ -114,15 +116,15 @@ def shot(sid, at, cam, note, day=0, step=2, hand=0.008, follow=None, **look):
 
 Z2 = 2.8   # the bedroom floor
 # ---------------------------------------------------------------------------------------------------- 01 the rule
-shot("S01", 0, C((9.0, 5.2, 1.2), (9.0, 9.4, 1.45), 36, (9.0, 6.2, 1.2), (9.0, 9.4, 1.5), 40),
-     "frame 1: low, floodlit, Mr. Odell pushing the red mower straight at us, eyes shut, pushing in")
+shot("S01", 0, C((0.0, -2.5, 1.42), (0.0, 0.0, 1.62), 27, (0.0, -1.95, 1.42), (0.0, 0.0, 1.62), 27),
+     "frame 1: Mr. Odell's shut-eyed face fills a third of the frame, the mower's handle below, floodlit, pushing in", follow="odell", hand=0.004)
 stage(0, odell=((9.0, 10.9, 0), 0, "shut", {"arms": [0, 0]}))
 walk("odell", "L01.3", (9.0, 9.6, 0))
 shot("S01b", "L01.3", C((9.7, 7.4, 0.95), (9.0, 9.5, 1.55), 42, (9.4, 8.0, 1.0), (9.0, 9.4, 1.56), 48),
      "closer: his shut-eyed face over the deck, the hit on RUNNING")
 stage("L01.3", odell=((9.0, 9.6, 0), 0, "shut"))
 walk("odell", "L02", (9.0, 9.0, 0))
-shot("S02", "L02", C((-6.0, 13.6, 4.35), (-6.0, 12.3, 4.35), 32, (-6.0, 13.1, 4.35), (-6.0, 12.3, 4.35), 34),
+shot("S02", "L02", C((-6.9, 13.0, 4.75), (-5.4, 11.6, 3.7), 30, (-6.6, 12.8, 4.7), (-5.2, 11.5, 3.65), 32),
      "inside the dark room, close on the blinds: one slat dips and a green stripe cuts across")
 stage("L02")
 shot("S03", "L03", C((-2.6, -1.8, 3.1), (-6.4, -9.0, 3.9), 38, (-3.2, -2.6, 3.2), (-6.6, -9.0, 3.9), 40),
@@ -210,14 +212,14 @@ stage("L22")
 shot("S26", "L23", C((-4.6, 8.2, 1.6), (-8.2, 10.8, 1.6), 38, (-4.9, 8.6, 1.6), (-8.2, 10.8, 1.6), 40),
      "our porch: Dad in his robe, binoculars raised, angry")
 stage("L23", dadn=((-8.2, 10.8, 0.2), 90, "angry", {"arms": [80, 80]}))
-shot("S27", "L23.2", C((-9.4, 10.2, 1.75), (7.0, 9.2, 1.2), 82, (-9.4, 10.2, 1.75), (6.4, 9.2, 1.2), 90),
-     "over his shoulder: the floodlit lawn, Mr. Odell mowing, eyes shut", hand=0.004)
+shot("S27", "L23.2", C((-9.4, 9.6, 1.75), (7.0, 9.2, 1.2), 82),
+     "over his shoulder: the floodlit lawn, Mr. Odell mowing, eyes shut", hand=0.0)
 stage("L23.2", dadn=((-8.2, 10.8, 0.2), 90, "angry", {"arms": [80, 80]}), odell=((5.0, 10.6, 0), 0, "shut"))
 walk("odell", "L24", (5.0, 9.3, 0))
 shot("S28", "L24", C((-4.8, 16.6, Z2 + 1.5), (-7.6, 13.5, Z2 + 0.9), 24, (-5.0, 16.2, Z2 + 1.5), (-7.6, 13.5, Z2 + 0.9), 24),
      "me at the desk, scared, the empty chair rolls across to the window", step=1)
 stage("L24", me=((-8.6, 13.3, Z2), 90, "scared"))
-shot("S29", "L25", C((10.4, 6.6, 0.45), (7.2, 8.6, 0.65), 32, (9.8, 6.6, 0.5), (7.2, 8.6, 0.7), 34),
+shot("S29", "L25", C((10.4, 6.6, 0.45), (7.2, 8.6, 0.65), 32, (10.15, 6.6, 0.47), (7.2, 8.6, 0.67), 33),
      "low on the lawn: the mower rolling over the top of the hump", step=1)
 stage("L25", odell=((7.0, 11.0, 0.0), 0, "shut"))
 walk("odell", "L25.2", (7.0, 8.7, 0.3))
@@ -245,11 +247,11 @@ stage("L29", dadn=((-8.2, 10.8, 0.2), 90, "scared", {"arms": [45, 45], "tremble"
 shot("S36", "L30", C((7.6, 1.4, 5.3), (7.2, 8.5, -0.2), 20, (7.4, 2.4, 4.8), (7.2, 8.5, -0.2), 22),
      "the eye, the highlight now aimed toward our porch", step=1, hand=0.004, flood=0.55)
 stage("L30", odell=((10.0, 6.6, 0), 90, "shut"))
-shot("S37", "L31", C((-15.0, 3.2, 0.95), (2.0, 5.0, 0.8), 28, (-12.0, 3.2, 0.95), (2.0, 5.0, 0.8), 28),
-     "the street at night: a row of plain mailboxes leaning toward our house", step=1)
+shot("S37", "L31", C((-7.5, -2.0, 1.1), (-7.5, 5.0, 1.15), 15, (-7.5, -1.5, 1.1), (-7.5, 5.0, 1.15), 15),
+     "the street at night: a row of five plain mailboxes tipping toward our house", step=1)
 stage("L31")
-shot("S38", "L31.2", C((-9.0, 9.6, 1.9), (-7.2, 11.1, 1.8), 34, (-8.7, 9.8, 1.9), (-7.2, 11.1, 1.8), 36),
-     "our porch light swaying toward the lawn", step=1)
+shot("S38", "L31.2", C((-7.2, 7.2, 1.5), (-7.2, 11.1, 1.95), 28, (-7.2, 7.5, 1.5), (-7.2, 11.1, 1.95), 30),
+     "outside: our porch light hanging under the porch roof, swaying toward the lawn", step=1)
 stage("L31.2")
 
 # ---------------------------------------------------------------------------------------------------- 06 said plainly
@@ -267,9 +269,9 @@ key("me", "L33.4+0.9", head=[0, 12], blend=0.2)
 shot("S42", "L34", C((13.4, 4.4, 1.5), (7.2, 8.6, 0.1), 28, (13.0, 4.8, 1.4), (7.2, 8.6, 0.1), 28),
      "low across the lawn: the open eye in the middle ground, his mint house behind", step=1)
 stage("L34", odell=((10.6, 6.0, 0), 90, "shut"))
-shot("S43", "L35", C((3.2, 8.5, 20.0), (3.2, 8.5, 0.0), 18, (3.2, 8.5, 17.0), (3.2, 8.5, 0.0), 18),
-     "high above our roof: the open eye, the brow stripes, the low fence and our round bald circle in one frame", step=1, hand=0.0)
-stage("L35")
+shot("S43", "L34.1-0.25", C((3.8, 4.0, 28.0), (3.8, 8.0, 0.0), 18, (3.8, 4.0, 25.0), (3.8, 8.0, 0.0), 18),
+     "high above our roof: the open eye, the brow stripes, the low fence and our round bald circle in one frame", step=1, hand=0.0, exposure=0.5)
+stage("L34.1-0.25")
 shot("S44", "L36", C((7.2, 2.4, 5.4), (7.2, 8.6, 0.0), 24, (7.2, 3.0, 5.0), (7.2, 8.6, 0.0), 24),
      "the striped lawn over the eye, the stripes bowing over it", step=1)
 stage("L36")
@@ -303,11 +305,13 @@ walk("dadn", "L42", (2.0, 7.6, 0))
 shot("S52", "L42", C((1.0, 5.8, 1.5), (3.0, 8.0, 1.5), 36, (1.3, 6.0, 1.5), (3.0, 8.0, 1.5), 40),
      "Mr. Odell, eyes shut, smiling, turning his face toward Dad's steps")
 stage("L42", odell=((3.3, 8.0, 0), -90, "shut", {"head": [-25, 0], "arms": [0, 0]}), dadn=((2.0, 7.4, 0), 90, "shut"))
-shot("S54", "L43.2-0.15", C((0.2, -1.0, 1.28), (0.2, -0.55, 1.0), 36, (0.2, -0.95, 1.24), (0.2, -0.55, 1.0), 40),
-     "the lore shot: close on the handle bar, two lime strokes by the left grip", follow="odell", hand=0.003)
-stage("L43.2-0.15", odell=((5.6, 9.7, 0), 0, "shut"), dadn=((4.3, 9.8, 0), 0, "shut", {"arms": [60, 60]}))
+shot("S53", "L43", C((2.6, 6.4, 1.2), (6.4, 9.8, 0.9), 30, (2.9, 6.6, 1.2), (6.4, 9.8, 0.9), 31),
+     "the two of them on the lawn: Dad holding the orange cord, Mr. Odell at the handle, both eyes shut", hand=0.0)
+stage("L43", odell=((5.6, 9.7, 0), 0, "shut"), dadn=((7.2, 10.4, 0), -50, "shut", {"arms": [55, 55]}))
+shot("S54", "L43.2-0.15", C((0.2, -1.3, 1.4), (0.2, -0.55, 1.2), 40, (0.2, -1.15, 1.36), (0.2, -0.55, 1.2), 44),
+     "the lore shot: close on the handle bar, two lime strokes lit by the left grip", follow="odell", hand=0.0)
 walk("odell", "L44", (5.6, 9.2, 0))
-walk("dadn", "L44", (4.3, 9.3, 0))
+walk("dadn", "L44", (7.2, 9.9, 0))
 shot("S55", "L44", C((-3.8, 11.4, 5.6), (6.0, 8.6, 0.4), 22, (-3.4, 11.2, 5.6), (6.0, 8.6, 0.4), 22),
      "the pair from my window, mowing a perfect curved stripe", hand=0.0)
 stage("L44", odell=((7.4, 10.6, 0), 0, "shut"), dadn=((6.1, 10.7, 0), 0, "shut", {"arms": [60, 60]}))
@@ -359,6 +363,7 @@ world = ("a bright suburban cul-de-sac at three in the morning: a floodlit strip
 
 story = {
     "slug": "night-mower",
+    "rev": 2,
     "title": "He Mows With His Eyes SHUT",
     "made_for_kids": False,
     "premise": premise,
@@ -371,7 +376,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"style": "closer", "fog": "#6f86c8", "fog_density": 0.012, "fog_start": 14.0, "sky": "#1b2a6b",
-             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L28", "L35"], "auto": False, "reveal": ["L28"], "twist": "L34", "quiet": [["L39", "L45"]], "sway": ["S19", "S21", "S24", "S26", "S27", "S28", "S29"]}, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
+             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L28", "L34"], "auto": False, "reveal": ["L28"], "twist": "L34", "quiet": [["L39", "L45"]], "sway": ["S19", "S21", "S24", "S26", "S28"]}, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 1.12, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.01, "red_line": 0.78},
     "phonemes": {"snaps": "snˈæps"},
@@ -416,10 +421,10 @@ story = {
                   {"at": "L24.1", "kind": "whoosh", "db": -26},
                   {"at": "L26+0.1", "kind": "creak", "db": -9, "dur": 1.3},
                   {"at": "L31.1", "kind": "creak", "db": -10, "dur": 1.4},
-                  {"at": "L35.1", "kind": "thud", "db": -4},
+                  {"at": "L34.2", "kind": "thud", "db": -4},
               ],
               "music_drops": [{"from": "L25.2", "to": "L26.1", "keep": ["creak"]},
-                              {"from": "L34.1", "to": "L35.1", "keep": ["thud"]}]},
+                              {"from": "L34.1", "to": "L34.2", "keep": ["thud"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")

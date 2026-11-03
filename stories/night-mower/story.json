@@ -1,5 +1,6 @@
 {
  "slug": "night-mower",
+ "rev": 2,
  "title": "He Mows With His Eyes SHUT",
  "made_for_kids": false,
  "premise": "Our neighbor Mr. Odell has the greenest lawn on the street and his mower only runs at 3 AM. Everyone on our street obeys one rule: never look at his lawn while the mower is running. My dad has lost a lawn war to him for ten years, because ours has one perfectly round bald spot, and he sets an alarm to catch him cheating.",
@@ -27,7 +28,7 @@
    "emph": [
     "L01",
     "L28",
-    "L35"
+    "L34"
    ],
    "auto": false,
    "reveal": [
@@ -45,9 +46,7 @@
     "S21",
     "S24",
     "S26",
-    "S27",
-    "S28",
-    "S29"
+    "S28"
    ]
   },
   "hdri": "moonless_golf",
@@ -270,7 +269,7 @@
      "snaps shut."
     ]
    ],
-   "tempo": 0.82
+   "tempo": 1.15
   },
   {
    "id": "L06",
@@ -774,28 +773,19 @@
    "who": "narrator",
    "chunks": [
     [
-     "Our street isn't",
-     "Our street isn't"
+     "Our whole street",
+     "Our whole street"
     ],
     [
-     "built on DIRT.",
-     "built on dirt."
-    ]
-   ]
-  },
-  {
-   "id": "L35",
-   "who": "narrator",
-   "chunks": [
-    [
-     "It's built",
-     "It's built"
+     "is built",
+     "is built"
     ],
     [
      "on a HEAD.",
      "on a head."
     ]
-   ]
+   ],
+   "tempo": 0.85
   },
   {
    "id": "L36",
@@ -1002,35 +992,36 @@
     [
      0,
      [
-      9.0,
-      5.2,
-      1.2
+      0.0,
+      -2.5,
+      1.42
      ],
      [
-      9.0,
-      9.4,
-      1.45
+      0.0,
+      0.0,
+      1.62
      ],
-     36
+     27
     ],
     [
      1,
      [
-      9.0,
-      6.2,
-      1.2
+      0.0,
+      -1.95,
+      1.42
      ],
      [
-      9.0,
-      9.4,
-      1.5
+      0.0,
+      0.0,
+      1.62
      ],
-     40
+     27
     ]
    ],
    "step": 2,
-   "hand": 0.008,
-   "note": "frame 1: low, floodlit, Mr. Odell pushing the red mower straight at us, eyes shut, pushing in"
+   "hand": 0.004,
+   "note": "frame 1: Mr. Odell's shut-eyed face fills a third of the frame, the mower's handle below, floodlit, pushing in",
+   "follow": "odell"
   },
   {
    "id": "S01b",
@@ -1075,30 +1066,30 @@
     [
      0,
      [
-      -6.0,
-      13.6,
-      4.35
+      -6.9,
+      13.0,
+      4.75
      ],
      [
-      -6.0,
-      12.3,
-      4.35
+      -5.4,
+      11.6,
+      3.7
      ],
-     32
+     30
     ],
     [
      1,
      [
-      -6.0,
-      13.1,
-      4.35
+      -6.6,
+      12.8,
+      4.7
      ],
      [
-      -6.0,
-      12.3,
-      4.35
+      -5.2,
+      11.5,
+      3.65
      ],
-     34
+     32
     ]
    ],
    "step": 2,
@@ -2038,7 +2029,7 @@
      0,
      [
       -9.4,
-      10.2,
+      9.6,
       1.75
      ],
      [
@@ -2047,24 +2038,10 @@
       1.2
      ],
      82
-    ],
-    [
-     1,
-     [
-      -9.4,
-      10.2,
-      1.75
-     ],
-     [
-      6.4,
-      9.2,
-      1.2
-     ],
-     90
     ]
    ],
    "step": 2,
-   "hand": 0.004,
+   "hand": 0.0,
    "note": "over his shoulder: the floodlit lawn, Mr. Odell mowing, eyes shut",
    "at": "L23.2"
   },
@@ -2125,16 +2102,16 @@
     [
      1,
      [
-      9.8,
+      10.15,
       6.6,
-      0.5
+      0.47
      ],
      [
       7.2,
       8.6,
-      0.7
+      0.67
      ],
-     34
+     33
     ]
    ],
    "step": 1,
@@ -2407,35 +2384,35 @@
     [
      0,
      [
-      -15.0,
-      3.2,
-      0.95
+      -7.5,
+      -2.0,
+      1.1
      ],
      [
-      2.0,
+      -7.5,
       5.0,
-      0.8
+      1.15
      ],
-     28
+     15
     ],
     [
      1,
      [
-      -12.0,
-      3.2,
-      0.95
+      -7.5,
+      -1.5,
+      1.1
      ],
      [
-      2.0,
+      -7.5,
       5.0,
-      0.8
+      1.15
      ],
-     28
+     15
     ]
    ],
    "step": 1,
    "hand": 0.008,
-   "note": "the street at night: a row of plain mailboxes leaning toward our house",
+   "note": "the street at night: a row of five plain mailboxes tipping toward our house",
    "at": "L31"
   },
   {
@@ -2444,35 +2421,35 @@
     [
      0,
      [
-      -9.0,
-      9.6,
-      1.9
+      -7.2,
+      7.2,
+      1.5
      ],
      [
       -7.2,
       11.1,
-      1.8
+      1.95
      ],
-     34
+     28
     ],
     [
      1,
      [
-      -8.7,
-      9.8,
-      1.9
+      -7.2,
+      7.5,
+      1.5
      ],
      [
       -7.2,
       11.1,
-      1.8
+      1.95
      ],
-     36
+     30
     ]
    ],
    "step": 1,
    "hand": 0.008,
-   "note": "our porch light swaying toward the lawn",
+   "note": "outside: our porch light hanging under the porch roof, swaying toward the lawn",
    "at": "L31.2"
   },
   {
@@ -2629,13 +2606,13 @@
     [
      0,
      [
-      3.2,
-      8.5,
-      20.0
+      3.8,
+      4.0,
+      28.0
      ],
      [
-      3.2,
-      8.5,
+      3.8,
+      8.0,
       0.0
      ],
      18
@@ -2643,13 +2620,13 @@
     [
      1,
      [
-      3.2,
-      8.5,
-      17.0
+      3.8,
+      4.0,
+      25.0
      ],
      [
-      3.2,
-      8.5,
+      3.8,
+      8.0,
       0.0
      ],
      18
@@ -2658,7 +2635,7 @@
    "step": 1,
    "hand": 0.0,
    "note": "high above our roof: the open eye, the brow stripes, the low fence and our round bald circle in one frame",
-   "at": "L35"
+   "at": "L34.1-0.25"
   },
   {
    "id": "S44",
@@ -2994,40 +2971,77 @@
    "at": "L42"
   },
   {
+   "id": "S53",
+   "cam": [
+    [
+     0,
+     [
+      2.6,
+      6.4,
+      1.2
+     ],
+     [
+      6.4,
+      9.8,
+      0.9
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      2.9,
+      6.6,
+      1.2
+     ],
+     [
+      6.4,
+      9.8,
+      0.9
+     ],
+     31
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0,
+   "note": "the two of them on the lawn: Dad holding the orange cord, Mr. Odell at the handle, both eyes shut",
+   "at": "L43"
+  },
+  {
    "id": "S54",
    "cam": [
     [
      0,
      [
       0.2,
-      -1.0,
-      1.28
+      -1.3,
+      1.4
      ],
      [
       0.2,
       -0.55,
-      1.0
+      1.2
      ],
-     36
+     40
     ],
     [
      1,
      [
       0.2,
-      -0.95,
-      1.24
+      -1.15,
+      1.36
      ],
      [
       0.2,
       -0.55,
-      1.0
+      1.2
      ],
-     40
+     44
     ]
    ],
    "step": 2,
-   "hand": 0.003,
-   "note": "the lore shot: close on the handle bar, two lime strokes by the left grip",
+   "hand": 0.0,
+   "note": "the lore shot: close on the handle bar, two lime strokes lit by the left grip",
    "at": "L43.2-0.15",
    "follow": "odell"
   },
@@ -3561,7 +3575,7 @@
     "blend": 0
    },
    {
-    "at": "L35",
+    "at": "L34.1-0.25",
     "hidden": true,
     "blend": 0
    },
@@ -3611,7 +3625,7 @@
     "blend": 0
    },
    {
-    "at": "L43.2-0.15",
+    "at": "L43",
     "hidden": true,
     "blend": 0
    },
@@ -4030,7 +4044,7 @@
     "blend": 0
    },
    {
-    "at": "L35",
+    "at": "L34.1-0.25",
     "hidden": true,
     "blend": 0
    },
@@ -4080,7 +4094,7 @@
     "blend": 0
    },
    {
-    "at": "L43.2-0.15",
+    "at": "L43",
     "hidden": true,
     "blend": 0
    },
@@ -4589,7 +4603,7 @@
     "blend": 0
    },
    {
-    "at": "L35",
+    "at": "L34.1-0.25",
     "hidden": true,
     "blend": 0
    },
@@ -4680,7 +4694,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -4720,7 +4734,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -4787,11 +4801,11 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
-    "at": "L43.2-0.15",
+    "at": "L43",
     "pos": [
      2.0,
      7.4,
@@ -4799,16 +4813,16 @@
     ]
    },
    {
-    "at": "L43.2-0.15",
+    "at": "L43",
     "pos": [
-     4.3,
-     9.8,
+     7.2,
+     10.4,
      0
     ],
     "blend": 0,
     "arms": [
-     60,
-     60
+     55,
+     55
     ],
     "side": [
      0,
@@ -4822,22 +4836,22 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
-    "yaw": 0
+    "expr": "asleep",
+    "yaw": -50
    },
    {
     "at": "L44",
     "pos": [
-     4.3,
-     9.3,
+     7.2,
+     9.9,
      0
     ]
    },
    {
     "at": "L44",
     "pos": [
-     4.3,
-     9.3,
+     7.2,
+     9.9,
      0
     ]
    },
@@ -4865,7 +4879,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -4917,7 +4931,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -4960,7 +4974,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -5023,7 +5037,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -5167,7 +5181,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -5220,7 +5234,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -5285,7 +5299,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -5333,7 +5347,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -5384,7 +5398,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -5419,7 +5433,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -5454,7 +5468,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -5489,7 +5503,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -5524,7 +5538,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -5564,7 +5578,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -5609,7 +5623,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -5644,7 +5658,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -5684,11 +5698,11 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
-    "at": "L35",
+    "at": "L34.1-0.25",
     "hidden": true,
     "blend": 0
    },
@@ -5734,7 +5748,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 90
    },
    {
@@ -5794,11 +5808,11 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": -90
    },
    {
-    "at": "L43.2-0.15",
+    "at": "L43",
     "pos": [
      3.3,
      8.0,
@@ -5806,7 +5820,7 @@
     ]
    },
    {
-    "at": "L43.2-0.15",
+    "at": "L43",
     "pos": [
      5.6,
      9.7,
@@ -5829,7 +5843,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -5872,7 +5886,7 @@
     "tremble": 0,
     "blink": true,
     "hidden": false,
-    "expr": "shut",
+    "expr": "asleep",
     "yaw": 0
    },
    {
@@ -6464,7 +6478,8 @@
    "day": 0
   },
   "S43": {
-   "day": 0
+   "day": 0,
+   "exposure": 0.5
   },
   "S44": {
    "day": 0
@@ -6491,6 +6506,9 @@
    "day": 0
   },
   "S52": {
+   "day": 0
+  },
+  "S53": {
    "day": 0
   },
   "S54": {
@@ -6732,7 +6750,7 @@
     "dur": 1.4
    },
    {
-    "at": "L35.1",
+    "at": "L34.2",
     "kind": "thud",
     "db": -4
    }
@@ -6747,7 +6765,7 @@
    },
    {
     "from": "L34.1",
-    "to": "L35.1",
+    "to": "L34.2",
     "keep": [
      "thud"
     ]

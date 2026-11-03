@@ -43,7 +43,7 @@ Our whole street is built on top of a giant sleeping head: the neighbor's perfec
 - **First real scare:** L24 (about 35 s, 47%): my desk chair rolls to the window by itself.
 - **Creature shown clearly:** L27 to L31 (about 40 to 48 s, 54 to 65%), lit to read.
 - **The loophole the climax turns:** the rule's own logic. It turns toward whoever's watching, so stop watching: Dad shuts his eyes and the pictures slide back straight. Mr. Odell had the answer in frame 1. No new magic.
-- **Twist said plainly:** L34 to L38, five short lines, one picture (the eye in his lawn with our bald patch beyond the fence in the same frame).
+- **Twist said plainly:** L34 to L38, four short lines, one picture (the eye in his lawn with our bald patch beyond the fence in the same frame).
 
 ## Quotable line (marked)
 - **L06: "And he mows with his eyes shut."** Odd, flat, seven words, typeable, and it's the title. (Backup laughs, not marked: L37 "Ours is where it's going BALD." and L45 "Dad still WATERS / the bald spot. / Out of RESPECT.")
@@ -82,7 +82,7 @@ Every word is the narrator's. Mr. Odell's one quote (L33) is inside the narratio
 | 03 Night one | L15 to L22 | the stripes curving round the hump (L17). Nothing opens |
 | 04 Night two | L23 to L25 | the hump, a faint shadow line along it at L25 |
 | 05 The eye | L26 to L31 | the seam lifts (L26 to L27), the eye looks up (L28), aims at Dad (L29 to L30), the street tips (L31) |
-| 06 Said plainly | L32 to L38 | eye open, still, under the floodlights. L35 high shot shows the eye in his lawn with our bald circle beyond the fence |
+| 06 Said plainly | L32 to L38 | eye open, still, under the floodlights. L34 high shot shows the eye in his lawn with our bald circle beyond the fence |
 | 07 Neighbors | L39 to L45 | the lid sinks shut over 1 s at L40. Shut and flat after |
 | Last shot | L46 | the seam opens a crack, the eye looks into the lens |
 
@@ -99,7 +99,7 @@ Every word is the narrator's. Mr. Odell's one quote (L33) is inside the narratio
 ## Sound and music
 - **Music:** D mixolydian, 100 bpm. Light and bouncy for the montage and the day beats: a plucky square bass on the root and fifth, a soft marimba-like sine pluck with the flat seventh (C natural) for the funny suburban odd. No music box, no chime.
 - **The drone:** the mower's hum is the score's drone, a low synthesized motor tone on D (two detuned saws low-passed under 800 Hz with a slow wobble). It enters on L01's hit, sits quietly under the day beats as a memory (off in L07 to L13), returns at L15 ("The mower STARTED") and holds. A heavier low D and A drone joins at L27 and holds to the end. At L32 ("mower STOPPED") the hum stops dead and only the heavy drone remains. At L43 the hum returns, softer, under a plain warm melody in D major on a soft square lead to L45. At L46 the lead drops out.
-- **Drops (`music_drops`):** P01 0.7 s before L26: everything but the voice drops, then one soft wet turf creak as "TURF" lands. P02 0.5 s before L35: everything drops, one low soft thud on "HEAD".
+- **Drops (`music_drops`):** P01 0.7 s before L26: everything but the voice drops, then one soft wet turf creak as "TURF" lands. P02 before 'is built' (L34.1): everything drops, one low soft thud on "HEAD".
 - **Hits:** L01 "RUNNING" (thud plus the hum swelling in). L05 "SNAPS SHUT" (a soft plastic blind clatter, under 4 kHz). L18 "CREAKED" (`assets/audio/sfx/creak`). L24 a slow caster roll. L31 a soft wooden tilt-groan.
 - **Ambience:** `assets/audio/amb/crickets.wav` low at night, birds synthesized soft by day, grass steps for Dad crossing the fence (`assets/audio/steps/grass`). All effects under about 4 kHz.
 - **The loop:** 0.25 s after "THREE," cut to L01's frame, the hum already running.
@@ -192,9 +192,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S39: the mower halting on the lawn. The hum stops dead.]
 - `L33` narrator: He kept his eyes SHUT / and called up to me, / "Your dad's LOOKING, / isn't he?"
   - [S40: Mr. Odell's face, `eyes_shut`, tilted up toward my window. S41: me at the window, `scared`, nodding.]
-- `L34` narrator: Our street isn't / built on DIRT.
+- `L34` narrator: Our whole street / is built / on a HEAD.
   - [S42: low across the lawn, the open eye in the middle ground, his mint house behind.]
-- `L35` narrator: It's built / on a HEAD.
   - [P02 drop before. S43: high shot from above our roof: the open eye in his lawn, the curved stripes over it like a brow, the low fence, and our round bald circle just beyond it, all in one frame. Thud on HEAD.]
 - `L36` narrator: His lawn / is its EYEBROW.
   - [S44: the striped lawn over the eye, the stripes bowing over it.]

@@ -70,7 +70,7 @@ def pil_image(name, im: Image.Image):
     return img
 
 
-def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#d4ae72", under=None):
+def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#d4ae72", under=None, alpha=False):
     """A drawing as a material. turf=True shows `pale` plastic on the underside (the lid's warm underside)."""
     m = kit._new(name)
     nt = m.node_tree
@@ -105,6 +105,8 @@ def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#d4ae72", u
         nt.links.new(em.outputs["Result"], b.inputs["Emission Color"])
         b.inputs["Emission Strength"].default_value = 0.3
     nt.links.new(col, b.inputs["Base Color"])
+    if alpha:
+        nt.links.new(tex.outputs["Alpha"], b.inputs["Alpha"])
     b.inputs["Roughness"].default_value = rough
     for k in ("Specular IOR Level", "Specular"):
         if k in b.inputs:
@@ -118,14 +120,15 @@ def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#d4ae72", u
 
 
 def lawn_image(pale=False):
-    """The stripes: long rings round the hump, light and dark, like hair combed over a brow."""
+    """The stripes: parallel arcs bowing over the hump, light and dark, like hair combed over a brow."""
     x0, x1, y0, y1 = LAWN
     w, h = 2220, 1080
     xs = x0 + (np.arange(w) + 0.5) / w * (x1 - x0)
     ys = y1 - (np.arange(h) + 0.5) / h * (y1 - y0)
     X, Y = np.meshgrid(xs, ys)
-    r = np.hypot((X - HC[0]) / 6.2, (Y - HC[1]) / 2.3)
-    band = np.floor(r * 7.0).astype(int)
+    # parallel arcs, all bowing the same way over the hump (hair brushed over a brow), never rings
+    r = (Y + 0.035 * (X - HC[0]) ** 2) / 0.55
+    band = np.floor(r).astype(int)
     light = np.array([60, 238, 104], np.float32)
     dark = np.array([34, 196, 76], np.float32)
     if pale:
@@ -137,9 +140,59 @@ def lawn_image(pale=False):
     n = np.asarray(Image.fromarray(((n * 0.25 + 0.5).clip(0, 1) * 255).astype(np.uint8)).resize((w, h), Image.BICUBIC)).astype(np.float32) / 255 - 0.5
     im *= (1.0 + n * 0.16)[..., None]
     # a fine edge line where one band meets the next, so the rings read as mown lines
-    edge = np.abs((r * 7.0) % 1.0 - 0.5) > 0.47
+    edge = np.abs(r % 1.0 - 0.5) > 0.47
     im[edge] *= 0.93
     return Image.fromarray(im.clip(0, 255).astype(np.uint8))
+
+
+DECAL = (-30.0, -19.0, 70.0, 50.0)      # x0, y0, width, height (m) of the face-relief decal
+DK = 20                                 # pixels per metre
+
+
+def face_decal():
+    """Faint drawn relief of the Head's face in the ground, seen only from S43: contour, brow, cheek bag, nose ridge and
+    nostrils, mouth. Dark on the grass, pale on the street."""
+    x0, y0, w, h = DECAL
+    W, H = int(w * DK), int(h * DK)
+    m = Image.new("L", (W, H), 0)
+    d = ImageDraw.Draw(m)
+
+    def P(x, y):
+        return ((x - x0) * DK, (y0 + h - y) * DK)
+
+    def line(pts, wd, a=255):
+        d.line([P(*q) for q in pts], fill=a, width=max(2, int(wd * DK)), joint="curve")
+        for q in (pts[0], pts[-1]):
+            px, py = P(*q)
+            r = wd * DK / 2
+            d.ellipse((px - r, py - r, px + r, py + r), fill=a)
+
+    cx, cy, A, B = 12.5, 6.5, 12.0, 14.5          # the head's contour
+    line([(cx + A * math.cos(t), cy + B * math.sin(t)) for t in np.linspace(0, 2 * math.pi, 241)], 0.5, 170)
+    # the brow: a thick crescent over the eye
+    xs = np.linspace(2.8, 11.9, 60)
+    low = [(x, 10.55 - 0.05 * (x - 7.2) ** 2) for x in xs]
+    th = [0.15 + 1.25 * max(0.0, 1 - ((x - 7.2) / 4.8) ** 2) ** 0.6 for x in xs]
+    poly = [P(x, y) for (x, y) in low] + [P(x, y + t) for (x, y), t in zip(low[::-1], th[::-1])]
+    d.polygon(poly, fill=235)
+    # the cheek bag under the eye, the nose ridge and nostrils
+    line([(x, 5.9 - 0.05 * (x - 7.2) ** 2) for x in np.linspace(3.4, 11.0, 40)], 0.45, 200)
+    line([(11.7, 10.2), (11.7, 8.6), (12.2, 6.6), (12.9, 4.6), (13.2, 3.6)], 0.5, 220)
+    line([(13.2, 3.6), (14.4, 3.1), (15.2, 3.5)], 0.45, 220)
+    line([(13.2, 3.6), (12.2, 3.0), (11.5, 3.4)], 0.45, 220)
+    # fold lines from the nose to the mouth corners and the mouth
+    line([(11.3, 2.6), (9.6, 0.4), (8.6, -1.4)], 0.5, 200)
+    line([(15.6, 2.8), (17.2, 0.4)], 0.5, 200)
+    line([(8.6, -2.6), (11.5, -2.9), (14.5, -2.9), (17.5, -2.6)], 0.6, 220)
+    a = np.asarray(m).astype(np.float32) / 255.0
+    ys = y0 + h - (np.arange(H) + 0.5) / DK
+    xs_ = x0 + (np.arange(W) + 0.5) / DK
+    X, Y = np.meshgrid(xs_, ys)
+    inlawn = (X > LAWN[0] - 0.1) & (X < LAWN[1] + 0.1) & (Y > LAWN[2] - 0.1) & (Y < LAWN[3] + 0.1)
+    rgb = np.where((Y < 4.4)[..., None], np.array([228, 228, 240], np.float32), np.array([6, 26, 8], np.float32))
+    al = a * 0.55
+    im = np.dstack([np.broadcast_to(rgb, (H, W, 3)), (al * 255)[..., None]])
+    return Image.fromarray(im.clip(0, 255).astype(np.uint8), "RGBA")
 
 
 def eye_image(look):
@@ -219,7 +272,7 @@ def mats(kit):
         "yellow": P("#ffd970", 0.5), "cream": P("#fff0c8", 0.6), "white": P("#f4f1e8", 0.45), "roof": P("#2f8f9a", 0.5),
         "dark": P("#26262c", 0.5), "wood": P("#8a5a34", 0.6), "red": P("#ff3b30", 0.35, spec=0.6),
         "red_d": P("#c42a22", 0.4), "black": P("#141418", 0.5), "chrome": kit.metal("#cfd3d8", 0.25),
-        "orange": P("#ff9a1f", 0.45), "lime": kit.emit(LIME, 0.9), "soil": P("#2b1c14", 0.95),
+        "orange": P("#ff9a1f", 0.45), "lime": kit.emit(LIME, 0.9), "lime2": kit.emit(LIME, 4.0), "soil": P("#2b1c14", 0.95),
         "tan": P("#c49a5c", 0.95), "pole": P("#8a8f99", 0.4), "warm": kit.emit("#fff1c2", 6.0),
         "glass": kit.emit("#ffd9a0", 1.1), "glow": kit.emit("#7dff98", 2.4), "conc": kit.texture("concrete", 1.0, tint="#d8d6d0"),
         "asphalt": kit.texture("asphalt", 0.5, tint="#8a8f9a"), "ours": P("#6cc24a", 0.9, spec=0.1),
@@ -233,6 +286,7 @@ def mats(kit):
     M["lawn"] = image_mat(kit, "odell lawn", lawn_image(), 0.9, turf=True, under=lawn_image(True))
     for k in range(3):
         M[f"eye{k}"] = image_mat(kit, f"eye {k}", eye_image(k), 0.7, emit=0.22)
+    M["decal"] = image_mat(kit, "face decal", face_decal(), 1.0, alpha=True)
     M["clock"] = image_mat(kit, "clock", clock_image(), 0.4, emit=2.2)
     return M
 
@@ -310,6 +364,14 @@ def build_lawn_and_lid(kit, ctx, M):
     zh = hump(HC[0], hy)
     lid = tex_grid(kit, "lid", inside, M["lawn"], (HC[0], hy, zh), uv)
     ctx["lid"] = lid
+    # the lid is ONE flap of turf hinged along the seam's top edge: every column of it bends up about that edge
+    co = np.empty(len(lid.data.vertices) * 3, np.float64)
+    lid.data.vertices.foreach_get("co", co)
+    co = co.reshape(-1, 3)
+    wx = co[:, 0] + HC[0]
+    yN = HC[1] + LB * np.sqrt(np.clip(1 - ((wx - HC[0]) / LA) ** 2, 0, 1))
+    hz = np.array([hump(x, y) for x, y in zip(wx, yN)]) - zh
+    ctx["lidv"] = (co.copy(), yN - hy, hz, np.clip(yN - (co[:, 1] + hy), 0, None))
     # the pit: walls round the lid's outline, down to the eye
     verts, faces = [], []
     for (i, j) in inside:
@@ -326,6 +388,7 @@ def build_lawn_and_lid(kit, ctx, M):
                       (p[1][0], p[1][1], EYE_Z), (p[0][0], p[0][1], EYE_Z)]
             faces.append((n, n + 1, n + 2, n + 3))
     kit.mesh_obj("pit", verts, faces, M["soil"], None, (0, 0, 0))
+    ctx["decal"] = quad_uv(kit, "decal", (DECAL[2], DECAL[3]), (DECAL[0] + DECAL[2] / 2, DECAL[1] + DECAL[3] / 2, 0.34), M["decal"])
     ctx["eyes"] = []
     for k in range(3):
         ob = quad_uv(kit, f"eye{k}", (EW, EH), (HC[0], HC[1], EYE_Z), M[f"eye{k}"])
@@ -386,7 +449,7 @@ def build_trees(kit, ctx, M):
 def build_mailboxes(kit, ctx, M):
     ctx["mail"] = []
     cols = ["#ff5a4f", "#4fb3ff", "#ffd23a", "#b6ff3b", "#e7458a", "#ff9a1f", "#8f7bff"]
-    for k, x in enumerate((-14.0, -10.5, -6.0, -1.8)):
+    for k, x in enumerate((-11.5, -9.5, -7.5, -5.5, -3.5)):
         root = kit.empty(f"mbox{k}", (x, 5.0, 0.05))
         kit.box(f"mpost{k}", (0.1, 0.1, 1.0), (0, 0, 0.5), M["wood"], root)
         kit.box(f"mbox_body{k}", (0.3, 0.5, 0.26), (0, 0, 1.12), kit.plastic(cols[k % len(cols)], 0.4), root, bevel=0.05)
@@ -490,7 +553,9 @@ def build_ours(kit, ctx, M):
     # the porch light, hanging from the roof, swung by "sway"
     root = kit.empty("o.porchlight", (-7.2, Y0 - 0.9, 2.4))
     kit.cyl("o.chain", 0.012, 0.5, (0, 0, -0.25), M["dark"], root, n=6)
-    kit.box("o.lantern", (0.22, 0.22, 0.3), (0, 0, -0.62), M["bulb"], root, bevel=0.03)
+    kit.box("o.lantern", (0.3, 0.3, 0.42), (0, 0, -0.68), M["bulb"], root, bevel=0.03)
+    kit.box("o.lcap", (0.38, 0.38, 0.06), (0, 0, -0.44), M["dark"], root, bevel=0.01)
+    kit.box("o.lbase", (0.36, 0.36, 0.05), (0, 0, -0.92), M["dark"], root, bevel=0.01)
     ctx["porchlight"] = root
     # --- the bedroom
     kit.prop("bed_single", (-12.6, 16.9, Z2 + 0.04), rot=0, scale=1.45)
@@ -578,7 +643,7 @@ def build_mower(kit, ctx, M):
     for sx in (-1, 1):
         kit.cyl(f"m.grip{sx}", 0.024, 0.14, (sx * 0.28, 0.9, 1.0), M["black"], root, rot=(0, math.pi / 2, 0), n=10)
     for k, x in enumerate((0.19, 0.215)):     # the lore: two lime strokes scratched into the bar by the left grip
-        kit.cyl(f"m.stroke{k}", 0.0215, 0.007, (x, 0.9, 1.0), M["lime"], root, rot=(0, math.pi / 2, 0), n=12)
+        kit.cyl(f"m.stroke{k}", 0.026, 0.012, (x - 0.006 + 0.014 * k, 0.9, 1.0), M["lime2"], root, rot=(0, math.pi / 2, 0), n=12)
     kit.box("m.bag", (0.4, 0.3, 0.3), (0, 0.38, 0.5), M["dark"], root, bevel=0.04)
     ctx["mower"] = root
     ctx["cord"] = []
@@ -714,7 +779,15 @@ def animate(kit, story, tl, t, ctx):
     bpy.context.scene.view_settings.exposure = float(look.get("exposure", 0.0))
     # the Head: lid, eye, lights
     lid = tv(ctx, "lid", t)
-    ctx["lid"].rotation_euler = (-math.radians(70.0 * lid), 0, 0)
+    co0, hy_, hz_, dn = ctx["lidv"]
+    ang = math.radians(78.0 * lid) * (0.6 + 0.4 * np.clip(dn / 1.2, 0, 1) ** 2 * (3 - 2 * np.clip(dn / 1.2, 0, 1)))
+    dy, dz = co0[:, 1] - hy_, co0[:, 2] - hz_
+    new = co0.copy()
+    new[:, 1] = hy_ + dy * np.cos(ang) + dz * np.sin(ang)
+    new[:, 2] = hz_ - dy * np.sin(ang) + dz * np.cos(ang)
+    ctx["lid"].data.vertices.foreach_set("co", new.ravel())
+    ctx["lid"].data.update()
+    ctx["decal"].hide_render = sid != "S43"
     ey = int(tv(ctx, "eye", t, stepped=True))
     for k, ob in enumerate(ctx["eyes"]):
         ob.hide_render = (k != ey) or lid < 0.002
@@ -728,8 +801,8 @@ def animate(kit, story, tl, t, ctx):
         p.rotation_euler = (0, math.radians(9.0 * tv(ctx, "pic", t)), 0)
     ml = tv(ctx, "mail", t)
     for root, x in ctx["mail"]:
-        sgn = -1.0 if x > -8.0 else 1.0
-        root.rotation_euler = (0, math.radians(9.0 * ml) * sgn, 0)
+        sgn = -1.0 if x > -8.5 else 1.0
+        root.rotation_euler = (0, math.radians(18.0 * ml) * sgn, 0)
     c = tv(ctx, "chair", t)
     ctx["chair"].location = (-8.4 + (-6.15 + 8.4) * c, 14.6 + (12.78 - 14.6) * c, Z2 + 0.04)
     ctx["chair"].rotation_euler = (0, 0, math.radians(-25) * c)
@@ -740,7 +813,7 @@ def animate(kit, story, tl, t, ctx):
         s.location.z = Z2 + 2.14 - i * 0.092 - 0.015 * dip
     sw = tv(ctx, "sway", t)
     ctx["lamp"].rotation_euler = (0, 0.09 * sw * math.sin(2 * math.pi * 1.7 * t), math.radians(180))
-    ctx["porchlight"].rotation_euler = (0, -0.28 * tv(ctx, "sway", t) * (1 + 0.12 * math.sin(2 * math.pi * 0.8 * t)), 0)
+    ctx["porchlight"].rotation_euler = (0, -0.4 * tv(ctx, "sway", t) * (1 + 0.12 * math.sin(2 * math.pi * 0.8 * t)), 0)
     # the south blinds
     for b in ctx["blinds"]:
         tr = b["track"]
@@ -755,7 +828,7 @@ def animate(kit, story, tl, t, ctx):
                 s.location.z -= 0.05
     # people-driven props
     od = acting.state(tl, "odell", t)
-    show_m = (not od["hidden"]) and od["expr"] == "shut"
+    show_m = (not od["hidden"]) and od["expr"] in ("shut", "asleep")
     mower = ctx["mower"]
     if not show_m:
         mower.location = (0, 0, -50)
