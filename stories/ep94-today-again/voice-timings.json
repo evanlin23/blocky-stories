@@ -1,0 +1,1225 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Today has happened Five times. Everyone's getting Better at it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.448
+    ],
+    [
+     1.543,
+     2.121
+    ],
+    [
+     2.121,
+     2.828
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Here, when your day goes wrong, you get it Again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.388,
+     0.707
+    ],
+    [
+     0.707,
+     1.172
+    ],
+    [
+     1.224,
+     1.5
+    ],
+    [
+     1.5,
+     2.034
+    ]
+   ]
+  },
+  "L03": {
+   "text": "And only You remember.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     1.259
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Mister Lund dropped his wedding cake, and got Saturday again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.931
+    ],
+    [
+     0.931,
+     1.483
+    ],
+    [
+     1.552,
+     1.801
+    ],
+    [
+     1.801,
+     2.69
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Missus Dunn burned the toast and lived Monday twice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.138
+    ],
+    [
+     1.138,
+     1.414
+    ],
+    [
+     1.414,
+     2.207
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Nobody else ever notices.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.19,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.655,
+     1.5
+    ]
+   ]
+  },
+  "L07": {
+   "text": "I work the morning counter at the corner Bakery.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.026
+    ],
+    [
+     1.026,
+     1.379
+    ],
+    [
+     1.379,
+     1.983
+    ]
+   ]
+  },
+  "L08": {
+   "text": "And today is my Birthday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     0.819
+    ],
+    [
+     0.819,
+     1.466
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Nobody's said it. Not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.19,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.19,
+     0.776
+    ],
+    [
+     0.828,
+     1.483
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Every today, at nine oh two, it starts to rain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.19
+    ],
+    [
+     1.241,
+     1.534
+    ],
+    [
+     1.534,
+     2.138
+    ]
+   ]
+  },
+  "L11": {
+   "text": "Only on the bakery window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.379
+    ]
+   ]
+  },
+  "L12": {
+   "text": "At nine fifteen, Pearl, our mail carrier, comes in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.879,
+     1.19
+    ],
+    [
+     1.19,
+     1.655
+    ],
+    [
+     1.69,
+     2.328
+    ]
+   ]
+  },
+  "L13": {
+   "text": "The first today, she tripped on the mat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.724,
+     1.043
+    ],
+    [
+     1.043,
+     1.638
+    ]
+   ]
+  },
+  "L14": {
+   "text": "The second, she stepped Over it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.569,
+     0.897
+    ],
+    [
+     0.897,
+     1.448
+    ]
+   ]
+  },
+  "L15": {
+   "text": "The third, she held the door for Mister Lund.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.586,
+     0.836
+    ],
+    [
+     0.836,
+     1.086
+    ],
+    [
+     1.086,
+     1.879
+    ]
+   ]
+  },
+  "L16": {
+   "text": "At nine thirty, my Mom comes in for a blueberry Muffin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.862,
+     1.19
+    ],
+    [
+     1.19,
+     1.5
+    ],
+    [
+     1.5,
+     1.948
+    ],
+    [
+     1.948,
+     2.483
+    ]
+   ]
+  },
+  "L17": {
+   "text": "The first today, she knocked her coffee Over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.707,
+     0.992
+    ],
+    [
+     0.992,
+     1.328
+    ],
+    [
+     1.328,
+     1.845
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The third, she caught it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     1.19
+    ]
+   ]
+  },
+  "L19": {
+   "text": "She hasn't said happy Birthday once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.793
+    ],
+    [
+     0.793,
+     1.121
+    ],
+    [
+     1.121,
+     1.638
+    ]
+   ]
+  },
+  "L20": {
+   "text": "So on today number four, I said it out loud.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.931
+    ],
+    [
+     0.966,
+     1.259
+    ],
+    [
+     1.259,
+     1.931
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Is everyone Pretending?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.362
+    ]
+   ]
+  },
+  "L22": {
+   "text": "The whole bakery went quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.155,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.69,
+     1.328
+    ]
+   ]
+  },
+  "L23": {
+   "text": "Every head turned to Mom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.345
+    ]
+   ]
+  },
+  "L24": {
+   "text": "She checked her watch, and told everyone, from the top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.845
+    ],
+    [
+     0.897,
+     1.5
+    ],
+    [
+     1.534,
+     2.19
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Next morning, it was Today again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.681,
+     0.845
+    ],
+    [
+     0.845,
+     1.586
+    ]
+   ]
+  },
+  "L26": {
+   "text": "So on today five, at nine oh one, I went out the back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.862
+    ],
+    [
+     0.914,
+     1.466
+    ],
+    [
+     1.517,
+     1.819
+    ],
+    [
+     1.819,
+     2.362
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Mister Okafor, our neighbor, was up a ladder by our roof,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.75,
+     1.224
+    ],
+    [
+     1.293,
+     1.828
+    ],
+    [
+     1.828,
+     2.517
+    ]
+   ]
+  },
+  "L28": {
+   "text": "holding a garden hose over our window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.983
+    ],
+    [
+     0.983,
+     1.81
+    ]
+   ]
+  },
+  "L29": {
+   "text": "That's the rain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.983
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Behind the hedge was the whole block,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     0.931
+    ],
+    [
+     0.931,
+     1.603
+    ]
+   ]
+  },
+  "L31": {
+   "text": "with balloons and a cake,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.224
+    ]
+   ]
+  },
+  "L32": {
+   "text": "and Pearl shaking glitter on it. Her hands were covered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.008
+    ],
+    [
+     1.008,
+     1.293
+    ],
+    [
+     1.362,
+     1.733
+    ],
+    [
+     1.733,
+     2.345
+    ]
+   ]
+  },
+  "L33": {
+   "text": "In a real do-over, only you remember, and everyone else does the day the same.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.621,
+   "onset": 0.172,
+   "end": 3.431,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.845
+    ],
+    [
+     0.879,
+     1.69
+    ],
+    [
+     1.759,
+     2.328
+    ],
+    [
+     2.328,
+     2.759
+    ],
+    [
+     2.759,
+     3.431
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Everyone here did it Better.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     0.81
+    ],
+    [
+     0.81,
+     1.345
+    ]
+   ]
+  },
+  "L35": {
+   "text": "So they Remembered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.19,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     1.069
+    ]
+   ]
+  },
+  "L36": {
+   "text": "It isn't a do-over.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.155,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     1.138
+    ]
+   ]
+  },
+  "L37": {
+   "text": "It's a Rehearsal.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.155,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     1.0
+    ]
+   ]
+  },
+  "L38": {
+   "text": "My whole block has been practicing my surprise party On me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     0.931
+    ],
+    [
+     0.931,
+     1.31
+    ],
+    [
+     1.31,
+     2.069
+    ],
+    [
+     2.069,
+     2.586
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Mom had a clipboard of every time I nearly caught on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.802
+    ],
+    [
+     0.802,
+     1.345
+    ],
+    [
+     1.345,
+     1.672
+    ],
+    [
+     1.672,
+     2.31
+    ]
+   ]
+  },
+  "L40": {
+   "text": "She's never thrown me a surprise party that worked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.768
+    ],
+    [
+     0.768,
+     1.414
+    ],
+    [
+     1.414,
+     2.0
+    ]
+   ]
+  },
+  "L41": {
+   "text": "I always Know.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.983
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Every night, they set every clock on the block Back,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     1.052
+    ],
+    [
+     1.052,
+     1.319
+    ],
+    [
+     1.319,
+     1.603
+    ],
+    [
+     1.603,
+     2.069
+    ]
+   ]
+  },
+  "L43": {
+   "text": "even my Alarm, and printed the same Newspaper.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.793
+    ],
+    [
+     0.819,
+     1.112
+    ],
+    [
+     1.112,
+     1.397
+    ],
+    [
+     1.397,
+     2.103
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I snuck back in before she Saw me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.793
+    ],
+    [
+     0.793,
+     1.112
+    ],
+    [
+     1.112,
+     1.69
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Tomorrow, at nine thirty,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.534,
+     1.362
+    ]
+   ]
+  },
+  "L46": {
+   "text": "I'll act So surprised.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.241
+    ]
+   ]
+  },
+  "L47": {
+   "text": "Today happens Again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.707
+    ],
+    [
+     0.707,
+     1.241
+    ]
+   ]
+  },
+  "L48": {
+   "text": "And i'll be Better at it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.155,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     1.138
+    ]
+   ]
+  }
+ }
+}
