@@ -1,0 +1,1101 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "my name is on every high score here. i've never played.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.603
+    ],
+    [
+     0.603,
+     1.0
+    ],
+    [
+     1.0,
+     1.483
+    ],
+    [
+     1.552,
+     2.345
+    ]
+   ]
+  },
+  "L02": {
+   "text": "because here, every game costs you the memory of ever coming here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.155,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.672,
+     1.112
+    ],
+    [
+     1.112,
+     1.439
+    ],
+    [
+     1.439,
+     1.828
+    ],
+    [
+     1.828,
+     2.052
+    ],
+    [
+     2.052,
+     2.741
+    ]
+   ]
+  },
+  "L03": {
+   "text": "it takes it at the door, on your way out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.81
+    ],
+    [
+     0.845,
+     1.017
+    ],
+    [
+     1.017,
+     1.586
+    ]
+   ]
+  },
+  "L04": {
+   "text": "people walk out with a fistful of tickets and no idea why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.155,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.155,
+     0.647
+    ],
+    [
+     0.647,
+     1.061
+    ],
+    [
+     1.061,
+     1.594
+    ],
+    [
+     1.594,
+     1.854
+    ],
+    [
+     1.854,
+     2.621
+    ]
+   ]
+  },
+  "L05": {
+   "text": "two guys leave arguing who won at air hockey. neither knows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.164
+    ],
+    [
+     1.164,
+     1.759
+    ],
+    [
+     1.854,
+     2.672
+    ]
+   ]
+  },
+  "L06": {
+   "text": "a lady wins the jackpot, walks out, and walks right back in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.138
+    ],
+    [
+     1.207,
+     1.569
+    ],
+    [
+     1.594,
+     2.034
+    ],
+    [
+     2.034,
+     2.672
+    ]
+   ]
+  },
+  "L07": {
+   "text": "nobody's name stays on a board. except mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.19,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.19,
+     0.707
+    ],
+    [
+     0.707,
+     1.008
+    ],
+    [
+     1.008,
+     1.397
+    ],
+    [
+     1.474,
+     2.276
+    ]
+   ]
+  },
+  "L08": {
+   "text": "my big sister, tess, says i never call her back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     1.017
+    ],
+    [
+     1.103,
+     1.569
+    ],
+    [
+     1.569,
+     2.259
+    ]
+   ]
+  },
+  "L09": {
+   "text": "so for her birthday, i let her drive me here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.879
+    ],
+    [
+     0.931,
+     1.224
+    ],
+    [
+     1.224,
+     2.0
+    ]
+   ]
+  },
+  "L10": {
+   "text": "she wants the giant bear on the top shelf.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.19,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.19,
+     0.526
+    ],
+    [
+     0.526,
+     0.94
+    ],
+    [
+     0.94,
+     1.069
+    ],
+    [
+     1.069,
+     1.793
+    ]
+   ]
+  },
+  "L11": {
+   "text": "ten thousand tickets.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     1.19
+    ]
+   ]
+  },
+  "L12": {
+   "text": "the prize man looked at me and said, welcome back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     0.983
+    ],
+    [
+     0.983,
+     1.31
+    ],
+    [
+     1.379,
+     2.155
+    ]
+   ]
+  },
+  "L13": {
+   "text": "tess laughed a little too fast.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     0.776
+    ],
+    [
+     0.776,
+     1.448
+    ]
+   ]
+  },
+  "L14": {
+   "text": "she never plays. she just watches me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.19,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.19,
+     0.759
+    ],
+    [
+     0.793,
+     1.0
+    ],
+    [
+     1.0,
+     1.69
+    ]
+   ]
+  },
+  "L15": {
+   "text": "so i played all afternoon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.431
+    ]
+   ]
+  },
+  "L16": {
+   "text": "and i was good. way too good.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.707
+    ],
+    [
+     0.759,
+     1.5
+    ]
+   ]
+  },
+  "L17": {
+   "text": "like my hands had done this a hundred times.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     1.017
+    ],
+    [
+     1.017,
+     1.931
+    ]
+   ]
+  },
+  "L18": {
+   "text": "the counter hit ten thousand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.155,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.155,
+     0.664
+    ],
+    [
+     0.664,
+     1.466
+    ]
+   ]
+  },
+  "L19": {
+   "text": "the prize man didn't even look up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.052
+    ],
+    [
+     1.052,
+     1.586
+    ]
+   ]
+  },
+  "L20": {
+   "text": "he said, same as always?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.5,
+     1.345
+    ]
+   ]
+  },
+  "L21": {
+   "text": "and went to get one from the back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.655
+    ],
+    [
+     0.655,
+     1.31
+    ]
+   ]
+  },
+  "L22": {
+   "text": "he left the door open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.224
+    ]
+   ]
+  },
+  "L23": {
+   "text": "the prize closet was full.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.75
+    ],
+    [
+     0.75,
+     1.362
+    ]
+   ]
+  },
+  "L24": {
+   "text": "the same giant bear, floor to ceiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.414,
+     0.879
+    ],
+    [
+     0.94,
+     1.81
+    ]
+   ]
+  },
+  "L25": {
+   "text": "forty of them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.19,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.19,
+     1.0
+    ]
+   ]
+  },
+  "L26": {
+   "text": "every one had a tag on its ear.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.888
+    ],
+    [
+     0.888,
+     1.552
+    ]
+   ]
+  },
+  "L27": {
+   "text": "in my handwriting. for tess.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.862,
+     1.466
+    ]
+   ]
+  },
+  "L28": {
+   "text": "she wasn't bringing me here for the first time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.19,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.19,
+     0.681
+    ],
+    [
+     0.681,
+     0.931
+    ],
+    [
+     0.931,
+     1.069
+    ],
+    [
+     1.069,
+     1.81
+    ]
+   ]
+  },
+  "L29": {
+   "text": "she's brought me every saturday for forty weeks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.086
+    ],
+    [
+     1.086,
+     1.897
+    ]
+   ]
+  },
+  "L30": {
+   "text": "i win it every time. and at the door, i lose it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.034
+    ],
+    [
+     1.103,
+     1.233
+    ],
+    [
+     1.233,
+     1.5
+    ],
+    [
+     1.534,
+     2.224
+    ]
+   ]
+  },
+  "L31": {
+   "text": "tess never plays, so she remembers every one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.914,
+     1.492
+    ],
+    [
+     1.492,
+     2.172
+    ]
+   ]
+  },
+  "L32": {
+   "text": "she leaves every bear here, with the prize man, so i never find out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.052,
+   "onset": 0.19,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.19,
+     0.638
+    ],
+    [
+     0.638,
+     0.966
+    ],
+    [
+     0.992,
+     1.121
+    ],
+    [
+     1.121,
+     1.707
+    ],
+    [
+     1.793,
+     2.19
+    ],
+    [
+     2.19,
+     2.862
+    ]
+   ]
+  },
+  "L33": {
+   "text": "because to me, it's always the first time i ever won her anything, and she says that's the happiest she ever sees me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 4.828,
+   "onset": 0.155,
+   "end": 4.638,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.759,
+     1.215
+    ],
+    [
+     1.215,
+     1.621
+    ],
+    [
+     1.621,
+     1.957
+    ],
+    [
+     1.957,
+     2.552
+    ],
+    [
+     2.621,
+     3.017
+    ],
+    [
+     3.017,
+     3.672
+    ],
+    [
+     3.672,
+     3.974
+    ],
+    [
+     3.974,
+     4.638
+    ]
+   ]
+  },
+  "L34": {
+   "text": "the rule only takes it from whoever plays.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     0.897
+    ],
+    [
+     0.897,
+     1.793
+    ]
+   ]
+  },
+  "L35": {
+   "text": "so i handed tess my last token.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.862
+    ],
+    [
+     0.862,
+     1.776
+    ]
+   ]
+  },
+  "L36": {
+   "text": "she's terrible.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.086,
+   "onset": 0.19,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.19,
+     0.897
+    ]
+   ]
+  },
+  "L37": {
+   "text": "she won me one tiny rubber duck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.19,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     0.931
+    ],
+    [
+     0.931,
+     1.586
+    ]
+   ]
+  },
+  "L38": {
+   "text": "at the door, she blinked, and asked where we'd been.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.5,
+     0.931
+    ],
+    [
+     0.983,
+     1.301
+    ],
+    [
+     1.301,
+     1.966
+    ]
+   ]
+  },
+  "L39": {
+   "text": "so in the car, i told her every saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.672
+    ],
+    [
+     0.724,
+     1.121
+    ],
+    [
+     1.121,
+     1.966
+    ]
+   ]
+  },
+  "L40": {
+   "text": "i call her back now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.172
+    ]
+   ]
+  },
+  "L41": {
+   "text": "and we take turns.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     1.086
+    ]
+   ]
+  },
+  "L42": {
+   "text": "next week it's my turn to forget.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.974
+    ],
+    [
+     0.974,
+     1.552
+    ]
+   ]
+  },
+  "L43": {
+   "text": "i'll walk in, and look up,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.241
+    ]
+   ]
+  }
+ }
+}
