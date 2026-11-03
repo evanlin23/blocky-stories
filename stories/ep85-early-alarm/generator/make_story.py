@@ -32,15 +32,16 @@ story = {
     "cast": {"me": me},
     "lines": lines,
     "shots": [
-        {"id": "S45", "cam": [[0, [-1.1, 1.5, 1.5], [-0.05, 4.4, 1.75], 19], [1, [-1.0, 1.9, 1.5], [-0.05, 4.4, 1.75], 19]],
+        {"id": "S45", "cam": [[0, [0.0, 1.5, 1.8], [0.0, 4.4, 1.8], 19], [1, [-1.0, 1.9, 1.5], [-0.05, 4.4, 1.75], 19]],
          "step": 2, "hand": 0.0, "note": "the eye opens an inch from my face"}
     ],
-    "acting": {"me": [{"at": 0, "pos": [-0.55, 3.75, 0], "yaw": 65, "head": [-15, 0], "expr": "scared"}]},
+    "acting": {"me": [{"at": 0, "pos": [-0.72, 3.3, 0], "yaw": 45, "head": [-10, 0], "expr": "scared"}]},
     "cues": [{"at": "L44", "name": "eye", "open": 1.0}],
     "fx": [],
     "music": {"root": 46, "mode": "major", "bpm": 84, "seed": 85,
               "sections": [{"at": 0, "voices": ["drone", "pad"], "energy": 0.3}]},
     "sound": {"floor": "grass", "steps_db": -20, "rev": 1, "ambience": [{"kind": "crickets", "from": 0, "to": "end", "lufs": -34}]},
 }
+story["rev"] = 3
 OUT.write_text(json.dumps(story, indent=1))
 print("wrote", OUT)

@@ -66,7 +66,7 @@ def build(kit, story, tl):
     ex, ey, ez = EYE[0] - SUN[0], EYE[1] - SUN[1], EYE[2] - SUN[2]
     ctx["root"] = root
     ctx["eye_y"] = ey
-    kit.box("sun.socket", (2.5, 0.12, 2.1), (ex, ey, ez), kit.emit("#9a3d00", 0.7, "socket"), root, bevel=0.2, seg=3)
+    disc(kit, "sun.socket", 1.12, ey - 0.02, ex, ez, kit.emit("#d86a00", 1.0, "socket"), root, sx=1.0, sz=0.95, h=0.06)
     # eyeball: a squashed sphere half sunk in the socket; iris, pupil sit on its surface
     EY0 = ey + 0.1
     ball = kit.sphere("sun.ball", 0.8, (ex, EY0, ez), sclera, root, seg=40)
@@ -76,11 +76,14 @@ def build(kit, story, tl):
     disc(kit, "sun.pupil", 0.27, ey - 0.285, ex, ez - 0.02, pupil, root, sx=0.5, sz=1.0, h=0.03)
     kit.sphere("sun.glint", 0.07, (ex + 0.2, ey - 0.31, ez + 0.12), glint, root, seg=10)
     # lids: curved shells hugging the ball (5% bigger). Upper covers the top third of the iris, lower curves up.
-    def shell(name, r, keep, mat):
+    def shell(name, r, edge, above, mat):
         bm = bmesh.new()
-        bmesh.ops.create_uvsphere(bm, u_segments=64, v_segments=40, radius=r)
-        kill = [v for v in bm.verts if v.co.y > 0.05 or not keep(v.co.x / 0.8, v.co.z / 0.95)]
-        bmesh.ops.delete(bm, geom=kill, context="VERTS")
+        bmesh.ops.create_uvsphere(bm, u_segments=72, v_segments=48, radius=r)
+        bmesh.ops.delete(bm, geom=[v for v in bm.verts if v.co.y > 0.05], context="VERTS")
+        for v in bm.verts:   # snap everything past the edge curve onto it: a clean curved lid edge
+            e = edge(v.co.x / 0.8) * r
+            if (above and v.co.z < e) or (not above and v.co.z > e):
+                v.co.z = e
         me = bpy.data.meshes.new(name)
         bm.to_mesh(me)
         bm.free()
@@ -91,15 +94,15 @@ def build(kit, story, tl):
         for p in me.polygons:
             p.use_smooth = True
         return kit.link(ob, root)
-    up = lambda x, z: z > 0.17 - 0.30 * x * x
-    lo = lambda x, z: z < -0.55 + 0.35 * x * x
-    seamup = lambda x, z: z > 0.17 - 0.30 * x * x - 0.06
-    seamlo = lambda x, z: z < -0.55 + 0.35 * x * x + 0.05
+    up = lambda x: 0.22 - 0.30 * x * x
+    lo = lambda x: -0.62 + 0.35 * x * x
+    seamup = lambda x: up(x) - 0.05
+    seamlo = lambda x: lo(x) + 0.04
     glow = kit.emit("#ffd25e", 3.0, "lid seam")
-    shell("sun.seamup", 0.84, seamup, glow)
-    shell("sun.seamlo", 0.84, seamlo, glow)
-    ctx["lid"] = shell("sun.lid", 0.85, up, lid)
-    shell("sun.lidlow", 0.85, lo, lid)
+    shell("sun.seamup", 0.84, seamup, True, glow)
+    shell("sun.seamlo", 0.84, seamlo, False, glow)
+    ctx["lid"] = shell("sun.lid", 0.85, up, True, lid)
+    shell("sun.lidlow", 0.85, lo, False, lid)
     # --- the shed, barn red, with its door ajar and warm light spilling
     red = kit.plastic("#c4473a", 0.7, "barn red")
     dark = kit.plastic("#5a2620", 0.8, "shed roof")
