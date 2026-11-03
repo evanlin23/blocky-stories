@@ -962,14 +962,14 @@
    ]
   },
   "L35": {
-   "text": "It was two turns higher.",
+   "text": "It was two turns closer.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.466,
+   "dur": 1.517,
    "onset": 0.155,
-   "end": 1.259,
+   "end": 1.328,
    "chunks": [
     [
      0.155,
@@ -977,7 +977,7 @@
     ],
     [
      0.353,
-     1.259
+     1.328
     ]
    ]
   },
@@ -1166,18 +1166,18 @@
    ]
   },
   "L43": {
-   "text": "Two more turns.",
+   "text": "Two turns closer.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.19,
+   "dur": 1.328,
    "onset": 0.172,
-   "end": 0.983,
+   "end": 1.138,
    "chunks": [
     [
      0.172,
-     0.983
+     1.138
     ]
    ]
   },

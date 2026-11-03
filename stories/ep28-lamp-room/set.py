@@ -611,19 +611,6 @@ def crown_image(path, mouth):
         d.ellipse([ex - er, ey - ry, ex + er, ey + ry], fill=(238, 233, 214))
         pr = 0.06 * R
         d.ellipse([ex - pr, ey + 0.1 * R - pr, ex + pr, ey + 0.1 * R + pr], fill=ink)
-        # the upper lid hangs low over the white: opaque skin shadow with a hard edge, the inner end lower (a heavy, hooded look)
-        def lid_y(x, drop=0.0):
-            return ey - 0.0 * R + drop * R + 0.1 * (-sx) * (x - ex)
-        poly = [(ex - 1.3 * er, ey - 1.6 * er), (ex + 1.3 * er, ey - 1.6 * er), (ex + 1.3 * er, lid_y(ex + 1.3 * er)),
-                (ex - 1.3 * er, lid_y(ex - 1.3 * er))]
-        lid = Image.new("L", (n, n), 0)
-        ImageDraw.Draw(lid).polygon(poly, fill=255)
-        eye = Image.new("L", (n, n), 0)
-        ImageDraw.Draw(eye).ellipse([ex - er - 0.012 * R, ey - ry - 0.012 * R, ex + er + 0.012 * R, ey + ry + 0.012 * R], fill=255)
-        m = Image.fromarray(np.minimum(np.asarray(lid), np.asarray(eye)).astype(np.uint8))
-        im.paste(Image.new("RGB", (n, n), (44, 31, 24)), (0, 0), m)
-        d = ImageDraw.Draw(im)
-        d.line([(ex - 1.1 * er, lid_y(ex - 1.1 * er)), (ex + 1.1 * er, lid_y(ex + 1.1 * er))], fill=(14, 9, 7), width=max(2, int(0.01 * R)))
     # the mouth: a dark hole with no outline, ragged and a little soft at the edge, opening wider each sighting
     my = c + 0.5 * R
     sizes = [(0.04, 0.05), (0.07, 0.11), (0.15, 0.24), (0.3, 0.32)]
