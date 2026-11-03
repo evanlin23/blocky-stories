@@ -5,5 +5,5 @@
  "made_for_kids": false,
  "cover_s": 1.0,
  "shape": "misread",
- "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+ "hold": "dropped 2026-11-03: the opening redo couldn't reach the bar. Critic r5 said kill (hook 4, faces 4: the promise knot reads as a bow or wind-up key at phone size, murky dome frames, faces cropped), and one rescue round can't fix all four. Build and reviews are on branch claude/ep37-comet-night-opening."
 }
