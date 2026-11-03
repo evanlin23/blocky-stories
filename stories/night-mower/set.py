@@ -1,21 +1,21 @@
-"""Night Mower (batch 6, P3): a bright cul-de-sac, Mr. Odell's floodlit striped lawn, and the Head under it.
-Built from kit.py's parts and CC0 props (trees, bushes, flowers, bed, desk lamp, planter, path stones, trash cans).
-No text anywhere: no lettering, numbers, signs or logos (the bedside clock shows digits only).
+"""Night Mower (revival): a bright cul-de-sac, Mr. Odell's floodlit striped lawn, and the lime yardstick staked in it.
+Built from kit.py's parts and CC0 props. No text anywhere (the bedside clock shows digits only).
 
 The places (metres, the ground is z = 0), shared with generator/make_story.py:
 - the street y -4 .. 4 along x, our sidewalk y 4 .. 5.2, the yards y 5.2 .. 12
-- our yard x -15 .. -0.2 with the bald circle at (-2.6, 8.4), the low fence at x = 0
-- Mr. Odell's lawn x 0.2 .. 15 (a grid mesh with a low oval hump at HC), his mint house behind it, four floodlights
-- THE HEAD: the lens-shaped patch of the lawn around HC is a separate lid (same stripes, hinged on its north edge).
-  Under it, a shallow pit with ONE flat drawn eye (our own face style: off-white almond, thick black lid stroke, a huge
-  rounded-square black pupil, one warm highlight). Three eye drawings are swapped by the "eye" track: 0 looks up, 1 at
-  our porch (Dad), 2 at the lens. The lid's angle is the "lid" track (0 shut and flush, 1 open about 62 degrees).
-- our butter-yellow house x -14 .. -4: the bedroom upstairs (floor z 2.8) with its window at x = -6, the porch
-- the south houses (front wall y = -9), the coral one leaning 6 degrees toward his lawn
-- the hall at x = 100 and the bedside clock at x = 130, each a little box room
+- our yard x -15 .. -0.2 (ordinary shaggy green), the low fence at x = 0
+- Mr. Odell's lawn x 0.2 .. 15 (straight stripes), his mint house behind it, four floodlights
+- the lime yardstick STK at (2.75, 7.0); the grass patch round its foot climbs it (track "stick", in ticks of 0.1 m)
+- the mow strip x 3.0 .. 3.8: blades that stand tall behind the mower (reversed mowing) and short ahead of it
+- the reversed clippings: a pool of small green chips that lift off the lawn ahead of the deck and arc up into it
+- the coffee cart at CART (4.2, 4.9) facing the street, paper cups from story.json "cups"
+- our butter-yellow house x -14 .. -4 (bedroom upstairs at z 2.8, window at x = -6, porch at (-8.2, 10.8))
+- the south houses (front wall y = -9), the coral one straight
+- the bedside clock at x = 130
 
-story.json "tracks" (resolved here) drive: lid, eye, meter, pic (hall pictures), mail, chair, slat, sway, binos, sod,
-sprink, hose, bw0 to bw2 (the south blinds). story.json "looks" gives each shot's "day" (0 night, 1 day, between: dawn).
+story.json "tracks" (resolved here) drive: stick (ticks), slat, bend, vision, bw0 to bw2 (the south blinds).
+story.json "looks" gives each shot's day, exposure, flood, mower (None | "park" | "none" | [x, y, yaw]), dir, strip,
+clip, macro, ticks [a, b], chairs, warm.
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ from pathlib import Path
 import bpy
 import numpy as np
 from mathutils import Vector as V
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 
 from blocky import acting, timeline
 
@@ -37,30 +37,20 @@ ROOT = HERE.parents[1]
 TMP = Path(tempfile.gettempdir()) / "night-mower-tex"
 TMP.mkdir(parents=True, exist_ok=True)
 
-HC = (7.2, 8.6)                  # the hump's and the lid's centre
-HUMP_A, HUMP_B, HUMP_H = 3.6, 2.1, 0.3
-LA, LB = 2.7, 1.5                # the lid's lens: half-length along x, half-depth along y
 LAWN = (0.2, 15.0, 5.2, 12.0)    # Mr. Odell's lawn x0, x1, y0, y1
-RES = 0.1
-EYE_Z = -0.22
-LID_T = 0.17                     # the sod slab's thickness
-EW, EH = 5.6, 3.2                # the eye drawing's size
-BALD = (-2.6, 8.4)
+STK = (2.75, 7.0)                 # the yardstick
+STRIP = (3.0, 3.8, 5.6, 11.6)    # the mow strip x0, x1, y0, y1
+CART = (4.2, 4.9)
+PARK = (11.4, 10.7, 0.0)         # the parked mower
 Z2 = 2.8
-HX = 100.0                       # the hall
 BX = 130.0                       # the bedside
 MOWER_OFF = 1.45                 # the mower's centre this far in front of Mr. Odell
 PORCH_ANCHOR = (9.6, 11.9)       # where the orange cord is plugged in
-
 LIME = "#b6ff3b"
+H_SHORT, H_TALL = 0.035, 0.24    # strip blade heights
 
 
-def hump(x, y):
-    r2 = ((x - HC[0]) / HUMP_A) ** 2 + ((y - HC[1]) / HUMP_B) ** 2
-    return HUMP_H * max(0.0, 1.0 - r2) ** 1.2
-
-
-# ------------------------------------------------------------------------------------------------ materials
+# ------------------------------------------------------------------------------------------------ kept parts
 def pil_image(name, im: Image.Image):
     h = hashlib.md5(im.tobytes()).hexdigest()[:10]
     path = TMP / f"{name}-{h}.png"
@@ -120,166 +110,6 @@ def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#d4ae72", u
     return m
 
 
-def lawn_image(pale=False):
-    """The stripes: parallel arcs bowing over the hump, light and dark, like hair combed over a brow."""
-    x0, x1, y0, y1 = LAWN
-    w, h = 2220, 1080
-    xs = x0 + (np.arange(w) + 0.5) / w * (x1 - x0)
-    ys = y1 - (np.arange(h) + 0.5) / h * (y1 - y0)
-    X, Y = np.meshgrid(xs, ys)
-    # parallel arcs, all bowing the same way over the hump (hair brushed over a brow), never rings
-    r = (Y + 0.035 * (X - HC[0]) ** 2) / 0.55
-    band = np.floor(r).astype(int)
-    light = np.array([60, 238, 104], np.float32)
-    dark = np.array([34, 196, 76], np.float32)
-    if pale:
-        light = np.array([236, 205, 150], np.float32)
-        dark = np.array([204, 164, 108], np.float32)
-    im = np.where((band % 2 == 0)[..., None], light, dark).astype(np.float32)
-    rng = np.random.default_rng(5)
-    n = rng.normal(0, 1, (h // 3, w // 3)).astype(np.float32)
-    n = np.asarray(Image.fromarray(((n * 0.25 + 0.5).clip(0, 1) * 255).astype(np.uint8)).resize((w, h), Image.BICUBIC)).astype(np.float32) / 255 - 0.5
-    im *= (1.0 + n * 0.16)[..., None]
-    # a fine edge line where one band meets the next, so the rings read as mown lines
-    edge = np.abs(r % 1.0 - 0.5) > 0.47
-    im[edge] *= 0.93
-    return Image.fromarray(im.clip(0, 255).astype(np.uint8))
-
-
-def soil_image():
-    """The underside of a peeled sod: dark soil, pale roots hanging, crumbs."""
-    w, h = 1024, 512
-    rng = np.random.default_rng(11)
-    im = Image.new("RGB", (w, h), (92, 62, 36))
-    d = ImageDraw.Draw(im)
-    for _ in range(1400):
-        x, y = rng.integers(0, w), rng.integers(0, h)
-        r = int(rng.integers(6, 30))
-        c = int(rng.integers(-22, 22))
-        d.ellipse((x - r, y - r, x + r, y + r), fill=(92 + c, 62 + c, 36 + c))
-    for _ in range(45):
-        x, y = float(rng.integers(0, w)), float(rng.integers(0, h))
-        pts = [(x, y)]
-        for _k in range(4):
-            x += rng.normal(0, 7)
-            y += rng.uniform(6, 14)
-            pts.append((x, y))
-        d.line(pts, fill=(196, 168, 120), width=int(rng.integers(3, 6)))
-    return im
-
-
-DECAL = (-30.0, -19.0, 70.0, 50.0)      # x0, y0, width, height (m) of the face-relief decal
-DK = 20                                 # pixels per metre
-
-
-def face_decal():
-    """Faint drawn relief of the Head's face in the ground, seen only from S43: contour, brow, cheek bag, nose ridge and
-    nostrils, mouth. Dark on the grass, pale on the street."""
-    x0, y0, w, h = DECAL
-    W, H = int(w * DK), int(h * DK)
-    m = Image.new("L", (W, H), 0)
-    d = ImageDraw.Draw(m)
-
-    def P(x, y):
-        return ((x - x0) * DK, (y0 + h - y) * DK)
-
-    def line(pts, wd, a=255):
-        d.line([P(*q) for q in pts], fill=a, width=max(2, int(wd * DK)), joint="curve")
-        for q in (pts[0], pts[-1]):
-            px, py = P(*q)
-            r = wd * DK / 2
-            d.ellipse((px - r, py - r, px + r, py + r), fill=a)
-
-    cx, cy, A, B = 12.5, 6.5, 12.0, 14.5          # the head's contour
-    line([(cx + A * math.cos(t), cy + B * math.sin(t)) for t in np.linspace(0, 2 * math.pi, 241)], 0.5, 170)
-    # the brow: a thick crescent over the eye
-    xs = np.linspace(2.8, 11.9, 60)
-    low = [(x, 10.55 - 0.05 * (x - 7.2) ** 2) for x in xs]
-    th = [0.15 + 1.25 * max(0.0, 1 - ((x - 7.2) / 4.8) ** 2) ** 0.6 for x in xs]
-    poly = [P(x, y) for (x, y) in low] + [P(x, y + t) for (x, y), t in zip(low[::-1], th[::-1])]
-    d.polygon(poly, fill=235)
-    # the cheek bag under the eye, the nose ridge and nostrils
-    line([(x, 5.9 - 0.05 * (x - 7.2) ** 2) for x in np.linspace(3.4, 11.0, 40)], 0.45, 200)
-    line([(11.7, 10.2), (11.7, 8.6), (12.2, 6.6), (12.9, 4.6), (13.2, 3.6)], 0.5, 220)
-    line([(13.2, 3.6), (14.4, 3.1), (15.2, 3.5)], 0.45, 220)
-    line([(13.2, 3.6), (12.2, 3.0), (11.5, 3.4)], 0.45, 220)
-    # fold lines from the nose to the mouth corners and the mouth
-    line([(11.3, 2.6), (9.6, 0.4), (8.6, -1.4)], 0.5, 200)
-    line([(15.6, 2.8), (17.2, 0.4)], 0.5, 200)
-    line([(8.6, -2.6), (11.5, -2.9), (14.5, -2.9), (17.5, -2.6)], 0.6, 220)
-    a = np.asarray(m).astype(np.float32) / 255.0
-    ys = y0 + h - (np.arange(H) + 0.5) / DK
-    xs_ = x0 + (np.arange(W) + 0.5) / DK
-    X, Y = np.meshgrid(xs_, ys)
-    inlawn = (X > LAWN[0] - 0.1) & (X < LAWN[1] + 0.1) & (Y > LAWN[2] - 0.1) & (Y < LAWN[3] + 0.1)
-    rgb = np.where((Y < 4.4)[..., None], np.array([228, 228, 240], np.float32), np.array([6, 26, 8], np.float32))
-    al = a * 0.55
-    im = np.dstack([np.broadcast_to(rgb, (H, W, 3)), (al * 255)[..., None]])
-    return Image.fromarray(im.clip(0, 255).astype(np.uint8), "RGBA")
-
-
-def eye_image(look):
-    """The Head's eye, flat and drawn like our faces: an off-white almond ringed by a thick black lid stroke, a huge
-    rounded-square black pupil and one warm highlight (the brightest thing in its frames)."""
-    s = 200
-    w, h = int(EW * s), int(EH * s)
-    im = Image.new("RGB", (w, h), (36, 26, 20))
-    d = ImageDraw.Draw(im)
-    cx, cy = w / 2, h / 2
-    A, B = 2.72 * s, 1.5 * s
-
-    def almond(scale, grow=0.0):
-        pts = []
-        n = 90
-        for i in range(n + 1):
-            u = -1 + 2 * i / n
-            pts.append((cx + u * A * scale, cy - (B * scale + grow) * (1 - u * u) ** 0.8))
-        for i in range(n, -1, -1):
-            u = -1 + 2 * i / n
-            pts.append((cx + u * A * scale, cy + (B * scale + grow) * (1 - u * u) ** 0.8))
-        return pts
-
-    d.polygon(almond(1.0, 0), fill=(11, 11, 15))                       # the thick lid stroke
-    d.polygon(almond(0.955, -26), fill=(238, 232, 212))                 # the white
-    px, py, hl = {0: (0, -6, 0), 1: (-150, -14, 1), 2: (6, 46, 2)}[look]
-    pr = 1.0 * s                                                        # the pupil's half side: 2 m across
-    d.rounded_rectangle((cx + px - pr, cy + py - pr * 0.96, cx + px + pr, cy + py + pr * 0.96), radius=int(0.5 * s),
-                        fill=(11, 11, 15))
-    d.rounded_rectangle((cx + px - pr * 1.0, cy + py - pr * 0.96, cx + px + pr * 1.0, cy + py + pr * 0.96),
-                        radius=int(0.5 * s), fill=(86, 40, 20))        # a dark amber iris ring, so it reads as an eye
-    pr *= 0.8
-    d.rounded_rectangle((cx + px - pr, cy + py - pr * 0.96, cx + px + pr, cy + py + pr * 0.96), radius=int(0.4 * s),
-                        fill=(11, 11, 15))
-    if hl == 0:
-        hx, hy, hs = cx + px - 0.36 * s, cy + py - 0.38 * s, 0.17 * s
-    elif hl == 1:
-        hx, hy, hs = cx + px - 0.34 * s, cy + py - 0.34 * s, 0.17 * s
-    else:
-        hx, hy, hs = cx + px - 0.18 * s, cy + py - 0.1 * s, 0.2 * s
-    d.rounded_rectangle((hx - hs, hy - hs, hx + hs, hy + hs), radius=int(hs * 0.45), fill=(255, 246, 220))
-    d.rounded_rectangle((cx + px + 0.3 * s, cy + py + 0.34 * s, cx + px + 0.42 * s, cy + py + 0.46 * s), radius=8,
-                        fill=(255, 246, 220))
-    # a heavy upper lid: a flat warm lid pressed down over the top of the eye, slanted, with its own thick stroke
-    ly0, ly1 = cy - 0.50 * B, cy - 0.34 * B
-    lid_poly = [(cx - A * 1.05, cy - B * 1.4), (cx + A * 1.05, cy - B * 1.4), (cx + A * 1.05, ly1), (cx - A * 1.05, ly0)]
-    mask = Image.new("L", im.size, 0)
-    ImageDraw.Draw(mask).polygon(almond(0.955, -26), fill=255)
-    lidim = Image.new("RGB", im.size, (240, 216, 168))
-    ld = ImageDraw.Draw(lidim)
-    ld.line((cx - A * 1.05, ly0, cx + A * 1.05, ly1), fill=(11, 11, 15), width=int(0.16 * s))
-    cut = Image.new("L", im.size, 0)
-    ImageDraw.Draw(cut).polygon(lid_poly, fill=255)
-    from PIL import ImageChops
-    im.paste(lidim, (0, 0), ImageChops.multiply(mask, cut))
-    d = ImageDraw.Draw(im)
-    # two thick lashes at the outer end, like a drawn eye
-    for sx in (-1, 1):
-        for k, ang in enumerate((-0.22, 0.05)):
-            x0, y0 = cx + sx * A * 0.93, cy - B * 0.34 - k * 22
-            d.line((x0, y0, x0 + sx * 0.36 * s, y0 - 0.22 * s + ang * s * 0.4), fill=(11, 11, 15), width=int(0.13 * s))
-    return im
-
-
 def clock_image():
     im = Image.new("RGB", (560, 280), (20, 6, 8))
     d = ImageDraw.Draw(im)
@@ -289,33 +119,6 @@ def clock_image():
     return im
 
 
-def mats(kit):
-    P = kit.plastic
-    M = {
-        "yellow": P("#ffd970", 0.5), "cream": P("#fff0c8", 0.6), "white": P("#f4f1e8", 0.45), "roof": P("#2f8f9a", 0.5),
-        "dark": P("#26262c", 0.5), "wood": P("#8a5a34", 0.6), "red": P("#ff3b30", 0.35, spec=0.6),
-        "red_d": P("#c42a22", 0.4), "black": P("#141418", 0.5), "chrome": kit.metal("#cfd3d8", 0.25),
-        "orange": P("#ff9a1f", 0.45), "lime": kit.emit(LIME, 0.9), "lime2": kit.emit(LIME, 4.0), "soil": P("#2b1c14", 0.95),
-        "tan": P("#c49a5c", 0.95), "lidedge": P("#3fbf5a", 1.0), "pole": P("#8a8f99", 0.4), "warm": kit.emit("#fff1c2", 6.0),
-        "glass": kit.emit("#ffd9a0", 1.1), "glow": kit.emit("#7dff98", 2.4), "conc": kit.texture("concrete", 1.0, tint="#d8d6d0"),
-        "asphalt": kit.texture("asphalt", 0.5, tint="#8a8f9a"), "ours": P("#6cc24a", 0.9, spec=0.1),
-        "ground": P("#4f9a3f", 0.95), "floor": kit.texture("wood", 0.7, tint="#d9b98a"), "bed": P("#1fb5a8", 0.6),
-        "bulb": kit.emit("#fff6dc", 2.2), "level": P("#ffd23a", 0.4), "vial": P("#b6ff3b", 0.2, spec=0.7),
-        "bubble": P("#ffffff", 0.2), "water": kit.emit("#bfe6ff", 0.8), "seed": P("#e8d9a8", 0.9),
-        "sod": P("#7ccf3c", 0.9), "sod_y": P("#d8c84a", 0.9), "fence": P("#f4f1e8", 0.5), "mint": P("#8fe3c8", 0.5),
-        "pic1": P("#4fb3ff", 0.6), "pic2": P("#ff8a3c", 0.6), "pic3": P("#e7458a", 0.6), "pic4": P("#b6ff3b", 0.6),
-        "pic5": P("#fff1c2", 0.6),
-    }
-    M["lidsoil"] = image_mat(kit, "lid soil", soil_image(), 1.0)
-    M["lawn"] = image_mat(kit, "odell lawn", lawn_image(), 0.9, turf=True, under=lawn_image(True))
-    for k in range(3):
-        M[f"eye{k}"] = image_mat(kit, f"eye {k}", eye_image(k), 0.7, emit=0.22)
-    M["decal"] = image_mat(kit, "face decal", face_decal(), 1.0, alpha=True)
-    M["clock"] = image_mat(kit, "clock", clock_image(), 0.4, emit=2.2)
-    return M
-
-
-# ------------------------------------------------------------------------------------------------ small helpers
 def quad_uv(kit, name, size, loc, mat, uv=None):
     """A flat quad facing +z with UVs (0,0)-(1,1)."""
     x, y = size[0] / 2, size[1] / 2
@@ -330,137 +133,6 @@ def quad_uv(kit, name, size, loc, mat, uv=None):
 BOUNDARY: set = set()
 
 
-def snap(i, j):
-    """A grid vertex's place. Vertices on the lid's outline move onto the lens's ellipse, so its edge is smooth; the lawn
-    mesh, the lid and the pit walls all call this, so they meet exactly."""
-    x, y = LAWN[0] + i * RES, LAWN[2] + j * RES
-    if (i, j) in BOUNDARY:
-        q = math.sqrt(((x - HC[0]) / LA) ** 2 + ((y - HC[1]) / LB) ** 2)
-        if q > 1e-6:
-            x, y = HC[0] + (x - HC[0]) / q, HC[1] + (y - HC[1]) / q
-    return x, y
-
-
-def tex_grid(kit, name, cells, mat, origin, uv_fn, wall_mat=None):
-    """A mesh of grid cells (each (ix, iy)), vertices lifted by hump(), UVs from world x y. Returns the object."""
-    ox, oy, z0 = origin
-    vid, verts, faces = {}, [], []
-
-    def vtx(i, j):
-        if (i, j) not in vid:
-            x, y = snap(i, j)
-            vid[(i, j)] = len(verts)
-            verts.append((x - ox, y - oy, hump(x, y) - z0))
-        return vid[(i, j)]
-
-    for (i, j) in cells:
-        faces.append((vtx(i, j), vtx(i + 1, j), vtx(i + 1, j + 1), vtx(i, j + 1)))
-    ob = kit.mesh_obj(name, verts, faces, mat, None, (ox, oy, z0), smooth=True)
-    uvl = ob.data.uv_layers.new(name="uv")
-    for lp in ob.data.loops:
-        v = ob.data.vertices[lp.vertex_index].co
-        uvl.data[lp.index].uv = uv_fn(v.x + ox, v.y + oy)
-    return ob
-
-
-def build_lawn_and_lid(kit, ctx, M):
-    nx = int(round((LAWN[1] - LAWN[0]) / RES))
-    ny = int(round((LAWN[3] - LAWN[2]) / RES))
-    inside, outside = [], []
-    for i in range(nx):
-        for j in range(ny):
-            x, y = LAWN[0] + (i + 0.5) * RES, LAWN[2] + (j + 0.5) * RES
-            if ((x - HC[0]) / LA) ** 2 + ((y - HC[1]) / LB) ** 2 < 1.0:
-                inside.append((i, j))
-            else:
-                outside.append((i, j))
-    ins = set(inside)
-    BOUNDARY.clear()
-    for (i, j) in inside:
-        for a in (0, 1):
-            for b in (0, 1):
-                if any((i + a + da, j + b + db) not in ins and 0 <= i + a + da < nx and 0 <= j + b + db < ny
-                       for da in (-1, 0) for db in (-1, 0)):
-                    BOUNDARY.add((i + a, j + b))
-    uv = lambda x, y: ((x - LAWN[0]) / (LAWN[1] - LAWN[0]), (y - LAWN[2]) / (LAWN[3] - LAWN[2]))
-    tex_grid(kit, "lawn", outside, M["lawn"], (0.0, 0.0, 0.0), uv)
-    hy = HC[1] + LB
-    zh = hump(HC[0], hy)
-    lid = tex_grid(kit, "lid", inside, M["lawn"], (HC[0], hy, zh), uv)
-    ctx["lid"] = lid
-    # the lid is ONE flap of turf hinged along the seam's top edge: every column of it bends up about that edge
-    co = np.empty(len(lid.data.vertices) * 3, np.float64)
-    lid.data.vertices.foreach_get("co", co)
-    co = co.reshape(-1, 3)
-    wx = co[:, 0] + HC[0]
-    yN = HC[1] + LB * np.sqrt(np.clip(1 - ((wx - HC[0]) / LA) ** 2, 0, 1))
-    hz = np.array([hump(x, y) for x, y in zip(wx, yN)]) - zh
-    ctx["lidv"] = (co.copy(), yN - hy, hz, np.clip(yN - (co[:, 1] + hy), 0, None))
-    # a thin slab of sod under the turf: a soil-brown underside and a rim, so the open lid is a slab, not a shell
-    nv = len(co)
-    cnt = {}
-    for p in lid.data.polygons:
-        vs = list(p.vertices)
-        for a, b in zip(vs, vs[1:] + vs[:1]):
-            cnt.setdefault((min(a, b), max(a, b)), []).append((a, b))
-    sv = [tuple(c) for c in co] + [(c[0], c[1], c[2] - LID_T) for c in co]
-    sf = [tuple(v + nv for v in reversed(list(p.vertices))) for p in lid.data.polygons]
-    rf = []
-    for k, lst in cnt.items():
-        if len(lst) == 1:
-            a, b = lst[0]
-            rf.append((a, b, b + nv, a + nv))
-    slab = kit.mesh_obj("lidslab", sv, sf, M["lidsoil"], None, (HC[0], hy, zh))
-    uvl = slab.data.uv_layers.new(name="uv")
-    for lp in slab.data.loops:
-        v = slab.data.vertices[lp.vertex_index].co
-        uvl.data[lp.index].uv = ((v.x + LA) / (2 * LA), (v.y + LB + (HC[1] + LB - hy)) / (2 * LB))
-    rim = kit.mesh_obj("lidrim", sv, rf, M["lidedge"], None, (HC[0], hy, zh))
-    ctx["lidslab"] = slab
-    ctx["lidrimob"] = rim
-    ctx["slabv"] = np.array(sv)
-    # the pit: walls round the lid's outline, down to the eye
-    verts, faces = [], []
-    for (i, j) in inside:
-        for di, dj, a, b in ((-1, 0, (i, j), (i, j + 1)), (1, 0, (i + 1, j + 1), (i + 1, j)),
-                             (0, -1, (i + 1, j), (i, j)), (0, 1, (i, j + 1), (i + 1, j + 1))):
-            if (i + di, j + dj) in ins:
-                continue
-            p = []
-            for (ii, jj) in (a, b):
-                x, y = snap(ii, jj)
-                p.append((x, y, hump(x, y)))
-            n = len(verts)
-            verts += [(p[0][0], p[0][1], p[0][2] - 0.004), (p[1][0], p[1][1], p[1][2] - 0.004),
-                      (p[1][0], p[1][1], EYE_Z), (p[0][0], p[0][1], EYE_Z)]
-            faces.append((n, n + 1, n + 2, n + 3))
-    kit.mesh_obj("pit", verts, faces, M["soil"], None, (0, 0, 0))
-    ctx["decal"] = quad_uv(kit, "decal", (DECAL[2], DECAL[3]), (DECAL[0] + DECAL[2] / 2, DECAL[1] + DECAL[3] / 2, 0.34), M["decal"])
-    ctx["eyes"] = []
-    for k in range(3):
-        ob = quad_uv(kit, f"eye{k}", (EW, EH), (HC[0], HC[1], EYE_Z), M[f"eye{k}"])
-        ctx["eyes"].append(ob)
-    # a dark floor under the eye drawing (keeps the pit from showing the ground through a gap)
-    kit.box("pitfloor", (EW + 0.4, EH + 0.4, 0.05), (HC[0], HC[1], EYE_Z - 0.06), M["soil"])
-
-
-# ------------------------------------------------------------------------------------------------ the street and yards
-def build_ground(kit, ctx, M):
-    kit.plane("base", (400, 400), (0, 0, -0.25), M["ground"])
-    kit.box("street", (120, 8, 0.2), (0, 0, -0.1), M["asphalt"])
-    for y in (4.6, -4.6):
-        kit.box(f"walk{y}", (120, 1.2, 0.14), (0, y, -0.02), M["conc"])
-    for k in range(-5, 6):   # lane dashes
-        kit.box(f"dash{k}", (2.0, 0.16, 0.012), (k * 6.0, 0.0, 0.006), M["white"])
-    kit.box("ourlawn", (14.8, 6.8, 0.2), (-7.6, 8.6, -0.1), M["ours"])
-    kit.box("farlawn", (80, 3.8, 0.2), (-45.0, 8.6, -0.1), M["ours"])
-    kit.box("farlawn2", (60, 3.8, 0.2), (45.0, 8.6, -0.1), M["ours"])
-    kit.box("backlawn", (120, 18, 0.2), (0, 21.0, -0.1), M["ours"])
-    kit.box("southlawn", (120, 14, 0.2), (0, -12.0, -0.1), M["ours"])
-    kit.cyl("bald", 1.2, 0.04, (BALD[0], BALD[1], 0.02), M["tan"], n=48)
-    kit.box("fencestrip", (0.4, 6.8, 0.04), (0.0, 8.6, 0.02), M["conc"])
-
-
 def build_fence(kit, ctx, M):
     y0, y1 = 5.3, 11.9
     n = 8
@@ -469,18 +141,6 @@ def build_fence(kit, ctx, M):
         kit.box(f"fpost{k}", (0.1, 0.1, 0.62), (0.0, y, 0.35), M["fence"], bevel=0.015)
     for z in (0.28, 0.5):
         kit.box(f"frail{z}", (0.05, y1 - y0, 0.07), (0.0, (y0 + y1) / 2, z + 0.04), M["fence"], bevel=0.01)
-
-
-def build_floods(kit, ctx, M):
-    ctx["floods"] = []
-    for k, (x, y) in enumerate(((0.9, 5.6), (14.2, 5.6), (0.9, 11.6), (14.2, 11.6))):
-        kit.cyl(f"pole{k}", 0.06, 4.6, (x, y, 2.3), M["pole"], n=10)
-        head = kit.box(f"head{k}", (0.55, 0.3, 0.28), (x, y, 4.7), M["pole"], bevel=0.02)
-        kit.box(f"lamp{k}", (0.46, 0.04, 0.2), (x + (0.17 if x < 7 else -0.17) * 0.0, y + (0.16 if y < 8 else -0.16), 4.7),
-                M["warm"])
-        L = kit.light(f"flood{k}", "SPOT", (x, y, 4.6), 1400.0, "#fff1c2", size=0.35, spot=95, blend=0.7)
-        kit.aim(L, (HC[0], HC[1] - 0.5, 0.0))
-        ctx["floods"].append(f"flood{k}")
 
 
 def build_trees(kit, ctx, M):
@@ -505,6 +165,8 @@ def build_mailboxes(kit, ctx, M):
 
 
 def build_odell_house(kit, ctx, M):
+    for k, (x, y) in enumerate(((1.6, 14.5), (-2.2, 13.6), (4.4, 16.0))):
+        kit.prop("sub_tree_large" if k % 2 == 0 else "sub_tree_small", (x, y, 0), rot=k * 41, scale=1.5)
     kit.prop("sub_building_type_c", (9.8, 14.95, 0), tint="#9ff0d6")
     kit.prop("sub_planter", (7.2, 12.5, 0), rot=0)
     kit.prop("flowers", (11.6, 11.6, 0), scale=0.9)
@@ -514,7 +176,6 @@ def build_odell_house(kit, ctx, M):
         kit.prop("sub_path_stones_long", (9.5, y - 0.9, 0), rot=90)
 
 
-# ------------------------------------------------------------------------------------------------ the south houses
 def window(kit, M, root, name, cx, z, w, h, blind):
     """A window on a house root whose front face is local y = 0 facing +y: glass, white frame, a stack of blind slats."""
     kit.box(f"{name}.glass", (w, 0.03, h), (cx, 0.03, z), M["glass"], root)
@@ -546,21 +207,11 @@ def south_house(kit, ctx, M, name, cx, w, hexc, lean, tracks):
     wins = []
     xs = [(-w / 2 + 1.3 + k * (w - 2.6) / 2) for k in range(3)]
     for k, wx in enumerate(xs):
-        wins.append(window(kit, M, root, f"{name}.w{k}", wx, 3.9, 1.1, 1.2, tracks[k]))
-    root.rotation_euler = (0, math.radians(lean), 0)
+        wins.append(dict(window(kit, M, root, f"{name}.w{k}", wx, 3.9, 1.1, 1.2, tracks[k]), root=name))
     ctx["blinds"] += wins
     return root
 
 
-def build_south(kit, ctx, M):
-    ctx["blinds"] = []
-    ctx["coral"] = south_house(kit, ctx, M, "coral", -6.0, 9.0, "#ff8f7a", 6.0, [1, 1, 1])
-    south_house(kit, ctx, M, "lemon", 6.0, 9.0, "#ffd54a", 0.0, ["bw0", "bw1", "bw2"])
-    south_house(kit, ctx, M, "lilac", -18.0, 8.0, "#b69cff", 0.0, ["bw0", "bw1", "bw2"])
-    south_house(kit, ctx, M, "sky", 18.0, 8.0, "#6cc8ff", 0.0, ["bw2", "bw0", "bw1"])
-
-
-# ------------------------------------------------------------------------------------------------ our house and its bedroom
 def build_ours(kit, ctx, M):
     X0, X1, Y0, Y1 = -14.0, -4.0, 12.0, 19.0
     cx = (X0 + X1) / 2
@@ -615,52 +266,16 @@ def build_ours(kit, ctx, M):
     kit.light("roomfill", "AREA", (-9.0, 15.4, Z2 + 2.3), 520.0, "#cfd8ff", size=4.0)
     kit.light("greenglow", "SPOT", (-1.5, 9.5, 5.0), 1500.0, "#7dff98", size=0.3, spot=40, blend=0.3)
     kit.aim(kit.LIGHTS["greenglow"]["obj"], (-6.0, 13.6, Z2 + 1.2))
-    # the chair on casters
-    chair = kit.empty("o.chair", (-8.4, 14.6, Z2 + 0.04))
-    kit.box("o.seat", (0.5, 0.5, 0.08), (0, 0, 0.52), M["dark"], chair, bevel=0.03)
-    kit.box("o.cback", (0.5, 0.07, 0.55), (0, 0.24, 0.84), M["dark"], chair, bevel=0.03)
-    kit.cyl("o.cpost", 0.03, 0.4, (0, 0, 0.3), M["chrome"], chair, n=10)
-    for k in range(5):
-        a = k * 2 * math.pi / 5
-        kit.box(f"o.cspoke{k}", (0.32, 0.05, 0.04), (0.16 * math.cos(a), 0.16 * math.sin(a), 0.12), M["chrome"], chair,
-                rot=(0, 0, a))
-        kit.sphere(f"o.caster{k}", 0.045, (0.31 * math.cos(a), 0.31 * math.sin(a), 0.05), M["black"], chair, seg=8)
-    ctx["chair"] = chair
     # the blinds: slats stacked in the window opening, inside
     slats = []
     for i in range(13):
         slats.append(kit.box(f"o.slat{i}", (1.9, 0.09, 0.012), (-6.0, Y0 + 0.3, Z2 + 2.14 - i * 0.092), M["white"]))
     ctx["bslats"] = slats
     kit.box("o.bhead", (2.0, 0.1, 0.06), (-6.0, Y0 + 0.3, Z2 + 2.25), M["white"])
-    # Dad's yellow spirit level on the sill (z-lifted 5 mm), its bubble driven by the meter
-    kit.box("o.shelf", (2.0, 0.25, 0.04), (-6.0, Y0 + 0.45, 3.68), M["white"])
-    kit.box("level.body", (0.58, 0.075, 0.06), (-5.4, Y0 + 0.45, 3.7 + 0.035), M["level"], bevel=0.012)
-    kit.box("level.vial", (0.16, 0.078, 0.034), (-5.4, Y0 + 0.45, 3.7 + 0.075), M["vial"], bevel=0.008)
-    ctx["bubble"] = kit.sphere("level.bubble", 0.016, (-5.4, Y0 + 0.45, 3.7 + 0.09), M["bubble"], seg=8)
     # the doorway's white frame
     for sx in (-1, 1):
         kit.box(f"o.df{sx}", (0.1, 0.08, 2.2), (-9.5 + sx * 0.6, Y1 - 0.22, Z2 + 1.12), M["white"])
     kit.box("o.dfh", (1.3, 0.08, 0.1), (-9.5, Y1 - 0.22, Z2 + 2.2), M["white"])
-
-
-def build_hall(kit, ctx, M):
-    kit.box("h.floor", (6.8, 1.9, 0.1), (HX + 3.2, -0.75, -0.05), M["floor"])
-    kit.box("h.back", (6.8, 0.2, 2.7), (HX + 3.2, 0.1, 1.3), M["cream"])
-    kit.box("h.ceil", (6.8, 1.9, 0.1), (HX + 3.2, -0.75, 2.65), M["cream"])
-    kit.box("h.end", (0.2, 1.9, 2.7), (HX + 6.7, -0.75, 1.3), M["cream"])
-    kit.box("h.start", (0.2, 1.9, 2.7), (HX - 0.3, -0.75, 1.3), M["cream"])
-    kit.box("h.glow", (0.04, 1.0, 1.5), (HX + 6.58, -0.75, 1.55), M["glow"])
-    kit.box("h.rail", (6.8, 0.04, 0.08), (HX + 3.2, -0.04, 0.9), M["white"])
-    ctx["pics"] = []
-    cols = [("pic1", "pic4"), ("pic2", "pic5"), ("pic3", "pic1")]
-    for k, x in enumerate((HX + 1.6, HX + 3.3, HX + 5.0)):
-        root = kit.empty(f"h.pic{k}", (x, -0.07, 1.55))
-        kit.box(f"h.frame{k}", (0.8, 0.06, 1.0), (0, 0, 0), M["wood"], root, bevel=0.01)
-        kit.box(f"h.art{k}", (0.64, 0.02, 0.84), (0, -0.04, 0), M[cols[k][0]], root)
-        kit.box(f"h.art2{k}", (0.3, 0.02, 0.3), (0.08, -0.058, -0.1), M[cols[k][1]], root)
-        ctx["pics"].append(root)
-    kit.light("hall", "POINT", (HX + 3.0, -0.8, 2.3), 70.0, "#ffe2b0", size=0.2)
-    kit.light("hallglow", "POINT", (HX + 6.2, -0.8, 1.5), 60.0, "#7dff98", size=0.2)
 
 
 def build_bedside(kit, ctx, M):
@@ -674,7 +289,6 @@ def build_bedside(kit, ctx, M):
     kit.light("bsr", "POINT", (BX, -0.7, 0.8), 4.0, "#ff4030", size=0.1)
 
 
-# ------------------------------------------------------------------------------------------------ the mower, cord, props
 def build_mower(kit, ctx, M):
     root = kit.empty("mower", (0, 0, 0))
     kit.box("m.deck", (0.62, 0.78, 0.2), (0, 0, 0.27), M["red"], root, bevel=0.05)
@@ -698,80 +312,6 @@ def build_mower(kit, ctx, M):
         ctx["cord"].append(kit.cyl(f"cord{k}", 0.02, 1.0, (0, 0, 0.03), M["orange"], n=8))
 
 
-def build_misc(kit, ctx, M):
-    # seeds, sod, sprinkler, hose water, binoculars
-    rng = np.random.default_rng(3)
-    ctx["seeds"] = []
-    for k in range(28):
-        a, r = rng.uniform(0, 2 * math.pi), 1.05 * math.sqrt(rng.uniform())
-        ctx["seeds"].append((kit.box(f"seed{k}", (0.03, 0.03, 0.015), (0, 0, -5), M["seed"]),
-                             (BALD[0] + r * math.cos(a), BALD[1] + r * math.sin(a))))
-    sod = kit.empty("sod", (BALD[0], BALD[1], 0.0))
-    kit.box("sod.slab", (2.0, 1.5, 0.05), (0, 0, 0.065), M["sod"], sod, bevel=0.01)
-    for sx in (-1, 1):
-        kit.box(f"sod.ey{sx}", (0.1, 1.5, 0.056), (sx * 0.95, 0, 0.068), M["sod_y"], sod)
-    for sy in (-1, 1):
-        kit.box(f"sod.ex{sy}", (2.0, 0.1, 0.056), (0, sy * 0.7, 0.068), M["sod_y"], sod)
-    ctx["sod"] = sod
-    kit.box("seedbag", (0.5, 0.2, 0.7), (-4.4, 8.9, 0.35), kit.plastic("#d9c08a", 0.8), bevel=0.04)
-    kit.box("seedband", (0.52, 0.22, 0.12), (-4.4, 8.9, 0.55), M["lime"])
-    spr = kit.empty("sprinkler", (BALD[0], BALD[1], 0.0))
-    kit.cyl("spr.base", 0.1, 0.1, (0, 0, 0.09), M["black"], spr, n=12)
-    kit.cyl("spr.head", 0.04, 0.2, (0, 0, 0.22), M["chrome"], spr, n=8)
-    ctx["sprink"] = spr
-    spr.location = (BALD[0], BALD[1], -9.0)
-    ctx["drops"] = [kit.sphere(f"drop{k}", 0.035, (0, 0, -5), M["water"], seg=6) for k in range(26)]
-    bino = kit.empty("binos", (0, 0, -9))
-    kit.box("bn.bridge", (0.2, 0.06, 0.07), (0, 0.0, 0.0), M["black"], bino, bevel=0.015)
-    for sx in (-1, 1):
-        kit.cyl(f"bn.tube{sx}", 0.05, 0.2, (sx * 0.1, -0.06, 0.0), M["black"], bino, rot=(math.pi / 2, 0, 0), n=12)
-        kit.cyl(f"bn.lens{sx}", 0.035, 0.02, (sx * 0.1, -0.17, 0.0), M["glass"], bino, rot=(math.pi / 2, 0, 0), n=10)
-    ctx["binoculars"] = bino
-
-
-def build_lights(kit, ctx, M):
-    kit.light("sun", "SUN", (0, 0, 30), 4.0, "#fff1d0")
-    kit.aim(kit.LIGHTS["sun"]["obj"], (4, 6, 0))
-    kit.LIGHTS["sun"]["obj"].location = (-18, -14, 24)
-    kit.aim(kit.LIGHTS["sun"]["obj"], (0, 4, 0))
-    kit.light("dayfill", "AREA", (0, 8, 22), 5500.0, "#cfe6ff", size=60.0)
-    kit.light("moon", "SUN", (-10, -18, 24), 1.5, "#a9c4ff")
-    kit.aim(kit.LIGHTS["moon"]["obj"], (2, 6, 0))
-    kit.light("eyelamp", "AREA", (HC[0], HC[1] - 0.5, 2.8), 150.0, "#ffe0a8", size=3.5)
-    kit.light("lidrim", "SPOT", (HC[0] + 1.0, HC[1] + 4.5, 3.0), 800.0, "#a9c4ff", size=0.2, spot=60, blend=0.5)
-    kit.aim(kit.LIGHTS["lidrim"]["obj"], (HC[0], HC[1] + 0.6, 0.5))
-    kit.light("streetfill", "AREA", (0.0, 3.0, 9.0), 4500.0, "#cfd8ff", size=26.0)
-    kit.aim(kit.LIGHTS["streetfill"]["obj"], (0.0, -9.0, 3.0))
-    kit.light("porchfill", "POINT", (-7.2, 10.2, 2.3), 140.0, "#ffd9a0", size=0.2)
-    kit.light("faces", "AREA", (HC[0] - 2, 3.0, 4.0), 260.0, "#fff1c2", size=5.0)
-    kit.aim(kit.LIGHTS["faces"]["obj"], (HC[0] - 2, 8.0, 0.8))
-
-
-# ------------------------------------------------------------------------------------------------ build
-def build(kit, story, tl):
-    M = mats(kit)
-    ctx = {"M": M}
-    w = bpy.context.scene.world
-    nodes = [n for n in w.node_tree.nodes if n.type == "BACKGROUND"]
-    ctx["bg_nodes"] = nodes
-    build_ground(kit, ctx, M)
-    build_fence(kit, ctx, M)
-    build_lawn_and_lid(kit, ctx, M)
-    build_floods(kit, ctx, M)
-    build_trees(kit, ctx, M)
-    build_mailboxes(kit, ctx, M)
-    build_odell_house(kit, ctx, M)
-    build_south(kit, ctx, M)
-    build_ours(kit, ctx, M)
-    build_hall(kit, ctx, M)
-    build_bedside(kit, ctx, M)
-    build_mower(kit, ctx, M)
-    build_misc(kit, ctx, M)
-    build_lights(kit, ctx, M)
-    return ctx
-
-
-# ------------------------------------------------------------------------------------------------ animate
 def _ss(x):
     x = min(1.0, max(0.0, x))
     return x * x * (3 - 2 * x)
@@ -807,105 +347,345 @@ def _aim_y(ob, p0, p1, r=0.02):
     ob.rotation_euler = d.to_track_quat("Z", "Y").to_euler()
 
 
+# ------------------------------------------------------------------------------------------------ materials and textures
+def lawn_image():
+    """Straight mown stripes running along y (toward the street), light and dark bands across x."""
+    x0, x1, y0, y1 = LAWN
+    w, h = 2220, 1020
+    xs = x0 + (np.arange(w) + 0.5) / w * (x1 - x0)
+    X = np.broadcast_to(xs[None, :], (h, w))
+    r = (X - x0) / 0.55
+    band = np.floor(r).astype(int)
+    light = np.array([48, 214, 94], np.float32)
+    dark = np.array([28, 172, 68], np.float32)
+    im = np.where((band % 2 == 0)[..., None], light, dark).astype(np.float32)
+    rng = np.random.default_rng(5)
+    n = rng.normal(0, 1, (h // 3, w // 3)).astype(np.float32)
+    n = np.asarray(Image.fromarray(((n * 0.25 + 0.5).clip(0, 1) * 255).astype(np.uint8)).resize((w, h), Image.BICUBIC)).astype(np.float32) / 255 - 0.5
+    im *= (1.0 + n * 0.10)[..., None]
+    edge = np.abs(r % 1.0 - 0.5) > 0.47
+    im[edge] *= 0.95
+    return Image.fromarray(im.clip(0, 255).astype(np.uint8))
+
+
+def mats(kit):
+    P = kit.plastic
+    M = {
+        "yellow": P("#ffd970", 0.5), "cream": P("#fff0c8", 0.6), "white": P("#f4f1e8", 0.45), "roof": P("#2f8f9a", 0.5),
+        "dark": P("#26262c", 0.5), "wood": P("#8a5a34", 0.6), "red": P("#ff3b30", 0.35, spec=0.6),
+        "red_d": P("#c42a22", 0.4), "black": P("#141418", 0.5), "chrome": kit.metal("#cfd3d8", 0.25),
+        "orange": P("#ff9a1f", 0.45), "lime": kit.emit(LIME, 0.9), "lime2": kit.emit(LIME, 4.0),
+        "tan": P("#c49a5c", 0.95), "pole": P("#8a8f99", 0.4), "warm": kit.emit("#fff1c2", 6.0),
+        "glass": kit.emit("#ffd9a0", 1.1), "conc": kit.texture("concrete", 1.0, tint="#d8d6d0"),
+        "asphalt": kit.texture("asphalt", 0.5, tint="#8a8f9a"), "ours": P("#6cc24a", 0.9, spec=0.1),
+        "ours_b": P("#5fb842", 0.9, spec=0.1), "ground": P("#4f9a3f", 0.95),
+        "floor": kit.texture("wood", 0.7, tint="#d9b98a"), "bulb": kit.emit("#fff6dc", 2.2),
+        "fence": P("#f4f1e8", 0.5), "mint": P("#8fe3c8", 0.5),
+        "tick": P("#101014", 0.6), "stick": P(LIME, 0.5, spec=0.3),
+        "blade_a": P("#3ce26b", 0.8, spec=0.1), "blade_b": P("#22c451", 0.8, spec=0.1),
+        "blade_s": P("#7dff4a", 0.7, spec=0.1),
+        "cart": P("#1fb5a8", 0.5), "cart_d": P("#168a80", 0.5), "cup": P("#fbfaf4", 0.5), "lid": P("#6b3e22", 0.55),
+        "sleeve": P(LIME, 0.6), "chair_a": P("#ff9a1f", 0.55), "chair_b": P("#4fb3ff", 0.55),
+        "chip_a": kit.emit("#2fe05a", 1.6), "chip_b": kit.emit("#6dff6a", 1.8), "chip_c": kit.emit("#9cff6a", 2.0),
+        "streak": kit.emit("#58f06a", 0.8),
+    }
+    M["lawn"] = image_mat(kit, "odell lawn", lawn_image(), 0.9)
+    M["clock"] = image_mat(kit, "clock", clock_image(), 0.4, emit=2.2)
+    return M
+
+
+# ------------------------------------------------------------------------------------------------ blades
+def make_blades(kit, name, xs, ys, mat, seed, w=0.024, lean=0.18):
+    """A field of single-triangle blades; set_heights(f, h) stands each one up to h metres."""
+    rng = np.random.default_rng(seed)
+    n = len(xs)
+    yaw = rng.uniform(0, math.pi, n)
+    la = rng.uniform(0, 2 * math.pi, n)
+    f = {"n": n, "x": np.asarray(xs, float), "y": np.asarray(ys, float), "ux": np.cos(yaw) * w / 2, "uy": np.sin(yaw) * w / 2,
+         "lx": np.cos(la) * lean * rng.uniform(0.3, 1.0, n), "ly": np.sin(la) * lean * rng.uniform(0.3, 1.0, n),
+         "rnd": rng.uniform(0.7, 1.3, n)}
+    verts = [(0.0, 0.0, 0.0)] * (3 * n)
+    faces = [(3 * i, 3 * i + 1, 3 * i + 2) for i in range(n)]
+    f["obj"] = kit.mesh_obj(name, verts, faces, mat, None, (0, 0, 0))
+    set_heights(f, np.full(n, 0.05))
+    return f
+
+
+def set_heights(f, h):
+    h = np.asarray(h, float)
+    n = f["n"]
+    v = np.empty((n, 3, 3), np.float64)
+    v[:, 0, 0] = f["x"] - f["ux"]
+    v[:, 0, 1] = f["y"] - f["uy"]
+    v[:, 0, 2] = 0.0
+    v[:, 1, 0] = f["x"] + f["ux"]
+    v[:, 1, 1] = f["y"] + f["uy"]
+    v[:, 1, 2] = 0.0
+    v[:, 2, 0] = f["x"] + f["lx"] * h
+    v[:, 2, 1] = f["y"] + f["ly"] * h
+    v[:, 2, 2] = h
+    f["obj"].data.vertices.foreach_set("co", v.ravel())
+    f["obj"].data.update()
+
+
+def build_blades(kit, ctx, M):
+    rng = np.random.default_rng(21)
+    # the mow strip: two interleaved fields (two greens)
+    x0, x1, y0, y1 = STRIP
+    n = int((x1 - x0) * (y1 - y0) * 520)
+    xs, ys = rng.uniform(x0, x1, n), rng.uniform(y0, y1, n)
+    ctx["strip"] = [make_blades(kit, "strip_a", xs[::2], ys[::2], M["blade_a"], 1),
+                    make_blades(kit, "strip_b", xs[1::2], ys[1::2], M["blade_b"], 2)]
+    # the patch round the yardstick's foot
+    m = 220
+    r = 0.06 + 0.2 * np.sqrt(rng.uniform(0, 1, m))
+    a = rng.uniform(0, 2 * math.pi, m)
+    f = make_blades(kit, "stick_grass", STK[0] + r * np.cos(a), STK[1] + r * np.sin(a), M["blade_s"], 3, w=0.035, lean=0.12)
+    f["r"] = r
+    ctx["stickpatch"] = f
+    # our yard: ordinary green, a bit shaggy, left alone
+    m = 5200
+    xs, ys = rng.uniform(-13.8, -0.5, m), rng.uniform(5.8, 11.6, m)
+    keep = ~((xs > -10.8) & (xs < -5.6) & (ys > 9.6))
+    xs, ys = xs[keep], ys[keep]
+    f = make_blades(kit, "ours_grass", xs, ys, M["ours_b"], 4, w=0.03, lean=0.25)
+    set_heights(f, 0.1 + 0.06 * f["rnd"])
+    # a few patchy lawns up the street
+    for k, (x, y, r) in enumerate(((-21, 8.6, 1.5), (-27, 9.6, 1.1), (-33, 8.0, 1.6), (-24, 7.2, 0.9), (26, 8.4, 1.4),
+                                   (32, 9.6, 1.2), (38, 8.0, 1.5), (29, 7.0, 0.8))):
+        kit.cyl(f"patch{k}", r, 0.03, (x, y, 0.015), M["tan"], n=24)
+
+
+# ------------------------------------------------------------------------------------------------ the lawns and the floods
+def build_ground(kit, ctx, M):
+    kit.plane("base", (400, 400), (0, 0, -0.25), M["ground"])
+    kit.box("street", (120, 8, 0.2), (0, 0, -0.1), M["asphalt"])
+    for y in (4.6, -4.6):
+        kit.box(f"walk{y}", (120, 1.2, 0.14), (0, y, -0.02), M["conc"])
+    for k in range(-5, 6):   # lane dashes
+        kit.box(f"dash{k}", (2.0, 0.16, 0.012), (k * 6.0, 0.0, 0.006), M["white"])
+    kit.box("ourlawn", (14.8, 6.8, 0.2), (-7.6, 8.6, -0.1), M["ours"])
+    kit.box("farlawn", (80, 3.8, 0.2), (-45.0, 8.6, -0.1), M["ours"])
+    kit.box("farlawn2", (60, 3.8, 0.2), (45.0, 8.6, -0.1), M["ours"])
+    kit.box("backlawn", (120, 18, 0.2), (0, 21.0, -0.1), M["ours"])
+    kit.box("southlawn", (120, 14, 0.2), (0, -12.0, -0.1), M["ours"])
+    kit.box("fencestrip", (0.4, 6.8, 0.04), (0.0, 8.6, 0.02), M["conc"])
+    # Mr. Odell's lawn: one straight-striped quad (its box sits below, so nothing shares a plane)
+    kit.box("odlawn_base", (14.8, 6.8, 0.2), (7.6, 8.6, -0.101), M["ground"])
+    quad_uv(kit, "odlawn", (LAWN[1] - LAWN[0], LAWN[3] - LAWN[2]), ((LAWN[0] + LAWN[1]) / 2, (LAWN[2] + LAWN[3]) / 2, 0.004), M["lawn"])
+
+
+def build_floods(kit, ctx, M):
+    ctx["floods"] = []
+    for k, (x, y) in enumerate(((0.9, 11.6), (6.0, 11.7), (11.5, 11.6), (14.2, 5.6), (14.2, 8.8))):
+        kit.cyl(f"pole{k}", 0.06, 4.6, (x, y, 2.3), M["pole"], n=10)
+        kit.box(f"head{k}", (0.55, 0.3, 0.28), (x, y, 4.7), M["pole"], bevel=0.02)
+        kit.box(f"lamp{k}", (0.46, 0.04, 0.2), (x, y + (0.16 if y < 8 else -0.16), 4.7), M["warm"])
+        L = kit.light(f"flood{k}", "SPOT", (x, y, 4.6), 520.0, "#fff1c2", size=0.35, spot=100, blend=0.7)
+        kit.aim(L, (4.5, 8.2, 0.0))
+        ctx["floods"].append(f"flood{k}")
+
+
+# ------------------------------------------------------------------------------------------------ the yardstick
+def build_stick(kit, ctx, M):
+    root = kit.empty("yardstick", (STK[0], STK[1], 0.0))
+    kit.box("stk.core", (0.06, 0.02, 0.9), (0, 0, 0.45), M["stick"], root, bevel=0.003)
+    kit.box("stk.tip", (0.06, 0.02, 0.03), (0, 0, 0.915), M["stick"], root, bevel=0.003)
+    for i in range(1, 10):                      # nine ticks, every 0.1 m: long on the odd ones, short between
+        w = 0.052 if i % 2 else 0.032
+        kit.box(f"stk.tick{i}", (w, 0.02, 0.016), (0, -0.012, 0.1 * i), M["tick"], root)
+    ctx["stick"] = root
+
+
+# ------------------------------------------------------------------------------------------------ the coffee cart and cups
+def build_cart(kit, ctx, M):
+    cx, cy = CART
+    root = kit.empty("cart", (cx, cy, 0.0))
+    kit.box("c.body", (1.7, 0.9, 0.95), (0, 0, 0.5), M["cart"], root, bevel=0.03)
+    kit.box("c.skirt", (1.74, 0.94, 0.1), (0, 0, 0.12), M["cart_d"], root, bevel=0.02)
+    kit.box("c.counter", (1.9, 1.05, 0.07), (0, -0.05, 1.0), M["white"], root, bevel=0.015)
+    for sx in (-1, 1):
+        kit.cyl(f"c.wheel{sx}", 0.17, 0.08, (sx * 0.75, 0.0, 0.17), M["black"], root, rot=(0, math.pi / 2, 0), n=14)
+        kit.box(f"c.post{sx}", (0.06, 0.06, 1.3), (sx * 0.9, -0.45, 1.65), M["white"], root)
+    kit.box("c.back", (1.8, 0.06, 1.2), (0, 0.46, 1.6), M["cart_d"], root, bevel=0.01)
+    for k in range(8):
+        kit.box(f"c.awn{k}", (0.24, 1.25, 0.05), (-0.84 + 0.24 * k, -0.2, 2.25), M["cart"] if k % 2 == 0 else M["white"], root,
+                rot=(math.radians(-10), 0, 0))
+    kit.box("c.machine", (0.5, 0.3, 0.42), (0.55, 0.2, 1.255), M["chrome"], root, bevel=0.02)
+    kit.box("c.machine2", (0.4, 0.26, 0.1), (0.55, 0.2, 1.52), M["dark"], root, bevel=0.02)
+    ctx["cart"] = root
+
+
+def build_cups(kit, ctx, M, story):
+    ctx["cups"] = []
+    for i, c in enumerate(story.get("cups", [])):
+        root = kit.empty(f"cup{i}", (0, 0, -20))
+        kit.cyl(f"cup{i}.body", 0.036, 0.11, (0, 0, 0.055), M["cup"], root, n=14, r2=0.045)
+        kit.cyl(f"cup{i}.lid", 0.047, 0.02, (0, 0, 0.12), M["lid"], root, n=14)
+        sl = None
+        if c.get("kind") == "lime":
+            sl = kit.cyl(f"cup{i}.sleeve", 0.0445, 0.05, (0, 0, 0.05), M["sleeve"], root, n=14, r2=0.046)
+        ctx["cups"].append({"root": root, "sleeve": sl, "spec": c})
+
+
+def build_chairs(kit, ctx, M):
+    ctx["chairs"] = []
+    for k, (x, y, rot, mk) in enumerate(((-1.05, 8.4, 90, "chair_a"), (1.05, 8.4, -90, "chair_b"))):
+        root = kit.empty(f"chair{k}", (x, y, -20))
+        kit.box(f"ch{k}.seat", (0.5, 0.5, 0.06), (0, 0, 0.4), M[mk], root, bevel=0.01)
+        kit.box(f"ch{k}.back", (0.5, 0.06, 0.55), (0, 0.22, 0.7), M[mk], root, rot=(math.radians(-12), 0, 0), bevel=0.01)
+        for sx in (-1, 1):
+            for sy in (-1, 1):
+                kit.box(f"ch{k}.leg{sx}{sy}", (0.05, 0.05, 0.4), (sx * 0.21, sy * 0.21, 0.2), M["white"], root)
+            kit.box(f"ch{k}.arm{sx}", (0.05, 0.5, 0.05), (sx * 0.25, 0.0, 0.62), M["white"], root)
+        ctx["chairs"].append((root, (x, y), rot))
+
+
+def build_chips(kit, ctx, M):
+    rng = np.random.default_rng(8)
+    ctx["chips"] = []
+    mm = ["chip_a", "chip_b", "chip_c"]
+    for k in range(60):
+        s = rng.uniform(0.04, 0.065)
+        body = kit.box(f"chip{k}", (s, s * 0.6, 0.012), (0, 0, -30), M[mm[k % 3]])
+        gh = [kit.box(f"ghost{k}_{j}", (s * (0.72 - 0.25 * j), s * 0.45, 0.01), (0, 0, -30), M["streak"]) for j in range(2)]
+        ctx["chips"].append({"body": body, "ghosts": gh, "ph": rng.uniform(0, 1), "a": rng.uniform(-0.5, 0.5),
+                             "b": rng.uniform(0.15, 0.85), "pk": rng.uniform(0.28, 0.6), "sp": rng.uniform(0.9, 1.25),
+                             "spin": rng.uniform(-6, 6), "k": k})
+
+
+# ------------------------------------------------------------------------------------------------ the south houses
+def build_south(kit, ctx, M):
+    ctx["blinds"] = []
+    south_house(kit, ctx, M, "coral", -6.0, 9.0, "#ff8f7a", 0.0, ["bw2", "bw1", "bw0"])
+    south_house(kit, ctx, M, "lemon", 6.0, 9.0, "#ffd54a", 0.0, ["bw0", "bw1", "bw2"])
+    south_house(kit, ctx, M, "lilac", -18.0, 8.0, "#b69cff", 0.0, ["bw1", "bw0", "bw2"])
+    south_house(kit, ctx, M, "sky", 18.0, 8.0, "#6cc8ff", 0.0, ["bw2", "bw0", "bw1"])
+
+
+def build_lights(kit, ctx, M):
+    kit.light("sun", "SUN", (0, 0, 30), 4.0, "#fff1d0")
+    kit.LIGHTS["sun"]["obj"].location = (-18, -14, 24)
+    kit.aim(kit.LIGHTS["sun"]["obj"], (0, 4, 0))
+    kit.light("dayfill", "AREA", (0, 8, 22), 5500.0, "#cfe6ff", size=60.0)
+    kit.light("moon", "SUN", (-10, -18, 24), 1.5, "#a9c4ff")
+    kit.aim(kit.LIGHTS["moon"]["obj"], (2, 6, 0))
+    kit.light("streetfill", "AREA", (0.0, 3.0, 9.0), 4500.0, "#cfd8ff", size=26.0)
+    kit.aim(kit.LIGHTS["streetfill"]["obj"], (0.0, -9.0, 3.0))
+    kit.light("porchfill", "POINT", (-7.2, 10.2, 2.3), 140.0, "#ffd9a0", size=0.2)
+    kit.light("faces", "AREA", (3.0, 2.0, 3.6), 330.0, "#fff1c2", size=5.0)
+    kit.aim(kit.LIGHTS["faces"]["obj"], (3.0, 8.0, 0.8))
+    kit.light("visionkey", "SPOT", (-3.2, 4.6, 4.2), 900.0, "#ffd9a0", size=0.4, spot=34, blend=0.5)
+    kit.aim(kit.LIGHTS["visionkey"]["obj"], (0.5, 8.0, 1.0))
+
+
+# ------------------------------------------------------------------------------------------------ build
+def build(kit, story, tl):
+    M = mats(kit)
+    ctx = {"M": M}
+    w = bpy.context.scene.world
+    ctx["bg_nodes"] = [n for n in w.node_tree.nodes if n.type == "BACKGROUND"]
+    build_ground(kit, ctx, M)
+    build_fence(kit, ctx, M)
+    build_floods(kit, ctx, M)
+    build_trees(kit, ctx, M)
+    build_mailboxes(kit, ctx, M)
+    build_odell_house(kit, ctx, M)
+    build_south(kit, ctx, M)
+    build_ours(kit, ctx, M)
+    build_bedside(kit, ctx, M)
+    build_mower(kit, ctx, M)
+    build_stick(kit, ctx, M)
+    build_blades(kit, ctx, M)
+    build_cart(kit, ctx, M)
+    build_cups(kit, ctx, M, story)
+    build_chairs(kit, ctx, M)
+    build_chips(kit, ctx, M)
+    build_lights(kit, ctx, M)
+    return ctx
+
+
+# ------------------------------------------------------------------------------------------------ animate
+def hand_pos(st, hand):
+    """Where a hand is: the shoulder, the arm's length out along the raised arm."""
+    yaw = st["yaw"]
+    d = (math.sin(yaw), -math.cos(yaw))
+    rt = (-math.cos(yaw), -math.sin(yaw))
+    right = hand == "r"
+    a = st["arms"][1 if right else 0]
+    lat = 0.40 if right else -0.40
+    reach = 0.5 * math.sin(a) + 0.08
+    return (st["x"] + rt[0] * lat + d[0] * reach, st["y"] + rt[1] * lat + d[1] * reach, st["z"] + 1.30 - 0.5 * math.cos(a) + 0.04)
+
+
+def shot_ticks(look, tl, t, sh, at):
+    a, b = look["ticks"]
+    u = (t - sh["start"]) / max(1e-6, sh["end"] - sh["start"])
+    return a + (b - a) * _ss(u)
+
+
 def animate(kit, story, tl, t, ctx):
     _resolve(ctx, story, tl)
     at = ctx["at"]
-    sid = timeline.shot_at(tl, t)["id"]
+    sh = timeline.shot_at(tl, t)
+    sid = sh["id"]
     look = story["looks"].get(sid, {})
     day = float(look.get("day", 0))
     night = day < 0.01
-    # the sky and the world's light
     sky = [27 / 255, 42 / 255, 107 / 255], [126 / 255, 200 / 255, 255 / 255]
     skyc = tuple(a + (b - a) * min(1.0, day) for a, b in zip(*sky))
     for n in ctx["bg_nodes"]:
         if n.inputs["Color"].is_linked:
             n.inputs["Strength"].default_value = 0.6 * (1 - min(1.0, day)) + 0.25 * min(1.0, day)
         else:
-            c = kit.col("#000000")
             n.inputs["Color"].default_value = (*[kit.srgb(v) for v in skyc], 1.0)
     bpy.context.scene.view_settings.exposure = float(look.get("exposure", 0.0))
-    # the Head: lid, eye, lights
-    lid = tv(ctx, "lid", t)
-    co0, hy_, hz_, dn = ctx["lidv"]
-    flat = 1.0 - 0.92 * lid                      # an open lid is a flat slab: the hump's bulge relaxes out of it
-    ang = math.radians(68.0 * lid) * (0.93 + 0.07 * np.clip(dn / 1.2, 0, 1))
+    warm = float(look.get("warm", 0.0))
+    c0, c1 = (1.0, 0.945, 0.82), (1.0, 0.72, 0.5)
+    kit.LIGHTS["sun"]["light"].color = tuple(a + (b - a) * warm for a, b in zip(c0, c1))
 
-    def hinge(c, dzs):
-        dy, dz = c[:, 1] - hy_, (c[:, 2] - hz_) * dzs
-        out = c.copy()
-        out[:, 1] = hy_ + dy * np.cos(ang) + dz * np.sin(ang)
-        out[:, 2] = hz_ - dy * np.sin(ang) + dz * np.cos(ang)
-        return out
-    new = hinge(co0, flat)
-    ctx["lid"].data.vertices.foreach_set("co", new.ravel())
-    ctx["lid"].data.update()
-    sv0 = ctx["slabv"]
-    nv_ = len(co0)
-    top = sv0[:nv_]
-    bz = hz_ + (top[:, 2] - hz_) * flat - LID_T
-    st = np.concatenate([new, hinge(np.column_stack([top[:, 0], top[:, 1], bz]), 1.0)])
-    ctx["lidslab"].data.vertices.foreach_set("co", st.ravel())
-    ctx["lidslab"].data.update()
-    ctx["lidrimob"].data.vertices.foreach_set("co", st.ravel())
-    ctx["lidrimob"].data.update()
-    ctx["lidslab"].hide_render = ctx["lidrimob"].hide_render = lid < 0.002
-    ctx["decal"].hide_render = sid != "S43"
-    ey = int(tv(ctx, "eye", t, stepped=True))
-    for k, ob in enumerate(ctx["eyes"]):
-        ob.hide_render = (k != ey) or lid < 0.002
-    # the rule meter's twin: Dad's level
-    m = tl.get("meter")
-    if m:
-        v = _meter(tl, t)
-        ctx["bubble"].location.x = -5.4 + 0.045 * v
-    # the hall, the street, the room
-    for k, p in enumerate(ctx["pics"]):
-        p.rotation_euler = (0, math.radians(9.0 * tv(ctx, "pic", t)), 0)
-    ml = tv(ctx, "mail", t)
-    for root, x in ctx["mail"]:
-        sgn = -1.0 if x > -8.5 else 1.0
-        root.rotation_euler = (0, math.radians(18.0 * ml) * sgn, 0)
-    c = tv(ctx, "chair", t)
-    ctx["chair"].location = (-8.4 + (-6.15 + 8.4) * c, 14.6 + (12.78 - 14.6) * c, Z2 + 0.04)
-    ctx["chair"].rotation_euler = (0, 0, math.radians(-25) * c)
+    # the blinds: ours (bslats, dipping slat) and the south houses
     sl = tv(ctx, "slat", t)
     for i, s in enumerate(ctx["bslats"]):
         dip = sl if i == 6 else 0.0
         s.rotation_euler = (math.radians(float(look.get("bopen", 72.0)) - 52.0 * dip), 0, 0)
         s.location.z = Z2 + 2.14 - i * 0.092 - 0.015 * dip
-    sw = tv(ctx, "sway", t)
-    ctx["lamp"].rotation_euler = (0, 0.09 * sw * math.sin(2 * math.pi * 1.7 * t), math.radians(180))
-    ctx["porchlight"].rotation_euler = (0, -0.4 * tv(ctx, "sway", t) * (1 + 0.12 * math.sin(2 * math.pi * 0.8 * t)), 0)
-    # the south blinds
+    bend = tv(ctx, "bend", t)
     for b in ctx["blinds"]:
-        tr = b["track"]
-        drop = 1.0 if tr == 1 else tv(ctx, tr, t)
+        drop = tv(ctx, b["track"], t)
         n = len(b["slats"])
         pitch = 0.02 + (b["h"] / n - 0.02) * drop
         for i, s in enumerate(b["slats"]):
             s.location.z = b["ztop"] - i * pitch
-            bent = (tr == 1 and b["cx"] < -7.0 and i == 3)
-            s.rotation_euler = (math.radians(-40) if bent else 0.0, 0, 0)
+            bent = (b["cx"] < -7.0 and i == 3 and b["root"] == "coral")
+            s.rotation_euler = (math.radians(-40 * bend) if bent else 0.0, 0, 0)
             if bent:
-                s.location.z -= 0.05
-    # people-driven props
+                s.location.z -= 0.05 * bend
+
+    # the mower: follows Mr. Odell while he is mowing, or parked, fixed, or away
     od = acting.state(tl, "odell", t)
-    show_m = (not od["hidden"]) and od["expr"] in ("shut", "asleep")
+    mode = look.get("mower")
     mower = ctx["mower"]
-    if not show_m:
-        mower.location = (0, 0, -50)
-    for k, c_ in enumerate(ctx["cord"]):
-        c_.hide_render = not show_m
-    if show_m:
+    shown, mx, my, myaw = False, 0.0, 0.0, 0.0
+    if mode == "none":
+        shown = False
+    elif mode == "park":
+        shown, mx, my, myaw = True, PARK[0], PARK[1], PARK[2]
+    elif isinstance(mode, list):
+        shown, mx, my, myaw = True, mode[0], mode[1], math.radians(mode[2])
+    elif (not od["hidden"]) and od["expr"] in ("shut", "asleep"):
         d = (math.sin(od["yaw"]), -math.cos(od["yaw"]))
-        mx, my = od["x"] + d[0] * MOWER_OFF, od["y"] + d[1] * MOWER_OFF
-        mower.location = (mx, my, hump(mx, my) if 0.2 < mx < 15 and 5.2 < my < 12 else 0.0)
-        mower.rotation_euler = (0, 0, od["yaw"])
-        ax, ay = PORCH_ANCHOR
-        # the cord leaves the handle's rear and runs along the grass to the porch
-        sx, sy = mx - d[0] * 0.0 - d[0] * (-0.0), my
+        shown, mx, my, myaw = True, od["x"] + d[0] * MOWER_OFF, od["y"] + d[1] * MOWER_OFF, od["yaw"]
+    if shown:
+        mower.location = (mx, my, 0.0)
+        mower.rotation_euler = (0, 0, myaw)
+    else:
+        mower.location = (0, 0, -50)
+    for c_ in ctx["cord"]:
+        c_.hide_render = not shown
+    if shown:
         p0 = V((mx, my, 0.06))
-        p1 = V((ax, ay, 0.35))
+        p1 = V((PORCH_ANCHOR[0], PORCH_ANCHOR[1], 0.35))
         pts = []
         n = len(ctx["cord"])
         for k in range(n + 1):
@@ -914,66 +694,116 @@ def animate(kit, story, tl, t, ctx):
             pts.append(V((pt.x, pt.y, 0.04 + 0.1 * math.sin(math.pi * u) * (1 - u) + (p1.z - 0.04) * u ** 3)))
         for k, c_ in enumerate(ctx["cord"]):
             _aim_y(c_, pts[k], pts[k + 1])
-    dn = acting.state(tl, "dadn", t)
-    bv = tv(ctx, "binos", t)
-    bn = ctx["binoculars"]
-    if bv > 0.01 and not dn["hidden"]:
-        d = (math.sin(dn["yaw"]), -math.cos(dn["yaw"]))
-        bn.location = (dn["x"] + d[0] * 0.5, dn["y"] + d[1] * 0.5, dn["z"] + 1.0 + 0.55 * min(1.0, bv))
-        bn.rotation_euler = (0, 0, dn["yaw"])
+
+    # the yardstick's grass: ticks of 0.1 m
+    if "ticks" in look:
+        ticks = shot_ticks(look, tl, t, sh, at)
     else:
-        bn.location = (0, 0, -9)
-    # seeds, sod, sprinkler and the hose
-    t0, t1, t2 = at("L10"), at("L10.1"), at("L11")
-    ctx["sod"].location = (BALD[0], BALD[1], 0.0 if tv(ctx, "sod", t) > 0.5 else -9.0)
-    for k, (ob, (ex, ey_)) in enumerate(ctx["seeds"]):
-        if t0 <= t < t2:
-            u = min(1.0, max(0.0, (t - t0 - 0.02 * k % 0.4) / max(0.3, t1 - t0 - 0.4)))
-            sx, sy = -3.6, 7.9
-            ob.location = (sx + (ex - sx) * u, sy + (ey_ - sy) * u, 0.05 + 1.0 * (1 - u) * u * 1.6 + (0.9 * (1 - u)))
-            if u >= 1.0:
-                ob.location.z = 0.05
+        ticks = tv(ctx, "stick", t)
+    sp = ctx["stickpatch"]
+    hs = ticks * 0.1 * (1.0 - 0.45 * (sp["r"] - 0.06) / 0.2) * (0.8 + 0.4 * (sp["rnd"] - 0.7) / 0.6)
+    set_heights(sp, np.maximum(hs, 0.03))
+
+    # the mow strip: tall behind the mower, short ahead of it (mowing, rewound)
+    dirv = float(look.get("dir", -1))
+    for f in ctx["strip"]:
+        if "strip" in look:
+            tall = np.full(f["n"], float(look["strip"]))
+        elif shown and STRIP[0] - 0.3 < mx < STRIP[1] + 0.3:
+            s = (f["y"] - my) * (-dirv) / 0.4 + 0.5
+            tall = np.clip(s, 0.0, 1.0)
+            tall = tall * tall * (3 - 2 * tall)
         else:
-            ob.location = (0, 0, -5)
-    sp = tv(ctx, "sprink", t)
-    ctx["sprink"].location = (BALD[0], BALD[1], 0.0 if sp > 0.5 else -9.0)
-    hs = tv(ctx, "hose", t)
-    drops = ctx["drops"]
-    for k, ob in enumerate(drops):
-        if sp > 0.5 and k < 12:
-            ang = math.floor(t * 5) * 0.55 + k * 2 * math.pi / 12
-            u = (t * 1.6 + k / 12.0) % 1.0
-            r = 1.0 * u
-            ob.location = (BALD[0] + r * math.cos(ang), BALD[1] + r * math.sin(ang), 0.22 + 0.9 * 4 * u * (1 - u))
-        elif hs > 0.5 and k >= 12:
-            u = (t * 1.5 + (k - 12) / 14.0) % 1.0
-            o = (-3.35, 8.45, 0.95)
-            tg = (BALD[0] + 0.2 * math.sin(k), BALD[1] + 0.2 * math.cos(k), 0.05)
-            ob.location = (o[0] + (tg[0] - o[0]) * u, o[1] + (tg[1] - o[1]) * u, o[2] + (tg[2] - o[2]) * u + 0.6 * 4 * u * (1 - u))
+            tall = np.zeros(f["n"])
+        set_heights(f, (H_SHORT + (H_TALL - H_SHORT) * tall) * f["rnd"] ** 0.5)
+
+    # the reversed clippings: lift off the lawn ahead of the deck, arc up, and vanish under the skirt
+    rate = float(look.get("clip", 1.0)) if shown and mode != "park" else 0.0
+    macro = bool(look.get("macro"))
+    if macro:
+        rate = 1.0
+    frac = float(look.get("fountain", 1.0))
+    d = (math.sin(myaw), -math.cos(myaw))
+    rt = (-math.cos(myaw), -math.sin(myaw))
+    top = max(ticks * 0.1, 0.06)
+    def chip_pos(c_, u):
+        e = u * u * (3 - 2 * u) * 0.6 + u * 0.4
+        if macro:
+            ang = c_["ph"] * 6.283 + c_["a"]
+            rr = 0.12 + 0.3 * c_["b"]
+            sx, sy = STK[0] + rr * math.cos(ang), STK[1] + rr * math.sin(ang)
+            ex, ey = STK[0] + 0.45 * rr * math.cos(ang), STK[1] + 0.45 * rr * math.sin(ang)
+            z = 0.01 + (top * 0.9) * e + c_["pk"] * 0.3 * 4 * u * (1 - u)
         else:
-            ob.location = (0, 0, -5)
-    # light gains: the day and night rigs and the Head's own lights
+            aa, bb = c_["a"], c_["b"]
+            sx, sy = mx + d[0] * (0.55 + bb) + rt[0] * aa, my + d[1] * (0.55 + bb) + rt[1] * aa
+            ex, ey = mx + d[0] * 0.2 + rt[0] * aa * 0.3, my + d[1] * 0.2 + rt[1] * aa * 0.3
+            z = 0.03 + 0.15 * e + c_["pk"] * 4 * u * (1 - u)
+        return sx + (ex - sx) * e, sy + (ey - sy) * e, z
+
+    for c_ in ctx["chips"]:
+        on = rate > 0.01 and c_["k"] < 60 * frac
+        if not on:
+            c_["body"].location = (0, 0, -30)
+            for g_ in c_["ghosts"]:
+                g_.location = (0, 0, -30)
+            continue
+        u = (t * c_["sp"] * 0.95 * (rate if rate < 1 else 1.0) + c_["ph"]) % 1.0
+        px, py, z = chip_pos(c_, u)
+        vis = u < 0.96
+        c_["body"].location = (px, py, z if vis else -30)
+        c_["body"].rotation_euler = (0.9 + 0.5 * math.sin(u * 5 + c_["ph"]), 0.4 * math.cos(u * 4 + c_["ph"]), c_["spin"] * u)
+        for j, g_ in enumerate(c_["ghosts"]):
+            ug = u - 0.07 * (j + 1)
+            if ug < 0.0 or not vis:
+                g_.location = (0, 0, -30)
+                continue
+            gx, gy, gz = chip_pos(c_, ug)
+            g_.location = (gx, gy, gz)
+            g_.rotation_euler = c_["body"].rotation_euler
+
+    ctx["cart"].location = (CART[0], CART[1], 0.0 if day > 0.5 else -20.0)
+
+    # chairs (S32 only)
+    for root, (x, y), rot in ctx["chairs"]:
+        root.location = (x, y, 0.0 if look.get("chairs") else -20)
+        root.rotation_euler = (0, 0, math.radians(rot))
+
+    # cups: in a hand, on the cart or rail, with an optional sleeve sliding on
+    for c_ in ctx["cups"]:
+        sp_ = c_["spec"]
+        ok = (at(sp_.get("from", 0)) <= t < at(sp_.get("to", "end"))) and (not sp_.get("shots") or sid in sp_["shots"])
+        if not ok:
+            c_["root"].location = (0, 0, -20)
+            continue
+        if "pos" in sp_:
+            c_["root"].location = tuple(sp_["pos"])
+        else:
+            st = acting.state(tl, sp_["who"], t)
+            if st["hidden"]:
+                c_["root"].location = (0, 0, -20)
+                continue
+            c_["root"].location = hand_pos(st, sp_["hand"])
+        c_["root"].scale = (sp_.get("scale", 1.0),) * 3
+        if c_["sleeve"] is not None:
+            ss = sp_.get("slide")
+            if ss:
+                u = _ss((t - at(ss[0])) / max(1e-6, at(ss[1]) - at(ss[0])))
+                c_["sleeve"].location.z = 0.05 + 0.22 * (1 - u)
+                c_["sleeve"].hide_render = t < at(ss[0]) - 0.001
+            else:
+                c_["sleeve"].location.z = 0.05
+
+    # light gains
     g = {}
+    fl = float(look.get("flood", 1.0))
     g["sun"] = min(1.0, day)
     g["dayfill"] = min(1.0, day)
     g["moon"] = 1.0 - min(1.0, day)
     for f in ctx["floods"]:
-        g[f] = float(look.get("flood", 1.0)) if night else 0.0
-    open_ = _ss(min(1.0, lid * 2.5))
-    g["eyelamp"] = open_ if night else 0.0
-    g["lidrim"] = open_ if night else 0.0
+        g[f] = fl if night else 0.0
     g["faces"] = float(look.get("faces", 1.0)) if night else 0.0
-    g["greenglow"] = 1.0 if night else 0.0
     g["streetfill"] = 1.0 if night else 0.0
-    g["porchfill"] = 1.0 if night else 0.0
+    g["porchfill"] = float(look.get("porch", 1.0)) if night else 0.0
+    g["visionkey"] = tv(ctx, "vision", t)
     return g
-
-
-def _meter(tl, t):
-    ks = tl["meter"]
-    if t <= ks[0][0]:
-        return ks[0][1]
-    for (t0, v0), (t1, v1) in zip(ks, ks[1:]):
-        if t < t1:
-            return v0 + (v1 - v0) * _ss((t - t0) / max(1e-6, t1 - t0))
-    return ks[-1][1]

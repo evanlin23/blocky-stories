@@ -4,24 +4,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "My NEIGHBOR",
-    "My neighbor"
+    "What if your NEIGHBOR'S mower",
+    "What if your neighbor's mower"
    ],
    [
-    "mows his lawn",
-    "mows his lawn"
+    "made the grass",
+    "made the grass"
    ],
    [
-    "at three a.m.",
-    "at three a.m."
-   ],
-   [
-    "with his eyes",
-    "with his eyes"
-   ],
-   [
-    "SHUT.",
-    "shut."
+    "LONGER?",
+    "longer?"
    ]
   ]
  },
@@ -30,8 +22,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Don't LOOK",
-    "Don't look"
+    "Ours DOES,",
+    "Ours does,"
+   ],
+   [
+    "at THREE A.M.",
+    "at three a.m."
+   ],
+   [
+    "Just don't LOOK",
+    "Just don't look"
    ],
    [
     "while it's RUNNING.",
@@ -44,56 +44,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "The family",
-    "The family"
-   ],
-   [
-    "across the street",
-    "across the street"
-   ],
-   [
-    "PEEKED once.",
-    "peeked once."
-   ]
-  ]
- },
- {
-  "id": "L04",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Their HOUSE",
-    "Their house"
-   ],
-   [
-    "has leaned",
-    "has leaned"
-   ],
-   [
-    "toward his lawn",
-    "toward his lawn"
-   ],
-   [
-    "ever SINCE.",
-    "ever since."
-   ]
-  ]
- },
- {
-  "id": "L05",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At THREE,",
-    "At three,"
-   ],
-   [
-    "every blind",
-    "every blind"
-   ],
-   [
-    "on our street",
-    "on our street"
+    "Every BLIND on our street",
+    "Every blind on our street"
    ],
    [
     "SNAPS SHUT.",
@@ -102,328 +54,48 @@
   ]
  },
  {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The ones who LOOKED",
+    "The ones who looked"
+   ],
+   [
+    "won't say",
+    "won't say"
+   ],
+   [
+    "what they SAW.",
+    "what they saw."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The clippings fly UP",
+    "The clippings fly up"
+   ],
+   [
+    "and stick back on the STEMS.",
+    "and stick back on the stems."
+   ]
+  ]
+ },
+ {
   "id": "L06",
   "who": "narrator",
   "chunks": [
    [
-    "He says",
-    "He says"
+    "By NOON,",
+    "By noon,"
    ],
    [
-    "it's FASTER",
-    "it's faster"
-   ],
-   [
-    "that way.",
-    "that way."
-   ]
-  ]
- },
- {
-  "id": "L07",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My DAD",
-    "My dad"
-   ],
-   [
-    "has hated",
-    "has hated"
-   ],
-   [
-    "that lawn",
-    "that lawn"
-   ],
-   [
-    "for TEN YEARS.",
-    "for ten years."
-   ]
-  ]
- },
- {
-  "id": "L08",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Ours has",
-    "Ours has"
-   ],
-   [
-    "one BALD SPOT",
-    "one bald spot"
-   ],
-   [
-    "Dad can't FIX.",
-    "Dad can't fix."
-   ]
-  ]
- },
- {
-  "id": "L09",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It's perfectly ROUND.",
-    "It's perfectly round."
-   ]
-  ]
- },
- {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He's tried SEED.",
-    "He's tried seed."
-   ],
-   [
-    "Then SOD.",
-    "Then sod."
-   ]
-  ]
- },
- {
-  "id": "L11",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nothing GROWS",
-    "Nothing grows"
-   ],
-   [
-    "in that CIRCLE.",
-    "in that circle."
-   ]
-  ]
- },
- {
-  "id": "L12",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Our neighbor,",
-    "Our neighbor,"
-   ],
-   [
-    "Mr. ODELL,",
-    "Mister Odell,"
-   ],
-   [
-    "just WAVES.",
-    "just waves."
-   ]
-  ]
- },
- {
-  "id": "L13",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Dad says",
-    "Dad says"
-   ],
-   [
-    "nobody's grass",
-    "nobody's grass"
-   ],
-   [
-    "is that green",
-    "is that green"
-   ],
-   [
-    "without CHEATING.",
-    "without cheating."
-   ]
-  ]
- },
- {
-  "id": "L14",
-  "who": "narrator",
-  "chunks": [
-   [
-    "So on FRIDAY,",
-    "So on Friday,"
-   ],
-   [
-    "Dad set",
-    "Dad set"
-   ],
-   [
-    "an ALARM",
-    "an alarm"
-   ],
-   [
-    "for THREE.",
-    "for three."
-   ]
-  ]
- },
- {
-  "id": "L15",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The mower STARTED.",
-    "The mower started."
-   ]
-  ]
- },
- {
-  "id": "L16",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Dad bent",
-    "Dad bent"
-   ],
-   [
-    "ONE slat",
-    "one slat"
-   ],
-   [
-    "of the BLINDS.",
-    "of the blinds."
-   ]
-  ]
- },
- {
-  "id": "L17",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The lawn",
-    "The lawn"
-   ],
-   [
-    "was COMBED",
-    "was combed"
-   ],
-   [
-    "in long,",
-    "in long,"
-   ],
-   [
-    "CURVED stripes.",
-    "curved stripes."
-   ]
-  ]
- },
- {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then OUR house",
-    "Then our house"
-   ],
-   [
-    "CREAKED.",
-    "creaked."
-   ]
-  ]
- },
- {
-  "id": "L19",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every picture",
-    "Every picture"
-   ],
-   [
-    "in the hall",
-    "in the hall"
-   ],
-   [
-    "slid CROOKED.",
-    "slid crooked."
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Toward HIS lawn.",
-    "Toward his lawn."
-   ]
-  ]
- },
- {
-  "id": "L21",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Dad said",
-    "Dad said"
-   ],
-   [
-    "it was",
-    "it was"
-   ],
-   [
-    "the FOUNDATION.",
-    "the foundation."
-   ]
-  ]
- },
- {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He checked it",
-    "He checked it"
-   ],
-   [
-    "with his",
-    "with his"
-   ],
-   [
-    "LEVEL anyway.",
-    "level anyway."
-   ]
-  ]
- },
- {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The next night,",
-    "The next night,"
-   ],
-   [
-    "he carried BINOCULARS",
-    "he carried binoculars"
-   ],
-   [
-    "out on",
-    "out on"
-   ],
-   [
-    "the PORCH.",
-    "the porch."
-   ]
-  ]
- },
- {
-  "id": "L24",
-  "who": "narrator",
-  "chunks": [
-   [
-    "My desk CHAIR",
-    "My desk chair"
-   ],
-   [
-    "rolled to",
-    "rolled to"
-   ],
-   [
-    "the WINDOW",
-    "the window"
+    "it's SHORTER again,",
+    "it's shorter again,"
    ],
    [
     "by ITSELF.",
@@ -432,134 +104,284 @@
   ]
  },
  {
-  "id": "L25",
+  "id": "L07",
   "who": "narrator",
   "chunks": [
    [
-    "Out there,",
-    "Out there,"
+    "And every morning,",
+    "And every morning,"
    ],
    [
-    "the mower crossed",
-    "the mower crossed"
+    "it's the most PERFECT lawn",
+    "it's the most perfect lawn"
    ],
    [
-    "the middle STRIPE.",
-    "the middle stripe."
+    "on the street.",
+    "on the street."
    ]
   ]
  },
  {
-  "id": "L26",
+  "id": "L08",
   "who": "narrator",
   "chunks": [
    [
-    "And the TURF",
-    "And the turf"
+    "Our neighbor,",
+    "Our neighbor,"
    ],
    [
-    "LIFTED.",
-    "lifted."
+    "Mr. ODELL,",
+    "Mr. Odell,"
+   ],
+   [
+    "mows it with his eyes",
+    "mows it with his eyes"
+   ],
+   [
+    "SHUT.",
+    "shut."
    ]
   ]
  },
  {
-  "id": "L27",
+  "id": "L09",
   "who": "narrator",
   "chunks": [
    [
-    "A long SEAM",
-    "A long seam"
+    "I live with my DAD again.",
+    "I live with my Dad again."
    ],
    [
-    "opened in",
-    "opened in"
+    "He's been next door",
+    "He's been next door"
    ],
    [
-    "the grass,",
-    "the grass,"
+    "to Mr. Odell",
+    "to Mr. Odell"
    ],
    [
-    "slow as",
-    "slow as"
-   ],
-   [
-    "an EYELID.",
-    "an eyelid."
+    "for SIX YEARS.",
+    "for six years."
    ]
   ]
  },
  {
-  "id": "L28",
+  "id": "L10",
   "who": "narrator",
   "chunks": [
    [
-    "Under it,",
-    "Under it,"
+    "They'd never said",
+    "They'd never said"
    ],
    [
-    "an EYE",
-    "an eye"
-   ],
-   [
-    "as big as",
-    "as big as"
-   ],
-   [
-    "our GARAGE DOOR",
-    "our garage door"
-   ],
-   [
-    "looked UP.",
-    "looked up."
+    "one WORD.",
+    "one word."
    ]
   ]
  },
  {
-  "id": "L29",
+  "id": "L11",
   "who": "narrator",
   "chunks": [
    [
-    "Straight at DAD.",
-    "Straight at Dad."
-   ]
-  ]
- },
- {
-  "id": "L30",
-  "who": "narrator",
-  "chunks": [
-   [
-    "It didn't BLINK.",
-    "It didn't blink."
-   ]
-  ]
- },
- {
-  "id": "L31",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every MAILBOX",
-    "Every mailbox"
+    "But Mr. Odell",
+    "But Mr. Odell"
    ],
    [
-    "on the street",
-    "on the street"
+    "waves at Dad",
+    "waves at Dad"
    ],
    [
-    "tipped our WAY.",
-    "tipped our way."
+    "like he MISSES him.",
+    "like he misses him."
    ]
   ]
  },
  {
-  "id": "L32",
+  "id": "L12",
   "who": "narrator",
   "chunks": [
    [
-    "Mr. Odell's mower",
-    "Mister Odell's mower"
+    "Then at the coffee CART,",
+    "Then at the coffee cart,"
+   ],
+   [
+    "Mr. Odell turned around",
+    "Mr. Odell turned around"
+   ],
+   [
+    "and spoke to Dad",
+    "and spoke to Dad"
+   ],
+   [
+    "for the first time EVER.",
+    "for the first time ever."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Large, black,",
+    "Large, black,"
+   ],
+   [
+    "two SUGARS?",
+    "two sugars?"
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He knew my dad's",
+    "He knew my Dad's"
+   ],
+   [
+    "COFFEE order.",
+    "coffee order."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dad hadn't",
+    "Dad hadn't"
+   ],
+   [
+    "ORDERED yet.",
+    "ordered yet."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So on Friday at THREE,",
+    "So on Friday at three,"
+   ],
+   [
+    "Dad sat out on the PORCH",
+    "Dad sat out on the porch"
+   ],
+   [
+    "and LOOKED.",
+    "and looked."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The clippings",
+    "The clippings"
+   ],
+   [
+    "weren't flying OUT.",
+    "weren't flying out."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "They flew back INTO the blades,",
+    "They flew back into the blades,"
+   ],
+   [
+    "and the grass",
+    "and the grass"
+   ],
+   [
+    "got LONGER.",
+    "got longer."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mr. Odell",
+    "Mr. Odell"
+   ],
+   [
+    "was walking BACKWARD.",
+    "was walking backward."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then Dad saw",
+    "Then Dad saw"
+   ],
+   [
+    "someone ELSE",
+    "someone else"
+   ],
+   [
+    "on the lawn.",
+    "on the lawn."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "HIMSELF,",
+    "Himself,"
+   ],
+   [
+    "in morning sun,",
+    "in morning sun,"
+   ],
+   [
+    "holding TWO coffees.",
+    "holding two coffees."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I saw it TOO,",
+    "I saw it too,"
+   ],
+   [
+    "from the DOORWAY.",
+    "from the doorway."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The mower",
+    "The mower"
    ],
    [
     "STOPPED.",
@@ -568,32 +390,174 @@
   ]
  },
  {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mr. Odell turned to us,",
+    "Mr. Odell turned to us,"
+   ],
+   [
+    "eyes still SHUT,",
+    "eyes still shut,"
+   ],
+   [
+    "and WAVED.",
+    "and waved."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Mr. Odell",
+    "Mr. Odell"
+   ],
+   [
+    "lives BACKWARD.",
+    "lives backward."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Our TOMORROW",
+    "Our tomorrow"
+   ],
+   [
+    "is his YESTERDAY.",
+    "is his yesterday."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "By day,",
+    "By day,"
+   ],
+   [
+    "he plays it FORWARD for us.",
+    "he plays it forward for us."
+   ],
+   [
+    "At three, alone,",
+    "At three, alone,"
+   ],
+   [
+    "he lets it RUN.",
+    "he lets it run."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And whoever LOOKS",
+    "And whoever looks"
+   ],
+   [
+    "sees a piece",
+    "sees a piece"
+   ],
+   [
+    "of TOMORROW.",
+    "of tomorrow."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "To him,",
+    "To him,"
+   ],
+   [
+    "that grass GROWS all day",
+    "that grass grows all day"
+   ],
+   [
+    "and gets MOWED every night,",
+    "and gets mowed every night,"
+   ],
+   [
+    "so it's the SAME every morning.",
+    "so it's the same every morning."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That's why it looks PERFECT.",
+    "That's why it looks perfect."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He's seen every PASS before.",
+    "He's seen every pass before."
+   ],
+   [
+    "That's why his eyes are SHUT.",
+    "That's why his eyes are shut."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He REMEMBERS our future,",
+    "He remembers our future,"
+   ],
+   [
+    "and in Dad's,",
+    "and in Dad's,"
+   ],
+   [
+    "they're best FRIENDS.",
+    "they're best friends."
+   ]
+  ]
+ },
+ {
   "id": "L33",
   "who": "narrator",
   "chunks": [
    [
-    "He kept",
-    "He kept"
+    "For Mr. Odell,",
+    "For Mr. Odell,"
    ],
    [
-    "his eyes SHUT",
-    "his eyes shut"
+    "that's all BEHIND him.",
+    "that's all behind him."
    ],
    [
-    "and called",
-    "and called"
+    "That's why he waves",
+    "That's why he waves"
    ],
    [
-    "up to me,",
-    "up to me,"
-   ],
-   [
-    "\"Your dad's LOOKING,",
-    "\"Your dad's looking,"
-   ],
-   [
-    "isn't he?\"",
-    "isn't he?\""
+    "like he MISSES him.",
+    "like he misses him."
    ]
   ]
  },
@@ -602,16 +566,34 @@
   "who": "narrator",
   "chunks": [
    [
-    "Our whole street",
-    "Our whole street"
+    "So at SUNRISE,",
+    "So at sunrise,"
    ],
    [
-    "is built",
-    "is built"
+    "Dad bought",
+    "Dad bought"
    ],
    [
-    "on a HEAD.",
-    "on a head."
+    "TWO coffees.",
+    "two coffees."
+   ]
+  ]
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He didn't know",
+    "He didn't know"
+   ],
+   [
+    "Mr. Odell's order,",
+    "Mr. Odell's order,"
+   ],
+   [
+    "so he GUESSED.",
+    "so he guessed."
    ]
   ]
  },
@@ -620,12 +602,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "His lawn",
-    "His lawn"
-   ],
-   [
-    "is its EYEBROW.",
-    "is its eyebrow."
+    "HOT CHOCOLATE.",
+    "Hot chocolate."
    ]
   ]
  },
@@ -634,12 +612,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Ours is where",
-    "Ours is where"
+    "Then he stepped",
+    "Then he stepped"
    ],
    [
-    "it's going BALD.",
-    "it's going bald."
+    "over the FENCE.",
+    "over the fence."
    ]
   ]
  },
@@ -648,20 +626,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "When he trims,",
-    "When he trims,"
+    "Mr. Odell",
+    "Mr. Odell"
    ],
    [
-    "it wakes up",
-    "it wakes up"
+    "OPENED his eyes",
+    "opened his eyes"
    ],
    [
-    "and turns toward",
-    "and turns toward"
+    "and smiled",
+    "and smiled"
    ],
    [
-    "whoever's WATCHING.",
-    "whoever's watching."
+    "like he'd been WAITING.",
+    "like he'd been waiting."
    ]
   ]
  },
@@ -670,12 +648,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Dad put down",
-    "Dad put down"
+    "He's ordered that",
+    "He's ordered that"
    ],
    [
-    "the BINOCULARS.",
-    "the binoculars."
+    "for six YEARS.",
+    "for six years."
+   ],
+   [
+    "Dad PICKED it",
+    "Dad picked it"
+   ],
+   [
+    "this morning.",
+    "this morning."
    ]
   ]
  },
@@ -684,20 +670,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "He SHUT",
-    "He shut"
+    "For DAD,",
+    "For Dad,"
    ],
    [
-    "his eyes,",
-    "his eyes,"
-   ],
-   [
-    "and our pictures",
-    "and our pictures"
-   ],
-   [
-    "slid back STRAIGHT.",
-    "slid back straight."
+    "it was day ONE.",
+    "it was day one."
    ]
   ]
  },
@@ -706,16 +684,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then he crossed",
-    "Then he crossed"
+    "For Mr. Odell,",
+    "For Mr. Odell,"
    ],
    [
-    "the FENCE",
-    "the fence"
-   ],
-   [
-    "to HELP.",
-    "to help."
+    "it was the LAST.",
+    "it was the last."
    ]
   ]
  },
@@ -724,12 +698,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "First time",
-    "First time"
+    "Now Dad LOOKS",
+    "Now Dad looks"
    ],
    [
-    "in TEN YEARS.",
-    "in ten years."
+    "every night at three.",
+    "every night at three."
+   ],
+   [
+    "He likes what's COMING.",
+    "He likes what's coming."
    ]
   ]
  },
@@ -738,66 +716,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Now Dad",
-    "Now Dad"
+    "The rest of us",
+    "The rest of us"
    ],
    [
-    "holds the CORD,",
-    "holds the cord,"
+    "keep our blinds SHUT,",
+    "keep our blinds shut,"
    ],
    [
-    "and Mr. Odell",
-    "and Mister Odell"
-   ],
-   [
-    "STEERS.",
-    "steers."
-   ]
-  ]
- },
- {
-  "id": "L44",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Both with their",
-    "Both with their"
-   ],
-   [
-    "eyes SHUT.",
-    "eyes shut."
-   ]
-  ]
- },
- {
-  "id": "L45",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Dad still WATERS",
-    "Dad still waters"
-   ],
-   [
-    "the bald spot.",
-    "the bald spot."
-   ],
-   [
-    "Out of RESPECT.",
-    "Out of respect."
-   ]
-  ]
- },
- {
-  "id": "L46",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Ask ANYONE",
-    "Ask anyone"
-   ],
-   [
-    "on our street.",
-    "on our street."
+    "and just WONDER,",
+    "and just wonder,"
    ]
   ]
  }
