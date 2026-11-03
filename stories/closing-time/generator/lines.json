@@ -8,12 +8,12 @@
     "You never skip"
    ],
    [
-    "WAVING GOODBYE",
-    "waving goodbye"
+    "WAVING GOODBYE to",
+    "waving goodbye to"
    ],
    [
-    "to the BIG TANK.",
-    "to the big tank."
+    "the BIG TANK.",
+    "the big tank."
    ]
   ]
  },
@@ -764,8 +764,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Its slits",
-    "Its slits"
+    "The slits",
+    "The slits"
    ],
    [
     "OPENED,",
@@ -905,8 +905,8 @@
     "frozen,"
    ],
    [
-    "holding a MOP.",
-    "holding a mop."
+    "gripping a MOP.",
+    "gripping a mop."
    ]
   ],
   "tempo": 0.84

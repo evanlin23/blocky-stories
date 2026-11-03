@@ -135,8 +135,8 @@ REVEAL = {"tank_fog": 0.045, "reg_fog": 0.06, "hall_fog": 0.02, "crowd_n": 70, "
 SH = [
     # ---- 01 the rule. The hook (P6): low behind the three of us, our raised hands in silhouette, a slow push and
     # zoom so the Regular grows out there, its shut rows lit a touch
-    (0, c([0, [-0.6, 4.3, 2.0], [0.55, -20.0, 2.3], 22], [1, [-0.55, 3.3, 2.02], [0.55, -20.0, 2.3], 30]),
-     {"hand": 0.004, "tank_fog": 0.1, "reg_fog": 0.08, "eye_fog": 0.03}),
+    (0, c([0, [0.35, 0.55, 2.2], [0.5, -7.5, 2.45], 28], [1, [0.4, -0.15, 2.28], [0.5, -7.5, 2.5], 40]),
+     {"hand": 0.003, "tank_fog": 0.045, "reg_fog": 0.04, "eye_fog": 0.02, "crowd_n": 80}),
     # the reverse, through the glass: my face, lit by the caustics
     ("L02", front(hd(LINE["me"]), 0, 8, 1.6, 0.0, 26, push=0.12), {"tank_fog": 0.05}),
     ("L03", mv([-6.4, 5.6, 4.3], [0.8, 0.7, 0.6], 15, [-6.2, 5.5, 4.2], [1.0, 0.7, 0.6], 15), {}),
@@ -504,9 +504,9 @@ cues = [
     # the tiny stream rises between us through the side shot (P4)
     {"at": "L84", "name": "bubbles", "kind": "tiny", "dur": 2.6, "x0": 0.7, "x1": 1.8, "z0": 1.1, "z1": 1.8},
     # the hall's lights: dim, stuck bright, down like a stage, then the next night
-    {"at": "L43", "name": "lights", "state": "stuck"},
+    {"at": "L43", "name": "lights", "state": "stuck", "dur": 0.4},
     {"at": "L76.1", "name": "lights", "state": "dark", "dur": 1.8},
-    {"at": "L78", "name": "lights", "state": "rest"},
+    {"at": "L78", "name": "lights", "state": "rest", "dur": 0.5},
     # the pup's eyes
     {"at": 0, "name": "pup_eyes", "state": "shut", "look": "me"},
     {"at": "L83.1", "name": "pup_eyes", "state": "open", "order": [0, 5, 1, 6, 2, 7, 3, 8, 4, 9], "every": 0.12,
@@ -520,7 +520,7 @@ cues = [
 
 # the Regular's path: every time it comes closer it's seen gliding closer, in real time
 REG = [
-    {"at": 0, "where": [0.6, -22.5, 2.5], "ripple": 0.22, "roll": -3},
+    {"at": 0, "where": [0.5, -13.0, 2.5], "ripple": 0.22, "roll": -3},
     {"at": "L02", "where": REG_FAR, "glide": True, "roll": 3},
     {"at": "L12", "where": REG_FAR, "ripple": 0.07, "roll": 3},
     {"at": "L12.5", "where": [0.7, -21.6, 2.5], "glide": True, "ripple": 0.2, "roll": 4},
@@ -658,6 +658,7 @@ fx = [
 # ---------------------------------------------------------------------------------------------------- sound
 EYE_OPEN = [f"L50.1+{0.17 * j:.2f}" for j in range(10)]
 sfx = [
+    {"at": "L01>", "kind": "sting", "db": -12, "dur": 1.6},
     {"at": "L12.3", "kind": "glide", "db": -24, "dur": 2.6},
     {"at": "L27", "kind": "glide", "db": -20, "dur": 2.4},
     {"at": "L36.1", "kind": "door", "db": -18},
@@ -711,9 +712,10 @@ story = {
     "glass_ior_default": 1.25,
     "tail": 0,
     "look": {"fog": "#0a2a3a", "fog_density": 0.0, "fog_start": 3.0, "sky": "#0f4254", "sky_strength": 1.0,
-             "exposure": 0.35},
+             "exposure": 0.35, "flash_safe": True},
     "grade": {"shadows": [-0.04, -0.01, 0.07], "highlights": [-0.04, 0.03, 0.02], "saturation": 0.95,
               "contrast": 1.08, "vignette": 0.4, "bloom": 0.3, "grain": 0.01},
+    "shot_grades": {"S01": {"exposure": 1.7, "saturation": 1.12, "shadows": [-0.02, 0.0, 0.05]}},
     **per_shot,
     "phonemes": {},
     "cast": cast,
