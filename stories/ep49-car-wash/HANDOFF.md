@@ -23,3 +23,8 @@ Branch `claude/opening-ep49-car-wash`. No PR yet.
 1. Verify the WIP against that list. Re-voice L01 and L02 only if they aren't already voiced (L01 under 2.2 s).
 2. Timeline, preview, flash (all measures pass) and preflight.
 3. Review round 8 (the last normal round), then gate, PR and qa.
+
+**On resume:** merge main first: polish v2.2 (#168) and v2.3 (#175) are in.
+- Keep this story's own `sfx` to 2 to 4 events per 10 s in all. This round added many sfx, so thin them.
+- Use `"hold": ["Sxx"]` for frame-exact shots.
+- Read builder.md and docs/engine.md, under The polish pack.
