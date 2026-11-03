@@ -17,6 +17,7 @@
  "look": {
   "style": "closer",
   "flash_safe": true,
+  "polish": true,
   "fog": "#dbe9f2",
   "fog_density": 0.004,
   "fog_start": 8.0,
