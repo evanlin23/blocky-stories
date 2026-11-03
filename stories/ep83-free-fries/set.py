@@ -27,6 +27,7 @@ from blocky import bl_story, faces, rig
 
 TMP = Path(tempfile.mkdtemp(prefix="freefries-"))
 KM, HM, SR = 60.0, 100.0, 140.0          # x of Mom's kitchen, our kitchen, the stockroom
+SX = 0.5                                  # where the kitchen sign hangs, from the stove
 PINK, GOLD = "#ff6fb5", "#ffc21a"
 MINT, BUBBLE, CHROME = "#8de3c4", "#ff9ccf", "#d9e1e8"
 YEL = "#ffd21a"
@@ -287,7 +288,7 @@ def build_diner(kit, ctx):
     B(None, (3.6, 0.7, 0.45), (5.2, 3.45, 0.225), mint, "bench", 0.04)
     B(None, (3.6, 0.1, 1.0), (5.2, 3.84, 0.95), mint, "benchb", 0.04)
     B(None, (3.64, 0.02, 0.06), (5.2, 3.09, 0.3), bub, "pipe", 0.0)
-    B(None, (1.9, 0.92, 0.05), (5.1, 2.3, 0.76), P("#fff6ea", 0.4), "table", 0.01)
+    B(None, (1.9, 0.92, 0.05), (5.1, 2.3, 0.76), P("#e9c9b0", 0.4), "table", 0.01)
     B(None, (1.94, 0.04, 0.052), (5.1, 1.84, 0.76), M(CHROME, 0.15), "tedge", 0.0)
     B(None, (0.014, 0.034, 0.012), (4.92, 1.84, 0.792), P(GOLD, 0.4), "tally", 0.0)
     B(None, (0.014, 0.034, 0.012), (4.96, 1.84, 0.792), P(GOLD, 0.4), "tally", 0.0)
@@ -320,13 +321,23 @@ def build_diner(kit, ctx):
     hide(ctx["hbasket2"], True)
     # lights
     for x in (-4.5, 0.0, 4.5):
-        kit.light(f"dl{x}", "POINT", (x, 1.2, 3.1), 170, "#fff4e0", size=0.5, shadow=False)
-    ctx["sun"] = kit.light("sun", "SUN", (0, 0, 50), 2.5, "#fff1d0", size=0.1)
+        kit.light(f"dl{x}", "POINT", (x, 1.2, 3.1), 120, "#fff4e0", size=0.5, shadow=False)
+    ctx["sun"] = kit.light("sun", "SUN", (0, 0, 50), 1.4, "#fff1d0", size=0.1)
     ctx["sun"].data.angle = 0.06
     az, el = math.radians(20), math.radians(38)
     pos = V((math.sin(az) * math.cos(el), -math.cos(az) * math.cos(el), math.sin(el)))
     ctx["sun"].rotation_euler = (-pos).to_track_quat("-Z", "Y").to_euler()
     ctx["D"] = D
+
+
+def sign_copy(kit, ctx, x, y, z, k):
+    """A copy of the diner's rule-marker sign (scale k) on a wall facing -y; its digits follow the pink-to-gold cue."""
+    CY(None, 0.5 * k, 0.1 * k, (x, y, z), M(CHROME, 0.18), "signh", rot=(math.pi / 2, 0, 0), n=40)
+    CY(None, 0.39 * k, 0.03 * k, (x, y - 0.06 * k, z), P("#181c34", 0.4), "signp", rot=(math.pi / 2, 0, 0), n=40)
+    dm, dmix = rgba_mat(kit, nm("digits"), ctx["digits_path"], 3.0, PINK)
+    pl = kit.plane(nm("digits"), (0.72 * k, 0.72 * k), (x, y - 0.085 * k, z), dm, None, rot=(math.pi / 2, 0, 0))
+    no_shadow(pl)
+    ctx["sign_mix"].append(dmix)
 
 
 # ------------------------------------------------------------------------------------------------ a home kitchen
@@ -344,6 +355,8 @@ def build_kitchen(kit, ox, home, ctx):
       "kview", 0.0)
     B(None, (0.3, 6.2, 2.9), (ox - 4.35, 1.0, 1.45), W, "kwallL", 0.0)
     B(None, (0.3, 6.2, 2.9), (ox + 3.75, 1.0, 1.45), W, "kwallR", 0.0)
+    sign_copy(kit, ctx, ox + SX, 3.34, 2.0, 0.5)     # the stove-timer sign: the same 0.00
+    sign_copy(kit, ctx, ox - 2.1, 3.34, 2.1, 0.5)
     # sink counter under the window
     B(None, (1.8, 0.7, 0.9), (ox + 2.6, 3.0, 0.45), P("#fff6ea", 0.5), "kcnt", 0.01)
     B(None, (1.84, 0.74, 0.05), (ox + 2.6, 3.0, 0.925), M(CHROME, 0.25), "kctop", 0.01)
@@ -368,7 +381,7 @@ def build_kitchen(kit, ox, home, ctx):
         hide(b, True)
     ctx.setdefault("burn", {})[ox] = burn
     # table with a bench, plates
-    B(None, (2.6, 0.9, 0.05), (ox - 2.4, 1.4, 0.76), P("#fff6ea", 0.45), "ktable", 0.01)
+    B(None, (2.6, 0.9, 0.05), (ox - 2.4, 1.4, 0.76), P("#e9c9b0", 0.45), "ktable", 0.01)
     for sx in (-1, 1):
         B(None, (0.08, 0.7, 0.74), (ox - 2.4 + sx * 1.2, 1.4, 0.37), P("#c98d4d", 0.6), "tleg", 0.01)
     B(None, (2.8, 0.5, 0.45), (ox - 2.4, 2.25, 0.225), P("#c98d4d" if not home else "#ff9ccf", 0.6), "kbench", 0.03)
@@ -458,6 +471,7 @@ def build_stockroom(kit, ctx):
             for k in range(3):
                 B(None, (0.6, 0.45, 0.5 - 0.05 * ((k + lv) % 2)), (ox + sx * 2.3 - 0.85 + 0.85 * k, 3.55, 0.65 + 0.7 * lv - 0.03),
                   P("#d9a566" if (k + lv) % 2 else "#e4b97c", 0.8), "sbox", 0.02)
+    sign_copy(kit, ctx, ox, 3.84, 2.3, 0.6)
     ctx["srbox"] = B(None, (0.6, 0.45, 0.4), (ox, 1.0, 0.9), P("#e4b97c", 0.8), "carry", 0.02)
     hide(ctx["srbox"], True)
     kit.light("srl1", "POINT", (ox - 1.5, 1.5, 2.9), 200, "#fff1d8", size=0.5, shadow=False)
@@ -545,7 +559,7 @@ def mom_late(kit, ctx):
         ctx["mgl"] += [g, c]
 
 
-LOOKS = {"day": {"bg": 0.8, "sun": 2.5, "lamp": 1.0}, "eve": {"bg": 0.4, "sun": 0.0, "lamp": 1.1}}
+LOOKS = {"day": {"bg": 0.6, "sun": 1.4, "lamp": 1.0}, "eve": {"bg": 0.4, "sun": 0.0, "lamp": 1.1}}
 
 
 def look_of(ctx, sid):

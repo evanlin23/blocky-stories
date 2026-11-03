@@ -216,7 +216,7 @@ S("L22", C((KM + 1.3, 3.1, 1.5), 3.0, 0, 3, 26, d2=2.6), dof=[2.9, 6.0], ring=Tr
   note="it sharpens: Mom's kitchen, the sink window, the hook")
 cue("L23", "mgloves", on=True)
 scene("L23", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[0.2, 0.2]))
-S("L23", C((KM - 0.2, 1.95, 1.5), 1.6, 0, 3, 40, d2=1.3), ring=True, note="Mom at her stove, eyes shut, calm. Cover frame")
+S("L23", C((KM - 0.2, 1.95, 1.5), 2.3, 0, 3, 40, d2=1.95), ring=True, note="Mom at her stove, eyes shut, calm. Cover frame")
 cue("L24", "mbA", on=True, dur=1.4, z0=1.35, z1=1.13, y0=1.25)
 scene("L24", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[1.1, 1.1]))
 S("L24", C((KM - 0.2, 1.4, 1.1), 1.3, 0, 12, 36, d2=1.0), ring=True,
@@ -331,7 +331,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": look,
-    "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.02], "saturation": 1.12, "contrast": 1.05,
+    "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.02], "saturation": 1.3, "contrast": 1.05,
               "vignette": 0.15, "bloom": 0.3, "grain": 0.008, "red_line": 0.7},
     "cast": cast,
     "lines": lines,
@@ -375,5 +375,6 @@ if vt.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
+story["rev"] = 3
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
