@@ -501,7 +501,7 @@ def build(kit, story, tl):
         S.box("bedframe", (1.05, 2.1, 0.3), (-1.5, 3.3, 0.15), wood_d, bevel=0.03)
         S.box("mattress", (1.0, 2.0, 0.2), (-1.5, 3.3, 0.4), white, bevel=0.05)
         ctx["blanket"] = S.box("blanket", (1.04, 1.15, 0.16), (-1.5, 2.85, 0.55), P("#6aa8ff"), bevel=0.06)
-        ctx["pillow"] = S.box("pillow", (0.62, 0.38, 0.12), (-1.5, 4.15, 0.56), P("#fff5f5"), bevel=0.05)
+        ctx["pillow"] = S.box("pillow", (0.62, 0.3, 0.12), (-1.5, 4.22, 0.56), P("#fff5f5"), bevel=0.05)
         cp = work / "calendar.png"
         calendar_png(cp)
         cm, _ = img_mat(kit, "calendar", cp, 1.1, alpha=False)
@@ -851,7 +851,7 @@ def animate(kit, story, tl, t, ctx):
     ctx["blanket"].location = (OR["bed"][0] - 1.5 + 0.9 * bl, 2.85 + 0.6 * bl * 0, 0.55 + 0.35 * bl)
     ctx["blanket"].rotation_euler = (0, math.radians(-40) * bl, 0)
     pv = ramp(tl, "pillow", t, "v", 0.0)
-    ctx["pillow"].location = (OR["bed"][0] - 1.5, 4.15 - 0.2 * pv, 0.56 + 0.45 * pv)
+    ctx["pillow"].location = (OR["bed"][0] - 1.5, 4.22 - 0.37 * pv, 0.56 + 0.42 * pv)
     # ---- bedroom window and street windows
     pane = SKY[sky][2]
     ctx["bedpane_em"].inputs["Color"].default_value = kit.col(pane)
