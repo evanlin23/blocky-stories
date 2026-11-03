@@ -1,9 +1,10 @@
 {
  "slug": "ep32-sitter",
+ "opening": "if",
  "title": "Whatever This Class Paints Comes HOME 🖌️",
  "made_for_kids": false,
  "premise": "Kofi's art class paints new things into town, and each one turns up by Thursday, first as bare pine with the pencil lines still on it, then filling in with color. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty, so I join the class and paint him, Dario, but Kofi locks up for the night before I finish his nose, and anything missed on a painted person stays bare pine till their painter finishes it. By Tuesday a pine man with a pencil face stands in our hall, and each night he is a step nearer my door with more color on him.",
- "twist": "On Thursday Dario comes down to dinner in full color except a bare pine nose, and Mom calmly lays him a plate, because eighteen years ago she took Kofi's class and broke the rule herself: she painted me. The patch of bare pine I always called a birthmark is the ear she never dared finish, and the student Kofi said I hold a brush like was Mom. Only a painter can finish what they painted, so I finish Dario's nose and Mom finishes my ear at her old easel. The loop: a new student hides a half pine face, and I tell her what happens if you paint a person.",
+ "twist": "On Thursday Dario comes down to dinner in full color except a bare pine nose, and Mom calmly lays him a plate, because eighteen years ago she took Kofi's class and broke the rule herself: she painted me. The patch of bare pine I always called a birthmark is the ear she never dared finish, and the student Kofi said I hold a brush like was Mom. Only a painter can finish what they painted, so I finish Dario's nose and Mom finishes my ear at her old easel. The loop: a new student hides a half pine face, and I tell her never to paint a person.",
  "world": "a bright little town that Kofi's art class paints new things into, on pine panels: a sunny bus stop with a new bench, a bakery cake and a cafe flower box still filling in, the arts centre life room on Monday afternoons with eight easels round a pine dais, the car park at dusk, and Mom's front hall with her folded old easel and a small dining table",
  "voice": {
   "voice": "am_adam",
@@ -109,7 +110,7 @@
   "me": {
    "age": "adult",
    "skin": "#b57a56",
-   "shirt": "#d3a022",
+   "shirt": "#e0674f",
    "pattern": "knit",
    "pants": "#33363c",
    "shoes": "#e8e8e6",
@@ -124,7 +125,7 @@
     "brows": true,
     "ink": "#161012"
    },
-   "pattern_c": "#bd8d19"
+   "pattern_c": "#e0674f"
   },
   "mum": {
    "age": "adult",
@@ -156,7 +157,7 @@
   "theo": {
    "age": "adult",
    "skin": "#c9966e",
-   "shirt": "#2f6b3e",
+   "shirt": "#2f5fa8",
    "pattern": "solid",
    "pants": "#2b2f3a",
    "shoes": "#b8864f",
@@ -453,20 +454,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Never paint",
-     "Never paint"
+     "If you",
+     "If you"
     ],
     [
-     "a PERSON",
-     "a person"
+     "paint a PERSON",
+     "paint a person"
     ],
     [
-     "in Kofi's CLASS.",
-     "in Kofi's class."
+     "in Kofi's CLASS,",
+     "in Kofi's class,"
     ],
     [
-     "Paint the TOWN.",
-     "Paint the town."
+     "they come HOME.",
+     "they come home."
     ]
    ]
   },
@@ -475,12 +476,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Even someone",
-     "Even someone"
+     "Even the parts",
+     "Even the parts"
     ],
     [
-     "you've always WANTED.",
-     "you've always wanted."
+     "you didn't FINISH.",
+     "you didn't finish."
     ]
    ]
   },
@@ -551,24 +552,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Paint a PERSON,",
-     "Paint a person,"
+     "On a PERSON,",
+     "On a person,"
     ],
     [
-     "and anything",
-     "and anything"
+     "anything you MISS",
+     "anything you miss"
     ],
     [
-     "you miss",
-     "you miss"
-    ],
-    [
-     "stays bare",
-     "stays bear"
-    ],
-    [
-     "PINE on them,",
-     "pine on them,"
+     "stays bare PINE,",
+     "stays bear pine,"
     ],
     [
      "till their",
@@ -702,7 +695,7 @@
     ],
     [
      "big brother, DARIO.",
-     "big brother, Dario."
+     "big brother, dario."
     ]
    ]
   },
@@ -1655,7 +1648,7 @@
    "hand": 0.006,
    "step": 2,
    "what": "punch in on the pencil half",
-   "at": "L06.3"
+   "at": "L06.2"
   },
   {
    "id": "S06c",
@@ -1695,7 +1688,7 @@
    "hide_cast": [
     "bg1"
    ],
-   "at": "L06.5"
+   "at": "L06.3"
   },
   {
    "id": "S07",
@@ -5863,7 +5856,7 @@
    "set": "cafe"
   },
   {
-   "at": "L06.5",
+   "at": "L06.3",
    "name": "time",
    "set": "warm"
   },
@@ -6177,7 +6170,7 @@
   ]
  },
  "sound": {
-  "rev": 1,
+  "rev": 2,
   "floor": "wood",
   "steps_db": -22,
   "ambience": [

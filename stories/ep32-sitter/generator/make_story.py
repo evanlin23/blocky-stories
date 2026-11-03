@@ -51,12 +51,12 @@ def person(skin, shirt, pants, hair, hair_c, pattern="solid", extras=(), hat="no
 mum = person("#e8c4a2", "#2f7f82", "#39393f", "cap", "#c4c8cc", pattern="plaid", pattern_c="#256a6c",
              collar="#efe6d4", extras=["glasses"], extra_c="#6b4a2e", height=0.96)
 mum["face"].update({"pupil": "#6a3d1f", "corners": True})
-theo = person("#c9966e", "#2f6b3e", "#2b2f3a", "swoop", "#5a3a22", collar="#efe6d4", extras=["coat"], shoes="#b8864f", height=1.08,
+theo = person("#c9966e", "#2f5fa8", "#2b2f3a", "swoop", "#5a3a22", collar="#efe6d4", extras=["coat"], shoes="#b8864f", height=1.08,
               zip_c="#cfd6cc")
 theo["face"].update({"pupil": "#5a3a22"})
 
 cast = {
-    "me": person("#b57a56", "#d3a022", "#33363c", "buzz", "#14120f", pattern="knit", pattern_c="#bd8d19", shoes="#e8e8e6"),
+    "me": person("#b57a56", "#e0674f", "#33363c", "buzz", "#14120f", pattern="knit", pattern_c="#e0674f", shoes="#e8e8e6"),
     "mum": mum,
     "theo": theo,
     "kofi": person("#d9a67e", "#b4522f", "#3a3a40", "none", "#1a1410", extras=["glasses", "apron"], extra_c="#4a6788",
@@ -188,9 +188,9 @@ shot("S05b", "L05.1", "the bakery window: a cake whose pink frosting is still fi
      c([0, [BAK[0] - 0.1, -1.5, 1.4], [BAK[0] + 0.1, 0.9, 1.3], 26], [1, [BAK[0] + 0.3, -1.3, 1.4], [BAK[0] + 0.2, 0.9, 1.3], 28]))
 shot("S06", "L06", "the cafe window flower box: red flowers on the left, pencil on bare pine on the right",
      c([0, [CAF[0] - 0.9, -0.3, 1.4], [CAF[0] - 0.1, 2.85, 1.3], 30], [1, [CAF[0] - 0.4, 0.0, 1.4], [CAF[0] + 0.3, 2.85, 1.3], 36]))
-shot("S06b", "L06.3", "punch in on the pencil half", c([0, [CAF[0] + 0.2, 0.8, 1.35], [CAF[0] + 0.7, 2.85, 1.3], 40],
+shot("S06b", "L06.2", "punch in on the pencil half", c([0, [CAF[0] + 0.2, 0.8, 1.35], [CAF[0] + 0.7, 2.85, 1.3], 40],
                                                       [1, [CAF[0] + 0.5, 1.2, 1.35], [CAF[0] + 0.9, 2.85, 1.3], 46]))
-shot("S06c", "L06.5", "a blank pine panel on an easel with only a pencil cross for a face", canvas_cam(2, 1.5, 1.3, 32, push=0.3), hide_cast=["bg1"])
+shot("S06c", "L06.3", "a blank pine panel on an easel with only a pencil cross for a face", canvas_cam(2, 1.5, 1.3, 32, push=0.3), hide_cast=["bg1"])
 # S07: me at the cafe window, the ear patch toward the camera
 ME_CAF = (CAF[0] + 0.1, 2.15)
 shot("S07", "L07", "me at the cafe window, in profile", face_cam(ME_CAF, 180, 95, 1.1, 1.62, 34, 1.55, push=0.1), hand=0.003)
@@ -211,7 +211,7 @@ shot("S11", "L10", "Kofi beside me, looking down at my hand, a small puzzled smi
 shot("S11b", "L10.2", "the brush tip on the panel, no hand in frame", canvas_cam(8, 0.75, 1.2, 40, push=0.1, side=-0.12), hide_cast=["me", "kofi"])
 shot("S12", "L11", "over a painter's shoulder, a bus-stop panel", canvas_cam(5, 1.5, 1.3, 30, push=0.2), hide_cast=["bg4"])
 shot("S12b", "L11.3", "my panel: a young man's figure in pencil, colour going in", canvas_cam(8, 1.1, 1.3, 34, push=0.2), hide_cast=["me", "kofi"])
-shot("S13", "L12", "my panel close: Theo's grin and brown eyes, his face centre bare pine", canvas_cam(8, 0.8, 1.38, 38, push=0.15, side=0.0),
+shot("S13", "L12", "my panel close: Dario's grin and brown eyes, his face centre bare pine", canvas_cam(8, 0.8, 1.38, 38, push=0.15, side=0.0),
      hide_cast=["me", "kofi"])
 shot("S13b", "L12.2", "me, proud, the ear patch in frame", face_cam(ME, yaw_to(ME, DAIS), 90, 1.2, 1.6, 32, 1.56, push=0.1), hide_cast=["kofi"])
 shot("S14a", "L13", "my panel: a pine square with a pencil nose outline where the nose should be", canvas_cam(8, 0.62, 1.32, 46, push=0.1, side=0.0),
@@ -219,34 +219,34 @@ shot("S14a", "L13", "my panel: a pine square with a pencil nose outline where th
 shot("S14", "L13.3", "Kofi at the door with his keys, waving me out, the lamps ramping down behind him",
      c([0, [-1.4, -2.0, 1.55], [-4.9, -2.85, 1.4], 24], [1, [-1.9, -2.2, 1.55], [-4.9, -2.85, 1.4], 24]))
 shot("S15", "L14", "the car park at dusk under the lamp post, me looking back", still([-5.0, -12.0, 1.0], [-1.4, -8.4, 1.1], 28))
-shot("S15b", "L14.2", "through the lit window, my panel on easel 8, Theo's painted eyes turned to the glass",
+shot("S15b", "L14.2", "through the lit window, my panel on easel 8, Dario's painted eyes turned to the glass",
      c([0, [0.6, -9.0, 1.5], [3.0, -0.5, 1.2], 38], [1, [1.0, -8.0, 1.5], [3.0, -0.5, 1.25], 46]), turn8=True)
 # 03 Tuesday to Thursday: Mom's hall at night
-shot("S16", "L15", "Mom's hall at night, one wall lamp: pine Theo at the far end by the stairs, facing my door",
+shot("S16", "L15", "Mom's hall at night, one wall lamp: pine Dario at the far end by the stairs, facing my door",
      c([0, [38.35, 3.4, 1.5], [40.5, 6.6, 1.2], 28], [1, [38.5, 3.6, 1.5], [40.5, 6.6, 1.2], 30]), hand=0.01)
 shot("S16b", "L15.2", "me in my doorway, frozen", face_cam((38.35, 3.85), 90, 70, 2.2, 1.6, 30, 1.5, push=0.2), hand=0.008)
 shot("S17", "L16", "close on his face: the cross and two empty ovals, no nose",
      face_cam((40.4, 6.2), yaw_to((40.4, 6.2), DOOR), 15, 2.4, 1.78, 40, 1.8, push=0.4), hand=0.004)
-shot("S18", "L17", "low from my doorway: pine Theo halfway down the hall, boots to chest in colour",
+shot("S18", "L17", "low from my doorway: pine Dario halfway down the hall, boots to chest in colour",
      c([0, [38.35, 3.3, 0.55], [39.2, 4.7, 0.9], 28], [1, [38.4, 3.45, 0.5], [39.1, 4.4, 1.0], 28]), hand=0.01)
 shot("S18b", "L17.4", "his feet one board from my threshold", c([0, [38.8, 3.25, 0.35], [39.0, 3.9, 0.1], 36], [1, [38.7, 3.35, 0.3], [38.95, 3.9, 0.12], 36]), hand=0.006)
 # Thursday morning: my room
-shot("S19", "L18", "bright morning, from my pillow: Theo at the foot of my bed, full colour",
+shot("S19", "L18", "bright morning, from my pillow: Dario at the foot of my bed, full colour",
      c([0, [BED[0] - 0.05, 0.85, 1.2], [BED[0], -1.45, 1.3], 24], [1, [BED[0], 0.65, 1.2], [BED[0], -1.45, 1.3], 24]), hand=0.004)
 shot("S19b", "L18.2", "me sitting up fast, the ear patch toward the camera", face_cam((BED[0], 0.45), 0, 90, 1.4, 1.3, 30, 1.2, push=0.2))
-shot("S20", "L19", "close on Theo's face: warm skin, brown eyes, the pine nose patch with its pencil outline",
+shot("S20", "L19", "close on Dario's face: warm skin, brown eyes, the pine nose patch with its pencil outline",
      face_cam((BED[0], -1.45), 180, 25, 1.9, 1.72, 36, 1.7, push=0.25))
-shot("S21", "L20", "the room as the music drops: Theo beside the bed, starting to lean", c([0, [BED[0] - 1.3, -1.6, 1.5], [BED[0] + 0.4, 0.1, 1.0], 26],
+shot("S21", "L20", "the room as the music drops: Dario beside the bed, starting to lean", c([0, [BED[0] - 1.3, -1.6, 1.5], [BED[0] + 0.4, 0.1, 1.0], 26],
                                                                                           [1, [BED[0] - 1.1, -1.4, 1.5], [BED[0] + 0.4, 0.1, 1.0], 26]))
 TH_BED = (BED[0] + 1.6, 0.3)
-shot("S22", "L20.2", "3/4: Theo leaning in from the waist, his face a hand from mine, grinning. Never touches",
+shot("S22", "L20.2", "3/4: Dario leaning in from the waist, his face a hand from mine, grinning. Never touches",
      c([0, [BED[0] + 0.5, -0.9, 1.6], [BED[0] + 0.55, 0.3, 1.55], 24], [1, [BED[0] + 0.45, -0.75, 1.6], [BED[0] + 0.55, 0.3, 1.55], 26]), hand=0.004)
 shot("S22b", "L21", "me, eyes going to the door", face_cam((BED[0], 0.45), 0, 40, 1.9, 1.42, 32, 1.35, push=0.2))
 # 04 dinner
-shot("S23", "L22", "Mom's hall, warm evening: Mom at the table, Theo coming down the stairs",
+shot("S23", "L22", "Mom's hall, warm evening: Mom at the table, Dario coming down the stairs",
      c([0, [39.0, 0.1, 1.5], [40.7, 4.6, 1.3], 24], [1, [39.2, 0.2, 1.5], [40.9, 4.3, 1.2], 24]))
-shot("S23b", "L22.3", "Theo in the third chair", c([0, [39.4, 0.2, 1.45], [40.25, 2.1, 1.5], 26], [1, [39.6, 0.5, 1.45], [40.2, 2.1, 1.55], 28]))
-shot("S24", "L23", "Mom calmly laying a third plate in front of Theo", c([0, [39.3, 0.6, 1.5], [39.9, 2.4, 1.1], 24], [1, [39.5, 0.8, 1.45], [39.9, 2.4, 1.1], 24]))
+shot("S23b", "L22.3", "Dario in the third chair", c([0, [39.4, 0.2, 1.45], [40.25, 2.1, 1.5], 26], [1, [39.6, 0.5, 1.45], [40.2, 2.1, 1.55], 28]))
+shot("S24", "L23", "Mom calmly laying a third plate in front of Dario", c([0, [39.3, 0.6, 1.5], [39.9, 2.4, 1.1], 24], [1, [39.5, 0.8, 1.45], [39.9, 2.4, 1.1], 24]))
 shot("S24b", "L23.2", "me, stunned", face_cam(SEAT_ME, 90, -45, 1.8, 1.45, 30, 1.45, push=0.15))
 PICM, PICY = (39.55, 0.12), (39.55, -0.45)
 shot("S25", "L24", "THE PICTURE: Mom's fingertip on the ear patch, her face close and kind, her folded easel behind us",
@@ -260,11 +260,11 @@ shot("S28", "L27", "Mom's old folded easel in the hall, close, paint-worn",
      c([0, [39.2, -0.1, 1.1], [37.95, -0.4, 0.95], 34], [1, [39.0, -0.2, 1.1], [37.95, -0.4, 0.95], 34]))
 shot("S29", "L28", "Mom looking at me like she's still scared to change a line", face_cam(SEAT_MOM, 0, -30, 1.8, 1.5, 32, 1.46, push=0.15))
 shot("S29b", "L28.3", "the old panel, turned to the wall", c([0, [39.1, -0.3, 0.9], [37.95, -1.05, 0.45], 34], [1, [39.0, -0.5, 0.8], [37.95, -1.05, 0.45], 34]))
-shot("S30", "L29", "Theo, grinning, a hand out, Mom sliding the salt to him", c([0, [39.2, 0.9, 1.5], [40.1, 2.2, 1.35], 28], [1, [39.4, 1.0, 1.5], [40.0, 2.2, 1.35], 28]))
+shot("S30", "L29", "Dario, grinning, a hand out, Mom sliding the salt to him", c([0, [39.2, 0.9, 1.5], [40.1, 2.2, 1.35], 28], [1, [39.4, 1.0, 1.5], [40.0, 2.2, 1.35], 28]))
 # 05 finishing
 shot("S31", "L30", "Mom and me in her hall, the old easel being unfolded, cut before hands meet it",
      c([0, [40.6, -0.9, 1.5], [38.75, -0.2, 1.1], 24], [1, [40.3, -0.7, 1.5], [38.75, -0.2, 1.1], 24]))
-shot("S32", "L31", "the life room, bright: Theo on the dais stool as my sitter, the nine strokes on the dais edge under his boots",
+shot("S32", "L31", "the life room, bright: Dario on the dais stool as my sitter, the nine strokes on the dais edge under his boots",
      c([0, [0.35, -2.9, 0.55], [0.0, -0.4, 0.9], 24], [1, [0.35, -2.6, 0.7], [0.0, -0.4, 1.15], 24]), tally=True, hand=0.002)
 shot("S32b", "L31.3", "me at easel 8, side on, steady", c([0, [4.7, -2.1, 1.55], [3.7, -0.7, 1.4], 28], [1, [4.4, -2.0, 1.55], [3.7, -0.7, 1.4], 28]))
 shot("S33", "L32", "Mom at the easel beside mine, her old panel back to camera, her face just over its top edge",
@@ -272,7 +272,7 @@ shot("S33", "L32", "Mom at the easel beside mine, her old panel back to camera, 
 shot("S33b", "L32.3", "close on my head: the pine patch warming to skin", face_cam(ME, yaw_to(ME, DAIS), 90, 1.0, 1.6, 36, 1.58, push=0.15),
      hand=0.002)
 shot("S34", "L33", "Kofi behind us, arms folded, smiling", face_cam((4.5, 0.0), 180, 40, 2.2, 1.6, 30, 1.55, push=0.2), hide_cast=["bg6"])
-shot("S34b", "L33.2", "two-shot, Mom and me at our easels, Theo grinning on the dais", c([0, [1.2, -0.2, 1.7], [3.3, 0.2, 1.4], 24],
+shot("S34b", "L33.2", "two-shot, Mom and me at our easels, Dario grinning on the dais", c([0, [1.2, -0.2, 1.7], [3.3, 0.2, 1.4], 24],
                                                                                         [1, [1.4, -0.4, 1.7], [3.3, 0.2, 1.4], 24]))
 # 06 the new student
 shot("S35", "L34", "the life room, colder: Petra at easel 7 turning her panel to the wall, glancing around",
@@ -441,7 +441,7 @@ key("mum", "L32.3", arms=[10, 75], blend=0.5)
 key("mum", "L33.2", expr="smile", blend=0.5)
 hide("mum", "L34")
 
-# Theo: pine at night, the colour climbing him from the boots, then himself
+# Dario: pine at night, the colour climbing him from the boots, then himself
 TFAR = (40.35, 6.3)
 put("theo", "L15", TFAR, yaw=yaw_to(TFAR, DOOR), expr="blank", fade=1.0, fade_h=1.0, fade_z=-5.0, stage=0, arms=[0, 0])
 THALF = (38.95, 4.55)
@@ -477,7 +477,7 @@ cues = [
     {"at": "L04", "name": "time", "set": "bus"},
     {"at": "L05.1", "name": "time", "set": "bake"},
     {"at": "L06", "name": "time", "set": "cafe"},
-    {"at": "L06.5", "name": "time", "set": "warm"},
+    {"at": "L06.3", "name": "time", "set": "warm"},
     {"at": "L07", "name": "time", "set": "cafe"},
     {"at": "L08", "name": "time", "set": "hall"},
     {"at": "L09", "name": "time", "set": "day"},
@@ -523,7 +523,7 @@ cues = [
     {"at": "L32", "name": "prop", "which": "mom_easel", "on": True},
     # the lamps ramp from 100% to 35% over 1.2 s as Kofi locks up, and hold dim (never dark)
     {"at": "L13.3", "name": "dip", "down": 1.2, "hold": 0.0, "hold_to": "L15", "up": 0.4, "depth": 0.65},
-    # colour fills: the bench (S05), the cake (S05b), Theo's nose and my ear (Monday)
+    # colour fills: the bench (S05), the cake (S05b), Dario's nose and my ear (Monday)
     {"at": "L04.3+0.55", "name": "ramp", "name_": "bench", "v": 1.0, "dur": 0.95},
     {"at": "L05.1", "name": "ramp", "name_": "cake", "v": 0.1, "dur": 0.0},
     {"at": "L05.1+0.1", "name": "ramp", "name_": "cake", "v": 0.55, "dur": 1.6},
@@ -542,10 +542,11 @@ sfx = [
 
 story = {
     "slug": "ep32-sitter",
-    "title": "Never Paint A PERSON In Here \U0001F58C️",
+    "opening": "if",
+    "title": "Whatever This Class Paints Comes HOME \U0001F58C️",
     "made_for_kids": False,
-    "premise": "Kofi's art class paints new things into town, and each one turns up by Thursday, first as bare pine with the pencil lines still on it, then filling in with color. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty, so I join the class and paint him, Theo, but Kofi locks up for the night before I finish his nose, and anything missed on a painted person stays bare pine till their painter finishes it. By Tuesday a pine man with a pencil face stands in our hall, and each night he is a step nearer my door with more color on him.",
-    "twist": "On Thursday Theo comes down to dinner in full color except a bare pine nose, and Mom calmly lays him a plate, because eighteen years ago she took Kofi's class and broke the rule herself: she painted me. The patch of bare pine I always called a birthmark is the ear she never dared finish, and the student Kofi said I hold a brush like was Mom. Only a painter can finish what they painted, so I finish Theo's nose and Mom finishes my ear at her old easel. The loop: a new student hides a half pine face, and I tell her never to paint a person.",
+    "premise": "Kofi's art class paints new things into town, and each one turns up by Thursday, first as bare pine with the pencil lines still on it, then filling in with color. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty, so I join the class and paint him, Dario, but Kofi locks up for the night before I finish his nose, and anything missed on a painted person stays bare pine till their painter finishes it. By Tuesday a pine man with a pencil face stands in our hall, and each night he is a step nearer my door with more color on him.",
+    "twist": "On Thursday Dario comes down to dinner in full color except a bare pine nose, and Mom calmly lays him a plate, because eighteen years ago she took Kofi's class and broke the rule herself: she painted me. The patch of bare pine I always called a birthmark is the ear she never dared finish, and the student Kofi said I hold a brush like was Mom. Only a painter can finish what they painted, so I finish Dario's nose and Mom finishes my ear at her old easel. The loop: a new student hides a half pine face, and I tell her never to paint a person.",
     "world": "a bright little town that Kofi's art class paints new things into, on pine panels: a sunny bus stop with a new bench, a bakery cake and a cafe flower box still filling in, the arts centre life room on Monday afternoons with eight easels round a pine dais, the car park at dusk, and Mom's front hall with her folded old easel and a small dining table",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#5fd068",
@@ -580,7 +581,7 @@ story = {
                   {"at": "L24", "voices": ["pad", "piano"], "energy": 0.4, "mode": "major", "root": 50, "bpm": 84},
                   {"at": "L34", "voices": ["drone"], "energy": 0.3, "mode": "minor", "root": 53, "bpm": 84},
               ]},
-    "sound": {"rev": 1, "floor": "wood", "steps_db": -22,
+    "sound": {"rev": 2, "floor": "wood", "steps_db": -22,
               "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -34}],
               "sfx": sfx,
               "music_drops": [{"from": "L20-0.6", "to": "L20"}, {"from": "L23-0.7", "to": "L23"}]},

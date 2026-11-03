@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-NAMES = {"mom": "Mom", "kofi": "Kofi", "theo": "Theo", "monday": "Monday", "tuesday": "Tuesday", "wednesday": "Wednesday", "thursday": "Thursday", "i": "I"}
+NAMES = {"mom": "Mom", "kofi": "Kofi", "monday": "Monday", "tuesday": "Tuesday", "wednesday": "Wednesday", "thursday": "Thursday", "i": "I"}
 OUT = []
 for m in re.finditer(r"^- `(L\d+b?)` narrator: (.+)$", (HERE.parent / "script.md").read_text(), re.M):
     lid, body = m.group(1), m.group(2).strip()

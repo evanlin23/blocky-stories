@@ -6,50 +6,50 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Never paint a person in Kofi's class. Paint the town.",
+   "text": "If you paint a person in Kofi's class, they come home.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.586,
-   "onset": 0.172,
-   "end": 2.397,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.345,
    "chunks": [
     [
-     0.172,
-     0.492
+     0.155,
+     0.31
     ],
     [
-     0.492,
-     0.802
+     0.31,
+     0.768
     ],
     [
-     0.802,
-     1.517
+     0.768,
+     1.466
     ],
     [
-     1.586,
-     2.397
+     1.534,
+     2.345
     ]
    ]
   },
   "L02": {
-   "text": "Even someone you've always wanted.",
+   "text": "Even the parts you didn't finish.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.793,
+   "dur": 1.655,
    "onset": 0.172,
-   "end": 1.586,
+   "end": 1.448,
    "chunks": [
     [
      0.172,
-     0.621
+     0.638
     ],
     [
-     0.621,
-     1.586
+     0.638,
+     1.448
     ]
    ]
   },
@@ -134,42 +134,34 @@
    ]
   },
   "L06": {
-   "text": "Paint a person, and anything you miss stays bear pine on them, till their painter finishes it.",
+   "text": "On a person, anything you miss stays bear pine, till their painter finishes it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.707,
-   "onset": 0.155,
-   "end": 3.517,
+   "dur": 3.466,
+   "onset": 0.172,
+   "end": 3.276,
    "chunks": [
     [
-     0.155,
-     0.759
+     0.172,
+     0.655
     ],
     [
-     0.81,
-     1.138
+     0.707,
+     1.172
     ],
     [
-     1.138,
-     1.328
+     1.172,
+     2.034
     ],
     [
-     1.328,
-     1.75
+     2.103,
+     2.31
     ],
     [
-     1.75,
-     2.293
-    ],
-    [
-     2.345,
-     2.552
-    ],
-    [
-     2.552,
-     3.517
+     2.31,
+     3.276
     ]
    ]
   },
@@ -298,14 +290,14 @@
    ]
   },
   "L11": {
-   "text": "Everyone else painted the bus stop. I painted my big brother, Theo.",
+   "text": "Everyone else painted the bus stop. I painted my big brother, dario.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.121,
+   "dur": 3.259,
    "onset": 0.172,
-   "end": 2.897,
+   "end": 3.052,
    "chunks": [
     [
      0.172,
@@ -325,7 +317,7 @@
     ],
     [
      1.966,
-     2.897
+     3.052
     ]
    ]
   },
@@ -610,14 +602,14 @@
    ]
   },
   "L22": {
-   "text": "At dinner, Theo came down the stairs and sat at the table.",
+   "text": "At dinner, Dario came down the stairs and sat at the table.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.483,
+   "dur": 2.586,
    "onset": 0.155,
-   "end": 2.293,
+   "end": 2.397,
    "chunks": [
     [
      0.155,
@@ -625,19 +617,19 @@
     ],
     [
      0.534,
-     0.914
+     1.017
     ],
     [
-     0.914,
-     1.371
+     1.017,
+     1.474
     ],
     [
-     1.371,
-     1.629
+     1.474,
+     1.733
     ],
     [
-     1.629,
-     2.293
+     1.733,
+     2.397
     ]
    ]
   },
@@ -798,22 +790,22 @@
    ]
   },
   "L29": {
-   "text": "Theo asked for the salt.",
+   "text": "Dario asked for the salt.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.448,
-   "onset": 0.19,
-   "end": 1.259,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
    "chunks": [
     [
-     0.19,
-     0.621
+     0.172,
+     0.707
     ],
     [
-     0.621,
-     1.259
+     0.707,
+     1.345
     ]
    ]
   },
@@ -842,14 +834,14 @@
    ]
   },
   "L31": {
-   "text": "So on Monday, Theo sat on the dais, and I painted his nose.",
+   "text": "So on Monday, Dario sat on the dais, and I painted his nose.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.793,
+   "dur": 2.983,
    "onset": 0.172,
-   "end": 2.603,
+   "end": 2.793,
    "chunks": [
     [
      0.172,
@@ -857,19 +849,19 @@
     ],
     [
      0.707,
-     1.094
+     1.164
     ],
     [
-     1.094,
-     1.5
+     1.164,
+     1.655
     ],
     [
-     1.526,
-     1.69
+     1.698,
+     1.862
     ],
     [
-     1.69,
-     2.603
+     1.862,
+     2.793
     ]
    ]
   },

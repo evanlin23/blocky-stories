@@ -4,20 +4,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Never paint",
-    "Never paint"
+    "If you",
+    "If you"
    ],
    [
-    "a PERSON",
-    "a person"
+    "paint a PERSON",
+    "paint a person"
    ],
    [
-    "in Kofi's CLASS.",
-    "in Kofi's class."
+    "in Kofi's CLASS,",
+    "in Kofi's class,"
    ],
    [
-    "Paint the TOWN.",
-    "Paint the town."
+    "they come HOME.",
+    "they come home."
    ]
   ]
  },
@@ -26,12 +26,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Even someone",
-    "Even someone"
+    "Even the parts",
+    "Even the parts"
    ],
    [
-    "you've always WANTED.",
-    "you've always wanted."
+    "you didn't FINISH.",
+    "you didn't finish."
    ]
   ]
  },
@@ -102,24 +102,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Paint a PERSON,",
-    "Paint a person,"
+    "On a PERSON,",
+    "On a person,"
    ],
    [
-    "and anything",
-    "and anything"
+    "anything you MISS",
+    "anything you miss"
    ],
    [
-    "you miss",
-    "you miss"
-   ],
-   [
-    "stays bare",
-    "stays bear"
-   ],
-   [
-    "PINE on them,",
-    "pine on them,"
+    "stays bare PINE,",
+    "stays bear pine,"
    ],
    [
     "till their",
@@ -252,8 +244,8 @@
     "I painted my"
    ],
    [
-    "big brother, THEO.",
-    "big brother, Theo."
+    "big brother, DARIO.",
+    "big brother, dario."
    ]
   ]
  },
@@ -486,8 +478,8 @@
     "At dinner,"
    ],
    [
-    "Theo came",
-    "Theo came"
+    "Dario came",
+    "Dario came"
    ],
    [
     "down the STAIRS",
@@ -628,8 +620,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Theo asked",
-    "Theo asked"
+    "Dario asked",
+    "Dario asked"
    ],
    [
     "for the SALT.",
@@ -664,8 +656,8 @@
     "So on Monday,"
    ],
    [
-    "Theo sat",
-    "Theo sat"
+    "Dario sat",
+    "Dario sat"
    ],
    [
     "on the DAIS,",

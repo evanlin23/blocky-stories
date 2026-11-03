@@ -250,7 +250,7 @@ def panel_theo(stage):
     d = ImageDraw.Draw(im)
     cx, cy, rx, ry = HEAD_OVAL
     ox, oy, fw, fh = FACE_BOX
-    G, GL = (46, 112, 66, 255), (240, 232, 214, 255)
+    G, GL = (47, 95, 168, 255), (240, 232, 214, 255)
     if stage == 0:
         hy, hrx, hry = 190, 92, 112
         pencil(d, [(80, 600), (110, 420), (240, 360), (370, 420), (400, 600)], 7)
@@ -402,10 +402,10 @@ def nose_patch_image(ink=False):
     ImageDraw.Draw(mask).rounded_rectangle([4, 4, W - 4, H - 4], radius=18, fill=255)
     pine.putalpha(mask)
     d = ImageDraw.Draw(pine)
-    d.rounded_rectangle([4, 4, W - 4, H - 4], radius=18, outline=(160, 122, 80, 255), width=6)
-    col = (52, 48, 46, 255)
-    d.line([(62, 36), (56, 100), (80, 112)], fill=col, width=6, joint="curve")
-    d.line([(34, 112), (56, 120)], fill=col, width=5)
+    d.rounded_rectangle([4, 4, W - 4, H - 4], radius=18, outline=(58, 36, 22, 255), width=11)
+    col = (40, 34, 32, 255)
+    d.line([(62, 36), (56, 100), (80, 112)], fill=col, width=9, joint="curve")
+    d.line([(34, 112), (56, 120)], fill=col, width=8)
     return pine
 
 
@@ -1036,7 +1036,7 @@ def build_patches(kit, ctx, story):
     if th is not None:
         m = patch_mat(kit, ctx, "nose", nose_patch_image(), story["cast"]["theo"]["skin"])
         mi = patch_mat(kit, ctx, "noseink", nose_patch_image(True), story["cast"]["theo"]["skin"], ink=True)
-        ctx["patch"]["nose"] = [curved_patch(kit, "theo.nosepatch", m, th, 0, 0.36, -0.13, 0.25, off=0.03),
+        ctx["patch"]["nose"] = [curved_patch(kit, "theo.nosepatch", m, th, 0, 0.62, -0.10, 0.44, off=0.03),
                                 curved_patch(kit, "theo.noseink", mi, th, 0, 0.36, -0.13, 0.25, off=0.036)]
 
 
