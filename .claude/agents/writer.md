@@ -12,6 +12,7 @@ You're asked for N stories. Plan them together, so they differ from each other a
 2. For each story, make `stories/<name>/` (name: two or three words, kebab-case) and write:
    - `script.md`:
      - the slug (`ep<NN>-<name>`, numbering on from the highest existing slug, in the order they should upload)
+     - before keeping a big idea, read `stories/ideas.md` → "Claimed big ideas" and every story's twist. If yours is the same idea in other clothes (ep33 and the lookout redo both landed on "time runs differently with height"), pick another. Then add yours there in one line, in the same commit.
      - **the big idea first** (RULES → The lore is the point): one sentence that makes someone say "wait, what", a reveal that reframes the rule and every strange detail. Pitch ten ideas for every one you keep, and keep only the ones that would hold up as a film. Never reuse the owner's example ideas (a one-way door to the past, waking from a coma)
      - the narrator is male (the one narrator voice is a man's): never "my husband" or "my boyfriend", and the "I" character is a man or teen boy on screen
      - build on back-row's shape (RULES → "Back-row is the template"), and keep it for everyone: no politics, religion, sexuality or misreadable romance; prefer family, friends and home
