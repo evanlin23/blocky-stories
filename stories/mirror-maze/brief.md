@@ -1,3 +1,50 @@
+# ep15-mirror-maze: brief (redo, writer, 2026-11-02)
+
+**This redo outranks everything below it.** The story was held because its first line wasn't the world's rule. The new script (`script.md`) keeps the set, the cast and the look, and changes the premise and twist. Big idea: the narrator is the reflection someone left in a maze pane before moving away, and Tasha has come every night of the fair to visit a reflection. About 1:22, 43 lines, about 46 shots.
+
+## What stays (reuse as built)
+- **The set:** the rainy field, duckboards and puddles, the flatbed truck with its glass panels, the fry van with its steel side, the maze front with its lilac bulbs, the inside grid with the roof off and the rain, the far tarps and wheel, the worklight. Grade, fog and rain settings.
+- **The cast specs:** `me`, `tasha` and `guy`, unchanged. The bucket hat, the coat, the wet coat for Tasha.
+- **The machinery:** `build_ghosts` / `pose_ghosts` (instanced figures in the glass) now place the leftovers. `copy_spec` (Tasha mirrored) now makes **Tasha's reflection** at L39 to L43, with **normal round eyes and glint**, no sockets, no lag. The `mirror` eye style and `matte_eyes` now go on the dark one. The maze guy's pane-carry shot (old L81) and the find-through-the-glass framing (old L68 to L78, roles swapped: Tasha outside, me inside).
+- **Music:** dorian E2 at 76 bpm with the piano's late echo. Sections move (see script.md → Look and sound).
+
+## What's dropped
+The copy's half-beat lag, the walk out, the truck duck and catch-up, the bumper-car hide, the P01 replay, the black-eyed Tasha, the fry-van warm ending, and the five-stroke facade tally (`maze.tally0` to `maze.tally4`, delete them: no lore plant this time). The bumper cars aren't needed; leave them as background or skip them.
+
+## What's new (build these)
+1. **The leftover marker:** a thin emissive lilac outline (about `#c9a6ff`, an inverted-hull shell or rim pass) on every leftover reflection, plus a slight desaturation. It must read at phone size by 2 s. Our own design, not a game highlight effect.
+2. **Leftover extras:** about six to eight simple adult stranger specs (varied coats, hats, hair, no catalogue look), placed in glass:
+   - the maze front's panes at L01 (a crowd standing where nobody stands)
+   - the fry van's steel side at L02 (a long queue; build it like the maze, clear panel with the figures behind it), and two real customers at the hatch at L03
+   - one man tying his boot under a puddle on the boards at L04 and L05 (an upside-down figure under a clear puddle plane), with nobody above it
+   - the truck's glass panels at L06, waving
+   - the carried panes at L14 to L17, faces turning to watch me
+3. **Me behind the glass:** every shot of me has a pane between me and the camera or between me and Tasha. My side is dry: no rain on me or near me (split the rain so it falls on her side only). I carry the same lilac rim, kept subtle and always backed by the bulbs, so it reads as their light on a first watch.
+4. **Her breath fog:** an animated soft fog patch on her side of the pane at L18. My side stays clear at L19.
+5. **The dark one (the creature):** one old leftover stranger in faded grey-violet, a head too tall for its pane (about 1.25x height), mirror-black eyes with no shine (`mirror` style), a flat mouth, a dull grey rim (about `#7a7484`). One model, posed per shot, never seen moving, only a pane nearer between cuts. **Test still first:** the L24/L25 frame, its face at least 1/3 of the frame width behind my shoulder in my pane, key from below, front lights dead, rim on its silhouette, eyes the darkest thing near its face. Bar: fright 6 and silly risk 7 on a cold phone-size read.
+6. **The tilt (L28 and P02):** my side of the pane (floor patch, frames behind me, me) tips about 25 degrees over 0.6 s as the maze guy lifts the pane. Then from her side: Tasha level in the rain, me tilted inside the carried pane. Parent my side to the pane frame, or roll the camera on an inside shot and cut. Ease it, no snap.
+7. **Tasha looks at herself (L36 to L39):** she turns her face to the glass, and her reflection (the mirrored model, normal eyes, lilac rim) appears beside me. She walks back into the rain. It stays.
+8. **The last two shots (L42 and L43):** the pane on the truck from outside, me and her reflection in it, the real Tasha small on the duckboards waving. Then a slow push into the pane: deep behind us, the dark one, small, clearly lit, a pane nearer. Cut 0.25 s after the last word.
+
+9. **story.json:** set `title`, `premise`, `twist` and `world` from script.md → Premise, rule, twist and package.json, and replace `lines`, `shots`, `cues` and `music` sections for the new 43 lines.
+
+## The 2 s hook, lit to read
+The first frame is the maze front lit bright: the bulbs plus a soft warm front fill on Tasha (face at least 1/4 of the frame width, out of the caption band), the leftover crowd in the panes behind her with their lilac rims clean against the dark glass. Light fog only. Darkness and heavy fog come after 0:15.
+
+## Cut rate and timing
+About 46 shots, a new one every 1.2 to 2.3 s. Line start estimates are in script.md's shot plan. Cover (`cover_s` 44.5): the dark one right behind me in my glass, Tasha's face outside if it fits.
+
+## Standards notes
+- Nothing in the set has text. Coins, if shown, are plain discs.
+- The dark one is a stranger, never shown hurting anyone, never touching anyone. "Nobody had come to see them in years" is the only sadness, and no death words.
+- The real me "moved away", an ordinary reason. Every cast member is an adult.
+- Flashing: the tilt and every light change ramp over at least 0.3 s. The lilac rims don't pulse.
+
+---
+
+## The old brief (2026-10-31), kept for the set and cast details only
+Where it talks about the copy's lag, the replay, the truck catch-up, the bumper-car hide or the fry-van ending, it's superseded by the redo above.
+
 # ep14-mirror-maze: brief (producer, 2026-10-31, amended the same day after the creature tests)
 
 Creepy blocky story reel, batch 2 story 2 of 4 (row 2, `mirror-maze`, in `reels/blocky/batch2-pitches.md`), for **PandaNanoAdventures** (note 21). Format `/blocky`, note 18 in full. It's fiction with no facts and no sourcing step. There's no takeaway on purpose (notes 16 and 21), so there's no "where the viewer meets this" section either. Story folder: `reels/blocky/stories/mirror-maze/`. Working title: **"Only one of us walked out of the mirror maze"**. It's a statement, not an imperative, and the packager owns the upload title.

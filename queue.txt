@@ -17,3 +17,4 @@ ep36-ice-huts
 ep33-chairlift
 ep47-fitting-room
 ep31-dawn-flight
+mirror-maze
