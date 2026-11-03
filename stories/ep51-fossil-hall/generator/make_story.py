@@ -655,6 +655,7 @@ story = {
     "key_color": "#ffcf5c",
     "gap": 0.12,
     "tail": 0,
+    "clip_ok": ["S007", "S014", "S015", "S023", "S026", "S033", "S051", "S052", "S053", "S061", "S078", "S079", "S081", "S083"],
     "look": {"fog": "#9aa3b2", "fog_density": 0.0, "fog_start": 6.0, "sky": "#1a1c24", "sky_strength": 0.2, "exposure": 0.0,
              "flash_safe": True, "polish": {"quiet": [["L66", "L74"]]}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.03], "saturation": 0.98, "contrast": 1.05,
