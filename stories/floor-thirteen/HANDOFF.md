@@ -25,3 +25,8 @@ Branch `claude/opening-floor-thirteen`. No PR yet.
 3. Preview, flash and preflight, then a critic re-check of L36 only.
 4. Gate, merge main, PR, merge after `test`.
 5. qa on the final film.
+
+## Update 2026-11-03 (second pause, handed to another orchestrator)
+- This session re-read HANDOFF and launched a builder for the L36 stairs fix and the flash margin (26.0 s cue). The builder was stopped on handoff before reporting; any uncommitted edits it made are in this push as WIP and are UNTESTED.
+- Nothing else done: no critic re-check, no gate, no PR, no proof, no qa.
+- Next: steps 1-5 above. Only ONE more critic round allowed (L36 only). If it does not approve, push and write why here. At the time of writing, no proof.yml on main; branch claude/proof-render exists. Merge only after proof qa passes and `test` is success. Don't dispatch render.yml/upload.yml; don't edit queue.txt.
