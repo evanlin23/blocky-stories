@@ -802,34 +802,34 @@
    ]
   },
   "L33": {
-   "text": "on friday, i walked home late from my best friend ben's",
+   "text": "on friday, i walked home late from my best friend ben's house.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9784999999999999,
-   "dur": 2.741,
+   "dur": 2.966,
    "onset": 0.172,
-   "end": 2.534,
+   "end": 2.759,
    "chunks": [
     [
      0.172,
-     0.655
+     0.69
     ],
     [
-     0.707,
-     1.207
+     0.741,
+     1.259
     ],
     [
-     1.207,
-     1.457
+     1.259,
+     1.509
     ],
     [
-     1.457,
-     1.948
+     1.509,
+     1.983
     ],
     [
-     1.948,
-     2.534
+     1.983,
+     2.759
     ]
    ]
   },
@@ -1686,30 +1686,30 @@
    ]
   },
   "L66c": {
-   "text": "friday's pair was mine because he'd walked me home.",
+   "text": "friday's pair was mine. he walked me home.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.345,
+   "dur": 2.172,
    "onset": 0.172,
-   "end": 2.155,
+   "end": 1.983,
    "chunks": [
     [
      0.172,
-     0.655
+     0.629
     ],
     [
-     0.655,
-     1.052
+     0.629,
+     1.034
     ],
     [
-     1.052,
-     1.543
+     1.086,
+     1.388
     ],
     [
-     1.543,
-     2.155
+     1.388,
+     1.983
     ]
    ]
   },
@@ -1742,7 +1742,7 @@
    ]
   },
   "L66e": {
-   "text": "a pair kept inside means somebody walks home alone.",
+   "text": "the pair kept inside means somebody walks home alone.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,

@@ -247,7 +247,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Shots:** see the brackets (one or two per line).
 - **The scare (about 62 to 70 s):** the face at my window.
 
-- `L33` narrator: On FRIDAY, / I walked home LATE / from my best friend BEN'S.
+- `L33` narrator: On FRIDAY, / I walked home LATE / from my best friend BEN'S HOUSE.
   - [me walking up our road at sundown, hood down, `neutral`, the streetlights on, our house and its rail far ahead]
 - `L33a` narrator: Behind me, / something SQUEAKED, / like NEW SNEAKERS.
   - [two shots: low on the asphalt behind me, one streetlight back, empty in this frame. Then my face, `worried`, eyes front]
@@ -340,7 +340,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [Biscuit sitting in the mouth of the left boot, `neutral`, steam round him]
 - `L66b` narrator: Old ones / from the TRASH, / in the SIZE / of whoever / he walks HOME.
   - [two shots: a quick cut of a ginger tail disappearing into a neighbor's curbside trash can at dusk. Then the rail of mixed old pairs, every one a size eleven]
-- `L66c` narrator: Friday's pair / was MINE / because he'd walked / ME home.
+- `L66c` narrator: Friday's pair / was MINE. / He walked / ME home.
   - [my sneakers on the mat, steaming, cut with the empty asphalt one light behind me from L33a]
 - `L66e` narrator: The pair kept INSIDE / means somebody / walks home ALONE.
   - [my room, the sneakers by my bed, the window dark above them]
