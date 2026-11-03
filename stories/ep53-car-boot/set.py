@@ -48,6 +48,7 @@ TOD = {
     "sil":    dict(sun=4.0, sunc="#e8ecfa", az=80, el=9, fill=0.3, fillc="#c0cae8", sky=1.8, hor="#c4c9d6", zen="#98a6c0", fogd=0.055, fogb=1.0),
     "fogmid": dict(sun=1.0, sunc="#cdd7f2", az=200, el=12, fill=1.7, fillc="#b4c0e0", sky=0.95, hor="#aab0bf", zen="#8794b0", fogd=0.035, fogb=0.8),
     "gold":   dict(sun=8.5, sunc="#ffbd6e", az=180, el=11, fill=0.4, fillc="#8fa6e0", sky=1.0, hor="#f0c496", zen="#8aa4c8", fogd=0.004, fogb=1.0, rim=5.5),
+    "goldlo": dict(sun=1.9, sunc="#ffbd6e", az=180, el=11, fill=0.5, fillc="#8fa6e0", sky=0.7, hor="#f0c496", zen="#8aa4c8", fogd=0.004, fogb=1.0, rim=1.5),   # S67: a sleeve is white, so less sun
     "goldb":  dict(sun=8.5, sunc="#ffbd6e", az=0, el=11, fill=0.4, fillc="#8fa6e0", sky=1.0, hor="#f0c496", zen="#8aa4c8", fogd=0.004, fogb=1.0, rim=5.5),
     "morn":   dict(sun=7.5, sunc="#ffd49a", az=-40, el=30, fill=1.4, fillc="#a5b8e6", sky=1.1, hor="#e8c9a8", zen="#86a8d4", fogd=0.004, fogb=1.0),
     "house":  dict(sun=3.0, sunc="#b8c8ff", az=-70, el=10, fill=1.6, fillc="#8fa6e0", sky=1.4, hor="#aeb6d8", zen="#5f78b0", fogd=0.01, fogb=0.8),
@@ -912,7 +913,7 @@ def animate(kit, story, tl, t, ctx):
     if "tsil_orig" not in ctx:
         ctx["tsil_orig"] = {o: list(o.data.materials) for o in bpy.data.objects
                             if o.name.startswith("tilted.") and o.type == "MESH"}
-        ctx["tsil_mat"] = kit.plastic("#0b0b0d", 0.95, "tsil")
+        ctx["tsil_mat"] = kit.plastic("#1b212d", 0.95, "tsil")
     sil = bool((_last(_cues(tl, "tsil"), t) or {}).get("on"))
     for o, mats in ctx["tsil_orig"].items():
         for i, m in enumerate(mats):

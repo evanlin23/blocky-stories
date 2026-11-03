@@ -37,3 +37,11 @@
 - Preview: out/work/ep53-car-boot/ep53-car-boot-preview.mp4 (136.1 s). Sheets: out/ep53-first3s.png, out/ep53-keybeats.png.
 - Not done: the S71 (103.7 s) fill is still about luma 108, not 120 (the S69-S73 flash numbers now pass with margin so left as is); warm fill in the opening for the cream anorak not applied. `pytest` needs `pip install pytest` in the system python (171 pass).
 - Remember: `python -m blocky timeline` must be run after make_story.py, or render reads the stale out/work timeline.json.
+
+## Round 5 critic must-fixes applied (2026-11-03, no reviews run)
+- S64: camera side-on from -x (long lens 34 to 42, pan), Tilted lean 48 (face about 40 cm from mine), me turned to face it (yaw 215, at [-1.0, -0.45]); both heads whole above the captions.
+- S67: new light preset `goldlo` (sun 1.9, rim 1.5) cued L53 and back to `gold` at L54; camera pulled back to show the cuff and the table edge.
+- S41/S42: long lens from further back (lens 50/52 from [-13.5, -10.5] / [-9.5, -8.0]); silhouette colour lifted to #1b212d so the sideways head reads against the fog.
+- S02: camera x -0.2, lens 17 to 19, my face whole at the left.
+- Not done: S62 hair advice. `sound.rev` 4.
+- Preview re-rendered (S02, S41, S42, S64, S67 forced), finished, mixed: 136.1 s. Flash PASS (max 1 flash/s, 3f 2), preflight 0 blocks, measure 0 blocks, pytest 171 pass.

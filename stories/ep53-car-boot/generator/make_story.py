@@ -141,7 +141,7 @@ SHOTS = [
     (0, "me close, sun on my face, white coat still; the haggler's coat fades blue to orange beside me, a buyer's violet to pink", 2,
      move(([0.75, 1.7, 1.62], [0.75, -0.9, 1.5]), ([0.4, 0.3, 1.62], [0.4, -0.9, 1.5]), 19, 21)),
     ("L02", "my white sleeve beside a coat mid-fade", 2,
-     move(([-0.35, 1.6, 1.5], [-0.35, -0.9, 1.5]), ([-0.35, 0.8, 1.5], [-0.35, -0.9, 1.5]), 24, 27)),
+     move(([-0.2, 1.7, 1.5], [-0.2, -0.9, 1.5]), ([-0.2, 1.3, 1.5], [-0.2, -0.9, 1.5]), 17, 19)),
     ("L03", "the haggler at the lamp stall, face big, coat fading blue to orange", 2,
      move(([-10.55, 1.95, 1.72], [-9.55, -0.65, 1.55]), ([-10.4, 1.9, 1.72], [-9.55, -0.65, 1.55]), 32)),
     ("L03.4", "his face, sheepish, the lamp back on the table", 2, still([-10.2, 1.2, 1.7], [-9.5, -0.65, 1.56], 34)),
@@ -190,9 +190,9 @@ SHOTS = [
     ("L30", "the radio clicks on", 2, still([-0.1, -0.95, 1.25], [-0.95, 0.1, 0.95], 38)),
     ("L31", "low across the table: all turned to her chair, half hidden in fog", 2,
      still([1.5, -0.9, 0.98], [-0.65, 1.4, 0.8], 30)),
-    ("L32", "from the hedge, long lens: a dark seated silhouette in her chair", 4, still([-12.0, -8.0, 1.3], [-0.7, 1.3, 1.3], 75)),
-    ("L33", "tighter: the sideways head, the only clear thing", 4, still([-5.5, -7.0, 1.3], [-0.9, 1.3, 1.5], 70)),
-    ("L34", "the same angle: the chair is empty", 4, still([-5.5, -7.0, 1.3], [-0.9, 1.3, 1.5], 70)),
+    ("L32", "from the hedge, long lens: a dark seated silhouette in her chair", 4, still([-13.5, -10.5, 1.2], [-0.7, 1.3, 1.5], 50)),
+    ("L33", "tighter: the sideways head, the only clear thing", 4, still([-9.5, -8.0, 1.2], [-0.9, 1.3, 1.9], 52)),
+    ("L34", "the same angle: the chair is empty", 4, still([-9.5, -8.0, 1.2], [-0.9, 1.3, 1.9], 52)),
     ("L35", "a strip of tarp-green canvas on the chair arm", 2, move(([-1.15, 0.7, 0.75], [-0.98, 1.35, 0.42]), ([-1.115, 0.80, 0.73], [-0.98, 1.35, 0.42]), 40, 38.6)),
     ("L36", "the bus shelter in fog: Pip on the bench, tired, her coat over my arm", 2,
      still([-18.2, -22.5, 1.5], [-14.0, -27.8, 1.0], 30)),
@@ -218,10 +218,10 @@ SHOTS = [
     ("L48", "me a step nearer, scared", 2, still([-2.4, -1.7, 1.5], [-0.65, -1.75, 1.5], 34)),
     ("L48.2", "its head hanging below the shoulder line, eyes still on me", 2, still([0.2, -2.5, 1.75], [-1.0, 1.3, 2.05], 34)),
     ("L49", "the tipped face, held, as Pip's at the shelter", 2, still([-0.4, -2.0, 1.9], [-1.0, 1.3, 2.1], 42)),
-    ("L50", "side-on: it leans over the table, face to face with me", 2, still([-3.7, -2.3, 1.9], [-1.3, -0.1, 1.95], 21)),
+    ("L50", "side-on: it leans over the table, face to face with me", 2, move(([-8.0, -4.2, 1.9], [-1.0, 0.45, 2.1]), ([-8.0, -4.2, 1.75], [-1.0, -0.05, 1.85]), 34, 42)),
     ("L51", "extreme close on its stacked eyes", 2, still([-1.9, -1.4, 2.0], [-1.15, 0.5, 2.0], 40)),
     ("L52", "my face, scared turning to worried", 2, still([0.9, 0.3, 1.55], [-1.45, -0.62, 1.5], 34)),
-    ("L53", "my sleeve, still white, gold sun on it", 2, still([-1.6, -1.4, 1.25], [-1.2, -0.62, 1.2], 42)),
+    ("L53", "my sleeve, still white, gold sun on it", 2, move(([-3.0, -2.6, 1.3], [-0.7, -0.4, 1.1]), ([-2.8, -2.4, 1.28], [-0.7, -0.4, 1.1]), 36, 36)),
     ("L54", "me in the foreground, and far down the row the white seller's cream coat", 2,
      still([5.6, -1.2, 1.6], [-23.0, 0.9, 1.4], 34)),
     ("L55", "me, worried, looking down at my coat", 2, still([0.8, -0.3, 1.6], [-0.65, -0.62, 1.35], 36)),
@@ -354,7 +354,7 @@ put("me", "L47.2", [-0.2, -0.6], yaw=180, expr="scared", arms=[8, 8])
 put("me", "L48", [-0.65, -1.75], yaw=180, expr="scared", head=[0, 0])
 hide("me", "L48.2")
 hide("me", "L49")
-put("me", "L50", [-1.2, -0.7], yaw=-40, expr="scared", lean=0, head=[0, 5])
+put("me", "L50", [-1.0, -0.45], yaw=215, expr="scared", lean=0, head=[0, 5])
 hide("me", "L51")
 put("me", "L52", [-1.2, -0.7], yaw=180, expr="scared", lean=0, head=[0, 5])
 key("me", "L52+0.8", expr="worried", blend=0.5)
@@ -434,6 +434,8 @@ cues = [
     {"at": "L32", "name": "tod", "set": "sil"},
     {"at": "L34", "name": "tod", "set": "fog"},
     {"at": "L43", "name": "tod", "set": "gold", "dur": 3.0},
+    {"at": "L53", "name": "tod", "set": "goldlo"},
+    {"at": "L54", "name": "tod", "set": "gold"},
     {"at": "L57", "name": "tod", "set": "morn", "dur": 0.3},
     {"at": "L68", "name": "tod", "set": "morn"},
     {"at": "L69", "name": "tod", "set": "flat"},
@@ -544,7 +546,7 @@ cues = [
     {"at": "L48.2", "name": "tilted", "roll": -104.0, "lift": 0.42, "side": 0.3, "pitch": 4.0, "fwd": 0.0},
     {"at": "L50", "name": "tilted", "roll": -104.0, "lift": 0.42, "side": 0.3, "pitch": 4.0, "lean": -8.0, "fwd": 0.0, "yawh": -20.0},
     # the slow lean over the table: 19 degrees across 1.6 s, no lunge
-    {"at": "L50+0.1", "name": "tilted", "roll": -104.0, "lift": 0.42, "side": 0.3, "pitch": 4.0, "lean": 24.0, "fwd": 0.0, "yawh": -20.0, "dur": 1.6},
+    {"at": "L50+0.1", "name": "tilted", "roll": -104.0, "lift": 0.42, "side": 0.3, "pitch": 4.0, "lean": 48.0, "fwd": 0.0, "yawh": -20.0, "dur": 1.6},
 ]
 # the fold only shows with the hatch up: the folded chair is "on" at L70 only, and stays in the closed boot unseen
 
@@ -619,7 +621,7 @@ story = {
                   {"at": "L60", "voices": ["drone", "pad", "piano"], "energy": 0.45, "mode": "major", "root": 52},
                   {"at": "L69", "voices": ["drone", "choir"], "energy": 0.32, "mode": "minor"},
               ]},
-    "sound": {"floor": "grass", "steps_db": -22, "rev": 3,
+    "sound": {"floor": "grass", "steps_db": -22, "rev": 4,
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "end", "lufs": -38},
                   {"kind": "room", "from": 0, "to": "L13", "lufs": -40},
