@@ -6,17 +6,17 @@
   - Uncle's ordinary reason for being away on Thursday: he took the first train to the city to see the shop where I work. He comes back and tells me "It's a lovely place, love", and a fresh tag pins on over his heart. (The pitch had him find "my flat dark", but I'm staying with him that week, so a dark flat proves nothing.)
   - No scissors or shears anywhere, even in cutaways. Pins appear only as each tag's own tiny pin and as Uncle's pincushion, never near a face or the creature.
   - Revision, 2026-11-03 (cold-viewer test): the Mrs. Kettle callback (old L64) and the narrated sleeve (old L65) are cut, because both leaned on beats a first listen misses. The twist is said in plain words in the last three lines (L71 to L73): a lie you believe never gets a tag, and for two years I'd told myself I was happy in the city. "I still don't have ONE" is gone. Mrs. Kettle's montage beat now says "She BELIEVES it." out loud (L08), so the end is earned. The sleeve stays as shots only, a rewatch reward. Old L63's twist line moved to the end, and L63 is now a warm beat (Uncle laughs).
-  - Narrator is a man (RULES, owner 2026-11-02): "me" is Uncle's nephew. "She's happy in the city" is now "He's HAPPY in the city" (L55), and Uncle calls me "lad" (L39). L12 says plainly that Aurel is my uncle.
+  - Narrator is a man (RULES, owner 2026-11-02): "me" is Uncle's nephew. "She's happy in the city" is now "My NEPHEW'S / HAPPY / in the city." (L55), so a cold listener knows who he means, and Uncle calls me "lad" (L39). L12 says plainly that Aurel is my uncle.
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 624 spoken words in 71 lines, all `narrator`, plus 2 pause beats (1.3 s in all). Ids L64 and L65 are cut, and the other ids are left as they were.
-- **Estimated length:** about 2:18 (624 words at 290 wpm is 2:09, plus 0.12 s gaps for 8.5 s, the pauses 1.3 s and the loop tail 0.25 s). If it lands under 2:15, add "The ice-cream man / is ALL tag." after L02. If it lands over 2:30, cut L41 first, then L06.
+- **Word count:** 625 spoken words in 71 lines, all `narrator`, plus 2 pause beats (1.3 s in all). Ids L64 and L65 are cut, and the other ids are left as they were.
+- **Estimated length:** about 2:18 (625 words at 290 wpm is 2:09, plus 0.12 s gaps for 8.5 s, the pauses 1.3 s and the loop tail 0.25 s). If it lands under 2:15, add "The ice-cream man / is ALL tag." after L02. If it lands over 2:30, cut L41 first, then L06.
 - **Key timings (estimated):** rule and marker on screen at 0 s, montage 0 to 19 s, Uncle's tags at work from 21 s (seen in the backgrounds) and narrated from 35 s, traces 44 to 53 s, the first taking at about 53 s (L28 to L30, 38% in), the hanging suit at 65 s, the Empty shown clearly at about 88 s (64%), the loophole at 108 to 116 s, the warm turn from 121 s, the plain twist from about 131 s (L71 to L73).
 
 ## The story
 
 - **Premise:** In a town where every lie you tell pins a small white tag to your clothes, I've never had one. I'm back for a week to help Uncle Aurel shut the alterations shop where he taught me to cut. He has never told a lie in his life, but every time a customer asks after me, a tag pins onto him. By night the fitting-room curtain draws itself, my old bench gets chalked up for a suit, and a tape measure lies on the floor in the shape of a person where I used to stand.
 - **Rule:** every lie you tell pins a white tag to your clothes. A tag only comes off when somebody says the truth out loud (shown in the montage: a man owns up in the cafe and his tag drops off like a leaf).
-- **Twist:** a lie you believe never gets a tag. I never had one because for two years I'd told myself I was happy in the city, and believed it. Uncle knew all along. All his tags are the same one lie, "He's happy in the city", told to every customer so I could stay away without guilt. "People believe everything I say" turns over too: they believe me because I believe myself.
+- **Twist:** a lie you believe never gets a tag. I never had one because for two years I'd told myself I was happy in the city, and believed it. Uncle knew all along. All his tags are the same one lie, "My nephew's happy in the city", told to every customer so I could stay away without guilt. "People believe everything I say" turns over too: they believe me because I believe myself.
 - **Where the twist is planted:**
   - Plant 1, Mrs. Kettle (L07 to L09): she swears her husband has never told a lie, no tag lands on her, and the narration says "She BELIEVES it." He stands beside her white as a wedding cake. Paid off in words at L71 ("a lie you BELIEVE / never gets a TAG"), with Mrs. Kettle seen once more under it (S91), not named.
   - Plant 2, my sleeve (shots only, never narrated): under L16 and L17 I'm rubbing my left sleeve with my other hand, where a tag would pin. Also seen on the train under L13. Paid off in a shot under L72 (my thumb still on the clean sleeve). A rewatch reward a cold listener doesn't need.
@@ -50,7 +50,7 @@ Uncle's alterations shop is narrow and deep. The front: a wooden counter with a 
 
 All adults. Nobody young is in the story, and nobody is in peril or hurt. Uncle is tired, never unwell.
 
-- `me` (adult man, no age on screen): Uncle's nephew and old apprentice, two years in the city. Short dark block hair, a slate-blue city coat over a cream roll-neck, charcoal trousers, brown lace-ups. Never a single tag. Faces: `neutral`, `worried`, `scared`, `sad`, `smile`.
+- `me` (young adult man, no age on screen): Uncle Aurel's nephew and old apprentice, two years in the city. Short dark block hair, a slate-blue city coat over a cream roll-neck, charcoal trousers, brown lace-ups. Never a single tag. Faces: `neutral`, `worried`, `scared`, `sad`, `smile`.
 - `uncle` (older adult): Uncle Aurel. Grey block hair combed back, a drawn short grey beard, round drawn glasses, an oatmeal canvas apron over a moss-green waistcoat, white shirtsleeves rolled. A yellow tape measure round his neck (prop, until L30). Gentle, quiet, explains nothing. His tags build up: a few on his apron at L12, speckled at L21, white across both shoulders at L23, a new one over his heart at L40, up to his chin at L46, all gone at L61. Faces: `neutral`, `smile`, `sad`, `tired`, `relieved`.
 - `salesman` (adult man): the shoe-shop man, so covered in tags he's a white lump with a face, a little shoe in each hand's sleeve end. L02 only.
 - `salon_pair` (two adult women): one with a new short haircut, one in a lilac coat who compliments it. L03 only.
@@ -263,10 +263,10 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S66: I've stepped in front of my bench (across a cut), `scared`. The Empty at `lean` 12. S67: `lean` 24, nearer. S68 (the test still): over my shoulder, `lean` 35, the open collar about 30 cm from my face, the two glints level with my eyes]
 - `L54` narrator: And behind me, / I finally HEAR / what Uncle tells / every customer.
   - [S69: reverse, past the Empty's shoulder onto my `scared` face, and far behind me through the doorway, Uncle at the counter talking to Mrs. Kettle]
-- `L55` narrator: "He's HAPPY / in the city."
+- `L55` narrator: "My NEPHEW'S / HAPPY / in the city."
   - [S70: Uncle, `smile`, saying it, and a tag popping onto his chin-high collar]
 
-## 06 The truth (L56 to L65)
+## 06 The truth (L56 to L63)
 
 - **Where:** the same, the shop full.
 - **Shots:** 10.
@@ -325,5 +325,5 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - **"Aurel" in Whisper.** It could come back as "Oral", "Aural" or "Auriel". It's said once (L12). If the check fails it, re-voice L12 with a spelling the voice says as "OR-el" or ask the orchestrator to approve a plain name. Everywhere else he's "Uncle".
 - **"Mrs."** may come back as "Missus". Said once (L07).
-- **The narrator is a man now.** `story.json`'s `me` (eyes `lashes`, the bob) and its `twist` text ("she's happy in the city") need the builder to match: a man's face and hair, and "he's happy".
+- **The narrator is a man now.** `story.json`'s `me` (eyes `lashes`, the bob) and its `twist` text ("she's happy in the city") need the builder to match: a young man's face (no lashes) and short hair, and "my nephew's happy".
 - **"cafe"** is written without an accent so the transcript matches.
