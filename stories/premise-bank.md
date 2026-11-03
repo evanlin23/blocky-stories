@@ -32,7 +32,7 @@ What the panels taught us (also in `playbook.md`):
 
 | # | ID | Title | First line | Want or fight | Evidence | Shape | A (of 40) | B (of 30) |
 |---|---|---|---|---|---|---|---|---|
-| 1 | P16 | My Sister's Diary Writes Back 📓 | My sister's diary writes back, and tonight it wrote about me. | Snooping on a sibling. | Self-insert comments on 19 of 40; sibling rows | story | 9 | 4 |
+| 1 | P16 | My Sister's Diary Writes Back 📓 (**made: `ep89-sister-diary`**, batch 8, as "My Sister's Diary ANSWERS Me 📓", scripted 2026-11-03) | My sister's diary writes back, and tonight it wrote about me. | Snooping on a sibling. | Self-insert comments on 19 of 40; sibling rows | story | 9 | 4 |
 | 2 | P10 | My Roommate Never Leaves ⬛ | My roommate's rent is always paid, but I've never seen him leave his room. | Two adults sharing a flat, and a fight about the noise. | Our audience is mostly adult (35 to 44 is 34% of back-row's views); creepy one-room shape like back-row | story | 16 | 2 |
 | 3 | P26 | My Project Partner Isn't Real 📎 | Every group project, I get the same partner, and nobody else has ever seen her. | A lonely teen and the one person who shows up. | Spot-the-detail comments on 14 of 40; school settings in the scan | story | 12 | 5 |
 | 4 | P03 | Grandpa's Remote Pauses People ⏸️ | Grandpa's old TV remote pauses anyone you point it at. | More time with Grandpa, who uses it to cheat at cards. | 'grandpa' is the 7th most common comment word (25 comments); 'Grandpa cool friends' deep #20 (1.04M/day) | story | 7 | 9 |

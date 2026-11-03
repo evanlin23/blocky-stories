@@ -1,13 +1,14 @@
 """Which stories get a proof render (proof.yml): the final's drawings at half size, before merge.
 
     python scripts/plan_proofs.py --story NAME                      # a dispatch: that story
-    python scripts/plan_proofs.py --base SHA [--before SHA]          # a pull request: see `wanted`
+    python scripts/plan_proofs.py --base SHA                         # a pull request: see `decide`
 
 Prints `matrix=`, `stories=`, `any=` and `sha=` lines for $GITHUB_OUTPUT.
 
 On a pull request a story is proofed when its film files differ from the base, both reviews approve (gate
-open), this push changed its film files or its reviews (so a push of something else doesn't draw it again), and
-`qa/<story>.json` doesn't already hold a passed proof check for the film as it stands.
+open), it isn't held, `qa/<story>.json` doesn't already hold a passed proof check for the film as it stands, and
+no live `proof-<story>` artifact was drawn from a commit with the same film files (GitHub API, GH_TOKEN). What the
+latest push touched does not matter: a newer push that replaced a waiting run still gets the proof drawn.
 When the PR changes the proof workflow itself and no story, SELFTEST (env PROOF_SELFTEST) is proofed so the
 change proves itself.
 """
@@ -48,14 +49,52 @@ def stories_in(paths: list[str]) -> list[str]:
     return out
 
 
-def wanted(story: str, vs_base: list[str], in_push: list[str] | None) -> bool:
-    """Film files differ from the base, and this push touched the film or the reviews (None: a new PR or an
-    unknown range, so yes)."""
-    if not film_files(story, vs_base):
-        return False
-    if in_push is None:
-        return True
-    return bool(film_files(story, in_push)) or any(p.startswith(f"stories/{story}/reviews/") for p in in_push)
+def decide(film_vs_base: list[str], held: bool, gate: bool, merge_probs: list, drawn: str | None) -> str | None:
+    """Why a story needs NO proof now (None: draw it). Pure, so it is tested without git or the network.
+    A needed proof is never planned away by what the latest push touched (ep55, ep42: a main merge replaced a
+    waiting run and the story was never drawn)."""
+    if not film_vs_base:
+        return "its film files match the base"
+    if held:
+        return "held, no proof"
+    if not gate:
+        return "gate closed (reviews or checks), no proof yet"
+    if not merge_probs:
+        return "its proof check already covers these film files"
+    if drawn:
+        return f"a proof of these film files already exists (commit {drawn[:8]})"
+    return None
+
+
+def drawn_sha(story: str, head: str, shas: list[str]) -> str | None:
+    """The first commit in `shas` (newest first, the head_sha of the live proof-<story> artifacts) whose film
+    files equal the head's: that artifact already shows this film."""
+    for sha in shas:
+        if sha == head:
+            return sha
+        ch = changed(sha, head)
+        if ch is not None and not film_files(story, ch):
+            return sha
+    return None
+
+
+def artifact_shas(story: str) -> list[str]:
+    """head_sha of each live `proof-<story>` artifact, newest first (GH_TOKEN, GITHUB_REPOSITORY). The listing
+    carries the run's commit, so no artifact is downloaded. Any failure: [] (draw rather than skip)."""
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not repo or not os.environ.get("GH_TOKEN"):
+        return []
+    r = subprocess.run(["gh", "api", f"repos/{repo}/actions/artifacts?name=proof-{story}&per_page=30"],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        print(f"{story}: artifact list failed, drawing: {r.stderr.strip()[:200]}", file=sys.stderr)
+        return []
+    try:
+        arts = json.loads(r.stdout).get("artifacts", [])
+    except ValueError:
+        return []
+    return [x["workflow_run"]["head_sha"] for x in arts
+            if not x.get("expired") and (x.get("workflow_run") or {}).get("head_sha")]
 
 
 def plan(a) -> list[str]:
@@ -63,19 +102,17 @@ def plan(a) -> list[str]:
     if a.story:
         return [a.story], False
     vs_base = changed(a.base) or []
-    in_push = changed(a.before)
+    head = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
     todo = []
     for s in stories_in(vs_base):
-        if not wanted(s, vs_base, in_push):
-            continue
-        if (load_package(s) or {}).get("hold"):
-            print(f"{s}: held, no proof", file=sys.stderr)
-            continue
-        if not gate_open(s):
-            print(f"{s}: gate closed (reviews or checks), no proof yet", file=sys.stderr)
-            continue
-        if not merge_problems(s, a.base):   # a passed proof check already covers this film: nothing to redraw
-            print(f"{s}: its proof check already covers these film files", file=sys.stderr)
+        film = film_files(s, vs_base)
+        held = bool((load_package(s) or {}).get("hold"))
+        gate = bool(film) and not held and gate_open(s)
+        probs = merge_problems(s, a.base) if gate else [("block", "not checked")]
+        drawn = drawn_sha(s, head, artifact_shas(s)) if gate and probs else None
+        why = decide(film, held, gate, probs, drawn)
+        if why:
+            print(f"{s}: {why}", file=sys.stderr)
             continue
         todo.append(s)
     if not todo and not stories_in(vs_base) and any(p in vs_base for p in PROOF_FILES) and a.selftest:
@@ -88,7 +125,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--story", default="")
     ap.add_argument("--base", default="")
-    ap.add_argument("--before", default="")
+    ap.add_argument("--before", default="")   # accepted and ignored: the push range no longer matters
     ap.add_argument("--shards", type=int, default=8)
     ap.add_argument("--selftest", default=os.environ.get("PROOF_SELFTEST", ""))
     a = ap.parse_args()
