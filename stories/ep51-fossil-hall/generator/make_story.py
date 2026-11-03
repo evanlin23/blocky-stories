@@ -589,20 +589,9 @@ shot("P03", "hall", LOW, {"abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(
 
 # ------------------------------------------------------------------------------------------------ sound
 sfx = [
-    # the opening: a soft warm hit on "PARTY" (the warning's last word) and a soft whoosh on every hard cut under 5 s
+    # the opening: a soft warm hit on "PARTY" (the warning's last word); the polish pack adds the whooshes on every cut
     {"at": "L01>-0.3", "kind": "hit", "db": -13},
-    {"at": "L01.2-0.05", "kind": "whoosh", "db": -24, "dur": 0.4},
-    {"at": "L02-0.05", "kind": "whoosh", "db": -24, "dur": 0.4},
-    {"at": "L02.2-0.05", "kind": "whoosh", "db": -23, "dur": 0.4},
-    {"at": "L03-0.05", "kind": "whoosh", "db": -24, "dur": 0.4},
-    {"at": "L04-0.05", "kind": "whoosh", "db": -26, "dur": 0.4},
-    {"at": "L05-0.05", "kind": "whoosh", "db": -26, "dur": 0.4},
-    {"at": "L10-0.05", "kind": "whoosh", "db": -25, "dur": 0.5},
-    {"at": "L21-0.05", "kind": "whoosh", "db": -25, "dur": 0.5},
-    {"at": "L37-0.05", "kind": "whoosh", "db": -25, "dur": 0.5},
-    {"at": "L42-0.05", "kind": "whoosh", "db": -25, "dur": 0.5},
     {"at": "L44", "kind": "thud", "db": -20},
-    {"at": "L67", "kind": "whoosh", "db": -24, "dur": 0.6},
     {"at": "L76", "kind": "thud", "db": -24},
     {"at": "L29", "kind": "hum_sweep", "db": -18, "dur": 1.6},
     {"at": "P01+0.45", "kind": "thud", "db": -10},
@@ -621,12 +610,9 @@ sfx = [
 ]
 
 # post punch-ins on the opening cuts and the big beats (no flashes)
-FX = [{"at": "L01.2", "kind": "punch", "dur": 0.45, "zoom": 1.12},
-      {"at": "L02", "kind": "punch", "dur": 0.45, "zoom": 1.14},
-      {"at": "L02.2", "kind": "punch", "dur": 0.4, "zoom": 1.1},
-      {"at": "L03", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+FX = [
       {"at": "L30", "kind": "shake", "dur": 0.4, "amp": 0.6},
-      {"at": "L44", "kind": "punch", "dur": 0.6, "zoom": 1.1}]
+      ]
 
 # no shot holds a still picture: every one-key camera gets a slow push, drift or pull-in over its length
 for _i, _s in enumerate(shots):
@@ -656,7 +642,7 @@ story = {
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#9aa3b2", "fog_density": 0.0, "fog_start": 6.0, "sky": "#1a1c24", "sky_strength": 0.2, "exposure": 0.0,
-             "flash_safe": True},
+             "flash_safe": True, "polish": {"quiet": [["L66", "L74"]]}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.03], "saturation": 0.98, "contrast": 1.05,
               "vignette": 0.34, "bloom": 0.26, "grain": 0.012},
     "phonemes": {"mended": "mˈɛndɪd"},
