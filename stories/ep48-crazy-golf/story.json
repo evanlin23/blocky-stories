@@ -20,7 +20,8 @@
   "sky": "#9bb6d8",
   "sky_strength": 1.0,
   "exposure": 0.35,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": true
  },
  "grade": {
   "shadows": [
@@ -4976,7 +4977,7 @@
     "at": "L66>",
     "pos": [
      0.9,
-     19.15
+     18.9
     ],
     "arms": [
      0,
@@ -4987,7 +4988,7 @@
     "at": "L67",
     "pos": [
      0.9,
-     19.15
+     18.9
     ],
     "yaw": 75,
     "expr": "scared"
@@ -7978,7 +7979,7 @@
    "name": "wring",
    "pos": [
     0.9,
-    19.9
+    20.5
    ],
    "yaw": 180.0,
    "wring": 180.0,
