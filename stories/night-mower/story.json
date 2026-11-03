@@ -45,9 +45,13 @@
   "grain": 0.01,
   "red_line": 0.78
  },
+ "phonemes": {
+  "snaps": "snˈæps"
+ },
  "caption": {
   "shadow": 0.6
  },
+ "min_read": 0,
  "cast": {
   "me": {
    "age": "adult",
@@ -148,8 +152,12 @@
      "Never look"
     ],
     [
-     "at the neighbor's LAWN",
-     "at the neighbor's lawn"
+     "at the",
+     "at the"
+    ],
+    [
+     "neighbor's LAWN",
+     "neighbor's lawn"
     ],
     [
      "while his mower's",
@@ -180,8 +188,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The family across the street",
-     "The family across the street"
+     "The family",
+     "The family"
+    ],
+    [
+     "across the street",
+     "across the street"
     ],
     [
      "PEEKED once.",
@@ -194,8 +206,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Their HOUSE has leaned",
-     "Their house has leaned"
+     "Their HOUSE",
+     "Their house"
+    ],
+    [
+     "has leaned",
+     "has leaned"
     ],
     [
      "toward his lawn",
@@ -216,14 +232,19 @@
      "At three,"
     ],
     [
-     "every blind on our street",
-     "every blind on our street"
+     "every blind",
+     "every blind"
+    ],
+    [
+     "on our street",
+     "on our street"
     ],
     [
      "SNAPS SHUT.",
      "snaps shut."
     ]
-   ]
+   ],
+   "tempo": 0.82
   },
   {
    "id": "L06",
@@ -252,8 +273,12 @@
      "My dad"
     ],
     [
-     "has hated that lawn",
-     "has hated that lawn"
+     "has hated",
+     "has hated"
+    ],
+    [
+     "that lawn",
+     "that lawn"
     ],
     [
      "for TEN YEARS.",
@@ -266,8 +291,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ours has one BALD SPOT",
-     "Ours has one bald spot"
+     "Ours has",
+     "Ours has"
+    ],
+    [
+     "one BALD SPOT",
+     "one bald spot"
     ],
     [
      "Dad can't FIX.",
@@ -336,8 +365,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad says nobody's grass",
-     "Dad says nobody's grass"
+     "Dad says",
+     "Dad says"
+    ],
+    [
+     "nobody's grass",
+     "nobody's grass"
     ],
     [
      "is that green",
@@ -358,8 +391,12 @@
      "So on Friday,"
     ],
     [
-     "Dad set an ALARM",
-     "Dad set an alarm"
+     "Dad set",
+     "Dad set"
+    ],
+    [
+     "an ALARM",
+     "an alarm"
     ],
     [
      "for THREE.",
@@ -382,8 +419,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad bent ONE slat",
-     "Dad bent one slat"
+     "Dad bent",
+     "Dad bent"
+    ],
+    [
+     "ONE slat",
+     "one slat"
     ],
     [
      "of the BLINDS.",
@@ -396,12 +437,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "The lawn was COMBED",
-     "The lawn was combed"
+     "The lawn",
+     "The lawn"
     ],
     [
-     "in long, CURVED stripes.",
-     "in long, curved stripes."
+     "was COMBED",
+     "was combed"
+    ],
+    [
+     "in long,",
+     "in long,"
+    ],
+    [
+     "CURVED stripes.",
+     "curved stripes."
     ]
    ]
   },
@@ -424,8 +473,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Every picture in the hall",
-     "Every picture in the hall"
+     "Every picture",
+     "Every picture"
+    ],
+    [
+     "in the hall",
+     "in the hall"
     ],
     [
      "slid CROOKED.",
@@ -448,8 +501,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad said it was",
-     "Dad said it was"
+     "Dad said",
+     "Dad said"
+    ],
+    [
+     "it was",
+     "it was"
     ],
     [
      "the FOUNDATION.",
@@ -466,8 +523,12 @@
      "He checked it"
     ],
     [
-     "with his LEVEL anyway.",
-     "with his level anyway."
+     "with his",
+     "with his"
+    ],
+    [
+     "LEVEL anyway.",
+     "level anyway."
     ]
    ]
   },
@@ -484,8 +545,12 @@
      "he carried binoculars"
     ],
     [
-     "out on the PORCH.",
-     "out on the porch."
+     "out on",
+     "out on"
+    ],
+    [
+     "the PORCH.",
+     "the porch."
     ]
    ]
   },
@@ -498,8 +563,12 @@
      "My desk chair"
     ],
     [
-     "rolled to the WINDOW",
-     "rolled to the window"
+     "rolled to",
+     "rolled to"
+    ],
+    [
+     "the WINDOW",
+     "the window"
     ],
     [
      "by ITSELF.",
@@ -548,12 +617,20 @@
      "A long seam"
     ],
     [
-     "opened in the grass,",
-     "opened in the grass,"
+     "opened in",
+     "opened in"
     ],
     [
-     "slow as an EYELID.",
-     "slow as an eyelid."
+     "the grass,",
+     "the grass,"
+    ],
+    [
+     "slow as",
+     "slow as"
+    ],
+    [
+     "an EYELID.",
+     "an eyelid."
     ]
    ]
   },
@@ -570,8 +647,12 @@
      "an eye"
     ],
     [
-     "as big as our GARAGE DOOR",
-     "as big as our garage door"
+     "as big as",
+     "as big as"
+    ],
+    [
+     "our GARAGE DOOR",
+     "our garage door"
     ],
     [
      "looked UP.",
@@ -585,9 +666,10 @@
    "chunks": [
     [
      "Straight at DAD.",
-     "Straight at Dad."
+     "Straight. At Dad."
     ]
-   ]
+   ],
+   "tempo": 0.9
   },
   {
    "id": "L30",
@@ -604,8 +686,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Every MAILBOX on the street",
-     "Every mailbox on the street"
+     "Every MAILBOX",
+     "Every mailbox"
+    ],
+    [
+     "on the street",
+     "on the street"
     ],
     [
      "tipped our WAY.",
@@ -632,12 +718,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "He kept his eyes SHUT",
-     "He kept his eyes shut"
+     "He kept",
+     "He kept"
     ],
     [
-     "and called up to me,",
-     "and called up to me,"
+     "his eyes SHUT",
+     "his eyes shut"
+    ],
+    [
+     "and called",
+     "and called"
+    ],
+    [
+     "up to me,",
+     "up to me,"
     ],
     [
      "\"Your dad's LOOKING,",
@@ -689,7 +783,8 @@
      "is its EYEBROW.",
      "is its eyebrow."
     ]
-   ]
+   ],
+   "gap": 0.4
   },
   {
    "id": "L37",
@@ -703,7 +798,8 @@
      "it's going BALD.",
      "it's going bald."
     ]
-   ]
+   ],
+   "tempo": 0.9
   },
   {
    "id": "L38",
@@ -746,18 +842,23 @@
    "who": "narrator",
    "chunks": [
     [
-     "He SHUT his eyes,",
-     "He shut his eyes,"
+     "He SHUT",
+     "He shut"
+    ],
+    [
+     "his eyes,",
+     "his eyes,"
     ],
     [
      "and our pictures",
-     "and our pictures"
+     "and our pictures,"
     ],
     [
      "slid back STRAIGHT.",
      "slid back straight."
     ]
-   ]
+   ],
+   "tempo": 0.94
   },
   {
    "id": "L41",
@@ -796,8 +897,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Now Dad holds the CORD,",
-     "Now Dad holds the cord,"
+     "Now Dad",
+     "Now Dad"
+    ],
+    [
+     "holds the CORD,",
+     "holds the cord,"
     ],
     [
      "and Mr. Odell",
@@ -846,8 +951,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "So if you're ever",
-     "So if you're ever"
+     "So if",
+     "So if"
+    ],
+    [
+     "you're ever",
+     "you're ever"
     ],
     [
      "on our street",
@@ -932,7 +1041,7 @@
    "step": 2,
    "hand": 0.008,
    "note": "closer: his shut-eyed face over the deck, the hit on RUNNING",
-   "at": "L01.2"
+   "at": "L01.3"
   },
   {
    "id": "S02",
@@ -1450,7 +1559,7 @@
    "step": 2,
    "hand": 0.008,
    "note": "his lawn, every blade even, the stripes curving",
-   "at": "L13.1"
+   "at": "L13.2"
   },
   {
    "id": "S16",
@@ -1635,7 +1744,7 @@
    "step": 2,
    "hand": 0.008,
    "note": "me behind him, worried",
-   "at": "L16.1"
+   "at": "L16.2"
   },
   {
    "id": "S20",
@@ -2338,7 +2447,7 @@
    "step": 1,
    "hand": 0.008,
    "note": "our porch light swaying toward the lawn",
-   "at": "L31.1"
+   "at": "L31.2"
   },
   {
    "id": "S39",
@@ -2449,7 +2558,7 @@
    "step": 2,
    "hand": 0.008,
    "note": "me at the window, scared, nodding",
-   "at": "L33.2"
+   "at": "L33.4"
   },
   {
    "id": "S42",
@@ -2782,7 +2891,7 @@
    "step": 1,
    "hand": 0.008,
    "note": "the lid sinks shut",
-   "at": "L40.1"
+   "at": "L40.2"
   },
   {
    "id": "S50",
@@ -2819,7 +2928,7 @@
    "step": 1,
    "hand": 0.008,
    "note": "the hall pictures easing back level over a second",
-   "at": "L40.2"
+   "at": "L40.3"
   },
   {
    "id": "S51",
@@ -2967,7 +3076,7 @@
    "step": 2,
    "hand": 0.003,
    "note": "the lore shot: close on the handle bar, two lime strokes by the left grip",
-   "at": "L43.1-0.15",
+   "at": "L43.2-0.15",
    "follow": "odell"
   },
   {
@@ -3127,7 +3236,7 @@
     "blend": 0
    },
    {
-    "at": "L01.2",
+    "at": "L01.3",
     "hidden": true,
     "blend": 0
    },
@@ -3197,7 +3306,7 @@
     "blend": 0
    },
    {
-    "at": "L13.1",
+    "at": "L13.2",
     "hidden": true,
     "blend": 0
    },
@@ -3222,7 +3331,7 @@
     "blend": 0
    },
    {
-    "at": "L16.1",
+    "at": "L16.2",
     "pos": [
      -7.6,
      14.2,
@@ -3429,7 +3538,7 @@
     "blend": 0
    },
    {
-    "at": "L31.1",
+    "at": "L31.2",
     "hidden": true,
     "blend": 0
    },
@@ -3444,7 +3553,7 @@
     "blend": 0
    },
    {
-    "at": "L33.2",
+    "at": "L33.4",
     "pos": [
      -8.6,
      13.3,
@@ -3452,7 +3561,7 @@
     ]
    },
    {
-    "at": "L33.2",
+    "at": "L33.4",
     "pos": [
      -6.4,
      13.0,
@@ -3479,7 +3588,7 @@
     "yaw": 180
    },
    {
-    "at": "L33.2+0.5",
+    "at": "L33.4+0.5",
     "head": [
      0,
      -8
@@ -3487,7 +3596,7 @@
     "blend": 0.2
    },
    {
-    "at": "L33.2+0.9",
+    "at": "L33.4+0.9",
     "head": [
      0,
      12
@@ -3535,12 +3644,12 @@
     "blend": 0
    },
    {
-    "at": "L40.1",
+    "at": "L40.2",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L40.2",
+    "at": "L40.3",
     "hidden": true,
     "blend": 0
    },
@@ -3560,7 +3669,7 @@
     "blend": 0
    },
    {
-    "at": "L43.1-0.15",
+    "at": "L43.2-0.15",
     "hidden": true,
     "blend": 0
    },
@@ -3592,7 +3701,7 @@
     "blend": 0
    },
    {
-    "at": "L01.2",
+    "at": "L01.3",
     "hidden": true,
     "blend": 0
    },
@@ -3834,7 +3943,7 @@
     "yaw": 0
    },
    {
-    "at": "L13.1",
+    "at": "L13.2",
     "hidden": true,
     "blend": 0
    },
@@ -3859,7 +3968,7 @@
     "blend": 0
    },
    {
-    "at": "L16.1",
+    "at": "L16.2",
     "hidden": true,
     "blend": 0
    },
@@ -3954,7 +4063,7 @@
     "blend": 0
    },
    {
-    "at": "L31.1",
+    "at": "L31.2",
     "hidden": true,
     "blend": 0
    },
@@ -3969,7 +4078,7 @@
     "blend": 0
    },
    {
-    "at": "L33.2",
+    "at": "L33.4",
     "hidden": true,
     "blend": 0
    },
@@ -4014,12 +4123,12 @@
     "blend": 0
    },
    {
-    "at": "L40.1",
+    "at": "L40.2",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L40.2",
+    "at": "L40.3",
     "hidden": true,
     "blend": 0
    },
@@ -4039,7 +4148,7 @@
     "blend": 0
    },
    {
-    "at": "L43.1-0.15",
+    "at": "L43.2-0.15",
     "hidden": true,
     "blend": 0
    },
@@ -4101,7 +4210,7 @@
     "blend": 0
    },
    {
-    "at": "L01.2",
+    "at": "L01.3",
     "hidden": true,
     "blend": 0
    },
@@ -4171,7 +4280,7 @@
     "blend": 0
    },
    {
-    "at": "L13.1",
+    "at": "L13.2",
     "hidden": true,
     "blend": 0
    },
@@ -4248,7 +4357,7 @@
     "yaw": 0
    },
    {
-    "at": "L16.1",
+    "at": "L16.2",
     "pos": [
      -6.0,
      13.0,
@@ -4256,7 +4365,7 @@
     ]
    },
    {
-    "at": "L16.1",
+    "at": "L16.2",
     "pos": [
      -6.0,
      13.0,
@@ -4523,7 +4632,7 @@
     "blend": 0
    },
    {
-    "at": "L31.1",
+    "at": "L31.2",
     "hidden": true,
     "blend": 0
    },
@@ -4538,7 +4647,7 @@
     "blend": 0
    },
    {
-    "at": "L33.2",
+    "at": "L33.4",
     "hidden": true,
     "blend": 0
    },
@@ -4643,12 +4752,12 @@
     "yaw": 90
    },
    {
-    "at": "L40.1",
+    "at": "L40.2",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L40.2",
+    "at": "L40.3",
     "hidden": true,
     "blend": 0
    },
@@ -4790,7 +4899,7 @@
     "yaw": 0
    },
    {
-    "at": "L43.1-0.15",
+    "at": "L43.2-0.15",
     "pos": [
      4.3,
      9.8,
@@ -4798,7 +4907,7 @@
     ]
    },
    {
-    "at": "L43.1-0.15",
+    "at": "L43.2-0.15",
     "pos": [
      4.3,
      9.8,
@@ -4806,7 +4915,7 @@
     ]
    },
    {
-    "at": "L43.1-0.15",
+    "at": "L43.2-0.15",
     "pos": [
      4.3,
      9.8,
@@ -4928,7 +5037,7 @@
     "yaw": 0
    },
    {
-    "at": "L01.2",
+    "at": "L01.3",
     "pos": [
      9.0,
      9.6,
@@ -4936,7 +5045,7 @@
     ]
    },
    {
-    "at": "L01.2",
+    "at": "L01.3",
     "pos": [
      9.0,
      9.6,
@@ -4944,7 +5053,7 @@
     ]
    },
    {
-    "at": "L01.2",
+    "at": "L01.3",
     "pos": [
      9.0,
      9.6,
@@ -5128,7 +5237,7 @@
     "blend": 0
    },
    {
-    "at": "L13.1",
+    "at": "L13.2",
     "hidden": true,
     "blend": 0
    },
@@ -5191,7 +5300,7 @@
     "blend": 0
    },
    {
-    "at": "L16.1",
+    "at": "L16.2",
     "hidden": true,
     "blend": 0
    },
@@ -5580,7 +5689,7 @@
     "blend": 0
    },
    {
-    "at": "L31.1",
+    "at": "L31.2",
     "hidden": true,
     "blend": 0
    },
@@ -5655,7 +5764,7 @@
     "yaw": 0
    },
    {
-    "at": "L33.2",
+    "at": "L33.4",
     "hidden": true,
     "blend": 0
    },
@@ -5760,7 +5869,7 @@
     "blend": 0
    },
    {
-    "at": "L40.1",
+    "at": "L40.2",
     "pos": [
      10.6,
      6.0,
@@ -5768,7 +5877,7 @@
     ]
    },
    {
-    "at": "L40.1",
+    "at": "L40.2",
     "pos": [
      10.0,
      6.6,
@@ -5795,7 +5904,7 @@
     "yaw": 90
    },
    {
-    "at": "L40.2",
+    "at": "L40.3",
     "hidden": true,
     "blend": 0
    },
@@ -5875,7 +5984,7 @@
     "yaw": 0
    },
    {
-    "at": "L43.1-0.15",
+    "at": "L43.2-0.15",
     "pos": [
      5.6,
      9.7,
@@ -5883,7 +5992,7 @@
     ]
    },
    {
-    "at": "L43.1-0.15",
+    "at": "L43.2-0.15",
     "pos": [
      5.6,
      9.7,
@@ -5891,7 +6000,7 @@
     ]
    },
    {
-    "at": "L43.1-0.15",
+    "at": "L43.2-0.15",
     "pos": [
      5.6,
      9.7,
@@ -6058,11 +6167,11 @@
     1.0
    ],
    [
-    "L40.1",
+    "L40.2",
     1.0
    ],
    [
-    "L40.1+0.9",
+    "L40.2+0.9",
     0
    ],
    [
@@ -6144,19 +6253,19 @@
     0
    ],
    [
-    "L19.1",
+    "L19.2",
     0
    ],
    [
-    "L19.1+0.8",
+    "L19.2+0.8",
     1
    ],
    [
-    "L40.2",
+    "L40.3",
     1
    ],
    [
-    "L40.2+1.0",
+    "L40.3+1.0",
     0
    ]
   ],
@@ -6174,11 +6283,11 @@
     1
    ],
    [
-    "L40.2",
+    "L40.3",
     1
    ],
    [
-    "L40.2+1.0",
+    "L40.3+1.0",
     0
    ]
   ],
@@ -6248,11 +6357,11 @@
     0
    ],
    [
-    "L31.1",
+    "L31.2",
     0
    ],
    [
-    "L31.1+0.5",
+    "L31.2+0.5",
     1
    ],
    [
@@ -6330,29 +6439,15 @@
     0
    ],
    [
-    "L05.1+0.1",
+    "L05.1+0.05",
     0
    ],
    [
-    "L05.1+0.4",
+    "L05.1+0.35",
     1
    ]
   ],
   "bw1": [
-   [
-    0,
-    0
-   ],
-   [
-    "L05.1+0.6",
-    0
-   ],
-   [
-    "L05.1+0.9",
-    1
-   ]
-  ],
-  "bw2": [
    [
     0,
     0
@@ -6363,6 +6458,20 @@
    ],
    [
     "L05.2+0.3",
+    1
+   ]
+  ],
+  "bw2": [
+   [
+    0,
+    0
+   ],
+   [
+    "L05.3",
+    0
+   ],
+   [
+    "L05.3+0.3",
     1
    ]
   ]
@@ -6708,7 +6817,7 @@
    },
    {
     "kind": "hum",
-    "from": "L01.3",
+    "from": "L01.4",
     "to": "L07",
     "lufs": -40
    },
@@ -6733,22 +6842,22 @@
   ],
   "sfx": [
    {
-    "at": "L01.3",
+    "at": "L01.4",
     "kind": "thud",
     "db": -5
    },
    {
-    "at": "L05.1+0.1",
-    "kind": "latch",
-    "db": -16
-   },
-   {
-    "at": "L05.1+0.6",
+    "at": "L05.1+0.05",
     "kind": "latch",
     "db": -16
    },
    {
     "at": "L05.2",
+    "kind": "latch",
+    "db": -16
+   },
+   {
+    "at": "L05.3",
     "kind": "latch",
     "db": -14
    },

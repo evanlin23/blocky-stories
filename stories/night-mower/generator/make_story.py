@@ -24,8 +24,14 @@ lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
 GAP = 0.12
 # word-check pins: the voice's own spelling for lines the word check mishears (captions stay as written)
-TEMPO = {}
+TEMPO = {"L05": 0.82, "L37": 0.9, "L40": 0.94, "L29": 0.9}
 for ln in lines:
+    if ln["id"] == "L29":
+        ln["chunks"][0][1] = "Straight. At Dad."     # the word check hears "to" at this speed
+    if ln["id"] == "L36":
+        ln["gap"] = 0.4                           # "eyebrow. Ours" runs together: the word check hears "mowers"
+    if ln["id"] == "L40":
+        ln["chunks"][2][1] = "and our pictures,"       # the word check hears "picture" before "slid"
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
 
@@ -109,10 +115,10 @@ Z2 = 2.8   # the bedroom floor
 shot("S01", 0, C((9.0, 5.2, 1.2), (9.0, 9.4, 1.45), 36, (9.0, 6.2, 1.2), (9.0, 9.4, 1.5), 40),
      "frame 1: low, floodlit, Mr. Odell pushing the red mower straight at us, eyes shut, pushing in")
 stage(0, odell=((9.0, 10.9, 0), 0, "shut", {"arms": [0, 0]}))
-walk("odell", "L01.2", (9.0, 9.6, 0))
-shot("S01b", "L01.2", C((9.7, 7.4, 0.95), (9.0, 9.5, 1.55), 42, (9.4, 8.0, 1.0), (9.0, 9.4, 1.56), 48),
+walk("odell", "L01.3", (9.0, 9.6, 0))
+shot("S01b", "L01.3", C((9.7, 7.4, 0.95), (9.0, 9.5, 1.55), 42, (9.4, 8.0, 1.0), (9.0, 9.4, 1.56), 48),
      "closer: his shut-eyed face over the deck, the hit on RUNNING")
-stage("L01.2", odell=((9.0, 9.6, 0), 0, "shut"))
+stage("L01.3", odell=((9.0, 9.6, 0), 0, "shut"))
 walk("odell", "L02", (9.0, 9.0, 0))
 shot("S02", "L02", C((-6.0, 13.6, 4.35), (-6.0, 12.3, 4.35), 32, (-6.0, 13.1, 4.35), (-6.0, 12.3, 4.35), 34),
      "inside the dark room, close on the blinds: one slat dips and a green stripe cuts across")
@@ -158,9 +164,9 @@ key("odell", "L12.2+0.5", side=[0, 140], blend=0.3)
 shot("S14", "L13", C((-1.2, 5.4, 1.66), (-1.2, 7.6, 1.66), 42, (-1.2, 5.8, 1.66), (-1.2, 7.6, 1.66), 46),
      "Dad's face, angry, a comic squint", day=1)
 stage("L13", dad=((-1.2, 7.7, 0), 0, "angry"))
-shot("S15", "L13.1", C((3.0, 5.4, 0.4), (8.4, 9.4, 0.2), 28, (3.6, 5.5, 0.4), (8.4, 9.4, 0.2), 30),
+shot("S15", "L13.2", C((3.0, 5.4, 0.4), (8.4, 9.4, 0.2), 28, (3.6, 5.5, 0.4), (8.4, 9.4, 0.2), 30),
      "his lawn, every blade even, the stripes curving", day=1)
-stage("L13.1")
+stage("L13.2")
 shot("S16", "L14", C((129.2, -1.5, 1.05), (130.0, 0.0, 0.95), 40, (129.45, -1.2, 1.02), (130.0, 0.0, 0.95), 42),
      "night: the bedside clock reads 3:00 in red digits")
 stage("L14")
@@ -176,9 +182,9 @@ walk("odell", "L16", (4.4, 9.4, 0))
 shot("S19", "L16", C((-6.0, 10.2, 4.3), (-6.0, 12.1, 4.35), 34, (-6.0, 10.9, 4.35), (-6.0, 12.1, 4.35), 38),
      "outside the window, close on the blinds: one slat bends, Dad's eye in the gap, green on his face")
 stage("L16", dadn=((-6.0, 13.0, Z2), 0, "neutral", {"lean": 6}))
-shot("S19b", "L16.1", C((-6.6, 16.2, Z2 + 1.7), (-7.6, 14.2, Z2 + 1.6), 32, (-6.8, 15.8, Z2 + 1.7), (-7.6, 14.2, Z2 + 1.6), 34),
+shot("S19b", "L16.2", C((-6.6, 16.2, Z2 + 1.7), (-7.6, 14.2, Z2 + 1.6), 32, (-6.8, 15.8, Z2 + 1.7), (-7.6, 14.2, Z2 + 1.6), 34),
      "me behind him, worried")
-stage("L16.1", dadn=((-6.0, 13.0, Z2), 0, "neutral"), me=((-7.6, 14.2, Z2), 180, "worried"))
+stage("L16.2", dadn=((-6.0, 13.0, Z2), 0, "neutral"), me=((-7.6, 14.2, Z2), 180, "worried"))
 shot("S20", "L17", C((-1.6, 9.8, 7.0), (7.2, 8.4, 0.0), 19, (-0.8, 9.6, 7.0), (7.2, 8.4, 0.0), 19),
      "high angle from our window onto his lawn: every stripe bowing round the hump (plant 2), held", hand=0.0)
 stage("L17", odell=((12.0, 10.6, 0), 90, "shut"))
@@ -240,9 +246,9 @@ stage("L30", odell=((10.0, 6.6, 0), 90, "shut"))
 shot("S37", "L31", C((-15.0, 3.2, 0.95), (2.0, 5.0, 0.8), 28, (-12.0, 3.2, 0.95), (2.0, 5.0, 0.8), 28),
      "the street at night: a row of plain mailboxes leaning toward our house", step=1)
 stage("L31")
-shot("S38", "L31.1", C((-9.6, 10.0, 2.0), (-7.3, 11.9, 2.1), 34, (-9.2, 10.2, 2.0), (-7.3, 11.9, 2.1), 36),
+shot("S38", "L31.2", C((-9.6, 10.0, 2.0), (-7.3, 11.9, 2.1), 34, (-9.2, 10.2, 2.0), (-7.3, 11.9, 2.1), 36),
      "our porch light swaying toward the lawn", step=1)
-stage("L31.1")
+stage("L31.2")
 
 # ---------------------------------------------------------------------------------------------------- 06 said plainly
 shot("S39", "L32", C((3.4, 5.6, 0.9), (6.2, 8.2, 1.3), 30, (3.8, 5.8, 0.95), (6.2, 8.2, 1.3), 32),
@@ -251,11 +257,11 @@ stage("L32", odell=((5.0, 8.3, 0), 0, "shut"))
 shot("S40", "L33", C((5.4, 6.2, 0.65), (4.8, 8.2, 1.6), 38, (5.2, 6.5, 0.7), (4.8, 8.2, 1.62), 42),
      "Mr. Odell's face, eyes shut, tilted up toward my window")
 stage("L33", odell=((4.8, 8.3, 0), 0, "shut", {"head": [0, -22]}))
-shot("S41", "L33.2", C((-6.8, 16.6, Z2 + 1.65), (-6.8, 13.0, Z2 + 1.55), 30, (-6.8, 16.3, Z2 + 1.65), (-6.8, 13.0, Z2 + 1.55), 32),
+shot("S41", "L33.4", C((-6.8, 16.6, Z2 + 1.65), (-6.8, 13.0, Z2 + 1.55), 30, (-6.8, 16.3, Z2 + 1.65), (-6.8, 13.0, Z2 + 1.55), 32),
      "me at the window, scared, nodding")
-stage("L33.2", me=((-6.4, 13.0, Z2), 180, "scared", {"head": [0, 12]}))
-key("me", "L33.2+0.5", head=[0, -8], blend=0.2)
-key("me", "L33.2+0.9", head=[0, 12], blend=0.2)
+stage("L33.4", me=((-6.4, 13.0, Z2), 180, "scared", {"head": [0, 12]}))
+key("me", "L33.4+0.5", head=[0, -8], blend=0.2)
+key("me", "L33.4+0.9", head=[0, 12], blend=0.2)
 shot("S42", "L34", C((7.2, 4.6, 1.5), (7.2, 9.0, 0.5), 30, (7.2, 4.8, 1.4), (7.2, 9.0, 0.5), 30),
      "low across the lawn: the open eye in the middle ground, his mint house behind", step=1)
 stage("L34", odell=((10.6, 6.0, 0), 90, "shut"))
@@ -282,12 +288,12 @@ stage("L39", dadn=((-8.2, 10.8, 0.2), 90, "worried", {"arms": [45, 45]}))
 shot("S49", "L40", C((-6.4, 9.2, 1.68), (-8.2, 10.8, 1.66), 46, (-6.8, 9.6, 1.68), (-8.2, 10.8, 1.66), 50),
      "Dad's face, eyes shut", step=1)
 stage("L40", dadn=((-8.2, 10.8, 0.2), 90, "shut"))
-shot("S49b", "L40.1", C((7.2, 0.6, 4.4), (7.2, 8.5, -0.1), 20, (7.2, 1.1, 4.2), (7.2, 8.5, -0.1), 20),
+shot("S49b", "L40.2", C((7.2, 0.6, 4.4), (7.2, 8.5, -0.1), 20, (7.2, 1.1, 4.2), (7.2, 8.5, -0.1), 20),
      "the lid sinks shut", step=1)
-stage("L40.1", odell=((10.0, 6.6, 0), 90, "shut"))
-shot("S50", "L40.2", C((100.7, -0.9, 1.45), (103.0, 0.0, 1.5), 32, (101.0, -0.9, 1.45), (103.2, 0.0, 1.5), 32),
+stage("L40.2", odell=((10.0, 6.6, 0), 90, "shut"))
+shot("S50", "L40.3", C((100.7, -0.9, 1.45), (103.0, 0.0, 1.5), 32, (101.0, -0.9, 1.45), (103.2, 0.0, 1.5), 32),
      "the hall pictures easing back level over a second", step=1)
-stage("L40.2")
+stage("L40.3")
 shot("S51", "L41", C((-0.8, 4.6, 1.2), (0.2, 7.6, 1.0), 30, (-0.2, 4.8, 1.2), (0.4, 7.6, 1.0), 32),
      "Dad stepping over the low white fence onto the green lawn, eyes shut, cap off", step=1)
 stage("L41", dadn=((-1.6, 7.6, 0), 90, "shut"))
@@ -301,11 +307,11 @@ stage("L42", odell=((3.3, 8.0, 0), -90, "shut", {"head": [-25, 0], "arms": [0, 0
 shot("S53", "L43", C((5.6, 4.8, 1.3), (5.2, 8.6, 1.15), 30, (5.5, 5.4, 1.25), (5.2, 8.6, 1.15), 32),
      "the two of them on the lawn: Dad with the cord, Mr. Odell steering, both eyes shut, the hum back")
 stage("L43", odell=((5.6, 10.6, 0), 0, "shut"), dadn=((4.3, 10.7, 0), 0, "shut", {"arms": [60, 60]}))
-walk("odell", "L43.1-0.15", (5.6, 9.7, 0))
-walk("dadn", "L43.1-0.15", (4.3, 9.8, 0))
-shot("S54", "L43.1-0.15", C((0.95, -1.2, 1.2), (0.28, -0.35, 0.98), 52, (0.8, -1.05, 1.15), (0.28, -0.35, 0.98), 56),
+walk("odell", "L43.2-0.15", (5.6, 9.7, 0))
+walk("dadn", "L43.2-0.15", (4.3, 9.8, 0))
+shot("S54", "L43.2-0.15", C((0.95, -1.2, 1.2), (0.28, -0.35, 0.98), 52, (0.8, -1.05, 1.15), (0.28, -0.35, 0.98), 56),
      "the lore shot: close on the handle bar, two lime strokes by the left grip", follow="odell", hand=0.003)
-stage("L43.1-0.15", odell=((5.6, 9.7, 0), 0, "shut"), dadn=((4.3, 9.8, 0), 0, "shut", {"arms": [60, 60]}))
+stage("L43.2-0.15", odell=((5.6, 9.7, 0), 0, "shut"), dadn=((4.3, 9.8, 0), 0, "shut", {"arms": [60, 60]}))
 walk("odell", "L44", (5.6, 9.2, 0))
 walk("dadn", "L44", (4.3, 9.3, 0))
 shot("S55", "L44", C((-3.8, 11.4, 5.6), (6.0, 8.6, 0.4), 22, (-3.4, 11.2, 5.6), (6.0, 8.6, 0.4), 22),
@@ -327,23 +333,23 @@ stage("L46")
 
 # ---------------------------------------------------------------------------------------------------- tracks
 tracks = {
-    "lid": [[0, 0], ["L26", 0], ["L26+0.6", 0.03], ["L27", 0.03], ["L27+1.6", 0.7], ["L28.1", 1.0], ["L40.1", 1.0],
-            ["L40.1+0.9", 0], ["L46+0.15", 0], ["L46+0.8", 0.1]],
+    "lid": [[0, 0], ["L26", 0], ["L26+0.6", 0.03], ["L27", 0.03], ["L27+1.6", 0.7], ["L28.1", 1.0], ["L40.2", 1.0],
+            ["L40.2+0.9", 0], ["L46+0.15", 0], ["L46+0.8", 0.1]],
     "eye": [[0, 0], ["L29", 1], ["L40", 1], ["L46", 2]],                      # stepped: 0 up, 1 at Dad, 2 at the lens
     "meter": [[0, 0], ["L18", 0], ["L18+1", 0.33], ["L24", 0.33], ["L24+1", 0.66], ["L31", 0.66], ["L31+0.8", 1.0],
               ["L40", 1.0], ["L40+1", 0], ["L46+0.1", 0], ["L46+0.7", 0.12]],
-    "pic": [[0, 0], ["L19.1", 0], ["L19.1+0.8", 1], ["L40.2", 1], ["L40.2+1.0", 0]],
-    "mail": [[0, 0], ["L31", 0], ["L31+0.8", 1], ["L40.2", 1], ["L40.2+1.0", 0]],
+    "pic": [[0, 0], ["L19.2", 0], ["L19.2+0.8", 1], ["L40.3", 1], ["L40.3+1.0", 0]],
+    "mail": [[0, 0], ["L31", 0], ["L31+0.8", 1], ["L40.3", 1], ["L40.3+1.0", 0]],
     "chair": [[0, 0], ["L24+0.3", 0], ["L24+2.0", 1]],
     "slat": [[0, 0], ["L02+0.1", 0], ["L02+0.5", 1], ["L02>", 1], ["L03", 0], ["L16", 0], ["L16+0.4", 1]],
-    "sway": [[0, 0], ["L18", 0], ["L18+0.5", 1], ["L19", 0.5], ["L20", 0], ["L31.1", 0], ["L31.1+0.5", 1], ["L32", 0.4]],
+    "sway": [[0, 0], ["L18", 0], ["L18+0.5", 1], ["L19", 0.5], ["L20", 0], ["L31.2", 0], ["L31.2+0.5", 1], ["L32", 0.4]],
     "binos": [[0, 0], ["L23", 1], ["L29", 0.5], ["L39", 0.5], ["L39+0.5", 0]],
     "sod": [[0, 0], ["L10.1", 1], ["L11", 0]],
     "sprink": [[0, 0], ["L11", 1], ["L12", 0]],
     "hose": [[0, 0], ["L45", 1], ["L46", 0]],
-    "bw0": [[0, 0], ["L05.1+0.1", 0], ["L05.1+0.4", 1]],
-    "bw1": [[0, 0], ["L05.1+0.6", 0], ["L05.1+0.9", 1]],
-    "bw2": [[0, 0], ["L05.2", 0], ["L05.2+0.3", 1]],
+    "bw0": [[0, 0], ["L05.1+0.05", 0], ["L05.1+0.35", 1]],
+    "bw1": [[0, 0], ["L05.2", 0], ["L05.2+0.3", 1]],
+    "bw2": [[0, 0], ["L05.3", 0], ["L05.3+0.3", 1]],
 }
 
 premise = ("Our neighbor Mr. Odell has the greenest lawn on the street and his mower only runs at 3 AM. Everyone on our "
@@ -374,7 +380,9 @@ story = {
              "exposure": 0.0, "flash_safe": True, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 1.12, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.01, "red_line": 0.78},
+    "phonemes": {"snaps": "snˈæps"},
     "caption": {"shadow": 0.6},
+    "min_read": 0,
     "cast": cast,
     "lines": lines,
     "shots": shots,
@@ -400,16 +408,16 @@ story = {
                   {"kind": "crickets", "from": 0, "to": "L07", "lufs": -36},
                   {"kind": "wind", "from": "L07", "to": "L14", "lufs": -40},
                   {"kind": "crickets", "from": "L14", "to": "end", "lufs": -36},
-                  {"kind": "hum", "from": "L01.3", "to": "L07", "lufs": -40},
+                  {"kind": "hum", "from": "L01.4", "to": "L07", "lufs": -40},
                   {"kind": "hum", "from": "L15", "to": "L32", "lufs": -38},
                   {"kind": "hum", "from": "L43", "to": "L46", "lufs": -42},
                   {"kind": "drone", "from": "L27", "to": "end", "lufs": -34},
               ],
               "sfx": [
-                  {"at": "L01.3", "kind": "thud", "db": -5},
-                  {"at": "L05.1+0.1", "kind": "latch", "db": -16},
-                  {"at": "L05.1+0.6", "kind": "latch", "db": -16},
-                  {"at": "L05.2", "kind": "latch", "db": -14},
+                  {"at": "L01.4", "kind": "thud", "db": -5},
+                  {"at": "L05.1+0.05", "kind": "latch", "db": -16},
+                  {"at": "L05.2", "kind": "latch", "db": -16},
+                  {"at": "L05.3", "kind": "latch", "db": -14},
                   {"at": "L18.1", "kind": "creak", "db": -10, "dur": 1.2},
                   {"at": "L24.1", "kind": "whoosh", "db": -26},
                   {"at": "L26+0.1", "kind": "creak", "db": -9, "dur": 1.3},
