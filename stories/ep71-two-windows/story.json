@@ -26,7 +26,29 @@
   "hdri_visible": false,
   "exposure": 0.0,
   "flash_safe": true,
-  "polish": true
+  "polish": {
+   "emph": [
+    "L01",
+    "L07"
+   ],
+   "reveal": [
+    "L50",
+    "L51"
+   ],
+   "quiet": [
+    [
+     "L67",
+     "L69"
+    ]
+   ],
+   "sway": [
+    "S041",
+    "S058",
+    "S076",
+    "S077",
+    "S078"
+   ]
+  }
  },
  "grade": {
   "shadows": [
