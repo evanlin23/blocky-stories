@@ -929,6 +929,10 @@
    "chunks": [
     [
      0.155,
+     0.741
+    ],
+    [
+     0.741,
      0.957
     ],
     [
@@ -1130,38 +1134,38 @@
    ]
   },
   "L48": {
-   "text": "I grabbed a pen and wrote it on the last line of my card.",
+   "text": "I grabbed a pencil and wrote it on the last line of my card.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.569,
-   "onset": 0.155,
-   "end": 2.362,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.5,
    "chunks": [
     [
-     0.155,
-     0.474
+     0.172,
+     0.492
     ],
     [
-     0.474,
-     0.819
+     0.492,
+     0.922
     ],
     [
-     0.819,
-     1.112
+     0.922,
+     1.233
     ],
     [
-     1.112,
-     1.241
+     1.233,
+     1.362
     ],
     [
-     1.241,
-     1.647
+     1.362,
+     1.784
     ],
     [
-     1.647,
-     2.362
+     1.784,
+     2.5
     ]
    ]
   },
@@ -1682,14 +1686,14 @@
    ]
   },
   "L71": {
-   "text": "a card just landed in a nineteen-year-old's soup pot,",
+   "text": "a card just landed in her soup pot,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.466,
+   "dur": 1.879,
    "onset": 0.172,
-   "end": 2.259,
+   "end": 1.672,
    "chunks": [
     [
      0.172,
@@ -1697,15 +1701,15 @@
     ],
     [
      0.448,
-     0.897
+     0.87
     ],
     [
-     0.897,
-     1.629
+     0.87,
+     1.026
     ],
     [
-     1.629,
-     2.259
+     1.026,
+     1.672
     ]
    ]
   },
