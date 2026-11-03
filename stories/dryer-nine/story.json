@@ -151,16 +151,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "At the",
-     "At the"
+     "NOBODY at this",
+     "Nobody at this"
     ],
     [
-     "LAUNDROMAT,",
-     "laundromat,"
-    ],
-    [
-     "you NEVER use",
-     "you never use"
+     "laundromat uses",
+     "laundromat uses"
     ],
     [
      "dryer NINE.",
@@ -173,12 +169,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Even if",
-     "Even if"
+     "It RUNS",
+     "It runs"
     ],
     [
-     "it's already RUNNING.",
-     "it's already running."
+     "every night",
+     "every night"
+    ],
+    [
+     "ANYWAY.",
+     "anyway."
     ]
    ]
   },
@@ -1158,7 +1158,7 @@
    ],
    "step": 2,
    "hand": 0.002,
-   "at": "L01.3"
+   "at": "L01.2"
   },
   {
    "id": "S03",
@@ -6440,12 +6440,12 @@
   ],
   "sfx": [
    {
-    "at": "L01.3+0.3",
+    "at": "L01.2+0.3",
     "kind": "hit",
     "db": -7
    },
    {
-    "at": "L01.3+0.3",
+    "at": "L01.2+0.3",
     "kind": "thud",
     "db": -10
    },
