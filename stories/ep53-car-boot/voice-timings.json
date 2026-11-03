@@ -818,30 +818,30 @@
    ]
   },
   "L31": {
-   "text": "our whole table is facing her chair again.",
+   "text": "the whole table is facing her chair again.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
+   "dur": 2.052,
    "onset": 0.155,
-   "end": 1.897,
+   "end": 1.862,
    "chunks": [
     [
      0.155,
-     0.724
+     0.69
     ],
     [
-     0.724,
-     1.094
+     0.69,
+     1.061
     ],
     [
-     1.094,
-     1.379
+     1.061,
+     1.345
     ],
     [
-     1.379,
-     1.897
+     1.345,
+     1.862
     ]
    ]
   },
@@ -950,14 +950,14 @@
    ]
   },
   "L36": {
-   "text": "i find pip at the bus shelter up the lane.",
+   "text": "i find pip at the bus shelter on the lane.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.069,
+   "dur": 2.052,
    "onset": 0.172,
-   "end": 1.879,
+   "end": 1.862,
    "chunks": [
     [
      0.172,
@@ -973,7 +973,7 @@
     ],
     [
      1.199,
-     1.879
+     1.862
     ]
    ]
   },
@@ -1238,30 +1238,30 @@
    ]
   },
   "L47": {
-   "text": "its tarp never shifts. same as my coat.",
+   "text": "the tarp never shifts. same as my coat.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.121,
-   "onset": 0.172,
-   "end": 1.931,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
    "chunks": [
     [
-     0.172,
-     0.5
+     0.155,
+     0.414
     ],
     [
-     0.5,
-     1.0
+     0.414,
+     0.914
     ],
     [
-     1.061,
-     1.31
+     0.974,
+     1.224
     ],
     [
-     1.31,
-     1.931
+     1.224,
+     1.845
     ]
    ]
   },

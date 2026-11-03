@@ -231,7 +231,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [wide from behind me: fog over the rows, other cars only shapes, my white coat the brightest thing]
 - `L30` narrator: Behind me, / the RADIO / clicks on / to STATIC.
   - [close on the radio, dial lamp ramping on over 0.5 s, hiss]
-- `L31` narrator: Our whole TABLE / is facing her CHAIR / AGAIN.
+- `L31` narrator: The whole TABLE / is facing her CHAIR / AGAIN.
   - [low across the table: teapot, lamp, clock, shoe all turned to the left chair, which is half hidden in fog]
 - `L32` narrator: And through the FOG, / somebody is sitting / IN it.
   - [from the hedge, long lens: the stall in thick fog with the low sun behind it. In Pip's chair, a dark seated silhouette. Its head is a shape lying along one shoulder. No face]
@@ -241,7 +241,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [same angle, after a cut: Pip's chair empty in the fog]
 - `L35` narrator: Just a strip / of green TARP / on the ARM.
   - [close: a ragged strip of tarp-green canvas hanging off the chair's left arm, stirring a little. Then I pick up Pip's coat from the table and fold it over my arm (cut away from hands: the coat is over my arm in the next shot)]
-- `L36` narrator: I find Pip / at the BUS SHELTER / up the LANE.
+- `L36` narrator: I find Pip / at the BUS SHELTER / on the LANE.
   - [the small wooden shelter halfway up the hill lane in fog. Pip on the bench, `tired`. She's fine. Her coat is over my arm]
 - `L37` narrator: In her SWEATER, / her BAG / at her FEET.
   - [close: Pip in her mustard jumper, a canvas holdall by her boots. A bus's headlamps ramp on over 1 s in the fog behind]
@@ -271,7 +271,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [two shots: full figure seated, then close on the tarp knotted at its chest with a cord, the rust overalls]
 - `L46` narrator: Its HEAD / lies on its SHOULDER, / EYES stacked / one above the OTHER.
   - [close on its face, side key from the sun: the sideways head, two round eyes one above the other, the mouth beside them. Eye highlights the brightest thing]
-- `L47` narrator: Its TARP / never SHIFTS. / Same as my COAT.
+- `L47` narrator: The TARP / never SHIFTS. / Same as my COAT.
   - [close on the green tarp in the sun, then cut to my cream-white sleeve. Neither changes]
 - `L48` narrator: As I get NEARER, / its head / tips FURTHER, / SLOWLY.
   - [me a step nearer, `scared`. After a cut, the Tilted's head hanging below its shoulder line, eyes still on me]
@@ -363,3 +363,4 @@ Spoken UK words changed for US viewers: L37 JUMPER to SWEATER, L67 "to the COACH
 - **The Tilted rebuilt:** the head now lies on the shoulder (roll -92 to -104) on a short neck block, with long dark hair, a bright eye glow, and a low warm lamp that lights its face from below (`tup`). All its shots show the face. Me upright at L50 (no sideways lean); L47.2 puts my sleeve in frame with the tarp behind.
 - **Pace and flash:** S10 (teapot), S31 (third mug), S56 (face from the side) and S90 (my face at an angle) are split. The L59 shot is gone and the lane wide starts 0.35 s earlier, so the running shot ends before my coat crosses the lens; it is lit with the morning light. The trunk gets a lamp boost (`bootb`). The final hold on the tailgate is dropped: the film ends on my face in the blue coat, 0.25 s before the loop.
 - `cover_s` moved to the lit face of the Tilted (see package.json).
+- Whisper misheard "Our" (L31), "up" (L36) and "Its" (L47) once L01 moved everything 0.2 s, so those three lines now read "The whole table", "on the lane" and "The tarp". Re-voiced with L01.

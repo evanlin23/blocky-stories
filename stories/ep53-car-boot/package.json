@@ -4,7 +4,7 @@
  "description": "In this town, every coat slowly changes color whenever its wearer changes their mind. My sister Pip's coat has been every color there is this week. Mine has been white my whole life.\n\nThen one foggy Sunday at the flea market, her coat is lying on our table without her, still changing color by itself. And something is sitting in her chair.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
  "pin": "Comment WHITE if you always let someone else decide.",
  "made_for_kids": false,
- "cover_s": 83.3,
+ "cover_s": 82.1,
  "shape": "about-me",
  "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
 }

@@ -689,6 +689,7 @@ def build(kit, story, tl):
     kit.aim(rim, (0, 0, 0))
     ctx["rim"] = rim
     # a low warm lamp (the radio's glow) that lights the Tilted's face from below while it is in the chair
+    kit.light("boot front", "POINT", (0.55, 1.75, 1.7), 1.0, "#fff0d8", size=0.7, shadow=False)
     kit.light("tilt up", "POINT", (-1.0, -0.9, 1.15), 1.0, "#ffd9a8", size=0.35)
     for nm in ("bus", "coach"):
         b = kit.light(f"{nm} beam", "SPOT", (0, 0, -60), 1.0, "#ffd9a0", size=0.3, spot=50, blend=0.6)
@@ -1008,6 +1009,7 @@ def animate(kit, story, tl, t, ctx):
     bl = ramp_level(_cues(tl, "beam"), t)
     over["bus beam"] = 1500.0 * bl
     over["boot lamp"] = 1.0 + 5.0 * ramp_level(_cues(tl, "bootb"), t)
+    over["boot front"] = 520.0 * ramp_level(_cues(tl, "bootb"), t)
     over["tilt up"] = 160.0 * ramp_level(_cues(tl, "tup"), t)
     over["coach beam"] = 0.0
     over["strip fill"] = 2600.0 * ramp_level(_cues(tl, "tfill"), t)
