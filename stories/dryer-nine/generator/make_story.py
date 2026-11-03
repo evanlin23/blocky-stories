@@ -502,6 +502,13 @@ sound = {"floor": "stone", "steps_db": -24,
 sid_of = {at: f"S{i + 1:02d}" for i, (at, _c, _o) in enumerate(SH)}
 POLISH = {"reveal": ["L31", "L36"], "twist": "L35", "quiet": [["L42", "L45"]], "bed_lufs": -38.0, "bed_drop_db": -3.0,
           "sway": [sid_of[k] for k in ("L22", "L23", "L24", "L38")]}
+# Flash fix (2026-11-03): the cuts between bright wide shots and dark window close-ups swung the picture by 0.4-0.5 in
+# luma several times a second. A softer contrast in the shots round those cuts, and a lift on the dark ones, evens them.
+_dark = (6, 9, 10, 11, 16, 19, 29, 30)
+_near = (5, 7, 8, 12, 15, 17, 18, 20, 32, 33, 34, 35, 36, 37, 54, 55, 56, 57, 58, 59, 60)
+SHOT_GRADES = {**{f"S{n:02d}": {"contrast": 0.7} for n in _near},
+               **{f"S{n:02d}": {"contrast": 0.7, "exposure": 1.35} for n in _dark}}
+
 story = {
     "slug": "dryer-nine",
     "title": "Nobody Uses Dryer NINE",
@@ -520,6 +527,7 @@ story = {
              "exposure": 0.0, "flash_safe": True, "polish": POLISH},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.02], "saturation": 1.12,
               "contrast": 1.06, "vignette": 0.28, "bloom": 0.2, "grain": 0.01},
+    "shot_grades": SHOT_GRADES,
     "phonemes": {"dryer": "dɹˈIɚ"},
     "cast": cast,
     "lines": lines,
