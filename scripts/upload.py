@@ -59,10 +59,22 @@ def shape(story: str) -> str:
     return str(pkg.get("shape", "")).strip().lower()
 
 
+def opening(story: str) -> str:
+    """package.json's optional `opening`: the shape of line 1 (RULES → hard rule 5: ban, if, must, count, confess,
+    cost, whatif), so two uploads in a row never open the same way."""
+    try:
+        pkg = load_package(story) or {}
+    except FileNotFoundError:
+        pkg = {}
+    return str(pkg.get("opening", "")).strip().lower()
+
+
 def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
-    """The oldest ready story, skipping past one whose twist shape matches the last upload's, so two in a row
-    never end the same way (a story is only held back while another ready one can go first)."""
-    last = shape(next(reversed(done))) if done else ""
+    """The oldest ready story, skipping past one whose twist shape or opening shape matches the last upload's, so
+    two in a row never end or begin the same way (a story is only held back while another ready one can go first)."""
+    prev = next(reversed(done)) if done else None
+    last = shape(prev) if prev else ""
+    last_open = opening(prev) if prev else ""
     held = None
     for s in queue() + [x for x in all_stories() if x not in queue()]:
         if s in done or s in skip or (load_package(s) or {}).get("hold"):   # held for a redo (RULES → Packaging)
@@ -74,7 +86,7 @@ def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
             print(f"{s}: waiting for its final-film check (qa/{s}.json)")
             continue
         if f and gate_open(s):
-            if not last or shape(s) != last:
+            if (not last or shape(s) != last) and (not last_open or opening(s) != last_open):
                 return s
             held = held or s
     return held
