@@ -1021,7 +1021,7 @@ def animate(kit, story, tl, t, ctx):
     # the faces' fill: a soft light a metre in front of each character, toward the middle of the room
     from blocky import acting as _act
     mode_a, mode_b, u_ = mode_state(tl, t)
-    fg = {"arrive": 1.6, "night": 1.0, "run": 1.2, "doorlamp": 2.5, "memory": 2.5, "day": 5.0, "gold": 1.6}
+    fg = {"arrive": 1.6, "night": 1.0, "run": 1.2, "doorlamp": 2.5, "memory": 2.5, "day": 2.2, "gold": 1.6}
     cur = _last(_cues(tl, "mode"), t)
     gain_f = fg.get(cur["set"], 1.0) if cur else 1.0
     for who, ln in (("me", "me fill"), ("ines", "ines fill")):
