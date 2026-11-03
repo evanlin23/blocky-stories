@@ -46,8 +46,11 @@ opening (the same as the twist `shape`).
 **Titles:**
 - Use the same family of shapes ("The [thing]…" is the second most common among hits).
 - At most one "Never" title per 7 (RULES already).
-- **At most half of a week's titles use the one-CAPS-word-plus-emoji form.** Every queued title uses it now, which is
-  a template of its own. The data says caps are neutral (19% of the top 10% against 26% of the median).
+- **CAPS word (a recommendation for the owner, not a rule):** the one-CAPS-word title is the owner's own call
+  (2026-11-02), so it stays. For the owner to weigh:
+  - Every queued title uses that form, which is a template of its own.
+  - In the 2026-11-03 scan, a CAPS word appears in 19% of the top 10% of titles (4 of 21), against 26% of the median
+    band (11 of 43). That's neutral to slightly negative, on a small sample.
 
 ## Every queued and in-flight story, assigned
 Line 1 is as it stands now (`main` or the story's open branch). The **new line 1 and line 2** are drafts for the owning
@@ -116,7 +119,26 @@ Before this, about 20 of 29 opened on "Never/Don't".
 - **ep54:** "Never Cover the Back of Your HAND" would be the third "Never" title in flight. Make it "Someone Has the
   Other Half of My Mark 🤚".
 - **moving-day:** "When Your Ceiling Rises, Don't Look UP" can stay (an `if` title).
-- **Each fix session:** drop the CAPS word from about half of its titles.
 
 Every new line is a draft. The owning session checks it against its own plot, keeps it under 12 words and 2.2 s, and
 re-voices lines 1 and 2 only. Qa checks the new first 3 s.
+
+## Update after the sessions replied (2026-11-03, about 11:30 UTC)
+The owning sessions checked the drafts against their plots. What they're using:
+
+| Story | Opening | Line 1 as used | Why it changed |
+|---|---|---|---|
+| closing-time | must | You have to wave goodbye to the big tank. | 9 words, under 2.2 s |
+| moving-day | **ban** (kept) | In this town, when your ceiling rises, don't look up. | its gate was already open (orchestrator, today). mirror-maze is also `ban`, so `upload.py` puts floor-thirteen (`if`) between them |
+| ep45-bee-yard | count | Two people in the bee yard. Only one clock. | the first shot is the bee yard, not the pier |
+| ep47-fitting-room | must | You can't hide a lie here. It pins a tag on you. | 12 words |
+| ep43-reading-room | confess | Only one person in this whole town knows my name. (L2: The number over my head says ONE.) | "dropped today" contradicted "has said one for years" |
+| ep53-car-boot | cost | The SCARIEST coat never changes COLOR. | unchanged |
+| ep54-dance-hall | cost | (as drafted) | L71's loop line echoes the new L1, with "Mine is my AUNT." kept after it |
+| ep26-last-skate, ep46-choir-hall | n/a | dropped at triage (PRs #114 and #115) | not the opening |
+
+**Updated counts (28 stories):** ban 3 (moving-day, mirror-maze and ep55: 11%), if 5, must 4, count 6, confess 4,
+cost 6. All are within the limits.
+
+The CAPS-title cap was taken out of RULES: that title form is the owner's decision. The numbers are above as a
+recommendation for the owner.
