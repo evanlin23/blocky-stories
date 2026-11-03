@@ -1,0 +1,1729 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Grandma's secret recipe card is in my handwriting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.517
+    ],
+    [
+     1.517,
+     1.715
+    ],
+    [
+     1.715,
+     2.552
+    ]
+   ]
+  },
+  "L02": {
+   "text": "I've never written it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.138
+    ]
+   ]
+  },
+  "L03": {
+   "text": "In this town, the night you finally cook a recipe right,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     1.043
+    ],
+    [
+     1.043,
+     1.483
+    ],
+    [
+     1.483,
+     2.259
+    ]
+   ]
+  },
+  "L04": {
+   "text": "its card flies off to whoever needs it most.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.914
+    ],
+    [
+     0.914,
+     1.439
+    ],
+    [
+     1.439,
+     2.034
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Mr. Ito got his chili right, and his card flew to the fire station.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.31,
+   "onset": 0.172,
+   "end": 3.121,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     0.854
+    ],
+    [
+     0.854,
+     1.431
+    ],
+    [
+     1.5,
+     1.69
+    ],
+    [
+     1.69,
+     2.103
+    ],
+    [
+     2.103,
+     2.232
+    ],
+    [
+     2.232,
+     3.121
+    ]
+   ]
+  },
+  "L06": {
+   "text": "Mrs. Bell's pie card landed on a newlywed's doorstep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.129
+    ],
+    [
+     1.129,
+     1.474
+    ],
+    [
+     1.474,
+     1.966
+    ],
+    [
+     1.966,
+     2.586
+    ]
+   ]
+  },
+  "L07": {
+   "text": "A guy eating cereal over his sink found a lasagna card on his windowsill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.448,
+   "onset": 0.172,
+   "end": 3.259,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.905
+    ],
+    [
+     0.905,
+     1.552
+    ],
+    [
+     1.552,
+     1.776
+    ],
+    [
+     1.776,
+     2.354
+    ],
+    [
+     2.354,
+     3.259
+    ]
+   ]
+  },
+  "L08": {
+   "text": "So nobody cooks with the card in their hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.129
+    ],
+    [
+     1.129,
+     1.845
+    ]
+   ]
+  },
+  "L09": {
+   "text": "My grandma, Nell, makes her Sunday soup from memory.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.914,
+     1.181
+    ],
+    [
+     1.181,
+     1.672
+    ],
+    [
+     1.672,
+     2.328
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Her card stays in a tin on the shelf.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.026
+    ],
+    [
+     1.026,
+     1.69
+    ]
+   ]
+  },
+  "L11": {
+   "text": "And the writing on it is mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     0.759
+    ],
+    [
+     0.759,
+     1.397
+    ]
+   ]
+  },
+  "L12": {
+   "text": "My loops. The way I cross my sevens.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.784
+    ],
+    [
+     0.784,
+     1.103
+    ],
+    [
+     1.103,
+     1.845
+    ]
+   ]
+  },
+  "L13": {
+   "text": "She's had it for sixty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.397
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Every Sunday, she tells the table I taught her the soup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     1.094
+    ],
+    [
+     1.094,
+     1.388
+    ],
+    [
+     1.388,
+     1.715
+    ],
+    [
+     1.715,
+     2.259
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Everybody laughs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.172,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.172,
+     1.017
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Mom says Grandma copied my writing to be funny.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.19
+    ],
+    [
+     1.19,
+     1.569
+    ],
+    [
+     1.569,
+     2.241
+    ]
+   ]
+  },
+  "L17": {
+   "text": "But the card is older than I am.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.862
+    ],
+    [
+     0.862,
+     1.5
+    ]
+   ]
+  },
+  "L18": {
+   "text": "The last line is under an old brown stain,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     0.897
+    ],
+    [
+     0.897,
+     1.931
+    ]
+   ]
+  },
+  "L19": {
+   "text": "shaped like a little boot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.19,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     1.121
+    ]
+   ]
+  },
+  "L20": {
+   "text": "That's the secret step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.172
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Grandma won't tell me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.379,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.172
+    ]
+   ]
+  },
+  "L22": {
+   "text": "She just says it's on the card.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.716
+    ],
+    [
+     0.716,
+     1.328
+    ]
+   ]
+  },
+  "L23": {
+   "text": "So this spring, I started making it myself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.741,
+     1.285
+    ],
+    [
+     1.285,
+     1.966
+    ]
+   ]
+  },
+  "L24": {
+   "text": "I copied her card onto a fresh one,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.819
+    ],
+    [
+     0.819,
+     1.061
+    ],
+    [
+     1.061,
+     1.724
+    ]
+   ]
+  },
+  "L25": {
+   "text": "and it came out looking exactly like hers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.603
+    ],
+    [
+     0.603,
+     1.19
+    ],
+    [
+     1.19,
+     1.879
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Every loop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.19,
+   "end": 0.845,
+   "chunks": [
+    [
+     0.19,
+     0.845
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Try one. Too thin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.56,
+     1.207
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Try nine. Too salty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.603,
+     1.328
+    ]
+   ]
+  },
+  "L29": {
+   "text": "Try twenty. Mom asked me to please stop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.768,
+     1.199
+    ],
+    [
+     1.199,
+     1.948
+    ]
+   ]
+  },
+  "L30": {
+   "text": "Every Sunday, Grandma tasted it, and said, close.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.741,
+     1.379
+    ],
+    [
+     1.406,
+     1.655
+    ],
+    [
+     1.69,
+     2.241
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Try thirty-nine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     1.052
+    ]
+   ]
+  },
+  "L32": {
+   "text": "My card started tugging in my hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.026
+    ],
+    [
+     1.026,
+     1.707
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Toward the window, like a kite on a string.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.759,
+     1.129
+    ],
+    [
+     1.129,
+     1.793
+    ]
+   ]
+  },
+  "L34": {
+   "text": "I stuck it to the fridge with a magnet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.966
+    ],
+    [
+     0.966,
+     1.69
+    ]
+   ]
+  },
+  "L35": {
+   "text": "It tugged all night, like it knew where it was going.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.423
+    ],
+    [
+     0.423,
+     0.845
+    ],
+    [
+     0.914,
+     1.241
+    ],
+    [
+     1.241,
+     1.388
+    ],
+    [
+     1.388,
+     2.052
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Try forty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I opened Grandma's tin.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.397
+    ]
+   ]
+  },
+  "L38": {
+   "text": "The sixty-year-old stain on her card was wet, like it was just spilled.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.155,
+   "end": 2.862,
+   "chunks": [
+    [
+     0.155,
+     0.957
+    ],
+    [
+     0.957,
+     1.353
+    ],
+    [
+     1.353,
+     1.776
+    ],
+    [
+     1.845,
+     2.103
+    ],
+    [
+     2.103,
+     2.862
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Grandma took my hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.276
+    ]
+   ]
+  },
+  "L40": {
+   "text": "She said, it's tonight, isn't it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.457,
+     0.845
+    ],
+    [
+     0.879,
+     1.414
+    ]
+   ]
+  },
+  "L41": {
+   "text": "Try forty-one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.034,
+   "chunks": [
+    [
+     0.172,
+     1.034
+    ]
+   ]
+  },
+  "L42": {
+   "text": "I tasted it over the pot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.345
+    ]
+   ]
+  },
+  "L43": {
+   "text": "It needed something. Just a little.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.81
+    ],
+    [
+     0.87,
+     1.569
+    ]
+   ]
+  },
+  "L44": {
+   "text": "So I did what I do to everything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.862
+    ],
+    [
+     0.862,
+     1.603
+    ]
+   ]
+  },
+  "L45": {
+   "text": "A squeeze of lemon.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.121
+    ]
+   ]
+  },
+  "L46": {
+   "text": "That was it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.017,
+   "onset": 0.172,
+   "end": 0.828,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ]
+   ]
+  },
+  "L47": {
+   "text": "That was the soup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.207,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.0
+    ]
+   ]
+  },
+  "L48": {
+   "text": "I grabbed a pen and wrote it on the last line of my card.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.155,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.155,
+     0.474
+    ],
+    [
+     0.474,
+     0.819
+    ],
+    [
+     0.819,
+     1.112
+    ],
+    [
+     1.112,
+     1.241
+    ],
+    [
+     1.241,
+     1.647
+    ],
+    [
+     1.647,
+     2.362
+    ]
+   ]
+  },
+  "L49": {
+   "text": "Squeeze of lemon, at the end.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.732,
+     1.379
+    ]
+   ]
+  },
+  "L50": {
+   "text": "And a drip fell off my spoon, right on top of it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.724
+    ],
+    [
+     0.724,
+     1.207
+    ],
+    [
+     1.285,
+     1.733
+    ],
+    [
+     1.733,
+     2.155
+    ]
+   ]
+  },
+  "L51": {
+   "text": "Shaped like a little boot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.19,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.19,
+     0.474
+    ],
+    [
+     0.474,
+     1.121
+    ]
+   ]
+  },
+  "L52": {
+   "text": "Then the card left my hand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.362
+    ]
+   ]
+  },
+  "L53": {
+   "text": "It flew straight out the window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.802
+    ],
+    [
+     0.802,
+     1.397
+    ]
+   ]
+  },
+  "L54": {
+   "text": "Grandma watched it go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.241
+    ]
+   ]
+  },
+  "L55": {
+   "text": "She said, sixty years ago, a card fell out of the air into her soup pot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.276,
+   "onset": 0.19,
+   "end": 3.069,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.5,
+     1.172
+    ],
+    [
+     1.259,
+     1.75
+    ],
+    [
+     1.75,
+     1.888
+    ],
+    [
+     1.888,
+     2.164
+    ],
+    [
+     2.164,
+     2.388
+    ],
+    [
+     2.388,
+     3.069
+    ]
+   ]
+  },
+  "L56": {
+   "text": "She was nineteen, just married, and couldn't boil water.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.828,
+     1.259
+    ],
+    [
+     1.285,
+     1.534
+    ],
+    [
+     1.534,
+     2.259
+    ]
+   ]
+  },
+  "L57": {
+   "text": "She cooked it that same night, and never stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.983
+    ],
+    [
+     1.017,
+     1.845
+    ]
+   ]
+  },
+  "L58": {
+   "text": "It was in my handwriting,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.362
+    ]
+   ]
+  },
+  "L59": {
+   "text": "with a little boot over the last line.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.31,
+     0.724
+    ],
+    [
+     0.724,
+     0.931
+    ],
+    [
+     0.931,
+     1.707
+    ]
+   ]
+  },
+  "L60": {
+   "text": "She had to find the last step herself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.543
+    ],
+    [
+     0.543,
+     0.819
+    ],
+    [
+     0.819,
+     1.603
+    ]
+   ]
+  },
+  "L61": {
+   "text": "So did I.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.19,
+   "end": 0.793,
+   "chunks": [
+    [
+     0.19,
+     0.793
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Nobody ever invented Grandma's soup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.19,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.19,
+     1.017
+    ],
+    [
+     1.017,
+     1.845
+    ]
+   ]
+  },
+  "L63": {
+   "text": "She learned it from my card.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.19,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ],
+    [
+     0.552,
+     1.31
+    ]
+   ]
+  },
+  "L64": {
+   "text": "I learned it from hers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.241
+    ]
+   ]
+  },
+  "L65": {
+   "text": "It's the same card.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.155,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     1.138
+    ]
+   ]
+  },
+  "L66": {
+   "text": "It just goes around and around.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     1.569
+    ]
+   ]
+  },
+  "L67": {
+   "text": "Grandma tasted my soup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.328
+    ]
+   ]
+  },
+  "L68": {
+   "text": "She said, it always tasted a little like you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.19,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.509,
+     1.129
+    ],
+    [
+     1.129,
+     1.31
+    ],
+    [
+     1.31,
+     1.879
+    ]
+   ]
+  },
+  "L69": {
+   "text": "Now I make it every Sunday, from memory.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.586
+    ],
+    [
+     0.586,
+     1.103
+    ],
+    [
+     1.138,
+     1.81
+    ]
+   ]
+  },
+  "L70": {
+   "text": "And sixty years back,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.155,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     1.155
+    ]
+   ]
+  },
+  "L71": {
+   "text": "a card just landed in a nineteen-year-old's soup pot,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.897
+    ],
+    [
+     0.897,
+     1.629
+    ],
+    [
+     1.629,
+     2.259
+    ]
+   ]
+  },
+  "L72": {
+   "text": "in my handwriting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     1.103
+    ]
+   ]
+  }
+ }
+}
