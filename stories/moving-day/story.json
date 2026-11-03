@@ -262,20 +262,16 @@
      "In this town,"
     ],
     [
-     "a house GROWS",
-     "a house grows"
+     "when your CEILING",
+     "when your ceiling"
     ],
     [
-     "to fit",
-     "to fit"
+     "RISES,",
+     "rises,"
     ],
     [
-     "the TALLEST one",
-     "the tallest one"
-    ],
-    [
-     "LIVING in it.",
-     "living in it."
+     "don't LOOK UP.",
+     "don't look up."
     ]
    ]
   },
@@ -284,12 +280,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Tall FAMILIES",
-     "Tall families"
+     "Something TALLER",
+     "Something taller"
     ],
     [
-     "live in TOWERS.",
-     "live in towers."
+     "than you",
+     "than you"
+    ],
+    [
+     "MOVED IN.",
+     "moved in."
     ]
    ]
   },
@@ -1216,21 +1216,35 @@
     [
      0,
      [
-      -1.0,
-      -2.2,
-      1.5
+      -2.4,
+      -1.5,
+      1.42
      ],
      [
-      -2.3,
-      -4.5,
-      1.55
+      -2.38,
+      0.0,
+      1.5
      ],
-     17
+     24
+    ],
+    [
+     1,
+     [
+      -2.4,
+      -0.95,
+      1.44
+     ],
+     [
+      -2.38,
+      0.0,
+      1.62
+     ],
+     28
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S01 the front room, warm and even: me under the low ceiling, the face box in the stack beside me, frowning"
+   "what": "S01 my doorway close: the pencil mark at my height on the frame, a hand of empty air above my hair, my face looking up; push in"
   },
   {
    "id": "S02",
@@ -1238,59 +1252,36 @@
     [
      0,
      [
-      55.8,
-      -2.5,
-      1.3
+      -1.6,
+      -3.0,
+      0.95
      ],
      [
-      55.8,
-      6.0,
-      2.2
+      -1.62,
+      -4.75,
+      1.2
      ],
-     13
+     24
     ],
     [
      1,
      [
-      59.4,
-      -2.5,
-      1.3
-     ],
-     [
-      59.4,
-      6.0,
-      2.2
-     ],
-     13
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "S02 the street: four houses of different heights, the tallest one at each door, head at the lintel",
-   "at": "L01.4"
-  },
-  {
-   "id": "S03",
-   "cam": [
-    [
-     0,
-     [
-      64.9,
-      1.2,
+      -1.6,
+      -3.4,
       1.0
      ],
      [
-      63.2,
-      6.0,
-      3.0
+      -1.62,
+      -4.75,
+      1.3
      ],
-     17
+     24
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "S03 the tower house: a tall man at its door, waving",
-   "at": "L02+0.44"
+   "what": "S02 the stack by the door, close and low: the face-out box with the marker frown, the ceiling right over it",
+   "at": "L02"
   },
   {
    "id": "S04",
@@ -2536,7 +2527,7 @@
    "at": "L45"
   },
   {
-   "id": "S55",
+   "id": "S54b",
    "cam": [
     [
      0,
@@ -2559,7 +2550,7 @@
    "at": "L45b"
   },
   {
-   "id": "S56",
+   "id": "S55",
    "cam": [
     [
      0,
@@ -2582,7 +2573,7 @@
    "at": "L46"
   },
   {
-   "id": "S57",
+   "id": "S56",
    "cam": [
     [
      0,
@@ -2619,7 +2610,7 @@
    "at": "L47"
   },
   {
-   "id": "S58",
+   "id": "S57",
    "cam": [
     [
      0,
@@ -2647,8 +2638,8 @@
    {
     "at": 0,
     "pos": [
-     -2.45,
-     -4.0
+     -2.38,
+     0.2
     ],
     "blend": 0,
     "hidden": false,
@@ -2662,7 +2653,7 @@
     ],
     "head": [
      0,
-     0
+     -22
     ],
     "lean": 0,
     "tremble": 0,
@@ -2673,18 +2664,18 @@
     "blink": true,
     "width": 0.88,
     "expr": "worried",
-    "yaw": 180
+    "yaw": 0
    },
    {
-    "at": "L01.4",
+    "at": "L02",
     "hidden": true,
     "blend": 0
    },
    {
     "at": "L06.2",
     "pos": [
-     -2.45,
-     -4.0
+     -2.38,
+     0.2
     ]
    },
    {
@@ -3902,95 +3893,11 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L01.4",
-    "pos": [
-     53.2,
-     5.68,
-     0.08
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "lie": null,
-    "sit": false,
-    "hide_parts": [],
-    "part_offset": {},
-    "blink": true,
-    "width": 0.88,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "at": "L03+0.17",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L02+0.44",
-    "hidden": true,
-    "blend": 0
    }
   ],
   "b": [
    {
     "at": 0,
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L01.4",
-    "pos": [
-     56.7,
-     5.68,
-     0.08
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "lie": null,
-    "sit": false,
-    "hide_parts": [],
-    "part_offset": {},
-    "blink": true,
-    "width": 0.88,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "at": "L03+0.17",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L02+0.44",
     "hidden": true,
     "blend": 0
    }
@@ -4000,48 +3907,6 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L01.4",
-    "pos": [
-     60.0,
-     5.68,
-     0.08
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "lie": null,
-    "sit": false,
-    "hide_parts": [],
-    "part_offset": {},
-    "blink": true,
-    "width": 0.88,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "at": "L03+0.17",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L02+0.44",
-    "hidden": true,
-    "blend": 0
    }
   ],
   "c": [
@@ -4049,115 +3914,6 @@
     "at": 0,
     "hidden": true,
     "blend": 0
-   },
-   {
-    "at": "L01.4",
-    "pos": [
-     63.2,
-     5.68,
-     0.08
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "lie": null,
-    "sit": false,
-    "hide_parts": [],
-    "part_offset": {},
-    "blink": true,
-    "width": 0.88,
-    "expr": "smirk",
-    "yaw": 0
-   },
-   {
-    "at": "L03+0.17",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L02+0.80",
-    "side": [
-     0,
-     28
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+1.20",
-    "side": [
-     0,
-     8
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+1.60",
-    "side": [
-     0,
-     28
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+2.00",
-    "side": [
-     0,
-     8
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+2.40",
-    "side": [
-     0,
-     28
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L02+2.80",
-    "side": [
-     0,
-     8
-    ],
-    "arms": [
-     0,
-     150
-    ],
-    "blend": 0.3
    }
   ],
   "lod": [
@@ -4414,10 +4170,15 @@
   {
    "at": 0,
    "name": "ceil",
+   "h": 1.98
+  },
+  {
+   "at": "L02",
+   "name": "ceil",
    "h": 1.72
   },
   {
-   "at": "L01.4",
+   "at": "L03",
    "name": "time",
    "set": "street"
   },
@@ -4789,20 +4550,25 @@
   {
    "at": 0,
    "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L02",
+   "name": "xfill",
    "pos": [
     -1.6,
     -3.0,
     1.7
    ],
    "aim": [
-    -2.2,
-    -4.3,
-    1.3
+    -1.7,
+    -4.5,
+    1.2
    ],
    "gain": 1.2
   },
   {
-   "at": "L01.4",
+   "at": "L03",
    "name": "xfill",
    "gain": 0
   },
@@ -5076,7 +4842,7 @@
    }
   ]
  },
- "sound": {"rev": 2, 
+ "sound": {
   "floor": "wood",
   "steps_db": -22,
   "ambience": [
@@ -5106,6 +4872,12 @@
    }
   ],
   "sfx": [
+   {
+    "at": "L01>-0.3",
+    "kind": "hit",
+    "db": -9,
+    "dur": 0.8
+   },
    {
     "at": "L14.1",
     "kind": "scrape",

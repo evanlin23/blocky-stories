@@ -100,12 +100,10 @@ HIGH_QUILT = still([0.75, 0.45, 1.95], [-0.5, 1.95, 0.45], 20)
 # (at, what, step, camera). step: 1 on ones (the scare), 4 on fours (locked wides), 2 on twos.
 SHOTS = [
     # 1 the rule, L01 to L04 (0 to 10 s): a lit hall opening, then the street of mixed-height houses
-    (0, "S01 the front room, warm and even: me under the low ceiling, the face box in the stack beside me, frowning", 2,
-     still([-1.0, -2.2, 1.5], [-2.3, -4.5, 1.55], 17)),
-    ("L01.4", "S02 the street: four houses of different heights, the tallest one at each door, head at the lintel", 2,
-     move(([OS[0] - 4.2, -2.5, 1.3], [OS[0] - 4.2, 6.0, 2.2]), ([OS[0] - 0.6, -2.5, 1.3], [OS[0] - 0.6, 6.0, 2.2]), 13)),
-    ("L02+0.44", "S03 the tower house: a tall man at its door, waving", 2,
-     still([OS[0] + 4.9, 1.2, 1.0], [OS[0] + 3.2, 6.0, 3.0], 17)),
+    (0, "S01 my doorway close: the pencil mark at my height on the frame, a hand of empty air above my hair, my face looking up; push in", 2,
+     c([0, [-2.4, -1.5, 1.42], [-2.38, 0.0, 1.5], 24], [1, [-2.4, -0.95, 1.44], [-2.38, 0.0, 1.62], 28])),
+    ("L02", "S02 the stack by the door, close and low: the face-out box with the marker frown, the ceiling right over it", 2,
+     move(([-1.6, -3.0, 0.95], [-1.62, -4.75, 1.2]), ([-1.6, -3.4, 1.0], [-1.62, -4.75, 1.3]), 24)),
     ("L03+0.17", "S04 a lodger walks out of a front door with a suitcase", 2,
      still([OS[0] + 8.6, -1.5, 1.35], [OS[0] + 10.0, 5.0, 1.2], 17)),
     ("L03+1.35", "S05 a couple on a sofa look up: the ceiling sits lower, a pale line where it was", 2,
@@ -188,7 +186,7 @@ SHOTS = [
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
-    s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.006 if step == 1 else 0.004, "step": step, "what": what}
+    s = {"id": what.split()[0], "cam": cam, "hand": 0.006 if step == 1 else 0.004, "step": step, "what": what}
     if step == 4 or cam is CLOCK:
         s["hand"] = 0.0          # locked off
     if i:
@@ -242,13 +240,6 @@ for who in cast:
 # ---- the montage
 SX, SY = OS
 YD = SY + 5.68       # a doorway person's y: on the step
-for who, x in (("a", SX - 6.8), ("b", SX - 3.3), ("p3", SX + 0.0), ("c", SX + 3.2)):
-    put(who, "L01.4", [x, YD, 0.08], yaw=0, expr="grin" if who != "c" else "smirk")
-    hide(who, "L03+0.17")
-for who in ("a", "b", "p3"):
-    hide(who, "L02+0.44")
-for k in range(6):                                           # the tall man waves
-    key("c", f"L02+{0.8 + 0.4 * k:.2f}", side=[0, 28 if k % 2 == 0 else 8], arms=[0, 150], blend=0.3)
 put("lod", "L03", [SX + 10.0, SY + 6.4, 0.0], yaw=0, expr="neutral", side=[0, 4])
 walk("lod", "L03+0.1", [SX + 10.0, SY + 6.4, 0.0], side=[0, 4])
 walk("lod", "L03+1.3", [SX + 10.0, SY + 2.6, 0.0], side=[0, 4])
@@ -263,8 +254,8 @@ hide("host", "L05")
 hide("guest", "L05")
 
 # ---- me
-put("me", 0, [-2.45, -4.0], yaw=180, expr="worried")                                  # S01: under the low ceiling
-hide("me", "L01.4")
+put("me", 0, [-2.38, 0.2], yaw=0, head=[0, -22], expr="worried")                     # S01: my doorway, looking up at the gap
+hide("me", "L02")
 put("me", "L06.2", [-2.38, 0.2], yaw=0, expr="worried")                              # S09: in my doorway
 hide("me", "L07")
 put("me", "L11.1", [-1.72, -4.1, -0.51], yaw=0, sit=True, head=[0, 18], expr="worried")   # on the floor at the box
@@ -325,8 +316,9 @@ cues = [
     # the time of day (set.py TIME_LIGHTS): warm even day, the street's bright overcast, near-black night, 3 a.m.,
     # the gold morning
     {"at": 0, "name": "time", "set": "day"},
-    {"at": 0, "name": "ceil", "h": 1.72},
-    {"at": "L01.4", "name": "time", "set": "street"},
+    {"at": 0, "name": "ceil", "h": 1.98},      # S01: a hand of air over my hair
+    {"at": "L02", "name": "ceil", "h": 1.72},   # then back on my hair for the stack and the montage
+    {"at": "L03", "name": "time", "set": "street"},
     {"at": "L05", "name": "time", "set": "day"},
     {"at": "L06", "name": "time", "set": "street"},
     {"at": "L06.2", "name": "time", "set": "day"},
@@ -398,8 +390,9 @@ cues = [
     {"at": "L32", "name": "lamp", "on": 1.0, "dur": 1.2},
     {"at": "L35", "name": "lamp", "on": 0.0},
     # the relights ("xfill": one soft light, placed and aimed per beat, off between)
-    {"at": 0, "name": "xfill", "pos": [-1.6, -3.0, 1.7], "aim": [-2.2, -4.3, 1.3], "gain": 1.2},
-    {"at": "L01.4", "name": "xfill", "gain": 0},
+    {"at": 0, "name": "xfill", "gain": 0},
+    {"at": "L02", "name": "xfill", "pos": [-1.6, -3.0, 1.7], "aim": [-1.7, -4.5, 1.2], "gain": 1.2},
+    {"at": "L03", "name": "xfill", "gain": 0},
     {"at": "L07", "name": "xfill", "pos": [0.2, -0.5, 1.5], "aim": [0.45, -1.72, 1.4], "gain": 1.1},
     {"at": "L08", "name": "xfill", "gain": 0},
     {"at": "L11.1", "name": "xfill", "pos": [-0.8, -3.2, 1.3], "aim": [-1.7, -4.5, 1.0], "gain": 1.2},
@@ -420,6 +413,7 @@ cues = [
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
+    {"at": "L01>-0.3", "kind": "hit", "db": -9, "dur": 0.8},                              # the hit on "UP"
     {"at": "L14.1", "kind": "scrape", "db": -14, "dur": 2.0, "distant": True},           # cardboard down the hall
     {"at": "L27", "kind": "creak", "db": -12, "dur": 2.4},                                # the house rising
     {"at": "P01+0.2", "kind": "creak", "tone": "cardboard", "db": -20, "dur": 1.0},      # one low cardboard creak
