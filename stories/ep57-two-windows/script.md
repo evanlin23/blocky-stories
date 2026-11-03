@@ -3,19 +3,19 @@
 - **Slug:** `ep57-two-windows` (batch 6, slot P2, given by the batch lead. The killed `ep57-arch-seat` never uploaded)
 - **From:** pitch T9 in `docs/research/2026-11-03-week.md` (branch `claude/batch6-research`): "This Drive-Thru Has TWO Windows", line score 9, title rank 4 of 36. Not in `stories/premise-bank.md`, so nothing to mark there.
 - **Lane:** core (creepy town rule). **Length arm:** long (H1). **Title arm:** a count that doesn't add up (H3).
-- **Word count:** 591 spoken words in 71 lines, all `narrator`, plus 2 pause beats (P01 0.7 s, P02 0.6 s).
-- **Estimated length:** at 290 wpm the speech is 2:02. The 0.12 s gaps add about 8.5 s, the pauses 1.3 s and the loop tail 0.25 s, so about **2:12** (132 s). If it lands under 125 s, add "The FRIES / are still HOT." after L33. If it lands over 148 s, cut L41 first, then L04.
+- **Word count:** 598 spoken words in 71 lines, all `narrator`, plus 2 pause beats (P01 0.7 s, P02 0.6 s).
+- **Estimated length:** at 290 wpm the speech is 2:04. The 0.12 s gaps add about 8.5 s, the pauses 1.3 s and the loop tail 0.25 s, so about **2:14** (134 s). If it lands under 125 s, add "The FRIES / are still HOT." after L33. If it lands over 148 s, cut L41 first, then L04.
 - **Look:** `look.flash_safe: true`. `look.style: "closer"` (bright, saturated plastic). `look.polish: true` once the polish pack is on main (it wasn't on 2026-11-03 at the time of writing: grep `blocky/` for "polish" before building). CC0 kit: `assets/textures/asphalt` for the lane and lot, `assets/textures/concrete` for the kerbs, `assets/textures/brick` for the back wall, `look.hdri: industrial_sunset_puresky.hdr` (golden evening, bright), props `bush_1`, `bush_2`, `sub_planter`, `trashcan_cylindric`, `sub_tree_small`, `commontree_1` round the lot. No prop with lettering.
 
 ## The big idea (first)
 
 **There's only ever one window. The second window is the first one again, one lap later, and every car waiting by the back wall is a lap somebody went round. Three of them are us.**
 
-The "wait, what" picture (L49 to L50): I turn round in my seat, and the three cars waiting by the back wall are all our car, cracked headlight and all, with Cal at the wheel and me beside him, looking back at me.
+The "wait, what" picture (L49 to L50): I turn round in my seat, and the three cars waiting by the back wall are all our car, cracked headlight and all, with Cal at the wheel and me beside him.
 
 What it reframes:
 - **The rule.** "Never pull up to the second window. There's only one." reads at first as a ghost window that isn't really there. At the end it's literal: there is one window, and the "second" one is that same window on your next time round. Pull up to it and you go round again.
-- **Mr. Dale's eight red trucks** (L05 to L07). A funny town oddity in the montage ("Mr. Dale sold that truck in May") turns into eight laps he went round before he got out. The trucks were never parked. They're laps.
+- **Mr. Dale's eight red trucks** (L05 to L07). A funny town oddity in the montage ("He only got out the night he ordered the soup") turns into eight laps he went round before a new order let him out, the same way out I find. The trucks were never parked. They're laps.
 - **The speaker knows Cal's order** (L15). It reads as "we're regulars". On a rewatch the speaker has heard "two number fours, no pickles" from this car more times than Cal knows.
 - **Cal orders for me** (L08 to L13). The sibling gripe becomes the mechanism: the window can only hand you what you got last time, so a man who orders the same thing for eleven years goes round forever, and the little brother who's never ordered is the only new thing in the car.
 
@@ -40,18 +40,18 @@ Checked against `stories/ideas.md` → "Claimed big ideas" and every story's twi
 - **The twist (said plainly, L53 to L55):** "There was only ever ONE window. The SECOND window is the FIRST one AGAIN, one LAP later. And every lap you go ROUND waits by the BACK WALL."
 - **The loophole the climax turns (L56 to L61):** the window can only hand you what you got last time (the rule's own logic, from the bag at L24 that we never ordered). Cal repeats himself every lap. I'm the only thing in the car that changes. So I lean over and order something new, for both of us, and there's no "last time" for the window to hand back. The speaker says "Forty-two", and past the window the wall just ends. No new magic.
 - **Where it's planted (a rewatch catches these):**
-  - Plant 1 (L05 to L07, 6 to 12 s): Mr. Dale's eight identical red trucks nose to tail by the back wall, "Mr. Dale sold that truck in May."
+  - Plant 1 (L05 to L07, 6 to 12 s): Mr. Dale's eight identical red trucks nose to tail by the back wall, and "He only got out the night he ordered the soup" (the way out, planted at 10 s).
   - Plant 2 (L14, 22 s): Cal's old car has one cracked headlight, said aloud and shown in close-up.
   - Plant 3 (L15 to L16): the speaker asks "Two number fours, no pickles?" before Cal says a word. "They know me."
   - Rewatch catch: in L01's frame the bag already on the second window's sill has ticket 41 on it, the number we're about to be given at L17.
-- **How the last 15 seconds turn over the first line:** from L65 the wall just ends, we drive out, and Cal eats the pickles. Then L70 to L71: by the back wall our car is still in line three times, and every Friday the first of them rolls up to the second window. The loop cut lands on "At this drive-thru, never pull up to the second window." Now line 1 isn't a ghost-story warning. It's what I'd tell the three of us still going round.
-- **Ending shape:** an escape that leaves copies behind. Two brothers drive out onto the open road. A cold beat: the three laps of us by the back wall, the first one rolling up to the lit hatch. (`shape: "lap"`, new.)
+- **How the last 15 seconds turn over the first line:** from L65 the wall just ends, we drive out, and Cal eats the pickles. Then L70 to L71: our three old laps are still in line by the back wall, and the front one, which never got out, rolls up to the second window "and nobody tells it," which runs straight into "At this drive-thru, never pull up to the second window." Now line 1 isn't a ghost-story warning. It's what nobody told the lap of us that's still going round.
+- **Ending shape:** an escape that leaves copies behind. Two brothers drive out onto the open road. A cold beat: the three laps of us by the back wall, the front one, a lap that never got out, rolling up to the lit hatch. (`shape: "lap"`, new.)
 - **Kind of warmth:** being heard. The big brother who always spoke for me lets me order, and keeps letting me (L69: every Friday he looks at me and waits). Played light: he hates pickles and eats every one.
 - **No sad family reveal.** Nobody is gone, sick or estranged. Cal is fine throughout.
 
 ## Back-row check (RULES → Back-row is the template)
 - One plain rule as line 1: yes, L01.
-- One concrete mystery within 15 s: two windows, there's only one, and eight of a sold truck in line.
+- One concrete mystery within 15 s: two windows, there's only one, and eight of one man's truck in line.
 - One place, one escalation: the drive-thru lane only. Each lap: one more ticket 41 on the mirror, one more of our car by the back wall, the thing in the hatch out one step further (hand, face, shoulders, waist).
 - No relationships to decode: my big brother, Cal. Our neighbor, Mr. Dale. The lady at the window. That's all.
 - A twist said plainly: L53 to L55.
@@ -84,7 +84,7 @@ A small roadside drive-thru on the edge of town, golden Friday evening, bright a
 | L43 to L45 (lap 3) | out to its shoulders, the bag on its palm level with Cal's window |
 | L51 to L52 (lap 4, the clear reveal, about 92 to 95 s, 70%) | out to its waist over the sill, its wide face a hand from Cal's, lit full |
 | L65 (escape) | gone: no hatch, the wall just ends at the kerb |
-| L71 (sting) | in the far background, the lit hatch again as the first of our three cars rolls up to it. Hand only |
+| L71 (sting) | in the far background, the lit hatch again as the front one of our three old laps rolls up to it. Hand only |
 
 ## Continuity
 - **Our car:** a small sky-blue two-door hatchback with rounded block wheel arches, one cracked left headlight (a jagged dark line across the lens, the bulb a dimmer yellow than the right), a peach blank plate. The same model for the three copies, cracked headlight on each.
@@ -108,7 +108,7 @@ A small roadside drive-thru on the edge of town, golden Friday evening, bright a
 - **Drops (`music_drops`):** P01 (0.7 s, before L30): everything drops but the car's idle, then the speaker crackles. P02 (0.6 s, before L51): everything but the drone drops, then a soft hatch-slide hit as it's seen out to its waist.
 - **Warm turn:** from L62 the drone thins and the bouncy bass comes back in D major under L64 to L69. At L70 the bass drops out and only the drone and the speaker crackle are left under the last two lines.
 - **Ambience:** car idle (soft low hum), indicator ticks at the speaker, the speaker's crackle (band-limited, soft), a paper bag rustle, a hatch sliding. No real voices: the speaker and the lady are only reported.
-- **The loop:** 0.25 s after "WINDOW" in L71, cut to L01's frame 1.
+- **The loop:** 0.25 s after "tells it" in L71, cut to L01's frame 1, so L71 runs into "At this drive-thru, never pull up to the second window."
 
 ## The rule and the hits' shape (RULES → What the hits do, and the opening recipe)
 1. **Line 1 is a warning to "you":** "At this DRIVE-THRU, / never pull up / to the SECOND WINDOW." 10 words, about 2.1 s. (The reset and the recipe outrank the old "In this town" form.)
@@ -117,7 +117,7 @@ A small roadside drive-thru on the edge of town, golden Friday evening, bright a
 4. **No names or backstory before 4 s:** Mr. Dale first at L05, about 6.1 s. Cal at L10, 15 s.
 5. **Lines 3 to 5 show the rule at work, one shot each, none over 2 s:** cars rolling past eyes front, a van with taped windows, Mr. Dale at his door.
 6. **Marker by 2 s:** the second window itself, plus ticket 41 on its bag and the speaker screen's 41.
-7. **Montage, 3 to 15 s:** cars rolling past, taped vans, Mr. Dale, his eight trucks, "sold that truck in May".
+7. **Montage, 3 to 15 s:** cars rolling past, taped vans, Mr. Dale, his eight trucks, "the night he ordered the soup".
 8. **The narrator is the exception:** eleven years of Fridays and I've never once ordered (L08 to L09).
 9. **The loved one at stake:** my big brother, Cal.
 10. **15 to 30 s show, nobody explains:** Cal's order, the speaker knowing it, ticket 41.
@@ -156,11 +156,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S04: a van with cardboard taped over its side window rolls by]
 - `L05` narrator: Our neighbor, / MR. DALE, / stopped there ONCE.
   - [S05: Mr. Dale at his door, `smile`, mug]
-- `L06` narrator: Now the line / by the BACK WALL / is EIGHT / of his RED TRUCK.
+- `L06` narrator: Now EIGHT of his RED TRUCKS / wait by the BACK WALL.
   - [S06: low along the brick back wall, the first red truck big in frame, headlights on, nobody moving. S07: tracking along all eight, identical, nose to tail. Plant 1]
-- `L07` narrator: Mr. Dale SOLD / that truck / in MAY.
+- `L07` narrator: He only got OUT / the night he ordered / the SOUP.
   - **Quotable line (marked).**
-  - [S08: Mr. Dale at his door again, `smile`, raising the mug. S09: the empty spot on his driveway where a truck used to be]
+  - [S08: Mr. Dale at his door again, `smile`, raising the mug, steam off it (soup). S09: the menu board's 9, a drawn soup bowl, the one picture nobody orders. Plant 1b: a new order is the way out]
 
 ## 02 Cal (L08 to L16, about 12 to 29 s)
 - **Where:** inside our car, then the lane to the speaker.
@@ -270,7 +270,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S71: me, turning round, `scared`]
 - `L49` narrator: Behind Mr. Dale's trucks, / THREE cars wait. / All of them / OURS.
   - [S72: over my shoulder through the rear window, the back wall: the red trucks, then three sky-blue cars. S73: tighter on the three, cracked headlights]
-- `L50` narrator: Cal at the WHEEL. / ME beside him, / looking BACK / at ME.
+- `L50` narrator: In every one, / it's CAL / and ME.
   - [S74: through the nearest copy's windshield: a Cal at the wheel grinning, a me in the passenger seat turned round, the same pose as S71. The "wait, what" picture. S75: back on me, `scared`]
 - `P02` pause, 0.6 s: the lot lights dim slowly over 0.6 s, only the drone left, then a hatch-slide hit.
 - `L51` narrator: In the HATCH, / it's out / to its WAIST,
@@ -291,7 +291,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S82: four quick cuts of Cal's grin, S24, S47, S64 and a new one, 0.35 s each, the same frame]
 - `L57` narrator: I'm the only thing / in this car / that CHANGES.
   - [S83: me, four quick cuts, each pose different: arms folded, leaning forward, shouting, turned round]
-- `L58` narrator: And that window / can only hand you / what you got LAST time.
+- `L58` narrator: That window only hands you / what you got LAST time, / so a NEW order / BREAKS the lap.
   - [S84: the bag on the second window's sill, ticket 41. S85: the mirror's four 41s]
 - `L59` narrator: So at the SPEAKER, / I lean over CAL / before it can ASK.
   - [S86: the speaker post coming up. S87: me leaning across Cal toward the grille, `angry` (determined)]
@@ -319,14 +319,14 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S99: the empty pickle cup on the dash, ticket 42 on the mirror]
 - `L69` narrator: Every Friday now, / at the speaker, / he looks at ME / and WAITS.
   - [S100: a new Friday, the same golden light, Cal at the speaker turned to me, `smile`, waiting. S101: me leaning to the grille, `smile`]
-- `L70` narrator: But by the BACK WALL, / our car is still in LINE. / THREE times.
+- `L70` narrator: But our three old LAPS / are still in LINE / by the BACK WALL.
   - [S102: as we leave, through the rear window, the back wall: eight red trucks, three sky-blue cars. Music thins to drone]
-- `L71` narrator: And every Friday, / the first one / rolls up / to the SECOND WINDOW.
-  - [S103: the first of our copies rolling up to the lit hatch, a mint sleeve and hand holding out the bag. Push in toward the hatch to match S01's framing. Cut on the loop 0.25 s after WINDOW]
+- `L71` narrator: The FRONT one / never got OUT. / It's rolling up / to the second window, / and nobody tells it,
+  - [S103: the first of our copies rolling up to the lit hatch, a mint sleeve and hand holding out the bag. Push in toward the hatch to match S01's framing. Cut on the loop 0.25 s after "tells it", straight into L01, so the loop plays as one sentence]
 
 ## Risks
 - **"Lap" must read.** L27 to L33 show the loop before the word "lap" arrives (L40). The cold-viewer test should confirm it's clear we drove round again.
-- **The copies.** The cold viewer must get that the three cars are us going round, said in L55. If the test reads them as new people, add "They're US." to L49's last chunk.
+- **The copies.** The cold viewer must get that the three cars are us going round, said in L55. L70 calls them "our three old laps" so the ending names them plainly.
 - **Cal never in peril.** He's only ever grinning and driving. The Server never touches him.
 - **"Number seven"** is chosen over "number two" so nobody hears a toilet joke.
 - **No brand.** Burgers, fries and pickles are generic. Menu board pictures and numerals only. The 🍔 emoji in the title is generic.
