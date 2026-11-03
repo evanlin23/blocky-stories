@@ -237,7 +237,7 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
         wheel_c = body if kind == "truck" else body
         for sy in (-1, 1):
             B(f"pillar{sy}", (0.1, 0.1, 0.65), (0.78, sy * 0.88, 1.25), body, 0.02, (0, 0.35, 0))
-        B("header", (0.1, 1.84, 0.1), (0.62, 0, 1.55), body, 0.02)
+        B("stalk", (0.04, 0.04, 0.4), (0.74, 0.0, 1.28), dark, 0.01)
         # the windshield: a thin frame only, so the camera can look through it
         # wheel steering
         kit.cyl(f"{name}.wheelrim", 0.22, 0.04, (0.55, 0.45, 1.0), dark, root, rot=(0, 1.1, 0), n=16)
@@ -303,7 +303,7 @@ def build_server(kit, M, ctx):
     kit.box("srv.visor", (0.55, 0.62, 0.1), (0, -0.04, 1.99), peach, g, bevel=0.03)
     kit.box("srv.visor2", (0.5, 0.54, 0.06), (0, 0.0, 1.94), peach, g, bevel=0.02)
     # eyes at the far edges: pale, staring, a tiny pupil; a thin black smile edge to edge, its ends curled up
-    white = kit.emit("#fffdf2", 2.2, "srv sclera")
+    white = kit.emit("#fffdf2", 0.9, "srv sclera")
     for sx in (-1, 1):
         kit.cyl(f"srv.eye{sx}", 0.085, 0.03, (sx * 0.6, -0.255, 1.78), white, g, rot=(math.pi / 2, 0, 0), n=20)
         kit.cyl(f"srv.pupil{sx}", 0.028, 0.03, (sx * 0.6 - sx * 0.01, -0.272, 1.78), black, g, rot=(math.pi / 2, 0, 0), n=12)
