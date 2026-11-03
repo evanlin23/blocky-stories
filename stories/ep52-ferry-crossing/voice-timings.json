@@ -6,58 +6,50 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, everything you lose finds its way back to you.",
+   "text": "Never drop anything here unless you want it back.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.638,
-   "onset": 0.172,
-   "end": 2.414,
+   "dur": 2.293,
+   "onset": 0.19,
+   "end": 2.086,
    "chunks": [
     [
-     0.172,
-     0.655
+     0.19,
+     0.586
     ],
     [
-     0.707,
-     1.345
+     0.586,
+     1.103
     ],
     [
-     1.345,
-     1.741
+     1.103,
+     1.431
     ],
     [
-     1.741,
-     2.414
+     1.431,
+     2.086
     ]
    ]
   },
   "L02": {
-   "text": "a glove hops after its owner up the slipway.",
+   "text": "it hops home after you.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.927,
-   "dur": 2.293,
+   "dur": 1.569,
    "onset": 0.19,
-   "end": 2.069,
+   "end": 1.328,
    "chunks": [
     [
      0.19,
-     0.466
+     0.707
     ],
     [
-     0.466,
-     0.94
-    ],
-    [
-     0.94,
-     1.233
-    ],
-    [
-     1.233,
-     2.069
+     0.707,
+     1.328
     ]
    ]
   },

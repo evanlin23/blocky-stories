@@ -149,13 +149,13 @@ def pbr(kit, name, hexc, rough=0.6, metal=0.0, spec=0.4, alpha=None):
 
 def materials(kit):
     P, M = kit.plastic, {}
-    M["concrete"] = kit.concrete("#a7a39b", 1.2, 0.4)
-    M["quay"] = kit.concrete("#97958e", 0.9, 0.35)
-    M["road"] = kit.grime("#55575a", 0.7, 2.0)
+    M["concrete"] = kit.texture("concrete", 0.6, tint="#e2ddd2")
+    M["quay"] = kit.texture("concrete", 0.45, tint="#cfccc4")
+    M["road"] = kit.texture("asphalt", 0.5, tint="#d8d8d8")
     M["stone"] = kit.concrete("#7b7a70", 2.2, 0.5)
     M["wall"] = kit.bricks("#7d7b72", "#6b6a62", "#4c4b45", 1.6, name="dry stone", rough=0.95, row=0.22, width=0.5)
     M["brick"] = kit.bricks("#8a5a48", "#74493a", "#4f4a45", 1.0, name="town brick")
-    M["grass"] = kit.grime("#566246", 0.7, 2.5)
+    M["grass"] = kit.texture("grass", 0.5, tint="#d8e4c4")
     M["sand"] = kit.grime("#9a9588", 0.8, 2.0)
     M["water"] = pbr(kit, "sea", "#5d6b73", 0.18, spec=0.6)
     M["hull"] = P("#e8e6df", 0.55, "hull white")
@@ -171,7 +171,7 @@ def materials(kit):
     M["white"] = P("#e6e2d8", 0.8, "white wall")
     M["floor"] = P("#4b4f52", 0.7, "lounge floor")
     M["deck"] = kit.concrete("#5a5d5e", 1.5, 0.5, "car deck")
-    M["wood"] = kit.planks("#8a6a47", "#6a4d33", 1.0, "X", "wood floor")
+    M["wood"] = kit.texture("wood", 0.5, tint="#e0c8a8")
     M["wood2"] = kit.planks("#6a4d33", "#4e3822", 1.2, "Z", "dark planks")
     M["shelf"] = P("#7a5a3a", 0.8, "shelf")
     M["green"] = P("#2f6a40", 0.55, "cottage green")
@@ -981,6 +981,45 @@ def build_phone_bezel(kit, M, ctx):
 
 
 # ------------------------------------------------------------------------------------------------ build
+def dress(kit, M):
+    """Props from assets/props to fill the bare places (2026-11-03). Everything stands clear of the cast's paths."""
+    pr = kit.prop
+    # the town: trees and bushes behind the quay edges, planters, rocks at the waterline, a bin by the hut
+    for nm, x, y, h, r in (("sub_tree_large", -9.5, 9.0, 6.0, 20), ("sub_tree_large", 11.5, 12.0, 6.5, 80),
+                           ("sub_tree_small", -15.0, 6.0, 4.0, 10), ("sub_tree_small", 16.0, 5.0, 4.2, 50),
+                           ("sub_tree_small", -6.8, 13.0, 4.5, 0), ("sub_tree_large", -20.0, 12.0, 6.0, 140)):
+        pr(nm, (x, y, 0), rot=r, height=h)
+    for x, y in ((-6.3, 2.2), (6.2, 3.4), (-6.4, -6.5), (6.3, -7.5)):
+        pr("bush_1", (x, y, 0), rot=x * 7, height=0.9)
+    for x, y in ((-4.2, 5.0), (4.2, 5.0)):
+        pr("sub_planter", (x, y, 0), height=0.7)
+    for x, y, nm, h in ((-6.2, -12.5, "rock_3", 0.8), (6.0, -13.0, "rock_1", 0.7), (-7.5, -4.5, "rock_5", 0.6)):
+        pr(nm, (x, y, 0), rot=x * 13, height=h)
+    pr("trashcan_cylindric", (5.2, -2.3, 0), height=0.9)
+    pr("sub_fence_low", (-11.0, 3.0, 0), rot=90, height=0.9)
+    # the street by my door
+    for x, y, nm, h in ((131.0, 5.2, "sub_tree_small", 4.2), (146.0, 8.4, "bush_2", 0.9), (156.0, 8.0, "bush_1", 1.0)):
+        pr(nm, (x, y, 0), height=h)
+    # the island lane: bushes, flowers and trees beyond the dry-stone walls, rocks at the slipway
+    for k in range(7):
+        y = 4.0 + k * 4.4
+        pr("bush_2" if k % 2 else "bush_1", (296.6 - (k % 3) * 0.4, y, 0), rot=k * 53, height=1.0)
+        pr("flowers" if k % 2 else "bush_1", (303.5 + (k % 3) * 0.4, y + 1.6, 0), rot=k * 31, height=0.8)
+    for x, y, nm, h in ((292.0, 14.0, "pinetree_1", 7.0), (309.0, 20.0, "pinetree_2", 7.5), (291.0, 28.0, "commontree_1", 6.0),
+                        (310.0, 8.0, "rock_moss_1", 1.1), (290.0, 2.0, "rock_3", 1.2), (307.0, -9.0, "rock_1", 0.9),
+                        (293.0, -8.0, "rock_moss_1", 0.9)):
+        pr(nm, (x, y, 0), height=h)
+    # Gran's kitchen: a fridge and a plant, and a flat with a shelf and a plant
+    pr("kitchen_fridge", (396.7, 1.5, 0), rot=0, height=1.9)
+    pr("houseplant_1", (403.5, 0.6, 0), height=1.0)
+    pr("bookshelf", (202.0, 2.1, 0), rot=180, height=1.9)
+    pr("houseplant_1", (197.9, 2.0, 0), height=1.0)
+    pr("couch_medium1", (198.6, -0.6, 0), rot=90, height=0.85)
+    # the ferry's lounge: a bin by the door, a plant in the far corner
+    pr("trashcan_cylindric", (FER - 2.7, 7.2, 3.92), height=0.8)
+    pr("houseplant_1", (FER + 2.9, 7.1, 3.92), height=1.1)
+
+
 def build(kit, story, tl):
     M = materials(kit)
     ctx = {"M": M, "inited": False, "vis": {}}
@@ -1013,6 +1052,7 @@ def build(kit, story, tl):
     hop_dot_pool(kit, M, ctx, len(hops), [i for i, h in enumerate(hops) if h.get("path")])
     # loose props
     P = {}
+    dress(kit, M)
     P["binglove"] = glove(kit, "p.binglove", M["mustard"], None, hole=True, scale=1.3)
     P["mglove"] = glove(kit, "p.mglove", M["mustard"], None, hole=True, scale=1.3)
     P["glasses"] = make_glasses_prop(kit, M, "p.glasses")

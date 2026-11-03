@@ -107,16 +107,27 @@ def P(pos, **kw):
 
 
 # ------------------------------------------------------------------------------------------------ 01 the rule
-shot(0, "bright low wide up the slipway: glove woman walking to camera, her green glove hopping after her",
-     c([0, [-2.4, 3.3, 0.5], [-0.5, -2.2, 0.2], 26], [1, [-2.1, 3.0, 0.5], [-0.5, -2.0, 0.2], 26]),
-     {"glove_woman": P([-0.4, -3.4], walk=[("L01>", [-0.4, -0.4])]),
-      "umbrella_man": P([1.2, -4.8], walk=[("L01>", [1.2, -1.3])])})
-shot("L02", "low: the glove hopping up the slipway after the raincoat hem",
-     c([0, [1.1, 2.3, 0.42], [-0.2, -1.6, 0.12], 28], [1, [0.8, 0.9, 0.42], [-0.2, -2.2, 0.12], 28]),
-     {"glove_woman": P([-0.4, -0.2], walk=[("L02>", [-0.4, -4.6])])})
+# since 2026-11-03: frame 1 is the green glove mid-hop, her face looking back at it; every opening shot is a close
+LOOK = {"head": [150, -4], "expr": "neutral"}
+shot(0, "close: the green glove mid-hop on the bright slipway, the glove woman's face above it looking back at it, pushing in",
+     c([0, [-0.95, 0.35, 0.34], [-0.45, -1.1, 0.62], 24], [1, [-0.8, 0.0, 0.34], [-0.45, -1.35, 0.7], 31]),
+     {"glove_woman": P([-0.4, -1.9], walk=[("L01.2", [-0.4, -2.3])], **LOOK)})
+shot("L01.2", "closer: her face, the glove bobbing in the foreground",
+     c([0, [0.35, -0.55, 0.62], [-0.4, -2.3, 1.15], 28], [1, [0.2, -0.85, 0.7], [-0.4, -2.4, 1.2], 38]),
+     {"glove_woman": P([-0.4, -2.35], walk=[("L02", [-0.4, -2.8])], **LOOK)})
+shot("L02", "low: the glove hopping up the concrete after the raincoat hem",
+     c([0, [0.9, -1.4, 0.3], [-0.4, -3.2, 0.14], 24], [1, [0.7, -1.9, 0.25], [-0.4, -3.4, 0.14], 24]),
+     {"glove_woman": P([-0.4, -2.85], walk=[("L02.1", [-0.4, -3.6])], **LOOK)})
+shot("L02.1", "glove's-eye: the raincoat walking away, the glove at the bottom of frame",
+     c([0, [-0.2, -2.9, 0.3], [-0.4, -5.4, 0.9], 24], [1, [-0.25, -3.4, 0.3], [-0.4, -6.0, 0.95], 28]),
+     {"glove_woman": P([-0.4, -3.75], walk=[("L03", [-0.4, -5.2])], **LOOK)})
 shot("L03", "side tracking: umbrella man",
      c([0, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22], [1, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22]),
      {"umbrella_man": P([0.4, -2.4], walk=[("L03>", [0.4, 2.8])])})
+shot("L03.2", "the bright slipway wide: the glove woman far down it, the umbrella man passing, hop-dots fading",
+     c([0, [-2.4, 3.3, 0.5], [-0.5, -2.2, 0.2], 26], [1, [-2.1, 3.0, 0.5], [-0.5, -2.0, 0.2], 26]),
+     {"glove_woman": P([-0.4, -5.6], walk=[("L03>", [-0.4, -7.0])]),
+      "umbrella_man": P([1.2, -2.6], walk=[("L03>", [1.2, 0.8])])})
 shot("L07", "the dog alone on the harbour front", c([0, [0.3, -0.7, 0.6], [0.0, 2.2, 0.35], 30], [1, [0.3, -0.7, 0.6], [0.4, 2.2, 0.35], 30]))
 shot("L08", "the dog up the gangway among legs", still([-2.2, -12.6, 0.4], [0.1, -16.8, 0.4], 24),
      {"pass1": P([-0.8, -13.6, 0.0], walk=[("L08+0.5", [-0.8, -15.3, 0.0]), ("L08+1.6", [-0.8, -18.5, 0.9]),
@@ -530,10 +541,23 @@ cue("L56+0.85", "ldots", a=[SX, 10.8, 0.16], b=[SX, 3.0, 0.0], n=14, v=0.0)
 # the first scare's wind, the island lights etc. are in set.py
 
 sfx = []
-for r, db in (("L01+0.5", -27), ("L01+1.1", -27), ("L02+0.2", -27), ("L02+0.75", -27), ("L03+0.3", -27),
+# the green glove lands every 0.52 s from t = 0 (set.py's hop period); the umbrella's pops follow L03
+for r, db in ((0.52, -27), (1.04, -27), (1.56, -27), (2.6, -27), (3.12, -27), ("L03+0.3", -27),
               ("L03+0.85", -27), ("L09+0.2", -28), ("L09+0.8", -28), ("L09+1.4", -28)):
     sfx.append({"at": r, "kind": "pop", "db": db})
 sfx += [
+    # the opening: a soft damp pat on "back", and a quiet whoosh into each hard cut
+    {"at": "L01.3+0.12", "kind": "thud", "db": -17},
+    {"at": "L01.2-0.1", "kind": "whoosh", "db": -26},
+    {"at": "L02-0.1", "kind": "whoosh", "db": -26},
+    {"at": "L02.1-0.1", "kind": "whoosh", "db": -26},
+    {"at": "L03-0.1", "kind": "whoosh", "db": -26},
+    {"at": "L03.2-0.1", "kind": "whoosh", "db": -26},
+    # doors
+    {"at": "L17", "kind": "creak", "db": -22, "dur": 0.9},
+    {"at": "L25+0.2", "kind": "creak", "db": -16, "dur": 1.2},
+    {"at": "L29", "kind": "creak", "db": -18, "dur": 1.0},
+    {"at": "L30+0.5", "kind": "door", "db": -20},
     {"at": "L10+0.8", "kind": "thud", "db": -26},
     {"at": "L23+0.1", "kind": "creak", "db": -9, "dur": 1.5},
     {"at": "P01>-0.1", "kind": "thud", "db": -9},
@@ -551,6 +575,12 @@ sfx += [
     {"at": "L68.4+0.05", "kind": "pop", "db": -14},
     {"at": "L68.4+0.15", "kind": "glide", "db": -16, "dur": 0.5},
 ]
+
+_ids = [sh["id"] for sh in shots]
+_at = {sh["id"]: sh.get("at") for sh in shots}
+POLISH = {"quiet": [["L59", "L65"]], "reveal": ["L45", "L51"], "twist": "L52",
+          "sway": [sh["id"] for sh in shots[1:] if isinstance(sh.get("at"), str)
+                   and sh["at"][:3] in ("L44", "L45", "L46", "L47", "L48", "L49", "L50", "L51")]}
 
 secs = [
     {"at": 0, "voices": ["pad", "piano"], "energy": 0.25},
@@ -581,7 +611,7 @@ story = {
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#b4babd", "fog_density": 0.010, "fog_start": 4.0, "sky": "#c4ccd0", "sky_strength": 1.0,
-             "exposure": 0.0, "flash_safe": True},
+             "exposure": 0.0, "flash_safe": True, "polish": POLISH},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.03, 0.01, -0.03], "saturation": 0.95, "contrast": 1.05,
               "vignette": 0.3, "bloom": 0.22, "grain": 0.012},
     "phonemes": {},
