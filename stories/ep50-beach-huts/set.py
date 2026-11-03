@@ -445,6 +445,22 @@ def build(kit, story, tl):
     build_stage(kit, M, ctx)
     build_towns(kit, M, ctx)
 
+    # --- CC0 props (2026-11-03 quality pass): dune grass in the hut gaps, rocks and driftwood on the dry sand
+    for i in range(11):
+        gx = (i - 5) * 4.0 + 2.0
+        kit.prop("grass_short" if i % 2 else "grass", (gx, -0.25, 0), rot=37 * i, height=0.45 + 0.08 * (i % 3), tint="#cfd6a6")
+        kit.prop("flowers", (gx + 0.5, -0.45, 0), rot=19 * i, height=0.38, tint="#f0e6d8") if i % 3 == 0 else None
+    for k, (rx, ry, rr, rh, nm) in enumerate([(-7.5, -4.4, 20, 0.5, "rock_1"), (-11.5, -3.6, 80, 0.7, "rock_3"),
+                                              (6.5, -4.6, 140, 0.45, "rock_moss_1"), (11.0, -3.4, 10, 0.6, "rock_5"),
+                                              (19.5, -4.3, 60, 0.5, "rock_1"), (34.0, -3.8, 100, 0.8, "rock_3"),
+                                              (44.0, -4.2, 30, 0.6, "rock_moss_1"), (-17.0, -4.0, 70, 0.55, "rock_5")]):
+        kit.prop(nm, (rx, ry, 0), rot=rr, height=rh, tint="#b8b4a8")
+    kit.prop("nat_stump_old", (8.5, -2.8, 0), rot=30, height=0.4, tint="#c9b9a0")
+    kit.prop("nat_log_stack", (-5.9, -0.9, 0), rot=90, height=0.8, tint="#c9b08c")
+    kit.prop("nat_pot_large", (7.9, -1.2, DECK_Z), fit=0.6, tint="#e8c8a8")
+    kit.prop("woodlog", (47.8, -4.6, 0), rot=95, fit=1.8, tint="#cdbba0")
+    kit.prop("rock_moss_1", (49.2, -6.6, 0), rot=15, height=0.5, tint="#b8b4a8")
+
     # --- lights
     sun = kit.light("sun", "SUN", (0, -20, 30), 4.0, "#fff1dc", size=0.01)
     ctx["sun"] = sun

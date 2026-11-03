@@ -121,12 +121,16 @@ def S(at, what, cam, step=2, **kw):
 NSTAGE = lambda h, **r: dict(stage={"hut": h}, refl=r)
 
 # 01 the rule
-S(0, "neighbour at his window, cartwheel in the glass", still((-3.35, -3.6, 1.5), (-3.2, 0, 1.4), 26), 1,
+S(0, "warning: his face and the glass, the reflection already mid-cartwheel", move(((-3.2, -2.9, 1.55), (-3.1, 0, 1.4)), ((-3.15, -2.2, 1.55), (-3.1, 0, 1.4)), 30, 34), 1,
   **NSTAGE(4, r_neighbour="stage"))
-S("L01.2", "high wide of the sand, figures and reflections, the magenta figure", still((12, -25, 3.4), (12.2, -9, 0.4), 22), 2,
+S("L01.2", "glass close: the cartwheel", move(((-2.7, -1.9, 1.35), (-2.7, 0, 1.3)), ((-2.7, -1.5, 1.35), (-2.7, 0, 1.3)), 32, 36), 1,
+  **NSTAGE(4, r_neighbour="stage"))
+S("L01.3", "punch: his face, the glass behind", move(((-3.0, -2.0, 1.62), (-3.4, -0.5, 1.55)), ((-3.0, -1.6, 1.62), (-3.4, -0.5, 1.55)), 38, 44), 1,
+  **NSTAGE(4, r_neighbour="stage"))
+S("L02", "the glass alone, landing", move(((-3.0, -1.7, 1.45), (-3.0, 0, 1.45)), ((-3.0, -1.3, 1.45), (-3.0, 0, 1.45)), 30, 36), 1,
+  **NSTAGE(4, r_neighbour="stage"))
+S("L02.2", "high wide of the sand, figures and reflections, the magenta figure", move(((12, -25, 3.4), (12.2, -9, 0.4)), ((12, -22, 3.2), (12.2, -9, 0.4)), 22, 24), 2,
   refl={"r_dieter": "sand", "r_shopper": "sand", "r_date_f": "sand", "r_me": {"kind": "sand", "scale": 1.6}})
-S("L02", "close on the neighbour", still((-3.5, -2.5, 1.62), (-3.55, -0.8, 1.55), 40))
-S("L02.2", "the glass alone", still((-3.0, -1.7, 1.45), (-3.0, 0, 1.45), 28), 1, **NSTAGE(4, r_neighbour="stage"))
 S("L04", "dieter passes the bakery", still((BX - 0.3, 36.8, 1.5), (BX + 0.4, 41.5, 1.35), 26))
 S("L04.2", "his reflection face down in the cake", still((BX + 0.2, 38.2, 1.45), (BX + 0.2, 43.0, 1.3), 28), 2,
   refl={"r_dieter": "glass"})
@@ -246,6 +250,11 @@ for i, (at, what, cam, step, kw) in enumerate(SHOTS):
         s["at"] = at
     if kw.get("follow"):
         s["follow"] = kw["follow"]
+    if len(cam) == 1 and not kw.get("follow"):
+        # quality pass 2026-11-03: no still picture holds; every single-key shot gets a slow 5% push toward its target
+        k0 = cam[0]
+        lo, tg = k0[1], k0[2]
+        s["cam"] = [list(k0), [1, [round(lo[j] + 0.05 * (tg[j] - lo[j]), 3) for j in range(3)], list(tg), k0[3] + 1]]
     shots.append(s)
     x = {k: v for k, v in kw.items() if k in ("stage", "refl", "puddle", "dof", "ghost", "gloom", "schair", "hidecr")}
     if x:
@@ -560,6 +569,16 @@ cues = [
 ]
 
 sfx = [
+    # the opening: a soft glassy thud on the warning's last word, a soft whoosh on each hard cut
+    {"at": "L01>", "kind": "thud", "db": -9, "dur": 0.8},
+    {"at": "L01.2", "kind": "whoosh", "db": -22, "dur": 0.4},
+    {"at": "L01.3", "kind": "whoosh", "db": -21, "dur": 0.4},
+    {"at": "L02", "kind": "whoosh", "db": -22, "dur": 0.4},
+    {"at": "L02.2", "kind": "whoosh", "db": -20, "dur": 0.5},
+    {"at": "L45", "kind": "thud", "db": -10, "dur": 1.0},
+    {"at": "L62", "kind": "whoosh", "db": -22, "dur": 0.6},
+    {"at": "L65", "kind": "thud", "db": -16, "dur": 0.8},
+    {"at": "L74", "kind": "whoosh", "db": -24, "dur": 0.6},
     {"at": "L25", "kind": "thud", "db": -6, "dur": 1.2},
     {"at": "L28", "kind": "creak", "db": -16, "dur": 1.4},
     {"at": "L39", "kind": "creak", "db": -14, "dur": 1.2},
@@ -603,7 +622,9 @@ story = {
     "shotx": shotx,
     "acting": acting,
     "cues": cues,
-    "fx": [],
+    "fx": [{"at": "L01.3", "kind": "punch", "dur": 0.35, "zoom": 1.1},
+           {"at": "L02.2", "kind": "punch", "dur": 0.35, "zoom": 1.08},
+           {"at": "L45", "kind": "punch", "dur": 0.4, "zoom": 1.12}],
     "music": {"root": 43, "mode": "dorian", "bpm": 76, "seed": 50,
               "sections": [
                   {"at": 0, "voices": ["pulse", "pad"], "energy": 0.22},
@@ -618,6 +639,7 @@ story = {
                   {"at": "L74", "voices": ["drone"], "energy": 0.4},
               ]},
     "sound": {"floor": "grass", "steps_db": -22,
+              "rev": 2,
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "end", "lufs": -30},
                   {"kind": "water", "from": 0, "to": "end", "lufs": -38},
