@@ -29,7 +29,7 @@ for ln in lines:
 out_lines.append({"id": "P03", "pause": LOOP, "chunks": []})
 lines = out_lines
 # the word check: these lines a touch slower so a swallowed word comes through
-TEMPO = {"L05": 0.9, "L06": 0.92, "L56": 0.8, "L59": 0.85, "L11": 0.85, "L13": 0.85, "L18": 0.92, "L48": 0.9, "L65": 0.85, "L66": 0.84}
+TEMPO = {"L56": 0.88, "L05": 0.9, "L06": 0.92, "L59": 0.85, "L11": 0.85, "L13": 0.85, "L18": 0.92, "L48": 0.9, "L65": 0.85, "L66": 0.84}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -192,8 +192,8 @@ def look(x, y):
 # S01 the hook (L01, L02): golden dusk in the orchard rows, my glowing pink trail and the dark square prints one stride
 # beside it, my face in frame. Close, lit to read, no fog. Characters face -y at yaw 0, so I walk toward the camera.
 HY = OY + 17.0
-shot("S01", 0, cam(([0.5, HY - 4.8, 1.3], [-0.2, HY - 0.9, 0.85], 30), ([0.3, HY - 3.8, 1.2], [-0.2, HY - 1.0, 0.85], 30), hand=0.004),
-     {"me": {"pos": O(0.0, 17.0), "end": O(0.0, 16.4), "yaw": 0, "expr": "worried"}}, tod="hook")
+shot("S01", 0, cam(([-0.55, HY - 3.3, 0.65], [-0.55, HY, 0.8], 22), ([-0.55, HY - 2.8, 0.65], [-0.55, HY - 0.3, 0.8], 22), hand=0.003),
+     {"me": {"pos": O(0.0, 17.0), "end": O(0.0, 16.5), "yaw": 0, "expr": "worried"}}, tod="hook")
 cue(0, "expo", ev=-0.1)
 cue("L03", "expo", ev=0.0)
 # the hook only: thin fog, warm gold on the face, back to the film's look at the cut to S02
@@ -204,7 +204,7 @@ acting["me"].append({"at": "L01.2-0.1", "look": [-1.0, 0.4]})
 acting["me"].append({"at": "L01.3", "look": [0, 0]})
 trail(0, "hk_p", PINK, [[O(0, 2.6), O(0, 66.0)]], strength=3.4)
 trail(0, "hk_pw", PINK, walker="me", strength=3.4)
-trail(0, "hk_s", "#070b05", [[O(geo.LEFT, 40.0), O(geo.LEFT, 3.0)]], kind="dark", gap=1.7, lat=0.42, size=(1.0, 1.0))
+trail(0, "hk_s", "#070b05", [[O(geo.LEFT, 40.0), O(geo.LEFT, 3.0)]], kind="dark", gap=1.7, lat=0.42, size=(1.1, 1.1))
 # S02 (L02, "Especially if it's SQUARE"): high and close on one dark square beside a glowing pink print
 shot("S02", "L02", cam(([-0.5, HY - 3.2, 2.9], [-0.55, HY - 3.2, 0.0], 30), ([-0.5, HY - 3.2, 2.2], [-0.55, HY - 3.2, 0.0], 30), hand=0.003),
      {}, tod="dusk")
@@ -330,7 +330,7 @@ cue("L27", "daywin", to=1.0, dur=1.2)
 rough("L27", O(geo.LEFT, 38.4), on=False)
 shot("S34", "L28", cam(([-2.6, 4.0, 3.8], [-2.6, 1.0, 0.1], 30), ([-2.6, 3.4, 3.4], [-2.6, 1.0, 0.1], 30)), {})
 trail("L28", "sq3", "#1d2a16", [[O(geo.LEFT, 37.8), O(geo.LEFT, 12.0), O(-1.6, 6.0), O(-2.6, 1.5)]], kind="dark", gap=1.3, lat=0.32)
-shot("S35", "L29", cam(([-2.6, -1.5, F + 1.5], [-2.6, 1.0, F + 1.4], 34), ([-2.6, -1.4, F + 1.5], [-2.6, 1.0, F + 1.35], 34), hand=0.004), {})
+shot("S35", "L29", cam(([-2.6, -0.5, 2.3], [-2.6, 1.15, 2.2], 26), ([-2.6, -0.3, 2.3], [-2.6, 1.15, 2.2], 26), hand=0.004), {})
 rough("L29", O(-2.6, 1.15), yaw=0)
 shot("S36", "L29.3", cam(([0.3, -0.4, F + 1.7], [-2.6, -1.1, F + 1.55], 40), ([0.25, -0.4, F + 1.7], [-2.6, -1.1, F + 1.55], 40)),
      {"me": {"pos": [-2.6, -1.1, F], "yaw": 120, "arms": [0, 0], "expr": "terrified", "tremble": 1}})
@@ -362,7 +362,7 @@ shot("S44", "L36", cam(([0.35, -1.5, F + 1.45], [-1.0, 2.7, 2.35], 28), ([0.3, -
 rough("L36", RPOS, yaw=0)
 shot("S45", "L37", cam(([8.0, 1.2, 2.5], [-0.5, 2.0, 2.0], 44), ([7.6, 1.3, 2.5], [-0.5, 2.0, 2.0], 44), hand=0.004),
      {"me": {"pos": [-0.35, 1.25, F], "yaw": 50, "head": [-40, 0], "expr": "scared", "tremble": 0.8}})
-shot("S46", "L38", cam(([-1.15, 1.7, 2.3], [-1.3, 2.28, 2.28], 50), ([-1.2, 1.55, 2.3], [-1.3, 2.28, 2.28], 50), hand=0.003), {})
+shot("S46", "L38", cam(([0.0, -0.4, 2.3], [-1.05, 2.25, 2.1], 30), ([-0.05, -0.2, 2.3], [-1.05, 2.25, 2.1], 30), hand=0.003), {})
 shot("S47", "L39", cam(([-0.1, 1.25, F + 1.7], [0.9, 14.0, 0.7], 28), ([-0.05, 1.25, F + 1.7], [0.9, 14.5, 0.7], 28)), {})
 strength("L39", "main", 4.6, 0.6)
 shot("S48", "L40", cam(([0.1, 5.5, 0.28], [0.0, 16.0, 0.05], 30), ([0.1, 7.5, 0.28], [0.0, 17.0, 0.05], 30)), {})
@@ -383,17 +383,19 @@ shot("S54", "L44.3", cam(([0.6, 46.0, 1.6], [-1.1, 38.8, 2.0], 45), ([0.6, 45.5,
 rough("L44.3", O(geo.LEFT, 38.9), yaw=180)
 shot("S55", "L45", cam(([-0.6, 33.0, 5.2], [-0.6, 32.0, 0.0], 30), ([-0.6, 32.0, 4.6], [-0.6, 31.0, 0.0], 30)), {})
 rough("L45", O(geo.LEFT, 38.9), on=False)
-shot("S56", "L46", cam(([0.4, -2.3, 1.3], [0.0, 2.0, 1.0], 34), ([0.4, -2.3, 1.3], [0.0, 2.0, 1.0], 34), follow="me"),
+shot("S56", "L46", cam(([0.4, -2.3 - OY, 1.5], [0.0, 2.0 - OY, 1.1], 34), ([0.4, -2.3 - OY, 1.5], [0.0, 2.0 - OY, 1.1], 34), follow="me"),
      {"me": {"pos": O(0.0, 50.6), "end": O(0.0, 52.9), "yaw": 180, "expr": "terrified", "run": True}})
+cue("L46", "expo", ev=0.4)
+cue("L47", "expo", ev=0.0)
 shot("S57", "L47", cam(([0.4, 54.0, 0.4], [0.0, 69.0, 0.9], 30), ([0.4, 56.0, 0.4], [0.0, 69.0, 0.9], 30)), {})
 shot("S58", "L48", cam(([2.0, 66.4, 1.3], [0.0, 69.4, 0.7], 30), ([1.95, 66.6, 1.3], [0.0, 69.4, 0.7], 30)), {})
-# the bench: Nan sits, slippers in the grass
+# the bench: Nana sits, slippers in the grass
 shot("S59", "L49", cam(([0.9, 66.0, 1.0], [0.1, 69.5, 0.85], 32), ([0.85, 66.2, 1.0], [0.1, 69.5, 0.85], 32)),
      {"nan": {"pos": O(0.35, BENCH := geo.BENCH_Y - 0.05), "yaw": 0, "sit": True, "expr": "neutral"}})
 shot("S60", "L50", cam(([0.55, 67.2, 1.35], [0.3, 69.5, 1.3], 40), ([0.5, 67.3, 1.35], [0.3, 69.5, 1.3], 40)),
      {"nan": {"pos": O(0.35, geo.BENCH_Y - 0.05), "yaw": 0, "sit": True, "expr": "soft"}})
 shot("S61", "L51", cam(([0.0, 30.0, 6.0], [0.0, 31.0, 0.0], 30), ([0.0, 31.0, 5.6], [0.0, 31.5, 0.0], 30)), {})
-# a past night, silvery: I walk my old paths asleep, inside my own prints; Nan follows inside them
+# a past night, silvery: I walk my old paths asleep, inside my own prints; Nana follows inside them
 shot("S62", "L52", cam(([1.9, 16.2, 1.3], [0.0, yk(30), 0.9], 36), ([1.9, 16.6, 1.3], [0.0, yk(31), 0.9], 36)),
      {"me": {"pos": O(0.0, yk(27)), "end": O(0.0, yk(27) + 1.9), "yaw": 180, "expr": "shut", "arms": [0, 0]}}, tod="silver")
 trail("L52", "pastpink", PINK, [[O(0, yk(28)), O(0, yk(47))]], strength=2.4, per_print=True,
@@ -419,15 +421,15 @@ shot("S68", "L57", cam(([0.65, 67.4, 1.35], [0.45, 69.5, 1.3], 40), ([0.6, 67.5,
 shot("S69", "L58", cam(([0.1, 62.6, 1.15], [0.0, 67.2, 0.95], 34), ([0.1, 63.0, 1.15], [0.0, 67.2, 0.95], 34)),
      {"nan": {"pos": O(0.55, 67.6), "end": O(0.55, 66.4), "yaw": 0, "arms": [0, 0], "expr": "soft"},
       "me": {"pos": O(-0.55, 67.6), "end": O(-0.55, 66.4), "yaw": 0, "expr": "soft"}})
-trail("L58", "wp", PINK, walker="me", strength=5.0, lat=0.16)
-trail("L58", "wb", BLUE, walker="nan", strength=5.0, lat=0.14)
+trail("L58", "wp", PINK, walker="me", strength=3.4, lat=0.16, rise=0.6)
+trail("L58", "wb", BLUE, walker="nan", strength=3.4, lat=0.14, rise=0.6)
 cue("L58-0.4", "pairlight", to=1.0, dur=0.8)
 cue("L58", "lamp", to=0.6, dur=1.5)
-shot("S70", "L59", cam(([0.0, 69.5, 0.45], [0.0, 62.0, 0.1], 30), ([0.0, 68.7, 0.45], [0.0, 62.0, 0.1], 30)),
+shot("S70", "L59", cam(([0.0, 71.4, 1.1], [0.0, 62.0, 0.3], 30), ([0.0, 70.6, 1.1], [0.0, 62.0, 0.3], 30)),
      {"nan": {"pos": O(0.55, 66.4), "end": O(0.55, 64.8), "yaw": 0}, "me": {"pos": O(-0.55, 66.4), "end": O(-0.55, 64.8), "yaw": 0}})
 off("L61", "wp", 0.05)
 off("L61", "wb", 0.05)
-shot("S71", "L60", cam(([2.7, 0.9, 1.9], [0.0, 3.0, 1.0], 34), ([2.7, 1.2, 1.9], [0.0, 2.6, 1.0], 34)),
+shot("S71", "L60", cam(([6.0, 4.6, 1.7], [0.0, 2.8, 1.0], 36), ([5.8, 4.2, 1.7], [0.0, 2.5, 1.0], 36)),
      {"nan": {"pos": [0.35, OY + 4.0, 0.0], "end": [0.35, OY + 1.2, F], "yaw": 180, "arms": [0, 35], "expr": "soft"},
       "me": {"pos": [-0.3, OY + 4.0, 0.0], "end": [-0.3, OY + 1.2, F], "yaw": 180, "arms": [0, 0], "side": [0, 0]}})
 shot("S72", "L61", cam(([0.3, -0.4, F + 1.7], [-2.6, -1.1, F + 1.55], 40), ([0.25, -0.4, F + 1.7], [-2.6, -1.1, F + 1.55], 40)),
@@ -435,8 +437,8 @@ shot("S72", "L61", cam(([0.3, -0.4, F + 1.7], [-2.6, -1.1, F + 1.55], 40), ([0.2
 cue("L61", "daywin", to=0.5, dur=0.5)
 cue("L61", "expo", ev=-0.8)
 shot("S73", "L62", cam(([0.0, 1.3, 2.7], [0.0, 60.0, 0.8], 30), ([0.0, 1.5, 2.7], [0.0, 60.0, 0.8], 30)), {})
-trail("L62", "fp", PINK, [[O(-0.55, 66.4), O(-0.55, 2.8)]], strength=3.4)
-trail("L62", "fb", BLUE, [[O(0.55, 66.4), O(0.55, 2.8)]], strength=3.4)
+trail("L62", "fp", PINK, [[O(-0.55, 66.4), O(-0.55, 2.8)]], strength=3.4, rise=0.6)
+trail("L62", "fb", BLUE, [[O(0.55, 66.4), O(0.55, 2.8)]], strength=3.4, rise=0.6)
 shot("S74", "L63", cam(([0.2, 9.5, 0.55], [0.0, 12.0, 0.0], 40), ([0.2, 9.8, 0.5], [0.0, 12.0, 0.0], 40)), {})
 trail("L64", "sq_end", "#1d2a16", [[O(geo.LEFT, 56.0), O(geo.LEFT, 66.0), O(-1.35, geo.BENCH_Y - 0.1)]], kind="dark", gap=1.3, lat=0.32)
 shot("S75", "L64", cam(([-0.2, 57.0, 3.2], [-0.9, 68.6, 0.4], 38), ([-0.2, 57.5, 3.0], [-0.9, 68.6, 0.4], 38)), {})
@@ -508,7 +510,7 @@ story = {
                "dawn. Each dawn a new trail of huge square prints that do not glow runs beside my path and ends a little "
                "nearer the house, where something built from far too few blocks stands still all day.",
     "twist": "The prints that never fade are my own doing. Every night since I moved to town I have sleepwalked back to the "
-             "orchard and down my old rows, stepping inside my own prints so they never go out, and Nan follows my glow and "
+             "orchard and down my old rows, stepping inside my own prints so they never go out, and Nana follows my glow and "
              "watches it home. Tonight is the first time I come out to her awake, and I still walk them every night.",
     "world": "A small farm town at harvest week: a cobbled dusk street, a townsman's kitchen, and an apple orchard of seven "
              "long rows in fog behind a whitewashed farmhouse, with a bench at the end of the far row.",
@@ -518,7 +520,7 @@ story = {
     "key_stroke": 2,
     "gap": 0.12,
     "tail": 0,
-    "look": {"fog": "#8a98a6", "fog_density": 0.028, "fog_start": 6.0, "sky": "#8a98a6", "sky_strength": 0.8,
+    "look": {"fog": "#9bb0c8", "fog_density": 0.028, "fog_start": 6.0, "sky": "#4f8fe0", "sky_strength": 0.8,
              "exposure": 0.0, "flash_safe": True,
              "polish": {"quiet": [["L55", "L63"]], "reveal": ["L36"]}},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.02], "saturation": 1.0, "contrast": 1.06,

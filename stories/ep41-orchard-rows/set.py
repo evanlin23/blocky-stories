@@ -1,4 +1,4 @@
-"""Orchard Rows: a cobbled dusk street, a townsman's kitchen, a garden path, and Nan's orchard (batch 4, ep41).
+"""Orchard Rows: a cobbled dusk street, a townsman's kitchen, a garden path, and Nana's orchard (batch 4, ep41).
 Built from kit.py's parts; nothing here is shared with another story's set.
 
 Places are in geo.py. The glowing footprints are the rule's marker: soles that glow on every character (added to
@@ -102,14 +102,16 @@ def empty(kit, name, loc=(0, 0, 0), parent=None):
 # ------------------------------------------------------------------------------------------------ the world
 TOD = {
     #           sun colour, sun power, sun travel direction, world colour, world power, fog colour, exposure
-    "dusk":    ("#ffb472", 4.8, (0.30, 0.90, -0.30), "#d8b79c", 0.55, "#b9a291", 0.0),
-    "hook":    ("#ffc070", 5.0, (0.30, 0.90, -0.30), "#e8c698", 0.6, "#dcc096", 0.0),
+    "dusk":    ("#ffb472", 4.8, (0.30, 0.90, -0.30), "#6a9ae6", 0.6, "#a7bfe0", 0.0),
+    "hook":    ("#ffc070", 5.0, (-0.93, 0.28, -0.24), "#5b9bf0", 0.65, "#9ec0ea", 0.0),
     "night":   ("#8aa6e0", 0.6, (-0.45, 0.55, -0.70), "#1c2438", 0.2, "#2a3548", 0.55),
-    "dawn":    ("#c4d6f2", 3.0, (-1.00, -0.12, -0.20), "#9fb0c2", 0.70, "#97a6b6", 0.15),
-    "day":     ("#ffe6bc", 4.4, (0.15, -0.90, -0.35), "#d8d2c0", 0.80, "#c9c6b8", 0.0),
-    "sunrise": ("#ffbe80", 4.6, (0.20, -0.95, -0.14), "#e8c8a0", 0.75, "#dcbc9a", 0.0),
+    "dawn":    ("#c4d6f2", 3.0, (-1.00, -0.12, -0.20), "#7aa6ea", 0.75, "#a2bde6", 0.15),
+    "day":     ("#ffe6bc", 4.4, (0.15, -0.90, -0.35), "#7eb0f0", 0.85, "#c0d4e8", 0.0),
+    "sunrise": ("#ffbe80", 4.6, (0.20, -0.95, -0.14), "#86aee8", 0.8, "#dcc0a0", 0.0),
     "silver":  ("#b4c4e6", 1.6, (-0.50, 0.40, -0.70), "#4a5670", 0.40, "#56637a", 0.55),
 }
+# dusk and dawn fog at about half (critic r5)
+FOGMUL = {"hook": 0.5, "dusk": 0.5, "dawn": 0.5, "sunrise": 0.5, "day": 0.5}
 # gains of the room and street lights per time of day: lamps (the town's), kitchen, myroom, bedroom
 ROOM = {"hook": (0.75, 1.0, 0.3, 0.3), "dusk": (0.75, 1.0, 0.3, 0.3), "night": (1.0, 0.35, 1.0, 0.8), "dawn": (0.1, 0.45, 0.3, 0.3),
         "day": (0.0, 0.6, 0.3, 0.3), "sunrise": (0.1, 0.5, 0.3, 0.3), "silver": (0.4, 0.0, 0.0, 0.0)}
@@ -174,13 +176,14 @@ def mats(kit):
     M["puddle"] = kit.plastic("#2b3640", 0.04, name="puddle", spec=0.9)
     M["mat"] = kit.plastic("#4a3a2c", 0.98, name="doormat")
     M["dark"] = kit.plastic("#05060a", 1.0, name="cut black")
-    M["clay"] = kit.grime("#7a4535", 0.55, 9.0, name="clay rough", rough=1.0)
+    M["clay"] = kit.plastic("#a8482e", 0.85, name="clay rough")
     M["sack"] = kit.checker("#5e4529", "#503a22", 80.0, name="sack weave", rough=1.0)
     M["glint"] = kit.emit("#bcd4ff", 4.0, name="glint")
     M["rsil"] = kit.plastic("#07090d", 0.9, name="rough silhouette")
     M["cutblack"] = kit.emit("#000000", 0.0, name="cut unlit")
     M["mist"] = kit.emit("#8a98a6", 0.05, name="mist in the cut")
-    M["sqdark"] = kit.plastic("#18200f", 0.95, name="wet dark")
+    M["sqdark"] = kit.plastic("#2a3a1c", 0.85, name="wet dark")
+    M["wetrim"] = kit.plastic("#8aa05a", 0.25, name="wet rim", spec=0.8)
     M["sunk"] = kit.plastic("#16200f", 1.0, name="pressed")
     M["metalrod"] = kit.metal("#6a6c70", 0.5, name="ladder")
     M["bag"] = kit.plastic("#4a5a3a", 0.9, name="bag")
@@ -423,9 +426,9 @@ def build_rough(kit, ctx, M):
         hp("band c", (0.2, 0.4, 0.07), (cx, -0.25, -0.22))
     # the cuts: black inside, set back, with one cold glint deep in each eye hole
     for ex, ez, ew, eh in ((-0.2, 0.1, 0.2, 0.2), (0.2, 0.08, 0.2, 0.2)):
-        hp("eye cut", (ew, 0.3, eh), (ex, -0.1, ez), M["cutblack"])
-        hp("glint", (0.03, 0.02, 0.03), (ex + 0.03, -0.252, ez - 0.015), M["glint"])
-    hp("mouth cut", (0.5, 0.3, 0.07), (0, -0.1, -0.22), M["cutblack"])
+        hp("eye cut", (ew - 0.03, 0.3, eh - 0.03), (ex, 0.0, ez), M["cutblack"])
+        hp("glint", (0.03, 0.02, 0.03), (ex + 0.03, -0.168, ez - 0.015), M["glint"])
+    hp("mouth cut", (0.5, 0.3, 0.07), (0, 0.0, -0.22), M["cutblack"])
     head.rotation_euler = (0.10, 0.0, 0.035)
     ctx["rough"] = root
     ctx["rough_parts"] = [root] + list(root.children_recursive)
@@ -458,8 +461,8 @@ def build_lights(kit, ctx):
     kit.light("benchl", "POINT", (0.0, OY + 66.5, 3.4), 420, "#a8bce8", size=0.6)
     kit.light("hookkey", "POINT", (0.9, OY + 13.6, 1.9), 110, "#ffc878", size=0.5)
     kit.light("pairl", "POINT", (0, 0, -60), 260, "#ffd9a8", size=0.4)
-    kit.light("rkey", "POINT", (0, 0, -60), 150, "#b8c8ea", size=0.25)
-    kit.light("rrim", "POINT", (0, 0, -60), 480, "#8fb4ff", size=0.3)
+    kit.light("rkey", "POINT", (0, 0, -60), 140, "#c4d4f4", size=0.25)
+    kit.light("rrim", "POINT", (0, 0, -60), 760, "#8fb4ff", size=0.3)
 
 
 def build_extras(kit, ctx, M):
@@ -585,12 +588,19 @@ def build_trails(kit, ctx, tl):
     for c in cues_of(tl, "trail_str"):
         strs.setdefault(c["id"], []).append(c)
 
-    def proto(w, l, h):
-        key = (w, l, h)
+    def proto(w, l, h, boot=False):
+        key = (w, l, h, boot)
         if key not in PRINT:
-            vs = kit.box_verts(w, l, h, (0, 0, h / 2))
+            if boot:
+                # a blocky boot sole: a wide toe block and a narrower heel block, toe toward local -y
+                vs = list(kit.box_verts(w, l * 0.46, h, (0, -l * 0.27, h / 2))) + \
+                    list(kit.box_verts(w * 0.7, l * 0.3, h, (0, l * 0.35, h / 2)))
+                fc = list(kit.BOX_FACES) + [tuple(i + 8 for i in f) for f in kit.BOX_FACES]
+            else:
+                vs = kit.box_verts(w, l, h, (0, 0, h / 2))
+                fc = kit.BOX_FACES
             me = bpy.data.meshes.new(f"print {key}")
-            me.from_pydata(vs, [], kit.BOX_FACES)
+            me.from_pydata(vs, [], fc)
             me.update()
             PRINT[key] = me
         return PRINT[key]
@@ -607,7 +617,11 @@ def build_trails(kit, ctx, tl):
         sw, sl, sh = (0.2, 0.34, 0.008) if glow else (0.7, 0.7, 0.014)
         if c.get("size"):
             sw, sl = c["size"]
-        mesh = proto(sw, sl, sh)
+        boot = glow and c["color"].lower() == "#ff8ec4"     # my prints are boot soles
+        if boot:
+            sw, sl = sw * 1.2, sl * 1.2
+        mesh = proto(sw, sl, sh, boot)
+        rim_mesh = None if glow else proto(sw + 0.4, sl + 0.4, 0.006)
         gap, lat, every = c.get("gap", 0.62), c.get("lat", 0.16), c.get("every", 1)
         pts = []   # (x, y, rz, birth)
         if c.get("walker"):
@@ -636,7 +650,7 @@ def build_trails(kit, ctx, tl):
                 d -= seg
         base_col = c["color"]
         per = bool(c.get("per_print")) or bool(c.get("walker"))
-        z0 = c.get("z", 0.0) + (0.003 if glow else 0.004)
+        z0 = c.get("z", 0.0) + (0.003 if glow else 0.012)
         g.items = []
         g.mats = []
         if glow:
@@ -669,6 +683,14 @@ def build_trails(kit, ctx, tl):
                 near = [f["t"] for f in events if math.hypot(f["x"] - x, f["y"] - y) <= b.get("radius", 0.5)]
                 ev = min(near) if near else None
             g.items.append({"ob": ob, "birth": birth, "node": node, "ev": ev, "on": False})
+            if rim_mesh is not None:
+                rb = bpy.data.objects.new(f"print rim {tid} {i}", rim_mesh)
+                bpy.context.scene.collection.objects.link(rb)
+                rb.location = (x, y, z0 - 0.006)
+                rb.rotation_euler = (0, 0, rz)
+                rb.hide_render = True
+                _assign(rb, ctx["M"]["wetrim"])
+                g.items.append({"ob": rb, "birth": birth, "node": None, "ev": None, "on": False})
         g.shared_node = shared_node if glow else None
         g.boost = c.get("boost")
         g.per = per
@@ -693,6 +715,8 @@ def update_trails(ctx, t):
         if g.off and t >= g.off["t"]:
             offg = 1.0 - ss((t - g.off["t"]) / max(0.3, g.off.get("dur", 0.4)))
         gate = (ss((t - g.t_on) / max(0.3, g.rise)) if t >= g.t_on else 0.0) * offg
+        if g.t_on <= 0.001:   # the hook's trails are already there on frame 0
+            gate = offg
         s = ramp_val(g.str_cues, "value", t, g.base / 0.6) * 0.45
         if g.glow and not g.per:
             g.shared_node.inputs["Strength"].default_value = s * gate if g.shared_node else 0.0
@@ -700,6 +724,8 @@ def update_trails(ctx, t):
         for it in g.items:
             if g.per or g.boost:
                 f = ss((t - it["birth"]) / max(0.3, g.rise)) if t >= it["birth"] else 0.0
+                if it["birth"] <= 0.06 and g.t_on <= 0.001:
+                    f = 1.0
                 f *= offg
                 if g.per and g.glow:
                     mult = 1.0
@@ -749,7 +775,7 @@ def init_chars(kit, story, ctx):
             if leg:
                 bw = float(spec.get("body_width", 1.0))
                 kit.box(f"{name}.sole{sx}", (1.1 * bw, 1.16, 0.1), (0, 0.0, -2.0), sole, leg)
-    # Nan's round wire glasses: thin silver rims over the eyes, no lenses
+    # Nana's round wire glasses: thin silver rims over the eyes, no lenses
     hg = bpy.data.objects.get("nan.headg")
     if hg:
         R_ = 0.62
@@ -811,7 +837,7 @@ def animate(kit, story, tl, t, ctx):
     fl = (*lin(hexrgb(fcol)), 1)
     for n in ctx["fog_nodes"]:
         n.inputs["Color"].default_value = fl
-    fk = ramp_val(cues_of(tl, "fogk"), "to", t, 0.25)
+    fk = ramp_val(cues_of(tl, "fogk"), "to", t, 0.25) * FOGMUL.get(tod, 1.0)
     for n in ctx["fog_mul"]:
         n.inputs[1].default_value = -ctx["fog_d"] * fk
     over["hookkey"] = ramp_val(cues_of(tl, "hookkey"), "to", t, 1.0)
@@ -823,7 +849,7 @@ def animate(kit, story, tl, t, ctx):
     over["benchl"] = 1.0 if tod in ("night", "silver") else 0.0
     over["kitchen"], over["myroom"], over["bedroom"] = kit_g, my_g, bed_g
     over["tkit"] = 1.0
-    # --- the pair light: a soft lantern glow that follows the two walkers (the sneaky pair, then Nan and me)
+    # --- the pair light: a soft lantern glow that follows the two walkers (the sneaky pair, then Nana and me)
     pl = ramp_val(cues_of(tl, "pairlight"), "to", t, 0.0)
     over["pairl"] = pl
     if pl > 0:

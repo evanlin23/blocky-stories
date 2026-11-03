@@ -3,7 +3,7 @@
  "title": "The Trail Beside Mine Doesn't GLOW 👣",
  "made_for_kids": false,
  "premise": "In this town every footprint glows in its owner's colour until the next sunrise. Back in my grandmother's orchard for harvest week, my old pink paths still glow in every row, though everyone else's prints fade at dawn. Each dawn a new trail of huge square prints that do not glow runs beside my path and ends a little nearer the house, where something built from far too few blocks stands still all day.",
- "twist": "The prints that never fade are my own doing. Every night since I moved to town I have sleepwalked back to the orchard and down my old rows, stepping inside my own prints so they never go out, and Nan follows my glow and watches it home. Tonight is the first time I come out to her awake, and I still walk them every night.",
+ "twist": "The prints that never fade are my own doing. Every night since I moved to town I have sleepwalked back to the orchard and down my old rows, stepping inside my own prints so they never go out, and Nana follows my glow and watches it home. Tonight is the first time I come out to her awake, and I still walk them every night.",
  "world": "A small farm town at harvest week: a cobbled dusk street, a townsman's kitchen, and an apple orchard of seven long rows in fog behind a whitewashed farmhouse, with a bench at the end of the far row.",
  "voice": {
   "voice": "am_adam",
@@ -20,10 +20,10 @@
  "gap": 0.12,
  "tail": 0,
  "look": {
-  "fog": "#8a98a6",
+  "fog": "#9bb0c8",
   "fog_density": 0.028,
   "fog_start": 6.0,
-  "sky": "#8a98a6",
+  "sky": "#4f8fe0",
   "sky_strength": 0.8,
   "exposure": 0.0,
   "flash_safe": true,
@@ -254,16 +254,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Here, every",
-     "Here, every"
+     "Every footprint",
+     "Every footprint"
     ],
     [
-     "footprint glows",
-     "footprint glows"
+     "here glows.",
+     "here glows."
     ],
     [
-     "until sunrise.",
-     "until sunrise."
+     "Except the ones",
+     "Except the ones"
+    ],
+    [
+     "beside MINE.",
+     "beside mine."
     ]
    ]
   },
@@ -384,8 +388,8 @@
      "Except mine."
     ],
     [
-     "At Nan's,",
-     "At Nan's,"
+     "At Nana's,",
+     "At Nana's,"
     ],
     [
      "my prints",
@@ -402,8 +406,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Nan raised me",
-     "Nan raised me"
+     "Nana raised me",
+     "Nana raised me"
     ],
     [
      "in the orchard",
@@ -491,8 +495,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Nan said she",
-     "Nan said, she"
+     "Nana said she",
+     "Nana said, she"
     ],
     [
      "always left the",
@@ -691,8 +695,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Nan didn't look",
-     "Nan didn't look"
+     "Nana didn't look",
+     "Nana didn't look"
     ],
     [
      "up. She just",
@@ -901,8 +905,8 @@
      "boots on."
     ],
     [
-     "Nan's bed was",
-     "Nan's bed was"
+     "Nana's bed was",
+     "Nana's bed was"
     ],
     [
      "EMPTY.",
@@ -1223,8 +1227,8 @@
      "The bench, where"
     ],
     [
-     "Nan and I",
-     "Nan and I"
+     "Nana and I",
+     "Nana and I"
     ],
     [
      "sat every",
@@ -1348,8 +1352,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Nan followed my",
-     "Nan followed my"
+     "Nana followed my",
+     "Nana followed my"
     ],
     [
      "glow out every",
@@ -1392,31 +1396,27 @@
    "who": "narrator",
    "chunks": [
     [
-     "When I looked",
-     "When I looked"
+     "I looked back",
+     "I looked back"
     ],
     [
-     "back down the",
-     "back down the"
+     "down the row.",
+     "down the row."
     ],
     [
-     "row, there was",
-     "row, there was"
-    ],
-    [
-     "only FOG.",
-     "only fog."
+     "Only FOG.",
+     "Only fog."
     ]
    ],
-   "tempo": 0.8
+   "tempo": 0.88
   },
   {
    "id": "L57",
    "who": "narrator",
    "chunks": [
     [
-     "Nan said I",
-     "Nan said I"
+     "Nana said I",
+     "Nana said I"
     ],
     [
      "always did walk",
@@ -1639,33 +1639,33 @@
     [
      0.0,
      [
-      0.5,
-      212.2,
-      1.3
+      -0.55,
+      213.7,
+      0.65
      ],
      [
-      -0.2,
-      216.1,
-      0.85
+      -0.55,
+      217.0,
+      0.8
      ],
-     30
+     22
     ],
     [
      1.0,
      [
-      0.3,
-      213.2,
-      1.2
+      -0.55,
+      214.2,
+      0.65
      ],
      [
-      -0.2,
-      216.0,
-      0.85
+      -0.55,
+      216.7,
+      0.8
      ],
-     30
+     22
     ]
    ],
-   "hand": 0.004,
+   "hand": 0.003,
    "step": 2
   },
   {
@@ -2863,29 +2863,29 @@
      0.0,
      [
       -2.6,
-      198.5,
-      2.4
+      199.5,
+      2.3
      ],
      [
       -2.6,
-      201.0,
-      2.3
+      201.15,
+      2.2
      ],
-     34
+     26
     ],
     [
      1.0,
      [
       -2.6,
-      198.6,
-      2.4
+      199.7,
+      2.3
      ],
      [
       -2.6,
-      201.0,
-      2.25
+      201.15,
+      2.2
      ],
-     34
+     26
     ]
    ],
    "hand": 0.004,
@@ -3258,30 +3258,30 @@
     [
      0.0,
      [
-      -1.15,
-      201.7,
+      0.0,
+      199.6,
       2.3
      ],
      [
-      -1.3,
-      202.28,
-      2.28
+      -1.05,
+      202.25,
+      2.1
      ],
-     50
+     30
     ],
     [
      1.0,
      [
-      -1.2,
-      201.55,
+      -0.05,
+      199.8,
       2.3
      ],
      [
-      -1.3,
-      202.28,
-      2.28
+      -1.05,
+      202.25,
+      2.1
      ],
-     50
+     30
     ]
    ],
    "hand": 0.003,
@@ -3619,13 +3619,13 @@
      0.0,
      [
       0.4,
-      197.7,
-      1.3
+      -2.3,
+      1.5
      ],
      [
       0.0,
-      202.0,
-      1.0
+      2.0,
+      1.1
      ],
      34
     ],
@@ -3633,13 +3633,13 @@
      1.0,
      [
       0.4,
-      197.7,
-      1.3
+      -2.3,
+      1.5
      ],
      [
       0.0,
-      202.0,
-      1.0
+      2.0,
+      1.1
      ],
      34
     ]
@@ -4124,13 +4124,13 @@
      0.0,
      [
       0.0,
-      269.5,
-      0.45
+      271.4,
+      1.1
      ],
      [
       0.0,
       262.0,
-      0.1
+      0.3
      ],
      30
     ],
@@ -4138,13 +4138,13 @@
      1.0,
      [
       0.0,
-      268.7,
-      0.45
+      270.6,
+      1.1
      ],
      [
       0.0,
       262.0,
-      0.1
+      0.3
      ],
      30
     ]
@@ -4159,30 +4159,30 @@
     [
      0.0,
      [
-      2.7,
-      200.9,
-      1.9
+      6.0,
+      204.6,
+      1.7
      ],
      [
       0.0,
-      203.0,
+      202.8,
       1.0
      ],
-     34
+     36
     ],
     [
      1.0,
      [
-      2.7,
-      201.2,
-      1.9
+      5.8,
+      204.2,
+      1.7
      ],
      [
       0.0,
-      202.6,
+      202.5,
       1.0
      ],
-     34
+     36
     ]
    ],
    "hand": 0.012,
@@ -4487,14 +4487,14 @@
     "at": "L02",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L02",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4518,14 +4518,14 @@
     "at": "L03",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L03",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4549,14 +4549,14 @@
     "at": "L03.2",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L03.2",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4580,14 +4580,14 @@
     "at": "L04",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L04",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4611,14 +4611,14 @@
     "at": "L04.3",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L04.3",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4642,14 +4642,14 @@
     "at": "L05",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L05",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4673,14 +4673,14 @@
     "at": "L06",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L06",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4704,14 +4704,14 @@
     "at": "L06.2",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L06.2",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4735,14 +4735,14 @@
     "at": "L07",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
     "at": "L07",
     "pos": [
      0.0,
-     216.4
+     216.5
     ],
     "hidden": true,
     "blend": 0,
@@ -4766,7 +4766,7 @@
     "at": "L08",
     "pos": [
      0.0,
-     216.4
+     216.5
     ]
    },
    {
@@ -24394,8 +24394,8 @@
     ]
    ],
    "size": [
-    1.0,
-    1.0
+    1.1,
+    1.1
    ]
   },
   {
@@ -25625,6 +25625,16 @@
    "rim": 1.0
   },
   {
+   "at": "L46",
+   "name": "expo",
+   "ev": 0.4
+  },
+  {
+   "at": "L47",
+   "name": "expo",
+   "ev": 0.0
+  },
+  {
    "at": "L52",
    "name": "tod",
    "set": "silver"
@@ -25698,12 +25708,12 @@
    "id": "wp",
    "color": "#ff8ec4",
    "kind": "glow",
-   "strength": 5.0,
+   "strength": 3.4,
    "z": 0.0,
    "gap": 0.62,
    "lat": 0.16,
    "every": 1,
-   "rise": 0.3,
+   "rise": 0.6,
    "walker": "me"
   },
   {
@@ -25712,12 +25722,12 @@
    "id": "wb",
    "color": "#8fb8ff",
    "kind": "glow",
-   "strength": 5.0,
+   "strength": 3.4,
    "z": 0.0,
    "gap": 0.62,
    "lat": 0.14,
    "every": 1,
-   "rise": 0.3,
+   "rise": 0.6,
    "walker": "nan"
   },
   {
@@ -25771,7 +25781,7 @@
    "gap": 0.62,
    "lat": 0.16,
    "every": 1,
-   "rise": 0.3,
+   "rise": 0.6,
    "lines": [
     [
      [
@@ -25796,7 +25806,7 @@
    "gap": 0.62,
    "lat": 0.16,
    "every": 1,
-   "rise": 0.3,
+   "rise": 0.6,
    "lines": [
     [
      [

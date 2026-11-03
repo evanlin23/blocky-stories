@@ -26,16 +26,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Here, every",
-    "Here, every"
+    "Every footprint",
+    "Every footprint"
    ],
    [
-    "footprint glows",
-    "footprint glows"
+    "here glows.",
+    "here glows."
    ],
    [
-    "until sunrise.",
-    "until sunrise."
+    "Except the ones",
+    "Except the ones"
+   ],
+   [
+    "beside MINE.",
+    "beside mine."
    ]
   ]
  },
@@ -154,8 +158,8 @@
     "Except mine."
    ],
    [
-    "At Nan's,",
-    "At Nan's,"
+    "At Nana's,",
+    "At Nana's,"
    ],
    [
     "my prints",
@@ -172,8 +176,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nan raised me",
-    "Nan raised me"
+    "Nana raised me",
+    "Nana raised me"
    ],
    [
     "in the orchard",
@@ -260,8 +264,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nan said she",
-    "Nan said, she"
+    "Nana said she",
+    "Nana said, she"
    ],
    [
     "always left the",
@@ -458,8 +462,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nan didn't look",
-    "Nan didn't look"
+    "Nana didn't look",
+    "Nana didn't look"
    ],
    [
     "up. She just",
@@ -668,8 +672,8 @@
     "boots on."
    ],
    [
-    "Nan's bed was",
-    "Nan's bed was"
+    "Nana's bed was",
+    "Nana's bed was"
    ],
    [
     "EMPTY.",
@@ -990,8 +994,8 @@
     "The bench, where"
    ],
    [
-    "Nan and I",
-    "Nan and I"
+    "Nana and I",
+    "Nana and I"
    ],
    [
     "sat every",
@@ -1114,8 +1118,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nan followed my",
-    "Nan followed my"
+    "Nana followed my",
+    "Nana followed my"
    ],
    [
     "glow out every",
@@ -1158,20 +1162,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "When I looked",
-    "When I looked"
+    "I looked back",
+    "I looked back"
    ],
    [
-    "back down the",
-    "back down the"
+    "down the row.",
+    "down the row."
    ],
    [
-    "row, there was",
-    "row, there was"
-   ],
-   [
-    "only FOG.",
-    "only fog."
+    "Only FOG.",
+    "Only fog."
    ]
   ]
  },
@@ -1180,8 +1180,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Nan said I",
-    "Nan said I"
+    "Nana said I",
+    "Nana said I"
    ],
    [
     "always did walk",

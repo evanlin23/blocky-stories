@@ -34,26 +34,30 @@
    ]
   },
   "L02": {
-   "text": "Here, every footprint glows until sunrise.",
+   "text": "Every footprint here glows. Except the ones beside mine.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 2.879,
    "onset": 0.172,
-   "end": 2.052,
+   "end": 2.69,
    "chunks": [
     [
      0.172,
-     0.612
+     0.647
     ],
     [
-     0.612,
-     1.147
+     0.647,
+     1.241
     ],
     [
-     1.147,
-     2.052
+     1.337,
+     1.81
+    ],
+    [
+     1.81,
+     2.69
     ]
    ]
   },
@@ -194,14 +198,14 @@
    ]
   },
   "L08": {
-   "text": "Except mine. At Nan's, my prints never fade.",
+   "text": "Except mine. At Nana's, my prints never fade.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.414,
+   "dur": 2.431,
    "onset": 0.172,
-   "end": 2.207,
+   "end": 2.224,
    "chunks": [
     [
      0.172,
@@ -217,35 +221,35 @@
     ],
     [
      1.5,
-     2.207
+     2.224
     ]
    ]
   },
   "L09": {
-   "text": "Nan raised me in the orchard house, out past the last street.",
+   "text": "Nana raised me in the orchard house, out past the last street.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.776,
+   "dur": 2.81,
    "onset": 0.172,
-   "end": 2.586,
+   "end": 2.621,
    "chunks": [
     [
      0.172,
-     0.647
+     0.681
     ],
     [
-     0.647,
-     1.017
+     0.681,
+     1.052
     ],
     [
-     1.017,
-     1.801
+     1.052,
+     1.837
     ],
     [
-     1.801,
-     2.586
+     1.837,
+     2.621
     ]
    ]
   },
@@ -334,14 +338,14 @@
    ]
   },
   "L13": {
-   "text": "Nan said, she always left the gate open for me, every night.",
+   "text": "Nana said, she always left the gate open for me, every night.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.8755,
-   "dur": 3.0,
+   "dur": 3.017,
    "onset": 0.224,
-   "end": 2.776,
+   "end": 2.793,
    "chunks": [
     [
      0.224,
@@ -357,7 +361,7 @@
     ],
     [
      1.854,
-     2.776
+     2.793
     ]
    ]
   },
@@ -586,30 +590,30 @@
    ]
   },
   "L22": {
-   "text": "Nan didn't look up. She just handed me a basket.",
+   "text": "Nana didn't look up. She just handed me a basket.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.328,
+   "dur": 2.345,
    "onset": 0.19,
-   "end": 2.138,
+   "end": 2.155,
    "chunks": [
     [
      0.19,
-     0.672
+     0.69
     ],
     [
-     0.672,
-     1.207
+     0.69,
+     1.224
     ],
     [
-     1.207,
-     1.492
+     1.224,
+     1.509
     ],
     [
-     1.492,
-     2.138
+     1.509,
+     2.155
     ]
    ]
   },
@@ -838,34 +842,34 @@
    ]
   },
   "L31": {
-   "text": "I woke at three with my boots on. Nan's bed was empty.",
+   "text": "I woke at three with my boots on. Nana's bed was empty.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.655,
+   "dur": 2.724,
    "onset": 0.155,
-   "end": 2.466,
+   "end": 2.534,
    "chunks": [
     [
      0.155,
-     0.414
+     0.423
     ],
     [
-     0.414,
-     0.724
+     0.423,
+     0.759
     ],
     [
-     0.724,
-     1.207
+     0.759,
+     1.241
     ],
     [
-     1.301,
-     1.888
+     1.337,
+     1.957
     ],
     [
-     1.888,
-     2.466
+     1.957,
+     2.534
     ]
    ]
   },
@@ -1270,14 +1274,14 @@
    ]
   },
   "L48": {
-   "text": "The bench, where Nan and I sat every single evening.",
+   "text": "The bench, where Nana and I sat every single evening.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.927,
-   "dur": 2.638,
+   "dur": 2.707,
    "onset": 0.19,
-   "end": 2.431,
+   "end": 2.5,
    "chunks": [
     [
      0.19,
@@ -1285,15 +1289,15 @@
     ],
     [
      0.724,
-     1.094
+     1.147
     ],
     [
-     1.094,
-     1.534
+     1.147,
+     1.586
     ],
     [
-     1.534,
-     2.431
+     1.586,
+     2.5
     ]
    ]
   },
@@ -1434,30 +1438,30 @@
    ]
   },
   "L54": {
-   "text": "Nan followed my glow out every night, and watched it back home.",
+   "text": "Nana followed my glow out every night, and watched it back home.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.862,
+   "dur": 2.897,
    "onset": 0.172,
-   "end": 2.672,
+   "end": 2.707,
    "chunks": [
     [
      0.172,
-     0.69
+     0.724
     ],
     [
-     0.69,
-     1.19
+     0.724,
+     1.241
     ],
     [
-     1.19,
-     1.888
+     1.241,
+     1.923
     ],
     [
-     1.888,
-     2.672
+     1.923,
+     2.707
     ]
    ]
   },
@@ -1490,54 +1494,50 @@
    ]
   },
   "L56": {
-   "text": "When I looked back down the row, there was only fog.",
+   "text": "I looked back down the row. Only fog.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.8240000000000001,
-   "dur": 2.672,
-   "onset": 0.207,
-   "end": 2.431,
+   "tempo": 0.9064,
+   "dur": 2.103,
+   "onset": 0.19,
+   "end": 1.879,
    "chunks": [
     [
-     0.207,
-     0.517
+     0.19,
+     0.586
     ],
     [
-     0.517,
-     0.948
+     0.586,
+     1.017
     ],
     [
-     0.948,
-     1.534
-    ],
-    [
-     1.534,
-     2.431
+     1.086,
+     1.879
     ]
    ]
   },
   "L57": {
-   "text": "Nan said I always did walk too fast.",
+   "text": "Nana said I always did walk too fast.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 2.086,
    "onset": 0.172,
-   "end": 1.845,
+   "end": 1.879,
    "chunks": [
     [
      0.172,
-     0.569
+     0.603
     ],
     [
-     0.569,
-     1.155
+     0.603,
+     1.19
     ],
     [
-     1.155,
-     1.845
+     1.19,
+     1.879
     ]
    ]
   },
