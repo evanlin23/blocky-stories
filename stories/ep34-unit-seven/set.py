@@ -731,6 +731,53 @@ def build_carry(kit, ctx, M):
     ctx["phoneprop"] = ph
 
 
+def dress(kit, ctx, M):
+    """CC0 props (builder, 2026-11-03): the corridor, the yard, the hall, the cupboard kitchen, my kitchen and Jo's
+    street. Nothing with lettering. Kept clear of unit seven's interior and of every camera path."""
+    steel = "#aab3b8"
+    # the corridor: a steel-grey shelf unit, a stool, a chair and a bin along the shut side's wall, far end
+    kit.prop("bookshelf", (-0.88, 14.4, 0), rot=90, height=1.9, tint=steel)
+    kit.prop("bookshelf", (-0.88, 15.4, 0), rot=90, height=1.9, tint=steel)
+    kit.prop("trashcan_cylindric", (-0.86, 12.7, 0), height=0.6, tint="#7d8a93")
+    kit.prop("chair_1", (-0.82, 11.0, 0), rot=80, height=0.9, tint="#b9a27a")
+    kit.prop("stool", (-0.86, 1.9, 0), height=0.7, tint="#b9a27a")
+    kit.prop("houseplant_1", (-0.86, 1.9, 0.7), height=0.36)
+    # the yard: a fence line, two trees, a rock
+    for i in range(7):
+        kit.prop("nat_fence_simple", (-9.0 + i * 3.0, -13.0, 0), rot=0, tint="#c9c0b0")
+    kit.prop("sub_tree_small", (-7.0, -11.5, 0), height=3.2)
+    kit.prop("sub_tree_large", (8.5, -11.8, 0), height=4.2)
+    kit.prop("rock_1", (4.5, -5.5, 0), fit=0.9, tint="#a0a098")
+    kit.prop("bush_2", (-6.5, -3.0, 0), fit=1.5)
+    # the friend's hall: a little table, a plant, a floor lamp, a rug
+    X = HX
+    kit.prop("carpet_1", (X + 0.7, 1.15, 0.555), rot=90, scale=0.8)
+    kit.prop("nightstand_1", (X + 0.43, 0.8, 0.55), rot=-90, tint="#d9b98a")
+    kit.prop("houseplant_1", (X + 0.43, 0.8, 0.96), scale=0.9)
+    kit.prop("light_floor1", (X + 1.05, 0.55, 0.55), height=0.9)
+    # the high kitchen cupboard's kitchen
+    C = CX
+    kit.prop("kitchen_cabinet1", (C - 0.3, 0.43, 0), rot=180, tint="#d9cdb8")
+    kit.prop("kitchen_cabinet1", (C + 0.25, 0.43, 0), rot=180, tint="#d9cdb8")
+    kit.prop("kitchen_fridge", (C - 1.4, 0.4, 0), rot=180)
+    kit.prop("kitchen_sink", (C + 0.9, 0.43, 0), rot=180)
+    kit.prop("kitchen_oven", (C + 1.5, 0.43, 0), rot=180)
+    # my kitchen: units along the back wall, three chairs round the table
+    KX_, KY_ = 60.0, 0.0
+    for nm, dx in (("kitchen_fridge", -2.0), ("kitchen_cabinet1", -1.45), ("kitchen_sink", -0.95),
+                   ("kitchen_cabinet1", -0.44), ("kitchen_oven", 0.1)):
+        kit.prop(nm, (KX_ + dx, KY_ + 2.17, 0), rot=180)
+    kit.prop("chair_1", (KX_ - 0.2, KY_ + 1.0, 0), rot=180, height=0.9, tint="#c9a878")
+    kit.prop("chair_1", (KX_ - 1.15, KY_ + 0.3, 0), rot=90, height=0.9, tint="#c9a878")
+    kit.prop("chair_1", (KX_ + 0.8, KY_ + 0.3, 0), rot=-90, height=0.9, tint="#c9a878")
+    # Jo's street: houses across it, a tree and a planter on the pavement
+    for dx, nm, hh in ((-8.5, "sub_building_type_a", 4.2), (-1.0, "sub_building_type_c", 5.0),
+                       (7.0, "sub_building_type_k", 5.2)):
+        kit.prop(nm, (X + dx, -16.5, 0), rot=0, height=hh, tint="#8e96a8")
+    kit.prop("sub_tree_small", (X + 4.6, -2.0, 0), height=3.0)
+    kit.prop("sub_planter", (X - 4.4, -1.3, 0), fit=1.4)
+
+
 def build(kit, story, tl):
     ctx = {"story": story}
     wd = workdir(tl)
@@ -745,6 +792,7 @@ def build(kit, story, tl):
     build_carry(kit, ctx, M)
     build_dlamps(kit, ctx, M)
     build_town(kit, ctx, M)
+    dress(kit, ctx, M)
     # the number-plate planes need their images the right way up; that is checked in the stills
     ctx["wd"] = wd
     return ctx

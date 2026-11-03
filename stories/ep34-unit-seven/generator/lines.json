@@ -4,28 +4,34 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this TOWN,",
-    "In this town,"
+    "NEVER leave",
+    "Never leave"
    ],
    [
-    "a door",
-    "a door"
+    "anything of YOURS",
+    "anything of yours"
    ],
    [
-    "won't OPEN",
-    "won't open"
+    "behind a DOOR.",
+    "behind a door."
+   ]
+  ]
+ },
+ {
+  "id": "L82",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Or that door",
+    "Or that door"
    ],
    [
-    "unless something",
-    "unless something"
+    "keeps OPENING",
+    "keeps opening"
    ],
    [
-    "of YOURS",
-    "of yours"
-   ],
-   [
-    "is INSIDE.",
-    "is inside."
+    "for YOU.",
+    "for you."
    ]
   ]
  },
@@ -72,8 +78,8 @@
     "a spoon"
    ],
    [
-    "in every flat",
-    "in every flat"
+    "in every apartment",
+    "in every apartment"
    ],
    [
     "they've ever",
@@ -124,7 +130,7 @@
     "for me"
    ],
    [
-    "any MORE.",
+    "ANYMORE.",
     "any more."
    ]
   ]
@@ -432,8 +438,8 @@
     "A blue"
    ],
    [
-    "boiler suit,",
-    "boiler suit,"
+    "coveralls,",
+    "coveralls,"
    ],
    [
     "and a",
@@ -542,8 +548,8 @@
     "I brought my"
    ],
    [
-    "phone TORCH.",
-    "phone torch."
+    "phone FLASHLIGHT.",
+    "phone flashlight."
    ]
   ]
  },
@@ -654,8 +660,8 @@
     "But the head"
    ],
    [
-    "was turned ROUND",
-    "was turned round"
+    "was turned AROUND",
+    "was turned around"
    ],
    [
     "to MY door.",
@@ -1444,8 +1450,8 @@
     "went to the"
    ],
    [
-    "charity SHOP.",
-    "charity shop."
+    "thrift STORE.",
+    "thrift store."
    ]
   ]
  },
