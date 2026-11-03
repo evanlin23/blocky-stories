@@ -290,3 +290,22 @@ B's opener isn't the working title. B keeps "taped from the INSIDE" at L06, so t
 **For the brief, not the script:** "I hit the LIGHT" is a dim bedside lamp, flash pre-checked at the final's frame steps. The arms over the bed are side-on with the hand in frame. Mum's face stays clear of the quilt. Check the seated pose on the box. The many-eyes face stays flat, dry marker (ep13). The wet marker is on the stare only.
 
 Stage stays `pitched` until the full script is in and the brief is written.
+
+---
+
+## Redo pitches (writer, 2026-11-02): rule first
+
+Held because L01 wasn't the world's rule. Same set (the small low house, hall, kitchen, front room, the stack by the door, the hall cupboard), same cast (me, an adult, and Mum), and the best old scenes (photos up at the ceiling, the quilt at 3 a.m., "ladder height", tape from the inside). Ten big ideas, each as its line 1 and its "wait, what".
+
+1. **"In this town, a house grows to fit the tallest one living in it."** Our old house was always a ladder taller than any of us. The new one fits me, until a gap opens over my head each morning, and the photos ride up the stretching walls. Reveal: the old house never broke the rule. Something tall has always lived with us, and it packed itself, taped from the inside, and came along. **Kept.**
+2. "In this town, houses shrink when nobody laughs in them." Clear stakes (the ceiling coming down on Mum), but the box figure would have to hold the ceiling up off her bed, which is "kind all along". The second reading (my laughs were fake) is small. Dropped.
+3. "In this town, anything you pack in a box shrinks to fit it." Reveal: we're inside a box, the old house packed with us in it. A great opening picture (an armchair shrinking into a shoebox), but the mechanics need explaining, which is ep20's confusion. Dropped.
+4. "In this town, you can pack away a feeling." Mum packed her laugh when the old house sold. Reveal: the box taped from the inside is mine, and the figure is everything I packed to look strong. Moving, but abstract, and a figure made of feelings is hard to read on a phone. Dropped.
+5. "In this town, every house keeps a copy of whoever lived there last." Reveal: the copy in our new house is of me. Edges toward "gone for good" for a living narrator, and it's `double`, close to mirror-maze. Dropped.
+6. "In this town, a house puts things back where its last owner kept them." Reveal: this small house was Mum's before I was born, and the mug, the quilt and the photos are her old places here. Neat, but the ladder line and the tall figure stop making sense. Dropped.
+7. "In this town, when a house is sold, it keeps one thing of yours." Reveal: it kept Mum's laugh, and the figure is carrying it to her. Courier-kind, too close to "kind all along". Dropped.
+8. "In this town, a house is only as tall as the people in it stand." Mum stoops with sadness and the ceiling sinks. Reveal hinges on posture, which doesn't read at phone size. Dropped.
+9. "In this town, every house has one more room than its family needs." The extra room is where the figure lives. Reveal: the extra room in the old house was for it. Close to 1 but loses the height scenes and the ladder payoff. Dropped.
+10. "In this town, whatever's taped shut can't be opened from outside." Reveal: the figure taped itself into our stack to come with us. Works as a detail of 1, not a world. Folded into 1 as the box nobody packed.
+
+**Why 1.** Every old scene becomes a plant of one idea: the ladder line (the old house's height was never ours), the photos at the ceiling (the walls stretch as the house grows to fit it), the figure folded along the ceiling (always taller than the house has caught up to), the tape from the inside (it packed itself), Mum never looking up (an old habit, from a house where something lived up there). The rule is visible in the first frame (my hair touching our ceiling) and funny in the montage (tall hats are rude at dinner). It says the reveal plainly: "The old house never broke the rule. It was always as tall as the tallest one living in it. That was never us." The feeling: Mum laughs for the first time since the sale, right under it, and closes the cupboard on its box without looking up. Shape `came-with`, not `stand-in`. No Keeper and no tally, because the canon ties a Keeper to one place and this thing moves with a family.

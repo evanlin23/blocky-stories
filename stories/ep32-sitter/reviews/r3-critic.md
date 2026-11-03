@@ -1,31 +1,22 @@
 # ep32-sitter, round 3, critic
 
-Verdict: approve
+Verdict: revise
 
-## Scores
-- Hook 6: S01 sets up the face and the glasses canvas, but nothing in it is strange yet.
-- Scare 7: the dips, the S41 reveal and the S46 ovals land. S42 is still an amber blur.
-- Creature 7: the pine mannequin with a pencil face is eerie. The long torso reads best at S41.
-- Twist 8: S45 now shows its face and my canvas side by side, and S54 ends on my half-face canvas with it beside it.
-- Lore 8: nine strokes, sharp, held in daylight, never named.
-- Warm turn 8: the S72 smile is soft now, S74 has both faces with Mum's hand up, and S75 keeps her face clear.
-- Shot variety 8.
-- Faces 7: S72 is near profile but reads as warm. S74 and S75 are fixed.
-- Sound 8: the drops work. The speech ends at 135.30 s, the knock is at 135.50 s (about -14 dB) and the cut is at 135.77 s.
-- Captions 7: in sync.
+All six round 2 fixes are in. What's left is small and can be done in one round.
 
-Average 7.4.
+**Hits:** 1 yes (0.17 s). 2 yes (0.1 s). 3 yes (5 to 13 s). 4 yes (32 s). 5 yes (13.2 to 17.5 s). 6 yes (68 to 74.6 s). 7 yes (plants at 14.8, 31 and 57 s, echo at 84.6 s). 8 yes. 9 yes (1.42 s average).
 
-## Panel
-- **Creepy fan:** stays through the dips and grins at the S43 lean. "the way it leaned into the canvas like a mirror"
-- **Ep11 to ep13 regular:** pauses on S70. "NINE strokes again. the class was built for nine"
-- **Scroller:** might swipe at 2 s on a calm opening. If they stay to S09, they're held. "its face was literally her glasses"
-- **Top comment:** "it was wearing her mum's glasses the whole time"
-- **Slips:** S72 (127.8 s) has rain on the window at the sunny Saturday show. In the script, S40 says "before L51" but means L41 (the build is right).
+**Scores:** hook 7 (the rule reads, but his whole face is pine, so we never see a face *fading*). Back-row 6 (the first concrete mystery, the sitter, arrives at 25 s, not by 15 s). Narrator fit 9. Broad appeal 9. Relationships 8 (Mum is named over her portrait). Feeling/clarity 8. Big idea 8. Scare 7. Creature 7. Twist 8, lore 7 (the nine strokes read at 83.5 s). Warm turn 7. Variety 8. Faces 7 (at S08, 18.9 s, my head is a blown-out white block). Sound 6 (the rain bed from 20 to 66 s has strong 4 to 16 kHz hiss, about 11 dB above the dry sections). Captions 8.
 
-## Must-fix
-None.
+**Panel:**
+- Creepy fan: stays. "The corner lines were laugh lines. Call your mom."
+- Repeat viewer: stays. "Nine strokes again. Who's counting?"
+- Scroller: may swipe at about 18 s, in the quiet flat before any mystery. "wait so is he faded now?"
+- Top comment: "Call your mom." Slip: Kofi is two different people. At S10b (24 s) he's dark-skinned, scowling with gritted teeth and has no glasses. At S38 (82 s) he's light-skinned with no glasses. The script says he's friendly and wears round black glasses.
 
-## Optional polish (not blocking)
-1. S42 (80.2 to 81.8 s), L42: the knee shot is still an unreadable amber block at phone size. Hold S41 through L42 (its knee is by the easel leg there) or reframe it wider.
-2. S72 (127.8 to 128.9 s): set the window to daylight with no rain, to match S70 and S74.
+**Must-fix:**
+1. S05b (11.7 to 13.2 s), back-row mystery by 15 s: over the painter's shoulder, put the faded Mum model (pine bob, stage 0 face) on a spare stool at the back of the life room. Keep her lit, in focus and out of the caption band. Nobody looks at her. L11 pays it off.
+2. Sound, rain ambience (L09 to L32): low-pass the rain at about 3.5 kHz, or replace it with a soft low patter, so nothing hisses (RULES, no harsh sound effects). Then re-mix.
+3. Kofi at S10b and S38: use one model, with a shaved head, round black glasses, a rust shirt and a denim apron. Give him a friendly face at S10b, with no gritted teeth. Frame S38 so his face is at least 1/5 of the frame width.
+
+Advice: paint one half of the bus-stop man's face at S01 and S01b, so the fade is seen at 0.1 s. Expose S08 down so my face reads.

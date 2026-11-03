@@ -1,17 +1,21 @@
-# ep32-sitter, round 2, standards
+# ep32-sitter: standards, round 2 (rule-first redo, 2026-11-03)
 
 Verdict: approve
 
-All three round 1 must-fixes landed. L56 and L57 are cut, L41 and L43 are rewritten with no head turn (S43 at 82.8 s shows the bend from the waist), and S17 now holds the Mum insert for 1.06 s with a dim grade (S17b, 34.17 to 35.23 s).
+Checked: script.md, story.json, package.json, `check` (warnings only), `preflight` (0 blocks), the preview contact sheet, 55 frames from 0.1 to 86.0 s, luma through S22 to S27, S33 to S36b, the diff since round 1, and the premise and twist of every story. No story in the batch changed since round 1.
 
-1. **Fiction:** pass. The set has no text, the canvases and hall frames have no lettering, and the tally at S70 is nine plain strokes (counted at 124.6 s). The package says "It's made up." The word "really" in L58 isn't a truth claim.
-2. **Kids and mature themes:** pass. The cast is all adults with no age on screen. There are no death words and no harm. "Moved away" covers the hired sitter's absence. Nothing in the package aims at kids.
-3. **IP:** pass. Every face is drawn in `blocky/` and there are no catalogue items. No brand appears anywhere.
-4. **Originality:** pass. The first line is a criticism, the elder rule holds (Kofi explains nothing), there's no night-shift narrator, and the creature is pine, not grey. There's one plain tally and nothing from batch 1. Preflight's `check` passes.
-5. **Flashing:** pass. The preview reads 1 flash a second at most (worst at 33.6 s), the 3-frame reading peaks at 3 changes a second at 98.3 s, and the bright cuts peak at 1 a second. The dips at S37 and S40 are slow ramps.
-6. **Package:** pass. The title is a statement that doesn't spoil the twist, the description has three paragraphs and no banned words, the pin asks a question, and `made_for_kids` is false. No dashes, semicolons or AI words.
+1. **Fiction:** pass. No text or signs at the bus stop, cafe, bakery, arts centre or hall. The canvases carry no words.
+2. **Kids and mature themes:** pass. Every character is an adult. Nobody is hurt, and S24 keeps a gap at 51.4 s. The package doesn't aim at kids.
+3. **IP:** pass. The faces, hair, glasses and outfits are our own. No game is named anywhere.
+4. **Originality:** pass, as in round 1. ep43 is still the nearest, but its marker, setting, creature, twist and ending all differ.
+5. **Flashing:** pass. The preview reads PASS: at most 1 flash a second (2 on the 3-frame reading), 2 bright cuts a second, and an extended 3-frame run of 0.57 s. The S22 dip ramps from 63 down to 22 and back up to 67 with no black frame. The S34 restore rises smoothly over about 1 s.
+6. **Package:** pass. The title, description and pin are clean. `cover_s` 50.0 lands in S23 (48.7 to 50.5 s) on "BESIDE ME.", with both faces lit and in frame.
 
-## Nice-to-have
-- S61a to S61d (106.53 to 108.63 s): four cuts in 2.1 s, and S61c is only 0.17 s on near-black with a bright lamp at top right. Hold S61c for at least 0.4 s, or dim its lamp, so the final's full-rate reading stays clear.
-- `moving-day` also has a Mum who has lost her spark and a creature whose drawn face changes on every visit. The details differ enough to pass, but keep ep32's face lines tied to the canvas in every description and pin, so the two don't read as alike.
-- The stills sheet `out/stills/ep32-key-beats.png` predates the round 1 fixes. Regenerate it.
+## Round 1 must-fixes
+- S35b (75.60 to 76.33 s): fixed. The dropped brush now reads clearly on the boards.
+- `cover_s`: fixed (50.0).
+
+## Nice-to-haves
+- S35b now overshoots. Its mean luma is about 180, against 91 in S35 and 97 in S36. That makes a 0.73 s bright pop, which passes now. Lowering its `ev` by about 1 would put it at S35's level and remove the risk in the final.
+- Take `"hold"` out of package.json once the critic approves too.
+- Don't upload ep32 right next to ep43.
