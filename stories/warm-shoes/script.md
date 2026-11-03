@@ -25,7 +25,7 @@ Why it's the one kept (of ten pitched: the cat copies tomorrow's shoes, the cat 
   - Plant 2, L37 to L44: the thing at my window looks at the sneakers I kept, then at me, and gives me the slow blink (what cats do to people they love). In the morning the sneakers are gone and Biscuit is asleep right where they were, 
   - Plant 3 (the logic the climax uses), L03 and L04: every pair carries a little of where it's been (sawdust, sand). So muddy farm boots with hay can only mean the farm.
   - Plant 4 (the warmth), L11: Biscuit's bowl is full by five every morning. Paid off at L69: it's Dad.
-  - Plant 5 (the size), L10a and L33a to L33c: every pair is Dad's size eleven, until the night something squeaks behind me on the way home from Jay's and the pair is mine. Paid off at L66b and L66c. Line 2 ("Even if they're YOUR SIZE.") is that pair.
+  - Plant 5 (the size), L10a and L33a to L33c: every pair is Dad's size eleven, until the night something squeaks behind me on the way home from Ben's and the pair is mine. Paid off at L66b and L66c. Line 2 ("Even if they're YOUR SIZE.") is that pair.
 - **How the last 15 seconds turn over the first line:** first time, "Never keep the shoes our cat brings home. They're still warm" is a creepy warning about stolen shoes whose owner comes looking. By the end, they're warm because our cat was just standing in them, and you don't keep them because a kept pair means somebody walks home alone: Dad now leaves his old work boots and my old sneakers on the gatepost every night. The last line ("This morning, my old SNEAKERS were back on the MAT.") runs straight into line 1, which now means give them back.
 - **The sting (cold last beat):** I walk home late, and one streetlight behind me is someone way too tall in my old sneakers. I didn't look back.
 - **Ending shape:** a loop through an object. My old sneakers on the same mat, steaming, cutting straight to frame 1's pair on the mat.
@@ -49,7 +49,7 @@ All adults or teens. Nobody young in peril, nobody hurt, nobody ever touched by 
 - `me` (teen boy, about 17, the narrator, no age on screen): short brown block hair with a flick at the front, a teal hoodie, grey joggers, white high-top sneakers with red laces. Faces: `neutral`, `smile`, `worried`, `scared`, `determined`.
 - `dad` (adult, my dad, named "my DAD" in L08 and on screen with me in the same beat): broad, a short dark beard, a red-and-navy plaid work shirt, jeans, tan work boots, a navy work cap with no logo. Faces: `neutral`, `grumpy`, `scared`, `soft`, `sheepish`. Quoted once, inside my line: "SATURDAY." (L32).
 - `biscuit` (our cat): a fat ginger tabby, all blocks: a long block body, four short block legs, a block head with two triangle ears, a long block tail, darker orange stripe bands across the back, a cream chest and muzzle. Flat drawn face: two big round green eyes with black slit pupils and one white highlight each, a small pink triangle nose, a short "w" mouth line. Faces: `neutral`, `smug`, `slowblink` (eyes half shut), `asleep`. Never shown in the same frame as the stranger.
-- `jay` (my best friend, adult or teen): named once in L33 ("my best friend JAY'S"), never on screen.
+- `ben` (my best friend, adult or teen): named once in L33 ("my best friend BEN'S"), never on screen.
 - No montage people. The shoes are the montage.
 
 ## The creature: the stranger (script name "the Strider")
@@ -93,7 +93,7 @@ All adults or teens. Nobody young in peril, nobody hurt, nobody ever touched by 
 | L46 | in the cat carrier on the porch, looking out through the grille | `neutral` |
 | L47 to L61 | away (at the farm, then on the road as the stranger) | |
 | L62 to L63 | climbing out of the left rubber boot on the path, mud to the ears | `neutral` |
-| L66a, L66d | in the boot's mouth, then a paw on the rail in a quick cutaway | `neutral` |
+| L66a | in the boot's mouth | `neutral` |
 | L66b | a tail going into a neighbor's trash can, in a quick cutaway | |
 | L68 | in Dad's arms, mud on Dad's shirt | `slowblink` |
 | L69 | eating from the bowl Dad is filling | `neutral` |
@@ -247,7 +247,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Shots:** see the brackets (one or two per line).
 - **The scare (about 62 to 70 s):** the face at my window.
 
-- `L33` narrator: On FRIDAY, / I walked home LATE / from my best friend JAY'S.
+- `L33` narrator: On FRIDAY, / I walked home LATE / from my best friend BEN'S.
   - [me walking up our road at sundown, hood down, `neutral`, the streetlights on, our house and its rail far ahead]
 - `L33a` narrator: Behind me, / something SQUEAKED, / like NEW SNEAKERS.
   - [two shots: low on the asphalt behind me, one streetlight back, empty in this frame. Then my face, `worried`, eyes front]
@@ -287,7 +287,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L46` narrator: That AFTERNOON, / Dad put Biscuit / in the CARRIER.
   - [two shots: Dad, `neutral`, closing the carrier door on the porch. Then Biscuit, `neutral`, looking out through the grille]
-- `L47` narrator: He drove him / to a FARM / past the LAKE.
+- `L47` narrator: He drove him / OUT to a FARM / past the LAKE.
   - [two shots: Dad's car pulling away from the gate, the carrier in the back window. Then me on the porch watching it go, `worried`]
 - `L48` narrator: He threw OUT / every pair / on the RAIL.
   - [two shots: Dad sweeping the row of pairs into a trash bag. Then the trash can lid clapping shut at the curb]
@@ -342,8 +342,6 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [two shots: a quick cut of a ginger tail disappearing into a neighbor's curbside trash can at dusk. Then the rail of mixed old pairs, every one a size eleven]
 - `L66c` narrator: Friday's pair / was MINE / because he'd walked / ME home.
   - [my sneakers on the mat, steaming, cut with the empty asphalt one light behind me from L33a]
-- `L66d` narrator: The rail was OUTSIDE. / He could REACH it.
-  - [the porch rail at dusk, a ginger paw on the end pair]
 - `L66e` narrator: A pair kept INSIDE / means somebody / walks home ALONE.
   - [my room, the sneakers by my bed, the window dark above them]
 - `L66f` narrator: So he came / to my WINDOW / for his.
@@ -368,7 +366,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the road at sundown, then the mat in the morning.
 - **Shots:** see the brackets (one or two per line).
 
-- `L72` narrator: Last night, / I missed / the late BUS / home from WORK, / and walked / the long ROAD.
+- `L72` narrator: Yesterday, / I missed / the late BUS / home from WORK, / and walked / the long ROAD.
   - [me walking up the road from the shelter at sundown, hood up, `neutral`. The lead drops out. Drone and pad only]
 - `L73` narrator: One streetlight / BEHIND me, / someone / in my old SNEAKERS.
   - [two shots: low behind me on the road, one streetlight back: my old white sneakers, standing still under the light, a long toffee coat hem above them. Then my face, eyes front]
