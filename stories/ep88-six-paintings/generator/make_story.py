@@ -17,17 +17,17 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
 GX = (-1.2, 0.0, 1.2)
-TOPZ, BOTZ = 4.15, 1.6
+TOPZ, BOTZ = 4.15, 1.4
 
 cast = {
     "watcher": {"age": "adult", "skin": "#e2b48c", "shirt": "#15131a", "pattern": "solid", "pants": "#15131a",
-                "shoes": "#101010", "sleeves": "long", "hair": "swoop", "hair_c": "#1d1719", "extras": ["coat", "tie"],
-                "extra_c": "#e9e6e0", "zip_c": "#15131a", "height": 1.16, "width": 0.9,
-                "face": {"eyes": "round", "brows": True, "ink": "#1a1114", "mouth": "line"}},
+                "shoes": "#101010", "sleeves": "long", "hair": "swoop", "hair_c": "#0c0a0b", "extras": ["coat", "tie"],
+                "extra_c": "#e9e6e0", "zip_c": "#15131a", "height": 1.16, "width": 0.9, "body_width": 0.55,
+                "face": {"eyes": "dot", "brows": True, "brow_w": 3.4, "ink": "#120c0e", "pupil": "#0b0709", "mouth": "line"}},
 }
 MAN = [1.2, 3.95, 2.9]
 acting = {"watcher": [
-    {"at": 0, "pos": MAN, "yaw": 0, "expr": "blank", "look": [0.45, 0.05], "blink": False, "arms": [0, 0], "side": [0, 0]},
+    {"at": 0, "pos": MAN, "yaw": 0, "expr": "blank", "look": [0.45, 0.05], "blink": False, "arms": [0, 0], "side": [0, 0], "head": [0, -8]},
     {"at": "L18", "pos": MAN, "look": [0, 0], "blend": 0.5},
 ]}
 
@@ -40,10 +40,10 @@ def C(loc, tgt, lens, loc2=None, tgt2=None, lens2=None):
 
 
 shots = [
-    {"id": "S01", "cam": C((0, -7.4, 3.3), (0, 3, 3.3), 31, (0, -6.8, 3.3), (0, 3, 3.3), 31), "step": 1, "hand": 0.0},
+    {"id": "S01", "cam": C((0, -7.4, 3.65), (0, 3, 3.65), 36, (0, -7.0, 3.65), (0, 3, 3.65), 36), "step": 1, "hand": 0.0},
     {"id": "S05", "at": "L05", "cam": C((0.95, -1.6, 4.3), (1.05, 3, 4.3), 36), "step": 1, "hand": 0.0},
     {"id": "S12", "at": "L12", "cam": C((1.2, -0.6, 4.55), (1.2, 3, 4.45), 40), "step": 1, "hand": 0.0},
-    {"id": "S18", "at": "L18", "cam": C((1.0, -1.0, 4.5), (1.12, 3.4, 4.45), 34), "step": 1, "hand": 0.0},
+    {"id": "S18", "at": "L18", "cam": C((1.2, 1.85, 4.55), (1.2, 3.95, 4.55), 34), "step": 1, "hand": 0.0},
     {"id": "S19", "at": "L19", "cam": C((0, -7.2, 3.0), (0, 3, 3.0), 33), "step": 1, "hand": 0.0},
 ]
 
@@ -60,7 +60,7 @@ story = {
     "tail": LOOP,
     "fade_in": False,
     "fade_out": False,
-    "rev": 1,
+    "rev": 2,
     "look": {"fog": "#f0e0d0", "fog_density": 0.0, "fog_start": 30.0, "sky": "#a8dcff", "exposure": 0.0,
              "flash_safe": True, "style": "closer", "polish": True},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 1.1, "contrast": 1.05,
@@ -72,7 +72,7 @@ story = {
     "cues": [],
     "music": {"root": 38, "mode": "minor", "bpm": 60, "seed": 88,
               "sections": [{"at": 0, "voices": ["drone", "pad"], "energy": 0.35}]},
-    "sound": {"rev": 1, "floor": "wood", "steps_db": -22, "ambience": [], "sfx": []},
+    "sound": {"rev": 2, "floor": "wood", "steps_db": -22, "ambience": [], "sfx": []},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots")
