@@ -405,12 +405,13 @@ def amb(kind: str, dur: float, seed: int = 0) -> np.ndarray:
     if kind == "hum":
         return synth.hum(dur, 60.0, seed)
     if kind == "rain":
-        y = fft_filter(synth.noise(dur, seed), "band", 800, 7000) * 0.6
+        # a soft wash with gentle drops, low-passed at 3.5 kHz: the old 800 Hz to 7 kHz band hissed (critic, ep32 redo)
+        y = fft_filter(synth.noise(dur, seed), "band", 300, 3500) * 0.6
         drops = np.zeros(n)
         r = np.random.default_rng(seed)
         for i in r.integers(0, n - 2000, int(dur * 40)):
-            drops[i:i + 400] += synth.click(400 / SR, float(r.uniform(2500, 6000)), int(i))[:400] * r.uniform(0.2, 0.8)
-        return y + drops
+            drops[i:i + 400] += synth.click(400 / SR, float(r.uniform(1200, 3000)), int(i))[:400] * r.uniform(0.2, 0.8)
+        return fft_filter(y + drops, "low", 3500)
     if kind == "room":
         return fft_filter(synth.noise(dur, seed), "band", 60, 400) * 0.6
     if kind == "drips":
@@ -484,7 +485,12 @@ def step_sound(surface: str, run: bool, seed: int) -> np.ndarray:
     elif surface == "metal":
         y = _layer(synth.thump(0.1, 220, 120, seed) * 0.5, synth.fm_bell(float(r.uniform(700, 900)), 0.25, 2.7, 1.2, 0.06) * 0.25)
     elif surface == "grass":
-        y = fft_filter(synth.noise(0.12, seed), "band", 1500, 6000) * synth.decay(0.12, 0.04)[: synth.n_samples(0.12)] * 0.6
+        # a soft low swish and a dull heel, not a hiss: the old 1.5 to 6 kHz noise burst read as scratching
+        # (owner, 2026-11-02, ep36: "a horrible scratchy sound")
+        n = synth.n_samples(0.16)
+        env = np.minimum(1.0, np.arange(n) / (0.02 * SR)) * synth.decay(0.16, 0.05)[:n]   # 20 ms fade-in, no click
+        swish = fft_filter(synth.noise(0.16, seed), "band", 250, 1600)[:n] * env * 0.35
+        y = _layer(swish, synth.thump(0.08, 120, 70, seed) * 0.25)
     else:  # stone, concrete
         y = _layer(synth.thump(0.08, 140, 70, seed) * 0.6, fft_filter(synth.noise(0.06, seed), "band", 1200, 5000) * synth.decay(0.06, 0.01)[: synth.n_samples(0.06)] * 0.6)
     return y * (1.4 if run else 1.0) * float(r.uniform(0.8, 1.1))
@@ -690,6 +696,17 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
+    if kind == "rattle":      # ep34, opt-in: a corrugated roller door running down its slats, slowing as it lands
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        rate = 46.0 * (1.0 - 0.8 * (t / dur) ** 1.3)          # slat knocks per second, falling
+        ph = np.cumsum(rate) / SR
+        gate = (np.sin(2 * np.pi * ph) > 0.55).astype(float)
+        gate = synth.one_pole_smooth(gate, 0.002)
+        body = fft_filter(synth.noise(dur, seed), "band", 500, 3600)[:n]
+        rumble = fft_filter(synth.noise(dur, seed + 1), "band", 70, 260)[:n]
+        env = np.clip(t / 0.08, 0, 1) * (1 - 0.35 * (t / dur))
+        return (body * gate * 0.9 + rumble * 0.5) * env
     if kind == "ding":        # ep49: a small brass collar bell. opts: pitch (Hz), lp (low-pass Hz, a muffled pocket ring), fall (pitch drop)
         o = opts or {}
         f = float(o.get("pitch", 2200.0))
