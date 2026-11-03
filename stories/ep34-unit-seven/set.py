@@ -809,9 +809,9 @@ def build_deep(kit, ctx):
     if root is None or ctx.get("deep_done"):
         return
     ctx["deep_done"] = True
-    grey = kit.plastic("#565a60", 0.92, name="tall grey", spec=0.05)
+    grey = kit.plastic("#5c6065", 0.92, name="tall grey", spec=0.05)
     pale = kit.plastic("#6a6e75", 0.92, name="tall grey face", spec=0.05)
-    dark = kit.plastic("#08090b", 0.95, name="tall grey eye", spec=0.0)
+    dark = kit.plastic("#23262b", 0.95, name="tall grey eye", spec=0.0)
     for ob in root.children_recursive:      # the rig's body: not shown, the parts below stand in for it
         ob.hide_render = True
     ctx["deep_rig"] = list(root.children_recursive)
@@ -831,40 +831,42 @@ def build_deep(kit, ctx):
         parts.append(ob)
         return ob
 
-    # legs: long and thin, a flat foot each
+    # legs: long and thin, feet close together
     for sx in (-1, 1):
-        B(f"foot{sx}", (0.17, 0.42, 0.07), (sx * 0.17, -0.07, 0.035), grey, root)
-        B(f"shin{sx}", (0.15, 0.15, 0.66), (sx * 0.17, 0.0, 0.40), grey, root)
-        B(f"thigh{sx}", (0.18, 0.18, 0.66), (sx * 0.17, 0.0, 0.95), grey, root)
-    B("pelvis", (0.50, 0.26, 0.24), (0, 0.0, 1.33), grey, root)
-    # the spine leans forward over the hips (positive x turn tips the top toward -y, the way it faces)
-    lean = 0.22
-    sp = J("spine", (0, 0.0, 1.42), root, (lean, 0, 0))
-    B("waist", (0.34, 0.22, 0.36), (0, 0, 0.20), grey, sp, bevel=0.04)
-    B("chest", (0.64, 0.30, 0.60), (0, 0, 0.60), grey, sp, bevel=0.05)
-    B("shoulders", (0.80, 0.24, 0.16), (0, 0.04, 0.86), grey, sp, bevel=0.05)
-    B("neck", (0.14, 0.14, 0.30), (0, -0.05, 0.96), grey, sp, bevel=0.03)
-    for sx in (-1, 1):                       # the shoulders slope up to the neck, so the head sinks between them
-        B(f"trap{sx}", (0.30, 0.20, 0.10), (sx * 0.21, 0.0, 0.90), grey, sp, rot=(0, sx * 0.45, 0), bevel=0.03)
-    # the head: bowed hard, so the crown and the brow lead and the face looks at the floor, lit from above
-    hd = J("head", (0, -0.08, 1.04), sp, (0.42, 0.08, 0.10))
-    B("skull", (0.31, 0.33, 0.46), (0, 0.02, 0.20), grey, hd, bevel=0.10)
-    B("jaw", (0.22, 0.24, 0.12), (0, -0.01, -0.02), grey, hd, bevel=0.05)
-    for sx in (-1, 1):                       # two small dark eyes set low, no mouth, no shine
-        B(f"eye{sx}", (0.035, 0.012, 0.05), (sx * 0.066, -0.1475, 0.08), dark, hd, bevel=0.004)
-    # arms: they hang from the shoulders straight down in the world, past the knees, hands near the shins
+        B(f"foot{sx}", (0.13, 0.40, 0.07), (sx * 0.10, -0.08, 0.035), grey, root)
+        B(f"shin{sx}", (0.12, 0.12, 0.76), (sx * 0.10, 0.0, 0.45), grey, root)
+        B(f"thigh{sx}", (0.14, 0.14, 0.76), (sx * 0.11, 0.0, 1.20), grey, root)
+    B("pelvis", (0.32, 0.20, 0.18), (0, 0.0, 1.58), grey, root, bevel=0.03)
+    # one narrow tapered torso (wide at the shoulders, narrow at the waist), stooped hard over the hips: a positive
+    # x turn tips the top toward -y, the way it faces
+    sp = J("spine", (0, 0.0, 1.62), root, (0.46, 0, 0.0))
+    tor = kit.cyl("tall torso", u(0.15), u(0.98), (0, 0, u(0.49)), grey, sp, n=10, r2=u(0.25))
+    tor.scale = (1.0, 0.62, 1.0)
+    parts.append(tor)
+    B("neck", (0.12, 0.12, 0.26), (0, -0.04, 1.0), grey, sp, bevel=0.03)
+    # the head: bowed about 40 degrees more than the stoop, so the crown leads, a few degrees off true
+    hd = J("head", (0, -0.07, 1.06), sp, (0.62, 0.06, 0.09))
+    B("skull", (0.34, 0.36, 0.50), (0, 0.02, 0.22), grey, hd, bevel=0.11)
+    for sx in (-1, 1):                       # two small eyes set low in the shadowed face, a shade darker, no shine
+        B(f"eye{sx}", (0.035, 0.012, 0.05), (sx * 0.07, -0.1615, 0.10), dark, hd, bevel=0.004)
+    # arms: they hang past the knees, one shoulder lower, long flat paddle hands with the fingers just parted
     for sx in (-1, 1):
-        sh = J(f"shoulder{sx}", (sx * 0.43, -0.22, 2.12 - (0.05 if sx < 0 else 0.0)), root, (-0.10, 0, sx * 0.04))
-        B(f"uarm{sx}", (0.16, 0.16, 0.76), (0, 0, -0.38), grey, sh, bevel=0.03)
-        el = J(f"elbow{sx}", (0, 0, -0.76), sh, (-0.06, 0, 0))
-        B(f"farm{sx}", (0.145, 0.145, 0.74), (0, 0, -0.37), grey, el, bevel=0.03)
-        wr = J(f"wrist{sx}", (0, 0, -0.74), el, (-0.04, 0, 0))
-        B(f"palm{sx}", (0.045, 0.15, 0.20), (0, 0, -0.10), grey, wr, bevel=0.012)
-        for k, fy in enumerate((-0.054, -0.018, 0.018, 0.054)):
-            B(f"finger{sx}{k}", (0.03, 0.026, 0.24 - abs(fy)), (0, fy, -0.30 + abs(fy) * 0.5), grey, wr, bevel=0.008)
+        low = 0.10 if sx < 0 else 0.0
+        sh = J(f"shoulder{sx}", (sx * 0.30, -0.42, 2.22 - low), root, (0.12, 0, sx * 0.03))
+        B(f"uarm{sx}", (0.14, 0.14, 0.74), (0, 0, -0.37), grey, sh, bevel=0.03)
+        el = J(f"elbow{sx}", (0, 0, -0.74), sh, (0.05, 0, 0))
+        B(f"farm{sx}", (0.125, 0.125, 0.70), (0, 0, -0.35), grey, el, bevel=0.03)
+        wr = J(f"wrist{sx}", (0, 0, -0.70), el, (0.03, 0, 0))
+        B(f"palm{sx}", (0.035, 0.17, 0.22), (0, 0, -0.11), grey, wr, bevel=0.01)
+        for k, fy in enumerate((-0.065, -0.022, 0.022, 0.065)):
+            fl = 0.30 - 0.03 * abs(k - 1.5)
+            fj = J(f"fj{sx}{k}", (0, fy, -0.21), wr, (-fy * 0.9, 0, 0))
+            B(f"finger{sx}{k}", (0.028, 0.034, fl), (0, 0, -fl / 2), grey, fj, bevel=0.008)
     ctx["deep_parts"] = parts
     ctx["deep_profile"] = []
     ctx["deep_head_parts"] = []
+    kit.light("deep back", "SPOT", (0, 7.0, 2.7), 260, "#cfe0ff", size=0.3, spot=70, blend=0.8, shadow=False)
+    kit.aim(bpy.data.objects["deep back"], (0, 5.2, 2.2))
     kit.light("deep rim", "SPOT", (3.0, 2.0, 1.4), 420, "#7fa8ff", size=0.25, spot=60, blend=0.7, shadow=False)
     kit.aim(bpy.data.objects["deep rim"], (1.3, 2.5, 1.2))
 
@@ -1119,6 +1121,12 @@ def animate(kit, story, tl, t, ctx):
     # the Deep One: the tube behind its head, and its edge light
     rc = _last(_cues(tl, "rim"), t)
     over["deep rim"] = float(rc["on"]) if rc else 0.0
+    d_ = bpy.data.objects.get("deep")
+    if d_ is not None and "deep back" in kit.LIGHTS:     # a faint rim from above and behind: the crown and shoulders pop
+        over["deep back"] = 0.0 if d_.hide_render else 1.0
+        bl = kit.LIGHTS["deep back"]["obj"]
+        bl.location = (d_.location.x, d_.location.y + 1.8, 2.6)
+        kit.aim(bl, (d_.location.x, d_.location.y, 2.25))
     if rc and rc.get("on"):
         rl = kit.LIGHTS["deep rim"]["obj"]
         rl.location = tuple(rc["pos"])
