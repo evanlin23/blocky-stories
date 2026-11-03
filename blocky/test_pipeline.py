@@ -463,3 +463,15 @@ def test_props_are_listed_small_and_free_of_characters_and_lettering():
         assert not any(b in name.split("_") or b in v["from"].lower() for b in banned), name
         assert 0.01 <= max(v["size_m"]) <= 25, (name, v["size_m"])           # metres, not centimetres
     assert sum((ROOT / v["file"]).stat().st_size for v in rec.values()) < 8e6
+
+
+def test_upload_day_is_central_and_never_late_at_night():
+    import datetime as dt
+
+    import upload
+
+    nine_pm = dt.datetime(2026, 11, 3, 3, 4, tzinfo=dt.timezone.utc)   # 9:04 PM Central on Nov 2
+    assert upload.central_now(nine_pm).date().isoformat() == "2026-11-02"
+    assert not upload.in_auto_hours(nine_pm)
+    assert upload.in_auto_hours(dt.datetime(2026, 11, 3, 12, 47, tzinfo=dt.timezone.utc))   # 6:47 AM Central
+    assert not upload.in_auto_hours(dt.datetime(2026, 11, 3, 10, 0, tzinfo=dt.timezone.utc))   # 4 AM Central
