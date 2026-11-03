@@ -66,33 +66,92 @@ def _pos3(p):
     return (p[0], p[1], p[2] if len(p) > 2 else 0.0)
 
 
-def position(keys, t):
+EASE_S = 0.25   # with the polish pack's eased walks: seconds to get up to speed and to slow to a stop
+
+
+def _vel(a, b):
+    pa, pb = _pos3(a["pos"]), _pos3(b["pos"])
+    d = b["t"] - a["t"]
+    return ((pb[0] - pa[0]) / d, (pb[1] - pa[1]) / d) if d > 1e-6 else (0.0, 0.0)
+
+
+def _ends(ks, i):
+    """Seconds of ease at the start and end of walk segment i: none where it carries on from or into a segment
+    moving about the same way (a path through several keys stays one walk)."""
+    a, b = ks[i], ks[i + 1]
+    v = _vel(a, b)
+    sp = math.hypot(*v)
+    if sp < 0.05:
+        return 0.0, 0.0
+    dur = b["t"] - a["t"]
+    out = []
+    for j in (i - 1, i + 1):
+        w = _vel(ks[j], ks[j + 1]) if 0 <= j < len(ks) - 1 else (0.0, 0.0)
+        cont = math.hypot(v[0] - w[0], v[1] - w[1]) < 0.5
+        # a run takes longer to get up to speed: at least EASE_S, or speed / 4 m/s2 (a sprint start)
+        out.append(0.0 if cont else min(max(EASE_S, sp / 4.0), dur / 3))
+    return out[0], out[1]
+
+
+def _frac(ks, i, t, ease):
+    """How far along segment i (0..1) at t: a steady pace, or with `ease` a trapezoid of speed (it speeds up over
+    the start ease and slows over the end one, and takes the same time)."""
+    a, b = ks[i], ks[i + 1]
+    dur = max(1e-6, b["t"] - a["t"])
+    x = min(dur, max(0.0, t - a["t"]))
+    if not ease:
+        return x / dur
+    ea, eb = _ends(ks, i)
+    if not ea and not eb:
+        return x / dur
+    v = 1.0 / (dur - ea / 2 - eb / 2)
+    if ea and x < ea:
+        return v * x * x / (2 * ea)
+    if eb and x > dur - eb:
+        return 1.0 - v * (dur - x) ** 2 / (2 * eb)
+    return v * (x - ea / 2)
+
+
+def position(keys, t, ease=False):
     """(x, y, z, segment) where segment is (key a, key b) while between two pos keys, else None."""
     ks = _keys_with(keys, "pos")
     if not ks:
         return (0.0, 0.0, 0.0, None)
     if t <= ks[0]["t"]:
         return (*_pos3(ks[0]["pos"]), None)
-    for a, b in zip(ks, ks[1:]):
+    for i, (a, b) in enumerate(zip(ks, ks[1:])):
         if t < b["t"]:
-            u = (t - a["t"]) / max(1e-6, b["t"] - a["t"])
+            u = _frac(ks, i, t, ease)
             pa, pb = _pos3(a["pos"]), _pos3(b["pos"])
             return (*(x + (y - x) * u for x, y in zip(pa, pb)), (a, b))
     return (*_pos3(ks[-1]["pos"]), None)
 
 
-def distance_walked(keys, t):
+def distance_walked(keys, t, ease=False):
     """Metres walked by time t (only the flat distance counts)."""
     ks = _keys_with(keys, "pos")
     d = 0.0
-    for a, b in zip(ks, ks[1:]):
+    for i, (a, b) in enumerate(zip(ks, ks[1:])):
         if t <= a["t"]:
             break
         pa, pb = _pos3(a["pos"]), _pos3(b["pos"])
         seg = math.hypot(pb[0] - pa[0], pb[1] - pa[1])
-        u = min(1.0, (t - a["t"]) / max(1e-6, b["t"] - a["t"]))
-        d += seg * u
+        d += seg * _frac(ks, i, t, ease)
     return d
+
+
+def idle(t, seed, scale=1.0):
+    """The polish pack's idle life for a standing character: breathing, a slow weight shift and a drifting head,
+    from slow sines at periods that never line up (so it never loops visibly). (bob m, lean rad, yaw rad,
+    head yaw rad, head pitch rad)."""
+    ph = _hash(seed + 31) * 6.283
+    s = lambda period, k=0.0: math.sin(2 * math.pi * t / period + ph + k)
+    bob = 0.006 * scale * s(3.7)
+    lean = math.radians(0.9) * scale * (s(5.3, 1.0) + 0.5 * s(2.9, 2.2))
+    yaw = math.radians(2.0) * scale * (s(7.1, 0.4) + 0.4 * s(3.3, 1.7))
+    head_yaw = math.radians(5.0) * scale * (s(4.7, 2.0) + 0.6 * s(2.3, 0.3))
+    head_pitch = math.radians(2.5) * scale * (s(6.1, 1.3) + 0.5 * s(1.9, 2.9))
+    return bob, lean, yaw, head_yaw, head_pitch
 
 
 def _hash(x):
@@ -141,7 +200,9 @@ def tremble(keys, t):
 
 def state(tl, who, t, seed=0):
     keys = tl["acting"].get(who, [])
-    x, y, z, seg = position(keys, t)
+    mo = tl.get("motion") or {}
+    ease = bool(mo.get("ease"))
+    x, y, z, seg = position(keys, t, ease)
     legs, bob, travel_yaw, speed, run = 0.0, 0.0, None, 0.0, False
     if seg:
         a, b = seg
@@ -151,7 +212,7 @@ def state(tl, who, t, seed=0):
         speed = dist / max(1e-6, b["t"] - a["t"])
         if speed > 0.05:
             run = a.get("run", speed > 2.6)
-            ph = distance_walked(keys, t) / STRIDE * math.pi
+            ph = distance_walked(keys, t, ease) / STRIDE * math.pi
             amp = min(0.95 if run else 0.65, 0.25 + speed * 0.3)
             # ease the swing in and out at the ends of the walk
             amp *= _ease((t - a["t"]) / 0.15) * _ease((b["t"] - t) / 0.15)
@@ -171,30 +232,46 @@ def state(tl, who, t, seed=0):
     ty, tp = tremble(keys, t)
     head = [head[0] + ty, head[1] + tp]
     lean = math.radians(_held(keys, "lean", t, 0.0)) + (0.12 if run else 0.0)
-    return {"x": x, "y": y, "z": z, "yaw": yaw, "legs": legs, "arms": tuple(arms), "arms_side": tuple(side),
+    out = {"x": x, "y": y, "z": z, "yaw": yaw, "legs": legs, "arms": tuple(arms), "arms_side": tuple(side),
             "head_yaw": head[0], "head_pitch": head[1], "lean": lean, "bob": bob,
             "expr": _switch(keys, "expr", t, "neutral"), "look": tuple(_held(keys, "look", t, [0, 0])),
             "blink": blink(t, seed) if _switch(keys, "blink", t, True) else 0.0,
             "mouth": max(mouth(tl["talk"].get(who, []), t), mouth_track(keys, t)),
             "hidden": bool(_switch(keys, "hidden", t, False)), "speed": speed}
+    if mo.get("idle") and abs(legs) < 1e-6 and not out["hidden"]:   # the polish pack: nobody stands like a statue
+        sc = float(mo.get("idle_scale", 1.0))
+        if any(a <= t < b for a, b in mo.get("calm", [])):   # a reveal shot: nearly still, so the face reads
+            sc *= 0.2
+        ib, il, iy, ihy, ihp = idle(t, sum(map(ord, who)) + seed, sc)
+        out.update(bob=out["bob"] + ib, lean=out["lean"] + il, yaw=out["yaw"] + iy,
+                   head_yaw=out["head_yaw"] + ihy, head_pitch=out["head_pitch"] + ihp)
+    return out
 
 
 def footsteps(tl, who):
     """Times (and places) each foot lands: every half stride while walking."""
     keys = tl["acting"].get(who, [])
+    ease = bool((tl.get("motion") or {}).get("ease"))
     out = []
     ks = _keys_with(keys, "pos")
-    for a, b in zip(ks, ks[1:]):
+    for i, (a, b) in enumerate(zip(ks, ks[1:])):
         pa, pb = _pos3(a["pos"]), _pos3(b["pos"])
         dist = math.hypot(pb[0] - pa[0], pb[1] - pa[1])
         dur = b["t"] - a["t"]
         if dist < 0.05 or dur <= 0:
             continue
-        d0 = distance_walked(keys, a["t"])
+        d0 = distance_walked(keys, a["t"], ease)
         k = math.ceil(d0 / STRIDE + 1e-6)
         while (k * STRIDE - d0) < dist:
             u = (k * STRIDE - d0) / dist
-            out.append({"t": round(a["t"] + u * dur, 3), "x": pa[0] + (pb[0] - pa[0]) * u,
+            tu = a["t"] + u * dur
+            if ease:   # the foot lands where the eased walk has covered that distance (bisection on the profile)
+                lo, hi = a["t"], b["t"]
+                for _ in range(40):
+                    mid = (lo + hi) / 2
+                    lo, hi = (mid, hi) if _frac(ks, i, mid, True) < u else (lo, mid)
+                tu = (lo + hi) / 2
+            out.append({"t": round(tu, 3), "x": pa[0] + (pb[0] - pa[0]) * u,
                         "y": pa[1] + (pb[1] - pa[1]) * u, "run": a.get("run", dist / dur > 2.6)})
             k += 1
     return out
