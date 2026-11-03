@@ -28,7 +28,7 @@ class FakeYT:
         class S:
             def list(self, q, **kw):
                 outer.searches.append(q)
-                n = abs(hash(q)) % 5 + 3
+                n = len(q) % 5 + 3   # deterministic: hash() changes per process (PYTHONHASHSEED), which made this test flaky
                 return Exec({"items": [{"id": {"videoId": f"{q[:6]}-{i}"}} for i in range(n)] +
                              [{"id": {"videoId": "shared"}}]})
         return S()
