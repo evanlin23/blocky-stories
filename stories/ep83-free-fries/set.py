@@ -256,8 +256,8 @@ def build_diner(kit, ctx):
     B(None, (1.04, 0.1, 0.04), (1.4, 3.86, 2.14), bub, "doorf", 0.01)
     CY(None, 0.22, 0.04, (1.4, 3.80, 1.58), M(CHROME, 0.2), "rim", rot=(math.pi / 2, 0, 0))
     CY(None, 0.175, 0.05, (1.4, 3.795, 1.58), P("#10182a", 0.1, 0.9), "glass", rot=(math.pi / 2, 0, 0))
-    refl = B(None, (0.17, 0.004, 0.028), (1.355, 3.768, 1.63), kit.emit(PINK, 1.6, name="refl"), "refl", 0.0,
-             rot=(0, 0.6, 0))
+    for rr, (gx, gz) in ((0.045, (1.33, 1.65)), (0.02, (1.29, 1.6))):
+        refl = CY(None, rr, 0.004, (gx, 3.762, gz), kit.emit(PINK, 1.6, name="refl"), "refl", rot=(math.pi / 2, 0, 0))
     no_shadow(refl)
     # the counter, stools, bottles
     B(None, (5.4, 0.7, 1.0), (-4.7, 2.9, 0.5), P(MINT, 0.5), "counter", 0.01)
@@ -320,8 +320,8 @@ def build_diner(kit, ctx):
     hide(ctx["hbasket2"], True)
     # lights
     for x in (-4.5, 0.0, 4.5):
-        kit.light(f"dl{x}", "POINT", (x, 1.2, 3.1), 340, "#fff4e0", size=0.5, shadow=False)
-    ctx["sun"] = kit.light("sun", "SUN", (0, 0, 50), 4.0, "#fff1d0", size=0.1)
+        kit.light(f"dl{x}", "POINT", (x, 1.2, 3.1), 170, "#fff4e0", size=0.5, shadow=False)
+    ctx["sun"] = kit.light("sun", "SUN", (0, 0, 50), 2.5, "#fff1d0", size=0.1)
     ctx["sun"].data.angle = 0.06
     az, el = math.radians(20), math.radians(38)
     pos = V((math.sin(az) * math.cos(el), -math.cos(az) * math.cos(el), math.sin(el)))
@@ -388,8 +388,8 @@ def build_kitchen(kit, ox, home, ctx):
         B(hang, (0.14, 0.055, 0.08), (sx * 0.07, 0, 0.07), P("#fff2a8", 0.5), "hcuff", 0.02)
     ctx.setdefault("hang", {})[ox] = hang
     # lights
-    ctx.setdefault("klamp", []).append(kit.light(f"klamp{int(ox)}", "POINT", (ox, 1.4, 2.9), 330, "#ffe1b0", size=0.5, shadow=False))
-    kit.light(f"kl2{int(ox)}", "POINT", (ox - 2.4, 0.6, 2.6), 200, "#ffe1b0", size=0.5, shadow=False)
+    ctx.setdefault("klamp", []).append(kit.light(f"klamp{int(ox)}", "POINT", (ox, 1.4, 2.9), 200, "#ffe1b0", size=0.5, shadow=False))
+    kit.light(f"kl2{int(ox)}", "POINT", (ox - 2.4, 0.6, 2.6), 120, "#ffe1b0", size=0.5, shadow=False)
     if home:
         # a wall calendar and the dishes (cue "dish"), a card that flips (cue "cal")
         cal = E(None, (ox + 1.2, 3.38, 1.6), "cal")
@@ -460,8 +460,8 @@ def build_stockroom(kit, ctx):
                   P("#d9a566" if (k + lv) % 2 else "#e4b97c", 0.8), "sbox", 0.02)
     ctx["srbox"] = B(None, (0.6, 0.45, 0.4), (ox, 1.0, 0.9), P("#e4b97c", 0.8), "carry", 0.02)
     hide(ctx["srbox"], True)
-    kit.light("srl1", "POINT", (ox - 1.5, 1.5, 2.9), 330, "#fff1d8", size=0.5, shadow=False)
-    kit.light("srl2", "POINT", (ox + 1.5, 1.5, 2.9), 330, "#fff1d8", size=0.5, shadow=False)
+    kit.light("srl1", "POINT", (ox - 1.5, 1.5, 2.9), 200, "#fff1d8", size=0.5, shadow=False)
+    kit.light("srl2", "POINT", (ox + 1.5, 1.5, 2.9), 200, "#fff1d8", size=0.5, shadow=False)
 
 
 # ------------------------------------------------------------------------------------------------ camera inset / porthole
@@ -528,7 +528,7 @@ def build(kit, story, tl):
     build_kitchen(kit, HM, True, ctx)
     ctx["klamp"] = kh + ctx.get("klamp", [])
     build_stockroom(kit, ctx)
-    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 55, "#fff0dc", size=0.6, shadow=False)
+    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 30, "#fff0dc", size=0.6, shadow=False)
     build_overlays(kit, ctx)
     ctx["bg"] = bpy.context.scene.world.node_tree.nodes["Background"]
     return ctx
@@ -545,7 +545,7 @@ def mom_late(kit, ctx):
         ctx["mgl"] += [g, c]
 
 
-LOOKS = {"day": {"bg": 1.0, "sun": 4.0, "lamp": 1.0}, "eve": {"bg": 0.5, "sun": 0.0, "lamp": 1.25}}
+LOOKS = {"day": {"bg": 0.8, "sun": 2.5, "lamp": 1.0}, "eve": {"bg": 0.4, "sun": 0.0, "lamp": 1.1}}
 
 
 def look_of(ctx, sid):
@@ -608,7 +608,7 @@ def animate(kit, story, tl, t, ctx):
         gy = lerp(4.95, 3.98, s)
         wig = hc.get("wig", 0.0)
         gl = ctx["gloves"][kind]
-        gl.location = (wig * 0.05 * math.sin(t * 5.0), gy, 1.12 + wig * 0.03 * math.sin(t * 7.0))
+        gl.location = (wig * 0.05 * math.sin(t * 5.0), gy, 1.27 + wig * 0.03 * math.sin(t * 7.0))
         hide(hb, not hc.get("basket", True))
         hb.location = (0, gy - 0.46, 1.0)
         hide(hb2, not hc.get("second", False))

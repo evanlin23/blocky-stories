@@ -91,8 +91,8 @@ def C(tgt, d, az=0, el=10, lens=30, d2=None, lens2=None, tgt2=None, az2=None, el
     k_ = 1.3 if d >= 0.9 else 1.12
     d = d * k_
     d2 = d2 * k_ if d2 is not None else None
-    lens = lens * 0.92
-    lens2 = lens2 * 0.92 if lens2 else None
+    lens = lens * 0.6
+    lens2 = lens2 * 0.6 if lens2 else None
     k0 = [0, pos_of(tgt, d, az, el), list(tgt), lens]
     if d2 is None and tgt2 is None and lens2 is None and az2 is None and el2 is None:
         return [k0]
@@ -142,7 +142,7 @@ def hatch(at, kind="yellow", s0=0.0, s1=1.0, dur=1.2, basket=True, wig=0.0, seco
 
 # =========================================================================================== 01 L01-L08 the rule at work
 hatch(0, dur=1.6)
-S(0, C((0.45, 3.9, 1.8), 2.4, 0, 5, 30, d2=1.85), hand=0.004,
+S(0, C((0.45, 3.9, 1.95), 2.5, 0, 4, 30, d2=2.0), hand=0.004,
   note="frame 1: close on the hatch, yellow gloves sliding a gold basket, the sign above, the dark round window beside")
 S("L02", C((1.4, 3.9, 1.6), 1.2, 15, 3, 40, d2=0.9), note="close on the round window, dark, the pink glow on its glass")
 hatch("L03", s0=1.0, s1=1.0, wig=0.0, basket=False)
@@ -301,7 +301,7 @@ cue("L43", "hbask", on=False)
 cue("L43", "stove", on=False)
 scene("L43")
 hatch("L43", dur=1.6)
-S("L43", C((0.45, 3.9, 1.8), 2.6, 0, 5, 30, d2=2.4), hand=0.004, note="the hatch again, back to S01's framing. Loop")
+S("L43", C((0.45, 3.9, 1.95), 2.6, 0, 4, 30, d2=2.5), hand=0.004, note="the hatch again, back to S01's framing. Loop")
 
 # ---------------------------------------------------------------------------------------------------- story
 look = {"fog": "#cfeeff", "fog_density": 0.0, "fog_start": 30.0, "sky": "#cfeeff", "exposure": 0.0, "flash_safe": True,
