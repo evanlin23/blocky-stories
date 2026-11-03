@@ -576,7 +576,7 @@ def animate(kit, story, tl, t, ctx):
     ctx["sun"].data.energy = L["sun"]
     cl, _, lens, _ = bl_story.cam_at(sd, cur, t, {}, tl)
     ctx["fill"].location = (cl[0], cl[1], cl[2])
-    sc.view_settings.exposure = sd.get("exp", 0.0)
+    sc.view_settings.exposure = sd.get("exp", 0.0) + (-0.3 if cur["start"] < 38.0 and not sd.get("ring") and "kitchen" not in sd.get("note", "") else 0.0)
     ov = {"camfill": sd.get("fill", 1.0)}
     for lt in ctx["klamp"]:
         ov[lt.name] = L["lamp"]
