@@ -49,3 +49,8 @@ Delete `out/work/every-lock/frames-preview` (stale frames corrupt the flash read
 `finish`, `mix`, and `python -m blocky flash every-lock --file out/work/every-lock/every-lock-preview.mp4`. Once flash
 passes with margin, run critic round 1 and standards round 1, at most two rounds plus one rescue. Then `gate`, PR,
 merge (after the proof-render PR is in), qa on the final film, queue.txt, and report to the lead.
+
+## Clip/asr fix round (2026-11-03)
+Cleared all clip rows: S032 racers spread to x +-0.4, me stepped back at L47.2, pile clearings (`MEHOLE`) around me at
+L51.1/L54/L56, L67.1 me x 0.03 and Jade x 0.67. asr: spoken L57 is "i pull the bottom two out." (caption unchanged,
+split into two chunks). Preview redrawn from S087 on plus S032; flash passes; preflight 0 blocks; clipcheck 0. Main merged.
