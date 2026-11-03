@@ -139,3 +139,42 @@ read as natural"). Overall 6 → 7 → 7.5. No jitter at phone size, and no capt
 4. At 26.5 s the push aims at the frame's centre, not the sitter's face. Left for now: aiming at a face needs the
    camera to know who's in frame. Builders can key their own camera on a shot like this, and the pack leaves it alone.
 Fixes 1 to 3 are in the engine and tested, not rendered again. The Actions final measures and flash-checks them.
+
+## v2.1: colour, the voice and the cost of ones (2026-11-03, from ep62's final)
+
+The first final with v2, ep62-six-riders (`docs/research/craft-metrics.md`), hit every motion target. It warned on
+saturation (0.19), voice over the bed (6.3 dB) and repeated frames (68%).
+
+- **Saturation.** The bright grade's toe added grey to every pixel, and grey washes colour out. It now scales each
+  pixel by its luma's lift, so the hue and saturation stay, and the saturation floor goes from 1.06 to 1.1. On
+  ep32's drawings (every 40th, grade only): the story's own grade reads saturation 0.565, brightness 0.284 and
+  darkest 5% 0.058. v2 read 0.527, 0.322 and about 0.09. v2.1 reads 0.599, 0.329 and 0.097, so it's brighter and
+  more colourful than the story's own grade. Part of ep62's 0.19 is the story itself: a pale grey sky and fog
+  (`#cfd8de`).
+- **The voice.** `measure.py` counts the voice against the music and ambience stems. Mixed here from ep62's own
+  narration: no pack 6.1 dB, v2 6.3 dB, v2.1 11.3 dB. ep62's own music (-22.6 LUFS) was the cause, not the pack.
+  v2.1 makes the bed quieter (-44 LUFS, and 12 dB lower again under the story's own ambience), ducks the
+  ambience, bed and polish sounds 8 dB, and dips the music under the lines by only as much as it takes (0, 2, 4
+  or 6 dB) to put the voice 10.5 dB over music and ambience together. ep62 lands at 11.3 dB and ep32 at 14.0
+  (no extra music dip needed). Both master at -14.0 LUFS with a true peak of -2.0 dBTP before the encode.
+- **Repeated frames.** With the pack, the camera moves in about 95% of the time, and a move drawn on twos judders.
+  The only fix is drawing those shots on every frame. `ones: "moving"` does it, with these drawing counts:
+
+  | story | frames | twos (as written) | `walk` (default) | `moving` |
+  |---|---|---|---|---|
+  | ep62-six-riders (34 s) | 1007 | 510 | 746 (1.46×) | 1007 (1.97×) |
+  | ep32-sitter (87 s) | 2603 | 1314 | 1428 (1.09×) | 2603 (1.98×) |
+  | ep34-unit-seven (143 s) | 4292 | 2291 | 2515 (1.10×) | 4292 (1.87×) |
+  | ep48-crazy-golf (141 s) | 4221 | 2139 | 2322 (1.09×) | 4221 (1.97×) |
+
+  At ep34's measured 12.9 s a drawing on Actions (run 41564219345: 491 shard-minutes for 2291 drawings), `moving`
+  takes ep34 to about 920 shard-minutes. That's about 57 min a shard, against 31, so about 30 min more wall time
+  per story. The free plan runs 20 jobs at once, and a story is 16 shards, so it nearly doubles how long the
+  queue takes to render. ep62-length stories cost little either way. `walk` stays the default until the lead
+  decides; set `"ones": "moving"` per story to try it.
+
+**Decision (lead, 2026-11-03): `ones: "moving"` is the default.** The owner's bar is "very high", Actions minutes
+are free for this public repo, and about 30 more minutes of render time per story is worth losing the judder now
+that the camera moves 96% of the time. `"ones": "walk"` in a story's `look.polish` is the opt-out, for a long,
+static story whose render would run over about 2 h. Stories already merged keep their films. Only new merges and
+re-renders pick it up. The draw shards' timeout (340 min) has plenty of room.
