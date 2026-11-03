@@ -205,3 +205,29 @@ Sound events per 10 s (`measure.py --story`, the builder's own effects and foots
 The pack now adds about 1 per 10 s. ep62 and dryer-nine stay over 4 because of their own `sfx` (10 in 34 s and 25 in
 82 s: clicks, thuds and whooshes). That's the builder's to trim (`builder.md` → Sound budget), and `measure.py`
 now warns outside 2 to 4.
+
+## v2.3: pace (2026-11-03, the craft-metric blocks)
+
+From 6 PM Central today, qa blocks a film under 12.5 picture changes per 10 s (0.5 s steps), 14 at 0.25 s steps,
+or motion energy 6.0, or with a 0.25 s run still over 1.0 s (`scripts/measure.py`, PR #163; the hits' medians are
+16.5, 21.3, 7.6 and 0.25 s). Every film we had failed them, polished ep62 included (11.3 / 13.4 / 5.7 / 1.33 s).
+A slow 0.12 m/s camera move hardly moves the 18×32 grid, so the pace has to come from visible reframing.
+
+v2.3 adds it on the output crop, so it costs no drawing: a steady push through every shot (15%, constant rate, in
+then out shot to shot) and an angle cut about every 1.0 s inside shots over 1.6 s (a 1.17× tighter, offset framing
+every other part, never in a reveal shot or a quiet span). The total crop is capped at 1.25×. The bright grade's
+exposure floor goes to 1.12, and it now keeps every pixel under WCAG's saturated red. The first try failed the
+flash bar's red-frame rule: ep32 S09b is 47.7% saturated red, and the tighter crop took it to 53% against the 50%
+bar.
+
+ep32's preview (every 4th drawing, so the final reads livelier still), all on the same drawings:
+
+| | no pace (v2.2) | push 0.10, cut 1.1 s at 1.14× | **v2.3: push 0.15, cut 1.0 s at 1.17×** | block |
+|---|---|---|---|---|
+| Changes per 10 s (0.5 s) | 10.3 | 12.8 | **13.5** | ≥ 12.5 |
+| Changes per 10 s (0.25 s) | 11.3 | 14.6 | **15.8** | ≥ 14 |
+| Motion energy (0.25 s) | 5.3 | 6.12 | **6.33** | ≥ 6.0 |
+| Longest still (0.25 s) | 0.53 s | 0.53 s | **0.53 s** | ≤ 1.0 |
+| Brightness | 0.346 | 0.375 | **0.376** | hits 0.45 |
+| Saturation | 0.576 | 0.561 | **0.562** | hits 0.51 |
+| Flash (house bar) | pass | pass | **pass**, 1 a second at most | pass |

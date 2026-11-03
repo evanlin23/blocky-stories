@@ -213,9 +213,15 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   `scripts/measure.py` (through `polish.cam_specs`). The whole move is at most 0.12 m/s, a camera under 2 m from its
   target pushes proportionally less, and a shot a reveal lands in gets a straight push at half speed with its
   characters' idle motion at a fifth (`tl["motion"]["calm_shots"]`). The 2D drift then only covers shots it doesn't.
+- **Pace** (v2.3, the craft-metric blocks from 2026-11-03): a steady crop push through every shot (`push`, 15%
+  across it, in on one shot and out on the next, at a constant rate), and inside any shot over 1.6 s an angle cut
+  about every second (`reframe_every`): every other part is a 1.17× tighter framing, offset up and to one side,
+  like a second camera. Reveal shots and quiet spans get no angle cut and half the push. The pack's crop never
+  goes past 1.25× (`max_zoom`: the drawings are 540 wide). The bright grade keeps every pixel under WCAG's saturated
+  red (`red_line` 0.78), because the tighter crops enlarge red areas.
 - **Punch-ins** (v2): key words only (the builder's `emph`, the hook, big words, all-caps captions, a key word that
   ends its line), at most `punch_rate` (0.7) per 10 s, evenly spread. Hits keep their own 4 s spacing.
-- **Picture:** the `bright` grade raises exposure to at least 1.04 and saturation to 1.1, caps contrast at 1.05,
+- **Picture:** the `bright` grade raises exposure to at least 1.12 (v2.3) and saturation to 1.1, caps contrast at 1.05,
   the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them (by scaling each pixel with its
   luma's lift, so colours keep their saturation). The
   story's own tints and shot grades stay.
