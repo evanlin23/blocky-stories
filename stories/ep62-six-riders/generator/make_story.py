@@ -12,7 +12,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.12
 for ln in lines:
     if ln["id"] == "L04":
-        ln["tempo"] = 0.9
+        ln["tempo"] = 0.36      # each letter needs >= 0.25 s, landing on its tag pop
 lines = lines + [{"id": "P03", "pause": LOOP, "chunks": []}]
 
 # ------------------------------------------------------------------------------------------------ cast
@@ -34,10 +34,8 @@ C = person("#c58c63", "#2f5bea", "#2a2d3a", "cap", "#6b4423", 1.04, "#f4f4f4")
 D = person("#c58c63", "#3fbf5a", "#2a2d3a", "cap", "#6b4423", 1.0, "#f4f4f4")
 A = person("#6b4429", "#e8433a", "#22252d", "bun", "#141414", 0.97, "#f4f4f4")
 B = person("#d9a679", "#ffd23f", "#2b2f3a", "cap", "#141414", 1.02, "#1d2a44", ["tie"])
-E = person("#e0b48c", "#8e5bd6", "#2b2b33", "bun", "#f1f1f1", 0.9, "#f4f4f4", ["glasses"])
-E["glasses_c"] = "#3a3a40"
-cast = {"a": A, "b": B, "c": C, "d": D, "e": E}
-for k in "abcde":
+cast = {"a": A, "b": B, "c": C, "d": D}
+for k in "abcd":
     cast["r" + k] = dict(cast[k])
 cast["x"] = dict(C)
 cast["bro"] = dict(C)
@@ -45,13 +43,12 @@ for k in list(cast):
     if k.startswith("r") or k in ("x", "bro"):
         cast[k] = {**cast[k], "height": round(cast[k]["height"] * 1.1, 3)}
 
-ROWS = {"c": (-1.1, 0.6), "a": (1.35, 0.6), "b": (0.9, 1.6), "d": (-0.6, 1.6), "e": (-1.5, 1.6)}
-GAP = (0.1, 0.6)
+ROWS = {"c": (-1.25, 0.6), "a": (1.35, 0.6), "b": (0.95, 1.6), "d": (-0.85, 1.6)}
+GAP = (-0.35, 0.6)
 acting = {k: [] for k in cast}
 for k, (x, y) in ROWS.items():
     acting[k].append({"at": 0, "pos": [x, y], "yaw": 0, "expr": "neutral"})
-    rx = -2.35 if k == "e" else x      # a reflection's x is mirrored, except E's: it steps out from behind C's reflection
-    acting["r" + k].append({"at": 0, "pos": [rx, -y], "yaw": 180, "expr": "neutral"})
+    acting["r" + k].append({"at": 0, "pos": [x, -y], "yaw": 180, "expr": "neutral"})
 acting["x"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "neutral", "look": [0, 0]})
 acting["bro"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "worried", "hidden": True})
 acting["d"].append({"at": "L16.3", "expr": "wide", "blend": 0})
@@ -72,69 +69,92 @@ MAS = [0.0, 4.25, 3.8]
 MT = [0.0, 0.0, 0.5]
 ML = 14.5
 MASTER = still(MAS, MT, ML)
+GX, CX = GAP[0], ROWS["c"][0]
+BLUE = (GX + CX) / 2          # the glass between the two blue jackets
+S06 = still([-0.75, 2.45, 1.8], [-1.25, 0.6, 1.2], 17)
+S14 = still([-0.95, 1.2, 1.95], [-1.3, 0.6, 1.4], 24)
 SHOTS = [
-    (0, "S01", "close on the doors: six faces, push in", move(([0, 4.1, 3.7], [0, -0.6, 1.5]), ([0, 3.7, 3.6], [0, -0.6, 1.5]), 17, 20), 2, 0),
-    ("L01.4", "S02", "punch in on the six faces, the hit on SIX", still([0, 4.0, 3.7], [0, -0.6, 1.5], 27), 2, 1),
-    ("L02", "S03", "the master", MASTER, 2, 0),
-    ("L03", "S04", "side view along the car", move(([1.6, 3.9, 1.7], [0.0, 0.3, 1.2]), ([1.55, 3.8, 1.7], [-0.1, 0.3, 1.2]), 18), 2, 1),
-    ("L04", "S05", "the master, tags pop", MASTER, 2, 0),
-    ("L05", "S06", "over my shoulder", still([-0.3, 2.45, 1.75], [-0.8, 0.6, 1.15], 17), 2, 1),
-    ("L06", "S07", "the master, slow push", move((MAS, MT), ([0.0, 3.75, 2.3], [0, 0, 0.85]), ML, 12.0), 2, 0),
-    ("L07", "S08", "close on the display", still([0, 1.3, 2.9], [0, 0.15, 2.92], 42), 2, 1),
-    ("P01", "S09", "the hold master, display 3", MASTER, 2, 0),
-    ("P01+1", "S10", "punch in 6 percent, display 2", still(MAS, MT, ML * 1.06), 2, 0),
-    ("P01+2", "S11", "punch in another 6 percent, display 1", still(MAS, MT, ML * 1.12), 2, 0),
-    ("L08", "S12", "push in on the two blue jackets in the glass", move(([-0.5, 4.0, 3.7], [-0.5, -0.6, 1.4]), ([-0.5, 3.7, 3.6], [-0.5, -0.6, 1.4]), 20, 24), 2, 1),
-    ("L09", "S13", "my brother three-quarter front, me behind him", still([-0.62, 0.1, 1.6], [-1.1, 0.6, 1.5], 13), 2, 1),
-    ("L10", "S14", "his right shoulder, the bag", still([-0.6, 1.15, 1.6], [-1.5, 0.6, 1.1], 19), 2, 1),
-    ("L11", "S15", "his reflection, bag on screen right", still([-1.2, 3.9, 3.7], [-0.9, -0.6, 1.3], 28), 2, 1),
-    ("L11.3", "S15b", "the copy beside it, bag on screen left", still([0.0, 3.9, 3.7], [0.0, -0.6, 1.4], 28), 2, 1),
-    ("L12", "S16", "the copy, mid close", still([0.0, 3.9, 3.7], [0.0, -0.6, 1.45], 36), 2, 1),
-    ("L12.2", "S17", "punch in on its face", still([0.0, 3.9, 3.7], [0.0, -0.6, 1.58], 55), 2, 1),
-    ("L13", "S18", "slow push on the copy and C's reflection", move(([-0.6, 3.9, 3.7], [-0.45, -0.6, 1.35]), ([-0.6, 3.5, 3.7], [-0.45, -0.6, 1.35]), 22, 27), 2, 1),
-    ("P02", "S19", "close on the display: 1", still([0, 1.3, 2.9], [0, 0.15, 2.92], 42), 2, 1),
-    ("L14", "S20", "the doors open on an empty corridor", MASTER, 2, 0),
-    ("L15", "S21", "the doors close", MASTER, 2, 0),
-    ("L16", "S22", "over my shoulder again, the bag on screen left", still([-0.3, 2.45, 1.75], [-0.8, 0.6, 1.15], 17), 2, 1),
-    ("L16.3", "S23", "me from the side, wide", still([1.0, 0.95, 2.7], [-0.6, 1.6, 1.4], 22), 2, 1),
-    ("L17", "S24", "close on his tag, a backwards C", still([-1.1, 1.3, 1.75], [-1.1, 0.84, 1.3], 34), 2, 1),
-    ("L18", "S25", "my real brother in the glass", still([0.0, 3.9, 3.7], [0.0, -0.6, 1.45], 34), 2, 1),
-    ("L19", "S26", "the master, push in on the copy's back", move(([0.0, 4.2, 3.7], [-0.5, 0.0, 1.0]), ([-1.0, 3.5, 3.7], [-0.9, 0.6, 1.2]), 12, 19), 2, 1),
+    (0, "S01", "close on the doors: five faces, push in until they fill the width", move(([0.05, 4.1, 3.7], [0.05, -0.6, 1.6]), ([0.05, 3.9, 3.65], [0.05, -0.6, 1.6]), 18, 21)),
+    ("L01.4", "S02", "punch in on the five faces, the hit on FIVE", still([0.05, 4.0, 3.7], [0.05, -0.6, 1.6], 26)),
+    ("L02", "S03", "the master", MASTER),
+    ("L03", "S04", "side view along the car", move(([1.6, 3.9, 1.7], [0.0, 0.3, 1.2]), ([1.55, 3.8, 1.7], [-0.1, 0.3, 1.2]), 18)),
+    ("L04", "S05", "the master, tags pop", MASTER),
+    ("L05", "S06", "over my shoulder", S06),
+    ("L06", "S07", "the master, slow push", move((MAS, MT), ([0.0, 3.75, 2.3], [0, 0, 0.85]), ML, 12.0)),
+    ("L07", "S08", "the display, wide enough that the dark plate is a small part of the frame", still([0, 2.0, 2.95], [0, 0.15, 2.85], 30)),
+    ("P01", "S09", "the hold master, display 4", MASTER),
+    ("P01+1", "S10", "punch in 6 percent", still(MAS, MT, ML * 1.06)),
+    ("P01+2", "S11", "punch in another 6 percent", still(MAS, MT, ML * 1.12)),
+    ("L08", "S12", "push in on the two blue jackets in the glass", move(([BLUE, 4.0, 3.7], [BLUE, -0.6, 1.4]), ([BLUE, 3.7, 3.6], [BLUE, -0.6, 1.4]), 20, 24)),
+    ("L09", "S13", "two-shot: my brother three-quarter front, me behind his shoulder", still([0.35, 0.2, 1.72], [-1.0, 1.1, 1.62], 26)),
+    ("L10", "S14", "his right shoulder, the bag", S14),
+    ("L11", "S15", "his reflection, bag on screen right", still([0.9, 3.9, 3.9], [-1.25, -0.6, 1.5], 26)),
+    ("L11.3", "S15b", "the copy beside it, bag on screen left", still([0.9, 3.9, 3.9], [GX, -0.6, 1.5], 28)),
+    ("L12", "S16", "the copy, mid close", still([GX, 3.9, 3.8], [GX, -0.6, 1.45], 36)),
+    ("L12.2", "S17", "punch in on its face", still([GX - 0.05, 3.9, 3.8], [GX - 0.05, -0.6, 1.58], 55)),
+    ("L13", "S18", "slow push on the copy and C's reflection", move(([BLUE + 0.25, 3.9, 3.8], [BLUE, -0.6, 1.4]), ([BLUE + 0.25, 3.5, 3.8], [BLUE, -0.6, 1.4]), 22, 27)),
+    ("P02", "S19", "close on the display: 1", still([0, 2.0, 2.95], [0, 0.15, 2.85], 30)),
+    ("L14", "S20", "the doors open on an empty corridor", MASTER),
+    ("L15", "S21", "the doors close", MASTER),
+    ("L16", "S22", "framed like S06, the bag now on screen left", S06),
+    ("L16.3", "S23", "S14's close from behind, the bag now on screen left", S14),
+    ("L17", "S24", "close on his tag, a backwards C", still([-1.25, 1.3, 1.75], [-1.25, 0.84, 1.3], 34)),
+    ("L18", "S25", "my real brother in the glass", still([GX, 3.9, 3.8], [GX, -0.6, 1.45], 34)),
+    ("L19", "S26", "the master, push in on the copy's back", move(([0.0, 4.2, 3.7], [-0.5, 0.0, 1.0]), ([-1.0, 3.5, 3.7], [-1.0, 0.6, 1.2]), 12, 19)),
 ]
+
+
+def sees_display(cam):
+    """Is any part of the real floor display's plate in the frame at the shot's start or end (pinhole, 9:16)?"""
+    import math
+    pts = [(sx * 0.31, 0.15, 2.92 + sz * 0.17) for sx in (-1, 0, 1) for sz in (-1, 0, 1)]
+    for _, loc, tgt, lens in cam:
+        f = [t - l for t, l in zip(tgt, loc)]
+        n = math.sqrt(sum(v * v for v in f)); f = [v / n for v in f]
+        r = [f[1], -f[0], 0.0]; n = math.hypot(r[0], r[1]); r = [v / n for v in r]
+        u = [r[1] * f[2] - r[2] * f[1], r[2] * f[0] - r[0] * f[2], r[0] * f[1] - r[1] * f[0]]
+        th = 12.0 / lens
+        for p in pts:
+            v = [a - b for a, b in zip(p, loc)]
+            zc = sum(a * b for a, b in zip(v, f))
+            if zc > 0.1 and abs(sum(a * b for a, b in zip(v, r)) / zc) < th * 0.5625 and abs(sum(a * b for a, b in zip(v, u)) / zc) < th:
+                return True
+    return False
+
+
 shots = []
 corner = []
-for i, (at, sid, what, cam, step, cor) in enumerate(SHOTS):
-    s = {"id": sid, "cam": cam, "hand": 0.0 if sid in ("S09", "S10", "S11") else 0.004, "step": step, "what": what}
+for i, (at, sid, what, cam) in enumerate(SHOTS):
+    s = {"id": sid, "cam": cam, "hand": 0.0 if sid in ("S09", "S10", "S11") else 0.004, "step": 2, "what": what}
     if i:
         s["at"] = at
     shots.append(s)
-    if cor:
+    if not sees_display(cam):
         corner.append(sid)
-# S08 and S19 are close on the display itself
-corner = [c for c in corner if c not in ("S08", "S19")]
+print("corner copies on:", corner)
 
 # ------------------------------------------------------------------------------------------------ cues
 BEFORE = {"c": -1, "rc": 1, "x": -1}
+GLASS_AFTER = {"c": -1, "rc": -1, "bro": -1}     # the glass sets itself while the doors are open
 AFTER = {"c": 1, "rc": -1, "bro": -1}
 cues = [
-    {"at": 0, "name": "digit", "d": 7},
-    {"at": "L02", "name": "digit", "d": 6},
-    {"at": "L05", "name": "digit", "d": 5},
+    {"at": 0, "name": "digit", "d": 5},
     {"at": "L07.1", "name": "digit", "d": 4},
-    {"at": "P01", "name": "digit", "d": 3},
-    {"at": "P01+1", "name": "digit", "d": 2},
-    {"at": "P01+2", "name": "digit", "d": 1},
+    {"at": "L08+0.3", "name": "digit", "d": 3},
+    {"at": "L12+0.3", "name": "digit", "d": 2},
+    {"at": "P02+0.1", "name": "digit", "d": 1},
     {"at": 0, "name": "bags", "sides": BEFORE},
-    {"at": "L14+0.4", "name": "bags", "sides": AFTER},
+    {"at": "L14+0.4", "name": "bags", "sides": GLASS_AFTER},
+    {"at": "L16", "name": "bags", "sides": AFTER},
     {"at": 0, "name": "door", "open": 0.0},
     {"at": "L14", "name": "door", "open": 1.0, "dur": 0.8},
     {"at": "L15", "name": "door", "open": 0.0, "dur": 0.8},
     {"at": "L08", "name": "ring", "on": True},
     {"at": "L09", "name": "ring", "on": False},
 ]
-for i, L_ in enumerate("ABCDE"):
+for i, L_ in enumerate("ABCD"):
     cues.append({"at": f"L04.{i}", "name": "tag", "who": L_})
-cues.append({"at": "L14+0.4", "name": "tagflip", "who": "C"})
+cues.append({"at": "L16", "name": "tagflip", "who": "C"})
 
 # ------------------------------------------------------------------------------------------------ sound
 sfx = [
@@ -143,14 +163,17 @@ sfx = [
     {"at": "P01+1", "kind": "thud", "db": -22, "dur": 0.2},
     {"at": "P01+2", "kind": "thud", "db": -22, "dur": 0.2},
     {"at": "P02+0.1", "kind": "bell", "db": -18, "dur": 0.6},
+    {"at": "L07.1", "kind": "click", "db": -20, "dur": 0.1},
+    {"at": "L08+0.3", "kind": "click", "db": -20, "dur": 0.1},
+    {"at": "L12+0.3", "kind": "click", "db": -20, "dur": 0.1},
     {"at": "L14", "kind": "whoosh", "db": -22, "dur": 0.9},
     {"at": "L15", "kind": "whoosh", "db": -22, "dur": 0.9},
 ]
 story = {
     "slug": "ep62-six-riders",
-    "title": "Five Riders, SIX In The Mirror",
+    "title": "The Elevator Mirror Shows FIVE",
     "made_for_kids": False,
-    "premise": "Five office workers ride a steel elevator and its mirror doors show six faces. You get three floors to find the extra one: two reflections wear the same blue jacket, and the bag on one of them is on the wrong side of the glass.",
+    "premise": "Four office workers ride a steel elevator and its mirror doors show five faces. You get three floors to find the extra one: two reflections wear the same blue jacket, and the bag on one of them is on the wrong side of the glass.",
     "twist": "The extra face was never a reflection. It was something standing in the glass, practicing being my brother. When the doors open and close it trades places with him: the brother in the car has his bag on the other shoulder and a backwards letter, and my real brother is the one inside the glass.",
     "world": "a bright brushed-steel office elevator with a white LED ceiling and a teal floor display counting down, mirror doors, and an empty white corridor beyond them",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
@@ -162,8 +185,9 @@ story = {
              "exposure": -0.5, "flash_safe": True},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.0, 0.0, 0.01], "saturation": 1.05, "contrast": 1.04,
               "vignette": 0.2, "bloom": 0.12, "grain": 0.008},
-    "asr_forgive": ["ay bee see dee ee"],
-    "phonemes": {"ay": "ˈA", "bee": "bˈi", "see": "sˈi", "dee": "dˈi", "ee": "ˈi"},
+    "asr_forgive": ["ay bee see dee"],
+    "phonemes": {"ay": "ˈAː", "bee": "bˈi", "see": "sˈi", "dee": "dˈi"},
+    "notags": ["S13"],
     "cast": cast,
     "lines": lines,
     "shots": shots,

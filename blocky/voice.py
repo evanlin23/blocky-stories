@@ -185,7 +185,7 @@ HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
               "grand": "gran", "girl": "gull",   # ep33: Gran (heard as grand) and the gull
               "pane": "pain", "panes": "pains", "boards": "board",   # ep15 redo: pane/pain (Whisper picks by context), boards/board
               "higher": "hire",   # higher/hire (ep26)
-              "c": "see", "d": "dee", "e": "ee", "i": "ay"}   # ep62: single letters voiced as their names, which Whisper writes as letters
+              "c": "see", "d": "dee"}   # ep62: single letters voiced as their names, which Whisper writes as letters
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 

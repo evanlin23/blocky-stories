@@ -41,17 +41,16 @@ HW = 1.95          # the car's half width
 CD = 4.4           # the car's depth (the back wall)
 CH = 4.0           # the ceiling
 DH = 2.5           # the doors' height
+TINT = 0.30         # how much steel the closed glass carries over the mirror world
 LEN = 9.0          # how far the corridor runs beyond the doors
 TEAL = "#20e3d2"
 ORANGE = "#ff8a1f"
 
 # a rider's spot is (x, y); the mirror cast stands at (x, -y) and faces us
-ROWS = {"c": (-1.1, 0.6), "a": (1.35, 0.6), "b": (0.9, 1.6), "d": (-0.6, 1.6), "e": (-1.5, 1.6)}
-GAP = (0.1, 0.6)
+ROWS = {"c": (-1.25, 0.6), "a": (1.35, 0.6), "b": (0.95, 1.6), "d": (-0.85, 1.6)}
+GAP = (-0.35, 0.6)
 TAG_Z = 1.3
 
-SHOT_NO_DISPLAY = {"S01", "S02", "S04", "S05b", "S06", "S09b", "S12", "S13", "S14", "S15", "S15b", "S16", "S17",
-                   "S18", "S19b", "S22", "S23", "S24", "S25"}   # overridden by the story's "corner" list when present
 
 
 def ss(x):
@@ -82,9 +81,9 @@ def shot_at(tl, t):
 
 
 def digit_png(path, d):
-    im = Image.new("RGBA", (512, 256), (4, 8, 9, 255))
+    im = Image.new("RGBA", (512, 256), (14, 40, 42, 255))
     dr = ImageDraw.Draw(im)
-    dr.rounded_rectangle([6, 6, 505, 249], 28, outline=(20, 70, 68, 255), width=5)
+    dr.rounded_rectangle([6, 6, 505, 249], 28, outline=(30, 90, 88, 255), width=5)
     f = ImageFont.truetype(str(FONT), 190)
     txt = str(d)
     w = dr.textlength(txt, font=f)
@@ -105,6 +104,27 @@ def tag_png(path, letter, flip=False):
     dr.text((n / 2, n / 2 + 6), letter, font=f, fill=(10, 10, 12, 255), anchor="mm")
     if flip:
         im = im.transpose(Image.FLIP_LEFT_RIGHT)
+    im.save(path)
+
+
+def sheen_png(path):
+    """Polished-steel look for the doors: soft diagonal streaks, a gloss gradient and the ceiling light's reflection."""
+    from PIL import ImageFilter
+    W, H = 256, 512
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    dr = ImageDraw.Draw(im)
+    for y in range(H):                        # gloss: brighter high on the door, fading down
+        a = int(46 * max(0.0, 1.0 - y / (H * 0.9)) ** 1.4)
+        dr.line([(0, y), (W, y)], fill=(235, 245, 250, a))
+    for x0, wd, a in ((20, 26, 120), (96, 10, 90), (150, 38, 105), (222, 14, 80)):   # slanted streaks
+        dr.polygon([(x0, 0), (x0 + wd, 0), (x0 + wd - 150, H), (x0 - 150, H)], fill=(245, 252, 255, a))
+    im = im.filter(ImageFilter.GaussianBlur(5))
+    dr = ImageDraw.Draw(im)
+    top = Image.new("RGBA", (W, H), (0, 0, 0, 0))   # the LED panel in the glass: a bright soft oblong near the top
+    td = ImageDraw.Draw(top)
+    td.rounded_rectangle([34, 30, W - 34, 78], 20, fill=(255, 255, 255, 235))
+    top = top.filter(ImageFilter.GaussianBlur(7))
+    im = Image.alpha_composite(im, top)
     im.save(path)
 
 
@@ -155,12 +175,12 @@ def glass_mat(kit, name):
     nt = m.node_tree
     N, L = nt.nodes, nt.links
     b = N["Principled BSDF"]
-    b.inputs["Base Color"].default_value = kit.col("#cfd8dd")
-    b.inputs["Metallic"].default_value = 0.3
-    b.inputs["Roughness"].default_value = 0.4
+    b.inputs["Base Color"].default_value = kit.col("#8e9ca5")
+    b.inputs["Metallic"].default_value = 0.6
+    b.inputs["Roughness"].default_value = 0.25
     tr = N.new("ShaderNodeBsdfTransparent")
     mx = N.new("ShaderNodeMixShader")
-    mx.inputs[0].default_value = 0.10
+    mx.inputs[0].default_value = TINT
     L.new(tr.outputs[0], mx.inputs[1])
     L.new(b.outputs[0], mx.inputs[2])
     kit._fogged(m, mx.outputs[0])
@@ -206,24 +226,27 @@ def build(kit, story, tl):
     kit.box("rail_back", (2 * HW - 0.1, 0.05, 0.05), (0, CD - 0.05, 0.95), steel_d)
 
     # ---- the floor display on the header (car side), digits 1.5 cm proud of the plate
-    kit.box("dispplate", (0.62, 0.03, 0.34), (0, 0.15 + 0.015, DH + 0.42), black)
+    kit.box("dispplate", (0.62, 0.03, 0.34), (0, 0.15 + 0.015, DH + 0.42), kit.plastic("#1b3436", 0.5))
     ctx["digit_mats"] = {}
-    for d in range(1, 8):
+    for d in range(1, 6):
         p = work / f"digit{d}.png"
         digit_png(p, d)
         ctx["digit_mats"][d] = img_mat(kit, f"digit {d}", p, 2.2, solid_alpha=True)
-    dm, dtx = ctx["digit_mats"][7]
+    dm, dtx = ctx["digit_mats"][5]
     plane = kit.plane("disp", (0.56, 0.28), (0, 0.15 + 0.045, DH + 0.42), dm, rot=(math.pi / 2, 0, math.pi))
     ctx["disp"] = plane
     ctx["disp_tx"] = dtx
     # a small corner copy of the display on the camera, for the tight shots
-    cm, ctx_ = img_mat(kit, "digit corner", work / "digit7.png", 2.2, solid_alpha=True)
+    cm, ctx_ = img_mat(kit, "digit corner", work / "digit5.png", 2.2, solid_alpha=True)
     corner = kit.plane("corner", (0.26, 0.13), (0, 0, -1), cm)
     corner.parent = kit.OBJ["cam"]
     corner.hide_render = True
     ctx["corner"] = corner
     ctx["corner_tx"] = ctx_
 
+    sheen_p = work / "sheen.png"
+    sheen_png(sheen_p)
+    sheen_m, _ = img_mat(kit, "sheen", sheen_p, 1.0)
     # ---- the doors: two halves, frame boxes with the glass on the car side
     ctx["halves"] = []
     ctx["glass_objs"] = []
@@ -236,7 +259,9 @@ def build(kit, story, tl):
         kit.box(f"half{sx}.out", (0.06, 0.06, DH), (sx * (w - 0.03), 0.0, DH / 2), steel_d, grp)
         kit.box(f"half{sx}.mid", (0.06, 0.06, DH), (sx * 0.03, 0.0, DH / 2), steel_d, grp)
         gp = kit.plane(f"glass{sx}", (w - 0.06, DH - 0.12), (cx, 0.04, DH / 2), glassm, grp, rot=(math.pi / 2, 0, 0))
+        sp = kit.plane(f"sheen{sx}", (w - 0.06, DH - 0.12), (cx, 0.056, DH / 2), sheen_m, grp, rot=(math.pi / 2, 0, math.pi))
         ctx["halves"].append((grp, sx))
+        ctx.setdefault("sheen", []).append(sp)
         ctx["glass_objs"].append(gp)
 
     # ---- the mirror room (wider than the car), and the corridor that shows when the doors open
@@ -261,7 +286,7 @@ def build(kit, story, tl):
 
     # ---- tags
     ctx["tags"] = {}
-    for L_ in "ABCDE":
+    for L_ in "ABCD":
         p = work / f"tag{L_}.png"
         pf = work / f"tag{L_}f.png"
         tag_png(p, L_)
@@ -286,7 +311,7 @@ def build(kit, story, tl):
 def _ring(kit, mat):
     """An elliptical band, 4 cm thick in y, standing in the glass room round the two blue jackets."""
     n = 64
-    cx, cz, rx, rz, w = -0.5, 1.25, 1.2, 0.8, 0.08
+    cx, cz, rx, rz, w = -0.8, 1.25, 1.0, 0.8, 0.08
     verts, faces = [], []
     for i in range(n):
         a = 2 * math.pi * i / n
@@ -335,7 +360,7 @@ def _bag(kit, ch):
 def animate(kit, story, tl, t, ctx):
     p = door_p(tl, t)
     # glass tint and the doors' slide
-    ctx["glass_mix"].inputs[0].default_value = 0.10 + 0.90 * ss(p / 0.3)
+    ctx["glass_mix"].inputs[0].default_value = TINT + (1.0 - TINT) * ss(p / 0.3)
     for grp, sx in ctx["halves"]:
         grp.location = (sx * (HW + 0.05) * p, 0, 0)
     mirror_on = p < 0.3
@@ -352,7 +377,7 @@ def animate(kit, story, tl, t, ctx):
     else:
         rg.hide_render = True
     # the mirror cast goes with the doors
-    for name in ("ra", "rb", "rc", "rd", "re", "x", "bro"):
+    for name in ("ra", "rb", "rc", "rd", "x", "bro"):
         ch = rig.CHARS.get(name)
         if ch is None:
             continue
@@ -380,7 +405,7 @@ def animate(kit, story, tl, t, ctx):
             for ob in [b] + list(b.children_recursive):
                 ob.hide_render = True
     # the display
-    d = cue_at(tl, "digit", t).get("d", 7)
+    d = cue_at(tl, "digit", t).get("d", 5)
     dm, dtx = ctx["digit_mats"][d]
     ctx["disp"].data.materials[0] = dm
     ctx["corner"].data.materials[0] = dm
@@ -403,7 +428,7 @@ def animate(kit, story, tl, t, ctx):
             continue
         t0 = started[0]["t"]
         u = ss((t - t0) / 0.15)
-        obj.hide_render = u <= 0.001
+        obj.hide_render = u <= 0.001 or shot["id"] in set(story.get("notags", []))
         flip = any(c.get("who") == L_ and c["t"] <= t for c in cue_list(tl, "tagflip"))
         obj.data.materials[0] = mf if flip else m
         sc = 0.3 + 0.7 * u

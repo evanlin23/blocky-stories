@@ -6,14 +6,14 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "five people got in the elevator. the mirror shows six.",
+   "text": "four people got in the elevator. the mirror shows five.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.638,
+   "dur": 2.69,
    "onset": 0.19,
-   "end": 2.448,
+   "end": 2.483,
    "chunks": [
     [
      0.19,
@@ -33,7 +33,7 @@
     ],
     [
      1.698,
-     2.448
+     2.483
     ]
    ]
   },
@@ -82,34 +82,30 @@
    ]
   },
   "L04": {
-   "text": "ay, bee, see, dee, ee.",
+   "text": "ay, bee, see, dee,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 1.586,
-   "onset": 0.207,
-   "end": 1.362,
+   "tempo": 0.3708,
+   "dur": 3.603,
+   "onset": 0.569,
+   "end": 3.069,
    "chunks": [
     [
-     0.207,
-     0.31
-    ],
-    [
-     0.345,
-     0.483
-    ],
-    [
-     0.517,
-     0.638
-    ],
-    [
-     0.672,
-     0.845
+     0.569,
+     0.81
     ],
     [
      0.905,
-     1.362
+     1.293
+    ],
+    [
+     1.397,
+     1.793
+    ],
+    [
+     1.888,
+     3.069
     ]
    ]
   },
