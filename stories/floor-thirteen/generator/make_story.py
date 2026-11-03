@@ -262,7 +262,7 @@ for who in cast:
 ME_BACK = [-0.1, 0.6]
 BAL_HIM = [BX + 0.5, 0.75]
 BAL_ME = [BX - 0.5, 0.75]
-HIS_DOOR = [-0.55, -5.1]
+HIS_DOOR = [-0.55, -4.9]   # stands clear of the leaf's swing (it opens into the flat, y < -5.2)
 
 # --- 01: bright thirteen
 put("me", 0, ME_BACK, yaw=0, expr="worried")
@@ -302,7 +302,7 @@ hide("okafor", "L13")
 # --- 03: Tuesday (me, small and in the car only for the faces)
 put("me", "L14.1", ME_BACK, yaw=0, expr="worried")
 hide("me", "P02")
-put("okafor", "L19", [-0.55, -5.0], yaw=180, arms=[0, 100], expr="grin")
+put("okafor", "L19", [-0.55, -4.9], yaw=180, arms=[0, 100], expr="grin")
 for k in range(4):   # a wave of the tomato
     key("okafor", f"L19.3+{0.25 * k:.2f}", arms=[0, 90 if k % 2 == 0 else 115], blend=0.12)
 hide("okafor", "L20")
@@ -333,7 +333,7 @@ talk("okafor", "L39.1", "L39>")
 put("me", "L39.2", [-0.1, -3.6], yaw=0, head=[0, 0], expr="worried")
 put("me", "P06", [0.0, -3.6], yaw=0, head=[0, 0], expr="worried")
 put("me", "L41", [0.2, -4.2], yaw=0, expr="worried")
-put("okafor", "L41", [-0.55, -5.15], yaw=180, expr="smile")
+put("okafor", "L41", [-0.55, -4.9], yaw=180, expr="smile")
 # --- 07: fetching
 hide("okafor", "L42")
 put("me", "L42", [0.0, 0.35], yaw=0, expr="worried")
@@ -390,7 +390,7 @@ thirteen("P05", 0.5, rim=0.7, fill=0.0)
 thirteen("L34", 0.4, rim=0.5, fill=1.1)
 cue("L36", "lights", state="land", dur=0.3)
 cue(0, "stair_door", open=0.0)
-cue("L36-0.1", "stair_door", open=1.0, dur=0.3)
+cue("L36-0.6", "stair_door", open=1.0, dur=0.3)
 cue("L37", "stair_door", open=0.0, dur=0.1)
 cue("L37", "lights", state="land", dur=0.9)
 thirteen("L42", 1.0, rim=0.6, fill=1.0, shelf=0.0)
@@ -422,7 +422,7 @@ cue("L50", "doors", gap=DOOR_W, hall=1.0, dur=0.7)
 
 # the landing's two front doors
 cue(0, "land_doors", me=0.0, him=0.0)
-cue("L04", "land_doors", me=0.0, him=1.0, dur=0.1)
+cue("L04-0.3", "land_doors", me=0.0, him=1.0, dur=0.2)
 cue("L05", "land_doors", me=0.0, him=0.0, dur=0.1)
 cue("L08", "land_doors", me=0.0, him=0.0, dur=0.1)
 cue("L08.1", "land_doors", me=0.0, him=1.0, dur=0.7)
@@ -599,7 +599,7 @@ story = {
                   {"at": "L45", "voices": ["drone", "pad"], "energy": 0.4, "mode": "dorian"},
                   {"at": "L48", "voices": ["drone"], "energy": 0.4, "mode": "phrygian"},
               ]},
-    "sound": {"rev": 5, "floor": "wood", "steps_db": -22,
+    "sound": {"rev": 8, "floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "hum", "from": 0, "to": "L08", "lufs": -40},
                   {"kind": "room", "from": "L08", "to": "L09", "lufs": -40},
