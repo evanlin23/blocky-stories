@@ -159,9 +159,9 @@ S(0, X((0.05, -1.15, 0.3), (0.0, 1.7, 1.05), 12.5, (0.05, -0.8, 0.32), None, 12.
   note="frame 1: low up the stairs from the foot, eleven plum steps, the box a shade brighter, tag 11")
 # L02: the nightlight, then the top-down with each tread dipping in turn
 S("L02", X((0.9, 3.4, 2.5), (1.65, 4.8, 2.3), 16), "night", note="the amber nightlight on the landing")
-S("L02.1", X((0.05, 3.2, 3.9), (0.0, 0.9, 0.9), 11.5), "night", note="top-down: each tread dips in turn, nobody on them")
+S("L02.2", X((0.05, 3.2, 3.9), (0.0, 0.9, 0.9), 11.5), "night", note="top-down: each tread dips in turn, nobody on them")
 for i in range(9):
-    dip(f"L02.1+{0.04 + 0.17 * i:.2f}", i + 1, 0.4)
+    dip(f"L02.2+{0.04 + 0.17 * i:.2f}", i + 1, 0.4)
 # L03: by day, me counting up the stairs, tag 10
 count("L03", 10)
 box("L03")
@@ -174,8 +174,8 @@ box("L04", BOT)
 put("me", "L04", ST(0), 180, "worried", arms=[0, 70])
 raw("me", "L04.1", pos=ST(5), arms=[0, 70])
 S("L04", X((3.1, 0.4, 1.7), (0.0, 1.0, 1.15), 11.5, (3.0, 0.7, 1.7), None, 11.5), "night", note="night: the same walk, tag 11")
-gone("me", "L04.2")
-S("L04.2", X((1.3, 0.2, 0.7), (0.0, 0.7, 0.45), 13), "night", hand=0.002, note="two treads side by side, identical")
+gone("me", "L04.3")
+S("L04.3", X((1.3, 0.2, 0.7), (0.0, 0.7, 0.45), 13), "night", hand=0.002, note="two treads side by side, identical")
 # L05, L06: Luis counting on his fingers, then he leaves past the front door glass
 put("luis", "L05", (0.15, -0.75), 180, "worried", arms=[60, 60])
 props("L05", bowl={"pos": [0.62, -2.75, 0.74]})
@@ -234,7 +234,7 @@ S("L16", X((0.0, 3.6, 3.4), (0.0, 0.9, 1.0), 11.5), "evening", note="the flashli
 cue("L17", "torch", on=False)
 props("L17", hold_flash=False)
 gone("me", "L17")
-cue("L17", "ddoor", open=0, to=88, dur=1.0)
+cue("L17.1", "ddoor", open=0, to=88, dur=1.0)
 S("L17", X((0.0, 2.9, 2.9), (-0.9, -1.8, 1.0), 12.5), "evening", note="down the stairs: Dad's door opening in the hall below")
 put("dad", "L18", (-0.1, -1.6), 0, "stern", arms=[50, 50])
 cue("L18", "ddoor", open=88)
@@ -276,12 +276,12 @@ gone("me", "L28")
 props("L28", hold_mug=False)
 # L28: Saturday night, me carries the box up the stairs and hides it by my bed
 count("L28", 10)
-walk("me", "L28", ST(0), "L28.1", ST(10), 180, "neutral", arms=[55, 55])
+walk("me", "L28", ST(0), "L28.3", ST(10), 180, "neutral", arms=[55, 55])
 box("L28", (0.0, -0.85, 1.0), pitch=6, to=[0.0, 3.1, LZ + 1.0], dur=1.7)
 S("L28", X((3.0, 0.2, 1.7), (0.0, 1.4, 1.5), 11.5), "night", note="night: me carrying the box up the stairs")
-gone("me", "L28.1")
-box("L28.1", ROOMBOX)
-S("L28.1", X((1.5, 5.6, LZ + 1.5), (-0.5, 6.6, LZ + 0.3), 12), "roomdim", note="the box beside my bed, tag back to 10")
+gone("me", "L28.3")
+box("L28.3", ROOMBOX)
+S("L28.3", X((1.5, 5.6, LZ + 1.5), (-0.5, 6.6, LZ + 0.3), 12), "roomdim", note="the box beside my bed, tag back to 10")
 
 # =========================================================================================== 05 L29-L35 the count
 put("me", "L29", [-1.7, 8.0, LZ + 0.55], 0, "worried", lean=-90, arms=[0, 0])
@@ -312,7 +312,8 @@ S("L35", X((0.0, 6.6, LZ + 1.3), (0.0, 4.95, LZ + 1.2), 13), "roomdim", fill=0.4
 # =========================================================================================== 06 L36-L42 the Climber
 # L36: the door bows, a long flat hand under it. L37-L40: the face at the gap. L41-L42: the whole shape.
 count("L36", 10)
-cue("L36", "mydoor", open=0, bow=0.0, to=0, bow_to=1.0, dur=0.9)
+cue("L36", "mydoor", open=0, bow=0.0)
+cue("L36.2", "mydoor", open=0, bow=0.0, to=0, bow_to=1.0, dur=0.9)
 clm("L36", None)
 props("L36", chand={"pos": [0.0, 4.72, LZ + 0.045], "yaw": 0})
 cue("L36", "torch", on=False)
@@ -334,7 +335,7 @@ cue("L41", "mydoor", open=0, bow=0.0)
 clm("L41", [0.15, 3.0, LZ], yaw=180, fold=0.62, roll=-75, reach=8, hp=5, hy=-80, hoff=0.42, kx=1.6, ky=0.2, kz=0.2)
 cue("L41", "torch", on=False)
 S("L41", X((2.3, 1.7, 3.4), (0.3, 3.6, 2.7), 10, (2.25, 1.9, 3.3), None, 10), "dim", hand=0.003, note="from the stairs side, lit: it has to fold under our ceiling")
-S("L41.1", X((1.8, 3.4, 2.3), (0.2, 3.7, 3.0), 13, (1.6, 3.5, 2.4), None, 13), "dim", hand=0.003, note="its head bent flat on its shoulder, its eye on me")
+S("L42", X((1.8, 3.4, 2.3), (0.2, 3.7, 3.0), 13, (1.6, 3.5, 2.4), None, 13), "dim", hand=0.003, note="its head bent flat on its shoulder, its eye on me")
 
 # =========================================================================================== 07 L43-L51 the rule's logic
 count("L43", 10)
@@ -371,10 +372,10 @@ S("L51", X((0.4, 7.8, LZ + 1.6), (0.3, 6.2, LZ + 1.6), 14), "roomdim", fill=0.9,
 cue("L52", "mydoor", open=0, to=26, dur=0.6)
 put("me", "L52", [0.3, 6.0, LZ], 180, "angry", arms=[50, 50], lean=20)
 S("L52", X((1.0, 7.6, LZ + 1.5), (0.1, 5.3, LZ + 0.5), 12), "roomdim", fill=0.7, note="my door open a crack, the box slides out onto the landing")
-box("L52+0.2", ROOMBOX, to=list(DOORBOX), dur=0.8)
-gone("me", "L52.1")
-count("L52.1", 11)
-cue("L52.1", "mydoor", open=26)
+box("L52.2", ROOMBOX, to=list(DOORBOX), dur=0.8)
+gone("me", "L52.3")
+count("L52.4", 11)
+cue("L52.3", "mydoor", open=26)
 clm("L53", [0.15, 2.7, LZ], yaw=180, fold=0.62, roll=-75, reach=8, hp=-10, hy=-80, hoff=0.42, kx=1.2, ky=0.0, kz=0.3, az=1.0)
 box("L53", DOORBOX)
 S("L53", X((0.0, 1.3, LZ + 0.35), (0.0, 4.5, LZ + 0.4), 12), "dim", hand=0.003, note="floor level: the box between its flat hands and my door")
@@ -385,7 +386,7 @@ S("L55", X((0.3, 4.3, LZ + 1.1), (0.15, 2.9, LZ + 1.4), 15), "dim", hand=0.003, 
 S("L56", X((0.9, 2.2, 2.8), (0.2, 3.8, 3.3), 11.5, (0.9, 2.3, 2.9), None, 11.5), "dawn", hand=0.003, note="dawn comes up in the round window, it stands one step short")
 S("L57", X((0.0, 6.6, LZ + 1.0), (0.0, 5.1, LZ + 0.8), 13), "dawn", fill=0.9, note="me with my back to the door, listening")
 put("me", "L57", [0.0, 5.45, LZ - 0.62], 180, "scared", arms=[40, 40])
-raw("me", "L57.1", expr="tired")
+raw("me", "L57.3", expr="tired")
 cue("L57", "torch", on=False)
 
 # =========================================================================================== 09 L58-L66 the warm turn
@@ -476,15 +477,15 @@ story = {
                   {"at": "L67", "voices": ["drone", "tick"], "energy": 0.35},
               ]},
     "sound": {
-        "rev": 1, "floor": "wood", "steps_db": -24,
+        "rev": 2, "floor": "wood", "steps_db": -24,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -44}],
         "sfx": [
-            {"at": "L01.2", "kind": "creak", "db": -14, "dur": 0.9},
-            {"at": "L02.1+0.04", "kind": "creak", "db": -20, "dur": 0.35},
-            {"at": "L02.1+0.38", "kind": "creak", "db": -20, "dur": 0.35},
-            {"at": "L02.1+0.72", "kind": "creak", "db": -20, "dur": 0.35},
-            {"at": "L02.1+1.06", "kind": "creak", "db": -20, "dur": 0.35},
-            {"at": "L17+0.1", "kind": "latch", "db": -18},
+            {"at": "L01.3", "kind": "creak", "db": -14, "dur": 0.9},
+            {"at": "L02.2+0.04", "kind": "creak", "db": -20, "dur": 0.35},
+            {"at": "L02.2+0.38", "kind": "creak", "db": -20, "dur": 0.35},
+            {"at": "L02.2+0.72", "kind": "creak", "db": -20, "dur": 0.35},
+            {"at": "L02.2+1.06", "kind": "creak", "db": -20, "dur": 0.35},
+            {"at": "L17.1", "kind": "latch", "db": -18},
             {"at": "L30", "kind": "creak", "db": -16, "dur": 0.5},
             {"at": "L30.1", "kind": "creak", "db": -16, "dur": 0.5},
             {"at": "L30.2", "kind": "creak", "db": -16, "dur": 0.5},
@@ -493,7 +494,7 @@ story = {
             {"at": "L32.2", "kind": "creak", "db": -16, "dur": 0.5},
             {"at": "L33", "kind": "creak", "db": -14, "dur": 0.7},
             {"at": "L36+0.2", "kind": "creak", "db": -16, "dur": 1.4},
-            {"at": "L52+0.2", "kind": "whoosh", "db": -22},
+            {"at": "L52.2", "kind": "whoosh", "db": -22},
             {"at": "L67.1", "kind": "creak", "db": -20, "dur": 0.5},
         ],
         "music_drops": [{"from": "L32>", "to": "P01>"}],

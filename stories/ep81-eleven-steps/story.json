@@ -130,8 +130,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Our stairs have TEN steps.",
-     "our stairs have ten steps."
+     "Our stairs have",
+     "our stairs have"
+    ],
+    [
+     "TEN steps.",
+     "ten steps."
     ],
     [
      "At night,",
@@ -148,8 +152,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And at two A.M.,",
-     "and at two a m,"
+     "And at",
+     "and at"
+    ],
+    [
+     "two A.M.,",
+     "two a"
     ],
     [
      "they CREAK.",
@@ -196,12 +204,20 @@
      "it's eleven,"
     ],
     [
-     "and I can never tell",
-     "and i can never tell"
+     "and I can",
+     "and i can"
     ],
     [
-     "which one is NEW.",
-     "which one is new."
+     "never tell",
+     "never tell"
+    ],
+    [
+     "which one",
+     "which one"
+    ],
+    [
+     "is NEW.",
+     "is new."
     ]
    ]
   },
@@ -218,8 +234,12 @@
      "counted them once,"
     ],
     [
-     "after a movie NIGHT.",
-     "after a movie night."
+     "after a",
+     "after a"
+    ],
+    [
+     "movie NIGHT.",
+     "movie night."
     ]
    ]
   },
@@ -236,8 +256,12 @@
      "at midnight."
     ],
     [
-     "He's never stayed OVER since.",
-     "he's never stayed over since."
+     "He's never stayed",
+     "he's never stayed"
+    ],
+    [
+     "OVER since.",
+     "over since."
     ]
    ]
   },
@@ -268,8 +292,12 @@
      "and every morning,"
     ],
     [
-     "the step just below the landing",
-     "the step just below the landing"
+     "the step just",
+     "the step just"
+    ],
+    [
+     "below the landing",
+     "below the landing"
     ],
     [
      "is ice COLD.",
@@ -282,16 +310,28 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'm a grown MAN.",
-     "i'm a grown man."
+     "I'm a",
+     "i'm a"
     ],
     [
-     "I live with my DAD,",
-     "i live with my dad,"
+     "grown MAN.",
+     "grown man."
     ],
     [
-     "and he has one house RULE.",
-     "and he has one house rule."
+     "I live with",
+     "i live with"
+    ],
+    [
+     "my DAD,",
+     "my dad,"
+    ],
+    [
+     "and he has",
+     "and he has"
+    ],
+    [
+     "one house RULE.",
+     "one house rule."
     ]
    ]
   },
@@ -336,8 +376,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He always goes up LAST.",
-     "he always goes up last."
+     "He always goes",
+     "he always goes"
+    ],
+    [
+     "up LAST.",
+     "up last."
     ]
    ]
   },
@@ -364,8 +408,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I figured it was",
-     "i figured it was"
+     "I figured",
+     "i figured"
+    ],
+    [
+     "it was",
+     "it was"
     ],
     [
      "a Dad THING.",
@@ -382,8 +430,12 @@
      "so last friday,"
     ],
     [
-     "I sat at the TOP",
-     "i sat at the top"
+     "I sat at",
+     "i sat at"
+    ],
+    [
+     "the TOP",
+     "the top"
     ],
     [
      "with a FLASHLIGHT,",
@@ -396,8 +448,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "to catch the new step",
-     "to catch the new step"
+     "to catch the",
+     "to catch the"
+    ],
+    [
+     "new step",
+     "new step"
     ],
     [
      "showing UP.",
@@ -452,8 +508,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He set it at the BOTTOM,",
-     "he set it at the bottom,"
+     "He set it",
+     "he set it"
+    ],
+    [
+     "at the BOTTOM,",
+     "at the bottom,"
     ],
     [
      "right up against",
@@ -470,12 +530,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then he went back to BED,",
-     "then he went back to bed,"
+     "Then he went",
+     "then he went"
     ],
     [
-     "without one look UP.",
-     "without one look up."
+     "back to BED,",
+     "back to bed,"
+    ],
+    [
+     "without one",
+     "without one"
+    ],
+    [
+     "look UP.",
+     "look up."
     ]
    ]
   },
@@ -498,8 +566,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad was MAKING it.",
-     "dad was making it."
+     "Dad was",
+     "dad was"
+    ],
+    [
+     "MAKING it.",
+     "making it."
     ],
     [
      "Every NIGHT.",
@@ -512,8 +584,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I figured it was a TRAP.",
-     "i figured it was a trap."
+     "I figured it",
+     "i figured it"
+    ],
+    [
+     "was a TRAP.",
+     "was a trap."
     ]
    ]
   },
@@ -522,12 +598,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "One more step to CREAK,",
-     "one more step to creak,"
+     "One more step",
+     "one more step"
     ],
     [
-     "in case I ever",
-     "in case i ever"
+     "to CREAK,",
+     "to creak,"
+    ],
+    [
+     "in case",
+     "in case"
+    ],
+    [
+     "I ever",
+     "i ever"
     ],
     [
      "snuck down LATE.",
@@ -540,8 +624,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I asked him at BREAKFAST.",
-     "i asked him at breakfast."
+     "I asked him",
+     "i asked him"
+    ],
+    [
+     "at BREAKFAST.",
+     "at breakfast."
     ],
     [
      "He said",
@@ -558,8 +646,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "We had our BIGGEST fight",
-     "we had our biggest fight"
+     "We had our",
+     "we had our"
+    ],
+    [
+     "BIGGEST fight",
+     "biggest fight"
     ],
     [
      "in YEARS.",
@@ -576,8 +668,12 @@
      "so saturday night,"
     ],
     [
-     "I carried it UP",
-     "i carried it up"
+     "I carried",
+     "i carried"
+    ],
+    [
+     "it UP",
+     "it up"
     ],
     [
      "and hid it",
@@ -627,8 +723,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I counted EVERY one.",
-     "i counted every one."
+     "I counted",
+     "i counted"
+    ],
+    [
+     "EVERY one.",
+     "every one."
     ]
    ]
   },
@@ -672,8 +772,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ten is the LANDING.",
-     "ten is the landing."
+     "Ten is",
+     "ten is"
+    ],
+    [
+     "the LANDING.",
+     "the landing."
     ]
    ]
   },
@@ -682,8 +786,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ten is my DOOR.",
-     "ten is my door."
+     "Ten is",
+     "ten is"
+    ],
+    [
+     "my DOOR.",
+     "my door."
     ]
    ]
   },
@@ -692,16 +800,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "Something LEANED on it.",
-     "something leaned on it."
+     "Something LEANED",
+     "something leaned"
+    ],
+    [
+     "on it.",
+     "on it."
     ],
     [
      "The whole door",
      "the whole door"
     ],
     [
-     "BOWED in its frame.",
-     "bowed in its frame."
+     "BOWED in",
+     "bowed in"
+    ],
+    [
+     "its frame.",
+     "its frame."
     ]
    ]
   },
@@ -710,8 +826,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I looked through the gap",
-     "i looked through the gap"
+     "I looked through",
+     "i looked through"
+    ],
+    [
+     "the gap",
+     "the gap"
     ],
     [
      "under the DOOR.",
@@ -752,12 +872,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Its EYE was at the gap.",
-     "its eye was at the gap."
+     "Its EYE was",
+     "its eye was"
     ],
     [
-     "An inch from MINE.",
-     "an inch from mine."
+     "at the gap.",
+     "at the gap."
+    ],
+    [
+     "An inch",
+     "an inch"
+    ],
+    [
+     "from MINE.",
+     "from mine."
     ]
    ]
   },
@@ -770,8 +898,12 @@
      "something so tall"
     ],
     [
-     "it had to FOLD",
-     "it had to fold"
+     "it had",
+     "it had"
+    ],
+    [
+     "to FOLD",
+     "to fold"
     ],
     [
      "under our ceiling,",
@@ -784,8 +916,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "its head bent flat",
-     "its head bent flat"
+     "its head",
+     "its head"
+    ],
+    [
+     "bent flat",
+     "bent flat"
     ],
     [
      "against its SHOULDER.",
@@ -798,16 +934,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "It climbs exactly TEN steps,",
-     "it climbs exactly ten steps,"
+     "It climbs exactly",
+     "it climbs exactly"
+    ],
+    [
+     "TEN steps,",
+     "ten steps,"
     ],
     [
      "every NIGHT,",
      "every night,"
     ],
     [
-     "whatever the stairs ARE.",
-     "whatever the stairs are."
+     "whatever the",
+     "whatever the"
+    ],
+    [
+     "stairs ARE.",
+     "stairs are."
     ]
    ]
   },
@@ -816,8 +960,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It has never ONCE",
-     "it has never once"
+     "It has",
+     "it has"
+    ],
+    [
+     "never ONCE",
+     "never once"
     ],
     [
      "climbed ELEVEN.",
@@ -834,8 +982,12 @@
      "that's what"
     ],
     [
-     "Dad's box is FOR.",
-     "dad's box is for."
+     "Dad's box",
+     "dad's box"
+    ],
+    [
+     "is FOR.",
+     "is for."
     ]
    ]
   },
@@ -862,12 +1014,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "One step below the LANDING.",
-     "one step below the landing."
+     "One step below",
+     "one step below"
     ],
     [
-     "One step from ME.",
-     "one step from me."
+     "the LANDING.",
+     "the landing."
+    ],
+    [
+     "One step",
+     "one step"
+    ],
+    [
+     "from ME.",
+     "from me."
     ]
    ]
   },
@@ -876,16 +1036,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "And he takes the box UP",
-     "and he takes the box up"
+     "And he takes",
+     "and he takes"
+    ],
+    [
+     "the box UP",
+     "the box up"
     ],
     [
      "at dawn,",
      "at dawn,"
     ],
     [
-     "so I'd never KNOW.",
-     "so i'd never know."
+     "so I'd",
+     "so i'd"
+    ],
+    [
+     "never KNOW.",
+     "never know."
     ]
    ]
   },
@@ -908,8 +1076,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad always puts it",
-     "dad always puts it"
+     "Dad always",
+     "dad always"
+    ],
+    [
+     "puts it",
+     "puts it"
     ],
     [
      "at the BOTTOM.",
@@ -922,16 +1094,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "But ANY extra step",
-     "but any extra step"
+     "But ANY",
+     "but any"
+    ],
+    [
+     "extra step",
+     "extra step"
     ],
     [
      "below my door",
      "below my door"
     ],
     [
-     "keeps it one step AWAY.",
-     "keeps it one step away."
+     "keeps it one",
+     "keeps it one"
+    ],
+    [
+     "step AWAY.",
+     "step away."
     ]
    ]
   },
@@ -940,12 +1120,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "I cracked the door",
-     "i cracked the door"
+     "I cracked",
+     "i cracked"
     ],
     [
-     "and SHOVED the box out",
-     "and shoved the box out"
+     "the door",
+     "the door"
+    ],
+    [
+     "and SHOVED the",
+     "and shoved the"
+    ],
+    [
+     "box out",
+     "box out"
     ],
     [
      "onto the landing.",
@@ -958,16 +1146,28 @@
    "who": "narrator",
    "chunks": [
     [
-     "It had used up its TEN.",
-     "it had used up its ten."
+     "It had used",
+     "it had used"
     ],
     [
-     "To reach my door now,",
-     "to reach my door now,"
+     "up its TEN.",
+     "up its ten."
     ],
     [
-     "it would need an ELEVENTH.",
-     "it would need an eleventh."
+     "To reach my",
+     "to reach my"
+    ],
+    [
+     "door now,",
+     "door now,"
+    ],
+    [
+     "it would need",
+     "it would need"
+    ],
+    [
+     "an ELEVENTH.",
+     "an eleventh."
     ]
    ]
   },
@@ -976,12 +1176,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "It looked at the box",
-     "it looked at the box"
+     "It looked at",
+     "it looked at"
     ],
     [
-     "for a LONG time.",
-     "for a long time."
+     "the box",
+     "the box"
+    ],
+    [
+     "for a",
+     "for a"
+    ],
+    [
+     "LONG time.",
+     "long time."
     ]
    ]
   },
@@ -990,8 +1198,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It didn't CLIMB it.",
-     "it didn't climb it."
+     "It didn't",
+     "it didn't"
+    ],
+    [
+     "CLIMB it.",
+     "climb it."
     ]
    ]
   },
@@ -1000,16 +1212,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "It just STOOD there,",
-     "it just stood there,"
+     "It just",
+     "it just"
+    ],
+    [
+     "STOOD there,",
+     "stood there,"
     ],
     [
      "one step SHORT,",
      "one step short,"
     ],
     [
-     "till the sun came UP.",
-     "till the sun came up."
+     "till the sun",
+     "till the sun"
+    ],
+    [
+     "came UP.",
+     "came up."
     ]
    ]
   },
@@ -1018,8 +1238,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I sat with my back",
-     "i sat with my back"
+     "I sat with",
+     "i sat with"
+    ],
+    [
+     "my back",
+     "my back"
     ],
     [
      "to the DOOR",
@@ -1036,12 +1260,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad found me in the MORNING,",
-     "dad found me in the morning,"
+     "Dad found me",
+     "dad found me"
     ],
     [
-     "asleep against my DOOR.",
-     "asleep against my door."
+     "in the MORNING,",
+     "in the morning,"
+    ],
+    [
+     "asleep against",
+     "asleep against"
+    ],
+    [
+     "my DOOR.",
+     "my door."
     ]
    ]
   },
@@ -1060,8 +1292,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He just sat DOWN",
-     "he just sat down"
+     "He just",
+     "he just"
+    ],
+    [
+     "sat DOWN",
+     "sat down"
     ],
     [
      "beside me,",
@@ -1078,16 +1314,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "He's set that box",
-     "he's set that box"
+     "He's set",
+     "he's set"
+    ],
+    [
+     "that box",
+     "that box"
     ],
     [
      "every night",
      "every night"
     ],
     [
-     "since we MOVED in.",
-     "since we moved in."
+     "since we",
+     "since we"
+    ],
+    [
+     "MOVED in.",
+     "moved in."
     ]
    ]
   },
@@ -1106,8 +1350,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Not ONE night off.",
-     "not one night off."
+     "Not ONE",
+     "not one"
+    ],
+    [
+     "night off.",
+     "night off."
     ]
    ]
   },
@@ -1116,8 +1364,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Now we take TURNS.",
-     "now we take turns."
+     "Now we",
+     "now we"
+    ],
+    [
+     "take TURNS.",
+     "take turns."
     ]
    ]
   },
@@ -1126,8 +1378,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I set the box",
-     "i set the box"
+     "I set",
+     "i set"
+    ],
+    [
+     "the box",
+     "the box"
     ],
     [
      "at MIDNIGHT.",
@@ -1140,8 +1396,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Dad takes it up",
-     "dad takes it up"
+     "Dad takes",
+     "dad takes"
+    ],
+    [
+     "it up",
+     "it up"
     ],
     [
      "at DAWN.",
@@ -1154,8 +1414,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It still comes up",
-     "it still comes up"
+     "It still",
+     "it still"
+    ],
+    [
+     "comes up",
+     "comes up"
     ],
     [
      "every NIGHT.",
@@ -1186,8 +1450,12 @@
      "but last night,"
     ],
     [
-     "for the first time,",
-     "for the first time,"
+     "for the",
+     "for the"
+    ],
+    [
+     "first time,",
+     "first time,"
     ]
    ]
   },
@@ -1210,8 +1478,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "So if you ever",
-     "so if you ever"
+     "So if",
+     "so if"
+    ],
+    [
+     "you ever",
+     "you ever"
     ],
     [
      "stay OVER,",
@@ -1331,7 +1603,7 @@
    "step": 2,
    "hand": 0.004,
    "look": "night",
-   "at": "L02.1",
+   "at": "L02.2",
    "note": "top-down: each tread dips in turn, nobody on them"
   },
   {
@@ -1445,7 +1717,7 @@
    "step": 2,
    "hand": 0.002,
    "look": "night",
-   "at": "L04.2",
+   "at": "L04.3",
    "note": "two treads side by side, identical"
   },
   {
@@ -2471,7 +2743,7 @@
    "step": 2,
    "hand": 0.004,
    "look": "roomdim",
-   "at": "L28.1",
+   "at": "L28.3",
    "note": "the box beside my bed, tag back to 10"
   },
   {
@@ -3202,7 +3474,7 @@
    "step": 2,
    "hand": 0.003,
    "look": "dim",
-   "at": "L41.1",
+   "at": "L42",
    "note": "its head bent flat on its shoulder, its eye on me"
   },
   {
@@ -4478,7 +4750,7 @@
     ]
    },
    {
-    "at": "L04.2",
+    "at": "L04.3",
     "hidden": true,
     "blend": 0
    },
@@ -4832,7 +5104,7 @@
     "blink": true
    },
    {
-    "at": "L28.1",
+    "at": "L28.3",
     "pos": [
      0.0,
      3.2,
@@ -4840,7 +5112,7 @@
     ]
    },
    {
-    "at": "L28.1",
+    "at": "L28.3",
     "hidden": true,
     "blend": 0
    },
@@ -5099,7 +5371,7 @@
     "blink": true
    },
    {
-    "at": "L52.1",
+    "at": "L52.3",
     "hidden": true,
     "blend": 0
    },
@@ -5139,7 +5411,7 @@
     "blink": true
    },
    {
-    "at": "L57.1",
+    "at": "L57.3",
     "expr": "tired"
    },
    {
@@ -6148,49 +6420,49 @@
    ]
   },
   {
-   "at": "L02.1+0.04",
+   "at": "L02.2+0.04",
    "name": "dip",
    "k": 1,
    "dur": 0.4
   },
   {
-   "at": "L02.1+0.21",
+   "at": "L02.2+0.21",
    "name": "dip",
    "k": 2,
    "dur": 0.4
   },
   {
-   "at": "L02.1+0.38",
+   "at": "L02.2+0.38",
    "name": "dip",
    "k": 3,
    "dur": 0.4
   },
   {
-   "at": "L02.1+0.55",
+   "at": "L02.2+0.55",
    "name": "dip",
    "k": 4,
    "dur": 0.4
   },
   {
-   "at": "L02.1+0.72",
+   "at": "L02.2+0.72",
    "name": "dip",
    "k": 5,
    "dur": 0.4
   },
   {
-   "at": "L02.1+0.89",
+   "at": "L02.2+0.89",
    "name": "dip",
    "k": 6,
    "dur": 0.4
   },
   {
-   "at": "L02.1+1.06",
+   "at": "L02.2+1.06",
    "name": "dip",
    "k": 7,
    "dur": 0.4
   },
   {
-   "at": "L02.1+1.23",
+   "at": "L02.2+1.23",
    "name": "dip",
    "k": 8,
    "dur": 0.4
@@ -6206,7 +6478,7 @@
    "on": false
   },
   {
-   "at": "L02.1+1.40",
+   "at": "L02.2+1.40",
    "name": "dip",
    "k": 9,
    "dur": 0.4
@@ -6339,7 +6611,7 @@
    "name": "props"
   },
   {
-   "at": "L17",
+   "at": "L17.1",
    "name": "ddoor",
    "open": 0,
    "to": 88,
@@ -6443,7 +6715,7 @@
    "dur": 1.7
   },
   {
-   "at": "L28.1",
+   "at": "L28.3",
    "name": "box",
    "on": true,
    "pos": [
@@ -6557,10 +6829,7 @@
    "at": "L36",
    "name": "mydoor",
    "open": 0,
-   "bow": 0.0,
-   "to": 0,
-   "bow_to": 1.0,
-   "dur": 0.9
+   "bow": 0.0
   },
   {
    "at": "L36",
@@ -6583,6 +6852,15 @@
    "at": "L36",
    "name": "torch",
    "on": false
+  },
+  {
+   "at": "L36.2",
+   "name": "mydoor",
+   "open": 0,
+   "bow": 0.0,
+   "to": 0,
+   "bow_to": 1.0,
+   "dur": 0.9
   },
   {
    "at": "L37",
@@ -6771,7 +7049,7 @@
    "dur": 0.6
   },
   {
-   "at": "L52+0.2",
+   "at": "L52.2",
    "name": "box",
    "on": true,
    "pos": [
@@ -6787,14 +7065,14 @@
    "dur": 0.8
   },
   {
-   "at": "L52.1",
-   "name": "count",
-   "n": 11
-  },
-  {
-   "at": "L52.1",
+   "at": "L52.3",
    "name": "mydoor",
    "open": 26
+  },
+  {
+   "at": "L52.4",
+   "name": "count",
+   "n": 11
   },
   {
    "at": "L53",
@@ -7006,7 +7284,7 @@
   ]
  },
  "sound": {
-  "rev": 1,
+  "rev": 2,
   "floor": "wood",
   "steps_db": -24,
   "ambience": [
@@ -7019,37 +7297,37 @@
   ],
   "sfx": [
    {
-    "at": "L01.2",
+    "at": "L01.3",
     "kind": "creak",
     "db": -14,
     "dur": 0.9
    },
    {
-    "at": "L02.1+0.04",
+    "at": "L02.2+0.04",
     "kind": "creak",
     "db": -20,
     "dur": 0.35
    },
    {
-    "at": "L02.1+0.38",
+    "at": "L02.2+0.38",
     "kind": "creak",
     "db": -20,
     "dur": 0.35
    },
    {
-    "at": "L02.1+0.72",
+    "at": "L02.2+0.72",
     "kind": "creak",
     "db": -20,
     "dur": 0.35
    },
    {
-    "at": "L02.1+1.06",
+    "at": "L02.2+1.06",
     "kind": "creak",
     "db": -20,
     "dur": 0.35
    },
    {
-    "at": "L17+0.1",
+    "at": "L17.1",
     "kind": "latch",
     "db": -18
    },
@@ -7102,7 +7380,7 @@
     "dur": 1.4
    },
    {
-    "at": "L52+0.2",
+    "at": "L52.2",
     "kind": "whoosh",
     "db": -22
    },

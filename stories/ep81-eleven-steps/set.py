@@ -168,8 +168,8 @@ def place_inset(kit, ctx, n, ticks, lens):
     unit = d / lens                       # metres per mm of sensor at the panel's distance
     pw = 0.2 * 13.5 * unit
     ph = pw * ih / iw
-    x = -6.75 * unit + 0.045 * 13.5 * unit + pw / 2
-    y = 0.93 * 12.0 * unit - ph / 2
+    x = -6.75 * unit + 0.07 * 13.5 * unit + pw / 2
+    y = 0.88 * 12.0 * unit - ph / 2
     pl.location, pl.scale = (x, y, -d), (pw, ph, 1)
 
 
@@ -430,6 +430,10 @@ def build(kit, story, tl):
         kit.prop("houseplant_1", (2.0, 5.5, LAND_Z), scale=1.3)
     except Exception as ex:
         print("props:", ex)
+    # the threshold under my door, and the amber glow of the nightlight along the gap on my side
+    B(None, (1.1, 0.3, 0.2), (0, 5.0, LZ - 0.1), floorw, "threshold", 0.0)
+    gl = B(None, (0.92, 0.14, 0.004), (0, 5.07, LZ + 0.002), kit.emit("#ffb24d", 1.6, name="gapglow"), "gapglow", 0.0)
+    no_shadow(gl)
     # the round window and the amber nightlight on the landing
     ring = kit.cyl(nm("winring"), 0.5, 0.06, (2.57, 3.6, LAND_Z + 1.5), white, None, rot=(0, math.pi / 2, 0), n=40)
     ctx["win"] = kit.cyl(nm("winglass"), 0.42, 0.02, (2.545, 3.6, LAND_Z + 1.5), kit.emit("#24306e", 1.0, name="winemit"), None,
