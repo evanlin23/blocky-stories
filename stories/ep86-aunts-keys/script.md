@@ -4,8 +4,8 @@
 - **Pitch:** N20 in `docs/research/2026-11-09-week.md` (panel score 7). Opening shape `confess`. Lane: core. Length arm: long (110 to 150 s).
 - **Title:** Aunt Lou Has A Key To YOURS 🔑
 - **Changed from the pitch:** the pitch's grandpa is now **my aunt, Lou**, the court's locksmith, because ep80 is already a grandpa story on a street. The street is now a closed brick court of twelve houses, and the pitch's "what walks after midnight" is now me, asleep. The hook line keeps its shape ("My aunt has a key to every house here. Including yours.").
-- **Word count:** 507 spoken words in 72 lines, all `narrator`, plus one 0.6 s music drop before L27.
-- **Estimated length:** about 117 s at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L19 and L70 first.
+- **Word count:** 517 spoken words in 73 lines, all `narrator`, plus one 0.6 s music drop before L27.
+- **Estimated length:** about 123 s (built 120.8 s plus about 2.6 s for L49a) at 290 wpm with 0.15 s gaps, the drop and a 0.25 s loop tail. If it runs over 140 s, cut L19 and L70 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Day scenes bright: red brick, brass, ivy, a sunny fountain. The midnight footage (L27 to L58) is my porch camera's view, lit by the court's four warm lamps and the fountain's teal glow, never too dark to read faces. A thin camera frame overlay (corner brackets and a clock, numerals only) marks the footage.
 - **Hold:** scripts only (batch 8). Not built, not voiced.
 
@@ -159,6 +159,7 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S47 | L47 | 70.2 | Aunt Lou at her window watching the clock, `worried`. |
 | S48 | L48 | 71.8 | Inset close: ten tags glowing. |
 | S49 | L49 | 73.6 | Her own door, open a crack, warm light in it. |
+| S49a | L49a | 75.0 | My door from inside, night: my sleeping hand on the brass thumb-turn, turning it open (answers "why not lock it?"). |
 | S50 | L50 | 75.6 | Footage clock flips to a Thursday glyph, 12:04. |
 | S51 | L51 | 76.8 | Footage: Aunt Lou limping, a hand on her knee, `tired`. |
 | S52 | L52 | 78.4 | Footage: me at Mr. Park's door first. |
@@ -217,7 +218,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L26: To catch HER.
 - L27: Twelve oh-ONE.
 - L28: There's Aunt Lou / in her yellow RAINCOAT,
-- L29: going door to door, / FAST, / locking every house / with its own KEY.
+- L29: going door to door, / FAST, / locking every OTHER house / with its own KEY.
 - L30: Like she's racing / SOMETHING.
 - L31: She skips MINE.
 - L32: She skips / her OWN.
@@ -238,6 +239,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L47: So every night, / Aunt Lou races me.
 - L48: She locks / TEN doors / with their own KEYS,
 - L49: so the only one / I can OPEN / is hers.
+- L49a: She can't lock me IN. / My bolt turns / from inside, / and asleep, / I just TURN it.
 - L50: Thursday's video / was the WORST.
 - L51: Her knee was BAD. / She was SLOW.
 - L52: And I got / to Mr. Park's door / FIRST.
