@@ -1778,14 +1778,14 @@
    ]
   },
   "L67": {
-   "text": "next tuesday, i lead my aunt out for the demonstration.",
+   "text": "next tuesday, i walk my aunt out for the demonstration.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.638,
+   "dur": 2.655,
    "onset": 0.172,
-   "end": 2.448,
+   "end": 2.466,
    "chunks": [
     [
      0.172,
@@ -1793,19 +1793,19 @@
     ],
     [
      0.862,
-     1.112
+     1.138
     ],
     [
-     1.112,
-     1.362
+     1.138,
+     1.397
     ],
     [
-     1.362,
-     1.578
+     1.397,
+     1.594
     ],
     [
-     1.578,
-     2.448
+     1.594,
+     2.466
     ]
    ]
   },
