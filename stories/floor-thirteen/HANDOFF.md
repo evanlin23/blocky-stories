@@ -44,3 +44,10 @@ Branch `claude/opening-floor-thirteen`. No PR yet.
 
 ## Flash fix (78.5 s, proof 3f changes = 7)
 Attendant lit cues respaced to L43, L43+0.38, L43+0.72 (0.3 s ramps, inside shot S56, none on a cut); sound.rev bumped to 9. Preview flash PASS; 3f worst now at 26.0 s (6), nothing in 76-81 s above 5. Full-rate proof should be redrawn.
+
+## Final 2026-11-03: DROPPED (proof failed twice)
+- Reviews: standards approve (r7); critic r8 approve for L36 (avg 7.8). Gate OPEN, check ok, pytest 171 passed, preflight 0 blocks.
+- Proof run 1 (41708580407, sha 64769c3) and proof run 2 (41721119831, sha 30c1a44) both FAILED on flash only: house bar `general_3f_changes_le_6` false, 3f changes = 7 at 78.53 s, identical in both runs. Clip 0 hits, craft ok (cuts 6.53/10 s, picture changes 19.9, motion 9.75, longest still 0.27 s), true peak -2.0 dBTP, LUFS -14.04.
+- Respacing the attendant countdown cues (lit 5/4/3 at L43, +0.38, +0.72; commit 30c1a44) did not move the reading. The quarter-res preview does not show this reading; only the full-rate proof does.
+- Likely cause (not tried): the 76.57 lights cue (dur 1.0) and doors cue, the cuts at 76.57, 78.93, 80.10, or the polish pack's angle cuts / crop push on the attendant shots S55-S56. A fix needs a full-rate local draw of 75-81 s, which is more than one small fix.
+- Per the rescue-round rule (second proof fail = drop), PR #188 is left open for the second orchestrator to record the drop on main. Nothing merged, no qa file written.
