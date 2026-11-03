@@ -255,9 +255,9 @@ shot("L54", "dusk", {}, still([-1.5, 0.95, 1.24], [-2.0, 1.02, 1.13], 70), "the 
 shot("L54.1+0.3", "dusk", {"me": P(-1.55, 1.5, -90, "worried")}, still([-3.0, 1.5, 1.3], [-1.7, 1.5, 1.2], 42), "my bell's empty mouth")
 shot("L55", "dusk", {"ruben": P(-1.4, 1.2, -90, "smirk")}, still([-3.0, 1.7, 1.45], [-1.5, 1.2, 1.45], 38), "he carried it")
 shot("L55.2", "dusk", {"me": P(-1.4, 1.5, -90, "worried")}, still([-3.0, 1.4, 1.45], [-1.5, 1.5, 1.45], 38), "me, softening")
-shot("L56", "dusk", {"me": P(-1.3, 1.0, 180, "worried"), "ruben": P(-0.55, 1.0, 180, "smirk")},
+shot("L56", "dusk", {"me": P(-1.45, 1.0, 180, "worried"), "ruben": P(-0.4, 1.0, 180, "smirk")},
      still([-0.95, 4.3, 1.5], [-0.95, 1.0, 1.5], 30), "my face, worried softening, Ruben beside me, nothing in front")
-shot("L57", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank", **({"lean": 10} if k == 0 else {})) for k in range(5)},
+shot("L57", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(5)},
                     "me": P(-1.0, 1.0, 20, "neutral", head=[0, 30], then=[("L57+1.3", dict(yaw=-35, head=[0, -4], blend=0.7))])},
      still([0.3, -0.2, 1.5], [-1.5, 1.8, 1.5], 28), "every ring was mine: my eyes go from the clapper up to the line of five")
 shot("L58", "dusk", {"ruben": P(-1.0, 0.6, 0, "neutral")}, still([-1.0, -0.1, 1.38], [-1.0, 0.6, 1.33], 48), "his still bell")
@@ -266,7 +266,7 @@ shot("L60", "dusk", {"me": P(-1.0, 0.6, 0, "smirk")}, still([-1.0, -1.0, 1.36], 
 shot("L61", "dusk", {"ruben": P(-0.8, 0.8, 0, "grin", then=[("L61.1", dict(head=[0, 12])), ("L61.2", dict(head=[0, -4]))])},
      still([-0.8, -1.0, 1.5], [-0.8, 0.8, 1.5], 34), "partner?")
 shot("L62", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(1, 5)},
-                     "me": P(-0.2, 2.65, -90, "neutral", then=[("L62+0.2", dict(pos=[-2.5, 2.65])), ("L62+1.4", dict(pos=[-2.5, 2.65], yaw=-90))])},
+                     "me": P(-0.2, 3.0, -90, "neutral", then=[("L62+0.2", dict(pos=[-1.8, 3.0])), ("L62+1.4", dict(pos=[-1.8, 3.0], yaw=-90))])},
      still([1.6, 5.6, 1.5], [-1.4, 3.3, 1.4], 24), "side-on, I walk toward the line; the front copy is gone")
 shot("L63", "dusk", {"me": P(-3.1, 2.5, 0, "smirk")}, still([-3.1, 0.8, 1.36], [-3.1, 2.5, 1.2], 40), "my bell stays quiet")
 shot("P03", "dusk", {}, still([-1.6, 1.1, 1.55], [-2.0, 1.95, 1.12], 34), "the lore shot: two strokes")
