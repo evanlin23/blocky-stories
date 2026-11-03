@@ -114,7 +114,7 @@ def sheen_png(path):
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     dr = ImageDraw.Draw(im)
     for y in range(H):                        # gloss: brighter high on the door, fading down
-        a = int(46 * max(0.0, 1.0 - y / (H * 0.9)) ** 1.4)
+        a = int(46 * max(0.0, 1.0 - y / 60.0) ** 1.4)      # a gloss on the top 60 px only: the faces sit below it
         dr.line([(0, y), (W, y)], fill=(235, 245, 250, a))
     st = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     sd = ImageDraw.Draw(st)
@@ -131,8 +131,8 @@ def sheen_png(path):
     dr = ImageDraw.Draw(im)
     top = Image.new("RGBA", (W, H), (0, 0, 0, 0))   # the LED panel in the glass: a bright soft oblong near the top
     td = ImageDraw.Draw(top)
-    td.rounded_rectangle([60, 28, W - 60, 62], 16, fill=(255, 255, 255, 110))
-    top = top.filter(ImageFilter.GaussianBlur(9))
+    td.rounded_rectangle([60, 14, W - 60, 40], 14, fill=(255, 255, 255, 110))
+    top = top.filter(ImageFilter.GaussianBlur(6))
     im = Image.alpha_composite(im, top)
     im.save(path)
 
@@ -303,7 +303,9 @@ def build(kit, story, tl):
         m, _ = img_mat(kit, f"tag {L_}", p, 1.4)
         mf, _ = img_mat(kit, f"tag {L_} flipped", pf, 1.4)
         x, y = ROWS[L_.lower()]
-        t = kit.plane(f"tag{L_}", (0.32, 0.32), (x, y + 0.24, TAG_Z + (0.15 if L_ == "A" else 0)), m, rot=(math.pi / 2, 0, math.pi))
+        # on the rider's own upper back: the torso's back face is half a rig unit behind him, its top at 4 units
+        sc = story["cast"][L_.lower()].get("height", 1.0) * rig.S
+        t = kit.plane(f"tag{L_}", (0.30, 0.30), (x, y + 0.5 * sc + 0.02, 3.2 * sc), m, rot=(math.pi / 2, 0, math.pi))
         t.hide_render = True
         ctx["tags"][L_] = (t, m, mf)
 
