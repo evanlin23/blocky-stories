@@ -467,8 +467,8 @@ sfx = [
     ding(0.75, -24, 2050),
     ding("L01.4", -12, 2050),
     ding("L02.2+0.3", -8, 2050),
-    *[ding(f"L03+{0.3 * k:.1f}", -19, 2100 + 130 * (k % 3)) for k in range(6)],
-    *[ding(f"L05+{0.24 * k:.2f}", -17, 2400 - 80 * (k % 4)) for k in range(8)],
+    *[ding(f"L03+{0.3 * k:.1f}", -19, 2100 + 130 * (k % 3)) for k in range(3)],
+    *[ding(f"L05+{0.4 * k:.2f}", -17, 2400 - 80 * (k % 4)) for k in range(4)],
     ding("L06+0.1", -14, 2150),
     {"at": "L06+0.3", "kind": "whirr", "db": -22, "dur": 1.4},
     ding("L11.1", -19, 2200, lp=1400),
@@ -478,10 +478,8 @@ sfx = [
     {"at": "L19+0.1", "kind": "whirr", "db": -16, "dur": 2.4},
     {"at": "L18.3+0.3", "kind": "click", "db": -14},
     ding("L21.1", -17, 2200, lp=1400),
-    {"at": "L22", "kind": "whirr", "db": -24, "dur": 1.5},
     {"at": "L24", "kind": "whistle", "db": -22, "dur": 2.4, "pitch": 740},
     ding("L26+0.15", -20, 2200, lp=900),
-    {"at": "L27.1", "kind": "clank", "db": -26},
     {"at": "P01+0.15", "kind": "clank", "db": -18},
     {"at": "P01+0.55", "kind": "clank", "db": -18},
     {"at": "L29", "kind": "hit", "db": -9},
@@ -494,7 +492,6 @@ sfx = [
     {"at": "L60", "kind": "ding", "db": -20, "pitch": 1950, "dur": 0.9},
     ding("L72>", -18, 1900, fall=0.35),
     # recorded impacts where beats land (quality lift, 2026-11-03)
-    {"at": "L01.4-0.12", "kind": "whoosh", "db": -16},
     {"at": "L19+0.2", "kind": "thud", "db": -18},
     {"at": "L27", "kind": "door", "db": -18},
     {"at": "L29+0.3", "kind": "thud", "db": -14},
@@ -502,11 +499,8 @@ sfx = [
     {"at": "L38", "kind": "door", "db": -20},
     {"at": "L47", "kind": "door", "db": -16},
     {"at": "L49+0.9", "kind": "thud", "db": -18},
-    {"at": "L51", "kind": "whoosh", "db": -18},
     {"at": "L53", "kind": "latch", "db": -16},
     {"at": "L62+0.3", "kind": "door", "db": -18},
-    {"at": "L66+0.4", "kind": "whoosh", "db": -20},
-    {"at": "L68", "kind": "whoosh", "db": -22},
 ]
 
 story = {
