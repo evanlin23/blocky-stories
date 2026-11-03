@@ -384,8 +384,8 @@ cues = [
     {"at": "L60", "name": "ros_mark", "v": 1.0, "dur": 0.6},
     # my half: a faint gold through the glove for a second at L13, then on my palm from L57
     {"at": 0, "name": "me_mark", "v": 0.0},
-    {"at": "L13.2", "name": "me_mark", "v": 0.7, "dur": 0.4},
-    {"at": "L13.2+0.8", "name": "me_mark", "v": 0.0, "dur": 0.4},
+    {"at": "L13.2", "name": "me_mark", "v": 0.3, "dur": 0.6},
+    {"at": "L13.2+0.8", "name": "me_mark", "v": 0.0, "dur": 0.6},
     {"at": "L58", "name": "me_mark", "v": 1.0, "dur": 0.6},
     # whole glyphs where two halves meet (0.6 s or more)
     {"at": 0, "name": "whole", "pair": "a", "v": 0.0},
