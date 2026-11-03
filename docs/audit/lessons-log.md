@@ -53,7 +53,13 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
 9. **Every session reinstalls Blender and the voice engine** (`bash blocky/setup.sh`, 15 to 60 minutes each, sometimes
    in the background while the session polls). There are 20+ sessions a day.
    → Hours of wall time and usage spent waiting.
-   → The cloud environment's setup script, or a prebuilt image.
+   → Measured 2026-11-03 at 2:33 PM in the second orchestrator's container: the bpy venv (about 1 GB) installed in about a
+   minute, but the TTS venv (torch CPU, Kokoro, faster-whisper) was still at 29 MB after 30 minutes and was stopped. The
+   PyTorch index answers in under a second through the proxy, so the stall is in a big wheel download or a model fetch.
+   An environment setup script would only move that wait before the session starts, and it would make every session
+   wait, writers and research included. So it wasn't added.
+   → Cache the TTS wheels and models (a pip wheelhouse or an artifact), or split the voice step out of local builds
+   entirely, since proofs and finals voice on Actions anyway. Add a pip `--timeout` so a stall fails fast.
 10. **Handoffs pass along untested work in progress.** Most handoffs said "WIP committed as it stood, untested"
     (ep45, ep49, ep50, ep51, floor-thirteen, dryer-nine, ep71). The next session spent its first hour working out
     what was done.
