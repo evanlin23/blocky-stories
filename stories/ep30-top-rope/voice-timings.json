@@ -266,14 +266,14 @@
    ]
   },
   "L12": {
-   "text": "I never look down on the wall.",
+   "text": "I never look down, on the wall.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.7828,
-   "dur": 2.052,
+   "dur": 2.155,
    "onset": 0.241,
-   "end": 1.828,
+   "end": 1.931,
    "chunks": [
     [
      0.241,
@@ -281,11 +281,11 @@
     ],
     [
      0.578,
-     1.008
+     1.069
     ],
     [
-     1.008,
-     1.828
+     1.094,
+     1.931
     ]
    ]
   },
@@ -1062,34 +1062,34 @@
    ]
   },
   "L44": {
-   "text": "Two shoe prints, in the lilac dust, right over her bench.",
+   "text": "Two shoe prints, in the, lilac dust, right over her bench.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9784999999999999,
-   "dur": 2.69,
+   "dur": 2.724,
    "onset": 0.19,
-   "end": 2.483,
+   "end": 2.517,
    "chunks": [
     [
      0.19,
-     0.707
+     0.741
     ],
     [
-     0.732,
-     0.845
+     0.768,
+     0.862
     ],
     [
-     0.845,
-     1.483
+     0.897,
+     1.517
     ],
     [
-     1.561,
-     1.87
+     1.586,
+     1.888
     ],
     [
-     1.87,
-     2.483
+     1.888,
+     2.517
     ]
    ]
   },

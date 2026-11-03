@@ -198,6 +198,8 @@ def build(kit, story, tl):
     kit.box("fascia", (5.2, 0.14, 0.55), (0, -3.0, ROOF_Z + 0.05), seam)
     for k, (x, y) in enumerate(hold_spots(5.0, 44, (-2.4, 2.4), (-2.85, -0.25))):
         sx, sy, sz = 0.24, 0.24, 0.16
+        if -0.45 < x < 1.1 and y > -2.95:      # keep the shoe prints and their dust clear
+            continue
         kit.box(f"rhold{k}", (sx, sy, sz), (x, y, ROOF_Z - sz / 2 + 0.02), kit.plastic(hold_cols[(k + 2) % 4], 0.5, spec=0.2),
                 rot=(0.3 * math.sin(k * 2), 0.3 * math.cos(k), 0.7 * k), bevel=0.05)
 
@@ -259,18 +261,23 @@ def build(kit, story, tl):
                 continue
             kit.box(f"dust{k}", (0.43 + 0.05 * r, 0.4 + 0.04 * r, 0.012), (x, y, ROOF_Z - 0.006 - 0.0004 * (k % 5)), dust)
     # the bare shoe prints (a flat bit of the roof panel showing through the dust)
-    bare = kit.plastic("#2e3832", 0.8, spec=0.1)
+    bare = kit.plastic("#2a332e", 0.8, spec=0.1)
     ctx["prints"] = {"lip": [], "all": []}
     for key, grp in (("lip", "lip"), ("t1", "all"), ("t2", "all"), ("t3", "all")):
         px, py = POSES[key]["pos"]
-        if key == "lip":      # facing -x: soles side by side along y
-            offs = ((0, -0.17), (0, 0.17))
+        if key == "lip":      # facing -x: soles side by side along y, long along x
+            offs, ax = ((0, -0.27), (0, 0.27)), (1, 0)
         else:
-            offs = ((-0.17, 0), (0.17, 0))
+            offs, ax = ((-0.27, 0), (0.27, 0)), (0, 1)
+        # a sole: heel, waist and a wider ball with the toe end towards the front (the -x / +y side)
+        parts = ((-0.2, 0.15, 0.13), (-0.02, 0.15, 0.09), (0.19, 0.22, 0.25))   # (along, length, width)
         for n, (ox, oy) in enumerate(offs):
-            ob = kit.box(f"print.{key}{n}", (0.3, 0.38, 0.012), (px + ox, py + oy, ROOF_Z - 0.018), bare, bevel=0.05)
-            ob.hide_render = True
-            ctx["prints"][grp].append(ob)
+            for m, (al, ln, wd) in enumerate(parts):
+                dx, dy = (al * ax[0], al * ax[1])
+                size = (ln, wd, 0.012) if ax[0] else (wd, ln, 0.012)
+                ob = kit.box(f"print.{key}{n}.{m}", size, (px + ox + dx, py + oy + dy, ROOF_Z - 0.018), bare, bevel=0.03)
+                ob.hide_render = True
+                ctx["prints"][grp].append(ob)
 
     # --- the amber lift rings (a glowing line on a soft pool of amber), one per person who can go up
     ctx["rings"] = {}
@@ -528,7 +535,7 @@ def animate(kit, story, tl, t, ctx):
             else:
                 spec = [[hx + 1.2, hy + 0.8, ROOF_Z - 1.4], [hx, hy, ROOF_Z - 1.5], 110.0]
         if nm == "cfill" and hs and "cfill" in look:
-            L["obj"].location = (hs[0], hs[1] - 0.8, ROOF_Z - 1.7)
+            L["obj"].location = tuple(look.get("cfill_at", (hs[0] - 0.5, hs[1] - 0.8, ROOF_Z - 2.5)))
             L["base"] = look["cfill"]
             continue
         if spec is None:
