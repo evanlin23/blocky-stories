@@ -101,7 +101,7 @@ HIGH_QUILT = still([0.75, 0.45, 1.95], [-0.5, 1.95, 0.45], 20)
 SHOTS = [
     # 1 the rule, L01 to L04 (0 to 10 s): a lit hall opening, then the street of mixed-height houses
     (0, "S01 eye-level looking slightly up at me in the hall: the dark old ceiling line on the wall at my hair, clean wall above it to the raised ceiling, my eyes rolled up; push up toward the gap", 2,
-     c([0, [-1.2, -0.8, 1.7], [-4.6, -0.8, 1.85], 40], [2.2, [-1.6, -0.8, 1.74], [-4.6, -0.8, 2.05], 44])),
+     c([0, [-1.2, -0.8, 1.45], [-4.6, -0.8, 1.6], 40], [2.2, [-1.6, -0.8, 1.49], [-4.6, -0.8, 1.8], 44])),
     ("L02", "S02 the stack by the door, close and low: the face-out box with the marker frown, the ceiling right over it", 2,
      move(([-1.6, -3.0, 0.95], [-1.62, -4.75, 1.2]), ([-1.6, -3.4, 1.0], [-1.62, -4.75, 1.3]), 24)),
     ("L03+0.17", "S04 a lodger walks out of a front door with a suitcase", 2,
@@ -129,7 +129,7 @@ SHOTS = [
     ("L11.1", "S15 me on the floor at the face-out box, frowning at it", 2,
      still([-0.85, -3.5, 0.95], [-1.7, -4.5, 0.95], 26)),
     ("L12", "S16 close on the box's top corner: tape shining through the gap from inside", 4,
-     move(([-1.35, -3.9, 1.75], [-1.62, -4.75, 1.4]), ([-1.45, -4.1, 1.62], [-1.62, -4.75, 1.4]), 40)),
+     still([-1.45, -4.1, 1.62], [-1.62, -4.75, 1.4], 40)),
     ("L13", "S17 low beside the face box: its frown toward the hall and Mom's door", 2,
      still([-0.95, -3.3, 0.55], [-1.75, -4.8, 1.2], 24)),
     # 3 the house grows, L14 to L26 (24 to 46 s)

@@ -57,7 +57,7 @@ the hard way.
 - One render run at a time. **A waiting run is replaced by each newer push**, so many "cancelled" render runs are
   normal: the next run picks up every story without a film, or with a film older than its last picture or sound
   change.
-- At most 15 stories a run (the 256-job matrix cap) and 16 draw jobs at a time (leaving 4 runners for PR
+- At most 2 stories a run (each story's assemble waits for the whole draw matrix, so big runs delayed the first film by hours on 2026-11-03; the `again` job chains the next run) and 16 draw jobs at a time (leaving 4 runners for PR
   tests). A run of 8 stories takes about 5 hours.
 - The narration is made once on Actions (the `voice` job) and the picture is drawn to it. Local and Actions
   synthesis differed by up to 0.85 s per line, which broke sync before that change.

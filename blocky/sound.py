@@ -691,6 +691,10 @@ def sfx_synth(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = No
     if kind == "sting":  # a sharp dissonant cluster: the reveal
         y = sum(_pad(synth.midi_hz(m), dur, 0.8, k) for k, m in enumerate((62, 63, 69)))
         return y * synth.decay(dur, dur * 0.4)[: len(y)]
+    if kind == "sting_mid":  # opt-in: the sting with its body at 200 Hz to 2 kHz, so a phone plays it
+        y = sum(_pad(synth.midi_hz(m), dur, 0.8, k) for k, m in enumerate((74, 75, 81, 86)))
+        y = fft_filter(y, "band", 200, 2000)
+        return y * synth.decay(dur, dur * 0.4)[: len(y)]
     if kind == "click":
         return synth.click(0.01, 2500.0, seed)
     if kind == "chime":   # ep45, opt-in: a warm swell of two bell tones, rising, for each dial's zero
@@ -1065,7 +1069,9 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
 
 
 def _mix(tl, st, vo_dir, m, voice, spans, snd, at, dur, n):
-    mus = score(tl, st.get("music", {}))
+    pol0 = polish.spec(st)
+    mspec = polish.music_spec(st.get("music")) if pol0 and pol0.get("music_bed") else st.get("music", {})
+    mus = score(tl, mspec)
     if st.get("music", {}).get("filter"):   # the score heard through water: a low-pass that moves (the reveal opens it)
         mus = lowpass_moving(mus, filter_track(len(mus), st["music"]["filter"], at))
     free = [(0, dur)] if not spans else [(a, b) for a, b in zip([0] + [e for _, e in spans], [s for s, _ in spans] + [dur]) if b - a > 0.4]

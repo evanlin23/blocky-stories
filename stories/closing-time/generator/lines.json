@@ -4,20 +4,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "At the AQUARIUM,",
-    "At the aquarium,"
+    "You HAVE to",
+    "You have to"
    ],
    [
-    "the NIGHT SHIFT",
-    "the night shift"
+    "WAVE GOODBYE",
+    "wave goodbye"
    ],
    [
-    "WAVES GOODBYE to",
-    "waves goodbye to"
+    "to the",
+    "to the"
    ],
    [
-    "the BIG TANK.",
-    "the big tank."
+    "BIG TANK.",
+    "big tank."
    ]
   ]
  },
@@ -26,12 +26,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I'm the",
-    "I'm the"
+    "Even if",
+    "Even if"
    ],
    [
-    "new CLEANER.",
-    "new cleaner."
+    "NOBODY'S WATCHING.",
+    "nobody's watching."
    ]
   ]
  },
@@ -722,20 +722,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the",
-    "And the"
+    "And the REGULAR",
+    "And the Regular"
    ],
    [
-    "REGULAR",
-    "Regular"
-   ],
-   [
-    "was pressed",
-    "was pressed"
-   ],
-   [
-    "FLAT",
-    "flat"
+    "was LEANING",
+    "was leaning"
    ],
    [
     "on the GLASS.",
@@ -761,15 +753,15 @@
     "the wall."
    ]
   ],
-  "gap": 0.35
+  "gap": 0.65
  },
  {
   "id": "L50",
   "who": "narrator",
   "chunks": [
    [
-    "Its slits",
-    "Its slits"
+    "The slits",
+    "The slits"
    ],
    [
     "OPENED,",
@@ -832,16 +824,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "They weren't",
-    "They weren't"
+    "Every SLIT",
+    "Every slit"
    ],
    [
-    "SLITS.",
-    "slits."
-   ],
-   [
-    "They were EYES.",
-    "They were eyes."
+    "was an EYE.",
+    "was an eye."
    ]
   ],
   "tempo": 0.9
@@ -909,8 +897,8 @@
     "frozen,"
    ],
    [
-    "holding a MOP.",
-    "holding a mop."
+    "MOP in hand.",
+    "mop in hand."
    ]
   ],
   "tempo": 0.84
@@ -1114,27 +1102,23 @@
   "who": "narrator",
   "chunks": [
    [
-    "And the WAVE",
-    "And the wave"
+    "And every",
+    "And every"
    ],
    [
-    "was never",
-    "was never"
-   ],
-   [
-    "GOODBYE.",
-    "goodbye."
+    "WAVE GOODBYE",
+    "wave goodbye"
    ]
   ],
-  "gap": 0.35
+  "gap": 0.12
  },
  {
   "id": "L67",
   "who": "narrator",
   "chunks": [
    [
-    "It was the",
-    "It was the"
+    "was a",
+    "was a"
    ],
    [
     "CURTAIN CALL.",
