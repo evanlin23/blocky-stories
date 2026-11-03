@@ -37,10 +37,16 @@ The owner, 2026-11-03: "you can do whatever you want, this is your channel to ex
 ## Trends: don't bet the channel on one format (owner, 2026-11-02)
 The owner: "this niche might be oversaturated, but I think I'd like to keep this Roblox-y blocky style... if we have these same stories going out. They're not necessarily evergreen content. So if it just falls out of fashion. Then none of the videos really have any chance to go viral."
 - **Keep the look, vary what we make in it.** The blocky style, cast, narrator and captions are the brand. The format inside them can change.
-- **Every Monday, `scripts/trends.py`** (in the metrics workflow) writes `docs/trends/<date>.md`. It lists blocky / Roblox-style Shorts from the last 14 days ranked by views per day, plus each format's momentum against the week before. `/week` reads it before writing.
+- **Every Monday, `scripts/trends.py`** (in the metrics workflow) writes `docs/trends/<date>.md`. It lists blocky / Roblox-style Shorts from the last 14 days ranked by views per day, plus each format's momentum against the week before. `/week` reads it before writing. Right after it, `scripts/trends_deep.py` writes `docs/trends/deep/<date>.md`: description, tags, channel size and age, publish hour, like and comment rates and the top comments of the 40 fastest.
 - **The 70/30 mix:** about 70% of each batch is what's working (our numbers plus rising formats), and about 30% is experiments with a format we haven't tried, in the same style: sad or emotional, riddle or puzzle, comedy, POV, mystery series. Note which is which in each story's package (`"lane": "core"` or `"lane": "experiment"`), so `metrics` can compare them.
 - **A format whose momentum falls two scans in a row loses its share** to the best experiment. A format rising fast that we haven't tried gets an experiment slot the next week.
 - **Build things that are ours,** so viewers come back for us rather than for a format: recurring characters, Part 2s of what hits, and a signature hook of our own. Never copy a specific channel's premise.
+- **Research (2026-11-03, `docs/research/playbook.md`; the owner, 2026-11-03: "I'm worried we aren't spending enough time doing research").** The playbook ranks what the numbers support, and `/week` reads it with the trend files. Lines here are only the strong ones:
+  - **"Two scans in a row" means two weekly scans, at least 6 days apart.** The 2026-11-02 and 2026-11-03 scans were one day apart, and their "vs last scan" moves (sad -14%) are noise.
+  - **Story length is under test, not settled.** In 212 rising Shorts, the top 10% run a median 140 s and none of the 28 at 46 to 75 s made it. The 60 to 90 s core comes from one channel. The 2026-11-09 batch builds both (playbook H1), and the day-7 numbers decide.
+  - **Every story carries one quotable line,** odd or funny and short enough to type, marked in `script.md`. A quarter of the top comments on the 40 fastest quote a line back. Only 1% say anything about being scared.
+  - **US English in titles, lines and pins** (Mom, neighbor, gas station). 62% of our views are US.
+  - **Examples in these rules never use a live hit's premise** (a check of the 2026-11-03 deep scan found one).
 
 ## What we make
 A crazy, strange, made-up story, as long as its big idea needs and no longer (shorter is better, 3:00 at most), told in first person by a fast, sped-up synthetic narrator over blocky characters we build in Blender, with big punchy captions. One story a day goes to **PandaNanoAdventures** and no other channel (note 21).

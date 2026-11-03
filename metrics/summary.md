@@ -4,8 +4,9 @@ YouTube's analytics run 2 to 3 days behind. Viewed vs swiped away is Studio-only
 
 | Story | Published | Length | Views | Engaged | Avg viewed | Likes | Comments | Shares | Subs | Shorts feed |
 |---|---|---|---|---|---|---|---|---|---|---|
+| knock-back | 2026-11-03 | 147 s | no data yet (Analytics runs 2 to 3 days behind) |||||||| 
 | ep38-drive-in | 2026-11-02 | 140 s | no data yet (Analytics runs 2 to 3 days behind) |||||||| 
-| ep36-ice-huts | 2026-11-02 | 143 s | not public (private) |||||||| 
+| In This Town Your Flame ALWAYS Leans Tow | 2026-11-02 | 143 s | not public (private) |||||||| 
 | ep20-photo-strip | 2026-11-02 | 136 s | no data yet (Analytics runs 2 to 3 days behind) |||||||| 
 | back-row | 2026-10-31 | 138 s | 22,291 | 13,655 | 84% | 531 | 7 | 3 | 96 | 95% |
 
