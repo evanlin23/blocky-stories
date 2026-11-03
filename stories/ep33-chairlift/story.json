@@ -13,6 +13,7 @@
  "key_color": "#ff8fb1",
  "gap": 0.12,
  "tail": 0.5,
+ "fade_in": false,
  "look": {
   "fog": "#d9c2a8",
   "fog_density": 0.004,

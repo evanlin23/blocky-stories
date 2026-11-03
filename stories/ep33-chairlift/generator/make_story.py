@@ -415,6 +415,7 @@ story = {
     "key_color": "#ff8fb1",
     "gap": 0.12,
     "tail": LOOP,
+    "fade_in": False,
     "look": {"fog": "#d9c2a8", "fog_density": 0.004, "fog_start": 12.0, "sky": "#9ec1d6", "exposure": 0.0,
              "flash_safe": True,
              "polish": {"quiet": [["L33", "L35"]]}},
