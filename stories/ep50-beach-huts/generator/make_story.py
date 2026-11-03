@@ -232,7 +232,7 @@ S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4)
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L75", "ours, walking together", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L76", "this morning: our window, the empty chair", still((0.35, -3.6, 1.3), (0.35, -0.3, 0.95), 26), 1, **NSTAGE(5, r_me="stage"))
-S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((1.05, -2.1, 0.8), (1.0, -0.2, 1.3)), ((1.0, -1.8, 0.8), (1.0, -0.2, 1.3)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
+S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((0.3, -2.4, 0.9), (0.8, -0.3, 0.9)), ((0.35, -2.15, 0.9), (0.8, -0.3, 0.9)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
 
 shots = []
 shotx = {}
@@ -544,7 +544,7 @@ cues = [
     {"at": "L62", "name": "laptop", "mode": "hide"},
     {"at": "L72", "name": "laptop", "mode": "show", "pos": [-1.3, 1.1, 1.82], "open": 0.0, "yaw": 90},
     {"at": "L73", "name": "laptop", "mode": "hide"},
-    {"at": "L76", "name": "laptop", "mode": "show", "pos": [1.05, -1.0, 0.36], "open": 1.0, "yaw": 180},
+    {"at": "L76", "name": "laptop", "mode": "show", "pos": [0.45, -1.1, 0.36], "open": 1.0, "yaw": 0},
     {"at": "L28", "name": "door", "open": 0.4, "dur": 1.6},
     {"at": "L29", "name": "door", "open": 0.0, "dur": 0.4},
     {"at": "L40", "name": "lantern", "on": 1.0, "dur": 1.2},
