@@ -8,20 +8,34 @@
     "In this town,"
    ],
    [
-    "your REFLECTION",
-    "your reflection"
+    "NEVER walk AWAY",
+    "never walk away"
    ],
    [
-    "STAYS behind",
-    "stays behind"
+    "from your",
+    "from your"
    ],
    [
-    "when you",
-    "when you"
+    "REFLECTION.",
+    "reflection."
+   ]
+  ]
+ },
+ {
+  "id": "L01b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It STAYS",
+    "It stays"
    ],
    [
-    "walk AWAY.",
-    "walk away."
+    "in the GLASS",
+    "in the glass"
+   ],
+   [
+    "and WAITS.",
+    "and waits."
    ]
   ]
  },
@@ -30,16 +44,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "The fry van's",
-    "The fry van's"
+    "The fry CART'S",
+    "The fry cart's"
    ],
    [
     "SHINY SIDE",
     "shiny side"
    ],
    [
-    "has a QUEUE",
-    "has a queue"
+    "has a LINE",
+    "has a line"
    ],
    [
     "a hundred LONG.",
@@ -52,8 +66,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "The REAL queue",
-    "The real queue"
+    "The REAL line",
+    "The real line"
    ],
    [
     "is TWO.",
