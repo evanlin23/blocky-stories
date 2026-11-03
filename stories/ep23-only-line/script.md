@@ -22,7 +22,7 @@ In this town "quiet" means unheard: my grandad, who never stops talking, is fadi
 
 - **The test:** "oh no" (I'm the reason he's fading), then "wait, what" (the quietest person in town was never quiet, because Grandad has been my voice my whole life, and half of all his talking was mine). Both strange details from the first 20 s, the chatty man fading and the silent narrator solid, click at once.
 - **Said plainly** in L42 to L45 (about 1:06 to 1:15), with one picture: Grandad nearly glass, turned out to the empty seats with his hand beside his mouth, calling my frozen line to the back row for me (S45).
-- **Not ep43:** there, a loved one's attention keeps the narrator real and the fix is speaking up in a silent room. Here nobody's attention keeps me solid. Grandad lends me his voice, and the fix is me lending him mine, on a lit stage before a full, murmuring house, inside the play itself. The rhyme that closes it is Gran, who once said his line for him from the wings.
+- **Not ep43:** there, a loved one's attention keeps the narrator real and the fix is speaking up in a silent room. Here nobody's attention keeps me solid. Grandad lends me his voice, and the fix is me lending him mine, on a lit stage before a full, murmuring house, inside the play itself. The rhyme that closes it is Grandma, who once said his line for him from the wings.
 - **Pitched and dropped** (ten for the one kept): The old twist (the Prompter kept my place, `stand-in`, too small). A gold mask that says your words when you freeze, and Grandad's says mine (muddled: whose mask, whose voice). I'm an understudy for Grandad's real grandchild (`stand-in` in disguise). Every day happens twice and the first is a rehearsal (no feeling at the end). You hear every word a day early (no loved one at stake). The playhouse rehearses next year (points at a death). A tape mark shows where you'll stand in ten years (same). Applause follows whoever is proud of you (small). The whole week is one night repeating (confusing, ep20's problem). Everyone's life has a script and mine has one line (abstract, no picture).
 
 ## What changed against the old version (for the builder)
@@ -50,12 +50,12 @@ Everything is re-voiced: every line is new, numbered L01 to L57 from scratch. Ol
 - **Twist and how the last 15 s turn over the first line:** the first line plays as "shy people fade" and the narrator as the strange exception. By the end it means "people nobody hears fade", the narrator is the cause, and the sting ends on someone else in town nobody listened to. The last line, "SOMEBODY / stopped LISTENING / to HIM.", runs straight into "In this TOWN, / the QUIET ones / FADE."
 - **Plants a rewatch catches:**
   1. **The busker** (L06, about 0:10): he never stops singing and he's barely there. That breaks the first reading, and it's said in the montage as a joke.
-  2. **"Did I ever tell you how I met your Gran?"** (L11 and L12 at about 0:18, then L27 and L28 at about 0:48): I cut him off both times, and both times he goes a shade fainter in the shot.
+  2. **"Did I ever tell you how I met your Grandma?"** (L11 and L12 at about 0:18, then L27 and L28 at about 0:48): I cut him off both times, and both times he goes a shade fainter in the shot.
   3. **He says it again for me** (L15, about 0:27): I mumble my line and he says it again, louder, to the back of the house. First time it reads as a proud grandad. On a rewatch it's why I'm solid.
   4. **Picture only** (S09): at the stage door he's telling Marion something with his hand on my shoulder while I say nothing. He's talking for me.
 - **World:** a small town in late spring. The opening is a sunny street corner: a brick terrace with painted doors, cobbles, a green wooden bus shelter, an iron lamp post, a corner where the busker stands. Then the old playhouse at dusk and in rehearsal week: the stage door (brick, a green door, one lamp), a raked stage of scuffed dark boards, a soot-black proscenium with worn gilt, four bottle-green velvet legs down stage left, the cold brick back wall, a ghost light on a stand, six tape marks in a curve (five white, my yellow cross last, nearest the stage left wings), an empty house of plum-grey seats. Nothing written anywhere. The only numeral is the brass 9 on the couple's door.
-- **Ending shape:** a warm button at the bow (Gran said his line for him from the wings, forty years ago), then the stage empty under the ghost light, the faded back in the wings, and one new one at the back: the bus-stop man from the first shot. A cold sting after the warm turn, looping into his own first shot.
-- **Kind of warmth:** a lent voice, handed down. Gran said his line for him, he said mine for me, and I say his for him.
+- **Ending shape:** a warm button at the bow (Grandma said his line for him from the wings, forty years ago), then the stage empty under the ghost light, the faded back in the wings, and one new one at the back: the bus-stop man from the first shot. A cold sting after the warm turn, looping into his own first shot.
+- **Kind of warmth:** a lent voice, handed down. Grandma said his line for him, he said mine for me, and I say his for him.
 - **Lore:** no plant. RULES.md → "The shared world is optional now", and a tally here would only muddy the big idea. The faded ones aren't Keepers and have nothing to do with the canon.
 
 ## Cast
@@ -152,7 +152,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S09: the playhouse stage door at dusk, one lamp, Grandad mid-story to Marion, one hand on my shoulder, the other out wide, `happy`, the white beard piece. I'm silent beside him. Plant 4]
 - `L10` narrator: And he's FADING.
   - [S10: close on Grandad's face, the brick of the stage door wall faintly through his cheek (0.85). Readable at phone size]
-- `L11` narrator: At the stage DOOR, / he ASKED, / "Did I ever TELL you / how I met your GRAN?"
+- `L11` narrator: At the stage DOOR, / he ASKED, / "Did I ever TELL you / how I met your GRANDMA?"
   - [S11a: Grandad leaning toward me, brows up, eager. S11b: over his shoulder to me, half turned away. Plant 2]
 - `L12` narrator: I said, / "YES, Grandad," / and went over my LINE / under my BREATH.
   - [S12a: me half turned to the door, eyes down on the script roll under my arm, lips moving. S12b: Grandad's smile dropping, and he goes a shade fainter, 0.85 to 0.80 over 1.2 s. Plant 2]
@@ -191,7 +191,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S26: ghost mood: f1 to f4 at the 3rd leg, the edge of the velvet across them]
 - `L27` narrator: WEDNESDAY, / on our BREAK, / he started AGAIN.
   - [S27: work light: the company and me sitting on the stage lip, legs over the edge, Grandad beside me mid-gesture, `happy`]
-- `L28` narrator: I said, / "You TOLD me, Grandad," / before he got to GRAN.
+- `L28` narrator: I said, / "You TOLD me, Grandad," / before he got to GRANDMA.
   - [S28a: me with the script roll on my lap, lips moving over my line, not looking at him. S28b: Grandad's hand coming down, and he eases 0.55 to 0.45 over 1.2 s. Plant 2 again]
 - `L29` narrator: Nobody ELSE / even LOOKED up.
   - [S29: the company along the lip, each looking out at the empty seats, me at the end, eyes on the script roll in my lap]
@@ -252,10 +252,10 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ### 07 The bow, and the sting (1:29 to 1:39)
 
-- `L52` narrator: At the BOW, / he whispered, / "Did I ever TELL you / how I met your GRAN?"
+- `L52` narrator: At the BOW, / he whispered, / "Did I ever TELL you / how I met your GRANDMA?"
   - [S52: the curtain call along the stage lip, the company bowing, Grandad solid beside me, head turned to me mid-bow. Soft applause. Plant 2 pays off]
 - (`L53` cut in round 4. The id is kept so the tables stay right.)
-- `L54` narrator: Forty years AGO, / GRAN said this line for HIM, / from the WINGS.
+- `L54` narrator: Forty years AGO, / GRANDMA said this line for HIM, / from the WINGS.
   - [S54a: the 1st curtain leg, stage left, empty, warm in the full wash, a step from my yellow cross. S54b: Grandad's face, fully solid, grinning at me]
 - `L55` narrator: After, / under the ghost LIGHT, / the faded ones / stood in the WINGS.
   - [S55a: the empty stage, the wash ramping down to the ghost mood. S55b: f1 to f4 behind legs 2 to 4, facing the empty stage. The cold drone returns]
@@ -271,10 +271,10 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - No backstory or flashback before 0:20. One forward timeline from the street to Saturday. Grandad's story (L54) is one line told in the present, over present-day shots.
 - Nobody explains the rule. The reveal is mine, from what I see (S37 to S40), said in L42 to L45 and held on S45.
 - The fix uses only the rule and what the reveal showed: a line said again louder gets heard, so it counts (S15, S45, L49).
-- Plants: the busker (L06), the cut-off Gran story twice (L11 to L12, L27 to L28) with a fade in each shot, my line said again louder (L15), Grandad talking for me at the stage door (S09). The last line runs into the first.
+- Plants: the busker (L06), the cut-off Grandma story twice (L11 to L12, L27 to L28) with a fade in each shot, my line said again louder (L15), Grandad talking for me at the stage door (S09). The last line runs into the first.
 - The counts: five white marks and five players (p1 to p5), five voices in L17. Four faded ones until S56, five in S56 and S57.
 - Picture against line: "solid as brick" over vivid solid people in front of a brick wall. "Barely there" over a 0.4 busker. "The brick wall through Grandad's robe" with the back wall behind him at 0.60. The crown is the only thing that never fades.
 - Batch 1 echoes avoided: no knowing elder (Grandad never explains the rule), no night shift or one summer, no pale grey blank face (the faded keep faces and colour), no "pressed flat", no "Last NIGHT," opener, no age said or shown, no "it didn't touch me", no "not X, it was Y" (L42 states what quiet means without a contrast).
-- Hard rule 2: nobody is hurt or in danger of harm, no death words. Fading is quiet and reversible (L50, L51). Gran in Grandad's story was an adult.
+- Hard rule 2: nobody is hurt or in danger of harm, no death words. Fading is quiet and reversible (L50, L51). Grandma in Grandad's story was an adult.
 - Hard rule 8 on every line, the title, description and pin: no dashes, semicolons, slogans, parenthetical lists or AI words.
 - Originality (round 4, checked against every story's twist): the rule type (being heard) is new on the channel. ep43 keeps its narrator real through a loved one's attention and fixes it by speaking up in a silent room. Here I'm solid through a voice lent to me, and the fix is lending it back, on a lit stage before a full house, inside the play. No headphones, earbuds or tuning out by device. floor-thirteen (talking breaks the lift's spell) and ep47 (a truth said aloud) use speech differently. The shape stays `misread`.

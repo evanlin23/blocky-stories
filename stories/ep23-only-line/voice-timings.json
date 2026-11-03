@@ -242,14 +242,14 @@
    ]
   },
   "L11": {
-   "text": "at the stage door, he asked, did i ever tell you how i met your gran?",
+   "text": "at the stage door, he asked, did i ever tell you how i met your grandma?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9064,
-   "dur": 3.362,
+   "dur": 3.483,
    "onset": 0.207,
-   "end": 3.138,
+   "end": 3.241,
    "chunks": [
     [
      0.207,
@@ -257,27 +257,27 @@
     ],
     [
      0.328,
-     0.776
+     0.793
     ],
     [
-     0.802,
-     1.362
+     0.819,
+     1.379
     ],
     [
-     1.448,
-     1.793
+     1.466,
+     1.81
     ],
     [
-     1.793,
-     2.052
+     1.81,
+     2.069
     ],
     [
-     2.052,
-     2.44
+     2.069,
+     2.474
     ],
     [
-     2.44,
-     3.138
+     2.474,
+     3.241
     ]
    ]
   },
@@ -459,17 +459,17 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.431,
+   "dur": 1.379,
    "onset": 0.172,
-   "end": 1.224,
+   "end": 1.172,
    "chunks": [
     [
      0.172,
-     0.483
+     0.431
     ],
     [
-     0.517,
-     1.224
+     0.466,
+     1.172
     ]
    ]
   },
@@ -670,14 +670,14 @@
    ]
   },
   "L28": {
-   "text": "i said, you told me, grandad, before he got to gran.",
+   "text": "i said, you told me, grandad, before he got to grandma.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.603,
+   "dur": 2.741,
    "onset": 0.172,
-   "end": 2.397,
+   "end": 2.517,
    "chunks": [
     [
      0.172,
@@ -689,15 +689,15 @@
     ],
     [
      0.784,
-     1.328
+     1.345
     ],
     [
-     1.379,
-     1.638
+     1.414,
+     1.672
     ],
     [
-     1.638,
-     2.397
+     1.672,
+     2.517
     ]
    ]
   },
@@ -1251,25 +1251,25 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.034,
+   "dur": 2.086,
    "onset": 0.172,
-   "end": 1.828,
+   "end": 1.879,
    "chunks": [
     [
      0.172,
-     0.423
+     0.457
     ],
     [
-     0.423,
-     0.862
+     0.457,
+     0.914
     ],
     [
-     0.931,
-     1.172
+     0.983,
+     1.224
     ],
     [
-     1.199,
-     1.828
+     1.25,
+     1.879
     ]
    ]
   },
@@ -1302,14 +1302,14 @@
    ]
   },
   "L52": {
-   "text": "at the bow, he whispered, did i ever tell you how i met your gran?",
+   "text": "at the bow, he whispered, did i ever tell you how i met your grandma?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.1536000000000002,
-   "dur": 2.638,
+   "dur": 2.776,
    "onset": 0.155,
-   "end": 2.448,
+   "end": 2.569,
    "chunks": [
     [
      0.155,
@@ -1317,23 +1317,23 @@
     ],
     [
      0.492,
-     0.948
+     0.966
     ],
     [
-     1.017,
-     1.328
+     1.034,
+     1.345
     ],
     [
-     1.328,
-     1.517
+     1.345,
+     1.534
     ],
     [
-     1.517,
-     1.87
+     1.534,
+     1.906
     ],
     [
-     1.87,
-     2.448
+     1.906,
+     2.569
     ]
    ]
   },
@@ -1362,34 +1362,34 @@
    ]
   },
   "L54": {
-   "text": "forty years ago, gran said this line for him, from the wings.",
+   "text": "forty years ago, grandma said this line for him, from the wings.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.1536000000000002,
-   "dur": 2.534,
+   "dur": 2.69,
    "onset": 0.155,
-   "end": 2.345,
+   "end": 2.5,
    "chunks": [
     [
      0.155,
-     0.724
+     0.741
     ],
     [
      0.776,
-     1.112
+     1.233
     ],
     [
-     1.112,
-     1.414
+     1.233,
+     1.534
     ],
     [
-     1.414,
-     1.621
+     1.534,
+     1.776
     ],
     [
-     1.655,
-     2.345
+     1.81,
+     2.5
     ]
    ]
   },

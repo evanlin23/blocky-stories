@@ -296,7 +296,7 @@ shot("S51", "L51", "from behind Grandad out to the full house", still([-0.05, 3.
 BOW = {"p1": -3.0, "p2": -2.1, "p3": -1.2, "p4": -0.3, "p5": 0.6, "walt": 1.5, "me": 2.4}
 shot("S52", "L52", "the curtain call along the stage lip", still([-0.4, -5.6, 1.1], [0.0, 1.0, 1.0], 28))
 shot("S54a", "L54", "the first leg, empty, the warm light on it", still([2.2, 1.0, 1.5], [4.2, 3.3, 1.4], 26))
-shot("S54b", CH("L54", "GRAN"), "Grandad grinning at me", face([BOW["walt"], 1.0], 2.8, 52, 8, tz=1.38))
+shot("S54b", CH("L54", "GRANDMA"), "Grandad grinning at me", face([BOW["walt"], 1.0], 2.8, 52, 8, tz=1.38))
 shot("S55a", "L55", "the empty stage, the lights sink", still([0.0, -6.5, 1.5], [0.5, 3.0, 1.2], 26))
 shot("S55b", CH("L55", "the faded"), "the faded ones in the wings", still([0.6, 1.4, 1.55], [3.1, 5.2, 1.4], 30))
 shot("S56", "L56", "a slow push: a new one at the back",
@@ -650,6 +650,7 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff8fb1",
     "caption": {"ink": "#08090d", "stroke_add": 1, "shadow": 0.7},
+    "phonemes": {"then": "ðˈɛn,"},
     "gap": 0.12,
     "tail": 0.25,
     "fade_out": False,
@@ -657,7 +658,6 @@ story = {
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.03], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.22, "grain": 0.012, "red_line": 0.79},
-    "phonemes": {"gran": "ɡɹˈæn"},
     "places": {"marks": MARKS, "legy": LEGY, "king": KING, "ghost": GH},
     "cast": cast,
     "lines": lines,

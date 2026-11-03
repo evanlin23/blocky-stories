@@ -16,6 +16,9 @@
   "stroke_add": 1,
   "shadow": 0.7
  },
+ "phonemes": {
+  "then": "ðˈɛn,"
+ },
  "gap": 0.12,
  "tail": 0.25,
  "fade_out": false,
@@ -45,9 +48,6 @@
   "bloom": 0.22,
   "grain": 0.012,
   "red_line": 0.79
- },
- "phonemes": {
-  "gran": "ɡɹˈæn"
  },
  "places": {
   "marks": [
@@ -661,8 +661,8 @@
      "how i met"
     ],
     [
-     "your GRAN?\"",
-     "your gran?"
+     "your GRANDMA?\"",
+     "your grandma?"
     ]
    ],
    "tempo": 0.88
@@ -987,8 +987,8 @@
      "before he"
     ],
     [
-     "got to GRAN.",
-     "got to gran."
+     "got to GRANDMA.",
+     "got to grandma."
     ]
    ]
   },
@@ -1491,8 +1491,8 @@
      "how i met"
     ],
     [
-     "your GRAN?\"",
-     "your gran?"
+     "your GRANDMA?\"",
+     "your grandma?"
     ]
    ],
    "tempo": 1.12
@@ -1506,8 +1506,8 @@
      "forty years ago,"
     ],
     [
-     "GRAN said",
-     "gran said"
+     "GRANDMA said",
+     "grandma said"
     ],
     [
      "this line",
