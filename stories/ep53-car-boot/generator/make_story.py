@@ -218,7 +218,7 @@ SHOTS = [
     ("L48", "me a step nearer, scared", 2, still([-2.4, -1.7, 1.5], [-0.65, -1.75, 1.5], 34)),
     ("L48.2", "its head hanging below the shoulder line, eyes still on me", 2, still([0.2, -2.5, 1.75], [-1.0, 1.3, 2.05], 34)),
     ("L49", "the tipped face, held, as Pip's at the shelter", 2, still([-0.4, -2.0, 1.9], [-1.0, 1.3, 2.1], 42)),
-    ("L50", "side-on: it leans over the table, face to face with me", 2, still([-3.5, -2.5, 1.85], [-1.0, 0.1, 1.85], 26)),
+    ("L50", "side-on: it leans over the table, face to face with me", 2, still([-3.7, -2.3, 1.9], [-1.2, 0.25, 2.0], 31)),
     ("L51", "extreme close on its stacked eyes", 2, still([-1.9, -1.4, 2.0], [-1.15, 0.5, 2.0], 40)),
     ("L52", "my face, scared turning to worried", 2, still([0.9, 0.3, 1.55], [-1.45, -0.62, 1.5], 34)),
     ("L53", "my sleeve, still white, gold sun on it", 2, still([-1.6, -1.4, 1.25], [-1.2, -0.62, 1.2], 42)),
