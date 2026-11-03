@@ -2482,7 +2482,7 @@
      24
     ]
    ],
-   "hand": 0.008,
+   "hand": 0,
    "step": 2,
    "what": "kitchen: toast",
    "at": "L26"
@@ -2505,7 +2505,7 @@
      34
     ]
    ],
-   "hand": 0.008,
+   "hand": 0,
    "step": 2,
    "what": "close on Ines, looking",
    "at": "L27"
@@ -2528,7 +2528,7 @@
      30
     ]
    ],
-   "hand": 0.008,
+   "hand": 0,
    "step": 2,
    "what": "close on me, misreading",
    "at": "L28"
@@ -2551,7 +2551,7 @@
      30
     ]
    ],
-   "hand": 0.008,
+   "hand": 0,
    "step": 2,
    "what": "me looking past her",
    "at": "L29"
@@ -2574,7 +2574,7 @@
      20
     ]
    ],
-   "hand": 0.008,
+   "hand": 0,
    "step": 2,
    "what": "the stair foot through the doorway: empty",
    "at": "L29.3"
@@ -2597,7 +2597,7 @@
      20
     ]
    ],
-   "hand": 0.008,
+   "hand": 0,
    "step": 2,
    "what": "the two of us, silence",
    "at": "L30"
