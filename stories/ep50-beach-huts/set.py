@@ -40,7 +40,7 @@ OURS = 5
 WIN_X = 1.0                    # window centre, hut-local
 WIN_W, WIN_Z0, WIN_Z1 = 0.7, 1.1, 1.8
 _WX, _WW, _WZ0, _WZ1 = WIN_X, WIN_W, WIN_Z0, WIN_Z1
-BIGWIN = (1.05, 1.0, 0.5, 2.3)    # hut 4 (the neighbour's) has a big window for the opening
+BIGWIN = (1.05, 1.0, 0.9, 2.1)    # hut 4 (the neighbour's) has a big window for the opening
 TOWN = {"office": 200.0, "bakery": 300.0, "shop": 400.0, "cafe": 500.0}
 
 # time of day: sun energy, sun colour, sun elevation (deg), azimuth (deg), sky colour, sky strength, fog colour
@@ -479,6 +479,7 @@ def build(kit, story, tl):
     kit.aim(LIGHT("dusklift", kit), (1.0, -1.3, 1.5))
     kit.light("benchlift", "AREA", (42.0, -13.0, 3.0), 900, "#c3d3f2", size=6.0)
     kit.aim(LIGHT("benchlift", kit), (46.8, -6.4, 0.3))
+    kit.light("stagelit4", "POINT", (hx(4) + BIGWIN[0] - 0.2, 0.3, 1.3), 12, "#e8f0ff", size=0.05)   # lights the opening reflection
     kit.light("stagelit", "POINT", (hx(OURS) + WIN_X, 0.4, WIN_Z0 + 0.4), 10, "#d8e4f4", size=0.04)   # inside the glass box
     kit.light("faceup", "POINT", (0.2, -1.3, 0.9), 160, "#ffb878", size=0.25)   # the Small Head, lit from below
     kit.light("shadowkey", "POINT", (3.3, -4.0, 1.5), 1400, "#f4b66e", size=0.04)
@@ -902,6 +903,16 @@ def place_refl(kit, tl, ctx, rn, c, kind, t, sx_):
             # a cartwheel turns about the hips, not the feet: shift the root so the hips stay where they were
             zc = 2.3 * root.scale[2]
             root.location = (root.location.x - zc * math.sin(roll), root.location.y, root.location.z + zc * (1 - math.cos(roll)))
+    if k == "stage":
+        # the opening reflection hangs upside down behind a window: only its head and shoulders belong in the pane,
+        # so the limbs (which would poke out above the roof) are shrunk away while it is hanging
+        hang = abs(math.degrees(roll) - 180.0) < 30.0
+        for sx in (-1, 1):
+            for part in ("leg", "arm"):
+                ob = bpy.data.objects.get(f"{c.name}.{part}{sx}")
+                if ob is not None:
+                    v = 0.001 if hang else 1.0
+                    ob.scale = (v, v, v)
     if _switch(keys, "sit", t, False) and not s["hidden"]:
         for sx in (-1, 1):
             bpy.data.objects[f"{c.name}.leg{sx}"].rotation_euler = (-math.pi / 2, 0, 0)

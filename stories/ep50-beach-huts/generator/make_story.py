@@ -75,7 +75,7 @@ cast = {
                   "face": {"eyes": "hollow", "mouth": "none", "brows": False, "eye_scale": 1.12, "glow": "#e8ecf0", "ink": "#0a0808"}},
 }
 reflections = {
-    "r_neighbour": {"of": "neighbour"},
+    "r_neighbour": {"of": "neighbour", "tint": 0.12},
     "r_dieter": {"of": "dieter"},
     "r_shopper": {"of": "shopper", "set": {"shirt": "#c86a6a", "zip_c": "#f0d0c0"}},
     "r_date_f": {"of": "date_f"}, "r_date_m": {"of": "date_m"},
@@ -121,9 +121,7 @@ def S(at, what, cam, step=2, **kw):
 NSTAGE = lambda h, **r: dict(stage={"hut": h}, refl=r)
 
 # 01 the rule
-S(0, "warning: his whole face beside his window, the reflection upside down in the glass", move(((-2.63, -4.4, 1.55), (-2.63, 0, 1.5)), ((-2.63, -3.8, 1.55), (-2.63, 0, 1.5)), 30, 30), 1,
-  **NSTAGE(4, r_neighbour="stage"))
-S("L01.3", "punch: closer, the same two things", move(((-2.63, -3.8, 1.55), (-2.63, 0, 1.5)), ((-2.63, -3.3, 1.55), (-2.63, 0, 1.5)), 30, 30), 1,
+S(0, "warning: his whole face beside his window, the reflection upside down in the glass", move(((-2.63, -4.4, 1.55), (-2.63, 0, 1.5)), ((-2.63, -4.1, 1.55), (-2.63, 0, 1.5)), 30, 30), 1,
   **NSTAGE(4, r_neighbour="stage"))
 S("L02", "the glass: he has gone, the reflection stays", move(((-3.0, -1.9, 1.5), (-3.0, 0, 1.5)), ((-3.0, -1.5, 1.5), (-3.0, 0, 1.5)), 30, 34), 1,
   **NSTAGE(4, r_neighbour="stage"))
@@ -204,7 +202,7 @@ S("L58", "two figures on the bench", still((1.0, -0.85, 1.45), (1.0, 0, 1.45), 3
   **NSTAGE(5, r_remi="stage", r_me="stage"), hidecr=True)
 S("L58.2", "my eyes go to the shore", still((0.5, -2.4, 1.5), (-0.35, -0.7, 1.45), 40), 2)
 S("L59", "the wide again: the magenta figure", still((12, -25, 3.4), (12.2, -9, 0.4), 22), 2, refl={"r_me": {"kind": "sand", "scale": 1.6}})
-S("L60", "the lid comes down", still((1.0, -2.3, 1.15), (-0.35, -0.9, 0.75), 36), 1)
+S("L60", "the lid comes down", still((-1.5, -2.6, 1.3), (-0.35, -0.8, 0.9), 34), 1)
 S("L61", "stepping down", still((-2.4, -5.0, 1.3), (-0.5, -2.2, 1.0), 26), 2)
 S("L61.2", "over my shoulder", still((-0.7, -5.7, 1.5), (1.2, -1.5, 1.0), 28), 2, gloom=0.45)
 # 06 the bench
@@ -234,7 +232,7 @@ S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4)
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L75", "ours, walking together", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L76", "this morning: our window, the empty chair", still((0.35, -3.6, 1.3), (0.35, -0.3, 0.95), 26), 1, **NSTAGE(5, r_me="stage"))
-S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((0.75, -1.9, 0.85), (0.55, -0.2, 1.2)), ((0.7, -1.6, 0.85), (0.55, -0.2, 1.2)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
+S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((1.05, -2.1, 0.8), (1.0, -0.2, 1.3)), ((1.0, -1.8, 0.8), (1.0, -0.2, 1.3)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
 
 shots = []
 shotx = {}
@@ -296,11 +294,12 @@ SEAT = 0.51       # a sitter's root sits this far under the seat top
 
 # --- the neighbour and his cartwheeling reflection
 acting["neighbour"].clear()   # no hide-at-0 key: he is in the very first frame
-put("neighbour", 0, [-2.05, -0.85], yaw=0)
+put("neighbour", 0, [-2.14, -0.85], yaw=0)
 hide("neighbour", "L04")
-put("r_neighbour", 0, [-1.0, 0.6, 8.5], yaw=0, roll=180, side=[4, 4], expr="grin", stroll=False, big=17)
-key("r_neighbour", "L01.1", roll=178, blend=1.6)
-key("r_neighbour", "L01.3", roll=182, blend=1.2)
+put("r_neighbour", 0, [-2.8, 0.6, 4.0], yaw=0, roll=180, side=[4, 4], expr="grin", stroll=False, big=19)
+key("r_neighbour", "L01.1", roll=180, blend=1.6)
+key("r_neighbour", "L01.3", roll=180, blend=1.2)
+key("r_neighbour", "L02.2-0.05", roll=180, pos=[-2.8, 0.6, 4.0], blend=0)
 key("r_neighbour", "L02.2", roll=8, blend=0.8, pos=[0.3, 0.07, 0.0], big=3.3)
 key("r_neighbour", "L02.2+0.9", roll=120, blend=1.0)
 hide("r_neighbour", "L04")
@@ -486,9 +485,9 @@ walk("r_me", "L73+2.6", [8.0, -6.8])
 put("r_me", "L74", [0.35, 0.2], yaw=WY, expr=GRIN, stroll=True, big=1.5)
 walk("r_me", "L76", [0.65, 0.45], yaw=WY)
 hide("r_me", "L76")
-put("r_me", "L76", [0.3, 0.12], yaw=WY, stroll=True, big=1.6)
-walk("r_me", "L76.2", [0.9, 0.5], yaw=WY)
-walk("r_me", "end", [1.15, 0.75], yaw=WY)
+put("r_me", "L76", [-0.1, 0.12], yaw=WY, stroll=True, big=1.6)
+walk("r_me", "L76.2", [0.0, 0.5], yaw=WY)
+walk("r_me", "end", [0.1, 0.8], yaw=WY)
 
 # --- the Small Head. Three held poses, each closer; never moving inside a shot.
 SH = CHAIR_B
@@ -545,7 +544,7 @@ cues = [
     {"at": "L62", "name": "laptop", "mode": "hide"},
     {"at": "L72", "name": "laptop", "mode": "show", "pos": [-1.3, 1.1, 1.82], "open": 0.0, "yaw": 90},
     {"at": "L73", "name": "laptop", "mode": "hide"},
-    {"at": "L76", "name": "laptop", "mode": "show", "pos": [0.0, -0.5, 0.36], "open": 1.0, "yaw": 180},
+    {"at": "L76", "name": "laptop", "mode": "show", "pos": [1.05, -1.0, 0.36], "open": 1.0, "yaw": 180},
     {"at": "L28", "name": "door", "open": 0.4, "dur": 1.6},
     {"at": "L29", "name": "door", "open": 0.0, "dur": 0.4},
     {"at": "L40", "name": "lantern", "on": 1.0, "dur": 1.2},
