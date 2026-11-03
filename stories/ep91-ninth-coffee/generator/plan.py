@@ -15,7 +15,7 @@ TRAYZ = 1.015
 
 FACE = {"eyes": "round", "brows": True, "ink": "#24131f"}
 FACEL = {"eyes": "lashes", "brows": True, "ink": "#24131f"}
-GLOW = {"eyes": "classic", "brows": False, "mouth": "none", "ink": "#24131f", "pupil": "#05070a", "glow": "#22e6ff"}
+GLOW = {"eyes": "hollow", "brows": False, "mouth": "none", "ink": "#24131f", "glow": "#22e6ff", "eye_scale": 1.35}
 
 
 def tcast(skin, shirt, pants, hair, hair_c, face=None, **kw):

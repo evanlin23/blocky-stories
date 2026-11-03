@@ -190,12 +190,12 @@
    "height": 1.15,
    "width": 0.94,
    "face": {
-    "eyes": "classic",
+    "eyes": "hollow",
     "brows": false,
     "mouth": "none",
     "ink": "#24131f",
-    "pupil": "#05070a",
-    "glow": "#22e6ff"
+    "glow": "#22e6ff",
+    "eye_scale": 1.35
    }
   },
   "tc2": {
@@ -211,12 +211,12 @@
    "height": 1.15,
    "width": 0.94,
    "face": {
-    "eyes": "classic",
+    "eyes": "hollow",
     "brows": false,
     "mouth": "none",
     "ink": "#24131f",
-    "pupil": "#05070a",
-    "glow": "#22e6ff"
+    "glow": "#22e6ff",
+    "eye_scale": 1.35
    },
    "extras": []
   },
@@ -233,12 +233,12 @@
    "height": 1.15,
    "width": 0.94,
    "face": {
-    "eyes": "classic",
+    "eyes": "hollow",
     "brows": false,
     "mouth": "none",
     "ink": "#24131f",
-    "pupil": "#05070a",
-    "glow": "#22e6ff"
+    "glow": "#22e6ff",
+    "eye_scale": 1.35
    }
   },
   "tc4": {
@@ -254,12 +254,12 @@
    "height": 1.15,
    "width": 0.94,
    "face": {
-    "eyes": "classic",
+    "eyes": "hollow",
     "brows": false,
     "mouth": "none",
     "ink": "#24131f",
-    "pupil": "#05070a",
-    "glow": "#22e6ff"
+    "glow": "#22e6ff",
+    "eye_scale": 1.35
    }
   },
   "tc5": {
@@ -275,12 +275,12 @@
    "height": 1.15,
    "width": 0.94,
    "face": {
-    "eyes": "classic",
+    "eyes": "hollow",
     "brows": false,
     "mouth": "none",
     "ink": "#24131f",
-    "pupil": "#05070a",
-    "glow": "#22e6ff"
+    "glow": "#22e6ff",
+    "eye_scale": 1.35
    }
   }
  },
