@@ -1,0 +1,1813 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Never shake Grandpa's snow globe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.724
+    ]
+   ]
+  },
+  "L02": {
+   "text": "Our whole street feels it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.155,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.207
+    ]
+   ]
+  },
+  "L03": {
+   "text": "One shake, and it snows. Only on our street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.069
+    ],
+    [
+     1.147,
+     1.422
+    ],
+    [
+     1.422,
+     2.034
+    ]
+   ]
+  },
+  "L04": {
+   "text": "The next street over stays sunny.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.155,
+     0.37
+    ],
+    [
+     0.37,
+     0.724
+    ],
+    [
+     0.724,
+     1.483
+    ]
+   ]
+  },
+  "L05": {
+   "text": "And everybody on ours stumbles at once, like the ground tipped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.155,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.922
+    ],
+    [
+     0.922,
+     1.638
+    ],
+    [
+     1.707,
+     1.897
+    ],
+    [
+     1.897,
+     2.724
+    ]
+   ]
+  },
+  "L06": {
+   "text": "The mailman drops his whole bag.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.897
+    ],
+    [
+     0.897,
+     1.552
+    ]
+   ]
+  },
+  "L07": {
+   "text": "Mrs. Ortiz sits right down in her flowerbed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.337
+    ],
+    [
+     1.337,
+     2.138
+    ]
+   ]
+  },
+  "L08": {
+   "text": "When the snow stops, there's one dry spot in the middle of the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.155,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.897
+    ],
+    [
+     0.948,
+     1.293
+    ],
+    [
+     1.293,
+     1.784
+    ],
+    [
+     1.784,
+     2.026
+    ],
+    [
+     2.026,
+     2.672
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Always the same spot. About the size of a person.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.034
+    ],
+    [
+     1.112,
+     1.647
+    ],
+    [
+     1.647,
+     2.328
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Every car swerves around it. Nobody says why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.31
+    ],
+    [
+     1.388,
+     2.293
+    ]
+   ]
+  },
+  "L11": {
+   "text": "My grandpa, Gus, keeps the globe on his windowsill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ],
+    [
+     1.052,
+     1.526
+    ],
+    [
+     1.526,
+     2.397
+    ]
+   ]
+  },
+  "L12": {
+   "text": "Inside it is our whole street, down to the mailboxes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.19,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.19,
+     0.629
+    ],
+    [
+     0.629,
+     1.207
+    ],
+    [
+     1.276,
+     1.509
+    ],
+    [
+     1.509,
+     2.328
+    ]
+   ]
+  },
+  "L13": {
+   "text": "And in the middle of the tiny road, one tiny figure.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.526
+    ],
+    [
+     0.526,
+     0.638
+    ],
+    [
+     0.638,
+     1.19
+    ],
+    [
+     1.267,
+     2.259
+    ]
+   ]
+  },
+  "L14": {
+   "text": "I always figured it was a snowman.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     0.94
+    ],
+    [
+     0.94,
+     1.672
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Every morning, Grandpa tips his hat to the empty road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.362,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.199
+    ],
+    [
+     1.199,
+     1.483
+    ],
+    [
+     1.483,
+     1.638
+    ],
+    [
+     1.638,
+     2.362
+    ]
+   ]
+  },
+  "L16": {
+   "text": "He's teaching me to drive his truck.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     0.94
+    ],
+    [
+     0.94,
+     1.517
+    ]
+   ]
+  },
+  "L17": {
+   "text": "My test was tomorrow, and I was scared.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.914
+    ],
+    [
+     0.966,
+     1.129
+    ],
+    [
+     1.129,
+     1.793
+    ]
+   ]
+  },
+  "L18": {
+   "text": "So when he went to bed, I shook it. Just once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.707
+    ],
+    [
+     0.732,
+     1.19
+    ],
+    [
+     1.267,
+     2.017
+    ]
+   ]
+  },
+  "L19": {
+   "text": "The house lurched.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L20": {
+   "text": "And it snowed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ]
+   ]
+  },
+  "L21": {
+   "text": "Snow day. Test canceled.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.569,
+     1.397
+    ]
+   ]
+  },
+  "L22": {
+   "text": "But in the globe, the little figure had moved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.284
+    ],
+    [
+     0.284,
+     0.672
+    ],
+    [
+     0.698,
+     1.147
+    ],
+    [
+     1.147,
+     1.81
+    ]
+   ]
+  },
+  "L23": {
+   "text": "It was standing by Mrs. Ortiz's gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.155,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     0.983
+    ],
+    [
+     0.983,
+     1.897
+    ]
+   ]
+  },
+  "L24": {
+   "text": "In the morning, her whole yard was white.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     1.077
+    ],
+    [
+     1.077,
+     1.672
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Except one dry spot, right by the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.017
+    ],
+    [
+     1.069,
+     1.337
+    ],
+    [
+     1.337,
+     1.879
+    ]
+   ]
+  },
+  "L26": {
+   "text": "She kept her curtains shut all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.94
+    ],
+    [
+     0.94,
+     1.517
+    ]
+   ]
+  },
+  "L27": {
+   "text": "Her dog wouldn't go near the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.784
+    ],
+    [
+     0.784,
+     1.431
+    ]
+   ]
+  },
+  "L28": {
+   "text": "My test got moved to Friday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.879
+    ],
+    [
+     0.879,
+     1.552
+    ]
+   ]
+  },
+  "L29": {
+   "text": "So Thursday night, I shook it again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.845,
+     1.094
+    ],
+    [
+     1.094,
+     1.655
+    ]
+   ]
+  },
+  "L30": {
+   "text": "This time, the little figure ended up by our mailbox.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     1.069
+    ],
+    [
+     1.069,
+     1.474
+    ],
+    [
+     1.474,
+     2.276
+    ]
+   ]
+  },
+  "L31": {
+   "text": "The mailman came up our path, stopped, and backed all the way down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.155,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.155,
+     0.629
+    ],
+    [
+     0.629,
+     1.086
+    ],
+    [
+     1.181,
+     1.517
+    ],
+    [
+     1.569,
+     1.992
+    ],
+    [
+     1.992,
+     2.724
+    ]
+   ]
+  },
+  "L32": {
+   "text": "He left our mail in the snow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.768
+    ],
+    [
+     0.768,
+     1.448
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Grandpa saw the globe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.276
+    ]
+   ]
+  },
+  "L34": {
+   "text": "He didn't say one word to me all day.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.862
+    ],
+    [
+     0.862,
+     1.034
+    ],
+    [
+     1.034,
+     1.655
+    ]
+   ]
+  },
+  "L35": {
+   "text": "Friday night, I couldn't sleep.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.621
+    ],
+    [
+     0.647,
+     1.397
+    ]
+   ]
+  },
+  "L36": {
+   "text": "At two A.M., I picked up the globe, just to look.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.716,
+     1.026
+    ],
+    [
+     1.026,
+     1.345
+    ],
+    [
+     1.379,
+     2.052
+    ]
+   ]
+  },
+  "L37": {
+   "text": "It slipped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.948,
+   "onset": 0.155,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ]
+   ]
+  },
+  "L38": {
+   "text": "I caught it. But it shook.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.155
+    ]
+   ]
+  },
+  "L39": {
+   "text": "In the globe, the figure was on our porch.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.061
+    ],
+    [
+     1.061,
+     1.776
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Outside, snow was coming down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     0.845
+    ],
+    [
+     0.845,
+     1.534
+    ]
+   ]
+  },
+  "L41": {
+   "text": "The porch light went dim.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.241
+    ]
+   ]
+  },
+  "L42": {
+   "text": "And it was settling on somebody.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.302
+    ],
+    [
+     0.302,
+     0.741
+    ],
+    [
+     0.741,
+     1.5
+    ]
+   ]
+  },
+  "L43": {
+   "text": "On a hat. On two shoulders.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     1.448
+    ]
+   ]
+  },
+  "L44": {
+   "text": "Somebody way too tall for our porch,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.19,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     0.897
+    ],
+    [
+     0.897,
+     1.569
+    ]
+   ]
+  },
+  "L45": {
+   "text": "Standing at the window, where Grandpa was asleep in his chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.914
+    ],
+    [
+     0.983,
+     1.439
+    ],
+    [
+     1.439,
+     1.784
+    ],
+    [
+     1.784,
+     2.483
+    ]
+   ]
+  },
+  "L46": {
+   "text": "It bent down, slow, to the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.647,
+     0.897
+    ],
+    [
+     0.922,
+     1.586
+    ]
+   ]
+  },
+  "L47": {
+   "text": "A face of snow, an inch from his.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.793
+    ],
+    [
+     0.845,
+     1.121
+    ],
+    [
+     1.121,
+     1.724
+    ]
+   ]
+  },
+  "L48": {
+   "text": "Its breath fogged the glass. Grandpa didn't wake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.466,
+   "onset": 0.155,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.19
+    ],
+    [
+     1.285,
+     2.259
+    ]
+   ]
+  },
+  "L49": {
+   "text": "That's when I got it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.069
+    ]
+   ]
+  },
+  "L50": {
+   "text": "Something has always stood in the middle of our road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.0
+    ],
+    [
+     1.0,
+     1.285
+    ],
+    [
+     1.285,
+     1.983
+    ]
+   ]
+  },
+  "L51": {
+   "text": "The globe is the only place you can see it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     1.138
+    ],
+    [
+     1.138,
+     1.353
+    ],
+    [
+     1.353,
+     1.845
+    ]
+   ]
+  },
+  "L52": {
+   "text": "It's stood there since before the street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     1.008
+    ],
+    [
+     1.008,
+     1.586
+    ]
+   ]
+  },
+  "L53": {
+   "text": "And every shake moves it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.31
+    ]
+   ]
+  },
+  "L54": {
+   "text": "That's why the snow never lands there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.87
+    ],
+    [
+     0.87,
+     1.776
+    ]
+   ]
+  },
+  "L55": {
+   "text": "That's why everybody swerves.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.483
+    ]
+   ]
+  },
+  "L56": {
+   "text": "And that stumble the whole street feels? That's it, brushing past.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.155,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.155,
+     0.612
+    ],
+    [
+     0.612,
+     0.828
+    ],
+    [
+     0.828,
+     1.466
+    ],
+    [
+     1.534,
+     1.81
+    ],
+    [
+     1.845,
+     2.69
+    ]
+   ]
+  },
+  "L57": {
+   "text": "Grandpa woke up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     1.086
+    ]
+   ]
+  },
+  "L58": {
+   "text": "He didn't yell at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.121
+    ]
+   ]
+  },
+  "L59": {
+   "text": "He just put his hands over mine, on the globe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.75
+    ],
+    [
+     0.75,
+     1.155
+    ],
+    [
+     1.19,
+     1.914
+    ]
+   ]
+  },
+  "L60": {
+   "text": "And we tipped it, slow, toward the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.155,
+     0.345
+    ],
+    [
+     0.345,
+     0.603
+    ],
+    [
+     0.638,
+     0.862
+    ],
+    [
+     0.897,
+     1.638
+    ]
+   ]
+  },
+  "L61": {
+   "text": "The little figure slid down our path.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.061
+    ],
+    [
+     1.061,
+     1.655
+    ]
+   ]
+  },
+  "L62": {
+   "text": "Back to the middle of the tiny road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.629
+    ],
+    [
+     0.629,
+     0.75
+    ],
+    [
+     0.75,
+     1.517
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Outside, the snow slid off something very tall,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.888
+    ],
+    [
+     0.888,
+     1.172
+    ],
+    [
+     1.172,
+     2.086
+    ]
+   ]
+  },
+  "L64": {
+   "text": "And the dry spot was back in the middle of the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.784
+    ],
+    [
+     0.784,
+     1.147
+    ],
+    [
+     1.147,
+     1.422
+    ],
+    [
+     1.422,
+     2.069
+    ]
+   ]
+  },
+  "L65": {
+   "text": "In the morning, Grandpa handed me his truck keys.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.293,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     1.267
+    ],
+    [
+     1.267,
+     2.103
+    ]
+   ]
+  },
+  "L66": {
+   "text": "I drove around the middle, like everybody does.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.0,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     0.983
+    ],
+    [
+     1.008,
+     2.0
+    ]
+   ]
+  },
+  "L67": {
+   "text": "Grandpa tipped his hat to it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     0.948
+    ],
+    [
+     0.948,
+     1.379
+    ]
+   ]
+  },
+  "L68": {
+   "text": "Mrs. Ortiz opened her curtains and waved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.905
+    ],
+    [
+     0.905,
+     1.31
+    ],
+    [
+     1.31,
+     1.966
+    ]
+   ]
+  },
+  "L69": {
+   "text": "I passed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.983,
+   "onset": 0.172,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ]
+   ]
+  },
+  "L70": {
+   "text": "Now he lets me dust the globe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.672
+    ],
+    [
+     0.672,
+     1.448
+    ]
+   ]
+  },
+  "L71": {
+   "text": "But last night, nobody touched it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.155,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.672,
+     1.5
+    ]
+   ]
+  },
+  "L72": {
+   "text": "And the little figure turned to face our house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.724
+    ],
+    [
+     0.724,
+     0.931
+    ],
+    [
+     0.931,
+     1.215
+    ],
+    [
+     1.215,
+     1.828
+    ]
+   ]
+  },
+  "L73": {
+   "text": "So no matter what you want tomorrow,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.19,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     0.759
+    ],
+    [
+     0.759,
+     1.586
+    ]
+   ]
+  }
+ }
+}
