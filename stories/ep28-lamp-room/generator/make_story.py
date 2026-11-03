@@ -277,7 +277,7 @@ SIT_ME, YAW_ME, SEAT_ME = sit_at(42)
 SIT_IN, YAW_IN, SEAT_IN = sit_at(40)
 SIT_IN2, YAW_IN2, SEAT_IN2 = sit_at(41)
 shot("L60", "gold sun rises on my face, eyes open", still(local(SEAT_ME, YAW_ME, 1.7, -0.1, 1.2), local(SEAT_ME, YAW_ME, 0, 0, 0.92), 30))
-shot("L61", "wider: me slumped on a step in the sun", still(local(SEAT_ME, YAW_ME, 3.0, 0.9, 1.6), local(SEAT_ME, YAW_ME, 0, 0, 0.8), 24))
+shot("L60.1+0.5", "wider: me slumped on a step in the sun", still(local(SEAT_ME, YAW_ME, 3.0, 0.9, 1.6), local(SEAT_ME, YAW_ME, 0, 0, 0.8), 24))
 shot("L62", "below her door, open, the room empty", still([-1.5, -0.2, 8.4], [2.3, 0.6, 9.6], 24))
 shot("L63", "Ines asleep two steps down in the blanket",
      still(local(SEAT_IN, YAW_IN, 2.0, -0.35, 1.4), local(SEAT_IN, YAW_IN, 0, 0, 0.85), 30))
