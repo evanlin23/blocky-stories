@@ -106,7 +106,7 @@ SHOTS = [
     ("L05", "S06 my wellies on the raked soil", 4, still([-0.9, -24.8, 0.45], [ME10[0], ME10[1], 0.2], 36)),
     ("L05.2", "S07 me looking down at them", 2, still([-1.7, -25.2, 1.35], [ME10[0], ME10[1], 1.1], 34)),
     ("L06", "S08 me alone on my bare plot", 2, still([-6.0, -21.5, 1.6], [-2.6, -27.0, 0.7], 26)),
-    ("L07", "S09 Mum at plot nine, a wave; me in the foreground", 2, still([-1.0, -24.6, 1.5], [MUMP[0], MUMP[1], 1.4], 55)),
+    ("L07", "S09 Mum at plot nine, a wave; me in the foreground", 2, still([-0.3, -31.2, 1.5], [MUMP[0], MUMP[1], 1.4], 55)),
     ("L07.2", "S10 her wellies, a thick fan of roots", 4, still([5.1, -26.6, 0.5], [MUMP[0], MUMP[1], 0.12], 34)),
     ("L08.1", "S11 high wide up the path: her root run", 4,
      move(([0.0, -27.5, 6.5], [0.3, -12.0, 0.0]), ([0.0, -26.5, 6.5], [0.3, -11.0, 0.0]), 24)),
@@ -128,7 +128,7 @@ SHOTS = [
     ("L18", "S24 plot one, a neat round hole", 4, still([1.0, -3.7, 0.65], [3.4, -3.6, 0.1], 30)),
     ("L19", "S25 a pebble drops into the black", 4, still([2.4, -4.8, 0.9], [3.4, -3.6, 0.1], 28)),
     ("P01", "S26 the black hole, held", 4, still([3.4, -3.55, 2.0], [3.4, -3.62, 0.0], 24)),
-    ("L20", "S27 me crouched by the hole, listening", 2, portrait((2.45, -4.1), yaw_to((2.45, -4.1), DIG[1]), 2.4, 30, 1.0, 40, 0.9)),
+    ("L20", "S27 me crouched by the hole, listening", 2, portrait((2.45, -4.1), yaw_to((2.45, -4.1), DIG[1]), 2.8, 30, 1.4, 34, 1.1)),
     ("L21", "S28 wide: the hole, and the head in plot four", 4, still([4.0, -1.6, 0.55], [-2.0, -9.6, 0.6], 22)),
     ("L22", "S29 the groove in the path above plot four", 4, still([0.0, -4.0, 3.4], [-0.2, -8.6, 0.0], 30)),
     ("L22.1", "S30 Mum's wellies, the fan thinner", 4, still([5.1, -26.4, 0.45], [MUMP[0], MUMP[1], 0.12], 34)),
@@ -148,7 +148,7 @@ SHOTS = [
     ("L28", "S39 Mum close, calm, eyes on it", 2, portrait(MUMP, yaw_to(MUMP, DIG[9]), 2.4, 38, 1.5, 58)),
     ("L29", "S40 low along the soil: a root leaving its waist", 4, still([5.0, -27.6, 0.5], [4.0, -26.8, 0.1], 28)),
     ("L30", "S41 the picture: the root from its waist to her boots", 4,
-     still([6.0, -29.0, 0.9], [4.0, -26.9, 0.6], 26)),
+     still([6.8, -30.0, 0.9], [4.0, -27.0, 0.6], 20)),
     ("L30.2", "S42 her wellies, the run joining her fan", 4, still([5.0, -28.6, 0.5], [3.9, -27.5, 0.1], 34)),
     ("L31", "S43 side-on wide: Mum and the Digger across the bean row", 4,
      still([7.0, -29.0, 1.6], [4.0, -26.85, 1.3], 30)),
@@ -174,7 +174,7 @@ SHOTS = [
     # 05 the sting, L44 to L46
     ("L44", "S59 high wide, a grey dawn, the holes", 4, still([0.0, 3.0, 6.5], [0.2, -18.0, 0.0], 20)),
     ("L45", "S60 a pebble drops into plot one's hole", 4, still([2.4, -4.8, 0.9], [3.4, -3.6, 0.1], 28)),
-    ("L46", "S61 me crouched by the hole, hearing it", 2, portrait((2.45, -4.1), yaw_to((2.45, -4.1), DIG[1]), 2.4, 30, 1.0, 40, 0.9)),
+    ("L46", "S61 me crouched by the hole, hearing it", 2, portrait((2.45, -4.1), yaw_to((2.45, -4.1), DIG[1]), 2.8, 30, 1.4, 34, 1.1)),
 ]
 
 shots = []
@@ -222,7 +222,7 @@ hide("me", 0)
 put("me", "L05", ME10, yaw=yaw_to(ME10, (-2.2, -25.9)), expr="neutral")
 put("me", "L05.2", ME10, yaw=yaw_to(ME10, (-1.7, -25.2)), expr="neutral", head=[0, -22])
 put("me", "L06", ME10, yaw=270, expr="neutral", head=[0, 0])
-put("me", "L07", [-0.4, -26.2], yaw=90, expr="neutral", head=[0, 0])
+put("me", "L07", [1.3, -30.9], yaw=yaw_to([1.3, -30.9], MUMP), expr="neutral", head=[0, 0])
 put("me", "L10", [-1.15, -27.6], yaw=90, expr="worried", head=[0, 0])
 hide("me", "L11")
 put("me", "L13", [-0.3, 1.5], yaw=0, head=[0, 4])
@@ -245,7 +245,7 @@ put("me", "L46", [2.45, -4.1], yaw=yaw_to([2.45, -4.1], DIG[1]), expr="worried",
 
 # Mum
 hide("newcomer", 0)
-put("newcomer", "L07", MUMP, yaw=yaw_to(MUMP, (-1.0, -24.6)), expr="smile", arms=[0, 70])
+put("newcomer", "L07", MUMP, yaw=yaw_to(MUMP, (-0.3, -31.2)), expr="smile", arms=[0, 70])
 key("newcomer", "L07+0.5", arms=[0, 40], blend=0.3)
 key("newcomer", "L07+0.9", arms=[0, 75], blend=0.3)
 put("newcomer", "L08", MUMP, yaw=0, expr="neutral")

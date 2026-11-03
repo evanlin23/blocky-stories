@@ -430,26 +430,26 @@
    ]
   },
   "L18": {
-   "text": "Tuesday, plot one is a hole.",
+   "text": "Tuesday, plot one has a hole.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.672,
+   "dur": 1.724,
    "onset": 0.172,
-   "end": 1.483,
+   "end": 1.534,
    "chunks": [
     [
      0.172,
-     0.517
+     0.5
     ],
     [
-     0.552,
-     0.854
+     0.534,
+     0.862
     ],
     [
-     0.854,
-     1.483
+     0.862,
+     1.534
     ]
    ]
   },
@@ -650,14 +650,14 @@
    ]
   },
   "L27": {
-   "text": "Its head is turned too far round, looking at Mum.",
+   "text": "Its head is turned too far around, looking at Mum.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.345,
+   "dur": 2.362,
    "onset": 0.155,
-   "end": 2.155,
+   "end": 2.172,
    "chunks": [
     [
      0.155,
@@ -665,15 +665,15 @@
     ],
     [
      0.353,
-     0.655
+     0.664
     ],
     [
-     0.655,
-     1.328
+     0.664,
+     1.345
     ],
     [
-     1.397,
-     2.155
+     1.414,
+     2.172
     ]
    ]
   },
@@ -934,14 +934,14 @@
    ]
   },
   "L39": {
-   "text": "One bean, and all the soil round its roots.",
+   "text": "One bean, and all the soil around its roots.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
+   "dur": 2.103,
    "onset": 0.172,
-   "end": 1.897,
+   "end": 1.914,
    "chunks": [
     [
      0.172,
@@ -957,7 +957,7 @@
     ],
     [
      1.086,
-     1.897
+     1.914
     ]
    ]
   },
@@ -1046,14 +1046,14 @@
    ]
   },
   "L43": {
-   "text": "At the gate, she turns round, and looks right back.",
+   "text": "At the gate, she turns around, and looks right back.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.276,
+   "dur": 2.293,
    "onset": 0.155,
-   "end": 2.069,
+   "end": 2.086,
    "chunks": [
     [
      0.155,
@@ -1061,15 +1061,15 @@
     ],
     [
      0.552,
-     1.155
+     1.172
     ],
     [
-     1.181,
-     1.431
+     1.199,
+     1.448
     ],
     [
-     1.431,
-     2.069
+     1.448,
+     2.086
     ]
    ]
   },
