@@ -153,13 +153,15 @@ def W(p, d, az, el, lens, h=1.0, d2=None, lens2=None, az2=None):
     return ks
 
 
-def S(at, cam, look="day", hand=0.006, fill=1.0, exp=0.0, step=2, note="", dof=None, rkey=1.0, tag=None):
+def S(at, cam, look="day", hand=0.006, fill=1.0, exp=0.0, step=2, note="", dof=None, rkey=1.0, tag=None, face=False):
     d = {"id": f"S{len(shots) + 1:02d}", "cam": cam, "step": step, "hand": hand, "look": look}
     if len(shots):
         d["at"] = at
     for k, v, dflt in (("fill", fill, 1.0), ("exp", exp, 0.0), ("rkey", rkey, 1.0)):
         if v != dflt:
             d[k] = v
+    if face:
+        d["face"] = True
     if dof:
         d["dof"] = dof
     if note:
@@ -428,9 +430,9 @@ S("L38", K_(PORCH, [1.5, 4.8, 1.2], 17, PORCH, [1.7, 5.4, 1.4], 22), "night", ha
 # --- S39: my face, eyes shut. S43 uses the same face.
 FACE_P = front(7, 2.4, 0.0)
 put(ME, "L39", FACE_P, yawf(7), "asleep", arms=[22, 22])
-S("L39", FC(FACE_P, yawf(7), 1.5, 6, 4, 40, 1.6, 1.6, d2=1.2), "night", hand=0.0, fill=1.3, exp=0.1, note="my face, eyes shut: it's ME")
+S("L39", FC(FACE_P, yawf(7), 1.5, 6, 4, 40, 1.6, 1.6, d2=1.2), "night", hand=0.0, fill=0.3, exp=0.1, face=True, note="my face, eyes shut: it's ME")
 # --- S40: me now, watching on my phone at the kitchen table
-S("L40", FC(FACE_P, yawf(7), 1.3, -8, 3, 40, 1.6, 1.6, d2=1.1), "night", hand=0.0, fill=1.3, exp=0.1, note="eyes shut, fast asleep")
+S("L40", FC(FACE_P, yawf(7), 1.3, -8, 3, 40, 1.6, 1.6, d2=1.1), "night", hand=0.0, fill=0.3, exp=0.1, face=True, note="eyes shut, fast asleep")
 room("L41", ["kitchen"])
 cue("L41", "phone", on=True)
 put(ME, "L41", [RX - 0.3, RY - 0.4, 0.0], 150, "scared", arms=[75, 75], head=[0, 14])
@@ -443,8 +445,8 @@ S("L41.1", K_(PORCH, [0.6, 3.2, 1.2], 16, PORCH, [1.0, 4.0, 1.3], 18), "night", 
 S("L41.2", K_(PORCH, [1.2, 5.6, 1.4], 22, PORCH, [1.4, 6.4, 1.5], 26), "night", hand=0.0, fill=1.3, note="straight at the CAMERA")
 S("L42", K_(PORCH, [1.5, 7.2, 1.5], 30, PORCH, [1.7, 7.9, 1.55], 36), "night", hand=0.0, fill=1.3, note="closer")
 S("L42.1", K_(PORCH, [1.7, 8.4, 1.55], 44, PORCH, [1.8, 8.8, 1.58], 52), "night", hand=0.0, fill=1.3, note="and CLOSER")
-S("L43", FC(a_end, yawf(7), 1.9, 3, 4, 38, 1.6, 1.6, d2=1.15, lens2=42), "night", hand=0.0, fill=1.35, exp=0.1, note="my sleeping face fills the screen")
-S("L43.2", FC(a_end, yawf(7), 1.25, 0, 3, 44, 1.6, 1.6, d2=0.95), "night", hand=0.0, fill=1.35, exp=0.1, note="eyes shut, lit warm")
+S("L43", FC(a_end, yawf(7), 1.9, 3, 4, 38, 1.6, 1.6, d2=1.15, lens2=42), "night", hand=0.0, fill=0.3, exp=0.1, face=True, note="my sleeping face fills the screen")
+S("L43.2", FC(a_end, yawf(7), 1.25, 0, 3, 44, 1.6, 1.6, d2=0.95), "night", hand=0.0, fill=0.3, exp=0.1, face=True, note="eyes shut, lit warm")
 
 # ================================================================================================== S44 - S72 (continued in the next section)
 # ================================================================================================== S44 - S71

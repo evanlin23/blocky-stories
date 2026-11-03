@@ -616,6 +616,8 @@ def build(kit, story, tl):
     ctx["moon"] = kit.light("moon", "SUN", (0, 0, 50), 1.0, "#9fc4ff", size=0.1)
     ctx["moon"].data.angle = 0.3
     ctx["moon"].rotation_euler = (math.radians(55), math.radians(-10), math.radians(150))
+    ctx["facekey"] = kit.light("facekey", "POINT", (0, 0, 5), 70, "#ffcf7a", size=0.3, shadow=False)
+    ctx["facetea"] = kit.light("facetea", "POINT", (0, 0, 5), 30, "#2ec4b6", size=0.3, shadow=False)
     ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 60, "#fff0dc", size=0.6, shadow=False)
     build_court(kit, ctx)
     build_ring(kit, ctx)
@@ -673,6 +675,16 @@ def animate(kit, story, tl, t, ctx):
     for nd in ctx["lou_win"].node_tree.nodes:
         if nd.type == "EMISSION":
             nd.inputs["Strength"].default_value = 0.6 + 4.0 * L["lamp"]
+    # the sleepwalker's face: a warm lamp from the side and above, the fountain's teal from below, no flat frontal fill
+    if sd.get("face"):
+        fx, fy = ct[0] - cl[0], ct[1] - cl[1]
+        n = max(1e-6, math.hypot(fx, fy))
+        rx_, ry_ = fy / n, -fx / n
+        ctx["facekey"].location = (ct[0] + rx_ * 1.0 - fx / n * 0.2, ct[1] + ry_ * 1.0 - fy / n * 0.2, ct[2] + 0.9)
+        ctx["facetea"].location = (ct[0] - rx_ * 0.4 - fx / n * 0.8, ct[1] - ry_ * 0.4 - fy / n * 0.8, ct[2] - 1.0)
+        ov["facekey"], ov["facetea"] = 1.0, 1.0
+    else:
+        ov["facekey"], ov["facetea"] = 0.0, 0.0
     # focus
     dof = sd.get("dof")
     cd = kit.OBJ["cam"].data

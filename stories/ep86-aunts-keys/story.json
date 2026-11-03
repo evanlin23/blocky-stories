@@ -3736,8 +3736,9 @@
    "hand": 0.0,
    "look": "night",
    "at": "L39",
-   "fill": 1.3,
+   "fill": 0.3,
    "exp": 0.1,
+   "face": true,
    "note": "my face, eyes shut: it's ME"
   },
   {
@@ -3776,8 +3777,9 @@
    "hand": 0.0,
    "look": "night",
    "at": "L40",
-   "fill": 1.3,
+   "fill": 0.3,
    "exp": 0.1,
+   "face": true,
    "note": "eyes shut, fast asleep"
   },
   {
@@ -4010,8 +4012,9 @@
    "hand": 0.0,
    "look": "night",
    "at": "L43",
-   "fill": 1.35,
+   "fill": 0.3,
    "exp": 0.1,
+   "face": true,
    "note": "my sleeping face fills the screen"
   },
   {
@@ -4050,8 +4053,9 @@
    "hand": 0.0,
    "look": "night",
    "at": "L43.2",
-   "fill": 1.35,
+   "fill": 0.3,
    "exp": 0.1,
+   "face": true,
    "note": "eyes shut, lit warm"
   },
   {
