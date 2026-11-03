@@ -1,0 +1,29 @@
+# Weekly compilation: about 20 minutes of published stories as one 16:9 long video (scripts/compile.py). Started by
+# cron-job.org on Sundays (docs/external-cron.md); run it by hand any time. Separate from the daily Short.
+name: compile
+on:
+  workflow_dispatch:
+    inputs:
+      minutes: {description: "target length in minutes", default: "20"}
+concurrency: {group: upload, cancel-in-progress: false}   # shares the repo's upload records
+permissions: {contents: write, actions: read}
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: sudo apt-get update -q && sudo apt-get install -yq ffmpeg
+      - run: pip install -r requirements.txt -r requirements-upload.txt
+      - name: compile and upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          python scripts/compile.py --minutes "${{ inputs.minutes || '20' }}"

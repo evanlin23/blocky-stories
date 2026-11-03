@@ -5,26 +5,17 @@
   "title": "The driver on my night bus counted 6. I counted 5.",
   "note": "made and uploaded from evanlin23/content"
  },
- "knock-back": {
-  "manual": true,
-  "title": "Something under my uncle's kitchen floor knocks back",
-  "note": "made in evanlin23/content; upload productions/ep12-knock-back/final there"
- },
- "closing-time": {
-  "manual": true,
-  "title": "Why the night shift waves at the big tank",
-  "note": "made in evanlin23/content; upload productions/ep13-closing-time/final there"
- },
  "ep20-photo-strip": {
   "manual": true,
   "issued": "2026-11-02",
   "title": "Mum asked for one photo of us sitting in the middle",
   "note": "issue #23; owner accepted the photo-wall pan (passes the standard flash reading, borderline on the 3-frame one)"
  },
- "ep36-ice-huts": {
-  "video_id": "yp41wC9ban4",
+ "ep38-drive-in": {
+  "video_id": "2VLjg2AplBo",
   "uploaded": "2026-11-02",
-  "title": "In This Town Your Flame ALWAYS Leans Toward Home",
-  "publish_at": "2026-11-02T23:04:44Z"
+  "title": "In This Town You Can SEE Who Everyone Misses",
+  "publish_at": "2026-11-02T23:52:46Z",
+  "commented": true
  }
 }
