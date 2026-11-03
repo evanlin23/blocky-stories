@@ -407,7 +407,7 @@ def hum_track(h: dict, at, k: int, dur_total: float) -> tuple[float, np.ndarray]
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets" / "audio"
 STEP_BANKS = {"grass": "grass", "wood": "wood", "stone": "stone", "concrete": "stone", "metal": "metal",
-              "gravel": "gravel", "snow": "snow"}
+              "gravel": "gravel", "snow": "snow", "carpet": "carpet"}
 AMB_SAMPLES = ("wind", "rain", "room", "crickets", "traffic", "water")
 SFX_SAMPLES = ("door", "creak", "latch", "whoosh", "thud")
 SAMPLES = {"on": True}   # mix() turns it off for a story with "sound": {"samples": false}
@@ -551,7 +551,7 @@ def _layer(*parts: np.ndarray) -> np.ndarray:
 
 
 def step_sound(surface: str, run: bool, seed: int) -> np.ndarray:
-    """One footstep on a surface (grass, wood, stone, concrete, metal, gravel, snow): a recorded step from
+    """One footstep on a surface (grass, wood, stone, concrete, metal, gravel, snow, carpet): a recorded step from
     assets/audio/steps/ at the synthesized step's level, or the synthesized step when there are no files."""
     bank = _bank(f"steps/{STEP_BANKS[surface]}") if surface in STEP_BANKS else []
     if bank:
@@ -576,6 +576,8 @@ def step_synth(surface: str, run: bool, seed: int) -> np.ndarray:
         y = _layer(synth.thump(0.12, 180, 90, seed) * 0.8, fft_filter(synth.noise(0.05, seed), "band", 400, 2000) * synth.decay(0.05, 0.012)[: synth.n_samples(0.05)] * 0.5)
     elif surface == "metal":
         y = _layer(synth.thump(0.1, 220, 120, seed) * 0.5, synth.fm_bell(float(r.uniform(700, 900)), 0.25, 2.7, 1.2, 0.06) * 0.25)
+    elif surface == "carpet":   # a muffled heel on a rug: low and dull, no bright edge
+        y = fft_filter(synth.thump(0.1, 110, 60, seed), "low", 900) * 0.45
     elif surface == "grass":
         # a soft low swish and a dull heel, not a hiss: the old 1.5 to 6 kHz noise burst read as scratching
         # (owner, 2026-11-02, ep36: "a horrible scratchy sound")

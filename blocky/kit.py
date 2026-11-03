@@ -670,6 +670,71 @@ def hdris() -> list:
     return sorted(p.stem for p in (ASSETS / "hdri").glob("*.hdr"))
 
 
+PROP_TEMPLATES: dict = {}
+
+
+def props() -> dict:
+    """The CC0 props in assets/props/ (Quaternius and Kenney, the owner's download of 2026-11-03): name -> its
+    record in assets/props/props.json (file, size_m [x, y, z] in metres, pack). Furniture, trees, rocks, fences,
+    houses and buildings only: no characters, creatures, lettering or signs."""
+    import json
+
+    p = ASSETS / "props" / "props.json"
+    return json.loads(p.read_text()) if p.exists() else {}
+
+
+def prop(name, loc=(0, 0, 0), rot=0.0, scale=1.0, height=None, fit=None, tint=None, parent=None):
+    """Place a CC0 prop by name (kit.props() lists them), opt-in from a set.py. Files are in metres, origin at the
+    bottom centre, so `loc` is where it stands. `rot` turns it about the vertical (degrees). `height` (m) or `fit`
+    (the largest side, m) sizes it, else `scale`. `tint` (hex) multiplies every colour, to fit a set's palette.
+    Its materials get the distance fog like ours. The first use imports the .glb; later ones share its mesh."""
+    rec = props().get(name)
+    if rec is None:
+        raise ValueError(f"no prop {name!r}; see kit.props()")
+    if name not in PROP_TEMPLATES:
+        before = set(bpy.data.objects)
+        bpy.ops.import_scene.gltf(filepath=str(ASSETS.parent / rec["file"]))
+        new = [o for o in bpy.data.objects if o not in before]
+        tpl = next(o for o in new if o.type == "MESH")
+        for o in new:   # keep the mesh as a template, out of the scene
+            for c in list(o.users_collection):
+                c.objects.unlink(o)
+        tpl.parent = None
+        for m in tpl.data.materials:
+            b = next((n for n in m.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None) if m and m.use_nodes else None
+            if b is not None:
+                _fogged(m, b.outputs[0])
+        PROP_TEMPLATES[name] = tpl
+    tpl = PROP_TEMPLATES[name]
+    ob = tpl.copy()
+    ob.name = name
+    size = rec["size_m"]
+    k = height / max(size[2], 1e-6) if height else fit / max(max(size), 1e-6) if fit else scale
+    ob.scale = (k, k, k)
+    ob.location = loc
+    ob.rotation_euler = (0.0, 0.0, math.radians(rot))
+    if tint:
+        ob.data = tpl.data.copy()
+        for i, m in enumerate(ob.data.materials):
+            if m is None:
+                continue
+            m2 = m.copy()
+            b = next((n for n in m2.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None)
+            if b is not None:
+                c, t = b.inputs["Base Color"], col(tint)
+                if c.is_linked:
+                    mx = m2.node_tree.nodes.new("ShaderNodeMix")
+                    mx.data_type, mx.blend_type = "RGBA", "MULTIPLY"
+                    mx.inputs["Factor"].default_value = 1.0
+                    m2.node_tree.links.new(c.links[0].from_socket, mx.inputs["A"])
+                    mx.inputs["B"].default_value = t
+                    m2.node_tree.links.new(mx.outputs["Result"], c)
+                else:
+                    c.default_value = tuple(a * b2 for a, b2 in zip(c.default_value, t))
+            ob.data.materials[i] = m2
+    return link(ob, parent)
+
+
 def world_hdri(name, strength=0.5, rotation=0.0, visible=False, sky="#141820", sky_strength=1.0):
     """Light the scene from a CC0 HDRI (opt-in, `look.hdri` in story.json): soft sky light and reflections from
     a real sky. By default the camera still sees the story's sky colour (the fog colour), so the look and the fog
@@ -711,6 +776,7 @@ def world_hdri(name, strength=0.5, rotation=0.0, visible=False, sky="#141820", s
 def reset():
     bpy.ops.wm.read_factory_settings(use_empty=True)
     MATS.clear()
+    PROP_TEMPLATES.clear()
     OBJ.clear()
     LIGHTS.clear()
 
