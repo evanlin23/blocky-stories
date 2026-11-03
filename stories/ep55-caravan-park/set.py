@@ -482,6 +482,13 @@ def build_opening(kit, ctx, M):
             zz = 0.56 + 0.1 * j + (_hash(i, j, 22) - 0.5) * 0.04
             pads.append((-0.19 + 0.095 * i + (_hash(i, j, 21) - 0.5) * 0.04, -0.2 - 0.12 * (zz - 0.74), zz, 0.11 + 0.03 * _hash(i, j, 24), 0.05 + 0.02 * _hash(i, j, 23),
                          0.09 + 0.03 * _hash(i, j, 25)))
+    for sx in (-1, 1):   # moss spills over the arms, down the front legs and onto the grass
+        for n in range(5):
+            pads.append((sx * 0.27, -0.2 + 0.1 * n, 0.64, 0.07, 0.08, 0.05))
+        for n in range(4):
+            pads.append((sx * (0.27 + 0.02 * (n % 2)), 0.2 + 0.03 * n, 0.5 - 0.12 * n, 0.07, 0.06, 0.07))
+    for n in range(9):
+        pads.append((-0.4 + 0.1 * n + (_hash(n, 31) - 0.5) * 0.05, 0.32 + 0.12 * _hash(n, 32), 0.03, 0.1 + 0.04 * _hash(n, 33), 0.09, 0.04))
     for k, (x, y, z, rx, ry, rz) in enumerate(pads):
         ob = kit.sphere(f"opmoss{k}", 1.0, (OX + x, CHAIR_Y + y, z), M["moss"], seg=10)
         ob.scale = (rx, ry, rz)
@@ -678,7 +685,7 @@ def build_moss(kit, ctx, M, cast):
     ctx["moss"] = {}
     hat_pad = lambda t0, t1, cnt, big=1.0: ("headg", (0.0, 0.0, 0.68), (0.3, 0.3, 0.02), cnt, t0, t1, (0.34 * big, 0.34 * big, 0.14 * big), 1)
     spec = {
-        "neighbour": shoulder(-1, 3, 0, 0.1) + shoulder(1, 3, 0, 0.1) + [("headg", (0.0, 0.0, 0.62), (0.4, 0.4, 0.02), 4, 0, 0.1, (0.24, 0.24, 0.12), 2)],
+        "neighbour": shoulder(-1, 3, 0, 0.1) + shoulder(1, 3, 0, 0.1) + [("headg", (0.0, 0.0, 0.62), (0.4, 0.4, 0.02), 4, 0, 0.1, (0.24, 0.24, 0.12), 4)],
         "busman": (shoulder(-1, 3, 0, 0.2, 1.1) + shoulder(1, 3, 0, 0.2, 1.1)
                    + [("torso", (0.0, -0.58, 1.0), (0.8, 0.0, 0.85), 10, 0.0, 0.3, (0.5, 0.3, 0.4), 1),
                       ("torso", (0.0, 0.55, 1.0), (0.8, 0.0, 0.8), 6, 0.0, 0.3, (0.5, 0.3, 0.4), 1),

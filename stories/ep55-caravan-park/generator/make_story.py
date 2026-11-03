@@ -259,7 +259,7 @@ KN_FACE = [KN[0], -1.75, 1.5]
 # frame 1 (the opening recipe): close on the neighbour's mossy empty chair inside a picket gate, slow push in to GATE.
 # The opening set stands at OX (set.py's build_opening); the chair is at (OX, -1.6), the left gatepost at OX - 0.75.
 OX = -40.0
-S(0, mv([OX - 0.5, 2.3, 0.95], [OX + 0.0, -1.6, 0.6], 38, [OX - 0.4, 1.45, 0.9], [OX + 0.0, -1.6, 0.6], 38), hand=0.002,
+S(0, mv([OX, 6.0, 0.7], [OX, -1.6, 0.62], 30, [OX, 4.6, 0.68], [OX, -1.6, 0.62], 30), hand=0.002,
   look=key([OX, -1.6, 0.6], [OX - 0.5, 2.3, 0.95], 110, side=1.0, up=0.3))
 # L01b: mid close on the neighbour beside that chair, moss on both shoulders
 S("L01b", front([OX + 1.5, -3.0, FACE], 180, 16, 2.4, 0.45, 34, push=0.3, aim_dz=-0.2), hand=0.003, extra=True, id="O1B")
@@ -596,6 +596,7 @@ story = {
     "tail": 0.25,
     "look": {"fog": "#c9d7dc", "fog_density": 0.012, "fog_start": 5.0, "sky": "#bfd3df", "sky_strength": 1.15,
              "exposure": 0.0, "flash_safe": True},
+    "fade_in": False, "fade_out": False,
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.03], "saturation": 1.0,
               "contrast": 1.05, "vignette": 0.3, "bloom": 0.22, "grain": 0.012},
     "rain_shots": ["RAIN1", "RAIN2"],
