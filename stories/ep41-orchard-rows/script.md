@@ -1,5 +1,16 @@
 # ep41-orchard-rows
 
+## Opening redo 2026-11-03
+Per the opening recipe (`docs/research/playbook.md`, v1). Re-voice L01 and L02 only. Every other line is unchanged.
+- **New L01 (10 words, warning to you):** "Every footprint here glows. Don't walk beside one that DOESN'T."
+- **New L02 (4 words):** "Especially if it's SQUARE."
+- **True to the plot:** the square trail is the only one that doesn't glow, and it runs one stride to the left of my path (L17, L45) all the way to the bench. It never names the sleepwalking or Nan.
+- **Rule still clear:** L01 says every footprint glows, L03 follows the glow back to the keys, and L07 says every trail is gone by sunrise. The old L02 ("our own COLOUR") is gone. Our colors still read from L11 ("pink PATHS") and L32 ("Her blue prints").
+- **Loop:** unchanged. L66, "...I still walk them every NIGHT." runs into "Every footprint here glows. Don't walk beside one that DOESN'T."
+- **Quotable line:** L04, "Sneak to the fridge at two in the morning, and the floor tells on YOU."
+- **First shot (new S01, under L01):** golden dusk on wet grass, lit to read. Low and close (camera about 3 m, 28 mm), pushing in along my glowing pink trail toward my boots and my face looking down, with a line of huge dark square prints pressed into the dew one stride to its left. On "DOESN'T" the music drops to the soft press of one square print (the sound hit). S02 under L02: overhead close on one dark square beside a glowing pink print. The cobbled street montage starts at L03.
+- **British words left in other lines (flagged, not changed):** "Nan" stays: it's what I call her in about 20 lines, and it reads as Grandma. "COLOUR" went with the old L02. "pyjamas" appears only in the script notes, never on screen.
+
 **Slug:** `ep41-orchard-rows` (pitch #25 in `stories/ideas.md` → Batch 4 pitches)
 
 ## Premise
@@ -63,7 +74,7 @@ No flicker anywhere in this film. Every light change is a slow fade.
 - Prints never pulse or blink. Run `python -m blocky flash` pre-check on S43 to S50 and S72 to S74.
 
 ## The hits' shape (RULES.md → What the hits do)
-- **Rule line (L01, 12 words):** "In this town, every footprint you leave glows until the next SUNRISE."
+- **Rule line (L01, 10 words, a warning since 2026-11-03):** "Every footprint here glows. Don't walk beside one that DOESN'T."
 - **Marker by 2 s (S01):** a lit dusk street, my face in frame at a fifth of the frame width, glowing pink soles on me and three townsfolk with glowing trails of their own colours behind them across the cobbles.
 - **Montage (L02 to L07, S02 to S10, ends about 16 s):** own colours, keys found by the trail, the fridge trip told on by the floor, the sneaky walk inside another's prints, everyone's trail gone by sunrise.
 - **Exception (L08):** at Nan's, my prints never fade.
@@ -161,13 +172,13 @@ Two short clay-red strokes pressed into the wood of the bench seat at the end of
 | S77 | L65 | Nan and me on the porch, mugs on the rail, sunrise behind the rows. |
 | S78 | L66 | My pink sole glowing as I step down, Nan's blue beside it. Cut 0.25 s after "NIGHT", loop to S01. |
 
-## Narration (66 lines, 650 words, about 2:15 of speech at 290 wpm, about 2:21 with gaps)
+## Narration (66 lines, 646 words since the 2026-11-03 opening redo, about 2:14 of speech at 290 wpm, about 2:20 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words.
 
-L01. In this town, every footprint you leave glows until the next SUNRISE.
-L02. We each glow our own COLOUR.
+L01. Every footprint here glows. Don't walk beside one that DOESN'T.
+L02. Especially if it's SQUARE.
 L03. Lose your keys after dark, and you follow your glow back to THEM.
-L04. Sneak to the fridge at two in the morning, and the floor tells on YOU.
+L04. Sneak to the fridge at two in the morning, and the floor tells on YOU. **(quotable line)**
 L05. So the sneaky ones step inside somebody else's PRINTS.
 L06. Their prints get one more night. Yours never SHOW.
 L07. By sunrise, everybody's trail is GONE.
