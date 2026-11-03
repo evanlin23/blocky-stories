@@ -217,7 +217,7 @@ S("L22", C((KM + 1.3, 3.1, 1.5), 3.0, 0, 3, 26, d2=2.6), dof=[2.9, 6.0], ring=Tr
 cue("L23", "mgloves", on=True)
 scene("L23", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[0.2, 0.2]))
 S("L23", C((KM - 0.2, 1.95, 1.5), 1.6, 0, 3, 40, d2=1.3), ring=True, note="Mom at her stove, eyes shut, calm. Cover frame")
-cue("L24", "mbA", on=True, dur=1.4, z0=1.35, z1=1.13, y0=1.4)
+cue("L24", "mbA", on=True, dur=1.4, z0=1.35, z1=1.13, y0=1.25)
 scene("L24", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[1.1, 1.1]))
 S("L24", C((KM - 0.2, 1.4, 1.1), 1.3, 0, 12, 36, d2=1.0), ring=True,
   note="her hands at the ends of her sleeves lowering the basket into the oil")
@@ -251,7 +251,7 @@ S("L32", C((KM, 1.0, 1.3), 3.0, 0, 18, 28, d2=2.4), look="eve", note="Mom's kitc
 cue("L33", "hatch", kind="yellow", s0=0.0, s1=1.0, dur=1.2, basket=True, wig=0.0, second=True)
 S("L33", C((0.15, 3.7, 1.1), 1.4, 10, 6, 36, d2=1.1), note="a second basket sliding out, toward Omar")
 cue("L34", "mbA", on=True, dur=0.01, z0=1.13, z1=1.13)
-cue("L34", "mbB", on=True, dur=1.4, z0=1.35, z1=1.13, y0=1.4)
+cue("L34", "mbB", on=True, dur=1.4, z0=1.35, z1=1.13, y0=1.25)
 cue("L34", "mgloves", on=True)
 scene("L34", mom=dict(pos=(KM + 0.25, 1.95, 0), yaw=0, expr="asleep", arms=[1.1, 1.1]))
 S("L34", C((KM + 0.1, 1.95, 1.4), 2.0, 0, 3, 40, d2=1.6), ring=True, note="through the window: Mom setting a second basket in the oil")
@@ -350,7 +350,7 @@ story = {
                   {"at": "L41", "voices": ["drone"], "energy": 0.3, "mode": "minor"},
               ]},
     "sound": {
-        "rev": 1, "floor": "wood", "steps_db": -22,
+        "rev": 2, "floor": "wood", "steps_db": -22,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40}],
         "sfx": [
             {"at": "L01.3", "kind": "bell", "db": -12},
@@ -358,6 +358,7 @@ story = {
             {"at": "L18.1", "kind": "thud", "db": -16},
             {"at": "L20", "kind": "creak", "db": -20, "dur": 0.9},
             {"at": "L25", "kind": "hit", "db": -26},
+            {"at": "L40.2", "kind": "chime", "db": -24},
             {"at": "L42.2", "kind": "burner", "db": -28, "dur": 1.2},
         ],
         "music_drops": [{"from": "L19>", "to": "P01>"}],
