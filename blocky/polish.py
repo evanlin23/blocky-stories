@@ -56,7 +56,7 @@ DEFAULTS = {
 }
 GRADES = {
     # lift: a toe that raises the darkest tones (out + lift * (1 - out)^3), so shadows keep their detail on a TV
-    "bright": {"exposure_min": 1.04, "saturation_min": 1.1, "contrast_max": 1.05, "vignette_max": 0.2,
+    "bright": {"exposure_min": 1.12, "red_line": 0.78, "saturation_min": 1.1, "contrast_max": 1.05, "vignette_max": 0.2,
                "grain_max": 0.009, "lift": 0.035},
     "none": {},
 }
@@ -474,6 +474,9 @@ def grade(g: dict, p: dict) -> dict:
     out["vignette"] = min(g.get("vignette", 0.35), pr["vignette_max"])
     out["grain"] = min(g.get("grain", 0.012), pr["grain_max"])
     out["lift"] = max(g.get("lift", 0.0), pr["lift"])
+    if pr.get("red_line"):   # v2.3: the pack's push and angle cuts enlarge red areas, so keep under WCAG's saturated
+        # red on every frame (ep32 S09b: 47.7% of the screen without pace, 53% with it, against the 50% red-frame bar)
+        out["red_line"] = min(g.get("red_line", 1.0), pr["red_line"])
     return out
 
 
