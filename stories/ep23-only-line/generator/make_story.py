@@ -81,7 +81,7 @@ def CH(lid, start):
 
 # ---------------------------------------------------------------------------------------------------- loop
 # S57 holds, then the 0.25 s tail and the loop cut to S01 (the same man in daylight)
-TEMPO = {"L11": 0.88, "L13": 0.85, "L36": 0.78, "L38": 0.85, "L52": 0.88, "L54": 0.9}
+TEMPO = {"L11": 0.88, "L13": 0.85, "L36": 0.78, "L38": 0.85, "L52": 1.12, "L54": 1.12}
 SPOKEN = {("L36", 0): "the lights, sank"}
 for ln in lines:
     if ln["id"] in TEMPO:
