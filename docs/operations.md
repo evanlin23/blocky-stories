@@ -31,25 +31,49 @@ the hard way.
 - The account has a seven-day limit that **resets Mondays at 4:00 PM Central**. Near the limit, sessions see
   `allowed_warning`, and at it, every session's turn stops ("You've hit your weekly limit").
 - **Stopped sessions don't resume on their own.** After the reset, every session whose status_bucket is FAILED
-  and that hasn't finished its story needs a "continue" message (send_message). The 2-hour check-in does this.
+  and that hasn't finished its story needs a "continue" message, but only if its story is still needed (see the budget below).
 - Nothing is lost while stopped, because all state lives in GitHub: PRs, branches, `queue.txt`, `uploads.json`
   and the stories.
 - Watch spend: about 20 parallel story sessions used most of a week's limit in a day (2026-11-02).
+- **It happened again (2026-11-03): 74% of the week was gone less than a day after the reset**, with about 60 sessions
+  started over 2 days and up to 15 working at once. Where it went:
+  - **Work on stories later dropped.** 7 redo sessions (ep23, 25, 30, 31, 32, 33, lookout), then opening fixes on
+    ep26, 33, 34, 37, 43 and 46, and all of them dropped within hours. Decide keep or drop *before* paying to fix.
+  - **Failures found after the final render** (moving-day, ep58, ep62, warm-shoes) cost a re-render plus a fix round
+    and another QA each. The proof render before merge exists to stop this.
+  - **Review rounds:** up to 8 critic rounds on one story. Two rounds, then drop.
+  - **Long-lived sessions:** this orchestrator and the batch leads carry huge contexts, and every check-in or
+    message re-reads them. The check-in went from every 2 h to 3 a day.
+  - **Sessions kept alive after their task** (waiting on renders, then given a second job).
+- **The budget rules:**
+  - At most **5 sessions working** at once.
+  - **One story, one task per session.** It ends when its PR merges or the story drops. QA on a new film gets a fresh,
+    short session (the qa agent alone), not the builder's long one.
+  - **No new batch while 4 or more days of ready stories exist.**
+  - **Triage first:** queue audit and keep/drop decisions happen before any fix work.
+  - **Plan by the meter:** check the usage meter before starting a batch. At 50% before Thursday, pause everything except
+    QA and uploads.
 
 ## Two orchestrators (from 2026-11-03)
-- **The first orchestrator** runs the channel day to day (queue, uploads, qa, its stories). **The second** runs on a separate
-  subscription with its own usage limit: backup stories, render infra and the research brief. Neither can message the other
-  directly.
+- **The first orchestrator** runs the channel day to day (queue, uploads, dispatching renders, `blocky/`). **The second** runs on a
+  separate subscription: since 2026-11-03 (owner-approved) it owns most story work and every final qa except the first's own
+  stories, plus the research brief. Neither can message the other directly.
+- **Two usage limits.** The first's seven-day limit resets Mondays at 4:00 PM Central, the second's Thursdays at 8:00 AM Central.
+  When one is near its limit, the other takes the work (2026-11-03: the first was near its limit with the second at 15%).
 - **Messages go on issue #177 ("Orchestrator channel"),** not in a file: every PR waits behind the render jobs for its `test` run,
   so a doc PR is too slow for messages. `[#1]` / `[#2]`, then ASK, FYI or DONE. At most one batched comment per check-in (each one
-  notifies the owner), with the Claude Code footer. The channel test on 2026-11-03 went both ways within minutes.
+  notifies the owner), with the Claude Code footer. The owner asked the second to post after everything it does (2026-11-03),
+  so the second posts one comment per check-in or action that changed something, and none for a quiet check. The channel test on 2026-11-03 went both ways within minutes.
 - **Both sides read it on a schedule, with no person in between.** A comment can't wake a session (GitHub only pushes PR events to a
   session), so each side polls with a Claude scheduled task that fires into its own persistent session. The first orchestrator
   reads at 8:41 AM, 2:41 PM and 8:41 PM Central (its usage limit is tight). The second reads every hour at :21 and answers an
-  URGENT ask within the hour. Otherwise it posts once, batched, at 8:21 AM, 2:21 PM or 8:21 PM, just before the first reads.
+  URGENT ask within the hour.
   `docs/second-team.md` holds the second team's status, one line per item.
-- **The render pool is shared:** 20 jobs at once for the account, and finals take 16. Never start a proof while a final render run
-  is in progress or queued.
+- **The render pool is shared:** 20 jobs at once for the account. Finals take 16 and a proof 8, so proofs queue behind a final, which
+  is fine (the first, 2026-11-03). Never cancel a `render` run.
+- **proof.yml gap (2026-11-03):** a waiting PR proof run that a newer push replaces is planned again for the new push only. If that
+  push touched no film files (a main merge, a handoff note), nothing is drawn and the story never gets a proof (ep55 and ep42).
+  Check that a proof run has draw jobs, and if it only ran `plan`, dispatch proof.yml with the story and the branch.
 
 ## Uploads (YouTube)
 - **API uploads are not locked to private.** YouTube's API team confirmed this on 2026-11-02 and closed our

@@ -1,0 +1,11 @@
+{
+  "title": "Never Shake Grandpa's Snow GLOBE ❄️",
+  "description": "Never shake my grandpa's snow globe. One shake and it snows on our street, only ours, and everybody on it stumbles at the same time. When the snow stops, there's always one dry spot in the middle of the road.\n\nMy driving test is tomorrow, and I'm scared. Grandpa's asleep. It's just one shake.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+  "pin": "Comment SNOW if you'd have shaken it too.",
+  "made_for_kids": false,
+  "cover_s": 77.8,
+  "shape": "map",
+  "opening": "ban",
+  "lane": "core",
+  "hold": "batch 7: scripts only, not built yet"
+}
