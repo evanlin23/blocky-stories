@@ -11,7 +11,6 @@ floor-thirteen
 ep49-car-wash
 ep45-bee-yard
 ep47-fitting-room
-ep43-reading-room
 ep42-barber-chair
 ep48-crazy-golf
 ep55-caravan-park
