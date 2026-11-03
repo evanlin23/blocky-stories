@@ -15,7 +15,7 @@
 ## The story
 
 - **Premise:** In a town where every reflection does what its owner really wants, I'm the one person with no reflection at all, and I took that to mean I don't want anything. My fiancée Remi is getting our beach hut ready for the summer we planned while I sit in the doorway on my laptop, and every day her reflection in the hut window walks a little further away down the shore.
-- **Rule:** your reflection does what you really want to do. Since 2026-11-03 it's said as a warning: "Don't let anybody see your reflection in a window." (L01, 9 words), then "It does what you really want." (L02, 6 words).
+- **Rule:** your reflection does what you really want to do. Since 2026-11-03 it's said as a warning: "If anyone sees your reflection in a window, they'll know." (L01, 10 words), then "It does what you really want." (L02, 6 words).
 - **Quotable line:** L04, "His reflection is face down in a cake." (an odd rule detail said flatly, short enough to type).
 - **Twist:** Remi's reflection was following mine. My reflection was never missing. What I really want is to walk the shore with her, so my reflection has been out there doing it all along, far down the sand, where I never looked. Hers walked toward it every day because she wanted the same. "Your reflection does what you really want" first reads as the town exposing that Remi wants to leave me. By the end it means we both wanted the same walk, and I was the one not on it.
 - **Where the twist is planted:**
@@ -29,7 +29,7 @@
 ## Opening recipe fix, 2026-11-03
 
 - **Changed:** L01 and L02 only, re-voice these two. L01 was "In this town, your reflection does what you really want to do." (12 words), now "Don't let anybody see your reflection in a window." (9 words, about 1.9 s), a warning to you per `docs/research/playbook.md` (opening recipe v1). L02 was the neighbour's cartwheels (12 words), now "It does what you really want." (6 words, about 1.3 s), which tightens the same warning. The cartwheels stay in the picture under L01 and L02 and are no longer narrated. No other line is cut or changed. Spoken words go from 588 to 579.
-- **Plot check:** the warning stays true of the town (everyone's reflection gives away what they want), it doesn't name Remi or the narrator's missing reflection, and it doesn't hint where my reflection is. The loop still runs: "before I WOKE." into "Don't let anybody see your reflection in a window."
+- **Plot check:** the warning stays true of the town (everyone's reflection gives away what they want), it doesn't name Remi or the narrator's missing reflection, and it doesn't hint where my reflection is. The loop still runs: "before I WOKE." into "If anyone sees your reflection in a window, they'll know."
 - **Avoids mirror-maze:** no "mirror", "walk away" or "looking back". The warned-of thing is a beach hut window.
 - **Quotable line:** L04, "His reflection is face down in a cake."
 - **First shot (for the builder):** frame 1 looks straight at the neighbour's butter-yellow hut window, bright and windy: his face large in frame left, standing perfectly still, and in the glass beside him his reflection already upside down mid-cartwheel, so the window is wrong from the first frame. Camera about 2 to 3 m from the window, lens 35 mm or longer, pushing in slowly through L01. The old L01b high wide of the wet sand (now at about 1 s, "anybody SEE") is a wide inside the first 3 s, so swap it for a close on the glass (the reflection landing the cartwheel) and move plant 1, the magenta figure walking in the wet sand, to the first shot after 3 s, or to a wider frame of the same window later where the shore shows in the glass. Sound hit (a soft glassy thud, under 4 kHz) on "WINDOW", the warning's last word, about 1.8 s. L02 cuts to the reflection's face, then L04 goes on as before.
@@ -104,7 +104,7 @@ Every word is the narrator's.
 
 ## The rule as the hits do it
 
-- **First line:** "Don't let anybody see your reflection in a window." (L01, 9 words, a warning to you, opening recipe v1). L02 tightens it: "It does what you really want."
+- **First line:** "If anyone sees your reflection in a window, they'll know." (L01, 10 words, a warning to you, opening recipe v1). L02 tightens it: "It does what you really want."
 - **Marker by 2 s:** the neighbour stands still at his hut window while his reflection in the glass is mid-cartwheel, face and reflection in one frame from the first frame.
 - **Montage (3 examples, L01 to L06, done by about 12 s):** the neighbour's cartwheels (shown under L01 and L02, no longer narrated), a dieter whose reflection is face down in a cake, a first date whose reflections are already holding hands.
 - **The narrator is the exception:** I have no reflection at all (L07), and took it to mean I don't want anything (L09).
@@ -125,7 +125,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the hut row on a bright windy morning, then two town scenes, then our hut.
 - **Shots:** 10.
 
-- `L01` narrator: DON'T let / anybody SEE / your REFLECTION / in a WINDOW.
+- `L01` narrator: IF anyone / SEES your / REFLECTION / in a WINDOW, / they'll KNOW.
   - [a: mid shot, bright: the neighbour stands still at his butter-yellow hut window, `neutral`, face large in frame. In the glass beside him his reflection is mid-cartwheel, upside down, arms out]
   - [b: high wide of the hut row and the shining wet sand. Every figure on the sand stands still while its reflection below does something else: one dances, one lies flat sunbathing, one waves. Far down to the left, in the wet sand only, one small figure in a magenta duffel coat walks toward the point (plant 1). Not mentioned. Since 2026-11-03 this wide moves to just after 3 s, see "Opening recipe fix"]
 - `L02` narrator: It DOES / what you / REALLY want.
