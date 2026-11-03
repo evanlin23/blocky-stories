@@ -259,13 +259,13 @@ shot("L56", "dusk", {**LINE_ALL, "me": P(-1.3, 1.0, 180, "worried"), "ruben": P(
 shot("L57", "dusk", {"me": P(-1.2, 1.2, 0, "neutral")}, still([-1.2, -0.7, 1.55], [-1.2, 1.2, 1.5], 36), "every ring was mine")
 shot("L58", "dusk", {"ruben": P(-1.0, 0.6, 0, "neutral")}, still([-1.0, -0.1, 1.38], [-1.0, 0.6, 1.33], 48), "his still bell")
 shot("L59", "dusk", {"me": P(-1.2, 1.2, 0, "smirk")}, still([-1.2, -0.7, 1.55], [-1.2, 1.2, 1.5], 36), "a quiet bell means go")
-shot("L60", "dusk", {"me": P(-1.0, 0.6, 0, "smirk")}, still([-1.0, 0.05, 1.38], [-1.0, 0.6, 1.33], 50), "the clapper goes home")
+shot("L60", "dusk", {"me": P(-1.0, 0.6, 0, "smirk")}, still([-1.0, -1.0, 1.36], [-1.0, 0.6, 1.2], 40), "the clapper goes home")
 shot("L61", "dusk", {"ruben": P(-0.8, 0.8, 0, "grin", then=[("L61.1", dict(head=[0, 12])), ("L61.2", dict(head=[0, -4]))])},
      still([-0.8, -1.0, 1.5], [-0.8, 0.8, 1.5], 34), "partner?")
 shot("L62", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(1, 5)},
                      "me": P(-1.4, 2.65, -90, "worried", then=[("L62+0.2", dict(pos=[-3.1, 2.62])), ("L62+1.0", dict(pos=[-3.1, 2.6], yaw=0))])},
      still([-3.1, 0.9, 1.5], [-3.1, 3.4, 1.4], 28), "I step into the booth door")
-shot("L63", "dusk", {"me": P(-3.1, 2.5, 0, "smirk")}, still([-3.1, 1.9, 1.38], [-3.1, 2.5, 1.33], 50), "my bell stays quiet")
+shot("L63", "dusk", {"me": P(-3.1, 2.5, 0, "smirk")}, still([-3.1, 0.8, 1.36], [-3.1, 2.5, 1.2], 40), "my bell stays quiet")
 shot("P03", "dusk", {}, still([-1.6, 1.1, 1.55], [-2.0, 1.95, 1.12], 34), "the lore shot: two strokes")
 shot("L64", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(1, 5)}},
      still([-0.8, 3.0, 1.45], [-3.1, 4.4, 1.3], 20), "they fade, front to back")
@@ -516,6 +516,7 @@ story = {
     "key_stroke": 2,
     "gap": 0.12,
     "tail": 0,
+    "clip_ok": ["S53/vbody476", "S63/ruben", "S67/bdoorR352", "S67/bdoorframe2355", "S67/st0", "S68/bdoorR352", "S68/bhatchR362", "S85/st3", "S90/ruben", "mist305", "mist307", "mist308", "mist309", "mist310"],
     "look": {"polish": {"quiet": [["L60", "L68"]]}, "fog": "#9aa6b4", "fog_density": 0.012, "fog_start": 14.0, "sky": "#b4d0ea", "sky_strength": 1.1,
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
