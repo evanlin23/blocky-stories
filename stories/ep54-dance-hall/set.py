@@ -658,10 +658,6 @@ def decorate(kit, story, ctx):
     if hg:
         sil = kit.plastic("#c6c9cf", 0.5)
         B(kit, "ros.wave", (1.0, 0.5, 0.34), (-0.3, -faces.HEAD_R + 0.22, faces.HEAD_H / 2 - 0.1), sil, hg, rot=(0, 0.3, 0), bevel=0.1)
-    # the postman's parcel
-    tor = ob("pm.torso")
-    if tor:
-        B(kit, "pm.parcel", (0.9, 0.6, 0.7), (-0.95, -0.7, 0.8), kit.plastic("#b88a5a", 0.8), tor, bevel=0.03)
     for who in ("me", "ros", "pm"):       # extras made after the cast was hidden must start hidden too
         root = ob(who)
         if root is not None and root.hide_render:

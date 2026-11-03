@@ -47,14 +47,14 @@ cast = {
            "hair": "bun", "hair_c": "#14100e", "face": {"eyes": "lashes", "brows": True, "ink": "#16100c"}},
     "d1": {"age": "adult", "skin": "#d9a77c", "shirt": "#3b3f46", "pants": "#22242a", "shoes": "#141414", "sleeves": "long",
            "hair": "spiky", "hair_c": "#14100e", "face": dict(FACE)},
-    "d2": {"age": "adult", "skin": "#e8b98e", "shirt": "#3b3f46", "pants": "#22242a", "shoes": "#141414", "sleeves": "long",
-           "hair": "long", "hair_c": "#a9712f", "face": {"eyes": "lashes", "brows": True, "ink": "#16100c"}},
-    # the opener's gate: an older man, and his postman (blue cap, satchel, a parcel)
+    "d2": {"age": "adult", "skin": "#d9a77c", "shirt": "#3b3f46", "pants": "#22242a", "shoes": "#141414", "sleeves": "long",
+           "hair": "long", "hair_c": "#14100e", "face": {"eyes": "lashes", "brows": True, "ink": "#16100c"}},
+    # the opener's gate: two old brothers who look alike (same buzz cut, skin, build, striped shirt in two colours)
     "gm": {"age": "adult", "skin": "#e8b98e", "shirt": "#7aa86a", "pattern": "stripes", "pattern_c": "#e8e0c0",
            "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "buzz", "hair_c": "#c8c8c8",
-           "extras": ["tie"], "extra_c": "#a03a2c", "face": dict(FACE)},
-    "pm": {"age": "adult", "skin": "#8d5a3b", "shirt": "#3b6aa8", "pants": "#2a3550", "shoes": "#1c1c20", "sleeves": "long",
-           "hat": "ballcap", "hat_c": "#2a5fc4", "hair": "none", "extras": ["backpack"], "extra_c": "#7a5a38",
+           "face": dict(FACE)},
+    "pm": {"age": "adult", "skin": "#e8b98e", "shirt": "#3b6aa8", "pattern": "stripes", "pattern_c": "#e8e0c0",
+           "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "buzz", "hair_c": "#c8c8c8",
            "face": dict(FACE)},
 }
 MEN = ("me", "a1", "b1", "c1", "d1", "gm")
@@ -117,14 +117,14 @@ def class_circling(expr=SM, rot=0.0):
     return out
 
 
-def class_wall(expr="neutral", clap=False, far=False):
+def class_wall(expr="neutral", clap=False, far=False, x=3.0, dy=0.0):
     """The class standing in front of the chairs, watching (west: a, b; east: c, d)."""
     out = {}
     ys = (-3.6, -2.4, -1.2, 0.0)
     for i, n in enumerate(("a1", "a2", "b1", "b2")):
-        out[n] = D((-3.0, ys[i] + (6 if far else 0)), 90, expr, arms=(70, 70) if clap else (0, 0))
+        out[n] = D((-x, ys[i] + dy + (6 if far else 0)), 90, expr, arms=(70, 70) if clap else (0, 0))
     for i, n in enumerate(("c1", "c2", "d1", "d2")):
-        out[n] = D((3.0, ys[i] + (6 if far else 0)), -90, expr, arms=(70, 70) if clap else (0, 0))
+        out[n] = D((x, ys[i] + dy + (6 if far else 0)), -90, expr, arms=(70, 70) if clap else (0, 0))
     return out
 
 
@@ -266,34 +266,53 @@ S("P03", cm((1.0, 6.85, 1.0), (0.82, 7.1, 0.89), 55), {})
 S("L57", cm((-0.3, 4.9, 1.3), (-0.3, 6.4, 1.3), 28), {"me": D((-0.3, 6.4), 0, "neutral", arms=(75, 0), head=(0, -12))})
 S("L58", cm((-0.8, 5.0, 1.3), (-0.81, 5.9, 1.2), 30), {"me": D((-0.3, 6.4), 0, "neutral", arms=(80, 0), head=(0, -12))})
 S("L59", cm((0.0, 4.6, 0.6), (0, 0.4, 1.55), 20), {"me": D((0.0, 3.8), 0, "worried", extra_walk=True)})
-S("L60", cm((-2.0, 0.0, 1.25), (-0.5, 0.0, 1.12), 24),
+# the meeting of the halves: Ros at (0,-0.6) facing +y, me at (0,0.6) facing -y, a pace and a bit (1.2 m) apart, palm on hand-back
+S("L60", cm((-1.6, 0.0, 0.95), (-0.5, 0.0, 0.95), 40),
   {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))})
-S("L61", cm((-2.6, 0.0, 1.3), (-0.5, 0.0, 1.12), 20),
+S("L61", cm((-1.7, 0.0, 0.95), (-0.5, 0.0, 0.95), 36),
   {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))})
-S("L62", cm((-1.3, 0.6, 1.55), (0, -0.45, 1.45), 38, (-1.2, 0.6, 1.55), (0, -0.45, 1.45), 42),
-  {"ros": D(ROS_AT, 180, "wide", arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))})
+S("L62", cm((-2.2, 0.0, 1.5), (0, 0.0, 1.5), 17, (-2.1, 0.0, 1.5), (0, 0.0, 1.5), 18),
+  {"ros": D(ROS_AT, 180, "wide", arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))},
+  late={"ros": [("L62.3", {"expr": SM})]})
 S("L63", cm((0, -1.4, 0.9), (0, 0.4, 3.2), 22), {})
-S("L63.2", cm((-2.7, -3.3, 1.7), (0, 0.0, 1.25), 20), {"ros": D(ROS_AT, 180, SM, arms=(70, 70)),
-                                                      "me": D(P_AT, 0, SM, arms=(70, 0))})
-
-# ---------------------------------------------------------------------------------------------------- 08 kin
-S("L64", cm((0.6, 2.0, 1.55), (0, -0.6, 1.45), 28), {"ros": D(ROS_AT, 180, SM, arms=(70, 70)), "me": D(P_AT, 0, SM, arms=(70, 0))})
-S("L65", cm((-1.6, 0.0, 1.2), (-0.51, 0.0, 1.05), 30), {"ros": D(ROS_AT, 180, SM, arms=(70, 70)), "me": D(P_AT, 0, SM, arms=(70, 0))})
+# out of hold from here: the pair stands a pace apart along x, her hand-back on my palm between us, the class at the chairs watching
+PACE = {"ros": D((-0.6, 0.0), 90, SM, arms=(70, 70)), "me": D((0.6, 0.0), -90, SM, arms=(70, 0))}
+S("L63.2", cm((0.0, -6.8, 2.2), (0, 0.0, 1.2), 15), {**class_wall("neutral", x=2.2, dy=1.8), **PACE})
+S("L64", cm((0.9, -2.5, 1.55), (-0.3, 0.0, 1.45), 24), {**class_wall(SM, x=2.0, dy=1.8), **PACE})
+S("L65", cm((0.0, -1.3, 1.2), (0, 0.5, 1.08), 34), {**PACE})
 S("L66", cm((-0.2, 6.2, 1.4), (-0.5, 7.3, 1.0), 34), {})
 S("L66.3", cm((0.8, 5.5, 1.5), (-0.3, 6.5, 1.5), 28), {"me": me_at_player((-0.4, 6.5), 0, SM)})
-KIN = {"ros": D((0.0, -0.35), 180, SM, arms=(36, 36), side=(0, 30)), "me": D((0.0, 0.35), 0, SM, arms=(36, 0), side=(30, 0))}
-S("L67", cm((0, -5.2, 2.3), (0, 0.3, 1.4), 18), {**KIN, **class_wall(SM)})
+# L67: the demonstration. I lead Ros out by the hand (they walk in from the south end), then an open, upright teaching hold at
+# arm's length (1.2 m), heads apart, faces turned toward the class (the camera at the north end). Nobody closes their eyes.
+TEACH = {"ros": D((-0.6, 0.0), 90, SM, arms=(70, 70), head=(50, 0)), "me": D((0.6, 0.0), -90, SM, arms=(70, 0), head=(-50, 0))}
+S("L67", cm((0.0, 3.4, 1.9), (0, -1.2, 1.3), 21),
+  {"ros": D((-0.35, -3.6), 180, SM, arms=(0, 70)), "me": D((0.35, -3.6), 180, SM, arms=(70, 0)), **class_wall(SM, x=2.2, dy=1.8)},
+  walk={"ros": [("L67.4", (-0.6, 0.0), 90, dict(arms=[70, 70], head=[50, 0]))],
+        "me": [("L67.4", (0.6, 0.0), -90, dict(arms=[70, 0], head=[-50, 0]))]})
+# the comic feet: the frame is on the shoes alone; my shoe lands on her toe
 S("L68", cm((1.7, -0.2, 0.32), (0, 0.0, 0.12), 28),
   {"ros": D((0.0, -0.2), 180, "worried", arms=(36, 36)), "me": D((0.0, 0.02), 0, SM, arms=(36, 0), z=0.09)})
-S("L68.2", cm((1.6, 0.15, 1.5), (0, -0.2, 1.45), 32),
-  {"ros": D((0.0, -0.2), 120, "worried", arms=(36, 36)), "me": D((0.0, 0.02), 0, SM, arms=(36, 0), z=0.09)})
-S("L69", cm((-0.4, -4.4, 1.6), (-3.0, -1.4, 1.4), 22), class_wall(SM, clap=True))
-S("L70", cm((1.5, -0.9, 1.55), (0, 0.0, 1.35), 24),
-  {"ros": D((0.0, -0.35), 180, SM, arms=(100, 36)), "me": D((0.0, 0.35), 0, SM, arms=(36, 0))})
+# the same at arm's length: Ros winces and hops, I wince back, the class behind
+S("L68.2", cm((0.0, -3.4, 1.6), (0, 0.0, 1.35), 24),
+  {"ros": D((-0.6, 0.0), 90, "worried", arms=(70, 70), head=(40, 10)), "me": D((0.6, 0.0), -90, "worried", arms=(70, 0), head=(-40, 10)),
+   **class_wall(SM, x=2.2, dy=1.8)})
+# L69: Ros faces the class and points at my feet like a teacher, me beside her, the class laughing and clapping
+CLASS_ROW = {}
+for _i, _n in enumerate(("a1", "a2", "b1", "b2", "c1", "c2", "d1", "d2")):
+    CLASS_ROW[_n] = D((-1.75 + 0.5 * _i, -2.1), 180, SM, arms=(70, 70) if _i % 2 else (0, 0))
+S("L69", cm((-3.5, -1.7, 1.7), (-0.2, -0.3, 1.25), 14),
+  {"ros": D((-0.75, 0.8), 0, SM, arms=(40, 0), side=(30, 0)), "me": D((-0.2, 0.0), 0, "worried"), **CLASS_ROW})
+# L70: she straightens my collar (brief), then we both face the class, her hand-back on my palm
+S("L70", cm((0.0, -2.6, 1.55), (0, 0.5, 1.4), 28),
+  {"ros": D((-0.4, 0.5), 90, SM, arms=(100, 36)), "me": D((0.4, 0.5), -90, SM, arms=(36, 0)), **class_wall(SM, x=2.2, dy=1.8)},
+  walk={"ros": [("L70.3", (-0.45, 0.5), 0, dict(arms=[36, 36]))],
+        "me": [("L70.3", (0.45, 0.5), 0, dict(arms=[36, 0]))]})
 
 # ---------------------------------------------------------------------------------------------------- 09 the loop
-S("L71", cm((0.0, -3.4, 4.3), (0, 0.0, 0.9), 17), {"ros": D((0.0, -0.35), 180, SM, arms=(36, 36)),
-                                                  "me": D((0.0, 0.35), 0, SM, arms=(36, 0))})
+# L71: side by side facing the class, our joined hands raised the way the bus-stop strangers held theirs. No hold.
+S("L71", cm((0.0, -3.0, 1.8), (0, 0.2, 1.25), 19),
+  {"me": D((-0.55, 0.3), 62, SM, arms=(85, 0), head=(-30, 0)), "ros": D((0.55, 0.3), -62, SM, arms=(0, 85), head=(30, 0)),
+   **class_wall(SM, x=2.2, dy=1.8)})
 S("L72", cm((-0.7, -1.3, 1.3), (-0.55, 0.0, 1.2), 30), {"me": D((0.0, 0.35), 0, SM, arms=(88, 0))})
 S("L73", cm((0.0, 3.6, 0.9), (0, -0.6, 1.35), 20), {"ros": ros_demo()})
 S("L73.3", cm((0.5, -0.3, 0.15), (-0.2, -6.5, 0.1), 24), {"ros": ros_demo()})
@@ -324,6 +343,11 @@ for i, (at, cam, people, opt) in enumerate(SH):
             keys.append(k)
             last_pos[w] = sp["pos"]
             hidden_now[w] = False
+            for ref, extra in opt.get("late", {}).get(w, []):
+                keys.append({"at": ref, **extra})
+            for ref, wpos, wyaw, extra in opt.get("walk", {}).get(w, []):
+                keys.append({"at": ref, "pos": [wpos[0], wpos[1], 0.0], "yaw": wyaw, "blend": 0.5, **extra})
+                last_pos[w] = [wpos[0], wpos[1], 0.0]
             if walk:                      # L59: I walk toward the spot between its legs; cut before I get there
                 keys.append({"at": "L59+1.2", "pos": [0.0, 2.6, 0.0]})
                 last_pos[w] = [0.0, 2.6, 0.0]
