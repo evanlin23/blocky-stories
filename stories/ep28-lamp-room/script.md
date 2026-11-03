@@ -141,7 +141,7 @@ Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS ar
   - [S33: the glow on my face, eyes wide]
 - `L34` narrator: And I was / at the RAIL again, / before I knew / I'd gotten UP.
   - [S34: over my shoulder at the rail. Behind me a small round window streaming with rain (plant 3: no door here)]
-- `L35` narrator: It was / two turns HIGHER.
+- `L35` narrator: It was / two turns CLOSER.
   - [S35: POV down the well: the yellow figure on turn 1, five turns below, face up]
 - `L36` narrator: Its face / still pointed UP, / right at MINE.
   - [S36: tighter, the crown face in the torch cone, eyes wide, mouth a small open dot]
@@ -161,7 +161,7 @@ Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS ar
   - [S41: me sitting up in the cot with the flashlight on my knees, eyelids dropping (expr shut)]
 - `L42` narrator: Then the BUZZ again, / and I was back / at the RAIL.
   - [S42: buzz, glow, then over my shoulder at the rail. Behind me a coil of old rope on an iron hook (plant 3)]
-- `L43` narrator: Two MORE turns.
+- `L43` narrator: Two turns CLOSER.
   - [S43: POV down: the figure on turn 2, three turns below. Larger now]
 - `L44` narrator: Close enough now / to see its MOUTH, / a little round HOLE.
   - [S44: tight on the crown face, the mouth a round hole onto darkness]
