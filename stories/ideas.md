@@ -377,6 +377,7 @@ Fresh idea (added with `dryer-nine`, 2026-11-03, so the backlog doesn't run dry)
 - ep47-fitting-room: every lie pins a tag to your clothes, but a lie you believe never gets one; my clean coat was the lie that I was happy in the city
 - ep48-crazy-golf: your shadow sits where you were happiest; the one on Dad's green is mine, and the one at my feet is Dad's
 - mirror-maze (ep15): your reflection stays behind when you walk away; the narrator is the reflection the real me left in a maze pane, and Tasha visits it
+- night-mower: our street is built on a giant sleeping head; the neighbor's perfect lawn is its eyebrow, Dad's bald spot is its receding hairline, and when it's trimmed it turns toward whoever watches
 - dryer-nine: the all-night laundromat's dryer nine is drying the night itself; a quarter buys ten more minutes of it, and too much night won't fit in the drum (the night as a load, not time dilation)
 - ep62-six-riders: the extra face in the elevator mirror isn't a reflection but something in the glass practicing being my brother, and when the doors open it swaps places with him (a swap, not a reflection left behind)
 
