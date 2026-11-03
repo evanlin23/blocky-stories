@@ -289,3 +289,20 @@ def test_punch_ins_are_capped_on_key_words():
     keys = [t for _k, t in polish.key_times(tl, p, at)]
     assert all(any(abs(t - k) < 1e-9 for k in keys) for t in emph)                 # key words only
     assert all(b - a >= 5.0 / p["punch_rate"] - 1e-6 for a, b in zip(emph, emph[1:]))
+
+
+def test_walk_shots_go_on_ones_only_with_the_pack():
+    st, tl = story(look={"polish": True})
+    st_off, tl_off = story(False)
+    for sp in (st, st_off):
+        for s in sp["shots"]:
+            s["step"] = 2
+    voice = {"voice": "am_adam", "rate": 1.45, "tempo": 1.03, "model": "x",
+             "lines": {l: {"text": "In the hall, it moved.", "onset": 0.05, "end": 1.6, "chunks": [[0.05, 0.7], [0.75, 1.6]]}
+                       for l in [f"L{i:02d}" for i in range(1, 7)]}}
+    on, off = timeline.build(st, voice), timeline.build(st_off, voice)
+    from blocky import acting
+    walking = {s["id"] for s in on["shots"]
+               if any(acting.state(on, "me", f / 30)["speed"] > 0.05 for f in range(s["f0"], s["f1"], 6))}
+    assert walking and all(s["step"] == (1 if s["id"] in walking else 2) for s in on["shots"])
+    assert all(s["step"] == 2 for s in off["shots"])

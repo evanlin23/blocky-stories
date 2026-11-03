@@ -219,13 +219,17 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
     fx = [{**f, "t": snap(at(f["at"]))} for f in st.get("fx", [])]
     acting = {who: [{**k2, "t": snap(k2["t"])} for k2 in (_key(k, at) for k in keys)]
               for who, keys in st.get("acting", {}).items()}
-    return {"name": st["name"], "fps": fps, "duration": duration, "frames": int(round(duration * fps)),
+    out = {"name": st["name"], "fps": fps, "duration": duration, "frames": int(round(duration * fps)),
             "tail": st.get("tail", TAIL),
             "fade_out": st.get("fade_out", True),
             "fade_in": st.get("fade_in", True),
             "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
             "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
             "cues": cues, "fx": fx, "acting": acting, "motion": _motion(st)}
+    if out["motion"].get("ones") == "walk":   # the polish pack: shots with a walk on ones
+        from blocky import polish
+        polish.ones_for_walks(out, st)
+    return out
 
 
 def _motion(st: dict) -> dict:
@@ -234,7 +238,7 @@ def _motion(st: dict) -> dict:
     p = polish.spec(st)
     if not p:
         return {}
-    return {"ease": bool(p["ease"]), "idle": bool(p["idle"]), "idle_scale": float(p["idle_scale"])}
+    return {"ease": bool(p["ease"]), "idle": bool(p["idle"]), "idle_scale": float(p["idle_scale"]), "ones": p["ones"]}
 
 
 def _key(k: dict, at) -> dict:
