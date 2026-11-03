@@ -214,20 +214,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "At this DRIVE-THRU,",
-     "at this drive through,"
+     "This DRIVE-THRU",
+     "this drive through,"
     ],
     [
-     "never pull up",
-     "never pull up"
+     "has ONE booth",
+     "has one booth"
     ],
     [
-     "to the",
-     "to the"
-    ],
-    [
-     "SECOND WINDOW.",
-     "second window."
+     "and TWO WINDOWS.",
+     "and two windows."
     ]
    ],
    "ncap": 3
@@ -237,12 +233,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "There's only ONE.",
-     "there's only one."
+     "Never pull up",
+     "never pull up"
+    ],
+    [
+     "to the",
+     "to the"
+    ],
+    [
+     "SECOND one.",
+     "second one."
     ]
    ],
    "gap": 0.1,
-   "ncap": 1
+   "ncap": 2
   },
   {
    "id": "L03",
@@ -1750,35 +1754,35 @@
   {
    "id": "S001",
    "at": 0,
-   "what": "S01 straight at the second window, pushing in",
+   "what": "S01 both windows: the real one with the lady near, the lit second hatch beyond with the sleeve and bag on its sill, pushing in",
    "cam": [
     [
      0,
      [
-      10.1,
-      0.2,
-      1.7
+      5.0,
+      -1.2,
+      1.6
      ],
      [
-      10.1,
       5.0,
-      1.62
+      5.0,
+      1.6
      ],
-     32
+     17
     ],
     [
      1,
      [
-      10.1,
-      0.9,
-      1.7
+      5.0,
+      -0.2,
+      1.6
      ],
      [
-      10.1,
       5.0,
-      1.62
+      5.0,
+      1.6
      ],
-     44
+     21
     ]
    ],
    "hand": 0,
@@ -1787,25 +1791,38 @@
   {
    "id": "S002",
    "at": "L02",
-   "what": "S02 the one window and the lady",
+   "what": "S02 pushing toward the second hatch",
    "cam": [
     [
      0,
      [
-      -0.8,
-      0.8,
-      1.7
+      6.2,
+      0.0,
+      1.65
      ],
      [
-      0.1,
+      10.1,
       5.0,
       1.6
      ],
-     38,
-     0
+     28
+    ],
+    [
+     1,
+     [
+      8.6,
+      1.4,
+      1.65
+     ],
+     [
+      10.1,
+      5.0,
+      1.6
+     ],
+     36
     ]
    ],
-   "hand": 0.012,
+   "hand": 0,
    "step": 2
   },
   {
@@ -2213,11 +2230,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -2361,11 +2378,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -2632,7 +2649,7 @@
   },
   {
    "id": "S035",
-   "at": "L23",
+   "at": "L23+0.35",
    "what": "S35 me says no",
    "cam": [
     [
@@ -2952,11 +2969,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -2977,11 +2994,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -2991,7 +3008,7 @@
   },
   {
    "id": "S049",
-   "at": "L32+0.59",
+   "at": "L32+0.62",
    "what": "S48b same words",
    "cam": [
     [
@@ -3002,11 +3019,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -3188,11 +3205,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -3384,11 +3401,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -3753,22 +3770,35 @@
   {
    "id": "S079",
    "at": "L53",
-   "what": "S78 high wide, one window",
+   "what": "S78 both hatches, same framing, one window (the lit one empty)",
    "cam": [
     [
      0,
      [
-      5,
-      -30,
-      14
+      5.0,
+      -3.0,
+      1.9
      ],
      [
-      5,
-      5,
-      1.5
+      5.0,
+      5.0,
+      1.6
      ],
-     20,
-     0
+     16
+    ],
+    [
+     1,
+     [
+      5.0,
+      -3.0,
+      1.9
+     ],
+     [
+      5.0,
+      5.0,
+      1.6
+     ],
+     18
     ]
    ],
    "hand": 0,
@@ -3777,49 +3807,62 @@
   {
    "id": "S080",
    "at": "L54",
-   "what": "S79 the one window",
+   "what": "S79 the two windows, push",
    "cam": [
     [
      0,
      [
-      0.0,
-      0.9,
-      1.65
+      5.0,
+      -3.0,
+      1.9
      ],
      [
-      0,
-      5.2,
+      5.0,
+      5.0,
       1.6
      ],
-     30,
-     0
+     16
+    ],
+    [
+     1,
+     [
+      5.0,
+      -2.4,
+      1.9
+     ],
+     [
+      5.0,
+      5.0,
+      1.6
+     ],
+     18
     ]
    ],
-   "hand": 0.012,
+   "hand": 0,
    "step": 2
   },
   {
    "id": "S081",
-   "at": "L54+0.59",
-   "what": "S80 the second hatch, same frame",
+   "at": "L54+1.17",
+   "what": "S80 the second window is the first one again",
    "cam": [
     [
      0,
      [
-      10.1,
-      0.9,
-      1.65
+      5.0,
+      -2.4,
+      1.9
      ],
      [
-      10.1,
-      5.2,
+      5.0,
+      5.0,
       1.6
      ],
-     30,
+     20,
      0
     ]
    ],
-   "hand": 0.012,
+   "hand": 0,
    "step": 2
   },
   {
@@ -3872,11 +3915,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -3886,7 +3929,7 @@
   },
   {
    "id": "S084",
-   "at": "L56+0.35",
+   "at": "L56+0.5",
    "what": "S82 Cal's grin 1",
    "cam": [
     [
@@ -3897,11 +3940,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -3911,7 +3954,7 @@
   },
   {
    "id": "S085",
-   "at": "L56+0.7",
+   "at": "L56+1.0",
    "what": "S82 Cal's grin 2",
    "cam": [
     [
@@ -3922,11 +3965,11 @@
       1.75
      ],
      [
-      0,
-      0,
+      0.42,
+      -0.2,
       1.5
      ],
-     36,
+     32,
      0
     ]
    ],
@@ -3936,31 +3979,6 @@
   },
   {
    "id": "S086",
-   "at": "L56+1.05",
-   "what": "S82 Cal's grin 3",
-   "cam": [
-    [
-     0,
-     [
-      2.8,
-      1.0,
-      1.75
-     ],
-     [
-      0,
-      0,
-      1.5
-     ],
-     36,
-     0
-    ]
-   ],
-   "hand": 0,
-   "step": 2,
-   "follow": "cal"
-  },
-  {
-   "id": "S087",
    "at": "L57+0.0",
    "what": "S83 me, pose 0",
    "cam": [
@@ -3985,8 +4003,8 @@
    "follow": "me"
   },
   {
-   "id": "S088",
-   "at": "L57+0.45",
+   "id": "S087",
+   "at": "L57+0.6",
    "what": "S83 me, pose 1",
    "cam": [
     [
@@ -4010,8 +4028,8 @@
    "follow": "me"
   },
   {
-   "id": "S089",
-   "at": "L57+0.9",
+   "id": "S088",
+   "at": "L57+1.2",
    "what": "S83 me, pose 2",
    "cam": [
     [
@@ -4035,32 +4053,7 @@
    "follow": "me"
   },
   {
-   "id": "S090",
-   "at": "L57+1.35",
-   "what": "S83 me, pose 3",
-   "cam": [
-    [
-     0,
-     [
-      2.2,
-      -1.1,
-      1.75
-     ],
-     [
-      0,
-      0,
-      1.5
-     ],
-     36,
-     0
-    ]
-   ],
-   "hand": 0,
-   "step": 2,
-   "follow": "me"
-  },
-  {
-   "id": "S091",
+   "id": "S089",
    "at": "L58",
    "what": "S84 the bag on the sill",
    "cam": [
@@ -4084,7 +4077,7 @@
    "step": 2
   },
   {
-   "id": "S092",
+   "id": "S090",
    "at": "L58+1.64",
    "what": "S85 four tickets",
    "cam": [
@@ -4109,7 +4102,7 @@
    "follow": "cal"
   },
   {
-   "id": "S093",
+   "id": "S091",
    "at": "L59",
    "what": "S86 the speaker post coming up",
    "cam": [
@@ -4133,7 +4126,7 @@
    "step": 2
   },
   {
-   "id": "S094",
+   "id": "S092",
    "at": "L59+0.68",
    "what": "S87 I lean across Cal",
    "cam": [
@@ -4158,7 +4151,7 @@
    "follow": "cal"
   },
   {
-   "id": "S095",
+   "id": "S093",
    "at": "L60",
    "what": "S88 me at the grille",
    "cam": [
@@ -4182,7 +4175,7 @@
    "step": 2
   },
   {
-   "id": "S096",
+   "id": "S094",
    "at": "L61",
    "what": "S89 number seven",
    "cam": [
@@ -4206,7 +4199,7 @@
    "step": 2
   },
   {
-   "id": "S097",
+   "id": "S095",
    "at": "L61+0.64",
    "what": "S90 Cal wide",
    "cam": [
@@ -4231,7 +4224,7 @@
    "follow": "cal"
   },
   {
-   "id": "S098",
+   "id": "S096",
    "at": "L61+1.28",
    "what": "S91 the pickle slice",
    "cam": [
@@ -4255,7 +4248,7 @@
    "step": 2
   },
   {
-   "id": "S099",
+   "id": "S097",
    "at": "L62",
    "what": "S92 the grille, no crackle",
    "cam": [
@@ -4279,7 +4272,7 @@
    "step": 2
   },
   {
-   "id": "S100",
+   "id": "S098",
    "at": "L63",
    "what": "S93 forty-two",
    "cam": [
@@ -4303,7 +4296,7 @@
    "step": 2
   },
   {
-   "id": "S101",
+   "id": "S099",
    "at": "L64",
    "what": "S94 Cal stares",
    "cam": [
@@ -4328,7 +4321,7 @@
    "follow": "cal"
   },
   {
-   "id": "S102",
+   "id": "S100",
    "at": "L65",
    "what": "S95 the wall just ends",
    "cam": [
@@ -4366,7 +4359,7 @@
    "follow": "cal"
   },
   {
-   "id": "S103",
+   "id": "S101",
    "at": "L66",
    "what": "S96 out onto the open road",
    "cam": [
@@ -4390,7 +4383,7 @@
    "step": 2
   },
   {
-   "id": "S104",
+   "id": "S102",
    "at": "L67",
    "what": "S97 Cal eats a pickle",
    "cam": [
@@ -4415,7 +4408,7 @@
    "follow": "cal"
   },
   {
-   "id": "S105",
+   "id": "S103",
    "at": "L67+0.72",
    "what": "S98 me smiles",
    "cam": [
@@ -4440,7 +4433,7 @@
    "follow": "me"
   },
   {
-   "id": "S106",
+   "id": "S104",
    "at": "L68",
    "what": "S99 the empty cup and ticket 42",
    "cam": [
@@ -4465,7 +4458,7 @@
    "follow": "cal"
   },
   {
-   "id": "S107",
+   "id": "S105",
    "at": "L69",
    "what": "S100 a new Friday, Cal waits",
    "cam": [
@@ -4490,7 +4483,7 @@
    "follow": "cal"
   },
   {
-   "id": "S108",
+   "id": "S106",
    "at": "L69+1.16",
    "what": "S101 me at the grille",
    "cam": [
@@ -4515,7 +4508,7 @@
    "follow": "me"
   },
   {
-   "id": "S109",
+   "id": "S107",
    "at": "L70",
    "what": "S102 the back wall, our three laps",
    "cam": [
@@ -4540,7 +4533,7 @@
    "follow": "me"
   },
   {
-   "id": "S110",
+   "id": "S108",
    "at": "L71",
    "what": "S103 the front one rolls up to the hatch",
    "cam": [
@@ -5421,35 +5414,7 @@
    },
    {
     "at": "L69>+0.1",
-    "pos": [
-     -12.6,
-     2.2,
-     -0.16
-    ],
-    "yaw": 90,
-    "blend": 0
-   },
-   {
-    "at": "L69>+0.1",
-    "pos": [
-     -31.2,
-     11.05,
-     -0.16
-    ],
-    "yaw": 270,
-    "blend": 0,
-    "hidden": false
-   },
-   {
-    "at": "L71>+1",
-    "pos": [
-     -33.7,
-     11.05,
-     -0.16
-    ],
-    "yaw": 270,
-    "blend": 0,
-    "hidden": false
+    "hidden": true
    }
   ],
   "cal": [
@@ -5490,7 +5455,8 @@
      70
     ],
     "expr": "smile",
-    "blend": 0
+    "blend": 0,
+    "sfx": "door"
    },
    {
     "at": "L11",
@@ -6129,7 +6095,8 @@
     "head": [
      -60,
      0
-    ]
+    ],
+    "sfx": "door"
    },
    {
     "at": "L69>",
@@ -6144,35 +6111,7 @@
    },
    {
     "at": "L69>+0.1",
-    "pos": [
-     -12.6,
-     3.1,
-     -0.16
-    ],
-    "yaw": 90,
-    "blend": 0
-   },
-   {
-    "at": "L69>+0.1",
-    "pos": [
-     -31.2,
-     10.15,
-     -0.16
-    ],
-    "yaw": 270,
-    "blend": 0,
-    "hidden": false
-   },
-   {
-    "at": "L71>+1",
-    "pos": [
-     -33.7,
-     10.15,
-     -0.16
-    ],
-    "yaw": 270,
-    "blend": 0,
-    "hidden": false
+    "hidden": true
    }
   ],
   "cal2": [
@@ -6573,6 +6512,17 @@
    "at": 0,
    "name": "car",
    "id": "copyC",
+   "hide": true,
+   "pos": [
+    0,
+    0
+   ],
+   "yaw": 0
+  },
+  {
+   "at": 0,
+   "name": "car",
+   "id": "copyD",
    "hide": true,
    "pos": [
     0,
@@ -7134,7 +7084,7 @@
    "at": "P02",
    "name": "dim",
    "v": 1.0,
-   "dur": 0.5
+   "dur": 0.6
   },
   {
    "at": "P02>",
@@ -7153,6 +7103,17 @@
    "name": "h2",
    "v": 1.0,
    "dur": 0.8
+  },
+  {
+   "at": "L54-0.1",
+   "name": "car",
+   "id": "copyD",
+   "pos": [
+    -30.1,
+    12.9
+   ],
+   "yaw": 180,
+   "snap": true
   },
   {
    "at": "L55",
@@ -7334,12 +7295,12 @@
    "at": "L69>+0.1",
    "name": "car",
    "id": "ours",
+   "hide": true,
    "pos": [
-    -31.5,
-    10.6
+    0,
+    0
    ],
-   "yaw": 180,
-   "snap": true
+   "yaw": 0
   },
   {
    "at": "L70",
@@ -7383,16 +7344,6 @@
     2.65
    ],
    "yaw": 0
-  },
-  {
-   "at": "L71>+1",
-   "name": "car",
-   "id": "ours",
-   "pos": [
-    -34,
-    10.6
-   ],
-   "yaw": 180
   }
  ],
  "fx": [],
@@ -7480,13 +7431,13 @@
   ],
   "sfx": [
    {
-    "at": "L01.2+0.4",
+    "at": "L01.2+0.1",
     "kind": "hit",
     "db": -9,
     "dur": 1.0
    },
    {
-    "at": "L01.2+0.55",
+    "at": "L01.2+0.25",
     "kind": "click",
     "db": -16
    },

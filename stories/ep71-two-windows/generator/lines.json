@@ -4,16 +4,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "At this DRIVE-THRU,",
-    "at this drive thru,"
+    "This DRIVE-THRU",
+    "this drive thru,"
    ],
    [
-    "never pull up",
-    "never pull up"
+    "has ONE booth",
+    "has one booth"
    ],
    [
-    "to the SECOND WINDOW.",
-    "to the second window."
+    "and TWO WINDOWS.",
+    "and two windows."
    ]
   ]
  },
@@ -22,8 +22,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "There's only ONE.",
-    "there's only one."
+    "Never pull up",
+    "never pull up"
+   ],
+   [
+    "to the SECOND one.",
+    "to the second one."
    ]
   ]
  },

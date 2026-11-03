@@ -44,7 +44,7 @@ Checked against `stories/ideas.md` → "Claimed big ideas" and every story's twi
   - Plant 2 (L14, 22 s): Cal's old car has one cracked headlight, said aloud and shown in close-up.
   - Plant 3 (L15 to L16): the speaker asks "Two number fours, no pickles?" before Cal says a word. "They know me."
   - Rewatch catch: in L01's frame the bag already on the second window's sill has ticket 41 on it, the number we're about to be given at L17.
-- **How the last 15 seconds turn over the first line:** from L65 the wall just ends, we drive out, and Cal eats the pickles. Then L70 to L71: our four old laps are still in line by the back wall, and the front one, which never got out, rolls up to the second window "and nobody tells it," which runs straight into "At this drive-thru, never pull up to the second window." Now line 1 isn't a ghost-story warning. It's what nobody told the lap of us that's still going round.
+- **How the last 15 seconds turn over the first line:** from L65 the wall just ends, we drive out, and Cal eats the pickles. Then L70 to L71: our four old laps are still in line by the back wall, and the front one, which never got out, rolls up to the second window "and nobody tells it," which runs straight into "At this drive-thru, never pull up to the second one." Now line 1 isn't a ghost-story warning. It's what nobody told the lap of us that's still going round.
 - **Ending shape:** an escape that leaves copies behind. Two brothers drive out onto the open road. A cold beat: the three laps of us by the back wall, the front one, a lap that never got out, rolling up to the lit hatch. (`shape: "lap"`, new.)
 - **Kind of warmth:** being heard. The big brother who always spoke for me lets me order, and keeps letting me (L69: every Friday he looks at me and waits). Played light: he hates pickles and eats every one.
 - **No sad family reveal.** Nobody is gone, sick or estranged. Cal is fine throughout.
@@ -103,12 +103,12 @@ A small roadside drive-thru on the edge of town, golden Friday evening, bright a
 
 ## Sound and music
 - **Music:** D mixolydian, 100 bpm, light and bouncy for the first third: a plucked synth bass on the beat, a soft square lead playing two-note figures, a hand-clap-like filtered noise on 2 and 4 (soft, under 4 kHz). The flat seventh keeps it a little off.
-- **Sound hit on "WINDOW" (L01, about 1.9 s):** a low bell-ish synth thud with a pitch fall, plus the hatch's slide-click. The second hit on "ONE" (L02, 2.7 s): one soft tick.
+- **Sound hit on "WINDOWS" (L01, about 1.9 s):** a low bell-ish synth thud with a pitch fall, plus the hatch's slide-click. The second hit on "SECOND" (L02): one soft tick.
 - **The drone:** a heavy low drone on D and A enters at P01 (the first loop, about 52.5 s, 40%) and holds to the end. From there the harmony moves to D aeolian and the clap drops out.
 - **Drops (`music_drops`):** P01 (0.7 s, before L30): everything drops but the car's idle, then the speaker crackles. P02 (0.6 s, before L51): everything but the drone drops, then a soft hatch-slide hit as it's seen out to its waist.
 - **Warm turn:** from L62 the drone thins and the bouncy bass comes back in D major under L64 to L69. At L70 the bass drops out and only the drone and the speaker crackle are left under the last two lines.
 - **Ambience:** car idle (soft low hum), indicator ticks at the speaker, the speaker's crackle (band-limited, soft), a paper bag rustle, a hatch sliding. No real voices: the speaker and the lady are only reported.
-- **The loop:** 0.25 s after "tells it" in L71, cut to L01's frame 1, so L71 runs into "At this drive-thru, never pull up to the second window."
+- **The loop:** 0.25 s after "tells it" in L71, cut to L01's frame 1, so L71 runs into "At this drive-thru, never pull up to the second one."
 
 ## The rule and the hits' shape (RULES → What the hits do, and the opening recipe)
 1. **Line 1 is a warning to "you":** "At this DRIVE-THRU, / never pull up / to the SECOND WINDOW." 10 words, about 2.1 s. (The reset and the recipe outrank the old "In this town" form.)
@@ -133,8 +133,8 @@ A plain tally of **one** short upright peach stroke scratched into the steel sil
 ## Opening timings (the first 8 s)
 | Time | Line | Shot | Sound |
 |---|---|---|---|
-| 0.0 to 2.1 s | L01 "At this DRIVE-THRU, never pull up to the SECOND WINDOW." | S01: straight on at the second window from the lane, 1.2 m away at car-window height, centred: lit hatch, crooked frame, mint sleeve and hand, bag with ticket 41 on the sill. Push in from 35 mm to 50 mm. Bright golden light | thin music starts at 0.0, hit at about 1.9 s on "WINDOW" |
-| 2.2 to 2.8 s | L02 "There's only ONE." | S02: medium on the one real window, the lady in her visor, the second window lit and soft-focus beyond her shoulder down the wall | soft tick on "ONE" |
+| 0.0 to 2.1 s | L01 "This DRIVE-THRU has ONE booth and TWO WINDOWS." | S01: both windows centred from the lane: the real one with the lady near, the lit second hatch beyond it, crooked, with the mint sleeve and hand resting the bag (ticket 41) on its sill. Slow push in. Bright golden light | thin music starts at 0.0, hit at about 1.9 s on "WINDOWS" |
+| 2.2 to 2.8 s | L02 "Never pull up to the SECOND one." | S02: push from the lane toward the second hatch, the lady's window still in frame behind | soft tick on "SECOND" |
 | 2.9 to 4.6 s | L03 | S03: low side-on at the lane as a lime car rolls past the second window, driver's face fixed forward, radio glow | car pass whoosh (soft) |
 | 4.7 to 5.9 s | L04 | S04: a white van rolling past with brown cardboard taped over its side window, the speaker screen's 41 in the background | tape-crinkle |
 | 6.1 to 7.5 s | L05 | S05: Mr. Dale at his front door, mug in hand, smiling, a gap in his driveway | |
@@ -146,10 +146,10 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the drive-thru lane, golden evening, then Mr. Dale's door.
 - **Shots:** 10.
 
-- `L01` narrator: At this DRIVE-THRU, / never pull up / to the SECOND WINDOW.
-  - [S01, see the opening timings. Straight at the second window, already wrong, pushing in. Hit on WINDOW]
-- `L02` narrator: There's only ONE.
-  - [S02: the one real window and the lady, the second window lit beyond her]
+- `L01` narrator: This DRIVE-THRU / has ONE booth / and TWO WINDOWS.
+  - [S01, see the opening timings. Both windows centred, the second already wrong, pushing in. Hit on WINDOWS]
+- `L02` narrator: Never pull up / to the SECOND one.
+  - [S02: pushing toward the second hatch, the real window and the lady behind]
 - `L03` narrator: Cars roll PAST it, / eyes on the ROAD.
   - [S03: a car rolls past the second window, driver staring dead ahead]
 - `L04` narrator: Delivery vans TAPE / their side WINDOWS.

@@ -254,13 +254,14 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
                     rot=(math.pi / 2, 0, 0), n=12)
     hx = 2.03 if kind == "van" else 1.93
     lens_r = kit.emit("#fff4d0", 6.0 * glow, "headlight r")
-    lens_l = kit.emit("#d9a840", 2.6 * glow, "headlight cracked") if cracked else lens_r
+    lens_l = kit.emit("#a88a4a", 1.3 * glow, "headlight cracked") if cracked else lens_r
     B("hlr", (0.06, 0.34, 0.2), (hx, -0.62, 0.8), lens_r, 0.02)
     B("hll", (0.06, 0.34, 0.2), (hx, 0.62, 0.8), lens_l, 0.02)
     if cracked:
-        crack = kit.plastic("#1a1410", 0.9, "crack")
-        B("crack1", (0.01, 0.36, 0.03), (hx + 0.035, 0.62, 0.8), crack, 0.0, (0.55, 0, 0))
-        B("crack2", (0.01, 0.2, 0.03), (hx + 0.037, 0.58, 0.84), crack, 0.0, (-0.8, 0, 0))
+        crack = kit.plastic("#050302", 0.9, "crack")
+        zz = ((0.62 - 0.14, 0.9, 0.55), (0.62 - 0.02, 0.74, -0.7), (0.62 + 0.08, 0.84, 0.6), (0.62 + 0.15, 0.72, -0.5))
+        for i, (cy, cz, rx) in enumerate(zz):
+            B(f"crack{i}", (0.01, 0.1, 0.028), (hx + 0.045, cy, cz), crack, 0.0, (rx, 0, 0))
     plate = kit.plastic("#ffb38a", 0.5, "plate")
     B("plateb", (0.04, 0.5, 0.16), (-hx + 0.0, 0, 0.62), plate, 0.01)
     B("platef", (0.04, 0.5, 0.16), (hx + 0.0, 0, 0.5), plate, 0.01)
@@ -512,7 +513,7 @@ def build(kit, story, tl):
     build_server(kit, M, ctx)
     cars = {}
     cars["ours"] = build_car(kit, M, "ours", "#5aa9e6", "open", cracked=True, tix=True, bag=True)
-    for k in "ABC":
+    for k in "ABCD":
         cars["copy" + k] = build_car(kit, M, "copy" + k, "#5aa9e6", "open", cracked=True)
     cars["lime"] = build_car(kit, M, "lime", "#a8e03a", "open")
     cars["van"] = build_car(kit, M, "van", "#dfe3e6", "van")
@@ -521,7 +522,7 @@ def build(kit, story, tl):
     ctx["cars"] = cars
     # dummy riders for the copies that are far away (block people in our colours)
     ctx["dummies"] = {}
-    for k in "BC":
+    for k in "BCD":
         r = cars["copy" + k]["root"]
         parts = []
         for sy, sh, hc in ((0.45, "#e0a92e", "#3b2a20"), (-0.45, "#8ec9f5", "#3b2a20")):
@@ -586,7 +587,7 @@ def animate(kit, story, tl, t, ctx):
         cup.hide_render = not vis("cup", False)
     bc = _last(_cues(tl, "bagcar"), t)
     _show([o_["bag"]], bool(bc and bc.get("on")))
-    for k in "BC":
+    for k in "BCD":
         for d in ctx["dummies"][k]:
             d.hide_render = False
     sc = _last(_cues(tl, "scr"), t)

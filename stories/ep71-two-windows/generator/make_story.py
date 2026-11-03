@@ -168,13 +168,13 @@ CP = {"cal2": (-0.3, 0.45), "me2": (-0.3, -0.45)}
 # sit + base poses
 for w in ("cal", "me", "cal2", "me2", "driver1"):
     A(w, 0, sit=True, hidden=True, arms=[70, 70] if w != "me" else [0, 0], side=[0, 0], head=[0, 0], lean=0, roll=0)
-A("cal", "L08", arms=[70, 70], expr="smile", blend=0)
+A("cal", "L08", arms=[70, 70], expr="smile", blend=0, sfx="door")
 A("me", "L08", arms=[0, 0], expr="neutral", blend=0)
 
 # ---- cars at rest
 for i in range(8):
     cue(0, "car", id=f"truck{i}", pos=[15 - 4.1 * i, 12.9], yaw=180)
-for cid in ("ours", "copyA", "copyB", "copyC", "lime", "van"):
+for cid in ("ours", "copyA", "copyB", "copyC", "copyD", "lime", "van"):
     cue(0, "car", id=cid, hide=True, pos=[0, 0], yaw=0)
 cue(0, "server", lv=0, on=True)
 cue(0, "scr", n=41)
@@ -207,8 +207,7 @@ drive(O, CALP, [("L08-0.5", -33, LY, 0, "snap"), ("L13", -22, LY, 0), ("L14>", C
                 ("L58>+0.1", -24, LY, 0, "snap"), ("L59>", CXS, LY, 0), ("L64>", CXS, LY, 0),
                 ("L64>+0.1", 2.5, LY, 0, "snap"), ("L65>", 8.0, LY, 0), ("L66-0.1", 572, -1.75, 0, "snap"),
                 ("L67+3", 585, -1.75, 0), ("L68>", 592, -1.75, 0), ("L69-0.2", -24, LY, 0, "snap"),
-                ("L69", CXS, LY, 0), ("L69>", CXS, LY, 0), ("L69>+0.1", -31.5, BY, 180, "snap"),
-                ("L71>+1", -34, BY, 180)])
+                ("L69", CXS, LY, 0), ("L69>", CXS, LY, 0), ("L69>+0.1", 0, 0, 0, "hide")])
 # seated poses over time
 A("me", "L09", arms=[75, 75], side=[-25, -25], expr="worried")
 A("me", "L10", arms=[0, 0], side=[0, 0], expr="neutral")
@@ -253,13 +252,14 @@ A("cal", "L64", expr="wide")
 A("cal", "L64.0+0.8", expr="smile")
 A("cal", "L67", expr="angry")
 A("cal", "L68", expr="smile")
-A("cal", "L69", expr="smile", head=[-60, 0])
+A("cal", "L69", expr="smile", head=[-60, 0], sfx="door")
 
 # ---- the copies: A waits at the back wall from L38, B from L46, C from L49 (all facing -x)
 drive("copyA", CP, [("L38-0.1", -17.8, 12.9, 180, "snap"), ("L70>", -17.8, 12.9, 180), ("L71-0.1", 3, LY, 0, "snap"),
                     ("L71>", 7.5, LY, 0)])
 drive("copyB", {}, [("L46-0.1", -21.9, 12.9, 180, "snap")])
 drive("copyC", {}, [("L49-0.1", -26.0, 12.9, 180, "snap")])
+drive("copyD", {}, [("L54-0.1", -30.1, 12.9, 180, "snap")])
 A("cal2", "L38", expr="grin", arms=[70, 70], blend=0)
 A("me2", "L38", expr="scared", head=[130, 0], blend=0)
 
@@ -297,7 +297,7 @@ cue("L35", "h2", v=0.4, dur=0.8)
 cue("L43", "h2", v=0.7, dur=0.8)
 cue("L51", "h2", v=1.0, dur=0.8)
 cue("L66", "h2", v=0.0, dur=0.8)
-cue("P02", "dim", v=1.0, dur=0.5)
+cue("P02", "dim", v=1.0, dur=0.6)
 cue("P02>+0.1", "dim", v=0.0, dur=0.8)
 
 # ------------------------------------------------------------------------------------------------ shots
@@ -344,7 +344,7 @@ def rel(xyz):
 
 
 # camera frames, relative to a rider when "follow" is set (cal feet = car centre + (-0.3, +0.45) heading +x)
-CAL_FRAME = still([2.8, 1.0, 1.75], [0, 0, 1.5], 36)
+CAL_FRAME = still([2.8, 1.0, 1.75], [0.42, -0.2, 1.5], 32)
 ME_CLOSE = still([2.6, -1.0, 1.75], [0, 0, 1.5], 36)
 TWO = still([3.0, -0.45, 1.75], [0, -0.45, 1.5], 24)
 WIND = move([-0.5, -0.45, 1.75], [8, -0.45, 1.45], [-0.5, -0.45, 1.75], [8, -0.45, 1.45], 30)
@@ -353,8 +353,8 @@ MIRROR_CLOSE = still([-0.2, -0.35, 1.7], [0.98, -0.3, 1.58], 70)
 BACK_WALL_VIEW = lambda x0: still([x0, 9.6, 0.9], [-12, 12.9, 1.0], 26)
 
 # ---- 01 the rule
-shot(0, "S01 straight at the second window, pushing in", move([10.1, 0.2, 1.7], [10.1, 5.0, 1.62], [10.1, 0.9, 1.7], [10.1, 5.0, 1.62], 32, 44), hand=0)
-shot("L02", "S02 the one window and the lady", still([-0.8, 0.8, 1.7], [0.1, 5.0, 1.6], 38))
+shot(0, "S01 both windows: the real one with the lady near, the lit second hatch beyond with the sleeve and bag on its sill, pushing in", move([5.0, -1.2, 1.6], [5.0, 5.0, 1.6], [5.0, -0.2, 1.6], [5.0, 5.0, 1.6], 17, 21), hand=0)
+shot("L02", "S02 pushing toward the second hatch", move([6.2, 0.0, 1.65], [10.1, 5.0, 1.6], [8.6, 1.4, 1.65], [10.1, 5.0, 1.6], 28, 36), hand=0)
 shot("L03", "S03 a car rolls past the second window", still([8.5, -0.6, 0.7], [10.5, 3.0, 1.1], 28))
 shot("L04", "S04 a van with a taped window", still([9.0, -0.4, 0.8], [11.0, 3.0, 1.2], 26))
 shot("L05", "S05 Mr. Dale at his door", still([300, -1.7, 1.55], [300, 3, 1.5], 36))
@@ -389,7 +389,7 @@ shot("L20", "S31 the second hatch is lit", still([6.5, 2.5, 1.55], [10.1, 5.0, 1
 shot("L21", "S32 hand, bag, ticket 41", still([9.0, 2.7, 1.5], [10.1, 4.0, 1.3], 50))
 shot("L22", "S33 Cal says the fries are better", still([2.6, 1.0, 1.75], [0, 0, 1.5], 36), "cal")
 shot("L22.2", "S34 me scared", still([2.0, -1.2, 1.75], [0, 0, 1.5], 36), "me")
-shot("L23", "S35 me says no", still([1.8, -1.3, 1.75], [0, 0, 1.5], 36), "me")
+shot("L23+0.35", "S35 me says no", still([1.8, -1.3, 1.75], [0, 0, 1.5], 36), "me")
 shot("L23.1", "S36 rolling up to the second window", still([6.0, -0.5, 1.0], [10, 3.0, 1.2], 30))
 seq("L24", [("S37 the bag in my lap", still([1.3, -0.6, 1.9], [0.25, 0.0, 0.85], 28), "me"),
             ("S38 two buns, no pickles", still([1.0, -0.4, 1.7], [0.2, 0.0, 0.95], 30), "me")])
@@ -436,15 +436,16 @@ shot("L50.1", "S75 me scared", still([2.0, -1.2, 1.75], [0, 0, 1.5], 36), "me")
 shot("P02", "S76a dim, the hatch", still([6.0, 0.2, 2.3], [10.0, 4.0, 1.9], 24))
 shot("L51", "S76 out to its waist", still([6.0, 0.2, 2.3], [10.0, 4.0, 1.9], 24))
 shot("L52", "S77 its face a hand from Cal's", still([12.5, 2.0, 1.9], [10.3, 3.4, 1.9], 40))
-shot("L53", "S78 high wide, one window", still([5, -30, 14], [5, 5, 1.5], 20), hand=0)
-shot("L54", "S79 the one window", still([0.0, 0.9, 1.65], [0, 5.2, 1.6], 30))
-shot("L54.1", "S80 the second hatch, same frame", still([10.1, 0.9, 1.65], [10.1, 5.2, 1.6], 30))
+BOTH = lambda z0, z1: move([5.0, -3.0, 1.9], [5.0, 5.0, 1.6], [5.0, -3.0 + z1, 1.9], [5.0, 5.0, 1.6], z0, z0 + 2)
+shot("L53", "S78 both hatches, same framing, one window (the lit one empty)", BOTH(16, 0.0), hand=0)
+shot("L54", "S79 the two windows, push", BOTH(16, 0.6), hand=0)
+shot("L54.2", "S80 the second window is the first one again", still([5.0, -2.4, 1.9], [5.0, 5.0, 1.6], 20), hand=0)
 shot("L55", "S81 down the back wall", move([22, 9.4, 1.1], [-5, 12.9, 1.0], [10, 9.4, 1.1], [-26, 12.9, 1.0], 22, 22), hand=0)
 # ---- 07 the order
-for k in range(4):
-    shot(f"L56+{round(0.35 * k, 2)}", f"S82 Cal's grin {k}", CAL_FRAME, "cal", hand=0)
-for k in range(4):
-    shot(f"L57+{round(0.45 * k, 2)}", f"S83 me, pose {k}", still([2.2, -1.1, 1.75], [0, 0, 1.5], 36), "me", hand=0)
+for k in range(3):
+    shot(f"L56+{round(0.5 * k, 2)}", f"S82 Cal's grin {k}", CAL_FRAME, "cal", hand=0)
+for k in range(3):
+    shot(f"L57+{round(0.6 * k, 2)}", f"S83 me, pose {k}", still([2.2, -1.1, 1.75], [0, 0, 1.5], 36), "me", hand=0)
 shot("L58", "S84 the bag on the sill", still([7.6, 3.4, 1.9], [10.1, 4.0, 1.3], 35))
 shot("L58.2", "S85 four tickets", MIRROR, "cal")
 shot("L59", "S86 the speaker post coming up", still([-14.5, 0.5, 1.4], [-12, 3.8, 1.5], 38))
@@ -473,8 +474,8 @@ for who in acting:
 cues.sort(key=lambda k: approx(k["at"]))
 
 sfx = [
-    {"at": "L01.2+0.4", "kind": "hit", "db": -9, "dur": 1.0},
-    {"at": "L01.2+0.55", "kind": "click", "db": -16},
+    {"at": "L01.2+0.1", "kind": "hit", "db": -9, "dur": 1.0},
+    {"at": "L01.2+0.25", "kind": "click", "db": -16},
     {"at": "L02+0.3", "kind": "click", "db": -22},
     {"at": "L03", "kind": "whoosh", "db": -26, "dur": 0.9},
     {"at": "L04", "kind": "whoosh", "db": -27, "dur": 0.9},
