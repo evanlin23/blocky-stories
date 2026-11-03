@@ -592,37 +592,43 @@ def build_stander(kit, ctx):
         groups[name] = g
         return g
 
-    # legs (patchy snow down the legs)
+    # legs: only a few clinging flecks, so the street shows through
     gl = grp("legs", root, (0, 0, 0.52))
     legs = []
     for sx in (-1, 1):
-        legs += dust(rng, (sx * 0.2, 0, 0.0, 0.3, 0.32, 1.04), cell=0.08)
+        legs += dust(rng, (sx * 0.2, 0, 0.0, 0.3, 0.32, 1.04), cell=0.08, edge_p=0.0, front_p=0.0, side_p=0.0, back_p=0.0)
+        legs.append((0.34, 0.36, 0.05, sx * 0.2, 0, 0.5))               # snow on each knee-top shelf
+        legs.append((0.1, 0.05, 0.3, sx * 0.2 + sx * 0.15, -0.16, 0.2))   # a thin streak down each shin
     multibox(kit, "stander.legs", legs, snow, gl)
-    for sx in (-1, 1):
-        kit.box(f"stander.frost.leg{sx}", (0.3, 0.32, 1.04), (sx * 0.2, 0, 0.0), frost, gl)
-    # torso and arms (ride the hips)
+    # torso and arms (ride the hips): snow ONLY on top surfaces and a few streaks; gaps everywhere else
     gb = grp("body", hips, (0, 0, 0.45))
     up = []
-    up += dust(rng, (0, 0, 0.0, 0.9, 0.45, 0.9), cell=0.08, front_p=0.3)
+    up.append((0.24, 0.4, 0.07, -0.28, 0, 0.46))                         # a thin collar-bone dusting
+    up.append((0.24, 0.4, 0.07, 0.28, 0, 0.46))
+    up.append((0.07, 0.05, 0.4, -0.18, -0.235, 0.25))                    # a streak down the chest
+    up.append((0.07, 0.05, 0.22, 0.2, -0.235, 0.3))
+    up.append((0.09, 0.05, 0.12, 0.05, -0.235, -0.1))
     for sx in (-1, 1):
-        up += dust(rng, (sx * 0.6, 0, -0.45, 0.26, 0.3, 1.5), cell=0.07, edge_p=0.95, front_p=0.4, side_p=0.35)
-        up.append((0.3, 0.34, 0.12, sx * 0.6, 0, -1.2))                 # a mitt of snow where each hand hangs
+        up.append((0.3, 0.34, 0.06, sx * 0.6, 0, 0.3))                  # arm-top ledge near the shoulder
+        up.append((0.32, 0.36, 0.06, sx * 0.6, 0, -0.55))               # forearm shelf: the elbow bend
+        up.append((0.06, 0.05, 0.3, sx * 0.6 + sx * 0.1, -0.16, -0.1))  # one streak down the outer arm
+        up.append((0.3, 0.34, 0.1, sx * 0.6, 0, -1.2))                  # a mitt of snow where each hand hangs
     multibox(kit, "stander.torso", up, snow, gb)
-    kit.box("stander.frost.torso", (0.9, 0.45, 0.9), (0, 0, 0.0), frost, gb)
-    for sx in (-1, 1):
-        kit.box(f"stander.frost.arm{sx}", (0.26, 0.3, 1.5), (sx * 0.6, 0, -0.45), frost, gb)
-    # the shoulders: a slab of snow from arm to arm, with a cap on each arm
+    # (no frost fill: it read as a solid body; the shape is held by the snow alone)
+    # the shoulders: a thin slab from arm to arm, with a low cap on each arm
     gs = grp("shoulders", hips, (0, 0, 0.9))
-    kit.box("stander.shoulders", (1.5, 0.5, 0.07), (0, 0, 0.035), snow, gs, bevel=0.02)
+    kit.box("stander.shoulders", (1.5, 0.5, 0.05), (0, 0, 0.025), snow, gs, bevel=0.015)
     for sx in (-1, 1):
-        kit.box(f"stander.sh{sx}", (0.36, 0.38, 0.14), (sx * 0.6, 0, 0.1), snow, gs, bevel=0.04)
-    kit.box("stander.sh.mid", (0.6, 0.34, 0.06), (0, 0, 0.1), snow, gs, bevel=0.02)
-    # head and hat (ride the neck)
+        kit.box(f"stander.sh{sx}", (0.3, 0.34, 0.07), (sx * 0.6, 0, 0.07), snow, gs, bevel=0.02)
+    # head and hat (ride the neck): the head is a snow-faced block, left a little shadowed; deep uneven eye hollows
     gh = grp("head", neck, (0, 0, 0.27))
-    kit.box("stander.head", (0.5, 0.5, 0.5), (0, 0, 0), snow, gh, bevel=0.05)
+    kit.box("stander.head", (0.5, 0.5, 0.5), (0, 0, 0), P(kit, "#dfe9f7", 0.95, 0.05), gh, bevel=0.03)
+    kit.box("stander.brow", (0.54, 0.54, 0.07), (0, 0, 0.235), snow, gh, bevel=0.02)
     for sx in (-1, 1):
-        kit.box(f"stander.eye{sx}", (0.11, 0.04, 0.24), (sx * 0.13, -0.255, -0.1), dark, gh)
-    kit.box("stander.mouth", (0.2, 0.04, 0.05), (0, -0.255, -0.24), dark, gh)
+        kit.box(f"stander.cheek{sx}", (0.12, 0.05, 0.1), (sx * 0.17, -0.265, -0.2), snow, gh, bevel=0.01)
+    kit.box("stander.eyeL", (0.085, 0.09, 0.32), (-0.12, -0.255, -0.02), dark, gh)
+    kit.box("stander.eyeR", (0.07, 0.09, 0.22), (0.13, -0.255, -0.09), dark, gh)
+    kit.box("stander.mouth", (0.16, 0.09, 0.04), (0.02, -0.255, -0.27), dark, gh)
     gt = grp("hat", neck, (0, 0, 0.55))
     kit.box("stander.hbrim", (0.8, 0.8, 0.05), (0, 0, 0.0), snow, gt, bevel=0.015)
     kit.box("stander.hcrown", (0.54, 0.54, 0.22), (0, 0, 0.13), snow, gt, bevel=0.02)
@@ -912,9 +918,9 @@ MODES = {
     "dusk": {"sun": 0.08, "room": 1.0, "lamp": 1.0, "porch": 0.6, "street": 0.5, "corner": 0.0, "globe": 1.0,
              "world": [0.55, "#476bc0"], "sun_c": "#8fa8ff"},
     "dim": {"sun": 0.04, "room": 0.28, "lamp": 0.55, "porch": 0.5, "street": 0.8, "corner": 0.0, "globe": 1.2,
-            "world": [0.42, "#3a5aa8"], "sun_c": "#7f9be8", "fill": 1.0},
+            "world": [0.42, "#3a5aa8"], "sun_c": "#7f9be8", "fill": 1.0, "rim": 1.0},
     "night": {"sun": 0.04, "room": 0.4, "lamp": 0.6, "porch": 1.0, "street": 1.0, "corner": 0.0, "globe": 1.0,
-              "world": [0.4, "#34549e"], "sun_c": "#7f9be8", "fill": 1.0},
+              "world": [0.4, "#34549e"], "sun_c": "#7f9be8", "fill": 1.0, "rim": 1.0},
 }
 
 
@@ -930,6 +936,8 @@ def build_lights(kit, ctx):
     kit.aim(gl, (GL[0], GL[1], SILL + 0.1))
     fl = kit.light("fill", "SPOT", (-12.6, -0.4, 2.7), 380, "#cfe6ff", size=0.3, spot=40, blend=0.6)
     kit.aim(fl, (-9.5, -1.4, 1.9))
+    rl = kit.light("rim", "SPOT", (-6.4, -3.6, 3.3), 2200, "#8cc4ff", size=0.2, spot=45, blend=0.5)
+    kit.aim(rl, (-8.85, -1.4, 1.8))
     co = kit.light("corner", "SPOT", (0, 56, 55), 260000, "#fff0c0", size=1.0, spot=50, blend=0.4)
     kit.aim(co, (0, 40, 0))
 
@@ -1020,7 +1028,7 @@ def animate(kit, story, tl, t, ctx):
         cur_name = cur["set"]
         u = ss((t - cur["t"]) / max(0.3, cur.get("dur", 0.3)))
     A, B = MODES[prev_name], MODES[cur_name]
-    for k in ("sun", "room", "lamp", "porch", "street", "corner", "globe", "fill"):
+    for k in ("sun", "room", "lamp", "porch", "street", "corner", "globe", "fill", "rim"):
         over[k] = lerp(A.get(k, 0.0), B.get(k, 0.0), u)
     pc = ramped(_cues(tl, "porch"), "on", t, 1.0, 0.3)
     over["porch"] *= pc

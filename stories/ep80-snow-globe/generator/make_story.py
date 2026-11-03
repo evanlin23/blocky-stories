@@ -416,6 +416,8 @@ key("me", "L38", arms=[40, 40], lean=14, blend=0.1)
 key("me", "L38+0.3", arms=[78, 78], lean=4, blend=0.3)
 hide("me", "L39")
 gus_chair("L39", "asleep", (-95, 18))
+put("gus", "L47", [GUS_SEAT[0], GUS_SEAT[1] + 0.45, GUS_SEAT[2]], yaw=180, expr="asleep", head=[-95, 18], sit=True)
+put("gus", "L47.2", GUS_SEAT, yaw=180, expr="asleep", head=[-95, 18], sit=True)
 # my face lit by the window
 put("me", "L49", [-12.9, 0.5], yaw=90, expr="scared", head=[0, 4])
 key("me", "L49.1", expr="scared", blend=0.3)

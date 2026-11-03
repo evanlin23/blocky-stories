@@ -6844,6 +6844,78 @@
     "yaw": 180
    },
    {
+    "at": "L47",
+    "pos": [
+     -10.95,
+     -1.4,
+     -0.06
+    ]
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -10.95,
+     -0.95,
+     -0.06
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     -95,
+     18
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": true,
+    "expr": "asleep",
+    "yaw": 180
+   },
+   {
+    "at": "L47.2",
+    "pos": [
+     -10.95,
+     -0.95,
+     -0.06
+    ]
+   },
+   {
+    "at": "L47.2",
+    "pos": [
+     -10.95,
+     -1.4,
+     -0.06
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     -95,
+     18
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "sit": true,
+    "expr": "asleep",
+    "yaw": 180
+   },
+   {
     "at": "L57",
     "expr": "neutral",
     "head": [
