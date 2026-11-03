@@ -1,10 +1,10 @@
 # ep99-statue-years: the script (writer, 2026-11-03, batch 9b)
 
 - **Slug:** `ep99-statue-years` (batch 9b, upload order 3 of 4)
-- **Pitch:** E17 in `docs/research/premise-engines.md` (engine 19, someone else carries your aging, panel A 8, panel B 5). Panel B's note ("mechanics take too long to parse") is met by cutting the second turn to one beat: the reveal is one picture (a wrinkle sliding off the stone onto Mom's smile) and one line ("It's MOM."). Opening shape `cost`. Lane: experiment (a warm wonder rule with no creature, against the creepy core). Length arm: mid (60 to 90 s).
+- **Pitch:** E17 in `docs/research/premise-engines.md` (engine 19, someone else carries your aging, panel A 8, panel B 5). Panel B's note ("mechanics take too long to parse") is met by cutting the second turn to one beat: the reveal is one line said first ("It was MOM.", L26) and then one picture (a wrinkle sliding off the stone onto Mom's smile, L27). Opening shape `cost`. Lane: experiment (a warm wonder rule with no creature, against the creepy core). Length arm: mid (60 to 90 s).
 - **Title:** Nobody Here Ages But The STATUE 🗿
-- **Word count:** 293 spoken words in 40 lines, all `narrator`, plus one 0.6 s music drop before L25.
-- **Estimated length:** about 68 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L17 first. If it lands under 62 s, nothing is added.
+- **Word count:** 315 spoken words in 40 lines, all `narrator`, plus one 0.6 s music drop before L25.
+- **Estimated length:** about 72 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L17 first. If it lands under 62 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A sunny small town on a hill: a park at the top of long brick steps, rose sandstone, sunflower beds, sage lawns, a bright sky. The one dim scene is the pre-dawn park (L25 to L31), a clear lilac-and-peach dawn sky, still bright enough to read every face. Light changes ramp over 0.3 s or more.
 - **Hold:** scripts only (batch 9b). Not built, not voiced.
 
@@ -26,19 +26,19 @@ Against everything made: ep33 owns time at altitude (a day up there costs a year
 - **One move, as the panel asked:** the plant is in the montage (L07: "You can take your years BACK. / Nobody ever HAS."), so the reveal needs no new rule. The picture does the work.
 
 ## The story
-- **Premise:** On your birthday you light a candle at the statue's feet, touch its toe and give it your year, so nobody in town gets older, and the statue's stone beard hangs to its knees. You can take your years back, but nobody ever has. My dad has never given one, so he's the only old face in town, and strangers ask Mom if he's her father. Tomorrow is the first birthday I'm old enough to give. Then on Monday the statue gets younger: a wrinkle gone, then two, the beard up to its chest. Nobody has a new gray hair except Mom, who smiles at hers, and she's up before the sun every morning.
+- **Premise:** On your birthday you light a candle at the statue's feet, touch its toe and give it your year, so nobody in town gets older, and the statue's stone beard hangs to its knees. You can take your years back, but nobody ever has. My dad has never given one, so he's the only old face in town, and strangers ask Mom if he's her father. I'm grown, and at the end of this week, on Sunday, I turn twenty-one, the age this town gives its first year. That same Monday the statue gets younger: a wrinkle gone, then two, the beard up to its chest. Nobody has a new gray hair except Mom, who smiles at hers, and she's up before the sun every morning.
 - **Rule / hook (L01, about 2.2 s):** "Nobody here gets OLDER. / The statue does it / for US." L02 tightens it with the price: "On your birthday, / you give it / your YEAR."
 - **The relatable want:** never getting older, the wish anyone has had, and a family that gets stared at: people think my mom is my sister.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** the statue's stone beard, plus a corner tag in the top-left: a sandstone plate with a candle glyph and a number, the statue's wrinkles counted in short carved lines (a row of 12 lines at the start, one fewer each day from L13, 7 at L16, and it ticks down by one under L27 as the line slides onto Mom). Frame 1 is the statue's ancient stone face, close.
 - **The 3 to 5 example montage (L03 to L07, 4 to 15 s):** a candle at its feet and a hand to its toe (L03), Mrs. Lark at the bakery, thirty-two for fifty years (L04), people thinking my mom is my sister (L05), the stone beard to its knees (L06), and the one rule nobody uses: you can take them back (L07).
 - **A concrete mystery by 15 s:** Dad, the only old face in town (L08 to L09, 15 to 18 s). The bigger mystery lands at 24 s: the statue getting younger (L13).
-- **How the narrator is the exception:** I haven't given a year yet. Tomorrow I'm old enough to (L12). Dad is the town's other exception.
+- **How the narrator is the exception:** I'm an adult who hasn't given a year yet: here you give your first at twenty-one, and I turn twenty-one this Sunday at the end of the week (L12), the day after the dawn reveal. Dad is the town's other exception.
 - **The loved ones at stake:** my mom (named at L05 in the same shot, standing beside me, both looking the same age) and my dad (named at L08, gray-haired, arm round Mom).
 - **The rule broken:** nobody breaks it. Mom uses the half everyone forgets.
 - **The eerie middle (L13 to L25, 24 to 45 s):** the statue getting younger day by day, the whole town at its mirrors, "whose are they?", and at dawn the statue's stone head bent down toward Mom.
-- **Twist and reveal (L26 to L31, 45 to 54 s):** said plainly, in one move, over one picture. She puts her hand on its stone cheek, a line slides off the stone onto her face, right where she smiles. "It's MOM. / She's taking her years BACK, / one every MORNING, / so she can get OLD / next to DAD."
+- **Twist and reveal (L26 to L31, 45 to 56 s):** said plainly, in one move: "It was MOM." first (L26), then one picture. She puts her hand on its stone cheek, a line slides off the stone onto her face, right where she smiles. "It's MOM. / She's taking her years BACK, / one every MORNING, / so she can get OLD / next to DAD."
 - **The climax turns the rule's own logic:** the rule says you can take them back. Mom does, and on my birthday I keep mine. No new magic.
-- **How the last 15 seconds turn over the first line:** Mom and Dad walk to the bakery arm in arm, two gray heads, and nobody asks if he's her father anymore. On my birthday I walk past the statue and keep my year, and it turns its stone head to watch me go, which it's never had to do. "Because" runs into L01, which now explains why: nobody here gets older, until now.
+- **How the last 15 seconds turn over the first line:** Mom and Dad walk to the bakery arm in arm, two gray heads, and nobody asks if he's her father anymore. On Sunday, my birthday, I walk past the statue and keep my year, and it turns its stone head and watches me go, curious, like it noticed me: nobody had ever walked past it before. "Because" runs into L01, which now explains why: nobody here gets older, until now.
 - **The plants a rewatch catches:**
   1. L07: "You can take your years BACK. / Nobody ever HAS."
   2. L22: Mom found a gray hair and smiled at it instead of pulling it out.
@@ -133,20 +133,20 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S23 | L23 | 38.3 | Pre-dawn: Mom slipping out of our front door, the sky lilac. |
 | S24 | L24 | 40.3 | Me following up the long brick steps at a distance, `worried`. |
 | (drop) | | 42.5 | 0.6 s: the dawn park, the statue's dark outline, still. |
-| S25 | L25 | 43.1 | From behind me: the statue's huge head bent down toward Mom at its feet. |
-| S26 | L26 | 45.5 | Mom on the plinth step, her hand at the end of her sleeve flat on its stone cheek, `calm`. |
-| S27 | L27 | 47.3 | Close: a thin crack line sliding off the stone and onto Mom's face. The tag drops a line. Cover frame (47.6). |
+| S25 | L25 | 43.1 | (revised) From behind me: the statue's huge head bent down toward a small figure at its feet, back to us. |
+| S26 | L26 | 45.5 | (revised) The figure turns into the dawn light: Mom, `calm`. |
+| S27a, S27b | L27 | 46.3 | (revised) Mom's hand at the end of her sleeve flat on its stone cheek. Then close: a thin crack line sliding off the stone onto Mom's face. The tag drops a line. Cover frame (48.0). |
 | S28 | L28 | 49.5 | Mom's face: a new smile line, `smile`. |
-| S29 | L29 | 50.5 | Me behind a sunflower bed, `amazed`. |
-| S30 | L30 | 51.1 | The sun coming up behind the statue, Mom turning, a little grayer. |
-| S31 | L31 | 52.9 | Mom seeing me, `sheepish`, then `laugh`. |
+| S29 | L29 | 51.0 | (revised) Me behind a sunflower bed, `amazed`, then the sun coming up behind the statue. |
+| S30 | L30 | 52.8 | (revised) Mom on the plinth step, a little grayer, looking down the hill toward our house where Dad sleeps. |
+| S31 | L31 | 54.5 | (revised) Mom seeing me, `sheepish`, then `laugh`. |
 | S32 | L32 | 54.7 | Sunny main street: Mom and Dad walking arm in arm to the bakery. |
 | S33 | L33 | 56.7 | From behind: two gray heads side by side. |
 | S34 | L34 | 57.5 | Mrs. Lark at her counter, smiling at them both. |
-| S35 | L35 | 59.1 | My birthday morning: a cupcake with one candle on our kitchen table. |
+| S35 | L35 | 59.1 | (revised) Sunday, my birthday: a cupcake with one candle on our kitchen table, a calendar glyph on the circled day. |
 | S36 | L36 | 60.5 | Me walking past the candle tray at the statue's feet, hands in pockets. |
 | S37 | L37 | 61.9 | Me on the top step, `grin`. |
-| S38a, S38b | L38 | 62.8 | Me going down the brick steps. Then a cut back up: the statue's stone head now turned to follow me. |
+| S38a, S38b | L38 | 62.8 | (revised) Me going down the brick steps. Then a cut back up: the statue's stone head now turned to follow me, its face curious, never angry (a noticing, not a threat). |
 | S39 | L39 | 65.3 | The statue's face, close, turned toward camera. |
 | S40 | L40 | 66.9 | Push in to S01's framing of the stone face. Loop. |
 
@@ -167,8 +167,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L09: He's the only / old face / in TOWN.
 - L10: He says / he wants every year / he GETS.
 - L11: And Mom gets asked / if he's her FATHER.
-- L12: Tomorrow's my BIRTHDAY. / The first one / I'm old enough to GIVE.
-- L13: Then on Monday, / the statue / got YOUNGER.
+- L12: This SUNDAY, / at the end of the week, / I turn twenty-ONE. / That's when you give / your first YEAR.
+- L13: Then that MONDAY, / the statue / got YOUNGER.
 - L14: One wrinkle, / GONE.
 - L15: Tuesday, TWO.
 - L16: By Friday, / its beard / was up to its CHEST.
@@ -180,21 +180,21 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L22: She didn't pull it OUT. / She SMILED at it.
 - L23: And every morning / she was up / before the SUN.
 - L24: So on Saturday, / I followed her / up the park STEPS.
-- L25: In the dark, / the statue's head / was bent DOWN. / Toward HER.
-- L26: She put her hand / on its stone CHEEK.
-- L27: And a line / slid off the STONE, / onto her FACE.
+- L25: In the dark, / the statue's head / was bent DOWN, / toward someone at its FEET.
+- L26: It was MOM.
+- L27: She put her hand / on its stone CHEEK, / and a line / slid off the STONE / onto her FACE.
 - L28: Right where / she SMILES.
-- L29: It's MOM.
-- L30: She's taking her years BACK, / one every MORNING,
-- L31: so she can get OLD / next to DAD.
+- L29: She's taking her years BACK, / one every MORNING,
+- L30: so she can get OLD / next to DAD.
+- L31: She'd rather look / like his WIFE.
 - L32: Now they walk / to the bakery / arm in ARM.
 - L33: Two gray HEADS.
 - L34: Nobody asks / if he's her father ANYMORE.
-- L35: So this morning, / on my BIRTHDAY,
+- L35: So on Sunday, / my twenty-first BIRTHDAY,
 - L36: I walked right PAST the statue.
 - L37: I kept my YEAR.
-- L38: And the statue / turned its stone HEAD / to watch me GO.
-- L39: It's never had to / do that BEFORE.
+- L38: And the statue / turned its stone HEAD / and watched me GO, / like it had NOTICED me.
+- L39: Nobody had ever / walked PAST it / BEFORE.
 - L40: Because
 
 (The 0.6 s music drop sits between L24 and L25.)

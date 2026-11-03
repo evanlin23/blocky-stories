@@ -3,8 +3,8 @@
 - **Slug:** `ep97-prize-bears` (batch 9b, upload order 1 of 4)
 - **Pitch:** E04 in `docs/research/premise-engines.md` (engine 4, memory as currency, panel A 7, panel B 7). Opening moved off `cost` to `confess`, as asked. Lane: core. Length arm: mid (60 to 90 s).
 - **Title:** This Arcade Takes MEMORIES, Not Coins 🕹️
-- **Word count:** 334 spoken words in 43 lines, all `narrator`, plus one 0.6 s music drop before L23.
-- **Estimated length:** about 77 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L06 first, then L19. If it lands under 62 s, nothing is added.
+- **Word count:** 349 spoken words in 43 lines, all `narrator`, plus one 0.6 s music drop before L23.
+- **Estimated length:** about 80 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L06 first, then L19. If it lands under 62 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright arcade in the afternoon: grape violet carpet with a printed glyph pattern, cyan and orange cabinet glow, a white prize counter. No dark scene. The prize closet (L23 to L27) is lit by one warm bare bulb, still bright. Cabinet lights pulse slowly (flash_safe), never strobe.
 - **Hold:** scripts only (batch 9b). Not built, not voiced.
 
@@ -37,7 +37,7 @@ Checked against Made (ep11 to ep84) and the batch 7 list: no arcade, no prize co
 - **The rule broken:** nobody breaks it. The rule is what's been happening to me. The turn is a door left open (L22).
 - **The scare (L22 to L26, 40 to 47 s):** the prize closet: one bulb, forty identical giant bears floor to ceiling, every button-eyed face toward the door.
 - **Twist and reveal (L28 to L31, 48 to 56 s):** said plainly, in one move. "She's brought me / every Saturday / for forty WEEKS. / I win it / every TIME. / And at the DOOR, / I lose it. / Tess never plays, / so she remembers / every ONE."
-- **Why (L32, L33):** it's the one day a week I don't check my phone, and to me it's always the first time I ever won her anything.
+- **Why (L32, L33, revised):** she leaves every bear at the arcade with the prize man so I never find out (that's why the closet is there, not at her place), because to me it's always the first time I ever won her anything, and she says that's the happiest she ever sees me. Warm, for my sake.
 - **The climax turns the rule's own logic:** the rule only takes it from whoever plays. So I give Tess my last token. She plays once, badly, wins me a rubber duck, and at the door she forgets the afternoon while I keep it. No new magic.
 - **How the last 15 seconds turn over the first line:** in the car I tell her every Saturday. I call her back now. We take turns remembering. Next week it's my turn to forget: "I'll walk in, / and look UP," runs straight into L01, so the opening becomes next Saturday, with me not knowing again.
 - **The plants a rewatch catches:**
@@ -141,8 +141,8 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S29 | L29 | 50.1 | Quick insert montage: Tess's car in sun, then rain, then autumn leaves, the same parking spot. |
 | S30a, S30b | L30 | 51.9 | Me at the counter with a bear, `grin`. Then me stepping out of the door into sun, the orange shimmer sliding off me, blinking. |
 | S31 | L31 | 54.5 | Tess on her stool, watching, `soft`, her hands empty. |
-| S32 | L32 | 56.4 | Me at skee-ball, my phone face-down on the stool beside Tess. |
-| S33 | L33 | 58.8 | Me handing a bear across to Tess, both laughing (cut before hands meet). |
+| S32 | L32 | 56.4 | (revised) Tess at the counter handing a new bear back over to the prize man (cut before hands meet), finger to her lips, `sheepish`. |
+| S33a, S33b | L33 | 58.6 | (revised) Me handing a bear across to Tess, `grin`, so proud (cut before hands meet). Then Tess watching me, `soft`, smiling. |
 | S34 | L34 | 61.2 | The glass door, sunlight, the shimmer on its frame. |
 | S35 | L35 | 63.0 | Close: a single orange token sliding across the counter to Tess. |
 | S36 | L36 | 64.6 | Tess at the claw-free ring-drop game, a ring clattering off the post, `laugh`. |
@@ -191,8 +191,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L29: She's brought me / every Saturday / for forty WEEKS.
 - L30: I win it / every TIME. / And at the DOOR, / I lose it.
 - L31: Tess never plays, / so she remembers / every ONE.
-- L32: It's the one day a week / I don't check my PHONE.
-- L33: And it's always / the first time / I ever won her ANYTHING.
+- L32: She leaves every bear HERE, / with the prize man, / so I never find OUT.
+- L33: Because to me, / it's always the first time / I ever won her ANYTHING, / and she says / that's the happiest / she ever sees me.
 - L34: The rule only takes it / from whoever PLAYS.
 - L35: So I handed Tess / my last TOKEN.
 - L36: She's TERRIBLE.

@@ -3,8 +3,8 @@
 - **Slug:** `ep98-town-whistle` (batch 9b, upload order 2 of 4)
 - **Pitch:** E12 in `docs/research/premise-engines.md` (engine 14, the threat is already inside, panel A 5, panel B 8). Panel A's note ("no threat yet in line 1") is met by L02, which adds the threat without spoiling the reveal (see below). Opening shape `if`. Lane: core. Length arm: long (110 to 150 s).
 - **Title:** Everyone Hides When The WHISTLE Blows 📯 (changed from the pitch's "When The Whistle Blows, Go DOWNSTAIRS": RULES → Titles bars "a bare instruction that reads like a game hint", the "When the floor knocks, knock back" shape).
-- **Word count:** 532 spoken words in 74 lines, all `narrator`, plus two 0.7 s music drops (before L30 and before L53).
-- **Estimated length:** about 123 s at 290 wpm with 0.15 s gaps, the drops and the loop tail. If it runs over 145 s, cut L06, then L23, then L39. If it lands under 112 s, nothing is added.
+- **Word count:** 549 spoken words in 74 lines, all `narrator`, plus two 0.7 s music drops (before L30 and before L53).
+- **Estimated length:** about 126 s at 290 wpm with 0.15 s gaps, the drops and the loop tail. If it runs over 145 s, cut L06, then L23, then L39. If it lands under 112 s, nothing is added.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright small town in high summer: white and pastel clapboard houses with green lawns, blue sky, a brass whistle on a tall green pole in the middle of our street. The one dark scene is our basement stairs at midnight (L43 to L55), lit warm by my lamp. The sundown scene (L24 to L36) is gold, never dark. Light changes ramp over 0.3 s or more.
 - **Hold:** scripts only (batch 9b). Not built, not voiced.
 
@@ -26,20 +26,20 @@ Against everything made: knock-back's keeper is under a farmhouse floor and guar
 - **Line 2 adds a threat without the reveal:** the panel suggested "Something down there blows it." That *is* the reveal, so L02 states the threat the town believes ("Stay up, / and you'll meet / what walks the STREETS."). The real threat is planted by 15 s instead: the stairs gain a step every whistle (L07 to L09).
 
 ## The story
-- **Premise:** When the town whistle blows, at any hour, everyone goes down to their basement until it stops, because of what walks the streets. Our basement had thirteen steps when Dad bought the house. Now it has twenty-six, one more every whistle, and nobody else counts. My grandpa, Hal, Dad's dad, lives next door in the only house with no basement, built himself on stone blocks, and when the whistle blows he makes tea. Dad begs him every week to move in with us.
+- **Premise:** When the town whistle blows, at any hour, everyone goes down to their basement until it stops, because of what walks the streets. I'm twenty-four and back living with Dad, and our basement had thirteen steps when I was born. Now it has twenty-six, one more every whistle, and nobody else counts. My grandpa, Hal, Dad's dad, lives next door in the only house with no basement, built himself on stone blocks, and when the whistle blows he makes tea. Dad begs him every week to move in with us.
 - **Rule / hook (L01, about 2.4 s):** "When the town whistle BLOWS, / you go down / to your BASEMENT." L02: "Stay up, / and you'll meet / what walks the STREETS."
 - **The relatable fight:** Dad and his stubborn father, who won't move in and won't hide.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a step counter tag in the top-right corner, a small brass plate with a stair glyph and a number: our basement's step count (26 at the start, 27 at L37, 28 at L45, 13 at L70). Frame 1 is the brass whistle itself, close, a puff of dust from its mouth as it blows.
 - **The 3 to 5 example montage (L03 to L06, 4 to 12 s):** it blows at noon and everyone runs (L03), the baker leaves his bread in the oven (L04), a whole softball team runs down a stranger's cellar stairs (L05), the mail lady ducks into the closest house (L06).
-- **A concrete mystery by 15 s:** thirteen steps when Dad bought the house, twenty-six now, one more every whistle (L07 to L09, 12 to 16 s).
+- **A concrete mystery by 15 s:** thirteen steps when I was born, twenty-six now (L07 also says plainly that I'm twenty-four), one more every whistle (L07 to L09, 12 to 16 s).
 - **How the narrator is the exception:** nobody else counts the steps (L10). Later, I'm the one who sees the street during a whistle (L29 to L34).
 - **The loved ones at stake:** my dad (seen at L07 on our basement stairs, named as Dad) and my grandpa, Hal (named at L11, "Dad's dad", on his porch next door in the same shot).
 - **The rule broken:** L28, about 49 s in: I'm still upstairs at Grandpa's when it blows.
 - **First real scare (L30 to L34, 52 to 58 s):** the empty street, and every basement window on it breathing out dust at once, in time with the whistle.
-- **Escalation (L37 to L42, 61 to 71 s):** the Dunns across the street have forty-one steps and laugh about it. Dad comes up grey with dust and stops arguing with Grandpa, only staring at the basement door.
+- **Escalation (L37 to L42, 61 to 71 s):** the Dunns across the street have forty-one steps, and Mrs. Dunn only smiles at the dark stairs, wanting to go back down (the pull, not happiness). Dad comes up grey with dust and stops arguing with Grandpa, only staring at the basement door.
 - **The creature (L53 to L55, 87 to 92 s, 71% through):** under the crack below our bottom step, far down, a face as wide as our whole basement looking up, its mouth wrapped round the end of the whistle's pipe.
 - **Twist and reveal (L56 to L61, 92 to 101 s):** said plainly. "Nothing walks the STREETS. / It lives UNDER them. / It blows the whistle ITSELF, / to call us all DOWN. / And every time we COME, / it pulls the stairs / one step CLOSER." Then why Grandpa built on blocks.
-- **The climax turns the rule's own logic (L62 to L69):** it lives in our town too, and the rule is for everyone in town: when the whistle blows, you go down. So I blow the whistle from the top, down the pipe at it, and it obeys: step after step, deeper than any stairs. No new magic.
+- **The climax turns the rule's own logic (L62 to L69):** said in one plain line at L66, "It lives in our town TOO, / so the whistle's rule / sends IT down." The rule is for everyone in town: when the whistle blows, you go down. So I blow the whistle from the top, down the pipe at it, and it obeys: step after step, deeper than any stairs. No new magic.
 - **How the last 15 seconds turn over the first line:** thirteen steps again, Grandpa at our table. Then, last night, very faint, from far under the floor, the whistle blew, and Dad stood up and walked to the basement door. "Because" leads into L01, which now reads as the thing's own rule, still working on Dad.
 - **The plants a rewatch catches:**
   1. L18: the whistle's pipe doesn't go up the pole. It goes down, into the road.
@@ -71,10 +71,10 @@ One summer street in a small town: white, butter and sky-blue clapboard houses o
 - **What's true underneath (never said beyond the reveal):** the Under lies far below the street and has always blown the whistle through the pipe. Every whistle, every basement in town is a step deeper toward it, and the people asleep on the bottom steps come up dusty from how far down they went. It never comes up and never touches anyone. Sent down by its own rule, it goes deeper than the stairs reach, for now.
 
 ## Cast
-- `me` (the narrator, an adult man, about 25, living with Dad): short black block hair, a red ringer tee, khaki shorts, white sneakers. Faces: `neutral`, `smile`, `worried`, `scared`, `focus`, `soft`.
+- `me` (the narrator, an adult man, 24, back living with Dad, says his age at L07): short black block hair, a short dark beard, a red ringer tee, khaki shorts, white sneakers. Faces: `neutral`, `smile`, `worried`, `scared`, `focus`, `soft`.
 - `dad` (my dad, adult, about 55): salt-and-pepper block hair, a bushy dark mustache, a blue short-sleeved work shirt, grey slacks. Faces: `neutral`, `annoyed`, `pleading`, `tired`, `blank` (staring, dusty), `asleep`, `laugh`.
 - `hal` (my grandpa, Hal, Dad's dad, about 80): white block hair, the same bushy mustache gone white (the family look), a green cardigan, brown slacks, slippers. Faces: `neutral`, `stubborn`, `smile`, `calm`, `laugh`. Named at L11 with "Dad's dad" in the same shot as him on his porch.
-- `dunn` (Mrs. Dunn across the street, adult): grey curls, a peach sundress. L37 to L39 only. Her husband in the doorway behind her, background.
+- `dunn` (Mrs. Dunn across the street, adult): grey curls, a peach sundress. Faces: `blank` (a fixed small smile, the pull), `neutral`. L37 to L39 only. Her husband in the doorway behind her, background.
 - Montage extras (all adults): the baker (white apron), a softball team in teal shirts, the mail lady (blue uniform, mailbag).
 Every word is the narrator's. L36 is quoted inside the narration.
 
@@ -123,7 +123,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S04 | L04 | 6.0 | The baker in his white apron leaving an oven door open, a loaf inside. |
 | S05a, S05b | L05 | 7.8 | A softball team in teal dropping gloves on the field. Then the team crowding down a stranger's cellar stairs. |
 | S06 | L06 | 10.1 | The mail lady ducking through the nearest door, her mailbag swinging. |
-| S07a, S07b | L07 | 12.1 | Our basement stairs from the top, Dad going down them with a lamp. Then the counter tag, close, showing 13 flicking up to 26. |
+| S07a, S07b | L07 | 12.1 | (revised) Me, plainly a grown man with a short beard, at the top of our basement stairs, Dad going down with a lamp. Then the counter tag, close, showing 13 flicking up to 26. |
 | S08 | L08 | 14.3 | From the bottom, looking up our too-deep stairwell. |
 | S09 | L09 | 15.3 | A tight insert: a new bottom step, its wood a shade darker. |
 | S10 | L10 | 16.5 | Me on the stairs counting with one finger raised, `focus`. |
@@ -137,7 +137,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S18a, S18b | L18 | 32.3 | Down the pole to its foot: the brass pipe bending into the round iron collar in the road. Then tight on the collar. |
 | S19a, S19b | L19 | 35.2 | Morning: neighbors coming up out of basement doors into sun, dust on their shoulders. Then Dad, dusty, `tired`. |
 | S20 | L20 | 37.8 | A tight insert: dust sliding off a shoulder in the sun. |
-| S21 | L21 | 39.0 | Dad asleep on the couch at noon, the clock (hands only) at twelve. |
+| S21 | L21 | 39.0 | (revised) A whistle night: Dad asleep sitting on the bottom step, dust settling on him, the rest of us higher up. |
 | S22 | L22 | 40.0 | Grandpa on his porch, spotless green cardigan, `smile`. |
 | S23 | L23 | 41.2 | Dad, `annoyed`, pointing at Grandpa across the fence. |
 | S24 | L24 | 43.4 | Sundown, gold: the whistle blowing, dust puffing out of it. |
@@ -156,7 +156,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S36 | L36 | 59.7 | Grandpa handing me a cup (cut before the hands meet), `neutral`. |
 | S37 | L37 | 61.3 | Next morning: the Dunns across the street at their basement door. |
 | S38 | L38 | 64.0 | Tight insert: their bottom step, far down, a long stairwell. Tag shows 27 for ours. |
-| S39 | L39 | 64.3 | Mrs. Dunn laughing in her peach dress. |
+| S39 | L39 | 64.3 | (revised) Mrs. Dunn in her peach dress, `blank`, a fixed small smile, eyes on her open basement door, not on her husband. |
 | S40 | L40 | 66.3 | Dad coming up out of our basement grey with dust, `blank`. |
 | S41 | L41 | 68.1 | Dinner: Dad and Grandpa at our table, Dad silent, Grandpa watching him. |
 | S42 | L42 | 70.0 | Dad staring past the camera at the basement door. |
@@ -184,7 +184,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S63 | L63 | 103.2 | Out on the road: Grandpa in his cardigan footing a wooden ladder against the pole. |
 | S64a, S64b | L64 | 104.8 | Me at the top of the ladder by the whistle, `focus`. Then the whistle blowing, the dust puff going *in*. |
 | S65 | L65 | 106.8 | Down the pole to the collar in the road: dust sinking into it. |
-| S66 | L66 | 108.2 | The cutaway: the Under's eyes, the sound coming down to it. |
+| S66 | L66 | 108.2 | (revised) The cutaway: the sound running down the pipe to the Under's mouth, its eyes turning down, away from us. |
 | S67 | L67 | 109.8 | Every basement window well on the street pulling dust *in*. |
 | S68 | L68 | 111.6 | Grandpa looking down at the road, `neutral`, listening. |
 | S69 | L69 | 112.6 | The cutaway: the Under far below, gone, a long dark shaft deeper than the stairs. |
@@ -206,7 +206,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L04: The baker leaves / his bread / in the OVEN.
 - L05: A whole softball TEAM / runs down / a stranger's cellar STAIRS.
 - L06: The mail lady ducks / into whatever house / is CLOSEST.
-- L07: Our basement had / thirteen STEPS / when Dad bought the house.
+- L07: I'm twenty-FOUR. / When I was born, / our basement had / thirteen STEPS.
 - L08: Now it has / TWENTY-six.
 - L09: Every whistle, / one more STEP.
 - L10: Nobody else COUNTS. / I do.
@@ -220,7 +220,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L18: Its pipe doesn't go UP the pole. / It goes DOWN. / Into the ROAD.
 - L19: And every morning after, / everybody comes UP / with dust on their SHOULDERS.
 - L20: Like they walked / somewhere FAR.
-- L21: Dad sleeps till NOON.
+- L21: Dad always sleeps / on the BOTTOM step.
 - L22: Grandpa never has / any DUST.
 - L23: Dad says / that's because Grandpa / never does what he's TOLD.
 - L24: On Tuesday, / it blew at SUNDOWN.
@@ -238,7 +238,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L36: He said, / "Told you. / Nothing OUT there."
 - L37: The next morning, / the Dunns across the street / counted their stairs out LOUD.
 - L38: FORTY-one.
-- L39: Mrs. Dunn LAUGHED, / like it was a good THING.
+- L39: Mrs. Dunn just SMILED / at the dark stairs, / like she couldn't wait / to go back DOWN.
 - L40: Dad came up / so dusty / he looked GRAY.
 - L41: He didn't even argue / with Grandpa / at DINNER.
 - L42: He just stared / at the basement DOOR.
@@ -265,7 +265,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L63: Grandpa held his ladder / at the POLE.
 - L64: And I blew the whistle / myself. / From the TOP.
 - L65: Down the pipe, / under the ROAD.
-- L66: Because it lives / in our town TOO.
+- L66: It lives in our town TOO, / so the whistle's rule / sends IT down.
 - L67: And when the whistle BLOWS, / you go DOWN.
 - L68: We heard it GO.
 - L69: Step / after STEP. / Deeper than any STAIRS.
