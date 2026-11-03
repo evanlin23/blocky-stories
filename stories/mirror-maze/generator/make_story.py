@@ -408,7 +408,7 @@ S("L32", one((-1.7, -0.7, 1.65), (0.0, 0.0, 1.65), 50), 2, follow="tasha", look=
   note="Tasha comes to see me anyway")
 raw("me", "L33", blink=False)
 raw("me", "L34", blink=True)
-S("L33", one((-0.85, -1.6, 1.45), (-0.85, 0.45, 1.4), 40), 2, follow="guy", look={**LOOK_WALK, "camfill": 1.1, "bulbs": 0}, rain2d=False,
+S("L33", one((-3.15, 3.2, 1.5), (-3.15, 5.25, 1.45), 40), 2, hand=0, look={**LOOK_WALK, "camfill": 0.7, "bulbs": 0}, rain2d=False,
   note="the eye close: my glint the brightest point")
 
 # =========================================================================================== 12 the truck, L34 to L35
