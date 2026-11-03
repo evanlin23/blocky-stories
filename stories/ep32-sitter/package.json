@@ -1,11 +1,12 @@
 {
- "title": "Your Face FADES If Nobody Looks 👀",
- "description": "In this town, if nobody looks at you, your face fades back to bare wood. Lonely people sit for the Wednesday portrait class, and the painters fill them back in.\n\nMum always said I never finish a face, and we haven't spoken since spring. So I joined the class to learn. On the stool sat someone faded all the way, and nobody else looked up.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
- "pin": "Comment LOOK if you'd have noticed who was fading.",
+ "title": "Never Paint A PERSON In Here 🖌️",
+ "description": "Whatever Kofi's art class paints shows up in town by Thursday. A bench turns up at the bus stop as bare pine with the pencil lines still on it, and then the color fills in. The one rule is never paint a person.\n\nI've always wanted a big brother. So I joined the class and painted one.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+ "pin": "Comment BROTHER if you'd have painted one too.",
  "made_for_kids": false,
- "cover_s": 50.0,
- "shape": "loved-one",
+ "cover_s": 52.0,
+ "shape": "made-too",
+ "opening": "ban",
  "lane": "core",
- "old_title": "In This Town Your Face FADES If Nobody Looks",
- "hold": "dropped 2026-11-03 (queue audit: third being-forgotten story, a sad Mum reveal)"
+ "old_title": "Your Face FADES If Nobody Looks 👀",
+ "hold": "awaiting review (revival 2026-11-03)"
 }
