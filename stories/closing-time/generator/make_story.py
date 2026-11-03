@@ -591,7 +591,7 @@ REV = {"disp": 3.4, "hallfill": 3.0}          # the reveal: the hall a lit box s
 ROWS_KEY = [[-0.4, 0.6, 1.0], [-1.6, -0.6, 2.8], 160.0, 55, COOL]   # low from the right: sockets fall into shadow
 LOOKS = {
     # the hook: its shut rows lit a touch out there (a narrow spot from below, in the water)
-    0: {"regularkey": 0.12, "key2": [[0.6, -14.5, 0.0], [0.6, -22.4, 2.6], 700.0, 30, "#bfe0ee"]},
+    0: {"regularkey": 0.7, "key2": [[0.5, -6.0, 1.2], [0.5, -13.0, 2.5], 650.0, 75, "#cfe8f2"]},
     "L02": {"caustic": 0.2},
     "L12": {"caustic": 0.2, "regularkey": 0.25, "key2": [[0.6, -15.0, 0.2], [0.6, -21.8, 2.6], 1400.0, 30, "#bfe0ee"]},
     "L12.4": {"caustic": 0.2, "regularkey": 0.25, "key2": [[0.6, -15.0, 0.2], [0.6, -21.8, 2.6], 1400.0, 30, "#bfe0ee"]},
