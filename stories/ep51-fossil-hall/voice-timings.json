@@ -6,46 +6,54 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "in this town, never keep a secret.",
+   "text": "i kept one secret, and now i glow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.862
+    ],
+    [
+     0.914,
+     1.172
+    ],
+    [
+     1.172,
+     1.81
+    ]
+   ]
+  },
+  "L02": {
+   "text": "in this town, everybody can see it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.828,
-   "onset": 0.172,
+   "onset": 0.19,
    "end": 1.638,
    "chunks": [
     [
-     0.172,
-     0.603
+     0.19,
+     0.621
     ],
     [
-     0.638,
-     0.992
+     0.655,
+     0.983
     ],
     [
-     0.992,
+     0.983,
      1.638
-    ]
-   ]
-  },
-  "L02": {
-   "text": "even one makes you glow.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.517,
-   "onset": 0.172,
-   "end": 1.31,
-   "chunks": [
-    [
-     0.172,
-     0.517
-    ],
-    [
-     0.517,
-     1.31
     ]
    ]
   },

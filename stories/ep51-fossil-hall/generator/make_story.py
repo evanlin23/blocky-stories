@@ -242,16 +242,20 @@ for _n in ("c3", "c5", "c7", "c8"):
 glow(0, "planner", 5.0)
 cue(0, "spill", pos=[SO, 5.9, 2.4], w=450.0, level=1.0)
 cue(0, "glk", level=0.4)   # his face stays the warm centre of the frame, never clipped
-shot(0, "sr", MV(([SO, 0.0, 1.5], [SO, 3.6, 1.5]), ([SO, 0.9, 1.5], [SO, 3.6, 1.5]), 30, 31), OPEN_WHO,
-     "frame 1: the planner lamp-bright on the street, face a third of the frame, people shading their eyes, gold on the wall, pushing in", step=1)
-shot("L01.2", "sr", MV(([SO - 0.6, 0.5, 1.5], [SO, 3.6, 1.5]), ([SO - 0.3, 1.2, 1.5], [SO, 3.6, 1.5]), 34, 36), OPEN_WHO,
+# the confess opening (team rule 2026-11-03): me, glowing, by our bench (my end-of-story look), then the planner on the street.
+# My glow is keyed on for these shots only; the body of the story keeps me dark.
+glow(0, "me", 1.0)
+glow("L02", "me", 0.0, 0.4)
+OPEN_ME = {"me": SIT(HX["me"], BY, 180, expr="neutral")}
+shot(0, "hall", MV(([-0.69, 0.2, 1.4], [-0.69, BY, 1.35]), ([-0.69, -0.45, 1.4], [-0.69, BY, 1.35]), 30, 32), OPEN_ME,
+     "frame 1: me close on our bench in the fossil hall, a faint gold glow round my silhouette, pushing in", step=1)
+shot("L01.2", "hall", MV(([-1.5, -0.2, 1.4], [-0.69, BY, 1.35]), ([-1.3, -0.7, 1.4], [-0.69, BY, 1.35]), 32, 34), OPEN_ME,
+     "closer from a quarter angle, the glow round me, still the whole head", step=1)
+shot("L02", "sr", MV(([SO, 0.0, 1.5], [SO, 3.6, 1.5]), ([SO, 0.9, 1.5], [SO, 3.6, 1.5]), 30, 31), OPEN_WHO,
+     "everybody can see it: the planner lamp-bright on the street, face a third of the frame, people shading their eyes, gold on the wall", step=1)
+shot("L02.2", "sr", MV(([SO - 0.6, 0.5, 1.5], [SO, 3.6, 1.5]), ([SO - 0.3, 1.2, 1.5], [SO, 3.6, 1.5]), 34, 36), OPEN_WHO,
      "closer from a quarter angle: his wide eyes, the squinters either side, still the whole head", step=1)
 SXC = 340.0
-shot("L02", "st", C([SXC - 0.25, -1.7, 1.62], [SXC - 0.1, 1.9, 1.5], 30), {
-    "visitor": P(SXC - 0.1, 1.9, 0, expr=SMILE, head=[0, 4]),
-    "c1": sp(SXC + 1.5, 3.2, 0), "c2": sp(SXC - 1.7, 3.2, 0)},
-     "the yellow raincoat on the sunny steps, smug, a gold rim, the whole head in frame", step=1)
-glow("L02", "visitor", 3.0)
 shot("L03", "sr", C([SO - 1.0, -0.6, 1.45], [SO, 3.0, 1.5], 28), {
     "planner": P(SO, 3.0, 0, expr=SMILE, arms=[40, 40]),
     "birthday": P(SO + 0.55, 1.1, 180, expr=SHEEPISH, head=[0, -6])},
@@ -593,7 +597,7 @@ shot("P03", "hall", LOW, {"abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(
 # ------------------------------------------------------------------------------------------------ sound
 sfx = [
     # the opening: a soft warm hit on "PARTY" (the warning's last word); the polish pack adds the whooshes on every cut
-    {"at": "L01>-0.3", "kind": "hit", "db": -13},
+    {"at": "L01.3", "kind": "hit", "db": -12},
     {"at": "L44", "kind": "thud", "db": -20},
     {"at": "L76", "kind": "thud", "db": -24},
     {"at": "L29", "kind": "hum_sweep", "db": -18, "dur": 1.6},
