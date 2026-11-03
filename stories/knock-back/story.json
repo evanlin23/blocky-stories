@@ -7329,7 +7329,7 @@
    }
   ]
  },
- "sound": {
+ "sound": {"rev": 2, 
   "floor": "wood",
   "steps_db": -24,
   "floors": {},

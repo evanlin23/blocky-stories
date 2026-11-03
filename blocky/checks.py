@@ -103,6 +103,24 @@ def harsh_sound(st: dict) -> list[tuple[str, str]]:
     return out
 
 
+ASSETS = Path(__file__).resolve().parent.parent / "assets"
+TEXTURE_NAMES = ("brick", "wood", "concrete", "grass", "asphalt")   # kit.TEXTURES (kit needs bpy, so not imported)
+
+
+def library(st: dict, set_text: str = "") -> list[tuple[str, str]]:
+    """The CC0 library (assets/): a `look.hdri` must name a file in assets/hdri/, and a set's kit.texture("x")
+    one of the textures, so a typo shows up here and not as a plain world on the render."""
+    out = []
+    h = (st.get("look") or {}).get("hdri")
+    if h and not (ASSETS / "hdri" / f"{h}.hdr").exists():
+        have = sorted(p.stem for p in (ASSETS / "hdri").glob("*.hdr"))
+        out.append(("block", f"look.hdri {h!r} isn't in assets/hdri/ (there are {have})"))
+    for t in re.findall(r"kit\.texture\(\s*[\"']([^\"']+)", set_text):
+        if t not in TEXTURE_NAMES:
+            out.append(("block", f"set.py uses kit.texture({t!r}); the textures are {TEXTURE_NAMES}"))
+    return out
+
+
 NARRATOR_MISFIT = re.compile(r"\bmy (husband|boyfriend|hubby)\b", re.I)   # the one narrator voice is a man's (ep38)
 
 
@@ -118,6 +136,7 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
         out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
                             "flash bar on most stories (RULES.md hard rule 7)"))
     out += harsh_sound(st)
+    out += library(st, set_py.read_text() if set_py.exists() else "")
     said_all = " ".join(" ".join(c[1] for c in ln.get("chunks", [])) for ln in st.get("lines", []))
     if NARRATOR_MISFIT.search(said_all):
         out.append(("warn", "the narrator says 'my husband/boyfriend', but the narrator voice is a man's (ep38): "

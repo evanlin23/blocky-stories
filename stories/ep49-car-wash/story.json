@@ -10895,7 +10895,7 @@
    }
   ]
  },
- "sound": {
+ "sound": {"rev": 2, 
   "floor": "metal",
   "steps_db": -22,
   "ambience": [
