@@ -215,7 +215,8 @@ S("L06.2+0.25", ((0.0, -26.0, 0.5), (1.6, 0.0, 3.2), 30, (0.3, -20.0, 0.7), (1.6
 OTIS_STAMP = {"arms": [60, 0]}
 S("L07", ((0.55, 3.2, 1.55), (0.0, 6.0, 1.4), 40, (0.35, 3.5, 1.55), (0.0, 6.0, 1.4), 40),
   who={"me": (OT, 0, "smirk", {"arms": [50, 0]})}, tod="night", note="Otis at the lectern, the pocket page's corner showing")
-S("L08+0.3", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
+# rescue r3: the clock shot starts on the tail of L07 so the three cuts here sit over 1 s apart (flash margin)
+S("L08-0.25", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
   note="the brass clock at nine")
 cue("L08", "clock", v=[9, 0])
 S("L08.2", ((0.5, 3.4, 2.3), (-0.2, 5.6, 1.2), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
