@@ -242,3 +242,5 @@ L66. Mine was waiting in the THIRD chair.
 - L24 is the only flashback (S29). Give it a warmer, brighter grade so it reads as earlier, with no on-screen date or age.
 - The hums and the street chord must never form a tune. Fixed pitches, sustained, entering and leaving as fades.
 - The creature is seated in every beat, so check the seated width (about 1.36 m) against the 1.7 m chair spacing and the cape against the armrests for intersections.
+
+- **Opening revision, 2026-11-03 (queue audit):** count: line 1 is now a count that's wrong ('Sixty-four people on this street. Sixty-three are humming.'), the rule moves to L01b (new), and frame 1 is a close-up on me and my silent ring (S01 camera 1.8 m out), with the crowd wide moved to L01.2 and lowered. Tagged `"opening"` in package.json. Not yet drawn or listened to; the hold stays until the proof render and critic pass.
