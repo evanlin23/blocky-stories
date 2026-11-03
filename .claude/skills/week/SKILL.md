@@ -1,6 +1,6 @@
 ---
 name: week
-description: Make a week of creepy blocky stories for PandaNanoAdventures (default 7, one upload a day). The writer writes the batch, the builder builds and previews each story, standards and critic review it, and one PR merges them. After that GitHub Actions renders each final and uploads one a day as a private video for the owner to publish. Use when asked for the week's stories, a batch, more stories, or one story ("/week 1").
+description: Make a week of creepy blocky stories for Buhtown (default 7, one upload a day). The writer writes the batch, the builder builds and previews each story, standards and critic review it, and one PR merges them. After that GitHub Actions renders each final and uploads one a day as a private video for the owner to publish. Use when asked for the week's stories, a batch, more stories, or one story ("/week 1").
 argument-hint: "[how many, default 7] [an idea or premise, optional]"
 ---
 
@@ -18,8 +18,16 @@ You're the orchestrator. Keep your own context small: you read reports and verdi
 - If `BLOCKY_BPY` or `BLOCKY_TTS` is unset: `bash blocky/setup.sh` and export what it prints.
 - A container can be reclaimed at any time, so commit and push `WIP` checkpoints to the branch after each story's build.
 
+## 0.5 Research before any writing (owner, 2026-11-03: "I'm worried we aren't spending enough time doing research and then just jumping into creating new shorts.")
+No writer call until `docs/research/<date>-week.md` is committed. It holds:
+1. **Our numbers:** every upload's views, viewed vs swiped away, average % viewed, the biggest retention drop and its second, from `metrics/` (plus anything the owner pasted from Studio). Say what held people and where we lost them, with the numbers.
+2. **The market now:** the newest `docs/trends/` scan and `docs/trends/deep/` (the top Shorts' titles, lengths, descriptions and top comments). The 10 fastest Shorts in formats we could make, with one line each on why it works (premise, hook, length, title shape, what commenters react to).
+3. **Three hypotheses** for this batch, each one change we can measure ("60 to 90 s beats 130 s on average % viewed"), and which stories test which.
+4. **Pitches:** at least 3 times as many pitches as stories, each citing its evidence (a trend row, a comment theme or our own number). A fresh agent that has read nothing ranks them blind by title and first line, mixed with 5 of this week's fastest real titles. Keep the top N. Any of ours below the real titles' median doesn't get written.
+Spend real effort here: about a fifth of the batch's time goes to research, before any building.
+
 ## 1. Write (1 writer call)
-"Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
+"Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself, and check the batch for **superficial sameness** (YouTube demonetizes "narrated stories with only superficial differences"): at most a third of titles start "In This Town", and no two stories share a setting type, a rule type, a creature type, a twist shape, a palette or a music mood. Then: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
 
 **Cold-viewer test** (RULES → "Relationships read at a glance"): for each script, a fresh general-purpose agent gets only `script.md` and answers in two sentences what happened, what the twist means, and who each person is to the narrator. Any wrong or unsure answer sends the script back to the writer once, before building.
 
@@ -40,7 +48,7 @@ Start a **fresh builder agent for each phase** (the build, then each fix round).
 ## 4. Ship (no agents)
 - `python -m pytest -q`, and `python -m blocky gate <name>` for every story in the batch.
 - Commit the story folders (never `out/`). Push, then open ONE PR with a table of slug, title and upload order. Merge it once the `test` check passes (the owner approved team merges). `test` runs `gate` on every story the PR touches, so a story whose reviews still say revise can't merge; drop it from the PR instead (or title the PR `WIP` for a checkpoint that must not render).
-- The merge starts `render` on Actions, which draws each final in 16 shards and keeps the film as the artifact `film-<story>`. Then `upload` puts one story a day on PandaNanoAdventures as **private** and opens an issue for the owner to publish it. The session doesn't wait for any of this.
+- The merge starts `render` on Actions, which draws each final in 16 shards and keeps the film as the artifact `film-<story>`. Then `upload` puts one story a day on Buhtown as **private** and opens an issue for the owner to publish it. The session doesn't wait for any of this.
 - Tell the owner: the stories, their titles, the upload order, and that each one will arrive as a "Ready to publish" issue.
 
 ## Usage rules
@@ -48,3 +56,6 @@ Start a **fresh builder agent for each phase** (the build, then each fix round).
 - Reports are capped (agents say how long). Never paste a whole review back into a prompt: pass the must-fix list.
 - No look tests or check-ins with the owner mid-batch (owner: "you can do all of like the design like stuff. Just let me know when the full video is done"). The owner's job is the final watch and the publish click.
 - Owner feedback on any story becomes a dated rule in `RULES.md`, in the same PR.
+
+## The 2026-11-03 reset
+Every batch from now on follows RULES.md "The 2026-11-03 reset": the length split (60 to 90 s and 120 to 150 s), at most a third of the batch ending on a sad family reveal, and a third of the experiment slots for the recurring-cast series. Check the whole batch against it before the PR.

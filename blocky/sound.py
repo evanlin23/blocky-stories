@@ -1,4 +1,6 @@
-"""The soundtrack for one blocky story, all synthesized (no samples, no borrowed melody):
+"""The soundtrack for one blocky story. The score is synthesized (no samples, no borrowed melody); footsteps, six
+ambience kinds and five effect kinds play CC0 recordings from assets/audio/ when the files exist (see "samples"
+below), with the synth as the fallback:
 
 - the narrator: the sped-up Kokoro lines (voice.py), each placed where the timeline puts it
 - the score: generated per story from its `music` spec (a key, a mode, a tempo and which voices play in each
@@ -24,6 +26,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 from pathlib import Path
 
 import numpy as np
@@ -32,7 +35,7 @@ from blocky import synth
 from blocky.mixer import Mix, loudness, master
 from blocky.synth import SR, fft_filter
 
-from blocky import acting
+from blocky import acting, polish
 from blocky.timeline import resolver
 
 SPEECH = -16.0
@@ -395,9 +398,78 @@ def hum_track(h: dict, at, k: int, dur_total: float) -> tuple[float, np.ndarray]
 # ---------------------------------------------------------------------------------------------- ambience
 
 
+# ------------------------------------------------------------------------------------------------ samples
+# Real CC0 recordings in assets/audio/ (owner, 2026-11-02: "yes go ahead with sfx and visuals"; RULES.md hard rule
+# 6). Footsteps, ambience loops and a few one-shots use them when the files exist; the synth below is the fallback
+# (no files, `sound.samples: false` in story.json, or `"synth": true` on one sfx entry). The score is never sampled.
+# The files are already soft (steps and ambience keep under 5% of their energy above 4 kHz, tested), and each
+# sample is matched to the level of the synthesized sound it replaces, so the stories' dB settings still hold.
+
+ASSETS = Path(__file__).resolve().parent.parent / "assets" / "audio"
+STEP_BANKS = {"grass": "grass", "wood": "wood", "stone": "stone", "concrete": "stone", "metal": "metal",
+              "gravel": "gravel", "snow": "snow", "carpet": "carpet"}
+AMB_SAMPLES = ("wind", "rain", "room", "crickets", "traffic", "water")
+SFX_SAMPLES = ("door", "creak", "latch", "whoosh", "thud")
+SAMPLES = {"on": True}   # mix() turns it off for a story with "sound": {"samples": false}
+_BANKS: dict = {}
+
+
+def _bank(sub: str) -> list:
+    """Every WAV in assets/audio/<sub>/ (sorted, so a seed always picks the same file), cached. [] if none."""
+    key = str(ASSETS / sub)
+    if key not in _BANKS:
+        d = ASSETS / sub
+        _BANKS[key] = [load_wav(p) for p in sorted(d.glob("*.wav"))] if SAMPLES["on"] and d.is_dir() else []
+    return _BANKS[key] if SAMPLES["on"] else []
+
+
+def _amb_loop(kind: str):
+    p = ASSETS / "amb" / f"{kind}.wav"
+    if not SAMPLES["on"] or kind not in AMB_SAMPLES or not p.exists():
+        return None
+    if str(p) not in _BANKS:
+        _BANKS[str(p)] = load_wav(p)
+    return _BANKS[str(p)]
+
+
+def punch(y: np.ndarray, win: float = 0.05) -> float:
+    """The level of a sound's loudest 50 ms (RMS): what a short effect sounds like, whatever its tail."""
+    k = max(1, int(win * SR))
+    if len(y) <= k:
+        return float(np.sqrt(np.mean(y ** 2) + 1e-20))
+    c = np.cumsum(np.concatenate([[0.0], y ** 2]))
+    return float(np.sqrt(((c[k:] - c[:-k]) / k).max() + 1e-20))
+
+
+def _vary(y: np.ndarray, r) -> np.ndarray:
+    """A small random change of speed (and so pitch, plus or minus 3%), so repeats don't sound copied."""
+    rate = float(r.uniform(0.97, 1.03))
+    m = max(2, int(len(y) / rate))
+    return np.interp(np.arange(m) * rate, np.arange(len(y)), y)
+
+
+def _sampled(bank: list, seed: int, ref: float, jitter_db: float = 1.5) -> np.ndarray:
+    r = np.random.default_rng(seed)
+    y = _vary(bank[int(r.integers(len(bank)))], r)
+    return y * (ref / max(punch(y), 1e-9)) * 10 ** (float(r.uniform(-jitter_db, jitter_db)) / 20)
+
+
 def amb(kind: str, dur: float, seed: int = 0) -> np.ndarray:
     n = synth.n_samples(dur)
+    loop = _amb_loop(kind)
+    if loop is not None:
+        # the seamless loop from a seeded start, tiled to length (mix() sets its loudness)
+        start = int(np.random.default_rng(seed).integers(len(loop)))
+        return np.resize(np.roll(loop, -start), n) * 0.3
+    return amb_synth(kind, dur, seed)
+
+
+def amb_synth(kind: str, dur: float, seed: int = 0) -> np.ndarray:
+    n = synth.n_samples(dur)
     t = np.arange(n) / SR
+    if kind == "traffic":   # far-off traffic: a low rumble that swells and fades as cars pass
+        y = fft_filter(synth.noise(dur, seed), "band", 40, 500)
+        return y * (0.5 + 0.5 * synth.one_pole_smooth(np.abs(np.sin(2 * np.pi * 0.07 * t + seed)), 0.8))
     if kind == "wind":
         y = fft_filter(synth.noise(dur, seed), "band", 200, 900)
         y *= 0.55 + 0.45 * synth.one_pole_smooth(np.abs(np.sin(2 * np.pi * 0.11 * t + seed)) + 0.3 * synth.noise(dur, seed + 1), 0.6)
@@ -405,12 +477,13 @@ def amb(kind: str, dur: float, seed: int = 0) -> np.ndarray:
     if kind == "hum":
         return synth.hum(dur, 60.0, seed)
     if kind == "rain":
-        y = fft_filter(synth.noise(dur, seed), "band", 800, 7000) * 0.6
+        # a soft wash with gentle drops, low-passed at 3.5 kHz: the old 800 Hz to 7 kHz band hissed (critic, ep32 redo)
+        y = fft_filter(synth.noise(dur, seed), "band", 300, 3500) * 0.6
         drops = np.zeros(n)
         r = np.random.default_rng(seed)
         for i in r.integers(0, n - 2000, int(dur * 40)):
-            drops[i:i + 400] += synth.click(400 / SR, float(r.uniform(2500, 6000)), int(i))[:400] * r.uniform(0.2, 0.8)
-        return y + drops
+            drops[i:i + 400] += synth.click(400 / SR, float(r.uniform(1200, 3000)), int(i))[:400] * r.uniform(0.2, 0.8)
+        return fft_filter(y + drops, "low", 3500)
     if kind == "room":
         return fft_filter(synth.noise(dur, seed), "band", 60, 400) * 0.6
     if kind == "drips":
@@ -478,11 +551,33 @@ def _layer(*parts: np.ndarray) -> np.ndarray:
 
 
 def step_sound(surface: str, run: bool, seed: int) -> np.ndarray:
+    """One footstep on a surface (grass, wood, stone, concrete, metal, gravel, snow, carpet): a recorded step from
+    assets/audio/steps/ at the synthesized step's level, or the synthesized step when there are no files."""
+    bank = _bank(f"steps/{STEP_BANKS[surface]}") if surface in STEP_BANKS else []
+    if bank:
+        ref = _step_ref(surface)
+        return _sampled(bank, seed, ref) * (1.25 if run else 1.0)
+    return step_synth(surface, run, seed)
+
+
+_REFS: dict = {}
+
+
+def _step_ref(surface: str) -> float:
+    """The synthesized step's level on this surface (the median of a few), so a sample lands where it did."""
+    if surface not in _REFS:
+        _REFS[surface] = float(np.median([punch(step_synth(surface, False, s)) for s in range(6)]))
+    return _REFS[surface]
+
+
+def step_synth(surface: str, run: bool, seed: int) -> np.ndarray:
     r = np.random.default_rng(seed)
     if surface == "wood":
         y = _layer(synth.thump(0.12, 180, 90, seed) * 0.8, fft_filter(synth.noise(0.05, seed), "band", 400, 2000) * synth.decay(0.05, 0.012)[: synth.n_samples(0.05)] * 0.5)
     elif surface == "metal":
         y = _layer(synth.thump(0.1, 220, 120, seed) * 0.5, synth.fm_bell(float(r.uniform(700, 900)), 0.25, 2.7, 1.2, 0.06) * 0.25)
+    elif surface == "carpet":   # a muffled heel on a rug: low and dull, no bright edge
+        y = fft_filter(synth.thump(0.1, 110, 60, seed), "low", 900) * 0.45
     elif surface == "grass":
         # a soft low swish and a dull heel, not a hiss: the old 1.5 to 6 kHz noise burst read as scratching
         # (owner, 2026-11-02, ep36: "a horrible scratchy sound")
@@ -532,6 +627,25 @@ def knock_hit(tone: str, seed: int = 0) -> np.ndarray:
 
 
 def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) -> np.ndarray:
+    """One sound effect. door, creak, latch, whoosh and thud play a recording from assets/audio/sfx/ when there
+    is one (at the synthesized sound's level); `"synth": true` on the entry, or an option that changes the sound
+    (a creak's "tone"), keeps the synthesized one."""
+    o = opts or {}
+    if kind in SFX_SAMPLES and not o.get("synth") and not (kind == "creak" and o.get("tone")):
+        bank = _bank(f"sfx/{kind}")
+        if bank:
+            ref = punch(sfx_synth(kind, seed, dur, opts))
+            y = _sampled(bank, seed, ref, jitter_db=1.0)
+            if kind == "creak":   # a creak lasts its dur, like the synthesized one
+                m = synth.n_samples(dur)
+                y = np.concatenate([y, np.zeros(max(0, m - len(y)))])[:m]
+                k = min(m // 3, int(0.08 * SR))
+                y[m - k:] *= np.linspace(1.0, 0.0, k) ** 2
+            return y
+    return sfx_synth(kind, seed, dur, opts)
+
+
+def sfx_synth(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) -> np.ndarray:
     if kind == "hit":  # a low boom with a crack on top: the jump moment
         return _layer(synth.hit(1.6, seed) * 1.0, synth.thump(0.6, 70, 30, seed) * 0.8)
     if kind == "riser":
@@ -695,6 +809,17 @@ def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) ->
         return _tape_peel(dur if dur != 1.0 else 0.75, seed)
     if kind == "scrape":      # ep17: cardboard dragged on floorboards; opts "distant": heard through a wall
         return _scrape(dur, seed, bool((opts or {}).get("distant")))
+    if kind == "rattle":      # ep34, opt-in: a corrugated roller door running down its slats, slowing as it lands
+        n = synth.n_samples(dur)
+        t = np.arange(n) / SR
+        rate = 46.0 * (1.0 - 0.8 * (t / dur) ** 1.3)          # slat knocks per second, falling
+        ph = np.cumsum(rate) / SR
+        gate = (np.sin(2 * np.pi * ph) > 0.55).astype(float)
+        gate = synth.one_pole_smooth(gate, 0.002)
+        body = fft_filter(synth.noise(dur, seed), "band", 500, 3600)[:n]
+        rumble = fft_filter(synth.noise(dur, seed + 1), "band", 70, 260)[:n]
+        env = np.clip(t / 0.08, 0, 1) * (1 - 0.35 * (t / dur))
+        return (body * gate * 0.9 + rumble * 0.5) * env
     if kind == "ding":        # ep49: a small brass collar bell. opts: pitch (Hz), lp (low-pass Hz, a muffled pocket ring), fall (pitch drop)
         o = opts or {}
         f = float(o.get("pitch", 2200.0))
@@ -869,6 +994,46 @@ def fit_file_peak(audio: np.ndarray, measure, target: float = FILE_TP, tries: in
     return audio, log
 
 
+def polish_sound(e: dict, seed: int) -> np.ndarray:
+    """One polish-pack sound (polish.sound_events), low-passed under its `lp` so it stays soft."""
+    k = e["kind"]
+    if k == "lowhit":   # a soft sub thump under a key word: felt more than heard
+        y = synth.thump(0.45, 95, 38, seed)
+        top = synth.thump(0.2, 180, 90, seed + 1)
+        y[:len(top)] += 0.25 * top
+    elif k == "riser":   # a soft swell that builds over its whole length (rises in pitch), cut clean at its top
+        d = e["dur"]
+        t = np.arange(synth.n_samples(d)) / SR
+        env = (t / d) ** 1.3
+        y = fft_filter(synth.noise(d, seed), "band", 250, 2800) * env
+        y = y + synth.sine(110 * 2 ** (1.5 * t / d), d)[:len(t)] * 0.35 * env
+        y = y / max(1e-9, np.abs(y).max())
+        f = min(len(y) // 4, int(0.04 * SR))
+        y[len(y) - f:] *= np.linspace(1, 0, f)
+    else:
+        y = sfx(k, seed, e.get("dur", 1.0))
+    if e.get("lp"):
+        y = fft_filter(y, "low", float(e["lp"]), order=4)
+    return y
+
+
+def polish_sounds(m: Mix, tl: dict, st: dict, pol: dict, at, drops: list, dur: float, n: int) -> None:
+    """The polish pack's sounds (blocky/polish.py): whooshes, hits and risers on the "polish" bus (a hit in a
+    drop's landing plays through it, like a kept sting), the builder's marked doors and steps on "sfx", and the
+    room bed on "bed"."""
+    for k, e in enumerate(polish.sound_events(tl, st, pol, at)):
+        y = polish_sound(e, 500 + k)
+        bus = "sfx" if e["kind"] in polish.MARK_SFX else "riser" if e["kind"] == "riser" else "polish"
+        if e["kind"] in ("hit", "lowhit") and any(at(d["from"]) - 0.05 <= e["t"] < at(d["to"]) + 0.4 for d in drops):
+            bus = "sfx_keep"
+        m.add(bus, e["t"], y, gain_db=e["db"], pan=e.get("pan", 0.0))
+    if pol["bed"]:
+        y = amb(polish.bed_kind(st, pol), dur, 97)
+        y = fft_filter(y, "low", 3800.0, order=4)
+        y *= np.minimum(1, np.arange(len(y)) / (0.3 * SR)) * np.minimum(1, (len(y) - np.arange(len(y))) / (0.3 * SR))
+        m.add("bed", 0.0, to_lufs(y, pol["bed_lufs"])[:n])
+
+
 def drop_spec(d) -> dict:
     """A `music_drops` entry: [from, to] or {"from": ref, "to": ref, "keep": [sfx kinds that play through]}.
     Anchor both ends to line ids, so a retime can't move the hole off its words."""
@@ -886,6 +1051,14 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
     voice = to_lufs(voice, SPEECH, spans)
     m.add("voice", 0.0, voice)
     snd = st.get("sound", {})
+    SAMPLES["on"] = bool(snd.get("samples", True)) and not os.environ.get("BLOCKY_NO_SAMPLES")
+    try:
+        return _mix(tl, st, vo_dir, m, voice, spans, snd, at, dur, n)
+    finally:
+        SAMPLES["on"] = True
+
+
+def _mix(tl, st, vo_dir, m, voice, spans, snd, at, dur, n):
     mus = score(tl, st.get("music", {}))
     if st.get("music", {}).get("filter"):   # the score heard through water: a low-pass that moves (the reveal opens it)
         mus = lowpass_moving(mus, filter_track(len(mus), st["music"]["filter"], at))
@@ -898,6 +1071,8 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
         if a1 <= a0:
             continue
         y = amb(a["kind"], a1 - a0, k + 3)
+        if a.get("lp"):   # opt-in (ep32): low-pass this bed at `lp` Hz
+            y = fft_filter(y, "low", float(a["lp"]), order=4)
         y *= np.minimum(1, np.arange(len(y)) / (0.3 * SR)) * np.minimum(1, (len(y) - np.arange(len(y))) / (0.3 * SR))
         m.add("amb", a0, to_lufs(y, a.get("lufs", -32.0)), pan=a.get("pan", 0.0))
     for k, h in enumerate(snd.get("hums", [])):   # opt-in (ep42): people's steady hums, on the ambience bus
@@ -920,6 +1095,9 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
         keep = e.get("keep", False) or any(e["kind"] in d["keep"] and at(d["from"]) - 0.05 <= te < at(d["to"]) + 0.4
                                            for d in drops)
         m.add("sfx_keep" if keep else "sfx", te, y, gain_db=e.get("db", -8.0), pan=e.get("pan", 0.0))
+    pol = polish.spec(st)
+    if pol:
+        polish_sounds(m, tl, st, pol, at, drops, dur, n)
     # the holes: everything but the voice and the kept sounds (a sting, a named hit) drops to near silence
     if drops:
         hole = np.ones(n)
@@ -927,9 +1105,15 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
             hole = np.minimum(hole, envelope(n, [(at(d["from"]), at(d["to"])) for d in drops if d["db"] == db], db,
                                              0.03, 0.4))
         hole = hole[:, None]
-        for bus in ("music", "amb", "steps", "sfx"):
+        for bus in ("music", "amb", "steps", "sfx", "polish", "riser"):
             if bus in m.buses:
                 m.buses[bus] *= hole
+        if "bed" in m.buses:   # the polish bed only dips, so a drop is quiet, never digital silence
+            m.buses["bed"] *= envelope(n, [(at(d["from"]), at(d["to"])) for d in drops], pol["bed_drop_db"],
+                                       0.03, 0.4)[:, None]
+    if pol and pol["duck"]:   # the voice on top: the bed, the polish effects and the ambience duck under it
+        for bus in ("bed", "polish", "amb"):
+            m.duck(bus, ["voice"], depth_db=pol["duck_db"], attack=0.02, release=0.3)
     pre = m.sum()
     out, stats = master(pre, ceiling_db=TP_CEILING)
     k = min(len(out), int(0.012 * SR))   # no click where the film (or its loop) cuts off

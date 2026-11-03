@@ -1,8 +1,7 @@
 # Weekly channel numbers into metrics/summary.md, a little before the Monday /week run. Run it by hand any time.
 name: metrics
 on:
-  schedule:
-    - cron: "37 20 * * 1"   # Mondays 20:37 UTC = 2:37 pm Central (3:37 pm in summer)
+  # no `schedule:`: cron-job.org starts it Mondays 2:37 PM Central; GitHub's late schedule would run it twice
   workflow_dispatch:
 concurrency: {group: metrics, cancel-in-progress: false}
 permissions: {contents: write}
@@ -29,6 +28,13 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python scripts/trends.py >> "$GITHUB_STEP_SUMMARY"
+      - name: deep trend data (descriptions, tags, channels, top comments of the 40 fastest)
+        continue-on-error: true   # ~45 API units; never blocks the commit
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python scripts/trends_deep.py >> "$GITHUB_STEP_SUMMARY"
       - name: commit
         run: |
           git config user.name "github-actions[bot]"

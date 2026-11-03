@@ -95,8 +95,56 @@ def harsh_sound(st: dict) -> list[tuple[str, str]]:
     out = []
     if loud:
         out.append(("warn", f"bright, noisy effects above -24 dB can sound scratchy: {loud[:5]} (keep them quiet)"))
+    for a in (st.get("sound") or {}).get("ambience", []):
+        if a.get("kind") == "static" and float(a.get("lufs", -40)) > -40:   # radio hiss: 90% of it above 4 kHz
+            out.append(("warn", f"static ambience at {a.get('lufs')} LUFS will sound like hiss; keep it under -40"))
     if len(sfx) > 6:
         out.append(("warn", f"{len(sfx)} bright, noisy effects; repeated, they read as scratching (ep36's grass steps)"))
+    return out
+
+
+ASSETS = Path(__file__).resolve().parent.parent / "assets"
+TEXTURE_NAMES = ("brick", "wood", "concrete", "grass", "asphalt")   # kit.TEXTURES (kit needs bpy, so not imported)
+
+
+def library(st: dict, set_text: str = "") -> list[tuple[str, str]]:
+    """The CC0 library (assets/): a `look.hdri` must name a file in assets/hdri/, a set's kit.texture("x")
+    one of the textures and its kit.prop("x") one of the props, so a typo shows up here and not as a plain world on the render."""
+    out = []
+    h = (st.get("look") or {}).get("hdri")
+    if h and not (ASSETS / "hdri" / f"{h}.hdr").exists():
+        have = sorted(p.stem for p in (ASSETS / "hdri").glob("*.hdr"))
+        out.append(("block", f"look.hdri {h!r} isn't in assets/hdri/ (there are {have})"))
+    names = json.loads((ASSETS / "props" / "props.json").read_text()) if (ASSETS / "props" / "props.json").exists() else {}
+    for t in re.findall(r"kit\.prop\(\s*[\"']([^\"']+)", set_text):
+        if t not in names:
+            out.append(("block", f"set.py uses kit.prop({t!r}), which isn't in assets/props/props.json"))
+    for t in re.findall(r"kit\.texture\(\s*[\"']([^\"']+)", set_text):
+        if t not in TEXTURE_NAMES:
+            out.append(("block", f"set.py uses kit.texture({t!r}); the textures are {TEXTURE_NAMES}"))
+    return out
+
+
+def polish_problems(st: dict) -> list[tuple[str, str]]:
+    """look.polish (blocky/polish.py): known settings only, marked shots that exist, and a bed that's recorded."""
+    from blocky import polish
+
+    p = (st.get("look") or {}).get("polish")
+    if not p or p is True:
+        return []
+    if not isinstance(p, dict):
+        return [("block", "look.polish is true or a dict of settings")]
+    out = [("block", f"look.polish.{k} isn't a polish setting ({sorted(polish.DEFAULTS)})") for k in p
+           if k not in polish.DEFAULTS]
+    ids = {s["id"] for s in st.get("shots", [])}
+    if isinstance(p.get("sway"), list):
+        out += [("block", f"look.polish.sway names shot {s!r}, which isn't in shots") for s in p["sway"] if s not in ids]
+    if p.get("grade") and p["grade"] not in polish.GRADES:
+        out.append(("block", f"look.polish.grade {p['grade']!r}: the presets are {sorted(polish.GRADES)}"))
+    if p.get("bed_kind") and not (ASSETS / "audio" / "amb" / f"{p['bed_kind']}.wav").exists():
+        out.append(("block", f"look.polish.bed_kind {p['bed_kind']!r} isn't a recording in assets/audio/amb/"))
+    if not 0 <= float(p.get("punch", 0.06)) <= 0.08:
+        out.append(("block", "look.polish.punch is a subtle 0 to 8% (0.0 to 0.08)"))
     return out
 
 
@@ -115,6 +163,8 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
         out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
                             "flash bar on most stories (RULES.md hard rule 7)"))
     out += harsh_sound(st)
+    out += library(st, set_py.read_text() if set_py.exists() else "")
+    out += polish_problems(st)
     said_all = " ".join(" ".join(c[1] for c in ln.get("chunks", [])) for ln in st.get("lines", []))
     if NARRATOR_MISFIT.search(said_all):
         out.append(("warn", "the narrator says 'my husband/boyfriend', but the narrator voice is a man's (ep38): "

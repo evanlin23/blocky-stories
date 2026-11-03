@@ -1,1 +1,10 @@
-{"title": "In This Town a Bell RINGS Before Every Mistake", "description": "In this town, everyone wears a small brass bell on their collar, and it rings just before you make a mistake. Mine has never rung. Not once.\n\nMy big brother runs the car wash on the edge of town by himself now, and lately his bell won't stop ringing. So I went back to help him. Then the tunnel started running with nobody in it.\n\nIt's made up. A creepy blocky story, built with code and Blender.", "pin": "What would your bell have rung for this week?", "made_for_kids": false, "cover_s": 98.6, "shape": "stand-in", "hold": "cold-viewer check: the clapper payoff and the last 'RANG' line are hard to follow"}
+{
+ "title": "A Bell RINGS Before Every Mistake 🔔",
+ "description": "In this town, everyone wears a small brass bell on their collar, and it rings just before you make a mistake. Mine has never rung. Not once.\n\nMy big brother runs the car wash on the edge of town by himself now, and lately his bell won't stop ringing. So I went back to help him. Then the tunnel started running with nobody in it.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+ "pin": "Comment BELL if yours would have rung this week.",
+ "made_for_kids": false,
+ "cover_s": 98.6,
+ "shape": "stand-in",
+ "old_title": "In This Town a Bell RINGS Before Every Mistake",
+ "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+}

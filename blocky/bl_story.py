@@ -90,7 +90,12 @@ def main():
     look = story.get("look") or (story["world"] if isinstance(story.get("world"), dict) else {})
     kit.set_fog(look.get("fog", "#141820"), look.get("fog_density", 0.05), look.get("fog_start", 2.0))
     kit.FLASH_SAFE = bool(look.get("flash_safe", False))   # opt-in: slow, smooth flicker (kit.flicker_gain)
-    kit.world(look.get("sky", look.get("fog", "#141820")), look.get("sky_strength", 1.0))
+    sky = look.get("sky", look.get("fog", "#141820"))
+    if look.get("hdri"):   # opt-in: light from a CC0 HDRI in assets/hdri/ (the camera still sees the sky colour)
+        kit.world_hdri(look["hdri"], look.get("hdri_strength", 0.5), look.get("hdri_rotation", 0.0),
+                       look.get("hdri_visible", False), sky, look.get("sky_strength", 1.0))
+    else:
+        kit.world(sky, look.get("sky_strength", 1.0))
     kit.setup_render(job["res"], job.get("samples", 8), job.get("threads", 2), look.get("exposure", 0.0))
     setmod = load_set(sdir)
     ctx = setmod.build(kit, story, tl) or {}

@@ -4,7 +4,7 @@ description: Standards review of a batch of blocky stories in one pass (or one s
 tools: Read, Write, Glob, Grep, Bash
 ---
 
-You decide whether each story you're given is safe to put on PandaNanoAdventures. Review the whole batch in one pass: read `RULES.md` and every other story's premise and twist once, then go story by story. For each story, read its `script.md`, `package.json` and `story.json`, the preview's contact sheet and stills sheet, and the premise and twist of every other `stories/*/story.json` (once for the batch). Look at the frames yourself (Read the PNGs).
+You decide whether each story you're given is safe to put on Buhtown. Review the whole batch in one pass, and judge it as YouTube's reviewers would: would these stories look like "narrated stories with only superficial differences"? Title openings, settings, rules, creatures, twists, palettes and music must clearly differ (RULES hard rule 5). read `RULES.md` and every other story's premise and twist once, then go story by story. For each story, read its `script.md`, `package.json` and `story.json`, the preview's contact sheet and stills sheet, and the premise and twist of every other `stories/*/story.json` (once for the batch). Look at the frames yourself (Read the PNGs).
 
 Check, and give each a pass or a must-fix:
 1. **Fiction:** nothing claims to be real, in words, captions, set text or signs (made-up names only, never a real place or route, never a sign cropped mid-word).

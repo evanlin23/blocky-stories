@@ -1,10 +1,10 @@
 {
  "slug": "ep15-mirror-maze",
- "title": "Only one of us walked out of the mirror maze",
+ "title": "Your Reflection STAYS When You Walk Away",
  "made_for_kids": false,
- "premise": "On the last rainy weekend of a travelling fair, my best friend Tasha and I go into the mirror maze before it comes down, and the friend who walks out half a beat behind me is not the one who walked in.",
- "twist": "The Tasha who came out is only a reflection: it can't move unless it can see me, so it freezes when I hide and copies me late. The real Tasha is still in the glass, and I only find her in the half beat when nothing in the maze can see me.",
- "world": "a travelling fair packing up in the rain at night: duckboards over mud, rides under black tarps, a lilac-bulbed mirror maze trailer, a flatbed truck, bumper cars, a warm fry van far across the field",
+ "premise": "In a town where your reflection stays behind in the glass when you walk away, I meet my best friend Tasha at the travelling fair's mirror maze every night, and on the last night the maze guy starts loading the panes onto the truck.",
+ "twist": "I'm not the person, I'm the reflection the real me left in a maze pane last year before moving away. I've never left a reflection because I am one. Tasha has come every night to see me, and when my pane goes on the truck she looks at herself in it on purpose, so her reflection stays behind with mine.",
+ "world": "a travelling fair packing up in the rain at night, in a town where every reflection stays where it was made: duckboards over mud, a puddle that still holds a man tying his boot, a flatbed truck of glass panes full of waving strangers, a fry van whose side holds a long queue, and a lilac-bulbed mirror maze with its roof off",
  "voice": {
   "voice": "am_adam",
   "tempo": 1.03,
@@ -35,7 +35,7 @@
   "saturation": 0.9,
   "contrast": 1.1,
   "vignette": 0.5,
-  "bloom": 0.35,
+  "bloom": 0.4,
   "grain": 0.012,
   "red_line": 0.78
  },
@@ -46,88 +46,7 @@
   "S04",
   "S05",
   "S06",
-  "S07",
-  "S08",
-  "S09",
-  "S10",
-  "S11",
-  "S12",
-  "S13",
-  "S14",
-  "S22",
-  "S23",
-  "S24",
-  "S25",
-  "S26",
-  "S27",
-  "S28",
-  "S29",
-  "S30",
-  "S31",
-  "S32",
-  "S33",
-  "S34",
-  "S35",
-  "S36",
-  "S37",
-  "S38",
-  "S39",
-  "S40",
-  "S41",
-  "S42",
-  "S43",
-  "S44",
-  "S45",
-  "S46",
-  "S47",
-  "S48",
-  "S49",
-  "S50",
-  "S51",
-  "S52",
-  "S53",
-  "S54",
-  "S55",
-  "S56",
-  "S57",
-  "S58",
-  "S59",
-  "S60",
-  "S61",
-  "S62",
-  "S63",
-  "S64",
-  "S65",
-  "S66",
-  "S67",
-  "S68",
-  "S69",
-  "S70",
-  "S71",
-  "S72",
-  "S73",
-  "S74",
-  "S75",
-  "S76",
-  "S77",
-  "S78",
-  "S79",
-  "S80",
-  "S81",
-  "S82",
-  "S83",
-  "S84",
-  "S85",
-  "S86",
-  "S87",
-  "S88",
-  "S89",
-  "S90",
-  "S91",
-  "S92",
-  "S93",
-  "S94",
-  "S95"
+  "S07"
  ],
  "rain_gain": 1.2,
  "phonemes": {
@@ -197,18 +116,502 @@
    }
   }
  },
+ "extras": {
+  "x0": {
+   "age": "adult",
+   "skin": "#c68c5a",
+   "shirt": "#3d6ea6",
+   "pattern": "solid",
+   "pants": "#2a2d3a",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "spiky",
+   "hair_c": "#2a1d15",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "x1": {
+   "age": "adult",
+   "skin": "#e0b48c",
+   "shirt": "#c4523a",
+   "pattern": "solid",
+   "pants": "#2d2a30",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#6b3a22",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "x2": {
+   "age": "adult",
+   "skin": "#8a5a3c",
+   "shirt": "#e8e4ee",
+   "pattern": "solid",
+   "pants": "#3a3d6a",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2a1d15",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   },
+   "hat": "beanie",
+   "hat_c": "#c46a3a"
+  },
+  "x3": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#6a3d8a",
+   "pattern": "solid",
+   "pants": "#1c1c22",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "bun",
+   "hair_c": "#1a1410",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "x4": {
+   "age": "adult",
+   "skin": "#a8704a",
+   "shirt": "#8f6a52",
+   "pattern": "stripes",
+   "pants": "#26303a",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "buzz",
+   "hair_c": "#1a1410",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   },
+   "pattern_c": "#e8e0d4"
+  },
+  "x5": {
+   "age": "adult",
+   "skin": "#6e4a33",
+   "shirt": "#2f7f93",
+   "pattern": "solid",
+   "pants": "#2a2630",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#1a1410",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   },
+   "hat": "fedora",
+   "hat_c": "#3a3028"
+  },
+  "x6": {
+   "age": "adult",
+   "skin": "#d9a27a",
+   "shirt": "#d98a3a",
+   "pattern": "solid",
+   "pants": "#33303a",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "buzz",
+   "hair_c": "#3a2a20",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "x7": {
+   "age": "adult",
+   "skin": "#b88660",
+   "shirt": "#8a8a98",
+   "pattern": "solid",
+   "pants": "#262a36",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2a1d15",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   },
+   "hat": "ballcap",
+   "hat_c": "#a03a3a"
+  },
+  "x8": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#c9a0b8",
+   "pattern": "solid",
+   "pants": "#3a3140",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#d9b86a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "x9": {
+   "age": "adult",
+   "skin": "#9a6a48",
+   "shirt": "#4a5568",
+   "pattern": "solid",
+   "pants": "#22242c",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "spiky",
+   "hair_c": "#e8d8b0",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   },
+   "extras": [
+    "glasses"
+   ]
+  },
+  "o0": {
+   "age": "adult",
+   "skin": "#aaa0ae",
+   "shirt": "#5c566a",
+   "pattern": "solid",
+   "pants": "#3a3644",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2a2630",
+   "face": {
+    "eyes": "mirror",
+    "brows": true,
+    "ink": "#24131f",
+    "mouth_inside": "#07070a"
+   }
+  },
+  "o1": {
+   "age": "adult",
+   "skin": "#aaa0ae",
+   "shirt": "#6a6475",
+   "pattern": "solid",
+   "pants": "#3a3644",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#2a2630",
+   "face": {
+    "eyes": "mirror",
+    "brows": true,
+    "ink": "#24131f",
+    "mouth_inside": "#07070a"
+   }
+  },
+  "o2": {
+   "age": "adult",
+   "skin": "#aaa0ae",
+   "shirt": "#4f4a5a",
+   "pattern": "solid",
+   "pants": "#3a3644",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2a2630",
+   "face": {
+    "eyes": "mirror",
+    "brows": true,
+    "ink": "#24131f",
+    "mouth_inside": "#07070a"
+   },
+   "hat": "beanie",
+   "hat_c": "#4a4658"
+  },
+  "o3": {
+   "age": "adult",
+   "skin": "#aaa0ae",
+   "shirt": "#625c70",
+   "pattern": "solid",
+   "pants": "#3a3644",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#2a2630",
+   "face": {
+    "eyes": "mirror",
+    "brows": true,
+    "ink": "#24131f",
+    "mouth_inside": "#07070a"
+   }
+  },
+  "o4": {
+   "age": "adult",
+   "skin": "#aaa0ae",
+   "shirt": "#575163",
+   "pattern": "solid",
+   "pants": "#3a3644",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#2a2630",
+   "face": {
+    "eyes": "mirror",
+    "brows": true,
+    "ink": "#24131f",
+    "mouth_inside": "#07070a"
+   }
+  },
+  "dark": {
+   "age": "adult",
+   "skin": "#837a90",
+   "shirt": "#5f5670",
+   "pattern": "solid",
+   "pants": "#3c3748",
+   "shoes": "#141416",
+   "sleeves": "long",
+   "hair": "long",
+   "hair_c": "#26222c",
+   "face": {
+    "eyes": "mirror",
+    "brows": false,
+    "ink": "#24131f",
+    "mouth": "line",
+    "mouth_inside": "#07070a"
+   },
+   "height": 1.12,
+   "width": 0.92,
+   "head_stretch": 1.7,
+   "matte": true
+  }
+ },
  "lines": [
   {
    "id": "L01",
    "who": "narrator",
    "chunks": [
     [
-     "TASHA points",
-     "Tasha points"
+     "In this TOWN,",
+     "In this town,"
     ],
     [
-     "at anything GREEN",
-     "at anything green"
+     "your REFLECTION",
+     "your reflection"
+    ],
+    [
+     "STAYS behind",
+     "stays behind"
+    ],
+    [
+     "when you",
+     "when you"
+    ],
+    [
+     "walk AWAY.",
+     "walk away."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The fry van's",
+     "The fry van's"
+    ],
+    [
+     "SHINY SIDE",
+     "shiny side"
+    ],
+    [
+     "has a QUEUE",
+     "has a queue"
+    ],
+    [
+     "a hundred LONG.",
+     "a hundred long."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The REAL queue",
+     "The real queue"
+    ],
+    [
+     "is TWO.",
+     "is two."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A PUDDLE",
+     "A puddle"
+    ],
+    [
+     "on the BOARDS",
+     "on the boards"
+    ],
+    [
+     "still has",
+     "still has"
+    ],
+    [
+     "a MAN",
+     "a man"
+    ],
+    [
+     "tying his BOOT.",
+     "tying his boot."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He tied it",
+     "He tied it"
+    ],
+    [
+     "in MARCH.",
+     "in march."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The GLASS",
+     "The glass"
+    ],
+    [
+     "on the TRUCK",
+     "on the truck"
+    ],
+    [
+     "is full",
+     "is full"
+    ],
+    [
+     "of PEOPLE,",
+     "of people,"
+    ],
+    [
+     "still WAVING.",
+     "still waving."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So NOBODY",
+     "So nobody"
+    ],
+    [
+     "here buys",
+     "here buys"
+    ],
+    [
+     "a NEW mirror.",
+     "a new mirror."
+    ],
+    [
+     "Too LONELY.",
+     "Too lonely."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Me?",
+     "Me?"
+    ],
+    [
+     "I've NEVER",
+     "I've never"
+    ],
+    [
+     "left ONE",
+     "left one"
+    ],
+    [
+     "ANYWHERE.",
+     "anywhere."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But TASHA",
+     "But... Tasha"
+    ],
+    [
+     "meets me",
+     "meets me"
+    ],
+    [
+     "at the",
+     "at the"
+    ],
+    [
+     "MIRROR MAZE",
+     "mirror maze"
+    ],
+    [
+     "every NIGHT.",
+     "every night."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "She POINTS",
+     "She points"
+    ],
+    [
+     "at my",
+     "at my"
+    ],
+    [
+     "green HAT",
+     "green hat"
     ],
     [
      "and goes,",
@@ -221,12 +624,12 @@
    ]
   },
   {
-   "id": "L02",
+   "id": "L11",
    "who": "narrator",
    "chunks": [
     [
-     "And I say",
-     "And I say"
+     "I say",
+     "I say"
     ],
     [
      "PICKLE.",
@@ -239,7 +642,7 @@
    ]
   },
   {
-   "id": "L03",
+   "id": "L12",
    "who": "narrator",
    "chunks": [
     [
@@ -257,203 +660,24 @@
    ]
   },
   {
-   "id": "L04",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So she yells",
-     "So she yells"
-    ],
-    [
-     "FRIES,",
-     "fries,"
-    ],
-    [
-     "and I PAY.",
-     "and I pay."
-    ]
-   ]
-  },
-  {
-   "id": "L05",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I have NEVER",
-     "I have never"
-    ],
-    [
-     "won.",
-     "won."
-    ],
-    [
-     "Not ONCE.",
-     "Not once."
-    ]
-   ]
-  },
-  {
-   "id": "L06",
-   "who": "narrator",
-   "chunks": [
-    [
-     "We've been",
-     "We've been"
-    ],
-    [
-     "best FRIENDS",
-     "best friends"
-    ],
-    [
-     "since FOREVER.",
-     "since forever."
-    ]
-   ]
-  },
-  {
-   "id": "L07",
-   "who": "narrator",
-   "chunks": [
-    [
-     "It was the",
-     "It was the"
-    ],
-    [
-     "LAST WEEKEND",
-     "last weekend"
-    ],
-    [
-     "of the FAIR.",
-     "of the fair."
-    ]
-   ]
-  },
-  {
-   "id": "L08",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And it was",
-     "And it was"
-    ],
-    [
-     "POURING.",
-     "pouring."
-    ],
-    [
-     "HALF the rides",
-     "Half the rides"
-    ],
-    [
-     "were under TARPS.",
-     "were under tarps."
-    ]
-   ]
-  },
-  {
-   "id": "L09",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The only ride",
-     "The only ride"
-    ],
-    [
-     "still LIT",
-     "still lit"
-    ],
-    [
-     "was the",
-     "was the"
-    ],
-    [
-     "MIRROR MAZE.",
-     "mirror maze."
-    ]
-   ]
-  },
-  {
-   "id": "L10",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The MAZE GUY",
-     "The maze guy"
-    ],
-    [
-     "was already",
-     "was already"
-    ],
-    [
-     "rolling up",
-     "rolling up"
-    ],
-    [
-     "its ROOF TARP.",
-     "its roof tarp."
-    ]
-   ]
-  },
-  {
-   "id": "L11",
-   "who": "narrator",
-   "chunks": [
-    [
-     "He kept",
-     "He kept"
-    ],
-    [
-     "his BACK",
-     "his back"
-    ],
-    [
-     "to us.",
-     "to us."
-    ]
-   ],
-   "gap": 0.3
-  },
-  {
-   "id": "L12",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So we",
-     "So we"
-    ],
-    [
-     "went IN",
-     "went in"
-    ],
-    [
-     "before it",
-     "before it"
-    ],
-    [
-     "came DOWN.",
-     "came down."
-    ]
-   ]
-  },
-  {
    "id": "L13",
    "who": "narrator",
    "chunks": [
     [
-     "Inside",
-     "Inside"
+     "But TASHA",
+     "But... Tasha"
     ],
     [
-     "was all GLASS,",
-     "was all glass,"
+     "always PAYS.",
+     "always pays."
     ],
     [
-     "and a HUNDRED",
-     "and a hundred"
+     "I never",
+     "I never"
     ],
     [
-     "of US.",
-     "of us."
+     "HAVE.",
+     "have."
     ]
    ]
   },
@@ -462,16 +686,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "TASHA said,",
-     "Tasha said,"
+     "It was",
+     "It was"
     ],
     [
-     "\"FIRST one OUT",
-     "first one out"
+     "the LAST NIGHT",
+     "the last night"
     ],
     [
-     "WINS.\"",
-     "wins."
+     "of the FAIR.",
+     "of the fair."
     ]
    ]
   },
@@ -480,12 +704,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "And we",
-     "And we"
+     "The MAZE GUY",
+     "The maze guy"
     ],
     [
-     "SPLIT UP.",
-     "split up."
+     "was taking",
+     "was taking"
+    ],
+    [
+     "the PANES",
+     "the panes"
+    ],
+    [
+     "DOWN.",
+     "down."
     ]
    ]
   },
@@ -494,39 +726,38 @@
    "who": "narrator",
    "chunks": [
     [
-     "There were",
-     "There were"
+     "Every pane",
+     "Every pane"
     ],
     [
-     "TASHAS",
-     "Tasha's"
+     "he CARRIED",
+     "he carried"
     ],
     [
-     "all down",
-     "all down"
+     "was PACKED",
+     "was packed"
     ],
     [
-     "the GLASS.",
-     "the glass."
+     "with FACES.",
+     "with faces."
     ]
-   ],
-   "tempo": 0.95
+   ]
   },
   {
    "id": "L17",
    "who": "narrator",
    "chunks": [
     [
-     "Every one",
-     "Every one"
+     "And they",
+     "And they"
     ],
     [
-     "of them",
-     "of them"
+     "all TURNED",
+     "all turned"
     ],
     [
-     "MOVING.",
-     "moving."
+     "to WATCH me.",
+     "to watch me."
     ]
    ]
   },
@@ -535,57 +766,53 @@
    "who": "narrator",
    "chunks": [
     [
-     "Except ONE,",
-     "Except one,"
+     "Tasha LAUGHED.",
+     "Tasha laughed."
     ],
     [
-     "way at",
-     "way at"
+     "Her side",
+     "Her side"
     ],
     [
-     "the BACK,",
-     "the back,"
+     "of the GLASS",
+     "of the glass"
     ],
     [
-     "standing STILL.",
-     "standing still."
+     "FOGGED up.",
+     "fogged up."
     ]
-   ],
-   "gap": 0.3
+   ]
   },
   {
    "id": "L19",
    "who": "narrator",
    "chunks": [
     [
-     "I figured",
-     "I figured"
+     "MINE",
+     "Mine"
     ],
     [
-     "it was",
-     "it was"
-    ],
-    [
-     "the ANGLES.",
-     "the angles."
+     "never DOES.",
+     "never does."
     ]
-   ]
+   ],
+   "gap": 0.3
   },
   {
    "id": "L20",
    "who": "narrator",
    "chunks": [
     [
-     "For once,",
-     "For once,"
+     "At the BACK,",
+     "At the back,"
     ],
     [
-     "I came out",
-     "I came out"
+     "the OLDEST panes",
+     "the oldest panes"
     ],
     [
-     "FIRST.",
-     "first."
+     "had gone DARK.",
+     "had gone dark."
     ]
    ]
   },
@@ -594,12 +821,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then TASHA",
-     "Then Tasha"
+     "The people",
+     "The people"
     ],
     [
-     "came OUT.",
-     "came out."
+     "in THOSE",
+     "in those"
+    ],
+    [
+     "had no SHINE",
+     "had no shine"
+    ],
+    [
+     "in their EYES.",
+     "in their eyes."
     ]
    ]
   },
@@ -608,615 +843,80 @@
    "who": "narrator",
    "chunks": [
     [
-     "Her hair",
-     "Her hair"
+     "NOBODY",
+     "Nobody"
     ],
     [
-     "was swept",
-     "was swept"
+     "had come",
+     "had come"
     ],
     [
-     "the OTHER way.",
-     "the other way."
+     "to SEE them",
+     "to see them"
+    ],
+    [
+     "in YEARS.",
+     "in years."
     ]
-   ]
+   ],
+   "gap": 0.3
   },
   {
    "id": "L23",
    "who": "narrator",
    "chunks": [
     [
-     "I figured",
-     "I figured"
+     "Every time",
+     "Every time"
     ],
     [
-     "it was",
-     "it was"
+     "I LOOKED,",
+     "I looked,"
     ],
     [
-     "the WIND.",
-     "the wind."
+     "one was",
+     "one was"
+    ],
+    [
+     "a pane NEARER.",
+     "a pane nearer."
     ]
-   ],
-   "gap": 0.3
+   ]
   },
   {
    "id": "L24",
    "who": "narrator",
    "chunks": [
     [
-     "We headed",
-     "We headed"
+     "Then it",
+     "Then it"
     ],
     [
-     "for the",
-     "for the"
+     "was right",
+     "was right"
     ],
     [
-     "fry VAN.",
-     "fry van."
+     "BEHIND me,",
+     "behind me,"
+    ],
+    [
+     "in MY glass.",
+     "in my glass."
     ]
    ]
+  },
+  {
+   "id": "P01",
+   "pause": 0.6,
+   "chunks": []
   },
   {
    "id": "L25",
    "who": "narrator",
    "chunks": [
     [
-     "Every STEP,",
-     "Every step,"
-    ],
-    [
-     "she was",
-     "she was"
-    ],
-    [
-     "HALF a beat",
-     "half a beat"
-    ],
-    [
-     "LATE.",
-     "late."
-    ]
-   ]
-  },
-  {
-   "id": "L26",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Always on",
-     "Always on"
-    ],
-    [
-     "the side",
-     "the side"
-    ],
-    [
-     "with the PUDDLES.",
-     "with the puddles."
-    ]
-   ]
-  },
-  {
-   "id": "L27",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Her boots",
-     "Her boots"
-    ],
-    [
-     "didn't SPLASH.",
-     "didn't splash."
-    ]
-   ]
-  },
-  {
-   "id": "L28",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I STOPPED",
-     "I stopped"
-    ],
-    [
-     "and turned",
-     "and turned"
-    ],
-    [
-     "to HER.",
-     "to her."
-    ]
-   ]
-  },
-  {
-   "id": "L29",
-   "who": "narrator",
-   "chunks": [
-    [
-     "She STOPPED",
-     "She stopped"
-    ],
-    [
-     "and turned",
-     "and turned"
-    ],
-    [
-     "to ME.",
-     "to me."
-    ],
-    [
-     "A little LATE.",
-     "A little late."
-    ]
-   ]
-  },
-  {
-   "id": "L30",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So I tried",
-     "So I tried"
-    ],
-    [
-     "her own TRICK",
-     "her own trick"
-    ],
-    [
-     "on her.",
-     "on her."
-    ]
-   ]
-  },
-  {
-   "id": "L31",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I pointed",
-     "I pointed"
-    ],
-    [
-     "at my HAT",
-     "at my hat"
-    ],
-    [
-     "and went,",
-     "and went,"
-    ],
-    [
-     "what's THAT?",
-     "what's that?"
-    ]
-   ]
-  },
-  {
-   "id": "L32",
-   "who": "narrator",
-   "chunks": [
-    [
-     "She pointed",
-     "She pointed"
-    ],
-    [
-     "at her",
-     "at her"
-    ],
-    [
-     "OWN HEAD.",
-     "own head."
-    ],
-    [
-     "Nothing GREEN",
-     "Nothing green"
-    ],
-    [
-     "up there.",
-     "up there."
-    ]
-   ]
-  },
-  {
-   "id": "L33",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Her mouth",
-     "Her mouth"
-    ],
-    [
-     "made the WORDS.",
-     "made the words."
-    ],
-    [
-     "No SOUND.",
-     "No sound."
-    ]
-   ]
-  },
-  {
-   "id": "L34",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Normally",
-     "Normally"
-    ],
-    [
-     "she'd LAUGH",
-     "she'd laugh"
-    ],
-    [
-     "at me.",
-     "at me."
-    ]
-   ]
-  },
-  {
-   "id": "L35",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I kept",
-     "I kept"
-    ],
-    [
-     "WALKING.",
-     "walking."
-    ]
-   ],
-   "gap": 0.3
-  },
-  {
-   "id": "L36",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Then the WIND",
-     "Then the wind"
-    ],
-    [
-     "came HARD,",
-     "came hard,"
-    ],
-    [
-     "so I DUCKED",
-     "so I ducked"
-    ],
-    [
-     "behind a TRUCK.",
-     "behind a truck."
-    ]
-   ]
-  },
-  {
-   "id": "L37",
-   "who": "narrator",
-   "chunks": [
-    [
-     "When I",
-     "When I"
-    ],
-    [
-     "stood UP,",
-     "stood up,"
-    ],
-    [
-     "she was FROZEN.",
-     "she was frozen."
-    ]
-   ],
-   "gap": 0.3
-  },
-  {
-   "id": "L38",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Mid-STEP,",
-     "Mid-step,"
-    ],
-    [
-     "one foot",
-     "one foot"
-    ],
-    [
-     "in the AIR.",
-     "in the air."
-    ]
-   ]
-  },
-  {
-   "id": "L39",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Rain running",
-     "Rain running"
-    ],
-    [
-     "off her COAT.",
-     "off her coat."
-    ]
-   ]
-  },
-  {
-   "id": "L40",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Then she",
-     "Then she"
-    ],
-    [
-     "did my DUCK,",
-     "did my duck,"
-    ],
-    [
-     "way too FAST.",
-     "way too fast."
-    ]
-   ]
-  },
-  {
-   "id": "L41",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Like she",
-     "Like she"
-    ],
-    [
-     "was catching UP.",
-     "was catching up."
-    ]
-   ]
-  },
-  {
-   "id": "L42",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And she was",
-     "And she was"
-    ],
-    [
-     "back to",
-     "back to"
-    ],
-    [
-     "being LATE.",
-     "being late."
-    ]
-   ]
-  },
-  {
-   "id": "L43",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I didn't",
-     "I didn't"
-    ],
-    [
-     "say a WORD.",
-     "say a word."
-    ]
-   ],
-   "gap": 0.4
-  },
-  {
-   "id": "L44",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So at the",
-     "So at the"
-    ],
-    [
-     "BUMPER CARS,",
-     "bumper cars,"
-    ],
-    [
-     "I HID",
-     "I hid"
-    ],
-    [
-     "behind the TARP.",
-     "behind the tarp."
-    ]
-   ]
-  },
-  {
-   "id": "L45",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I stood",
-     "I stood"
-    ],
-    [
-     "back there,",
-     "back there,"
-    ],
-    [
-     "SHAKING.",
-     "shaking."
-    ]
-   ]
-  },
-  {
-   "id": "L46",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I put",
-     "I put"
-    ],
-    [
-     "my HANDS",
-     "my hands"
-    ],
-    [
-     "over my FACE.",
-     "over my face."
-    ],
-    [
-     "Three deep BREATHS.",
-     "Three deep breaths."
-    ]
-   ]
-  },
-  {
-   "id": "L47",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I couldn't",
-     "I couldn't"
-    ],
-    [
-     "hear her",
-     "hear her"
-    ],
-    [
-     "at ALL.",
-     "at all."
-    ]
-   ],
-   "gap": 0.4
-  },
-  {
-   "id": "L48",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Then I",
-     "Then I"
-    ],
-    [
-     "stepped OUT.",
-     "stepped out."
-    ]
-   ]
-  },
-  {
-   "id": "L49",
-   "who": "narrator",
-   "chunks": [
-    [
-     "She was",
-     "She was"
-    ],
-    [
-     "right where",
-     "right where"
-    ],
-    [
-     "I'd LEFT her.",
-     "I'd left her."
-    ]
-   ]
-  },
-  {
-   "id": "L50",
-   "who": "narrator",
-   "chunks": [
-    [
-     "In the RAIN,",
-     "In the rain,"
-    ],
-    [
-     "one hand",
-     "one hand"
-    ],
-    [
-     "half UP.",
-     "half up."
-    ]
-   ]
-  },
-  {
-   "id": "L51",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Then she",
-     "Then she"
-    ],
-    [
-     "SAW me.",
-     "saw me."
-    ]
-   ]
-  },
-  {
-   "id": "P01",
-   "pause": 0.8,
-   "chunks": []
-  },
-  {
-   "id": "P02",
-   "pause": 0.5,
-   "chunks": []
-  },
-  {
-   "id": "L52",
-   "who": "narrator",
-   "chunks": [
-    [
-     "She didn't",
-     "She didn't"
-    ],
-    [
-     "HURRY",
-     "hurry"
-    ],
-    [
-     "this time.",
-     "this time."
-    ],
-    [
-     "Hand DOWN,",
-     "Hand down,"
-    ],
-    [
-     "like I DID.",
-     "like I did."
-    ],
-    [
-     "ONE STEP.",
-     "One step."
-    ]
-   ]
-  },
-  {
-   "id": "L53",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And she STOPPED,",
-     "And she stopped,"
-    ],
-    [
-     "FACING me,",
-     "facing me,"
-    ],
-    [
-     "in my POSE.",
-     "in my pose."
-    ]
-   ]
-  },
-  {
-   "id": "L54",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Her EYES",
-     "Her eyes"
+     "Its EYES",
+     "Its eyes"
     ],
     [
      "were BLACK,",
@@ -1233,280 +933,313 @@
    ]
   },
   {
-   "id": "L55",
+   "id": "L26",
    "who": "narrator",
    "chunks": [
     [
-     "No SHINE",
-     "No shine"
+     "Tasha",
+     "Tasha"
     ],
     [
-     "at ALL.",
-     "at all."
+     "looked RIGHT",
+     "looked right"
+    ],
+    [
+     "at it,",
+     "at it,"
+    ],
+    [
+     "and it STOPPED.",
+     "and it stopped."
+    ]
+   ]
+  },
+  {
+   "id": "L27",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then the",
+     "Then the"
+    ],
+    [
+     "MAZE GUY",
+     "maze guy"
+    ],
+    [
+     "LIFTED",
+     "lifted"
+    ],
+    [
+     "MY pane.",
+     "my pane."
+    ]
+   ]
+  },
+  {
+   "id": "L28",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And my",
+     "And my"
+    ],
+    [
+     "WHOLE MAZE",
+     "whole maze"
+    ],
+    [
+     "TIPPED",
+     "tipped"
+    ],
+    [
+     "with it.",
+     "with it."
+    ]
+   ]
+  },
+  {
+   "id": "P02",
+   "pause": 0.8,
+   "chunks": []
+  },
+  {
+   "id": "L29",
+   "who": "narrator",
+   "chunks": [
+    [
+     "I've never",
+     "I've never"
+    ],
+    [
+     "LEFT",
+     "left"
+    ],
+    [
+     "a reflection,",
+     "a reflection,"
+    ],
+    [
+     "because",
+     "because"
+    ],
+    [
+     "I AM one.",
+     "I am one."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L30",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The REAL me",
+     "The real me"
+    ],
+    [
+     "looked in",
+     "looked in"
+    ],
+    [
+     "this pane",
+     "this pane"
+    ],
+    [
+     "LAST YEAR.",
+     "last year."
+    ]
+   ]
+  },
+  {
+   "id": "L31",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then",
+     "Then"
+    ],
+    [
+     "MOVED AWAY,",
+     "moved away,"
+    ],
+    [
+     "and never",
+     "and never"
+    ],
+    [
+     "came BACK.",
+     "came back."
+    ]
+   ],
+   "gap": 0.3
+  },
+  {
+   "id": "L32",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Tasha",
+     "Tasha"
+    ],
+    [
+     "comes to",
+     "comes to"
+    ],
+    [
+     "SEE me",
+     "see me"
+    ],
+    [
+     "ANYWAY.",
+     "anyway."
+    ]
+   ]
+  },
+  {
+   "id": "L33",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's why",
+     "That's why"
+    ],
+    [
+     "I still",
+     "I still"
+    ],
+    [
+     "have my SHINE.",
+     "have my shine."
     ]
    ],
    "gap": 0.4
   },
   {
-   "id": "L56",
+   "id": "L34",
    "who": "narrator",
    "chunks": [
     [
-     "That's what",
-     "That's what"
+     "The TRUCK",
+     "The truck"
     ],
     [
-     "a REFLECTION does.",
-     "a reflection does."
+     "leaves at DAWN",
+     "leaves at dawn"
+    ],
+    [
+     "for a",
+     "for a"
+    ],
+    [
+     "NEW TOWN.",
+     "new town."
+    ]
+   ]
+  },
+  {
+   "id": "L35",
+   "who": "narrator",
+   "chunks": [
+    [
+     "NOBODY there",
+     "Nobody there"
+    ],
+    [
+     "will come",
+     "will come"
+    ],
+    [
+     "to SEE me.",
+     "to see me."
+    ]
+   ]
+  },
+  {
+   "id": "L36",
+   "who": "narrator",
+   "chunks": [
+    [
+     "All week,",
+     "All week,"
+    ],
+    [
+     "she'd only",
+     "she'd only"
+    ],
+    [
+     "looked at ME.",
+     "looked at me."
+    ]
+   ]
+  },
+  {
+   "id": "L37",
+   "who": "narrator",
+   "chunks": [
+    [
+     "So she",
+     "So she"
+    ],
+    [
+     "looked at HERSELF.",
+     "looked at herself."
+    ],
+    [
+     "On PURPOSE.",
+     "On purpose."
+    ]
+   ]
+  },
+  {
+   "id": "L38",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Then she",
+     "Then she"
+    ],
+    [
+     "walked BACK",
+     "walked back"
+    ],
+    [
+     "into the RAIN.",
+     "into the rain."
+    ]
+   ]
+  },
+  {
+   "id": "L39",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And her REFLECTION",
+     "And her reflection"
+    ],
+    [
+     "STAYED",
+     "stayed"
+    ],
+    [
+     "with ME.",
+     "with me."
     ]
    ],
-   "gap": 0.3
+   "gap": 0.4
   },
   {
-   "id": "L57",
+   "id": "L40",
    "who": "narrator",
    "chunks": [
     [
-     "It can't MOVE",
-     "It can't move"
+     "On the TRUCK,",
+     "On the truck,"
     ],
     [
-     "if it can't",
-     "if it can't"
-    ],
-    [
-     "SEE you.",
-     "see you."
-    ]
-   ],
-   "gap": 0.3
-  },
-  {
-   "id": "L58",
-   "who": "narrator",
-   "chunks": [
-    [
-     "It came out",
-     "It came out"
-    ],
-    [
-     "of the GLASS.",
-     "of the glass."
-    ]
-   ],
-   "gap": 0.3
-  },
-  {
-   "id": "L59",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Tasha was",
-     "Tasha was"
-    ],
-    [
-     "still IN there.",
-     "still in there."
-    ]
-   ],
-   "gap": 0.6
-  },
-  {
-   "id": "L60",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The whole fair",
-     "The whole fair"
-    ],
-    [
-     "was coming DOWN.",
-     "was coming down."
-    ],
-    [
-     "I RAN back",
-     "I ran back"
-    ],
-    [
-     "in ANYWAY.",
-     "in anyway."
-    ]
-   ]
-  },
-  {
-   "id": "L61",
-   "who": "narrator",
-   "chunks": [
-    [
-     "It ran",
-     "It ran"
-    ],
-    [
-     "WITH me,",
-     "with me,"
-    ],
-    [
-     "half a beat",
-     "half a beat"
-    ],
-    [
-     "BEHIND.",
-     "behind."
-    ]
-   ]
-  },
-  {
-   "id": "L62",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Half the PANELS",
-     "Half the panels"
-    ],
-    [
-     "were OUT.",
-     "were out."
-    ],
-    [
-     "The ROOF",
-     "The roof"
-    ],
-    [
-     "was OFF.",
-     "was off."
-    ]
-   ]
-  },
-  {
-   "id": "L63",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And every PANE",
-     "And every pane"
-    ],
-    [
-     "showed TASHA,",
-     "showed Tasha,"
-    ],
-    [
-     "COPYING me.",
-     "copying me."
-    ]
-   ]
-  },
-  {
-   "id": "L64",
-   "who": "narrator",
-   "chunks": [
-    [
-     "None of them",
-     "None of them"
-    ],
-    [
-     "showed ME.",
-     "showed me."
-    ]
-   ]
-  },
-  {
-   "id": "L65",
-   "who": "narrator",
-   "chunks": [
-    [
-     "I HID again,",
-     "I hid again,"
-    ],
-    [
-     "where NOTHING",
-     "where nothing"
-    ],
-    [
-     "could SEE me.",
-     "could see me."
-    ]
-   ]
-  },
-  {
-   "id": "L66",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Then I",
-     "Then I"
-    ],
-    [
-     "popped back OUT.",
-     "popped back out."
-    ]
-   ]
-  },
-  {
-   "id": "L67",
-   "who": "narrator",
-   "chunks": [
-    [
-     "For HALF",
-     "For half"
-    ],
-    [
-     "a beat,",
-     "a beat,"
-    ],
-    [
-     "NOTHING moved.",
-     "nothing moved."
-    ]
-   ]
-  },
-  {
-   "id": "L68",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Except ONE,",
-     "Except one,"
-    ],
-    [
-     "way down",
-     "way down"
-    ],
-    [
-     "the GLASS,",
-     "the glass,"
-    ],
-    [
-     "waving both ARMS.",
-     "waving both arms."
-    ]
-   ],
-   "gap": 0.6
-  },
-  {
-   "id": "L69",
-   "who": "narrator",
-   "chunks": [
-    [
-     "In the",
-     "In the"
-    ],
-    [
-     "SAME SPOT",
-     "same spot"
-    ],
-    [
-     "as BEFORE.",
-     "as before."
-    ]
-   ]
-  },
-  {
-   "id": "L70",
-   "who": "narrator",
-   "chunks": [
-    [
-     "She pointed",
-     "She pointed"
+     "she pointed",
+     "she pointed"
     ],
     [
      "at my HAT",
@@ -1523,301 +1256,44 @@
    ]
   },
   {
-   "id": "L71",
+   "id": "L41",
    "who": "narrator",
    "chunks": [
     [
-     "A reflection",
-     "A reflection"
-    ],
-    [
-     "can't go FIRST.",
-     "can't go first."
-    ]
-   ]
-  },
-  {
-   "id": "L72",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So I said",
-     "So I said"
+     "I said",
+     "I said"
     ],
     [
      "PICKLE.",
      "pickle."
     ],
     [
-     "On PURPOSE.",
-     "On purpose."
+     "Every TIME.",
+     "Every time."
     ]
    ]
   },
   {
-   "id": "L73",
+   "id": "L42",
    "who": "narrator",
    "chunks": [
     [
-     "She yelled",
-     "She yelled"
+     "In this TOWN,",
+     "In this town,"
     ],
     [
-     "FRIES.",
-     "fries."
-    ]
-   ]
-  },
-  {
-   "id": "L74",
-   "who": "narrator",
-   "chunks": [
-    [
-     "She's still TASHA.",
-     "She's still Tasha."
+     "your reflection",
+     "your reflection"
     ],
     [
-     "And she's still",
-     "And she's still"
-    ],
-    [
-     "WINNING.",
-     "winning."
-    ]
-   ]
-  },
-  {
-   "id": "L75",
-   "who": "narrator",
-   "chunks": [
-    [
-     "But IT stood",
-     "But it stood"
-    ],
-    [
-     "between us,",
-     "between us,"
-    ],
-    [
-     "FACING me.",
-     "facing me."
-    ]
-   ]
-  },
-  {
-   "id": "L76",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So I",
-     "So I"
-    ],
-    [
-     "stepped BACK.",
-     "stepped back."
-    ]
-   ]
-  },
-  {
-   "id": "L77",
-   "who": "narrator",
-   "chunks": [
-    [
-     "It stepped",
-     "It stepped"
-    ],
-    [
-     "back TOO,",
-     "back, too,"
-    ],
-    [
-     "HALF a beat",
-     "half a beat"
-    ],
-    [
-     "LATE.",
-     "late."
-    ]
-   ]
-  },
-  {
-   "id": "L78",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And there",
-     "And there"
-    ],
-    [
-     "was TASHA,",
-     "was Tasha,"
-    ],
-    [
-     "SOAKED",
-     "soaked"
-    ],
-    [
-     "and GRINNING.",
-     "and grinning."
-    ]
-   ]
-  },
-  {
-   "id": "L79",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The SHINE",
-     "The shine"
-    ],
-    [
-     "was back",
-     "was back"
-    ],
-    [
-     "in her EYES.",
-     "in her eyes."
-    ]
-   ]
-  },
-  {
-   "id": "L80",
-   "who": "narrator",
-   "chunks": [
-    [
-     "She bumped",
-     "She bumped"
-    ],
-    [
-     "my SHOULDER.",
-     "my shoulder."
-    ]
-   ]
-  },
-  {
-   "id": "L81",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The maze guy",
-     "The maze guy"
-    ],
-    [
-     "carried that PANEL",
-     "carried that panel"
-    ],
-    [
-     "to the TRUCK.",
-     "to the truck."
+     "STAYS behind.",
+     "stays behind."
     ]
    ],
-   "tempo": 0.92
+   "gap": 0.3
   },
   {
-   "id": "L82",
-   "who": "narrator",
-   "chunks": [
-    [
-     "In the GLASS,",
-     "In the glass,"
-    ],
-    [
-     "it watched",
-     "it watched"
-    ],
-    [
-     "us GO.",
-     "us go."
-    ],
-    [
-     "LATE,",
-     "Late,"
-    ],
-    [
-     "like ALWAYS.",
-     "like always."
-    ]
-   ]
-  },
-  {
-   "id": "P03",
-   "pause": 1.8,
-   "chunks": []
-  },
-  {
-   "id": "L83",
-   "who": "narrator",
-   "chunks": [
-    [
-     "My coins were",
-     "My coins were"
-    ],
-    [
-     "already on",
-     "already on"
-    ],
-    [
-     "the COUNTER.",
-     "the counter."
-    ]
-   ]
-  },
-  {
-   "id": "L84",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Before she",
-     "Before she"
-    ],
-    [
-     "even POINTED.",
-     "even pointed."
-    ]
-   ]
-  },
-  {
-   "id": "L85",
-   "who": "narrator",
-   "chunks": [
-    [
-     "We both",
-     "We both"
-    ],
-    [
-     "looked UP",
-     "looked up"
-    ],
-    [
-     "at the RAIN.",
-     "at the rain."
-    ]
-   ]
-  },
-  {
-   "id": "L86",
-   "who": "narrator",
-   "chunks": [
-    [
-     "So did",
-     "So did"
-    ],
-    [
-     "our REFLECTIONS,",
-     "our reflections,"
-    ],
-    [
-     "in the van's",
-     "in the van's"
-    ],
-    [
-     "SHINY SIDE.",
-     "shiny side."
-    ]
-   ]
-  },
-  {
-   "id": "L87",
+   "id": "L43",
    "who": "narrator",
    "chunks": [
     [
@@ -1825,30 +1301,12 @@
      "And nobody"
     ],
     [
-     "was LATE.",
-     "was late."
-    ]
-   ]
-  },
-  {
-   "id": "L88",
-   "who": "narrator",
-   "chunks": [
-    [
-     "At the",
-     "At the"
+     "comes BACK",
+     "comes back"
     ],
     [
-     "fry VAN,",
-     "fry van,"
-    ],
-    [
-     "she pointed",
-     "she pointed"
-    ],
-    [
-     "at my HAT.",
-     "at my hat."
+     "for it.",
+     "for it."
     ]
    ]
   }
@@ -1860,21 +1318,35 @@
     [
      0,
      [
-      3.0,
-      3.6,
-      1.38
+      3.2,
+      3.9,
+      1.45
      ],
      [
       3.0,
-      8.4,
+      11.5,
+      2.2
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      3.15,
+      4.3,
       1.5
+     ],
+     [
+      3.0,
+      11.5,
+      2.2
      ],
      34
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "the open: side-on two-shot, Tasha points at my green hat"
+   "note": "the hook: Tasha lit at the maze front, the panes behind her hold a lilac-rimmed crowd on no steps"
   },
   {
    "id": "S02",
@@ -1882,21 +1354,35 @@
     [
      0,
      [
-      3.2,
-      4.0,
-      1.45
+      0.4,
+      -9.6,
+      1.5
      ],
      [
-      3.5,
-      8.4,
-      1.6
+      5.4,
+      -15.2,
+      1.3
      ],
-     60
+     28
+    ],
+    [
+     1,
+     [
+      1.2,
+      -9.6,
+      1.5
+     ],
+     [
+      6.0,
+      -15.2,
+      1.3
+     ],
+     28
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "my face, resigned",
+   "note": "the fry van's shiny side: a long queue of lilac-rimmed people in the glass",
    "at": "L02"
   },
   {
@@ -1905,21 +1391,21 @@
     [
      0,
      [
-      0.3,
-      4.2,
-      1.3
+      -2.6,
+      -11.0,
+      1.6
      ],
      [
-      3.0,
-      8.4,
-      1.45
+      0.5,
+      -14.6,
+      1.4
      ],
-     30
+     22
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "two-shot, the rule",
+   "note": "the real hatch: two customers",
    "at": "L03"
   },
   {
@@ -1928,21 +1414,21 @@
     [
      0,
      [
-      2.4,
-      4.6,
-      1.5
+      0.15,
+      2.2,
+      1.45
      ],
      [
-      2.4,
-      8.4,
-      1.55
+      0.62,
+      4.05,
+      0.05
      ],
-     46
+     30
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "her FRIES yell, a mouth flap, both arms up",
+   "note": "a puddle on the boards holds a man tying his boot, upside down, rimmed, over empty boards",
    "at": "L04"
   },
   {
@@ -1951,21 +1437,35 @@
     [
      0,
      [
-      2.1,
-      4.8,
-      1.5
+      0.5,
+      2.6,
+      1.0
      ],
      [
-      2.4,
-      8.4,
-      1.56
+      0.62,
+      4.05,
+      0.05
      ],
-     56
+     34
+    ],
+    [
+     1,
+     [
+      0.6,
+      3.1,
+      0.8
+     ],
+     [
+      0.62,
+      3.95,
+      0.05
+     ],
+     34
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "her grin, the shine bright",
+   "note": "he tied it in March: nobody over him",
    "at": "L05"
   },
   {
@@ -1974,35 +1474,35 @@
     [
      0,
      [
-      0.9,
-      0.3,
-      1.45
+      -2.8,
+      0.5,
+      1.7
      ],
      [
-      1.0,
-      6.5,
-      1.4
+      -5.0,
+      7.0,
+      2.2
      ],
-     30
+     26
     ],
     [
      1,
      [
-      0.9,
-      1.6,
-      1.45
+      -3.8,
+      0.5,
+      1.7
      ],
      [
-      1.0,
-      7.5,
-      1.4
+      -5.4,
+      7.0,
+      2.2
      ],
-     30
+     26
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "a wide from behind, the two of us walking up to the maze",
+   "note": "the truck's glass full of waving people, each rimmed",
    "at": "L06"
   },
   {
@@ -2011,35 +1511,21 @@
     [
      0,
      [
-      -1.8,
-      -2.8,
-      1.7
-     ],
-     [
-      -6.5,
-      8.0,
+      -1.5,
+      2.4,
       1.9
      ],
-     20
-    ],
-    [
-     1,
      [
-      -1.8,
-      -2.8,
-      1.7
+      -3.3,
+      6.65,
+      2.1
      ],
-     [
-      -5.5,
-      8.0,
-      1.9
-     ],
-     20
+     34
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "the fair packing up: rides under tarps, the flatbed, the dark big wheel far back",
+   "note": "a brand-new pane, empty, gleaming; a little funny",
    "at": "L07"
   },
   {
@@ -2048,21 +1534,21 @@
     [
      0,
      [
-      1.0,
-      0.0,
-      0.4
+      60.6,
+      9.5,
+      1.55
      ],
      [
-      0.7,
-      6.0,
-      0.5
+      60.1,
+      13.5,
+      1.6
      ],
-     26
+     38
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "pouring: the puddle across the boards",
+   "note": "me at a pane, side-on, nothing of me in the glass in front: the lilac rim, the bulbs behind me",
    "at": "L08"
   },
   {
@@ -2071,22 +1557,22 @@
     [
      0,
      [
-      -5.5,
-      1.0,
-      1.4
+      60.55,
+      9.3,
+      1.55
      ],
      [
-      -9.5,
-      5.0,
-      1.8
+      60.0,
+      13.0,
+      1.5
      ],
-     22
+     36
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "half the rides under tarps",
-   "at": "L08.2"
+   "note": "Tasha and me either side of the pane, rain on her side only",
+   "at": "L09"
   },
   {
    "id": "S10",
@@ -2094,22 +1580,22 @@
     [
      0,
      [
-      3.0,
-      3.8,
-      1.3
+      59.5,
+      15.3,
+      1.65
      ],
      [
-      3.0,
-      12.0,
-      3.6
+      59.75,
+      12.15,
+      1.6
      ],
-     22
+     40
     ]
    ],
-   "step": 4,
-   "hand": 0.0,
-   "note": "the maze front, its bulbs burning steady",
-   "at": "L09"
+   "step": 2,
+   "hand": 0.01,
+   "note": "her grin through the glass, pointing at my hat",
+   "at": "L10"
   },
   {
    "id": "S11",
@@ -2117,22 +1603,22 @@
     [
      0,
      [
-      5.0,
-      10.4,
-      1.5
+      60.65,
+      9.8,
+      1.7
      ],
      [
-      1.0,
-      -16.0,
-      1.4
+      60.3,
+      13.45,
+      1.75
      ],
-     28
+     46
     ]
    ],
-   "step": 4,
-   "hand": 0.0,
-   "note": "looking back down the field: the fry van's warm square far off",
-   "at": "L09.3"
+   "step": 2,
+   "hand": 0.01,
+   "note": "my face and the green hat: what's that?",
+   "at": "L10.3"
   },
   {
    "id": "S12",
@@ -2140,22 +1626,22 @@
     [
      0,
      [
-      6.0,
-      5.4,
-      1.2
+      60.6,
+      10.6,
+      1.7
      ],
      [
-      3.6,
-      13.0,
-      6.9
+      60.3,
+      13.45,
+      1.72
      ],
-     24
+     52
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "the maze guy at the roofline, his back to us",
-   "at": "L10"
+   "note": "I say pickle",
+   "at": "L11"
   },
   {
    "id": "S13",
@@ -2163,22 +1649,22 @@
     [
      0,
      [
-      2.0,
-      7.2,
-      1.2
+      59.5,
+      15.3,
+      1.5
      ],
      [
-      3.6,
-      13.0,
-      6.9
+      59.75,
+      12.15,
+      1.3
      ],
-     32
+     38
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "his back",
-   "at": "L11"
+   "note": "Tasha with a tray in each hand: whoever says pickle buys the fries",
+   "at": "L12"
   },
   {
    "id": "S14",
@@ -2186,36 +1672,22 @@
     [
      0,
      [
-      3.0,
-      5.2,
+      60.55,
+      9.3,
       1.5
      ],
      [
-      3.0,
-      9.0,
-      1.9
-     ],
-     24
-    ],
-    [
-     1,
-     [
-      3.0,
-      6.6,
+      60.0,
+      13.0,
       1.5
      ],
-     [
-      3.0,
-      11.5,
-      1.9
-     ],
-     24
+     32
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "up the steps under the bulbs",
-   "at": "L12"
+   "note": "she pays, eating from both trays; I never have",
+   "at": "L13"
   },
   {
    "id": "S15",
@@ -2223,36 +1695,36 @@
     [
      0,
      [
-      60.0,
-      -1.6,
-      1.35
+      60.2,
+      5.6,
+      1.6
      ],
      [
       60.0,
-      8.0,
-      1.45
+      12.0,
+      1.5
      ],
-     24
+     26
     ],
     [
      1,
      [
-      60.0,
-      -1.0,
-      1.35
+      60.2,
+      6.6,
+      1.6
      ],
      [
       60.0,
-      8.5,
-      1.45
+      12.0,
+      1.5
      ],
-     24
+     26
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "the glass grid with both of us repeated down every pane",
-   "at": "L13"
+   "note": "roof off, rain; the maze guy carries a pane past",
+   "at": "L14"
   },
   {
    "id": "S16",
@@ -2260,22 +1732,23 @@
     [
      0,
      [
-      59.45,
-      2.4,
+      0.6,
+      -3.4,
       1.5
      ],
      [
-      60.3,
-      4.2,
-      1.55
+      0.0,
+      0.6,
+      1.3
      ],
      30
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "her smirk side-on, already turning away down a corridor",
-   "at": "L14"
+   "note": "the maze guy taking the panes down",
+   "at": "L15",
+   "follow": "guy"
   },
   {
    "id": "S17",
@@ -2283,22 +1756,23 @@
     [
      0,
      [
-      59.9,
       0.5,
-      1.4
+      3.6,
+      1.55
      ],
      [
-      60.2,
-      9.0,
-      1.45
+      0.0,
+      0.85,
+      1.3
      ],
-     26
+     30
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "we split up",
-   "at": "L15"
+   "note": "every pane he carried was packed with faces",
+   "at": "L16",
+   "follow": "guy"
   },
   {
    "id": "S18",
@@ -2306,36 +1780,37 @@
     [
      0,
      [
-      60.3,
-      0.2,
-      1.4
+      0.5,
+      3.6,
+      1.55
      ],
      [
-      60.0,
-      9.0,
-      1.45
+      0.0,
+      0.85,
+      1.4
      ],
-     26
+     34
     ],
     [
      1,
      [
-      60.3,
-      1.2,
-      1.4
+      0.5,
+      3.9,
+      1.6
      ],
      [
-      60.0,
-      9.5,
-      1.45
+      0.0,
+      0.85,
+      1.5
      ],
-     26
+     40
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "a slow track past the panes: Tasha after Tasha, all moving",
-   "at": "L16"
+   "note": "they all turned to watch me",
+   "at": "L17",
+   "follow": "guy"
   },
   {
    "id": "S19",
@@ -2343,22 +1818,22 @@
     [
      0,
      [
-      59.7,
-      0.8,
-      1.5
+      59.3,
+      15.3,
+      1.65
      ],
      [
-      60.3,
-      9.0,
-      1.45
+      59.75,
+      12.15,
+      1.6
      ],
-     30
+     44
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "every one of them moving",
-   "at": "L17"
+   "note": "Tasha laughed; her side of the glass fogged up",
+   "at": "L18"
   },
   {
    "id": "S20",
@@ -2366,22 +1841,22 @@
     [
      0,
      [
-      59.9,
-      5.0,
-      1.45
+      60.55,
+      9.3,
+      1.55
      ],
      [
       60.0,
-      13.5,
-      1.4
+      13.0,
+      1.5
      ],
-     55
+     36
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "far down the glass one Tasha stands still while the rest move",
-   "at": "L18"
+   "note": "mine never does: her fogged patch, my glass clear",
+   "at": "L19"
   },
   {
    "id": "S21",
@@ -2389,22 +1864,22 @@
     [
      0,
      [
-      60.5,
-      2.3,
+      60.0,
+      2.0,
       1.55
      ],
      [
       60.0,
-      4.8,
-      1.6
+      12.0,
+      1.7
      ],
-     40
+     26
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "me, I figured it was the angles",
-   "at": "L19"
+   "note": "the back panes, the oldest figures gone dark, none with a shine",
+   "at": "L20"
   },
   {
    "id": "S22",
@@ -2412,22 +1887,22 @@
     [
      0,
      [
-      5.2,
-      6.2,
-      1.25
+      60.7,
+      7.6,
+      1.6
      ],
      [
-      3.2,
-      11.4,
-      1.5
+      60.45,
+      11.2,
+      1.62
      ],
-     22
+     50
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "me out of the exit into the rain, alone",
-   "at": "L20"
+   "note": "a face with no shine",
+   "at": "L21"
   },
   {
    "id": "S23",
@@ -2435,22 +1910,22 @@
     [
      0,
      [
-      5.2,
-      6.2,
-      1.25
+      60.0,
+      2.0,
+      1.55
      ],
      [
-      3.2,
-      11.4,
-      1.5
+      60.0,
+      12.0,
+      1.7
      ],
-     22
+     26
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "then Tasha came out",
-   "at": "L21"
+   "note": "nobody had come to see them in years",
+   "at": "L22"
   },
   {
    "id": "S24",
@@ -2458,22 +1933,22 @@
     [
      0,
      [
-      3.0,
-      3.6,
-      1.38
+      60.0,
+      2.0,
+      1.55
      ],
      [
-      3.0,
-      8.4,
-      1.5
+      60.0,
+      12.0,
+      1.7
      ],
-     34
+     26
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "the exit framing: the same angle as L01, her fringe swept the other way",
-   "at": "L22"
+   "note": "every time I looked, one was nearer",
+   "at": "L23"
   },
   {
    "id": "S25",
@@ -2481,22 +1956,22 @@
     [
      0,
      [
-      2.6,
-      8.0,
-      1.5
+      60.0,
+      2.0,
+      1.55
      ],
      [
-      4.2,
-      9.6,
-      1.65
+      60.0,
+      12.0,
+      1.7
      ],
-     55
+     26
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "I figured it was the wind",
-   "at": "L23"
+   "note": "a pane nearer",
+   "at": "L23.2"
   },
   {
    "id": "S26",
@@ -2504,23 +1979,36 @@
     [
      0,
      [
-      3.0,
-      4.4,
-      1.4
+      60.2,
+      11.4,
+      1.55
      ],
      [
-      0.9,
-      -0.5,
-      1.1
+      60.0,
+      14.2,
+      1.6
      ],
-     26
+     32
+    ],
+    [
+     1,
+     [
+      60.2,
+      11.9,
+      1.55
+     ],
+     [
+      60.0,
+      14.2,
+      1.7
+     ],
+     36
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "side-on walk across the duckboards, the van far off",
-   "at": "L24",
-   "follow": "me"
+   "note": "right behind me, in my glass: the dark one a head too tall",
+   "at": "L24"
   },
   {
    "id": "S27",
@@ -2528,23 +2016,22 @@
     [
      0,
      [
-      2.6,
-      3.8,
-      0.6
+      60.12,
+      12.55,
+      1.35
      ],
      [
-      0.9,
-      -0.5,
-      0.8
+      59.9,
+      14.35,
+      2.1
      ],
-     20
+     36
     ]
    ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "two-shot wide, our legs out of step",
-   "at": "L25",
-   "follow": "me"
+   "step": 1,
+   "hand": 0.006,
+   "note": "the hit: its face behind my shoulder, lit from below, grey rim",
+   "at": "P01"
   },
   {
    "id": "S28",
@@ -2552,23 +2039,36 @@
     [
      0,
      [
-      3.0,
-      3.6,
-      1.3
+      60.12,
+      12.55,
+      1.35
      ],
      [
-      0.9,
-      -0.5,
-      1.1
+      59.9,
+      14.35,
+      2.1
      ],
-     24
+     36
+    ],
+    [
+     1,
+     [
+      60.05,
+      12.7,
+      1.4
+     ],
+     [
+      59.9,
+      14.35,
+      2.1
+     ],
+     40
     ]
    ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "always on the side with the puddles",
-   "at": "L26",
-   "follow": "me"
+   "step": 1,
+   "hand": 0.006,
+   "note": "its eyes were black, like a window at night",
+   "at": "L25"
   },
   {
    "id": "S29",
@@ -2576,23 +2076,22 @@
     [
      0,
      [
-      1.5,
-      -1.6,
-      0.22
+      59.3,
+      15.3,
+      1.65
      ],
      [
-      0.7,
-      0.0,
-      0.12
+      59.75,
+      12.15,
+      1.65
      ],
-     24
+     44
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "low along a puddle: my boot splashes, hers makes no sound",
-   "at": "L27",
-   "follow": "me"
+   "note": "Tasha's face lit, staring right at it",
+   "at": "L26"
   },
   {
    "id": "S30",
@@ -2600,23 +2099,22 @@
     [
      0,
      [
-      0.8,
-      -4.2,
+      60.05,
+      12.7,
       1.4
      ],
      [
-      0.8,
-      0.0,
-      1.4
+      59.9,
+      14.35,
+      2.1
      ],
-     26
+     40
     ]
    ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "I stop and turn to her",
-   "at": "L28",
-   "follow": "me"
+   "step": 1,
+   "hand": 0.006,
+   "note": "the dark one, stopped",
+   "at": "L26+0.85"
   },
   {
    "id": "S31",
@@ -2624,23 +2122,22 @@
     [
      0,
      [
-      -2.2,
-      -1.8,
-      1.5
+      60.9,
+      8.0,
+      1.7
      ],
      [
-      1.8,
-      0.0,
-      1.5
+      60.0,
+      12.5,
+      1.6
      ],
-     24
+     28
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "mid shot, side-lit: she stops and turns to me, late",
-   "at": "L29",
-   "follow": "me"
+   "note": "the maze guy lifts my pane, his back to us",
+   "at": "L27"
   },
   {
    "id": "S32",
@@ -2648,23 +2145,68 @@
     [
      0,
      [
-      0.8,
-      -4.2,
-      1.4
+      60.2,
+      15.6,
+      1.7
      ],
      [
-      0.8,
-      0.0,
-      1.4
+      59.7,
+      11.0,
+      1.55
      ],
-     26
+     30,
+     0
+    ],
+    [
+     0.3,
+     [
+      60.2,
+      15.6,
+      1.7
+     ],
+     [
+      59.7,
+      11.0,
+      1.55
+     ],
+     30,
+     0
+    ],
+    [
+     0.75,
+     [
+      60.2,
+      15.6,
+      1.7
+     ],
+     [
+      59.7,
+      11.0,
+      1.55
+     ],
+     30,
+     25
+    ],
+    [
+     1,
+     [
+      60.2,
+      15.6,
+      1.7
+     ],
+     [
+      59.7,
+      11.0,
+      1.55
+     ],
+     30,
+     25
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "so I tried her own trick on her",
-   "at": "L30",
-   "follow": "me"
+   "note": "from inside my whole maze tips about 25 degrees over 0.6 s: the camera rolls with me, the world beyond tips",
+   "at": "L28"
   },
   {
    "id": "S33",
@@ -2672,23 +2214,22 @@
     [
      0,
      [
-      0.0,
-      -3.0,
+      0.4,
+      0.5,
       1.5
      ],
      [
-      0.1,
-      0.0,
-      1.55
+      -0.1,
+      5.0,
+      1.45
      ],
-     22
+     34
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "me pointing at my hat",
-   "at": "L31",
-   "follow": "me"
+   "note": "the tilt held from her side: Tasha level in the rain, me tipped inside the pane",
+   "at": "P02"
   },
   {
    "id": "S34",
@@ -2696,23 +2237,23 @@
     [
      0,
      [
-      1.6,
-      -3.0,
+      -1.0,
+      -3.2,
       1.5
      ],
      [
-      1.6,
-      0.0,
-      1.55
+      -1.0,
+      0.45,
+      1.6
      ],
      22
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "she points at her own head, mirror-handed, late",
-   "at": "L32",
-   "follow": "me"
+   "note": "the reveal said plainly: me in the pane, front at last, the lilac rim and the shine",
+   "at": "L29",
+   "follow": "guy"
   },
   {
    "id": "S35",
@@ -2720,23 +2261,37 @@
     [
      0,
      [
-      1.7,
-      2.5,
-      1.55
+      -0.7,
+      -2.7,
+      1.35
      ],
      [
-      1.6,
-      0.0,
-      1.55
+      -1.25,
+      0.2,
+      1.5
      ],
-     30
+     34
+    ],
+    [
+     1,
+     [
+      -0.9,
+      -2.5,
+      1.35
+     ],
+     [
+      -1.25,
+      0.2,
+      1.5
+     ],
+     34
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "her mouth makes the words, no sound",
-   "at": "L33",
-   "follow": "me"
+   "note": "me alone in the pane, the empty boards in front of it: the real me looked in this pane last year",
+   "at": "L30",
+   "follow": "guy"
   },
   {
    "id": "S36",
@@ -2744,23 +2299,23 @@
     [
      0,
      [
-      0.8,
-      -4.2,
-      1.4
+      2.0,
+      -5.5,
+      1.7
      ],
      [
-      0.8,
-      0.0,
+      -1.4,
+      0.2,
       1.4
      ],
-     26
+     24
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "normally she'd laugh at me",
-   "at": "L34",
-   "follow": "me"
+   "note": "the real me looked in this pane last year, then moved away",
+   "at": "L31",
+   "follow": "guy"
   },
   {
    "id": "S37",
@@ -2768,23 +2323,23 @@
     [
      0,
      [
-      3.0,
-      4.4,
-      1.4
+      -1.7,
+      -0.7,
+      1.65
      ],
      [
-      0.9,
-      -0.5,
-      1.1
+      0.0,
+      0.0,
+      1.65
      ],
-     26
+     50
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "I kept walking",
-   "at": "L35",
-   "follow": "me"
+   "note": "Tasha comes to see me anyway",
+   "at": "L32",
+   "follow": "tasha"
   },
   {
    "id": "S38",
@@ -2792,22 +2347,23 @@
     [
      0,
      [
-      3.6,
-      3.4,
-      1.4
+      -0.55,
+      -1.35,
+      1.45
      ],
      [
-      -0.6,
-      7.2,
-      1.2
+      -0.55,
+      0.45,
+      1.4
      ],
-     24
+     46
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "a gust: I duck behind the truck",
-   "at": "L36"
+   "note": "the eye close: my glint the brightest point",
+   "at": "L33",
+   "follow": "guy"
   },
   {
    "id": "S39",
@@ -2815,22 +2371,22 @@
     [
      0,
      [
-      -1.4,
-      9.2,
-      1.55
+      -6.5,
+      -2.5,
+      1.8
      ],
      [
-      1.8,
-      7.9,
-      1.15
+      -4.2,
+      6.8,
+      2.0
      ],
-     30
+     28
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "when I stood up she was frozen",
-   "at": "L37"
+   "note": "the truck at the field's edge; my pane is set on it",
+   "at": "L34"
   },
   {
    "id": "S40",
@@ -2838,22 +2394,22 @@
     [
      0,
      [
-      3.6,
-      6.0,
-      0.7
+      -4.4,
+      3.7,
+      1.5
      ],
      [
-      1.8,
-      7.9,
-      0.8
+      -4.4,
+      6.9,
+      2.5
      ],
-     30
+     34
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "mid-step, one foot in the air",
-   "at": "L38"
+   "note": "nobody there will come to see me",
+   "at": "L35"
   },
   {
    "id": "S41",
@@ -2861,22 +2417,22 @@
     [
      0,
      [
-      3.6,
-      9.2,
-      1.4
+      -2.8000000000000003,
+      3.0,
+      1.7
      ],
      [
-      1.8,
-      7.9,
-      1.35
+      -4.4,
+      6.9,
+      2.5
      ],
-     36
+     32
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "rain running off her coat",
-   "at": "L39"
+   "note": "all week she'd only looked at me",
+   "at": "L36"
   },
   {
    "id": "S42",
@@ -2884,22 +2440,22 @@
     [
      0,
      [
-      -3.4,
-      7.2,
-      1.5
+      -3.2,
+      3.1,
+      1.6
      ],
      [
-      -1.5,
-      9.5,
-      1.55
+      -4.1000000000000005,
+      6.9,
+      2.5
      ],
      30
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "my face: the narrator seeing it (the motion is off screen)",
-   "at": "L40"
+   "note": "she looks at herself on purpose: her reflection appears beside me, rimmed",
+   "at": "L37"
   },
   {
    "id": "S43",
@@ -2907,22 +2463,22 @@
     [
      0,
      [
-      0.3,
-      5.9,
-      1.3
+      -5.2,
+      5.6,
+      2.0
      ],
      [
+      -3.75,
       1.8,
-      7.9,
-      1.0
+      1.4
      ],
-     34
+     38
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "she's standing again, both feet down",
-   "at": "L40.1"
+   "note": "she walks back into the rain; her reflection stays",
+   "at": "L38"
   },
   {
    "id": "S44",
@@ -2930,23 +2486,36 @@
     [
      0,
      [
-      3.0,
-      4.4,
-      1.4
+      -4.1000000000000005,
+      3.5,
+      1.9
      ],
      [
-      0.9,
-      -0.5,
-      1.1
+      -4.25,
+      6.9,
+      2.6
      ],
-     26
+     30
+    ],
+    [
+     1,
+     [
+      -4.1000000000000005,
+      3.9,
+      2.0
+     ],
+     [
+      -4.25,
+      6.9,
+      2.6
+     ],
+     34
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "side-on walk again, the lag back",
-   "at": "L42",
-   "follow": "me"
+   "note": "and her reflection stayed with me",
+   "at": "L39"
   },
   {
    "id": "S45",
@@ -2954,23 +2523,22 @@
     [
      0,
      [
-      0.2,
-      -2.6,
-      1.55
+      -3.9000000000000004,
+      3.8,
+      2.3
      ],
      [
-      0.2,
-      0.0,
-      1.6
+      -4.2,
+      6.9,
+      2.6
      ],
-     28
+     36
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "I didn't say a word",
-   "at": "L43",
-   "follow": "me"
+   "note": "on the truck her reflection points at my hat: what's that?",
+   "at": "L40"
   },
   {
    "id": "S46",
@@ -2978,22 +2546,22 @@
     [
      0,
      [
-      3.0,
-      1.0,
-      1.4
+      -4.3,
+      4.6,
+      2.5
      ],
      [
-      4.2,
-      3.6,
-      1.4
+      -4.5,
+      6.9,
+      2.7
      ],
-     30
+     46
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "I push the tarp up with the back of one hand and slip behind",
-   "at": "L44"
+   "note": "I said pickle, every time: my grin",
+   "at": "L41"
   },
   {
    "id": "S47",
@@ -3001,22 +2569,22 @@
     [
      0,
      [
-      7.4,
-      1.6,
-      1.4
+      -5.6,
+      -3.4,
+      1.8
      ],
      [
-      5.2,
-      3.6,
-      1.5
+      -4.2,
+      6.9,
+      2.2
      ],
-     26
+     38
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "behind the tarp, shaking",
-   "at": "L45"
+   "note": "the pane on the truck from outside, two of us in it; the real Tasha small on the duckboards, waving",
+   "at": "L42"
   },
   {
    "id": "S48",
@@ -3024,1212 +2592,51 @@
     [
      0,
      [
-      5.2,
+      -4.8,
       0.6,
-      1.6
+      2.2
      ],
      [
-      5.2,
-      3.6,
-      1.62
-     ],
-     28
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "my hands over my face, three breaths (close, the hands at the sleeve ends)",
-   "at": "L46"
-  },
-  {
-   "id": "S49",
-   "cam": [
-    [
-     0,
-     [
-      -0.9,
-      1.4,
-      1.15
-     ],
-     [
-      1.0,
-      4.3,
-      1.1
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "her out on the open ground, frozen with one hand half up, lit from below by the worklight",
-   "at": "L47"
-  },
-  {
-   "id": "S50",
-   "cam": [
-    [
-     0,
-     [
-      6.3,
-      1.6,
-      1.4
-     ],
-     [
-      4.6,
-      2.8,
-      1.4
-     ],
-     32
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "then I stepped out",
-   "at": "L48"
-  },
-  {
-   "id": "S51",
-   "cam": [
-    [
-     0,
-     [
-      2.8,
-      1.2,
-      1.45
-     ],
-     [
-      1.0,
-      4.3,
-      1.2
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "she was right where I'd left her",
-   "at": "L49"
-  },
-  {
-   "id": "S52",
-   "cam": [
-    [
-     0,
-     [
-      -1.8,
-      2.4,
-      1.3
-     ],
-     [
-      1.0,
-      4.3,
-      1.35
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "in the rain, one hand half up",
-   "at": "L50"
-  },
-  {
-   "id": "S53",
-   "cam": [
-    [
-     0,
-     [
-      -2.19,
-      2.23,
-      1.4
-     ],
-     [
-      1.0,
-      4.3,
-      1.1
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "then she saw me",
-   "at": "L51"
-  },
-  {
-   "id": "S54",
-   "cam": [
-    [
-     0,
-     [
-      2.9,
-      2.3,
-      1.5
-     ],
-     [
-      1.0,
-      4.3,
-      1.45
-     ],
-     32
-    ]
-   ],
-   "step": 1,
-   "hand": 0.006,
-   "note": "frozen, hand half up, the room tone only: then the cut",
-   "at": "P01"
-  },
-  {
-   "id": "S55",
-   "cam": [
-    [
-     0,
-     [
-      -0.34,
-      2.81,
-      1.45
-     ],
-     [
-      1.0,
-      4.3,
-      1.41
-     ],
-     40
-    ]
-   ],
-   "step": 1,
-   "hand": 0.006,
-   "note": "the stop: her face, lit from below, 72% of the frame width",
-   "at": "P02"
-  },
-  {
-   "id": "S56",
-   "cam": [
-    [
-     0,
-     [
-      -0.34,
-      2.81,
-      1.45
-     ],
-     [
-      1.0,
-      4.3,
-      1.41
-     ],
-     40
-    ]
-   ],
-   "step": 1,
-   "hand": 0.006,
-   "note": "her face, still",
-   "at": "L52"
-  },
-  {
-   "id": "S57",
-   "cam": [
-    [
-     0,
-     [
-      2.15,
-      4.15,
-      1.55
-     ],
-     [
-      1.29,
-      2.83,
-      1.55
-     ],
-     46
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "my wide face",
-   "at": "L52.3"
-  },
-  {
-   "id": "S58",
-   "cam": [
-    [
-     0,
-     [
-      -2.0,
-      2.0,
-      1.4
-     ],
-     [
-      1.1,
-      4.3,
-      1.2
-     ],
-     26
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "and she stopped, facing me, in my pose",
-   "at": "L53"
-  },
-  {
-   "id": "S59",
-   "cam": [
-    [
-     0,
-     [
-      -0.34,
-      2.81,
-      1.45
-     ],
-     [
-      1.0,
-      4.3,
-      1.41
-     ],
-     40
-    ],
-    [
-     1,
-     [
-      -0.1,
-      3.0,
-      1.45
-     ],
-     [
-      1.0,
-      4.3,
-      1.41
-     ],
-     44
-    ]
-   ],
-   "step": 1,
-   "hand": 0.006,
-   "note": "her eyes were black, like a window at night",
-   "at": "L54"
-  },
-  {
-   "id": "S60",
-   "cam": [
-    [
-     0,
-     [
-      -0.1,
-      3.0,
-      1.45
-     ],
-     [
-      1.0,
-      4.3,
-      1.41
-     ],
-     44
-    ],
-    [
-     1,
-     [
-      0.1,
-      3.2,
-      1.45
-     ],
-     [
-      1.0,
-      4.3,
-      1.41
-     ],
-     48
-    ]
-   ],
-   "step": 1,
-   "hand": 0.006,
-   "note": "no shine at all",
-   "at": "L55"
-  },
-  {
-   "id": "S61",
-   "cam": [
-    [
-     0,
-     [
-      2.15,
-      4.15,
-      1.55
-     ],
-     [
-      1.29,
-      2.83,
-      1.55
-     ],
-     50
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "that's what a reflection does",
-   "at": "L56"
-  },
-  {
-   "id": "S62",
-   "cam": [
-    [
-     0,
-     [
-      -1.4,
-      1.9,
-      1.5
-     ],
-     [
-      1.0,
-      4.3,
-      1.35
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      -0.9,
-      2.4,
-      1.5
-     ],
-     [
-      1.0,
-      4.3,
-      1.35
+      -4.2,
+      6.9,
+      2.4
      ],
      36
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "it can't move if it can't see you",
-   "at": "L57"
-  },
-  {
-   "id": "S63",
-   "cam": [
-    [
-     0,
-     [
-      -0.34,
-      2.81,
-      1.45
-     ],
-     [
-      1.0,
-      4.3,
-      1.41
-     ],
-     40
     ],
     [
      1,
      [
-      -0.1,
-      3.0,
-      1.45
+      -4.3500000000000005,
+      3.9,
+      2.0
      ],
      [
-      1.0,
-      4.3,
-      1.41
-     ],
-     46
-    ]
-   ],
-   "step": 1,
-   "hand": 0.006,
-   "note": "it came out of the glass",
-   "at": "L58"
-  },
-  {
-   "id": "S64",
-   "cam": [
-    [
-     0,
-     [
-      2.15,
-      4.15,
-      1.55
-     ],
-     [
-      1.29,
-      2.83,
-      1.55
-     ],
-     56
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "Tasha was still in there",
-   "at": "L59"
-  },
-  {
-   "id": "S65",
-   "cam": [
-    [
-     0,
-     [
-      0.9,
-      -6.0,
-      1.5
-     ],
-     [
-      0.4,
-      2.0,
-      1.4
-     ],
-     28
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "running back across the field, the maze lit ahead",
-   "at": "L60",
-   "follow": "me"
-  },
-  {
-   "id": "S66",
-   "cam": [
-    [
-     0,
-     [
-      3.6,
-      -4.6,
-      1.4
-     ],
-     [
-      0.9,
-      0.6,
-      1.2
-     ],
-     26
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "it ran with me, half a beat behind",
-   "at": "L61",
-   "follow": "me"
-  },
-  {
-   "id": "S67",
-   "cam": [
-    [
-     0,
-     [
-      60.0,
-      1.0,
-      1.0
-     ],
-     [
-      60.0,
-      3.5,
-      3.4
-     ],
-     20
-    ],
-    [
-     1,
-     [
-      60.0,
-      1.4,
-      1.0
-     ],
-     [
-      60.0,
-      4.5,
-      3.9
-     ],
-     20
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "the roof off, rain coming straight in through the open grid",
-   "at": "L62"
-  },
-  {
-   "id": "S68",
-   "cam": [
-    [
-     0,
-     [
-      60.0,
-      -0.35,
-      1.65
-     ],
-     [
-      60.0,
-      -0.05,
-      1.62
-     ],
-     6
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "a wide of panes, every one her, each copying me half a beat late",
-   "at": "L63"
-  },
-  {
-   "id": "S69",
-   "cam": [
-    [
-     0,
-     [
-      60.05,
-      -0.4,
-      1.62
-     ],
-     [
-      59.9,
-      -0.1,
-      1.6
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "none of them showed me",
-   "at": "L64"
-  },
-  {
-   "id": "S70",
-   "cam": [
-    [
-     0,
-     [
-      59.65,
-      1.6,
-      1.5
-     ],
-     [
-      60.2,
-      6.3,
-      1.4
-     ],
-     26
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "behind a stacked steel frame, where nothing could see me",
-   "at": "L65"
-  },
-  {
-   "id": "S71",
-   "cam": [
-    [
-     0,
-     [
-      59.65,
-      2.8,
-      1.5
-     ],
-     [
-      60.0,
-      10.0,
-      1.45
-     ],
-     26
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "the frozen gallery",
-   "at": "L66"
-  },
-  {
-   "id": "S72",
-   "cam": [
-    [
-     0,
-     [
-      59.7,
-      2.6,
-      1.5
-     ],
-     [
-      60.0,
-      11.0,
-      1.45
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "for half a beat nothing moved",
-   "at": "L67"
-  },
-  {
-   "id": "S73",
-   "cam": [
-    [
-     0,
-     [
-      59.65,
-      3.0,
-      1.5
-     ],
-     [
-      60.0,
-      11.0,
-      1.45
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "every Tasha frozen",
-   "at": "L68"
-  },
-  {
-   "id": "S74",
-   "cam": [
-    [
-     0,
-     [
-      59.6,
-      4.4,
-      1.5
-     ],
-     [
-      60.0,
-      13.5,
-      1.4
-     ],
-     40
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "the real Tasha far down the glass, waving both arms, everything else still",
-   "at": "L68.2"
-  },
-  {
-   "id": "S75",
-   "cam": [
-    [
-     0,
-     [
-      59.6,
-      4.4,
-      1.5
-     ],
-     [
-      60.0,
-      13.5,
-      1.4
-     ],
-     40
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "in the same spot as before",
-   "at": "L69"
-  },
-  {
-   "id": "S76",
-   "cam": [
-    [
-     0,
-     [
-      60.9,
-      7.6,
-      1.5
-     ],
-     [
-      60.1,
-      13.5,
-      1.55
-     ],
-     22
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "her face goes wide, then she points at my hat",
-   "at": "L70"
-  },
-  {
-   "id": "S77",
-   "cam": [
-    [
-     0,
-     [
-      60.7,
-      10.6,
-      1.5
-     ],
-     [
-      60.0,
-      13.5,
-      1.55
-     ],
-     36
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "a reflection can't go first",
-   "at": "L71"
-  },
-  {
-   "id": "S78",
-   "cam": [
-    [
-     0,
-     [
-      60.9,
-      11.8,
-      1.6
-     ],
-     [
-      60.35,
-      10.4,
-      1.62
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "PICKLE, on purpose",
-   "at": "L72"
-  },
-  {
-   "id": "S79",
-   "cam": [
-    [
-     0,
-     [
-      60.6,
-      10.8,
-      1.5
-     ],
-     [
-      60.0,
-      13.5,
-      1.55
-     ],
-     36
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "her FRIES yell through the glass, a mouth flap, her grin",
-   "at": "L73"
-  },
-  {
-   "id": "S80",
-   "cam": [
-    [
-     0,
-     [
-      60.55,
-      10.8,
-      1.5
-     ],
-     [
-      60.0,
-      13.5,
-      1.55
-     ],
-     36
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "she's still Tasha, and she's still winning",
-   "at": "L74"
-  },
-  {
-   "id": "S81",
-   "cam": [
-    [
-     0,
-     [
-      59.45,
-      7.2,
-      2.15
-     ],
-     [
-      59.95,
-      12.4,
-      1.1
-     ],
-     28
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "a wide where the plane between us is easy to read: me, then it facing me, then her pane right behind",
-   "at": "L75"
-  },
-  {
-   "id": "S82",
-   "cam": [
-    [
-     0,
-     [
-      59.45,
-      7.2,
-      2.15
-     ],
-     [
-      59.95,
-      12.4,
-      1.1
-     ],
-     28
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "so I stepped back",
-   "at": "L76"
-  },
-  {
-   "id": "S83",
-   "cam": [
-    [
-     0,
-     [
-      59.45,
-      7.2,
-      2.15
-     ],
-     [
-      59.95,
-      12.4,
-      1.1
-     ],
-     28
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "it stepped back too, half a beat late",
-   "at": "L77"
-  },
-  {
-   "id": "S84",
-   "cam": [
-    [
-     0,
-     [
-      59.55,
-      7.4,
-      1.5
-     ],
-     [
-      60.0,
-      12.5,
-      1.4
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      59.55,
-      7.8,
-      1.5
-     ],
-     [
-      60.0,
-      12.2,
-      1.4
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "Tasha stepping out of that same pane, soaked and grinning",
-   "at": "L78"
-  },
-  {
-   "id": "S85",
-   "cam": [
-    [
-     0,
-     [
-      60.5,
-      9.9,
-      1.62
-     ],
-     [
-      59.95,
-      11.0,
-      1.6
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "the eye close-up: her shine is back",
-   "at": "L79"
-  },
-  {
-   "id": "S86",
-   "cam": [
-    [
-     0,
-     [
-      60.6,
-      6.6,
-      1.5
-     ],
-     [
-      59.9,
-      11.6,
-      1.45
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "the one touch: she bumps my shoulder; in the pane behind her the copy stands in my pose, late",
-   "at": "L80"
-  },
-  {
-   "id": "S87",
-   "cam": [
-    [
-     0,
-     [
-      7.8,
-      8.3,
-      1.4
-     ],
-     [
-      1.5,
-      9.6,
-      1.25
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "the maze guy carries that pane to the truck, his back to us",
-   "at": "L81"
-  },
-  {
-   "id": "S88",
-   "cam": [
-    [
-     0,
-     [
-      2.4,
+      -4.2,
       7.7,
-      1.5
-     ],
-     [
-      -0.9,
-      9.2,
-      1.45
-     ],
-     34
-    ],
-    [
-     1,
-     [
-      0.4,
-      7.7,
-      1.5
-     ],
-     [
-      -3.2,
-      9.2,
-      1.45
+      2.7
      ],
      34
     ]
    ],
    "step": 2,
    "hand": 0.01,
-   "note": "the carried pane seen from the front, the copy's face in the glass: in the glass it watched us go, late, like always",
-   "at": "L82"
-  },
-  {
-   "id": "S89",
-   "cam": [
-    [
-     0,
-     [
-      3.0,
-      2.0,
-      1.4
-     ],
-     [
-      3.0,
-      12.0,
-      3.2
-     ],
-     22
-    ]
-   ],
-   "step": 4,
-   "hand": 0.0,
-   "note": "the maze's bulbs go off in one slow fade",
-   "at": "P03"
-  },
-  {
-   "id": "S90",
-   "cam": [
-    [
-     0,
-     [
-      -0.9,
-      -14.2,
-      1.55
-     ],
-     [
-      1.5,
-      -12.6,
-      1.4
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "the warm turn: a side-by-side two-shot under the amber strip, coins already on the counter",
-   "at": "L83"
-  },
-  {
-   "id": "S91",
-   "cam": [
-    [
-     0,
-     [
-      -0.6,
-      -14.0,
-      1.55
-     ],
-     [
-      1.5,
-      -12.6,
-      1.45
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "before she even pointed",
-   "at": "L84"
-  },
-  {
-   "id": "S92",
-   "cam": [
-    [
-     0,
-     [
-      0.9,
-      -14.35,
-      1.3
-     ],
-     [
-      1.5,
-      -12.6,
-      1.8
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "we both looked up at the rain",
-   "at": "L85"
-  },
-  {
-   "id": "S93",
-   "cam": [
-    [
-     0,
-     [
-      4.6,
-      -11.8,
-      1.35
-     ],
-     [
-      2.4,
-      -14.9,
-      1.35
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "the van's polished steel side: our two reflections look up at the rain with us, on time",
-   "at": "L86"
-  },
-  {
-   "id": "S94",
-   "cam": [
-    [
-     0,
-     [
-      1.2,
-      -14.3,
-      1.5
-     ],
-     [
-      1.5,
-      -12.6,
-      1.55
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "and nobody was late",
-   "at": "L87"
-  },
-  {
-   "id": "S95",
-   "cam": [
-    [
-     0,
-     [
-      1.0,
-      -9.7,
-      1.38
-     ],
-     [
-      1.0,
-      -13.2,
-      1.5
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.01,
-   "note": "at the fry van she pointed at my hat: L01's framing, so the loop is the joke starting again",
-   "at": "L88"
+   "note": "a push into the pane: deep behind us, the dark one, a pane nearer than it should be",
+   "at": "L43"
   }
  ],
  "acting": {
   "me": [
    {
     "at": 0.0,
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L08",
     "pos": [
-     3.6,
-     8.4
+     60.099999999999994,
+     13.45,
+     0.04
     ],
     "blend": 0,
     "arms": [
@@ -4241,21 +2648,20 @@
      0
     ],
     "head": [
-     40,
+     20,
      0
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
-    "expr": "neutral",
-    "yaw": -90
+    "expr": "smirk",
+    "yaw": -30
    },
    {
-    "from": "L02.1",
-    "to": "L02.1>",
+    "from": "L08",
+    "to": "L08>",
     "mouth": [
      0.1,
      0.7
@@ -4263,17 +2669,19 @@
     "flap": true
    },
    {
-    "at": "L04",
+    "at": "L09",
     "pos": [
-     3.6,
-     8.4
+     60.099999999999994,
+     13.45,
+     0.04
     ]
    },
    {
-    "at": "L04",
+    "at": "L09",
     "pos": [
-     3.6,
-     8.4
+     60.3,
+     13.45,
+     0.04
     ],
     "blend": 0,
     "arms": [
@@ -4291,286 +2699,60 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
-    "yaw": -60
-   },
-   {
-    "at": "L06",
-    "pos": [
-     3.6,
-     8.4
-    ]
-   },
-   {
-    "at": "L06",
-    "pos": [
-     1.3,
-     3.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
     "expr": "neutral",
-    "yaw": 180
+    "yaw": 0
    },
    {
-    "at": "L06>",
-    "pos": [
-     1.5,
-     6.0
-    ]
+    "at": "L11",
+    "expr": "smirk"
    },
    {
-    "at": "L07",
-    "hidden": true,
-    "blend": 0
+    "from": "L11",
+    "to": "L11>",
+    "mouth": [
+     0.1,
+     0.7
+    ],
+    "flap": true
    },
    {
-    "at": "L12",
-    "pos": [
-     1.5,
-     6.0
-    ]
-   },
-   {
-    "at": "L12",
-    "pos": [
-     3.4,
-     7.2,
-     0.05
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
+    "at": "L13.2",
     "expr": "neutral",
-    "yaw": 180
-   },
-   {
-    "at": "L12.2",
-    "pos": [
-     3.3,
-     9.9,
-     1.1
-    ]
-   },
-   {
-    "at": "L12>",
-    "pos": [
-     3.3,
-     11.4,
-     1.1
-    ]
-   },
-   {
-    "at": "L13",
-    "pos": [
-     3.3,
-     11.4,
-     1.1
-    ]
-   },
-   {
-    "at": "L13",
-    "pos": [
-     59.65,
-     2.2
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
-    "yaw": 180
-   },
-   {
-    "at": "L13>",
-    "pos": [
-     59.65,
-     3.9
-    ]
-   },
-   {
-    "at": "L14",
-    "pos": [
-     59.65,
-     3.9
-    ]
-   },
-   {
-    "at": "L14",
-    "pos": [
-     59.6,
-     3.6
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "neutral",
-    "yaw": 180
-   },
-   {
-    "at": "L16",
-    "pos": [
-     59.6,
-     3.6
-    ]
-   },
-   {
-    "at": "L16",
-    "pos": [
-     60.0,
-     2.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "neutral",
-    "yaw": 180
-   },
-   {
-    "at": "L16+0.200",
-    "pos": [
-     60.0,
-     3.6
-    ]
-   },
-   {
-    "at": "L17",
-    "pos": [
-     60.0,
-     4.8
-    ],
     "arms": [
      0,
      40
     ],
-    "head": [
-     30,
-     0
-    ]
+    "blend": 0.4
    },
    {
-    "at": "L17.2",
-    "head": [
-     -30,
-     0
-    ],
+    "at": "L13>",
     "arms": [
-     40,
+     0,
      0
     ],
     "blend": 0.4
+   },
+   {
+    "at": "L16",
+    "hidden": true,
+    "blend": 0
    },
    {
     "at": "L18",
     "pos": [
-     60.0,
-     4.8
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "arms": [
-     0,
-     0
+     60.3,
+     13.45,
+     0.04
     ]
    },
    {
-    "at": "L20",
+    "at": "L18",
     "pos": [
-     60.0,
-     4.8
-    ]
-   },
-   {
-    "at": "L20",
-    "pos": [
-     3.0,
-     12.6,
-     1.05
+     60.3,
+     13.45,
+     0.04
     ],
     "blend": 0,
     "arms": [
@@ -4588,981 +2770,30 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "smirk",
-    "yaw": 0
-   },
-   {
-    "at": "L20+0.900",
-    "pos": [
-     3.6,
-     10.9,
-     1.05
-    ]
-   },
-   {
-    "at": "L21",
-    "pos": [
-     3.6,
-     10.9,
-     1.05
-    ]
-   },
-   {
-    "at": "L21",
-    "pos": [
-     3.8,
-     10.9,
-     1.05
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "smirk",
-    "yaw": -30
-   },
-   {
-    "at": "L22",
-    "pos": [
-     3.8,
-     10.9,
-     1.05
-    ]
-   },
-   {
-    "at": "L22",
-    "pos": [
-     2.4,
-     8.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     40,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
     "expr": "neutral",
-    "yaw": 90
-   },
-   {
-    "at": "L23",
-    "pos": [
-     2.4,
-     8.4
-    ]
-   },
-   {
-    "at": "L23",
-    "pos": [
-     4.2,
-     9.6
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     -25
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
-    "yaw": -20
-   },
-   {
-    "at": "L24",
-    "pos": [
-     4.2,
-     9.6
-    ]
-   },
-   {
-    "at": "L24",
-    "pos": [
-     0.2,
-     5.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
     "yaw": 0
    },
    {
-    "at": "L28-0.100",
-    "pos": [
-     0.2,
-     -3.0
-    ]
-   },
-   {
-    "at": "L28",
-    "yaw": 0,
-    "pos": [
-     0.2,
-     -3.0
-    ]
-   },
-   {
-    "at": "L28.1",
-    "yaw": 90,
-    "head": [
-     0,
-     0
-    ],
-    "blend": 0.2
-   },
-   {
-    "at": "L30",
-    "yaw": 90
-   },
-   {
-    "at": "L31.2",
-    "arms": [
-     0,
-     150
-    ],
-    "expr": "smirk",
-    "blend": 0.3
-   },
-   {
-    "from": "L31.3",
-    "to": "L31>",
-    "mouth": [
-     0.1,
-     0.8
-    ],
-    "flap": true
-   },
-   {
-    "at": "L32",
-    "arms": [
-     0,
-     0
-    ],
-    "blend": 0.4
-   },
-   {
-    "at": "L35",
-    "yaw": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "blend": 0.4,
-    "pos": [
-     0.2,
-     -3.0
-    ]
-   },
-   {
-    "at": "L35>-0.500",
-    "pos": [
-     0.2,
-     -4.0
-    ]
-   },
-   {
-    "at": "L36",
-    "pos": [
-     0.2,
-     -4.0
-    ]
-   },
-   {
-    "at": "L36",
-    "pos": [
-     0.2,
-     6.2
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
-    "yaw": 180
-   },
-   {
-    "at": "L36.2",
-    "pos": [
-     0.2,
-     8.4
-    ]
-   },
-   {
-    "at": "L36.3",
-    "bow": 38,
-    "blend": 0.35
-   },
-   {
-    "at": "L36.2+0.900",
-    "pos": [
-     -1.5,
-     9.5
-    ],
-    "bow": 0
-   },
-   {
-    "at": "L37",
-    "pos": [
-     -1.5,
-     9.5
-    ]
-   },
-   {
-    "at": "L37",
-    "pos": [
-     -1.5,
-     9.5
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 38,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": 160
-   },
-   {
-    "at": "L37",
-    "bow": 38
-   },
-   {
-    "at": "L37+0.700",
-    "bow": 0,
-    "blend": 0.5
-   },
-   {
-    "at": "L42",
-    "pos": [
-     -1.5,
-     9.5
-    ]
-   },
-   {
-    "at": "L42",
-    "pos": [
-     0.2,
-     2.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
-    "yaw": 0
-   },
-   {
-    "at": "L42>",
-    "pos": [
-     0.2,
-     0.6
-    ]
-   },
-   {
-    "at": "L44",
-    "pos": [
-     0.2,
-     0.6
-    ]
-   },
-   {
-    "at": "L44",
-    "pos": [
-     3.0,
-     3.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
-    "yaw": 90
-   },
-   {
-    "at": "L44.2",
-    "pos": [
-     5.2,
-     3.6
-    ],
-    "arms": [
-     0,
-     70
-    ],
-    "yaw": 90,
-    "blend": 0.3
-   },
-   {
-    "at": "L44>",
-    "arms": [
-     0,
-     0
-    ]
-   },
-   {
-    "at": "L45",
-    "pos": [
-     5.2,
-     3.6
-    ]
-   },
-   {
-    "at": "L45",
-    "pos": [
-     5.2,
-     3.6
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 6,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": 0
-   },
-   {
-    "at": "L46",
-    "pos": [
-     5.2,
-     3.6
-    ]
-   },
-   {
-    "at": "L46",
-    "pos": [
-     5.2,
-     3.6
-    ],
-    "blend": 0,
-    "arms": [
-     118,
-     118
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 3,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": 0
-   },
-   {
-    "at": "L46.3",
-    "lean": 6,
-    "blend": 0.35
-   },
-   {
-    "at": "L46.3+0.350",
-    "lean": -1,
-    "blend": 0.35
-   },
-   {
-    "at": "L46.3+0.500",
-    "lean": 6,
-    "blend": 0.35
-   },
-   {
-    "at": "L46.3+0.850",
-    "lean": -1,
-    "blend": 0.35
-   },
-   {
-    "at": "L46.3+1.000",
-    "lean": 6,
-    "blend": 0.35
-   },
-   {
-    "at": "L46.3+1.350",
-    "lean": -1,
-    "blend": 0.35
-   },
-   {
-    "at": "L48",
-    "pos": [
-     5.2,
-     3.6
-    ]
-   },
-   {
-    "at": "L48",
-    "pos": [
-     5.2,
-     3.6
-    ],
-    "blend": 0,
-    "arms": [
-     62,
-     6
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": -90
-   },
-   {
-    "at": "L48>",
-    "pos": [
-     4.4,
-     1.6
-    ]
-   },
-   {
-    "at": "L49>",
-    "pos": [
-     2.4,
-     1.6
-    ]
-   },
-   {
-    "at": "L50>",
-    "pos": [
-     1.29,
-     2.83
-    ],
-    "yaw": 150
-   },
-   {
-    "at": "L51",
-    "pos": [
-     1.29,
-     2.83
-    ]
-   },
-   {
-    "at": "L51",
-    "pos": [
-     1.29,
-     2.83
-    ],
-    "blend": 0,
-    "arms": [
-     62,
-     6
-    ],
-    "side": [
-     -6,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "wide",
-    "yaw": 150
-   },
-   {
-    "at": "L52.3",
-    "pos": [
-     1.29,
-     2.83
-    ]
-   },
-   {
-    "at": "L52.3",
-    "pos": [
-     1.29,
-     2.83
-    ],
-    "blend": 0,
-    "arms": [
-     62,
-     6
-    ],
-    "side": [
-     -6,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "wide",
-    "yaw": 150
-   },
-   {
-    "at": "L60",
-    "pos": [
-     1.29,
-     2.83
-    ]
-   },
-   {
-    "at": "L60",
-    "pos": [
-     0.2,
-     -3.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": 0
-   },
-   {
-    "at": "L61",
-    "pos": [
-     0.2,
-     7.4
-    ]
-   },
-   {
-    "at": "L61>-0.500",
-    "pos": [
-     0.2,
-     9.4
-    ]
-   },
-   {
-    "at": "L62",
-    "pos": [
-     0.2,
-     9.4
-    ]
-   },
-   {
-    "at": "L62",
-    "pos": [
-     60.0,
-     2.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": 180
-   },
-   {
-    "at": "L63",
-    "pos": [
-     60.0,
-     2.4
-    ]
-   },
-   {
-    "at": "L63",
-    "pos": [
-     60.0,
-     -1.95
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     40
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     40,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": 180
-   },
-   {
-    "at": "L63.2",
-    "head": [
-     -40,
-     0
-    ],
-    "arms": [
-     40,
-     0
-    ],
-    "blend": 0.4
-   },
-   {
-    "at": "L63>-0.300",
-    "head": [
-     0,
-     0
-    ],
-    "arms": [
-     0,
-     0
-    ],
-    "blend": 0.4
-   },
-   {
-    "at": "L65",
-    "pos": [
-     60.0,
-     -1.95
-    ]
-   },
-   {
-    "at": "L65",
-    "pos": [
-     60.5,
-     5.2
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": 180
-   },
-   {
-    "at": "L65.2",
-    "pos": [
-     60.45,
-     6.9
-    ]
-   },
-   {
-    "at": "L66",
-    "pos": [
-     60.45,
-     6.5
-    ],
-    "yaw": 180
-   },
-   {
-    "at": "L70",
-    "pos": [
-     60.45,
-     6.5
-    ]
-   },
-   {
-    "at": "L70",
-    "pos": [
-     60.35,
-     10.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "wide",
-    "yaw": 180
-   },
-   {
-    "at": "L72",
-    "arms": [
-     0,
-     150
-    ],
-    "expr": "smirk",
-    "blend": 0.3
-   },
-   {
-    "from": "L72.1",
-    "to": "L72.1>",
-    "mouth": [
-     0.1,
-     0.8
-    ],
-    "flap": true
-   },
-   {
-    "at": "L72.2",
-    "arms": [
-     0,
-     0
-    ],
-    "blend": 0.4
-   },
-   {
-    "at": "L75>",
-    "pos": [
-     60.35,
-     10.4
-    ],
-    "keep_yaw": true
-   },
-   {
-    "at": "L77-0.345",
-    "pos": [
-     60.45,
-     9.3
-    ]
-   },
-   {
-    "at": "L80",
-    "pos": [
-     60.45,
-     9.3
-    ]
-   },
-   {
-    "at": "L80",
-    "pos": [
-     60.35,
-     10.2
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "at": "L81",
+    "at": "L20",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L83",
+    "at": "L24",
     "pos": [
-     60.35,
-     10.2
+     60.3,
+     13.45,
+     0.04
     ]
    },
    {
-    "at": "L83",
+    "at": "L24",
     "pos": [
-     1.0,
-     -12.9
+     60.599999999999994,
+     13.2,
+     0.04
     ],
     "blend": 0,
     "arms": [
@@ -5580,287 +2811,26 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
-    "expr": "smirk",
+    "expr": "scared",
     "yaw": 0
    },
    {
-    "at": "L85",
-    "head": [
-     0,
-     -38
-    ],
-    "blend": 0.5
+    "at": "L35",
+    "expr": "worried"
    },
    {
-    "at": "L86.3",
-    "head": [
-     0,
-     0
-    ],
-    "blend": 0.5
-   },
-   {
-    "at": "L87",
-    "expr": "grin"
-   },
-   {
-    "at": "L88",
-    "pos": [
-     1.0,
-     -12.9
-    ]
-   },
-   {
-    "at": "L88",
-    "pos": [
-     1.6,
-     -13.2
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     40,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "neutral",
-    "yaw": -90
+    "at": "L41",
+    "expr": "smirk"
    }
   ],
   "tasha": [
    {
     "at": 0.0,
     "pos": [
-     2.4,
-     8.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     82
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     -45,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "smirk",
-    "yaw": 90
-   },
-   {
-    "from": "L01.3",
-    "to": "L01>",
-    "mouth": [
-     0.1,
-     0.8
-    ],
-    "flap": true
-   },
-   {
-    "at": "L03",
-    "arms": [
-     0,
-     0
-    ],
-    "blend": 0.3
-   },
-   {
-    "at": "L04",
-    "pos": [
-     2.4,
-     8.4
-    ]
-   },
-   {
-    "at": "L04",
-    "pos": [
-     2.4,
-     8.4
-    ],
-    "blend": 0,
-    "arms": [
-     85,
-     85
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "from": "L04.1",
-    "to": "L04.1>",
-    "mouth": [
-     0.2,
-     0.9
-    ],
-    "flap": true
-   },
-   {
-    "at": "L05",
-    "pos": [
-     2.4,
-     8.4
-    ]
-   },
-   {
-    "at": "L05",
-    "pos": [
-     2.4,
-     8.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "grin",
-    "yaw": 0
-   },
-   {
-    "at": "L06",
-    "pos": [
-     2.4,
-     8.4
-    ]
-   },
-   {
-    "at": "L06",
-    "pos": [
-     0.4,
-     3.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "smirk",
-    "yaw": 180
-   },
-   {
-    "at": "L06>",
-    "pos": [
-     0.6,
-     6.0
-    ]
-   },
-   {
-    "at": "L07",
-    "pos": [
-     0.6,
-     6.0
-    ]
-   },
-   {
-    "at": "L07",
-    "pos": [
-     0.4,
-     6.6
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "neutral",
-    "yaw": 180
-   },
-   {
-    "at": "L07",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L12",
-    "pos": [
-     0.4,
-     6.6
-    ]
-   },
-   {
-    "at": "L12",
-    "pos": [
-     2.7,
-     7.4,
+     2.9,
+     7.0,
      0.05
     ],
     "blend": 0,
@@ -5879,41 +2849,35 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
-    "expr": "smirk",
-    "yaw": 180
+    "expr": "grin",
+    "yaw": 0
    },
    {
-    "at": "L12.2",
+    "at": "L02",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L08",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L09",
     "pos": [
-     2.8,
-     10.0,
-     1.1
+     2.9,
+     7.0,
+     0.05
     ]
    },
    {
-    "at": "L12>",
+    "at": "L09",
     "pos": [
-     2.8,
-     11.5,
-     1.1
-    ]
-   },
-   {
-    "at": "L13",
-    "pos": [
-     2.8,
-     11.5,
-     1.1
-    ]
-   },
-   {
-    "at": "L13",
-    "pos": [
-     60.35,
-     2.6
+     59.75,
+     12.15,
+     0.04
     ],
     "blend": 0,
     "arms": [
@@ -5931,66 +2895,23 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "neutral",
-    "yaw": 180
-   },
-   {
-    "at": "L13>",
-    "pos": [
-     60.35,
-     4.2
-    ]
-   },
-   {
-    "at": "L14",
-    "pos": [
-     60.35,
-     4.2
-    ]
-   },
-   {
-    "at": "L14",
-    "pos": [
-     60.3,
-     4.2
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
     "expr": "smirk",
     "yaw": 180
    },
    {
-    "at": "L14.1",
-    "yaw": 180,
-    "pos": [
-     60.3,
-     5.6
+    "at": "L10",
+    "arms": [
+     0,
+     82
     ],
-    "blend": 0.4
+    "expr": "smirk",
+    "blend": 0.3
    },
    {
-    "from": "L14.1",
-    "to": "L14>",
+    "from": "L10.3",
+    "to": "L10>",
     "mouth": [
      0.1,
      0.8
@@ -5998,31 +2919,63 @@
     "flap": true
    },
    {
-    "at": "L15",
-    "pos": [
-     60.3,
-     6.6
-    ]
+    "at": "L11",
+    "arms": [
+     0,
+     0
+    ],
+    "blend": 0.3
    },
    {
-    "at": "L15>",
-    "pos": [
-     60.3,
-     8.4
-    ]
+    "at": "L12",
+    "arms": [
+     75,
+     75
+    ],
+    "expr": "smirk",
+    "blend": 0.3
+   },
+   {
+    "from": "L12.2",
+    "to": "L12>",
+    "mouth": [
+     0.1,
+     0.8
+    ],
+    "flap": true
+   },
+   {
+    "at": "L13",
+    "expr": "smirk"
+   },
+   {
+    "at": "L14",
+    "arms": [
+     0,
+     0
+    ],
+    "expr": "smirk",
+    "blend": 0.3
    },
    {
     "at": "L16",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L18",
     "pos": [
-     60.3,
-     8.4
+     59.75,
+     12.15,
+     0.04
     ]
    },
    {
-    "at": "L16",
+    "at": "L18",
     "pos": [
-     60.0,
-     13.5
+     59.75,
+     12.15,
+     0.04
     ],
     "blend": 0,
     "arms": [
@@ -6040,11 +2993,19 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
-    "expr": "neutral",
-    "yaw": 0
+    "expr": "smirk",
+    "yaw": 180
+   },
+   {
+    "from": "L18",
+    "to": "L18.1>",
+    "mouth": [
+     0.3,
+     0.9
+    ],
+    "flap": true
    },
    {
     "at": "L20",
@@ -6052,22 +3013,19 @@
     "blend": 0
    },
    {
-    "at": "L62",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L68.2",
+    "at": "L24",
     "pos": [
-     60.0,
-     13.5
+     59.75,
+     12.15,
+     0.04
     ]
    },
    {
-    "at": "L68.2",
+    "at": "L24",
     "pos": [
-     60.0,
-     13.5
+     59.75,
+     12.15,
+     0.04
     ],
     "blend": 0,
     "arms": [
@@ -6085,136 +3043,109 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
     "expr": "worried",
-    "yaw": 0
+    "yaw": 180
    },
    {
-    "at": "L68.2+0.300",
-    "arms": [
-     150,
-     150
-    ],
-    "blend": 0.25
-   },
-   {
-    "at": "L68.2+0.900",
-    "arms": [
-     110,
-     110
-    ],
-    "blend": 0.25
-   },
-   {
-    "at": "L68.2+1.500",
-    "arms": [
-     150,
-     150
-    ],
-    "blend": 0.25
-   },
-   {
-    "at": "L69",
-    "arms": [
-     0,
-     0
-    ],
-    "blend": 0.4
-   },
-   {
-    "at": "L70",
-    "pos": [
-     60.0,
-     13.5
-    ]
-   },
-   {
-    "at": "L70",
-    "pos": [
-     60.0,
-     13.5
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
+    "at": "L26",
     "expr": "wide",
-    "yaw": 0
-   },
-   {
-    "at": "L70.2",
-    "arms": [
-     0,
-     82
+    "pos": [
+     59.75,
+     12.15,
+     0.04
     ],
-    "expr": "grin",
-    "blend": 0.2
+    "yaw": 180,
+    "keep_yaw": true
    },
    {
-    "from": "L70.3",
-    "to": "L70>",
-    "mouth": [
-     0.1,
-     0.8
+    "at": "L27-0.050",
+    "pos": [
+     59.75,
+     12.15,
+     0.04
     ],
-    "flap": true
+    "yaw": 180,
+    "keep_yaw": true
    },
    {
-    "at": "L73",
-    "arms": [
-     85,
-     85
+    "at": "L27",
+    "expr": "worried",
+    "yaw": 180,
+    "pos": [
+     59.15,
+     11.950000000000001,
+     0.04
+    ]
+   },
+   {
+    "at": "P02",
+    "pos": [
+     59.15,
+     11.950000000000001,
+     0.04
+    ]
+   },
+   {
+    "at": "P02",
+    "pos": [
+     -0.9,
+     3.4,
+     0.05
     ],
-    "expr": "grin",
-    "blend": 0.2
-   },
-   {
-    "from": "L73",
-    "to": "L73>",
-    "mouth": [
-     0.2,
-     0.9
-    ],
-    "flap": true
-   },
-   {
-    "at": "L74",
+    "blend": 0,
     "arms": [
      0,
      0
     ],
-    "expr": "grin",
-    "blend": 0.3
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     25
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "bow": 0,
+    "hidden": false,
+    "expr": "smirk",
+    "yaw": 180
    },
    {
-    "at": "L78",
+    "at": "L29",
     "pos": [
-     60.0,
-     13.5
+     -0.9,
+     3.4,
+     0.05
+    ],
+    "yaw": 180
+   },
+   {
+    "at": "L33>",
+    "pos": [
+     -5.7,
+     3.4,
+     0.05
     ]
    },
    {
-    "at": "L78",
+    "at": "L34",
     "pos": [
-     60.0,
-     13.5
+     -5.7,
+     3.4,
+     0.05
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -3.75,
+     3.4,
+     0.05
     ],
     "blend": 0,
     "arms": [
@@ -6232,31 +3163,25 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
-    "expr": "grin",
-    "yaw": 0
+    "expr": "smirk",
+    "yaw": 180
    },
    {
-    "at": "L78>",
+    "at": "L36",
     "pos": [
-     59.95,
-     11.0
+     -3.75,
+     3.4,
+     0.05
     ]
    },
    {
-    "at": "L80",
+    "at": "L36",
     "pos": [
-     59.95,
-     11.0
-    ]
-   },
-   {
-    "at": "L80",
-    "pos": [
-     59.2,
-     10.9
+     -3.75,
+     4.7,
+     0.05
     ],
     "blend": 0,
     "arms": [
@@ -6269,46 +3194,58 @@
     ],
     "head": [
      0,
-     0
+     -12
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
-    "expr": "grin",
-    "yaw": 0
+    "expr": "smirk",
+    "yaw": 180
    },
    {
-    "at": "L80+0.700",
-    "pos": [
-     59.7,
-     10.3
+    "at": "L37",
+    "expr": "smirk",
+    "head": [
+     0,
+     -12
     ]
    },
    {
-    "at": "L81",
+    "at": "L38",
+    "pos": [
+     -3.75,
+     0.6,
+     0.05
+    ],
+    "yaw": 0,
+    "expr": "smirk"
+   },
+   {
+    "at": "L40",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L83",
+    "at": "L42",
     "pos": [
-     59.7,
-     10.3
+     -3.75,
+     0.6,
+     0.05
     ]
    },
    {
-    "at": "L83",
+    "at": "L42",
     "pos": [
-     2.0,
-     -12.9
+     -4.7,
+     2.4,
+     0.05
     ],
     "blend": 0,
     "arms": [
      0,
-     0
+     150
     ],
     "side": [
      0,
@@ -6321,74 +3258,26 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
     "expr": "smirk",
-    "yaw": 0
+    "yaw": 180
    },
    {
-    "at": "L85",
-    "head": [
-     0,
-     -38
-    ],
-    "blend": 0.5
-   },
-   {
-    "at": "L86.3",
-    "head": [
-     0,
-     0
-    ],
-    "blend": 0.5
-   },
-   {
-    "at": "L87",
-    "expr": "grin"
-   },
-   {
-    "at": "L88",
-    "pos": [
-     2.0,
-     -12.9
-    ]
-   },
-   {
-    "at": "L88",
-    "pos": [
-     0.4,
-     -13.2
-    ],
-    "blend": 0,
+    "at": "L42+0.800",
     "arms": [
      0,
-     0
+     120
     ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     -45,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "smirk",
-    "yaw": 90
+    "blend": 0.3
    },
    {
-    "at": "L88.3",
+    "at": "L43",
     "arms": [
      0,
-     82
+     150
     ],
-    "blend": 0.45
+    "blend": 0.3
    }
   ],
   "guy": [
@@ -6398,11 +3287,11 @@
     "blend": 0
    },
    {
-    "at": "L10",
+    "at": "L14",
     "pos": [
-     3.6,
-     13.2,
-     5.45
+     62.6,
+     9.9,
+     0.04
     ],
     "blend": 0,
     "arms": [
@@ -6420,84 +3309,84 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
+    "bow": 0,
+    "hidden": false,
+    "expr": "neutral",
+    "yaw": -90
+   },
+   {
+    "at": "L17>",
+    "pos": [
+     57.4,
+     9.9,
+     0.04
+    ]
+   },
+   {
+    "at": "L18",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L27",
+    "pos": [
+     57.4,
+     9.9,
+     0.04
+    ]
+   },
+   {
+    "at": "L27",
+    "pos": [
+     60.0,
+     12.05,
+     0.04
+    ],
+    "blend": 0,
+    "arms": [
+     60,
+     60
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
     "bow": 0,
     "hidden": false,
     "expr": "neutral",
     "yaw": 180
    },
    {
-    "at": "L10+0.500",
+    "at": "P02",
+    "pos": [
+     60.0,
+     12.05,
+     0.04
+    ]
+   },
+   {
+    "at": "P02",
+    "pos": [
+     1.6,
+     4.8,
+     0.05
+    ],
+    "blend": 0,
     "arms": [
+     0,
+     0
+    ],
+    "side": [
      10,
      10
     ],
-    "blend": 0.5
-   },
-   {
-    "at": "L10+1.000",
-    "arms": [
-     45,
-     45
-    ],
-    "blend": 0.5
-   },
-   {
-    "at": "L10+1.600",
-    "arms": [
-     10,
-     10
-    ],
-    "blend": 0.5
-   },
-   {
-    "at": "L10+2.200",
-    "arms": [
-     45,
-     45
-    ],
-    "blend": 0.5
-   },
-   {
-    "at": "L11>",
-    "arms": [
-     0,
-     0
-    ]
-   },
-   {
-    "at": "L12",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L24",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L81",
-    "pos": [
-     3.6,
-     13.2,
-     5.45
-    ]
-   },
-   {
-    "at": "L81",
-    "pos": [
-     2.0,
-     9.6
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
     "head": [
      0,
      0
@@ -6505,86 +3394,46 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
     "expr": "neutral",
     "yaw": -90
    },
    {
-    "at": "L82>",
+    "at": "L29",
     "pos": [
-     -2.0,
-     9.7
+     1.6,
+     4.8,
+     0.05
     ]
    },
    {
-    "at": "P03>",
+    "at": "L33>",
     "pos": [
-     -3.6,
-     9.7
+     -3.25,
+     4.8,
+     0.05
     ]
    },
    {
-    "at": "L83",
-    "hidden": true,
-    "blend": 0
-   }
-  ],
-  "copy": [
-   {
-    "at": 0.0,
+    "at": "L34",
     "pos": [
-     3.0,
-     11.2,
-     1.05
+     -3.25,
+     4.8,
+     0.05
+    ]
+   },
+   {
+    "at": "L34",
+    "pos": [
+     -4.7,
+     5.2,
+     0.05
     ],
     "blend": 0,
     "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": false,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "blank",
-    "yaw": 0
-   },
-   {
-    "at": "L02",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L21",
-    "pos": [
-     3.0,
-     11.2,
-     1.05
-    ]
-   },
-   {
-    "at": "L21",
-    "pos": [
-     3.0,
-     12.7,
-     1.05
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
+     70,
+     70
     ],
     "side": [
      0,
@@ -6597,667 +3446,13 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "stride": 0,
     "bow": 0,
     "hidden": false,
     "expr": "neutral",
-    "yaw": 0
-   },
-   {
-    "at": "L21+0.100",
-    "pos": [
-     3.0,
-     11.1,
-     1.05
-    ]
-   },
-   {
-    "at": "L22",
-    "pos": [
-     3.0,
-     11.1,
-     1.05
-    ]
-   },
-   {
-    "at": "L22",
-    "pos": [
-     3.6,
-     8.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     82
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     -45,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "smirk",
-    "yaw": -90
-   },
-   {
-    "at": "L23",
-    "pos": [
-     3.6,
-     8.4
-    ]
-   },
-   {
-    "at": "L23",
-    "pos": [
-     5.6,
-     9.2
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "neutral",
-    "yaw": 60
-   },
-   {
-    "at": "L24",
-    "pos": [
-     5.6,
-     9.2
-    ]
-   },
-   {
-    "at": "L24",
-    "pos": [
-     1.8,
-     5.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
-    "yaw": 0
-   },
-   {
-    "at": "L28+0.295",
-    "pos": [
-     1.8,
-     -3.0
-    ]
-   },
-   {
-    "at": "L28+0.395",
-    "yaw": 0,
-    "pos": [
-     1.8,
-     -3.0
-    ]
-   },
-   {
-    "at": "L28.1+0.395",
-    "yaw": -90,
-    "head": [
-     0,
-     0
-    ],
-    "blend": 0.2
-   },
-   {
-    "at": "L30+0.395",
-    "yaw": -90
-   },
-   {
-    "at": "L31.2+0.395",
-    "arms": [
-     0,
-     150
-    ],
-    "expr": "smirk",
-    "blend": 0.3
-   },
-   {
-    "from": "L31.3+0.395",
-    "to": "L31>+0.395",
-    "mouth": [
-     0.0,
-     0.8
-    ],
-    "flap": true
-   },
-   {
-    "at": "L32+0.395",
-    "arms": [
-     0,
-     0
-    ],
-    "blend": 0.4
-   },
-   {
-    "from": "L33.1",
-    "to": "L33>",
-    "mouth": [
-     0.0,
-     0.8
-    ],
-    "flap": true
-   },
-   {
-    "at": "L35+0.395",
-    "yaw": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "blend": 0.4,
-    "pos": [
-     1.8,
-     -3.0
-    ]
-   },
-   {
-    "at": "L35>-0.105",
-    "pos": [
-     1.8,
-     -4.0
-    ]
-   },
-   {
-    "at": "L36",
-    "pos": [
-     1.8,
-     -4.0
-    ]
-   },
-   {
-    "at": "L36",
-    "pos": [
-     1.8,
-     6.2
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
     "yaw": 180
    },
    {
-    "at": "L36.2+0.395",
-    "pos": [
-     1.8,
-     7.7
-    ]
-   },
-   {
-    "at": "L36.2+1.000",
-    "pos": [
-     1.8,
-     7.9
-    ],
-    "stride": 24,
-    "blend": 0.1
-   },
-   {
-    "at": "L37",
-    "expr": "blank",
-    "blink": false
-   },
-   {
-    "at": "L37.1",
-    "stride": 24
-   },
-   {
-    "at": "L40",
-    "stride": 0,
-    "blend": 0.15
-   },
-   {
-    "at": "L42",
-    "pos": [
-     1.8,
-     7.9
-    ]
-   },
-   {
-    "at": "L42",
-    "pos": [
-     1.8,
-     2.4
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "worried",
-    "yaw": 0
-   },
-   {
-    "at": "L42>+0.395",
-    "pos": [
-     1.8,
-     0.6
-    ]
-   },
-   {
-    "at": "L44",
-    "pos": [
-     1.8,
-     0.6
-    ]
-   },
-   {
-    "at": "L44",
-    "pos": [
-     1.0,
-     4.3
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "blank",
-    "yaw": 33
-   },
-   {
-    "at": "L44.2+0.395",
-    "arms": [
-     100,
-     6
-    ],
-    "blend": 0.4
-   },
-   {
-    "at": "L44.2+0.895",
-    "blink": false
-   },
-   {
-    "at": "L47",
-    "pos": [
-     1.0,
-     4.3
-    ]
-   },
-   {
-    "at": "L47",
-    "pos": [
-     1.0,
-     4.3
-    ],
-    "blend": 0,
-    "arms": [
-     100,
-     6
-    ],
-    "side": [
-     -6,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": false,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "blank",
-    "yaw": 33
-   },
-   {
-    "at": "P01",
-    "blink": false
-   },
-   {
-    "at": "P02",
-    "pos": [
-     1.0,
-     4.3
-    ]
-   },
-   {
-    "at": "P02",
-    "arms": [
-     62,
-     6
-    ],
-    "blend": 0,
-    "pos": [
-     1.2,
-     4.34
-    ],
-    "keep_yaw": true
-   },
-   {
-    "at": "P02",
-    "head": [
-     75,
-     8
-    ],
-    "blend": 0
-   },
-   {
-    "at": "L52",
-    "pos": [
-     1.2,
-     4.34
-    ]
-   },
-   {
-    "at": "L52",
-    "pos": [
-     1.2,
-     4.34
-    ],
-    "blend": 0,
-    "arms": [
-     62,
-     6
-    ],
-    "side": [
-     -6,
-     0
-    ],
-    "head": [
-     75,
-     8
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": false,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "blank",
-    "yaw": 33
-   },
-   {
-    "at": "L60",
-    "pos": [
-     1.2,
-     4.34
-    ]
-   },
-   {
-    "at": "L60",
-    "pos": [
-     1.8,
-     -3.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "scared",
-    "yaw": 0
-   },
-   {
-    "at": "L61+0.395",
-    "pos": [
-     1.8,
-     7.4
-    ]
-   },
-   {
-    "at": "L61>-0.105",
-    "pos": [
-     1.8,
-     9.4
-    ]
-   },
-   {
-    "at": "L62",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L70",
-    "pos": [
-     1.8,
-     9.4
-    ]
-   },
-   {
-    "at": "L70",
-    "pos": [
-     59.6,
-     12.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "neutral",
-    "yaw": 0
-   },
-   {
-    "at": "L75>",
-    "pos": [
-     59.6,
-     12.0
-    ],
-    "keep_yaw": true
-   },
-   {
-    "at": "L77+0.050",
-    "pos": [
-     59.6,
-     12.9
-    ]
-   },
-   {
-    "at": "L78",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L80",
-    "pos": [
-     59.6,
-     12.9
-    ]
-   },
-   {
-    "at": "L80",
-    "pos": [
-     60.0,
-     14.5
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": false,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "blank",
-    "yaw": 0
-   },
-   {
-    "at": "L82",
-    "pos": [
-     60.0,
-     14.5
-    ]
-   },
-   {
-    "at": "L82",
-    "pos": [
-     0.0,
-     0.0
-    ],
-    "blend": 0,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": false,
-    "stride": 0,
-    "bow": 0,
-    "hidden": false,
-    "expr": "blank",
-    "yaw": 0
-   },
-   {
-    "at": "L82+0.600",
-    "head": [
-     40,
-     0
-    ],
-    "blend": 0.5
-   },
-   {
-    "at": "L82.3",
-    "head": [
-     0,
-     0
-    ],
-    "blend": 0.5
-   },
-   {
-    "at": "P03+0.700",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L83",
+    "at": "L35",
     "hidden": true,
     "blend": 0
    }
@@ -7266,207 +3461,1568 @@
  "cues": [
   {
    "at": 0,
-   "name": "props",
-   "roll": true,
-   "trip": 1,
-   "coins": 0,
-   "end1": true,
-   "carry": false
+   "name": "stage",
+   "put": [
+    {
+     "who": "x0",
+     "pos": [
+      1.75,
+      14.3,
+      1.08
+     ],
+     "yaw": 0,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x1",
+     "pos": [
+      3.0,
+      14.4,
+      1.08
+     ],
+     "yaw": 0,
+     "expr": "grin",
+     "rim": true
+    },
+    {
+     "who": "x2",
+     "pos": [
+      4.2,
+      14.3,
+      1.08
+     ],
+     "yaw": 0,
+     "expr": "neutral",
+     "rim": true
+    }
+   ]
   },
   {
-   "at": "L13",
-   "name": "ghosts",
-   "me": "on",
-   "ta": "tasha"
+   "at": "L02",
+   "name": "stage",
+   "put": [
+    {
+     "who": "x0",
+     "pos": [
+      3.5,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x1",
+     "pos": [
+      4.05,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x2",
+     "pos": [
+      4.6,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x3",
+     "pos": [
+      5.15,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x4",
+     "pos": [
+      5.7,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x5",
+     "pos": [
+      6.25,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x6",
+     "pos": [
+      6.800000000000001,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x7",
+     "pos": [
+      7.3500000000000005,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x8",
+     "pos": [
+      7.9,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x9",
+     "pos": [
+      8.45,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "expr": "neutral",
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L03",
+   "name": "stage",
+   "put": [
+    {
+     "who": "x0",
+     "pos": [
+      0.09999999999999998,
+      -13.7,
+      0.02
+     ],
+     "yaw": 0,
+     "expr": "neutral",
+     "rim": false
+    },
+    {
+     "who": "x1",
+     "pos": [
+      1.3,
+      -13.7,
+      0.02
+     ],
+     "yaw": 0,
+     "expr": "smirk",
+     "rim": false
+    },
+    {
+     "who": "x2",
+     "pos": [
+      3.5,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "rim": true
+    },
+    {
+     "who": "x3",
+     "pos": [
+      4.05,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "rim": true
+    },
+    {
+     "who": "x4",
+     "pos": [
+      4.6,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "rim": true
+    },
+    {
+     "who": "x5",
+     "pos": [
+      5.15,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "rim": true
+    },
+    {
+     "who": "x6",
+     "pos": [
+      5.7,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "rim": true
+    },
+    {
+     "who": "x7",
+     "pos": [
+      6.25,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "rim": true
+    },
+    {
+     "who": "x8",
+     "pos": [
+      6.800000000000001,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "rim": true
+    },
+    {
+     "who": "x9",
+     "pos": [
+      7.3500000000000005,
+      -15.2,
+      0.02
+     ],
+     "yaw": -90,
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L04",
+   "name": "stage",
+   "put": [
+    {
+     "who": "x0",
+     "pos": [
+      0.62,
+      4.5,
+      0.12000000000000001
+     ],
+     "yaw": 180,
+     "expr": "neutral",
+     "bow": 60,
+     "rim": true,
+     "arms": [
+      0,
+      0
+     ],
+     "lie": true,
+     "scale": 0.46
+    }
+   ]
+  },
+  {
+   "at": "L06",
+   "name": "props",
+   "truckpanes": true
+  },
+  {
+   "at": "L06",
+   "name": "stage",
+   "put": [
+    {
+     "who": "x0",
+     "pos": [
+      -7.4,
+      7.4,
+      1.15
+     ],
+     "yaw": 0,
+     "expr": "smirk",
+     "wave": true,
+     "rim": true,
+     "scale": 0.86
+    },
+    {
+     "who": "x1",
+     "pos": [
+      -6.4,
+      7.3500000000000005,
+      1.15
+     ],
+     "yaw": 0,
+     "expr": "smirk",
+     "wave": true,
+     "rim": true,
+     "scale": 0.86
+    },
+    {
+     "who": "x2",
+     "pos": [
+      -5.4,
+      7.4,
+      1.15
+     ],
+     "yaw": 0,
+     "expr": "smirk",
+     "wave": true,
+     "rim": true,
+     "scale": 0.86
+    },
+    {
+     "who": "x3",
+     "pos": [
+      -4.4,
+      7.3500000000000005,
+      1.15
+     ],
+     "yaw": 0,
+     "expr": "smirk",
+     "wave": true,
+     "rim": true,
+     "scale": 0.86
+    },
+    {
+     "who": "x4",
+     "pos": [
+      -6.0,
+      8.0,
+      1.15
+     ],
+     "yaw": 0,
+     "expr": "smirk",
+     "wave": true,
+     "rim": true,
+     "scale": 0.7
+    },
+    {
+     "who": "x5",
+     "pos": [
+      -4.9,
+      8.05,
+      1.15
+     ],
+     "yaw": 0,
+     "expr": "smirk",
+     "wave": true,
+     "rim": true,
+     "scale": 0.7
+    }
+   ]
+  },
+  {
+   "at": "L07",
+   "name": "stage",
+   "put": [
+    {
+     "who": "x3",
+     "pos": [
+      -4.4,
+      7.3500000000000005,
+      1.15
+     ],
+     "yaw": 0,
+     "expr": "smirk",
+     "wave": true,
+     "rim": true,
+     "scale": 0.86
+    }
+   ]
+  },
+  {
+   "at": "L08",
+   "name": "props",
+   "truckpanes": false
+  },
+  {
+   "at": "L08",
+   "name": "rain",
+   "on": true,
+   "box": [
+    57.8,
+    62.2,
+    6.0,
+    12.45
+   ],
+   "top": 4.0
+  },
+  {
+   "at": "L08",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L12",
+   "name": "props",
+   "truckpanes": false,
+   "fries": true
+  },
+  {
+   "at": "L14",
+   "name": "props",
+   "truckpanes": false,
+   "fries": false,
+   "halfpanes": true
+  },
+  {
+   "at": "L14",
+   "name": "props",
+   "truckpanes": false,
+   "fries": false,
+   "halfpanes": true,
+   "carry": true,
+   "off": [
+    -0.85,
+    0.0
+   ],
+   "yaw": 270
+  },
+  {
+   "at": "L14",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "rim": true
+    }
+   ]
   },
   {
    "at": "L16",
-   "name": "ghosts",
-   "me": "on",
-   "ta": "copy",
-   "dy": 6.0
+   "name": "stage",
+   "put": [
+    {
+     "who": "x0",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.4,
+      "ahead": -0.12,
+      "up": 0.08,
+      "yaw": 0
+     },
+     "scale": 0.5,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x1",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.4,
+      "ahead": -0.12,
+      "up": 0.08,
+      "yaw": 0
+     },
+     "scale": 0.5,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x2",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.4,
+      "ahead": -0.12,
+      "up": 1.18,
+      "yaw": 0
+     },
+     "scale": 0.5,
+     "expr": "neutral",
+     "rim": true
+    },
+    {
+     "who": "x3",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.4,
+      "ahead": -0.12,
+      "up": 1.18,
+      "yaw": 0
+     },
+     "scale": 0.5,
+     "expr": "neutral",
+     "rim": true
+    }
+   ]
   },
   {
-   "at": "L19",
-   "name": "ghosts",
-   "me": "off",
-   "ta": "copy",
-   "dy": 6.0
+   "at": "L17.1",
+   "name": "stage",
+   "put": [
+    {
+     "who": "x0",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.4,
+      "ahead": -0.12,
+      "up": 0.08,
+      "yaw": 0
+     },
+     "scale": 0.5,
+     "expr": "neutral",
+     "rim": true,
+     "head": [
+      -35,
+      0
+     ]
+    },
+    {
+     "who": "x1",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.4,
+      "ahead": -0.12,
+      "up": 0.08,
+      "yaw": 0
+     },
+     "scale": 0.5,
+     "expr": "neutral",
+     "rim": true,
+     "head": [
+      35,
+      0
+     ]
+    },
+    {
+     "who": "x2",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.4,
+      "ahead": -0.12,
+      "up": 1.18,
+      "yaw": 0
+     },
+     "scale": 0.5,
+     "expr": "neutral",
+     "rim": true,
+     "head": [
+      -35,
+      0
+     ]
+    },
+    {
+     "who": "x3",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.4,
+      "ahead": -0.12,
+      "up": 1.18,
+      "yaw": 0
+     },
+     "scale": 0.5,
+     "expr": "neutral",
+     "rim": true,
+     "head": [
+      35,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "at": "L18",
+   "name": "props",
+   "truckpanes": false,
+   "fries": false,
+   "halfpanes": false,
+   "carry": false
+  },
+  {
+   "at": "L18",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L18",
+   "name": "rain",
+   "on": true,
+   "box": [
+    57.8,
+    62.2,
+    6.0,
+    12.45
+   ],
+   "top": 4.0
+  },
+  {
+   "at": "L18.2",
+   "name": "fog",
+   "on": true,
+   "peak": 0.4,
+   "pos": [
+    59.75,
+    12.75,
+    1.5
+   ]
   },
   {
    "at": "L20",
-   "name": "ghosts",
-   "me": "off",
-   "ta": "off"
+   "name": "fog",
+   "on": false,
+   "pos": [
+    59.75,
+    12.75,
+    1.5
+   ]
+  },
+  {
+   "at": "L20",
+   "name": "rain",
+   "on": false,
+   "box": [
+    0,
+    1,
+    0,
+    1
+   ],
+   "top": 4.0
+  },
+  {
+   "at": "L20",
+   "name": "stage",
+   "put": [
+    {
+     "who": "o0",
+     "pos": [
+      60.45,
+      11.2,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o1",
+     "pos": [
+      59.55,
+      9.4,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o2",
+     "pos": [
+      60.45,
+      7.8,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o3",
+     "pos": [
+      58.5,
+      10.6,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o4",
+     "pos": [
+      61.5,
+      12.0,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "dark",
+     "pos": [
+      60.0,
+      12.3,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L22",
+   "name": "stage",
+   "put": [
+    {
+     "who": "o0",
+     "pos": [
+      60.45,
+      11.2,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o1",
+     "pos": [
+      59.55,
+      9.4,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o2",
+     "pos": [
+      60.45,
+      7.8,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o3",
+     "pos": [
+      58.5,
+      10.6,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o4",
+     "pos": [
+      61.5,
+      12.0,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "dark",
+     "pos": [
+      60.0,
+      10.3,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L23",
+   "name": "stage",
+   "put": [
+    {
+     "who": "o0",
+     "pos": [
+      60.45,
+      11.2,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o1",
+     "pos": [
+      59.55,
+      9.4,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o2",
+     "pos": [
+      60.45,
+      7.8,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o3",
+     "pos": [
+      58.5,
+      10.6,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o4",
+     "pos": [
+      61.5,
+      12.0,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "dark",
+     "pos": [
+      60.0,
+      8.3,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L23.2",
+   "name": "stage",
+   "put": [
+    {
+     "who": "o0",
+     "pos": [
+      60.45,
+      11.2,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o1",
+     "pos": [
+      59.55,
+      9.4,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o2",
+     "pos": [
+      60.45,
+      7.8,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o3",
+     "pos": [
+      58.5,
+      10.6,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "o4",
+     "pos": [
+      61.5,
+      12.0,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    },
+    {
+     "who": "dark",
+     "pos": [
+      60.0,
+      6.2,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true
+    }
+   ]
   },
   {
    "at": "L24",
+   "name": "rain",
+   "on": true,
+   "box": [
+    57.8,
+    62.2,
+    6.0,
+    12.45
+   ],
+   "top": 4.0
+  },
+  {
+   "at": "L24",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "rim": true
+    },
+    {
+     "who": "dark",
+     "pos": [
+      59.85,
+      14.35,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true,
+     "head": [
+      0,
+      18
+     ]
+    }
+   ]
+  },
+  {
+   "at": "L24.3",
+   "name": "rain",
+   "on": false,
+   "box": [
+    0,
+    1,
+    0,
+    1
+   ],
+   "top": 4.0
+  },
+  {
+   "at": "P01",
    "name": "props",
-   "roll": false,
-   "trip": 1,
-   "coins": 0,
-   "end1": true,
-   "carry": false
-  },
-  {
-   "at": "L62",
-   "name": "props",
-   "roll": false,
-   "trip": 2,
-   "coins": 0,
-   "end1": true,
-   "carry": false
-  },
-  {
-   "at": "L62",
-   "name": "ghosts",
-   "me": "off",
-   "ta": "off"
-  },
-  {
-   "at": "L63",
-   "name": "ghosts",
-   "me": "off",
-   "ta": "copy",
-   "dy": 6.0,
-   "spread": 0.04
-  },
-  {
-   "at": "L63",
-   "name": "ghosts",
-   "me": "off",
-   "ta": "copy",
-   "dy": 6.0,
-   "spread": 0.04,
-   "place": {
-    "gt0": [
-     60.75,
-     0.6,
-     0.0
-    ],
-    "gt1": [
-     59.25,
-     0.95,
-     0.0
-    ],
-    "gt2": [
-     60.75,
-     1.3,
-     0.0
-    ],
-    "gt3": [
-     59.25,
-     1.65,
-     0.0
-    ],
-    "gt4": [
-     60.75,
-     2.0,
-     0.0
-    ],
-    "gt5": [
-     59.25,
-     2.35,
-     0.0
-    ]
-   },
-   "hide": "L65.2+0.2",
-   "until": "L69-0.395"
-  },
-  {
-   "at": "L65",
-   "name": "ghosts",
-   "me": "off",
-   "ta": "copy",
-   "dy": 6.0,
-   "spread": 0.04,
-   "hide": "L65.2+0.2",
-   "until": "L69-0.395"
-  },
-  {
-   "at": "L70",
-   "name": "ghosts",
-   "me": "off",
-   "ta": "off"
-  },
-  {
-   "at": "L78",
-   "name": "props",
-   "roll": false,
-   "trip": 2,
-   "coins": 0,
-   "end1": false,
+   "truckpanes": false,
+   "fries": false,
+   "halfpanes": false,
    "carry": false,
+   "nostage": true
+  },
+  {
+   "at": "L26",
+   "name": "rain",
+   "on": true,
+   "box": [
+    57.8,
+    62.2,
+    6.0,
+    12.45
+   ],
+   "top": 4.0
+  },
+  {
+   "at": "L26",
+   "name": "props",
+   "truckpanes": false,
+   "fries": false,
+   "halfpanes": false,
+   "carry": false,
+   "nostage": false
+  },
+  {
+   "at": "L26",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L26+0.85",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "rim": true
+    },
+    {
+     "who": "dark",
+     "pos": [
+      59.85,
+      14.35,
+      0.04
+     ],
+     "yaw": 0,
+     "expr": "blank",
+     "rim": true,
+     "head": [
+      0,
+      18
+     ]
+    }
+   ]
+  },
+  {
+   "at": "L27",
+   "name": "props",
+   "truckpanes": false,
+   "fries": false,
+   "halfpanes": true,
+   "carry": true,
+   "nostage": true,
+   "world": [
+    60.0,
+    12.8,
+    0.04,
+    0.0
+   ]
+  },
+  {
+   "at": "L27",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.5,
+      "ahead": -0.45,
+      "up": 0.03,
+      "yaw": 0,
+      "tilt": true
+     },
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L28.1",
+   "name": "tilt",
+   "deg": 25,
+   "dur": 0.6
+  },
+  {
+   "at": "P02",
+   "name": "props",
+   "truckpanes": false,
+   "fries": false,
+   "halfpanes": false,
+   "carry": true,
+   "nostage": false,
+   "off": [
+    0.0,
+    0.95
+   ],
+   "yaw": 90,
    "wet": true
   },
   {
-   "at": "L81",
-   "name": "props",
-   "roll": false,
-   "trip": 1,
-   "coins": 0,
-   "end1": true,
-   "carry": true,
-   "off": [
-    1.0,
-    0.6
-   ],
-   "yaw": 90
-  },
-  {
-   "at": "L82",
-   "name": "props",
-   "roll": false,
-   "trip": 1,
-   "coins": 0,
-   "end1": true,
-   "carry": true,
-   "off": [
-    0.45,
-    0.9
-   ],
-   "yaw": 0
-  },
-  {
-   "at": "L82",
-   "name": "copyattach",
+   "at": "P02",
+   "name": "rain",
    "on": true,
-   "off": [
-    0.0,
-    0.45
+   "box": [
+    -8.0,
+    4.0,
+    1.0,
+    4.6
    ],
-   "yaw": 180
+   "top": 4.5
   },
   {
-   "at": "P03",
-   "name": "fade",
-   "dur": 1.6
+   "at": "L29",
+   "name": "rain",
+   "on": true,
+   "box": [
+    -9.0,
+    4.0,
+    1.0,
+    4.55
+   ],
+   "top": 4.5
   },
   {
-   "at": "L83",
+   "at": "L29",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.5,
+      "ahead": -0.45,
+      "up": 0.03,
+      "yaw": 0,
+      "tilt": true
+     },
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L34",
+   "name": "tilt",
+   "deg": 0,
+   "dur": 0.6
+  },
+  {
+   "at": "L34",
    "name": "props",
-   "roll": false,
-   "trip": 1,
-   "coins": 4,
-   "end1": true,
-   "carry": false
+   "truckpanes": false,
+   "fries": false,
+   "halfpanes": false,
+   "carry": true,
+   "nostage": false,
+   "wet": true,
+   "world": [
+    -4.2,
+    6.55,
+    1.15,
+    0.0
+   ]
   },
   {
-   "at": "L83",
-   "name": "fade",
-   "dur": 0.01,
-   "reset": true
+   "at": "L34",
+   "name": "rain",
+   "on": true,
+   "box": [
+    -9.0,
+    0.0,
+    0.5,
+    5.0
+   ],
+   "top": 4.5
+  },
+  {
+   "at": "L34",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.5,
+      "ahead": -0.45,
+      "up": 0.03,
+      "yaw": 0,
+      "tilt": true
+     },
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L37.1",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.5,
+      "ahead": -0.45,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "rim": true
+    },
+    {
+     "who": "tr",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.5,
+      "ahead": -0.95,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "expr": "smirk",
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L40",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.5,
+      "ahead": -0.45,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "rim": true
+    },
+    {
+     "who": "tr",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.5,
+      "ahead": -0.95,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "expr": "smirk",
+     "arms": [
+      0,
+      82
+     ],
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L41",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.5,
+      "ahead": -0.45,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "expr": "smirk",
+     "rim": true
+    },
+    {
+     "who": "tr",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.5,
+      "ahead": -0.95,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "expr": "smirk",
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L42",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.5,
+      "ahead": -0.45,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "rim": true
+    },
+    {
+     "who": "tr",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.5,
+      "ahead": -0.95,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "expr": "smirk",
+     "rim": true
+    }
+   ]
+  },
+  {
+   "at": "L43",
+   "name": "stage",
+   "put": [
+    {
+     "who": "me",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": -0.5,
+      "ahead": -0.45,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "rim": true
+    },
+    {
+     "who": "tr",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.5,
+      "ahead": -0.95,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "expr": "smirk",
+     "rim": true
+    },
+    {
+     "who": "dark",
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "yaw": 0,
+     "att": {
+      "side": 0.0,
+      "ahead": -1.75,
+      "up": 0.03,
+      "yaw": 0
+     },
+     "expr": "blank",
+     "rim": true
+    }
+   ]
   }
  ],
  "looks": {
   "S01": {
    "exposure": 1.1,
-   "camfill": 1.4
+   "camfill": 1.5,
+   "gal": 1.0,
+   "inside": 1.6,
+   "wash": 1.0
   },
-  "S07": {
-   "exposure": 1.4,
+  "S02": {
+   "exposure": 0.6,
+   "camfill": 0.5,
+   "amb": 1.0
+  },
+  "S03": {
+   "exposure": 1.0,
+   "camfill": 0.8,
+   "amb": 1.0,
+   "rim": [
+    [
+     -2.2,
+     -11.5,
+     3.0
+    ],
+    [
+     0.3,
+     -13.8,
+     1.2
+    ],
+    900,
+    60,
+    "#ffd9a0"
+   ],
+   "van": [
+    [
+     0.7,
+     -14.4,
+     2.0
+    ],
+    [
+     0.7,
+     -13.2,
+     1.0
+    ],
+    60,
+    1.8,
+    "#ffb060"
+   ]
+  },
+  "S04": {
+   "exposure": 0.8,
    "camfill": 1.0,
-   "amb": 2.2,
+   "amb": 1.0,
    "bulbs": 0.5,
    "rim": [
     [
@@ -7479,7 +5035,7 @@
      3.0,
      1.4
     ],
-    9000,
+    3000,
     55,
     "#9aa6d8"
    ],
@@ -7494,1936 +5050,1351 @@
      9.0,
      1.6
     ],
-    9000,
+    3000,
+    55,
+    "#9aa6d8"
+   ]
+  },
+  "S05": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
     55,
     "#9aa6d8"
    ],
-   "kick": [
+   "rim2": [
     [
-     -8.0,
-     9.0,
-     8.0
+     -5.0,
+     6.0,
+     7.5
     ],
     [
-     -12.0,
-     21.0,
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ]
+  },
+  "S06": {
+   "exposure": 0.8,
+   "camfill": 0.6,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
      6.5
     ],
-    40000,
-    30,
-    "#aab4e6"
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
    ]
+  },
+  "S07": {
+   "exposure": 0.8,
+   "camfill": 0.6,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ]
+  },
+  "S08": {
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.0,
+   "roomb": 1.3
+  },
+  "S09": {
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.0,
+   "roomb": 1.3
+  },
+  "S10": {
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.0,
+   "roomb": 1.3
   },
   "S11": {
-   "van": [
-    [
-     0.7,
-     -14.6,
-     2.0
-    ],
-    [
-     0.7,
-     -13.5,
-     1.0
-    ],
-    40
-   ]
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.0,
+   "roomb": 1.3
   },
   "S12": {
-   "rim": [
-    [
-     8.5,
-     6.5,
-     8.0
-    ],
-    [
-     3.6,
-     13.2,
-     6.3
-    ],
-    3000,
-    22
-   ],
-   "rim2": [
-    [
-     -2.0,
-     7.0,
-     8.0
-    ],
-    [
-     3.6,
-     13.2,
-     6.3
-    ],
-    1500,
-    22
-   ]
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.0,
+   "roomb": 1.3
   },
   "S13": {
-   "rim": [
-    [
-     8.5,
-     6.5,
-     8.0
-    ],
-    [
-     3.6,
-     13.2,
-     6.3
-    ],
-    3000,
-    22
-   ],
-   "rim2": [
-    [
-     -2.0,
-     7.0,
-     8.0
-    ],
-    [
-     3.6,
-     13.2,
-     6.3
-    ],
-    1500,
-    22
-   ]
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.0,
+   "roomb": 1.3
+  },
+  "S14": {
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.0,
+   "roomb": 1.3
   },
   "S15": {
    "camfill": 0.3,
    "maze": 0,
    "inside": 0,
    "wash": 0,
-   "amb": 0.35,
+   "amb": 0.4,
    "room": 1.0,
-   "roomb": 1.0
+   "roomb": 1.3
   },
   "S16": {
    "camfill": 0.3,
    "maze": 0,
    "inside": 0,
    "wash": 0,
-   "amb": 0.35,
+   "amb": 0.4,
    "room": 1.0,
-   "roomb": 1.0
+   "roomb": 1.3
   },
   "S17": {
-   "camfill": 0.3,
+   "camfill": 0.9,
    "maze": 0,
    "inside": 0,
    "wash": 0,
-   "amb": 0.35,
+   "amb": 0.4,
    "room": 1.0,
-   "roomb": 1.0
+   "roomb": 1.3
   },
   "S18": {
-   "camfill": 0.3,
+   "camfill": 0.25,
    "maze": 0,
    "inside": 0,
    "wash": 0,
-   "amb": 0.35,
+   "amb": 0.4,
    "room": 1.0,
-   "roomb": 1.0
+   "roomb": 1.3,
+   "exposure": 0.8
   },
   "S19": {
    "camfill": 0.3,
    "maze": 0,
    "inside": 0,
    "wash": 0,
-   "amb": 0.35,
+   "amb": 0.4,
    "room": 1.0,
-   "roomb": 1.0
+   "roomb": 1.3
   },
   "S20": {
    "camfill": 0.3,
    "maze": 0,
    "inside": 0,
    "wash": 0,
-   "amb": 0.35,
+   "amb": 0.4,
    "room": 1.0,
-   "roomb": 1.0
+   "roomb": 1.3
   },
   "S21": {
-   "camfill": 0.3,
+   "camfill": 0.5,
    "maze": 0,
    "inside": 0,
    "wash": 0,
-   "amb": 0.35,
-   "room": 1.0,
+   "amb": 0.15,
+   "room": 0.7,
    "roomb": 1.0
   },
-  "S49": {
+  "S22": {
+   "camfill": 0.5,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.15,
+   "room": 0.7,
+   "roomb": 1.0
+  },
+  "S23": {
+   "camfill": 0.5,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.15,
+   "room": 0.7,
+   "roomb": 1.0
+  },
+  "S24": {
+   "camfill": 0.5,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.15,
+   "room": 0.7,
+   "roomb": 1.0
+  },
+  "S25": {
+   "camfill": 0.5,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.15,
+   "room": 0.7,
+   "roomb": 1.0
+  },
+  "S26": {
    "exposure": 0.0,
    "camfill": 0.0,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.05,
+   "room": 0.06,
+   "roomb": 0.1,
    "face": [
     [
-     0.82,
-     4.1,
-     1.2
+     60.05,
+     12.9,
+     0.15
     ],
     [
-     1.0,
-     4.3,
-     1.4
+     59.9,
+     14.35,
+     2.2
     ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    20
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
+    45,
+    0.25,
+    "#e6ecff"
    ],
    "kick": [
     [
-     2.6,
-     2.2,
-     1.9
+     60.15,
+     12.7,
+     0.25
     ],
     [
-     1.29,
-     2.83,
-     1.2
-    ],
-    300,
-    25
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.1,
-   "amb": 0.15
-  },
-  "S51": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.82,
-     4.1,
-     1.2
-    ],
-    [
-     1.0,
-     4.3,
+     59.9,
+     14.35,
      1.4
     ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
+    38,
+    22,
+    "#c8c0e8"
    ],
    "rim": [
     [
-     2.977,
-     4.673,
-     2.0
+     61.4,
+     16.0,
+     2.6
     ],
     [
-     1.0,
-     4.3,
-     1.6
+     59.9,
+     14.3,
+     1.9
     ],
-    1700,
-    9
+    120,
+    30,
+    "#b8a8ff"
    ],
    "rim2": [
     [
-     1.469,
-     6.3,
-     2.1
+     58.5,
+     15.5,
+     2.6
     ],
     [
-     1.0,
-     4.3,
-     1.6
+     59.9,
+     14.3,
+     1.9
     ],
-    900,
-    16
-   ],
-   "bounce": [
+    60,
+    30,
+    "#9a98c8"
+   ]
+  },
+  "S27": {
+   "exposure": 0.0,
+   "camfill": 0.0,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.05,
+   "room": 0.06,
+   "roomb": 0.1,
+   "face": [
     [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    20
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
+     60.05,
+     12.9,
+     0.15
     ],
     [
-     1.3,
-     4.05,
-     1.0
+     59.9,
+     14.35,
+     2.2
     ],
-    300,
-    45
+    45,
+    0.25,
+    "#e6ecff"
    ],
    "kick": [
     [
-     2.6,
-     2.2,
-     1.9
+     60.15,
+     12.7,
+     0.25
     ],
     [
-     1.29,
-     2.83,
-     1.2
-    ],
-    300,
-    25
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.1,
-   "amb": 0.15
-  },
-  "S52": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.82,
-     4.1,
-     1.2
-    ],
-    [
-     1.0,
-     4.3,
+     59.9,
+     14.35,
      1.4
     ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
+    38,
+    22,
+    "#c8c0e8"
    ],
    "rim": [
     [
-     2.977,
-     4.673,
-     2.0
+     61.4,
+     16.0,
+     2.6
     ],
     [
-     1.0,
-     4.3,
-     1.6
+     59.9,
+     14.3,
+     1.9
     ],
-    1700,
-    9
+    120,
+    30,
+    "#b8a8ff"
    ],
    "rim2": [
     [
-     1.469,
-     6.3,
-     2.1
+     58.5,
+     15.5,
+     2.6
     ],
     [
-     1.0,
-     4.3,
-     1.6
+     59.9,
+     14.3,
+     1.9
     ],
-    900,
-    16
-   ],
-   "bounce": [
+    60,
+    30,
+    "#9a98c8"
+   ]
+  },
+  "S28": {
+   "exposure": 0.0,
+   "camfill": 0.0,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.05,
+   "room": 0.06,
+   "roomb": 0.1,
+   "face": [
     [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    20
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
+     60.05,
+     12.9,
+     0.15
     ],
     [
-     1.3,
-     4.05,
-     1.0
+     59.9,
+     14.35,
+     2.2
     ],
-    300,
-    45
+    45,
+    0.25,
+    "#e6ecff"
    ],
    "kick": [
     [
-     2.6,
-     2.2,
-     1.9
+     60.15,
+     12.7,
+     0.25
     ],
     [
-     1.29,
-     2.83,
-     1.2
-    ],
-    300,
-    25
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.1,
-   "amb": 0.15
-  },
-  "S53": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.82,
-     4.1,
-     1.2
-    ],
-    [
-     1.0,
-     4.3,
+     59.9,
+     14.35,
      1.4
     ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
+    38,
+    22,
+    "#c8c0e8"
    ],
    "rim": [
     [
-     2.977,
-     4.673,
-     2.0
+     61.4,
+     16.0,
+     2.6
     ],
     [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    20
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "kick": [
-    [
-     2.6,
-     2.2,
+     59.9,
+     14.3,
      1.9
     ],
-    [
-     1.29,
-     2.83,
-     1.2
-    ],
-    300,
-    25
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.1,
-   "amb": 0.15
-  },
-  "S54": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.82,
-     4.1,
-     1.2
-    ],
-    [
-     1.0,
-     4.3,
-     1.4
-    ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
+    120,
+    30,
+    "#b8a8ff"
    ],
    "rim2": [
     [
-     1.469,
-     6.3,
-     2.1
+     58.5,
+     15.5,
+     2.6
     ],
     [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    20
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "kick": [
-    [
-     2.6,
-     2.2,
+     59.9,
+     14.3,
      1.9
     ],
-    [
-     1.29,
-     2.83,
-     1.2
-    ],
-    300,
-    25
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.1,
-   "amb": 0.15
+    60,
+    30,
+    "#9a98c8"
+   ]
   },
-  "S55": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.819,
-     4.099,
-     1.22
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    6
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.06,
-   "amb": 0.0
-  },
-  "S56": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.819,
-     4.099,
-     1.22
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    6
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.06,
-   "amb": 0.0
-  },
-  "S57": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     1.55,
-     3.5,
-     1.2
-    ],
-    [
-     1.29,
-     2.83,
-     1.55
-    ],
-    1.1,
-    0.3
-   ],
-   "hair": [
-    [
-     1.5,
-     3.4,
-     1.1
-    ],
-    [
-     1.29,
-     2.83,
-     1.6
-    ],
-    4.0
-   ],
-   "kick": [
-    [
-     2.8,
-     2.2,
-     1.9
-    ],
-    [
-     1.29,
-     2.83,
-     1.4
-    ],
-    420,
-    25
-   ],
-   "rim": [
-    [
-     0.3,
-     1.2,
-     2.1
-    ],
-    [
-     1.29,
-     2.83,
-     1.6
-    ],
-    900,
-    14
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     3.2,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "wash": 0.4,
-   "inside": 0.4,
-   "bulbs": 0.06,
-   "amb": 0.1
-  },
-  "S58": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.82,
-     4.1,
-     1.2
-    ],
-    [
-     1.0,
-     4.3,
-     1.4
-    ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    20
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "kick": [
-    [
-     2.6,
-     2.2,
-     1.9
-    ],
-    [
-     1.29,
-     2.83,
-     1.2
-    ],
-    300,
-    25
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.1,
-   "amb": 0.15
-  },
-  "S59": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.819,
-     4.099,
-     1.22
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    6
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.06,
-   "amb": 0.0
-  },
-  "S60": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.819,
-     4.099,
-     1.22
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    6
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.06,
-   "amb": 0.0
-  },
-  "S61": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     1.55,
-     3.5,
-     1.2
-    ],
-    [
-     1.29,
-     2.83,
-     1.55
-    ],
-    1.1,
-    0.3
-   ],
-   "hair": [
-    [
-     1.5,
-     3.4,
-     1.1
-    ],
-    [
-     1.29,
-     2.83,
-     1.6
-    ],
-    4.0
-   ],
-   "kick": [
-    [
-     2.8,
-     2.2,
-     1.9
-    ],
-    [
-     1.29,
-     2.83,
-     1.4
-    ],
-    420,
-    25
-   ],
-   "rim": [
-    [
-     0.3,
-     1.2,
-     2.1
-    ],
-    [
-     1.29,
-     2.83,
-     1.6
-    ],
-    900,
-    14
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     3.2,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "wash": 0.4,
-   "inside": 0.4,
-   "bulbs": 0.06,
-   "amb": 0.1
-  },
-  "S62": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.82,
-     4.1,
-     1.2
-    ],
-    [
-     1.0,
-     4.3,
-     1.4
-    ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    20
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "kick": [
-    [
-     2.6,
-     2.2,
-     1.9
-    ],
-    [
-     1.29,
-     2.83,
-     1.2
-    ],
-    300,
-    25
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.1,
-   "amb": 0.15
-  },
-  "S63": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     0.819,
-     4.099,
-     1.22
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    3.6,
-    0.3
-   ],
-   "hair": [
-    [
-     0.656,
-     3.843,
-     0.9
-    ],
-    [
-     1.0,
-     4.3,
-     1.45
-    ],
-    4.5
-   ],
-   "rim": [
-    [
-     2.977,
-     4.673,
-     2.0
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    1700,
-    9
-   ],
-   "rim2": [
-    [
-     1.469,
-     6.3,
-     2.1
-    ],
-    [
-     1.0,
-     4.3,
-     1.6
-    ],
-    900,
-    16
-   ],
-   "bounce": [
-    [
-     0.481,
-     4.337,
-     0.07
-    ],
-    [
-     1.0,
-     4.3,
-     1.0
-    ],
-    6
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     4.05,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "wash": 0.5,
-   "inside": 0.6,
-   "bulbs": 0.06,
-   "amb": 0.0
-  },
-  "S64": {
-   "exposure": 0.0,
-   "camfill": 0.0,
-   "face": [
-    [
-     1.55,
-     3.5,
-     1.2
-    ],
-    [
-     1.29,
-     2.83,
-     1.55
-    ],
-    1.1,
-    0.3
-   ],
-   "hair": [
-    [
-     1.5,
-     3.4,
-     1.1
-    ],
-    [
-     1.29,
-     2.83,
-     1.6
-    ],
-    4.0
-   ],
-   "kick": [
-    [
-     2.8,
-     2.2,
-     1.9
-    ],
-    [
-     1.29,
-     2.83,
-     1.4
-    ],
-    420,
-    25
-   ],
-   "rim": [
-    [
-     0.3,
-     1.2,
-     2.1
-    ],
-    [
-     1.29,
-     2.83,
-     1.6
-    ],
-    900,
-    14
-   ],
-   "work": [
-    [
-     2.05,
-     3.45,
-     0.77
-    ],
-    [
-     1.3,
-     3.2,
-     1.0
-    ],
-    300,
-    45
-   ],
-   "wash": 0.4,
-   "inside": 0.4,
-   "bulbs": 0.06,
-   "amb": 0.1
-  },
-  "S67": {
+  "S29": {
    "camfill": 0.3,
    "maze": 0,
    "inside": 0,
    "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+   "amb": 0.4,
+   "room": 1.0,
+   "roomb": 1.3,
+   "face": [
+    [
+     59.3,
+     14.9,
+     1.4
+    ],
+    [
+     59.75,
+     12.15,
+     1.7
+    ],
+    40,
+    0.6,
+    "#dfe4ff"
+   ]
   },
-  "S68": {
+  "S30": {
+   "exposure": 0.0,
+   "camfill": 0.0,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.05,
+   "room": 0.06,
+   "roomb": 0.1,
+   "face": [
+    [
+     60.05,
+     12.9,
+     0.15
+    ],
+    [
+     59.9,
+     14.35,
+     2.2
+    ],
+    45,
+    0.25,
+    "#e6ecff"
+   ],
+   "kick": [
+    [
+     60.15,
+     12.7,
+     0.25
+    ],
+    [
+     59.9,
+     14.35,
+     1.4
+    ],
+    38,
+    22,
+    "#c8c0e8"
+   ],
+   "rim": [
+    [
+     61.4,
+     16.0,
+     2.6
+    ],
+    [
+     59.9,
+     14.3,
+     1.9
+    ],
+    120,
+    30,
+    "#b8a8ff"
+   ],
+   "rim2": [
+    [
+     58.5,
+     15.5,
+     2.6
+    ],
+    [
+     59.9,
+     14.3,
+     1.9
+    ],
+    60,
+    30,
+    "#9a98c8"
+   ]
+  },
+  "S31": {
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.2,
+   "roomb": 1.3
+  },
+  "S32": {
+   "camfill": 0.3,
+   "maze": 0,
+   "inside": 0,
+   "wash": 0,
+   "amb": 0.4,
+   "room": 1.2,
+   "roomb": 1.3
+  },
+  "S33": {
+   "exposure": 0.8,
    "camfill": 1.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 2.0,
-   "room": 1.1,
-   "roomb": 1.1,
-   "exposure": 1.0
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ]
   },
-  "S69": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S34": {
+   "exposure": 0.8,
+   "camfill": 1.4,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ]
   },
-  "S70": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S35": {
+   "exposure": 0.8,
+   "camfill": 1.4,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ]
   },
-  "S71": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S36": {
+   "exposure": 0.8,
+   "camfill": 1.4,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ]
   },
-  "S72": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S37": {
+   "exposure": 0.8,
+   "camfill": 1.4,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ]
   },
-  "S73": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S38": {
+   "exposure": 0.8,
+   "camfill": 1.4,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ]
   },
-  "S74": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S39": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S75": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S40": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S76": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S41": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S77": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S42": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S78": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S43": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S79": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S44": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S80": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S45": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S81": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S46": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S82": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
+  "S47": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -5.0,
+     6.0,
+     7.5
+    ],
+    [
+     -12.5,
+     9.0,
+     1.6
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ]
   },
-  "S83": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
-  },
-  "S84": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
-  },
-  "S85": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
-  },
-  "S86": {
-   "camfill": 0.3,
-   "maze": 0,
-   "inside": 0,
-   "wash": 0,
-   "amb": 0.5,
-   "room": 1.1,
-   "roomb": 1.1
-  },
-  "S88": {
+  "S48": {
+   "exposure": 0.8,
+   "camfill": 1.0,
+   "amb": 1.0,
+   "bulbs": 0.5,
+   "rim": [
+    [
+     -2.5,
+     0.5,
+     6.5
+    ],
+    [
+     -9.0,
+     3.0,
+     1.4
+    ],
+    3000,
+    55,
+    "#9aa6d8"
+   ],
+   "rim2": [
+    [
+     -2.4000000000000004,
+     9.6,
+     3.6
+    ],
+    [
+     -4.15,
+     8.0,
+     2.0
+    ],
+    900,
+    30,
+    "#b8a8ff"
+   ],
+   "kick": [
+    [
+     -1.0,
+     1.0,
+     3.2
+    ],
+    [
+     -4.2,
+     6.8,
+     2.2
+    ],
+    5000,
+    40,
+    "#c9b8ff"
+   ],
    "face": [
     [
-     1.2,
-     7.4,
-     1.9
+     -4.0,
+     6.9,
+     1.2
     ],
     [
-     -1.5,
-     9.2,
-     1.55
+     -4.15,
+     8.0,
+     2.3
     ],
-    250,
+    50,
     0.8
-   ],
-   "camfill": 0.9
-  },
-  "S90": {
-   "van": [
-    [
-     0.7,
-     -14.1,
-     2.2
-    ],
-    [
-     1.1,
-     -13.2,
-     1.0
-    ],
-    110,
-    1.8,
-    "#ffb060"
-   ],
-   "camfill": 0.4,
-   "amb": 0.5,
-   "wash": 0,
-   "maze": 0,
-   "inside": 0
-  },
-  "S91": {
-   "van": [
-    [
-     0.7,
-     -14.1,
-     2.2
-    ],
-    [
-     1.1,
-     -13.2,
-     1.0
-    ],
-    110,
-    1.8,
-    "#ffb060"
-   ],
-   "camfill": 0.4,
-   "amb": 0.5,
-   "wash": 0,
-   "maze": 0,
-   "inside": 0
-  },
-  "S92": {
-   "van": [
-    [
-     0.7,
-     -14.1,
-     2.2
-    ],
-    [
-     1.1,
-     -13.2,
-     1.0
-    ],
-    110,
-    1.8,
-    "#ffb060"
-   ],
-   "camfill": 0.4,
-   "amb": 0.5,
-   "wash": 0,
-   "maze": 0,
-   "inside": 0
-  },
-  "S93": {
-   "van": [
-    [
-     0.7,
-     -14.1,
-     2.2
-    ],
-    [
-     1.1,
-     -13.2,
-     1.0
-    ],
-    110,
-    1.8,
-    "#ffb060"
-   ],
-   "camfill": 0.4,
-   "amb": 0.5,
-   "wash": 0,
-   "maze": 0,
-   "inside": 0
-  },
-  "S94": {
-   "van": [
-    [
-     0.7,
-     -14.1,
-     2.2
-    ],
-    [
-     1.1,
-     -13.2,
-     1.0
-    ],
-    110,
-    1.8,
-    "#ffb060"
-   ],
-   "camfill": 0.4,
-   "amb": 0.5,
-   "wash": 0,
-   "maze": 0,
-   "inside": 0
-  },
-  "S95": {
-   "van": [
-    [
-     0.7,
-     -14.1,
-     2.2
-    ],
-    [
-     1.1,
-     -13.2,
-     1.0
-    ],
-    110,
-    1.8,
-    "#ffb060"
-   ],
-   "camfill": 0.4,
-   "amb": 0.5,
-   "wash": 0,
-   "maze": 0,
-   "inside": 0
+   ]
   }
  },
- "dof": {
-  "S55": [
-   2.0,
-   1.0
-  ],
-  "S56": [
-   2.0,
-   1.0
-  ],
-  "S59": [
-   2.0,
-   1.0
-  ],
-  "S60": [
-   1.9,
-   1.0
-  ],
-  "S63": [
-   2.0,
-   1.0
-  ]
- },
+ "dof": {},
  "light_only": {
   "face": [
-   "copy.headm",
-   "tasha.headm",
-   "me.headm"
-  ],
-  "hair": [
-   "copy.hair*",
-   "tasha.hair*",
-   "me.hair*"
+   "dark.*",
+   "me.headm",
+   "tasha.headm"
   ]
  },
  "fx": [],
@@ -9442,97 +6413,69 @@
     "energy": 0.3
    },
    {
-    "at": "L12",
+    "at": "L14",
     "voices": [
      "drone",
      "pad",
      "piano"
     ],
-    "energy": 0.38
+    "energy": 0.4
    },
    {
-    "at": "L24",
+    "at": "L20",
     "voices": [
      "drone",
      "pad",
      "piano",
      "pulse"
+    ],
+    "energy": 0.62
+   },
+   {
+    "at": "P01",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.25
+   },
+   {
+    "at": "L27",
+    "voices": [
+     "drone",
+     "pad",
+     "piano"
     ],
     "energy": 0.5
    },
    {
-    "at": "L36",
+    "at": "L29",
     "voices": [
-     "drone",
      "pad",
-     "piano",
-     "pulse"
-    ],
-    "energy": 0.6
-   },
-   {
-    "at": "L44",
-    "voices": [
-     "drone",
-     "pad",
-     "pulse"
-    ],
-    "energy": 0.55
-   },
-   {
-    "at": "L51",
-    "voices": [
-     "drone"
-    ],
-    "energy": 0.2
-   },
-   {
-    "at": "L56",
-    "voices": [
-     "drone",
-     "pad"
+     "piano"
     ],
     "energy": 0.3
    },
    {
-    "at": "L60",
-    "voices": [
-     "drone",
-     "pad",
-     "piano",
-     "pulse"
-    ],
-    "energy": 0.7
-   },
-   {
-    "at": "L78",
-    "voices": [
-     "piano",
-     "pad"
-    ],
-    "energy": 0.3
-   },
-   {
-    "at": "P03",
-    "voices": [
-     "drone"
-    ],
-    "energy": 0.2
-   },
-   {
-    "at": "L83",
+    "at": "L39",
     "voices": [
      "piano",
      "pad",
      "drone"
     ],
-    "energy": 0.5,
+    "energy": 0.55,
     "mode": "major",
     "root": 40
+   },
+   {
+    "at": "L42",
+    "voices": [
+     "drone"
+    ],
+    "energy": 0.2
    }
   ]
  },
- "sound": {
+ "sound": {"rev": 2, 
   "floor": "wood",
   "steps_db": -20,
   "ambience": [
@@ -9544,85 +6487,68 @@
    },
    {
     "kind": "wind",
-    "from": "L07",
-    "to": "L12",
+    "from": "L06",
+    "to": "L08",
     "lufs": -40
    },
    {
     "kind": "hum",
-    "from": "L12",
-    "to": "L20",
+    "from": "L09",
+    "to": "L19",
     "lufs": -42
    },
    {
-    "kind": "wind",
-    "from": "L36",
-    "to": "L38",
-    "lufs": -34
-   },
-   {
     "kind": "drips",
-    "from": "L62",
-    "to": "L82",
+    "from": "L20",
+    "to": "L26",
     "lufs": -40
    }
   ],
   "sfx": [
    {
-    "at": "L36",
-    "kind": "whoosh",
-    "db": -20
-   },
-   {
-    "at": "P02",
+    "at": "P01",
     "kind": "hit",
     "db": -6
    },
    {
-    "at": "P02",
+    "at": "P01",
     "kind": "sting",
     "db": -9
    },
    {
-    "at": "L59",
+    "at": "L23",
     "kind": "riser",
     "db": -20,
-    "dur": 1.6
+    "dur": 1.8
    },
    {
-    "at": "L77.2>",
+    "at": "L27.2",
     "kind": "whoosh",
-    "db": -16
+    "db": -18
    },
    {
-    "at": "L83",
+    "at": "L34",
     "kind": "click",
     "db": -14
    },
    {
-    "at": "P03",
-    "kind": "hum_sweep",
-    "db": -16,
-    "dur": 2.4
+    "at": "L37.1",
+    "kind": "bell",
+    "db": -22
    }
   ],
   "music_drops": [
    {
-    "from": "L51",
-    "to": "P01",
+    "from": "L24.3",
+    "to": "P01>",
     "keep": [
      "hit",
      "sting"
     ]
    },
    {
-    "from": "P01",
-    "to": "P02>",
-    "keep": [
-     "hit",
-     "sting"
-    ],
-    "db": -8
+    "from": "L28.2",
+    "to": "P02>"
    }
   ]
  }

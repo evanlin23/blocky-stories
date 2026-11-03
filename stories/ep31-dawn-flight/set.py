@@ -1,30 +1,23 @@
-"""Dawn Flight (ep31): a hot-air balloon basket at sunrise over a sea of mist, a launch field, a kitchen table and
-the Loose One, a person in pieces. Built from kit.py's parts; nothing here is shared with another story's set.
+"""Dawn Flight (ep31, redo): a hot-air balloon basket at dawn over a sea of mist, a launch field, a kitchen, and
+three small montage sets (a field gate, a cottage door, a lane by a dry-stone wall) plus the inside of Rosa's trailer.
+Built from kit.py's parts; nothing here is shared with another story's set.
 
-Coordinates: the basket's floor centre is the origin, z up. The basket is 2.3 m inside, with four corner
-compartments (me SW, Dad SE, Rosa NW, the empty fourth corner NE) around a middle with two gas tanks, low dividers
-and a steel burner frame over the centre. The sun is in the east (+x). The landscape (field, hedges, barns, mist, hills)
-hangs from the group `L`, which sinks by `alt` metres as we rise. The envelope hangs from the group `E`. The vessel
-group `V` (basket, frame, tanks, flasks, bag, the people, the creature) is what leans.
+Coordinates: the basket's floor centre is the origin, z up. The basket is 2.3 m inside with a thick leather rim; the
+people stand at its north rim (y about 0.6) with their hands on two worn patches. The sun is in the east (+x). The
+landscape hangs from the group `L`, which sinks by `alt` metres as we rise. The envelope hangs from the group `E`.
+`V` holds the basket, the frame and the people. The other sets sit far below the world (z = -300) in zones.
 
-THE LOOSE ONE (RULES: the creature): a person in pieces. R6 blocks, but each limb and the torso split into short
-blocks and the head cut into four square slices, a hand's width (8.5 cm) of air between every piece. Nothing joins
-them. Copper torso and arms, slate-blue legs and head slices, near-black faces across every gap, two small copper
-eyes (with a white highlight each) on slice two, a flat black mouth on slice four. It is one model, built once
-and posed per cue.
+Everyone has seams (rig.py, spec "seams": true): each limb in three blocks, the torso in two, the head in four
+slices. The cue `seam` {who, gap, body, head, hand, dur} sets the gaps in cm per character.
 
 Cues read here (all optional):
 - dawn {"v": 0..1, "dur"}: the light of the day, 0 plum pre-dawn, 0.35 pink, 1 full gold
-- alt {"alt": m, "dur"}: how far the landscape has sunk; field {"f": 0|1}: launch field or landing field
-- tilt {"deg", "dur"}: how far the basket leans toward the fourth corner
-- roar {"peak", "up", "hold", "down"}: the burner flame, its glow on the envelope, the mist and the creature
+- alt {"alt": m, "dur"}; field {"f": 0|1}: launch field or landing field
+- roar {"peak", "up", "hold", "down"}: the burner flame and its glow on the envelope and the mist
 - env {"up": 0..1, "dur"}: the envelope lying on the field to standing
-- cre {"pose": "hidden|scatter|off|exact", "pos": [x, y, z], "yaw": deg, "s": scatter 0..1, "head": [4 yaws],
-       "arms": [l, r] forward degrees, "alpha": "roar" | number, "key": watts}
-- flasks {"state": "rim|corner|end"}; bag {"state": "none|tied|grass"}; cup {"on", "y", "dur"}; phone {"on"}
-- field_bg, kitchen: shots in the kitchen are marked "room": "kitchen"
-- the shot spec: "frame": "basket" (the camera rides the basket, so the world leans) or "world" (the basket leans),
-  "key": watts of the soft key light riding the camera, "hold": nothing
+- seam {"who", "gap", "body", "head", "hand", "dur"}
+- the shot spec: "frame": "basket" or "world"; "room": "kitchen" | "trailer" | "mont" (outdoor montage, sun on);
+  "key": watts of the soft key light riding the camera; "amb": sky strength
 """
 
 from __future__ import annotations
@@ -271,55 +264,6 @@ def fadeable(ctx, m):
     return m
 
 
-def new_materials(kit, ctx):
-    M = {}
-    M["wicker"] = kit.bricks("#b48a55", "#9a7243", "#3f2f1a", scale=7.0, name="wicker", rough=0.9, row=0.25, width=0.5,
-                             grime_amt=0.25)
-    M["leather"] = kit.plastic("#4a2e1e", 0.5, name="leather rim", spec=0.35)
-    M["floor"] = kit.planks("#a07a48", "#80602f", scale=3.5, axis="Y", name="basket floor")
-    M["steel"] = kit.metal("#6c7075", 0.4, name="steel")
-    M["steel_dark"] = kit.plastic("#2a2d31", 0.5, name="steel dark")
-    M["tank"] = kit.metal("#8a8f94", 0.35, name="tank")
-    M["rope"] = kit.plastic("#c2a878", 0.9, name="rope")
-    M["canvas"] = kit.plastic("#a89a74", 0.95, name="canvas")
-    M["flask"] = kit.plastic("#3a6b73", 0.4, name="flask")
-    M["flask_cap"] = kit.plastic("#d8d4c8", 0.4, name="flask cap")
-    M["cup"] = kit.plastic("#d8d2c4", 0.45, name="cup")
-    M["bag"] = kit.plastic("#5a4a3a", 0.9, name="satchel")
-    M["tally"] = kit.plastic("#46688a", 0.55, name="tally")
-    M["flame"] = kit.emit(ORANGE, 7.0, name="flame")
-    M["flame_core"] = kit.emit("#ffc070", 9.0, name="flame core")
-    M["pilot"] = kit.emit("#ffa04c", 6.0, name="pilot")
-    M["screen"] = kit.emit("#d8e4f0", 0.8, name="phone screen")
-    M["phone"] = kit.plastic("#1c1d20", 0.4, name="phone")
-    M["cream"] = emissive_glow_mat(kit, ctx, "env cream", "#efe4cc")
-    M["green"] = emissive_glow_mat(kit, ctx, "env green", "#2f5a3c")
-    M["ground"] = kit.grime("#7a7448", 0.62, 0.5, name="stubble", rough=0.95)
-    M["ground2"] = kit.grime("#87804a", 0.7, 0.4, name="stubble 2", rough=0.95)
-    M["hedge"] = kit.plastic("#2f4a2c", 0.95, name="hedge")
-    M["trunk"] = kit.plastic("#4a3a2a", 0.95, name="trunk")
-    M["leaf"] = kit.plastic("#33502e", 0.95, name="leaf")
-    M["barn"] = kit.plastic("#6b4a3c", 0.95, name="barn wall")
-    M["barn_roof"] = kit.plastic("#454c58", 0.8, name="barn roof")
-    M["hill"] = kit.plastic("#3a3a5c", 1.0, name="hill")
-    M["trailer"] = kit.plastic("#8a8f94", 0.6, name="trailer")
-    M["tyre"] = kit.plastic("#1a1a1c", 0.9, name="tyre")
-    M["lampglow"] = kit.emit("#ffd9a8", 6.0, name="lamp glow")
-    M["sunmat"] = kit.emit("#fff0c0", 5.0, name="sun")
-    # the kitchen
-    M["k_floor"] = kit.planks("#8a6a45", "#6a4e30", scale=2.0, axis="X", name="kitchen floor")
-    M["k_wall"] = kit.grime("#c9b894", 0.8, 2.0, name="kitchen wall")
-    M["k_wood"] = kit.plastic("#7a5a38", 0.7, name="kitchen wood")
-    M["k_window"] = kit.emit("#5a4a78", 0.9, name="kitchen window")
-    M["k_lamp"] = kit.emit("#ffd9a0", 6.0, name="kitchen bulb")
-    M["k_mug"] = kit.plastic("#e8dcc0", 0.5, name="mug")
-    M["tea"] = kit.plastic("#6a3a18", 0.3, name="tea")
-    return M
-
-
-# ------------------------------------------------------------------------------------------------ the sky
-
-
 def build_sky(kit, ctx):
     w = bpy.context.scene.world
     nt = w.node_tree
@@ -359,81 +303,6 @@ def wbox(kit, name, lo, hi, mat, parent=None, bevel=0.0):
                    bevel=bevel)
 
 
-def build_basket(kit, ctx, M):
-    Vg = ctx["V"]
-    kit.box("floor", (2 * HX + 0.02, 2 * HX + 0.02, 0.08), (0, 0, -0.04), M["floor"], Vg)
-    o = HX + WALL
-    for sy in (-1, 1):
-        kit.box(f"wallY{sy}", (2 * o, WALL, WALL_H - GROUND), (0, sy * (HX + WALL / 2), (WALL_H + GROUND) / 2), M["wicker"], Vg)
-        kit.box(f"rimY{sy}", (2 * o + 0.08, 0.2, RIM_H), (0, sy * (HX + WALL / 2), WALL_H + RIM_H / 2), M["leather"], Vg,
-                bevel=0.05)
-    for sx in (-1, 1):
-        kit.box(f"wallX{sx}", (WALL, 2 * HX, WALL_H - GROUND), (sx * (HX + WALL / 2), 0, (WALL_H + GROUND) / 2), M["wicker"], Vg)
-        kit.box(f"rimX{sx}", (0.2, 2 * HX + 0.18, RIM_H), (sx * (HX + WALL / 2), 0, WALL_H + RIM_H / 2), M["leather"], Vg,
-                bevel=0.05)
-    # low dividers: four corner compartments around a middle
-    for sx in (-1, 1):
-        kit.box(f"divX{sx}", (HX - 0.32, 0.05, 0.5), (sx * (0.32 + (HX - 0.32) / 2), 0, 0.25), M["wicker"], Vg)
-    for sy in (-1, 1):
-        kit.box(f"divY{sy}", (0.05, HX - 0.5, 0.5), (0, sy * (0.5 + (HX - 0.5) / 2), 0.25), M["wicker"], Vg)
-    # two gas tanks in the middle
-    for sy in (-1, 1):
-        kit.cyl(f"tank{sy}", 0.18, 0.66, (0, sy * 0.25, 0.35), M["tank"], Vg, n=24)
-        kit.cyl(f"tankcap{sy}", 0.09, 0.08, (0, sy * 0.25, 0.7), M["steel_dark"], Vg, n=16)
-    # rope handles on the rim (loops on the outside)
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            kit.box(f"hand{sx}{sy}", (0.04, 0.34, 0.04), (sx * (HX + WALL + 0.06), sy * 0.62, 0.75), M["rope"], Vg,
-                    bevel=0.015)
-    # the burner frame: two posts, a crossbar and the double burner
-    for sx in (-1, 1):
-        kit.cyl(f"post{sx}", 0.04, 1.4, (sx * (HX + 0.02), 0, 1.72), M["steel"], Vg, n=12)
-    kit.box("crossbar", (2 * HX + 0.12, 0.07, 0.07), (0, 0, 2.42), M["steel"], Vg, bevel=0.015)
-    for sx in (-1, 1):
-        kit.box(f"burnbody{sx}", (0.14, 0.14, 0.16), (sx * 0.2, 0, 2.5), M["steel_dark"], Vg, bevel=0.03)
-        kit.cyl(f"burnnoz{sx}", 0.05, 0.14, (sx * 0.2, 0, BURN_Z + 0.03), M["steel_dark"], Vg, n=12)
-        kit.cyl(f"pilot{sx}", 0.012, 0.03, (sx * 0.2 + 0.07, 0, BURN_Z + 0.06), M["pilot"], Vg, n=8)
-    # the flames: cones, grown by the roar
-    fg = kit.empty("flames", (0, 0, BURN_Z + 0.08), Vg)
-    ctx["flames"] = fg
-    ctx["flame_parts"] = []
-    for sx in (-1, 1):
-        for nm, r0, h, mat in (("f", 0.11, 1.35, M["flame"]), ("c", 0.06, 0.8, M["flame_core"])):
-            c = kit.cyl(f"flame{nm}{sx}", r0, h, (sx * 0.2, 0, h / 2), mat, fg, n=16, r2=0.015)
-            ctx["flame_parts"].append((c, h))
-    # the sandbag (a fat canvas bag) with its rope, the four flasks, a cup, the satchel, the phone
-    bag = kit.empty("bag", (0.95, 0.93, 0.0), Vg)
-    kit.box("bagm", (0.44, 0.36, 0.34), (0, 0, 0.17), M["canvas"], bag, bevel=0.1)
-    kit.box("bagneck", (0.2, 0.2, 0.1), (0, 0, 0.38), M["canvas"], bag, bevel=0.05)
-    kit.cyl("bagtie", 0.075, 0.04, (0, 0, 0.34), M["rope"], bag, n=12)
-    ctx["bag"] = bag
-    rope = kit.cyl("bagrope", 0.016, 1.0, (0, 0, 0), M["rope"], Vg, n=8)
-    ctx["bagrope"] = rope
-    ctx["flasks"] = []
-    for k in range(4):
-        fl = kit.empty(f"flask{k}", (0, 0, 0), Vg)
-        kit.cyl(f"flaskb{k}", 0.048, 0.22, (0, 0, 0.11), M["flask"], fl, n=16)
-        kit.cyl(f"flaskc{k}", 0.042, 0.05, (0, 0, 0.245), M["flask_cap"], fl, n=16)
-        ctx["flasks"].append(fl)
-    cup = kit.empty("cup", (0, 0, 0), Vg)
-    kit.cyl("cupb", 0.052, 0.1, (0, 0, 0.05), M["cup"], cup, n=16, r2=0.062)
-    kit.cyl("cuptea", 0.05, 0.01, (0, 0, 0.095), M["tea"], cup, n=16)
-    ctx["cup"] = cup
-    sat = kit.empty("satchel", (0.18, -0.75, 0.0), Vg)
-    kit.box("satm", (0.5, 0.3, 0.28), (0, 0, 0.14), M["bag"], sat, bevel=0.06)
-    kit.box("satflap", (0.52, 0.32, 0.03), (0, -0.0, 0.3), M["bag"], sat, rot=(0.0, 0.0, 0.0), bevel=0.01)
-    ctx["satchel"] = sat
-    ph = kit.empty("phone", (1.21, 0.35, RIM_TOP + 0.006), Vg)
-    kit.box("phoneb", (0.075, 0.15, 0.012), (0, 0, 0), M["phone"], ph, bevel=0.01)
-    kit.box("phones", (0.064, 0.136, 0.002), (0, 0, 0.007), M["screen"], ph)
-    ctx["phone"] = ph
-    # the lore plant: four short upright slate-blue strokes across the leather of the fourth corner's rim (S19)
-    for k in range(4):
-        kit.box(f"tally{k}", (0.03, 0.15, 0.005), (0.55 + (k - 1.5) * 0.075, HX + WALL / 2, RIM_TOP + 0.002), M["tally"],
-                Vg)
-    # the cold lamp-lit wicker on the outside of the rim: nothing written anywhere
-
-
 def build_envelope(kit, ctx, M):
     E = ctx["E"]
     n_g, n_r = 16, 26
@@ -468,111 +337,130 @@ def build_envelope(kit, ctx, M):
         c.visible_shadow = False
 
 
-# ------------------------------------------------------------------------------------------------ the creature
+
+# ------------------------------------------------------------------------------------------------ new constants
+ZONES = {"gate": V((40, 0, -300)), "door": V((80, 0, -300)), "lane": V((120, 0, -300)), "trailer": V((160, 0, -300))}
+PATCH_X = (-0.55, 0.55)          # where Dad's hand and mine rest on the north rim
+RIM_Y = HX + WALL / 2            # the north rim's centre line
+MIST_BADGE = "#efe4cc"
+GREEN = "#2f5a3c"
 
 
-def build_creature(kit, ctx, M):
-    """The Loose One, built once. Every piece is an empty (its pivot at the piece's centre) with a block and two
-    near-black caps on the faces that look across a gap."""
-    cop = kit.plastic("#b8693a", 0.5, name="cre copper", spec=0.35)
-    sla = kit.plastic("#46688a", 0.58, name="cre slate", spec=0.25)
-    for mm, hx, st in ((cop, "#b8693a", 0.18), (sla, "#46688a", 0.55)):   # a little light of their own: slate stays blue
-        b = mm.node_tree.nodes["Principled BSDF"]
-        b.inputs["Emission Color"].default_value = kit.col(hx)
-        b.inputs["Emission Strength"].default_value = st
-    fadeable(ctx, cop)
-    fadeable(ctx, sla)
-    blk = fadeable(ctx, kit.plastic("#08080b", 0.9, name="cre dark", spec=0.1))
-    eye = fadeable(ctx, kit.emit("#d4581a", 1.5, name="cre eye"))
-    glint = fadeable(ctx, kit.emit("#fff0d8", 3.0, name="cre glint"))
-    mouth = fadeable(ctx, kit.plastic("#050507", 0.9, name="cre mouth", spec=0.0))
-    root = kit.empty("cre", (0, 0, 0), ctx["V"])
-    ctx["cre"] = root
-    pieces = []
+def new_materials(kit, ctx):
+    M = {}
+    M["wicker"] = kit.bricks("#b48a55", "#9a7243", "#3f2f1a", scale=7.0, name="wicker", rough=0.9, row=0.25, width=0.5,
+                             grime_amt=0.25)
+    M["leather"] = kit.plastic("#4a2e1e", 0.5, name="leather rim", spec=0.35)
+    M["worn"] = kit.plastic("#b99877", 0.55, name="worn leather", spec=0.3)
+    M["floor"] = kit.planks("#a07a48", "#80602f", scale=3.5, axis="Y", name="basket floor")
+    M["steel"] = kit.metal("#6c7075", 0.4, name="steel")
+    M["steel_dark"] = kit.plastic("#2a2d31", 0.5, name="steel dark")
+    M["tank"] = kit.metal("#8a8f94", 0.35, name="tank")
+    M["rope"] = kit.plastic("#c2a878", 0.9, name="rope")
+    M["tally"] = kit.plastic("#7fa3c2", 0.55, name="tally")
+    M["flame"] = kit.emit(ORANGE, 7.0, name="flame")
+    M["flame_core"] = kit.emit("#ffc070", 9.0, name="flame core")
+    M["pilot"] = kit.emit("#ffa04c", 6.0, name="pilot")
+    M["cream"] = emissive_glow_mat(kit, ctx, "env cream", "#efe4cc")
+    M["green"] = emissive_glow_mat(kit, ctx, "env green", GREEN)
+    M["ground"] = kit.grime("#7a7448", 0.62, 0.5, name="stubble", rough=0.95)
+    M["ground2"] = kit.grime("#87804a", 0.7, 0.4, name="stubble 2", rough=0.95)
+    M["hedge"] = kit.plastic("#2f4a2c", 0.95, name="hedge")
+    M["trunk"] = kit.plastic("#4a3a2a", 0.95, name="trunk")
+    M["leaf"] = kit.plastic("#33502e", 0.95, name="leaf")
+    M["barn"] = kit.plastic("#6b4a3c", 0.95, name="barn wall")
+    M["barn_roof"] = kit.plastic("#454c58", 0.8, name="barn roof")
+    M["hill"] = kit.plastic("#3a3a5c", 1.0, name="hill")
+    M["trailer"] = kit.plastic("#8a8f94", 0.6, name="trailer")
+    M["tyre"] = kit.plastic("#1a1a1c", 0.9, name="tyre")
+    M["lampglow"] = kit.emit("#ffd9a8", 2.2, name="lamp glow")
+    M["sunmat"] = kit.emit("#fff0c0", 5.0, name="sun")
+    # the kitchen
+    M["k_floor"] = kit.planks("#8a6a45", "#6a4e30", scale=2.0, axis="X", name="kitchen floor")
+    M["k_wall"] = kit.grime("#c9b894", 0.8, 2.0, name="kitchen wall")
+    M["k_wood"] = kit.plastic("#7a5a38", 0.7, name="kitchen wood")
+    M["k_door"] = kit.plastic("#56604a", 0.6, name="cottage door")
+    M["k_window"] = kit.emit("#e8d4d6", 1.6, name="kitchen window")
+    M["k_win_dark"] = kit.plastic("#4a4a58", 0.9, name="window farm")
+    M["k_lamp"] = kit.emit("#ffd9a0", 6.0, name="kitchen bulb")
+    M["k_mug"] = kit.plastic("#e8dcc0", 0.5, name="mug")
+    M["tea"] = kit.plastic("#6a3a18", 0.3, name="tea")
+    M["outside"] = kit.emit("#f4e4d0", 2.2, name="outside daylight")
+    # the montage
+    M["grass"] = kit.grime("#6f8a4a", 0.7, 0.6, name="meadow", rough=0.95)
+    M["gate_wood"] = kit.plastic("#8a6a44", 0.8, name="gate wood")
+    M["stone"] = kit.grime("#9a968a", 0.62, 6.0, name="dry stone", rough=0.95)
+    M["stone2"] = kit.grime("#857f74", 0.62, 7.0, name="dry stone 2", rough=0.95)
+    M["lane"] = kit.grime("#a89a78", 0.7, 0.8, name="lane", rough=0.95)
+    M["t_wall"] = kit.grime("#c8a878", 0.8, 3.0, name="trailer wall", rough=0.9)
+    M["t_floor"] = kit.planks("#8a6a45", "#6a4e30", scale=2.0, axis="X", name="trailer floor")
+    M["t_lamp"] = kit.emit("#ffd9a0", 6.0, name="trailer bulb")
+    M["b_green"] = kit.plastic(GREEN, 0.5, name="badge green")
+    M["b_cream"] = kit.plastic(MIST_BADGE, 0.5, name="badge cream")
+    return M
 
-    def piece(name, size, base, mat, group, bevel=0.012):
-        e = kit.empty(f"cre.{name}", base, root)
-        kit.box(f"cre.{name}.b", size, (0, 0, 0), mat, e, bevel=bevel)
-        w, d, h = size
-        kit.box(f"cre.{name}.cap", (w * 0.97, d * 0.97, 0.006), (0, 0, -(h / 2 + 0.0015)), blk, e)   # only the undersides
-        p = {"e": e, "base": V(base), "group": group, "name": name}
-        pieces.append(p)
-        return e
 
+def disc_mesh(kit, name, centres, r, y, mat, parent, n=14):
+    """Many flat discs facing -y in one object (the wall of badges): one mesh, one material."""
+    verts, fcs = [], []
+    for (cx, cz) in centres:
+        b = len(verts)
+        for i in range(n):
+            a = 2 * math.pi * i / n
+            verts.append((cx + r * math.cos(a), y, cz + r * math.sin(a)))
+        fcs.append(tuple(reversed(range(b, b + n))))      # normal toward -y
+    return kit.mesh_obj(name, verts, fcs, mat, parent)
+
+
+def trap_mesh(kit, name, centres, hw_top, hw_bot, h, y, mat, parent):
+    """Many small flat trapezoids (the basket of the balloon glyph) facing -y in one object."""
+    verts, fcs = [], []
+    for (cx, cz) in centres:
+        b = len(verts)
+        verts += [(cx - hw_top, y, cz + h / 2), (cx + hw_top, y, cz + h / 2), (cx + hw_bot, y, cz - h / 2), (cx - hw_bot, y, cz - h / 2)]
+        fcs.append((b + 3, b + 2, b + 1, b))
+    return kit.mesh_obj(name, verts, fcs, mat, parent)
+
+
+def build_basket(kit, ctx, M):
+    Vg = ctx["V"]
+    kit.box("floor", (2 * HX + 0.02, 2 * HX + 0.02, 0.08), (0, 0, -0.04), M["floor"], Vg)
+    o = HX + WALL
+    for sy in (-1, 1):
+        kit.box(f"wallY{sy}", (2 * o, WALL, WALL_H - GROUND), (0, sy * (HX + WALL / 2), (WALL_H + GROUND) / 2), M["wicker"], Vg)
+        kit.box(f"rimY{sy}", (2 * o + 0.08, 0.2, RIM_H), (0, sy * (HX + WALL / 2), WALL_H + RIM_H / 2), M["leather"], Vg,
+                bevel=0.05)
     for sx in (-1, 1):
-        for k in range(3):
-            piece(f"leg{sx}{k}", (0.34, 0.34, LH), (sx * 0.17, 0, k * (LH + G) + LH / 2), sla, f"leg{sx}")
-    tz0 = 3 * LH + 3 * G
-    for k in range(4):
-        piece(f"tor{k}", (0.68, 0.34, TH), (0, 0, tz0 + k * (TH + G) + TH / 2), cop, "torso")
-    ttop = tz0 + 4 * TH + 3 * G
+        kit.box(f"wallX{sx}", (WALL, 2 * HX, WALL_H - GROUND), (sx * (HX + WALL / 2), 0, (WALL_H + GROUND) / 2), M["wicker"], Vg)
+        kit.box(f"rimX{sx}", (0.2, 2 * HX + 0.18, RIM_H), (sx * (HX + WALL / 2), 0, WALL_H + RIM_H / 2), M["leather"], Vg,
+                bevel=0.05)
+    for sy in (-1, 1):
+        kit.cyl(f"tank{sy}", 0.18, 0.66, (-0.0, sy * 0.3, 0.35), M["tank"], Vg, n=24)
+        kit.cyl(f"tankcap{sy}", 0.09, 0.08, (0, sy * 0.3, 0.7), M["steel_dark"], Vg, n=16)
     for sx in (-1, 1):
-        for k in range(3):
-            piece(f"arm{sx}{k}", (0.34, 0.34, LH), (sx * 0.51, 0, ttop - k * (LH + G) - LH / 2), cop, f"arm{sx}")
-    hz0 = ttop + G
-    HW = 0.40
-    for k in range(4):                      # k = 0 is the bottom slice
-        e = piece(f"head{k}", (HW, HW, SLICE), (0, 0, hz0 + k * (SLICE + G) + SLICE / 2), sla, f"head{k}", bevel=0.022)
-        if k == 2:                          # the second slice from the top: two small round copper eyes
-            for sx in (-1, 1):
-                kit.cyl(f"cre.eye{sx}", 0.026, 0.012, (sx * 0.09, -HW / 2 - 0.004, 0.0), eye, e, rot=(math.pi / 2, 0, 0),
-                        n=20)
-                kit.sphere(f"cre.glint{sx}", 0.0062, (sx * 0.09 + 0.008, -HW / 2 - 0.011, 0.009), glint, e, seg=8)
-        if k == 0:                          # the fourth slice: a short flat black mouth line
-            kit.box("cre.mouth", (0.12, 0.012, 0.018), (0, -HW / 2 - 0.002, 0.0), mouth, e)
-    ctx["cre_pieces"] = pieces
-    # fixed scatter for each piece (the same every time): a cloud about 4 m across, every piece at its own angle
-    for i, p in enumerate(pieces):
-        h = [kit.hash01(i, 1), kit.hash01(i, 2), kit.hash01(i, 3), kit.hash01(i, 4), kit.hash01(i, 5), kit.hash01(i, 6)]
-        p["jp"] = V(((h[0] - 0.5) * 3.8, (h[1] - 0.5) * 3.8, (h[2] - 0.5) * 2.6 - 0.35))
-        p["jr"] = V(((h[3] - 0.5) * 6.2, (h[4] - 0.5) * 6.2, (h[5] - 0.5) * 6.2))
-    # slightly off: an arm block tilted, a leg block twisted, the torso blocks not quite stacked
-    OFF = {"arm-11": (0, 0.28, 0.05), "arm12": (0.22, 0, 0.05), "leg-12": (0, 0, 0.42), "leg11": (0, 0, -0.3),
-           "tor3": (0, 0, 0.16), "tor1": (0, 0, -0.1), "head0": (0, 0, 0.35), "head1": (0, 0, -0.22),
-           "head2": (0, 0, 0.5), "head3": (0, 0, -0.3)}
-    for p in pieces:
-        p["off"] = V(OFF.get(p["name"], (0, 0, 0)))
-    ctx["cre_off_pos"] = {"tor3": V((0.05, 0.02, 0)), "arm12": V((0.03, -0.05, 0)), "head2": V((0.025, 0, 0))}
-
-
-def pose_creature(ctx, kit, c, t):
-    """Place the creature for the cue `c` (already resolved at time t). Returns the root position."""
-    root = ctx["cre"]
-    pose = c.get("pose", "hidden")
-    if pose == "hidden":
-        return None
-    root.parent = ctx["L"] if c.get("on") == "L" else ctx["V"]
-    s = float(c.get("s", {"scatter": 1.0, "off": 0.0, "exact": 0.0}.get(pose, 0.0)))
-    off = 1.0 if pose == "off" else 0.0
-    pos = c.get("pos", [0, 0, 0])
-    root.location = (pos[0], pos[1], pos[2])
-    root.rotation_euler = (0, 0, math.radians(c.get("yaw", 0.0)))
-    head = c.get("head")
-    arms = c.get("arms", [0, 0])
-    for p in ctx["cre_pieces"]:
-        loc = V(p["base"]) + p["jp"] * s
-        rot = p["jr"] * s + p["off"] * off
-        if off and p["name"] in ctx["cre_off_pos"]:
-            loc = loc + ctx["cre_off_pos"][p["name"]]
-        g = p["group"]
-        if g.startswith("head") and head:
-            rot = V((rot.x, rot.y, rot.z + math.radians(head[int(g[4])])))
-        if g.startswith("arm"):
-            sx = -1 if g.startswith("arm-") else 1
-            ang = math.radians(arms[0 if sx < 0 else 1])
-            if ang:
-                # swing the whole arm forward (toward -y) about the shoulder
-                sh = V((sx * 0.51, 0, ctx["cre_shoulder"]))
-                rel = loc - sh
-                m = Matrix.Rotation(-ang, 3, "X")
-                loc = sh + m @ rel
-                rot = V((rot.x - ang, rot.y, rot.z))
-        p["e"].location = loc
-        p["e"].rotation_euler = (rot.x, rot.y, rot.z)
-    return V(pos)
-
-
-# ------------------------------------------------------------------------------------------------ the world
+        for sy in (-1, 1):
+            kit.box(f"hand{sx}{sy}", (0.04, 0.34, 0.04), (sx * (HX + WALL + 0.06), sy * 0.62, 0.75), M["rope"], Vg,
+                    bevel=0.015)
+    for sx in (-1, 1):
+        kit.cyl(f"post{sx}", 0.04, 1.4, (sx * (HX + 0.02), 0, 1.72), M["steel"], Vg, n=12)
+    kit.box("crossbar", (2 * HX + 0.12, 0.07, 0.07), (0, 0, 2.42), M["steel"], Vg, bevel=0.015)
+    for sx in (-1, 1):
+        kit.box(f"burnbody{sx}", (0.14, 0.14, 0.16), (sx * 0.2, 0, 2.5), M["steel_dark"], Vg, bevel=0.03)
+        kit.cyl(f"burnnoz{sx}", 0.05, 0.14, (sx * 0.2, 0, BURN_Z + 0.03), M["steel_dark"], Vg, n=12)
+        kit.cyl(f"pilot{sx}", 0.012, 0.03, (sx * 0.2 + 0.07, 0, BURN_Z + 0.06), M["pilot"], Vg, n=8)
+    fg = kit.empty("flames", (0, 0, BURN_Z + 0.08), Vg)
+    ctx["flames"] = fg
+    ctx["flame_parts"] = []
+    for sx in (-1, 1):
+        for nm, r0, h, mat in (("f", 0.11, 1.35, M["flame"]), ("c", 0.06, 0.8, M["flame_core"])):
+            c = kit.cyl(f"flame{nm}{sx}", r0, h, (sx * 0.2, 0, h / 2), mat, fg, n=16, r2=0.015)
+            ctx["flame_parts"].append((c, h))
+    # the two worn patches on the north rim, exactly under two hands, and the lore tally between them
+    top = RIM_TOP + 0.0
+    for i, px in enumerate(PATCH_X):
+        kit.box(f"worn{i}", (0.34, 0.17, 0.006), (px, RIM_Y, top + 0.004), M["worn"], Vg)
+    for k, px in enumerate((-0.07, 0.07)):
+        kit.box(f"tally{k}", (0.04, 0.17, 0.008), (px, RIM_Y, top + 0.005), M["tally"], Vg)
 
 
 def build_landscape(kit, ctx, M):
@@ -583,16 +471,14 @@ def build_landscape(kit, ctx, M):
     mist.visible_shadow = False
     ctx["mist"] = mist
     rnd = lambda i, a=0: kit.hash01(i, a)
-    # hedges: long dark boxes, each its own height, so the mist rises over them one by one
     hedges = [((-22, -38), 0, 70, 0.8), ((30, -30), 90, 60, 1.3), ((-40, 24), 90, 80, 1.8), ((22, 38), 0, 90, 2.3),
               ((-70, -70), 0, 120, 2.7), ((60, 70), 90, 110, 3.1), ((0, 90), 0, 140, 1.6), ((95, -20), 90, 100, 2.0),
               ((LAND_SHIFT.x + 38, LAND_SHIFT.y + 0), 90, 80, 2.2), ((LAND_SHIFT.x, LAND_SHIFT.y + 44), 0, 90, 2.6),
               ((LAND_SHIFT.x - 40, LAND_SHIFT.y - 10), 90, 70, 1.2)]
     for i, (p, rot, ln, h) in enumerate(hedges):
         kit.box(f"hedge{i}", (ln, 1.3, h), (p[0], p[1], h / 2), M["hedge"], L, rot=(0, 0, math.radians(rot)), bevel=0.2)
-    # barns and trees poke up through the mist like islands
     for i, (p, rot) in enumerate([((-62, 82), 20), ((88, 46), -15), ((34, -112), 70), ((-120, -30), 100),
-                                  ((LAND_SHIFT.x + 70, LAND_SHIFT.y + 50), 10)]):
+                                  ((LAND_SHIFT.x + 70, LAND_SHIFT.y + 50), 10), ((30, 52), 40), ((-52, 30), 5)]):
         b = kit.empty(f"barn{i}", (p[0], p[1], 0), L)
         b.rotation_euler = (0, 0, math.radians(rot))
         kit.box(f"barnw{i}", (14, 9, 5.2), (0, 0, 2.6), M["barn"], b, bevel=0.08)
@@ -606,16 +492,30 @@ def build_landscape(kit, ctx, M):
         h = 6 + rnd(i, 9) * 5
         kit.box(f"trunk{i}", (0.7, 0.7, h * 0.6), (px, py, h * 0.3), M["trunk"], L)
         kit.box(f"leaf{i}", (4.6, 4.6, h * 0.55), (px, py, h * 0.75), M["leaf"], L, bevel=0.5)
-    for k in range(9):                      # low hills round the valley
+    for k in range(9):
         a = 2 * math.pi * k / 9 + 0.3
         r = 330 + 40 * kit.hash01(k, 3)
         h = kit.sphere(f"hill{k}", 1.0, (r * math.cos(a), r * math.sin(a), 0), M["hill"], L, seg=14)
         h.scale = (95 + 30 * kit.hash01(k, 4), 70 + 30 * kit.hash01(k, 5), 42 + 12 * kit.hash01(k, 6))
-    # the launch field: a lamp on a pole, a trailer, a cold-air fan
+    # the near fields S23 sinks past: two barns and hedge lines that poke out of the mist (shown in that one shot only)
+    sk = kit.empty("sinkprops", (0, 0, 0), L)
+    ctx["sink"] = sk
+    for i, (p, rot) in enumerate([((27, -10), 25), ((44, 10), -20), ((20, 14), 70)]):
+        b = kit.empty(f"sbarn{i}", (p[0], p[1], 0), sk)
+        b.rotation_euler = (0, 0, math.radians(rot))
+        kit.box(f"sbarnw{i}", (10, 6.5, 4.2), (0, 0, 2.1), M["barn"], b, bevel=0.08)
+        for sy in (-1, 1):
+            kit.box(f"sbarnr{i}{sy}", (10.6, 4.1, 0.3), (0, sy * 1.55, 4.9), M["barn_roof"], b,
+                    rot=(sy * math.radians(-32), 0, 0), bevel=0.05)
+    for i, (p, rot, ln, h) in enumerate([((14, -22), 0, 30, 2.2), ((14, -2), 0, 24, 2.0), ((12, 8), 90, 24, 2.4),
+                                         ((38, -8), 90, 30, 2.1), ((26, -30), 0, 36, 2.3)]):
+        kit.box(f"shedge{i}", (ln, 1.3, h), (p[0], p[1], h / 2), M["hedge"], sk, rot=(0, 0, math.radians(rot)), bevel=0.2)
+    # the launch field: a lamp on a pole, a trailer whose back doors stand open, a cold-air fan
     kit.cyl("lamppole", 0.07, 3.4, (-4.6, -3.6, 1.7), M["steel"], L, n=10)
     kit.box("lamphead", (0.5, 0.3, 0.14), (-4.6, -3.6, 3.45), M["steel_dark"], L, bevel=0.03)
     kit.box("lampglow", (0.4, 0.22, 0.03), (-4.6, -3.6, 3.36), M["lampglow"], L)
     kit.box("trailer", (4.6, 2.0, 2.0), (-9.5, 6.0, 1.3), M["trailer"], L, bevel=0.08)
+    kit.box("trailerlit", (1.2, 0.04, 1.2), (-9.5, 4.98, 1.3), M["lampglow"], L)
     for sx in (-1.6, 1.6):
         kit.cyl(f"tyre{sx}", 0.4, 0.3, (-9.5 + sx, 5.0, 0.4), M["tyre"], L, rot=(math.pi / 2, 0, 0), n=16)
     kit.cyl("fanframe", 0.6, 0.3, (4.2, -5.0, 0.75), M["steel_dark"], L, rot=(0, math.pi / 2, 0), n=20)
@@ -627,11 +527,25 @@ def build_kitchen(kit, ctx, M):
     kit.box("k_floor", (5.0, 4.4, 0.1), (0, 0, -0.05), M["k_floor"], K)
     kit.box("k_ceil", (5.0, 4.4, 0.1), (0, 0, 2.65), M["k_wall"], K)
     kit.box("k_wallN", (5.0, 0.1, 2.6), (0, 2.2, 1.3), M["k_wall"], K)
-    kit.box("k_wallS", (5.0, 0.1, 2.6), (0, -2.2, 1.3), M["k_wall"], K)
     kit.box("k_wallE", (0.1, 4.4, 2.6), (2.5, 0, 1.3), M["k_wall"], K)
     kit.box("k_wallW", (0.1, 4.4, 2.6), (-2.5, 0, 1.3), M["k_wall"], K)
+    # the south wall has a door at x = 1.5 (an opening 1.0 wide, 2.1 high) onto a bright morning
+    kit.box("k_wallS1", (3.5, 0.1, 2.6), (-0.75, -2.2, 1.3), M["k_wall"], K)
+    kit.box("k_wallS2", (1.0, 0.1, 2.6), (2.0, -2.2, 1.3), M["k_wall"], K)
+    kit.box("k_wallS3", (1.0, 0.1, 0.5), (1.5, -2.2, 2.35), M["k_wall"], K)
+    kit.box("k_doorfL", (0.08, 0.16, 2.1), (0.96, -2.2, 1.05), M["k_wood"], K)
+    kit.box("k_doorfR", (0.08, 0.16, 2.1), (2.04, -2.2, 1.05), M["k_wood"], K)
+    kit.box("k_doorfT", (1.16, 0.16, 0.08), (1.5, -2.2, 2.12), M["k_wood"], K)
+    kit.box("k_doorleaf", (0.9, 0.06, 2.05), (0.5, -2.62, 1.03), M["k_door"], K, rot=(0, 0, math.radians(-90)))
+    kit.box("k_outside", (6.0, 0.05, 3.2), (1.5, -3.6, 1.6), M["outside"], K)
+    kit.box("k_step", (1.2, 0.5, 0.12), (1.5, -2.5, 0.0), M["stone"], K)
     kit.box("k_window", (1.1, 0.04, 0.9), (0.0, 2.14, 1.5), M["k_window"], K)
     kit.box("k_frame", (1.2, 0.05, 0.05), (0.0, 2.13, 1.97), M["k_wood"], K)
+    kit.box("k_frameb", (1.2, 0.05, 0.05), (0.0, 2.13, 1.03), M["k_wood"], K)
+    kit.box("k_framel", (0.05, 0.05, 0.98), (-0.575, 2.13, 1.5), M["k_wood"], K)
+    kit.box("k_framer", (0.05, 0.05, 0.98), (0.575, 2.13, 1.5), M["k_wood"], K)
+    kit.box("k_farm1", (0.5, 0.02, 0.16), (-0.25, 2.115, 1.18), M["k_win_dark"], K, bevel=0.005)
+    kit.box("k_farm2", (0.12, 0.02, 0.24), (0.3, 2.115, 1.2), M["k_win_dark"], K, bevel=0.005)
     kit.box("k_table", (0.9, 1.4, 0.06), (0, 0, 0.75), M["k_wood"], K, bevel=0.015)
     for sx in (-1, 1):
         for sy in (-1, 1):
@@ -639,16 +553,72 @@ def build_kitchen(kit, ctx, M):
     for i, sx in enumerate((-1, 1)):
         kit.cyl(f"k_mug{i}", 0.05, 0.1, (sx * 0.22, 0.1 - 0.2 * sx, 0.83), M["k_mug"], K, n=16)
         kit.cyl(f"k_tea{i}", 0.045, 0.01, (sx * 0.22, 0.1 - 0.2 * sx, 0.875), M["tea"], K, n=16)
-    kit.box("k_chairA", (0.42, 0.42, 0.05), (-1.5, -1.2, 0.46), M["k_wood"], K)
-    kit.box("k_chairAb", (0.42, 0.05, 0.5), (-1.5, -1.0, 0.72), M["k_wood"], K)
     kit.cyl("k_cord", 0.008, 0.7, (0, 0, 2.3), M["steel_dark"], K, n=6)
     kit.sphere("k_bulb", 0.06, (0, 0, 1.92), M["k_lamp"], K, seg=10)
     kit.box("k_shelf", (1.4, 0.25, 0.04), (-1.5, 2.05, 1.5), M["k_wood"], K)
     kit.box("k_cup2", (0.12, 0.12, 0.14), (-1.5, 2.0, 1.59), M["k_mug"], K, bevel=0.02)
 
 
+def build_montage(kit, ctx, M):
+    # --- the field gate (the newlyweds): meadow, hedge behind, a five-bar gate between two posts
+    Z = kit.empty("Zgate", tuple(ZONES["gate"]))
+    kit.box("g_grass", (40, 40, 0.2), (0, 0, -0.1), M["grass"], Z)
+    kit.box("g_hedgeL", (14, 1.4, 1.7), (-8.5, 3.0, 0.85), M["hedge"], Z, bevel=0.25)
+    kit.box("g_hedgeR", (14, 1.4, 1.7), (8.5, 3.0, 0.85), M["hedge"], Z, bevel=0.25)
+    for sx in (-1, 1):
+        kit.box(f"g_post{sx}", (0.2, 0.2, 1.6), (sx * 1.4, 3.0, 0.8), M["gate_wood"], Z, bevel=0.03)
+    for k in range(4):
+        kit.box(f"g_bar{k}", (2.6, 0.07, 0.11), (0, 2.96, 0.35 + k * 0.3), M["gate_wood"], Z, bevel=0.015)
+    kit.box("g_diag", (0.08, 0.06, 1.3), (0.0, 2.93, 0.75), M["gate_wood"], Z, rot=(0, math.radians(58), 0), bevel=0.015)
+    for k in range(10):
+        a = kit.hash01(k, 2) * 2 * math.pi
+        kit.box(f"g_tree{k}", (0.5, 0.5, 2.0 + 3 * kit.hash01(k, 3)), (-16 + 3.6 * k, 9 + 4 * kit.hash01(k, 5), 1.5),
+                M["leaf"], Z, bevel=0.2)
+    # --- the lane by a dry-stone wall (the grandad): the wall runs along x at y = 1.2
+    Z = kit.empty("Zlane", tuple(ZONES["lane"]))
+    kit.box("l_ground", (60, 12, 0.2), (0, 0, -0.1), M["lane"], Z)
+    kit.box("l_grassB", (60, 16, 0.2), (0, 10, -0.095), M["grass"], Z)
+    for k in range(40):
+        h = 0.95 + 0.12 * kit.hash01(k, 1)
+        kit.box(f"l_stone{k}", (1.6, 0.55, h), (-30 + 1.5 * k, 1.2, h / 2), M["stone"] if k % 2 else M["stone2"], Z, bevel=0.08)
+    for k in range(40):
+        kit.box(f"l_cap{k}", (0.7, 0.62, 0.22), (-30 + 1.5 * k + 0.35, 1.2, 1.05 + 0.1 * kit.hash01(k, 4)),
+                M["stone2"] if k % 2 else M["stone"], Z, bevel=0.06)
+    for k in range(8):
+        kit.box(f"l_tree{k}", (0.6, 0.6, 5 + 2 * kit.hash01(k, 8)), (-24 + 7 * k, 6.5 + 3 * kit.hash01(k, 6), 3), M["leaf"], Z,
+                bevel=0.3)
+    # --- the inside of Rosa's trailer: the back wall (y = 1.35) covered in identical balloon badges
+    Z = kit.empty("Ztrailer", tuple(ZONES["trailer"]))
+    ctx["T"] = Z
+    kit.box("t_floor", (4.3, 3.8, 0.1), (0, -0.55, -0.05), M["t_floor"], Z)
+    kit.box("t_ceil", (4.3, 3.8, 0.1), (0, -0.55, 2.55), M["t_wall"], Z)
+    kit.box("t_wallB", (4.3, 0.1, 2.6), (0, 1.4, 1.25), M["t_wall"], Z)
+    for sx in (-1, 1):
+        kit.box(f"t_wallS{sx}", (0.1, 3.8, 2.6), (sx * 2.2, -0.55, 1.25), M["t_wall"], Z)
+    kit.box("t_wallF", (4.3, 0.1, 2.6), (0, -2.5, 1.25), M["t_wall"], Z)
+    kit.cyl("t_cord", 0.008, 0.5, (0, 0.0, 2.3), M["steel_dark"], Z, n=6)
+    kit.sphere("t_bulb", 0.07, (0, 0.0, 2.02), M["t_lamp"], Z, seg=10)
+    cs = []
+    for j in range(1, 13):
+        for i in range(21):
+            if (i, j) == (14, 6):         # the empty cell where today's badge goes (x 0.9, z 1.22)
+                continue
+            cs.append((-1.9 + i * 0.2, 0.02 + j * 0.2))
+    yb = 1.35 - 0.012                      # each layer 1 cm proud of the one below, so nothing shares a plane
+
+    def glyph(tag, cl):
+        # the same glyph as Dad's badge: green rim, cream face, a green balloon over a small basket
+        return [disc_mesh(kit, f"{tag}_g", cl, 0.088, yb, M["b_green"], Z),
+                disc_mesh(kit, f"{tag}_c", cl, 0.066, yb - 0.012, M["b_cream"], Z),
+                disc_mesh(kit, f"{tag}_b", [(x, z + 0.014) for x, z in cl], 0.04, yb - 0.024, M["b_green"], Z, n=12),
+                trap_mesh(kit, f"{tag}_k", [(x, z - 0.045) for x, z in cl], 0.012, 0.016, 0.02, yb - 0.03, M["b_green"], Z)]
+
+    glyph("badges", cs)
+    ctx["badge_new"] = glyph("badge_n", [(0.9, 1.22)])
+
+
 def build(kit, story, tl):
-    ctx = {"env_glow": [], "fade": [], "tilt_cache": None}
+    ctx = {"env_glow": [], "fade": []}
     M = new_materials(kit, ctx)
     ctx["M"] = M
     build_sky(kit, ctx)
@@ -659,11 +629,9 @@ def build(kit, story, tl):
     ctx["SUN"] = kit.empty("SUNRIG", tuple(PIVOT))
     build_basket(kit, ctx, M)
     build_envelope(kit, ctx, M)
-    ctx["cre_shoulder"] = 3 * LH + 3 * G + 4 * TH + 3 * G
-    build_creature(kit, ctx, M)
     build_landscape(kit, ctx, M)
     build_kitchen(kit, ctx, M)
-    # the sun: a disc and a soft glow far east, and the light itself
+    build_montage(kit, ctx, M)
     sun = ctx["SUN"]
     disc = kit.cyl("sundisc", 10.0, 0.5, (0, 0, 0), M["sunmat"], sun, n=40, rot=(math.pi / 2, 0, 0))
     ctx["sundisc"] = disc
@@ -673,17 +641,16 @@ def build(kit, story, tl):
     kit.light("pilot", "POINT", (0.3, 0, BURN_Z + 0.1), 5.0, ORANGE, size=0.05, parent=ctx["V"], shadow=False)
     kit.light("lamp", "POINT", (-4.6, -3.55, 3.2), 520.0, "#ffe0b0", size=0.2, parent=ctx["L"])
     kit.light("fkey", "AREA", (0, 0, 2), 40.0, "#ffe6cc", size=1.0, shadow=False)
-    kit.light("ckey", "POINT", (0, 0, 2), 0.0, "#ff9a50", size=0.3)
-    kit.light("crim", "POINT", (0, 0, 2), 0.0, "#8a9ad8", size=0.3)
-    kit.light("cbounce", "AREA", (0, 0, 0), 0.0, "#6f95ff", size=2.0, shadow=False, rot=(math.pi, 0, 0))
+    kit.light("dsun", "SUN", (0, 0, 20), 0.0, "#ffb690", size=0.2)
+    kit.LIGHTS["dsun"]["light"].angle = math.radians(4.0)
+    ed = math.radians(7.0)
+    kit.LIGHTS["dsun"]["obj"].rotation_euler = (V((-math.cos(ed), 0.25, -math.sin(ed)))).to_track_quat("-Z", "Y").to_euler()
     kit.light("klamp", "POINT", (0, 0, 1.85), 0.0, "#ffd29a", size=0.1, parent=ctx["K"])
     kit.light("kfill", "AREA", (0, -1.6, 2.1), 0.0, "#ffe0b8", size=2.5, parent=ctx["K"], shadow=False)
-    for nm in ("fkey", "kfill"):
+    kit.light("tlamp", "POINT", (0, 0.2, 1.9), 0.0, "#ffd29a", size=0.1, parent=ctx["T"])
+    kit.light("tfill", "AREA", (0, -1.2, 2.2), 0.0, "#ffe0b8", size=2.5, parent=ctx["T"], shadow=False)
+    for nm in ("fkey", "kfill", "tfill"):
         kit.LIGHTS[nm]["obj"].visible_camera = False
-    for ob in bpy.data.objects:
-        if ob.type == "MESH" and ob.name.startswith(("post", "crossbar", "cable")):
-            pass
-    # the fog nodes (the day changes the haze colour)
     d = kit.FOG["density"]
     fc = tuple(kit.FOG["color"])
     ctx["fog_cols"] = [nd for m in bpy.data.materials if m.node_tree for nd in m.node_tree.nodes
@@ -694,12 +661,6 @@ def build(kit, story, tl):
 
 
 # ------------------------------------------------------------------------------------------------ animate
-
-
-def tilt_matrix(deg):
-    th = math.radians(deg)
-    k = V((-0.7071, 0.7071, 0.0))                    # zhat x (toward the fourth corner)
-    return Matrix.Translation(PIVOT) @ Matrix.Rotation(th, 4, k) @ Matrix.Translation(-PIVOT)
 
 
 def cam_now(story, tl, t):
@@ -726,67 +687,55 @@ def roar_at(tl, t):
 
 def animate(kit, story, tl, t, ctx):
     from blocky import kit as K
+    from blocky import rig as R
 
     over = {}
     if not ctx["init"]:
         for name in story["cast"]:
             ob = bpy.data.objects.get(name)
-            if ob is not None:
+            if ob is not None and name in ("me", "dad", "rosa"):
                 ob.parent = ctx["V"]
         ctx["init"] = True
     cam_loc, cam_tgt, spec = cam_now(story, tl, t)
-    kitchen = spec.get("room") == "kitchen"
+    room = spec.get("room", "")
     basket_frame = spec.get("frame", "basket") == "basket"
-    # ---- the day
     d = _ease_value(_cues(tl, "dawn"), "v", t, 0.0)
     (_, hor, zen, fog, mistc, suncol, sunp, sunel, skys, mglow) = day(d)
     rm = ctx["sky_ramp"].color_ramp
     rm.elements[0].color = (*_lin(hor), 1)
     rm.elements[1].color = (*_lin(zen), 1)
     ctx["sky_bg"].inputs["Strength"].default_value = skys * spec.get("amb", 1.0)
-    # ---- the roar
     roar = roar_at(tl, t)
     fogc = tuple(fog[i] * (1 - 0.4 * roar) + _hex("#f4cabe")[i] * 0.4 * roar for i in range(3))
     for nd in ctx["fog_cols"]:
         nd.inputs["Color"].default_value = (*_lin(fogc), 1)
     sock_color(ctx["mist_col"], mistc)
-    # ---- the lean and the frame
-    deg = _ease_value(_cues(tl, "tilt"), "deg", t, 0.0)
-    Mt = tilt_matrix(deg)
-    MV = Matrix.Identity(4) if basket_frame else Mt
-    ME = Mt.inverted() if basket_frame else Matrix.Identity(4)
-    ctx["V"].matrix_basis = MV
-    # ---- the envelope: lying on the field to standing
+    ctx["V"].matrix_basis = Matrix.Identity(4)
     up = _ease_value(_cues(tl, "env"), "up", t, 1.0)
     ang = math.radians(-88.0 * (1 - up))
-    E = ctx["E"]
-    E.matrix_basis = ME @ Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "X")
+    ctx["E"].matrix_basis = Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "X")
     ctx["flames"].rotation_euler = (ang, 0, 0)
-    # ---- the landscape
+    ctx["sink"].hide_render = spec["id"] != "S23"
     alt = _ease_value(_cues(tl, "alt"), "alt", t, 0.0)
     fld = _switch(_cues(tl, "field"), "f", t, 0)
     shift = -LAND_SHIFT if fld else V((0, 0, 0))
-    ctx["L"].matrix_basis = ME @ Matrix.Translation(V((shift.x, shift.y, GROUND - alt)))
-    mh = 0.45 + 2.95 * _ss((alt - 2.0) / 10.0)
-    if _switch(_cues(tl, "mist"), "h", t, None) is not None:
-        mh = _ease_value(_cues(tl, "mist"), "h", t, mh)
+    ctx["L"].matrix_basis = Matrix.Translation(V((shift.x, shift.y, GROUND - alt)))
+    mh = -0.45 + 0.9 * _ss(alt / 2.5) + 2.95 * _ss((alt - 2.0) / 10.0)     # no mist over the field, it rises as we do
     ctx["mist"].location.z = mh
-    # ---- the sun rig and the sky
     el = math.radians(sunel)
     sun = ctx["SUN"]
-    sun.matrix_basis = ME @ Matrix.Translation(PIVOT)
+    sun.matrix_basis = Matrix.Translation(PIVOT)
     dist = 420.0
     ctx["sundisc"].location = (dist * math.cos(el), 0.0, dist * math.sin(el))
-    ctx["sundisc"].rotation_euler = (math.pi / 2, 0, math.pi / 2 + 0.0)
+    ctx["sundisc"].rotation_euler = (math.pi / 2, 0, math.pi / 2)
     ctx["sundisc"].hide_render = sunel < -0.5
     sl = K.LIGHTS["sun"]["obj"]
     sl.location = (dist * math.cos(el), 0.0, dist * math.sin(el))
     sl.rotation_euler = (V((-math.cos(el), 0, -math.sin(el)))).to_track_quat("-Z", "Y").to_euler()
-    K.LIGHTS["sun"]["base"] = (sunp * _ss((sunel + 3.0) / 4.0)) if not kitchen else 0.0
+    indoors = room in ("kitchen", "trailer")
+    K.LIGHTS["sun"]["base"] = (sunp * _ss((sunel + 3.0) / 4.0)) if not indoors else 0.0
     K.LIGHTS["sun"]["light"].color = _lin(suncol)
-    mp = ctx["sky_map"]
-    mp.inputs["Rotation"].default_value = (ME.to_3x3().inverted()).to_euler()
-    # ---- the mist's glow
+    ctx["sky_map"].inputs["Rotation"].default_value = (0, 0, 0)
     ctx["mist_emit"].default_value = mglow * 0.55 + 0.5 * roar
     sock_color(ctx["mist_emit_col"], mistc)
     u = min(1.0, roar * 1.3)
@@ -794,123 +743,46 @@ def animate(kit, story, tl, t, ctx):
     ctx["mist_emit_col"].default_value = (*_lin(oc), 1)
     for s in ctx["env_glow"]:
         s.default_value = 1.35 * roar
-    # ---- the flames
     for ob, h in ctx["flame_parts"]:
         ob.scale = (1.0, 1.0, max(0.001, roar))
         ob.location.z = h * max(0.001, roar) / 2
         ob.hide_render = roar < 0.015
     over["flame"] = roar
     over["pilot"] = 1.0
-    ctx["flames"].hide_render = False
-    # ---- the field lamp, the kitchen
     over["lamp"] = 1.0 - _ss((alt - 3.0) / 14.0)
-    over["klamp"] = 0.0
-    over["kfill"] = 0.0
-    if kitchen:
+    over["klamp"] = over["kfill"] = over["tlamp"] = over["tfill"] = 0.0
+    if room == "kitchen":
         K.LIGHTS["klamp"]["base"] = 70.0
-        over["klamp"] = 1.0
-        K.LIGHTS["kfill"]["base"] = 30.0
-        over["kfill"] = 1.0
-    # ---- the plants: flasks, bag, rope, cup, phone
-    fl = _switch(_cues(tl, "flasks"), "state", t, "corner")
-    rim_x = [0.05, 0.27, 0.49, 0.71]
-    for i, ob in enumerate(ctx["flasks"]):
-        ob.hide_render = False
-        if fl == "none":
-            hide(ob, True)
+        K.LIGHTS["kfill"]["base"] = 34.0
+        over["klamp"] = over["kfill"] = 1.0
+    if room == "trailer":
+        K.LIGHTS["tlamp"]["base"] = 60.0
+        K.LIGHTS["tfill"]["base"] = 36.0
+        over["tlamp"] = over["tfill"] = 1.0
+    # ---- the pink dawn sun for the hook and the next dawn, the badge, the seams
+    K.LIGHTS["dsun"]["base"] = spec.get("dsun", 0.0)
+    over["dsun"] = 1.0
+    bn = _switch(_cues(tl, "badge"), "on", t, False)
+    for ob in ctx["badge_new"]:
+        ob.hide_render = not bn
+    # ---- the seams
+    for name, ch in R.CHARS.items():
+        if not ch.sm:
             continue
-        hide(ob, False)
-        if i < 3 or fl == "rim":
-            ob.location = (rim_x[i], -1.21, RIM_TOP)
-        elif fl == "corner":
-            ob.location = (0.28, 0.96, 0.0)
-        else:                                   # "end": Callum's flask stands on his corner's rim
-            ob.location = (1.21, 0.62, RIM_TOP)
-    bs = _switch(_cues(tl, "bag"), "state", t, "tied")
-    bag, rope = ctx["bag"], ctx["bagrope"]
-    hide(bag, bs == "none")
-    hide(rope, bs == "none")
-    if bs == "tied":
-        bag.location = (0.95, 0.93, 0.0)
-        bag.rotation_euler = (0, 0, 0.3)
-        stretch(rope, (0.95, 0.93, 0.36), (0.8, 0.64, 1.2))
-        rope.parent = ctx["V"]
-    elif bs == "grass":
-        bag.parent = ctx["L"] if False else ctx["V"]
-        bag.location = (2.1, -1.5, 0.0)
-        bag.rotation_euler = (0, 0, 0.8)
-        stretch(rope, (2.1, -1.5, 0.05), (2.4, -1.9, 0.03))
-    if bs == "tied":
-        bag.parent = ctx["V"]
-    cup = ctx["cup"]
-    con = _switch(_cues(tl, "cup"), "on", t, False)
-    hide(cup, not con)
-    cy = _ease_value(_cues(tl, "cup"), "y", t, -0.55)
-    cup.location = (1.21, cy, RIM_TOP)
-    ph = ctx["phone"]
-    hide(ph, not _switch(_cues(tl, "phone"), "on", t, False))
-    hide(ctx["satchel"], not _switch(_cues(tl, "satchel"), "on", t, False))
+        cs = [c for c in _cues(tl, "seam") if c.get("who") == name]
+        base = ch.spec.get("seam", 0.5)
+        g = _ease_value(cs, "gap", t, base)
+        amp = _switch([c for c in _cues(tl, "rattle") if c.get("who") == name], "amp", t, 0.0)
+        if amp:
+            g = max(0.3, g + amp * math.sin(2 * math.pi * 7.5 * t))
+        ch.set_seams(g, _ease_value(cs, "body", t, base), _ease_value(cs, "head", t, base), _ease_value(cs, "hand", t, base))
     # ---- the cables from the frame to the mouth ring
     posts = [V((1.2, 0, 2.42)), V((-1.2, 0, 2.42))]
     ringp = [V((1.25, 0.4, 0)), V((1.25, -0.4, 0)), V((-1.25, 0.4, 0)), V((-1.25, -0.4, 0))]
-    Em = ME @ Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "X")
+    Em = Matrix.Translation(PIVOT) @ Matrix.Rotation(ang, 4, "X")
     for i, cb in enumerate(ctx["cables"]):
-        a = MV @ posts[0 if i < 2 else 1]
-        b = Em @ ringp[i if i < 2 else i]
-        stretch(cb, a, b)
+        stretch(cb, posts[0 if i < 2 else 1], Em @ ringp[i])
         cb.hide_render = up < 0.02
-    # ---- the creature
-    cs = _cues(tl, "cre")
-    cur = None
-    for c in cs:
-        if c["t"] <= t + 1e-9:
-            cur = c
-    pos = None
-    cre = ctx["cre"]
-    if cur and cur.get("pose", "hidden") != "hidden":
-        rr = dict(cur)
-        # glide between this cue's pos and the next one's (a slow approach is never seen: the cuts hide it)
-        pos = pose_creature(ctx, K, rr, t)
-        a = cur.get("alpha", "roar")
-        alpha = min(1.0, roar * 1.7) if a == "roar" else float(a)
-        if alpha < 0.012:
-            hide_tree(cre, True)
-        else:
-            hide_tree(cre, False)
-            for sck in ctx["fade"]:
-                sck.default_value = 1.0 - alpha
-        import os
-        if os.environ.get("DAWN_DEBUG"):
-            print("cre", round(t, 2), pos, alpha, "hidden" if cre.hide_render else "shown", cre.matrix_world.translation, flush=True)
-        ck = cur.get("key", 380.0)
-        cp = V(pos) + V((0, 0, 1.3))
-        away = (cp - V((cam_loc.x, cam_loc.y, cp.z))) if cur.get("on") != "L" else V((0.7, 0.7, 0))
-        away = away.normalized() if away.length > 1e-3 else V((0, 1, 0))
-        K.LIGHTS["ckey"]["obj"].location = cp + away * 0.9 + V((0, 0, 1.5))
-        K.LIGHTS["ckey"]["base"] = ck * max(roar, cur.get("kfloor", 0.0)) * (1.0 if alpha > 0.012 else 0.0)
-        K.LIGHTS["ckey"]["obj"].parent = cre.parent
-        K.LIGHTS["crim"]["obj"].location = cp + away * 1.1 + V((0, 0, 0.3))
-        K.LIGHTS["crim"]["base"] = cur.get("rim", 90.0) * alpha
-        K.LIGHTS["crim"]["obj"].parent = cre.parent
-        cb = K.LIGHTS["cbounce"]
-        cb["obj"].location = V(pos) + V((0, 0, -0.3))
-        cb["obj"].parent = cre.parent
-        cb["base"] = cur.get("bounce", 0.0) * alpha
-        over["ckey"] = 1.0
-        over["crim"] = 1.0
-        over["cbounce"] = 1.0
-    else:
-        hide_tree(cre, True)
-        over["ckey"] = 0.0
-        over["crim"] = 0.0
-        over["cbounce"] = 0.0
-    import os
-    if os.environ.get("DAWN_DEBUG") == "ray":
-        dg = bpy.context.evaluated_depsgraph_get()
-        dg.update()
-        d = (cam_tgt - cam_loc).normalized()
-        ok, loc, nrm, idx, ob, mat = bpy.context.scene.ray_cast(dg, cam_loc, d)
-        print("ray", round(t, 2), tuple(round(x, 2) for x in cam_loc), ob.name if ob else None, (loc - cam_loc).length if ok else None, flush=True)
     # ---- the soft key light that rides the camera
     key = spec.get("key", 0.0)
     over["fkey"] = 0.0
@@ -927,6 +799,6 @@ def animate(kit, story, tl, t, ctx):
         warm = _mixhex("#b8c4f0", "#ffe2bc", min(1.0, d * 1.2))
         K.LIGHTS["fkey"]["light"].color = _lin(warm)
         over["fkey"] = 1.0
-        if kitchen:
+        if indoors:
             over["fkey"] = 0.6
     return over
