@@ -405,12 +405,13 @@ def amb(kind: str, dur: float, seed: int = 0) -> np.ndarray:
     if kind == "hum":
         return synth.hum(dur, 60.0, seed)
     if kind == "rain":
-        y = fft_filter(synth.noise(dur, seed), "band", 800, 7000) * 0.6
+        # a soft wash with gentle drops, low-passed at 3.5 kHz: the old 800 Hz to 7 kHz band hissed (critic, ep32 redo)
+        y = fft_filter(synth.noise(dur, seed), "band", 300, 3500) * 0.6
         drops = np.zeros(n)
         r = np.random.default_rng(seed)
         for i in r.integers(0, n - 2000, int(dur * 40)):
-            drops[i:i + 400] += synth.click(400 / SR, float(r.uniform(2500, 6000)), int(i))[:400] * r.uniform(0.2, 0.8)
-        return y + drops
+            drops[i:i + 400] += synth.click(400 / SR, float(r.uniform(1200, 3000)), int(i))[:400] * r.uniform(0.2, 0.8)
+        return fft_filter(y + drops, "low", 3500)
     if kind == "room":
         return fft_filter(synth.noise(dur, seed), "band", 60, 400) * 0.6
     if kind == "drips":

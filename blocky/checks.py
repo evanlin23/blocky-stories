@@ -38,7 +38,7 @@ HARM = re.compile(r"\b(hurt\w*|grab\w*|took|taken|drag\w*|vanish\w*|disappear\w*
                   r"fell|fall\w*|drown\w*|lost|scream\w*|cry\w*|pulled|eaten|ate|swallow\w*|chas\w*|trapped|locked)\b", re.I)
 BRAND = re.compile(r"r\W*o\W*b\W*l\W*o\W*x", re.I)
 AGES = ("teen", "adult")
-MIN_S, MAX_S = 30.0, 180.0  # the owner: longer is better, up to the 3 min Shorts limit (note 18)
+MIN_S, MAX_S = 15.0, 180.0  # 15 s allows the ultra-short tests (the trend scan's fastest POV clips run 13 to 44 s); 3 min is the Shorts limit
 
 
 def texts(st: dict) -> tuple[list[str], list[str]]:
@@ -95,9 +95,15 @@ def harsh_sound(st: dict) -> list[tuple[str, str]]:
     out = []
     if loud:
         out.append(("warn", f"bright, noisy effects above -24 dB can sound scratchy: {loud[:5]} (keep them quiet)"))
+    for a in (st.get("sound") or {}).get("ambience", []):
+        if a.get("kind") == "static" and float(a.get("lufs", -40)) > -40:   # radio hiss: 90% of it above 4 kHz
+            out.append(("warn", f"static ambience at {a.get('lufs')} LUFS will sound like hiss; keep it under -40"))
     if len(sfx) > 6:
         out.append(("warn", f"{len(sfx)} bright, noisy effects; repeated, they read as scratching (ep36's grass steps)"))
     return out
+
+
+NARRATOR_MISFIT = re.compile(r"\bmy (husband|boyfriend|hubby)\b", re.I)   # the one narrator voice is a man's (ep38)
 
 
 def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list[tuple[str, str]]:
@@ -112,6 +118,10 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
         out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
                             "flash bar on most stories (RULES.md hard rule 7)"))
     out += harsh_sound(st)
+    said_all = " ".join(" ".join(c[1] for c in ln.get("chunks", [])) for ln in st.get("lines", []))
+    if NARRATOR_MISFIT.search(said_all):
+        out.append(("warn", "the narrator says 'my husband/boyfriend', but the narrator voice is a man's (ep38): "
+                             "make the narrator's family fit a man"))
     screen, said = texts(st)
     viewer = screen + said + [st.get("title", "")]
     for i, ln in enumerate(st["lines"]):
