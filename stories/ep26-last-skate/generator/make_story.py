@@ -125,7 +125,7 @@ SKATER_LOW = C([6.2, -1.3, 0.9], [3.9, RAILY, 0.9], 2.6)                # the Sk
 SHOTS = [
     # 01 the rule
     (0, "Lenny close, grin, his flat hand coming down on the skip button, the song lights above him, one bulb cherry", 2,
-     move(([-0.5, 2.7, 3.1], [-0.5, 5.2, 3.15]), ([-0.5, 3.3, 3.1], [-0.5, 5.2, 3.15]), 20, 24)),
+     move(([-0.7, 2.6, 3.0], [-0.7, 5.2, 2.95]), ([-0.7, 3.1, 3.0], [-0.7, 5.2, 2.95]), 17, 20)),
     ("L02", "the song lights close, the next bulb glowing gold", 2, BOOTH_BAR(0.17, 1.0)),
     ("L02.1", "low on the honey floor, wheels gliding past", 2, C([-2.8, -3.0, 0.2], [1.0, -1.2, 0.15], 1.0)),
     # 02 skip one: the wipeout
