@@ -28,3 +28,8 @@ Branch `claude/opening-ep45-bee-yard`. No PR yet.
 2. Preview, flash and preflight.
 3. Review round 4. It is the second and last normal round, then one rescue at most. Drop the story if it can't pass.
 4. Gate, PR, qa.
+
+**On resume:** merge main first: polish v2.2 (#168) and v2.3 (#175) are in.
+- Keep this story's own `sfx` to 2 to 4 events per 10 s in all. This round added many sfx, so thin them.
+- Use `"hold": ["Sxx"]` for frame-exact shots.
+- Read builder.md and docs/engine.md, under The polish pack.
