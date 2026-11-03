@@ -240,10 +240,11 @@ def make_hut(kit, M, i, ctx):
     dm = kit.plastic(dcol, 0.8, name=f"door {dcol}")
     B(kit, f"hut{i}.door", (1.0, 0.06, 1.9), (-0.5, 0.05, 1.25), dm, parent=hinge)
     ctx["huts"].append({"root": root, "hinge": hinge, "x": X})
-    if i == 4:   # the opening's window: a cool-tinted pane just inside the opening, so it reads as glass
-        gl = glasstop(kit, "openpane", "#6aa4d0", 0.16)
-        ctx["openpane"] = B(kit, "openpane", (WIN_W, 0.012, WIN_Z1 - WIN_Z0), (WIN_X, 0.045, (WIN_Z0 + WIN_Z1) / 2), gl, parent=root)
-        ctx["openpane"].visible_shadow = False
+    # every window gets a cool-tinted pane just inside the opening, so it reads as glass (the opening and the stage shots)
+    gl = glasstop(kit, f"openpane{i}", "#6aa4d0", 0.16 if i == 4 else 0.12)
+    pn = B(kit, f"openpane{i}", (WIN_W, 0.012, WIN_Z1 - WIN_Z0), (WIN_X, 0.045, (WIN_Z0 + WIN_Z1) / 2), gl, parent=root)
+    pn.visible_shadow = False
+    ctx["openpane"] = pn
     if i == OURS:
         brass = M["brass"]
         B(kit, "hasp", (0.09, 0.025, 0.3), (-0.93, -0.0, 1.22), brass, parent=hinge)
@@ -359,13 +360,13 @@ def build(kit, story, tl):
     M["stage_sand"] = kit.plastic("#7a8a96", 0.35, name="stage sand")
     M["stage_sandlit"] = kit.plastic("#8d9ca6", 0.4, name="stage sandlit")
     M["stage_sea"] = kit.plastic("#4a6c70", 0.3, name="stage sea")
-    M["stage_dark"] = kit.plastic("#20262c", 0.9, name="stage dark")
+    M["stage_dark"] = kit.plastic("#5b7488", 0.9, name="stage dark")
     bm = kit._new("stage back")
     nt = bm.node_tree
     nt.nodes.remove(nt.nodes["Principled BSDF"])
     e = nt.nodes.new("ShaderNodeEmission")
-    e.inputs["Color"].default_value = kit.col("#aebcc4")
-    e.inputs["Strength"].default_value = 0.9
+    e.inputs["Color"].default_value = kit.col("#7fa6c4")
+    e.inputs["Strength"].default_value = 0.55
     out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
     nt.links.new(e.outputs[0], out.inputs["Surface"])
     M["stage_back"] = bm
@@ -811,7 +812,7 @@ def animate(kit, story, tl, t, ctx):
         ob.hide_render = not show
     op = _ramp(tl, "laptop", "open", t, 1.0)
     ctx["lap_hinge"].rotation_euler = (math.radians(-90 * (1.0 - op)), 0, 0)
-    ctx["lap_screen"].inputs["Strength"].default_value = (1.5 if lc.get("bright") else 0.9) * ss(op * 1.5)
+    ctx["lap_screen"].inputs["Strength"].default_value = (0.5 if lc.get("bright") else 0.8) * ss(op * 1.5)
     if show:
         lap.location = tuple(lc.get("pos", (0, -0.9, 0.62)))
         lap.rotation_euler = (0, 0, math.radians(lc.get("yaw", 0) + 180))

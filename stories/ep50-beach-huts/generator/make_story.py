@@ -140,7 +140,7 @@ S("L10", "Remi on the deck", still((-0.9, -3.2, 1.5), (-1.4, -1.0, 1.4), 32))
 S("L10.2", "the window: Remi's reflection stopped", still((1.0, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L11", "Remi sanding the frame", still((2.6, -1.8, 1.5), (1.0, -0.3, 1.4), 30))
 S("L12", "me on the step, the chair folded", still((0.9, -2.8, 1.3), (0.4, -0.6, 1.1), 26))
-S("L13", "laptop glow on my face", still((-1.3, -1.6, 1.45), (-0.35, -0.7, 1.4), 50))
+S("L13", "laptop glow on my face", still((-1.5, -2.5, 1.45), (-0.35, -0.7, 1.35), 40))
 S("L14", "Remi sands, her reflection walks", still((0.45, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L15", "Monday: at the water's edge", still((1.0, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L16", "Tuesday: past the boats", still((1.0, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
@@ -157,8 +157,8 @@ S("L23", "inside: the kettle", still((0.6, 1.75, 1.4), (-1.2, 1.0, 1.1), 30))
 S("L24", "dusk on my laptop face", still((0.7, -2.6, 1.35), (-0.35, -0.6, 1.35), 32))
 S("P01", "hold on my face", still((0.2, -2.0, 1.45), (-0.35, -0.6, 1.45), 44), 1)
 S("L25", "the deck, her chair empty", still((0.5, -4.8, 1.8), (-0.3, -1.0, 0.9), 22))
-S("L26", "her scarf on the chair", still((-1.0, -2.2, 0.95), (-1.2, -1.4, 0.7), 36))
-S("L27", "her phone in the fold", still((-1.05, -1.9, 0.95), (-1.2, -1.42, 0.8), 50))
+S("L26", "her scarf on the chair", still((-0.5, -2.6, 1.3), (-1.2, -1.4, 0.65), 32))
+S("L27", "her phone in the fold", still((-0.6, -2.3, 1.2), (-1.2, -1.42, 0.66), 38))
 S("L28", "the hasp as the door swings", move(((-0.44, -0.5, 1.28), (-0.43, 0, 1.22)), ((0.12, -1.1, 1.3), (-0.21, -0.6, 1.22)), 50), 1)
 S("L29", "her reflection still walking", still((1.0, -1.6, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L30", "the glass and the empty deck", still((1.0, -1.9, 1.5), (1.0, 0, 1.5), 28), 2, **NSTAGE(5, r_remi="stage"))
@@ -179,7 +179,7 @@ S("L40", "the lantern comes on", still((0.6, -4.8, 0.9), (1.6, -2.3, 0.6), 28))
 S("L41", "me, lit from below", still((0.15, -2.4, 1.1), (-0.35, -0.6, 1.35), 36), gloom=0.15)
 S("L42", "the shadow up the wall", still((2.4, -6.2, 1.2), (0.7, 0, 1.9), 24), ghost=True, gloom=0.85)
 S("L42.1", "its top beside the doorway", still((1.6, -4.6, 1.6), (0.5, 0, 2.2), 28), ghost=True, gloom=0.85)
-S("L43", "the tiny head on the wall", still((1.2, -4.0, 2.0), (0.6, 0, 2.5), 34), ghost=True, gloom=0.85)
+S("L43", "the tiny head on the wall", still((0.2, -6.4, 1.8), (-0.2, 0, 2.0), 27), ghost=True, gloom=0.85)
 S("P02", "hold on my face", still((0.5, -1.9, 1.45), (-0.35, -0.6, 1.45), 50), 1)
 # 05 the Small Head
 S("L44", "I turn my head", still((-1.1, -1.8, 1.5), (-0.35, -0.6, 1.45), 45), 1, gloom=0.45)
@@ -197,7 +197,7 @@ S("L54", "no reflection either", still((0.9, -1.2, 1.45), (1.0, 0, 1.4), 30), 2,
 S("L55", "far down the shore: Remi has stopped", still((1.0, -1.1, 1.45), (1.0, 0, 1.45), 30), 2, **NSTAGE(5, r_remi="stage"), hidecr=True)
 S("L56", "a small figure in my coat beside her", still((1.0, -0.85, 1.45), (1.0, 0, 1.45), 38), 2,
   **NSTAGE(5, r_remi="stage", r_me="stage"), hidecr=True)
-S("L57", "me, calm now", still((0.8, -1.3, 1.45), (-0.35, -0.7, 1.45), 40), 1, dof=(1.0, 0.7), gloom=0.45)
+S("L57", "me, calm now", still((-1.1, -2.0, 1.45), (-0.35, -0.65, 1.45), 34), 1, gloom=0.3)
 S("L58", "two figures on the bench", still((1.0, -0.85, 1.45), (1.0, 0, 1.45), 38), 2,
   **NSTAGE(5, r_remi="stage", r_me="stage"), hidecr=True)
 S("L58.2", "my eyes go to the shore", still((0.5, -2.4, 1.5), (-0.35, -0.7, 1.45), 40), 2)
@@ -230,7 +230,7 @@ S("L73", "golden evening on the sand", still((5.5, -14.5, 1.3), (5.5, -6.8, 0.9)
 S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4), 26), 2,
   refl={"r_me": "sand", "r_remi": "sand"})
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
-S("L75", "ours, walking together", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
+S("L75", "ours, smiling side by side", still((1.0, -0.8, 1.35), (1.0, 0, 1.35), 30), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L76", "this morning: our window, the empty chair", still((0.35, -3.6, 1.3), (0.35, -0.3, 0.95), 26), 1, **NSTAGE(5, r_me="stage"))
 S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((0.2, -2.1, 0.62), (0.75, -0.3, 1.0)), ((0.3, -1.85, 0.62), (0.75, -0.3, 1.0)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
 
@@ -294,7 +294,7 @@ SMILE, GRIN = "smirk", "grin"
 SEAT = 0.51       # a sitter's root sits this far under the seat top
 
 # --- the neighbour and his cartwheeling reflection
-acting["neighbour"].clear()   # no hide-at-0 key: he is in the very first frame
+acting["neighbour"].clear(); acting["r_neighbour"].clear()   # no hide-at-0 key: he is in the very first frame
 put("neighbour", 0, [-2.14, -0.85], yaw=0)
 hide("neighbour", "L04")
 put("r_neighbour", 0, [-2.8, 0.6, 4.0], yaw=0, roll=180, side=[4, 4], expr="grin", stroll=False, big=19)
@@ -431,23 +431,23 @@ put("r_remi", "L10.2", [0.0, 0.42], yaw=180, look=[0.6, 0.0], expr="neutral", st
 WY = 150     # walking away down the shore: back to the camera, a little toward the point
 put("r_remi", "L14", [0.0, 0.1], yaw=WY, stroll=True, big=1.5)
 walk("r_remi", "L14+1.4", [0.3, 0.34], yaw=WY)
-put("r_remi", "L15", [0.4, 0.5], yaw=WY, stroll=True, big=1.4)
+put("r_remi", "L15", [0.4, 0.5], yaw=WY, stroll=True, big=1.7)
 walk("r_remi", "L16", [0.55, 0.6], yaw=WY)
-put("r_remi", "L16", [0.2, 0.66], yaw=WY, stroll=True, big=1.35)
+put("r_remi", "L16", [0.2, 0.66], yaw=WY, stroll=True, big=1.9)
 walk("r_remi", "L17", [0.4, 0.72], yaw=WY)
-put("r_remi", "L17", [1.0, 0.84], yaw=WY, stroll=True, big=1.3)
+put("r_remi", "L17", [1.0, 0.84], yaw=WY, stroll=True, big=2.3)
 walk("r_remi", "L18", [1.2, 0.88], yaw=WY)
-put("r_remi", "L18", [0.5, 0.7], yaw=WY, stroll=True, big=1.35)
+put("r_remi", "L18", [0.5, 0.7], yaw=WY, stroll=True, big=1.9)
 walk("r_remi", "L18.2", [0.7, 0.76], yaw=WY)
-put("r_remi", "L29", [0.5, 0.52], yaw=WY, stroll=True, big=1.4)
+put("r_remi", "L29", [0.5, 0.52], yaw=WY, stroll=True, big=1.8)
 walk("r_remi", "L29+1.2", [0.6, 0.62], yaw=WY)
-put("r_remi", "L30", [0.5, 0.74], yaw=WY, stroll=True, big=1.35)
+put("r_remi", "L30", [0.5, 0.74], yaw=WY, stroll=True, big=2.0)
 walk("r_remi", "L30+1.2", [0.6, 0.8], yaw=WY)
-put("r_remi", "L32", [0.0, 0.5], yaw=WY, stroll=True, big=1.4)
+put("r_remi", "L32", [0.0, 0.5], yaw=WY, stroll=True, big=1.8)
 walk("r_remi", "L32.2", [0.2, 0.58], yaw=WY)
-put("r_remi", "L32.2", [1.5, 0.74], yaw=WY, stroll=True, big=1.3)
+put("r_remi", "L32.2", [1.5, 0.74], yaw=WY, stroll=True, big=2.0)
 walk("r_remi", "L33", [1.7, 0.8], yaw=WY)
-put("r_remi", "L34", [1.5, 0.9], yaw=WY, stroll=True, big=1.2)
+put("r_remi", "L34", [1.5, 0.9], yaw=WY, stroll=True, big=3.2)
 walk("r_remi", "L34.2", [1.7, 0.94], yaw=WY)
 put("r_remi", "L55", [2.6, 0.86, -0.06], yaw=0, sit=True, expr="neutral", stroll=False, big=2.2)
 put("r_remi", "L58", [2.6, 0.86, -0.06], yaw=0, sit=True, expr=SMILE, stroll=False, big=2.2)
@@ -461,7 +461,8 @@ hide("r_remi", "L69.2")
 put("r_remi", "L73", [4.3, -6.4], yaw=90, expr=GRIN)
 walk("r_remi", "L73+2.6", [9.3, -6.4])
 put("r_remi", "L74", [-0.2, 0.2], yaw=WY, expr="smile", stroll=True, big=1.5)
-walk("r_remi", "L76", [0.1, 0.45], yaw=WY)
+walk("r_remi", "L75", [-0.1, 0.25], yaw=WY)
+put("r_remi", "L75", [-1.6, 0.12], yaw=0, expr="smile", stroll=False, big=1.7)
 hide("r_remi", "L76")
 
 put("r_me", "L17", [-6.5, 0.94], yaw=180, stroll=False, big=1.0)
@@ -484,7 +485,8 @@ hide("r_me", "L69.2")
 put("r_me", "L73", [3.0, -6.8], yaw=90, expr=GRIN)
 walk("r_me", "L73+2.6", [8.0, -6.8])
 put("r_me", "L74", [0.35, 0.2], yaw=WY, expr=GRIN, stroll=True, big=1.5)
-walk("r_me", "L76", [0.65, 0.45], yaw=WY)
+walk("r_me", "L75", [0.4, 0.25], yaw=WY)
+put("r_me", "L75", [1.6, 0.12], yaw=0, expr=SMILE, stroll=False, big=1.7)
 hide("r_me", "L76")
 put("r_me", "L76", [-0.1, 0.12], yaw=WY, stroll=True, big=1.6)
 walk("r_me", "L76.2", [0.0, 0.5], yaw=WY)
@@ -623,7 +625,7 @@ story = {
     "cues": cues,
     "fx": [{"at": "L02.2+0.3", "kind": "punch", "dur": 0.35, "zoom": 1.08},
            {"at": "L45", "kind": "punch", "dur": 0.4, "zoom": 1.12}],
-    "music": {"root": 43, "mode": "dorian", "bpm": 76, "seed": 50,
+    "music": {"root": 46, "mode": "lydian", "bpm": 88, "seed": 50,
               "sections": [
                   {"at": 0, "voices": ["pulse", "pad"], "energy": 0.22},
                   {"at": "L10", "voices": ["pulse", "pad"], "energy": 0.28},
