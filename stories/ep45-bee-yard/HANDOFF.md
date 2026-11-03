@@ -33,3 +33,11 @@ Branch `claude/opening-ep45-bee-yard`. No PR yet.
 - Keep this story's own `sfx` to 2 to 4 events per 10 s in all. This round added many sfx, so thin them.
 - Use `"hold": ["Sxx"]` for frame-exact shots.
 - Read builder.md and docs/engine.md, under The polish pack.
+
+## Rescue pass result (2026-11-03, later)
+- S00a/S00b verified by stills (out/work/ep45-bee-yard/stills/sheet.png); the two stand at x +-0.52 (a sleeve clipped Lena's head at 0.38).
+- L01 2.14 s (tempo 1.1); L16 tempo 0.92 so Whisper passes. NOTE: `voice --only` wipes other lines in voice-timings.json locally; run the full `voice` instead.
+- Flash: blank dial strength scaled by vis (0.72 at vis 0); preview flash PASS, worst 2/s (limit 6).
+- clip: 0 (smoke puffs and Lena's bees in story.json clip_ok; S71 Lena moved to x -0.85).
+- sfx: removed the decorative clicks and 3 whooshes: 3.12 events/10 s. measure.py: 0 blocks. rev 5.
+- Preview: out/work/ep45-bee-yard/ep45-bee-yard-preview.mp4 (137.8 s). Next: review round 4.
