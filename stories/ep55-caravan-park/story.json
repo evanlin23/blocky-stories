@@ -1,5 +1,20 @@
 {
- "rev": 4,
+ "rev": 6,
+ "clip_ok": [
+  "S01/me",
+  "S01/jory",
+  "S05/train",
+  "S06/train",
+  "S07/flake20",
+  "S07/flake22",
+  "S07/flake47",
+  "S23/me",
+  "S75/jory",
+  "S76/jory",
+  "S77/jory",
+  "S81/flake40",
+  "S81/flake46"
+ ],
  "slug": "ep55-caravan-park",
  "title": "In this town, moss grows on you while you wait",
  "made_for_kids": false,
@@ -21,7 +36,8 @@
   "sky": "#bfd3df",
   "sky_strength": 1.15,
   "exposure": 0.0,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": true
  },
  "fade_in": false,
  "fade_out": false,
@@ -255,8 +271,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "NEVER wait",
-     "Never wait"
+     "You CAN'T wait",
+     "You can't wait"
     ],
     [
      "for someone",
@@ -3691,7 +3707,7 @@
      [
       -1.7,
       -2.3,
-      1.7
+      0.45
      ],
      28
     ]
@@ -6027,7 +6043,7 @@
    {
     "at": "L69",
     "pos": [
-     0.7,
+     0.3,
      2.4,
      0.0
     ],
@@ -6040,7 +6056,7 @@
    {
     "at": "L69>",
     "pos": [
-     0.7,
+     0.3,
      -0.5,
      0.0
     ]
@@ -6048,7 +6064,7 @@
    {
     "at": "L70",
     "pos": [
-     0.7,
+     0.3,
      -0.5,
      0.0
     ]

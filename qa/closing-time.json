@@ -1,0 +1,19 @@
+{
+ "film": 13274684720,
+ "stage": "final",
+ "run": 41706806697,
+ "verdict": "pass",
+ "date": "2026-11-03",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "audio",
+  "craft",
+  "flash",
+  "package",
+  "opening variety",
+  "shard stutter"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 10.6 | 12.5– | **block** |\n| macro.picture_changes_per_10s_q | 11.8 | 14.0– | **block** |\n| macro.motion_energy_q | 4.59 | 6.0– | **block** |\n| macro.longest_still_q_s | 1.33 | –1.0 | **block** |\n| spec.cuts_per_10s | 5.31 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.319 | –0.25 | **warn** |\n| spec.shot_p90_s | 2.85 | –2.5 | **warn** |\n| macro.longest_still_s | 1.67 | –1.5 | **warn** |\n| macro.motion_energy_mean | 2.01 | 1.5– | ok |\n| spec.camera_move_share | 0.983 | 0.65– | ok |\n| spec.punch_per_10s | 0.75 | 0.4– | ok |\n| macro.brightness_mean | 0.28 | 0.35– | **warn** |\n| macro.brightness_first_3s | 0.251 | 0.3– | **warn** |\n| macro.dark_frame_share | 0.0 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.656 | 0.42– | ok |\n| macro.contrast_mean | 0.173 | 0.18– | **warn** |\n| spec.face_big_share | 0.342 | 0.4– | **warn** |\n| spec.caption_share | 0.94 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.033 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.583 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.25 | –0.25 | ok |\n| micro.idle_window_share | 0.043 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 139.0 | –120 | **warn** |\n| spec.sound_events_per_10s | 6.06 | 2.0–4.0 | **warn** |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 11.0 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.7 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0355 | –0.08 | ok |\n| sound.hf_jump_max | 0.0179 | –0.04 | ok |",
+ "notes": "Fresh render, all 16 shards drawn. The shard-2 stutter of film 13259715219 is gone: the every-16th frames now change by 2.35 vs 3.24 for the rest (0.41 before), and only 7 of 250 look held in motion, the normal background (mirror-maze 5). Checked by eye at 5.4 s (S03 arm swing) and 66.7 s (S40 pan): every frame moves.\nFrames every 4 s clean: faces read, captions in the safe area, no black, frozen or missing stretch, no stray text. 4009 frames, 133.7 s, matches the timeline.\nSecond one: a dim blue tank with a pale pod of shut eye-lids and fish drifting past, pushing in; 'You HAVE to WAVE GOODBYE to the BIG TANK.' (opening 'must', matches L01). The narrator's face lands at 2.0 s.\nAudio: -14.1 LUFS, -1.7 dBTP, LRA 1.9, no clipping, clean end.\nFlash: PASS on current main's strobe-only bar (after #186).\nPackage clean ('It's made up.', no husband, pin 'Comment WAVE...'), cover 73.6 s; gate OPEN.\nLongest still 1.67 s at 96.3-98 s: the wide on the diorama window just before 'WE were the EXHIBIT.', a deliberate beat before the reveal; fine.\ncraft: 4 block, 10 warn (drawn 4:12 PM Central, before the 6 PM cutoff, so blocks are notes): redraw: picture_changes_per_10s 10.6 (12.5-), picture_changes_per_10s_q 11.8 (14-), motion_energy_q 4.59 (6-), longest_still_q_s 1.33 (-1.0); warn: cuts_per_10s 5.31, shots_over_2s_share 0.319, shot_p90_s 2.85, longest_still_s 1.67, brightness_mean 0.28, brightness_first_3s 0.251, contrast_mean 0.173, face_big_share 0.342, caption_sync_p90_ms 139, sound_events_per_10s 6.06."
+}
