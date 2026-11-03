@@ -394,6 +394,7 @@ Fresh idea (added with `dryer-nine`, 2026-11-03, so the backlog doesn't run dry)
 - ep82-no-door: the house with no door is somebody enormous sitting very still with a roof on, and one pizza a night keeps it sitting (a disguise, not a fed thing under the town)
 - ep83-free-fries: the free fries are cooked by whoever cooks for you most, at their own stove with their eyes shut, and they never know (someone else pays, out of love)
 - ep84-pick-door: all three doors open back into the room you're in, and the right door is the one behind you that you came in by (a loop you're already in)
+- night-mower (revival): the neighbor's mower makes the grass longer because he lives backward through time; he remembers our future, where he and Dad are best friends, and Dad's guessed hot chocolate becomes his order for six years (a person running the other way, not altitude time, not a loop)
 
 ## Batch 7 (2026-11-03, `docs/research/2026-11-09-week.md` → Wednesday's five): scripted, not built
 N01, N04, N14, N23 and N11 became ep80 to ep84 (rows in "Made" above). The research brief's other pitches stay in the brief. Five fresh ideas, one for each used, so the backlog doesn't run dry:

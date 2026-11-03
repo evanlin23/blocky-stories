@@ -64,6 +64,7 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 | Story | The connection it plants | Where (line, shot) |
 |---|---|---|
 | ep11 `back-row` | none (before the canon), but the driver's "six" fits the count | |
+| `night-mower` (revival) | two lime strokes on the mower handle: the lawn's Keeper already counts the two who'll mow it, one of whom hasn't crossed the fence yet (a count ahead of time) | L22, S23b |
 | ep12 `knock-back` | none (before the canon), but the knock fits the roll call | |
 | ep13 `closing-time` | none (before the canon), but the bow fits the complete count | |
 | ep20 `photo-strip` | three faded-brown tally strokes stamped on the back of the last photo strip, which shows only two people (the pin asks about it) | S63, under L59 ("Wren tore it in half"), held about 1.8 s, not narrated |
