@@ -292,7 +292,7 @@ def test_punch_ins_are_capped_on_key_words():
 
 
 def test_walk_shots_go_on_ones_only_with_the_pack():
-    st, tl = story(look={"polish": True})
+    st, tl = story(look={"polish": {"ones": "walk"}})
     st_off, tl_off = story(False)
     for sp in (st, st_off):
         for s in sp["shots"]:
@@ -368,3 +368,8 @@ def test_ones_moving_draws_camera_moves_on_every_frame():
                        for l in [f"L{i:02d}" for i in range(1, 7)]}}
     on = timeline.build(st, voice)
     assert all(s["step"] == 1 for s in on["shots"])          # every shot's camera moves with the pack
+
+
+def test_ones_moving_is_the_default():
+    """Lead, 2026-11-03: the camera moves 96% of the time with the pack, so moves are drawn on every frame."""
+    assert polish.DEFAULTS["ones"] == "moving"
