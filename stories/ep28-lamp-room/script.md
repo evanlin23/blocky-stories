@@ -67,7 +67,7 @@ Every line is `who: narrator`, voice A. Chunks are split with ` / `, and CAPS ar
 **Quotable line:** L18, "Its face was on the TOP of its head."
 
 ### 01 The warning, and us (first evening, one forward timeline)
-- `L01` narrator: In this lighthouse, / never leave your FLOOR / after DARK.
+- `L01` narrator: In this lighthouse, / after DARK you have to / stay on your FLOOR.
   - [S01: dusk, lit to read from the first frame, no establishing wide and no black bars on any torso. Beside me at the top rail: my face in three-quarter at frame left (at least 1/5 of the width), lit by the warm brass lamp by the lamp-room door, looking down. Past me the well drops away: the second lit lamp beside Ines's blue door halfway down, dark stone between the two, and at the bottom the slate floor. Slow push in down the well through the line. Faces and both lamps in frame from the first frame. A low thud on "DARK". No buzz (the loop lands on this first word)]
 - `L02` narrator: Not even / for a TEXT.
   - [S02: punch in down the well to the stair foot, warm light from a bottom window: the storm door, and a drift of pale sand that has crept up onto the bottom step (slightly wrong, the first plant). Empty. Out of the caption band]
