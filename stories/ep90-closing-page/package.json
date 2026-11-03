@@ -7,5 +7,5 @@
   "shape": "old-tab",
   "opening": "if",
   "lane": "core",
-  "hold": "batch 8: scripts only, not built yet"
+  "hold": "dropped 2026-11-03 (batch 8 build): the creature failed the test still three times (reads as a cardboard-box mascot). HANDOFF.md on claude/batch8-ep90-closing-page"
 }
