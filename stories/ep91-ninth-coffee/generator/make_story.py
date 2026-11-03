@@ -23,6 +23,7 @@ look = {"fog": "#fff1d8", "fog_density": 0.003, "fog_start": 24.0, "sky": "#a9dc
         "polish": POLISH}
 story = {
     "slug": "ep91-ninth-coffee",
+    "rev": 2,
     "title": "Each Coffee Makes Me TWICE As Fast ☕",
     "made_for_kids": False,
     "premise": "At my office every coffee makes you twice as fast and the speed never wears off. Most people stop at two. "

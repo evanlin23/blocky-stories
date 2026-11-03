@@ -15,12 +15,12 @@ TRAYZ = 1.015
 
 FACE = {"eyes": "round", "brows": True, "ink": "#24131f"}
 FACEL = {"eyes": "lashes", "brows": True, "ink": "#24131f"}
-GLOW = {"eyes": "hollow", "brows": False, "mouth": "none", "ink": "#24131f", "glow": "#22e6ff", "eye_scale": 1.35}
+GLOW = {"eyes": "none", "brows": False, "mouth": "none", "ink": "#24131f"}
 
 
 def tcast(skin, shirt, pants, hair, hair_c, face=None, **kw):
     d = {"age": "adult", "skin": skin, "shirt": shirt, "pattern": "solid", "pants": pants, "shoes": "#2a2a30",
-         "sleeves": "long", "hair": hair, "hair_c": hair_c, "height": 1.15, "width": 0.94, "face": dict(face or GLOW)}
+         "sleeves": "long", "hair": hair, "hair_c": hair_c, "height": 1.28, "width": 0.8, "face": dict(face or GLOW)}
     d.update(kw)
     return d
 
@@ -196,7 +196,7 @@ cups("L03", c9=None)
 meter("L03", 1, 1)
 scene("L03", me=dict(pos=ME, yaw=180, expr="grin", arms=[68, 68]))
 typing("L03", "me")
-S("L03", C((0.0, -0.5, 1.12), 1.1, 105, 12, 30, d2=0.9), fill=0.9, exp=-0.2, note="my hands at the end of my sleeves, typing in a blur")
+S("L03", C((0.0, -0.45, 1.1), 1.35, 160, 40, 28, d2=1.15), fill=0.9, exp=-0.2, note="my hands at the end of my sleeves, typing in a blur")
 typing("L04", )
 meter("L04", 2, 2)
 scene("L04")
@@ -207,7 +207,7 @@ cue("L04+0.45", "pour", on=False)
 scene("L04+0.5", me=dict(pos=ME, yaw=180, expr="grin", arms=[68, 68]))
 cups("L04+0.5", c0=None)
 typing("L04+0.5", "me")
-S("L04+0.5", C((0.0, -0.5, 1.12), 1.1, -105, 12, 30, d2=0.9), fill=0.9, exp=-0.2, note="my hands already typing again, four times fast")
+S("L04+0.5", C((0.0, -0.45, 1.1), 1.35, -160, 40, 28, d2=1.15), fill=0.9, exp=-0.2, note="my hands already typing again, four times fast")
 meter("L05", 4, 4)
 typing("L05")
 scene("L05", cw1=dict(pos=(-2.6, -0.85), yaw=12, expr="neutral"))
@@ -331,7 +331,7 @@ scene("L23", tc1=dict(pos=(0.1, -3.2), yaw=90, expr="blank", arms=[34, -26]), tc
 raw("tc1", "L23>", pos=[0.9, -3.2])
 raw("tc5", "L23>", pos=[-4.0, -2.2])
 streaks("L23", tc1=4.5, tc5=5.0)
-S("L23", C((-1.0, -2.8, 1.2), 4.4, 20, 6, 17, d2=3.8), note="even faster than me: long streaks of colour")
+S("L23", C((-1.0, -2.8, 1.2), 3.9, 20, 6, 17, d2=3.4), note="even faster than me: long streaks of colour")
 S("L23.1", C((-2.0, -3.0, 1.2), 3.6, -30, 8, 16, d2=3.1), note="the other way: trails across the floor")
 S("L23.2", C((0.7, -3.2, 1.8), 1.9, 40, 2, 28, d2=1.5), note="the face at the head, hollow eyes glowing")
 # the work: filing, typing, straightening
@@ -365,12 +365,12 @@ cups("L27", c9=[SPOUT[0], SPOUT[1], TRAYZ, False])
 meter("L27", 9, 9, other="ten", oe=10, oticks=10)
 S("L27", C((SPOUT[0], SPOUT[1], 1.25), 1.5, -20, 6, 28, d2=1.2), note="the left spout, ten cup ticks glowing on a streak's meter")
 cups("L28", c9=None)
-scene("L28", tc2=dict(pos=(-2.0, -3.2), yaw=24, expr="blank", head=[0, 0.1], arms=[6, 6], lean=22))
+scene("L28", tc2=dict(pos=(-2.0, -3.2), yaw=24, expr="blank", head=[0, -0.15], arms=[6, 6], lean=5))
 streaks("L28", tc2=5.0)
-S("L28", C((-2.0, -3.2, 1.78), 1.8, 10, 4, 28, d2=1.3), fill=0.18, sidelit=1.0, note="a ten-cupper leans in face to face, hollow cyan eyes, lit from the side")
+S("L28", C((-2.0, -3.2, 2.0), 1.6, 10, -2, 28, d2=1.2), fill=0.1, exp=-0.2, sidelit=1.0, note="a ten-cupper leans in face to face, hollow cyan eyes, lit from the side")
 scene("L28.2", tc4=dict(pos=(-2.0, -3.2), yaw=-40, expr="blank", arms=[8, 8], lean=8))
 streaks("L28.2", tc2=None, tc4=5.0)
-S("L28.2", C((-1.2, -3.2, 1.05), 3.2, -20, 4, 20, d2=2.8), note="the whole figure, taller than us")
+S("L28.2", C((-1.6, -3.2, 1.3), 4.0, -35, 3, 20, d2=3.5), note="the whole figure, taller than us")
 cue("L29", "mess", on=True)
 scene("L29")
 streaks("L29", tc4=None)
@@ -384,10 +384,10 @@ scene("L30", me=dict(pos=ME, yaw=90, expr="wide"), kai=dict(pos=(1.4, -0.85), ya
 streaks("L30", kai=5.0)
 S("L30", C((0.7, -0.85, 1.35), 4.2, 0, 5, 18, d2=3.5), note="a streak stopping at my desk")
 S("L30.2", C((1.4, -0.85, 1.5), 2.3, -34, 4, 26, d2=1.9), note="its head, in profile")
-scene("L31", kai=dict(pos=(1.4, -0.85), yaw=-34, expr="worried", head=[0.0, 0.05]))
+scene("L31", kai=dict(pos=(1.4, -0.85), yaw=-52, expr="worried", head=[0.0, 0.05]))
 streaks("L31", kai=5.0)
 meter("L31", 9, 9, other="kai", oe=10)
-S("L31", C((1.4, -0.85, 1.72), 2.3, -20, 3, 28, d2=1.85), note="Kai, clear at the head, pleading")
+S("L31", C((1.4, -0.85, 1.8), 2.6, -8, 2, 26, d2=2.2), note="Kai, clear at the head, pleading")
 cue("L32", "jacket", dx=0.0)
 meter("L32", 9, 9)
 streaks("L32", kai=None)

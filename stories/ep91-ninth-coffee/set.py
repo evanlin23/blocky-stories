@@ -196,14 +196,14 @@ def streak_material():
 
     u = mr.outputs["Result"]
     inv = mth("SUBTRACT", 1.0, u)
-    alpha = mth("MULTIPLY", mth("POWER", inv, 0.8), 0.96)
+    alpha = mth("MULTIPLY", mth("POWER", inv, 0.6), 1.0)
     mix = nt.nodes.new("ShaderNodeMix")
     mix.data_type = "RGBA"
     mix.inputs[6].default_value = kit.col("#00cdff")
     mix.inputs[7].default_value = kit.col("#ffffff")
-    nt.links.new(mth("POWER", u, 0.7), mix.inputs[0])
+    nt.links.new(mth("POWER", u, 1.3), mix.inputs[0])
     em = nt.nodes.new("ShaderNodeEmission")
-    em.inputs["Strength"].default_value = 1.0
+    em.inputs["Strength"].default_value = 1.5
     nt.links.new(mix.outputs[2], em.inputs["Color"])
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mx = nt.nodes.new("ShaderNodeMixShader")
@@ -716,7 +716,7 @@ def build(kit, story, tl):
     # ---- the streaks (one per ten-cupper, placed from their acting each frame)
     smat = streak_material()
     ctx["streaks"] = {n: make_streak(smat) for n in TC}
-    gmats = [ghost("#38e8ff", 0.55, 1.2), ghost("#8af2ff", 0.4, 1.2), ghost("#d6fbff", 0.26, 1.2)]
+    gmats = [ghost("#20dcff", 0.7, 1.4), ghost("#5eeaff", 0.5, 1.4), ghost("#a8f6ff", 0.32, 1.4)]
     ctx["ghosts"] = {n: [make_ghost(g_) for g_ in gmats] for n in TC}
     ctx["tclights"] = {n: kit.light(f"tcglow_{n}", "POINT", (0, 0, 2), 60, CYAN, size=0.4, shadow=False) for n in TC}
     # a beard for me (S42a), hidden until the cue
@@ -737,12 +737,24 @@ def late_init(kit, ctx):
             R, H = faces.HEAD_R, faces.HEAD_H
             bm = P("#7a3a22", 0.8, 0.1)
             for sx in (-1, 1):                                                 # long cheeks, a full chin and a hanging point
-                ctx["beard"].append(kit.box(nm("beard"), (0.24, 0.5, 0.7), (sx * (R - 0.08), -R + 0.3, -0.22), bm, hg, bevel=0.05))
+                ctx["beard"].append(kit.box(nm("beard"), (0.2, 0.4, 0.4), (sx * (R - 0.08), -R + 0.3, -0.4), bm, hg, bevel=0.05))
             ctx["beard"].append(kit.box(nm("beard"), (1.0, 0.3, 0.5), (0.0, -R + 0.04, -0.58), bm, hg, bevel=0.07))
             ctx["beard"].append(kit.box(nm("beard"), (0.66, 0.28, 0.5), (0.0, -R + 0.04, -0.98), bm, hg, bevel=0.07))
             ctx["beard"].append(kit.box(nm("beard"), (0.56, 0.12, 0.1), (0.0, -R + 0.02, -0.17), bm, hg, bevel=0.03))
             for o in ctx["beard"]:
                 o.hide_render = True
+    ctx["slits"] = []
+    for who in TC:
+        hg_ = bpy.data.objects.get(f"{who}.headg")
+        if who == "kai" or hg_ is None:
+            continue
+        for sx in (-1, 1):                                    # a narrow slanted dark socket with a thin cyan slit in it
+            o = kit.box(nm("socket"), (0.3, 0.03, 0.11), (sx * 0.23, -0.595, 0.12), P("#060810", 0.4), hg_, rot=(0, sx * 0.32, -sx * 0.37), bevel=0.01)
+            o2 = kit.box(nm("slit"), (0.22, 0.03, 0.04), (sx * 0.23, -0.612, 0.12), kit.emit(CYAN, 7.0, name="slit"), hg_, rot=(0, sx * 0.32, -sx * 0.37), bevel=0.008)
+            no_shadow(o)
+            no_shadow(o2)
+            ctx["slits"].append((who, o))
+            ctx["slits"].append((who, o2))
     ctx["lenses"] = [bpy.data.objects.get(f"kai.gl{sx}") for sx in (-1, 1)]
 
 
@@ -872,6 +884,9 @@ def animate(kit, story, tl, t, ctx):
         w = 0.1 * math.sin(t * 2 * math.pi * 7.3 + hash(who) % 5)
         ch.P["arm-1"].rotation_euler.x += w
         ch.P["arm1"].rotation_euler.x -= w * 0.8
+    sk0 = cue_at(tl, "streaks", t)
+    for who_, o in ctx.get("slits", []):
+        o.hide_render = not sk0.get(who_)
     for o in ctx.get("lenses", []):
         if o is not None:
             o.hide_render = True
@@ -924,8 +939,8 @@ def animate(kit, story, tl, t, ctx):
             ctx["tclights"][who].location = (s["x"] + rx * 0.9 - dx / nrm * 0.2, s["y"] + ry * 0.9 - dy / nrm * 0.2, 1.85)
             ov[f"tcglow_{who}"] = 5.0
     if side:
-        ov["sun"] *= 0.45
-        ov["roomfill"] *= 0.45
+        ov["sun"] *= 0.25
+        ov["roomfill"] *= 0.3
 
     # ---- sneeze cloud and paper in the air
     sn_ = cue_at(tl, "sneeze", t)
