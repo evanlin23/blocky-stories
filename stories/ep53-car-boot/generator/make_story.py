@@ -132,7 +132,7 @@ BC = 130.0                   # bedroom x
 STALL_ME = (0.65, 0.8)
 CHAIR = (-0.65, 1.3)         # where Pip sits (a hair forward of the chair centre)
 HAG = (-9.5, -0.65)
-SHELTER_P = (-13.25, -28.3)  # Pip on the bench
+SHELTER_P = (-13.4, -28.3)  # Pip on the bench
 LANE = -15.6
 
 # (at, what, step, camera)
@@ -168,7 +168,7 @@ SHOTS = [
     ("L17", "me, smiling, shrugging, mug in front", 2, still([KC - 0.9, -1.8, 1.4], [KC, 0.7, 1.35], 34)),
     ("L18", "close on my cream sleeve on the table: nothing changes", 2,
      move(([KC + 0.8, -0.7, 1.3], [KC + 0.1, 0.5, 1.0]), ([KC + 0.7, -0.6, 1.25], [KC + 0.1, 0.5, 1.0]), 32)),
-    ("L19", "Pip in the doorway, coat fading to flat grey", 2, still([KC - 0.5, -0.3, 1.45], [KC - 2.5, -0.8, 1.4], 30)),
+    ("L19", "Pip in the doorway, coat fading to flat grey", 2, still([KC - 0.5, -0.3, 1.45], [KC - 2.0, -0.8, 1.4], 30)),
     ("L20", "unpriced junk heaped in a box", 2, still([BC + 1.8, -1.8, 1.3], [BC + 0.9, -0.6, 0.4], 26)),
     ("L20.1", "Pip sitting up in bed in the dark-blue night, the grey coat round her", 2, still([BC - 1.0, -1.5, 1.3], [BC - 0.6, 1.2, 1.1], 34)),
     ("L21", "the stall in sun: Pip far off by the hedge in grey, looking up the lane", 2,
@@ -392,7 +392,7 @@ put("pip", "L14.1", [KC - 1.2, 1.15], yaw=180, expr="worried", arms=[30, 30])
 put("pip", "L14.2", [BC - 0.6, -0.15, -0.09], yaw=0, sit=True, expr="worried")
 put("pip", "L15", [KC + 1.2, 1.15], yaw=170, expr="worried", head=[-18, 0])
 put("pip", "L16", [KC, -1.1, SZ], yaw=180, sit=True, expr="worried", head=[0, 4])
-put("pip", "L19", [KC - 2.4, -0.8], yaw=90, expr="worried", head=[0, 8])
+put("pip", "L19", [KC - 1.95, -0.8], yaw=90, expr="worried", head=[0, 8])
 hide("pip", "L20")
 put("pip", "L20.1", [BC - 0.6, 1.1, -0.09], yaw=0, sit=True, expr="worried")
 put("pip", "L21", [-13.8, -14.2], yaw=0, expr="worried", head=[0, -6])
@@ -551,34 +551,21 @@ cues = [
 sfx = [
     # the opening: a dry hollow knock on COLOR, a whoosh into the sleeve, a soft tick into the rule
     {"at": "L01>-0.3", "kind": "thud", "db": -9},
-    {"at": "L01>-0.3", "kind": "knock", "db": -14, "pattern": [0.0], "tone": "hand"},
-    {"at": "L26", "kind": "thud", "db": -22},
     {"at": "L27", "kind": "thud", "db": -9},
-    {"at": "L27", "kind": "hit", "db": -16},
-    {"at": "L28", "kind": "thud", "db": -20},
-    {"at": "L32", "kind": "thud", "db": -20},
     {"at": "L44", "kind": "thud", "db": -7},
-    {"at": "L44", "kind": "hit", "db": -14},
-    {"at": "L46", "kind": "thud", "db": -18},
     {"at": "L48.2", "kind": "creak", "db": -14, "dur": 0.9},
     {"at": "L50", "kind": "thud", "db": -9},
     {"at": "L50+0.1", "kind": "creak", "db": -9, "dur": 1.6},
-    {"at": "L51", "kind": "hit", "db": -18},
-    {"at": "L64", "kind": "thud", "db": -20},
     {"at": "L70", "kind": "latch", "db": -14},
     {"at": "L70.2", "kind": "latch", "db": -12},
     {"at": "L75", "kind": "thud", "db": -12},
     {"at": "P01+0.4", "kind": "thud", "db": -12},
-    {"at": "P01+0.4", "kind": "hit", "db": -18},
     {"at": "L27", "kind": "sting", "db": -15},
     {"at": "L30", "kind": "click", "db": -20},
-    {"at": "L34", "kind": "click", "db": -24},
-    {"at": "L23", "kind": "click", "db": -20},
     {"at": "L37+0.2", "kind": "door", "db": -26, "dur": 0.8},
     {"at": "P02+0.15", "kind": "creak", "db": -6, "dur": 1.0},
     {"at": "P02+0.7", "kind": "thud", "db": -12},
     {"at": "L44", "kind": "sting", "db": -13},
-    {"at": "L50", "kind": "glide", "db": -17, "dur": 1.6},
     {"at": "L61+0.3", "kind": "bell", "db": -17, "dur": 2.0},
     {"at": "L70.1+0.8", "kind": "door", "db": -12, "dur": 1.0},
     {"at": "L75+0.5", "kind": "glide", "db": -14, "dur": 1.4},
@@ -608,7 +595,7 @@ story = {
     "tail": 0,
     "look": {"fog": "#b8bcc0", "fog_density": 0.005, "fog_start": 3.0, "sky": "#cfd6e0", "sky_strength": 1.0,
              "exposure": 0.0, "flash_safe": True,
-             "polish": {"quiet": [["L60", "L68"]]}},
+             "polish": {"quiet": [["L60", "L68"]], "hold": ["S02", "S09", "S23", "S31", "S60", "S67", "S68", "S84", "S85"]}},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.02], "saturation": 1.04, "contrast": 1.05,
               "vignette": 0.3, "bloom": 0.2, "grain": 0.012},
     "phonemes": {},
@@ -632,7 +619,7 @@ story = {
                   {"at": "L60", "voices": ["drone", "pad", "piano"], "energy": 0.45, "mode": "major", "root": 52},
                   {"at": "L69", "voices": ["drone", "choir"], "energy": 0.32, "mode": "minor"},
               ]},
-    "sound": {"floor": "grass", "steps_db": -22, "rev": 2,
+    "sound": {"floor": "grass", "steps_db": -22, "rev": 3,
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "end", "lufs": -38},
                   {"kind": "room", "from": 0, "to": "L13", "lufs": -40},
