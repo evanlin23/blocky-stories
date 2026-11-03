@@ -21,7 +21,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from stories import ROOT, UPLOADS, all_stories, changed_since, film, gate_open, slug, uploads
+from stories import ROOT, UPLOADS, all_stories, changed_since, film, gate_open, qa_passed, slug, uploads
 
 from blocky.gate import load_package
 
@@ -45,7 +45,7 @@ def ready_count(done: dict) -> int:
         if s in done or (load_package(s) or {}).get("hold"):
             continue
         f = film(s)
-        if f and not (f.get("created_at") and changed_since(s, f["created_at"])) and gate_open(s):
+        if f and not (f.get("created_at") and changed_since(s, f["created_at"])) and qa_passed(s, f) and gate_open(s):
             n += 1
     return n
 
@@ -69,6 +69,9 @@ def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
             continue
         f = film(s)
         if f and f.get("created_at") and changed_since(s, f["created_at"]):   # its film predates a fix: wait for the re-render
+            continue
+        if f and not qa_passed(s, f):   # no final-film check for this exact film yet (qa/<story>.json)
+            print(f"{s}: waiting for its final-film check (qa/{s}.json)")
             continue
         if f and gate_open(s):
             if not last or shape(s) != last:
