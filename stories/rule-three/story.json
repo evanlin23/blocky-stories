@@ -26,7 +26,8 @@
   "hdri": "kloppenheim_06_puresky",
   "hdri_strength": 0.45,
   "hdri_rotation": 40,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": true
  },
  "grade": {
   "shadows": [

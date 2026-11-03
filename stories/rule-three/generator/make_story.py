@@ -473,7 +473,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"style": "closer", "fog": "#cfe6f5", "fog_density": 0.006, "fog_start": 14.0, "sky": "#7cc6ff", "sky_strength": 1.0,
-             "exposure": 0.2, "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.45, "hdri_rotation": 40, "flash_safe": True},
+             "exposure": 0.2, "hdri": "kloppenheim_06_puresky", "hdri_strength": 0.45, "hdri_rotation": 40, "flash_safe": True, "polish": True},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 1.08, "contrast": 1.05,
               "vignette": 0.25, "bloom": 0.22, "grain": 0.008},
     "phonemes": {"Milo": "mˈIlO"},
