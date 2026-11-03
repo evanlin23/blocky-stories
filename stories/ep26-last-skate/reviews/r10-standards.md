@@ -1,17 +1,23 @@
-# ep26-last-skate: standards, round 10
+# ep26-last-skate ("Skip Ahead"): standards, round 10
 
-Verdict: approve
+Verdict: revise
 
-Round 9's must-fix is in. S30 now starts at `"at": "L28-1.2"` (story.json and make_story.py, and its EXPO key moved with it). In the rebuilt preview, S30 (Lenny's plain cherry shirt, no text on it) comes in during "He said," at about 52.5 s and holds through "It's on his SHIRT." The high wide S31 then cuts in on "Next slow song," so the two cuts are no longer inside one 30-frame window.
-
-S33 (the Skater's face) now starts at `"at": "L31-0.4"`, during "on its STRIPES." It's a dark shot, close to S32 in brightness, and it adds nothing to any worst window. The face comes in about 0.4 s before the word "face". That's fine.
-
-Preflight flash line on the preview: PASS. The 3-frame reading's film-wide maximum is now 4 changes and 2 flashes, both at 13.37 s. Nothing between 52 and 55 s comes near that. In the house bar, every item passes, bright cuts are at most 1 a second, and the red frames are fine. The preview reading is indicative only, and the final is measured on Actions.
-
-Only shot timings changed since round 9. Fiction, rules 2 and 3, IP, originality and the package all pass as they did in round 9.
+This is the first round for the re-imagined story. Preview checked: 77.4 s, 88 shots, contact sheet, stills sheet and frames pulled at 2 s steps.
 
 ## Must-fix
-None.
+1. **IP, L06 (S12, about 11.3 s).** The caption and spoken word "CLICK." is the title of the best-known film built on this engine, a remote that skips the dull parts of your life. Our story also has the skipped heartfelt words. Cut the word and keep the button sound: `I said, "SKIP!" / And I was at / the snack BAR.` Grep the captions for any other "click".
+2. **Package, `cover_s`.** 46.0 lands on S51, an empty dim floor under "and comes". Move it to the L22 frame (S44, about 40.6 s on the preview: the Skater's arm held out beside me, "TWICE.") or to the bright "SMILING." Skater at about 18.0 s. Pick it again from the final's timeline.
+
+## Passes
+- **Fiction:** "It's made up." No real names or places. No text on the set: the clock has no numerals, the buttons and bulbs have no labels, and the lore tally is two strokes.
+- **Rules 2 and 3:** every character is an adult, there's no injury, and the wipeout is a laughing sit-down. The folding is uncanny, not graphic. Nothing in the package aims at kids.
+- **Originality:** the rink, the folding Skater, the twist shape (`comes-due`, new) and the bulb meter are all new. ep33's skipping time is dropped. moving-day's folded Boxes have a different body and rule.
+- **US English:** pass. "Hire counter" appears only in the script.
+- **Package:** the title has one CAPS word and ends on one emoji. The pin has the right shape. `opening: if` matches line 1, and the queue has no other `if` opening.
+- **Flash:** the preview passes.
 
 ## Nice-to-have
-- Preflight warns that 2 captions ("The one", "There were") are up for under 0.2 s. This isn't a standards issue, so it's up to the builder.
+- L24's spoken chunk is `That's where skipped,`. Drop the comma so Kokoro doesn't read "skipped, time goes".
+- Flash warnings: 6.6 s (the cubby close-up into the bright floor) and a 3-frame run of 2.87 s from 52.8 s (the dim face, then the bright booth, then the white bulb close-up). If the final's run gets near 4 s, let the room ramp finish before S62.
+- Keep this story apart from closing-time ("Skipping..." title) in the upload order.
+- Remove `hold` once both reviews approve.
