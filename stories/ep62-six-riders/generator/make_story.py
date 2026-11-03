@@ -188,7 +188,7 @@ story = {
     "tail": 0,
     "fade_in": False,
     "look": {"fog": "#cfd8de", "fog_density": 0, "fog_start": 5.0, "sky": "#cfd8de", "sky_strength": 1.0,
-             "exposure": -0.5, "flash_safe": True},
+             "exposure": -0.5, "flash_safe": True, "polish": True},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.0, 0.0, 0.01], "saturation": 1.05, "contrast": 1.04,
               "vignette": 0.2, "bloom": 0.12, "grain": 0.008},
     "asr_forgive": ["ay bee see dee"],
