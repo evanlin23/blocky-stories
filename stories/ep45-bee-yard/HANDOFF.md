@@ -41,3 +41,11 @@ Branch `claude/opening-ep45-bee-yard`. No PR yet.
 - clip: 0 (smoke puffs and Lena's bees in story.json clip_ok; S71 Lena moved to x -0.85).
 - sfx: removed the decorative clicks and 3 whooshes: 3.12 events/10 s. measure.py: 0 blocks. rev 5.
 - Preview: out/work/ep45-bee-yard/ep45-bee-yard-preview.mp4 (137.8 s). Next: review round 4.
+
+## STATUS: dropped (2026-11-03, after review r5 and the proof)
+- Reviews: standards r4 approve; critic r4 revise (7.4), critic r5 approve (7.6, no must-fixes). Both review rounds used, no rescue round.
+- Gate OPEN, check clean, preview preflight 0 blocks, flash pass (worst 2/s), clipcheck 0, measure.py on the preview 0 blocks.
+- PR #213. Proof run 41731752941 (artifact `proof-ep45-bee-yard`, 8 shards, 51.6 min) FAILED: `macro.picture_changes_per_10s_q = 11.3` (target 14.0-). Also near: `picture_changes_per_10s` 12.4 (12.5-), `motion_energy_q` 5.46 (6.0-). Loudness -14.0 LUFS / -1.8 dBTP, flash and clip pass. The preview-based measure.py did not show this block; only the proof's quarter-size measure does.
+- Fix would mean about 25% more picture changes across the film (re-cutting or adding motion in many shots), which changes the approved picture and needs a new review round. None is left, so dropped per the brief. qa/ep45-bee-yard.json not written (a failed proof cannot pass).
+- Open: PR #213 stays unmerged with no passed proof qa; the second orchestrator records the drop on main and may close it.
+- Advice if the story is ever revived: add cuts or in-shot motion in the quiet stretches (S01 hug, S52 smoke is also murky); the S01 hug arms still cross.
