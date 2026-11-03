@@ -394,6 +394,7 @@ Fresh idea (added with `dryer-nine`, 2026-11-03, so the backlog doesn't run dry)
 - ep82-no-door: the house with no door is somebody enormous sitting very still with a roof on, and one pizza a night keeps it sitting (a disguise, not a fed thing under the town)
 - ep83-free-fries: the free fries are cooked by whoever cooks for you most, at their own stove with their eyes shut, and they never know (someone else pays, out of love)
 - ep84-pick-door: all three doors open back into the room you're in, and the right door is the one behind you that you came in by (a loop you're already in)
+- ep43-reading-room (rework, 2026-11-03, replaces the line above for ep43): the number over your head is days since you last laughed; the silent reading room's thing is made of every laugh anyone swallowed under the dome and drifts toward whoever holds in the most, so one forbidden laugh undoes it (held-back feelings with a body, not being unseen)
 
 ## Batch 7 (2026-11-03, `docs/research/2026-11-09-week.md` → Wednesday's five): scripted, not built
 N01, N04, N14, N23 and N11 became ep80 to ep84 (rows in "Made" above). The research brief's other pitches stay in the brief. Five fresh ideas, one for each used, so the backlog doesn't run dry:

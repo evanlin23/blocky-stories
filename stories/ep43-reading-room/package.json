@@ -1,10 +1,11 @@
 {
- "title": "Only ONE Person Knows My Name 🔢",
- "description": "Only one person in this whole town knows my name. The number over every head counts the people who know your name, and mine has said one for years.\n\nThis spring my little brother's number started falling, and in the old reading room something with no number at all sat one table nearer to him every afternoon.\n\nIt's made up, a creepy blocky story built with code and Blender.",
- "pin": "Comment ONE if you already know who your one would be.",
+ "title": "Days Since You Last LAUGHED 🤫",
+ "description": "Everyone here shows a number over their head: the days since they last laughed. Most people never get past one. My brother Tam is at forty.\n\nHe's been cramming every afternoon under the silent dome of the old reading room, and something with no number at all keeps ending up a table nearer to him.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+ "pin": "Comment ZERO if you laughed today.",
  "made_for_kids": false,
- "cover_s": 84.5,
- "shape": "about-me",
- "hold": "dropped 2026-11-03: after two review rounds on the new opening, critic r7 still lists nine must-fixes (number clutter at 0 to 6 s, 32.9 s and 127.5 s, a hidden 1 and warped face at 92 s, a count slip, fades) and standards r7 a flashing fix at 15.5 s; more than the one rescue fix allowed, and it's another overhead-number marker story with a brother reveal",
- "opening": "confess"
+ "cover_s": 47.8,
+ "shape": "held-in",
+ "opening": "count",
+ "lane": "core",
+ "hold": "awaiting review (rework 2026-11-03, revival triage pick 3: new script, not yet built)"
 }
