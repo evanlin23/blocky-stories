@@ -77,7 +77,10 @@
   "grain": 0.01,
   "red_line": 0.78
  },
- "phonemes": {},
+ "phonemes": {
+  "Ours": "ˌaʊɚz",
+  "ours": "ˌaʊɚz"
+ },
  "caption": {
   "shadow": 0.6
  },
@@ -182,7 +185,7 @@
     ],
     [
      "NEIGHBOR'S mower",
-     "neighbor's mower"
+     "neighbor's lawn mower"
     ],
     [
      "made the grass",
@@ -662,13 +665,14 @@
     ],
     [
      "eyes still SHUT,",
-     "eyes still shut,"
+     "eyes, still shut,"
     ],
     [
      "and WAVED.",
      "and waved."
     ]
-   ]
+   ],
+   "tempo": 0.95
   },
   {
    "id": "P02",
@@ -844,7 +848,7 @@
     ],
     [
      "they're best FRIENDS.",
-     "they're best friends."
+     "they are best friends."
     ]
    ]
   },
@@ -3769,7 +3773,7 @@
     "at": "L09",
     "pos": [
      -0.9,
-     7.2
+     7.0
     ],
     "blend": 0,
     "arms": [
@@ -3800,14 +3804,14 @@
     "at": "L09.5",
     "pos": [
      -0.9,
-     7.2
+     7.0
     ]
    },
    {
     "at": "L09.5",
     "pos": [
      -0.9,
-     7.2
+     7.0
     ],
     "blend": 0,
     "arms": [
@@ -3843,7 +3847,7 @@
     "at": "L12",
     "pos": [
      -0.9,
-     7.2
+     7.0
     ]
    },
    {
@@ -4296,8 +4300,8 @@
     ],
     "blend": 0,
     "arms": [
-     38,
-     38
+     0,
+     0
     ],
     "side": [
      0,
@@ -4362,8 +4366,8 @@
     ],
     "blend": 0,
     "arms": [
-     38,
-     38
+     0,
+     0
     ],
     "side": [
      0,

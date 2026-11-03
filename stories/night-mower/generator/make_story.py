@@ -49,6 +49,17 @@ for ln in lines:
     ln["chunks"] = new_chunks
     CHUNK_MAP[ln["id"]] = mp
 
+for ln in lines:
+    for ch in ln["chunks"]:
+        if ln["id"] == "L01":
+            ch[1] = ch[1].replace("neighbor's mower", "neighbor's lawn mower")
+        if ln["id"] == "L32":
+            ch[1] = ch[1].replace("they're", "they are")
+        if ln["id"] == "L24":
+            ch[1] = ch[1].replace("eyes still", "eyes, still")
+    if ln["id"] == "L24":
+        ln["tempo"] = 0.95
+
 # two pause beats (music drops) go before L20 and L25
 _out = []
 for ln in lines:
@@ -197,13 +208,13 @@ shot("S08b", "L08.2", C((2.4, 5.5, 1.55), (3.3, 8.2, 1.62), 62, (2.5, 5.7, 1.55)
 FX = -0.9   # Dad and me at the fence, facing west toward camera
 shot("S09", "L09", C((-4.2, 6.3, 1.45), (-0.9, 7.7, 1.3), 30, (-3.8, 6.5, 1.45), (-0.9, 7.7, 1.3), 32),
      "day: me and Dad side by side at the fence, his lawn and the stick behind them", day=1, mower="park", strip=0.0)
-stage("L09", dad=((FX, 8.0), -90, "neutral", {"arms": [38, 38]}), me=((FX, 7.2), -90, "neutral"))
+stage("L09", dad=((FX, 8.0), -90, "neutral"), me=((FX, 7.0), -90, "neutral"))
 shot("S09b", "L09.1", C((-5.2, 4.2, 1.9), (3.2, 12.0, 2.2), 20, (-4.6, 4.4, 1.9), (3.2, 12.0, 2.3), 20),
      "the wide: both houses and the fence, Mr. Odell on his porch", day=1, mower="park", strip=0.0)
 stage("L09.1", dad=((-1.6, 6.4), 90, "neutral"), odell=((9.0, 11.4), 0, "smile"))
 shot("S09c", "L09.3", C((-2.4, 6.2, 1.45), (-0.9, 7.7, 1.35), 44, (-2.2, 6.3, 1.45), (-0.9, 7.7, 1.35), 48),
      "me and Dad, closer", day=1, mower="park", strip=0.0)
-stage("L09.3", dad=((FX, 8.0), -90, "neutral", {"arms": [38, 38]}), me=((FX, 7.2), -90, "neutral"))
+stage("L09.3", dad=((FX, 8.0), -90, "neutral"), me=((FX, 7.0), -90, "neutral"))
 shot("S10", "L10", C((0.7, 4.6, 1.5), (-0.5, 7.7, 1.55), 30, (0.8, 4.8, 1.5), (-0.5, 7.7, 1.55), 30),
      "Dad at the fence, angry, glaring over; the stick just over the fence", day=1, mower="park", strip=0.0)
 stage("L10", dad=((-0.55, 7.7), 70, "angry"))
@@ -487,7 +498,7 @@ story = {
              "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 1.12, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.01, "red_line": 0.78},
-    "phonemes": {},
+    "phonemes": {"Ours": "ˌaʊɚz", "ours": "ˌaʊɚz"},
     "caption": {"shadow": 0.6},
     "min_read": 0,
     "cast": cast,

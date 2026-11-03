@@ -6,14 +6,14 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "What if your neighbor's mower made the grass longer?",
+   "text": "What if your neighbor's lawn mower made the grass longer?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.224,
+   "dur": 2.448,
    "onset": 0.172,
-   "end": 2.017,
+   "end": 2.241,
    "chunks": [
     [
      0.172,
@@ -21,15 +21,15 @@
     ],
     [
      0.397,
-     1.0
+     1.224
     ],
     [
-     1.0,
-     1.466
+     1.224,
+     1.69
     ],
     [
-     1.466,
-     2.017
+     1.69,
+     2.241
     ]
    ]
   },
@@ -39,25 +39,25 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.672,
-   "onset": 0.19,
-   "end": 2.483,
+   "dur": 2.569,
+   "onset": 0.172,
+   "end": 2.379,
    "chunks": [
     [
-     0.19,
-     0.655
+     0.172,
+     0.569
     ],
     [
-     0.69,
-     1.31
+     0.603,
+     1.207
     ],
     [
-     1.31,
-     1.724
+     1.207,
+     1.621
     ],
     [
-     1.724,
-     2.483
+     1.621,
+     2.379
     ]
    ]
   },
@@ -610,14 +610,14 @@
    ]
   },
   "L24": {
-   "text": "Mr. Odell turned to us, eyes still shut, and waved.",
+   "text": "Mr. Odell turned to us, eyes, still shut, and waved.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.586,
+   "tempo": 0.9784999999999999,
+   "dur": 2.655,
    "onset": 0.172,
-   "end": 2.379,
+   "end": 2.448,
    "chunks": [
     [
      0.172,
@@ -625,15 +625,15 @@
     ],
     [
      0.793,
-     1.138
+     1.069
     ],
     [
-     1.207,
-     1.707
+     1.121,
+     1.759
     ],
     [
-     1.733,
-     2.379
+     1.784,
+     2.448
     ]
    ]
   },
@@ -826,14 +826,14 @@
    ]
   },
   "L32": {
-   "text": "He remembers our future, and in Dad's, they're best friends.",
+   "text": "He remembers our future, and in Dad's, they are best friends.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.69,
+   "dur": 2.741,
    "onset": 0.172,
-   "end": 2.5,
+   "end": 2.552,
    "chunks": [
     [
      0.172,
@@ -844,12 +844,12 @@
      1.034
     ],
     [
-     1.086,
-     1.586
+     1.103,
+     1.569
     ],
     [
-     1.612,
-     2.5
+     1.594,
+     2.552
     ]
    ]
   },
