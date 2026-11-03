@@ -487,6 +487,9 @@ sound = {"floor": "stone", "steps_db": -24,
          "sfx": sfx,
          "music_drops": [{"from": "P01-0.02", "to": "P01>", "keep": ["click"], "db": -70}]}
 
+sid_of = {at: f"S{i + 1:02d}" for i, (at, _c, _o) in enumerate(SH)}
+POLISH = {"reveal": ["L31", "L36"], "twist": "L35", "quiet": [["L42", "L45"]],
+          "sway": [sid_of[k] for k in ("L22", "L23", "L24", "L38")]}
 story = {
     "slug": "dryer-nine",
     "title": "Nobody Uses Dryer NINE",
@@ -502,7 +505,7 @@ story = {
     "fade_out": False,
     "look": {"style": "closer", "fog": "#bcd4e8", "fog_density": 0.0, "fog_start": 6.0, "sky": "#1d2f7a", "sky_strength": 1.0,
              "hdri": "lebombo", "hdri_strength": 0.45, "hdri_rotation": 0, "hdri_visible": False,
-             "exposure": 0.0, "flash_safe": True, "polish": True},
+             "exposure": 0.0, "flash_safe": True, "polish": POLISH},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.02], "saturation": 1.12,
               "contrast": 1.06, "vignette": 0.28, "bloom": 0.2, "grain": 0.01},
     "phonemes": {"dryer": "dɹˈIɚ"},

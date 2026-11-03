@@ -28,7 +28,25 @@
   "hdri_visible": false,
   "exposure": 0.0,
   "flash_safe": true,
-  "polish": true
+  "polish": {
+   "reveal": [
+    "L31",
+    "L36"
+   ],
+   "twist": "L35",
+   "quiet": [
+    [
+     "L42",
+     "L45"
+    ]
+   ],
+   "sway": [
+    "S27",
+    "S28",
+    "S29",
+    "S46"
+   ]
+  }
  },
  "grade": {
   "shadows": [
@@ -389,12 +407,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "So I fed it",
-     "So I fed it"
+     "So I",
+     "So I"
     ],
     [
-     "the roll of QUARTERS",
-     "the roll of quarters"
+     "fed it",
+     "fed it"
+    ],
+    [
+     "the roll",
+     "the roll"
+    ],
+    [
+     "of QUARTERS",
+     "of quarters"
     ],
     [
      "sitting on",
@@ -790,12 +816,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "So we SHUT it,",
-     "So we shut it,"
+     "So we",
+     "So we"
     ],
     [
-     "and let the night",
-     "and let the night"
+     "SHUT it,",
+     "shut it,"
+    ],
+    [
+     "and let",
+     "and let"
+    ],
+    [
+     "the night",
+     "the night"
     ],
     [
      "run DOWN.",
@@ -2830,7 +2864,7 @@
    ],
    "step": 2,
    "hand": 0.002,
-   "at": "L41.1"
+   "at": "L41.2"
   },
   {
    "id": "S52",
@@ -4593,7 +4627,7 @@
     "yaw": 180
    },
    {
-    "at": "L41.1",
+    "at": "L41.2",
     "hidden": true
    },
    {
@@ -5012,7 +5046,7 @@
    "s": "7:30"
   },
   {
-   "at": "L41.1",
+   "at": "L41.2",
    "name": "timer",
    "who": 9,
    "s": "7:29"
@@ -5150,7 +5184,7 @@
    "dur": 0.5
   },
   {
-   "at": "L41.1",
+   "at": "L41.2",
    "name": "dc",
    "what": "folded",
    "v": 1
@@ -6059,7 +6093,7 @@
    }
   },
   {
-   "at": "L41.1",
+   "at": "L41.2",
    "name": "shot",
    "look": null
   },
@@ -6354,7 +6388,7 @@
     "db": -12
    },
    {
-    "at": "L41.1",
+    "at": "L41.2",
     "kind": "whoosh",
     "db": -22,
     "dur": 1.2
