@@ -1388,9 +1388,9 @@ def build_town(kit, ctx, M):
         kit.cyl(f"t.trunk{k}", 0.35, 3.0, (TOWN[0] + x, TOWN[1] + y, 1.5), M["t_door"])
         kit.sphere(f"t.crown{k}", r, (TOWN[0] + x, TOWN[1] + y, 3.0 + r * 0.8), M["t_hill"], seg=8)
     # a warm fill in the bays, where the plinth's shade keeps the sun out
-    kit.light("bayfill", "POINT", (TOWN[0] + 70.0, TOWN[1] - 3.0, -1.0), 4500.0, "#fff1d8", size=2.0, shadow=False)
-    kit.light("bayfill2", "POINT", (TOWN[0] + 90.0, TOWN[1] - 3.0, -1.0), 9000.0, "#fff1d8", size=2.0, shadow=False)
-    kit.light("bayfill3", "POINT", (TOWN[0] + 60.0, TOWN[1] - 3.0, -0.8), 2500.0, "#fff1d8", size=2.0, shadow=False)
+    kit.light("bayfill", "POINT", (TOWN[0] + 70.0, TOWN[1] - 3.0, -1.0), 1500.0, "#fff1d8", size=2.0, shadow=False)
+    kit.light("bayfill2", "POINT", (TOWN[0] + 90.0, TOWN[1] - 3.0, -1.0), 3000.0, "#fff1d8", size=2.0, shadow=False)
+    kit.light("bayfill3", "POINT", (TOWN[0] + 60.0, TOWN[1] - 3.0, -0.8), 900.0, "#fff1d8", size=2.0, shadow=False)
     # the parcel that drops onto the hatch (hidden until its cue)
     p = kit.empty("parcel", (TOWN[0] + 60.0, TOWN[1] - 2.2, 50.0))
     kit.box("parcel.box", (0.8, 0.6, 0.45), (0, 0, 0.225), M["t_parcel"], p, bevel=0.02)
@@ -1552,12 +1552,12 @@ DAY_GAINS = {"fill": 0.0, "lamp": 0.35, "facekey": 0.0, "bayfill": 0.0, "bayfill
 SUN_NORTH = (math.radians(42), 0, math.radians(12))     # the sun in the south, shining north, on faces that look south
 LOOKS = {
     # noon in the town: bright, a hard sun from the south, the bays lit by their own fill
-    "town": {"fog": "#d6e6f2", "density": 0.0012, "start": 60.0, "sky": "#9fcdf2", "sky_strength": 1.15, "exposure": 0.0,
+    "town": {"fog": "#d6e6f2", "density": 0.0012, "start": 60.0, "sky": "#9fcdf2", "sky_strength": 0.9, "exposure": -0.3,
              "cards": {}, "gains": {"fill": 0.0, "lamp": 0.0, "facekey": 0.0, "bayfill": 1.0, "bayfill2": 1.0, "bayfill3": 1.0},
-             "sun": 4.0, "sun_rot": SUN_NORTH},
+             "sun": 3.0, "sun_rot": SUN_NORTH},
     # a clear cool morning at the tower: pearl light, the sun low in the south on the faces at the gate
     "clear": {"fog": "#c4ccd2", "density": 0.0022, "start": 40.0, "sky": "#cdd8e0", "sky_strength": 0.9,
-              "exposure": 0.8, "cards": {}, "gains": DAY_GAINS, "sun": 5.0, "sun_rot": SUN_NORTH},
+              "exposure": 0.2, "cards": {}, "gains": DAY_GAINS, "sun": 3.5, "sun_rot": SUN_NORTH},
     # night round the cab: blue-grey fog, one steady amber lamp
     "night": {"fog": "#2a3238", "density": 0.034, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
               "exposure": 1.6, "cards": ["fog.near", "fog.tower", "fog.neck", "fog.behind", "fog.far"],

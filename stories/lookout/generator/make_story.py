@@ -117,7 +117,7 @@ def st(pos, yaw=0, expr="neutral", **kw):
 BAL = st([TX + 0.0, -1.45, 2.4], 0, "smile", **RAILS, head=[0, 0])
 WALK = st(tw(-1.3, -3.3), 10, "wide", arms=[0, 0], head=[0, 14])
 # ---- 01 the rule: a noon street (0 to about 20 s)
-shot(0, mv(tw(0.2, -11.8, 1.6), tw(-0.2, -2.4, 3.0), 28, tw(0.1, -10.8, 1.7), tw(-0.2, -2.4, 3.1), 28), "town",
+shot(0, mv(tw(-0.1, -12.5, 0.9), tw(-0.5, -2.4, 1.7), 27, tw(-0.1, -11.5, 1.0), tw(-0.5, -2.4, 1.8), 27), "town",
      {"balcony": BAL, "walker": WALK}, sand=[("balcony", 0.1), ("walker", 0.95)], hand=0.003)
 shot("L01.2", mv(tw(-0.3, -8.0, 2.8), tw(-0.6, -2.4, 3.8), 30, tw(-0.3, -7.4, 2.9), tw(-0.6, -2.4, 3.9), 30), "town",
      {"balcony": BAL, "walker": WALK})
