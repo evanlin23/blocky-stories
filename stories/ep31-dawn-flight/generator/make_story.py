@@ -206,7 +206,7 @@ SHOTS = [
      facecam(DAD, 60, 1.05, 0, 0.85, hz=1.62), 2, {"key": 14}),
     ("L24", "Dad leaning toward Rosa: And WHO'S this?",
      view([-1.0, -0.15, 1.72], [DAD[0] + 0.1, DAD[1], 1.55], 0.95), 2, {"key": 18}),
-    ("L25", "the long roar swells", FLAME, 2, {"key": 3}),
+    ("L25", "the long roar swells, held on Dad and Rosa (no cut)", view([-1.0, -0.15, 1.72], [DAD[0] + 0.1, DAD[1], 1.55], 0.95), 2, {"key": 18}),
     ("L25+0.85", "my hands drifting off my sleeves",
      view([1.6, 0.0, 1.6], [ME[0] - 0.1, 1.0, 1.36], 1.5), 2, {"key": 14}),
     ("L26", "wider: a hand's width off, then two",

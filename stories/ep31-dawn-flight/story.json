@@ -2025,23 +2025,23 @@
     [
      0,
      [
-      0.0,
-      -0.45,
-      1.4
+      -1.0,
+      -0.15,
+      1.72
      ],
      [
-      0.0,
-      0.0,
-      3.0
+      -0.37,
+      0.63,
+      1.55
      ],
-     22
+     14.5
     ]
    ],
    "hand": 0.003,
    "step": 2,
-   "what": "the long roar swells",
+   "what": "the long roar swells, held on Dad and Rosa (no cut)",
    "at": "L25",
-   "key": 3
+   "key": 18
   },
   {
    "id": "S32",
