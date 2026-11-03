@@ -160,9 +160,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the porch doormat, bright morning.
 - **Shots:** see the brackets (one or two per line).
 
-- `L01` narrator: Never KEEP / the shoes / our cat / brings HOME. / They're still WARM.
+- `L01` narrator: Every NIGHT, / our cat / brings home SHOES. / They're always / still WARM.
   - [two shots. Low close, centred: white high-tops with red laces on the coir mat, steam curling, a striped sock hanging out of the left one, a ginger tail tip leaving frame left. Push in. Behind, soft: the rail of pairs and the chalk "8". Then tighter on the steam rising off the toes on "WARM", the hit]
-- `L02` narrator: Even if / they're YOUR / SIZE.
+- `L02` narrator: Never KEEP them. / Even if / they're YOUR SIZE.
   - [top-down: my own white high-top (on my foot, teal hoodie cuff in frame) set beside the left warm one. Same size, same red laces]
 - `L03` narrator: Monday, / WORK BOOTS, / with SAWDUST.
   - [the mat, low: big scuffed work boots, steaming, sawdust on the toes. Plant 3]
