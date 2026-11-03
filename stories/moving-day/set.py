@@ -2492,8 +2492,12 @@ def animate(kit, story, tl, t, ctx):
     bpy.context.scene.view_settings.exposure = (cs[-1].get("exposure", EXPOSURE[cs[-1]["set"]]) if cs
                                                  else EXPOSURE["dawn"])
     ctx["M"]["_ceil_emit"].default_value = {"day": 0.35, "sun": 0.35, "end": 0.35, "dawn": 0.3}.get(cs[-1]["set"] if cs else "day", 0.0)
+    _cb = ctx["M"]["ceiling"].node_tree.nodes["Principled BSDF"].inputs["Base Color"]
     if t < 2.4:   # S01: the ceiling a shade darker than the wall (no glow), so the corner reads
-        ctx["M"]["_ceil_emit"].default_value = 0.05
+        ctx["M"]["_ceil_emit"].default_value = 0.0
+        _cb.default_value = kit.col("#6f716b")
+    else:
+        _cb.default_value = kit.col("#cacbc3")
     ctx["outside"].inputs["Color"].default_value = colour
     ctx["outside"].inputs["Strength"].default_value = strength
     nc = _last(_cues(tl, "nightlight"), t)

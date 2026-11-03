@@ -101,7 +101,7 @@ HIGH_QUILT = still([0.75, 0.45, 1.95], [-0.5, 1.95, 0.45], 20)
 SHOTS = [
     # 1 the rule, L01 to L04 (0 to 10 s): a lit hall opening, then the street of mixed-height houses
     (0, "S01 eye-level looking slightly up at me in the hall: the dark old ceiling line on the wall at my hair, clean wall above it to the raised ceiling, my eyes rolled up; push up toward the gap", 2,
-     c([0, [-1.2, -0.8, 1.7], [-4.6, -0.8, 1.9], 24], [2.2, [-1.6, -0.8, 1.74], [-4.6, -0.8, 2.08], 26])),
+     c([0, [-1.2, -0.8, 1.7], [-4.6, -0.8, 1.85], 40], [2.2, [-1.6, -0.8, 1.74], [-4.6, -0.8, 2.05], 44])),
     ("L02", "S02 the stack by the door, close and low: the face-out box with the marker frown, the ceiling right over it", 2,
      move(([-1.6, -3.0, 0.95], [-1.62, -4.75, 1.2]), ([-1.6, -3.4, 1.0], [-1.62, -4.75, 1.3]), 24)),
     ("L03+0.17", "S04 a lodger walks out of a front door with a suitcase", 2,
@@ -390,7 +390,7 @@ cues = [
     {"at": "L32", "name": "lamp", "on": 1.0, "dur": 1.2},
     {"at": "L35", "name": "lamp", "on": 0.0},
     # the relights ("xfill": one soft light, placed and aimed per beat, off between)
-    {"at": 0, "name": "xfill", "pos": [-2.3, -0.8, 1.0], "aim": [-4.6, -0.8, 1.7], "gain": 3.0, "size": 1.4},
+    {"at": 0, "name": "xfill", "pos": [-2.3, -0.8, 1.0], "aim": [-4.6, -0.8, 1.7], "gain": 0.6, "size": 1.4},
     {"at": "L02", "name": "xfill", "pos": [-1.6, -3.0, 1.7], "aim": [-1.7, -4.5, 1.2], "gain": 1.2},
     {"at": "L03", "name": "xfill", "gain": 0},
     {"at": "L07", "name": "xfill", "pos": [0.2, -0.5, 1.5], "aim": [0.45, -1.72, 1.4], "gain": 1.1},
