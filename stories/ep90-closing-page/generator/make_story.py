@@ -8,7 +8,7 @@ story = {
     "premise": "creature test", "twist": "creature test", "world": "a supermarket back room",
     "key_color": "#8a4fd1", "gap": 0.15, "tail": 0.9, "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "look": {"flash_safe": True, "polish": True, "fog": "#e8dcc4", "fog_density": 0.006, "fog_start": 12.0,
-             "sky": "#cbbfa6", "exposure": -0.2},
+             "sky": "#3a4048", "exposure": -0.5},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.08, "contrast": 1.04,
               "vignette": 0.2, "bloom": 0.2, "grain": 0.008},
     "cast": {},

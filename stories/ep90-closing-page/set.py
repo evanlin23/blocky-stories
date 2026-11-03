@@ -20,7 +20,7 @@ CH = {}
 def stickers(kit, name, size, centre, rng, n, parent, skip=(), base_c="#a85a14"):
     """Cover a box part (size, centre) with n layered curling price stickers, plus an orange core."""
     kit.box(f"{name}.core", size, centre, kit.plastic(base_c, 0.5), parent, bevel=0.03)
-    mats = [kit.plastic(c, 0.6) for c in ("#c4701a", "#b8651a", "#d98a2c", "#9c9588", "#c4701a", "#a85d18", "#8f8a80")]
+    mats = [kit.plastic(c, 0.6) for c in ("#8a4a12", "#7c4310", "#a8681c", "#6f6a60", "#8a4a12", "#6e3a0e", "#5f5a52")]
     ink = kit.plastic("#3a2410", 0.6)
     sx, sy, sz = size
     c = V(centre)
@@ -75,8 +75,8 @@ def tallyman(kit, pos=(0.0, 0.0), yaw=0.0, scale=1.0):
     stickers(kit, "head", (0.56, 0.5, 0.56), (0, 0, 2.36 - neck), rng, 220, hd, skip=("-z", "-y"))
     kit.box("face", (0.52, 0.04, 0.52), (0, -0.265, 2.36 - neck), kit.plastic("#a85a14", 0.6), hd, bevel=0.01)
     kit.box("visor", (0.54, 0.03, 0.2), (0, -0.295, 2.41 - neck), kit.plastic("#0a0404", 0.4), hd, bevel=0.008)
-    kit.box("scan", (0.5, 0.02, 0.05), (0, -0.315, 2.41 - neck), kit.emit("#ff0000", 14), hd, bevel=0.005)
-    kit.box("scanglow", (0.56, 0.015, 0.012), (0, -0.318, 2.41 - neck), kit.emit("#ff0000", 14), hd)
+    kit.box("scan", (0.5, 0.02, 0.05), (0, -0.315, 2.41 - neck), kit.emit("#ff0000", 5), hd, bevel=0.005)
+    kit.box("scanglow", (0.56, 0.015, 0.012), (0, -0.318, 2.41 - neck), kit.emit("#ff0000", 5), hd)
     # the green apron over the torso front, with a pocket and a chest read-out (glyph bars only)
     ap = kit.plastic(APRON, 0.5)
     kit.box("apron", (0.74, 0.07, 0.85), (0, -0.30, 1.52), ap, root, bevel=0.025)
