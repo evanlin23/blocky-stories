@@ -282,30 +282,34 @@
    ]
   },
   "L12": {
-   "text": "i said, yes, grandad, and put my earbuds in.",
+   "text": "i said, yes, grandad, and went over my line under my breath.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 2.897,
    "onset": 0.172,
-   "end": 2.052,
+   "end": 2.69,
    "chunks": [
     [
      0.172,
-     0.414
+     0.483
     ],
     [
-     0.448,
-     1.034
+     0.517,
+     1.259
     ],
     [
-     1.061,
-     1.233
+     1.328,
+     1.509
     ],
     [
-     1.233,
-     2.052
+     1.509,
+     1.939
+    ],
+    [
+     1.939,
+     2.69
     ]
    ]
   },
@@ -362,42 +366,42 @@
    ]
   },
   "L15": {
-   "text": "when i mumbled it, he cupped his ear and said, say it again, love.",
+   "text": "when i mumbled it, he said it again, louder, to the back of the house.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.81,
+   "dur": 2.948,
    "onset": 0.155,
-   "end": 2.603,
+   "end": 2.759,
    "chunks": [
     [
      0.155,
-     0.362
+     0.388
     ],
     [
-     0.362,
-     0.707
+     0.388,
+     0.776
     ],
     [
-     0.732,
-     0.957
+     0.828,
+     1.077
     ],
     [
-     0.957,
-     1.233
+     1.077,
+     1.466
     ],
     [
-     1.233,
-     1.603
+     1.543,
+     1.793
     ],
     [
-     1.69,
-     1.854
+     1.828,
+     2.112
     ],
     [
-     1.854,
-     2.603
+     2.112,
+     2.759
     ]
    ]
   },
@@ -1094,202 +1098,42 @@
    ]
   },
   "L45": {
-   "text": "and i've never faded, because he never once stopped listening to me.",
+   "text": "and i'd never faded, because every word i ever mumbled, he said again, louder.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.966,
+   "dur": 3.534,
    "onset": 0.172,
-   "end": 2.776,
+   "end": 3.328,
    "chunks": [
     [
      0.172,
-     0.379
+     0.345
     ],
     [
-     0.379,
-     1.017
+     0.345,
+     0.966
     ],
     [
-     1.086,
-     1.362
+     1.034,
+     1.655
     ],
     [
-     1.362,
-     1.724
-    ],
-    [
-     1.724,
+     1.655,
      2.276
     ],
     [
-     2.276,
-     2.776
+     2.301,
+     2.759
+    ],
+    [
+     2.793,
+     3.328
     ]
    ]
   },
   "L46": {
-   "text": "then, very quietly, he asked, did i ever tell you how i met your gran?",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9064,
-   "dur": 3.431,
-   "onset": 0.19,
-   "end": 3.207,
-   "chunks": [
-    [
-     0.19,
-     0.879
-    ],
-    [
-     0.905,
-     1.448
-    ],
-    [
-     1.517,
-     1.879
-    ],
-    [
-     1.879,
-     2.121
-    ],
-    [
-     2.121,
-     2.509
-    ],
-    [
-     2.509,
-     3.207
-    ]
-   ]
-  },
-  "L47": {
-   "text": "i said, no. tell me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.362,
-   "onset": 0.172,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.172,
-     0.414
-    ],
-    [
-     0.439,
-     0.603
-    ],
-    [
-     0.638,
-     1.155
-    ]
-   ]
-  },
-  "L48": {
-   "text": "forty years ago, he froze on this, same line.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.8755,
-   "dur": 2.5,
-   "onset": 0.224,
-   "end": 2.276,
-   "chunks": [
-    [
-     0.224,
-     0.776
-    ],
-    [
-     0.802,
-     1.147
-    ],
-    [
-     1.147,
-     1.397
-    ],
-    [
-     1.439,
-     2.276
-    ]
-   ]
-  },
-  "L49": {
-   "text": "a young woman in the wings whispered it for him.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.069,
-   "onset": 0.172,
-   "end": 1.879,
-   "chunks": [
-    [
-     0.172,
-     0.578
-    ],
-    [
-     0.578,
-     1.026
-    ],
-    [
-     1.026,
-     1.328
-    ],
-    [
-     1.328,
-     1.879
-    ]
-   ]
-  },
-  "L50": {
-   "text": "he married her.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.138,
-   "onset": 0.172,
-   "end": 0.931,
-   "chunks": [
-    [
-     0.172,
-     0.931
-    ]
-   ]
-  },
-  "L51": {
-   "text": "every word i heard, he came back a shade.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.172,
-   "end": 1.931,
-   "chunks": [
-    [
-     0.172,
-     0.517
-    ],
-    [
-     0.517,
-     0.879
-    ],
-    [
-     0.931,
-     1.319
-    ],
-    [
-     1.319,
-     1.931
-    ]
-   ]
-  },
-  "L52": {
    "text": "saturday, the king asked, who stands with me?",
    "who": "narrator",
    "voice": "am_adam",
@@ -1314,6 +1158,182 @@
     [
      1.388,
      1.914
+    ]
+   ]
+  },
+  "L47": {
+   "text": "nobody in the house could hear him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.19,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.19,
+     0.578
+    ],
+    [
+     0.578,
+     0.845
+    ],
+    [
+     0.845,
+     1.517
+    ]
+   ]
+  },
+  "L48": {
+   "text": "so i did what he'd always done for me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.793
+    ],
+    [
+     0.793,
+     1.259
+    ],
+    [
+     1.259,
+     1.724
+    ]
+   ]
+  },
+  "L49": {
+   "text": "i said his line again, louder, for the back row.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.914
+    ],
+    [
+     0.948,
+     1.207
+    ],
+    [
+     1.259,
+     1.397
+    ],
+    [
+     1.397,
+     2.052
+    ]
+   ]
+  },
+  "L50": {
+   "text": "then i answered it. i'm here, my lord.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.862
+    ],
+    [
+     0.931,
+     1.172
+    ],
+    [
+     1.199,
+     1.828
+    ]
+   ]
+  },
+  "L51": {
+   "text": "every word they heard, he came back a shade.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.828
+    ],
+    [
+     0.862,
+     1.25
+    ],
+    [
+     1.25,
+     1.862
+    ]
+   ]
+  },
+  "L52": {
+   "text": "at the bow, he whispered, did i ever tell you how i met your gran?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     1.034
+    ],
+    [
+     1.103,
+     1.448
+    ],
+    [
+     1.448,
+     1.638
+    ],
+    [
+     1.638,
+     1.992
+    ],
+    [
+     1.992,
+     2.603
     ]
    ]
   },
@@ -1342,22 +1362,34 @@
    ]
   },
   "L54": {
-   "text": "i'm here, my lord.",
+   "text": "forty years ago, gran said this line for him, from the wings.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.276,
+   "dur": 2.672,
    "onset": 0.172,
-   "end": 1.069,
+   "end": 2.483,
    "chunks": [
     [
      0.172,
-     0.448
+     0.793
     ],
     [
-     0.474,
-     1.069
+     0.845,
+     1.199
+    ],
+    [
+     1.199,
+     1.517
+    ],
+    [
+     1.517,
+     1.724
+    ],
+    [
+     1.759,
+     2.483
     ]
    ]
   },

@@ -131,7 +131,8 @@ def materials(kit):
     M["bulb"] = kit.emit("#ffe3b0", 6.0, name="bulb")
     M["head_dark"] = kit.plastic("#7a6a66", 0.9, name="aud head")
     M["body_dark"] = kit.plastic("#3c3a52", 0.9, name="aud body")
-    M["earbud"] = kit.plastic("#f4f4f2", 0.35, name="earbud")
+    M["roll"] = kit.plastic("#e6dcc2", 0.85, name="script roll")
+    M["roll_end"] = kit.plastic("#b9ad92", 0.9, name="script roll end")
     M["glint"] = kit.emit("#ffb35c", 9.0, name="eye glint")
     return M
 
@@ -154,7 +155,7 @@ def town_materials(kit, M):
     M["t_brass"] = kit.plastic("#c59a3a", 0.3, name="brass", spec=0.8)
     M["t_wood"] = kit.plastic("#7a5636", 0.7, name="bench wood")
     kit.set_fog("#4a3940", 0.016, 6.0)
-    M["d_brick"] = kit.bricks("#7a4a3c", "#5f3a30", mortar="#3a2e2c", scale=1.0, name="door brick", grime_amt=0.45)
+    M["d_brick"] = kit.bricks("#a15a42", "#80452f", mortar="#d9c9ae", scale=1.0, name="door brick", grime_amt=0.45)
     M["d_cobble"] = kit.cobbles("#4a4845", "#7b766d", "#252424", scale=2.2, wet=0.2, name="dusk cobbles")
     M["d_green"] = kit.plastic("#2f6a4a", 0.5, name="stage door green")
     M["d_lintel"] = kit.plastic("#5b5148", 0.9, name="lintel")
@@ -197,7 +198,7 @@ def build_street(kit, ctx, M):
     B("shelter bench", (1.3, 0.45, 0.08), (TX + 2.65, 3.0, 0.46), M["t_wood"])
     B("shelter bench back", (1.3, 0.05, 0.4), (TX + 2.65, 3.22, 0.78), M["t_green"])
     # the iron lamp post
-    gx, gy = TX + 3.9, 1.1
+    gx, gy = TX + 1.35, 3.52      # behind the bus-stop man in S01, so the street shows through his chest
     kit.cyl("lamp post", 0.06, 4.0, (gx, gy, 2.0), M["t_iron"], n=12)
     kit.cyl("lamp post base", 0.14, 0.5, (gx, gy, 0.25), M["t_iron"], n=12, r2=0.09)
     B("lamp head", (0.36, 0.36, 0.5), (gx, gy, 4.25), M["t_iron"], bevel=0.03)
@@ -285,7 +286,7 @@ def build_house(kit, ctx, M):
     aud = []
     for r in range(1, ROWS):
         for i, x in enumerate(xs):
-            if kit.hash01(r, i, 5) < 0.12 or (r == 2 and abs(x + 0.58) < 0.1):
+            if kit.hash01(r, i, 5) < 0.12 or (r == 2 and abs(x + 0.58) < 0.1) or (r == 1 and abs(x) < 0.7 and abs(x - 0.58) > 0.1):
                 continue
             h = 0.02 * kit.hash01(r, i, 9)
             hd = kit.sphere(f"aud head {r} {i}", 0.12, (x, row_y(r) - 0.12, row_z(r) + 1.4 + h), M["head_dark"], seg=8)
@@ -306,8 +307,8 @@ MOODS = {
     "dusk": {"gains": {"door_lamp": 1.0, "door_fill": 1.0, "door_rim": 1.0}, "wash": "#ffb868", "exp": 0.0},
     # the ghost light is the key, the wash at about 6%; the faded ones are lit by their own little lights
     "ghost": {"gains": {"wash_l": 0.06, "wash_r": 0.06, "wash_top": 0.06, "wash_back": 0.2, "ghost": 1.0,
-                        "ghost_fill": 0.5, "run1": 0.7, "run2": 0.4, "run3": 0.7, "wing_fill": 0.4, "fkey": 1.0,
-                        "frim": 1.0, "mkey": 1.0, "marion_lamp": 0.4},
+                        "ghost_fill": 0.5, "run1": 0.7, "run2": 0.4, "run3": 0.7, "wing_fill": 0.4, "fkey": 0.5,
+                        "frim": 0.8, "mkey": 1.0, "marion_lamp": 0.4},
               "wash": "#ffb868", "exp": 0.9},
     "work": {"gains": {"work_l": 1.0, "work_r": 1.0, "work_house": 1.0, "run1": 0.12, "run3": 0.12, "ghost": 0.2},
              "wash": "#ffb868", "exp": 0.0},
@@ -455,12 +456,20 @@ def attach_costumes(kit, ctx):
                   kit.box("me cloak cape", (2.4, 1.3, 0.7), (0, 0, 1.78), M["cloak"], mt, bevel=0.14),
                   kit.box("me cloak sideL", (0.3, 1.3, 2.4), (-1.05, 0.0, 0.85), M["cloak"], mt, bevel=0.08),
                   kit.box("me cloak sideR", (0.3, 1.3, 2.4), (1.05, 0.0, 0.85), M["cloak"], mt, bevel=0.08)]
-    # the white earbuds: two small blocks at my ears; and in my palm (on the top of the raised right forearm)
-    C["ears"] = [kit.box(f"me earbud {sx}", (0.16, 0.2, 0.2), (sx * (R + 0.07), 0.02, -0.02), M["earbud"], mh, bevel=0.04)
-                 for sx in (-1, 1)]
-    arm1 = bpy.data.objects["me.arm1"]
-    C["palm"] = [kit.box(f"me palm bud {k}", (0.22, 0.16, 0.2), (0.0 + 0.2 * (1 if k else -1), -0.56, -1.55), M["earbud"], arm1,
-                         bevel=0.05) for k in (0, 1)]
+    # my script roll: a plain cream rolled-up script, no text. Under my arm (in front of the torso, at the hip, never
+    # gripped) or across my lap; both are children of the torso. The dropped one is a loose object (see animate).
+    def roll(name, loc, rot, parent):
+        r = kit.empty(name, loc, parent, rot=rot)
+        kit.cyl(name + " body", 0.17, 1.6, (0, 0, 0), M["roll"], r, n=16)
+        for e in (-1, 1):
+            kit.cyl(f"{name} end {e}", 0.11, 0.03, (0, 0, e * 0.815), M["roll_end"], r, n=12)
+        return r
+    C["roll_arm"] = [roll("me roll arm", (1.0, -0.86, -0.1), (0.0, math.radians(18), 0.0), mt)]
+    C["roll_lap"] = [roll("me roll lap", (0.25, -1.0, -1.3), (0.0, math.radians(90), math.radians(8)), mt)]
+    drop = roll("script roll drop", (0, 0, -50), (0, 0, 0), None)
+    drop.scale = (0.34, 0.34, 0.34)
+    drop.hide_render = True
+    ctx["drop"] = drop
     # Marion's glasses: the lenses out (they render black), full frames in
     for ob in list(bpy.data.objects):
         if ob.name in ("marion.gl-1", "marion.gl1", "marion.glf-1", "marion.glf1", "marion.glb"):
@@ -505,7 +514,7 @@ def attach_costumes(kit, ctx):
         hg = bpy.data.objects.get(f"{who}.headg")
         if hg is not None:
             for sx in (-1, 1):
-                kit.sphere(f"{who} glint {sx}", 0.055, (sx * 0.19, -R - 0.005, 0.1), M["glint"], hg, seg=8)
+                kit.sphere(f"{who} glint {sx}", 0.04, (sx * 0.19, -R - 0.005, 0.1), M["glint"], hg, seg=8)
     ctx["attached"] = True
 
 
@@ -543,6 +552,25 @@ def fade_value(tl, who, t):
     return v
 
 
+def head_value(tl, who, t, body):
+    """The head's own alpha when a headfade cue sets one (a = -1 hands the head back to 1.3 x the body)."""
+    prev = None
+    for c in sorted((c for c in _cues(tl, "headfade") if c["who"] == who), key=lambda c: c["t"]):
+        if c["t"] > t + 1e-9:
+            break
+        d = float(c.get("dur", 0))
+        u = 1.0 if d <= 0 else _ss((t - c["t"]) / d)
+        tgt = None if c["a"] < 0 else c["a"]
+        if prev is None and tgt is None:
+            continue
+        base = prev if prev is not None else min(1.0, body * 1.3)
+        goal = tgt if tgt is not None else min(1.0, body * 1.3)
+        prev = base + (goal - base) * u if u < 1.0 else tgt
+        if u >= 1.0 and tgt is None:
+            prev = None
+    return prev if prev is not None else min(1.0, body * 1.3)
+
+
 def animate(kit, story, tl, t, ctx):
     if not ctx["attached"] and bpy.data.objects.get("walt.headg") is not None:
         attach_costumes(kit, ctx)
@@ -563,6 +591,40 @@ def animate(kit, story, tl, t, ctx):
             on = bool(c.get(name, False)) and shown
             for o in objs:
                 _show(o, on)
+    # the dropped script roll: falls from under my arm, lands, then rolls to the yellow cross (a rigid tween)
+    drop = ctx.get("drop")
+    if drop is not None:
+        rc = _last(_cues(tl, "roll"), t)
+        on = bool(rc and rc.get("mode") == "drop")
+        _show(drop, False)
+        if on:
+            u0 = t - rc["t"] - float(rc.get("t0", 0))
+            if u0 >= 0:
+                _show(drop, True)
+                sx, sy, sz = rc["start"]
+                lx, ly = rc["land"]
+                tx, ty = rc["to"]
+                fall = float(rc.get("fall", 0.5))
+                dur = float(rc.get("dur", 2.4))
+                r = 0.17 * 0.34
+                if u0 < fall:
+                    k = u0 / fall
+                    pos = (sx + (lx - sx) * k, sy + (ly - sy) * k, sz + (r + 0.005 - sz) * k * k)
+                    dist = 0.0
+                else:
+                    k = min(1.0, (u0 - fall) / dur)
+                    e = 1 - (1 - k) ** 2
+                    pos = (lx + (tx - lx) * e, ly + (ty - ly) * e, r + 0.005)
+                    dist = math.hypot(tx - lx, ty - ly) * e
+                drop.location = pos
+                import mathutils
+                d = mathutils.Vector((tx - lx, ty - ly, 0.0))
+                d.normalize()
+                ax = mathutils.Vector((-d.y, d.x, 0.0))
+                q0 = mathutils.Vector((0, 0, 1)).rotation_difference(ax)
+                q1 = mathutils.Quaternion(ax, -dist / (r + 0.005) if dist else 0.0)
+                drop.rotation_mode = "QUATERNION"
+                drop.rotation_quaternion = q1 @ q0
     # glints belong to the faded ones: they follow their wearer's hide (children of the head group, set by pose())
     tc = _last(_cues(tl, "throne"), t)
     _show(ctx["throne"], bool(tc and tc.get("on")))
@@ -573,7 +635,7 @@ def animate(kit, story, tl, t, ctx):
     for who, vals in ctx["fades"].items():
         a = fade_value(tl, who, t)
         for val, is_head in vals:
-            val.outputs[0].default_value = min(1.0, a * 1.3) if is_head else a
+            val.outputs[0].default_value = head_value(tl, who, t, a) if is_head else a
     # the faded ones' lights follow the shot: {"key": [x,y,z], "rim": [x,y,z], "aim": [x,y,z], "kg", "rg"}
     fl = _last(_cues(tl, "flight"), t) or {}
     kit.LIGHTS["fkey"]["obj"].location = tuple(fl.get("key", (1.6, -0.9, 1.5)))

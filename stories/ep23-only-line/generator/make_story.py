@@ -81,8 +81,8 @@ def CH(lid, start):
 
 # ---------------------------------------------------------------------------------------------------- loop
 # S57 holds, then the 0.25 s tail and the loop cut to S01 (the same man in daylight)
-TEMPO = {"L11": 0.88, "L13": 0.85, "L36": 0.78, "L48": 0.85, "L38": 0.85, "L46": 0.88}
-SPOKEN = {("L36", 0): "the lights, sank", ("L48", 2): "on this,"}
+TEMPO = {"L11": 0.88, "L13": 0.85, "L36": 0.78, "L38": 0.85}
+SPOKEN = {("L36", 0): "the lights, sank"}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -115,9 +115,9 @@ LIPZ = -0.51
 THRONE = [0.0, 2.5, -0.06]
 SM = T(1.6, 1.5)                                              # the bus-stop man
 SD_W = S(-0.4, 1.4)                                           # Grandad at the stage door
-SD_ME = S(0.4, -0.3)
+SD_ME = S(0.5, 1.5)                                           # me beside him, the wall behind us both
 
-WALT_FADE0 = 0.85
+WALT_FADE0 = 0.6
 
 LINE_TOWN = "town"
 
@@ -238,15 +238,15 @@ shot("S07", "L07", "me beside the faint man", still(T(1.0, -2.8, 1.5), T(1.0, 1.
 shot("S08", "L08", "my hand against the sun", face(T(-1.6, 0.7), 3.3, 50, 6))
 # 02 Grandad
 shot("S09", "L09", "stage door at dusk, Grandad mid-story", still(S(0.7, -2.6, 1.45), S(-0.2, 1.6, 1.3), 34))
-shot("S10", "L10", "close on Grandad, brick through his cheek", face(SD_W, 2.6, 55, 6))
+shot("S10", "L10", "close on Grandad, brick through his cheek", face(SD_W, 2.6, 55, 28))
 shot("S11a", "L11", "Grandad leaning toward me", still(S(-1.4, -2.6, 1.6), S(-0.4, 1.4, 1.4), 38))
-shot("S11b", CH("L11", "Did I"), "over his shoulder to me, half turned away", still(S(-1.5, 2.7, 1.62), S(0.4, -0.3, 1.45), 44))
-shot("S12a", "L12", "me pushing an earbud in", still(S(1.9, 2.6, 1.62), S(0.4, -0.3, 1.45), 50))
-shot("S12b", CH("L12", "and put"), "Grandad's smile drops", face(SD_W, 2.7, 55, 6))
+shot("S11b", CH("L11", "Did I"), "over his shoulder to me, the lit wall behind", still(S(-2.8, -1.2, 1.6), S(0.5, 1.5, 1.45), 44))
+shot("S12a", "L12", "me muttering my line, the lit wall behind", still(S(2.0, -1.2, 1.55), S(0.5, 1.5, 1.5), 46))
+shot("S12b", CH("L12", "and went"), "Grandad's smile drops", face(SD_W, 2.7, 55, 6))
 shot("S13", "L13", "wide from the house: Grandad in robe and crown", still([0.0, -8.0, 1.45], [0.0, 2.5, 1.2], 24))
 shot("S14", "L14", "Grandad points me onto the cross", still([0.4, -3.6, 1.5], [1.2, 2.3, 1.3], 30))
 shot("S15a", "L15", "me on the cross, mumbling", face(YEL, 3.0, 50, -10))
-shot("S15b", CH("L15", "he cupped"), "Grandad leans in, hand cupped to his ear", still([3.2, 2.4, 1.6], [1.1, 1.9, 1.5], 50))
+shot("S15b", CH("L15", "he said"), "Grandad out to the seats, a flat hand beside his mouth", face(KING, 4.2, 40, -8, tz=1.3))
 # 03 Monday
 shot("S16", "L16", "the king, arms out", face(KING, 3.4, 44, 8, tz=1.36))
 shot("S17", "L17", "a track along the five players", TRACK_L)
@@ -261,7 +261,7 @@ shot("S24", "L24", "my face, I froze again", face(YEL, 3.0, 50, 4))
 shot("S25", "L25", "wide: the brick wall through his robe", still([0.0, -7.5, 1.45], [0.4, 2.6, 1.2], 24))
 shot("S26", "L26", "they have come one curtain nearer", still([1.2, 2.9, 1.55], [3.3, 5.4, 1.45], 30))
 shot("S27", "L27", "break: everyone on the stage lip", still([1.0, -4.6, 1.15], [-0.2, 0.4, 0.8], 22))
-shot("S28a", "L28", "me, earbuds in", face((LIP["me"], 0.45), 2.8, 52, -14, h=1.0, tz=0.82))
+shot("S28a", "L28", "me, the script roll on my lap", face((LIP["me"], 0.45), 2.8, 44, -14, h=1.05, tz=0.7))
 shot("S28b", CH("L28", "before"), "Grandad's hand comes down", face((LIP["walt"], 0.45), 2.8, 50, 14, h=1.0, tz=0.82))
 shot("S29", "L29", "nobody looks up", still([-0.6, -3.8, 0.95], [-0.2, 0.4, 0.85], 24))
 shot("S30", "L30", "the crown floats", still([0.0, -0.9, 1.0], [0.0, 2.0, 1.78], 40))
@@ -278,22 +278,25 @@ shot("S37", "L37", "the reveal: the ring round Grandad", still([0.0, -1.5, 1.3],
 shot("S38", "L38", "heads tilted in", still([0.9, 0.3, 1.5], [-1.0, 1.9, 1.5], 26))
 shot("S39", "L39", "Grandad still talking, Marion bowed", still([-0.2, -6.5, 1.5], [0.0, 2.0, 1.0], 60))
 shot("S40", "L40", "the ring, everyone else turned away", still([0.0, -3.3, 1.6], [0.0, 2.6, 1.2], 24))
-shot("S41", "L41", "my face, earbuds in, I get it", face((2.0, 3.45), 2.8, 52, 0))
+shot("S41", "L41", "my face, the script roll at the frame edge, I get it", face((2.0, 3.45), 2.8, 46, 0, tz=1.24))
 shot("S42", "L42", "Grandad's mouth moving", face(KING, 2.6, 52, 4, tz=1.4))
-shot("S43", "L43", "from Grandad's eye line: me", still([-0.35, 2.3, 1.6], [0.95, 1.2, 1.45], 50))
-shot("S44", "L44", "my palm opens on the earbuds", still([1.46, -0.9, 2.0], [1.46, 0.5, 1.4], 42))
-shot("S45", "L45", "he listens: the one picture", still([-0.9, -0.4, 1.4], [0.45, 1.6, 1.3], 22), step=1)
-shot("S46a", "L46", "Grandad, faint, eyes on me", face(KING, 2.6, 52, 20, tz=1.4))
-shot("S46b", CH("L46", "Did I"), "the ring turned with him", still([0.0, -3.3, 1.6], [0.0, 2.6, 1.2], 24))
-shot("S47", "L47", "me on the boards at his feet", still([1.9, 1.0, 0.95], [0.1, 1.6, 0.85], 32))
-shot("S48", "L48", "the yellow cross, his faint shoe", still([YEL[0] + 0.5, YEL[1] - 1.7, 0.3], [YEL[0] - 0.1, YEL[1], 0.15], 26))
-shot("S49", "L49", "the first leg, empty, the warm light on it", still([2.2, 1.0, 1.5], [4.2, 3.3, 1.4], 26))
-shot("S50", "L50", "Grandad smiles, the colour coming back", face(KING, 2.6, 52, 0, tz=1.4))
-shot("S51", "L51", "he comes back; I listen at his feet", still([0.9, -1.7, 1.1], [0.0, 2.0, 0.9], 24))
-# 07 Saturday and the sting
-shot("S52", "L52", "the full house, the wash coming up", still([0.0, -9.6, 2.5], [0.0, 3.0, 1.2], 30))
-shot("S53", "L53", "me, chin up", face(YEL, 3.0, 50, -6))
-shot("S54", "L54", "Grandad cups his ear anyway", face(KING, 2.8, 52, 8, tz=1.38))
+shot("S43", "L43", "from Grandad's eye line: me, the ring out of the way", still([-0.35, 2.3, 1.6], [0.7, 0.0, 1.4], 60))
+shot("S44", "L44", "low on the boards: the script roll falls and rolls to the cross", still([-0.2, -1.1, 0.5], [1.5, 1.5, 0.3], 28))
+shot("S45", "L45", "the one picture: his flat hand beside his mouth", still([-0.9, -0.4, 1.4], [0.45, 1.6, 1.3], 22), step=1)
+# 06 Saturday
+shot("S46", "L46", "from the back of the full house, the crown over a ghost", still([0.0, -9.2, 2.6], [0.0, 2.1, 1.6], 40))
+shot("S47", "L47", "the full house from the stage, one whispering to the next", still([0.9, 0.3, 1.15], [-0.15, -3.55, 0.95], 36))
+shot("S48", "L48", "me on the cross, glancing at him", face(YEL, 3.0, 50, 6))
+shot("S49a", "L49", "me facing the house, a flat hand beside my mouth", face(YEL, 4.2, 40, -4, tz=1.3))
+shot("S49b", CH("L49", "louder"), "over my shoulder to the back rows",
+     c([0, [YEL[0] - 0.5, YEL[1] + 1.2, 1.7], [0.0, -8.0, 0.3], 32], [1, [YEL[0] - 0.5, YEL[1] + 1.2, 1.7], [0.0, -8.0, 1.3], 32]))
+shot("S50", "L50", "two-shot: Grandad turns to me, the colour coming back", still([0.5, -2.0, 1.45], [0.55, 1.9, 1.4], 34))
+shot("S51", "L51", "from behind Grandad out to the full house", still([-0.05, 3.4, 1.75], [0.0, -8.0, 1.1], 30))
+# 07 The bow, and the sting
+BOW = {"p1": -3.0, "p2": -2.1, "p3": -1.2, "p4": -0.3, "p5": 0.6, "walt": 1.5, "me": 2.4}
+shot("S52", "L52", "the curtain call along the stage lip", still([-0.4, -5.6, 1.1], [0.0, 1.0, 1.0], 28))
+shot("S54a", "L54", "the first leg, empty, the warm light on it", still([2.2, 1.0, 1.5], [4.2, 3.3, 1.4], 26))
+shot("S54b", CH("L54", "GRAN"), "Grandad grinning at me", face([BOW["walt"], 1.0], 2.8, 52, 8, tz=1.38))
 shot("S55a", "L55", "the empty stage, the lights sink", still([0.0, -6.5, 1.5], [0.5, 3.0, 1.2], 26))
 shot("S55b", CH("L55", "the faded"), "the faded ones in the wings", still([0.6, 1.4, 1.55], [3.1, 5.2, 1.4], 30))
 shot("S56", "L56", "a slow push: a new one at the back",
@@ -395,15 +398,17 @@ put("me", "L07", T(0.2, 1.5), yaw=0, expr="neutral")
 put("me", "L08", T(-1.6, 0.7), yaw=0, expr="neutral", arms=[0, 105])
 hide("me", "L09")
 
-# --- the stage door
-put("walt", "L09", SD_W, yaw=0, expr="grin", side=[65, 65])
+# --- the stage door: Grandad and me side by side, the lit wall behind us both
+put("walt", "L09", SD_W, yaw=0, expr="grin", side=[0, 40])
+put("me", "L09", SD_ME, yaw=0, expr="neutral")
 talk("walt", "L09", "L10>")
-put("walt", "L11", SD_W, yaw=0, expr="grin", lean=12)
+put("walt", "L11", SD_W, yaw=-25, expr="grin", lean=12)
+put("me", "L11", SD_ME, yaw=0, expr="neutral")
 talk("walt", "L11", "L11>")
-key("walt", f"{CH('L12', 'and put')}+0.3", expr="worried", lean=0, blend=0.5)
-put("me", "L11", SD_ME, yaw=180, expr="neutral")
-key("me", CH("L11", "Did I"), head=[55, 0], blend=0.3)
-put("me", "L12", SD_ME, yaw=180, expr="neutral", arms=[0, 115])
+key("me", CH("L11", "Did I"), yaw=-30, blend=0.3)
+key("walt", f"{CH('L12', 'and went')}+0.3", expr="worried", lean=0, blend=0.5)
+put("me", "L12", SD_ME, yaw=-40, expr="neutral", head=[0, 24])
+acting["me"].append({"from": "L12", "to": "L12>", "mouth": [0.3, 0.3], "flap": True})
 hide("me", "L13")
 hide("walt", "L12>+0.05")
 
@@ -414,7 +419,8 @@ for p_i, p in enumerate(PLAYERS):
 put("walt", "L14", KING, yaw=50, expr="grin", arms=[0, 88])
 put("me", "L14", [3.9, 1.2], yaw=0, expr="neutral")
 walk("me", "L14+1.4", YEL)
-put("walt", CH("L15", "he cupped"), [1.1, 1.9], yaw=yaw_to([1.1, 1.9], YEL), expr="smile", arms=[0, 105], side=[0, 25], lean=8)
+put("walt", CH("L15", "he said"), KING, yaw=0, expr="smile", arms=[0, 0], side=[0, 125])
+talk("walt", CH("L15", "he said"), "L15>")
 put("me", "L15", YEL, yaw=0, expr="worried")
 acting["me"].append({"from": "L15", "to": "L15.1", "mouth": [0.2, 0.2]})
 
@@ -482,33 +488,53 @@ for i, p in enumerate(PLAYERS):
 ME_F = [2.0, 3.45]
 put("me", "L37", ME_F, yaw=0, expr="worried")
 for i, (x, y) in enumerate(RING):
-    put(FADED[i], "L37", [x, y], yaw=yaw_to([x, y], KING), expr="neutral", head=[0, 4])
+    _y = yaw_to([x, y], KING)
+    put(FADED[i], "L37", [x, y], yaw=(_y * 0.62 if abs(_y) < 110 else _y), expr="neutral", head=[0, 4])
 put("marion", "L39", ROW3_POS, yaw=180, expr="neutral", sit=True, head=[0, 24])
 hide("marion", "L40")
 key("me", "L41", expr="wide")
-put("me", "L43", [0.95, 1.2], yaw=yaw_to([0.95, 1.2], KING), expr="worried")
-put("me", "L44", [0.95, 1.2], yaw=0, expr="soft", arms=[0, 95])
-put("me", "L45", [0.95, 1.2], yaw=yaw_to([0.95, 1.2], KING), expr="worried")
-key("walt", "L45", head=[0, 0])
-put("walt", "L45", KING, yaw=yaw_to(KING, [0.95, 1.2]), expr="smile", arms=[0, 105], side=[0, 25], lean=6)
-put("walt", "L46", KING, yaw=yaw_to(KING, [0.95, 1.2]), expr="smile", arms=[0, 105], side=[0, 25], lean=4)
-talk("walt", "L46", "L46>")
-put("me", "L47", [0.2, 1.45, LIPZ], yaw=180, sit=True, expr="soft")
-put("walt", "L47", KING, yaw=0, expr="smile")
-put("walt", "L48", [YEL[0] - 0.55, YEL[1] - 0.15], yaw=0, expr="smile")
-put("walt", "L50", KING, yaw=0, expr="smile")
+put("me", "L43", [0.7, 0.0], yaw=yaw_to([0.7, 0.0], KING), expr="worried", head=[0, 22])
+put("me", "L44", [0.7, 0.0], yaw=0, expr="soft", head=[0, 22])
+hide("me", "L45")
+put("walt", "L45", KING, yaw=0, expr="smile", side=[0, 125], arms=[0, 0])
 for i in range(4):
-    hide(FADED[i], "L51")
+    key(FADED[i], "L45", yaw=0, head=[0, 0])
 hide("marion", "L40")
+
+# --- Saturday: the wash comes up under L46 and the company is back; the faded ones are not visible in the full light
+for i in range(4):
+    hide(FADED[i], "L46")
 for p in PLAYERS:
     hide(p, "L46")
+for i, p in enumerate(PLAYERS[:4]):
+    put(p, "L46", MARKS[i], yaw=0)
+put("walt", "L46", KING, yaw=0, expr="smile", side=[0, 125], arms=[0, 0])
+put("me", "L46", YEL, yaw=0, expr="neutral")
+put("marion", "L46", [-0.58, -3.55, -0.57], yaw=180, expr="neutral", sit=True, head=[-35, 6], lean=14)
+put("p5", "L46", [0.0, -3.55, -0.57], yaw=180, expr="worried", sit=True, head=[10, 4])
+key("walt", "L47", side=[0, 0], arms=[0, 0], expr="smile", blend=0.4)
+key("me", "L48", expr="neutral", head=[-30, 0], blend=0.4)
+key("me", "L49", head=[0, -8], side=[0, 125], arms=[0, 0], expr="neutral", blend=0.3)
+key("me", "L50", side=[0, 0], arms=[0, 0], head=[0, 0], blend=0.4)
+talk("me", "L49", "L49>")
+put("me", "L50", [1.15, 1.75], yaw=yaw_to([1.15, 1.75], KING), expr="smile")
+put("walt", "L50", KING, yaw=yaw_to(KING, [1.15, 1.75]), expr="smile")
+put("me", "L51", [1.15, 1.75], yaw=yaw_to([1.15, 1.75], KING), expr="smile")
+hide("marion", "L52")
+hide("p5", "L52")
 
-# --- Saturday and the sting
-players("L52")
-put("walt", "L52", KING, yaw=0, expr="grin", side=[75, 75])
-put("me", "L52", YEL, yaw=0, expr="neutral")
-key("walt", "L54", side=[0, 25], arms=[0, 105], expr="grin", blend=0.3)
+# --- the bow, and the sting
+for who, x in BOW.items():
+    if who in ("walt", "me"):
+        continue
+    put(who, "L52", [x, 1.0], yaw=0, expr="smile")
+put("walt", "L52", [BOW["walt"], 1.0], yaw=0, expr="grin", head=[-45, 0])
+put("me", "L52", [BOW["me"], 1.0], yaw=0, expr="smile")
+for who in BOW:
+    key(who, "L52+0.8", lean=26, blend=0.7)
+    key(who, "L52+2.2", lean=0, blend=0.7)
 talk("walt", "L52", "L52>")
+key("walt", "L54", expr="grin", head=[0, 0], blend=0.4)
 hide("walt", "L55")
 hide("me", "L55")
 for p in PLAYERS:
@@ -540,7 +566,7 @@ cue("L30-0.3", "mood", set="warm", dur=0.3)
 cue("L30>-1.0", "mood", set="ghost", dur=1.6)
 cue("L33>-1.0", "mood", set="warm", dur=1.8)
 cue("L36+0.2", "mood", set="ghost", dur=1.6)
-cue("L52", "mood", set="open", dur=2.0)
+cue("L46", "mood", set="open", dur=2.0)
 cue("L55+0.2", "mood", set="ghost", dur=1.6)
 # the faded ones' lights follow the wings
 cue(0, "flight", key=[1.6, -0.9, 1.5], rim=[4.0, 4.2, 2.6], aim=[0.0, 2.2, 1.3])
@@ -552,39 +578,54 @@ cue("L34", "flight", key=[1.6, -0.9, 1.5], rim=[4.0, 4.2, 2.6], aim=[0.0, 2.2, 1
 cue(CH("L55", "the faded"), "flight", key=[1.2, 3.0, 1.9], rim=[4.8, 6.6, 2.4], aim=[3.3, 5.2, 1.4])
 cue("L57", "flight", key=[1.6, 4.6, 1.9], rim=[4.8, 7.4, 2.4], aim=[3.9, 6.85, 1.5])
 # transparency: Grandad, the bus-stop man, the mime, the busker, the faded ones
-for who, a in (("walt", WALT_FADE0), ("stopman", 0.45), ("mime", 0.12), ("busker", 0.4), ("f1", 0.15), ("f2", 0.15),
+for who, a in (("walt", WALT_FADE0), ("stopman", 0.3), ("mime", 0.12), ("busker", 0.4), ("f1", 0.15), ("f2", 0.15),
                ("f3", 0.15), ("f4", 0.15)):
     cue(0, "fade", who=who, a=a, dur=0)
-cue(f"{CH('L12', 'and put')}+0.35", "fade", who="walt", a=0.80, dur=1.2)
-cue("L19+0.3", "fade", who="walt", a=0.72, dur=1.2)
-cue("L21+0.3", "fade", who="walt", a=0.60, dur=1.5)
-cue("L26+0.2", "fade", who="walt", a=0.55, dur=1.0)
-cue(f"{CH('L28', 'You TOLD')}+0.3", "fade", who="walt", a=0.45, dur=1.2)
-cue("L31+0.4", "fade", who="walt", a=0.35, dur=1.2)
-cue("L33+0.3", "fade", who="walt", a=0.25, dur=1.0)
+# faces keep their strokes: the faded ones' heads stay at about 0.6, the bus-stop man's face is clear, Grandad's head
+# follows his body at the stage door (the brick shows through his cheek), then 1.3 x his body from the play on
+for who in FADED:
+    cue(0, "headfade", who=who, a=0.6, dur=0)
+cue(0, "headfade", who="stopman", a=0.55, dur=0)
+cue(0, "headfade", who="walt", a=0.5, dur=0)
+cue(f"{CH('L12', 'and went')}+0.35", "headfade", who="walt", a=0.52, dur=1.2)
+cue("L13", "headfade", who="walt", a=-1, dur=0)
+cue(f"{CH('L12', 'and went')}+0.35", "fade", who="walt", a=0.52, dur=1.2)
+cue("L19+0.3", "fade", who="walt", a=0.45, dur=1.2)
+cue("L21+0.3", "fade", who="walt", a=0.40, dur=1.5)
+cue("L26+0.2", "fade", who="walt", a=0.36, dur=1.0)
+cue(f"{CH('L28', 'You TOLD')}+0.3", "fade", who="walt", a=0.30, dur=1.2)
+cue("L29+0.1", "headfade", who="walt", a=0.2, dur=1.4)
+cue("L31", "headfade", who="walt", a=-1, dur=0)
+cue("L31+0.4", "fade", who="walt", a=0.25, dur=1.2)
+cue("L33+0.3", "fade", who="walt", a=0.20, dur=1.0)
 cue("L36+0.5", "fade", who="walt", a=0.15, dur=1.4)
 cue("L50+0.3", "fade", who="walt", a=0.50, dur=1.5)
 cue("L51+0.35", "fade", who="walt", a=0.95, dur=1.8)
 cue("L52+0.5", "fade", who="walt", a=1.0, dur=1.0)
 cue("L54", "fade", who="stopman", a=0.15, dur=0.5)
-# costumes: Grandad's beard always, robe and crown from the play on; my cloak Friday and Saturday, the earbuds
+cue("L54", "headfade", who="stopman", a=0.3, dur=0.5)
+# costumes: Grandad's beard always, robe and crown from the play on; my cloak Friday and Saturday
 cue(0, "costume", who="walt", beard=True, crown=False, robe=False)
 cue("L13", "costume", who="walt", beard=True, crown=True, robe=True)
 cue("L55", "costume", who="walt", beard=True, crown=True, robe=True)
-cue(0, "costume", who="me", cloak=False, ears=False, palm=False)
-cue("L12", "costume", who="me", cloak=False, ears=True, palm=False)
-cue("L13", "costume", who="me", cloak=False, ears=False, palm=False)
-cue("L28", "costume", who="me", cloak=False, ears=True, palm=False)
-cue("L30", "costume", who="me", cloak=False, ears=False, palm=False)
-cue("L34", "costume", who="me", cloak=True, ears=False, palm=False)
-cue("L41", "costume", who="me", cloak=True, ears=True, palm=False)
-cue("L44", "costume", who="me", cloak=True, ears=False, palm=True)
-cue("L45", "costume", who="me", cloak=True, ears=False, palm=False)
+# my script roll: under my arm in S12, S15 and S37 to S43, on my lap on the break, dropped in S44, gone before Saturday
+cue(0, "costume", who="me", cloak=False, roll_arm=False, roll_lap=False)
+cue("L12", "costume", who="me", cloak=False, roll_arm=True, roll_lap=False)
+cue("L13", "costume", who="me", cloak=False, roll_arm=False, roll_lap=False)
+cue("L14", "costume", who="me", cloak=False, roll_arm=True, roll_lap=False)
+cue("L16", "costume", who="me", cloak=False, roll_arm=False, roll_lap=False)
+cue("L27", "costume", who="me", cloak=False, roll_arm=False, roll_lap=True)
+cue("L30", "costume", who="me", cloak=False, roll_arm=False, roll_lap=False)
+cue("L34", "costume", who="me", cloak=True, roll_arm=False, roll_lap=False)
+cue("L37", "costume", who="me", cloak=True, roll_arm=True, roll_lap=False)
+cue("L44", "costume", who="me", cloak=True, roll_arm=False, roll_lap=False)
+cue("L44", "roll", mode="drop", start=[0.8, -0.05, 0.85], land=[0.95, 0.35], to=YEL, t0=0.25, fall=0.5, dur=2.4)
+cue("L46", "roll", mode="none")
 cue(0, "throne", on=False)
 cue("L31", "throne", on=True)
 cue("L34", "throne", on=False)
 cue(0, "audience", on=False)
-cue("L52", "audience", on=True)
+cue("L46", "audience", on=True)
 cue("L55", "audience", on=False)
 
 # ---------------------------------------------------------------------------------------------------- sound
@@ -595,6 +636,7 @@ sfx = [
     {"at": "L33", "kind": "hit", "db": -10, "dur": 1.4},
     {"at": "L37", "kind": "hit", "db": -9, "dur": 1.6},
     {"at": "L50", "kind": "chime", "db": -24},
+    {"at": "L52", "kind": "bubbles", "db": -20, "dur": 5.5},
     {"at": "L55+0.6", "kind": "creak", "db": -26, "dur": 0.9},
 ]
 
@@ -603,7 +645,7 @@ story = {
     "title": "In This Town The Quiet Ones FADE",
     "made_for_kids": False,
     "premise": "In a small town the quiet ones fade until you can see the street through them. I'm the quietest person in town and perfectly solid, but my talkative grandad, the king in the playhouse play, is fading a shade each rehearsal, and under the ghost light the people who faded all the way stand in the wings, nearer every night.",
-    "twist": "In this town quiet means unheard. Grandad is fading because I stopped listening to him years ago, and I never faded because he has never once stopped listening to me. I sit at his feet and hear his story to the end, and he comes back a shade with every word.",
+    "twist": "In this town quiet means unheard. Grandad is fading because I stopped listening to him years ago, and I never faded because every word I ever mumbled, he said again, louder, so everyone heard it. On Saturday the house can't hear the faded king, so I say his line again, louder, for the back row, and every word they hear brings him back a shade.",
     "world": "a sunny brick terrace street, a playhouse stage door at dusk, and a raked stage with green velvet legs and a ghost light, where the faded stand in the wings",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff8fb1",
@@ -625,7 +667,7 @@ story = {
     "fx": [],
     # A Dorian at 66 bpm: a soft wooden tick and a bright plucked pad for the montage. Phrygian with a thin drone from
     # L16; the tick stops under each freeze (L18, L24, L35). The heavy low drone comes in at L22 (an ambience layer) and
-    # holds to L49. The pad warms to A major at L50. Saturday is A major, quiet. L55 on the drone returns, cold, and
+    # holds to L45, thins at L46 and drops out at L48. The pad warms to A major at L50. Saturday is A major, quiet. L55 on the drone returns, cold, and
     # stops dead on the loop cut.
     "music": {"root": 45, "mode": "dorian", "bpm": 66, "seed": 23,
               "sections": [
@@ -638,8 +680,9 @@ story = {
                   {"at": "L35", "voices": ["drone", "pad"], "energy": 0.4, "mode": "phrygian"},
                   {"at": "L36", "voices": ["drone", "pad", "tick"], "energy": 0.45, "mode": "phrygian"},
                   {"at": "L42", "voices": ["drone"], "energy": 0.3, "mode": "phrygian"},
-                  {"at": "L46", "voices": ["drone", "pad"], "energy": 0.35, "mode": "phrygian"},
-                  {"at": "L50", "voices": ["drone", "pad", "choir"], "energy": 0.5, "mode": "major"},
+                  {"at": "L46", "voices": ["drone", "pad"], "energy": 0.3, "mode": "phrygian"},
+                  {"at": "L48", "voices": ["pad"], "energy": 0.35, "mode": "dorian"},
+                  {"at": "L50", "voices": ["pad", "choir"], "energy": 0.5, "mode": "major"},
                   {"at": "L52", "voices": ["pad"], "energy": 0.25, "mode": "major"},
                   {"at": "L55", "voices": ["drone"], "energy": 0.3, "mode": "phrygian"},
                   {"at": "end-0.25", "voices": [], "energy": 0.0},
@@ -652,9 +695,11 @@ story = {
                   {"kind": "hum", "from": "L20", "to": "L24", "lufs": -42},
                   {"kind": "hum", "from": "L26", "to": "L27", "lufs": -42},
                   {"kind": "hum", "from": "L31", "to": "L34", "lufs": -42},
-                  {"kind": "hum", "from": "L36", "to": "L52", "lufs": -42},
+                  {"kind": "hum", "from": "L36", "to": "L46", "lufs": -42},
+                  {"kind": "room", "from": "L46", "to": "L48", "lufs": -29},
                   {"kind": "hum", "from": "L55", "to": "end", "lufs": -42},
-                  {"kind": "drone", "from": "L22", "to": "L50", "lufs": -31},
+                  {"kind": "drone", "from": "L22", "to": "L46", "lufs": -31},
+                  {"kind": "drone", "from": "L46", "to": "L48", "lufs": -38},
                   {"kind": "drone", "from": "L55", "to": "end", "lufs": -31},
               ],
               "sfx": sfx,

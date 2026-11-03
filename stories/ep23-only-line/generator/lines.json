@@ -182,8 +182,12 @@
     "yes, grandad,"
    ],
    [
-    "and put my EARBUDS in.",
-    "and put my earbuds in."
+    "and went over my LINE",
+    "and went over my line"
+   ],
+   [
+    "under my BREATH.",
+    "under my breath."
    ]
   ]
  },
@@ -228,16 +232,20 @@
     "when i mumbled it,"
    ],
    [
-    "he cupped his EAR",
-    "he cupped his ear"
+    "he said it AGAIN,",
+    "he said it again,"
    ],
    [
-    "and said,",
-    "and said,"
+    "LOUDER,",
+    "louder,"
    ],
    [
-    "\"Say it AGAIN, LOVE.\"",
-    "say it again, love."
+    "to the BACK",
+    "to the back"
+   ],
+   [
+    "of the HOUSE.",
+    "of the house."
    ]
   ]
  },
@@ -683,16 +691,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "And I've never FADED,",
-    "and i've never faded,"
+    "And I'd never FADED,",
+    "and i'd never faded,"
    ],
    [
-    "because he never ONCE",
-    "because he never once"
+    "because every word I ever MUMBLED,",
+    "because every word i ever mumbled,"
    ],
    [
-    "stopped listening to ME.",
-    "stopped listening to me."
+    "he said AGAIN,",
+    "he said again,"
+   ],
+   [
+    "LOUDER.",
+    "louder."
    ]
   ]
  },
@@ -703,110 +715,6 @@
  },
  {
   "id": "L46",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then, very QUIETLY,",
-    "then, very quietly,"
-   ],
-   [
-    "he asked,",
-    "he asked,"
-   ],
-   [
-    "\"Did I ever TELL you",
-    "did i ever tell you"
-   ],
-   [
-    "how I met your GRAN?\"",
-    "how i met your gran?"
-   ]
-  ]
- },
- {
-  "id": "L47",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I said,",
-    "i said,"
-   ],
-   [
-    "\"NO.",
-    "no."
-   ],
-   [
-    "TELL me.\"",
-    "tell me."
-   ]
-  ]
- },
- {
-  "id": "L48",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Forty years AGO,",
-    "forty years ago,"
-   ],
-   [
-    "he FROZE",
-    "he froze"
-   ],
-   [
-    "on this same LINE.",
-    "on this same line."
-   ]
-  ]
- },
- {
-  "id": "L49",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A YOUNG woman",
-    "a young woman"
-   ],
-   [
-    "in the WINGS",
-    "in the wings"
-   ],
-   [
-    "WHISPERED it for him.",
-    "whispered it for him."
-   ]
-  ]
- },
- {
-  "id": "L50",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He MARRIED her.",
-    "he married her."
-   ]
-  ]
- },
- {
-  "id": "L51",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every word I HEARD,",
-    "every word i heard,"
-   ],
-   [
-    "he came back",
-    "he came back"
-   ],
-   [
-    "a SHADE.",
-    "a shade."
-   ]
-  ]
- },
- {
-  "id": "L52",
   "who": "narrator",
   "chunks": [
    [
@@ -828,20 +736,110 @@
   ]
  },
  {
-  "id": "L53",
+  "id": "L47",
   "who": "narrator",
   "chunks": [
    [
-    "I said it",
-    "i said it"
+    "Nobody in the HOUSE",
+    "nobody in the house"
    ],
    [
-    "to the BACK",
-    "to the back"
+    "could HEAR him.",
+    "could hear him."
+   ]
+  ]
+ },
+ {
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I did",
+    "so i did"
    ],
    [
-    "of the HOUSE.",
-    "of the house."
+    "what he'd always DONE",
+    "what he'd always done"
+   ],
+   [
+    "for ME.",
+    "for me."
+   ]
+  ]
+ },
+ {
+  "id": "L49",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I said his line AGAIN,",
+    "i said his line again,"
+   ],
+   [
+    "LOUDER,",
+    "louder,"
+   ],
+   [
+    "for the BACK ROW.",
+    "for the back row."
+   ]
+  ]
+ },
+ {
+  "id": "L50",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then I ANSWERED it.",
+    "then i answered it."
+   ],
+   [
+    "\"I'm HERE,",
+    "i'm here,"
+   ],
+   [
+    "my LORD.\"",
+    "my lord."
+   ]
+  ]
+ },
+ {
+  "id": "L51",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every word they HEARD,",
+    "every word they heard,"
+   ],
+   [
+    "he came back",
+    "he came back"
+   ],
+   [
+    "a SHADE.",
+    "a shade."
+   ]
+  ]
+ },
+ {
+  "id": "L52",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At the BOW,",
+    "at the bow,"
+   ],
+   [
+    "he whispered,",
+    "he whispered,"
+   ],
+   [
+    "\"Did I ever TELL you",
+    "did i ever tell you"
+   ],
+   [
+    "how I met your GRAN?\"",
+    "how i met your gran?"
    ]
   ]
  },
@@ -850,12 +848,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "\"I'm HERE,",
-    "i'm here,"
+    "Forty years AGO,",
+    "forty years ago,"
    ],
    [
-    "my LORD.\"",
-    "my lord."
+    "GRAN said this line for HIM,",
+    "gran said this line for him,"
+   ],
+   [
+    "from the WINGS.",
+    "from the wings."
    ]
   ]
  },
