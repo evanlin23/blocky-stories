@@ -11,7 +11,8 @@
 ## The story
 
 - **Premise:** In this town, everyone glows a little brighter for every secret they keep. I'm the one person with no glow at all, because I tell everything. Grandad Abe guides at the museum on Friday late openings and has always been the brightest man in town. This spring the curator starts asking about a mended bone in the big skeleton's tail, and every week he gets brighter, until people cross the road and the museum moves him to the dark galleries. A line of dust wiped clean at knee height runs down the cases, and the skeleton's head turns a little further toward our old bench each week.
-- **Rule:** you glow a little brighter for every secret you keep. Telling someone passes the glow to them (shown, never explained: the whisper in the montage).
+- **Rule:** you glow a little brighter for every secret you keep. Telling someone passes the glow to them (shown, never explained: the whisper in the montage). Since 2026-11-03 it's said as a warning: "In this town, never plan a surprise party." (L01, 8 words), then "Every secret you keep makes you glow." (L02, 7 words).
+- **Quotable line:** L19, "He sleeps with a towel on his face." (an odd rule detail said flatly, short enough to type).
 - **Twist:** the secret Grandad has been keeping for nine years is mine. I knocked down the skeleton's tail my first summer helping out, I told him, and he told everyone it was him. Every time somebody asks about that tail, he keeps it again. I never glowed because he was keeping mine. The first line turns over: the brightest man in town had only one secret, and it was somebody else's.
 - **Where the twist is planted:**
   - Plant 1, the mended tail bone (L14): one bone in the tail is a paler colour, mended. The curator asks about it (L15), and Grandad brightens each week (L16). The last turn (L75) names it.
@@ -27,9 +28,9 @@
 
 | Hit | How this story does it |
 |---|---|
-| 1. Rule as first line | L01 "In this town, you glow a little brighter for every secret you keep." 13 words |
+| 1. Rule as first line | L01 "In this town, never plan a surprise party." 8 words, a warning to you (opening recipe v1, 2026-11-03). L02 "Every secret you keep makes you glow." tightens it |
 | 2. Rule visible by 2 s | the marker is our own design: a soft gold outline glow round every character's silhouette, faint for most, lamp-bright for one man behind. On screen from frame 1 on sunny museum steps |
-| 3. Montage in the first 15 s | four examples: the surprise party (L02, L03), the whisper (L04), the engaged couple (L05), the dullest man (L06) |
+| 3. Montage in the first 15 s | four examples: the surprise party (L01, L03), the whisper (L04), the engaged couple (L05), the dullest man (L06) |
 | 4. The narrator is the exception | L07 to L09: no glow at all. I've never kept a secret |
 | 5. A loved one at stake | Grandad Abe, an older adult, brighter every week, shunned, then missing at closing (L29 to L32) |
 | 6. The climax turns the rule's logic | telling passes the glow on (L04), so a secret everyone knows is kept by nobody (L61). I tell the whole crowd, then sit back on my seat (L69). No new magic |
@@ -45,6 +46,13 @@
 - **The creature, little and late:** a wiped line in the dust (L23, L34), the skeleton's head turning (L25, L26), a bent dark shape just past the edge of Grandad's glow, out of focus (L27), a slow creak like a case lid (L35), and Grandad's word that the bench creaks every Friday (L40, L41). Shown clearly from L49 at about 83 s (61%), well lit by Grandad's own glow, through L57 (about 96 s) and in cutaways to L68 (about 119 s). It's never seen moving: every change in its pose happens across a cut.
 - **Leans in face to face:** L57. Its hanging head turned up, a hand's width from my face. It never touches me and never chases.
 - **Warm turn, cold last line:** warm L66 to L74. Cold L78 to L80.
+
+## Opening recipe fix, 2026-11-03
+
+- **Changed:** L01 and L02 only, re-voice these two. L01 was "In this town, you glow a little brighter for every secret you keep." (13 words), now "In this town, never plan a surprise party." (8 words, about 1.7 s), a warning to you per `docs/research/playbook.md` (opening recipe v1). L02 was "Nobody can throw a surprise party." (6 words), now "Every secret you keep makes you glow." (7 words, about 1.4 s), which tightens the same warning and gives the reason. L03 ("The PLANNER / lights up / the STREET.") now follows L01's party straight on and is unchanged. No other line is cut or changed. Spoken words go from 604 to 596.
+- **Plot check:** the warning is true of the town (a planner keeps a secret, so he glows), names nobody, and says nothing about Grandad, the tail or whose secret he keeps. L76 still restates the rule in full ("you GLOW / for every SECRET / you KEEP"), so the ending lands the same. The loop runs "what STOOD / over my SEAT." into "In this town, never plan a surprise party."
+- **Quotable line:** L19, "He sleeps with a towel on his face."
+- **First shot (for the builder):** frame 1 looks straight at a surprise party already going wrong: the living room set (`lv`), guests crouched behind the sofa, and the party planner crouched in the middle glowing lamp-bright, so the sofa hides nobody and gold light spills over its back onto the wall. His face is in frame, `sheepish`, eyes wide. Camera about 3 m from the sofa, lens 27 mm or longer, pushing in slowly through L01. No wide in the first 3 s: the old L01 shots (the yellow raincoat close, then a wide of a dozen rims on the steps from 3.2 m back) move to after L02, or the steps wide is dropped. Sound hit (a soft warm swell cut short, under 4 kHz) on "PARTY", the warning's last word, about 1.6 s. L02 cuts to a close of the planner's glow brightening (a slow 1 s ramp, no flash), then L03 on the dusk doorstep as before. Keep every glow under clipping (the planner's eyes stay the brightest thing).
 
 ## World
 
@@ -137,10 +145,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the museum steps, then the montage interiors.
 - **Shots:** 12.
 
-- `L01` narrator: In this TOWN, / you GLOW / a little BRIGHTER / for every SECRET / you KEEP.
+- `L01` narrator: In this TOWN, / NEVER plan / a surprise PARTY.
+  - [since 2026-11-03, frame 1 is the glowing surprise party behind the sofa (see "Opening recipe fix"), and these two steps shots move to after L02 or go]
   - [sunny museum steps. A woman visitor in a yellow raincoat, face a third of frame, a soft gold rim round her outline, smiling, a little smug]
   - [wider on the steps: a dozen visitors, each with a faint rim, one man in the middle lit up like a lamp, others shading their eyes at him]
-- `L02` narrator: Nobody can throw / a SURPRISE PARTY.
+- `L02` narrator: Every SECRET / you keep / makes you GLOW.
   - [a living room: guests crouched behind a sofa, each faintly glowing]
 - `L03` narrator: The PLANNER / lights up / the STREET.
   - [dusk doorstep: the party planner, lamp-bright, the birthday man on the path squinting into the glow, `sheepish` smile]
@@ -185,7 +194,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L18` narrator: The museum / hides him / in the DARK / galleries. / His JOB / is NEXT.
   - [the curator, apologetic, pointing him through a doorway into a dim side room]
   - [the dark gallery, cool blue, Grandad alone, the only light, the cases around him warm on one side. Open on a slow 0.4 s rise from the cut]
-- `L19` narrator: He sleeps / with a TOWEL / on his FACE.
+- `L19` narrator: He sleeps / with a TOWEL / on his FACE. (**quotable line**)
   - [his small bedroom at night, Grandad in bed on his back, a checked towel over his face, glowing through it at the edges]
 - `L20` narrator: I stop GOING. / I blame / the LIGHT.
   - [the bench in the hall, Grandad alone in his seat, my seat beside him empty, his glow spilling onto it]

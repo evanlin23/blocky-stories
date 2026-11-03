@@ -604,20 +604,12 @@
      "in this town,"
     ],
     [
-     "you GLOW",
-     "you glow"
+     "NEVER plan",
+     "never plan"
     ],
     [
-     "a little BRIGHTER",
-     "a little brighter"
-    ],
-    [
-     "for every SECRET",
-     "for every secret"
-    ],
-    [
-     "you KEEP.",
-     "you keep."
+     "a surprise PARTY.",
+     "a surprise party."
     ]
    ]
   },
@@ -626,12 +618,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Nobody can throw",
-     "nobody can throw"
+     "Every SECRET",
+     "every secret"
     ],
     [
-     "a SURPRISE PARTY.",
-     "a surprise party."
+     "you keep",
+     "you keep"
+    ],
+    [
+     "makes you GLOW.",
+     "makes you glow."
     ]
    ]
   },
