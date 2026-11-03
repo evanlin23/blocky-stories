@@ -10,7 +10,7 @@ T = {
 "L02": ["The doctor hid", "at the back", "of the CINEMA."],
 "L03": ["Her hands lit", "up the whole", "ROW."],
 "L04": ["His dog's waiting", "at HOME,", "so he glows", "all through WORK."],
-"L05": ["After a row,", "you both glow,", "and you both", "pretend you DON'T."],
+"L05": ["After a fight,", "you both glow,", "and you both", "pretend you DON'T."],
 "L06": ["Pockets don't help.", "The light gets", "OUT."],
 "L07": ["And then", "there's ME."],
 "L08": ["My hands have", "never glowed.", "Not that", "I've SEEN."],
