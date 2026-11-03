@@ -26,7 +26,40 @@
   "sky": "#0c1018",
   "sky_strength": 1.0,
   "exposure": 0.6,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": {
+   "emph": [
+    "L01.3",
+    "L11.3",
+    "L16",
+    "L17.3",
+    "L18.2",
+    "L23.2",
+    "L27.2",
+    "L31.2",
+    "L40.4"
+   ],
+   "quiet": [
+    [
+     "L35",
+     "L37"
+    ]
+   ],
+   "reveal": [
+    "L31.2"
+   ],
+   "sway": [
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S30",
+    "S31",
+    "S39",
+    "S40"
+   ],
+   "bed_kind": "room"
+  }
  },
  "grade": {
   "shadows": [
@@ -5576,7 +5609,8 @@
    }
   ]
  },
- "sound": {"rev": 2, 
+ "sound": {
+  "rev": 4,
   "floor": "wood",
   "steps_db": -22,
   "ambience": [

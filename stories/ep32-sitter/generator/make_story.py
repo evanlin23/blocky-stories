@@ -568,7 +568,12 @@ story = {
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#1b2230", "fog_density": 0.012, "fog_start": 9.0, "sky": "#0c1018", "sky_strength": 1.0, "exposure": 0.6,
-             "flash_safe": True},
+             "flash_safe": True,
+             # the polish pack (docs/engine.md): punch-ins on the hook and the creeping beats, the reveal, a tense sway
+             "polish": {"emph": ["L01.3", "L11.3", "L16", "L17.3", "L18.2", "L23.2", "L27.2", "L31.2", "L40.4"],
+                        "quiet": [["L35", "L37"]],
+                        "reveal": ["L31.2"], "sway": ["S21", "S22", "S23", "S24", "S30", "S31", "S39", "S40"],
+                        "bed_kind": "room"}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012},
     "rain_shots": rain_shots,
@@ -590,7 +595,7 @@ story = {
                   {"at": "L32", "voices": ["pad", "piano"], "energy": 0.4, "mode": "major", "root": 45, "bpm": 76},
                   {"at": "L38", "voices": ["drone"], "energy": 0.3, "mode": "minor", "bpm": 68},
               ]},
-    "sound": {"floor": "wood", "steps_db": -22,
+    "sound": {"rev": 4, "floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "room", "from": 0, "to": "end", "lufs": -34},
                   {"kind": "rain", "from": "L09", "to": "L32", "lufs": -30, "lp": 3500},
