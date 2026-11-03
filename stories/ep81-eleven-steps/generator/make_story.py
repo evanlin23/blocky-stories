@@ -351,7 +351,7 @@ box("L46", BOT)
 S("L46", X((0.0, 3.9, 4.4), (0.0, 0.2, 0.4), 10.5), "evening", note="top-down: with eleven steps (the box the bottom one)")
 clm("L46.1", [0.0, 2.38, 0.19 * 9], yaw=180, fold=0.62, roll=-75, reach=8, hp=5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.3, ax=0.1, ay=0.0, az=2.0, rx=-1.2, ry=-0.6, rz=2.3)
 count("L46.1", 11)
-S("L46.1", X((0.0, 3.9, 4.3), (0.0, 1.9, 1.8), 12), "dim", fill=0.3, clkey=1.8, clrim=5.0, note="ten leaves it one tread below the landing")
+S("L46.1", X((0.0, -1.3, 0.9), (0.0, 2.4, 2.9), 12, (0.0, -1.0, 0.95), None, 12), "dim", fill=0.3, clkey=1.8, clrim=5.0, note="ten leaves it one tread below the landing")
 S("L47", X((1.1, 4.1, 3.0), (0.0, 2.4, 1.9), 13), "evening", note="one step below the landing, one step from me")
 clm("L48", None)
 S("L48", X((1.3, -1.7, 0.9), (0.0, -0.4, 0.4), 13), "dawn", note="dawn: Dad lifts the box away so I'd never know")
@@ -395,7 +395,7 @@ clm("L58", None)
 box("L58", DOORBOX)
 count("L58", 10)
 put("me", "L58", [0.35, 4.35, LZ - 0.62], 180, "asleep", lean=0)
-S("L58", X((0.0, 2.0, 3.0), (0.2, 4.4, LZ + 0.6), 12), "dawn", fill=1.0, note="morning: the landing empty but for the box; me asleep against my door")
+S("L58", X((1.8, 2.8, LZ + 1.6), (0.2, 4.4, LZ + 0.5), 12), "dawn", fill=1.0, note="morning: the landing empty but for the box; me asleep against my door")
 put("dad", "L58", [0.0, 2.6, LZ], 0, "soft")
 walk("dad", "L58.1", [0.0, 2.6, LZ], "L59", [0.0, 3.0, LZ], 180, "soft")
 S("L59", X((0.0, 4.3, LZ + 1.4), (0.0, 2.6, LZ + 1.5), 14), "dawn", fill=0.9, note="Dad's face at the top of the stairs, soft")
@@ -430,8 +430,8 @@ S("L67", X((0.0, -1.5, 0.35), (0.0, 1.7, 1.1), 12.5, (0.0, -1.15, 0.37), None, 1
 dip("L67.1", 5, 0.6)
 S("L68", X((0.8, 1.6, 2.6), (0.0, 2.3, 1.75), 14), "night", hand=0.003, note="the cold step just below the landing")
 clm("L69", [0.0, 2.38, 0.19 * 9 - 0.35], yaw=180, fold=0.55, roll=-75, reach=8, hp=-5, hy=0, hoff=0.42, kx=-0.2, ky=1.3, kz=0.3, ax=0.1, ay=0.0, az=2.0, rx=-1.2, ry=-0.6, rz=2.3)
-S("L69", X((0.6, 4.4, LZ + 0.7), (0.0, 2.4, 2.9), 10, (0.55, 4.1, LZ + 0.72), None, 10), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="on the step just below the landing, it has sat down")
-S("L70", X((0.3, 3.9, LZ + 0.5), (0.0, 2.4, 3.0), 13, (0.28, 3.6, LZ + 0.52), None, 13), "creature", fill=0.0, door=0.3, clkey=1.8, clrim=7.0, hand=0.003, note="head on its shoulder, facing up, waiting")
+S("L69", X((0.5, 4.85, LZ + 0.8), (0.0, 2.4, 3.0), 8, (0.48, 4.8, LZ + 0.82), None, 8), "creature", fill=0.0, door=0.3, clkey=1.2, clrim=7.0, hand=0.003, note="on the step just below the landing, it has sat down")
+S("L70", X((0.3, 4.85, LZ + 0.5), (0.0, 2.4, 3.9), 12, (0.28, 4.8, LZ + 0.52), None, 12), "creature", fill=0.0, door=0.3, clkey=1.2, clrim=7.0, hand=0.003, note="head on its shoulder, facing up, waiting")
 clm("L71", None)
 count("L71", 11)
 S("L71", X((0.05, -1.5, 0.3), (0.0, 1.7, 1.05), 12.5, (0.05, -1.15, 0.31), None, 12.5), "night", hand=0.003, note="push in to the bottom step: frame 1 again")
@@ -480,7 +480,7 @@ story = {
                   {"at": "L67", "voices": ["drone", "tick"], "energy": 0.35},
               ]},
     "sound": {
-        "rev": 2, "floor": "wood", "steps_db": -24,
+        "rev": 3, "floor": "wood", "steps_db": -24,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -44}],
         "sfx": [
             {"at": "L01.3", "kind": "creak", "db": -14, "dur": 0.9},
