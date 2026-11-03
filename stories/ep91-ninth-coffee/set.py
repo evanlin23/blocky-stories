@@ -170,7 +170,8 @@ def ghost(hexc, alpha, emit=0.9):
 
 
 def streak_material():
-    """Electric cyan fading to white and to nothing along the mesh's local +y (0 at the head, 1 at the tail)."""
+    """Electric cyan fading to pale cyan and to nothing along the mesh's local +y (0 at the head, 1 at the tail), with
+    soft bands across it like afterimages. Smooth and still: nothing here changes with time."""
     kit = K.kit
     m = kit._new(nm("streak"))
     nt, out = clear_nodes(m)
@@ -180,22 +181,35 @@ def streak_material():
     mr = nt.nodes.new("ShaderNodeMapRange")
     mr.clamp = True
     nt.links.new(sep.outputs["Y"], mr.inputs["Value"])
-    al = nt.nodes.new("ShaderNodeMapRange")
-    al.clamp = True
-    al.inputs["To Min"].default_value = 0.97
-    al.inputs["To Max"].default_value = 0.0
-    nt.links.new(mr.outputs["Result"], al.inputs["Value"])
+
+    def mth(op, a=None, b=None):
+        n = nt.nodes.new("ShaderNodeMath")
+        n.operation = op
+        for i, v in enumerate((a, b)):
+            if v is None:
+                continue
+            if isinstance(v, (int, float)):
+                n.inputs[i].default_value = v
+            else:
+                nt.links.new(v, n.inputs[i])
+        return n.outputs[0]
+
+    u = mr.outputs["Result"]
+    inv = mth("SUBTRACT", 1.0, u)
+    fall = mth("POWER", inv, 0.55)
+    band = mth("ADD", mth("MULTIPLY", mth("SINE", mth("MULTIPLY", u, 38.0)), 0.1), 0.9)
+    alpha = mth("MULTIPLY", mth("MULTIPLY", fall, band), 0.9)
     mix = nt.nodes.new("ShaderNodeMix")
     mix.data_type = "RGBA"
-    mix.inputs[6].default_value = kit.col(CYAN)
-    mix.inputs[7].default_value = kit.col("#8ff0ff")
-    nt.links.new(mr.outputs["Result"], mix.inputs[0])
+    mix.inputs[6].default_value = kit.col("#00d8ff")
+    mix.inputs[7].default_value = kit.col("#7aeeff")
+    nt.links.new(mth("MULTIPLY", u, u), mix.inputs[0])
     em = nt.nodes.new("ShaderNodeEmission")
-    em.inputs["Strength"].default_value = 1.5
+    em.inputs["Strength"].default_value = 0.65
     nt.links.new(mix.outputs[2], em.inputs["Color"])
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mx = nt.nodes.new("ShaderNodeMixShader")
-    nt.links.new(al.outputs["Result"], mx.inputs[0])
+    nt.links.new(alpha, mx.inputs[0])
     nt.links.new(tr.outputs[0], mx.inputs[1])
     nt.links.new(em.outputs[0], mx.inputs[2])
     nt.links.new(mx.outputs[0], out.inputs["Surface"])
@@ -211,14 +225,18 @@ def frustum(verts, faces_, x0, x1, z0, z1, xt0, xt1, zt0, zt1):
 
 
 def make_streak(mat):
+    """Slender light-trail ribbons from the head, chest, arms, waist and legs (gaps between them, so it reads as a smear
+    of motion and not a glass box). Head end at y 0, tail at y 1."""
     v, f = [], []
-    frustum(v, f, -0.52, 0.52, 0.9, 2.0, -0.62, 0.62, 0.7, 2.3)       # torso
-    frustum(v, f, -0.44, 0.44, 0.0, 0.95, -0.5, 0.5, 0.0, 0.6)       # legs
-    for s in (-1, 1):                                                    # arms
-        a, c = sorted((s * 0.46, s * 0.82))
-        ta, tc_ = sorted((s * 0.30, s * 0.52))
-        frustum(v, f, a, c, 1.05, 1.62, ta, tc_, 1.18, 1.52)
-    frustum(v, f, -0.28, 0.28, 1.95, 2.28, -0.16, 0.16, 2.0, 2.2)        # head
+    for (x0, x1, z0, z1, xt0, xt1, zt0, zt1) in (
+            (-0.27, 0.27, 1.98, 2.34, -0.33, 0.33, 2.06, 2.22),     # head
+            (-0.52, 0.52, 1.52, 1.92, -0.62, 0.62, 1.62, 1.8),      # chest
+            (-1.0, -0.5, 1.28, 1.62, -1.25, -0.7, 1.4, 1.5),        # left arm
+            (0.5, 1.0, 1.28, 1.62, 0.7, 1.25, 1.4, 1.5),            # right arm
+            (-0.46, 0.46, 0.92, 1.3, -0.56, 0.56, 1.0, 1.18),       # waist
+            (-0.46, -0.04, 0.0, 0.88, -0.62, -0.1, 0.3, 0.55),      # left leg
+            (0.04, 0.46, 0.0, 0.88, 0.1, 0.62, 0.3, 0.55)):         # right leg
+        frustum(v, f, x0, x1, z0, z1, xt0, xt1, zt0, zt1)
     ob = K.kit.mesh_obj(nm("streak"), v, f, mat, None)
     no_shadow(ob)
     return ob
@@ -490,10 +508,10 @@ def build(kit, story, tl):
     espm = P(ESP, 0.5)
 
     # ---- lights: a sun through the walls, a soft area light overhead and a fill that follows the camera
-    ctx["sun"] = kit.light("sun", "SUN", (0, 0, 50), 2.4, "#fff1d8", size=0.1)
+    ctx["sun"] = kit.light("sun", "SUN", (0, 0, 50), 1.9, "#fff1d8", size=0.1)
     ctx["sun"].data.angle = 0.08
-    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 40, "#fff0dc", size=0.5, shadow=False)
-    ctx["roomfill"] = kit.light("roomfill", "AREA", (0, 3.0, 3.3), 300, "#fff4e4", size=10.0)
+    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 22, "#fff0dc", size=0.5, shadow=False)
+    ctx["roomfill"] = kit.light("roomfill", "AREA", (0, 3.0, 3.3), 160, "#fff4e4", size=10.0)
     ctx["roomfill"].data.size_y = 16.0
 
     # ---- the room
@@ -506,10 +524,10 @@ def build(kit, story, tl):
     B(None, (0.3, 7.2, 3.5), (10.15, -3.5, 1.75), cream, "wallR1", 0.0)         # right wall, with the elevator gap y 1.1..2.9
     B(None, (0.3, 9.1, 3.5), (10.15, 7.45, 1.75), cream, "wallR2", 0.0)
     B(None, (0.3, 1.8, 1.1), (10.15, 2.0, 2.95), cream, "wallR3", 0.0)
-    ceil = B(None, (21, 20, 0.1), (0, 2.5, 3.55), P("#fffaf0", 0.8, 0.05), "ceil", 0.0)
+    ceil = B(None, (21, 20, 0.1), (0, 2.5, 3.55), kit.emit("#fff6e6", 0.45, name="ceiling"), "ceil", 0.0)
     no_shadow(ceil)
     for bx in (-6.0, -2.0, 2.0, 6.0):
-        lb = B(None, (0.35, 16, 0.03), (bx, 3.0, 3.485), kit.emit("#fffdf5", 2.0, name="ceilbar"), "ceilbar", 0.0)
+        lb = B(None, (0.35, 16, 0.03), (bx, 3.0, 3.485), kit.emit("#fffdf5", 1.2, name="ceilbar"), "ceilbar", 0.0)
         no_shadow(lb)
     for ob in ctx.get("walls", []):
         no_shadow(ob)
@@ -520,7 +538,7 @@ def build(kit, story, tl):
         B(None, (0.04, 19, 0.12), (sx * 9.98, 2.5, 0.06), espm, "base", 0.0)
     B(None, (20, 0.04, 0.12), (0, 11.98, 0.06), espm, "base", 0.0)
     # windows: a sky picture 1 cm proud of the wall, white mullions 2 cm proud
-    ctx["winmat"] = kit.emit("#a9dcff", 1.15, name="window")
+    ctx["winmat"] = kit.emit("#a9dcff", 0.85, name="window")
     white = P("#ffffff", 0.5)
 
     def window(wall, c, w):
@@ -719,7 +737,7 @@ def late_init(kit, ctx):
 
 # ------------------------------------------------------------------------------------------------ the looks
 LOOKS = {
-    "day": {"az": -35, "el": 52, "sun": 1.0, "col": "#fff1d8", "win": "#a9dcff", "winst": 1.15, "exp": 0.0, "room": 1.0},
+    "day": {"az": -35, "el": 52, "sun": 1.0, "col": "#fff1d8", "win": "#a9dcff", "winst": 0.85, "exp": 0.0, "room": 1.0},
     "eve": {"az": -75, "el": 14, "sun": 0.9, "col": "#ffb36b", "win": "#ffb070", "winst": 1.3, "exp": 0.0, "room": 0.85},
     "year": {"az": -55, "el": 30, "sun": 0.95, "col": "#ffd9a0", "win": "#ffe0b0", "winst": 1.2, "exp": 0.0, "room": 0.95},
 }
@@ -863,7 +881,7 @@ def animate(kit, story, tl, t, ctx):
             continue
         ov[f"tcglow_{who}"] = 1.0
         ob.hide_render = False
-        yaw = math.radians(s["yaw"] if "yaw" in s else 0.0)
+        yaw = s["yaw"] if "yaw" in s else 0.0
         fx, fy = math.sin(yaw), -math.cos(yaw)
         sc_ = rig.CHARS[who].spec.get("height", 1.0) if who in rig.CHARS else 1.0
         ob.location = (s["x"] - fx * 0.2, s["y"] - fy * 0.2, s["z"])
@@ -876,7 +894,7 @@ def animate(kit, story, tl, t, ctx):
     s = actmod.state(tl, "boss", t)
     for o, off in ctx["cloud"]:
         if sn_.get("on") and not s["hidden"]:
-            yaw = math.radians(s["yaw"])
+            yaw = s["yaw"]
             fx, fy = math.sin(yaw), -math.cos(yaw)
             o.hide_render = False
             o.location = (s["x"] + fx * (0.3 + off[1]) - fy * off[0], s["y"] + fy * (0.3 + off[1]) + fx * off[0], 1.45 + off[2])

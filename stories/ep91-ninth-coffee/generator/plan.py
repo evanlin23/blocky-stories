@@ -15,7 +15,7 @@ TRAYZ = 1.015
 
 FACE = {"eyes": "round", "brows": True, "ink": "#24131f"}
 FACEL = {"eyes": "lashes", "brows": True, "ink": "#24131f"}
-GLOW = {"eyes": "hollow", "brows": False, "mouth": "none", "ink": "#24131f", "glow": "#22e6ff", "eye_scale": 1.3}
+GLOW = {"eyes": "classic", "brows": False, "mouth": "none", "ink": "#24131f", "pupil": "#05070a", "glow": "#22e6ff"}
 
 
 def tcast(skin, shirt, pants, hair, hair_c, face=None, **kw):
@@ -39,11 +39,11 @@ cast = {
             "shoes": "#2a2a30", "sleeves": "long", "hair": "bun", "hair_c": "#6a4426", "face": dict(FACEL)},
     "cw3": {"age": "adult", "skin": "#d9a27a", "shirt": "#5fbf5a", "pattern": "solid", "pants": "#6b5a46", "shoes": "#2a2a30",
             "sleeves": "short", "hair": "spiky", "hair_c": "#2a1d15", "face": dict(FACE)},
-    "tc1": tcast("#e0b08a", "#4a8dff", "#2b3550", "buzz", "#1c1410"),
-    "tc2": tcast("#f1c9a0", "#ff9a3d", "#3b3b4a", "bun", "#2a1d15", extras=[], face=dict(GLOW)),
-    "tc3": tcast("#a56e4a", "#ffd23f", "#2b3550", "spiky", "#1c1410"),
-    "tc4": tcast("#f1c9a0", "#ff5d8f", "#3b3b4a", "long", "#1c1410"),
-    "tc5": tcast("#d9a27a", "#9aa4b5", "#2b3550", "cap", "#6a4426"),
+    "tc1": tcast("#e0b08a", "#e6edf5", "#2b3550", "buzz", "#1c1410"),
+    "tc2": tcast("#f1c9a0", "#d3deea", "#2b3550", "bun", "#2a1d15", extras=[], face=dict(GLOW)),
+    "tc3": tcast("#a56e4a", "#f0f3f7", "#2b3550", "spiky", "#1c1410"),
+    "tc4": tcast("#f1c9a0", "#dbe4ee", "#2b3550", "long", "#1c1410"),
+    "tc5": tcast("#d9a27a", "#e9eef3", "#2b3550", "cap", "#6a4426"),
 }
 
 # ---------------------------------------------------------------------------------------------------- state
@@ -353,7 +353,7 @@ S("L27", C((SPOUT[0], SPOUT[1], 1.25), 1.5, -20, 6, 28, d2=1.2), note="the left 
 cups("L28", c9=None)
 scene("L28", tc2=dict(pos=(-2.0, -3.2), yaw=58, expr="blank", head=[0, 0.12], arms=[70, 40], lean=6))
 streaks("L28", tc2=4.5)
-S("L28", C((-2.0, -3.2, 1.8), 3.0, 0, 1, 24, d2=2.5), note="a ten-cupper's face, focused, at the head of its streak")
+S("L28", C((-2.0, -3.2, 1.95), 3.2, 18, -12, 22, d2=2.6), note="a ten-cupper's face, focused, at the head of its streak")
 scene("L28.2", tc4=dict(pos=(-2.0, -3.4), yaw=-50, expr="blank", arms=[60, 80], lean=5))
 streaks("L28.2", tc2=None, tc4=5.0)
 S("L28.2", C((-2.0, -3.4, 1.0), 4.0, -20, 4, 20, d2=3.4), note="the whole figure, taller than us")
