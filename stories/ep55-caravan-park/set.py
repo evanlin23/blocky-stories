@@ -454,6 +454,45 @@ def build_park(kit, ctx, M):
     kit.cyl("butt", 0.3, 0.9, (3.9, -4.1, 0.45), M["blue"], n=14)
 
 
+OX = -40.0   # the opening set: the neighbour's gate, chair and van (frame 1 and L01b), clear of everything else
+
+
+def build_opening(kit, ctx, M):
+    """Frame 1: an empty folding chair inside a white picket gate, a lumpy moss pad with tiny white flowers on the seat
+    and the back (always there; nothing animates it). The neighbour's van stands behind, its door at OX + 1.5."""
+    caravan(kit, ctx, M, "nvanO", OX + 1.5, CARAVAN["y0"], "mustard")
+    for sx in (-1, 1):
+        px = OX + sx * GATE_X
+        wbox(kit, f"opost{sx}", (px - 0.19, -0.19, 0.0), (px + 0.19, 0.19, 1.5), M["granite"], bevel=0.03)
+        wbox(kit, f"opostcap{sx}", (px - 0.23, -0.23, 1.5), (px + 0.23, 0.23, 1.58), M["granite"], bevel=0.02)
+        for k in range(1, 9):
+            x = px + sx * 0.45 * k
+            wbox(kit, f"opk{sx}.{k}", (x - 0.04, -0.03, 0.0), (x + 0.04, 0.03, 1.0 - 0.02 * (k % 2)), M["white"])
+        x2 = px + sx * 0.45 * 8
+        wbox(kit, f"orail{sx}a", (min(px, x2), -0.04, 0.65), (max(px, x2), 0.04, 0.72), M["white"])
+        wbox(kit, f"orail{sx}b", (min(px, x2), -0.04, 0.25), (max(px, x2), 0.04, 0.32), M["white"])
+    chair(kit, ctx, M, "op", OX, CHAIR_Y, M["canvas"])
+    pads = []   # (x, y, z, rx, ry, rz): lumpy pads covering the seat, then up the back (a little proud of the canvas)
+    for i in range(6):
+        for j in range(4):
+            pads.append((-0.19 + 0.076 * i + (_hash(i, j, 11) - 0.5) * 0.04, -0.15 + 0.1 * j + (_hash(i, j, 12) - 0.5) * 0.04,
+                         0.425 + 0.02 * _hash(i, j, 13), 0.1 + 0.03 * _hash(i, j, 14), 0.09 + 0.02 * _hash(i, j, 15), 0.05 + 0.03 * _hash(i, j, 16)))
+    for i in range(5):
+        for j in range(5):
+            zz = 0.56 + 0.1 * j + (_hash(i, j, 22) - 0.5) * 0.04
+            pads.append((-0.19 + 0.095 * i + (_hash(i, j, 21) - 0.5) * 0.04, -0.2 - 0.12 * (zz - 0.74), zz, 0.11 + 0.03 * _hash(i, j, 24), 0.05 + 0.02 * _hash(i, j, 23),
+                         0.09 + 0.03 * _hash(i, j, 25)))
+    for k, (x, y, z, rx, ry, rz) in enumerate(pads):
+        ob = kit.sphere(f"opmoss{k}", 1.0, (OX + x, CHAIR_Y + y, z), M["moss"], seg=10)
+        ob.scale = (rx, ry, rz)
+        if k % 3 == 0:
+            on_back = k >= 24
+            fl = kit.sphere(f"opf{k}", 1.0, (OX + x, CHAIR_Y + y - (0.0 if not on_back else 0.0) , z), M["flower"], seg=8)
+            r = 0.026
+            fl.scale = (r, r, r * 0.6) if not on_back else (r, r * 0.6, r)
+            fl.location = (OX + x + (_hash(k, 3) - 0.5) * rx, CHAIR_Y + y + (ry * 0.75 if on_back else (_hash(k, 4) - 0.5) * ry), z + (rz * 0.85 if not on_back else (_hash(k, 5) - 0.5) * rz))
+
+
 def chair(kit, ctx, M, nm, cx, cy, canvas):
     """A folding canvas chair facing +y (open side toward the path)."""
     fr = M["chairframe"]
@@ -835,6 +874,7 @@ def build(kit, story, tl):
     ctx["M"] = M
     build_ground(kit, ctx, M)
     build_park(kit, ctx, M)
+    build_opening(kit, ctx, M)
     build_town(kit, ctx, M)
     build_interior(kit, ctx, M)
     build_kneeler(kit, ctx, M)

@@ -118,7 +118,7 @@ def set_(who, at, **kw):
 
 
 # ---- 01 the rule: the town
-put("neighbour", 0, [-9.4, -3.0, 0.0], 180, expr="neutral")
+put("neighbour", 0, [-40.0 + 1.5, -3.0, 0.0], 180, expr="neutral")
 set_("neighbour", "L01>", head=[0, 0])
 hide("neighbour", "L02")
 put("busman", "L02", [80.0, -0.3, 0.0], 180, expr="neutral")
@@ -256,8 +256,13 @@ MF = face_of(CH_ME[0], CH_ME[1], sit=True)
 KN_FACE = [KN[0], -1.75, 1.5]
 
 # ---- 01 the rule
-cam = front(NB_F, 180, -10, 3.5, 0.0, 40, push=0.25)
-S(0, cam, hand=0.003)
+# frame 1 (the opening recipe): close on the neighbour's mossy empty chair inside a picket gate, slow push in to GATE.
+# The opening set stands at OX (set.py's build_opening); the chair is at (OX, -1.6), the left gatepost at OX - 0.75.
+OX = -40.0
+S(0, mv([OX - 0.5, 2.3, 0.95], [OX + 0.0, -1.6, 0.6], 38, [OX - 0.4, 1.45, 0.9], [OX + 0.0, -1.6, 0.6], 38), hand=0.002,
+  look=key([OX, -1.6, 0.6], [OX - 0.5, 2.3, 0.95], 110, side=1.0, up=0.3))
+# L01b: mid close on the neighbour beside that chair, moss on both shoulders
+S("L01b", front([OX + 1.5, -3.0, FACE], 180, 16, 2.4, 0.45, 34, push=0.3, aim_dz=-0.2), hand=0.003, extra=True, id="O1B")
 S("L02", mv([86.0, 9.0, 1.7], [80.5, -0.5, 1.15], 30, [85.2, 8.6, 1.7], [80.5, -0.5, 1.15], 30))
 PM_F = face_of(9.4, -3.0)
 S("L03", front(PM_F, 180, 18, 4.4, 0.05, 36, push=0.3))
@@ -407,10 +412,16 @@ S("L70", front(MF, 180, 26, 1.9, 0.0, 36, push=0.1))
 S("L71", mv([-0.1, 0.5, 1.2], [CH_ME[0] + 0.5, CH_ME[1], 1.14], 55), hand=0.002)
 S("L72", front(JF, 180, 6, 1.7, 0.0, 38, push=0.1))
 S("L72.4", mv([-0.1, 0.3, 0.4], [-1.4, -2.0, 0.2], 28, [-0.1, 0.2, 0.38], [-1.4, -2.0, 0.2], 28))
+# the tail under "So whatever you DO,": the cold hollows by my empty chair, low, a slow push in; the loop then cuts to the chair at the gate
+S("L72.8", mv([-0.6, -0.4, 0.5], [-1.2, -2.1, 0.3], 30, [-0.7, -0.75, 0.42], [-1.2, -2.1, 0.3], 30), hand=0.0008, extra=True, id="TAIL")
 
 shots, SID = [], {}
+n_old = -1   # the shots added in the 2026-11-03 opening revision ("extra") don't move the old S-numbers
 for i, (at, cam, opt) in enumerate(SH):
-    sid = opt.get("id") or f"S{i + 1 + (1 if i >= 9 else 0):02d}"
+    if not opt.get("extra"):
+        n_old += 1
+    j = n_old
+    sid = opt.get("id") or f"S{j + 1 + (1 if j >= 9 else 0):02d}"
     s = {"id": sid, "cam": cam, "step": opt.get("step", 2), "hand": opt.get("hand", 0.004)}
     if i:
         s["at"] = at
@@ -522,6 +533,9 @@ for i, (at, look, s) in enumerate(LOOK_AT):
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
+    # the sound hit on GATE (L01's last word): a soft low thud and the gate latch
+    {"at": "L01.3+0.42", "kind": "thud", "db": -19},
+    {"at": "L01.3+0.44", "kind": "click", "db": -14},
     {"at": "L09", "kind": "click", "db": -26},
     {"at": "L18", "kind": "click", "db": -20},
     {"at": "L21", "kind": "riser", "db": -28, "dur": 1.8},
@@ -569,6 +583,7 @@ sound = {"floor": "grass", "steps_db": -26,
 fx = []
 
 story = {
+    "rev": 4,
     "slug": "ep55-caravan-park",
     "title": "In this town, moss grows on you while you wait",
     "made_for_kids": False,

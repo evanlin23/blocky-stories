@@ -6,34 +6,26 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, moss grows on you while you wait for someone.",
+   "text": "Never wait for someone at the front gate.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.569,
+   "dur": 1.897,
    "onset": 0.172,
-   "end": 2.379,
+   "end": 1.707,
    "chunks": [
     [
      0.172,
-     0.655
+     0.5
     ],
     [
-     0.707,
-     1.164
+     0.5,
+     0.845
     ],
     [
-     1.164,
-     1.362
-    ],
-    [
-     1.362,
-     1.741
-    ],
-    [
-     1.741,
-     2.379
+     0.845,
+     1.707
     ]
    ]
   },
@@ -1906,42 +1898,74 @@
    ]
   },
   "L72": {
-   "text": "But if I'm ever late to my chair, Maggie says the grass beside it starts to sink.",
+   "text": "But if I'm ever late to my chair, Maggie says the grass beside it starts to sink. So whatever you do,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.552,
+   "dur": 4.224,
    "onset": 0.155,
-   "end": 3.345,
+   "end": 3.983,
    "chunks": [
     [
      0.155,
-     0.31
+     0.302
     ],
     [
-     0.31,
+     0.302,
+     0.741
+    ],
+    [
+     0.741,
+     1.172
+    ],
+    [
+     1.224,
+     1.612
+    ],
+    [
+     1.612,
+     1.931
+    ],
+    [
+     1.931,
+     2.259
+    ],
+    [
+     2.259,
+     2.966
+    ],
+    [
+     3.078,
+     3.466
+    ],
+    [
+     3.466,
+     3.983
+    ]
+   ]
+  },
+  "L01b": {
+   "text": "Moss grows on you while you wait.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
      0.776
     ],
     [
      0.776,
-     1.345
-    ],
-    [
-     1.439,
-     1.854
-    ],
-    [
-     1.854,
-     2.19
-    ],
-    [
-     2.19,
-     2.517
-    ],
-    [
-     2.517,
-     3.345
+     1.5
     ]
    ]
   }
