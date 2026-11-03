@@ -72,10 +72,10 @@ def person(skin, shirt, pants, shoes, hair, hair_c, **kw):
 
 
 cast = {
-    "me": person("#f0c7a6", "#2c3f66", "#4a3d30", "#5a3a22", "cap", "#a9a9ab", extras=["coat", "backpack"],
+    "me": person("#f0c7a6", "#2c3f66", "#4a3d30", "#5a3a22", "buzz", "#a9a9ab", extras=["coat", "backpack"],
                  zip_c="#f2f0e8", extra_c="#6b4a2a"),
-    "jory": person("#e6b894", "#5a7494", "#2c2c34", "#2b221b", "cap", "#f2f2ee", pattern="knit", pattern_c="#e8dfc6",
-                   hat="beanie", hat_c="#c2602a", face={"eyes": "round", "brows": False}, height=0.97),
+    "jory": person("#e6b894", "#5a7494", "#6e4f6e", "#2b221b", "long", "#a7a29a", pattern="knit", pattern_c="#e8dfc6",
+                   hat="beanie", hat_c="#c2602a", face={"eyes": "lashes", "brows": True}, height=0.97),
     "neighbour": person("#f0c9a6", "#d1a031", "#3b3f4d", "#3a2a20", "bun", "#3a2a20", hat="bucket", hat_c="#c9b98a"),
     "busman": person("#d9a67e", "#7b7f86", "#3b3b40", "#2a2a2e", "cap", "#c8c8c8", extras=["coat"], zip_c="#505560"),
     "parcelman": person("#e2b48c", "#7a5434", "#3a3028", "#2a2018", "swoop", "#3a2a20", pattern="plaid",
@@ -85,7 +85,8 @@ cast = {
     "meeter3": person("#e0b08a", "#5b6a86", "#2c2c34", "#22201e", "cap", "#2a1d15", hat="ballcap", hat_c="#364055"),
     "trainwoman": person("#efc4a2", "#b04a5a", "#3a3a44", "#2a2a2e", "long", "#5a3a28", extras=["coat"], zip_c="#7a2a3a"),
     "benchman": person("#e0b28c", "#c2a074", "#4b4a52", "#3a2f26", "cap", "#d8d8d8"),
-    "benchwife": person("#efc4a2", "#7a3b5e", "#33343c", "#2a2a2e", "bun", "#b8b8b8", extras=["coat"], zip_c="#4e2440"),
+    "benchwife": person("#efc4a2", "#7a3b5e", "#33343c", "#2a2a2e", "bun", "#5f5f66", extras=["coat"], zip_c="#4e2440",
+                        face={"eyes": "lashes", "brows": True}),
 }
 
 # ---------------------------------------------------------------------------------------------------- acting
@@ -117,7 +118,7 @@ def set_(who, at, **kw):
 
 
 # ---- 01 the rule: the town
-put("neighbour", 0, [-9.4, -3.0, 0.0], 180, expr="neutral")
+put("neighbour", 0, [-40.0 + 1.5, -3.0, 0.0], 180, expr="neutral")
 set_("neighbour", "L01>", head=[0, 0])
 hide("neighbour", "L02")
 put("busman", "L02", [80.0, -0.3, 0.0], 180, expr="neutral")
@@ -135,8 +136,9 @@ hide("trainwoman", "L05.2")
 hide("meeter2", "L05.2")
 hide("meeter3", "L05.2")
 hide("meeter1", "L06")
-put("benchman", "L06", [119.1, -0.3, -0.23], 180, expr="neutral", sit=True)
-put("benchwife", "L06", [119.95, -0.3, -0.23], 180, expr="neutral", sit=True, arms=[0, 100])
+put("benchman", "L06", [118.95, -0.3, -0.23], 180, expr="neutral", sit=True)
+put("benchwife", "L06", [120.15, -0.3, -0.23], 180, expr="neutral", sit=True, arms=[0, 0])
+set_("benchwife", "L07", arms=[0, 100], blend=0.6)
 hide("benchman", "L08")
 hide("benchwife", "L08")
 
@@ -146,7 +148,9 @@ set_("me", "L08.1", yaw=0, blend=0.6)
 walk("me", "L08>", [0.0, -0.9, 0.0])
 put("me", "L09", [-3.2, -2.9, 0.0], -90)
 walk("me", "L09>", [-8.4, -2.9, 0.0])
-put("jory", "L10", [0.0, -4.12, 0.71], 180, expr="soft")
+put("jory", "L10", [0.5, -4.12, 0.71], 180, expr="smile", arms=[0, 55], head=[-25, 0])
+put("me", "L10", [-0.5, -4.12, 0.71], 180, expr="smile", arms=[55, 0], head=[25, 0])
+hide("me", "L11")
 put("me", "L13", [0.0, 1.0, 0.0], 180, expr="neutral")
 walk("me", "L13>", [0.0, 5.2, 0.0])
 put("jory", "L14", [-0.45, 6.6, 0.0], 0, expr="neutral")
@@ -252,8 +256,13 @@ MF = face_of(CH_ME[0], CH_ME[1], sit=True)
 KN_FACE = [KN[0], -1.75, 1.5]
 
 # ---- 01 the rule
-cam = front(NB_F, 180, -10, 3.5, 0.0, 40, push=0.25)
-S(0, cam, hand=0.003)
+# frame 1 (the opening recipe): close on the neighbour's mossy empty chair inside a picket gate, slow push in to GATE.
+# The opening set stands at OX (set.py's build_opening); the chair is at (OX, -1.6), the left gatepost at OX - 0.75.
+OX = -40.0
+S(0, mv([OX, 6.0, 0.7], [OX, -1.6, 0.62], 30, [OX, 4.6, 0.68], [OX, -1.6, 0.62], 30), hand=0.002,
+  look=key([OX, -1.6, 0.6], [OX - 0.5, 2.3, 0.95], 110, side=1.0, up=0.3))
+# L01b: mid close on the neighbour beside that chair, moss on both shoulders
+S("L01b", front([OX + 1.5, -3.0, FACE], 180, 16, 2.4, 0.45, 34, push=0.3, aim_dz=-0.2), hand=0.003, extra=True, id="O1B")
 S("L02", mv([86.0, 9.0, 1.7], [80.5, -0.5, 1.15], 30, [85.2, 8.6, 1.7], [80.5, -0.5, 1.15], 30))
 PM_F = face_of(9.4, -3.0)
 S("L03", front(PM_F, 180, 18, 4.4, 0.05, 36, push=0.3))
@@ -265,15 +274,15 @@ S("L05.2", mv([160.9, 0.2, 2.15], list(TM_F), 36, [160.8, 0.3, 2.15], list(TM_F)
 S("L06", mv([125.0, 9.0, 2.5], [119.8, -1.0, 1.5], 28, [124.0, 8.6, 2.4], [119.8, -1.0, 1.5], 28))
 BM_F = face_of(119.1, -0.3, -0.23 + 0.0, sit=False)
 BM_F = [119.1, -0.3, 1.33]
-S("L06.1", front(BM_F, 180, 18, 2.3, 0.0, 34, push=0.15))
 BW_F = [119.95, -0.3, 1.33]
-S("L07", front(BW_F, 180, -22, 2.2, 0.0, 34, push=0.15))
+# one medium two-shot of the shop bench for L06.1 and L07 (the old S10 is gone; later ids keep their numbers)
+S("L06.1", front([119.55, -0.3, 1.0], 180, 4, 6.4, 0.3, 34, push=0.3))
 
 # ---- 02 me and Jory
 ME_G = face_of(0.0, -0.9)
 S("L08", front(ME_G, 0, 14, 2.6, 0.05, 34, push=0.25), look=key(ME_G, [0.6, -3.5, 1.6], 160), hand=0.003)
 S("L09", mv([-4.5, 1.6, 1.5], [-6.2, -3.4, 1.15], 32, [-4.7, 1.5, 1.5], [-6.6, -3.4, 1.15], 32))
-S("L10", mv([5.5, 3.0, 1.8], [0.0, -3.9, 1.3], 26, [5.0, 2.6, 1.8], [0.0, -3.9, 1.3], 26))
+S("L10", mv([5.5, 3.0, 2.0], [0.0, -4.1, 1.75], 44, [4.2, 1.6, 1.9], [0.0, -4.1, 1.75], 50))
 S("L11", mv([0.0, 3.2, 1.3], [0.0, -1.8, 0.55], 30, [0.0, 2.8, 1.25], [0.0, -1.8, 0.55], 30))
 S("L12", mv([-0.5, 0.2, 0.95], [-0.7, -1.6, 0.5], 34, [-0.5, 0.0, 0.9], [-0.7, -1.6, 0.5], 34))
 S("L13", mv([0.0, -0.9, 1.5], [0.1, 10.0, 1.15], 30, [0.0, -1.1, 1.5], [0.1, 10.0, 1.15], 30))
@@ -378,7 +387,7 @@ S("L55", mv([0.6, 9.0, 1.5], [-1.0, -2.0, 1.2], 40, [0.6, 9.0, 1.5], [-1.0, -2.0
   look=kn_look([-0.5, 0.0, 1.5], [-1.7, -1.7, 1.45]))
 S("L56", mv([3.6, 14.5, 1.3], [3.6, 20.5, 0.8], 30, [3.6, 15.5, 1.3], [3.6, 20.5, 0.8], 30))
 JB_F = [BX - 0.45, BY, 1.33]
-S("L56.3", front(JB_F, 0, 12, 2.0, 0.0, 34, push=0.15), look=key(JB_F, [3.8, 18.4, 1.6], 120, side=-0.8))
+S("L56.3", front(JB_F, 0, 12, 2.0, 0.0, 34, push=0.15), look=key(JB_F, [3.8, 18.4, 1.6], 50, side=-0.8))
 S("L57", mv([6.4, 19.0, 1.2], [BX - 0.45, 20.4, 1.3], 34, [6.2, 19.2, 1.2], [BX - 0.45, 20.4, 1.3], 34))
 S("L58", mv([1.8, 14.5, 1.5], [3.6, 20.4, 1.15], 30, [2.0, 15.0, 1.5], [3.6, 20.4, 1.15], 30))
 S("L59", mv([3.6, 24.0, 1.55], [3.6, 12.0, 0.9], 26, [3.6, 23.6, 1.55], [3.6, 12.0, 0.9], 26))
@@ -403,10 +412,16 @@ S("L70", front(MF, 180, 26, 1.9, 0.0, 36, push=0.1))
 S("L71", mv([-0.1, 0.5, 1.2], [CH_ME[0] + 0.5, CH_ME[1], 1.14], 55), hand=0.002)
 S("L72", front(JF, 180, 6, 1.7, 0.0, 38, push=0.1))
 S("L72.4", mv([-0.1, 0.3, 0.4], [-1.4, -2.0, 0.2], 28, [-0.1, 0.2, 0.38], [-1.4, -2.0, 0.2], 28))
+# the tail under "So whatever you DO,": the cold hollows by my empty chair, low, a slow push in; the loop then cuts to the chair at the gate
+S("L72.8", mv([-0.6, -0.4, 0.5], [-1.2, -2.1, 0.3], 30, [-0.7, -0.75, 0.42], [-1.2, -2.1, 0.3], 30), hand=0.0008, extra=True, id="TAIL")
 
 shots, SID = [], {}
+n_old = -1   # the shots added in the 2026-11-03 opening revision ("extra") don't move the old S-numbers
 for i, (at, cam, opt) in enumerate(SH):
-    sid = opt.get("id") or f"S{i + 1:02d}"
+    if not opt.get("extra"):
+        n_old += 1
+    j = n_old
+    sid = opt.get("id") or f"S{j + 1 + (1 if j >= 9 else 0):02d}"
     s = {"id": sid, "cam": cam, "step": opt.get("step", 2), "hand": opt.get("hand", 0.004)}
     if i:
         s["at"] = at
@@ -518,6 +533,9 @@ for i, (at, look, s) in enumerate(LOOK_AT):
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
+    # the sound hit on GATE (L01's last word): a soft low thud and the gate latch
+    {"at": "L01.3+0.05", "kind": "thud", "db": -19},
+    {"at": "L01.3+0.07", "kind": "click", "db": -14},
     {"at": "L09", "kind": "click", "db": -26},
     {"at": "L18", "kind": "click", "db": -20},
     {"at": "L21", "kind": "riser", "db": -28, "dur": 1.8},
@@ -565,11 +583,12 @@ sound = {"floor": "grass", "steps_db": -26,
 fx = []
 
 story = {
+    "rev": 4,
     "slug": "ep55-caravan-park",
     "title": "In this town, moss grows on you while you wait",
     "made_for_kids": False,
-    "premise": "In a town where moss grows on you while you wait for someone, the narrator has never had a speck, because she is always early and never waits. Her husband Jory is coming up green on the headland caravan park, the moss won't come off when she gets back, and every morning there are two deep knee hollows in the wet grass by the step.",
-    "twist": "She came home every evening but never arrived: she put the kettle on and was out again, and never once sat in her own chair. Jory wasn't waiting for her to come back, he was waiting for her to stop. Her empty chair left the caravan's count short by one, and the Kneeler has been kneeling beside it every night, standing in her place. When she sits down and waits with him, his moss comes off and hers begins.",
+    "premise": "In a town where moss grows on you while you wait for someone, the narrator, an older man, has never had a speck, because he is always early and never waits. His wife Maggie is coming up green at their headland caravan park, the moss won't come off when he gets back, and every morning there are two deep knee hollows in the wet grass by the step.",
+    "twist": "He came home every evening but never arrived: he put the kettle on and was out again, and never once sat in his own chair. Maggie wasn't waiting for him to come back, she was waiting for him to stop. His empty chair left the caravan's count short by one, and the Kneeler has been kneeling beside it every night, standing in his place. When he sits down and waits with her, her moss comes off and his begins.",
     "world": "A static caravan park on a grassy headland in autumn: cream caravans with coloured stripes, a picket gate between two granite posts, two folding canvas chairs, gorse and bracken, a path up to an old bench above the grey sea, and the small town below with its bus shelter, shop bench and station.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#cfd66a",
@@ -577,6 +596,7 @@ story = {
     "tail": 0.25,
     "look": {"fog": "#c9d7dc", "fog_density": 0.012, "fog_start": 5.0, "sky": "#bfd3df", "sky_strength": 1.15,
              "exposure": 0.0, "flash_safe": True},
+    "fade_in": False, "fade_out": False,
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.03], "saturation": 1.0,
               "contrast": 1.05, "vignette": 0.3, "bloom": 0.22, "grain": 0.012},
     "rain_shots": ["RAIN1", "RAIN2"],

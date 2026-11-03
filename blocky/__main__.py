@@ -294,7 +294,9 @@ def cmd_asr(a):
     penc.write_wav(w / "narration-only.wav", np.stack([vo, vo], 1) * 0.5)
     subprocess.run([tts_python(), str(HERE / "voice.py"), "asr", str(w / "narration-only.wav"), str(w / "timeline.json")],
                    env={**os.environ, "OMP_NUM_THREADS": "4",
-                        **({"BLOCKY_ASR_TAIL": "1"} if story_json(a.story).get("asr_ignore_tail_repeat") else {})})
+                        **({"BLOCKY_ASR_TAIL": "1"} if story_json(a.story).get("asr_ignore_tail_repeat") else {}),
+                        **({"BLOCKY_ASR_FORGIVE": json.dumps(story_json(a.story)["asr_forgive"])}
+                           if story_json(a.story).get("asr_forgive") else {})})
 
 
 def cmd_check(a):
