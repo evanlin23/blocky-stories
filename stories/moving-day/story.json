@@ -578,16 +578,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Something TALLER",
-     "Something taller"
+     "Nobody HERE",
+     "Nobody here"
     ],
     [
-     "than me",
-     "than me,"
+     "is TALLER",
+     "is taller"
     ],
     [
-     "was LIVING here.",
-     "was living here."
+     "than ME.",
+     "than me."
     ]
    ],
    "gain_db": -1.5,
@@ -789,7 +789,8 @@
      "stood OPEN.",
      "stood open."
     ]
-   ]
+   ],
+   "gap": 0.72
   },
   {
    "id": "L29",
@@ -932,8 +933,12 @@
      "and the stack"
     ],
     [
-     "was WHOLE.",
-     "was whole."
+     "was BACK,",
+     "was back,"
+    ],
+    [
+     "all but ONE.",
+     "all but one."
     ]
    ]
   },
@@ -1127,6 +1132,21 @@
    ]
   },
   {
+   "id": "L45b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Mum KNEW.",
+     "Mum knew."
+    ],
+    [
+     "She'd MISSED it.",
+     "She'd missed it."
+    ]
+   ],
+   "gap": 0.4
+  },
+  {
    "id": "L46",
    "who": "narrator",
    "chunks": [
@@ -1195,14 +1215,14 @@
     [
      0,
      [
-      -0.95,
-      -1.7,
-      1.55
+      -1.0,
+      -2.2,
+      1.0
      ],
      [
-      -2.2,
+      -2.3,
       -4.5,
-      1.45
+      1.55
      ],
      17
     ]
@@ -1261,7 +1281,7 @@
      [
       63.2,
       6.0,
-      3.4
+      3.0
      ],
      17
     ]
@@ -1269,7 +1289,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "S03 the tower house: a tall man at its door, waving",
-   "at": "L02"
+   "at": "L02+0.57"
   },
   {
    "id": "S04",
@@ -1315,7 +1335,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "S05 a couple on a sofa look up: the ceiling sits lower, a pale line where it was",
-   "at": "L03.2"
+   "at": "L03+1.35"
   },
   {
    "id": "S06",
@@ -1323,16 +1343,16 @@
     [
      0,
      [
-      140.15,
-      -2.6,
-      1.55
+      140.55,
+      -3.0,
+      1.6
      ],
      [
-      140.15,
+      140.55,
       1.9,
-      1.55
+      1.75
      ],
-     20
+     18
     ]
    ],
    "hand": 0.004,
@@ -1438,16 +1458,16 @@
     [
      0,
      [
-      -2.7,
-      -3.55,
-      1.4
+      -3.0,
+      -2.45,
+      1.52
      ],
      [
-      -4.5,
+      -4.59,
       -3.0,
-      1.45
+      1.5
      ],
-     26
+     30
     ]
    ],
    "hand": 0.004,
@@ -2268,7 +2288,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "S44 her eyeline: the frames at the top of a tall wall",
-   "at": "L36.1"
+   "at": "L36.1+0.37"
   },
   {
    "id": "S45",
@@ -2520,6 +2540,29 @@
     [
      0,
      [
+      -2.5,
+      -2.7,
+      1.55
+     ],
+     [
+      -3.9,
+      -3.1,
+      1.8
+     ],
+     20
+    ]
+   ],
+   "hand": 0.004,
+   "step": 2,
+   "what": "S54b Mum below the old photo, head tipped back to it, eyes wet",
+   "at": "L45b"
+  },
+  {
+   "id": "S56",
+   "cam": [
+    [
+     0,
+     [
       -0.6,
       -1.25,
       1.5
@@ -2538,7 +2581,7 @@
    "at": "L46"
   },
   {
-   "id": "S56",
+   "id": "S57",
    "cam": [
     [
      0,
@@ -2575,7 +2618,7 @@
    "at": "L47"
   },
   {
-   "id": "S57",
+   "id": "S58",
    "cam": [
     [
      0,
@@ -3135,8 +3178,8 @@
    {
     "at": "L08",
     "pos": [
-     -4.05,
-     -3.0
+     -4.0,
+     -3.62
     ],
     "blend": 0,
     "hidden": false,
@@ -3174,8 +3217,8 @@
    {
     "at": "L09",
     "pos": [
-     -4.05,
-     -3.0
+     -4.0,
+     -3.62
     ]
    },
    {
@@ -3710,10 +3753,48 @@
     "blend": 0
    },
    {
-    "at": "L46",
+    "at": "L45b",
     "pos": [
      -3.4,
      -3.5
+    ]
+   },
+   {
+    "at": "L45b",
+    "pos": [
+     -3.6,
+     -3.0
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     -16
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "lie": null,
+    "sit": false,
+    "hide_parts": [],
+    "part_offset": {},
+    "blink": true,
+    "width": 0.88,
+    "expr": "crying",
+    "yaw": 135
+   },
+   {
+    "at": "L46",
+    "pos": [
+     -3.6,
+     -3.0
     ]
    },
    {
@@ -3859,7 +3940,7 @@
     "blend": 0
    },
    {
-    "at": "L02",
+    "at": "L02+0.57",
     "hidden": true,
     "blend": 0
    }
@@ -3908,7 +3989,7 @@
     "blend": 0
    },
    {
-    "at": "L02",
+    "at": "L02+0.57",
     "hidden": true,
     "blend": 0
    }
@@ -3957,7 +4038,7 @@
     "blend": 0
    },
    {
-    "at": "L02",
+    "at": "L02+0.57",
     "hidden": true,
     "blend": 0
    }
@@ -4006,7 +4087,7 @@
     "blend": 0
    },
    {
-    "at": "L02+0.25",
+    "at": "L02+0.80",
     "side": [
      0,
      28
@@ -4018,7 +4099,7 @@
     "blend": 0.3
    },
    {
-    "at": "L02+0.65",
+    "at": "L02+1.20",
     "side": [
      0,
      8
@@ -4030,7 +4111,7 @@
     "blend": 0.3
    },
    {
-    "at": "L02+1.05",
+    "at": "L02+1.60",
     "side": [
      0,
      28
@@ -4042,7 +4123,7 @@
     "blend": 0.3
    },
    {
-    "at": "L02+1.45",
+    "at": "L02+2.00",
     "side": [
      0,
      8
@@ -4054,7 +4135,7 @@
     "blend": 0.3
    },
    {
-    "at": "L02+1.85",
+    "at": "L02+2.40",
     "side": [
      0,
      28
@@ -4066,7 +4147,7 @@
     "blend": 0.3
    },
    {
-    "at": "L02+2.25",
+    "at": "L02+2.80",
     "side": [
      0,
      8
@@ -4141,7 +4222,7 @@
     ]
    },
    {
-    "at": "L03.2",
+    "at": "L03+1.35",
     "hidden": true,
     "blend": 0
    }
@@ -4153,7 +4234,7 @@
     "blend": 0
    },
    {
-    "at": "L03.2",
+    "at": "L03+1.35",
     "pos": [
      99.55,
      2.55,
@@ -4197,7 +4278,7 @@
     "blend": 0
    },
    {
-    "at": "L03.2",
+    "at": "L03+1.35",
     "pos": [
      100.45,
      2.55,
@@ -4270,7 +4351,7 @@
     "blink": true,
     "width": 0.88,
     "expr": "angry",
-    "yaw": 90
+    "yaw": 40
    },
    {
     "at": "L05",
@@ -4314,7 +4395,7 @@
     "blink": true,
     "width": 0.88,
     "expr": "smirk",
-    "yaw": -90
+    "yaw": -30
    },
    {
     "at": "L05",
@@ -4328,6 +4409,11 @@
    "at": 0,
    "name": "time",
    "set": "day"
+  },
+  {
+   "at": 0,
+   "name": "ceil",
+   "h": 1.72
   },
   {
    "at": "L01.4",
@@ -4537,6 +4623,18 @@
    "look": "dim"
   },
   {
+   "at": "L45b",
+   "name": "oldhouse",
+   "where": "wall",
+   "look": "lit"
+  },
+  {
+   "at": "L46",
+   "name": "oldhouse",
+   "where": "wall",
+   "look": "dim"
+  },
+  {
    "at": 0,
    "name": "mug",
    "where": "sill"
@@ -4708,6 +4806,26 @@
    "gain": 0
   },
   {
+   "at": "L07",
+   "name": "xfill",
+   "pos": [
+    0.2,
+    -0.5,
+    1.5
+   ],
+   "aim": [
+    0.45,
+    -1.72,
+    1.4
+   ],
+   "gain": 1.1
+  },
+  {
+   "at": "L08",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
    "at": "L11.1",
    "name": "xfill",
    "pos": [
@@ -4794,6 +4912,26 @@
   },
   {
    "at": "L42",
+   "name": "xfill",
+   "gain": 0
+  },
+  {
+   "at": "L45b",
+   "name": "xfill",
+   "pos": [
+    -2.3,
+    -2.3,
+    1.7
+   ],
+   "aim": [
+    -3.6,
+    -3.0,
+    1.5
+   ],
+   "gain": 3.0
+  },
+  {
+   "at": "L46",
    "name": "xfill",
    "gain": 0
   },
@@ -5000,13 +5138,13 @@
    {
     "at": "L48>-0.2",
     "kind": "thud",
-    "db": -18,
-    "dur": 0.6
+    "db": -12,
+    "dur": 0.8
    }
   ],
   "music_drops": [
    {
-    "from": "L28.1",
+    "from": "L28>",
     "to": "L29"
    },
    {

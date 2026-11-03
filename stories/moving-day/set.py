@@ -479,7 +479,8 @@ MARKER_KEY = __import__("hashlib").sha1((HERE / "marker.py").read_bytes()).hexdi
 def pil_image(name, im: Image.Image, path: Path):
     """A PIL drawing as a Blender image. Drawings are keyed on marker.py's contents, so a changed drawing is
     never read back from an old file."""
-    path = path.with_name(f"{path.stem}-{MARKER_KEY}{path.suffix}")
+    import hashlib
+    path = path.with_name(f"{path.stem}-{MARKER_KEY}-{hashlib.md5(im.tobytes()).hexdigest()[:8]}{path.suffix}")
     if not path.exists():
         im.save(path)
     img = bpy.data.images.load(str(path), check_existing=True)
@@ -1242,21 +1243,30 @@ def old_house_image(lit, w=640, h=938):
             d.line([x0 + w * 0.085, y0, x0 + w * 0.085, y0 + h * 0.105], fill=(120, 110, 100), width=4)
     d.rectangle([w * 0.43, h * 0.8, w * 0.57, h * 0.93], fill=(60, 52, 64))
     d.rectangle([0, h * 0.93, w, h], fill=(96, 112, 84))
-    # the top window: wider, with something folded in it
-    wx0, wy0, wx1, wy1 = w * 0.3, h * 0.14, w * 0.7, h * 0.285
+    # the top floor: two windows side by side under one low ceiling band, a long pale body folded across both
+    ix0, ix1 = w * 0.27, w * 0.73
+    wy0, wy1 = h * 0.14, h * 0.285
     inner = (232, 236, 238) if lit else (150, 156, 160)
-    d.rectangle([wx0 - 6, wy0 - 6, wx1 + 6, wy1 + 6], fill=(120, 110, 100))
-    d.rectangle([wx0, wy0, wx1, wy1], fill=inner)
-    fig = (214, 210, 200) if lit else (168, 168, 166)
+    d.rectangle([ix0 - 6, wy0 - 6, ix1 + 6, wy1 + 6], fill=(120, 110, 100))
+    mid = w * 0.5
+    wins = [(ix0, mid - 9), (mid + 9, ix1)]
+    for x0, x1 in wins:
+        d.rectangle([x0, wy0, x1, wy1], fill=inner)
+    fig = (150, 142, 130) if lit else (150, 154, 158)
+    edge = (60, 54, 50) if lit else (120, 124, 128)
     ink = (22, 18, 20) if lit else (96, 98, 100)
-    # folded along the window's ceiling, then the box hanging at its end
-    d.rectangle([wx0 + 4, wy0 + 4, wx1 - 70, wy0 + 40], fill=fig)
-    d.rectangle([wx1 - 140, wy0 + 4, wx1 - 6, wy1 - 8], fill=fig)
-    fx0, fy0, fx1, fy1 = wx1 - 130, wy0 + 40, wx1 - 16, wy1 - 12
+    # the back, pressed along the ceiling across both windows and the mullion between
+    d.rectangle([ix0 + 3, wy0 + 3, ix1 - 3, wy0 + 44], fill=fig, outline=edge, width=3)
+    # a long limb folded down in the left window and back along the sill: a bent knee
+    d.rectangle([ix0 + 3, wy0 + 40, ix0 + 52, wy1 - 30], fill=fig, outline=edge, width=3)
+    d.rectangle([ix0 + 3, wy1 - 34, ix0 + 120, wy1 - 4], fill=fig, outline=edge, width=3)
+    # the head box hanging in the right window with the marker frown
+    fx0, fy0, fx1, fy1 = ix1 - 125, wy0 + 40, ix1 - 6, wy1 - 6
+    d.rectangle([fx0, fy0, fx1, fy1], fill=fig, outline=edge, width=3)
     lw = 7 if lit else 5
-    d.line([fx0 + 20, fy0 + 24, fx0 + 40, fy0 + 24], fill=ink, width=lw)
-    d.line([fx1 - 40, fy0 + 24, fx1 - 20, fy0 + 24], fill=ink, width=lw)
-    d.arc([fx0 + 22, fy0 + 40, fx1 - 22, fy1 + 20], 205, 335, fill=ink, width=lw)
+    d.line([fx0 + 24, fy0 + 26, fx0 + 44, fy0 + 26], fill=ink, width=lw)
+    d.line([fx1 - 44, fy0 + 26, fx1 - 24, fy0 + 26], fill=ink, width=lw)
+    d.arc([fx0 + 26, fy0 + 42, fx1 - 26, fy1 + 22], 205, 335, fill=ink, width=lw)
     return im.filter(ImageFilter.SMOOTH)
 
 
@@ -1426,7 +1436,7 @@ def build_street(kit, ctx, M):
     kit.box("st ground", (80, 40, 0.2), (ox, oy + 8, -0.1), pm("#8d96a3", 0.8))
     kit.box("st road", (80, 5.0, 0.02), (ox, oy + 1.0, 0.001), pm("#59616d", 0.85))
     kit.box("st pavement", (80, 2.6, 0.02), (ox, oy + 4.2, 0.01), pm("#d0cbbd", 0.8))
-    kit.plane("st sky", (240, 90), (ox, oy + 55, 25), _unfogged_emit(kit, "st sky", "#cfe2f4", 1.3), rot=(math.radians(90), 0, 0))
+    kit.plane("st sky", (700, 400), (ox, oy + 55, 150), _unfogged_emit(kit, "st sky", "#cfe2f4", 1.3), rot=(math.radians(90), 0, 0))
     for nm, x, w, h, dw, dh, body, roof, rows, dc in HOUSES:
         cx = ox + x
         yf = oy + YF
@@ -1480,8 +1490,8 @@ def build_street(kit, ctx, M):
     for sx in (-1, 1):
         kit.box(f"sofa arm{sx}", (0.2, 0.8, 0.6), (px + sx * 0.9, py + 2.6, 0.3), pr("#188574", 0.8), bevel=0.05)
     kit.box("lr rug", (2.6, 1.8, 0.015), (px, py + 1.2, 0.008), pr("#e0584a", 0.9))
-    up = kit.light("lr up", "AREA", (px, py + 1.4, 0.3), 120.0, "#fff1d6", size=2.4, rot=(math.pi, 0, 0))
-    kit.light("lr lamp", "AREA", (px, py + 1.0, 1.95), 220.0, "#fff1d6", size=2.4)
+    up = kit.light("lr up", "AREA", (px, py + 1.4, 0.3), 48.0, "#fff1d6", size=2.4, rot=(math.pi, 0, 0))
+    kit.light("lr lamp", "AREA", (px, py + 1.0, 1.95), 90.0, "#fff1d6", size=2.4)
     # ---- the dining room (S06): a ceiling that bulges up over the tall hat
     qx, qy = O6
     pd = lambda hexc, r=0.7: kit.plastic(hexc, r, name=f"dr {hexc} {r}")
@@ -1510,8 +1520,8 @@ def build_street(kit, ctx, M):
         kit.box(f"dr chair{sx}", (0.5, 0.5, 0.05), (qx + sx * 1.0, qy + 1.9, 0.43), pd("#d8503f", 0.6))
         kit.box(f"dr chairback{sx}", (0.05, 0.5, 0.5), (qx + sx * 1.27, qy + 1.9, 0.7), pd("#d8503f", 0.6))
         kit.cyl(f"dr plate{sx}", 0.14, 0.015, (qx + sx * 0.55, qy + 1.9, 0.795), pd("#f4f1e8", 0.3))
-    kit.light("dr up", "AREA", (qx, qy + 1.4, 0.3), 150.0, "#fff1d6", size=2.4, rot=(math.pi, 0, 0))
-    kit.light("dr lamp", "AREA", (qx, qy + 1.4, 2.3), 260.0, "#fff1d6", size=2.6)
+    kit.light("dr up", "AREA", (qx, qy + 1.4, 0.3), 60.0, "#fff1d6", size=2.4, rot=(math.pi, 0, 0))
+    kit.light("dr lamp", "AREA", (qx, qy + 1.4, 2.3), 105.0, "#fff1d6", size=2.6)
 
 
 def build_my_room(kit, ctx, M):

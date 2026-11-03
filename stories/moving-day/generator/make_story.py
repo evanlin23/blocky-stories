@@ -17,9 +17,12 @@ lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.12          # the last word ends 0.25 s before the hard cut (the voice's own tail is 0.13 s of it), into L01
 # the word check: these lines a touch slower so a swallowed "it", "and" or "me" comes through
 TEMPO = {"L21": 0.94, "L11": 1.1, "L16": 0.95, "L17": 0.96}
+GAPS = {"L28": 0.72}   # a 0.6 s music drop between L28 and L29
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
+    if ln["id"] in GAPS:
+        ln["gap"] = GAPS[ln["id"]]
 lines = lines + [{"id": "P03", "pause": LOOP, "chunks": []}]
 
 # ---------------------------------------------------------------------------------------------------- cast
@@ -98,17 +101,17 @@ HIGH_QUILT = still([0.75, 0.45, 1.95], [-0.5, 1.95, 0.45], 20)
 SHOTS = [
     # 1 the rule, L01 to L04 (0 to 10 s): a lit hall opening, then the street of mixed-height houses
     (0, "S01 the front room, warm and even: me under the low ceiling, the face box in the stack beside me, frowning", 2,
-     still([-0.95, -1.7, 1.55], [-2.2, -4.5, 1.45], 17)),
+     still([-1.0, -2.2, 1.0], [-2.3, -4.5, 1.55], 17)),
     ("L01.4", "S02 the street: four houses of different heights, the tallest one at each door, head at the lintel", 2,
      move(([OS[0] - 4.2, -2.5, 1.3], [OS[0] - 4.2, 6.0, 2.2]), ([OS[0] - 0.6, -2.5, 1.3], [OS[0] - 0.6, 6.0, 2.2]), 13)),
-    ("L02", "S03 the tower house: a tall man at its door, waving", 2,
-     still([OS[0] + 4.9, 1.2, 1.0], [OS[0] + 3.2, 6.0, 3.4], 17)),
+    ("L02+0.57", "S03 the tower house: a tall man at its door, waving", 2,
+     still([OS[0] + 4.9, 1.2, 1.0], [OS[0] + 3.2, 6.0, 3.0], 17)),
     ("L03", "S04 a lodger walks out of a front door with a suitcase", 2,
      still([OS[0] + 8.6, -1.5, 1.35], [OS[0] + 10.0, 5.0, 1.2], 17)),
-    ("L03.2", "S05 a couple on a sofa look up: the ceiling sits lower, a pale line where it was", 2,
+    ("L03+1.35", "S05 a couple on a sofa look up: the ceiling sits lower, a pale line where it was", 2,
      still([O5[0] + 0.1, -1.2, 1.3], [O5[0], 2.6, 1.55], 22)),
     ("L04", "S06 a dinner: a guest in a tall hat, the ceiling bulged up over it, the host glaring", 2,
-     still([O6[0] + 0.15, -2.6, 1.55], [O6[0] + 0.15, 1.9, 1.55], 20)),
+     still([O6[0] + 0.55, -3.0, 1.6], [O6[0] + 0.55, 1.9, 1.75], 18)),
     # 2 our house, L05 to L13 (10 to 24 s)
     ("L05", "S07 close in the kitchen: the old house photo in Mum's hands", 2,
      still([0.85, -3.42, 1.35], [0.85, -2.4, 1.1], 22)),
@@ -119,7 +122,7 @@ SHOTS = [
     ("L07", "S10 Mum in the kitchen doorway, flat-faced and tired", 2,
      still([0.45, -0.45, 1.4], [0.45, -1.75, 1.3], 30)),
     ("L08", "S11 Mum hangs the old house frame at her eye height; its top window is dim", 2,
-     still([-2.7, -3.55, 1.4], [-4.5, -3.0, 1.45], 26)),
+     still([-3.0, -2.45, 1.52], [-4.59, -3.0, 1.5], 30)),
     ("L09", "S12 Mum steps back, no smile, mouth moving under the quote", 2,
      still([-2.15, -4.5, 1.4], [-3.3, -3.1, 1.5], 32)),
     ("L10", "S13 Mum crosses the room head down with her mug, past the stack and the frown", 2,
@@ -162,7 +165,7 @@ SHOTS = [
     ("L35", "S41 Mum's room in morning light, the corner empty, the ceiling high", 2, WIDE),
     ("L35.2", "S42 the stack, whole again, the face box not among them", 4, CLOCK),
     ("L36", "S43 Mum in the front room with her mug, her head tilting up", 2, still([-1.0, -2.35, 1.5], [-1.9, -3.6, 1.45], 30)),
-    ("L36.1", "S44 her eyeline: the frames at the top of a tall wall", 2, move(([-2.6, -3.4, 1.3], [-4.5, -3.1, 2.4]), ([-2.6, -3.4, 1.3], [-4.5, -3.1, 3.0]), 17)),
+    ("L36.1+0.37", "S44 her eyeline: the frames at the top of a tall wall", 2, move(([-2.6, -3.4, 1.3], [-4.5, -3.1, 2.4]), ([-2.6, -3.4, 1.3], [-4.5, -3.1, 3.0]), 17)),
     ("L37", "S45 Mum still looking up, mouthing the words", 2, still([-1.0, -2.35, 1.5], [-1.9, -3.6, 1.55], 32)),
     ("P02", "S46 the laugh, held, in low gold sun", 2, still([-1.1, -3.3, 1.52], [-1.6, -4.1, 1.47], 22)),
     ("L38", "S47 Mum sits on a box, still laughing", 2, still([-2.5, -2.8, 1.3], [-1.6, -4.2, 0.95], 17)),
@@ -175,6 +178,8 @@ SHOTS = [
     ("L43", "S52 low and wide: Mum and me small at the foot of a tall wall", 2, still([-0.85, -1.85, 0.4], [-3.6, -3.7, 2.0], 13)),
     ("L44", "S53 my face, looking up", 2, still([-2.0, -2.5, 1.5], [-3.0, -3.3, 1.8], 32)),
     ("L45", "S54 the stack, whole, a clean square where the face box stood", 4, CLOCK),
+    ("L45b", "S54b Mum below the old photo, head tipped back to it, eyes wet", 2,
+     still([-2.5, -2.7, 1.55], [-3.9, -3.1, 1.8], 20)),
     ("L46", "S55 the hall: Mum opens the cupboard, head down", 2, still([-0.6, -1.25, 1.5], [1.45, -0.75, 1.15], 20)),
     ("L47", "S56 inside the cupboard: the face box alone on the shelf, frown out", 4,
      move(([0.35, -0.95, 1.5], [1.66, -0.79, 1.42]), ([0.5, -0.9, 1.48], [1.66, -0.79, 1.42]), 22)),
@@ -241,19 +246,19 @@ for who, x in (("a", SX - 6.8), ("b", SX - 3.3), ("p3", SX + 0.0), ("c", SX + 3.
     put(who, "L01.4", [x, YD, 0.08], yaw=0, expr="grin" if who != "c" else "smirk")
     hide(who, "L03")
 for who in ("a", "b", "p3"):
-    hide(who, "L02")
+    hide(who, "L02+0.57")
 for k in range(6):                                           # the tall man waves
-    key("c", f"L02+{0.25 + 0.4 * k:.2f}", side=[0, 28 if k % 2 == 0 else 8], arms=[0, 150], blend=0.3)
+    key("c", f"L02+{0.8 + 0.4 * k:.2f}", side=[0, 28 if k % 2 == 0 else 8], arms=[0, 150], blend=0.3)
 put("lod", "L03", [SX + 10.0, SY + 6.4, 0.0], yaw=0, expr="neutral", side=[0, 4])
 walk("lod", "L03+0.1", [SX + 10.0, SY + 6.4, 0.0], side=[0, 4])
 walk("lod", "L03+1.3", [SX + 10.0, SY + 2.6, 0.0], side=[0, 4])
-hide("lod", "L03.2")
-put("w1", "L03.2", [O5[0] - 0.45, O5[1] + 2.55, -0.09], yaw=0, sit=True, head=[0, -28], expr="worried")
-put("w2", "L03.2", [O5[0] + 0.45, O5[1] + 2.55, -0.09], yaw=0, sit=True, head=[0, -28], expr="worried")
+hide("lod", "L03+1.35")
+put("w1", "L03+1.35", [O5[0] - 0.45, O5[1] + 2.55, -0.09], yaw=0, sit=True, head=[0, -28], expr="worried")
+put("w2", "L03+1.35", [O5[0] + 0.45, O5[1] + 2.55, -0.09], yaw=0, sit=True, head=[0, -28], expr="worried")
 hide("w1", "L04")
 hide("w2", "L04")
-put("host", "L04", [O6[0] - 1.38, O6[1] + 1.9, -0.055], yaw=90, sit=True, expr="angry")
-put("guest", "L04", [O6[0] + 1.38, O6[1] + 1.9, -0.055], yaw=-90, sit=True, expr="smirk")
+put("host", "L04", [O6[0] - 1.38, O6[1] + 1.9, -0.055], yaw=40, sit=True, expr="angry")
+put("guest", "L04", [O6[0] + 1.38, O6[1] + 1.9, -0.055], yaw=-30, sit=True, expr="smirk")
 hide("host", "L05")
 hide("guest", "L05")
 
@@ -283,7 +288,7 @@ put("mum", "L05", [0.85, -2.45], yaw=0, arms=[58, 58], head=[0, 14])            
 hide("mum", "L06")
 put("mum", "L07", [0.45, -1.72], yaw=180, head=[0, 12])                               # S10: the kitchen doorway
 hide("mum", "L08")
-put("mum", "L08", [-4.05, -3.0], yaw=-90, arms=[75, 75], side=[-10, -10], head=[0, -4])   # S11: hanging the frame
+put("mum", "L08", [-4.0, -3.62], yaw=-90, arms=[75, 75], side=[-10, -10], head=[0, -4])   # S11: hanging the frame
 key("mum", "L08+0.7", arms=[60, 60], blend=0.4)
 put("mum", "L09", [-3.3, -3.1], yaw=yaw_to([-3.3, -3.1], [-2.15, -4.5]), arms=[20, 20], side=[-12, -12], head=[0, 12])
 talk("mum", "L09", "L09>")
@@ -307,6 +312,7 @@ hide("mum", "L40")
 put("mum", "L42", [-3.7, -3.0], yaw=-90, head=[0, -32], expr="laugh", tremble=1.0)
 put("mum", "L43", [-3.4, -3.5], yaw=yaw_to([-3.4, -3.5], [-0.9, -1.9]), head=[0, -24], expr="laugh", tremble=0.8)
 hide("mum", "L44")
+put("mum", "L45b", [-3.6, -3.0], yaw=135, head=[0, -16], expr="crying")
 put("mum", "L46", [0.2, -0.74], yaw=90, arms=[0, 0], head=[0, 5])                     # the hall cupboard
 key("mum", "L46.1", arms=[0, 18], blend=0.2)
 key("mum", "L46.1+0.7", arms=[0, 4], blend=0.5)
@@ -319,6 +325,7 @@ cues = [
     # the time of day (set.py TIME_LIGHTS): warm even day, the street's bright overcast, near-black night, 3 a.m.,
     # the gold morning
     {"at": 0, "name": "time", "set": "day"},
+    {"at": 0, "name": "ceil", "h": 1.72},
     {"at": "L01.4", "name": "time", "set": "street"},
     {"at": "L05", "name": "time", "set": "day"},
     {"at": "L06", "name": "time", "set": "street"},
@@ -346,7 +353,7 @@ cues = [
     {"at": 0, "name": "stack", "hide": []},
     {"at": "L18", "name": "stack", "hide": [12, 13, 14, 18, 19, 20]},
     {"at": "L26", "name": "stack", "hide": [12, 13, 14, 18, 19, 20, 21, 23], "clean": True},
-    {"at": "L35", "name": "stack", "hide": [], "clean": True},
+    {"at": "L35", "name": "stack", "hide": [], "clean": True},   # whole but the face box's one clean square (S54)
     {"at": 0, "name": "loose", "on": False},
     {"at": "L38", "name": "loose", "on": [0], "seat": [-1.6, -4.3, 0]},
     {"at": "L40", "name": "loose", "on": False},
@@ -358,6 +365,8 @@ cues = [
     {"at": "L08+0.8", "name": "oldhouse", "where": "wall", "look": "dim"},
     {"at": "L41", "name": "oldhouse", "where": "wall", "look": "lit"},
     {"at": "L42", "name": "oldhouse", "where": "wall", "look": "dim"},
+    {"at": "L45b", "name": "oldhouse", "where": "wall", "look": "lit"},
+    {"at": "L46", "name": "oldhouse", "where": "wall", "look": "dim"},
     # the mug: on the sill, in Mum's hand (S13, S43), on the counter for her tea
     {"at": 0, "name": "mug", "where": "sill"},
     {"at": "L10", "name": "mug", "where": "hand", "who": "mum", "arm": "arm-1"},
@@ -391,6 +400,8 @@ cues = [
     # the relights ("xfill": one soft light, placed and aimed per beat, off between)
     {"at": 0, "name": "xfill", "pos": [-1.6, -3.0, 1.7], "aim": [-2.2, -4.3, 1.3], "gain": 1.2},
     {"at": "L01.4", "name": "xfill", "gain": 0},
+    {"at": "L07", "name": "xfill", "pos": [0.2, -0.5, 1.5], "aim": [0.45, -1.72, 1.4], "gain": 1.1},
+    {"at": "L08", "name": "xfill", "gain": 0},
     {"at": "L11.1", "name": "xfill", "pos": [-0.8, -3.2, 1.3], "aim": [-1.7, -4.5, 1.0], "gain": 1.2},
     {"at": "L13", "name": "xfill", "pos": [-0.9, -3.4, 0.7], "aim": [-1.7, -4.8, 1.2], "gain": 1.0},
     {"at": "L14", "name": "xfill", "gain": 0},
@@ -399,6 +410,8 @@ cues = [
     {"at": "L40", "name": "xfill", "pos": [-3.0, -3.0, 1.5], "aim": [-4.5, -3.0, 2.5], "gain": 0.8},
     {"at": "L41", "name": "xfill", "pos": [-3.5, -2.7, 2.9], "aim": [-4.55, -3.0, 2.7], "gain": 1.5},
     {"at": "L42", "name": "xfill", "gain": 0},
+    {"at": "L45b", "name": "xfill", "pos": [-2.3, -2.3, 1.7], "aim": [-3.6, -3.0, 1.5], "gain": 3.0},
+    {"at": "L46", "name": "xfill", "gain": 0},
     {"at": "L27", "name": "xfill", "pos": [-3.6, -0.8, 1.7], "aim": [-1.6, -0.8, 1.1], "gain": 0.22},
     {"at": "L28", "name": "xfill", "gain": 0},
     {"at": "L47", "name": "xfill", "pos": [0.3, -1.4, 1.9], "aim": [1.66, -0.79, 1.3], "gain": 1.6},
@@ -412,7 +425,7 @@ sfx = [
     {"at": "P01+0.2", "kind": "creak", "tone": "cardboard", "db": -20, "dur": 1.0},      # one low cardboard creak
     {"at": "L32", "kind": "click", "db": -12},                                            # the lamp switch, audible
     {"at": "L46.1", "kind": "door", "db": -18},                                           # the cupboard, soft
-    {"at": "L48>-0.2", "kind": "thud", "db": -18, "dur": 0.6},                           # it shuts on "UP"
+    {"at": "L48>-0.2", "kind": "thud", "db": -12, "dur": 0.8},                           # it shuts on "UP"
 ]
 
 story = {
@@ -463,7 +476,7 @@ story = {
                   {"kind": "wind", "from": 0, "to": "L05", "lufs": -42},
               ],
               "sfx": sfx,
-              "music_drops": [{"from": "L28.1", "to": "L29"},
+              "music_drops": [{"from": "L28>", "to": "L29"},
                               {"from": "L31.1", "to": "L32", "db": -45.0, "keep": ["creak", "click"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
