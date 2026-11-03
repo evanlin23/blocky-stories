@@ -70,3 +70,10 @@ Fixed in `generator/make_story.py` (story.json regenerated, no cue/GAIN/camera c
 - Only change: S54 (L43) camera moved back/up to key0 [X9,1.1,0.95] -> look [X9,3.14,1.05], key1 [X9,1.0,0.98] (the suggested 1.65/1.55 still left the backs filling the frame; mean luma 30).
 - Result: 7:29 timer and both side-profile faces now read; clipcheck 0, check clean. Shot is still the dimmest of its neighbours (luma 37 vs 124/145) because its light level is untouched by design; backs of the pair remain dark. Phone stills: out/work/dryer-nine/stills/s53-55.png.
 - Needs a proof draw. voice-timings.json not committed.
+
+## STATUS: dropped for good (2026-11-03, after the revival)
+- S54 fix: critic r6 approved. Proof run 41737570726 (head bac0150) passed flash, craft (0 block, 0 near), clips (0), loudness (-14.03 LUFS, -2.0 dBTP).
+- Opus qa at stage proof (qa/dryer-nine.json) **failed** it on exposure, not flash:
+  1. S13, 16.9-17.9 s: the narrator's left eye and cheek blow out to white, his face doesn't read.
+  2. White-room shots clip: over 40% pure white in 18 of 82 s (S02-S03 1.4-3.7 s, S07-S08, S12-S15 15-21 s, S36 42.9 s, S62-S65 72-77 s). Needs lower exposure or bloom on those shots.
+- Both allowed fixes are spent (flash fix + the one targeted S54 revival). Lowering exposure on 18 s of the film also risks the flash work, so this is a new round, not a fix. Dropped per the rule; the second orchestrator records it on main.

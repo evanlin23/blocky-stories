@@ -1,0 +1,22 @@
+{
+ "stage": "proof",
+ "film": "proof-41737570726",
+ "run": 41737570726,
+ "sha": "bac01503421157c43a716817354dc287858f218c",
+ "verdict": "fail",
+ "date": "2026-11-03",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "opening recipe",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening variety"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.9 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 21.9 | 14.0– | ok |\n| macro.motion_energy_q | 10.15 | 6.0– | ok |\n| macro.longest_still_q_s | 0.27 | –1.0 | ok |\n| spec.cuts_per_10s | 8.13 | 5.5–8.0 | **warn** |\n| spec.shots_over_2s_share | 0.015 | –0.25 | ok |\n| spec.shot_p90_s | 1.83 | –2.5 | ok |\n| macro.longest_still_s | 0.17 | –1.5 | ok |\n| macro.motion_energy_mean | 3.8 | 1.5– | ok |\n| spec.camera_move_share | 0.999 | 0.65– | ok |\n| spec.punch_per_10s | 0.73 | 0.4– | ok |\n| macro.brightness_mean | 0.582 | 0.35– | ok |\n| macro.brightness_first_3s | 0.712 | 0.3– | ok |\n| macro.dark_frame_share | 0.005 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.388 | 0.42– | **warn** |\n| macro.contrast_mean | 0.261 | 0.18– | ok |\n| spec.face_big_share | 0.26 | 0.4– | **warn** |\n| spec.caption_share | 0.976 | 0.9– | ok |\n| spec.caption_words_median | 2.0 | –3 | ok |\n| macro.held_frame_share | 0.001 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.353 | 0.5– | **warn** |\n| micro.walk_dead_end_share | 0.188 | –0.25 | ok |\n| micro.idle_window_share | 0.026 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 104.0 | –120 | ok |\n| spec.sound_events_per_10s | 4.49 | 2.0–4.0 | **warn** |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 5.5 | 8.0–14.0 | **warn** |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0356 | –0.08 | ok |\n| sound.hf_jump_max | 0.0172 | –0.04 | ok |",
+ "notes": "Proof 82.4 s, 270x480 drawn at sha bac0150 (branch tip, latest commit touching dryer-nine), timeline matches (68 shots). -14.1 LUFS / -1.8 dBTP, LRA 1.4, 4 kHz windows clean (max 0.036, jump 0.017), no silence, L55 'one more HOUR,' ends at 82.13 s and loops into L01. Flash passes (1/s, 3f 2/s, red 0), clip.json 0 hits of 377, verdict.json pass. Polish on. Gate OPEN. Package clean, no spoiler, no 'husband'.\nSecond one: a lit, slow push on dryer nine's brass porthole, a dark blue figure folded among stars inside, the 0:41 timer and a '9' above; 'NOBODY at this laundromat uses dryer NINE.' poses the mystery by 2.1 s. No face until Jonah at 8 s. Opening 'cost' matches L01; neighbours warm-shoes (confess) and last upload closing-time (must): no clash.\nDark climax S46-S54 (54.4-64.3 s) reads at phone size: creature leans to my face, Jonah's frown, 7:30 stopped, door open, the window run-down, the pair on the door, S54 7:29 dim but the timer reads. Cover 52.8 s (S44) is the creature's lit blank face, strong; the beige cylinder head reads uncanny, not silly.\nFIX 1 (must): S13 16.9-17.9 s, narrator close-up 'I wasn't READY': his left eye, cheek and the shirt stripes clip to pure white; the face doesn't read at phone or TV size. Bring the key/exposure down on S13.\nFIX 2 (must): the white-room shots blow out: over 40% of the frame at pure white (luma 250+) in 18 of 82 s, same as the last proof: S02-S03 1.4-3.7 s (panel at 'It RUNS every night' 66%), S07-S08 8-11 s, S12-S15 15-21 s (0:41/0:40 timer shots 60-70%), S36 42.9 s ('The lights'/'Dark spilled out'), S62-S65 72-77 s. Machine fronts, walls and floor lose all shading; on a TV it's a flat glaring white. Lower exposure or the 0.2 bloom on those shots until whites hold shape (about 25% clipped or less), then redraw the proof.\nMinor: voice_bed_gap 5.5 dB is a warn; the voice stays on top in the windows checked and captions carry every line. Sound events 4.49/10 s slightly over.\ncraft: 0 block, 0 near, 6 warn: spec.cuts_per_10s 8.13 (5.5-8.0), macro.saturation_mean 0.388 (0.42-), spec.face_big_share 0.26 (0.4-), micro.character_motion_shot_share 0.353 (0.5-), spec.sound_events_per_10s 4.49 (2.0-4.0), sound.voice_bed_gap_db 5.5 (8.0-14.0). Pace clear of every block (15.9 and 21.9 changes per 10 s, motion 10.15, longest still 0.27 s)."
+}
