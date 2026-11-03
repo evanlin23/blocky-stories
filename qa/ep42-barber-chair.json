@@ -1,0 +1,23 @@
+{
+ "stage": "proof",
+ "film": "proof-41695750035",
+ "run": 41695750035,
+ "sha": "cf0004c0b51226ff5f52e7747e65366d16be815c",
+ "verdict": "pass",
+ "date": "2026-11-03",
+ "checked": [
+  "frames",
+  "first 3 s",
+  "tv canvas",
+  "audio",
+  "polish",
+  "craft",
+  "flash",
+  "clip",
+  "package",
+  "opening",
+  "gate"
+ ],
+ "craft": "| metric | value | target | |\n|---|---|---|---|\n| macro.picture_changes_per_10s | 15.9 | 12.5– | ok |\n| macro.picture_changes_per_10s_q | 18.0 | 14.0– | ok |\n| macro.motion_energy_q | 8.65 | 6.0– | ok |\n| macro.longest_still_q_s | 0.53 | –1.0 | ok |\n| spec.cuts_per_10s | 6.0 | 5.5–8.0 | ok |\n| spec.shots_over_2s_share | 0.226 | –0.25 | ok |\n| spec.shot_p90_s | 2.23 | –2.5 | ok |\n| macro.longest_still_s | 0.63 | –1.5 | ok |\n| macro.motion_energy_mean | 3.09 | 1.5– | ok |\n| spec.camera_move_share | 0.994 | 0.65– | ok |\n| spec.punch_per_10s | 0.72 | 0.4– | ok |\n| macro.brightness_mean | 0.481 | 0.35– | ok |\n| macro.brightness_first_3s | 0.468 | 0.3– | ok |\n| macro.dark_frame_share | 0.015 | –0.08 | ok |\n| macro.black_dips | 0 | –1 | ok |\n| macro.saturation_mean | 0.43 | 0.42– | ok |\n| macro.contrast_mean | 0.276 | 0.18– | ok |\n| spec.face_big_share | 0.474 | 0.4– | ok |\n| spec.caption_share | 0.972 | 0.9– | ok |\n| spec.caption_words_median | 3.0 | –3 | ok |\n| macro.held_frame_share | 0.014 | –0.15 | ok |\n| micro.character_motion_shot_share | 0.536 | 0.5– | ok |\n| micro.walk_dead_end_share | 0.333 | –0.25 | **warn** |\n| micro.idle_window_share | 0.033 | –0.3 | ok |\n| micro.caption_sync_p90_ms | 60.0 | –120 | ok |\n| spec.sound_events_per_10s | 4.05 | 2.0–4.0 | **warn** |\n| sound.silence_share | 0.0 | –0.005 | ok |\n| sound.voice_bed_gap_db | 10.4 | 8.0–14.0 | ok |\n| sound.lufs | -14.1 | -15.0–-13.0 | ok |\n| sound.true_peak_dbtp | -1.8 | –-1.0 | ok |\n| sound.hf_share_max_5s | 0.0443 | –0.08 | ok |\n| sound.hf_jump_max | 0.019 | –0.04 | ok |",
+ "notes": "Proof artifact 13266547281, 138.3 s, sha matches the branch's last story commit. verdict.json pass, clip.json 0 hits of 631, flash house bar passes, gate OPEN, -14.1 LUFS / -1.8 dBTP, 4 kHz windows clean (max 0.044, jump 0.019), voice 10.4 dB over bed, no dead silence, last line ends before the loop with no cutoff.\nSecond one: a warm close on the narrator's face in the barbershop window with a blank white ring over his head, a lit ring over Len behind him, slow push in, 'SIXTY-FOUR people on this street' (dims up from frame 0 and is fully lit by 0.07 s). Line 1 is a count that doesn't add up (63 of 64 humming), so opening 'count' is correct. It doesn't match ep47-fitting-room ('must') or knock-back (no tag).\nPolish on: punches land on the caps words, longest still 0.63 s, captions inside the safe area and readable on phone and TV, shadows hold on the TV canvas, creature (striped cape customer) reads uncanny, not silly.\nMinor, S70 114.8-116.2 s 'VIOLET.': the top-down on my head fills the frame with a flat tan disc inside the violet ring. The ring reads, but the head doesn't. Optional: pull the camera up so the hair edge or brow shows.\nMinor, S61 102.0-103.2 s 'and swept every NIGHT': a soft brown counter side fills two thirds of the frame with no subject for 1.2 s. S28 50.35-50.55 s: the broom head wipes the floor camera as an unlit pure-black slab that could read as a dropout.\nMinor, S09 15.2-17.7 s: the speaker's head is cropped off the left edge, and S78 127-129 s is near white. Neither one loses the story.\nPackage: cover_s 1.6 lands on S02, the back of a head ('SIXTY-THREE'). cover_s 1.0 (S01, the narrator's face under the blank ring) is stronger. Title, description and pin don't spoil the twist, and the stepdad is male with no 'husband'.\ncraft: 0 block, 2 warn: micro.walk_dead_end_share 0.333 (-0.25), spec.sound_events_per_10s 4.05 (2.0-4.0); neither shows a fault in the frames."
+}
