@@ -45,3 +45,13 @@
 - S02: camera x -0.2, lens 17 to 19, my face whole at the left.
 - Not done: S62 hair advice. `sound.rev` 4.
 - Preview re-rendered (S02, S41, S42, S64, S67 forced), finished, mixed: 136.1 s. Flash PASS (max 1 flash/s, 3f 2), preflight 0 blocks, measure 0 blocks, pytest 171 pass.
+
+## DROPPED (2026-11-03, after review round r6)
+Two review rounds (r5, r6) used; no rescue round allowed by the brief. Not approved.
+- r5: standards **approve**; critic **revise** (avg 7.2).
+- r6 critic: **revise** (avg 7.2, every score 6+, all 9 hits yes). Open must-fixes:
+  1. S02 (1.97 to 2.23 s, under "ESPECIALLY"): drawings f00059 to f00066 are solid black (luma ~25 vs ~170 either side). The r5 reframe (camera x -0.2 move) likely starts inside a prop or figure.
+  2. S41 to S42 (60.8 to 64.7 s): still a close, dark heap of chair blocks; sideways head doesn't read. Needs long lens from the hedge, figure about a third of frame height.
+  3. S64 (92.8 s, "face to FACE"): lean reads, but faces ~1 m apart; bring to ~40 cm or change L50 line/caption.
+- Passing: flash, preflight 0 blocks, measure 0 blocks (one warn walk_dead_end_share 0.5), pytest 171, S67 fixed.
+- Branch claude/ep53-opening holds all work. No drop PR (second orchestrator records drops on main). `hold` left in package.json. Not added to queue.txt.
