@@ -838,16 +838,21 @@ def build_hall(kit, ctx, M):
     # my shelf (left wall, 7 m down): a brass tag with 12 and a folded red scarf, with its tag
     sy = -8.27
     st = tiers[2] + 0.03
-    scarf = pbr(kit, "scarf red", "#8f1a1f", 0.95, noise=(60.0, 0.8))
+    scarf = pbr(kit, "scarf red", "#8a0000", 0.9, spec=0.1, noise=(60.0, 0.8))
+    rib = pbr(kit, "scarf rib", "#c80000", 0.9, spec=0.1)
     for i in range(3):
         kit.box(f"scarf{i}", (0.34, 0.5, 0.045), (-1.2, sy, st + 0.0225 + 0.045 * i), scarf, bevel=0.01)
     kit.box("scarf_stripe", (0.345, 0.06, 0.14), (-1.2, sy, st + 0.07), pbr(kit, "scarf stripe", "#e8d9b0", 0.9))
-    ctx["scarf_shelf"] = [bpy.data.objects[f"scarf{i}"] for i in range(3)] + [bpy.data.objects["scarf_stripe"]]
-    kit.box("t12.str", (0.008, 0.008, 0.1), (-1.0, sy + 0.1, st + 0.12), strm)
-    kit.box("t12.tag", (0.016, 0.13, 0.17), (-1.0, sy + 0.1, st + 0.03), tagm, bevel=0.006)
+    # knitted ribs: thin raised ridges along the top fold, 1 cm proud
+    for j in range(9):
+        kit.box(f"scarf_rib{j}", (0.018, 0.5, 0.012), (-1.2 - 0.15 + j * 0.0375, sy, st + 0.135 + 0.006), rib, bevel=0.004)
+    ctx["scarf_shelf"] = ([bpy.data.objects[f"scarf{i}"] for i in range(3)] + [bpy.data.objects["scarf_stripe"]]
+                          + [bpy.data.objects[f"scarf_rib{j}"] for j in range(9)])
+    kit.box("t12.str", (0.008, 0.008, 0.08), (-1.0, sy + 0.3, st + 0.09), strm)
+    kit.box("t12.tag", (0.016, 0.09, 0.12), (-1.0, sy + 0.3, st + 0.0), tagm, bevel=0.006)
     dm = pbr(kit, "tag stamp", "#5a4420", 0.5, metal=0.8)
     # the tag's face is toward the aisle (+x); a viewer there faces -x, so +y is on their right: no mirror
-    seg_digits(kit, "t12d", "12", (sy + 0.1, st + 0.04, -0.99), 0.02, 0.036, 0.011, dm, axis="x", depth=0.006)
+    seg_digits(kit, "t12d", "12", (sy + 0.3, st + 0.01, -0.99), 0.014, 0.026, 0.008, dm, axis="x", depth=0.006)
 
 
 def set_doors(ctx, gap=DOOR_W, hall=1.0):
@@ -879,7 +884,7 @@ LIGHT_STATES = {   # gains on each light's base energy; the ceiling never flicke
 }
 BEYOND = {"thirteen": "hall13", "bright": "hall13", "land": "land"}   # which space shows past the doors
 EXTRA_LIGHTS = ("fill", "land_lamp", "balc_cool", "balc_win", "balc_sun", "balc_fill", "hall_warm0", "hall_warm1",
-                "hall_warm2", "hall_warm3", "sconce", "stair_lamp", "att_side", "att_rim", "shelf_lamp")
+                "hall_warm2", "hall_warm3", "sconce", "stair_lamp", "att_side", "att_rim", "shelf_lamp", "tag_lamp")
 ALL_LIGHTS = ("ceiling", "panel_key", "hall", "hall_rim", "backwash", "hall_far", "hall_low", "sleeve_rim-1",
               "sleeve_rim1", "brass_ping", "face", "face_under", "face_peak", "floor13", "cast_rim", "face_key") + EXTRA_LIGHTS
 
@@ -920,6 +925,8 @@ def build_lights(kit, ctx):
     # a soft key for the faces on the cast only, placed per shot by the shot's "key" ({"at", "aim", "w", "c"}): where
     # the camera is, a little above it, so the faces we are shown are lit and the creature is not
     kit.light("face_key", "AREA", (0.0, 0.0, 1.8), 60.0, "#e8e4dc", size=0.7)
+    # a per-shot lamp on a prop (the shot's "tl": {"at", "aim", "w", "c", "size"}), lighting everything
+    kit.light("tag_lamp", "AREA", (0.0, 0.0, 1.0), 60.0, "#bcd0ff", size=0.3)
     kit.light("hall_far", "POINT", (0.0, SILL_Y - 9.5, 2.3), 60.0, "#a9c4e6", size=0.2)
     # bright 13: warm lamps down the ceiling's middle; the dark hall's cold lamps off
     for k in range(4):
@@ -1543,6 +1550,15 @@ def animate(kit, story, tl, t, ctx):
         link_light("face_key", cast)
         ctx["key_linked"] = True
     g["face_key"] = 0.0
+    tspec = shots_by_id.get(sh["id"], {}).get("tl")
+    g["tag_lamp"] = 0.0
+    if tspec:
+        to = bpy.data.objects["tag_lamp"]
+        to.location = tuple(tspec["at"])
+        to.rotation_euler = (V(tspec["aim"]) - V(tspec["at"])).to_track_quat("-Z", "Y").to_euler()
+        to.data.color = kit.col(tspec.get("c", "#bcd0ff"))[:3]
+        to.data.size = tspec.get("size", 0.3)
+        g["tag_lamp"] = float(tspec.get("w", 1.0))
     if kspec and cast:
         ko = bpy.data.objects["face_key"]
         ko.location = tuple(kspec["at"])

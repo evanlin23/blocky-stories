@@ -88,8 +88,8 @@ SH = []
 FK = None
 
 
-def shot(at, label, cam, step=2, hand=0.01, key=None):
-    SH.append({"at": at, "label": label, "cam": cam, "step": step, "hand": hand, "key": key})
+def shot(at, label, cam, step=2, hand=0.01, key=None, tl=None):
+    SH.append({"at": at, "label": label, "cam": cam, "step": step, "hand": hand, "key": key, "tl": tl})
 
 
 def _lamp_placeholder():
@@ -156,8 +156,9 @@ shot("P04", "the doors part", BACK_WIDE, 1)
 shot("L28", "wide from the car: straight in front of the gap, a step from the sill", BACK_WIDE_B)
 shot("L29", "a low shot: the sleeves running far down", still([0.25, 0.9, 0.5], [0.0, -1.7, 0.75], 30))
 shot("L29.3", "the folded gloves hang below its knees", still([0.05, 0.95, 0.85], [0.0, -1.7, 1.0], 30))
-shot("L30", "low close: the brass tag hanging from the gloves", still([0.2, 0.4, 0.5], [0.0, -1.5, 0.3], 70))
-shot("L31", "insert: the tag, 12 and the one cold stroke, held", still([0.1, 0.3, 0.42], [0.0, -1.48, 0.3], 105))
+TAGL = {"at": [0.5, -1.0, 0.2], "aim": [0.0, -1.5, 0.3], "w": 0.3, "c": "#bcd0ff", "size": 0.3}
+shot("L30", "low close: the brass tag hanging from the gloves", still([0.2, 0.4, 0.5], [0.0, -1.5, 0.3], 90), tl=TAGL)
+shot("L31", "insert: the tag, 12 and the one cold stroke, held", still([0.1, 0.3, 0.42], [0.0, -1.48, 0.3], 130), tl=TAGL)
 shot("L32", "a fast run of presses on close", PANEL_LOW)
 shot("P05", "THE BUMP: the held centre-line frame, locked off: the leaves hit its shoulders", HELD, 1, 0)
 shot("L34", "my face lit cold from below by its buttons", FACE_FEAR, 1, 0.004,
@@ -180,7 +181,7 @@ shot("L41", "wide: him in his doorway, me a step back, the space between us", st
 shot("L42", "the lift doors part on dark thirteen: me stepping out for the first time", still([0.0, 1.2, 1.55], [0.0, -4.0, 1.35], 22), 1)
 shot("L43", "side mid-shot: I walk past the Attendant, its one lit button follows me", still([1.0, -3.4, 1.5], [-0.3, -5.8, 1.5], 18))
 shot("L43.3", "a shelf with a brass 12 tag", still([-0.1, -7.3, 1.5], [-1.2, -8.3, 1.3], 24))
-shot("L44", "the red scarf on the shelf, cold-lit, a brass tag", still([-0.35, -7.75, 1.45], [-1.2, -8.27, 1.25], 28))
+shot("L44", "the red scarf on the shelf, cold-lit, a brass tag", still([-0.2, -7.6, 1.45], [-1.2, -8.34, 1.2], 26))
 shot("L44.3", "my hands lifting it off, on my open palms", still([0.6, -7.3, 1.65], [-0.5, -8.3, 1.3], 18))
 shot("L45", "the twelve landing: the scarf lying across his open palms", still([-0.1, -4.0, 1.5], [-0.55, -5.0, 1.25], 20), 2, 0.004)
 L46C = still([-0.25, -4.2, 1.6], [-0.55, -5.1, 1.5], 24)
@@ -192,13 +193,16 @@ shot("L48", "the balconies next morning: a tomato on the wall top between us, hi
 shot("L49", "me in the lift, the scarf round my neck", FACE_ME, 2, 0.01, lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
 shot("L49.1+0.3", "the indicator ticking from 12 to 13, over my shoulder", still([0.25, 0.9, 1.65], [0.0, -0.9, 1.9], 22), 2, 0.004)
 shot("L50", "the doors part on dark thirteen: the Attendant facing the car, my tag hanging from its gloves",
-     still([0.0, 0.6, 1.5], [0.0, -2.6, 1.15], 24), 1, 0.002)
+     move(([0.0, 0.6, 1.5], [0.0, -2.6, 1.15]), ([0.0, 0.3, 1.05], [0.0, -2.6, 0.8]), 24, 38), 1, 0.002,
+     tl={"at": [0.5, -1.0, 0.5], "aim": [0.0, -2.2, 0.55], "w": 0.9, "c": "#bcd0ff", "size": 0.3})
 
 shots = []
 for k, s in enumerate(SH):
     d = {"id": f"S{k + 1:02d}", "cam": s["cam"], "step": s["step"], "hand": s["hand"]}
     if s.get("key"):
         d["key"] = s["key"]
+    if s.get("tl"):
+        d["tl"] = s["tl"]
     if k:
         d["at"] = s["at"]
     shots.append(d)
