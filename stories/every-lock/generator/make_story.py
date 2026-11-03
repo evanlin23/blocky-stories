@@ -62,7 +62,7 @@ insert_pause(lines, "L36", "P01", 0.6)
 insert_pause(lines, "L68", "P02", 0.6)
 for _l in lines:
     if _l["id"] == "L41":
-        _l["tempo"] = 0.88
+        _l["tempo"] = 0.9
 lines.append({"id": "P03", "pause": 0.12, "chunks": []})
 
 # ---------------------------------------------------------------------------------------------------- cast

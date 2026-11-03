@@ -152,7 +152,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** our bathroom door, the downstairs kitchen, the building's hall, the stairwell, upstairs.
 - **Shots:** 17.
 
-- `L01` narrator: Never let a DOOR / shut here. / Ours has a THOUSAND LOCKS.
+- `L01` narrator: Our bathroom DOOR / has ONE THOUSAND / and twenty-four LOCKS. (opening: count, 2026-11-03)
   - [two shots: a tight close, centred, on our bathroom door at 1,024 locks, bright morning, a lumpy brass and chrome bulge with a sliver of yellow paint at the frame. Push in. Then a punch in across the locks, every keyhole flap glinting. On "LOCKS" the doubled clunk and the whole pile shudders with a jingle. Meter 1,024 from the first frame]
 - `L02` narrator: Every time it SHUTS, / they DOUBLE.
   - [our kitchen cupboard door with one brass lock, nudged shut by my elbow: a second lock pops on beside the first. Bright]
@@ -257,7 +257,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the flap swings closed with a tiny click]
 - `L40` narrator: A door SHUT. / So THAT lock / gets a LOCK.
   - [two shots: the shut flap, held still. Then a tiny lock pops onto that lock, its own tiny flap on top. Meter 1,024 → 1,025]
-- `L41` narrator: CLICK. / Click click. / Click click click click.
+- `L41` narrator: CLICK. / Click click. / Click click click.
   - [three quick shots, one per chunk: one flap shutting, two flaps, four flaps, each followed by new locks budding. The drone enters]
 - `L42` narrator: NOBODY'S / touching it.
   - [wide on the inner hall: the pile, Jade asleep on her mat at the far side, me in my doorway, nobody near it]
