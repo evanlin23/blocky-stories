@@ -114,7 +114,18 @@ def fetch(story: str, d: Path) -> tuple[Path, dict]:
                    check=True)
     s = slug(story)
     mp4 = next(d.rglob(f"{s}.mp4"))
-    return mp4, json.loads(next(d.rglob(f"{s}.flash.json")).read_text())
+    rep = json.loads(next(d.rglob(f"{s}.flash.json")).read_text())
+    try:   # re-measure with today's bar, so a film drawn under an older bar is judged by the current one (2026-11-03)
+        sys.path.insert(0, str(ROOT))
+        from blocky import flash as flashmod
+        tl = ROOT / "out" / "work" / story / "timeline.json"
+        rep = flashmod.measure(mp4, None if not tl.exists() else
+                               [x["f0"] for x in json.loads(tl.read_text())["shots"][1:]])
+        print(f"{story}: flash re-measured: {'PASS' if rep['house_bar']['pass'] else 'FAIL'}"
+              + "".join(f"; warning: {w}" for w in rep.get("house_warnings", [])))
+    except Exception as e:   # no numpy/ffmpeg: keep the render's own reading
+        print(f"{story}: flash kept from the render ({e})")
+    return mp4, rep
 
 
 def description(pkg: dict, flash: dict) -> str:

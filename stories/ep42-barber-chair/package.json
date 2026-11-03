@@ -1,10 +1,10 @@
 {
  "title": "Everyone Here HUMS Their Own Note 🎵",
- "description": "In this town, everyone hums one note all day long, and a little ring over every head ripples with it. Mine has never made a sound.\n\nThis winter my stepdad's note started to fade. And every evening I walked past his barbershop, a customer in a striped cape was sitting one chair nearer to the chair he kept for me.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+ "description": "Sixty-four people on this street, and sixty-three are humming. In this town, everyone hums one note all day long, and a little ring over every head ripples with it. Mine has never made a sound.\n\nThis winter my stepdad's note started to fade. And every evening I walked past his barbershop, a customer in a striped cape was sitting one chair nearer to the chair he kept for me.\n\nIt's made up, a creepy blocky story built with code and Blender.",
  "pin": "Comment HUM if you'd want to know whose note you match.",
  "made_for_kids": false,
  "cover_s": 1.6,
  "shape": "stand-in",
  "old_title": "Everyone Here HUMS a Note of Their Own",
- "hold": "held 2026-11-03 (queue audit): fix to the opening recipe only after 3 recipe films pass"
+ "opening": "count"
 }
