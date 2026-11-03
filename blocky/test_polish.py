@@ -117,18 +117,20 @@ def test_motion_never_still_and_never_jumps():
     fps = tl["fps"]
     zs = [polish.motion(tl, st, p, f / fps, emph) for f in range(tl["frames"])]
     for (z, dx, dy) in zs:
-        assert 1.0 <= z <= 1.0 + p["punch"] + p["drift"] * 1.3 + 1e-6
-        assert z >= 1 + 2 * max(abs(dx), abs(dy)) - 0.02
-    cuts = {s["f0"] for s in tl["shots"]}
+        assert 1.0 <= z <= p["max_zoom"] + 1e-6
+        assert max(abs(dx), abs(dy)) < 0.05                               # slides stay small
+    cuts = {s["f0"] for s in tl["shots"]} | {int(round(t * fps)) for t in polish.reframe_times(tl, p)}
     for f in range(1, len(zs)):
-        if f not in cuts:   # inside a shot: at most a 3.5% zoom step per frame (the punch eases over 0.12 s)
+        if f not in cuts and f - 1 not in cuts:   # inside a framing: at most a 3.5% zoom step per frame
             assert abs(zs[f][0] - zs[f - 1][0]) < 0.035, f
+    # never still: the push moves the crop on every frame of every shot
+    assert all(zs[f] != zs[f - 1] for f in range(1, len(zs)) if f not in cuts)
     # a static shot gets a real camera move (two different keys); with the camera off, a shot over 1.5 s drifts
     for i, (s, spec) in enumerate(zip(tl["shots"], st["shots"])):
         if len(spec["cam"]) == 1:
             moved = polish.cam_spec(spec, i, p)["cam"]
             assert len(moved) == 2 and moved[0][1] != moved[1][1], s["id"]
-    p_off = {**p, "camera": False}
+    p_off = {**p, "camera": False, "push": 0, "reframe_every": 0}
     zo = [polish.motion(tl, st, p_off, f / fps, emph) for f in range(tl["frames"])]
     for s, spec in zip(tl["shots"], st["shots"]):
         if s["end"] - s["start"] >= 1.5 and len(spec["cam"]) == 1:
@@ -136,7 +138,7 @@ def test_motion_never_still_and_never_jumps():
 
 
 def test_sway_is_slow_and_only_where_asked():
-    st, tl = story(look={"polish": {"sway": ["S1"], "drift": 0, "punch": 0}})
+    st, tl = story(look={"polish": {"sway": ["S1"], "drift": 0, "punch": 0, "push": 0, "reframe_every": 0}})
     p = polish.spec(st)
     s1 = next(s for s in tl["shots"] if s["id"] == "S1")
     s2 = next(s for s in tl["shots"] if s["id"] == "S2")
@@ -418,3 +420,18 @@ def test_fewer_sound_effects_by_default():
     assert sum(e["kind"] == "lowhit" for e in ev) <= 1
     risers = sorted(e["t"] + e["dur"] for e in ev if e["kind"] == "riser")
     assert all(b - a >= p["riser_gap"] - 1e-6 for a, b in zip(risers, risers[1:]))
+
+
+def test_pace_angle_cuts_split_long_shots_and_skip_reveals():
+    """v2.3 (craft metrics blocks, 2026-11-03): long shots get an angle cut about every 1.1 s, never in a reveal."""
+    st, tl = story()
+    p = polish.spec(st)
+    rts = polish.reframe_times(tl, p)
+    calm = set(tl["motion"]["calm_shots"])
+    for s in tl["shots"]:
+        inside = [t for t in rts if s["start"] < t < s["end"]]
+        L = s["end"] - s["start"]
+        if s["id"] in calm or L < p["reframe_min"]:
+            assert not inside
+        else:
+            assert len(inside) == max(2, round(L / p["reframe_every"])) - 1

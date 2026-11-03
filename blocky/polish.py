@@ -45,6 +45,7 @@ DEFAULTS = {
     # captions
     "pop": True,
     # motion
+    "push": 0.10, "reframe_every": 1.1, "reframe_min": 1.6, "reframe_zoom": 1.14, "max_zoom": 1.25,
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
     "ones": "moving", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
     # picture
@@ -381,6 +382,34 @@ def cam_spec(shot_spec: dict, k: int, p: dict | None, dur: float | None = None, 
     return {**shot_spec, "cam": [[0, start, t0, lens, *rest], [1, end, t1, lens, *rest]], "auto_cam": True}
 
 
+_QUIET: dict = {}
+
+
+def _quiet_cache(tl: dict, p: dict) -> list:
+    key = (id(tl), id(p))
+    if key not in _QUIET:
+        from blocky.timeline import resolver
+        _QUIET.clear()
+        _QUIET[key] = quiet_spans(p, resolver(tl["lines"], tl["duration"])) if p.get("quiet") else []
+    return _QUIET[key]
+
+
+def reframe_times(tl: dict, p: dict) -> list[float]:
+    """When the pack's angle cuts land (for measure.py and the whoosh-free sound: a reframe is a cut, not a punch)."""
+    out = []
+    rf = p.get("reframe_every")
+    if not rf:
+        return out
+    calm = set((tl.get("motion") or {}).get("calm_shots") or [])
+    for s in tl["shots"]:
+        L = s["end"] - s["start"]
+        if L < p.get("reframe_min", 1.6) or s["id"] in calm:
+            continue
+        nseg = max(2, int(round(L / rf)))
+        out += [s["start"] + i * L / nseg for i in range(1, nseg)]
+    return out
+
+
 def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = None) -> tuple[float, float, float]:
     """The pack's camera move at time t, on the output crop: (zoom, dx, dy), dx and dy as fractions of the frame."""
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
@@ -396,6 +425,25 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         zoom = 1 + d * (e if k % 2 == 0 else 1 - e) + d * 0.2
         side = 1 if (k // 2) % 2 == 0 else -1
         dx = side * d * 0.15 * (e - 0.5)
+    calm = shot["id"] in ((tl.get("motion") or {}).get("calm_shots") or [])
+    if p.get("push"):
+        # pace (v2.3, craft metrics blocks 2026-11-03): a steady crop push through every shot, in on one shot and
+        # out on the next, at a constant rate so every 0.25 s reads as a change (an eased move stalls at its ends)
+        pu = p["push"] * (0.5 if calm else 1.0)
+        zoom *= 1 + pu * (u if k % 2 == 0 else 1 - u)
+        dx += (1 if (k // 2) % 2 == 0 else -1) * pu * 0.12 * (u - 0.5)
+    rf = p.get("reframe_every")
+    if rf and length >= p.get("reframe_min", 1.6) and not calm:
+        # an angle cut inside a long shot: the shot splits into even parts about `reframe_every` s long, and every
+        # other part is a tighter framing, offset up and to one side (like a second camera); never in a reveal shot
+        # or a quiet span
+        nseg = max(2, int(round(length / rf)))
+        seg = min(nseg - 1, int(u * nseg))
+        tq = shot["start"] + seg * length / nseg
+        if seg % 2 == 1 and not any(a <= tq <= b for a, b in _quiet_cache(tl, p)):
+            zoom *= p.get("reframe_zoom", 1.15)
+            dx += 0.035 * (1 if (k + seg // 2) % 2 == 0 else -1)
+            dy -= 0.025
     if p["punch"]:
         for te in emph if emph is not None else emph_times(tl, p):
             if shot["start"] - 1e-6 <= te < shot["end"] and t >= te:
@@ -408,7 +456,8 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         a = p["sway_amp"]
         dx += a * (math.sin(t * 2 * math.pi * 0.31 + 1.3) + 0.5 * math.sin(t * 2 * math.pi * 0.53))
         dy += a * 0.7 * (math.sin(t * 2 * math.pi * 0.23 + 0.4) + 0.4 * math.sin(t * 2 * math.pi * 0.47 + 2.0))
-    return zoom, dx, dy
+    zoom = min(zoom, p.get("max_zoom", 1.25))   # the drawings are 540 wide: past 1.25 the crop goes soft
+    return zoom, dx, dy                        # (post.to_output widens the crop to fit any slide)
 
 
 # ------------------------------------------------------------------------------------------------ picture
