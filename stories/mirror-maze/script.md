@@ -4,7 +4,9 @@
 
 - **Why it's redone:** held on 2026-11-02 because the old first line ("TASHA points at anything GREEN...") wasn't the world's rule (RULES → Our own numbers so far, ep20). This is a new premise and twist on the same set and cast.
 - **Slug:** `ep15-mirror-maze` (unchanged, as in story.json).
-- **Length:** 338 spoken words in 43 lines, plus 2 pause beats (1.4 s). About 1:22 on screen at the measured 280 wpm with gaps and holds (1:18 at 290 wpm). That's in the 60 to 90 s test band. If it runs over 1:30, first take the extra holds back to 0.12 s, then cut L07.
+- **New opening (2026-11-03, the opening recipe v1 in `docs/research/playbook.md`):** L01 is new and L01b is added, a warning to you in place of the wonder rule. Everything from L02 on is word for word as before (L02 and L03 stay, because L03's joke needs L02). Re-voice L01 and L01b only.
+- **Quotable line:** L11, "I say pickle. Every time." (echoed at L41).
+- **Length:** 343 spoken words in 44 lines, plus 2 pause beats (1.4 s). The new opening adds about 1.3 s. About 1:22 on screen at the measured 280 wpm with gaps and holds (1:18 at 290 wpm). That's in the 60 to 90 s test band. If it runs over 1:30, first take the extra holds back to 0.12 s, then cut L07.
 - **Shots:** about 46, a new shot every 1.8 s on average.
 - **Shape tag:** `echo` (new): the narrator turns out to be what someone left behind, a copy that thinks it's the person.
 - **The test:** "Wait, the narrator was the reflection the whole time, and Tasha's been visiting a reflection every night because the real one moved away?" Then "oh no", because the truck is taking the pane to a town where nobody knows them.
@@ -14,12 +16,13 @@
 - **Premise (for story.json):** In a town where your reflection stays behind in the glass when you walk away, I meet my best friend Tasha at the travelling fair's mirror maze every night, and on the last night the maze guy starts loading the panes onto the truck.
 - **Twist (for story.json):** I'm not the person, I'm the reflection the real me left in a maze pane last year before moving away. I've never left a reflection because I am one. Tasha has come every night to see me, and when my pane goes on the truck she looks at herself in it on purpose, so her reflection stays behind with mine.
 - **World (for story.json):** a travelling fair packing up in the rain at night, in a town where every reflection stays where it was made: duckboards over mud, a puddle that still holds a man tying his boot, a flatbed truck of glass panes full of waving strangers, a fry van whose steel side holds a long queue, and a lilac-bulbed mirror maze with its roof off.
+- **The first line, a warning to you:** "In this town, never walk away from your reflection." Then: "It stays in the glass and waits."
 - **The rule:** your reflection stays in the glass when you walk away. It stays where you stood, rimmed in a thin lilac glow, and lives on in that glass. Leftovers nobody comes to see lose the shine in their eyes over the years.
 - **The marker (by 2 s):** a **thin lilac glow outline** on every leftover reflection (our own design, not a game effect), plus the leftover standing where nobody is. In the first frame, Tasha stands lit at the maze front and the panes behind her hold a crowd of lilac-rimmed strangers who aren't on the steps.
 - **The narrator is the exception:** "I've NEVER left ONE ANYWHERE." Everyone in town leaves reflections everywhere. I never have, because I am one.
 - **The loved one:** Tasha (adult), shown by 0:20 pointing at my green hat through the glass and grinning, two trays of fries in her hands.
 - **The loophole (the rule's own logic):** the rule that made me is the one that saves me from being alone. All week Tasha only ever looked at me, never at herself, so she left nothing in my pane. On the last night she looks at herself in it on purpose and walks away, and her reflection stays with me.
-- **How the last 15 s turn the first line:** L01 sounds like a fun town quirk. By L42 it's what I am, and L43 ("And NOBODY comes BACK for it.") makes it about the real me who never came back, the dark ones, and now Tasha's reflection on the truck.
+- **How the last 15 s turn the first line:** L01 sounds like a town superstition about mirrors. By L42 it's what I am, and L43 ("And NOBODY comes BACK for it.") makes it about the real me who never came back, the dark ones, and now Tasha's reflection on the truck. Across the loop it reads "And nobody comes back for it. In this town, never walk away from your reflection." The real me did walk away, and I'm what waited.
 - **Plants a rewatch catches:**
   1. L08 (about 15 s): "I've NEVER left ONE ANYWHERE." It sounds like a quirk. It's the twist said out loud.
   2. L13 (about 24 s): "But TASHA always PAYS. I never HAVE." I can't. I'm in the glass.
@@ -47,7 +50,8 @@
 
 | Lines | Shots | What we see | New or reused |
 |---|---|---|---|
-| L01 (0 to 2.5 s) | 1 | The hook: Tasha at the maze front, lit bright with a soft front fill, face at least 1/4 frame width. The panes behind her hold a lilac-rimmed crowd of strangers who aren't on the steps. Fog light, rain fine. Readable at phone size by 2 s | maze front reused, leftover crowd and rim new |
+| L01 (0 to 2 s) | 1 | The hook, close and centred: one maze pane holding a lilac-rimmed reflection of a stranger, and nobody standing in front of it. Push in during the line. A soft hit on "reflection". Lit to read at phone size, no wide | maze pane reused, leftover and rim new |
+| L01b (2 to 3.3 s) | 1 | Tasha at the maze front, lit bright, face at least 1/4 frame width. The panes behind her hold a lilac-rimmed crowd of strangers who aren't on the steps | maze front reused, leftover crowd new |
 | L02 to L03 | 2 | The fry van's steel side holds a long queue of lilac-rimmed people. Then the real hatch: two customers | van reused, leftover queue new |
 | L04 to L05 | 2 | A puddle on the duckboards holds a man tying his boot. Nobody stands over it | duckboards and puddle reused, puddle figure new |
 | L06 | 1 | The truck's glass panels full of lilac-rimmed people waving | truck reused, figures new |
@@ -70,8 +74,10 @@
 
 Every line is `narrator`, voice A. CAPS are key words in `#ffd23a`. No chunk has more than three words, and no caption has a digit.
 
-- `L01` narrator: In this TOWN, / your REFLECTION / STAYS behind / when you / walk AWAY.
-  - [the hook shot. "In this town" lands by about 1 s, the crowd in the panes is the rule]
+- `L01` narrator: In this TOWN, / NEVER walk AWAY / from your / REFLECTION.
+  - [the hook shot: a pane holding a reflection with nobody in front of it. The warning lands by about 2 s]
+- `L01b` narrator: It STAYS / in the GLASS / and WAITS.
+  - [Tasha at the maze front, the crowd in the panes behind her is the rule]
 - `L02` narrator: The fry van's / SHINY SIDE / has a QUEUE / a hundred LONG.
 - `L03` narrator: The REAL queue / is TWO.
 - `L04` narrator: A PUDDLE / on the BOARDS / still has / a MAN / tying his BOOT.
@@ -84,7 +90,7 @@ Every line is `narrator`, voice A. CAPS are key words in `#ffd23a`. No chunk has
 - `L09` narrator: But TASHA / meets me / at the / MIRROR MAZE / every NIGHT.
 - `L10` narrator: She POINTS / at my / green HAT / and goes, / what's THAT?
   - [the loved-one picture: her grin through the pane, pointing]
-- `L11` narrator: I say / PICKLE. / Every TIME.
+- `L11` narrator: I say / PICKLE. / Every TIME.  **[quotable line]**
 - `L12` narrator: Whoever / says PICKLE / buys the FRIES.
 - `L13` narrator: But TASHA / always PAYS. / I never / HAVE.
   - [plant 2: she eats from both trays]
@@ -135,7 +141,8 @@ Every line is `narrator`, voice A. CAPS are key words in `#ffd23a`. No chunk has
 
 ## Say-it-out-loud notes
 
-- **L01:** brisk and bright, a fun fact. It's wonder first.
+- **L01:** plain and close, a warning to the listener.
+- **L01b:** quieter and flat. Land "WAITS" and move on.
 - **L03 "is TWO."** dry, a small joke.
 - **L08 "Me?"** a little lift, then pleased with myself.
 - **L19 "MINE never DOES."** flat, a shrug. Don't push it.

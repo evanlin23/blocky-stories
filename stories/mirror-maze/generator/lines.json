@@ -8,20 +8,34 @@
     "In this town,"
    ],
    [
-    "your REFLECTION",
-    "your reflection"
+    "NEVER walk AWAY",
+    "never walk away"
    ],
    [
-    "STAYS behind",
-    "stays behind"
+    "from your",
+    "from your"
    ],
    [
-    "when you",
-    "when you"
+    "REFLECTION.",
+    "reflection."
+   ]
+  ]
+ },
+ {
+  "id": "L01b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It STAYS",
+    "It stays"
    ],
    [
-    "walk AWAY.",
-    "walk away."
+    "in the GLASS",
+    "in the glass"
+   ],
+   [
+    "and WAITS.",
+    "and waits."
    ]
   ]
  },
