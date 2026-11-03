@@ -45,17 +45,18 @@ DEFAULTS = {
     # captions
     "pop": True,
     # motion
+    "push": 0.12, "reframe_every": 0.8, "reframe_min": 1.6, "reframe_zoom": 1.14, "max_zoom": 1.18,
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
     "ones": "moving", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
     # picture
     "grade": "bright",
     # builder marks
-    "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [],
+    "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [], "hold": [],
     "punch_cap": {},     # opt-in: {shot id: most the punch-in may zoom there} (a head that must stay in frame)
 }
 GRADES = {
     # lift: a toe that raises the darkest tones (out + lift * (1 - out)^3), so shadows keep their detail on a TV
-    "bright": {"exposure_min": 1.04, "saturation_min": 1.1, "contrast_max": 1.05, "vignette_max": 0.2,
+    "bright": {"exposure_min": 1.12, "red_line": 0.78, "saturation_min": 1.1, "contrast_max": 1.05, "vignette_max": 0.2,
                "grain_max": 0.009, "lift": 0.035},
     "none": {},
 }
@@ -381,6 +382,65 @@ def cam_spec(shot_spec: dict, k: int, p: dict | None, dur: float | None = None, 
     return {**shot_spec, "cam": [[0, start, t0, lens, *rest], [1, end, t1, lens, *rest]], "auto_cam": True}
 
 
+_QUIET: dict = {}
+
+
+def _quiet_cache(tl: dict, p: dict) -> list:
+    key = (id(tl), id(p))
+    if key not in _QUIET:
+        from blocky.timeline import resolver
+        _QUIET.clear()
+        _QUIET[key] = quiet_spans(p, resolver(tl["lines"], tl["duration"])) if p.get("quiet") else []
+    return _QUIET[key]
+
+
+def reframe_times(tl: dict, p: dict) -> list[float]:
+    """When the pack's angle cuts land: in shots over `reframe_min` s that aren't a reveal shot and don't touch a
+    quiet span, about every `reframe_every` s, each moved to the nearest caption change within 0.35 s (cut with the
+    words) and dropped when there's none, or when it would leave a part under 0.6 s."""
+    out = []
+    rf = p.get("reframe_every")
+    if not rf:
+        return out
+    calm = set((tl.get("motion") or {}).get("calm_shots") or [])
+    quiet = _quiet_cache(tl, p)
+    caps = [c["start"] for c in tl["captions"]]
+    hold = set(p.get("hold") or [])
+    shots = tl["shots"]
+    for i, s in enumerate(shots):
+        L = s["end"] - s["start"]
+        if L < p.get("reframe_min", 1.6) or s["id"] in calm or s["id"] in hold:
+            continue
+        if any(a < s["end"] and b > s["start"] for a, b in quiet):
+            continue
+        # no angle cut in the 2 s before a quiet span (a warm beat starts calm), and none in the last 1.0 s before
+        # a held or reveal shot (a crop jump straight into a full frame reads as a stutter; critic, ep32 round 3)
+        nxt = shots[i + 1] if i + 1 < len(shots) else None
+        end_gap = 1.0 if nxt and (nxt["id"] in hold or nxt["id"] in calm) else 0.6
+        lead_ins = [a for a, b in quiet if b - a > 1.0 + 1e-6]
+        nseg = max(2, int(round(L / rf)))
+        last = s["start"]
+        for i in range(1, nseg):
+            want = s["start"] + i * L / nseg
+            near = [c for c in caps if abs(c - want) <= 0.35 and c - last >= 0.6 and s["end"] - c >= end_gap
+                    and not any(0 <= a - c < 2.0 for a in lead_ins)]
+            if near:
+                last = min(near, key=lambda c: abs(c - want))
+                out.append(last)
+    return out
+
+
+_REFRAME: dict = {}
+
+
+def _reframe_cache(tl: dict, p: dict) -> list:
+    key = (id(tl), id(p))
+    if key not in _REFRAME:
+        _REFRAME.clear()
+        _REFRAME[key] = reframe_times(tl, p)
+    return _REFRAME[key]
+
+
 def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = None) -> tuple[float, float, float]:
     """The pack's camera move at time t, on the output crop: (zoom, dx, dy), dx and dy as fractions of the frame."""
     shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
@@ -396,6 +456,25 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         zoom = 1 + d * (e if k % 2 == 0 else 1 - e) + d * 0.2
         side = 1 if (k // 2) % 2 == 0 else -1
         dx = side * d * 0.15 * (e - 0.5)
+    calm = shot["id"] in ((tl.get("motion") or {}).get("calm_shots") or [])
+    # the builder's frame-exact shots, and shots touching a quiet span (a warm beat): no pace crop at all
+    held = shot["id"] in (p.get("hold") or []) or any(a < shot["end"] and b > shot["start"]
+                                                      for a, b in _quiet_cache(tl, p) if b - a > 1.0 + 1e-6)
+    if p.get("push") and not held:
+        # pace (v2.3, craft metrics blocks 2026-11-03): a steady crop push through every shot, in on one shot and
+        # out on the next, at a constant rate so every 0.25 s reads as a change (an eased move stalls at its ends)
+        # scaled to the shot's length, so a 0.4 s shot doesn't rush (critic, ep32 v2.3: 12% in 0.4 s read as a zoom)
+        pu = p["push"] * (0.5 if calm else 1.0) * min(1.0, length / p.get("push_full_s", 1.2))
+        zoom *= 1 + pu * (u if k % 2 == 0 else 1 - u)
+        dx += (1 if (k // 2) % 2 == 0 else -1) * pu * 0.12 * (u - 0.5)
+    rf = p.get("reframe_every")
+    if rf:
+        # an angle cut inside a long shot (v2.3): every other part is a tighter framing, centred and a touch up
+        # (an offset pushed faces off the edge, critic ep32), cut on a caption change (never under a held word)
+        cuts_ = [c for c in _reframe_cache(tl, p) if shot["start"] < c < shot["end"]]
+        seg = sum(1 for c in cuts_ if c <= t)
+        if seg % 2 == 1 and not held:
+            zoom *= p.get("reframe_zoom", 1.12)   # centred: an upward offset took hair to the top edge (critic)
     if p["punch"]:
         for te in emph if emph is not None else emph_times(tl, p):
             if shot["start"] - 1e-6 <= te < shot["end"] and t >= te:
@@ -408,7 +487,8 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         a = p["sway_amp"]
         dx += a * (math.sin(t * 2 * math.pi * 0.31 + 1.3) + 0.5 * math.sin(t * 2 * math.pi * 0.53))
         dy += a * 0.7 * (math.sin(t * 2 * math.pi * 0.23 + 0.4) + 0.4 * math.sin(t * 2 * math.pi * 0.47 + 2.0))
-    return zoom, dx, dy
+    zoom = min(zoom, p.get("max_zoom", 1.25))   # the drawings are 540 wide: past 1.25 the crop goes soft
+    return zoom, dx, dy                        # (post.to_output widens the crop to fit any slide)
 
 
 # ------------------------------------------------------------------------------------------------ picture
@@ -425,6 +505,9 @@ def grade(g: dict, p: dict) -> dict:
     out["vignette"] = min(g.get("vignette", 0.35), pr["vignette_max"])
     out["grain"] = min(g.get("grain", 0.012), pr["grain_max"])
     out["lift"] = max(g.get("lift", 0.0), pr["lift"])
+    if pr.get("red_line"):   # v2.3: the pack's push and angle cuts enlarge red areas, so keep under WCAG's saturated
+        # red on every frame (ep32 S09b: 47.7% of the screen without pace, 53% with it, against the 50% red-frame bar)
+        out["red_line"] = min(g.get("red_line", 1.0), pr["red_line"])
     return out
 
 
