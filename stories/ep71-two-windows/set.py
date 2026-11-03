@@ -275,10 +275,12 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
             q = quad(kit, f"{name}.tix{i}", 0.13, 0.19, (0.68, -0.14 + 0.1 * i, 1.4 - 0.01 * i), FACE_NEG_X, m, root)
             parts["tix"].append(q)
         B("mirror", (0.05, 0.3, 0.1), (0.68, 0.0, 1.5), dark, 0.02)
+    if tix:
+        parts["cup"] = kit.cyl(f"{name}.cup", 0.06, 0.13, (0.82, -0.2, 1.08), kit.plastic("#9be15d", 0.5, "cup"), root, n=14)
     if bag:
         bg = kit.empty(f"{name}.bag", (0, 0, 0), root)
-        kit.box(f"{name}.bagm", (0.34, 0.22, 0.3), (-0.05, -0.43, 0.7), kit.plastic("#c9955a", 0.9, "bag"), bg, bevel=0.02)
-        kit.box(f"{name}.bagt", (0.3, 0.02, 0.12), (-0.05, -0.55, 0.78), kit.plastic("#fff", 0.6, "bagt"), bg)
+        kit.box(f"{name}.bagm", (0.4, 0.26, 0.36), (-0.05, -0.43, 0.72), kit.plastic("#c9955a", 0.9, "bag"), bg, bevel=0.02)
+        kit.box(f"{name}.bagt", (0.3, 0.02, 0.12), (-0.05, -0.57, 0.8), kit.plastic("#fff", 0.6, "bagt"), bg)
         parts["bag"] = bg
     return parts
 
@@ -313,9 +315,9 @@ def build_server(kit, M, ctx):
     kit.box("srv.sleeve", (0.22, 1.0, 0.22), (0, -0.5, 0), mint, arm, bevel=0.04)
     kit.box("srv.hand", (0.2, 0.22, 0.12), (0, -1.1, -0.04), skin, arm, bevel=0.03)
     bag = kit.empty("server.bag", (0, -1.12, 0.0), arm)
-    kit.box("srv.bagm", (0.34, 0.22, 0.3), (0, 0, 0.2), kit.plastic("#c9955a", 0.9, "bag"), bag, bevel=0.02)
-    kit.box("srv.bagfold", (0.34, 0.24, 0.04), (0, 0, 0.36), kit.plastic("#b98448", 0.9, "bag fold"), bag)
-    quad(kit, "srv.ticket", 0.15, 0.2, (0, -0.116, 0.2), FACE_NEG_Y, M["tix41"], bag)
+    kit.box("srv.bagm", (0.5, 0.3, 0.46), (0, 0, 0.26), kit.plastic("#c9955a", 0.9, "bag"), bag, bevel=0.02)
+    kit.box("srv.bagfold", (0.5, 0.32, 0.05), (0, 0, 0.5), kit.plastic("#b98448", 0.9, "bag fold"), bag)
+    quad(kit, "srv.ticket", 0.26, 0.34, (0, -0.156, 0.26), FACE_NEG_Y, M["tix41"], bag)
     ctx["server"] = {"root": root, "g": g, "head": head, "arm": arm,
                      "body": [o for o in g.children if o.name != "server.arm"]}
 
@@ -402,9 +404,14 @@ def build_world(kit, M, ctx):
     kit.box("wb roof", (6.9, 1.9, 0.2), (10.2, 5.5, H + 0.1), M["mint"], bevel=0.03)
     kit.box("wb band", (7.0, 0.15, 0.55), (10.2, 4.5, H - 0.25), M["peach"], bevel=0.03)
     kit.box("wb floor", (6.8, 1.7, 0.1), (10.2, 5.5, 0.05), kit.plastic("#3a4646", 0.8, "wb floor"))
+    for nm, rz in (("h2.head", 0.05), ("h2.jamb-1", 0.035), ("h2.jamb1", 0.035)):
+        ob = bpy.data.objects.get(nm)
+        if ob is not None:
+            ob.rotation_euler = (0, rz, 0)
     ctx["wallB_objs"] = [o for o in bpy.data.objects if o not in before and o.parent is None]
     # the lore: one short peach stroke on the one real window's sill (1 cm proud), and the ticket by it
     kit.box("tally", (0.012, 0.16, 0.012), (-0.45, 4.2, SILL_Z + 0.066), M["peach"])
+    ctx["sillticket"] = quad(kit, "sillticket", 0.14, 0.2, (-0.2, 4.3, SILL_Z + 0.075), (0, 0, 0.3), M["tix41"])
     # speaker post, screen, menu board, road sign
     kit.box("post", (0.22, 0.22, 1.5), (-12.0, 3.95, 0.75), M["mint2"], bevel=0.04)
     kit.cyl("grille", 0.2, 0.06, (-12.0, 3.80, 1.15), kit.metal("#6c7074", 0.5, "grille"), rot=(math.pi / 2, 0, 0), n=20)
@@ -522,6 +529,11 @@ def animate(kit, story, tl, t, ctx):
                 ob = bpy.data.objects.get(f"{who}.leg{sx}")
                 if ob is not None:
                     ob.rotation_euler = (-math.pi / 2, 0, 0)
+    for who, keys in tl["acting"].items():
+        tor = bpy.data.objects.get(f"{who}.torso")
+        if tor is not None:
+            from blocky import acting as _ac
+            tor.rotation_euler = (0, math.radians(_ac._held(keys, "roll", t, 0.0)), 0)
     cars = ctx["cars"]
     cc = _cues(tl, "car")
     for cid, car in cars.items():
@@ -551,6 +563,10 @@ def animate(kit, story, tl, t, ctx):
         q.hide_render = not ((i < n_tix and i < 4) or (i == 4 and n_tix == 42))
         if n_tix == 42 and i < 4:
             q.hide_render = True
+    _show([ctx["sillticket"]], vis("sillticket", False))
+    cup = o_.get("cup")
+    if cup is not None:
+        cup.hide_render = not vis("cup", False)
     bc = _last(_cues(tl, "bagcar"), t)
     _show([o_["bag"]], bool(bc and bc.get("on")))
     for k in "BC":
