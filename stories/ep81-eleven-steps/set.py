@@ -21,6 +21,7 @@ Cues (story.json "cues", each restates its whole state): count, box, climber, di
 from __future__ import annotations
 
 import math
+import os
 import tempfile
 from pathlib import Path
 
@@ -32,7 +33,7 @@ from blocky import bl_story, faces, rig
 TMP = Path(tempfile.mkdtemp(prefix="elevensteps-"))
 RISE, RUN, NT = 0.19, 0.28, 9
 LAND_Y, LAND_Z = 0.28 * 9, 1.9
-CEIL = 4.3
+CEIL = 4.9
 HALL_CEIL = 2.6
 FONT = Path(__file__).resolve().parents[2] / "blocky" / "fonts" / "SchibstedGrotesk-Black.ttf"
 
@@ -214,15 +215,18 @@ class Climber:
         self.arms = []
         for sx in (-1, 1):
             hinge = E(self.upper, (sx * 0.95, 0, 1.25), "clarm")
-            B(hinge, (0.3, 0.34, 1.95), (0, 0, -0.97), moss, "clsleeve", 0.08)
+            B(hinge, (0.3, 0.34, 1.95), (0, 0, -0.97), P("#56724f", 0.85, 0.08), "clsleeve", 0.08)
             B(hinge, (0.3, 0.44, 0.08), (0, -0.04, -2.0), cream, "clhand", 0.025)
             B(hinge, (0.32, 0.32, 0.05), (0, 0, -1.93), brass, "clcuff", 0.015)
             self.arms.append((hinge, sx))
         # the head: a round cream drum rolled about the neck, the face a disc 1.2 cm proud of its front
         self.neck = E(self.upper, (0, -0.03, 1.55), "clneck")
-        self.rollg = E(self.neck, (0, 0, 0), "clroll")
+        self.hroot = E(self.root, (0, 0, 1.5), "clhroot")      # the head hangs off the root, so its facing is set directly
+        self.hyaw = E(self.hroot, (0, 0, 0), "clhyaw")
+        self.hpitch = E(self.hyaw, (0, 0, 0), "clhpitch")
+        self.rollg = E(self.hpitch, (0, 0, 0), "clroll")
         self.headg = E(self.rollg, (0, 0, 0.42), "clheadg")
-        R = 0.43
+        R = 0.5
         kit.cyl(nm("clhead"), R, 0.4, (0, 0, 0), P("#e2d3ad", 0.7, 0.1), self.headg, rot=(math.pi / 2, 0, 0), n=32)
         self.face_mat = kit._new(nm("clface"))
         nt = self.face_mat.node_tree
@@ -245,7 +249,7 @@ class Climber:
         self.face = kit.cyl(nm("clfaced"), R - 0.004, 0.012, (0, -0.206, 0), self.face_mat, self.headg, rot=(math.pi / 2, 0, 0), n=48)
         self.moss = moss
 
-    def place(self, x, y, z, yaw, fold=1.0, roll=80.0, reach=50.0, reach2=None, hidden=False, hp=0.0, hy=0.0):
+    def place(self, x, y, z, yaw, fold=1.0, roll=80.0, reach=50.0, reach2=None, hidden=False, hp=0.0, hy=0.0, hoff=0.42):
         r = self.root
         r.location = (x, y, z)
         r.rotation_euler = (0, 0, math.radians(yaw))
@@ -265,8 +269,18 @@ class Climber:
         # arms hang to the world's vertical, then swing forward by `reach` (and `reach2` for the left one)
         for (hinge, sx), rch in zip(self.arms, (reach, reach if reach2 is None else reach2)):
             hinge.rotation_euler = (-math.radians(rch) - beta, 0, 0)
-        self.neck.rotation_euler = (-math.radians(hp) - beta, 0, math.radians(hy))
+        # the head: anchored at the neck (it follows the bend), its facing set from the creature's own frame:
+        # hy turns it about the vertical (+ toward the creature's left), hp lifts it, roll tips it onto a shoulder
+        bpy.context.view_layer.update()
+        self.hroot.location = self.root.matrix_world.inverted() @ self.neck.matrix_world.translation
+        self.hyaw.rotation_euler = (0, 0, math.radians(hy))
+        self.hpitch.rotation_euler = (math.radians(hp), 0, 0)
         self.rollg.rotation_euler = (0, math.radians(roll), 0)
+        self.headg.location = (0, 0, hoff)
+        if os.environ.get("CL_DEBUG"):
+            bpy.context.view_layer.update()
+            print("HEAD", tuple(round(v, 2) for v in self.headg.matrix_world.translation),
+                  "HAND", [tuple(round(v, 2) for v in (h.matrix_world @ V((0, 0, -2.0))))  for h, _ in self.arms], flush=True)
 
 
 # ------------------------------------------------------------------------------------------------ looks
@@ -334,7 +348,7 @@ def build(kit, story, tl):
     kit.aim(moon, (0.2, 3.6, 2.2))
     ctx["moon"] = moon
     ctx["camfill"] = kit.light("camfill", "POINT", (0, 0, 2), 14, "#ffe9cf", size=0.5, shadow=False)
-    ctx["torch"] = kit.light("torch", "SPOT", (0, 0, 0), 12, "#dbe8ff", size=0.04, spot=36, blend=0.35)
+    ctx["torch"] = kit.light("torch", "SPOT", (0, 0, 0), 6, "#dbe8ff", size=0.06, spot=60, blend=0.9)
     ctx["clkey"] = kit.light("clkey", "SPOT", (0, 0, 0), 16, "#ffb050", size=0.2, spot=70, blend=0.6)
     ctx["clrim"] = kit.light("clrim", "SPOT", (0, 0, 0), 22, "#8fa8ff", size=0.2, spot=70, blend=0.6)
 
@@ -399,7 +413,7 @@ def build(kit, story, tl):
     B(None, (1.1, 0.24, 0.1), (0, 4.97, LAND_Z + 2.1), fr, "dframe", 0.006)
     ctx["mydoor"] = E(None, (-0.45, 4.93, LAND_Z), "mydoor")
     bow = E(ctx["mydoor"], (0.45, 0, 2.0), "mydoorbow")
-    B(bow, (0.9, 0.045, 1.94), (0, 0, -0.97), white, "doorpanel", 0.008)
+    B(bow, (0.9, 0.045, 1.9), (0, 0, -0.95), white, "doorpanel", 0.008)
     B(bow, (0.07, 0.07, 0.07), (0.34, -0.05, -1.0), brass, "knob", 0.02)
     ctx["mybow"] = bow
     # the room behind it
@@ -454,9 +468,9 @@ def build(kit, story, tl):
     kit.cyl(nm("lampshade"), 0.17, 0.26, (0.62, -2.75, 1.17), P(MUSTARD, 0.6, 0.1), None, n=20, r2=0.11)
     kit.cyl(nm("clockface"), 0.24, 0.04, (-0.78, -3.4, 1.7), P("#fffaf0", 0.5), None, rot=(0, math.pi / 2, 0), n=32)
     ch = E(None, (-0.755, -3.4, 1.7), "clock")
-    B(ch, (0.012, 0.24, 0.025), (0, 0.0, 0.0), P("#1a1a22", 0.5), "hhand", 0.003, rot=(0, 0, 0))
-    B(ch, (0.012, 0.025, 0.17), (0, 0.0, 0.07), P("#1a1a22", 0.5), "mhand", 0.003)
-    ch.rotation_euler = (0, 0, 0)
+    B(ch, (0.012, 0.02, 0.17), (0, 0.0, 0.085), P("#1a1a22", 0.5), "mhand", 0.003)          # the minute hand, at twelve
+    hh = E(ch, (0, 0, 0), "hhandp", rot=(math.radians(60), 0, 0))                          # the hour hand, at ten
+    B(hh, (0.012, 0.025, 0.11), (0, 0, 0.055), P("#1a1a22", 0.5), "hhand", 0.003)
     ctx["clock"] = ch
     for k in range(12):
         a = math.radians(30 * k)
@@ -512,6 +526,14 @@ def build_props(kit):
           P("#fff3c4", 0.8), "pop", 0.015)
     hide(bowl, True)
     pr["bowl"] = bowl
+    ch = E(None, (0, 0, 0), "chand")
+    cream = P("#efe3c4", 0.7, 0.1)
+    B(ch, (0.36, 0.34, 0.07), (0, 0.0, 0.035), cream, "chpalm", 0.02)
+    for i, dx in enumerate((-0.12, -0.04, 0.04, 0.12)):
+        B(ch, (0.06, 0.34, 0.06), (dx, -0.3 - 0.02 * (i % 2), 0.03), cream, "chfinger", 0.02)
+    B(ch, (0.16, 0.2, 0.07), (0.0, 0.3, 0.035), P("#6f8f6a", 0.85, 0.08), "chcuff", 0.02)
+    hide(ch, True)
+    pr["chand"] = ch
     mug = E(None, (0, 0, 0), "mug")
     kit.cyl(nm("mugb"), 0.045, 0.09, (0, 0, 0.045), P("#e8503a", 0.4), mug, n=14)
     hide(mug, True)
@@ -579,7 +601,11 @@ def animate(kit, story, tl, t, ctx):
     bx = cue_at(tl, "box", t)
     if bx and bx.get("on", True):
         hide(ctx["box"], False)
-        ctx["box"].location = tuple(bx["pos"])
+        pos_ = bx["pos"]
+        if "to" in bx:
+            u = ss((t - bx["t"]) / max(1e-3, bx.get("dur", 1.0)))
+            pos_ = [lerp(a, b, u) for a, b in zip(bx["pos"], bx["to"])]
+        ctx["box"].location = tuple(pos_)
         ctx["box"].rotation_euler = (math.radians(bx.get("pitch", 0)), math.radians(bx.get("roll", 0)), math.radians(bx.get("yaw", 0)))
     else:
         hide(ctx["box"], True)
@@ -604,11 +630,11 @@ def animate(kit, story, tl, t, ctx):
     if cc and cc.get("on", True):
         p = cc["pos"]
         cl_.place(p[0], p[1], p[2], cc.get("yaw", 180), cc.get("fold", 1.0), cc.get("roll", 80.0), cc.get("reach", 50.0),
-                  cc.get("reach2"), False, cc.get("hp", 0.0), cc.get("hy", 0.0))
+                  cc.get("reach2"), False, cc.get("hp", 0.0), cc.get("hy", 0.0), cc.get("hoff", 0.42))
         # amber from below, a cool rim from behind: placed round the creature at its yaw
         a = math.radians(cc.get("yaw", 180))
         ctx["clkey"].location = (p[0] + cc.get("kx", 0.0), p[1] + cc.get("ky", -1.2), p[2] + cc.get("kz", 0.25))
-        kit.aim(ctx["clkey"], (p[0] + cc.get("hx", 0.0), p[1] + cc.get("hy", 0.3), p[2] + cc.get("hz", 1.0)))
+        kit.aim(ctx["clkey"], (p[0] + cc.get("ax", 0.0), p[1] + cc.get("ay", 0.3), p[2] + cc.get("az", 1.0)))
         ctx["clrim"].location = (p[0] + 1.6, p[1] + 0.4, p[2] + 2.3)
         kit.aim(ctx["clrim"], (p[0], p[1], p[2] + 1.2))
         on_ = 1.0
