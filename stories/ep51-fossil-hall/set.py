@@ -512,9 +512,9 @@ def build_stooped(kit, M, ctx):
         B(kit, f"st shin{s}", (0.2, 0.2, 1.2), (s * 0.15, 0.03, 0.62), M["trou"], root, bevel=0.03)
         B(kit, f"st shoe{s}", (0.28, 0.5, 0.12), (s * 0.15, -0.08, 0.06), M["shoe"], root, bevel=0.04)
         B(kit, f"st sleeve{s}", (0.2, 0.2, 1.05), (s * 0.5, -1.08, HZ - 0.55), M["coat"], root, bevel=0.03)
-        B(kit, f"st forearm{s}", (0.14, 0.14, 0.95), (s * 0.5, -1.08, 1.12), M["hand"], root, bevel=0.03)
-        B(kit, f"st cuff{s}", (0.22, 0.22, 0.05), (s * 0.5, -1.08, 1.67), M["brass"], root)
-        B(kit, f"st hand{s}", (0.17, 0.1, 0.2), (s * 0.5, -1.08, 0.55), M["hand"], root, bevel=0.03)
+        B(kit, f"st forearm{s}", (0.14, 0.14, 1.16), (s * 0.5, -1.08, 1.2), M["hand"], root, bevel=0.03)
+        B(kit, f"st cuff{s}", (0.23, 0.23, 0.1), (s * 0.5, -1.08, 1.64), M["brass"], root, bevel=0.01)
+        B(kit, f"st hand{s}", (0.17, 0.1, 0.24), (s * 0.5, -1.08, 0.57), M["hand"], root, bevel=0.03)
         for fx in (-0.06, -0.02, 0.02, 0.06):
             B(kit, f"st finger{s}{fx}", (0.026, 0.03, 0.26), (s * 0.5 + fx, -1.08, 0.33), M["hand"], root, bevel=0.01)
     # brass buttons down the hanging front (the underside of the folded body), a brass badge at the collar
@@ -787,6 +787,19 @@ def animate(kit, story, tl, t, ctx):
         rimo.location = (-1.0, -8.2, 3.0)
         kit.aim(rimo, (-1.0, -3.9, 1.2))
     over["stooped face"] = _eased(_cues(tl, "sface"), "level", t, 0.0)
+    sf = _last(_cues(tl, "sface"), t)
+    fl = kit.LIGHTS["stooped face"]["obj"]
+    if sf is not None and sf.get("below"):      # key from below: a low lamp on the floor aimed up between the two faces
+        fl.location = tuple(sf["below"])
+        kit.aim(fl, tuple(sf["aim"]))
+    else:
+        fl.location = (1.2, -2.5, 1.45)
+        kit.aim(fl, (-0.75, -2.55, 1.15))
+    # the last frame lands cold: warm hall lamps ramp to a cool tint
+    cold = _eased(_cues(tl, "cold"), "level", t, 0.0)
+    for i in range(4):
+        w, c_ = kit.col("#ffe8c8"), kit.col("#9db8ff")
+        kit.LIGHTS[f"hall{i}"]["obj"].data.color = tuple(w[k] * (1 - cold) + c_[k] * cold for k in range(3))
     over["tally lamp"] = _eased(_cues(tl, "tally"), "on", t, 0.0)
     # ---- the torch rolling in slow circles by the skeleton's feet
     tg = _eased(_cues(tl, "torch"), "on", t, 0.0)
