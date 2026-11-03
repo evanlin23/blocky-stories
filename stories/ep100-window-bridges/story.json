@@ -44,13 +44,11 @@
    "sway": [
     "S49",
     "S51",
-    "S52",
     "S53",
     "S55",
     "S57",
     "S58",
     "S60",
-    "S61",
     "S62",
     "S63",
     "S64",
@@ -60,36 +58,28 @@
     "S70",
     "S72",
     "S73",
-    "S74",
     "S75",
     "S76",
     "S78",
     "S80",
     "S81",
     "S83",
-    "S84",
     "S85",
     "S87",
     "S93",
     "S95",
-    "S96",
     "S97",
-    "S98",
     "S102",
-    "S103",
     "S104",
-    "S105",
     "S107",
     "S127"
    ],
    "hold": [
-    "S74",
     "S75",
     "S78",
     "S80",
     "S91",
-    "S104",
-    "S105"
+    "S104"
    ],
    "camera": true,
    "idle": true,
@@ -293,8 +283,12 @@
      "three burnt bridges"
     ],
     [
-     "run from my window",
-     "run from my window"
+     "run from",
+     "run from"
+    ],
+    [
+     "my window",
+     "my window"
     ],
     [
      "to a STRANGER'S.",
@@ -325,12 +319,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Here, every friend you make",
-     "here, every friend you make"
+     "Here, every friend",
+     "here, every friend"
     ],
     [
-     "builds a little BRIDGE",
-     "builds a little bridge"
+     "you make",
+     "you make"
+    ],
+    [
+     "builds a",
+     "builds a"
+    ],
+    [
+     "little BRIDGE",
+     "little bridge"
     ],
     [
      "between your windows.",
@@ -365,8 +367,12 @@
      "has sixty."
     ],
     [
-     "Her window looks like a WEB.",
-     "her window looks like a web."
+     "Her window looks",
+     "her window looks"
+    ],
+    [
+     "like a WEB.",
+     "like a web."
     ]
    ]
   },
@@ -375,20 +381,36 @@
    "who": "narrator",
    "chunks": [
     [
-     "The two old guys",
-     "the two old guys"
+     "The two",
+     "the two"
     ],
     [
-     "at the end of the street",
-     "at the end of the street"
+     "old guys",
+     "old guys"
     ],
     [
-     "have one so old",
-     "have one so old"
+     "at the end",
+     "at the end"
     ],
     [
-     "it turned to STONE.",
-     "it turned to stone."
+     "of the street",
+     "of the street"
+    ],
+    [
+     "have one",
+     "have one"
+    ],
+    [
+     "so old",
+     "so old"
+    ],
+    [
+     "it turned",
+     "it turned"
+    ],
+    [
+     "to STONE.",
+     "to stone."
     ]
    ]
   },
@@ -397,16 +419,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "But if you BURN one,",
-     "but if you burn one,"
+     "But if you",
+     "but if you"
+    ],
+    [
+     "BURN one,",
+     "burn one,"
     ],
     [
      "you both forget",
      "you both forget"
     ],
     [
-     "the other one ever LIVED.",
-     "the other one ever lived."
+     "the other one",
+     "the other one"
+    ],
+    [
+     "ever LIVED.",
+     "ever lived."
     ]
    ]
   },
@@ -415,8 +445,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And nobody tells you",
-     "and nobody tells you"
+     "And nobody",
+     "and nobody"
+    ],
+    [
+     "tells you",
+     "tells you"
     ],
     [
      "who you BURNED.",
@@ -437,8 +471,12 @@
      "in April,"
     ],
     [
-     "I finally met the guy",
-     "I finally met the guy"
+     "I finally met",
+     "I finally met"
+    ],
+    [
+     "the guy",
+     "the guy"
     ],
     [
      "across the alley.",
@@ -455,12 +493,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "By the end of the WEEK,",
-     "by the end of the week,"
+     "By the end",
+     "by the end"
     ],
     [
-     "he was my best FRIEND.",
-     "he was my best friend."
+     "of the WEEK,",
+     "of the week,"
+    ],
+    [
+     "he was my",
+     "he was my"
+    ],
+    [
+     "best FRIEND.",
+     "best friend."
     ]
    ]
   },
@@ -511,8 +557,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "We passed coffee",
-     "we passed coffee"
+     "We pass coffee",
+     "we pass coffee"
     ],
     [
      "across it",
@@ -529,8 +575,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He's terrible at CARDS.",
-     "he's terrible at cards."
+     "He's terrible",
+     "he's terrible"
+    ],
+    [
+     "at CARDS.",
+     "at cards."
     ],
     [
      "He cheats ANYWAY.",
@@ -547,8 +597,12 @@
      "Eli already knew"
     ],
     [
-     "how I take my COFFEE.",
-     "how I take my coffee."
+     "how I take",
+     "how I take"
+    ],
+    [
+     "my COFFEE.",
+     "my coffee."
     ]
    ]
   },
@@ -557,12 +611,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "My dog jumped all over him",
-     "my dog jumped all over him"
+     "My dog jumped",
+     "my dog jumped"
     ],
     [
-     "like she'd MISSED him.",
-     "like she'd missed him."
+     "all over him",
+     "all over him"
+    ],
+    [
+     "like she'd",
+     "like she'd"
+    ],
+    [
+     "MISSED him.",
+     "missed him."
     ]
    ]
   },
@@ -571,12 +633,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "My mom called him ELI",
-     "my Mom called him Eli"
+     "My mom called",
+     "my Mom called"
     ],
     [
-     "before I'd said his NAME.",
-     "before I'd said his name."
+     "him ELI",
+     "him Eli"
+    ],
+    [
+     "before I'd said",
+     "before I'd said"
+    ],
+    [
+     "his NAME.",
+     "his name."
     ]
    ]
   },
@@ -585,8 +655,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She set him a plate",
-     "she set him a plate"
+     "She gave him",
+     "she gave him"
+    ],
+    [
+     "a plate",
+     "a plate"
     ],
     [
      "at DINNER,",
@@ -599,8 +673,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "like she ALWAYS had.",
-     "like she always had."
+     "like she",
+     "like she"
+    ],
+    [
+     "ALWAYS had.",
+     "always had."
     ]
    ]
   },
@@ -609,8 +687,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then she went very QUIET.",
-     "then she went very quiet."
+     "Then she went",
+     "then she went"
+    ],
+    [
+     "very QUIET.",
+     "very quiet."
     ]
    ]
   },
@@ -619,8 +701,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He keeps a box of MATCHES",
-     "he keeps a box of matches"
+     "He keeps a",
+     "he keeps a"
+    ],
+    [
+     "box of MATCHES",
+     "box of matches"
     ],
     [
      "on his windowsill.",
@@ -633,8 +719,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He doesn't even light CANDLES.",
-     "he doesn't even light candles."
+     "He doesn't even",
+     "he doesn't even"
+    ],
+    [
+     "light CANDLES.",
+     "light candles."
     ]
    ]
   },
@@ -643,12 +733,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "And the stranger's window",
-     "and the stranger's window"
+     "And the",
+     "and the"
     ],
     [
-     "at the other end",
-     "at the other end"
+     "stranger's window",
+     "stranger's window"
+    ],
+    [
+     "at the",
+     "at the"
+    ],
+    [
+     "other end",
+     "other end"
     ],
     [
      "was ELI'S.",
@@ -675,8 +773,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And the burnt bridges",
-     "and the burnt bridges"
+     "And the",
+     "and the"
+    ],
+    [
+     "burnt bridges",
+     "burnt bridges"
     ],
     [
      "started to MOVE.",
@@ -735,8 +837,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Nobody else's burnt bridges",
-     "nobody else's burnt bridges"
+     "Nobody else's",
+     "nobody else's"
+    ],
+    [
+     "burnt bridges",
+     "burnt bridges"
     ],
     [
      "ever MOVED.",
@@ -749,12 +855,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mrs. Vega crossed the street",
-     "Missus Vega crossed the street"
+     "Mrs. Vega crossed",
+     "Missus Vega crossed"
     ],
     [
-     "so she wouldn't walk UNDER them.",
-     "so she wouldn't walk under them."
+     "the street",
+     "the street"
+    ],
+    [
+     "so she wouldn't",
+     "so she wouldn't"
+    ],
+    [
+     "walk UNDER them.",
+     "walk under them."
     ]
    ]
   },
@@ -822,8 +936,12 @@
      "in the middle"
     ],
     [
-     "of every burnt bridge",
-     "of every burnt bridge"
+     "of every",
+     "of every"
+    ],
+    [
+     "burnt bridge",
+     "burnt bridge"
     ],
     [
      "was one plank",
@@ -840,8 +958,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And on each one,",
-     "and on each one,"
+     "And on",
+     "and on"
+    ],
+    [
+     "each one,",
+     "each one,"
     ],
     [
      "two HANDPRINTS",
@@ -880,8 +1002,12 @@
      "every plank"
     ],
     [
-     "had the same date",
-     "had the same date"
+     "had the",
+     "had the"
+    ],
+    [
+     "same date",
+     "same date"
     ],
     [
      "cut in it.",
@@ -894,8 +1020,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The night of November NINTH.",
-     "the night of November Ninth."
+     "The night of",
+     "the night of"
+    ],
+    [
+     "November NINE.",
+     "November nine."
     ]
    ]
   },
@@ -918,12 +1048,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "There was a sea BAG",
-     "there was a sea bag"
+     "There was a",
+     "there was a"
     ],
     [
-     "packed by his BED.",
-     "packed by his bed."
+     "sea BAG",
+     "sea bag"
+    ],
+    [
+     "packed by",
+     "packed by"
+    ],
+    [
+     "his BED.",
+     "his bed."
     ]
    ]
   },
@@ -932,16 +1070,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Eli works the BOATS.",
-     "Eli works the boats."
+     "Eli works",
+     "Eli works"
+    ],
+    [
+     "the BOATS.",
+     "the boats."
     ],
     [
      "He ships out",
      "he ships out"
     ],
     [
-     "every November TENTH.",
-     "every November Tenth."
+     "every November TEN.",
+     "every November ten."
     ]
    ]
   },
@@ -950,12 +1092,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mom finally told me",
-     "Mom finally told me"
+     "Mom finally",
+     "Mom finally"
     ],
     [
-     "we'd made her PROMISE",
-     "we'd made her promise"
+     "told me",
+     "told me"
+    ],
+    [
+     "we'd made",
+     "we'd made"
+    ],
+    [
+     "her PROMISE",
+     "her promise"
     ],
     [
      "never to SAY.",
@@ -986,8 +1136,12 @@
      "the night before"
     ],
     [
-     "Eli's boat goes OUT,",
-     "Eli's boat goes out,"
+     "Eli's boat",
+     "Eli's boat"
+    ],
+    [
+     "goes OUT,",
+     "goes out,"
     ]
    ]
   },
@@ -996,12 +1150,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "we stand in the MIDDLE",
-     "we stand in the middle"
+     "we stand in",
+     "we stand in"
     ],
     [
-     "and burn it TOGETHER,",
-     "and burn it together,"
+     "the MIDDLE",
+     "the middle"
+    ],
+    [
+     "and burn",
+     "and burn"
+    ],
+    [
+     "it TOGETHER,",
+     "it together,"
     ]
    ]
   },
@@ -1010,12 +1172,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "so neither of us",
-     "so neither of us"
+     "so neither",
+     "so neither"
     ],
     [
-     "has to MISS the other.",
-     "has to miss the other."
+     "of us",
+     "of us"
+    ],
+    [
+     "has to MISS",
+     "has to miss"
+    ],
+    [
+     "the other.",
+     "the other."
     ]
    ]
   },
@@ -1028,16 +1198,24 @@
      "and every spring,"
     ],
     [
-     "when he comes HOME,",
-     "when he comes home,"
+     "when he",
+     "when he"
+    ],
+    [
+     "comes HOME,",
+     "comes home,"
     ],
     [
      "we meet",
      "we meet"
     ],
     [
-     "for the first TIME.",
-     "for the first time."
+     "for the",
+     "for the"
+    ],
+    [
+     "first TIME.",
+     "first time."
     ]
    ]
   },
@@ -1046,28 +1224,48 @@
    "who": "narrator",
    "chunks": [
     [
-     "That's why they rise",
-     "that's why they rise"
+     "That's why",
+     "that's why"
     ],
     [
-     "when it gets COLD.",
-     "when it gets cold."
+     "they rise",
+     "they rise"
     ],
     [
-     "A burnt bridge remembers",
-     "a burnt bridge remembers"
+     "when it",
+     "when it"
     ],
     [
-     "what the two of you FORGOT,",
-     "what the two of you forgot,"
+     "gets COLD.",
+     "gets cold."
+    ],
+    [
+     "A burnt",
+     "a burnt"
+    ],
+    [
+     "bridge remembers",
+     "bridge remembers"
+    ],
+    [
+     "what the two",
+     "what the two"
+    ],
+    [
+     "of you FORGOT,",
+     "of you forgot,"
     ],
     [
      "and reaches back",
      "and reaches back"
     ],
     [
-     "on the night it BURNED.",
-     "on the night it burned."
+     "on the night",
+     "on the night"
+    ],
+    [
+     "it BURNED.",
+     "it burned."
     ]
    ]
   },
@@ -1084,20 +1282,32 @@
      "the handprints."
     ],
     [
-     "He'd forgotten me TOO.",
-     "he'd forgotten me too."
+     "He had forgotten",
+     "he had forgotten"
     ],
     [
-     "He stared at the matches",
-     "he stared at the matches"
+     "me TOO.",
+     "me too."
+    ],
+    [
+     "He stared at",
+     "he stared at"
+    ],
+    [
+     "the matches",
+     "the matches"
     ],
     [
      "on his SILL",
      "on his sill"
     ],
     [
-     "like he'd never seen them BEFORE.",
-     "like he'd never seen them before."
+     "like he'd never",
+     "like he'd never"
+    ],
+    [
+     "seen them BEFORE.",
+     "seen them before."
     ]
    ]
   },
@@ -1106,8 +1316,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then he put them",
-     "then he put them"
+     "Then he",
+     "then he"
+    ],
+    [
+     "put them",
+     "put them"
     ],
     [
      "in his POCKET.",
@@ -1124,8 +1338,12 @@
      "he said,"
     ],
     [
-     "\"So I'd have to MISS you?\"",
-     "\"so I'd have to miss you?\""
+     "\"So I'd have",
+     "\"so I'd have"
+    ],
+    [
+     "to MISS you?\"",
+     "to miss you?\""
     ]
    ]
   },
@@ -1170,8 +1388,12 @@
      "it never says"
     ],
     [
-     "a bridge has to stop",
-     "a bridge has to stop"
+     "a bridge has",
+     "a bridge has"
+    ],
+    [
+     "to stop",
+     "to stop"
     ],
     [
      "at a WINDOW.",
@@ -1184,8 +1406,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "He left on the TENTH.",
-     "he left on the Tenth."
+     "He left on",
+     "he left on"
+    ],
+    [
+     "November TEN.",
+     "November ten."
     ]
    ]
   },
@@ -1194,8 +1420,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "And I missed him",
-     "and I missed him"
+     "And I",
+     "and I"
+    ],
+    [
+     "missed him",
+     "missed him"
     ],
     [
      "all WINTER.",
@@ -1212,12 +1442,16 @@
      "but every night,"
     ],
     [
-     "our bridge",
-     "our bridge"
+     "the bridge",
+     "the bridge"
     ],
     [
-     "grew one more PLANK.",
-     "grew one more plank."
+     "grew one",
+     "grew one"
+    ],
+    [
+     "more PLANK.",
+     "more plank."
     ]
    ]
   },
@@ -1226,8 +1460,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Out past his window.",
-     "out past his window."
+     "Out past",
+     "out past"
+    ],
+    [
+     "his window.",
+     "his window."
     ],
     [
      "Over the ROOFS.",
@@ -1240,8 +1478,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Out over the SEA.",
-     "out over the sea."
+     "Out over",
+     "out over"
+    ],
+    [
+     "the SEA.",
+     "the sea."
     ]
    ]
   },
@@ -1264,16 +1506,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "When he comes home",
-     "when he comes home"
+     "When he",
+     "when he"
+    ],
+    [
+     "comes home",
+     "comes home"
     ],
     [
      "in APRIL,",
      "in April,"
     ],
     [
-     "for the first TIME,",
-     "for the first time,"
+     "for the",
+     "for the"
+    ],
+    [
+     "first TIME,",
+     "first time,"
     ],
     [
      "he'll REMEMBER me.",
@@ -1290,8 +1540,12 @@
      "I'll walk him"
     ],
     [
-     "down to the ALLEY,",
-     "down to the alley,"
+     "down to",
+     "down to"
+    ],
+    [
+     "the ALLEY,",
+     "the alley,"
     ]
    ]
   },
@@ -1619,44 +1873,6 @@
    "note": "sixty bridges fan out from her window like a web"
   },
   {
-   "id": "S09",
-   "cam": [
-    [
-     0,
-     [
-      0.1,
-      20.2,
-      8.0
-     ],
-     [
-      -2.25,
-      21.0,
-      7.45
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      0.1,
-      20.4,
-      7.9
-     ],
-     [
-      -2.25,
-      21.0,
-      7.45
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "day",
-   "at": "L06",
-   "note": "an old guy in a flat cap at his window"
-  },
-  {
    "id": "S10",
    "cam": [
     [
@@ -1691,7 +1907,7 @@
    "step": 2,
    "hand": 0.004,
    "look": "day",
-   "at": "L06.1",
+   "at": "L06",
    "note": "and the other, facing him"
   },
   {
@@ -1733,44 +1949,6 @@
    "note": "their bridge, smooth grey stone"
   },
   {
-   "id": "S12",
-   "cam": [
-    [
-     0,
-     [
-      0.1,
-      -6.8,
-      8.0
-     ],
-     [
-      -2.25,
-      -6.0,
-      7.45
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      0.1,
-      -6.6,
-      7.9
-     ],
-     [
-      -2.25,
-      -6.0,
-      7.45
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "day",
-   "at": "L07",
-   "note": "a neighbor glaring across his bridge"
-  },
-  {
    "id": "S14",
    "cam": [
     [
@@ -1805,8 +1983,46 @@
    "step": 2,
    "hand": 0.004,
    "look": "day",
-   "at": "L07.1",
+   "at": "L07",
    "note": "the same two pass each other on the cobbles, strangers, a charred bridge behind"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      1.088,
+      -8.391,
+      1.434
+     ],
+     [
+      0.0,
+      -5.4,
+      1.1
+     ],
+     28
+    ],
+    [
+     1,
+     [
+      0.884,
+      -7.83,
+      1.372
+     ],
+     [
+      0.0,
+      -5.4,
+      1.1
+     ],
+     28
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L07.2",
+   "note": "they don't look at each other"
   },
   {
    "id": "S16",
@@ -1845,44 +2061,6 @@
    "look": "day",
    "at": "L08",
    "note": "an old woman at a window, lips pressed shut"
-  },
-  {
-   "id": "S17",
-   "cam": [
-    [
-     0,
-     [
-      -0.3,
-      -2.4,
-      8.4
-     ],
-     [
-      -1.0,
-      -3.0,
-      0.4
-     ],
-     26
-    ],
-    [
-     1,
-     [
-      -0.3,
-      -2.6,
-      8.2
-     ],
-     [
-      -1.0,
-      -3.0,
-      0.4
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "day",
-   "at": "L08.1",
-   "note": "looking down at the empty cobbles"
   },
   {
    "id": "S18",
@@ -1997,44 +2175,6 @@
    "look": "april",
    "at": "L10",
    "note": "Eli and me laughing at our two windows, the bridge three planks long"
-  },
-  {
-   "id": "S21",
-   "cam": [
-    [
-     0,
-     [
-      0.1499999999999999,
-      -0.3,
-      7.95
-     ],
-     [
-      -2.25,
-      -0.5,
-      7.45
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      -0.3500000000000001,
-      -0.3,
-      8.05
-     ],
-     [
-      -2.25,
-      -0.5,
-      7.45
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "april",
-   "at": "L10.1",
-   "note": "me, laughing"
   },
   {
    "id": "S22",
@@ -2231,44 +2371,6 @@
    "note": "two mugs, one sliding across the bridge on a little tray"
   },
   {
-   "id": "S29",
-   "cam": [
-    [
-     0,
-     [
-      -0.7,
-      -1.2,
-      7.5
-     ],
-     [
-      0.2,
-      -0.5,
-      7.1
-     ],
-     36
-    ],
-    [
-     1,
-     [
-      0.5,
-      -1.0,
-      7.4
-     ],
-     [
-      0.6,
-      -0.5,
-      7.1
-     ],
-     36
-    ]
-   ],
-   "step": 2,
-   "hand": 0.002,
-   "look": "april",
-   "at": "L14.1",
-   "note": "the tray slides"
-  },
-  {
    "id": "S30",
    "cam": [
     [
@@ -2305,44 +2407,6 @@
    "look": "april",
    "at": "L15",
    "note": "cards on the bridge between our windows, Eli sly, a card up his sleeve"
-  },
-  {
-   "id": "S31",
-   "cam": [
-    [
-     0,
-     [
-      -0.04999999999999982,
-      -0.8,
-      7.95
-     ],
-     [
-      2.25,
-      -0.5,
-      7.45
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      0.44999999999999996,
-      -0.8,
-      8.05
-     ],
-     [
-      2.25,
-      -0.5,
-      7.45
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "april",
-   "at": "L15.1",
-   "note": "Eli, sly"
   },
   {
    "id": "S32",
@@ -2535,44 +2599,6 @@
    "note": "Mom at our door, smiling, saying his name"
   },
   {
-   "id": "S37",
-   "cam": [
-    [
-     0,
-     [
-      41.4,
-      -2.0,
-      1.6
-     ],
-     [
-      40.0,
-      -0.9,
-      1.5
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      41.2,
-      -1.9,
-      1.6
-     ],
-     [
-      40.0,
-      -0.9,
-      1.5
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "home",
-   "at": "L18.1",
-   "note": "me turning, puzzled"
-  },
-  {
    "id": "S38",
    "cam": [
     [
@@ -2730,44 +2756,6 @@
    "note": "Eli's windowsill: a small box of matches by a potted plant"
   },
   {
-   "id": "S43",
-   "cam": [
-    [
-     0,
-     [
-      0.2,
-      1.0,
-      7.7
-     ],
-     [
-      1.5,
-      0.35,
-      7.0
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      0.6,
-      0.8,
-      7.5
-     ],
-     [
-      1.5,
-      0.35,
-      7.0
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.002,
-   "look": "day",
-   "at": "L22.1",
-   "note": "the box and loose matches"
-  },
-  {
    "id": "S44",
    "cam": [
     [
@@ -2806,44 +2794,6 @@
    "note": "Eli's room through the window: no candles anywhere"
   },
   {
-   "id": "S46",
-   "cam": [
-    [
-     0,
-     [
-      -1.2,
-      -2.1,
-      7.4
-     ],
-     [
-      0.8,
-      0.0,
-      1.0
-     ],
-     22
-    ],
-    [
-     1,
-     [
-      -0.9,
-      -1.8,
-      6.8
-     ],
-     [
-      0.8,
-      0.1,
-      0.8
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.003,
-   "look": "day",
-   "at": "L24",
-   "note": "over the lane: the three burnt bridges lie exactly under ours"
-  },
-  {
    "id": "S47",
    "cam": [
     [
@@ -2878,8 +2828,46 @@
    "step": 2,
    "hand": 0.004,
    "look": "day",
-   "at": "L24.1",
+   "at": "L24",
    "note": "their far ends, right under Eli's window, Eli leaning out above"
+  },
+  {
+   "id": "S48",
+   "cam": [
+    [
+     0,
+     [
+      -0.1499999999999999,
+      -0.9,
+      8.35
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.44999999999999996,
+      -0.9,
+      7.8500000000000005
+     ],
+     [
+      2.25,
+      -0.5,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L24.2",
+   "note": "Eli leaning out at his sill"
   },
   {
    "id": "S49",
@@ -2957,45 +2945,6 @@
    "at": "L26",
    "fill": 1.2,
    "note": "low on the cobbles: the burnt bridges a hand's width up off the ground"
-  },
-  {
-   "id": "S52",
-   "cam": [
-    [
-     0,
-     [
-      1.0,
-      -3.0,
-      0.22
-     ],
-     [
-      -0.5,
-      0.5,
-      0.25
-     ],
-     26
-    ],
-    [
-     1,
-     [
-      0.7,
-      -2.7,
-      0.2
-     ],
-     [
-      -0.5,
-      0.5,
-      0.25
-     ],
-     28
-    ]
-   ],
-   "step": 2,
-   "hand": 0.003,
-   "look": "night",
-   "at": "L26.1",
-   "fill": 1.3,
-   "note": "light under the planks"
   },
   {
    "id": "S53",
@@ -3188,45 +3137,6 @@
    "at": "L30",
    "fill": 1.3,
    "note": "down the lane: someone else's old burnt bridge, flat on the cobbles"
-  },
-  {
-   "id": "S61",
-   "cam": [
-    [
-     0,
-     [
-      2.206,
-      12.197,
-      0.749
-     ],
-     [
-      0.0,
-      13.0,
-      0.25
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      1.654,
-      12.398,
-      0.624
-     ],
-     [
-      0.0,
-      13.0,
-      0.25
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.003,
-   "look": "night",
-   "at": "L30.1",
-   "fill": 1.4,
-   "note": "the other burnt bridge, flat, still"
   },
   {
    "id": "S62",
@@ -3603,51 +3513,6 @@
    "note": "the one unburnt plank, pale in the soot"
   },
   {
-   "id": "S74",
-   "cam": [
-    [
-     0,
-     [
-      -0.5,
-      0.55,
-      2.7
-     ],
-     [
-      0.0,
-      0.55,
-      1.3
-     ],
-     20
-    ],
-    [
-     1,
-     [
-      -0.35,
-      0.55,
-      2.4
-     ],
-     [
-      0.0,
-      0.55,
-      1.3
-     ],
-     22
-    ]
-   ],
-   "step": 2,
-   "hand": 0.0015,
-   "look": "night",
-   "at": "L36",
-   "torch": [
-    0.0,
-    0.55,
-    1.3,
-    0.0,
-    0.4
-   ],
-   "note": "two soot handprints, side by side, on the plank"
-  },
-  {
    "id": "S75",
    "cam": [
     [
@@ -3682,7 +3547,7 @@
    "step": 2,
    "hand": 0.0015,
    "look": "night",
-   "at": "L36.2",
+   "at": "L36",
    "torch": [
     0.0,
     0.55,
@@ -3906,44 +3771,6 @@
    "look": "night",
    "at": "L41",
    "note": "through his window: a packed sea bag by his bed"
-  },
-  {
-   "id": "S84",
-   "cam": [
-    [
-     0,
-     [
-      -2.7,
-      0.2,
-      8.0
-     ],
-     [
-      5.3,
-      0.7,
-      7.55
-     ],
-     24
-    ],
-    [
-     1,
-     [
-      -2.6,
-      0.2,
-      8.0
-     ],
-     [
-      5.3,
-      0.7,
-      7.55
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.003,
-   "look": "night",
-   "at": "L41.1",
-   "note": "a coil of rope on a hook"
   },
   {
    "id": "S85",
@@ -4222,46 +4049,6 @@
    "note": "wide: both of us in the middle, two matches held out in the dark (never lit)"
   },
   {
-   "id": "S96",
-   "cam": [
-    [
-     0,
-     [
-      0.0,
-      -1.6,
-      8.2
-     ],
-     [
-      0.0,
-      -0.5,
-      8.0
-     ],
-     40
-    ],
-    [
-     1,
-     [
-      0.0,
-      -1.3,
-      8.2
-     ],
-     [
-      0.0,
-      -0.5,
-      8.0
-     ],
-     46
-    ]
-   ],
-   "step": 2,
-   "hand": 0.002,
-   "look": "autumn",
-   "at": "L46.1",
-   "fill": 1.1,
-   "exp": 0.1,
-   "note": "two matches held out"
-  },
-  {
    "id": "S97",
    "cam": [
     [
@@ -4300,46 +4087,6 @@
    "fill": 1.1,
    "exp": 0.1,
    "note": "my face and Eli's, side by side, eyes shut"
-  },
-  {
-   "id": "S98",
-   "cam": [
-    [
-     0,
-     [
-      0.3,
-      -1.7,
-      8.3
-     ],
-     [
-      0.0,
-      -0.5,
-      8.1
-     ],
-     34
-    ],
-    [
-     1,
-     [
-      0.2,
-      -1.5,
-      8.3
-     ],
-     [
-      0.0,
-      -0.5,
-      8.1
-     ],
-     38
-    ]
-   ],
-   "step": 2,
-   "hand": 0.002,
-   "look": "autumn",
-   "at": "L47.1",
-   "fill": 1.1,
-   "exp": 0.1,
-   "note": "eyes shut"
   },
   {
    "id": "S99",
@@ -4457,44 +4204,6 @@
    "note": "the three burnt bridges at night from below, raised toward our windows, string lights over them"
   },
   {
-   "id": "S103",
-   "cam": [
-    [
-     0,
-     [
-      -2.6,
-      -0.2,
-      7.7
-     ],
-     [
-      0.4,
-      0.6,
-      5.0
-     ],
-     22
-    ],
-    [
-     1,
-     [
-      -2.5,
-      -0.2,
-      7.6
-     ],
-     [
-      0.4,
-      0.6,
-      5.2
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "night",
-   "at": "L49.1",
-   "note": "rising when it gets cold"
-  },
-  {
    "id": "S104",
    "cam": [
     [
@@ -4539,45 +4248,6 @@
     -0.4
    ],
    "note": "a burnt bridge remembers: the handprint plank"
-  },
-  {
-   "id": "S105",
-   "cam": [
-    [
-     0,
-     [
-      0.45,
-      0.55,
-      5.6
-     ],
-     [
-      0.0,
-      0.55,
-      4.35
-     ],
-     24
-    ],
-    [
-     1,
-     [
-      0.3,
-      0.55,
-      5.3
-     ],
-     [
-      0.0,
-      0.55,
-      4.35
-     ],
-     26
-    ]
-   ],
-   "step": 2,
-   "hand": 0.002,
-   "look": "night",
-   "at": "L49.3",
-   "fill": 1.2,
-   "note": "what the two of you forgot"
   },
   {
    "id": "S107",
@@ -4654,86 +4324,6 @@
    "look": "winter",
    "at": "L50",
    "note": "me at my window pointing down at the handprints"
-  },
-  {
-   "id": "S110",
-   "cam": [
-    [
-     0,
-     [
-      -0.1499999999999999,
-      -0.8,
-      7.95
-     ],
-     [
-      2.25,
-      -0.5,
-      7.45
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      0.3500000000000001,
-      -0.8,
-      8.05
-     ],
-     [
-      2.25,
-      -0.5,
-      7.45
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "winter",
-   "at": "L50.2",
-   "note": "Eli staring at the matches, blank, like a stranger"
-  },
-  {
-   "id": "S111",
-   "cam": [
-    [
-     0,
-     [
-      0.5,
-      0.0,
-      7.7
-     ],
-     [
-      1.42,
-      0.5,
-      6.98
-     ],
-     36
-    ],
-    [
-     1,
-     [
-      0.8,
-      0.2,
-      7.5
-     ],
-     [
-      1.42,
-      0.5,
-      6.98
-     ],
-     44
-    ]
-   ],
-   "step": 2,
-   "hand": 0.002,
-   "look": "winter",
-   "at": "L50.3",
-   "dof": [
-    1.1,
-    2.8
-   ],
-   "note": "the matches on his sill"
   },
   {
    "id": "S112",
@@ -5003,6 +4593,45 @@
    "note": "the end of the lane at dawn: Eli with his sea bag, walking toward the sea"
   },
   {
+   "id": "S124",
+   "cam": [
+    [
+     0,
+     [
+      1.192,
+      28.0,
+      1.723
+     ],
+     [
+      0.1,
+      31.0,
+      1.5
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.987,
+      28.563,
+      1.681
+     ],
+     [
+      0.1,
+      31.0,
+      1.5
+     ],
+     26
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "dawn",
+   "at": "L56+0.6",
+   "fill": 1.1,
+   "note": "Eli turns and waves back"
+  },
+  {
    "id": "S125",
    "cam": [
     [
@@ -5117,45 +4746,6 @@
    "at": "L59",
    "fill": 0.8,
    "note": "wide: the bridge stretches up from Eli's window over the terracotta roofs"
-  },
-  {
-   "id": "S130",
-   "cam": [
-    [
-     0,
-     [
-      3.0,
-      -8.0,
-      12.0
-     ],
-     [
-      10.0,
-      4.0,
-      11.5
-     ],
-     22
-    ],
-    [
-     1,
-     [
-      4.0,
-      -6.0,
-      13.0
-     ],
-     [
-      11.0,
-      8.0,
-      13.0
-     ],
-     24
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "dusk",
-   "at": "L59.1",
-   "fill": 0.8,
-   "note": "over the roofs"
   },
   {
    "id": "S131",
@@ -5273,44 +4863,6 @@
    "at": "L62",
    "fill": 0.9,
    "note": "spring: the alley, window boxes in bloom, Eli's shutters open"
-  },
-  {
-   "id": "S136",
-   "cam": [
-    [
-     0,
-     [
-      1.0,
-      -4.6,
-      3.0
-     ],
-     [
-      1.2,
-      0.0,
-      7.0
-     ],
-     24
-    ],
-    [
-     1,
-     [
-      1.0,
-      -3.8,
-      3.4
-     ],
-     [
-      1.2,
-      0.0,
-      7.0
-     ],
-     26
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "april",
-   "at": "L62.2",
-   "note": "April light on the shutters"
   },
   {
    "id": "S137",
@@ -5745,9 +5297,9 @@
    {
     "at": "L32",
     "pos": [
-     -4.3,
-     0.4,
-     6.55
+     -4.45,
+     0.5,
+     6.75
     ],
     "blend": 0,
     "yaw": 0,
@@ -5772,9 +5324,9 @@
    {
     "at": "L32+0.8",
     "pos": [
-     -4.3,
-     0.4,
-     6.55
+     -4.45,
+     0.5,
+     6.75
     ],
     "blend": 0.4,
     "head": [
@@ -5791,9 +5343,9 @@
    {
     "at": "L34",
     "pos": [
-     -4.3,
-     0.4,
-     6.55
+     -4.45,
+     0.5,
+     6.75
     ]
    },
    {
@@ -7770,19 +7322,6 @@
     "blink": true
    },
    {
-    "at": "L56>",
-    "pos": [
-     0.1,
-     33.0,
-     0.0
-    ]
-   },
-   {
-    "at": "L57",
-    "hidden": true,
-    "blend": 0
-   },
-   {
     "at": "L56+1.1",
     "pos": [
      0.1,
@@ -7798,6 +7337,19 @@
      0,
      100
     ]
+   },
+   {
+    "at": "L56>",
+    "pos": [
+     0.1,
+     33.0,
+     0.0
+    ]
+   },
+   {
+    "at": "L57",
+    "hidden": true,
+    "blend": 0
    }
   ]
  },

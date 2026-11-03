@@ -377,7 +377,7 @@ raw("vega", "L31", yaw=180)
 S("L31", X((0.0, -9.0, 1.6), (0.0, -1.0, 1.4), 26, (0.0, -8.6, 1.6), (0.0, 0.0, 1.4), 28), "night", fill=1.2, note="Mrs. Vega crosses the lane so she won't walk under them")
 S("L31.1", C((0.8, -1.0, 1.3), 3.2, 90, 10, 28, d2=2.6), "night", fill=1.3, note="her scarlet shawl, hurrying along the wall")
 gone("vega", "L32")
-put("me", "L32", (-4.3, 0.4, 6.55), 0, "worried", lean=-90)
+put("me", "L32", (-4.45, 0.5, 6.75), 0, "worried", lean=-90)
 pose("me", "L32+0.8", 0.4, head=[0, 0], expr="scared")
 S("L32", X((-2.4, -1.5, 8.3), (-4.4, 1.0, 6.6), 26, (-2.9, -1.3, 8.0), (-4.4, 1.0, 6.6), 28), "night", fill=0.7, exp=-0.05,
   note="me waking in bed, the clock glyph at three")
