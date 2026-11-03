@@ -54,5 +54,6 @@ for ln in OUT:
     for ch in ln["chunks"]:
         ch[1] = re.sub(r"\b([Bb])are\b", lambda m: m.group(1) + "ear", ch[1])
     if ln["id"] == "L04":
-        ln["chunks"][1][1] = "with the"
+        ln["chunks"][1][1] = "with those"
+        ln["chunks"][2][1] = "pencil lines,"
 (HERE / "lines.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")

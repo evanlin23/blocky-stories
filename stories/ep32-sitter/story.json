@@ -520,18 +520,17 @@
     ],
     [
      "with the",
-     "with the"
+     "with those"
     ],
     [
      "PENCIL LINES",
-     "pencil lines"
+     "pencil lines,"
     ],
     [
      "still ON it.",
      "still on it."
     ]
-   ],
-   "tempo": 0.96
+   ]
   },
   {
    "id": "L05",
@@ -723,7 +722,8 @@
      "on MY side.",
      "on my side."
     ]
-   ]
+   ],
+   "gap": 0.3
   },
   {
    "id": "L13",
@@ -753,7 +753,8 @@
      "for the NIGHT.",
      "for the night."
     ]
-   ]
+   ],
+   "tempo": 0.96
   },
   {
    "id": "L14",
@@ -4674,7 +4675,7 @@
    {
     "at": "L20",
     "pos": [
-     -38.55,
+     -38.4,
      0.3
     ],
     "blend": 0,
@@ -4710,14 +4711,14 @@
     "bendto": [
      -40.0,
      0.35,
-     42
+     38
     ],
     "blend": 0.9
    },
    {
     "at": "L22",
     "pos": [
-     -38.55,
+     -38.4,
      0.3
     ]
    },

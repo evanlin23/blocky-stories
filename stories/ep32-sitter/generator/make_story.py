@@ -18,12 +18,12 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 # ---------------------------------------------------------------------------------------------------- holds
-HOLDS = {"L19": 0.7, "L22": 0.8}          # id -> seconds after the line (the music drops live in these)
+HOLDS = {"L12": 0.3, "L19": 0.7, "L22": 0.8}          # id -> seconds after the line (the music drops live in these)
 LOOP = 0.13                                # with the 0.12 s gap, 0.25 s after the last word
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
-TEMPO = {"L23": 0.92, "L04": 0.96}
+TEMPO = {"L23": 0.92, "L13": 0.96}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -238,7 +238,7 @@ shot("S20", "L19", "close on Theo's face: warm skin, brown eyes, the pine nose p
      face_cam((BED[0], -1.45), 180, 25, 1.9, 1.72, 36, 1.7, push=0.25))
 shot("S21", "L20", "the room as the music drops: Theo beside the bed, starting to lean", c([0, [BED[0] - 1.3, -1.6, 1.5], [BED[0] + 0.4, 0.1, 1.0], 26],
                                                                                           [1, [BED[0] - 1.1, -1.4, 1.5], [BED[0] + 0.4, 0.1, 1.0], 26]))
-TH_BED = (BED[0] + 1.45, 0.3)
+TH_BED = (BED[0] + 1.6, 0.3)
 shot("S22", "L20.2", "3/4: Theo leaning in from the waist, his face a hand from mine, grinning. Never touches",
      c([0, [BED[0] + 0.5, -0.9, 1.6], [BED[0] + 0.55, 0.3, 1.55], 24], [1, [BED[0] + 0.45, -0.75, 1.6], [BED[0] + 0.55, 0.3, 1.55], 26]), hand=0.004)
 shot("S22b", "L21", "me, eyes going to the door", face_cam((BED[0], 0.45), 0, 40, 1.9, 1.42, 32, 1.35, push=0.2))
@@ -448,7 +448,7 @@ THALF = (38.95, 4.55)
 put("theo", "L17", THALF, yaw=yaw_to(THALF, DOOR), expr="blank", fade=1.0, fade_h=1.0, fade_z=1.3, stage=0, arms=[0, 0])
 put("theo", "L18", (BED[0], -1.5), yaw=180, expr="grin", fade=0.0, fade_h=0.0, fade_z=9.0, arms=[0, 0])
 put("theo", "L20", (TH_BED[0], TH_BED[1]), yaw=-90, expr="grin", fade=0.0, fade_h=0.0, fade_z=9.0, arms=[0, 0], bendto=[BED[0], 0.35, 0])
-key("theo", "L20.1", bendto=[BED[0], 0.35, 42], blend=0.9)
+key("theo", "L20.1", bendto=[BED[0], 0.35, 38], blend=0.9)
 put("theo", "L22", (41.55, 5.7, 1.1), yaw=0, expr="grin", fade=0.0, fade_h=0.0, fade_z=9.0, arms=[0, 0], bendto=[0, 0, 0])
 walk("theo", "L22.2", (41.55, 3.7, 0.0))
 put("theo", "L22.3", (SEAT_THEO[0], SEAT_THEO[1], Z_CHAIR - 0.04), yaw=-90, expr="grin", fade=0.0, fade_h=0.0, fade_z=9.0, **SIT)
