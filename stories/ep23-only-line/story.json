@@ -1484,7 +1484,7 @@
     ],
     [
      "TELL you",
-     "how i met your, gran?"
+     "tell you"
     ],
     [
      "how I met",
@@ -1494,7 +1494,8 @@
      "your GRAN?\"",
      "your gran?"
     ]
-   ]
+   ],
+   "tempo": 0.88
   },
   {
    "id": "L54",
@@ -1506,7 +1507,7 @@
     ],
     [
      "GRAN said",
-     "gran, said this line for him,"
+     "gran said"
     ],
     [
      "this line",
@@ -1520,7 +1521,8 @@
      "from the WINGS.",
      "from the wings."
     ]
-   ]
+   ],
+   "tempo": 0.9
   },
   {
    "id": "L55",
