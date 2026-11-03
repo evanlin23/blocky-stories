@@ -19,6 +19,8 @@ lines = json.loads((HERE / "lines.json").read_text())
 
 LOOP = 0.25
 for _l in lines:
+    if _l["id"] == "L01":
+        _l["tempo"] = 1.2
     if _l["id"] == "L03":
         _l["tempo"] = 0.9
 lines = lines + [{"id": "P04", "pause": LOOP, "chunks": []}]
