@@ -613,7 +613,7 @@ def build(kit, story, tl):
         ctx["wholes"][pid] = (pl, em, a, b)
     kit.light("glyphglow", "POINT", (0, 0, -20), 0.0, GOLD, size=0.15)
     kit.light("facefill", "POINT", (-1.1, -1.1, 1.9), 55.0, "#ffe6c8", size=0.4)
-    kit.light("footlight", "POINT", (0.45, -0.45, 0.3), 90.0, "#fff0d8", size=0.3)
+    kit.light("footlight", "POINT", (0.9, -0.55, 0.45), 14.0, "#fff0d8", size=0.4)
     return ctx
 
 

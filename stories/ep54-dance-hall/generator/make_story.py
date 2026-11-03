@@ -152,7 +152,7 @@ STRANGERS = {"a1": D((BS - 0.55, 0.3), 62, SM, arms=(85, 0), head=(-30, 0)),
 # Frame 1 (opening pass, 2026-11-03): straight at the thing the warning names. In the hall, lit full, tight on the
 # back of Ros's raised left hand in hold, her half already dim, round nobody: no partner's hand where one should be.
 # Her face beyond it, eyes shut, pushing in. No wide before 3 s. (Builder: check the still, adjust to frame the hand.)
-S(0, cm((-0.55, 0.55, 1.62), (-0.25, -0.35, 1.5), 32, (-0.45, 0.3, 1.58), (-0.25, -0.35, 1.5), 36),
+S(0, cm((-1.55, 0.95, 1.3), (-0.4, -0.35, 1.32), 30, (-1.3, 0.75, 1.3), (-0.4, -0.35, 1.32), 36),
   {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(75, 75))}, hand=0.004)
 S("L01.3", cm((BS, -2.7, 1.5), (BS, 0.3, 1.4), 24, (BS, -2.4, 1.5), (BS, 0.3, 1.4), 25), STRANGERS)
 S("L02", cm((BS, -2.1, 1.5), (BS, 0.3, 1.4), 26, (BS, -1.9, 1.5), (BS, 0.3, 1.4), 27), STRANGERS)
@@ -296,8 +296,8 @@ S("L67", cm((0.0, 3.4, 1.9), (0, -1.2, 1.3), 21),
   walk={"ros": [("L67.4", (-0.6, 0.0), 90, dict(arms=[70, 70], head=[50, 0]))],
         "me": [("L67.4", (0.6, 0.0), -90, dict(arms=[70, 0], head=[-50, 0]))]})
 # the comic feet: the frame is on the shoes alone; my shoe lands on her toe
-S("L68", cm((1.3, -0.7, 0.28), (0, -0.1, 0.2), 30),
-  {"ros": D((0.0, -0.2), 180, "worried", arms=(36, 36)), "me": D((0.0, 0.02), 0, SM, arms=(36, 0), z=0.09)})
+S("L68", cm((1.9, -0.1, 0.85), (0, -0.1, 0.2), 20, (1.7, -0.1, 0.75), (0, -0.1, 0.2), 22),
+  {"ros": D((0.0, -0.2), 180, "worried", arms=(0, 0)), "me": D((0.0, 0.02), 0, SM, arms=(0, 0), z=0.09)})
 # the same at arm's length: Ros winces and hops, I wince back, the class behind
 S("L68.2", cm((0.0, -3.4, 1.6), (0, 0.0, 1.35), 24),
   {"ros": D((-0.6, 0.0), 90, "worried", arms=(70, 70), head=(40, 10)), "me": D((0.6, 0.0), -90, "worried", arms=(70, 0), head=(-40, 10)),
@@ -308,8 +308,8 @@ for _i, _n in enumerate(("a1", "a2", "b1", "b2", "c1", "c2", "d1", "d2")):
     CLASS_ROW[_n] = D((-1.75 + 0.5 * _i, -2.1), 180, SM, arms=(70, 70) if _i % 2 else (0, 0))
 L69_CLASS = {"c2": D((-1.3, 1.4), 0, SM, arms=(70, 70)), "a1": D((-0.85, 1.9), 0, SM, arms=(0, 70)),
              "a2": D((-1.75, 2.0), 0, SM, arms=(70, 0))}
-S("L69", cm((0.3, -2.5, 1.45), (-0.4, 0.7, 1.15), 20),
-  {"ros": D((-0.6, 0.7), 0, SM, arms=(0, 55), side=(10, 0)), "me": D((0.05, 0.7), -90, "worried"), **L69_CLASS})
+S("L69", cm((0.0, -2.6, 1.3), (-0.05, 0.7, 0.95), 18),
+  {"ros": D((-0.7, 0.7), 80, SM, arms=(0, 42), head=(-50, 0)), "me": D((0.6, 0.7), -90, "worried", head=(10, 0)), **L69_CLASS})
 # L70: she straightens my collar (brief), then we both face the class, her hand-back on my palm
 S("L70", cm((0.0, -2.6, 1.55), (0, 0.5, 1.4), 28),
   {"ros": D((-0.4, 0.5), 90, SM, arms=(100, 36)), "me": D((0.4, 0.5), -90, SM, arms=(36, 0)), **class_wall(SM, x=2.2, dy=1.8)},
