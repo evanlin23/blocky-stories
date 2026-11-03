@@ -98,6 +98,25 @@ def test_upload_spaces_out_twist_shapes(monkeypatch):
     assert upload.next_story({"a": {}}) == "b"            # nothing else is ready: it goes anyway
 
 
+def test_upload_spaces_out_opening_shapes(monkeypatch):
+    monkeypatch.setenv("QA_REQUIRED", "false")
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    openings = {"a": "ban", "b": "ban", "c": "count", "d": ""}
+    monkeypatch.setattr(upload, "all_stories", lambda: ["a", "b", "c", "d"])
+    monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1})
+    monkeypatch.setattr(upload, "gate_open", lambda s: True)
+    monkeypatch.setattr(upload, "shape", lambda s: "")
+    monkeypatch.setattr(upload, "opening", lambda s: openings[s])
+    monkeypatch.setattr(upload, "queue", lambda: [])
+    monkeypatch.setattr(upload, "load_package", lambda s: {})
+    assert upload.next_story({"a": {}}) == "c"            # b would open like a, so c goes first
+    assert upload.next_story({"a": {}, "c": {}}) == "b"
+    monkeypatch.setattr(upload, "film", lambda s: {"run_id": 1} if s == "b" else None)
+    assert upload.next_story({"a": {}}) == "b"            # nothing else is ready: it goes anyway
+
+
 def test_upload_queue_goes_first(monkeypatch):
     monkeypatch.setenv("QA_REQUIRED", "false")   # the final-film check has its own test
     sys.path.insert(0, str(ROOT / "scripts"))
