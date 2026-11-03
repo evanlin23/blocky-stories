@@ -1154,54 +1154,50 @@
    ]
   },
   "L44": {
-   "text": "I thought he was counting himself. I was wrong.",
+   "text": "I thought that one was just himself.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 1.862,
    "onset": 0.155,
-   "end": 2.052,
+   "end": 1.672,
    "chunks": [
     [
      0.155,
-     0.388
+     0.431
     ],
     [
-     0.388,
-     0.802
+     0.431,
+     0.81
     ],
     [
-     0.802,
-     1.241
-    ],
-    [
-     1.31,
-     2.052
+     0.81,
+     1.672
     ]
    ]
   },
   "L45": {
-   "text": "Like even I didn't count anymore.",
+   "text": "Like I didn't count to him anymore.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.741,
+   "dur": 1.672,
    "onset": 0.172,
-   "end": 1.534,
+   "end": 1.483,
    "chunks": [
     [
      0.172,
-     0.517
+     0.534
     ],
     [
-     0.517,
-     0.957
+     0.534,
+     0.888
     ],
     [
-     0.957,
-     1.534
+     0.888,
+     1.483
     ]
    ]
   },
@@ -1226,34 +1222,34 @@
    ]
   },
   "L47": {
-   "text": "Then I looked up at my own number, for the first time in years.",
+   "text": "But I was wrong. I looked up at my own number, for the first time in years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.741,
-   "onset": 0.172,
-   "end": 2.552,
+   "dur": 3.259,
+   "onset": 0.155,
+   "end": 3.069,
    "chunks": [
     [
-     0.172,
-     0.492
+     0.155,
+     0.862
     ],
     [
-     0.492,
-     0.759
+     0.948,
+     1.285
     ],
     [
-     0.759,
-     1.276
+     1.285,
+     1.845
     ],
     [
-     1.345,
-     1.69
+     1.879,
+     2.224
     ],
     [
-     1.69,
-     2.552
+     2.224,
+     3.069
     ]
    ]
   },

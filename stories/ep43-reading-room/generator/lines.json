@@ -898,16 +898,12 @@
     "I thought"
    ],
    [
-    "he was counting",
-    "he was counting"
+    "that one was",
+    "that one was"
    ],
    [
-    "HIMSELF.",
-    "himself."
-   ],
-   [
-    "I was WRONG.",
-    "I was wrong."
+    "just HIMSELF.",
+    "just himself."
    ]
   ]
  },
@@ -916,12 +912,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Like even",
-    "Like even"
+    "Like I didn't",
+    "Like I didn't"
    ],
    [
-    "I didn't count",
-    "I didn't count"
+    "count to him",
+    "count to him"
    ],
    [
     "ANYMORE.",
@@ -948,16 +944,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then I looked",
-    "Then I looked"
+    "But I was",
+    "But I was"
    ],
    [
-    "up at my",
-    "up at my"
+    "WRONG.",
+    "wrong."
    ],
    [
-    "own number,",
-    "own number,"
+    "I looked up",
+    "I looked up"
+   ],
+   [
+    "at my own",
+    "at my own"
+   ],
+   [
+    "number,",
+    "number,"
    ],
    [
     "for the first",
