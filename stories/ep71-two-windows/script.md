@@ -44,7 +44,7 @@ Checked against `stories/ideas.md` → "Claimed big ideas" and every story's twi
   - Plant 2 (L14, 22 s): Cal's old car has one cracked headlight, said aloud and shown in close-up.
   - Plant 3 (L15 to L16): the speaker asks "Two number fours, no pickles?" before Cal says a word. "They know me."
   - Rewatch catch: in L01's frame the bag already on the second window's sill has ticket 41 on it, the number we're about to be given at L17.
-- **How the last 15 seconds turn over the first line:** from L65 the wall just ends, we drive out, and Cal eats the pickles. Then L70 to L71: our three old laps are still in line by the back wall, and the front one, which never got out, rolls up to the second window "and nobody tells it," which runs straight into "At this drive-thru, never pull up to the second window." Now line 1 isn't a ghost-story warning. It's what nobody told the lap of us that's still going round.
+- **How the last 15 seconds turn over the first line:** from L65 the wall just ends, we drive out, and Cal eats the pickles. Then L70 to L71: our four old laps are still in line by the back wall, and the front one, which never got out, rolls up to the second window "and nobody tells it," which runs straight into "At this drive-thru, never pull up to the second window." Now line 1 isn't a ghost-story warning. It's what nobody told the lap of us that's still going round.
 - **Ending shape:** an escape that leaves copies behind. Two brothers drive out onto the open road. A cold beat: the three laps of us by the back wall, the front one, a lap that never got out, rolling up to the lit hatch. (`shape: "lap"`, new.)
 - **Kind of warmth:** being heard. The big brother who always spoke for me lets me order, and keeps letting me (L69: every Friday he looks at me and waits). Played light: he hates pickles and eats every one.
 - **No sad family reveal.** Nobody is gone, sick or estranged. Cal is fine throughout.
@@ -84,7 +84,7 @@ A small roadside drive-thru on the edge of town, golden Friday evening, bright a
 | L43 to L45 (lap 3) | out to its shoulders, the bag on its palm level with Cal's window |
 | L51 to L52 (lap 4, the clear reveal, about 92 to 95 s, 70%) | out to its waist over the sill, its wide face a hand from Cal's, lit full |
 | L65 (escape) | gone: no hatch, the wall just ends at the kerb |
-| L71 (sting) | in the far background, the lit hatch again as the front one of our three old laps rolls up to it. Hand only |
+| L71 (sting) | in the far background, the lit hatch again as the front one of our four old laps rolls up to it. Hand only |
 
 ## Continuity
 - **Our car:** a small sky-blue two-door hatchback with rounded block wheel arches, one cracked left headlight (a jagged dark line across the lens, the bulb a dimmer yellow than the right), a peach blank plate. The same model for the three copies, cracked headlight on each.
@@ -174,7 +174,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S13: two-shot through the windshield, Cal at the wheel grinning, me beside him, the same hair and face, clearly brothers]
 - `L11` narrator: TWO NUMBER FOURS. / NO PICKLES.
   - [S14: the drawn menu board, the 4 picture with a stacked bun. S15: the round pickle slice picture]
-- `L12` narrator: I'm TWENTY. / I would like / to try a PICKLE.
+- `L12` narrator: I'm a GROWN MAN. / I would like / to try a PICKLE.
   - [S16: me, `neutral`, deadpan to camera]
 - `L13` narrator: So tonight, / I tell him / I'm ordering MY OWN.
   - [S17: me turned to Cal, `angry` (mild). S18: Cal, `smile`]
@@ -226,7 +226,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S46: me, `wide`. The drone enters]
 - `L31` narrator: Cal GRINS. / "They KNOW me."
   - [S47: Cal, `smile`, the same frame as S24, elbow on the door]
-- `L32` narrator: Same GRIN. / Same WORDS.
+- `L32` narrator: EXACTLY like / last TIME.
   - [S48: S24 and S47 cut hard together, identical]
 - `L33` narrator: TWO tickets / on the MIRROR. / Both say / FORTY-ONE.
   - [S49: the mirror, two tickets 41 on the clip. S50: close on the two, side by side]
@@ -319,14 +319,14 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S99: the empty pickle cup on the dash, ticket 42 on the mirror]
 - `L69` narrator: Every Friday now, / at the speaker, / he looks at ME / and WAITS.
   - [S100: a new Friday, the same golden light, Cal at the speaker turned to me, `smile`, waiting. S101: me leaning to the grille, `smile`]
-- `L70` narrator: But our three old LAPS / are still in LINE / by the BACK WALL.
+- `L70` narrator: But our FOUR old LAPS / are still in LINE / by the BACK WALL.
   - [S102: as we leave, through the rear window, the back wall: eight red trucks, three sky-blue cars. Music thins to drone]
 - `L71` narrator: The FRONT one / never got OUT. / It's rolling up / to the second window, / and nobody tells it,
   - [S103: the first of our copies rolling up to the lit hatch, a mint sleeve and hand holding out the bag. Push in toward the hatch to match S01's framing. Cut on the loop 0.25 s after "tells it", straight into L01, so the loop plays as one sentence]
 
 ## Risks
 - **"Lap" must read.** L27 to L33 show the loop before the word "lap" arrives (L40). The cold-viewer test should confirm it's clear we drove round again.
-- **The copies.** The cold viewer must get that the three cars are us going round, said in L55. L70 calls them "our three old laps" so the ending names them plainly.
+- **The copies.** The cold viewer must get that the three cars are us going round, said in L55. L70 calls them "our four old laps" (the fourth is the lap 4 we were on when we looked back) so the ending names them plainly.
 - **Cal never in peril.** He's only ever grinning and driving. The Server never touches him.
 - **"Number seven"** is chosen over "number two" so nobody hears a toilet joke.
 - **No brand.** Burgers, fries and pickles are generic. Menu board pictures and numerals only. The 🍔 emoji in the title is generic.
