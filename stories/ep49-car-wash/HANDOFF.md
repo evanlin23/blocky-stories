@@ -28,3 +28,7 @@ Branch `claude/opening-ep49-car-wash`. No PR yet.
 - Keep this story's own `sfx` to 2 to 4 events per 10 s in all. This round added many sfx, so thin them.
 - Use `"hold": ["Sxx"]` for frame-exact shots.
 - Read builder.md and docs/engine.md, under The polish pack.
+
+
+## Update 2026-11-03 (builder resume)
+r7 must-fixes verified in make_story.py; sound rev 8; full preview rendered, finished, mixed (140.4 s). flash PASS (warnings only), preflight 0 blocks, measure 0 block/0 warn of 12 (sfx 3.92/10 s), check ok. Next: review round 8, gate, PR, qa.
