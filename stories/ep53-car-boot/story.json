@@ -26,7 +26,15 @@
   "sky": "#cfd6e0",
   "sky_strength": 1.0,
   "exposure": 0.0,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": {
+   "quiet": [
+    [
+     "L60",
+     "L68"
+    ]
+   ]
+  }
  },
  "grade": {
   "shadows": [
@@ -6370,7 +6378,9 @@
     "blink": true,
     "sit": false,
     "expr": "smirk",
-    "yaw": -136.5
+    "yaw": -136.5,
+    "sfx": "thud",
+    "sfx_db": -22
    },
    {
     "at": "L67",
@@ -8743,42 +8753,6 @@
  ],
  "fx": [
   {
-   "at": "L01>-0.3",
-   "kind": "punch",
-   "dur": 0.5,
-   "zoom": 1.1
-  },
-  {
-   "at": "L02.1",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.1
-  },
-  {
-   "at": "L03.4",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.1
-  },
-  {
-   "at": "L06.1",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.1
-  },
-  {
-   "at": "L09",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.08
-  },
-  {
-   "at": "L18",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.1
-  },
-  {
    "at": "P01+0.4",
    "kind": "shake",
    "dur": 0.3,
@@ -8791,22 +8765,10 @@
    "amp": 1.0
   },
   {
-   "at": "L27",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.12
-  },
-  {
    "at": "P02+0.7",
    "kind": "shake",
    "dur": 0.3,
    "amp": 0.6
-  },
-  {
-   "at": "L44",
-   "kind": "punch",
-   "dur": 0.5,
-   "zoom": 1.15
   },
   {
    "at": "L44",
@@ -8819,24 +8781,6 @@
    "kind": "shake",
    "dur": 0.5,
    "amp": 0.9
-  },
-  {
-   "at": "L51",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.12
-  },
-  {
-   "at": "L61",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.1
-  },
-  {
-   "at": "L74.3",
-   "kind": "punch",
-   "dur": 0.4,
-   "zoom": 1.08
   }
  ],
  "music": {
@@ -8960,13 +8904,13 @@
     "kind": "static",
     "from": "L23",
     "to": "L24",
-    "lufs": -36
+    "lufs": -41
    },
    {
     "kind": "static",
     "from": "L30",
     "to": "L32",
-    "lufs": -36
+    "lufs": -41
    },
    {
     "kind": "hum",
@@ -9003,36 +8947,6 @@
     "tone": "hand"
    },
    {
-    "at": "L02-0.05",
-    "kind": "whoosh",
-    "db": -20,
-    "dur": 0.4
-   },
-   {
-    "at": "L03-0.05",
-    "kind": "whoosh",
-    "db": -22,
-    "dur": 0.4
-   },
-   {
-    "at": "L04-0.05",
-    "kind": "whoosh",
-    "db": -24,
-    "dur": 0.4
-   },
-   {
-    "at": "L09-0.05",
-    "kind": "whoosh",
-    "db": -26,
-    "dur": 0.4
-   },
-   {
-    "at": "L25",
-    "kind": "whoosh",
-    "db": -22,
-    "dur": 0.6
-   },
-   {
     "at": "L26",
     "kind": "thud",
     "db": -22
@@ -9056,12 +8970,6 @@
     "at": "L32",
     "kind": "thud",
     "db": -20
-   },
-   {
-    "at": "L43-0.05",
-    "kind": "whoosh",
-    "db": -24,
-    "dur": 0.6
    },
    {
     "at": "L44",
@@ -9101,27 +9009,9 @@
     "db": -18
    },
    {
-    "at": "L57",
-    "kind": "whoosh",
-    "db": -20,
-    "dur": 0.5
-   },
-   {
-    "at": "L58-0.05",
-    "kind": "whoosh",
-    "db": -22,
-    "dur": 0.6
-   },
-   {
     "at": "L64",
     "kind": "thud",
     "db": -20
-   },
-   {
-    "at": "L69-0.05",
-    "kind": "whoosh",
-    "db": -26,
-    "dur": 0.5
    },
    {
     "at": "L70",
@@ -9137,12 +9027,6 @@
     "at": "L75",
     "kind": "thud",
     "db": -12
-   },
-   {
-    "at": "P01+0.15",
-    "kind": "whoosh",
-    "db": -22,
-    "dur": 0.6
    },
    {
     "at": "P01+0.4",

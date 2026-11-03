@@ -371,7 +371,7 @@ put("me", "L60-0.45", [-15.0, -28.3], yaw=90, expr="smirk", head=[0, 0])
 key("me", "L61", expr="smirk")
 key("me", "L62", expr="smirk")
 hide("me", "L63")
-put("me", "L66", [0.95, 2.1], yaw=yaw_to([0.95, 2.1], [0.0, 3.1]), expr="smirk", arms=[20, 20])
+put("me", "L66", [0.95, 2.1], yaw=yaw_to([0.95, 2.1], [0.0, 3.1]), expr="smirk", arms=[20, 20], sfx="thud", sfx_db=-22)
 hide("me", "L67")
 put("me", "L69", list(STALL_ME), yaw=0, expr="neutral")
 hide("me", "L70")
@@ -546,17 +546,11 @@ sfx = [
     # the opening: a dry hollow knock on COLOR, a whoosh into the sleeve, a soft tick into the rule
     {"at": "L01>-0.3", "kind": "thud", "db": -9},
     {"at": "L01>-0.3", "kind": "knock", "db": -14, "pattern": [0.0], "tone": "hand"},
-    {"at": "L02-0.05", "kind": "whoosh", "db": -20, "dur": 0.4},
-    {"at": "L03-0.05", "kind": "whoosh", "db": -22, "dur": 0.4},
-    {"at": "L04-0.05", "kind": "whoosh", "db": -24, "dur": 0.4},
-    {"at": "L09-0.05", "kind": "whoosh", "db": -26, "dur": 0.4},
-    {"at": "L25", "kind": "whoosh", "db": -22, "dur": 0.6},
     {"at": "L26", "kind": "thud", "db": -22},
     {"at": "L27", "kind": "thud", "db": -9},
     {"at": "L27", "kind": "hit", "db": -16},
     {"at": "L28", "kind": "thud", "db": -20},
     {"at": "L32", "kind": "thud", "db": -20},
-    {"at": "L43-0.05", "kind": "whoosh", "db": -24, "dur": 0.6},
     {"at": "L44", "kind": "thud", "db": -7},
     {"at": "L44", "kind": "hit", "db": -14},
     {"at": "L46", "kind": "thud", "db": -18},
@@ -564,14 +558,10 @@ sfx = [
     {"at": "L50", "kind": "thud", "db": -9},
     {"at": "L50+0.1", "kind": "creak", "db": -9, "dur": 1.6},
     {"at": "L51", "kind": "hit", "db": -18},
-    {"at": "L57", "kind": "whoosh", "db": -20, "dur": 0.5},
-    {"at": "L58-0.05", "kind": "whoosh", "db": -22, "dur": 0.6},
     {"at": "L64", "kind": "thud", "db": -20},
-    {"at": "L69-0.05", "kind": "whoosh", "db": -26, "dur": 0.5},
     {"at": "L70", "kind": "latch", "db": -14},
     {"at": "L70.2", "kind": "latch", "db": -12},
     {"at": "L75", "kind": "thud", "db": -12},
-    {"at": "P01+0.15", "kind": "whoosh", "db": -22, "dur": 0.6},
     {"at": "P01+0.4", "kind": "thud", "db": -12},
     {"at": "P01+0.4", "kind": "hit", "db": -18},
     {"at": "L27", "kind": "sting", "db": -15},
@@ -590,22 +580,11 @@ sfx = [
 
 # punch-ins on the key words, and a shake on the scares (each a short hold, then back)
 FX = [
-    {"at": "L01>-0.3", "kind": "punch", "dur": 0.5, "zoom": 1.1},
-    {"at": "L02.1", "kind": "punch", "dur": 0.4, "zoom": 1.1},
-    {"at": "L03.3", "kind": "punch", "dur": 0.4, "zoom": 1.1},
-    {"at": "L06.1", "kind": "punch", "dur": 0.4, "zoom": 1.1},
-    {"at": "L09", "kind": "punch", "dur": 0.4, "zoom": 1.08},
-    {"at": "L18", "kind": "punch", "dur": 0.4, "zoom": 1.1},
     {"at": "P01+0.4", "kind": "shake", "dur": 0.3, "amp": 0.8},
     {"at": "L27", "kind": "shake", "dur": 0.4, "amp": 1.0},
-    {"at": "L27", "kind": "punch", "dur": 0.4, "zoom": 1.12},
     {"at": "P02+0.7", "kind": "shake", "dur": 0.3, "amp": 0.6},
-    {"at": "L44", "kind": "punch", "dur": 0.5, "zoom": 1.15},
     {"at": "L44", "kind": "shake", "dur": 0.4, "amp": 1.0},
     {"at": "L50", "kind": "shake", "dur": 0.5, "amp": 0.9},
-    {"at": "L51", "kind": "punch", "dur": 0.4, "zoom": 1.12},
-    {"at": "L61", "kind": "punch", "dur": 0.4, "zoom": 1.1},
-    {"at": "L74.2", "kind": "punch", "dur": 0.4, "zoom": 1.08},
 ]
 
 story = {
@@ -622,7 +601,8 @@ story = {
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#b8bcc0", "fog_density": 0.005, "fog_start": 3.0, "sky": "#cfd6e0", "sky_strength": 1.0,
-             "exposure": 0.0, "flash_safe": True},
+             "exposure": 0.0, "flash_safe": True,
+             "polish": {"quiet": [["L60", "L68"]]}},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.02], "saturation": 1.04, "contrast": 1.05,
               "vignette": 0.3, "bloom": 0.2, "grain": 0.012},
     "phonemes": {},
@@ -650,8 +630,8 @@ story = {
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "end", "lufs": -38},
                   {"kind": "room", "from": 0, "to": "L13", "lufs": -40},
-                  {"kind": "static", "from": "L23", "to": "L24", "lufs": -36},
-                  {"kind": "static", "from": "L30", "to": "L32", "lufs": -36},
+                  {"kind": "static", "from": "L23", "to": "L24", "lufs": -41},
+                  {"kind": "static", "from": "L30", "to": "L32", "lufs": -41},
                   {"kind": "hum", "from": "L36", "to": "L39", "lufs": -40},
                   {"kind": "hum", "from": "L58", "to": "L64", "lufs": -40},
                   {"kind": "crickets", "from": "L69", "to": "L71", "lufs": -46},
