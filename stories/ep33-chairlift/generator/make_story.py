@@ -127,9 +127,10 @@ def shot(at, cam, **opt):
 
 
 # ---- the rule and the montage
-shot(0, mv((5.8, 140.2, 41.7), (3.9, 137.0, 41.5), 28, (5.4, 139.6, 41.7), (3.9, 137.0, 41.8), 25), hand=0.002)
-shot("L01.3", mv((7.5, -7.0, 1.2), (1.6, 24.0, 9.0), 30, (7.5, -7.0, 1.25), (1.6, 24.0, 9.4), 30), hand=0.002)
-shot("L02", mv((2.9, 3.2, 2.5), (0.5, 137.0, 41.3), 80), hand=0.002)
+shot(0, mv((8.0, 139.0, 40.3), (4.3, 137.0, 41.7), 40, (7.5, 138.7, 40.35), (4.3, 137.0, 41.8), 36), hand=0.002)
+shot("L01.3", mv((10.5, -8.0, 1.3), (1.0, 24.0, 9.0), 30, (10.5, -8.0, 1.35), (1.0, 24.0, 9.4), 30), hand=0.002)
+# the ridge is hidden from the deck by the slope, so the long lens looks from the hillside: the row of still figures
+shot("L02", mv((-14.0, 68.0, 46.0), (1.0, 137.0, 41.4), 105, (-14.0, 68.0, 46.0), (1.0, 137.0, 41.45), 108), hand=0.002)
 shot("L03", mv((-0.5, -6.4, 1.4), (-1.6, -2.3, 1.4), 30, (-0.5, -6.2, 1.4), (-1.5, -2.5, 1.4), 30), hand=0.002)
 shot("L03.3", front(hd([-1.5, -3.5], 1.7), 0, 0, 2.4, 0.0, 34, push=0.15))
 shot("L04", ride_cam(1.4, 5.0, 0.5, 0, 0, 1.2, 30), follow="bo", hand=0.003)
@@ -152,21 +153,21 @@ shot("L16", mv((-3.4, 123.4, 41.2), (-4.3, 137.0, 41.4), 150), hand=0.001, scope
 shot("L17", mv((-3.4, 123.4, 41.2), (-4.3, 137.0, 41.4), 150), hand=0.001, scope=True)
 shot("L18", front(hd(BO), 0, 14, 2.5, 0.0, 32, push=0.1))
 shot("L19", mv((-3.4, -5.4, 1.7), (-3.8, -8.8, 0.8), 28, (-3.5, -5.6, 1.7), (-3.8, -8.8, 0.8), 28), hand=0.002)
-shot("L20", mv((-8.0, 6.0, 2.0), (-1.8, 1.0, 1.7), 26), hand=0.002)
+shot("L20", mv((-2.4, -5.5, 1.7), (-1.8, 10.0, 1.1), 35, (-2.4, -5.5, 1.7), (-1.8, 10.0, 1.15), 34), hand=0.002)
 shot("L20.2", mv((-2.0, -3.5, 1.4), (-4.5, 0.5, 1.2), 30), hand=0.003)
 shot("P01", mv((-3.4, 0.6, 1.5), (-5.5, 1.9, 1.4), 34), hand=0.001)
 shot("L21", mv((-3.0, 132.0, 41.1), (-4.3, 137.0, 41.1), 75), hand=0.0, scope=True, cfill=1.3)
 shot("L21.3", mv((-3.3, 5.0, 2.0), (-5.5, 1.8, 1.45), 36), hand=0.002)
 # ---- the ride and the reveal
-shot("L22", ride_cam(-0.72, 0.30, 1.42, -0.72, 0.60, 0.17, 15), follow="me", hand=0.0)
-shot("L23", ride_cam(0.5, -1.0, 2.6, 2.0, 7.0, -6.0, 30), follow="me", hand=0.003, cfill=0.3)
+shot("L22", ride_cam(-0.5, 1.25, 1.35, -0.45, 0.45, 0.15, 24), follow="me", hand=0.0)
+shot("L23", ride_cam(0.9, -0.8, 1.1, 1.6, 12.0, -0.2, 30), follow="me", hand=0.003, cfill=0.3)
 shot("L24", ride_cam(0.6, 0.4, 1.7, -2.0, -55.0, -13.0, 50), follow="me", hand=0.003, cfill=0.3)
 shot("L25", mv((-3.4, 133.5, 41.2), (-4.3, 137.0, 41.3), 45), hand=0.001)
 shot("L26", mv((-4.0, 131.8, 41.3), (-4.8, 136.2, 41.1), 34), hand=0.001)
 shot("L27", mv((-2.6, 140.4, 42.1), (-5.3, 135.4, 41.2), 40), hand=0.001)
 shot("L28", mv((-4.3, 132.0, 41.1), (-4.3, 137.0, 41.1), 48), hand=0.001)
 shot("L29", mv((-6.0, 112.0, 52.0), (-5.0, -35.0, 3.0), 40), hand=0.001)
-shot("L30", mv((-4.3, 141.0, 43.4), (-4.3, 120.0, 38.0), 22), hand=0.001)
+shot("L30", mv((-4.3, 141.0, 43.4), (-4.3, 120.0, 38.0), 22), hand=0.001, cfill=0.05)
 shot("L31", mv((-2.4, 139.0, 41.7), (-5.3, 135.4, 41.2), 38), hand=0.001)
 shot("L32", mv((-4.2, 132.3, 41.2), (-4.4, 137.0, 41.2), 40), hand=0.001)
 # ---- the turn and the sting
@@ -174,7 +175,8 @@ shot("L33", mv((-3.6, 131.6, 41.3), (-3.6, 137.0, 41.0), 34), hand=0.001)
 shot("L34", mv((-3.6, 133.2, 41.9), (-3.6, 136.6, 40.6), 40), hand=0.001)
 shot("L35", mv((-1.0, 30.0, 70.0), (0.4, -2.6, 0.0), 38), hand=0.001)
 shot("L36", mv((-3.6, 130.6, 41.9), (-3.6, 137.0, 41.6), 30), hand=0.001)
-shot("L37", mv((-5.5, -0.8, 1.2), (-3.6, 137.0, 41.0), 30), hand=0.001)
+# from the hillside again (the slope hides the ridge from the lake), nobody in front of the lens
+shot("L37", mv((-14.0, 68.0, 46.0), (-3.4, 137.0, 41.0), 125, (-14.0, 68.0, 46.0), (-3.4, 137.0, 41.05), 128), hand=0.001, cfill=0.1)
 
 shots, SID = [], {}
 for i, (at, cam, opt) in enumerate(SH):
@@ -262,7 +264,7 @@ B_.stand("L05", [-6.8, -6.0], 0, jump=True, expr="neutral", head=[0, 0], arms=[0
 B_.stand("L18", BO, 0, jump=True, expr="neutral", side=[35, 35])
 B_.stand("L19", [-6.8, -6.0], 0, jump=True, side=[0, 0])
 B_.stand("L24", BO, 0, jump=True, expr="neutral")
-B_.stand("L37", VIEW, 180, jump=True, expr="neutral", lean=18)
+B_.stand("L37", BO, 0, jump=True, expr="neutral")
 
 PE = Track()
 PE.stand(0, [0, -30], 0, hidden=True, expr="scared")
@@ -313,13 +315,16 @@ acting = {"me": M_.keys, "gran": G_.keys, "bo": B_.keys, "mr_pell": PE.keys, "la
 
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [
-    {"at": 0, "name": "light", "look": "base", "ramp": 0.01},
+    {"at": 0, "name": "light", "look": "gold", "sky": "#5f93c0", "sky_s": 1.0, "ramp": 0.01},
+    {"at": "L01.3", "name": "light", "look": "gold", "ramp": 1.2},
     {"at": "L13", "name": "light", "look": "pink", "ramp": 6.0},
     {"at": "L21", "name": "light", "look": "flat", "ramp": 0.4},
     {"at": "L22", "name": "light", "look": "gold", "ramp": 1.0},
     {"at": "L23", "name": "light", "look": "fog", "ramp": 2.5},
     {"at": "L25", "name": "light", "look": "gold", "ramp": 3.0},
     {"at": "L28", "name": "light", "look": "pink", "ramp": 6.0},
+    {"at": "L30", "name": "light", "look": "pink", "sun_e": 0.8, "sky_s": 0.75, "cam": 0.2, "ramp": 0.5},
+    {"at": "L31", "name": "light", "look": "pink", "ramp": 0.6},
     {"at": "L32", "name": "light", "look": "gold", "ramp": 4.0},
     {"at": "L36", "name": "light", "look": "base", "ramp": 2.0},
     # the time-lapse sky: smooth, slow, one direction; the light level never cycles
@@ -348,7 +353,7 @@ cues = [
     {"at": "L06", "name": "upchairs", "on": True},
     {"at": "L07", "name": "upchairs", "on": False},
     {"at": "L37", "name": "upchairs", "on": True},
-    {"at": "L20", "name": "phase", "u": 257.65, "when": 0.9},
+    {"at": "L20", "name": "phase", "u": 257.65, "when": 0.8},
     {"at": "L20.2", "name": "phase", "off": True},
     {"at": 0, "name": "sway", "amp": 1.4, "bias": 0.0, "dur": 0.1},
     {"at": 0, "name": "blanket", "on": False},

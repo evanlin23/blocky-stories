@@ -378,9 +378,13 @@ def soft_card_mat(kit, name, color, strength, alpha, power=0.8):
     sub.operation = "SUBTRACT"
     sub.inputs[1].default_value = (0.5, 0.5, 0.0)
     nt.links.new(tc.outputs["Generated"], sub.inputs[0])
+    flat = nt.nodes.new("ShaderNodeVectorMath")   # a flat card has no depth: drop z so only x and y count
+    flat.operation = "MULTIPLY"
+    flat.inputs[1].default_value = (1.0, 1.0, 0.0)
+    nt.links.new(sub.outputs[0], flat.inputs[0])
     ln = nt.nodes.new("ShaderNodeVectorMath")
     ln.operation = "LENGTH"
-    nt.links.new(sub.outputs[0], ln.inputs[0])
+    nt.links.new(flat.outputs[0], ln.inputs[0])
     mr = nt.nodes.new("ShaderNodeMapRange")
     mr.inputs["From Min"].default_value = 0.0
     mr.inputs["From Max"].default_value = 0.5
@@ -518,18 +522,18 @@ def build_props(kit, ctx, M):
     sc.hide_render = True
     ctx["scope"] = sc
     # racing cloud cards on a ring round the valley, and drifting mist cards over the lake
-    cm = soft_card_mat(kit, "cloud card", "#fff1e2", 0.85, 0.78)
+    cm = soft_card_mat(kit, "cloud card", "#fff7ec", 1.6, 0.95)
     ctx["clouds"] = []
-    n = 16
+    n = 9
     for k in range(n):
-        c = kit.plane(f"cloud{k}", (100.0 + 40 * kit.hash01(k, 1), 26.0 + 14 * kit.hash01(k, 2)), (0, 0, 90), cm)
+        c = kit.plane(f"cloud{k}", (46.0 + 26 * kit.hash01(k, 1), 12.0 + 8 * kit.hash01(k, 2)), (0, 0, 90), cm)
         c.rotation_euler = (math.pi / 2, 0, 0)
         c.hide_render = True
-        ctx["clouds"].append((c, 360.0 * k / n + 11 * kit.hash01(k, 3), 52 + 22 * kit.hash01(k, 4)))
-    mm = soft_card_mat(kit, "mist card", "#d3d6da", 0.8, 0.3)
+        ctx["clouds"].append((c, 360.0 * k / n + 11 * kit.hash01(k, 3), 72 + 40 * kit.hash01(k, 4)))
+    mm = soft_card_mat(kit, "mist card", "#e6e9ee", 0.9, 0.28)
     ctx["mist"] = []
     for k in range(14):
-        c = kit.plane(f"mist{k}", (34.0, 26.0), (0, 0, 0), mm)
+        c = kit.plane(f"mist{k}", (44.0, 34.0), (0, 0, 0), mm)
         c.hide_render = True
         ctx["mist"].append((c, -50 + 100 * kit.hash01(k, 5), 4 + 78 * kit.hash01(k, 6), 0.4 + 5.0 * kit.hash01(k, 7)))
 
@@ -813,7 +817,7 @@ def animate(kit, story, tl, t, ctx):
     # ---- props on people: boots, Mr Pell's beard, Gran's knit hat
     if not ctx.get("props_ready"):
         ctx["props_ready"] = True
-        for who, bc in (("mr_pell", "#7a3b2a"), ("gran", "#2c4a35")):
+        for who, bc in (("mr_pell", "#7a3b2a"), ("gran", "#2c4a35"), ("me", "#4a392c")):
             boot = K.plastic(bc, 0.7, name=f"boot {who}")
             lace = K.plastic("#e4dcc6", 0.8, name="laces")
             for sx in (-1, 1):
