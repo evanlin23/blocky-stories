@@ -21,7 +21,7 @@ LF = TURNS * RISE + 2.4
 KX = 40.0
 Z4, Z5, Z6, Z7 = 4 * RISE, 5 * RISE, 6 * RISE, 7 * RISE
 LOOP = 0.25   # a hard cut 0.25 s after the last word, into L01 (no fade at either end)
-HOLDS = {"L11": 0.65, "L59": 0.5, "L45": 0.4, "L66": 0.4, "L76": 0.0}   # a breath after the quiet beats (keeps the film over 2:15)
+HOLDS = {"L11": 0.8, "L59": 0.5, "L45": 0.4, "L66": 0.4, "L76": 0.0}   # a breath after the quiet beats (keeps the film over 2:15)
 for ln in lines:
     if ln["id"] in HOLDS:
         ln["gap"] = HOLDS[ln["id"]]
