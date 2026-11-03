@@ -881,7 +881,7 @@ def build_breath(kit, ctx):
     tr = N.new("ShaderNodeBsdfTransparent")
     em = N.new("ShaderNodeEmission")
     em.inputs["Color"].default_value = (0.78, 0.8, 0.9, 1)
-    em.inputs["Strength"].default_value = 0.9
+    em.inputs["Strength"].default_value = 0.6
     mix = N.new("ShaderNodeMixShader")
     L.new(mul.outputs[0], mix.inputs[0])
     L.new(tr.outputs[0], mix.inputs[1])

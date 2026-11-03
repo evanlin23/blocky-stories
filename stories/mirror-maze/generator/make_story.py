@@ -213,8 +213,8 @@ S("L02", mv(((0.4, -9.6, 1.5), (5.4, -15.2, 1.3)), ((1.2, -9.6, 1.5), (6.0, -15.
 stage("L03", E("x0", (VAN[0] - 0.9, VAN[1] + 2.3, 0.02), 0, expr="neutral", rim=False),
       E("x1", (VAN[0] + 0.3, VAN[1] + 2.3, 0.02), 0, expr="smirk", rim=False),
       *[E(f"x{i}", (3.5 + (i - 2) * 0.55, VAN[1] + 0.8, 0.02), -90, rim=True) for i in range(2, 10)])
-S("L03", one((-3.4, -10.0, 1.6), (0.6, -14.6, 1.4), 20), 2,
-  look={"exposure": 0.9, "camfill": 0.6, "amb": 1.0, "van": [[0.7, -14.4, 2.0], [0.7, -13.2, 1.0], 60, 1.8, "#ffb060"]},
+S("L03", one((-2.6, -11.0, 1.6), (0.5, -14.6, 1.4), 22), 2,
+  look={"exposure": 1.0, "camfill": 0.8, "amb": 1.0, "rim": [[-2.2, -11.5, 3.0], [0.3, -13.8, 1.2], 900, 60, "#ffd9a0"], "van": [[0.7, -14.4, 2.0], [0.7, -13.2, 1.0], 60, 1.8, "#ffb060"]},
   note="the real hatch: two customers")
 # the puddle: a man tying his boot, nobody over him
 stage("L04", E("x0", (0.62, 4.05, BZ), 90, expr="neutral", bow=78, rim=True, arms=[0, 0]))
@@ -290,13 +290,11 @@ stage("L16", *MINIS())
 LOOK_CARRY = {**LOOK_IN, "camfill": 0.9}
 S("L16", one((0.5, 3.6, 1.55), (0.0, 0.85, 1.3), 30), 2, follow="guy", look=LOOK_CARRY, rain2d=False,
   note="every pane he carried was packed with faces")
-S("L17", mv(((0.5, 3.6, 1.55), (0.0, 0.85, 1.4)), ((0.4, 3.0, 1.55), (0.0, 0.85, 1.4)), 34, 42), 2, follow="guy",
+S("L17", mv(((0.5, 3.6, 1.55), (0.0, 0.85, 1.4)), ((0.3, 2.7, 1.6), (0.0, 0.85, 1.6)), 34, 46), 2, follow="guy",
   look=LOOK_CARRY, rain2d=False, note="they all turned to watch me")
-stage("L17.2",
+stage("L17.1",
       *[E(w, (0, 0, 0), 0, att={"side": sx, "ahead": -0.12, "up": uz, "yaw": 0}, scale=0.5, expr="neutral", rim=True,
           head=[-35 if sx < 0 else 35, 0]) for w, sx, uz in (("x0", -0.4, 0.08), ("x1", 0.4, 0.08), ("x2", -0.4, 1.18), ("x3", 0.4, 1.18))])
-S("L17.2", one((0.3, 2.9, 1.6), (0.0, 0.85, 1.6), 46), 2, follow="guy", look=LOOK_CARRY, rain2d=False,
-  note="the faces in the carried pane, turned toward me")
 
 # =========================================================================================== 07 the breath, L18 to L19
 props("L18", halfpanes=False, carry=False, off=None, yaw=None)
@@ -306,7 +304,7 @@ hide("guy", "L18")
 put("tasha", "L18", [TP[0], TP[1], Z_IN], yaw=180, expr="smirk", head=[0, 0])
 mouth("tasha", "L18", "L18.1>", 0.3, 0.9)
 put("me", "L18", [MP[0], MP[1], Z_IN], yaw=0, expr="neutral")
-cues.append({"at": "L18.2", "name": "fog", "on": True, "peak": 0.45, "pos": [TP[0], SY - 0.05, 1.5]})
+cues.append({"at": "L18.2", "name": "fog", "on": True, "peak": 0.4, "pos": [TP[0], SY - 0.05, 1.5]})
 S("L18", one((IX - 0.7, 15.3, 1.65), (TP[0], TP[1], 1.6), 44), 2, look=LOOK_IN, rain2d=False,
   note="Tasha laughed; her side of the glass fogged up")
 S("L19", one((IX + 0.55, 9.3, 1.55), (IX + 0.0, 13.0, 1.5), 36), 2, look=LOOK_IN, rain2d=False,
@@ -361,7 +359,7 @@ S("L26", one((IX + 0.7, 10.9, 1.6), (TP[0], TP[1], 1.62), 50), 2, look=LOOK_IN, 
 GUY_AT = [IX, 12.05, Z_IN]
 put("guy", "L27", GUY_AT, yaw=180, expr="neutral", arms=[60, 60])
 props("L27", halfpanes=True, nostage=True, carry=True, world=[IX, SY, Z_IN, 0.0])
-stage("L27", E("me", (0, 0, 0), 0, att={"side": -0.55, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
+stage("L27", E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
 raw("tasha", "L27", expr="worried", pos=[TP[0] - 0.6, TP[1] - 0.2, Z_IN])
 S("L27", one((IX + 0.9, 8.0, 1.7), (IX, 12.5, 1.6), 28), 2, look={**LOOK_IN, "room": 1.2}, rain2d=False,
   note="the maze guy lifts my pane, his back to us")
@@ -388,7 +386,7 @@ raw("tasha", "L29", pos=[-0.9, 3.4, BZ], yaw=180)
 raw("tasha", "L33>", pos=[-5.7, 3.4, BZ])
 rain("L29", True, [-9.0, 4.0, 1.0, 4.55], 4.5)
 LOOK_WALK = {**LOOK_NIGHT, "camfill": 1.4}
-stage("L29", E("me", (0, 0, 0), 0, att={"side": -0.55, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
+stage("L29", E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
 S("L29", one((-1.0, -3.2, 1.5), (-1.0, 0.45, 1.6), 22), 2, follow="guy", look=LOOK_WALK, rain2d=False,
   note="the reveal said plainly: me in the pane, front at last, the lilac rim and the shine")
 S("L30", one((0.0, -3.4, 1.6), (0.0, 0.0, 1.6), 40), 2, follow="tasha", look=LOOK_WALK, rain2d=False,
@@ -408,7 +406,7 @@ put("guy", "L34", [TX - 0.5, 5.2, BZ], yaw=180, expr="neutral", arms=[70, 70])
 hide("guy", "L35")
 put("tasha", "L34", [TX + 0.45, 3.4, BZ], yaw=180, expr="smirk", head=[0, 0])
 rain("L34", True, [-9.0, 0.0, 0.5, 5.0], 4.5)
-stage("L34", E("me", (0, 0, 0), 0, att={"side": -0.55, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
+stage("L34", E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
 LOOK_TRUCK = {**LOOK_NIGHT, "camfill": 1.0,
               "kick": [[-1.0, 1.0, 3.2], [TX, 6.8, 2.2], 5000, 40, "#c9b8ff"]}
 S("L34", one((-6.5, -2.5, 1.8), (TX, 6.8, 2.0), 28), 2, look=LOOK_TRUCK, rain2d=False,
@@ -421,8 +419,8 @@ S("L35", one((TX - 0.2, 3.7, 1.5), (TX - 0.2, 6.9, 2.5), 34), 2, look=LOOK_TRUCK
 put("tasha", "L36", [TX + 0.45, 4.7, BZ], yaw=180, expr="smirk", head=[0, -12])
 S("L36", one((TX + 1.4, 3.0, 1.7), (TX - 0.2, 6.9, 2.5), 32), 2, look=LOOK_TRUCK, rain2d=False,
   note="all week she'd only looked at me")
-TR = E("tr", (0, 0, 0), 0, att={"side": 0.55, "ahead": -0.45, "up": 0.03, "yaw": 0}, expr="smirk", rim=True)
-ME_T = E("me", (0, 0, 0), 0, att={"side": -0.55, "ahead": -0.45, "up": 0.03, "yaw": 0}, rim=True)
+TR = E("tr", (0, 0, 0), 0, att={"side": 0.5, "ahead": -0.95, "up": 0.03, "yaw": 0}, expr="smirk", rim=True)
+ME_T = E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0}, rim=True)
 stage("L37.1", ME_T, TR)
 raw("tasha", "L37", expr="smirk", head=[0, -12])
 S("L37", one((TX + 1.0, 3.1, 1.6), (TX + 0.1, 6.9, 2.5), 30), 2, look=LOOK_TRUCK, rain2d=False,
@@ -435,12 +433,12 @@ S("L39", mv(((TX + 0.1, 3.5, 1.9), (TX - 0.05, 6.9, 2.6)), ((TX + 0.1, 3.9, 2.0)
 
 # =========================================================================================== 14 the joke goes on, L40 to L41
 hide("tasha", "L40")
-stage("L40", ME_T, E("tr", (0, 0, 0), 0, att={"side": 0.55, "ahead": -0.45, "up": 0.03, "yaw": 0}, expr="smirk", arms=[0, 82],
+stage("L40", ME_T, E("tr", (0, 0, 0), 0, att={"side": 0.5, "ahead": -0.95, "up": 0.03, "yaw": 0}, expr="smirk", arms=[0, 82],
                      rim=True))
 S("L40", one((TX + 0.3, 3.8, 2.3), (TX + 0.0, 6.9, 2.6), 36), 2, look=LOOK_TRUCK, rain2d=False,
   note="on the truck her reflection points at my hat: what's that?")
-stage("L41", E("me", (0, 0, 0), 0, att={"side": -0.55, "ahead": -0.45, "up": 0.03, "yaw": 0}, expr="smirk", rim=True),
-      E("tr", (0, 0, 0), 0, att={"side": 0.55, "ahead": -0.45, "up": 0.03, "yaw": 0}, expr="smirk", rim=True))
+stage("L41", E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0}, expr="smirk", rim=True),
+      E("tr", (0, 0, 0), 0, att={"side": 0.5, "ahead": -0.95, "up": 0.03, "yaw": 0}, expr="smirk", rim=True))
 raw("me", "L41", expr="smirk")
 S("L41", one((TX - 0.1, 4.6, 2.5), (TX - 0.3, 6.9, 2.7), 46), 2, look=LOOK_TRUCK, rain2d=False,
   note="I said pickle, every time: my grin")
@@ -449,11 +447,11 @@ S("L41", one((TX - 0.1, 4.6, 2.5), (TX - 0.3, 6.9, 2.7), 46), 2, look=LOOK_TRUCK
 put("tasha", "L42", [TX - 0.5, 2.4, BZ], yaw=180, expr="smirk", arms=[0, 150])
 raw("tasha", "L42+0.8", arms=[0, 120], blend=0.3)
 raw("tasha", "L43", arms=[0, 150], blend=0.3)
-stage("L42", ME_T, E("tr", (0, 0, 0), 0, att={"side": 0.55, "ahead": -0.45, "up": 0.03, "yaw": 0}, expr="smirk", rim=True))
+stage("L42", ME_T, E("tr", (0, 0, 0), 0, att={"side": 0.5, "ahead": -0.95, "up": 0.03, "yaw": 0}, expr="smirk", rim=True))
 S("L42", one((TX - 1.4, -3.4, 1.8), (TX, 6.9, 2.2), 38), 2, look=LOOK_TRUCK, rain2d=False,
   note="the pane on the truck from outside, two of us in it; the real Tasha small on the duckboards, waving")
 stage("L43", ME_T, TR,
-      E("dark", (0, 0, 0), 0, att={"side": 0.0, "ahead": -1.3, "up": 0.03, "yaw": 0}, expr="blank", rim=True))
+      E("dark", (0, 0, 0), 0, att={"side": 0.0, "ahead": -1.75, "up": 0.03, "yaw": 0}, expr="blank", rim=True))
 LOOK_END = {**LOOK_TRUCK, "face": [[TX + 0.2, 6.9, 1.2], [TX + 0.05, 8.0, 2.3], 50, 0.8],
             "rim2": [[TX + 1.8, 9.6, 3.6], [TX + 0.05, 8.0, 2.0], 900, 30, "#b8a8ff"]}
 S("L43", mv(((TX - 0.6, 0.6, 2.2), (TX, 6.9, 2.4)), ((TX - 0.15, 3.9, 2.0), (TX + 0.0, 7.7, 2.7)), 36, 34), 2,
