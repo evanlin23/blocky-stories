@@ -51,7 +51,7 @@ DEFAULTS = {
     # picture
     "grade": "bright",
     # builder marks
-    "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [],
+    "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [], "hold": [],
     "punch_cap": {},     # opt-in: {shot id: most the punch-in may zoom there} (a head that must stay in frame)
 }
 GRADES = {
@@ -407,7 +407,7 @@ def reframe_times(tl: dict, p: dict) -> list[float]:
     caps = [c["start"] for c in tl["captions"]]
     for s in tl["shots"]:
         L = s["end"] - s["start"]
-        if L < p.get("reframe_min", 1.6) or s["id"] in calm:
+        if L < p.get("reframe_min", 1.6) or s["id"] in calm or s["id"] in (p.get("hold") or []):
             continue
         if any(a < s["end"] and b > s["start"] for a, b in quiet):
             continue
@@ -449,10 +449,12 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         side = 1 if (k // 2) % 2 == 0 else -1
         dx = side * d * 0.15 * (e - 0.5)
     calm = shot["id"] in ((tl.get("motion") or {}).get("calm_shots") or [])
-    if p.get("push"):
+    held = shot["id"] in (p.get("hold") or [])   # the builder's frame-exact shots: no pace crop at all
+    if p.get("push") and not held:
         # pace (v2.3, craft metrics blocks 2026-11-03): a steady crop push through every shot, in on one shot and
         # out on the next, at a constant rate so every 0.25 s reads as a change (an eased move stalls at its ends)
-        pu = p["push"] * (0.5 if calm else 1.0)
+        # scaled to the shot's length, so a 0.4 s shot doesn't rush (critic, ep32 v2.3: 12% in 0.4 s read as a zoom)
+        pu = p["push"] * (0.5 if calm else 1.0) * min(1.0, length / 2.0)
         zoom *= 1 + pu * (u if k % 2 == 0 else 1 - u)
         dx += (1 if (k // 2) % 2 == 0 else -1) * pu * 0.12 * (u - 0.5)
     rf = p.get("reframe_every")
@@ -461,9 +463,8 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         # (an offset pushed faces off the edge, critic ep32), cut on a caption change (never under a held word)
         cuts_ = [c for c in _reframe_cache(tl, p) if shot["start"] < c < shot["end"]]
         seg = sum(1 for c in cuts_ if c <= t)
-        if seg % 2 == 1:
-            zoom *= p.get("reframe_zoom", 1.12)
-            dy -= 0.015
+        if seg % 2 == 1 and not held:
+            zoom *= p.get("reframe_zoom", 1.12)   # centred: an upward offset took hair to the top edge (critic)
     if p["punch"]:
         for te in emph if emph is not None else emph_times(tl, p):
             if shot["start"] - 1e-6 <= te < shot["end"] and t >= te:

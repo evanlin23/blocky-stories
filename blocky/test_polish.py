@@ -438,5 +438,21 @@ def test_pace_angle_cuts_split_long_shots_and_skip_reveals():
         edges = [s["start"], *inside, s["end"]]
         assert all(b - a >= 0.6 - 1e-9 for a, b in zip(edges, edges[1:])) or not inside
     assert all(any(abs(t - c) < 1e-9 for c in caps) for t in rts)
-    q = {**p, "quiet": [["L01", "L06"]]}
+    q = {**p, "quiet": [["L01", "end"]]}
     assert polish.reframe_times(tl, q) == []
+
+
+def test_held_shots_keep_their_frame_and_short_shots_push_gently():
+    """Critic, ep32 v2.3 round 2: a frame-exact shot (the twist's comparison) is held at crop 1.0, and a 0.4 s shot
+    doesn't rush a 12% push."""
+    st, tl = story()
+    p = polish.spec(st)
+    sid = tl["shots"][2]["id"]
+    held = {**p, "hold": [sid], "punch": 0, "drift": 0}
+    s = tl["shots"][2]
+    assert all(polish.motion(tl, st, held, (s["f0"] + k) / tl["fps"], [])[0] == 1.0 for k in range(s["f1"] - s["f0"]))
+    assert not [t for t in polish.reframe_times(tl, held) if s["start"] < t < s["end"]]
+    short = {"id": "X", "start": 0.0, "end": 0.4, "f0": 0, "f1": 12, "step": 1}
+    tl2 = {**tl, "shots": [short]}
+    zs = [polish.motion(tl2, st, {**p, "punch": 0}, k / 30, [])[0] for k in range(12)]
+    assert max(zs) - min(zs) < 0.03

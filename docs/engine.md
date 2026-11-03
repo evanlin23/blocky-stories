@@ -242,11 +242,12 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   `scripts/measure.py` (through `polish.cam_specs`). The whole move is at most 0.12 m/s, a camera under 2 m from its
   target pushes proportionally less, and a shot a reveal lands in gets a straight push at half speed with its
   characters' idle motion at a fifth (`tl["motion"]["calm_shots"]`). The 2D drift then only covers shots it doesn't.
-- **Pace** (v2.3, the craft-metric blocks from 2026-11-03): a steady crop push through every shot (`push`, 15%
+- **Pace** (v2.3, the craft-metric blocks from 2026-11-03): a steady crop push through every shot (`push`, 12%
   across it, in on one shot and out on the next, at a constant rate), and inside any shot over 1.6 s an angle cut
-  about every second (`reframe_every`): every other part is a 1.17× tighter framing, offset up and to one side,
-  like a second camera. Reveal shots and quiet spans get no angle cut and half the push. The pack's crop never
-  goes past 1.25× (`max_zoom`: the drawings are 540 wide). The bright grade keeps every pixel under WCAG's saturated
+  about every second (`reframe_every`): every other part is a 1.12× tighter framing, like a second camera. Reveal shots and shots touching a quiet span get no angle cut and half the push. The push scales
+  with shot length (full at 2 s, so a short shot doesn't rush), angle cuts are centred and land on a caption change,
+  and `"hold": ["S29"]` keeps a frame-exact shot (a comparison, a doorway) at crop 1.0. The pack's crop never
+  goes past 1.18× (`max_zoom`: the drawings are 540 wide, and past that it goes soft). The bright grade keeps every pixel under WCAG's saturated
   red (`red_line` 0.78), because the tighter crops enlarge red areas.
 - **Punch-ins** (v2): key words only (the builder's `emph`, the hook, big words, all-caps captions, a key word that
   ends its line), at most `punch_rate` (0.7) per 10 s, evenly spread. Hits keep their own 4 s spacing.
