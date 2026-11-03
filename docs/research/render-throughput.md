@@ -174,3 +174,37 @@ ratio.
   everything (on 2026-11-03 alone: moving-day three times, closing-time and mirror-maze twice each).
 - One `bar.json` (lessons log, entry 7) that both the proof and the final read, so a final is never drawn against a
   bar the proof didn't use.
+
+## For the lessons log
+
+`docs/audit/lessons-log.md` is still in the open PR #191, so these entries are kept here, numbered to follow its 18,
+until it merges. Same format: what happened → cost → fix.
+19. **The account runs about 40 jobs at once, and finals used 16.** At 19:58 UTC on 2026-11-03, 39 jobs ran
+    together, and waiting render shards started within 4 s of other jobs ending. That makes the cap about 40, not the
+    20 everyone assumed. `render.yml` caps itself at 16 draws, keeps them only 61 to 69% busy (runs 62, 70, 78, 87),
+    and since #178 draws its two stories one after the other (`draw-b` needs `draw-a`).
+    → About half the free plan's lanes sat idle while 15 to 20 stories waited.
+    → Draw both slots at once (32 lanes, 8 left for a proof), measure the cap on purpose and write it down. In the
+    rewrite, one scheduler hands out small chunks of frames from every ready story to whatever lane is free.
+20. **Drawn frames were thrown away: about 7,300 runner-minutes in one day.** Run 57 (15 stories in one run) was
+    cancelled after 1 h 50 with no film (≥ 3,168 runner-min). Run 90 was cancelled by hand with moving-day fully drawn
+    but not assembled (1,173). closing-time was redrawn in full after one lost shard (about 1,284).
+    → At least 7 finals' worth, on the day finals were the bottleneck.
+    → Never cancel a drawing render. Redraw only the missing shards (the frame artifacts are kept 5 days). Add an
+    assemble-only path. In the rewrite, a per-shot frame cache, so a one-shot fix redraws one shot.
+21. **Finals were drawn for films that then failed the flash bar** (mirror-maze twice, dryer-nine; runs 62, 78 and
+    87). The flash was only measured after the whole draw.
+    → 1,514 runner-min, about 2 finals.
+    → `plan_renders.py` draws no final without a passed proof qa at a matching sha. A proof costs about 165
+    runner-min, a final about 950.
+22. **`ones: "moving"` doubled what a final draws.** With the polish pack nearly every shot's camera moves, so
+    nearly every shot is on ones: moving-day went from 348 to 571 runner-min (+64%), and closing-time, mirror-maze
+    and dryer-nine draw 100% of their frames.
+    → About 1.9× the drawing on every new story, which made it the biggest single cost in a final.
+    → Ones only for walks, runs and fast camera moves (the 2D crop motion already moves every output frame), and
+    10 → 6 samples with the denoiser. Both need an A/B at phone size first (engine, first orchestrator).
+23. **Runners differ in speed by 2×, and a story waits for its slowest shard.** Shards of the same story do identical
+    work, yet they finish in three tiers (closing-time: 54, 78 and 91 to 107 min).
+    → 20 to 35% of a story's lane time is spent waiting on its slowest shard.
+    → More, smaller shards (32 a story), so fast runners take more of them. In the rewrite, a work queue of frame
+    chunks.
