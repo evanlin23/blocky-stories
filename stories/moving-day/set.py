@@ -536,7 +536,7 @@ def materials(kit, wd: Path):
     M["ceiling"] = kit.plastic("#cacbc3", 0.9, name="ceiling paint")
     _b = M["ceiling"].node_tree.nodes["Principled BSDF"]
     _b.inputs["Emission Color"].default_value = kit.col("#cacbc3")
-    _b.inputs["Emission Strength"].default_value = 0.0
+    _b.inputs["Emission Strength"].default_value = 0.05
     M["_ceil_emit"] = _b.inputs["Emission Strength"]
     M["trim"] = kit.plastic("#d4d2c8", 0.5, name="trim")
     M["floor"] = kit.planks("#a77d4b", "#83603a", 1.0, "Y", name="floorboards", rough=0.55)
@@ -1335,6 +1335,8 @@ def build_house(kit, ctx, M):
         for k, x in enumerate((a, b)):   # painted door frames
             kit.box(f"jamb {nm}{k}", (0.04, _T + 0.03, DOOR_H), (x + (0.02 if k == 0 else -0.02), y, DOOR_H / 2), M["trim"])
         kit.box(f"head {nm}", (b - a, _T + 0.03, 0.05), ((a + b) / 2, y, DOOR_H - 0.025), M["trim"])
+    # the old ceiling line: a dark scuff on the hall's west wall at my hair height (S01), 1.5 cm proud of the paint
+    kit.box("old ceiling scuff", (0.015, 1.2, 0.035), (-4.6 + 0.0075, -0.8, 1.94), kit.plastic("#4a463f", 0.8, name="scuff"))
     # the pencil mark at my height on my doorframe's hall side (S09, S19): a short line, a little proud of the jamb
     kit.box("pencil mark", (0.09, 0.004, 0.016), (MY_DOOR[1] - 0.02, -_T / 2 - (_T + 0.03) / 2 - 0.003, 1.72),
             kit.plastic("#35353a", 0.8, name="pencil"))
@@ -2490,6 +2492,8 @@ def animate(kit, story, tl, t, ctx):
     bpy.context.scene.view_settings.exposure = (cs[-1].get("exposure", EXPOSURE[cs[-1]["set"]]) if cs
                                                  else EXPOSURE["dawn"])
     ctx["M"]["_ceil_emit"].default_value = {"day": 0.35, "sun": 0.35, "end": 0.35, "dawn": 0.3}.get(cs[-1]["set"] if cs else "day", 0.0)
+    if t < 2.4:   # S01: the ceiling a shade darker than the wall (no glow), so the corner reads
+        ctx["M"]["_ceil_emit"].default_value = 0.05
     ctx["outside"].inputs["Color"].default_value = colour
     ctx["outside"].inputs["Strength"].default_value = strength
     nc = _last(_cues(tl, "nightlight"), t)
