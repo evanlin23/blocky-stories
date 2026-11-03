@@ -145,6 +145,73 @@ def test_upload_finds_a_title_already_on_the_channel():
     assert upload.already_on_channel(YT(), "Something else") is None
 
 
+def test_trend_scan_ranks_by_views_per_day():
+    import datetime as dt
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import trends
+
+    assert trends.seconds("PT1M5S") == 65 and trends.seconds("PT45S") == 45 and trends.seconds("") == 0
+    now = dt.datetime(2026, 11, 9, tzinfo=dt.timezone.utc)
+    assert round(trends.rate(1000, "2026-11-07T00:00:00Z", now)) == 500
+    rows = [{"id": "a", "title": "In This Town X", "channel": "C1", "views": 900, "seconds": 60, "age": 3.0,
+             "per_day": 300.0, "queries": ["rule premise"]},
+            {"id": "b", "title": "Sad | one", "channel": "C2", "views": 100, "seconds": 70, "age": 1.0,
+             "per_day": 100.0, "queries": ["sad / emotional"]}]
+    mom = trends.momentum(rows)
+    assert mom["rule premise"] == 300 and mom["comedy"] == 0
+    md = trends.report(rows, mom, {"momentum": {"rule premise": 600}}, "2026-11-09")
+    assert "| rule premise | 300 | -50% |" in md and "Sad / one" in md and md.index("In This Town X") < md.index("Sad / one")
+
+
+def test_comments_wait_for_public_and_post_once():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import comment
+
+    done = {"a": {"video_id": "v1"}, "b": {"video_id": "v2"}, "c": {"video_id": "v3", "commented": True},
+            "d": {"manual": True}}
+    assert comment.due(done, {"v1": "public", "v2": "private", "v3": "public"}) == ["a"]
+
+
+def test_compilation_chapters_and_pick():
+    import datetime as dt
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import compile as comp
+
+    assert comp.chapters([("A", 135.2), ("B", 140.0), ("C", 3400)]) == "0:00 A\n2:15 B\n4:35 C"
+    assert comp.stamp(3725) == "1:02:05"
+    stories = [(f"s{i}", 140.0) for i in range(12)]
+    got = comp.pick(stories, 20)
+    assert len(got) == 9 and got[0] == "s0"                    # 9 x 140 s = 21 min
+    assert comp.pick(stories[:4], 20) == []                    # too few for a compilation
+    noon = comp.publish_at(dt.datetime(2026, 11, 8, 13, 0, tzinfo=dt.timezone.utc))   # 7 am Central
+    assert noon == "2026-11-08T18:00:00Z"
+
+
+def test_grass_steps_are_not_a_hiss():
+    import numpy as np
+    from blocky import sound
+
+    y = sound.step_sound("grass", False, 3)
+    X = np.abs(np.fft.rfft(y)) ** 2
+    f = np.fft.rfftfreq(len(y), 1 / 48000)
+    assert X[f > 4000].sum() / X.sum() < 0.03   # the old step was band-passed noise up to 6 kHz: scratchy
+
+
+def test_check_warns_on_loud_or_repeated_harsh_effects():
+    from blocky import checks
+
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "tape", "db": -18, "at": "L03"}]}})
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "glitch", "db": -30}] * 7}})
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "whoosh", "db": -12}, {"kind": "tape", "db": -30}, {"kind": "click", "db": -12}]}}) == []
+
+
+def test_check_blocks_a_narrator_who_says_my_husband():
+    from blocky import checks
+
+    assert checks.NARRATOR_MISFIT.search("My husband was three rows ahead")
+    assert not checks.NARRATOR_MISFIT.search("her husband was three rows ahead")
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics
