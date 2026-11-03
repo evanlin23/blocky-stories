@@ -21,7 +21,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from stories import ROOT, UPLOADS, all_stories, film, gate_open, slug, uploads
+from stories import ROOT, UPLOADS, all_stories, changed_since, film, gate_open, slug, uploads
 
 from blocky.gate import load_package
 
@@ -52,7 +52,10 @@ def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
     for s in queue() + [x for x in all_stories() if x not in queue()]:
         if s in done or s in skip or (load_package(s) or {}).get("hold"):   # held for a redo (RULES → Packaging)
             continue
-        if film(s) and gate_open(s):
+        f = film(s)
+        if f and f.get("created_at") and changed_since(s, f["created_at"]):   # its film predates a fix: wait for the re-render
+            continue
+        if f and gate_open(s):
             if not last or shape(s) != last:
                 return s
             held = held or s
@@ -75,6 +78,8 @@ def cover(d: Path, s: str) -> tuple[str, str] | None:
 
 def fetch(story: str, d: Path) -> tuple[Path, dict]:
     f = film(story)
+    if f and f.get("legacy"):   # an approved final from the content repo: its description already has the flash line
+        return Path(f["legacy"]), {"house_bar": {"pass": True}, "description_line": None}
     subprocess.run(["gh", "run", "download", str(f["run_id"]), "--repo", REPO, "-n", f"film-{story}", "-D", str(d)],
                    check=True)
     s = slug(story)
@@ -127,9 +132,11 @@ def already_on_channel(yt, title: str) -> str | None:
         return None
     pl = ch[0]["contentDetails"]["relatedPlaylists"]["uploads"]
     items = yt.playlistItems().list(part="snippet", playlistId=pl, maxResults=50).execute().get("items", [])
-    for it in items:
-        if it["snippet"]["title"].strip() == title.strip():
-            return it["snippet"]["resourceId"]["videoId"]
+    pulled = json.loads((ROOT / "pulled.json").read_text()) if (ROOT / "pulled.json").exists() else {}
+    for it in items:   # pulled.json: videos taken down for a fix, so the fixed film may go up again
+        vid = it["snippet"]["resourceId"]["videoId"]
+        if it["snippet"]["title"].strip() == title.strip() and vid not in pulled:
+            return vid
     return None
 
 
