@@ -1,8 +1,10 @@
 {
-  "title": "Don't Sit On The Bench Up TOP 🚡",
-  "description": "Don't sit on the bench at the top of this chairlift. One hour up there is two weeks down at the lake, and from the deck you can see people on the ridge, still as posts.\n\nI've never been up. Gran goes up every morning with a blanket big enough for two, and comes down for Sunday dinner to tell me I look older. Then one Sunday she didn't come down.\n\nIt's made up. A blocky story, built with code and Blender.",
-  "pin": "Comment BENCH if you'd sit up there for someone you love.",
-  "made_for_kids": false,
-  "shape": "secret-reason",
-  "cover_s": 64.8
+ "title": "Don't Sit On The Bench Up TOP 🚡",
+ "description": "Don't sit on the bench at the top of this chairlift. One hour up there is two weeks down at the lake, and from the deck you can see people on the ridge, still as posts.\n\nI've never been up. Gran goes up every morning with a blanket big enough for two, and comes down for Sunday dinner to tell me I look older. Then one Sunday she didn't come down.\n\nIt's made up. A blocky story, built with code and Blender.",
+ "pin": "Comment BENCH if you'd sit up there for someone you love.",
+ "made_for_kids": false,
+ "shape": "secret-reason",
+ "cover_s": 64.8,
+ "old_title": "At the Top of This Chairlift Everyone Else Gets OLDER",
+ "hold": "awaiting the opening fix (2026-11-03): in progress on branch claude/ep33-chairlift-opening; the fix PR removes this"
 }
