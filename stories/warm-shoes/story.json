@@ -15,6 +15,7 @@
  "tail": 0.25,
  "min_read": 0.15,
  "fade_in": false,
+ "fade_out": false,
  "look": {
   "fog": "#ffd7b8",
   "fog_density": 0.004,
@@ -22,7 +23,15 @@
   "sky": "#ff9d4d",
   "exposure": 0.0,
   "flash_safe": true,
-  "style": "closer"
+  "style": "closer",
+  "polish": {
+   "quiet": [
+    [
+     "L36",
+     "P01"
+    ]
+   ]
+  }
  },
  "grade": {
   "shadows": [
@@ -39,7 +48,8 @@
   "contrast": 1.06,
   "vignette": 0.18,
   "bloom": 0.22,
-  "grain": 0.008
+  "grain": 0.008,
+  "red_line": 0.7
  },
  "cast": {
   "me": {
@@ -5476,45 +5486,6 @@
     [
      0,
      [
-      0.301,
-      -9.924,
-      1.322
-     ],
-     [
-      0.0,
-      -8.8,
-      1.2
-     ],
-     27.6
-    ],
-    [
-     1,
-     [
-      0.234,
-      -9.674,
-      1.295
-     ],
-     [
-      0.0,
-      -8.8,
-      1.2
-     ],
-     27.6
-    ]
-   ],
-   "step": 2,
-   "hand": 0.006,
-   "look": "sundown",
-   "at": "L68.2",
-   "fill": 0.9,
-   "note": "Biscuit, slow blink, on his shoulder"
-  },
-  {
-   "id": "S107",
-   "cam": [
-    [
-     0,
-     [
       2.563,
       -1.821,
       1.529
@@ -5549,7 +5520,7 @@
    "note": "dawn, Dad pouring food into the bowl"
   },
   {
-   "id": "S108",
+   "id": "S107",
    "cam": [
     [
      0,
@@ -5588,7 +5559,7 @@
    "note": "I caught Dad, sheepish"
   },
   {
-   "id": "S109",
+   "id": "S108",
    "cam": [
     [
      0,
@@ -5627,7 +5598,7 @@
    "note": "a finger to his lips, Biscuit eating"
   },
   {
-   "id": "S110",
+   "id": "S109",
    "cam": [
     [
      0,
@@ -5666,7 +5637,7 @@
    "note": "Dad sets his boots and my sneakers on the gatepost"
   },
   {
-   "id": "S111",
+   "id": "S110",
    "cam": [
     [
      0,
@@ -5709,7 +5680,7 @@
    "note": "my sneakers and his boots, side by side"
   },
   {
-   "id": "S112",
+   "id": "S111",
    "cam": [
     [
      0,
@@ -5748,7 +5719,7 @@
    "note": "Biscuit on the other gatepost"
   },
   {
-   "id": "S113",
+   "id": "S112",
    "cam": [
     [
      0,
@@ -5786,7 +5757,7 @@
    "note": "me walking up the road from the shelter"
   },
   {
-   "id": "S114",
+   "id": "S113",
    "cam": [
     [
      0,
@@ -5824,7 +5795,7 @@
    "note": "and walked the long road"
   },
   {
-   "id": "S115",
+   "id": "S114",
    "cam": [
     [
      0,
@@ -5862,7 +5833,7 @@
    "note": "my old sneakers one light behind me, the coat hem above"
   },
   {
-   "id": "S116",
+   "id": "S115",
    "cam": [
     [
      0,
@@ -5901,7 +5872,7 @@
    "note": "my face, eyes front"
   },
   {
-   "id": "S117",
+   "id": "S116",
    "cam": [
     [
      0,
@@ -5930,7 +5901,7 @@
    "note": "over my shoulder, soft, two green points"
   },
   {
-   "id": "S118",
+   "id": "S117",
    "cam": [
     [
      0,
@@ -5969,7 +5940,7 @@
    "note": "I didn't look back, a small smile"
   },
   {
-   "id": "S119",
+   "id": "S118",
    "cam": [
     [
      0,
@@ -9586,19 +9557,6 @@
    "yaw": 0,
    "pose": "lie",
    "face": "neutral",
-   "tail": "down"
-  },
-  {
-   "at": "L68.2",
-   "name": "cat",
-   "pos": [
-    0.0,
-    -8.82,
-    1.12
-   ],
-   "yaw": 0,
-   "pose": "lie",
-   "face": "slowblink",
    "tail": "down"
   },
   {

@@ -511,8 +511,6 @@ S("L66f", X((-3.5, 1.2, 1.75), (-3.5, 0.0, 1.55), 30, (-3.5, 0.9, 1.7)), N, fill
 put("dad", "L68", (0.0, -8.5), 0, "soft", arms=[55, 55])
 cat("L68", (0.0, -8.82, 1.12), yaw=0, pose="lie", face="neutral", tail="down")
 S("L68", C((0.0, -8.6, 1.2), 1.6, 20, 6, 30, d2=1.3), S_, fill=0.9, note="Dad picks Biscuit up, mud and all")
-cat("L68.2", (0.0, -8.82, 1.12), yaw=0, pose="lie", face="slowblink", tail="down")
-S("L68.2", C((0.0, -8.8, 1.2), 0.9, 15, 6, 30, d2=0.7), S_, fill=0.9, note="Biscuit, slow blink, on his shoulder")
 cat("L69")
 put("dad", "L69", (1.6, 0.7), 0, "neutral", lean=40, arms=[40, 40])
 S("L69", C((1.7, 0.55, 0.9), 2.0, 20, 14, 28, d2=1.6), D, fill=0.8, note="dawn, Dad pouring food into the bowl")
@@ -557,7 +555,7 @@ S("L76", FRAME1, M, dof=[0.85, 2.4], fill=0.6, note="my old sneakers on the mat:
 
 # ---------------------------------------------------------------------------------------------------- story
 look = {"fog": "#ffd7b8", "fog_density": 0.004, "fog_start": 30.0, "sky": "#ff9d4d", "exposure": 0.0,
-        "flash_safe": True, "style": "closer"}
+        "flash_safe": True, "style": "closer", "polish": {"quiet": [["L36", "P01"]]}}
 story = {
     "slug": "warm-shoes",
     "title": "Our Cat Brings Home WARM Shoes \U0001F408",
@@ -578,9 +576,10 @@ story = {
     "min_read": 0.15,
     
     "fade_in": False,
+    "fade_out": False,
     "look": look,
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.02], "saturation": 1.14, "contrast": 1.06,
-              "vignette": 0.18, "bloom": 0.22, "grain": 0.008},
+              "vignette": 0.18, "bloom": 0.22, "grain": 0.008, "red_line": 0.7},
     "cast": cast,
     "lines": lines,
     "shots": shots,
