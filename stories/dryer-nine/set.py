@@ -46,7 +46,7 @@ TAU = math.pi * 2
 
 NAVY = "#1b2570"
 NAVY_D = "#131a4a"
-MOON = (242, 208, 104)
+MOON = (242, 227, 160)
 CRATER = (176, 132, 52)
 
 
@@ -114,29 +114,29 @@ def img_timer(s):
 
 
 def img_moon(highlights=False, size=512, alpha=True):
-    """The moon: a warm yellow disc with the three craters of the Night's face (two tall eyes, one tall mouth)."""
+    """The moon: a flat pale cream disc with soft craters; the Night's face (highlights=True) adds two small dimple eyes
+    and a wide shallow closed mouth. The sky moon (highlights=False) keeps the faint craters only."""
     ss = 2
     n = size * ss
     im = Image.new("RGBA", (n, n), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    d.ellipse([0, 0, n - 1, n - 1], fill=MOON + (255,))
+    d.ellipse([0, 0, n - 1, n - 1], fill=(242, 227, 160, 255))
     R = n / 2
 
-    def oval(cx, cy, rx, ry, rot, fill):
-        pts = []
-        for i in range(40):
-            a = TAU * i / 40
-            x, y = rx * math.cos(a), ry * math.sin(a)
-            pts.append((cx + x * math.cos(rot) - y * math.sin(rot), cy + x * math.sin(rot) + y * math.cos(rot)))
-        d.polygon(pts, fill=fill)
-    for sx in (-1, 1):
-        cx, cy = R + sx * 0.3 * R, R - 0.18 * R
-        oval(cx, cy, 0.1 * R, 0.24 * R, -sx * 0.5, CRATER + (255,))
-        oval(cx, cy + 0.01 * R, 0.075 * R, 0.19 * R, -sx * 0.5, (110, 78, 28, 255))
-        if highlights:
-            d.ellipse([cx + 0.02 * R, cy - 0.12 * R, cx + 0.09 * R, cy - 0.05 * R], fill=(255, 255, 255, 255))
-    oval(R, R + 0.38 * R, 0.1 * R, 0.2 * R, 0.05, CRATER + (255,))
-    oval(R, R + 0.38 * R, 0.07 * R, 0.16 * R, 0.05, (110, 78, 28, 255))
+    def crater(cx, cy, rx, ry, dark, light):
+        d.ellipse([cx - rx * 1.2, cy - ry * 1.15, cx + rx * 1.2, cy + ry * 1.25], fill=(190, 170, 112, 255))
+        d.ellipse([cx - rx, cy - ry * 0.9, cx + rx, cy + ry * 1.15], fill=light + (255,))
+        d.ellipse([cx - rx * 0.9, cy - ry, cx + rx * 0.9, cy + ry * 0.7], fill=dark + (255,))
+    for ux, uy, r in ((-0.55, 0.3, 0.1), (0.5, 0.4, 0.12), (-0.25, -0.55, 0.08), (0.2, 0.6, 0.09)):
+        crater(R + ux * R, R + uy * R, r * R, r * R, (206, 188, 126), (250, 240, 190))
+    if highlights:
+        for sx in (-1, 1):
+            cx, cy = R + sx * 0.3 * R, R - 0.14 * R
+            crater(cx, cy, 0.1 * R, 0.085 * R, (70, 56, 30), (250, 240, 186))
+            d.ellipse([cx + 0.01 * R, cy + 0.03 * R, cx + 0.05 * R, cy + 0.07 * R], fill=(255, 255, 250, 255))
+        pts = [(R + 0.34 * R * (i / 20 - 1), R + 0.4 * R + 0.1 * R * (1 - (i / 20 - 1) ** 2)) for i in range(41)]
+        d.line([(x, y + 0.02 * R) for x, y in pts], fill=(252, 244, 196, 255), width=int(0.03 * R))
+        d.line(pts, fill=(96, 78, 44, 255), width=int(0.035 * R))
     im = im.resize((size, size), Image.LANCZOS)
     if not alpha:
         bg = Image.new("RGB", (size, size), (20, 28, 80))
@@ -500,7 +500,7 @@ def build_dryers(kit, ctx, M):
     face_mat = img_mat(kit, "dc face", pil_image("dc face img", img_moon(True)), emit=0.8, rough=0.6, alpha=True)
     fp = uvplane("dc face", (0.17, 0.17), (0.07, 0.0, 0.12), face_mat, spin, rot=(-math.pi / 2, 0, 0))
     dc["face"] = [fp]
-    fcl = night_cloth(kit, "fold cloth", base="#151e5c", fold="#26349a", scale=30.0, star_e=8.0, thr=0.1, rough=1.0, dotr=(0.1, 0.17))
+    fcl = night_cloth(kit, "fold cloth", base="#2a3a9a", fold="#4a60d0", scale=30.0, star_e=8.0, thr=0.1, rough=1.0, dotr=(0.1, 0.17))
     dc["folded"] = [kit.box("dc fold", (0.4, 0.15, 0.14), (-0.02, -0.03, 0.12), fcl, spin, bevel=0.07, rot=(0, 0, 0.9)),
                     kit.box("dc fold2", (0.3, 0.2, 0.1), (0.1, 0.07, 0.13), cloth2, spin, bevel=0.06, rot=(0, 0, 0.1))]
     # the hand that holds a quarter up to the glass: a long starry sleeve with a cuff, thin jointed fingers (fixed, on the
@@ -508,17 +508,24 @@ def build_dryers(kit, ctx, M):
     hc = night_cloth(kit, "hand cloth", base="#050818", fold="#10184a", scale=26.0, star_e=9.0, thr=0.1, rough=1.0, dotr=(0.1, 0.18))
     hc2 = night_cloth(kit, "hand cloth2", base="#141c58", fold="#222e7a", scale=30.0, star_e=10.0, thr=0.1, rough=1.0, dotr=(0.1, 0.18))
     hand = []
-    hz = 0.14
-    hand.append(kit.box("hd sleeve", (0.17, 0.55, 0.15), (0.0, -0.4, hz - 0.01), hc, base, bevel=0.03, rot=(0, 0, 0.12)))
-    hand.append(kit.box("hd sleeve2", (0.12, 0.3, 0.12), (-0.03, -0.14, hz), hc, base, bevel=0.025, rot=(0, 0, 0.12)))
-    hand.append(kit.box("hd cuff", (0.15, 0.05, 0.14), (-0.015, -0.01, hz), hc2, base, bevel=0.015, rot=(0, 0, 0.12)))
-    hand.append(kit.box("hd palm", (0.1, 0.1, 0.03), (0.0, 0.05, hz), hc, base, bevel=0.012))
-    for k, (fx, ln, rt) in enumerate(((-0.036, 0.15, 0.1), (-0.012, 0.18, 0.03), (0.012, 0.17, -0.04), (0.036, 0.13, -0.12))):
-        hand.append(kit.box(f"hd f{k}a", (0.02, ln, 0.02), (fx, 0.1 + ln / 2, hz), hc, base, bevel=0.008, rot=(0, 0, rt)))
-        hand.append(kit.box(f"hd f{k}b", (0.017, ln * 0.7, 0.017), (fx + rt * ln * 0.9, 0.1 + ln + ln * 0.33, hz + 0.01), hc, base,
-                            bevel=0.006, rot=(0, 0, rt * 2.2)))
-    hand.append(kit.box("hd thumb", (0.024, 0.13, 0.02), (-0.075, 0.12, hz + 0.005), hc, base, bevel=0.008, rot=(0, 0, 0.7)))
-    hand.append(kit.cyl("hd quarter", 0.04, 0.008, (-0.045, 0.235, hz + 0.02), M["silver"], base, n=24))
+    hz = 0.105          # the arm stays behind the door's front plane (local z 0.16 is the door), inside the ring (r 0.2)
+    th = 0.05
+    coin = kit.metal("#ffc933", 0.22, "gold quarter")
+    # the arm comes up from the lower left of the drum, inside the ring, and a long hand holds a big gold quarter flat
+    hand.append(kit.box("hd sleeve", (0.1, 0.2, th), (-0.115, -0.115, hz), hc2, base, bevel=0.02, rot=(0, 0, -0.75)))
+    hand.append(kit.box("hd cuff", (0.11, 0.05, th + 0.01), (-0.062, -0.062, hz), hc, base, bevel=0.012, rot=(0, 0, -0.75)))
+    hand.append(kit.box("hd palm", (0.08, 0.07, 0.03), (-0.045, -0.035, hz + 0.015), hc2, base, bevel=0.01, rot=(0, 0, -0.75)))
+    qx, qy = 0.035, 0.05
+    hand.append(kit.cyl("hd quarter", 0.092, 0.012, (qx, qy, hz + 0.045), coin, base, n=40, rot=(0, 0, 0)))
+    for k, (ang, ln) in enumerate(((-0.35, 0.15), (-0.12, 0.17), (0.12, 0.16), (0.36, 0.13))):
+        # long thin fingers from the palm, laid flat over the quarter's near edge (a = direction, 0 = up-right)
+        a0 = math.radians(48) - ang * 0.35
+        dx_, dy_ = math.cos(a0), math.sin(a0)
+        sx_, sy_ = -0.03 + 0.006 * k, -0.005 + 0.012 * k
+        ln *= 0.8
+        hand.append(kit.box(f"hd f{k}", (0.02, ln, 0.02), (sx_ + dx_ * ln / 2, sy_ + dy_ * ln / 2, hz + 0.065), hc, base,
+                            bevel=0.007, rot=(0, 0, a0 - math.pi / 2)))
+    hand.append(kit.box("hd thumb", (0.024, 0.1, 0.02), (qx - 0.03, qy - 0.075, hz + 0.065), hc, base, bevel=0.008, rot=(0, 0, 0.9)))
     dc["hand"] = hand
     ctx["dc"] = dc
     # the dryer's light: inside the drum
@@ -637,43 +644,65 @@ def materials(kit):
 
 
 def night_face():
-    """A full moon in warm moon yellow: soft darker seas, three deep craters (two tall tilted eyes, one wide crater mouth)."""
+    """A flat pale cream moon (#f2e3a0): soft grey-gold seas, a few faint craters, two small shallow crater dimples for eyes
+    (each with a pinpoint highlight) and a wide, shallow, closed curve for a mouth. Lit from below, so each dimple is
+    shadowed along its top and bright along its lower lip."""
     W, H_ = faces.TEX_W, faces.TEX_H
-    im = Image.new("RGB", (W, H_), (240, 204, 98))
+    im = Image.new("RGB", (W, H_), (242, 227, 160))
+    rng = np.random.default_rng(11)
     sea = Image.new("L", (W, H_), 0)
     sd = ImageDraw.Draw(sea)
-    rng = np.random.default_rng(11)
-    for _ in range(34):
+    for _ in range(30):
         cx, cy = int(rng.integers(0, W)), int(rng.integers(0, H_))
-        r = int(rng.integers(30, 120))
-        sd.ellipse([cx - r, cy - r * 0.8, cx + r, cy + r * 0.8], fill=int(rng.integers(50, 130)))
+        r = int(rng.integers(30, 110))
+        sd.ellipse([cx - r, cy - r * 0.8, cx + r, cy + r * 0.8], fill=int(rng.integers(40, 110)))
     sea = sea.filter(ImageFilter.GaussianBlur(30))
-    dark = Image.new("RGB", im.size, (196, 150, 58))
-    im = Image.composite(dark, im, sea.point(lambda v: min(255, v * 2)))
-    d = ImageDraw.Draw(im)
+    im = Image.composite(Image.new("RGB", im.size, (212, 194, 132)), im, sea.point(lambda v: min(255, v * 2)))
     s = faces.FX1 - faces.FX0
+    # a few faint crater rings on the cheeks and brow so the whole disc reads as a moon
+    d = ImageDraw.Draw(im)
+    for ux, uv_, r in ((0.12, 0.62, 0.05), (0.88, 0.58, 0.045), (0.3, 0.1, 0.04), (0.74, 0.12, 0.05), (0.5, 0.92, 0.04), (0.93, 0.85, 0.035)):
+        cx, cy, rr = faces._fx(ux), faces._fy(uv_), r * s
+        d.ellipse([cx - rr, cy - rr, cx + rr, cy + rr], fill=(206, 188, 126))
+        d.ellipse([cx - rr * 0.9, cy - rr * 0.8, cx + rr * 0.9, cy + rr * 0.95], fill=(222, 205, 142))
 
-    def poly(cx, cy, rx, ry, rot, fill, n=48):
-        pts = []
-        for i in range(n):
-            a = TAU * i / n
-            x, y = rx * math.cos(a), ry * math.sin(a)
-            pts.append((cx + x * math.cos(rot) - y * math.sin(rot), cy + x * math.sin(rot) + y * math.cos(rot)))
-        d.polygon(pts, fill=fill)
+    def dimple(cx, cy, rx, ry):
+        """A shallow crater lit from below: dark wall, a darker upper inside, a bright lower lip."""
+        lay = Image.new("RGB", (W, H_), (0, 0, 0))
+        m = Image.new("L", (W, H_), 0)
+        ld = ImageDraw.Draw(lay)
+        md = ImageDraw.Draw(m)
+        ld.ellipse([cx - rx * 1.25, cy - ry * 1.2, cx + rx * 1.25, cy + ry * 1.3], fill=(176, 154, 98))      # worn rim
+        ld.ellipse([cx - rx * 1.05, cy - ry * 1.0, cx + rx * 1.05, cy + ry * 1.2], fill=(250, 240, 186))     # lit lower lip
+        ld.ellipse([cx - rx, cy - ry * 1.02, cx + rx, cy + ry * 0.92], fill=(88, 72, 40))                    # the wall
+        ld.ellipse([cx - rx * 0.86, cy - ry * 0.95, cx + rx * 0.86, cy + ry * 0.7], fill=(104, 86, 52))        # the floor, shaded
+        md.ellipse([cx - rx * 1.25, cy - ry * 1.2, cx + rx * 1.25, cy + ry * 1.3], fill=255)
+        m = m.filter(ImageFilter.GaussianBlur(3))
+        return lay, m
 
-    def crater(cx, cy, rx, ry, rot):
-        poly(cx, cy, rx * 1.3, ry * 1.3, rot, (150, 108, 36))                   # the worn outer lip, a darker ring
-        poly(cx, cy - 0.02 * ry, rx * 1.12, ry * 1.1, rot, (252, 232, 150))     # the lit rim
-        poly(cx, cy, rx, ry, rot, (92, 62, 20))                                  # the wall
-        poly(cx - 0.05 * rx, cy - 0.12 * ry, rx * 0.86, ry * 0.8, rot, (30, 19, 5))   # the deep floor, shaded to one side
-
-    for sx, ey, ex_, er in ((-1, 0.35, 0.22, 0.062), (1, 0.38, 0.22, 0.058)):   # tall hollow eyes, tilted, not quite a pair
+    for sx, ey, ex_, r in ((-1, 0.38, 0.25, 0.04), (1, 0.4, 0.25, 0.036)):
         cx, cy = faces._fx(0.5 + sx * ex_), faces._fy(ey)
-        crater(cx, cy, er * s, er * 2.6 * s, -sx * 0.5)
-        poly(cx + 0.25 * er * s, cy - 0.9 * er * s, 0.17 * er * s, 0.17 * er * s, 0.0, (255, 252, 232))   # the brightest thing
-    # the mouth: a tall hollow crater, longer than the eyes, a little off level
-    crater(faces._fx(0.5), faces._fy(0.78), 0.06 * s, 0.17 * s, 0.05)
-    return im.filter(ImageFilter.SMOOTH)
+        lay, m = dimple(cx, cy, r * s * 1.25, r * 0.75 * s)
+        im.paste(lay, (0, 0), m)
+        d = ImageDraw.Draw(im)
+        hr = 0.0055 * s
+        hx, hy = cx + 0.014 * s, cy + 0.35 * r * s      # a pinpoint of light low in the dimple
+        d.ellipse([hx - hr, hy - hr, hx + hr, hy + hr], fill=(255, 255, 250))
+    # the mouth: wide, shallow, closed; a thin curve with a soft lower lip catching the light
+    pts_d, pts_l = [], []
+    for i in range(41):
+        u = -1 + i / 20
+        x = faces._fx(0.5 + 0.24 * u)
+        y = faces._fy(0.76) + 0.028 * s * (1 - u * u) - 0.02 * s * u
+        pts_d.append((x, y))
+        pts_l.append((x, y + 0.012 * s))
+    d = ImageDraw.Draw(im)
+    d.line(pts_l, fill=(252, 244, 196), width=int(0.014 * s), joint="curve")
+    d.line(pts_d, fill=(92, 74, 44), width=int(0.011 * s), joint="curve")
+    # lit from below: the brow and the top of the disc fall into shade, the chin stays bright
+    g = np.linspace(0.68, 1.0, H_)[:, None, None]
+    ga = np.clip(np.asarray(im).astype(np.float32) * g, 0, 255).astype(np.uint8)
+    return Image.fromarray(ga).filter(ImageFilter.SMOOTH)
 
 
 NIGHT_HEAD_SC = 0.41
@@ -841,16 +870,19 @@ def animate(kit, story, tl, t, ctx):
             tbl.append(a)
         ctx["spin_tbl"] = (dt, tbl)
     # ---- panels and the sky fill
+    # per-shot exposure (set on cuts, never inside a shot): xg scales the room's panels and sky fill, dx the drum and the amber
+    xg = _latest(_cues(tl, "xg"), t, "v", 1.0)
+    dxg = _latest(_cues(tl, "dx"), t, "v", 1.0)
     pans = _cues(tl, "pan")
     for i in range(6):
-        g = _ramped([c for c in pans if c["n"] == i], t, "v", 1.0)
+        g = _ramped([c for c in pans if c["n"] == i], t, "v", 1.0) * xg
         over[f"pan{i}"] = g
         ctx["pans"][i].node_tree.nodes["Emission"].inputs["Strength"].default_value = 6.0 * g
-    amb = _ramped(_cues(tl, "amb"), t, "v", 1.0)
+    amb = _ramped(_cues(tl, "amb"), t, "v", 1.0) * xg
     if ctx["hdri_node"] is not None:
         ctx["hdri_node"].inputs["Strength"].default_value = ctx["hdri_base"] * amb
-    over["drumlight"] = _ramped(_cues(tl, "dl"), t, "v", 1.0)
-    over["amber"] = _ramped(_cues(tl, "am"), t, "v", 1.0)
+    over["drumlight"] = _ramped(_cues(tl, "dl"), t, "v", 1.0) * dxg
+    over["amber"] = _ramped(_cues(tl, "am"), t, "v", 1.0) * dxg
     # ---- the drum's turn
     dt, tbl = ctx["spin_tbl"]
     i = min(len(tbl) - 2, int(t / dt))
