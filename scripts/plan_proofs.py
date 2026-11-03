@@ -6,7 +6,8 @@
 Prints `matrix=`, `stories=`, `any=` and `sha=` lines for $GITHUB_OUTPUT.
 
 On a pull request a story is proofed when its film files differ from the base, both reviews approve (gate
-open), and this push changed its film files or its reviews (so a push of something else doesn't draw it again).
+open), this push changed its film files or its reviews (so a push of something else doesn't draw it again), and
+`qa/<story>.json` doesn't already hold a passed proof check for the film as it stands.
 When the PR changes the proof workflow itself and no story, SELFTEST (env PROOF_SELFTEST) is proofed so the
 change proves itself.
 """
@@ -25,7 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))      # the repo (bl
 
 from stories import ROOT, gate_open  # noqa: E402
 
-from blocky.gate import film_files, load_package  # noqa: E402
+from blocky.gate import film_files, load_package, merge_problems  # noqa: E402
 
 PROOF_FILES = (".github/workflows/proof.yml", "scripts/plan_proofs.py")
 
@@ -72,6 +73,9 @@ def plan(a) -> list[str]:
             continue
         if not gate_open(s):
             print(f"{s}: gate closed (reviews or checks), no proof yet", file=sys.stderr)
+            continue
+        if not merge_problems(s, a.base):   # a passed proof check already covers this film: nothing to redraw
+            print(f"{s}: its proof check already covers these film files", file=sys.stderr)
             continue
         todo.append(s)
     if not todo and not stories_in(vs_base) and any(p in vs_base for p in PROOF_FILES) and a.selftest:

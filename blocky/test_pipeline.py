@@ -647,11 +647,13 @@ def test_plan_proofs_picks_approved_stories_whose_film_changed(monkeypatch):
     spec.loader.exec_module(pp)
 
     monkeypatch.setattr(pp, "gate_open", lambda s: s != "closed-one")
+    # a story whose proof check already covers its film files isn't drawn again
+    monkeypatch.setattr(pp, "merge_problems", lambda s, base: [] if s == "proved-one" else [("block", "no proof")])
     monkeypatch.setattr(pp, "load_package", lambda s: {"hold": "redo"} if s == "held-one" else {})
     monkeypatch.setattr(pp, "stories_in", lambda paths: sorted({p.split("/")[1] for p in paths
                                                                 if p.startswith("stories/") and len(p.split("/")) > 2}))
     base = ["stories/a/set.py", "stories/closed-one/story.json", "stories/held-one/set.py",
-            "stories/b/package.json"]
+            "stories/b/package.json", "stories/proved-one/set.py"]
     monkeypatch.setattr(pp, "changed", lambda a, b="HEAD": base if a == "BASE" else None)
 
     class A:
