@@ -809,6 +809,9 @@ def animate(kit, story, tl, t, ctx):
     over["hirefill"] = 0.08 + 0.92 * dim ** 2
     over["tube"] = 0.15 + 0.85 * dim ** 2
     # ---- a per-shot level (story.json shots[].expo) so cuts land at similar brightness
+    import os
+    if os.environ.get("DBGDIM"):
+        print("DBG t", t, "shot", shot, "dim", dim, {k: round(v, 3) for k, v in over.items()}, flush=True)
     expo = next((sh.get("expo", 1.0) for sh in story["shots"] if sh["id"] == shot), 1.0)
     for n in list(kit.LIGHTS):
         over[n] = over.get(n, 1.0) * expo
