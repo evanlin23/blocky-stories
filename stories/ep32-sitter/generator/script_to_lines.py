@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-NAMES = {"mum": "Mum", "kofi": "Kofi", "petra": "Petra", "wednesday": "Wednesday", "i": "I"}
+NAMES = {"mom": "Mom", "kofi": "Kofi", "theo": "Theo", "monday": "Monday", "tuesday": "Tuesday", "wednesday": "Wednesday", "thursday": "Thursday", "i": "I"}
 OUT = []
 for m in re.finditer(r"^- `(L\d+b?)` narrator: (.+)$", (HERE.parent / "script.md").read_text(), re.M):
     lid, body = m.group(1), m.group(2).strip()
@@ -20,7 +20,7 @@ for m in re.finditer(r"^- `(L\d+b?)` narrator: (.+)$", (HERE.parent / "script.md
                 low = w.lower()
                 if core.lower() in NAMES:
                     low = low.replace(core.lower(), NAMES[core.lower()])
-                if prev_end or w.startswith('"'):
+                if (prev_end or w.startswith('"')) and low[:1].islower():
                     low = re.sub(r"[a-z]", lambda mm: mm.group(0).upper(), low, count=1)
                 sp.append(low)
             else:
@@ -49,8 +49,10 @@ for ln in OUT:
     ln["chunks"] = [p for ch in ln["chunks"] for p in split3(*ch)]
 (HERE / "lines.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")
 print(len(OUT), "lines")
-# the speech check hears "Bare" as "bear": a comma gives it a pause to stand on
+# the speech check hears "bare" as "bear" every time: the spoken text says it the way it is heard (same sound; captions keep "bare")
 for ln in OUT:
-    if ln["id"] == "L12":
-        ln["chunks"][0][1] = "Bare pine,"
+    for ch in ln["chunks"]:
+        ch[1] = re.sub(r"\b([Bb])are\b", lambda m: m.group(1) + "ear", ch[1])
+    if ln["id"] == "L04":
+        ln["chunks"][1][1] = "with the"
 (HERE / "lines.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")
