@@ -139,12 +139,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "If you pick the wrong DOOR,",
-     "if you pick the wrong door,"
+     "If you pick",
+     "if you pick"
     ],
     [
-     "you live behind it",
-     "you live behind it"
+     "the wrong DOOR,",
+     "the wrong door,"
+    ],
+    [
+     "you live",
+     "you live"
+    ],
+    [
+     "behind it",
+     "behind it"
     ],
     [
      "FOREVER.",
@@ -183,8 +191,12 @@
      "is warm,"
     ],
     [
-     "and smells like your mom's COOKING.",
-     "and smells like your mom's cooking."
+     "and smells like",
+     "and smells like"
+    ],
+    [
+     "your mom's COOKING.",
+     "your mom's cooking."
     ]
    ]
   },
@@ -201,8 +213,12 @@
      "your phone"
     ],
     [
-     "is ringing behind it.",
-     "is ringing behind it."
+     "is ringing",
+     "is ringing"
+    ],
+    [
+     "behind it.",
+     "behind it."
     ]
    ]
   },
@@ -215,8 +231,12 @@
      "your phone"
     ],
     [
-     "is in your POCKET.",
-     "is in your pocket."
+     "is in",
+     "is in"
+    ],
+    [
+     "your POCKET.",
+     "your pocket."
     ]
    ]
   },
@@ -229,12 +249,20 @@
      "door three."
     ],
     [
-     "The mat is worn",
-     "the mat is worn"
+     "The mat",
+     "the mat"
     ],
     [
-     "from feet going IN.",
-     "from feet going in."
+     "is worn",
+     "is worn"
+    ],
+    [
+     "from feet",
+     "from feet"
+    ],
+    [
+     "going IN.",
+     "going in."
     ]
    ]
   },
@@ -257,8 +285,12 @@
      "pick."
     ],
     [
-     "You've got THREE seconds.",
-     "you've got three seconds."
+     "You've got",
+     "you've got"
+    ],
+    [
+     "THREE seconds.",
+     "three seconds."
     ]
    ]
   },
@@ -326,8 +358,12 @@
      "all three"
     ],
     [
-     "open into the same ROOM.",
-     "open into the same room."
+     "open into",
+     "open into"
+    ],
+    [
+     "the same ROOM.",
+     "the same room."
     ]
    ]
   },
@@ -346,8 +382,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "You've picked a door",
-     "you've picked a door"
+     "You've picked",
+     "you've picked"
+    ],
+    [
+     "a door",
+     "a door"
     ],
     [
      "a thousand TIMES.",
@@ -402,12 +442,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "The one BEHIND you.",
-     "the one behind you."
+     "The one",
+     "the one"
     ],
     [
-     "The way you CAME in.",
-     "the way you came in."
+     "BEHIND you.",
+     "behind you."
+    ],
+    [
+     "The way",
+     "the way"
+    ],
+    [
+     "you CAME in.",
+     "you came in."
     ]
    ]
   },
@@ -430,8 +478,12 @@
      "somebody left"
     ],
     [
-     "the hall LIGHT on",
-     "the hall light on"
+     "the hall",
+     "the hall"
+    ],
+    [
+     "LIGHT on",
+     "light on"
     ],
     [
      "for you.",
@@ -444,8 +496,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "But you'll turn back",
-     "but you'll turn back"
+     "But you'll",
+     "but you'll"
+    ],
+    [
+     "turn back",
+     "turn back"
     ],
     [
      "to the THREE.",
@@ -1363,7 +1419,7 @@
    ],
    "step": 1,
    "hand": 0.004,
-   "at": "L19.2",
+   "at": "L19.3",
    "note": "you in profile, soft"
   },
   {
@@ -1619,7 +1675,7 @@
     "expr": "scared"
    },
    {
-    "at": "L19.2",
+    "at": "L19.3",
     "hidden": false,
     "blend": 0.0,
     "pos": [
