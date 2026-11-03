@@ -373,3 +373,12 @@ Fresh idea (added with `warm-shoes`, batch 6, so the backlog doesn't run dry): `
 - ep48-crazy-golf: your shadow sits where you were happiest; the one on Dad's green is mine, and the one at my feet is Dad's
 - mirror-maze (ep15): your reflection stays behind when you walk away; the narrator is the reflection the real me left in a maze pane, and Tasha visits it
 - warm-shoes: the stranger walking one streetlight behind Dad every night is our cat, stood up tall to walk him home, and the warm shoes are what it steps out of at the gate (shape `same-one`)
+
+## Batch 6 (2026-11-03, `docs/research/2026-11-03-week.md`): claimed, in production in separate sessions
+- P1 cat-shoes: "Never keep the shoes our cat brings home." (creepy town rule, long)
+- P2 drive-thru: "At this drive-thru, never pull up to the second window." (creepy town rule, long)
+- P3 night-mower: "Never look at the neighbor's lawn while his mower is running." (creepy town rule, mid)
+- P4 dryer-nine: "At the all-night laundromat, you never use dryer nine." (creepy town rule, mid)
+- P5 door-locks: "Every door you close gets one more lock." (what-if escalation, long)
+- P6 rulebook keeper pilot: rule three was torn out (recurring host, mid)
+- P7 mirror-lift: five riders, six in the elevator mirror (horror puzzle, 20 to 45 s)
