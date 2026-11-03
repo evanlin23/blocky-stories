@@ -26,14 +26,14 @@ Against everything made: knock-back's keeper is under a farmhouse floor and guar
 - **Line 2 adds a threat without the reveal:** the panel suggested "Something down there blows it." That *is* the reveal, so L02 states the threat the town believes ("Stay up, / and you'll meet / what walks the STREETS."). The real threat is planted by 15 s instead: the stairs gain a step every whistle (L07 to L09).
 
 ## The story
-- **Premise:** When the town whistle blows, at any hour, everyone goes down to their basement until it stops, because of what walks the streets. I'm twenty-four and back living with Dad, and our basement had thirteen steps when I was born. Now it has twenty-six, one more every whistle, and nobody else counts. My grandpa, Hal, Dad's dad, lives next door in the only house with no basement, built himself on stone blocks, and when the whistle blows he makes tea. Dad begs him every week to move in with us.
+- **Premise:** When the town whistle blows, at any hour, everyone goes down to their basement until it stops, because of what walks the streets. I'm twenty-four and back living with Dad, and our basement had thirteen steps when I was born. Now it has twenty-six, one more every whistle, and nobody else counts. My grandpa, Arlo, Dad's dad, lives next door in the only house with no basement, built himself on stone blocks, and when the whistle blows he makes tea. Dad begs him every week to move in with us.
 - **Rule / hook (L01, about 2.4 s):** "When the town whistle BLOWS, / you go down / to your BASEMENT." L02: "Stay up, / and you'll meet / what walks the STREETS."
 - **The relatable fight:** Dad and his stubborn father, who won't move in and won't hide.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** a step counter tag in the top-right corner, a small brass plate with a stair glyph and a number: our basement's step count (26 at the start, 27 at L37, 28 at L45, 13 at L70). Frame 1 is the brass whistle itself, close, a puff of dust from its mouth as it blows.
 - **The 3 to 5 example montage (L03 to L06, 4 to 12 s):** it blows at noon and everyone runs (L03), the baker leaves his bread in the oven (L04), a whole softball team runs down a stranger's cellar stairs (L05), the mail lady ducks into the closest house (L06).
 - **A concrete mystery by 15 s:** thirteen steps when I was born, twenty-six now (L07 also says plainly that I'm twenty-four), one more every whistle (L07 to L09, 12 to 16 s).
 - **How the narrator is the exception:** nobody else counts the steps (L10). Later, I'm the one who sees the street during a whistle (L29 to L34).
-- **The loved ones at stake:** my dad (seen at L07 on our basement stairs, named as Dad) and my grandpa, Hal (named at L11, "Dad's dad", on his porch next door in the same shot).
+- **The loved ones at stake:** my dad (seen at L07 on our basement stairs, named as Dad) and my grandpa, Arlo (named at L11, "Dad's dad", on his porch next door in the same shot).
 - **The rule broken:** L28, about 49 s in: I'm still upstairs at Grandpa's when it blows.
 - **First real scare (L30 to L34, 52 to 58 s):** the empty street, and every basement window on it breathing out dust at once, in time with the whistle.
 - **Escalation (L37 to L42, 61 to 71 s):** the Dunns across the street have forty-one steps, and Mrs. Dunn only smiles at the dark stairs, wanting to go back down (the pull, not happiness). Dad comes up grey with dust and stops arguing with Grandpa, only staring at the basement door.
@@ -73,7 +73,7 @@ One summer street in a small town: white, butter and sky-blue clapboard houses o
 ## Cast
 - `me` (the narrator, an adult man, 24, back living with Dad, says his age at L07): short black block hair, a short dark beard, a red ringer tee, khaki shorts, white sneakers. Faces: `neutral`, `smile`, `worried`, `scared`, `focus`, `soft`.
 - `dad` (my dad, adult, about 55): salt-and-pepper block hair, a bushy dark mustache, a blue short-sleeved work shirt, grey slacks. Faces: `neutral`, `annoyed`, `pleading`, `tired`, `blank` (staring, dusty), `asleep`, `laugh`.
-- `hal` (my grandpa, Hal, Dad's dad, about 80): white block hair, the same bushy mustache gone white (the family look), a green cardigan, brown slacks, slippers. Faces: `neutral`, `stubborn`, `smile`, `calm`, `laugh`. Named at L11 with "Dad's dad" in the same shot as him on his porch.
+- `arlo` (my grandpa, Arlo, Dad's dad, about 80): white block hair, the same bushy mustache gone white (the family look), a green cardigan, brown slacks, slippers. Faces: `neutral`, `stubborn`, `smile`, `calm`, `laugh`. Named at L11 with "Dad's dad" in the same shot as him on his porch.
 - `dunn` (Mrs. Dunn across the street, adult): grey curls, a peach sundress. Faces: `blank` (a fixed small smile, the pull), `neutral`. L37 to L39 only. Her husband in the doorway behind her, background.
 - Montage extras (all adults): the baker (white apron), a softball team in teal shirts, the mail lady (blue uniform, mailbag).
 Every word is the narrator's. L36 is quoted inside the narration.
@@ -127,7 +127,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | S08 | L08 | 14.3 | From the bottom, looking up our too-deep stairwell. |
 | S09 | L09 | 15.3 | A tight insert: a new bottom step, its wood a shade darker. |
 | S10 | L10 | 16.5 | Me on the stairs counting with one finger raised, `focus`. |
-| S11 | L11 | 17.6 | Next door: Grandpa Hal on his porch in his green cardigan, `neutral`, Dad on our porch beside him over the low fence, same mustache. |
+| S11 | L11 | 17.6 | Next door: Grandpa Arlo on his porch in his green cardigan, `neutral`, Dad on our porch beside him over the low fence, same mustache. |
 | S12a, S12b | L12 | 19.4 | Grandpa's butter-yellow house side-on. Then a low shot through the gap under it, lawn visible beneath. |
 | S13 | L13 | 21.9 | Close on the stacked stone blocks under the house. |
 | S14 | L14 | 23.7 | Grandpa in his kitchen, the kettle on, `calm`, the whistle pole out of the window behind him. |
