@@ -6,54 +6,54 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, a house grows to fit the tallest one living in it.",
+   "text": "In this town, when your ceiling rises, don't look up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.828,
+   "dur": 2.397,
    "onset": 0.172,
-   "end": 2.638,
+   "end": 2.19,
    "chunks": [
     [
      0.172,
-     0.655
+     0.621
     ],
     [
-     0.707,
-     1.241
+     0.647,
+     1.086
     ],
     [
-     1.241,
-     1.457
+     1.086,
+     1.466
     ],
     [
-     1.457,
-     2.0
-    ],
-    [
-     2.0,
-     2.638
+     1.517,
+     2.19
     ]
    ]
   },
   "L02": {
-   "text": "Tall families live in towers.",
+   "text": "Something taller than you moved in.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
+   "dur": 1.724,
    "onset": 0.172,
-   "end": 1.517,
+   "end": 1.534,
    "chunks": [
     [
      0.172,
-     0.655
+     0.681
     ],
     [
-     0.655,
-     1.517
+     0.681,
+     0.862
+    ],
+    [
+     0.862,
+     1.534
     ]
    ]
   },
@@ -1125,6 +1125,26 @@
     ]
    ]
   },
+  "L45b": {
+   "text": "Mum knew. She'd missed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.534,
+     1.207
+    ]
+   ]
+  },
   "L46": {
    "text": "Mum opened the hall cupboard.",
    "who": "narrator",
@@ -1194,26 +1214,6 @@
     [
      0.983,
      1.638
-    ]
-   ]
-  },
-  "L45b": {
-   "text": "Mum knew. She'd missed it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.397,
-   "onset": 0.19,
-   "end": 1.207,
-   "chunks": [
-    [
-     0.19,
-     0.5
-    ],
-    [
-     0.534,
-     1.207
     ]
    ]
   }
