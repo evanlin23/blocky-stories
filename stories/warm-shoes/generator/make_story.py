@@ -435,7 +435,7 @@ S("L52.2", X((-1.9, -1.2, 1.9), (0.0, -88.0, 1.4), 120), S_, hand=0.004, note="t
 gone("dad", "P02")
 S("P02", X((-1.9, -1.2, 1.9), (3.0, -95.0, 1.5), 135), S_, hand=0.003, note="the far end, the shelter, wind")
 STR("L54", (0.0, -84.0), 180, "rubber")
-S("L54", X((-1.9, -1.2, 1.9), (0.0, -84.0, 1.5), 135, None, None, 150), S_, hand=0.003, note="under the last light, someone, small")
+S("L54", X((-1.9, -1.2, 1.9), (0.0, -84.0, 1.5), 135, None, (0.6, -84.0, 1.45), 185), S_, hand=0.003, note="under the last light, someone, small")
 STR("L55", (0.0, -54.0), 180, "rubber")
 put("dad", "L55", (0.2, -24.5), 180, "neutral")
 S("L55", X((-1.9, -1.2, 1.9), (0.0, -54.0, 1.4), 110), S_, hand=0.004, note="one light closer")
@@ -465,8 +465,8 @@ S("L61", C((GATE_R[0], GATE_R[1], 0.8), 2.6, 150, 8, 34), S_, fill=0.6, note="sm
 gone("strider", "L61+0.38")
 pairs("L61+0.38", rubber=pr((GATE_R[0], GATE_R[1], 0.38), 175, True, 2.3))
 S("L61+0.38", C((GATE_R[0], GATE_R[1], 0.7), 2.6, 150, 8, 34), S_, fill=0.6, note="nothing there but the boots, steaming")
-cat("L62", (1.55, -10.07, 0.4), yaw=-90, pose="stand", face="neutral", pitch=-22, tail="up", mud=True,
-    to=[1.55, -10.07, 0.95], dur=1.3)
+cat("L62", (1.80, -10.04, 0.4), yaw=-90, pose="stand", face="neutral", pitch=-22, tail="up", mud=True,
+    to=[1.80, -10.04, 0.95], dur=1.3)
 S("L62", C((1.38, -10.07, 1.2), 0.95, -90, 3, 30, d2=0.8), S_, fill=1.0, note="low side close, Biscuit's muddy head and ears come out of the left boot, facing us")
 cat("L63", (GATE_R[0] - 0.9, GATE_R[1] + 0.1, 0.4), yaw=12, face="neutral", tail="up", mud=True)
 S("L63", C((GATE_R[0] - 0.9, GATE_R[1] + 0.1, 0.62), 1.0, 10, 8, 30, d2=0.75), S_, fill=0.9, note="muddy to the ears")
