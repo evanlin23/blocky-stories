@@ -131,6 +131,30 @@ Format: **what happened** (date, evidence) → **cost** → **fix for the rewrit
     → Every brief has a "merge origin/main" step before each judge step (review, proof, qa, merge). Also, `proof.yml`
     and qa should take their tools from main, not from the branch.
 
+23. **Most drops are the creature, and the test comes too late.** On 2026-11-03, 6 of 10 drops died on the creature,
+    with the Opus critic saying "silly": ep80, ep87, ep90, the ep34 revival, ep71 (creature 5) and ep41 (creature 4).
+    The notes repeat: warm frontal light, disc or dot eyes, no scale reference, the whole body shown small in a bright
+    set, soft boxy shapes. The writer designs a creature the rig can't make frightening, and the creature test only runs
+    after a build session has spent its setup.
+    → 6 stories and their sessions, and 3 creature tries each.
+    → A creature playbook (a lab started 5:10 PM) that the writer applies in the script, and a creature test still made
+    right after the script merges, by one cheap session, before any build is started.
+24. **A study's top fix was already shipped.** Render-throughput change 7 ("finish on 4 processes") was already in the
+    engine since PR #94. The study misread the measured 0.33 s a frame as single-process. A session was spent finding
+    that out.
+    → One session.
+    → A study checks the code path it's measuring (a grep for the worker pool) before it proposes a change.
+25. **The orchestrator asserted how a workflow triggers without reading it.** It told #1 that merging the samples change
+    would replace the pending render run. render.yml only triggers on `stories/*/**`, so it wouldn't have, and #1 caught
+    it.
+    → A near-miss: the next finals would have drawn at 10 samples.
+    → Read the `on:` block before any claim about what a merge starts.
+26. **Small staging fixes made new framing errors.** dryer-nine (S54 black after the pair moved) and ep51 (passers-by at
+    the lens after the clip fix) failed on framing that a clip fix introduced, and both were dropped at the round cap.
+    → Two near-ready stories (revived 5:10 PM for one targeted fix each).
+    → An automated framing check after every staging change: is the shot's subject in frame and unblocked? `measure.py`
+    already projects heads for `face_big`, so it can flag a shot where no cast face is visible.
+
 ## Waste to watch (open)
 - Proof runs for stories likely to be dropped. Proof only after both reviews approve, and draw once.
 - `test` stays red on every story PR until its proof qa lands, which reads like breakage. Name it "waiting for proof qa".
