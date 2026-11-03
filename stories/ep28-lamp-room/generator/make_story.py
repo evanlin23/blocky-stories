@@ -215,7 +215,7 @@ shot("L26", "kitchen: toast", still([KX + 2.15, 0.1, 1.5], [KX, 0.1, 1.0], 24), 
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34), hand=0)
 shot("L28", "close on me, misreading", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
 shot("L29", "me looking past her", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
-shot("L29.2", "the stair foot through the doorway: empty", still([KX + 1.4, -1.3, 1.4], [KX + 3.4, -1.3, 0.7], 20), hand=0)
+shot("L29.1", "the stair foot through the doorway: empty", still([KX + 1.4, -1.3, 1.4], [KX + 3.4, -1.3, 0.7], 20), hand=0)
 shot("L30", "the two of us, silence", still([KX + 2.15, -1.5, 1.9], [KX, 0.1, 1.0], 20), hand=0)
 # 05 night two
 shot("L31", "the tower in heavier rain", move(([-3, -27, 6], [0, 0, 10]), ([-2.2, -24, 8], [0, 0, 10]), 18), rain=True)

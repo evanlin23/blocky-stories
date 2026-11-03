@@ -54,38 +54,38 @@
    ]
   },
   "L03": {
-   "text": "The tower slept two: her room halfway up, mine at the top.",
+   "text": "The tower slept two, her room halfway up, mine at the top.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.707,
+   "dur": 2.621,
    "onset": 0.155,
-   "end": 2.5,
+   "end": 2.414,
    "chunks": [
     [
      0.155,
-     0.448
+     0.414
     ],
     [
-     0.448,
-     0.966
+     0.414,
+     0.879
     ],
     [
-     1.069,
-     1.31
+     0.931,
+     1.172
     ],
     [
-     1.31,
-     1.69
+     1.172,
+     1.603
     ],
     [
-     1.724,
-     1.939
+     1.638,
+     1.854
     ],
     [
-     1.939,
-     2.5
+     1.854,
+     2.414
     ]
    ]
   },

@@ -167,8 +167,8 @@
      "The tower"
     ],
     [
-     "slept TWO:",
-     "slept two:"
+     "slept TWO,",
+     "slept two,"
     ],
     [
      "her room",
@@ -2550,7 +2550,7 @@
    "hand": 0,
    "step": 2,
    "what": "the stair foot through the doorway: empty",
-   "at": "L29.3"
+   "at": "L29.2"
   },
   {
    "id": "S35",
