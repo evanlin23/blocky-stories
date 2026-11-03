@@ -189,7 +189,7 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
 def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | None, expr: str, open_: float,
           look: tuple[float, float], blink: float, freckles: bool, cheeks: str | None, bags: bool,
           mouth: str = "auto", inside: str | None = None, eye_scale: float = 1.0, corners: bool = False,
-          brow_w: float = 1.0) -> Image.Image:
+          brow_w: float = 1.0, reflect: str | None = None) -> Image.Image:
     im = Image.new("RGB", (TEX_W, TEX_H), hexrgb(skin))
     d = ImageDraw.Draw(im)
     s = FX1 - FX0                      # face box width in px
@@ -234,6 +234,8 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
             continue
         if eyes in ("round", "lashes", "tired", "mirror", "negative"):
             rx = 0.112 * s * (1.28 if expr == "terrified" else 1.2 if expr in ("wide", "scared") else 1.0)
+            if eyes == "round":   # opt-in (ep53): a bigger round eye; default 1.0 changes nothing
+                rx *= eye_scale
             ry = rx * (1.0 - 0.85 * blink)
             if eyes == "tired" or expr == "angry":
                 ry *= 0.78
@@ -254,6 +256,10 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
                         _ellipse(d, px, py, pr * 0.5, pr * 0.5, fill=hexrgb(glow))
                     else:
                         _ellipse(d, px - pr * 0.35, py - pr * 0.4, pr * 0.28, pr * 0.28, fill=white)
+                    if reflect:   # opt-in (ep53): a pale patch of a coat mirrored in the pupil, a dark zip line in it
+                        rc = hexrgb(reflect)
+                        d.rounded_rectangle([px - pr * 0.8, py - pr * 0.75, px + pr * 0.15, py + pr * 0.55], radius=pr * 0.2, fill=rc)
+                        d.line([(px - pr * 0.33, py - pr * 0.7), (px - pr * 0.33, py + pr * 0.5)], fill=(150, 146, 136), width=max(3, int(pr * 0.07)))
             if expr == "angry":  # a lid across the top
                 d.polygon([(cx - rx - 4, ey - ry - 6), (cx + rx + 4, ey - ry - 6),
                            (cx + side * rx, ey - ry * 0.1), (cx - side * rx * 0.2, ey - ry * 0.55)], fill=hexrgb(skin))
@@ -343,7 +349,7 @@ def face_image(face: dict, skin: str, expr: str = "neutral", open_: float = 0.0,
                  face.get("pupil", "#141012"), face.get("glow"), expr, q(open_, mouth_steps(face)), (q(look[0], 2), q(look[1], 2)),
                  1.0 if blink > 0.5 else 0.0, bool(face.get("freckles")), face.get("cheeks"), bool(face.get("bags")),
                  face.get("mouth", "auto"), face.get("mouth_inside"), float(face.get("eye_scale", 1.0)), bool(face.get("corners")),
-                 float(face.get("brow_w", 1.0)))
+                 float(face.get("brow_w", 1.0)), face.get("reflect"))
 
 
 def mouth_steps(face: dict) -> int:
@@ -362,6 +368,8 @@ def face_key(face: dict, skin: str, expr: str, open_: float, look, blink: float)
         style += f"bw{face['brow_w']}-"
     if face.get("corners"):
         style += "co-"
+    if face.get("reflect"):
+        style += f"rf{face['reflect'].lstrip('#')}-"
     if face.get("mouth_inside"):   # an open mouth's own inside colour (the copy's opens onto black)
         style += f"in{face['mouth_inside'].lstrip('#')}-"
     return f"{style}{expr}-{q(open_, mouth_steps(face))}-{q(look[0], 2)}-{q(look[1], 2)}-{int(blink > 0.5)}"
