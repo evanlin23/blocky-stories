@@ -1,10 +1,11 @@
 # every-lock: the script (writer, 2026-11-03)
 
 - **Slug:** `every-lock` (batch 6, slot P5, the lead's slug, and it uploads in the order the queue sets)
-- **From:** batch 6 brief pitch W4 ("Every Door I Close Gets Another LOCK 🔒"), the what-if escalation lane (`docs/research/port-study.md` → What-if escalation). Kept: the lock meter that doubles, the apartment's doors, a fight over a door. Changed: the escalation is stated as fact, the slammer is my big sister, and the title is now a statement about the slam ("Every Slam DOUBLES The Locks 🔒").
+- **From:** batch 6 brief pitch W4 ("Every Door I Close Gets Another LOCK 🔒"), the what-if escalation lane (`docs/research/port-study.md` → What-if escalation). Kept: the lock meter that doubles, the apartment's doors, a fight over a door. Changed: the escalation is stated as fact, the slammer is my big sister, and the title is now the concrete impossible count frame 1 shows ("My Bathroom Door Has 1,024 LOCKS 🔒").
+- **Revision 1 (2026-11-03, before build):** the blind premise check scored the old title and L01 a 6 ("the payoff stays abstract"), so frame 1 is now a flash-forward to our 1,024-lock door and L01 names it. Changed or new: L01, L02, L02b, L10b, L12b, L38, L40, L53, L57, L58, L65b, L71, L72. The lore shot moves from L57 to L58.
 - **Lane:** experiment (what-if escalation). **Length arm:** long.
-- **Word count:** 568 spoken words in 72 lines, all `narrator`, plus 2 music drops (1.2 s) and the lore shot held inside L57.
-- **Estimated length:** 568 words at 290 wpm is 1:58 of speech. The 0.12 s gaps add 8.5 s, the drops 1.2 s and the loop tail 0.25 s: about 2:08 to 2:12. If it lands under 2:00, add "The DOG next door / walks in / for BREAKFAST." after L06. If it lands over 2:30, cut L45 first, then L62.
+- **Word count:** 632 spoken words in 76 lines, all `narrator`, plus 2 music drops (1.2 s) and the lore shot held inside L58.
+- **Estimated length:** 632 words at 290 wpm is 2:10 of speech. The 0.12 s gaps add 9.1 s, the drops 1.2 s and the loop tail 0.25 s: about 2:18 to 2:22. If it lands over 2:30, cut L45 first, then L62, then L33.
 - **Look:** `look.style: "closer"`, `look.flash_safe: true`, `look.polish: true` if the polish pack has merged. Bright and saturated everywhere except one scene (the night, L36 to L54), which is lit by warm night lights, never black.
 
 ## The big idea
@@ -16,17 +17,18 @@ The "wait, what": the rule we've watched all story (closing a door doubles its l
 ## The story
 
 - **Premise:** In our apartment building, closing a door doubles its locks, and the locks never come off, so everybody lives with their doors open. I've never closed a door in my life. My big sister Jade slams them. We have one bathroom, we both need it at 7:15, and every morning she gets there first and slams it. The bathroom door doubles from 4 to 1,024 locks as our fight escalates, until it's so thick it leans into the hall.
-- **Rule / hook:** "Never close a door in our building. Its locks double." A door that has never been closed has no locks. Every close doubles the count (a new door's first close gives it one). Each lock arrives shut, with its own key and its own little brass keyhole flap.
+- **Rule / hook:** "Never let a door shut here. Ours has a thousand locks." Frame 1 is a flash-forward to our bathroom door at 1,024 (the L31 look), and L12b winds the meter back to the month it had four. A door that has never been closed has no locks. Every close doubles the count (a new door's first close gives it one). Each lock arrives shut, with its own key and its own little brass keyhole flap.
 - **The turn:** the night after the 1,024th lock, one keyhole flap swings shut on its own (the door is so heavy it leans). A flap is a little door, so that lock gets a lock. Then those flaps close. The door doubles by itself, and by three in the morning it fills our hall and is pushing my bedroom door shut.
 - **The loophole (the climax turns the rule's own words):** "the locks never come off." The door does. Jade and I pull the three hinge pins, lift the whole clicking pile out of the frame together and carry it down to the curb.
-- **The sting and loop:** in the morning the curb is empty. Mr. Dale across the hall, who takes home anything left at the curb, has a new, very thick bathroom door, and through his open front door we can hear it clicking. "So, Mr. Dale, whatever you do," loops into "Never close a door in our building."
+- **The sting and loop:** in the morning the curb is empty. Mr. Dale across the hall, who takes home anything left at the curb, has a new, very thick bathroom door. It's still clicking, and overnight it has grown down his little hall until it's pushing on his own front door, the way ours pushed my bedroom door (L48 to L50). If his front door shuts, that one starts doubling too, and it faces ours. "So, Mr. Dale, get your foot on it. And whatever you do," loops into "Never let a door shut here."
 - **Where the turn is planted (a rewatch catches both):**
   - Plant 1, L04 (the fridge downstairs): the insert on the fridge's locks shows each one's little brass keyhole flap, and one lock near the top already has a tiny lock of its own growing on it. Not narrated.
   - Plant 2, L17 ("Every lock comes with its own KEY."): close on one new lock on our door, its keyhole flap swinging and settling half shut. Not narrated.
+  - Plant 3, L10b ("the fridge downstairs CLICKS by ITSELF"): narrated, at about 22 s, the early unsettling beat. Nobody says why until L40.
   - Plant for the sting, L10 and L34: Mr. Dale takes home anything left at the curb, and he looks at our 1,024-lock door and says it's a good door.
-- **How the last 15 seconds turn over the first line:** the first time, "Never close a door in our building" is a warning to the viewer about how this building works. On the loop it's me pleading with Mr. Dale, who now owns a door that closes itself. The rule never needed a person at all.
+- **How the last 15 seconds turn over the first line:** the first time, "Never let a door shut here" is a warning to the viewer about how this building works. On the loop it's me pleading with Mr. Dale about his front door, which his new door is pushing shut, the way ours nearly shut mine. It's the one thing he can still stop, with his foot, the way I did. The rule never needed a person at all.
 - **Ending shape:** a door given away (the problem moves across the hall). Shape tag `runaway`.
-- **Warmth:** a sibling truce. Shown: Jade laughing so hard she sits on the door on the stairs, then the next morning she lets me go first, and we knock on the bare frame.
+- **Warmth:** a sibling truce. Shown: Jade laughing so hard she sits on the door on the stairs, then she slams the new shower curtain for fun (a curtain isn't a door, so nothing happens), the next morning she lets me go first, and we knock on the bare frame.
 - **Not a sad family reveal.** Nobody is gone, sick, estranged or secretly grieving. The fight is a bathroom fight.
 
 ## World
@@ -59,28 +61,30 @@ There's no monster. The thing that grows is the bathroom door. It's one model in
 
 | Beat | Lines | Meter | What the door looks like |
 |---|---|---|---|
-| Frame 1 | L01 | 2 → 4 on "DOUBLE" | yellow door, two locks (a chrome bolt at head height, a brass box lock crooked at knee height). It swings shut and two more pop on. |
-| Montage | L02 to L11 | 4 | not shown (the meter holds) |
-| Mornings | L12 to L15 | 4 → 8 on "SLAMS it" (L15) | eight locks down the latch side |
+| Frame 1 (flash-forward) | L01 | 1,024 | the L31 look: a lumpy brass bulge 40 cm thick, no yellow showing except a sliver at the frame, the top leaning a little into the hall. Shut. |
+| Demo | L02, L02b | 1,024 | not shown (our kitchen cupboard shows the rule: 1 lock → 2) |
+| Montage | L03 to L12 | 1,024 | not shown (the meter holds) |
+| Wind back | L12b | 1,024 → 4 | the plain yellow door a month ago, four locks (a chrome bolt at head height, a brass box lock crooked at knee height, two more) |
+| Mornings | L13 to L15 | 4 → 8 on "SLAMS it" (L15) | eight locks down the latch side |
 | A minute | L16 to L18 | 8 → 16 (L18 cut) | 16, a column of them, one flap swinging (plant 2, L17) |
 | Alarms | L19 to L22 | 32 → 64 (L19), 64 → 128 (L22) | locks in rows across half the door |
 | Late | L24 | 256 | most of the door, wood only round the edges |
 | No wood | L25 to L27 | 512 | no wood shows. The handle is under the locks |
 | The shoe | L28 to L29 | 512 → 1,024 on L30 | the shoe wedged at the foot, then gone, the door shut |
 | Thick | L31 to L35 | 1,024 | a lumpy bulge 40 cm thick, the top leaning a little out into the hall |
-| The flap | L36 to L40 | 1,024 → 1,025 on L40 | one flap near the top swings shut, a tiny lock pops onto that lock |
+| The flap | L36 to L40 | 1,024 → 1,025 on L40 ("gets a LOCK") | one flap near the top swings shut, a tiny lock pops onto that lock |
 | By itself | L41 to L44 | 2,048, 4,096, 8,192 as spoken | lumps of locks budding on locks, growing outward |
 | The hall | L45 to L54 | 16,384 → 32,768 → 65,536 | fills our inner hall from the bathroom almost to my door, floor to ceiling, a gap near the top where Jade's face shows |
 | Off its hinges | L55 to L60 | 65,536 | the pile still on the door: lifted as one lump, the bare frame behind it |
 | Stairs, curb | L61 to L64 | 131,072 | carried down, then standing on end at the curb, the size of a parked car |
-| Across the hall | L69 to L72 | 262,144 | seen through Mr. Dale's open front door, set in his bathroom doorway |
+| Across the hall | L69 to L72 | 262,144 | seen through Mr. Dale's open front door, set in his bathroom doorway and filling his little hall, its front lump nudging his open front door |
 
 ## The meter (the rule never leaves the screen)
 
 - A padlock icon in lock amber `#ffb21f` with a thick black outline and the count beside it in white Schibsted Grotesk Black, black outline, top centre, about 9% down the frame (above every face and well clear of the caption band). A tiny sunny-yellow door shape sits behind the padlock, so it reads as our bathroom door's count.
 - It's on screen from the first frame to the last, including over the montage, where other doors show their own locks in the set.
 - Each doubling: the number pops to 1.2x scale and back over 0.25 s, with one soft brass "clack" in the mix. No brightness change, no flash. During L41 to L44 the pops come fast but no faster than 3 a second.
-- Numbers use commas (1,024). At the loop it snaps back to 2 with L01's first frame.
+- Numbers use commas (1,024). At L12b it winds back from 1,024 to 4 over 0.5 s (the digits roll down, a soft tape-rewind zip, no brightness change), so a first-time viewer sees L01 was later. At the loop it snaps back to 1,024 with L01's first frame.
 
 ## Palette and light
 
@@ -100,29 +104,30 @@ There's no monster. The thing that grows is the bathroom door. It's one model in
 - **The loophole (L56):** the bouncy bass comes back on "But the DOOR / DOES." with the drone still under it. A plain warm lead melody in C major enters at L63 (Jade laughing) and runs to L67.
 - **The sting (L68 to L72):** the lead drops out, the drone and a slow tick remain, and the clicks come faintly from across the hall.
 - **Drops (`music_drops`):** P01 (0.6 s, before L36): everything but the voice drops, then one tiny brass click hit. P02 (0.6 s, before L68): everything drops, then one soft low thud.
-- **Sound hit on L01's last word:** a heavy bolt "clunk" doubled (two clunks 0.12 s apart) as the door shuts on "DOUBLE".
+- **Sound hit on L01's last word:** a heavy bolt "clunk" doubled (two clunks 0.12 s apart) on "LOCKS", and the whole pile shudders with a jingle of brass.
+- **L12b:** a soft tape-rewind zip under the meter's wind back (0.5 s, mid range, quiet).
 - **Ambience:** apartment room tone, a far-off street, the brothers' muffled argument at L07, Mrs. Pike singing (a hummed synth vowel, no words) at L08 and L09, the key bucket's rattle at L45, the ceiling light's creak at L46, footsteps on stairs (soft recorded steps from `assets/audio/`).
 - **The loop:** 0.25 s after "DO,", cut to L01's first frame.
 
 ## The opening recipe (playbook v1), point by point
 
-1. **Line 1 is a warning to "you":** "Never close a DOOR / in our BUILDING. / Its locks DOUBLE." 10 words, about 2.1 s.
-2. **Frame 1 looks straight at the warned-of thing, already slightly wrong:** a tight close on our yellow bathroom door with two locks, one of them crooked at knee height where no lock goes. Lit bright, centred, pushing in. No wide, no establishing shot in the first 3 s.
-3. **A sound hit on the last word:** the door swings shut and the doubled bolt clunk lands on "DOUBLE", two more locks popping on as the meter goes 2 → 4.
-4. **Line 2 tightens it in at most 1.5 s:** "And they NEVER / come OFF." 5 words, about 1.0 s. No names, places or backstory before 4 s (the first name, Mrs. Pike, is at about 14 s).
+1. **Line 1 is a warning to "you", around one concrete impossible count:** "Never let a DOOR / shut here. / Ours has a THOUSAND LOCKS." 10 words, about 2.1 s.
+2. **Frame 1 looks straight at the warned-of thing, already wrong:** a tight close on our bathroom door at 1,024 locks, a lumpy brass bulge where a yellow door should be, a sliver of yellow paint at the frame. Lit bright, centred, pushing in. The meter reads 1,024. No wide, no establishing shot in the first 3 s.
+3. **A sound hit on the last word:** the doubled bolt clunk lands on "LOCKS" and the whole pile shudders.
+4. **Line 2 tightens it in at most 1.5 s:** "Every time it SHUTS, / they DOUBLE." 6 words, about 1.2 s, shown on our kitchen cupboard (1 lock → 2). L02b, "And they NEVER / come OFF.", follows at once. No names, places or backstory before 4 s (the first name, Mrs. Pike, is at about 17 s).
 5. **Lines 3 to 5 show the rule at work, one shot each, none over 2 s:** the sneeze and the fridge swinging shut (L03), the 64-lock fridge and the cooler (L04, two shots), every front door open (L05).
-6. **The title is a concrete, countable thing:** "Every Slam DOUBLES The Locks 🔒", 5 words, a statement, never a question.
+6. **The title is the concrete impossible count frame 1 shows:** "My Bathroom Door Has 1,024 LOCKS 🔒", 6 words, a statement, never a question, one word in caps, the emoji at the end.
 7. **Measure:** chose to view in Studio, against the recipe's 75% bar.
 
 ## The hits' shape
 
-- **The rule in the first line,** visible by frame 1 (the locks on the door and the meter).
-- **The montage (L03 to L10, about 3 to 20 s), five examples:** the sneeze fridge with 64 locks and the milk in a cooler, every front door open, the hall smelling like six dinners, the brothers who only argue on the stairs where there's nothing to slam, Mrs. Pike who hasn't shut her bathroom in twelve years and just sings louder, and Mr. Dale who takes home anything left at the curb.
+- **The rule in the first line,** visible by frame 1 (the 1,024 locks on the door and the meter).
+- **The montage (L03 to L10b, about 5 to 22 s), five examples:** the sneeze fridge with 64 locks and the milk in a cooler, every front door open, the hall smelling like six dinners, the brothers who only argue on the stairs where there's nothing to slam, Mrs. Pike who hasn't shut her bathroom in twelve years and just sings louder, and Mr. Dale who takes home anything left at the curb. It ends on the first unsettling beat (L10b): at night the downstairs fridge clicks by itself.
 - **The narrator is the exception:** I've never closed a door in my life (L11).
 - **The relatable fight:** one bathroom, two of us, 7:15. The alarm war (L20 to L22) and Mom's rule (L23).
-- **15 to 30 s show, never explain:** the morning fights, the slam, the meter climbing.
+- **15 to 30 s show, never explain:** the fridge clicking by itself at night (L10b, about 20 s), the meter winding back from 1,024 to 4 (L12b, about 27 s), then the morning race and the slam. Every jump after that changes daily life on screen: a minute and a key bucket (8), ten minutes and the alarm war (64), both of us late (256), an hour and Mom brushing her teeth in the kitchen sink (512), the door leaning into the hall and Jade sleeping out there (1,024).
 - **The loved one at stake:** my big sister Jade, and the fight between us.
-- **The first real scare (about 65 s, 51%):** the first flap swinging shut on its own at night. Later than the creepy-lane norm on purpose: the what-if lane's first half is the funny escalation, and the turn is the doubling's own logic.
+- **The first unsettling beat (about 20 s):** the downstairs fridge clicking by itself (L10b). **The first real scare (about 72 s, 51%):** the first flap swinging shut on its own at night, which explains L10b.
 - **The climax turns the rule's own words:** the locks never come off, but the door does.
 - **The loop:** L72 runs into L01 as one sentence.
 
@@ -136,21 +141,23 @@ There's no monster. The thing that grows is the bathroom door. It's one model in
 
 ## The lore connection (one only)
 
-Three brass-coloured tally strokes scratched into the top hinge plate of the bathroom door frame, three for an apartment built for three (Mom, Jade and me). Plain tally, no extra stroke, no Keeper, no thread touched. Seen in L57's second shot: as the top hinge pin comes out, a close on the bare hinge plate on the frame, the strokes beside the screw holes. Held 1.6 s. Not narrated. The building's rule is simply how that building is and never involves the Keepers.
+Three brass-coloured tally strokes scratched into the top hinge plate of the bathroom door frame, three for an apartment built for three (Mom, Jade and me). Plain tally, no extra stroke, no Keeper, no thread touched. Seen in L58's second shot: as Jade's top hinge pin comes out, a close on the bare hinge plate on the frame, the strokes beside the screw holes. Held 1.6 s. Not narrated. The building's rule is simply how that building is and never involves the Keepers.
 
 ## Format
 
 Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase without quote marks. CAPS are the key words, in `#ffb21f`. Shots under each line. A cut or punch-in every 1 to 2 s, no still over 2 s. Every line over 2 s has two shots.
 
-## 01 The rule (L01 to L10, about 0 to 20 s)
+## 01 The rule (L01 to L10b, about 0 to 22 s)
 
 - **Where:** our bathroom door, the downstairs kitchen, the building's hall, the stairwell, upstairs.
-- **Shots:** 14.
+- **Shots:** 17.
 
-- `L01` narrator: Never close a DOOR / in our BUILDING. / Its locks DOUBLE.
-  - [tight close, centred: our yellow bathroom door, bright morning, two locks (a chrome bolt at head height, a brass box lock crooked at knee height). Push in through the line. On "DOUBLE" the door swings the last few centimetres shut by itself (pushed from inside, nobody seen) and two new locks pop on. The doubled clunk. Meter 2 → 4]
-- `L02` narrator: And they NEVER / come OFF.
-  - [punch in to the new box lock, its brass flap swinging. A short shove on the door from inside shakes it, and every lock holds fast]
+- `L01` narrator: Never let a DOOR / shut here. / Ours has a THOUSAND LOCKS.
+  - [two shots: a tight close, centred, on our bathroom door at 1,024 locks, bright morning, a lumpy brass and chrome bulge with a sliver of yellow paint at the frame. Push in. Then a punch in across the locks, every keyhole flap glinting. On "LOCKS" the doubled clunk and the whole pile shudders with a jingle. Meter 1,024 from the first frame]
+- `L02` narrator: Every time it SHUTS, / they DOUBLE.
+  - [our kitchen cupboard door with one brass lock, nudged shut by my elbow: a second lock pops on beside the first. Bright]
+- `L02b` narrator: And they NEVER / come OFF.
+  - [punch in: my hand tugging at the new lock, hard. It holds fast]
 - `L03` narrator: The guy DOWNSTAIRS / SNEEZED / by his FRIDGE.
   - [the downstairs man in his green bathrobe, `neutral`, mid sneeze beside his open fridge. The fridge door swings shut]
 - `L04` narrator: Now it has / SIXTY-FOUR LOCKS, / so he keeps the MILK / in a COOLER.
@@ -167,16 +174,20 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [punch in on Mrs. Pike, `smile`, mouth wide on a long note]
 - `L10` narrator: And MR. DALE / across the hall / takes home ANYTHING / left at the CURB.
   - [two shots: Mr. Dale in his tan cardigan in his open doorway across the hall from ours, `smile`, his place full of mismatched curb finds. Then the street: him carrying a curb lamp up the front steps]
+- `L10b` narrator: And at NIGHT, / the fridge downstairs / CLICKS by ITSELF.
+  - [two shots: the downstairs kitchen at night, warm amber nightlight (`#ffb86b`), lit to read, nobody in it, the 64-lock fridge glinting. Then a close: one keyhole flap high on the fridge swings shut with a tiny click, and something tiny buds beside it (plant 3, not explained). Back to bright on the next cut]
 
-## 02 Me and Jade (L11 to L15, about 20 to 30 s)
+## 02 Me and Jade (L11 to L15, about 22 to 34 s)
 
 - **Where:** our apartment's inner hall, morning.
-- **Shots:** 7.
+- **Shots:** 8.
 
 - `L11` narrator: ME? / I've never closed a door / in my LIFE.
   - [me in my mustard hoodie in my bedroom doorway, `smile`, my door wide open behind me, not a single lock on it]
 - `L12` narrator: But my big sister, JADE, / SLAMS them.
   - [Jade in her teal cloud T-shirt and pink slippers, `annoyed`, stepping past me toward the bathroom. Her own bedroom door behind her has 16 locks]
+- `L12b` narrator: A MONTH ago, / our bathroom door / had just FOUR.
+  - [the plain yellow bathroom door, bright, four locks (a chrome bolt at head height, a brass box lock crooked at knee height, two more). The meter winds back 1,024 → 4 over 0.5 s with a soft rewind zip]
 - `L13` narrator: We have ONE BATHROOM, / and we both need it / at SEVEN FIFTEEN.
   - [two shots: a wall clock in the kitchen at 7:15 (hands only, no numbers on its face). Then the two of us side by side in the inner hall, facing the bathroom door, `annoyed`]
 - `L14` narrator: So every MORNING, / we FIGHT / for it.
@@ -184,7 +195,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L15` narrator: And every morning, / she gets there FIRST / and SLAMS it.
   - [two shots: Jade inside the doorway, `smug`, the door swinging. Then the door shut in my face: four new locks pop on. Meter 4 → 8]
 
-## 03 Doubling (L16 to L35, about 30 to 65 s)
+## 03 Doubling (L16 to L35, about 34 to 72 s)
 
 - **Where:** our apartment, a run of mornings, bright.
 - **Shots:** 26.
@@ -230,22 +241,22 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L35` narrator: And Jade sleeps / in the HALL.
   - [Jade on a camping mat in the inner hall by her doorway, lilac blanket, `annoyed`, Mom's door open behind her. Bright evening light]
 
-## 04 By itself (L36 to L54, about 65 to 96 s)
+## 04 By itself (L36 to L54, about 72 to 106 s)
 
 - **Where:** our inner hall at night, nightlight and moonlight. The one dim scene, faces still lit.
-- **Shots:** 24.
+- **Shots:** 26.
 - **Drop P01 before L36.**
 
 - `L36` narrator: That NIGHT, / I hear a tiny / CLICK.
   - [two shots: me in bed, eyes open, `worried`, moonlight. Then my open doorway, the hall beyond in nightlight amber]
 - `L37` narrator: Every lock has a little FLAP / over its KEYHOLE.
   - [close on one brass lock high on the pile, its keyhole flap catching the amber light]
-- `L38` narrator: A little DOOR.
-  - [punch in on the flap]
+- `L38` narrator: It swings on a tiny HINGE, / like a little DOOR.
+  - [two shots, a match cut at the same angle and the same swing: an extreme close on the flap swinging open and back on its tiny hinge pin. Then our bathroom door a month ago (day colours, four locks) swinging on its big hinge the same way, the same speed. Then back to the flap]
 - `L39` narrator: And one of them / just SWUNG SHUT.
   - [the flap swings closed with a tiny click]
-- `L40` narrator: Now THAT lock / has a LOCK.
-  - [a tiny lock pops onto that lock. Meter 1,024 → 1,025]
+- `L40` narrator: A door SHUT. / So THAT lock / gets a LOCK.
+  - [two shots: the shut flap, held still. Then a tiny lock pops onto that lock, its own tiny flap on top. Meter 1,024 → 1,025]
 - `L41` narrator: CLICK. / Click click. / Click click click click.
   - [three quick shots, one per chunk: one flap shutting, two flaps, four flaps, each followed by new locks budding. The drone enters]
 - `L42` narrator: NOBODY'S / touching it.
@@ -270,12 +281,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [two shots: a gap near the top of the pile, Jade's face in it, lilac blanket over her head, `worried`, lit by the nightlight. Then me, `worried`, looking back. Meter 65,536]
 - `L52` narrator: Through the GAPS, / she says she's SORRY.
   - [Jade in the gap, `sheepish`]
-- `L53` narrator: She says / I always BANG on it / till she RUSHES.
-  - [a quick insert: me pounding the bathroom door on an earlier morning, `annoyed`, the lit day colours. Then back to Jade in the gap]
+- `L53` narrator: She says she only SLAMS / the bathroom door / because I POUND on it.
+  - [two shots: a quick insert on an earlier morning, the lit day colours: me pounding on the yellow bathroom door with my fist, `annoyed`, and the door flying shut from inside. Then back to Jade in the gap, `sheepish`]
 - `L54` narrator: I tell her / I'm sorry TOO.
   - [me, `sheepish`, foot still on the door]
 
-## 05 The loophole (L55 to L64, about 96 to 113 s)
+## 05 The loophole (L55 to L64, about 106 to 123 s)
 
 - **Where:** our inner hall, the ceiling light on, then the stairs at dawn and the street.
 - **Shots:** 15.
@@ -284,10 +295,10 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [the hall lit by its ceiling light now (across the cut). Close on the bathroom door's hinge side, three steel hinges along the frame, the only bare metal not under locks]
 - `L56` narrator: The locks NEVER / come OFF. / But the DOOR / DOES.
   - [two shots: me, `smile`, an idea. Then Jade's face in the gap, `smile` back. The bouncy bass comes back on "DOES"]
-- `L57` narrator: Three HINGE PINS. / Jade does the TOP, / I do the BOTTOM.
-  - [two shots: Jade reaching up at the top hinge from her side (cut away before her hand meets the pin). Then a close on the bare top hinge plate, its pin gone, three tally strokes scratched beside the screw holes, held 1.6 s (lore plant)]
-- `L58` narrator: We meet / in the MIDDLE.
-  - [a hinge pin dropping onto the tile with a ring, then a second]
+- `L57` narrator: Three HINGE PINS. / I pull the BOTTOM two.
+  - [two shots: me crouched on the floor at the hinge side of the frame, in the gap along the wall, working the bottom pin up and out. Then the middle one, both dropping onto the tile with a ring]
+- `L58` narrator: Jade REACHES / over the PILE / for the TOP one.
+  - [two shots: Jade standing on her bed-side chair on the far side, `worried`, stretching her arm over the top of the pile to the top hinge (cut away before her hand meets the pin). Then a close on the bare top hinge plate, its pin gone, three tally strokes scratched beside the screw holes, held 1.6 s (lore plant)]
 - `L59` narrator: It's a TWO-PERSON door.
   - [the two of us either side of the pile, `neutral`, braced]
 - `L60` narrator: We lift it / out of the FRAME, / still CLICKING / in our ARMS.
@@ -301,14 +312,16 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L64` narrator: We stand it / at the CURB, / and BACK away / SLOWLY.
   - [two shots: the pile on end at the sunny curb, the size of a parked car. Then the two of us walking backward up the front steps, `smile`]
 
-## 06 The next morning (L65 to L72, about 113 to 128 s)
+## 06 The next morning (L65 to L72, about 123 to 140 s)
 
 - **Where:** our apartment and the building's hall, sunny morning.
-- **Shots:** 11.
+- **Shots:** 14.
 - **Drop P02 before L68.**
 
 - `L65` narrator: Now our bathroom / has a SHOWER CURTAIN / for a door.
   - [two shots: the bare bathroom frame with a bright striped shower curtain hung across it on a tension rod. Then Mom, `smile`, straightening it]
+- `L65b` narrator: A curtain isn't a DOOR, / so Jade can SLAM it / all she WANTS.
+  - [two shots: Jade whipping the curtain shut on its rod with a big swish, `laugh`. Then a close on the curtain: no lock pops on, nothing at all, and the meter holds]
 - `L66` narrator: We KNOCK / on the FRAME.
   - [close: my knuckles at the wooden frame beside the curtain (cut before contact, the knock heard)]
 - `L67` narrator: The next MORNING, / Jade lets me / go FIRST.
@@ -319,15 +332,16 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [two shots: from our open front door, across the building hall, through Mr. Dale's open front door: the pile set in his bathroom doorway at the end of his hall. Then Mr. Dale, `smile`, admiring it]
 - `L70` narrator: It's VERY / THICK.
   - [punch in on the pile in his doorway, glinting]
-- `L71` narrator: And through his open DOOR, / we can hear it / CLICKING.
-  - [two shots: Jade and me in our doorway, `worried`, side by side. Then a close on one of its flaps swinging shut. Meter 262,144]
-- `L72` narrator: So, Mr. DALE, / whatever you DO,
-  - [me looking straight down the lens, `worried`, then 0.25 s after "DO," cut to L01's first frame: our yellow door, two locks, meter back to 2]
+- `L71` narrator: It's still CLICKING. / And it's PUSHING / on his FRONT DOOR.
+  - [two shots: a close on one of its flaps swinging shut, new locks budding. Meter 262,144. Then wider across the building hall: the pile has filled his little hall overnight, and its front lump nudges his wide-open front door, which starts to swing toward shut, facing ours]
+- `L72` narrator: So, Mr. DALE, / get your FOOT on it. / And whatever you DO,
+  - [two shots: Mr. Dale in his doorway, `neutral`, looking down at his swinging door, a slipper lifting. Then me looking straight down the lens, `worried`. 0.25 s after "DO," cut to L01's first frame: our 1,024-lock door, meter back to 1,024]
 
 ## Risks
 
 - **"locked", "trapped", "took", "pulled":** all in `checks.HARM`, and none is in the narration. The rule's word is always "lock" or "locks" (nouns), never the past tense. Keep it that way in any revision.
-- **Peril:** the pile pushing my door (L48 to L50) is comic tension, never shown as danger. Nobody is shut in anywhere, the pile never touches a person's body, and Jade is in her own doorway, not under it. If a reviewer reads it as peril, cut L49 and keep L48 and L50.
+- **The wind back (L12b):** a first-time viewer has to see L01 as later. The narration says "A MONTH ago" and the meter rolls down on screen. If the critic still finds it confusing, add "This is how it GOT there." before L03 rather than cutting the flash-forward.
+- **Peril:** the pile pushing my door (L48 to L50) and Mr. Dale's (L71) is comic tension, never shown as danger. Nobody is shut in anywhere, the pile never touches a person's body, and Jade is in her own doorway, not under it. If a reviewer reads it as peril, cut L49 and keep L48 and L50.
 - **The meter's numbers:** the spoken counts (4, 8, 64, 256, 512, 1,024, 2,048, 4,096, 8,192) must match the meter on the same beat. The 1,025 at L40 is on purpose (one new lock on a lock).
 - **"Mr. Dale":** Whisper may hear "Mr. Day" or "Mr. Gale". If `asr` flags it, respell for the voice only ("Mister Dayl"), captions unchanged.
 - **Mrs. Pike in the shower (L08, L09):** head and shower cap above an opaque curtain only. Keep it clearly comic and never below the shoulders.
