@@ -108,7 +108,7 @@ from the pixels and from the edit agree within 0.9 (table below).
 
 ★ our hit (82.6% chose to view; edit metrics only, its final is in `evanlin23/content`). ✗ our flops (61 to 65%). The other five are the newest finals (`film-<story>` artifacts of 2026-11-03, and `legacy/` for closing-time), all drawn before the polish pack merged. Each was measured against the story files at the commit its film was drawn from (the timeline matches the film's length to the frame in all nine). "–": not measured (no film, or no mix report).
 
-## Targets (provisional)
+## Targets (provisional, before the hit data; see "The hit data" below for the current ones)
 
 | Metric | Target | back-row | flops (ep20, ep38, knock-back) | newest five |
 |---|---|---|---|---|
@@ -147,10 +147,45 @@ changes per 10 s, our own "frame 1 is lit" rule and the polish pack's 1.5 s stil
 hit data. back-row itself misses some of them (characters move in 38% of its shots), so they can't predict views yet.
 They make it look better. Sound: the house master and our harsh-sound checks.
 
-**Warnings now, blocks later.** Every target only warns until the browser study's hit numbers arrive. Then each
+**Warnings now, blocks later.** Every target only warned until the browser study's hit numbers arrived. Each
 target the hits confirm (the 17 hits sit inside the range, and back-row sits nearer them than the flops) becomes a
 block in `qa`. A target the hits contradict gets moved to their range. Re-set the ranges here and in
 `scripts/measure.py` → `TARGETS` together.
+
+## The hit data (browser study, 2026-11-03) and the targets it sets
+The owner's extension measured 17 fast-rising blocky Shorts plus back-row, ep38 and knock-back, all 20 played once
+with no bot check (`craft-metrics-hits.jsonl`). Audio couldn't be heard, so no sound numbers; the eye notes cover
+only videos 12 to 17 (captions 1 to 3 words, capital height 0.030 to 0.035 of the frame; ours is 0.031).
+
+**The browser and the file agree.** On the two flops measured both ways, the browser's numbers match
+`measure.py` on the film: ep38 picture changes 8.0 vs 7.8 (0.5 s) and 7.0 vs 7.6 (0.25 s), motion 3.8 vs 4.0,
+brightness 0.29 vs 0.29, longest still 2.5 vs 2.4 s, black dips 2 vs 2; knock-back 10.1 vs 10.2, 10.3 vs 11.2, 5.5
+vs 5.7, 0.27 vs 0.26, 1.25 vs 1.33 s, 2 vs 2. So the hits' numbers apply to ours directly.
+
+| Metric | 17 hits: p10 / median / p90 | back-row (browser) | ep38, knock-back | Confirmed? | Target |
+|---|---|---|---|---|---|
+| Picture changes / 10 s (0.5 s) | 12.7 / 16.5 / 18.5 | 13.7 | 8.0, 10.1 | **yes** | **≥ 12.5, block** |
+| Picture changes / 10 s (0.25 s) | 14.2 / 21.3 / 29.8 | 15.4 | 7.0, 10.3 | **yes** | **≥ 14, block** |
+| Motion energy, 0.25 s (%) | 6.0 / 7.6 / 11.0 | 6.7 | 3.8, 5.5 | **yes** | **≥ 6.0, block** |
+| Longest still, 0.25 s (s) | 0 / 0.25 / 0.75 | 1.0 | 2.5, 1.25 | **yes** | **≤ 1.0, block** |
+| Brightness | 0.25 / 0.45 / 0.55 | 0.27 | 0.29, 0.27 | no: back-row is no nearer | ≥ 0.35, warn |
+| Brightness, first 3 s | 0.28 / 0.50 / 0.62 | 0.26 | 0.41, 0.16 | no | ≥ 0.30, warn |
+| Dark frames | 0 / 0.02 / 0.08 | 0.13 | 0.04, 0.14 | no | ≤ 0.08, warn |
+| Black dips | 0 / 0 / 1 | 8 | 2, 2 | no: back-row had the most | ≤ 1, warn |
+| Saturation | 0.43 / 0.51 / 0.64 | 0.36 | 0.46, 0.71 | no: back-row is the lowest | ≥ 0.42, warn |
+| Contrast | 0.18 / 0.22 / 0.25 | 0.22 | 0.22, 0.20 | no: all of ours are inside | ≥ 0.18, warn |
+
+**What it says.** The hits change the picture about twice as often as we do and never hold still: their median
+longest still is 0.25 s, and one sample in four changes by more than our "still" threshold. Pace is the one craft
+difference that separates back-row from our flops *and* lines up with the hits. The hits are also brighter and more
+saturated, with no dips to black, but back-row wasn't (0.27 brightness, 0.36 saturation, 8 blackout beats), so
+those stay warnings: a brighter grade may help, but our own numbers don't show it yet.
+
+**Where we stand against the blocks** (measured from the films): every one of our nine finals fails all four or three,
+including the first polished one. ep62-six-riders: 11.3 and 13.4 picture changes, motion 5.7, longest still 1.33 s,
+close on all four. ep20, ep34, ep36, ep38 and closing-time sit at about half the hits' pace (6.7 to 7.8 changes).
+**The blocks apply to films drawn from 2026-11-03 6:00 PM Central.** Older films get the misses listed as `redraw`
+in their qa notes and keep uploading, so the one-a-day run doesn't stop while the engine catches up.
 
 ## The biggest gaps
 Ranked by how far we are from the target and how many films it hits.
