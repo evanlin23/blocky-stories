@@ -40,6 +40,8 @@ The writer keeps this file. Each story is complete on its own, and plants one sm
 - Rule four is on the back of the torn page. Nobody has read it, Otis included. He folded the page shut at the end of the pilot. It's the next episode's door, if the host continues.
 - The lectern is one seamless block of pale old stone, older than the brick hall (the "older object inside a newer room" thread). The book itself is the town's, made by people.
 
+**Where the build lives (reuse, don't redraw):** `stories/rule-three/set.py` holds `dress_otis()` (waistcoat, buttons, bow tie, mustache, cowlick, frames, ink thumb on the rig; cast spec in `stories/rule-three/generator/make_story.py`, key `me`), `build_book()`, `build_stamp()`, `build_lectern()`, `spread_image()` (the pages, drawn with PIL) and `build_tag()` (the rule meter, a camera-parented tag with a flip cue). Milo, Mom and the hall are in the same files. A later episode copies those functions into its own `set.py` and changes only the tag's number.
+
 **His look (copy exactly):** R6 body, adult, about 40. Dark chestnut block hair, short, with a neat side part and one cowlick sticking up at the crown. Thick round black glasses drawn on the face, level brows, a small neat block mustache. A cobalt-blue waistcoat `#2f5fd0` with four brass buttons, over a white shirt with the sleeves rolled to the elbow, a cherry-red bow tie `#d6283b`, charcoal trousers, brown shoes. Faces: `neutral`, `smile`, `worried`, `scared`, `sheepish`.
 - **Signature prop:** a brass hand stamp the size of a mug, with a round cherry-red wooden knob, inked ink blue `#2b4bd8`. His right thumb is always ink-blue.
 - **Always on him:** the folded cream torn page of rules three and four, its corner out of his waistcoat's breast pocket.
