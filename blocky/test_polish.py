@@ -205,3 +205,14 @@ def test_risers_are_not_ducked_and_whooshes_avoid_words():
     y = sound.polish_sound({"kind": "riser", "dur": 1.8, "lp": 3800.0}, 1)
     q = len(y) // 4
     assert np.sqrt((y[q:2 * q] ** 2).mean()) > 0.05 * np.abs(y).max()   # it builds over its length, not only the end
+
+
+def test_a_quiet_span_keeps_whooshes_hits_and_added_punches_out():
+    st, tl = story()
+    at = timeline.resolver(tl["lines"], tl["duration"])
+    p = {**polish.spec(st), "quiet": [["L03", "L05"]]}
+    a, b = at("L03"), at("L05")
+    ev = polish.sound_events(tl, st, p, at)
+    assert not any(a <= e["t"] + (0.12 if e["kind"] == "whoosh" else 0) <= b
+                   for e in ev if e["kind"] in ("whoosh", "lowhit"))
+    assert not any(a <= t <= b for t in polish.emph_times(tl, p, at))

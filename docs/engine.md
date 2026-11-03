@@ -173,14 +173,17 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
 "look": {"polish": {"emph": ["L03.1", "L19"],   // lines to punch in on (default: the hook and every all-caps caption or big word)
                     "reveal": ["L38"],          // a fuller hit (big pause words are always reveals)
                     "twist": "L34",             // a riser that ends here (risers also run into every music_drops hole)
+                    "quiet": ["L36.5", ["L35", "L37"]],   // no hit on a word; no whoosh, hit or added punch-in in a span (a warm beat)
+                    "auto": true,               // also punch in on all-caps captions, big words and the hook (default)
                     "sway": ["S12", "S13"],      // gentle handheld on tense shots (true: every shot)
                     "bed_kind": "rain",          // the bed (default: the story's most-used recorded ambience, else room)
                     "punch": 0.06, "drift": 0.03, "whoosh_db": -24, "grade": "bright"}}
 ```
 
-- **Sound:** a recorded whoosh, low-passed at 3.5 kHz, 0.12 s before a cut (at most one per 1.4 s) and on every
-  punch-in; a soft sub thump on emphasised lines and a fuller hit on reveals; a riser into each `music_drops` hole
-  (the silence cuts it off) and into `twist`; a room bed from `assets/audio/amb/` under the whole film at -44 LUFS,
+- **Sound:** a recorded whoosh, low-passed at 3 kHz, 0.12 s before a cut that falls between lines (never under a
+  word; at most one per 1.4 s) and on every punch-in; a soft sub thump on emphasised words and a fuller hit on
+  reveals, each moved onto the chunk's key word (`on_key`); a 1.8 s riser into each `music_drops` hole (the silence
+  cuts it off; the voice doesn't duck it) and into `twist`; a room bed from `assets/audio/amb/` under the whole film at -41 LUFS,
   which a drop only dips 12 dB, so nothing is ever digital silence. Doors and other marks: an acting key with
   `"sfx": "door"` (or `latch`, `creak`, `thud`, `knock`; `sfx_db` sets its level) plays it there, panned to the
   character; so does a cue named `door...`. Every polish sound stays clear of the builder's own `sfx` (0.25 s),
@@ -188,7 +191,8 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   the voice. The master is unchanged (-14 LUFS, true peak under -1 dBTP on the file).
 - **Captions:** pop in from 90% to 100% over 80 ms (the default is a slower overshoot).
 - **Motion**, on the output crop, so it's smooth on every frame even with drawings on twos or fours: a 6% punch-in
-  eased over 0.12 s on emphasised lines, held to the cut; a 3% drift (in or out, with a slight slide) on every shot
+  eased over 0.12 s on emphasised words, held to the cut, plus one in the middle of any shot over 2.2 s that has
+  none (`fill`), so something changes every 1 to 2 s; a 3% drift (in or out, with a slight slide) on every shot
   over 1.5 s whose camera doesn't move; an optional slow sway. All of it reads as no change to `flash`.
 - **Picture:** the `bright` grade raises exposure to at least 1.04 and saturation to 1.06, caps contrast at 1.05,
   the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them. The

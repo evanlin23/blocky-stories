@@ -39,7 +39,7 @@ DEFAULTS = {
     "whoosh": True, "whoosh_db": -19.0, "whoosh_gap": 1.4, "whoosh_lp": 3000.0,
     "hits": True, "hit_db": -17.0, "reveal_db": -11.0,
     "riser": True, "riser_db": -15.0, "riser_dur": 1.8,
-    "bed": True, "bed_kind": None, "bed_lufs": -44.0, "bed_drop_db": -12.0,
+    "bed": True, "bed_kind": None, "bed_lufs": -41.0, "bed_drop_db": -12.0,
     "marks": True, "mark_db": -14.0,
     "duck": True, "duck_db": 6.0,
     # captions
@@ -89,6 +89,23 @@ def on_key(tl: dict, t: float) -> float:
     return t
 
 
+def quiet_spans(p: dict, at) -> list[tuple[float, float]]:
+    """The builder's `quiet` marks: a ref keeps a hit off that word (0.5 s either side); a [from, to] pair keeps
+    every polish whoosh, hit and added punch-in out of a span (a warm beat that should stay still)."""
+    out = []
+    for q in p.get("quiet") or []:
+        if isinstance(q, (list, tuple)):
+            out.append((at(q[0]), at(q[1])))
+        else:
+            t = at(q)
+            out.append((t - 0.5, t + 0.5))
+    return out
+
+
+def _in(t: float, spans) -> bool:
+    return any(a <= t <= b for a, b in spans)
+
+
 def emph_times(tl: dict, p: dict, at=None) -> list[float]:
     """When the punch-ins and key-word hits land, each on its key word: the builder's `emph` refs, plus (with
     `auto`, the default, or with no refs) every big pause word and every caption whose words are all key words
@@ -104,10 +121,10 @@ def emph_times(tl: dict, p: dict, at=None) -> list[float]:
         caps = tl["captions"]
         auto = [on_key(tl, c["start"] + 0.04) if not c.get("big") else c["start"] + 0.04 for i, c in enumerate(caps)
                 if i == 0 or c.get("big") or all(_is_key(w) for w in c["text"].split())]
-    quiet = [at(r) for r in p.get("quiet") or []]
+    quiet = quiet_spans(p, at)
     out = list(mine)
     for t in sorted(auto):
-        if all(abs(t - u) >= p["punch_gap"] for u in out) and all(abs(t - q) > 0.5 for q in quiet):
+        if all(abs(t - u) >= p["punch_gap"] for u in out) and not _in(t, quiet):
             out.append(t)
     if p.get("fill"):
         caps = tl["captions"]
@@ -118,7 +135,7 @@ def emph_times(tl: dict, p: dict, at=None) -> list[float]:
             cs = [on_key(tl, c["start"] + 0.04) for c in caps if s["start"] + 0.8 <= c["start"] <= s["end"] - 0.6]
             if cs:
                 t = min(cs, key=lambda x: abs(x - mid))
-                if all(abs(t - u) >= 1.0 for u in out):
+                if all(abs(t - u) >= 1.0 for u in out) and not _in(t, quiet):
                     out.append(t)
     return sorted(out)
 
@@ -144,6 +161,8 @@ def sound_events(tl: dict, st: dict, p: dict, at) -> list[dict]:
     ev = []
     dur = tl["duration"]
     emph = emph_times(tl, p, at)
+    quiet = quiet_spans(p, at)
+    spans = [q for q in quiet if q[1] - q[0] > 1.0 + 1e-6]   # whole spans keep whooshes out too
     if p["whoosh"]:
         last = -9.0
         # every punch-in, and the cuts that fall between lines (never under a word), at most one per whoosh_gap
@@ -152,7 +171,7 @@ def sound_events(tl: dict, st: dict, p: dict, at) -> list[dict]:
         cuts = [t for t in cut_times(tl) if any(abs(t - o) < 0.06 for o in onsets)]
         for t in sorted(set(emph) | set(cuts)):
             forced = t in emph
-            if (forced or t - last >= p["whoosh_gap"]) and clear(t) and 0.3 < t < dur - 0.3:
+            if (forced or t - last >= p["whoosh_gap"]) and clear(t) and 0.3 < t < dur - 0.3 and not _in(t, spans):
                 ev.append({"t": t - 0.12, "kind": "whoosh", "db": p["whoosh_db"] + (1.5 if forced else 0.0),
                            "lp": p["whoosh_lp"], "pan": 0.0})
                 last = t
@@ -161,9 +180,8 @@ def sound_events(tl: dict, st: dict, p: dict, at) -> list[dict]:
         for t in rev:
             if clear(t):
                 ev.append({"t": t, "kind": "hit", "db": p["reveal_db"], "lp": 3800.0, "pan": 0.0})
-        quiet = [at(r) for r in p.get("quiet") or []]   # the builder's "no hit here" (a warm line)
         for t in emph:
-            if clear(t) and all(abs(t - u) >= SEP for u in rev) and all(abs(t - q) > 0.5 for q in quiet):
+            if clear(t) and all(abs(t - u) >= SEP for u in rev) and not _in(t, quiet):
                 ev.append({"t": t, "kind": "lowhit", "db": p["hit_db"], "lp": 1200.0, "pan": 0.0})
     if p["riser"]:
         from blocky.sound import drop_spec
