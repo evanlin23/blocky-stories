@@ -178,15 +178,21 @@ def face_image(path):
     from PIL import Image, ImageDraw
 
     S = 512
-    im = Image.new("RGB", (S, S), hexrgb("#efe3c4"))
+    # a cream disc lit from below: warm amber at the chin, dark toward the brow, no mouth, no nose
+    top, bot = hexrgb("#2a2622"), hexrgb("#d9a867")
+    im = Image.new("RGB", (S, S))
+    px = im.load()
+    for yy in range(S):
+        u = (yy / (S - 1)) ** 1.3
+        c = tuple(int(top[i] + (bot[i] - top[i]) * u) for i in range(3))
+        for xx in range(S):
+            px[xx, yy] = c
     d = ImageDraw.Draw(im)
-    # a faint darker rim, and a soft shade under the cheeks (no mouth, no nose)
-    d.ellipse([6, 6, S - 6, S - 6], outline=hexrgb("#cdbb94"), width=14)
     for sx in (-1, 1):
         cx, cy, r = S / 2 + sx * 150, S * 0.46, 40
-        d.ellipse([cx - r - 14, cy - r - 14, cx + r + 14, cy + r + 14], fill=hexrgb("#d9c9a0"))
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(10, 9, 12))
-        d.ellipse([cx - r * 0.55, cy - r * 0.62, cx - r * 0.1, cy - r * 0.18], fill=(255, 252, 240))
+        d.ellipse([cx - r * 1.55, cy - r * 1.55, cx + r * 1.55, cy + r * 1.55], fill=(238, 222, 180))   # a pale eye ring: the brightest thing
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(8, 7, 9))
+        d.ellipse([cx - r * 0.42, cy - r * 0.5, cx - r * 0.2, cy - r * 0.28], fill=(255, 252, 240))   # a pinpoint glint
     im.save(path)
     return path
 
@@ -197,7 +203,7 @@ class Climber:
 
     def __init__(self, kit):
         self.kit = kit
-        moss, brass, cream = P("#6f8f6a", 0.85, 0.08), P("#a8874a", 0.45, 0.5), P("#efe3c4", 0.7, 0.1)
+        moss, brass, cream = P("#5f7d5b", 0.85, 0.08), P("#a8874a", 0.45, 0.5), P("#efe3c4", 0.7, 0.1)
         dark = P("#3f5a40", 0.9, 0.05)
         self.root = E(None, (0, 0, 0), "climber")
         # legs and the lower coat are scaled to the hip height by place()
@@ -237,7 +243,7 @@ class Climber:
         nt.links.new(gc.outputs["Generated"], tex.inputs["Vector"])
         nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
         em = nt.nodes.new("ShaderNodeEmission")
-        em.inputs["Strength"].default_value = 0.22
+        em.inputs["Strength"].default_value = 0.3
         nt.links.new(tex.outputs["Color"], em.inputs["Color"])
         ad = nt.nodes.new("ShaderNodeAddShader")
         nt.links.new(b.outputs[0], ad.inputs[0])
@@ -296,6 +302,8 @@ LOOKS = {
             "world": 0.12, "win": ("#24306e", 1.0), "exp": 0.3},
     "roomdim": {"hall": 0.0, "hallceil": 0.0, "stairs": 0.0, "landing": 0.0, "nl": 1.0, "kitchen": 0.0, "room": 0.07, "moon": 0.5,
                 "world": 0.12, "win": ("#24306e", 1.0), "exp": 0.3},
+    "creature": {"hall": 0.0, "hallceil": 0.0, "stairs": 0.0, "landing": 0.0, "nl": 1.0, "kitchen": 0.0, "room": 0.0, "moon": 0.12,
+                 "world": 0.025, "win": ("#24306e", 1.0), "exp": 0.5},
     "dawn": {"hall": 0.4, "hallceil": 0.4, "stairs": 0.6, "landing": 0.8, "nl": 0.2, "kitchen": 0.9, "room": 0.5, "moon": 0.0,
              "world": 0.5, "win": ("#ffc6a0", 0.5), "exp": 0.0},
 }
@@ -413,7 +421,8 @@ def build(kit, story, tl):
     B(None, (1.1, 0.24, 0.1), (0, 4.97, LAND_Z + 2.1), fr, "dframe", 0.006)
     ctx["mydoor"] = E(None, (-0.45, 4.93, LAND_Z), "mydoor")
     bow = E(ctx["mydoor"], (0.45, 0, 2.0), "mydoorbow")
-    B(bow, (0.9, 0.045, 1.9), (0, 0, -0.95), white, "doorpanel", 0.008)
+    ctx["doormat"] = P("#fdfdfd", 0.5)
+    B(bow, (0.9, 0.045, 1.9), (0, 0, -0.95), ctx["doormat"], "doorpanel", 0.008)
     B(bow, (0.07, 0.07, 0.07), (0.34, -0.05, -1.0), brass, "knob", 0.02)
     ctx["mybow"] = bow
     # the room behind it
@@ -575,7 +584,7 @@ def animate(kit, story, tl, t, ctx):
     sc = bpy.context.scene
     L, cur = look_at(ctx, tl, t)
     sd = ctx["shots"][cur["id"]]
-    ctx["bg"].inputs["Strength"].default_value = L["world"]
+    ctx["bg"].inputs["Strength"].default_value = L["world"] * sd.get("world_g", 1.0)
     sc.view_settings.exposure = L["exp"] + sd.get("exp", 0.0)
     # ---- the round window
     col_, strength = L["win"]
@@ -639,7 +648,7 @@ def animate(kit, story, tl, t, ctx):
         a = math.radians(cc.get("yaw", 180))
         ctx["clkey"].location = (p[0] + cc.get("kx", 0.0), p[1] + cc.get("ky", -1.2), p[2] + cc.get("kz", 0.25))
         kit.aim(ctx["clkey"], (p[0] + cc.get("ax", 0.0), p[1] + cc.get("ay", 0.3), p[2] + cc.get("az", 1.0)))
-        ctx["clrim"].location = (p[0] + 1.6, p[1] + 0.4, p[2] + 2.3)
+        ctx["clrim"].location = (p[0] + cc.get("rx", 1.6), p[1] + cc.get("ry", 0.4), p[2] + cc.get("rz", 2.3))
         kit.aim(ctx["clrim"], (p[0], p[1], p[2] + 1.2))
         on_ = 1.0
     else:
@@ -673,7 +682,12 @@ def animate(kit, story, tl, t, ctx):
         if on:
             u = ss((t - cs["t"]) / max(1e-3, cs.get("dur", 1.6))) if cs.get("go") else 0.0
             o.location = ((-1 if i == 0 else 1) * lerp(0.12, 0.04, u), lerp(-5.5, -9.5, u), 1.05)
+    dm = ctx["doormat"].node_tree.nodes["Principled BSDF"].inputs["Base Color"]
+    dk = sd.get("door", 1.0)
+    dm.default_value = (dk, dk, dk, 1.0)
     ov = {n: L[n] for n in ("hall", "hallceil", "stairs", "landing", "nl", "kitchen", "room", "moon")}
+    ov["moon"] *= sd.get("moon_g", 1.0)
+    ov["nl"] *= sd.get("nl_g", 1.0)
     ov["camfill"] = fill
     ov["torch"] = torch
     ov["clkey"] = on_ * sd.get("clkey", 1.0)
