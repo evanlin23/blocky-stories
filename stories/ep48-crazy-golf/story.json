@@ -1,6 +1,6 @@
 {
  "slug": "ep48-crazy-golf",
- "title": "In This Town Your Shadow Stays Where You're HAPPIEST",
+ "title": "In this town, your shadow stays where you were happiest",
  "made_for_kids": false,
  "premise": "In a town where nobody's shadow stays under them and each one sits wherever its owner was happiest, I come home for the last week of my dad's crazy golf course and watch the old visitors' shadows slip out under the gate while something wrung like a cloth begins to stand on the last hole's second tee.",
  "twist": "The shadow on the last green is mine, from the summers he taught me the course, and the round-headed one at my own feet is his: his happiest place is wherever I am. The second tee was built for a second player, so I step onto it and play the last hole with him.",
@@ -640,19 +640,11 @@
      "i'm his son,"
     ],
     [
-     "home from",
-     "home from"
+     "home for the",
+     "home for the"
     ],
     [
-     "the CITY",
-     "the city"
-    ],
-    [
-     "for the",
-     "for the"
-    ],
-    [
-     "last WEEK.",
+     "LAST week.",
      "last week."
     ]
    ]
@@ -2330,15 +2322,15 @@
      0,
      [
       -3.0,
-      -3.6,
+      3.8,
       1.6
      ],
      [
       1.3,
-      0.8,
-      1.4
+      0.9,
+      1.45
      ],
-     26,
+     20,
      0.0
     ]
    ],
@@ -3910,15 +3902,15 @@
      0,
      [
       -0.1,
-      22.4,
-      1.2
+      18.4,
+      2.2
      ],
      [
       -0.1,
-      25.8,
-      0.8
+      25.6,
+      0.9
      ],
-     30,
+     24,
      0.0
     ]
    ],
@@ -4515,12 +4507,12 @@
    {
     "at": "L11",
     "pos": [
-     0.0,
-     -0.8
+     0.5,
+     0.3
     ],
     "blend": 0.0,
     "hidden": false,
-    "yaw": 180,
+    "yaw": -138,
     "expr": "soft"
    },
    {
@@ -4530,8 +4522,8 @@
    {
     "at": "L18",
     "pos": [
-     0.0,
-     -0.8
+     0.5,
+     0.3
     ]
    },
    {
@@ -5444,19 +5436,19 @@
    {
     "at": "L70",
     "pos": [
-     1.9,
-     0.9
+     0.0,
+     1.3
     ],
     "blend": 0.0,
     "hidden": false,
     "yaw": 0,
-    "expr": "soft"
+    "expr": "smile"
    },
    {
     "at": "L71",
     "pos": [
-     1.9,
-     0.9
+     0.0,
+     1.3
     ]
    },
    {
@@ -5864,8 +5856,8 @@
    {
     "at": "L70",
     "pos": [
-     -3.5,
-     -2.6
+     -4.4,
+     -3.0
     ],
     "blend": 0.0,
     "hidden": false,
@@ -5875,8 +5867,8 @@
    {
     "at": "L71",
     "pos": [
-     -3.5,
-     -2.6
+     -4.4,
+     -3.0
     ]
    },
    {
@@ -5964,8 +5956,8 @@
    {
     "at": "L70",
     "pos": [
-     -2.1,
-     -3.4000000000000004
+     -3.2,
+     -3.8
     ],
     "blend": 0.0,
     "hidden": false,
@@ -5975,8 +5967,8 @@
    {
     "at": "L71",
     "pos": [
-     -2.1,
-     -3.4000000000000004
+     -3.2,
+     -3.8
     ]
    },
    {
@@ -6088,8 +6080,8 @@
    {
     "at": "L70",
     "pos": [
-     -0.7000000000000002,
-     -2.6
+     -2.0,
+     -3.0
     ],
     "blend": 0.0,
     "hidden": false,
@@ -6099,8 +6091,8 @@
    {
     "at": "L71",
     "pos": [
-     -0.7000000000000002,
-     -2.6
+     -2.0,
+     -3.0
     ]
    },
    {
@@ -6188,8 +6180,8 @@
    {
     "at": "L70",
     "pos": [
-     0.6999999999999993,
-     -3.4000000000000004
+     2.0,
+     -3.8
     ],
     "blend": 0.0,
     "hidden": false,
@@ -6199,8 +6191,8 @@
    {
     "at": "L71",
     "pos": [
-     0.6999999999999993,
-     -3.4000000000000004
+     2.0,
+     -3.8
     ]
    },
    {
@@ -6259,8 +6251,8 @@
    {
     "at": "L70",
     "pos": [
-     2.0999999999999996,
-     -2.6
+     3.2,
+     -3.0
     ],
     "blend": 0.0,
     "hidden": false,
@@ -6270,8 +6262,8 @@
    {
     "at": "L71",
     "pos": [
-     2.0999999999999996,
-     -2.6
+     3.2,
+     -3.0
     ]
    },
    {
@@ -6335,8 +6327,8 @@
    {
     "at": "L70",
     "pos": [
-     3.5,
-     -3.4000000000000004
+     4.4,
+     -3.8
     ],
     "blend": 0.0,
     "hidden": false,
@@ -6346,8 +6338,8 @@
    {
     "at": "L71",
     "pos": [
-     3.5,
-     -3.4000000000000004
+     4.4,
+     -3.8
     ]
    },
    {

@@ -34,16 +34,16 @@ def noshadow(ob):
 def _L(**kw):
     base = dict(sun=0.0, sun_col="#ffe2b0", el=20.0, az=-70.0, fill=0.0, sky="#9bb6d8", sky_str=0.5, moon=0.0,
                 lamp=0.0, strings=0.0, rim=0.0, bed=0.0, hall=0.0, dadroom=0.0, kitchen=0.0, win=0.0, myshadow=1.0,
-                tee=0.0, bfill=0.0, dfill=0.0)
+                tee=0.0, bfill=0.0, dfill=0.0, kiosk=0.0)
     base.update(kw)
     return base
 
 
 LOOKS = {
     # late afternoon, warm, long object shadows
-    "day": _L(sun=4.2, sun_col="#ffd9a0", el=30, az=-60, fill=0.9, sky="#a8c0e0", sky_str=0.9),
-    "eve": _L(sun=4.2, sun_col="#ffcf8a", el=22, az=-62, fill=0.8, sky="#b6b0d0", sky_str=0.8),
-    "front": _L(sun=4.2, sun_col="#ffd9a0", el=22, az=0, fill=0.5, sky="#a8c0e0", sky_str=0.8),
+    "day": _L(sun=4.2, sun_col="#ffd9a0", el=30, az=-60, fill=0.9, sky="#a8c0e0", sky_str=0.9, kiosk=1.0),
+    "eve": _L(sun=4.2, sun_col="#ffcf8a", el=22, az=-62, fill=0.8, sky="#b6b0d0", sky_str=0.8, kiosk=1.0),
+    "front": _L(sun=4.2, sun_col="#ffd9a0", el=22, az=0, fill=0.5, sky="#a8c0e0", sky_str=0.8, kiosk=1.0),
     # my bedroom, evening
     "bedroom": _L(sun=0.0, sky="#554c70", sky_str=0.3, bed=1.0, myshadow=0.0),
     # Dad's empty room, moonlight in the window
@@ -63,7 +63,7 @@ LOOKS = {
                    strings=1.0, tee=1.0, rim=1.0),
     "dusk_str2": _L(sun=2.2, sun_col="#ff9450", el=9, az=-78, fill=0.14, sky="#4e426f", sky_str=0.32, lamp=1.0,
                     strings=1.0, tee=1.0, rim=1.0),
-    "sunday": _L(sun=4.6, sun_col="#fff0d0", el=58, az=-40, fill=1.0, sky="#a0c4ee", sky_str=1.1),
+    "sunday": _L(sun=4.6, sun_col="#fff0d0", el=58, az=-40, fill=1.0, sky="#a0c4ee", sky_str=1.1, kiosk=1.0),
     "gold": _L(sun=3.6, sun_col="#ffc070", el=13, az=-78, fill=0.4, sky="#9a88b0", sky_str=0.55, lamp=0.6),
     "gold2": _L(sun=2.8, sun_col="#ffa468", el=10, az=-78, fill=0.3, sky="#7c6c9c", sky_str=0.45, lamp=0.8),
     "blank": _L(),
@@ -500,6 +500,7 @@ def build(kit, story, tl):
     kit.light("bfill", "POINT", (G.BENCH_HOUSE[0] + 1.2, G.BENCH_HOUSE[1] - 2.2, 1.9), 1.0, "#ffd0a0", size=0.4,
               shadow=False)
     kit.light("dfill", "POINT", (bx - 1.1, by + 0.1, 1.7), 1.0, "#ffc890", size=0.4, shadow=False)
+    kit.light("kiosk", "POINT", (G.KIOSK[0] - 2.2, G.KIOSK[1] - 0.5, 1.9), 1.0, "#ffe0b0", size=0.5, shadow=False)
     kit.light("kitchen", "POINT", (cx, cy, 2.2), 1.0, "#ffbf80", size=0.2)
 
     # ------------------------------------------------------------------------------------ ground
@@ -911,6 +912,7 @@ def animate(kit, story, tl, t, ctx):
     gains["hall"] = look["hall"] * 110.0
     gains["dadroom"] = look["dadroom"] * 520.0
     gains["hallB"] = look["dadroom"] * 200.0
+    gains["kiosk"] = look["kiosk"] * 150.0
     gains["kitchen"] = look["kitchen"] * 220.0
     gains["bfill"] = look["bfill"] * 60.0
     gains["dfill"] = look["dfill"] * 70.0
