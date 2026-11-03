@@ -125,7 +125,7 @@ S(0, "warning: his face and the glass, the reflection already mid-cartwheel", mo
   **NSTAGE(4, r_neighbour="stage"))
 S("L01.2", "glass close: the cartwheel", move(((-2.7, -1.9, 1.35), (-2.7, 0, 1.3)), ((-2.7, -1.5, 1.35), (-2.7, 0, 1.3)), 32, 36), 1,
   **NSTAGE(4, r_neighbour="stage"))
-S("L01.3", "punch: his face, the glass behind", move(((-3.0, -2.0, 1.62), (-3.4, -0.5, 1.55)), ((-3.0, -1.6, 1.62), (-3.4, -0.5, 1.55)), 38, 44), 1,
+S("L01.3", "punch: his face, the glass behind", move(((-3.3, -2.3, 1.6), (-3.15, -0.8, 1.6)), ((-3.3, -1.9, 1.6), (-3.15, -0.8, 1.6)), 34, 38), 1,
   **NSTAGE(4, r_neighbour="stage"))
 S("L02", "the glass alone, landing", move(((-3.0, -1.7, 1.45), (-3.0, 0, 1.45)), ((-3.0, -1.3, 1.45), (-3.0, 0, 1.45)), 30, 36), 1,
   **NSTAGE(4, r_neighbour="stage"))
