@@ -1,5 +1,16 @@
 # ep37-comet-night
 
+## Opening redo 2026-11-03
+Per the opening recipe (`docs/research/playbook.md`, v1). Re-voice L01, L02, L14 and L68 only. Every other line is unchanged.
+- **New L01 (10 words, warning to you):** "Promises tie knots over your head. Don't let one pull TIGHT."
+- **New L02 (5 words):** "Not even by one TURN." (Paid off at L23, "And pulled one turn TIGHTER.")
+- **L14:** "Mum" is now "Mom" (US English).
+- **L68 (loop):** "I've got ONE of my own now." It runs straight into the new L01 ("...of my own now. Promises tie knots over your head."), and the warning now lands on my own new knot.
+- **Rule still clear:** L01 says promises tie knots over your head, L03 to L05 show unkept ones still hanging, and L06 says a kept one slips loose.
+- **Quotable line:** L05, "The baker has so many he wears them like a SCARF."
+- **First shot (new S01, under L01):** inside the dome under the warm bulbs, close on Dad's head and shoulders with the big grey knot over him (camera about 2 m, 35 mm), pushing in. On "TIGHT" the knot cinches one turn with the creak (the sound hit). S02 under L02: insert on the knot, matte and hard, the cord's loose end trailing out of frame. The bride and groom shots (old S01, S03, S04) go, since L02 no longer names the wedding. The square wide (old S02) moves to L03 or is cut. Daylight and the montage start at L03.
+- **British words left in other lines (flagged, not changed):** "grey" (L11, L24, L49, L62, a caption spelling only), "turned ROUND" (L35), "took ages" (L41).
+
 **Slug:** `ep37-comet-night` (pitch #21, `stories/ideas.md` → Batch 4 pitches)
 
 ## Premise
@@ -65,9 +76,9 @@ Every light change in this story is a slow fade of 1 s or more. Nothing flickers
 - Run `python -m blocky flash` pre-check on S45 to S53 and S62 to S71 at the final's frame steps.
 
 ## The hits checklist (RULES.md → What the hits do)
-1. **Rule opener:** L01, "In this town, every promise you make ties a KNOT over your head." (13 words.)
+1. **Rule opener:** L01, "Promises tie knots over your head. Don't let one pull TIGHT." (10 words, a warning, redo 2026-11-03.)
 2. **Marker by 2 s:** S01 opens on the bride and groom, faces in frame, sunlit, each with a cord and one bright rose knot above them. S02 shows the whole square with cords over every head.
-3. **Montage (5 examples in the first 15 s):** the wedding (L02), "I'll call you" (L03), the tangled friends (L04), the baker's scarf (L05), the kept umbrella and the clapping street (L06 to L07).
+3. **Montage (4 examples in the first 15 s since the redo):** "I'll call you" (L03), the tangled friends (L04), the baker's scarf (L05), the kept umbrella and the clapping street (L06 to L07).
 4. **Narrator as the exception:** L08 to L09, no cord at all, in the middle of a square full of them (S08).
 5. **Loved one at stake:** Dad, his knot pulling tighter and his face greyer every night (L14, L22 to L24, L32, L36, L46, L51).
 6. **Climax turns the rule's own logic:** a kept promise slips loose. A saved seat is kept only when someone sits in it (L59). I sit, and the knot slips free. No new magic.
@@ -164,14 +175,14 @@ Every light change in this story is a slow fade of 1 s or more. Nothing flickers
 ## Lore connection (one)
 Two short verdigris-green strokes scratched into the brass collar of the telescope (S75, under L65, "He slid the eyepiece cap across to me"), held 1.6 s, never narrated. In the canon (`stories/lore.md`) it's a plain tally: the dome was built for two, the man with the hole is a Keeper who stood in the empty second place, and its strokes are in its own colour. No extra stroke. It touches no open thread.
 
-## Narration (68 lines, 617 words, about 2:16 of speech at 290 wpm, about 2:19 with seven 0.5 s pause beats and the 0.3 s tail)
+## Narration (68 lines, 602 words since the 2026-11-03 opening redo, about 2:05 of speech at 290 wpm, about 2:09 with seven 0.5 s pause beats and the 0.3 s tail)
 Every line is `who: narrator`. CAPS are the caption key words. Characters are only quoted inside the narration.
 
-L01. In this town, every promise you make ties a KNOT over your head.
-L02. Say "I do," and you get a bright new one on the STEPS.
+L01. Promises tie knots over your head. Don't let one pull TIGHT.
+L02. Not even by one TURN.
 L03. A guy who said "I'll call you" in SPRING still has his.
 L04. Old friends have their cords TANGLED into one.
-L05. The baker has so many he wears them like a SCARF.
+L05. The baker has so many he wears them like a SCARF. **(quotable line)**
 L06. Keep one, and it slips loose in a puff of LIGHT.
 L07. And the whole street CLAPS.
 L08. Me? I don't have a single KNOT.
@@ -180,7 +191,7 @@ L10. My dad has the oldest knot in TOWN.
 L11. Grey and hard, and ten years OLD.
 L12. I always figured it was one he BROKE.
 L13. Something he promised me when he moved OUT.
-L14. This August, Mum said it had started pulling TIGHT.
+L14. This August, Mom said it had started pulling TIGHT.
 L15. And Dad was sleeping up at his observatory on the HILL.
 L16. It was falling-star week. He'd be up there all NIGHT.
 L17. So I climbed the hill, first time since he LEFT.
@@ -234,6 +245,6 @@ L64. I looked at him and said, "Hi, DAD."
 L65. He slid the eyepiece cap across to me, like he used to.
 L66. We talked about everything until the cloud went PINK.
 L67. Somewhere in there, I said I'd be back next AUGUST.
-L68. In this town, every PROMISE ties a KNOT. I've got ONE now.
+L68. I've got ONE of my own now.
 
 Pause beats (0.5 s each): after L28, L31, L42, L44, L50, L62, and 0.3 s after L68 before the loop cut.
