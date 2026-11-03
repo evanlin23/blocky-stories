@@ -705,3 +705,27 @@ def test_cardboard_sounds_are_opt_in():
     assert np.allclose(wood, sound.sfx("creak", 3, 1.0, {})) and np.allclose(wood, sound.sfx("creak", 3, 1.0, {"tone": None}))
     card = sound.sfx("creak", 3, 1.0, {"tone": "cardboard"})
     assert len(card) == len(wood) and not np.allclose(card, wood) and np.abs(card).max() > 0.5
+
+
+def test_mix_uses_samples_unless_the_story_turns_them_off(tmp_path):
+    """sound.samples: false gives the old all-synthesized mix, and the switch never leaks into the next story."""
+    import numpy as np
+    import wave
+
+    from blocky import sound
+
+    vo = tmp_path / "vo"
+    vo.mkdir()
+    for lid, n in (("L01", 1.5), ("L02", 0.7)):
+        with wave.open(str(vo / f"{lid}.wav"), "wb") as w:
+            w.setnchannels(1), w.setsampwidth(2), w.setframerate(24000)
+            w.writeframes(np.zeros(int(n * 24000), "<i2").tobytes())
+    st = _mix_story([], [{"at": "L01", "kind": "door"}])
+    st["sound"]["ambience"] = [{"kind": "rain", "from": 0, "to": "end", "lufs": -30}]
+    tl = timeline.build(st, tiny_voice())
+    rec, _ = sound.mix(tl, st, vo)
+    st_off = json.loads(json.dumps(st))
+    st_off["sound"]["samples"] = False
+    syn, _ = sound.mix(tl, st_off, vo)
+    assert sound.SAMPLES["on"] and np.isfinite(rec).all() and not np.allclose(rec, syn)
+    assert np.allclose(sound.mix(tl, st, vo)[0], rec)                  # deterministic, and back on after "false"

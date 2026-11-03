@@ -1,9 +1,8 @@
 {
-  "title": "The box was taped shut from the inside",
-  "description": "We moved into a smaller house with low ceilings, and Mum hasn't laughed since the old one sold. The moving boxes are still stacked by the door. One of them has a frown drawn on it in black marker.\n\nEvery morning there are fewer boxes in the stack, and something in the house is a little taller.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
-  "pin": "Would you have peeled the tape on that bottom box?",
+  "title": "In This Town Every House Grows To Fit The TALLEST",
+  "description": "In this town, a house grows to fit the tallest one living in it. Tall families live in towers. When a tall lodger moves out, the ceiling comes down a hand a night.\n\nOur old house was always a ladder taller than any of us. It sold in the spring, and Mum hasn't laughed since. The new one fits me exactly, until the morning there's a gap over my head.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+  "pin": "Who's the tallest one living in your house?",
   "made_for_kids": false,
-  "cover_s": 85.5,
-  "shape": "old-home",
-  "hold": "redo: the first line must state the world's rule (owner, 2026-11-02)"
+  "cover_s": 49.2,
+  "shape": "came-with"
 }

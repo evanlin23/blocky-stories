@@ -1,13 +1,11 @@
-"""Writes ../story.json for ep31 "Dawn Flight" (script 2026-11-02).
+"""Writes ../story.json for ep31 "Dawn Flight" (redo, script 2026-11-02).
 
 Run from anywhere: python stories/ep31-dawn-flight/generator/make_story.py
 The words are in lines.json next to this file. Everything else is here: the cast, the shots and their cameras, the
-acting, the cues set.py reads (the day, the lean, the roars, the creature, the plants), the score and the sound.
-Shot ids are numbered in order (S01, S02 ...). Places are set.py's metres: the basket's floor centre is the origin, the
-sun is east (+x), a character with yaw 0 faces -y and yaw 90 faces +x.
-
-Corners (inside half-width 1.15): me SW, Dad SE (against the east rim, watching the sunrise), Rosa NW, the empty
-fourth corner NE (the sandbag, the fourth flask, the four tally strokes on its rim, and the Loose One).
+acting, the cues set.py reads (the day, the roars, the seams, the plants), the score and the sound.
+Places are set.py's metres: the basket's floor centre is the origin, the sun is east (+x), a character with yaw 0
+faces -y, yaw 90 faces +x, yaw 180 faces +y (north). Dad and I stand at the north rim, hands on the two worn patches.
+The camera's lens is chosen from a wanted frame width W at the target (lens = distance x 13.5 / W).
 """
 import json
 import math
@@ -18,246 +16,246 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 # ---------------------------------------------------------------------------------------------------- lines
-PAUSES = {"L49": {"id": "P01", "pause": 0.7, "chunks": []}, "L58": {"id": "P02", "pause": 0.8, "chunks": []}}
 out_lines = []
 for ln in lines:
     out_lines.append(ln)
-    if ln["id"] in PAUSES:
-        out_lines.append(PAUSES[ln["id"]])
+    if ln["id"] == "L27":
+        out_lines.append({"id": "P01", "pause": 0.8, "chunks": []})
 lines = out_lines
-for ln in lines:
-    if ln["id"] == "L36":
-        ln["tempo"] = 0.9      # "a head, in slices": Whisper heard "and" at full tempo
 
 # ---------------------------------------------------------------------------------------------------- cast
+BW = 0.78
+SEAMS = {"seams": True, "body_width": BW, "width": 0.86}
+
+
+def person(skin, shirt, pants, shoes="#2a2420", hair="cap", hair_c="#2a1d15", hat="none", hat_c="#333333", pattern="solid",
+           pattern_c="#202020", collar=None, extras=(), extra_c="#20242c", height=1.0, face=None, **kw):
+    d = {"age": "adult", "skin": skin, "shirt": shirt, "pattern": pattern, "pants": pants, "shoes": shoes,
+         "sleeves": "long", "hair": hair, "hair_c": hair_c, "hat": hat, "hat_c": hat_c, "height": height,
+         "face": face or {"eyes": "round", "brows": True, "ink": "#161012"}, **SEAMS}
+    if pattern != "solid":
+        d["pattern_c"] = pattern_c
+    if collar:
+        d["collar"] = collar
+    if extras:
+        d["extras"] = list(extras)
+        d["extra_c"] = extra_c
+    d.update(kw)
+    return d
+
+
 cast = {
-    "me": {"age": "adult", "skin": "#d9a77f", "shirt": "#d9a21b", "pattern": "knit", "pattern_c": "#b8860f",
-           "collar": "#caa020", "pants": "#26282e", "shoes": "#3a3a3c", "sleeves": "long", "hair": "cap",
-           "hair_c": "#1e1714", "hat": "beanie", "hat_c": "#8a8d92", "extras": ["apron"], "extra_c": "#1f2c4a",
-           "width": 0.86, "face": {"eyes": "round", "brows": True, "ink": "#161012"}},
-    "dad": {"age": "adult", "skin": "#e8bf99", "shirt": "#2c4a38", "pattern": "solid", "collar": "#243d2e",
-            "pants": "#3a3630", "shoes": "#2a2420", "sleeves": "long", "hair": "buzz", "hair_c": "#9a9a9c",
-            "hat": "none", "extras": ["scarf"], "extra_c": "#d6c49a", "width": 0.86, "height": 0.97,
-            "face": {"eyes": "round", "brows": True, "ink": "#1a1214", "bags": True}},
-    "rosa": {"age": "adult", "skin": "#8a5a44", "shirt": "#e6dcc4", "pattern": "knit", "pattern_c": "#cfc4a8",
-             "collar": "#d4c8ac", "pants": "#2b2d33", "shoes": "#1c1c1e", "sleeves": "long", "hair": "bun",
-             "hair_c": "#1a1210", "hat": "beanie", "hat_c": "#7a2434", "width": 0.86, "height": 0.95,
-             "face": {"eyes": "round", "brows": True, "ink": "#140e0e"}},
-    "callum": {"age": "adult", "skin": "#d9a77f", "shirt": "#1f3d2a", "pattern": "solid", "collar": "#1a3323",
-               "pants": "#2c2e36", "shoes": "#d8d2c4", "sleeves": "long", "hair": "cap", "hair_c": "#3a2a20",
-               "hat": "beanie", "hat_c": "#1f2c4a", "width": 0.86,
-               "face": {"eyes": "round", "brows": True, "ink": "#161012", "bags": True}},
+    # me: a mustard knit jumper under a navy gilet, a grey beanie; the finger-wide gaps
+    "me": person("#d9a77f", "#d9a21b", "#26282e", "#3a3a3c", "cap", "#1e1714", "beanie", "#8a8d92", "knit", "#b8860f",
+                 "#caa020", height=0.95, vest="#1f2c4a", seam=2.5),
+    # Dad: waxed bottle-green jacket, cream and brown check scarf with the balloon badge, grey hair
+    "dad": person("#e8bf99", "#2c4a38", "#3a3630", "#2a2420", "cap", "#9a9a9c", "none", "#333333", "solid", "#202020",
+                  "#243d2e", extras=("scarf", "badge"), extra_c="#d6c49a", height=1.05,
+                  face={"eyes": "round", "brows": True, "ink": "#1a1214", "bags": True}),
+    # Rosa: cream fleece, burgundy beanie, black gloves
+    "rosa": person("#8a5a44", "#e6dcc4", "#2b2d33", "#1c1c1e", "bun", "#1a1210", "beanie", "#7a2434", "knit", "#cfc4a8",
+                   "#d4c8ac", height=0.93, face={"eyes": "round", "brows": True, "ink": "#140e0e"}),
+    # the montage extras
+    "groom": person("#d9a77f", "#1f2c4a", "#1f2c4a", "#1a1a1c", "cap", "#3a2a20", height=1.02),
+    "bride": person("#e8bf99", "#efe4cc", "#efe4cc", "#d8d2c4", "long", "#5a3a22", height=0.94),
+    "son": person("#c98f66", "#6a7a8a", "#2c2e36", "#d8d2c4", "spiky", "#1e1714", height=1.0),
+    "mum": person("#e8bf99", "#8a3a4a", "#3a3630", "#2a2420", "bun", "#b8b8b8", height=0.93),
+    "grandad": person("#e8bf99", "#6a4a32", "#3a3630", "#2a2420", "buzz", "#d8d8d8", "none", "#333333", "knit", "#5a3c28",
+                      height=0.97, face={"eyes": "round", "brows": True, "ink": "#1a1214", "bags": True}),
+    "rel1": person("#c98f66", "#3a6a8a", "#2c2e36", hair="cap", hair_c="#1e1714", height=1.0),
+    "rel2": person("#e8bf99", "#a8453a", "#3a3630", hair="long", hair_c="#7a4a22", height=0.92),
+    "rel3": person("#8a5a44", "#d8c8a0", "#2b2d33", hair="cap", hair_c="#1a1210", height=1.02),
+    "rel4": person("#e8bf99", "#4a7a4a", "#3a3630", hair="bun", hair_c="#c8a060", height=0.95),
+    "rel5": person("#d9a77f", "#5a4a7a", "#2c2e36", hair="swoop", hair_c="#3a2a20", height=0.9),
 }
+for k in ("groom", "bride", "son", "mum", "grandad", "rel1", "rel2", "rel3", "rel4", "rel5"):
+    cast[k]["seam"] = 0.5
+cast["dad"]["seam"] = 0.5
+cast["rosa"]["seam"] = 0.5
+cast["son"]["rattle"] = 1.0
 
 
+# ---------------------------------------------------------------------------------------------------- camera helpers
 def c(*keys):
     return [list(k) for k in keys]
 
 
-def still(loc, tgt, lens):
-    return c([0, loc, tgt, lens])
+def dist(a, b):
+    return math.sqrt(sum((x - y) ** 2 for x, y in zip(a, b)))
 
 
-def move(a, b, la, lb=None):
-    return c([0, a[0], a[1], la], [1, b[0], b[1], lb or la])
+def lens(loc, tgt, W):
+    return round(dist(loc, tgt) * 13.5 / W, 1)
 
 
-def r3(v):
-    return [round(x, 3) for x in v]
+def view(loc, tgt, W):
+    return c([0, list(loc), list(tgt), lens(loc, tgt, W)])
+
+
+def push(loc0, loc1, tgt0, tgt1, W0, W1):
+    return c([0, list(loc0), list(tgt0), lens(loc0, tgt0, W0)], [1, list(loc1), list(tgt1), lens(loc1, tgt1, W1)])
 
 
 def fwd(yaw):
     return (math.sin(math.radians(yaw)), -math.cos(math.radians(yaw)))
 
 
-def face_cam(pos, yaw, dist, ang, lens, h=1.55, dz=0.0, hz=1.5, z0=0.0, sway=None):
-    """A camera in front of a face: dist metres out along (yaw + ang), looking at the head."""
+def facecam(pos, yaw, d, ang, W, h=0.0, hz=1.5, z0=0.0, ch=None):
+    """A camera d metres out in front of a face (along yaw + ang), at the face's height (+ h), looking at it."""
     fx, fy = fwd(yaw + ang)
-    loc = [pos[0] + fx * dist, pos[1] + fy * dist, z0 + h + dz]
     tgt = [pos[0], pos[1], z0 + hz]
-    if sway:
-        loc2 = [loc[0] + sway[0], loc[1] + sway[1], loc[2] + sway[2]]
-        return c([0, loc, tgt, lens], [1, loc2, tgt, lens])
-    return still(loc, tgt, lens)
+    loc = [pos[0] + fx * d, pos[1] + fy * d, z0 + (hz if ch is None else ch) + h]
+    return view(loc, tgt, W)
 
 
-def yaw_to(a, b):
-    return round(math.degrees(math.atan2(b[0] - a[0], -(b[1] - a[1]))), 1)
+def add(a, b):
+    return [a[i] + b[i] for i in range(3)]
 
 
 # ---------------------------------------------------------------------------------------------------- places
-ME = (-0.62, -0.62)
-DAD = (0.9, -0.35)
-ROSA = (-0.58, 0.6)
-D4 = (0.52, 0.55)              # the fourth corner: the Loose One stands here
-FIELD_DAD = (-2.2, -2.6)
-FG = -0.55                     # standing on the field
-K0 = -300.0                    # the kitchen's floor
-KITCHEN_ME = (-0.95, 0.0)
-KITCHEN_DAD = (0.95, 0.0)
-SC1 = [30.0, 30.0, 2.9]        # the scatter, a field away, hung in the mist (in the landscape's own frame)
-SC1W = [30.0, 30.0, -12.4]     # the same place in the basket's frame at cruise height (for the cameras)
-FAR = [28.0, 28.0, -0.7]       # one hedge off, at basket height
-NEAR = [5.7, 5.7, -0.1]        # a rope's length off
+HERE_H = {"me": 0.95, "dad": 1.05, "rosa": 0.93}
+DAD = (-0.47, 0.63)
+ME = (0.47, 0.71)
+ROSA = (0.0, -0.78)
+FG = -0.55
+K0 = -300.0
+GATE = (40.0, 0.0, -300.0)
+LANE = (120.0, 0.0, -300.0)
+TRAILER = (160.0, 0.0, -300.0)
+RH = 1.22                       # the rim's top
 
 
-def c2w(root, yaw, loc):
-    """A point in the creature's own frame to world (root position, yaw degrees)."""
-    a = math.radians(yaw)
-    x = loc[0] * math.cos(a) - loc[1] * math.sin(a)
-    y = loc[0] * math.sin(a) + loc[1] * math.cos(a)
-    return [root[0] + x, root[1] + y, root[2] + loc[2]]
+def head_z(who, k=1.5, hg=0.025, bg=0.025):
+    """z (m) of the middle of the gap between head slice k-1 and k, for a character with these gaps (cm /100)."""
+    h = HERE_H[who]
+    return round(0.34 * 4.02 * h + 0.34 * 0.3 * k * h + bg + (k - 0.5) * hg, 3)
 
 
-CAM_UP = [0.0, -0.9, 1.3]
-FLAME = still(CAM_UP, [0.0, 0.0, 3.0], 22)
-SIDE = still([-14.0, -22.0, 0.6], [0.0, 0.0, 2.4], 24)
-ME_EYE = [0.5, 0.5, 2.05]       # inside the basket, over the fourth corner's rim, looking out
-ROOT_FAR = FAR
-YAW_FAR = -45.0
-YAW_NEAR = -45.0
+def on_field(x, y):
+    return [x, y, FG]
+
 
 # ---------------------------------------------------------------------------------------------------- shots
 # (at, what, camera, step, extras)
+GZ = head_z("me")                                   # 1.62: my head gap at 2.5 cm
+GZ8 = head_z("me", hg=0.10, bg=0.08)                # my head gap in the scare (10 cm)
+DGZ = head_z("dad", hg=0.005, bg=0.005)
+FLAME = view([0.0, -0.45, 1.4], [0.0, 0.0, 3.0], 1.3)
+FLAME[0][3] = 22
+MEH = lambda z: [ME[0], ME[1], z]
+DADH = lambda z: [DAD[0], DAD[1], z]
+SOUTH_Y = -0.85
+
 SHOTS = [
-    # 01 the tilt
-    (0, "the hook: from the east, three faces in the tilted basket, the lean plain",
-     c([0, [3.0, -3.1, 1.75], [0.0, 0.0, 1.5], 26], [1, [2.75, -2.85, 1.75], [0.0, 0.0, 1.5], 26]), 2,
-     {"frame": "world", "key": 40, "amb": 1.4}),
-    ("L02", "a wide from outside, the envelope still, the basket leaning",
-     c([0, [-2.5, -25, 8.6], [0, 0, 8.1], 20], [1, [-1.8, -23, 8.6], [0, 0, 8.1], 20]), 2, {"frame": "world", "amb": 1.5}),
-    ("L03", "a close on the still envelope", still([-9, -15, 4.0], [0.5, 0, 10.5], 30), 2, {"frame": "world"}),
-    ("L04", "low on the fourth corner, the floor tipping", still([0.3, -0.15, 0.95], [0.72, 0.85, 0.22], 22), 2,
-     {"key": 110}),
-    ("L05", "the burner roaring overhead", FLAME, 2, {"key": 0}),
-    ("L05.2", "the mist below, the scatter far off", still([0.5, 0.5, 2.05], [27.0, 27.0, -11.0], 38), 2, {"key": 0}),
-    # 02 before
-    ("L06", "Dad on the launch field, grinning", face_cam((FIELD_DAD[0], FIELD_DAD[1]), 0, 1.9, 22, 30, h=1.5, z0=FG), 2,
-     {"key": 40, "frame": "world"}),
-    ("L07", "the kitchen table at night", still([0.5, -1.95, K0 + 1.5], [0, 0, K0 + 1.1], 20), 2,
-     {"room": "kitchen", "frame": "world"}),
-    ("L08", "me looking down at my tea", face_cam(KITCHEN_ME, 90, 1.5, -35, 32, h=1.5, z0=K0), 2,
-     {"room": "kitchen", "frame": "world", "key": 20}),
-    ("L09", "Dad nodding", face_cam(KITCHEN_DAD, -90, 1.5, 35, 32, h=1.48, z0=K0), 2,
-     {"room": "kitchen", "frame": "world", "key": 20}),
-    ("L10", "the launch field in the dark, our breath in the lamp light",
-     c([0, [4.2, -7.2, 1.3], [-1.4, 0.0, 1.9], 20], [1, [3.6, -6.8, 1.35], [-1.4, 0.0, 1.9], 20]), 2,
-     {"frame": "world", "key": 12}),
-    ("L11", "the first flame into the mouth", still([1.6, -2.4, 1.2], [-0.2, 0.0, 3.0], 24), 2, {"frame": "world"}),
-    ("L12", "the envelope standing up off the grass", still([-8.5, -12.0, 1.0], [-1.0, 0.0, 8.0], 17), 2,
-     {"frame": "world"}),
-    ("L13", "top-down on the four-corner basket", still([0.0, -0.7, 3.05], [0.0, 0.05, 0.3], 11), 2, {"key": 14}),
-    ("L14", "Dad's bag open and FOUR flasks along the rim of his corner",
-     still([0.1, 0.45, 1.95], [0.32, -1.2, 1.2], 24), 2, {"key": 26}),
-    ("L15", "my face", face_cam(ME, 135, 1.3, -20, 32, dz=-0.2), 2, {"key": 34}),
-    ("L16", "Dad's sleeve and the fourth flask on the empty corner's floor",
-     still([-0.05, 0.1, 1.5], [0.4, 0.95, 0.35], 22), 2, {"key": 110}),
-    ("L17", "Rosa looking at the empty corner", face_cam(ROSA, 90, 1.5, -50, 32, h=1.5), 2, {"key": 34}),
-    ("L18", "the sandbag, tied by its rope into the fourth corner, Rosa's sleeve at the end",
-     still([0.6, 0.05, 2.2], [0.9, 0.9, 0.5], 24), 2, {"key": 40}),
-    ("L19", "the lore close: four slate-blue strokes on the leather rim",
-     still([0.55, 0.15, 2.8], [0.55, 1.48, 0.11], 28), 2, {"key": 30}),
-    ("L20", "the ground lets go of us", c([0, [-7.5, -10, 2.2], [0, 0, 3.6], 20], [1, [-7.5, -10, 2.2], [0, 0, 4.4], 20]),
-     2, {"frame": "world"}),
-    # 03 up
-    ("L21", "the fields sinking under the mist", c([0, [0.5, 0.5, 2.0], [9, 13, -4.0], 30],
-                                                  [1, [0.5, 0.5, 2.0], [9, 13, -14.0], 30]), 2, {"key": 0}),
-    ("L22", "Rosa looking up", face_cam(ROSA, 45, 1.5, 25, 32, h=1.35, dz=0.0), 2, {"key": 32}),
-    ("L23", "Dad's cup sliding along the rim", still([-0.4, -1.0, 1.75], [1.21, 0.1, 1.2], 30), 2, {"key": 22}),
-    ("L24", "the cup stopping at the fourth corner", still([0.3, 0.1, 1.7], [1.21, 0.78, 1.25], 32), 2, {"key": 22}),
-    ("L25", "Rosa frowning", face_cam(ROSA, 45, 1.5, 30, 32, h=1.5), 2, {"key": 34}),
-    ("L25.1", "the flame overhead, roar one", FLAME, 2, {"key": 0}),
-    ("L26", "the mist lit orange under us", still([0.5, 0.5, 2.05], [9.0, 11.0, -12.0], 26), 2, {"key": 0}),
-    ("L27", "a long lens across the mist: the scatter a field away", still(ME_EYE, SC1W, 70), 4, {"key": 0}),
-    ("L28", "a closer long lens on the scatter", still(ME_EYE, [SC1W[0], SC1W[1], SC1W[2] + 1.0], 105), 4, {"key": 0}),
-    ("L29", "the parts of somebody", still(ME_EYE, [SC1W[0], SC1W[1], SC1W[2] + 1.0], 125), 4, {"key": 0}),
-    ("L30", "the roar stops and they are gone", still(ME_EYE, [SC1W[0], SC1W[1], SC1W[2] + 1.0], 70), 4, {"key": 0}),
-    ("L31", "a side wide: the lean a little steeper", SIDE, 2, {"frame": "world"}),
-    # 04 nearer
-    ("L32", "Dad delighted, barn roofs behind him", face_cam(DAD, 90, 1.5, -5, 30, h=1.55), 2, {"key": 32}),
-    ("L33", "the flame, roar two", FLAME, 2, {"key": 0}),
-    ("L34", "one hedge off", still(ME_EYE, [FAR[0], FAR[1], 0.9], 85), 4, {"key": 0}),
-    ("L35", "they've come together, almost", still(ME_EYE, [FAR[0], FAR[1], 1.1], 140), 4, {"key": 0}),
-    ("L36", "legs, body, arms, head in slices",
-     c([0, ME_EYE, [FAR[0], FAR[1], 0.0], 150], [1, ME_EYE, [FAR[0], FAR[1], 2.1], 150]), 4, {"key": 0}),
-    ("L37", "a gap between two arm blocks with mist behind",
-     still(ME_EYE, c2w(FAR, YAW_FAR, [0.5, 0, 1.43]), 330), 4, {"key": 0}),
-    ("L38", "far taller than a person",
-     c([0, ME_EYE, [FAR[0], FAR[1], 2.2], 130], [1, ME_EYE, [FAR[0], FAR[1], 0.6], 130]), 4, {"key": 0}),
-    ("L39", "Rosa never saw it", face_cam(ROSA, 45, 1.5, 25, 32, h=1.5), 2, {"key": 32}),
-    ("L39.2", "my eyeline across the basket: three people standing still",
-     still([-0.85, -0.85, 1.6], [0.5, 0.1, 1.4], 22), 2, {"key": 26}),
-    ("L40", "the sandbag rope, taut", still([0.35, 0.35, 0.95], [1.02, 1.0, 0.7], 36), 2, {"key": 70}),
-    ("L41", "the flame, roar three", FLAME, 2, {"key": 0}),
-    ("L42", "a rope's length from the basket", still(ME_EYE, [NEAR[0], NEAR[1], 1.25], 60), 4, {"key": 0}),
-    ("L43", "every piece in the right place", still(ME_EYE, [NEAR[0], NEAR[1], 1.3], 80), 4, {"key": 0}),
-    ("L44", "its face in slices", still(ME_EYE, [NEAR[0], NEAR[1], 2.3], 170), 4, {"key": 0}),
-    ("L45", "the eyes on one, the mouth two gaps below",
-     c([0, ME_EYE, [NEAR[0], NEAR[1], 2.4], 210], [1, ME_EYE, [NEAR[0], NEAR[1], 2.05], 210]), 4, {"key": 0}),
-    ("L46", "pink mist through the gaps", still(ME_EYE, [NEAR[0], NEAR[1], 1.35], 150), 4, {"key": 0}),
-    ("L47", "the glow fading, and it with it", still(ME_EYE, [NEAR[0], NEAR[1], 1.25], 60), 4, {"key": 0}),
-    # 05 the fourth corner
-    ("L48", "the basket tipping hard toward the fourth corner", SIDE, 2, {"frame": "world"}),
-    ("L49", "Rosa: HOLD ON", face_cam(ROSA, 45, 1.5, 25, 30, h=1.5), 2, {"key": 28}),
-    ("P01", "the flame ramping up, long", FLAME, 1, {"key": 0}),
-    ("L50", "the reveal from my corner across the basket", still([-1.4, -1.3, 1.25], [0.5, 0.5, 1.4], 17), 1,
-     {"key": 0, "amb": 0.3}),
-    ("L51", "in the fourth corner beside the sandbag", still([-1.25, -1.1, 1.3], [0.52, 0.55, 1.3], 16), 1, {"key": 0, "amb": 0.35}),
-    ("L52", "a low angle up its pieces into the burner glow", still([-0.4, 0.12, 0.5], [0.52, 0.55, 2.3], 22), 1,
-     {"key": 0}),
-    ("L53", "a copper arm block a hand's width from Dad's shoulder",
-     still([-0.15, 0.0, 1.7], [0.95, 0.15, 1.5], 24), 1, {"key": 0, "amb": 0.5}),
-    ("L54", "its sliced face turned to Dad, three-quarter view", c([0, [-0.95, -0.8, 1.35], [0.52, 0.55, 2.0], 22, 5.0]), 1,
-     {"key": 0, "amb": 0.3}),
-    ("L55", "Dad looking out at the brightening horizon",
-     c([0, [2.25, -0.38, 1.6], [0.9, -0.35, 1.5], 30], [1, [2.2, -0.38, 1.6], [0.9, -0.35, 1.5], 30]), 1, {"key": 30}),
-    ("L56", "a short roar overhead", FLAME, 1, {"key": 0}),
-    ("L57", "from my eyeline: its top slice has turned to me", still([-0.62, -0.62, 1.95], [0.52, 0.55, 2.15], 28), 1,
-     {"key": 0}),
-    ("L58", "the rest of it still faces Dad", still([-1.12, -1.12, 1.7], [0.45, 0.45, 1.6], 18), 1, {"key": 0}),
-    ("P02", "hold on my face", face_cam(ME, 135, 1.3, -20, 34), 1, {"key": 30}),
-    # 06 the truth
-    ("L59", "over my shoulder: me, the fourth corner, it, Dad beside it", still([-1.2, -1.2, 2.0], [0.55, 0.45, 1.5], 20), 2,
-     {"key": 12}),
-    ("L60", "a side wide of the lean", SIDE, 2, {"frame": "world"}),
-    ("L61", "my face, ashamed", face_cam(ME, 135, 1.3, -20, 32, dz=-0.2), 2, {"key": 34}),
-    ("L62", "Dad's back, the sunrise beyond", still([-0.15, -0.3, 1.62], [3.0, -0.3, 1.45], 26), 2, {"key": 14}),
-    ("L63", "my face", face_cam(ME, 135, 1.2, -20, 36, dz=-0.3), 2, {"key": 34}),
-    ("L64", "the sun breaking out of the mist, all gold", still([0.0, 0.1, 1.7], [60.0, -3.0, 1.2], 22), 2, {"key": 0}),
-    ("L65", "me turned to Dad, my mouth moving, Dad turning to me", still([0.15, -2.5, 1.65], [0.15, -0.4, 1.5], 16), 2,
-     {"key": 30}),
-    ("L66", "Dad quiet under a short roar", c([0, [-0.1, -1.0, 1.66], [0.9, -0.35, 1.52], 28]), 2, {"key": 30}),
-    ("L67", "Dad laughing", c([0, [-0.1, -1.0, 1.66], [0.9, -0.35, 1.52], 28]), 2, {"key": 30}),
-    ("L67.2", "Rosa startled at the burner", face_cam(ROSA, 45, 1.5, -10, 32, h=1.5), 2, {"key": 30}),
-    ("L68", "Dad's face", c([0, [-0.1, -1.0, 1.66], [0.9, -0.35, 1.52], 28]), 2, {"key": 30}),
-    ("L69", "Dad nodding at the fourth flask in its corner", still([-0.3, -0.15, 1.5], [0.8, 0.2, 1.2], 24), 2,
-     {"key": 22}),
-    ("L70", "a bright wide down the sunlit valley: the lean, the creature in its corner",
-     still([15.0, -13.0, 2.4], [0.0, 0.0, 2.3], 27), 2, {"frame": "world"}),
-    # 07 landing
-    ("L71", "the basket settling upright in a stubble field", still([-9.0, -8.0, 1.2], [0.0, 0.0, 1.9], 22), 2,
-     {"frame": "world"}),
-    ("L72", "the phone on the rim, Dad bent toward it", still([0.3, 0.55, 1.9], [1.21, 0.35, 1.25], 28), 2,
-     {"key": 24}),
-    ("L73", "a close on the phone", still([0.7, 0.75, 1.6], [1.21, 0.35, 1.23], 40), 2, {"key": 18}),
-    ("L74", "Dad's mouth", c([0, [-0.1, -1.0, 1.66], [0.9, -0.35, 1.52], 28]), 2, {"key": 30}),
-    ("L75", "Dad and me laughing", still([0.15, -2.5, 1.65], [0.15, -0.4, 1.5], 16), 2, {"key": 30}),
-    ("L76", "me looking across the basket", face_cam(ME, 135, 1.3, -20, 34), 2, {"key": 30}),
-    ("L77", "the fourth corner in bright morning light: the sandbag and the flask",
-     still([-0.25, 0.0, 1.45], [0.62, 0.72, 0.4], 22), 2, {"key": 70}),
-    # 08 four
-    ("L78", "the launch field the next dawn: four of us in the basket", still([3.3, -1.5, 1.95], [0.0, 0.1, 1.45], 24), 2,
-     {"frame": "world", "key": 10}),
-    ("L79", "Rosa's sleeve and the sandbag on the grass", still([0.7, -3.0, 0.95], [2.1, -1.3, 0.35], 28), 2,
-     {"frame": "world", "key": 12}),
-    ("L80", "Callum's flask on his corner's rim", still([2.7, 0.75, 1.75], [1.0, 0.6, 1.4], 30), 2, {"frame": "world", "key": 30}),
-    ("L81", "a wide from outside: the basket level against a flat gold horizon",
-     c([0, [-2.5, -25, 8.6], [0, 0, 8.1], 20], [1, [-1.8, -23, 8.6], [0, 0, 8.1], 20]), 2, {"frame": "world"}),
+    # 01 the rule
+    (0, "hook: a two-shot from inside the basket at pink dawn, mist through my gaps",
+     view([0.0, SOUTH_Y, GZ], [0.0, DAD[1], GZ - 0.04], 1.45), 2, {"key": 22, "dsun": 5.0, "amb": 1.25}),
+    ("L01.5", "my arm on the rim, three blocks a finger apart, the mist behind",
+     view([-0.45, -0.55, 1.3], [0.85, 1.1, 1.25], 1.0), 2, {"key": 10, "dsun": 3.0}),
+    ("L02", "the newlyweds at a field gate, their seams snapping shut",
+     view([GATE[0], GATE[1] - 0.6, K0 + 1.2], [GATE[0], GATE[1] + 1.8, K0 + 1.2], 1.6), 2, {"room": "mont", "frame": "world", "key": 12}),
+    ("L03", "a son with a holdall rattling at a cottage kitchen door, his mum leaning in",
+     view([-0.3, -0.4, K0 + 1.45], [1.3, -2.3, K0 + 1.35], 2.0), 2, {"room": "kitchen", "frame": "world", "key": 10}),
+    ("L04", "a grandad walking toward camera along a dry-stone wall, five relatives behind",
+     view([LANE[0] + 3.4, -0.5, K0 + 1.3], [LANE[0] + 0.3, -0.2, K0 + 1.3], 2.2), 2, {"room": "mont", "frame": "world", "key": 10}),
+    ("L05", "me at the kitchen window at dawn, side-on, gaps open",
+     view([1.25, 0.15, K0 + GZ + 0.05], [-0.05, 1.45, K0 + GZ], 1.1), 2, {"room": "kitchen", "frame": "world", "key": 8}),
+    ("L06", "through the gap between my head slices, the misty window",
+     view([-0.1, -0.15, K0 + GZ], [-0.1, 1.45, K0 + GZ], 0.62), 2, {"room": "kitchen", "frame": "world", "key": 6}),
+    ("L07", "Dad at the kitchen table, smiling at his tea",
+     facecam((0.95, 0.0), -90, 1.15, 38, 1.0, hz=1.55, z0=K0), 2, {"room": "kitchen", "frame": "world", "key": 12}),
+    ("L08", "a slow push on Dad's face as the smile goes polite",
+     push([0.1, -0.85, K0 + 1.55], [0.35, -0.55, K0 + 1.55], [0.95, 0.0, K0 + 1.55], [0.95, 0.0, K0 + 1.55], 1.1, 0.8), 2,
+     {"room": "kitchen", "frame": "world", "key": 12}),
+    ("L09", "over Dad's shoulder: me across the table, waiting to be known",
+     view([1.55, -0.45, K0 + 1.68], [-0.95, 0.0, K0 + 1.5], 2.0), 2, {"room": "kitchen", "frame": "world", "key": 10}),
+    # 02 up
+    ("L10", "the launch field in the plum dark, the lamp, Dad grinning",
+     view([-0.1, -5.6, 1.0], [-2.9, -2.9, 1.0], 1.9), 2, {"frame": "world", "key": 14}),
+    ("L11", "the envelope lying on the grass",
+     view([-8.5, -12.0, 1.0], [-1.0, 0.0, 6.5], 11.0), 2, {"frame": "world"}),
+    ("L11.2", "Dad and me side by side, looking up at it",
+     view([-0.55, -5.2, 0.9], [-0.55, -3.2, 1.35], 1.7), 2, {"frame": "world", "key": 8}),
+    ("L12", "the first flame into the mouth", view([1.6, -2.4, 1.2], [-0.2, 0.0, 3.0], 3.0), 2, {"frame": "world"}),
+    ("L12.1", "the envelope standing up", view([-8.5, -12.0, 1.0], [-1.0, 0.0, 8.0], 11.0), 2, {"frame": "world"}),
+    ("L13", "Rosa waving us into the basket without a word",
+     facecam((2.15, -0.2), 190, 1.6, 20, 1.0, z0=FG, hz=1.35), 2, {"frame": "world", "key": 18}),
+    ("L14", "Dad's sleeve", view([0.4, -0.2, 1.35], [DAD[0] + 0.3, DAD[1] - 0.3, 1.4], 0.7), 2, {"key": 12}),
+    ("L14.1", "the balloon badge on his scarf",
+     view([DAD[0] + 0.08, DAD[1] - 0.55, 1.55], [DAD[0] - 0.12, DAD[1] - 0.2, 1.47], 0.34), 2, {"key": 18}),
+    ("L14.3", "Dad delighted: First time UP!",
+     facecam(DAD, 0, 1.15, 14, 0.85, hz=1.64), 2, {"key": 16}),
+    ("L15.1", "the leather rim: two worn patches, the slate tally between them",
+     view([0.0, 0.2, 1.95], [0.0, 1.21, RH], 1.5), 2, {"key": 110}),
+    ("L16.2", "Dad's hand and mine land on the two patches",
+     view([0.0, 0.0, 1.85], [0.0, 1.15, 1.25], 1.3), 2, {"key": 30}),
+    ("L17", "the basket lifts off the grass with no jolt",
+     c([0, [-7.5, -10.0, 2.0], [0.0, 0.0, 3.0], 20], [1, [-7.5, -10.0, 2.0], [0.0, 0.0, 4.2], 20]), 2, {"frame": "world"}),
+    # 03 loose
+    ("L18", "the fields sinking under the mist",
+     c([0, [0.5, -1.5, 2.0], [24, -8, 1.0], 24], [1, [0.5, -1.5, 2.0], [24, -8, -1.2], 24]), 2, {"key": 25, "dsun": 6.0}),
+    ("L19", "the burner roars", FLAME, 2, {"key": 0}),
+    ("L19.1", "my sleeve: the hand block slides a finger's width off",
+     view([1.12, 0.02, 1.62], [ME[0] + 0.2, 1.08, 1.4], 0.7), 2, {"key": 12}),
+    ("L20", "Dad pointing at barn roofs, delighted: LOOK at THAT",
+     facecam(DAD, 150, 1.1, 0, 0.85, hz=1.64, z0=0.0), 2, {"key": 14}),
+    ("L21", "Rosa at the burner frame, mouthing the words, a small sad smile",
+     view([0.2, 0.15, 1.5], [ROSA[0], ROSA[1], 1.42], 0.75), 2, {"key": 14}),
+    ("L22", "the burner roars again", FLAME, 2, {"key": 0}),
+    ("L23", "Dad turning from the view to me, his face drops to polite",
+     facecam(DAD, 60, 1.05, 0, 0.85, hz=1.62), 2, {"key": 14}),
+    ("L24", "Dad leaning toward Rosa: And WHO'S this?",
+     view([-1.0, -0.15, 1.72], [DAD[0] + 0.1, DAD[1], 1.55], 0.95), 2, {"key": 18}),
+    ("L25", "the long roar swells, held on Dad and Rosa (no cut)", view([-1.0, -0.15, 1.72], [DAD[0] + 0.1, DAD[1], 1.55], 0.95), 2, {"key": 18}),
+    ("L25+0.85", "my hands drifting off my sleeves",
+     view([1.6, 0.0, 1.6], [ME[0] - 0.1, 1.0, 1.36], 1.5), 2, {"key": 14}),
+    ("L26", "wider: a hand's width off, then two",
+     view([0.15, 1.95, 1.7], [ME[0], 1.0, 1.4], 1.0), 2, {"key": 14}),
+    ("L27", "my head, front on, four slices apart, pink mist through every gap",
+     push([ME[0], SOUTH_Y, GZ8 + 0.03], [ME[0], -0.45, GZ8 + 0.03], [ME[0], ME[1], GZ8], [ME[0], ME[1], GZ8], 0.95, 0.85), 2,
+     {"key": 14, "dsun": 2.0}),
+    ("P01", "hold on the sliced face: only the burner",
+     view([ME[0], -0.5, GZ8 + 0.03], [ME[0], ME[1], GZ8], 0.8), 2, {"key": 14, "dsun": 2.0}),
+    ("L28", "over my shoulder, through the gap in my own face: Dad, smiling politely",
+     view([1.6, ME[1], GZ8], [DAD[0], DAD[1], 1.62], 0.8), 2, {"key": 8}),
+    ("L29", "Dad's polite smile, close",
+     facecam(DAD, 70, 1.0, 0, 0.8, hz=1.63), 2, {"key": 14}),
+    # 04 the words
+    ("L30", "my sliced face, eyes steady, the scared look going calm",
+     view([ME[0], -0.4, GZ8 + 0.02], [ME[0], ME[1], GZ8], 0.85), 2, {"key": 14, "dsun": 2.0}),
+    ("L31", "me turned to Dad: Happy BIRTHDAY, Dad. Look at the SUN.",
+     view([0.0, -0.45, 1.72], [0.0, 0.67, 1.64], 1.5), 2, {"key": 14, "dsun": 2.0}),
+    ("L32", "the sun breaks out of the mist, all gold", c([0, [-0.3, -0.2, 1.7], [60.0, -3.0, -6.0], 12.0], [1, [-0.3, -0.2, 1.7], [60.0, -3.0, -1.0], 12.0]), 2, {"key": 0}),
+    ("L33", "Dad in gold light, his whole face waking up",
+     facecam(DAD, 45, 1.05, 0, 0.85, hz=1.64), 2, {"key": 10}),
+    ("L34", "Dad: There's my BOY",
+     facecam(DAD, 20, 0.95, 0, 0.75, hz=1.64), 2, {"key": 10}),
+    ("L35", "every slice and block sliding home, click by click",
+     view([ME[0], -0.4, 1.68], [ME[0], ME[1], 1.66], 0.85), 2, {"key": 12}),
+    # 05 the truth
+    ("L36", "a bright wide down the sunlit valley, the basket level",
+     view([15.0, -13.0, 2.4], [0.0, 0.0, 2.3], 7.0), 2, {"frame": "world"}),
+    ("L37", "Dad and me at the rim, hands on the two worn patches",
+     view([0.0, -0.55, 1.95], [0.0, 1.0, 1.3], 2.0), 2, {"key": 6}),
+    ("L38", "Rosa at the burner frame, a sad smile, the gold valley behind",
+     view([0.25, 0.25, 1.55], [ROSA[0], ROSA[1], 1.45], 0.85), 2, {"key": 10}),
+    ("L38.3", "the landing in the stubble field",
+     view([-9.0, -8.0, 1.2], [0.0, 0.0, 1.9], 6.0), 2, {"frame": "world"}),
+    ("L39", "Rosa's sleeve pinning today's badge on the wall inside the trailer",
+     view([TRAILER[0] + 1.0, -0.2, K0 + 1.3], [TRAILER[0] + 0.85, 1.3, K0 + 1.22], 0.7), 2,
+     {"room": "trailer", "frame": "world", "key": 8}),
+    ("L40", "pull back: the whole wall covered in identical balloon badges",
+     push([TRAILER[0] + 0.55, -0.2, K0 + 1.3], [TRAILER[0], -2.1, K0 + 1.28], [TRAILER[0] + 0.9, 1.3, K0 + 1.22], [TRAILER[0], 1.3, K0 + 1.25], 0.6, 2.1), 2,
+     {"room": "trailer", "frame": "world", "key": 6}),
+    ("L41", "the landing field in late-morning light: Dad walking off beside Rosa, my sleeve in the foreground",
+     view([-0.55, -3.75, FG + 0.95], [0.5, -3.1, FG + 0.85], 1.0), 2, {"frame": "world", "key": 10}),
+    ("L42", "the next dawn: the basket rising off the launch field",
+     push([-6.0, -9.0, 0.7], [-6.0, -9.0, 1.4], [0.0, 0.0, 1.8], [0.0, 0.0, 3.6], 7.0, 6.0), 2, {"frame": "world", "dsun": 3.0}),
 ]
 
 shots = []
 for i, (at, what, cam, step, extra) in enumerate(SHOTS):
-    s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.0 if step == 4 else 0.005, "step": step, "what": what}
+    s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.003, "step": step, "what": what}
     if i:
         s["at"] = at
     s.update(extra)
@@ -265,7 +263,8 @@ for i, (at, what, cam, step, extra) in enumerate(SHOTS):
 
 # ---------------------------------------------------------------------------------------------------- acting
 NEUTRAL = {"arms": [0, 0], "side": [0, 0], "head": [0, 0], "lean": 0, "tremble": 0, "blink": True}
-acting = {"me": [], "dad": [], "rosa": [], "callum": []}
+ALL = list(cast)
+acting = {k: [] for k in ALL}
 
 
 def put(who, at, pos, **kw):
@@ -274,6 +273,10 @@ def put(who, at, pos, **kw):
     if prev is not None:
         keys.append({"at": at, "pos": prev})
     keys.append({"at": at, "pos": pos, "blend": 0, "hidden": False, **NEUTRAL, **kw})
+
+
+def walk(who, at, pos, **kw):
+    acting[who].append({"at": at, "pos": pos, **kw})
 
 
 def key(who, at, **kw):
@@ -292,92 +295,118 @@ def p3(xy, z=0.0):
     return [xy[0], xy[1], z]
 
 
-# me: the flight stance, then the field, the kitchen, the flight again
-put("me", 0, p3(ME), yaw=135, expr="worried", head=[0, 6])
-hide("me", "L06")
-put("me", "L07", p3(KITCHEN_ME, K0), yaw=90, expr="neutral", head=[0, 6])
-key("me", "L08", head=[0, 30], expr="worried", blend=0.4)
-put("me", "L10", [-1.3, -1.9, FG], yaw=30, expr="worried")
-put("me", "L13", p3(ME), yaw=135, expr="worried", head=[0, 6])
-key("me", "L15", expr="worried")
-talk("me", "L15.1", "L15>")
-key("me", "L19", expr="worried")
-key("me", "L25", expr="worried")
-hide("me", "L39.2")
-put("me", "L40", p3(ME), yaw=135, expr="worried", head=[0, 6])
-key("me", "L46", expr="scared", blend=0.3)
-key("me", "L48", expr="scared", head=[0, 4])
-hide("me", "L50")                                  # I'm the camera across the basket
-put("me", "P02", p3(ME), yaw=135, expr="terrified", head=[0, 4])
-put("me", "L61", p3(ME), yaw=135, expr="asleep", head=[0, 20], blink=False)
-key("me", "L63", expr="asleep", head=[0, 22], blend=0.4)
-key("me", "L65", yaw=yaw_to(ME, DAD), expr="asleep", head=[0, 24], blend=0.3)
-talk("me", "L65", "L65>")
-key("me", "L68.3", expr="worried", head=[0, -4], blend=0.5)
-key("me", "L75", expr="soft", head=[0, 0], blend=0.3)
-key("me", "L76", yaw=135, expr="soft", head=[0, 4], blend=0.4)
-put("me", "L78", p3(ME), yaw=90, expr="soft")
+def yaw_to(a, b):
+    return round(math.degrees(math.atan2(b[0] - a[0], -(b[1] - a[1]))), 1)
 
-# Dad: grinning on the field, hopeful at the table, in his corner watching the east
-put("dad", 0, p3(DAD), yaw=90, expr="soft")
-put("dad", "L06", p3(FIELD_DAD, FG), yaw=0, expr="smirk")
-put("dad", "L07", p3(KITCHEN_DAD, K0), yaw=-90, expr="worried", head=[0, 4])
-key("dad", "L09", expr="soft", head=[0, 16], blend=0.3)
-key("dad", "L09+0.55", head=[0, -6], blend=0.25)
-key("dad", "L09+1.0", head=[0, 14], blend=0.3)
-put("dad", "L10", [-2.3, -2.4, FG], yaw=30, expr="soft")
-put("dad", "L13", p3(DAD), yaw=90, expr="soft")
-put("dad", "L16", p3(DAD), yaw=180, arms=[0, 82], expr="soft")
-talk("dad", "L16.1", "L16.2")
-key("dad", "L17", yaw=90, arms=[0, 0], blend=0.4)
-key("dad", "L21", expr="soft")
-key("dad", "L32", expr="smirk", arms=[0, 78], blend=0.3)
-talk("dad", "L32.3", "L32>")
-key("dad", "L33", arms=[0, 0], blend=0.4)
-key("dad", "L50", expr="soft")
-key("dad", "L55", expr="soft", yaw=90)
-key("dad", "L59", expr="soft")
-key("dad", "L65", yaw=yaw_to(DAD, ME), expr="neutral", blend=0.5)
-key("dad", "L67", expr="squeeze", blend=0.3)
-talk("dad", "L67.1", "L67>")
-key("dad", "L68", expr="soft", yaw=yaw_to(DAD, ME))
-talk("dad", "L68.1", "L68>")
-key("dad", "L69", yaw=90, head=[80, 10], expr="soft", blend=0.5)
-key("dad", "L70", head=[0, 0], blend=0.4)
-key("dad", "L72", head=[40, 34], yaw=70, blend=0.5)
-key("dad", "L74", head=[0, 0], yaw=yaw_to(DAD, ME), expr="soft", blend=0.4)
-talk("dad", "L74", "L74>")
-key("dad", "L75", expr="squeeze")
-put("dad", "L78", [0.9, -0.8, 0], yaw=90, expr="soft")
 
-# Rosa: by the fan, at the burner frame, in her corner
-put("rosa", 0, p3(ROSA), yaw=45, expr="neutral")
-hide("rosa", "L06")
-put("rosa", "L10", [2.9, -3.8, FG], yaw=-60)
-put("rosa", "L11", [0.4, -1.9, FG], yaw=180, arms=[40, 40], head=[0, 10])
-put("rosa", "L13", p3(ROSA), yaw=45)
-key("rosa", "L17", yaw=90, expr="worried", blend=0.4)
-put("rosa", "L18", [0.1, 1.0, 0], yaw=90, arms=[85, 0], expr="neutral")
-talk("rosa", "L18.3", "L18>")
-put("rosa", "L19", p3(ROSA), yaw=45)
-key("rosa", "L22", head=[0, -30], blend=0.5)
-talk("rosa", "L22.2", "L22>")
-key("rosa", "L23", head=[0, 0], blend=0.4)
-key("rosa", "L25", expr="worried")
-key("rosa", "L39", expr="neutral", yaw=45)
-talk("rosa", "L39.2", "L39.3")
-key("rosa", "L48", expr="wide", blend=0.3)
-talk("rosa", "L49.1", "L49.2")
-key("rosa", "L50", expr="neutral", blend=0.4)
-key("rosa", "L67", expr="wide", blend=0.1)
-key("rosa", "L68", expr="neutral", blend=0.4)
-put("rosa", "L79", [2.0, -0.9, FG], yaw=200, arms=[55, 55], expr="neutral")
-put("rosa", "L81", [-0.58, 0.62, 0], yaw=90)
+ARM_ME, ARM_DAD = 109, 96
 
-# Callum: only in section 08
-hide("callum", 0)
-put("callum", "L78", [0.52, 0.62, 0], yaw=90, expr="smirk")
-key("callum", "L80", expr="soft")
+# --- everyone starts hidden but the cast of the scene
+for who in ALL:
+    hide(who, 0)
+
+# me
+put("me", 0, p3(ME), yaw=-8, expr="worried", head=[0, 0])
+put("me", "L01.5", p3(ME), yaw=180, arms=[ARM_ME, ARM_ME], expr="worried")
+hide("me", "L02")
+put("me", "L05", [0.0, 1.4, K0], yaw=0, expr="worried")                 # at the kitchen window (side-on in the shot)
+key("me", "L05", yaw=60)
+key("me", "L06", yaw=0, blend=0.0)
+put("me", "L09", [-0.95, 0.0, K0], yaw=90, expr="worried")
+hide("me", "L10")
+put("me", "L11.2", [-0.2, -3.0, FG], yaw=180, expr="worried")
+put("me", "L14", p3(ME), yaw=0, expr="worried", arms=[0, 0])
+hide("me", "L15.1")                      # S20 opens on the empty rim: both patches and the tally in plain view
+put("me", "L16.2", p3(ME), yaw=180, expr="worried")
+key("me", "L16.2+0.55", arms=[ARM_ME, ARM_ME], blend=0.5)
+key("me", "L19.1", expr="worried")
+key("me", "L23", expr="worried")
+key("me", "L25.1", expr="scared", blend=0.3)
+put("me", "L26", p3(ME), yaw=180, arms=[ARM_ME, ARM_ME], expr="scared")
+key("me", "L27", yaw=0, arms=[ARM_ME, ARM_ME], expr="scared")
+key("me", "L28", yaw=-90, arms=[0, 0], blend=0.0)
+key("me", "L30", yaw=0, expr="scared", arms=[ARM_ME, ARM_ME], blend=0.0)
+key("me", "L30+0.9", expr="neutral", blend=0.6)
+put("me", "L31", p3(ME), yaw=-62, expr="neutral", arms=[0, 0])
+talk("me", "L31.1", "L31>")
+key("me", "L35", yaw=0, expr="soft", arms=[0, 0], blend=0.0)
+key("me", "L37", yaw=180, arms=[ARM_ME, ARM_ME], expr="soft", blend=0.0)
+key("me", "L38.3", expr="soft")
+put("me", "L41", [-0.1, -3.0, FG], yaw=90, expr="worried", arms=[0, 0])
+put("me", "L42", p3(ME), yaw=-8, expr="worried")
+
+# Dad
+put("dad", 0, p3(DAD), yaw=35, expr="smile", head=[0, 0])
+put("dad", "L01.5", p3(DAD), yaw=180, arms=[ARM_DAD, ARM_DAD], expr="smile")
+hide("dad", "L02")
+put("dad", "L07", [0.95, 0.0, K0], yaw=-90, expr="smile")
+key("dad", "L08", expr="smile")
+key("dad", "L08+0.9", expr="polite", blend=0.4)
+hide("dad", "L10")
+put("dad", "L10", [-2.6, -2.7, FG], yaw=15, expr="delighted")
+put("dad", "L11.2", [-1.4, -3.0, FG], yaw=180, expr="delighted", head=[0, -22])
+put("dad", "L14", p3(DAD), yaw=0, expr="smile", arms=[0, 70])
+key("dad", "L14.1", arms=[0, 0], blend=0.1)
+key("dad", "L14.3", expr="delighted", yaw=14)
+talk("dad", "L14.4", "L14>")
+key("dad", "L15.1", yaw=180, arms=[0, 0], expr="smile", blend=0.0)
+hide("dad", "L15.1")
+put("dad", "L16.2", p3(DAD), yaw=180, expr="smile")
+key("dad", "L16.2+0.55", arms=[ARM_DAD, ARM_DAD], blend=0.5)
+key("dad", "L20", yaw=150, expr="delighted", arms=[ARM_DAD - 8, 80], blend=0.0)
+talk("dad", "L20.4", "L20>")
+key("dad", "L21", yaw=180, arms=[ARM_DAD, ARM_DAD], expr="delighted", blend=0.0)
+key("dad", "L23", yaw=60, expr="delighted", arms=[0, 0], blend=0.0)
+key("dad", "L23+0.5", expr="polite", blend=0.2)
+key("dad", "L24", yaw=15, expr="polite", blend=0.0)
+talk("dad", "L24.1", "L24>")
+key("dad", "L27", yaw=90, expr="polite", blend=0.0)
+key("dad", "L28", yaw=90, expr="polite")
+key("dad", "L29", yaw=70, expr="polite")
+key("dad", "L31", yaw=60, expr="polite")
+key("dad", "L33", yaw=45, expr="polite", blend=0.0)
+key("dad", "L33+0.7", expr="delighted", blend=0.3)
+key("dad", "L34", yaw=20, expr="laugh", blend=0.0)
+talk("dad", "L34.1", "L34>")
+key("dad", "L37", yaw=180, arms=[ARM_DAD, ARM_DAD], expr="smile", blend=0.0)
+put("dad", "L41", [0.2, -3.0, FG], yaw=90, expr="smile", arms=[0, 0])
+walk("dad", "L41>", [2.2, -3.0, FG])
+put("dad", "L42", p3(DAD), yaw=0, expr="smile")
+
+# Rosa
+put("rosa", "L13", [2.15, -0.2, FG], yaw=190, expr="neutral", arms=[75, 0])
+key("rosa", "L13+0.8", arms=[0, 75], blend=0.3)
+put("rosa", "L19", p3(ROSA), yaw=180, expr="neutral")
+key("rosa", "L21", yaw=170, expr="sad-smile", blend=0.2)
+talk("rosa", "L21", "L21.2>")
+key("rosa", "L22", yaw=180, expr="neutral", blend=0.3)
+key("rosa", "L24", head=[0, 24], blend=0.3)
+key("rosa", "L31", head=[0, 0], blend=0.3)
+key("rosa", "L38", yaw=170, expr="sad-smile", blend=0.0)
+put("rosa", "L39", [TRAILER[0] + 0.3, 0.62, TRAILER[2]], yaw=180, expr="sad-smile", arms=[0, 96])
+hide("rosa", "L40")
+put("rosa", "L41", [-0.2, -2.1, FG], yaw=90, expr="neutral")
+walk("rosa", "L41>", [1.8, -2.1, FG])
+put("rosa", "L42", p3(ROSA), yaw=180, expr="neutral")
+
+# montage extras
+put("groom", "L02", [GATE[0] - 0.55, 1.75, GATE[2]], yaw=0, expr="smile")
+put("bride", "L02", [GATE[0] + 0.55, 1.75, GATE[2]], yaw=0, expr="smile")
+hide("groom", "L03")
+hide("bride", "L03")
+put("son", "L03", [1.5, -2.9, K0], yaw=180, expr="worried", tremble=3.0)
+put("mum", "L03", [1.5, -1.45, K0], yaw=0, expr="smile", head=[0, 10])
+hide("son", "L04")
+hide("mum", "L04")
+GX = LANE[0]
+put("grandad", "L04", [GX - 2.2, -0.3, LANE[2]], yaw=90, expr="smile")
+walk("grandad", "L04>", [GX + 2.4, -0.3, LANE[2]])
+for i, (dx, dy) in enumerate(((1.5, 0.5), (2.2, -0.9), (2.9, 0.3), (3.6, -0.7), (4.3, 0.5))):
+    put(f"rel{i + 1}", "L04", [GX - 2.2 - dx, -0.3 + dy, LANE[2]], yaw=90, expr="smile")
+    walk(f"rel{i + 1}", "L04>", [GX + 2.4 - dx, -0.3 + dy, LANE[2]])
+hide("grandad", "L05")
+for i in range(5):
+    hide(f"rel{i + 1}", "L05")
 
 # ---------------------------------------------------------------------------------------------------- cues
 cues = []
@@ -387,143 +416,139 @@ def cue(at, name, **kw):
     cues.append({"at": at, "name": name, **kw})
 
 
-# the day: plum pre-dawn, a brightening horizon at L55, then the sun in one 3.4 s ramp from L64, a bright next dawn
-cue(0, "dawn", v=0.0)
-cue("L55", "dawn", v=0.26, dur=2.0)
-cue("L62", "dawn", v=0.34, dur=2.0)
-cue("L64-0.2", "dawn", v=1.0, dur=3.6)
-cue("L78", "dawn", v=0.86, dur=0)
-# the lean (degrees toward the fourth corner)
-cue(0, "tilt", deg=8.0)
-cue("L06", "tilt", deg=0.0, dur=0)
-cue("L22.2", "tilt", deg=4.0, dur=1.2)
-cue("L24", "tilt", deg=5.5, dur=1.2)
-cue("L31", "tilt", deg=7.5, dur=1.6)
-cue("L48", "tilt", deg=12.0, dur=1.2)
-cue("L59", "tilt", deg=9.0, dur=2.0)
-cue("L70+0.3", "tilt", deg=0.0, dur=1.7)
-cue("L81", "tilt", deg=0.0, dur=0)
-# the ground: up at L20, down at L70, the landing field at L71, the launch field again at L78, up again for the wide
+def seam(who, at, gap, body=None, head=None, hand=None, dur=0.0):
+    cue(at, "seam", who=who, gap=gap, body=gap if body is None else body, head=gap if head is None else head,
+        hand=gap if hand is None else hand, dur=dur)
+
+
+# the day
+cue(0, "dawn", v=0.42)
+cue("L02", "dawn", v=0.7, dur=0)
+cue("L05", "dawn", v=0.55, dur=0)
+cue("L10", "dawn", v=0.0, dur=0)
+cue("L18", "dawn", v=0.22, dur=4.0)
+cue("L31+0.6", "dawn", v=1.0, dur=3.4)
+cue("L41", "dawn", v=0.8, dur=0)
+cue("L42", "dawn", v=0.42, dur=0)
+# the ground
 cue(0, "alt", alt=18.0)
-cue("L06", "alt", alt=0.0, dur=0)
-cue("L20", "alt", alt=0.0, dur=0)
-cue("L20+0.4", "alt", alt=18.0, dur=9.0)
-cue("L70+0.4", "alt", alt=0.0, dur=2.3)
-cue("L78", "alt", alt=0.0, dur=0)
-cue("L81", "alt", alt=18.0, dur=0)
-cue("L71", "field", f=1)
-cue("L78", "field", f=0)
-cue("L81", "field", f=0)
-# the envelope lies on the field until Rosa fills it
+cue("L10", "alt", alt=0.0, dur=0)
+cue("L17", "alt", alt=18.0, dur=9.0)
+cue("L38", "alt", alt=0.0, dur=3.2)
+cue("L42", "alt", alt=0.0, dur=0)
+cue("L42+0.3", "alt", alt=3.0, dur=3.5)
+cue("L38", "field", f=1)
+cue("L42", "field", f=0)
 cue(0, "env", up=1.0)
-cue("L06", "env", up=0.0, dur=0)
-cue("L11+0.3", "env", up=1.0, dur=3.4)
-cue("L78", "env", up=1.0, dur=0)
-# the burner: ramps up over 0.6 s, holds, shrinks over 0.9 s; never two roars inside 3 s
-cue("L05", "roar", peak=1.0, up=0.6, hold=1.6, down=0.9)
-cue("L11+0.4", "roar", peak=0.8, up=1.0, hold=1.6, down=0.9)
-cue("L25.1", "roar", peak=1.0, up=0.6, hold=8.4, down=1.0)
-cue("L33", "roar", peak=1.0, up=0.6, hold=9.0, down=1.0)
-cue("L41", "roar", peak=1.0, up=0.6, hold=8.7, down=1.0)
-cue("L49.1", "roar", peak=1.0, up=1.5, hold=8.7, down=0.8)   # a slow ramp: Rosa's hat takes the glow over 1.5 s
-cue("L56", "roar", peak=0.9, up=0.5, hold=0.6, down=1.0)
-cue("L66", "roar", peak=0.8, up=0.5, hold=0.8, down=0.8)
-cue("end-1.2", "roar", peak=0.45, up=0.3, hold=0.1, down=0.75)
-# the Loose One
-cue(0, "cre", pose="hidden")
-cue("L05.2", "cre", pose="scatter", on="L", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
-cue("L06", "cre", pose="hidden")
-cue("L27", "cre", pose="scatter", on="L", pos=SC1, yaw=-45, s=1.0, alpha="roar", key=1500)
-cue("L31", "cre", pose="hidden")
-cue("L34", "cre", pose="scatter", pos=FAR, yaw=YAW_FAR, s=0.5, alpha="roar", key=900)
-cue("L35", "cre", pose="off", pos=FAR, yaw=YAW_FAR, s=0.04, alpha="roar", key=900)
-cue("L40", "cre", pose="hidden")
-cue("L42", "cre", pose="exact", pos=NEAR, yaw=YAW_NEAR, alpha="roar", key=240)
-cue("L48", "cre", pose="hidden")
-cue("L50", "cre", pose="exact", pos=p3(D4), yaw=0, alpha=1.0, key=120, kfloor=0.5, rim=160, bounce=120,
-    head=[0, 0, 0, 0], arms=[0, 0])
-cue("L57", "cre", pose="exact", pos=p3(D4), yaw=0, alpha=1.0, key=120, kfloor=0.5, rim=160, bounce=120,
-    head=[0, 0, 0, -44], arms=[0, 0])
-cue("L71", "cre", pose="hidden")
-# the plants
-cue(0, "flasks", state="corner")
-cue("L13", "flasks", state="none")
-cue("L14", "flasks", state="rim")
-cue("L16", "flasks", state="corner")
-cue("L78", "flasks", state="end")
-cue(0, "bag", state="tied")
-cue("L13", "bag", state="none")
-cue("L18", "bag", state="tied")
-cue("L79", "bag", state="grass")
-cue("L81", "bag", state="none")
-cue(0, "satchel", on=False)
-cue("L14", "satchel", on=True)
-cue("L78", "satchel", on=False)
-cue(0, "cup", on=False)
-cue("L23", "cup", on=True, y=-0.75)
-cue("L23+0.3", "cup", y=0.8, dur=1.7)
-cue("L26", "cup", on=False)
-cue(0, "phone", on=False)
-cue("L72", "phone", on=True)
-cue("L77", "phone", on=False)
+cue("L10", "env", up=0.0, dur=0)
+cue("L12", "env", up=1.0, dur=3.2)
+cue("L41", "env", up=1.0, dur=0)
+# the burner
+cue("L12", "roar", peak=0.8, up=1.0, hold=1.2, down=0.9)
+cue("L19", "roar", peak=1.0, up=0.6, hold=1.2, down=0.9)
+cue("L22", "roar", peak=0.9, up=0.6, hold=1.2, down=0.9)
+cue("L25-0.9", "roar", peak=0.6, up=1.0, hold=6.6, down=1.2)
+cue("end-0.85", "roar", peak=0.25, up=0.25, hold=0.05, down=0.5)
+# the seams (cm). Everyone else stays at their hairline.
+seam("me", 0, 2.5)
+seam("me", "L19", 2.5, hand=5.0, dur=0.8)
+seam("me", "L23", 4.0, dur=0.8)
+seam("me", "L25", 5.0, body=6.0, head=5.0, hand=10.0, dur=0.8)
+seam("me", "L26", 5.0, body=6.0, head=5.0, hand=20.0, dur=0.9)
+seam("me", "L27", 8.0, body=8.0, head=10.0, hand=20.0, dur=1.0)
+seam("me", "L35", 0.5, dur=1.0)
+seam("me", "L41", 0.5, hand=8.0, dur=0.0)
+seam("me", "L42", 2.5, dur=0.0)
+seam("groom", "L02", 2.5)
+seam("groom", "L02.1", 0.5, dur=0.5)
+seam("bride", "L02", 2.5)
+seam("bride", "L02.1", 0.5, dur=0.5)
+seam("son", "L03", 1.6)
+seam("son", "L03.4", 0.7, dur=0.9)
+cue("L03", "rattle", who="son", amp=0.6)
+cue("L05", "rattle", who="son", amp=0.0)
+# the new badge on the trailer wall
+cue(0, "badge", on=False)
+cue("L39+0.9", "badge", on=True)
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
-    {"at": "L05", "kind": "burner", "db": -13, "dur": 3.0, "seed": 1},
-    {"at": "L11+0.4", "kind": "burner", "db": -17, "dur": 4.4},
-    {"at": "L25.1", "kind": "burner", "db": -15, "dur": 10.0},
-    {"at": "L33", "kind": "burner", "db": -15, "dur": 11.0},
-    {"at": "L41", "kind": "burner", "db": -15, "dur": 10.6},
-    {"at": "L49.3", "kind": "burner", "db": -9, "dur": 10.4, "keep": True},
-    {"at": "L56", "kind": "burner", "db": -13, "dur": 2.2},
-    {"at": "L66", "kind": "burner", "db": -16, "dur": 2.2},
-    {"at": "end-1.15", "kind": "burner", "db": -17.5, "dur": 1.1, "fall": 7.0},
-    {"at": "L04", "kind": "creak", "db": -22, "dur": 1.2},
-    {"at": "L16", "kind": "creak", "db": -26, "dur": 0.8},
-    {"at": "L23+0.2", "kind": "creak", "db": -24, "dur": 1.4},
-    {"at": "L40", "kind": "creak", "db": -12, "dur": 1.0, "keep": True},
-    {"at": "L48", "kind": "creak", "db": -16, "dur": 1.6},
-    {"at": "L50", "kind": "sting", "db": -10, "keep": True},
-    {"at": "L64", "kind": "bell", "db": -26},
+    {"at": "L12", "kind": "burner", "db": -15, "dur": 3.6},
+    {"at": "L19", "kind": "burner", "db": -14, "dur": 3.6, "seed": 2},
+    {"at": "L22", "kind": "burner", "db": -14, "dur": 3.4, "seed": 3},
+    {"at": "L25-0.9", "kind": "burner", "db": -9, "dur": 9.4, "keep": True},
+    {"at": "end-0.85", "kind": "burner", "db": -18, "dur": 0.85, "fall": 7.0},
+    {"at": "L02.1", "kind": "click", "db": -10},
+    {"at": "L02.2", "kind": "latch", "db": -16},
+    {"at": "L03.3", "kind": "knock", "db": -16, "pattern": [0, 0.07, 0.15, 0.2, 0.3, 0.36], "tone": "hand"},
+    {"at": "L04", "kind": "squeak", "db": -20},
+    {"at": "L04.1", "kind": "squeak", "db": -20, "seed": 2},
+    {"at": "L04.2", "kind": "squeak", "db": -20, "seed": 3},
+    {"at": "L04.3", "kind": "squeak", "db": -20, "seed": 4},
+    {"at": "L01.5", "kind": "knock", "db": -18, "pattern": [0, 0.5], "tone": "soft"},
+    {"at": "L19", "kind": "knock", "db": -18, "pattern": [0.2], "tone": "soft"},
+    {"at": "L23+0.5", "kind": "knock", "db": -18, "pattern": [0, 0.4], "tone": "soft"},
+    {"at": "L25.1", "kind": "knock", "db": -16, "pattern": [0, 0.5, 1.0], "tone": "soft"},
+    {"at": "L27", "kind": "knock", "db": -14, "pattern": [0, 0.35, 0.7], "tone": "soft"},
+    {"at": "L35+0.1", "kind": "click", "db": -9},
+    {"at": "L35+0.3", "kind": "click", "db": -10, "seed": 2},
+    {"at": "L35+0.5", "kind": "click", "db": -9, "seed": 3},
+    {"at": "L35+0.7", "kind": "click", "db": -10, "seed": 4},
+    {"at": "L35+0.9", "kind": "click", "db": -11, "seed": 5},
+    {"at": "L17", "kind": "creak", "db": -20, "dur": 1.4},
+    {"at": "L14.1", "kind": "click", "db": -20, "seed": 9},
+    {"at": "L28", "kind": "sting", "db": -14, "keep": True},
+    {"at": "L32", "kind": "bell", "db": -26},
+    {"at": "L39+0.9", "kind": "click", "db": -18, "seed": 7},
+    {"at": "L42", "kind": "creak", "db": -22, "dur": 1.2},
 ]
 story = {
     "slug": "ep31-dawn-flight",
-    "title": json.loads((HERE.parent / "package.json").read_text())["title"],   # one title, from the package
+    "title": json.loads((HERE.parent / "package.json").read_text())["title"],
     "made_for_kids": False,
-    "premise": "On Dad's sixtieth birthday we fly a hot-air balloon at dawn over a sea of mist. The pilot says the wind is zero, but the basket keeps leaning toward its empty fourth corner, and each time the burner roars a figure made of loose copper and slate-blue blocks is nearer and more put together.",
-    "twist": "I forgot to ask my brother Callum along, and was too ashamed to tell Dad, so I blamed Callum's work. His corner stayed empty because of my lie, and the figure was the corner's Keeper standing in the gap I made. When I confess and my brother comes the next dawn, the basket flies level.",
-    "world": "a hot-air balloon basket at sunrise over a valley of thick white mist, a cold dark launch field before it, a kitchen table the night before",
+    "premise": "In this valley, every body is built in blocks with thin seams between them, and if your family forgets you, "
+               "your body comes apart, block by block. My blocks hang a finger's width apart because Dad, all the family I "
+               "have, is forgetting me. For his sixtieth birthday he wants a balloon flight at dawn, just him and me, and "
+               "the pilot Rosa takes us up over the mist. With each burner roar I come further apart, until Dad looks at "
+               "me and asks Rosa who I am.",
+    "twist": "Dad turned sixty four years ago. It is the last morning he remembers whole, with me in it, so Rosa flies us "
+             "every dawn and I give him that birthday again: when I say what I said that morning he lands back in it and my "
+             "blocks click shut. The wall of badges in her trailer is every one of those mornings, and by lunch he will "
+             "ask who I am.",
+    "world": "a hot-air balloon basket at dawn over misty farmland, a cold launch field and a farm kitchen, a field gate, a "
+             "lane by a dry-stone wall and the inside of a pilot's trailer",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff7e6b",
     "gap": 0.12,
-    "tail": 0.9,
-    "look": {"fog": "#9d92b4", "fog_density": 0.0055, "fog_start": 14.0, "sky": "#8a6a92", "exposure": 0.0},
-    "grade": {"shadows": [0.0, 0.0, 0.06], "highlights": [0.02, 0.01, 0.01], "saturation": 1.0, "contrast": 1.04,
-              "vignette": 0.3, "bloom": 0.28, "grain": 0.011},
-    "phonemes": {},
+    "tail": 0.3,
+    "fade_out": False,
+    "fade_in": False,
+    "look": {"fog": "#9d92b4", "fog_density": 0.0055, "fog_start": 14.0, "sky": "#8a6a92", "exposure": 0.0,
+             "flash_safe": True},
+    "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, 0.0], "saturation": 1.0, "contrast": 1.04,
+              "vignette": 0.28, "bloom": 0.25, "grain": 0.011},
+    "phonemes": {"Rosa": "ɹˈOzɑ", "families": "fˈæməlˌiz", "fields": "fˈildz"},
     "cast": cast,
     "lines": lines,
     "shots": shots,
     "acting": acting,
     "cues": cues,
     "fx": [],
-    "music": {"root": 50, "mode": "major", "bpm": 70, "seed": 31,
+    "music": {"root": 50, "mode": "lydian", "bpm": 72, "seed": 31,
               "sections": [
-                  {"at": 0, "voices": ["pad", "pulse"], "energy": 0.3},
-                  {"at": "L25", "voices": ["pad", "drone"], "energy": 0.4, "mode": "minor"},
-                  {"at": "L48", "voices": ["drone", "choir"], "energy": 0.55, "mode": "minor"},
-                  {"at": "L59", "voices": ["pad", "drone"], "energy": 0.3, "mode": "minor"},
-                  {"at": "L64", "voices": ["pad", "piano", "pulse"], "energy": 0.45, "mode": "major"},
-                  {"at": "L78", "voices": ["pad", "piano"], "energy": 0.4, "mode": "major"},
+                  {"at": 0, "voices": ["pluck_hi", "pad"], "energy": 0.35},
+                  {"at": "L19", "voices": ["pad"], "energy": 0.3},
+                  {"at": "L23", "voices": ["drone", "pad"], "energy": 0.5, "mode": "minor"},
+                  {"at": "L32", "voices": ["pad", "piano"], "energy": 0.4, "mode": "major"},
+                  {"at": "L40", "voices": ["drone"], "energy": 0.2, "mode": "minor"},
               ]},
     "sound": {"floor": "wood", "steps_db": -24,
               "ambience": [
-                  {"kind": "room", "from": 0, "to": "end", "lufs": -38},
-                  {"kind": "wind", "from": "L06", "to": "L20", "lufs": -44},
+                  {"kind": "room", "from": 0, "to": "end", "lufs": -40},
+                  {"kind": "wind", "from": "L10", "to": "L38", "lufs": -44},
               ],
               "sfx": sfx,
-              "music_drops": [{"from": "P01", "to": "L50", "keep": ["sting", "burner"]},
-                              {"from": "P02-0.1", "to": "L59", "keep": ["burner"]}]},
+              "music_drops": [{"from": "P01-0.05", "to": "L28", "keep": ["sting", "burner"]}]},
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")

@@ -1,32 +1,24 @@
-# ep32-sitter, round 1, critic
+# ep32-sitter, round 1 (rule-first redo), critic
 
 Verdict: revise
 
-## Scores
-- Hook 5: a calm line over a static shot of me. The canvas plant scripted for S01 is missing.
-- Scare 6: the dips land. S43/S44 show the back of its head, so the turned head doesn't read.
-- Creature 5: an eerie pine mannequin, but the joined ovals read as spectacles. The long torso barely shows.
-- Twist 6: fair plants. The match between Mum's glasses and its face is the best idea here, and it's never framed.
-- Lore 8: nine strokes, clear, never named.
-- Warm turn 6: the Mum portrait is shown, but pine covers it (S66) and Mum is headless in S75.
-- Shot variety 8.
-- Faces 4: S09 reveal tiny, caption over the eyes in S46, faces cut off in S74.
-- Sound 5: "not bad" is spoken twice in L66. The tail is 0.4 s.
-- Captions 6: L66 is out of sync.
+**Hits:** 1 yes (0.25 s). 2 partial: at 0.1 s the faded half reads as a pale wink. 3 yes (5 to 13 s). 4 yes (31.7 s). 5 yes (13 to 19 s). 6 yes (68 to 75 s, from memory). 7 yes (plants 15.5, 29, 32 s; echo 84.6 s). 8 yes. 9 yes (1.44 s).
 
-## Panel
-- **Creepy fan:** swipes at S09 (19 s), because nothing visible sits there. "wooden guy with glasses lol"
-- **Ep11 to ep13 regular:** stays and pauses on S70. "NINE marks again"
-- **Scroller:** gone by 2 s, because nothing strange happens in the first shot.
-- **Top comment:** "its face was her MUM's glasses??" (only if fix 5 lands)
-- **Slips:** the double "not bad". In S74 Kofi's teeth read as gritted, and Mum's hand isn't up.
+**Scores:** hook 7 (fade too subtle). Feeling/clarity 8 (Mum at stake by 19 s). Big idea 8 (the creeping thing is Mum, faded because I stopped looking). Scare 6 (S23/S24 hide its face). Creature 7 (eerie, not silly). Twist 8. Lore 7 (the tally reads). Warm turn 6 (broken frames). Variety 7. Faces 5. Sound 8 (drops 48.1, 65.2 s). Captions 8.
 
-## Must-fix
-1. L66: speak "Not bad" once. Fix the `FIX` entry in `generator/script_to_lines.py` and the L66 chunks in `story.json`, then re-voice.
-2. S01 (0 to 2.1 s): close on the cross-and-ovals canvas, pushing in.
-3. S09 (17.1 to 19.1 s): its head at least 1/5 of the frame width, not hidden behind easel 8.
-4. S46 (84.2 to 85.6 s): eye ovals above the caption band.
-5. S43/S44: a 3/4 angle showing the reversed head and the canvas together.
-6. S66: pine off the portrait. S75: Mum's face in frame.
-7. S74: both faces whole, Kofi smiling, Mum's hand up.
-8. Tail: 0.25 s after 138.70 s.
+**Panel:**
+- Creepy fan: stays. "The corner lines were laugh lines. I'm sick."
+- Repeat viewer: stays. "Nine strokes on the dais again."
+- Scroller: swipes at 8.7 s, on black.
+- Top comment: "Call your mom." Slips: L35 plays over black, L36 shows my back, and L38 has no Kofi.
+
+**Must-fix:**
+1. S01/S02 (L01 to L02): make the grain and the graphite cross/oval read at phone size by 1 s.
+2. S04b (8.7 to 10.0 s): the shot is black. Reframe on the customer.
+3. S35b (75.6 to 76.3 s): the shot is black. Show the brush on the boards.
+4. S23 (re-render, cover 49.3 s): the sitter is cropped at the left edge, in profile, and unreadable. Turn its pencil face to camera beside my face, both whole. Otherwise set `cover_s` to 30.4 (S13).
+5. S24 (L24): its face is behind my shoulder. Show both faces a hand apart.
+6. S34 (72 to 75 s): the glasses float as a bar above her eyes, and the hair is still pine at "Silver HAIR". Seat the glasses and start the ramp earlier.
+7. S36 (L36): Mum's face is cropped. Frame her face and smile.
+8. S37 (re-render): the portrait reads, but Mum and I are each half out of frame. Widen.
+9. S38 (L38): show Kofi, or change the line to "The stool's still set out."
