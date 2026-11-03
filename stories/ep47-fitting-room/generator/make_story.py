@@ -523,7 +523,7 @@ cue("L58+0.2", "tags", who="cafe_man", n=4, pop=False)
 cue("L58+0.5", "tags", who="cafe_man", n=3, fall=True)
 cue(0, "tags", who="x1", n=5, pop=False)
 cue("L01+0.1", "tags", who="x1", n=6)
-cue("L01.2+0.3", "tags", who="x2", n=8)
+cue("L01.2+0.15", "tags", who="x2", n=8)
 cue("L01.3+0.25", "tags", who="x1", n=7)
 cue("L02", "tags", who="uncle", n=49, pop=False)
 cue("L02.1+0.02", "tags", who="uncle", n=55)
@@ -541,7 +541,7 @@ cue("L05", "uncle_shot", on=False)
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
     {"at": "L01+0.1", "kind": "click", "db": -16},
-    {"at": "L01.2+0.3", "kind": "click", "db": -20},
+    {"at": "L01.2+0.15", "kind": "click", "db": -20},
     {"at": "L01.3+0.25", "kind": "click", "db": -20},
     {"at": "L01>-0.2", "kind": "hit", "db": -9},
     {"at": "L02", "kind": "whoosh", "db": -22, "dur": 0.5},

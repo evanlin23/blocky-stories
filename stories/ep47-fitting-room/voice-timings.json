@@ -6,34 +6,34 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Don't lie in this town. Every lie pins a tag on you.",
+   "text": "You can't hide a lie here. It pins a tag on you.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.586,
+   "dur": 2.362,
    "onset": 0.172,
-   "end": 2.362,
+   "end": 2.155,
    "chunks": [
     [
      0.172,
-     0.457
+     0.543
     ],
     [
-     0.457,
-     0.983
+     0.543,
+     1.017
     ],
     [
-     1.077,
-     1.612
+     1.086,
+     1.371
     ],
     [
-     1.612,
-     1.87
+     1.371,
+     1.664
     ],
     [
-     1.87,
-     2.362
+     1.664,
+     2.155
     ]
    ]
   },

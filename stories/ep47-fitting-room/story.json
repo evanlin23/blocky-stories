@@ -395,16 +395,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Don't LIE",
-     "Don't lie"
+     "You can't HIDE",
+     "You can't hide"
     ],
     [
-     "in this TOWN.",
-     "in this town."
+     "a LIE here.",
+     "a lie here."
     ],
     [
-     "Every lie pins",
-     "Every lie pins"
+     "It pins",
+     "It pins"
     ],
     [
      "a TAG",
@@ -9578,7 +9578,7 @@
    "n": 6
   },
   {
-   "at": "L01.2+0.3",
+   "at": "L01.2+0.15",
    "name": "tags",
    "who": "x2",
    "n": 8
@@ -9808,7 +9808,7 @@
     "db": -16
    },
    {
-    "at": "L01.2+0.3",
+    "at": "L01.2+0.15",
     "kind": "click",
     "db": -20
    },
