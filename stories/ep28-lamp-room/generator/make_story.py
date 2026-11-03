@@ -168,12 +168,12 @@ def shot(at, what, cam, step=2, rain=False, hand=0.008):
 # 01 the rule, and us (the first evening, one forward timeline)
 # S01: from the air of the well at the top, a little below the landing, looking toward the wall: me at the rail (3/4, face at frame
 # left, lit by the warm lamp by the lamp-room door), the second lit lamp by Ines's blue door far below, dark stone between
-S01_A = [-0.1, 0.55, 17.9]
+S01_A = [-1.2, 0.9, 17.3]
 shot(0, "S01: me at the top rail, both lit lamps in frame, push in down the well",
-     c([0, S01_A, [2.3, 0.15, 12.6], 12], [1, [0.3, 0.45, 17.7], [2.3, 0.15, 12.9], 14]), hand=0.002)
+     c([0, S01_A, [1.16, 0.65, 15.4], 12], [1, [-0.9, 0.85, 17.25], [1.16, 0.65, 15.4], 13.5]), hand=0.002)
 shot("L02", "S02: punch in to the stair foot: sand has crept onto the bottom step",
      move(([-0.5, -0.5, 1.0], [0.9, 1.2, 0.3]), ([-0.3, -0.2, 0.95], [0.9, 1.2, 0.3]), 18), hand=0.002)
-shot("L02b", "S02b: two-shot at the stair foot, a hand's gap between our shoulders", still([0.0, -1.65, 1.55], [0.0, 0.65, 1.5], 14), hand=0.003)
+shot("L02b", "S02b: two-shot at the stair foot, a hand's gap between our shoulders", still([0.0, -1.15, 1.55], [0.0, 0.65, 1.5], 12), hand=0.003)
 shot("L03", "S03: Ines at her blue door halfway up, under her lamp", RF(4, d=2.0, lens=28))
 shot("L03.2", "S03b: my cot beside the dead lens, rain starting", still([0.6, -2.3, LF + 1.4], [-1.1, 0.2, LF + 0.7], 28), rain=True)
 shot("L04", "kitchen, grey daylight going: eating fast", still([KX + 1.6, -1.4, 1.75], [KX, 0.1, 1.2], 26))
@@ -181,7 +181,7 @@ shot("L05", "on the stairs in low orange sun, an awkward high five",
      still([0.0, 0.0, 43.5 * STEP + 1.75], pol(1.7, 30 * 43.5, 43.5 * STEP + 1.4), 14), hand=0.003)
 shot("L06", "Ines in bed, phone glow on her face", still([0.0, 0.1, Z4 + 1.0], [1.8, 0.0, Z4 + 1.0], 36))
 shot("L06.2", "S06b: over my shoulder at the top rail in storm blue, flashlight in hand, only the well and rail",
-     c([0, [2.3, 0.55, Z7 + 2.0], [0.4, -0.1, Z7 - 1.4], 26], [1, [2.2, 0.5, Z7 + 1.95], [0.4, -0.1, Z7 - 1.6], 24]), hand=0.004)
+     c([0, [2.35, 0.55, 17.5], [-0.95, -0.15, 14.7], 26], [1, [2.3, 0.5, 17.45], [-0.95, -0.15, 14.4], 24]), hand=0.004)
 shot("L07", "close on me in the glow, a wince", still([-1.3, -1.25, LF + 1.5], [-1.3, 0.4, LF + 1.38], 44))
 shot("L08", "close on me, the glow, worried", still([-1.3, -1.3, LF + 1.6], [-1.3, 0.4, LF + 1.42], 38))
 shot("L09", "the glow brightens, a soft smile", still([-1.3, -1.25, LF + 1.5], [-1.3, 0.4, LF + 1.38], 44))
@@ -189,7 +189,7 @@ shot("L10", "from the top landing straight down the well: her lamp fades",
      still([1.3, 0.0, Z7 + 1.55], [1.5, -0.5, Z4 + 1.9], 24), step=1, hand=0.002)
 shot("L14", "S14 (lore plant): the bolt plate, two strokes, held from the first word, a slow drift",
      move(([0.8, 0.34, 16.34], [2.4, 0.34, 16.34]), ([0.9, 0.34, 16.34], [2.4, 0.34, 16.34]), 40), hand=0)
-shot("L14.3", "S14b: me in the camp bed, rain on the glass", still([0.5, -1.6, LF + 1.5], [-1.3, 0.4, LF + 0.9], 30), rain=True)
+shot("L14.3+0.35", "S14b: me in the camp bed, rain on the glass", still([0.5, -1.6, LF + 1.5], [-1.3, 0.4, LF + 0.9], 30), rain=True)
 # 03 night one
 shot("L15", "black, the buzz, the glow on my face; I'm standing",
      still([-0.7, -2.2, LF + 1.62], [-0.7, -0.6, LF + 1.4], 32))
@@ -358,7 +358,7 @@ def at_rail(n, at, **kw):
 
 
 # me
-put("me", 0, [1.35, 1.0, Z7], yaw=-40, expr="worried", head=[0, 24], lean=8, blink=False)   # S01: at the top rail, looking down the well
+put("me", 0, [1.05, 0.95, Z7], yaw=-53, expr="worried", head=[0, 14], lean=4, blink=False)   # S01: at the top rail, looking down the well
 hide("me", "L02")
 put("me", "L02b", [0.75, 0.65, 0], yaw=0, expr="smirk", head=[0, -10])
 key("me", "L02b.2", head=[40, 0], blend=0.3)   # I glance away
@@ -372,7 +372,7 @@ put("me", "L07", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-6, arms=[60, 60
 key("me", "L09", expr="warm", blend=0.4)
 hide("me", "L10")
 hide("me", "L14")
-put("me", "L14.3", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-8, head=[0, 8], expr="asleep", blink=False)
+put("me", "L14.3+0.35", [-1.3, 0.55, LF + 0.01], yaw=0, sit=True, lean=-8, head=[0, 8], expr="asleep", blink=False)
 put("me", "L15", [-0.7, -0.6, LF], yaw=0, head=[0, 22], arms=[64, 64], expr="worried")
 at_rail(7, "L16", head=[0, 28], arms=[0, 20])
 hide("me", "L17")
@@ -541,7 +541,7 @@ cues = [
     {"at": "L06.2", "name": "torch", "on": 1.0, "dur": 0.4, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0], "gain": 0.4, "spill": 1.0},
     {"at": "L07", "name": "torch", "on": 0.0, "dur": 0.0, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0], "gain": 0.4, "spill": 1.0},
     {"at": "L14", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.45, "spill": 0.0},
-    {"at": "L14.3", "name": "torch", "on": 0.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "dur": 0.0, "gain": 0.45, "spill": 0.0},
+    {"at": "L14.3+0.35", "name": "torch", "on": 0.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "dur": 0.0, "gain": 0.45, "spill": 0.0},
     {"at": "L16", "name": "torch", "on": 1.0, "dur": 0.5, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0],
      "gain": 0.4, "spill": 1.0},
     {"at": "L17", "name": "torch", "on": 1.0, "from": [1.3, 0.0, Z7 + 1.55], "aim": [0.0, 1.55, 1.2], "gain": 29.0, "spill": 0.0, "spot": 7, "blend": 0.15},
@@ -581,9 +581,10 @@ cues = [
     {"at": "L69", "name": "up", "pos": tread(39.5, 1.7), "face": 109, "mouth": 1, "rim": 0.0},
     {"at": "L70", "name": "up", "hidden": True},
     # the treads the view down the well needs gone
-    {"at": 0, "name": "clear", "az": None},
+    {"at": 0, "name": "clear", "az": 0, "span": 70, "z0": 10.0, "z1": 14.0, "rails": [10.0, 14.2], "rail_span": 70},
+    {"at": "L02", "name": "clear", "az": None},
     {"at": "L14", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},
-    {"at": "L14.3", "name": "clear", "az": None},
+    {"at": "L14.3+0.35", "name": "clear", "az": None},
     {"at": "L17", "name": "clear", "az": 60, "span": 100, "z0": -1.0, "z1": 15.6, "rails": [-1.0, Z7 + 1.7], "rail_az": 60, "rail_span": 110},
     {"at": "L21", "name": "clear", "az": None},
     {"at": "L21.1", "name": "clear", "az": 0, "span": 40, "z0": 99, "z1": 99, "rails": [15.3, 17.0]},

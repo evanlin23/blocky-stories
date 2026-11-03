@@ -379,13 +379,13 @@ def build_ines_door(kit, ctx, M):
     # the wall lamp at azimuth -14 + 20 (beside the door), warm
     lf = feature(kit, "wall lamp", az - 20.0, z0 + 1.7)
     kit.box("wall lamp.arm", (0.14, 0.04, 0.04), (-0.07, 0, 0), M["brass"], lf)
-    kit.box("wall lamp.shade", (0.2, 0.24, 0.3), (-0.2, 0, 0.02), M["shade"], lf, bevel=0.04)
+    kit.box("wall lamp.shade", (0.3, 0.34, 0.44), (-0.25, 0, 0.02), M["shade"], lf, bevel=0.04)
     ctx["lamp_pos"] = pol(wall_r(z0) - 0.28, az - 20.0, z0 + 1.7)
     # a second warm lamp beside the lamp-room door at the top (the two lit floors of the opening)
     z7 = TURNS * RISE
     lf2 = feature(kit, "wall lamp top", 20.0, z7 + 1.7)
     kit.box("wall lamp top.arm", (0.14, 0.04, 0.04), (-0.07, 0, 0), M["brass"], lf2)
-    kit.box("wall lamp top.shade", (0.2, 0.24, 0.3), (-0.2, 0, 0.02), M["shade"], lf2, bevel=0.04)
+    kit.box("wall lamp top.shade", (0.3, 0.34, 0.44), (-0.25, 0, 0.02), M["shade"], lf2, bevel=0.04)
     ctx["lamp2_pos"] = pol(wall_r(z7) - 0.28, 20.0, z7 + 1.7)
 
 
