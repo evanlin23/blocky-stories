@@ -290,9 +290,6 @@ stage("L39", dadn=((-8.2, 10.8, 0.2), 90, "worried", {"arms": [45, 45]}))
 shot("S49", "L40", C((-6.4, 9.2, 1.68), (-8.2, 10.8, 1.66), 46, (-6.8, 9.6, 1.68), (-8.2, 10.8, 1.66), 50),
      "Dad's face, eyes shut", step=1)
 stage("L40", dadn=((-8.2, 10.8, 0.2), 90, "shut"))
-shot("S49b", "L40.2", C((7.2, 0.6, 4.4), (7.2, 8.5, -0.1), 20, (7.2, 1.1, 4.2), (7.2, 8.5, -0.1), 20),
-     "the lid sinks shut", step=1, flood=0.55)
-stage("L40.2", odell=((10.0, 6.6, 0), 90, "shut"))
 shot("S50", "L40.3", C((100.7, -0.9, 1.45), (103.0, 0.0, 1.5), 32, (101.0, -0.9, 1.45), (103.2, 0.0, 1.5), 32),
      "the hall pictures easing back level over a second", step=1)
 stage("L40.3")
@@ -379,7 +376,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"style": "closer", "fog": "#6f86c8", "fog_density": 0.012, "fog_start": 14.0, "sky": "#1b2a6b",
-             "exposure": 0.0, "flash_safe": True, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
+             "exposure": 0.0, "flash_safe": True, "polish": True, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 1.12, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.01, "red_line": 0.78},
     "phonemes": {"snaps": "snˈæps"},

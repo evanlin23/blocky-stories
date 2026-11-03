@@ -23,6 +23,7 @@
   "sky": "#1b2a6b",
   "exposure": 0.0,
   "flash_safe": true,
+  "polish": true,
   "hdri": "moonless_golf",
   "hdri_strength": 0.6,
   "hdri_visible": false
@@ -2856,43 +2857,6 @@
    "at": "L40"
   },
   {
-   "id": "S49b",
-   "cam": [
-    [
-     0,
-     [
-      7.2,
-      0.6,
-      4.4
-     ],
-     [
-      7.2,
-      8.5,
-      -0.1
-     ],
-     20
-    ],
-    [
-     1,
-     [
-      7.2,
-      1.1,
-      4.2
-     ],
-     [
-      7.2,
-      8.5,
-      -0.1
-     ],
-     20
-    ]
-   ],
-   "step": 1,
-   "hand": 0.008,
-   "note": "the lid sinks shut",
-   "at": "L40.2"
-  },
-  {
    "id": "S50",
    "cam": [
     [
@@ -3643,11 +3607,6 @@
     "blend": 0
    },
    {
-    "at": "L40.2",
-    "hidden": true,
-    "blend": 0
-   },
-   {
     "at": "L40.3",
     "hidden": true,
     "blend": 0
@@ -4118,11 +4077,6 @@
    },
    {
     "at": "L40",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L40.2",
     "hidden": true,
     "blend": 0
    },
@@ -4749,11 +4703,6 @@
     "hidden": false,
     "expr": "shut",
     "yaw": 90
-   },
-   {
-    "at": "L40.2",
-    "hidden": true,
-    "blend": 0
    },
    {
     "at": "L40.3",
@@ -5868,41 +5817,6 @@
     "blend": 0
    },
    {
-    "at": "L40.2",
-    "pos": [
-     10.6,
-     6.0,
-     0
-    ]
-   },
-   {
-    "at": "L40.2",
-    "pos": [
-     10.0,
-     6.6,
-     0
-    ],
-    "blend": 0,
-    "arms": [
-     62,
-     62
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "hidden": false,
-    "expr": "shut",
-    "yaw": 90
-   },
-   {
     "at": "L40.3",
     "hidden": true,
     "blend": 0
@@ -5915,8 +5829,8 @@
    {
     "at": "L42",
     "pos": [
-     10.0,
-     6.6,
+     10.6,
+     6.0,
      0
     ]
    },
@@ -6676,10 +6590,6 @@
   },
   "S49": {
    "day": 0
-  },
-  "S49b": {
-   "day": 0,
-   "flood": 0.55
   },
   "S50": {
    "day": 0
