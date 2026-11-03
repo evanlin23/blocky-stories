@@ -142,7 +142,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L17` narrator: His letter's / BACKWARDS.
   - [S24: close on his tag: a mirrored C]
 - `L18` narrator: My REAL brother / is in / the GLASS.
-  - [S25: in the glass, the gap: my brother, `worried`, palm flat on the inside of the glass, eyes on me]
+  - [S25: in the glass, the gap: my brother, `worried`, standing in the gap facing out, eyes on me (no hand on the glass: batch 1 used "pressed flat against glass")]
 - `L19` narrator: Count them / AGAIN.
   - [S26: the master, six faces in the glass, five backs, push in. 0.25 s, then loop to S01]
 
