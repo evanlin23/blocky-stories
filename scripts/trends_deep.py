@@ -6,7 +6,7 @@
 For each of the scan's 40 fastest Shorts (by views per day) it saves the description and tags, the channel's
 subscriber count and creation date, the publish hour (UTC), the like/view and comment/view ratios, and the top 20
 comments (order=relevance, text only: no usernames, @handles masked). It runs right after scripts/trends.py in the
-metrics workflow (continue-on-error), and costs about 45 of the 10,000 free daily API units. Every call is counted
+metrics workflow (continue-on-error), and costs about 45 of the 10,000 free daily API units (the scan before it about 2,230). Every call is counted
 against a cap, so a bug can never spend the day's quota (the daily upload needs about 1,600).
 
 Public repo: descriptions and comments are other people's words, so both are cut short (DESC_CHARS, COMMENT_CHARS)
@@ -217,14 +217,16 @@ def report(items: list[dict], day: str, units: dict) -> str:
 
 def main(argv: list[str]) -> None:
     sys.path.insert(0, str(Path(__file__).parent))
-    from trends import QUERIES, youtube
+    from trends import QUERIES, QUERIES_WIDE, youtube
 
     src = latest(argv[1] if len(argv) > 1 else None)
     scan = json.loads(src.read_text())
     day = src.stem
     budget = Budget()
     items = deep(youtube(), scan["rows"], dt.datetime.now(dt.timezone.utc), budget)
-    units = {"scan": scan_cost(len(scan["rows"]), len(QUERIES)), "deep": budget.used,
+    wide = scan.get("rows_wide", [])
+    units = {"scan": scan_cost(len(scan["rows"]) + len(wide), len(QUERIES) + len(QUERIES_WIDE))
+             + -(-len({r.get("channel_id") for r in wide}) // 50), "deep": budget.used,
              "calls": ", ".join(f"{k} ×{v}" for k, v in sorted(budget.calls.items()))}
     OUT.mkdir(parents=True, exist_ok=True)
     md = report(items, day, units)
