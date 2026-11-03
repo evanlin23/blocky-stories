@@ -10413,7 +10413,7 @@
  "sound": {
   "floor": "grass",
   "steps_db": -26,
-  "rev": 4,
+  "rev": 5,
   "ambience": [
    {
     "kind": "beehum",
@@ -10502,66 +10502,6 @@
     "dur": 1.9
    },
    {
-    "at": "L10+0.2",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L16.2+0.15",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L22+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L22.1+0.2",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L29+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L32+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L41+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L47+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L49.2+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L50.2+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L19+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
-    "at": "L14+0.1",
-    "kind": "click",
-    "db": -27
-   },
-   {
     "at": "L54.1",
     "kind": "click",
     "db": -17
@@ -10639,16 +10579,6 @@
     "db": -30
    },
    {
-    "at": "L28+1.0",
-    "kind": "whoosh",
-    "db": -24
-   },
-   {
-    "at": "L30+0.4",
-    "kind": "whoosh",
-    "db": -24
-   },
-   {
     "at": "L45",
     "kind": "thud",
     "db": -28
@@ -10657,11 +10587,6 @@
     "at": "L52+0.1",
     "kind": "thud",
     "db": -24
-   },
-   {
-    "at": "L59",
-    "kind": "whoosh",
-    "db": -26
    },
    {
     "at": "L68",

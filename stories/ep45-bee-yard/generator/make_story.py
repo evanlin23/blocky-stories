@@ -516,9 +516,7 @@ def fx_(at_, kind, db, **kw):
 
 for ref in ("L02+0.1", "L03+0.1", "L07.1", "L11+0.1", "L56.1"):
     fx_(ref, "chime", -19, dur=1.9)
-for ref in ("L10+0.2", "L16.2+0.15", "L22+0.1", "L22.1+0.2", "L29+0.1", "L32+0.1", "L41+0.1", "L47+0.1", "L49.2+0.1", "L50.2+0.1",
-            "L19+0.1", "L14+0.1"):
-    fx_(ref, "click", -27)
+# (the quiet decorative dial clicks were cut 2026-11-03: sound budget)
 for ref in ("L54.1", "L54.1+0.4", "L54.1+0.8"):
     fx_(ref, "click", -17)
 fx_("L13.3", "latch", -16)
@@ -532,11 +530,8 @@ fx_("L55+0.35", "thud", -26)
 # quality lift 2026-11-03: recorded latch, whoosh and thud where beats land
 fx_("L15>-0.4", "latch", -20)           # the gate, each evening
 fx_("L23", "thud", -30)                  # someone in the last row
-fx_("L28+1.0", "whoosh", -24)            # the row is empty
-fx_("L30+0.4", "whoosh", -24)            # back, two hives nearer
 fx_("L45", "thud", -28)                  # floating in the gateway
 fx_("L52+0.1", "thud", -24)              # the veil comes off its hook
-fx_("L59", "whoosh", -26)                # the smoke clears
 fx_("L68", "latch", -18)                 # at the gate now
 fx_("L63", "chime", -26, dur=1.6)
 sfx.sort(key=lambda e: 0)
@@ -558,7 +553,7 @@ story["music"] = {
         {"at": "L66", "voices": ["drone", "pluck_hi", "pad"], "energy": 0.6},
     ]}
 story["sound"] = {
-    "floor": "grass", "steps_db": -26, "rev": 4,
+    "floor": "grass", "steps_db": -26, "rev": 5,
     "ambience": [
         {"kind": "beehum", "from": 0, "to": "L02", "lufs": -42},
         {"kind": "gulls", "from": "L02", "to": "L15", "lufs": -41},
