@@ -155,7 +155,7 @@ CP = {"cal2": (-0.3, 0.45), "me2": (-0.3, -0.45)}
 
 # sit + base poses
 for w in ("cal", "me", "cal2", "me2", "driver1"):
-    A(w, 0, sit=True, hidden=True)
+    A(w, 0, sit=True, hidden=True, arms=[70, 70] if w != "me" else [0, 0], side=[0, 0], head=[0, 0], lean=0, roll=0)
 A("cal", "L08", arms=[70, 70], expr="smile", blend=0)
 A("me", "L08", arms=[0, 0], expr="neutral", blend=0)
 
@@ -305,7 +305,7 @@ def move(l0, t0, l1, t1, lens0, lens1=None):
 
 
 def shot(at, note, cam, follow=None, hand=0.012, step=2):
-    s = {"at": at, "what": note, "cam": cam, "hand": hand, "step": step}
+    s = {"id": f"S{len(SHOTS) + 1:03d}", "at": at, "what": note, "cam": cam, "hand": hand, "step": step}
     if follow:
         s["follow"] = follow
     SHOTS.append(s)
@@ -342,7 +342,7 @@ shot("L03", "S03 a car rolls past the second window", still([8.5, -0.6, 0.7], [1
 shot("L04", "S04 a van with a taped window", still([9.0, -0.4, 0.8], [11.0, 3.0, 1.2], 26))
 shot("L05", "S05 Mr. Dale at his door", still([300, -1.7, 1.55], [300, 3, 1.5], 36))
 shot("L06", "S06 first red truck, big", still([10.5, 10.9, 0.65], [15, 12.9, 0.95], 30))
-shot("L06.1", "S07 tracking along all eight", move([17, 9.8, 0.95], [13, 12.9, 0.95], [-8, 9.8, 0.95], [-14, 12.9, 0.95], 30), hand=0)
+shot("L06.2", "S07 tracking along all eight", move([17, 9.8, 0.95], [13, 12.9, 0.95], [-8, 9.8, 0.95], [-14, 12.9, 0.95], 30), hand=0)
 shot("L07", "S08 Dale raises the mug", still([300.3, -0.6, 1.6], [300, 3, 1.6], 45))
 shot("L07.2", "S09 the soup, number nine", still([-13.73, 0.8, 1.4], [-13.73, 4.1, 1.35], 45))
 # ---- 02 Cal
@@ -417,8 +417,8 @@ shot("L49", "S72 over my shoulder, the back wall", still([0.5, 0.0, 1.75], [10, 
 shot("L49.2", "S73 the three, tighter", still([0.5, 0.0, 1.75], [8, 1.8, 1.0], 50), "me")
 shot("L50", "S74 through the nearest copy", still([-21.0, 11.3, 3.2], [-17.6, 12.9, 1.4], 38))
 shot("L50.1", "S75 me scared", still([2.0, -1.2, 1.75], [0, 0, 1.68], 50), "me")
-shot("P02", "S76a dim, the hatch", still([7.5, 1.4, 2.1], [10.1, 3.8, 1.9], 32))
-shot("L51", "S76 out to its waist", still([7.5, 1.4, 2.1], [10.1, 3.8, 1.9], 32))
+shot("P02", "S76a dim, the hatch", still([6.0, 0.2, 2.3], [10.0, 4.0, 1.9], 24))
+shot("L51", "S76 out to its waist", still([6.0, 0.2, 2.3], [10.0, 4.0, 1.9], 24))
 shot("L52", "S77 its face a hand from Cal's", still([12.5, 2.0, 1.9], [10.3, 3.4, 1.9], 40))
 shot("L53", "S78 high wide, one window", still([5, -40, 22], [5, 5, 1.5], 24), hand=0)
 shot("L54", "S79 the one window", still([0.0, 0.9, 1.65], [0, 5.2, 1.6], 30))
@@ -496,8 +496,8 @@ story = {
     "tail": 0,
     "fade_in": False,
     "look": {"fog": "#ffe2bd", "fog_density": 0.006, "fog_start": 25.0, "sky": "#f7c690", "sky_strength": 1.1,
-             "hdri": "industrial_sunset_puresky", "hdri_strength": 0.9, "hdri_rotation": 0, "hdri_visible": False,
-             "exposure": 0.3, "flash_safe": True},
+             "hdri": "industrial_sunset_puresky", "hdri_strength": 0.7, "hdri_rotation": 0, "hdri_visible": False,
+             "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.04, 0.01, -0.03], "saturation": 1.12, "contrast": 1.05,
               "vignette": 0.22, "bloom": 0.25, "grain": 0.008},
     "phonemes": {},

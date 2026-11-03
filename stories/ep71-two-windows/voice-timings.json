@@ -1,0 +1,1881 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "at this drive thru, never pull up to the second window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     1.017,
+     1.431
+    ],
+    [
+     1.431,
+     1.552
+    ],
+    [
+     1.552,
+     2.31
+    ]
+   ]
+  },
+  "L02": {
+   "text": "there's only one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.172,
+   "end": 0.983,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ]
+   ]
+  },
+  "L03": {
+   "text": "cars roll past it, eyes on the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.948
+    ],
+    [
+     1.0,
+     1.25
+    ],
+    [
+     1.25,
+     1.828
+    ]
+   ]
+  },
+  "L04": {
+   "text": "delivery vans tape their side windows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.854
+    ],
+    [
+     0.854,
+     1.81
+    ]
+   ]
+  },
+  "L05": {
+   "text": "our neighbor, mister Dale, stopped there once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.526,
+     0.914
+    ],
+    [
+     0.948,
+     1.828
+    ]
+   ]
+  },
+  "L06": {
+   "text": "now eight of his red trucks wait by the back wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.992
+    ],
+    [
+     0.992,
+     1.345
+    ],
+    [
+     1.345,
+     2.034
+    ]
+   ]
+  },
+  "L07": {
+   "text": "he only got out the night he ordered the soup.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.595
+    ],
+    [
+     0.595,
+     0.862
+    ],
+    [
+     0.862,
+     1.181
+    ],
+    [
+     1.181,
+     1.724
+    ]
+   ]
+  },
+  "L08": {
+   "text": "me? I've come here every friday for eleven years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.379,
+     0.776
+    ],
+    [
+     0.776,
+     1.31
+    ],
+    [
+     1.31,
+     2.155
+    ]
+   ]
+  },
+  "L09": {
+   "text": "and I've never once ordered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.828
+    ],
+    [
+     0.828,
+     1.345
+    ]
+   ]
+  },
+  "L10": {
+   "text": "my big brother, Cal, orders for both of us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.983
+    ],
+    [
+     1.034,
+     1.594
+    ],
+    [
+     1.594,
+     2.069
+    ]
+   ]
+  },
+  "L11": {
+   "text": "two number fours. no pickles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.845,
+     1.569
+    ]
+   ]
+  },
+  "L12": {
+   "text": "I'm twenty. I would like to try a pickle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.759,
+     1.026
+    ],
+    [
+     1.026,
+     1.267
+    ],
+    [
+     1.267,
+     1.845
+    ]
+   ]
+  },
+  "L13": {
+   "text": "so tonight, I tell him I'm ordering my own.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.87
+    ],
+    [
+     0.87,
+     1.31
+    ],
+    [
+     1.31,
+     1.914
+    ]
+   ]
+  },
+  "L14": {
+   "text": "he laughs, and rolls his old car, cracked headlight and all, up to the speaker.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.483,
+   "onset": 0.172,
+   "end": 3.293,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     0.931
+    ],
+    [
+     0.931,
+     1.448
+    ],
+    [
+     1.517,
+     2.052
+    ],
+    [
+     2.052,
+     2.379
+    ],
+    [
+     2.431,
+     2.629
+    ],
+    [
+     2.629,
+     3.293
+    ]
+   ]
+  },
+  "L15": {
+   "text": "before he says a word, the speaker asks, two number fours, no pickles?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.172,
+   "onset": 0.155,
+   "end": 2.983,
+   "chunks": [
+    [
+     0.155,
+     0.526
+    ],
+    [
+     0.526,
+     0.776
+    ],
+    [
+     0.802,
+     1.517
+    ],
+    [
+     1.594,
+     2.224
+    ],
+    [
+     2.25,
+     2.983
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Cal grins. they know me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.293
+    ]
+   ]
+  },
+  "L17": {
+   "text": "the lady at the window hands us ticket forty one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.819
+    ],
+    [
+     0.819,
+     1.155
+    ],
+    [
+     1.155,
+     2.086
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Cal hangs it on the mirror.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.345
+    ]
+   ]
+  },
+  "L19": {
+   "text": "then, past the end of the wall, where there's only parking lot,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.802
+    ],
+    [
+     0.802,
+     1.276
+    ],
+    [
+     1.345,
+     1.776
+    ],
+    [
+     1.776,
+     2.569
+    ]
+   ]
+  },
+  "L20": {
+   "text": "a second window is lit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.276
+    ]
+   ]
+  },
+  "L21": {
+   "text": "a hand rests a bag on its sill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.888
+    ],
+    [
+     0.888,
+     1.534
+    ]
+   ]
+  },
+  "L22": {
+   "text": "Cal says the rule is for people who don't know the fries are better there.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.905
+    ],
+    [
+     0.905,
+     1.319
+    ],
+    [
+     1.319,
+     1.664
+    ],
+    [
+     1.664,
+     2.121
+    ],
+    [
+     2.121,
+     2.81
+    ]
+   ]
+  },
+  "L23": {
+   "text": "I say no. he's already rolling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.586
+    ]
+   ]
+  },
+  "L24": {
+   "text": "the bag is hot. two number fours. no pickles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.155,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.707
+    ],
+    [
+     0.768,
+     1.397
+    ],
+    [
+     1.431,
+     2.138
+    ]
+   ]
+  },
+  "L25": {
+   "text": "we never ordered at that window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.534
+    ]
+   ]
+  },
+  "L26": {
+   "text": "Cal eats a fry and heads for the exit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.862
+    ],
+    [
+     0.862,
+     1.25
+    ],
+    [
+     1.25,
+     1.862
+    ]
+   ]
+  },
+  "L27": {
+   "text": "the exit goes round the back of the building,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.94
+    ],
+    [
+     0.94,
+     1.233
+    ],
+    [
+     1.233,
+     1.862
+    ]
+   ]
+  },
+  "L28": {
+   "text": "past mister Dale's eight trucks,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.483
+    ]
+   ]
+  },
+  "L29": {
+   "text": "and comes out at the speaker.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.293
+    ]
+   ]
+  },
+  "L30": {
+   "text": "two number fours, no pickles?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.784,
+     1.483
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Cal grins. they know me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.293
+    ]
+   ]
+  },
+  "L32": {
+   "text": "same grin. same words.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.647,
+     1.362
+    ]
+   ]
+  },
+  "L33": {
+   "text": "two tickets on the mirror. both say forty one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.0
+    ],
+    [
+     1.077,
+     1.439
+    ],
+    [
+     1.439,
+     2.19
+    ]
+   ]
+  },
+  "L34": {
+   "text": "I tell Cal we've been here. he says we just got here.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.603,
+     1.155
+    ],
+    [
+     1.224,
+     1.5
+    ],
+    [
+     1.5,
+     1.741
+    ],
+    [
+     1.741,
+     2.328
+    ]
+   ]
+  },
+  "L35": {
+   "text": "at the second window, there's a face in the hatch now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.302
+    ],
+    [
+     0.302,
+     0.879
+    ],
+    [
+     0.948,
+     1.353
+    ],
+    [
+     1.353,
+     1.466
+    ],
+    [
+     1.466,
+     2.155
+    ]
+   ]
+  },
+  "L36": {
+   "text": "it's as wide as the window, and it doesn't blink.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.138
+    ],
+    [
+     1.207,
+     1.337
+    ],
+    [
+     1.337,
+     2.034
+    ]
+   ]
+  },
+  "L37": {
+   "text": "Cal pulls up like he's never seen it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.129
+    ],
+    [
+     1.129,
+     1.672
+    ]
+   ]
+  },
+  "L38": {
+   "text": "and by the back wall, behind the trucks, one more car waits.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.759
+    ],
+    [
+     0.784,
+     1.414
+    ],
+    [
+     1.483,
+     1.793
+    ],
+    [
+     1.793,
+     2.5
+    ]
+   ]
+  },
+  "L39": {
+   "text": "it has one cracked headlight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     1.397
+    ]
+   ]
+  },
+  "L40": {
+   "text": "lap three. three tickets. all forty one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.517,
+     0.948
+    ],
+    [
+     1.0,
+     1.845
+    ]
+   ]
+  },
+  "L41": {
+   "text": "I shout at Cal the whole way round.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.406
+    ],
+    [
+     0.406,
+     0.647
+    ],
+    [
+     0.647,
+     0.879
+    ],
+    [
+     0.879,
+     1.534
+    ]
+   ]
+  },
+  "L42": {
+   "text": "at the speaker, he grins. they know me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.56,
+     0.931
+    ],
+    [
+     0.983,
+     1.638
+    ]
+   ]
+  },
+  "L43": {
+   "text": "the face is out to its shoulders now,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.672
+    ],
+    [
+     0.672,
+     0.828
+    ],
+    [
+     0.828,
+     1.586
+    ]
+   ]
+  },
+  "L44": {
+   "text": "holding the bag up to Cal's window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     0.862
+    ],
+    [
+     0.862,
+     1.638
+    ]
+   ]
+  },
+  "L45": {
+   "text": "its smile runs from one edge of its head to the other.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.233
+    ],
+    [
+     1.233,
+     1.594
+    ],
+    [
+     1.594,
+     2.241
+    ]
+   ]
+  },
+  "L46": {
+   "text": "two cars by the back wall. both with a cracked headlight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.741
+    ],
+    [
+     0.741,
+     1.276
+    ],
+    [
+     1.371,
+     1.647
+    ],
+    [
+     1.647,
+     2.5
+    ]
+   ]
+  },
+  "L47": {
+   "text": "lap four.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.034,
+   "onset": 0.19,
+   "end": 0.81,
+   "chunks": [
+    [
+     0.19,
+     0.81
+    ]
+   ]
+  },
+  "L48": {
+   "text": "I turn in my seat and look.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.732
+    ],
+    [
+     0.732,
+     1.241
+    ]
+   ]
+  },
+  "L49": {
+   "text": "behind mister Dale's trucks, three cars wait. all of them ours.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.155,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     1.052
+    ],
+    [
+     1.086,
+     1.81
+    ],
+    [
+     1.888,
+     2.172
+    ],
+    [
+     2.172,
+     2.741
+    ]
+   ]
+  },
+  "L50": {
+   "text": "in every one, it's Cal and me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     0.957
+    ],
+    [
+     0.957,
+     1.414
+    ]
+   ]
+  },
+  "L51": {
+   "text": "in the hatch, it's out to its waist,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.776
+    ],
+    [
+     0.776,
+     1.466
+    ]
+   ]
+  },
+  "L52": {
+   "text": "its wide face a hand from Cal's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     0.948
+    ],
+    [
+     0.948,
+     1.69
+    ]
+   ]
+  },
+  "L53": {
+   "text": "there was only ever one window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.81
+    ],
+    [
+     0.81,
+     1.534
+    ]
+   ]
+  },
+  "L54": {
+   "text": "the second window is the first one again, one lap later.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     0.888
+    ],
+    [
+     0.888,
+     1.181
+    ],
+    [
+     1.181,
+     1.517
+    ],
+    [
+     1.612,
+     2.5
+    ]
+   ]
+  },
+  "L55": {
+   "text": "and every lap you go round waits by the back wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.069
+    ],
+    [
+     1.069,
+     1.466
+    ],
+    [
+     1.466,
+     2.155
+    ]
+   ]
+  },
+  "L56": {
+   "text": "Cal says the same thing every lap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.974
+    ],
+    [
+     0.974,
+     1.655
+    ]
+   ]
+  },
+  "L57": {
+   "text": "I'm the only thing in this car that changes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.681
+    ],
+    [
+     0.681,
+     1.086
+    ],
+    [
+     1.086,
+     1.845
+    ]
+   ]
+  },
+  "L58": {
+   "text": "that window only hands you what you got last time, so a new order breaks the lap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.655,
+   "onset": 0.172,
+   "end": 3.448,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.086
+    ],
+    [
+     1.086,
+     1.397
+    ],
+    [
+     1.397,
+     1.983
+    ],
+    [
+     2.069,
+     2.259
+    ],
+    [
+     2.259,
+     2.655
+    ],
+    [
+     2.655,
+     3.448
+    ]
+   ]
+  },
+  "L59": {
+   "text": "so at the speaker, I lean over Cal before it can ask.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.741
+    ],
+    [
+     0.776,
+     1.008
+    ],
+    [
+     1.008,
+     1.414
+    ],
+    [
+     1.414,
+     1.698
+    ],
+    [
+     1.698,
+     2.276
+    ]
+   ]
+  },
+  "L60": {
+   "text": "and for the first time in eleven years, I order.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.732
+    ],
+    [
+     0.732,
+     1.345
+    ],
+    [
+     1.397,
+     2.069
+    ]
+   ]
+  },
+  "L61": {
+   "text": "one number seven. and a number four for my brother. extra pickles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.862,
+     0.974
+    ],
+    [
+     0.974,
+     1.328
+    ],
+    [
+     1.328,
+     1.793
+    ],
+    [
+     1.845,
+     2.741
+    ]
+   ]
+  },
+  "L62": {
+   "text": "the speaker goes quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     1.259
+    ]
+   ]
+  },
+  "L63": {
+   "text": "then it says, forty two.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.448,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.552,
+     1.241
+    ]
+   ]
+  },
+  "L64": {
+   "text": "Cal stares at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.241,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.052
+    ]
+   ]
+  },
+  "L65": {
+   "text": "past the window, the wall just ends.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.698,
+     0.983
+    ],
+    [
+     0.983,
+     1.69
+    ]
+   ]
+  },
+  "L66": {
+   "text": "the exit goes out to the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.879
+    ],
+    [
+     0.879,
+     1.517
+    ]
+   ]
+  },
+  "L67": {
+   "text": "Cal eats a pickle and makes a face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.776
+    ],
+    [
+     0.776,
+     1.008
+    ],
+    [
+     1.008,
+     1.603
+    ]
+   ]
+  },
+  "L68": {
+   "text": "then he eats all of them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.224
+    ]
+   ]
+  },
+  "L69": {
+   "text": "every friday now, at the speaker, he looks at me and waits.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.172,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.957,
+     1.397
+    ],
+    [
+     1.431,
+     1.69
+    ],
+    [
+     1.69,
+     1.879
+    ],
+    [
+     1.879,
+     2.5
+    ]
+   ]
+  },
+  "L70": {
+   "text": "but our three old laps are still in line by the back wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.155,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.155,
+     0.517
+    ],
+    [
+     0.517,
+     0.905
+    ],
+    [
+     0.905,
+     1.129
+    ],
+    [
+     1.129,
+     1.466
+    ],
+    [
+     1.466,
+     1.621
+    ],
+    [
+     1.621,
+     2.31
+    ]
+   ]
+  },
+  "L71": {
+   "text": "the front one never got out. it's rolling up to the second window, and nobody tells it,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.621,
+   "onset": 0.155,
+   "end": 3.414,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.569,
+     1.241
+    ],
+    [
+     1.337,
+     1.828
+    ],
+    [
+     1.828,
+     1.957
+    ],
+    [
+     1.957,
+     2.483
+    ],
+    [
+     2.517,
+     2.845
+    ],
+    [
+     2.845,
+     3.414
+    ]
+   ]
+  }
+ }
+}

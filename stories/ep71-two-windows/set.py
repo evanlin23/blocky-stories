@@ -117,7 +117,7 @@ def draw_menu(path):
             d.polygon([(cx - 70, cy - 20), (cx + 70, cy - 20), (cx + 52, cy + 80), (cx - 52, cy + 80)], fill="#d8433a")
         elif n == 3:     # drink
             d.polygon([(cx - 55, cy - 50), (cx + 55, cy - 50), (cx + 42, cy + 80), (cx - 42, cy + 80)], fill="#5aa9e6")
-            d.rectangle((cx - 62, cy - 62, cx + 62, cy - 48), fill="#fff")
+            d.rectangle((cx - 62, cy - 62, cx + 62, cy - 48), fill="#ffffff")
             d.rectangle((cx + 8, cy - 110, cx + 22, cy - 60), fill="#d8433a")
         elif n == 4:     # stacked bun, tall
             d.pieslice((cx - 80, cy - 112, cx + 80, cy - 4), 180, 360, fill="#e7a25a")
@@ -140,7 +140,7 @@ def draw_menu(path):
                 d.ellipse((cx + k * 24 - 20, cy - 62 + abs(k) * 5, cx + k * 24 + 20, cy - 12 + abs(k) * 5), fill="#7fc34a")
         elif n == 8:     # shake
             d.polygon([(cx - 50, cy - 40), (cx + 50, cy - 40), (cx + 38, cy + 82), (cx - 38, cy + 82)], fill="#f0b6cf")
-            d.ellipse((cx - 58, cy - 82, cx + 58, cy - 20), fill="#fff")
+            d.ellipse((cx - 58, cy - 82, cx + 58, cy - 20), fill="#ffffff")
             d.ellipse((cx - 12, cy - 100, cx + 12, cy - 76), fill="#d8433a")
         else:            # soup bowl, steam
             d.pieslice((cx - 95, cy - 70, cx + 95, cy + 80), 0, 180, fill="#e9743a")
@@ -161,13 +161,13 @@ def draw_sign(path):
     from PIL import Image, ImageDraw
     im = Image.new("RGB", (512, 512), "#2f9e6a")
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle((16, 16, 496, 496), 40, outline="#fff", width=10)
+    d.rounded_rectangle((16, 16, 496, 496), 40, outline="#ffffff", width=10)
     cx, cy = 256, 210
     d.pieslice((cx - 120, cy - 110, cx + 120, cy + 70), 180, 360, fill="#e7a25a")
     d.rectangle((cx - 126, cy - 20, cx + 126, cy), fill="#7fc34a")
     d.rounded_rectangle((cx - 120, cy, cx + 120, cy + 34), 14, fill="#7a4a2a")
     d.rounded_rectangle((cx - 120, cy + 34, cx + 120, cy + 70), 16, fill="#e7a25a")
-    d.polygon([(110, 400), (330, 400), (330, 360), (410, 430), (330, 500), (330, 460), (110, 460)], fill="#fff")
+    d.polygon([(110, 400), (330, 400), (330, 360), (410, 430), (330, 500), (330, 460), (110, 460)], fill="#ffffff")
     im.save(path)
 
 
@@ -280,7 +280,7 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
     if bag:
         bg = kit.empty(f"{name}.bag", (0, 0, 0), root)
         kit.box(f"{name}.bagm", (0.4, 0.26, 0.36), (-0.05, -0.43, 0.72), kit.plastic("#c9955a", 0.9, "bag"), bg, bevel=0.02)
-        kit.box(f"{name}.bagt", (0.3, 0.02, 0.12), (-0.05, -0.57, 0.8), kit.plastic("#fff", 0.6, "bagt"), bg)
+        kit.box(f"{name}.bagt", (0.3, 0.02, 0.12), (-0.05, -0.57, 0.8), kit.plastic("#ffffff", 0.6, "bagt"), bg)
         parts["bag"] = bg
     return parts
 
@@ -291,7 +291,7 @@ def build_server(kit, M, ctx):
     the bag, 1 the face fills the hatch, 2 out to the shoulders, 3 out to the waist."""
     mint = kit.plastic("#7fe0c4", 0.45, "srv mint")
     peach = kit.plastic("#ffb38a", 0.45, "srv peach")
-    skin = kit.plastic("#f0c9a0", 0.5, "srv skin")
+    skin = kit.plastic("#e6d2bd", 0.5, "srv skin")
     black = kit.plastic("#16110f", 0.5, "srv black")
     root = kit.empty("server", (H2X, 4.87, 0))
     g = kit.empty("server.g", (0, 0, 0), root)
@@ -302,14 +302,14 @@ def build_server(kit, M, ctx):
     head = kit.box("srv.head", (1.4, 0.5, 0.5), (0, 0, 1.72), skin, g, bevel=0.1)
     kit.box("srv.visor", (0.55, 0.62, 0.1), (0, -0.04, 1.99), peach, g, bevel=0.03)
     kit.box("srv.visor2", (0.5, 0.54, 0.06), (0, 0.0, 1.94), peach, g, bevel=0.02)
-    # eyes at the far edges, bright highlights; a thin black smile edge to edge
+    # eyes at the far edges: pale, staring, a tiny pupil; a thin black smile edge to edge, its ends curled up
+    white = kit.emit("#fffdf2", 2.2, "srv sclera")
     for sx in (-1, 1):
-        kit.cyl(f"srv.eye{sx}", 0.1, 0.03, (sx * 0.57, -0.255, 1.75), black, g, rot=(math.pi / 2, 0, 0), n=16)
-        kit.cyl(f"srv.eyeh{sx}", 0.04, 0.03, (sx * 0.57 + 0.02, -0.275, 1.78), kit.emit("#ffffff", 6.0, "srv eyeh"), g,
-                rot=(math.pi / 2, 0, 0), n=10)
-    kit.box("srv.smile", (1.22, 0.02, 0.045), (0, -0.255, 1.6), black, g)
+        kit.cyl(f"srv.eye{sx}", 0.085, 0.03, (sx * 0.6, -0.255, 1.78), white, g, rot=(math.pi / 2, 0, 0), n=20)
+        kit.cyl(f"srv.pupil{sx}", 0.028, 0.03, (sx * 0.6 - sx * 0.01, -0.272, 1.78), black, g, rot=(math.pi / 2, 0, 0), n=12)
+    kit.box("srv.smile", (1.22, 0.02, 0.035), (0, -0.255, 1.6), black, g)
     for sx in (-1, 1):
-        kit.box(f"srv.smile{sx}", (0.05, 0.02, 0.1), (sx * 0.63, -0.255, 1.64), black, g)
+        kit.box(f"srv.smile{sx}", (0.06, 0.02, 0.2), (sx * 0.62, -0.255, 1.66), black, g, rot=(0, -sx * 0.3, 0))
     # the arm with the bag (a mint sleeve, a hand at the end, the bag on its palm)
     arm = kit.empty("server.arm", (0.42, 0.18, 1.2), g)
     kit.box("srv.sleeve", (0.22, 1.0, 0.22), (0, -0.5, 0), mint, arm, bevel=0.04)
@@ -498,7 +498,7 @@ def build(kit, story, tl):
     for k in "ABC":
         cars["copy" + k] = build_car(kit, M, "copy" + k, "#5aa9e6", "open", cracked=True)
     cars["lime"] = build_car(kit, M, "lime", "#a8e03a", "open")
-    cars["van"] = build_car(kit, M, "van", "#f4f4f0", "van")
+    cars["van"] = build_car(kit, M, "van", "#dfe3e6", "van")
     for i in range(8):
         cars[f"truck{i}"] = build_car(kit, M, f"truck{i}", "#d8433a", "truck")
     ctx["cars"] = cars
