@@ -745,7 +745,7 @@ def meter_value(tl, t):
 def update_meter(kit, ctx, tl, t):
     M = ctx["meter"]
     v, since = meter_value(tl, t)
-    n = int(round(v))
+    n = int(round(2 ** round(math.log2(max(v, 1.0)))))   # the meter only ever shows powers of two
     wd = ctx["wd"]
     p = wd / f"m{n}.png"
     if not p.exists():

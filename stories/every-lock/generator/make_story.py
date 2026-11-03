@@ -117,6 +117,23 @@ def cam(loc, tgt, lens):
     return [[0, list(loc), list(tgt), lens]]
 
 
+def fit(c, hmin=1.5):
+    """Pull a close camera back (and widen the lens) so the frame is at least hmin metres tall at the subject."""
+    out = []
+    for k in c:
+        loc, tgt, lens = k[1], k[2], k[3]
+        d = [loc[i] - tgt[i] for i in range(3)]
+        dist = math.sqrt(sum(x * x for x in d)) or 1e-6
+        h = 24.0 * dist / lens
+        if h < hmin:
+            nd = dist * math.sqrt(hmin / h)
+            lens = max(14.0, 24.0 * nd / hmin)
+            f = nd / dist
+            loc = [tgt[0] + d[0] * f, tgt[1] + d[1] * f, tgt[2] + d[2] * f]
+        out.append([k[0], list(loc), list(tgt), round(lens, 1)] + k[4:])
+    return out
+
+
 def dolly(a, b, ta, tb, la, lb=None):
     return [[0, list(a), list(ta), la], [1, list(b), list(tb), lb or la]]
 
@@ -286,15 +303,15 @@ S("L39", cam((0.3, 6.2, 1.88), (0.17, 6.5, 1.86), 100), note="one of them just s
   cues=[CU("flap", ref="L39.1", a=0.0, dur=0.1)])
 S("L40", cam((0.3, 6.1, 1.88), (0.17, 6.5, 1.86), 95), note="the shut flap, held still")
 S("L40.2", cam((0.28, 6.1, 1.9), (0.17, 6.5, 1.86), 120), note="a tiny lock pops onto that lock",
-  cues=[CU("tiny"), MT(1025)])
+  cues=[CU("tiny")])
 S("L41", cam((0.4, 5.9, 1.8), (0.17, 6.4, 1.8), 50), note="CLICK, click click: locks budding on locks",
-  cues=[DR(L=0.7, dur=0.5), MT(1280), MT(1536, ref="L41.1")])
+  cues=[DR(L=0.7, dur=0.5)])
 S("L41.2", cam((0.3, 5.0, 1.2), (0.1, 6.2, 1.2), 30), note="click click click click: four",
-  cues=[DR(L=1.0, dur=0.4), MT(1792)])
+  cues=[DR(L=1.0, dur=0.4)])
 S("L42", cam((0.0, 0.6, 1.55), (0.0, 6.0, 1.2), 17),
   {"jadeb": P(0.2, 3.3, 180, "asleep"), "me": P(-0.85, 4.55, 90, "worried")}, note="nobody's touching it",
-  cues=[DR(L=1.25, dur=0.6), MT(1920)])
-S("L43", cam((0.4, 4.6, 1.4), (0.0, 6.0, 1.3), 22), note="doubling by itself", cues=[DR(L=1.5, dur=1.0), MT(2000)])
+  cues=[DR(L=1.25, dur=0.6)])
+S("L43", cam((0.4, 4.6, 1.4), (0.0, 6.0, 1.3), 22), note="doubling by itself", cues=[DR(L=1.5, dur=1.0)])
 S("L44", cam((0.0, 3.8, 1.3), (0.0, 5.8, 1.3), 22), note="TWO THOUSAND, FOUR THOUSAND: the pile swelling", cues=[MT(2048), MT(4096, ref="L44.1"), DR(L=1.8, dur=0.8)])
 S("L44.2", cam((0.2, 2.6, 1.5), (-0.5, 4.0, 1.5), 30), {"me": FP(-0.5, 4.0, (0.2, 2.6), "scared")}, note="EIGHT, my face", cues=[MT(8192)])
 S("L45", cam((-0.1, 1.4, 0.9), (-0.55, 0.55, 0.35), 30), note="the key bucket rattles in moonlight",
@@ -423,10 +440,10 @@ if tl:
             ref = s["ref"] if j == 0 else line_ref(tl, a + j * d / n)
             c = s["cam"]
             if j % 2 == 1:
-                c = [[k[0], k[1], k[2], round(k[3] * 1.28, 1)] + k[4:] for k in c]
+                c = [[k[0], k[1], k[2], round(k[3] * 1.1, 1)] + k[4:] for k in c]
             elif j >= 2:
                 c = [[k[0], [k[1][0] + 0.12, k[1][1], k[1][2]], k[2], k[3]] + k[4:] for k in c]
-            piece = {"ref": ref, "cam": c, "who": s["who"], "cues": s["cues"] if j == 0 else [], "step": s["step"], "note": s["note"],
+            piece = {"ref": ref, "cam": fit(c, 1.6), "who": s["who"], "cues": s["cues"] if j == 0 else [], "step": s["step"], "note": s["note"],
                      "orig": i, "first": j == 0}
             final.append(piece)
 else:
