@@ -37,7 +37,7 @@ for ln in lines:
 print("split lines:", ",".join(sorted(set(SPLIT))))
 
 # a swallowed name or title is helped: slower, or a spelling the voice says plainly
-TEMPO = {"L12": 0.95, "L07": 0.95}
+TEMPO = {"L12": 0.95, "L07": 0.95, "L19": 0.93}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
