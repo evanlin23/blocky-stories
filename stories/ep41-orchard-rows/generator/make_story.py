@@ -192,14 +192,16 @@ def look(x, y):
 # S01 the hook (L01, L02): golden dusk in the orchard rows, my glowing pink trail and the dark square prints one stride
 # beside it, my face in frame. Close, lit to read, no fog. Characters face -y at yaw 0, so I walk toward the camera.
 HY = OY + 17.0
-shot("S01", 0, cam(([0.62, HY - 3.6, 1.0], [0.0, HY + 0.2, 0.95], 30), ([0.34, HY - 2.3, 1.02], [0.0, HY + 0.1, 0.98], 30), hand=0.004),
-     {"me": {"pos": O(0.0, 17.0), "end": O(0.0, 16.0), "yaw": 0, "expr": "worried"}}, tod="dusk")
+shot("S01", 0, cam(([1.25, HY - 4.3, 1.0], [-0.35, HY + 0.2, 0.95], 28), ([0.95, HY - 3.1, 1.02], [-0.3, HY + 0.1, 0.98], 28), hand=0.004),
+     {"me": {"pos": O(0.0, 17.0), "end": O(0.0, 16.4), "yaw": 0, "expr": "worried"}}, tod="dusk")
+cue(0, "expo", ev=0.35)
+cue("L03", "expo", ev=0.0)
 trail(0, "hk_p", PINK, [[O(0, 2.6), O(0, 66.0)]], strength=3.4)
 trail(0, "hk_pw", PINK, walker="me", strength=3.4)
-trail(0, "hk_s", "#1d2a16", [[O(geo.LEFT, 40.0), O(geo.LEFT, 3.0)]], kind="dark", gap=1.3, lat=0.32)
+trail(0, "hk_s", "#070b05", [[O(geo.LEFT, 40.0), O(geo.LEFT, 3.0)]], kind="dark", gap=1.3, lat=0.32)
 # S79 low on my boots: pink prints under them, the dark squares one stride over (1.2 s into L01, "Don't walk beside")
-shot("S79", "L01.2", cam(([0.55, HY - 3.2, 0.34], [-0.2, HY - 0.9, 0.2], 24), ([0.4, HY - 2.3, 0.4], [-0.3, HY - 0.9, 0.2], 24), hand=0.004),
-     {"me": {"pos": O(0.0, 16.0), "end": O(0.0, 15.0), "yaw": 0, "expr": "worried"}})
+shot("S79", "L01.2", cam(([1.15, HY - 3.4, 0.42], [-0.4, HY - 1.0, 0.2], 22), ([0.9, HY - 2.7, 0.5], [-0.45, HY - 1.0, 0.2], 22), hand=0.004),
+     {"me": {"pos": O(0.0, 16.4), "end": O(0.0, 15.7), "yaw": 0, "expr": "worried"}})
 # S02 (L02, "Especially if it's SQUARE"): high and close on one dark square beside a glowing pink print
 shot("S02", "L02", cam(([-0.5, HY - 3.2, 2.9], [-0.55, HY - 3.2, 0.0], 30), ([-0.5, HY - 3.2, 2.2], [-0.55, HY - 3.2, 0.0], 30), hand=0.003),
      {}, tod="dusk")
