@@ -6,7 +6,7 @@
 - **New opening (2026-11-03, the opening recipe v1 in `docs/research/playbook.md`):** L01 and L02 are new, a warning to you in place of the wonder rule. Everything from L03 on is word for word as before. Re-voice L01 and L02 only.
 - **Quotable line:** L04, "And nobody wears a tall hat to dinner."
 - **Estimated length:** about 85 s at 290 wpm with line gaps and the two pauses, so about 88 s with the holds below. That's in the 60 to 90 s test group.
-- **Shots:** 56 (S01, S02 and S04 to S57, with S03 cut along with the old L02), an average of about 1.57 s. A new shot on almost every line, two on the longer ones.
+- **Shots:** 57 (S01, S02 and S04 to S57, with S03 cut along with the old L02), an average of about 1.57 s. A new shot on almost every line, two on the longer ones.
 - **The machine-readable lines** are in `generator/lines.json`, rewritten to match this file.
 
 ## The big idea
@@ -89,7 +89,7 @@ Each line: id, then the caption chunks split with ` / `. CAPS are the key words.
 ### 1. The rule (0 to 10 s)
 
 - `L01` In this TOWN, / when your CEILING / RISES, / don't LOOK UP.
-  - S01 (0 to about 2 s): close on my doorframe in warm even light (S19's frame, closer): the pencil height mark at my height, and above it a hand of empty air before the ceiling. Push up slowly toward the gap during the line. Centred, no wide. A soft low hit on "UP".
+  - S01 (0 to about 2.2 s): eye-level, looking slightly up at me in the hall (camera 1.7 m high, 3 m from me, 24 mm, pushing to 26 mm aimed at the gap): the dark old ceiling line on the wall at my hair, a hand of clean wall above it to the raised ceiling (a shade darker than the wall), my eyes rolled up. Push up toward the gap during the line. Centred, no wide. A soft low hit on "UP".
 - `L02` Something TALLER / than you / MOVED IN.
   - S02: the stack by the door, close: its one face-out box with the black marker frown, aimed down the hall. Still. (The old street S02 and tower-house S03 are cut.)
 - `L03` When a TALL lodger / moves OUT, / the ceiling comes DOWN / a HAND a NIGHT.
@@ -242,5 +242,5 @@ None, on purpose. The canon's Keepers are each tied to one place, and this thing
 - **Changed:** the ceiling height is now a per-scene value: right on my hair (opening), plus a hand (morning 1), about a third of the way to ladder height (morning 2), rising during S32, ladder height (morning 3 on). The walls and the photos on them scale up with it, so the frames ride up. The kitchen pose is new: the Boxes' top run folded flat along the kitchen ceiling with the face box hanging at the end and the body out of frame through the doorway (S26 to S28). The face box is now one box in the stack (S01, S13 to S17) and the shelf box at the end, frown out.
 - **New:** the montage exteriors and interiors (S04 to S06: a lodger and a lowered ceiling, a dinner with a tall hat and a domed ceiling), each with new extras. The street (old S02) and the tower house (old S03) are cut with the old L02. The new S01 (the doorframe gap, close) and S02 (the frown box in the stack, close) open the film. The old house photo prop, in two uses: dim at eye height (S07, S11) and close at the reveal (S50), showing a tall narrow house and, in its top window, a pale tall shape bent under the ceiling with the frown. A pencil height mark on my doorframe (S09, S19).
 - **Cut:** the shelf box as the Boxes' "bottom box", the stack shrinking to nothing, my room at dawn (the many-eyes face), the sideways-eyes front room, the tape cores, the pull-apart, the unpacking montage.
-- **Cover:** `cover_s` 49.2 (S34, the Boxes bent over Mom's bed). Not S50: the photo's top window is the reveal.
+- **Cover:** `cover_s` 48.6 (S34, the Boxes bent over Mom's bed). Not S50: the photo's top window is the reveal.
 - **Standards words:** no death, weapon or gore words, no child words, nothing claimed true, no real place or brand. No words on any box, sign or photo.
