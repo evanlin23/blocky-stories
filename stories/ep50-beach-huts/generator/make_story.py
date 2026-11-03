@@ -121,9 +121,9 @@ def S(at, what, cam, step=2, **kw):
 NSTAGE = lambda h, **r: dict(stage={"hut": h}, refl=r)
 
 # 01 the rule
-S(0, "warning: his whole face beside his window, the reflection upside down in the glass", move(((-3.2, -4.4, 1.55), (-3.2, 0, 1.5)), ((-3.2, -3.8, 1.55), (-3.2, 0, 1.5)), 30, 30), 1,
+S(0, "warning: his whole face beside his window, the reflection upside down in the glass", move(((-2.63, -4.4, 1.55), (-2.63, 0, 1.5)), ((-2.63, -3.8, 1.55), (-2.63, 0, 1.5)), 30, 30), 1,
   **NSTAGE(4, r_neighbour="stage"))
-S("L01.3", "punch: closer, the same two things", move(((-3.2, -3.8, 1.55), (-3.2, 0, 1.5)), ((-3.2, -3.3, 1.55), (-3.2, 0, 1.5)), 30, 30), 1,
+S("L01.3", "punch: closer, the same two things", move(((-2.63, -3.8, 1.55), (-2.63, 0, 1.5)), ((-2.63, -3.3, 1.55), (-2.63, 0, 1.5)), 30, 30), 1,
   **NSTAGE(4, r_neighbour="stage"))
 S("L02", "the glass: he has gone, the reflection stays", move(((-3.0, -1.9, 1.5), (-3.0, 0, 1.5)), ((-3.0, -1.5, 1.5), (-3.0, 0, 1.5)), 30, 34), 1,
   **NSTAGE(4, r_neighbour="stage"))
@@ -296,12 +296,12 @@ SEAT = 0.51       # a sitter's root sits this far under the seat top
 
 # --- the neighbour and his cartwheeling reflection
 acting["neighbour"].clear()   # no hide-at-0 key: he is in the very first frame
-put("neighbour", 0, [-3.8, -0.85], yaw=0)
+put("neighbour", 0, [-2.05, -0.85], yaw=0)
 hide("neighbour", "L04")
-put("r_neighbour", 0, [0.0, 0.07, 0.3], yaw=0, roll=180, side=[85, 85], expr="grin", stroll=False, big=3.3)
-key("r_neighbour", "L01.1", roll=168, blend=1.6)
-key("r_neighbour", "L01.3", roll=190, blend=1.2)
-key("r_neighbour", "L02.2", roll=8, blend=0.8, pos=[0.3, 0.07, 0.0])
+put("r_neighbour", 0, [-1.0, 0.6, 8.5], yaw=0, roll=180, side=[4, 4], expr="grin", stroll=False, big=17)
+key("r_neighbour", "L01.1", roll=178, blend=1.6)
+key("r_neighbour", "L01.3", roll=182, blend=1.2)
+key("r_neighbour", "L02.2", roll=8, blend=0.8, pos=[0.3, 0.07, 0.0], big=3.3)
 key("r_neighbour", "L02.2+0.9", roll=120, blend=1.0)
 hide("r_neighbour", "L04")
 
@@ -637,7 +637,7 @@ story = {
                   {"at": "L74", "voices": ["drone"], "energy": 0.4},
               ]},
     "sound": {"floor": "grass", "steps_db": -22,
-              "rev": 2,
+              "rev": 3,
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "end", "lufs": -30},
                   {"kind": "water", "from": 0, "to": "end", "lufs": -38},

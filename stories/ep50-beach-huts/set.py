@@ -40,7 +40,7 @@ OURS = 5
 WIN_X = 1.0                    # window centre, hut-local
 WIN_W, WIN_Z0, WIN_Z1 = 0.7, 1.1, 1.8
 _WX, _WW, _WZ0, _WZ1 = WIN_X, WIN_W, WIN_Z0, WIN_Z1
-BIGWIN = (1.05, 1.0, 0.9, 2.1)    # hut 4 (the neighbour's) has a big window for the opening
+BIGWIN = (1.05, 1.0, 0.5, 2.3)    # hut 4 (the neighbour's) has a big window for the opening
 TOWN = {"office": 200.0, "bakery": 300.0, "shop": 400.0, "cafe": 500.0}
 
 # time of day: sun energy, sun colour, sun elevation (deg), azimuth (deg), sky colour, sky strength, fog colour
