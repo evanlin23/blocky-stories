@@ -15,6 +15,7 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
 | `bl_story.py` | the Blender driver: builds the story's set and cast, poses them, moves the camera, renders frames |
 | `post.py` | scale up, bloom, the story's grade, effects (flash, blackout, static, red, shake, punch-in, rain), grain, captions; H.264 |
 | `sound.py` | the generated score, ambience, footsteps from the acting, one-off effects, the narrator, the master; recorded CC0 steps, ambience and a few effects from `assets/audio/` |
+| `polish.py` | the polish pack (`look.polish`): cut whooshes, key-word and reveal hits, risers, the room bed, punch-ins, drift, sway, the bright grade, the caption pop |
 | `checks.py` | the checks behind `check` and the tests |
 
 ## story.json
@@ -33,6 +34,7 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
   "grade": {"shadows": [-0.03, 0, 0.06], "highlights": [0.04, 0.01, -0.04], "saturation": 1.0,
             "contrast": 1.05, "vignette": 0.35, "bloom": 0.35, "grain": 0.012},
   "rain_shots": ["S1"],           // optional
+  // look.polish: true turns on the polish pack (see below); a dict overrides its settings
   "tail": 0.9,                    // seconds after the last word; 0 ends on picture (a loop), no fade at either end
   "fade_in": true,                // optional; false skips the 4-frame fade up from black at the start (a loop that cuts straight into frame 0)
   "fade_out": true,               // optional; false keeps the picture bright to the last frame (no dip to dark in the last 0.2 s) when a tail is set
@@ -160,3 +162,39 @@ plastic, fog) still leads, so a few well-placed pieces beat a catalogue.
     kit.prop("sub_fence", (0, 3, 0), height=1.1, tint="#d0c8c0")
     kit.prop("bed_single", (1.2, 2.0, 0), rot=90)
 ```
+
+## The polish pack (`look.polish`, `blocky/polish.py`)
+
+Opt-in per story, and on for every new story since 2026-11-03 (owner, 2026-11-03: "make them high quality or keep
+pushing the quality up"). Only proven moves; the before/after on ep32-sitter is in `docs/research/polish-pack.md`.
+`"look": {"polish": true}` turns it all on; a dict changes any setting:
+
+```jsonc
+"look": {"polish": {"emph": ["L03.1", "L19"],   // lines to punch in on (default: the hook and every all-caps caption or big word)
+                    "reveal": ["L38"],          // a fuller hit (big pause words are always reveals)
+                    "twist": "L34",             // a riser that ends here (risers also run into every music_drops hole)
+                    "quiet": ["L36.5", ["L35", "L37"]],   // no hit on a word; no whoosh, hit or added punch-in in a span (a warm beat)
+                    "auto": true,               // also punch in on all-caps captions, big words and the hook (default)
+                    "sway": ["S12", "S13"],      // gentle handheld on tense shots (true: every shot)
+                    "bed_kind": "rain",          // the bed (default: the story's most-used recorded ambience, else room)
+                    "punch": 0.06, "drift": 0.03, "whoosh_db": -24, "grade": "bright"}}
+```
+
+- **Sound:** a recorded whoosh, low-passed at 3 kHz, 0.12 s before a cut that falls between lines (never under a
+  word; at most one per 1.4 s) and on every punch-in; a soft sub thump on emphasised words and a fuller hit on
+  reveals, each moved onto the chunk's key word (`on_key`); a 1.8 s riser into each `music_drops` hole (the silence
+  cuts it off; the voice doesn't duck it) and into `twist`; a room bed from `assets/audio/amb/` under the whole film at -41 LUFS,
+  which a drop only dips 12 dB, so nothing is ever digital silence. Doors and other marks: an acting key with
+  `"sfx": "door"` (or `latch`, `creak`, `thud`, `knock`; `sfx_db` sets its level) plays it there, panned to the
+  character; so does a cue named `door...`. Every polish sound stays clear of the builder's own `sfx` (0.25 s),
+  keeps under 5% of its energy above 4 kHz (tested), and the bed, the polish sounds and the ambience duck 6 dB under
+  the voice. The master is unchanged (-14 LUFS, true peak under -1 dBTP on the file).
+- **Captions:** pop in from 90% to 100% over 80 ms (the default is a slower overshoot).
+- **Motion**, on the output crop, so it's smooth on every frame even with drawings on twos or fours: a 6% punch-in
+  eased over 0.12 s on emphasised words, held to the cut, plus one in the middle of any shot over 2.2 s that has
+  none (`fill`), so something changes every 1 to 2 s; a 3% drift (in or out, with a slight slide) on every shot
+  over 1.5 s whose camera doesn't move; an optional slow sway. All of it reads as no change to `flash`.
+- **Picture:** the `bright` grade raises exposure to at least 1.04 and saturation to 1.06, caps contrast at 1.05,
+  the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them. The
+  story's own tints and shot grades stay.
+- `check` blocks an unknown setting, a `sway` shot that doesn't exist, a punch over 8% and a bed with no recording.
