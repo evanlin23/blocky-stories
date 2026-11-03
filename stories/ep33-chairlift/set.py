@@ -119,7 +119,7 @@ def materials(kit):
     M["tally"] = kit.plastic(STROKE_ORANGE, 0.75, name="tally orange", spec=0.1)
     M["concrete"] = kit.concrete("#7d7c78", 1.0, 0.4, name="pier concrete")
     M["lamp"] = kit.emit("#ffcf8a", 6.0, name="hut lamp")
-    M["gaterope"] = kit.plastic("#a08c66", 0.9, name="gate rope")
+    M["gaterope"] = kit.plastic("#4a3f2c", 1.0, name="gate rope")
     M["cup"] = kit.plastic("#e9e4da", 0.6, name="paper cup")
     M["steam"] = kit.emit("#dcdfe4", 0.5, name="steam")
     M["blanket"] = kit.checker("#3f6b4a", "#7aa36b", 7.0, name="blanket check", rough=0.95)
@@ -764,10 +764,20 @@ def animate(kit, story, tl, t, ctx):
         ob.location = (c[0], c[1], c[2])
         ob.rotation_euler = (0, 0, c[3])
     up_on = _switch(_cues(tl, "upchairs"), "on", t, False)
+    bunch = _switch(_cues(tl, "bunch"), "on", t, False)
+    bt0 = max([c_["t"] for c_ in _cues(tl, "bunch") if c_.get("on") and c_["t"] <= t] or [0.0])
+    roof_on = _switch(_cues(tl, "toproof"), "on", t, True)
+    for ob in bpy.data.objects:
+        if ob.name.startswith(("troof", "tridge", "tpost", "wheelT", "twframe")):
+            ob.hide_render = not roof_on
+        elif ob.name.startswith("grope"):
+            ob.hide_render = bunch
     for k, ob in enumerate(ctx["cable"]):
         u = (ph + k * ctx["spacing"]) % G.TOT
+        if bunch:   # a run of empty chairs close together, swinging round the bull wheel
+            u = (257.65 + clock(ctx, t) - clock(ctx, bt0 + 0.8) + (k - 4) * 7.4) % G.TOT
         x, y, zr, yaw = G.path(u)
-        if not up_on and (u < G.LL or u >= G.BOTTOM_ARC):   # only the returning chairs are empty on the lift
+        if not up_on and not bunch and (u < G.LL or u >= G.BOTTOM_ARC):   # only the returning chairs are empty on the lift
             ob.location = (x, y, -60)
             continue
         ob.location = (x, y, zr - HANG)

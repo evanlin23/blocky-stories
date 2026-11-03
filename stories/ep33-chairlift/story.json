@@ -1,6 +1,6 @@
 {
  "slug": "ep33-chairlift",
- "title": "At the Top of This Chairlift, Everyone Else Gets OLDER",
+ "title": "At the Top of This Chairlift Everyone Else Gets OLDER",
  "made_for_kids": false,
  "premise": "In a lake town, one day at the top of the chairlift costs a year down at the lake, so people ride up to skip the things they don't want to sit through, and from the deck you can see them on the ridge, still as posts. I have never been up, because I don't want to miss a day. Gran goes up every morning with a blanket big enough for two, comes down for Sunday dinner, and every Sunday says I look older. Through the deck's old viewer she's the one person on the ridge facing away from the sunrise, and one Sunday she doesn't come down.",
  "twist": "Gran isn't riding up the ridge to skip my life: she's the oldest in the valley, and a day at the top costs a year below, so she lives up there to stretch her last few years across the whole of mine, and every Sunday she said I looked older she meant it. I turn the rule once more and spend my own weeks beside her.",
@@ -1070,30 +1070,30 @@
     [
      0,
      [
-      -14.0,
-      68.0,
-      46.0
+      -7.5,
+      116.0,
+      42.0
      ],
      [
-      1.0,
+      2.6,
       137.0,
-      41.4
+      40.9
      ],
-     105
+     40
     ],
     [
      1,
      [
-      -14.0,
-      68.0,
-      46.0
+      -7.5,
+      116.5,
+      42.0
      ],
      [
-      1.0,
+      2.6,
       137.0,
-      41.45
+      40.95
      ],
-     108
+     42
     ]
    ],
    "step": 2,
@@ -2044,16 +2044,16 @@
     [
      0,
      [
-      -2.4,
-      139.0,
-      41.7
-     ],
-     [
-      -5.3,
-      135.4,
+      -2.9,
+      126.0,
       41.2
      ],
-     38
+     [
+      -2.9,
+      137.0,
+      40.75
+     ],
+     72
     ]
    ],
    "step": 2,
@@ -2161,7 +2161,7 @@
      [
       -3.6,
       137.0,
-      41.6
+      40.3
      ],
      30
     ]
@@ -2530,13 +2530,30 @@
    },
    {
     "at": "L31",
+    "pos": [
+     -5.3,
+     135.4
+    ]
+   },
+   {
+    "at": "L31",
+    "pos": [
+     -2.9,
+     137.0,
+     39.45
+    ],
+    "blend": 0.0,
+    "yaw": 0,
+    "sit": false,
+    "perch": true,
     "expr": "soft"
    },
    {
     "at": "L33",
     "pos": [
-     -5.3,
-     135.4
+     -2.9,
+     137.0,
+     39.45
     ]
    },
    {
@@ -3476,6 +3493,36 @@
   {
    "at": "L37",
    "name": "upchairs",
+   "on": true
+  },
+  {
+   "at": 0,
+   "name": "bunch",
+   "on": false
+  },
+  {
+   "at": "L20",
+   "name": "bunch",
+   "on": true
+  },
+  {
+   "at": "L20.2",
+   "name": "bunch",
+   "on": false
+  },
+  {
+   "at": 0,
+   "name": "toproof",
+   "on": true
+  },
+  {
+   "at": "L02",
+   "name": "toproof",
+   "on": false
+  },
+  {
+   "at": "L03",
+   "name": "toproof",
    "on": true
   },
   {

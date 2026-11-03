@@ -115,7 +115,7 @@ VIEW = [-5.5, 1.8]        # where you stand at the viewer
 BENCH_Y = 137.0
 LA, E1, E2, E3 = [4.6, BENCH_Y], [3.2, BENCH_Y], [1.8, BENCH_Y], [0.4, BENCH_Y]
 GB, MB = [-4.3, BENCH_Y], [-2.9, BENCH_Y]       # Gran and me at the open end of the bench
-STAND = [-5.3, 135.4]                           # me, standing in front of Gran
+STAND = [-5.3, 135.4]                         # me, standing in front of Gran
 TABLE = [-3.3, -8.0]
 
 # ---------------------------------------------------------------------------------------------------- shots
@@ -130,7 +130,7 @@ def shot(at, cam, **opt):
 shot(0, mv((8.0, 139.0, 40.3), (4.3, 137.0, 41.7), 40, (7.5, 138.7, 40.35), (4.3, 137.0, 41.8), 36), hand=0.002)
 shot("L01.3", mv((10.5, -8.0, 1.3), (1.0, 24.0, 9.0), 30, (10.5, -8.0, 1.35), (1.0, 24.0, 9.4), 30), hand=0.002)
 # the ridge is hidden from the deck by the slope, so the long lens looks from the hillside: the row of still figures
-shot("L02", mv((-14.0, 68.0, 46.0), (1.0, 137.0, 41.4), 105, (-14.0, 68.0, 46.0), (1.0, 137.0, 41.45), 108), hand=0.002)
+shot("L02", mv((-7.5, 116.0, 42.0), (2.6, 137.0, 40.9), 40, (-7.5, 116.5, 42.0), (2.6, 137.0, 40.95), 42), hand=0.002)
 shot("L03", mv((-0.5, -6.4, 1.4), (-1.6, -2.3, 1.4), 30, (-0.5, -6.2, 1.4), (-1.5, -2.5, 1.4), 30), hand=0.002)
 shot("L03.3", front(hd([-1.5, -3.5], 1.7), 0, 0, 2.4, 0.0, 34, push=0.15))
 shot("L04", ride_cam(1.4, 5.0, 0.5, 0, 0, 1.2, 30), follow="bo", hand=0.003)
@@ -168,13 +168,13 @@ shot("L27", mv((-2.6, 140.4, 42.1), (-5.3, 135.4, 41.2), 40), hand=0.001)
 shot("L28", mv((-4.3, 132.0, 41.1), (-4.3, 137.0, 41.1), 48), hand=0.001)
 shot("L29", mv((-6.0, 112.0, 52.0), (-5.0, -35.0, 3.0), 40), hand=0.001)
 shot("L30", mv((-4.3, 141.0, 43.4), (-4.3, 120.0, 38.0), 22), hand=0.001, cfill=0.05)
-shot("L31", mv((-2.4, 139.0, 41.7), (-5.3, 135.4, 41.2), 38), hand=0.001)
+shot("L31", mv((-2.9, 126.0, 41.2), (-2.9, 137.0, 40.75), 72), hand=0.001)
 shot("L32", mv((-4.2, 132.3, 41.2), (-4.4, 137.0, 41.2), 40), hand=0.001)
 # ---- the turn and the sting
 shot("L33", mv((-3.6, 131.6, 41.3), (-3.6, 137.0, 41.0), 34), hand=0.001)
 shot("L34", mv((-3.6, 133.2, 41.9), (-3.6, 136.6, 40.6), 40), hand=0.001)
 shot("L35", mv((-1.0, 30.0, 70.0), (0.4, -2.6, 0.0), 38), hand=0.001)
-shot("L36", mv((-3.6, 130.6, 41.9), (-3.6, 137.0, 41.6), 30), hand=0.001)
+shot("L36", mv((-3.6, 130.6, 41.9), (-3.6, 137.0, 40.3), 30), hand=0.001)
 # from the hillside again (the slope hides the ridge from the lake), nobody in front of the lens
 shot("L37", mv((-14.0, 68.0, 46.0), (-3.4, 137.0, 41.0), 125, (-14.0, 68.0, 46.0), (-3.4, 137.0, 41.05), 128), hand=0.001, cfill=0.1)
 
@@ -253,7 +253,7 @@ M_.ride("L24>", "up", 52.0, -1)
 M_.stand("L25", STAND, 180, jump=True, expr="worried")
 M_.attr("L26", head=[-35, 0])
 M_.attr("L27", expr="soft", head=[0, 0])
-M_.attr("L31", expr="soft")
+M_.perch("L31", MB, 0, jump=True, expr="soft")
 M_.perch("L33", MB, 0, jump=True, expr="soft")
 
 B_ = Track()
@@ -353,6 +353,12 @@ cues = [
     {"at": "L06", "name": "upchairs", "on": True},
     {"at": "L07", "name": "upchairs", "on": False},
     {"at": "L37", "name": "upchairs", "on": True},
+    {"at": 0, "name": "bunch", "on": False},
+    {"at": "L20", "name": "bunch", "on": True},
+    {"at": "L20.2", "name": "bunch", "on": False},
+    {"at": 0, "name": "toproof", "on": True},
+    {"at": "L02", "name": "toproof", "on": False},
+    {"at": "L03", "name": "toproof", "on": True},
     {"at": "L20", "name": "phase", "u": 257.65, "when": 0.8},
     {"at": "L20.2", "name": "phase", "off": True},
     {"at": 0, "name": "sway", "amp": 1.4, "bias": 0.0, "dur": 0.1},
