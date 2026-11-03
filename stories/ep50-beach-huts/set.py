@@ -351,7 +351,7 @@ def build(kit, story, tl):
     M["inwood"] = kit.plastic("#b49a74", 0.8, name="inwood")
     M["deck"] = kit.planks("#a39a8a", "#85796a", scale=2.4, axis="X")
     M["chairwood"] = kit.plastic("#a98b62", 0.7, name="chairwood")
-    M["canvas"] = stripes_x(kit, "canvas", ["#b5655a", "#e8dfc8", "#6f9e9a"], 2.4)
+    M["canvas"] = stripes_x(kit, "canvas", ["#a97d74", "#e8dfc8", "#6f9e9a"], 2.4)
     M["brass"] = kit.metal("#b5964f", 0.35)
     M["boat"] = kit.plastic("#4f74a0", 0.55, name="boat")
     M["stone"] = kit.concrete("#7b7d78", 1.2, 0.35)

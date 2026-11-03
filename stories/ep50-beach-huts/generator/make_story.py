@@ -204,7 +204,7 @@ S("L58", "two figures on the bench", still((1.0, -0.85, 1.45), (1.0, 0, 1.45), 3
   **NSTAGE(5, r_remi="stage", r_me="stage"), hidecr=True)
 S("L58.2", "my eyes go to the shore", still((0.5, -2.4, 1.5), (-0.35, -0.7, 1.45), 40), 2)
 S("L59", "the wide again: the magenta figure", still((12, -25, 3.4), (12.2, -9, 0.4), 22), 2, refl={"r_me": {"kind": "sand", "scale": 1.6}})
-S("L60", "the lid comes down", still((0.2, -1.4, 1.1), (-0.35, -1.0, 0.8), 45), 1)
+S("L60", "the lid comes down", still((1.0, -2.3, 1.15), (-0.35, -0.9, 0.75), 36), 1)
 S("L61", "stepping down", still((-2.4, -5.0, 1.3), (-0.5, -2.2, 1.0), 26), 2)
 S("L61.2", "over my shoulder", still((-0.7, -5.7, 1.5), (1.2, -1.5, 1.0), 28), 2, gloom=0.45)
 # 06 the bench
@@ -234,7 +234,7 @@ S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4)
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L75", "ours, walking together", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L76", "this morning: our window, the empty chair", still((0.35, -3.6, 1.3), (0.35, -0.3, 0.95), 26), 1, **NSTAGE(5, r_me="stage"))
-S("L76.2", "far down the sand, the magenta figure alone", still((7.0, -5.5, 1.6), (13.0, -8.8, -0.2), 24), 1, refl={"r_me": {"kind": "sand", "scale": 1.6}})
+S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((0.75, -1.9, 0.85), (0.55, -0.2, 1.2)), ((0.7, -1.6, 0.85), (0.55, -0.2, 1.2)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
 
 shots = []
 shotx = {}
@@ -488,8 +488,7 @@ walk("r_me", "L76", [0.65, 0.45], yaw=WY)
 hide("r_me", "L76")
 put("r_me", "L76", [0.3, 0.12], yaw=WY, stroll=True, big=1.6)
 walk("r_me", "L76.2", [0.9, 0.5], yaw=WY)
-put("r_me", "L76.2", [13.0, -8.5], yaw=90, stroll=False, big=1.0)
-walk("r_me", "end", [16.0, -8.5])
+walk("r_me", "end", [1.15, 0.75], yaw=WY)
 
 # --- the Small Head. Three held poses, each closer; never moving inside a shot.
 SH = CHAIR_B
@@ -646,7 +645,7 @@ story = {
                   {"kind": "hum", "from": "L23", "to": "L24", "lufs": -42},
               ],
               "sfx": sfx,
-              "music_drops": [{"from": "P01", "to": "L25", "keep": ["thud"]},
+              "music_drops": [{"from": "P01", "to": "L25", "keep": ["thud"], "db": -11},
                               {"from": "P02", "to": "L44", "keep": ["creak"]}]},
 }
 for keys in acting.values():
