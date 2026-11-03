@@ -528,12 +528,12 @@ cues = [
     {"at": "L68", "name": "veh", "id": "estate2", "hide": True},
     {"at": "L68.1", "name": "veh", "id": "coach", "p0": [-16.0, -62.0], "p1": [-16.0, -112.0], "yaw": 180, "dur": 3.4},
     # our tailgate comes down at L70.1 (0.9 s), the chair lies folded in the boot, the latch strokes show once
-    {"at": "L70.1", "name": "hatch", "to": 0.0, "dur": 0.9},
-    {"at": "L70", "name": "bootb", "to": 1.0, "dur": 0.3},
-    {"at": "L70.1", "name": "bootb", "to": 0.0, "dur": 0.3},
+    {"at": "L70.2-0.1", "name": "hatch", "to": 0.0, "dur": 0.08},
+    {"at": "L70-0.3", "name": "bootb", "to": 1.0, "dur": 0.3},
+    {"at": "L70.2-0.1", "name": "bootb", "to": 0.4, "dur": 0.08},
     {"at": 0, "name": "fold", "on": False},
     {"at": "L70", "name": "fold", "on": True},
-    {"at": "L70.1", "name": "fold", "on": False},
+    {"at": "L70.2-0.1", "name": "fold", "on": False},
     {"at": 0, "name": "strokes", "on": False},
     {"at": "L70.2", "name": "strokes", "on": True},
     {"at": "L71", "name": "strokes", "on": False},
@@ -567,7 +567,7 @@ sfx = [
     {"at": "P02+0.7", "kind": "thud", "db": -12},
     {"at": "L44", "kind": "sting", "db": -13},
     {"at": "L61+0.3", "kind": "bell", "db": -17, "dur": 2.0},
-    {"at": "L70.1+0.8", "kind": "door", "db": -12, "dur": 1.0},
+    {"at": "L70.2-0.05", "kind": "door", "db": -12, "dur": 1.0},
     {"at": "L75+0.5", "kind": "glide", "db": -14, "dur": 1.4},
 ]
 
