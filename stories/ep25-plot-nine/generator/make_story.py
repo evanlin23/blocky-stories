@@ -44,7 +44,7 @@ cast = {
                "face": {"eyes": "tired", "brows": True, "ink": "#1c1613", "bags": True}},
     # Mum: skin matched to mine, dark hair going grey, the mustard windbreaker and ponytail kept
     "newcomer": {"age": "adult", "skin": "#d9a07c", "shirt": "#c4872c", "pattern": "solid", "collar": "#a8721f",
-                 "pants": "#cfc4ab", "shoes": "#33353a", "sleeves": "long", "hair": "cap", "hair_c": "#5e5550",
+                 "pants": "#3e5068", "shoes": "#33353a", "sleeves": "long", "hair": "cap", "hair_c": "#5e5550",
                  "hat": "none", "height": 0.96, "face": {"eyes": "lashes", "brows": True, "ink": "#161012"}},
 }
 
@@ -107,7 +107,7 @@ SHOTS = [
     ("L05.2", "S07 me looking down at them", 2, still([-1.7, -25.2, 1.35], [ME10[0], ME10[1], 1.1], 34)),
     ("L06", "S08 me alone on my bare plot", 2, still([-6.0, -21.5, 1.6], [-2.6, -27.0, 0.7], 26)),
     ("L07", "S09 Mum at plot nine, a wave; me in the foreground", 2, still([-0.3, -31.2, 1.5], [MUMP[0], MUMP[1], 1.4], 55)),
-    ("L07.2", "S10 her wellies, a thick fan of roots", 4, still([5.1, -26.6, 0.5], [MUMP[0], MUMP[1], 0.12], 34)),
+    ("L07.2", "S10 her wellies, a thick fan of roots", 4, still([5.0, -26.3, 1.0], [MUMP[0] + 0.1, MUMP[1] + 0.4, 0.1], 30)),
     ("L08.1", "S11 high wide up the path: her root run", 4,
      move(([0.0, -27.5, 6.5], [0.3, -12.0, 0.0]), ([0.0, -26.5, 6.5], [0.3, -11.0, 0.0]), 24)),
     ("L09", "S12 the run under plot seven's board", 4, still([-0.6, -20.4, 0.28], [1.0, -22.0, 0.05], 34)),
@@ -128,10 +128,10 @@ SHOTS = [
     ("L18", "S24 plot one, a neat round hole", 4, still([1.0, -3.7, 0.65], [3.4, -3.6, 0.1], 30)),
     ("L19", "S25 a pebble drops into the black", 4, still([2.4, -4.8, 0.9], [3.4, -3.6, 0.1], 28)),
     ("P01", "S26 the black hole, held", 4, still([3.4, -3.55, 2.0], [3.4, -3.62, 0.0], 24)),
-    ("L20", "S27 me crouched by the hole, listening", 2, portrait((2.45, -4.1), yaw_to((2.45, -4.1), DIG[1]), 2.8, 30, 1.4, 34, 1.1)),
+    ("L20", "S27 me crouched by the hole, listening", 2, portrait((2.45, -4.1), yaw_to((2.45, -4.1), DIG[1]), 2.6, 0, 1.6, 38, 1.3)),
     ("L21", "S28 wide: the hole, and the head in plot four", 4, still([4.0, -1.6, 0.55], [-2.0, -9.6, 0.6], 22)),
     ("L22", "S29 the groove in the path above plot four", 4, still([0.0, -4.0, 3.4], [-0.2, -8.6, 0.0], 30)),
-    ("L22.1", "S30 Mum's wellies, the fan thinner", 4, still([5.1, -26.4, 0.45], [MUMP[0], MUMP[1], 0.12], 34)),
+    ("L22.1", "S30 Mum's wellies, the fan thinner", 4, still([5.0, -26.2, 1.0], [MUMP[0] + 0.1, MUMP[1] + 0.4, 0.1], 30)),
     ("L23", "S31 long lens from the gate: the head in plot seven", 4, still([0.5, -1.0, 1.0], [3.4, -22.0, 0.5], 70)),
     ("L23.2", "S32 plot seven: out to the chest", 2, still([0.0, -22.0, 1.0], [3.4, -22.0, 1.2], 28)),
     ("L24", "S33 Mum at the gate looking out, the head far behind her", 2,
@@ -174,7 +174,7 @@ SHOTS = [
     # 05 the sting, L44 to L46
     ("L44", "S59 high wide, a grey dawn, the holes", 4, still([0.0, 3.0, 6.5], [0.2, -18.0, 0.0], 20)),
     ("L45", "S60 a pebble drops into plot one's hole", 4, still([2.4, -4.8, 0.9], [3.4, -3.6, 0.1], 28)),
-    ("L46", "S61 me crouched by the hole, hearing it", 2, portrait((2.45, -4.1), yaw_to((2.45, -4.1), DIG[1]), 2.8, 30, 1.4, 34, 1.1)),
+    ("L46", "S61 me crouched by the hole, hearing it", 2, portrait((2.45, -4.1), yaw_to((2.45, -4.1), DIG[1]), 2.6, 0, 1.6, 38, 1.3)),
 ]
 
 shots = []
@@ -227,7 +227,7 @@ put("me", "L10", [-1.15, -27.6], yaw=90, expr="worried", head=[0, 0])
 hide("me", "L11")
 put("me", "L13", [-0.3, 1.5], yaw=0, head=[0, 4])
 hide("me", "L14")
-put("me", "L20", [2.45, -4.1], yaw=yaw_to([2.45, -4.1], DIG[1]), expr="scared", lean=32, head=[0, 18])
+put("me", "L20", [2.45, -4.1], yaw=yaw_to([2.45, -4.1], DIG[1]), expr="scared", lean=14, head=[0, 0])
 hide("me", "L21")
 put("me", "L31", [4.7, -27.4], yaw=yaw_to([4.7, -27.4], DIG[9]), expr="scared", head=[0, 0])
 key("me", "L31>", head=[0, 18], blend=0.4)
@@ -241,7 +241,7 @@ put("me", "L43.2", [-0.4, -23.0], yaw=180, expr="smile", arms=[0, 70])
 key("me", "L43.2+0.4", arms=[0, 40], blend=0.3)
 key("me", "L43.2+0.8", arms=[0, 75], blend=0.3)
 hide("me", "L44")
-put("me", "L46", [2.45, -4.1], yaw=yaw_to([2.45, -4.1], DIG[1]), expr="worried", lean=32, head=[0, 18])
+put("me", "L46", [2.45, -4.1], yaw=yaw_to([2.45, -4.1], DIG[1]), expr="worried", lean=14, head=[0, 0])
 
 # Mum
 hide("newcomer", 0)

@@ -258,6 +258,7 @@ def materials(kit):
     M["black"] = pbr(kit, "plug black", "#030303", 1.0, spec=0.0)
     M["soil"] = pbr(kit, "packed soil", "#4a3526", 0.62, spec=0.35, noise=(9.0, 0.55, 0.18), bump=0.8)
     M["soil2"] = pbr(kit, "packed soil b", "#5b4531", 0.8, noise=(13.0, 0.55, 0.0), bump=0.6)
+    M["rootm"] = pbr(kit, "root lit", "#5b4430", 0.7, spec=0.3, noise=(16.0, 0.7, 0.1), bump=0.6)
     M["root"] = pbr(kit, "root", "#33251a", 0.8, spec=0.22, noise=(16.0, 0.7, 0.1), bump=0.6)
     M["terra"] = pbr(kit, "terracotta", "#b5643c", 0.7, noise=(6.0, 0.8, 0.0), bump=0.2)
     M["bsoil"] = pbr(kit, "bucket soil", "#2c2018", 0.9, noise=(14.0, 0.6, 0.0), bump=0.6)
@@ -502,7 +503,7 @@ def tube(kit, name, pts, r0, r1, mat, parent=None, m=6, k=4):
             a = t.cross(V((1, 0, 0)))
         a.normalize()
         b = t.cross(a)
-        r = r0 + (r1 - r0) * ((i / (n - 1)) ** 0.8)
+        r = r1 + (r0 - r1) * ((1 - i / (n - 1)) ** 1.5)
         for j in range(m):
             th = 2 * math.pi * j / m
             verts.append(tuple(p + r * (math.cos(th) * a + math.sin(th) * b)))
@@ -526,7 +527,7 @@ def ribbon(kit, name, pts, w, z, mat):
     return kit.mesh_obj(name, verts, fcs, mat, None, smooth=False)
 
 
-def root_fan(kit, M, name, n, L, spread, seed, r0=0.04, parent=None, loc=(0, 0, 0), yaw=0.0, boots=0.12):
+def root_fan(kit, M, name, n, L, spread, seed, r0=0.04, parent=None, loc=(0, 0, 0), yaw=0.0, boots=0.12, mat="root"):
     """Dark tapering roots fanned over the ground from a pair of boots (or an object's base). The fan opens
     towards `yaw` (the way a character facing yaw looks); L is the longest root, scaled per pose by the cue."""
     g = kit.empty(name, loc, parent, rot=(0, 0, math.radians(yaw + 180)))
@@ -543,7 +544,7 @@ def root_fan(kit, M, name, n, L, spread, seed, r0=0.04, parent=None, loc=(0, 0, 
             x = side * (1 - min(1.0, s * 3)) + dx * ln * s - dy * wob
             y = dy * ln * s + dx * wob
             pts.append((x, y, 0.035 + 0.12 * max(0.0, 1 - s * 4)))
-        tube(kit, f"{name}.r{i}", pts, r0 * rng.uniform(0.8, 1.15), 0.008, M["root"], g, m=6, k=3)
+        tube(kit, f"{name}.r{i}", pts, r0 * rng.uniform(0.8, 1.15), 0.006, M[mat], g, m=6, k=3)
     return g
 
 
@@ -668,14 +669,14 @@ def build_roots(kit, M, ctx):
     # --- Mum's fan at her boots, pose-scaled by a cue, and the curl of her roots over the bucket rim
     mf = kit.empty("mumfan", (MUMP[0], MUMP[1], 0))
     sc = kit.empty("mumfan.scale", (0, 0, 0), mf)
-    root_fan(kit, M, "mumfan.fan", 11, 1.35, 150, 11, r0=0.05, parent=sc, yaw=0.0)
+    root_fan(kit, M, "mumfan.fan", 11, 1.35, 150, 11, r0=0.06, parent=sc, yaw=0.0, mat="rootm")
     cu = kit.empty("mumfan.curl", (0, 0, 0), mf, rot=(0, 0, math.pi))
     curlp = [(0.0, 0.1, 0.035), (0.0, 0.6, 0.04), (0.0, 1.0, 0.05), (0.0, 1.18, 0.2), (0.0, 1.24, 0.34), (0.0, 1.4, 0.33), (0.0, 1.6, 0.29)]
-    tube(kit, "mumfan.curltube", curlp, 0.042, 0.012, M["root"], cu, m=6, k=4)
+    tube(kit, "mumfan.curltube", curlp, 0.042, 0.012, M["rootm"], cu, m=6, k=4)
     ctx["mumfan"] = (mf, sc, cu)
     # --- the Digger's own root: from its waist across the bed into the fan at her boots
     dr = [(DIG[9][0] - 0.05, DIG[9][1] - 0.25, 0.12), (4.05, -26.7, 0.06), (3.95, -27.15, 0.06), (MUMP[0] + 0.05, MUMP[1] + 0.25, 0.05)]
-    ctx["digrun"] = tube(kit, "digrun", dr, 0.07, 0.03, M["root"], m=7, k=5)
+    ctx["digrun"] = tube(kit, "digrun", dr, 0.08, 0.025, M["rootm"], m=7, k=5)
     # --- small ambient fans, so the other beds show roots too
     for k, (x, y, yw) in enumerate(((-3.4, -22.0, 70), (-3.3, -16.0, 250), (3.4, -16.0, 120), (-3.4, -4.4, 200), (-3.5, -9.5, 20))):
         root_fan(kit, M, f"amb{k}", 8, 1.0, 170, 40 + k, r0=0.035, loc=(x, y, 0), yaw=yw)
@@ -981,8 +982,8 @@ def animate(kit, story, tl, t, ctx):
     hidden = bool(c.get("hidden"))
     _show([dg["root"]], not hidden)
     over["digger eyes"] = 0.0 if hidden else 0.35
-    over["digger rim"] = 0.0 if hidden else 55.0
-    over["digger rim2"] = 0.0 if hidden else 22.0
+    over["digger rim"] = 0.0 if hidden else 90.0
+    over["digger rim2"] = 0.0 if hidden else 45.0
     if not hidden:
         px, py = DIG[c["plot"]]
         dg["root"].location = (px, py, 0)
