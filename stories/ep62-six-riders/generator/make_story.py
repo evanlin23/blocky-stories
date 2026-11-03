@@ -51,14 +51,15 @@ for k, (x, y) in ROWS.items():
     acting[k].append({"at": 0, "pos": [x, y], "yaw": 0, "expr": "neutral", "hidden": True})
     acting[k].append({"at": "L02+0.45", "pos": [x, y], "yaw": 0, "hidden": False, "blend": 0})
     # D's reflection stands a little right of his true x (-1.0) so his face is not behind the two blue jackets
-    acting["r" + k].append({"at": 0, "pos": [0.4 if k == "d" else x, -y], "yaw": 180, "expr": "neutral"})
+    acting["r" + k].append({"at": 0, "pos": [0.2 if k == "d" else x, -y], "yaw": 180, "expr": "neutral"})
 acting["x"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "neutral", "look": [0, 0]})
 acting["bro"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "worried", "hidden": True})
-acting["c"].append({"at": "L09", "yaw": 40, "blend": 0})     # S13: he turns his face toward the lens
+acting["c"].append({"at": "L09+0.2", "yaw": 40, "blend": 0})     # S13: he turns his face toward the lens
 acting["c"].append({"at": "L10", "yaw": 0, "blend": 0})
 # keys with a pos walk to it from the key before, so D is held at his spot and moved while hidden (he used to drift all film)
-acting["d"].append({"at": "L09-0.06", "pos": list(ROWS["d"]), "hidden": True, "blend": 0})
-acting["d"].append({"at": "L09", "pos": [-0.8, 1.05], "hidden": False, "blend": 0})     # S13: half a step behind his shoulder
+acting["d"].append({"at": "L09+0.17", "pos": list(ROWS["d"]), "hidden": True, "blend": 0})
+acting["d"].append({"at": "L09+0.2", "pos": [-0.8, 1.05], "hidden": False, "blend": 0})     # S13: half a step behind his shoulder
+acting["d"].append({"at": "L10-0.03", "pos": [-0.8, 1.05], "blend": 0})     # hold still to the cut, reset behind S14
 acting["d"].append({"at": "L10", "pos": [ROWS["d"][0], ROWS["d"][1]], "blend": 0})
 # S15: the glass shot is clear of the two riders in front of it, they stand aside for one shot
 for k in "abcd":
@@ -97,13 +98,13 @@ SHOTS = [
     ("L04", "S05", "the master, tags pop", MASTER),
     ("L04c", "S05b", "punch in on C and D", still(MAS, MT, ML * 1.1)),
     ("L05", "S06", "over my shoulder", S06),
-    ("L06", "S07", "the master, slow push", move((MAS, MT), ([0.0, 3.75, 2.3], [0, 0, 0.85]), ML, 12.0)),
+    ("L06", "S07", "the master, slow push", move((MAS, MT), ([0.0, 4.0, 2.9], [0, 0, 0.7]), ML, 13.0)),
     ("L07", "S08", "the display, wide enough that the dark plate is a small part of the frame", still([0, 2.0, 2.95], [0, 0.15, 2.85], 26)),
     ("P01", "S09", "the hold master, display 4 (two equal keys: the polish camera leaves it still so both bags stay in the glass)", move((MAS, MT), (MAS, MT), ML)),
     ("P01+1", "S10", "punch in 6 percent", move((MAS, MT), (MAS, MT), ML * 1.06)),
     ("P01+2", "S11", "punch in another 6 percent", move((MAS, MT), (MAS, MT), ML * 1.12)),
     ("L08", "S12", "push in on the two blue jackets in the glass", move(([BLUE, 4.0, 3.7], [BLUE, -0.6, 1.4]), ([BLUE, 3.7, 3.6], [BLUE, -0.6, 1.4]), 20, 24)),
-    ("L09", "S13", "two-shot: my brother three-quarter front, me behind his shoulder", still([0.9, 0.2, 1.8], [-1.0, 0.9, 1.35], 20)),
+    ("L09+0.2", "S13", "two-shot: my brother three-quarter front, me behind his shoulder", still([0.9, 0.2, 1.8], [-1.0, 0.9, 1.35], 20)),
     ("L10", "S14", "his right shoulder, the bag", S14),
     ("L11", "S15", "his reflection, bag on screen right", still([1.4, 3.9, 3.9], [-1.4, -0.6, 1.5], 31)),
     ("L11.3", "S15b", "the copy beside it, bag on screen left", still([1.4, 3.9, 3.9], [GX, -0.6, 1.5], 28)),
@@ -187,7 +188,7 @@ sfx = [
     {"at": "L15", "kind": "whoosh", "db": -22, "dur": 0.9},
 ]
 story = {
-    "rev": 2,
+    "rev": 6,
     "slug": "ep62-six-riders",
     "title": "The Elevator Mirror Shows FIVE",
     "made_for_kids": False,
