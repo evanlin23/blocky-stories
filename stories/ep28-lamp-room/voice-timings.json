@@ -1310,22 +1310,22 @@
    ]
   },
   "L49": {
-   "text": "I pointed it down.",
+   "text": "I, pointed it down.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.414,
+   "dur": 1.379,
    "onset": 0.172,
-   "end": 1.207,
+   "end": 1.172,
    "chunks": [
     [
      0.172,
-     0.569
+     0.56
     ],
     [
-     0.569,
-     1.207
+     0.56,
+     1.172
     ]
    ]
   },

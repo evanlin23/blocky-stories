@@ -60,7 +60,7 @@ lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
 # (the captions don't change)
 TEMPO = {"L68": 0.8, "L32": 0.85}
 SPOKEN = {("L31", "Night TWO,"): "Night. Two,", ("L51", "Its flat face"): "Its, flat face",
-          ("L68", "FAST ASLEEP,"): "Fast asleep,"}
+          ("L68", "FAST ASLEEP,"): "Fast asleep,", ("L49", "I pointed"): "I, pointed"}
 CAPTION = {}
 for ln in lines:
     for ch in ln.get("chunks", []):
