@@ -68,7 +68,7 @@ TARGETS = {
     "micro.idle_window_share": (None, 0.30),
     "micro.caption_sync_p90_ms": (None, 120),
     # the sound (micro)
-    "spec.sound_events_per_10s": (4.0, None),        # back-row 3.4, the flops 1.2-3.3; the polish pack adds about 4
+    "spec.sound_events_per_10s": (2.0, 4.0),         # owner, 2026-11-03: the hits use few effects (polish v2.2)
     "sound.silence_share": (None, 0.005),
     "sound.voice_bed_gap_db": (8.0, 14.0),
     "sound.lufs": (-15.0, -13.0),
@@ -722,6 +722,7 @@ def main(argv=None) -> int:
     ap.add_argument("--timeline", type=Path, help="a timeline.json, instead of building one from --story")
     ap.add_argument("--mix", type=Path, help="mix.json from the film artifact (stem loudness)")
     ap.add_argument("--json", type=Path, help="write every number here")
+    ap.add_argument("--fail-on-block", action="store_true", help="exit 1 when a block metric fails (proof.yml)")
     a = ap.parse_args(argv)
     if not a.film and not a.story:
         ap.error("give a film, a story, or both")
@@ -732,7 +733,12 @@ def main(argv=None) -> int:
         a.json.parent.mkdir(parents=True, exist_ok=True)
         a.json.write_text(json.dumps(res, indent=1))
     print(table(res))
-    return 0
+    return 1 if a.fail_on_block and blocked(res) else 0
+
+
+def blocked(res: dict) -> list[dict]:
+    """The block metrics that fail (the four the hit data confirmed)."""
+    return [c for c in res.get("checks", []) if c["status"] == "block"]
 
 
 if __name__ == "__main__":

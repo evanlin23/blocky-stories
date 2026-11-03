@@ -16,7 +16,7 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
 | `post.py` | scale up, bloom, the story's grade, effects (flash, blackout, static, red, shake, punch-in, rain), grain, captions; H.264 |
 | `sound.py` | the generated score, ambience, footsteps from the acting, one-off effects, the narrator, the master; recorded CC0 steps, ambience and a few effects from `assets/audio/` |
 | `polish.py` | the polish pack (`look.polish`): cut whooshes, key-word and reveal hits, risers, the room bed, punch-ins, drift, sway, the bright grade, the caption pop |
-| `checks.py` | the checks behind `check` and the tests |
+| `checks.py` | the checks behind `check`, `preflight` and the tests: the rules, the pace and the stills the edit already holds, and the clip report |
 
 ## story.json
 
@@ -94,6 +94,35 @@ takes the larger of it and the talking flaps; a "line" seam still only parts int
 open and shut about every 0.11 s, for a character whose words the narrator reports (one voice). A character 1.75 m tall has its eyes at about 1.55 m.
 
 **set.py** defines `build(kit, story, tl)`, which makes the world from `kit`'s parts and returns a dict it can keep. An optional `animate(kit, story, tl, t, ctx)` moves story things each frame (a door, a light going out, something rising) and may return `{light name: gain}`. `timeline.cue(tl, name)` gives a cue's time.
+
+## Before any render: the stills and the clips (2026-11-03)
+
+The preview is quarter-res with every 4th drawing, so a face through a boot, a picture that holds still too long
+and the pace were invisible until the final. Two checks read them before a frame is drawn:
+
+- **Stills** (`checks.still_spans`, pure python): a stretch inside one shot where the camera (its keys, `follow`
+  and the polish pack's move), the crop (punch-ins, drift, sway) and every character's pose all hold. Over 1.0 s is
+  what `measure.py` blocks a film on (`macro.longest_still_q_s`), so `preflight` blocks on it and `check` warns.
+  Key a move, a pose or a punch-in there. A shot where `set.py`'s `animate` moves something big instead is exempt:
+  list it in story.json `"set_moves": ["S14"]`.
+- **Clipping** (`python -m blocky clipcheck <story>`, Blender, no drawing: about 2.5 minutes for a 2-minute film).
+  The scene is posed every 0.25 s and at every acting key, and each head on screen is tested against every other
+  rendered mesh with a BVH overlap, the head shrunk 10% so a touch isn't a hit. The heads are the cast's, plus any
+  set object whose name starts with one of story.json `"clip_heads": ["chead"]` (a creature `set.py` builds itself).
+  An overlap the story means to have (a cat through its own flap, a face against the glass) goes in
+  `"clip_ok": ["flap", "S58/pane", "S97"]`: an object name, a shot, or a shot and an object. Anything else blocks.
+  `preflight` runs it when `BLOCKY_BPY` is set, and the proof workflow runs it on the PR.
+
+## The proof render (`.github/workflows/proof.yml`)
+
+The whole film, before merge, the way the final will be: every drawing the final makes (no frame skipping), at
+270 x 480 with 4 samples, through the same engine path as `render.yml` (`python -m blocky render --proof`, then
+`finish --proof` and `mix --proof`, which still finish at 1080 x 1920), with the narration made on Actions. It
+runs on a story PR once both reviews approve, or by hand with a story and a ref. It keeps `proof-<story>` for 14
+days (the film, the contact sheet, `flash.json`, `craft.json`, `clip.json`, `mix.json`, `proof.json` with the
+commit it drew, and `verdict.json`), posts the craft table in the job summary, and fails on a craft block, the
+flash bar, a clip or a true peak over -1 dBTP. The qa agent checks that artifact and writes `qa/<story>.json`
+with `"stage": "proof"`; `test` blocks the merge without it (`python -m blocky gate <story> --merge --base <sha>`).
 
 ## The CC0 library (`assets/`)
 
@@ -181,10 +210,13 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
                     "drift": 0.03, "whoosh_db": -19, "grade": "bright"}}
 ```
 
-- **Sound:** a recorded whoosh, low-passed at 3 kHz, 0.12 s before a cut that falls between lines (never under a
-  word; at most one per 1.4 s) and on every punch-in; a soft sub thump on emphasised words and a fuller hit on
-  reveals, each moved onto the chunk's key word (`on_key`); a 1.8 s riser into each `music_drops` hole (the silence
-  cuts it off; the voice doesn't duck it) and into `twist`; a room bed from `assets/audio/amb/` under the whole film at -44 LUFS (12 dB lower again wherever the story has its own ambience),
+- **Sound** (v2.2, owner 2026-11-03: the hits use few effects, and there is background music): the score plays under
+  the whole film (`polish.music_spec`: the first section starts at 0, and a section with no drone, pad or choir gets
+  a quiet drone and pad; holes only at `music_drops`). A recorded whoosh, low-passed at 3 kHz, 0.12 s before every
+  punch-in (on cuts between lines too only with `"whoosh_cuts": true`); one low hit on the hook (`"key_hits":
+  "all"` for every key word, 4 s apart); a soft sub thump on emphasised words and a fuller hit on
+  reveals, each moved onto the chunk's key word (`on_key`); a 1.8 s riser into the `twist` and the `music_drops` holes (the silence
+  cuts it off; the voice doesn't duck it), at most one per 15 s (`riser_gap`); a room bed from `assets/audio/amb/` under the whole film at -44 LUFS (12 dB lower again wherever the story has its own ambience),
   which a drop only dips 12 dB, so nothing is ever digital silence. Doors and other marks: an acting key with
   `"sfx": "door"` (or `latch`, `creak`, `thud`, `knock`; `sfx_db` sets its level) plays it there, panned to the
   character; so does a cue named `door...`. Every polish sound stays clear of the builder's own `sfx` (0.25 s),
@@ -210,9 +242,16 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   `scripts/measure.py` (through `polish.cam_specs`). The whole move is at most 0.12 m/s, a camera under 2 m from its
   target pushes proportionally less, and a shot a reveal lands in gets a straight push at half speed with its
   characters' idle motion at a fifth (`tl["motion"]["calm_shots"]`). The 2D drift then only covers shots it doesn't.
+- **Pace** (v2.3, the craft-metric blocks from 2026-11-03): a steady crop push through every shot (`push`, 12%
+  across it, in on one shot and out on the next, at a constant rate), and inside any shot over 1.6 s an angle cut
+  about every second (`reframe_every`): every other part is a 1.14× tighter framing, centred, like a second camera. Reveal shots and shots touching a quiet span get no angle cut and half the push. The push scales
+  with shot length (full at 2 s, so a short shot doesn't rush), angle cuts are centred and land on a caption change,
+  and `"hold": ["S29"]` keeps a frame-exact shot (a comparison, a doorway) at crop 1.0. The pack's crop never
+  goes past 1.18× (`max_zoom`: the drawings are 540 wide, and past that it goes soft). The bright grade keeps every pixel under WCAG's saturated
+  red (`red_line` 0.78), because the tighter crops enlarge red areas.
 - **Punch-ins** (v2): key words only (the builder's `emph`, the hook, big words, all-caps captions, a key word that
   ends its line), at most `punch_rate` (0.7) per 10 s, evenly spread. Hits keep their own 4 s spacing.
-- **Picture:** the `bright` grade raises exposure to at least 1.04 and saturation to 1.1, caps contrast at 1.05,
+- **Picture:** the `bright` grade raises exposure to at least 1.12 (v2.3) and saturation to 1.1, caps contrast at 1.05,
   the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them (by scaling each pixel with its
   luma's lift, so colours keep their saturation). The
   story's own tints and shot grades stay.

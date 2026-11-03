@@ -1,0 +1,223 @@
+# The proof: the whole film, before merge, the way the final will be (owner, 2026-11-03: "why are stuff still failing?
+# don't we do the rendering? or we should know before we do rendering right?"). Every drawing the final makes (no
+# frame skipping), at half size (270 x 480) with 4 samples, through the same engine path as render.yml: the voice
+# made here, the picture drawn to it, finished, mixed, flash-measured and measured by scripts/measure.py. Plus the
+# clip check (heads through props). The film is kept as `proof-<story>` (14 days) for the qa agent, the numbers go in
+# the job summary, and the run fails on a craft block, a flash failure, a clip or a hot true peak.
+#
+# It starts by itself on a story PR once both reviews approve (and again when the film files or the reviews change),
+# or by hand: workflow_dispatch with the story and the branch.
+name: proof
+on:
+  pull_request:
+    paths: ["stories/*/**", ".github/workflows/proof.yml", "scripts/plan_proofs.py"]
+  workflow_dispatch:
+    inputs:
+      story: {description: "story folder", required: true}
+      ref: {description: "branch or commit to draw (blank = the branch this runs on)", default: ""}
+# its own group: never queues behind or cancels the `render` group. One proof per PR (or ref) at a time; a newer push
+# replaces a waiting one, and a running one finishes (the qa check reads which commit it drew).
+concurrency:
+  group: proof-${{ github.event.pull_request.number || inputs.ref || github.ref }}
+  cancel-in-progress: false
+permissions: {contents: read, actions: read}
+env:
+  SHARDS: 8
+  PROOF_SELFTEST: ep62-six-riders   # the shortest story: proofed when a PR changes this workflow and no story
+                                    # (a self-test proves the pipeline, so its verdict is reported, not enforced)
+jobs:
+  plan:
+    if: ${{ github.event_name != 'pull_request' || !startsWith(github.event.pull_request.title, 'WIP') }}
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.p.outputs.matrix }}
+      stories: ${{ steps.p.outputs.stories }}
+      any: ${{ steps.p.outputs.any }}
+      selftest: ${{ steps.p.outputs.selftest }}
+      sha: ${{ steps.p.outputs.sha }}
+      t0: ${{ steps.t.outputs.t0 }}
+    steps:
+      - id: t
+        run: echo "t0=$(date +%s)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.ref || github.event.pull_request.head.sha || github.sha }}   # the branch head, not the merge commit
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: pip install -r requirements.txt
+      - id: p
+        run: |
+          python scripts/plan_proofs.py --story "${{ inputs.story }}" --shards $SHARDS \
+            --base "${{ github.event.pull_request.base.sha }}" --before "${{ github.event.before }}" >> "$GITHUB_OUTPUT"
+
+  voice:   # the narration, made once as render.yml makes it: the picture is drawn to it and the mix uses it
+    needs: plan
+    if: needs.plan.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        story: ${{ fromJSON(needs.plan.outputs.stories) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: "${{ needs.plan.outputs.sha }}"}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: sudo apt-get update -q && sudo apt-get install -yq espeak-ng
+      - run: pip install -r requirements.txt -r requirements-tts.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - uses: actions/cache@v4
+        with: {path: ~/.cache/huggingface, key: hf-kokoro-v1}
+      - name: narrate
+        run: |
+          export BLOCKY_TTS=$(which python)
+          python -m blocky voice ${{ matrix.story }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: proof-voice-${{ matrix.story }}
+          path: |
+            out/work/${{ matrix.story }}/vo/
+            stories/${{ matrix.story }}/voice-timings.json
+          retention-days: 3
+
+  clip:   # heads through props, walls or other characters, posed every 0.25 s and at every acting key (no drawing)
+    needs: [plan, voice]
+    if: ${{ !cancelled() && needs.plan.outputs.any == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        story: ${{ fromJSON(needs.plan.outputs.stories) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: "${{ needs.plan.outputs.sha }}"}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: sudo apt-get update -q && sudo apt-get install -yq libegl1 libgl1 libxi6 libxxf86vm1 libxfixes3 libxrender1 libxkbcommon0 libsm6
+      - run: pip install -r requirements.txt -r requirements-bpy.txt
+      - uses: actions/download-artifact@v4
+        with: {name: "proof-voice-${{ matrix.story }}", path: .}
+      - name: clip check
+        run: |
+          S=${{ matrix.story }}
+          export BLOCKY_BPY=$(which python)
+          set +e; python -m blocky clipcheck $S; code=$?; set -e
+          f=out/work/$S/clip.json
+          [ -f "$f" ] || echo "{\"hits\": [], \"error\": \"clipcheck exited $code without a report\"}" > "$f"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: proof-clip-${{ matrix.story }}
+          path: out/work/${{ matrix.story }}/clip.json
+          retention-days: 3
+
+  draw:
+    needs: [plan, voice]
+    if: ${{ !cancelled() && needs.plan.outputs.any == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 8   # render.yml takes 16 of the free plan's 20 runners while it draws: a proof never starves it for long
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: "${{ needs.plan.outputs.sha }}"}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: sudo apt-get update -q && sudo apt-get install -yq libegl1 libgl1 libxi6 libxxf86vm1 libxfixes3 libxrender1 libxkbcommon0 libsm6
+      - run: pip install -r requirements.txt -r requirements-bpy.txt
+      - uses: actions/download-artifact@v4
+        with: {name: "proof-voice-${{ matrix.story }}", path: .}
+      - name: draw shard ${{ matrix.shard }}
+        run: |
+          export BLOCKY_BPY=$(which python)
+          python -m blocky timeline ${{ matrix.story }}
+          python -m blocky render ${{ matrix.story }} --proof --shard ${{ matrix.shard }}/$SHARDS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: proof-frames-${{ matrix.story }}-${{ matrix.shard }}
+          path: out/work/${{ matrix.story }}/frames-proof/*.png
+          retention-days: 3
+          compression-level: 0
+
+  assemble:
+    needs: [plan, voice, clip, draw]
+    if: ${{ !cancelled() && needs.plan.outputs.any == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        story: ${{ fromJSON(needs.plan.outputs.stories) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: "${{ needs.plan.outputs.sha }}"}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip, cache-dependency-path: requirements*.txt}
+      - run: sudo apt-get update -q && sudo apt-get install -yq ffmpeg espeak-ng
+      - run: pip install -r requirements.txt -r requirements-tts.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: proof-frames-${{ matrix.story }}-*
+          path: out/work/${{ matrix.story }}/frames-proof
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with: {name: "proof-voice-${{ matrix.story }}", path: .}
+      - uses: actions/download-artifact@v4
+        continue-on-error: true   # a failed clip job leaves no report; the verdict then says so
+        with: {name: "proof-clip-${{ matrix.story }}", path: "out/work/${{ matrix.story }}"}
+      - name: finish and mix (with the narration the picture was drawn to)
+        run: |
+          S=${{ matrix.story }}
+          python -m blocky timeline $S
+          python -m blocky finish $S --proof
+          python -m blocky mix $S --proof
+      - name: flash, craft and verdict
+        id: verdict
+        run: |
+          S=${{ matrix.story }}
+          SLUG=$(python -c "import json;print(json.load(open('stories/$S/story.json')).get('slug','$S'))")
+          W=out/work/$S
+          P=out/proof-$S
+          mkdir -p $P
+          cp $W/$SLUG-proof.mp4 $P/$SLUG-proof.mp4
+          cp $W/$SLUG-proof.contact.png $P/ 2>/dev/null || true
+          python -m blocky flash $S --file $P/$SLUG-proof.mp4 || true
+          cp $P/$SLUG-proof.flash.json $P/flash.json 2>/dev/null || true
+          cp $W/mix-proof.json $P/mix.json
+          cp $W/clip.json $P/clip.json 2>/dev/null || true
+          python scripts/measure.py $P/$SLUG-proof.mp4 --story stories/$S --mix $W/mix-proof.json --json $P/craft.json || true
+          FRAMES=$(ls $W/frames-proof | wc -l)
+          python - "$S" "$P" "$FRAMES" <<'PY'
+          import json, sys, time
+          s, p, frames = sys.argv[1], sys.argv[2], int(sys.argv[3])
+          t0 = int("${{ needs.plan.outputs.t0 }}" or 0)
+          json.dump({"story": s, "sha": "${{ needs.plan.outputs.sha }}", "run_id": ${{ github.run_id }},
+                     "ref": "${{ inputs.ref || github.head_ref || github.ref_name }}", "res": "270x480", "samples": 4,
+                     "frames": frames, "shards": ${{ env.SHARDS }},
+                     "minutes": round((time.time() - t0) / 60, 1) if t0 else None,
+                     "created": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())},
+                    open(f"{p}/proof.json", "w"), indent=1)
+          PY
+          set +e; python scripts/proof_report.py --story $S --dir $P --summary "$GITHUB_STEP_SUMMARY"
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: keep the proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: proof-${{ matrix.story }}
+          path: out/proof-${{ matrix.story }}/
+          retention-days: 14
+          compression-level: 0
+      - name: proof result
+        run: |
+          if [ "${{ needs.plan.outputs.selftest }}" = "true" ]; then
+            echo "::notice::self-test of the proof pipeline on ${{ matrix.story }}: verdict code ${{ steps.verdict.outputs.code }} (not enforced)"
+            exit 0
+          fi
+          if [ "${{ steps.verdict.outputs.code }}" != "0" ]; then
+            echo "::error::the proof of ${{ matrix.story }} fails (see the job summary): fix it before merge, then push to draw it again"
+            exit 1
+          fi
+          echo "proof-${{ matrix.story }} passes the automatic checks; next the qa agent looks at it"
