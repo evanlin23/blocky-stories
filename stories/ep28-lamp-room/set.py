@@ -134,6 +134,7 @@ def materials(kit):
     M["boards"] = kit.planks("#d8d1c0", "#bdb5a2", 1.0, "X", name="white boards", rough=0.8)
     M["blue"] = pbr(kit, "sea blue door", "#2c6a9a", 0.5)
     M["sand"] = pbr(kit, "sand", "#cbbd98", 0.95, noise=(9.0, 0.78))
+    M["plate_brass"] = pbr(kit, "plate brass", "#7a5524", 0.5, metal=0.7)
     M["scratch"] = pbr(kit, "oilskin scratch", "#f0bd30", 0.35)
     M["grass"] = pbr(kit, "grass", "#3a4a2e", 0.95, noise=(1.2, 0.6))
     M["rock"] = pbr(kit, "cliff rock", "#4a4540", 0.95, noise=(0.5, 0.6))
@@ -336,7 +337,7 @@ def build_door(kit, ctx, M):
     kit.box("lamp door.leaf", (0.07, 1.04, 2.04), (-0.06, 0, 1.02), M["oak"], f, bevel=0.01)
     # the plate on the latch side (+y), at about 1.05 m
     pl = kit.empty("bolt plate", (-0.105, 0.34, 1.05), f)
-    kit.box("bolt plate.plate", (0.012, 0.2, 0.36), (0, 0, 0), M["brass"], pl, bevel=0.003)
+    kit.box("bolt plate.plate", (0.012, 0.2, 0.36), (0, 0, 0), M["plate_brass"], pl, bevel=0.003)
     for s in (-1, 1):   # two short upright strokes scratched in oilskin yellow
         kit.box(f"bolt plate.stroke{s}", (0.004, 0.018, 0.13), (-0.008, s * 0.045, -0.03), M["scratch"], pl)
     for s in (-1, 1):

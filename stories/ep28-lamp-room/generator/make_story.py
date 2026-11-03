@@ -268,7 +268,7 @@ shot("L54.2", "running up, three", runcam(73.9, 57, 20), step=1)
 shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
 shot("L55", "kitchen, flat bright daylight, both of us at the table", still([KX + 2.2, 0.1, 1.45], [KX, 0.1, 0.98], 12))
-shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.45, 1.1], 17))
+shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.45, 1.1], 16))
 shot("L57", "Ines says goodnight at her door, lamp on, her face to camera", still([0.0, -0.75, Z4 + 1.3], [1.8, 0.0, Z4 + 1.35], 32), hand=0.003)
 shot("L58", "me in the camp bed, listening", COT_WIDE)
 shot("L59", "the lamp room in the dark, rain settling", still([0.5, -2.0, LF + 1.8], [-0.8, 0.5, LF + 1.0], 22), rain=True)
@@ -540,7 +540,7 @@ cues = [
     {"at": 0, "name": "torch", "on": 0.0, "from": [0, 0, 20], "aim": [0, 0, 0]},
     {"at": "L06.2", "name": "torch", "on": 1.0, "dur": 0.4, "from": [0.0, -1.2, 16.1], "aim": [0.0, 0.2, 9.0], "gain": 0.4, "spill": 1.0},
     {"at": "L07", "name": "torch", "on": 0.0, "dur": 0.0, "from": [0.0, -1.2, 16.1], "aim": [0.0, 0.2, 9.0], "gain": 0.4, "spill": 1.0},
-    {"at": "L14", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.14, "spill": 0.0},
+    {"at": "L14", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.22, "spill": 0.0},
     {"at": "L14.3+0.35", "name": "torch", "on": 0.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "dur": 0.0, "gain": 0.45, "spill": 0.0},
     {"at": "L16", "name": "torch", "on": 1.0, "dur": 0.5, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0],
      "gain": 0.4, "spill": 1.0},
