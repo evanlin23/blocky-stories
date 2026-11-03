@@ -6,6 +6,6 @@
  "made_for_kids": false,
  "shape": "about-me",
  "lane": "core",
- "cover_s": 0.6,
+ "cover_s": 83.2,
  "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
 }

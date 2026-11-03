@@ -78,8 +78,10 @@ HX, HY = 100.0, 0.0     # the town house front (montage and Jo's door)
 CX, CY = 140.0, 0.0     # the high kitchen cupboard
 
 SHOTS = [
-    (0, "L74 the rule: me front-on at door seven, its lamp lit pale blue above my head, the door rising behind me",
-     move(([-1.0, 3.0, 1.2], [0.5, 3.0, 1.45]), ([-0.95, 3.0, 1.22], [0.5, 3.0, 1.47]), 15, 15)),
+    (0, "L74 the rule: my worried face under unit seven's lit lamp, the door rising by itself behind me, pushing in 2.5 m to 1.9 m",
+     move(([-1.05, 1.05, 1.62], [0.45, 3.0, 2.0]), ([-1.0, 1.75, 1.62], [0.5, 3.0, 2.0]), 30, 33)),
+    ("L82", "punch in on seven's lamp in its ring, tilting down to the door finishing its rise, the boxes inside",
+     move(([-0.85, 2.35, 1.85], [0.8, 3.0, 2.55]), ([-0.6, 2.6, 1.7], [1.0, 3.0, 1.35]), 40, 36)),
     ("L75", "a narrow hallway through an open front door, lamp lit: one striped sock on a shoe rack",
      move(([HX + 0.7, -4.5, 1.2], [HX + 0.7, 1.95, 1.3]), ([HX + 0.7, -4.2, 1.2], [HX + 0.7, 1.95, 1.3]), 40)),
     ("L76", "inside a high kitchen cupboard, door open: bare shelves, one spoon at the back",
@@ -94,6 +96,7 @@ SHOTS = [
      move(([-0.7, 2.3, 1.5], [0.9, 3.0, 1.95]), ([-0.55, 2.4, 1.45], [1.0, 3.0, 1.75]), 28, 28)),
     ("L02", "outside at dusk: the low block, the yard, the sodium lamp, me walking in",
      move(([-8.5, -17.0, 1.7], [0.2, -1.5, 1.4]), ([-7.5, -16.2, 1.7], [0.2, -1.5, 1.4]), 22)),
+    ("L02.2", "closer: me at the yard door", still([-1.5, -3.4, 1.4], [-0.2, -0.5, 1.3], 32)),
     ("L07", "inside seven: the stacks and the aisle, the lamp on the floor", still([0.95, 3.0, 1.15], [3.0, 3.0, 0.85], 22)),
     ("L08", "the two box faces, round on the right, zigzag on the left", still([-1.0, 3.0, 0.85], [1.45, 3.0, -0.25], 14)),
     ("L09", "me on the round stack looking at the jagged one", still([0.95, 3.45, 1.65], [2.3, 2.4, 1.3], 18)),
@@ -121,6 +124,7 @@ SHOTS = [
     ("L27", "front-on again, from beside it: the face to the corridor", still([-0.3, 9.55, 1.55], [1.1, 9.9, 1.55], 42)),
     ("L28", "long lens: unit nine's door is up", LONG_LENS(7.6)),
     ("L29", "closer: the body side-on, the head turned square round to me, both eyes on the camera", still([-1.0, 5.6, 1.5], [1.7, 7.8, 1.5], 34)),
+    ("L29.3", "closer: the turned head", still([-0.2, 6.2, 1.55], [1.2, 7.9, 1.6], 50)),
     ("L30", "the hasp, door seven already down", still([-0.1, 3.5, 0.45], [0.9, 3.0, 0.15], 30)),
     ("L31", "the corridor, lit, door eight next to mine", still([-0.35, 0.8, 1.5], [0.9, 5.0, 1.25], 28)),
     ("L32", "door eight's foot, no lock", still([-0.1, 5.7, 0.5], [0.9, 5.3, 0.22], 32)),
@@ -143,7 +147,8 @@ SHOTS = [
     ("L46", "the lamp beside its boot", still([0.0, 2.3, 1.9], [1.5, 2.5, -0.15], 15)),
     ("L47", "my face, terrified, then my eyes drop", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
     ("L48", "down the aisle line: its head in profile, one eye, facing the round stack", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
-    ("L49", "hard cut, same framing, held: the head still toward the round stack, never toward me", still([-0.1, 3.0, 1.5], [2.5, 3.0, 1.5], 30)),
+    ("L49", "hard cut, same framing, pushing: the head still toward the round stack, never toward me",
+     move(([0.05, 3.0, 1.5], [2.5, 3.0, 1.5]), ([0.5, 3.0, 1.5], [2.5, 3.0, 1.5]), 31, 34)),
     ("L50", "the jagged boxes beside its flank", still([0.1, 3.4, 1.1], [1.5, 3.8, 0.85], 30)),
     ("L51", "the round boxes beside its flank, the lamp at the foot", still([0.1, 2.6, 1.1], [1.5, 2.3, 0.8], 30)),
     ("L52", "memory: a round scribble on a fresh box, the kitchen table",
@@ -153,6 +158,7 @@ SHOTS = [
     ("L53", "my face, sad", still([0.45, 2.55, 1.58], [-0.2, 1.4, 1.52], 34)),
     ("L54", "close on the round stack and my lamp, its flank at the left edge, head still turned to the stack",
      still([0.15, 2.85, 1.0], [1.5, 2.3, 0.8], 30)),
+    ("L54.2", "the dent in the top box", still([0.5, 2.75, 1.6], [1.67, 2.25, 1.2], 32)),
     ("L55", "that night: the ring with one key, the second beside it",
      still([KX - 0.25, 0.12, 1.42], [KX - 0.22, 0.22, 0.775], 40)),
     ("L56", "me with my phone to my ear by the bright window", still([KX + 0.45, -0.1, 1.62], [KX + 1.0, 2.0, 1.5], 40)),
@@ -165,11 +171,13 @@ SHOTS = [
     ("L63", "Jo: \"That one's yours, obviously\"", still([0.6, 3.0, 1.55], [2.0, 3.0, 1.5], 34)),
     ("L63.3", "and me, a small laugh", still([3.7, 3.0, 1.55], [1.4, 3.0, 1.5], 36)),
     ("L64", "the key-return slot, sunlight across it", still([0.1, -0.95, 1.45], [-1.1, -0.1, 1.25], 34)),
+    ("L64.2", "Jo by the slot", still([0.5, 0.9, 1.4], [-0.6, 0.1, 1.35], 36)),
     ("P01", "close on the slot", still([0.2, -0.3, 1.32], [-1.1, -0.3, 1.28], 45)),
     ("L65", "her car going out of the gate in the low sun, me watching", still([-4.0, -4.5, 1.4], [5.5, -8.5, 1.0], 26)),
     ("L66", "me carrying round-scribbled boxes out into the sunny yard", still([-0.1, -7.0, 1.4], [-0.1, 0.0, 1.25], 30)),
     ("L67", "one small box on the bare floor of seven, sun across it", still([1.0, 3.6, 0.9], [2.0, 3.0, 0.15], 28)),
     ("L68", "straight down the bare unit to the back wall", AISLE_CAM),
+    ("L68.2", "the bare unit, lower and off to the side", still([-0.9, 3.4, 1.2], [2.5, 3.0, 0.9], 20)),
     ("L69", "the same view, a little wider: a bar of sun on the floor outside",
      still([-1.0, 2.4, 1.5], [2.5, 3.1, 0.9], 20)),
     ("L70", "me in the doorway with the small box", still([-0.9, 3.0, 1.55], [1.2, 3.0, 1.45], 38)),
@@ -179,8 +187,27 @@ SHOTS = [
      still([-0.3, -1.0, 1.45], [0.25, 5.0, 1.15], 21)),
 ]
 
+def drift(cam, i):
+    """Nothing holds still (2026-11-03 reset): a held shot gets a slow push toward its target, and every other one a
+    little sideways slide too. Two-key cameras are left as written."""
+    if len(cam) != 1:
+        return cam
+    _, loc, tgt, lens = cam[0]
+    k = 0.055
+    nl = [loc[j] + (tgt[j] - loc[j]) * k for j in range(3)]
+    if i % 2:
+        dx, dy = tgt[0] - loc[0], tgt[1] - loc[1]
+        n = math.hypot(dx, dy) or 1.0
+        nl[0] += -dy / n * 0.09
+        nl[1] += dx / n * 0.09
+    return c([0, loc, tgt, lens], [1, [round(v, 3) for v in nl], tgt, round(lens * 1.04, 1)])
+
+
+NO_DRIFT = ("L49",)
 shots = []
 for i, (at, what, cam) in enumerate(SHOTS):
+    if at not in NO_DRIFT:
+        cam = drift(cam, i)
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.006, "step": 1 if at in ("L15", "L40", "L41", "L42", "L43") else 2,
          "what": what}
     if i:
@@ -216,8 +243,8 @@ CARRY = {"arms": [80, 80], "side": [-6, -6]}
 SITTING = {"sit": True, "arms": [10, 10], "side": [-8, -8]}
 
 # me
-put("me", 0, [0.5, 3.0], yaw=-90, expr="neutral")
-hide("me", "L75")
+put("me", 0, [0.45, 3.0], yaw=yaw_to([0.45, 3.0], [-1.05, 1.05]), expr="worried", head=[0, -12])
+hide("me", "L82")
 put("me", "L78", [HX - 0.1, -0.9], yaw=-85, expr="worried", head=[0, -10])
 hide("me", "L79")
 put("me", "L02", [-0.3, -6.5], yaw=180, expr="neutral")
@@ -327,8 +354,7 @@ cues = [
     {"at": "L78", "name": "scene", "set": "street"},
     {"at": "L79", "name": "scene", "set": "none"},
     # the door lamps: pale blue when the rule lets the door lift. Every lamp ramps (0.6 s up, 1.0 s down), never a flick
-    {"at": 0, "name": "dlamp", "unit": 7, "on": 0.0, "dur": 0.01},
-    {"at": 0.05, "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.5},
+    {"at": 0, "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.01},
     {"at": "L75", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 0.4},
     {"at": "L79", "name": "dlamp", "unit": 7, "on": 1.0, "dur": 0.6},
     {"at": "L07", "name": "dlamp", "unit": 7, "on": 0.0, "dur": 0.5},
@@ -353,8 +379,8 @@ cues = [
     {"at": "L43+0.3", "name": "corr", "level": 0.09, "dur": 2.4},
     {"at": "L55", "name": "corr", "level": 1.0, "dur": 0.01},
     # doors
-    {"at": 0, "name": "door", "unit": 7, "open": 0.5},
-    {"at": 0.35, "name": "door", "unit": 7, "open": 1.0, "dur": 2.5},
+    {"at": 0, "name": "door", "unit": 7, "open": 0.15},
+    {"at": 0.2, "name": "door", "unit": 7, "open": 1.0, "dur": 1.2},
     {"at": "L16", "name": "door", "unit": 11, "open": 1.0},
     {"at": "L20.2", "name": "door", "unit": 7, "open": 0.0, "dur": 1.4},
     {"at": "L21", "name": "door", "unit": 11, "open": 0.0},
@@ -456,6 +482,32 @@ sfx = [
     {"at": "L41.2", "kind": "click", "db": -16},
     {"at": "L34.1", "kind": "creak", "db": -12, "dur": 2.2},
     {"at": "L43", "kind": "hit", "db": -7},
+    # the opening: the door rises by itself on "DOOR" (recorded rattle, a thud and a low hit), a creak on OPENING
+    {"at": 0.12, "kind": "door", "db": -17, "dur": 1.5},
+    {"at": "L74.2", "kind": "thud", "db": -8},
+    {"at": "L74.2", "kind": "hit", "db": -13},
+    {"at": "L82", "kind": "whoosh", "db": -20},
+    {"at": "L82.1", "kind": "creak", "db": -17, "dur": 1.1},
+    {"at": "L75", "kind": "whoosh", "db": -24},
+    # reveals and recorded doors
+    {"at": "L16", "kind": "hit", "db": -16},
+    {"at": "L17", "kind": "thud", "db": -16},
+    {"at": "L21", "kind": "hit", "db": -17},
+    {"at": "L25", "kind": "whoosh", "db": -20},
+    {"at": "L29", "kind": "hit", "db": -13},
+    {"at": "L29.2", "kind": "thud", "db": -12},
+    {"at": "L30", "kind": "latch", "db": -12},
+    {"at": "L20.2", "kind": "door", "db": -17, "dur": 1.4},
+    {"at": "L37", "kind": "door", "db": -17},
+    {"at": "L39", "kind": "creak", "db": -18, "dur": 1.2},
+    {"at": "L44", "kind": "thud", "db": -12},
+    {"at": "L48", "kind": "hit", "db": -14},
+    {"at": "L80", "kind": "hit", "db": -12},
+    {"at": "L55", "kind": "door", "db": -16},
+    {"at": "L59.3", "kind": "creak", "db": -16, "dur": 1.4},
+    {"at": "L10", "kind": "latch", "db": -17},
+    {"at": "L64", "kind": "latch", "db": -18},
+    {"at": "L33.1", "kind": "whoosh", "db": -24},
     {"at": "P01+0.2", "kind": "bell", "db": -16, "dur": 1.5},
     {"at": "L71+0.2", "kind": "rattle", "db": -16, "dur": 1.6},
     {"at": "L81>-2.2", "kind": "rattle", "db": -12, "dur": 2.4},
@@ -476,6 +528,7 @@ story = {
     "gap": 0.12,
     "tail": LOOP,
     "fade_out": False,
+    "fade_in": False,
     "look": {"fog": "#2a3140", "fog_density": 0.012, "fog_start": 6.0, "sky": "#161d2e", "sky_strength": 0.5,
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,
@@ -486,7 +539,24 @@ story = {
     "shots": shots,
     "acting": acting,
     "cues": cues,
-    "fx": [],
+    "fx": [
+        {"at": "L74.2", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+        {"at": "L74.2", "kind": "shake", "dur": 0.2, "amp": 0.8},
+        {"at": "L82.1", "kind": "punch", "dur": 0.5, "zoom": 1.09},
+        {"at": "L16", "kind": "punch", "dur": 0.45, "zoom": 1.1},
+        {"at": "L17", "kind": "shake", "dur": 0.2, "amp": 0.6},
+        {"at": "L29.2", "kind": "punch", "dur": 0.5, "zoom": 1.12},
+        {"at": "L29.2", "kind": "shake", "dur": 0.25, "amp": 0.8},
+        {"at": "L43", "kind": "shake", "dur": 0.35, "amp": 1.2},
+        {"at": "L44", "kind": "punch", "dur": 0.6, "zoom": 1.12},
+        {"at": "L48", "kind": "punch", "dur": 0.5, "zoom": 1.08},
+        {"at": "L80", "kind": "shake", "dur": 0.25, "amp": 0.7},
+        {"at": "L53.1", "kind": "punch", "dur": 0.6, "zoom": 1.07},
+        {"at": "P01+0.2", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+        {"at": "L81.2", "kind": "punch", "dur": 0.5, "zoom": 1.07},
+        {"at": "L75.1", "kind": "punch", "dur": 0.45, "zoom": 1.08},
+        {"at": "L76.1", "kind": "punch", "dur": 0.45, "zoom": 1.08},
+    ],
     "music": {"root": 41, "mode": "locrian", "bpm": 62, "seed": 34,
               "sections": [
                   {"at": 0, "voices": ["drone"], "energy": 0.3},
@@ -499,8 +569,9 @@ story = {
                   {"at": "L55", "voices": ["drone", "pad"], "energy": 0.35},
                   {"at": "L58", "voices": ["pad", "piano"], "energy": 0.35, "mode": "major", "root": 42},
               ]},
-    "sound": {"rev": 2, "floor": "stone", "steps_db": -22,
+    "sound": {"rev": 3, "floor": "stone", "steps_db": -22,
               "ambience": [
+                  {"kind": "room", "from": 0, "to": "end", "lufs": -42},
                   {"kind": "hum", "from": 0, "to": "L15.1", "lufs": -34},
                   {"kind": "hum", "from": "L15.1", "to": "L15.3+0.4", "lufs": -44},
                   {"kind": "hum", "from": "L15.3+0.4", "to": "L40.2", "lufs": -34},

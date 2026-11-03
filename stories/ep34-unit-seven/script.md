@@ -12,8 +12,8 @@
   - **Why this angle:** the door lamp is already on screen in frame 1, so the warning names the rule meter itself and pays off in the same shot. The storage-block warning ("never stay past the one-minute light") can't pay off before the Deep One at L16, about 45 s in, and it would sit oddly above the town montage.
   - **The rule is still said by about 4.5 s:** line 2 says what leaving something does (the door keeps opening for you), and the sock line (about 3.2 to 5.4 s) shows the other half (people plant things so doors open for them). L78 and L79 then show a door that won't open and one that will.
   - **The loop:** L81 is unchanged. "And now, nothing of mine is inside." runs straight into "Never leave anything of yours behind a door." The warning becomes the lesson I paid for, and "of mine" rhymes with "of yours".
-  - **The quotable line** is L76 (marked below). It says "flat", which is UK. "apartment" would need a re-voice of L76 (see the US English list), so it stays for now.
-  - **US English, words that would need a re-voice** (left as voiced, changed only in the title and description): "flat" (L76, "apartment"), "phone TORCH" (L23, "flashlight"), "boiler suit" (L18, "coveralls"), "turned ROUND" (L29, "around"), "rang JO" (L56, "called"), "posted it" (L64, "dropped it"), "charity SHOP" (L66, "thrift store"). In the notes only (never spoken): "terraced", "pavement", "trainers", "galvanised", "torch".
+  - **The quotable line** is L76 (marked below), now "apartment" (US English re-voice, builder 2026-11-03).
+  - **US English, words that would need a re-voice** (done by the builder 2026-11-03 and re-voiced: "apartment" L76, "flashlight" L23, "coveralls" L18, "turned AROUND" L29, "thrift store" L66). Still to do: "rang JO" (L56, "called"), "posted it" (L64, "dropped it"). In the notes only (never spoken): "terraced", "pavement", "trainers", "galvanised", "torch".
   - **Cover:** 0.6 s is the opening corridor, before the lamp and the warning read. Suggest about 82.6 s (L44, "Its FACE / was right at my open DOOR.": the Deep One's face lit from below in my doorway, and the caption's DOOR ties to the title). The other pick is about 98.6 s (L80, seven's lamp lit over its ribbed flank). The builder confirms both against the new timeline.
 
 ## Premise
@@ -38,7 +38,7 @@ The boxes aren't all Jo's. Half of them are mine. I mark boxes with round scribb
 - **Plant 3, the line (L07):** "I told myself / it was all HER stuff." A rewatch hears "told myself".
 
 ## How the last 15 seconds turn the first line
-From L66 on: my half goes to the charity shop, what's left fits one small box, and the door comes down on an empty room. The rule turns at L80 (seven's door had lit up for me every Tuesday), and the twist is said once, at L53 to L54 (I'd always known half the room was mine, and pretended it was all Jo's so I'd have a reason to keep coming). The close only shows it. L81, the last line, "And NOW, / NOTHING of mine / is INSIDE.", plays over seven's lamp fading dark behind me, and the loop runs straight into L74's "NEVER leave / anything of YOURS / behind a DOOR." The cold beat: by the town's rule, that door will never open for me again, and I chose it. The warning I open on is the one I learned the slow way. On a rewatch, L74's lit lamp over seven is the whole twist in the first second, L79's "for BOTH of us" says it out loud, the round stack I sit on is my own, and the two keys say nobody else could have opened the room.
+From L66 on: my half goes to the thrift store, what's left fits one small box, and the door comes down on an empty room. The rule turns at L80 (seven's door had lit up for me every Tuesday), and the twist is said once, at L53 to L54 (I'd always known half the room was mine, and pretended it was all Jo's so I'd have a reason to keep coming). The close only shows it. L81, the last line, "And NOW, / NOTHING of mine / is INSIDE.", plays over seven's lamp fading dark behind me, and the loop runs straight into L74's "NEVER leave / anything of YOURS / behind a DOOR." The cold beat: by the town's rule, that door will never open for me again, and I chose it. The warning I open on is the one I learned the slow way. On a rewatch, L74's lit lamp over seven is the whole twist in the first second, L79's "for BOTH of us" says it out loud, the round stack I sit on is my own, and the two keys say nobody else could have opened the room.
 
 ## World
 A low self-storage block on the edge of a made-up town. One long indoor corridor of twelve identical roller doors, six a side, corrugated and painted roller-door blue, in galvanised steel frames, each with a small stencilled numeral (digits only, no words) and a padlock hasp at the foot. Painted concrete floor, scuffed. Cold fluorescent battens overhead on a timer. By the entrance, a single round push button with a dim green ring that glows in the dark. At the entrance end, a wide yard door onto an asphalt yard with one sodium lamp. Beside the entrance, the site office's steel key-return slot in the wall (no text, no logo). Above every roller door, the town's door lamp: a small round lamp, 12 cm across, in a galvanised ring, dark unless it's lit for someone (see The rule).
@@ -112,7 +112,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [punch in: close on seven's lamp glowing in its ring, tilting down to the door frame as the door finishes rising on its own, the boxes inside. Under 1.5 s]
 - `L75` narrator: So you leave a SOCK / at a friend's place, / to get asked BACK.
   - [a narrow hallway seen through an open front door, its lamp lit: one striped sock alone on a shoe rack, bright and a little funny]
-- `L76` narrator: Landlords hide a SPOON / in every flat / they've ever RENTED. **(the quotable line: an odd rule detail said flatly, short enough to type. If it's ever re-voiced, make it "apartment")**
+- `L76` narrator: Landlords hide a SPOON / in every apartment / they've ever RENTED. **(the quotable line: an odd rule detail said flatly, short enough to type)**
   - [inside a high kitchen cupboard, door open: bare shelves, one spoon lying at the very back. Lit plainly]
 - `L77` narrator: Breakups / take FOREVER / around HERE.
   - [a front step at evening, the door's lamp lit: through the open door, one last taped box sitting alone in an empty hall]
@@ -146,7 +146,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [from the entrance, a long lens down the corridor: one door near the far end rolled up, a dark opening]
 - `L17` narrator: Somebody was STANDING in it, / facing OUT.
   - [closer: the Deep One front-on in the doorway, an ordinary person in blue, arms at its sides]
-- `L18` narrator: A BLUE boiler suit, / and a dusty CAP.
+- `L18` narrator: A BLUE coveralls, / and a dusty CAP.
   - [mid shot of its front, the drawn face plain and still]
 - `L19` narrator: I said, / "EVENING." / They said NOTHING.
   - [me at my door, a small nod, `neutral`. Reverse: it hasn't changed]
@@ -158,7 +158,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [the same long lens: one door nearer, rolled up]
 - `L22` narrator: The same PERSON, / in the same CAP, / facing OUT.
   - [front-on, as before, in unit ten]
-- `L23` narrator: This time / I brought my phone TORCH.
+- `L23` narrator: This time / I brought my phone FLASHLIGHT.
   - [me walking down the corridor, phone light ahead]
 - `L24` narrator: From the SIDE, / they didn't STOP.
   - [my angle into unit ten from two metres off: the front of its head and the start of its flank]
@@ -172,7 +172,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 ### 04 Tuesday three: unit nine
 - `L28` narrator: Week THREE, / unit NINE.
   - [the long lens again, two doors from mine]
-- `L29` narrator: The body faced OUT. / But the HEAD / was turned ROUND / to MY door.
+- `L29` narrator: The body faced OUT. / But the HEAD / was turned AROUND / to MY door.
   - [from my doorway: its body square to the corridor, its head turned flat toward me, the wrong angle on its own neck]
 - `L30` narrator: I locked up / in about TEN SECONDS.
   - [the padlock hasp, a fast cut, door seven already down. Cut away from hands]
@@ -260,7 +260,7 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
   - [from the yard door: her car going out of the gate in the low sun, me watching from the door]
 
 ### 09 The door comes down
-- `L66` narrator: My HALF / went to / the charity SHOP.
+- `L66` narrator: My HALF / went to / the thrift STORE.
   - [me carrying round-scribbled boxes out into the sunny yard]
 - `L67` narrator: What was LEFT / fit in ONE / small BOX.
   - [one small round-scribbled box on the bare floor of seven, sun across it. The lamp beside it]
@@ -290,6 +290,6 @@ Every line is `narrator`, voice A. Captions are split with ` / `. CAPS are the k
 - **L63** "obviously," has a smile in it.
 - **P01:** the one clink alone, music low.
 - **L81:** plain and warm, not a whisper, no trail-off, a small weight on "INSIDE" so the loop into L74 rhymes. The door's thud is the last sound.
-- **Words to check:** "Jo" (jō) at L78, L12, L54, L56, L59. "Jo'S" at L50 ("Joe's" is the mishear, which is fine to read). "SEVEN" and "eleven" are numbers, read in full. "boiler suit" (L18). "fit" (L67) is the past tense, said "fit". "EVENING" at L19 can come out "evening" or "even" by Whisper: slow the line if so.
-- **Homophones Whisper could get wrong:** "past" (L41), "SPOON" (L76), "Landlords" (L76), "SCRAPED", "RIDGES", "TORCH". "ROLLED up" and "rode up" (L59).
+- **Words to check:** "Jo" (jō) at L78, L12, L54, L56, L59. "Jo'S" at L50 ("Joe's" is the mishear, which is fine to read). "SEVEN" and "eleven" are numbers, read in full. "coveralls" (L18). "fit" (L67) is the past tense, said "fit". "EVENING" at L19 can come out "evening" or "even" by Whisper: slow the line if so.
+- **Homophones Whisper could get wrong:** "past" (L41), "SPOON" (L76), "Landlords" (L76), "SCRAPED", "RIDGES", "FLASHLIGHT". "ROLLED up" and "rode up" (L59).
 
