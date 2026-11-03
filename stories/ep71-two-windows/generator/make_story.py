@@ -54,6 +54,7 @@ def split_chunks(ln):
 
 
 for _ln in lines:
+    _ln["ncap"] = len(_ln["chunks"])
     split_chunks(_ln)
 
 # ---- approximate times (only for ordering and for splitting a line into shots)
@@ -204,8 +205,8 @@ drive(O, CALP, [("L08-0.5", -33, LY, 0, "snap"), ("L13", -22, LY, 0), ("L14>", C
                 ("L46>", CX2, LY, 0), ("L47", -31.5, BY, 180, "snap"), ("L50", -33.5, BY, 180),
                 ("L50>", CX2, LY, 0, "snap"), ("L58>", CX2, LY, 0),
                 ("L58>+0.1", -24, LY, 0, "snap"), ("L59>", CXS, LY, 0), ("L64>", CXS, LY, 0),
-                ("L64>+0.1", -3, LY, 0, "snap"), ("L65>", 12, LY, 0), ("L66-0.1", 575, -1.75, 0, "snap"),
-                ("L67+3", 620, -1.75, 0), ("L68>", 640, -1.75, 0), ("L69-0.2", -24, LY, 0, "snap"),
+                ("L64>+0.1", -3, LY, 0, "snap"), ("L65>", 12, LY, 0), ("L66-0.1", 572, -1.75, 0, "snap"),
+                ("L67+3", 585, -1.75, 0), ("L68>", 592, -1.75, 0), ("L69-0.2", -24, LY, 0, "snap"),
                 ("L69", CXS, LY, 0), ("L69>", CXS, LY, 0), ("L69>+0.1", -31.5, BY, 180, "snap"),
                 ("L71>+1", -34, BY, 180)])
 # seated poses over time
@@ -316,6 +317,11 @@ def move(l0, t0, l1, t1, lens0, lens1=None):
 
 
 def shot(at, note, cam, follow=None, hand=0.012, step=2):
+    mm = re.match(r"^(L\d+)\.(\d+)$", str(at))
+    if mm:   # "Lxx.k" in this file means the k-th caption chunk of the script's line, placed by proportion
+        lid, k = mm.group(1), int(mm.group(2))
+        ln = next(l for l in lines if l["id"] == lid)
+        at = f"{lid}+{round(span(lid)[1] * k / ln['ncap'], 2)}"
     s = {"id": f"S{len(SHOTS) + 1:03d}", "at": at, "what": note, "cam": cam, "hand": hand, "step": step}
     if follow:
         s["follow"] = follow
@@ -353,7 +359,7 @@ shot("L03", "S03 a car rolls past the second window", still([8.5, -0.6, 0.7], [1
 shot("L04", "S04 a van with a taped window", still([9.0, -0.4, 0.8], [11.0, 3.0, 1.2], 26))
 shot("L05", "S05 Mr. Dale at his door", still([300, -1.7, 1.55], [300, 3, 1.5], 36))
 shot("L06", "S06 first red truck, big", still([10.5, 10.9, 0.65], [15, 12.9, 0.95], 30))
-shot("L06.2", "S07 tracking along all eight", move([17, 9.8, 0.95], [13, 12.9, 0.95], [-8, 9.8, 0.95], [-14, 12.9, 0.95], 30), hand=0)
+shot("L06.1", "S07 tracking along all eight", move([17, 9.8, 0.95], [13, 12.9, 0.95], [-8, 9.8, 0.95], [-14, 12.9, 0.95], 30), hand=0)
 shot("L07", "S08 Dale raises the mug", still([300.3, -0.6, 1.6], [300, 3, 1.6], 45))
 shot("L07.2", "S09 the soup, number nine", still([-13.73, 0.8, 1.4], [-13.73, 4.1, 1.35], 45))
 # ---- 02 Cal

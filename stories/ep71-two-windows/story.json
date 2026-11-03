@@ -229,7 +229,8 @@
      "SECOND WINDOW.",
      "second window."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L02",
@@ -240,7 +241,8 @@
      "there's only one."
     ]
    ],
-   "gap": 0.1
+   "gap": 0.1,
+   "ncap": 1
   },
   {
    "id": "L03",
@@ -262,7 +264,8 @@
      "the ROAD.",
      "the road."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L04",
@@ -276,7 +279,8 @@
      "their side WINDOWS.",
      "their side windows."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L05",
@@ -294,7 +298,8 @@
      "stopped there ONCE.",
      "stopped there once."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L06",
@@ -316,7 +321,8 @@
      "BACK WALL.",
      "back wall."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L07",
@@ -342,7 +348,8 @@
      "the SOUP.",
      "the soup."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L08",
@@ -364,7 +371,8 @@
      "for ELEVEN YEARS.",
      "for eleven years."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L09",
@@ -382,7 +390,8 @@
      "ORDERED.",
      "ordered."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L10",
@@ -404,7 +413,8 @@
      "of us.",
      "of us."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L11",
@@ -418,7 +428,8 @@
      "NO PICKLES.",
      "no pickles."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L12",
@@ -440,7 +451,8 @@
      "a PICKLE.",
      "a pickle."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L13",
@@ -462,7 +474,8 @@
      "MY OWN.",
      "my own."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L14",
@@ -496,7 +509,8 @@
      "the SPEAKER.",
      "the speaker."
     ]
-   ]
+   ],
+   "ncap": 5
   },
   {
    "id": "L15",
@@ -522,7 +536,8 @@
      "no PICKLES?\"",
      "no pickles?"
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L16",
@@ -536,7 +551,8 @@
      "\"They KNOW me.\"",
      "they know me."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L17",
@@ -558,7 +574,8 @@
      "ticket FORTY-ONE.",
      "ticket forty one."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L18",
@@ -572,7 +589,8 @@
      "on the MIRROR.",
      "on the mirror."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L19",
@@ -598,7 +616,8 @@
      "PARKING LOT,",
      "parking lot,"
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L20",
@@ -612,7 +631,8 @@
      "is LIT.",
      "is lit."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L21",
@@ -630,7 +650,8 @@
      "on its SILL.",
      "on its sill."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L22",
@@ -660,7 +681,8 @@
      "BETTER there.",
      "better there."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L23",
@@ -674,7 +696,8 @@
      "He's already ROLLING.",
      "he's already rolling."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L24",
@@ -696,7 +719,8 @@
      "No PICKLES.",
      "no pickles."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L25",
@@ -710,7 +734,8 @@
      "at THAT window.",
      "at that window."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L26",
@@ -732,7 +757,8 @@
      "the EXIT.",
      "the exit."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L27",
@@ -754,7 +780,8 @@
      "the BUILDING,",
      "the building,"
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L28",
@@ -768,7 +795,8 @@
      "eight TRUCKS,",
      "eight trucks,"
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L29",
@@ -782,12 +810,14 @@
      "at the SPEAKER.",
      "at the speaker."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "P01",
    "pause": 0.7,
-   "chunks": []
+   "chunks": [],
+   "ncap": 0
   },
   {
    "id": "L30",
@@ -801,7 +831,8 @@
      "no PICKLES?\"",
      "no pickles?"
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L31",
@@ -815,7 +846,8 @@
      "\"They KNOW me.\"",
      "they know me."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L32",
@@ -829,7 +861,8 @@
      "Same WORDS.",
      "same words."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L33",
@@ -851,7 +884,8 @@
      "FORTY-ONE.",
      "forty one."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L34",
@@ -877,7 +911,8 @@
      "GOT here.",
      "got here."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L35",
@@ -903,7 +938,8 @@
      "HATCH now.",
      "hatch now."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L36",
@@ -925,7 +961,8 @@
      "doesn't BLINK.",
      "doesn't blink."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L37",
@@ -943,7 +980,8 @@
      "SEEN it.",
      "seen it."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L38",
@@ -969,7 +1007,8 @@
      "car WAITS.",
      "car waits."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L39",
@@ -983,7 +1022,8 @@
      "ONE cracked HEADLIGHT.",
      "one cracked headlight."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L40",
@@ -1001,7 +1041,8 @@
      "All FORTY-ONE.",
      "all forty one."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L41",
@@ -1023,7 +1064,8 @@
      "way ROUND.",
      "way round."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L42",
@@ -1041,7 +1083,8 @@
      "\"They KNOW me.\"",
      "they know me."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L43",
@@ -1063,7 +1106,8 @@
      "SHOULDERS now,",
      "shoulders now,"
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L44",
@@ -1081,7 +1125,8 @@
      "CAL'S window.",
      "Cal's window."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L45",
@@ -1103,7 +1148,8 @@
      "to the OTHER.",
      "to the other."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L46",
@@ -1129,7 +1175,8 @@
      "a CRACKED HEADLIGHT.",
      "a cracked headlight."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L47",
@@ -1139,7 +1186,8 @@
      "Lap FOUR.",
      "lap four."
     ]
-   ]
+   ],
+   "ncap": 1
   },
   {
    "id": "L48",
@@ -1157,7 +1205,8 @@
      "and LOOK.",
      "and look."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L49",
@@ -1183,7 +1232,8 @@
      "are US.",
      "are us."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L50",
@@ -1201,12 +1251,14 @@
      "and ME.",
      "and me."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "P02",
    "pause": 0.6,
-   "chunks": []
+   "chunks": [],
+   "ncap": 0
   },
   {
    "id": "L51",
@@ -1224,7 +1276,8 @@
      "to its WAIST,",
      "to its waist,"
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L52",
@@ -1242,7 +1295,8 @@
      "from CAL'S.",
      "from Cal's."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L53",
@@ -1260,7 +1314,8 @@
      "ONE window.",
      "one window."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L54",
@@ -1286,7 +1341,8 @@
      "one LAP later.",
      "one lap later."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L55",
@@ -1308,7 +1364,8 @@
      "BACK WALL.",
      "back wall."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L56",
@@ -1326,7 +1383,8 @@
      "every lap.",
      "every lap."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L57",
@@ -1348,7 +1406,8 @@
      "that CHANGES.",
      "that changes."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L58",
@@ -1382,7 +1441,8 @@
      "BREAKS the lap.",
      "breaks the lap."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L59",
@@ -1408,7 +1468,8 @@
      "before it ASKS.",
      "before it asks."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L60",
@@ -1430,7 +1491,8 @@
      "I ORDER.",
      "I order."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L61",
@@ -1456,7 +1518,8 @@
      "EXTRA PICKLES.\"",
      "extra pickles."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L62",
@@ -1470,7 +1533,8 @@
      "goes QUIET.",
      "goes quiet."
     ]
-   ]
+   ],
+   "ncap": 1
   },
   {
    "id": "L63",
@@ -1484,7 +1548,8 @@
      "\"FORTY-TWO.\"",
      "forty two."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L64",
@@ -1498,7 +1563,8 @@
      "at me.",
      "at me."
     ]
-   ]
+   ],
+   "ncap": 1
   },
   {
    "id": "L65",
@@ -1516,7 +1582,8 @@
      "just ENDS.",
      "just ends."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L66",
@@ -1534,7 +1601,8 @@
      "to the ROAD.",
      "to the road."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L67",
@@ -1556,7 +1624,8 @@
      "a FACE.",
      "a face."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L68",
@@ -1570,7 +1639,8 @@
      "ALL of them.",
      "all of them."
     ]
-   ]
+   ],
+   "ncap": 2
   },
   {
    "id": "L69",
@@ -1596,7 +1666,8 @@
      "and WAITS.",
      "and waits."
     ]
-   ]
+   ],
+   "ncap": 4
   },
   {
    "id": "L70",
@@ -1626,7 +1697,8 @@
      "BACK WALL.",
      "back wall."
     ]
-   ]
+   ],
+   "ncap": 3
   },
   {
    "id": "L71",
@@ -1660,12 +1732,14 @@
      "tells it,",
      "tells it,"
     ]
-   ]
+   ],
+   "ncap": 5
   },
   {
    "id": "P03",
    "pause": 0.25,
-   "chunks": []
+   "chunks": [],
+   "ncap": 0
   }
  ],
  "shots": [
@@ -1828,7 +1902,7 @@
   },
   {
    "id": "S007",
-   "at": "L06.2",
+   "at": "L06+0.93",
    "what": "S07 tracking along all eight",
    "cam": [
     [
@@ -1889,7 +1963,7 @@
   },
   {
    "id": "S009",
-   "at": "L07.2",
+   "at": "L07+1.03",
    "what": "S09 the soup, number nine",
    "cam": [
     [
@@ -2050,7 +2124,7 @@
   },
   {
    "id": "S015",
-   "at": "L11.1",
+   "at": "L11+0.7",
    "what": "S15 the pickle slice",
    "cam": [
     [
@@ -2124,7 +2198,7 @@
   },
   {
    "id": "S018",
-   "at": "L13.2",
+   "at": "L13+1.16",
    "what": "S18 Cal smiles",
    "cam": [
     [
@@ -2174,7 +2248,7 @@
   },
   {
    "id": "S020",
-   "at": "L14.1",
+   "at": "L14+0.62",
    "what": "S20 the cracked headlight",
    "cam": [
     [
@@ -2199,7 +2273,7 @@
   },
   {
    "id": "S021",
-   "at": "L14.3",
+   "at": "L14+1.87",
    "what": "S21 pulling up beside the speaker",
    "cam": [
     [
@@ -2247,7 +2321,7 @@
   },
   {
    "id": "S023",
-   "at": "L15.1",
+   "at": "L15+0.71",
    "what": "S23 Cal's mouth opens",
    "cam": [
     [
@@ -2432,7 +2506,7 @@
   },
   {
    "id": "S030",
-   "at": "L19.1",
+   "at": "L19+0.8",
    "what": "S30 the end of the wall",
    "cam": [
     [
@@ -2529,7 +2603,7 @@
   },
   {
    "id": "S034",
-   "at": "L22.2",
+   "at": "L22+1.32",
    "what": "S34 me scared",
    "cam": [
     [
@@ -2579,7 +2653,7 @@
   },
   {
    "id": "S036",
-   "at": "L23.1",
+   "at": "L23+0.71",
    "what": "S36 rolling up to the second window",
    "cam": [
     [
@@ -2703,7 +2777,7 @@
   },
   {
    "id": "S041",
-   "at": "L26.1",
+   "at": "L26+0.85",
    "what": "S41 the exit arrow",
    "cam": [
     [
@@ -2913,7 +2987,7 @@
   },
   {
    "id": "S049",
-   "at": "L32.1",
+   "at": "L32+0.59",
    "what": "S48b same words",
    "cam": [
     [
@@ -2963,7 +3037,7 @@
   },
   {
    "id": "S051",
-   "at": "L33.2",
+   "at": "L33+1.01",
    "what": "S50 close on the two",
    "cam": [
     [
@@ -3013,7 +3087,7 @@
   },
   {
    "id": "S053",
-   "at": "L34.2",
+   "at": "L34+1.09",
    "what": "S52 Cal shrugs",
    "cam": [
     [
@@ -3148,7 +3222,7 @@
   },
   {
    "id": "S058",
-   "at": "L38.1",
+   "at": "L38+0.78",
    "what": "S58 closer",
    "cam": [
     [
@@ -3246,7 +3320,7 @@
   },
   {
    "id": "S062",
-   "at": "L41.1",
+   "at": "L41+0.69",
    "what": "S62 Cal drives past the trucks",
    "cam": [
     [
@@ -3295,7 +3369,7 @@
   },
   {
    "id": "S064",
-   "at": "L42.1",
+   "at": "L42+0.49",
    "what": "S64 Cal, same grin",
    "cam": [
     [
@@ -3429,7 +3503,7 @@
   },
   {
    "id": "S069",
-   "at": "L46.2",
+   "at": "L46+1.16",
    "what": "S69 two cracked headlights",
    "cam": [
     [
@@ -3528,7 +3602,7 @@
   },
   {
    "id": "S073",
-   "at": "L49.2",
+   "at": "L49+1.28",
    "what": "S73 the three, tighter",
    "cam": [
     [
@@ -3577,7 +3651,7 @@
   },
   {
    "id": "S075",
-   "at": "L50.1",
+   "at": "L50+0.41",
    "what": "S75 me scared",
    "cam": [
     [
@@ -3722,7 +3796,7 @@
   },
   {
    "id": "S081",
-   "at": "L54.1",
+   "at": "L54+0.59",
    "what": "S80 the second hatch, same frame",
    "cam": [
     [
@@ -4007,7 +4081,7 @@
   },
   {
    "id": "S092",
-   "at": "L58.2",
+   "at": "L58+1.64",
    "what": "S85 four tickets",
    "cam": [
     [
@@ -4056,7 +4130,7 @@
   },
   {
    "id": "S094",
-   "at": "L59.1",
+   "at": "L59+0.68",
    "what": "S87 I lean across Cal",
    "cam": [
     [
@@ -4129,7 +4203,7 @@
   },
   {
    "id": "S097",
-   "at": "L61.1",
+   "at": "L61+0.64",
    "what": "S90 Cal wide",
    "cam": [
     [
@@ -4154,7 +4228,7 @@
   },
   {
    "id": "S098",
-   "at": "L61.2",
+   "at": "L61+1.28",
    "what": "S91 the pickle slice",
    "cam": [
     [
@@ -4338,7 +4412,7 @@
   },
   {
    "id": "S105",
-   "at": "L67.1",
+   "at": "L67+0.72",
    "what": "S98 me smiles",
    "cam": [
     [
@@ -4413,7 +4487,7 @@
   },
   {
    "id": "S108",
-   "at": "L69.2",
+   "at": "L69+1.16",
    "what": "S101 me at the grille",
    "cam": [
     [
@@ -5264,7 +5338,7 @@
    {
     "at": "L66-0.1",
     "pos": [
-     574.7,
+     571.7,
      -2.2,
      -0.16
     ],
@@ -5279,7 +5353,7 @@
    {
     "at": "L68>",
     "pos": [
-     639.7,
+     591.7,
      -2.2,
      -0.16
     ],
@@ -5290,7 +5364,7 @@
    {
     "at": "L67+3",
     "pos": [
-     619.7,
+     584.7,
      -2.2,
      -0.16
     ],
@@ -5301,7 +5375,7 @@
    {
     "at": "L69-0.2",
     "pos": [
-     639.7,
+     591.7,
      -2.2,
      -0.16
     ],
@@ -5975,7 +6049,7 @@
    {
     "at": "L66-0.1",
     "pos": [
-     574.7,
+     571.7,
      -1.3,
      -0.16
     ],
@@ -5994,7 +6068,7 @@
    {
     "at": "L68>",
     "pos": [
-     639.7,
+     591.7,
      -1.3,
      -0.16
     ],
@@ -6005,7 +6079,7 @@
    {
     "at": "L67+3",
     "pos": [
-     619.7,
+     584.7,
      -1.3,
      -0.16
     ],
@@ -6016,7 +6090,7 @@
    {
     "at": "L69-0.2",
     "pos": [
-     639.7,
+     591.7,
      -1.3,
      -0.16
     ],
@@ -7177,7 +7251,7 @@
    "name": "car",
    "id": "ours",
    "pos": [
-    575,
+    572,
     -1.75
    ],
    "yaw": 0,
@@ -7200,7 +7274,7 @@
    "name": "car",
    "id": "ours",
    "pos": [
-    640,
+    592,
     -1.75
    ],
    "yaw": 0
@@ -7210,7 +7284,7 @@
    "name": "car",
    "id": "ours",
    "pos": [
-    620,
+    585,
     -1.75
    ],
    "yaw": 0

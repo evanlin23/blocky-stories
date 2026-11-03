@@ -449,9 +449,9 @@ def build_world(kit, M, ctx):
     kit.box("road", (300, 7.0, 0.04), (600, 0, 0.02), M["asph"])
     for i in range(-40, 40):
         kit.box(f"rdash{i}", (2.0, 0.14, 0.05), (600 + i * 5, 0, 0.05), M["white"])
-    for i in range(-8, 9):
-        P("commontree_1" if i % 2 else "sub_tree_small", (600 + i * 11, 9 + (i % 3) * 3, 0), height=6.0 if i % 2 else 4.0)
-        P("bush_2", (600 + i * 9, -8.0, 0), height=1.4)
+    for i in range(-4, 5):
+        P("commontree_1" if i % 2 else "sub_tree_small", (600 + i * 14, 11 + (i % 3) * 3, 0), height=6.0 if i % 2 else 4.0)
+        P("bush_2", (600 + i * 16, -9.0, 0), height=1.4)
 
 
 def build_lights(kit, ctx):
