@@ -238,20 +238,24 @@ def make_under(kit, parent, scale=1.0, pipe_h=5.3):
     # brows: heavy soot slabs, slanted
     for sx in (-1, 1):
         B(R, (1.7, 0.34, 0.1), (sx * 1.7, 1.2, 0.05), seam, "ubrow", 0.03, rot=(0, 0, sx * 0.16))
-    # eyes: small round lamp-yellow discs, the brightest thing in frame, with a dark pupil
+    # eyes: two thin lamp-yellow glints deep in dark sockets, the brightest thing in frame (no discs, no pupils)
     ey = []
-    eyes_mat = kit.emit("#ffd84a", 9.0, name="undereye")
-    pup = P("#1a1208", 0.5, 0.0)
+    eyes_mat = kit.emit("#ffd84a", 12.0, name="undereye")
+    sock = P("#17110c", 0.95, 0.0)
+    pup = P("#17110c", 0.95, 0.0)
     for sx in (-1, 1):
-        d = CY(R, 0.27, 0.07, (sx * 1.7, 0.7, 0.045), eyes_mat, "ueye", n=28)
-        pu = CY(R, 0.06, 0.02, (sx * 1.7, 0.7, 0.085), pup, "upup", n=14)
+        B(R, (1.1, 0.6, 0.06), (sx * 1.7, 0.7, 0.03), sock, "usock", 0.05)
+        d = B(R, (0.5, 0.07, 0.05), (sx * 1.7, 0.7, 0.07), eyes_mat, "ueye", 0.0, rot=(0, 0, sx * -0.1))
+        pu = CY(R, 0.001, 0.001, (sx * 1.7, 0.7, 0.085), pup, "upup", n=6)
         ey.append((d, pu, sx * 1.7))
-    # the round coal-black mouth, a clay lip ring, and the pipe's end wrapped inside it
-    lip = CY(R, 1.1, 0.22, (0, -0.95, 0.04), P("#8a6440", 0.9, 0.02), "ulip", n=32)
-    mouth = CY(R, 0.86, 0.24, (0, -0.95, 0.07), P("#0d0b0a", 0.9, 0.0), "umouth", n=32)
+    # a wide black gape, a dark lip, and the pipe's end wrapped inside it
+    mouth = CY(R, 1.0, 0.24, (0, -0.95, 0.07), P("#0d0b0a", 0.9, 0.0), "umouth", n=32)
+    mouth.scale = (1.5, 0.62, 1.0)
+    lip = CY(R, 1.15, 0.2, (0, -0.95, 0.04), P("#5a4630", 0.9, 0.02), "ulip", n=32)
+    lip.scale = (1.6, 0.72, 1.0)
     if pipe_h:
-        CY(R, 0.24, pipe_h, (0, -0.95, pipe_h / 2), kit.emit("#b07a2a", 0.4, name="underpipe"), "upipe")
-        CY(R, 0.46, 0.16, (0, -0.95, 0.18), P("#c58f2e", 0.35, 0.6), "upipecol")
+        CY(R, 0.24, pipe_h, (0, -0.95, pipe_h / 2), kit.emit("#8a5e22", 0.25, name="underpipe"), "upipe")
+        CY(R, 0.34, 0.16, (0, -0.95, 0.18), P("#7a5a20", 0.5, 0.4), "upipecol")
     R.scale = (scale, scale, scale)
     return {"root": R, "eyes": ey}
 
@@ -282,7 +286,7 @@ def late_extras(kit, ctx):
     dm = kit.emit("#e8dcc0", 0.6, name="dustslab")
     for who, ch in C.items():
         d = E(ch.upper, (0, 0, 0), "dust")
-        B(d, (4.1, 1.12, 0.3), (0, 0, 2.08), dm, "dsh", 0.08)
+        B(d, (3.5, 1.12, 0.3), (0, 0, 2.08), dm, "dsh", 0.08)
         B(d, (1.9, 1.0, 0.25), (0, 0, 2.3), dm, "dsh2", 0.08)
         B(d, (1.1, 0.8, 0.5), (0, 0, 2.55), dm, "dsh3", 0.12)
         hide(d, True)
@@ -339,7 +343,6 @@ def bulkhead(kit, x, y, face, name="bulk"):
     B(G, (1.5, 1.55, 0.18), (0, 0, 1.24), wall, "hroof", 0.02)
     B(G, (1.3, 0.14, 0.6), (-face * 0.0, 0, 0.5), P("#0a0705", 0.95, 0.0), "hfloor", 0.0) if False else None
     B(G, (0.5, 1.2, 0.1), (-face * 0.95, 0, 0.05), P("#a09888", 0.8, 0.05), "hstep", 0.0)
-    B(G, (0.9, 1.5, 0.08), (face * 0.0, 0, 1.55), P("#5a86b0", 0.5, 0.4), "hdoor", 0.02, rot=(0, face * 0.0 + 0.5, 0))
     return G
 
 
@@ -384,7 +387,7 @@ def build_street(kit, ctx):
                            (14, 34, -1, "#c8e8ff", "#c8523c"), (14, -36, -1, "#f7f5ee", "#7a5ad0"),
                            (-14, -36, 1, "#ffd0e0", "#3a70c8")):
         house(kit, x, y, f, c, roof=r, name="neighbor")
-    for i, (x, y) in enumerate(((-8.4, 14.0), (8.4, 14.0), (-8.4, 28.5), (8.4, 28.5), (-8.4, -15.5), (8.4, -15.5),
+    for i, (x, y) in enumerate(((-8.4, 28.5), (8.4, 28.5), (-8.4, -15.5), (8.4, -15.5),
                                 (8.4, -29.0), (-8.4, -29.0), (8.4, 45.0), (-8.4, 45.0), (8.4, -44.0), (-8.4, -44.0))):
         tree(kit, x, y, h=5.5 + (i % 3), kind="commontree_1" if i % 2 else "birchtree_1",
              tint="#8fe05a" if i % 2 else "#b9f090")
@@ -623,9 +626,9 @@ def build_house_set(kit, ctx):
     ctx["lamp_light"] = kit.light("lamp", "POINT", (SX + 1.0, 0, 0.8), 150, "#ffb347", size=0.15)
     ctx["lamp_light2"] = kit.light("stairl", "POINT", (SX + 0.3, 0, 1.6), 90, "#ffd9a8", size=0.3)
     ctx["landl"] = kit.light("landl", "POINT", (SX, 0, 0), 160, "#ffcf90", size=0.3)
-    ctx["ukey"] = kit.light("ukey", "SPOT", (SX, 0, 0), 520, "#ffb860", size=0.5, spot=70, blend=0.6)
-    ctx["urim"] = kit.light("urim", "SPOT", (SX, 0, 0), 500, "#7ab0ff", size=0.5, spot=90, blend=0.7)
-    ctx["ufill"] = kit.light("ufill", "POINT", (SX, 0, 0), 60, "#ffcf9a", size=1.0, shadow=False)
+    ctx["ukey"] = kit.light("ukey", "SPOT", (SX, 0, 0), 90, "#ff9a50", size=0.5, spot=70, blend=0.6)
+    ctx["urim"] = kit.light("urim", "SPOT", (SX, 0, 0), 5200, "#8ab8ff", size=0.5, spot=90, blend=0.7)
+    ctx["ufill"] = kit.light("ufill", "POINT", (SX, 0, 0), 45, "#ffcf9a", size=1.0, shadow=False)
     # dust motes in the stairwell: a few pale specks
     ctx["motes"] = []
     mm = kit.emit("#ffd890", 3.0, name="mote")
@@ -853,14 +856,14 @@ def animate(kit, story, tl, t, ctx):
     # stair walls / ceiling follow the count: they end 0.3 m past the last step, where the landing room begins
     ang = math.atan2(RISE, RUN)
     base_x = RUN * MAXSTEPS + 2.0
-    lenx = RUN * n + 1.3
-    mid = lenx / 2 - 1.0
+    lenx = RUN * n + 0.3
+    mid = lenx / 2
     for slab in ctx["stairwalls"]:
         slab.scale = (lenx / base_x, 1, 1)
         slab.location = (SX + mid, slab.location[1], -RISE * mid / RUN + 1.0)
     c = ctx["stairceil"]
     c.scale = (lenx / base_x, 1, 1)
-    c.location = (SX + mid, 0, -RISE * mid / RUN + 2.1)
+    c.location = (SX + mid, 0, -RISE * mid / RUN + 2.5)
     ctx["landl"].location = (SX + Lx + 2.0, 0.0, Lz + 1.7)
     # ---- the lamp
     lp = eased(tl, "lamp", t) or [SX + 1.0, 0.0, 0.8]
@@ -879,7 +882,7 @@ def animate(kit, story, tl, t, ctx):
     ux, uy, uz = base[0] + uo[0], base[1] + uo[1], base[2] + uo[2]
     ctx["ukey"].location = (base[0] + 0.3, base[1] - 0.3, base[2] - 1.3)
     kit.aim(ctx["ukey"], (ux, uy, uz))
-    ctx["urim"].location = (ux + 4.0, uy - 1.0, uz + 1.2)
+    ctx["urim"].location = (ux + 4.6, uy - 0.6, uz + 0.5)
     kit.aim(ctx["urim"], (ux, uy, uz))
     ctx["ufill"].location = (base[0] + 1.45, base[1], base[2] - 2.2)
     # the Under's eyes: pupils look up at us, or (cue "gaze") turn away
@@ -956,6 +959,8 @@ def animate(kit, story, tl, t, ctx):
     hide(ctx["cut_shaft"], not gone_)
     # ---- motes in the stairwell
     for i, o in enumerate(ctx["motes"]):
+        o.hide_render = True
+        continue
         o.location = (SX + RUN * min(n, 8) * (0.2 + 0.8 * ((i * 0.37) % 1.0)) + 0.1 * math.sin(t * 0.7 + i), 0.5 * math.sin(i * 1.9 + t * 0.3),
                       -RISE * RUN * 0 + (-RISE * min(n, 8) * (0.2 + 0.8 * ((i * 0.37) % 1.0))) + 1.0 + 0.2 * math.sin(t * 0.5 + i * 2))
         o.hide_render = False

@@ -37,7 +37,7 @@ Against everything made: knock-back's keeper is under a farmhouse floor and guar
 - **The rule broken:** L28, about 49 s in: I'm still upstairs at Grandpa's when it blows.
 - **First real scare (L30 to L34, 52 to 58 s):** the empty street, and every basement window on it breathing out dust at once, in time with the whistle.
 - **Escalation (L37 to L42, 61 to 71 s):** the Dunns across the street have forty-one steps, and Mrs. Dunn only smiles at the dark stairs, wanting to go back down (the pull, not happiness). Dad comes up grey with dust and stops arguing with Grandpa, only staring at the basement door.
-- **The creature (L53 to L55, 87 to 92 s, 71% through):** under the crack below our bottom step, far down, a face as wide as our whole basement looking up, its mouth wrapped round the end of the whistle's pipe.
+- **The creature (L53 to L55, 87 to 92 s, 71% through):** under the crack below our bottom step, far down, a face as wide as our whole basement looking up, its mouth wrapped around the end of the whistle's pipe.
 - **Twist and reveal (L56 to L61, 92 to 101 s):** said plainly. "Nothing walks the STREETS. / It lives UNDER them. / It blows the whistle ITSELF, / to call us all DOWN. / And every time we COME, / it pulls the stairs / one step CLOSER." Then why Grandpa built on blocks.
 - **The climax turns the rule's own logic (L62 to L69):** said in one plain line at L66, "It lives in our town TOO, / so the whistle's rule / sends IT down." The rule is for everyone in town: when the whistle blows, you go down. So I blow the whistle from the top, down the pipe at it, and it obeys: step after step, deeper than any stairs. No new magic.
 - **How the last 15 seconds turn over the first line:** thirteen steps again, Grandpa at our table. Then, last night, very faint, from far under the floor, the whistle blew, and Dad stood up and walked to the basement door. "Because" leads into L01, which now reads as the thing's own rule, still working on Dad.
@@ -173,7 +173,7 @@ Times are estimates from 290 wpm. A cut or punch-in every 1 to 2 s, nothing held
 | (drop) | | 85.9 | 0.7 s: the dark gap, still. |
 | S53 | L53 | 86.6 | Through the crack, far below: two small lamp-yellow eyes open in the dark. |
 | S54 | L54 | 88.0 | Wider down the crack: the Under's huge flat face filling the space below, clay tan with soot seams. Cover frame (88.4). |
-| S55 | L55 | 89.8 | Its round black mouth wrapped round the end of the brass pipe. |
+| S55 | L55 | 89.8 | Its round black mouth wrapped around the end of the brass pipe. |
 | S56 | L56 | 92.2 | Cut up to the bright empty street at dawn. |
 | S57 | L57 | 93.2 | The cutaway: our street from the side, cut like a cake, the stairs going down, the Under lying far below. |
 | S58 | L58 | 94.2 | The cutaway's pipe, running from the whistle down to its mouth. |
@@ -205,7 +205,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L03: It can blow / at NOON. / Everybody RUNS.
 - L04: The baker leaves / his bread / in the OVEN.
 - L05: A whole softball TEAM / runs down / a stranger's cellar STAIRS.
-- L06: The mail lady ducks / into whatever house / is CLOSEST.
+- L06: The postwoman ducks / into whatever house / is CLOSEST.
 - L07: I'm twenty-FOUR. / When I was born, / our basement had / thirteen STEPS.
 - L08: Now it has / TWENTY-six.
 - L09: Every whistle, / one more STEP.
@@ -236,7 +236,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L34: In time / with the WHISTLE.
 - L35: Grandpa just poured / two cups of TEA.
 - L36: He said, / "Told you. / Nothing OUT there."
-- L37: The next morning, / the Dunns across the street / counted their stairs out LOUD.
+- L37: The next morning, / the Dunn family across the street / counted their stairs out LOUD.
 - L38: FORTY-one.
 - L39: Mrs. Dunn just SMILED / at the dark stairs, / like she couldn't wait / to go back DOWN.
 - L40: Dad came up / so dusty / he looked GRAY.
@@ -254,7 +254,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L52: I held my lamp / to the GAP.
 - L53: Something down there / was looking UP.
 - L54: A face / as wide as our whole BASEMENT.
-- L55: Its mouth / was wrapped round the end / of the whistle's PIPE.
+- L55: Its mouth / was wrapped around the end / of the whistle's PIPE.
 - L56: Nothing walks the STREETS.
 - L57: It lives UNDER them.
 - L58: It blows the whistle ITSELF, / to call us all DOWN.

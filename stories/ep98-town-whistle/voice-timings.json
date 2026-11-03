@@ -142,30 +142,26 @@
    ]
   },
   "L06": {
-   "text": "the mail lady ducks into whatever house is closest.",
+   "text": "the postwoman ducks into whatever house is closest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.414,
-   "onset": 0.172,
-   "end": 2.207,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
    "chunks": [
     [
-     0.172,
-     0.448
+     0.155,
+     0.802
     ],
     [
-     0.448,
-     0.905
+     0.802,
+     1.414
     ],
     [
-     0.905,
-     1.483
-    ],
-    [
-     1.483,
-     2.207
+     1.414,
+     2.155
     ]
    ]
   },
@@ -894,34 +890,34 @@
    ]
   },
   "L37": {
-   "text": "the next morning, the dunns across the street counted their stairs out loud.",
+   "text": "the next morning, the dunn family across the street counted their stairs out loud.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.172,
+   "dur": 3.448,
    "onset": 0.155,
-   "end": 2.966,
+   "end": 3.241,
    "chunks": [
     [
      0.155,
-     0.724
+     0.69
     ],
     [
-     0.768,
-     1.345
+     0.716,
+     1.31
     ],
     [
-     1.345,
-     1.655
+     1.31,
+     1.906
     ],
     [
-     1.655,
-     2.276
+     1.906,
+     2.552
     ],
     [
-     2.276,
-     2.966
+     2.552,
+     3.241
     ]
    ]
   },
@@ -1334,14 +1330,14 @@
    ]
   },
   "L55": {
-   "text": "its mouth was wrapped round the end of the whistle's pipe.",
+   "text": "its mouth was wrapped around the end of the whistle's pipe.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.31,
+   "dur": 2.414,
    "onset": 0.172,
-   "end": 2.103,
+   "end": 2.207,
    "chunks": [
     [
      0.172,
@@ -1349,19 +1345,19 @@
     ],
     [
      0.517,
-     1.026
+     1.077
     ],
     [
-     1.026,
-     1.25
+     1.077,
+     1.337
     ],
     [
-     1.25,
-     1.362
+     1.337,
+     1.448
     ],
     [
-     1.362,
-     2.103
+     1.448,
+     2.207
     ]
    ]
   },
