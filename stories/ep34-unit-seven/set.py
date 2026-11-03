@@ -802,74 +802,61 @@ def build(kit, story, tl):
 
 
 def build_deep(kit, ctx):
-    """The tall grey one (rebuilt for "Hold Still"): a person-shape 1.6 times our height, stooped so its bowed head
-    sits level with the battens, arms hanging past its knees, long flat hands. Built from boxes in the `deep` rig's
-    space (rig units, so every size below is metres over RIG_S). The rig's own body is hidden; only this shows."""
+    """The tall grey one ("Hold Still"): the cast's own blocks, but wrong. Rounded block limbs a little thinner than
+    ours and twice as long, a torso as wide as ours and 1.3 times taller, hunched forward with the shoulders up, a square
+    block head bowed under the battens, long flat paddle hands hanging to mid-shin. Rig units (0.34 m); the rig's own
+    body is hidden. No rods, no gaps: every limb is one block."""
     root = bpy.data.objects.get("deep")
     if root is None or ctx.get("deep_done"):
         return
     ctx["deep_done"] = True
-    grey = kit.plastic("#5c6065", 0.92, name="tall grey", spec=0.05)
-    pale = kit.plastic("#6a6e75", 0.92, name="tall grey face", spec=0.05)
-    dark = kit.plastic("#23262b", 0.95, name="tall grey eye", spec=0.0)
-    for ob in root.children_recursive:      # the rig's body: not shown, the parts below stand in for it
+    grey = kit.plastic("#4d5157", 0.92, name="tall grey", spec=0.05)
+    pale = kit.plastic("#5b5f66", 0.92, name="tall grey head", spec=0.05)
+    dark = kit.plastic("#0c0d10", 0.95, name="tall grey eye", spec=0.0)
+    for ob in root.children_recursive:
         ob.hide_render = True
     ctx["deep_rig"] = list(root.children_recursive)
+    root.scale = (root.scale[0] * 1.1, root.scale[1] * 1.1, root.scale[2] * 1.1)
     parts = []
 
-    def u(v):
-        return v / RIG_S
-
     def J(name, loc, parent, rot=(0, 0, 0)):
-        e = kit.empty(f"tall {name}", tuple(u(c) for c in loc), parent, rot)
+        e = kit.empty(f"tall {name}", loc, parent, rot)
         parts.append(e)
         return e
 
-    def B(name, size, loc, mat, parent, rot=(0, 0, 0), bevel=0.02):
-        ob = kit.box(f"tall {name}", tuple(u(c) for c in size), tuple(u(c) for c in loc), mat, parent, rot=rot,
-                     bevel=u(bevel))
+    def B(name, size, loc, mat, parent, rot=(0, 0, 0), bevel=0.08):
+        ob = kit.box(f"tall {name}", size, loc, mat, parent, rot=rot, bevel=bevel)
         parts.append(ob)
         return ob
 
-    # legs: long and thin, feet close together
+    # legs: one block each (0.7 wide, 4 tall), the foot flush under it, close together
     for sx in (-1, 1):
-        B(f"foot{sx}", (0.13, 0.40, 0.07), (sx * 0.10, -0.08, 0.035), grey, root)
-        B(f"shin{sx}", (0.12, 0.12, 0.76), (sx * 0.10, 0.0, 0.45), grey, root)
-        B(f"thigh{sx}", (0.14, 0.14, 0.76), (sx * 0.11, 0.0, 1.20), grey, root)
-    B("pelvis", (0.32, 0.20, 0.18), (0, 0.0, 1.58), grey, root, bevel=0.03)
-    # one narrow tapered torso (wide at the shoulders, narrow at the waist), stooped hard over the hips: a positive
-    # x turn tips the top toward -y, the way it faces
-    sp = J("spine", (0, 0.0, 1.62), root, (0.46, 0, 0.0))
-    tor = kit.cyl("tall torso", u(0.15), u(0.98), (0, 0, u(0.49)), grey, sp, n=10, r2=u(0.25))
-    tor.scale = (1.0, 0.62, 1.0)
-    parts.append(tor)
-    B("neck", (0.12, 0.12, 0.26), (0, -0.04, 1.0), grey, sp, bevel=0.03)
-    # the head: bowed about 40 degrees more than the stoop, so the crown leads, a few degrees off true
-    hd = J("head", (0, -0.07, 1.06), sp, (0.62, 0.06, 0.09))
-    B("skull", (0.34, 0.36, 0.50), (0, 0.02, 0.22), grey, hd, bevel=0.11)
-    for sx in (-1, 1):                       # two small eyes set low in the shadowed face, a shade darker, no shine
-        B(f"eye{sx}", (0.035, 0.012, 0.05), (sx * 0.07, -0.1615, 0.10), dark, hd, bevel=0.004)
-    # arms: they hang past the knees, one shoulder lower, long flat paddle hands with the fingers just parted
+        B(f"leg{sx}", (0.72, 0.72, 4.0), (sx * 0.46, 0.0, 2.0), grey, root)
+        B(f"shoe{sx}", (0.76, 1.15, 0.32), (sx * 0.46, -0.2, 0.16), grey, root)
+    # the torso: wider than ours (2.3), 2.6 tall, stooped forward over the hips, shoulders hunched up and forward
+    sp = J("spine", (0, 0.0, 3.9), root, (0.36, 0, 0))
+    B("torso", (2.3, 1.1, 2.7), (0, 0, 1.35), grey, sp)
+    B("hunch", (2.7, 1.35, 0.9), (0, -0.12, 2.35), grey, sp)
+    # the head: a square block like ours, slightly lighter, bowed forward past the stoop, brow over the face
+    hd = J("head", (0, -0.35, 2.75), sp, (0.22, 0.0, 0.05))
+    B("head", (1.4, 1.4, 1.5), (0, 0.0, 0.55), pale, hd, bevel=0.14)
+    B("brow", (1.4, 0.2, 0.18), (0, -0.74, 0.92), pale, hd, bevel=0.05)
+    for sx in (-1, 1):                       # two small dark eyes low on the face, no mouth, no shine
+        B(f"eye{sx}", (0.26, 0.05, 0.34), (sx * 0.36, -0.72, 0.30), dark, hd, bevel=0.02)
+    # arms: one block each from the shoulder past the knees, a long flat paddle hand to mid-shin
     for sx in (-1, 1):
-        low = 0.10 if sx < 0 else 0.0
-        sh = J(f"shoulder{sx}", (sx * 0.30, -0.42, 2.22 - low), root, (0.12, 0, sx * 0.03))
-        B(f"uarm{sx}", (0.14, 0.14, 0.74), (0, 0, -0.37), grey, sh, bevel=0.03)
-        el = J(f"elbow{sx}", (0, 0, -0.74), sh, (0.05, 0, 0))
-        B(f"farm{sx}", (0.125, 0.125, 0.70), (0, 0, -0.35), grey, el, bevel=0.03)
-        wr = J(f"wrist{sx}", (0, 0, -0.70), el, (0.03, 0, 0))
-        B(f"palm{sx}", (0.035, 0.17, 0.22), (0, 0, -0.11), grey, wr, bevel=0.01)
-        for k, fy in enumerate((-0.065, -0.022, 0.022, 0.065)):
-            fl = 0.30 - 0.03 * abs(k - 1.5)
-            fj = J(f"fj{sx}{k}", (0, fy, -0.21), wr, (-fy * 0.9, 0, 0))
-            B(f"finger{sx}{k}", (0.028, 0.034, fl), (0, 0, -fl / 2), grey, fj, bevel=0.008)
+        sh = J(f"shoulder{sx}", (sx * 1.5, -1.0, 6.25), root, (0.10, 0, -sx * 0.03))
+        B(f"arm{sx}", (0.76, 0.76, 3.3), (0, 0, -1.55), grey, sh)
+        B(f"hand{sx}", (0.34, 1.0, 2.0), (0, -0.02, -3.2), grey, sh, bevel=0.06)
     ctx["deep_parts"] = parts
     ctx["deep_profile"] = []
     ctx["deep_head_parts"] = []
-    kit.light("deep back", "SPOT", (0, 7.0, 2.7), 260, "#cfe0ff", size=0.3, spot=70, blend=0.8, shadow=False)
-    kit.aim(bpy.data.objects["deep back"], (0, 5.2, 2.2))
+    kit.light("deep top", "SPOT", (0, 5.0, 2.7), 450, "#ffffff", size=0.3, spot=50, blend=0.6, shadow=False)
+    kit.aim(bpy.data.objects["deep top"], (0, 5.0, 1.5))
+    kit.light("deep back", "SPOT", (0, 7.0, 2.2), 200, "#bcd4ff", size=0.3, spot=70, blend=0.8, shadow=False)
+    kit.aim(bpy.data.objects["deep back"], (0, 5.2, 1.9))
     kit.light("deep rim", "SPOT", (3.0, 2.0, 1.4), 420, "#7fa8ff", size=0.25, spot=60, blend=0.7, shadow=False)
     kit.aim(bpy.data.objects["deep rim"], (1.3, 2.5, 1.2))
-
 
 
 # ------------------------------------------------------------------------------------------ animate
@@ -1122,11 +1109,16 @@ def animate(kit, story, tl, t, ctx):
     rc = _last(_cues(tl, "rim"), t)
     over["deep rim"] = float(rc["on"]) if rc else 0.0
     d_ = bpy.data.objects.get("deep")
-    if d_ is not None and "deep back" in kit.LIGHTS:     # a faint rim from above and behind: the crown and shoulders pop
-        over["deep back"] = 0.0 if d_.hide_render else 1.0
+    if d_ is not None and "deep back" in kit.LIGHTS:     # a light straight above its head, and a cool rim from behind
+        on_ = 0.0 if d_.hide_render else 1.0
+        over["deep top"] = on_
+        over["deep back"] = on_
+        tl_ = kit.LIGHTS["deep top"]["obj"]
+        tl_.location = (d_.location.x, d_.location.y - 0.35, 2.7)
+        kit.aim(tl_, (d_.location.x, d_.location.y - 0.35, 1.5))
         bl = kit.LIGHTS["deep back"]["obj"]
-        bl.location = (d_.location.x, d_.location.y + 1.8, 2.6)
-        kit.aim(bl, (d_.location.x, d_.location.y, 2.25))
+        bl.location = (d_.location.x, d_.location.y + 1.8, 2.3)
+        kit.aim(bl, (d_.location.x, d_.location.y, 1.9))
     if rc and rc.get("on"):
         rl = kit.LIGHTS["deep rim"]["obj"]
         rl.location = tuple(rc["pos"])
