@@ -117,14 +117,15 @@ def P(x, y, yaw=0, expr="neutral", **kw):
 
 # ---- 01 the bells
 # opening recipe v1 (2026-11-03): frame 1 looks straight at a bell mid-ring with a face, pushing in, no wide before L03
-shot(0, "day", {"pie_man": P(5.1, -12.4, -90, "worried")},
-     c([0, [3.2, -12.04, 1.15], [5.1, -12.24, 1.15], 30], [1.8, [3.9, -12.04, 1.15], [5.1, -12.24, 1.15], 30]),
-     "chest-height close on the bell and the pie man's face, the bell swinging, pushing in")
-shot("L01.4", "day", {"pie_man": P(5.1, -12.4, 165, "terrified")},
-     c([0, [5.2, -10.8, 1.3], [5.3, -12.4, 1.2], 34], [1, [5.2, -11.2, 1.28], [5.3, -12.4, 1.2], 35]),
+PM = (7.4, -14.9)      # in front of the kiosk's cream front wall, facing -y into the sun, camera at -y
+shot(0, "day", {"pie_man": P(PM[0], PM[1], 0, "worried")},
+     c([0, [PM[0], PM[1] - 3.4, 1.25], [PM[0], PM[1], 1.25], 30], [1.8, [PM[0], PM[1] - 2.7, 1.25], [PM[0], PM[1], 1.25], 30]),
+     "the whole head and the bell, the bell swinging, cream kiosk and blue sky behind, pushing in")
+shot("L01.4", "day", {"pie_man": P(PM[0], PM[1], 0, "terrified")},
+     c([0, [PM[0], PM[1] - 3.0, 1.25], [PM[0], PM[1], 1.25], 32], [1, [PM[0], PM[1] - 2.6, 1.25], [PM[0], PM[1], 1.25], 33]),
      "punch in on the bell under his chin as it RINGS, big, above the caption band")
-shot("L02.2", "day", {"pie_man": P(5.1, -12.4, 165, "terrified")},
-     c([0, [5.2, -11.0, 1.3], [5.3, -12.4, 1.2], 35], [1, [5.2, -11.5, 1.28], [5.3, -12.4, 1.2], 37]),
+shot("L02.2", "day", {"pie_man": P(PM[0], PM[1], 0, "terrified")},
+     c([0, [PM[0], PM[1] - 2.9, 1.25], [PM[0], PM[1], 1.25], 33], [1, [PM[0], PM[1] - 2.5, 1.25], [PM[0], PM[1], 1.25], 34]),
      "the ding on UP, the bell swinging hard, his face above")
 shot("L03", "day", {"date_a": dict(pos=[CAFE[0] - 0.85, CAFE[1] + 0.1], yaw=55, expr="worried", lean=6),
                     "date_b": dict(pos=[CAFE[0] + 0.85, CAFE[1] + 0.1], yaw=-55, expr="worried", lean=6)},
@@ -254,17 +255,19 @@ shot("L54", "dusk", {}, still([-1.5, 0.95, 1.24], [-2.0, 1.02, 1.13], 70), "the 
 shot("L54.1+0.3", "dusk", {"me": P(-1.55, 1.5, -90, "worried")}, still([-3.0, 1.5, 1.3], [-1.7, 1.5, 1.2], 42), "my bell's empty mouth")
 shot("L55", "dusk", {"ruben": P(-1.4, 1.2, -90, "smirk")}, still([-3.0, 1.7, 1.45], [-1.5, 1.2, 1.45], 38), "he carried it")
 shot("L55.2", "dusk", {"me": P(-1.4, 1.5, -90, "worried")}, still([-3.0, 1.4, 1.45], [-1.5, 1.5, 1.45], 38), "me, softening")
-shot("L56", "dusk", {**LINE_ALL, "me": P(-1.3, 1.0, 180, "worried"), "ruben": P(-0.55, 1.0, 180, "smirk")},
-     still([0.9, 0.2, 1.5], [-1.9, 2.4, 1.4], 26), "two shot, the line behind")
-shot("L57", "dusk", {"me": P(-1.2, 1.2, 0, "neutral")}, still([-1.2, -0.7, 1.55], [-1.2, 1.2, 1.5], 36), "every ring was mine")
+shot("L56", "dusk", {"me": P(-1.3, 1.0, 180, "worried"), "ruben": P(-0.55, 1.0, 180, "smirk")},
+     still([-0.95, 4.3, 1.5], [-0.95, 1.0, 1.5], 30), "my face, worried softening, Ruben beside me, nothing in front")
+shot("L57", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank", **({"lean": 10} if k == 0 else {})) for k in range(5)},
+                    "me": P(-1.0, 1.0, 20, "neutral", head=[0, 30], then=[("L57+1.3", dict(yaw=-35, head=[0, -4], blend=0.7))])},
+     still([0.3, -0.2, 1.5], [-1.5, 1.8, 1.5], 28), "every ring was mine: my eyes go from the clapper up to the line of five")
 shot("L58", "dusk", {"ruben": P(-1.0, 0.6, 0, "neutral")}, still([-1.0, -0.1, 1.38], [-1.0, 0.6, 1.33], 48), "his still bell")
 shot("L59", "dusk", {"me": P(-1.2, 1.2, 0, "smirk")}, still([-1.2, -0.7, 1.55], [-1.2, 1.2, 1.5], 36), "a quiet bell means go")
 shot("L60", "dusk", {"me": P(-1.0, 0.6, 0, "smirk")}, still([-1.0, -1.0, 1.36], [-1.0, 0.6, 1.2], 40), "the clapper goes home")
 shot("L61", "dusk", {"ruben": P(-0.8, 0.8, 0, "grin", then=[("L61.1", dict(head=[0, 12])), ("L61.2", dict(head=[0, -4]))])},
      still([-0.8, -1.0, 1.5], [-0.8, 0.8, 1.5], 34), "partner?")
 shot("L62", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(1, 5)},
-                     "me": P(-1.4, 2.65, -90, "worried", then=[("L62+0.2", dict(pos=[-3.1, 2.62])), ("L62+1.0", dict(pos=[-3.1, 2.6], yaw=0))])},
-     still([-3.1, 0.9, 1.5], [-3.1, 3.4, 1.4], 28), "I step into the booth door")
+                     "me": P(-0.2, 2.65, -90, "neutral", then=[("L62+0.2", dict(pos=[-2.5, 2.65])), ("L62+1.4", dict(pos=[-2.5, 2.65], yaw=-90))])},
+     still([1.6, 5.6, 1.5], [-1.4, 3.3, 1.4], 24), "side-on, I walk toward the line; the front copy is gone")
 shot("L63", "dusk", {"me": P(-3.1, 2.5, 0, "smirk")}, still([-3.1, 0.8, 1.36], [-3.1, 2.5, 1.2], 40), "my bell stays quiet")
 shot("P03", "dusk", {}, still([-1.6, 1.1, 1.55], [-2.0, 1.95, 1.12], 34), "the lore shot: two strokes")
 shot("L64", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in range(1, 5)}},
@@ -272,12 +275,12 @@ shot("L64", "dusk", {**{f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank") for k in
 # ---- 08 partners
 shot("L65", "sunrise", {"me": P(*BOOTH_IN, 90, "smirk")}, still([-0.9, 1.5, 1.45], [-3.1, 1.5, 1.35], 32), "I'm in the booth at seven")
 shot("L66", "sunrise", {"me": P(*BOOTH_IN, 90, "grin", arms=[160, 0])}, still([2.8, -2.8, 1.4], [-1.6, 0.8, 1.2], 24), "I wave the first car in")
-shot("L67", "sunrise", {"me": P(-3.1, 2.55, 180, "smirk")}, still([-3.1, 6.0, 1.45], [-3.1, 2.5, 1.35], 30), "the door holds only me")
+shot("L67", "sunrise", {}, still([-0.7, 1.2, 3.1], [-0.7, 4.0, 0.0], 24), "S28's angle down the conveyor at sunrise: no footprints")
 shot("L68", "sunrise", {"me": P(-1.5, 18.2, 180, "smirk"), "ruben": P(1.5, 18.2, 180, "grin")},
      still([0.0, 23.0, 1.5], [0.0, 16.5, 1.3], 24), "side by side, the car comes out shining")
 shot("L69", "sunrise", {"me": P(-0.45, 18.5, 180, "smirk"), "ruben": P(0.45, 18.5, 180, "smirk")},
      still([0.0, 21.8, 1.25], [0.0, 18.5, 1.1], 21), "two bells, two collars")
-shot("L70", "sunrise", {"ruben": P(0.0, 18.5, 180, "smirk")}, still([-0.1, 20.2, 1.15], [0.0, 18.5, 1.1], 40), "his pocket, empty")
+shot("L70", "dusk", {f"st{k}": P(LINE[k][0], LINE[k][1], 0, "blank", head=[HEADS[k], 0]) for k in range(5)}, still([1.0, 5.4, 1.55], [-2.6, 3.4, 1.5], 24), "a cold cut back: the front copy in the booth door under the lamps")
 shot("L71", "sunrise", {"me": P(*BOOTH_IN, 90, "neutral")},
      still([-2.4, 1.0, 1.04], [-3.1, 1.45, 1.29], 48), "my collar bell, the clapper inside")
 shot("L72", "sunrise", {"me": P(*BOOTH_IN, 90, "neutral", arms=[15, 0], then=[("L72+0.3", dict(arms=[50, 0], blend=0.8, yaw=90)), ("L72>", dict(expr="worried", yaw=90))])},
@@ -508,7 +511,7 @@ story = {
     "title": "In this town, the bell on your collar rings before every mistake",
     "made_for_kids": False,
     "premise": "In a town where a small brass bell on every collar rings just before its wearer makes a mistake, my bell has never rung. My older brother Ruben runs the car wash on the edge of town alone since I quit the pay booth, and his bell rings all day and all night. When I go back to help, the wash runs with nobody in it, five sets of wet footprints line up in the tunnel, and one morning Ruben is gone from opening, just his phone and keys riding the conveyor out.",
-    "twist": "My bell never rang because it couldn't. Ruben has carried my bell's clapper in his pocket since we were teenagers so I'd stop being scared to try things, and every ring I blamed on him was mine. The five faint copies in a line are the wash's keeper, standing where the second worker should; when I step into the booth as his partner the count is true and they fade.",
+    "twist": "My bell never rang because it couldn't: Ruben has carried my bell's clapper in his pocket since we were teenagers so I'd stop being scared to try things, and every ring I blamed on him was mine. The five faint copies in a line are not keeping my place. They are the ring I never heard the day I quit, still echoing, each a step behind and fainter. When I take the clapper back and walk toward them as his partner, the quitting is undone and the echo dies away front to back.",
     "world": "a small automatic car wash on the edge of a town, autumn weekdays: a concrete forecourt with a painted queue lane, a corrugated tunnel with brushes, a foam arch and a drying arch, and a blue pay booth in its left bay",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#f0c75e",
@@ -545,7 +548,7 @@ story = {
                   {"at": "L59", "voices": ["drone", "pad", "piano"], "energy": 0.5, "mode": "major"},
                   {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "dorian"},
               ]},
-    "sound": {"rev": 8, "floor": "metal", "steps_db": -22,
+    "sound": {"rev": 9, "floor": "metal", "steps_db": -22,
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "L14", "lufs": -38},
                   {"kind": "room", "from": "L14", "to": "L15", "lufs": -38},

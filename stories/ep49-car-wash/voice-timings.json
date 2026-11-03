@@ -1562,42 +1562,42 @@
    ]
   },
   "L57": {
-   "text": "my bell never rang because he had its clapper. every ring in his pocket was my mistake.",
+   "text": "The five aren't keeping my place. They're the ring I never heard the day I quit, still echoing.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.914,
-   "onset": 0.172,
-   "end": 3.707,
+   "dur": 3.621,
+   "onset": 0.155,
+   "end": 3.431,
    "chunks": [
     [
-     0.172,
-     0.448
+     0.155,
+     0.423
     ],
     [
-     0.448,
-     0.914
+     0.423,
+     0.732
     ],
     [
-     0.914,
-     1.172
+     0.732,
+     1.293
     ],
     [
-     1.172,
-     1.845
+     1.362,
+     1.681
     ],
     [
-     1.939,
-     2.337
+     1.681,
+     2.095
     ],
     [
-     2.337,
-     2.81
+     2.095,
+     2.603
     ],
     [
-     2.81,
-     3.707
+     2.638,
+     3.431
     ]
    ]
   },
@@ -1702,22 +1702,22 @@
    ]
   },
   "L62": {
-   "text": "Then I step into the booth.",
+   "text": "Then I walk toward them.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.483,
-   "onset": 0.172,
-   "end": 1.276,
+   "dur": 1.293,
+   "onset": 0.155,
+   "end": 1.103,
    "chunks": [
     [
-     0.172,
-     0.612
+     0.155,
+     0.517
     ],
     [
-     0.612,
-     1.276
+     0.517,
+     1.103
     ]
    ]
   },
@@ -1826,30 +1826,26 @@
    ]
   },
   "L67": {
-   "text": "The booth door has nobody in it but me.",
+   "text": "No footprints in the tunnel. No echoes.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.155,
-   "end": 1.776,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
    "chunks": [
     [
-     0.155,
-     0.586
+     0.172,
+     0.595
     ],
     [
-     0.586,
-     1.094
+     0.595,
+     1.069
     ],
     [
-     1.094,
-     1.224
-    ],
-    [
-     1.224,
-     1.776
+     1.147,
+     1.914
     ]
    ]
   },
@@ -1918,22 +1914,22 @@
    ]
   },
   "L70": {
-   "text": "Mine rang in his pocket.",
+   "text": "Mine stood in the booth door.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.431,
-   "onset": 0.172,
-   "end": 1.241,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.345,
    "chunks": [
     [
-     0.172,
-     0.543
+     0.19,
+     0.56
     ],
     [
-     0.543,
-     1.241
+     0.56,
+     1.345
     ]
    ]
   },

@@ -3,7 +3,7 @@
  "title": "In this town, the bell on your collar rings before every mistake",
  "made_for_kids": false,
  "premise": "In a town where a small brass bell on every collar rings just before its wearer makes a mistake, my bell has never rung. My older brother Ruben runs the car wash on the edge of town alone since I quit the pay booth, and his bell rings all day and all night. When I go back to help, the wash runs with nobody in it, five sets of wet footprints line up in the tunnel, and one morning Ruben is gone from opening, just his phone and keys riding the conveyor out.",
- "twist": "My bell never rang because it couldn't. Ruben has carried my bell's clapper in his pocket since we were teenagers so I'd stop being scared to try things, and every ring I blamed on him was mine. The five faint copies in a line are the wash's keeper, standing where the second worker should; when I step into the booth as his partner the count is true and they fade.",
+ "twist": "My bell never rang because it couldn't: Ruben has carried my bell's clapper in his pocket since we were teenagers so I'd stop being scared to try things, and every ring I blamed on him was mine. The five faint copies in a line are not keeping my place. They are the ring I never heard the day I quit, still echoing, each a step behind and fainter. When I take the clapper back and walk toward them as his partner, the quitting is undone and the echo dies away front to back.",
  "world": "a small automatic car wash on the edge of a town, autumn weekdays: a concrete forecourt with a painted queue lane, a corrugated tunnel with brushes, a foam arch and a drying arch, and a blue pay booth in its left bay",
  "voice": {
   "voice": "am_adam",
@@ -1766,32 +1766,32 @@
    "who": "narrator",
    "chunks": [
     [
-     "My bell",
-     "my bell"
+     "The FIVE",
+     "The five"
     ],
     [
-     "never RANG",
-     "never rang"
+     "aren't keeping",
+     "aren't keeping"
     ],
     [
-     "because HE",
-     "because he"
+     "my PLACE.",
+     "my place."
     ],
     [
-     "had its CLAPPER.",
-     "had its clapper."
+     "They're the RING",
+     "They're the ring"
     ],
     [
-     "Every ring",
-     "every ring"
+     "I never HEARD",
+     "I never heard"
     ],
     [
-     "in his POCKET",
-     "in his pocket"
+     "the day I QUIT,",
+     "the day I quit,"
     ],
     [
-     "was MY mistake.",
-     "was my mistake."
+     "still ECHOING.",
+     "still echoing."
     ]
    ]
   },
@@ -1876,12 +1876,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then I step",
-     "Then I step"
+     "Then I walk",
+     "Then I walk"
     ],
     [
-     "into the BOOTH.",
-     "into the booth."
+     "TOWARD them.",
+     "toward them."
     ]
    ]
   },
@@ -1975,20 +1975,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "The booth DOOR",
-     "The booth door"
+     "No FOOTPRINTS",
+     "No footprints"
     ],
     [
-     "has nobody",
-     "has nobody"
+     "in the TUNNEL.",
+     "in the tunnel."
     ],
     [
-     "in it",
-     "in it"
-    ],
-    [
-     "but ME.",
-     "but me."
+     "No ECHOES.",
+     "No echoes."
     ]
    ]
   },
@@ -2049,12 +2045,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mine RANG",
-     "Mine rang"
+     "Mine STOOD",
+     "Mine stood"
     ],
     [
-     "in his POCKET.",
-     "in his pocket."
+     "in the booth DOOR.",
+     "in the booth door."
     ]
    ]
   },
@@ -2099,35 +2095,35 @@
     [
      0,
      [
-      3.2,
-      -12.04,
-      1.15
+      7.4,
+      -18.3,
+      1.25
      ],
      [
-      5.1,
-      -12.24,
-      1.15
+      7.4,
+      -14.9,
+      1.25
      ],
      30
     ],
     [
      1.8,
      [
-      3.9,
-      -12.04,
-      1.15
+      7.4,
+      -17.6,
+      1.25
      ],
      [
-      5.1,
-      -12.24,
-      1.15
+      7.4,
+      -14.9,
+      1.25
      ],
      30
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "chest-height close on the bell and the pie man's face, the bell swinging, pushing in"
+   "what": "the whole head and the bell, the bell swinging, cream kiosk and blue sky behind, pushing in"
   },
   {
    "id": "S02",
@@ -2135,30 +2131,30 @@
     [
      0,
      [
-      5.2,
-      -10.8,
-      1.3
+      7.4,
+      -17.9,
+      1.25
      ],
      [
-      5.3,
-      -12.4,
-      1.2
+      7.4,
+      -14.9,
+      1.25
      ],
-     34
+     32
     ],
     [
      1,
      [
-      5.2,
-      -11.2,
-      1.28
+      7.4,
+      -17.5,
+      1.25
      ],
      [
-      5.3,
-      -12.4,
-      1.2
+      7.4,
+      -14.9,
+      1.25
      ],
-     35
+     33
     ]
    ],
    "hand": 0.01,
@@ -2172,30 +2168,30 @@
     [
      0,
      [
-      5.2,
-      -11.0,
-      1.3
+      7.4,
+      -17.8,
+      1.25
      ],
      [
-      5.3,
-      -12.4,
-      1.2
+      7.4,
+      -14.9,
+      1.25
      ],
-     35
+     33
     ],
     [
      1,
      [
-      5.2,
-      -11.5,
-      1.28
+      7.4,
+      -17.4,
+      1.25
      ],
      [
-      5.3,
-      -12.4,
-      1.2
+      7.4,
+      -14.9,
+      1.25
      ],
-     37
+     34
     ]
    ],
    "hand": 0.01,
@@ -4873,35 +4869,35 @@
     [
      0,
      [
-      0.9,
-      0.2,
+      -0.95,
+      4.3,
       1.5
      ],
      [
-      -1.9,
-      2.4,
-      1.4
+      -0.95,
+      1.0,
+      1.5
      ],
-     26
+     30
     ],
     [
      1,
      [
-      0.816,
-      0.266,
-      1.497
+      -0.95,
+      4.201,
+      1.5
      ],
      [
-      -1.9,
-      2.4,
-      1.4
+      -0.95,
+      1.0,
+      1.5
      ],
-     27.5
+     31.5
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "two shot, the line behind",
+   "what": "my face, worried softening, Ruben beside me, nothing in front",
    "at": "L56"
   },
   {
@@ -4910,35 +4906,35 @@
     [
      0,
      [
-      -1.2,
-      -0.7,
-      1.55
-     ],
-     [
-      -1.2,
-      1.2,
+      0.3,
+      -0.2,
       1.5
      ],
-     36
+     [
+      -1.5,
+      1.8,
+      1.5
+     ],
+     28
     ],
     [
      1,
      [
-      -1.2,
-      -0.643,
-      1.548
-     ],
-     [
-      -1.2,
-      1.2,
+      0.246,
+      -0.14,
       1.5
      ],
-     37.5
+     [
+      -1.5,
+      1.8,
+      1.5
+     ],
+     29.5
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "every ring was mine",
+   "what": "every ring was mine: my eyes go from the clapper up to the line of five",
    "at": "L57"
   },
   {
@@ -5095,35 +5091,35 @@
     [
      0,
      [
-      -3.1,
-      0.9,
+      1.6,
+      5.6,
       1.5
      ],
      [
-      -3.1,
-      3.4,
+      -1.4,
+      3.3,
       1.4
      ],
-     28
+     24
     ],
     [
      1,
      [
-      -3.1,
-      0.975,
+      1.51,
+      5.531,
       1.497
      ],
      [
-      -3.1,
-      3.4,
+      -1.4,
+      3.3,
       1.4
      ],
-     29.5
+     25.5
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "I step into the booth door",
+   "what": "side-on, I walk toward the line; the front copy is gone",
    "at": "L62"
   },
   {
@@ -5317,35 +5313,35 @@
     [
      0,
      [
-      -3.1,
-      6.0,
-      1.45
+      -0.7,
+      1.2,
+      3.1
      ],
      [
-      -3.1,
-      2.5,
-      1.35
+      -0.7,
+      4.0,
+      0.0
      ],
-     30
+     24
     ],
     [
      1,
      [
-      -3.1,
-      5.895,
-      1.447
+      -0.7,
+      1.284,
+      3.007
      ],
      [
-      -3.1,
-      2.5,
-      1.35
+      -0.7,
+      4.0,
+      0.0
      ],
-     31.5
+     25.5
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "the door holds only me",
+   "what": "S28's angle down the conveyor at sunrise: no footprints",
    "at": "L67"
   },
   {
@@ -5428,35 +5424,35 @@
     [
      0,
      [
-      -0.1,
-      20.2,
-      1.15
+      1.0,
+      5.4,
+      1.55
      ],
      [
-      0.0,
-      18.5,
-      1.1
+      -2.6,
+      3.4,
+      1.5
      ],
-     40
+     24
     ],
     [
      1,
      [
-      -0.097,
-      20.149,
-      1.148
+      0.892,
+      5.34,
+      1.548
      ],
      [
-      0.0,
-      18.5,
-      1.1
+      -2.6,
+      3.4,
+      1.5
      ],
-     41.5
+     25.5
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "his pocket, empty",
+   "what": "a cold cut back: the front copy in the booth door under the lamps",
    "at": "L70"
   },
   {
@@ -6417,8 +6413,8 @@
    {
     "at": "L57",
     "pos": [
-     -1.2,
-     1.2
+     -1.0,
+     1.0
     ],
     "blend": 0,
     "hidden": false,
@@ -6432,13 +6428,22 @@
     ],
     "head": [
      0,
-     0
+     30
     ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "yaw": 0,
+    "yaw": 20,
     "expr": "neutral"
+   },
+   {
+    "at": "L57+1.3",
+    "yaw": -35,
+    "head": [
+     0,
+     -4
+    ],
+    "blend": 0.7
    },
    {
     "at": "L58",
@@ -6448,8 +6453,8 @@
    {
     "at": "L59",
     "pos": [
-     -1.2,
-     1.2
+     -1.0,
+     1.0
     ]
    },
    {
@@ -6526,7 +6531,7 @@
    {
     "at": "L62",
     "pos": [
-     -1.4,
+     -0.2,
      2.65
     ],
     "blend": 0,
@@ -6547,28 +6552,28 @@
     "tremble": 0,
     "blink": true,
     "yaw": -90,
-    "expr": "worried"
+    "expr": "neutral"
    },
    {
     "at": "L62+0.2",
     "pos": [
-     -3.1,
-     2.62
+     -2.5,
+     2.65
     ]
    },
    {
-    "at": "L62+1.0",
+    "at": "L62+1.4",
     "pos": [
-     -3.1,
-     2.6
+     -2.5,
+     2.65
     ],
-    "yaw": 0
+    "yaw": -90
    },
    {
     "at": "L63",
     "pos": [
-     -3.1,
-     2.6
+     -2.5,
+     2.65
     ]
    },
    {
@@ -6670,42 +6675,14 @@
    },
    {
     "at": "L67",
-    "pos": [
-     -3.1,
-     1.5
-    ]
-   },
-   {
-    "at": "L67",
-    "pos": [
-     -3.1,
-     2.55
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "yaw": 180,
-    "expr": "smirk"
+    "hidden": true,
+    "blend": 0
    },
    {
     "at": "L68",
     "pos": [
      -3.1,
-     2.55
+     1.5
     ]
    },
    {
@@ -7713,39 +7690,6 @@
    },
    {
     "at": "L70",
-    "pos": [
-     0.45,
-     18.5
-    ]
-   },
-   {
-    "at": "L70",
-    "pos": [
-     0.0,
-     18.5
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "blink": true,
-    "yaw": 180,
-    "expr": "smirk"
-   },
-   {
-    "at": "L71",
     "hidden": true,
     "blend": 0
    }
@@ -8265,14 +8209,14 @@
     "blend": 0
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -3.1,
      2.7
     ]
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -3.1,
      2.7
@@ -8291,6 +8235,44 @@
      0,
      0
     ],
+    "lean": 10,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 0,
+    "expr": "blank"
+   },
+   {
+    "at": "L58",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -3.1,
+     2.7
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -3.1,
+     2.7
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     88,
+     0
+    ],
     "lean": 0,
     "tremble": 0,
     "blink": true,
@@ -8298,7 +8280,7 @@
     "expr": "blank"
    },
    {
-    "at": "L57",
+    "at": "L71",
     "hidden": true,
     "blend": 0
    },
@@ -8750,14 +8732,14 @@
     "blend": 0
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -3.04,
      3.4000000000000004
     ]
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -3.04,
      3.4000000000000004
@@ -8783,7 +8765,7 @@
     "expr": "blank"
    },
    {
-    "at": "L57",
+    "at": "L58",
     "hidden": true,
     "blend": 0
    },
@@ -8860,6 +8842,44 @@
    },
    {
     "at": "L65",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -3.04,
+     3.4000000000000004
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -3.04,
+     3.4000000000000004
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     77,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 0,
+    "expr": "blank"
+   },
+   {
+    "at": "L71",
     "hidden": true,
     "blend": 0
    },
@@ -9273,14 +9293,14 @@
     "blend": 0
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -2.98,
      4.1
     ]
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -2.98,
      4.1
@@ -9306,7 +9326,7 @@
     "expr": "blank"
    },
    {
-    "at": "L57",
+    "at": "L58",
     "hidden": true,
     "blend": 0
    },
@@ -9383,6 +9403,44 @@
    },
    {
     "at": "L65",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -2.98,
+     4.1
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -2.98,
+     4.1
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     58,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 0,
+    "expr": "blank"
+   },
+   {
+    "at": "L71",
     "hidden": true,
     "blend": 0
    },
@@ -9796,14 +9854,14 @@
     "blend": 0
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -2.92,
      4.8
     ]
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -2.92,
      4.8
@@ -9829,7 +9887,7 @@
     "expr": "blank"
    },
    {
-    "at": "L57",
+    "at": "L58",
     "hidden": true,
     "blend": 0
    },
@@ -9906,6 +9964,44 @@
    },
    {
     "at": "L65",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -2.92,
+     4.8
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -2.92,
+     4.8
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     45,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 0,
+    "expr": "blank"
+   },
+   {
+    "at": "L71",
     "hidden": true,
     "blend": 0
    },
@@ -10319,14 +10415,14 @@
     "blend": 0
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -2.8600000000000003,
      5.5
     ]
    },
    {
-    "at": "L56",
+    "at": "L57",
     "pos": [
      -2.8600000000000003,
      5.5
@@ -10352,7 +10448,7 @@
     "expr": "blank"
    },
    {
-    "at": "L57",
+    "at": "L58",
     "hidden": true,
     "blend": 0
    },
@@ -10433,6 +10529,44 @@
     "blend": 0
    },
    {
+    "at": "L70",
+    "pos": [
+     -2.8600000000000003,
+     5.5
+    ]
+   },
+   {
+    "at": "L70",
+    "pos": [
+     -2.8600000000000003,
+     5.5
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     36,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 0,
+    "expr": "blank"
+   },
+   {
+    "at": "L71",
+    "hidden": true,
+    "blend": 0
+   },
+   {
     "at": "L49+3.00",
     "head": [
      36.0,
@@ -10445,8 +10579,8 @@
    {
     "at": 0,
     "pos": [
-     5.1,
-     -12.4
+     7.4,
+     -14.9
     ],
     "blend": 0,
     "hidden": false,
@@ -10465,21 +10599,21 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "yaw": -90,
+    "yaw": 0,
     "expr": "worried"
    },
    {
     "at": "L01.4",
     "pos": [
-     5.1,
-     -12.4
+     7.4,
+     -14.9
     ]
    },
    {
     "at": "L01.4",
     "pos": [
-     5.1,
-     -12.4
+     7.4,
+     -14.9
     ],
     "blend": 0,
     "hidden": false,
@@ -10498,21 +10632,21 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "yaw": 165,
+    "yaw": 0,
     "expr": "terrified"
    },
    {
     "at": "L02.2",
     "pos": [
-     5.1,
-     -12.4
+     7.4,
+     -14.9
     ]
    },
    {
     "at": "L02.2",
     "pos": [
-     5.1,
-     -12.4
+     7.4,
+     -14.9
     ],
     "blend": 0,
     "hidden": false,
@@ -10531,7 +10665,7 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "yaw": 165,
+    "yaw": 0,
     "expr": "terrified"
    },
    {
@@ -11268,6 +11402,16 @@
   },
   {
    "at": "L65",
+   "name": "tod",
+   "set": "sunrise"
+  },
+  {
+   "at": "L70",
+   "name": "tod",
+   "set": "dusk"
+  },
+  {
+   "at": "L71",
    "name": "tod",
    "set": "sunrise"
   },
@@ -12158,7 +12302,7 @@
   ]
  },
  "sound": {
-  "rev": 8,
+  "rev": 9,
   "floor": "metal",
   "steps_db": -22,
   "ambience": [
