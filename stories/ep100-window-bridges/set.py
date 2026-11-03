@@ -288,7 +288,7 @@ def build_wall(kit, s, ctx):
     y_a, y_b = 3 * COLS[0] - 1.5, 3 * COLS[-1] + 1.5
     xc = s * 1.75
     # interior strip (third floor): floor, back wall, ceiling, cream skin
-    cream = P("#f6ead4", 0.8, 0.1)
+    cream = P("#e6c9a2", 0.85, 0.1)
     floor = kit.texture("wood", 0.7, tint="#f1d8b0")
     B(None, (3.7, y_b - y_a, 0.1), (s * 3.75, (y_a + y_b) / 2, 5.95), floor, "rfloor")
     if s < 0:
@@ -323,7 +323,7 @@ def build_wall(kit, s, ctx):
         else:
             window_dress(kit, s, y, 0.9, 2.4, shut, True)
         window_dress(kit, s, y, 3.9, 5.4, shut, True)
-        window_dress(kit, s, y, 6.9, 8.3, shut, False)
+        window_dress(kit, s, y, 6.9, 8.3, shut, False, flowers=False)
         window_dress(kit, s, y, 9.9, 11.3, shut, True, flowers=False)
         if k % 2 == 0:                       # laundry line on the second floor
             for j in range(4):
@@ -697,22 +697,22 @@ def build_strings(kit, ctx):
 
 # ----------------------------------------------------------------------------------------------- looks
 LOOKS = {
-    "day": {"sky": ["#d9f1ff", "#b3e2ff", "#86caff", "#52a2f2"], "world": 1.25, "sun": (96, 62, 6.0, "#fff1d8"), "fill": 1.0,
-            "str": 0.0, "room": 1.0, "exp": 0.0, "boat": 0.0},
-    "april": {"sky": ["#e8f6ff", "#c4e8ff", "#98d2ff", "#62aef5"], "world": 1.3, "sun": (88, 58, 6.5, "#fff3dc"), "fill": 1.0,
-             "str": 0.0, "room": 1.1, "exp": 0.0, "boat": 0.0},
+    "day": {"sky": ["#d9f1ff", "#b3e2ff", "#86caff", "#52a2f2"], "world": 2.2, "sun": (96, 62, 6.0, "#fff1d8"), "fill": 1.0,
+            "str": 0.0, "room": 1.0, "exp": 0.0, "lane": 1.0, "boat": 0.0},
+    "april": {"sky": ["#e8f6ff", "#c4e8ff", "#98d2ff", "#62aef5"], "world": 2.3, "sun": (88, 58, 6.5, "#fff3dc"), "fill": 1.0,
+             "str": 0.0, "room": 1.1, "exp": 0.0, "lane": 1.0, "boat": 0.0},
     "autumn": {"sky": ["#ffc9a0", "#f09aa0", "#9a7ac0", "#4a4a90"], "world": 0.75, "sun": (96, 14, 3.5, "#ffb070"), "fill": 1.1,
-               "str": 0.8, "room": 1.1, "exp": 0.1, "boat": 0.0},
+               "str": 0.8, "room": 1.1, "exp": 0.1, "lane": 0.45, "boat": 0.0},
     "night": {"sky": ["#4a5a98", "#38477e", "#27356a", "#18224c"], "world": 0.62, "sun": (140, 30, 0.7, "#9aa8ff"), "fill": 1.15,
-              "str": 1.0, "room": 0.5, "exp": 0.35, "boat": 0.0},
+              "str": 1.0, "room": 0.5, "exp": 0.35, "lane": 0.5, "boat": 0.0},
     "dusk": {"sky": ["#ffb48a", "#ff7f5c", "#d35a9a", "#5a4ab0"], "world": 0.9, "sun": (96, 8, 5.5, "#ff9a60"), "fill": 0.8,
-             "str": 0.6, "room": 1.0, "exp": 0.15, "boat": 1.0},
+             "str": 0.6, "room": 1.0, "exp": 0.15, "lane": 0.7, "boat": 1.0},
     "winter": {"sky": ["#f0f4ff", "#d4e2fa", "#aac8f0", "#7ea6e0"], "world": 1.2, "sun": (96, 30, 4.0, "#e8f0ff"), "fill": 1.0,
-               "str": 0.3, "room": 1.2, "exp": 0.05, "boat": 0.0},
+               "str": 0.3, "room": 1.2, "exp": 0.05, "lane": 1.0, "boat": 0.0},
     "dawn": {"sky": ["#ffe6c0", "#ffd0b0", "#b8d0ff", "#86a8f4"], "world": 1.0, "sun": (88, 14, 4.5, "#ffe0b0"), "fill": 1.0,
-             "str": 0.2, "room": 1.0, "exp": 0.05, "boat": 0.0},
+             "str": 0.2, "room": 1.0, "exp": 0.05, "lane": 0.8, "boat": 0.0},
     "home": {"sky": ["#d9f1ff", "#b3e2ff", "#86caff", "#52a2f2"], "world": 1.0, "sun": (96, 62, 2.5, "#fff1d8"), "fill": 0.9,
-             "str": 0.0, "room": 1.0, "exp": 0.0, "boat": 0.0},
+             "str": 0.0, "room": 1.0, "exp": 0.0, "lane": 0.0, "boat": 0.0},
 }
 
 
@@ -778,11 +778,12 @@ def build(kit, story, tl):
 
     ctx["sun"] = kit.light("sun", "SUN", (0, 0, 50), 6.0, "#fff1d8", size=0.1)
     ctx["sun"].data.angle = 0.05
-    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 90, "#fff0dc", size=0.6, shadow=False)
-    ctx["roomW"] = kit.light("roomW", "POINT", (-3.2, -0.3, 8.4), 520, "#fff0d8", size=0.5)
-    ctx["roomE"] = kit.light("roomE", "POINT", (3.2, -0.3, 8.4), 520, "#fff0d8", size=0.5)
-    ctx["roomX"] = [kit.light(f"roomX{k}", "POINT", (s * 3.2, y, 8.4), 420, "#fff0d8", size=0.5)
+    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 170, "#fff0dc", size=0.6, shadow=False)
+    ctx["roomW"] = kit.light("roomW", "POINT", (-3.2, -0.3, 8.4), 70, "#fff0d8", size=0.5)
+    ctx["roomE"] = kit.light("roomE", "POINT", (3.2, -0.3, 8.4), 70, "#fff0d8", size=0.5)
+    ctx["roomX"] = [kit.light(f"roomX{k}", "POINT", (s * 3.2, y, 8.4), 70, "#fff0d8", size=0.5)
                     for k, (s, y) in enumerate(((-1, 3.0), (1, 3.0), (-1, -6.0), (1, -6.0), (-1, -3.0), (1, 21.0), (-1, 21.0), (1, -3.0)))]
+    ctx["lane"] = [kit.light(f"lane{k}", "POINT", (0.0, y, 4.2), 520, "#fff0d8", size=0.7) for k, y in enumerate((-7.0, -3.0, 1.0, 5.0, 10.0, 16.0))]
     ctx["torch"] = kit.light("torch", "SPOT", (0, 0, 1.2), 900, "#fff2d0", size=0.15, spot=55, blend=0.5)
     build_ground(kit, ctx)
     for s in (-1, 1):
@@ -829,10 +830,10 @@ def place_inset(kit, ctx, n, lens):
     tex.image = ctx["inset_imgs"][n]
     d = 0.15
     unit = d / lens
-    pw = 0.40 * 13.5 * unit
+    pw = 0.36 * 13.5 * unit
     ph = pw * 250 / 480
-    x = 0.50 * 6.75 * unit
-    y = 0.80 * 12.0 * unit
+    x = 0.47 * 6.75 * unit
+    y = 0.74 * 12.0 * unit
     pl.location, pl.scale = (x, y, -d), (pw, ph, 1)
 
 
@@ -868,6 +869,8 @@ def animate(kit, story, tl, t, ctx):
     sc.view_settings.exposure = L["exp"] + sd.get("exp", 0.0)
     ov = {"sun": en / 6.0, "camfill": L["fill"] * sd.get("fill", 1.0), "roomW": L["room"], "roomE": L["room"], "boatlight": L["boat"],
           "homelight": 1.0 if sd.get("look") == "home" else 0.0, "homelight2": 1.0 if sd.get("look") == "home" else 0.0}
+    for k in range(len(ctx["lane"])):
+        ov[f"lane{k}"] = L["lane"]
     for k in range(len(ctx["roomX"])):
         ov[f"roomX{k}"] = L["room"] * 0.8
     for k in range(len(ctx["strlights"])):

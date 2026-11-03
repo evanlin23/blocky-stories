@@ -18,18 +18,20 @@ sys.path.insert(0, str(HERE.parents[2]))
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
+MIN_SHOT = 0.72
+MIN_PRIMARY = 0.55
 
 FACE = {"eyes": "round", "brows": True, "ink": "#24131f"}
 LASH = {"eyes": "lashes", "brows": True, "ink": "#24131f"}
 cast = {
     "me": {"age": "adult", "skin": "#f1c9a0", "shirt": "#ff6f61", "pattern": "solid", "pants": "#7a8a4a", "shoes": "#f4f4f2",
-           "sleeves": "long", "hair": "mop", "hair_c": "#3a2418", "extras": ["hooddown"], "extra_c": "#ff6f61", "face": dict(FACE)},
+           "sleeves": "long", "hair": "swoop", "hair_c": "#3a2418", "extras": ["hooddown"], "extra_c": "#ff6f61", "face": dict(FACE)},
     "eli": {"age": "adult", "skin": "#eaa98a", "shirt": "#1f3a68", "pattern": "knit", "pattern_c": "#2f5596", "pants": "#2b2f3a",
             "shoes": "#3a2a1c", "sleeves": "short", "hair": "cap", "hair_c": "#e8c66a", "face": dict(FACE)},
     "mom": {"age": "adult", "skin": "#d9a27a", "shirt": "#7b3f8c", "pattern": "solid", "pants": "#7b3f8c", "shoes": "#3a2a2a",
             "sleeves": "short", "hair": "bun", "hair_c": "#4a4448", "extras": ["apron"], "extra_c": "#1fa39a", "face": dict(LASH)},
     "vega": {"age": "adult", "skin": "#e8c4a0", "shirt": "#d7263d", "pattern": "solid", "pants": "#5a3a3a", "shoes": "#3a2a2a",
-             "sleeves": "long", "hair": "mop", "hair_c": "#f4f1ec", "extras": ["scarf"], "extra_c": "#d7263d", "face": dict(LASH)},
+             "sleeves": "long", "hair": "long", "hair_c": "#f4f1ec", "extras": ["scarf"], "extra_c": "#d7263d", "face": dict(LASH)},
     "nb1": {"age": "adult", "skin": "#c98e68", "shirt": "#3a7ca5", "pattern": "solid", "pants": "#3a3a4a", "shoes": "#2a2a2a",
             "sleeves": "long", "hair": "spiky", "hair_c": "#2a1d15", "face": dict(FACE)},
     "nb2": {"age": "adult", "skin": "#f1c9a0", "shirt": "#e0a030", "pattern": "stripes", "pattern_c": "#ffffff", "pants": "#3a3a4a",
@@ -130,6 +132,7 @@ def X(loc, tgt, lens, loc2=None, tgt2=None, lens2=None):
 
 
 HOLD, SWAY = [], []
+KEEP_AT = {"L02.2", "L06.1", "L07.1", "L24.1", "L35.2", "L49.2", "L36.2", "L12.1", "L12.2", "L56", "L64"}
 
 
 def S(at, cam, look="day", fill=1.0, hand=0.004, dof=None, exp=0.0, torch=None, note="", step=2, hold=False, sway=False):
@@ -146,6 +149,7 @@ def S(at, cam, look="day", fill=1.0, hand=0.004, dof=None, exp=0.0, torch=None, 
         d["torch"] = torch
     if note:
         d["note"] = note
+    d["_opt"] = isinstance(at, str) and at not in KEEP_AT and ("." in at or "+" in at)
     shots.append(d)
     if hold:
         HOLD.append(d["id"])
@@ -198,13 +202,12 @@ SH = ["matches"]
 show(0, *SH)
 # S01: close, straight down from my sill: our new planks in the foreground, the three charred bridges on the cobbles, the
 # teal shutters opposite at the top of the frame
-S(0, X((-1.25, -0.2, 7.95), (1.1, -0.15, 0.4), 27, (-0.95, -0.2, 7.6), (1.2, -0.15, 0.3), 31), "day", fill=1.0, hand=0.003,
+S(0, X((-1.25, -1.9, 7.6), (0.9, 0.2, 1.2), 22, (-1.0, -1.6, 7.0), (0.9, 0.2, 1.0), 25), "day", fill=1.0, hand=0.003,
   note="frame 1: our newest planks at my sill, the three burnt bridges below, shutters opposite")
 me_w("L02", "worried", head=DOWN)
 S("L02", at_me(2.3, 30, 0.3, dz=0.55, z2=0.7, d2=1.9, lens2=33), "day", note="me at my window, worried, looking down")
-S("L02.1", X((-1.0, -2.6, 0.9), (1.0, -1.6, 0.25), 26, (-0.7, -2.5, 0.7), (1.2, -1.6, 0.2), 28), "day", hand=0.003,
+S("L02.2", X((-1.0, -2.6, 0.9), (1.0, -1.6, 0.25), 26, (-0.7, -2.5, 0.7), (1.2, -1.6, 0.2), 28), "day", hand=0.003,
   note="low on the cobbles along a burnt bridge to the opposite wall")
-S("L02.2", C((0.0, 0.55, 0.3), 1.5, 120, 40, 36, d2=1.1), "day", hand=0.003, note="close on charred planks and a rust crack")
 gone("me", "L03")
 S("L03", X((0.0, -8.0, 3.0), (0.0, 6.0, 7.0), 17, (0.0, -7.2, 3.6), (0.0, 7.0, 7.2), 19), "day", fill=0.8,
   note="up the alley: dozens of little bridges between windows, sun through them")
@@ -333,7 +336,7 @@ S("L22", X((0.4, -0.2, 7.5), (1.42, 0.45, 6.98), 36, (0.7, 0.0, 7.4), (1.42, 0.4
 S("L22.1", X((0.2, 0.0, 7.7), (1.55, 0.35, 7.0), 30, (0.6, 0.2, 7.5), (1.5, 0.35, 7.0), 34), "day", hand=0.002, note="the box and loose matches")
 S("L23", X((-0.5, -0.6, 7.7), (3.0, -0.5, 7.3), 22, (0.1, -0.6, 7.6), (3.2, -0.5, 7.3), 24), "day", hand=0.003,
   note="Eli's room through the window: no candles anywhere")
-S("L23.1", X((0.2, 0.9, 7.8), (3.5, -0.8, 6.8), 22, (0.8, 0.8, 7.7), (3.6, -0.8, 6.8), 24), "day", hand=0.003, note="the room, a bed, a sea bag")
+S("L23+0.7", X((0.2, 0.9, 7.8), (3.5, -0.8, 6.8), 22, (0.8, 0.8, 7.7), (3.6, -0.8, 6.8), 24), "day", hand=0.003, note="the room, a bed, a sea bag")
 burnt("L24", [0.0, 0.0, 0.0])
 count("L24", 64)
 S("L24", X((0.1, 0.0, 9.5), (0.0, -0.2, 0.0), 24, (0.0, 0.0, 8.0), (0.0, -0.2, 0.0), 26), "day", hand=0.003,
@@ -442,7 +445,7 @@ burnt("L44", [0.0, 0.0, 0.0], sway=0.0)
 count("L44", 64)
 S("L44", X((-0.5, 0.55, 2.1), (0.0, 0.55, 0.1), 30, (-0.3, 0.55, 1.5), (0.0, 0.55, 0.1), 36), "day", fill=1.0, hand=0.002, hold=True,
   note="the handprints again, close, daylight: we never fought")
-S("L44.1", X((-0.45, 0.55, 1.7), (0.0, 0.55, 0.08), 38, (-0.3, 0.55, 1.3), (0.0, 0.55, 0.08), 48), "day", hand=0.0015, hold=True, note="the two hands, close")
+S("L44+0.7", X((-0.45, 0.55, 1.7), (0.0, 0.55, 0.08), 38, (-0.3, 0.55, 1.3), (0.0, 0.55, 0.08), 48), "day", hand=0.0015, hold=True, note="the two hands, close")
 put("me", "L45", (-0.37, -0.5, 6.96), 90, "soft", head=[0, 0])
 put("eli", "L45", (0.37, -0.5, 6.96), -90, "soft")
 pose("me", "L45+0.8", 0.5, head=[0, 5])
@@ -527,7 +530,7 @@ walk("eli_sea", "L56", (0.3, 24.0, 0.0), "L56>", (0.1, 33.0, 0.0), 180, "grin")
 pose("eli_sea", "L56+1.1", 0.4, arms=[0, 0], side=[0, 100])
 S("L56", X((-0.4, 14.0, 1.4), (0.2, 28.0, 1.5), 22, (-0.3, 17.0, 1.5), (0.2, 32.0, 1.5), 24), "dawn", fill=1.1,
   note="the end of the lane at dawn: Eli with his sea bag, walking toward the sea")
-S("L56.1", C((0.1, 31.0, 1.5), 3.2, 20, 4, 26, d2=2.6), "dawn", fill=1.1, note="Eli turns and waves back")
+S("L56+0.6", C((0.1, 31.0, 1.5), 3.2, 20, 4, 26, d2=2.6), "dawn", fill=1.1, note="Eli turns and waves back")
 gone("eli_sea", "L57")
 count("L57", 65)
 put("me", "L57", ME, 90, "soft", head=[0, 8])
@@ -651,5 +654,39 @@ try:
     cues.sort(key=lambda e: AT(e["at"]))
 except FileNotFoundError:
     print("no voice-timings yet: acting and cues left unsorted")
+try:
+    if shots:
+        dur_end = _tl0["duration"]
+        def _drop():
+            for i, sh in enumerate(shots[1:], 1):
+                nxt = AT(shots[i + 1]["at"]) if i + 1 < len(shots) else dur_end
+                if sh["_opt"] and nxt - AT(sh["at"]) < MIN_SHOT:
+                    return shots.pop(i)
+            return None
+        while _drop():
+            pass
+
+        def _merge():
+            for i, sh in enumerate(shots[1:], 1):
+                nxt = AT(shots[i + 1]["at"]) if i + 1 < len(shots) else dur_end
+                if nxt - AT(sh["at"]) < MIN_PRIMARY:
+                    if i + 1 < len(shots) and shots[i + 1]["_opt"]:
+                        shots.pop(i + 1)          # this shot runs on over the next, optional one
+                    elif i + 1 < len(shots):
+                        shots[i + 1]["at"] = sh["at"]   # the next one starts where this one did
+                        shots.pop(i)
+                    else:
+                        shots.pop(i)
+                    return True
+            return False
+        while _merge():
+            pass
+except NameError:
+    pass
+for sh in shots:
+    sh.pop("_opt", None)
+live = {sh["id"] for sh in shots}
+HOLD[:] = [x for x in HOLD if x in live]
+SWAY[:] = [x for x in SWAY if x in live]
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")

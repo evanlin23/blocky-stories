@@ -1,0 +1,1413 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "three burnt bridges run from my window to a stranger's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.569,
+   "onset": 0.19,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.19,
+     0.931
+    ],
+    [
+     0.931,
+     1.586
+    ],
+    [
+     1.586,
+     2.379
+    ]
+   ]
+  },
+  "L02": {
+   "text": "I've never burned a bridge in my life.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.026
+    ],
+    [
+     1.026,
+     1.707
+    ]
+   ]
+  },
+  "L03": {
+   "text": "here, every friend you make builds a little bridge between your windows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.172,
+     1.069
+    ],
+    [
+     1.069,
+     1.741
+    ],
+    [
+     1.741,
+     2.672
+    ]
+   ]
+  },
+  "L04": {
+   "text": "one plank at a time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     1.207
+    ]
+   ]
+  },
+  "L05": {
+   "text": "Missus Vega upstairs has sixty. her window looks like a web.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.103,
+   "onset": 0.172,
+   "end": 2.897,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ],
+    [
+     0.983,
+     1.552
+    ],
+    [
+     1.638,
+     2.897
+    ]
+   ]
+  },
+  "L06": {
+   "text": "the two old guys at the end of the street have one so old it turned to stone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.414,
+   "onset": 0.172,
+   "end": 3.224,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     1.594
+    ],
+    [
+     1.594,
+     2.284
+    ],
+    [
+     2.284,
+     3.224
+    ]
+   ]
+  },
+  "L07": {
+   "text": "but if you burn one, you both forget the other one ever lived.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.155,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.155,
+     0.914
+    ],
+    [
+     0.966,
+     1.439
+    ],
+    [
+     1.439,
+     2.603
+    ]
+   ]
+  },
+  "L08": {
+   "text": "and nobody tells you who you burned. ever.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.75
+    ],
+    [
+     0.75,
+     1.31
+    ],
+    [
+     1.388,
+     1.879
+    ]
+   ]
+  },
+  "L09": {
+   "text": "in April, I finally met the guy across the alley. Eli.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.492,
+     1.147
+    ],
+    [
+     1.147,
+     1.828
+    ],
+    [
+     1.939,
+     2.552
+    ]
+   ]
+  },
+  "L10": {
+   "text": "by the end of the week, he was my best friend.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.81,
+     1.81
+    ]
+   ]
+  },
+  "L11": {
+   "text": "like the brother I never had.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.483
+    ]
+   ]
+  },
+  "L12": {
+   "text": "our bridge grew thirty planks in a week.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.732
+    ],
+    [
+     0.732,
+     1.199
+    ],
+    [
+     1.199,
+     1.759
+    ]
+   ]
+  },
+  "L13": {
+   "text": "bridges take years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     1.155
+    ]
+   ]
+  },
+  "L14": {
+   "text": "we passed coffee across it every morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.155,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.155,
+     0.741
+    ],
+    [
+     0.741,
+     1.103
+    ],
+    [
+     1.103,
+     1.845
+    ]
+   ]
+  },
+  "L15": {
+   "text": "he's terrible at cards. he cheats anyway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.983
+    ],
+    [
+     1.034,
+     1.897
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Eli already knew how I take my coffee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.862
+    ]
+   ]
+  },
+  "L17": {
+   "text": "my dog jumped all over him like she'd missed him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     1.147
+    ],
+    [
+     1.147,
+     1.983
+    ]
+   ]
+  },
+  "L18": {
+   "text": "my Mom called him Eli before I'd said his name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     1.034
+    ],
+    [
+     1.034,
+     2.172
+    ]
+   ]
+  },
+  "L19": {
+   "text": "she set him a plate at dinner,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.259
+    ]
+   ]
+  },
+  "L20": {
+   "text": "like she always had.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     1.155
+    ]
+   ]
+  },
+  "L21": {
+   "text": "then she went very quiet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     1.276
+    ]
+   ]
+  },
+  "L22": {
+   "text": "he keeps a box of matches on his windowsill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     1.094
+    ],
+    [
+     1.094,
+     1.983
+    ]
+   ]
+  },
+  "L23": {
+   "text": "he doesn't even light candles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     1.448
+    ]
+   ]
+  },
+  "L24": {
+   "text": "and the stranger's window at the other end was Eli's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.922
+    ],
+    [
+     0.922,
+     1.397
+    ],
+    [
+     1.397,
+     2.207
+    ]
+   ]
+  },
+  "L25": {
+   "text": "then the nights got cold.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.259
+    ]
+   ]
+  },
+  "L26": {
+   "text": "and the burnt bridges started to move.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.828,
+     1.672
+    ]
+   ]
+  },
+  "L27": {
+   "text": "they lifted off the cobbles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.345
+    ]
+   ]
+  },
+  "L28": {
+   "text": "black and cracked, swaying up toward our windows.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.784,
+     1.155
+    ],
+    [
+     1.155,
+     2.034
+    ]
+   ]
+  },
+  "L29": {
+   "text": "a little higher every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.379
+    ]
+   ]
+  },
+  "L30": {
+   "text": "nobody else's burnt bridges ever moved.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     1.241
+    ],
+    [
+     1.241,
+     1.966
+    ]
+   ]
+  },
+  "L31": {
+   "text": "Missus Vega crossed the street so she wouldn't walk under them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     1.241
+    ],
+    [
+     1.241,
+     2.397
+    ]
+   ]
+  },
+  "L32": {
+   "text": "on Thursday I woke up at three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     0.992
+    ],
+    [
+     0.992,
+     1.569
+    ]
+   ]
+  },
+  "L33": {
+   "text": "the oldest one was resting on my sill.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.638
+    ],
+    [
+     0.638,
+     1.008
+    ],
+    [
+     1.008,
+     1.759
+    ]
+   ]
+  },
+  "L34": {
+   "text": "I climbed down into the alley.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.698
+    ],
+    [
+     0.698,
+     1.397
+    ]
+   ]
+  },
+  "L35": {
+   "text": "in the middle of every burnt bridge was one plank that didn't burn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.828,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.388
+    ],
+    [
+     1.388,
+     2.0
+    ],
+    [
+     2.0,
+     2.828
+    ]
+   ]
+  },
+  "L36": {
+   "text": "and on each one, two handprints in soot. side by side.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     1.094
+    ],
+    [
+     1.094,
+     1.5
+    ],
+    [
+     1.586,
+     2.534
+    ]
+   ]
+  },
+  "L37": {
+   "text": "mine. and Eli's.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.19,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.19,
+     0.362
+    ],
+    [
+     0.388,
+     1.069
+    ]
+   ]
+  },
+  "L38": {
+   "text": "every plank had the same date cut in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.112
+    ],
+    [
+     1.112,
+     1.707
+    ]
+   ]
+  },
+  "L39": {
+   "text": "the night of November Ninth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.172,
+     1.362
+    ]
+   ]
+  },
+  "L40": {
+   "text": "I looked up at Eli's window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.379
+    ]
+   ]
+  },
+  "L41": {
+   "text": "there was a sea bag packed by his bed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.776
+    ],
+    [
+     0.776,
+     1.672
+    ]
+   ]
+  },
+  "L42": {
+   "text": "Eli works the boats. he ships out every November Tenth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.069,
+     1.552
+    ],
+    [
+     1.552,
+     2.569
+    ]
+   ]
+  },
+  "L43": {
+   "text": "Mom finally told me we'd made her promise never to say.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ],
+    [
+     0.948,
+     1.612
+    ],
+    [
+     1.612,
+     2.397
+    ]
+   ]
+  },
+  "L44": {
+   "text": "we never fought.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.172,
+     0.966
+    ]
+   ]
+  },
+  "L45": {
+   "text": "every year, the night before Eli's boat goes out,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.017
+    ],
+    [
+     1.017,
+     2.138
+    ]
+   ]
+  },
+  "L46": {
+   "text": "we stand in the middle and burn it together,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.905
+    ],
+    [
+     0.905,
+     1.828
+    ]
+   ]
+  },
+  "L47": {
+   "text": "so neither of us has to miss the other.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.724,
+     1.707
+    ]
+   ]
+  },
+  "L48": {
+   "text": "and every spring, when he comes home, we meet for the first time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.172,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.698,
+     1.414
+    ],
+    [
+     1.483,
+     1.741
+    ],
+    [
+     1.741,
+     2.655
+    ]
+   ]
+  },
+  "L49": {
+   "text": "that's why they rise when it gets cold. a burnt bridge remembers what the two of you forgot, and reaches back on the night it burned.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 5.328,
+   "onset": 0.172,
+   "end": 5.121,
+   "chunks": [
+    [
+     0.172,
+     0.922
+    ],
+    [
+     0.922,
+     1.741
+    ],
+    [
+     1.854,
+     2.776
+    ],
+    [
+     2.776,
+     3.586
+    ],
+    [
+     3.638,
+     4.147
+    ],
+    [
+     4.147,
+     5.121
+    ]
+   ]
+  },
+  "L50": {
+   "text": "I showed Eli the handprints. he'd forgotten me too. he stared at the matches on his sill like he'd never seen them before.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 5.069,
+   "onset": 0.155,
+   "end": 4.862,
+   "chunks": [
+    [
+     0.155,
+     0.716
+    ],
+    [
+     0.716,
+     1.328
+    ],
+    [
+     1.397,
+     2.276
+    ],
+    [
+     2.397,
+     3.129
+    ],
+    [
+     3.129,
+     3.552
+    ],
+    [
+     3.552,
+     4.862
+    ]
+   ]
+  },
+  "L51": {
+   "text": "then he put them in his pocket.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.155,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.31
+    ]
+   ]
+  },
+  "L52": {
+   "text": "he said, \"so I'd have to miss you?\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.534,
+     1.414
+    ]
+   ]
+  },
+  "L53": {
+   "text": "I said, \"good.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.517,
+     0.948
+    ]
+   ]
+  },
+  "L54": {
+   "text": "the rule says burn it and you forget.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     0.931
+    ],
+    [
+     0.931,
+     1.603
+    ]
+   ]
+  },
+  "L55": {
+   "text": "it never says a bridge has to stop at a window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.069,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.422
+    ],
+    [
+     1.422,
+     2.069
+    ]
+   ]
+  },
+  "L56": {
+   "text": "he left on the Tenth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     1.138
+    ]
+   ]
+  },
+  "L57": {
+   "text": "and I missed him all winter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.31
+    ]
+   ]
+  },
+  "L58": {
+   "text": "but every night, our bridge grew one more plank.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.155,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.698,
+     1.061
+    ],
+    [
+     1.061,
+     2.086
+    ]
+   ]
+  },
+  "L59": {
+   "text": "out past his window. over the roofs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     1.0,
+     1.759
+    ]
+   ]
+  },
+  "L60": {
+   "text": "out over the sea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.19,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.19,
+     1.052
+    ]
+   ]
+  },
+  "L61": {
+   "text": "toward wherever his boat was.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.629
+    ],
+    [
+     0.629,
+     1.448
+    ]
+   ]
+  },
+  "L62": {
+   "text": "when he comes home in April, for the first time, he'll remember me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.155,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.155,
+     0.698
+    ],
+    [
+     0.698,
+     1.155
+    ],
+    [
+     1.207,
+     1.793
+    ],
+    [
+     1.828,
+     2.672
+    ]
+   ]
+  },
+  "L63": {
+   "text": "I'll walk him down to the alley,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.431
+    ]
+   ]
+  },
+  "L64": {
+   "text": "and tell him how it started.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.259
+    ]
+   ]
+  }
+ }
+}
