@@ -1001,9 +1001,14 @@ def polish_sound(e: dict, seed: int) -> np.ndarray:
         y = synth.thump(0.45, 95, 38, seed)
         top = synth.thump(0.2, 180, 90, seed + 1)
         y[:len(top)] += 0.25 * top
-    elif k == "riser":   # the synthesized riser, with a quick fade at its top so it ends clean into the hole
-        y = sfx_synth("riser", seed, e["dur"])
-        f = min(len(y) // 4, int(0.05 * SR))
+    elif k == "riser":   # a soft swell that builds over its whole length (rises in pitch), cut clean at its top
+        d = e["dur"]
+        t = np.arange(synth.n_samples(d)) / SR
+        env = (t / d) ** 1.3
+        y = fft_filter(synth.noise(d, seed), "band", 250, 2800) * env
+        y = y + synth.sine(110 * 2 ** (1.5 * t / d), d)[:len(t)] * 0.35 * env
+        y = y / max(1e-9, np.abs(y).max())
+        f = min(len(y) // 4, int(0.04 * SR))
         y[len(y) - f:] *= np.linspace(1, 0, f)
     else:
         y = sfx(k, seed, e.get("dur", 1.0))
@@ -1018,7 +1023,7 @@ def polish_sounds(m: Mix, tl: dict, st: dict, pol: dict, at, drops: list, dur: f
     room bed on "bed"."""
     for k, e in enumerate(polish.sound_events(tl, st, pol, at)):
         y = polish_sound(e, 500 + k)
-        bus = "sfx" if e["kind"] in polish.MARK_SFX else "polish"
+        bus = "sfx" if e["kind"] in polish.MARK_SFX else "riser" if e["kind"] == "riser" else "polish"
         if e["kind"] in ("hit", "lowhit") and any(at(d["from"]) - 0.05 <= e["t"] < at(d["to"]) + 0.4 for d in drops):
             bus = "sfx_keep"
         m.add(bus, e["t"], y, gain_db=e["db"], pan=e.get("pan", 0.0))
@@ -1100,7 +1105,7 @@ def _mix(tl, st, vo_dir, m, voice, spans, snd, at, dur, n):
             hole = np.minimum(hole, envelope(n, [(at(d["from"]), at(d["to"])) for d in drops if d["db"] == db], db,
                                              0.03, 0.4))
         hole = hole[:, None]
-        for bus in ("music", "amb", "steps", "sfx", "polish"):
+        for bus in ("music", "amb", "steps", "sfx", "polish", "riser"):
             if bus in m.buses:
                 m.buses[bus] *= hole
         if "bed" in m.buses:   # the polish bed only dips, so a drop is quiet, never digital silence

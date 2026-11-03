@@ -174,3 +174,34 @@ def test_check_blocks_unknown_polish_settings():
     assert "punchh" in msgs and "S9" in msgs and "teal" in msgs and "0 to 8%" in msgs
     st, _ = story(look={"polish": {"sway": ["S1"], "emph": ["L02"]}})
     assert checks.polish_problems(st) == [] and checks.polish_problems(story()[0]) == []
+
+
+def test_hits_land_on_the_key_word_and_long_shots_get_a_fill_punch():
+    st, tl = story()
+    p = polish.spec(st)
+    at = timeline.resolver(tl["lines"], tl["duration"])
+    a, b, text = tl["lines"]["L02"]["chunks"][1]          # "it MOVED.": the hit lands on MOVED, not "it"
+    t = polish.on_key(tl, a)
+    assert a < t < b and t == pytest.approx(a + (b - a) * 3 / len(text))
+    emph = polish.emph_times(tl, {**p, "emph": [], "auto": False})
+    long = [s for s in tl["shots"] if s["end"] - s["start"] >= p["fill"]]
+    assert long and all(any(s["start"] <= e < s["end"] for e in emph) for s in long
+                        if any(s["start"] + 0.8 <= c["start"] <= s["end"] - 0.6 for c in tl["captions"]))
+    quiet = polish.sound_events(tl, {**st, "look": {"polish": {"quiet": ["L01"]}}}, {**p, "quiet": ["L01"]}, at)
+    assert not any(e["kind"] == "lowhit" and abs(e["t"] - at("L01")) < 0.5 for e in quiet)
+
+
+def test_risers_are_not_ducked_and_whooshes_avoid_words():
+    st, tl = story()
+    p = polish.spec(st)
+    at = timeline.resolver(tl["lines"], tl["duration"])
+    ev = polish.sound_events(tl, st, p, at)
+    emph = polish.emph_times(tl, p, at)
+    onsets = [ln["onset"] for ln in tl["lines"].values()]
+    for e in ev:
+        if e["kind"] == "whoosh":
+            t = e["t"] + 0.12
+            assert t in emph or any(abs(t - o) < 0.06 for o in onsets)
+    y = sound.polish_sound({"kind": "riser", "dur": 1.8, "lp": 3800.0}, 1)
+    q = len(y) // 4
+    assert np.sqrt((y[q:2 * q] ** 2).mean()) > 0.05 * np.abs(y).max()   # it builds over its length, not only the end
