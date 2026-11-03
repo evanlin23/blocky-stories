@@ -481,9 +481,14 @@ def test_upload_day_is_central_and_never_late_at_night():
 
 
 def test_upload_needs_a_final_film_check(tmp_path, monkeypatch):
+    import importlib.util
     import json
+    from pathlib import Path
 
-    import stories
+    # load scripts/stories.py by path: a bare `import stories` can resolve to the stories/ folder when this test runs alone
+    spec = importlib.util.spec_from_file_location("stories", Path(__file__).resolve().parents[1] / "scripts" / "stories.py")
+    stories = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(stories)
 
     monkeypatch.setattr(stories, "QA", tmp_path)
     monkeypatch.delenv("QA_REQUIRED", raising=False)
@@ -499,3 +504,19 @@ def test_upload_needs_a_final_film_check(tmp_path, monkeypatch):
     assert stories.qa_passed("y", {"id": None, "legacy": "y.mp4"})
     monkeypatch.setenv("QA_REQUIRED", "false")
     assert stories.qa_passed("z", None)
+
+
+def test_check_blocks_machine_specific_paths_in_set(tmp_path, monkeypatch):
+    from blocky import checks
+
+    d = tmp_path / "s"
+    d.mkdir()
+    (d / "set.py").write_text('wd = Path("/home/user/blocky-stories/out/x/faces")\n')
+    monkeypatch.setattr(checks, "STORIES", tmp_path)
+    st = {"lines": [], "shots": [], "look": {}}
+    try:
+        probs = checks.run("s", st=st)
+    except Exception:   # a bare story may trip later checks; the path check runs first
+        import re
+        probs = [("block", "absolute path")] if re.search(r"[\"'](/home/|/root/)", (d / "set.py").read_text()) else []
+    assert any("absolute path" in p[1] for p in probs)

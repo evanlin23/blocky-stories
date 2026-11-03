@@ -177,24 +177,43 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
                     "auto": true,               // also punch in on all-caps captions, big words and the hook (default)
                     "sway": ["S12", "S13"],      // gentle handheld on tense shots (true: every shot)
                     "bed_kind": "rain",          // the bed (default: the story's most-used recorded ambience, else room)
-                    "punch": 0.06, "drift": 0.03, "whoosh_db": -24, "grade": "bright"}}
+                    "punch": 0.06, "punch_rate": 0.7, "camera": true, "ease": true, "idle": true, "ones": "walk",
+                    "drift": 0.03, "whoosh_db": -19, "grade": "bright"}}
 ```
 
 - **Sound:** a recorded whoosh, low-passed at 3 kHz, 0.12 s before a cut that falls between lines (never under a
   word; at most one per 1.4 s) and on every punch-in; a soft sub thump on emphasised words and a fuller hit on
   reveals, each moved onto the chunk's key word (`on_key`); a 1.8 s riser into each `music_drops` hole (the silence
-  cuts it off; the voice doesn't duck it) and into `twist`; a room bed from `assets/audio/amb/` under the whole film at -41 LUFS,
+  cuts it off; the voice doesn't duck it) and into `twist`; a room bed from `assets/audio/amb/` under the whole film at -44 LUFS (12 dB lower again wherever the story has its own ambience),
   which a drop only dips 12 dB, so nothing is ever digital silence. Doors and other marks: an acting key with
   `"sfx": "door"` (or `latch`, `creak`, `thud`, `knock`; `sfx_db` sets its level) plays it there, panned to the
   character; so does a cue named `door...`. Every polish sound stays clear of the builder's own `sfx` (0.25 s),
-  keeps under 5% of its energy above 4 kHz (tested), and the bed, the polish sounds and the ambience duck 6 dB under
-  the voice. The master is unchanged (-14 LUFS, true peak under -1 dBTP on the file).
+  keeps under 5% of its energy above 4 kHz (tested), and the bed, the polish sounds and the ambience duck 8 dB under
+  the voice. The music then dips under the lines by the least of 0, 2, 4 or 6 dB that puts the voice
+  `voice_gap_db` (10.5 dB) over the music and ambience together (`music_duck_db`: "auto", or a fixed dB). The master is unchanged (-14 LUFS, true peak under -1 dBTP on the file).
 - **Captions:** pop in from 90% to 100% over 80 ms (the default is a slower overshoot).
 - **Motion**, on the output crop, so it's smooth on every frame even with drawings on twos or fours: a 6% punch-in
-  eased over 0.12 s on emphasised words, held to the cut, plus one in the middle of any shot over 2.2 s that has
-  none (`fill`), so something changes every 1 to 2 s; a 3% drift (in or out, with a slight slide) on every shot
+  eased over 0.12 s on key words, held to the cut (capped, see Punch-ins; `fill` can add one in any long shot); a 3% drift (in or out, with a slight slide) on every shot
   over 1.5 s whose camera doesn't move; an optional slow sway. All of it reads as no change to `flash`.
-- **Picture:** the `bright` grade raises exposure to at least 1.04 and saturation to 1.06, caps contrast at 1.05,
-  the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them. The
+- **Acting** (v2, craft metrics 2026-11-03), through `tl["motion"]`, which only the pack sets: `ease` gives every walk
+  that doesn't carry on into another a trapezoid of speed (0.25 s to get going and to stop, longer for a run:
+  speed / 4 m/s²), same keys and timing, with the footsteps on the eased distance; `idle` gives anyone standing slow
+  breathing (6 mm), a weight shift (about 1°), a turn of the body (2°) and a drifting head (5° and 2.5°), from sines
+  at periods that never line up, added on top of their keys. `ones: "moving"` (the default since 2026-11-03, the lead's call)
+  draws every shot whose camera moves, or where someone walks, on every frame, so the pack's camera moves don't
+  judder at 15 drawings a second. With the pack that's nearly every shot: 1.87 to 1.98 times the drawing, about
+  30 min more on Actions for a 140 s story. `ones: "walk"` is the opt-out for a long story whose render would run
+  over about 2 h: only walking shots on every frame (about +9%).
+- **Camera** (v2): `camera` gives every shot whose own camera holds still (one key, no `follow`) a slow push-in of
+  `cam_push` (7%, at most 0.6 m) with a `cam_arc` (3°) arc round the target, the arc turning the other way shot to
+  shot, and every third shot a slow truck. `polish.cam_spec` is read by both `bl_story.py` and
+  `scripts/measure.py` (through `polish.cam_specs`). The whole move is at most 0.12 m/s, a camera under 2 m from its
+  target pushes proportionally less, and a shot a reveal lands in gets a straight push at half speed with its
+  characters' idle motion at a fifth (`tl["motion"]["calm_shots"]`). The 2D drift then only covers shots it doesn't.
+- **Punch-ins** (v2): key words only (the builder's `emph`, the hook, big words, all-caps captions, a key word that
+  ends its line), at most `punch_rate` (0.7) per 10 s, evenly spread. Hits keep their own 4 s spacing.
+- **Picture:** the `bright` grade raises exposure to at least 1.04 and saturation to 1.1, caps contrast at 1.05,
+  the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them (by scaling each pixel with its
+  luma's lift, so colours keep their saturation). The
   story's own tints and shot grades stay.
 - `check` blocks an unknown setting, a `sway` shot that doesn't exist, a punch over 8% and a bed with no recording.
