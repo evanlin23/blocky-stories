@@ -13,6 +13,11 @@ Environment: `BLOCKY_BPY` and `BLOCKY_TTS` must point at the venvs. If they don'
 - Caption chunks live in both `lines.json` and `voice-timings.json`: splitting or merging a caption needs a re-voice of that line, or the mix fails on a stale time reference (ep55).
 - `generator/make_story.py` drops `rev`: after regenerating story.json, set `rev` again (bump it) or the changed story won't be redrawn (ep55).
 - A preview that passes flash can still fail on the final, which is drawn at a higher rate: run `python -m blocky flash` at full rate on any shot with glints, mirrors or light changes before merging (mirror-maze, 2026-11-03).
+- What got stories dropped on 2026-11-03 (ep33, ep37, ep43, ep58, the elevator puzzle), fixed before review, not after:
+  - **Murky picture:** fog and dark grades that read as grey mush on a phone. Keep the polish pack's bright grade on, and give every shot a lit subject and a clear value gap against the background. Use fog for depth, never as the whole frame.
+  - **The rule marker must read at phone size** (a 1080x1920 frame shown at about 300 px wide). Test it in the 300 px still: a knot that reads as a bow, a dial that reads as a game sticker or numbers that clutter all failed. Make it simple, big, high contrast and close to a face.
+  - **Faces read wrong:** a grandma that reads as an old man, cropped heads. Check gender cues (hair, clothes, lashes) and headroom in every close-up.
+  - **Acting holes:** a missing key that makes someone walk backward, or a spoken letter with no tag on screen. Scrub every shot at full rate before review.
 - After any line edit, regenerate story.json (`generator/make_story.py`) before re-voicing; the voice step reads story.json, so it picks up stale text otherwise (ep48).
 - Set `"flash_safe": true` in story.json's `look`, and ramp every light switch over at least 0.3 s. Strobing flicker and instant blackouts failed the flash bar on most stories and cost a whole fix round each.
 - Run `python -m blocky flash <name> --file <preview mp4>` before anyone reviews the preview, and fix the named seconds first.
