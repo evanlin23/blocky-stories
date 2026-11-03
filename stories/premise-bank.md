@@ -73,7 +73,7 @@ From `docs/research/port-study.md` and the owner's niche map. Rank them with the
 | W3 | what-if | What if your fridge got one degree colder every hour | Don't open the fridge after midnight. It's been getting colder all week. | Roommates fighting over the fridge | Same; warning opening (recipe) | story |
 | K1 | rulebook host | Rule One: Never Read Ahead 📕 | I keep this town's rulebook, and rule one is you never read ahead. | A night clerk who's lonely in the town hall | Sequel and host requests, almost none supplied (niche map); a 9-day-old small-town rules channel at 497K/day | story (pilot) |
 | K2 | rulebook host | Rule Two: Don't Feed the Streetlights 💡 | In this town, you don't feed the streetlights. They lean toward anything you're eating. | The Keeper wants one friend in town | Same | story |
-| K3 | rulebook host | Rule three was torn out | Rule three is missing, and everyone in town still obeys it. | The Keeper wants to know who tore it | Same; spot-the-detail comments (14 of 40) | story |
+| K3 | rulebook host | Rule three was torn out (**made: `rule-three`**, 2026-11-03, as "Rule Three Was TORN Out 📕") | Rule three is missing, and everyone in town still obeys it. | The Keeper wants to know who tore it | Same; spot-the-detail comments (14 of 40) | story |
 | Z1 | horror puzzle | One Of These Neighbors Isn't Home 🏠 | Don't wave back at the one who isn't real. | Being polite to the wrong neighbor | "Which one is not human?" at 1M (niche map); comment a letter (playbook item 9) | gag |
 | Z2 | horror puzzle | Which barista came back wrong ☕ | After the power cut, one of the baristas came back different. | Your morning coffee, ruined | Riddle has the most new channels in the wide scan (16) | gag |
 | Z3 | horror puzzle | One guest wasn't invited 🎂 | Never count the guests at this party. | A birthday you didn't want | Same | gag |
@@ -85,7 +85,7 @@ From `docs/research/port-study.md` and the owner's niche map. Rank them with the
 ## US English fixes (use these when the premise is made)
 
 - P04: Mom Can Hear Through Walls 👂 (and "every mom")
-- P07: The Neighbor's Lawn Is Perfect 🌿
+- P07: The Neighbor's Lawn Is Perfect 🌿 (made as `night-mower`, dropped 2026-11-03 at the rescue round: eyelid read as an object, flash at the bar)
 - P14: "night shift at the gas station"
 - P18: "This supermarket's carts..."
 - P29: "asked for Mom's"

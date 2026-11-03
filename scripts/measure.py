@@ -39,7 +39,12 @@ SR = 48000
 # until the browser study of 20 fast-rising Shorts confirms them; then the confirmed ones block.
 TARGETS = {
     # the picture (macro)
-    "macro.picture_changes_per_10s": (11, 16),       # skylox study 11-15; ours 6.7-10.4
+    # "block": the browser study of 17 hits confirmed it (hits inside, back-row nearer them than the flops):
+    # docs/research/craft-metrics.md -> Targets. The rest warn. Hit numbers: p10 / median of the 17.
+    "macro.picture_changes_per_10s": (12.5, None, "block"),   # hits 12.7 / 16.5; back-row 13.7; flops 8.0, 10.1
+    "macro.picture_changes_per_10s_q": (14.0, None, "block"), # hits 14.2 / 21.3; back-row 15.4; flops 7.0, 10.3
+    "macro.motion_energy_q": (6.0, None, "block"),            # hits 6.0 / 7.6; back-row 6.7; flops 3.8, 5.5
+    "macro.longest_still_q_s": (None, 1.0, "block"),          # hits 0.25 median, 0.75 p90; back-row 1.0; flops 2.5, 1.25
     "spec.cuts_per_10s": (5.5, 8.0),                 # back-row 5.9; the flops 4.7-5.3
     "spec.shots_over_2s_share": (None, 0.25),        # back-row 0.22; the flops 0.27-0.59
     "spec.shot_p90_s": (None, 2.5),
@@ -47,11 +52,12 @@ TARGETS = {
     "macro.motion_energy_mean": (1.5, None),
     "spec.camera_move_share": (0.65, None),          # back-row 0.71; the flops 0.32-0.66
     "spec.punch_per_10s": (0.4, None),               # back-row 0.44; the flops 0.15-0.29
-    "macro.brightness_mean": (0.25, None),
-    "macro.brightness_first_3s": (0.30, None),       # knock-back 0.10, ep20 0.18: frame 1 is lit
-    "macro.dark_frame_share": (None, 0.15),
-    "macro.saturation_mean": (0.35, None),
-    "macro.contrast_mean": (0.15, None),
+    "macro.brightness_mean": (0.35, None),           # hits 0.25 / 0.45; back-row 0.27 is no nearer than the flops
+    "macro.brightness_first_3s": (0.30, None),       # hits 0.28 / 0.50
+    "macro.dark_frame_share": (None, 0.08),          # hits p90 0.08, median 0.02; back-row 0.13
+    "macro.black_dips": (None, 1),                   # hits 0 (max 1); back-row 8, its blackout beats
+    "macro.saturation_mean": (0.42, None),           # hits 0.43 / 0.51; back-row 0.36 (the lowest)
+    "macro.contrast_mean": (0.18, None),             # hits 0.18 / 0.22
     "spec.face_big_share": (0.40, None),             # back-row 0.45; the flops 0.33-0.47
     "spec.caption_share": (0.90, None),
     "spec.caption_words_median": (None, 3),
@@ -62,7 +68,7 @@ TARGETS = {
     "micro.idle_window_share": (None, 0.30),
     "micro.caption_sync_p90_ms": (None, 120),
     # the sound (micro)
-    "spec.sound_events_per_10s": (4.0, None),        # back-row 3.4, the flops 1.2-3.3; the polish pack adds about 4
+    "spec.sound_events_per_10s": (2.0, 4.0),         # owner, 2026-11-03: the hits use few effects (polish v2.2)
     "sound.silence_share": (None, 0.005),
     "sound.voice_bed_gap_db": (8.0, 14.0),
     "sound.lufs": (-15.0, -13.0),
@@ -686,12 +692,13 @@ def value(res: dict, key: str):
 
 def check(res: dict) -> list[dict]:
     out = []
-    for key, (lo, hi) in TARGETS.items():
+    for key, (lo, hi, *level) in TARGETS.items():
         v = value(res, key)
         if v is None:
             continue
         ok = (lo is None or v >= lo) and (hi is None or v <= hi)
-        out.append({"metric": key, "value": v, "low": lo, "high": hi, "status": "ok" if ok else "warn"})
+        out.append({"metric": key, "value": v, "low": lo, "high": hi,
+                    "status": "ok" if ok else (level[0] if level else "warn")})
     return out
 
 
@@ -700,9 +707,11 @@ def table(res: dict) -> str:
             "", "| metric | value | target | |", "|---|---|---|---|"]
     for c in res["checks"]:
         rng = f"{'' if c['low'] is None else c['low']}–{'' if c['high'] is None else c['high']}"
-        rows.append(f"| {c['metric']} | {c['value']} | {rng} | {'ok' if c['status'] == 'ok' else '**warn**'} |")
-    warns = sum(c["status"] != "ok" for c in res["checks"])
-    rows.append(f"\n{warns} of {len(res['checks'])} outside the provisional targets (warnings, not blocks).")
+        rows.append(f"| {c['metric']} | {c['value']} | {rng} | {'ok' if c['status'] == 'ok' else '**' + c['status'] + '**'} |")
+    warns = sum(c["status"] == "warn" for c in res["checks"])
+    blocks = sum(c["status"] == "block" for c in res["checks"])
+    rows.append(f"\n{blocks} block, {warns} warn, of {len(res['checks'])} (blocks are confirmed by the hit data; "
+                f"warnings are provisional).")
     return "\n".join(rows)
 
 
@@ -713,6 +722,7 @@ def main(argv=None) -> int:
     ap.add_argument("--timeline", type=Path, help="a timeline.json, instead of building one from --story")
     ap.add_argument("--mix", type=Path, help="mix.json from the film artifact (stem loudness)")
     ap.add_argument("--json", type=Path, help="write every number here")
+    ap.add_argument("--fail-on-block", action="store_true", help="exit 1 when a block metric fails (proof.yml)")
     a = ap.parse_args(argv)
     if not a.film and not a.story:
         ap.error("give a film, a story, or both")
@@ -723,7 +733,12 @@ def main(argv=None) -> int:
         a.json.parent.mkdir(parents=True, exist_ok=True)
         a.json.write_text(json.dumps(res, indent=1))
     print(table(res))
-    return 0
+    return 1 if a.fail_on_block and blocked(res) else 0
+
+
+def blocked(res: dict) -> list[dict]:
+    """The block metrics that fail (the four the hit data confirmed)."""
+    return [c for c in res.get("checks", []) if c["status"] == "block"]
 
 
 if __name__ == "__main__":

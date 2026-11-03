@@ -178,3 +178,30 @@ are free for this public repo, and about 30 more minutes of render time per stor
 that the camera moves 96% of the time. `"ones": "walk"` in a story's `look.polish` is the opt-out, for a long,
 static story whose render would run over about 2 h. Stories already merged keep their films. Only new merges and
 re-renders pick it up. The draw shards' timeout (340 min) has plenty of room.
+
+## v2.2: fewer effects, music under everything (2026-11-03)
+
+The owner, watching the fast-rising Shorts with sound: "It doesnt look like very many sound effects, but we can
+probably do them to make it seem higher quality. also there is background music." (RULES.md → Few effects, music
+under everything.)
+
+- **Music under the whole film.** `polish.music_spec` makes the story's own score start at 0, and gives any section
+  without a sustained voice (drone, pad, choir) a quiet drone and pad, so there's never a stretch of ambience alone.
+  The only holes are the `music_drops` before a scare. The voice still sits at least 10.5 dB over the music and
+  ambience, measured on the mixes: ep62 10.5 dB, ep32 14.0 dB, both -14.0 LUFS, true peak -2.0 dBTP, energy above
+  4 kHz 2.9% and 3.4%.
+- **Fewer effects.** No whoosh on plain cuts (only on the punch-ins, about 0.7 per 10 s), one low hit on the hook
+  instead of one on every key word, reveal hits kept, and risers at most one per 15 s, the twist's first. Doors
+  marked on acting keys stay.
+
+Sound events per 10 s (`measure.py --story`, the builder's own effects and footstep bursts included):
+
+| story | v2.1 | v2.2 | the pack's own share in v2.2 |
+|---|---|---|---|
+| ep62-six-riders (34 s) | 10.4 | 5.1 | 1.5 |
+| dryer-nine (82 s) | 9.7 | 4.6 | 1.1 |
+| ep32-sitter (87 s) | 6.8 | 2.5 | 0.8 |
+
+The pack now adds about 1 per 10 s. ep62 and dryer-nine stay over 4 because of their own `sfx` (10 in 34 s and 25 in
+82 s: clicks, thuds and whooshes). That's the builder's to trim (`builder.md` → Sound budget), and `measure.py`
+now warns outside 2 to 4.
