@@ -100,6 +100,9 @@ def harsh_sound(st: dict) -> list[tuple[str, str]]:
     return out
 
 
+NARRATOR_MISFIT = re.compile(r"\bmy (husband|boyfriend|hubby)\b", re.I)   # the one narrator voice is a man's (ep38)
+
+
 def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list[tuple[str, str]]:
     from blocky import voicecheck as sc
 
@@ -112,6 +115,10 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
         out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
                             "flash bar on most stories (RULES.md hard rule 7)"))
     out += harsh_sound(st)
+    said_all = " ".join(" ".join(c[1] for c in ln.get("chunks", [])) for ln in st.get("lines", []))
+    if NARRATOR_MISFIT.search(said_all):
+        out.append(("warn", "the narrator says 'my husband/boyfriend', but the narrator voice is a man's (ep38): "
+                             "make the narrator's family fit a man"))
     screen, said = texts(st)
     viewer = screen + said + [st.get("title", "")]
     for i, ln in enumerate(st["lines"]):
