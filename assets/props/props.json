@@ -1,0 +1,948 @@
+{
+ "bathroom_bathtub": {
+  "file": "assets/props/bathroom_bathtub.glb",
+  "from": "Bathroom_Bathtub.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.8,
+   1.95,
+   0.63
+  ],
+  "tris": 248
+ },
+ "bathroom_sink": {
+  "file": "assets/props/bathroom_sink.glb",
+  "from": "Bathroom_Sink.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.69,
+   0.41,
+   0.72
+  ],
+  "tris": 350
+ },
+ "bathroom_toilet": {
+  "file": "assets/props/bathroom_toilet.glb",
+  "from": "Bathroom_Toilet.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.6,
+   0.85,
+   0.95
+  ],
+  "tris": 402
+ },
+ "bed_king": {
+  "file": "assets/props/bed_king.glb",
+  "from": "Bed_King.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   1.53,
+   1.98,
+   0.61
+  ],
+  "tris": 676
+ },
+ "bed_single": {
+  "file": "assets/props/bed_single.glb",
+  "from": "Bed_Single.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.99,
+   1.97,
+   0.68
+  ],
+  "tris": 536
+ },
+ "birchtree_1": {
+  "file": "assets/props/birchtree_1.glb",
+  "from": "BirchTree_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   3.4,
+   4.96,
+   7.15
+  ],
+  "tris": 1704
+ },
+ "birchtree_dead_1": {
+  "file": "assets/props/birchtree_dead_1.glb",
+  "from": "BirchTree_Dead_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   0.96,
+   3.25,
+   4.5
+  ],
+  "tris": 820
+ },
+ "bldg_1story": {
+  "file": "assets/props/bldg_1story.glb",
+  "from": "1Story_Mat.fbx",
+  "pack": "quaternius_buildings",
+  "size_m": [
+   7.54,
+   7.61,
+   5.85
+  ],
+  "tris": 2824
+ },
+ "bldg_1story_gableroof": {
+  "file": "assets/props/bldg_1story_gableroof.glb",
+  "from": "1Story_GableRoof_Mat.fbx",
+  "pack": "quaternius_buildings",
+  "size_m": [
+   7.37,
+   8.33,
+   7.09
+  ],
+  "tris": 1684
+ },
+ "bldg_2story": {
+  "file": "assets/props/bldg_2story.glb",
+  "from": "2Story_Mat.fbx",
+  "pack": "quaternius_buildings",
+  "size_m": [
+   7.56,
+   8.86,
+   9.61
+  ],
+  "tris": 3536
+ },
+ "bldg_2story_balcony": {
+  "file": "assets/props/bldg_2story_balcony.glb",
+  "from": "2Story_Balcony_Mat.fbx",
+  "pack": "quaternius_buildings",
+  "size_m": [
+   7.56,
+   8.86,
+   10.3
+  ],
+  "tris": 4210
+ },
+ "bldg_2story_slim": {
+  "file": "assets/props/bldg_2story_slim.glb",
+  "from": "2Story_Slim_Mat.fbx",
+  "pack": "quaternius_buildings",
+  "size_m": [
+   3.9,
+   7.54,
+   9.65
+  ],
+  "tris": 2884
+ },
+ "bldg_3story_small": {
+  "file": "assets/props/bldg_3story_small.glb",
+  "from": "3Story_Small_Mat.fbx",
+  "pack": "quaternius_buildings",
+  "size_m": [
+   6.68,
+   7.2,
+   13.47
+  ],
+  "tris": 3352
+ },
+ "bldg_4story": {
+  "file": "assets/props/bldg_4story.glb",
+  "from": "4Story_Mat.fbx",
+  "pack": "quaternius_buildings",
+  "size_m": [
+   8.47,
+   8.86,
+   17.82
+  ],
+  "tris": 6862
+ },
+ "bookshelf": {
+  "file": "assets/props/bookshelf.glb",
+  "from": "Bookshelf.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   1.16,
+   0.38,
+   2.22
+  ],
+  "tris": 120
+ },
+ "bush_1": {
+  "file": "assets/props/bush_1.glb",
+  "from": "Bush_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   2.66,
+   3.38,
+   2.48
+  ],
+  "tris": 364
+ },
+ "bush_2": {
+  "file": "assets/props/bush_2.glb",
+  "from": "Bush_2.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   2.69,
+   2.66,
+   2.22
+  ],
+  "tris": 268
+ },
+ "bush_snow_1": {
+  "file": "assets/props/bush_snow_1.glb",
+  "from": "Bush_Snow_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   2.78,
+   3.55,
+   2.57
+  ],
+  "tris": 460
+ },
+ "carpet_1": {
+  "file": "assets/props/carpet_1.glb",
+  "from": "Carpet_1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   1.07,
+   1.55,
+   0.02
+  ],
+  "tris": 108
+ },
+ "chair_1": {
+  "file": "assets/props/chair_1.glb",
+  "from": "Chair_1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.38,
+   0.41,
+   0.88
+  ],
+  "tris": 216
+ },
+ "chair_2": {
+  "file": "assets/props/chair_2.glb",
+  "from": "Chair_2.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.38,
+   0.41,
+   0.84
+  ],
+  "tris": 352
+ },
+ "commontree_1": {
+  "file": "assets/props/commontree_1.glb",
+  "from": "CommonTree_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   3.78,
+   5.55,
+   4.96
+  ],
+  "tris": 2888
+ },
+ "commontree_2": {
+  "file": "assets/props/commontree_2.glb",
+  "from": "CommonTree_2.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   3.33,
+   5.08,
+   6.25
+  ],
+  "tris": 2952
+ },
+ "commontree_dead_1": {
+  "file": "assets/props/commontree_dead_1.glb",
+  "from": "CommonTree_Dead_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   2.09,
+   4.24,
+   4.44
+  ],
+  "tris": 2360
+ },
+ "commontree_snow_1": {
+  "file": "assets/props/commontree_snow_1.glb",
+  "from": "CommonTree_Snow_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   3.78,
+   5.55,
+   5.02
+  ],
+  "tris": 2966
+ },
+ "couch_l": {
+  "file": "assets/props/couch_l.glb",
+  "from": "Couch_L.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   2.81,
+   2.16,
+   1.13
+  ],
+  "tris": 1428
+ },
+ "couch_medium1": {
+  "file": "assets/props/couch_medium1.glb",
+  "from": "Couch_Medium1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   2.34,
+   1.1,
+   0.96
+  ],
+  "tris": 1012
+ },
+ "curtains_double": {
+  "file": "assets/props/curtains_double.glb",
+  "from": "Curtains_Double.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   1.73,
+   0.24,
+   2.17
+  ],
+  "tris": 320
+ },
+ "door_1": {
+  "file": "assets/props/door_1.glb",
+  "from": "Door_1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.87,
+   0.21,
+   2.09
+  ],
+  "tris": 456
+ },
+ "door_double": {
+  "file": "assets/props/door_double.glb",
+  "from": "Door_Double.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   1.74,
+   0.21,
+   2.09
+  ],
+  "tris": 1720
+ },
+ "drawer_1": {
+  "file": "assets/props/drawer_1.glb",
+  "from": "Drawer_1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   1.4,
+   0.56,
+   0.68
+  ],
+  "tris": 404
+ },
+ "fireplace": {
+  "file": "assets/props/fireplace.glb",
+  "from": "Fireplace.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   1.62,
+   0.58,
+   1.28
+  ],
+  "tris": 360
+ },
+ "flowers": {
+  "file": "assets/props/flowers.glb",
+  "from": "Flowers.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   0.98,
+   1.23,
+   1.66
+  ],
+  "tris": 408
+ },
+ "grass": {
+  "file": "assets/props/grass.glb",
+  "from": "Grass.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   0.75,
+   0.65,
+   2.03
+  ],
+  "tris": 192
+ },
+ "grass_short": {
+  "file": "assets/props/grass_short.glb",
+  "from": "Grass_Short.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   0.63,
+   0.88,
+   0.81
+  ],
+  "tris": 192
+ },
+ "houseplant_1": {
+  "file": "assets/props/houseplant_1.glb",
+  "from": "Houseplant_1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.38,
+   0.35,
+   0.36
+  ],
+  "tris": 245
+ },
+ "kitchen_cabinet1": {
+  "file": "assets/props/kitchen_cabinet1.glb",
+  "from": "Kitchen_Cabinet1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.51,
+   0.54,
+   0.78
+  ],
+  "tris": 68
+ },
+ "kitchen_fridge": {
+  "file": "assets/props/kitchen_fridge.glb",
+  "from": "Kitchen_Fridge.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.65,
+   0.65,
+   1.65
+  ],
+  "tris": 404
+ },
+ "kitchen_oven": {
+  "file": "assets/props/kitchen_oven.glb",
+  "from": "Kitchen_Oven.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.51,
+   0.56,
+   0.81
+  ],
+  "tris": 524
+ },
+ "kitchen_sink": {
+  "file": "assets/props/kitchen_sink.glb",
+  "from": "Kitchen_Sink.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.51,
+   0.56,
+   0.96
+  ],
+  "tris": 444
+ },
+ "light_ceiling1": {
+  "file": "assets/props/light_ceiling1.glb",
+  "from": "Light_Ceiling1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.22,
+   0.22,
+   0.41
+  ],
+  "tris": 269
+ },
+ "light_desk": {
+  "file": "assets/props/light_desk.glb",
+  "from": "Light_Desk.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.13,
+   0.23,
+   0.29
+  ],
+  "tris": 356
+ },
+ "light_floor1": {
+  "file": "assets/props/light_floor1.glb",
+  "from": "Light_Floor1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.14,
+   0.15,
+   0.8
+  ],
+  "tris": 226
+ },
+ "nat_bridge_wood": {
+  "file": "assets/props/nat_bridge_wood.glb",
+  "from": "bridge_wood.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   3.12,
+   3.12,
+   1.2
+  ],
+  "tris": 220
+ },
+ "nat_campfire_stones": {
+  "file": "assets/props/nat_campfire_stones.glb",
+  "from": "campfire_stones.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   1.62,
+   1.55,
+   0.23
+  ],
+  "tris": 264
+ },
+ "nat_fence_gate": {
+  "file": "assets/props/nat_fence_gate.glb",
+  "from": "fence_gate.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   3.0,
+   0.21,
+   1.04
+  ],
+  "tris": 524
+ },
+ "nat_fence_planks": {
+  "file": "assets/props/nat_fence_planks.glb",
+  "from": "fence_planks.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   3.0,
+   0.29,
+   1.04
+  ],
+  "tris": 96
+ },
+ "nat_fence_simple": {
+  "file": "assets/props/nat_fence_simple.glb",
+  "from": "fence_simple.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   3.0,
+   0.21,
+   1.04
+  ],
+  "tris": 64
+ },
+ "nat_log_stack": {
+  "file": "assets/props/nat_log_stack.glb",
+  "from": "log_stack.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   1.27,
+   2.13,
+   1.04
+  ],
+  "tris": 184
+ },
+ "nat_pot_large": {
+  "file": "assets/props/nat_pot_large.glb",
+  "from": "pot_large.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   1.69,
+   1.46,
+   0.6
+  ],
+  "tris": 68
+ },
+ "nat_stump_old": {
+  "file": "assets/props/nat_stump_old.glb",
+  "from": "stump_old.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   1.07,
+   1.11,
+   0.8
+  ],
+  "tris": 120
+ },
+ "nat_tent_detailedclosed": {
+  "file": "assets/props/nat_tent_detailedclosed.glb",
+  "from": "tent_detailedClosed.glb",
+  "pack": "kenney_nature_kit",
+  "size_m": [
+   2.62,
+   1.91,
+   1.68
+  ],
+  "tris": 228
+ },
+ "nightstand_1": {
+  "file": "assets/props/nightstand_1.glb",
+  "from": "NightStand_1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.48,
+   0.48,
+   0.41
+  ],
+  "tris": 172
+ },
+ "pinetree_1": {
+  "file": "assets/props/pinetree_1.glb",
+  "from": "PineTree_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   3.91,
+   3.63,
+   5.4
+  ],
+  "tris": 1920
+ },
+ "pinetree_2": {
+  "file": "assets/props/pinetree_2.glb",
+  "from": "PineTree_2.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   3.59,
+   3.92,
+   7.13
+  ],
+  "tris": 1692
+ },
+ "pinetree_snow_1": {
+  "file": "assets/props/pinetree_snow_1.glb",
+  "from": "PineTree_Snow_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   3.91,
+   3.63,
+   5.4
+  ],
+  "tris": 1920
+ },
+ "plant_1": {
+  "file": "assets/props/plant_1.glb",
+  "from": "Plant_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   2.4,
+   1.89,
+   1.01
+  ],
+  "tris": 296
+ },
+ "rock_1": {
+  "file": "assets/props/rock_1.glb",
+  "from": "Rock_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   0.97,
+   0.93,
+   1.76
+  ],
+  "tris": 70
+ },
+ "rock_3": {
+  "file": "assets/props/rock_3.glb",
+  "from": "Rock_3.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   1.48,
+   1.61,
+   1.35
+  ],
+  "tris": 72
+ },
+ "rock_5": {
+  "file": "assets/props/rock_5.glb",
+  "from": "Rock_5.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   1.33,
+   1.83,
+   1.31
+  ],
+  "tris": 90
+ },
+ "rock_moss_1": {
+  "file": "assets/props/rock_moss_1.glb",
+  "from": "Rock_Moss_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   0.97,
+   0.93,
+   1.9
+  ],
+  "tris": 70
+ },
+ "rock_snow_1": {
+  "file": "assets/props/rock_snow_1.glb",
+  "from": "Rock_Snow_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   0.97,
+   0.93,
+   1.97
+  ],
+  "tris": 102
+ },
+ "shelf_1": {
+  "file": "assets/props/shelf_1.glb",
+  "from": "Shelf_1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.35,
+   0.33,
+   1.58
+  ],
+  "tris": 96
+ },
+ "stool": {
+  "file": "assets/props/stool.glb",
+  "from": "Stool.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.34,
+   0.36,
+   0.69
+  ],
+  "tris": 500
+ },
+ "sub_building_type_a": {
+  "file": "assets/props/sub_building_type_a.glb",
+  "from": "building-type-a.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   6.5,
+   5.14,
+   4.17
+  ],
+  "tris": 1174
+ },
+ "sub_building_type_c": {
+  "file": "assets/props/sub_building_type_c.glb",
+  "from": "building-type-c.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   6.43,
+   5.14,
+   5.17
+  ],
+  "tris": 1196
+ },
+ "sub_building_type_f": {
+  "file": "assets/props/sub_building_type_f.glb",
+  "from": "building-type-f.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   7.14,
+   7.03,
+   5.69
+  ],
+  "tris": 1616
+ },
+ "sub_building_type_k": {
+  "file": "assets/props/sub_building_type_k.glb",
+  "from": "building-type-k.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   4.6,
+   5.1,
+   5.75
+  ],
+  "tris": 1024
+ },
+ "sub_building_type_p": {
+  "file": "assets/props/sub_building_type_p.glb",
+  "from": "building-type-p.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   6.2,
+   4.95,
+   4.59
+  ],
+  "tris": 1282
+ },
+ "sub_driveway_long": {
+  "file": "assets/props/sub_driveway_long.glb",
+  "from": "driveway-long.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   1.8,
+   2.0,
+   0.05
+  ],
+  "tris": 12
+ },
+ "sub_fence": {
+  "file": "assets/props/sub_fence.glb",
+  "from": "fence.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   2.38,
+   0.38,
+   1.35
+  ],
+  "tris": 88
+ },
+ "sub_fence_1x3": {
+  "file": "assets/props/sub_fence_1x3.glb",
+  "from": "fence-1x3.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   6.38,
+   2.19,
+   1.35
+  ],
+  "tris": 204
+ },
+ "sub_fence_low": {
+  "file": "assets/props/sub_fence_low.glb",
+  "from": "fence-low.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   6.38,
+   4.19,
+   0.85
+  ],
+  "tris": 180
+ },
+ "sub_path_stones_long": {
+  "file": "assets/props/sub_path_stones_long.glb",
+  "from": "path-stones-long.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   0.7,
+   2.0,
+   0.05
+  ],
+  "tris": 48
+ },
+ "sub_planter": {
+  "file": "assets/props/sub_planter.glb",
+  "from": "planter.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   2.0,
+   1.5,
+   0.89
+  ],
+  "tris": 204
+ },
+ "sub_tree_large": {
+  "file": "assets/props/sub_tree_large.glb",
+  "from": "tree-large.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   1.05,
+   1.21,
+   3.83
+  ],
+  "tris": 42
+ },
+ "sub_tree_small": {
+  "file": "assets/props/sub_tree_small.glb",
+  "from": "tree-small.glb",
+  "pack": "kenney_city_kit_suburban",
+  "size_m": [
+   1.05,
+   1.21,
+   2.84
+  ],
+  "tris": 42
+ },
+ "table_roundlarge": {
+  "file": "assets/props/table_roundlarge.glb",
+  "from": "Table_RoundLarge.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   1.86,
+   0.97,
+   0.56
+  ],
+  "tris": 592
+ },
+ "table_roundsmall": {
+  "file": "assets/props/table_roundsmall.glb",
+  "from": "Table_RoundSmall.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.97,
+   0.97,
+   0.57
+  ],
+  "tris": 592
+ },
+ "trashcan_cylindric": {
+  "file": "assets/props/trashcan_cylindric.glb",
+  "from": "Trashcan_Cylindric.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.38,
+   0.38,
+   0.54
+  ],
+  "tris": 380
+ },
+ "treestump": {
+  "file": "assets/props/treestump.glb",
+  "from": "TreeStump.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   2.72,
+   2.06,
+   1.24
+  ],
+  "tris": 232
+ },
+ "willow_1": {
+  "file": "assets/props/willow_1.glb",
+  "from": "Willow_1.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   2.9,
+   5.11,
+   5.69
+  ],
+  "tris": 1946
+ },
+ "window_large1": {
+  "file": "assets/props/window_large1.glb",
+  "from": "Window_Large1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.92,
+   0.07,
+   0.85
+  ],
+  "tris": 252
+ },
+ "window_small1": {
+  "file": "assets/props/window_small1.glb",
+  "from": "Window_Small1.fbx",
+  "pack": "quaternius_house_interior",
+  "size_m": [
+   0.46,
+   0.07,
+   0.62
+  ],
+  "tris": 112
+ },
+ "woodlog": {
+  "file": "assets/props/woodlog.glb",
+  "from": "WoodLog.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   1.27,
+   5.34,
+   1.5
+  ],
+  "tris": 464
+ },
+ "woodlog_moss": {
+  "file": "assets/props/woodlog_moss.glb",
+  "from": "WoodLog_Moss.fbx",
+  "pack": "quaternius_nature",
+  "size_m": [
+   1.79,
+   5.34,
+   1.38
+  ],
+  "tris": 614
+ }
+}

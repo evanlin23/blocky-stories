@@ -362,7 +362,7 @@ def test_sample_files_are_mono_48k_and_soft():
             assert (w.getnchannels(), w.getframerate(), w.getsampwidth()) == (1, 48000, 2), p
         if p.parent.parent.name == "steps" or p.parent.name == "amb":
             assert _hf(sound.load_wav(p)) < 0.05, f"{p}: too bright for a step or ambience"
-    for surface in ("grass", "wood", "stone", "metal", "gravel", "snow"):
+    for surface in ("grass", "wood", "stone", "metal", "gravel", "snow", "carpet"):
         assert len(list((ROOT / "assets/audio/steps" / surface).glob("*.wav"))) >= 4, surface
     for kind in sound.AMB_SAMPLES:
         assert (ROOT / "assets/audio/amb" / f"{kind}.wav").exists(), kind
@@ -375,7 +375,7 @@ def test_steps_use_samples_with_variation_and_matched_level():
 
     from blocky import sound
 
-    for surface in ("grass", "wood", "stone", "concrete", "metal", "gravel", "snow"):
+    for surface in ("grass", "wood", "stone", "concrete", "metal", "gravel", "snow", "carpet"):
         a, b = sound.step_sound(surface, False, 1), sound.step_sound(surface, False, 1)
         assert np.array_equal(a, b)                                      # a seed always gives the same step
         outs = {sound.step_sound(surface, False, s).tobytes() for s in range(8)}
@@ -425,6 +425,8 @@ def test_sampled_sfx_and_the_synth_fallback(tmp_path, monkeypatch):
 def test_every_asset_is_licensed_cc0_or_royalty_free():
     text = (ROOT / "assets" / "LICENSES.md").read_text()
     files = [p for p in (ROOT / "assets").rglob("*") if p.is_file() and p.name != "LICENSES.md"]
+    for lic in (ROOT / "assets" / "licenses").glob("*.txt"):                 # each pack's own licence file
+        assert "CC0" in lic.read_text() or "Creative Commons Zero" in lic.read_text(), lic
     assert files
     for p in files:
         rel = p.relative_to(ROOT).as_posix()
@@ -443,5 +445,21 @@ def test_check_blocks_an_unknown_hdri_or_texture():
     assert checks.library({"look": {"hdri": "moonless_gulf"}})[0][0] == "block"
     assert checks.library({}, "m = kit.texture('marble')")[0][0] == "block"
     assert checks.library({}) == []
+    assert checks.library({}, 'kit.prop("pinetree_1", (0, 3, 0))') == []
+    assert checks.library({}, 'kit.prop("bldg_2story_sign")')[0][0] == "block"
     names = {p.stem for p in (ROOT / "assets" / "textures").iterdir() if p.is_dir()}
     assert names == set(checks.TEXTURE_NAMES)
+
+
+def test_props_are_listed_small_and_free_of_characters_and_lettering():
+    import json
+
+    rec = json.loads((ROOT / "assets" / "props" / "props.json").read_text())
+    glbs = {p.stem for p in (ROOT / "assets" / "props").glob("*.glb")}
+    assert rec and set(rec) == glbs                                          # one record per file, no strays
+    banned = ("sign", "character", "creature", "zombie", "skeleton", "man", "woman", "knife", "sword", "gun")
+    for name, v in rec.items():
+        assert (ROOT / v["file"]).exists() and len(v["size_m"]) == 3, name
+        assert not any(b in name.split("_") or b in v["from"].lower() for b in banned), name
+        assert 0.01 <= max(v["size_m"]) <= 25, (name, v["size_m"])           # metres, not centimetres
+    assert sum((ROOT / v["file"]).stat().st_size for v in rec.values()) < 8e6
