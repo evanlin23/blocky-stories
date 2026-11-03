@@ -269,7 +269,7 @@ shot("L52", "me in the aisle: I get it", still([F + 2.4, 7.2, 5.3], [F - 0.3, 3.
 shot("L53", "the glove on Gran's hand", still([400.32, -1.05, 1.1], [400.32, -0.22, 1.1], 28),
      {"gran": P([399.85, 0.4], yaw=0, expr="soft", arms=[0, 80])})
 shot("L54", "the dog by its blue door", still([306.6, -4.7, 0.5], [308.7, -3.0, 0.42], 34))
-shot("L55", "the hooks and the striped hat", still([X - 0.8, 45.3, 1.65], [X - 0.9, 43.4, 1.7], 28))
+shot("L55", "the hooks and the striped hat", still([X - 0.8, 44.9, 1.7], [X - 0.9, 43.4, 1.7], 28))
 shot("L56", "the hop-dots under my feet at my door again", c([0, [141.8, 6.0, 0.8], [140.0, 9.2, 0.1], 30], [1, [141.8, 6.4, 1.0], [140.0, 9.6, 0.1], 30]),
      {"me": P([SX, 10.85, 0.16], yaw=0, expr="scared", head=[0, 22])})
 shot("L56+0.85", "the dots under my feet on the slipway, easy to see now", c([0, [0.2, 3.0, 1.5], [0.25, -2.0, 0.3], 26], [1, [0.5, 2.0, 1.2], [0.25, -2.4, 0.2], 26]),

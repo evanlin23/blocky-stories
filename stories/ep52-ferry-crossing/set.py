@@ -786,7 +786,9 @@ def build_island(kit, M, ctx):
         hung(cx + 0.75 + 0.3 * k, 46.5, 1.72, (0, 0, 0), 1)
     # the umbrella and the bike, the striped hat by the door, the table and the phone place
     kit.cyl("br.umb", 0.04, 1.0, (cx + 3.0, 44.0, 0.52), kit.plastic("#16171b", 0.6, "umb2"), None, rot=(0.12, 0.1, 0), n=10)
-    hat_stripes(kit, M, "br.hat").location = (cx - 0.9, 43.4, 1.7)
+    _bh = hat_stripes(kit, M, "br.hat")
+    _bh.location = (cx - 0.9, 43.4, 1.7)
+    _bh.scale = (1.5, 1.5, 1.5)
     bike = kit.empty("bike", (cx + 2.0, 46.2, 0))
     for y in (-0.55, 0.55):
         torus(kit, f"bike.tyre{y}", 0.31, 0.025, (0, y, 0.34), M["tyre"], bike, rot=(0, math.radians(90), 0), n=24, m=6)
@@ -815,7 +817,7 @@ def build_island(kit, M, ctx):
         kit.box(f"monday.k{k}", (0.045, 0.012, 0.16), (cx + 1.22 + 0.055 * k, 46.14, 1.4), kit.metal("#d2b768", 0.3), None, bevel=0.005)
     kit.box("monday.tag", (0.08, 0.012, 0.11), (cx + 1.3, 46.14, 1.47), kit.plastic("#d23b2f", 0.5, "red tag"), None, bevel=0.01)
     kit.light("lane lamp", "POINT", (X + 0.5, 15.0, 2.4), 1.0, "#ffd2a0", size=0.4)
-    kit.light("hat lamp", "POINT", (X - 0.9, 44.7, 2.3), 1.0, "#ffe2b8", size=0.3)
+    kit.light("hat lamp", "POINT", (X - 0.5, 44.7, 2.3), 1.0, "#ffe2b8", size=0.3)
     kit.light("isl lamp", "POINT", (X + 3.0, -9.0, 3.6), 1.0, "#ffe2b0", size=0.4)
     kit.light("board fill", "POINT", (X + 1.6, -13.0, 2.2), 1.0, "#ffe2b0", size=0.4)
     kit.light("blue fill", "POINT", (X + 6.0, -5.6, 1.4), 1.0, "#ffe6c0", size=0.4)
@@ -1254,7 +1256,7 @@ def animate(kit, story, tl, t, ctx):
     over["stoop lamp"] = 150.0 + 100.0 * night
     over["lane lamp"] = 130.0
     over["bow lamp"] = 150.0
-    over["hat lamp"] = 90.0
+    over["hat lamp"] = 70.0
     sb = float(_eased(_cues(tl, "sunbeam"), "v", t, 0.0))
     over["sunbeam"] = 1500.0 * sb
     # ---------------------------------------------------------------- visibility toggles
