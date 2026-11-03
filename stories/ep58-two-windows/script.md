@@ -1,6 +1,6 @@
-# ep57-two-windows: the script (writer, 2026-11-03)
+# ep58-two-windows: the script (writer, 2026-11-03)
 
-- **Slug:** `ep57-two-windows` (batch 6, slot P2, given by the batch lead. The killed `ep57-arch-seat` never uploaded)
+- **Slug:** `ep58-two-windows` (batch 6, slot P2, given by the batch lead. The killed `ep57-arch-seat` never uploaded)
 - **From:** pitch T9 in `docs/research/2026-11-03-week.md` (branch `claude/batch6-research`): "This Drive-Thru Has TWO Windows", line score 9, title rank 4 of 36. Not in `stories/premise-bank.md`, so nothing to mark there.
 - **Lane:** core (creepy town rule). **Length arm:** long (H1). **Title arm:** a count that doesn't add up (H3).
 - **Word count:** 598 spoken words in 71 lines, all `narrator`, plus 2 pause beats (P01 0.7 s, P02 0.6 s).
