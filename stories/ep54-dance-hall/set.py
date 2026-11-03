@@ -480,6 +480,8 @@ def build_street(kit, M, ctx):
     sun = kit.light("sun", "SUN", (-6, -14, 13), 9.0, "#fff4dc", size=0.02)
     kit.aim(sun, (X0, 0, 0))
     ctx["sun"] = sun
+    # an even fill on the two brothers at the gate so neither face sits in shadow
+    kit.light("gatefill", "POINT", (X0 + 26.8, 1.0, 1.9), 600.0, "#fff4e4", size=0.8)
 
 
 def build_bus(kit, M, ctx):
@@ -610,7 +612,8 @@ def build(kit, story, tl):
         pl = make_plane(f"whole {pid}", 0.24, 0.24, m)
         ctx["wholes"][pid] = (pl, em, a, b)
     kit.light("glyphglow", "POINT", (0, 0, -20), 0.0, GOLD, size=0.15)
-    kit.light("footlight", "POINT", (1.1, -0.5, 0.8), 70.0, "#ffe6c0", size=0.3)
+    kit.light("facefill", "POINT", (-1.1, -1.1, 1.9), 55.0, "#ffe6c8", size=0.4)
+    kit.light("footlight", "POINT", (0.5, -0.4, 0.7), 60.0, "#fff0d8", size=0.3)
     return ctx
 
 
@@ -803,6 +806,8 @@ def animate(kit, story, tl, t, ctx):
             print(f"DBG t={t:.2f} {who} hand={tuple(round(x, 2) for x in p)} cam={tuple(round(x, 2) for x in cam)}", file=sys.stderr)
     l68 = tl.get("lines", {}).get("L68")
     over["footlight"] = 1.0 if l68 and l68["onset"] - 0.05 <= t <= l68["end"] else 0.0
+    l62 = tl.get("lines", {}).get("L62")
+    over["facefill"] = 1.0 if l62 and l62["onset"] - 0.05 <= t <= l62["end"] + 0.05 else 0.0
     over["glyphglow"] = 1.0
     gl = kit.LIGHTS["glyphglow"]
     gl["obj"].location = glow_p + (cam - glow_p).normalized() * 0.25 if glow_p is not None else V((0, 0, -20))

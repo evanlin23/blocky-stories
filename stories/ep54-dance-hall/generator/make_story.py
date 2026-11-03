@@ -26,7 +26,7 @@ EYES_SHUT = "shut"
 FACE = {"eyes": "round", "brows": True, "ink": "#16100c"}
 cast = {
     # me: short dark curly hair, a mustard cardigan over a white shirt with a big pointed collar (set.py), brown trousers
-    "me": {"age": "adult", "skin": "#d9a77c", "shirt": "#c9a23a", "pants": "#5a3d28", "shoes": "#6b4226", "sleeves": "long",
+    "me": {"age": "adult", "skin": "#d9a77c", "shirt": "#c9a23a", "pants": "#4a3424", "shoes": "#9a6234", "sleeves": "long",
            "hair": "cap", "hair_c": "#1d1612", "face": dict(FACE)},
     # Aunt Ros: a silver bob, a teal blouse with a drawn ripple, navy trousers, silver low-heeled dance shoes
     "ros": {"age": "adult", "skin": "#e8b98e", "shirt": "#2f8a8a", "pattern": "knit", "pattern_c": "#1f6666",
@@ -50,11 +50,11 @@ cast = {
     "d2": {"age": "adult", "skin": "#d9a77c", "shirt": "#3b3f46", "pants": "#22242a", "shoes": "#141414", "sleeves": "long",
            "hair": "long", "hair_c": "#14100e", "face": {"eyes": "lashes", "brows": True, "ink": "#16100c"}},
     # the opener's gate: two old brothers who look alike (same buzz cut, skin, build, striped shirt in two colours)
-    "gm": {"age": "adult", "skin": "#e8b98e", "shirt": "#7aa86a", "pattern": "stripes", "pattern_c": "#e8e0c0",
-           "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "buzz", "hair_c": "#c8c8c8",
+    "gm": {"age": "adult", "skin": "#dcae85", "shirt": "#7aa86a", "pattern": "stripes", "pattern_c": "#e8e0c0",
+           "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "swoop", "hair_c": "#8f8f96",
            "face": dict(FACE)},
-    "pm": {"age": "adult", "skin": "#e8b98e", "shirt": "#3b6aa8", "pattern": "stripes", "pattern_c": "#e8e0c0",
-           "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "buzz", "hair_c": "#c8c8c8",
+    "pm": {"age": "adult", "skin": "#dcae85", "shirt": "#3b6aa8", "pattern": "stripes", "pattern_c": "#e8e0c0",
+           "pants": "#4a4036", "shoes": "#3a2a1c", "sleeves": "long", "hair": "swoop", "hair_c": "#8f8f96",
            "face": dict(FACE)},
 }
 MEN = ("me", "a1", "b1", "c1", "d1", "gm")
@@ -66,6 +66,7 @@ pairs = {"ros": [0, "ros", "me"], "a": [1, "a1", "a2"], "b": [2, "b1", "b2"], "c
          "g": [5, "gm", "pm"]}
 
 # ---------------------------------------------------------------------------------------------------- helpers
+HT = 55.0                                 # L62: both heads turned to the camera
 ROS_AT = (0.0, -0.6)
 P_AT = (0.0, 0.6)
 KP = (0.0, 0.5)                           # where the Stilted stands: its legs straddle the spot
@@ -155,9 +156,9 @@ CAFE_ROW = {"b1": D((CAFE - 1.9, 3.5), 0, SM, arms=(85, 0)), "b2": D((CAFE - 1.2
             "c2": D((CAFE - 0.25, 3.5), 0, SM, arms=(0, 85)), "c1": D((CAFE + 0.55, 3.5), 0, SM, arms=(85, 0)),
             "d1": D((CAFE + 1.3, 3.5), 0, SM, arms=(60, 0)), "d2": D((CAFE + 2.0, 3.5), 0, SM, arms=(0, 85))}
 S("L02", cm((CAFE - 2.6, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20, (CAFE - 2.0, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20), CAFE_ROW)
-S("L02.2", cm((CAFE + 3.6, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22, (CAFE + 3.0, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22), CAFE_ROW)
+S("L02.2+0.3", cm((CAFE + 3.6, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22, (CAFE + 3.0, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22), CAFE_ROW)
 GATE = -52.0
-GATE_P = {"gm": D((GATE + 0.55, 4.4), 15, SM, arms=(85, 0)), "pm": D((GATE - 0.55, 4.4), -15, SM, arms=(0, 85))}
+GATE_P = {"gm": D((GATE + 0.55, 4.4), 8, SM, arms=(85, 0)), "pm": D((GATE - 0.55, 4.4), -4, SM, arms=(0, 85))}
 S("L03", cm((GATE, 1.2, 1.5), (GATE, 4.4, 1.35), 20, (GATE, 1.6, 1.5), (GATE, 4.4, 1.35), 20), GATE_P)
 S("L03.2", cm((GATE + 0.3, 2.0, 1.5), (GATE, 4.4, 1.5), 28), GATE_P)
 BUSX = -140.0
@@ -271,8 +272,8 @@ S("L60", cm((-1.6, 0.0, 0.95), (-0.5, 0.0, 0.95), 40),
   {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))})
 S("L61", cm((-1.7, 0.0, 0.95), (-0.5, 0.0, 0.95), 36),
   {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))})
-S("L62", cm((-2.2, 0.0, 1.5), (0, 0.0, 1.5), 17, (-2.1, 0.0, 1.5), (0, 0.0, 1.5), 18),
-  {"ros": D(ROS_AT, 180, "wide", arms=(70, 70)), "me": D(P_AT, 0, "neutral", arms=(70, 0))},
+S("L62", cm((-1.7, -1.7, 1.55), (0, -0.15, 1.5), 24, (-1.6, -1.6, 1.55), (0, -0.15, 1.5), 25),
+  {"ros": D(ROS_AT, 180, "wide", arms=(70, 70), head=(HT, 0)), "me": D(P_AT, 0, "neutral", arms=(70, 0), head=(-HT, 0))},
   late={"ros": [("L62.3", {"expr": SM})]})
 S("L63", cm((0, -1.4, 0.9), (0, 0.4, 3.2), 22), {})
 # out of hold from here: the pair stands a pace apart along x, her hand-back on my palm between us, the class at the chairs watching
@@ -290,7 +291,7 @@ S("L67", cm((0.0, 3.4, 1.9), (0, -1.2, 1.3), 21),
   walk={"ros": [("L67.4", (-0.6, 0.0), 90, dict(arms=[70, 70], head=[50, 0]))],
         "me": [("L67.4", (0.6, 0.0), -90, dict(arms=[70, 0], head=[-50, 0]))]})
 # the comic feet: the frame is on the shoes alone; my shoe lands on her toe
-S("L68", cm((1.7, -0.2, 0.32), (0, 0.0, 0.12), 28),
+S("L68", cm((1.1, -0.25, 0.5), (0, -0.1, 0.07), 26),
   {"ros": D((0.0, -0.2), 180, "worried", arms=(36, 36)), "me": D((0.0, 0.02), 0, SM, arms=(36, 0), z=0.09)})
 # the same at arm's length: Ros winces and hops, I wince back, the class behind
 S("L68.2", cm((0.0, -3.4, 1.6), (0, 0.0, 1.35), 24),
@@ -300,8 +301,10 @@ S("L68.2", cm((0.0, -3.4, 1.6), (0, 0.0, 1.35), 24),
 CLASS_ROW = {}
 for _i, _n in enumerate(("a1", "a2", "b1", "b2", "c1", "c2", "d1", "d2")):
     CLASS_ROW[_n] = D((-1.75 + 0.5 * _i, -2.1), 180, SM, arms=(70, 70) if _i % 2 else (0, 0))
-S("L69", cm((-3.5, -1.7, 1.7), (-0.2, -0.3, 1.25), 14),
-  {"ros": D((-0.75, 0.8), 0, SM, arms=(40, 0), side=(30, 0)), "me": D((-0.2, 0.0), 0, "worried"), **CLASS_ROW})
+L69_CLASS = {n: D(xy, 180, SM, arms=(70, 70) if i % 2 else (0, 0), head=(0, 0))
+             for i, (n, xy) in enumerate((("c1", (-1.25, -1.7)), ("d2", (-0.55, -1.8)), ("a2", (0.15, -1.7)), ("b1", (0.85, -1.8))))}
+S("L69", cm((1.4, 2.3, 1.8), (-0.45, -0.8, 0.85), 20, (1.3, 2.2, 1.8), (-0.45, -0.8, 0.85), 21),
+  {"ros": D((-0.75, 0.7), 0, SM, arms=(55, 0), side=(10, 0)), "me": D((-0.2, 0.0), 0, "worried"), **L69_CLASS})
 # L70: she straightens my collar (brief), then we both face the class, her hand-back on my palm
 S("L70", cm((0.0, -2.6, 1.55), (0, 0.5, 1.4), 28),
   {"ros": D((-0.4, 0.5), 90, SM, arms=(100, 36)), "me": D((0.4, 0.5), -90, SM, arms=(36, 0)), **class_wall(SM, x=2.2, dy=1.8)},
