@@ -8,8 +8,8 @@ Per the opening recipe (`docs/research/playbook.md`, v1). Re-voice L01, L02, L14
 - **L68 (loop):** "I've got ONE of my own now." It runs straight into the new L01 ("...of my own now. Promises tie knots over your head."), and the warning now lands on my own new knot.
 - **Rule still clear:** L01 says promises tie knots over your head, L03 to L05 show unkept ones still hanging, and L06 says a kept one slips loose.
 - **Quotable line:** L05, "The baker has so many he wears them like a SCARF."
-- **First shot (new S01, under L01):** inside the dome under the warm bulbs, close on Dad's head and shoulders with the big grey knot over him (camera about 2 m, 35 mm), pushing in. On "TIGHT" the knot cinches one turn with the creak (the sound hit). S02 under L02: insert on the knot, matte and hard, the cord's loose end trailing out of frame. The bride and groom shots (old S01, S03, S04) go, since L02 no longer names the wedding. The square wide (old S02) moves to L03 or is cut. Daylight and the montage start at L03.
-- **British words left in other lines (flagged, not changed):** "grey" (L11, L24, L49, L62, a caption spelling only), "turned ROUND" (L35), "took ages" (L41).
+- **Opening (round 4 fix, 2026-11-03):** S01 and S01b under L01, inside the dome under the warm bulbs against a dark backdrop (the roof): Dad sits 3/4 to the camera, head lifted off the eyepiece, both eyes showing, his face high in the frame above the caption band. Over him, 20 cm up a visible cord, hangs a charcoal (#4a4a48) rope knot with three visible loops and two hanging ends. On "TIGHT" it cinches visibly, with a creak and a thud (150 to 1500 Hz, peak about -6 dB). S02 under L02: the push in on the same knot, "one TURN". The bride and groom shots (old S01, S03, S04) are gone, since L02 no longer names the wedding. Daylight and the montage start at L03.
+- **British words left in other lines (flagged, not changed):** "grey" (captions only, now "gray" in L11, L24, L49, L62; the spoken word is unchanged), "took ages" (L41). L35 now reads "turned AROUND" (standards round 4).
 
 **Slug:** `ep37-comet-night` (pitch #21, `stories/ideas.md` → Batch 4 pitches)
 
@@ -77,23 +77,22 @@ Every light change in this story is a slow fade of 1 s or more. Nothing flickers
 
 ## The hits checklist (RULES.md → What the hits do)
 1. **Rule opener:** L01, "Promises tie knots over your head. Don't let one pull TIGHT." (10 words, a warning, redo 2026-11-03.)
-2. **Marker by 2 s:** S01 opens on the bride and groom, faces in frame, sunlit, each with a cord and one bright rose knot above them. S02 shows the whole square with cords over every head.
+2. **Marker by 2 s:** S01 opens on Dad 3/4 to camera in the dome, face above the caption band, with the charcoal rope knot hanging over him on a visible cord; it cinches on TIGHT. S02 pushes in on it.
 3. **Montage (4 examples in the first 15 s since the redo):** "I'll call you" (L03), the tangled friends (L04), the baker's scarf (L05), the kept umbrella and the clapping street (L06 to L07).
 4. **Narrator as the exception:** L08 to L09, no cord at all, in the middle of a square full of them (S08).
 5. **Loved one at stake:** Dad, his knot pulling tighter and his face greyer every night (L14, L22 to L24, L32, L36, L46, L51).
 6. **Climax turns the rule's own logic:** a kept promise slips loose. A saved seat is kept only when someone sits in it (L59). I sit, and the knot slips free. No new magic.
 7. **Twist planted early, last line echoes the first:** plants above. L68 repeats L01's words and adds "I've got ONE now."
-8. **First 2 s read on a phone:** daylight, two faces at 1/5 frame width or more, the knots above them, out of the caption band.
+8. **First 2 s read on a phone:** Dad's face at 1/5 frame width or more, both eyes showing, above the caption band, and a charcoal rope knot with loops and two hanging ends against the dark roof above him.
 9. **Cut often:** 78 shots over about 2:19, about 1.8 s a shot.
 - **Seconds 15 to 30:** L08 to L16. The rule is at work on screen: S12 and S13 show Dad's grey knot cinching a turn tighter (with the creak) while L10 to L13 play, and S16 shows it again as Mum's line lands. Nobody explains the rule.
 
 ## Shot plan
 | Shot | Line | Picture |
 |---|---|---|
-| S01 | L01 | Sunny square, the bride and groom on the steps, two-shot at chest height, each with a cord and one bright rose knot bobbing over them. Faces big, out of the caption band. |
-| S02 | L01 | High wide of the square: cords bobbing over every head in the crowd. |
-| S03 | L02 | Close on the groom's cord as his one new knot settles and glows. The bride laughing beside him. |
-| S04 | L02 | The guests on the steps, their own old dull knots, clapping (cut in mid-clap, no hands touching). |
+| S01 | L01 | Dome interior, warm bulbs, a dark backdrop: Dad 3/4 to camera, head up, both eyes showing, face above the caption band. Over his head, 20 cm up on a visible cord, the charcoal rope knot with three loops and two hanging ends. Pushes in. |
+| S01b | L01.2 | The same, closer; the knot cinches on TIGHT with a creak and a thud. |
+| S02 | L02 | Push in on the knot, "one TURN". |
 | S05 | L03 | The "I'll call you" man alone at a café table, a blank-backed phone face down, one dull knot sagging over him. |
 | S06 | L04 | Two old friends on a bench, their two cords twisted into one between their heads. |
 | S07 | L05 | The baker in a flour-white apron, beaming, a wad of cords wound round his neck like a scarf, knots glowing in it. |
@@ -170,7 +169,7 @@ Every light change in this story is a slow fade of 1 s or more. Nothing flickers
 | S78 | L68 | The ending: two chairs under the dome, both full, no knot over Dad, one new knot over me, pink dawn cloud. Cut on "ONE now." back to S01. |
 
 ## The last 15 seconds turn the first line
-"In this town, every promise you make ties a knot over your head" opens on a square full of debts: the call never made, the baker's scarf, Dad's grey knot that I took for the promise he broke. L56 to L62 show the grey knot was the one promise kept every August for ten years, waiting for me to sit down. The loop drops back to the square, and on a second watch every bobbing knot reads as someone still keeping a promise, the first line sounds hopeful, and the narrator with no knots is the sad one. Rewatch plants: the cord's loose end running down to my door (S12, S19), and the only clean chair in a dusty dome (S23, S24, "dusty stool" in L21).
+"In this town, every promise you make ties a knot over your head" opens on Dad's charcoal knot, then a square full of debts: the call never made, the baker's scarf, Dad's grey knot that I took for the promise he broke. L56 to L62 show the grey knot was the one promise kept every August for ten years, waiting for me to sit down. The loop drops back to the square, and on a second watch every bobbing knot reads as someone still keeping a promise, the first line sounds hopeful, and the narrator with no knots is the sad one. Rewatch plants: the cord's loose end running down to my door (S12, S19), and the only clean chair in a dusty dome (S23, S24, "dusty stool" in L21).
 
 ## Lore connection (one)
 Two short verdigris-green strokes scratched into the brass collar of the telescope (S75, under L65, "He slid the eyepiece cap across to me"), held 1.6 s, never narrated. In the canon (`stories/lore.md`) it's a plain tally: the dome was built for two, the man with the hole is a Keeper who stood in the empty second place, and its strokes are in its own colour. No extra stroke. It touches no open thread.
@@ -188,7 +187,7 @@ L07. And the whole street CLAPS.
 L08. Me? I don't have a single KNOT.
 L09. I don't make PROMISES.
 L10. My dad has the oldest knot in TOWN.
-L11. Grey and hard, and ten years OLD.
+L11. Gray and hard, and ten years OLD.
 L12. I always figured it was one he BROKE.
 L13. Something he promised me when he moved OUT.
 L14. This August, Mom said it had started pulling TIGHT.
@@ -201,7 +200,7 @@ L20. Two chairs still sat by the eyepiece. His, and the one I used to SIT in.
 L21. I took the dusty stool by the WALL.
 L22. At midnight, his knot gave a long, slow CREAK.
 L23. And pulled one turn TIGHTER.
-L24. Dad rubbed his eyes. His face looked GREY under it.
+L24. Dad rubbed his eyes. His face looked GRAY under it.
 L25. That's when I saw someone by the dome DOOR.
 L26. A man in a long green coat with brass BUTTONS.
 L27. With a square hole clean through his CHEST.
@@ -212,7 +211,7 @@ L31. I looked at Dad, and the doorway was EMPTY.
 L32. Night two, the knot creaked again. Dad's hair had gone PALER.
 L33. The man stood by the star charts. CLOSER.
 L34. Facing the telescope, the sky showing through his CHEST.
-L35. Dad never turned ROUND.
+L35. Dad never turned AROUND.
 L36. Night three, the knot was so tight the cord stood STRAIGHT.
 L37. Dad fell asleep sitting UP.
 L38. And the man stood right behind the second chair. MY chair.
@@ -226,7 +225,7 @@ L45. I couldn't even BREATHE.
 L46. When the lights crept back, he was gone. Dad's knot was TIGHTER.
 L47. I watched that door till DAWN.
 L48. The final night, CLOUD rolled in.
-L49. Thick and grey, right across the SLIT.
+L49. Thick and gray, right across the SLIT.
 L50. Not one falling star got THROUGH.
 L51. Dad just stared up. His knot creaked so hard I heard it from the WALL.
 L52. I thought that was IT. Whatever he'd waited for wasn't COMING.
@@ -239,7 +238,7 @@ L58. He'd kept that promise every single YEAR.
 L59. And a saved seat isn't kept until somebody SITS in it.
 L60. So I sat DOWN. Before the man COULD.
 L61. The lights came back up. The man was GONE.
-L62. Over Dad's head, the grey knot loosened, and slipped FREE.
+L62. Over Dad's head, the gray knot loosened, and slipped FREE.
 L63. A little puff of light, under a sky with no STARS.
 L64. I looked at him and said, "Hi, DAD."
 L65. He slid the eyepiece cap across to me, like he used to.

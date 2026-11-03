@@ -144,8 +144,9 @@ def ref(lid, half=False, k=None):
 DOORSTEP = [HX, 1.3, 0.12]
 SQ = "day"
 SHOTS = [
-    ("S01", None, "dome", c([0, D(1.3, 1.5, 1.5), D(-0.5, -0.42, 1.42), 28], [1, D(0.9, 1.0, 1.48), D(-0.5, -0.45, 1.42), 38]), 4),
-    ("S02", "L02", "dome", c([0, D(-0.95, 0.15, 1.75), D(-0.45, -0.52, 1.74), 38], [1, D(-0.7, -0.15, 1.76), D(-0.45, -0.52, 1.76), 38]), 4),
+    ("S01", None, "dome", c([0, D(0.95, 1.1, 1.62), D(-0.5, -0.55, 1.5), 27], [1, D(0.8, 0.95, 1.62), D(-0.5, -0.55, 1.52), 30]), 4),
+    ("S01b", "L01.2", "dome", c([0, D(0.8, 0.95, 1.62), D(-0.5, -0.55, 1.52), 30], [1, D(0.6, 0.7, 1.64), D(-0.5, -0.55, 1.58), 37]), 4),
+    ("S02", "L02", "dome", c([0, D(0.5, 0.6, 1.66), D(-0.5, -0.55, 1.62), 38], [1, D(0.2, 0.15, 1.72), D(-0.5, -0.55, 1.7), 40]), 4),
     ("S05", "L03", SQ, still([11.0, -2.6, 1.55], [9.3, -1.0, 1.35], 24), 4),
     ("S06", "L04", SQ, still([-5.7, -1.1, 1.5], [-8.5, -1.1, 1.35], 17), 4),
     ("S07", "L05", SQ, still([3.7, -0.2, 1.55], [3.5, 2.5, 1.45], 26), 4),
@@ -219,8 +220,31 @@ SHOTS = [
     ("S75", ref("L65", k=1), "dome", still(D(0.7, 0.65, 1.9), D(-0.27, 0.654, 1.87), 28), 4),
     ("S76", "L66", "dome", still(D(0.15, 1.6, 1.45), D(0.15, -0.55, 1.45), 16), 4),
     ("S77", "L67", "dome", still(D(1.4, 0.6, 1.45), D(0.75, -0.55, 1.4), 28), 4),
-    ("S78", "L68", "dome", still(D(0.15, 1.9, 1.5), D(0.15, -0.55, 1.5), 22), 4),
+    ("S78", "L68", "dome", still(D(0.15, 2.3, 1.5), D(0.15, -0.55, 1.5), 17), 4),
 ]
+
+# splitting a shot at a chunk break (pace: under a quarter of the runtime in shots over 2 s): the second piece is a
+# punch-in toward the target (the face), same angle. id -> (chunk index to cut at, how far to dolly in, lens multiple)
+SPLITS = {"S61": (2, 0.3, 1.2), "S71": (2, 0.25, 1.25), "S28": (2, 0.3, 1.3), "S36": (2, 0.3, 1.25), "S64": (3, 0.3, 1.2),
+          "S76": (1, 0.3, 1.25), "S68": (2, 0.3, 1.2), "S63": (2, 0.3, 1.2), "S35": (2, 0.25, 1.2), "S38": (2, 0.3, 1.2),
+          "S21": (2, 0.3, 1.25), "S70": (2, 0.3, 1.2), "S05": (2, 0.3, 1.2), "S16": (2, 0.3, 1.25), "S47": (1, 0.3, 1.2)}
+
+
+def split_shots(shots):
+    out = []
+    for sid, at, scene, cam, step in shots:
+        out.append((sid, at, scene, cam, step))
+        if sid == "S19":
+            out.append(("S19b", "L16.2", scene, move(([HX + 10, -2, 3.5], [HX, 42, 6.5]), ([HX + 7, 1, 3.8], [HX, 42, 6.5]), 34, 40), step))
+        elif sid in SPLITS:
+            k, dolly, lm = SPLITS[sid]
+            _, loc, tgt, lens = cam[0]
+            nl = [loc[i] + dolly * (tgt[i] - loc[i]) for i in range(3)]
+            out.append((sid + "b", f"{at.split('.')[0]}.{k}", scene, still(nl, tgt, lens * lm), step))
+    return out
+
+
+SHOTS = split_shots(SHOTS)
 def drift(sid, cam, n):
     """No shot stays still: a lone key becomes a slow push-in (8% of the way to its target) or a gentle sideways drift."""
     if len(cam) != 1 or sid == "S20":
@@ -287,13 +311,15 @@ put("c6", 0, [1.9, -1.6, 0], 0, "smirk")
 put("c7", 0, [-0.9, -3.8, 0], 0, "neutral")
 put("c8", 0, [4.6, -2.0, 0], 0, "grin")
 put("mum", 0, [HX + 16, 1.6, 0], 180, "worried", head=[0, -8])
-put("dad", 0, D(-0.45, -0.58, SITZ), 180, "tired", sit=True, lean=10)
+put("dad", 0, D(-0.45, -0.58, SITZ), 150, "tired", sit=True, lean=0, head=[0, 0])
 put("me", 0, [0, -2.2, 0], 0, "neutral", hidden=True)
 
 # claps (S04 on L02, S09 on L07): hands apart, never touching
 for who in ("c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "bride", "groom", "baker"):
     key(who, "L07", arms=[82, 82], side=[-14, -14], blend=0.1)
     key(who, "L08", arms=[0, 0], side=[0, 0], blend=0.3)
+# the opening ends: Dad turns back to the eyepiece as the montage starts (the cut hides it)
+key("dad", "L03", yaw=180, lean=10, head=[0, 0], blend=0.2)
 # the umbrella handover: the lender's knot lets go
 key("lender", "L06", expr="grin")
 # me in the square
@@ -375,7 +401,8 @@ cue("hair", "L56", who="dad", color="#2e2a28")
 cue("hair", "L57", who="dad", color="#c4c4c0")
 # Dad's knot: smaller and harder each night, a faint glow when new (the memory), loosening at L62
 cue("knot", 0, who="dad", i=0, scale=1.75, glow=0.0, rot=0)       # the opening: a big grey knot over Dad, close
-cue("knot", "L01.3", who="dad", i=0, scale=1.4, rot=90, dur=0.45)  # it cinches one turn on "TIGHT"
+cue("knot", "L01.3", who="dad", i=0, scale=1.4, rot=90, dur=0.45)  # (the opening's charcoal rope knot cinches on "TIGHT": set.py)
+cue("ropecinch", "L01.3")
 cue("knot", "L03", who="dad", i=0, scale=1.0, rot=0, dur=0.0)
 cue("knot", "L11", who="dad", i=0, scale=0.93, dur=0.7)
 cue("knot", "L13", who="dad", i=0, scale=1.3, glow=1.3, dur=0.0)
@@ -413,7 +440,7 @@ cue("cloud", "L66", pink=1.0, dur=8.0)
 # the dome's bulbs fade over 2 s, never a switch
 cue("dome", 0, bulbs=1.0)
 cue("dome", "L40", bulbs=0.0, dur=2.0)
-cue("dome", "L46", bulbs=1.0, dur=2.0)
+cue("dome", "L46", bulbs=1.0, dur=3.6)   # slower: the lights coming back (S53) sat at the flash bar
 cue("dome", "L53", bulbs=0.0, dur=2.0)
 cue("dome", "L61", bulbs=1.0, dur=2.0)
 # the man with the hole
@@ -435,8 +462,8 @@ cue("streak", ref("L44", True), dur=1.5)
 # ---------------------------------------------------------------------------------------------------- fx and sound
 fx = []
 sfx = [
-    {"at": "L01.3", "kind": "creak", "db": -9, "dur": 1.5},                   # the knot cinches on TIGHT
-    {"at": "L01.3", "kind": "thud", "db": -20},
+    {"at": "L01.3-0.25", "kind": "creak", "db": -8, "dur": 0.5, "band": [150, 1500], "peak": True},   # the knot cinches on TIGHT:
+    {"at": "L01.3", "kind": "thud", "db": -6, "band": [150, 1500], "peak": True},                      # a creak and a thud a phone plays
     {"at": "L02", "kind": "whoosh", "db": -28, "dur": 0.8},                   # the push to the insert
     {"at": "L02.1", "kind": "creak", "db": -16, "dur": 0.9},                  # one TURN
     {"at": "L03", "kind": "whoosh", "db": -22, "dur": 0.9},                   # cut to the square

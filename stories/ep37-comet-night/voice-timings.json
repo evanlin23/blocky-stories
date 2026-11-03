@@ -862,7 +862,7 @@
    ]
   },
   "L35": {
-   "text": "Dad never turned round.",
+   "text": "Dad never turned around.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -873,10 +873,10 @@
    "chunks": [
     [
      0.172,
-     0.793
+     0.776
     ],
     [
-     0.793,
+     0.776,
      1.328
     ]
    ]

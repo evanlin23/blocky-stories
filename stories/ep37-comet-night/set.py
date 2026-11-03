@@ -302,12 +302,14 @@ def materials(kit, wd: Path):
     M["white"] = kit.grime("#ddd7c6", 0.78, 2.5, name="house white")
     M["cord"] = kit.plastic("#e6dfd0", 0.8, name="cord pale")
     M["cord_grey"] = kit.plastic("#a6a6a2", 0.9, name="cord grey")
+    M["rope"] = kit.plastic("#4a4a48", 0.85, name="rope charcoal")
+    M["backdrop"] = kit.plastic("#12141a", 0.95, name="opening backdrop")
     M["coat"] = kit.grime("#35705c", 0.55, 9.0, name="coat green")
     M["coat_dk"] = kit.plastic("#2c5e4d", 0.7, name="coat dark")
     M["kskin"] = kit.plastic("#4d7f69", 0.6, name="keeper skin")
     M["ktrou"] = kit.plastic("#2d5c4a", 0.7, name="keeper trousers")
     M["kboot"] = kit.plastic("#171b19", 0.5, name="keeper boots")
-    M["lens"] = glow_mat(kit, "lens ring", "#b8903e", 0.7)
+    M["lens"] = glow_mat(kit, "lens ring", "#3a4452", 0.25)
     M["black"] = kit.plastic("#050506", 0.2, name="lens black")
     M["hole"] = hole_mat(kit)
     M["glint"] = glow_mat(kit, "glint", "#f0f6ff", 9.0)
@@ -695,9 +697,9 @@ def build_keeper(kit, ctx, M):
     box(kit, "khead", (0.27, 0.26, 0.36), (0, 0, 0.18), M["kskin"], neck, bevel=0.07)
     # two lens-ring eyes, set a little too far apart, one cold highlight each; no mouth, no brows
     for sx in (-1, 1):
-        kit.cyl(f"kring{sx}", 0.054, 0.02, (sx * 0.1, -0.135, 0.2), M["lens"], neck, rot=(math.pi / 2, 0, 0), n=24)
-        kit.cyl(f"kpupil{sx}", 0.046, 0.024, (sx * 0.1, -0.14, 0.2), M["black"], neck, rot=(math.pi / 2, 0, 0), n=24)
-        kit.sphere(f"kglint{sx}", 0.008, (sx * 0.1 + 0.014, -0.156, 0.216), M["glint"], neck, seg=8)
+        kit.cyl(f"kring{sx}", 0.04, 0.02, (sx * 0.1, -0.135, 0.2), M["lens"], neck, rot=(math.pi / 2, 0, 0), n=24)
+        kit.cyl(f"kpupil{sx}", 0.034, 0.024, (sx * 0.1, -0.14, 0.2), M["black"], neck, rot=(math.pi / 2, 0, 0), n=24)
+        kit.sphere(f"kglint{sx}", 0.0055, (sx * 0.1 + 0.011, -0.156, 0.212), M["glint"], neck, seg=8)
     ctx["keeper"] = k
 
 
@@ -769,6 +771,75 @@ def build_cords(kit, story, ctx, M):
 # ------------------------------------------------------------------------------------------------ build
 
 
+def build_open_rope(kit, ctx, M):
+    """The opening's knot (S01, S02): charcoal rope over Dad, lifted on a visible cord, three loops, two hanging ends,
+    in front of a dark backdrop (the dome's roof). Placed per frame by place_open_rope."""
+    ctx["orope"] = {
+        "cord": [kit.box(f"orope.cord{i}", (1, 1, 1), (0, 0, 0), M["rope"]) for i in range(4)],
+        "rings": [[kit.box(f"orope.ring{j}.{i}", (1, 1, 1), (0, 0, 0), M["rope"]) for i in range(14)] for j in range(3)],
+        "ends": [[kit.box(f"orope.end{j}.{i}", (1, 1, 1), (0, 0, 0), M["rope"]) for i in range(6)] for j in range(2)],
+        "core": kit.box("orope.core", (0.07, 0.07, 0.07), (0, 0, 0), M["rope"], bevel=0.02),
+    }
+    ctx["orope"]["all"] = (ctx["orope"]["cord"] + [o for r in ctx["orope"]["rings"] for o in r]
+                           + [o for r in ctx["orope"]["ends"] for o in r] + [ctx["orope"]["core"]])
+    ctx["backdrop"] = box(kit, "opening backdrop", (5.0, 0.05, 3.4), D(-0.45 - 0.62 * 1.1, -0.58 - 0.79 * 1.1, 1.7), M["backdrop"],
+                          rot=(0, 0, math.radians(141.7)))
+
+
+def _lap(ob):
+    ob.scale = (ob.scale[0], ob.scale[1], ob.scale[2] * 1.2)
+
+
+def place_open_rope(ctx, tl, t, top, cam, on):
+    o = ctx["orope"]
+    for ob in o["all"]:
+        ob.hide_render = not on
+    ctx["backdrop"].hide_render = not on
+    for nm in ("eyepiece tube", "eyepiece cap"):
+        ob = bpy.data.objects.get(nm)
+        if ob is not None:
+            ob.hide_render = on
+    if not on or top is None:
+        return
+    cs = _last(_cues(tl, "ropecinch"), t)
+    cin = _ss((t - cs["t"]) / 0.3) if cs is not None else 0.0
+    f = V((top.x - cam.x, top.y - cam.y, 0.0))
+    f = f.normalized() if f.length > 1e-4 else V((0, -1, 0))
+    r = V((f.y, -f.x, 0.0))
+    up = V((0, 0, 1))
+    K = top + up * (0.28 - 0.03 * cin)
+    jig = 0.004 * math.sin(t * 40.0) * max(0.0, 1 - (t - (cs["t"] if cs else 0)) / 0.6) * cin
+    K = K + up * jig
+    # the cord from the head to the knot, a little slack in it
+    base0 = top - up * 0.15      # down to the hair, so the cord is seen holding the knot up
+    pts = [base0.lerp(K, u) + r * (0.012 * math.sin(math.pi * u) * (1 - cin)) for u in (0, 0.33, 0.66)] + [K - up * 0.05]
+    seg_between(o["cord"][0], base0, K, 0.034)       # one straight piece: no joints to show a gap
+    for ob in o["cord"][1:]:
+        ob.hide_render = True
+    R = 0.1 * (1 - 0.3 * cin)
+    th = 0.04
+    sets = [(r * -0.07, r, up, 0.0), (r * 0.07, r * 0.8 + f * 0.6, up, 0.0), (V((0, 0, 0)), f, up * 0.9 + r * 0.4, 0.0)]
+    for ring, (ctr, ax, ay, _) in zip(o["rings"], sets):
+        ax = ax.normalized()
+        ay = ay.normalized()
+        n = len(ring)
+        P = [K + ctr + ax * (R * 1.05 * math.cos(2 * math.pi * i / n)) + ay * (R * 0.85 * math.sin(2 * math.pi * i / n)) for i in range(n + 1)]
+        for i, ob in enumerate(ring):
+            seg_between(ob, P[i], P[i + 1], th)
+    for ob in o["cord"] + [x for rg in o["rings"] for x in rg] + [x for en in o["ends"] for x in en]:
+        if not ob.hide_render:
+            _lap(ob)
+    o["core"].location = K
+    o["core"].scale = (1.45 + 0.2 * cin,) * 3
+    # the hanging ends
+    for j, sg in enumerate((-1, 1)):
+        base = K + r * (0.04 * sg) + up * -0.07
+        ln = 0.22 + 0.06 * cin
+        pts_ = [base + r * (0.05 * sg * (k / 6) ** 1.2 + 0.012 * sg * math.sin(t * 3 + j)) * (1 - 0.3 * cin) + up * (-ln * k / 6) for k in range(7)]
+        for i, ob in enumerate(o["ends"][j]):
+            seg_between(ob, pts_[i], pts_[i + 1], 0.03 - 0.004 * i)
+
+
 def build(kit, story, tl):
     ctx = {"story": story, "shots": {s["id"]: s for s in story["shots"]}}
     wd = workdir(tl)
@@ -779,6 +850,7 @@ def build(kit, story, tl):
     build_dome(kit, ctx, M)
     build_keeper(kit, ctx, M)
     build_cords(kit, story, ctx, M)
+    build_open_rope(kit, ctx, M)
     # lights: the sun by scene, a dusk sun, a moon, the house windows, the dome's own
     sun = kit.light("sun_day", "SUN", (0, 0, 20), 3.6, "#fff0d4", rot=(math.radians(52), 0, math.radians(30)))
     sun.data.angle = math.radians(2.0)
@@ -916,18 +988,18 @@ def animate(kit, story, tl, t, ctx):
             M["streak"].node_tree.nodes["E"].inputs["Strength"].default_value = 9.0 * math.sin(math.pi * u) ** 0.6
     # the dome's lights: bulbs ease; the red lamp is always on (low) in the dome
     bulbs = _eased(_cues(tl, "dome"), "bulbs", t, 1.0)
-    M["bulb"].node_tree.nodes["E"].inputs["Strength"].default_value = 0.6 + 1.2 * bulbs
+    M["bulb"].node_tree.nodes["E"].inputs["Strength"].default_value = 0.6 + 2.4 * bulbs
     gains = {}
     for nm, d in LIGHT_SCENES.items():
         gains[nm] = d.get(sc, 0.0)
     for i in range(4):
-        gains[f"bulb{i}"] = (bulbs * 0.04 + 0.02) if sc == "dome" else 0.0
+        gains[f"bulb{i}"] = (bulbs * 0.09 + 0.02) if sc == "dome" else 0.0
     gains["red"] = (1.0 + 1.2 * (1.0 - bulbs)) if sc == "dome" else 0.0
     gains["red2"] = (1.0 + 1.4 * (1.0 - bulbs)) if sc == "dome" else 0.0
     kit.LIGHTS["rim"]["light"].color = tuple(V((0.49, 0.62, 1.0)).lerp(V((1.0, 0.7, 0.72)), pink))
     gains["rim"] = (0.3 + 0.6 * (1.0 - bulbs)) if sc == "dome" else 0.0
-    gains["fill"] = (0.5 * bulbs + 0.5) if sc == "dome" else 0.0
-    sid = spec["id"]
+    gains["fill"] = (1.0 * bulbs + 0.5) if sc == "dome" else 0.0
+    sid = spec["id"].rstrip("b")      # S28b is the second piece of S28
     kshot = sid in ("S30", "S31", "S32", "S33", "S34", "S48", "S63")
     if kshot:      # the creature reads as a person, not a robot: one side key, no fill, only the eyes and the hole bright
         gains["fill"] = 0.0
@@ -971,6 +1043,12 @@ def animate(kit, story, tl, t, ctx):
     loc, tgt, lens, roll = bl_story.cam_at(spec, shot, t, None, tl)
     cam = V(loc)
     place_cords(kit, tl, ctx, t, cam, M)
+    opening = sid in ("S01", "S02")
+    if opening:      # the opening's own rope stands in for Dad's cord
+        dc = ctx["cords"]["dad"]
+        for ob in dc["segs"] + [k["ob"] for k in dc["knots"]] + dc["tail"]:
+            ob.hide_render = True
+    place_open_rope(ctx, tl, t, _head_top("dad") if opening else None, cam, opening)
     return gains
 
 

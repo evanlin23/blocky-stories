@@ -627,6 +627,18 @@ def knock_hit(tone: str, seed: int = 0) -> np.ndarray:
 
 
 def sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) -> np.ndarray:
+    """One sound effect, plus two opt-in options (ep37): `"band": [lo, hi]` keeps only that band (Hz), so a hit
+    plays on a phone speaker, and `"peak": true` scales the result to a peak of 1.0, so its `db` is its peak level."""
+    y = _sfx(kind, seed, dur, opts)
+    o = opts or {}
+    if o.get("band"):
+        y = fft_filter(y, "band", float(o["band"][0]), float(o["band"][1]))
+    if o.get("peak"):
+        y = y / max(float(np.abs(y).max()), 1e-9)
+    return y
+
+
+def _sfx(kind: str, seed: int = 0, dur: float = 1.0, opts: dict | None = None) -> np.ndarray:
     """One sound effect. door, creak, latch, whoosh and thud play a recording from assets/audio/sfx/ when there
     is one (at the synthesized sound's level); `"synth": true` on the entry, or an option that changes the sound
     (a creak's "tone"), keeps the synthesized one."""
