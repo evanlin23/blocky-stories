@@ -242,7 +242,7 @@ fillrows("blue", 0, "lilac", 2)
 write("blue", 0.05, "lilac", dur=2.0, to=1.0)
 write("blue", "L02", "lilac", dur=2.2, to=1.0)
 
-S(0, MV((-1.05, 1.5, 1.05), (-0.4, 1.5, 0.78), (-0.9, 1.5, 0.95), (-0.38, 1.5, 0.78), 30), hand=0.0, note="macro push on the open blue diary, lilac ink crawling")
+S(0, MV((-0.85, 1.5, 0.95), (-0.38, 1.46, 0.79), (-0.72, 1.5, 0.87), (-0.37, 1.45, 0.79), 36), hand=0.0, note="macro push on the open blue diary, lilac ink crawling")
 S("L02", MV((0.8, 2.0, 1.5), (-1.25, 1.5, 1.33), (0.5, 1.8, 1.45), (-1.25, 1.5, 1.33), 26),
   who={"me": sit_me("worried", head=[0, 6])}, look={"cutwall": True},
   note="me at the desk, guilty, glancing at the camera as if caught")
@@ -306,7 +306,7 @@ openb("blue", "L10", 0.0, 0.01)
 place("blue", "L10", "desk")
 openb("blue", "L10+0.3", 1.0, 0.7)
 write("blue", "L10.2", "lilac", dur=1.2, to=1.0, tag="a")
-S("L10", MV((-1.205, 1.43, 1.35), (-0.365, 1.43, 0.79), (-0.905, 1.43, 1.15), (-0.365, 1.43, 0.79), 34),
+S("L10", MV((-0.9, 2.0, 1.35), (-0.46, 1.5, 0.8), (-0.75, 1.8, 1.15), (-0.46, 1.5, 0.8), 30),
   who={"me": sit_me("worried")}, look={"cutwall": False},
   note="the blue diary on my desk, falling open by itself, a line of lilac ink appearing")
 S("L10.2", MV((-0.905, 1.43, 1.2), (-0.365, 1.43, 0.79), (-0.755, 1.43, 1.0), (-0.365, 1.43, 0.79), 36), hand=0.0,
@@ -339,13 +339,13 @@ S("L17", MV((-0.905, 1.03, 1.0), (-0.365, 1.43, 0.79), (-0.755, 1.23, 0.95), (-0
   who={"me": sit_me("worried", head=[0, 18])},
   note="me turning the page anyway")
 cue("L18", "pen", d="blue", on=1)
-S("L18", MV((-0.9, 1.3, 1.0), (-0.46, 1.5, 0.82), (-0.76, 1.36, 0.92), (-0.46, 1.5, 0.82), 45), hand=0.0,
+S("L18", MV((-0.45, 0.8, 0.98), (-0.365, 1.43, 0.79), (-0.42, 0.9, 0.9), (-0.365, 1.43, 0.79), 36), hand=0.0,
   note="my blue pen over the page")
 write("blue", "L19", "blue", dur=1.5, to=1.0, tag="mine1")
-S("L19", MV((-0.705, 1.43, 0.98), (-0.365, 1.43, 0.79), (-0.565, 1.43, 0.9), (-0.365, 1.43, 0.79), 36), hand=0.0,
+S("L19", MV((-0.45, 0.85, 0.95), (-0.365, 1.43, 0.79), (-0.4, 0.95, 0.88), (-0.365, 1.43, 0.79), 36), hand=0.0,
   note="my blue line appearing under hers")
 cue("L20", "pen", d="blue", on=0)
-S("L20", MV((-0.625, 1.39, 0.9), (-0.365, 1.43, 0.79), (-0.505, 1.39, 0.86), (-0.365, 1.43, 0.79), 36), hand=0.0,
+S("L20", MV((-0.42, 0.9, 0.9), (-0.365, 1.43, 0.79), (-0.38, 0.98, 0.86), (-0.365, 1.43, 0.79), 40), hand=0.0,
   note="close on my short blue line")
 # P01: the 0.6 s drop; the page, nothing moving
 S("P01", MV((-0.705, 1.43, 1.05), (-0.365, 1.43, 0.79), (-0.605, 1.43, 0.98), (-0.365, 1.43, 0.79), 36), hand=0.0,
@@ -396,7 +396,7 @@ S("L27", MV((0.7, 1.9, 1.45), (-1.25, 1.5, 1.3), (0.45, 1.7, 1.4), (-1.25, 1.5, 
   note="lilac ink filling a line fast. Me curious")
 S("L27.1", MV((-0.685, 1.48, 0.95), (-0.365, 1.43, 0.79), (-0.525, 1.45, 0.88), (-0.365, 1.43, 0.79), 36), hand=0.0,
   note="only FAMILY would know: the line")
-cue("L28", "mydoor", to=70, dur=0.5)
+cue("L28", "mydoor", to=110, dur=0.5)
 place("blue", "L28", "nightstand")
 S("L28", MV((-3.4, 2.4, 1.4), (-1.3, 3.8, 0.8), (-3.0, 2.5, 1.35), (-1.3, 3.8, 0.8), 30),
   who={"me": (X(-2.05, 3.8, 0.83), -90, "squeeze", {"lean": -90, "blink": False}),
@@ -416,7 +416,7 @@ S("L30", MV((-0.705, 1.43, 0.98), (-0.365, 1.43, 0.79), (-0.545, 1.43, 0.9), (-0
   note="Thursday: lilac ink, bigger letters")
 cue("L31", "pen", d="blue", on=1)
 write("blue", "L31.1", "blue", dur=0.7, to=1.0, size=1.2)
-S("L31", MV((-0.685, 1.23, 0.96), (-0.365, 1.43, 0.79), (-0.525, 1.27, 0.9), (-0.365, 1.43, 0.79), 36), hand=0.0,
+S("L31", MV((-0.45, 0.85, 0.95), (-0.365, 1.43, 0.79), (-0.4, 0.95, 0.88), (-0.365, 1.43, 0.79), 36), hand=0.0,
   note="my blue line, fast")
 cue("L31>", "pen", d="blue", on=0)
 
@@ -449,14 +449,14 @@ cue("L37", "answer")
 cue("L37", "clock", h=0, m=0)
 write("blue", "L37.1", "lilac", dur=0.8, to=1.0, shake=0.003)
 write("blue", "L37.3", "lilac", dur=0.8, to=1.0, shake=0.004)
-S("L37", MV((-0.55, 0.7, 1.0), (-0.45, 0.5, 0.78), (-0.5, 0.78, 0.98), (-0.45, 0.5, 0.78), 36),
+S("L37", MV((-0.5, 1.9, 0.82), (-0.31, 2.72, 0.6), (-0.45, 2.0, 0.78), (-0.31, 2.72, 0.6), 40),
   look={"cutwall": False},
   note="the clock glyph on my nightstand at 12:00")
 S("L37.2", MV((-0.705, 1.43, 1.0), (-0.365, 1.43, 0.79), (-0.525, 1.43, 0.9), (-0.365, 1.43, 0.79), 36), hand=0.0,
   note="lilac ink racing across the page")
-cue("L38", "mydoor", to=18, dur=0.5)
+cue("L38", "mydoor", to=60, dur=0.5)
 cue("L38", "lamp", n="n1", to=1.0, dur=0.4)
-S("L38", MV((-1.75, 0.55, 1.3), (1.6, -1.4, 1.0), (-1.7, 0.4, 1.28), (1.6, -1.4, 1.0), 30),
+S("L38", MV((-1.9, -1.0, 1.3), (1.6, -0.1, 0.9), (-1.8, -1.0, 1.28), (1.6, -0.1, 0.9), 26),
   look={"cutwall": False},
   note="my door ajar: down the hall, a warm lamp clicking on under Nina's door")
 
@@ -471,8 +471,8 @@ S("L40", MV((-2.9, -1.7, 1.2), (0.0, -0.5, 1.0), (-2.2, -1.7, 1.2), (0.6, -0.5, 
   who={"me": (X(-1.1, -0.85), 0, "scared", {"arms": [70, 70]})},
   note="me crossing the hall in socks")
 raw("me", "L40+0.3", pos=[1.0, -0.6], yaw=90, arms=[70, 70])
-cue("L41", "ndoor", to=7, dur=0.3)
-S("L41", MV((1.5, -1.0, 1.35), (1.78, -0.1, 1.2), (1.58, -0.8, 1.3), (1.78, -0.1, 1.2), 34),
+cue("L41", "ndoor", to=40, dur=0.3)
+S("L41", MV((1.0, -0.8, 1.4), (1.5, 1.5, 1.2), (1.0, -0.6, 1.4), (1.5, 1.5, 1.2), 30),
   who={"me": (X(1.0, -0.6), 90, "scared", {"arms": [70, 70]})},
   look={"cutwall": False},
   note="her door open an inch, lamplight in the gap")
@@ -481,7 +481,7 @@ place("lilac", "L42", "ndesk")
 openb("lilac", "L42", 1.0, 0.05)
 cue("L42", "pen", d="lilac", on=1)
 write("lilac", "L42", "lilac", dur=2.5, to=1.0)
-S("L42", MV((1.64, -0.1, 1.45), (1.2, 1.5, 1.2), (1.62, 0.0, 1.45), (1.2, 1.5, 1.2), 30),
+S("L42", MV((1.0, -0.7, 1.45), (1.4, 1.5, 1.25), (1.0, -0.5, 1.45), (1.4, 1.5, 1.25), 30),
   who={"nina": sit_ni("terrified", head=[0, 14])},
   note="through the gap: Nina at her desk, the lilac diary open")
 cue("L43", "lamp", n="n3", to=1.0, dur=0.4)
@@ -498,12 +498,12 @@ S("L46", MV((1.855, 1.82, 1.7), (0.365, 1.57, 0.79), (1.605, 1.72, 1.45), (0.365
   who={"nina": sit_ni("terrified", head=[0, 24])},
   note="over her shoulder: her pen moving")
 write("lilac", "L47", "lilac", dur=1.3, to=1.0, tag="who")
-S("L47", MV((0.685, 1.57, 0.98), (0.365, 1.57, 0.79), (0.525, 1.57, 0.9), (0.365, 1.57, 0.79), 36), hand=0.0,
+S("L47", MV((0.45, 2.05, 0.95), (0.365, 1.57, 0.79), (0.4, 1.95, 0.88), (0.365, 1.57, 0.79), 36), hand=0.0,
   note="her lilac line close")
 write("blue", "L48", "lilac", dur=1.3, to=1.0, tag="who")
 cue("L48", "hud2", to=1, dur=0.5)
 cue("L48+1.3", "pen", d="lilac", on=0)
-S("L48", MV((-1.2, 3.0, 1.4), (-1.6, 0.0, 1.2), (-1.1, 2.2, 1.3), (-1.6, 0.0, 1.2), 32),
+S("L48", MV((-0.6, 2.0, 1.45), (-1.6, 0.1, 1.2), (-0.7, 1.8, 1.4), (-1.6, 0.1, 1.2), 28),
   who={"me": (X(-1.6, 0.1), 180, "wide", {"arms": [70, 70]})},
   look={"cutwall": False},
   note="the blue diary in my hands, the same line crawling across it. Both insets now")
@@ -555,13 +555,14 @@ S("L53", MV((-0.7, 1.7, 1.45), (1.25, 1.5, 1.3), (-0.4, 1.6, 1.4), (1.25, 1.5, 1
   note="Nina, earlier, at her desk reading, scared")
 cue("L54", "pen", d="blue", on=1)
 cue("L54", "pen", d="lilac", on=1)
-S("L54", MV((0.0, 1.5, 1.4), (0.0, 1.5, 0.8), (0.0, 1.5, 1.3), (0.0, 1.5, 0.8), 30), hand=0.0,
-  look={"cutwall": True, "split": True},
+write("blue", "L54", "blue", dur=1.2, to=1.0, tag="w3")
+write("lilac", "L54", "blue", dur=1.2, to=1.0, tag="w3")
+S("L54", MV((PAIR, -0.6, 1.2), (PAIR, 0.0, 0.79), (PAIR, -0.45, 1.05), (PAIR, 0.0, 0.79), 34), hand=0.0,
   note="split: my blue pen, her lilac pen, writing at the same moment")
 cue("L55-0.1", "pen", d="blue", on=0)
 cue("L55-0.1", "pen", d="lilac", on=0)
 cue("L55-0.3", "ndoor", to=80, dur=0.3)
-S("L55", MV((3.0, 0.05, 1.5), (1.6, 0.05, 1.4), (2.7, 0.05, 1.5), (1.6, 0.05, 1.4), 26),
+S("L55", MV((2.3, 0.9, 1.5), (1.6, 0.05, 1.4), (2.1, 0.8, 1.5), (1.6, 0.05, 1.4), 26),
   who={"me": (X(1.6, -0.45), 180, "wide", {}), "nina": (X(1.6, 0.5), 0, "wide", {})},
   look={"cutwall": False},
   note="me and Nina face to face in her doorway, both stunned")
@@ -712,7 +713,7 @@ story = {
     "cues": cues,
     "shotlook": SHOTLOOK,
     "fx": [],
-    "rev": 5,
+    "rev": 6,
     "music": {"root": 51, "mode": "major", "bpm": 100, "seed": 89, "sections": [
         {"at": 0, "voices": ["musicbox", "pulse"], "energy": 0.35},
         {"at": "L21", "voices": ["piano", "drone"], "energy": 0.4, "mode": "minor"},
@@ -722,7 +723,7 @@ story = {
         {"at": "L49", "voices": ["pad", "piano", "musicbox"], "energy": 0.55, "mode": "major"},
         {"at": "L69", "voices": ["drone"], "energy": 0.4, "mode": "minor"}]},
     "sound": {
-        "floor": "wood", "steps_db": -26, "rev": 5,
+        "floor": "wood", "steps_db": -26, "rev": 6,
         "ambience": [{"kind": "room", "from": 0, "to": "end", "lufs": -40},
                      {"kind": "crickets", "from": "L21", "to": "L48", "lufs": -46}],
         "sfx": [{"at": "L01.3+0.05", "kind": "hit", "db": -7},

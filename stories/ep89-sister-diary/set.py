@@ -298,7 +298,7 @@ def build_penhand(kit, M, name, sleeve_hex, inkc):
     kit.cyl(f"{name}.tip", 0.0055, 0.012, (0, -0.0035, 0.004), kit.plastic(inkc, 0.4), r, n=10).rotation_euler = (0.55, 0, 0)
     box(kit, f"{name}.hand", (-0.03, -0.12, 0.085), (0.03, -0.05, 0.12), M["skin"], r, bevel=0.01)
     s = kit.plastic(sleeve_hex, 0.8)
-    box(kit, f"{name}.sleeve", (-0.034, -0.34, 0.095), (0.034, -0.11, 0.17), s, r, bevel=0.012)
+    box(kit, f"{name}.sleeve", (-0.034, -0.24, 0.095), (0.034, -0.11, 0.17), s, r, bevel=0.012)
     objs = [r] + list(r.children_recursive)
     return {"root": r, "all": objs}
 
@@ -635,8 +635,8 @@ def build_lights(kit, ctx):
     L("giftkey", "SPOT", (GIFT + 0.3, -1.4, 1.8), 10, "#ffe0b0", size=0.2, spot=50, blend=0.6)
     L("car", "AREA", (CAR, -2.5, 3.0), 300, "#fff8ee", size=4.0)
     L("work", "AREA", (WORK, -1.0, 2.6), 120, "#fff6ea", size=3.0)
-    L("pair", "AREA", (PAIR, -0.5, 2.4), 100, "#fff2e0", size=3.0)
-    sp = L("pairlamp", "SPOT", (PAIR, -0.3, 1.2), 6, "#ffcc7a", size=0.1, spot=80, blend=0.8)
+    L("pair", "AREA", (PAIR, -0.5, 2.4), 40, "#fff2e0", size=3.0)
+    sp = L("pairlamp", "SPOT", (PAIR, -0.3, 1.2), 1.5, "#ffcc7a", size=0.1, spot=80, blend=0.8)
     kit.aim(sp, (PAIR, 0.0, 0.78))
     # soft fill for the standing figures in the rooms
     L("mface", "AREA", (-1.8, 0.6, 2.2), 40, "#fff0e0", size=2.0)
