@@ -917,7 +917,7 @@ def animate(kit, story, tl, t, ctx):
         for o in obs:
             o.hide_render = k != rv
     if "reach_lean" in CH:
-        CH["reach_lean"].neck.rotation_euler = (-0.62, 0, spec.get("hyaw", 0.0))
+        CH["reach_lean"].neck.rotation_euler = (spec.get("hpitch", -0.62), 0, spec.get("hyaw", 0.0))
     over["farlamp"] = 0.0
     over["handlamp"] = 0.0
     over["sill"] = 0.0
