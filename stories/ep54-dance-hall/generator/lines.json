@@ -4,20 +4,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this TOWN,",
-    "in this town,"
+    "NEVER cover",
+    "never cover"
    ],
    [
-    "you're born",
-    "you're born"
+    "the BACK",
+    "the back"
    ],
    [
-    "with HALF",
-    "with half"
-   ],
-   [
-    "a mark.",
-    "a mark."
+    "of your HAND.",
+    "of your hand."
    ],
    [
     "Your MATCH",
@@ -31,6 +27,20 @@
  },
  {
   "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Not even",
+    "not even"
+   ],
+   [
+    "in WINTER.",
+    "in winter."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
   "who": "narrator",
   "chunks": [
    [
@@ -48,13 +58,7 @@
    [
     "FRIEND or FAMILY.",
     "friend or family."
-   ]
-  ]
- },
- {
-  "id": "L03",
-  "who": "narrator",
-  "chunks": [
+   ],
    [
     "One old man's",
     "one old man's"
@@ -1483,20 +1487,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this TOWN,",
-    "in this town,"
+    "NEVER cover",
+    "never cover"
    ],
    [
-    "you're born",
-    "you're born"
+    "the BACK",
+    "the back"
    ],
    [
-    "with HALF",
-    "with half"
-   ],
-   [
-    "a mark.",
-    "a mark."
+    "of your HAND.",
+    "of your hand."
    ],
    [
     "Your MATCH",
