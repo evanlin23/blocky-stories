@@ -592,6 +592,8 @@ for sec in music["sections"]:
 for d in sound["music_drops"]:
     d["from"], d["to"] = R(d["from"]), R(d["to"])
 
+import re as _re2
+SWAY = [sh["id"] for sh in shots if isinstance(sh.get("at"), str) and (_m := _re2.match(r"L(\d+)", sh["at"])) and 41 <= int(_m.group(1)) <= 50]
 story = {
     "slug": "every-lock", "title": "My Bathroom Door Has 1,024 LOCKS", "made_for_kids": False,
     "premise": ("In our apartment building, closing a door doubles its locks and the locks never come off, so everybody lives with "
@@ -603,7 +605,9 @@ story = {
     "world": ("a bright four-floor city apartment building: mint hall with a terracotta floor and open front doors, a sky-blue "
               "apartment with a short inner hall and one yellow bathroom door, a downstairs kitchen, a stairwell and a sunny curb"),
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45}, "key_color": "#ffb21f", "gap": 0.12, "tail": 0, "fade_in": False,
-    "look": {"style": "closer", "flash_safe": True, "polish": True, "fog": "#dbe9f2", "fog_density": 0.004, "fog_start": 8.0, "sky": "#79c3ff",
+    "look": {"style": "closer", "flash_safe": True,
+             "polish": {"emph": ["L01", "L12b", "L30", "L40", "L42", "L44", "L47", "L60"], "reveal": ["L30", "L40", "L44"],
+                        "quiet": [["L52", "L54"]], "sway": SWAY}, "fog": "#dbe9f2", "fog_density": 0.004, "fog_start": 8.0, "sky": "#79c3ff",
              "exposure": 0.0, "hdri": "lebombo", "hdri_strength": 0.9, "hdri_rotation": 0},
     "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.01, 0.005, -0.01], "saturation": 1.12, "contrast": 1.04,
               "vignette": 0.18, "bloom": 0.12, "grain": 0.008},
