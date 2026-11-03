@@ -252,6 +252,32 @@ the bed (the pack's whooshes and room bed sit closer to it), and more repeated f
 crop, not the drawings: 53% of frames are in `step: 2` shots and the rest still repeat while the camera holds.
 Re-measure once a 120 s+ polished story renders.
 
+## moving-day with polish v2 (film-moving-day 13241496447, 2026-11-03 9:04 AM Central)
+Against its own film from earlier the same day, before the pack (13213357960), same story, 88 s:
+
+| Metric | before | after | hits (median) | |
+|---|---|---|---|---|
+| Picture changes / 10 s (0.5 s) | 8.0 | 9.1 | 16.5 | block (≥ 12.5) |
+| Picture changes / 10 s (0.25 s) | 9.1 | 9.3 | 21.3 | block (≥ 14) |
+| Motion energy, 0.25 s | 4.66 | 5.68 | 7.6 | block (≥ 6.0) |
+| Longest still, 0.25 s (s) | 2.13 | 1.07 | 0.25 | block (≤ 1.0) |
+| Camera moving (edit) | 13.5% | 91.5% | | ok |
+| Punch-ins / 10 s | 0 | 0.68 | | ok |
+| Repeated frames | 53% | 14.5% | | ok (now `step: 1` on 88% of frames) |
+| Walk ends that stop dead | 100% | 0% | | ok |
+| Idle 1 s windows | 24% | 2% | | ok |
+| Sound events / 10 s | 0.9 | 7.4 | | ok |
+| Voice over bed (stems, dB) | 11.4 | 12.2 | | ok |
+| Saturation | 0.28 | 0.31 | 0.51 | warn (≥ 0.42) |
+| Shots where a character moves | 35% | 46% | | warn (≥ 50%) |
+
+8 warnings and 4 blocks before, 3 warnings and 4 blocks after (it's drawn before the 6 PM cutoff, so the blocks
+read as `redraw`). **The pack fixed the motion quality: smooth camera, eased walks, no idle, full frame rate. It
+didn't fix the pace.** The camera moves 91% of the time but slowly (v2 caps it at 0.12 m/s), so a 0.25 s sample
+rarely changes by the 4% a hit's does: 9.3 changes per 10 s against the hits' 21. To pass, the picture has to
+change by a visible amount every half second: about 8 cuts per 10 s instead of 6.4, faster camera moves or bigger
+punch-ins (more than 6%) between the cuts, and no 1 s hold. Saturation is still about 60% of the hits'.
+
 ## Using it
 - **qa** runs `scripts/measure.py` on every final and pastes the table into its notes (`.claude/agents/qa.md`).
 - **Builders** can run it with no film (`--story`) before a render to check the edit metrics.

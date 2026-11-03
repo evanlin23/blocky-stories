@@ -36,9 +36,9 @@ import math
 
 DEFAULTS = {
     # sound
-    "whoosh": True, "whoosh_db": -19.0, "whoosh_gap": 1.4, "whoosh_lp": 3000.0,
-    "hits": True, "hit_db": -17.0, "reveal_db": -11.0,
-    "riser": True, "riser_db": -15.0, "riser_dur": 1.8,
+    "whoosh": True, "whoosh_cuts": False, "whoosh_db": -19.0, "whoosh_gap": 1.4, "whoosh_lp": 3000.0,
+    "hits": True, "key_hits": "hook", "hit_db": -17.0, "reveal_db": -11.0, "music_bed": True,
+    "riser": True, "riser_db": -15.0, "riser_dur": 1.8, "riser_gap": 15.0,
     "bed": True, "bed_kind": None, "bed_lufs": -44.0, "bed_drop_db": -12.0,
     "marks": True, "mark_db": -14.0,
     "duck": True, "duck_db": 8.0, "music_duck_db": "auto", "voice_gap_db": 10.5,
@@ -196,7 +196,8 @@ def sound_events(tl: dict, st: dict, p: dict, at) -> list[dict]:
         # every punch-in, and the cuts that fall between lines (never under a word), at most one per whoosh_gap
         # (a whoosh leads its cut by 0.12 s)
         onsets = [ln["onset"] for ln in tl["lines"].values()]
-        cuts = [t for t in cut_times(tl) if any(abs(t - o) < 0.06 for o in onsets)]
+        # v2.2 (owner, 2026-11-03: the hits use few effects): cuts only with whoosh_cuts; punch-ins always
+        cuts = [t for t in cut_times(tl) if any(abs(t - o) < 0.06 for o in onsets)] if p.get("whoosh_cuts") else []
         for t in sorted(set(emph) | set(cuts)):
             forced = t in emph
             if (forced or t - last >= p["whoosh_gap"]) and clear(t) and 0.3 < t < dur - 0.3 and not _in(t, spans):
@@ -208,15 +209,22 @@ def sound_events(tl: dict, st: dict, p: dict, at) -> list[dict]:
         for t in rev:
             if clear(t):
                 ev.append({"t": t, "kind": "hit", "db": p["reveal_db"], "lp": 3800.0, "pan": 0.0})
-        for t in hit_times(tl, p, at):
+        kh = p.get("key_hits", "all")   # "hook" (v2.2 default): only the opening hit; "all": every key word 4 s apart
+        hts = hit_times(tl, p, at) if kh == "all" else ([on_key(tl, tl["captions"][0]["start"] + 0.04)]
+                                                         if kh == "hook" and tl["captions"] else [])
+        for t in hts:
             if clear(t) and all(abs(t - u) >= SEP for u in rev) and not _in(t, quiet):
                 ev.append({"t": t, "kind": "lowhit", "db": p["hit_db"], "lp": 1200.0, "pan": 0.0})
     if p["riser"]:
         from blocky.sound import drop_spec
-        ends = [at(drop_spec(d)["from"]) for d in snd.get("music_drops", [])]
-        if p.get("twist"):
-            ends.append(at(p["twist"]))
-        for e in sorted(set(ends)):
+        drops_ = [at(drop_spec(d)["from"]) for d in snd.get("music_drops", [])]
+        tw = at(p["twist"]) if p.get("twist") else None
+        # v2.2: a riser is an event, so at most one per riser_gap s, the twist's first, then the drops in order
+        ends = []
+        for e in ([tw] if tw is not None else []) + sorted(drops_):
+            if all(abs(e - u) >= p.get("riser_gap", 15.0) for u in ends):
+                ends.append(e)
+        for e in sorted(ends):
             d = min(p["riser_dur"], e - 0.2)
             # skip a riser where the builder already put one in the run-up
             if d > 0.5 and not any(x.get("kind") == "riser" and e - d - 0.6 <= at(x["at"]) <= e
@@ -235,6 +243,25 @@ def sound_events(tl: dict, st: dict, p: dict, at) -> list[dict]:
             if kind and clear(c["t"], 0.15):
                 ev.append({"t": c["t"], "kind": kind, "db": p["mark_db"], "pan": 0.0, "lp": 4000.0})
     return sorted(ev, key=lambda e: e["t"])
+
+
+SUSTAIN = ("drone", "pad", "choir")
+
+
+def music_spec(spec: dict | None) -> dict:
+    """v2.2 (owner, 2026-11-03: "there is background music"): the story's own score, made to play from the first
+    frame to the last. The first section starts at 0, and a section with no sustained voice gets a quiet drone and
+    pad under it, so there's never a stretch of ambience alone. Holes come only from `music_drops`."""
+    spec = dict(spec or {})
+    secs = [dict(s) for s in spec.get("sections") or [{"at": 0, "voices": ["drone", "pad"], "energy": 0.4}]]
+    secs[0]["at"] = 0
+    for s in secs:
+        v = list(s.get("voices", []))
+        if not any(x in v for x in SUSTAIN):
+            s["voices"] = v + ["drone", "pad"]
+            s["energy"] = min(float(s.get("energy", 0.3)), 0.3) if v else 0.25
+    spec["sections"] = secs
+    return spec
 
 
 def bed_kind(st: dict, p: dict) -> str:

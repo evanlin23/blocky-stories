@@ -387,9 +387,11 @@ Fresh idea (added with `dryer-nine`, 2026-11-03, so the backlog doesn't run dry)
 ## Batch 6 (2026-11-03, `docs/research/2026-11-03-week.md`): claimed, in production in separate sessions
 - P1 cat-shoes: "Never keep the shoes our cat brings home." (creepy town rule, long)
 - P2 drive-thru: "At this drive-thru, never pull up to the second window." (creepy town rule, long)
-- P3 night-mower: "Never look at the neighbor's lawn while his mower is running." (creepy town rule, mid)
+- P3 night-mower: "Never look at the neighbor's lawn while his mower is running." (creepy town rule, mid) **Dropped 2026-11-03** (see the killed line below).
 - P4 dryer-nine: "At the all-night laundromat, you never use dryer nine." (creepy town rule, mid)
 - P5 door-locks: "Every door you close gets one more lock." (what-if escalation, long)
 - P6 rule-three (rulebook keeper pilot): rule three was torn out (recurring host, mid)
 - P7 ep62-six-riders: four riders, five in the elevator mirror (horror puzzle, 20 to 45 s)
   - killed 2026-11-03: failed final-film qa twice (rev 1: frame 1 didn't read as five, inaudible hit; rev 2 re-cut: S13 continuity slip and "C" spoken over no C tag). The puzzle solved and the swap landed; the hook never cleared the bar.
+
+killed: `night-mower` (batch 6 P3, 2026-11-03), not for a hard rule, so it can be tried again. Big idea: the street is built on a giant sleeping head, the neighbor's 3 AM lawn is its eyebrow and Dad's bald spot its hairline. Two rounds plus one rescue. Standards cleared everything except flashing: the 3-frame reading stayed exactly at the bar (3 flashes, 6 changes) around 35 to 37 s, where the porch, the floodlit lawn and the room swap brightness. The critic's blocker was the eyelid: a lid of turf over a giant eye read as a floating disc, then a "burger bun", then a coconut shell, never as an eyelid peeling up (creature 4). The head shot and the opening worked (big idea 7, average about 7). A retry should draw the eye as a slit opening in flat turf with no lid object at all, and keep the night porch and lawn shots at the same brightness. The full build (and an opt-in `meter` overlay in post.py and timeline.py) is in git at commit 74d4ef6 on branch claude/batch6-p3-night-mower.

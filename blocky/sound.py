@@ -1069,7 +1069,9 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
 
 
 def _mix(tl, st, vo_dir, m, voice, spans, snd, at, dur, n):
-    mus = score(tl, st.get("music", {}))
+    pol0 = polish.spec(st)
+    mspec = polish.music_spec(st.get("music")) if pol0 and pol0.get("music_bed") else st.get("music", {})
+    mus = score(tl, mspec)
     if st.get("music", {}).get("filter"):   # the score heard through water: a low-pass that moves (the reveal opens it)
         mus = lowpass_moving(mus, filter_track(len(mus), st["music"]["filter"], at))
     free = [(0, dur)] if not spans else [(a, b) for a, b in zip([0] + [e for _, e in spans], [s for s, _ in spans] + [dur]) if b - a > 0.4]
