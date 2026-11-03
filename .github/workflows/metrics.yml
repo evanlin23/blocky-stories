@@ -1,8 +1,7 @@
 # Weekly channel numbers into metrics/summary.md, a little before the Monday /week run. Run it by hand any time.
 name: metrics
 on:
-  schedule:
-    - cron: "37 20 * * 1"   # Mondays 20:37 UTC = 2:37 pm Central (3:37 pm in summer)
+  # no `schedule:`: cron-job.org starts it Mondays 2:37 PM Central; GitHub's late schedule would run it twice
   workflow_dispatch:
 concurrency: {group: metrics, cancel-in-progress: false}
 permissions: {contents: write}
@@ -22,9 +21,16 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_CHANNEL_ID: ${{ vars.YT_CHANNEL_ID }}
         run: python scripts/metrics.py >> "$GITHUB_STEP_SUMMARY"
+      - name: trend scan (what's rising in blocky / Roblox-style Shorts)
+        continue-on-error: true   # never lose the week's numbers over a search hiccup
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python scripts/trends.py >> "$GITHUB_STEP_SUMMARY"
       - name: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
-          git add metrics
+          git add metrics docs/trends
           git diff --cached --quiet || { git commit -m "metrics: $(date -u +%F)" && git push; }

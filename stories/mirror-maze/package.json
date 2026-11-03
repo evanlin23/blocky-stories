@@ -1,7 +1,8 @@
 {
-  "title": "Only one of us walked out of the mirror maze",
-  "description": "It was the last rainy weekend of the fair, and half the rides were already under tarps. My best friend Tasha wanted one more go in the mirror maze before it came down.\n\nShe walked out half a beat behind me. Every time.\n\nIt's made up, a creepy blocky story built with code and Blender.",
-  "pin": "Would you have noticed she was always a little late?",
+  "title": "In This Town Mirrors KEEP Your Reflection",
+  "description": "In this town, mirrors keep your reflection after you leave. The fry van's shiny side has a queue a hundred people long, and a puddle on the boards still has a man tying his boot from March.\n\nIt's the last night of the travelling fair, and Tasha meets me at the mirror maze, the way she has every night this week.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+  "pin": "Which mirror is still holding an old you?",
   "made_for_kids": false,
-  "shape": "double"
+  "cover_s": 44.5,
+  "shape": "echo"
 }

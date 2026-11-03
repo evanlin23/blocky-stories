@@ -27,7 +27,9 @@ FX0, FX1 = int(TEX_W * (0.5 - 50 / 360)), int(TEX_W * (0.5 + 50 / 360))
 FY0, FY1 = int(TEX_H * 0.08), int(TEX_H * 0.92)
 
 EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blank", "wide", "shut", "grin",
-               "terrified", "squeeze", "soft", "asleep", "fish", "laugh", "smile")
+               "terrified", "squeeze", "soft", "asleep", "fish", "laugh", "smile", "hopeful", "polite", "delighted",
+               "sad-smile")
+# hopeful: opt-in (ep46): raised inner brows over a small smile.
 # fish: opt-in (ep20): lips pushed out into a small pursed pout, cheeks sucked in (two slanted hollows beside the
 # mouth), eyes open and a little wide. It never opens the mouth: the pout is the joke.
 # laugh: opt-in (ep17): eyes shut in up-arcs, brows raised, a wide open D-shaped mouth with a tongue: a real laugh,
@@ -37,7 +39,9 @@ EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blan
 # squeeze: eyes screwed shut (short arcs sagging down, not the content up-arcs of "shut"), brows pinched low.
 # asleep: lids closed in flat lines that droop a little at the outer ends (asleep, not content: "shut" and "soft"
 # use up-arcs, which read as smiling eyes), brows level and low, a short slack mouth. Opt-in: no other face changes.
-EYES = ("round", "classic", "dot", "tired", "lashes", "button", "hollow", "none", "mirror", "pin")
+EYES = ("round", "classic", "dot", "tired", "lashes", "button", "hollow", "none", "mirror", "pin", "negative")
+# negative (ep43, opt-in): a "round" eye drawn as a photo negative: the eye is filled black, ringed in the face's ink (white on
+# black skin) with a small pupil in the face's "pupil" colour (white). No glint. Other eye styles are unchanged.
 # pin (ep45, opt-in): two small round black eyes set a touch close together, each with one pin highlight in pure white
 # (the brightest thing on the face). A face's "mouth": "flat" is a short flat line, slightly parted onto black.
 # mirror (ep14's copy): a "round" eye's own outline and size, filled to the edge with near-black. No white, no pupil and
@@ -165,8 +169,16 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
         d.line([(cx - ww / 2, cy + w * 0.04), (cx + ww / 2, cy + w * 0.04)], fill=ink, width=max(4, th // 3))
     elif expr == "smile":   # eyes open, brows level, a plain smile (ep32; opt-in)
         _stroke(d, _curve(cx, cy - 0.012 * s, w * 0.95, 0.05 * s), ink, th)
+    elif expr == "hopeful":   # opt-in (ep46): a small smile under raised inner brows
+        _stroke(d, _curve(cx, cy - 0.006 * s, w * 0.6, 0.03 * s), ink, th)
     elif expr == "soft":   # a small closed smile
         _stroke(d, _curve(cx, cy - 0.006 * s, w * 0.6, 0.026 * s), ink, th)
+    elif expr == "polite":   # ep31 (opt-in): a pleasant, shallow smile for a stranger
+        _stroke(d, _curve(cx, cy - 0.004 * s, w * 0.78, 0.03 * s), ink, th)
+    elif expr == "delighted":   # ep31 (opt-in): a wide open-eyed smile
+        _stroke(d, _curve(cx, cy - 0.02 * s, w * 1.35, 0.095 * s), ink, th)
+    elif expr == "sad-smile":   # ep31 (opt-in): a small closed smile, brows up
+        _stroke(d, _curve(cx, cy - 0.004 * s, w * 0.62, 0.028 * s), ink, th)
     elif expr == "blank" or expr == "shut" or expr == "asleep":
         _stroke(d, [(cx - w * 0.25, cy), (cx + w * 0.25, cy)], ink, th)
     else:  # neutral: a short flat stroke, a little off centre (never the default smile)
@@ -176,7 +188,8 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
 @lru_cache(maxsize=256)
 def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | None, expr: str, open_: float,
           look: tuple[float, float], blink: float, freckles: bool, cheeks: str | None, bags: bool,
-          mouth: str = "auto", inside: str | None = None, eye_scale: float = 1.0, reflect: str | None = None) -> Image.Image:
+          mouth: str = "auto", inside: str | None = None, eye_scale: float = 1.0, corners: bool = False,
+          brow_w: float = 1.0, reflect: str | None = None) -> Image.Image:
     im = Image.new("RGB", (TEX_W, TEX_H), hexrgb(skin))
     d = ImageDraw.Draw(im)
     s = FX1 - FX0                      # face box width in px
@@ -185,6 +198,7 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
     ey = _fy(0.42)
     ex = 0.22 * s
     th = max(12, int(0.04 * s))
+    bth = int(th * brow_w)   # brow stroke width (opt-in "brow_w", default 1.0)
     lx, ly = look
     shut = expr in ("shut", "squeeze", "soft", "laugh") or blink > 0.8
     for side in (-1, 1):
@@ -203,7 +217,7 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
                    for i in range(13)]
             _stroke(d, pts, inkc, th)
             if brows:
-                _brow(d, cx, ey - 0.15 * s, 0.15 * s, 0.0, inkc, th, side)
+                _brow(d, cx, ey - 0.15 * s, 0.15 * s, 0.0, inkc, bth, side)
             continue
         if shut:
             if expr == "squeeze" and blink <= 0.8:   # screwed shut: short, sagging, tilted down to the nose
@@ -212,20 +226,25 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
             else:
                 _stroke(d, _curve(cx, ey, 0.17 * s, -0.035 * s), inkc, th)
             if expr == "squeeze" and brows:
-                _brow(d, cx, ey - 0.13 * s, 0.15 * s, 1.1, inkc, th, side)
+                _brow(d, cx, ey - 0.13 * s, 0.15 * s, 1.1, inkc, bth, side)
             if expr == "laugh" and brows:   # raised, lifted by the cheeks
-                _brow(d, cx, ey - 0.2 * s, 0.16 * s, 0.25, inkc, th, side)
+                _brow(d, cx, ey - 0.2 * s, 0.16 * s, 0.25, inkc, bth, side)
             if expr == "soft" and brows:   # relaxed: level, a little raised, no pinch
-                _brow(d, cx, ey - 0.17 * s, 0.16 * s, 0.12, inkc, th, side)
+                _brow(d, cx, ey - 0.17 * s, 0.16 * s, 0.12, inkc, bth, side)
             continue
-        if eyes in ("round", "lashes", "tired", "mirror"):
+        if eyes in ("round", "lashes", "tired", "mirror", "negative"):
             rx = 0.112 * s * (1.28 if expr == "terrified" else 1.2 if expr in ("wide", "scared") else 1.0)
             if eyes == "round":   # opt-in (ep53): a bigger round eye; default 1.0 changes nothing
                 rx *= eye_scale
             ry = rx * (1.0 - 0.85 * blink)
             if eyes == "tired" or expr == "angry":
                 ry *= 0.78
-            if eyes == "mirror":   # the same box as a round eye's outline, so never bigger; black to the edge
+            if eyes == "negative":
+                _ellipse(d, cx, ey, rx, max(2, ry), fill=(5, 6, 7))   # no ring: black eyes, pinprick pupils
+                pr = rx * 0.13
+                if ry > rx * 0.3:
+                    _ellipse(d, cx + lx * rx * 0.35, ey + ly * ry * 0.3, pr, min(pr, ry * 0.9), fill=pup)
+            elif eyes == "mirror":   # the same box as a round eye's outline, so never bigger; black to the edge
                 _ellipse(d, cx, ey, rx, max(2, ry), fill=MIRROR_BLACK, outline=MIRROR_BLACK, width=th)
             else:
                 _ellipse(d, cx, ey, rx, max(2, ry), fill=white, outline=inkc, width=th)
@@ -253,6 +272,10 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
             if eyes == "tired" or bags:
                 d.arc([cx - rx * 0.9, ey + ry * 0.6, cx + rx * 0.9, ey + ry * 1.6], 20, 160,
                       fill=tuple(int(c * 0.8) for c in hexrgb(skin)), width=th)
+            if corners:   # opt-in (ep32): three little lines fanning out from each eye's outer corner
+                for k in (-1, 0, 1):
+                    x0, y0 = cx + side * (rx + th * 0.9), ey + k * 0.012 * s
+                    d.line([(x0, y0), (x0 + side * 0.055 * s, y0 + k * 0.03 * s)], fill=inkc, width=max(6, int(th * 0.55)))
         elif eyes == "classic":
             # solid black ovals with a white glint, big and tall
             rx, ry = 0.062 * s * (1.15 if expr in ("wide", "scared", "terrified") else 1.0), 0.1 * s * (1.0 - 0.9 * blink)
@@ -280,9 +303,10 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
                 _ellipse(d, cx + qx * r * 0.35, ey + qy * r * 0.35, r * 0.12, r * 0.12, fill=(230, 225, 215))
         if brows and eyes not in ("hollow", "none"):
             tilt = {"worried": 0.9, "crying": 1.0, "scared": 0.7, "angry": -0.9, "wide": 0.4, "smirk": -0.25,
-                    "grin": -0.4, "terrified": 1.0}.get(expr, 0.0)
-            by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide") else 0)
-            _brow(d, cx, by, 0.16 * s, tilt, inkc, th, side)
+                    "grin": -0.4, "terrified": 1.0, "hopeful": 0.55, "sad-smile": 0.75,
+                    "delighted": 0.3}.get(expr, 0.0)
+            by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide", "delighted", "sad-smile") else 0)
+            _brow(d, cx, by, 0.16 * s, tilt, inkc, bth, side)
     if expr == "crying" and not shut:
         tear = (120, 190, 255)
         for side in (-1, 1):
@@ -324,7 +348,8 @@ def face_image(face: dict, skin: str, expr: str = "neutral", open_: float = 0.0,
     return _draw(skin, face.get("eyes", "round"), bool(face.get("brows", True)), face.get("ink", "#1a1416"),
                  face.get("pupil", "#141012"), face.get("glow"), expr, q(open_, mouth_steps(face)), (q(look[0], 2), q(look[1], 2)),
                  1.0 if blink > 0.5 else 0.0, bool(face.get("freckles")), face.get("cheeks"), bool(face.get("bags")),
-                 face.get("mouth", "auto"), face.get("mouth_inside"), float(face.get("eye_scale", 1.0)), face.get("reflect"))
+                 face.get("mouth", "auto"), face.get("mouth_inside"), float(face.get("eye_scale", 1.0)), bool(face.get("corners")),
+                 float(face.get("brow_w", 1.0)), face.get("reflect"))
 
 
 def mouth_steps(face: dict) -> int:
@@ -336,9 +361,13 @@ def mouth_steps(face: dict) -> int:
 def face_key(face: dict, skin: str, expr: str, open_: float, look, blink: float) -> str:
     q = lambda x, n: round(x * n) / n
     # a non-default eye or mouth style is in the key, so a cached texture of the old style is never reused
-    style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror", "pin", "flat", "crescent"))
+    style = "".join(f"{k}{face[k]}-" for k in ("eyes", "mouth") if k in face and face[k] in ("none", "line", "mirror", "pin", "flat", "crescent", "negative"))
     if face.get("eye_scale", 1.0) != 1.0:
         style += f"es{face['eye_scale']}-"
+    if face.get("brow_w", 1.0) != 1.0:
+        style += f"bw{face['brow_w']}-"
+    if face.get("corners"):
+        style += "co-"
     if face.get("reflect"):
         style += f"rf{face['reflect'].lstrip('#')}-"
     if face.get("mouth_inside"):   # an open mouth's own inside colour (the copy's opens onto black)

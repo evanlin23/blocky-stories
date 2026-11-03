@@ -1,0 +1,1338 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In this TOWN,",
+    "In this town,"
+   ],
+   [
+    "everything you LOSE",
+    "everything you lose"
+   ],
+   [
+    "finds its way",
+    "finds its way"
+   ],
+   [
+    "BACK to you.",
+    "back to you."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A GLOVE",
+    "a glove"
+   ],
+   [
+    "hops after its OWNER",
+    "hops after its owner"
+   ],
+   [
+    "up the SLIPWAY.",
+    "up the slipway."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "An UMBRELLA",
+    "An umbrella"
+   ],
+   [
+    "bobs along",
+    "bobs along"
+   ],
+   [
+    "at a man's HEEL.",
+    "at a man's heel."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A DOG",
+    "a dog"
+   ],
+   [
+    "slipped its LEAD",
+    "slipped its lead"
+   ],
+   [
+    "in TOWN.",
+    "in town."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It rode the FERRY",
+    "It rode the ferry"
+   ],
+   [
+    "and trotted HOME",
+    "and trotted home"
+   ],
+   [
+    "all on its OWN.",
+    "all on its own."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Except for ME.",
+    "Except for me."
+   ],
+   [
+    "Nothing I lose",
+    "Nothing I lose"
+   ],
+   [
+    "EVER",
+    "ever"
+   ],
+   [
+    "comes BACK.",
+    "comes back."
+   ]
+  ]
+ },
+ {
+  "id": "L09a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every SUNDAY,",
+    "every sunday,"
+   ],
+   [
+    "I call GRAN.",
+    "i call gran."
+   ],
+   [
+    "She's ALL",
+    "she's all"
+   ],
+   [
+    "I've GOT.",
+    "i've got."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I drop",
+    "So I drop"
+   ],
+   [
+    "an old GLOVE",
+    "an old glove"
+   ],
+   [
+    "in a BIN,",
+    "in a bin,"
+   ],
+   [
+    "on PURPOSE.",
+    "on purpose."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It never HOPS",
+    "It never hops"
+   ],
+   [
+    "after me.",
+    "after me."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Next SUNDAY,",
+    "next sunday,"
+   ],
+   [
+    "Gran's pulling ON",
+    "gran's pulling on"
+   ],
+   [
+    "a GLOVE.",
+    "a glove."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "MY glove,",
+    "my glove,"
+   ],
+   [
+    "with a HOLE",
+    "with a hole"
+   ],
+   [
+    "in the THUMB.",
+    "in the thumb."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She says",
+    "She says"
+   ],
+   [
+    "it turned up",
+    "it turned up"
+   ],
+   [
+    "on her MAT.",
+    "on her mat."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "GRAN raised me",
+    "gran raised me"
+   ],
+   [
+    "on the ISLAND,",
+    "on the island,"
+   ],
+   [
+    "one crossing OUT.",
+    "one crossing out."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every SATURDAY,",
+    "Every saturday,"
+   ],
+   [
+    "we rode to town",
+    "we rode to town"
+   ],
+   [
+    "side by SIDE",
+    "side by side"
+   ],
+   [
+    "on the window BENCH.",
+    "on the window bench."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I moved to TOWN",
+    "I moved to town"
+   ],
+   [
+    "four YEARS ago,",
+    "four years ago,"
+   ],
+   [
+    "and never",
+    "and never"
+   ],
+   [
+    "crossed BACK.",
+    "crossed back."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then every STREET",
+    "then every street"
+   ],
+   [
+    "I take",
+    "I take"
+   ],
+   [
+    "ends at the SLIPWAY.",
+    "ends at the slipway."
+   ]
+  ]
+ },
+ {
+  "id": "L18a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I turn LEFT,",
+    "I turn left,"
+   ],
+   [
+    "I turn RIGHT,",
+    "I turn right,"
+   ],
+   [
+    "it's always the WATER.",
+    "it's always the water."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "MONDAY,",
+    "monday,"
+   ],
+   [
+    "my KEYS hop",
+    "my keys hop"
+   ],
+   [
+    "out my DOOR,",
+    "out my door,"
+   ],
+   [
+    "down to the SEA.",
+    "down to the sea."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And damp little DOTS",
+    "and damp little dots"
+   ],
+   [
+    "start at my DOOR,",
+    "start at my door,"
+   ],
+   [
+    "under my FEET.",
+    "under my feet."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "TUESDAY,",
+    "tuesday,"
+   ],
+   [
+    "I chase my KEYS",
+    "I chase my keys"
+   ],
+   [
+    "onto the FERRY,",
+    "onto the ferry,"
+   ],
+   [
+    "right to the window SEAT.",
+    "right to the window seat."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The seat",
+    "The seat"
+   ],
+   [
+    "BESIDE me",
+    "beside me"
+   ],
+   [
+    "is folded DOWN,",
+    "is folded down,"
+   ],
+   [
+    "and EMPTY.",
+    "and empty."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then the bench",
+    "Then the bench"
+   ],
+   [
+    "SINKS,",
+    "sinks,"
+   ],
+   [
+    "like somebody HEAVY",
+    "like somebody heavy"
+   ],
+   [
+    "just sat DOWN.",
+    "just sat down."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "WEDNESDAY,",
+    "wednesday,"
+   ],
+   [
+    "my SCARF",
+    "my scarf"
+   ],
+   [
+    "hops up Gran's LANE,",
+    "hops up Gran's lane,"
+   ],
+   [
+    "and I follow it HALFWAY.",
+    "and I follow it halfway."
+   ]
+  ]
+ },
+ {
+  "id": "L24a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then I turn BACK,",
+    "then I turn back,"
+   ],
+   [
+    "before she SEES me.",
+    "before she sees me."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "THURSDAY,",
+    "thursday,"
+   ],
+   [
+    "the DOTS",
+    "the dots"
+   ],
+   [
+    "lead me all the way",
+    "lead me all the way"
+   ],
+   [
+    "to Gran's DOOR.",
+    "to Gran's door."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The door",
+    "The door"
+   ],
+   [
+    "is OPEN.",
+    "is open."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Gran's GLASSES",
+    "Gran's glasses"
+   ],
+   [
+    "are lying",
+    "are lying"
+   ],
+   [
+    "on the MAT.",
+    "on the mat."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Her BED",
+    "Her bed"
+   ],
+   [
+    "is MADE.",
+    "is made."
+   ],
+   [
+    "Her COAT",
+    "Her coat"
+   ],
+   [
+    "is GONE.",
+    "is gone."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I put her GLASSES",
+    "I put her glasses"
+   ],
+   [
+    "in my POCKET.",
+    "in my pocket."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Down the HALL,",
+    "Down the hall,"
+   ],
+   [
+    "one LIGHT",
+    "one light"
+   ],
+   [
+    "is ON.",
+    "is on."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That room",
+    "That room"
+   ],
+   [
+    "is FULL,",
+    "is full,"
+   ],
+   [
+    "floor to CEILING.",
+    "floor to ceiling."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every glove",
+    "Every glove"
+   ],
+   [
+    "and KEY",
+    "and key"
+   ],
+   [
+    "I've ever LOST,",
+    "I've ever lost,"
+   ],
+   [
+    "hung up NEATLY",
+    "hung up neatly"
+   ],
+   [
+    "on HOOKS.",
+    "on hooks."
+   ]
+  ]
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My BIKE",
+    "My bike"
+   ],
+   [
+    "leans on the WALL,",
+    "leans on the wall,"
+   ],
+   [
+    "still SHINY.",
+    "still shiny."
+   ]
+  ]
+ },
+ {
+  "id": "L34",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And my old",
+    "And my old"
+   ],
+   [
+    "striped HAT",
+    "striped hat"
+   ],
+   [
+    "hangs by the DOOR.",
+    "hangs by the door."
+   ]
+  ]
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At MIDNIGHT,",
+    "At midnight,"
+   ],
+   [
+    "my PHONE",
+    "my phone"
+   ],
+   [
+    "BUZZES.",
+    "buzzes."
+   ]
+  ]
+ },
+ {
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's GRAN,",
+    "It's gran,"
+   ],
+   [
+    "squinting,",
+    "squinting,"
+   ],
+   [
+    "outside my FLAT",
+    "outside my flat"
+   ],
+   [
+    "in TOWN.",
+    "in town."
+   ]
+  ]
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She crossed",
+    "She crossed"
+   ],
+   [
+    "this MORNING",
+    "this morning"
+   ],
+   [
+    "to come and FIND me.",
+    "to come and find me."
+   ]
+  ]
+ },
+ {
+  "id": "L38",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She hasn't left",
+    "She hasn't left"
+   ],
+   [
+    "the ISLAND",
+    "the island"
+   ],
+   [
+    "in TWENTY years.",
+    "in twenty years."
+   ]
+  ]
+ },
+ {
+  "id": "L39",
+  "who": "narrator",
+  "chunks": [
+   [
+    "We missed",
+    "We missed"
+   ],
+   [
+    "each OTHER",
+    "each other"
+   ],
+   [
+    "by one BOAT.",
+    "by one boat."
+   ]
+  ]
+ },
+ {
+  "id": "L40",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She's getting",
+    "She's getting"
+   ],
+   [
+    "the LATE crossing",
+    "the late crossing"
+   ],
+   [
+    "HOME,",
+    "home,"
+   ],
+   [
+    "without her GLASSES.",
+    "without her glasses."
+   ]
+  ]
+ },
+ {
+  "id": "L41",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I ride",
+    "So I ride"
+   ],
+   [
+    "the late boat OVER,",
+    "the late boat over,"
+   ],
+   [
+    "to bring her BACK.",
+    "to bring her back."
+   ]
+  ]
+ },
+ {
+  "id": "L42",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At the town's SLIPWAY,",
+    "At the town's slipway,"
+   ],
+   [
+    "I look for her",
+    "I look for her"
+   ],
+   [
+    "on the CAR DECK.",
+    "on the car deck."
+   ]
+  ]
+ },
+ {
+  "id": "L42a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I can't FIND her",
+    "i can't find her"
+   ],
+   [
+    "ANYWHERE.",
+    "anywhere."
+   ]
+  ]
+ },
+ {
+  "id": "L43",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Halfway BACK,",
+    "Halfway back,"
+   ],
+   [
+    "I climb up",
+    "I climb up"
+   ],
+   [
+    "to the LOUNGE.",
+    "to the lounge."
+   ]
+  ]
+ },
+ {
+  "id": "L44",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Gran's in our",
+    "Gran's in our"
+   ],
+   [
+    "old SEAT,",
+    "old seat,"
+   ],
+   [
+    "by the WINDOW.",
+    "by the window."
+   ]
+  ]
+ },
+ {
+  "id": "L45",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And BESIDE her,",
+    "And beside her,"
+   ],
+   [
+    "in MY place,",
+    "in my place,"
+   ],
+   [
+    "sits somebody",
+    "sits somebody"
+   ],
+   [
+    "in LIFE JACKET",
+    "in life jacket"
+   ],
+   [
+    "ORANGE.",
+    "orange."
+   ]
+  ]
+ },
+ {
+  "id": "L46",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its SHOULDERS",
+    "Its shoulders"
+   ],
+   [
+    "rise up",
+    "rise up"
+   ],
+   [
+    "past its EARS.",
+    "past its ears."
+   ]
+  ]
+ },
+ {
+  "id": "L47",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Only its EYES",
+    "Only its eyes"
+   ],
+   [
+    "show",
+    "show"
+   ],
+   [
+    "between them.",
+    "between them."
+   ]
+  ]
+ },
+ {
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Gran's looking",
+    "Gran's looking"
+   ],
+   [
+    "out at the WATER.",
+    "out at the water."
+   ],
+   [
+    "Without her GLASSES,",
+    "Without her glasses,"
+   ],
+   [
+    "she can't SEE it.",
+    "she can't see it."
+   ]
+  ]
+ },
+ {
+  "id": "L49",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then the shoulders",
+    "Then the shoulders"
+   ],
+   [
+    "start to SINK.",
+    "start to sink."
+   ]
+  ]
+ },
+ {
+  "id": "L50",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Slowly,",
+    "Slowly,"
+   ],
+   [
+    "its whole FACE",
+    "its whole face"
+   ],
+   [
+    "rises OUT.",
+    "rises out."
+   ]
+  ]
+ },
+ {
+  "id": "L51",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It TURNS",
+    "It turns"
+   ],
+   [
+    "to GRAN,",
+    "to gran,"
+   ],
+   [
+    "and leans IN",
+    "and leans in"
+   ],
+   [
+    "closer",
+    "closer"
+   ],
+   [
+    "and CLOSER.",
+    "and closer."
+   ]
+  ]
+ },
+ {
+  "id": "L52",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And I GET it.",
+    "And I get it."
+   ]
+  ]
+ },
+ {
+  "id": "L53",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Lost things",
+    "Lost things"
+   ],
+   [
+    "find their way",
+    "find their way"
+   ],
+   [
+    "to where they BELONG.",
+    "to where they belong."
+   ]
+  ]
+ },
+ {
+  "id": "L54",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Like that DOG",
+    "Like that dog"
+   ],
+   [
+    "on the GANGWAY.",
+    "on the gangway."
+   ],
+   [
+    "PEOPLE count too.",
+    "people count too."
+   ]
+  ]
+ },
+ {
+  "id": "L55",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Everything I lost",
+    "Everything I lost"
+   ],
+   [
+    "went to GRAN'S.",
+    "went to gran's."
+   ],
+   [
+    "I still belong THERE.",
+    "I still belong there."
+   ]
+  ]
+ },
+ {
+  "id": "L56",
+  "who": "narrator",
+  "chunks": [
+   [
+    "All WEEK,",
+    "all week,"
+   ],
+   [
+    "I was HOPPING",
+    "I was hopping"
+   ],
+   [
+    "my way BACK.",
+    "my way back."
+   ]
+  ]
+ },
+ {
+  "id": "L57",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I stop",
+    "So I stop"
+   ],
+   [
+    "FIGHTING it.",
+    "fighting it."
+   ]
+  ]
+ },
+ {
+  "id": "L58",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I walk to",
+    "I walk to"
+   ],
+   [
+    "the BENCH,",
+    "the bench,"
+   ],
+   [
+    "and sit down",
+    "and sit down"
+   ],
+   [
+    "in my old SEAT.",
+    "in my old seat."
+   ]
+  ]
+ },
+ {
+  "id": "L59",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's EMPTY",
+    "It's empty"
+   ],
+   [
+    "when I SIT.",
+    "when I sit."
+   ],
+   [
+    "Just a DENT",
+    "Just a dent"
+   ],
+   [
+    "in the cushion.",
+    "in the cushion."
+   ]
+  ]
+ },
+ {
+  "id": "L60",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I give Gran",
+    "I give Gran"
+   ],
+   [
+    "her GLASSES.",
+    "her glasses."
+   ]
+  ]
+ },
+ {
+  "id": "L61",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She puts them ON,",
+    "She puts them on,"
+   ],
+   [
+    "and her whole face",
+    "and her whole face"
+   ],
+   [
+    "LIGHTS up.",
+    "lights up."
+   ]
+  ]
+ },
+ {
+  "id": "L62",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She pulls my GLOVE",
+    "She pulls my glove"
+   ],
+   [
+    "out of her POCKET",
+    "out of her pocket"
+   ],
+   [
+    "and hands it OVER.",
+    "and hands it over."
+   ]
+  ]
+ },
+ {
+  "id": "L63",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She says,",
+    "She says,"
+   ],
+   [
+    "\"I knew",
+    "I knew"
+   ],
+   [
+    "you'd turn UP,",
+    "you'd turn up,"
+   ],
+   [
+    "like the GLOVE.\"",
+    "like the glove."
+   ]
+  ]
+ },
+ {
+  "id": "L63a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I tell her",
+    "i tell her"
+   ],
+   [
+    "I'm SORRY",
+    "i'm sorry"
+   ],
+   [
+    "I stayed away",
+    "i stayed away"
+   ],
+   [
+    "four YEARS.",
+    "four years."
+   ]
+  ]
+ },
+ {
+  "id": "L64",
+  "who": "narrator",
+  "chunks": [
+   [
+    "We sit",
+    "We sit"
+   ],
+   [
+    "by the WINDOW",
+    "by the window"
+   ],
+   [
+    "as the ISLAND",
+    "as the island"
+   ],
+   [
+    "comes UP.",
+    "comes up."
+   ]
+  ]
+ },
+ {
+  "id": "L65",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A WAKE",
+    "a wake"
+   ],
+   [
+    "runs out",
+    "runs out"
+   ],
+   [
+    "behind us,",
+    "behind us,"
+   ],
+   [
+    "all the way",
+    "all the way"
+   ],
+   [
+    "back to TOWN.",
+    "back to town."
+   ]
+  ]
+ },
+ {
+  "id": "L66",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In this TOWN,",
+    "In this town,"
+   ],
+   [
+    "everything you LOSE",
+    "everything you lose"
+   ],
+   [
+    "finds its way BACK.",
+    "finds its way back."
+   ]
+  ]
+ },
+ {
+  "id": "L67",
+  "who": "narrator",
+  "chunks": [
+   [
+    "GRAN",
+    "gran"
+   ],
+   [
+    "lost ME.",
+    "lost me."
+   ]
+  ]
+ },
+ {
+  "id": "L68",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And on her MAT",
+    "And on her mat"
+   ],
+   [
+    "sits a GLOVE",
+    "sits a glove"
+   ],
+   [
+    "I haven't LOST",
+    "I haven't lost"
+   ],
+   [
+    "YET.",
+    "yet."
+   ]
+  ]
+ }
+]
