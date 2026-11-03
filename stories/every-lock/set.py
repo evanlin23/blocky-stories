@@ -572,10 +572,10 @@ def build_dk(kit, M, ctx):
     """The fridge man's kitchen, enclosed so its day and night are its own: the fridge, the 64 locks, the cooler."""
     x = DK0
     room_floor(kit, "dk floor", x - 2.6, x + 2.6, -0.2, 4.2, M["floor_wood"])
-    wall(kit, M, "dk wallN", "x", 4.2, x - 2.6, x + 2.6, WALL_H, M["mint"])
-    wall(kit, M, "dk wallW", "y", x - 2.6, -0.2, 4.2, WALL_H, M["mint"])
-    wall(kit, M, "dk wallE", "y", x + 2.6, -0.2, 4.2, WALL_H, M["mint"])
-    wall(kit, M, "dk wallS", "x", -0.2, x - 2.6, x + 2.6, WALL_H, M["mint"])
+    wall(kit, M, "dk wallN", "x", 4.2, x - 2.6, x + 2.6, WALL_H, kit.plastic("#4f8f79", 0.6, name="p dkwall"))
+    wall(kit, M, "dk wallW", "y", x - 2.6, -0.2, 4.2, WALL_H, kit.plastic("#4f8f79", 0.6, name="p dkwall"))
+    wall(kit, M, "dk wallE", "y", x + 2.6, -0.2, 4.2, WALL_H, kit.plastic("#4f8f79", 0.6, name="p dkwall"))
+    wall(kit, M, "dk wallS", "x", -0.2, x - 2.6, x + 2.6, WALL_H, kit.plastic("#4f8f79", 0.6, name="p dkwall"))
     bx(kit, "dk ceiling", (5.4, 4.6, 0.1), (x, 2.0, WALL_H + 0.05), M["white"])
     # the fridge: body and a hinged door; the door carries 64 locks
     bx(kit, "fr body", (0.9, 0.7, 1.75), (x - 0.2, 3.7, 0.875), kit.plastic("#4a606c", 0.5, name="p frb"))
@@ -602,7 +602,7 @@ def build_dk(kit, M, ctx):
     kit.prop("light_ceiling1", (0, 0, -0.84), parent=ctx["dk_swing"], scale=1.3)
     kit.sphere("dk bulb", 0.07, (0, 0, -0.55), unfogged_emit(kit, "bulb", "#fff0c8", 6.0), ctx["dk_swing"], 10)
     L = kit.light
-    L("dk_a", "AREA", (x, 1.8, 2.45), 100, "#fff1d8", size=1.4)
+    L("dk_a", "AREA", (x, 1.8, 2.45), 80, "#fff1d8", size=1.4)
     L("dk_b", "AREA", (x - 0.2, 3.0, 2.4), 60, "#ffffff", size=1.0)
     L("dk_n1", "AREA", (x, 1.8, 2.45), 140, "#ffb86b", size=1.6)
     L("dk_n2", "POINT", (x + 0.9, 3.1, 0.45), 26, "#ffb86b", size=0.08)
