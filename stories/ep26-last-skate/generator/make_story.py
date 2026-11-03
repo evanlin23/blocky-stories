@@ -159,8 +159,7 @@ SHOTS = [
     # 04 Lenny
     ("L25", "Pop waving up at the booth", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
     ("L25.3", "Lenny waves back", 2, BOOTH),
-    ("L26", "my face, puzzled", 2, C([-2.6, -4.3, 1.55], [ME_X, SEAT_Y, 1.4], 2.5)),
-    ("L27", "Pop shrugging: it's on his shirt", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
+    ("L26", "Pop: he hadn't been here in forty years, then the shrug (one shot, fewer cuts)", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
     ("L27.5", "Lenny in the booth: a plain cherry shirt, nothing on it", 2, C([-0.8, 0.6, 3.0], [0.0, 5.4, 3.0], 1.6)),
     # 05 slow song two
     ("L28", "high wide: the dim, the pool slides in from the edge and onto the Skater, dead centre", 2, HIGH),
