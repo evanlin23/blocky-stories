@@ -42,54 +42,54 @@
    ],
    "twist": "L44",
    "sway": [
-    "S48",
-    "S50",
+    "S49",
     "S51",
     "S52",
-    "S54",
-    "S56",
+    "S53",
+    "S55",
     "S57",
-    "S59",
+    "S58",
     "S60",
     "S61",
     "S62",
     "S63",
-    "S65",
+    "S64",
     "S66",
-    "S68",
+    "S67",
     "S69",
-    "S71",
+    "S70",
     "S72",
     "S73",
     "S74",
     "S75",
-    "S77",
-    "S79",
+    "S76",
+    "S78",
     "S80",
-    "S82",
+    "S81",
     "S83",
     "S84",
-    "S86",
-    "S92",
-    "S94",
+    "S85",
+    "S87",
+    "S93",
     "S95",
     "S96",
     "S97",
-    "S101",
+    "S98",
     "S102",
     "S103",
     "S104",
-    "S106",
-    "S126"
+    "S105",
+    "S107",
+    "S127"
    ],
    "hold": [
-    "S73",
     "S74",
-    "S77",
-    "S79",
-    "S90",
-    "S103",
-    "S104"
+    "S75",
+    "S78",
+    "S80",
+    "S91",
+    "S104",
+    "S105"
    ],
    "camera": true,
    "idle": true,
@@ -1469,30 +1469,30 @@
     [
      0,
      [
-      1.2,
-      -2.0,
-      5.4
+      0.3,
+      12.0,
+      4.4
      ],
      [
-      -1.5,
-      6.0,
+      0.0,
+      -6.0,
       7.2
      ],
-     22
+     18
     ],
     [
      1,
      [
-      1.0,
-      -1.6,
-      5.6
+      0.1,
+      11.0,
+      4.8
      ],
      [
-      -1.5,
-      6.0,
-      7.2
+      0.0,
+      -6.0,
+      7.4
      ],
-     22
+     19
     ]
    ],
    "step": 2,
@@ -1500,7 +1500,7 @@
    "look": "day",
    "at": "L03.1",
    "fill": 0.8,
-   "note": "bridges at every height, from below"
+   "note": "bridges at every height, down the lane"
   },
   {
    "id": "S06",
@@ -1508,30 +1508,30 @@
     [
      0,
      [
-      -0.4,
-      2.6,
-      6.2
+      0.5,
+      -1.7,
+      7.9
      ],
      [
-      0.0,
-      3.0,
-      7.0
+      1.2,
+      -0.5,
+      6.95
      ],
-     40
+     34
     ],
     [
      1,
      [
-      -0.2,
-      2.8,
-      6.4
+      0.7,
+      -1.5,
+      7.8
      ],
      [
-      0.0,
-      3.0,
-      7.0
+      1.3,
+      -0.5,
+      6.95
      ],
-     40
+     38
     ]
    ],
    "step": 2,
@@ -1539,7 +1539,7 @@
    "look": "day",
    "at": "L04",
    "fill": 0.8,
-   "note": "tight: a new pale plank settling on someone's bridge"
+   "note": "tight: a new pale plank settling on a bridge"
   },
   {
    "id": "S07",
@@ -1547,30 +1547,30 @@
     [
      0,
      [
-      0.336,
+      0.4,
       3.0,
-      7.672
+      7.9
      ],
      [
       -2.25,
       3.0,
-      7.4
+      7.45
      ],
-     30
+     32
     ],
     [
      1,
      [
-      -0.261,
+      0.2,
       3.0,
-      7.609
+      7.8
      ],
      [
       -2.25,
       3.0,
-      7.4
+      7.45
      ],
-     30
+     36
     ]
    ],
    "step": 2,
@@ -1585,30 +1585,30 @@
     [
      0,
      [
-      0.0,
-      -4.0,
-      4.0
+      1.0,
+      -3.5,
+      6.4
      ],
      [
       -1.0,
-      3.2,
-      7.5
+      3.0,
+      7.4
      ],
-     26
+     20
     ],
     [
      1,
      [
-      0.2,
-      -3.6,
-      4.4
+      1.0,
+      -3.0,
+      6.6
      ],
      [
       -1.0,
-      3.4,
-      7.5
+      3.2,
+      7.4
      ],
-     28
+     22
     ]
    ],
    "step": 2,
@@ -1624,37 +1624,37 @@
     [
      0,
      [
-      0.0,
-      17.8,
-      7.9
+      0.1,
+      20.2,
+      8.0
      ],
      [
-      0.0,
-      21.5,
-      7.3
+      -2.25,
+      21.0,
+      7.45
      ],
-     26
+     30
     ],
     [
      1,
      [
-      0.0,
-      18.2,
+      0.1,
+      20.4,
       7.9
      ],
      [
-      0.0,
-      22.0,
-      7.3
+      -2.25,
+      21.0,
+      7.45
      ],
-     28
+     34
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "day",
    "at": "L06",
-   "note": "two old guys in flat caps at facing windows"
+   "note": "an old guy in a flat cap at his window"
   },
   {
    "id": "S10",
@@ -1662,37 +1662,37 @@
     [
      0,
      [
-      2.541,
-      19.533,
-      7.524
+      -0.1,
+      21.8,
+      8.0
      ],
      [
-      0.0,
+      2.25,
       21.0,
-      6.9
+      7.45
      ],
-     32
+     30
     ],
     [
      1,
      [
-      1.383,
-      19.352,
-      7.357
+      -0.1,
+      21.6,
+      7.9
      ],
      [
-      0.0,
+      2.25,
       21.0,
-      6.9
+      7.45
      ],
-     32
+     34
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "day",
    "at": "L06.1",
-   "note": "their bridge between them, smooth grey stone"
+   "note": "and the other, facing him"
   },
   {
    "id": "S11",
@@ -1700,66 +1700,28 @@
     [
      0,
      [
-      -1.821,
-      19.472,
-      7.234
+      -1.2,
+      17.0,
+      8.3
      ],
      [
       0.0,
       21.0,
       6.9
-     ],
-     34
-    ],
-    [
-     1,
-     [
-      -1.365,
-      19.854,
-      7.151
-     ],
-     [
-      0.0,
-      21.0,
-      6.9
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "day",
-   "at": "L06.2",
-   "note": "the stone, closer"
-  },
-  {
-   "id": "S12",
-   "cam": [
-    [
-     0,
-     [
-      0.0,
-      -9.8,
-      8.4
-     ],
-     [
-      0.0,
-      -6.0,
-      7.4
      ],
      24
     ],
     [
      1,
      [
-      0.0,
-      -9.2,
-      8.4
+      -1.0,
+      17.6,
+      8.1
      ],
      [
       0.0,
-      -6.0,
-      7.4
+      21.0,
+      6.9
      ],
      27
     ]
@@ -1767,11 +1729,49 @@
    "step": 2,
    "hand": 0.004,
    "look": "day",
-   "at": "L07",
-   "note": "two neighbors glaring across a bridge"
+   "at": "L06.2",
+   "note": "their bridge, smooth grey stone"
   },
   {
-   "id": "S13",
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      0.1,
+      -6.8,
+      8.0
+     ],
+     [
+      -2.25,
+      -6.0,
+      7.45
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.1,
+      -6.6,
+      7.9
+     ],
+     [
+      -2.25,
+      -6.0,
+      7.45
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "day",
+   "at": "L07",
+   "note": "a neighbor glaring across his bridge"
+  },
+  {
+   "id": "S14",
    "cam": [
     [
      0,
@@ -1809,7 +1809,7 @@
    "note": "the same two pass each other on the cobbles, strangers, a charred bridge behind"
   },
   {
-   "id": "S15",
+   "id": "S16",
    "cam": [
     [
      0,
@@ -1847,35 +1847,35 @@
    "note": "an old woman at a window, lips pressed shut"
   },
   {
-   "id": "S16",
+   "id": "S17",
    "cam": [
     [
      0,
      [
-      0.0,
-      -2.5,
-      5.6
+      -0.3,
+      -2.4,
+      8.4
      ],
      [
-      -1.6,
+      -1.0,
       -3.0,
-      7.4
+      0.4
      ],
-     40
+     26
     ],
     [
      1,
      [
-      0.0,
+      -0.3,
       -2.6,
-      5.4
+      8.2
      ],
      [
-      -1.6,
+      -1.0,
       -3.0,
-      7.4
+      0.4
      ],
-     46
+     30
     ]
    ],
    "step": 2,
@@ -1885,7 +1885,7 @@
    "note": "looking down at the empty cobbles"
   },
   {
-   "id": "S17",
+   "id": "S18",
    "cam": [
     [
      0,
@@ -1923,7 +1923,7 @@
    "note": "April sun: Eli at his window, sunburned forearms, waving"
   },
   {
-   "id": "S18",
+   "id": "S19",
    "cam": [
     [
      0,
@@ -1961,7 +1961,7 @@
    "note": "the guy across the alley, ELI"
   },
   {
-   "id": "S19",
+   "id": "S20",
    "cam": [
     [
      0,
@@ -1999,7 +1999,7 @@
    "note": "Eli and me laughing at our two windows, the bridge three planks long"
   },
   {
-   "id": "S20",
+   "id": "S21",
    "cam": [
     [
      0,
@@ -2037,7 +2037,7 @@
    "note": "me, laughing"
   },
   {
-   "id": "S21",
+   "id": "S22",
    "cam": [
     [
      0,
@@ -2075,35 +2075,35 @@
    "note": "Eli claps me on the shoulder, both laughing (cut before it lands)"
   },
   {
-   "id": "S23",
+   "id": "S24",
    "cam": [
     [
      0,
      [
-      -1.45,
-      -0.95,
-      7.55
-     ],
-     [
-      -1.3,
       -0.5,
-      6.95
-     ],
-     32
-    ],
-    [
-     1,
-     [
-      -1.3,
-      -0.9,
-      7.4
+      -1.7,
+      7.7
      ],
      [
       -1.2,
       -0.5,
       6.95
      ],
-     36
+     28
+    ],
+    [
+     1,
+     [
+      -0.4,
+      -1.5,
+      7.55
+     ],
+     [
+      -1.25,
+      -0.5,
+      6.95
+     ],
+     32
     ]
    ],
    "step": 2,
@@ -2111,13 +2111,13 @@
    "look": "april",
    "at": "L12",
    "dof": [
-    0.7,
-    2.8
+    1.5,
+    3.5
    ],
    "note": "LORE: the first plank at my sill, two teal strokes, the counter ticking"
   },
   {
-   "id": "S25",
+   "id": "S26",
    "cam": [
     [
      0,
@@ -2155,7 +2155,7 @@
    "note": "the whole bridge, thirty planks, from below"
   },
   {
-   "id": "S26",
+   "id": "S27",
    "cam": [
     [
      0,
@@ -2193,7 +2193,7 @@
    "note": "bridges take years: the old stone bridge for scale"
   },
   {
-   "id": "S27",
+   "id": "S28",
    "cam": [
     [
      0,
@@ -2231,7 +2231,7 @@
    "note": "two mugs, one sliding across the bridge on a little tray"
   },
   {
-   "id": "S28",
+   "id": "S29",
    "cam": [
     [
      0,
@@ -2269,7 +2269,7 @@
    "note": "the tray slides"
   },
   {
-   "id": "S29",
+   "id": "S30",
    "cam": [
     [
      0,
@@ -2307,7 +2307,7 @@
    "note": "cards on the bridge between our windows, Eli sly, a card up his sleeve"
   },
   {
-   "id": "S30",
+   "id": "S31",
    "cam": [
     [
      0,
@@ -2345,7 +2345,7 @@
    "note": "Eli, sly"
   },
   {
-   "id": "S31",
+   "id": "S32",
    "cam": [
     [
      0,
@@ -2383,7 +2383,7 @@
    "note": "Eli hands me a mug made exactly how I like it (cut before hands meet)"
   },
   {
-   "id": "S32",
+   "id": "S33",
    "cam": [
     [
      0,
@@ -2421,35 +2421,35 @@
    "note": "me, worried"
   },
   {
-   "id": "S33",
+   "id": "S34",
    "cam": [
     [
      0,
      [
-      42.118,
-      -3.486,
-      1.414
+      41.6,
+      0.4,
+      1.5
      ],
      [
-      40.2,
-      -1.2,
-      1.1
+      39.2,
+      -1.4,
+      0.9
      ],
-     30
+     22
     ],
     [
      1,
      [
-      41.606,
-      -2.876,
-      1.33
+      41.2,
+      0.2,
+      1.5
      ],
      [
-      40.2,
-      -1.2,
-      1.1
+      39.2,
+      -1.4,
+      0.9
      ],
-     30
+     24
     ]
    ],
    "step": 2,
@@ -2459,33 +2459,33 @@
    "note": "Pip the terrier leaps at Eli in our hall, tail going"
   },
   {
-   "id": "S34",
+   "id": "S35",
    "cam": [
     [
      0,
      [
-      41.039,
-      0.681,
-      0.878
+      40.4,
+      -0.1,
+      1.0
      ],
      [
-      40.5,
-      -0.8,
-      0.6
+      39.4,
+      -1.3,
+      0.8
      ],
-     30
+     26
     ],
     [
      1,
      [
-      40.904,
-      0.31,
-      0.808
+      40.1,
+      -0.3,
+      1.0
      ],
      [
-      40.5,
-      -0.8,
-      0.6
+      39.4,
+      -1.3,
+      0.8
      ],
      30
     ]
@@ -2497,28 +2497,28 @@
    "note": "Pip jumping up, close"
   },
   {
-   "id": "S35",
+   "id": "S36",
    "cam": [
     [
      0,
      [
-      39.911,
-      -3.581,
-      1.653
+      39.9,
+      0.5,
+      1.6
      ],
      [
       38.5,
       -1.9,
       1.5
      ],
-     32
+     28
     ],
     [
      1,
      [
-      39.59,
-      -3.199,
-      1.619
+      39.6,
+      0.3,
+      1.6
      ],
      [
       38.5,
@@ -2535,35 +2535,35 @@
    "note": "Mom at our door, smiling, saying his name"
   },
   {
-   "id": "S36",
+   "id": "S37",
    "cam": [
     [
      0,
      [
-      38.718,
-      -2.428,
-      1.64
+      41.4,
+      -2.0,
+      1.6
      ],
      [
       40.0,
       -0.9,
       1.5
      ],
-     32
+     30
     ],
     [
      1,
      [
-      38.974,
-      -2.123,
-      1.612
+      41.2,
+      -1.9,
+      1.6
      ],
      [
       40.0,
       -0.9,
       1.5
      ],
-     32
+     34
     ]
    ],
    "step": 2,
@@ -2573,35 +2573,35 @@
    "note": "me turning, puzzled"
   },
   {
-   "id": "S37",
+   "id": "S38",
    "cam": [
     [
      0,
      [
-      39.0,
+      38.6,
       -1.8,
       2.0
      ],
      [
       40.8,
-      0.6,
+      0.5,
       0.9
      ],
-     28
+     22
     ],
     [
      1,
      [
-      39.4,
-      -1.5,
+      38.9,
+      -1.6,
       1.9
      ],
      [
       40.8,
-      0.6,
+      0.5,
       0.9
      ],
-     31
+     24
     ]
    ],
    "step": 2,
@@ -2612,35 +2612,35 @@
    "note": "our dinner table, a third plate already set"
   },
   {
-   "id": "S39",
+   "id": "S40",
    "cam": [
     [
      0,
      [
-      40.169,
-      2.932,
-      1.36
+      40.8,
+      -0.7,
+      1.5
      ],
      [
       40.8,
-      1.2,
-      0.9
+      1.6,
+      1.1
      ],
-     34
+     26
     ],
     [
      1,
      [
-      40.335,
-      2.476,
-      1.239
+      40.8,
+      -0.5,
+      1.5
      ],
      [
       40.8,
-      1.2,
-      0.9
+      1.6,
+      1.15
      ],
-     34
+     30
     ]
    ],
    "step": 2,
@@ -2650,35 +2650,35 @@
    "note": "close on Mom setting it down, at ease"
   },
   {
-   "id": "S40",
+   "id": "S41",
    "cam": [
     [
      0,
      [
-      41.129,
-      -0.067,
-      1.583
+      40.8,
+      -0.6,
+      1.6
      ],
      [
       40.8,
-      1.8,
-      1.45
+      1.7,
+      1.5
      ],
      34
     ],
     [
      1,
      [
-      41.051,
-      0.376,
-      1.551
+      40.8,
+      -0.2,
+      1.6
      ],
      [
       40.8,
-      1.8,
-      1.45
+      1.7,
+      1.5
      ],
-     34
+     38
     ]
    ],
    "step": 2,
@@ -2688,14 +2688,14 @@
    "note": "Mom, very quiet, looking down at the table"
   },
   {
-   "id": "S41",
+   "id": "S42",
    "cam": [
     [
      0,
      [
-      0.4,
-      -0.2,
-      7.5
+      0.3,
+      1.0,
+      7.7
      ],
      [
       1.42,
@@ -2707,9 +2707,9 @@
     [
      1,
      [
-      0.7,
-      0.0,
-      7.4
+      0.6,
+      0.9,
+      7.6
      ],
      [
       1.42,
@@ -2725,22 +2725,22 @@
    "at": "L22",
    "dof": [
     1.2,
-    2.8
+    4.0
    ],
    "note": "Eli's windowsill: a small box of matches by a potted plant"
   },
   {
-   "id": "S42",
+   "id": "S43",
    "cam": [
     [
      0,
      [
       0.2,
-      0.0,
+      1.0,
       7.7
      ],
      [
-      1.55,
+      1.5,
       0.35,
       7.0
      ],
@@ -2750,7 +2750,7 @@
      1,
      [
       0.6,
-      0.2,
+      0.8,
       7.5
      ],
      [
@@ -2768,7 +2768,7 @@
    "note": "the box and loose matches"
   },
   {
-   "id": "S43",
+   "id": "S44",
    "cam": [
     [
      0,
@@ -2806,73 +2806,73 @@
    "note": "Eli's room through the window: no candles anywhere"
   },
   {
-   "id": "S45",
+   "id": "S46",
    "cam": [
     [
      0,
      [
-      0.1,
-      0.0,
-      9.5
+      -1.2,
+      -2.1,
+      7.4
      ],
      [
+      0.8,
       0.0,
-      -0.2,
-      0.0
+      1.0
      ],
-     24
+     22
     ],
     [
      1,
      [
-      0.0,
-      0.0,
-      8.0
+      -0.9,
+      -1.8,
+      6.8
      ],
      [
-      0.0,
-      -0.2,
-      0.0
+      0.8,
+      0.1,
+      0.8
      ],
-     26
+     24
     ]
    ],
    "step": 2,
    "hand": 0.003,
    "look": "day",
    "at": "L24",
-   "note": "top-down over the lane: the three burnt bridges lie exactly under ours"
+   "note": "over the lane: the three burnt bridges lie exactly under ours"
   },
   {
-   "id": "S46",
+   "id": "S47",
    "cam": [
     [
      0,
      [
-      0.0,
-      -2.0,
-      0.9
+      -1.2,
+      -1.0,
+      3.0
      ],
      [
-      1.55,
+      1.6,
       -0.5,
-      6.0
+      7.0
      ],
-     24
+     22
     ],
     [
      1,
      [
-      0.0,
-      -1.4,
-      1.5
+      -1.0,
+      -0.8,
+      3.6
      ],
      [
-      1.55,
+      1.6,
       -0.5,
-      6.4
+      7.2
      ],
-     26
+     24
     ]
    ],
    "step": 2,
@@ -2882,7 +2882,7 @@
    "note": "their far ends, right under Eli's window, Eli leaning out above"
   },
   {
-   "id": "S48",
+   "id": "S49",
    "cam": [
     [
      0,
@@ -2920,7 +2920,7 @@
    "note": "autumn night, string lights on, my breath at the window"
   },
   {
-   "id": "S50",
+   "id": "S51",
    "cam": [
     [
      0,
@@ -2959,7 +2959,7 @@
    "note": "low on the cobbles: the burnt bridges a hand's width up off the ground"
   },
   {
-   "id": "S51",
+   "id": "S52",
    "cam": [
     [
      0,
@@ -2998,7 +2998,7 @@
    "note": "light under the planks"
   },
   {
-   "id": "S52",
+   "id": "S53",
    "cam": [
     [
      0,
@@ -3037,81 +3037,42 @@
    "note": "wider: lifted to waist height, swaying"
   },
   {
-   "id": "S54",
+   "id": "S55",
    "cam": [
     [
      0,
      [
-      -1.4,
-      -1.0,
-      7.6
+      0.8,
+      -5.0,
+      1.6
      ],
      [
-      0.6,
+      0.0,
       0.5,
-      4.0
+      3.8
      ],
-     22
+     18
     ],
     [
      1,
      [
-      -1.2,
-      -1.0,
-      7.5
+      0.8,
+      -4.2,
+      1.8
      ],
      [
-      0.6,
+      0.0,
       0.5,
-      3.7
+      4.0
      ],
-     24
+     18
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "night",
    "at": "L28",
-   "note": "from my window: the burnt bridges a floor below, black and cracked"
-  },
-  {
-   "id": "S56",
-   "cam": [
-    [
-     0,
-     [
-      0.8,
-      -2.0,
-      3.2
-     ],
-     [
-      -0.8,
-      0.5,
-      4.4
-     ],
-     28
-    ],
-    [
-     1,
-     [
-      0.6,
-      -1.5,
-      3.6
-     ],
-     [
-      -0.6,
-      0.5,
-      4.5
-     ],
-     30
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "look": "night",
-   "at": "L28.2",
-   "fill": 1.1,
-   "note": "black cracked planks, swaying UP"
+   "note": "from below: the burnt bridges a floor up, black and cracked"
   },
   {
    "id": "S57",
@@ -3119,30 +3080,68 @@
     [
      0,
      [
-      -1.4,
-      -1.0,
-      7.6
+      -2.6,
+      -0.2,
+      7.7
      ],
      [
-      0.4,
-      0.5,
-      5.6
+      0.6,
+      0.6,
+      3.8
      ],
      22
     ],
     [
      1,
      [
-      -1.2,
-      -1.0,
-      7.5
+      -2.5,
+      -0.2,
+      7.6
      ],
      [
-      0.4,
-      0.5,
-      5.8
+      0.6,
+      0.6,
+      3.9
      ],
      24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.004,
+   "look": "night",
+   "at": "L28.2",
+   "note": "from my window: swaying UP"
+  },
+  {
+   "id": "S58",
+   "cam": [
+    [
+     0,
+     [
+      0.8,
+      -5.0,
+      1.6
+     ],
+     [
+      0.0,
+      0.5,
+      5.4
+     ],
+     18
+    ],
+    [
+     1,
+     [
+      0.8,
+      -4.4,
+      1.9
+     ],
+     [
+      0.0,
+      0.5,
+      5.6
+     ],
+     18
     ]
    ],
    "step": 2,
@@ -3152,7 +3151,7 @@
    "note": "the next night: higher"
   },
   {
-   "id": "S59",
+   "id": "S60",
    "cam": [
     [
      0,
@@ -3191,7 +3190,7 @@
    "note": "down the lane: someone else's old burnt bridge, flat on the cobbles"
   },
   {
-   "id": "S60",
+   "id": "S61",
    "cam": [
     [
      0,
@@ -3230,7 +3229,7 @@
    "note": "the other burnt bridge, flat, still"
   },
   {
-   "id": "S61",
+   "id": "S62",
    "cam": [
     [
      0,
@@ -3269,7 +3268,7 @@
    "note": "Mrs. Vega crosses the lane so she won't walk under them"
   },
   {
-   "id": "S62",
+   "id": "S63",
    "cam": [
     [
      0,
@@ -3308,7 +3307,7 @@
    "note": "her scarlet shawl, hurrying along the wall"
   },
   {
-   "id": "S63",
+   "id": "S64",
    "cam": [
     [
      0,
@@ -3348,7 +3347,7 @@
    "note": "me waking in bed, the clock glyph at three"
   },
   {
-   "id": "S65",
+   "id": "S66",
    "cam": [
     [
      0,
@@ -3388,31 +3387,31 @@
    "note": "drop: my dark window, still"
   },
   {
-   "id": "S66",
+   "id": "S67",
    "cam": [
     [
      0,
      [
-      -0.5,
+      -3.2,
       0.2,
-      8.4
+      7.7
      ],
      [
-      -1.5,
+      -1.4,
       0.55,
-      7.1
+      7.0
      ],
      30
     ],
     [
      1,
      [
-      -0.8,
+      -3.0,
       0.3,
-      8.2
+      7.6
      ],
      [
-      -1.5,
+      -1.4,
       0.55,
       7.0
      ],
@@ -3423,38 +3422,39 @@
    "hand": 0.002,
    "look": "night",
    "at": "L33",
+   "fill": 0.9,
    "note": "the oldest burnt bridge's end resting on my windowsill"
   },
   {
-   "id": "S68",
+   "id": "S69",
    "cam": [
     [
      0,
      [
-      0.6,
-      0.6,
-      5.8
+      0.5,
+      -4.0,
+      5.0
      ],
      [
-      -1.2,
-      0.55,
-      6.9
+      -0.5,
+      0.6,
+      6.0
      ],
-     24
+     20
     ],
     [
      1,
      [
-      0.2,
-      0.6,
-      6.0
+      0.4,
+      -3.6,
+      5.3
      ],
      [
-      -1.2,
-      0.55,
-      6.9
+      -0.5,
+      0.6,
+      6.2
      ],
-     28
+     22
     ]
    ],
    "step": 2,
@@ -3465,7 +3465,7 @@
    "note": "the other two just below"
   },
   {
-   "id": "S69",
+   "id": "S70",
    "cam": [
     [
      0,
@@ -3511,7 +3511,7 @@
    "note": "me on the cobbles in my hoodie, phone torch on"
   },
   {
-   "id": "S71",
+   "id": "S72",
    "cam": [
     [
      0,
@@ -3557,7 +3557,7 @@
    "note": "along the lowest burnt bridge to its middle"
   },
   {
-   "id": "S72",
+   "id": "S73",
    "cam": [
     [
      0,
@@ -3603,42 +3603,41 @@
    "note": "the one unburnt plank, pale in the soot"
   },
   {
-   "id": "S73",
+   "id": "S74",
    "cam": [
     [
      0,
      [
-      -0.55,
+      -0.5,
       0.55,
-      2.55
+      2.7
      ],
      [
       0.0,
       0.55,
       1.3
      ],
-     34
+     20
     ],
     [
      1,
      [
       -0.35,
       0.55,
-      2.0
+      2.4
      ],
      [
       0.0,
       0.55,
       1.3
      ],
-     38
+     22
     ]
    ],
    "step": 2,
    "hand": 0.0015,
    "look": "night",
    "at": "L36",
-   "fill": 1.3,
    "torch": [
     0.0,
     0.55,
@@ -3649,42 +3648,41 @@
    "note": "two soot handprints, side by side, on the plank"
   },
   {
-   "id": "S74",
+   "id": "S75",
    "cam": [
     [
      0,
      [
-      -0.3,
+      -0.35,
       0.55,
-      2.0
+      2.3
      ],
      [
       0.0,
       0.55,
       1.3
      ],
-     34
+     22
     ],
     [
      1,
      [
-      -0.2,
+      -0.25,
       0.55,
-      1.75
+      2.1
      ],
      [
       0.0,
       0.55,
       1.3
      ],
-     40
+     24
     ]
    ],
    "step": 2,
    "hand": 0.0015,
    "look": "night",
    "at": "L36.2",
-   "fill": 1.3,
    "torch": [
     0.0,
     0.55,
@@ -3695,7 +3693,7 @@
    "note": "close: side by side"
   },
   {
-   "id": "S75",
+   "id": "S76",
    "cam": [
     [
      0,
@@ -3741,7 +3739,7 @@
    "note": "my hand held over one print, matching it"
   },
   {
-   "id": "S77",
+   "id": "S78",
    "cam": [
     [
      0,
@@ -3787,7 +3785,7 @@
    "note": "the second burnt bridge's middle plank, the same notches"
   },
   {
-   "id": "S79",
+   "id": "S80",
    "cam": [
     [
      0,
@@ -3833,35 +3831,35 @@
    "note": "tight: the date notches, a nine, the month glyph"
   },
   {
-   "id": "S80",
+   "id": "S81",
    "cam": [
     [
      0,
      [
-      -1.398,
-      -2.728,
-      1.69
+      1.1,
+      -1.0,
+      1.7
      ],
      [
       -0.4,
       -1.0,
-      1.55
+      1.5
      ],
      30
     ],
     [
      1,
      [
-      -1.198,
-      -2.382,
-      1.662
+      0.9,
+      -1.0,
+      1.7
      ],
      [
       -0.4,
       -1.0,
-      1.55
+      1.5
      ],
-     30
+     34
     ]
    ],
    "step": 2,
@@ -3872,67 +3870,66 @@
    "note": "I look up at Eli's window, scared"
   },
   {
-   "id": "S82",
+   "id": "S83",
    "cam": [
     [
      0,
      [
-      -1.1,
-      -0.7,
-      8.8
+      -2.7,
+      -0.5,
+      8.0
      ],
      [
       3.3,
       -1.1,
-      6.3
+      6.8
      ],
-     24
+     22
     ],
     [
      1,
      [
-      -0.7,
-      -0.7,
-      8.6
+      -2.6,
+      -0.5,
+      8.0
      ],
      [
       3.3,
       -1.1,
-      6.3
+      6.8
      ],
-     28
+     26
     ]
    ],
    "step": 2,
    "hand": 0.003,
    "look": "night",
    "at": "L41",
-   "fill": 1.1,
    "note": "through his window: a packed sea bag by his bed"
   },
   {
-   "id": "S83",
+   "id": "S84",
    "cam": [
     [
      0,
      [
-      -0.8,
-      0.5,
-      8.8
+      -2.7,
+      0.2,
+      8.0
      ],
      [
       5.3,
       0.7,
       7.55
      ],
-     26
+     24
     ],
     [
      1,
      [
-      -0.3,
-      0.5,
-      8.6
+      -2.6,
+      0.2,
+      8.0
      ],
      [
       5.3,
@@ -3946,11 +3943,10 @@
    "hand": 0.003,
    "look": "night",
    "at": "L41.1",
-   "fill": 1.1,
    "note": "a coil of rope on a hook"
   },
   {
-   "id": "S84",
+   "id": "S85",
    "cam": [
     [
      0,
@@ -3993,7 +3989,7 @@
    "note": "a plain card on his sill with a boat glyph and a ten"
   },
   {
-   "id": "S86",
+   "id": "S87",
    "cam": [
     [
      0,
@@ -4032,35 +4028,35 @@
    "note": "the sill: card, matches, plant"
   },
   {
-   "id": "S87",
+   "id": "S88",
    "cam": [
     [
      0,
      [
-      41.316,
-      -0.127,
-      1.59
+      41.2,
+      -0.5,
+      1.6
      ],
      [
       40.8,
-      1.8,
-      1.45
+      1.7,
+      1.5
      ],
      32
     ],
     [
      1,
      [
-      41.2,
-      0.306,
-      1.558
+      41.0,
+      -0.2,
+      1.6
      ],
      [
       40.8,
-      1.8,
-      1.45
+      1.7,
+      1.5
      ],
-     32
+     36
     ]
    ],
    "step": 2,
@@ -4070,35 +4066,35 @@
    "note": "morning: Mom at our table, quiet"
   },
   {
-   "id": "S89",
+   "id": "S90",
    "cam": [
     [
      0,
      [
-      39.2,
-      -1.6,
+      38.6,
+      -1.8,
       2.0
      ],
      [
       40.8,
-      1.0,
-      1.1
+      0.5,
+      0.9
      ],
-     28
+     22
     ],
     [
      1,
      [
-      39.6,
-      -1.3,
+      38.9,
+      -1.6,
       1.9
      ],
      [
       40.8,
-      1.0,
-      1.1
+      0.5,
+      0.9
      ],
-     30
+     24
     ]
    ],
    "step": 2,
@@ -4106,10 +4102,10 @@
    "look": "home",
    "at": "L43.2",
    "fill": 0.9,
-   "note": "the table, the three of us"
+   "note": "the table, set for three"
   },
   {
-   "id": "S90",
+   "id": "S91",
    "cam": [
     [
      0,
@@ -4147,35 +4143,35 @@
    "note": "the handprints again, close, daylight: we never fought"
   },
   {
-   "id": "S92",
+   "id": "S93",
    "cam": [
     [
      0,
      [
       0.0,
-      -3.4,
-      7.8
+      -3.6,
+      8.2
      ],
      [
       0.0,
       -0.5,
-      7.7
+      8.0
      ],
-     24
+     26
     ],
     [
      1,
      [
       0.0,
       -3.0,
-      7.9
+      8.2
      ],
      [
       0.0,
       -0.5,
-      7.7
+      8.0
      ],
-     27
+     28
     ]
    ],
    "step": 2,
@@ -4187,35 +4183,35 @@
    "note": "a memory, last November: Eli and me in the middle of our bridge at night, string lights on, soft"
   },
   {
-   "id": "S94",
+   "id": "S95",
    "cam": [
     [
      0,
      [
-      -1.9,
-      -1.4,
-      8.8
+      -1.2,
+      -2.8,
+      8.6
      ],
      [
       0.0,
       -0.5,
-      7.5
+      7.9
      ],
      22
     ],
     [
      1,
      [
-      -1.7,
-      -1.3,
-      8.6
+      -1.0,
+      -2.6,
+      8.5
      ],
      [
       0.0,
       -0.5,
-      7.5
+      7.9
      ],
-     25
+     24
     ]
    ],
    "step": 2,
@@ -4226,19 +4222,19 @@
    "note": "wide: both of us in the middle, two matches held out in the dark (never lit)"
   },
   {
-   "id": "S95",
+   "id": "S96",
    "cam": [
     [
      0,
      [
       0.0,
-      -1.5,
-      7.9
+      -1.6,
+      8.2
      ],
      [
       0.0,
       -0.5,
-      7.8
+      8.0
      ],
      40
     ],
@@ -4246,13 +4242,13 @@
      1,
      [
       0.0,
-      -1.2,
-      7.9
+      -1.3,
+      8.2
      ],
      [
       0.0,
       -0.5,
-      7.8
+      8.0
      ],
      46
     ]
@@ -4266,35 +4262,35 @@
    "note": "two matches held out"
   },
   {
-   "id": "S96",
+   "id": "S97",
    "cam": [
     [
      0,
      [
       0.0,
       -2.0,
-      8.0
+      8.3
      ],
      [
       0.0,
       -0.5,
-      7.9
+      8.1
      ],
-     40
+     36
     ],
     [
      1,
      [
       0.0,
       -1.7,
-      8.0
+      8.3
      ],
      [
       0.0,
       -0.5,
-      7.9
+      8.1
      ],
-     46
+     40
     ]
    ],
    "step": 2,
@@ -4306,33 +4302,33 @@
    "note": "my face and Eli's, side by side, eyes shut"
   },
   {
-   "id": "S97",
+   "id": "S98",
    "cam": [
     [
      0,
      [
-      0.2,
-      -1.5,
-      7.7
+      0.3,
+      -1.7,
+      8.3
      ],
      [
       0.0,
       -0.5,
-      7.9
+      8.1
      ],
      34
     ],
     [
      1,
      [
-      0.1,
-      -1.4,
-      7.8
+      0.2,
+      -1.5,
+      8.3
      ],
      [
       0.0,
       -0.5,
-      7.9
+      8.1
      ],
      38
     ]
@@ -4346,7 +4342,7 @@
    "note": "eyes shut"
   },
   {
-   "id": "S98",
+   "id": "S99",
    "cam": [
     [
      0,
@@ -4384,7 +4380,7 @@
    "note": "spring: Eli at his window waving for the first time"
   },
   {
-   "id": "S100",
+   "id": "S101",
    "cam": [
     [
      0,
@@ -4422,7 +4418,7 @@
    "note": "the first time"
   },
   {
-   "id": "S101",
+   "id": "S102",
    "cam": [
     [
      0,
@@ -4461,89 +4457,42 @@
    "note": "the three burnt bridges at night from below, raised toward our windows, string lights over them"
   },
   {
-   "id": "S102",
+   "id": "S103",
    "cam": [
     [
      0,
      [
-      0.0,
-      -1.0,
-      7.0
+      -2.6,
+      -0.2,
+      7.7
      ],
      [
-      0.0,
-      0.5,
+      0.4,
+      0.6,
       5.0
      ],
-     24
+     22
     ],
     [
      1,
      [
-      0.0,
-      -0.8,
-      7.4
+      -2.5,
+      -0.2,
+      7.6
      ],
      [
-      0.0,
-      0.5,
-      4.6
+      0.4,
+      0.6,
+      5.2
      ],
-     26
+     24
     ]
    ],
    "step": 2,
    "hand": 0.004,
    "look": "night",
    "at": "L49.1",
-   "fill": 1.1,
    "note": "rising when it gets cold"
-  },
-  {
-   "id": "S103",
-   "cam": [
-    [
-     0,
-     [
-      -0.55,
-      0.55,
-      5.6
-     ],
-     [
-      0.0,
-      0.55,
-      4.0
-     ],
-     32
-    ],
-    [
-     1,
-     [
-      -0.35,
-      0.55,
-      5.1
-     ],
-     [
-      0.0,
-      0.55,
-      4.0
-     ],
-     38
-    ]
-   ],
-   "step": 2,
-   "hand": 0.002,
-   "look": "night",
-   "at": "L49.2",
-   "fill": 1.3,
-   "torch": [
-    0.0,
-    0.55,
-    4.0,
-    0.0,
-    -0.4
-   ],
-   "note": "a burnt bridge remembers: the handprint plank"
   },
   {
    "id": "S104",
@@ -4551,80 +4500,125 @@
     [
      0,
      [
-      -0.4,
+      -0.45,
       0.55,
-      4.9
+      5.8
      ],
      [
       0.0,
       0.55,
-      3.95
+      4.35
      ],
-     40
+     22
     ],
     [
      1,
      [
       -0.3,
       0.55,
-      4.5
+      5.5
      ],
      [
       0.0,
       0.55,
-      3.95
+      4.35
      ],
-     46
+     24
+    ]
+   ],
+   "step": 2,
+   "hand": 0.002,
+   "look": "night",
+   "at": "L49.2",
+   "fill": 1.2,
+   "torch": [
+    0.0,
+    0.55,
+    4.3,
+    0.0,
+    -0.4
+   ],
+   "note": "a burnt bridge remembers: the handprint plank"
+  },
+  {
+   "id": "S105",
+   "cam": [
+    [
+     0,
+     [
+      0.45,
+      0.55,
+      5.6
+     ],
+     [
+      0.0,
+      0.55,
+      4.35
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.3,
+      0.55,
+      5.3
+     ],
+     [
+      0.0,
+      0.55,
+      4.35
+     ],
+     26
     ]
    ],
    "step": 2,
    "hand": 0.002,
    "look": "night",
    "at": "L49.3",
-   "fill": 1.3,
+   "fill": 1.2,
    "note": "what the two of you forgot"
   },
   {
-   "id": "S106",
+   "id": "S107",
    "cam": [
     [
      0,
      [
-      -1.974,
-      -1.301,
-      7.147
+      -3.2,
+      0.2,
+      7.7
      ],
      [
-      -1.3,
+      -1.4,
       0.55,
-      6.8
+      7.0
      ],
-     28
+     30
     ],
     [
      1,
      [
-      -1.805,
-      -0.838,
-      7.06
+      -3.0,
+      0.3,
+      7.6
      ],
      [
-      -1.3,
+      -1.4,
       0.55,
-      6.8
+      7.0
      ],
-     28
+     34
     ]
    ],
    "step": 2,
    "hand": 0.003,
    "look": "night",
    "at": "L49.5",
-   "fill": 1.1,
    "note": "on the night it burned"
   },
   {
-   "id": "S107",
+   "id": "S108",
    "cam": [
     [
      0,
@@ -4662,7 +4656,7 @@
    "note": "me at my window pointing down at the handprints"
   },
   {
-   "id": "S109",
+   "id": "S110",
    "cam": [
     [
      0,
@@ -4700,7 +4694,7 @@
    "note": "Eli staring at the matches, blank, like a stranger"
   },
   {
-   "id": "S110",
+   "id": "S111",
    "cam": [
     [
      0,
@@ -4742,7 +4736,7 @@
    "note": "the matches on his sill"
   },
   {
-   "id": "S111",
+   "id": "S112",
    "cam": [
     [
      0,
@@ -4780,7 +4774,7 @@
    "note": "like he'd never seen them before"
   },
   {
-   "id": "S112",
+   "id": "S113",
    "cam": [
     [
      0,
@@ -4818,7 +4812,7 @@
    "note": "his hand at the end of his sleeve sweeps the box into his pocket"
   },
   {
-   "id": "S114",
+   "id": "S115",
    "cam": [
     [
      0,
@@ -4856,7 +4850,7 @@
    "note": "Eli grins across the bridge: so I'd have to miss you?"
   },
   {
-   "id": "S116",
+   "id": "S117",
    "cam": [
     [
      0,
@@ -4894,7 +4888,7 @@
    "note": "me, laughing: good"
   },
   {
-   "id": "S118",
+   "id": "S119",
    "cam": [
     [
      0,
@@ -4932,7 +4926,7 @@
    "note": "the alley from above: our bridge whole, the burnt three flat and still"
   },
   {
-   "id": "S120",
+   "id": "S121",
    "cam": [
     [
      0,
@@ -4970,7 +4964,7 @@
    "note": "along our bridge to Eli's window, and past it, to the open sky"
   },
   {
-   "id": "S122",
+   "id": "S123",
    "cam": [
     [
      0,
@@ -5009,7 +5003,7 @@
    "note": "the end of the lane at dawn: Eli with his sea bag, walking toward the sea"
   },
   {
-   "id": "S124",
+   "id": "S125",
    "cam": [
     [
      0,
@@ -5047,35 +5041,35 @@
    "note": "winter: me at my window, frost on the glass, soft"
   },
   {
-   "id": "S126",
+   "id": "S127",
    "cam": [
     [
      0,
      [
-      0.6,
-      -1.9,
-      7.4
+      -2.6,
+      -0.5,
+      7.9
      ],
      [
-      2.6,
+      2.4,
       -0.5,
-      7.0
+      6.95
      ],
-     26
+     22
     ],
     [
      1,
      [
-      0.9,
-      -1.7,
-      7.5
+      -2.5,
+      -0.5,
+      7.8
      ],
      [
-      2.9,
+      2.6,
       -0.5,
-      7.0
+      6.95
      ],
-     30
+     24
     ]
    ],
    "step": 2,
@@ -5086,7 +5080,7 @@
    "note": "night: a new plank appears past Eli's window, the counter ticks"
   },
   {
-   "id": "S128",
+   "id": "S129",
    "cam": [
     [
      0,
@@ -5125,7 +5119,7 @@
    "note": "wide: the bridge stretches up from Eli's window over the terracotta roofs"
   },
   {
-   "id": "S129",
+   "id": "S130",
    "cam": [
     [
      0,
@@ -5164,7 +5158,7 @@
    "note": "over the roofs"
   },
   {
-   "id": "S130",
+   "id": "S131",
    "cam": [
     [
      0,
@@ -5203,7 +5197,7 @@
    "note": "from high above the town: the bridge going out over the sea, a thin line of planks in the coral dusk"
   },
   {
-   "id": "S131",
+   "id": "S132",
    "cam": [
     [
      0,
@@ -5242,7 +5236,7 @@
    "note": "far out on the water: the bridge's end, and beyond it a small boat's light"
   },
   {
-   "id": "S133",
+   "id": "S134",
    "cam": [
     [
      0,
@@ -5281,7 +5275,7 @@
    "note": "spring: the alley, window boxes in bloom, Eli's shutters open"
   },
   {
-   "id": "S135",
+   "id": "S136",
    "cam": [
     [
      0,
@@ -5319,13 +5313,13 @@
    "note": "April light on the shutters"
   },
   {
-   "id": "S136",
+   "id": "S137",
    "cam": [
     [
      0,
      [
       0.0,
-      -11.5,
+      -8.7,
       1.7
      ],
      [
@@ -5333,13 +5327,13 @@
       -3.0,
       1.2
      ],
-     26
+     20
     ],
     [
      1,
      [
       0.0,
-      -10.8,
+      -8.4,
       1.7
      ],
      [
@@ -5347,7 +5341,7 @@
       -3.0,
       1.2
      ],
-     28
+     22
     ]
    ],
    "step": 2,
@@ -5357,14 +5351,14 @@
    "note": "me and Eli walking down the cobbles toward the three burnt bridges"
   },
   {
-   "id": "S138",
+   "id": "S139",
    "cam": [
     [
      0,
      [
-      0.0,
-      -7.384,
-      1.814
+      0.884,
+      -1.97,
+      1.772
      ],
      [
       0.0,
@@ -5376,9 +5370,9 @@
     [
      1,
      [
-      0.0,
-      -6.787,
-      1.751
+      0.68,
+      -2.531,
+      1.709
      ],
      [
       0.0,
@@ -5657,7 +5651,7 @@
      0.0
     ],
     "blend": 0,
-    "yaw": 160,
+    "yaw": 150,
     "expr": "worried",
     "hidden": false,
     "arms": [
@@ -6186,7 +6180,7 @@
     "at": "L63",
     "pos": [
      -0.45,
-     -9.0,
+     -8.2,
      0.0
     ],
     "blend": 0,
@@ -6276,7 +6270,7 @@
     ],
     "blend": 0,
     "yaw": -90,
-    "expr": "grin",
+    "expr": "smile",
     "hidden": false,
     "arms": [
      0,
@@ -6455,7 +6449,7 @@
     ],
     "blend": 0,
     "yaw": -90,
-    "expr": "grin",
+    "expr": "smile",
     "hidden": false,
     "arms": [
      0,
@@ -6499,7 +6493,7 @@
      6.0
     ],
     "blend": 0.3,
-    "expr": "grin",
+    "expr": "smile",
     "arms": [
      0,
      80
@@ -6525,12 +6519,12 @@
    {
     "at": "L17",
     "pos": [
-     40.2,
-     -1.2,
+     39.1,
+     -1.6,
      0.0
     ],
     "blend": 0,
-    "yaw": 160,
+    "yaw": 180,
     "expr": "laugh",
     "hidden": false,
     "arms": [
@@ -6552,16 +6546,12 @@
    {
     "at": "L17+0.5",
     "pos": [
-     40.2,
-     -1.2,
+     39.1,
+     -1.6,
      0.0
     ],
     "blend": 0.25,
     "lean": 10,
-    "side": [
-     0,
-     30
-    ],
     "arms": [
      40,
      40
@@ -6575,16 +6565,16 @@
    {
     "at": "L19",
     "pos": [
-     40.2,
-     -1.2,
+     39.1,
+     -1.6,
      0.0
     ]
    },
    {
     "at": "L19",
     "pos": [
-     41.6,
-     -1.0,
+     41.9,
+     0.4,
      0.0
     ],
     "blend": 0,
@@ -6615,8 +6605,8 @@
    {
     "at": "L24.1",
     "pos": [
-     41.6,
-     -1.0,
+     41.9,
+     0.4,
      0.0
     ]
    },
@@ -6768,7 +6758,7 @@
     ],
     "blend": 0,
     "yaw": -90,
-    "expr": "grin",
+    "expr": "smile",
     "hidden": false,
     "arms": [
      0,
@@ -6842,7 +6832,7 @@
     ],
     "blend": 0,
     "yaw": -90,
-    "expr": "neutral",
+    "expr": "blank",
     "hidden": false,
     "arms": [
      0,
@@ -6876,7 +6866,7 @@
      0,
      10
     ],
-    "expr": "neutral",
+    "expr": "blank",
     "head": [
      0,
      20
@@ -6912,7 +6902,7 @@
      6.0
     ],
     "blend": 0.3,
-    "expr": "grin",
+    "expr": "smile",
     "head": [
      0,
      0
@@ -6954,7 +6944,7 @@
     ],
     "blend": 0,
     "yaw": 180,
-    "expr": "grin",
+    "expr": "smile",
     "hidden": false,
     "arms": [
      0,
@@ -6989,7 +6979,7 @@
     "at": "L63",
     "pos": [
      0.45,
-     -9.0,
+     -8.2,
      0.0
     ],
     "blend": 0,
@@ -7078,7 +7068,7 @@
      0.0
     ],
     "blend": 0,
-    "yaw": 0,
+    "yaw": 150,
     "expr": "smile",
     "hidden": false,
     "arms": [
@@ -7127,11 +7117,11 @@
     "at": "L19",
     "pos": [
      40.8,
-     1.8,
+     1.6,
      0.0
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "smile",
     "hidden": false,
     "arms": [
@@ -7154,7 +7144,7 @@
     "at": "L21",
     "pos": [
      40.8,
-     1.8,
+     1.6,
      0.0
     ],
     "blend": 0.3,
@@ -7177,7 +7167,7 @@
     "at": "L43",
     "pos": [
      40.8,
-     1.8,
+     1.6,
      0.0
     ]
    },
@@ -7185,11 +7175,11 @@
     "at": "L43",
     "pos": [
      40.8,
-     1.8,
+     1.6,
      0.0
     ],
     "blend": 0,
-    "yaw": 180,
+    "yaw": 0,
     "expr": "sad-smile",
     "hidden": false,
     "arms": [
@@ -7212,7 +7202,7 @@
     "at": "L43+1.2",
     "pos": [
      40.8,
-     1.8,
+     1.6,
      0.0
     ],
     "blend": 0.5,
@@ -7761,7 +7751,7 @@
     ],
     "blend": 0,
     "yaw": 180,
-    "expr": "grin",
+    "expr": "smile",
     "hidden": false,
     "arms": [
      0,
@@ -7845,6 +7835,13 @@
    ]
   },
   {
+   "at": "L04",
+   "name": "bridge",
+   "vis": 19,
+   "vis_to": 22,
+   "dur": 1.0
+  },
+  {
    "at": "L07.1",
    "name": "burnt",
    "h": [
@@ -7924,14 +7921,14 @@
    "at": "L17",
    "name": "pip",
    "pos": [
-    41.6,
-    0.8,
+    40.6,
+    -0.3,
     0.0
    ],
-   "yaw": -30,
+   "yaw": -52,
    "pos_to": [
-    40.4,
-    -0.9,
+    39.4,
+    -1.3,
     0.0
    ],
    "dur": 0.9,
@@ -8184,15 +8181,15 @@
    "at": "L49.4",
    "name": "burnt",
    "h": [
-    5.6,
-    4.6,
-    4.2
+    6.1,
+    5.3,
+    5.0
    ],
-   "sway": 0.7,
+   "sway": 0.5,
    "tilt": [
+    0.5,
     0.3,
-    0.2,
-    0.2
+    0.25
    ]
   },
   {

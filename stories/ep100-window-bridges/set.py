@@ -577,7 +577,7 @@ def build_rooms(kit, ctx):
     B(bag, (0.5, 0.52, 0.12), (0, 0, 0.5), P("#e0573f", 0.6), "bagband", 0.04)
     B(None, (0.1, 0.06, 0.06), (5.45, 0.7, 7.8), P("#6a4a2a", 0.5), "hook", 0.01)
     for j in range(4):
-        kit.cyl(nm("coil"), 0.2, 0.05, (5.34, 0.7, 7.55 + 0.045 * j), P("#d9b886", 0.9), None, rot=(0, math.pi / 2, 0), n=20, r2=0.19)
+        B(None, (0.12, 0.34 - 0.02 * j, 0.34 - 0.02 * j), (5.38, 0.7, 7.55 + 0.0), P("#d9b886", 0.9), "coil", 0.04) if j == 0 else B(None, (0.04, 0.36 - 0.03 * j, 0.36 - 0.03 * j), (5.33 - 0.04 * j, 0.7, 7.55), P(("#d9b886", "#c9a06a")[j % 2], 0.9), "coil", 0.02)
     # the matches box on Eli's sill ledge (outside), a potted plant
     mbox = E(None, (1.42, 0.55, 6.91), "matches")
     B(mbox, (0.1, 0.07, 0.03), (0, 0, 0.015), P("#c9302c", 0.6), "mbox", 0.006)
@@ -605,7 +605,7 @@ def build_rooms(kit, ctx):
     except Exception as ex:
         print("props:", ex)
     ck, _ = img_mat(kit, glyph_image("clock"), strength=1.0)
-    ctx["clock"] = kit.plane(nm("clock"), (0.3, 0.3), (-3.5, 2.9, 6.78), ck, None, rot=(math.pi / 2, 0, math.pi / 2))
+    ctx["clock"] = kit.plane(nm("clock"), (0.5, 0.5), (-5.43, 1.9, 7.6), ck, None, rot=(math.pi / 2, 0, math.pi / 2))
     # Mrs. Vega's, Eli's and my windows: a little flower-pot on each room is dressing enough
     # cards and mugs on the bridge
     cards = E(None, (0.0, OURS_Y, 6.97), "cards")
@@ -697,18 +697,18 @@ def build_strings(kit, ctx):
 
 # ----------------------------------------------------------------------------------------------- looks
 LOOKS = {
-    "day": {"sky": ["#d9f1ff", "#b3e2ff", "#86caff", "#52a2f2"], "world": 2.2, "sun": (96, 62, 6.0, "#fff1d8"), "fill": 1.0,
-            "str": 0.0, "room": 1.0, "exp": 0.0, "lane": 1.0, "boat": 0.0},
-    "april": {"sky": ["#e8f6ff", "#c4e8ff", "#98d2ff", "#62aef5"], "world": 2.3, "sun": (88, 58, 6.5, "#fff3dc"), "fill": 1.0,
-             "str": 0.0, "room": 1.1, "exp": 0.0, "lane": 1.0, "boat": 0.0},
+    "day": {"sky": ["#d9f1ff", "#b3e2ff", "#86caff", "#52a2f2"], "world": 1.1, "sun": (96, 62, 4.0, "#fff1d8"), "fill": 1.0,
+            "str": 0.0, "room": 1.0, "exp": -0.3, "lane": 1.0, "boat": 0.0},
+    "april": {"sky": ["#e8f6ff", "#c4e8ff", "#98d2ff", "#62aef5"], "world": 1.15, "sun": (88, 58, 4.2, "#fff3dc"), "fill": 1.0,
+             "str": 0.0, "room": 1.1, "exp": -0.3, "lane": 1.0, "boat": 0.0},
     "autumn": {"sky": ["#ffc9a0", "#f09aa0", "#9a7ac0", "#4a4a90"], "world": 0.75, "sun": (96, 14, 3.5, "#ffb070"), "fill": 1.1,
                "str": 0.8, "room": 1.1, "exp": 0.1, "lane": 0.45, "boat": 0.0},
-    "night": {"sky": ["#4a5a98", "#38477e", "#27356a", "#18224c"], "world": 0.62, "sun": (140, 30, 0.7, "#9aa8ff"), "fill": 1.15,
-              "str": 1.0, "room": 0.5, "exp": 0.35, "lane": 0.5, "boat": 0.0},
+    "night": {"sky": ["#4a5a98", "#38477e", "#27356a", "#18224c"], "world": 0.5, "sun": (140, 30, 0.7, "#9aa8ff"), "fill": 1.0,
+              "str": 1.0, "room": 0.5, "exp": 0.1, "lane": 0.35, "boat": 0.0},
     "dusk": {"sky": ["#ffb48a", "#ff7f5c", "#d35a9a", "#5a4ab0"], "world": 0.9, "sun": (96, 8, 5.5, "#ff9a60"), "fill": 0.8,
              "str": 0.6, "room": 1.0, "exp": 0.15, "lane": 0.7, "boat": 1.0},
     "winter": {"sky": ["#f0f4ff", "#d4e2fa", "#aac8f0", "#7ea6e0"], "world": 1.2, "sun": (96, 30, 4.0, "#e8f0ff"), "fill": 1.0,
-               "str": 0.3, "room": 1.2, "exp": 0.05, "lane": 1.0, "boat": 0.0},
+               "str": 0.3, "room": 1.2, "exp": -0.25, "lane": 1.0, "boat": 0.0},
     "dawn": {"sky": ["#ffe6c0", "#ffd0b0", "#b8d0ff", "#86a8f4"], "world": 1.0, "sun": (88, 14, 4.5, "#ffe0b0"), "fill": 1.0,
              "str": 0.2, "room": 1.0, "exp": 0.05, "lane": 0.8, "boat": 0.0},
     "home": {"sky": ["#d9f1ff", "#b3e2ff", "#86caff", "#52a2f2"], "world": 1.0, "sun": (96, 62, 2.5, "#fff1d8"), "fill": 0.9,
@@ -778,12 +778,12 @@ def build(kit, story, tl):
 
     ctx["sun"] = kit.light("sun", "SUN", (0, 0, 50), 6.0, "#fff1d8", size=0.1)
     ctx["sun"].data.angle = 0.05
-    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 170, "#fff0dc", size=0.6, shadow=False)
+    ctx["fill"] = kit.light("camfill", "POINT", (0, 0, 2), 80, "#fff0dc", size=0.6, shadow=False)
     ctx["roomW"] = kit.light("roomW", "POINT", (-3.2, -0.3, 8.4), 70, "#fff0d8", size=0.5)
     ctx["roomE"] = kit.light("roomE", "POINT", (3.2, -0.3, 8.4), 70, "#fff0d8", size=0.5)
     ctx["roomX"] = [kit.light(f"roomX{k}", "POINT", (s * 3.2, y, 8.4), 70, "#fff0d8", size=0.5)
                     for k, (s, y) in enumerate(((-1, 3.0), (1, 3.0), (-1, -6.0), (1, -6.0), (-1, -3.0), (1, 21.0), (-1, 21.0), (1, -3.0)))]
-    ctx["lane"] = [kit.light(f"lane{k}", "POINT", (0.0, y, 4.2), 520, "#fff0d8", size=0.7) for k, y in enumerate((-7.0, -3.0, 1.0, 5.0, 10.0, 16.0))]
+    ctx["lane"] = [kit.light(f"lane{k}", "POINT", (0.0, y, 4.2), 300, "#fff0d8", size=0.7) for k, y in enumerate((-7.0, -3.0, 1.0, 5.0, 10.0, 16.0))]
     ctx["torch"] = kit.light("torch", "SPOT", (0, 0, 1.2), 900, "#fff2d0", size=0.15, spot=55, blend=0.5)
     build_ground(kit, ctx)
     for s in (-1, 1):
