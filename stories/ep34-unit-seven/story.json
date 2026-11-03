@@ -91,7 +91,7 @@
   },
   "deep": {
    "age": "adult",
-   "skin": "#b9b4a2",
+   "skin": "#6c6b57",
    "shirt": "#355f96",
    "pattern": "solid",
    "collar": "#355f96",
@@ -5887,6 +5887,16 @@
    "who": "me",
    "style": "round",
    "on": false
+  },
+  {
+   "at": "L69",
+   "name": "lampbox",
+   "mode": "gone"
+  },
+  {
+   "at": "L70",
+   "name": "lampbox",
+   "mode": "box"
   },
   {
    "at": "L70",

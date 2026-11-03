@@ -42,7 +42,7 @@ cast = {
     "jo": {"age": "adult", "skin": "#e6bd96", "shirt": "#a8603f", "pattern": "solid", "collar": "#92522f",
            "pants": "#232a3a", "shoes": "#ececec", "sleeves": "long", "hair": "long", "hair_c": "#141214",
            "hat": "none", "width": 0.9, "face": {"eyes": "lashes", "brows": True, "ink": "#1c1214"}},
-    "deep": {"age": "adult", "skin": "#b9b4a2", "shirt": "#355f96", "pattern": "solid", "collar": "#355f96",
+    "deep": {"age": "adult", "skin": "#6c6b57", "shirt": "#355f96", "pattern": "solid", "collar": "#355f96",
              "pants": "#355f96", "shoes": "#8a6f52", "sleeves": "long", "hair": "none", "hair_c": "#8a6f52",
              "hat": "ballcap", "hat_c": "#54432f", "width": 0.7,
              "face": {"eyes": "hollow", "brows": False, "ink": "#0b0b0d", "pupil": "#08080a", "mouth": "line",
@@ -403,6 +403,8 @@ cues = [
     {"at": "L63.3", "name": "carry", "who": "jo", "style": "round", "on": False},
     {"at": "L66", "name": "carry", "who": "me", "style": "round", "on": True},
     {"at": "L67", "name": "carry", "who": "me", "style": "round", "on": False},
+    {"at": "L69", "name": "lampbox", "mode": "gone"},
+    {"at": "L70", "name": "lampbox", "mode": "box"},
     {"at": "L70", "name": "carry", "who": "me", "style": "small", "on": True},
     # the small box on a surface
     {"at": "L52", "name": "small", "on": True, "pos": [KX - 0.2, 0.3, 0.775]},

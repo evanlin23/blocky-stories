@@ -31,6 +31,7 @@ import random
 from pathlib import Path
 
 import bpy
+from mathutils import Vector
 from PIL import Image, ImageDraw
 
 HERE = Path(__file__).resolve().parent
@@ -235,10 +236,11 @@ def materials(kit, wd):
     M["roomwall"] = kit.plastic("#cfa57e", 0.9, name="room wall")
     M["cupout"] = kit.plastic("#b99a6e", 0.7, name="cupboard wood")
     M["cupin"] = kit.plastic("#efe7d6", 0.8, name="cupboard inside")
-    M["sock_r"] = kit.plastic("#e0453f", 0.8, name="sock red")
-    M["sock_w"] = kit.plastic("#f4f1ea", 0.8, name="sock white")
+    M["sock_r"] = kit.plastic("#8c2a2a", 0.9, name="sock red")
+    M["sock_w"] = kit.plastic("#4d6482", 0.9, name="sock white")
+    M["sock_c"] = kit.plastic("#d8d2c2", 0.9, name="sock cuff")
     M["tape"] = kit.plastic("#dccb9c", 0.35, name="tape")
-    M["spoon"] = kit.metal("#cfd3d6", 0.25, name="spoon")
+    M["spoon"] = kit.metal("#34383d", 0.4, name="spoon")
     for st in ("round", "jagged"):
         for v in range(3):
             im = pil_image(f"box-{st}-{v}", scribble_image(st, 31 * v + (7 if st == "round" else 19)),
@@ -527,6 +529,29 @@ def door_lamp(kit, ctx, M, n, loc, axis, light=None):
 
 
 def build_dlamps(kit, ctx, M):
+    # a soft blue bloom round unit seven's lamp, drawn only for the closing fade (so that fade reads at a distance)
+    hm = kit._new("halo7")
+    nt = hm.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    mp = nt.nodes.new("ShaderNodeMapping")
+    mp.inputs["Location"].default_value = (-0.5, -0.5, 0.0)
+    mp.inputs["Scale"].default_value = (2.0, 2.0, 2.0)
+    gr = nt.nodes.new("ShaderNodeTexGradient")
+    gr.gradient_type = "QUADRATIC_SPHERE"
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Color"].default_value = kit.col("#52b4ff")
+    em.inputs["Strength"].default_value = 0.0
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(tc.outputs["Generated"], mp.inputs["Vector"])
+    nt.links.new(mp.outputs["Vector"], gr.inputs["Vector"])
+    nt.links.new(gr.outputs["Fac"], mx.inputs["Fac"])
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(em.outputs[0], mx.inputs[2])
+    kit._fogged(hm, mx.outputs[0])
+    hm["emit_node"] = em.name
+    ctx["halo7"] = (kit.plane("halo7", (0.9, 0.9), (0.745, YC[7], 2.55), hm, None, (math.pi / 2, 0, -math.pi / 2)), hm)
     for k, yc in YC.items():     # side B: on the header's corridor face (x 0.78), lit lights for the doors the story lifts
         door_lamp(kit, ctx, M, k, (0.775, yc, 2.55), "x-", light=k in (7, 9, 10, 11))
     for k, yc in YA.items():
@@ -580,12 +605,12 @@ def build_town(kit, ctx, M):
         rk.append(kit.box(f"t rack end{j}", (0.03, 0.26, 0.46), (xx, 2.15, FZ + 0.23), M["table"]))
     stripes = []
     top = FZ + 0.42 + 0.015
-    for j in range(4):    # the foot, along x
-        stripes.append(kit.box(f"t sock foot{j}", (0.13, 0.19, 0.12), (X + 0.3 + j * 0.13, 2.15, top + 0.06),
-                               M["sock_r"] if j % 2 == 0 else M["sock_w"], bevel=0.02))
-    for j in range(3):    # the leg, standing up at the heel
-        stripes.append(kit.box(f"t sock leg{j}", (0.13, 0.19, 0.12), (X + 0.69, 2.15, top + 0.18 + j * 0.12),
-                               M["sock_w"] if j % 2 == 0 else M["sock_r"], bevel=0.02))
+    # one wool sock: a long blue foot with a red toe and heel, a leg standing up from the heel, a pale ribbed cuff
+    stripes.append(kit.box("t sock foot", (0.42, 0.17, 0.11), (X + 0.5, 2.15, top + 0.055), M["sock_w"], bevel=0.045))
+    stripes.append(kit.box("t sock toe", (0.1, 0.172, 0.112), (X + 0.3, 2.15, top + 0.056), M["sock_r"], bevel=0.04))
+    stripes.append(kit.box("t sock heel", (0.14, 0.172, 0.113), (X + 0.69, 2.15, top + 0.057), M["sock_r"], bevel=0.04))
+    stripes.append(kit.box("t sock leg", (0.13, 0.17, 0.3), (X + 0.69, 2.15, top + 0.25), M["sock_w"], bevel=0.04))
+    stripes.append(kit.box("t sock cuff", (0.136, 0.176, 0.07), (X + 0.69, 2.15, top + 0.43), M["sock_c"], bevel=0.025))
     ctx["rack"] = rk + stripes
     # the last taped box in the empty hall
     bx = []
@@ -626,9 +651,12 @@ def build_town(kit, ctx, M):
         pv = kit.empty(f"c door pivot{sx}", (C + sx * 0.6, 0.29, 1.55))
         kit.box(f"c door leaf{sx}", (0.6, 0.025, 1.0), (-sx * 0.3, 0, 0), M["cupout"], pv, bevel=0.008)
         pv.rotation_euler = (0, 0, math.radians(-sx * 108))
-    kit.box("c spoon handle", (0.26, 0.022, 0.009), (C + 0.18, 0.6, 1.0505), M["spoon"], bevel=0.003)
-    bowl = kit.sphere("c spoon bowl", 0.05, (C + 0.02, 0.6, 1.052), M["spoon"], seg=14)
-    bowl.scale = (1.45, 1.0, 0.22)
+    sz = 1.4 + 0.0125    # the middle shelf's top
+    sa = math.radians(-14)
+    kit.box("c spoon handle", (0.36, 0.034, 0.012), (C + 0.17, 0.46, sz + 0.006), M["spoon"], rot=(0, 0, sa), bevel=0.004)
+    bowl = kit.sphere("c spoon bowl", 0.075, (C - 0.07, 0.4, sz + 0.012), M["spoon"], seg=14)
+    bowl.scale = (1.5, 1.0, 0.22)
+    bowl.rotation_euler = (0, 0, sa)
     kit.light("cup", "AREA", (C + 0.1, -1.8, 2.0), 55, "#fff1dc", size=2.5, shadow=False)
     kit.aim(bpy.data.objects["cup"], (C, 0.4, 1.4))
     kit.light("cup in", "AREA", (C, 0.2, 1.7), 8, "#fff1dc", size=0.9, shadow=False)
@@ -734,7 +762,7 @@ def build_deep(kit, ctx):
     M = ctx["M"]
     blue = kit.plastic("#2f5890", 0.5, name="deep blue", spec=0.5)
     blue2 = kit.plastic("#294c7a", 0.55, name="deep rib")
-    skin = kit.plastic("#b9b4a2", 0.6, name="deep skin")
+    skin = kit.plastic("#6c6b57", 0.6, name="deep skin")
     cap = kit.plastic("#54432f", 0.92, name="deep cap")
     dust = kit.plastic("#7d6548", 0.95, name="deep dust")
     L = 2.7 / RIG_S
@@ -949,6 +977,26 @@ def animate(kit, story, tl, t, ctx):
         e.location = (0, -1.15, 1.0)
         e.rotation_euler = (0, 0, 0)
         _show(e, True)
+    # my battery lamp: on the floor of seven, then (from the lift) gone, then standing on the small box I carry out
+    lm = _last(_cues(tl, "lampbox"), t)
+    base = ctx["lamp_pos"]
+    mode = lm["mode"] if lm else "floor"
+    top_ = None
+    if mode == "box":
+        cm = carriers.get("me")
+        if cm and cm.get("on") and me is not None and not me.hide_render:
+            e_ = ctx["carry"][("me", cm["style"])]
+            top_ = e_.matrix_world @ Vector((0.0, 0.0, 0.35))
+    if mode == "floor":
+        pos_ = base
+    elif top_ is not None:
+        pos_ = (top_.x, top_.y, top_.z + 0.08)
+    else:
+        pos_ = (0, 0, -30)
+    for ob, dz in zip(ctx["lamp_objs"], (0.0, 0.02, 0.09)):
+        ob.location = (pos_[0], pos_[1], pos_[2] + dz)
+    L_ = kit.LIGHTS["lamp"]["obj"]
+    L_.location = (pos_[0], pos_[1], pos_[2] + 0.12)
     # my lights: phone glow and torch follow me
     pg = _ramp(_cues(tl, "phone"), t, "on", 0.0)
     tc = _ramp(_cues(tl, "torch"), t, "on", 0.0)
@@ -986,6 +1034,14 @@ def animate(kit, story, tl, t, ctx):
         set_emit(d["mat"], 0.05 + 2.6 * v)
         if d["light"]:
             over[d["light"]] = v
+    hob, hm_ = ctx["halo7"]
+    d7 = [c for c in dcs if c.get("unit") == 7]
+    hv = 0.0
+    if d7 and d7[-1]["t"] > 100 and t > d7[-1]["t"] - 0.7:
+        v7 = _ramp(d7, t, "on", 0.0)
+        hv = _ss(min(1.0, (t - (d7[-1]["t"] - 0.7)) / 0.6)) * v7
+    set_emit(hm_, 2.2 * hv)
+    hob.hide_render = hv < 0.01
     over["h fill"], over["hall"], over["room"], over["cup"] = S[0], S[1], S[2], S[3]
     over["hall back"] = S[1]
     over["room face"] = S[2]
