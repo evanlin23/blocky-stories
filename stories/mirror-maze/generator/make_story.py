@@ -80,7 +80,9 @@ for i, sh in enumerate(OLD):
                              eyes="mirror", **({"hat": "beanie", "hat_c": "#4a4658"} if i == 2 else {}))
     extras[f"o{i}"]["face"]["mouth_inside"] = "#07070a"
 extras["dark"] = person("#837a90", "#5f5670", "#3c3748", "long", "#26222c", eyes="mirror", height=1.12, width=0.92,
-                        head_stretch=1.3)
+                        head_stretch=1.7)
+extras["dark"]["face"]["brows"] = False       # no eyebrows: brows read as a bored man
+extras["dark"]["face"]["mouth"] = "line"      # a seam, no lips
 extras["dark"]["face"]["mouth_inside"] = "#07070a"
 extras["dark"]["matte"] = True
 
@@ -193,11 +195,9 @@ LOOK_NIGHT = {"exposure": 0.8, "camfill": 0.6, "amb": 1.0, "bulbs": 0.5,
 # =========================================================================================== 01 the hook, L01
 hide("me", 0)
 hide("guy", 0)
-put("tasha", 0, [2.9, 7.0, BZ], yaw=0, expr="smirk", head=[0, 0])
+put("tasha", 0, [2.9, 7.0, BZ], yaw=0, expr="grin", head=[0, 0])
 stage(0, *[E(w, p, 0, expr=e, rim=True) for w, p, e in (
-    ("x0", (1.75, 14.3, PZ), "neutral"), ("x1", (3.0, 14.4, PZ), "grin"), ("x2", (4.2, 14.3, PZ), "neutral"),
-    ("x3", (2.35, 15.7, PZ), "smirk"), ("x4", (3.7, 15.8, PZ), "neutral"),
-    ("x5", (1.5, 16.9, PZ), "neutral"), ("x6", (4.5, 16.9, PZ), "grin"))])
+    ("x0", (1.75, 14.3, PZ), "neutral"), ("x1", (3.0, 14.4, PZ), "grin"), ("x2", (4.2, 14.3, PZ), "neutral"))])
 LOOK_HOOK = {"exposure": 1.1, "camfill": 1.5, "gal": 1.0, "inside": 1.6, "wash": 1.0}
 S(0, mv(((3.2, 3.9, 1.45), (3.0, 11.5, 2.2)), ((3.15, 4.3, 1.5), (3.0, 11.5, 2.2)), 34), 2, look=LOOK_HOOK,
   note="the hook: Tasha lit at the maze front, the panes behind her hold a lilac-rimmed crowd on no steps")
@@ -217,11 +217,11 @@ S("L03", one((-2.6, -11.0, 1.6), (0.5, -14.6, 1.4), 22), 2,
   look={"exposure": 1.0, "camfill": 0.8, "amb": 1.0, "rim": [[-2.2, -11.5, 3.0], [0.3, -13.8, 1.2], 900, 60, "#ffd9a0"], "van": [[0.7, -14.4, 2.0], [0.7, -13.2, 1.0], 60, 1.8, "#ffb060"]},
   note="the real hatch: two customers")
 # the puddle: a man tying his boot, nobody over him
-stage("L04", E("x0", (0.62, 4.05, BZ), 90, expr="neutral", bow=78, rim=True, arms=[0, 0]))
-S("L04", one((0.2, 0.6, 0.85), (0.65, 4.05, 0.7), 24), 2,
-  look={**LOOK_NIGHT, "camfill": 0.8}, note="a puddle on the boards holds a man tying his boot")
-S("L05", mv(((1.1, 2.9, 0.3), (0.55, 4.05, 0.3)), ((0.9, 3.0, 0.3), (0.55, 4.05, 0.3)), 34), 2,
-  look={**LOOK_NIGHT, "camfill": 0.8}, note="he tied it in March: nobody over him")
+stage("L04", E("x0", (0.62, 4.5, BZ + 0.07), 180, expr="neutral", bow=60, rim=True, arms=[0, 0], lie=True, scale=0.46))
+S("L04", one((0.15, 2.2, 1.45), (0.62, 4.05, 0.05), 30), 2,
+  look={**LOOK_NIGHT, "camfill": 1.0}, note="a puddle on the boards holds a man tying his boot, upside down, rimmed, over empty boards")
+S("L05", mv(((0.5, 2.6, 1.0), (0.62, 4.05, 0.05)), ((0.6, 3.1, 0.8), (0.62, 3.95, 0.05)), 34), 2,
+  look={**LOOK_NIGHT, "camfill": 1.0}, note="he tied it in March: nobody over him")
 
 # =========================================================================================== 03 the truck, L06 to L07
 TX, TY, BEDZ = -4.2, 7.2, 1.15
@@ -333,7 +333,7 @@ S("L23.2", one(*CAM_D), 2, look=LOOK_DARK, rain2d=False, note="a pane nearer")
 
 # =========================================================================================== 09 behind me, L24 to L26
 LOOK_FACE = {"exposure": 0.0, "camfill": 0.0, "maze": 0, "inside": 0, "wash": 0, "amb": 0.05, "room": 0.06, "roomb": 0.1,
-             "face": [[IX + 0.25, 13.0, 0.2], [IX - 0.1, 14.35, 2.15], 2, 0.25],
+             "face": [[IX + 0.05, 12.9, 0.15], [IX - 0.1, 14.35, 2.2], 45, 0.25, "#e6ecff"],
              "kick": [[IX + 0.15, 12.7, 0.25], [IX - 0.1, 14.35, 1.4], 38, 22, "#c8c0e8"],
              "rim": [[IX + 1.4, 16.0, 2.6], [IX - 0.1, 14.3, 1.9], 120, 30, "#b8a8ff"],
              "rim2": [[IX - 1.5, 15.5, 2.6], [IX - 0.1, 14.3, 1.9], 60, 30, "#9a98c8"]}
@@ -351,16 +351,22 @@ S("P01", one((IX + 0.12, 12.55, 1.35), (IX - 0.1, 14.35, 2.1), 36), 1, look=LOOK
 S("L25", mv(((IX + 0.12, 12.55, 1.35), (IX - 0.1, 14.35, 2.1)), ((IX + 0.05, 12.7, 1.4), (IX - 0.1, 14.35, 2.1)), 36, 40), 1,
   look=LOOK_FACE, rain2d=False, note="its eyes were black, like a window at night")
 props("L26", nostage=False)
-raw("tasha", "L26", expr="wide")
-S("L26", one((IX + 0.7, 10.9, 1.6), (TP[0], TP[1], 1.62), 50), 2, look=LOOK_IN, rain2d=False,
-  note="Tasha's face, looking right at it: it has stopped")
+raw("tasha", "L26", expr="wide", pos=[TP[0], TP[1], Z_IN], yaw=180, keep_yaw=True)
+raw("tasha", "L27-0.05", pos=[TP[0], TP[1], Z_IN], yaw=180, keep_yaw=True)
+stage("L26", E("me", (0, 0, 0), 0, rim=True))
+S("L26", one((IX - 0.7, 15.3, 1.65), (TP[0], TP[1], 1.65), 44), 2, rain2d=False,
+  look={**LOOK_IN, "face": [[IX - 0.7, 14.9, 1.4], [TP[0], TP[1], 1.7], 40, 0.6, "#dfe4ff"]},
+  note="Tasha's face lit, staring right at it")
+stage("L26+0.85", E("me", (0, 0, 0), 0, rim=True), E("dark", (IX - 0.15, 14.35, Z_IN), 0, expr="blank", rim=True, head=[0, 18]))
+S("L26+0.85", one((IX + 0.05, 12.7, 1.4), (IX - 0.1, 14.35, 2.1), 40), 1, look=LOOK_FACE, rain2d=False,
+  note="the dark one, stopped")
 
 # =========================================================================================== 10 lifted and tipped, L27 to P02
 GUY_AT = [IX, 12.05, Z_IN]
 put("guy", "L27", GUY_AT, yaw=180, expr="neutral", arms=[60, 60])
 props("L27", halfpanes=True, nostage=True, carry=True, world=[IX, SY, Z_IN, 0.0])
 stage("L27", E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
-raw("tasha", "L27", expr="worried", pos=[TP[0] - 0.6, TP[1] - 0.2, Z_IN])
+raw("tasha", "L27", expr="worried", yaw=180, pos=[TP[0] - 0.6, TP[1] - 0.2, Z_IN])
 S("L27", one((IX + 0.9, 8.0, 1.7), (IX, 12.5, 1.6), 28), 2, look={**LOOK_IN, "room": 1.2}, rain2d=False,
   note="the maze guy lifts my pane, his back to us")
 cues.append({"at": "L28.1", "name": "tilt", "deg": 25, "dur": 0.6})
@@ -389,11 +395,11 @@ LOOK_WALK = {**LOOK_NIGHT, "camfill": 1.4}
 stage("L29", E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
 S("L29", one((-1.0, -3.2, 1.5), (-1.0, 0.45, 1.6), 22), 2, follow="guy", look=LOOK_WALK, rain2d=False,
   note="the reveal said plainly: me in the pane, front at last, the lilac rim and the shine")
-S("L30", one((0.0, -3.4, 1.6), (0.0, 0.0, 1.6), 40), 2, follow="tasha", look=LOOK_WALK, rain2d=False,
-  note="Tasha soaked, smiling, side-on; the pane beyond")
+S("L30", mv(((-0.7, -2.7, 1.35), (-1.25, 0.2, 1.5)), ((-0.9, -2.5, 1.35), (-1.25, 0.2, 1.5)), 34), 2, follow="guy", look=LOOK_WALK,
+  rain2d=False, note="me alone in the pane, the empty boards in front of it: the real me looked in this pane last year")
 S("L31", one((2.0, -5.5, 1.7), (-1.4, 0.2, 1.4), 24), 2, follow="guy", look=LOOK_WALK, rain2d=False,
   note="the real me looked in this pane last year, then moved away")
-S("L32", one((-2.3, -0.7, 1.65), (0.0, 0.0, 1.65), 50), 2, follow="tasha", look=LOOK_WALK, rain2d=False,
+S("L32", one((-1.7, -0.7, 1.65), (0.0, 0.0, 1.65), 50), 2, follow="tasha", look=LOOK_WALK, rain2d=False,
   note="Tasha comes to see me anyway")
 S("L33", one((-0.55, -1.35, 1.45), (-0.55, 0.45, 1.4), 46), 2, follow="guy", look=LOOK_WALK, rain2d=False,
   note="the eye close: my glint the brightest point")

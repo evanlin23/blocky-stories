@@ -49,7 +49,7 @@ DECK_D = 1.8                  # the deck in front of the arch (the steps come do
 WORK = (2.05, 3.55)           # the crew's worklight, near the rink
 GX0, GX1, GY0, GY1 = 0.5, 5.5, 12.1, 17.6   # the gallery behind the arch
 GZ = PLAT_Z + 3.6
-LILAC = "#a066ff"             # the leftover rim: a cooler lilac than the bulbs
+LILAC = "#c9a6ff"             # the leftover rim: a cooler lilac than the bulbs
 GREYRIM = "#7a7484"           # the dark one's, and the old leftovers'
 
 VIOLET = "#5d4a72"            # the facade's faded violet
@@ -798,6 +798,9 @@ def place(ctx, tl, name, root, e, t, ch=None, rims=None, base=None):
         b = ctx["base"][name]
         ch.root.scale = (b[0] * k, b[1] * k, b[2] * k)
         set_bow(name, e.get("bow", 0.0))
+        if e.get("lie"):
+            # a reflection in a flat puddle: lying face up with the head toward -y, so on screen it reads upside down
+            ch.root.rotation_euler = (Matrix.Rotation(rad(90), 3, "X") @ Matrix.Rotation(yaw, 3, "Z")).to_euler()
     elif x is not None:
         root.location = (x, y, z)
     if roll and x is not None:
