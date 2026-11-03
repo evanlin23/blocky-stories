@@ -10,6 +10,9 @@ You turn `stories/<name>/script.md` into a film. Read `RULES.md`, `docs/engine.m
 Environment: `BLOCKY_BPY` and `BLOCKY_TTS` must point at the venvs. If they don't, run `bash blocky/setup.sh` and export what it prints. Run long steps (preview render) with the Bash tool's `run_in_background`, never `nohup`/`setsid`, and under `nice -n 19` if something else is rendering.
 
 ## Lessons from the first 30 stories (2026-11-02)
+- Caption chunks live in both `lines.json` and `voice-timings.json`: splitting or merging a caption needs a re-voice of that line, or the mix fails on a stale time reference (ep55).
+- `generator/make_story.py` drops `rev`: after regenerating story.json, set `rev` again (bump it) or the changed story won't be redrawn (ep55).
+- A preview that passes flash can still fail on the final, which is drawn at a higher rate: run `python -m blocky flash` at full rate on any shot with glints, mirrors or light changes before merging (mirror-maze, 2026-11-03).
 - After any line edit, regenerate story.json (`generator/make_story.py`) before re-voicing; the voice step reads story.json, so it picks up stale text otherwise (ep48).
 - Set `"flash_safe": true` in story.json's `look`, and ramp every light switch over at least 0.3 s. Strobing flicker and instant blackouts failed the flash bar on most stories and cost a whole fix round each.
 - Run `python -m blocky flash <name> --file <preview mp4>` before anyone reviews the preview, and fix the named seconds first.
