@@ -62,7 +62,7 @@ def person(skin, shirt, pants, hair_c, hair="cap", pattern="solid", pattern_c=No
 
 cast = {
     # me: short ginger block hair, a mustard corduroy jacket (the ribbed knit) over a striped top (set.py adds the chest panel)
-    "me": person("#e9bd98", "#d09a2c", "#232834", "#c4642a", "cap", "knit", "#b07f1e", "#f1f1ee"),
+    "me": person("#e9bd98", "#2f6fb0", "#232834", "#c4642a", "cap", "knit", "#285c94", "#f1f1ee"),
     # Grandad Abe: white block hair, a white moustache and round black-rimmed glasses, a bottle-green waistcoat over cream
     "abe": person("#e6bf9f", "#efe6d0", "#7a7c80", "#f2f0ea", "cap", shoes="#3a3028", extras=("glasses",), extra_c="#15161a",
                   height=0.95, eyes="tired", bags=True),
@@ -238,25 +238,32 @@ OPEN_WHO = {"planner": P(SO, 3.6, 0, expr=SHEEPISH, arms=[8, 8]),
             "c5": P(SO + 0.95, 3.2, -15, expr="worried", arms=[0, 150], head=[-25, -8]),
             "c7": P(SO - 0.55, 4.9, 0, expr="worried", **SHADE), "c8": P(SO + 0.75, 5.0, 0, expr="worried", arms=[0, 150])}
 for _n in ("c3", "c5", "c7", "c8"):
-    glow(0, _n, 1.5)
-glow(0, "planner", 5.0)
-cue(0, "spill", pos=[SO, 5.9, 2.4], w=450.0, level=1.0)
-cue(0, "glk", level=0.4)   # his face stays the warm centre of the frame, never clipped
+    glow(0, _n, 0.7)
+glow(0, "planner", 9.0)
+# frame 1: my gold spills on the bench and the wall behind me (a spill light behind me), the hall dimmed
+cue(0, "spill", pos=[-0.69, -4.1, 2.3], w=900.0, level=1.0)
+cue("L02", "spill", pos=[SO, 5.9, 2.4], w=450.0, level=1.0)
+cue(0, "glk", level=1.0)
+cue(0, "hallblue", level=0.12)
+cue(0, "backdrop", on=True)
+cue("L02", "backdrop", on=False)
+cue("L02", "hallblue", level=1.0)
+cue("L02", "glk", level=1.0)   # his face stays the warm centre of the frame, never clipped
 # the confess opening (team rule 2026-11-03): me, glowing, by our bench (my end-of-story look), then the planner on the street.
 # My glow is keyed on for these shots only; the body of the story keeps me dark.
-glow(0, "me", 1.0)
+glow(0, "me", 8.0)
 glow("L02", "me", 0.0, 0.4)
 OPEN_ME = {"me": SIT(HX["me"], BY, 180, expr="neutral")}
-shot(0, "hall", MV(([-0.69, 0.2, 1.4], [-0.69, BY, 1.35]), ([-0.69, -0.45, 1.4], [-0.69, BY, 1.35]), 30, 32), OPEN_ME,
-     "frame 1: me close on our bench in the fossil hall, a faint gold glow round my silhouette, pushing in", step=1)
-shot("L01.2", "hall", MV(([-1.5, -0.2, 1.4], [-0.69, BY, 1.35]), ([-1.3, -0.7, 1.4], [-0.69, BY, 1.35]), 32, 34), OPEN_ME,
+shot(0, "hall", MV(([-0.69, -0.9, 1.3], [-0.69, BY, 1.2]), ([-0.69, -1.25, 1.3], [-0.69, BY, 1.2]), 34, 37), OPEN_ME,
+     "frame 1: me close on our bench in the fossil hall, my gold glow spilling on the bench and wall, pushing in", step=1, hall=0.25)
+shot("L01.2", "hall", MV(([-1.9, -1.2, 1.25], [-0.69, BY, 1.1]), ([-1.7, -1.5, 1.25], [-0.69, BY, 1.1]), 30, 32), OPEN_ME,
      "closer from a quarter angle, the glow round me, still the whole head", step=1)
 shot("L02", "sr", MV(([SO, 0.0, 1.5], [SO, 3.6, 1.5]), ([SO, 0.9, 1.5], [SO, 3.6, 1.5]), 30, 31), OPEN_WHO,
      "everybody can see it: the planner lamp-bright on the street, face a third of the frame, people shading their eyes, gold on the wall", step=1)
-shot("L02.2", "sr", MV(([SO - 0.6, 0.5, 1.5], [SO, 3.6, 1.5]), ([SO - 0.3, 1.2, 1.5], [SO, 3.6, 1.5]), 34, 36), OPEN_WHO,
+shot("L02.2", "sr", MV(([SO - 0.9, -0.4, 1.5], [SO, 3.6, 1.45]), ([SO - 0.6, 0.2, 1.5], [SO, 3.6, 1.45]), 30, 31), OPEN_WHO,
      "closer from a quarter angle: his wide eyes, the squinters either side, still the whole head", step=1)
 SXC = 340.0
-shot("L03", "sr", C([SO - 1.0, -0.6, 1.45], [SO, 3.0, 1.5], 28), {
+shot("L03", "sr", C([SO - 3.2, -1.6, 1.0], [SO + 0.3, 3.4, 2.1], 24), {
     "planner": P(SO, 3.0, 0, expr=SMILE, arms=[40, 40]),
     "birthday": P(SO + 0.55, 1.1, 180, expr=SHEEPISH, head=[0, -6])},
      "the street: the planner lamp-bright up the pavement, the birthday man in front squinting into the glow")
@@ -655,7 +662,7 @@ story = {
     "phonemes": {"mended": "mˈɛndɪd"},
     "glow": GLOW,
     "glow_later": ["me"],
-    "glow_lights": ["abe", "planner", "groom", "bride"],
+    "glow_lights": ["abe", "planner", "groom", "bride", "me"],
     "glow_light_w": 260.0,
     "cast": cast,
     "lines": lines,
@@ -674,10 +681,9 @@ story = {
                   {"at": "L66", "voices": ["drone", "pad", "piano"], "energy": 0.5, "mode": "major", "root": 53},
                   {"at": "L76", "voices": ["drone", "choir"], "energy": 0.45},
               ]},
-    "sound": {"floor": "stone", "steps_db": -22, "samples": True, "rev": 2,
+    "sound": {"floor": "stone", "steps_db": -22, "samples": True, "rev": 3,
               "ambience": [
-                  {"kind": "room", "from": 0, "to": "L02.2", "lufs": -38},
-                  {"kind": "wind", "from": "L02.2", "to": "L04", "lufs": -40},
+                  {"kind": "room", "from": 0, "to": "L04", "lufs": -38},
                   {"kind": "room", "from": "L05", "to": "L06", "lufs": -38},
                   {"kind": "room", "from": "L09", "to": "end", "lufs": -38},
                   {"kind": "hum", "from": "L10", "to": "L29", "lufs": -44},

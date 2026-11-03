@@ -378,6 +378,8 @@ def build_bench(kit, M, ctx):
     sm = pbr(kit, "tally", "#d8c49a", 0.9)
     for dy in (-0.09, 0.09):
         B(kit, f"tally{dy}", (0.014, 0.04, 0.24), (-1.25 - 0.036, y + dy, 0.2), sm)
+    # the opening's dim backdrop, a plain deep-blue wall standing 1.1 m behind my end (cue "backdrop" on/off)
+    B(kit, "open backdrop", (7.0, 0.1, 3.2), (-0.69, y - 1.1, 1.6), pbr(kit, "backdrop", "#16203f", 0.9))
     kit.light("tally lamp", "POINT", (-1.75, y, 0.34), 4.0, "#ffe2b0", size=0.1)
 
 
@@ -806,7 +808,10 @@ def animate(kit, story, tl, t, ctx):
     lv = _eased(_cues(tl, "hall"), "level", t, 1.0)
     for i in range(4):
         over[f"hall{i}"] = lv
-    over["hall blue"] = 0.4 + 0.6 * (1.0 - lv)
+    over["hall blue"] = (0.4 + 0.6 * (1.0 - lv)) * _eased(_cues(tl, "hallblue"), "level", t, 1.0)
+    bd = bpy.data.objects.get("open backdrop")
+    if bd is not None:
+        bd.hide_render = not bool((_last(_cues(tl, "backdrop"), t) or {}).get("on", False))
     over["gal moon"] = _eased(_cues(tl, "gal"), "level", t, 1.0)
     over["tail gold"] = _eased(_cues(tl, "tailgold"), "on", t, 0.0)
     ctx["sheet_over"].hide_render = not bool((_last(_cues(tl, "sheet"), t) or {}).get("on"))
@@ -880,7 +885,7 @@ def animate(kit, story, tl, t, ctx):
         for ob in g["shells"]:
             ob.hide_render = not on
         for em, onn, share in g["mats"]:
-            em.inputs["Strength"].default_value = GLOW_UNIT * (min(s, 6.0) ** 0.7) * share
+            em.inputs["Strength"].default_value = GLOW_UNIT * (min(s, 12.0) ** 0.7) * share
             onn.outputs[0].default_value = 1.0 if on else 0.0
     for who in story.get("glow_lights", []):
         L = kit.LIGHTS[f"gl {who}"]
@@ -894,7 +899,7 @@ def animate(kit, story, tl, t, ctx):
         p = torso.matrix_world @ V((0, -5.0, 1.6 if who == "abe" else 1.0))
         L["obj"].location = (p.x, p.y, p.z + 0.1)
         L["base"] = story.get("glow_light_w", 90.0)
-        over[f"gl {who}"] = s / 3.0 * _eased(_cues(tl, "glk"), "level", t, 1.0)
+        over[f"gl {who}"] = s / 3.0 * _eased(_cues(tl, "glk"), "level", t, 1.0) * (0.25 if who == "me" else 1.0)
     # ---- a warm spill light for the opening man (cue "spill": at, pos, w, level, dur), always ramped
     spc = _cues(tl, "spill")
     sp0 = _last(spc, t)
@@ -1044,6 +1049,15 @@ def build_montage(kit, M, ctx):
     for hx in (-6, 6):
         kit.cyl(f"sr lamp{hx}", 0.05, 3.6, (X + hx, 3.6, 1.8), M["iron"], n=8)
         kit.sphere(f"sr lamphead{hx}", 0.16, (X + hx, 3.6, 3.7), kit.emit("#ffd9a0", 2.5, "street lamp"), seg=10)
+    # more street: near lamp posts with big warm heads, a kerb and dashes, so it reads as outdoors
+    for lx, ly in ((-2.1, 1.7), (3.0, 4.9), (-5.2, 4.6)):
+        kit.cyl(f"sr post{lx}", 0.07, 4.0, (X + lx, ly, 2.0), M["iron"], n=8)
+        B(kit, f"sr arm{lx}", (0.5, 0.08, 0.08), (X + lx + 0.22, ly, 4.0), M["iron"])
+        kit.sphere(f"sr head{lx}", 0.24, (X + lx + 0.45, ly, 3.9), kit.emit("#ffe0a8", 4.0, "street lamp big"), seg=10)
+    B(kit, "sr kerb s", (60, 0.2, 0.15), (X, 2.8, 0.075), M["sandstone"])
+    B(kit, "sr kerb n", (60, 0.2, 0.15), (X, -2.8, 0.075), M["sandstone"])
+    for k in range(-6, 7):
+        B(kit, f"sr dash{k}", (1.2, 0.14, 0.01), (X + k * 2.4, 0.0, 0.02), M["pave"])
     # 7 the bedroom (x 420): a bed, a window, night
     X = 420.0
     room(kit, M, "bd", X, 0, 4.6, 4.2, 2.6, M["wall"], M["floor_wood"])
