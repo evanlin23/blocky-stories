@@ -14,7 +14,7 @@ true seats a character on the ridge bench (legs straight forward).
 Cues read here:
 - light: {"look": name, "ramp": s, plus any LOOKS key} the sky, fog, sun and fill ease to this look over `ramp`
 - sunsweep: {"az0", "az1", "dur"} the sun swings round in azimuth (the shadows sweep), level never changes
-- clouds: {"on": bool, "speed": m/s} the racing cloud cards (a smooth time-lapse sky)
+- clouds: {"on": bool, "speed": m/s, "span": deg, "center": deg (opt-in: crowd them into one arc)} the racing cloud cards (a smooth time-lapse sky)
 - mist: {"on": bool, "speed": m/s} the low fog cards drifting off the lake (L23)
 - sway: {"amp": degrees, "bias": degrees roll, "dur": s} how far the riders' chairs rock, easing over dur
 - blanket: {"on": bool, "who": name | null, "local": [x, y, z] from that character's feet-root, "pos": [x, y, z]
@@ -538,6 +538,30 @@ def build_props(kit, ctx, M):
         ctx["mist"].append((c, -50 + 100 * kit.hash01(k, 5), 4 + 78 * kit.hash01(k, 6), 0.4 + 5.0 * kit.hash01(k, 7)))
 
 
+# ------------------------------------------------------------------------------------------------ dressing (CC0 props)
+
+
+def build_dress(kit, ctx, M):
+    """Rocks, bushes and flowers round the bench on the ridge, trees, a fence and a planter on the town side. Nothing
+    stands in the camera paths of the ridge shots (behind the bench at y < 135 inside |x| < 10, or the sunrise side
+    near x 3 to 8)."""
+    zr = Z0 - 0.05
+    ridge = [("rock_moss_1", (8.8, 139.4), 20, 0.9), ("rock_1", (-9.2, 140.0), 140, 0.7), ("bush_1", (-8.0, 142.5), 0, 0.8),
+             ("bush_2", (9.4, 142.8), 60, 0.9), ("flowers", (6.6, 145.0), 0, 0.5), ("grass", (-6.4, 145.2), 0, 0.5),
+             ("flowers", (-3.0, 143.5), 80, 0.45), ("rock_3", (1.5, 146.0), 0, 0.6), ("grass_short", (9.0, 135.0), 0, 0.4),
+             ("rock_moss_1", (-9.6, 134.0), 200, 0.8), ("treestump", (10.0, 136.0), 0, 0.5)]
+    for k, (nm, (x, y), rot, h) in enumerate(ridge):
+        kit.prop(nm, (x, y, zr), rot=rot, height=h)
+    for k, (nm, x, y, rot, h) in enumerate([("pinetree_2", -10.5, 138.0, 20, 6.5), ("pinetree_1", 11.0, 140.0, 80, 7.5)]):
+        kit.prop(nm, (x, y, max(zr, G.ground(x, y)) - 0.2), rot=rot, height=h)
+    town = [("sub_tree_large", -9.5, -15.0, 0, 5.0), ("sub_tree_small", 8.5, -15.5, 40, 3.2), ("bush_1", -2.0, -14.8, 0, 0.9),
+            ("bush_2", 4.5, -14.6, 90, 0.8), ("sub_fence_low", -14.0, -13.8, 0, 0.9), ("sub_fence_low", -11.0, -13.8, 0, 0.9),
+            ("sub_planter", -8.4, -3.2, 0, 0.7), ("nat_log_stack", 6.6, -10.5, 70, 0.9), ("flowers", 7.4, -9.0, 0, 0.4),
+            ("commontree_1", 16.0, -12.0, 0, 6.0), ("willow_1", -17.0, -9.0, 0, 6.5), ("rock_1", 12.0, -6.0, 30, 0.8)]
+    for nm, x, y, rot, h in town:
+        kit.prop(nm, (x, y, max(0.4, G.ground(x, y))), rot=rot, height=h)
+
+
 # ------------------------------------------------------------------------------------------------ build
 
 
@@ -553,6 +577,7 @@ def build(kit, story, tl):
     build_sky(kit, ctx, M)
     build_town(kit, ctx, M)
     build_props(kit, ctx, M)
+    build_dress(kit, ctx, M)
     # the lift clock: how far the cable has moved by time t (it can stop and start)
     stops = sorted([(c["t"], c["state"]) for c in _cues(tl, "lift")])
     dt, C, c_, v_ = 0.05, [0.0], 0.0, 1.0
@@ -716,6 +741,9 @@ def animate(kit, story, tl, t, ctx):
         if cl_on:
             sp = cl[-1].get("speed", 40.0)
             a = math.radians(a0) + (sp / 140.0) * (t - cl[-1]["t"])
+            if "span" in cl[-1]:   # opt-in: crowd the clouds into one arc of the sky, wrapping inside it
+                sp_, ce_ = math.radians(cl[-1]["span"]), math.radians(cl[-1].get("center", -90.0))
+                a = ce_ - sp_ / 2 + (a - ce_ + sp_ / 2) % sp_
             ob.location = (140.0 * math.cos(a), 100.0 + 140.0 * math.sin(a), hz)
             ob.rotation_euler = (math.pi / 2, 0, a + math.pi / 2 + math.pi)
     ms = [c for c in _cues(tl, "mist") if c["t"] <= t]

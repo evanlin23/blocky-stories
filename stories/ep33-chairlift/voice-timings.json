@@ -6,70 +6,58 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, one day at the top of the chairlift costs a year down below.",
+   "text": "Don't sit on the bench at the top of this chairlift.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.293,
+   "dur": 2.069,
    "onset": 0.172,
-   "end": 3.103,
+   "end": 1.879,
    "chunks": [
     [
      0.172,
-     0.672
+     0.423
     ],
     [
-     0.724,
-     1.043
+     0.423,
+     0.784
     ],
     [
-     1.043,
-     1.319
+     0.784,
+     1.077
     ],
     [
-     1.319,
-     1.801
-    ],
-    [
-     1.801,
-     2.345
-    ],
-    [
-     2.345,
-     3.103
+     1.077,
+     1.879
     ]
    ]
   },
   "L02": {
-   "text": "From the lake, you can see them up there, still as posts.",
+   "text": "One hour up there, two weeks down here.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.259,
+   "dur": 1.879,
    "onset": 0.172,
-   "end": 2.069,
+   "end": 1.672,
    "chunks": [
     [
      0.172,
-     0.517
+     0.474
     ],
     [
-     0.543,
-     0.672
+     0.474,
+     0.724
     ],
     [
-     0.672,
-     0.87
+     0.759,
+     1.086
     ],
     [
-     0.87,
-     1.155
-    ],
-    [
-     1.19,
-     2.069
+     1.086,
+     1.672
     ]
    ]
   },
@@ -106,21 +94,21 @@
    ]
   },
   "L04": {
-   "text": "Bo, who runs the lift, goes up whenever his mum visits.",
+   "text": "Bo, who runs the lift, goes up whenever his mom visits.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.69,
+   "dur": 2.724,
    "onset": 0.172,
-   "end": 2.5,
+   "end": 2.534,
    "chunks": [
     [
      0.172,
-     0.69
+     0.672
     ],
     [
-     0.69,
+     0.672,
      1.034
     ],
     [
@@ -129,11 +117,11 @@
     ],
     [
      1.414,
-     1.931
+     1.983
     ],
     [
-     1.931,
-     2.5
+     1.983,
+     2.534
     ]
    ]
   },

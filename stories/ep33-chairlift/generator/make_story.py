@@ -127,10 +127,12 @@ def shot(at, cam, **opt):
 
 
 # ---- the rule and the montage
-shot(0, mv((8.0, 139.0, 40.3), (4.3, 137.0, 41.7), 40, (7.5, 138.7, 40.35), (4.3, 137.0, 41.8), 36), hand=0.002)
-shot("L01.3", mv((10.5, -8.0, 1.3), (1.0, 24.0, 9.0), 30, (10.5, -8.0, 1.35), (1.0, 24.0, 9.4), 30), hand=0.002)
-# the ridge is hidden from the deck by the slope, so the long lens looks from the hillside: the row of still figures
-shot("L02", mv((-7.5, 116.0, 42.0), (2.6, 137.0, 40.9), 40, (-7.5, 116.5, 42.0), (2.6, 137.0, 40.95), 42), hand=0.002)
+# the opening: the bench from the front, lit and bright, the laugher frozen mid-laugh while the clouds race past
+# behind her. S01 pushes in on her face under L01 ("chairlift" lands as it closes); S02 is a close two-shot from the
+# side as the sun shadow sweeps once; S03 is the long look at the row (it moves, and it comes after 3 s)
+shot(0, mv((6.3, 140.6, 40.2), (4.7, 137.0, 41.35), 30, (5.2, 139.0, 40.3), (4.62, 137.0, 41.45), 34), hand=0.002)
+shot("L02", front(hd(LA, 41.1), 180, 52, 2.9, -0.1, 34, push=0.7), hand=0.002)
+shot("L02.3+0.3", mv((-7.5, 116.0, 42.0), (2.6, 137.0, 40.9), 40, (-5.5, 119.0, 41.6), (2.6, 137.0, 40.95), 50), hand=0.002)
 shot("L03", mv((-0.5, -6.4, 1.4), (-1.6, -2.3, 1.4), 30, (-0.5, -6.2, 1.4), (-1.5, -2.5, 1.4), 30), hand=0.002)
 shot("L03.3", front(hd([-1.5, -3.5], 1.7), 0, 0, 2.4, 0.0, 34, push=0.15))
 shot("L04", ride_cam(1.4, 5.0, 0.5, 0, 0, 1.2, 30), follow="bo", hand=0.003)
@@ -246,7 +248,7 @@ M_.stand("L20.2", [-2.8, -0.6], 180, jump=True, lean=0, expr="worried")
 M_.put("L20.2>", [VIEW[0], VIEW[1]], yaw=180, sit=False, perch=False, run=True)
 M_.attr("P01", lean=24)
 M_.attr("L21.3", expr="terrified")
-M_.ride("L22", "up", 3.2, -1, jump=True, expr="scared", lean=0)
+M_.ride("L22", "up", 3.2, -1, jump=True, expr="scared", lean=0, sfx="latch", sfx_db=-22)
 M_.ride("L23", "up", 16.0, -1)
 M_.ride("L24", "up", 38.0, -1, expr="worried")
 M_.ride("L24>", "up", 52.0, -1)
@@ -281,7 +283,7 @@ G_.stand("L08", [-0.55, -2.6], 90, jump=True, arms=[135, 135])
 G_.stand("L08.2", [-0.55, -2.6], 0, jump=True, arms=[75, 75], expr="smile")
 G_.ride("L09", "up", 2.4, -1, jump=True, arms=[0, 0])
 G_.ride("L09>", "up", 14.0, -1)
-G_.ride("L10", "down", 3.0, 1, jump=True)
+G_.ride("L10", "down", 3.0, 1, jump=True, sfx="latch", sfx_db=-24)
 G_.ride("L10+0.9", "down", 0.9, 1)
 G_.stand("L10+0.9", [-1.8, -1.0], 0, jump=True)
 G_.put("L10>", [-1.9, -5.6], yaw=0, sit=False)
@@ -333,7 +335,7 @@ cues = [
     {"at": "L25", "name": "sunsweep", "az0": 150, "az1": 8, "dur": 0.3},
     {"at": "L35", "name": "sunsweep", "az0": 8, "az1": 110, "dur": 3.2},
     {"at": "L36", "name": "sunsweep", "az0": -20, "az1": 20, "dur": 3.0},
-    {"at": 0, "name": "clouds", "on": True, "speed": 40.0},
+    {"at": 0, "name": "clouds", "on": True, "speed": 34.0, "span": 120, "center": -80},
     {"at": "L02>", "name": "clouds", "on": False},
     {"at": "L17", "name": "clouds", "on": True, "speed": 14.0},
     {"at": "L18", "name": "clouds", "on": False},
@@ -356,8 +358,7 @@ cues = [
     {"at": 0, "name": "bunch", "on": False},
     {"at": "L20", "name": "bunch", "on": True},
     {"at": "L20.2", "name": "bunch", "on": False},
-    {"at": 0, "name": "toproof", "on": True},
-    {"at": "L02", "name": "toproof", "on": False},
+    {"at": 0, "name": "toproof", "on": False},
     {"at": "L03", "name": "toproof", "on": True},
     {"at": "L20", "name": "phase", "u": 257.65, "when": 0.8},
     {"at": "L20.2", "name": "phase", "off": True},
@@ -383,6 +384,7 @@ sfx = []
 for ref in ("L22+0.7", "L23+0.5", "L23+1.9", "L24+0.6", "L24+1.9"):   # the chair clacks over each tower
     sfx.append({"at": ref, "kind": "click", "db": -20})
 sfx += [
+    {"at": "L01.3", "kind": "thud", "db": -6, "keep": True},   # the bull wheel's clack on "chairlift"
     {"at": "L09", "kind": "whoosh", "db": -24},
     {"at": "L21", "kind": "hit", "db": -6, "keep": True},
     {"at": "L22", "kind": "whoosh", "db": -20},
@@ -414,10 +416,11 @@ story = {
     "gap": 0.12,
     "tail": LOOP,
     "look": {"fog": "#d9c2a8", "fog_density": 0.004, "fog_start": 12.0, "sky": "#9ec1d6", "exposure": 0.0,
-             "flash_safe": True},
+             "flash_safe": True,
+             "polish": {"quiet": [["L33", "L35"]]}},
     "grade": {"shadows": [-0.005, 0.0, 0.04], "highlights": [0.035, 0.012, -0.02], "saturation": 1.04,
               "contrast": 1.05, "vignette": 0.25, "bloom": 0.3, "grain": 0.012},
-    "phonemes": {"Gran": "ɡɹˈæn", "mum": "mˈʌm", "Bo": "bˈO", "Pell": "pˈɛl"},
+    "phonemes": {"Gran": "ɡɹˈæn", "Bo": "bˈO", "Pell": "pˈɛl"},
     "cast": cast,
     "lines": lines,
     "shots": shots,
@@ -436,9 +439,10 @@ story = {
                   {"at": "L25", "voices": ["drone", "pad"], "energy": 0.35},
                   {"at": "L32", "mode": "major", "voices": ["drone", "pad", "pluck_hi"], "energy": 0.3},
               ]},
-    "sound": {"floor": "wood", "steps_db": -90,
+    "sound": {"floor": "wood", "steps_db": -30, "rev": 2,
               "ambience": [
                   {"kind": "water", "from": 0, "to": "end", "lufs": -36},
+                  {"kind": "wind", "from": 0, "to": "end", "lufs": -38},
                   {"kind": "hum", "from": 0, "to": "end", "lufs": -40},
                   {"kind": "gulls", "from": 0, "to": "end", "lufs": -42},
               ],
