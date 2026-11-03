@@ -2,6 +2,7 @@ name: render-assemble
 description: Finish one story's film from its drawn shards and the narration, mix, flash-measure and keep it as the artifact film-<story> (used by render.yml's assemble-a and assemble-b). Needs GH_TOKEN in the job env.
 inputs:
   story: {description: story folder, required: true}
+  reuse: {description: 'JSON {shard: artifact id} of shards an earlier run drew (plan_renders.py reuse_a/reuse_b); downloaded with GH_TOKEN', default: '{}'}
 runs:
   using: composite
   steps:
@@ -14,10 +15,15 @@ runs:
   - uses: actions/cache@v4
     with: {path: ~/.cache/huggingface, key: hf-kokoro-v1}
   - uses: actions/download-artifact@v4
+    continue-on-error: true   # none match when every shard was drawn by an earlier run; "every frame must be there" below still checks
     with:
       pattern: frames-${{ inputs.story }}-*
       path: out/work/${{ inputs.story }}/frames
       merge-multiple: true
+  - name: shards an earlier run drew (same story commit, not expired)
+    shell: bash
+    env: {REUSE: "${{ inputs.reuse }}", REPO: "${{ github.repository }}"}
+    run: python scripts/fetch_shards.py "${{ inputs.story }}"
   - uses: actions/download-artifact@v4
     with: {name: "voice-${{ inputs.story }}", path: .}
   - name: every frame must be there
