@@ -37,15 +37,15 @@ story = {
     "lines": lines,
     "shots": [
         {"id": "S01", "cam": [[0, [200.3, -2.6, 2.7], [200.3, 0, 2.85], 34], [1, [200.3, -2.0, 2.75], [200.3, 0, 2.85], 34]], "step": 2},
-        {"id": "S34", "at": "L34", "cam": [[0, [0, -10, 120], [0, 0, 0], 34], [1, [0, -9, 119], [0, 0, 0], 34]], "step": 2},
-        {"id": "S35", "at": "L35", "cam": [[0, [0, -9, 119], [0, 0, 0], 34]], "step": 2},
+        {"id": "S34", "at": "L34", "cam": [[0, [0, -0.3, 98], [0, 0, 0], 34], [1, [0, -0.2, 97.5], [0, 0, 0], 34]], "step": 2},
+        {"id": "S35", "at": "L34+1.8", "cam": [[0, [0, -0.2, 97.5], [0, 0, 0], 34]], "step": 2},
     ],
     "acting": {"june": [{"at": 0, "hidden": True, "blend": 0}]},
     "cues": [{"at": 0, "name": "lanterns", "n": 12}],
     "music": {"root": 43, "mode": "mixolydian", "bpm": 70, "seed": 95,
               "sections": [{"at": 0, "voices": ["drone", "pad"], "energy": 0.3}]},
     "sound": {"floor": "grass", "steps_db": -20, "rev": 1, "ambience": [{"kind": "crickets", "from": 0, "to": "end", "lufs": -38}]},
-    "rev": 1,
+    "rev": 2,
 }
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False))
 print("wrote", OUT)
