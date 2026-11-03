@@ -41,3 +41,6 @@ Branch `claude/opening-floor-thirteen`. No PR yet.
 - Also cleared 4 clip blocks: Grandad stands clear of the leaf (HIS_DOOR y -4.9), his door opens before the Abels' wife appears, and the stair door opens at L36-0.6. Sound rev 8.
 - Preview re-drawn, finished and mixed with the real voice: flash PASS, preflight 0 blocks (warn: sound events 5.89/10 s), clipcheck 0.
 - Next: critic re-check of L36 only, gate, PR, proof, qa.
+
+## Flash fix (78.5 s, proof 3f changes = 7)
+Attendant lit cues respaced to L43, L43+0.38, L43+0.72 (0.3 s ramps, inside shot S56, none on a cut); sound.rev bumped to 9. Preview flash PASS; 3f worst now at 26.0 s (6), nothing in 76-81 s above 5. Full-rate proof should be redrawn.

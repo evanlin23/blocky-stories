@@ -6453,7 +6453,7 @@
    "dur": 0.3
   },
   {
-   "at": "L43.1+0.3",
+   "at": "L43+0.38",
    "name": "attendant",
    "pose": "shelf",
    "lit": [
@@ -6468,7 +6468,7 @@
    "dur": 0.3
   },
   {
-   "at": "L43.2",
+   "at": "L43+0.72",
    "name": "attendant",
    "pose": "shelf",
    "lit": [
@@ -6725,7 +6725,7 @@
   ]
  },
  "sound": {
-  "rev": 8,
+  "rev": 9,
   "floor": "wood",
   "steps_db": -22,
   "ambience": [

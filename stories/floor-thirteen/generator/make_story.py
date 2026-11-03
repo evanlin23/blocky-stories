@@ -482,8 +482,8 @@ BUMP = dict(pose="bump", bend=44, head=[-16, 0, 0], glow=0.75, eye=1.9, peak=0.0
 cue("P05", "attendant", lit="all", dur=0.5, **BUMP)
 cue("L35", "attendant", hidden=True)
 cue("L43", "attendant", pose="shelf", lit=[5], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0)
-cue("L43.1+0.3", "attendant", pose="shelf", lit=[4], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
-cue("L43.2", "attendant", pose="shelf", lit=[3], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
+cue("L43+0.38", "attendant", pose="shelf", lit=[4], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
+cue("L43+0.72", "attendant", pose="shelf", lit=[3], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
 cue("L45", "attendant", hidden=True)
 cue("L50", "attendant", pose="last", lit=[4], glow=1.5, eye=1.3, side=0.15, rim=0.5, sleeve=0.25, wash=0.7, key=0.4)
 
@@ -599,7 +599,7 @@ story = {
                   {"at": "L45", "voices": ["drone", "pad"], "energy": 0.4, "mode": "dorian"},
                   {"at": "L48", "voices": ["drone"], "energy": 0.4, "mode": "phrygian"},
               ]},
-    "sound": {"rev": 8, "floor": "wood", "steps_db": -22,
+    "sound": {"rev": 9, "floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "hum", "from": 0, "to": "L08", "lufs": -40},
                   {"kind": "room", "from": "L08", "to": "L09", "lufs": -40},
