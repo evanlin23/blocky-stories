@@ -407,7 +407,7 @@ shot("L33", "S49 two tickets", MIRROR, "cal")
 shot("L33.2", "S50 close on the two", MIRROR_CLOSE, "cal")
 shot("L34", "S51 me leaning", still([2.0, -1.2, 1.75], [0, 0, 1.5], 36), "me")
 shot("L34.2", "S52 Cal shrugs", still([2.6, 1.0, 1.75], [0, 0, 1.5], 36), "cal")
-shot("L35", "S53 the hatch coming up", still([6.5, 0.0, 2.8], [10.1, 5.0, 1.65], 30))
+shot("L35-0.2", "S53 the hatch coming up", still([6.5, 0.0, 2.8], [10.1, 5.0, 1.65], 30))
 shot("L36", "S54 the Server's face fills the hatch", move([10.1, -0.2, 2.7], [10.1, 4.9, 1.75], [10.1, 0.4, 2.7], [10.1, 4.9, 1.75], 36, 40), hand=0.006)
 shot("L37", "S56 Cal pulls up", CAL_FRAME, "cal")
 shot("L38", "S57 the back wall, one more car", still([-27.5, 9.6, 0.85], [-12, 12.9, 1.0], 28))
@@ -513,11 +513,11 @@ def _punch(cam, k):
 def _at(at, dt):
     if at == 0:
         return round(dt, 2)
-    m = re.match(r"^(L\d+)(?:\+(-?[\d.]+))?$", str(at))
+    m = re.match(r"^(L\d+)(?:([+-][\d.]+))?$", str(at))
     return f"{m.group(1)}+{round(float(m.group(2) or 0) + dt, 2)}"
 
 
-SPLITS = {"S01 both": [(1.3, 1.2)], "S34 ": [(1.4, 1.2)], "S13 ": [(1.0, 1.3)], "S16 ": [(1.0, 1.3)], "S23 ": [(1.1, 1.3)], "S53 ": [(1.0, 1.25)],
+SPLITS = {"S01 both": [(1.3, 1.2)], "S34 ": [(1.4, 1.2)], "S13 ": [(1.0, 1.3)], "S16 ": [(1.0, 1.3)], "S23 ": [(1.1, 1.3)], "S53 ": [(1.2, 1.25)],
           "S54 ": [(1.0, 1.25)], "S67 ": [(1.0, 1.1)], "S81 ": [(1.0, 1.25)], "S88 ": [(1.0, 1.3)], "S102 ": [(1.1, 1.3)],
           "S103 ": [(1.3, 1.3), (2.5, 1.5)]}
 out = []
