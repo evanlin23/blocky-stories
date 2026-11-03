@@ -160,11 +160,11 @@ SHOTS = [
     ("L25", "Pop waving up at the booth", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
     ("L25.3", "Lenny waves back", 2, BOOTH),
     ("L26+0.3", "Pop: he hadn't been here in forty years, then the shrug (one shot, fewer cuts)", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
-    ("L27.5", "Lenny in the booth: a plain cherry shirt, nothing on it", 2, C([-0.8, 0.6, 3.0], [0.0, 5.4, 3.0], 1.6)),
+    ("L28-1.2", "Lenny in the booth: a plain cherry shirt, nothing on it", 2, C([-0.8, 0.6, 3.0], [0.0, 5.4, 3.0], 1.6)),
     # 05 slow song two
     ("L28", "high wide: the dim, the pool slides in from the edge and onto the Skater, dead centre", 2, HIGH),
     ("L30", "medium on its folded arms", 2, C([-1.6, -3.5, 1.55], [MID[0], MID[1], 1.4], 2.9)),
-    ("L31", "its cream oval face, painted smile, eyes toward the rail", 2, still([-0.1, -1.5, 1.2], [MID[0], MID[1], 1.95], 38)),
+    ("L31-0.4", "its cream oval face, painted smile, eyes toward the rail", 2, still([-0.1, -1.5, 1.2], [MID[0], MID[1], 1.95], 38)),
     ("L31.2", "reverse: Nan at the rail, unaware", 2, C([3.0, -6.6, 1.5], [3.0, -3.75, 1.3], 2.8)),
     ("L32", "me pointing, Pop eating a chip", 2, C([-1.7, -3.6, 1.6], [-4.2, -6.5, 1.3], 3.0)),
     ("L33", "close on Pop's wrist and the plain watch", 2, C([-3.0, -5.3, 1.9], [-3.23, -6.1, 1.5], 0.9)),
@@ -221,7 +221,7 @@ SHOTS = [
 
 # per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
 # flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
-EXPO = {"L25.3": 0.55, "L04": 2.6, "L04.4": 0.8, "L13": 1.9, "L14": 0.8, "L15": 0.7, "L08": 1.0, "L17": 1.4, "L18": 1.18, "L19": 1.03, "L20": 1.53, "L21": 1.09, "L22": 0.77, "L23": 0.87, "L24": 1.49, "L27.5": 0.55, "L28": 1.18, "L30": 0.81, "L31": 0.77, "L31.2": 1.08, "L32": 1.51, "L33": 1.04, "L34": 1.17, "L35": 0.92, "L36": 1.13, "L37": 1.42, "L38": 2.5, "L39": 0.99, "L40": 1.19, "P01+0.55": 1.6, "L42": 1.7, "L43": 0.93, "L44": 0.96, "L45": 0.72, "L46": 1.34, "L47": 2.49, "L48": 2.13, "L49": 1.5, "L50": 1.5, "L51": 0.79, "L52": 1.13, "L53": 2.1, "L54": 0.89, "L55": 1.28, "L56": 1.05, "L57": 0.75, "L58": 0.8, "L59": 0.84, "L60": 1.86, "L61": 1.47, "L62": 1.04, "L63": 0.99, "L64": 1.32, "L65": 0.89, "L66": 0.95, "L67": 0.8, "L68": 0.87, "L69": 0.7, "L70": 1.33, "L71": 1.49, "L72": 0.7, "L73": 0.76}
+EXPO = {"L25.3": 0.55, "L04": 2.6, "L04.4": 0.8, "L13": 1.9, "L14": 0.8, "L15": 0.7, "L08": 1.0, "L17": 1.4, "L18": 1.18, "L19": 1.03, "L20": 1.53, "L21": 1.09, "L22": 0.77, "L23": 0.87, "L24": 1.49, "L28-1.2": 0.55, "L28": 1.18, "L30": 0.81, "L31-0.4": 0.77, "L31.2": 1.08, "L32": 1.51, "L33": 1.04, "L34": 1.17, "L35": 0.92, "L36": 1.13, "L37": 1.42, "L38": 2.5, "L39": 0.99, "L40": 1.19, "P01+0.55": 1.6, "L42": 1.7, "L43": 0.93, "L44": 0.96, "L45": 0.72, "L46": 1.34, "L47": 2.49, "L48": 2.13, "L49": 1.5, "L50": 1.5, "L51": 0.79, "L52": 1.13, "L53": 2.1, "L54": 0.89, "L55": 1.28, "L56": 1.05, "L57": 0.75, "L58": 0.8, "L59": 0.84, "L60": 1.86, "L61": 1.47, "L62": 1.04, "L63": 0.99, "L64": 1.32, "L65": 0.89, "L66": 0.95, "L67": 0.8, "L68": 0.87, "L69": 0.7, "L70": 1.33, "L71": 1.49, "L72": 0.7, "L73": 0.76}
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):

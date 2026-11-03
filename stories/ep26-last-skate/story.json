@@ -2575,7 +2575,7 @@
    "step": 2,
    "what": "Lenny in the booth: a plain cherry shirt, nothing on it",
    "expo": 0.55,
-   "at": "L27.5"
+   "at": "L28-1.2"
   },
   {
    "id": "S31",
@@ -2650,7 +2650,7 @@
    "step": 2,
    "what": "its cream oval face, painted smile, eyes toward the rail",
    "expo": 0.77,
-   "at": "L31"
+   "at": "L31-0.4"
   },
   {
    "id": "S34",
