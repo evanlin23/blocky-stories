@@ -13,10 +13,10 @@ The rule we break is the reading room's own, shown and never said: nobody speaks
 **You don't count yourself.** My 1 was never me. It was Tam, the only person in town who knew my name, and his last 1 was me. The first line plays one way first time ("my 1 means nobody but me") and another on the loop ("my 1 was my brother, the whole time").
 - **Plant 1 (L04 to L05, S06 to S08):** the woman off the train has a 0, though she obviously knows her own name, and it jumps to 1 the moment one man hears it. A rewatcher sees that my 1 can't be me. The same beat plants the loophole: you only have to hear a name once.
 - **Plant 2 (L27 to L28, S39 to S41):** Tam half asleep on the sofa says something. On screen his mouth shapes a short word while my back is turned at the kettle, and the 1 over my head warms slightly (a 0.5 s ramp up to 120% and back, never a flash). It's my name. I don't hear it.
-- **Bonus (L09):** "I figured the one was just ME." It's said as my belief, never as the rule, and L44 repeats the same mistake until L51 corrects it.
+- **Bonus (L09):** "I figured the one was just ME." It's said as my belief, never as the rule, and L44 repeats the same mistake and calls it wrong at once, and L51 says why.
 
 ## How the climax turns the rule (the second reading)
-1. The scare hands me a reading of the rule that proves the worst. Tam's number says 1 with the thing in my old seat (L43). Because I believe you count yourself, I read it as "just himself" (L44, "I thought that meant", so it's plainly my mistake): I'm out of his count (L45), and the thing has taken my place (L46).
+1. The scare hands me a reading of the rule that proves the worst. Tam's number says 1 with the thing in my old seat (L43). Because I believe you count yourself, I read it as him counting himself (L44, "I thought... I was WRONG", so it's plainly my mistake in the moment): I'm out of his count (L45), and the thing has taken my place (L46).
 2. I look at my own 1 for the first time in years (L47 to L48) and test my belief against plant 1: the woman knew her own name and still had a 0 (L50). So you don't count yourself (L51).
 3. The same number now reads the other way twice over. My 1 is Tam, who still says my name in his sleep (L53, paying off plant 2). His 1 is me (L54). I never left his count, so the chair it sits in was never empty in the way that matters: it's still mine (L55). This is what defeats the Negative. A Keeper only stands where a person is missing, and the re-read shows the person isn't missing, only sitting at the wrong table.
 4. The re-read also tells me numbers only ever come from other people, so the fix can't be done alone behind headphones. Plant 1's second half gives the method: one hearing is enough (L56). I say both our names out loud in a silent room (L59). Every reader looks up and both numbers roll to 20 (L60 to L62).
@@ -33,7 +33,7 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 - **Nothing readable anywhere.** No book titles, no spines, no signs, no posters, no notes on Tam's page (his page is ruled lines and scribble strokes that never form letters). The only symbols in the film are the glowing numbers and the lore tally.
 
 ## Cast (all adults, nobody in peril or hurt)
-- **Luke** (me, narrator, a man, mid-twenties, never shown with an age, a one-syllable name that voices and transcribes cleanly and sounds nothing like Tam): dusty-rose jumper #c98aa0 with a cable knit pattern, dark slate jeans #2b3550, short black block hair with a side part, slate-grey over-ear headphones (our own blocky design, no logo) round his neck or on. Round eyes, flat brows, a small closed mouth that rarely smiles until L69.
+- **Luke** (me, narrator, a man, mid-twenties, never shown with an age, a one-syllable name that voices and transcribes cleanly and sounds nothing like Tam): deep maroon jumper #7a1f2e with a cable knit pattern, dark slate jeans #2b3550, short black block hair with a side part, slate-grey over-ear headphones (our own blocky design, no logo) round his neck or on. Round eyes, flat brows, a small closed mouth that rarely smiles until L69.
 - **Tam** (my brother, 19, never shown with an age): oatmeal hoodie #b9a98a, messy dark-brown block hair, round black-rimmed glasses, a pencil tucked behind his ear (a prop on the head, no grip needed). Sleepy eyes, slight frown.
 - **The baker** (adult): flour-white apron over a yellow shirt, a short baker's cap, big smile. Number 900.
 - **The woman off the train** (adult): a teal raincoat and a small suitcase standing beside her (not held). Numbers 0 then 1.
@@ -47,7 +47,7 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 - One model, built once in `set.py` and posed per shot. A normal-height R6 person **printed in reverse**, as if from a photo negative. That inversion is its one wrongness.
   - Skin near-black #15181c with a faint cool sheen. Face strokes in thick white #f2f2f2 (our own face drawn in white on black): eyes whose whites are black #050607 with small white pupils #ffffff, white brows, a short straight white mouth line.
   - White block hair #ececec, short with a side part cut like mine (the only echo, never narrated).
-  - Jumper #36755f, the exact negative of my dusty rose, which happens to be library green, so it almost melts into the walls. Trousers #d4caaf (the negative of my jeans), white shoes.
+  - Jumper #36755f, library green, the opposite of my maroon on the colour wheel (red's opposite reads as green by ear and by eye), so it almost melts into the walls. Trousers #d4caaf (the negative of my jeans), white shoes.
   - **No number over its head.** Ever. Its empty air is part of every shot of it.
 - Always seated, hands flat on the table, back straight. Never seen moving, only nearer. It never touches anyone: its closest is a hand's width from Tam's face (about 15 cm, L42).
 - **Light it for fear:** the table lamps throw warm light down onto everyone else. On the Negative the lamp is dead and the key comes from the side (cold window light) with a cool rim on its silhouette. Its white pupils are the brightest thing on it, never clipped.
@@ -68,7 +68,7 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 | I reach the table | L63 onward | Gone. The chair is empty and pushed back as if for me. |
 
 ## Look
-- **Palette:** library green #2e5a46, brass #c8963c, oak #7a5232, lamp glass green #3f7a52, lamp warm #ffc77a, rain-grey dome light #9fb3c2, Luke's rose #c98aa0, the Negative's black #15181c and white #f2f2f2.
+- **Palette:** library green #2e5a46, brass #c8963c, oak #7a5232, lamp glass green #3f7a52, lamp warm #ffc77a, rain-grey dome light #9fb3c2, Luke's maroon #7a1f2e, the Negative's black #15181c and white #f2f2f2.
 - **The numbers:** our own rounded block digits, soft cream-white #fff4dc glow with a thin dark outline, a hand above every head, always facing camera, sized so they read at phone size. A number changes by rolling (old digit slides up and out, new slides in, 0.4 s), never by blinking. Steady glow, no pulse.
 - **Caption key colour:** rose `#ff9ec4` (ep11 lime, ep12 red, ep13 cyan, ep20 brass gold are taken).
 - **Music:** A Dorian, 80 bpm. A soft felt-pluck synth line of our own over a low pad, with rain on glass and a faint lamp hum as ambience. Drops (0.6 s, voice and hit only) before L20 ("That's when I saw it"), before L42 (the reveal) and before L48 ("ONE."). From L57 the pad lifts to A major and the pluck line comes back brighter.
@@ -119,7 +119,7 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 | S33 | L21 | Closer: the Negative seated, side-lit, the stacks behind (solid book blocks, no lettering). |
 | S34 | L22 | Close on its face: black, the thick white strokes. |
 | S35 | L23 | Extreme close: white hair, black eyes with small white pupils. |
-| S36 | L24 | Split framing: my rose sleeve in the foreground, its green jumper across the room, the same knit, colours swapped. |
+| S36 | L24 | Split framing: my maroon sleeve in the foreground, its green jumper across the room, the same knit, colours swapped. |
 | S37 | L25 | Up from the table: the empty air over its head, every other reader's number glowing around it. |
 | S38 | L26 | Its head turned toward the window table. Reverse: Tam, unaware. |
 | S39 | L27 | Our flat at night, rain on the window. Tam asleep on the sofa, 6 over his head. |
@@ -189,7 +189,7 @@ The first line opens as a cold fact that leaves me alone with a 1 that means onl
 ## Lore connection (one)
 Two short upright library-green strokes scratched into the brass base of the reading lamp on the window table, a table built for two (S47, under L32 "I could hear the LAMPS hum"), held about 1.8 s, never narrated. In the canon it's the Keeper's tally: the place's count is two, and the Negative stands in the second stroke while my seat is empty. A plain tally, no extra stroke, touching no open thread. The Negative carries none of the town's markers (no number), never touches anyone, and is gone once I fill my seat.
 
-## Narration (71 lines, 622 words, about 2:09 of speech at 290 wpm, about 2:19 with gaps)
+## Narration (71 lines, 625 words, about 2:09 of speech at 290 wpm, about 2:19 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words. Luke's L59 is narration, in his voice like every line.
 
 L01. In this town, the NUMBER over your head is how many people know your NAME.
@@ -212,10 +212,10 @@ L17. Nine rolls to SIX. Nobody looks UP.
 L18. A page turns. Nobody looks UP.
 L19. His old friends are forgetting him, one name at a TIME.
 L20. That's when I saw it, at the far table by the STACKS.
-L21. A person, printed BACKWARDS.
+L21. A person, like a photo NEGATIVE.
 L22. A black face, drawn in thick WHITE lines.
 L23. White hair. Black eyes with little white PUPILS.
-L24. A green jumper, the exact OPPOSITE of my pink one.
+L24. A green jumper, the exact OPPOSITE of my red one.
 L25. And over its head, no number at ALL.
 L26. Its face was turned toward TAM.
 L27. That night Tam dozed off on the SOFA.
@@ -235,14 +235,14 @@ L40. And across from Tam, in my old seat, sat a shape with NONE.
 L41. The lamps came back UP.
 L42. It was sitting across from him, its black face a hand away from HIS.
 L43. And over Tam's head, the number said ONE.
-L44. I thought that meant just HIMSELF.
+L44. I thought he was counting HIMSELF. I was WRONG.
 L45. Like even I didn't count ANYMORE.
 L46. That thing had taken my PLACE.
 L47. Then I looked up at my own number, for the first time in YEARS.
 L48. ONE.
 L49. And I thought about the woman off the TRAIN.
 L50. She knew her own name, and she still had a ZERO.
-L51. You don't count YOURSELF. Nobody does.
+L51. You don't count YOURSELF.
 L52. So who was my ONE?
 L53. TAM. He still said my name, in his SLEEP.
 L54. And the one over his head was ME.
