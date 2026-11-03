@@ -519,6 +519,8 @@ def test_upload_needs_a_final_film_check(tmp_path, monkeypatch):
     assert not stories.qa_passed("x", f)
     (tmp_path / "x.json").write_text(json.dumps({"film": 42, "verdict": "pass"}))
     assert stories.qa_passed("x", f)
+    (tmp_path / "x.json").write_text(json.dumps({"stage": "proof", "film": 42, "verdict": "pass"}))
+    assert not stories.qa_passed("x", f)   # a proof check doesn't let a final upload
     (tmp_path / "y.json").write_text(json.dumps({"film": "legacy", "verdict": "pass"}))
     assert stories.qa_passed("y", {"id": None, "legacy": "y.mp4"})
     monkeypatch.setenv("QA_REQUIRED", "false")
@@ -539,3 +541,175 @@ def test_check_blocks_machine_specific_paths_in_set(tmp_path, monkeypatch):
         import re
         probs = [("block", "absolute path")] if re.search(r"[\"'](/home/|/root/)", (d / "set.py").read_text()) else []
     assert any("absolute path" in p[1] for p in probs)
+
+
+# ---------------------------------------------------------------- the proof (before merge), 2026-11-03
+
+def test_still_spans_find_a_dead_hold_and_clear_a_moving_shot():
+    """A shot where the camera, the crop and the cast all hold for over 1 s is a still the final would be blocked
+    on; the same shot with a camera move, or with the character walking, is not."""
+    from blocky import checks
+
+    cam = [[0, [0, -3, 1.5], [0, 0, 1.5], 50]]
+    st = {"name": "t", "lines": [], "cast": {"me": {"age": "adult", "height": 1.0}},
+          "shots": [{"id": "S1", "cam": cam}], "acting": {"me": [{"at": 0, "pos": [0, 0]}]}, "fx": []}
+    tl = {"fps": 30, "duration": 3.0, "frames": 90, "captions": [], "fx": [], "talk": {},
+          "shots": [{"id": "S1", "start": 0.0, "end": 3.0, "f0": 0, "f1": 90, "step": 2}],
+          "acting": {"me": [{"t": 0.0, "pos": [0, 0]}]}, "lines": {}, "order": [], "motion": {}}
+    spans = checks.still_spans(st, tl)
+    assert spans and spans[0][0] == "S1" and spans[0][2] - spans[0][1] > 1.0
+    assert checks.still_risks(st, tl) and "nothing moves" in checks.still_risks(st, tl)[0]
+
+    moved = json.loads(json.dumps(st))
+    moved["shots"][0]["cam"] = [[0, [0, -3, 1.5], [0, 0, 1.5], 50], [1, [0, -2.2, 1.5], [0, 0, 1.5], 50]]
+    assert checks.still_spans(moved, tl) == []
+
+    walking = json.loads(json.dumps(st))
+    walking["acting"]["me"] = [{"at": 0, "pos": [0, 0]}, {"at": 3.0, "pos": [2, 0]}]
+    tl2 = json.loads(json.dumps(tl))
+    tl2["acting"]["me"] = [{"t": 0.0, "pos": [0, 0]}, {"t": 3.0, "pos": [2, 0]}]
+    assert checks.still_spans(walking, tl2) == []
+
+    # a shot set.py animates (a door, a monster) is exempt when the story says so
+    exempt = json.loads(json.dumps(st))
+    exempt["set_moves"] = ["S1"]
+    assert checks.still_spans(exempt, tl) == []
+
+
+def test_real_stories_with_the_polish_pack_hold_no_dead_stills():
+    """The pack's drift and auto camera mean a current story has none; an older one without the pack does."""
+    from blocky import checks, timeline as T
+
+    def spans(name):
+        st = T.load_story(name)
+        tl = T.build(st, json.loads((ROOT / "stories" / name / "voice-timings.json").read_text()))
+        return checks.still_spans(st, tl)
+
+    assert spans("moving-day") == []        # polish on
+    assert len(spans("ep49-car-wash")) > 5  # no polish: holds all over
+
+
+def test_clip_times_cover_the_film_and_land_on_frames():
+    from blocky import checks
+
+    tl = {"fps": 30, "duration": 2.0, "frames": 60,
+          "acting": {"me": [{"t": 0.51, "pos": [0, 0]}, {"t": 1.9, "pos": [1, 0]}]}}
+    ts = checks.clip_times(tl, None, 0.25)
+    assert ts == sorted(set(ts))
+    assert all(abs(t * 30 - round(t * 30)) < 0.01 for t in ts)
+    assert 0.0 in ts and max(ts) < 2.0 and len(ts) >= 8
+    assert round(round(0.51 * 30) / 30, 4) in ts        # an acting key, snapped to its frame
+
+
+def test_clip_problems_group_into_spans():
+    from blocky import checks
+
+    hits = [{"t": 1.0, "shot": "S1", "who": "me", "what": "boot"},
+            {"t": 1.25, "shot": "S1", "who": "me", "what": "boot"},
+            {"t": 5.0, "shot": "S4", "who": "me", "what": "boot"},
+            {"t": 2.0, "shot": "S2", "who": "cat", "what": "wall"}]
+    out = checks.clip_problems(hits)
+    assert out == ["S1 1.00-1.25 s: me's head passes through boot",
+                   "S2 2.00 s: cat's head passes through wall",
+                   "S4 5.00 s: me's head passes through boot"]
+    assert checks.clip_problems([]) == []
+    # intended overlaps a story lists (a cat through its own flap, a face against the glass) don't count
+    assert checks.clip_problems(hits, ["boot"]) == ["S2 2.00 s: cat's head passes through wall"]
+    assert checks.clip_problems(hits, ["S1"]) == [m for m in out if not m.startswith("S1 ")]
+    assert checks.clip_problems(hits, ["S2/wall", "boot"]) == []
+    assert checks.clip_problems(hits, ["wal"]) == out       # a name matches whole, not by prefix
+
+
+def test_film_files_ignore_the_words_around_the_story():
+    assert gate.film_files("w", ["stories/w/story.json", "stories/w/set.py", "stories/w/package.json",
+                                 "stories/w/reviews/r1-critic.md", "stories/w/script.md", "stories/x/set.py",
+                                 "qa/w.json"]) == ["stories/w/story.json", "stories/w/set.py"]
+
+
+def test_the_proof_check_must_match_the_story_as_it_stands():
+    """gate --merge: a passed proof check of this exact film, from a commit in this history."""
+    good = {"stage": "proof", "verdict": "pass", "sha": "abc123def"}
+    assert gate.proof_problems("w", good, []) == []
+    assert "no qa/w.json" in gate.proof_problems("w", None, [])[0][1]
+    assert "not a proof check" in gate.proof_problems("w", {**good, "stage": "final"}, [])[0][1]
+    assert "failed" in gate.proof_problems("w", {**good, "verdict": "fail"}, [])[0][1]
+    assert "no sha" in gate.proof_problems("w", {k: v for k, v in good.items() if k != "sha"}, [])[0][1]
+    assert "isn't in this branch's history" in gate.proof_problems("w", good, None)[0][1]
+    changed = gate.proof_problems("w", good, ["stories/w/set.py"])
+    assert "1 film file(s) changed after the proof" in changed[0][1]
+
+
+def test_plan_proofs_picks_approved_stories_whose_film_changed(monkeypatch):
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("plan_proofs", ROOT / "scripts" / "plan_proofs.py")
+    pp = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(pp)
+
+    monkeypatch.setattr(pp, "gate_open", lambda s: s != "closed-one")
+    # a story whose proof check already covers its film files isn't drawn again
+    monkeypatch.setattr(pp, "merge_problems", lambda s, base: [] if s == "proved-one" else [("block", "no proof")])
+    monkeypatch.setattr(pp, "load_package", lambda s: {"hold": "redo"} if s == "held-one" else {})
+    monkeypatch.setattr(pp, "stories_in", lambda paths: sorted({p.split("/")[1] for p in paths
+                                                                if p.startswith("stories/") and len(p.split("/")) > 2}))
+    base = ["stories/a/set.py", "stories/closed-one/story.json", "stories/held-one/set.py",
+            "stories/b/package.json", "stories/proved-one/set.py"]
+    monkeypatch.setattr(pp, "changed", lambda a, b="HEAD": base if a == "BASE" else None)
+
+    class A:
+        story, base, before, shards, selftest = "", "BASE", "", 8, "self"
+    assert pp.plan(A()) == (["a"], False)        # b changed only its package; held and closed are out
+    A.story = "x"
+    assert pp.plan(A()) == (["x"], False)        # a dispatch draws what it's told
+
+    # the proof workflow itself changed and no story: its own test story proves the change
+    class B(A):
+        story = ""
+    monkeypatch.setattr(pp, "changed", lambda a, b="HEAD": [".github/workflows/proof.yml"] if a == "BASE" else None)
+    assert pp.plan(B()) == (["self"], True)
+
+
+def test_wanted_needs_this_push_to_touch_the_film_or_the_reviews():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("plan_proofs", ROOT / "scripts" / "plan_proofs.py")
+    pp = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(pp)
+
+    vs_base = ["stories/w/set.py"]
+    assert pp.wanted("w", vs_base, None)                                   # unknown push: draw it
+    assert pp.wanted("w", vs_base, ["stories/w/set.py"])                   # the film changed
+    assert pp.wanted("w", vs_base, ["stories/w/reviews/r2-critic.md"])     # it just got approved
+    assert not pp.wanted("w", vs_base, ["qa/w.json"])                      # a qa file: no redraw
+    assert not pp.wanted("w", [], ["stories/w/set.py"])                    # same film as the base
+
+
+def test_proof_verdict_fails_on_a_block_flash_clip_or_hot_peak():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("proof_report", ROOT / "scripts" / "proof_report.py")
+    pr = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(pr)
+
+    craft = {"checks": [{"metric": "macro.longest_still_q_s", "value": 0.5, "low": None, "high": 1.0, "status": "ok"},
+                        {"metric": "spec.cuts_per_10s", "value": 4.0, "low": 5.5, "high": 8.0, "status": "warn"}]}
+    flash = {"house_bar": {"pass": True}}
+    mix = {"file": {"lufs": -14.1, "true_peak_dbtp": -1.4}}
+    clip = {"hits": []}
+    assert pr.verdict(craft, flash, mix, clip) == (True, [])
+
+    hot = pr.verdict(craft, flash, {"file": {"lufs": -14.1, "true_peak_dbtp": -0.2}}, clip)
+    assert not hot[0] and "true peak" in hot[1][0]
+
+    blocked = json.loads(json.dumps(craft))
+    blocked["checks"][0].update(value=1.6, status="block")
+    out = pr.verdict(blocked, flash, mix, clip)
+    assert not out[0] and "craft block: macro.longest_still_q_s = 1.6" in out[1][0]
+
+    assert not pr.verdict(craft, {"house_bar": {"pass": False}}, mix, clip)[0]
+    clipped = pr.verdict(craft, flash, mix, {"hits": [{"t": 1.0, "shot": "S9", "who": "me", "what": "boot"}]})
+    assert not clipped[0] and "me's head passes through boot" in clipped[1][0]
+    assert not pr.verdict(None, flash, mix, clip)[0]          # a missing report means the proof didn't finish
+    assert not pr.verdict(craft, flash, mix, None)[0]
+    md = pr.markdown("w", False, ["craft block: x"], "| t |", mix, {"sha": "abc123def4", "minutes": 21.5})
+    assert "FAIL" in md and "abc123def" in md and "21.5 min" in md and "craft block: x" in md

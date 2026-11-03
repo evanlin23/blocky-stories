@@ -16,7 +16,7 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
 | `post.py` | scale up, bloom, the story's grade, effects (flash, blackout, static, red, shake, punch-in, rain), grain, captions; H.264 |
 | `sound.py` | the generated score, ambience, footsteps from the acting, one-off effects, the narrator, the master; recorded CC0 steps, ambience and a few effects from `assets/audio/` |
 | `polish.py` | the polish pack (`look.polish`): cut whooshes, key-word and reveal hits, risers, the room bed, punch-ins, drift, sway, the bright grade, the caption pop |
-| `checks.py` | the checks behind `check` and the tests |
+| `checks.py` | the checks behind `check`, `preflight` and the tests: the rules, the pace and the stills the edit already holds, and the clip report |
 
 ## story.json
 
@@ -94,6 +94,35 @@ takes the larger of it and the talking flaps; a "line" seam still only parts int
 open and shut about every 0.11 s, for a character whose words the narrator reports (one voice). A character 1.75 m tall has its eyes at about 1.55 m.
 
 **set.py** defines `build(kit, story, tl)`, which makes the world from `kit`'s parts and returns a dict it can keep. An optional `animate(kit, story, tl, t, ctx)` moves story things each frame (a door, a light going out, something rising) and may return `{light name: gain}`. `timeline.cue(tl, name)` gives a cue's time.
+
+## Before any render: the stills and the clips (2026-11-03)
+
+The preview is quarter-res with every 4th drawing, so a face through a boot, a picture that holds still too long
+and the pace were invisible until the final. Two checks read them before a frame is drawn:
+
+- **Stills** (`checks.still_spans`, pure python): a stretch inside one shot where the camera (its keys, `follow`
+  and the polish pack's move), the crop (punch-ins, drift, sway) and every character's pose all hold. Over 1.0 s is
+  what `measure.py` blocks a film on (`macro.longest_still_q_s`), so `preflight` blocks on it and `check` warns.
+  Key a move, a pose or a punch-in there. A shot where `set.py`'s `animate` moves something big instead is exempt:
+  list it in story.json `"set_moves": ["S14"]`.
+- **Clipping** (`python -m blocky clipcheck <story>`, Blender, no drawing: about 2.5 minutes for a 2-minute film).
+  The scene is posed every 0.25 s and at every acting key, and each head on screen is tested against every other
+  rendered mesh with a BVH overlap, the head shrunk 10% so a touch isn't a hit. The heads are the cast's, plus any
+  set object whose name starts with one of story.json `"clip_heads": ["chead"]` (a creature `set.py` builds itself).
+  An overlap the story means to have (a cat through its own flap, a face against the glass) goes in
+  `"clip_ok": ["flap", "S58/pane", "S97"]`: an object name, a shot, or a shot and an object. Anything else blocks.
+  `preflight` runs it when `BLOCKY_BPY` is set, and the proof workflow runs it on the PR.
+
+## The proof render (`.github/workflows/proof.yml`)
+
+The whole film, before merge, the way the final will be: every drawing the final makes (no frame skipping), at
+270 x 480 with 4 samples, through the same engine path as `render.yml` (`python -m blocky render --proof`, then
+`finish --proof` and `mix --proof`, which still finish at 1080 x 1920), with the narration made on Actions. It
+runs on a story PR once both reviews approve, or by hand with a story and a ref. It keeps `proof-<story>` for 14
+days (the film, the contact sheet, `flash.json`, `craft.json`, `clip.json`, `mix.json`, `proof.json` with the
+commit it drew, and `verdict.json`), posts the craft table in the job summary, and fails on a craft block, the
+flash bar, a clip or a true peak over -1 dBTP. The qa agent checks that artifact and writes `qa/<story>.json`
+with `"stage": "proof"`; `test` blocks the merge without it (`python -m blocky gate <story> --merge --base <sha>`).
 
 ## The CC0 library (`assets/`)
 
