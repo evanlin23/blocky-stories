@@ -287,7 +287,7 @@ shot("L19+1.0", mv([SX - 0.2, SY - 3.4, 1.7], [SX, SY - 1.0, 1.7], 55), name="yo
 # L20 to L22: Mom at the hall mirror, one silver streak
 only("L20", ["mom"])
 put("mom", "L20", [HX - 1.5, HY + 2.0], 180, expr="soft")
-shot("L20", mv([HX - 0.3, HY - 0.6, 1.75], [HX - 1.5, HY + 3.2, 1.7], 34, [HX - 0.8, HY - 0.5, 1.75], [HX - 1.5, HY + 3.2, 1.7], 34), name="hallmirror")
+shot("L20", mv([HX + 1.8, HY - 1.6, 1.75], [HX - 1.5, HY + 3.0, 1.7], 30, [HX + 1.4, HY - 1.4, 1.75], [HX - 1.5, HY + 3.0, 1.7], 30), name="hallmirror")
 cue("L21", "mom", streak=1.0)
 put("mom", "L21", [HX + 0.5, HY + 0.6], 0, expr="soft")
 shot("L21", mv([HX + 0.3, HY - 1.0, 2.1], [HX + 0.5, HY + 0.6, 1.9], 70, [HX + 0.4, HY - 0.8, 2.1], [HX + 0.5, HY + 0.6, 1.9], 70), name="streak")
@@ -301,12 +301,12 @@ only("L23", ["mom"])
 cue("L23", "look", id="dawn0", dur=0)
 put("mom", "L23", [OX, OY + 3.3], 0, expr="soft")
 go("mom", "L23+0.2", [OX, OY + 3.3])
-go("mom", "L23+1.2", [OX, OY - 2.6])
-acting["mom"][-2]["sfx"] = "door"
+go("mom", "L23.1-0.1", [OX, OY - 2.6])
+acting["mom"][-3]["sfx"] = "door"
 shot("L23", mv([OX + 3.4, OY - 5.8, 1.3], [OX, OY + 1.0, 1.4], 34, [OX + 2.6, OY - 5.4, 1.3], [OX, OY + 0.4, 1.4], 34), name="doorway")
-put("mom", "L23.1", [OX, OY - 3.0], -90, expr="soft")
-go("mom", "L23>", [OX - 9.0, OY - 3.0])
-shot("L23.1", mv([OX - 1.0, OY - 7.4, 1.5], [OX - 3.0, OY - 3.0, 1.4], 34, [OX - 4.0, OY - 7.2, 1.5], [OX - 7.0, OY - 3.0, 1.4], 34), name="momwalk")
+put("mom", "L23.1", [OX + 0.5, OY - 3.0], -90, expr="soft")
+go("mom", "L23>", [OX - 3.5, OY - 3.0])
+shot("L23.1", mv([OX - 1.0, OY - 8.6, 1.5], [OX - 1.5, OY - 3.0, 1.4], 26, [OX - 1.6, OY - 8.2, 1.5], [OX - 1.7, OY - 3.0, 1.4], 26), name="momwalk")
 only("L24", ["me"])
 put("me", "L24", [0.4, -25.6, 0.25], 180, expr="worried")
 go("me", "L24+0.9", [0.4, -17.2, Z0 - 0.15])
@@ -329,14 +329,14 @@ shot("L26", mv([0.2, -9.0, Z0 + 1.6], [0.4, -4.4, Z0 + 1.6], 42, [0.3, -7.8, Z0 
 # L27: her hand on the stone, a line slides onto her face
 only("L27", ["mom"])
 statue("L27", wr=6.0)
-put("mom", "L27", [0.55, SLY, 0], 90, expr="soft", arms=[90, 90])
+put("mom", "L27", [0.8, SLY, 0], 45, expr="soft", arms=[90, 90])
 cue("L27.2", "slide", u=0.0)
 cue("L27.2+0.1", "slide", u=1.0, dur=1.3)
 cue("L27.2+1.4", "mom", smile=1.0)
 tally("L27.2", 6, 0.5)
-shot("L27", mv([-1.4, SLY - 2.5, 1.6], [0.7, SLY, 1.55], 38, [-1.0, SLY - 2.2, 1.6], [0.7, SLY, 1.55], 38), name="handcheek")
-shot("L27.2", mv([-0.4, SLY - 1.5, 1.55], [0.7, SLY, 1.55], 50, [-0.2, SLY - 1.3, 1.55], [0.7, SLY, 1.55], 50), name="slide")
-shot("L27.3", mv([-0.9, SLY - 1.7, 1.6], [0.8, SLY, 1.5], 46, [-0.6, SLY - 1.6, 1.6], [0.8, SLY, 1.5], 46), name="slide2")
+shot("L27", mv([-0.8, SLY - 4.4, 1.6], [0.9, SLY, 1.5], 30, [-0.4, SLY - 4.0, 1.6], [0.9, SLY, 1.5], 30), name="handcheek")
+shot("L27.2", mv([0.2, SLY - 3.0, 1.65], [1.0, SLY, 1.55], 42, [0.5, SLY - 2.7, 1.65], [1.0, SLY, 1.55], 42), name="slide")
+shot("L27.3", mv([-0.6, SLY - 3.2, 1.7], [1.0, SLY, 1.5], 38, [-0.2, SLY - 2.9, 1.7], [1.0, SLY, 1.5], 38), name="slide2")
 only("L28", ["mom"])
 put("mom", "L28", [0.4, -4.4, Z0], 0, expr="smile")
 shot("L28", mv([0.4, -7.4, Z0 + 1.65], [0.4, -4.4, Z0 + 1.58], 55, [0.4, -6.6, Z0 + 1.65], [0.4, -4.4, Z0 + 1.58], 55), name="smileline")
@@ -367,9 +367,8 @@ cue("L32", "look", id="day", dur=0)
 only("L32", ["mom", "dad"])
 put("dad", "L32", [SX - 0.7, SY + 1.4], 0, expr="smile", arms=[0, 40])
 put("mom", "L32", [SX + 0.7, SY + 1.4], 0, expr="laugh", arms=[40, 0])
-go("dad", "L32+1.0", [SX - 0.7, SY - 3.4])
-go("mom", "L32+1.0", [SX + 0.7, SY - 3.4])
-beat("dad", "L32+1.0", expr="laugh")
+go("dad", "L32+0.4", [SX - 0.7, SY - 3.4])
+go("mom", "L32+0.4", [SX + 0.7, SY - 3.4])
 shot("L32", mv([SX, SY - 9.0, 1.5], [SX, SY - 0.4, 1.6], 34, [SX, SY - 8.4, 1.5], [SX, SY - 0.8, 1.6], 34), name="armarm")
 put("dad", "L32.1", [SX - 0.7, SY + 0.0], 0, expr="smile", arms=[0, 40])
 put("mom", "L32.1", [SX + 0.7, SY + 0.0], 0, expr="smile", arms=[40, 0])
@@ -386,6 +385,7 @@ only("L34", ["lark", "dad", "mom"])
 put("lark", "L34", [CX, CY + 1.4], 0, expr="smile")
 put("dad", "L34", [CX - 0.8, CY - 1.0], 180, expr="smile", arms=[0, 40])
 put("mom", "L34", [CX + 0.8, CY - 1.0], 180, expr="smile", arms=[40, 0])
+only("L34.1", ["lark"])
 beat("lark", "L34.1", expr="grin", head=[0, 5])
 shot("L34", mv([CX, CY - 4.4, 1.6], [CX, CY + 0.2, 1.55], 36, [CX, CY - 3.6, 1.6], [CX, CY + 0.2, 1.55], 36), name="larksmile")
 shot("L34.1", mv([CX + 0.4, CY - 2.8, 1.7], [CX, CY + 1.4, 1.6], 50, [CX + 0.3, CY - 2.4, 1.7], [CX, CY + 1.4, 1.6], 50), name="larksmile2")
@@ -399,7 +399,7 @@ only("L35.1", [])
 shot("L35.1", mv([CAX + 0.1, CAY - 4.4, 2.5], [CAX, CAY, 2.4], 38, [CAX, CAY - 3.4, 2.45], [CAX, CAY, 2.4], 38), name="calcircle")
 # L36: I walk past the statue
 put("me", "L36", [-3.2, -8.4, Z0], 90, expr="smile")
-go("me", "L36>", [3.4, -8.4, Z0])
+go("me", "L36+0.85", [3.4, -8.4, Z0])
 shot("L36", mv([0.6, -12.6, Z0 + 1.0], [0.0, -8.4, Z0 + 1.6], 34, [-0.4, -12.4, Z0 + 1.0], [0.4, -8.4, Z0 + 1.6], 34), name="walkpast")
 put("me", "L36+0.9", [-2.4, -9.6, Z0], 90, expr="smile")
 go("me", "L36>", [2.6, -9.6, Z0])
@@ -434,7 +434,7 @@ OVR = {
     "lark2": front(CX, CY + 1.4, 1.6, 3.6, 55, 0.3),
     "armarm2": front(SX, SY - 0.6, 1.75, 5.6, 36),
     "twoheads": mv([SX, SY - 5.6, 1.9], [SX, SY + 0.8, 1.8], 32, [SX, SY - 4.8, 1.9], [SX, SY + 0.8, 1.8], 32),
-    "larksmile": front(CX, CY + 0.2, 1.55, 5.8, 34), "larksmile2": front(CX, CY + 1.4, 1.6, 4.4, 45, 0.3),
+    "larksmile": front(CX, CY + 0.2, 1.55, 5.8, 26), "larksmile2": front(CX, CY + 1.4, 1.6, 4.4, 45, 0.3),
 }
 SH[:] = [(a, OVR.get(nm, c), st, h, f, nm) for (a, c, st, h, f, nm) in SH]
 # ---------------------------------------------------------------------------------------------- finish

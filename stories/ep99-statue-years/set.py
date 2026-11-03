@@ -41,11 +41,11 @@ def _L(**kw):
 LOOKS = {
     "day": _L(),
     # pre-dawn: lilac sky, the sun still down behind the statue, a warm front light so every face reads
-    "dawn0": _L(sun=1.4, sun_col="#ffb88f", el=3.0, az=170.0, fill=1.9, fill_col="#d9c8ff", sky="#c9b4ff", sky_str=1.1,
-                front=2.6),
+    "dawn0": _L(sun=1.0, sun_col="#ffb88f", el=3.0, az=170.0, fill=1.1, fill_col="#d9c8ff", sky="#c9b4ff", sky_str=0.75,
+                front=1.5),
     # sunrise: peach horizon, the sun up behind the statue
-    "dawn1": _L(sun=3.6, sun_col="#ffd2a0", el=15.0, az=170.0, fill=2.0, fill_col="#ffd9c0", sky="#ffc7a1", sky_str=1.3,
-                front=3.0, disc=1.0),
+    "dawn1": _L(sun=2.4, sun_col="#ffd2a0", el=15.0, az=170.0, fill=1.1, fill_col="#ffd9c0", sky="#ffc7a1", sky_str=0.9,
+                front=1.9, disc=1.0),
 }
 
 
@@ -544,7 +544,7 @@ def animate(kit, story, tl, t, ctx):
     tag = W["tag"]
     s = 0.56 * w2
     tag.scale = (s, s, s)
-    tag.location = (-0.50 * w2, 0.72 * h2, -dist)
+    tag.location = (-0.36 * w2, 0.64 * h2, -dist)
     # the calendar page
     fl = sample("flip", tl, t, {"v": 0.0})
     W["calhinge"].rotation_euler = (-fl["v"] * 175 * D2R, 0, 0)
@@ -566,7 +566,7 @@ def animate(kit, story, tl, t, ctx):
         ck.hide_render = True
     else:
         bpy.context.view_layer.update()
-        tgt = mh.matrix_world @ Vector((-0.72, -0.8, -0.26)) if mh is not None else Vector((0.9, G.SLAB[1], 1.4))
+        tgt = mh.matrix_world @ Vector((0.72, -0.8, -0.26)) if mh is not None else Vector((0.9, G.SLAB[1], 1.4))
         a = Vector((G.SLAB_X - 0.03, G.SLAB[1] - 0.35, 1.5))
         p = a.lerp(tgt, ss(u))
         ck.location = p
