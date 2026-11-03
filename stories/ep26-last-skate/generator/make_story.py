@@ -1,11 +1,12 @@
-"""Writes ../story.json for ep26 "last-skate" (script.md, writer 2026-11-02).
+"""Writes ../story.json for ep26 "last-skate" / "Skip Ahead" (script.md, writer, revival 2026-11-03).
 
 Run from anywhere: python stories/ep26-last-skate/generator/make_story.py
-The words are in lines.json next to this file. Everything else is here: the cast, the shots and their cameras, the
-acting, the cues set.py reads (the room's dim, the spotlight's path, the Skater, the skates, the door), the score
-and the sound. Places are set.py's (see its docstring): the rink floor is x +-7, y +-4.4; the south rail is y -4.15
-with a gap between its posts at x -1.2 and 1.2; the snack bar is west on the concourse, the hire counter east.
-A character with yaw 0 faces -y; yaw 90 faces +x; yaw 180 faces +y (north, the floor from the concourse).
+The words are in lines.json next to this file (made from script.md). Everything else is here: the cast, the shots
+and their cameras, the acting, the cues set.py reads (the room's dim, the spotlight's sweeps, the Skater's folds, the
+twelve song lights, the clock, the buttons, the ribbons), the score and the sound. Places are set.py's: the rink
+floor is x +-7, y +-4.4; the south rail is y -4.15, people lean on it at y -3.75; the snack bar is west on the
+concourse, the hire counter east, the booth on the north wall. A character with yaw 0 faces -y; yaw 90 faces +x;
+yaw 180 faces +y (north, the floor from the concourse).
 """
 import json
 import math
@@ -15,25 +16,17 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
-# The lore shot (S12) must hold 1.5 s or more: L10 gets a longer gap after it. The loop cut is 0.25 s after the last
-# word (P03, no fade at either end).
-# the word check (asr): a few lines a touch slower so a swallowed word comes through ("speakers" heard "speaker",
-# "her skates" heard "escapes", "round them" heard "around him"), and a breath after "My Nan" so it isn't heard as
-# "Nan's" with the next line's first word
-TEMPO = {"L45": 0.94, "L54": 0.94, "L72": 0.94, "L10": 0.92, "L18": 0.94,
-         "L20": 0.94, "L30": 0.9, "L56": 0.95, "L64": 0.92}
-# and a comma in the spoken text only (the captions don't change) where a word was swallowed
-SPOKEN = {}
+# the word check: a comma in the spoken text only where Whisper swallowed a word
+TEMPO = {"L04": 0.9, "L15": 0.9, "L30": 0.9, "L24": 0.93}
+# and a comma in the spoken text only (the captions don't change) where Whisper swallowed the "ed" of a word
+SPOKEN = {("L24", 0): "That's where skipped,"}
 for ln in lines:
     for k, ch in enumerate(ln.get("chunks", [])):
         if (ln["id"], k) in SPOKEN:
             ch[1] = SPOKEN[(ln["id"], k)]
 for ln in lines:
-    if ln["id"] == "L10":
-        ln["gap"] = 0.7
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
-lines = lines + [{"id": "P03", "pause": 0.25, "chunks": []}]
 
 # ---------------------------------------------------------------------------------------------------- cast
 FACE = {"eyes": "round", "brows": True, "ink": "#16100f"}
@@ -41,17 +34,18 @@ cast = {
     "me": {"age": "adult", "skin": "#c98e66", "shirt": "#2a8d88", "pattern": "solid", "collar": "#237873",
            "pants": "#33384f", "shoes": "#d8d3c6", "sleeves": "short", "hair": "cap", "hair_c": "#1a1412",
            "hat": "none", "face": dict(FACE)},
-    "nan": {"age": "adult", "skin": "#ecc29c", "shirt": "#a58bd0", "pattern": "solid", "collar": "#bba5de",
-            "pants": "#d6d1e2", "shoes": "#f1efe9", "sleeves": "short", "hair": "bun", "hair_c": "#cfd2d8",
-            "hat": "none", "height": 0.9, "width": 0.88,
-            "face": {"eyes": "lashes", "brows": True, "ink": "#1b1214", "bags": True}},
-    "pop": {"age": "adult", "skin": "#e4ae88", "shirt": "#3f6d52", "pattern": "plaid", "pattern_c": "#e3d9bf",
-            "collar": "#35604a", "pants": "#e6dcc0", "shoes": "#5e4128", "sleeves": "short", "hair": "none",
-            "hair_c": "#ecebe8", "hat": "none", "width": 1.12,
-            "face": {"eyes": "round", "brows": True, "ink": "#1a1210", "bags": True}},
+    # Gus, my best friend: the old "pop" model re-dressed (brown block hair, orange shirt, navy shorts, a gold crown)
+    "gus": {"age": "adult", "skin": "#e4ae88", "shirt": "#e8782a", "pattern": "solid", "collar": "#cf6620",
+            "pants": "#26304f", "shoes": "#e8dcc2", "sleeves": "short", "hair": "cap", "hair_c": "#4a2f1d",
+            "hat": "none", "width": 1.12, "face": dict(FACE)},
+    # the lady from Gus's work: the old "nan" model re-dressed (dark-brown bob, mint cardigan, round glasses, a soda)
+    "coworker": {"age": "adult", "skin": "#ecc29c", "shirt": "#8fd0b0", "pattern": "solid", "collar": "#a7dfc3",
+                 "pants": "#d6d1e2", "shoes": "#f1efe9", "sleeves": "short", "hair": "long", "hair_c": "#3a2416",
+                 "hat": "none", "height": 0.96, "width": 0.92, "extras": ["glasses"], "extra_c": "#2a2224",
+                 "face": {"eyes": "lashes", "brows": True, "ink": "#1b1214"}},
     "lenny": {"age": "adult", "skin": "#d49a74", "shirt": "#b0293b", "pattern": "solid", "collar": "#b0293b",
               "pants": "#2c2b33", "shoes": "#222222", "sleeves": "short", "hair": "buzz", "hair_c": "#2a1d17",
-              "hat": "none", "extras": ["scarf"], "extra_c": "#26262c", "face": dict(FACE)},
+              "hat": "none", "extras": ["headphones"], "hp_c": "#26262c", "face": dict(FACE)},
     "c1a": {"age": "adult", "skin": "#e0a67e", "shirt": "#3a5f9a", "pattern": "solid", "pants": "#2e3045",
             "shoes": "#e8dcc2", "sleeves": "short", "hair": "swoop", "hair_c": "#3a2a1c", "hat": "none",
             "face": dict(FACE)},
@@ -69,7 +63,6 @@ cast = {
     "c3b": {"age": "adult", "skin": "#e8b894", "shirt": "#4a7f9a", "pattern": "solid", "pants": "#3a3a4c", "shoes": "#e8dcc2",
             "sleeves": "short", "hair": "long", "hair_c": "#6a4020", "hat": "none",
             "face": {"eyes": "lashes", "brows": True, "ink": "#18100e"}},
-    # the singles at the rail in shot 1: bare wrists, no ribbon
     "s1": {"age": "adult", "skin": "#d9a27a", "shirt": "#6a7f9c", "pattern": "solid", "pants": "#35384a", "shoes": "#e8dcc2",
            "sleeves": "short", "hair": "buzz", "hair_c": "#2a1d17", "hat": "none", "face": dict(FACE)},
     "s2": {"age": "adult", "skin": "#a8704c", "shirt": "#c9a24a", "pattern": "solid", "pants": "#3a3a46", "shoes": "#e8dcc2",
@@ -96,150 +89,156 @@ def yaw_to(a, b):
     return round(math.degrees(math.atan2(b[0] - a[0], -(b[1] - a[1]))), 1)
 
 
-# ---------------------------------------------------------------------------------------------------- places
-CAR_Z = -0.05
-NAN = (3.0, -3.75)         # Nan at the south rail
-SKR = (1.65, -3.75)        # the Skater's post at the rail (and where Pop stands at the end)
-FAR = (-2.5, 3.7)          # the far (north) rail
-MID = (0.5, 0.2)           # the middle of the floor
-SEAT_Y = -6.7
-ME_X, POP_X = -5.0, -3.8
-SEAT_Z = 0.19
-
-# ---------------------------------------------------------------------------------------------------- cameras
 def C(loc, tgt, h, roll=0):
     """A still camera: h is the height in metres the frame shows at the target (portrait, sensor height 24 mm)."""
     d = math.dist(loc, tgt)
     return still(loc, tgt, round(24.0 * d / h, 1), roll)
 
 
-# the view from the snack bar over the floor, the high wide, the far-rail long lens, the rail 3/4 from the concourse
-FLOOR = still([-2.4, -5.6, 2.1], [1.0, 0.5, 0.9], 22)
+def face(p, yaw, dist=1.5, h=1.0, z=1.5, side=0.0, dz=0.05):
+    """A camera in front of a character at p (facing yaw), looking at their face height z."""
+    fx, fy = math.sin(math.radians(yaw)), -math.cos(math.radians(yaw))
+    rx, ry = -fy, fx
+    loc = [round(p[0] + fx * dist + rx * side, 2), round(p[1] + fy * dist + ry * side, 2), z + dz]
+    return C(loc, [p[0], p[1], z], h)
+
+
+# ---------------------------------------------------------------------------------------------------- places
+MEST = (-5.0, -6.7)        # my stool
+CWST = (-3.8, -6.7)        # the lady's stool
+RAILY = -3.75
+ME_RAIL = (3.0, RAILY)     # where I lean on the south rail
+SK_POST = (4.3, RAILY)     # the Skater one post from me
+SK_BESIDE = (3.8, RAILY)   # right beside me
+FAR = (-2.5, 3.7)          # the far (north) rail
+MID = (0.5, 0.2)           # the middle of the floor
+GUS_BOOTH = (1.05, 5.1)
+LENNY = (-0.35, 5.25)
+FLOOR_SIT = -0.51          # a character sits on the boards with its origin this far down
+
 HIGH = still([-5.8, -7.9, 3.9], [1.0, 0.5, 0.6], 20)
-FARCAM = still([-3.0, -5.6, 1.5], [FAR[0], FAR[1], 1.35], 55)
-RAIL34 = still([4.4, -6.2, 1.4], [2.3, -3.75, 1.2], 24)
-BOOTH = C([-1.3, 0.2, 2.9], [0.0, 5.4, 3.0], 2.4)
-POPSEAT = [POP_X, SEAT_Y, 1.25]
-MESEAT = [ME_X, SEAT_Y, 1.25]
+BOOTH_BAR = lambda x, h: C([x, 3.3, 3.9], [x, 4.5, 3.85], h)         # the song lights, close
+LEN_FACE = C([-0.35, 2.9, 3.25], [-0.35, 5.2, 3.3], 2.0)
+CLOCK = C([-4.3, -5.2, 2.9], [-4.3, -8.95, 3.3], 1.7)
+SKATER_LOW = C([6.2, -1.3, 0.9], [3.9, RAILY, 0.9], 2.6)                # the Skater at the rail from the floor
 
 SHOTS = [
-    # 01 the rule (warm, readable from frame 1): couples joined by a cherry ribbon at the wrist, singles at the rail
-    (0, "shot 1, warm: Nan's face at the rail, bare wrist, ribbon-joined couples gliding behind her", 2,
-     C([3.1, -6.9, 2.8], [3.2, -2.2, 1.0], 6.2)),
-    ("L01.3", "a slow track along the line of singles at the rail", 2,
-     C([5.4, -6.5, 1.45], [5.4, -3.75, 1.3], 4.4)),
-    ("L02", "the rink from outside at dusk", 2, move(([-15.0, -5.6, 1.2], [-8.0, -7.0, 0.7]), ([-13.4, -6.2, 1.2], [-8.0, -7.0, 0.7]), 25)),
-    ("L03", "the three of us coming in through the doors", 2, C([-1.6, -4.7, 1.6], [-7.4, -7.0, 1.2], 5.2)),
-    ("L04", "in the car at dusk, windows down: me driving, Nan's arm through Pop's in the back", 2,
-     C([-10.0, -8.2, 2.2], [-13.2, -4.4, 1.25], 3.2)),
-    ("L04.4", "Nan holds Pop's arm at the doors", 2, C([-3.4, -5.0, 1.4], [-6.2, -6.9, 1.3], 2.6)),
-    ("L08", "ribbon couples gliding under the slow fans", 2, still([0.5, -7.2, 1.3], [0.8, 0.5, 2.2], 23)),
-    ("L08.2", "couples gliding under the turning fans, from the west", 2, still([-6.6, -3.0, 1.2], [1.0, 0.0, 2.6], 26)),
-    ("L09", "couples gliding past the painted stripes", 2, C([2.8, -4.8, 1.35], [3.2, -1.0, 1.3], 2.8)),
-    ("L10", "Nan at the hire counter, the cubby wall behind", 2, C([3.6, -4.9, 1.7], [4.5, -8.4, 1.8], 3.6)),
-    ("L10.2", "the lore shot: the bottom-row end cubby, the far-too-long cherry skates, the tally on the near heel", 2,
-     C([6.5, -6.0, 1.15], [6.5, -8.05, 1.12], 0.9)),
-    ("L11", "Pop beside her, shaking his head, smiling", 2, C([4.5, -4.8, 1.5], [5.0, -6.9, 1.2], 2.6)),
-    ("L12", "Pop settling on the stool under the amber lamp", 2, C([-1.5, -4.4, 1.6], [POP_X, SEAT_Y, 1.0], 2.8)),
-    ("L13", "close on his knees and the tape", 2, C([-2.0, -6.4, 0.85], [POP_X, -6.4, 0.8], 1.4)),
-    ("L14", "Pop to Nan: 'You skate for both of us'", 2, C([-2.0, -3.3, 1.7], [-3.2, -6.4, 1.3], 3.0)),
-    ("L15", "Nan from behind, gliding to the rail", 2, still([3.4, -8.4, 1.5], [0.4, -4.6, 0.9], 26)),
-    # 03 slow song one
-    ("L16", "the room dims for a slow song, seen from the snack bar", 2, FLOOR),
-    ("L17", "couples gliding past, seen at the elbows", 2, still([-6.4, -3.6, 1.3], [-1.0, 0.0, 1.0], 24)),
-    ("L18", "high wide: the pool travelling round the floor", 2, HIGH),
-    ("L19", "Nan alone at the rail, the couples beyond", 2, C([3.8, -6.6, 1.4], [3.0, -3.5, 1.2], 2.8)),
-    ("L19b", "Nan at the rail, bare wrist, soft, looking toward the snack bar (from the concourse side)", 2, C([0.8, -5.5, 1.0], [2.8, -3.9, 1.15], 1.8)),
-    ("L20", "me and Pop at the snack bar, the tub between us", 2, C([-1.7, -4.8, 1.55], [-4.4, -6.4, 1.2], 3.0)),
-    ("L21", "the pool sliding along the far rail, then onto a tall striped shape", 2, FARCAM),
-    ("L22", "medium on the Skater at the far rail, face toward the floor", 2,
-     C([-3.0, -5.4, 1.3], [FAR[0], FAR[1], 1.25], 3.4)),
-    ("L23", "side view of its legs: two bends, a hard shadow under each", 2, C([-6.4, 3.6, 0.9], [FAR[0], FAR[1] - 0.2, 1.2], 3.2)),
-    ("L24", "the pool slides away, the room passes, the pool returns: nothing there", 2, FARCAM),
-    # 04 Lenny
-    ("L25", "Pop waving up at the booth", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
-    ("L25.3", "Lenny waves back", 2, BOOTH),
-    ("L26+0.3", "Pop: he hadn't been here in forty years, then the shrug (one shot, fewer cuts)", 2, C([-1.8, -4.2, 1.6], [POP_X, SEAT_Y, 1.4], 2.6)),
-    ("L28-1.2", "Lenny in the booth: a plain cherry shirt, nothing on it", 2, C([-0.8, 0.6, 3.0], [0.0, 5.4, 3.0], 1.6)),
-    # 05 slow song two
-    ("L28", "high wide: the dim, the pool slides in from the edge and onto the Skater, dead centre", 2, HIGH),
-    ("L30", "medium on its folded arms", 2, C([-1.6, -3.5, 1.55], [MID[0], MID[1], 1.4], 2.9)),
-    ("L31-0.4", "its cream oval face, painted smile, eyes toward the rail", 2, still([-0.1, -1.5, 1.2], [MID[0], MID[1], 1.95], 38)),
-    ("L31.2", "reverse: Nan at the rail, unaware", 2, C([3.0, -6.6, 1.5], [3.0, -3.75, 1.3], 2.8)),
-    ("L32", "me pointing, Pop eating a chip", 2, C([-1.7, -3.6, 1.6], [-4.2, -6.5, 1.3], 3.0)),
-    ("L33", "close on Pop's wrist and the plain watch", 2, C([-3.0, -5.3, 1.9], [-3.23, -6.1, 1.5], 0.9)),
-    # 06 slow song three
-    ("L34", "the chip tub untouched, my face worried", 2, C([-2.8, -4.6, 1.6], [-4.6, -6.4, 1.3], 2.3)),
-    ("L35", "low on the floor boards as the pool edges across them", 2, move(([-4.0, -3.7, 0.18], [1.2, -3.2, 0.0]), ([-4.0, -3.7, 0.18], [1.8, -3.5, 0.0]), 34)),
-    ("L36", "along the rail: Nan, a cream post, the Skater folded and facing her", 2, RAIL34),
-    ("L37", "up close, its stripes faded almost to pink", 2, C([3.0, -5.0, 1.55], [2.0, -3.75, 1.4], 1.4)),
-    ("L38", "its face, the eye highlights the brightest thing, key from below", 2, still([2.9, -4.7, 1.1], [1.75, -3.75, 2.0], 36)),
-    ("L39", "Nan's face, looking past camera toward us", 2, C([3.4, -5.3, 1.4], [3.0, -3.75, 1.3], 1.7)),
-    ("L40", "the pool slides off it, and back again", 2, RAIL34),
-    ("P01+0.55", "THE REVEAL: its head turned all the way round, over its back, looking at me", 1,
-     still([-0.9, -5.0, 1.4], [1.7, -3.75, 1.8], 32)),
-    ("L42", "my face, terrified", 2, C([-2.8, -4.4, 1.6], [ME_X, SEAT_Y, 1.4], 2.5)),
-    ("L43", "the chrome stool beside me, empty, the amber lamp over it", 2, C([-1.5, -4.4, 1.5], [POP_X, SEAT_Y, 0.9], 3.0)),
-    ("L44", "close on the tub, steam faint and slow", 2, C([-3.6, -4.9, 1.6], [-4.4, -5.98, 1.3], 0.9)),
-    # 07 the last skate
-    ("L45", "the booth lamp, Lenny at the mic", 2, BOOTH),
-    ("L46", "the slow 2 s dim on the wide", 2, HIGH),
-    ("L47", "couples gliding off through the gap, the floor left bare", 2, still([0.8, 3.2, 1.55], [0.0, -4.3, 0.95], 24)),
-    ("L48", "the pool settling on Nan", 2, C([1.4, -0.6, 1.5], [3.0, -3.75, 1.0], 3.0)),
-    ("L49", "the pool widens and the Skater is in it, at her shoulder, a head taller", 1, RAIL34),
-    ("L50", "THE TEST STILL: its arm held out to her, folded twice, the hand at the end of the sleeve", 1,
-     still([2.3, -6.9, 1.0], [2.3, -3.75, 1.45], 21)),
-    ("L51", "Nan looks at the hand", 2, C([2.5, -5.4, 1.45], [3.0, -3.75, 1.35], 1.7)),
-    ("L52", "Nan's hand rising, a hand's width from its hand", 2, C([2.6, -6.4, 1.3], [2.6, -3.75, 1.3], 2.4)),
-    ("L53", "me standing, terrified, the waltz swelling", 2, C([-2.9, -4.3, 1.6], [ME_X, -6.4, 1.4], 2.8)),
-    ("L54", "the booth: Lenny at the mic, smiling", 2, BOOTH),
-    # 08 Pop
-    ("L55", "the door by the hire counter swings open", 2, still([0.3, -2.4, 1.4], [0.0, -9.0, 1.2], 26)),
-    ("L56", "out rolled Pop", 2, C([0.3, -2.4, 1.4], [0.0, -8.4, 1.1], 3.4)),
-    ("L57", "close on his skates on the honey boards", 2, C([2.3, -1.0, 0.9], [0.2, -4.4, 0.5], 2.7)),
-    ("L58", "Pop coming across the floor, wobbling, the tape on his knees", 2, C([-2.4, -0.8, 1.3], [0.5, -2.2, 1.0], 3.0)),
-    ("L59", "Nan's face, wide, then softening", 2, C([2.4, -5.4, 1.45], [3.0, -3.75, 1.35], 1.8)),
-    ("L60", "my face, wide, putting it together", 2, C([-2.9, -4.3, 1.6], [ME_X, -6.4, 1.4], 2.6)),
-    ("L61", "Lenny leaning out of the booth, a raised sleeve", 2, C([-0.8, 0.4, 3.0], [0.0, 5.3, 3.0], 2.3)),
-    ("L62", "Pop wobbling, steady for one second, proud", 2, C([-0.6, -0.6, 1.4], [2.0, -2.8, 1.1], 2.9)),
-    ("L63", "Pop at the rail, his hand out (cut away before the hands meet)", 2, C([4.3, -6.3, 1.45], [2.3, -3.75, 1.3], 3.0)),
-    ("L64", "the pool sliding round them: Pop and Nan on the floor inside the spotlight, from the north", 2,
-     C([2.4, 2.6, 3.2], [2.4, -3.6, 1.0], 4.2)),
-    ("L65", "an empty, lit rail post, no bodies", 2, C([2.4, -5.6, 1.1], [2.4, -4.15, 0.95], 1.6)),
-    ("L66", "wider: Pop standing in exactly that place, Nan beside him", 2, C([5.2, -6.4, 1.7], [2.3, -3.6, 1.2], 3.8)),
-    # 09 two of them
-    ("L67", "Nan laughing, Pop laughing with her", 2, C([2.3, -5.6, 1.5], [2.3, -3.75, 1.3], 2.7)),
-    ("L68", "low tracking: the two of them gliding", 2, c([0, [-2.2, -2.6, 0.75], [0.0, 0.0, 1.0], 30])),
-    ("L69", "Pop tips a little, Nan's arm at his elbow", 2, c([0, [-1.8, -1.9, 1.35], [0.0, 0.0, 1.2], 36])),
-    ("L70", "the pair coming past the snack bar, laughing", 2, still([-6.2, -4.9, 1.4], [-2.6, -2.8, 1.2], 26)),
-    ("L71", "me on the chrome stool, chin on my hand", 2, C([-2.0, -4.2, 1.5], [POP_X, SEAT_Y, 1.35], 2.6)),
-    ("L72", "crane up to the overhead wide", 2,
-     c([0, [-3.4, -4.6, 1.5], [-3.0, -1.0, 1.0], 26, 0], [0.85, [-2.0, -7.4, 7.4], [-2.4, 0.6, 0.8], 38, 0],
-       [1, [-2.0, -7.4, 7.4], [-2.4, 0.6, 0.8], 38, 0])),
-    ("L73", "hold the overhead wide, the fans at the frame's edge", 2, still([-2.0, -7.4, 7.4], [-2.4, 0.6, 0.8], 38, 0)),
+    # 01 the rule
+    (0, "Lenny close, grin, his flat hand coming down on the skip button, the song lights above him, one bulb cherry", 2,
+     move(([-0.5, 2.7, 3.1], [-0.5, 5.2, 3.15]), ([-0.5, 3.3, 3.1], [-0.5, 5.2, 3.15]), 20, 24)),
+    ("L02", "the song lights close, the next bulb glowing gold", 2, BOOTH_BAR(0.17, 1.0)),
+    ("L02.1", "low on the honey floor, wheels gliding past", 2, C([-2.8, -3.0, 0.2], [1.0, -1.2, 0.15], 1.0)),
+    # 02 skip one: the wipeout
+    ("L03", "Gus in his paper crown in a hug of friends at the hire counter", 2, C([3.4, -4.6, 1.55], [3.4, -6.4, 1.5], 2.1)),
+    ("L03.1", "me alone at the hire counter, skates in front of me", 2, C([5.3, -4.6, 1.55], [5.3, -6.3, 1.45], 2.1)),
+    ("L03.2", "the lore shot: the end cubby, the far-too-long cherry skates, the tally on the near heel", 2,
+     move(([6.5, -5.3, 1.3], [6.5, -8.05, 1.12]), ([6.5, -6.0, 1.15], [6.5, -8.05, 1.12]), 34, 55)),
+    ("L04", "me wobbling onto the floor, arms out", 2, C([-3.0, -3.2, 1.3], [0.6, -3.0, 1.1], 3.6)),
+    ("L04.1", "me tipping backward, Gus already tipping beside me, laughing", 2, C([1.6, -0.2, 0.9], [1.7, -2.7, 1.0], 2.8)),
+    ("L04.2", "Gus's friends at the rail turning to look", 2, C([-2.8, -1.2, 1.4], [-3.0, RAILY, 1.4], 2.4)),
+    ("L05", "me on the boards, worried, looking up toward the booth", 2, C([1.5, 0.0, 0.7], [1.5, -2.6, 0.6], 1.9)),
+    ("L05.1", "Lenny's two flat hands over the cherry skip and the cream back buttons", 2, C([-0.35, 2.8, 3.15], [-0.35, 5.2, 3.0], 2.7)),
+    ("L06", "the button under his flat hand, the next song light turning cherry", 2, C([-0.6, 3.4, 3.2], [-0.6, 4.6, 3.1], 2.0)),
+    ("L06.2", "me on a chrome stool at the snack bar, fries in front of me; the spotlight sweeps the far rail behind", 2,
+     C([-6.0, -7.7, 1.55], [-1.0, 2.5, 1.35], 5.2)),
+    ("L07", "the snack-bar clock, its minute hand settled further on", 2, CLOCK),
+    ("L07.1", "a paper boat of fries on the ledge, a fry drooping", 2, C([-4.9, -5.1, 1.55], [-4.9, -5.98, 1.2], 0.75)),
+    ("L07.2", "my face, wide", 2, face((-5.0, -6.7), 180, 1.8, 1.25, 1.5)),
+    ("L08", "high wide: the soft pool sliding along the far rail onto the Skater, the song lights in frame", 2, HIGH),
+    ("L08.2", "medium on the Skater, face toward the floor, the painted smile", 2, C([-3.0, -0.2, 1.4], [FAR[0], FAR[1], 1.2], 3.0)),
+    ("L09", "side view of its left leg: two bends, a hard shadow under each", 2, C([-6.2, 3.6, 0.7], [FAR[0], FAR[1], 0.55], 1.4)),
+    ("L09.1", "its right leg beside it, straight and too long", 2, C([-2.0, 0.6, 0.5], [FAR[0], FAR[1], 0.8], 2.0)),
+    # 03 skip two: small talk
+    ("L10", "the lady from Gus's work sliding onto the next stool", 2, C([-4.4, -4.7, 1.6], [-4.4, -6.7, 1.3], 2.8)),
+    ("L10.1", "my face, worried, calling up at the booth", 2, face((-5.0, -6.7), 180, 1.8, 1.25, 1.5)),
+    ("L10.2", "Lenny's hand on the skip button, a light turning cherry", 2, C([-0.6, 3.4, 3.2], [-0.6, 4.6, 3.1], 2.0)),
+    ("L13", "high wide: the pool on the Skater dead centre, Gus's friends skating round it", 2, HIGH),
+    ("L13.2", "close on both legs, each folded twice", 2, C([-1.2, -1.6, 0.5], [MID[0], MID[1], 0.4], 1.3)),
+    ("L14", "two cherry song lights, close", 2, BOOTH_BAR(0.34, 1.0)),
+    ("L14.1", "from my stool, the Skater's face turned toward me across the floor", 2, C([-4.8, -6.0, 1.5], [MID[0], MID[1], 1.2], 3.4)),
+    # 04 skip three: the couples skate
+    ("L15", "Lenny at his mic", 2, C([-0.2, 2.8, 3.15], [-0.3, 5.2, 3.1], 2.4)),
+    ("L15.1", "the room easing down a little, the waltz in", 2, HIGH),
+    ("L16", "Gus's friends gliding past in pairs, each pair joined by a cherry ribbon loop", 2, C([0.5, -6.3, 1.4], [0.5, -2.0, 1.3], 3.0)),
+    ("L16.1", "me at the rail, bare wrists, worried", 2, C([3.0, -2.0, 1.55], [3.0, RAILY, 1.45], 1.5)),
+    ("L17", "wide along the rail: me, a cream post, then the Skater, body facing me", 2, C([6.4, -1.4, 1.4], [3.6, RAILY, 1.25], 3.4)),
+    ("L17.2", "my face, terrified", 2, face(ME_RAIL, 180, 1.5, 1.2, 1.5)),
+    ("L18", "close on its right arm folded flat on its stripes", 2, C([2.2, -3.0, 1.2], [4.3, RAILY, 1.0], 1.5)),
+    ("L18.2", "its face, the eye highlights the brightest thing, key from below", 2, C([3.2, -3.4, 0.55], [4.3, RAILY, 1.2], 0.95)),
+    # 05 skip four: the speech
+    ("L19", "Gus in the booth beside Lenny, crown on, at the mic", 2, C([1.05, 2.9, 3.1], [1.05, 5.1, 3.2], 2.0)),
+    ("L19.1", "Gus looking out over the booth, right at camera", 2, C([1.05, 3.3, 3.2], [1.05, 5.1, 3.3], 1.4)),
+    ("L19.2", "me at the rail, wide, calling up", 2, C([3.0, -2.0, 1.55], [3.0, RAILY, 1.5], 1.6)),
+    ("P01", "the drop: the rail in the spotlight, still, the room dim", 2, C([6.0, -2.2, 1.3], [3.0, RAILY, 1.3], 2.8)),
+    ("L20", "the pool widens on me, and the Skater is in it at my shoulder", 2, C([6.4, -1.5, 1.3], [3.4, RAILY, 1.2], 3.2)),
+    ("L20.2", "my face, terrified, its stripes at the frame edge", 2, C([2.3, -2.7, 1.55], [3.0, RAILY, 1.5], 1.35)),
+    ("L21", "side on, the two of us at the rail, its head level with my shoulder", 2, C([3.6, -0.7, 1.2], [3.4, RAILY, 1.1], 3.0)),
+    ("L21.2", "close on its folded knees", 2, C([4.6, -2.6, 0.5], [3.9, RAILY, 0.4], 1.1)),
+    ("L22", "THE TEST STILL: its arm held out to me, two bends, a hand's width from mine, cherry rim", 1,
+     C([3.9, -1.3, 0.85], [3.65, -3.7, 1.3], 3.4)),
+    ("P02", "the second drop: hold on the two hands, my hand pulled back to my chest", 2, C([3.4, -2.3, 1.1], [3.4, RAILY, 1.1], 1.3)),
+    # 06 the reveal
+    ("L23", "my eyes going from the song lights to its joints", 2, face(ME_RAIL, 180, 1.5, 1.2, 1.5)),
+    ("L23.1", "the four cherry song lights in a row", 2, BOOTH_BAR(0.85, 2.4)),
+    ("L23.2", "the Skater's four folded joints, one quick push-in", 2,
+     move(([2.6, -2.2, 1.0], [3.8, RAILY, 1.0]), ([3.0, -2.6, 1.0], [3.8, RAILY, 1.0]), 22, 34)),
+    ("L24", "the snack-bar clock, its hands", 2, CLOCK),
+    ("L24.1", "the far rail, empty", 2, C([-2.5, 0.0, 1.5], [FAR[0], FAR[1], 1.0], 3.0)),
+    ("L24.2", "the middle of the floor, empty", 2, C([-1.5, -3.0, 1.2], [MID[0], MID[1], 0.2], 3.0)),
+    ("L24.2+0.33", "the post one away, empty", 2, C([6.2, -2.2, 1.3], [SK_POST[0], SK_POST[1], 1.0], 2.2)),
+    ("L24.3", "the Skater's smile, close", 2, C([3.0, -3.0, 1.2], [3.8, RAILY, 1.1], 0.9)),
+    ("L25", "its hand a hand's width from my sleeve", 2, C([3.4, -2.4, 1.1], [3.4, RAILY, 1.1], 1.15)),
+    ("L25+0.45", "the gap closing a finger", 2, C([3.45, -2.3, 1.1], [3.4, RAILY, 1.1], 1.1)),
+    ("L25.1", "my own arm held tight against my side, terrified face above it", 2, C([2.8, -2.5, 1.3], [3.0, RAILY, 1.2], 1.25)),
+    ("L25.2", "my face, the spotlight hot on it", 2, face(ME_RAIL, 180, 1.4, 1.1, 1.5)),
+    ("L25b", "the Skater's painted smile, close", 2, C([3.0, -3.0, 1.2], [3.8, RAILY, 1.1], 0.9)),
+    ("L25b+0.7", "my face in the same framing, terrified", 2, C([2.5, -2.9, 1.4], [3.0, RAILY, 1.5], 0.9)),
+    # 07 taking them back
+    ("L26", "me at the rail, calling up, worried", 2, face(ME_RAIL, 180, 1.5, 1.3, 1.5)),
+    ("L26.1", "Lenny's flat hand coming down on the cream back button", 2, C([-0.1, 3.0, 3.2], [-0.1, 4.65, 2.9], 2.0)),
+    ("L26.2", "the first cherry light, close, the rewind swell", 2, BOOTH_BAR(0.17, 1.0)),
+    ("L27", "me tipping backward on the floor", 2, C([1.6, -0.2, 0.9], [1.7, -2.7, 1.0], 2.8)),
+    ("L27.1", "Gus beside me going down too, laughing, on purpose", 2, C([2.8, -1.0, 1.2], [2.1, -2.7, 1.1], 1.9)),
+    ("L27.2", "the two of us sitting on the boards, laughing", 2, C([1.7, -0.1, 0.9], [1.7, -2.7, 0.5], 2.3)),
+    ("L28", "the Skater at the rail, its left knee open", 2, SKATER_LOW),
+    ("L28.1", "the first light turning cream", 2, BOOTH_BAR(0.17, 1.0)),
+    ("L29", "the lady from Gus's work and me at the snack bar, both laughing", 2, C([-4.4, -4.7, 1.6], [-4.4, -6.7, 1.3], 2.8)),
+    ("L29.2", "the Skater, both legs straight now, a little taller", 2, SKATER_LOW),
+    ("L30", "Gus and me side by side on the floor, a cherry ribbon at our near wrists, wobbling", 2, C([1.5, 2.4, 1.45], [1.45, -0.4, 1.2], 3.4)),
+    ("L30.2", "the pair of us almost going down, laughing", 2, C([1.4, 1.2, 1.1], [1.45, -0.4, 1.0], 2.1)),
+    ("L31", "its right arm open and straight, the third light turning cream", 2, SKATER_LOW),
+    ("L31b", "Lenny's hand on the back button", 2, C([-0.1, 3.0, 3.2], [-0.1, 4.65, 2.9], 2.0)),
+    ("L31b.1", "Gus at the booth mic, crown on, the room bright", 2, C([1.05, 2.9, 3.1], [1.05, 5.1, 3.2], 2.0)),
+    ("L32", "Gus at the mic, soft, pointing out at the floor", 2, C([1.05, 3.1, 3.15], [1.05, 5.1, 3.25], 1.6)),
+    ("L32.1", "Gus's friends at the rail turning to me, grinning", 2, C([-2.8, -1.2, 1.4], [-3.0, RAILY, 1.4], 2.4)),
+    ("L32.3", "my face, soft", 2, face(ME_RAIL, 180, 1.5, 1.2, 1.5)),
+    ("L33", "its left arm unfolded to straight, the fourth light cream", 2, SKATER_LOW),
+    # 08 straight, and the sting
+    ("L34", "low wide along the rail: the Skater straight, a head above every guest, smiling down at me", 2,
+     C([0.4, -2.9, 0.45], [4.4, RAILY, 1.4], 3.6)),
+    ("L34.1", "its face from below, the smile unchanged", 2, C([3.0, -3.3, 0.4], [3.9, RAILY, 2.0], 1.1)),
+    ("L35", "the spotlight sliding off it", 2, C([6.2, -1.3, 1.0], [3.9, RAILY, 1.3], 3.4)),
+    ("L35.1", "the pool comes back round to an empty post", 2, SKATER_LOW),
+    ("L35.2", "the song lights, all cream", 2, C([0.0, 0.5, 3.3], [0.0, 4.5, 3.7], 6.4)),
+    ("L36", "a guest at the foot of the booth calling up for a skip", 2, C([0.2, 4.2, 2.7], [-0.6, 3.3, 1.5], 1.9)),
+    ("L36.1", "Lenny's hand over the button", 2, C([-0.6, 3.4, 3.2], [-0.6, 4.6, 3.1], 2.0)),
+    ("L36.2", "wide across the floor: at the far rail, small and lit, a striped shape with one leg bent twice", 2, HIGH),
+    ("L36.3", "my face, worried, turning toward the guy", 2, face(ME_RAIL, 180, 1.5, 1.3, 1.5)),
+    ("L38", "me pushing off the rail toward the booth", 2, C([3.0, -5.6, 1.6], [2.8, 0.2, 1.3], 3.8)),
 ]
-
-# per-shot light level (set.py scales every light by it) so that cuts between shots land at similar brightness: the
-# flash pre-check found 2 to 3 flashes a second where dim and bright shots alternated. Measured at the final's steps.
-EXPO = {"L25.3": 0.55, "L04": 2.6, "L04.4": 0.8, "L13": 1.9, "L14": 0.8, "L15": 0.7, "L08": 1.0, "L17": 1.4, "L18": 1.18, "L19": 1.03, "L20": 1.53, "L21": 1.09, "L22": 0.77, "L23": 0.87, "L24": 1.49, "L28-1.2": 0.55, "L28": 1.18, "L30": 0.81, "L31-0.4": 0.77, "L31.2": 1.08, "L32": 1.51, "L33": 1.04, "L34": 1.17, "L35": 0.92, "L36": 1.13, "L37": 1.42, "L38": 2.5, "L39": 0.99, "L40": 1.19, "P01+0.55": 1.6, "L42": 1.7, "L43": 0.93, "L44": 0.96, "L45": 0.72, "L46": 1.34, "L47": 2.49, "L48": 2.13, "L49": 1.5, "L50": 1.5, "L51": 0.79, "L52": 1.13, "L53": 2.1, "L54": 0.89, "L55": 1.28, "L56": 1.05, "L57": 0.75, "L58": 0.8, "L59": 0.84, "L60": 1.86, "L61": 1.47, "L62": 1.04, "L63": 0.99, "L64": 1.32, "L65": 0.89, "L66": 0.95, "L67": 0.8, "L68": 0.87, "L69": 0.7, "L70": 1.33, "L71": 1.49, "L72": 0.7, "L73": 0.76}
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.0 if step == 1 else 0.004, "step": step, "what": what}
-    if str(at) in ("L49", "L50"):
-        s["skboost"] = 3.2
-    if str(at) in EXPO:
-        s["expo"] = EXPO[str(at)]
     if i:
         s["at"] = at
     shots.append(s)
-# the two gliding shots are locked off (a following camera slides the plank grain across the whole frame)
+
+shots[0]["expo"] = 0.45
 for sh in shots:
-    if sh["what"].startswith("low tracking"):
-        sh["cam"] = still([0.8, 0.8, 1.1], [0.8, -3.0, 1.0], 18)
-    if sh["what"].startswith("Pop tips"):
-        sh["cam"] = still([-1.6, 0.5, 1.3], [-1.6, -2.8, 1.1], 20)
-overhead = [s["id"] for s in shots if s["what"].startswith(("crane up", "hold the overhead"))]
+    if sh["what"].startswith("THE TEST STILL"):
+        sh["skboost"] = 0.4
+        sh["expo"] = 0.8
 
 # ---------------------------------------------------------------------------------------------------- acting
 NEUTRAL = {"arms": [0, 0], "side": [0, 0], "head": [0, 0], "lean": 0, "tremble": 0, "blink": True, "sit": False,
@@ -267,334 +266,371 @@ def hide(who, at):
     acting[who].append({"at": at, "hidden": True, "blend": 0})
 
 
-def talk(who, a, b):
-    acting[who].append({"from": a, "to": b, "mouth": [0.5, 0.5], "flap": True})
-
-
 def seat(who, at, x, **kw):
-    put(who, at, [x, SEAT_Y, SEAT_Z], yaw=180, sit=True, arms=[66, 66], **kw)
+    put(who, at, [x, -6.7, 0.19], yaw=180, sit=True, arms=[66, 66], **kw)
 
+
+def floor_sit(who, at, pos, **kw):
+    put(who, at, [pos[0], pos[1], FLOOR_SIT], yaw=180, sit=True, arms=[30, 30], **kw)
+
+
+for w in cast:
+    hide(w, 0)
 
 # ---- me
-hide("me", 0)
-put("me", "L03", [-9.5, -7.5], yaw=90, expr="neutral")
-walk("me", "L03>", [-6.1, -7.4])
-put("me", "L04", [-12.1, -4.0, CAR_Z], yaw=90, sit=True, arms=[62, 62], expr="soft")
-put("me", "L04.4", [-6.1, -7.6], yaw=90, expr="soft")
-hide("me", "L08")
-seat("me", "L16", ME_X, expr="worried")
-key("me", "L20", arms=[66, 66], expr="neutral")
-key("me", "L26", expr="worried")
-key("me", "L32", arms=[66, 100], expr="wide", blend=0.3)
-key("me", "L34", arms=[66, 66], expr="worried", blend=0.3)
-key("me", "L42", expr="terrified", blend=0.1)
-put("me", "L53", [ME_X, -6.35], yaw=180, arms=[100, 100], side=[10, 10], expr="terrified", blink=False)
-put("me", "L60", [ME_X, -6.35], yaw=180, arms=[70, 70], expr="wide", blink=False)
-seat("me", "L71", POP_X, expr="soft")
-key("me", "L71", arms=[78, 78])
+put("me", "L03.1", [5.3, -6.3], yaw=180, skate=True, expr="neutral")
+put("me", "L04", [-1.4, -3.5], yaw=90, skate=True, wobble=6, side=[70, 70], expr="worried")
+walk("me", "L04.1", [0.9, -3.0], skate=True, wobble=6, side=[70, 70])
+put("me", "L04.1", [1.3, -2.7], yaw=180, skate=True, wobble=0, side=[60, 60], expr="wide")
+key("me", "L04.1", lean=0)
+key("me", "L04.1+0.5", lean=-34, blend=0.5)
+floor_sit("me", "L05", [1.5, -2.6], expr="worried", head=[0, -20])
+seat("me", "L06.2", MEST[0], expr="wide")
+key("me", "L07.2", arms=[66, 66], expr="wide")
+key("me", "L10.1", arms=[150, 150], expr="worried", blend=0.4)
+key("me", "L10.2", arms=[66, 66], blend=0.2)
+seat("me", "L13", MEST[0], expr="worried")
+put("me", "L16.1", list(ME_RAIL), yaw=180, skate=True, arms=[25, 25], expr="worried")
+key("me", "L17.2", expr="terrified", blend=0.2)
+key("me", "L19.2", arms=[150, 150], expr="wide", blend=0.3)
+key("me", "L20", arms=[20, 20], expr="terrified", blend=0.2)
+key("me", "L22", side=[0, 60], expr="terrified", blend=0.3)
+key("me", "P02", side=[0, 20], arms=[20, 80], blend=0.3)
+key("me", "L26", arms=[150, 150], side=[0, 0], expr="worried", blend=0.4)
+put("me", "L27", [1.3, -2.7], yaw=180, skate=True, side=[60, 60], expr="wide")
+key("me", "L27", lean=0)
+key("me", "L27+0.6", lean=-34, blend=0.5)
+floor_sit("me", "L27.2", [1.45, -2.6], expr="laugh")
+hide("me", "L28")
+seat("me", "L29", MEST[0], expr="laugh")
+put("me", "L30", [1.1, -0.4], yaw=180, skate=True, expr="grin", side=[25, 25], wobble=5)
+key("me", "L30.2", lean=-12, wobble=8, expr="laugh", blend=0.4)
+hide("me", "L31")
+put("me", "L32.1", list(ME_RAIL), yaw=180, skate=True, arms=[25, 25], expr="soft")
+put("me", "L34", [2.9, RAILY], yaw=90, skate=True, arms=[25, 25], expr="wide", head=[0, 0])
+put("me", "L36.3", list(ME_RAIL), yaw=180, skate=True, arms=[25, 25], expr="worried")
+walk("me", "L38", [2.5, -2.0], skate=True)
 
-# ---- Pop
-hide("pop", 0)
-put("pop", "L03", [-9.8, -7.0], yaw=90, expr="neutral", arms=[100, 0])
-walk("pop", "L03>", [-6.3, -7.0], arms=[100, 0])
-put("pop", "L04", [-13.7, -3.9, CAR_Z], yaw=90, sit=True, arms=[0, 0], expr="smirk")
-put("pop", "L04.4", [-6.3, -7.35], yaw=90, side=[0, 38], expr="smirk")
-hide("pop", "L08")
-put("pop", "L11", [5.6, -6.8], yaw=0, expr="smirk")
-key("pop", "L11", head=[25, 0])
-seat("pop", "L12", POP_X, expr="smirk")
-key("pop", "L25", arms=[66, 160], blend=0.3)
-key("pop", "L25.3", arms=[66, 66], blend=0.4)
-key("pop", "L27.2", arms=[66, 66], side=[0, 25], expr="smirk", blend=0.3)
-key("pop", "L32", arms=[66, 90], side=[0, 0], expr="smirk", blend=0.3)
-key("pop", "L33", arms=[85, 66], blend=0.4)
-hide("pop", "L43")
-put("pop", "L56", [0.0, -8.6], yaw=180, skate=True, wobble=0, side=[75, 75], expr="smirk")
-key("pop", "L57", wobble=1.2)
-key("pop", "L58", expr="grin")
-walk("pop", "L56>", [0.0, -6.3], side=[75, 75])
-walk("pop", "L57>", [0.2, -4.1], side=[75, 75])
-walk("pop", "L58+1.0", [0.0, -2.6], side=[75, 75])
-walk("pop", "L58>", [1.0, -1.7], side=[75, 75])
-walk("pop", "L59>", [1.9, -2.0], side=[75, 75])
-walk("pop", "L61>", [2.5, -2.5], side=[75, 75])
-walk("pop", "L62>", [2.1, -3.0], side=[70, 70], wobble=2)
-walk("pop", "L63+1.3", [SKR[0], SKR[1]], side=[40, 0], arms=[0, 72], wobble=3)
-key("pop", "L63+1.3", yaw=90, blend=0.3)
-hide("pop", "L65")
-put("pop", "L66", [SKR[0], SKR[1]], yaw=90, wobble=1, expr="grin", arms=[0, 72])
-# skating off with Nan from L68: waypoints of the lap (seconds after L68) and the two partners' lateral offsets
-LAP = [(0.0, (2.0, -3.7)), (2.0, (-0.6, -2.7)), (4.0, (-3.2, -2.8)), (6.0, (-4.8, 0.4)), (8.0, (-3.6, 2.2)),
-       (10.0, (-2.8, 1.5)), (12.0, (-2.2, 0.2)), (14.0, (-1.7, -1.0)), (16.0, (-1.0, -2.0))]
+# ---- Gus
+put("gus", "L03", [3.4, -6.3], yaw=180, skate=True, expr="grin", arms=[40, 40])
+hide("gus", "L03.1")
+put("gus", "L04.1", [2.2, -2.7], yaw=180, skate=True, side=[60, 60], expr="laugh")
+key("gus", "L04.1", lean=0)
+key("gus", "L04.1+0.4", lean=-30, blend=0.5)
+hide("gus", "L05")
+put("gus", "L19", list(GUS_BOOTH) + [1.74], yaw=0, expr="soft", arms=[0, 70])
+hide("gus", "L26")
+put("gus", "L27.1", [2.2, -2.7], yaw=180, skate=True, side=[60, 60], expr="laugh")
+key("gus", "L27.1", lean=0)
+key("gus", "L27.1+0.4", lean=-30, blend=0.5)
+floor_sit("gus", "L27.2", [2.3, -2.6], expr="laugh")
+hide("gus", "L28")
+put("gus", "L30", [2.0, -0.4], yaw=180, skate=True, expr="grin", side=[25, 25], wobble=6)
+key("gus", "L30.2", lean=-12, wobble=8, expr="laugh", blend=0.4)
+hide("gus", "L31")
+put("gus", "L31b.1", list(GUS_BOOTH) + [1.74], yaw=0, expr="soft", arms=[0, 0])
+key("gus", "L32", arms=[0, 90], expr="soft", blend=0.4)
+hide("gus", "L32.1")
 
+# ---- the lady from Gus's work
+put("coworker", "L10", [-2.3, -5.2], yaw=-90, skate=True, expr="grin")
+walk("coworker", "L10+0.5", [-3.7, -5.2], skate=True)
+seat("coworker", "L10+0.9", CWST[0], expr="grin")
+hide("coworker", "L10.2")
+seat("coworker", "L29", CWST[0], expr="laugh")
+hide("coworker", "L29.2")
 
-def lap_pos(i, who):
-    """The pair side by side: Pop on the lap's path, Nan a step to the left of the way they're going."""
-    t, (x, y) = LAP[i]
-    a = LAP[max(i - 1, 0)][1]
-    b = LAP[min(i + 1, len(LAP) - 1)][1]
-    dx, dy = b[0] - a[0], b[1] - a[1]
-    n = math.hypot(dx, dy)
-    nx, ny = -dy / n, dx / n          # left of travel
-    k = 0.62 if who == "nan" else -0.62
-    return t, [round(x + nx * k, 3), round(y + ny * k, 3)]
+# ---- Lenny at the booth: the skip button is under his left hand (the -x one), the back button under his right
+SKIPX, BACKX = -0.9, 0.2
+put("lenny", 0, list(LENNY) + [1.74], yaw=0, expr="grin", arms=[30, 0])
+key("lenny", "L01.1", arms=[50, 0], blend=0.4)
+key("lenny", "L01.2", arms=[66, 0], blend=0.25)
+key("lenny", "L02", arms=[0, 0], blend=0.4)
+key("lenny", "L05.1", arms=[48, 48], blend=0.4)
+key("lenny", "L06", arms=[48, 0], blend=0.3)
+key("lenny", "L06.1", arms=[66, 0], blend=0.2)
+key("lenny", "L06.2", arms=[0, 0], blend=0.4)
+key("lenny", "L10.1", arms=[48, 0], blend=0.3)
+key("lenny", "L10.2", arms=[66, 0], blend=0.25)
+key("lenny", "L10>", arms=[0, 0], blend=0.4)
+key("lenny", "L15", arms=[0, 70], expr="grin", blend=0.5)
+key("lenny", "L15.1", arms=[0, 0], blend=0.4)
+key("lenny", "L26.1-0.5", arms=[0, 48], expr="neutral", blend=0.3)
+key("lenny", "L26.1+0.3", arms=[0, 66], blend=0.25)
+key("lenny", "L27", arms=[0, 0], blend=0.4)
+key("lenny", "L31b-0.4", arms=[0, 48], blend=0.3)
+key("lenny", "L31b", arms=[0, 66], blend=0.25)
+key("lenny", "L31b.1", arms=[0, 0], blend=0.4)
+key("lenny", "L36", expr="grin", arms=[0, 0])
+key("lenny", "L36.1", arms=[48, 0], blend=0.3)
 
+# ---- the guy who asks for a skip
+put("s1", "L36", [-0.6, 3.3], yaw=180, skate=True, expr="grin", arms=[150, 150], head=[0, -20])
+hide("s1", "L36.2")
 
-for i in range(len(LAP)):
-    t, p = lap_pos(i, "pop")
-    if i == 0:
-        key("pop", "L67", yaw=90)
-        walk("pop", f"L68+{t:.1f}", p, side=[0, 0], arms=[0, 40], wobble=4)
-    else:
-        joined = i >= 5
-        walk("pop", f"L68+{t:.1f}", p, side=[0, 70] if joined else [0, 0], arms=[0, 0] if joined else [0, 40],
-             wobble=1.5 if joined else (4 if i % 2 else 2))
-
-# ---- Nan
-put("nan", 0, list(NAN), yaw=0, expr="soft")
-hide("nan", "L02")
-put("nan", "L03", [-9.0, -6.5], yaw=90, expr="grin")
-walk("nan", "L03>", [-6.0, -6.6])
-put("nan", "L04", [-13.7, -4.7, CAR_Z], yaw=90, sit=True, arms=[0, 0], head=[0, 0], expr="soft")
-put("nan", "L04.4", [-6.3, -6.65], yaw=90, side=[38, 0], expr="soft")
-hide("nan", "L08")
-put("nan", "L10", [4.4, -6.8], yaw=0, expr="neutral")
-put("nan", "L14", [-2.7, -6.2], yaw=-90, expr="soft")
-walk("nan", "L15", [-2.7, -6.2])
-walk("nan", "L15+0.4", [-0.3, -4.6], skate=True)
-walk("nan", "L15>", [NAN[0], NAN[1]], skate=True)
-put("nan", "L16", list(NAN), yaw=180, expr="soft", skate=False)
-key("nan", "L19b", yaw=-70, head=[0, 0], arms=[70, 70], look=[-1, 0], blend=0)
-key("nan", "L20", yaw=180, head=[0, 0], arms=[0, 0], look=[0, 0], blend=0)
-put("nan", "L34", list(NAN), yaw=0, head=[-30, 0], expr="soft")
-key("nan", "L39", head=[-45, 0], blend=0.3)
-put("nan", "L48", list(NAN), yaw=0, head=[-30, 0], expr="soft")
-put("nan", "L51", list(NAN), yaw=-55, expr="soft", head=[0, 18])
-key("nan", "L52", arms=[0, 62], blend=0.4)
-put("nan", "L55", list(NAN), yaw=-60, expr="wide")
-key("nan", "L59+0.5", expr="soft")
-key("nan", "L63", arms=[0, 62], blend=0.4)
-key("nan", "L64", yaw=-90, arms=[0, 40], expr="soft")
-hide("nan", "L65")
-put("nan", "L66", list(NAN), yaw=-90, arms=[0, 40], expr="soft")
-key("nan", "L67", expr="grin", head=[0, 0])
-for i in range(len(LAP)):
-    t, p = lap_pos(i, "nan")
-    if i == 0:
-        key("nan", "L67+1.5", arms=[0, 40])
-        put("nan", "L68", [NAN[0] - 0.8, NAN[1] + 0.0], yaw=-90, skate=True, arms=[0, 40], expr="grin")
-    jn = i >= 5
-    walk("nan", f"L68+{max(t, 0.9):.1f}" if i == 0 else f"L68+{t:.1f}", p, skate=True, arms=[0, 0] if jn else [0, 40],
-         side=[70, 0] if jn else [0, 0], expr="grin")
-
-# ---- Lenny at the booth
-put("lenny", 0, [0.0, 5.5, 1.74], yaw=0, expr="neutral")
-key("lenny", "L25.3", arms=[0, 70], expr="grin", blend=1.2)
-key("lenny", "L26+0.3", arms=[0, 0], blend=0.5)
-key("lenny", "L54", expr="grin", head=[10, 0])
-key("lenny", "L61", expr="grin", lean=14, arms=[0, 165], head=[0, 0], blend=0.4)
-key("lenny", "L61>", lean=0, arms=[0, 0], blend=0.5)
-
-# ---- the couples: elliptical orbits of the floor (a = 5.2, b = 2.4), side by side
-A_, B_ = 5.2, 2.4
-OMEGA = 0.4          # rad/s, about 1.7 m/s
+# ---- Gus's friends: singles at the rail and the hug, then couples orbiting the floor
+A_, B_, CY = 5.0, 2.0, 0.8
+OMEGA = 0.4
 
 
 def ell(theta, off):
     x, y = A_ * math.cos(theta), B_ * math.sin(theta)
-    nx, ny = math.cos(theta) * B_, math.sin(theta) * A_       # outward normal of the ellipse (unnormalised)
+    nx, ny = math.cos(theta) * B_, math.sin(theta) * A_
     n = math.hypot(nx, ny)
-    return [round(x + off * nx / n, 3), round(y + off * ny / n, 3)]
+    return [round(x + off * nx / n, 3), round(y + CY + off * ny / n, 3)]
 
 
-def orbit(anchor, secs, th0, a, b, off=0.45, hide_at=None):
+def orbit(anchor, secs, th0, a, b, off=0.45, step=0.8):
+    ref = (lambda dt: f"{anchor}+{dt:.1f}") if isinstance(anchor, str) else (lambda dt: round(anchor + dt, 2))
     for who, o in ((a, -off), (b, off)):
         put(who, anchor, ell(th0, o), yaw=0, skate=True, expr="grin", arms=[18, 18], side=[8, 8])
-        n = int(secs / 0.5)
+        n = int(secs / step)
         for k in range(1, n + 1):
-            walk(who, f"{anchor}+{k * 0.5:.1f}", ell(th0 + OMEGA * k * 0.5, o), skate=True, arms=[18, 18], side=[8, 8])
-        hide(who, f"{anchor}+{secs + 0.1:.1f}")
+            walk(who, ref(k * step), ell(th0 + OMEGA * k * step, o), skate=True, arms=[18, 18], side=[8, 8])
+        hide(who, ref(secs + 0.1))
 
 
-for w in ("c1a", "c1b", "c2a", "c2b", "c3a", "c3b"):
-    hide(w, 0)
-for w, x in (("s1", 4.2), ("s2", 5.4), ("s3", 6.6)):
-    put(w, 0, [x, -3.75], yaw=0, expr="neutral")
-    hide(w, "L02")
-# couples glide sideways across the floor facing the camera, side by side, near wrists joined by the ribbon hoop
-def glide(anchor, secs, lane_y, x0, speed, a, b, off=0.55):
-    for who, dx in ((a, -off), (b, off)):
-        put(who, anchor, [x0 + dx, lane_y], yaw=0, keep_yaw=True, skate=True, expr="soft", arms=[25, 25], side=[0, 0])
-        for k in range(1, int(secs / 0.5) + 1):
-            walk(who, f"{anchor}+{k * 0.5:.1f}", [round(x0 + dx + speed * k * 0.5, 3), lane_y], yaw=0, keep_yaw=True,
-                 skate=True, arms=[25, 25], side=[0, 0])
-        hide(who, f"{anchor}+{secs + 0.1:.1f}")
-
-
-glide("L01", 2.9, -2.4, 0.77, 1.1, "c1a", "c1b")
-glide("L01", 2.9, -1.5, 2.37, 1.1, "c2a", "c2b")
-glide("L01", 2.9, -0.6, 3.97, 1.1, "c3a", "c3b")
-# L08 to L09: three couples glide round under the fans, then past the stripes
-glide("L08", 3.8, -1.2, 0.4, 1.0, "c1a", "c1b")
-glide("L08", 3.8, -0.2, -0.9, 1.0, "c2a", "c2b")
-glide("L08", 3.8, 0.8, -2.2, 1.0, "c3a", "c3b")
-orbit("L16", 23.0, 0.98, "c1a", "c1b")
-orbit("L16", 23.0, 6.06, "c2a", "c2b")
-orbit("L28", 11.4, 3.4, "c1a", "c1b")
-orbit("L28", 11.4, 0.4, "c2a", "c2b")
-orbit("L35", 18.0, 5.6, "c1a", "c1b")
-orbit("L35", 18.0, 2.6, "c2a", "c2b")
-orbit("L45", 2.9, 2.5, "c1a", "c1b")
-orbit("L45", 2.9, 5.5, "c2a", "c2b")
-# L47: they roll off through the gap in the south rail, one couple after the other
-for who, dx, p0, lag in (("c1a", -0.4, (-0.8, 0.0), 0.0), ("c1b", 0.4, (-0.8, 0.0), 0.0),
-                         ("c2a", -0.4, (-3.4, -0.9), 1.4), ("c2b", 0.4, (-3.4, -0.9), 1.4)):
-    put(who, "L47", [p0[0] + dx, p0[1]], yaw=180, skate=True, expr="grin", arms=[18, 18])
-    walk(who, f"L47+{1.0 + lag:.1f}", [p0[0] + dx + 0.6, p0[1] - 1.2], skate=True, arms=[18, 18])
-    walk(who, f"L47+{2.2 + lag:.1f}", [dx * 0.8, -3.7], skate=True, arms=[18, 18])
-    walk(who, f"L47+{3.3 + lag:.1f}", [dx * 0.8 - 0.3, -5.0], skate=True, arms=[18, 18])
-    walk(who, f"L47+{4.6 + lag:.1f}", [dx * 0.8 - 3.2, -5.0], skate=True, arms=[18, 18])
-    hide(who, f"L47+{4.8 + lag:.1f}")
+# the hug at the counter (L03), the singles at the rail (L04.2)
+put("s1", "L03", [2.3, -6.2], yaw=180, skate=True, expr="grin", arms=[40, 40])
+put("s2", "L03", [4.5, -6.2], yaw=180, skate=True, expr="grin", arms=[40, 40])
+put("s3", "L03", [3.4, -5.4], yaw=180, skate=True, expr="grin", arms=[40, 40])
+put("s1", "L04.2", [-3.4, RAILY], yaw=180, skate=True, expr="wide")
+put("s2", "L04.2", [-2.6, RAILY], yaw=180, skate=True, expr="wide")
+put("s3", "L04.2", [-4.2, RAILY], yaw=180, skate=True, expr="wide")
+hide("s1", "L05")
+hide("s2", "L05")
+hide("s3", "L05")
+put("s1", "L32.1", [-3.4, RAILY], yaw=180, skate=True, expr="grin")
+put("s2", "L32.1", [-2.6, RAILY], yaw=180, skate=True, expr="grin")
+put("s3", "L32.1", [-4.2, RAILY], yaw=180, skate=True, expr="grin")
+hide("s2", "L32.3")
+hide("s3", "L32.3")
+put("s1", "L34", [1.7, RAILY], yaw=180, skate=True, expr="wide")
+hide("s1", "L35")
+# the couples (their hug is L03): three pairs skating the floor from the first lap to the end
+LAST = 105.0
+orbit(0, 5.0, 0.6, "c1a", "c1b")      # the earliest low shot (L02.1) wants wheels: they skate in from the start
+orbit(0, 5.0, 2.7, "c2a", "c2b")
+orbit(0, 5.0, 4.8, "c3a", "c3b")
+orbit("L04", LAST, 0.6, "c1a", "c1b")
+orbit("L04", LAST, 2.7, "c2a", "c2b")
+orbit("L04", LAST, 4.8, "c3a", "c3b")
 
 # ---------------------------------------------------------------------------------------------------- cues
-cues = [{"at": 0, "name": "skates", "who": w, "on": True} for w in ("c1a", "c1b", "c2a", "c2b", "c3a", "c3b")]
+cues = [{"at": 0, "name": "skates", "who": w, "on": True} for w in cast if w != "lenny"]
+
+
+def sweep(at, start, mid, end, size=40, gain=0.9):
+    """The spotlight slides in from the edge (never pops), crosses, and settles. Cues are sequential."""
+    return [
+        {"at": at, "name": "spot", "to": list(start), "gain": 0.0, "size": size, "dur": 0.02},
+        {"at": f"{at}+0.1" if isinstance(at, str) else at + 0.1, "name": "spot", "to": list(mid), "gain": gain, "dur": 1.8},
+        {"at": f"{at}+2.0" if isinstance(at, str) else at + 2.0, "name": "spot", "to": list(end), "dur": 2.2},
+    ]
+
+
 cues += [
-    {"at": 0, "name": "skates", "who": "s1", "on": True},
-    {"at": 0, "name": "skates", "who": "s2", "on": True},
-    {"at": 0, "name": "skates", "who": "s3", "on": True},
-    {"at": 0, "name": "skates", "who": "nan", "on": True},
-    {"at": "L02", "name": "skates", "who": "nan", "on": False},
-    {"at": "L11", "name": "skates", "who": "nan", "on": True},
-    {"at": "L56", "name": "skates", "who": "pop", "on": True},
-    # the room's level: dim (0.2) for the dedication, full for the fast songs, 0.3 for a slow song, lower for the last
-    # skate, then warm and a little up for Pop. Every change is a slow ramp.
-    {"at": "L16", "name": "dim", "level": 0.3, "dur": 1.2},
-    {"at": "L25", "name": "dim", "level": 1.0, "dur": 1.0},
-    {"at": "L28+0.4", "name": "dim", "level": 0.3, "dur": 1.2},
-    {"at": "L33>", "name": "dim", "level": 0.8, "dur": 1.5},
-    {"at": "L34", "name": "dim", "level": 0.3, "dur": 1.5},
-    {"at": "L46", "name": "dim", "level": 0.07, "dur": 2.0},
-    {"at": "L55", "name": "dim", "level": 0.34, "dur": 3.0},
-    {"at": "L64", "name": "dim", "level": 0.4, "dur": 3.0},
-    # the spotlight: where it is, how bright, how wide a cone. It's never on in a fast song and never pops.
-    {"at": "L16", "name": "spot", "to": [7.2, -2.6], "size": 42, "dur": 0.02},
-    {"at": "L16+1.0", "name": "spot", "gain": 1.0, "dur": 1.4},
-    {"at": "L18", "name": "spot", "to": [6.2, 2.8], "dur": 2.4},
-    {"at": "L19", "name": "spot", "to": [3.2, 3.5], "dur": 2.0},
-    {"at": "L20", "name": "spot", "to": [0.4, 3.6], "dur": 2.0},
-    {"at": "L21", "name": "spot", "to": [FAR[0], FAR[1]], "dur": 2.6},
-    {"at": "L24", "name": "spot", "to": [-6.8, 1.8], "dur": 1.0},
-    {"at": "L24.2", "name": "spot", "to": [FAR[0], FAR[1]], "dur": 1.8},
-    {"at": "L25", "name": "spot", "gain": 0.0, "dur": 1.5},
-    {"at": "L28", "name": "spot", "to": [8.0, -0.6], "dur": 0.02},
-    {"at": "L28+0.4", "name": "spot", "gain": 1.0, "dur": 1.0},
-    {"at": "L28.1", "name": "spot", "to": [MID[0], MID[1]], "dur": 3.0},
-    {"at": "L33", "name": "spot", "gain": 0.0, "dur": 1.5},
-    {"at": "L34", "name": "spot", "to": [-3.8, -1.6], "dur": 0.02},
-    {"at": "L34+0.8", "name": "spot", "gain": 1.0, "dur": 1.2},
-    {"at": "L35", "name": "spot", "to": [SKR[0], SKR[1] + 0.2], "dur": 3.4},
-    {"at": "L40", "name": "spot", "to": [-1.6, -1.6], "dur": 1.0},
-    {"at": "L40.2", "name": "spot", "to": [SKR[0], SKR[1] + 0.2], "dur": 1.4},
-    {"at": "L43", "name": "spot", "gain": 0.0, "dur": 1.2},
-    {"at": "L47", "name": "spot", "to": [-3.5, -0.5], "size": 28, "dur": 0.02},
-    {"at": "L47+0.8", "name": "spot", "gain": 1.0, "dur": 1.2},
-    {"at": "L48", "name": "spot", "to": [NAN[0] - 0.2, NAN[1] + 0.2], "dur": 2.4},
-    {"at": "L49", "name": "spot", "size": 44, "dur": 1.4},
-    {"at": "L72", "name": "spot", "gain": 0.55, "dur": 2.0},
-    {"at": "L64", "name": "spot", "to": [4.8, -2.4], "dur": 1.6},
-    {"at": "L64+1.2", "name": "spot", "to": [2.4, -3.6], "dur": 1.6},
+    {"at": "L19.3", "name": "dim", "level": 0.3, "dur": 1.5},
+    {"at": "L26", "name": "dim", "level": 1.0, "dur": 1.5},
 ]
-for i in range(1, len(LAP)):
-    px, py = lap_pos(i, "pop")[1]
-    cues.append({"at": f"L68+{LAP[i - 1][0]:.1f}", "name": "spot", "to": [round(px - 0.2, 3), py], "dur": 2.0, "size": 46})
-# the Skater: placed where it already stands when a beat starts, never seen moving
-HEAD_DOWN = [0, 24]
+cues += sweep("L02", (-7.5, 1.0), (-4.5, 1.0), (-1.0, 0.6), 44, 0.55)
+cues += sweep("L06.2", (-7.6, 3.7), (-6.0, 3.7), (FAR[0], FAR[1]), 38, 0.9)
+cues += [{"at": "L10>", "name": "spot", "gain": 0.0, "dur": 0.6}]
+cues += sweep("L13", (-7.6, 0.2), (-4.0, 0.2), (MID[0], MID[1]), 40, 0.9)
+cues += [{"at": "L15", "name": "spot", "gain": 0.0, "dur": 0.6}]
+cues += sweep("L16", (7.4, -2.6), (6.0, -2.6), (2.0, 1.4), 44, 0.6)
+cues += [{"at": "L16.1", "name": "spot", "to": [3.6, -3.4], "gain": 0.8, "dur": 2.4}]
+cues += [{"at": "L19.1", "name": "spot", "to": [ME_RAIL[0] + 0.4, RAILY + 0.2], "dur": 2.0, "size": 44, "gain": 1.0}]
+cues += [{"at": "L25", "name": "spot", "to": [ME_RAIL[0] + 0.6, RAILY + 0.2], "dur": 1.5}]
+cues += [{"at": "L26.1", "name": "spot", "gain": 0.0, "dur": 0.8}]
+cues += sweep("L28", (8.0, -1.0), (6.0, RAILY), (SK_BESIDE[0], RAILY + 0.1), 40, 0.9)
+cues += [{"at": "L29.1", "name": "spot", "gain": 0.0, "dur": 0.6}]
+cues += sweep("L31", (8.0, -1.0), (6.0, RAILY), (SK_BESIDE[0], RAILY + 0.1), 40, 0.9)
+cues += [{"at": "L31b-0.1", "name": "spot", "gain": 0.0, "dur": 0.6}]
+cues += sweep("L33", (8.0, -1.0), (6.0, RAILY), (SK_BESIDE[0], RAILY + 0.1), 40, 0.9)
 cues += [
-    {"at": "L21", "name": "skater", "pos": list(FAR), "yaw": 0, "pose": "rest", "head": HEAD_DOWN, "hidden": False},
-    {"at": "L24.2", "name": "skater", "hidden": True},
-    {"at": "L28", "name": "skater", "pos": list(MID), "yaw": yaw_to(MID, NAN), "pose": "rest", "head": [0, 0], "hidden": False},
-    {"at": "L33>", "name": "skater", "hidden": True},
-    {"at": "L35", "name": "skater", "pos": list(SKR), "yaw": 90, "pose": "rest", "head": [0, 0], "hidden": False},
-    {"at": "P01+0.55", "name": "skater", "head": [180, 0]},
-    {"at": "L43", "name": "skater", "hidden": True},
-    {"at": "L49", "name": "skater", "pos": list(SKR), "yaw": 90, "pose": "reach", "head": [-40, 0], "hidden": False, "reach_side": -1},
-    {"at": "L54", "name": "skater", "hidden": True},
-    {"at": "L67", "name": "ribbon", "pair": "pop_nan", "on": True},
-    {"at": "L55", "name": "door", "open": 1.0, "dur": 2.2},
-    {"at": "L58", "name": "door", "open": 0.0, "dur": 1.5},
-    {"at": "L44", "name": "steam", "on": True},
-    {"at": "L45", "name": "steam", "on": False},
+    {"at": "L35", "name": "spot", "to": [-1.0, -1.6], "dur": 1.9},
+    {"at": "L35.1+0.2", "name": "spot", "to": [SK_BESIDE[0], RAILY + 0.1], "dur": 1.6},
+    {"at": "L35.2", "name": "spot", "gain": 0.0, "dur": 1.0},
 ]
+cues += sweep("L36.2", (-7.6, 3.7), (-6.0, 3.7), (FAR[0], FAR[1]), 38, 0.9)
+
+# the Skater: placed where it already stands when a beat starts, never seen moving. fold = [left knee, right knee,
+# left elbow, right elbow], 1 = folded (bent twice), 0 = open (straight)
+
+
+def sk(at, fold, pos, yaw, pose="rest", head=(0, 0), reach_side=-1):
+    cues.append({"at": at, "name": "skater", "pos": list(pos), "yaw": yaw, "pose": pose, "fold": list(fold),
+                 "head": list(head), "hidden": False, "reach_side": reach_side})
+
+
+def sk_hide(at):
+    cues.append({"at": at, "name": "skater", "hidden": True})
+
+
+sk("L06.2", [1, 0, 0, 0], FAR, 0, head=(0, 8))                       # skip 1: the far rail
+sk_hide("L10.2")
+sk("L13", [1, 1, 0, 0], MID, yaw_to(MID, MEST), head=(0, 0))        # skip 2: the middle, face toward me
+sk_hide("L15")
+sk("L17", [1, 1, 0, 1], SK_POST, -90)                                # skip 3: one post away, facing me
+sk_hide("L19.3")
+sk("L20", [1, 1, 1, 1], SK_BESIDE, -90)                              # skip 4: right beside me, folded tight
+sk("L22", [1, 1, 1, 1], SK_BESIDE, -75, pose="reach", reach_side=-1, head=(-55, 0))  # its left arm held out to me, bent twice
+sk_hide("L24.1")
+sk("L24.3", [1, 1, 1, 1], SK_BESIDE, -90, pose="reach", reach_side=-1)
+sk("L27.2+0.4", [1, 1, 1, 1], SK_BESIDE, -90)
+sk("L28", [0, 1, 1, 1], SK_BESIDE, -90)                              # take back the wipeout: the left knee opens
+sk("L29.2", [0, 0, 1, 1], SK_BESIDE, -90)                            # the question: the other knee
+sk("L31", [0, 0, 1, 0], SK_BESIDE, -90)                              # the couples skate: the right elbow
+sk("L33", [0, 0, 0, 0], SK_BESIDE, -90, pose="straight")             # the speech: the last elbow
+sk("L34", [0, 0, 0, 0], SK_BESIDE, -90, pose="straight", head=(0, 8))
+sk_hide("L35.1")
+sk("L36.2", [1, 0, 0, 0], FAR, 0, head=(0, 8))                       # the sting: something folded once
+
+# ribbons: the couples while the waltz plays, Gus and me for the couples skate
+cues += [
+    {"at": "L15.1", "name": "ribbon", "group": "couples", "on": True},
+    {"at": "L19.3", "name": "ribbon", "group": "couples", "on": False},
+    {"at": "L30", "name": "ribbon", "group": "gus", "on": True},
+    {"at": "L30.2+0.8", "name": "ribbon", "group": "gus", "on": False},
+]
+
+# the twelve song lights (the rule meter): cream = played, gold = playing now, cherry = skipped. Bulb 5 starts cherry
+# (the loop's guy) and cools to cream; 4 skips light 6, 7, 9, 10 cherry; each take-back turns one cream.
+
+
+def bulb(at, i, state, dur=0.4):
+    cues.append({"at": at, "name": "song", "i": i, "state": state, "dur": dur})
+
+
+bulb("L02", 5, "cream", 0.6)
+bulb("L06.1", 6, "cherry")
+bulb("L06.1", 7, "gold", 0.6)
+bulb("L10.2", 7, "cherry")
+bulb("L10.2", 8, "gold", 0.6)
+bulb("L15", 8, "cream", 0.6)
+bulb("L15", 9, "gold", 0.6)
+bulb("L16.2", 9, "cherry")
+bulb("L16.2", 10, "gold", 0.6)
+bulb("L19.3", 10, "cherry")
+bulb("L19.3", 11, "gold", 0.6)
+bulb("L28.1", 6, "cream", 0.6)
+bulb("L29.2", 7, "cream", 0.6)
+bulb("L31", 9, "cream", 0.6)
+bulb("L33", 10, "cream", 0.6)
+bulb("L35.2", 11, "cream", 0.6)
+bulb("L36.1+0.5", 11, "cherry")
+
+# the clock: minutes since 3:00. Each skip jumps it four minutes; the take-backs wind it home
+clock = [("L02", 10), ("L06.1", 14), ("L10.2", 18), ("L16.2", 22), ("L19.3", 26), ("L35.2", 10)]
+for at, m in clock:
+    cues.append({"at": at, "name": "clock", "min": m, "dur": 0.35})
+# the button presses
+for at, btn in (("L01.2", "skip"), ("L06.1", "skip"), ("L10.2", "skip"), ("L26.1+0.3", "back"), ("L31b", "back"),
+                ("L36.1+0.5", "skip")):
+    cues.append({"at": at, "name": "press", "btn": btn})
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
-    {"at": 0, "kind": "click", "db": -16},
-    {"at": "L10.2", "kind": "castors", "db": -30, "dur": 1.4},
-    {"at": "L15", "kind": "castors", "db": -26, "dur": 3.0},
-    {"at": "L21", "kind": "riser", "db": -28, "dur": 2.4},
-    {"at": "L31", "kind": "sting", "db": -22},
-    {"at": "L36", "kind": "riser", "db": -26, "dur": 2.0},
-    {"at": "P01+0.55", "kind": "hit", "db": -4},
-    {"at": "P01+0.55", "kind": "sting", "db": -10},
-    {"at": "L47", "kind": "castors", "db": -26, "dur": 3.5},
-    {"at": "L49", "kind": "sting", "db": -14},
-    {"at": "P02+0.45", "kind": "hit", "db": -5},
-    {"at": "L55", "kind": "door", "db": -14},
-    {"at": "L56", "kind": "castors", "db": -24, "dur": 3.0},
-    {"at": "L68", "kind": "castors", "db": -26, "dur": 4.0},
-    {"at": "L70", "kind": "castors", "db": -26, "dur": 3.0},
-    {"at": "L73>-0.7", "kind": "bell", "db": -12, "dur": 2.0},
+    {"at": "L01.2", "kind": "hit", "db": -8},
+    {"at": "L01.2", "kind": "glitch", "db": -25},
+    {"at": "L06.1", "kind": "click", "db": -10},
+    {"at": "L06.1+0.05", "kind": "glitch", "db": -25},
+    {"at": "L10.2", "kind": "glitch", "db": -25},
+    {"at": "L16.2", "kind": "glitch", "db": -25},
+    {"at": "L19.3", "kind": "glitch", "db": -25},
+    {"at": "P01+0.4", "kind": "hit", "db": -6},
+    {"at": "P02+0.3", "kind": "hit", "db": -6},
+    {"at": "L26.1+0.3", "kind": "click", "db": -12},
+    {"at": "L36.2", "kind": "sting", "db": -16},
 ]
 
 story = {
     "slug": "ep26-last-skate",
-    "title": "Every slow song, something at the roller rink stood a little closer to my nan",
+    "title": "Ask For A Skip, Get SKIPPED",
     "made_for_kids": False,
-    "premise": "On the last night before an old roller rink shuts, I take Nan and Pop back to where they met. Pop says his knees are done and sits at the snack bar, so Nan waits at the rail alone through every slow song. Each time the slow spotlight comes round, a Skater in faded cherry-and-cream stripes, with legs and arms that bend twice like a folding chair, stands nearer to her.",
-    "twist": "The dedication was Pop's. He asked for their song and spent six months of Tuesdays relearning to skate in secret. On the last skate he rolls out and holds out his hand, and the Skater is gone: it had been standing right where he should have been. The couple by the rail had two people in it after all.",
-    "world": "an old roller rink on its last night: a honey maple floor, a cherry padded rail with cream posts, cherry-and-cream stripes on every wall, three slow ceiling fans, a snack bar with an amber lamp, a hire counter with a wall of cubbies, a raised booth, and one soft spotlight that creeps round the floor on slow songs",
+    "premise": "At my best friend Gus's birthday skate at a roller rink, I know nobody else. The DJ will skip any song you ask, but he skips you: you land at the start of the next song somewhere else, your fries cold. I skip everything awkward, and each time the spotlight sweeps in, a Skater in faded cherry-and-cream stripes stands nearer, one more of its limbs bent twice like a folding chair.",
+    "twist": "Skipped time doesn't vanish. It folds up into the Skater, one fold for every song skipped, and comes after you. When it reaches you, every skipped minute lands in the same second and folds you up like it. The only way out is the back button: I live each skipped song again, one at a time, and every joint straightens.",
+    "world": "a bright roller rink on a Saturday afternoon: a honey maple floor, a cherry padded rail with cream posts, cherry-and-cream stripes on every wall, a snack bar with chrome stools and a clock with hands only, a hire counter with a wall of cubbies, and a raised DJ booth with twelve song lights, a cherry skip button and a cream back button",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff5f7e",
     "caption": {"ink": "#0a0809", "stroke_add": 2, "shadow": 0.8},
     "key_stroke": 2,
     "gap": 0.12,
     "tail": 0,
-    "look": {"fog": "#1a1519", "fog_density": 0.012, "fog_start": 6.0, "sky": "#1c4a52", "sky_strength": 0.35,
-             "exposure": 0.4, "flash_safe": True},
-    "grade": {"shadows": [0.0, 0.0, 0.012], "highlights": [0.025, 0.01, -0.02], "saturation": 0.88, "red_line": 0.78, "contrast": 1.06,
-              "vignette": 0.38, "bloom": 0.3, "grain": 0.013},
-    "phonemes": {"Nan": "nˈæn"},
+    "fade_in": False,
+    "look": {"fog": "#d7e8f2", "fog_density": 0.004, "fog_start": 12.0, "sky": "#8cc6ee", "sky_strength": 1.0,
+             "exposure": 0.3, "flash_safe": True, "polish": True},
+    "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.02, 0.01, -0.01], "saturation": 1.05, "red_line": 0.78,
+              "contrast": 1.04, "vignette": 0.25, "bloom": 0.25, "grain": 0.01},
+    "phonemes": {"lap": "lˈæp", "skipped": "skˈɪpt"},
     "cast": cast,
     "lines": lines,
     "shots": shots,
-    "overhead_shots": overhead,
     "acting": acting,
     "cues": cues,
     "fx": [],
-    # the fast songs: a bright organ-ish pulse in D major (pad, piano and pulse); the slow songs: F lydian, soft pad and
-    # piano; the last skate and "their song": the same, warmer, with the drone held low under it
-    "music": {"root": 50, "mode": "major", "bpm": 72, "seed": 26,
+    # the fast songs: a bright rink organ in D major; the waltz: F lydian, soft; the drone enters at L13 and thickens at
+    # each skip, lifts a step at each take-back and is gone by L34
+    "music": {"root": 50, "mode": "major", "bpm": 132, "seed": 26,
               "sections": [
-                  {"at": 0, "voices": ["pad", "piano"], "energy": 0.35, "mode": "lydian", "root": 53},
-                  {"at": "L02", "voices": ["pad", "pulse", "piano"], "energy": 0.6, "mode": "major", "root": 50},
-                  {"at": "L16", "voices": ["pad", "piano"], "energy": 0.3, "mode": "lydian", "root": 53},
-                  {"at": "L25", "voices": ["pad", "pulse", "piano"], "energy": 0.55, "mode": "major", "root": 50},
-                  {"at": "L28", "voices": ["pad", "piano"], "energy": 0.3, "mode": "lydian", "root": 53},
-                  {"at": "L33>", "voices": ["pad", "pulse"], "energy": 0.4, "mode": "major", "root": 50},
-                  {"at": "L34", "voices": ["pad", "piano", "drone"], "energy": 0.3, "mode": "lydian", "root": 53},
-                  {"at": "L45", "voices": ["pad", "drone"], "energy": 0.25, "mode": "lydian", "root": 53},
-                  {"at": "L53", "voices": ["pad", "piano", "drone", "choir"], "energy": 0.55, "mode": "lydian", "root": 53},
-                  {"at": "L55", "voices": ["pad", "piano", "drone"], "energy": 0.45, "mode": "lydian", "root": 53},
-                  {"at": "L67", "voices": ["pad", "piano", "drone"], "energy": 0.4, "mode": "lydian", "root": 53},
+                  {"at": 0, "voices": ["pad", "pulse", "piano"], "energy": 0.55, "mode": "major", "root": 50},
+                  {"at": "L13", "voices": ["pad", "pulse", "piano", "drone"], "energy": 0.55, "mode": "major", "root": 50},
+                  {"at": "L16", "voices": ["pad", "piano", "drone"], "energy": 0.35, "mode": "lydian", "root": 53},
+                  {"at": "L19.3", "voices": ["pad", "drone", "choir"], "energy": 0.5, "mode": "minor", "root": 50},
+                  {"at": "L26", "voices": ["pad", "piano", "drone"], "energy": 0.4, "mode": "major", "root": 50},
+                  {"at": "L32", "voices": ["pad", "piano"], "energy": 0.35, "mode": "major", "root": 50},
+                  {"at": "L34", "voices": ["pad", "pulse", "piano"], "energy": 0.55, "mode": "major", "root": 50},
+                  {"at": "L36.1", "voices": ["pad", "drone", "piano"], "energy": 0.4, "mode": "minor", "root": 50},
               ]},
     "sound": {"floor": "wood", "steps_db": -26,
               "ambience": [
                   {"kind": "room", "from": 0, "to": "end", "lufs": -34},
-                  {"kind": "hum", "from": 0, "to": "end", "lufs": -40},
+                  {"kind": "hum", "from": 0, "to": "end", "lufs": -42},
               ],
               "sfx": sfx,
-              "music_drops": [{"from": "P01-0.1", "to": "L41", "keep": ["hit", "sting"]},
-                              {"from": "P02-0.1", "to": "L51", "keep": ["hit"]}]},
+              "music_drops": [{"from": "P01-0.1", "to": "L20", "keep": ["hit", "sting"]},
+                              {"from": "P02-0.1", "to": "L23", "keep": ["hit"]}]},
 }
+# the caption chunks are split to 2 or 3 words (lines.json): every "Lxx.k" above means the k-th chunk of the script's
+# own phrasing, so it is moved to the first piece of that phrase
+import re
+STARTS = json.loads((HERE / "chunk_starts.json").read_text())
+REF = re.compile(r"^([LP]\w+?)\.(\d+)(>?)(.*)$")
+
+
+def remap(ref):
+    m = REF.match(ref)
+    if not m or m.group(1) not in STARTS:
+        return ref
+    lid, k, tail, rest = m.group(1), int(m.group(2)), m.group(3), m.group(4)
+    return f"{lid}.{STARTS[lid][k]}{tail}{rest}"
+
+
+def walk_refs(o):
+    if isinstance(o, dict):
+        for k, v in o.items():
+            if k in ("at", "from", "to") and isinstance(v, str):
+                o[k] = remap(v)
+            else:
+                walk_refs(v)
+    elif isinstance(o, list):
+        for v in o:
+            walk_refs(v)
+
+
+for k in ("shots", "acting", "cues", "fx"):
+    walk_refs(story[k])
+walk_refs(story["music"])
+walk_refs(story["sound"])
+lines_out = story["lines"] + [{"id": "P03", "pause": 0.25, "chunks": []}] if not any(l["id"] == "P03" for l in story["lines"]) else story["lines"]
+story["lines"] = lines_out
+# keep any rev already in story.json (the generator drops it) and bump it so the changed story is drawn again
+try:
+    old = json.loads(OUT.read_text())
+    rev = old.get("sound", {}).get("rev", 0)
+except Exception:
+    rev = 0
+story["sound"]["rev"] = rev + 1
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")

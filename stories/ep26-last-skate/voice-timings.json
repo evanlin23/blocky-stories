@@ -6,1182 +6,290 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "At this rink, slow songs are couples only. Everyone else waits at the rail.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.345,
-   "onset": 0.155,
-   "end": 3.155,
-   "chunks": [
-    [
-     0.155,
-     0.534
-    ],
-    [
-     0.578,
-     1.103
-    ],
-    [
-     1.103,
-     1.759
-    ],
-    [
-     1.854,
-     2.345
-    ],
-    [
-     2.345,
-     2.56
-    ],
-    [
-     2.56,
-     3.155
-    ]
-   ]
-  },
-  "L02": {
-   "text": "Tonight was the rink's last night. Then it shuts for good.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.552,
-   "onset": 0.172,
-   "end": 2.345,
-   "chunks": [
-    [
-     0.172,
-     0.509
-    ],
-    [
-     0.509,
-     0.793
-    ],
-    [
-     0.793,
-     1.293
-    ],
-    [
-     1.362,
-     1.759
-    ],
-    [
-     1.759,
-     2.345
-    ]
-   ]
-  },
-  "L03": {
-   "text": "I brought my Nan and my Pop.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.155,
-   "end": 1.397,
-   "chunks": [
-    [
-     0.155,
-     0.406
-    ],
-    [
-     0.406,
-     0.759
-    ],
-    [
-     0.759,
-     1.397
-    ]
-   ]
-  },
-  "L04": {
-   "text": "I drove them down, with the windows open. Nan held Pop's arm the whole way.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.431,
-   "onset": 0.155,
-   "end": 3.241,
-   "chunks": [
-    [
-     0.155,
-     0.439
-    ],
-    [
-     0.439,
-     0.759
-    ],
-    [
-     0.784,
-     0.914
-    ],
-    [
-     0.914,
-     1.621
-    ],
-    [
-     1.715,
-     2.095
-    ],
-    [
-     2.095,
-     2.509
-    ],
-    [
-     2.509,
-     3.241
-    ]
-   ]
-  },
-  "L08": {
-   "text": "The big fans were turning, and the floor smelled of wax.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.172,
-   "end": 2.466,
-   "chunks": [
-    [
-     0.172,
-     0.612
-    ],
-    [
-     0.612,
-     1.103
-    ],
-    [
-     1.172,
-     1.578
-    ],
-    [
-     1.578,
-     2.466
-    ]
-   ]
-  },
-  "L09": {
-   "text": "Cherry and cream stripes on every wall.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.879,
-   "onset": 0.172,
-   "end": 1.69,
-   "chunks": [
-    [
-     0.172,
-     0.353
-    ],
-    [
-     0.353,
-     0.905
-    ],
-    [
-     0.905,
-     1.69
-    ]
-   ]
-  },
-  "L10": {
-   "text": "At the hire counter, Nan asked for skates.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9476000000000001,
-   "dur": 2.121,
-   "onset": 0.172,
-   "end": 1.914,
-   "chunks": [
-    [
-     0.172,
-     0.31
-    ],
-    [
-     0.31,
-     0.776
-    ],
-    [
-     0.81,
-     1.241
-    ],
-    [
-     1.241,
-     1.914
-    ]
-   ]
-  },
-  "L11": {
-   "text": "Pop asked for nothing.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.172,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.172,
-     0.534
-    ],
-    [
-     0.534,
-     1.155
-    ]
-   ]
-  },
-  "L12": {
-   "text": "He sat down at the snack bar, on a chrome stool.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.155,
-   "end": 2.034,
-   "chunks": [
-    [
-     0.155,
-     0.56
-    ],
-    [
-     0.56,
-     0.897
-    ],
-    [
-     0.897,
-     1.224
-    ],
-    [
-     1.224,
-     2.034
-    ]
-   ]
-  },
-  "L13": {
-   "text": "Both his knees were strapped up in thick white tape.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.224,
-   "onset": 0.172,
-   "end": 2.017,
-   "chunks": [
-    [
-     0.172,
-     0.647
-    ],
-    [
-     0.647,
-     1.094
-    ],
-    [
-     1.094,
-     1.362
-    ],
-    [
-     1.362,
-     2.017
-    ]
-   ]
-  },
-  "L14": {
-   "text": "He said, \"These knees are done, love. You skate for both of us.\"",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.759,
-   "onset": 0.155,
-   "end": 2.552,
-   "chunks": [
-    [
-     0.155,
-     0.448
-    ],
-    [
-     0.5,
-     0.819
-    ],
-    [
-     0.819,
-     1.448
-    ],
-    [
-     1.517,
-     1.879
-    ],
-    [
-     1.879,
-     2.552
-    ]
-   ]
-  },
-  "L15": {
-   "text": "Nan just smiled, and rolled off to the rail.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.121,
-   "onset": 0.172,
-   "end": 1.931,
-   "chunks": [
-    [
-     0.172,
-     0.828
-    ],
-    [
-     0.854,
-     1.31
-    ],
-    [
-     1.31,
-     1.931
-    ]
-   ]
-  },
-  "L16": {
-   "text": "Every half hour, the lights went down for a slow song.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.466,
-   "onset": 0.172,
-   "end": 2.276,
-   "chunks": [
-    [
-     0.172,
-     0.741
-    ],
-    [
-     0.768,
-     1.052
-    ],
-    [
-     1.052,
-     1.379
-    ],
-    [
-     1.379,
-     1.509
-    ],
-    [
-     1.509,
-     2.276
-    ]
-   ]
-  },
-  "L17": {
-   "text": "Couples only.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.138,
-   "onset": 0.172,
-   "end": 0.948,
-   "chunks": [
-    [
-     0.172,
-     0.948
-    ]
-   ]
-  },
-  "L18": {
-   "text": "One soft spotlight crept along the floor, slow as a clock.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9682,
-   "dur": 2.948,
-   "onset": 0.19,
-   "end": 2.741,
-   "chunks": [
-    [
-     0.19,
-     0.897
-    ],
-    [
-     0.897,
-     1.25
-    ],
-    [
-     1.25,
-     1.672
-    ],
-    [
-     1.767,
-     2.112
-    ],
-    [
-     2.112,
-     2.741
-    ]
-   ]
-  },
-  "L19": {
-   "text": "Nan waited at the rail, alone.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.172,
-   "end": 1.466,
-   "chunks": [
-    [
-     0.172,
-     0.526
-    ],
-    [
-     0.526,
-     0.862
-    ],
-    [
-     0.897,
-     1.466
-    ]
-   ]
-  },
-  "L19b": {
-   "text": "Fifty years ago, she met Pop at that same rail.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.259,
-   "onset": 0.172,
-   "end": 2.069,
-   "chunks": [
-    [
-     0.172,
-     0.724
-    ],
-    [
-     0.776,
-     1.164
-    ],
-    [
-     1.164,
-     1.379
-    ],
-    [
-     1.379,
-     2.069
-    ]
-   ]
-  },
-  "L20": {
-   "text": "I sat beside Pop, with a tub of chips.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9682,
-   "dur": 2.034,
-   "onset": 0.172,
-   "end": 1.828,
-   "chunks": [
-    [
-     0.172,
-     0.698
-    ],
-    [
-     0.698,
-     1.052
-    ],
-    [
-     1.052,
-     1.828
-    ]
-   ]
-  },
-  "L21": {
-   "text": "When the light reached the far wall, someone was standing there.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.5,
-   "onset": 0.155,
-   "end": 2.31,
-   "chunks": [
-    [
-     0.155,
-     0.466
-    ],
-    [
-     0.466,
-     0.707
-    ],
-    [
-     0.707,
-     1.19
-    ],
-    [
-     1.259,
-     1.5
-    ],
-    [
-     1.5,
-     2.31
-    ]
-   ]
-  },
-  "L22": {
-   "text": "A Skater, in faded cherry and cream stripes, like the walls.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.672,
-   "onset": 0.172,
-   "end": 2.483,
-   "chunks": [
-    [
-     0.172,
-     0.5
-    ],
-    [
-     0.534,
-     1.129
-    ],
-    [
-     1.129,
-     1.69
-    ],
-    [
-     1.715,
-     2.483
-    ]
-   ]
-  },
-  "L23": {
-   "text": "Each leg had two knees, and they folded like a folding chair.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.828,
-   "onset": 0.172,
-   "end": 2.638,
-   "chunks": [
-    [
-     0.172,
-     0.439
-    ],
-    [
-     0.439,
-     1.138
-    ],
-    [
-     1.207,
-     1.647
-    ],
-    [
-     1.647,
-     1.784
-    ],
-    [
-     1.784,
-     2.638
-    ]
-   ]
-  },
-  "L24": {
-   "text": "The light moved on. When it came back, the far rail was empty.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.879,
-   "onset": 0.172,
-   "end": 2.69,
-   "chunks": [
-    [
-     0.172,
-     0.431
-    ],
-    [
-     0.431,
-     0.914
-    ],
-    [
-     0.983,
-     1.138
-    ],
-    [
-     1.138,
-     1.517
-    ],
-    [
-     1.543,
-     2.009
-    ],
-    [
-     2.009,
-     2.69
-    ]
-   ]
-  },
-  "L25": {
-   "text": "Pop waved at the booth and said, \"Cheers, Lenny.\"",
+   "text": "If you ask the DJ to skip a song, he skips you.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.276,
    "onset": 0.155,
-   "end": 2.069,
+   "end": 2.052,
    "chunks": [
     [
      0.155,
-     0.543
+     0.509
     ],
     [
-     0.543,
-     0.854
-    ],
-    [
-     0.854,
-     1.19
-    ],
-    [
-     1.31,
-     2.069
-    ]
-   ]
-  },
-  "L26": {
-   "text": "Pop said he hadn't been here in forty years.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.034,
-   "onset": 0.155,
-   "end": 1.845,
-   "chunks": [
-    [
-     0.155,
-     0.439
-    ],
-    [
-     0.439,
-     0.672
-    ],
-    [
-     0.672,
-     0.966
-    ],
-    [
-     0.966,
-     1.845
-    ]
-   ]
-  },
-  "L27": {
-   "text": "I asked him how he knew the man's name. He said, \"It's on his shirt.\"",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.948,
-   "onset": 0.172,
-   "end": 2.741,
-   "chunks": [
-    [
-     0.172,
-     0.569
-    ],
-    [
-     0.569,
-     0.854
-    ],
-    [
-     0.854,
-     1.466
-    ],
-    [
-     1.517,
-     1.845
-    ],
-    [
-     1.948,
-     2.129
-    ],
-    [
-     2.129,
-     2.741
-    ]
-   ]
-  },
-  "L28": {
-   "text": "Next slow song, the spotlight came round again.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.379,
-   "onset": 0.172,
-   "end": 2.19,
-   "chunks": [
-    [
-     0.172,
-     0.862
-    ],
-    [
-     0.905,
-     1.328
-    ],
-    [
-     1.328,
-     2.19
-    ]
-   ]
-  },
-  "L29": {
-   "text": "The Skater was in the middle of the floor.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.879,
-   "onset": 0.155,
-   "end": 1.69,
-   "chunks": [
-    [
-     0.155,
-     0.552
-    ],
-    [
-     0.552,
+     0.509,
      0.784
     ],
     [
      0.784,
-     1.008
+     0.992
     ],
     [
-     1.008,
-     1.69
+     0.992,
+     1.293
+    ],
+    [
+     1.328,
+     2.052
     ]
    ]
   },
-  "L30": {
-   "text": "Each arm had two elbows, folded flat on its stripes.",
+  "L02": {
+   "text": "The song keeps playing. You just miss it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.155,
+     0.431
+    ],
+    [
+     0.431,
+     0.983
+    ],
+    [
+     1.034,
+     1.276
+    ],
+    [
+     1.276,
+     1.793
+    ]
+   ]
+  },
+  "L03": {
+   "text": "My best friend, Gus, had his birthday skate. I knew nobody else.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.845
+    ],
+    [
+     0.879,
+     1.086
+    ],
+    [
+     1.086,
+     1.759
+    ],
+    [
+     1.828,
+     2.052
+    ],
+    [
+     2.052,
+     2.759
+    ]
+   ]
+  },
+  "L04": {
+   "text": "First lap, I went down, hard.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.927,
-   "dur": 2.845,
-   "onset": 0.19,
-   "end": 2.638,
-   "chunks": [
-    [
-     0.19,
-     0.5
-    ],
-    [
-     0.5,
-     1.293
-    ],
-    [
-     1.362,
-     1.854
-    ],
-    [
-     1.854,
-     2.638
-    ]
-   ]
-  },
-  "L31": {
-   "text": "And its face was turned toward Nan.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.828,
-   "onset": 0.155,
+   "dur": 1.845,
+   "onset": 0.207,
    "end": 1.621,
    "chunks": [
     [
-     0.155,
-     0.569
+     0.207,
+     0.603
     ],
     [
-     0.569,
-     0.897
+     0.629,
+     1.034
     ],
     [
-     0.897,
+     1.069,
      1.621
     ]
    ]
   },
-  "L32": {
-   "text": "I told Pop. He didn't even look up.",
+  "L05": {
+   "text": "I yelled to the DJ, Lenny. He asked, \"skip, or back?\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
+   "dur": 2.638,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     1.103
+    ],
+    [
+     1.172,
+     1.81
+    ],
+    [
+     1.837,
+     2.414
+    ]
+   ]
+  },
+  "L06": {
+   "text": "I said, \"skip!\" click. I was at the snack bar.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
    "onset": 0.155,
-   "end": 1.569,
+   "end": 1.948,
    "chunks": [
     [
      0.155,
      0.672
     ],
     [
-     0.698,
-     1.052
-    ],
-    [
-     1.052,
-     1.569
-    ]
-   ]
-  },
-  "L33": {
-   "text": "He just kept checking his watch.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.586,
-   "onset": 0.155,
-   "end": 1.379,
-   "chunks": [
-    [
-     0.155,
-     0.56
-    ],
-    [
-     0.56,
-     1.379
-    ]
-   ]
-  },
-  "L34": {
-   "text": "By the third slow song, I couldn't eat.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.81,
-   "onset": 0.155,
-   "end": 1.621,
-   "chunks": [
-    [
-     0.155,
-     0.5
-    ],
-    [
-     0.5,
-     0.931
-    ],
-    [
-     0.957,
-     1.621
-    ]
-   ]
-  },
-  "L35": {
-   "text": "The spotlight crept round, one board at a time.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.414,
-   "onset": 0.155,
-   "end": 2.224,
-   "chunks": [
-    [
-     0.155,
-     0.552
-    ],
-    [
-     0.552,
-     1.155
-    ],
-    [
-     1.224,
-     1.578
-    ],
-    [
-     1.578,
-     2.224
-    ]
-   ]
-  },
-  "L36": {
-   "text": "The Skater was at the rail. One post from Nan.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.31,
-   "onset": 0.155,
-   "end": 2.103,
-   "chunks": [
-    [
-     0.155,
-     0.474
-    ],
-    [
-     0.474,
-     0.595
-    ],
-    [
-     0.595,
-     1.0
-    ],
-    [
-     1.069,
-     1.448
-    ],
-    [
-     1.448,
-     2.103
-    ]
-   ]
-  },
-  "L37": {
-   "text": "Up close, its stripes were faded almost to pink.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.31,
-   "onset": 0.155,
-   "end": 2.103,
-   "chunks": [
-    [
-     0.155,
-     0.534
-    ],
-    [
-     0.569,
-     0.922
-    ],
-    [
-     0.922,
-     1.259
-    ],
-    [
-     1.259,
-     2.103
-    ]
-   ]
-  },
-  "L38": {
-   "text": "Its face was a smooth cream oval, with two dark eyes and a painted smile.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.466,
-   "onset": 0.155,
-   "end": 3.276,
-   "chunks": [
-    [
-     0.155,
-     0.509
-    ],
-    [
-     0.509,
-     0.931
-    ],
-    [
-     0.931,
-     1.466
-    ],
-    [
-     1.534,
-     1.81
-    ],
-    [
-     1.81,
-     2.284
-    ],
-    [
-     2.284,
-     2.397
-    ],
-    [
-     2.397,
-     3.276
-    ]
-   ]
-  },
-  "L39": {
-   "text": "Nan didn't turn. She was watching the snack bar.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.328,
-   "onset": 0.19,
-   "end": 2.121,
-   "chunks": [
-    [
-     0.19,
-     0.81
-    ],
-    [
-     0.879,
-     1.319
-    ],
-    [
-     1.319,
-     2.121
-    ]
-   ]
-  },
-  "L40": {
-   "text": "The light slid off it, and back again.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.845,
-   "onset": 0.172,
-   "end": 1.655,
-   "chunks": [
-    [
-     0.172,
-     0.414
-    ],
-    [
-     0.414,
-     0.828
-    ],
-    [
-     0.862,
-     1.655
-    ]
-   ]
-  },
-  "L41": {
-   "text": "Now its head was turned all the way round, over its back.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.517,
-   "onset": 0.172,
-   "end": 2.31,
-   "chunks": [
-    [
-     0.172,
-     0.509
-    ],
-    [
-     0.509,
-     0.828
-    ],
-    [
-     0.828,
-     1.0
-    ],
-    [
-     1.0,
-     1.483
-    ],
-    [
-     1.552,
-     2.31
-    ]
-   ]
-  },
-  "L42": {
-   "text": "Looking at me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.121,
-   "onset": 0.19,
-   "end": 0.914,
-   "chunks": [
-    [
-     0.19,
-     0.431
-    ],
-    [
-     0.431,
-     0.914
-    ]
-   ]
-  },
-  "L43": {
-   "text": "I looked at Pop. His stool was empty.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.017,
-   "onset": 0.172,
-   "end": 1.81,
-   "chunks": [
-    [
-     0.172,
-     0.37
-    ],
-    [
-     0.37,
-     0.707
-    ],
-    [
      0.759,
-     1.103
+     0.948
     ],
     [
-     1.103,
-     1.81
+     0.983,
+     1.181
+    ],
+    [
+     1.181,
+     1.948
     ]
    ]
   },
-  "L44": {
-   "text": "His chips were still warm.",
+  "L07": {
+   "text": "The clock had jumped four minutes. My fries were cold.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.5,
+   "dur": 2.534,
    "onset": 0.155,
-   "end": 1.31,
+   "end": 2.328,
    "chunks": [
     [
      0.155,
-     0.492
+     0.388
     ],
     [
-     0.492,
-     1.31
+     0.388,
+     0.681
+    ],
+    [
+     0.681,
+     1.172
+    ],
+    [
+     1.241,
+     1.647
+    ],
+    [
+     1.647,
+     2.328
     ]
    ]
   },
-  "L45": {
-   "text": "Then the speaker said, \"Last skate.\"",
+  "L08": {
+   "text": "In the next song's spotlight, a skater in faded stripes stood at the far rail, smiling.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.9682,
-   "dur": 1.845,
+   "tempo": 1.03,
+   "dur": 3.862,
    "onset": 0.172,
-   "end": 1.621,
+   "end": 3.672,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.207
+    ],
+    [
+     1.276,
+     1.69
+    ],
+    [
+     1.69,
+     2.224
+    ],
+    [
+     2.224,
+     2.509
+    ],
+    [
+     2.509,
+     2.966
+    ],
+    [
+     3.008,
+     3.672
+    ]
+   ]
+  },
+  "L09": {
+   "text": "Its left leg bent twice, like a folding chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.155,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.172
+    ],
+    [
+     1.241,
+     1.388
+    ],
+    [
+     1.388,
+     2.207
+    ]
+   ]
+  },
+  "L10": {
+   "text": "A lady from Gus's work asked what I do. \"skip.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.328,
    "chunks": [
     [
      0.172,
@@ -1189,97 +297,213 @@
     ],
     [
      0.586,
-     0.793
+     1.034
     ],
     [
-     0.897,
-     1.621
+     1.034,
+     1.319
+    ],
+    [
+     1.319,
+     1.707
+    ],
+    [
+     1.879,
+     2.328
     ]
    ]
   },
-  "L46": {
-   "text": "The lights went down lower than before.",
+  "L13": {
+   "text": "Next song, the Skater was in the middle, and both legs bent twice.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.828,
-   "onset": 0.155,
+   "dur": 2.931,
+   "onset": 0.172,
+   "end": 2.741,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.888
+    ],
+    [
+     0.888,
+     1.026
+    ],
+    [
+     1.026,
+     1.397
+    ],
+    [
+     1.466,
+     2.0
+    ],
+    [
+     2.0,
+     2.741
+    ]
+   ]
+  },
+  "L14": {
+   "text": "Every time I skipped, it was closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.879
+    ],
+    [
+     0.905,
+     1.672
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Then Lenny called a couples skate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.927,
+   "dur": 1.793,
+   "onset": 0.19,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.19,
+     0.732
+    ],
+    [
+     0.732,
+     1.586
+    ]
+   ]
+  },
+  "L16": {
+   "text": "Everyone paired up but me. \"skip.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
    "end": 1.638,
    "chunks": [
     [
-     0.155,
-     0.448
+     0.172,
+     0.732
     ],
     [
-     0.448,
-     0.759
+     0.732,
+     1.052
     ],
     [
-     0.759,
+     1.19,
      1.638
     ]
    ]
   },
-  "L47": {
-   "text": "Everyone else rolled off the floor.",
+  "L17": {
+   "text": "Now it was one post from me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.81,
+   "dur": 1.552,
+   "onset": 0.19,
+   "end": 1.362,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.466,
+     0.862
+    ],
+    [
+     0.862,
+     1.362
+    ]
+   ]
+  },
+  "L18": {
+   "text": "Both legs and one arm bent twice.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
    "onset": 0.172,
-   "end": 1.621,
+   "end": 1.759,
    "chunks": [
     [
      0.172,
-     0.664
+     0.638
     ],
     [
-     0.664,
-     1.008
+     0.638,
+     1.052
     ],
     [
-     1.008,
-     1.621
+     1.052,
+     1.759
     ]
    ]
   },
-  "L48": {
-   "text": "The spotlight found Nan, alone at the rail.",
+  "L19": {
+   "text": "Then Gus took the mic for a speech, looking at me. \"skip!\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.19,
+   "dur": 2.569,
    "onset": 0.155,
-   "end": 2.0,
+   "end": 2.345,
    "chunks": [
     [
      0.155,
-     0.552
+     0.578
     ],
     [
-     0.552,
-     1.034
+     0.578,
+     0.793
     ],
     [
-     1.112,
-     1.406
+     0.793,
+     1.155
     ],
     [
-     1.406,
-     2.0
+     1.19,
+     1.707
+    ],
+    [
+     1.862,
+     2.345
     ]
    ]
   },
-  "L49": {
-   "text": "And the Skater was right beside her.",
+  "L20": {
+   "text": "And the Skater was right beside me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.81,
+   "dur": 1.793,
    "onset": 0.155,
    "end": 1.603,
    "chunks": [
@@ -1297,348 +521,60 @@
     ]
    ]
   },
-  "L50": {
-   "text": "Its arm was held out, folded twice, like a partner asking for a dance.",
+  "L21": {
+   "text": "Folded so tight it came up to my shoulder.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.31,
-   "onset": 0.155,
-   "end": 3.103,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.897,
    "chunks": [
     [
-     0.155,
-     0.439
+     0.172,
+     0.862
     ],
     [
-     0.439,
-     0.879
-    ],
-    [
-     0.957,
-     1.638
-    ],
-    [
-     1.707,
-     2.155
-    ],
-    [
-     2.155,
-     2.414
-    ],
-    [
-     2.414,
-     3.103
-    ]
-   ]
-  },
-  "L51": {
-   "text": "Nan looked at the hand.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.362,
-   "onset": 0.19,
-   "end": 1.155,
-   "chunks": [
-    [
-     0.19,
-     0.526
-    ],
-    [
-     0.526,
+     0.862,
      1.155
+    ],
+    [
+     1.155,
+     1.897
     ]
    ]
   },
-  "L52": {
-   "text": "And she started to lift hers.",
+  "L22": {
+   "text": "Its arm was held out to me, bent twice.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.638,
+   "dur": 1.931,
    "onset": 0.155,
-   "end": 1.431,
+   "end": 1.724,
    "chunks": [
     [
      0.155,
-     0.655
+     0.517
     ],
     [
-     0.655,
-     1.431
+     0.517,
+     0.793
+    ],
+    [
+     0.793,
+     0.966
+    ],
+    [
+     1.0,
+     1.724
     ]
    ]
   },
-  "L53": {
-   "text": "I tried to shout, but the music swelled up over me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.328,
-   "onset": 0.155,
-   "end": 2.138,
-   "chunks": [
-    [
-     0.155,
-     0.423
-    ],
-    [
-     0.423,
-     0.759
-    ],
-    [
-     0.784,
-     1.215
-    ],
-    [
-     1.215,
-     1.561
-    ],
-    [
-     1.561,
-     2.138
-    ]
-   ]
-  },
-  "L54": {
-   "text": "Then the voice on the speaker said, \"This one's for the couple by the rail.\"",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9682,
-   "dur": 3.207,
-   "onset": 0.19,
-   "end": 3.0,
-   "chunks": [
-    [
-     0.19,
-     0.595
-    ],
-    [
-     0.595,
-     1.043
-    ],
-    [
-     1.043,
-     1.828
-    ],
-    [
-     1.828,
-     2.207
-    ],
-    [
-     2.207,
-     3.0
-    ]
-   ]
-  },
-  "L55": {
-   "text": "The door by the hire counter swung open.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.0,
-   "onset": 0.155,
-   "end": 1.81,
-   "chunks": [
-    [
-     0.155,
-     0.492
-    ],
-    [
-     0.492,
-     1.043
-    ],
-    [
-     1.043,
-     1.81
-    ]
-   ]
-  },
-  "L56": {
-   "text": "Out rolled Pop.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9784999999999999,
-   "dur": 1.276,
-   "onset": 0.19,
-   "end": 1.052,
-   "chunks": [
-    [
-     0.19,
-     0.56
-    ],
-    [
-     0.56,
-     1.052
-    ]
-   ]
-  },
-  "L57": {
-   "text": "On skates.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.052,
-   "onset": 0.172,
-   "end": 0.845,
-   "chunks": [
-    [
-     0.172,
-     0.845
-    ]
-   ]
-  },
-  "L58": {
-   "text": "Wobbling, arms out, knees in their white tape.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.172,
-   "end": 1.931,
-   "chunks": [
-    [
-     0.172,
-     0.414
-    ],
-    [
-     0.448,
-     0.845
-    ],
-    [
-     0.922,
-     1.293
-    ],
-    [
-     1.293,
-     1.931
-    ]
-   ]
-  },
-  "L59": {
-   "text": "It was their song. The one they met to.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.879,
-   "onset": 0.155,
-   "end": 1.552,
-   "chunks": [
-    [
-     0.155,
-     0.345
-    ],
-    [
-     0.345,
-     0.81
-    ],
-    [
-     0.879,
-     1.026
-    ],
-    [
-     1.026,
-     1.552
-    ]
-   ]
-  },
-  "L60": {
-   "text": "He'd asked for it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.241,
-   "onset": 0.172,
-   "end": 1.052,
-   "chunks": [
-    [
-     0.172,
-     0.569
-    ],
-    [
-     0.569,
-     1.052
-    ]
-   ]
-  },
-  "L61": {
-   "text": "Lenny leaned out of the booth and called, \"Six months of Tuesdays, mate!\"",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 3.121,
-   "onset": 0.19,
-   "end": 2.897,
-   "chunks": [
-    [
-     0.19,
-     0.629
-    ],
-    [
-     0.629,
-     0.957
-    ],
-    [
-     0.957,
-     1.448
-    ],
-    [
-     1.586,
-     1.906
-    ],
-    [
-     1.906,
-     2.379
-    ],
-    [
-     2.414,
-     2.897
-    ]
-   ]
-  },
-  "L62": {
-   "text": "Pop had been learning again. In secret.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.172,
-   "end": 1.793,
-   "chunks": [
-    [
-     0.172,
-     0.5
-    ],
-    [
-     0.5,
-     0.69
-    ],
-    [
-     0.69,
-     1.017
-    ],
-    [
-     1.112,
-     1.793
-    ]
-   ]
-  },
-  "L63": {
-   "text": "He rolled up to the rail, and held out his hand.",
+  "L23": {
+   "text": "I counted. four skips. four extra bends.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1649,267 +585,135 @@
    "chunks": [
     [
      0.155,
-     0.552
+     0.5
     ],
     [
-     0.552,
-     1.017
-    ],
-    [
-     1.069,
-     1.422
-    ],
-    [
-     1.422,
-     2.086
-    ]
-   ]
-  },
-  "L64": {
-   "text": "The spotlight circled them.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9476000000000001,
-   "dur": 1.586,
-   "onset": 0.172,
-   "end": 1.397,
-   "chunks": [
-    [
-     0.172,
-     0.647
-    ],
-    [
-     0.647,
-     1.397
-    ]
-   ]
-  },
-  "L65": {
-   "text": "And the Skater was gone.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.448,
-   "onset": 0.155,
-   "end": 1.259,
-   "chunks": [
-    [
-     0.155,
-     0.621
-    ],
-    [
-     0.621,
-     1.259
-    ]
-   ]
-  },
-  "L66": {
-   "text": "It had been standing right where Pop should have been.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.155,
-   "end": 1.897,
-   "chunks": [
-    [
-     0.155,
-     0.414
-    ],
-    [
-     0.414,
-     0.707
-    ],
-    [
-     0.707,
-     1.043
-    ],
-    [
-     1.043,
-     1.259
-    ],
-    [
-     1.259,
-     1.897
-    ]
-   ]
-  },
-  "L67": {
-   "text": "Nan laughed, and it sounded fifty years young.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.19,
-   "onset": 0.19,
-   "end": 2.0,
-   "chunks": [
-    [
-     0.19,
-     0.672
-    ],
-    [
-     0.698,
-     1.094
-    ],
-    [
-     1.094,
-     2.0
-    ]
-   ]
-  },
-  "L68": {
-   "text": "They went round so slowly.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.552,
-   "onset": 0.155,
-   "end": 1.362,
-   "chunks": [
-    [
-     0.155,
-     0.621
-    ],
-    [
-     0.621,
-     1.362
-    ]
-   ]
-  },
-  "L69": {
-   "text": "Pop wobbled. Nan held him steady.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.914,
-   "onset": 0.155,
-   "end": 1.724,
-   "chunks": [
-    [
-     0.155,
-     0.655
-    ],
-    [
-     0.716,
-     1.061
+     0.534,
+     0.983
     ],
     [
      1.061,
-     1.724
+     2.086
     ]
    ]
   },
-  "L70": {
-   "text": "Every lap, he said \"Sorry,\" and every lap she said, \"Again.\"",
+  "L24": {
+   "text": "That's where skipped, time goes. It folds up and comes after you, one fold for every song you skipped.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.845,
+   "tempo": 0.9579000000000001,
+   "dur": 4.362,
    "onset": 0.172,
-   "end": 2.638,
+   "end": 4.155,
    "chunks": [
     [
      0.172,
-     0.534
+     0.655
     ],
     [
-     0.56,
-     0.802
+     0.69,
+     1.397
     ],
     [
-     0.845,
-     1.224
+     1.483,
+     1.906
     ],
     [
-     1.328,
-     1.793
+     1.906,
+     2.207
     ],
     [
-     1.793,
-     2.069
+     2.207,
+     2.517
     ],
     [
-     2.121,
-     2.638
+     2.552,
+     2.966
+    ],
+    [
+     2.966,
+     3.483
+    ],
+    [
+     3.483,
+     4.155
     ]
    ]
   },
-  "L71": {
-   "text": "I watched from the snack bar, on Pop's stool.",
+  "L25": {
+   "text": "And when it reaches you, every skipped minute lands in the same second, and folds you up like it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.017,
+   "dur": 3.862,
    "onset": 0.155,
-   "end": 1.828,
+   "end": 3.672,
    "chunks": [
     [
      0.155,
-     0.439
+     0.397
     ],
     [
-     0.439,
-     0.586
+     0.397,
+     0.914
     ],
     [
-     0.586,
-     0.966
+     1.017,
+     1.672
     ],
     [
-     0.992,
-     1.828
+     1.672,
+     2.043
+    ],
+    [
+     2.043,
+     2.552
+    ],
+    [
+     2.577,
+     2.922
+    ],
+    [
+     2.922,
+     3.103
+    ],
+    [
+     3.103,
+     3.672
     ]
    ]
   },
-  "L72": {
-   "text": "The voice on the speaker said, \"This one's for the couple by the rail.\"",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9682,
-   "dur": 3.086,
-   "onset": 0.172,
-   "end": 2.879,
-   "chunks": [
-    [
-     0.172,
-     0.474
-    ],
-    [
-     0.474,
-     0.922
-    ],
-    [
-     0.922,
-     1.707
-    ],
-    [
-     1.707,
-     2.086
-    ],
-    [
-     2.086,
-     2.879
-    ]
-   ]
-  },
-  "L73": {
-   "text": "There were two of them.",
+  "L25b": {
+   "text": "You're the next skater.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.259,
    "onset": 0.172,
-   "end": 1.069,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     1.052
+    ]
+   ]
+  },
+  "L26": {
+   "text": "So I yelled, \"back!\" one song at a time, small enough to live through.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.793,
    "chunks": [
     [
      0.172,
@@ -1917,35 +721,331 @@
     ],
     [
      0.362,
-     1.069
+     0.966
+    ],
+    [
+     1.069,
+     1.439
+    ],
+    [
+     1.439,
+     1.707
+    ],
+    [
+     1.741,
+     2.103
+    ],
+    [
+     2.103,
+     2.793
     ]
    ]
   },
-  "L74": {
-   "text": "And for once, nobody waited at the rail.",
+  "L27": {
+   "text": "The wipeout. Gus went down with me, laughing.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.931,
+   "dur": 2.086,
    "onset": 0.155,
-   "end": 1.741,
+   "end": 1.897,
    "chunks": [
     [
      0.155,
-     0.603
+     0.586
     ],
     [
      0.638,
+     1.094
+    ],
+    [
+     1.094,
+     1.897
+    ]
+   ]
+  },
+  "L28": {
+   "text": "one knee came straight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.138
+    ]
+   ]
+  },
+  "L29": {
+   "text": "The question. She hates it too. The other knee.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.586,
+     0.836
+    ],
+    [
+     0.836,
+     1.121
+    ],
+    [
+     1.19,
+     1.914
+    ]
+   ]
+  },
+  "L30": {
+   "text": "The couples skate. Gus skated it with me. badly.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.927,
+   "dur": 2.603,
+   "onset": 0.19,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.19,
+     0.828
+    ],
+    [
+     0.905,
+     1.422
+    ],
+    [
+     1.422,
+     1.672
+    ],
+    [
+     1.733,
+     2.379
+    ]
+   ]
+  },
+  "L31": {
+   "text": "One arm came straight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.207
+    ]
+   ]
+  },
+  "L31b": {
+   "text": "Then Lenny played back the speech.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     0.888
+    ],
+    [
+     0.888,
+     1.483
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Gus said I always go down first, so nobody else feels dumb.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.948,
+   "onset": 0.172,
+   "end": 2.759,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
      0.879
     ],
     [
      0.879,
-     1.164
+     1.397
     ],
     [
-     1.164,
-     1.741
+     1.483,
+     2.0
+    ],
+    [
+     2.0,
+     2.759
+    ]
+   ]
+  },
+  "L33": {
+   "text": "The last elbow opened.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.5,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.31
+    ]
+   ]
+  },
+  "L34": {
+   "text": "It stood straight, a head taller than everyone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.155,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.81,
+     1.267
+    ],
+    [
+     1.267,
+     1.966
+    ]
+   ]
+  },
+  "L35": {
+   "text": "The light moved on, and the rail was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.81
+    ],
+    [
+     0.862,
+     1.207
+    ],
+    [
+     1.207,
+     1.914
+    ]
+   ]
+  },
+  "L36": {
+   "text": "Just now, a guy asked for a skip, and at the far rail, something folded once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.379,
+   "onset": 0.172,
+   "end": 3.19,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.457,
+     0.716
+    ],
+    [
+     0.716,
+     0.992
+    ],
+    [
+     0.992,
+     1.397
+    ],
+    [
+     1.466,
+     1.664
+    ],
+    [
+     1.664,
+     2.086
+    ],
+    [
+     2.121,
+     3.19
+    ]
+   ]
+  },
+  "L38": {
+   "text": "So I told him,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     1.0
     ]
    ]
   }

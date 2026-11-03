@@ -1,21 +1,24 @@
-"""ep26 "last-skate": the set. An old roller rink on its last night.
+"""ep26 "last-skate" / "Skip Ahead": the set. A bright roller rink on a Saturday afternoon (the old rink, re-lit).
 
 Metres, z up, a character with yaw 0 faces -y (yaw 90 faces +x). The hall runs x -8 .. 8, y -9 .. 6.4, ceiling 5.2.
   - the maple floor is x +-7, y +-4.4. A waist-high cherry rail rings it on y = +-4.15 and x = +-7.15, cream posts
-    every 1.2 m from x = 0 (the south rail has a gap between the posts at x = -1.2 and 1.2).
-  - the south concourse (y -9 .. -4.4): the snack bar on the west (stools at x -5.0 and -3.8, ledge, amber lamp),
-    the hire counter on the east (x 2.4 .. 6.8, cubby wall behind it), the hire-counter door in the south wall at x 0,
-    the entrance on the west wall (y -8 .. -6).
-  - the DJ booth on the north wall (Lenny at 0, 5.5, floor of the booth z 1.7).
-  - Nan waits at the south rail at x 3.0; the Skater stands at the rail at x 1.65 or in the middle, or far rail.
+    every 1.2 m from x = 0 (the south rail has a gap between the posts at x -1.2 and 1.2).
+  - the south concourse (y -9 .. -4.4): the snack bar on the west (stools at x -5.0 and -3.8, ledge, amber lamp, the
+    clock with hands only on the wall above), the hire counter on the east (x 2.4 .. 6.8, cubby wall behind it).
+  - the DJ booth on the north wall (Lenny at -0.35, 5.25, floor of the booth z 1.74): the cherry skip button at
+    x -0.9 and the cream back button at x 0.2 on the ledge, and above them the song lights, twelve round bulbs.
+  - I lean on the south rail at x 3.0; the Skater stands at the rail at x 3.8 or 4.3, in the middle, or far rail.
 
 Cues set.py reads (all go through `tl["cues"]`, resolved to "t"):
   dim      {"level", "dur"}                 the room's lights, a slow ramp from this cue's time
   spot     {"to": [x, y], "gain", "size", "dur"}   the spotlight: where, how bright, the cone (deg), a slow ramp
-  skater   {"pos", "yaw", "pose", "head": [yaw, pitch] relative | "look": [x, y], "hidden", "dur"}
+  skater   {"pos", "yaw", "pose": rest|reach|straight, "fold": [left knee, right knee, left elbow, right elbow],
+            "head": [yaw, pitch] relative | "look": [x, y], "hidden", "reach_side"}
   skates   {"who", "on"}                    roller skates on a character
-  door     {"open", "dur"}                  the hire-counter door
-  steam    {"on"}                           the chips' steam
+  song     {"i", "state": off|cream|gold|cherry, "dur"}   one of the twelve song lights (the rule meter)
+  clock    {"min", "dur"}                   the snack-bar clock, minutes since 3:00
+  press    {"btn": skip|back}               a button dips for a moment
+  ribbon   {"group": couples|gus, "on"}     the cherry ribbon hoops between wrists
 Acting keys read here (acting.py ignores them): "sit": true, "skate": true, "wobble": degrees.
 """
 
@@ -40,17 +43,33 @@ RAIL_Y = (-4.15, 4.15)
 POSTS = 1.2
 SEAT_Z = 0.7
 STOOL_Y, LEDGE_Y, LEDGE_Z = -6.7, -5.98, 1.12
-STOOLS = {"me": -5.0, "pop": -3.8}
+STOOLS = {"me": -5.0, "gus": -3.8}
 
-# ---- the Skater's body (metres)
-LEG = (0.46, 0.46, 0.46)
-UPPER, FORE, FORE2 = 0.42, 0.40, 0.34
+# ---- the Skater's body (metres). Each limb has a second joint that is open (straight) or folded (bent twice).
+LEGL = 0.26
+LEG = (LEGL, LEGL, LEGL)
+UPPER, FORE, FORE2 = 0.34, 0.32, 0.28
 BOOT_H = 0.28
 TORSO = (0.64, 0.34, 0.72)
-POSES = {   # absolute angles in degrees: dir = (0, sin a, -cos a), front is -y
-    "rest": {"leg": (-55, 62, -58), "fold": (42, -42, 42)},      # both arms zigzag flat against the chest, elbows showing
-    "reach": {"leg": (-55, 62, -58), "fold": (42, -42, 42), "reach": (-100, -10, -100)},
-}
+SK_SCALE = 0.85
+KNEE_DZ = {0: 3 * LEGL, 1: 0.45, 2: 0.08}    # the hip's height above the boots by how many knees are folded
+FOLD_ARM = (42, -42, 42)                       # a folded arm: a zigzag flat against the chest, elbows showing
+REACH_ARM = (-100, -10, -100)                  # a held-out arm: forward, back, forward (two bends)
+
+
+def _leg_zigzag(dz):
+    """Angles (-a, 1.8a, -a), in degrees, of a folded leg whose vertical extent is dz."""
+    f = lambda a: LEGL * (2 * math.cos(math.radians(a)) + math.cos(math.radians(1.8 * a)))
+    lo, hi = 0.0, 67.0
+    for _ in range(40):
+        mid = (lo + hi) / 2
+        if f(mid) > dz:
+            lo = mid
+        else:
+            hi = mid
+    a = (lo + hi) / 2
+    return (-a, 1.8 * a, -a)
+
 
 
 # ------------------------------------------------------------------------------------------ small helpers
@@ -199,9 +218,7 @@ def build_hall(kit, ctx):
     wbox(kit, "w west lintel", -8.2, -8.0, -8.0, -6.0, 2.3, H, stripe)
     wbox(kit, "w east", 8.0, 8.2, y0, y1 + 0.1, 0, H, stripe)
     wbox(kit, "w north", -8.2, 8.2, y1, y1 + 0.2, 0, H, stripe)
-    wbox(kit, "w south a", -8.2, -0.6, -9.3, -9.1, 0, H, stripe)
-    wbox(kit, "w south b", 0.6, 8.2, -9.3, -9.1, 0, H, stripe)
-    wbox(kit, "w south lintel", -0.6, 0.6, -9.3, -9.1, 2.1, H, stripe)
+    wbox(kit, "w south", -8.2, 8.2, -9.3, -9.1, 0, H, stripe)
     # the exterior: facade stripes, ground, a car park, a lamp
     wbox(kit, "facade a", -9.0, -8.2, -12.0, -8.0, 0, 5.0, stripe2)
     wbox(kit, "facade b", -9.0, -8.2, -6.0, 8.0, 0, 5.0, stripe2)
@@ -218,8 +235,8 @@ def build_hall(kit, ctx):
     for k, py in enumerate((-13.5, -2.0, 7.0)):
         kit.cyl(f"pole{k}", 0.08, 5.5, (-14.0, py, 2.75), kit.metal("#4a4d52"))
         kit.sphere(f"lampg{k}", 0.22, (-14.0, py, 5.5), kit.emit("#ffc890", 6.0))
-    kit.light("lot", "POINT", (-14.0, -2.0, 5.3), 900, "#ffc58a", size=0.3)
-    kit.light("lot2", "POINT", (-14.0, -13.5, 5.3), 900, "#ffc58a", size=0.3)
+    kit.light("lot", "POINT", (-14.0, -2.0, 5.3), 60, "#ffc58a", size=0.3)
+    kit.light("lot2", "POINT", (-14.0, -13.5, 5.3), 60, "#ffc58a", size=0.3)
     # ceiling and its beams (hidden in the overhead shots)
     ctx["ceiling"] = [kit.box("ceiling", (16.4, 15.8, 0.2), (0, -1.3, CEIL + 0.1), kit.plastic("#3a2a2c", 0.9))]
     for i, bx in enumerate(range(-6, 7, 3)):
@@ -299,24 +316,33 @@ def build_snack(kit, ctx):
         kit.cyl(f"stoolbase{i}", 0.18, 0.03, (sx, STOOL_Y, 0.015), chrome, n=18)
         kit.cyl(f"stoolseat{i}", 0.2, 0.09, (sx, STOOL_Y, SEAT_Z - 0.045), cherry, n=22)
     # the amber lamp over Pop's stool
-    kit.cyl("lampcord", 0.01, 1.0, (STOOLS["pop"], STOOL_Y, 2.85), kit.metal("#222222"))
-    kit.cyl("lampshade", 0.05, 0.22, (STOOLS["pop"], STOOL_Y, 2.25), kit.emit("#ffb050", 5.0), n=18, r2=0.24)
-    kit.sphere("lampbulb", 0.07, (STOOLS["pop"], STOOL_Y, 2.12), kit.emit("#ffd9a0", 14.0))
-    # the chips: a tub on the ledge, between the stools
-    tub = kit.cyl("tub", 0.1, 0.22, (-4.4, LEDGE_Y, LEDGE_Z + 0.14), cream, n=20, r2=0.125)
-    kit.cyl("tubband", 0.112, 0.06, (-4.4, LEDGE_Y, LEDGE_Z + 0.14), cherry, n=20, r2=0.118)
+    kit.cyl("lampcord", 0.01, 1.0, (STOOLS["gus"], STOOL_Y, 2.85), kit.metal("#222222"))
+    kit.cyl("lampshade", 0.05, 0.22, (STOOLS["gus"], STOOL_Y, 2.25), kit.emit("#ffb050", 5.0), n=18, r2=0.24)
+    kit.sphere("lampbulb", 0.07, (STOOLS["gus"], STOOL_Y, 2.12), kit.emit("#ffd9a0", 14.0))
+    # a paper boat of gold fries on the ledge, no steam, one fry drooping
+    gold = kit.plastic("#e8b43c", 0.6)
+    boat_x = -4.7
+    kit.box("boat", (0.26, 0.11, 0.07), (boat_x, LEDGE_Y, LEDGE_Z + 0.065), cream, bevel=0.01)
+    kit.box("boat band", (0.27, 0.115, 0.02), (boat_x, LEDGE_Y, LEDGE_Z + 0.06), cherry)
     for i in range(14):
-        a = i * 2.4
-        kit.box(f"chip{i}", (0.03, 0.03, 0.09), (-4.4 + 0.05 * math.cos(a) * (0.4 + (i % 4) * 0.2), LEDGE_Y + 0.05 * math.sin(a) * (0.4 + (i % 3) * 0.3), LEDGE_Z + 0.27 + (i % 3) * 0.02),
-                kit.plastic("#e8b43c", 0.6), rot=(0.3 * (i % 3), 0.5 * (i % 4), a))
-    ctx["steam"] = []
-    for i in range(3):
-        m, mix = ghost(f"steam{i}", 0.0)
-        s = kit.sphere(f"steam{i}", 0.045, (-4.4 + 0.02 * (i - 1), LEDGE_Y, LEDGE_Z + 0.35), m, seg=20)
-        s.scale = (1.0, 1.0, 2.6)
-        ctx["steam"].append((s, mix, i))
+        ang = i * 2.4
+        kit.box(f"fry{i}", (0.022, 0.022, 0.11 - (i % 3) * 0.01),
+                (boat_x + 0.085 * math.cos(ang) * (0.3 + (i % 4) * 0.22), LEDGE_Y + 0.03 * math.sin(ang),
+                 LEDGE_Z + 0.135 + (i % 3) * 0.012), gold, rot=(0.2 * math.sin(ang), 0.25 * math.cos(ang * 1.7), ang))
+    kit.box("fry droop", (0.022, 0.022, 0.12), (boat_x + 0.15, LEDGE_Y + 0.02, LEDGE_Z + 0.12), gold, rot=(0.0, 1.15, 0.3))
+    # the clock: hands only, no numerals, no ticks. Face and hands look north, into the rink.
+    clock_x, clock_z = -4.3, 3.3
+    kit.cyl("clock rim", 0.57, 0.08, (clock_x, -9.05, clock_z), cherry, rot=(math.pi / 2, 0, 0), n=40)
+    kit.cyl("clock face", 0.5, 0.06, (clock_x, -9.0, clock_z), cream, rot=(math.pi / 2, 0, 0), n=40)
+    dark_h = kit.plastic("#1f1618", 0.5)
+    hub_m = kit.empty("clock minute", (clock_x, -8.93, clock_z))
+    kit.box("clock minute hand", (0.05, 0.02, 0.42), (0, 0, 0.17), dark_h, hub_m)
+    hub_h = kit.empty("clock hour", (clock_x, -8.91, clock_z))
+    kit.box("clock hour hand", (0.07, 0.02, 0.28), (0, 0, 0.1), dark_h, hub_h)
+    kit.cyl("clock cap", 0.05, 0.03, (clock_x, -8.89, clock_z), cherry, rot=(math.pi / 2, 0, 0), n=16)
+    ctx["clock"] = {"min": hub_m, "hour": hub_h}
     # lights
-    kit.light("amber", "POINT", (STOOLS["pop"], STOOL_Y, 2.0), 170, "#ffbf70", size=0.1)
+    kit.light("amber", "POINT", (STOOLS["gus"], STOOL_Y, 2.0), 170, "#ffbf70", size=0.1)
 
 
 def build_hire(kit, ctx):
@@ -369,35 +395,56 @@ def build_hire(kit, ctx):
     kit.box("tube", (2.6, 0.06, 0.06), (4.6, -8.8, 3.55), kit.emit("#ff7080", 3.0))
     kit.light("tube", "AREA", (4.6, -8.3, 3.4), 90, "#ff6a78", size=1.5)
     kit.light("hirefill", "AREA", (4.6, -6.5, 3.3), 300, "#ffd9a8", size=1.8)
-    # the door by the counter, a closet of warm light behind it
-    dm = kit.plastic("#99444c", 0.5)
-    kit.box("closet", (3.0, 1.6, 2.6), (0, -10.1, 1.3), kit.plastic("#d8c7a4", 0.9))
-    kit.box("closet floor", (3.0, 1.6, 0.05), (0, -10.1, 0.0), kit.planks("#a97b44", "#8f6535", 1.0, "X"))
-    kit.box("closet bulb", (0.3, 0.3, 0.06), (0, -10.1, 2.58), kit.emit("#ffe0b0", 3.5))
-    kit.light("closet", "POINT", (0, -9.9, 2.2), 110, "#ffdba8", size=0.2)
-    hinge = kit.empty("doorhinge", (-0.58, -9.12, 0))
-    kit.box("door", (1.16, 0.05, 2.08), (0.58, 0, 1.04), dm, hinge, bevel=0.01)
-    ctx["door"] = hinge
+
+
+BULB_X = [(i - 5.5) * 0.34 for i in range(12)]
+BULB_STATE = {   # colour, emission strength
+    "off": ("#3a2a2e", 0.15), "cream": ("#f2e6c8", 0.9), "gold": ("#ffb42e", 1.3), "cherry": ("#ff2a4c", 1.2),
+}
+BTN_X = {"skip": -0.9, "back": 0.2}
+BTN_Y, LEDGE_TOP = 4.64, 2.705
 
 
 def build_booth(kit, ctx):
     cream = kit.plastic("#e8dcc2", 0.5)
+    cherry = kit.plastic("#a63f48", 0.4)
     stripe = wstripes(kit, "wall stripes", "#a3434b", "#e3d6bb", 1.0)
     dark = kit.plastic("#1b1618", 0.4)
     kit.box("booth deck", (4.4, 2.0, 1.7), (0, 5.4, 0.85), stripe)
     kit.box("booth floor", (4.2, 1.8, 0.04), (0, 5.4, 1.72), kit.planks("#8f6535", "#7a552b", 1.0, "X"))
     kit.box("booth front", (4.4, 0.12, 0.9), (0, 4.5, 2.2), cream, bevel=0.02)
-    kit.box("booth ledge", (4.6, 0.4, 0.07), (0, 4.58, 2.67), kit.plastic("#a63f48", 0.4))
+    kit.box("booth ledge", (4.6, 0.4, 0.07), (0, 4.58, 2.67), cherry)
     for sx in (-1.0, 1.0):
-        kit.box(f"deck{sx}", (0.8, 0.34, 0.07), (sx, 4.58, 2.74), dark)
-        kit.cyl(f"platter{sx}", 0.14, 0.02, (sx, 4.58, 2.78), kit.plastic("#2a2a30", 0.3))
-    kit.box("booth roof", (4.8, 2.2, 0.12), (0, 5.4, 4.0), kit.plastic("#3a2a2c", 0.8))
+        kit.box(f"deck{sx}", (0.8, 0.34, 0.07), (sx * 1.5, 4.58, 2.74), dark)
+        kit.cyl(f"platter{sx}", 0.14, 0.02, (sx * 1.5, 4.58, 2.78), kit.plastic("#2a2a30", 0.3))
+    kit.box("booth roof", (4.8, 2.2, 0.12), (0, 5.4, 4.4), kit.plastic("#3a2a2c", 0.8))
     for sx in (-2.3, 2.3):
-        kit.box(f"boothpost{sx}", (0.1, 0.1, 2.3), (sx, 4.5, 2.85), cream)
-    kit.cyl("micpole", 0.012, 0.5, (0.25, 4.85, 2.95), kit.metal("#333333"))
-    kit.sphere("micball", 0.045, (0.25, 4.85, 3.22), dark)
+        kit.box(f"boothpost{sx}", (0.1, 0.1, 2.7), (sx, 4.5, 3.05), cream)
+    kit.cyl("micpole", 0.012, 0.5, (1.05, 4.9, 2.95), kit.metal("#333333"))
+    kit.sphere("micball", 0.045, (1.05, 4.9, 3.22), dark)
     kit.sphere("boothbulb", 0.08, (0.5, 5.0, 3.55), kit.emit("#ffd9a0", 14.0))
     kit.light("booth", "POINT", (0.5, 5.0, 3.4), 160, "#ffbf70", size=0.15)
+    # the song lights: a cream board over the booth with twelve round bulbs, no text. The rule meter.
+    kit.box("song board", (4.2, 0.1, 0.42), (0, 4.52, 3.85), cream, bevel=0.02)
+    kit.box("song trim top", (4.3, 0.12, 0.05), (0, 4.5, 4.1), cherry)
+    kit.box("song trim bottom", (4.3, 0.12, 0.05), (0, 4.5, 3.6), cherry)
+    ctx["bulbs"] = []
+    for i, x in enumerate(BULB_X):
+        col, st = BULB_STATE["off"]
+        m = kit.emit(col, st, name=f"songbulb{i}")
+        b = kit.sphere(f"songbulb{i}", 0.11, (x, 4.44, 3.85), m, seg=18)
+        b.scale = (1.0, 0.55, 1.0)
+        node = next(n for n in m.node_tree.nodes if n.type == "EMISSION")
+        ctx["bulbs"].append(node)
+    # the two buttons on the ledge, side by side: cherry skip (a forward glyph of our own), cream back (the same reversed)
+    ctx["btn"] = {}
+    for name, bc, gc, flip in (("skip", kit.plastic("#c2283a", 0.35), kit.plastic("#f3e8d0", 0.4), 0.0),
+                               ("back", kit.plastic("#efe3c8", 0.35), kit.plastic("#b0293b", 0.4), math.pi)):
+        e = kit.empty(f"btn {name}", (BTN_X[name], BTN_Y, LEDGE_TOP))
+        kit.cyl(f"btn {name} cap", 0.13, 0.08, (0, 0, 0.04), bc, e, n=28)
+        for dx in (-0.045, 0.045):
+            kit.cyl(f"btn {name} glyph{dx}", 0.05, 0.02, (dx * (1 if not flip else -1), 0, 0.095), gc, e, rot=(0, 0, flip), n=3)
+        ctx["btn"][name] = e
 
 
 def build_lights(kit, ctx):
@@ -405,8 +452,8 @@ def build_lights(kit, ctx):
         kit.light(f"house{i}", "AREA", (hx, 0.4, 4.9), 720, "#ffd7a3", rot=(0, 0, 0), size=3.2)
     for i, cx in enumerate((-3.0, 3.5)):
         kit.light(f"conc{i}", "AREA", (cx, -6.6, 4.8), 520, "#ffd7a3", size=2.6)
-    kit.aim(kit.light("flood", "SPOT", (-17.0, -3.0, 4.6), 2600, "#9fd3da", size=0.6, spot=75, blend=0.8), (-8.4, -6.0, 1.4))
-    kit.light("dusk", "SUN", (0, 0, 10), 2.2, "#6fb0b8", rot=(math.radians(60), 0, math.radians(-70)))
+    kit.aim(kit.light("flood", "SPOT", (-17.0, -3.0, 4.6), 2600, "#fff1d8", size=0.6, spot=75, blend=0.8), (-8.4, -6.0, 1.4))
+    kit.light("dusk", "SUN", (0, 0, 10), 2.6, "#fff4e2", rot=(math.radians(60), 0, math.radians(-70)))
     kit.light("spot", "SPOT", (0, 0, 4.7), 2300, "#fff0dc", rot=(0, 0, 0), size=0.4, spot=40, blend=1.0)
     for n in ("house0", "house1", "house2", "conc0", "conc1"):
         pass
@@ -440,34 +487,13 @@ def skater_face(path: Path):
     return im
 
 
-def build_car(kit, ctx):
-    """Our car in the car park (L04): a high bench, the sides cut down to the belt line, no glass, so we see us inside."""
-    cx, cy = -13.0, -4.4
-    body = kit.plastic("#2f5d6e", 0.35)
-    dark = kit.plastic("#1c1d20", 0.7)
-    kit.box("ourcar body", (4.3, 1.9, 0.62), (cx, cy, 0.58), body, bevel=0.1)
-    kit.box("ourcar hood", (1.1, 1.8, 0.1), (cx + 1.6, cy, 0.95), body, bevel=0.05)
-    kit.box("ourcar boot", (0.9, 1.8, 0.1), (cx - 1.7, cy, 0.95), body, bevel=0.05)
-    for i, (dx, dy) in enumerate(((-1.0, -0.9), (-1.0, 0.9), (1.0, -0.9), (1.0, 0.9))):
-        kit.box(f"ourcar pillar{i}", (0.07, 0.07, 1.0), (cx + dx, cy + dy, 1.45), body)
-    kit.box("ourcar roof", (2.3, 1.95, 0.08), (cx, cy, 1.98), body, bevel=0.03)
-    seatm = kit.plastic("#7a6a58", 0.8)
-    for i, bx in enumerate((cx + 0.9, cx - 0.7)):          # the front bench (me) and the back one (Nan and Pop)
-        kit.box(f"ourcar bench{i}", (0.6, 1.6, 0.55), (bx, cy, 0.7), seatm)
-        kit.box(f"ourcar back{i}", (0.12, 1.6, 0.75), (bx - 0.36, cy, 1.15), seatm)
-    for i, (dx, dy) in enumerate(((-1.4, -0.95), (-1.4, 0.95), (1.4, -0.95), (1.4, 0.95))):
-        kit.cyl(f"ourcar wheel{i}", 0.33, 0.22, (cx + dx, cy + dy, 0.33), dark, rot=(math.pi / 2, 0, 0))
-    for sy in (-0.7, 0.7):
-        kit.box(f"ourcar lamp{sy}", (0.06, 0.3, 0.18), (cx + 2.16, cy + sy, 0.7), kit.emit("#fff0c8", 4.0))
-    kit.light("carglow", "POINT", (cx, cy, 1.7), 90, "#ffd9a0", size=0.2)
-
-
 def build_ribbons(kit, ctx):
-    """The rule marker: one cherry ribbon hoop (a hand-span ring) hanging between the near wrists of each couple (and,
-    from L67, of Pop and Nan). Our own prop, no text. The Skater and the singles never wear one."""
+    """The rule marker on the couples skate: one cherry ribbon hoop (a hand-span ring) hanging between the near wrists of
+    each pair (and, at L30, of Gus and me). Our own prop, no text. The Skater and the singles never wear one."""
     rb = kit.emit("#ff2e5a", 3.5)
     ctx["ribbons"] = []
-    for key in (("c1a", "c1b"), ("c2a", "c2b"), ("c3a", "c3b"), ("pop", "nan")):
+    for key, group in ((("c1a", "c1b"), "couples"), (("c2a", "c2b"), "couples"), (("c3a", "c3b"), "couples"),
+                       (("gus", "me"), "gus")):
         bpy.ops.mesh.primitive_torus_add(location=(0, 0, -9), major_radius=0.24, minor_radius=0.05, major_segments=28,
                                          minor_segments=8)
         ring = bpy.context.active_object
@@ -476,7 +502,7 @@ def build_ribbons(kit, ctx):
         ring.data.materials.append(rb)
         for p_ in ring.data.polygons:
             p_.use_smooth = True
-        ctx["ribbons"].append((key, ring, []))
+        ctx["ribbons"].append((key, group, ring, []))
 
 
 def build_skater(kit, ctx):
@@ -570,44 +596,61 @@ def build_skater(kit, ctx):
     allobjs = objs + list(root.children_recursive)
     link_only(kit, "skater_up", "sk_up", [o for o in allobjs if o.type == "MESH"], "only")
     link_only(kit, "skater_rim", "sk_rim", [o for o in allobjs if o.type == "MESH"], "only")
-    for n in ("conc0", "conc1", "amber", "hirefill", "closet", "tube", "spot", "house0", "house1", "house2", "dusk", "flood", "lot", "lot2"):
+    for n in ("conc0", "conc1", "amber", "hirefill", "tube", "spot", "house0", "house1", "house2", "dusk", "flood", "lot", "lot2"):
         link_only(kit, f"skater_not_{n}", n, [o for o in allobjs if o.type == "MESH"], "except")
 
 
 def pose_skater(ctx, st):
+    """fold = [left knee, right knee, left elbow, right elbow], 1 folded (bent twice), 0 open (straight). The hip's
+    height follows the knees: both open stands a head taller than the room, both folded comes up to my shoulder.
+    pose "straight" opens everything; "reach" holds the arm on reach_side out in front, bent twice."""
     sk = ctx["sk"]
-    P = POSES[st["pose"]]
     rad = math.radians
-    la = [rad(a) for a in P["leg"]]
-    dy = sum(L * math.sin(a) for L, a in zip(LEG, la))
-    dz = sum(L * math.cos(a) for L, a in zip(LEG, la))
-    sk["body"].location = (0, -dy, dz + BOOT_H)
-    for sx in (-1, 1):
+    straight = st["pose"] == "straight"
+    fold = [0, 0, 0, 0] if straight else [int(bool(v)) for v in st.get("fold", [1, 1, 1, 1])]
+    nk = fold[0] + fold[1]
+    dz = KNEE_DZ[nk]
+    zig = _leg_zigzag(dz) if nk else (0.0, 0.0, 0.0)
+    dy = sum(L * math.sin(rad(a)) for L, a in zip(LEG, zig))
+    sk["body"].location = (0, -dy if nk else 0.0, dz + BOOT_H)
+    splay = math.degrees(math.acos(min(1.0, dz / (3 * LEGL))))
+    for sx, f in ((-1, fold[0]), (1, fold[1])):
         ch = sk["legs"][sx]
-        prev = 0.0
-        for k, a in enumerate(la):
-            ch[k].rotation_euler = (a - prev, 0, 0)
-            prev = a
-    for sx in (-1, 1):
-        sk["legs"][sx][3].rotation_euler = (-la[-1], 0, 0)     # the skate stays level
-    for sx in (-1, 1):
+        if f:
+            la = [rad(a) for a in zig]
+            prev = 0.0
+            for k, a in enumerate(la):
+                ch[k].rotation_euler = (a - prev, 0, 0)
+                prev = a
+            ch[3].rotation_euler = (-la[-1], 0, 0)       # the skate stays level
+        else:                                             # open: straight, too long, splayed out to stand at the same height
+            for k in range(3):
+                ch[k].rotation_euler = (0, 0, 0)
+            ch[0].rotation_euler = (0, -sx * rad(splay), 0)
+            ch[3].rotation_euler = (0, sx * rad(splay), 0)
+    for sx, f in ((-1, fold[2]), (1, fold[3])):
         ch = sk["arms"][sx]
-        reach = "reach" in P and sx == st.get("reach_side", 1)
+        reach = st["pose"] == "reach" and sx == st.get("reach_side", -1)
         prev = 0.0
-        if reach:
-            ch[0].location = (sx * 0.41, 0, TORSO[2] - 0.08)
-            for k, a in enumerate(P["reach"]):
-                ch[k].rotation_euler = (rad(a) - prev, 0, 0)
-                prev = rad(a)
-        else:   # a zigzag in the chest's plane, pressed to the front of the stripes
-            ch[0].location = (sx * 0.38, -0.27, TORSO[2] - 0.12)
-            for k, a in enumerate(P["fold"]):
-                ch[k].rotation_euler = (0, sx * (rad(a) - prev), 0)
-                prev = rad(a)
         ch[1].location = (0, 0, -UPPER)
         ch[2].location = (0, 0, -FORE)
+        if reach:
+            ch[0].location = (sx * 0.41, 0, TORSO[2] - 0.08)
+            for k, a in enumerate(REACH_ARM):
+                ch[k].rotation_euler = (rad(a) - prev, 0, 0)
+                prev = rad(a)
+        elif f:   # a zigzag in the chest's plane, pressed to the front of the stripes
+            ch[0].location = (sx * 0.38, -0.27, TORSO[2] - 0.12)
+            for k, a in enumerate(FOLD_ARM):
+                ch[k].rotation_euler = (0, sx * (rad(a) - prev), 0)
+                prev = rad(a)
+        else:     # open: hanging straight at its side
+            ch[0].location = (sx * 0.41, 0, TORSO[2] - 0.08)
+            for k in range(3):
+                ch[k].rotation_euler = (0, 0, 0)
     sk["root"].location = (st["pos"][0], st["pos"][1], 0.0)
     sk["root"].rotation_euler = (0, 0, rad(st["yaw"]))
+    sk["root"].scale = (SK_SCALE, SK_SCALE, SK_SCALE)
     hy, hp = st["head"]
     sk["head"].rotation_euler = (rad(hp), 0, rad(hy))
     for ob in [sk["root"]] + list(sk["root"].children_recursive):
@@ -625,7 +668,6 @@ def build(kit, story, tl):
     build_snack(kit, ctx)
     build_hire(kit, ctx)
     build_booth(kit, ctx)
-    build_car(kit, ctx)
     build_ribbons(kit, ctx)
     build_skater(kit, ctx)
     ctx["sk_state"] = None
@@ -634,16 +676,45 @@ def build(kit, story, tl):
 
 SPOT0 = {"to": [3.0, -3.9], "gain": 0.0, "size": 34.0}
 DIM0 = {"level": 1.0}
+# the song lights at the start of the film: 0..4 played, 5 cherry (the loop's guy, it cools), 6 playing, the rest to come
+BULB0 = ["cream"] * 5 + ["cherry", "gold"] + ["off"] * 5
+
+
+def _hex(h):
+    h = h.lstrip("#")
+    return [int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4)]
+
+
+def _lin(c):
+    return [(v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4) for v in c]
+
+
+def _bulb_look(tl, i, t):
+    """(rgb, strength) of song light i at time t: a ramp from its last state to the next, never a pop."""
+    st_from = BULB0[i]
+    st_to = BULB0[i]
+    t0, dur = -1e9, 1e-6
+    for cue in sorted(_cues(tl, "song"), key=lambda c: c["t"]):
+        if cue["i"] != i or cue["t"] > t + 1e-9:
+            continue
+        st_from = st_to          # a new cue starts from the state the last one was heading for
+        st_to = cue["state"]
+        t0, dur = cue["t"], max(float(cue.get("dur", 0.4)), 1e-6)
+    u = _ss((t - t0) / dur)
+    (c0, s0), (c1, s1) = BULB_STATE[st_from], BULB_STATE[st_to]
+    a, b = _lin(_hex(c0)), _lin(_hex(c1))
+    return [x + (y - x) * u for x, y in zip(a, b)], s0 + (s1 - s0) * u
 
 
 def _init_cast(kit, story, tl, ctx):
     ctx["init"] = True
     ctx["skates"] = {}
-    boot_c = {"nan": "#f4f1ea", "pop": "#6e4a2c"}
+    boot_c = {"coworker": "#f4f1ea", "me": "#f1efe9", "gus": "#f1efe9"}
     for who, spec in story["cast"].items():
         sc = rig.S * spec.get("height", 1.0)
-        wid = spec.get("width", 1.0)
         objs = []
+        if who == "lenny":
+            continue
         for sx in (-1, 1):
             leg = bpy.data.objects.get(f"{who}.leg{sx}")
             if leg is None:
@@ -655,35 +726,43 @@ def _init_cast(kit, story, tl, ctx):
             for wy in (-0.7, -0.25, 0.2, 0.55):
                 objs.append(kit.cyl(f"{who}.skwh{sx}{wy}", 0.17, 0.16, (0, wy - 0.1, -2.13), wh, leg, rot=(0, math.pi / 2, 0), n=12))
         ctx["skates"][who] = (objs, 0.3 * sc)
-    # Pop: bald with a white fringe, shorts above the knee and thick white tape on both knees, a plain watch
-    if "pop" in story["cast"]:
-        sk = story["cast"]["pop"]["skin"]
-        skin = kit.plastic(sk, 0.5)
-        tape = kit.plastic("#f6f3ec", 0.7)
+    R = faces.HEAD_R
+    # Gus: navy shorts above the knee (bare shins), a gold paper crown with no text
+    if "gus" in story["cast"]:
+        skin = kit.plastic(story["cast"]["gus"]["skin"], 0.5)
         for sx in (-1, 1):
-            leg = bpy.data.objects[f"pop.leg{sx}"]
-            kit.box(f"pop.shin{sx}", (0.995, 1.015, 1.1), (0, 0, -1.18), skin, leg, bevel=0.08)
-            for k, zz in enumerate((-0.82, -1.02, -1.22)):
-                kit.box(f"pop.tape{sx}{k}", (1.07, 1.09, 0.2), (0, 0, zz), tape, leg, bevel=0.05)
-        hg = bpy.data.objects["pop.headg"]
-        white = kit.plastic("#ecebe8", 0.8)
-        R = faces.HEAD_R
-        kit.box("pop.fb", (2 * R + 0.02, 0.3, 0.46), (0, R - 0.06, 0.02), white, hg, bevel=0.1)
-        for sx in (-1, 1):
-            kit.box(f"pop.fs{sx}", (0.2, 0.8, 0.4), (sx * (R - 0.02), 0.22, 0.02), white, hg, bevel=0.08)
-        arm = bpy.data.objects["pop.arm-1"]
-        kit.box("pop.band", (1.03, 1.03, 0.26), (0, 0, -1.55), kit.plastic("#3a2a1c", 0.6), arm, bevel=0.04)
-        kit.cyl("pop.wface", 0.27, 0.08, (0, -0.53, -1.55), kit.plastic("#f1ead8", 0.4), arm, rot=(math.pi / 2, 0, 0), n=20)
-        kit.box("pop.wh1", (0.03, 0.02, 0.2), (0, -0.585, -1.5), kit.plastic("#17120f", 0.5), arm)
-        kit.box("pop.wh2", (0.16, 0.02, 0.03), (0.07, -0.585, -1.55), kit.plastic("#17120f", 0.5), arm)
+            leg = bpy.data.objects[f"gus.leg{sx}"]
+            kit.box(f"gus.shin{sx}", (0.995, 1.015, 1.1), (0, 0, -1.18), skin, leg, bevel=0.08)
+        hg = bpy.data.objects["gus.headg"]
+        gold = kit.plastic("#e3b23c", 0.35)
+        top = faces.HEAD_H / 2
+        kit.cyl("gus.crown base", R + 0.07, 0.24, (0, 0, top + 0.1), gold, hg, n=32)
+        for k in range(6):
+            a = k * math.pi / 3
+            kit.box(f"gus.crown spike{k}", (0.2, 0.2, 0.34), ((R - 0.02) * math.cos(a), (R - 0.02) * math.sin(a), top + 0.36), gold, hg,
+                    rot=(0, 0, a + math.pi / 4), bevel=0.02)
+    # the lady from work: a cup of soda in her hand
+    if "coworker" in story["cast"]:
+        arm = bpy.data.objects["coworker.arm-1"]
+        kit.cyl("cw.cup", 0.3, 0.75, (0, -0.45, -1.85), kit.plastic("#f3ead6", 0.4), arm, n=20, r2=0.36)
+        kit.cyl("cw.cupband", 0.34, 0.2, (0, -0.45, -1.8), kit.plastic("#a3232b", 0.45), arm, n=20, r2=0.35)
+        kit.cyl("cw.straw", 0.04, 0.5, (0.1, -0.45, -1.2), kit.plastic("#2a8d88", 0.4), arm, n=8)
+    # Lenny: the headphones round his neck, not on his ears
+    ch = rig.CHARS.get("lenny")
+    if ch is not None:
+        for ob in ch.hp["neck"]:
+            ob.hide_render = False
+        for ob in ch.hp["ears"]:
+            ob.hide_render = True
     ctx["linkdone"] = True
 
 
 def _skater_state(tl, t):
     cs = [c for c in _cues(tl, "skater") if c["t"] <= t + 1e-9]
-    st = {"pos": [0.0, 0.0], "yaw": 0.0, "pose": "rest", "head": [0.0, 0.0], "hidden": True, "reach_side": 1}
+    st = {"pos": [0.0, 0.0], "yaw": 0.0, "pose": "rest", "head": [0.0, 0.0], "hidden": True, "reach_side": -1,
+          "fold": [1, 1, 1, 1]}
     for c in cs:
-        for k in ("pos", "yaw", "pose", "hidden", "reach_side"):
+        for k in ("pos", "yaw", "pose", "hidden", "reach_side", "fold"):
             if k in c:
                 st[k] = c[k]
         if "head" in c:
@@ -721,15 +800,28 @@ def animate(kit, story, tl, t, ctx):
     kit.aim(s["obj"], (tx, ty, 0.0))
     s["light"].spot_size = math.radians(sp["size"])
     over["spot"] = sp["gain"] * expo
+    # ---- the song lights, the rule meter: cream played, gold now, cherry skipped
+    for i, node in enumerate(ctx["bulbs"]):
+        rgb, strength = _bulb_look(tl, i, t)
+        node.inputs["Color"].default_value = (rgb[0], rgb[1], rgb[2], 1.0)
+        node.inputs["Strength"].default_value = strength
+    # ---- the buttons dip when pressed
+    for name, e in ctx["btn"].items():
+        dip = 0.0
+        for c in _cues(tl, "press"):
+            if c["btn"] == name and 0 <= t - c["t"] < 0.3:
+                dip = 0.03 * math.sin(math.pi * (t - c["t"]) / 0.3)
+        e.location = (BTN_X[name], BTN_Y, LEDGE_TOP - dip)
+    # ---- the clock: the minute hand jumps on each skip (a quick ease), the hour hand follows
+    mins = _ramp(_cues(tl, "clock"), t, {"min": 10.0}, ["min"])["min"]
+    ctx["clock"]["min"].rotation_euler = (0, -math.radians((mins % 60) * 6.0), 0)
+    ctx["clock"]["hour"].rotation_euler = (0, -math.radians(((3 * 60 + mins) / 60.0 % 12) * 30.0), 0)
     # ---- the fans
     for i, hub in enumerate(ctx["fans"]):
         hub.rotation_euler = (0, 0, t * 1.1 + i)
     overhead = shot in set(story.get("overhead_shots", []))
     for o in ctx["ceiling"]:
         o.hide_render = overhead
-    # ---- the hire-counter door
-    dc = _ramp(_cues(tl, "door"), t, {"open": 0.0}, ["open"])
-    ctx["door"].rotation_euler = (0, 0, -math.radians(95) * dc["open"])
     # ---- the Skater and the lights that follow it
     st = _skater_state(tl, t)
     pose_skater(ctx, st)
@@ -739,14 +831,13 @@ def animate(kit, story, tl, t, ctx):
     side = 1.0 if px < 1.0 else -1.0
     up = kit.LIGHTS["sk_up"]["obj"]
     boost = next((sh.get("skboost", 1.0) for sh in story["shots"] if sh["id"] == shot), 1.0)
-    up.location = (px + 1.4 * side, py + 0.1, 0.2) if boost == 1.0 else (px + 1.3, py - 0.9, 0.15)   # the held-out arm: from below, camera side
+    up.location = (px + 1.4 * side, py + 0.1, 0.2) if boost == 1.0 else (px + 1.3, py - 0.9, 0.15)
     over["sk_up"] = (0.3 + 0.7 * near) * expo * boost
     rim = kit.LIGHTS["sk_rim"]["obj"]
     rim.location = (px - 0.4, py + 2.6, 2.9)
     kit.aim(rim, (px, py, 1.5))
     over["sk_rim"] = (0.35 + 0.65 * near) * expo * boost
     # ---- the cast: sitting, skating, wobbling, skates on and off
-    steam_on = _switch(_cues(tl, "steam"), "on", t, False)
     for who, keys in tl["acting"].items():
         root = bpy.data.objects.get(who)
         if root is None:
@@ -787,18 +878,10 @@ def animate(kit, story, tl, t, ctx):
             r = math.radians(amp) * (math.sin(2 * math.pi * 0.85 * t) + 0.5 * math.sin(2 * math.pi * 1.55 * t + 1.0))
             e = root.rotation_euler
             root.rotation_euler = (e[0] + 0.5 * r * math.sin(2 * math.pi * 0.85 * t + 2.0), r, e[2])
-    # ---- steam
-    for ob, mix, i in ctx["steam"]:
-        ph = ((t * 0.18 + i / 3.0) % 1.0)
-        ob.hide_render = not steam_on
-        ob.location = (-4.4 + 0.03 * math.sin(ph * 6 + i), LEDGE_Y, LEDGE_Z + 0.3 + 0.28 * ph)
-        mix.inputs[0].default_value = 0.0 if not steam_on else 0.035 * math.sin(math.pi * ph)
-    # ---- the ribbons: tied between the near wrists of each couple while both are on screen
+    # ---- the ribbons: tied between the near wrists of each pair while the group's cue is on
     bpy.context.view_layer.update()
-    for (a, b), strip, knots in ctx["ribbons"]:
-        on = a != "pop"
-        if not on:
-            on = bool(_switch(_cues(tl, "ribbon"), "on", t, False))
+    for (a, b), group, strip, knots in ctx["ribbons"]:
+        on = bool(_switch([c for c in _cues(tl, "ribbon") if c.get("group") == group], "on", t, False))
         ra, rb_ = bpy.data.objects.get(a), bpy.data.objects.get(b)
         show = on and ra is not None and rb_ is not None and not ra.hide_render and not rb_.hide_render
         best = None

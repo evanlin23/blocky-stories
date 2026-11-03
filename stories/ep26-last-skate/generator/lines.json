@@ -4,28 +4,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "At this RINK,",
-    "At this rink,"
+    "If you ask",
+    "If you ask"
    ],
    [
-    "slow songs are",
-    "slow songs are"
+    "the DJ",
+    "the DJ"
    ],
    [
-    "COUPLES ONLY.",
-    "couples only."
+    "to SKIP",
+    "to skip"
    ],
    [
-    "Everyone ELSE",
-    "Everyone else"
+    "a song,",
+    "a song,"
    ],
    [
-    "waits at",
-    "waits at"
-   ],
-   [
-    "the RAIL.",
-    "the rail."
+    "he skips YOU.",
+    "he skips you."
    ]
   ]
  },
@@ -34,24 +30,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Tonight was",
-    "Tonight was"
+    "The song",
+    "The song"
    ],
    [
-    "the rink's",
-    "the rink's"
+    "keeps PLAYING.",
+    "keeps playing."
    ],
    [
-    "LAST night.",
-    "last night."
+    "You just",
+    "You just"
    ],
    [
-    "Then it SHUTS",
-    "Then it shuts"
-   ],
-   [
-    "for GOOD.",
-    "for good."
+    "MISS it.",
+    "miss it."
    ]
   ]
  },
@@ -60,16 +52,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "I brought",
-    "I brought"
+    "My best",
+    "My best"
    ],
    [
-    "my NAN",
-    "my Nan"
+    "friend, GUS,",
+    "friend, Gus,"
    ],
    [
-    "and my POP.",
-    "and my Pop."
+    "had his",
+    "had his"
+   ],
+   [
+    "BIRTHDAY skate.",
+    "birthday skate."
+   ],
+   [
+    "I knew",
+    "I knew"
+   ],
+   [
+    "NOBODY else.",
+    "nobody else."
    ]
   ]
  },
@@ -78,32 +82,86 @@
   "who": "narrator",
   "chunks": [
    [
-    "I drove",
-    "I drove"
+    "First LAP,",
+    "First lap,"
    ],
    [
-    "them DOWN,",
-    "them down,"
+    "I went DOWN,",
+    "I went down,"
    ],
    [
-    "with the",
-    "with the"
+    "HARD.",
+    "hard."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I yelled to",
+    "I yelled to"
    ],
    [
-    "windows OPEN.",
-    "windows open."
+    "the DJ, LENNY.",
+    "the DJ, Lenny."
    ],
    [
-    "Nan held",
-    "Nan held"
+    "He asked, \"SKIP,",
+    "He asked, \"skip,"
    ],
    [
-    "Pop's ARM",
-    "Pop's arm"
+    "or BACK?\"",
+    "or back?\""
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I said, \"SKIP!\"",
+    "I said, \"skip!\""
    ],
    [
-    "the whole WAY.",
-    "the whole way."
+    "CLICK.",
+    "click."
+   ],
+   [
+    "I was at",
+    "I was at"
+   ],
+   [
+    "the snack BAR.",
+    "the snack bar."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The clock",
+    "The clock"
+   ],
+   [
+    "had jumped",
+    "had jumped"
+   ],
+   [
+    "four MINUTES.",
+    "four minutes."
+   ],
+   [
+    "My fries",
+    "My fries"
+   ],
+   [
+    "were COLD.",
+    "were cold."
    ]
   ]
  },
@@ -112,20 +170,32 @@
   "who": "narrator",
   "chunks": [
    [
-    "The big FANS",
-    "The big fans"
+    "In the next",
+    "In the next"
    ],
    [
-    "were turning,",
-    "were turning,"
+    "song's SPOTLIGHT,",
+    "song's spotlight,"
    ],
    [
-    "and the floor",
-    "and the floor"
+    "a SKATER in",
+    "a skater in"
    ],
    [
-    "SMELLED of WAX.",
-    "smelled of wax."
+    "faded STRIPES",
+    "faded stripes"
+   ],
+   [
+    "stood at the",
+    "stood at the"
+   ],
+   [
+    "far RAIL,",
+    "far rail,"
+   ],
+   [
+    "SMILING.",
+    "smiling."
    ]
   ]
  },
@@ -134,326 +204,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "CHERRY",
-    "Cherry"
+    "Its left LEG",
+    "Its left leg"
    ],
    [
-    "and CREAM STRIPES",
-    "and cream stripes"
-   ],
-   [
-    "on every WALL.",
-    "on every wall."
-   ]
-  ]
- },
- {
-  "id": "L10",
-  "who": "narrator",
-  "chunks": [
-   [
-    "At the",
-    "At the"
-   ],
-   [
-    "hire COUNTER,",
-    "hire counter,"
-   ],
-   [
-    "Nan asked",
-    "Nan asked"
-   ],
-   [
-    "for SKATES.",
-    "for skates."
-   ]
-  ]
- },
- {
-  "id": "L11",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Pop asked",
-    "Pop asked"
-   ],
-   [
-    "for NOTHING.",
-    "for nothing."
-   ]
-  ]
- },
- {
-  "id": "L12",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He sat down",
-    "He sat down"
-   ],
-   [
-    "at the SNACK",
-    "at the snack"
-   ],
-   [
-    "BAR, on a",
-    "bar, on a"
-   ],
-   [
-    "chrome STOOL.",
-    "chrome stool."
-   ]
-  ]
- },
- {
-  "id": "L13",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Both his KNEES",
-    "Both his knees"
-   ],
-   [
-    "were STRAPPED up",
-    "were strapped up"
-   ],
-   [
-    "in thick",
-    "in thick"
-   ],
-   [
-    "white TAPE.",
-    "white tape."
-   ]
-  ]
- },
- {
-  "id": "L14",
-  "who": "narrator",
-  "chunks": [
-   [
-    "He said,",
-    "He said,"
-   ],
-   [
-    "\"These knees",
-    "\"These knees"
-   ],
-   [
-    "are DONE, love.",
-    "are done, love."
-   ],
-   [
-    "You skate for",
-    "You skate for"
-   ],
-   [
-    "BOTH of us.\"",
-    "both of us.\""
-   ]
-  ]
- },
- {
-  "id": "L15",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nan just SMILED,",
-    "Nan just smiled,"
-   ],
-   [
-    "and rolled off",
-    "and rolled off"
-   ],
-   [
-    "to the RAIL.",
-    "to the rail."
-   ]
-  ]
- },
- {
-  "id": "L16",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every half HOUR,",
-    "Every half hour,"
-   ],
-   [
-    "the lights",
-    "the lights"
-   ],
-   [
-    "went DOWN",
-    "went down"
-   ],
-   [
-    "for a",
-    "for a"
-   ],
-   [
-    "SLOW song.",
-    "slow song."
-   ]
-  ]
- },
- {
-  "id": "L17",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Couples ONLY.",
-    "Couples only."
-   ]
-  ]
- },
- {
-  "id": "L18",
-  "who": "narrator",
-  "chunks": [
-   [
-    "One soft SPOTLIGHT",
-    "One soft spotlight"
-   ],
-   [
-    "crept ALONG",
-    "crept along"
-   ],
-   [
-    "the floor,",
-    "the floor,"
-   ],
-   [
-    "slow as",
-    "slow as"
-   ],
-   [
-    "a CLOCK.",
-    "a clock."
-   ]
-  ]
- },
- {
-  "id": "L19",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nan waited",
-    "Nan waited"
-   ],
-   [
-    "at the RAIL,",
-    "at the rail,"
-   ],
-   [
-    "ALONE.",
-    "alone."
-   ]
-  ]
- },
- {
-  "id": "L19b",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Fifty years AGO,",
-    "Fifty years ago,"
-   ],
-   [
-    "she met Pop",
-    "she met Pop"
-   ],
-   [
-    "at that",
-    "at that"
-   ],
-   [
-    "same RAIL.",
-    "same rail."
-   ]
-  ]
- },
- {
-  "id": "L20",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I sat beside",
-    "I sat beside"
-   ],
-   [
-    "POP, with a",
-    "Pop, with a"
-   ],
-   [
-    "tub of CHIPS.",
-    "tub of chips."
-   ]
-  ]
- },
- {
-  "id": "L21",
-  "who": "narrator",
-  "chunks": [
-   [
-    "When the light",
-    "When the light"
-   ],
-   [
-    "reached the",
-    "reached the"
-   ],
-   [
-    "FAR wall,",
-    "far wall,"
-   ],
-   [
-    "someone was",
-    "someone was"
-   ],
-   [
-    "STANDING there.",
-    "standing there."
-   ]
-  ]
- },
- {
-  "id": "L22",
-  "who": "narrator",
-  "chunks": [
-   [
-    "A SKATER,",
-    "A Skater,"
-   ],
-   [
-    "in faded CHERRY",
-    "in faded cherry"
-   ],
-   [
-    "and cream STRIPES,",
-    "and cream stripes,"
-   ],
-   [
-    "like the WALLS.",
-    "like the walls."
-   ]
-  ]
- },
- {
-  "id": "L23",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Each LEG",
-    "Each leg"
-   ],
-   [
-    "had TWO KNEES,",
-    "had two knees,"
-   ],
-   [
-    "and they FOLDED",
-    "and they folded"
+    "bent TWICE,",
+    "bent twice,"
    ],
    [
     "like a",
@@ -466,538 +222,180 @@
   ]
  },
  {
-  "id": "L24",
+  "id": "L10",
   "who": "narrator",
   "chunks": [
    [
-    "The light",
-    "The light"
+    "A lady from",
+    "A lady from"
    ],
    [
-    "moved ON.",
-    "moved on."
+    "Gus's WORK",
+    "Gus's work"
    ],
    [
-    "When it",
-    "When it"
+    "asked what",
+    "asked what"
    ],
    [
-    "came BACK,",
-    "came back,"
+    "I DO.",
+    "I do."
    ],
    [
-    "the far rail",
-    "the far rail"
-   ],
-   [
-    "was EMPTY.",
-    "was empty."
+    "\"SKIP.\"",
+    "\"skip.\""
    ]
   ]
  },
  {
-  "id": "L25",
+  "id": "L13",
   "who": "narrator",
   "chunks": [
    [
-    "Pop waved",
-    "Pop waved"
+    "Next song,",
+    "Next song,"
    ],
    [
-    "at the BOOTH",
-    "at the booth"
-   ],
-   [
-    "and said,",
-    "and said,"
-   ],
-   [
-    "\"Cheers, LENNY.\"",
-    "\"Cheers, Lenny.\""
-   ]
-  ]
- },
- {
-  "id": "L26",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Pop said",
-    "Pop said"
-   ],
-   [
-    "he hadn't",
-    "he hadn't"
-   ],
-   [
-    "been HERE",
-    "been here"
-   ],
-   [
-    "in forty YEARS.",
-    "in forty years."
-   ]
-  ]
- },
- {
-  "id": "L27",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I asked him",
-    "I asked him"
-   ],
-   [
-    "how he knew",
-    "how he knew"
-   ],
-   [
-    "the man's NAME.",
-    "the man's name."
-   ],
-   [
-    "He said,",
-    "He said,"
-   ],
-   [
-    "\"It's on",
-    "\"It's on"
-   ],
-   [
-    "his SHIRT.\"",
-    "his shirt.\""
-   ]
-  ]
- },
- {
-  "id": "L28",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Next slow SONG,",
-    "Next slow song,"
-   ],
-   [
-    "the spotlight",
-    "the spotlight"
-   ],
-   [
-    "came ROUND again.",
-    "came round again."
-   ]
-  ]
- },
- {
-  "id": "L29",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The Skater",
-    "The Skater"
+    "the Skater",
+    "the Skater"
    ],
    [
     "was in",
     "was in"
    ],
    [
-    "the MIDDLE",
-    "the middle"
+    "the MIDDLE,",
+    "the middle,"
    ],
    [
-    "of the floor.",
-    "of the floor."
+    "and BOTH legs",
+    "and both legs"
+   ],
+   [
+    "bent TWICE.",
+    "bent twice."
    ]
   ]
  },
  {
-  "id": "L30",
+  "id": "L14",
   "who": "narrator",
   "chunks": [
    [
-    "Each ARM",
-    "Each arm"
+    "Every time",
+    "Every time"
    ],
    [
-    "had TWO ELBOWS,",
-    "had two elbows,"
+    "I SKIPPED,",
+    "I skipped,"
    ],
    [
-    "folded flat",
-    "folded flat"
-   ],
-   [
-    "on its STRIPES.",
-    "on its stripes."
+    "it was CLOSER.",
+    "it was closer."
    ]
   ]
  },
  {
-  "id": "L31",
+  "id": "L15",
   "who": "narrator",
   "chunks": [
    [
-    "And its FACE",
-    "And its face"
+    "Then Lenny called",
+    "Then Lenny called"
    ],
    [
-    "was turned",
-    "was turned"
-   ],
-   [
-    "toward NAN.",
-    "toward Nan."
+    "a COUPLES skate.",
+    "a couples skate."
    ]
   ]
  },
  {
-  "id": "L32",
+  "id": "L16",
   "who": "narrator",
   "chunks": [
    [
-    "I told POP.",
-    "I told Pop."
+    "Everyone paired UP",
+    "Everyone paired up"
    ],
    [
-    "He didn't even",
-    "He didn't even"
+    "but ME.",
+    "but me."
    ],
    [
-    "LOOK UP.",
-    "look up."
+    "\"SKIP.\"",
+    "\"skip.\""
    ]
   ]
  },
  {
-  "id": "L33",
+  "id": "L17",
   "who": "narrator",
   "chunks": [
    [
-    "He just kept",
-    "He just kept"
-   ],
-   [
-    "checking his WATCH.",
-    "checking his watch."
-   ]
-  ]
- },
- {
-  "id": "L34",
-  "who": "narrator",
-  "chunks": [
-   [
-    "By the THIRD",
-    "By the third"
-   ],
-   [
-    "slow song,",
-    "slow song,"
-   ],
-   [
-    "I couldn't EAT.",
-    "I couldn't eat."
-   ]
-  ]
- },
- {
-  "id": "L35",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The spotlight",
-    "The spotlight"
-   ],
-   [
-    "crept ROUND,",
-    "crept round,"
-   ],
-   [
-    "one board",
-    "one board"
-   ],
-   [
-    "at a TIME.",
-    "at a time."
-   ]
-  ]
- },
- {
-  "id": "L36",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The Skater",
-    "The Skater"
-   ],
-   [
-    "was at",
-    "was at"
-   ],
-   [
-    "the RAIL.",
-    "the rail."
+    "Now it was",
+    "Now it was"
    ],
    [
     "ONE POST",
-    "One post"
+    "one post"
    ],
    [
-    "from Nan.",
-    "from Nan."
+    "from me.",
+    "from me."
    ]
   ]
  },
  {
-  "id": "L37",
+  "id": "L18",
   "who": "narrator",
   "chunks": [
    [
-    "Up close,",
-    "Up close,"
+    "Both legs",
+    "Both legs"
    ],
    [
-    "its STRIPES",
-    "its stripes"
+    "and one ARM",
+    "and one arm"
    ],
    [
-    "were faded",
-    "were faded"
-   ],
-   [
-    "almost to PINK.",
-    "almost to pink."
+    "bent TWICE.",
+    "bent twice."
    ]
   ]
  },
  {
-  "id": "L38",
+  "id": "L19",
   "who": "narrator",
   "chunks": [
    [
-    "Its face",
-    "Its face"
+    "Then Gus took",
+    "Then Gus took"
    ],
    [
-    "was a smooth",
-    "was a smooth"
+    "the MIC",
+    "the mic"
    ],
    [
-    "cream OVAL,",
-    "cream oval,"
+    "for a SPEECH,",
+    "for a speech,"
    ],
    [
-    "with two",
-    "with two"
+    "looking at ME.",
+    "looking at me."
    ],
    [
-    "dark EYES",
-    "dark eyes"
-   ],
-   [
-    "and a",
-    "and a"
-   ],
-   [
-    "painted SMILE.",
-    "painted smile."
-   ]
-  ]
- },
- {
-  "id": "L39",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Nan didn't TURN.",
-    "Nan didn't turn."
-   ],
-   [
-    "She was watching",
-    "She was watching"
-   ],
-   [
-    "the snack BAR.",
-    "the snack bar."
-   ]
-  ]
- },
- {
-  "id": "L40",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The light",
-    "The light"
-   ],
-   [
-    "slid OFF it,",
-    "slid off it,"
-   ],
-   [
-    "and back AGAIN.",
-    "and back again."
+    "\"SKIP!\"",
+    "\"skip!\""
    ]
   ]
  },
  {
   "id": "P01",
-  "pause": 0.8,
+  "pause": 0.7,
   "chunks": []
  },
  {
-  "id": "L41",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Now its HEAD",
-    "Now its head"
-   ],
-   [
-    "was turned",
-    "was turned"
-   ],
-   [
-    "ALL the",
-    "all the"
-   ],
-   [
-    "way ROUND,",
-    "way round,"
-   ],
-   [
-    "over its BACK.",
-    "over its back."
-   ]
-  ]
- },
- {
-  "id": "L42",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Looking",
-    "Looking"
-   ],
-   [
-    "at ME.",
-    "at me."
-   ]
-  ]
- },
- {
-  "id": "L43",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I looked",
-    "I looked"
-   ],
-   [
-    "at POP.",
-    "at Pop."
-   ],
-   [
-    "His stool",
-    "His stool"
-   ],
-   [
-    "was EMPTY.",
-    "was empty."
-   ]
-  ]
- },
- {
-  "id": "L44",
-  "who": "narrator",
-  "chunks": [
-   [
-    "His CHIPS",
-    "His chips"
-   ],
-   [
-    "were still WARM.",
-    "were still warm."
-   ]
-  ]
- },
- {
-  "id": "L45",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Then the speaker",
-    "Then the speaker"
-   ],
-   [
-    "said,",
-    "said,"
-   ],
-   [
-    "\"LAST SKATE.\"",
-    "\"Last skate.\""
-   ]
-  ]
- },
- {
-  "id": "L46",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The lights",
-    "The lights"
-   ],
-   [
-    "went down",
-    "went down"
-   ],
-   [
-    "LOWER than BEFORE.",
-    "lower than before."
-   ]
-  ]
- },
- {
-  "id": "L47",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Everyone ELSE",
-    "Everyone else"
-   ],
-   [
-    "rolled off",
-    "rolled off"
-   ],
-   [
-    "the FLOOR.",
-    "the floor."
-   ]
-  ]
- },
- {
-  "id": "L48",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The spotlight",
-    "The spotlight"
-   ],
-   [
-    "found NAN,",
-    "found Nan,"
-   ],
-   [
-    "alone at",
-    "alone at"
-   ],
-   [
-    "the RAIL.",
-    "the rail."
-   ]
-  ]
- },
- {
-  "id": "L49",
+  "id": "L20",
   "who": "narrator",
   "chunks": [
    [
@@ -1009,516 +407,433 @@
     "was right"
    ],
    [
-    "BESIDE her.",
-    "beside her."
+    "BESIDE me.",
+    "beside me."
    ]
   ]
  },
  {
-  "id": "L50",
+  "id": "L21",
   "who": "narrator",
   "chunks": [
    [
-    "Its ARM",
-    "Its arm"
+    "Folded so TIGHT",
+    "Folded so tight"
    ],
    [
-    "was held OUT,",
-    "was held out,"
+    "it came up",
+    "it came up"
    ],
    [
-    "folded TWICE,",
-    "folded twice,"
+    "to my SHOULDER.",
+    "to my shoulder."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its arm was",
+    "Its arm was"
    ],
    [
-    "like a partner",
-    "like a partner"
+    "held OUT",
+    "held out"
    ],
    [
-    "ASKING",
-    "asking"
+    "to me,",
+    "to me,"
    ],
    [
-    "for a DANCE.",
-    "for a dance."
+    "bent TWICE.",
+    "bent twice."
    ]
   ]
  },
  {
   "id": "P02",
-  "pause": 0.7,
+  "pause": 0.6,
   "chunks": []
  },
  {
-  "id": "L51",
+  "id": "L23",
   "who": "narrator",
   "chunks": [
    [
-    "Nan LOOKED",
-    "Nan looked"
+    "I COUNTED.",
+    "I counted."
    ],
    [
-    "at the hand.",
-    "at the hand."
+    "FOUR skips.",
+    "four skips."
+   ],
+   [
+    "FOUR extra bends.",
+    "four extra bends."
    ]
   ]
  },
  {
-  "id": "L52",
+  "id": "L24",
   "who": "narrator",
   "chunks": [
    [
-    "And she started",
-    "And she started"
+    "That's where skipped",
+    "That's where skipped"
    ],
    [
-    "to lift HERS.",
-    "to lift hers."
+    "time GOES.",
+    "time goes."
+   ],
+   [
+    "It folds UP",
+    "It folds up"
+   ],
+   [
+    "and comes",
+    "and comes"
+   ],
+   [
+    "AFTER you,",
+    "after you,"
+   ],
+   [
+    "one FOLD",
+    "one fold"
+   ],
+   [
+    "for every song",
+    "for every song"
+   ],
+   [
+    "you SKIPPED.",
+    "you skipped."
    ]
   ]
  },
  {
-  "id": "L53",
+  "id": "L25",
   "who": "narrator",
   "chunks": [
    [
-    "I tried",
-    "I tried"
+    "And when it",
+    "And when it"
    ],
    [
-    "to SHOUT,",
-    "to shout,"
+    "REACHES you,",
+    "reaches you,"
    ],
    [
-    "but the music",
-    "but the music"
+    "every skipped minute",
+    "every skipped minute"
    ],
    [
-    "swelled UP",
-    "swelled up"
+    "lands in the",
+    "lands in the"
    ],
    [
-    "over me.",
-    "over me."
+    "same SECOND,",
+    "same second,"
+   ],
+   [
+    "and folds",
+    "and folds"
+   ],
+   [
+    "YOU up",
+    "you up"
+   ],
+   [
+    "like IT.",
+    "like it."
    ]
   ]
  },
  {
-  "id": "L54",
+  "id": "L25b",
   "who": "narrator",
   "chunks": [
    [
-    "Then the voice",
-    "Then the voice"
+    "You're the",
+    "You're the"
    ],
    [
-    "on the SPEAKER",
-    "on the speaker"
-   ],
-   [
-    "said, \"This one's",
-    "said, \"This one's"
-   ],
-   [
-    "for the COUPLE",
-    "for the couple"
-   ],
-   [
-    "by the RAIL.\"",
-    "by the rail.\""
+    "next SKATER.",
+    "next skater."
    ]
   ]
  },
  {
-  "id": "L55",
+  "id": "L26",
   "who": "narrator",
   "chunks": [
    [
-    "The door by",
-    "The door by"
+    "So I",
+    "So I"
    ],
    [
-    "the hire COUNTER",
-    "the hire counter"
+    "yelled, \"BACK!\"",
+    "yelled, \"back!\""
    ],
    [
-    "swung OPEN.",
-    "swung open."
+    "ONE song at",
+    "one song at"
+   ],
+   [
+    "a time,",
+    "a time,"
+   ],
+   [
+    "small enough",
+    "small enough"
+   ],
+   [
+    "to LIVE through.",
+    "to live through."
    ]
   ]
  },
  {
-  "id": "L56",
+  "id": "L27",
   "who": "narrator",
   "chunks": [
    [
-    "Out rolled",
-    "Out rolled"
+    "The wipeout.",
+    "The wipeout."
    ],
    [
-    "POP.",
-    "Pop."
+    "Gus went down",
+    "Gus went down"
+   ],
+   [
+    "WITH me, LAUGHING.",
+    "with me, laughing."
    ]
   ]
  },
  {
-  "id": "L57",
+  "id": "L28",
   "who": "narrator",
   "chunks": [
    [
-    "On SKATES.",
-    "On skates."
+    "ONE knee",
+    "one knee"
+   ],
+   [
+    "came STRAIGHT.",
+    "came straight."
    ]
   ]
  },
  {
-  "id": "L58",
+  "id": "L29",
   "who": "narrator",
   "chunks": [
    [
-    "WOBBLING,",
-    "Wobbling,"
+    "The question.",
+    "The question."
    ],
    [
-    "arms OUT,",
-    "arms out,"
+    "She hates",
+    "She hates"
    ],
    [
-    "knees in their",
-    "knees in their"
+    "it TOO.",
+    "it too."
    ],
    [
-    "white TAPE.",
-    "white tape."
+    "The other KNEE.",
+    "The other knee."
    ]
   ]
  },
  {
-  "id": "L59",
+  "id": "L30",
   "who": "narrator",
   "chunks": [
    [
-    "It was",
-    "It was"
+    "The couples skate.",
+    "The couples skate."
    ],
    [
-    "THEIR song.",
-    "their song."
+    "Gus skated it",
+    "Gus skated it"
    ],
    [
-    "The one",
-    "The one"
+    "with ME.",
+    "with me."
    ],
    [
-    "they MET to.",
-    "they met to."
+    "BADLY.",
+    "badly."
    ]
   ]
  },
  {
-  "id": "L60",
+  "id": "L31",
   "who": "narrator",
   "chunks": [
    [
-    "He'd ASKED",
-    "He'd asked"
+    "One ARM",
+    "One arm"
    ],
    [
-    "for it.",
-    "for it."
+    "came STRAIGHT.",
+    "came straight."
    ]
   ]
  },
  {
-  "id": "L61",
+  "id": "L31b",
   "who": "narrator",
   "chunks": [
    [
-    "Lenny leaned out",
-    "Lenny leaned out"
+    "Then Lenny",
+    "Then Lenny"
    ],
    [
-    "of the BOOTH",
-    "of the booth"
+    "played back",
+    "played back"
    ],
    [
-    "and called,",
-    "and called,"
-   ],
-   [
-    "\"Six MONTHS",
-    "\"Six months"
-   ],
-   [
-    "of TUESDAYS,",
-    "of Tuesdays,"
-   ],
-   [
-    "mate!\"",
-    "mate!\""
+    "the SPEECH.",
+    "the speech."
    ]
   ]
  },
  {
-  "id": "L62",
+  "id": "L32",
   "who": "narrator",
   "chunks": [
    [
-    "Pop had been",
-    "Pop had been"
+    "Gus said",
+    "Gus said"
    ],
    [
-    "LEARNING",
-    "learning"
+    "I always go",
+    "I always go"
    ],
    [
-    "AGAIN.",
-    "again."
+    "down FIRST,",
+    "down first,"
    ],
    [
-    "In SECRET.",
-    "In secret."
+    "so nobody else",
+    "so nobody else"
+   ],
+   [
+    "feels DUMB.",
+    "feels dumb."
    ]
   ]
  },
  {
-  "id": "L63",
+  "id": "L33",
   "who": "narrator",
   "chunks": [
    [
-    "He rolled UP",
-    "He rolled up"
+    "The last ELBOW",
+    "The last elbow"
    ],
    [
-    "to the rail,",
-    "to the rail,"
-   ],
-   [
-    "and held out",
-    "and held out"
-   ],
-   [
-    "HIS hand.",
-    "his hand."
+    "opened.",
+    "opened."
    ]
   ]
  },
  {
-  "id": "L64",
+  "id": "L34",
   "who": "narrator",
   "chunks": [
    [
-    "The spotlight",
-    "The spotlight"
+    "It stood STRAIGHT,",
+    "It stood straight,"
    ],
    [
-    "circled THEM.",
-    "circled them."
+    "a head taller",
+    "a head taller"
+   ],
+   [
+    "than EVERYONE.",
+    "than everyone."
    ]
   ]
  },
  {
-  "id": "L65",
+  "id": "L35",
   "who": "narrator",
   "chunks": [
    [
-    "And the Skater",
-    "And the Skater"
+    "The light",
+    "The light"
    ],
    [
-    "was GONE.",
-    "was gone."
+    "moved ON,",
+    "moved on,"
+   ],
+   [
+    "and the rail",
+    "and the rail"
+   ],
+   [
+    "was EMPTY.",
+    "was empty."
    ]
   ]
  },
  {
-  "id": "L66",
+  "id": "L36",
   "who": "narrator",
   "chunks": [
    [
-    "It had been",
-    "It had been"
+    "Just now,",
+    "Just now,"
    ],
    [
-    "STANDING",
-    "standing"
+    "a guy",
+    "a guy"
    ],
    [
-    "right where",
-    "right where"
+    "asked for",
+    "asked for"
    ],
    [
-    "POP",
-    "Pop"
+    "a SKIP,",
+    "a skip,"
    ],
    [
-    "should have BEEN.",
-    "should have been."
+    "and at the",
+    "and at the"
+   ],
+   [
+    "far rail,",
+    "far rail,"
+   ],
+   [
+    "something folded ONCE.",
+    "something folded once."
    ]
   ]
  },
  {
-  "id": "L67",
+  "id": "L38",
   "who": "narrator",
   "chunks": [
    [
-    "Nan LAUGHED,",
-    "Nan laughed,"
+    "So I",
+    "So I"
    ],
    [
-    "and it sounded",
-    "and it sounded"
-   ],
-   [
-    "fifty years YOUNG.",
-    "fifty years young."
+    "told HIM,",
+    "told him,"
    ]
   ]
  },
  {
-  "id": "L68",
-  "who": "narrator",
-  "chunks": [
-   [
-    "They went round",
-    "They went round"
-   ],
-   [
-    "SO SLOWLY.",
-    "so slowly."
-   ]
-  ]
- },
- {
-  "id": "L69",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Pop WOBBLED.",
-    "Pop wobbled."
-   ],
-   [
-    "Nan held",
-    "Nan held"
-   ],
-   [
-    "him STEADY.",
-    "him steady."
-   ]
-  ]
- },
- {
-  "id": "L70",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every lap,",
-    "Every lap,"
-   ],
-   [
-    "he said",
-    "he said"
-   ],
-   [
-    "\"SORRY,\"",
-    "\"Sorry,\""
-   ],
-   [
-    "and every lap",
-    "and every lap"
-   ],
-   [
-    "she said,",
-    "she said,"
-   ],
-   [
-    "\"AGAIN.\"",
-    "\"Again.\""
-   ]
-  ]
- },
- {
-  "id": "L71",
-  "who": "narrator",
-  "chunks": [
-   [
-    "I watched",
-    "I watched"
-   ],
-   [
-    "from the",
-    "from the"
-   ],
-   [
-    "snack BAR,",
-    "snack bar,"
-   ],
-   [
-    "on Pop's STOOL.",
-    "on Pop's stool."
-   ]
-  ]
- },
- {
-  "id": "L72",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The voice",
-    "The voice"
-   ],
-   [
-    "on the SPEAKER",
-    "on the speaker"
-   ],
-   [
-    "said, \"This one's",
-    "said, \"This one's"
-   ],
-   [
-    "for the COUPLE",
-    "for the couple"
-   ],
-   [
-    "by the RAIL.\"",
-    "by the rail.\""
-   ]
-  ]
- },
- {
-  "id": "L73",
-  "who": "narrator",
-  "chunks": [
-   [
-    "There were",
-    "There were"
-   ],
-   [
-    "TWO of them.",
-    "two of them."
-   ]
-  ]
- },
- {
-  "id": "L74",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And for ONCE,",
-    "And for once,"
-   ],
-   [
-    "NOBODY",
-    "nobody"
-   ],
-   [
-    "waited at",
-    "waited at"
-   ],
-   [
-    "the RAIL.",
-    "the rail."
-   ]
-  ]
+  "id": "P03",
+  "pause": 0.25,
+  "chunks": []
  }
 ]
