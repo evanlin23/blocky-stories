@@ -105,29 +105,28 @@ def subject_A(cx, cz):
 
 
 def subject_B(cx, cz):
-    canvas(cx, cz, "#cfe3ef")
-    paint(cx, cz, 0, -0.62, 0.9, 0.52, "#7fa86a", 1)           # grass
-    gr, dk = "#aeb5c0", "#7b8390"
-    k, ox, oz = 0.85, -0.09, -0.02
+    canvas(cx, cz, "#f1e6c6")
+    paint(cx, cz, 0, -0.66, 0.9, 0.46, "#7fa86a", 1)           # grass
+    gr, dk = "#8d94a3", "#5d6475"
 
     def d(dx, dz, w, h, c, layer, rot=0.0):
-        paint(cx, cz, dx * k + ox, dz * k + oz, w * k, h * k, c, layer, rot=rot)
-    # the greyhound ALONE, side view facing right: deep chest, tucked belly, long legs, a long snout
-    d(0.0, 0.12, 0.52, 0.15, gr, 5)                            # back and flank
-    d(-0.2, 0.08, 0.2, 0.26, gr, 6)                            # haunch
-    d(0.2, 0.02, 0.22, 0.32, gr, 6)                            # deep chest
-    d(-0.02, -0.04, 0.24, 0.08, dk, 8)                         # tucked belly shade
-    for x in (0.22, 0.3):
-        d(x, -0.3, 0.055, 0.42, gr, 7)                         # front legs
-    for x in (-0.24, -0.14):
-        d(x, -0.3, 0.055, 0.42, dk, 7)                         # rear legs
-    d(-0.38, 0.06, 0.24, 0.045, gr, 5, rot=0.6)                # tail
-    d(0.3, 0.3, 0.12, 0.3, gr, 7, rot=-0.3)                    # long neck
-    d(0.37, 0.48, 0.15, 0.12, gr, 8)                           # skull
-    d(0.5, 0.45, 0.22, 0.06, gr, 9)                            # long snout
-    d(0.62, 0.455, 0.04, 0.045, "#15151c", 10)                 # nose
-    d(0.31, 0.5, 0.06, 0.11, dk, 10, rot=0.4)                  # ear
-    d(0.4, 0.5, 0.035, 0.035, "#101018", 10)                   # eye
+        paint(cx, cz, dx - 0.04, dz, w, h, c, layer, rot=rot)
+    # a greyhound sitting tall, ALONE, side view facing right: deep chest, haunch on the grass, thin legs, long snout
+    d(-0.14, -0.4, 0.4, 0.3, gr, 5)                            # haunch
+    d(0.0, -0.1, 0.3, 0.6, gr, 6, rot=-0.18)                   # torso, leaning back
+    d(0.15, -0.06, 0.2, 0.36, gr, 7)                           # deep chest
+    d(-0.02, -0.52, 0.3, 0.07, dk, 8)                          # rear paw, forward
+    for x, c in ((0.2, gr), (0.29, dk)):
+        d(x, -0.4, 0.055, 0.34, c, 8 if x < 0.25 else 9)       # thin front legs
+        d(x + 0.03, -0.575, 0.13, 0.05, c, 10 if x < 0.25 else 11)   # paws
+    d(-0.36, -0.55, 0.34, 0.045, dk, 6, rot=0.15)              # tail along the grass
+    d(0.12, 0.27, 0.13, 0.28, gr, 7, rot=-0.15)                # slim neck
+    d(0.12, 0.31, 0.17, 0.05, "#c33a2e", 9, rot=-0.15)         # red collar
+    d(0.17, 0.46, 0.2, 0.15, gr, 8)                            # skull
+    d(0.34, 0.435, 0.28, 0.07, gr, 9)                          # long snout
+    d(0.485, 0.44, 0.045, 0.05, "#15151c", 10)                 # nose
+    d(0.08, 0.5, 0.07, 0.18, dk, 10, rot=0.5)                  # folded ear
+    d(0.24, 0.49, 0.035, 0.035, "#101018", 10)                 # eye
 
 
 def subject_D(cx, cz):
@@ -188,7 +187,7 @@ def fog_material(kit):
     rp.color_ramp.elements[0].position = 0.0
     rp.color_ramp.elements[0].color = (0, 0, 0, 1)
     rp.color_ramp.elements[1].position = 0.9
-    rp.color_ramp.elements[1].color = (0.78, 0.78, 0.78, 1)
+    rp.color_ramp.elements[1].color = (0.85, 0.85, 0.85, 1)
     rp.color_ramp.interpolation = "EASE"
     mul = nt.nodes.new("ShaderNodeMath")
     mul.operation = "MULTIPLY"
@@ -198,7 +197,7 @@ def fog_material(kit):
     nt.links.new(gr.outputs["Fac"], rp.inputs["Fac"])
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     df = nt.nodes.new("ShaderNodeBsdfDiffuse")
-    df.inputs["Color"].default_value = _kit.col("#a6a39e")
+    df.inputs["Color"].default_value = _kit.col("#c4c2bd")
     df.inputs["Roughness"].default_value = 1.0
     mx = nt.nodes.new("ShaderNodeMixShader")
     nt.links.new(rp.outputs["Color"], mx.inputs["Fac"])
@@ -287,7 +286,7 @@ def build_hud(kit, ctx):
 
 
 # ------------------------------------------------------------------------------------------ build
-def figure(kit, name, x, y0, s, mat):
+def figure(kit, name, x, y0, s, mat, coat=False):
     """A flat person-shaped shadow lying on the floor, feet at (x, y0), head toward +y."""
     root = kit.empty(name, (x, y0, FLOOR_TOP + 0.016))
     h = 0.012
@@ -297,6 +296,10 @@ def figure(kit, name, x, y0, s, mat):
     B((0.11, 0.7 * s, h), (-0.33, 1.15 * s, 0), mat, "sha", 0.0, parent=root)
     B((0.11, 0.7 * s, h), (0.33, 1.15 * s, 0), mat, "shb", 0.0, parent=root)
     K.kit.cyl(nm("shh"), 0.16, h, (0, 1.72 * s, 0), mat, root, n=20)
+    if coat:   # a long coat with a high collar: it is him
+        B((0.66, 0.34 * s, h), (0, 0.78 * s, 0), mat, "shskirt", 0.0, parent=root)
+        for sx in (-1, 1):
+            B((0.07, 0.2 * s, h), (sx * 0.13, 1.5 * s, 0), mat, "shcol", 0.0, rot=(0, 0, -sx * 0.2), parent=root)
     for ob in root.children:
         ob.visible_shadow = False
     return root
@@ -311,7 +314,7 @@ def build(kit, story, tl):
     ctx = {}
     oxb = P("#6c1a26", 0.7, 0.1)
     # ---- floor, back wall, wall (with the window opening), skirting
-    B((18, 18.3, 0.2), (0, -5.85, FLOOR_TOP - 0.1), P("#9a6439", 0.25, 0.5), "floor", 0.0)
+    B((18, 18.3, 0.2), (0, -5.85, FLOOR_TOP - 0.1), P("#d29a58", 0.3, 0.4), "floor", 0.0)
     B((18, 0.4, 9), (0, -15.2, 3.9), oxb, "backwall", 0.0)
     wy, wd = WALL_Y + 0.2, 0.4
     wx0, wx1, wz0, wz1 = 0.65, 1.75, 3.15, 5.15      # window opening in C's frame cell
@@ -321,8 +324,9 @@ def build(kit, story, tl):
         o = B((x1 - x0, wd, z1 - z0), ((x0 + x1) / 2, wy, (z0 + z1) / 2), oxb, "wall", 0.0)
         if z0 == wz1:
             o.visible_shadow = False   # the wall above the opening doesn't stop the man's key
+        return o
     seg(-8, wx0, 0, H)
-    seg(wx1, 8, 0, H)
+    ctx["rwall"] = seg(wx1, 8, 0, H)   # hidden from the camera in S14a, which looks along the glass from inside the wall
     seg(wx0, wx1, 0, wz0)
     seg(wx0, wx1, wz1, H)
     B((16, 0.02, 0.08), (0, WALL_Y - 0.01, -0.58), P("#d9c9a8", 0.5, 0.2), "skirt", 0.004)
@@ -345,20 +349,28 @@ def build(kit, story, tl):
     # white reveal liner: four slabs 2 cm inside the cut, 2 cm short of both wall faces
     for (sx, sy, sz, lx, lz) in ((0.02, 0.36, 2.0, wx0 + 0.01, 4.15), (0.02, 0.36, 2.0, wx1 - 0.01, 4.15),
                                  (1.06, 0.36, 0.02, 1.2, wz0 + 0.01), (1.06, 0.36, 0.02, 1.2, wz1 - 0.01)):
-        B((sx, sy, sz), (lx, 3.1, lz), wf, "liner", 0.0).visible_shadow = False
+        lo = B((sx, sy, sz), (lx, 3.1, lz), wf, "liner", 0.0)
+        lo.visible_shadow = False
+        if lx > 1.5:
+            ctx["rliner"] = lo
     # a brass window latch on the right bar: a plate and a turn-lever, proud of the white wood
     brass = P("#d9a441", 0.25, 0.9)
-    B((0.07, 0.03, 0.18), (cx + 0.5, WALL_Y - 0.135, cz), brass, "latchplate", 0.008)
-    B((0.2, 0.035, 0.045), (cx + 0.46, WALL_Y - 0.165, cz + 0.02), brass, "latchlever", 0.01, rot=(0, math.radians(-12), 0))
-    B((0.05, 0.045, 0.05), (cx + 0.5, WALL_Y - 0.165, cz + 0.02), brass, "latchnub", 0.01)
+    ctx["latch"] = [B((0.07, 0.03, 0.18), (cx + 0.5, WALL_Y - 0.135, cz), brass, "latchplate", 0.008),
+                    B((0.2, 0.035, 0.045), (cx + 0.46, WALL_Y - 0.165, cz + 0.02), brass, "latchlever", 0.01, rot=(0, math.radians(-12), 0)),
+                    B((0.05, 0.045, 0.05), (cx + 0.5, WALL_Y - 0.165, cz + 0.02), brass, "latchnub", 0.01)]
     GLASS_Y = 3.2
     ctx["pane"] = kit.plane(nm("pane"), (1.06, 1.96), (cx, GLASS_Y, cz), pane_material(kit), None, rot=(math.pi / 2, 0, 0))
     ctx["pane"].visible_shadow = False
     fogm, ctx["fog_str"] = fog_material(kit)
-    ctx["fog"] = kit.plane(nm("fogdisc"), (0.4, 0.4), (cx + 0.08, GLASS_Y + 0.012, cz + 0.4), fogm, None,
-                           rot=(math.pi / 2, 0, 0))
+    ctx["fog"] = B((0.4, 0.1, 0.4), (cx + 0.08, GLASS_Y + 0.065, cz + 0.4), fogm, "fogdisc", 0.0)
     ctx["fog"].visible_shadow = False
     ctx["fog_base"] = (cx + 0.08, cz + 0.4)
+    # S14a only: the same breath seen edge-on is a soft matte slab on the garden side of the glass
+    ctx["fogslab"] = B((0.4, 0.07, 0.4), (cx + 0.08, GLASS_Y + 0.055, cz + 0.4), P("#aaa8a3", 1.0, 0.0), "fogslab", 0.03)
+    ctx["fogslab"].visible_shadow = False
+    # a thin glass edge, drawn only in S14a, where the camera runs along the pane
+    ctx["strip"] = B((1.06, 0.02, 1.96), (cx, GLASS_Y, cz), P("#dff4fa", 0.1, 0.8), "glassedge", 0.0)
+    ctx["strip"].visible_shadow = False
     sheen = kit.plane(nm("sheen"), (0.07, 1.5), (cx - 0.28, GLASS_Y - 0.03, cz + 0.05), sheen_material(kit, 0.1), None,
                       rot=(math.pi / 2, math.radians(-16), 0))
     sheen.visible_shadow = False
@@ -399,9 +411,13 @@ def build(kit, story, tl):
     B((0.36, 0.04, 0.05), (-0.14, 0, 0), P("#e8b84a", 0.2, 0.95), "lever", 0.012, parent=ctx["lever"])
     B((0.05, 0.04, 0.05), (0.05, 0, 0), P("#e8b84a", 0.2, 0.95), "levernub", 0.012, parent=ctx["lever"])
     # ---- the two floor shadows (yours, then the second one)
-    shm = P("#4e2a1a", 0.9, 0.0)
+    shm = P("#33190e", 0.9, 0.0)
     ctx["shadow1"] = figure(kit, "shadow1", -0.45, -4.9, 1.0, shm)
-    ctx["shadow2"] = figure(kit, "shadow2", 1.7, -4.9, 1.14, shm)
+    ctx["shadow2"] = figure(kit, "shadow2", 1.7, -4.9, 1.14, shm, True)
+    # warm picture-light pool on the floor where the shadows fall (lights only the floor)
+    ctx["pool"] = kit.light("pool", "SPOT", (0.4, -6.0, 5.5), 900.0, "#ffe2b0", size=0.3, spot=34, blend=0.8, shadow=False)
+    kit.aim(ctx["pool"], (0.4, -3.9, FLOOR_TOP))
+    ctx["pool"].visible_camera = False
     # ---- the countdown clock
     build_hud(kit, ctx)
     # ---- lights: warm hall wash, camera fill, the daylight on the man
@@ -419,8 +435,10 @@ def build(kit, story, tl):
     kit.aim(ctx["rim"], (1.2, 3.95, 4.3))
     # a soft low fill in front of him, linked to him only: just enough to open the shadow on the far eye
     ctx["manfill"] = kit.light("manfill", "POINT", (0.4, 1.6, 4.2), 22, "#e8f0ff", size=1.2, shadow=False)
-    ctx["fogfill"] = kit.light("fogfill", "POINT", (1.5, 2.0, 4.9), 110, "#fff6ec", size=1.0, shadow=False)
-    for l in ("rim", "camfill", "wash", "manfill", "fogfill"):
+    ctx["fogfill"] = kit.light("fogfill", "POINT", (1.5, 2.0, 4.9), 60, "#fff6ec", size=1.0, shadow=False)
+    # a helper light for S14a only (the cutaway along the glass): it brightens the reveal from the garden side
+    ctx["s14l"] = kit.light("s14l", "POINT", (1.5, 3.7, 4.9), 260, "#fff4e4", size=0.6, shadow=False)
+    for l in ("rim", "camfill", "wash", "manfill", "fogfill", "s14l"):
         ctx[l].visible_camera = False
     # a low hedge of flowers hides his hands and hips: only head and shoulders show, like a portrait
     hb = P("#9cc488", 0.9)
@@ -446,20 +464,34 @@ def fog_level(t, t_fogs):
 def animate(kit, story, tl, t, ctx):
     from blocky import timeline
     cue = lambda n, d=0.0: timeline.cue(tl, n, d)
+    def shot_start(sid):
+        return next(x["start"] for x in tl["shots"] if x["id"] == sid)
     t_sweep, t_chime, t_snap = cue("sweep"), cue("chime"), cue("snap")
     t_gone, t_latch, t_second = cue("gone"), cue("latch"), cue("second")
+    t_shade = cue("shade", t_second)
     # ---- the breath on the glass (matte grey, on the garden side), gone when he is
-    u = fog_level(t, cue("fogs", 16.4)) if t < t_gone else 0.0
+    t_fogs = cue("fogs", 16.4)
+    u = fog_level(t, t_fogs) if t_fogs <= t < t_gone else 0.0
+    s14a = shot_start("S14a") <= t < shot_start("S15")
+    for o in (ctx["rwall"], ctx["rliner"]):
+        o.visible_camera = not s14a
+        o.visible_shadow = not s14a
+    ctx["strip"].visible_camera = s14a
+    for o in ctx["latch"]:
+        o.hide_render = t < shot_start("S15")
     early = 0.7 if t < t_chime else 1.0
     s = (0.55 + 0.45 * u) * (0.78 if t < t_chime else 1.0)
     fx, fz = ctx["fog_base"]
-    ctx["fog"].scale = (s, s, s)
+    ctx["fog"].scale = (s, 1.0, s)
     ctx["fog"].location = (fx + 0.05 * u, ctx["fog"].location[1], fz)
-    k_ = 0.0 if t >= t_gone else min(0.85, u * 0.85 * early + 0.01)
+    k_ = 0.0 if t >= t_gone else min(0.8, u * 0.8 * early + 0.01)
     ctx["fog_str"].color = (k_, k_, k_, 1.0)
-    ctx["fog"].hide_render = t >= t_gone or u < 0.01
+    ctx["fog"].hide_render = t >= t_gone or u < 0.01 or s14a
+    ctx["fogslab"].hide_render = not (s14a and u >= 0.01)
+    ctx["fogslab"].scale = (s, 1.0, s)
+    ctx["fogslab"].location = (fx + 0.05 * u, ctx["fogslab"].location[1], fz)
     # ---- the man's light: flat and dim behind the glass until the chime, then up over 0.6 s
-    g = 0.3 + 0.7 * smooth((t - t_chime) / 0.6)
+    g = 0.55 + 0.45 * smooth((t - t_chime) / 0.6)
     if not ctx.get("flinked"):   # a soft light that lights only the breath
         col2 = bpy.data.collections.new("fog only")
         col2.objects.link(ctx["fog"])
@@ -467,7 +499,7 @@ def animate(kit, story, tl, t, ctx):
         for co in col2.collection_objects:
             co.light_linking.link_state = "INCLUDE"
         ctx["flinked"] = True
-    over = {"manlight": g, "rim": 0.55 + 0.45 * smooth((t - t_chime) / 0.6), "manfill": g}
+    over = {"s14l": 1.0 if s14a else 0.0, "manlight": g, "rim": 0.8 + 0.2 * smooth((t - t_chime) / 0.6), "manfill": g}
     if not ctx.get("linked"):   # his lights light only him: no spill circle on the wall
         man = bpy.data.objects.get("watcher")
         if man is not None:
@@ -503,10 +535,10 @@ def animate(kit, story, tl, t, ctx):
     dip = smooth((t - t_latch) / 0.08) * (1.0 - smooth((t - t_latch - 0.55) / 0.25)) if t >= t_latch else 0.0
     ctx["lever"].rotation_euler = (0, math.radians(-26) * dip, 0)
     # ---- the second shadow slides in beside yours
-    k = smooth((t - t_second) / 0.4)
+    k = smooth((t - t_shade) / 0.4)
     ctx["shadow2"].location = (1.7 + (0.55 - 1.7) * k, -4.9, FLOOR_TOP + 0.016)
     for ob in ctx["shadow2"].children:
-        ob.hide_render = t < t_second - 0.05
+        ob.hide_render = t < t_shade - 0.05
     for ob in ctx["shadow1"].children:
         ob.hide_render = t < cue("floor", 31.0)
     return over

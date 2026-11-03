@@ -82,26 +82,22 @@
    ]
   },
   "L04": {
-   "text": "b. the lady with the greyhound.",
+   "text": "b. the grey greyhound.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.69,
+   "dur": 1.414,
    "onset": 0.172,
-   "end": 1.483,
+   "end": 1.207,
    "chunks": [
     [
      0.172,
-     0.293
+     0.284
     ],
     [
-     0.293,
-     0.672
-    ],
-    [
-     0.672,
-     1.483
+     0.284,
+     1.207
     ]
    ]
   },
@@ -362,14 +358,14 @@
    ]
   },
   "L15": {
-   "text": "c isn't a painting.",
+   "text": "c has a latch.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.328,
+   "dur": 1.19,
    "onset": 0.19,
-   "end": 1.138,
+   "end": 0.983,
    "chunks": [
     [
      0.19,
@@ -377,7 +373,7 @@
     ],
     [
      0.31,
-     1.138
+     0.983
     ]
    ]
   },
@@ -398,34 +394,34 @@
    ]
   },
   "L17": {
-   "text": "he's been standing out in the garden all night, holding still,",
+   "text": "he's been standing out in the garden all day, holding still,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.172,
-   "end": 2.466,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.345,
    "chunks": [
     [
-     0.172,
-     0.672
+     0.155,
+     0.603
     ],
     [
-     0.672,
-     0.854
+     0.603,
+     0.75
     ],
     [
-     0.854,
-     1.147
+     0.75,
+     1.052
     ],
     [
-     1.147,
-     1.586
+     1.052,
+     1.483
     ],
     [
-     1.655,
-     2.466
+     1.552,
+     2.345
     ]
    ]
   },
