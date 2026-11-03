@@ -290,7 +290,7 @@ raw("omar", "L41.2+1.4", pos=[SR + 0.8, 1.7, 0])
 S("L41.2", C((SR, 1.3, 1.2), 3.4, 0, 5, 30, d2=3.0), note="Omar and me at work in a stockroom, mid-step, carrying a box")
 cue("L42", "srbox", x0=SR, x1=SR, y0=1.3, y1=1.3, dur=0.1)
 scene("L42", me=dict(pos=(SR - 0.45, 1.5, 0), yaw=0, expr="shut"), omar=dict(pos=(SR + 0.45, 1.5, 0), yaw=0, expr="shut"))
-S("L42", C((SR, 1.5, 1.55), 1.9, 0, 3, 36, d2=1.5), note="we blink")
+S("L42", C((SR, 1.5, 1.55), 2.7, 0, 3, 36, d2=2.4), note="we blink")
 cue("L42.2", "hbask", on=True)
 cue("L42.2", "stove", on=True)
 scene("L42.2", omar=dict(pos=(HM - 0.45, 1.95, 0), yaw=0, expr="wide", arms=[1.0, 1.0]),
@@ -375,6 +375,6 @@ if vt.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 3
+story["rev"] = 4
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")
