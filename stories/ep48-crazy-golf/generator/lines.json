@@ -4,16 +4,34 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this TOWN,",
-    "in this town,"
+    "My SHADOW",
+    "my shadow"
    ],
    [
-    "your SHADOW stays",
-    "your shadow stays"
+    "has never left",
+    "has never left"
    ],
    [
-    "where you're HAPPIEST.",
-    "where you're happiest."
+    "my FEET.",
+    "my feet."
+   ]
+  ]
+ },
+ {
+  "id": "L01b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Everyone else's",
+    "everyone else's"
+   ],
+   [
+    "goes where",
+    "goes where"
+   ],
+   [
+    "they're HAPPIEST.",
+    "they're happiest."
    ]
   ]
  },

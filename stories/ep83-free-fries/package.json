@@ -1,0 +1,11 @@
+{
+  "title": "Free Fries, One RULE 🍟",
+  "description": "The fries at this diner are free, every day, forever. Two yellow gloves slide each basket out of the hatch, and nobody has ever seen the cook.\n\nMy best friend and I are broke, so we're here every afternoon. There's only one rule, and he just bet me his last dollar I'd break it.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+  "pin": "Comment FRIES if you'd look anyway.",
+  "made_for_kids": false,
+  "cover_s": 35.6,
+  "shape": "who-pays",
+  "opening": "cost",
+  "lane": "core",
+  "hold": "batch 7: scripts only, not built yet"
+}

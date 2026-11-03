@@ -32,7 +32,7 @@ What the panels taught us (also in `playbook.md`):
 
 | # | ID | Title | First line | Want or fight | Evidence | Shape | A (of 40) | B (of 30) |
 |---|---|---|---|---|---|---|---|---|
-| 1 | P16 | My Sister's Diary Writes Back 📓 | My sister's diary writes back, and tonight it wrote about me. | Snooping on a sibling. | Self-insert comments on 19 of 40; sibling rows | story | 9 | 4 |
+| 1 | P16 | My Sister's Diary Writes Back 📓 (**made: `ep89-sister-diary`**, batch 8, as "My Sister's Diary ANSWERS Me 📓", scripted 2026-11-03) | My sister's diary writes back, and tonight it wrote about me. | Snooping on a sibling. | Self-insert comments on 19 of 40; sibling rows | story | 9 | 4 |
 | 2 | P10 | My Roommate Never Leaves ⬛ | My roommate's rent is always paid, but I've never seen him leave his room. | Two adults sharing a flat, and a fight about the noise. | Our audience is mostly adult (35 to 44 is 34% of back-row's views); creepy one-room shape like back-row | story | 16 | 2 |
 | 3 | P26 | My Project Partner Isn't Real 📎 | Every group project, I get the same partner, and nobody else has ever seen her. | A lonely teen and the one person who shows up. | Spot-the-detail comments on 14 of 40; school settings in the scan | story | 12 | 5 |
 | 4 | P03 | Grandpa's Remote Pauses People ⏸️ | Grandpa's old TV remote pauses anyone you point it at. | More time with Grandpa, who uses it to cheat at cards. | 'grandpa' is the 7th most common comment word (25 comments); 'Grandpa cool friends' deep #20 (1.04M/day) | story | 7 | 9 |
@@ -49,7 +49,7 @@ What the panels taught us (also in `playbook.md`):
 | 15 | P05 | The Wi-Fi Password Knows Secrets 📶 | In this house, the Wi-Fi password changes every night to a secret about you. | A screen-time fight with Dad. | Skylox study (screen-time home conflict, its fastest Short); quote-back comments 25% (the passwords are the quotable lines) | story | 24 | 14 |
 | 16 | P20 | Grandma's Soup Has One Rule 🥘 | Grandma's soup has one rule: never taste it before midnight. | Learning the family recipe and earning Grandma's yes. | 'grandma' 16 comment mentions; family on 26 of 40 | story | 27 | 13 |
 | 17 | P07 | The Neighbour's Lawn Is Perfect 🌿 | Our neighbour's lawn is perfect, and his mower only runs at 3 AM. | Dad's lawn rivalry with the neighbour. | Suspicion of one odd adult is the shape of deep #3 (2.66M/day); horror-tagged rows 227K/day median | story | 35 | 6 |
-| 18 | P25 | Free Fries Forever 🍟 | At this diner, the fries are free forever, as long as you never look in the kitchen. | Two broke best friends and one rule. | Odd food-place rules (deep #3's lunch room, different premise); best-friend want from the reset | story | 29 | 12 |
+| 18 | P25 | Free Fries Forever 🍟 (**made: `ep83-free-fries`**, batch 7, as "Free Fries, One RULE 🍟", scripted 2026-11-03) | At this diner, the fries are free forever, as long as you never look in the kitchen. | Two broke best friends and one rule. | Odd food-place rules (deep #3's lunch room, different premise); best-friend want from the reset | story | 29 | 12 |
 | 19 | P28 | Slam The Door, Move Up 🚪 | Every time I slam my bedroom door, the house moves my room one floor higher. | A teen fighting with their parents. | Home-conflict rule like deep #11 (1.5M/day); a visible meter (the floor) | story | 23 | 19 |
 | 20 | P22 | Say Sorry Or Float 🎈 | In this house, if you go to bed without saying sorry, you float up to the ceiling. | Mum and Dad's fight, and who says it first. | Apology theme in deep #19 (1.04M/day, different mechanism); emotional comments on 18 of 40, sting not the whole story | story | 19 | 23 |
 | 21 | P29 | Rent Is Paid In Secrets 🗝️ | In this building, rent is paid in secrets, and the landlord just asked for Mum's. | Protecting Mum, who's been paying for both of us. | Adult audience; rule-premise median 407K/day | story | 26 | 21 |
@@ -80,7 +80,7 @@ From `docs/research/port-study.md` and the owner's niche map. Rank them with the
 | C1 | creepy town rule | The Tuesday Door 🚪 | In this town, you never open the extra door that shows up on Tuesdays. | A sibling who always opens what they shouldn't | The owner's niche-map sketch (an extra door that knocks from inside); quiet dread is the lane | story |
 | C2 | creepy town rule | Don't Read Next Week's Mail ✉️ | In this town, the mail brings the letters you'll write next week, and you don't read them. | Making up with someone before you hurt them | The owner's niche-map sketch (next week's letters) | story |
 | C3 | creepy town rule | When The Siren Sounds, Nobody Laughs 📢 | When the town siren sounds, you stand still, and you never laugh. | A best friend who can't keep a straight face | Warning titles: 7 of the 17 fastest blocky stories; quotable rule | story |
-| C4 | creepy town rule | the house with no number | Never ring the doorbell of the house with no number. | A new delivery driver who needs the job | Warning opening; night-job lane (back-row) | story |
+| C4 | creepy town rule | the house with no number (**made: `ep82-no-door`**, batch 7, reworked as "Pizza For The House With No DOOR 🍕", scripted 2026-11-03) | Never ring the doorbell of the house with no number. | A new delivery driver who needs the job | Warning opening; night-job lane (back-row) | story |
 
 ## US English fixes (use these when the premise is made)
 
