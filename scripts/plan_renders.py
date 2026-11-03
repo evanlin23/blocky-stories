@@ -29,7 +29,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--story", default="")
 ap.add_argument("--shards", type=int, default=32)
 ap.add_argument("--max", type=int, default=2)   # stories per run, clamped to 2 below: render.yml has two slots (a, b), each story's assemble waits only for its own shards; the again job starts the next run for the rest
-ap.add_argument("--require-proof", default=os.environ.get("REQUIRE_PROOF", "true"))   # "false" draws stories that have no passed proof
+ap.add_argument("--require-proof", default=os.environ.get("REQUIRE_PROOF", "false"))   # "false" draws stories that have no passed proof
 a = ap.parse_args()
 require_proof = a.require_proof.strip().lower() != "false"
 

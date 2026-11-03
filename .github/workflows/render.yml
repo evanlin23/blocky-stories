@@ -12,7 +12,7 @@ on:
 concurrency: {group: render, cancel-in-progress: false}
 permissions: {contents: read, actions: read}
 env:
-  REQUIRE_PROOF: "true"   # "false": draw stories that have no passed proof (the plan skips them, and says why in its log)
+  REQUIRE_PROOF: "false"   # the proof gate is OFF until the pre-proof stories have uploaded or been proofed; then set "true" (plan skips unproofed stories and says why)
   SHARDS: 32   # finer shards: a fast runner takes the next one (docs/research/render-throughput.md, change 6)
 jobs:
   plan:

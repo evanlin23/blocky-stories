@@ -105,11 +105,12 @@ the hard way.
   PR tests. The `again` job chains the next run. If a story's shard fails, its assemble is skipped (no film), the other
   story and `again` still run, and the next plan draws it again; "Re-run failed jobs" on the run redraws just the failed
   shard, then assembles. A run of 8 stories takes about 5 hours.
-- **A final is drawn only after a passed proof (2026-11-03).** `plan_renders.py` skips a story unless `qa/<story>.json` is
-  `"stage": "proof"`, passed, at a sha with no film file changed after it (`blocky.gate.proof_problems`, the check `test`
-  makes), or its final qa already passed. The plan log says why each story is skipped. Stories merged before proofs existed
-  need a proof first. To turn it off: `REQUIRE_PROOF: "false"` in render.yml's `env` (an explicit `story` dispatch input is
-  never held back).
+- **A final can be held until a proof has passed (2026-11-03). It is OFF for now.** With it on, `plan_renders.py` skips a
+  story unless `qa/<story>.json` is `"stage": "proof"`, passed, at a sha with no film file changed after it
+  (`blocky.gate.proof_problems`, the check `test` makes), or its final qa already passed, and the plan log says why. Turn it
+  on by setting `REQUIRE_PROOF: "true"` in render.yml's `env` once the stories merged before proofs existed (closing-time,
+  ep47-fitting-room, moving-day, ep54-dance-hall, rule-three) have uploaded or been proofed; until then they'd be stuck. An
+  explicit `story` dispatch input is never held back.
 - **Drawn shards are reused.** Each shard is kept as `frames-<story>-<k>of<n>` (5 days; the count is in the name so a
   16-shard cut is never taken for a 32-shard one). The plan reuses a shard whose artifact is unexpired and whose commit
   has no change to `blocky/`, `assets/` or the story's film files since, and draws only the rest. When every shard is
