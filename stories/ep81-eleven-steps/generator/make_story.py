@@ -250,7 +250,7 @@ count("L20", 11)
 box("L20", BOT)
 S("L20", X((1.1, -1.7, 0.75), (0.0, -0.3, 0.3), 13), "evening", note="Dad sets it snug against the first step")
 walk("dad", "L21", (0.0, -0.9), "L21>", (-0.5, -1.8), 0, "tired")
-cue("L21+0.3", "ddoor", open=88, to=0, dur=0.8)
+cue("L21>", "ddoor", open=88, to=0, dur=0.8)
 S("L21", X((0.0, 0.9, 1.7), (-0.3, -1.6, 1.3), 14), "evening", note="Dad walking back to his room without looking up")
 gone("dad", "L21>")
 
@@ -284,7 +284,7 @@ box("L28.3", ROOMBOX)
 S("L28.3", X((1.5, 5.6, LZ + 1.5), (-0.5, 6.6, LZ + 0.3), 12), "roomdim", note="the box beside my bed, tag back to 10")
 
 # =========================================================================================== 05 L29-L35 the count
-put("me", "L29", [-1.7, 8.0, LZ + 0.55], 0, "worried", lean=-90, arms=[0, 0])
+put("me", "L29", [-1.7, 7.2, LZ + 0.68], 0, "worried", lean=-90, arms=[0, 0])
 S("L29", X((0.0, 5.8, LZ + 0.9), (-1.2, 8.0, LZ + 0.6), 11.5), "roomdim", fill=0.6,
   note="my room in the dark, me in bed with my eyes open, the gap under the door glowing amber")
 for i, (ref, k) in enumerate((("L30", 1), ("L30.1", 2), ("L30.2", 3))):
@@ -292,7 +292,7 @@ for i, (ref, k) in enumerate((("L30", 1), ("L30.1", 2), ("L30.2", 3))):
     dip(ref, k, 0.55)
     S(ref, X((0.9, -0.2 + 0.28 * i, 0.55 + 0.19 * i), (0.0, 0.1 + 0.28 * i, 0.3 + 0.19 * i), 15, push=0.12), "dim", hand=0.002,
       note=f"tread {k} dips, nobody on it")
-put("me", "L31", [-1.7, 8.0, LZ + 0.55], 0, "scared", lean=-90, arms=[70, 0])
+put("me", "L31", [-1.7, 7.2, LZ + 0.68], 0, "scared", lean=-90, arms=[70, 0])
 count("L31", 10, 3)
 S("L31", X((-1.0, 7.0, LZ + 2.2), (-1.7, 8.0, LZ + 0.7), 13), "roomdim", fill=0.7, note="me counting on my fingers in bed")
 gone("me", "L31>")
@@ -318,13 +318,13 @@ clm("L36", None)
 props("L36", chand={"pos": [0.0, 4.72, LZ + 0.045], "yaw": 0})
 cue("L36", "torch", on=False)
 S("L36", X((0.0, 5.9, LZ + 0.5), (0.0, 4.9, LZ + 0.35), 13, (0.0, 5.6, LZ + 0.3), None, 13), "roomdim", fill=0.5, note="my door bows in its frame; a long flat hand just past the gap")
-put("me", "L37", [0.15, 5.9, LZ + 0.17], 180, "scared", lean=-86, arms=[80, 0])
+put("me", "L37", [0.15, 7.0, LZ + 0.17], 180, "scared", lean=-86, arms=[80, 0])
 props("L37", chand=None)
 cue("L37", "mydoor", open=0, bow=1.0)
 cue("L37", "torch", on=True, pos=[0.4, 5.75, LZ + 0.08], target=[0.0, 4.7, LZ + 0.05])
 clm("L37", [0.0, 3.22, LZ], yaw=180, fold=1.5, roll=0, reach=8, hp=0, hoff=0.05, kx=0.0, ky=1.0, kz=0.2, ax=0.0, az=1.3)
-S("L37", X((0.15, 6.4, LZ + 0.2), (0.0, 4.9, LZ + 0.3), 13), "roomdim", fill=0.4, note="me flat on the floor with the flashlight, looking at the gap")
-put("me", "L37>", [0.15, 5.9, LZ + 0.17], 180, "scared", lean=-86, arms=[80, 0], hidden=True)
+S("L37", X((1.5, 6.2, LZ + 0.8), (0.1, 5.8, LZ + 0.15), 12), "roomdim", fill=0.4, note="me flat on the floor with the flashlight, looking at the gap")
+put("me", "L37>", [0.15, 7.0, LZ + 0.17], 180, "scared", lean=-86, arms=[80, 0], hidden=True)
 S("L38", X((0.0, 5.65, LZ + 0.065), (0.0, 4.7, LZ + 0.065), 12, (0.0, 5.45, LZ + 0.065), None, 12), "roomdim", fill=0.0, hand=0.002,
   note="the gap: two big black eyes in a cream face, looking back")
 S("L39", X((0.0, 5.4, LZ + 0.065), (0.0, 4.7, LZ + 0.065), 12, (0.0, 5.2, LZ + 0.065), None, 12), "roomdim", fill=0.0, hand=0.002,
@@ -457,6 +457,8 @@ story = {
     "gap": 0.12,
     "tail": LOOP,
     "min_read": 0.15,
+    "asr_forgive": ["a", "luis", "every one", "it", "he's"],
+    "clip_ok": ["bed_single", "S34", "S38"],
     "fade_in": False,
     "fade_out": False,
     "look": look,

@@ -371,7 +371,7 @@ def build(kit, story, tl):
     B(None, (1.8, 0.2, HALL_CEIL), (0, -5.1, HALL_CEIL / 2), cream, "wallF", 0.0)                         # the front wall
     B(None, (0.2, 1.4, HALL_CEIL), (0.9, -4.5, HALL_CEIL / 2), cream, "wallR", 0.0)                       # hall right wall, y -5.2..-3.8
     B(None, (0.2, 1.4, HALL_CEIL - 2.1), (0.9, -3.4, 2.1 + (HALL_CEIL - 2.1) / 2), cream, "kopen", 0.0)   # lintel over the opening
-    B(None, (5.8, 6.4, 0.2), (3.0, -1.0, HALL_CEIL + 0.1), P("#fbf4e4", 0.9, 0.02), "gceil", 0.0)         # kitchen ceiling
+    B(None, (5.0, 6.4, 0.2), (3.4, -1.0, HALL_CEIL + 0.1), P("#fbf4e4", 0.9, 0.02), "gceil", 0.0)         # kitchen ceiling
     B(None, (1.8, 5.2, 0.2), (0, -2.6, HALL_CEIL + 0.1), P("#fbf4e4", 0.9, 0.02), "hceil", 0.0)
     # kitchen shell
     B(None, (0.2, 6.4, HALL_CEIL), (5.9, -1.0, HALL_CEIL / 2), cream, "kwallE", 0.0)
@@ -431,8 +431,8 @@ def build(kit, story, tl):
     except Exception as ex:
         print("props:", ex)
     # the threshold under my door, and the amber glow of the nightlight along the gap on my side
-    B(None, (1.1, 0.3, 0.2), (0, 5.0, LZ - 0.1), floorw, "threshold", 0.0)
-    gl = B(None, (0.92, 0.14, 0.004), (0, 5.07, LZ + 0.002), kit.emit("#ffb24d", 1.6, name="gapglow"), "gapglow", 0.0)
+    B(None, (1.1, 0.3, 0.2), (0, 5.0, LAND_Z - 0.1), floorw, "threshold", 0.0)
+    gl = B(None, (0.92, 0.14, 0.004), (0, 5.07, LAND_Z + 0.002), kit.emit("#ffb24d", 1.6, name="gapglow"), "gapglow", 0.0)
     no_shadow(gl)
     # the round window and the amber nightlight on the landing
     ring = kit.cyl(nm("winring"), 0.5, 0.06, (2.57, 3.6, LAND_Z + 1.5), white, None, rot=(0, math.pi / 2, 0), n=40)
@@ -452,9 +452,9 @@ def build(kit, story, tl):
         else:
             B(None, (0.02, 0.36, 0.42), (-0.755, yy, zz), P(colr, 0.7), "art", 0.004)
     # ---- Dad's door (navy, opens on the left wall), the front door with a glass pane, the hall lamp and clock
-    ctx["ddoor"] = E(None, (-0.88, -1.35, 0), "ddoor")
-    B(ctx["ddoor"], (0.05, 0.86, 2.02), (0, -0.43, 1.01), P("#22306a", 0.45), "ddpanel", 0.008)
-    B(ctx["ddoor"], (0.07, 0.07, 0.07), (0.05, -0.78, 1.0), brass, "ddknob", 0.02)
+    ctx["ddoor"] = E(None, (-0.88, -2.25, 0), "ddoor")
+    B(ctx["ddoor"], (0.05, 0.86, 2.02), (0, 0.43, 1.01), P("#22306a", 0.45), "ddpanel", 0.008)
+    B(ctx["ddoor"], (0.07, 0.07, 0.07), (0.05, 0.78, 1.0), brass, "ddknob", 0.02)
     B(None, (0.12, 0.08, 2.1), (-0.9, -1.31, 1.05), fr, "ddframe", 0.006)
     B(None, (0.12, 0.08, 2.1), (-0.9, -2.29, 1.05), fr, "ddframe", 0.006)
     B(None, (1.4, 3.0, 0.1), (-1.55, -1.8, 0.05), P("#6a4a3a", 0.9, 0.02), "droomfloor", 0.0)       # Dad's room, just a hint
@@ -627,7 +627,7 @@ def animate(kit, story, tl, t, ctx):
     dop = dd.get("open", 0.0)
     if "to" in dd:
         dop = lerp(dop, dd["to"], ss((t - dd["t"]) / max(1e-3, dd.get("dur", 0.8))))
-    ctx["ddoor"].rotation_euler = (0, 0, math.radians(dop))
+    ctx["ddoor"].rotation_euler = (0, 0, math.radians(-dop))
     # ---- the Climber
     cc = cue_at(tl, "climber", t)
     cl_ = ctx["cl"]
