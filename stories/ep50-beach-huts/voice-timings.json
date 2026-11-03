@@ -6,30 +6,34 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "don't let anybody see your reflection in a window.",
+   "text": "if anyone sees your reflection in a window, they'll know.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.345,
+   "dur": 2.5,
    "onset": 0.172,
-   "end": 2.138,
+   "end": 2.31,
    "chunks": [
     [
      0.172,
-     0.414
+     0.517
     ],
     [
-     0.414,
-     0.879
+     0.517,
+     0.776
     ],
     [
-     0.879,
-     1.397
+     0.776,
+     1.147
     ],
     [
-     1.397,
-     2.138
+     1.147,
+     1.586
+    ],
+    [
+     1.655,
+     2.31
     ]
    ]
   },
