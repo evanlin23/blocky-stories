@@ -17,3 +17,8 @@ What's applied:
 4. Ship: remove the hold, merge main, PR, merge after `test`. Then the qa agent on the final film.
 
 ep37 and ep33 were dropped (#154 and #156). Their builds are on their claude/*-opening branches.
+
+**Before resuming:** merge main first. Polish v2.2 (#168) and v2.3 (#175) landed while paused, and look.polish turns both on.
+- Keep the story's own sfx to 2 to 4 events per 10 s.
+- Use `"hold": ["Sxx"]` on frame-exact shots: S01, the two trails side by side, may need it.
+- If pace fails, shorten the quiet span (L55 to L63) or add motion inside it. See builder.md and docs/engine.md → The polish pack.
