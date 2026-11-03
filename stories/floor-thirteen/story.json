@@ -6725,7 +6725,7 @@
   ]
  },
  "sound": {
-  "rev": 4,
+  "rev": 5,
   "floor": "wood",
   "steps_db": -22,
   "ambience": [
