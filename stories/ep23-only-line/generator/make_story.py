@@ -281,8 +281,8 @@ shot("S40", "L40", "the ring, everyone else turned away", still([0.0, -3.3, 1.6]
 shot("S41", "L41", "my face, the script roll at the frame edge, I get it", face((2.0, 3.45), 2.8, 46, 0, tz=1.24))
 shot("S42", "L42", "Grandad's mouth moving", face(KING, 2.6, 52, 4, tz=1.4))
 shot("S43", "L43", "from Grandad's eye line: me, the ring out of the way", still([-0.35, 2.3, 1.6], [0.7, 0.0, 1.4], 60))
-shot("S44", "L44", "low on the boards: the script roll falls and rolls to the cross", still([-0.2, -1.1, 0.5], [1.5, 1.5, 0.3], 28))
-shot("S45", "L45", "the one picture: his flat hand beside his mouth", still([-0.9, -0.4, 1.4], [0.45, 1.6, 1.3], 22), step=1)
+shot("S44", "L44", "low on the boards: the script roll falls and rolls to the cross", still([1.7, -1.2, 0.4], [1.5, 1.6, 0.25], 24))
+shot("S45", "L45", "the one picture: his flat hand beside his mouth", still([-0.55, -0.9, 1.5], [0.05, 2.0, 1.5], 30), step=1)
 # 06 Saturday
 shot("S46", "L46", "from the back of the full house, the crown over a ghost", still([0.0, -9.2, 2.6], [0.0, 2.1, 1.6], 40))
 shot("S47", "L47", "the full house from the stage, one whispering to the next", still([0.9, 0.3, 1.15], [-0.15, -3.55, 0.95], 36))
