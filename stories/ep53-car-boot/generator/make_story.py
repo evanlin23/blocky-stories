@@ -186,7 +186,7 @@ SHOTS = [
     ("L32", "from the hedge, long lens: a dark seated silhouette in her chair", 4, still([-12.0, -8.0, 1.3], [-0.7, 1.3, 1.3], 75)),
     ("L33", "tighter: the sideways head, the only clear thing", 4, still([-5.5, -7.0, 1.3], [-0.9, 1.3, 1.5], 70)),
     ("L34", "the same angle: the chair is empty", 4, still([-5.5, -7.0, 1.3], [-0.9, 1.3, 1.5], 70)),
-    ("L35", "a strip of tarp-green canvas on the chair arm", 2, move(([-1.15, 0.7, 0.75], [-0.98, 1.35, 0.42]), ([-1.1, 0.85, 0.72], [-0.98, 1.35, 0.42]), 40, 38)),
+    ("L35", "a strip of tarp-green canvas on the chair arm", 2, move(([-1.15, 0.7, 0.75], [-0.98, 1.35, 0.42]), ([-1.115, 0.80, 0.73], [-0.98, 1.35, 0.42]), 40, 38.6)),
     ("L36", "the bus shelter in fog: Pip on the bench, tired, her coat over my arm", 2,
      still([-18.2, -22.5, 1.5], [-14.0, -27.8, 1.0], 30)),
     ("L37", "Pip in her jumper, a holdall at her feet; a bus's headlamps come up behind", 2,
@@ -490,9 +490,8 @@ cues = [
     {"at": "L56-0.3", "name": "sfill", "to": 1.0, "dur": 0.3},
     {"at": "L57", "name": "sfill", "to": 0.0, "dur": 0.4},
     # a soft daylight fill on the chair arm for the L35 strip, which sits in the estate's shadow
-    {"at": "L34", "name": "tfill", "to": 0.3, "dur": 1.0},
-    {"at": "L35", "name": "tfill", "to": 0.6, "dur": 0.3},
-    {"at": "L35.2", "name": "tfill", "to": 0.0, "dur": 0.4},
+    {"at": "L34", "name": "tfill", "to": 0.6, "dur": 1.0},
+    {"at": "L36", "name": "tfill", "to": 0.0, "dur": 0.4},
     {"at": "L58", "name": "beam", "to": 1.0, "dur": 1.0},
     {"at": "L63+1.5", "name": "beam", "to": 0.0, "dur": 0.8},
     # vehicles: root = the rear of the car; yaw 0 faces +y, yaw 180 faces -y
