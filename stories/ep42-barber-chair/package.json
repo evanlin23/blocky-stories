@@ -5,5 +5,6 @@
  "made_for_kids": false,
  "cover_s": 1.6,
  "shape": "stand-in",
- "old_title": "Everyone Here HUMS a Note of Their Own"
+ "old_title": "Everyone Here HUMS a Note of Their Own",
+ "hold": "held 2026-11-03 (queue audit): fix to the opening recipe only after 3 recipe films pass"
 }

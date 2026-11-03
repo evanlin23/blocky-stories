@@ -3,19 +3,16 @@
 # being-forgotten stories (ep32, floor-thirteen, ep31) are spaced apart; don't queue them together
 # homecoming / similar-twist stories (ep36, ep43, ep47, ep48) are never next to each other (standards, ep48 r5)
 # 2026-11-03 reset: creepy or light stories first, the sad family reveals spread out after them
-knock-back
+# 2026-11-03 queue audit (docs/research/queue-audit.md): recipe fixes first; ep36, ep32, ep31 dropped; ep42, ep48, ep55, ep33 held until 3 recipe films pass
 closing-time
 moving-day
-ep42-barber-chair
 mirror-maze
-ep49-car-wash
-ep43-reading-room
-ep33-chairlift
 floor-thirteen
+ep49-car-wash
 ep45-bee-yard
-ep48-crazy-golf
-ep32-sitter
-ep36-ice-huts
-ep55-caravan-park
 ep47-fitting-room
-ep31-dawn-flight
+ep43-reading-room
+ep42-barber-chair
+ep48-crazy-golf
+ep55-caravan-park
+ep33-chairlift
