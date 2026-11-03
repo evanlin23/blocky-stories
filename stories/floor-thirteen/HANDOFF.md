@@ -51,3 +51,6 @@ Attendant lit cues respaced to L43, L43+0.38, L43+0.72 (0.3 s ramps, inside shot
 - Respacing the attendant countdown cues (lit 5/4/3 at L43, +0.38, +0.72; commit 30c1a44) did not move the reading. The quarter-res preview does not show this reading; only the full-rate proof does.
 - Likely cause (not tried): the 76.57 lights cue (dur 1.0) and doors cue, the cuts at 76.57, 78.93, 80.10, or the polish pack's angle cuts / crop push on the attendant shots S55-S56. A fix needs a full-rate local draw of 75-81 s, which is more than one small fix.
 - Per the rescue-round rule (second proof fail = drop), PR #188 is left open for the second orchestrator to record the drop on main. Nothing merged, no qa file written.
+
+## Reversal 2026-11-03 (after the drop note above)
+Main's flash bar is now strobe-only (RULES.md rule 7, blocky/safety.py HOUSE_BAR: general_3f has no limit; a hard strobe is over 6 flashes a second). The only thing both proofs failed on, 3f changes 7 at 78.53 s (bar was 6), is no longer a block; the proof's own flashes were 2 and red 0. The drop reason is gone, so the drop is rescinded. Merged origin/main, gate OPEN, preflight 0 blocks; a new proof is drawn on PR #188 and qa follows if it passes. If that proof fails on anything else, drop for real.
