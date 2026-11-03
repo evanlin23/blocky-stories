@@ -105,10 +105,10 @@ def lamp(cam, aim, w=1.0, up=0.45, c="#e8e4dc", size=0.7, side=0.0):
 
 # 01 floor thirteen, bright
 # the opening (recipe v1, 2026-11-03): the warning over the 13 button lit on its own, pushing in; my face on OUT
-PANEL_PUSH = move(([-0.72, -0.28, 1.3], [-0.745, -0.94, 1.27]), ([-0.73, -0.5, 1.28], [-0.745, -0.94, 1.27]), 32, 45)
+PANEL_PUSH = move(([-0.42, -0.1, 1.33], [-0.745, -0.94, 1.27]), ([-0.5, -0.38, 1.31], [-0.745, -0.94, 1.27]), 32, 42)
 shot(0, "first frame: the floor panel close, the 13 button lit cold on its own, my finger hovering by the 12; pushing in",
      PANEL_PUSH, 1, 0.004)
-shot("L01.4", "my face in the car, looking at the panel: the DING and the hit land on OUT", FACE_ME, 2, 0.006,
+shot("L01.4-0.2", "my face in the car, looking at the panel: the DING and the hit land on OUT", FACE_ME, 2, 0.006,
      lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
 shot("L02", "bright 13: the board of keys, a tag on every ring; Mr. Abel lifts his set off it",
      still([-0.8, -3.0, 1.55], [1.2, -3.0, 1.55], 22))
@@ -203,7 +203,21 @@ shot("L50", "the doors part on dark thirteen: the Attendant facing the car, my t
      tl={"at": [0.5, -1.0, 0.5], "aim": [0.0, -2.2, 0.55], "w": 0.9, "c": "#bcd0ff", "size": 0.3})
 
 shots = []
+def drift(cam, k, amt=0.06):
+    """No shot is static: a single-key camera gets a slow push (every other one also drifts sideways)."""
+    if len(cam) != 1:
+        return cam
+    t, loc, tgt, lens = cam[0]
+    loc2 = [loc[i] + amt * (tgt[i] - loc[i]) for i in range(3)]
+    if k % 2:
+        loc2[0] += 0.06
+    return [cam[0], [1, [round(v, 3) for v in loc2], tgt, lens]]
+
+
+NO_DRIFT = {"P05"}
 for k, s in enumerate(SH):
+    if s["at"] not in NO_DRIFT:
+        s["cam"] = drift(s["cam"], k)
     d = {"id": f"S{k + 1:02d}", "cam": s["cam"], "step": s["step"], "hand": s["hand"]}
     if s.get("key"):
         d["key"] = s["key"]
@@ -524,11 +538,29 @@ sf("L50", "whoosh", -28, dur=0.7)
 sf("L08.1", "door", -30, dur=0.6)
 sf("L37.1", "door", -30, dur=0.6)
 sf("L31", "sting", -24)
+# post sfx (2026-11-03 lift): the doors, the bump and the beats land with recorded effects
+sf("L02b", "bell", -20)
+sf("L02b", "whoosh", -22, dur=0.8)
+sf("L02", "whoosh", -28, dur=0.5)
+sf("L03", "thud", -24)
+sf("L09", "whoosh", -30, dur=0.6)
+sf("P02", "door", -22, dur=1.0)
+sf("P03", "door", -22, dur=1.0)
+sf("P04", "door", -20, dur=1.0)
+sf("L17.4", "whoosh", -28, dur=1.0)
+sf("L23.3", "thud", -20)
+sf("L28", "thud", -22, keep=True)
+sf("L34", "thud", -18)
+sf("L41", "thud", -20)
+sf("L42", "door", -22, dur=1.0)
+sf("L47", "whoosh", -30, dur=0.6)
+sf("L50", "door", -20, dur=1.0)
 
 story = {
     "slug": "ep14-floor-thirteen",
     "title": "In This Building Everything You FORGET Goes To Floor 13",
     "made_for_kids": False,
+    "fade_in": False,
     "premise": "In an older apartment tower, everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it: keys, a forgotten anniversary as a cake, even a first boyfriend doing the crossword. I've never forgotten anything and never been up there. Then the elevator starts going past my floor to a dark thirteen, where something in a black-and-brass elevator attendant's uniform with a panel of elevator buttons for a face is nearer each morning, a brass tag with my apartment number hanging from its folded gloves.",
     "twist": "I was the thing that turned up on thirteen, because Grandad next door had forgotten me. Nothing on thirteen is gone, though, and what you fetch back you remember: I fetch the red scarf he knits me every winter from my shelf up there, put it in his hands, and he says my name. He forgets me most mornings now, so most mornings I go up and fetch myself back.",
     "world": "an older apartment tower in an unnamed city: a walnut-and-brass elevator car, the thirteenth floor as a long umber hall of open shelves of forgotten things with brass tags (warm and busy when people fetch, dark with one cold light when the elevator brings me), a beige twelfth-floor landing with two doors, and two side-by-side concrete balconies with a low wall and Grandad's crowd of terracotta pots.",
@@ -561,7 +593,7 @@ story = {
                   {"at": "L45", "voices": ["drone", "pad"], "energy": 0.4, "mode": "dorian"},
                   {"at": "L48", "voices": ["drone"], "energy": 0.4, "mode": "phrygian"},
               ]},
-    "sound": {"rev": 2, "floor": "wood", "steps_db": -22,
+    "sound": {"rev": 3, "floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "hum", "from": 0, "to": "L08", "lufs": -40},
                   {"kind": "room", "from": "L08", "to": "L09", "lufs": -40},

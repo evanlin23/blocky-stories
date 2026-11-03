@@ -584,6 +584,8 @@ def build_panel(kit, ctx, M):
     for i, (x, z) in enumerate(slots):
         kit.cyl(f"pbezel{i}", pr * 1.39, 0.012, (x, py + 0.004, z), M["brass_dark"], rot=(math.pi / 2, 0, 0), n=28)
         bm = button_mat(kit, f"panel button {i}", pr, style=ctx.get("style", "ring"))
+        if i == 12:   # the 13 lights cold: it is the warned-of thing, and it was nobody's finger
+            bm.node_tree.nodes["Principled BSDF"].inputs["Emission Color"].default_value = kit.col("#7fb0ff")
         kit.cyl(f"pbutton{i}", pr, 0.012, (x, py + 0.008, z), bm, rot=(math.pi / 2, 0, 0), n=28)
         pbtn.append(bm)
     gy = py + 0.0145
@@ -1579,11 +1581,11 @@ def animate(kit, story, tl, t, ctx):
     pcur = _last(pcs, t) or {}
     pl = pcur.get("lit", [])
     ppl = (_prev(pcs, pcur) or {}).get("lit", []) if pcur else []
-    pu = max(0.0, min(1.0, (t - pcur["t"]) / 0.3)) if pcur else 1.0
+    pu = max(0.0, min(1.0, (t - pcur["t"]) / 0.3)) if pcur and ppl is not None and _prev(pcs, pcur) is not None else 1.0
     pu = pu * pu * (3 - 2 * pu)
     for i, m in enumerate(ctx["panel_buttons"]):
-        a0 = 2.4 if i in ppl else 0.0
-        a1 = 2.4 if i in pl else 0.0
+        a0 = (0.75 if i == 12 else 1.7) if i in ppl else 0.0
+        a1 = (0.75 if i == 12 else 1.7) if i in pl else 0.0
         set_button(m, a0 + (a1 - a0) * pu)
     # --- the finger: on a floor-panel button, pressed in by "press" (0..1), coming in from the car
     fc = _last(_cues(tl, "finger"), t) or {}
