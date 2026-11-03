@@ -432,8 +432,8 @@ def build_booth(kit, ctx):
     kit.box("booth roof", (4.8, 2.2, 0.12), (0, 5.4, 4.4), kit.plastic("#3a2a2c", 0.8))
     for sx in (-2.3, 2.3):
         kit.box(f"boothpost{sx}", (0.1, 0.1, 2.7), (sx, 4.5, 3.05), cream)
-    kit.cyl("micpole", 0.012, 0.5, (1.05, 4.9, 2.95), kit.metal("#333333"))
-    kit.sphere("micball", 0.045, (1.05, 4.9, 3.22), dark)
+    kit.cyl("micpole", 0.012, 0.5, (1.05, 4.72, 2.95), kit.metal("#333333"))
+    kit.sphere("micball", 0.045, (1.05, 4.72, 3.22), dark)
     kit.sphere("boothbulb", 0.08, (0.5, 5.0, 3.55), kit.emit("#ffd9a0", 14.0))
     kit.light("booth", "POINT", (0.5, 5.0, 3.4), 160, "#ffbf70", size=0.15)
     # the song lights: a cream board over the booth with twelve round bulbs, no text. The rule meter.
@@ -530,6 +530,16 @@ def build_skater(kit, ctx):
     sm2 = ostripes(kit, "skater stripes b", "#972230", "#e8dcc1", 6.0)
     skate = kit.plastic("#eadfc7", 0.45)
     wheel = kit.plastic("#b84a52", 0.5)
+    # in the bright hall the blue sky greys the faded stripes: a warm self-glow (set per frame, fading with the dim)
+    ctx["sk_glow"] = []
+    for m in (sm, sm2, skin, glove, skate):
+        b = m.node_tree.nodes["Principled BSDF"]
+        lk = b.inputs["Base Color"].links
+        if lk:
+            m.node_tree.links.new(lk[0].from_socket, b.inputs["Emission Color"])
+        else:
+            b.inputs["Emission Color"].default_value = b.inputs["Base Color"].default_value
+        ctx["sk_glow"].append(b.inputs["Emission Strength"])
     objs = []
     root = kit.empty("skater", (0, 0, 0))
     ctx["sk"] = {"root": root, "objs": objs}
@@ -589,6 +599,10 @@ def build_skater(kit, ctx):
     img = bpy.data.images.load(str(wd / "skater-face.png"))
     img.colorspace_settings.name = "sRGB"
     tex.image = img
+    hb = next((n for n in hm.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None)
+    if hb is not None:
+        hm.node_tree.links.new(tex.outputs["Color"], hb.inputs["Emission Color"])
+        ctx["sk_glow"].append(hb.inputs["Emission Strength"])
     inner = kit.empty("sk.headinner", (0, 0, faces.HEAD_H / 2), headg)
     add(rig.head_mesh("sk.headm", hm, inner))
     ctx["sk"]["head"] = headp
@@ -815,6 +829,8 @@ def animate(kit, story, tl, t, ctx):
     over["tube"] = 0.06 + 0.94 * dim ** 3
     over["amber"] = 0.04 + 0.96 * dim ** 3
     over["booth"] = 0.04 + 0.96 * dim ** 3
+    for g in ctx.get("sk_glow", []):
+        g.default_value = 0.45 * dim ** 3
     over["mefill"] = min(1.0, max(0.0, (0.7 - dim) / 0.4))
     # the sky and every emissive in the hall dim with the room (the world was left at full, lighting it all)
     wn = bpy.context.scene.world.node_tree.nodes["Background"]

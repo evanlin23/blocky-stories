@@ -572,6 +572,7 @@ story = {
     "shots": shots,
     "acting": acting,
     "cues": cues,
+    "clip_ok": ["S05/s2", "S08/gus", "S65/gus", "S65/me", "S70/gus", "S71/gus"],
     "fx": [],
     # the fast songs: a bright rink organ in D major; the waltz: F lydian, soft; the drone enters at L13 and thickens at
     # each skip, lifts a step at each take-back and is gone by L34
