@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 T = {
-"L01": ["Never let", "a man with", "no CLOCK", "near someone", "you LOVE."],
+"L01": ["Two people", "in the", "BEE YARD.", "Only ONE", "CLOCK."],
 "L02": ["Every clock", "counts down to", "your next HUG."],
 "L03": ["So the boat", "arrivals are a", "field of ZEROS."],
 "L04": ["The ticket man's", "dial says YEARS.", "He likes it", "that WAY."],

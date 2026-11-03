@@ -168,21 +168,28 @@ hv = lambda x, y, yaw=0, **kw: P(x, y, yaw, z=gz(y) + LIFT, arms=[0, 0], side=[0
 
 # ============================================================================================ the shots
 # ---- the warning, the pier and the montage (S00 to S11)
-cx0, cx1 = X - 0.46, X + 0.46
-hug = dict(arms=[55, 55], side=[18, 18], expr="grin")
+cx0, cx1 = X - 0.31, X + 0.31
+hug = dict(arms=[26, 26], side=[0, 0], expr="soft")
+H1 = {}     # the taller embrace: arms over and outside the partner's
+H2 = {}     # the lower one: arms under, round the back     # chest to chest, arms round the back, closed smiles
 # S00, the warning (L01): a Friday flash-forward, close and lit, on the wrong thing. The Hover by the shed (his
 # Friday place), the empty air over his head where a dial should be, pushing in. Lena small behind him at row 1, her
 # dial in frame (24 hours, Friday's reading). Never his boots: the gap is saved for L25. n=33 gives it Friday's light.
-HV0 = (HOV_FRI[0], HOV_FRI[1], gz(HOV_FRI[1]) + LIFT)
-sh("S00", 33, 0, fc(hd(*HV0), 40, -24, 3.6, 40, dial=False, drop=0.0, el=-0.4, push=1.2), {"hover": hv(HOV_FRI[0], HOV_FRI[1], 40),
-   "lena": P(-2.35, 5.6, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, hand=0.003)
-sh("S01", 2, "L02", mv([X - 0.3, 4.9, 1.45], [X, 9.0, 1.62], 35, [X - 0.2, 5.4, 1.45], [X, 9.0, 1.62], 35),
-   {"a1": P(cx0, 9.0, 90, z=PZ, head=[-72, 0], **hug), "a2": P(cx1, 9.0, 270, z=PZ, head=[72, 0], **hug),
+S00H = (-0.4, 4.6)
+HV0 = (S00H[0], S00H[1], gz(S00H[1]) + LIFT)
+# low camera: his boots, the bright strip of grass under them and his shadow sit in the lower third (above the captions).
+_cy0, _cy1 = S00H[1] - 3.4, S00H[1] - 2.7
+_gy = gz(S00H[1])
+sh("S00", 33, 0, mv([S00H[0] + 0.15, _cy0, gz(_cy0) + 0.5], [S00H[0], S00H[1], _gy + 0.53], 20,
+                    [S00H[0] + 0.1, _cy1, gz(_cy1) + 0.5], [S00H[0], S00H[1], _gy + 0.6], 20),
+   {"hover": hv(S00H[0], S00H[1], 0), "lena": P(1.15, 8.2, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, hand=0.003)
+sh("S01", 2, "L02", mv([X - 0.3, 4.9, 1.85], [X, 9.0, 2.0], 44, [X - 0.2, 5.4, 1.85], [X, 9.0, 2.0], 44),
+   {"a1": P(cx0, 9.0, 90, z=PZ, head=[-72, 0], **hug, **H1), "a2": P(cx1, 9.0, 270, z=PZ, head=[72, 0], **hug, **H2),
     "b1": P(X - 1.7, 13.6, 0, z=PZ, to=(X - 1.7, 12.0, PZ), expr="neutral"), "b2": P(X + 1.8, 14.6, 0, z=PZ, to=(X + 1.8, 13.0, PZ), expr="neutral")}, hand=0.003)
-cp = lambda x, y, yaw, who_head: P(x, y, yaw, z=PZ, arms=[55, 55], side=[18, 18], expr="grin", head=[who_head, 0])
+cp = lambda x, y, yaw, who_head: P(x, y, yaw, z=PZ, arms=[26, 26], side=[0, 0], expr="soft", head=[who_head, 0])
 sh("S04", 3, "L03", mv([X + 0.8, 15.5, 6.4], [X, 25.2, 1.4], 30, [X + 0.4, 16.5, 6.0], [X, 25.2, 1.4], 30),
-   {"c1": cp(X - 1.8, 23.2, 90, -60), "c2": cp(X - 1.04, 23.2, 270, 60), "c3": cp(X + 1.04, 24.8, 90, -60),
-    "c4": cp(X + 1.8, 24.8, 270, 60), "c5": cp(X - 0.38, 26.6, 90, -60), "c6": cp(X + 0.38, 26.6, 270, 60)}, hand=0.003)
+   {"c1": cp(X - 1.7, 23.2, 90, -60), "c2": cp(X - 1.09, 23.2, 270, 60), "c3": cp(X + 1.09, 24.8, 90, -60),
+    "c4": cp(X + 1.7, 24.8, 270, 60), "c5": cp(X - 0.31, 26.6, 90, -60), "c6": cp(X + 0.31, 26.6, 270, 60)}, hand=0.003)
 sh("S05", 4, "L04", mv([HUT[0] + 4.7, -4.9, 1.55], [HUT[0] + 0.5, -4.0, 1.55], 38, [HUT[0] + 4.4, -4.8, 1.55], [HUT[0] + 0.5, -4.0, 1.55], 38),
    {"t": P(HUT[0] + 0.5, -4.0, 90, z=-0.25, expr="angry", arms=[0, 0], side=[0, 0], head=[0, 0])}, hand=0.003)
 sh("S06", 4, "L04.2-0.2", fc((HUT[0] + 0.5, -4.0, 1.31), 90, 18, 2.3, 40),
@@ -211,8 +218,8 @@ ME_Q = (X - 1.0, -9.0)
 sh("S12", 9, "L09", fc(hd(*ME_Q, 0.0), 0, 14, 3.7, 35), {"me": P(ME_Q[0], ME_Q[1], 0, z=0.0, arms=[0, 0], side=[0, 0], expr="neutral")}, hand=0.004)
 sh("S13", 10, "L10", fc(hd(*ME_Q, 0.0), 0, 8, 1.9, 45, push=0.12), {"me": P(ME_Q[0], ME_Q[1], 0, z=0.0, arms=[0, 0], side=[0, 0], expr="neutral")}, hand=0.003)
 sh("S14", 11, "L11", mv([X + 0.6, -11.8, 1.6], [X, -7.2, 1.5], 30, [X + 0.3, -11.6, 1.6], [X - 0.2, -7.2, 1.5], 30),
-   {"me": P(X + 2.3, -8.3, 270, z=0.0, to=(X - 2.0, -8.3, 0.0), arms=[0, 0], side=[22, 22], expr="neutral"),
-    "a1": P(X - 0.38, -5.5, 90, z=0.0, head=[-72, 0], **hug), "a2": P(X + 0.38, -5.5, 270, z=0.0, head=[72, 0], **hug)}, hand=0.004)
+   {"me": P(X + 2.3, -7.0, 270, z=0.0, to=(X - 2.0, -7.0, 0.0), arms=[0, 0], side=[22, 22], expr="neutral"),
+    "a1": P(X - 0.31, -5.5, 90, z=0.0, head=[-72, 0], **hug), "a2": P(X + 0.31, -5.5, 270, z=0.0, head=[72, 0], **hug)}, hand=0.004)
 # ---- Lena and the yard
 sh("S15", 12, "L12", mv([-7.5, -14.0, gz(-14) + 4.2], [0.0, -1.0, 1.0], 30, [-6.8, -13.2, gz(-13.2) + 4.0], [0.0, -1.0, 1.0], 30),
    {"lena": P(-0.6, -6.5, 0, to=(0.1, -2.6), expr="neutral")}, hand=0.006)
@@ -341,10 +348,10 @@ sh("S79", 68, "L68", mv([2.9, -0.4, 1.5], [0.0, 0.0, 1.5], 33, [2.6, -0.4, 1.5],
    {"me": P(0.0, -0.4, 180, arms=[82, 82], side=[0, 0], expr="neutral"), "lena": P(0.0, 0.25, 0, arms=[82, 82], side=[0, 0], expr="grin")}, hand=0.004)
 sh("S80", 69, "L69", mv([0.0, -0.9, 1.6], [0.0, 3.0, 1.5], 30, [0.0, -0.7, 1.6], [0.0, 3.0, 1.5], 30),
    {"me": P(-0.7, 3.0, 0, arms=[0, 0], side=[0, 0], expr="neutral"), "lena": P(0.7, 3.0, 0, arms=[0, 0], side=[0, 0], expr="grin")}, hand=0.004)
-sh("S80b", 69, "L69.3", mv([0.0, 5.0, gz(5) + 2.0], [0.0, -6.0, -2.0], 34, [0.0, 10.5, gz(10.5) + 3.2], [0.0, -6.0, -2.0], 30),
-   {"me": P(-0.7, 3.0, 0, arms=[0, 0], side=[0, 0], expr="neutral"), "lena": P(0.7, 3.0, 0, arms=[0, 0], side=[0, 0], expr="grin")}, hand=0.004)
-sh("S81", 70, "L70", mv([0.0, 5.6, gz(5.6) + 2.3], [0.0, 2.2, 2.3], 44, [0.0, 5.0, gz(5) + 2.3], [0.0, 2.2, 2.3], 46),
-   {"me": P(-0.7, 3.0, 0, arms=[0, 0], side=[0, 0], expr="neutral"), "lena": P(0.7, 3.0, 0, arms=[0, 0], side=[0, 0], expr="grin")}, hand=0.003)
+_cz = gz(3) + 1.75
+_pp = {"me": P(-0.55, 3.0, 0, arms=[0, 0], side=[0, 0], expr="neutral"), "lena": P(0.55, 3.0, 0, arms=[0, 0], side=[0, 0], expr="grin")}
+sh("S80b", 69, "L69.3", mv([0.0, -2.9, _cz], [0.0, 3.0, _cz], 36, [0.0, -2.5, _cz], [0.0, 3.0, _cz], 36), dict(_pp), hand=0.004)
+sh("S81", 70, "L70", mv([0.0, -2.5, _cz], [0.0, 3.0, _cz], 36, [0.0, -2.1, _cz], [0.0, 3.0, _cz], 38), dict(_pp), hand=0.003)
 
 # ================================================================================================== dials
 # unit pips: 1 seconds, 2 minutes, 3 hours, 4 days, 5 months, 6 years
@@ -429,6 +436,7 @@ story = {
     "key_color": "#ff86b8",
     "gap": 0.12,
     "tail": 0.25,
+    "fade_out": False,       # the last frame stays bright so the loop cuts straight into S00
     "fade_in": False,       # frame 1 is already the picture (opening recipe v1)
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "look": {"flash_safe": True, "polish": {"quiet": [["L55", "L58"], ["L66", "L68"]]}, "fog": "#bcd6ea", "fog_density": 0.0035, "fog_start": 8.0, "sky": "#9cc8ea", "sky_strength": 1.0,
@@ -512,7 +520,7 @@ fx_("L13.3", "latch", -16)
 fx_("L39", "latch", -18)
 for k, off in enumerate((0.15, 1.2, 2.3)):
     fx_(f"L40+{off}", "puff", -17, dur=0.6)
-fx_("L01>-0.3", "sting", -13, dur=1.6, keep=True)     # the hit on "LOVE"
+fx_("L01>-0.3", "sting", -8, dur=1.6, keep=True)     # the hit on "LOVE"
 fx_("L44", "sting", -11, dur=2.4, keep=True)
 fx_("L52.3+0.2", "whoosh", -17)
 fx_("L55+0.35", "thud", -26)

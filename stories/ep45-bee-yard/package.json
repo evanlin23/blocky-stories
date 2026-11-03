@@ -3,8 +3,8 @@
  "description": "In this world, everyone has a little clock over their head that counts down to their next hug. Mine has always been blank, and that suits me fine.\n\nMy girlfriend Lena keeps bees on the hill. In two years I've never gone past the gate of her yard. This week her clock started counting hours, and a man I'd never seen started standing among the hives.\n\nIt's made up, a creepy blocky story built with code and Blender.",
  "pin": "Comment HUG if you'd have walked through that gate.",
  "made_for_kids": false,
- "cover_s": 134.4,
+ "cover_s": 1.1,
  "shape": "about-me",
  "old_title": "In This World a Clock Counts Down to Your Next HUG",
- "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+ "opening": "count"
 }

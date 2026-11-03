@@ -59,7 +59,7 @@ One small harbour town on a hill, early summer, clear light.
 - **Light changes (flash-safe, `look.flash_safe: true`):** there are almost none. The zero glows are 0.8 s fades up and 1 s down, never more than one in a 2 s window near the camera. The smoke fills the yard over 3 s (L40 to L41), a slow fade from sunlit to soft grey, and thins over 3 s (L59). My dial lighting (L57) is a 1 s fade. No flicker, no strobe, no blackouts, no lamp switches. Pre-check S00 to S01 (two zero glows in frame from 2.4 s, the sting at 2.1 s) and S48 to S64 with `python -m blocky flash`.
 
 ## The hits checklist (RULES.md → What the hits do)
-- **Opening (recipe v1, 2026-11-03):** L01 is a warning to you, "Never let a man with no CLOCK near someone you LOVE." (11 words, about 2.1 s). L02 tightens it with the rule, "Every clock counts down to your next HUG." (8 words, about 1.4 s), so the rule is said by about 4 s. No name, place or backstory before 4 s (Lena is first named at L12).
+- **Opening (recipe v1, 2026-11-03):** L01 is a count opening: "Two people in the BEE YARD. Only ONE CLOCK." (8 words), matching S00 exactly: two people in frame, Lena with her dial and the man with none. L02 tightens it with the rule, "Every clock counts down to your next HUG." (8 words, about 1.4 s), so the rule is said by about 4 s. No name, place or backstory before 4 s (Lena is first named at L12).
 - **Quotable line:** L04, "The ticket man's dial says YEARS. He likes it that WAY."
 - **Rule line:** L02, "Every clock counts down to your next HUG." The old rule line ("In this world, a CLOCK over your head...") stays as the ending's echo in L69.
 - **Marker by 2 s:** S00 opens close on the Hover's face with the empty air over his head where a dial should be, and Lena's dial (24, three pips, coral arc) in frame behind him. At L02 (about 2.4 s) S01 cuts to the pier couple hugging under two gold zero dials, faces toward camera, with two passers-by behind whose dials tick down. Sunlit, high key, dials clear of the caption band.
@@ -78,9 +78,9 @@ L60 to L70. The opening line sounds like a warning about a stranger: the man wit
 On the board that holds the two veil hooks, two short honey-gold strokes are scratched into the wood between the hooks: a plain tally, two for a yard built for two (lore.md → Third parallel batch). Shown once in S42, under L35 ("One is Lena's. The other is mine."), held about 1.8 s, never narrated. No extra stroke, nothing else of the canon.
 
 ## The first shot (S00, L01, 0 to about 2.4 s)
-A Friday flash-forward in the bee yard, sunlit. Close and level on the Hover by the shed, three-quarter front (24 degrees off his facing), camera 2.5 m from his face pushing in to 1.8 m during L01, 40 mm lens (no wide: under 9 m, lens over 20 mm). His face sits in the upper half with a clear dial-sized patch of empty sky over his head, exactly where every other dial floats. His Friday light: front fill dead on him, low side key, cool rim, so the pin highlights in his eyes read on a phone. Three bee dots orbit his head. Behind him, small and soft at row 1, Lena faces us with her dial in frame: coral arc, 24, three pips (Friday's reading. It reads months again from L02). So the rule meter is on screen from frame 1, and the one missing dial is the wrong thing. A low sting lands on "LOVE" (L01.4), drone only under the line, pluck from L02.
+A Friday flash-forward in the bee yard, sunlit. Low and front-on on the Hover mid-yard between the hive rows, camera 3.4 m pushing to 2.7 m during L01, 20 mm lens. His face sits in the upper half with a clear dial-sized patch of empty sky over his head, exactly where every other dial floats. His Friday light: front fill dead on him, low side key, cool rim, so the pin highlights in his eyes read on a phone. Three bee dots orbit his head. Behind him, small and soft at row 1, Lena faces us with her dial in frame: coral arc, 24, three pips (Friday's reading. It reads months again from L02). So the rule meter is on screen from frame 1, and the one missing dial is the wrong thing. A low sting lands on "CLOCK" (the last word of L01), drone only under the line, pluck from L02.
 
-**Squaring it with "little and late":** S00 shows only his face and the air above it, for about 2 s, and never his boots, the gap or his shadow apart from him. Those stay for L25 to L26. Nothing in S00 says where or when he is. At L23 ("Then I saw someone") the viewer meets the man the warning named, so the Wednesday reveal pays off the opening instead of spending it, and the first clear full look (the gap, the floating, no dial said aloud at L27) still lands about 40% in. The gateway reveal (L44 to L47) is unchanged.
+**The gap is the hook (2026-11-03 fix):** S00 is shot low (camera about 0.5 m up, 3.4 m pushing to 2.7 m, 20 mm lens) so frame 1 shows what is wrong: his boots hang a hand above the grass with a bright strip of lawn under them and his shadow lying apart from him, in the lower third above the captions, with his face lit and readable and the empty air over his head. Lena's whole dial (24) stays in frame to the right of him all shot, bee dots kept in a wide ring away from every face. Nothing says where or when he is. L25 to L26 is the close-up payoff of the same gap (the hover named and shown at length), and the gateway reveal (L44 to L47) is unchanged.
 
 **Builder:** test still of S00 before the final. Check Lena's dial clears the caption band and doesn't sit behind his head, and that his head reads against the green, not the white hives.
 
@@ -89,7 +89,7 @@ Timings are at about 290 wpm. Every shot keeps faces at least 1/5 of the frame w
 
 | Shot | Line | Picture |
 |---|---|---|
-| S00 | L01 | The warning shot (see "The first shot" above): close on the Hover's face and the empty air over his head, Lena's dial behind, pushing in, sting on "LOVE". |
+| S00 | L01 | The warning shot (see "The first shot" above): low and front-on, his floating boots, the lawn strip and the shadow apart from him in the lower third, empty air over his head, Lena's dial right, pushing in, sting on "CLOCK". |
 | S01 | L02 | Sunny ferry pier, medium, pushing in: a couple hugging, faces toward camera over each other's shoulders, both dials glowing soft gold at zero. Two passers-by behind with coral arcs, and the backpacker's ticks 12 to 11 on "counts down". |
 | S04 | L03 | High wide: the ferry arrivals, six to eight people meeting, a field of gold zero dials (about 4 s in, after the no-wide window). |
 | S05 | L04 | The ticket man on his stool in the hut, scowling, his dial on six pips and a full coral arc. |
@@ -173,7 +173,7 @@ Timings are at about 290 wpm. Every shot keeps faces at least 1/5 of the frame w
 ## Narration (70 lines, 631 words, about 2:10 of speech at 290 wpm, about 2:20 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words.
 
-L01. Never let a man with no CLOCK near someone you LOVE.
+L01. Two people in the BEE YARD. Only ONE CLOCK.
 L02. Every clock counts down to your next HUG.
 L03. So the boat arrivals are a field of ZEROS.
 L04. The ticket man's dial says YEARS. He likes it that WAY. **(quotable line)**

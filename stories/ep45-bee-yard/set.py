@@ -708,7 +708,7 @@ def animate(kit, story, tl, t, ctx):
         b.hide_render = night or n < 12 or n > 69 or (V(b.location) - cam).length < 1.6
     for i, b in enumerate(ctx["hover_bees"]):
         a = t * 0.9 + i * 1.57
-        rr = 0.34 + 0.1 * (i % 3)
+        rr = (0.34 + 0.1 * (i % 3)) * (2.4 if sid == "S00" else 1.0)     # S00: wide ring, so no dot sits on his face
         b.location = (hv["x"] + rr * math.cos(a), hv["y"] + rr * math.sin(a), hv["z"] + 1.0 + 0.14 * i + 0.05 * math.sin(a * 2 + i))
         b.hide_render = (not hover_on) or (V(b.location) - cam).length < 0.9
         b.scale = (0.3 if sid == "S00" else 1.0,) * 3     # S00 is close: small dark-gold specks, not balls
