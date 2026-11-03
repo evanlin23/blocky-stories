@@ -23,3 +23,8 @@
    - Add the story to `queue.txt`.
    - Open the PR, then merge once `test` passes.
 7. After the final render, run the qa agent and write `qa/ep53-car-boot.json`.
+
+**Since the pause:** polish v2.2 (#168) and v2.3 (#175) are merged. When you pull main, check the following against builder.md and docs/engine.md → The polish pack:
+- Keep ep53's own sfx to 2 to 4 events per 10 s. Round 4 added a lot of hits.
+- Mark the frame-exact shots with `"hold": ["Sxx"]`: the coat comparisons and the trunk.
+- Keep the quiet span over L60 to L68 short enough to pass pace.
