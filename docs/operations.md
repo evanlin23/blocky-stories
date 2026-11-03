@@ -69,8 +69,10 @@ the hard way.
   reads at 8:41 AM, 2:41 PM and 8:41 PM Central (its usage limit is tight). The second reads every hour at :21 and answers an
   URGENT ask within the hour.
   `docs/second-team.md` holds the second team's status, one line per item.
-- **The render pool is shared:** 20 jobs at once for the account. Finals take 16 and a proof 8, so proofs queue behind a final, which
-  is fine (the first, 2026-11-03). Never cancel a `render` run.
+- **The render pool is shared:** about 40 jobs at once for the account, not 20 (39 ran together at 19:58:45 UTC on
+  2026-11-03, and waiting shards started within 4 s of other jobs ending; `docs/research/render-throughput.md`). Finals take
+  up to 32 (two slots of 16) and a proof 8, leaving about 8 for PR tests. A proof started while a render draws may wait a
+  few minutes. Never cancel a `render` run while it is drawing.
 - **proof.yml gap (2026-11-03):** a waiting PR proof run that a newer push replaces is planned again for the new push only. If that
   push touched no film files (a main merge, a handoff note), nothing is drawn and the story never gets a proof (ep55 and ep42).
   Check that a proof run has draw jobs, and if it only ran `plan`, dispatch proof.yml with the story and the branch.
@@ -96,8 +98,28 @@ the hard way.
 - One render run at a time. **A waiting run is replaced by each newer push**, so many "cancelled" render runs are
   normal: the next run picks up every story without a film, or with a film older than its last picture or sound
   change.
-- At most 2 stories a run, in two slots: each story's assemble waits only for its own shards (a shared wait delayed the first film by hours on 2026-11-03). Story B's shards start when A's are done, so there are 16 draw jobs at a time (leaving 4 runners for PR
-  tests); assemble-a runs beside draw-b (17 runners for that stretch, 3 left for PR tests). The `again` job chains the next run. If a story's shard fails, its assemble is skipped (no film), story B and `again` still run, and the next plan draws it again; "Re-run failed jobs" on the run redraws just the failed shard, then assembles. A run of 8 stories takes about 5 hours.
+- At most 2 stories a run, in two slots, **both drawing at once** (`draw-b` no longer waits for `draw-a`): each story's
+  assemble waits only for its own shards (a shared wait delayed the first film by hours on 2026-11-03). Each story is
+  drawn in **32 shards** (finer, so a fast runner takes the next one instead of waiting on the slowest), and each slot's
+  `max-parallel` is 16, so a run uses at most 32 draw lanes of the account's ~40 and leaves about 8 for one proof and the
+  PR tests. The `again` job chains the next run. If a story's shard fails, its assemble is skipped (no film), the other
+  story and `again` still run, and the next plan draws it again; "Re-run failed jobs" on the run redraws just the failed
+  shard, then assembles. A run of 8 stories takes about 5 hours.
+- **A final can be held until a proof has passed (2026-11-03). It is OFF for now.** With it on, `plan_renders.py` skips a
+  story unless `qa/<story>.json` is `"stage": "proof"`, passed, at a sha with no film file changed after it
+  (`blocky.gate.proof_problems`, the check `test` makes), or its final qa already passed, and the plan log says why. Turn it
+  on by setting `REQUIRE_PROOF: "true"` in render.yml's `env` once the stories merged before proofs existed (closing-time,
+  ep47-fitting-room, moving-day, ep54-dance-hall, rule-three) have uploaded or been proofed; until then they'd be stuck. An
+  explicit `story` dispatch input is never held back.
+- **Drawn shards are reused.** Each shard is kept as `frames-<story>-<k>of<n>` (5 days; the count is in the name so a
+  16-shard cut is never taken for a 32-shard one). The plan reuses a shard whose artifact is unexpired and whose commit
+  has no change to `blocky/`, `assets/` or the story's film files since, and draws only the rest. When every shard is
+  there, `draw` is skipped and only `assemble` runs (it downloads the kept shards through the API with `GH_TOKEN`,
+  `scripts/fetch_shards.py`). The narration is made again, so a story drawn on one voice and mixed on another would drift:
+  if a reused film is out of sync, redraw it by changing a film file.
+- **Never cancel a render run while it is drawing.** Drawn frames are the only expensive thing here (about 7,300
+  runner-minutes were thrown away on 2026-11-03 by cancels). A newer push waits in the queue and is picked up by the
+  next run.
 - A film is only assembled from a complete set of shards (closing-time, run 87, 2026-11-03).
 - The narration is made once on Actions (the `voice` job) and the picture is drawn to it. Local and Actions
   synthesis differed by up to 0.85 s per line, which broke sync before that change.
