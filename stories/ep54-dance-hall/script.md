@@ -12,6 +12,11 @@
   - The payoff says it outright: L62 "Ros opens her EYES and sees her NEPHEW." L64 "We're a FAMILY MATCH." L65 "Nobody thinks to check a PALM." L72 "Mine is my AUNT."
   - The last dance is a teacher's demonstration with the class watching. I walk my aunt out (L67), tread on her feet (L68), and she uses me to show the class what not to do (L69). No closed eyes, no cheek to cheek, no lingering. Staging notes are under "Builder: staging changes in r5" at the end.
   - Added two beats the pitch didn't have, both inside its shape: the shadows "like the legs of a ladder" during the first scare (sound and shadow only, no creature), and the blank backs of its hands, "Just like MINE", as a red herring at the reveal.
+- **Opening-variety pass (2026-11-03, `docs/research/opening-variety.md`, hard rule 5):** the opening shape is now `cost` (the place's rule with its price) instead of a `ban`, so the queue doesn't open on "Never" twice in a row.
+  - L01 "Everyone's born / with HALF / a MARK. / Someone out there / has the REST." 11 words, about 2.1 s, the sound hit still on "REST". It still lands over S01, Ros's dim half in a hold round nobody, and the cut to the bus stop still falls on L01.3 ("Someone out there"). It never says which side of the hand, which is fairer to the palm twist.
+  - L02 "Never cover YOURS. / Not even / in WINTER." keeps the gloves plant: the warning is still said, one line later.
+  - L71 repeats the new L01 word for word. L72 "Mine / is my AUNT." and L73 are unchanged, and "Mine" now answers "half a mark" directly.
+  - Title "Someone Has the Other Half of My MARK 🤚", `"opening": "cost"` in `package.json`, and the description now opens on the rule instead of "Never". Re-voice L01, L02 and L71 once. No shot moves: S01 to S03 point at L01, L01.3, L01.4 and L02, which all still exist.
 - **Opening pass (2026-11-03, the opening recipe v1 in `docs/research/playbook.md`):** line 1 is now a warning to "you", and frame 1 looks straight at it.
   - L01 "NEVER cover / the BACK / of your HAND. / Your MATCH / has the REST." 12 words, about 2.2 s, a sound hit (`hit`) on "REST". Same world and rule, said as a warning. It also plants the gloves: the narrator covers his hands every Tuesday because the backs are blank (L06, L09).
   - L02 "Not even / in WINTER." tightens the same warning in about 1.0 s, with no names or places.
@@ -19,14 +24,14 @@
   - L71 repeats the new L01 word for word, so the loop still lands. L72 and L73 are unchanged.
   - Frame 1 is restaged: see "Builder: opening pass" at the end. Re-voice L01, L02, L03 and L71 (the timings in `voice-timings.json` for those four are estimates, marked `estimated`).
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 624 spoken words in 73 lines, all `narrator`, plus 3 pause beats (2.6 s in all). (622 before the opening pass, 609 before r5.)
+- **Word count:** 625 spoken words in 73 lines, all `narrator`, plus 3 pause beats (2.6 s in all). (624 before the opening-variety pass, 622 before the opening pass, 609 before r5.)
 - **Estimated length:** about 2:25 after the r5 rewrite (the built cut ran about 142 s, and the rewrite adds 13 words, about 3.4 s). At 290 wpm the speech is 2:06, the 0.12 s gaps add about 8.8 s, the pauses 2.6 s and the loop tail 0.25 s. If it lands under 2:15, add "The whole hall / SMELLS / of floor POLISH." after L08. If it lands over 2:30, cut L22 first, then L16.
 
 ## The story
 
 - **Premise:** In a town where everyone is born with half a glowing glyph on the back of one hand and a match out there with the rest, a friend or family, whoever you fit with, I play the records for my aunt Ros's Tuesday ballroom class in the old upstairs dance hall, in white gloves, and never dance. Ros has looked for her other half for forty years. This autumn her half is fading, she dances every demonstration with her arms round nobody, and the floor starts creaking behind her in a stride far too long.
-- **Rule (line 1, a warning):** "Never cover the back of your hand. Your match has the rest." Everyone is born with half a mark there. Halves glow gold on the back of a hand, and when two halves touch they glow whole.
-- **Twist:** the rule never says which side of the hand. My half is on my palm, hidden every Tuesday under my record gloves, so my aunt's match was her own nephew all along, carrying her records every Tuesday. We're a family match. The montage has already said a match can be a friend, a brother or a twin, so the payoff is clear the first time. The first line turns over: "never cover the back of your hand" first reads as a rule for everyone else (my backs are blank, so I wear gloves), and "your match has the rest" points at strangers across town. By the end the rest was on my palm, under the gloves, next to her every week.
+- **Rule (line 1, the place's rule with its cost):** "Everyone's born with half a mark. Someone out there has the rest." Line 2 adds the warning: "Never cover yours. Not even in winter." Everyone is born with half a mark on the back of one hand (shown in the opener, said at L06 and L10, never in line 1). Halves glow gold on the back of a hand, and when two halves touch they glow whole.
+- **Twist:** the rule never says which side of the hand. My half is on my palm, hidden every Tuesday under my record gloves, so my aunt's match was her own nephew all along, carrying her records every Tuesday. We're a family match. The montage has already said a match can be a friend, a brother or a twin, so the payoff is clear the first time. The first line turns over: "half a mark" never says which side of the hand, "someone out there has the rest" points at strangers across town, and "never cover yours" (L02) first reads as a rule for everyone else (my backs are blank, so I wear gloves). By the end the rest was on my palm, under the gloves, next to her every week.
 - **Where the twist is planted:**
   - Plant 1, the gloves: L09 ("I play the RECORDS / in my record GLOVES. / I NEVER dance."), and the careful wording at L06 ("The backs / of MY hands / are BLANK.").
   - Plant 2, the collar: L18 to L19, when Ros straightens my collar after class her half glows bright for a second. She blames the lighting (L20).
@@ -128,9 +133,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** frame 1 in the hall (Ros's hand), then a sunny bus stop, quick montage shots, then the hall.
 - **Shots:** 13.
 
-- `L01` narrator: NEVER cover / the BACK / of your HAND. / Your MATCH / has the REST.
-  - [frame 1, in the hall, lit full: tight on the back of Ros's raised left hand in dance hold, her half glowing gold but already dim (45%), and nothing in her hold, no partner's hand where one should be. Her face beyond the hand, eyes shut, counting. Slow push in. Cut at "Your MATCH" (L01.3) to the bright bus stop: two strangers, `smile`, holding up the backs of their hands toward each other, and their halves bloom whole on "REST" with the sound hit]
-- `L02` narrator: Not even / in WINTER.
+- `L01` narrator: Everyone's born / with HALF / a MARK. / Someone out there / has the REST.
+  - [frame 1, in the hall, lit full: tight on the back of Ros's raised left hand in dance hold, her half glowing gold but already dim (45%), and nothing in her hold, no partner's hand where one should be. Her face beyond the hand, eyes shut, counting. Slow push in. Cut at "Someone out there" (L01.3) to the bright bus stop: two strangers, `smile`, holding up the backs of their hands toward each other, and their halves bloom whole on "REST" with the sound hit]
+- `L02` narrator: Never cover YOURS. / Not even / in WINTER.
   - [close on the strangers' two bare hands side by side, halves fitting]
 - `L03` narrator: A MATCH / is whoever / you FIT with, / FRIEND or FAMILY. / One old man's / MATCH / is his BROTHER.
   - [a long café table, a row of people raising the backs of their hands in one wave. Two halves across the table light up together. Cut at "One old man's" (L03.4) to a garden gate: two old brothers who plainly look alike (same grey buzz cut, same face shape, striped shirts in green and blue), holding the backs of their hands up together, one whole glyph, both `smile`]
@@ -323,7 +328,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the hall. The harmony drops back to minor at L71. Only the drone and one creak under L73.
 - **Shots:** 4.
 
-- `L71` narrator: NEVER cover / the BACK / of your HAND. / Your MATCH / has the REST.
+- `L71` narrator: Everyone's born / with HALF / a MARK. / Someone out there / has the REST.
   - [high wide: the two of us side by side facing the class, our joined hands held up the way the strangers held theirs at the bus stop, one whole glyph between them]
 - `L72` narrator: Mine / is my AUNT.
   - [close on my palm, gold, Ros's hand-back resting on it]
