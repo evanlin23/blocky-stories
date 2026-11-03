@@ -1,0 +1,1945 @@
+{
+ "slug": "ep84-pick-door",
+ "rev": 1,
+ "title": "Pick A Door, Comment The NUMBER 🚪",
+ "made_for_kids": false,
+ "premise": "In one bright white room there are three painted exits, each with a number and one clue, and whoever picks the wrong one lives behind it forever. You get three seconds to pick.",
+ "twist": "All three open back into the room you are standing in, because you have picked one a thousand times already. The only right way out is number four, the open way you came in by, behind you, with the hall light left on, and you will still turn back to the three.",
+ "world": "a clean square white room with a pale floor, three tall painted exits side by side, a worn sisal mat, and behind the viewer an open way into a warm cream hall with a mustard lamp",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#8cff3a",
+ "gap": 0.12,
+ "tail": 0.25,
+ "min_read": 0.15,
+ "fade_in": false,
+ "fade_out": false,
+ "look": {
+  "fog": "#f4f6f8",
+  "fog_density": 0.002,
+  "fog_start": 40.0,
+  "sky": "#eef2f6",
+  "exposure": 0.0,
+  "flash_safe": true,
+  "style": "closer",
+  "polish": {
+   "emph": [
+    "L01",
+    "L07",
+    "L12",
+    "L16",
+    "L21"
+   ],
+   "reveal": [
+    "L11",
+    "L16"
+   ],
+   "twist": "L16",
+   "quiet": [
+    [
+     "L18",
+     "L19"
+    ]
+   ],
+   "sway": [
+    "S10",
+    "S14"
+   ],
+   "camera": true,
+   "idle": true,
+   "ease": true
+  }
+ },
+ "grade": {
+  "shadows": [
+   -0.005,
+   0.0,
+   0.02
+  ],
+  "highlights": [
+   0.01,
+   0.005,
+   -0.01
+  ],
+  "saturation": 1.1,
+  "contrast": 1.04,
+  "vignette": 0.12,
+  "bloom": 0.1,
+  "grain": 0.006,
+  "red_line": 0.7
+ },
+ "cast": {
+  "you": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#f4ecd6",
+   "pattern": "solid",
+   "pants": "#2b2f3a",
+   "shoes": "#fbfbf8",
+   "sleeves": "long",
+   "hair": "buzz",
+   "hair_c": "#5a3a22",
+   "extras": [
+    "hooddown"
+   ],
+   "extra_c": "#8cff3a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "you2": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#f4ecd6",
+   "pattern": "solid",
+   "pants": "#2b2f3a",
+   "shoes": "#fbfbf8",
+   "sleeves": "long",
+   "hair": "buzz",
+   "hair_c": "#5a3a22",
+   "extras": [
+    "hooddown"
+   ],
+   "extra_c": "#8cff3a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  },
+  "you3": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#f4ecd6",
+   "pattern": "solid",
+   "pants": "#2b2f3a",
+   "shoes": "#fbfbf8",
+   "sleeves": "long",
+   "hair": "buzz",
+   "hair_c": "#5a3a22",
+   "extras": [
+    "hooddown"
+   ],
+   "extra_c": "#8cff3a",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "If you pick the wrong DOOR,",
+     "if you pick the wrong door,"
+    ],
+    [
+     "you live behind it",
+     "you live behind it"
+    ],
+    [
+     "FOREVER.",
+     "forever."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Three of THEM.",
+     "three of them."
+    ],
+    [
+     "One clue EACH.",
+     "one clue each."
+    ],
+    [
+     "Comment your NUMBER.",
+     "comment your number."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Door ONE",
+     "door one"
+    ],
+    [
+     "is WARM,",
+     "is warm,"
+    ],
+    [
+     "and smells like your mom's COOKING.",
+     "and smells like your mom's cooking."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Door TWO.",
+     "door two."
+    ],
+    [
+     "Your PHONE",
+     "your phone"
+    ],
+    [
+     "is ringing behind it.",
+     "is ringing behind it."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Your phone",
+     "your phone"
+    ],
+    [
+     "is in your POCKET.",
+     "is in your pocket."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Door THREE.",
+     "door three."
+    ],
+    [
+     "The mat is worn",
+     "the mat is worn"
+    ],
+    [
+     "from feet going IN.",
+     "from feet going in."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "None coming OUT.",
+     "none coming out."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "PICK.",
+     "pick."
+    ],
+    [
+     "You've got THREE seconds.",
+     "you've got three seconds."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "THREE.",
+     "three."
+    ]
+   ]
+  },
+  {
+   "id": "P09a",
+   "pause": 0.52,
+   "chunks": []
+  },
+  {
+   "id": "L09b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "TWO.",
+     "two."
+    ]
+   ]
+  },
+  {
+   "id": "P09b",
+   "pause": 0.52,
+   "chunks": []
+  },
+  {
+   "id": "L09c",
+   "who": "narrator",
+   "chunks": [
+    [
+     "ONE.",
+     "one."
+    ]
+   ]
+  },
+  {
+   "id": "P10",
+   "pause": 0.6,
+   "chunks": []
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Here's the THING.",
+     "here's the thing."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "All three",
+     "all three"
+    ],
+    [
+     "open into the same ROOM.",
+     "open into the same room."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "THIS one.",
+     "this one."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "You've picked a door",
+     "you've picked a door"
+    ],
+    [
+     "a thousand TIMES.",
+     "a thousand times."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "That's how",
+     "that's how"
+    ],
+    [
+     "you got HERE.",
+     "you got here."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "See that LIGHT",
+     "see that light"
+    ],
+    [
+     "on the floor?",
+     "on the floor?"
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It's coming from",
+     "it's coming from"
+    ],
+    [
+     "door FOUR.",
+     "door four."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The one BEHIND you.",
+     "the one behind you."
+    ],
+    [
+     "The way you CAME in.",
+     "the way you came in."
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It's still OPEN.",
+     "it's still open."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Somebody left",
+     "somebody left"
+    ],
+    [
+     "the hall LIGHT on",
+     "the hall light on"
+    ],
+    [
+     "for you.",
+     "for you."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "But you'll turn back",
+     "but you'll turn back"
+    ],
+    [
+     "to the THREE.",
+     "to the three."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Everybody DOES.",
+     "everybody does."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -1.7,
+      1.75
+     ],
+     [
+      0,
+      3,
+      1.95
+     ],
+     17
+    ],
+    [
+     1,
+     [
+      0,
+      -0.4,
+      1.8
+     ],
+     [
+      0,
+      3,
+      1.95
+     ],
+     17
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "note": "three doors close, push in, warm wedge on the floor"
+  },
+  {
+   "id": "S02a",
+   "cam": [
+    [
+     0,
+     [
+      -1.2,
+      0.6,
+      1.8
+     ],
+     [
+      -1.25,
+      3,
+      2.1
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      1.2,
+      0.6,
+      1.8
+     ],
+     [
+      1.25,
+      3,
+      2.1
+     ],
+     24
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L02",
+   "note": "slide across the numerals"
+  },
+  {
+   "id": "S02b",
+   "cam": [
+    [
+     0,
+     [
+      0.9,
+      -0.5,
+      1.15
+     ],
+     [
+      0,
+      2.4,
+      1.7
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.6,
+      -0.2,
+      1.25
+     ],
+     [
+      0,
+      2.4,
+      1.7
+     ],
+     24
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L02.2",
+   "note": "you from behind on the mat"
+  },
+  {
+   "id": "S03",
+   "cam": [
+    [
+     0,
+     [
+      -1.25,
+      0.8,
+      1.9
+     ],
+     [
+      -1.25,
+      3,
+      1.9
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      -1.25,
+      1.5,
+      1.7
+     ],
+     [
+      -1.25,
+      3,
+      1.5
+     ],
+     26
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L03",
+   "note": "door one, warm glow under it"
+  },
+  {
+   "id": "S04",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      1.6,
+      1.15
+     ],
+     [
+      0.33,
+      3,
+      1.2
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.45,
+      2.1,
+      1.2
+     ],
+     [
+      0.33,
+      3,
+      1.2
+     ],
+     30
+    ]
+   ],
+   "step": 1,
+   "hand": 0.003,
+   "at": "L04",
+   "note": "door two knob, phone ringing"
+  },
+  {
+   "id": "S05",
+   "cam": [
+    [
+     0,
+     [
+      0.15,
+      -0.3,
+      1.1
+     ],
+     [
+      0,
+      1.7,
+      1.0
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.1,
+      0.2,
+      1.1
+     ],
+     [
+      0,
+      1.7,
+      1.0
+     ],
+     26
+    ]
+   ],
+   "step": 1,
+   "hand": 0.003,
+   "at": "L05",
+   "note": "you pat the pocket"
+  },
+  {
+   "id": "S06",
+   "cam": [
+    [
+     0,
+     [
+      1.5,
+      0.3,
+      0.3
+     ],
+     [
+      1.35,
+      1.7,
+      0.05
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      1.5,
+      0.8,
+      0.28
+     ],
+     [
+      1.35,
+      1.7,
+      0.05
+     ],
+     24
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L06",
+   "note": "low on the worn mat"
+  },
+  {
+   "id": "S07",
+   "cam": [
+    [
+     0,
+     [
+      0.5,
+      0.95,
+      2.9
+     ],
+     [
+      0.5,
+      1.6,
+      0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0.5,
+      1.3,
+      2.7
+     ],
+     [
+      0.5,
+      1.6,
+      0
+     ],
+     30
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L07",
+   "note": "top-down on the mat"
+  },
+  {
+   "id": "S08",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      0.4,
+      0.5
+     ],
+     [
+      0,
+      3,
+      2.0
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      0,
+      1.2,
+      1.0
+     ],
+     [
+      0,
+      3,
+      2.0
+     ],
+     20
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L08",
+   "note": "ring filling, doors behind"
+  },
+  {
+   "id": "S09a",
+   "cam": [
+    [
+     0,
+     [
+      1.25,
+      0.2,
+      1.95
+     ],
+     [
+      1.25,
+      3,
+      2.0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      1.25,
+      1.0,
+      1.95
+     ],
+     [
+      1.25,
+      3,
+      2.0
+     ],
+     30
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L09",
+   "note": "THREE on door three"
+  },
+  {
+   "id": "S09b",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      0.2,
+      1.95
+     ],
+     [
+      0,
+      3,
+      2.0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0,
+      1.0,
+      1.95
+     ],
+     [
+      0,
+      3,
+      2.0
+     ],
+     30
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L09b",
+   "note": "TWO"
+  },
+  {
+   "id": "S09c",
+   "cam": [
+    [
+     0,
+     [
+      -1.25,
+      0.2,
+      1.95
+     ],
+     [
+      -1.25,
+      3,
+      2.0
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -1.25,
+      1.0,
+      1.95
+     ],
+     [
+      -1.25,
+      3,
+      2.0
+     ],
+     30
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L09c",
+   "note": "ONE"
+  },
+  {
+   "id": "S09d",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -0.8,
+      1.85
+     ],
+     [
+      0,
+      3,
+      2.0
+     ],
+     21
+    ],
+    [
+     1,
+     [
+      0,
+      0.0,
+      1.9
+     ],
+     [
+      0,
+      3,
+      2.0
+     ],
+     21
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "P10",
+   "note": "the drop: three doors still"
+  },
+  {
+   "id": "S10",
+   "cam": [
+    [
+     0,
+     [
+      3.0,
+      1.7,
+      1.6
+     ],
+     [
+      0,
+      1.7,
+      1.5
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      2.6,
+      1.7,
+      1.6
+     ],
+     [
+      0,
+      1.7,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L10",
+   "note": "you in profile, worried"
+  },
+  {
+   "id": "S11",
+   "cam": [
+    [
+     0,
+     [
+      -1.0,
+      0.0,
+      1.7
+     ],
+     [
+      -1.1,
+      6,
+      1.6
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -1.0,
+      0.9,
+      1.7
+     ],
+     [
+      -1.1,
+      6,
+      1.6
+     ],
+     22
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L11",
+   "note": "door one swings open on the same room"
+  },
+  {
+   "id": "S12",
+   "cam": [
+    [
+     0,
+     [
+      -1.2,
+      1.2,
+      1.7
+     ],
+     [
+      -1.25,
+      10,
+      1.5
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      -1.2,
+      6.2,
+      1.7
+     ],
+     [
+      -1.25,
+      10.4,
+      1.5
+     ],
+     22
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L12",
+   "note": "push through door one, the copy's door one opens"
+  },
+  {
+   "id": "S13",
+   "cam": [
+    [
+     0,
+     [
+      0.35,
+      0.6,
+      1.7
+     ],
+     [
+      0,
+      8.6,
+      1.6
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0.2,
+      1.0,
+      1.7
+     ],
+     [
+      0,
+      8.6,
+      1.6
+     ],
+     22
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L13",
+   "note": "door two opens, you from behind in the copy"
+  },
+  {
+   "id": "S14",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -0.5,
+      1.5
+     ],
+     [
+      0,
+      1.7,
+      1.55
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      0,
+      0.0,
+      1.5
+     ],
+     [
+      0,
+      1.7,
+      1.55
+     ],
+     30
+    ]
+   ],
+   "step": 1,
+   "hand": 0.003,
+   "at": "L14",
+   "note": "you scared, doors open behind"
+  },
+  {
+   "id": "S15",
+   "cam": [
+    [
+     0,
+     [
+      0.3,
+      0.3,
+      0.25
+     ],
+     [
+      0,
+      -2.8,
+      0.05
+     ],
+     24
+    ],
+    [
+     1,
+     [
+      0.15,
+      -0.5,
+      0.2
+     ],
+     [
+      0,
+      -3.0,
+      0.05
+     ],
+     24
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L15",
+   "note": "low on the floor: the warm light"
+  },
+  {
+   "id": "S16",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      0.2,
+      1.7
+     ],
+     [
+      0,
+      3,
+      1.9
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      0,
+      0.7,
+      1.7
+     ],
+     [
+      0,
+      3,
+      1.9
+     ],
+     20
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L16",
+   "note": "the ring, a four fades in"
+  },
+  {
+   "id": "S17",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      0.4,
+      1.6
+     ],
+     [
+      0,
+      3.4,
+      1.55
+     ],
+     22
+    ],
+    [
+     0.5,
+     [
+      0,
+      0.4,
+      1.6
+     ],
+     [
+      -3.0,
+      0.4,
+      1.55
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0,
+      0.4,
+      1.6
+     ],
+     [
+      0,
+      -2.6,
+      1.5
+     ],
+     22
+    ]
+   ],
+   "step": 1,
+   "hand": 0.002,
+   "at": "L17",
+   "note": "turn 180: door four behind you, open"
+  },
+  {
+   "id": "S18",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -2.9,
+      1.45
+     ],
+     [
+      0,
+      -7.5,
+      1.1
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0,
+      -3.6,
+      1.4
+     ],
+     [
+      0,
+      -7.5,
+      1.1
+     ],
+     22
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L18",
+   "note": "through door four: the hall; the lime tally on the jamb"
+  },
+  {
+   "id": "S19a",
+   "cam": [
+    [
+     0,
+     [
+      -0.5,
+      -4.4,
+      1.4
+     ],
+     [
+      1.35,
+      -6.0,
+      1.1
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0.0,
+      -4.9,
+      1.35
+     ],
+     [
+      1.35,
+      -6.0,
+      1.1
+     ],
+     22
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L19",
+   "note": "the lamp, shade on"
+  },
+  {
+   "id": "S19b",
+   "cam": [
+    [
+     0,
+     [
+      3.0,
+      1.7,
+      1.6
+     ],
+     [
+      0,
+      1.7,
+      1.5
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      2.6,
+      1.7,
+      1.6
+     ],
+     [
+      0,
+      1.7,
+      1.5
+     ],
+     30
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L19.2",
+   "note": "you in profile, soft"
+  },
+  {
+   "id": "S20",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -0.6,
+      1.6
+     ],
+     [
+      0,
+      3,
+      1.8
+     ],
+     22
+    ],
+    [
+     1,
+     [
+      0,
+      0.0,
+      1.65
+     ],
+     [
+      0,
+      3,
+      1.8
+     ],
+     22
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L20",
+   "note": "back to the three, warm light behind you"
+  },
+  {
+   "id": "S21",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -2.6,
+      1.7
+     ],
+     [
+      0,
+      3,
+      1.95
+     ],
+     17
+    ],
+    [
+     1,
+     [
+      0,
+      -1.7,
+      1.75
+     ],
+     [
+      0,
+      3,
+      1.95
+     ],
+     17
+    ]
+   ],
+   "step": 1,
+   "hand": 0.004,
+   "at": "L21",
+   "note": "push in to S01's framing"
+  }
+ ],
+ "acting": {
+  "you": [
+   {
+    "at": 0,
+    "hidden": true,
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   },
+   {
+    "at": "L02.2",
+    "hidden": false,
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   },
+   {
+    "at": "L03",
+    "hidden": true,
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   },
+   {
+    "at": "L05",
+    "arms": [
+     0,
+     0
+    ],
+    "hidden": false,
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "worried"
+   },
+   {
+    "at": "L05+0.20",
+    "arms": [
+     0,
+     0
+    ],
+    "blend": 0.1,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "worried"
+   },
+   {
+    "at": "L05+0.42",
+    "arms": [
+     0,
+     40
+    ],
+    "blend": 0.1,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "worried"
+   },
+   {
+    "at": "L05+0.64",
+    "arms": [
+     0,
+     8
+    ],
+    "blend": 0.1,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "worried"
+   },
+   {
+    "at": "L05+0.86",
+    "arms": [
+     0,
+     40
+    ],
+    "blend": 0.1,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "worried"
+   },
+   {
+    "at": "L05+1.08",
+    "arms": [
+     0,
+     8
+    ],
+    "blend": 0.1,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "worried"
+   },
+   {
+    "at": "L06",
+    "arms": [
+     0,
+     0
+    ],
+    "hidden": true,
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 180,
+    "expr": "worried"
+   },
+   {
+    "at": "L10",
+    "hidden": false,
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 180,
+    "expr": "worried"
+   },
+   {
+    "at": "L13",
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 180,
+    "expr": "scared"
+   },
+   {
+    "at": "L14",
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "scared"
+   },
+   {
+    "at": "L15",
+    "hidden": true,
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "scared"
+   },
+   {
+    "at": "L19.2",
+    "hidden": false,
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 0,
+    "expr": "soft"
+   },
+   {
+    "at": "L20",
+    "blend": 0.0,
+    "pos": [
+     0,
+     1.7
+    ],
+    "yaw": 180,
+    "expr": "worried"
+   }
+  ],
+  "you2": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     8.9
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   },
+   {
+    "at": "L13",
+    "blend": 0.3,
+    "pos": [
+     0,
+     8.9
+    ],
+    "yaw": 180,
+    "expr": "scared"
+   }
+  ],
+  "you3": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     16.1
+    ],
+    "yaw": 180,
+    "expr": "neutral"
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "ring",
+   "num": 0,
+   "f0": 0.04,
+   "f1": 0.04,
+   "spin": 0.0,
+   "pop": false,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L03",
+   "name": "ring",
+   "num": 0,
+   "f0": 0.04,
+   "f1": 1.0,
+   "spin": 0.0,
+   "pop": false,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L09",
+   "name": "ring",
+   "num": 3,
+   "f0": 1.0,
+   "f1": 1.0,
+   "spin": 0.0,
+   "pop": true,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L09b",
+   "name": "ring",
+   "num": 2,
+   "f0": 0.667,
+   "f1": 0.667,
+   "spin": 0.0,
+   "pop": true,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L09c",
+   "name": "ring",
+   "num": 1,
+   "f0": 0.333,
+   "f1": 0.333,
+   "spin": 0.0,
+   "pop": true,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L09c>",
+   "name": "ring",
+   "num": 0,
+   "f0": 0.0,
+   "f1": 0.0,
+   "spin": 0.0,
+   "pop": false,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "P10",
+   "name": "ring",
+   "num": 0,
+   "f0": 0.0,
+   "f1": 0.0,
+   "spin": 0.33,
+   "pop": false,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L16",
+   "name": "ring",
+   "num": 4,
+   "f0": 1.0,
+   "f1": 1.0,
+   "spin": 0.0,
+   "pop": false,
+   "big": 2.3,
+   "cx": 0.62,
+   "cy": -0.28
+  },
+  {
+   "at": "L17",
+   "name": "ring",
+   "num": 4,
+   "f0": 1.0,
+   "f1": 1.0,
+   "spin": 0.0,
+   "pop": false,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L19",
+   "name": "ring",
+   "num": 0,
+   "f0": 0.0,
+   "f1": 0.0,
+   "spin": 0.12,
+   "pop": false,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L20",
+   "name": "ring",
+   "num": 0,
+   "f0": 0.0,
+   "f1": 1.0,
+   "spin": 0.0,
+   "pop": false,
+   "big": 1.0,
+   "cx": 0.0,
+   "cy": 0.0
+  },
+  {
+   "at": "L11",
+   "name": "open",
+   "room": 0,
+   "door": 1
+  },
+  {
+   "at": "L12+0.1",
+   "name": "open",
+   "room": 1,
+   "door": 1
+  },
+  {
+   "at": "L13",
+   "name": "open",
+   "room": 0,
+   "door": 2
+  },
+  {
+   "at": "L14",
+   "name": "open",
+   "room": 0,
+   "door": 3
+  }
+ ],
+ "music": {
+  "root": 50,
+  "mode": "whole",
+  "bpm": 140,
+  "seed": 84,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "pulse",
+     "pluck_hi",
+     "bubble"
+    ],
+    "energy": 0.6
+   },
+   {
+    "at": "L09",
+    "voices": [
+     "pulse",
+     "pad"
+    ],
+    "energy": 0.3
+   },
+   {
+    "at": "L10",
+    "voices": [
+     "drone",
+     "pulse"
+    ],
+    "energy": 0.45,
+    "mode": "minor"
+   },
+   {
+    "at": "L17",
+    "voices": [
+     "pad",
+     "pluck"
+    ],
+    "energy": 0.4,
+    "mode": "major"
+   },
+   {
+    "at": "L20",
+    "voices": [
+     "pulse",
+     "pluck_hi",
+     "pad"
+    ],
+    "energy": 0.55,
+    "mode": "whole"
+   }
+  ]
+ },
+ "sound": {
+  "rev": 1,
+  "floor": "wood",
+  "steps_db": -24,
+  "ambience": [
+   {
+    "kind": "room",
+    "from": 0,
+    "to": "end",
+    "lufs": -44
+   }
+  ],
+  "sfx": [
+   {
+    "at": "L01>-0.3",
+    "kind": "thud",
+    "db": -14
+   },
+   {
+    "at": "L04+0.1",
+    "kind": "bell",
+    "db": -26,
+    "dur": 0.8
+   },
+   {
+    "at": "L09",
+    "kind": "click",
+    "db": -22
+   },
+   {
+    "at": "L09b",
+    "kind": "click",
+    "db": -22
+   },
+   {
+    "at": "L09c",
+    "kind": "click",
+    "db": -22
+   },
+   {
+    "at": "L11",
+    "kind": "latch",
+    "db": -16
+   },
+   {
+    "at": "L11+0.12",
+    "kind": "creak",
+    "db": -22,
+    "dur": 0.8
+   }
+  ],
+  "music_drops": [
+   {
+    "from": "L09c>",
+    "to": "P10>"
+   }
+  ]
+ }
+}

@@ -1,0 +1,331 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "If you pick the wrong DOOR,",
+    "if you pick the wrong door,"
+   ],
+   [
+    "you live behind it",
+    "you live behind it"
+   ],
+   [
+    "FOREVER.",
+    "forever."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Three of THEM.",
+    "three of them."
+   ],
+   [
+    "One clue EACH.",
+    "one clue each."
+   ],
+   [
+    "Comment your NUMBER.",
+    "comment your number."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Door ONE",
+    "door one"
+   ],
+   [
+    "is WARM,",
+    "is warm,"
+   ],
+   [
+    "and smells like your mom's COOKING.",
+    "and smells like your mom's cooking."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Door TWO.",
+    "door two."
+   ],
+   [
+    "Your PHONE",
+    "your phone"
+   ],
+   [
+    "is ringing behind it.",
+    "is ringing behind it."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Your phone",
+    "your phone"
+   ],
+   [
+    "is in your POCKET.",
+    "is in your pocket."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Door THREE.",
+    "door three."
+   ],
+   [
+    "The mat is worn",
+    "the mat is worn"
+   ],
+   [
+    "from feet going IN.",
+    "from feet going in."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "None coming OUT.",
+    "none coming out."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "PICK.",
+    "pick."
+   ],
+   [
+    "You've got THREE seconds.",
+    "you've got three seconds."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "THREE.",
+    "three."
+   ]
+  ]
+ },
+ {
+  "id": "P09a",
+  "pause": 0.52,
+  "chunks": []
+ },
+ {
+  "id": "L09b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "TWO.",
+    "two."
+   ]
+  ]
+ },
+ {
+  "id": "P09b",
+  "pause": 0.52,
+  "chunks": []
+ },
+ {
+  "id": "L09c",
+  "who": "narrator",
+  "chunks": [
+   [
+    "ONE.",
+    "one."
+   ]
+  ]
+ },
+ {
+  "id": "P10",
+  "pause": 0.6,
+  "chunks": []
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Here's the THING.",
+    "here's the thing."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "All three",
+    "all three"
+   ],
+   [
+    "open into the same ROOM.",
+    "open into the same room."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "THIS one.",
+    "this one."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "You've picked a door",
+    "you've picked a door"
+   ],
+   [
+    "a thousand TIMES.",
+    "a thousand times."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That's how",
+    "that's how"
+   ],
+   [
+    "you got HERE.",
+    "you got here."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "See that LIGHT",
+    "see that light"
+   ],
+   [
+    "on the floor?",
+    "on the floor?"
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's coming from",
+    "it's coming from"
+   ],
+   [
+    "door FOUR.",
+    "door four."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The one BEHIND you.",
+    "the one behind you."
+   ],
+   [
+    "The way you CAME in.",
+    "the way you came in."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It's still OPEN.",
+    "it's still open."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Somebody left",
+    "somebody left"
+   ],
+   [
+    "the hall LIGHT on",
+    "the hall light on"
+   ],
+   [
+    "for you.",
+    "for you."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But you'll turn back",
+    "but you'll turn back"
+   ],
+   [
+    "to the THREE.",
+    "to the three."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Everybody DOES.",
+    "everybody does."
+   ]
+  ]
+ }
+]
