@@ -119,7 +119,7 @@ shot("L01.2", "day", M([0, -3.4, 2.4], [0, 0.4, 1.5], [1.0, -3.0, 2.2], [0, 0.4,
 shot("L02", "day", C([3.0, -0.3, 1.5], [3.0, 0.7, 1.82], 40),
      {"c2": at(3.0, 0.7, 0, expr="neutral", head=[0, 0])}, {"crowd": 30, "crowd_box": [-9, 9, -3.4, 0.0]})
 shot("L02.3", "day", C([-4.6, -1.7, 0.4], [-6.6, 0.6, 1.8], 26),
-     {"c4": at(-8.0, 0.6, 200, expr="neutral"), "c5": at(-7.0, 0.6, 165, expr="soft"), "c6": at(-6.0, 0.6, 150, expr="neutral"),
+     {"c4": at(-8.6, 0.6, 200, expr="neutral"), "c5": at(-7.6, 0.6, 165, expr="soft"), "c6": at(-6.0, 0.6, 150, expr="neutral"),
       "c7": at(-5.0, 0.6, 140, expr="soft")}, {"crowd": 20, "crowd_box": [-12, -2, -3.4, 0.0]})
 shot("L03", "day", C([1.0, -2.0, 1.5], [3.2, 0.85, 1.6], 30),
      {"c8": at(2.3, 0.8, 0, expr="soft", head=[-40, 0]), "c9": at(4.2, 0.9, 0, expr="soft", head=[40, 0])},
@@ -319,6 +319,9 @@ def build_acting():
             first = moves[0]
             pos = list(first["pos"])
             pose = {**DEFAULT, **{k: v for k, v in first.items() if k != "pos"}}
+            if i == 0:   # on screen from frame 0: no parked-offstage key at t=0 (it put everyone at (0,40) on the first frame)
+                del ks[:]
+                last[who] = {"pos": pos, "hidden": False}
             ks.append({"at": ref, "pos": last[who]["pos"], "hidden": False, **{k: pose[k] for k in ("yaw",)}})
             ks.append({"at": ref, "pos": pos, "hidden": False, "blend": 0.0,
                        **{k: pose[k] for k in ("yaw", "expr", "head", "look", "arms", "side", "sit", "bend", "tremble")}})
