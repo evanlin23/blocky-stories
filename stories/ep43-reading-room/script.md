@@ -13,10 +13,10 @@ The rule we break is the reading room's own, shown and never said: nobody speaks
 **You don't count yourself.** My 1 was never me. It was Tam, the only person in town who knew my name, and his last 1 was me. The first line plays one way first time ("my 1 means nobody but me") and another on the loop ("my 1 was my brother, the whole time").
 - **Plant 1 (L04 to L05, S06 to S08):** the woman off the train has a 0, though she obviously knows her own name, and it jumps to 1 the moment one man hears it. A rewatcher sees that my 1 can't be me. The same beat plants the loophole: you only have to hear a name once.
 - **Plant 2 (L27 to L28, S39 to S41):** Tam half asleep on the sofa says something. On screen his mouth shapes a short word while my back is turned at the kettle, and the 1 over my head warms slightly (a 0.5 s ramp up to 120% and back, never a flash). It's my name. I don't hear it.
-- **Bonus (L09):** "I figured the one was just ME." It's said as my belief, never as the rule, and L44 repeats the same mistake and calls it wrong at once, and L51 says why.
+- **Bonus (L09):** "I figured the one was just ME." It's said as my belief, never as the rule, and L44 to L46 repeat the same mistake, L47 calls it wrong, and L51 says why.
 
 ## How the climax turns the rule (the second reading)
-1. The scare hands me a reading of the rule that proves the worst. Tam's number says 1 with the thing in my old seat (L43). Because I believe you count yourself, I read it as him counting himself (L44, "I thought... I was WRONG", so it's plainly my mistake in the moment): I'm out of his count (L45), and the thing has taken my place (L46).
+1. The scare hands me a reading of the rule that proves the worst. Tam's number says 1 with the thing in my old seat (L43). Because I believe you count yourself, I read it as him counting himself (L44, "I thought that one was just HIMSELF", so it's plainly my mistake, called wrong at L47): I'm out of his count (L45), and the thing has taken my place (L46).
 2. I look at my own 1 for the first time in years (L47 to L48) and test my belief against plant 1: the woman knew her own name and still had a 0 (L50). So you don't count yourself (L51).
 3. The same number now reads the other way twice over. My 1 is Tam, who still says my name in his sleep (L53, paying off plant 2). His 1 is me (L54). I never left his count, so the chair it sits in was never empty in the way that matters: it's still mine (L55). This is what defeats the Negative. A Keeper only stands where a person is missing, and the re-read shows the person isn't missing, only sitting at the wrong table.
 4. The re-read also tells me numbers only ever come from other people, so the fix can't be done alone behind headphones. Plant 1's second half gives the method: one hearing is enough (L56). I say both our names out loud in a silent room (L59). Every reader looks up and both numbers roll to 20 (L60 to L62).
@@ -235,10 +235,10 @@ L40. And across from Tam, in my old seat, sat a shape with NONE.
 L41. The lamps came back UP.
 L42. It was sitting across from him, its black face a hand away from HIS.
 L43. And over Tam's head, the number said ONE.
-L44. I thought he was counting HIMSELF. I was WRONG.
-L45. Like even I didn't count ANYMORE.
+L44. I thought that one was just HIMSELF.
+L45. Like I didn't count to him ANYMORE.
 L46. That thing had taken my PLACE.
-L47. Then I looked up at my own number, for the first time in YEARS.
+L47. But I was WRONG. I looked up at my own number, for the first time in YEARS.
 L48. ONE.
 L49. And I thought about the woman off the TRAIN.
 L50. She knew her own name, and she still had a ZERO.
