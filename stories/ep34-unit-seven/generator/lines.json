@@ -4,34 +4,28 @@
   "who": "narrator",
   "chunks": [
    [
-    "NEVER leave",
-    "Never leave"
+    "In this TOWN,",
+    "In this town,"
    ],
    [
-    "anything of YOURS",
-    "anything of yours"
+    "a door",
+    "a door"
    ],
    [
-    "behind a DOOR.",
-    "behind a door."
-   ]
-  ]
- },
- {
-  "id": "L82",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Or that door",
-    "Or that door"
+    "won't OPEN",
+    "won't open"
    ],
    [
-    "keeps OPENING",
-    "keeps opening"
+    "unless something",
+    "unless something"
    ],
    [
-    "for YOU.",
-    "for you."
+    "of YOURS",
+    "of yours"
+   ],
+   [
+    "is INSIDE.",
+    "is inside."
    ]
   ]
  },
@@ -130,7 +124,7 @@
     "for me"
    ],
    [
-    "ANYMORE.",
+    "any MORE.",
     "any more."
    ]
   ]
