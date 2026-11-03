@@ -68,25 +68,27 @@ def tallyman(kit, pos=(0.0, 0.0), yaw=0.0, scale=1.0):
     stickers(kit, "torso", (0.86, 0.5, 0.95), (0, 0, 1.58), rng, 330, root, skip=("-z",))
     for k, ax in enumerate((-1, 1)):
         stickers(kit, f"arm{k}", (0.24, 0.24, 1.7), (ax * 0.58, -0.08, 1.25), rng, 170, root)
-        kit.box(f"hand{k}", (0.26, 0.2, 0.26), (ax * 0.58, -0.1, 0.3), kit.plastic("#c9c2b4", 0.6), root, bevel=0.05)
+        kit.box(f"hand{k}", (0.26, 0.2, 0.26), (ax * 0.58, -0.1, 0.3), kit.plastic("#2a2018", 0.7), root, bevel=0.05)
     # the head: a taller sticker block, the neck stickers under it
     neck = 2.1
-    hd = kit.empty("headpivot", (0, 0, neck), root, rot=(0.38, 0.22, 0.0))
-    stickers(kit, "head", (0.56, 0.5, 0.56), (0, 0, 2.36 - neck), rng, 220, hd, skip=("-z", "-y"))
-    kit.box("face", (0.52, 0.04, 0.52), (0, -0.265, 2.36 - neck), kit.plastic("#a85a14", 0.6), hd, bevel=0.01)
-    kit.box("visor", (0.54, 0.03, 0.2), (0, -0.295, 2.41 - neck), kit.plastic("#0a0404", 0.4), hd, bevel=0.008)
-    kit.box("scan", (0.5, 0.02, 0.05), (0, -0.315, 2.41 - neck), kit.emit("#ff0000", 5), hd, bevel=0.005)
-    kit.box("scanglow", (0.56, 0.015, 0.012), (0, -0.318, 2.41 - neck), kit.emit("#ff0000", 5), hd)
-    # the green apron over the torso front, with a pocket and a chest read-out (glyph bars only)
-    ap = kit.plastic(APRON, 0.5)
-    kit.box("apron", (0.74, 0.07, 0.85), (0, -0.30, 1.52), ap, root, bevel=0.025)
-    kit.box("apronbib", (0.52, 0.07, 0.3), (0, -0.30, 2.0), ap, root, bevel=0.025)
-    kit.box("strapL", (0.07, 0.06, 0.35), (-0.3, -0.24, 2.1), ap, root)
-    kit.box("strapR", (0.07, 0.06, 0.35), (0.3, -0.24, 2.1), ap, root)
-    kit.box("pocket", (0.5, 0.05, 0.22), (0, -0.36, 1.25), kit.plastic("#26844c", 0.5), root, bevel=0.02)
-    kit.box("hem", (0.2, 0.03, 0.1), (0.16, -0.405, 1.12), kit.plastic("#d9d2c0", 0.5), root, bevel=0.005)
-    for i, hh in enumerate((0.05, 0.06, 0.04, 0.06)):
-        kit.box(f"num{i}", (0.03, 0.01, hh), (0.09 + i * 0.045, -0.425, 1.12), kit.plastic("#201408", 0.6), root)
+    hd = kit.empty("headpivot", (0, 0, neck), root, rot=(0, 0, 0))
+    stickers(kit, "head", (0.56, 0.5, 0.56), (0, 0, 2.36 - neck), rng, 260, hd, skip=("-z", "-y", "+z"))
+    kit.box("face", (0.54, 0.04, 0.54), (0, -0.265, 2.36 - neck), kit.plastic("#7c4310", 0.7), hd, bevel=0.01)
+    for i in range(70):   # stickers curling over the face edges, deep gaps between
+        x = rng.uniform(-0.29, 0.29); z = rng.uniform(-0.29, 0.29)
+        if abs(z) < 0.1 and abs(x) < 0.27: z = math.copysign(rng.uniform(0.11, 0.29), z)
+        kit.box(f"fs{i}", (rng.uniform(.1,.2), 0.01, rng.uniform(.08,.15)), (x, -0.29 - (i % 6) * 0.004, 2.36 - neck + z),
+                kit.plastic(rng.choice(("#8a4a12", "#6f6a60", "#a8681c", "#5f5a52")), 0.6), hd,
+                rot=(rng.uniform(-.4,.4), rng.uniform(-.4,.4), rng.uniform(-.5,.5)), bevel=0.004)
+    kit.box("visor", (0.58, 0.03, 0.14), (0, -0.30, 2.36 - neck), kit.plastic("#050202", 0.4), hd, bevel=0.006)
+    kit.box("scan", (0.58, 0.02, 0.05), (0, -0.318, 2.36 - neck), kit.emit("#ff3b3b", 1.0), hd)
+    ap = kit.plastic(APRON, 0.8)
+    kit.box("apronbib", (0.4, 0.05, 0.3), (0, -0.28, 1.95), ap, root, bevel=0.02, rot=(0, 0, 0.05))
+    for i in range(14):
+        kit.box(f"as{i}", (rng.uniform(.1,.2), 0.01, rng.uniform(.08,.14)),
+                (rng.uniform(-0.28,0.28), -0.31 - (i % 4) * 0.004, rng.uniform(1.8,2.12)),
+                kit.plastic(rng.choice(("#8a4a12", "#6f6a60", "#a8681c")), 0.6), root,
+                rot=(rng.uniform(-.4,.4), rng.uniform(-.4,.4), rng.uniform(-.5,.5)), bevel=0.004)
     CH["root"] = root
     return root
 
@@ -140,17 +142,15 @@ def build(kit, story, tl):
     room(kit)
     tallyman(kit, (0.0, 5.0), 0.0, 1.3)
     # key from below-front (warm), blue freezer rim from behind-left, a little fill
-    kit.light("under", "AREA", (0.0, 1.5, 0.2), 700, "#ffb860", size=2.5)
-    kit.light("underL", "AREA", (-1.8, 3.0, 0.2), 350, "#ffb860", size=1.5)
+    kit.light("under", "AREA", (0.0, 1.5, 0.2), 160, "#ffb860", size=2.5)
+    kit.light("underL", "AREA", (-1.8, 3.0, 0.2), 90, "#ffb860", size=1.5)
     kit.aim(kit.LIGHTS["underL"]["obj"], (0, 5, 2.0))
     kit.aim(kit.LIGHTS["under"]["obj"], (0, 5, 2.4))
     kit.light("rimB", "AREA", (-2.2, 8.5, 3.2), 1100, BLUE, size=2.0)
     kit.aim(kit.LIGHTS["rimB"]["obj"], (0, 5, 1.9))
     kit.light("rimC", "AREA", (2.4, 8.5, 3.2), 500, BLUE, size=2.0)
     kit.aim(kit.LIGHTS["rimC"]["obj"], (0, 5, 1.9))
-    kit.light("fill", "AREA", (0.0, -1.5, 3.0), 60, "#fff1dd", size=4.0)
-    kit.aim(kit.LIGHTS["fill"]["obj"], (0, 5, 1.9))
-    kit.light("scanlight", "POINT", (0.0, 4.2, 2.9), 25, "#ff0000", size=0.1)
+    kit.light("scanlight", "POINT", (0.0, 4.5, 3.05), 15, "#ff3b3b", size=0.1)
     return {}
 
 
