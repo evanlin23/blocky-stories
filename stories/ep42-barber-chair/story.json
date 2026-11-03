@@ -504,6 +504,28 @@
    "who": "narrator",
    "chunks": [
     [
+     "SIXTY-FOUR people",
+     "Sixty-four people"
+    ],
+    [
+     "on this street.",
+     "on this street."
+    ],
+    [
+     "SIXTY-THREE",
+     "Sixty-three"
+    ],
+    [
+     "are humming.",
+     "are humming."
+    ]
+   ]
+  },
+  {
+   "id": "L01b",
+   "who": "narrator",
+   "chunks": [
+    [
      "In this TOWN,",
      "In this town,"
     ],
@@ -516,12 +538,8 @@
      "one note"
     ],
     [
-     "of their own,",
-     "of their own,"
-    ],
-    [
-     "all day LONG.",
-     "all day long."
+     "of their own.",
+     "of their own."
     ]
    ]
   },
@@ -1957,15 +1975,15 @@
      0,
      [
       0.0,
-      -2.4,
-      1.45
+      -1.0,
+      1.72
      ],
      [
       0.0,
       0.95,
-      1.5
+      1.74
      ],
-     26
+     30
     ]
    ],
    "step": 1,
@@ -1978,33 +1996,33 @@
      0,
      [
       0,
-      -7.0,
-      10.0
+      -3.4,
+      2.4
      ],
      [
       0,
-      -0.5,
-      1.0
+      0.4,
+      1.5
      ],
-     30
+     34
     ],
     [
      1,
      [
-      1.5,
-      -6.0,
-      9.0
+      1.0,
+      -3.0,
+      2.2
      ],
      [
       0,
-      -0.5,
-      1.0
+      0.4,
+      1.5
      ],
-     30
+     34
     ]
    ],
    "step": 2,
-   "at": "L01.4",
+   "at": "L01.2",
    "hand": 0.0
   },
   {
@@ -4685,7 +4703,7 @@
     "tremble": 0
    },
    {
-    "at": "L01.4",
+    "at": "L01.2",
     "hidden": true
    },
    {
@@ -8877,7 +8895,7 @@
     "tremble": 0
    },
    {
-    "at": "L01.4",
+    "at": "L01.2",
     "hidden": true
    },
    {
@@ -9994,7 +10012,7 @@
     "tremble": 0
    },
    {
-    "at": "L01.4",
+    "at": "L01.2",
     "hidden": true
    },
    {
