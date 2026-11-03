@@ -1290,30 +1290,30 @@
    ]
   },
   "L48": {
-   "text": "Torch in my hand. Leaning over the rail.",
+   "text": "A torch in my hand. Leaning over the rail.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
+   "dur": 2.172,
    "onset": 0.172,
-   "end": 1.914,
+   "end": 1.983,
    "chunks": [
     [
      0.172,
-     0.423
+     0.492
     ],
     [
-     0.423,
-     0.897
+     0.492,
+     0.966
     ],
     [
-     0.992,
-     1.353
+     1.061,
+     1.422
     ],
     [
-     1.353,
-     1.914
+     1.422,
+     1.983
     ]
    ]
   },

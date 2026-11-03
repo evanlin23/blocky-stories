@@ -59,7 +59,7 @@ lines = lines + [{"id": "P99", "pause": LOOP, "chunks": []}]
 # `asr` to forgive those, and the lines Whisper dropped words from are slowed or given a breath in their spoken text
 # (the captions don't change)
 TEMPO = {"L68": 0.8, "L32": 0.85}
-SPOKEN = {("L31", "Night TWO,"): "Night. Two,", ("L51", "Its flat face"): "Its, flat face",
+SPOKEN = {("L48", "Torch in"): "A torch in", ("L31", "Night TWO,"): "Night. Two,", ("L51", "Its flat face"): "Its, flat face",
           ("L68", "FAST ASLEEP,"): "Fast asleep,", ("L16", "torch in"): "torch, in", ("L14", "I slid it SHUT"): "I slid it, shut"}
 CAPTION = {("L68", "ASLEEP,"): "FAST ASLEEP,"}
 for ln in lines:
