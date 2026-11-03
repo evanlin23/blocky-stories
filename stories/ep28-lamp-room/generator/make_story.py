@@ -170,7 +170,7 @@ def shot(at, what, cam, step=2, rain=False, hand=0.008):
 # left, lit by the warm lamp by the lamp-room door), the second lit lamp by Ines's blue door far below, dark stone between
 S01_A = [-1.2, 0.9, 17.3]
 shot(0, "S01: me at the top rail, both lit lamps in frame, push in down the well",
-     c([0, S01_A, [1.05, 0.95, 16.9], 30], [0.4, S01_A, [1.16, 0.65, 15.9], 14], [1, [-0.9, 0.85, 17.25], [1.16, 0.65, 15.4], 13.5]), hand=0.002)
+     c([0, S01_A, [1.05, 0.95, 16.9], 30], [0.31, S01_A, [1.05, 0.95, 16.9], 30], [0.5, S01_A, [1.16, 0.65, 15.9], 14], [1, [-0.9, 0.85, 17.25], [1.16, 0.65, 15.4], 13.5]), hand=0.002)
 shot("L02", "S02: punch in to the stair foot: sand has crept onto the bottom step",
      move(([-0.5, -0.5, 1.0], [0.9, 1.2, 0.3]), ([-0.3, -0.2, 0.95], [0.9, 1.2, 0.3]), 18), hand=0.002)
 shot("L02b", "S02b: two-shot at the stair foot, a hand's gap between our shoulders", still([0.0, -1.15, 1.55], [0.0, 0.65, 1.5], 12), hand=0.003)
@@ -211,7 +211,7 @@ shot("L25b", "S25b: the stair foot by day, the storm door shuddering, the drift 
      move(([0.0, -0.9, 1.15], [0.0, 2.0, 0.95]), ([0.0, -0.5, 1.1], [0.0, 2.0, 0.9]), 20), hand=0.002)
 shot("L25b.3", "S25c: punch in on the drift, one faint sock-shaped scuff in it",
      move(([0.2, 0.7, 0.75], [0.0, 1.95, 0.02]), ([0.2, 1.0, 0.7], [0.0, 1.95, 0.02]), 26), hand=0.002)
-shot("L26", "kitchen: toast, both of us at the table in profile, faces lit", still([KX + 2.2, 0.1, 1.45], [KX, 0.1, 0.98], 12), hand=0)
+shot("L26", "kitchen: toast, both of us at the table, faces lit, close three-quarter", c([0, [KX + 2.2, 0.1, 1.45], [KX, -0.5, 1.18], 24], [1, [KX + 2.2, 0.1, 1.45], [KX, 0.4, 1.18], 24]), hand=0)
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34), hand=0)
 shot("L28", "close on me, misreading", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
 shot("L29", "me looking past her", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
@@ -268,7 +268,7 @@ shot("L54.2", "running up, three", runcam(73.9, 57, 20), step=1)
 shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
 shot("L55", "kitchen, flat bright daylight, both of us at the table", still([KX + 2.2, 0.1, 1.45], [KX, 0.1, 0.98], 12))
-shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.2, 1.0], 20))
+shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.45, 1.1], 17))
 shot("L57", "Ines says goodnight at her door, lamp on, her face to camera", still([0.0, -0.75, Z4 + 1.3], [1.8, 0.0, Z4 + 1.35], 32), hand=0.003)
 shot("L58", "me in the camp bed, listening", COT_WIDE)
 shot("L59", "the lamp room in the dark, rain settling", still([0.5, -2.0, LF + 1.8], [-0.8, 0.5, LF + 1.0], 22), rain=True)
@@ -540,7 +540,7 @@ cues = [
     {"at": 0, "name": "torch", "on": 0.0, "from": [0, 0, 20], "aim": [0, 0, 0]},
     {"at": "L06.2", "name": "torch", "on": 1.0, "dur": 0.4, "from": [0.0, -1.2, 16.1], "aim": [0.0, 0.2, 9.0], "gain": 0.4, "spill": 1.0},
     {"at": "L07", "name": "torch", "on": 0.0, "dur": 0.0, "from": [0.0, -1.2, 16.1], "aim": [0.0, 0.2, 9.0], "gain": 0.4, "spill": 1.0},
-    {"at": "L14", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.45, "spill": 0.0},
+    {"at": "L14", "name": "torch", "on": 1.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "gain": 0.14, "spill": 0.0},
     {"at": "L14.3+0.35", "name": "torch", "on": 0.0, "from": [0.8, 0.34, 16.34], "aim": PLATE_C, "dur": 0.0, "gain": 0.45, "spill": 0.0},
     {"at": "L16", "name": "torch", "on": 1.0, "dur": 0.5, "from": [1.45, 0.0, Z7 + 1.05], "aim": [0.8, 0.0, Z7 - 6.0],
      "gain": 0.4, "spill": 1.0},
@@ -716,7 +716,8 @@ story = {
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.025, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
-    "shot_grades": {sid: {"highlights": [-0.22, -0.2, -0.2]} for sid in ("S32", "S33", "S76", "S77")},   # r5: the close-up foreheads clip, so roll their highlights off
+    "shot_grades": {sid: {"highlights": [-0.22, -0.2, -0.2]} for sid in ("S32", "S33", "S76", "S77")}
+    | {"S14": {"highlights": [-0.3, -0.3, -0.3]}},   # r5: the close-up foreheads clip, so roll their highlights off
     "phonemes": {"Ines": "inˈɛs"},
     "homophones": {"too": "two", "okay": "ok"},
     "cast": cast,
