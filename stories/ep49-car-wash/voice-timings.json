@@ -1922,42 +1922,42 @@
    ]
   },
   "L70": {
-   "text": "Mine was in his pocket.",
+   "text": "Mine rang in his pocket.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.414,
-   "onset": 0.19,
-   "end": 1.224,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
    "chunks": [
     [
-     0.19,
-     0.5
+     0.172,
+     0.543
     ],
     [
-     0.5,
-     1.224
+     0.543,
+     1.241
     ]
    ]
   },
   "L71": {
-   "text": "now it's back on my collar.",
+   "text": "Now it rings on my collar.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.586,
+   "dur": 1.638,
    "onset": 0.19,
-   "end": 1.379,
+   "end": 1.431,
    "chunks": [
     [
      0.19,
-     0.595
+     0.629
     ],
     [
-     0.595,
-     1.379
+     0.629,
+     1.431
     ]
    ]
   },

@@ -2027,8 +2027,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mine was",
-     "Mine was"
+     "Mine RANG",
+     "Mine rang"
     ],
     [
      "in his POCKET.",
@@ -2041,8 +2041,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Now it's BACK",
-     "now it's back"
+     "Now it rings",
+     "Now it rings"
     ],
     [
      "on MY collar.",
@@ -4197,14 +4197,14 @@
     [
      0,
      [
-      -2.0,
-      1.3,
-      1.3
+      -2.4,
+      1.0,
+      1.04
      ],
      [
       -3.1,
-      1.3,
-      1.24
+      1.45,
+      1.29
      ],
      48
     ]

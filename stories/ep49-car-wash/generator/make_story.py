@@ -269,7 +269,7 @@ shot("L69", "sunrise", {"me": P(-0.45, 18.5, 180, "smirk"), "ruben": P(0.45, 18.
      still([0.0, 21.8, 1.25], [0.0, 18.5, 1.1], 21), "two bells, two collars")
 shot("L70", "sunrise", {"ruben": P(0.0, 18.5, 180, "smirk")}, still([-0.1, 20.2, 1.15], [0.0, 18.5, 1.1], 40), "his pocket, empty")
 shot("L71", "sunrise", {"me": P(*BOOTH_IN, 90, "neutral")},
-     still([-2.0, 1.3, 1.3], [-3.1, 1.3, 1.24], 48), "my collar bell, the clapper inside")
+     still([-2.4, 1.0, 1.04], [-3.1, 1.45, 1.29], 48), "my collar bell, the clapper inside")
 shot("L72", "sunrise", {"me": P(*BOOTH_IN, 90, "neutral", arms=[15, 0], then=[("L72+0.3", dict(arms=[50, 0], blend=0.8, yaw=90)), ("L72>", dict(expr="worried", yaw=90))])},
      still([-0.9, 1.5, 1.45], [-3.1, 1.5, 1.35], 32), "my bell rings and my hand stops short")
 

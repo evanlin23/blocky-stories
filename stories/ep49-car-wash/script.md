@@ -20,7 +20,7 @@
   - Plant 1 (L21): when I pull the wrong lever, "Ruben's rings" across the yard, but the shot shows his collar bell hanging dead still while his overall pocket jumps. The sound is muffled, from low down.
   - Plant 2 (L07): in the opening wide, the wind moves every bell in the queue and they all sway and tinkle, except mine, which hangs still with an empty dark mouth (no clapper inside, visible on a rewatch).
   - Extra rewatch catches: L15 (he pats his pocket when I ask what's wrong), L11 to L14 (his collar bell never moves in any shot, ever), L26 (his bell rings once through the wall the moment I hit "order"), L42 (I check my bell and it hangs "still").
-- **How the last 15 seconds turn over the first line:** the first time, "the bell on your collar rings before every mistake" is a funny town rule, and "mine has never rung" makes me the lucky one. In the last 15 s (L65 to L72) the first line comes back with "Mine was in his POCKET": my bell never rang because my brother was carrying its voice for me, and everything we heard ringing in his pocket was me. Then the sting, with no new mystery: the clapper is back on my collar, so from now on I hear every one of my own mistakes, and the first ding stops my hand at the levers.
+- **How the last 15 seconds turn over the first line:** the first time, "the bell on your collar rings before every mistake" is a funny town rule, and "mine has never rung" makes me the lucky one. In the last 15 s (L65 to L72) the first line comes back with "Mine RANG in his POCKET": my bell never rang because my brother was carrying its voice for me, and everything we heard ringing in his pocket was me. Then the sting, with no new mystery: the clapper is back on my collar, so from now on I hear every one of my own mistakes, and the first ding stops my hand at the levers.
 - **Ending shape:** two people at the tunnel mouth, two bells on two collars, one car rolling out shining. Then a cold beat: my bell, clapper inside, rings once in the booth and my hand stops short of the levers.
 - **Warmth:** stepping up. I take the clapper back, ask to be his partner and step into the booth. Shown in L65 to L68: I'm in the booth at seven, I wave the first car in, the booth door holds only me.
 
@@ -340,9 +340,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S90: wide at the tunnel mouth: Ruben and me side by side, two brass bells on two collars, the car rolling out gleaming in the sunrise]
 - `L69` narrator: In this TOWN, / a BELL on your collar / rings before / every MISTAKE.
   - [S91: close on our two collars side by side, bells catching the light. The pad drops out, the drone remains]
-- `L70` narrator: Mine was / in his POCKET.
+- `L70` narrator: Mine RANG / in his POCKET.
   - [S92: Ruben's flat bib pocket, empty now]
-- `L71` narrator: Now it's BACK / on MY collar.
+- `L71` narrator: Now it rings / on MY collar.
   - [S93: close on my collar bell in the booth, morning light, the clapper visible inside it]
 - `L72` narrator: And I hear / EVERY one.
   - [S94: me on the booth stool, `neutral`, my sleeve moving toward the lever panel. My bell rings once, a low ding with a pitch fall, and I go still, `worried`, sleeve stopped short of the knobs. Steady light, nothing else in frame moves. 0.25 s after "one", cut to S01]
