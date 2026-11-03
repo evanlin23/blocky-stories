@@ -148,15 +148,11 @@ def shot(sid, at, cam, note, day=0, step=2, hand=0.008, follow=None, **look):
 X0 = 3.4   # the mow line
 
 # ---------------------------------------------------------------------------------------------------- 01 the rule
-shot("S01", 0, C((3.1, 4.7, 0.5), (3.3, 8.4, 0.78), 24, (3.1, 5.0, 0.5), (3.3, 8.4, 0.8), 24),
+shot("S01", 0, C((3.1, 4.4, 0.5), (3.3, 8.4, 0.78), 24, (3.1, 5.2, 0.5), (3.3, 8.4, 0.8), 24),
      "frame 1: the red mower coming straight at camera at grass height, a fountain of clippings UP into the deck, "
      "the taller strip behind it, Mr. Odell's shut-eyed face above the handle, the lime yardstick left", step=1, hand=0.004)
 stage(0, odell=((X0, 9.9), 0, "shut"))
-walk("odell", "L01.1", (X0, 8.9))
-shot("S01b", "L01.1", C((3.9, 4.6, 0.32), (3.4, 6.6, 0.26), 32, (3.75, 4.9, 0.32), (3.4, 6.55, 0.26), 36),
-     "closer on the deck skirt: clippings vanishing up into it", step=1)
-stage("L01.1", odell=((X0, 8.9), 0, "shut"))
-walk("odell", "L02", (X0, 8.0))
+walk("odell", "L02", (X0, 8.2))
 shot("S02", "L02", C((129.3, -1.6, 0.95), (130.0, -0.3, 0.7), 40, (129.6, -1.3, 0.9), (130.0, -0.3, 0.69), 44),
      "night: the bedside clock reads 3:00 in red digits")
 stage("L02")
@@ -235,7 +231,7 @@ key("odell", "L12.2+0.2", yaw=15, blend=0.5, arms=[0, 0])
 shot("S13", "L13", C((3.3, 3.95, 1.62), (4.2, 2.8, 1.6), 42, (3.4, 3.8, 1.62), (4.2, 2.7, 1.6), 46),
      "Dad's face, frozen; me behind him, worried", day=1, mower="park", strip=0.0)
 stage("L13", odell=((QX, 3.7), 10, "smile"), dad=((QX, 2.9), 180, "neutral"), me=((QX, 2.15), 180, "worried"))
-shot("S14", "L14", C((5.5, 2.4, 1.4), (3.9, 3.2, 1.2), 30, (5.3, 2.5, 1.38), (3.9, 3.2, 1.2), 30),
+shot("S14", "L14", C((2.6, 3.3, 1.3), (3.8, 3.15, 1.22), 24, (2.8, 3.3, 1.3), (3.8, 3.15, 1.22), 24),
      "close on a new white cup with a brown lid at Mr. Odell's sleeve end, held toward Dad", day=1, mower="park", strip=0.0)
 stage("L14", odell=((QX, 3.7), 0, "smile", {"arms": [0, 78]}), dad=((QX, 2.9), 180, "neutral"))
 shot("S15", "L15-0.45", C((2.9, 3.0, 1.4), (4.3, 4.9, 1.2), 30, (3.1, 3.2, 1.4), (4.3, 4.9, 1.2), 32),
@@ -260,7 +256,7 @@ shot("S17", "L17", C((-9.6, 10.0, 1.78), (3.0, 8.3, 0.9), 62, (-9.5, 10.1, 1.75)
      "over Dad's shoulder: the floodlit lawn, the mower running, the stick", step=1)
 stage("L17", dadn=((-8.4, 10.9, 0.2), 90, "neutral"), odell=((X0, 9.4), 0, "shut"))
 walk("odell", "L18", (X0, 8.2))
-shot("S18", "L18", C((1.3, 7.45, 0.34), (3.4, 7.4, 0.28), 34, (1.4, 7.45, 0.34), (3.4, 7.35, 0.28), 38),
+shot("S18", "L18", C((1.3, 6.4, 0.34), (3.4, 6.4, 0.28), 30, (1.4, 6.4, 0.34), (3.4, 6.4, 0.28), 32),
      "the reversed clippings side-on, the stick in the foreground with the grass climbing it", step=1)
 stage("L18", odell=((X0, 8.6), 0, "shut"))
 walk("odell", "L18.2", (X0, 7.0))
