@@ -29,6 +29,10 @@
   "polish": {
    "quiet": [
     [
+     "L55",
+     "L56>"
+    ],
+    [
      "L60",
      "L76>"
     ]
@@ -2462,20 +2466,20 @@
      0,
      [
       42.15,
-      0.1,
+      0.05,
       1.5
      ],
      [
       40.0,
-      0.1,
-      1.0
+      0.05,
+      1.22
      ],
-     24
+     19
     ]
    ],
    "hand": 0,
    "step": 2,
-   "what": "kitchen: toast",
+   "what": "kitchen: toast, both of us at the table in profile, faces lit",
    "at": "L26"
   },
   {
@@ -3369,20 +3373,20 @@
      0,
      [
       42.15,
-      0.6,
+      0.05,
       1.5
      ],
      [
       40.0,
-      0.1,
-      1.15
+      0.05,
+      1.22
      ],
-     24
+     19
     ]
    ],
    "hand": 0.008,
    "step": 2,
-   "what": "kitchen, flat bright daylight",
+   "what": "kitchen, flat bright daylight, both of us at the table",
    "at": "L55"
   },
   {
@@ -6577,7 +6581,7 @@
   {
    "at": "L47",
    "name": "mode",
-   "set": "night",
+   "set": "dark",
    "dur": 0.8
   },
   {
@@ -6589,7 +6593,7 @@
   {
    "at": "L54.4",
    "name": "mode",
-   "set": "night",
+   "set": "dark",
    "dur": 0.3
   },
   {
@@ -7867,6 +7871,44 @@
    "at": "L41",
    "name": "sand",
    "level": 3
+  },
+  {
+   "at": 0,
+   "name": "meter",
+   "me": 7,
+   "ines": 4,
+   "dur": 0.0
+  },
+  {
+   "at": "L31",
+   "name": "meter",
+   "me": 6,
+   "dur": 0.8
+  },
+  {
+   "at": "L41",
+   "name": "meter",
+   "me": 5,
+   "dur": 0.8
+  },
+  {
+   "at": "L47",
+   "name": "meter",
+   "me": 4,
+   "dur": 0.8
+  },
+  {
+   "at": "L54.4",
+   "name": "meter",
+   "me": 7,
+   "dur": 0.4
+  },
+  {
+   "at": "L60",
+   "name": "meter",
+   "me": 3.5,
+   "ines": 3.3,
+   "dur": 1.0
   },
   {
    "at": 0,

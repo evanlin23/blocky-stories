@@ -211,7 +211,7 @@ shot("L25b", "S25b: the stair foot by day, the storm door shuddering, the drift 
      move(([0.0, -0.9, 1.15], [0.0, 2.0, 0.95]), ([0.0, -0.5, 1.1], [0.0, 2.0, 0.9]), 20), hand=0.002)
 shot("L25b.3", "S25c: punch in on the drift, one faint sock-shaped scuff in it",
      move(([0.2, 0.7, 0.75], [0.0, 1.95, 0.02]), ([0.2, 1.0, 0.7], [0.0, 1.95, 0.02]), 26), hand=0.002)
-shot("L26", "kitchen: toast", still([KX + 2.15, 0.1, 1.5], [KX, 0.1, 1.0], 24), hand=0)
+shot("L26", "kitchen: toast, both of us at the table in profile, faces lit", still([KX + 2.15, 0.05, 1.5], [KX, 0.05, 1.22], 19), hand=0)
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34), hand=0)
 shot("L28", "close on me, misreading", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
 shot("L29", "me looking past her", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
@@ -267,7 +267,7 @@ shot("L54.1", "running up, two", runcam(61.9, 57, 20), step=1)
 shot("L54.2", "running up, three", runcam(73.9, 57, 20), step=1)
 shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
-shot("L55", "kitchen, flat bright daylight", still([KX + 2.15, 0.6, 1.5], [KX, 0.1, 1.15], 24))
+shot("L55", "kitchen, flat bright daylight, both of us at the table", still([KX + 2.15, 0.05, 1.5], [KX, 0.05, 1.22], 19))
 shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.2, 1.0], 20))
 shot("L57", "Ines says goodnight at her door, lamp on, her face to camera", still([0.0, -0.75, Z4 + 1.3], [1.8, 0.0, Z4 + 1.35], 32), hand=0.003)
 shot("L58", "me in the camp bed, listening", COT_WIDE)
@@ -506,9 +506,9 @@ cues = [
     {"at": "L38", "name": "mode", "set": "day", "dur": 0.8},
     {"at": "L41", "name": "mode", "set": "night", "dur": 0.8},
     {"at": "L46b", "name": "mode", "set": "day", "dur": 0.8},
-    {"at": "L47", "name": "mode", "set": "night", "dur": 0.8},
+    {"at": "L47", "name": "mode", "set": "dark", "dur": 0.8},
     {"at": "L54", "name": "mode", "set": "run", "dur": 0.3},
-    {"at": "L54.3", "name": "mode", "set": "night", "dur": 0.3},
+    {"at": "L54.3", "name": "mode", "set": "dark", "dur": 0.3},
     {"at": "L55", "name": "mode", "set": "day", "dur": 0.8},
     {"at": "L57", "name": "mode", "set": "doorlamp", "dur": 0.6},
     {"at": "L58", "name": "mode", "set": "night", "dur": 0.6},
@@ -646,6 +646,13 @@ cues = [
     {"at": "L24", "name": "sand", "level": 1},
     {"at": "L38", "name": "sand", "level": 2},
     {"at": "L41", "name": "sand", "level": 3},
+    # the rule meter (post.py draw_meter): stair turns, my dot where I wake each night (7, 6, 5, 4), Ines's at her door
+    {"at": 0, "name": "meter", "me": 7, "ines": 4, "dur": 0.0},
+    {"at": "L31", "name": "meter", "me": 6, "dur": 0.8},
+    {"at": "L41", "name": "meter", "me": 5, "dur": 0.8},
+    {"at": "L47", "name": "meter", "me": 4, "dur": 0.8},
+    {"at": "L54.3", "name": "meter", "me": 7, "dur": 0.4},
+    {"at": "L60", "name": "meter", "me": 3.5, "ines": 3.3, "dur": 1.0},
     {"at": 0, "name": "coat", "where": "off"},
     {"at": "L57", "name": "coat", "where": "worn"},
     {"at": "L58", "name": "coat", "where": "off"},
@@ -705,7 +712,7 @@ story = {
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#202838", "fog_density": 0.02, "fog_start": 2.5, "sky": "#0d1220", "sky_strength": 1.0, "exposure": 0.0, "flash_safe": True,
-             "polish": {"quiet": [["L60", "L76>"]], "reveal": ["L18", "L50", "L67"], "twist": "L67"}},
+             "polish": {"quiet": [["L55", "L56>"], ["L60", "L76>"]], "reveal": ["L18", "L50", "L67"], "twist": "L67"}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.025, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
