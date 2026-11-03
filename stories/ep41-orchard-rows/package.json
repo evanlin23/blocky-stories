@@ -5,5 +5,5 @@
  "made_for_kids": false,
  "cover_s": 77.1,
  "shape": "about-me",
- "hold": "dropped 2026-11-03 (second orchestrator, before another round): five review rounds on the opening redo, and r5 critic still scored the hook 4 and the creature 4 (a mauve box with dot eyes that reads as silly), with a grey, dark look; one round can't lift both to 7. Its count opening (\"Two trails of footprints. Only mine glows.\") is also the same skeleton as ep45's. Build and reviews are on branch claude/ep41-orchard-rows-opening."
+ "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
 }
