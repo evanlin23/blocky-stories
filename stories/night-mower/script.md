@@ -24,17 +24,17 @@ Our whole street is built on top of a giant sleeping head: the neighbor's perfec
   - Plant 1, L08 to L09 (about 12 to 14 s): our bald spot is "perfectly ROUND", a top-down shot of a clean circle of bare tan ground in green grass, at the hairline side of our yard. A rewatch sees a bald patch.
   - Plant 2, L17 (about 25 s): his lawn is "COMBED / in long, CURVED stripes", every stripe arcing the same way round one low oval hump, like hair brushed over a brow. A rewatch sees an eyebrow.
   - Plant 3, L03 to L04 and L19 to L20: the house across the street leans toward his lawn, and our pictures slide crooked toward it. A rewatch sees a head turning.
-  - Plant 4, L06: he mows with his eyes shut. On a rewatch it's the one way to work there without being looked at back.
+  - Plant 4, L01 and L06: he mows with his eyes shut, and says it's faster that way. On a rewatch it's the one way to work there without being looked at back.
 - **How the last 15 seconds turn over line 1:** the first time, line 1 is a spooky neighborhood superstition and Dad is the hero breaking it. By L38 we know it's a head that turns to whoever watches. From L39, Dad shuts his eyes, the street settles, and he crosses the fence for the first time in ten years. The last line ("So if you're ever on our street at three,") runs straight into line 1, which now reads as advice from someone who knows. The very last shot is the seam opening a crack and the eye looking into the lens, at the viewer, who has been watching the whole time.
 - **Ending shape:** a loop with a look to camera. Warm turn first (two rivals mowing together, eyes shut), then the cold beat: the eye opens on us.
 - **Warmth:** neighbors. Two men who fought over a fence for ten years end up a two-man crew. Shown, not told: Dad crossing the low fence, then Dad holding the cord while Mr. Odell steers, both eyes shut. Not a sad family reveal: nobody in the family is gone, ill or estranged.
 
 ## The rule and the hits' shape (RULES → What the hits do, the reset, the opening recipe)
-- **Line 1:** "Never look at the neighbor's lawn while his mower's running." 10 words, about 2.07 s. A warning to "you" about one concrete thing.
+- **Line 1 (confess opening, batch lead 2026-11-03, `docs/research/opening-variety.md`):** "My neighbor mows his lawn at three a.m. with his eyes shut." 12 words, about 2.24 s. A concrete mystery about one odd adult.
 - **Frame 1:** straight at the warned-of thing, already wrong: a close, low, floodlit shot of the neighbor's bright green lawn with Mr. Odell pushing his mower straight at camera, **his eyes shut**, face at least 1/5 of frame width, centred. Push in through the line. No wide or establishing shot until L12 (about 17 s).
-- **Sound hit:** on "RUNNING" (about 1.9 s): a soft low thud (`assets/audio/sfx/thud`, low-passed) and the mower's synthesized hum swelling in on D under it.
-- **Line 2:** "Not even through the blinds." 5 words, about 1.0 s. Tightens line 1. No names, places or backstory before L07 (about 10 s). Mr. Odell is first named at L12 (about 17 s).
-- **Lines 3 to 5:** the rule at work, one shot each, every one under 2 s: the leaning house, its lean, the blinds snapping shut. L06 adds the fourth example (his shut eyes).
+- **Sound hit:** on "SHUT" (about 2.1 s): a soft low thud (`assets/audio/sfx/thud`, low-passed) and the mower's synthesized hum swelling in on D under it.
+- **Line 2:** "Don't look while it's running." The rule as a warning to "you", about 1.0 s. No names, places or backstory before L07 (about 10 s). Mr. Odell is first named at L12 (about 17 s).
+- **Lines 3 to 5:** the rule at work, one shot each, every one under 2 s: the leaning house, its lean, the blinds snapping shut. L06 adds the fourth example (his own reason).
 - **The rule meter (on screen the whole time):** a small spirit-level badge, top left, outside the caption band: a rounded lime-green glass vial (`#b6ff3b`) with three short black tick lines and one white bubble, our own design, no text. It shows how far **our** house is turned toward his lawn. Its in-world twin is Dad's yellow spirit level (L22). Bubble per beat: centred L01 to L17. Slides one tick right (toward his lawn) at L18 to L20. Holds. Two ticks at L24. Jammed against the right end at L31. Slides back to centre over 1 s at L40. And twitches a hair right on the very last shot (the eye looks at the lens). It moves on eased curves only, never snaps. If the engine has no overlay for this, the builder adds it as an opt-in in `post.py` (defaults unchanged) rather than dropping it.
 - **Montage (L03 to L06, 3 to 10 s):** four examples: the house across the street leans. Every blind snaps shut at three. The neighbor mows eyes shut. By L08, our bald spot.
 - **The narrator's family is the exception:** our house is the one that looks, because Dad won't obey.
@@ -46,7 +46,7 @@ Our whole street is built on top of a giant sleeping head: the neighbor's perfec
 - **Twist said plainly:** L34 to L38, four short lines, one picture (the eye in his lawn with our bald patch beyond the fence in the same frame).
 
 ## Quotable line (marked)
-- **L06: "And he mows with his eyes shut."** Odd, flat, seven words, typeable, and it's the title. (Backup laughs, not marked: L37 "Ours is where it's going BALD." and L45 "Dad still WATERS / the bald spot. / Out of RESPECT.")
+- **L06: "He says it's FASTER that way."** Odd, flat, six words, typeable, right after the title's detail. (Backup laughs, not marked: L37 "Ours is where it's going BALD." and L45 "Dad still WATERS / the bald spot. / Out of RESPECT.")
 
 ## World
 A bright suburban cul-de-sac (props `sub_building_type_a`, `_c`, `_f`, `_k`, `_p`), one place: our upstairs window, our yard, the low fence, and Mr. Odell's lawn next door, plus the house across the street.
@@ -113,7 +113,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 ## 01 The rule (L01 to L06, about 0 to 10 s)
 - **Where:** the floodlit lawn at 3 AM, then the street.
 - `L01` narrator: My NEIGHBOR / mows his lawn / at three a.m. / with his eyes / SHUT.
-  - [S01, 0 to 2.1 s: low close on the blazing green lawn, Mr. Odell pushing the red mower straight at camera, `eyes_shut`, calm smile, face about a quarter of frame width, centred, floodlit. Slow push in. Hit on RUNNING.]
+  - [S01, 0 to 2.1 s: low close on the blazing green lawn, Mr. Odell pushing the red mower straight at camera, `eyes_shut`, calm smile, face about a quarter of frame width, centred, floodlit. Slow push in. Hit on SHUT.]
 - `L02` narrator: Don't LOOK / while it's RUNNING.
   - [S02: inside my dark bedroom, close on the white blinds: one slat dips by itself and the green glow cuts a bright stripe across the frame. Push in.]
 - `L03` narrator: The family across the street / PEEKED once.
