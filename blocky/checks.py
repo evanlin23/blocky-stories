@@ -38,7 +38,7 @@ HARM = re.compile(r"\b(hurt\w*|grab\w*|took|taken|drag\w*|vanish\w*|disappear\w*
                   r"fell|fall\w*|drown\w*|lost|scream\w*|cry\w*|pulled|eaten|ate|swallow\w*|chas\w*|trapped|locked)\b", re.I)
 BRAND = re.compile(r"r\W*o\W*b\W*l\W*o\W*x", re.I)
 AGES = ("teen", "adult")
-MIN_S, MAX_S = 30.0, 180.0  # the owner: longer is better, up to the 3 min Shorts limit (note 18)
+MIN_S, MAX_S = 15.0, 180.0  # 15 s allows the ultra-short tests (the trend scan's fastest POV clips run 13 to 44 s); 3 min is the Shorts limit
 
 
 def texts(st: dict) -> tuple[list[str], list[str]]:
