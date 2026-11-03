@@ -542,7 +542,7 @@ def build_ortiz(kit, ctx):
 # the crown, the shoulders and arms, the top of the head, a dusting down its front, and a face of snow with two
 # dark hollows set low. Inside the snow it's empty air. One model, posed per shot by the "stander" cue.
 
-SNOW_C = "#f4f9ff"
+SNOW_C = "#ffffff"
 
 
 def dust(rng, box, cell=0.075, edge_p=0.9, front_p=0.34, side_p=0.2, back_p=0.1):
@@ -583,7 +583,8 @@ def build_stander(kit, ctx):
     hips = kit.empty("stander.hips", (0, 0, 1.05), root)
     neck = kit.empty("stander.neck", (0, 0, 0.9), hips)         # at z 1.95
     snow = P(kit, SNOW_C, 0.95, 0.05)
-    dark = P(kit, "#070a14", 0.5, 0.1)
+    dark = P(kit, "#05070f", 0.5, 0.1)
+    frost = ghost(kit, "stander.frost", "#b9d6fa", 0.5, emit=1.5)     # the person-shape the snow settled on
     groups = {}
 
     def grp(name, parent, loc):
@@ -597,6 +598,8 @@ def build_stander(kit, ctx):
     for sx in (-1, 1):
         legs += dust(rng, (sx * 0.2, 0, 0.0, 0.3, 0.32, 1.04), cell=0.08)
     multibox(kit, "stander.legs", legs, snow, gl)
+    for sx in (-1, 1):
+        kit.box(f"stander.frost.leg{sx}", (0.3, 0.32, 1.04), (sx * 0.2, 0, 0.0), frost, gl)
     # torso and arms (ride the hips)
     gb = grp("body", hips, (0, 0, 0.45))
     up = []
@@ -605,6 +608,9 @@ def build_stander(kit, ctx):
         up += dust(rng, (sx * 0.6, 0, -0.45, 0.26, 0.3, 1.5), cell=0.07, edge_p=0.95, front_p=0.4, side_p=0.35)
         up.append((0.3, 0.34, 0.12, sx * 0.6, 0, -1.2))                 # a mitt of snow where each hand hangs
     multibox(kit, "stander.torso", up, snow, gb)
+    kit.box("stander.frost.torso", (0.9, 0.45, 0.9), (0, 0, 0.0), frost, gb)
+    for sx in (-1, 1):
+        kit.box(f"stander.frost.arm{sx}", (0.26, 0.3, 1.5), (sx * 0.6, 0, -0.45), frost, gb)
     # the shoulders: a slab of snow from arm to arm, with a cap on each arm
     gs = grp("shoulders", hips, (0, 0, 0.9))
     kit.box("stander.shoulders", (1.5, 0.5, 0.07), (0, 0, 0.035), snow, gs, bevel=0.02)
@@ -615,10 +621,10 @@ def build_stander(kit, ctx):
     gh = grp("head", neck, (0, 0, 0.27))
     kit.box("stander.head", (0.5, 0.5, 0.5), (0, 0, 0), snow, gh, bevel=0.05)
     for sx in (-1, 1):
-        kit.box(f"stander.eye{sx}", (0.07, 0.03, 0.17), (sx * 0.1, -0.255, -0.07), dark, gh)
-    kit.box("stander.mouth", (0.16, 0.03, 0.04), (0, -0.255, -0.21), dark, gh)
+        kit.box(f"stander.eye{sx}", (0.11, 0.04, 0.24), (sx * 0.13, -0.255, -0.1), dark, gh)
+    kit.box("stander.mouth", (0.2, 0.04, 0.05), (0, -0.255, -0.24), dark, gh)
     gt = grp("hat", neck, (0, 0, 0.55))
-    kit.box("stander.hbrim", (0.98, 0.98, 0.05), (0, 0, 0.0), snow, gt, bevel=0.015)
+    kit.box("stander.hbrim", (0.8, 0.8, 0.05), (0, 0, 0.0), snow, gt, bevel=0.015)
     kit.box("stander.hcrown", (0.54, 0.54, 0.22), (0, 0, 0.13), snow, gt, bevel=0.02)
     kit.box("stander.hcap", (0.56, 0.56, 0.06), (0, 0, 0.27), snow, gt, bevel=0.02)
     ctx["stander"] = (root, hips, neck)
@@ -906,9 +912,9 @@ MODES = {
     "dusk": {"sun": 0.08, "room": 1.0, "lamp": 1.0, "porch": 0.6, "street": 0.5, "corner": 0.0, "globe": 1.0,
              "world": [0.55, "#476bc0"], "sun_c": "#8fa8ff"},
     "dim": {"sun": 0.04, "room": 0.28, "lamp": 0.55, "porch": 0.5, "street": 0.8, "corner": 0.0, "globe": 1.2,
-            "world": [0.42, "#3a5aa8"], "sun_c": "#7f9be8"},
+            "world": [0.42, "#3a5aa8"], "sun_c": "#7f9be8", "fill": 1.0},
     "night": {"sun": 0.04, "room": 0.4, "lamp": 0.6, "porch": 1.0, "street": 1.0, "corner": 0.0, "globe": 1.0,
-              "world": [0.4, "#34549e"], "sun_c": "#7f9be8"},
+              "world": [0.4, "#34549e"], "sun_c": "#7f9be8", "fill": 1.0},
 }
 
 
@@ -922,6 +928,8 @@ def build_lights(kit, ctx):
     kit.aim(st, (-8.2, -0.8, 1.1))
     gl = kit.light("globe", "SPOT", (-11.35, 0.95, 1.75), 26, "#ffffff", size=0.1, spot=26, blend=0.7)
     kit.aim(gl, (GL[0], GL[1], SILL + 0.1))
+    fl = kit.light("fill", "SPOT", (-12.6, -0.4, 2.7), 380, "#cfe6ff", size=0.3, spot=40, blend=0.6)
+    kit.aim(fl, (-9.5, -1.4, 1.9))
     co = kit.light("corner", "SPOT", (0, 56, 55), 260000, "#fff0c0", size=1.0, spot=50, blend=0.4)
     kit.aim(co, (0, 40, 0))
 
@@ -1012,8 +1020,8 @@ def animate(kit, story, tl, t, ctx):
         cur_name = cur["set"]
         u = ss((t - cur["t"]) / max(0.3, cur.get("dur", 0.3)))
     A, B = MODES[prev_name], MODES[cur_name]
-    for k in ("sun", "room", "lamp", "porch", "street", "corner", "globe"):
-        over[k] = lerp(A[k], B[k], u)
+    for k in ("sun", "room", "lamp", "porch", "street", "corner", "globe", "fill"):
+        over[k] = lerp(A.get(k, 0.0), B.get(k, 0.0), u)
     pc = ramped(_cues(tl, "porch"), "on", t, 1.0, 0.3)
     over["porch"] *= pc
     sc = kit.col(A["sun_c"])[:3]
