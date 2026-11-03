@@ -58,9 +58,9 @@
     "S26",
     "S32",
     "S47",
+    "S48",
     "S49",
     "S79",
-    "S83",
     "S86"
    ]
   }
@@ -457,12 +457,8 @@
      "I said, \"skip!\""
     ],
     [
-     "CLICK.",
-     "click."
-    ],
-    [
-     "I was at",
-     "I was at"
+     "And I was at",
+     "And I was at"
     ],
     [
      "the snack BAR.",
@@ -813,7 +809,7 @@
    "chunks": [
     [
      "That's where skipped",
-     "That's where skipped,"
+     "That's where skipped"
     ],
     [
      "time GOES.",
@@ -1372,16 +1368,16 @@
     [
      0,
      [
-      1.6,
-      -0.2,
-      0.9
+      0.6,
+      -0.9,
+      1.9
      ],
      [
-      1.7,
+      1.75,
       -2.7,
-      1.0
+      0.9
      ],
-     21.5,
+     17.7,
      0
     ]
    ],
@@ -2060,7 +2056,8 @@
    "hand": 0.004,
    "step": 2,
    "what": "Gus in the booth beside Lenny, crown on, at the mic",
-   "at": "L19"
+   "at": "L19",
+   "expo": 0.55
   },
   {
    "id": "S37",
@@ -2084,7 +2081,8 @@
    "hand": 0.004,
    "step": 2,
    "what": "Gus looking out over the booth, right at camera",
-   "at": "L19.2"
+   "at": "L19.2",
+   "expo": 0.55
   },
   {
    "id": "S38",
@@ -2281,52 +2279,28 @@
    "at": "P02"
   },
   {
-   "id": "S46",
-   "cam": [
-    [
-     0,
-     [
-      3.0,
-      -2.25,
-      1.55
-     ],
-     [
-      3.0,
-      -3.75,
-      1.5
-     ],
-     30.0,
-     0
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "my eyes going from the song lights to its joints",
-   "at": "L23"
-  },
-  {
    "id": "S47",
    "cam": [
     [
      0,
      [
-      0.85,
+      0.68,
       3.3,
       3.9
      ],
      [
-      0.85,
+      0.68,
       4.5,
       3.85
      ],
-     12.0,
+     11.9,
      0
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "the four cherry song lights in a row",
-   "at": "L23.1"
+   "what": "the four cherry song lights in a row, nothing else lit in frame",
+   "at": "L23"
   },
   {
    "id": "S48",
@@ -2334,36 +2308,25 @@
     [
      0,
      [
-      2.6,
-      -2.2,
+      3.9,
+      -0.9,
       1.0
      ],
      [
       3.8,
       -3.75,
-      1.0
+      1.05
      ],
-     22
-    ],
-    [
-     1,
-     [
-      3.0,
-      -2.6,
-      1.0
-     ],
-     [
-      3.8,
-      -3.75,
-      1.0
-     ],
-     34
+     28.5,
+     0
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "the Skater's four folded joints, one quick push-in",
-   "at": "L23.2"
+   "what": "the Skater side-on, bright: two knees and two elbows, each bent twice",
+   "at": "L23.2+0.3",
+   "skboost": 0.7,
+   "expo": 0.85
   },
   {
    "id": "S49",
@@ -2387,7 +2350,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "the snack-bar clock, its hands",
-   "at": "L24"
+   "at": "L24+0.55"
   },
   {
    "id": "S50",
@@ -2412,54 +2375,6 @@
    "step": 2,
    "what": "the far rail, empty",
    "at": "L24.2"
-  },
-  {
-   "id": "S51",
-   "cam": [
-    [
-     0,
-     [
-      -1.5,
-      -3.0,
-      1.2
-     ],
-     [
-      0.5,
-      0.2,
-      0.2
-     ],
-     31.2,
-     0
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "the middle of the floor, empty",
-   "at": "L24.3"
-  },
-  {
-   "id": "S52",
-   "cam": [
-    [
-     0,
-     [
-      6.2,
-      -2.2,
-      1.3
-     ],
-     [
-      4.3,
-      -3.75,
-      1.0
-     ],
-     26.9,
-     0
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "the post one away, empty",
-   "at": "L24.3+0.33"
   },
   {
    "id": "S53",
@@ -2604,30 +2519,6 @@
    "step": 2,
    "what": "the Skater's painted smile, close",
    "at": "L25b"
-  },
-  {
-   "id": "S59",
-   "cam": [
-    [
-     0,
-     [
-      2.5,
-      -2.9,
-      1.4
-     ],
-     [
-      3.0,
-      -3.75,
-      1.5
-     ],
-     26.4,
-     0
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "my face in the same framing, terrified",
-   "at": "L25b+0.7"
   },
   {
    "id": "S60",
@@ -2798,30 +2689,6 @@
    "at": "L28"
   },
   {
-   "id": "S67",
-   "cam": [
-    [
-     0,
-     [
-      0.17,
-      3.3,
-      3.9
-     ],
-     [
-      0.17,
-      4.5,
-      3.85
-     ],
-     28.8,
-     0
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "the first light turning cream",
-   "at": "L28.1"
-  },
-  {
    "id": "S68",
    "cam": [
     [
@@ -2987,7 +2854,8 @@
    "hand": 0.004,
    "step": 2,
    "what": "Gus at the booth mic, crown on, the room bright",
-   "at": "L31b.1"
+   "at": "L31b.1",
+   "expo": 0.55
   },
   {
    "id": "S75",
@@ -3011,31 +2879,8 @@
    "hand": 0.004,
    "step": 2,
    "what": "Gus at the mic, soft, pointing out at the floor",
-   "at": "L32"
-  },
-  {
-   "id": "S76",
-   "cam": [
-    [
-     0,
-     [
-      -2.8,
-      -1.2,
-      1.4
-     ],
-     [
-      -3.0,
-      -3.75,
-      1.4
-     ],
-     25.6,
-     0
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "Gus's friends at the rail turning to me, grinning",
-   "at": "L32.1"
+   "at": "L32",
+   "expo": 0.55
   },
   {
    "id": "S77",
@@ -3182,30 +3027,6 @@
    "at": "L35.2"
   },
   {
-   "id": "S83",
-   "cam": [
-    [
-     0,
-     [
-      0.0,
-      0.5,
-      3.3
-     ],
-     [
-      0.0,
-      4.5,
-      3.7
-     ],
-     15.1,
-     0
-    ]
-   ],
-   "hand": 0.004,
-   "step": 2,
-   "what": "the song lights, all cream",
-   "at": "L35.3"
-  },
-  {
    "id": "S84",
    "cam": [
     [
@@ -3259,22 +3080,22 @@
     [
      0,
      [
-      -5.8,
-      -7.9,
-      3.9
+      -5.2,
+      1.6,
+      1.0
      ],
      [
-      1.0,
-      0.5,
-      0.6
+      -2.5,
+      3.7,
+      1.1
      ],
-     20,
+     29.3,
      0
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "wide across the floor: at the far rail, small and lit, a striped shape with one leg bent twice",
+   "what": "the Skater large and lit at the far rail, three-quarter, one leg folded once, smiling",
    "at": "L36.4"
   },
   {
@@ -3299,7 +3120,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "my face, worried, turning toward the guy",
-   "at": "L36.6"
+   "at": "L36.6+0.5"
   },
   {
    "id": "S88",
@@ -3824,7 +3645,7 @@
    {
     "at": "L30",
     "pos": [
-     1.1,
+     0.9,
      -0.4
     ],
     "blend": 0,
@@ -3833,8 +3654,8 @@
      0
     ],
     "side": [
-     25,
-     25
+     8,
+     8
     ],
     "head": [
      0,
@@ -3865,7 +3686,7 @@
    {
     "at": "L32.1",
     "pos": [
-     1.1,
+     0.9,
      -0.4
     ]
    },
@@ -4210,7 +4031,7 @@
    {
     "at": "L30",
     "pos": [
-     2.0,
+     2.1,
      -0.4
     ],
     "blend": 0,
@@ -4219,8 +4040,8 @@
      0
     ],
     "side": [
-     25,
-     25
+     8,
+     8
     ],
     "head": [
      0,
@@ -4251,7 +4072,7 @@
    {
     "at": "L31b.1",
     "pos": [
-     2.0,
+     2.1,
      -0.4
     ]
    },
@@ -18594,8 +18415,8 @@
    {
     "at": "L03",
     "pos": [
-     3.4,
-     -5.4
+     1.5,
+     -6.0
     ],
     "blend": 0,
     "arms": [
@@ -18623,8 +18444,8 @@
    {
     "at": "L04.2",
     "pos": [
-     3.4,
-     -5.4
+     1.5,
+     -6.0
     ]
    },
    {
@@ -19484,44 +19305,30 @@
    "dur": 0.6
   },
   {
-   "at": "L15",
+   "at": "L16.2",
    "name": "song",
    "i": 8,
-   "state": "cream",
-   "dur": 0.6
-  },
-  {
-   "at": "L15",
-   "name": "song",
-   "i": 9,
-   "state": "gold",
-   "dur": 0.6
-  },
-  {
-   "at": "L16.2",
-   "name": "song",
-   "i": 9,
    "state": "cherry",
    "dur": 0.4
   },
   {
    "at": "L16.2",
    "name": "song",
-   "i": 10,
+   "i": 9,
    "state": "gold",
    "dur": 0.6
   },
   {
    "at": "L19.4",
    "name": "song",
-   "i": 10,
+   "i": 9,
    "state": "cherry",
    "dur": 0.4
   },
   {
    "at": "L19.4",
    "name": "song",
-   "i": 11,
+   "i": 10,
    "state": "gold",
    "dur": 0.6
   },
@@ -19542,12 +19349,19 @@
   {
    "at": "L31",
    "name": "song",
-   "i": 9,
+   "i": 8,
    "state": "cream",
    "dur": 0.6
   },
   {
    "at": "L33",
+   "name": "song",
+   "i": 9,
+   "state": "cream",
+   "dur": 0.6
+  },
+  {
+   "at": "L35.3",
    "name": "song",
    "i": 10,
    "state": "cream",
@@ -19634,14 +19448,7 @@
    "btn": "skip"
   }
  ],
- "clip_ok": [
-  "S05/s2",
-  "S08/gus",
-  "S65/gus",
-  "S65/me",
-  "S70/gus",
-  "S71/gus"
- ],
+ "clip_ok": [],
  "fx": [],
  "music": {
   "root": 50,
@@ -19830,6 +19637,6 @@
     ]
    }
   ],
-  "rev": 30
+  "rev": 31
  }
 }

@@ -154,7 +154,7 @@
    ]
   },
   "L06": {
-   "text": "I said, \"skip!\" click. I was at the snack bar.",
+   "text": "I said, \"skip!\" And I was at the snack bar.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -165,18 +165,14 @@
    "chunks": [
     [
      0.155,
-     0.672
+     0.793
     ],
     [
-     0.759,
-     0.948
+     0.87,
+     1.147
     ],
     [
-     0.983,
-     1.181
-    ],
-    [
-     1.181,
+     1.147,
      1.948
     ]
    ]
@@ -598,46 +594,46 @@
    ]
   },
   "L24": {
-   "text": "That's where skipped, time goes. It folds up and comes after you, one fold for every song you skipped.",
+   "text": "That's where skipped time goes. It folds up and comes after you, one fold for every song you skipped.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9579000000000001,
-   "dur": 4.362,
+   "dur": 4.293,
    "onset": 0.172,
-   "end": 4.155,
+   "end": 4.086,
    "chunks": [
     [
      0.172,
-     0.655
+     0.586
     ],
     [
-     0.69,
-     1.397
+     0.586,
+     1.293
     ],
     [
-     1.483,
-     1.906
+     1.362,
+     1.784
     ],
     [
-     1.906,
-     2.207
+     1.784,
+     2.086
     ],
     [
-     2.207,
-     2.517
+     2.086,
+     2.431
     ],
     [
-     2.552,
-     2.966
+     2.466,
+     2.879
     ],
     [
-     2.966,
-     3.483
+     2.879,
+     3.414
     ],
     [
-     3.483,
-     4.155
+     3.414,
+     4.086
     ]
    ]
   },

@@ -19,7 +19,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 # the word check: a comma in the spoken text only where Whisper swallowed a word
 TEMPO = {"L04": 0.9, "L15": 0.9, "L30": 0.9, "L24": 0.93}
 # and a comma in the spoken text only (the captions don't change) where Whisper swallowed the "ed" of a word
-SPOKEN = {("L24", 0): "That's where skipped,"}
+SPOKEN = {}
 for ln in lines:
     for k, ch in enumerate(ln.get("chunks", [])):
         if (ln["id"], k) in SPOKEN:
@@ -134,7 +134,7 @@ SHOTS = [
     ("L03.2", "the lore shot: the end cubby, the far-too-long cherry skates, the tally on the near heel", 2,
      move(([6.5, -5.3, 1.3], [6.5, -8.05, 1.12]), ([6.5, -6.0, 1.15], [6.5, -8.05, 1.12]), 34, 55)),
     ("L04", "me wobbling onto the floor, arms out", 2, C([-3.0, -3.2, 1.3], [0.6, -3.0, 1.1], 3.6)),
-    ("L04.1", "me tipping backward, Gus already tipping beside me, laughing", 2, C([1.6, -0.2, 0.9], [1.7, -2.7, 1.0], 2.8)),
+    ("L04.1", "me tipping backward, Gus already tipping beside me, laughing", 2, C([0.6, -0.9, 1.9], [1.75, -2.7, 0.9], 3.2)),
     ("L04.2", "Gus's friends at the rail turning to look", 2, C([-2.8, -1.2, 1.4], [-3.0, RAILY, 1.4], 2.4)),
     ("L05", "me on the boards, worried, looking up toward the booth", 2, C([1.5, 0.0, 0.7], [1.5, -2.6, 0.6], 1.9)),
     ("L05.1", "Lenny's two flat hands over the cherry skip and the cream back buttons", 2, C([-0.35, 2.8, 3.15], [-0.35, 5.2, 3.0], 2.7)),
@@ -179,10 +179,10 @@ SHOTS = [
     ("P02", "the second drop: hold on the two hands, my hand pulled back to my chest", 2, C([3.4, -2.3, 1.1], [3.4, RAILY, 1.1], 1.3)),
     # 06 the reveal
     ("L23", "my eyes going from the song lights to its joints", 2, face(ME_RAIL, 180, 1.5, 1.2, 1.5)),
-    ("L23.1", "the four cherry song lights in a row", 2, BOOTH_BAR(0.85, 2.4)),
-    ("L23.2", "the Skater's four folded joints, one quick push-in", 2,
-     move(([2.6, -2.2, 1.0], [3.8, RAILY, 1.0]), ([3.0, -2.6, 1.0], [3.8, RAILY, 1.0]), 22, 34)),
-    ("L24", "the snack-bar clock, its hands", 2, CLOCK),
+    ("L23", "the four cherry song lights in a row, nothing else lit in frame", 2, BOOTH_BAR(0.68, 2.42)),
+    ("L23.2+0.3", "the Skater side-on, bright: two knees and two elbows, each bent twice", 2,
+     C([3.9, -0.9, 1.0], [3.8, RAILY, 1.05], 2.4)),
+    ("L24+0.55", "the snack-bar clock, its hands", 2, CLOCK),
     ("L24.1", "the far rail, empty", 2, C([-2.5, 0.0, 1.5], [FAR[0], FAR[1], 1.0], 3.0)),
     ("L24.2", "the middle of the floor, empty", 2, C([-1.5, -3.0, 1.2], [MID[0], MID[1], 0.2], 3.0)),
     ("L24.2+0.33", "the post one away, empty", 2, C([6.2, -2.2, 1.3], [SK_POST[0], SK_POST[1], 1.0], 2.2)),
@@ -222,19 +222,30 @@ SHOTS = [
     ("L35.2", "the song lights, all cream", 2, C([0.0, 0.5, 3.3], [0.0, 4.5, 3.7], 6.4)),
     ("L36", "a guest at the foot of the booth calling up for a skip", 2, C([0.2, 4.2, 2.7], [-0.6, 3.3, 1.5], 1.9)),
     ("L36.1", "Lenny's hand over the button", 2, C([-0.6, 3.4, 3.2], [-0.6, 4.6, 3.1], 2.0)),
-    ("L36.2", "wide across the floor: at the far rail, small and lit, a striped shape with one leg bent twice", 2, HIGH),
-    ("L36.3", "my face, worried, turning toward the guy", 2, face(ME_RAIL, 180, 1.5, 1.3, 1.5)),
+    ("L36.2", "the Skater large and lit at the far rail, three-quarter, one leg folded once, smiling", 2,
+     C([-5.2, 1.6, 1.0], [FAR[0], FAR[1], 1.1], 2.8)),
+    ("L36.3+0.5", "my face, worried, turning toward the guy", 2, face(ME_RAIL, 180, 1.5, 1.3, 1.5)),
     ("L38", "me pushing off the rail toward the booth", 2, C([3.0, -5.6, 1.6], [2.8, 0.2, 1.3], 3.8)),
 ]
 
+# shots merged into their neighbours (round 10): the ids of the rest stay as they were, so reviews and lists still match
+DROP = {46, 51, 52, 59, 67, 76, 83}
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
+    if i + 1 in DROP:
+        continue
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.0 if step == 1 else 0.004, "step": step, "what": what}
     if i:
         s["at"] = at
     shots.append(s)
 
 shots[0]["expo"] = 0.45
+for sh in shots:
+    if sh["id"] in ("S36", "S37", "S74", "S75"):
+        sh["expo"] = 0.55          # Gus at the mic was blown out
+    if sh["id"] == "S48":
+        sh["skboost"] = 0.7
+        sh["expo"] = 0.85
 for sh in shots:
     if sh["what"].startswith("THE TEST STILL"):
         sh["skboost"] = 0.6
@@ -303,7 +314,7 @@ key("me", "L27+0.6", lean=-34, blend=0.5)
 floor_sit("me", "L27.2", [1.45, -2.6], expr="laugh")
 hide("me", "L28")
 seat("me", "L29", MEST[0], expr="laugh")
-put("me", "L30", [1.1, -0.4], yaw=180, skate=True, expr="grin", side=[25, 25], wobble=5)
+put("me", "L30", [0.9, -0.4], yaw=180, skate=True, expr="grin", side=[8, 8], wobble=5)
 key("me", "L30.2", lean=-12, wobble=8, expr="laugh", blend=0.4)
 hide("me", "L31")
 put("me", "L32.1", list(ME_RAIL), yaw=180, skate=True, arms=[25, 25], expr="soft")
@@ -325,7 +336,7 @@ key("gus", "L27.1", lean=0)
 key("gus", "L27.1+0.4", lean=-30, blend=0.5)
 floor_sit("gus", "L27.2", [2.3, -2.6], expr="laugh")
 hide("gus", "L28")
-put("gus", "L30", [2.0, -0.4], yaw=180, skate=True, expr="grin", side=[25, 25], wobble=6)
+put("gus", "L30", [2.1, -0.4], yaw=180, skate=True, expr="grin", side=[8, 8], wobble=6)
 key("gus", "L30.2", lean=-12, wobble=8, expr="laugh", blend=0.4)
 hide("gus", "L31")
 put("gus", "L31b.1", list(GUS_BOOTH) + [1.74], yaw=0, expr="soft", arms=[0, 0])
@@ -393,7 +404,7 @@ def orbit(anchor, secs, th0, a, b, off=0.45, step=0.8):
 # the hug at the counter (L03), the singles at the rail (L04.2)
 put("s1", "L03", [2.3, -6.2], yaw=180, skate=True, expr="grin", arms=[40, 40])
 put("s2", "L03", [4.5, -6.2], yaw=180, skate=True, expr="grin", arms=[40, 40])
-put("s3", "L03", [3.4, -5.4], yaw=180, skate=True, expr="grin", arms=[40, 40])
+put("s3", "L03", [1.5, -6.0], yaw=180, skate=True, expr="grin", arms=[40, 40])
 put("s1", "L04.2", [-3.4, RAILY], yaw=180, skate=True, expr="wide")
 put("s2", "L04.2", [-2.6, RAILY], yaw=180, skate=True, expr="wide")
 put("s3", "L04.2", [-4.2, RAILY], yaw=180, skate=True, expr="wide")
@@ -496,7 +507,7 @@ cues += [
 ]
 
 # the twelve song lights (the rule meter): cream = played, gold = playing now, cherry = skipped. Bulb 5 starts cherry
-# (the loop's guy) and cools to cream; 4 skips light 6, 7, 9, 10 cherry; each take-back turns one cream.
+# (the loop's guy) and cools to cream; 4 skips light 6, 7, 8, 9 cherry; each take-back turns one cream.
 
 
 def bulb(at, i, state, dur=0.4):
@@ -508,16 +519,15 @@ bulb("L06.1", 6, "cherry")
 bulb("L06.1", 7, "gold", 0.6)
 bulb("L10.2", 7, "cherry")
 bulb("L10.2", 8, "gold", 0.6)
-bulb("L15", 8, "cream", 0.6)
-bulb("L15", 9, "gold", 0.6)
-bulb("L16.2", 9, "cherry")
-bulb("L16.2", 10, "gold", 0.6)
-bulb("L19.3", 10, "cherry")
-bulb("L19.3", 11, "gold", 0.6)
+bulb("L16.2", 8, "cherry")
+bulb("L16.2", 9, "gold", 0.6)
+bulb("L19.3", 9, "cherry")
+bulb("L19.3", 10, "gold", 0.6)
 bulb("L28.1", 6, "cream", 0.6)
 bulb("L29.2", 7, "cream", 0.6)
-bulb("L31", 9, "cream", 0.6)
-bulb("L33", 10, "cream", 0.6)
+bulb("L31", 8, "cream", 0.6)
+bulb("L33", 9, "cream", 0.6)
+bulb("L35.2", 10, "cream", 0.6)
 bulb("L35.2", 11, "cream", 0.6)
 bulb("L36.1+0.5", 11, "cherry")
 
@@ -563,7 +573,7 @@ story = {
              "exposure": 0.3, "flash_safe": True,
              "polish": {"emph": ["L01", "L08", "L20", "L23", "L25b", "L34"], "reveal": ["L08", "L22", "L25b", "L34"],
                         "twist": "L25b", "quiet": [["L32", "L33"]],
-                        "hold": ["S02", "S14", "S17", "S24", "S26", "S32", "S47", "S49", "S79", "S83", "S86"]}},
+                        "hold": ["S02", "S14", "S17", "S24", "S26", "S32", "S47", "S48", "S49", "S79", "S86"]}},
     "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.02, 0.01, -0.01], "saturation": 1.05, "red_line": 0.78,
               "contrast": 1.04, "vignette": 0.25, "bloom": 0.25, "grain": 0.01},
     "phonemes": {"lap": "lˈæp", "skipped": "skˈɪpt"},
@@ -572,7 +582,7 @@ story = {
     "shots": shots,
     "acting": acting,
     "cues": cues,
-    "clip_ok": ["S05/s2", "S08/gus", "S65/gus", "S65/me", "S70/gus", "S71/gus"],
+    "clip_ok": [],
     "fx": [],
     # the fast songs: a bright rink organ in D major; the waltz: F lydian, soft; the drone enters at L13 and thickens at
     # each skip, lifts a step at each take-back and is gone by L34

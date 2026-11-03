@@ -95,7 +95,7 @@ One bright roller rink on a Saturday afternoon, a birthday skate. A maple floor 
 
 ## Sound
 - **L01's hit:** the tape-stop plus a soft low thump on "YOU".
-- **L06 "CLICK.":** one soft click of the skip button, then the tape-stop and the new downbeat.
+- **L06 "SKIP!":** one soft click of the skip button (sound only, no spoken word), then the tape-stop and the new downbeat.
 - **The spotlight sweep:** no sound of its own.
 - **L27:** two soft bumps on the boards and Gus's laugh shown, no voice of his own.
 - **The fans:** a low, slow whoosh in the room bed all afternoon.
@@ -131,8 +131,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S04a, 8.0: me wobbling onto the floor, arms out. S04b, 9.0: me tipping backward, and beside me Gus already tipping too, laughing (plant 3). Cut before either of us lands. S04c, 9.8: Gus's friends at the rail turning to look, `wide`]
 - `L05` narrator: I yelled to the DJ, LENNY. / He asked, "SKIP, / or BACK?"
   - [S05a, 9.6: me on the boards, `worried`, looking up toward the booth. S05b, 10.8: Lenny in the booth, `grin`, his two flat hands hovering over his two buttons, the cherry skip button and the cream back button beside it (plant: the back button)]
-- `L06` narrator: I said, "SKIP!" / CLICK. / I was at the snack BAR.
-  - [S06a, 12.4: the button under his flat hand, the next song light turning cherry. Hard cut on "CLICK" (tape-stop). S06b, 13.9: me on a chrome stool at the snack bar, skates on, upright, `wide`. Behind me, over my shoulder, the spotlight sweeps the far rail for the new song, and a tall striped shape stands in it, small but lit]
+- `L06` narrator: I said, "SKIP!" / And I was at / the snack BAR.
+  - [S06a, 12.4: the button under his flat hand, the next song light turning cherry. Hard cut on "the snack BAR" (tape-stop). S06b, 13.9: me on a chrome stool at the snack bar, skates on, upright, `wide`. Behind me, over my shoulder, the spotlight sweeps the far rail for the new song, and a tall striped shape stands in it, small but lit]
 - `L07` narrator: The clock had jumped / four MINUTES. / My fries were COLD.
   - [S07a, 14.8: the rink clock beside the booth, its minute hand settled further on. S07b, 16.0: close on a paper boat of fries on the ledge, no steam, a fry drooping. S07c, 16.8: my face, `wide`]
 - `L08` narrator: In the next song's SPOTLIGHT, / a SKATER in faded STRIPES / stood at the far RAIL, / SMILING.
@@ -231,7 +231,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   5. **Bright look:** `look.polish: true`, `look.flash_safe: true` (story.json), the room lit up for fast songs, dim only for L19 to L25.
 
 ## Notes for the builder and standards
-- **Whisper-risky words, kept on purpose:** "DJ" (Whisper may write "deejay" or "D.J.": normalize it in the check), "Gus" and "Gus's", "Lenny", "CLICK", "four". Avoided: "fell", "fall" (HARM words, so it's "went down" and "the wipeout").
+- **Whisper-risky words, kept on purpose:** "DJ" (Whisper may write "deejay" or "D.J.": normalize it in the check), "Gus" and "Gus's", "Lenny", "four". Avoided: "fell", "fall" (HARM words, so it's "went down" and "the wipeout").
 - **Checks words:** no death words, no harm words (no "fell", "fall", "grab", "took", "pulled", "lost"), no child words. The reach is "held out", never a grab. Nobody is hurt in the wipeout: it's a laughing sit-down, cut before anyone lands.
 - **Rig limits:** no hand ever grips. The button is a flat hand. Hands meeting are cut away (L16, L27, L30). The Skater's held-out arm shows the hand at the end of the sleeve, side-on, never foreshortened toward camera.
 - **Reported speech:** "SKIP it!" and "SKIP" are mine. Gus's speech (L32) and the lady (L29) are reported. Nobody has a voice of their own.

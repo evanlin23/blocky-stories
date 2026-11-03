@@ -434,8 +434,8 @@ def build_booth(kit, ctx):
         kit.box(f"boothpost{sx}", (0.1, 0.1, 2.7), (sx, 4.5, 3.05), cream)
     kit.cyl("micpole", 0.012, 0.5, (1.05, 4.72, 2.95), kit.metal("#333333"))
     kit.sphere("micball", 0.045, (1.05, 4.72, 3.22), dark)
-    kit.sphere("boothbulb", 0.08, (0.5, 5.0, 3.55), kit.emit("#ffd9a0", 14.0))
-    kit.light("booth", "POINT", (0.5, 5.0, 3.4), 160, "#ffbf70", size=0.15)
+    kit.sphere("boothbulb", 0.08, (0.5, 5.0, 3.55), kit.emit("#ffd9a0", 9.0))
+    kit.light("booth", "POINT", (0.5, 5.0, 3.4), 90, "#ffbf70", size=0.15)
     # the song lights: a cream board over the booth with twelve round bulbs, no text. The rule meter.
     kit.box("song board", (4.2, 0.1, 0.42), (0, 4.52, 3.85), cream, bevel=0.02)
     kit.box("song trim top", (4.3, 0.12, 0.05), (0, 4.5, 4.1), cherry)
