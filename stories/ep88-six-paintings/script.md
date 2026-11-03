@@ -4,7 +4,7 @@
 - **Pitch:** N10 in `docs/research/2026-11-09-week.md` (panel score 7), a port of the horror-puzzle niche and the puzzle lane's retry after ep62. Opening shape `count`. Lane: experiment. Length arm: ultra-short (20 to 45 s).
 - **Title:** One Of These Paintings BREATHES 🖼️
 - **Changed from the pitch:** the pitch's answer (a first owner holding his breath for a hundred years until noticed) sits in the crowded "unseen until noticed" theme, so the answer is now a cleaner trick with one fair clue on screen. Line 1 is kept.
-- **Word count:** 140 spoken words in 25 lines, all `narrator`, plus one 0.6 s music drop before L10 (the chime).
+- **Word count:** 138 spoken words in 25 lines, all `narrator`, plus one 0.6 s music drop before L10 (the chime).
 - **Estimated length:** about 34 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. The chime (L10) rings for about 1 s, so about 35 s. If it runs over 42 s, cut L19 first.
 - **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. Bright all the way: an oxblood-red gallery hall, warm picture lights, gilt frames, a sunny sage-green garden through one frame. No dark scene.
 - **Hold:** scripts only (batch 8). Not built, not voiced.
@@ -19,7 +19,7 @@ The batch table is in `stories/ep85-early-alarm/script.md`. This row:
 Kept clear of ep62 on purpose: no mirror, no copy of anyone, no swap, no letters on people. Kept clear of ep84: nothing is behind you, and the room isn't a loop. Kept clear of ep82's disguise: nothing pretends to be a building. A man simply stands still in a window that's framed like the paintings.
 
 ## The big idea
-**The breathing "painting" isn't a painting: frame C is a window onto the garden, and the man in it has been standing outside all night, holding perfectly still, watching you look for him.**
+**The breathing "painting" is a window: frame C looks onto the garden, and the man in it has been standing outside all day, holding perfectly still, watching you look for him.**
 
 - **Engine:** hidden in plain sight (the watcher who poses as part of the picture), our own version. No film's plot, place or people.
 - **Why it clicks ("oh, THAT's why"):** the clue we give is "look at the glass". Only C fogs and clears, and the fog sits on the far side of the glass. Only a living breath fogs glass from the far side, so C is a window and he's breathing on it from the garden. His garden's leaves move a little and the others' don't. Then the window is empty and the garden door clicks.
@@ -34,7 +34,7 @@ Kept clear of ep62 on purpose: no mirror, no copy of anyone, no swap, no letters
 - **The montage:** the six frames, one shot each (L03 to L08), each under 2 s.
 - **A concrete mystery on screen by 15 s:** the clue "Look at the GLASS" at 12 s, and on a rewatch the faint fog on C from frame 1.
 - **At stake:** you, the visitor in the hall.
-- **First real scare and reveal (L11 to L18, 14 to 25 s):** said plainly. "It's C." "And the fog is on the OUTSIDE. / Only a living BREATH fogs glass from the far SIDE. / C isn't a PAINTING. / It's a WINDOW." "He's been standing out in the garden all night, holding STILL, watching you look for HIM."
+- **First real scare and reveal (L11 to L18, 14 to 25 s):** said plainly. "It's C." "And the fog is on the OUTSIDE. / Only a living BREATH fogs glass from the far SIDE. / C has a LATCH. / It's a WINDOW." "He's been standing out in the garden all day, holding STILL, watching you look for HIM."
 - **How the last seconds turn over the first line:** the window is empty, and the garden door just clicked (L20, L21). "Now count the PEOPLE in this hall. It was just YOU. Count AGAIN." (L22 to L22b): a second shadow is on the floor beside yours, and L22b runs into L01.
 - **The plants a rewatch catches:**
   1. From frame 1, a soft circle of fog on C's glass that grows and fades every 2 s.
@@ -58,7 +58,7 @@ Kept clear of ep62 on purpose: no mirror, no copy of anyone, no swap, no letters
 ## World
 One place: a long gallery hall in an old house museum, oxblood walls, a polished wood floor, a velvet rope on brass posts, warm picture lights over each frame. Six frames in two rows of three on the long wall, A, B, C on top, D, E, F below:
 - A: an old sea captain in a peaked hat, gilt frame.
-- B: a lady in blue with a grey greyhound, gilt frame.
+- B: a grey greyhound alone, sitting tall, gilt frame.
 - C: a man in a black coat with a high collar, a sunny garden behind him, plain white-painted wood frame, real glass.
 - D: a bowl of pears, gilt frame.
 - E: a stormy sea, gilt frame.
@@ -136,7 +136,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L01: Six paintings / in this HALL. / One of them / is BREATHING.
 - L02: Find it / before the clock CHIMES. / Comment the LETTER.
 - L03: A. / The old CAPTAIN.
-- L04: B. / The lady / with the GREYHOUND.
+- L04: B. / The grey GREYHOUND.
 - L05: C. / The man / in the black COAT, / by the garden.
 - L06: D. / A bowl / of PEARS.
 - L07: E. / A stormy SEA.
@@ -148,9 +148,9 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L13: It FOGS. / Then it CLEARS.
 - L14: And the fog / is on the OUTSIDE.
 - L14a: Only a living BREATH / fogs glass / from the far SIDE.
-- L15: C / isn't a PAINTING.
+- L15: C / has a LATCH.
 - L16: It's a WINDOW.
-- L17: He's been standing / out in the garden / all night, / holding STILL,
+- L17: He's been standing / out in the garden / all day, / holding STILL,
 - L18: watching you / look for HIM.
 - L19: Look again.
 - L20: The window's EMPTY.
