@@ -342,7 +342,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [two shots: a quick cut of a ginger tail disappearing into a neighbor's curbside trash can at dusk. Then the rail of mixed old pairs, every one a size eleven]
 - `L66c` narrator: Friday's pair / was MINE / because he'd walked / ME home.
   - [my sneakers on the mat, steaming, cut with the empty asphalt one light behind me from L33a]
-- `L66e` narrator: A pair kept INSIDE / means somebody / walks home ALONE.
+- `L66e` narrator: The pair kept INSIDE / means somebody / walks home ALONE.
   - [my room, the sneakers by my bed, the window dark above them]
 - `L66f` narrator: So he came / to my WINDOW / for his.
   - [the window glass from inside, empty now, two faint marks low on the sill]
