@@ -216,14 +216,14 @@ S("L22", C((KM + 1.3, 3.1, 1.5), 3.0, 0, 3, 26, d2=2.6), dof=[2.9, 6.0], ring=Tr
   note="it sharpens: Mom's kitchen, the sink window, the hook")
 cue("L23", "mgloves", on=True)
 scene("L23", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[0.2, 0.2]))
-S("L23", C((KM - 0.2, 1.95, 1.5), 2.2, 0, 3, 40, d2=1.7), ring=True, note="Mom at her stove, eyes shut, calm. Cover frame")
+S("L23", C((KM - 0.2, 1.95, 1.5), 1.6, 0, 3, 40, d2=1.3), ring=True, note="Mom at her stove, eyes shut, calm. Cover frame")
 cue("L24", "mbA", on=True, dur=1.4, z0=1.35, z1=1.13, y0=1.4)
 scene("L24", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[1.1, 1.1]))
 S("L24", C((KM - 0.2, 1.4, 1.1), 1.3, 0, 12, 36, d2=1.0), ring=True,
   note="her hands at the ends of her sleeves lowering the basket into the oil")
 scene("L25", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="blank", arms=[1.1, 1.1]))
-S("L25", C((KM - 0.2, 1.95, 1.58), 2.2, 0, 2, 42, d2=1.8), ring=True, note="close: her eyes open")
-S("L26", C((KM - 0.2, 1.95, 1.58), 1.8, 0, 0, 42, d2=1.5), ring=True, note="her face straight to camera through the glass")
+S("L25", C((KM - 0.2, 1.95, 1.58), 1.5, 0, 2, 42, d2=1.2), ring=True, note="close: her eyes open")
+S("L26", C((KM - 0.2, 1.95, 1.58), 1.3, 0, 0, 42, d2=1.0), ring=True, note="her face straight to camera through the glass")
 scene("L27", me=dict(pos=(1.4, 2.5, 0), yaw=0, expr="scared"))
 S("L27", C((1.4, 2.5, 1.58), 2.0, 0, 2, 40, d2=1.6), note="my face on my side of the glass, the sign's glow on my cheek")
 
