@@ -1,0 +1,1829 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "when the town whistle blows, you go down to your basement.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.155,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     1.19
+    ],
+    [
+     1.259,
+     1.621
+    ],
+    [
+     1.621,
+     2.397
+    ]
+   ]
+  },
+  "L02": {
+   "text": "stay up, and you'll meet what walks the streets.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.492,
+     0.768
+    ],
+    [
+     0.768,
+     1.086
+    ],
+    [
+     1.086,
+     1.724
+    ]
+   ]
+  },
+  "L03": {
+   "text": "it can blow at noon. everybody runs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.879
+    ],
+    [
+     0.948,
+     1.81
+    ]
+   ]
+  },
+  "L04": {
+   "text": "the baker leaves his bread in the oven.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.061
+    ],
+    [
+     1.061,
+     1.69
+    ]
+   ]
+  },
+  "L05": {
+   "text": "a whole softball team runs down a stranger's cellar stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.586,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     1.0
+    ],
+    [
+     1.0,
+     1.353
+    ],
+    [
+     1.353,
+     1.75
+    ],
+    [
+     1.75,
+     2.586
+    ]
+   ]
+  },
+  "L06": {
+   "text": "the mail lady ducks into whatever house is closest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.905
+    ],
+    [
+     0.905,
+     1.483
+    ],
+    [
+     1.483,
+     2.207
+    ]
+   ]
+  },
+  "L07": {
+   "text": "i'm twenty-four. when i was born, our basement had thirteen steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.069,
+   "onset": 0.172,
+   "end": 2.879,
+   "chunks": [
+    [
+     0.172,
+     0.828
+    ],
+    [
+     0.897,
+     1.121
+    ],
+    [
+     1.121,
+     1.466
+    ],
+    [
+     1.492,
+     2.034
+    ],
+    [
+     2.034,
+     2.879
+    ]
+   ]
+  },
+  "L08": {
+   "text": "now it has twenty-six.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.534,
+     1.207
+    ]
+   ]
+  },
+  "L09": {
+   "text": "every whistle, one more step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.397
+    ]
+   ]
+  },
+  "L10": {
+   "text": "nobody else counts. i do.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.983,
+     1.552
+    ]
+   ]
+  },
+  "L11": {
+   "text": "my grandpa, arlo, dad's dad, lives next door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     0.862
+    ],
+    [
+     0.897,
+     1.379
+    ],
+    [
+     1.431,
+     2.328
+    ]
+   ]
+  },
+  "L12": {
+   "text": "his house is the only one in town with no basement.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.94
+    ],
+    [
+     0.94,
+     1.431
+    ],
+    [
+     1.431,
+     2.31
+    ]
+   ]
+  },
+  "L13": {
+   "text": "he built it himself, up on stone blocks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.845
+    ],
+    [
+     0.879,
+     1.103
+    ],
+    [
+     1.103,
+     1.931
+    ]
+   ]
+  },
+  "L14": {
+   "text": "when the whistle blows, he makes tea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.155,
+     0.293
+    ],
+    [
+     0.293,
+     0.793
+    ],
+    [
+     0.819,
+     1.552
+    ]
+   ]
+  },
+  "L15": {
+   "text": "dad begs him every week to move in with us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.034
+    ],
+    [
+     1.034,
+     1.397
+    ],
+    [
+     1.397,
+     1.948
+    ]
+   ]
+  },
+  "L16": {
+   "text": "grandpa just says he won't hide from an empty street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.31
+    ],
+    [
+     1.31,
+     1.466
+    ],
+    [
+     1.466,
+     2.207
+    ]
+   ]
+  },
+  "L17": {
+   "text": "the whistle sits on a pole in the middle of our street.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.121
+    ],
+    [
+     1.121,
+     1.406
+    ],
+    [
+     1.406,
+     2.086
+    ]
+   ]
+  },
+  "L18": {
+   "text": "its pipe doesn't go up the pole. it goes down. into the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.828,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.647
+    ],
+    [
+     0.647,
+     0.802
+    ],
+    [
+     0.802,
+     1.138
+    ],
+    [
+     1.19,
+     1.81
+    ],
+    [
+     1.897,
+     2.621
+    ]
+   ]
+  },
+  "L19": {
+   "text": "and every morning after, everybody comes up with dust on their shoulders.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.983,
+   "onset": 0.172,
+   "end": 2.793,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.948
+    ],
+    [
+     1.0,
+     1.612
+    ],
+    [
+     1.612,
+     2.043
+    ],
+    [
+     2.043,
+     2.793
+    ]
+   ]
+  },
+  "L20": {
+   "text": "like they walked somewhere far.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.345
+    ]
+   ]
+  },
+  "L21": {
+   "text": "dad always sleeps on the bottom step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.819
+    ],
+    [
+     0.819,
+     0.948
+    ],
+    [
+     0.948,
+     1.655
+    ]
+   ]
+  },
+  "L22": {
+   "text": "grandpa never has any dust.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.845
+    ],
+    [
+     0.845,
+     1.448
+    ]
+   ]
+  },
+  "L23": {
+   "text": "dad says that's because grandpa never does what he's told.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.371
+    ],
+    [
+     1.371,
+     1.75
+    ],
+    [
+     1.75,
+     2.466
+    ]
+   ]
+  },
+  "L24": {
+   "text": "on tuesday, it blew at sundown.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.629,
+     0.836
+    ],
+    [
+     0.836,
+     1.517
+    ]
+   ]
+  },
+  "L25": {
+   "text": "dad ran for our basement door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     0.759
+    ],
+    [
+     0.759,
+     1.552
+    ]
+   ]
+  },
+  "L26": {
+   "text": "i ran next door to bring grandpa down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.862
+    ],
+    [
+     0.862,
+     1.069
+    ],
+    [
+     1.069,
+     1.931
+    ]
+   ]
+  },
+  "L27": {
+   "text": "he wouldn't come.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.172,
+   "end": 0.948,
+   "chunks": [
+    [
+     0.172,
+     0.948
+    ]
+   ]
+  },
+  "L28": {
+   "text": "and then it was too late to run.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.319
+    ],
+    [
+     0.319,
+     0.492
+    ],
+    [
+     0.492,
+     0.81
+    ],
+    [
+     0.81,
+     1.379
+    ]
+   ]
+  },
+  "L29": {
+   "text": "we looked out grandpa's window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.69,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.466
+    ]
+   ]
+  },
+  "L30": {
+   "text": "the street was empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.224
+    ]
+   ]
+  },
+  "L31": {
+   "text": "nothing walked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.121,
+   "onset": 0.19,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.19,
+     0.931
+    ]
+   ]
+  },
+  "L32": {
+   "text": "but every basement window on the street breathed out dust.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.155,
+     0.448
+    ],
+    [
+     0.448,
+     0.974
+    ],
+    [
+     0.974,
+     1.397
+    ],
+    [
+     1.397,
+     2.328
+    ]
+   ]
+  },
+  "L33": {
+   "text": "all at once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.052,
+   "onset": 0.19,
+   "end": 0.845,
+   "chunks": [
+    [
+     0.19,
+     0.845
+    ]
+   ]
+  },
+  "L34": {
+   "text": "in time with the whistle.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     1.207
+    ]
+   ]
+  },
+  "L35": {
+   "text": "grandpa just poured two cups of tea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.172,
+     0.836
+    ],
+    [
+     0.836,
+     1.164
+    ],
+    [
+     1.164,
+     1.724
+    ]
+   ]
+  },
+  "L36": {
+   "text": "he said, \"told you. nothing out there.\"",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.155,
+     0.414
+    ],
+    [
+     0.466,
+     0.759
+    ],
+    [
+     0.836,
+     1.69
+    ]
+   ]
+  },
+  "L37": {
+   "text": "the next morning, the dunns across the street counted their stairs out loud.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.172,
+   "onset": 0.155,
+   "end": 2.966,
+   "chunks": [
+    [
+     0.155,
+     0.724
+    ],
+    [
+     0.768,
+     1.345
+    ],
+    [
+     1.345,
+     1.655
+    ],
+    [
+     1.655,
+     2.276
+    ],
+    [
+     2.276,
+     2.966
+    ]
+   ]
+  },
+  "L38": {
+   "text": "forty-one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.19,
+   "end": 0.862,
+   "chunks": [
+    [
+     0.19,
+     0.862
+    ]
+   ]
+  },
+  "L39": {
+   "text": "mrs. dunn just smiled at the dark stairs, like she couldn't wait to go back down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.414,
+   "onset": 0.172,
+   "end": 3.207,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.008
+    ],
+    [
+     1.008,
+     1.121
+    ],
+    [
+     1.121,
+     1.759
+    ],
+    [
+     1.828,
+     2.034
+    ],
+    [
+     2.034,
+     2.284
+    ],
+    [
+     2.284,
+     2.448
+    ],
+    [
+     2.448,
+     3.207
+    ]
+   ]
+  },
+  "L40": {
+   "text": "dad came up so dusty he looked gray.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.992
+    ],
+    [
+     0.992,
+     1.707
+    ]
+   ]
+  },
+  "L41": {
+   "text": "he didn't even argue with grandpa at dinner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.87
+    ],
+    [
+     0.87,
+     1.345
+    ],
+    [
+     1.345,
+     1.914
+    ]
+   ]
+  },
+  "L42": {
+   "text": "he just stared at the basement door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.595
+    ],
+    [
+     0.595,
+     0.707
+    ],
+    [
+     0.707,
+     1.534
+    ]
+   ]
+  },
+  "L43": {
+   "text": "the next whistle was at midnight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.517
+    ]
+   ]
+  },
+  "L44": {
+   "text": "i went down with dad, and i counted.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.914
+    ],
+    [
+     0.94,
+     1.707
+    ]
+   ]
+  },
+  "L45": {
+   "text": "twenty-seven. twenty-eight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.672,
+     1.328
+    ]
+   ]
+  },
+  "L46": {
+   "text": "the stairs went down past where our floor should end.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.836
+    ],
+    [
+     0.836,
+     1.233
+    ],
+    [
+     1.233,
+     1.534
+    ],
+    [
+     1.534,
+     2.155
+    ]
+   ]
+  },
+  "L47": {
+   "text": "dad was asleep on the bottom step.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     0.845
+    ],
+    [
+     0.845,
+     1.552
+    ]
+   ]
+  },
+  "L48": {
+   "text": "under it was a crack.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.293,
+   "onset": 0.172,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.086
+    ]
+   ]
+  },
+  "L49": {
+   "text": "warm air came up it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.19,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.19,
+     0.534
+    ],
+    [
+     0.534,
+     1.138
+    ]
+   ]
+  },
+  "L50": {
+   "text": "then the whistle blew again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     1.293
+    ]
+   ]
+  },
+  "L51": {
+   "text": "from the crack. right under my feet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     0.888
+    ],
+    [
+     0.888,
+     1.483
+    ]
+   ]
+  },
+  "L52": {
+   "text": "i held my lamp to the gap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.5,
+     0.828
+    ],
+    [
+     0.828,
+     1.414
+    ]
+   ]
+  },
+  "L53": {
+   "text": "something down there was looking up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.776
+    ],
+    [
+     0.776,
+     1.5
+    ]
+   ]
+  },
+  "L54": {
+   "text": "a face as wide as our whole basement.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.922
+    ],
+    [
+     0.922,
+     1.81
+    ]
+   ]
+  },
+  "L55": {
+   "text": "its mouth was wrapped round the end of the whistle's pipe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.103,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.026
+    ],
+    [
+     1.026,
+     1.25
+    ],
+    [
+     1.25,
+     1.362
+    ],
+    [
+     1.362,
+     2.103
+    ]
+   ]
+  },
+  "L56": {
+   "text": "nothing walks the streets.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.19,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.672,
+     1.293
+    ]
+   ]
+  },
+  "L57": {
+   "text": "it lives under them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.138
+    ]
+   ]
+  },
+  "L58": {
+   "text": "it blows the whistle itself, to call us all down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.086
+    ],
+    [
+     1.138,
+     1.483
+    ],
+    [
+     1.483,
+     2.155
+    ]
+   ]
+  },
+  "L59": {
+   "text": "and every time we come, it pulls the stairs one step closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.948
+    ],
+    [
+     1.017,
+     1.285
+    ],
+    [
+     1.285,
+     1.647
+    ],
+    [
+     1.647,
+     2.621
+    ]
+   ]
+  },
+  "L60": {
+   "text": "that's why grandpa built on blocks.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.974
+    ],
+    [
+     0.974,
+     1.672
+    ]
+   ]
+  },
+  "L61": {
+   "text": "so it could never call him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.379,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.732
+    ],
+    [
+     0.732,
+     1.379
+    ]
+   ]
+  },
+  "L62": {
+   "text": "i got dad up the stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.328
+    ]
+   ]
+  },
+  "L63": {
+   "text": "grandpa held his ladder at the pole.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     1.026
+    ],
+    [
+     1.026,
+     1.707
+    ]
+   ]
+  },
+  "L64": {
+   "text": "and i blew the whistle myself. from the top.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.793
+    ],
+    [
+     0.793,
+     1.259
+    ],
+    [
+     1.328,
+     1.948
+    ]
+   ]
+  },
+  "L65": {
+   "text": "down the pipe, under the road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     1.31
+    ]
+   ]
+  },
+  "L66": {
+   "text": "it lives in our town too, so the whistle's rule sends it down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.862,
+   "onset": 0.172,
+   "end": 2.672,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.086
+    ],
+    [
+     1.19,
+     1.345
+    ],
+    [
+     1.345,
+     1.837
+    ],
+    [
+     1.837,
+     2.672
+    ]
+   ]
+  },
+  "L67": {
+   "text": "and when the whistle blows, you go down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.379,
+     0.914
+    ],
+    [
+     0.948,
+     1.672
+    ]
+   ]
+  },
+  "L68": {
+   "text": "we heard it go.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.914
+    ]
+   ]
+  },
+  "L69": {
+   "text": "step after step. deeper than any stairs.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.81
+    ],
+    [
+     0.888,
+     1.199
+    ],
+    [
+     1.199,
+     1.914
+    ]
+   ]
+  },
+  "L70": {
+   "text": "our basement has thirteen steps again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.155,
+     0.707
+    ],
+    [
+     0.707,
+     1.741
+    ]
+   ]
+  },
+  "L71": {
+   "text": "grandpa comes over for dinner now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.879,
+     1.603
+    ]
+   ]
+  },
+  "L72": {
+   "text": "but last night, from way down under the floor,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.707,
+     1.181
+    ],
+    [
+     1.181,
+     1.914
+    ]
+   ]
+  },
+  "L73": {
+   "text": "very faint, the whistle blew.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.569,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     1.345
+    ]
+   ]
+  },
+  "L74": {
+   "text": "and dad stood up, and walked to the basement door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.776
+    ],
+    [
+     0.802,
+     1.086
+    ],
+    [
+     1.086,
+     1.207
+    ],
+    [
+     1.207,
+     2.034
+    ]
+   ]
+  }
+ }
+}
