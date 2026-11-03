@@ -66,14 +66,7 @@ Fixed in `generator/make_story.py` (story.json regenerated, no cue/GAIN/camera c
 - Seated pair (S52-S57): both moved 0.35 off nine's door (y 2.95 -> 2.6), me x 2.7, jonah x 3.62; L45 face-cam and its light follow.
 - No `clip_ok` used. Not committed: voice-timings.json.
 
-## STATUS: dropped (2026-11-03, second orchestrator's flash-fix session)
-- Flash: fixed. Preview and the CI proof (run 41720751706) passed flash, craft, loudness (-14.02 LUFS, -1.8 dBTP).
-- That proof failed only on 55 head clips (S09, S22, S36-S45, S52-S57, S59, S62). The builder moved staging (commit 6e3a3cc);
-  `clipcheck` is now 0.
-- The one allowed critic look on the moved shots said `Verdict: revise` (stories/dryer-nine/reviews/r5-critic.md; changed
-  shots 6, climax readability 7, framing and eye contact 6). One open must-fix: **S54 (L43), 62.9-64.3 s** is nearly
-  black on a phone. The seated pair moved to y 2.6 but the S54 camera stayed at y 2.0/1.9, so their backs fill the frame
-  and hide the 7:29 timer for about 1 s. Fix if anyone revives it: camera key 0 `[3.15, 2.0, 0.55]` -> `[3.15, 1.65, 0.55]`,
-  key 1 `[3.15, 1.9, 0.6]` -> `[3.15, 1.55, 0.6]`, keep the look target, re-run clipcheck, re-render S54, then a proof.
-- Not approved within the round limit, so per the brief this is a drop. No drop PR; the second orchestrator records drops on main.
-- Local voice-timings.json is stale vs lines.json (split L01/L02 chunks); CI makes its own narration. Not committed.
+## STATUS: revived for the S54 fix (2026-11-03)
+- Only change: S54 (L43) camera moved back/up to key0 [X9,1.1,0.95] -> look [X9,3.14,1.05], key1 [X9,1.0,0.98] (the suggested 1.65/1.55 still left the backs filling the frame; mean luma 30).
+- Result: 7:29 timer and both side-profile faces now read; clipcheck 0, check clean. Shot is still the dimmest of its neighbours (luma 37 vs 124/145) because its light level is untouched by design; backs of the pair remain dark. Phone stills: out/work/dryer-nine/stills/s53-55.png.
+- Needs a proof draw. voice-timings.json not committed.
