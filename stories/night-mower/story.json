@@ -1,6 +1,6 @@
 {
  "slug": "night-mower",
- "rev": 2,
+ "rev": 6,
  "title": "He Mows With His Eyes SHUT",
  "made_for_kids": false,
  "premise": "Our neighbor Mr. Odell has the greenest lawn on the street and his mower only runs at 3 AM. Everyone on our street obeys one rule: never look at his lawn while the mower is running. My dad has lost a lawn war to him for ten years, because ours has one perfectly round bald spot, and he sets an alarm to catch him cheating.",
@@ -45,7 +45,6 @@
     "S19",
     "S21",
     "S24",
-    "S26",
     "S28"
    ]
   },
@@ -1998,30 +1997,21 @@
      38
     ],
     [
-     1,
+     0.28,
      [
-      -4.9,
-      8.6,
-      1.6
+      -6.4,
+      6.3,
+      1.7
      ],
      [
-      -8.2,
-      10.8,
-      1.6
+      -1.0,
+      9.6,
+      1.4
      ],
-     40
-    ]
-   ],
-   "step": 2,
-   "hand": 0.008,
-   "note": "our porch: Dad in his robe, binoculars raised, angry",
-   "at": "L23"
-  },
-  {
-   "id": "S27",
-   "cam": [
+     36
+    ],
     [
-     0,
+     1,
      [
       -9.4,
       9.6,
@@ -2029,30 +2019,16 @@
      ],
      [
       7.0,
-      9.2,
-      1.2
-     ],
-     82
-    ],
-    [
-     1,
-     [
-      -9.4,
-      9.6005,
-      1.75
-     ],
-     [
-      7.0,
-      9.2,
+      8.4,
       1.2
      ],
      82
     ]
    ],
    "step": 2,
-   "hand": 0.0,
-   "note": "over his shoulder: the floodlit lawn, Mr. Odell mowing, eyes shut",
-   "at": "L23.2"
+   "hand": 0.003,
+   "note": "one move: Dad on the porch raising the binoculars, the camera easing over his shoulder in a slow arc onto the floodlit lawn and Mr. Odell mowing, eyes shut",
+   "at": "L23"
   },
   {
    "id": "S28",
@@ -6433,9 +6409,6 @@
    "day": 0
   },
   "S26": {
-   "day": 0
-  },
-  "S27": {
    "day": 0
   },
   "S28": {

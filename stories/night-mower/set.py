@@ -43,6 +43,7 @@ LA, LB = 2.7, 1.5                # the lid's lens: half-length along x, half-dep
 LAWN = (0.2, 15.0, 5.2, 12.0)    # Mr. Odell's lawn x0, x1, y0, y1
 RES = 0.1
 EYE_Z = -0.22
+LID_T = 0.17                     # the sod slab's thickness
 EW, EH = 5.6, 3.2                # the eye drawing's size
 BALD = (-2.6, 8.4)
 Z2 = 2.8
@@ -143,6 +144,28 @@ def lawn_image(pale=False):
     edge = np.abs(r % 1.0 - 0.5) > 0.47
     im[edge] *= 0.93
     return Image.fromarray(im.clip(0, 255).astype(np.uint8))
+
+
+def soil_image():
+    """The underside of a peeled sod: dark soil, pale roots hanging, crumbs."""
+    w, h = 1024, 512
+    rng = np.random.default_rng(11)
+    im = Image.new("RGB", (w, h), (92, 62, 36))
+    d = ImageDraw.Draw(im)
+    for _ in range(1400):
+        x, y = rng.integers(0, w), rng.integers(0, h)
+        r = int(rng.integers(6, 30))
+        c = int(rng.integers(-22, 22))
+        d.ellipse((x - r, y - r, x + r, y + r), fill=(92 + c, 62 + c, 36 + c))
+    for _ in range(45):
+        x, y = float(rng.integers(0, w)), float(rng.integers(0, h))
+        pts = [(x, y)]
+        for _k in range(4):
+            x += rng.normal(0, 7)
+            y += rng.uniform(6, 14)
+            pts.append((x, y))
+        d.line(pts, fill=(196, 168, 120), width=int(rng.integers(3, 6)))
+    return im
 
 
 DECAL = (-30.0, -19.0, 70.0, 50.0)      # x0, y0, width, height (m) of the face-relief decal
@@ -273,7 +296,7 @@ def mats(kit):
         "dark": P("#26262c", 0.5), "wood": P("#8a5a34", 0.6), "red": P("#ff3b30", 0.35, spec=0.6),
         "red_d": P("#c42a22", 0.4), "black": P("#141418", 0.5), "chrome": kit.metal("#cfd3d8", 0.25),
         "orange": P("#ff9a1f", 0.45), "lime": kit.emit(LIME, 0.9), "lime2": kit.emit(LIME, 4.0), "soil": P("#2b1c14", 0.95),
-        "tan": P("#c49a5c", 0.95), "pole": P("#8a8f99", 0.4), "warm": kit.emit("#fff1c2", 6.0),
+        "tan": P("#c49a5c", 0.95), "lidedge": P("#3fbf5a", 1.0), "pole": P("#8a8f99", 0.4), "warm": kit.emit("#fff1c2", 6.0),
         "glass": kit.emit("#ffd9a0", 1.1), "glow": kit.emit("#7dff98", 2.4), "conc": kit.texture("concrete", 1.0, tint="#d8d6d0"),
         "asphalt": kit.texture("asphalt", 0.5, tint="#8a8f9a"), "ours": P("#6cc24a", 0.9, spec=0.1),
         "ground": P("#4f9a3f", 0.95), "floor": kit.texture("wood", 0.7, tint="#d9b98a"), "bed": P("#1fb5a8", 0.6),
@@ -283,6 +306,7 @@ def mats(kit):
         "pic1": P("#4fb3ff", 0.6), "pic2": P("#ff8a3c", 0.6), "pic3": P("#e7458a", 0.6), "pic4": P("#b6ff3b", 0.6),
         "pic5": P("#fff1c2", 0.6),
     }
+    M["lidsoil"] = image_mat(kit, "lid soil", soil_image(), 1.0)
     M["lawn"] = image_mat(kit, "odell lawn", lawn_image(), 0.9, turf=True, under=lawn_image(True))
     for k in range(3):
         M[f"eye{k}"] = image_mat(kit, f"eye {k}", eye_image(k), 0.7, emit=0.22)
@@ -372,6 +396,29 @@ def build_lawn_and_lid(kit, ctx, M):
     yN = HC[1] + LB * np.sqrt(np.clip(1 - ((wx - HC[0]) / LA) ** 2, 0, 1))
     hz = np.array([hump(x, y) for x, y in zip(wx, yN)]) - zh
     ctx["lidv"] = (co.copy(), yN - hy, hz, np.clip(yN - (co[:, 1] + hy), 0, None))
+    # a thin slab of sod under the turf: a soil-brown underside and a rim, so the open lid is a slab, not a shell
+    nv = len(co)
+    cnt = {}
+    for p in lid.data.polygons:
+        vs = list(p.vertices)
+        for a, b in zip(vs, vs[1:] + vs[:1]):
+            cnt.setdefault((min(a, b), max(a, b)), []).append((a, b))
+    sv = [tuple(c) for c in co] + [(c[0], c[1], c[2] - LID_T) for c in co]
+    sf = [tuple(v + nv for v in reversed(list(p.vertices))) for p in lid.data.polygons]
+    rf = []
+    for k, lst in cnt.items():
+        if len(lst) == 1:
+            a, b = lst[0]
+            rf.append((a, b, b + nv, a + nv))
+    slab = kit.mesh_obj("lidslab", sv, sf, M["lidsoil"], None, (HC[0], hy, zh))
+    uvl = slab.data.uv_layers.new(name="uv")
+    for lp in slab.data.loops:
+        v = slab.data.vertices[lp.vertex_index].co
+        uvl.data[lp.index].uv = ((v.x + LA) / (2 * LA), (v.y + LB + (HC[1] + LB - hy)) / (2 * LB))
+    rim = kit.mesh_obj("lidrim", sv, rf, M["lidedge"], None, (HC[0], hy, zh))
+    ctx["lidslab"] = slab
+    ctx["lidrimob"] = rim
+    ctx["slabv"] = np.array(sv)
     # the pit: walls round the lid's outline, down to the eye
     verts, faces = [], []
     for (i, j) in inside:
@@ -780,13 +827,28 @@ def animate(kit, story, tl, t, ctx):
     # the Head: lid, eye, lights
     lid = tv(ctx, "lid", t)
     co0, hy_, hz_, dn = ctx["lidv"]
-    ang = math.radians(78.0 * lid) * (0.6 + 0.4 * np.clip(dn / 1.2, 0, 1) ** 2 * (3 - 2 * np.clip(dn / 1.2, 0, 1)))
-    dy, dz = co0[:, 1] - hy_, co0[:, 2] - hz_
-    new = co0.copy()
-    new[:, 1] = hy_ + dy * np.cos(ang) + dz * np.sin(ang)
-    new[:, 2] = hz_ - dy * np.sin(ang) + dz * np.cos(ang)
+    flat = 1.0 - 0.92 * lid                      # an open lid is a flat slab: the hump's bulge relaxes out of it
+    ang = math.radians(68.0 * lid) * (0.93 + 0.07 * np.clip(dn / 1.2, 0, 1))
+
+    def hinge(c, dzs):
+        dy, dz = c[:, 1] - hy_, (c[:, 2] - hz_) * dzs
+        out = c.copy()
+        out[:, 1] = hy_ + dy * np.cos(ang) + dz * np.sin(ang)
+        out[:, 2] = hz_ - dy * np.sin(ang) + dz * np.cos(ang)
+        return out
+    new = hinge(co0, flat)
     ctx["lid"].data.vertices.foreach_set("co", new.ravel())
     ctx["lid"].data.update()
+    sv0 = ctx["slabv"]
+    nv_ = len(co0)
+    top = sv0[:nv_]
+    bz = hz_ + (top[:, 2] - hz_) * flat - LID_T
+    st = np.concatenate([new, hinge(np.column_stack([top[:, 0], top[:, 1], bz]), 1.0)])
+    ctx["lidslab"].data.vertices.foreach_set("co", st.ravel())
+    ctx["lidslab"].data.update()
+    ctx["lidrimob"].data.vertices.foreach_set("co", st.ravel())
+    ctx["lidrimob"].data.update()
+    ctx["lidslab"].hide_render = ctx["lidrimob"].hide_render = lid < 0.002
     ctx["decal"].hide_render = sid != "S43"
     ey = int(tv(ctx, "eye", t, stepped=True))
     for k, ob in enumerate(ctx["eyes"]):

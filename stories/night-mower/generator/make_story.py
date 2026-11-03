@@ -211,11 +211,10 @@ shot("S25", "L22", C((-5.2, 13.25, Z2 + 1.1), (-5.4, 12.45, Z2 + 0.92), 46, (-5.
 stage("L22")
 
 # ---------------------------------------------------------------------------------------------------- 04 night two
-shot("S26", "L23", C((-4.6, 8.2, 1.6), (-8.2, 10.8, 1.6), 38, (-4.9, 8.6, 1.6), (-8.2, 10.8, 1.6), 40),
-     "our porch: Dad in his robe, binoculars raised, angry")
+shot("S26", "L23", [[0, [-4.6, 8.2, 1.6], [-8.2, 10.8, 1.6], 38], [0.28, [-6.4, 6.3, 1.7], [-1.0, 9.6, 1.4], 36],
+                    [1, [-9.4, 9.6, 1.75], [7.0, 8.4, 1.2], 82]],
+     "one move: Dad on the porch raising the binoculars, the camera easing over his shoulder in a slow arc onto the floodlit lawn and Mr. Odell mowing, eyes shut", hand=0.003)
 stage("L23", dadn=((-8.2, 10.8, 0.2), 90, "angry", {"arms": [80, 80]}))
-shot("S27", "L23.2", C((-9.4, 9.6, 1.75), (7.0, 9.2, 1.2), 82, (-9.4, 9.6005, 1.75)),
-     "over his shoulder: the floodlit lawn, Mr. Odell mowing, eyes shut", hand=0.0)
 stage("L23.2", dadn=((-8.2, 10.8, 0.2), 90, "angry", {"arms": [80, 80]}), odell=((5.0, 10.6, 0), 0, "shut"))
 walk("odell", "L24", (5.0, 9.3, 0))
 shot("S28", "L24", C((-4.8, 16.6, Z2 + 1.5), (-7.6, 13.5, Z2 + 0.9), 24, (-5.0, 16.2, Z2 + 1.5), (-7.6, 13.5, Z2 + 0.9), 24),
@@ -378,7 +377,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"style": "closer", "fog": "#6f86c8", "fog_density": 0.012, "fog_start": 14.0, "sky": "#1b2a6b",
-             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L28", "L34"], "auto": False, "reveal": ["L28"], "twist": "L34", "quiet": [["L39", "L45"]], "sway": ["S19", "S21", "S24", "S26", "S28"]}, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
+             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L28", "L34"], "auto": False, "reveal": ["L28"], "twist": "L34", "quiet": [["L39", "L45"]], "sway": ["S19", "S21", "S24", "S28"]}, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 1.12, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.01, "red_line": 0.78},
     "phonemes": {"snaps": "snˈæps", "ours": "ˌaʊɚz", "Ours": "ˌaʊɚz"},
