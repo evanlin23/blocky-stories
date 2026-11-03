@@ -500,6 +500,11 @@ def build_shop(kit, M, ctx):
         B(kit, f"cover{k}", (0.34, 0.12, 1.35), (-8.4 - k * 0.38, SHOP_Y0 + 0.3, 1.2), M["paper"], bevel=0.03)
     B(kit, "rail along x", (2.4, 0.04, 0.04), (-9.4, SHOP_Y0 + 0.3, 1.95), M["brass"])
     # packing boxes stacked on the counter, more each day (ctx["boxes"] is shown by count)
+    # opening Uncle shot only (cue uncle_shot): a dark green wall behind him and a warm side key
+    ctx["backdrop"] = B(kit, "uncle backdrop", (0.06, 3.2, 3.0), (-8.55, -0.6, 1.5), pbr(kit, "backdrop", "#26402f", 0.9))
+    ctx["backdrop"].hide_render = True
+    ctx["ukey"] = kit.light("uncle key", "SPOT", (-6.3, -2.3, 2.2), 110.0, "#ffd9a8", spot=55, blend=0.6, size=0.3)
+    kit.aim(ctx["ukey"], (-7.75, -1.0, 1.45))
     ctx["boxes"] = []
     spots = [(-6.7, -2.2, 0), (-6.7, -1.75, 0), (-6.7, -2.2, 1), (-6.7, -1.75, 1), (-6.7, 0.05, 0), (-6.7, -2.2, 2),
              (-6.7, 0.05, 1), (-6.7, -1.75, 2)]
@@ -910,14 +915,14 @@ def tag_slots(who, n_front, kind):
     rng = np.random.default_rng(sum(map(ord, who)) * 7 + 3)
     out = []
 
-    def torso(n, zlo, zhi, xr=0.82):
+    def torso(n, zlo, zhi, xr=0.82, y=-0.53):
         for _ in range(n):
-            out.append(("torso", rng.uniform(-xr, xr), -0.53, rng.uniform(zlo, zhi), rng.uniform(-0.45, 0.45), 0.0))
+            out.append(("torso", rng.uniform(-xr, xr), y, rng.uniform(zlo, zhi), rng.uniform(-0.45, 0.45), 0.0))
 
     if kind == "uncle":
         # an apron first (low front), the speckle, both shoulders, his heart (slot 30), the chest rows up to the collar
-        torso(3, 0.15, 0.9, 0.45)
-        torso(9, 0.1, 1.5, 0.8)
+        torso(3, 0.15, 0.9, 0.45, -0.6)      # 0.07 proud of the apron (no shared plane)
+        torso(9, 0.1, 1.5, 0.8, -0.6)
         for _ in range(8):
             out.append(("torso", rng.uniform(-1.0, 1.0), rng.uniform(-0.3, 0.3), 2.04, rng.uniform(-0.5, 0.5), 0.0))
         for sx in (-1, 1):
@@ -925,9 +930,16 @@ def tag_slots(who, n_front, kind):
                 out.append(("torso", sx * rng.uniform(1.0, 1.3), rng.uniform(-0.3, 0.3), 1.98 - rng.uniform(0, 0.2),
                             rng.uniform(-0.5, 0.5), 0.0))
         out.append(("torso", 0.55, -0.53, 1.45, 0.1, 0.0))
-        torso(14, 1.5, 1.95, 0.9)
-        torso(6, 1.7, 1.95, 0.9)
-        torso(8, 0.3, 1.9, 0.9)
+        torso(14, 1.5, 1.95, 0.9, -0.6)
+        torso(6, 1.7, 1.95, 0.9, -0.6)
+        torso(8, 0.3, 1.9, 0.9, -0.6)
+    elif kind == "chest":
+        # the opening man: every tag on his chest, in view. 0..4 are on him already, 5 pops on LIE, 6 on the next beat
+        for zl, xx, rl in ((0.55, -0.5, 0.2), (0.8, 0.45, -0.25), (1.05, -0.15, 0.3), (0.35, 0.3, 0.1), (1.25, -0.6, -0.15)):
+            out.append(("torso", xx, -0.53, zl, rl, 0.0))
+        out.append(("torso", 0.2, -0.56, 1.3, 0.12, 0.0))
+        out.append(("torso", -0.35, -0.56, 1.05, -0.1, 0.0))
+        torso(3, 0.3, 1.2, 0.7)
     elif kind == "lump":
         torso(22, 0.05, 1.95, 0.9)
         for part in ("arm-1", "arm1"):
@@ -1119,6 +1131,8 @@ def animate(kit, story, tl, t, ctx):
         attach_extras(kit, M, ctx, tl)
         ctx["inited"] = True
     over = {}
+    us = bool((_last(_cues(tl, "uncle_shot"), t) or {"on": False}).get("on", False))
+    ctx["backdrop"].hide_render = not us
     # --- the time of day: world and light gains, crossfaded
     cs = _cues(tl, "mode")
     cur = _last(cs, t)
@@ -1137,9 +1151,13 @@ def animate(kit, story, tl, t, ctx):
         if key == "world":
             continue
         over[key] = A.get(key, 0.0) + (Bm.get(key, 0.0) - A.get(key, 0.0)) * u
+    if us:     # about a stop less light on the opening Uncle shot (the cue ends on a cut, so there is no visible ramp)
+        for key in list(over):
+            over[key] = over[key] * 0.3
+    over["uncle key"] = 1.0 if us else 0.0
     sa, ca = A["world"]
     sb, cb = Bm["world"]
-    strength = sa + (sb - sa) * u
+    strength = (sa + (sb - sa) * u) * (0.3 if us else 1.0)
     colA, colB = kit.col(ca)[:3], kit.col(cb)[:3]
     bg = ctx["world"].node_tree.nodes["Background"]
     bg.inputs["Strength"].default_value = strength

@@ -59,8 +59,8 @@ cast = {
     "me": mk("#e0b08a", "#4a6078", "#3b3e46", "#6a4a30", "cap", "#241a16", collar="#efe6d2", extras=["coat"],
              zip_c="#3b4a5c", face={"eyes": "round", "brows": True}),
     "me2": mk("#e0b08a", "#b9b2a0", "#3b3e46", "#6a4a30", "cap", "#241a16", face={"eyes": "round", "brows": True}),
-    "uncle": mk("#d9a98a", "#e9e5da", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", tags="uncle", extras=["apron"],
-                extra_c="#c9b996", face={"eyes": "tired", "brows": True, "bags": True}),
+    "uncle": mk("#d9a98a", "#cfc8b6", "#3c4a3e", "#3a2a20", "cap", "#8c8c8a", tags="uncle", extras=["apron"],
+                extra_c="#46623f", face={"eyes": "tired", "brows": True, "bags": True}),
     "uncle2": mk("#d9a98a", "#b4ae9f", "#3c4a3e", "#3a2a20", "cap", "#9a9a98", extras=[], extra_c="#4a4a4a",
                  face={"eyes": "tired", "brows": True, "bags": True}),
     "salesman": mk("#cf9c76", "#7a5a8a", hair="buzz", hair_c="#3a2a1e", tags="lump"),
@@ -74,11 +74,11 @@ cast = {
                face={"eyes": "lashes", "brows": True}),
     "stick": mk("#e0b898", "#5a5a60", "#2e2e34", hair="buzz", hair_c="#dcdcdc", tags="speckle", height=0.96),
 }
-XS = [("x1", "#d09a76", "#8a4a3a", "buzz", "#2a1d15"), ("x2", "#e8c2a0", "#3a6a5a", "long", "#5a3a22"),
+XS = [("x1", "#d09a76", "#7a6a46", "buzz", "#2a1d15"), ("x2", "#e8c2a0", "#3a6a5a", "long", "#5a3a22"),
       ("x3", "#b88460", "#7a8a4a", "spiky", "#1a1210"), ("x4", "#f0ceac", "#6a4a7a", "cap", "#8a5a2a"),
       ("x5", "#9a6a4a", "#a8883a", "buzz", "#101010"), ("x6", "#e0b898", "#4a5a8a", "long", "#2a1d15")]
 for n, sk, sh, hr, hc in XS:
-    cast[n] = mk(sk, sh, hair=hr, hair_c=hc, tags="speckle", face={"eyes": "lashes" if hr == "long" else "round", "brows": True})
+    cast[n] = mk(sk, sh, hair=hr, hair_c=hc, tags="chest" if n == "x1" else "speckle", face={"eyes": "lashes" if hr == "long" else "round", "brows": True})
 ALL = list(cast)
 
 
@@ -117,9 +117,9 @@ FRONT = ((-5.0, 0.5, 1.5), (-12.6, 2.2, 1.3), 24)
 
 SHOTS = [
     # 01 the arcade
-    (0, "close: tag pins on his coat, push in", 2, move(((0.3, 1.45, 1.42), (0, 0, 1.28)), ((0.12, 1.1, 1.42), (0, 0, 1.28)), 40)),
+    (0, "close: tag pins on his coat, push in", 2, move(((0.3, 1.9, 1.44), (0, 0, 1.28)), ((0.29, 1.86, 1.44), (0, 0, 1.28)), 27)),
     ("L01.2", "a tag pops on her sleeve", 2, move(((0.75, -1.5, 1.38), (0.2, -3, 1.3)), ((0.55, -1.8, 1.38), (0.2, -3, 1.3)), 40)),
-    ("L01.3", "tighter on him, the second tag", 2, move(((-0.5, 1.35, 1.38), (0, 0, 1.25)), ((-0.3, 1.05, 1.38), (0, 0, 1.25)), 42)),
+    ("L01.3", "tighter on him, the second tag", 2, move(((-0.45, 1.75, 1.46), (0, 0, 1.31)), ((-0.44, 1.72, 1.46), (0, 0, 1.31)), 27)),
     ("L02", "Uncle, tagged to the chin", 2, move(((-6.35, -1.05, 1.65), (UN[0], UN[1], 1.55)), ((-6.15, -1.0, 1.65), (UN[0], UN[1], 1.55)), 48)),
     ("L02.1", "punch in on COVERED", 2, still((-6.0, -0.95, 1.6), (UN[0], UN[1], 1.42), 66)),
     ("L05", "cafe man, sheepish", 2, still((0.4, -5.2, 1.45), (3.2, -5.2, 1.4), 42)),
@@ -280,6 +280,7 @@ hide("x1", "L02")
 put("x2", 0, [0.2, -3.0], yaw=170, expr="grin")
 hide("x2", "L02")
 put("uncle", "L02", [UN[0], UN[1]], yaw=90, expr="sad", head=[0, 0])
+key("uncle", "L02", look=[0, 0])
 hide("uncle", "L05")
 put("cafe_man", "L05", [3.4, -5.0], yaw=-75, expr="worried", head=[0, 10])
 put("cafe_f", "L05", [3.4, -5.9], yaw=-100, expr="neutral")
@@ -507,16 +508,18 @@ cue("L68+0.9", "dust")
 # tags: kinds start full; the story's own counts follow
 for n, kind in (("salesman", 74), ("mr_kettle", 74)):
     cue(0, "tags", who=n, n=kind, pop=False)
-for n in ("cafe_f", "cam", "teal", "stick", "x1", "x2", "x3", "x4", "x5", "x6"):
+for n in ("cafe_f", "cam", "teal", "stick", "x2", "x3", "x4", "x5", "x6"):
     cue(0, "tags", who=n, n=7, pop=False)
 cue(0, "tags", who="cafe_man", n=4, pop=False)
 cue("L05.2+0.1", "tags", who="cafe_man", n=3, fall=True)
 cue("L58+0.2", "tags", who="cafe_man", n=4, pop=False)
 cue("L58+0.5", "tags", who="cafe_man", n=3, fall=True)
-cue("L01+0.45", "tags", who="x1", n=8)
+cue(0, "tags", who="x1", n=5, pop=False)
+cue("L01+0.1", "tags", who="x1", n=6)
 cue("L01.2+0.3", "tags", who="x2", n=8)
-cue("L01.3+0.25", "tags", who="x1", n=9)
-cue("L02", "tags", who="uncle", n=55, pop=False)
+cue("L01.3+0.25", "tags", who="x1", n=7)
+cue("L02", "tags", who="uncle", n=49, pop=False)
+cue("L02.1+0.02", "tags", who="uncle", n=55)
 cue("L05", "tags", who="uncle", n=0, pop=False)
 cue(0, "tags", who="uncle", n=0, pop=False)
 for at, n, pop in (("L12", 3, False), ("L19.3+0.25", 4, True), ("L21", 12, False), ("L23", 30, False), ("L37", 40, False),
@@ -524,15 +527,19 @@ for at, n, pop in (("L12", 3, False), ("L19.3+0.25", 4, True), ("L21", 12, False
                    ("L46", 55, False), ("L55+0.3", 57, True)):
     cue(at, "tags", who="uncle", n=n, pop=pop)
 cue("L61", "tags", who="uncle", n=0, fall=True, rest=True)
+# the shot-bound set dressing for Uncle at the counter in the opening (S04, S05): a dark wall behind him, a stop less light
+cue("L02", "uncle_shot", on=True)
+cue("L05", "uncle_shot", on=False)
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
-    {"at": "L01+0.45", "kind": "click", "db": -20},
+    {"at": "L01+0.1", "kind": "click", "db": -16},
     {"at": "L01.2+0.3", "kind": "click", "db": -20},
     {"at": "L01.3+0.25", "kind": "click", "db": -20},
     {"at": "L01>-0.2", "kind": "hit", "db": -9},
     {"at": "L02", "kind": "whoosh", "db": -22, "dur": 0.5},
     {"at": "L02.1", "kind": "hit", "db": -14},
+    {"at": "L02.1+0.02", "kind": "click", "db": -17},
     {"at": "L05", "kind": "whoosh", "db": -24, "dur": 0.5},
     {"at": "L05.2+0.1", "kind": "whoosh", "db": -30, "dur": 1.0},
     {"at": "L19.3+0.25", "kind": "click", "db": -26},
@@ -577,7 +584,8 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"fog": "#1c2230", "fog_density": 0.012, "fog_start": 8.0, "sky": "#cfe0ee", "sky_strength": 0.9,
-             "exposure": 0.15, "flash_safe": True, "polish": {"quiet": [["L66", "L69"]], "emph": ["L01.3", "L02.1"]}},
+             "exposure": 0.15, "flash_safe": True, "polish": {"quiet": [["L66", "L69"]], "emph": ["L01.3", "L02.1"],
+                                                                      "punch_cap": {"S01": 0.02, "S03": 0.02}}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.25, "grain": 0.012},
     "phonemes": {"Aurel": "ˈɔɹəl"},
@@ -587,6 +595,7 @@ story = {
     "acting": acting,
     "cues": cues,
     "fx": [],
+    "shot_grades": {"S04": {"exposure": 0.72}, "S05": {"exposure": 0.72}},
     "music": {"root": 47, "mode": "minor", "bpm": 74, "seed": 47,
               "sections": [
                   {"at": 0, "voices": ["pulse", "piano", "pad"], "energy": 0.35},

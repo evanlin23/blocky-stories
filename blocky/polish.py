@@ -50,6 +50,7 @@ DEFAULTS = {
     "grade": "bright",
     # builder marks
     "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [],
+    "punch_cap": {},     # opt-in: {shot id: most the punch-in may zoom there} (a head that must stay in frame)
 }
 GRADES = {
     # lift: a toe that raises the darkest tones (out + lift * (1 - out)^3), so shadows keep their detail on a TV
@@ -255,7 +256,7 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
                 # held to the cut (no zoom back out mid-shot), at most 2.5 s, then it eases back over 0.4 s
                 x = t - te
                 amt = _ease(x / 0.12) * (1 - _ease((x - 2.5) / 0.4))
-                zoom *= 1 + p["punch"] * amt
+                zoom *= 1 + min(p["punch"], (p.get("punch_cap") or {}).get(shot["id"], p["punch"])) * amt
     sway = p.get("sway")
     if sway and (sway is True or shot["id"] in sway):
         a = p["sway_amp"]

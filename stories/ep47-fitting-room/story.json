@@ -33,7 +33,11 @@
    "emph": [
     "L01.3",
     "L02.1"
-   ]
+   ],
+   "punch_cap": {
+    "S01": 0.02,
+    "S03": 0.02
+   }
   }
  },
  "grade": {
@@ -97,13 +101,13 @@
   "uncle": {
    "age": "adult",
    "skin": "#d9a98a",
-   "shirt": "#e9e5da",
+   "shirt": "#cfc8b6",
    "pattern": "solid",
    "pants": "#3c4a3e",
    "shoes": "#3a2a20",
    "sleeves": "long",
    "hair": "cap",
-   "hair_c": "#9a9a98",
+   "hair_c": "#8c8c8a",
    "hat": "none",
    "face": {
     "eyes": "tired",
@@ -113,7 +117,7 @@
    "extras": [
     "apron"
    ],
-   "extra_c": "#c9b996",
+   "extra_c": "#46623f",
    "tags": "uncle"
   },
   "uncle2": {
@@ -285,7 +289,7 @@
   "x1": {
    "age": "adult",
    "skin": "#d09a76",
-   "shirt": "#8a4a3a",
+   "shirt": "#7a6a46",
    "pattern": "solid",
    "pants": "#33363e",
    "shoes": "#3a2a20",
@@ -297,7 +301,7 @@
     "eyes": "round",
     "brows": true
    },
-   "tags": "speckle"
+   "tags": "chest"
   },
   "x2": {
    "age": "adult",
@@ -1839,8 +1843,8 @@
      0,
      [
       0.3,
-      1.45,
-      1.42
+      1.9,
+      1.44
      ],
      [
       0,
@@ -1852,9 +1856,9 @@
     [
      1,
      [
-      0.12,
-      1.1,
-      1.42
+      0.29,
+      1.86,
+      1.44
      ],
      [
       0,
@@ -1911,30 +1915,30 @@
     [
      0,
      [
-      -0.5,
-      1.35,
-      1.38
+      -0.45,
+      1.75,
+      1.46
      ],
      [
       0,
       0,
-      1.25
+      1.31
      ],
-     29
+     27
     ],
     [
      1,
      [
-      -0.3,
-      1.05,
-      1.38
+      -0.44,
+      1.72,
+      1.46
      ],
      [
       0,
       0,
-      1.25
+      1.31
      ],
-     29
+     27
     ]
    ],
    "hand": 0.006,
@@ -6425,6 +6429,13 @@
     "yaw": 90
    },
    {
+    "at": "L02",
+    "look": [
+     0,
+     0
+    ]
+   },
+   {
     "at": "L05",
     "hidden": true,
     "blend": 0
@@ -9443,13 +9454,6 @@
   {
    "at": 0,
    "name": "tags",
-   "who": "x1",
-   "n": 7,
-   "pop": false
-  },
-  {
-   "at": 0,
-   "name": "tags",
    "who": "x2",
    "n": 7,
    "pop": false
@@ -9511,10 +9515,17 @@
    "fall": true
   },
   {
-   "at": "L01+0.45",
+   "at": 0,
    "name": "tags",
    "who": "x1",
-   "n": 8
+   "n": 5,
+   "pop": false
+  },
+  {
+   "at": "L01+0.1",
+   "name": "tags",
+   "who": "x1",
+   "n": 6
   },
   {
    "at": "L01.2+0.3",
@@ -9526,14 +9537,20 @@
    "at": "L01.3+0.25",
    "name": "tags",
    "who": "x1",
-   "n": 9
+   "n": 7
   },
   {
    "at": "L02",
    "name": "tags",
    "who": "uncle",
-   "n": 55,
+   "n": 49,
    "pop": false
+  },
+  {
+   "at": "L02.2+0.02",
+   "name": "tags",
+   "who": "uncle",
+   "n": 55
   },
   {
    "at": "L05",
@@ -9633,9 +9650,27 @@
    "n": 0,
    "fall": true,
    "rest": true
+  },
+  {
+   "at": "L02",
+   "name": "uncle_shot",
+   "on": true
+  },
+  {
+   "at": "L05",
+   "name": "uncle_shot",
+   "on": false
   }
  ],
  "fx": [],
+ "shot_grades": {
+  "S04": {
+   "exposure": 0.72
+  },
+  "S05": {
+   "exposure": 0.72
+  }
+ },
  "music": {
   "root": 47,
   "mode": "minor",
@@ -9718,9 +9753,9 @@
   ],
   "sfx": [
    {
-    "at": "L01+0.45",
+    "at": "L01+0.1",
     "kind": "click",
-    "db": -20
+    "db": -16
    },
    {
     "at": "L01.2+0.3",
@@ -9747,6 +9782,11 @@
     "at": "L02.2",
     "kind": "hit",
     "db": -14
+   },
+   {
+    "at": "L02.2+0.02",
+    "kind": "click",
+    "db": -17
    },
    {
     "at": "L05",
