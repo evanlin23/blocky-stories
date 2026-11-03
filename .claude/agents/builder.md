@@ -36,7 +36,12 @@ Environment: `BLOCKY_BPY` and `BLOCKY_TTS` must point at the venvs. If they don'
 5. Stills sheet of the key beats (hook, each strange night, the scare, the twist, the warm turn, the last frame). Look for intersections, cropped signs, faces under 1/5 of the frame width, and clipped whites.
 6. `python -m blocky render <name> --preview && python -m blocky finish <name> --preview && python -m blocky mix <name> --preview`, then `python -m blocky preflight <name>` once more (it reads the preview's flashing too).
 
+7. **Before review, clear the motion problems the preview can't show** (warm-shoes went through four reviewers and failed qa on its final for a face through a boot): `preflight` must show no `pace` rows (a stretch over 1.0 s where nothing moves by the edit alone: key a move, a pose or a punch-in, or list the shot in story.json `set_moves` if set.py animates something big there) and no `clip` rows (`python -m blocky clipcheck <name>`: a head through a prop, a wall or another character; move the prop, the mark or the pose by the named second). Check `python scripts/measure.py --story stories/<name>` for the cut pace.
+
+## After approval: the proof (before merge)
+Once standards and critic approve, `.github/workflows/proof.yml` draws the whole film on the PR (every drawing the final makes, at half size, with the real voice and mix) and fails on a craft block, flashing, a clip or a hot peak; then the qa agent checks it (stage proof). A fix from a proof or its qa is a normal fix round: apply it, push, and the proof draws again. The PR can't merge until `qa/<name>.json` holds a passed proof for the current film files.
+
 ## A fix round
 Apply every note in one pass, and batch all timing changes into one re-voice (`voice --only L03,L07`). Then repeat steps 4 to 6 for what changed.
 
-Report, in under 250 words: the paths of the creature still, the stills sheet, the preview mp4 and its contact sheet, the duration, the preflight result, and anything you couldn't fix. You don't do the final render: GitHub Actions does it after merge.
+Report, in under 250 words: the paths of the creature still, the stills sheet, the preview mp4 and its contact sheet, the duration, the preflight result, and anything you couldn't fix. You don't do the proof or the final render: GitHub Actions draws the proof on the PR and the final after merge.
