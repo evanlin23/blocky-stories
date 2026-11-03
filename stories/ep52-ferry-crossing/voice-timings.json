@@ -414,110 +414,134 @@
    ]
   },
   "L18": {
-   "text": "Then my evenings go blank.",
+   "text": "then every street I take ends at the slipway.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.552,
+   "dur": 2.155,
    "onset": 0.172,
-   "end": 1.345,
+   "end": 1.948,
    "chunks": [
     [
      0.172,
-     0.724
+     0.776
     ],
     [
-     0.724,
-     1.345
+     0.776,
+     1.052
+    ],
+    [
+     1.052,
+     1.285
+    ],
+    [
+     1.285,
+     1.948
     ]
    ]
   },
   "L18a": {
-   "text": "and every time i come to, i'm a little closer to gran.",
+   "text": "I turn left, I turn right, it's always the water.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.172,
-   "end": 2.448,
+   "dur": 2.328,
+   "onset": 0.155,
+   "end": 2.121,
    "chunks": [
     [
-     0.172,
+     0.155,
      0.603
     ],
     [
-     0.603,
-     1.121
+     0.629,
+     1.138
     ],
     [
-     1.224,
-     1.371
+     1.19,
+     1.534
     ],
     [
-     1.371,
-     1.81
-    ],
-    [
-     1.81,
-     2.448
+     1.534,
+     2.121
     ]
    ]
   },
   "L19": {
-   "text": "monday, I come to on a slipway.",
+   "text": "monday, my keys hop out my door, down to the sea.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
+   "dur": 2.31,
    "onset": 0.172,
-   "end": 1.552,
+   "end": 2.121,
    "chunks": [
     [
      0.172,
-     0.448
+     0.431
     ],
     [
-     0.474,
-     0.854
+     0.457,
+     0.905
     ],
     [
-     0.854,
-     1.552
+     0.905,
+     1.31
+    ],
+    [
+     1.345,
+     1.578
+    ],
+    [
+     1.578,
+     2.121
     ]
    ]
   },
   "L20": {
-   "text": "I don't remember the walk.",
+   "text": "and damp little dots start at my door, under my feet.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.927,
-   "dur": 1.5,
+   "dur": 2.5,
    "onset": 0.19,
-   "end": 1.293,
+   "end": 2.293,
    "chunks": [
     [
      0.19,
-     0.716
+     0.439
     ],
     [
-     0.716,
-     1.293
+     0.439,
+     0.862
+    ],
+    [
+     0.862,
+     1.112
+    ],
+    [
+     1.112,
+     1.448
+    ],
+    [
+     1.483,
+     2.293
     ]
    ]
   },
   "L21": {
-   "text": "tuesday, I come to in the ferry's window seat.",
+   "text": "tuesday, I chase my keys onto the ferry, right to the window seat.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.224,
+   "dur": 3.052,
    "onset": 0.172,
-   "end": 2.034,
+   "end": 2.845,
    "chunks": [
     [
      0.172,
@@ -525,15 +549,23 @@
     ],
     [
      0.543,
-     0.922
+     0.81
     ],
     [
-     0.922,
-     1.328
+     0.81,
+     1.164
     ],
     [
-     1.328,
-     2.034
+     1.164,
+     1.759
+    ],
+    [
+     1.845,
+     2.138
+    ],
+    [
+     2.138,
+     2.845
     ]
    ]
   },
@@ -594,26 +626,38 @@
    ]
   },
   "L24": {
-   "text": "wednesday, halfway up Gran's lane.",
+   "text": "wednesday, my scarf hops up Gran's lane, and I follow it halfway.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.862,
+   "dur": 3.052,
    "onset": 0.172,
-   "end": 1.672,
+   "end": 2.845,
    "chunks": [
     [
      0.172,
-     0.5
+     0.483
     ],
     [
-     0.534,
-     0.897
+     0.509,
+     0.828
     ],
     [
-     0.897,
-     1.672
+     0.828,
+     1.086
+    ],
+    [
+     1.086,
+     1.69
+    ],
+    [
+     1.75,
+     2.146
+    ],
+    [
+     2.146,
+     2.845
     ]
    ]
   },
@@ -1490,26 +1534,26 @@
    ]
   },
   "L56": {
-   "text": "All those evenings, I was finding my way back.",
+   "text": "all week, I was hopping my way back.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.224,
+   "dur": 1.776,
    "onset": 0.172,
-   "end": 2.017,
+   "end": 1.569,
    "chunks": [
     [
      0.172,
-     0.81
+     0.466
     ],
     [
-     0.836,
-     1.267
+     0.492,
+     0.845
     ],
     [
-     1.267,
-     2.017
+     0.845,
+     1.569
     ]
    ]
   },
@@ -1874,6 +1918,34 @@
     [
      2.301,
      2.931
+    ]
+   ]
+  },
+  "L24a": {
+   "text": "then I turn back, before she sees me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.328
+    ],
+    [
+     0.328,
+     0.759
+    ],
+    [
+     0.784,
+     1.094
+    ],
+    [
+     1.094,
+     1.707
     ]
    ]
   }

@@ -41,6 +41,7 @@ TOWN = (0.0, 0.0)
 ISL = 300.0
 FER = 1000.0
 SEAT_TOP = 4.4
+SHK = 1.42
 SEAT_Y = {"gran": 3.25, "me": 4.75}
 BENCH_X = 1.7
 
@@ -194,7 +195,7 @@ def materials(kit):
     M["screen"] = kit.emit("#bcd6ff", 1.0, "screen")
     M["far"] = kit.emit("#ffcf8a", 4.0, "far lights")
     M["wake"] = kit.emit("#aebbc2", 0.6, "wake")
-    M["dot"] = P("#5d6468", 0.5, "hop dot")
+    M["dot"] = P("#2b3236", 0.5, "hop dot")
     M["web"] = P("#c8c8c4", 0.9, "cobweb")
     M["dust"] = P("#b7a98a", 0.95, "dust")
     M["hill"] = kit.grime("#4f5a48", 0.6, 0.15)
@@ -234,7 +235,7 @@ def make_hopper(kit, M, name, kind, colour):
     mat = kit.plastic(colour, 0.6, f"hop {colour}")
     g = kit.empty(name, (0, 0, -50))
     if kind == "glove":
-        glove(kit, f"{name}.g", mat, g, scale=1.8).rotation_euler = (math.radians(90), 0, 0)
+        glove(kit, f"{name}.g", mat, g, scale=3.2).rotation_euler = (math.radians(90), 0, 0)
     elif kind == "umbrella":
         kit.cyl(f"{name}.shaft", 0.032, 0.8, (0, 0, 0.4), kit.plastic("#16171b", 0.6, "umb"), g, n=10, r2=0.05)
         kit.box(f"{name}.crook", (0.12, 0.035, 0.035), (0.06, 0, 0.03), kit.plastic("#2a1d15", 0.5, "umbh"), g, bevel=0.01)
@@ -244,10 +245,12 @@ def make_hopper(kit, M, name, kind, colour):
         kit.box(f"{name}.foot", (0.1, 0.19, 0.08), (0, -0.07, 0.04), mat, g, bevel=0.02)
         kit.box(f"{name}.band", (0.104, 0.074, 0.04), (0, 0, 0.22), kit.plastic("#e8e0cf", 0.7, "sockb"), g, bevel=0.01)
     elif kind == "keys":
+        g.scale = (2.2, 2.2, 2.2)
         torus(kit, f"{name}.ring", 0.07, 0.012, (0, 0, 0.1), kit.metal("#9aa2a6", 0.35), g, rot=(math.radians(90), 0, 0))
         for k in range(3):
             kit.box(f"{name}.k{k}", (0.03, 0.01, 0.12), (-0.04 + 0.04 * k, 0, 0.03), kit.metal("#b0a46a", 0.35), g, bevel=0.004)
     elif kind == "scarf":
+        g.scale = (1.8, 1.8, 1.8)
         kit.box(f"{name}.sc", (0.12, 0.05, 0.5), (0, 0, 0.25), mat, g, bevel=0.015)
         kit.box(f"{name}.sc2", (0.12, 0.3, 0.05), (0, 0.12, 0.03), mat, g, bevel=0.015)
     return g
@@ -292,10 +295,22 @@ def shrug_face(path):
         x = cx + side * deg(34)
         d.ellipse([x - 46, ey - 50, x + 46, ey + 50], fill=ink)
         d.ellipse([x - 22, ey - 30, x - 4, ey - 12], fill=(250, 244, 226))
-    my = faces._fy(0.72)
-    th = max(16, int(0.06 * s))
-    half = deg(66)
-    d.line([(cx - half, my), (cx + half, my)], fill=ink, width=th)
+    my = faces._fy(0.74)
+    half = deg(86)
+    n = 60
+    top, bot = [], []
+    for i in range(n + 1):
+        u = -1.0 + 2.0 * i / n
+        w = 1.0 - u * u
+        x = cx + u * half
+        top.append((x, my - 0.012 * s - 0.03 * s * w))
+        bot.append((x, my + 0.012 * s + 0.085 * s * w))
+    d.polygon(top + bot[::-1], fill=ink)
+    for i in range(-5, 6):
+        u = i / 5.5
+        x = cx + u * half * 0.78
+        yt = my - 0.012 * s - 0.03 * s * (1.0 - u * u)
+        d.polygon([(x - 13, yt), (x + 13, yt), (x, yt + 0.045 * s)], fill=(238, 228, 200))
     im.save(path)
 
 
@@ -304,7 +319,7 @@ def build_shrug(kit, M, ctx):
     orange2 = kit.plastic("#d9631c", 0.7, "shrug orange dark")
     cream = kit.plastic("#efe3c4", 0.7, "shrug cream")
     root = kit.empty("shrug", (0, 0, -60))
-    root.scale = (S * 1.22, S * 1.22, S * 1.22)   # taller than the cast
+    root.scale = (S * SHK, S * SHK, S * SHK)   # a head taller than Gran
     hips = kit.empty("shrug.hips", (0, 0, 2.0), root)
     ctx["shrug"] = {"root": root, "hips": hips}
     legs = []
@@ -324,7 +339,7 @@ def build_shrug(kit, M, ctx):
     arms = {}
     for sx in (-1, 1):
         h = kit.empty(f"shrug.hump{sx}", (sx * 1.22, 0, 1.6), up)
-        kit.box(f"shrug.humpm{sx}", (1.05, 1.1, 1.0), (0, 0, 0), orange, h, bevel=0.2)
+        kit.box(f"shrug.humpm{sx}", (1.05, 1.1, 1.2), (0, 0, 0), orange, h, bevel=0.2)
         hump[sx] = h
         arm = kit.empty(f"shrug.arm{sx}", (0, 0, 0.35), h)
         kit.box(f"shrug.armm{sx}", (0.98, 0.98, 2.7), (0, 0, -1.35), orange, arm, bevel=0.14)
@@ -344,9 +359,9 @@ def build_shrug(kit, M, ctx):
     tex.image = img
     headg = kit.empty("shrug.headg", (0, 0, faces.HEAD_H / 2 + 0.02), head)
     rig.head_mesh("shrug.headm", mat, headg)
-    hood = kit.box("shrug.hood", (1.34, 1.3, 0.3), (0, 0.05, 0.62), orange, headg, bevel=0.12)
+    cowl = kit.box("shrug.cowl", (1.75, 1.6, 0.9), (0, 0.0, -1.1), orange, headg, bevel=0.2)
     collar = kit.box("shrug.collar", (1.5, 0.9, 0.5), (0, 0.15, -0.95), orange2, headg, bevel=0.16)
-    ctx["shrug"].update(neck=neck, head=head, hood=hood, collar=collar, headg=headg)
+    ctx["shrug"].update(neck=neck, head=head, hood=cowl, collar=collar, headg=headg)
     ctx["shrug_parts"] = [root]
 
 
@@ -365,14 +380,15 @@ def pose_shrug(ctx, c):
     lean = math.radians(float(c.get("lean", 0.0)))     # about the hips; positive leans toward world -y (toward Gran)
     sg["upper"].rotation_euler = (0, -lean, 0)
     for sx in (-1, 1):
-        sg["hump"][sx].location = (sx * (1.5 - 0.35 * u), 0, 1.62 + 0.45 * u)
+        sg["hump"][sx].location = (sx * (1.5 - 0.45 * u), 0, 1.62 + 0.95 * u)
         sg["arm"][sx].location = (sx * (0.55 * u + 0.1), 0, 0.35)
         sg["arm"][sx].rotation_euler = (math.radians(c.get("armfwd", 0.0)), lean, 0)
-    sg["neck"].location = (0, 0, 2.0 - 0.2 * u)
+    sg["neck"].location = (0, 0, 2.0 - 0.35 * u)
     sg["neck"].rotation_euler = (0, 0, math.radians(c.get("head", 0.0)))
     sg["head"].rotation_euler = (math.radians(c.get("tilt", 0.0)), 0, 0)
-    sg["hood"].location = (0, 0.05, 0.62)
-    sg["collar"].location = (0, 0.15, -0.95 + 0.1 * u)
+    sg["head"].scale = (1.3, 1.3, 1.3)
+    sg["hood"].location = (0, 0.0, -1.1 + float(c.get("cowl", 0.59)) * u)
+    sg["collar"].location = (0, 0.15, -0.95)
 
 
 # ------------------------------------------------------------------------------------------------ the dog
@@ -439,13 +455,15 @@ def build_bow(kit, M, x, y, tag):
     return g
 
 
-def hop_dot_pool(kit, M, ctx, nh):
+def hop_dot_pool(kit, M, ctx, nh, paths=()):
     ctx["dots"] = []
+    pale = kit.emit("#b4dcec", 1.1, "pale dot")
     for h in range(nh):
         row = []
-        for j in range(4):
-            row.append(kit.cyl(f"hopdot{h}_{j}", 0.07, 0.006, (0, 0, -50), M["dot"], n=10))
+        for j in range(6):
+            row.append(kit.cyl(f"hopdot{h}_{j}", 0.13 if h in paths else 0.1, 0.008, (0, 0, -50), pale if h in paths else M["dot"], n=12))
         ctx["dots"].append(row)
+    ctx["ldots"] = [kit.cyl(f"ldot{k}", 0.15, 0.008, (0, 0, -50), pale, n=12) for k in range(16)]
 
 
 def build_town(kit, M, ctx):
@@ -481,6 +499,7 @@ def build_town(kit, M, ctx):
         kit.cyl(f"island.rock{k}", 5 + 2 * k, 4 + k, (-60 + 25 * k, -120 - 4 * k, 0), M["hill"], n=10, r2=2.5)
     # the ferry's bow, docked
     build_bow(kit, M, 0.0, -15.2, "T")
+    kit.light("bow lamp", "POINT", (1.2, -17.0, 3.0), 1.0, "#ffe2b0", size=0.4)
     ctx["_bowT"] = True
     ctx["vis"]["bowT"] = {"objs": [_obj("bowT")], "default": True}
     ff = kit.empty("farferry", (22, -82, 0))
@@ -501,7 +520,15 @@ def build_town(kit, M, ctx):
     kit.box("bin.slot", (0.6, 0.18, 0.02), (0, -0.2, 1.075), M["black"], bin_)
     kit.cyl("street.lamp", 0.07, 4.2, (153.5, 7.5, 2.1), M["iron"], n=8)
     kit.box("street.lamphead", (0.5, 0.3, 0.14), (153.3, 7.5, 4.2), M["iron"])
-    ctx["mdots"] = [kit.cyl(f"mdot{k}", 0.06, 0.006, (0.3 - 0.04 * k, -1.0 - 1.15 * k, 0.012), M["dot"], n=10) for k in range(9)]
+    ctx["mdots"] = [kit.cyl(f"mdot{k}", 0.18, 0.008, (0.3 + 0.42 * k, -0.45 - 0.55 * k, 0.012), M["dot"], n=12) for k in range(10)]
+    # my front door, in the harbour street: a warm open doorway, a step, a lamp
+    sx_ = 140.0
+    kit.box("stoop.frame", (1.5, 0.2, 2.4), (sx_, 11.4, 1.2), M["cream"])
+    kit.box("stoop.open", (1.0, 0.1, 2.15), (sx_, 11.52, 1.08), kit.emit("#ffbf7a", 1.4, "hall glow"))
+    kit.box("stoop.step", (1.9, 0.8, 0.16), (sx_, 10.85, 0.08), M["stone"])
+    kit.box("stoop.step2", (1.5, 0.5, 0.08), (sx_, 10.3, 0.04), M["stone"])
+    kit.cyl("stoop.lamp", 0.05, 0.4, (sx_ + 1.25, 11.2, 2.5), M["iron"], n=8)
+    kit.light("stoop lamp", "POINT", (sx_ + 0.9, 10.0, 2.0), 1.0, "#ffd9a8", size=0.3)
     # the beach
     kit.plane("beach", (60, 60), (900, 25, 0.0), M["sand"])
     for k in range(10):
@@ -580,8 +607,9 @@ def build_kitchen(kit, M, ctx):
     for k in range(3):
         kit.cyl(f"k.peg{k}", 0.02, 0.1, (x + 0.55 + 0.45 * k, 2.04, 1.65), M["hook"], rot=(math.radians(90), 0, 0), n=6)
     h = hat_stripes(kit, M, "k.hat")
-    h.location = (x + 1.0, 1.99, 1.6)
+    h.location = (x + 0.62, 1.96, 1.5)
     h.rotation_euler = (math.radians(100), 0, 0)
+    h.scale = (1.5, 1.5, 1.5)
     kit.box("k.table", (1.4, 0.9, 0.05), (x - 1.0, 1.0, 0.75), M["shelf"])
     kit.light("k lamp", "POINT", (x, 0.3, 2.4), 1.0, "#ffe0b0", size=0.4)
     kit.light("k fill", "POINT", (x + 0.6, -1.2, 1.9), 1.0, "#ffe6c4", size=0.5)
@@ -775,6 +803,19 @@ def build_island(kit, M, ctx):
     for sx in (-1, 1):
         for sy in (-1, 1):
             kit.box(f"br.tl{sx}{sy}", (0.06, 0.06, 0.76), (cx - 0.6 + sx * 0.45, 44.6 + sy * 0.3, 0.38), M["shelf"])
+    # my grey scarf on its hook (pan, L32 A), and Monday's key ring hung in front of the rest (L32 B)
+    sg_ = kit.plastic("#8a8f94", 0.8, "my grey scarf")
+    kit.cyl("scarfhook", 0.012, 0.16, (cx - 1.2, 46.46, 1.62), M["hook"], None, rot=(math.radians(90), 0, 0), n=6)
+    kit.box("scarf.top", (0.2, 0.12, 0.1), (cx - 1.2, 46.38, 1.58), sg_, None, bevel=0.03)
+    kit.box("scarf.l1", (0.16, 0.07, 0.8), (cx - 1.25, 46.36, 1.14), sg_, None, bevel=0.02)
+    kit.box("scarf.l2", (0.16, 0.07, 0.62), (cx - 1.12, 46.37, 1.24), sg_, None, bevel=0.02)
+    kit.cyl("mondayhook", 0.014, 0.4, (cx + 1.3, 46.35, 1.66), M["hook"], None, rot=(math.radians(90), 0, 0), n=6)
+    torus(kit, "monday.ring", 0.085, 0.016, (cx + 1.3, 46.14, 1.58), kit.metal("#c9c4b0", 0.3), None, rot=(math.radians(90), 0, 0), n=18, m=6)
+    for k in range(4):
+        kit.box(f"monday.k{k}", (0.045, 0.012, 0.16), (cx + 1.22 + 0.055 * k, 46.14, 1.4), kit.metal("#d2b768", 0.3), None, bevel=0.005)
+    kit.box("monday.tag", (0.08, 0.012, 0.11), (cx + 1.3, 46.14, 1.47), kit.plastic("#d23b2f", 0.5, "red tag"), None, bevel=0.01)
+    kit.light("lane lamp", "POINT", (X + 0.5, 15.0, 2.4), 1.0, "#ffd2a0", size=0.4)
+    kit.light("hat lamp", "POINT", (X - 0.9, 44.7, 2.3), 1.0, "#ffe2b8", size=0.3)
     kit.light("isl lamp", "POINT", (X + 3.0, -9.0, 3.6), 1.0, "#ffe2b0", size=0.4)
     kit.light("board fill", "POINT", (X + 1.6, -13.0, 2.2), 1.0, "#ffe2b0", size=0.4)
     kit.light("blue fill", "POINT", (X + 6.0, -5.6, 1.4), 1.0, "#ffe6c0", size=0.4)
@@ -863,11 +904,12 @@ def build_ferry(kit, M, ctx):
         c = kit.box(f"fe.cushion{yy}", (1.0, 1.1, 0.5), (0, yy - 4.0, 0.25), M["teal"], bn, bevel=0.08)
         kit.box(f"fe.back{yy}", (0.18, 1.15, 0.95), (-0.55, yy - 4.0, 0.95), M["teal"], bn, bevel=0.08)
         kit.box(f"fe.legbar{yy}", (0.9, 0.06, 0.05), (0.1, yy - 4.0 - 0.5, 0.05), M["steel"], bn)
-    arm = kit.box("fe.armrest", (0.95, 0.12, 0.2), (0.05, 0, 0.62), M["steel"], bn, bevel=0.03)
-    kit.box("fe.armpost", (0.1, 0.1, 0.4), (0.05, 0, 0.35), M["steel"], bn)
+    arm = kit.box("fe.armrest", (0.95, 0.2, 0.2), (0.05, 0, 0.62), M["steel"], bn, bevel=0.03)
+    armpost = kit.box("fe.armpost", (0.1, 0.1, 0.4), (0.05, 0, 0.35), M["steel"], bn)
+    ctx["vis"]["armrest"] = {"objs": [arm, armpost], "default": True}
     kit.box("fe.benchbase", (1.2, 3.5, 0.16), (0, 0, 0.1), M["tealdk"], bn)
     # the two upright strokes scratched into the armrest top (shown by a cue)
-    strokes = [kit.box(f"fe.stroke{k}", (0.14, 0.014, 0.006), (0.05, -0.03 + 0.06 * k, 0.725), kit.plastic("#f0762a", 0.5, "scratch"), bn) for k in range(2)]
+    strokes = [kit.box(f"fe.stroke{k}", (0.34, 0.034, 0.012), (0.05, -0.05 + 0.1 * k, 0.725), kit.emit("#ff7a24", 2.5, "scratch"), bn) for k in range(2)]
     ctx["strokes"] = strokes
     # the dent in the right seat's cushion (Gran's seat is the left in the script; this is my seat's)
     dent = kit.sphere("fe.dent", 0.45, (0, SEAT_Y["gran"] - 4.0, 0.5), kit.plastic("#1d3a42", 0.8, "dent"), bn, seg=14)
@@ -905,7 +947,7 @@ def build_ferry(kit, M, ctx):
     kit.light("harbour key", "POINT", (F + 2.2, 6.9, 4.7), 1.0, "#ffb26a", size=0.2)
     kit.light("window rim", "POINT", (F + 3.1, 5.6, 6.1), 1.0, "#9fc4ff", size=0.2)
     kit.light("window rim2", "POINT", (F + 3.1, 3.2, 6.1), 1.0, "#9fc4ff", size=0.2)
-    kit.light("shrug key", "SPOT", (F + 3.6, 6.4, 4.7), 1.0, "#ffb070", spot=45, blend=0.6, size=0.3)
+    kit.light("shrug key", "SPOT", (F + 2.2, 7.2, 5.3), 1.0, "#ffb070", spot=45, blend=0.6, size=0.3)
     kit.aim(kit.LIGHTS["shrug key"]["obj"], (F + 1.7, 4.75, 5.1))
     kit.light("bench fill", "POINT", (F + 0.6, 4.0, 6.0), 1.0, "#cfd8f0", size=0.4)
     kit.box("isl.hill", (16, 70, 9), (F + 112, 12, 2.0), kit.plastic("#161c28", 1.0, "far island 2"))
@@ -966,7 +1008,7 @@ def build(kit, story, tl):
     build_dog(kit, M, ctx)
     hops = story.get("hoppers", [])
     ctx["hoppers"] = {h["id"]: make_hopper(kit, M, f"hop.{h['id']}", h["kind"], h["color"]) for h in hops}
-    hop_dot_pool(kit, M, ctx, len(hops))
+    hop_dot_pool(kit, M, ctx, len(hops), [i for i, h in enumerate(hops) if h.get("path")])
     # loose props
     P = {}
     P["binglove"] = glove(kit, "p.binglove", M["mustard"], None, hole=True, scale=1.3)
@@ -1009,6 +1051,9 @@ def decorate(kit, story, ctx):
         if arm is not None:
             g = kit.box(f"me.glove{sx}", (1.05, 1.07, 0.5), (0, 0, -1.55), M["mustard"], arm, bevel=0.1)
             vis[hid] = {"objs": [g], "default": True}
+    scs = [_obj("me.scarf"), _obj("me.scarft")]
+    if all(o is not None for o in scs):
+        vis["mescarf"] = {"objs": scs, "default": True}
     tor = _obj("me.torso")
     if tor is not None:
         for k in range(3):
@@ -1103,6 +1148,51 @@ def _interp_cues(cs, t, keys):
     return prev
 
 
+def _path_pos(cs, tt):
+    """Where a path hopper is at tt: linear between the cue points (x, y, optional z). None before the first, in a gap
+    after a cue marked off, and after the last. The fifth value says it is in motion."""
+    if not cs or tt < cs[0]["t"] - 1e-9:
+        return None
+    for i in range(len(cs) - 1):
+        a, b = cs[i], cs[i + 1]
+        if a["t"] <= tt < b["t"]:
+            if a.get("off"):
+                return None
+            u = (tt - a["t"]) / max(1e-6, b["t"] - a["t"])
+            pa, pb = a["pos"], b["pos"]
+            za = pa[2] if len(pa) > 2 else 0.0
+            zb = pb[2] if len(pb) > 2 else 0.0
+            dx, dy = pb[0] - pa[0], pb[1] - pa[1]
+            return (pa[0] + dx * u, pa[1] + dy * u, za + (zb - za) * u, math.atan2(dx, -dy) if (dx or dy) else 0.0, True)
+    if cs[-1].get("off"):
+        return None
+    p = cs[-1]["pos"]
+    return (p[0], p[1], p[2] if len(p) > 2 else 0.0, 0.0, False)
+
+
+def _animate_path(tl, t, hdef, ob, row):
+    P = 0.52
+    cs = [c for c in _cues(tl, "hopp") if c.get("id") == hdef["id"]]
+    cur = _path_pos(cs, t)
+    ph = hdef.get("phase", 0.0)
+    if cur is None:
+        ob.location = (0, 0, -50)
+    else:
+        hz = 0.13 * abs(math.sin(math.pi * (((t + ph) % P) / P))) if cur[4] else 0.0
+        ob.location = (cur[0], cur[1], cur[2] + hz)
+        ob.rotation_euler = (0, 0, cur[3] + math.radians(hdef.get("turn", 0)))
+    n0 = math.floor((t + ph) / P)
+    for j, d in enumerate(row):
+        tl_ = (n0 - j) * P - ph
+        p = _path_pos(cs, tl_) if cs and t - tl_ <= 1.5 else None
+        if p is None or not p[4]:
+            d.location = (0, 0, -50)
+            continue
+        f = max(0.05, 1.0 - (t - tl_) / 1.5)
+        d.location = (p[0], p[1], p[2] + 0.015)
+        d.scale = (f, f, 1.0)
+
+
 def animate(kit, story, tl, t, ctx):
     bpy.context.view_layer.update()
     if not ctx["inited"]:
@@ -1149,11 +1239,22 @@ def animate(kit, story, tl, t, ctx):
     over["mat lamp"] = 28.0
     over["bench fill"] = 70.0
     over["tbl lamp"] = 45.0
-    over["harbour key"] = 55.0
-    over["shrug key"] = 380.0
-    over["shrug rim"] = 70.0
-    over["window rim"] = 90.0
-    over["window rim2"] = 70.0
+    mood = float(_eased(_cues(tl, "mood"), "v", t, 0.0))
+    over["lounge a"] = 50.0 * (1 - 0.82 * mood)
+    over["lounge b"] = 50.0 * (1 - 0.82 * mood)
+    over["bench fill"] = 70.0 * (1 - 0.65 * mood)
+    over["harbour key"] = 55.0 + 60.0 * mood
+    over["shrug key"] = 380.0 + 260.0 * mood
+    over["shrug rim"] = 70.0 + 50.0 * mood
+    over["window rim"] = 90.0 + 60.0 * mood
+    over["window rim2"] = 70.0 + 50.0 * mood
+    for sl in M["strip"].node_tree.nodes:
+        if sl.type == "EMISSION":
+            sl.inputs["Strength"].default_value = 0.9 * (1 - 0.96 * mood)
+    over["stoop lamp"] = 150.0 + 100.0 * night
+    over["lane lamp"] = 130.0
+    over["bow lamp"] = 150.0
+    over["hat lamp"] = 90.0
     sb = float(_eased(_cues(tl, "sunbeam"), "v", t, 0.0))
     over["sunbeam"] = 1500.0 * sb
     # ---------------------------------------------------------------- visibility toggles
@@ -1262,6 +1363,9 @@ def animate(kit, story, tl, t, ctx):
         row = ctx["dots"][hi]
         cs = [c for c in _cues(tl, "hop") if c.get("id") == hdef["id"]]
         st = _last(cs, t)
+        if hdef.get("path"):
+            _animate_path(tl, t, hdef, ob, row)
+            continue
         owner = hdef["owner"]
 
         def hop_pos(tt):
@@ -1295,6 +1399,22 @@ def animate(kit, story, tl, t, ctx):
             f = max(0.05, 1.0 - (t - tl_) / 1.3)
             d.location = (dx, dy, 0.012)
             d.scale = (f, f, 1.0)
+    # damp dot lines laid on the ground by cue (from a to b, n dots, strength v)
+    lc = _cues(tl, "ldots")
+    lcur = _last(lc, t)
+    lv2 = float(_eased(lc, "v", t, 0.0))
+    for k, d in enumerate(ctx["ldots"]):
+        if not lcur or lv2 < 0.02 or k >= int(lcur.get("n", 10)):
+            d.location = (0, 0, -50)
+            continue
+        n_ = int(lcur.get("n", 10))
+        u_ = k / max(1, n_ - 1)
+        a_, b_ = lcur["a"], lcur["b"]
+        z_ = a_[2] if len(a_) > 2 else 0.0
+        z2 = b_[2] if len(b_) > 2 else z_
+        d.location = (a_[0] + (b_[0] - a_[0]) * u_, a_[1] + (b_[1] - a_[1]) * u_, z_ + (z2 - z_) * u_ + 0.015)
+        sc_ = lv2 * (1.0 - 0.35 * u_)
+        d.scale = (sc_, sc_, 1.0)
     # the town's faint hop-dots under my feet (a cue sets their strength)
     lv = float(_eased(_cues(tl, "mdots"), "v", t, 0.0))
     for k, d in enumerate(ctx["mdots"]):

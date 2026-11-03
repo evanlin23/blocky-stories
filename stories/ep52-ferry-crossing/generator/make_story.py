@@ -16,7 +16,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 F, X = 1000.0, 300.0
 ME_SEAT = [F + 1.7, 4.75, 3.87]
 GR_SEAT = [F + 1.7, 3.25, 3.91]
-SH_SEAT = [F + 1.7, 4.85, 3.75]
+SH_SEAT = [F + 1.7, 4.85, 3.69]
 
 PAUSES = {"L26": ("P01", 0.6), "L44": ("P02", 0.7)}
 HOLDS = {"L08": 0.5, "L14": 0.45, "L17": 0.45, "L20": 0.45, "L28": 0.45, "L33": 0.45, "L39": 0.5,
@@ -107,27 +107,27 @@ def P(pos, **kw):
 
 
 # ------------------------------------------------------------------------------------------------ 01 the rule
-shot(0, "bright low wide up the slipway: glove woman and umbrella man walking to camera",
-     c([0, [0.9, 2.6, 1.2], [-0.1, -3.5, 1.0], 26], [1, [0.9, 2.4, 1.2], [-0.1, -3.5, 1.0], 26]),
-     {"glove_woman": P([-0.5, -3.0], walk=[("L01>", [-0.4, 0.2])]),
-      "umbrella_man": P([0.9, -4.6], walk=[("L01>", [0.9, -0.6])])})
-shot("L02", "low: the glove hopping up after the raincoat hem",
-     c([0, [0.9, 2.9, 0.3], [-0.4, -1.0, 0.2], 30], [1, [0.9, 2.7, 0.3], [-0.4, -1.0, 0.2], 30]),
-     {"glove_woman": P([-0.5, -4.6], walk=[("L02>", [-0.45, 0.2])])})
+shot(0, "bright low wide up the slipway: glove woman walking to camera, her green glove hopping after her",
+     c([0, [-2.4, 3.3, 0.5], [-0.5, -2.2, 0.2], 26], [1, [-2.1, 3.0, 0.5], [-0.5, -2.0, 0.2], 26]),
+     {"glove_woman": P([-0.4, -3.4], walk=[("L01>", [-0.4, -0.4])]),
+      "umbrella_man": P([1.2, -4.8], walk=[("L01>", [1.2, -1.3])])})
+shot("L02", "low: the glove hopping up the slipway after the raincoat hem",
+     c([0, [1.1, 2.3, 0.42], [-0.2, -1.6, 0.12], 28], [1, [0.8, 0.9, 0.42], [-0.2, -2.2, 0.12], 28]),
+     {"glove_woman": P([-0.4, -0.2], walk=[("L02>", [-0.4, -4.6])])})
 shot("L03", "side tracking: umbrella man",
      c([0, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22], [1, [-2.9, 0.2, 1.1], [0.4, 0.2, 1.0], 22]),
      {"umbrella_man": P([0.4, -2.4], walk=[("L03>", [0.4, 2.8])])})
-shot("L07", "the dog alone on the harbour front", still([0, -1.2, 0.85], [0, 3.5, 0.4], 30))
+shot("L07", "the dog alone on the harbour front", c([0, [0.3, -0.7, 0.6], [0.0, 2.2, 0.35], 30], [1, [0.3, -0.7, 0.6], [0.4, 2.2, 0.35], 30]))
 shot("L08", "the dog up the gangway among legs", still([-2.2, -12.6, 0.4], [0.1, -16.8, 0.4], 24),
      {"pass1": P([-0.8, -13.6, 0.0], walk=[("L08+0.5", [-0.8, -15.3, 0.0]), ("L08+1.6", [-0.8, -18.5, 0.9]),
                                           ("L08+2.6", [-0.8, -22, 0.9])]),
       "pass2": P([0.9, -13.0, 0.0], walk=[("L08+0.8", [0.9, -15.3, 0.0]), ("L08+1.9", [0.9, -18.5, 0.9]),
                                          ("L08+2.8", [0.9, -22, 0.9])])})
-shot("L08.3", "the dog on an island doorstep", still([306.6, -4.7, 0.5], [308.7, -3.0, 0.42], 34))
+shot("L08.3", "the dog on an island doorstep", still([307.3, -5.0, 0.55], [308.5, -3.1, 0.4], 30))
 
 # ------------------------------------------------------------------------------------------------ 02 the glove
 shot("L09", "me among the passengers, a thing hopping behind each, nothing behind me",
-     still([0.2, 2.7, 1.3], [0.3, -3.5, 0.9], 26),
+     c([0, [0.2, 3.0, 1.5], [0.25, -2.0, 0.3], 26], [1, [0.5, 2.0, 1.2], [0.25, -2.4, 0.2], 26]),
      {"me": P([0.3, -0.6], yaw=180),
       "pass1": P([-1.5, -0.8], walk=[("L09>", [-1.3, -6.0])]),
       "pass2": P([2.0, -1.8], walk=[("L09>", [2.2, -7.0])]),
@@ -147,7 +147,7 @@ shot("L12", "the call: Gran pulling on a glove, my hat on the hook",
 shot("L13", "close on the glove with the hole",
      still([400.32, -1.05, 1.1], [400.32, -0.22, 1.1], 28),
      {"gran": P([399.85, 0.4], yaw=0, expr="soft", arms=[0, 80])})
-shot("L14", "me at the table, worried", still([200.0, -1.9, 1.25], [200.5, 0.1, 1.0], 26),
+shot("L14", "me at the table, worried", still([202.0, -0.5, 1.3], [199.9, 0.1, 1.2], 28),
      {"me": P([199.9, 0.1, -0.03], yaw=90, sit=True, expr="worried")})
 shot("L15", "the island across the water", still([0, -9, 1.4], [-6, -108, 9], 20))
 shot("L16", "years ago: Gran and me on the window bench in summer light",
@@ -158,23 +158,44 @@ shot("L17", "my flat window at dusk, the island a dark line",
      still([200.9, -0.1, 1.55], [200, -2.7, 1.4], 24), {"me": P([200.0, -1.75], yaw=0)})
 
 # ------------------------------------------------------------------------------------------------ 03 the evenings
-shot("L18", "the chair empty, the door ajar", still([201.6, -1.6, 1.4], [199.4, 0.9, 0.9], 22))
-shot("L18a", "a slow high wide at blue dusk: the island's one porch lamp, small and far",
-     c([0, [0.5, -9.0, 1.7], [-6, -108, 9.5], 24], [1, [0.5, -9.0, 2.2], [-6, -108, 10.2], 24]))
-shot("L19", "Monday: me at the water's edge", still([-0.7, -19.7, 1.35], [0.2, -16.4, 1.3], 28),
-     {"me": P([0.2, -16.4, -0.23], yaw=0, expr="worried")})
-shot("L20", "high wide: the slipway and the ferry's lights", still([-2.5, 5.5, 4.8], [12, -60, 0.6], 19))
-shot("L21", "Tuesday: me on the window bench, scared", still([F + 0.9, 6.9, 5.3], [F + 1.7, 4.75, 5.1], 24),
+SX = 140.0      # my front door, in the harbour street
+shot("L18", "blue dusk: me walking away from the water, the street opening onto the slipway",
+     c([0, [0.6, 15.0, 1.6], [0.2, -3.0, 0.9], 24], [1, [0.5, 14.0, 1.5], [0.2, -3.0, 0.9], 24]),
+     {"me": P([0.3, 11.0], expr="worried", head=[150, 0], walk=[("L18>", [0.2, 6.2])])})
+shot("L18a", "a corner on the left: the slipway ahead", c([0, [-3.4, 14.5, 1.5], [-0.3, -3.0, 0.9], 24], [1, [-3.0, 13.6, 1.5], [-0.3, -3.0, 0.9], 24]),
+     {"me": P([-2.4, 11.0], expr="worried", head=[150, 0], walk=[("L18a.2-0.05", [-0.9, 7.6])])})
+shot("L18a.2", "a corner on the right: the same slipway ahead", c([0, [3.4, 14.5, 1.5], [0.3, -3.0, 0.9], 24], [1, [3.0, 13.6, 1.5], [0.3, -3.0, 0.9], 24]),
+     {"me": P([2.4, 11.0], expr="worried", head=[-150, 0], walk=[("L19-0.05", [0.9, 7.6])])})
+shot("L19", "Monday: my keys hop out my open door and away down the street",
+     c([0, [141.6, 7.6, 0.7], [140.0, 10.4, 0.4], 28], [1, [141.4, 7.0, 0.7], [139.8, 8.6, 0.25], 28]))
+shot("L19+0.95", "high wide: the keys hop down the empty slipway to the water, me small at the top",
+     still([0.6, 5.0, 3.6], [0.0, -8.0, 0.1], 30), {"me": P([0.1, 0.6], yaw=0, expr="worried", head=[60, 0])})
+shot("L20", "my doorstep: dots start under my shoes, then me looking down",
+     c([0, [141.8, 6.0, 0.8], [140.0, 9.2, 0.1], 30], [0.55, [141.8, 6.0, 0.8], [140.0, 9.2, 0.1], 30],
+       [1, [141.8, 6.4, 1.2], [140.0, 10.4, 1.0], 30]),
+     {"me": P([SX, 10.85, 0.16], yaw=0, expr="scared", head=[0, 22])})
+shot("L21", "Tuesday: me hurrying up the bow ramp after the keys",
+     c([0, [1.6, -22.5, 1.3], [0.0, -14.5, 0.6], 26], [1, [1.3, -22.0, 1.3], [0.0, -15.5, 0.7], 26]),
+     {"me": P([0.3, -11.8, 0.0], expr="worried", walk=[("L21+0.7", [0.3, -15.2, 0.0]), ("L21+1.5", [0.2, -18.6, 0.95]), ("L21.4", [0.2, -20.5, 0.95])])})
+shot("L21.4", "the lounge at dusk: the keys hop on past the bench, I'm sitting in the window seat",
+     c([0, [F - 1.4, 7.4, 5.0], [F + 2.2, 4.0, 4.6], 24], [1, [F - 1.0, 7.4, 5.0], [F + 2.1, 4.1, 4.65], 24]),
      {"me": P(ME_SEAT, yaw=90, sit=True, expr="scared", head=[80, 0])})
 shot("L22", "the empty seat beside me", still([F + 3.0, 3.25, 5.0], [F + 1.7, 3.25, 4.5], 28))
 shot("L23", "the cushion sinks", still([F + 3.0, 2.5, 4.7], [F + 1.7, 3.25, 4.4], 30))
 shot("L23.2", "me tipping toward it", still([F + 0.9, 6.9, 5.4], [F + 1.7, 4.75, 5.0], 26),
      {"me": P(ME_SEAT, yaw=90, sit=True, expr="scared", head=[0, 10], roll=10)})
-shot("L24", "Wednesday: halfway up Gran's lane", still([X + 0.9, 11.2, 1.45], [X, 20, 1.5], 24),
-     {"me": P([X, 15.0], expr="worried", head=[150, 0], walk=[("L24>", [X, 16.0])])})
+shot("L24", "Wednesday: my scarf hops up Gran's lane in deep dusk", still([X + 0.6, 3.0, 0.8], [X, 12.0, 0.3], 26))
+shot("L24.4", "me following up the lane, no scarf on now", still([X + 0.3, 9.6, 1.5], [X - 0.1, 16.0, 1.4], 24),
+     {"me": P([X, 12.6], expr="worried", head=[150, 0], walk=[("L24a-0.05", [X, 15.4])])})
+shot("L24a", "me halfway, looking up at the porch lamp, then turning back down the lane",
+     still([X + 0.5, 21.0, 1.3], [X, 12.5, 1.15], 26),
+     {"me": P([X, 15.6], yaw=180, expr="soft", head=[0, -8],
+              walk=[("L24a+0.75", [X, 15.6]), ("L24a>+0.2", [X, 11.2])])})
 
 # ------------------------------------------------------------------------------------------------ 04 the door
-shot("L25", "Thursday: me at the green door", still([X - 2.1, 32.2, 1.5], [X + 0.1, 34.0, 1.45], 22),
+shot("L25", "Thursday: the dots running up the lane at night ahead of my shoes", still([X + 0.4, 6.4, 0.9], [X, 19.0, 0.3], 26),
+     {"me": P([X, 11.6], walk=[("L25.3", [X, 14.2])])})
+shot("L25.3", "Thursday: me at the green door", still([X - 2.1, 32.2, 1.5], [X + 0.1, 34.0, 1.45], 22),
      {"me": P([X - 0.1, 33.6], yaw=-50, expr="scared")})
 shot("L26", "the door a hand's width open", still([X, 31.6, 1.45], [X, 36.0, 1.3], 24))
 shot("L27", "her glasses on the mat", still([X - 0.3, 32.9, 0.3], [X, 34.35, 0.06], 36))
@@ -186,8 +207,8 @@ shot("L30", "down the hall to the back door",
      c([0, [X, 36.0, 1.5], [X, 43.3, 1.3], 22], [1, [X, 40.0, 1.5], [X, 43.3, 1.3], 22]))
 shot("L31", "the room full of hooks", still([X, 43.0, 1.5], [X, 46.5, 1.35], 13))
 shot("L32", "a pan along the gloves",
-     c([0, [X - 2.8, 45.2, 1.5], [X - 2.8, 46.8, 1.4], 20], [1, [X + 0.4, 45.2, 1.5], [X + 0.4, 46.8, 1.4], 20]))
-shot("L32.1", "key rings rattling", still([X + 1.2, 45.7, 1.65], [X + 1.2, 46.8, 1.62], 30))
+     c([0, [X - 2.4, 45.0, 1.5], [X - 2.4, 46.8, 1.4], 20], [1, [X + 0.2, 45.0, 1.5], [X + 0.2, 46.8, 1.4], 20]))
+shot("L32.3", "key rings rattling, Monday's ring in front", still([X + 1.05, 45.35, 1.65], [X + 1.3, 46.3, 1.55], 30))
 shot("L33", "my bike", still([X + 1.2, 44.3, 1.0], [X + 3.4, 45.4, 0.6], 24))
 shot("L34", "the striped hat, me in the doorway", still([X - 1.6, 45.5, 1.6], [X - 0.4, 43.2, 1.5], 26),
      {"me": P([X, 43.0], yaw=180, expr="scared")})
@@ -236,9 +257,9 @@ shot("L49", "the humps lowering", still([F + 4.8, 5.7, 5.3], [F + 1.7, 4.85, 5.2
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze")})
 shot("L50", "the full face", still([F + 4.3, 5.3, 5.35], [F + 1.7, 4.85, 5.3], 32),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze")})
-shot("L51", "the head turns to Gran", still([F + 4.0, 6.2, 5.2], [F + 1.7, 4.4, 5.05], 26),
+shot("L51", "the head turns to Gran, wide enough that no hump fills the frame", still([F + 5.0, 6.6, 5.4], [F + 1.7, 4.2, 5.1], 20),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze", head=[45, 0])})
-shot("L51.2", "leaning in, side-on", still([F + 5.6, 4.0, 5.3], [F + 1.7, 4.0, 5.1], 17),
+shot("L51.3", "close side two-shot: its face a hand's width from her cheek", still([F + 5.0, 4.3, 5.3], [F + 1.7, 3.95, 5.15], 24),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze", head=[45, 0])})
 
 # ------------------------------------------------------------------------------------------------ 07 where things belong
@@ -248,8 +269,10 @@ shot("L52", "me in the aisle: I get it", still([F + 2.4, 7.2, 5.3], [F - 0.3, 3.
 shot("L53", "the glove on Gran's hand", still([400.32, -1.05, 1.1], [400.32, -0.22, 1.1], 28),
      {"gran": P([399.85, 0.4], yaw=0, expr="soft", arms=[0, 80])})
 shot("L54", "the dog by its blue door", still([306.6, -4.7, 0.5], [308.7, -3.0, 0.42], 34))
-shot("L55", "the hooks and the striped hat", still([X - 1.6, 45.5, 1.6], [X - 0.4, 43.2, 1.5], 26))
-shot("L56", "the hop-dots under my feet", still([1.3, 1.0, 0.55], [0.15, -3.2, 0.05], 26),
+shot("L55", "the hooks and the striped hat", still([X - 0.8, 45.3, 1.65], [X - 0.9, 43.4, 1.7], 28))
+shot("L56", "the hop-dots under my feet at my door again", c([0, [141.8, 6.0, 0.8], [140.0, 9.2, 0.1], 30], [1, [141.8, 6.4, 1.0], [140.0, 9.6, 0.1], 30]),
+     {"me": P([SX, 10.85, 0.16], yaw=0, expr="scared", head=[0, 22])})
+shot("L56+0.85", "the dots under my feet on the slipway, easy to see now", c([0, [0.2, 3.0, 1.5], [0.25, -2.0, 0.3], 26], [1, [0.5, 2.0, 1.2], [0.25, -2.4, 0.2], 26]),
      {"me": P([0.3, -0.6], yaw=180)})
 shot("L57", "me taking a breath", still([F + 2.4, 7.2, 5.3], [F - 0.3, 3.3, 5.0], 26),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="squeeze"),
@@ -279,15 +302,15 @@ shot("L63a", "close on Gran, soft, shaking her head, leaning her shoulder agains
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
 shot("L64", "from outside the window, the island coming up", still([F + 6.2, 4.0, 5.3], [F + 1.7, 4.0, 5.2], 22),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
-shot("L64.1", "the armrest, two strokes", still([F + 0.6, 4.0, 5.0], [F + 3.4, 4.0, 4.55], 26),
+shot("L64.1", "the armrest, two strokes", still([F + 0.8, 4.0, 5.2], [F + 1.7, 4.0, 4.64], 30),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
 shot("L65", "the wake back to the town", still([F + 3.0, -34, 16], [F, 6, 0], 22))
 
 # ------------------------------------------------------------------------------------------------ 09 the sting
 shot("L66", "the bench from inside, small and dark", still([F - 0.2, 4.0, 5.3], [F + 1.7, 4.0, 5.1], 17),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
-shot("L67", "Gran lost me", still([F + 4.6, 4.0, 5.3], [F + 1.7, 4.0, 5.2], 26),
-     {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft", roll=0, walk=[("L67+1.2", [F + 1.7, 3.55, 3.91])]),
+shot("L67", "Gran lost me: her head on my shoulder", still([F + 5.0, 4.0, 5.3], [F + 1.7, 4.0, 5.15], 22),
+     {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft", roll=0, walk=[("L67+0.4", [F + 1.7, 4.12, 3.91])]),
       "me": P(ME_SEAT, yaw=90, sit=True, expr="neutral")})
 shot("L68", "the mat, the glove", still([X - 0.1, 33.15, 0.85], [X, 34.35, 0.07], 32))
 
@@ -323,7 +346,7 @@ for i, sh in enumerate(SHOTS):
 
 # a few timed acting keys inside shots
 acting["me"].append({"at": "L52>-0.4", "expr": "neutral", "blend": 0.3})
-acting["gran"].append({"at": "L67+0.2", "roll": 14, "blend": 1.4})
+acting["gran"].append({"at": "L67+0.1", "roll": 24, "blend": 0.7})
 acting["gran"] += [{"at": "L63a+0.2", "head": [14, 0], "blend": 0.5}, {"at": "L63a+0.8", "head": [-14, 0], "blend": 0.6},
                    {"at": "L63a+1.4", "head": [0, 0], "roll": 8, "blend": 1.0}, {"at": "L64", "roll": 0, "blend": 1.0}]
 
@@ -366,6 +389,10 @@ cue("L27", "vis", id="gglasses", on=False)
 cue("L61", "vis", id="gglasses", on=True)
 cue("L36", "vis", id="plum", on=True)
 cue("L18", "vis", id="bowT", on=False)
+cue("L21", "vis", id="bowT", on=True)
+cue("L24.4", "vis", id="mescarf", on=False)
+cue("L67", "vis", id="armrest", on=False)
+cue("L68", "vis", id="armrest", on=True)
 cue("L37", "vis", id="bowT", on=True)
 cue("L38", "vis", id="bowT", on=False)
 cue("L41", "vis", id="bowI", on=True)
@@ -402,26 +429,26 @@ cue("L23.2", "smudge", on=True)
 cue("L24", "smudge", on=False)
 cue("L64.1", "strokes", on=True)
 cue("L65", "strokes", on=False)
-cue("L32.1", "rattle", v=1.0, dur=0.5)
+cue("L32.3", "rattle", v=1.0, dur=0.5)
 cue("L33", "rattle", v=0.0, dur=0.5)
 cue(0, "mdots", v=0.0)
-cue("L09", "mdots", v=0.45)
+cue("L09", "mdots", v=0.95)
 cue("L10", "mdots", v=0.0)
 cue("L55>-0.3", "mdots", v=1.0, dur=0.3)
 cue("L57", "mdots", v=0.0)
 
 # the Shrug: never seen moving across the room. pos is the seat; u is the shoulder height.
 cue(0, "shrug", hidden=True)
-cue("L44", "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=0)
-cue("L45", "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=0)
-cue("L46", "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=0)
-cue("L47", "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=0)
-cue("L48", "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=12)
-cue("L49", "shrug", pos=SH_SEAT, yaw=90, u=0.55, head=0, lean=0, tilt=0, dur=1.6)
-cue("L50", "shrug", pos=SH_SEAT, yaw=90, u=0.0, head=0, lean=0, tilt=0, dur=2.4)
-cue("L51", "shrug", pos=SH_SEAT, yaw=90, u=0.0, head=-90, lean=0, tilt=0, dur=2.2)
-cue("L51.2", "shrug", pos=[F + 1.7, 4.85, 3.75], yaw=90, u=0.0, head=-90, lean=55, tilt=-10, dur=3.2)
-cue("L51.2+3.4", "shrug", pos=[F + 1.7, 4.55, 3.75], yaw=90, u=0.0, head=-90, lean=60, tilt=-10)
+for _r in ("L44", "L45", "L46", "L47"):
+    cue(_r, "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=0)
+cue("L48", "shrug", pos=SH_SEAT, yaw=90, u=1.0, head=0, lean=0, tilt=8)
+cue("L49", "shrug", pos=SH_SEAT, yaw=90, u=0.5, head=0, lean=0, tilt=0, dur=1.2)
+cue("L50", "shrug", pos=SH_SEAT, yaw=90, u=0.0, head=0, lean=0, tilt=0, dur=1.5)
+cue("L51", "shrug", pos=SH_SEAT, yaw=90, u=0.0, head=-90, lean=18, tilt=0, dur=1.2)
+cue("L51.3", "shrug", pos=[F + 1.7, 4.7, 3.69], yaw=90, u=0.0, head=-90, lean=50, tilt=-6, dur=2.6)
+cue("L52-0.3", "shrug", pos=[F + 1.7, 4.55, 3.69], yaw=90, u=0.0, head=-90, lean=54, tilt=-6)
+cue("L43", "mood", v=1.0, dur=1.2)
+cue("L52", "mood", v=0.0, dur=1.2)
 cue("L58.2", "shrug", hidden=True)
 # props
 for pid in ("binglove", "mglove", "glasses", "kite", "jumper"):
@@ -447,22 +474,24 @@ cue("L68.4+0.17", "prop", id="mglove", pos=[X, 34.5, 0.3], rot=[-60, 0, 0])
 cue("L68.4+0.34", "prop", id="mglove", pos=[X, 34.65, 0.065], rot=[-90, 0, 0])
 # the dog
 cue(0, "dog", hide=True, pos=[0, 0, 0])
-cue("L07", "dog", pos=[-3.6, 3.6, 0], yaw=[90], gait=1)
-cue("L07>+0.5", "dog", pos=[3.6, 3.6, 0], yaw=[90], gait=1)
-cue("L08", "dog", pos=[0.1, -14.3, 0], yaw=[0], gait=1)
+cue("L07", "dog", pos=[-2.4, 2.2, 0], yaw=[90], gait=1)
+cue("L07>", "dog", pos=[2.4, 2.2, 0], yaw=[90], gait=1)
+cue("L08", "dog", pos=[0.1, -14.3, 0], yaw=[0], gait=1, snap=True)
 cue("L08+0.4", "dog", pos=[0.1, -15.3, 0], yaw=[0], gait=1)
 cue("L08+0.9", "dog", pos=[0.1, -18.5, 0.9], yaw=[0], gait=1)
-cue("L08+1.3", "dog", pos=[0.1, -22.0, 0.9], yaw=[0], gait=1)
-cue("L08.3", "dog", pos=[X + 8.55, -3.0, 0], yaw=[235], gait=0, snap=True)
+cue("L08+1.15", "dog", pos=[0.1, -22.0, 0.9], yaw=[0], gait=1)
+cue("L08.3", "dog", pos=[X + 8.55, -3.0, 0], yaw=[311], gait=0, snap=True)
 cue("L09", "dog", hide=True, pos=[0, 0, 0], snap=True)
-cue("L54", "dog", pos=[X + 8.55, -3.0, 0], yaw=[235], gait=0)
+cue("L54", "dog", pos=[X + 8.55, -3.0, 0], yaw=[311], gait=0)
 cue("L55", "dog", hide=True, pos=[0, 0, 0], snap=True)
 # the lost things hopping after their owners
 hoppers = [
-    {"id": "hg", "kind": "glove", "color": "#2f8f4a", "owner": "glove_woman", "behind": 0.8, "side": 0.0},
+    {"id": "hg", "kind": "glove", "color": "#2f8f4a", "owner": "glove_woman", "behind": 0.8, "side": 0.4},
     {"id": "hu", "kind": "umbrella", "color": "#16171b", "owner": "umbrella_man", "behind": 0.45, "side": 0.28},
     {"id": "hk", "kind": "keys", "color": "#9aa2a6", "owner": "pass1", "behind": 0.7, "side": 0.0},
     {"id": "hs", "kind": "scarf", "color": "#c04a3a", "owner": "pass2", "behind": 0.8, "side": 0.0},
+    {"id": "mk", "kind": "keys", "color": "#9aa2a6", "path": True},
+    {"id": "ms", "kind": "scarf", "color": "#8a8f94", "path": True, "phase": 0.2},
 ]
 for h in ("hg", "hu"):
     cue(0, "hop", id=h, on=True)
@@ -470,6 +499,34 @@ for h in ("hg", "hu"):
 for h in ("hk", "hs"):
     cue("L09", "hop", id=h, on=True)
     cue("L10", "hop", id=h, on=False)
+def hopp(i, at, x, y, z=0.0, off=False):
+    cue(at, "hopp", id=i, pos=[x, y, z], off=off)
+
+
+# my keys: out my door and down the street (L19 A), down the slipway (L19 B), up the bow ramp (L21 A), past the bench (L21 B)
+hopp("mk", "L19", SX, 11.3, 0.16)
+hopp("mk", "L19+0.5", SX, 10.6, 0.16)
+hopp("mk", "L19+0.65", SX, 10.2, 0.08)
+hopp("mk", "L19+0.9", SX - 0.5, 6.0, 0.0, True)
+hopp("mk", "L19+0.95", 0.2, -5.5)
+hopp("mk", "L19+2.0", 0.1, -14.5)
+hopp("mk", "L19+2.1", 0.1, -14.5, 0.0, True)
+hopp("mk", "L21", 0.0, -13.2, 0.0)
+hopp("mk", "L21+0.6", 0.0, -15.2, 0.05)
+hopp("mk", "L21+1.2", 0.0, -18.5, 0.95)
+hopp("mk", "L21.4-0.05", 0.0, -22.0, 0.95, True)
+hopp("mk", "L21.4", F + 2.9, 2.6, 3.92)
+hopp("mk", "L21.4+1.1", F + 2.9, 7.2, 3.92, True)
+# my scarf up Gran's lane
+hopp("ms", "L24", X, 5.0)
+hopp("ms", "L24+1.5", X, 17.0)
+hopp("ms", "L24.4-0.05", X, 17.5, 0.0, True)
+cue("L20", "ldots", a=[SX, 10.8, 0.16], b=[SX, 3.0, 0.0], n=14, v=1.0, dur=0.3)
+cue("L21", "ldots", a=[SX, 10.8, 0.16], b=[SX, 3.0, 0.0], n=14, v=0.0)
+cue("L25", "ldots", a=[X, 12.2, 0.0], b=[X, 28.0, 0.0], n=16, v=1.0)
+cue("L25.3", "ldots", a=[X, 12.2, 0.0], b=[X, 28.0, 0.0], n=16, v=0.0)
+cue("L56", "ldots", a=[SX, 10.8, 0.16], b=[SX, 3.0, 0.0], n=14, v=1.0)
+cue("L56+0.85", "ldots", a=[SX, 10.8, 0.16], b=[SX, 3.0, 0.0], n=14, v=0.0)
 # the first scare's wind, the island lights etc. are in set.py
 
 sfx = []
@@ -480,9 +537,9 @@ sfx += [
     {"at": "L10+0.8", "kind": "thud", "db": -26},
     {"at": "L23+0.1", "kind": "creak", "db": -9, "dur": 1.5},
     {"at": "P01>-0.1", "kind": "thud", "db": -9},
-    {"at": "L32.1+0.1", "kind": "click", "db": -26},
-    {"at": "L32.1+0.35", "kind": "click", "db": -25},
-    {"at": "L32.1+0.7", "kind": "click", "db": -26},
+    {"at": "L32.3+0.1", "kind": "click", "db": -26},
+    {"at": "L32.3+0.35", "kind": "click", "db": -25},
+    {"at": "L32.3+0.7", "kind": "click", "db": -26},
     {"at": "L35+0.3", "kind": "glitch", "db": -22, "dur": 0.4},
     {"at": "L35+0.9", "kind": "glitch", "db": -22, "dur": 0.4},
     {"at": "L41+0.4", "kind": "thud", "db": -19},
