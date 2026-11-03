@@ -125,6 +125,29 @@ def library(st: dict, set_text: str = "") -> list[tuple[str, str]]:
     return out
 
 
+def polish_problems(st: dict) -> list[tuple[str, str]]:
+    """look.polish (blocky/polish.py): known settings only, marked shots that exist, and a bed that's recorded."""
+    from blocky import polish
+
+    p = (st.get("look") or {}).get("polish")
+    if not p or p is True:
+        return []
+    if not isinstance(p, dict):
+        return [("block", "look.polish is true or a dict of settings")]
+    out = [("block", f"look.polish.{k} isn't a polish setting ({sorted(polish.DEFAULTS)})") for k in p
+           if k not in polish.DEFAULTS]
+    ids = {s["id"] for s in st.get("shots", [])}
+    if isinstance(p.get("sway"), list):
+        out += [("block", f"look.polish.sway names shot {s!r}, which isn't in shots") for s in p["sway"] if s not in ids]
+    if p.get("grade") and p["grade"] not in polish.GRADES:
+        out.append(("block", f"look.polish.grade {p['grade']!r}: the presets are {sorted(polish.GRADES)}"))
+    if p.get("bed_kind") and not (ASSETS / "audio" / "amb" / f"{p['bed_kind']}.wav").exists():
+        out.append(("block", f"look.polish.bed_kind {p['bed_kind']!r} isn't a recording in assets/audio/amb/"))
+    if not 0 <= float(p.get("punch", 0.06)) <= 0.08:
+        out.append(("block", "look.polish.punch is a subtle 0 to 8% (0.0 to 0.08)"))
+    return out
+
+
 NARRATOR_MISFIT = re.compile(r"\bmy (husband|boyfriend|hubby)\b", re.I)   # the one narrator voice is a man's (ep38)
 
 
@@ -141,6 +164,7 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
                             "flash bar on most stories (RULES.md hard rule 7)"))
     out += harsh_sound(st)
     out += library(st, set_py.read_text() if set_py.exists() else "")
+    out += polish_problems(st)
     said_all = " ".join(" ".join(c[1] for c in ln.get("chunks", [])) for ln in st.get("lines", []))
     if NARRATOR_MISFIT.search(said_all):
         out.append(("warn", "the narrator says 'my husband/boyfriend', but the narrator voice is a man's (ep38): "
