@@ -228,24 +228,26 @@ def sp(x, y, yaw=0, **kw):
     return P(x, y, yaw, **kw) if y <= 2.9 else {"pos": (x, y, stepz(y)), "yaw": yaw, **kw}
 
 
-shot(0, "st", C([SXC - 0.25, -0.1, 1.62], [SXC - 0.1, 1.9, 1.55], 30), {
+LV = 180.0
+# opening (opening recipe v1): frame 1 looks straight at the surprise party already going wrong. The planner crouches behind
+# the sofa glowing lamp-bright, face above the sofa back, guests either side. Camera under 4 m, lens 27+, pushing in.
+OPEN_WHO = {"planner": P(LV, 2.0, 0, z=-0.42, expr=SHEEPISH, arms=[30, 30]),
+            "c3": P(LV - 1.05, 2.0, 0, z=-0.62, expr=SMILE), "c5": P(LV + 1.1, 2.0, 0, z=-0.62, expr="soft")}
+shot(0, "lv", MV(([LV, -1.9, 1.3], [LV, 2.0, 1.1]), ([LV, -0.9, 1.25], [LV, 2.0, 1.12]), 27, 29), OPEN_WHO,
+     "the surprise party going wrong: the planner lamp-bright behind the sofa, face in frame, pushing in", step=1)
+glow(0, "planner", 4.0)
+glow(0, "c3", 1.5)
+glow(0, "c5", 1.5)
+shot("L01.2", "lv", MV(([LV - 0.6, -0.3, 1.2], [LV, 2.0, 1.12]), ([LV - 0.3, 0.5, 1.16], [LV, 2.0, 1.12]), 36, 40), OPEN_WHO,
+     "closer on the planner's wide eyes, the guests' glow either side", step=1)
+shot("L02", "lv", MV(([LV + 0.2, 0.55, 1.18], [LV, 2.0, 1.14]), ([LV + 0.1, 1.0, 1.16], [LV, 2.0, 1.14]), 46, 52), OPEN_WHO,
+     "tight on the planner's face as his glow brightens over 1.2 s, no flash", step=1)
+glow("L02", "planner", 5.0, 1.2)
+shot("L02.2", "st", C([SXC - 0.25, -0.1, 1.62], [SXC - 0.1, 1.9, 1.55], 30), {
     "visitor": P(SXC - 0.1, 1.9, 0, expr=SMILE, head=[0, 4]),
     "c1": sp(SXC + 1.5, 3.2, 0), "c2": sp(SXC - 1.7, 3.2, 0)},
      "the yellow raincoat on the sunny steps, smug, a gold rim", step=1)
-glow(0, "visitor", 3.0)   # a clear rim on the first frame, then settled
-glow("L01.1", "visitor", 1.5, 1.0)
-shot("L01.2", "st", C([SXC, -3.2, 2.5], [SXC, 3.6, 1.1], 26), {
-    "planner": sp(SXC, 3.6, 0, arms=[80, 80], side=[10, 10], expr=SMILE),
-    "c1": sp(SXC - 2.4, 3.2, 0, arms=[100, 0]), "c2": sp(SXC + 2.4, 3.3, 0, arms=[100, 100]),
-    "c3": sp(SXC - 1.2, 4.2, 0, arms=[100, 0]), "c4": sp(SXC + 1.2, 4.3, 0, arms=[90, 90]),
-    "c5": sp(SXC - 3.3, 4.2, 0), "c6": sp(SXC + 3.4, 3.2, 0), "c7": sp(SXC - 0.5, 2.6, 0, expr="shut"),
-    "c8": sp(SXC + 2.1, 5.2, 0), "c9": sp(SXC - 2.2, 5.3, 0), "c10": sp(SXC + 0.3, 5.1, 0),
-    "visitor": P(SXC - 0.9, 1.7, 180, expr=SMILE)},
-     "wider: a dozen rims and one man lit like a lamp", step=2)
-LV = 180.0
-shot("L02", "lv", C([LV, -2.9, 1.85], [LV, 1.4, 1.0], 27), {
-    "c3": P(LV - 1.0, 2.0, 0, z=-0.6, expr=SMILE), "c4": P(LV + 0.1, 2.05, 0, z=-0.6, expr="soft"),
-    "c5": P(LV + 1.1, 2.0, 0, z=-0.6, expr=SMILE)}, "guests crouched behind the sofa, each faintly glowing")
+glow("L02.2", "visitor", 3.0)
 DX = 220.0
 shot("L03", "ds", C([DX - 1.6, -2.2, 1.5], [DX + 0.1, 1.4, 1.4], 28), {
     "planner": {"pos": (DX, 2.45, 0.18), "yaw": 0, "expr": SMILE, "arms": [40, 40]},
@@ -587,6 +589,21 @@ shot("P03", "hall", LOW, {"abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(
 
 # ------------------------------------------------------------------------------------------------ sound
 sfx = [
+    # the opening: a soft warm hit on "PARTY" (the warning's last word) and a soft whoosh on every hard cut under 5 s
+    {"at": "L01>-0.3", "kind": "hit", "db": -13},
+    {"at": "L01.2-0.05", "kind": "whoosh", "db": -24, "dur": 0.4},
+    {"at": "L02-0.05", "kind": "whoosh", "db": -24, "dur": 0.4},
+    {"at": "L02.2-0.05", "kind": "whoosh", "db": -23, "dur": 0.4},
+    {"at": "L03-0.05", "kind": "whoosh", "db": -24, "dur": 0.4},
+    {"at": "L04-0.05", "kind": "whoosh", "db": -26, "dur": 0.4},
+    {"at": "L05-0.05", "kind": "whoosh", "db": -26, "dur": 0.4},
+    {"at": "L10-0.05", "kind": "whoosh", "db": -25, "dur": 0.5},
+    {"at": "L21-0.05", "kind": "whoosh", "db": -25, "dur": 0.5},
+    {"at": "L37-0.05", "kind": "whoosh", "db": -25, "dur": 0.5},
+    {"at": "L42-0.05", "kind": "whoosh", "db": -25, "dur": 0.5},
+    {"at": "L44", "kind": "thud", "db": -20},
+    {"at": "L67", "kind": "whoosh", "db": -24, "dur": 0.6},
+    {"at": "L76", "kind": "thud", "db": -24},
     {"at": "L29", "kind": "hum_sweep", "db": -18, "dur": 1.6},
     {"at": "P01+0.45", "kind": "thud", "db": -10},
     {"at": "L30", "kind": "hit", "db": -16},
@@ -602,6 +619,30 @@ sfx = [
     {"at": "L70", "kind": "bell", "db": -20, "dur": 2.0},
     {"at": "L80>", "kind": "glide", "db": -17, "dur": 1.2},
 ]
+
+# post punch-ins on the opening cuts and the big beats (no flashes)
+FX = [{"at": "L01.2", "kind": "punch", "dur": 0.45, "zoom": 1.12},
+      {"at": "L02", "kind": "punch", "dur": 0.45, "zoom": 1.14},
+      {"at": "L02.2", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+      {"at": "L03", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+      {"at": "L30", "kind": "shake", "dur": 0.4, "amp": 0.6},
+      {"at": "L44", "kind": "punch", "dur": 0.6, "zoom": 1.1}]
+
+# no shot holds a still picture: every one-key camera gets a slow push, drift or pull-in over its length
+for _i, _s in enumerate(shots):
+    if len(_s["cam"]) == 1 and _i > 2:
+        _t, _loc, _tg, _lens = _s["cam"][0][:4]
+        _roll = _s["cam"][0][4:] 
+        _m = _i % 3
+        _d = [_tg[k] - _loc[k] for k in range(3)]
+        if _m == 0:      # push in 7%
+            _loc2, _tg2, _l2 = [_loc[k] + 0.07 * _d[k] for k in range(3)], list(_tg), _lens
+        elif _m == 1:    # sideways drift 0.28 m with the target held
+            _sg = 1 if (_i // 3) % 2 == 0 else -1
+            _loc2, _tg2, _l2 = [_loc[0] + 0.28 * _sg, _loc[1], _loc[2]], list(_tg), _lens
+        else:            # push in 4% with a slightly longer lens
+            _loc2, _tg2, _l2 = [_loc[k] + 0.04 * _d[k] for k in range(3)], list(_tg), _lens * 1.07
+        _s["cam"] = [[0, _loc, _tg, _lens, *_roll], [1, _loc2, _tg2, round(_l2, 2), *_roll]]
 
 story = {
     "slug": "ep51-fossil-hall",
@@ -628,7 +669,7 @@ story = {
     "shots": shots,
     "acting": acting,
     "cues": cues,
-    "fx": [],
+    "fx": FX,
     "music": {"root": 53, "mode": "lydian", "bpm": 84, "seed": 51,
               "sections": [
                   {"at": 0, "voices": ["bubble", "pad"], "energy": 0.3},
@@ -640,9 +681,10 @@ story = {
                   {"at": "L66", "voices": ["drone", "pad", "piano"], "energy": 0.5, "mode": "major", "root": 53},
                   {"at": "L76", "voices": ["drone", "choir"], "energy": 0.45},
               ]},
-    "sound": {"floor": "stone", "steps_db": -22,
+    "sound": {"floor": "stone", "steps_db": -22, "samples": True, "rev": 2,
               "ambience": [
-                  {"kind": "wind", "from": 0, "to": "L04", "lufs": -40},
+                  {"kind": "room", "from": 0, "to": "L02.2", "lufs": -38},
+                  {"kind": "wind", "from": "L02.2", "to": "L04", "lufs": -40},
                   {"kind": "room", "from": "L05", "to": "L06", "lufs": -38},
                   {"kind": "room", "from": "L09", "to": "end", "lufs": -38},
                   {"kind": "hum", "from": "L10", "to": "L29", "lufs": -44},

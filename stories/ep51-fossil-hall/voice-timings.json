@@ -6,54 +6,50 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "in this town, you glow a little brighter for every secret you keep.",
+   "text": "in this town, never plan a surprise party.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.862,
+   "dur": 2.155,
    "onset": 0.172,
-   "end": 2.655,
+   "end": 1.966,
    "chunks": [
     [
      0.172,
-     0.69
+     0.621
     ],
     [
-     0.741,
-     1.026
+     0.655,
+     1.043
     ],
     [
-     1.026,
-     1.5
-    ],
-    [
-     1.5,
-     2.103
-    ],
-    [
-     2.103,
-     2.655
+     1.043,
+     1.966
     ]
    ]
   },
   "L02": {
-   "text": "nobody can throw a surprise party.",
+   "text": "every secret you keep makes you glow.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
-   "onset": 0.19,
-   "end": 1.69,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
    "chunks": [
     [
-     0.19,
-     0.784
+     0.172,
+     0.638
     ],
     [
-     0.784,
-     1.69
+     0.638,
+     0.914
+    ],
+    [
+     0.914,
+     1.655
     ]
    ]
   },

@@ -698,6 +698,7 @@ def build(kit, story, tl):
     build_stooped(kit, M, ctx)
     build_props(kit, M, ctx)
     build_montage(kit, M, ctx)
+    dress(kit)
     # lights that move with the story
     sun = kit.light("sun", "SUN", (30, -20, 40), 1.0, "#fff0d8", size=0.02)
     kit.aim(sun, (0, 0, 0))
@@ -707,6 +708,61 @@ def build(kit, story, tl):
     ctx["focus"] = bpy.data.objects.new("focus", None)
     kit.link(ctx["focus"])
     return ctx
+
+
+def dress(kit):
+    """CC0 props (assets/props via kit.prop) to fill the bare sets: plants and lamps in the hall and living room, trees in the
+    park and on the street, planters on the steps. Nothing stands where a shot's subject does."""
+    P_ = kit.prop
+    # the fossil hall: plants in the corners and between the back cases, a bin by the door side
+    for (x, y) in ((-13.2, 7.0), (13.2, 7.0), (-13.2, -9.0), (13.2, -9.0), (-4.2, 7.3), (2.4, 7.3)):
+        P_("houseplant_1", (x, y, 0), rot=(x * 37) % 360, height=1.25)
+    P_("trashcan_cylindric", (12.6, 5.6, 0), height=0.7)
+    P_("light_floor1", (-12.4, 6.6, 0), height=1.6)
+    P_("light_floor1", (12.4, -8.4, 0), height=1.6)
+    # the living room (x 180): bookshelf, lamp, plant, a little table
+    X = 180.0
+    P_("bookshelf", (X - 3.0, 2.6, 0), rot=180, height=2.0)
+    P_("houseplant_1", (X + 3.0, 2.5, 0), height=1.3)
+    P_("light_floor1", (X + 2.4, 2.5, 0), height=1.7)
+    P_("table_roundsmall", (X - 2.4, 0.4, 0), height=0.6)
+    # the doorstep (x 220): planter, bushes, trees
+    X = 220.0
+    P_("sub_planter", (X - 1.7, 2.7, 0), height=0.6)
+    P_("sub_planter", (X + 1.7, 2.7, 0), height=0.6)
+    P_("bush_1", (X - 3.4, 2.3, 0), height=0.9)
+    P_("bush_2", (X + 3.4, 2.3, 0), height=0.9)
+    P_("sub_tree_small", (X + 6.0, -0.5, 0), height=4.0)
+    P_("sub_fence_low", (X - 5.0, -2.5, 0), height=0.8)
+    # the park (x 260)
+    X = 260.0
+    P_("commontree_1", (X - 6.0, 8.0, 0), height=6.0)
+    P_("pinetree_1", (X + 9.0, 5.0, 0), height=7.0)
+    P_("bush_1", (X + 2.4, 2.0, 0), height=0.9)
+    P_("flowers", (X - 2.2, 1.5, 0), height=0.5)
+    P_("flowers", (X + 2.6, 1.0, 0), height=0.5)
+    # the restaurant (x 300)
+    X = 300.0
+    P_("houseplant_1", (X - 3.4, 3.0, 0), height=1.4)
+    P_("houseplant_1", (X + 3.4, 3.0, 0), height=1.4)
+    P_("light_floor1", (X + 3.4, -2.4, 0), height=1.6)
+    # the museum steps (x 340)
+    X = 340.0
+    P_("sub_planter", (X - 5.4, 1.2, 0), height=0.7)
+    P_("sub_planter", (X + 5.4, 1.2, 0), height=0.7)
+    P_("sub_tree_large", (X - 8.5, 1.0, 0), height=6.0)
+    P_("sub_tree_small", (X + 8.5, 1.0, 0), height=4.5)
+    # the street at dusk (x 380)
+    X = 380.0
+    for hx in (-6.0, 0.0, 6.0):
+        P_("sub_tree_small", (X + hx + 1.5, 4.0, 0), height=3.8)
+    P_("sub_fence_low", (X - 2.0, -4.2, 0), height=0.8)
+    # the bedroom (x 420)
+    X = 420.0
+    P_("nightstand_1", (X + 0.95, -0.6, 0), height=0.55)
+    P_("light_desk", (X + 0.95, -0.6, 0.55), height=0.35)
+    P_("drawer_1", (X - 1.7, 1.4, 0), height=0.9)
+    P_("houseplant_1", (X + 1.9, 1.7, 0), height=1.1)
 
 
 def build_props(kit, M, ctx):
@@ -907,7 +963,6 @@ def build_montage(kit, M, ctx):
         B(kit, f"lv sofa arm{s}", (0.28, 1.1, 0.7), (X + s * 1.6, 0.9, 0.35), M["sofa"], bevel=0.06)
     B(kit, "lv rug", (3.2, 2.0, 0.02), (X, -1.0, 0.012), M["felt2"])
     B(kit, "lv window", (0.04, 1.8, 1.3), (X + 3.96, 0.0, 1.5), M["window"])
-    B(kit, "lv shelf", (1.6, 0.35, 1.4), (X - 3.0, 2.75, 0.7), M["wood"], bevel=0.02)
     kit.light("lv lamp", "POINT", (X - 1.0, -0.5, 2.2), 70.0, "#ffd9a8", size=0.3)
     kit.light("lv fill", "AREA", (X, 0, 2.55), 120.0, "#a8b4d8", size=3.0)
     # 2 doorstep at dusk (x 220): a brick house front, a door, a step, a path
