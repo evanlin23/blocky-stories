@@ -360,3 +360,11 @@ Fresh idea (added with ep57, so the backlog doesn't run dry): `tide-clock`, a ha
 killed: `ep57-arch-seat` (#28b, replacement for ep44 `sleeper-car`, 2026-11-03), for hard rule 5 (originality), so don't retry this twist. Standards said kill in round 2: the twist is ep47-fitting-room's with the noun swapped (I have no blocks, my cousin carries every thanks he said for me, it ends when I say it aloud), ep49-car-wash has the same turn, and ep37-comet-night shares the opener. The critic also said revise in round 2: the Span (a person as wide as a two-seat arch) read as a sofa at phone size, creature 4. The setting, the favours rule and the Span are free to reuse with a different twist. The full build is in git at commit 405d598 on branch claude/ep57-arch-seat.
 
 killed: the `lookout` redo (2026-11-03), same big idea as ep33 (altitude time), so don't retry this twist. The redo's rule was "In this valley, time runs slower the higher up you are", with my teen brother Ollie climbing the tower twenty years older. ep33's shipping redo already has "one day at the top costs a year below" (hard rule 5). Standards approved round 1, and the critic said revise in both rounds (big idea 8, feeling 6, warm turn 5) with 5 framing and wording fixes left. `lookout` stays held. The tower set and cast are free to reuse with a different big idea. The full build is in git at commit 8592320 on branch claude/redo-lookout.
+
+## Claimed big ideas
+(One line per story: the reveal in a few words. Writers check this before keeping an idea, because parallel sessions converge. ep33 and the lookout redo both picked altitude time.)
+- ep33-chairlift: a day at the top costs a year below (altitude time)
+- ep31-dawn-flight: you fall apart if your family forgets you; they relive one dawn to keep you whole
+- floor-thirteen: forgotten things go to floor 13, and the narrator is what Grandad forgot
+- moving-day (ep17): a house grows to fit the tallest one living in it, and it never fit us; something tall came with us in a box
+- ep32-sitter: if nobody looks at you, your face fades; the faceless sitter creeping nearer is Mum, faded because I stopped looking at her
