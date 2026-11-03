@@ -8,16 +8,12 @@
     "In this lighthouse,"
    ],
    [
-    "after DARK,",
-    "after dark,"
+    "never leave your FLOOR",
+    "never leave your floor"
    ],
    [
-    "everyone stays",
-    "everyone stays"
-   ],
-   [
-    "on their own FLOOR.",
-    "on their own floor."
+    "after DARK.",
+    "after dark."
    ]
   ]
  },
@@ -26,16 +22,30 @@
   "who": "narrator",
   "chunks": [
    [
-    "Ines and I",
-    "Ines and I"
+    "Not even",
+    "Not even"
    ],
    [
-    "were one MONTH in,",
-    "were one month in,"
+    "for a TEXT.",
+    "for a text."
+   ]
+  ]
+ },
+ {
+  "id": "L02b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My girlfriend, Ines,",
+    "My girlfriend, Ines,"
    ],
    [
-    "on our first trip AWAY.",
-    "on our first trip away."
+    "and I",
+    "and I"
+   ],
+   [
+    "were one MONTH in.",
+    "were one month in."
    ]
   ]
  },
@@ -44,24 +54,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "The lighthouse was built",
-    "The lighthouse was built"
-   ],
-   [
-    "for a crew of TWO:",
-    "for a crew of two:"
+    "The tower slept TWO:",
+    "The tower slept two:"
    ],
    [
     "her room HALFWAY up,",
     "her room halfway up,"
    ],
    [
-    "my camp bed",
-    "my camp bed"
-   ],
-   [
-    "in the LAMP room.",
-    "in the lamp room."
+    "mine at the TOP.",
+    "mine at the top."
    ]
   ]
  },
@@ -110,16 +112,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "We said GOODNIGHT",
+    "We said goodnight",
     "We said goodnight"
    ],
    [
-    "by TEXT,",
-    "by text,"
+    "by TEXT.",
+    "by text."
    ],
    [
-    "three turns APART.",
-    "three turns apart."
+    "Every night after,",
+    "Every night after,"
+   ],
+   [
+    "I woke up",
+    "I woke up"
+   ],
+   [
+    "at the RAIL.",
+    "at the rail."
    ]
   ]
  },
@@ -128,12 +138,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I typed,",
-    "I typed,"
+    "That first NIGHT,",
+    "That first night,"
    ],
    [
-    "\"LOVE you,\"",
-    "\"love you,\""
+    "I typed, \"LOVE you,\"",
+    "I typed, \"love you,\""
    ],
    [
     "then DELETED it.",
@@ -192,66 +202,16 @@
   ]
  },
  {
-  "id": "L11",
-  "who": "narrator",
-  "chunks": [
-   [
-    "And the stairs between us",
-    "And the stairs between us"
-   ],
-   [
-    "went DARK.",
-    "went dark."
-   ]
-  ]
- },
- {
-  "id": "L12",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The stairs were STEEP,",
-    "The stairs were steep,"
-   ],
-   [
-    "and the storm door",
-    "and the storm door"
-   ],
-   [
-    "at the BOTTOM",
-    "at the bottom"
-   ],
-   [
-    "opened onto the SEA.",
-    "opened onto the sea."
-   ]
-  ]
- },
- {
-  "id": "L13",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The lamp room door",
-    "The lamp room door"
-   ],
-   [
-    "had a little",
-    "had a little"
-   ],
-   [
-    "brass BOLT.",
-    "brass bolt."
-   ]
-  ]
- },
- {
   "id": "L14",
   "who": "narrator",
   "chunks": [
    [
-    "I slid it SHUT",
-    "I slid it shut"
+    "I BOLTED",
+    "I bolted"
+   ],
+   [
+    "the lamp room DOOR",
+    "the lamp room door"
    ],
    [
     "and fell asleep",
@@ -290,8 +250,8 @@
     "at the rail,"
    ],
    [
-    "torch in my HAND,",
-    "torch in my hand,"
+    "flashlight in my HAND,",
+    "flashlight in my hand,"
    ],
    [
     "looking DOWN.",
@@ -442,6 +402,28 @@
    [
     "near the BEACH.",
     "near the beach."
+   ]
+  ]
+ },
+ {
+  "id": "L25b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The only sand",
+    "The only sand"
+   ],
+   [
+    "was under the storm DOOR,",
+    "was under the storm door,"
+   ],
+   [
+    "the one that opened",
+    "the one that opened"
+   ],
+   [
+    "onto the SEA.",
+    "onto the sea."
    ]
   ]
  },
@@ -604,8 +586,8 @@
     "before I knew"
    ],
    [
-    "I'd got UP.",
-    "I'd got up."
+    "I'd gotten UP.",
+    "I'd gotten up."
    ]
   ]
  },
@@ -790,6 +772,24 @@
   ]
  },
  {
+  "id": "L46b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In the MORNING,",
+    "In the morning,"
+   ],
+   [
+    "there was sand",
+    "there was sand"
+   ],
+   [
+    "in my BED.",
+    "in my bed."
+   ]
+  ]
+ },
+ {
   "id": "L47",
   "who": "narrator",
   "chunks": [
@@ -812,8 +812,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Torch in my HAND.",
-    "Torch in my hand."
+    "Flashlight in my HAND.",
+    "Flashlight in my hand."
    ],
    [
     "Leaning over",
@@ -863,8 +863,8 @@
     "Its flat face"
    ],
    [
-    "filled my TORCH beam,",
-    "filled my torch beam,"
+    "filled my FLASHLIGHT beam,",
+    "filled my flashlight beam,"
    ],
    [
     "its round mouth",
@@ -1145,8 +1145,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "ASLEEP,",
-    "asleep,"
+    "FAST ASLEEP,",
+    "fast asleep,"
    ],
    [
     "walking DOWN",

@@ -1,6 +1,6 @@
 {
  "slug": "ep28-lamp-room",
- "title": "The lighthouse had one rule: after dark, everyone stays on their own floor.",
+ "title": "After Dark, Nobody Leaves Their FLOOR 🔦",
  "made_for_kids": false,
  "premise": "On a first trip away together, a month in, Ines and I rent an old lighthouse for a stormy February week. She sleeps halfway up and I sleep in the lamp room at the top. Every night her text wakes me and I'm at the stair rail, and at the foot of the stairs a figure in a yellow oilskin looks straight up at me with its face on the top of its head. Each night it's nearer.",
  "twist": "The one on the stairs was me. I sleepwalk a turn further down toward the storm door every night while the oilskin figure comes up a turn each time I come down, and Ines has been texting only to wake me. The last text, her old question as a joke, is answered with one word: us.",
@@ -24,7 +24,8 @@
   "fog_start": 2.5,
   "sky": "#0d1220",
   "sky_strength": 1.0,
-  "exposure": 0.0
+  "exposure": 0.0,
+  "flash_safe": true
  },
  "grade": {
   "shadows": [
@@ -46,9 +47,10 @@
  },
  "rain_shots": [
   "S05",
-  "S20",
-  "S39",
-  "S72"
+  "S15",
+  "S36",
+  "S37",
+  "S71"
  ],
  "phonemes": {
   "Ines": "inˈɛs"
@@ -107,20 +109,16 @@
      "In this lighthouse,"
     ],
     [
-     "after DARK,",
-     "after dark,"
+     "never leave",
+     "never leave"
     ],
     [
-     "everyone stays",
-     "everyone stays"
+     "your FLOOR",
+     "your floor"
     ],
     [
-     "on their",
-     "on their"
-    ],
-    [
-     "own FLOOR.",
-     "own floor."
+     "after DARK.",
+     "after dark."
     ]
    ]
   },
@@ -129,24 +127,34 @@
    "who": "narrator",
    "chunks": [
     [
-     "Ines and I",
-     "Ines and I"
+     "Not even",
+     "Not even"
+    ],
+    [
+     "for a TEXT.",
+     "for a text."
+    ]
+   ]
+  },
+  {
+   "id": "L02b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "My girlfriend, Ines,",
+     "My girlfriend, Ines,"
+    ],
+    [
+     "and I",
+     "and I"
     ],
     [
      "were one",
      "were one"
     ],
     [
-     "MONTH in,",
-     "month in,"
-    ],
-    [
-     "on our",
-     "on our"
-    ],
-    [
-     "first trip AWAY.",
-     "first trip away."
+     "MONTH in.",
+     "month in."
     ]
    ]
   },
@@ -155,20 +163,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The lighthouse",
-     "The lighthouse"
+     "The tower",
+     "The tower"
     ],
     [
-     "was built",
-     "was built"
-    ],
-    [
-     "for a",
-     "for a"
-    ],
-    [
-     "crew of TWO:",
-     "crew of two:"
+     "slept TWO:",
+     "slept two:"
     ],
     [
      "her room",
@@ -179,16 +179,12 @@
      "halfway up,"
     ],
     [
-     "my camp bed",
-     "my camp bed"
+     "mine at",
+     "mine at"
     ],
     [
-     "in the",
-     "in the"
-    ],
-    [
-     "LAMP room.",
-     "lamp room."
+     "the TOP.",
+     "the top."
     ]
    ]
   },
@@ -245,16 +241,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "We said GOODNIGHT",
+     "We said goodnight",
      "We said goodnight"
     ],
     [
-     "by TEXT,",
-     "by text,"
+     "by TEXT.",
+     "by text."
     ],
     [
-     "three turns APART.",
-     "three turns apart."
+     "Every night after,",
+     "Every night after,"
+    ],
+    [
+     "I woke up",
+     "I woke up"
+    ],
+    [
+     "at the RAIL.",
+     "at the rail."
     ]
    ]
   },
@@ -262,6 +266,10 @@
    "id": "L07",
    "who": "narrator",
    "chunks": [
+    [
+     "That first NIGHT,",
+     "That first night,"
+    ],
     [
      "I typed,",
      "I typed,"
@@ -343,91 +351,20 @@
    ]
   },
   {
-   "id": "L11",
-   "who": "narrator",
-   "chunks": [
-    [
-     "And the",
-     "And the"
-    ],
-    [
-     "stairs between us",
-     "stairs between us"
-    ],
-    [
-     "went DARK.",
-     "went dark."
-    ]
-   ],
-   "gap": 0.9
-  },
-  {
-   "id": "L12",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The stairs",
-     "The stairs"
-    ],
-    [
-     "were STEEP,",
-     "were steep,"
-    ],
-    [
-     "and the",
-     "and the"
-    ],
-    [
-     "storm door",
-     "storm door"
-    ],
-    [
-     "at the BOTTOM",
-     "at the bottom"
-    ],
-    [
-     "opened onto",
-     "opened onto"
-    ],
-    [
-     "the SEA.",
-     "the sea."
-    ]
-   ]
-  },
-  {
-   "id": "L13",
-   "who": "narrator",
-   "chunks": [
-    [
-     "The lamp",
-     "The lamp"
-    ],
-    [
-     "room door",
-     "room door"
-    ],
-    [
-     "had a little",
-     "had a little"
-    ],
-    [
-     "brass BOLT.",
-     "brass bolt."
-    ]
-   ]
-  },
-  {
    "id": "L14",
    "who": "narrator",
    "chunks": [
     [
-     "I slid",
-     "I slid"
+     "I BOLTED",
+     "I bolted"
     ],
     [
-     "it SHUT",
-     "it shut"
+     "the lamp",
+     "the lamp"
+    ],
+    [
+     "room DOOR",
+     "room door"
     ],
     [
      "and fell asleep",
@@ -437,7 +374,8 @@
      "to the WAVES.",
      "to the waves."
     ]
-   ]
+   ],
+   "gap": 0.6
   },
   {
    "id": "L15",
@@ -466,8 +404,8 @@
      "at the rail,"
     ],
     [
-     "torch in",
-     "torch, in"
+     "flashlight in",
+     "flashlight in"
     ],
     [
      "my HAND,",
@@ -650,6 +588,36 @@
     [
      "near the BEACH.",
      "near the beach."
+    ]
+   ]
+  },
+  {
+   "id": "L25b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The only sand",
+     "The only sand"
+    ],
+    [
+     "was under",
+     "was under"
+    ],
+    [
+     "the storm DOOR,",
+     "the storm door,"
+    ],
+    [
+     "the one",
+     "the one"
+    ],
+    [
+     "that opened",
+     "that opened"
+    ],
+    [
+     "onto the SEA.",
+     "onto the sea."
     ]
    ]
   },
@@ -849,8 +817,8 @@
      "before I knew"
     ],
     [
-     "I'd got UP.",
-     "I'd got up."
+     "I'd gotten UP.",
+     "I'd gotten up."
     ]
    ]
   },
@@ -1080,6 +1048,24 @@
    ]
   },
   {
+   "id": "L46b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "In the MORNING,",
+     "In the morning,"
+    ],
+    [
+     "there was sand",
+     "there was sand"
+    ],
+    [
+     "in my BED.",
+     "in my bed."
+    ]
+   ]
+  },
+  {
    "id": "L47",
    "who": "narrator",
    "chunks": [
@@ -1102,8 +1088,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Torch in",
-     "A torch in"
+     "Flashlight in",
+     "Flashlight in"
     ],
     [
      "my HAND.",
@@ -1169,8 +1155,8 @@
      "filled my"
     ],
     [
-     "TORCH beam,",
-     "torch beam,"
+     "FLASHLIGHT beam,",
+     "flashlight beam,"
     ],
     [
      "its round mouth",
@@ -1693,35 +1679,35 @@
     [
      0,
      [
-      0.0,
-      -1.1,
-      1.2
+      -0.1,
+      0.55,
+      17.9
      ],
      [
-      0.0,
-      0.65,
-      1.5
+      2.3,
+      0.15,
+      12.6
      ],
-     16
+     12
     ],
     [
      1,
      [
-      0.0,
-      -1.1,
-      1.2
+      0.3,
+      0.45,
+      17.7
      ],
      [
-      0.0,
-      0.65,
-      1.55
+      2.3,
+      0.15,
+      12.9
      ],
-     18
+     14
     ]
    ],
-   "hand": 0.003,
+   "hand": 0.002,
    "step": 2,
-   "what": "S01: late afternoon, Ines and me at the stair foot, faces lit"
+   "what": "S01: me at the top rail, both lit lamps in frame, push in down the well"
   },
   {
    "id": "S02",
@@ -1729,22 +1715,36 @@
     [
      0,
      [
-      -0.9,
-      0.0,
-      13.8
+      -0.5,
+      -0.5,
+      1.0
      ],
      [
-      2.2,
-      0.0,
-      13.8
+      0.9,
+      1.2,
+      0.3
      ],
-     11
+     18
+    ],
+    [
+     1,
+     [
+      -0.3,
+      -0.2,
+      0.95
+     ],
+     [
+      0.9,
+      1.2,
+      0.3
+     ],
+     18
     ]
    ],
    "hand": 0.002,
    "step": 2,
-   "what": "from the foot straight up the well: only two warm lamps lit, dim stone between",
-   "at": "L01.1"
+   "what": "S02: punch in to the stair foot: sand has crept onto the bottom step",
+   "at": "L02"
   },
   {
    "id": "S03",
@@ -1753,30 +1753,7 @@
      0,
      [
       0.0,
-      -1.1,
-      1.2
-     ],
-     [
-      0.0,
-      0.65,
-      1.5
-     ],
-     22
-    ]
-   ],
-   "hand": 0.003,
-   "step": 2,
-   "what": "back to us, looking up",
-   "at": "L01.3"
-  },
-  {
-   "id": "S04",
-   "cam": [
-    [
-     0,
-     [
-      0.0,
-      -1.1,
+      -1.65,
       1.55
      ],
      [
@@ -1784,53 +1761,16 @@
       0.65,
       1.5
      ],
-     21
+     14
     ]
    ],
-   "hand": 0.004,
+   "hand": 0.003,
    "step": 2,
-   "what": "close two-shot at the stair foot, a hand's gap between our shoulders",
-   "at": "L02"
+   "what": "S02b: two-shot at the stair foot, a hand's gap between our shoulders",
+   "at": "L02b"
   },
   {
-   "id": "S05",
-   "cam": [
-    [
-     0,
-     [
-      -4,
-      -30,
-      6.5
-     ],
-     [
-      0,
-      0,
-      10.5
-     ],
-     20
-    ],
-    [
-     1,
-     [
-      -3.6,
-      -28,
-      7.5
-     ],
-     [
-      0,
-      0,
-      10.5
-     ],
-     20
-    ]
-   ],
-   "hand": 0.008,
-   "step": 2,
-   "what": "the lighthouse on the cliff top, rain starting",
-   "at": "L03"
-  },
-  {
-   "id": "S06",
+   "id": "S04",
    "cam": [
     [
      0,
@@ -1849,11 +1789,11 @@
    ],
    "hand": 0.008,
    "step": 2,
-   "what": "Ines at her blue door halfway up, under her lamp",
-   "at": "L03.4"
+   "what": "S03: Ines at her blue door halfway up, under her lamp",
+   "at": "L03"
   },
   {
-   "id": "S07",
+   "id": "S05",
    "cam": [
     [
      0,
@@ -1872,11 +1812,11 @@
    ],
    "hand": 0.008,
    "step": 2,
-   "what": "my camp bed beside the dead lens",
-   "at": "L03.6"
+   "what": "S03b: my cot beside the dead lens, rain starting",
+   "at": "L03.4"
   },
   {
-   "id": "S08",
+   "id": "S06",
    "cam": [
     [
      0,
@@ -1899,7 +1839,7 @@
    "at": "L04"
   },
   {
-   "id": "S09",
+   "id": "S07",
    "cam": [
     [
      0,
@@ -1922,7 +1862,7 @@
    "at": "L05"
   },
   {
-   "id": "S10",
+   "id": "S08",
    "cam": [
     [
      0,
@@ -1945,30 +1885,44 @@
    "at": "L06"
   },
   {
-   "id": "S11",
+   "id": "S09",
    "cam": [
     [
      0,
      [
-      -1.3,
-      -1.6,
-      19.400000000000002
+      2.3,
+      0.55,
+      17.400000000000002
      ],
      [
-      -1.3,
       0.4,
-      19.18
+      -0.1,
+      14.000000000000002
      ],
-     32
+     26
+    ],
+    [
+     1,
+     [
+      2.2,
+      0.5,
+      17.35
+     ],
+     [
+      0.4,
+      -0.1,
+      13.800000000000002
+     ],
+     24
     ]
    ],
-   "hand": 0.008,
+   "hand": 0.004,
    "step": 2,
-   "what": "me in the camp bed, phone glow on mine",
+   "what": "S06b: over my shoulder at the top rail in storm blue, flashlight in hand, only the well and rail",
    "at": "L06.2"
   },
   {
-   "id": "S12",
+   "id": "S10",
    "cam": [
     [
      0,
@@ -1991,7 +1945,7 @@
    "at": "L07"
   },
   {
-   "id": "S13",
+   "id": "S11",
    "cam": [
     [
      0,
@@ -2014,7 +1968,7 @@
    "at": "L08"
   },
   {
-   "id": "S14",
+   "id": "S12",
    "cam": [
     [
      0,
@@ -2037,7 +1991,7 @@
    "at": "L09"
   },
   {
-   "id": "S15",
+   "id": "S13",
    "cam": [
     [
      0,
@@ -2060,76 +2014,7 @@
    "at": "L10"
   },
   {
-   "id": "S16",
-   "cam": [
-    [
-     0,
-     [
-      1.3,
-      0.0,
-      16.950000000000003
-     ],
-     [
-      0.0,
-      0.8,
-      1.0
-     ],
-     22
-    ]
-   ],
-   "hand": 0.002,
-   "step": 1,
-   "what": "the empty well in faint blue window light",
-   "at": "L11"
-  },
-  {
-   "id": "S17",
-   "cam": [
-    [
-     0,
-     [
-      0.0,
-      -0.4,
-      1.0
-     ],
-     [
-      0.0,
-      2.0,
-      0.7
-     ],
-     20
-    ]
-   ],
-   "hand": 0.008,
-   "step": 2,
-   "what": "the stair foot at night: slate, storm door, sand",
-   "at": "L12"
-  },
-  {
-   "id": "S18",
-   "cam": [
-    [
-     0,
-     [
-      0.2,
-      -0.9,
-      16.9
-     ],
-     [
-      2.3,
-      0.15,
-      16.3
-     ],
-     30
-    ]
-   ],
-   "hand": 0.008,
-   "step": 2,
-   "what": "the oak door from the landing",
-   "at": "L13"
-  },
-  {
-   "id": "S19",
+   "id": "S14",
    "cam": [
     [
      0,
@@ -2144,15 +2029,29 @@
       16.34
      ],
      40
+    ],
+    [
+     1,
+     [
+      0.9,
+      0.34,
+      16.34
+     ],
+     [
+      2.4,
+      0.34,
+      16.34
+     ],
+     40
     ]
    ],
    "hand": 0,
    "step": 2,
-   "what": "the bolt plate: two strokes",
-   "at": "L13>-0.35"
+   "what": "S14 (lore plant): the bolt plate, two strokes, held from the first word, a slow drift",
+   "at": "L14"
   },
   {
-   "id": "S20",
+   "id": "S15",
    "cam": [
     [
      0,
@@ -2171,11 +2070,11 @@
    ],
    "hand": 0.008,
    "step": 2,
-   "what": "me in the camp bed, rain on the glass",
-   "at": "L14>-0.3"
+   "what": "S14b: me in the camp bed, rain on the glass",
+   "at": "L14.4"
   },
   {
-   "id": "S21",
+   "id": "S16",
    "cam": [
     [
      0,
@@ -2198,7 +2097,7 @@
    "at": "L15"
   },
   {
-   "id": "S22",
+   "id": "S17",
    "cam": [
     [
      0,
@@ -2221,7 +2120,7 @@
    "at": "L16"
   },
   {
-   "id": "S23",
+   "id": "S18",
    "cam": [
     [
      0,
@@ -2244,7 +2143,7 @@
    "at": "L17"
   },
   {
-   "id": "S24",
+   "id": "S19",
    "cam": [
     [
      0,
@@ -2267,7 +2166,7 @@
    "at": "L18"
   },
   {
-   "id": "S25",
+   "id": "S20",
    "cam": [
     [
      0,
@@ -2290,7 +2189,7 @@
    "at": "L19"
   },
   {
-   "id": "S26",
+   "id": "S21",
    "cam": [
     [
      0,
@@ -2327,7 +2226,7 @@
    "at": "L20"
   },
   {
-   "id": "S27",
+   "id": "S22",
    "cam": [
     [
      0,
@@ -2350,7 +2249,7 @@
    "at": "L21"
   },
   {
-   "id": "S28",
+   "id": "S23",
    "cam": [
     [
      0,
@@ -2373,7 +2272,7 @@
    "at": "L21.2"
   },
   {
-   "id": "S29",
+   "id": "S24",
    "cam": [
     [
      0,
@@ -2396,7 +2295,7 @@
    "at": "L22"
   },
   {
-   "id": "S30",
+   "id": "S25",
    "cam": [
     [
      0,
@@ -2419,7 +2318,7 @@
    "at": "L23"
   },
   {
-   "id": "S31",
+   "id": "S26",
    "cam": [
     [
      0,
@@ -2442,7 +2341,7 @@
    "at": "L24"
   },
   {
-   "id": "S32",
+   "id": "S27",
    "cam": [
     [
      0,
@@ -2465,7 +2364,81 @@
    "at": "L25"
   },
   {
-   "id": "S33",
+   "id": "S28",
+   "cam": [
+    [
+     0,
+     [
+      0.0,
+      -0.9,
+      1.15
+     ],
+     [
+      0.0,
+      2.0,
+      0.95
+     ],
+     20
+    ],
+    [
+     1,
+     [
+      0.0,
+      -0.5,
+      1.1
+     ],
+     [
+      0.0,
+      2.0,
+      0.9
+     ],
+     20
+    ]
+   ],
+   "hand": 0.002,
+   "step": 2,
+   "what": "S25b: the stair foot by day, the storm door shuddering, the drift under it",
+   "at": "L25b"
+  },
+  {
+   "id": "S29",
+   "cam": [
+    [
+     0,
+     [
+      0.2,
+      0.7,
+      0.75
+     ],
+     [
+      0.0,
+      1.95,
+      0.02
+     ],
+     26
+    ],
+    [
+     1,
+     [
+      0.2,
+      1.0,
+      0.7
+     ],
+     [
+      0.0,
+      1.95,
+      0.02
+     ],
+     26
+    ]
+   ],
+   "hand": 0.002,
+   "step": 2,
+   "what": "S25c: punch in on the drift, one faint sock-shaped scuff in it",
+   "at": "L25b.5"
+  },
+  {
+   "id": "S30",
    "cam": [
     [
      0,
@@ -2488,7 +2461,7 @@
    "at": "L26"
   },
   {
-   "id": "S34",
+   "id": "S31",
    "cam": [
     [
      0,
@@ -2511,7 +2484,7 @@
    "at": "L27"
   },
   {
-   "id": "S35",
+   "id": "S32",
    "cam": [
     [
      0,
@@ -2534,7 +2507,7 @@
    "at": "L28"
   },
   {
-   "id": "S36",
+   "id": "S33",
    "cam": [
     [
      0,
@@ -2557,7 +2530,7 @@
    "at": "L29"
   },
   {
-   "id": "S37",
+   "id": "S34",
    "cam": [
     [
      0,
@@ -2580,7 +2553,7 @@
    "at": "L29.3"
   },
   {
-   "id": "S38",
+   "id": "S35",
    "cam": [
     [
      0,
@@ -2603,7 +2576,7 @@
    "at": "L30"
   },
   {
-   "id": "S39",
+   "id": "S36",
    "cam": [
     [
      0,
@@ -2640,7 +2613,30 @@
    "at": "L31"
   },
   {
-   "id": "S40",
+   "id": "S37",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      1.9,
+      19.3
+     ],
+     [
+      0.0,
+      -2.5,
+      19.400000000000002
+     ],
+     24
+    ]
+   ],
+   "hand": 0.012,
+   "step": 2,
+   "what": "S31b: the lamp-room glass trembling under the rain, the dead lens catching a slow glint",
+   "at": "L31b"
+  },
+  {
+   "id": "S38",
    "cam": [
     [
      0,
@@ -2663,7 +2659,7 @@
    "at": "L32"
   },
   {
-   "id": "S41",
+   "id": "S39",
    "cam": [
     [
      0,
@@ -2686,7 +2682,7 @@
    "at": "L33"
   },
   {
-   "id": "S42",
+   "id": "S40",
    "cam": [
     [
      0,
@@ -2709,7 +2705,7 @@
    "at": "L34"
   },
   {
-   "id": "S43",
+   "id": "S41",
    "cam": [
     [
      0,
@@ -2732,7 +2728,7 @@
    "at": "L35"
   },
   {
-   "id": "S44",
+   "id": "S42",
    "cam": [
     [
      0,
@@ -2755,7 +2751,7 @@
    "at": "L36"
   },
   {
-   "id": "S45",
+   "id": "S43",
    "cam": [
     [
      0,
@@ -2778,7 +2774,7 @@
    "at": "L37"
   },
   {
-   "id": "S46",
+   "id": "S44",
    "cam": [
     [
      0,
@@ -2801,7 +2797,7 @@
    "at": "L37.2"
   },
   {
-   "id": "S47",
+   "id": "S45",
    "cam": [
     [
      0,
@@ -2824,7 +2820,7 @@
    "at": "L38"
   },
   {
-   "id": "S48",
+   "id": "S46",
    "cam": [
     [
      0,
@@ -2847,7 +2843,7 @@
    "at": "L39"
   },
   {
-   "id": "S49",
+   "id": "S47",
    "cam": [
     [
      0,
@@ -2870,7 +2866,7 @@
    "at": "L40"
   },
   {
-   "id": "S50",
+   "id": "S48",
    "cam": [
     [
      0,
@@ -2893,7 +2889,7 @@
    "at": "L41"
   },
   {
-   "id": "S51",
+   "id": "S49",
    "cam": [
     [
      0,
@@ -2916,7 +2912,7 @@
    "at": "L42"
   },
   {
-   "id": "S52",
+   "id": "S50",
    "cam": [
     [
      0,
@@ -2939,7 +2935,7 @@
    "at": "L43"
   },
   {
-   "id": "S53",
+   "id": "S51",
    "cam": [
     [
      0,
@@ -2962,7 +2958,7 @@
    "at": "L44"
   },
   {
-   "id": "S54",
+   "id": "S52",
    "cam": [
     [
      0,
@@ -2999,7 +2995,7 @@
    "at": "L45"
   },
   {
-   "id": "S55",
+   "id": "S53",
    "cam": [
     [
      0,
@@ -3022,7 +3018,30 @@
    "at": "L46"
   },
   {
-   "id": "S56",
+   "id": "S54",
+   "cam": [
+    [
+     0,
+     [
+      0.6,
+      -2.1,
+      18.7
+     ],
+     [
+      -1.0,
+      -0.85,
+      18.150000000000002
+     ],
+     26
+    ]
+   ],
+   "hand": 0.003,
+   "step": 2,
+   "what": "S46b: the foot of my cot by day, sand in the blanket, my sandy socks beside it",
+   "at": "L46b"
+  },
+  {
+   "id": "S55",
    "cam": [
     [
      0,
@@ -3045,7 +3064,7 @@
    "at": "L47"
   },
   {
-   "id": "S57",
+   "id": "S56",
    "cam": [
     [
      0,
@@ -3068,7 +3087,7 @@
    "at": "L48"
   },
   {
-   "id": "S58",
+   "id": "S57",
    "cam": [
     [
      0,
@@ -3101,11 +3120,11 @@
    ],
    "hand": 0.004,
    "step": 1,
-   "what": "the torch cone tilting down the well",
+   "what": "the flashlight cone tilting down the well",
    "at": "L49"
   },
   {
-   "id": "S59",
+   "id": "S58",
    "cam": [
     [
      0,
@@ -3128,7 +3147,7 @@
    "at": "P01"
   },
   {
-   "id": "S60",
+   "id": "S59",
    "cam": [
     [
      0,
@@ -3151,7 +3170,7 @@
    "at": "L50"
   },
   {
-   "id": "S61",
+   "id": "S60",
    "cam": [
     [
      0,
@@ -3188,7 +3207,7 @@
    "at": "L51"
   },
   {
-   "id": "S62",
+   "id": "S61",
    "cam": [
     [
      0,
@@ -3211,7 +3230,7 @@
    "at": "L52"
   },
   {
-   "id": "S63",
+   "id": "S62",
    "cam": [
     [
      0,
@@ -3234,7 +3253,7 @@
    "at": "L53"
   },
   {
-   "id": "S64",
+   "id": "S63",
    "cam": [
     [
      0,
@@ -3257,7 +3276,7 @@
    "at": "L54"
   },
   {
-   "id": "S65",
+   "id": "S64",
    "cam": [
     [
      0,
@@ -3280,7 +3299,7 @@
    "at": "L54.1"
   },
   {
-   "id": "S66",
+   "id": "S65",
    "cam": [
     [
      0,
@@ -3303,7 +3322,7 @@
    "at": "L54.2"
   },
   {
-   "id": "S67",
+   "id": "S66",
    "cam": [
     [
      0,
@@ -3326,7 +3345,7 @@
    "at": "L54.4"
   },
   {
-   "id": "S68",
+   "id": "S67",
    "cam": [
     [
      0,
@@ -3349,7 +3368,7 @@
    "at": "L55"
   },
   {
-   "id": "S69",
+   "id": "S68",
    "cam": [
     [
      0,
@@ -3372,7 +3391,7 @@
    "at": "L56"
   },
   {
-   "id": "S70",
+   "id": "S69",
    "cam": [
     [
      0,
@@ -3395,7 +3414,7 @@
    "at": "L57"
   },
   {
-   "id": "S71",
+   "id": "S70",
    "cam": [
     [
      0,
@@ -3418,7 +3437,7 @@
    "at": "L58"
   },
   {
-   "id": "S72",
+   "id": "S71",
    "cam": [
     [
      0,
@@ -3441,7 +3460,7 @@
    "at": "L59"
   },
   {
-   "id": "S73",
+   "id": "S72",
    "cam": [
     [
      0,
@@ -3464,7 +3483,7 @@
    "at": "L60"
   },
   {
-   "id": "S74",
+   "id": "S73",
    "cam": [
     [
      0,
@@ -3487,7 +3506,7 @@
    "at": "L61"
   },
   {
-   "id": "S75",
+   "id": "S74",
    "cam": [
     [
      0,
@@ -3510,7 +3529,7 @@
    "at": "L62"
   },
   {
-   "id": "S76",
+   "id": "S75",
    "cam": [
     [
      0,
@@ -3533,30 +3552,30 @@
    "at": "L63"
   },
   {
-   "id": "S77",
+   "id": "S76",
    "cam": [
     [
      0,
      [
-      -1.52,
-      -0.7,
-      9.05
+      -0.32,
+      -0.6,
+      9.2
      ],
      [
-      -1.77,
+      -1.92,
       -0.0,
-      7.8
+      8.2
      ],
-     30
+     28
     ]
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "her coat over my feet",
+   "what": "S65: pulled back: my legs and socks on the step under her camel coat, her hand on it",
    "at": "L64"
   },
   {
-   "id": "S78",
+   "id": "S77",
    "cam": [
     [
      0,
@@ -3579,7 +3598,7 @@
    "at": "L65"
   },
   {
-   "id": "S79",
+   "id": "S78",
    "cam": [
     [
      0,
@@ -3602,7 +3621,7 @@
    "at": "L66"
   },
   {
-   "id": "S80",
+   "id": "S79",
    "cam": [
     [
      0,
@@ -3625,7 +3644,7 @@
    "at": "L67"
   },
   {
-   "id": "S81",
+   "id": "S80",
    "cam": [
     [
      0,
@@ -3662,7 +3681,7 @@
    "at": "L68"
   },
   {
-   "id": "S82",
+   "id": "S81",
    "cam": [
     [
      0,
@@ -3685,7 +3704,7 @@
    "at": "L69"
   },
   {
-   "id": "S83",
+   "id": "S82",
    "cam": [
     [
      0,
@@ -3708,7 +3727,7 @@
    "at": "L70"
   },
   {
-   "id": "S84",
+   "id": "S83",
    "cam": [
     [
      0,
@@ -3731,7 +3750,7 @@
    "at": "L71"
   },
   {
-   "id": "S85",
+   "id": "S84",
    "cam": [
     [
      0,
@@ -3754,7 +3773,7 @@
    "at": "L72"
   },
   {
-   "id": "S86",
+   "id": "S85",
    "cam": [
     [
      0,
@@ -3777,7 +3796,7 @@
    "at": "L73"
   },
   {
-   "id": "S87",
+   "id": "S86",
    "cam": [
     [
      0,
@@ -3800,7 +3819,7 @@
    "at": "L74"
   },
   {
-   "id": "S88",
+   "id": "S87",
    "cam": [
     [
      0,
@@ -3823,7 +3842,7 @@
    "at": "L75"
   },
   {
-   "id": "S89",
+   "id": "S88",
    "cam": [
     [
      0,
@@ -3851,9 +3870,9 @@
    {
     "at": 0,
     "pos": [
-     0.42,
-     0.65,
-     0
+     1.35,
+     1.0,
+     15.400000000000002
     ],
     "blend": 0,
     "hidden": false,
@@ -3867,32 +3886,32 @@
     ],
     "head": [
      0,
-     -10
+     24
     ],
-    "lean": 0,
+    "lean": 8,
     "tremble": 0,
     "sit": false,
-    "blink": true,
-    "expr": "smirk",
-    "yaw": 0
+    "blink": false,
+    "expr": "worried",
+    "yaw": -40
    },
    {
-    "at": "L01.1",
+    "at": "L02",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L01.3",
+    "at": "L02b",
     "pos": [
-     0.42,
-     0.65,
-     0
+     1.35,
+     1.0,
+     15.400000000000002
     ]
    },
    {
-    "at": "L01.3",
+    "at": "L02b",
     "pos": [
-     0.42,
+     0.75,
      0.65,
      0
     ],
@@ -3918,21 +3937,7 @@
     "yaw": 0
    },
    {
-    "at": "L02",
-    "pos": [
-     0.38,
-     0.65,
-     0
-    ],
-    "expr": "smirk",
-    "head": [
-     0,
-     0
-    ],
-    "blend": 0.2
-   },
-   {
-    "at": "L02.3",
+    "at": "L02b.2",
     "head": [
      40,
      0
@@ -3947,7 +3952,7 @@
    {
     "at": "L04",
     "pos": [
-     0.38,
+     0.75,
      0.65,
      0
     ]
@@ -4037,6 +4042,42 @@
    {
     "at": "L06.2",
     "pos": [
+     1.62,
+     0.0,
+     15.400000000000002
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     20
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     30
+    ],
+    "lean": 10,
+    "tremble": 0,
+    "sit": false,
+    "blink": false,
+    "expr": "worried",
+    "yaw": -90
+   },
+   {
+    "at": "L07",
+    "pos": [
+     1.62,
+     0.0,
+     15.400000000000002
+    ]
+   },
+   {
+    "at": "L07",
+    "pos": [
      -1.3,
      0.55,
      17.810000000000002
@@ -4059,13 +4100,8 @@
     "tremble": 0,
     "sit": true,
     "blink": true,
-    "expr": "warm",
-    "yaw": 0
-   },
-   {
-    "at": "L07",
     "expr": "worried",
-    "blend": 0.2
+    "yaw": 0
    },
    {
     "at": "L09",
@@ -4078,7 +4114,12 @@
     "blend": 0
    },
    {
-    "at": "L13",
+    "at": "L14",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L14.4",
     "pos": [
      -1.3,
      0.55,
@@ -4086,48 +4127,7 @@
     ]
    },
    {
-    "at": "L13",
-    "pos": [
-     2.0,
-     0.1,
-     15.400000000000002
-    ],
-    "blend": 0,
-    "hidden": false,
-    "arms": [
-     0,
-     88
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "tremble": 0,
-    "sit": false,
-    "blink": true,
-    "expr": "worried",
-    "yaw": 90
-   },
-   {
-    "at": "L13>-0.35",
-    "hidden": true,
-    "blend": 0
-   },
-   {
-    "at": "L14>-0.3",
-    "pos": [
-     2.0,
-     0.1,
-     15.400000000000002
-    ]
-   },
-   {
-    "at": "L14>-0.3",
+    "at": "L14.4",
     "pos": [
      -1.3,
      0.55,
@@ -4711,11 +4711,47 @@
     "blend": 0
    },
    {
-    "at": "L47",
+    "at": "L46b",
     "pos": [
      1.62,
      0.0,
      11.0
+    ]
+   },
+   {
+    "at": "L46b",
+    "pos": [
+     -0.4,
+     -1.1,
+     17.8
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "sit": false,
+    "blink": true,
+    "expr": "worried",
+    "yaw": 0
+   },
+   {
+    "at": "L47",
+    "pos": [
+     -0.4,
+     -1.1,
+     17.8
     ]
    },
    {
@@ -5547,7 +5583,7 @@
    {
     "at": 0,
     "pos": [
-     -0.42,
+     -0.75,
      0.65,
      0
     ],
@@ -5573,22 +5609,22 @@
     "yaw": 0
    },
    {
-    "at": "L01.1",
+    "at": 0.0,
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L01.3",
+    "at": "L02b",
     "pos": [
-     -0.42,
+     -0.75,
      0.65,
      0
     ]
    },
    {
-    "at": "L01.3",
+    "at": "L02b",
     "pos": [
-     -0.42,
+     -0.75,
      0.65,
      0
     ],
@@ -5614,12 +5650,7 @@
     "yaw": 0
    },
    {
-    "at": "L02",
-    "pos": [
-     -0.38,
-     0.65,
-     0
-    ],
+    "at": "L02b.1",
     "head": [
      -40,
      0
@@ -5632,15 +5663,15 @@
     "blend": 0
    },
    {
-    "at": "L03.4",
+    "at": "L03",
     "pos": [
-     -0.38,
+     -0.75,
      0.65,
      0
     ]
    },
    {
-    "at": "L03.4",
+    "at": "L03",
     "pos": [
      1.9,
      0.0,
@@ -5668,7 +5699,7 @@
     "yaw": -90
    },
    {
-    "at": "L03.6",
+    "at": "L03.4",
     "hidden": true,
     "blend": 0
    },
@@ -6209,6 +6240,47 @@
     "yaw": 30.0
    },
    {
+    "at": "L64",
+    "hidden": true,
+    "blend": 0
+   },
+   {
+    "at": "L65",
+    "pos": [
+     -1.163,
+     2.015,
+     6.823
+    ]
+   },
+   {
+    "at": "L65",
+    "pos": [
+     -1.163,
+     2.015,
+     6.823
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     6
+    ],
+    "lean": 4,
+    "tremble": 0,
+    "sit": true,
+    "blink": false,
+    "expr": "asleep",
+    "yaw": 30.0
+   },
+   {
     "at": "L68",
     "pos": [
      -1.163,
@@ -6425,7 +6497,7 @@
    "set": "arrive"
   },
   {
-   "at": "L03",
+   "at": "L04",
    "name": "mode",
    "set": "day",
    "dur": 0.8
@@ -6449,7 +6521,7 @@
    "dur": 0.6
   },
   {
-   "at": "L13",
+   "at": "L14",
    "name": "mode",
    "set": "night",
    "dur": 0.8
@@ -6474,6 +6546,18 @@
   },
   {
    "at": "L41",
+   "name": "mode",
+   "set": "night",
+   "dur": 0.8
+  },
+  {
+   "at": "L46b",
+   "name": "mode",
+   "set": "day",
+   "dur": 0.8
+  },
+  {
+   "at": "L47",
    "name": "mode",
    "set": "night",
    "dur": 0.8
@@ -6551,7 +6635,13 @@
    "color": "#cfe9e0"
   },
   {
-   "at": "L06.2",
+   "at": "L06.2-0.3",
+   "name": "phone",
+   "on": 0.0,
+   "dur": 0.3
+  },
+  {
+   "at": "L07",
    "name": "phone",
    "on": 0.8,
    "dur": 0.3,
@@ -6722,7 +6812,43 @@
    ]
   },
   {
-   "at": "L13>-0.35",
+   "at": "L06.2",
+   "name": "torch",
+   "on": 1.0,
+   "dur": 0.4,
+   "from": [
+    1.45,
+    0.0,
+    16.450000000000003
+   ],
+   "aim": [
+    0.8,
+    0.0,
+    9.400000000000002
+   ],
+   "gain": 0.4,
+   "spill": 1.0
+  },
+  {
+   "at": "L07",
+   "name": "torch",
+   "on": 0.0,
+   "dur": 0.0,
+   "from": [
+    1.45,
+    0.0,
+    16.450000000000003
+   ],
+   "aim": [
+    0.8,
+    0.0,
+    9.400000000000002
+   ],
+   "gain": 0.4,
+   "spill": 1.0
+  },
+  {
+   "at": "L14",
    "name": "torch",
    "on": 1.0,
    "from": [
@@ -6739,7 +6865,7 @@
    "spill": 0.0
   },
   {
-   "at": "L14>-0.3",
+   "at": "L14.4",
    "name": "torch",
    "on": 0.0,
    "from": [
@@ -7261,7 +7387,7 @@
    "az": null
   },
   {
-   "at": "L13>-0.35",
+   "at": "L14",
    "name": "clear",
    "az": 0,
    "span": 40,
@@ -7273,7 +7399,7 @@
    ]
   },
   {
-   "at": "L14>-0.3",
+   "at": "L14.4",
    "name": "clear",
    "az": null
   },
@@ -7620,6 +7746,46 @@
    "dur": 0.0
   },
   {
+   "at": "L25b",
+   "name": "shudder",
+   "amp": 1.0
+  },
+  {
+   "at": "L26",
+   "name": "shudder",
+   "amp": 0.0
+  },
+  {
+   "at": "L25b.5",
+   "name": "scuff",
+   "on": 1
+  },
+  {
+   "at": "L26",
+   "name": "scuff",
+   "on": 0
+  },
+  {
+   "at": "L46b",
+   "name": "bedsand",
+   "on": 1
+  },
+  {
+   "at": "L47",
+   "name": "bedsand",
+   "on": 0
+  },
+  {
+   "at": "L64",
+   "name": "hand",
+   "on": 1
+  },
+  {
+   "at": "L65",
+   "name": "hand",
+   "on": 0
+  },
+  {
    "at": 0,
    "name": "sand",
    "level": 0
@@ -7659,9 +7825,9 @@
    "name": "coat",
    "where": "feet",
    "pos": [
-    -1.77,
+    -1.92,
     -0.0,
-    8.0
+    8.06
    ],
    "yaw": 90.0
   },

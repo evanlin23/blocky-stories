@@ -395,7 +395,7 @@ def build_foot(kit, ctx, M):
     kit.box("storm.frame.top", (0.22, 1.5, 0.16), (-0.05, 0, 2.24), M["stone"], f)
     for s in (-1, 1):
         kit.box(f"storm.frame{s}", (0.22, 0.16, 2.2), (-0.05, s * 0.78, 1.1), M["stone"], f)
-    kit.box("storm.leaf", (0.09, 1.4, 2.18), (-0.06, 0, 1.09), M["storm"], f, bevel=0.01)
+    ctx["storm_leaf"] = kit.box("storm.leaf", (0.09, 1.4, 2.18), (-0.06, 0, 1.09), M["storm"], f, bevel=0.01)
     for k in range(3):   # iron straps
         kit.box(f"storm.strap{k}", (0.02, 1.36, 0.08), (-0.115, 0, 0.35 + 0.8 * k), M["iron"], f)
     # sand: a low pale drift under the door, thickest at the bottom steps
@@ -407,6 +407,18 @@ def build_foot(kit, ctx, M):
     # a skim of sand over the first steps, fading up
     for k in range(10):
         kit.box(f"sand step{k}", (0.5, 0.35, 0.012), (-0.9 - 0.15 * (k % 3), (k - 4.5) * 0.17, 0.014), M["sand"], f)
+    # the sand has crept up onto the bottom steps (the first plant): low drifts on treads 0 to 3
+    for i, (r_, dz_, sx_, sy_) in enumerate(((1.55, 0.0, 0.5, 0.30), (1.75, 0.0, 0.42, 0.28), (1.6, 0.0, 0.38, 0.26), (1.9, 0.0, 0.3, 0.2))):
+        zt = i * STEP
+        x_, y_, _ = pol(r_, 30.0 * i + 2.0, 0)
+        ob = kit.sphere(f"step sand{i}", 1.0, (x_, y_, zt + 0.004), M["sand"], None, seg=10)
+        ob.scale = (sx_, sy_, 0.05)
+        ob.rotation_euler = (0, 0, math.radians(30.0 * i + 90.0))
+    # a faint sock-shaped scuff in the drift under the door (shown for the morning shot only): a sole and a heel, a little darker
+    scuff_m = pbr(kit, "scuff sand", "#8a7442", 0.95)
+    ctx["scuff"] = [kit.box("scuff sole", (0.2, 0.11, 0.03), (-0.58, -0.05, 0.108), scuff_m, f, bevel=0.008),
+                    kit.box("scuff ball", (0.09, 0.14, 0.03), (-0.43, -0.05, 0.108), scuff_m, f, bevel=0.01),
+                    kit.box("scuff heel", (0.09, 0.09, 0.03), (-0.76, -0.05, 0.108), scuff_m, f, bevel=0.01)]
     # a window at the foot for the sun
     window(kit, M, "foot win", 270.0, 1.55)
 
@@ -459,6 +471,16 @@ def build_lamp_room(kit, ctx, M):
     kit.box("cot blanket", (0.84, 1.15, 0.4), (0, -0.35, 0.72), M["wool"], bed, bevel=0.06)
     kit.box("cot pillow", (0.5, 0.3, 0.1), (0, 0.78, 0.57), pbr(kit, "pillow", "#d8d4cc", 0.9), bed, bevel=0.04)
     ctx["bed"] = bed
+    # sand in the blanket's creases (shown for S46b only): clumps and a thin dusting along three folds
+    import random
+    rg = random.Random(46)
+    ctx["bedsand"] = []
+    for q in range(46):
+        w = rg.uniform(0.05, 0.13)
+        ctx["bedsand"].append(kit.box(f"bed sand{q}", (w, w * rg.uniform(0.8, 1.5), rg.uniform(0.02, 0.04)),
+                                      (rg.uniform(-0.38, 0.38), rg.uniform(-0.9, -0.3), 0.94), M["sand"], bed, rot=(0, 0, rg.uniform(0, 3)), bevel=0.01))
+    for q, y_ in enumerate((-0.45, -0.62, -0.8)):
+        ctx["bedsand"].append(kit.box(f"bed fold{q}", (0.8, 0.045, 0.03), (0.0, y_, 0.935), M["sand"], bed, bevel=0.01))
     # a bag and boots by the bed
     kit.box("duffel", (0.7, 0.35, 0.3), (-1.9, 0.9, LF + 0.15), M["bag"], None, rot=(0, 0, 0.4), bevel=0.08)
 
@@ -915,17 +937,34 @@ def _dress(kit, story, ctx):
             wrap.append(kit.box(f"ines.wrap leg{sx}", (1.06, 1.1, 1.8), (0, 0, -0.9), blk, bpy.data.objects[f"ines.leg{sx}"], bevel=0.12))
         ctx["blanket_arm"] = [arm, bundle]
         ctx["blanket_wrap"] = wrap
-    # the coat laid over my feet, a prop in the world
-    cf = kit.box("coat feet", (1.0, 0.62, 0.16), (0, 0, -80), M["camel2"], None, bevel=0.05)
+    # the coat laid over my legs, a prop in the world: body, two sleeves with cuffs, a collar and lapel, folds, buttons, a hem.
+    # Its local -y is the way I face (toward the toes); the cue puts its origin on top of my shins. Ines's hand rests on it
+    # (a flannel forearm and a hand, shown for the one shot).
     lin = pbr(kit, "coat lining", "#4a3320", 0.9)
-    kit.box("coat feet sleeve", (0.7, 0.24, 0.15), (0.2, 0.42, 0.04), M["camel2"], cf, rot=(0, 0, 0.5), bevel=0.05)
-    kit.box("coat feet sleeve2", (0.62, 0.22, 0.14), (-0.42, 0.38, 0.05), M["camel2"], cf, rot=(0, 0, -0.9), bevel=0.05)
-    kit.box("coat feet fold1", (0.9, 0.12, 0.12), (0.0, -0.08, 0.1), M["camel2"], cf, rot=(0.0, 0.1, 0.12), bevel=0.04)
-    kit.box("coat feet fold2", (0.6, 0.1, 0.1), (0.1, 0.18, 0.12), M["camel2"], cf, rot=(0.0, -0.1, -0.2), bevel=0.04)
-    kit.box("coat feet lapel", (0.3, 0.64, 0.06), (-0.3, 0.0, 0.1), lin, cf, bevel=0.02)
-    kit.box("coat feet collar", (0.5, 0.14, 0.14), (0.0, -0.36, 0.14), lin, cf, rot=(0, 0, 0.15), bevel=0.04)
-    kit.box("coat feet button", (0.07, 0.07, 0.05), (0.25, -0.1, 0.17), lin, cf, bevel=0.02)
+    cf = kit.empty("coat feet", (0, 0, -80))
+    B = lambda n, sz, loc, mat, rot=(0, 0, 0), bev=0.03: kit.box(f"coat {n}", sz, loc, mat, cf, rot=rot, bevel=bev)
+    B("body", (0.76, 0.44, 0.09), (0, 0, 0.045), M["camel"], bev=0.035)
+    B("drape L", (0.07, 0.42, 0.2), (0.41, 0.0, -0.06), M["camel"], rot=(0, -0.3, 0), bev=0.03)
+    B("drape R", (0.07, 0.42, 0.2), (-0.41, 0.0, -0.06), M["camel"], rot=(0, 0.3, 0), bev=0.03)
+    B("hem", (0.78, 0.06, 0.07), (0, -0.23, 0.03), M["camel2"], rot=(0.12, 0, 0), bev=0.025)
+    B("sleeve A", (0.46, 0.16, 0.14), (0.58, 0.02, -0.06), M["camel2"], rot=(0, 0.5, 0.3), bev=0.05)
+    B("cuff A", (0.07, 0.18, 0.15), (0.78, -0.04, -0.14), lin, rot=(0, 0.5, 0.3), bev=0.03)
+    B("sleeve B", (0.44, 0.15, 0.13), (-0.04, -0.06, 0.12), M["camel2"], rot=(0, 0, -0.35), bev=0.05)
+    B("cuff B", (0.07, 0.17, 0.14), (-0.27, -0.12, 0.12), lin, rot=(0, 0, -0.35), bev=0.03)
+    B("collar", (0.56, 0.12, 0.1), (0.0, 0.2, 0.12), M["camel2"], rot=(-0.1, 0, 0), bev=0.04)
+    B("lapel L", (0.17, 0.3, 0.03), (0.13, 0.05, 0.1), lin, rot=(0, 0, 0.4), bev=0.01)
+    B("lapel R", (0.17, 0.3, 0.03), (-0.13, 0.05, 0.1), lin, rot=(0, 0, -0.4), bev=0.01)
+    B("fold1", (0.6, 0.06, 0.07), (0.0, -0.1, 0.1), M["camel"], rot=(0, 0.06, 0.1), bev=0.03)
+    B("fold2", (0.46, 0.06, 0.06), (0.06, 0.1, 0.1), M["camel"], rot=(0, -0.05, -0.12), bev=0.03)
+    for k_ in range(3):
+        B(f"button{k_}", (0.05, 0.05, 0.03), (0.0, 0.1 - 0.1 * k_, 0.105), lin, bev=0.012)
+    skin = pbr(kit, "ines skin", "#c98f6a", 0.7)
+    fl = rig.cloth({"shirt": "#3f8f7d", "pattern": "plaid", "pattern_c": "#1d4a42"}, "shirt")
+    hand = [kit.box("ines forearm", (0.15, 0.42, 0.15), (0.52, 0.34, 0.22), fl, cf, rot=(0, 0, 0.5), bevel=0.04),
+            kit.box("ines cuff", (0.16, 0.05, 0.16), (0.42, 0.18, 0.2), fl, cf, rot=(0, 0, 0.5), bevel=0.03),
+            kit.box("ines hand", (0.12, 0.15, 0.07), (0.33, 0.06, 0.18), skin, cf, rot=(0, 0, 0.5), bevel=0.025)]
     ctx["coat_feet"] = [cf]
+    ctx["hand"] = hand
 
 
 def _show(obs, on):
@@ -979,6 +1018,17 @@ def animate(kit, story, tl, t, ctx):
     if ctx.get("blanket_arm"):
         _show(ctx["blanket_arm"], bl == "arm" and not in_h)
         _show(ctx["blanket_wrap"], bl == "wrap" and not in_h)
+    # the storm door shudders in the wind, the scuff in the drift, sand in my blanket, Ines's hand on the coat
+    sh = _last(_cues(tl, "shudder"), t)
+    amp = sh["amp"] if sh else 0.0
+    if ctx.get("storm_leaf") is not None:
+        ctx["storm_leaf"].location = (-0.06 + amp * 0.014 * math.sin(t * 17.0) * math.sin(t * 5.1 + 0.6), amp * 0.01 * math.sin(t * 13.0 + 1.0), 1.09)
+    sc = _last(_cues(tl, "scuff"), t)
+    _show(ctx.get("scuff", []), bool(sc and sc["on"]))
+    bs = _last(_cues(tl, "bedsand"), t)
+    _show(ctx.get("bedsand", []), bool(bs and bs["on"]))
+    hc = _last(_cues(tl, "hand"), t)
+    _show(ctx.get("hand", []), bool(hc and hc["on"]))
     # the bolt and Ines's door
     bo = _ramped(_cues(tl, "bolt"), t, "open", 0.0)
     ctx["bolt"].location = (-0.02, -0.34 * bo - 0.0 + 0.0, 0.0) if False else (-0.02, 0.0 - 0.3 * bo, 0.0)

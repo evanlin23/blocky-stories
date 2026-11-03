@@ -6,114 +6,86 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this lighthouse, after dark, everyone stays on their own floor.",
+   "text": "In this lighthouse, never leave your floor after dark.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.034,
+   "dur": 2.362,
    "onset": 0.172,
-   "end": 2.845,
+   "end": 2.155,
    "chunks": [
     [
      0.172,
-     0.707
+     0.793
     ],
     [
-     0.732,
-     1.259
+     0.845,
+     1.164
     ],
     [
-     1.345,
-     1.923
+     1.164,
+     1.483
     ],
     [
-     1.923,
-     2.103
-    ],
-    [
-     2.103,
-     2.845
+     1.483,
+     2.155
     ]
    ]
   },
   "L02": {
-   "text": "Ines and I were one month in, on our first trip away.",
+   "text": "Not even for a text.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.534,
-   "onset": 0.19,
-   "end": 2.345,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.19,
    "chunks": [
     [
-     0.19,
-     0.621
+     0.172,
+     0.517
     ],
     [
-     0.621,
-     0.828
-    ],
-    [
-     0.828,
-     1.207
-    ],
-    [
-     1.259,
-     1.439
-    ],
-    [
-     1.439,
-     2.345
+     0.517,
+     1.19
     ]
    ]
   },
   "L03": {
-   "text": "The lighthouse was built for a crew of two: her room halfway up, my camp bed in the lamp room.",
+   "text": "The tower slept two: her room halfway up, mine at the top.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.948,
-   "onset": 0.172,
-   "end": 3.759,
+   "dur": 2.707,
+   "onset": 0.155,
+   "end": 2.5,
    "chunks": [
     [
-     0.172,
-     0.56
+     0.155,
+     0.448
     ],
     [
-     0.56,
-     0.845
-    ],
-    [
-     0.845,
+     0.448,
      0.966
     ],
     [
-     0.966,
-     1.552
+     1.069,
+     1.31
     ],
     [
-     1.672,
-     1.931
+     1.31,
+     1.69
     ],
     [
-     1.931,
-     2.379
+     1.724,
+     1.939
     ],
     [
-     2.414,
-     2.94
-    ],
-    [
-     2.94,
-     3.052
-    ],
-    [
-     3.052,
-     3.759
+     1.939,
+     2.5
     ]
    ]
   },
@@ -178,50 +150,62 @@
    ]
   },
   "L06": {
-   "text": "We said goodnight by text, three turns apart.",
+   "text": "We said goodnight by text. Every night after, I woke up at the rail.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.293,
+   "dur": 3.103,
    "onset": 0.155,
-   "end": 2.103,
+   "end": 2.914,
    "chunks": [
     [
      0.155,
-     0.603
+     0.707
     ],
     [
-     0.603,
-     1.069
+     0.707,
+     1.293
     ],
     [
-     1.147,
-     2.103
+     1.388,
+     1.914
+    ],
+    [
+     1.939,
+     2.268
+    ],
+    [
+     2.268,
+     2.914
     ]
    ]
   },
   "L07": {
-   "text": "I typed, \"love you,\" then deleted it.",
+   "text": "That first night, I typed, \"love you,\" then deleted it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.948,
-   "onset": 0.155,
-   "end": 1.759,
+   "dur": 2.552,
+   "onset": 0.172,
+   "end": 2.362,
    "chunks": [
     [
-     0.155,
-     0.448
+     0.172,
+     0.638
     ],
     [
-     0.534,
-     0.862
+     0.664,
+     1.0
     ],
     [
-     0.966,
-     1.759
+     1.103,
+     1.431
+    ],
+    [
+     1.534,
+     2.362
     ]
    ]
   },
@@ -402,30 +386,34 @@
    ]
   },
   "L14": {
-   "text": "I slid it shut and fell asleep to the waves.",
+   "text": "I bolted the lamp room door and fell asleep to the waves.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.086,
+   "dur": 2.603,
    "onset": 0.155,
-   "end": 1.897,
+   "end": 2.414,
    "chunks": [
     [
      0.155,
-     0.388
+     0.474
     ],
     [
-     0.388,
-     0.724
+     0.474,
+     0.759
     ],
     [
-     0.724,
-     1.19
+     0.759,
+     1.241
     ],
     [
-     1.19,
-     1.897
+     1.241,
+     1.707
+    ],
+    [
+     1.707,
+     2.414
     ]
    ]
   },
@@ -450,34 +438,34 @@
    ]
   },
   "L16": {
-   "text": "I was out at the rail, torch, in my hand, looking down.",
+   "text": "I was out at the rail, flashlight in my hand, looking down.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.5,
+   "dur": 2.707,
    "onset": 0.155,
-   "end": 2.31,
+   "end": 2.517,
    "chunks": [
     [
      0.155,
-     0.406
+     0.423
     ],
     [
-     0.406,
-     0.793
+     0.423,
+     0.862
     ],
     [
-     0.828,
-     1.129
+     0.94,
+     1.371
     ],
     [
-     1.129,
-     1.5
+     1.371,
+     1.724
     ],
     [
-     1.552,
-     2.31
+     1.75,
+     2.517
     ]
    ]
   },
@@ -938,34 +926,34 @@
    ]
   },
   "L34": {
-   "text": "And I was at the rail again, before I knew I'd got up.",
+   "text": "And I was at the rail again, before I knew I'd gotten up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.397,
+   "dur": 2.517,
    "onset": 0.155,
-   "end": 2.19,
+   "end": 2.31,
    "chunks": [
     [
      0.155,
-     0.431
+     0.37
     ],
     [
-     0.431,
-     0.552
+     0.37,
+     0.483
     ],
     [
-     0.552,
-     1.069
+     0.483,
+     1.0
     ],
     [
-     1.138,
-     1.561
+     1.069,
+     1.569
     ],
     [
-     1.561,
-     2.19
+     1.569,
+     2.31
     ]
    ]
   },
@@ -1290,30 +1278,30 @@
    ]
   },
   "L48": {
-   "text": "A torch in my hand. Leaning over the rail.",
+   "text": "Flashlight in my hand. Leaning over the rail.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.172,
-   "onset": 0.172,
-   "end": 1.983,
+   "dur": 2.276,
+   "onset": 0.19,
+   "end": 2.086,
    "chunks": [
     [
-     0.172,
-     0.492
+     0.19,
+     0.578
     ],
     [
-     0.492,
-     0.966
+     0.578,
+     1.052
     ],
     [
-     1.061,
-     1.422
+     1.147,
+     1.509
     ],
     [
-     1.422,
-     1.983
+     1.509,
+     2.086
     ]
    ]
   },
@@ -1362,34 +1350,34 @@
    ]
   },
   "L51": {
-   "text": "Its, flat face filled my torch beam, its round mouth open.",
+   "text": "Its, flat face filled my flashlight beam, its round mouth open.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.862,
+   "dur": 3.052,
    "onset": 0.155,
-   "end": 2.672,
+   "end": 2.862,
    "chunks": [
     [
      0.155,
-     0.707
+     0.724
     ],
     [
-     0.707,
-     0.948
+     0.724,
+     0.966
     ],
     [
-     0.948,
-     1.534
+     0.966,
+     1.707
     ],
     [
-     1.603,
-     2.138
+     1.776,
+     2.328
     ],
     [
-     2.138,
-     2.672
+     2.328,
+     2.862
     ]
    ]
   },
@@ -2034,6 +2022,94 @@
     [
      0.793,
      1.224
+    ]
+   ]
+  },
+  "L02b": {
+   "text": "My girlfriend, Ines, and I were one month in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.224,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.069,
+     1.215
+    ],
+    [
+     1.215,
+     1.448
+    ],
+    [
+     1.448,
+     2.034
+    ]
+   ]
+  },
+  "L25b": {
+   "text": "The only sand was under the storm door, the one that opened onto the sea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.155,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     0.87
+    ],
+    [
+     0.87,
+     1.569
+    ],
+    [
+     1.655,
+     1.854
+    ],
+    [
+     1.854,
+     2.19
+    ],
+    [
+     2.19,
+     2.931
+    ]
+   ]
+  },
+  "L46b": {
+   "text": "In the morning, there was sand in my bed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     0.992
+    ],
+    [
+     0.992,
+     1.621
     ]
    ]
   }
