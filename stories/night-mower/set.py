@@ -41,7 +41,7 @@ HC = (7.2, 8.6)                  # the hump's and the lid's centre
 HUMP_A, HUMP_B, HUMP_H = 3.6, 2.1, 0.3
 LA, LB = 2.7, 1.5                # the lid's lens: half-length along x, half-depth along y
 LAWN = (0.2, 15.0, 5.2, 12.0)    # Mr. Odell's lawn x0, x1, y0, y1
-RES = 0.15
+RES = 0.1
 EYE_Z = -0.22
 EW, EH = 5.6, 3.2                # the eye drawing's size
 BALD = (-2.6, 8.4)
@@ -70,7 +70,7 @@ def pil_image(name, im: Image.Image):
     return img
 
 
-def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#f0d8a8"):
+def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#d4ae72", under=None):
     """A drawing as a material. turf=True shows `pale` plastic on the underside (the lid's warm underside)."""
     m = kit._new(name)
     nt = m.node_tree
@@ -85,15 +85,25 @@ def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#f0d8a8"):
         mx.data_type = "RGBA"
         nt.links.new(geo.outputs["Backfacing"], mx.inputs["Factor"])
         nt.links.new(col, mx.inputs["A"])
-        mx.inputs["B"].default_value = kit.col(pale)
+        if under is not None:      # the underside is the same rings in warm pale plastic
+            ut = nt.nodes.new("ShaderNodeTexImage")
+            ut.image = pil_image(name + " under", under)
+            nt.links.new(ut.outputs["Color"], mx.inputs["B"])
+            ucol = ut.outputs["Color"]
+        else:
+            mx.inputs["B"].default_value = kit.col(pale)
+            ucol = None
         col = mx.outputs["Result"]
         em = nt.nodes.new("ShaderNodeMix")
         em.data_type = "RGBA"
         nt.links.new(geo.outputs["Backfacing"], em.inputs["Factor"])
         em.inputs["A"].default_value = (0, 0, 0, 1)
-        em.inputs["B"].default_value = kit.col(pale)
+        if ucol is not None:
+            nt.links.new(ucol, em.inputs["B"])
+        else:
+            em.inputs["B"].default_value = kit.col(pale)
         nt.links.new(em.outputs["Result"], b.inputs["Emission Color"])
-        b.inputs["Emission Strength"].default_value = 0.35
+        b.inputs["Emission Strength"].default_value = 0.3
     nt.links.new(col, b.inputs["Base Color"])
     b.inputs["Roughness"].default_value = rough
     for k in ("Specular IOR Level", "Specular"):
@@ -107,7 +117,7 @@ def image_mat(kit, name, im, rough=0.85, emit=0.0, turf=False, pale="#f0d8a8"):
     return m
 
 
-def lawn_image():
+def lawn_image(pale=False):
     """The stripes: long rings round the hump, light and dark, like hair combed over a brow."""
     x0, x1, y0, y1 = LAWN
     w, h = 2220, 1080
@@ -118,6 +128,9 @@ def lawn_image():
     band = np.floor(r * 7.0).astype(int)
     light = np.array([60, 238, 104], np.float32)
     dark = np.array([34, 196, 76], np.float32)
+    if pale:
+        light = np.array([236, 205, 150], np.float32)
+        dark = np.array([204, 164, 108], np.float32)
     im = np.where((band % 2 == 0)[..., None], light, dark).astype(np.float32)
     rng = np.random.default_rng(5)
     n = rng.normal(0, 1, (h // 3, w // 3)).astype(np.float32)
@@ -209,15 +222,15 @@ def mats(kit):
         "orange": P("#ff9a1f", 0.45), "lime": kit.emit(LIME, 0.9), "soil": P("#2b1c14", 0.95),
         "tan": P("#c49a5c", 0.95), "pole": P("#8a8f99", 0.4), "warm": kit.emit("#fff1c2", 6.0),
         "glass": kit.emit("#ffd9a0", 1.1), "glow": kit.emit("#7dff98", 2.4), "conc": kit.texture("concrete", 1.0, tint="#d8d6d0"),
-        "asphalt": kit.texture("asphalt", 0.5, tint="#8a8f9a"), "ours": kit.texture("grass", 0.6, tint="#6cc24a", rough=0.9),
-        "ground": P("#5a8f4a", 0.95), "floor": kit.texture("wood", 0.7, tint="#d9b98a"), "bed": P("#1fb5a8", 0.6),
-        "bulb": kit.emit("#fff6dc", 4.0), "level": P("#ffd23a", 0.4), "vial": P("#b6ff3b", 0.2, spec=0.7),
+        "asphalt": kit.texture("asphalt", 0.5, tint="#8a8f9a"), "ours": P("#6cc24a", 0.9, spec=0.1),
+        "ground": P("#4f9a3f", 0.95), "floor": kit.texture("wood", 0.7, tint="#d9b98a"), "bed": P("#1fb5a8", 0.6),
+        "bulb": kit.emit("#fff6dc", 2.2), "level": P("#ffd23a", 0.4), "vial": P("#b6ff3b", 0.2, spec=0.7),
         "bubble": P("#ffffff", 0.2), "water": kit.emit("#bfe6ff", 0.8), "seed": P("#e8d9a8", 0.9),
         "sod": P("#7ccf3c", 0.9), "sod_y": P("#d8c84a", 0.9), "fence": P("#f4f1e8", 0.5), "mint": P("#8fe3c8", 0.5),
         "pic1": P("#4fb3ff", 0.6), "pic2": P("#ff8a3c", 0.6), "pic3": P("#e7458a", 0.6), "pic4": P("#b6ff3b", 0.6),
         "pic5": P("#fff1c2", 0.6),
     }
-    M["lawn"] = image_mat(kit, "odell lawn", lawn_image(), 0.9, turf=True)
+    M["lawn"] = image_mat(kit, "odell lawn", lawn_image(), 0.9, turf=True, under=lawn_image(True))
     for k in range(3):
         M[f"eye{k}"] = image_mat(kit, f"eye {k}", eye_image(k), 0.7, emit=0.22)
     M["clock"] = image_mat(kit, "clock", clock_image(), 0.4, emit=2.2)
@@ -236,6 +249,20 @@ def quad_uv(kit, name, size, loc, mat, uv=None):
     return ob
 
 
+BOUNDARY: set = set()
+
+
+def snap(i, j):
+    """A grid vertex's place. Vertices on the lid's outline move onto the lens's ellipse, so its edge is smooth; the lawn
+    mesh, the lid and the pit walls all call this, so they meet exactly."""
+    x, y = LAWN[0] + i * RES, LAWN[2] + j * RES
+    if (i, j) in BOUNDARY:
+        q = math.sqrt(((x - HC[0]) / LA) ** 2 + ((y - HC[1]) / LB) ** 2)
+        if q > 1e-6:
+            x, y = HC[0] + (x - HC[0]) / q, HC[1] + (y - HC[1]) / q
+    return x, y
+
+
 def tex_grid(kit, name, cells, mat, origin, uv_fn, wall_mat=None):
     """A mesh of grid cells (each (ix, iy)), vertices lifted by hump(), UVs from world x y. Returns the object."""
     ox, oy, z0 = origin
@@ -243,7 +270,7 @@ def tex_grid(kit, name, cells, mat, origin, uv_fn, wall_mat=None):
 
     def vtx(i, j):
         if (i, j) not in vid:
-            x, y = LAWN[0] + i * RES, LAWN[2] + j * RES
+            x, y = snap(i, j)
             vid[(i, j)] = len(verts)
             verts.append((x - ox, y - oy, hump(x, y) - z0))
         return vid[(i, j)]
@@ -269,6 +296,14 @@ def build_lawn_and_lid(kit, ctx, M):
                 inside.append((i, j))
             else:
                 outside.append((i, j))
+    ins = set(inside)
+    BOUNDARY.clear()
+    for (i, j) in inside:
+        for a in (0, 1):
+            for b in (0, 1):
+                if any((i + a + da, j + b + db) not in ins and 0 <= i + a + da < nx and 0 <= j + b + db < ny
+                       for da in (-1, 0) for db in (-1, 0)):
+                    BOUNDARY.add((i + a, j + b))
     uv = lambda x, y: ((x - LAWN[0]) / (LAWN[1] - LAWN[0]), (y - LAWN[2]) / (LAWN[3] - LAWN[2]))
     tex_grid(kit, "lawn", outside, M["lawn"], (0.0, 0.0, 0.0), uv)
     hy = HC[1] + LB
@@ -276,7 +311,6 @@ def build_lawn_and_lid(kit, ctx, M):
     lid = tex_grid(kit, "lid", inside, M["lawn"], (HC[0], hy, zh), uv)
     ctx["lid"] = lid
     # the pit: walls round the lid's outline, down to the eye
-    ins = set(inside)
     verts, faces = [], []
     for (i, j) in inside:
         for di, dj, a, b in ((-1, 0, (i, j), (i, j + 1)), (1, 0, (i + 1, j + 1), (i + 1, j)),
@@ -285,7 +319,7 @@ def build_lawn_and_lid(kit, ctx, M):
                 continue
             p = []
             for (ii, jj) in (a, b):
-                x, y = LAWN[0] + ii * RES, LAWN[2] + jj * RES
+                x, y = snap(ii, jj)
                 p.append((x, y, hump(x, y)))
             n = len(verts)
             verts += [(p[0][0], p[0][1], p[0][2] - 0.004), (p[1][0], p[1][1], p[1][2] - 0.004),
@@ -340,7 +374,7 @@ def build_floods(kit, ctx, M):
 
 
 def build_trees(kit, ctx, M):
-    for k, (x, y) in enumerate(((-17, 6.5), (-12.5, 22.5), (18.5, 7.0), (22.0, 15.0), (-6.5, 6.2), (-19, 14.0), (3.0, 26.0),
+    for k, (x, y) in enumerate(((-17, 6.5), (-12.5, 22.5), (18.5, 7.0), (22.0, 15.0), (-19, 14.0), (3.0, 26.0),
                                 (-24, 8), (26, 9), (12, 24))):
         kit.prop("sub_tree_large" if k % 2 else "sub_tree_small", (x, y, 0), rot=k * 37, scale=1.4)
     for k, (x, y) in enumerate(((-16, -6), (-3, -6.5), (11, -6.2), (20, -6.5), (-24, -7))):
@@ -466,8 +500,8 @@ def build_ours(kit, ctx, M):
             kit.box(f"o.dl{sx}{sy}", (0.06, 0.06, 0.74), (-8.4 + sx * 0.77, 12.8 + sy * 0.28, Z2 + 0.37), M["wood"])
     ctx["lamp"] = kit.prop("light_desk", (-9.0, 12.7, Z2 + 0.78), rot=180, scale=1.7)
     kit.light("lamp", "POINT", (-9.0, 12.85, Z2 + 1.25), 55.0, "#ffb45e", size=0.15)
-    kit.light("roomfill", "AREA", (-9.0, 15.4, Z2 + 2.3), 180.0, "#cfd8ff", size=4.0)
-    kit.light("greenglow", "SPOT", (-1.5, 9.5, 5.0), 5200.0, "#7dff98", size=0.3, spot=40, blend=0.3)
+    kit.light("roomfill", "AREA", (-9.0, 15.4, Z2 + 2.3), 520.0, "#cfd8ff", size=4.0)
+    kit.light("greenglow", "SPOT", (-1.5, 9.5, 5.0), 1500.0, "#7dff98", size=0.3, spot=40, blend=0.3)
     kit.aim(kit.LIGHTS["greenglow"]["obj"], (-6.0, 13.6, Z2 + 1.2))
     # the chair on casters
     chair = kit.empty("o.chair", (-8.4, 14.6, Z2 + 0.04))
@@ -487,9 +521,10 @@ def build_ours(kit, ctx, M):
     ctx["bslats"] = slats
     kit.box("o.bhead", (2.0, 0.1, 0.06), (-6.0, Y0 + 0.3, Z2 + 2.25), M["white"])
     # Dad's yellow spirit level on the sill (z-lifted 5 mm), its bubble driven by the meter
-    kit.box("level.body", (0.58, 0.075, 0.06), (-5.4, Y0 + 0.08, 3.7 + 0.035), M["level"], bevel=0.012)
-    kit.box("level.vial", (0.16, 0.078, 0.034), (-5.4, Y0 + 0.08, 3.7 + 0.075), M["vial"], bevel=0.008)
-    ctx["bubble"] = kit.sphere("level.bubble", 0.016, (-5.4, Y0 + 0.08, 3.7 + 0.09), M["bubble"], seg=8)
+    kit.box("o.shelf", (2.0, 0.25, 0.04), (-6.0, Y0 + 0.45, 3.68), M["white"])
+    kit.box("level.body", (0.58, 0.075, 0.06), (-5.4, Y0 + 0.45, 3.7 + 0.035), M["level"], bevel=0.012)
+    kit.box("level.vial", (0.16, 0.078, 0.034), (-5.4, Y0 + 0.45, 3.7 + 0.075), M["vial"], bevel=0.008)
+    ctx["bubble"] = kit.sphere("level.bubble", 0.016, (-5.4, Y0 + 0.45, 3.7 + 0.09), M["bubble"], seg=8)
     # the doorway's white frame
     for sx in (-1, 1):
         kit.box(f"o.df{sx}", (0.1, 0.08, 2.2), (-9.5 + sx * 0.6, Y1 - 0.22, Z2 + 1.12), M["white"])
@@ -512,18 +547,19 @@ def build_hall(kit, ctx, M):
         kit.box(f"h.art{k}", (0.64, 0.02, 0.84), (0, -0.04, 0), M[cols[k][0]], root)
         kit.box(f"h.art2{k}", (0.3, 0.02, 0.3), (0.08, -0.058, -0.1), M[cols[k][1]], root)
         ctx["pics"].append(root)
-    kit.light("hall", "POINT", (HX + 3.0, -0.8, 2.3), 140.0, "#ffe2b0", size=0.2)
-    kit.light("hallglow", "POINT", (HX + 6.2, -0.8, 1.5), 90.0, "#7dff98", size=0.2)
+    kit.light("hall", "POINT", (HX + 3.0, -0.8, 2.3), 70.0, "#ffe2b0", size=0.2)
+    kit.light("hallglow", "POINT", (HX + 6.2, -0.8, 1.5), 60.0, "#7dff98", size=0.2)
 
 
 def build_bedside(kit, ctx, M):
     kit.box("b.floor", (5, 3, 0.1), (BX, -0.5, -0.05), M["floor"])
-    kit.box("b.back", (5, 0.2, 3.0), (BX, 0.1, 1.5), M["cream"])
+    kit.box("b.back", (5, 0.2, 3.0), (BX, 0.1, 1.5), kit.plastic("#8a94c8", 0.7))
     kit.box("b.stand", (1.0, 0.6, 0.55), (BX, -0.32, 0.275), M["wood"], bevel=0.02)
     kit.box("b.clock", (0.5, 0.16, 0.28), (BX, -0.3, 0.69), M["dark"], bevel=0.03)
-    quad = kit.box("b.face", (0.4, 0.004, 0.2), (BX, -0.3 - 0.082, 0.69), M["clock"])
-    kit.light("bs", "POINT", (BX - 0.5, -1.0, 1.2), 30.0, "#ffd0b0", size=0.2)
-    kit.light("bsr", "POINT", (BX, -0.7, 0.8), 6.0, "#ff4030", size=0.1)
+    face = quad_uv(kit, "b.face", (0.4, 0.2), (BX, -0.3 - 0.0835, 0.69), M["clock"])
+    face.rotation_euler = (math.pi / 2, 0, 0)
+    kit.light("bs", "POINT", (BX - 0.5, -1.0, 1.2), 9.0, "#ffd0b0", size=0.2)
+    kit.light("bsr", "POINT", (BX, -0.7, 0.8), 4.0, "#ff4030", size=0.1)
 
 
 # ------------------------------------------------------------------------------------------------ the mower, cord, props
@@ -571,6 +607,7 @@ def build_misc(kit, ctx, M):
     kit.cyl("spr.base", 0.1, 0.1, (0, 0, 0.09), M["black"], spr, n=12)
     kit.cyl("spr.head", 0.04, 0.2, (0, 0, 0.22), M["chrome"], spr, n=8)
     ctx["sprink"] = spr
+    spr.location = (BALD[0], BALD[1], -9.0)
     ctx["drops"] = [kit.sphere(f"drop{k}", 0.035, (0, 0, -5), M["water"], seg=6) for k in range(26)]
     bino = kit.empty("binos", (0, 0, -9))
     kit.box("bn.bridge", (0.2, 0.06, 0.07), (0, 0.0, 0.0), M["black"], bino, bevel=0.015)
@@ -591,6 +628,9 @@ def build_lights(kit, ctx, M):
     kit.light("eyelamp", "AREA", (HC[0], HC[1] - 0.5, 2.8), 150.0, "#ffe0a8", size=3.5)
     kit.light("lidrim", "SPOT", (HC[0] + 1.0, HC[1] + 4.5, 3.0), 800.0, "#a9c4ff", size=0.2, spot=60, blend=0.5)
     kit.aim(kit.LIGHTS["lidrim"]["obj"], (HC[0], HC[1] + 0.6, 0.5))
+    kit.light("streetfill", "AREA", (0.0, 3.0, 9.0), 4500.0, "#cfd8ff", size=26.0)
+    kit.aim(kit.LIGHTS["streetfill"]["obj"], (0.0, -9.0, 3.0))
+    kit.light("porchfill", "POINT", (-7.2, 10.2, 2.3), 140.0, "#ffd9a0", size=0.2)
     kit.light("faces", "AREA", (HC[0] - 2, 3.0, 4.0), 260.0, "#fff1c2", size=5.0)
     kit.aim(kit.LIGHTS["faces"]["obj"], (HC[0] - 2, 8.0, 0.8))
 
@@ -674,7 +714,7 @@ def animate(kit, story, tl, t, ctx):
     bpy.context.scene.view_settings.exposure = float(look.get("exposure", 0.0))
     # the Head: lid, eye, lights
     lid = tv(ctx, "lid", t)
-    ctx["lid"].rotation_euler = (-math.radians(42.0 * lid), 0, 0)
+    ctx["lid"].rotation_euler = (-math.radians(70.0 * lid), 0, 0)
     ey = int(tv(ctx, "eye", t, stepped=True))
     for k, ob in enumerate(ctx["eyes"]):
         ob.hide_render = (k != ey) or lid < 0.002
@@ -696,7 +736,7 @@ def animate(kit, story, tl, t, ctx):
     sl = tv(ctx, "slat", t)
     for i, s in enumerate(ctx["bslats"]):
         dip = sl if i == 6 else 0.0
-        s.rotation_euler = (math.radians(72.0 - 52.0 * dip), 0, 0)
+        s.rotation_euler = (math.radians(float(look.get("bopen", 72.0)) - 52.0 * dip), 0, 0)
         s.location.z = Z2 + 2.14 - i * 0.092 - 0.015 * dip
     sw = tv(ctx, "sway", t)
     ctx["lamp"].rotation_euler = (0, 0.09 * sw * math.sin(2 * math.pi * 1.7 * t), math.radians(180))
@@ -761,6 +801,7 @@ def animate(kit, story, tl, t, ctx):
         else:
             ob.location = (0, 0, -5)
     sp = tv(ctx, "sprink", t)
+    ctx["sprink"].location = (BALD[0], BALD[1], 0.0 if sp > 0.5 else -9.0)
     hs = tv(ctx, "hose", t)
     drops = ctx["drops"]
     for k, ob in enumerate(drops):
@@ -788,6 +829,8 @@ def animate(kit, story, tl, t, ctx):
     g["lidrim"] = open_ if night else 0.0
     g["faces"] = float(look.get("faces", 1.0)) if night else 0.0
     g["greenglow"] = 1.0 if night else 0.0
+    g["streetfill"] = 1.0 if night else 0.0
+    g["porchfill"] = 1.0 if night else 0.0
     return g
 
 
