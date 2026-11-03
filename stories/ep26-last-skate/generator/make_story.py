@@ -430,7 +430,7 @@ def sweep(at, start, mid, end, size=40, gain=0.9):
 
 
 cues += [
-    {"at": "L19.3", "name": "dim", "level": 0.14, "dur": 2.0},
+    {"at": "L19.3", "name": "dim", "level": 0.3, "dur": 2.0},
     {"at": "L26", "name": "dim", "level": 1.0, "dur": 2.0},
 ]
 cues += sweep("L02", (-7.5, 1.0), (-4.5, 1.0), (-1.0, 0.6), 44, 0.55)

@@ -606,7 +606,7 @@ def build_skater(kit, ctx):
     for ob in objs:
         pass
     # lights that follow it
-    kit.light("sk_up", "POINT", (0, 0, 0.2), 150, "#ffffff", size=0.15)
+    kit.light("sk_up", "POINT", (0, 0, 0.2), 150, "#fff0e0", size=0.15)
     kit.light("sk_rim", "SPOT", (0, 0, 3), 300, "#dc7a86", size=0.1, spot=38, blend=0.8)
     allobjs = objs + list(root.children_recursive)
     link_only(kit, "skater_up", "sk_up", [o for o in allobjs if o.type == "MESH"], "only")
@@ -815,7 +815,7 @@ def animate(kit, story, tl, t, ctx):
     over["tube"] = 0.06 + 0.94 * dim ** 3
     over["amber"] = 0.04 + 0.96 * dim ** 3
     over["booth"] = 0.04 + 0.96 * dim ** 3
-    over["mefill"] = 1.0 if shot == "S44" else 0.0
+    over["mefill"] = min(1.0, max(0.0, (0.7 - dim) / 0.4))
     # the sky and every emissive in the hall dim with the room (the world was left at full, lighting it all)
     wn = bpy.context.scene.world.node_tree.nodes["Background"]
     wn.inputs["Strength"].default_value = story["look"].get("sky_strength", 1.0) * (0.03 + 0.97 * dim ** 3)
@@ -863,11 +863,11 @@ def animate(kit, story, tl, t, ctx):
     up = kit.LIGHTS["sk_up"]["obj"]
     boost = next((sh.get("skboost", 1.0) for sh in story["shots"] if sh["id"] == shot), 1.0)
     up.location = (px + 1.4 * side, py + 0.1, 0.2) if boost == 1.0 else (px - 1.1, py + 0.8, 0.3)   # boosted: low, from the side
-    over["sk_up"] = (0.3 + 0.7 * near) * expo * boost
+    over["sk_up"] = (0.3 + 0.7 * near) * expo * boost * (1.0 + 7.0 * dim ** 3)
     rim = kit.LIGHTS["sk_rim"]["obj"]
     rim.location = (px - 0.4, py + 2.6, 2.9)
     kit.aim(rim, (px, py, 1.5))
-    over["sk_rim"] = (0.35 + 0.65 * near) * expo * boost * (0.4 if shot == "S44" else 1.0)
+    over["sk_rim"] = (0.35 + 0.65 * near) * expo * boost * (0.4 if shot == "S44" else 1.0) * (1.0 + 0.8 * dim ** 3)
     # ---- the cast: sitting, skating, wobbling, skates on and off
     for who, keys in tl["acting"].items():
         root = bpy.data.objects.get(who)
