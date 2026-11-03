@@ -374,7 +374,7 @@ cue("L37", "book", mode="open")
 S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -2.6, 1.4), (-2.3, -2.6, 1.2), 22),
   who={"milo": (X(-2.6, -1.8), 180, "grin", {"arms": [70, 70]}), "me": (X(-2.6, -0.65), 0, "smile", {"arms": [70, 70]})},
   note="the two of us hauling the red book out of the hall door, Milo walking backward at the front")
-cue("L38-0.6", "tod", n="dusk", dur=0.45)   # finish before S54 cuts in: a ramp on screen flashed (rescue r3)
+# (no time-of-day change at L38: the street stays night, matching the hall; a dusk street flashed, rescue r3)
 cue("L38", "book", mode="carry")
 walk("milo", "L38+0.1", X(-2.6, -1.8), keep_yaw=True, yaw=180)
 walk("milo", "L38.2", X(-2.3, -3.6), keep_yaw=True, yaw=180)
@@ -397,7 +397,7 @@ TABLE_Y = 3.6
 S("L39", ((MOM - 0.9, 0.5, 1.5), (MOM - 0.1, 4.5, 1.15), 26, (MOM - 0.7, 1.0, 1.5), (MOM - 0.1, 4.5, 1.15), 26),
   who={"mom": (X(MOM, 4.9), 0, "smile", {}), "me": (X(MOM + 1.35, 3.5), -90, "smile", {"arms": [72, 0]})},
   note="Mom's bright dining room: Mom in her paper crown, the giant book across the table among cake plates; my stamp coming down")
-cue("L39", "tod", n="night", dur=0.45)   # quick, inside the dining room (rescue r3: a long ramp flashed)
+# (L39 needs no night cue now: it never left night)
 cue("L39-0.3", "stamp", mode="hand")
 raw("me", "L39", arms=[112, 0], blend=0.2)
 cue("L39", "book", mode="table")

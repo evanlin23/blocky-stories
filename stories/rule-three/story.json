@@ -7680,12 +7680,6 @@
    "mode": "open"
   },
   {
-   "at": "L38-0.6",
-   "name": "tod",
-   "n": "dusk",
-   "dur": 0.45
-  },
-  {
    "at": "L38",
    "name": "book",
    "mode": "carry"
@@ -7730,12 +7724,6 @@
    "at": "L39-0.3",
    "name": "stamp",
    "mode": "hand"
-  },
-  {
-   "at": "L39",
-   "name": "tod",
-   "n": "night",
-   "dur": 0.45
   },
   {
    "at": "L39",
