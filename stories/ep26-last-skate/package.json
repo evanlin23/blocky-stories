@@ -1,9 +1,11 @@
 {
-  "title": "Slow songs were couples only, so Nan waited alone at the rail. Something kept standing nearer",
-  "description": "My grandparents met at a roller rink fifty years ago. On its very last night, I took them back. Pop said his knees were done and sat at the snack bar, so Nan waited at the rail on her own for every slow song.\n\nEach time the spotlight came round, the skater in the faded stripes was standing nearer to her.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
-  "pin": "Would you have waited at the rail on your own for the slow songs?",
+  "title": "Ask For A Skip, Get SKIPPED 🛼",
+  "description": "My best friend had his birthday at the roller rink, and I didn't know anybody else there. The DJ will skip any song you ask him to, so every time things got awkward, I asked.\n\nHe doesn't skip the song. And every time I asked, the skater in the faded stripes was standing a little nearer.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+  "pin": "Comment SKIP if you'd have skipped the speech too.",
   "made_for_kids": false,
-  "shape": "stand-in",
-  "cover_s": 93.6,
-  "hold": "dropped 2026-11-03 (opening triage: the twist is the creature keeping Pop's place, which RULES says isn't a big enough idea; a grandparents' romance is the whole story; the Skater first shows at about 25 s, so a warning opening can't pay off early; UK English throughout)"
+  "cover_s": 50.0,
+  "shape": "comes-due",
+  "opening": "if",
+  "lane": "core",
+  "hold": "revival in progress 2026-11-03"
 }
