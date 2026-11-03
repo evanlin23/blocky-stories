@@ -1,8 +1,9 @@
 {
   "title": "This Glove Keeps Hopping BACK 🧤",
-  "description": "Never drop anything here unless you want it back. Gloves hop after their owners up the slipway, and a dog that slips its leash rides the ferry home on its own.\n\nNothing I lose ever comes back. Then every street I took started ending at the slipway, and a line of damp little dots began at my own front door.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+  "description": "If you drop something here, it hops home after you. Gloves hop after their owners up the slipway, and a dog that slips its leash rides the ferry home on its own.\n\nNothing I lose ever comes back. Then every street I took started ending at the slipway, and a line of damp little dots began at my own front door.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
   "pin": "Comment GLOVE if you lost one and it never came back.",
   "made_for_kids": false,
   "cover_s": 0.2,
-  "shape": "about-me"
+  "shape": "about-me",
+  "opening": "if"
 }

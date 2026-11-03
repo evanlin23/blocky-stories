@@ -547,7 +547,7 @@ for r, db in ((0.52, -27), (1.04, -27), (1.56, -27), (2.6, -27), (3.12, -27), ("
     sfx.append({"at": r, "kind": "pop", "db": db})
 sfx += [
     # the opening: a soft damp pat on "back", and a quiet whoosh into each hard cut
-    {"at": "L01.3+0.12", "kind": "thud", "db": -17},
+    {"at": "L01.3+0.3", "kind": "thud", "db": -17},
     {"at": "L01.2-0.1", "kind": "whoosh", "db": -26},
     {"at": "L02-0.1", "kind": "whoosh", "db": -26},
     {"at": "L02.1-0.1", "kind": "whoosh", "db": -26},
