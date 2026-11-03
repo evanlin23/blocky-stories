@@ -218,7 +218,7 @@ shot("L30", "down the hall to the back door",
      c([0, [X, 36.0, 1.5], [X, 43.3, 1.3], 22], [1, [X, 40.0, 1.5], [X, 43.3, 1.3], 22]))
 shot("L31", "the room full of hooks", still([X, 43.0, 1.5], [X, 46.5, 1.35], 13))
 shot("L32", "a pan along the gloves",
-     c([0, [X - 2.4, 45.0, 1.5], [X - 2.4, 46.8, 1.4], 20], [1, [X + 0.2, 45.0, 1.5], [X + 0.2, 46.8, 1.4], 20]))
+     c([0, [X - 0.7, 45.0, 1.5], [X - 0.7, 46.8, 1.4], 20], [1, [X + 0.1, 45.0, 1.5], [X + 0.1, 46.8, 1.4], 20]))
 shot("L32.3", "key rings rattling, Monday's ring in front", still([X + 1.05, 45.35, 1.65], [X + 1.3, 46.3, 1.55], 30))
 shot("L33", "my bike", still([X + 1.2, 44.3, 1.0], [X + 3.4, 45.4, 0.6], 24))
 shot("L34", "the striped hat, me in the doorway", still([X - 1.6, 45.5, 1.6], [X - 0.4, 43.2, 1.5], 26),
@@ -313,7 +313,7 @@ shot("L63a", "close on Gran, soft, shaking her head, leaning her shoulder agains
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
 shot("L64", "from outside the window, the island coming up", still([F + 6.2, 4.0, 5.3], [F + 1.7, 4.0, 5.2], 22),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
-shot("L64.1", "the armrest, two strokes", still([F + 0.8, 4.0, 5.2], [F + 1.7, 4.0, 4.64], 30),
+shot("L64.2", "the armrest, two strokes", still([F + 0.8, 4.0, 5.2], [F + 1.7, 4.0, 4.64], 30),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft"), "me": P(ME_SEAT, yaw=90, sit=True, expr="soft")})
 shot("L65", "the wake back to the town", still([F + 3.0, -34, 16], [F, 6, 0], 22))
 
@@ -438,7 +438,7 @@ cue("L58.2", "dent", v=0.6, tilt=0.0, y=5.05)
 cue("L59", "dent", v=0.0, tilt=0.0, y=5.05, dur=2.0)
 cue("L23.2", "smudge", on=True)
 cue("L24", "smudge", on=False)
-cue("L64.1", "strokes", on=True)
+cue("L64.2", "strokes", on=True)
 cue("L65", "strokes", on=False)
 cue("L32.3", "rattle", v=1.0, dur=0.5)
 cue("L33", "rattle", v=0.0, dur=0.5)
