@@ -292,7 +292,7 @@ def test_punch_ins_are_capped_on_key_words():
 
 
 def test_walk_shots_go_on_ones_only_with_the_pack():
-    st, tl = story(look={"polish": True})
+    st, tl = story(look={"polish": {"ones": "walk"}})
     st_off, tl_off = story(False)
     for sp in (st, st_off):
         for s in sp["shots"]:
@@ -368,3 +368,26 @@ def test_ones_moving_draws_camera_moves_on_every_frame():
                        for l in [f"L{i:02d}" for i in range(1, 7)]}}
     on = timeline.build(st, voice)
     assert all(s["step"] == 1 for s in on["shots"])          # every shot's camera moves with the pack
+
+
+def test_ones_moving_is_the_default():
+    """Lead, 2026-11-03: the camera moves 96% of the time with the pack, so moves are drawn on every frame."""
+    assert polish.DEFAULTS["ones"] == "moving"
+
+
+def test_bright_grade_lift_never_turns_near_black_red():
+    """ep47 r8: contrast left near-black pixels with negative channels, their luma sat at the 1e-4 floor, and the
+    lift scaled the one positive channel about 1000x into pure red. Near-blacks must lift to a dark, quiet grey."""
+    img = np.full((8, 8, 3), 0.01, np.float32)
+    img[..., 0] = 0.12                                                # contrast leaves R just above 0, G and B below
+    out = np.clip(post.grade(img, {"vignette": 0, "contrast": 1.3, "lift": 0.035}), 0, 1)
+    r, g, b = out[..., 0].mean(), out[..., 1].mean(), out[..., 2].mean()
+    assert r < 0.15 and r - min(g, b) < 0.08                          # no saturated red
+    assert out.mean() > 0.01                                          # still lifted off black
+
+
+def test_bright_grade_lift_all_negative_pixel_lands_near_the_lift():
+    """An all-negative pixel after contrast lifts to a grey near the lift value, never blown up."""
+    img = np.full((4, 4, 3), 0.02, np.float32)
+    out = post.grade(img, {"vignette": 0, "contrast": 1.3, "lift": 0.035})
+    assert np.allclose(out, 0.035, atol=0.003)
