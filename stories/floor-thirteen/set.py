@@ -1165,7 +1165,18 @@ def build_land(kit, ctx, M):
     _wbox(kit, "land_floor", (-1.6, yE, -0.1), (1.6, y0, 0.0), M["land_carpet"])
     _wbox(kit, "land_ceiling", (-1.6, yE, hh), (1.6, y0, hh + 0.1), M["land_ceil"])
     _wbox(kit, "land_wall_l", (-1.6, yE, 0.0), (-1.5, y0, hh), M["land_wall"])
-    _wbox(kit, "land_wall_r", (1.5, yE, 0.0), (1.6, y0, hh), M["land_wall"])
+    sd0, sd1 = yE + 1.2, yE + 2.1      # the stairwell door in the right wall
+    _wbox(kit, "land_wall_r0", (1.5, yE, 0.0), (1.6, sd0, hh), M["land_wall"])
+    _wbox(kit, "land_wall_r1", (1.5, sd1, 0.0), (1.6, y0, hh), M["land_wall"])
+    _wbox(kit, "land_wall_rt", (1.5, sd0, 2.1), (1.6, sd1, hh), M["land_wall"])
+    _wbox(kit, "stairwell_back", (2.6, sd0 - 0.3, 0.0), (2.7, sd1 + 0.3, hh), M["room_dark"])
+    _wbox(kit, "stairwell_floor", (1.6, sd0 - 0.3, -0.1), (2.7, sd1 + 0.3, 0.0), M["room_dark"])
+    _wbox(kit, "stairwell_s0", (1.6, sd0 - 0.31, 0.0), (2.7, sd0 - 0.3, hh), M["room_dark"])
+    _wbox(kit, "stairwell_s1", (1.6, sd1 + 0.3, 0.0), (2.7, sd1 + 0.31, hh), M["room_dark"])
+    sh = kit.empty("stair_hinge", (1.53, sd1, 0.0))
+    kit.box("stair_leaf", (0.04, 0.9, 2.04), (0, -0.45, 1.02), M["land_door"], sh, bevel=0.005)
+    kit.box("stair_bar", (0.03, 0.5, 0.04), (-0.03, -0.45, 1.0), M["brass"], sh)
+    ctx["stair_hinge"] = sh
     for k, (lo, hi) in enumerate((((-1.6, y0 - 0.06, 0.0), (-DOOR_W / 2 - 0.06, y0, hh)),
                                    ((DOOR_W / 2 + 0.06, y0 - 0.06, 0.0), (1.6, y0, hh)),
                                    ((-DOOR_W / 2 - 0.06, y0 - 0.06, 2.1), (DOOR_W / 2 + 0.06, y0, hh)))):
@@ -1527,6 +1538,13 @@ def animate(kit, story, tl, t, ctx):
             else:
                 him_v = val
     set_land_doors(ctx, me_v, him_v)
+    sds = _cues(tl, "stair_door")
+    sdc = _last(sds, t)
+    if sdc is not None and "stair_hinge" in ctx:
+        psd = _prev(sds, sdc)
+        v0 = float(psd["open"]) if psd is not None and psd is not sdc else 0.0
+        v = v0 + (float(sdc["open"]) - v0) * kit_ss((t - sdc["t"]) / sdc.get("dur", 0.6))
+        ctx["stair_hinge"].rotation_euler = (0, 0, math.radians(100.0 * v))
     # --- the lights (a change eases over the cue's "dur": the car's panel dims, never cuts)
     lcs = _cues(tl, "lights")
     lc = _last(lcs, t) or {}

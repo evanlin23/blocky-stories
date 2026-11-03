@@ -170,8 +170,8 @@ shot("P05", "THE BUMP: the held centre-line frame, locked off: the leaves hit it
 shot("L34", "my face lit cold from below by its buttons", FACE_FEAR, 1, 0.004,
      lamp(FACE_FEAR, [-0.35, 0.15, 1.55], 0.5, up=0.1, c="#bcd0ff", side=0.2))
 shot("L35", "the doorway is empty across the cut, the doors closing with nothing in the way", BACK_WIDE, 1, 0.003)
-shot("L36", "my orange shoes on concrete steps, fast", still([STX + 0.45, -3.6, 0.55], [STX, -1.4, 0.95], 22))
-shot("L36.2", "lower down the steps", still([STX + 0.4, -1.2, 1.35], [STX, -2.8, 0.2], 24))
+SD_CAM = still([-1.0, -1.5, 1.5], [1.2, -3.5, 1.2], 18)
+shot("L36", "the twelve landing: the stairwell door swings open and I come through", SD_CAM)
 # 06 Grandad's door
 shot("L37", "the twelve landing, his door opening, his face", SHOT_HIS_DOOR)
 L38C = still([0.0, -4.1, 1.6], [-0.55, -5.1, 1.55], 22)
@@ -321,9 +321,10 @@ put("me", "P05", ME_HELD["pos"], yaw=ME_HELD["yaw"], head=ME_HELD["head"], expr=
 put("me", "L34", [-0.35, 0.2], yaw=0, head=[0, -6], expr="terrified")
 hide("me", "L35")
 # the stairs: I run down toward -y; z follows the nosings (rise .13 per .2 run)
-put("me", "L36", [STX, -0.25, 1.92], yaw=0, expr="worried")
-walk("me", "L36>+0.1", [STX, -2.4, 0.5], keep_yaw=False)
-walk("me", "L36.2>", [STX, -3.4, -0.13])
+put("me", "L36", [2.0, -3.5], yaw=90, expr="worried")
+walk("me", "L36+0.1", [1.3, -3.5], keep_yaw=False)
+walk("me", "L36+0.6", [0.9, -3.5], keep_yaw=False)
+walk("me", "L36>", [0.3, -3.3])
 hide("me", "L37")
 # --- 06: Grandad's door
 put("okafor", "L37", HIS_DOOR, yaw=180, expr="neutral")
@@ -387,7 +388,10 @@ cue("L27", "lights", state="on", dur=0.4)
 thirteen("P04", 1.4, fill=0.8)
 thirteen("P05", 0.5, rim=0.7, fill=0.0)
 thirteen("L34", 0.4, rim=0.5, fill=1.1)
-cue("L36", "lights", state="stairs", dur=1.0)
+cue("L36", "lights", state="land", dur=0.3)
+cue(0, "stair_door", open=0.0)
+cue("L36-0.1", "stair_door", open=1.0, dur=0.3)
+cue("L37", "stair_door", open=0.0, dur=0.1)
 cue("L37", "lights", state="land", dur=0.9)
 thirteen("L42", 1.0, rim=0.6, fill=1.0, shelf=0.0)
 thirteen("L43.3", 0.5, rim=0.6, fill=1.0, shelf=1.0)
@@ -449,7 +453,7 @@ cue(0, "panel", lit=[12])                       # the 13 button, lit on its own:
 cue("L02", "panel", lit=[])
 cue("L13+0.25", "panel", lit=[11])
 cue("L13+0.7", "panel", lit=[11, 12])           # Tuesday: the 13 lights up by itself as my finger lifts (the plant)
-cue("L14", "panel", lit=[])
+cue("L14-0.25", "panel", lit=[])
 for k in range(9):
     cue(f"L32+{0.05 + 0.18 * k:.2f}", "panel", lit=[21])
     cue(f"L32+{0.12 + 0.18 * k:.2f}", "panel", lit=[])
@@ -537,6 +541,7 @@ sf("L42", "whoosh", -28, dur=0.7)
 sf("L50", "whoosh", -28, dur=0.7)
 sf("L08.1", "door", -30, dur=0.6)
 sf("L37.1", "door", -30, dur=0.6)
+sf("L36", "door", -24, dur=0.6)
 sf("L31", "sting", -24)
 # post sfx (2026-11-03 lift): the doors, the bump and the beats land with recorded effects
 sf("L02b", "bell", -20)
@@ -558,7 +563,7 @@ sf("L50", "door", -20, dur=1.0)
 
 story = {
     "slug": "ep14-floor-thirteen",
-    "title": "In This Building Everything You FORGET Goes To Floor 13",
+    "title": "My 13 Button Lit Up By ITSELF 🔘",
     "made_for_kids": False,
     "fade_in": False,
     "premise": "In an older apartment tower, everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it: keys, a forgotten anniversary as a cake, even a first boyfriend doing the crossword. I've never forgotten anything and never been up there. Then the elevator starts going past my floor to a dark thirteen, where something in a black-and-brass elevator attendant's uniform with a panel of elevator buttons for a face is nearer each morning, a brass tag with my apartment number hanging from its folded gloves.",
