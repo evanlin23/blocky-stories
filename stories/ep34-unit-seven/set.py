@@ -535,23 +535,23 @@ def build_dlamps(kit, ctx, M):
     nt.nodes.remove(nt.nodes["Principled BSDF"])
     tc = nt.nodes.new("ShaderNodeTexCoord")
     mp = nt.nodes.new("ShaderNodeMapping")
-    mp.inputs["Location"].default_value = (-0.5, -0.5, 0.0)
+    mp.inputs["Location"].default_value = (-1.0, -1.0, 0.0)
     mp.inputs["Scale"].default_value = (2.0, 2.0, 2.0)
     gr = nt.nodes.new("ShaderNodeTexGradient")
-    gr.gradient_type = "QUADRATIC_SPHERE"
+    gr.gradient_type = "SPHERICAL"
     em = nt.nodes.new("ShaderNodeEmission")
     em.inputs["Color"].default_value = kit.col("#52b4ff")
     em.inputs["Strength"].default_value = 0.0
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mx = nt.nodes.new("ShaderNodeMixShader")
-    nt.links.new(tc.outputs["Generated"], mp.inputs["Vector"])
+    nt.links.new(tc.outputs["UV"], mp.inputs["Vector"])
     nt.links.new(mp.outputs["Vector"], gr.inputs["Vector"])
     nt.links.new(gr.outputs["Fac"], mx.inputs["Fac"])
     nt.links.new(tr.outputs[0], mx.inputs[1])
     nt.links.new(em.outputs[0], mx.inputs[2])
     kit._fogged(hm, mx.outputs[0])
     hm["emit_node"] = em.name
-    ctx["halo7"] = (kit.plane("halo7", (0.9, 0.9), (0.745, YC[7], 2.55), hm, None, (math.pi / 2, 0, -math.pi / 2)), hm)
+    ctx["halo7"] = (uvplane(kit, "halo7", (1.6, 1.6), (0.745, YC[7], 2.55), hm, None, (math.pi / 2, 0, -math.pi / 2)), hm)
     for k, yc in YC.items():     # side B: on the header's corridor face (x 0.78), lit lights for the doors the story lifts
         door_lamp(kit, ctx, M, k, (0.775, yc, 2.55), "x-", light=k in (7, 9, 10, 11))
     for k, yc in YA.items():
@@ -1040,7 +1040,7 @@ def animate(kit, story, tl, t, ctx):
     if d7 and d7[-1]["t"] > 100 and t > d7[-1]["t"] - 0.7:
         v7 = _ramp(d7, t, "on", 0.0)
         hv = _ss(min(1.0, (t - (d7[-1]["t"] - 0.7)) / 0.6)) * v7
-    set_emit(hm_, 2.2 * hv)
+    set_emit(hm_, 10.0 * hv)
     hob.hide_render = hv < 0.01
     over["h fill"], over["hall"], over["room"], over["cup"] = S[0], S[1], S[2], S[3]
     over["hall back"] = S[1]
