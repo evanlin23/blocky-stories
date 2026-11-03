@@ -41,7 +41,7 @@ cast = {
                   extra_c="#141414", face={"eyes": "tired", "brows": True, "ink": "#1c1416", "bags": True}),
     # the Negative: skin near-black, white strokes; its mouth is a story-local decal (set.py), so the face has none
     "neg": person("#36755f", "#d4caaf", "#15181c", "cap", "#c8c8c8", "#f2f2f2", pattern="knit", pattern_c="#2c6551",
-                  face={"eyes": "negative", "brows": True, "ink": "#f2f2f2", "pupil": "#ffffff", "mouth": "none"}),
+                  face={"eyes": "none", "brows": False, "ink": "#f2f2f2", "mouth": "none"}),
     "woman": person("#2a8a8a", "#2a2f3a", "#d9a47e", "bun", "#4a2a1a", extras=["coat"], zip_c="#1d6666"),
     "man": person("#6b4a2e", "#33302c", "#c89270", "none", hat="ballcap", hat_c="#5a4a38", extras=["coat"],
                   zip_c="#4a3220"),
@@ -103,7 +103,7 @@ ROOM_DEF["neg"] = {"p": [*D_NEG, SEAT_Z], "yaw": -90, **NEG_SIT}
 DEFAULTS = {"room": ROOM_DEF}
 
 TAM_WRITE = dict(bend=30, head=[0, 22], arms=[58, 50], expr="worried")
-LEAN = dict(bend=40, arms=[78, 78], head=[0, -40], expr="blank")        # the Negative leaning across the table
+LEAN = dict(bend=40, arms=[84, 84], head=[0, -40], expr="blank")        # the Negative leaning across the table
 MESEAT = dict(p=[*ME_AT, SEAT_Z], yaw=180)
 STAND = dict(p=[ME_AT[0], -1.55, 0.0], yaw=180, sit=False, bend=0, arms=[0, 0], head=[0, 0])
 
@@ -118,7 +118,7 @@ def S(ref, scene, cam, stage=None, **opt):
 
 WIDE = ([6.0, -5.0, 3.4], [-1.5, 1.0, 2.2], 17)
 LOCK = ([-5.4, -0.9, 1.55], [3.0, -0.4, 1.3], 24)              # my eyeline: the man near, the Negative far
-GRIN_CAM = ([-5.8, -3.0, 2.4], [-7.25, 0.9, 1.3], 25)       # the Negative's face across from Tam, over Tam's shoulder
+GRIN_CAM = ([-5.8, -3.0, 2.4], [-7.45, 0.9, 1.3], 25)       # the Negative's face across from Tam, over Tam's shoulder
 D_FRONT = ([4.9, 0.0, 1.45], [6.35, 0.4, 1.3], 60)            # the far table, its face
 
 # 01 the hook: Tam's 40, then the rule in two street spots
@@ -227,7 +227,7 @@ S("L44.3", "room", ([1.5, 0.4, 1.8], [4.45, 0.4, 2.3], 45), {})
 LENS = {0: 32, "L02": 38, "L04": 30, "L05": 32, "L05.2": 40, "L06.2": 22, "L07": 20, "L07.2": 28, "L08": 17, "L08.2": 38,
         "L09.1": 55, "L09.2": 20, "L10": 30, "L10.1": 40, "L11": 40, "L11.2": 38, "L12.2": 26, "L13": 64, "L13.2": 32,
         "L14": 26, "L15": 30, "L16": 20, "L16.1": 20, "L16.3": 40, "L17": 40, "L17.3": 36, "L18": 32, "L18.3": 40,
-        "L18.5": 20, "L19": 20, "L19.1": 34, "L21": 30, "L21.2": 20, "L22": 30, "L23": 22, "L24": 25, "L24.2": 34,
+        "L18.5": 20, "L19": 20, "L19.1": 34, "L21": 30, "L21.2": 20, "L22": 30, "L23": 22, "L24": 30, "L24.2": 34,
         "L25": 30, "L25.1": 22, "L27": 28, "L27.2": 30, "L28": 36, "L28.2": 24, "L29": 34, "L30": 28, "L31": 28,
         "L32.2": 28, "L33": 28, "L34": 36, "L35": 34, "L35.2": 25, "L36": 24, "L37": 24, "L38": 26, "L39": 30,
         "L40": 24, "L41.2": 20, "L42": 34, "L42.2": 34, "L43": 22, "L44": 32, "L44.3": 30, "L26.2": 25}
@@ -339,7 +339,7 @@ for i, s in enumerate(SH):
         cues.append({"at": s["lamps_down"], "name": "dome", "to": 0.4, "dur": 1.5})     # dusk amber: a dimming, never a blackout
     if s.get("lamps_up"):
         cues.append({"at": s["lamps_up"], "name": "lamps", "to": 1.0, "dur": 1.5})
-        cues.append({"at": s["lamps_up"], "name": "dome", "to": 0.6, "dur": 1.5})
+        cues.append({"at": s["lamps_up"], "name": "dome", "to": 0.35, "dur": 1.5})
     if s.get("morning"):
         cues.append({"at": "L42+0.3", "name": "dome", "to": 1.0, "dur": 2.0})
 cues += [{"at": 0, "name": "negscale", "v": 1.0}, {"at": 0, "name": "lamps", "to": 1.0, "dur": 0.1},

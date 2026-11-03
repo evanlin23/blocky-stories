@@ -601,36 +601,37 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
 
 # ------------------------------------------------------------------------------------------------ the upside-down grin
 
-GRIN_W, GRIN_H = 0.96, 0.62   # world size of the decal on the Negative's face
+GRIN_W, GRIN_H = 1.0, 0.38   # world size of the decal on the Negative's face
 
 
-def grin_image(w=1100, h=700):
-    """A big open laughing grin turned upside down: an arch with a flat floor, blocky teeth standing up from the
-    floor, a dim tongue hanging from the roof, the corners hooked down. White strokes on black, alpha outside."""
+def grin_image(w=1100, h=420):
+    """The upside-down grin as a thin, long, white downturned crescent: one tapered stroke, ends lower than its middle.
+    Nothing inside it, no teeth, no tongue."""
     S = 2
     im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    cx, by = w * S / 2, h * S * 0.74          # floor line
-    rx, ry = w * S * 0.40, h * S * 0.62       # arch half-width, height
-    sw = int(h * S * 0.09)
-    pts = [(cx + rx * math.cos(math.pi * k / 48), by - ry * math.sin(math.pi * k / 48) ** 0.85) for k in range(49)]
-    d.polygon(pts, fill=(2, 2, 3, 255))
-    # the tongue, hanging from the roof
-    d.ellipse([cx - rx * 0.42, by - ry * 0.98, cx + rx * 0.42, by - ry * 0.44], fill=(78, 78, 86, 255))
-    d.line([(cx, by - ry * 0.95), (cx, by - ry * 0.62)], fill=(20, 20, 24, 255), width=int(sw * 0.35))
-    # teeth standing up off the floor
-    n = 6
-    tw = rx * 2 * 0.80 / n
-    for k in range(n):
-        x0 = cx - rx * 0.80 + k * tw
-        th = ry * (0.34 + 0.07 * math.sin(math.pi * (k + 0.5) / n))
-        d.rounded_rectangle([x0 + tw * 0.08, by - th, x0 + tw * 0.92, by + sw * 0.4], radius=int(tw * 0.12), fill=(242, 242, 242, 255))
-    # the outline: arch, floor, and the corners hooked down
-    d.line(pts, fill=(242, 242, 242, 255), width=sw, joint="curve")
-    d.line([(cx - rx - sw * 0.3, by), (cx + rx + sw * 0.3, by)], fill=(242, 242, 242, 255), width=int(sw * 0.8))
-    for sd in (-1, 1):
-        hook = [(cx + sd * (rx + sw * 0.2 + 40 * S * (k / 10) ** 0.8), by + 230 * S * (k / 10) ** 1.4) for k in range(11)]
-        d.line(hook, fill=(242, 242, 242, 255), width=int(sw * 0.9), joint="curve")
+    cx, top = w * S / 2, h * S * 0.18
+    rx, drop = w * S * 0.46, h * S * 0.56
+    up, lo = [], []
+    for k in range(61):
+        u = k / 60
+        x = cx + rx * (2 * u - 1)
+        y = top + drop * abs(2 * u - 1) ** 1.7   # the ends hang lower than the middle
+        t = (h * S * 0.045) * (0.25 + 0.75 * math.sin(math.pi * u))
+        up.append((x, y - t))
+        lo.append((x, y + t))
+    d.polygon(up + lo[::-1], fill=(244, 246, 250, 255))
+    return im.resize((w, h), Image.LANCZOS)
+
+
+def glint_image(w=800, h=160):
+    """Two tiny cold glints where the eyes are; no discs, no pupils."""
+    S = 2
+    im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    for sx in (-1, 1):
+        x, y = w * S / 2 + sx * w * S * 0.29, h * S / 2
+        d.ellipse([x - 16 * S, y - 3 * S, x + 16 * S, y + 3 * S], fill=(205, 225, 255, 255))
     return im.resize((w, h), Image.LANCZOS)
 
 
@@ -732,7 +733,9 @@ def _extras(kit, ctx):
     ctx["grin"] = None
     if hg is not None:
         gm = alpha_mat(kit, "neg grin", grin_image())
-        ctx["grin"] = curved_decal(kit, "neg.grin", (GRIN_W, GRIN_H), -0.10, R + 0.012, gm, hg)
+        ctx["grin"] = curved_decal(kit, "neg.grin", (GRIN_W, GRIN_H), -0.16, R + 0.012, gm, hg)
+        em_ = alpha_mat(kit, "neg glints", glint_image())
+        curved_decal(kit, "neg.glints", (0.8, 0.16), 0.10, R + 0.012, em_, hg)
     pm = img_mat(kit, "cat picture", cat_image(), rough=0.4)
     sm = kit.plastic("#16181c", 0.4, "phone body", 0.3)
     ph = kit.empty("phone", (3000, 3000, 0))
@@ -809,7 +812,12 @@ def animate(kit, story, tl, t, ctx):
         if "neg_base" not in ctx:
             ctx["neg_base"] = nr.scale.copy()     # the rig's own root scale; ours multiplies it
         k = sc_c["v"] if sc_c else 1.0
-        nr.scale = tuple(v * k for v in ctx["neg_base"])
+        # a little too tall and too thin: wrong proportions, not a soft box
+        nr.scale = tuple(v * k * m for v, m in zip(ctx["neg_base"], (0.9, 0.9, 1.14)))
+        for nm in ("arm-1", "arm1"):
+            ob = bpy.data.objects.get(f"neg.{nm}")
+            if ob is not None:
+                ob.scale = (0.62, 0.62, 1.12)
     # ---- the stack of books appears with its cue
     stc = _last(_cues(tl, "stack"), t)
     for ob in ctx["stack"]:
@@ -896,8 +904,8 @@ def animate(kit, story, tl, t, ctx):
         bend = ac._held(tl["acting"]["neg"], "bend", t, 0.0)
         head = V((s["x"], s["y"], s["z"] + 1.35)) + f * 0.25 * (1 + math.sin(math.radians(bend)))
         head += f * 0.55 * math.sin(math.radians(bend))
-        for nm, pos, w in (("neg_key", head + sd * 1.7 + f * 0.8 + V((0, 0, 1.1)), 150.0),
-                           ("neg_rim", head - f * 1.5 - sd * 0.5 + V((0, 0, 1.4)), 260.0)):
+        for nm, pos, w in (("neg_key", head + sd * 1.2 + f * 0.9 + V((0, 0, -0.9)), 170.0),
+                           ("neg_rim", head - f * 1.5 - sd * 0.5 + V((0, 0, 1.4)), 520.0)):
             ob = K.LIGHTS[nm]["obj"]
             ob.location = pos
             ob.rotation_euler = (head - pos).to_track_quat("-Z", "Y").to_euler()
