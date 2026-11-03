@@ -4,8 +4,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I bring PIZZA every night",
-    "i bring pizza every night"
+    "I bring PIZZA",
+    "i bring pizza"
+   ],
+   [
+    "every night",
+    "every night"
    ],
    [
     "to a house",

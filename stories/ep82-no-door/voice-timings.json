@@ -1,0 +1,937 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "i bring pizza every night to a house with no door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.716
+    ],
+    [
+     0.716,
+     1.069
+    ],
+    [
+     1.069,
+     1.431
+    ],
+    [
+     1.431,
+     2.207
+    ]
+   ]
+  },
+  "L02": {
+   "text": "and tonight, i'm late.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     1.121
+    ]
+   ]
+  },
+  "L03": {
+   "text": "six o'clock. one large. plain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.19,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.19,
+     0.672
+    ],
+    [
+     0.707,
+     1.086
+    ],
+    [
+     1.121,
+     1.672
+    ]
+   ]
+  },
+  "L04": {
+   "text": "there's no door and no path. just a brass slot, down at knee height.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.052,
+   "onset": 0.172,
+   "end": 2.845,
+   "chunks": [
+    [
+     0.172,
+     0.698
+    ],
+    [
+     0.698,
+     1.259
+    ],
+    [
+     1.328,
+     1.983
+    ],
+    [
+     2.017,
+     2.845
+    ]
+   ]
+  },
+  "L05": {
+   "text": "you slide the box in. the slot is warm, like breath.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.466,
+   "chunks": [
+    [
+     0.172,
+     1.052
+    ],
+    [
+     1.138,
+     1.776
+    ],
+    [
+     1.801,
+     2.466
+    ]
+   ]
+  },
+  "L06": {
+   "text": "then the money slides back out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.483
+    ]
+   ]
+  },
+  "L07": {
+   "text": "a twenty, folded into a tiny house.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.612,
+     1.008
+    ],
+    [
+     1.008,
+     1.793
+    ]
+   ]
+  },
+  "L08": {
+   "text": "its chimney puffs every four seconds. like clockwork.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.586,
+   "onset": 0.172,
+   "end": 2.379,
+   "chunks": [
+    [
+     0.172,
+     0.768
+    ],
+    [
+     0.768,
+     1.483
+    ],
+    [
+     1.552,
+     2.379
+    ]
+   ]
+  },
+  "L09": {
+   "text": "the whole street keeps their porch lights on till it's delivered.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.621,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.603,
+     1.586
+    ],
+    [
+     1.586,
+     2.414
+    ]
+   ]
+  },
+  "L10": {
+   "text": "nobody walks a dog past it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.19,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.19,
+     0.974
+    ],
+    [
+     0.974,
+     1.569
+    ]
+   ]
+  },
+  "L11": {
+   "text": "my big sister, marisol, runs the pizza place on the corner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.172,
+   "end": 2.707,
+   "chunks": [
+    [
+     0.172,
+     1.207
+    ],
+    [
+     1.293,
+     2.026
+    ],
+    [
+     2.026,
+     2.707
+    ]
+   ]
+  },
+  "L12": {
+   "text": "she did this route for ten years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.19,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.19,
+     0.69
+    ],
+    [
+     0.69,
+     1.448
+    ]
+   ]
+  },
+  "L13": {
+   "text": "this month, she gave it to me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     1.31
+    ]
+   ]
+  },
+  "L14": {
+   "text": "tonight, my tire went flat, two blocks away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.379
+    ],
+    [
+     0.406,
+     1.017
+    ],
+    [
+     1.069,
+     1.966
+    ]
+   ]
+  },
+  "L15": {
+   "text": "so i ran it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.19,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.19,
+     1.0
+    ]
+   ]
+  },
+  "L16": {
+   "text": "six-oh-one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.19,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.19,
+     0.897
+    ]
+   ]
+  },
+  "L17": {
+   "text": "up and down the street, the porch lights went out.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ],
+    [
+     0.948,
+     1.466
+    ],
+    [
+     1.466,
+     2.034
+    ]
+   ]
+  },
+  "L18": {
+   "text": "six-oh-two.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.155,
+   "onset": 0.19,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.19,
+     0.931
+    ]
+   ]
+  },
+  "L19": {
+   "text": "the house's two top windows went dark, and lit again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.517,
+   "onset": 0.172,
+   "end": 2.328,
+   "chunks": [
+    [
+     0.172,
+     1.155
+    ],
+    [
+     1.155,
+     1.552
+    ],
+    [
+     1.603,
+     2.328
+    ]
+   ]
+  },
+  "L20": {
+   "text": "like it blinked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.19,
+   "end": 0.914,
+   "chunks": [
+    [
+     0.19,
+     0.914
+    ]
+   ]
+  },
+  "L21": {
+   "text": "six-oh-three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.172,
+   "onset": 0.19,
+   "end": 0.966,
+   "chunks": [
+    [
+     0.19,
+     0.966
+    ]
+   ]
+  },
+  "L22": {
+   "text": "the lawn split.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L23": {
+   "text": "and the house stood up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.069
+    ]
+   ]
+  },
+  "L24": {
+   "text": "the whole house was somebody.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.328
+    ]
+   ]
+  },
+  "L25": {
+   "text": "sitting very still, with a roof on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.19,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.19,
+     0.828
+    ],
+    [
+     0.854,
+     1.638
+    ]
+   ]
+  },
+  "L26": {
+   "text": "its knees came up out of the lawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.802
+    ],
+    [
+     0.802,
+     1.517
+    ]
+   ]
+  },
+  "L27": {
+   "text": "the slot was its mouth.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.259,
+   "chunks": [
+    [
+     0.172,
+     1.259
+    ]
+   ]
+  },
+  "L28": {
+   "text": "every porch light was out, so it turned toward the one door still lit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.0,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     1.138
+    ],
+    [
+     1.207,
+     1.569
+    ],
+    [
+     1.569,
+     2.81
+    ]
+   ]
+  },
+  "L29": {
+   "text": "marisol's door, on the corner.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.819,
+     1.5
+    ]
+   ]
+  },
+  "L30": {
+   "text": "but the order always says the same thing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.155,
+     0.56
+    ],
+    [
+     0.56,
+     1.776
+    ]
+   ]
+  },
+  "L31": {
+   "text": "the house with no door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     1.241
+    ]
+   ]
+  },
+  "L32": {
+   "text": "so i carried the pizza to where the house used to be.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.0,
+     1.5
+    ],
+    [
+     1.5,
+     2.155
+    ]
+   ]
+  },
+  "L33": {
+   "text": "i set it down in the bare dirt, right in the middle of the lot.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.69,
+   "onset": 0.19,
+   "end": 2.5,
+   "chunks": [
+    [
+     0.19,
+     0.716
+    ],
+    [
+     0.716,
+     1.328
+    ],
+    [
+     1.422,
+     1.888
+    ],
+    [
+     1.888,
+     2.5
+    ]
+   ]
+  },
+  "L34": {
+   "text": "it stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.966,
+   "onset": 0.172,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ]
+   ]
+  },
+  "L35": {
+   "text": "it looked back at the box.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     1.207
+    ]
+   ]
+  },
+  "L36": {
+   "text": "and it came home, and sat down, right on top of it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.784,
+     1.328
+    ],
+    [
+     1.379,
+     2.241
+    ]
+   ]
+  },
+  "L37": {
+   "text": "its knees sank back under the lawn.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.922
+    ],
+    [
+     0.922,
+     1.621
+    ]
+   ]
+  },
+  "L38": {
+   "text": "just a house again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.172,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.172
+    ]
+   ]
+  },
+  "L39": {
+   "text": "the slot pushed out a twenty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.155,
+     0.784
+    ],
+    [
+     0.784,
+     1.397
+    ]
+   ]
+  },
+  "L40": {
+   "text": "marisol came running with a second pizza.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.19,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ],
+    [
+     1.0,
+     1.966
+    ]
+   ]
+  },
+  "L41": {
+   "text": "we split it on the curb, laughing so hard we shook.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.431,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.966
+    ],
+    [
+     1.034,
+     1.647
+    ],
+    [
+     1.647,
+     2.224
+    ]
+   ]
+  },
+  "L42": {
+   "text": "she says the route is mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.19,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.19,
+     0.448
+    ],
+    [
+     0.448,
+     1.345
+    ]
+   ]
+  },
+  "L43": {
+   "text": "but last night, a second order came in, from another house with no door.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.276,
+   "onset": 0.155,
+   "end": 3.086,
+   "chunks": [
+    [
+     0.155,
+     0.672
+    ],
+    [
+     0.707,
+     1.638
+    ],
+    [
+     1.707,
+     2.276
+    ],
+    [
+     2.276,
+     3.086
+    ]
+   ]
+  },
+  "L44": {
+   "text": "so rain or shine,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.19,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.19,
+     1.155
+    ]
+   ]
+  }
+ }
+}
