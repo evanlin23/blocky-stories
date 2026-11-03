@@ -916,6 +916,8 @@ def mix(tl: dict, st: dict, vo_dir: Path) -> tuple[np.ndarray, dict]:
     drops = [drop_spec(d) for d in snd.get("music_drops", [])]
     for k, e in enumerate(snd.get("sfx", [])):
         y = sfx(e["kind"], k, e.get("dur", 1.0), e)
+        if e.get("post_lp"):      # opt-in: low-pass this one sound (Hz), e.g. to take hiss out of a quiet beat
+            y = fft_filter(y, "low", float(e["post_lp"]))
         te = at(e["at"])
         keep = e.get("keep", False) or any(e["kind"] in d["keep"] and at(d["from"]) - 0.05 <= te < at(d["to"]) + 0.4
                                            for d in drops)

@@ -115,12 +115,13 @@ def st(pos, yaw=0, expr="neutral", **kw):
 
 
 BAL = st([TX + 0.0, -1.45, 2.4], 0, "smile", **RAILS, head=[0, 0])
-WALK = st(tw(-1.3, -3.3), 10, "wide", arms=[0, 0], head=[0, 14])
+WALK1 = st(tw(-0.6, -3.0, 0.7), 8, "wide", arms=[0, 0], head=[0, 18])
+WALK = st(tw(-0.55, -3.0), 8, "wide", arms=[0, 0], head=[0, 18])
 # ---- 01 the rule: a noon street (0 to about 20 s)
-shot(0, mv(tw(-0.1, -12.5, 0.9), tw(-0.5, -2.4, 1.7), 27, tw(-0.1, -11.5, 1.0), tw(-0.5, -2.4, 1.8), 27), "town",
-     {"balcony": BAL, "walker": WALK}, sand=[("balcony", 0.1), ("walker", 0.95)], hand=0.003)
-shot("L01.2", mv(tw(-0.3, -8.0, 2.8), tw(-0.6, -2.4, 3.8), 30, tw(-0.3, -7.4, 2.9), tw(-0.6, -2.4, 3.9), 30), "town",
-     {"balcony": BAL, "walker": WALK})
+shot(0, mv(tw(-0.3, -6.6, 3.0), tw(-0.3, -2.4, 3.0), 27, tw(-0.3, -5.9, 3.0), tw(-0.3, -2.4, 3.0), 27), "town",
+     {"balcony": BAL, "walker": WALK1}, sand=[("balcony", 0.1), ("walker", 0.95)], hand=0.003)
+shot("L01.2", mv(tw(-0.3, -7.6, 3.4), tw(-0.3, -2.4, 3.4), 27, tw(-0.3, -6.9, 3.4), tw(-0.3, -2.4, 3.4), 27), "town",
+     {"balcony": BAL, "walker": WALK1})
 shot("L02", mv(tw(-24, -9, 1.7), tw(-12, -1.5, 1.8), 22, tw(14, -9, 1.7), tw(24, -1.5, 2.0), 22), "town",
      {"balcony": BAL, "walker": WALK,
       "grandad": st(tw(31, 5.2, 4.05), 0, "grin", arms=[0, 150]),
@@ -145,20 +146,21 @@ shot("L06.1", mv([-1.4, -7.2, 1.45], [-2.1, -2.2, 1.3], 26), "clear",
      {"me": st([-2.1, -3.2, 0.0], 0, "smile", arms=[0, 0])}, sand=[("me", 0.3)])
 shot("L07", mv([3.0, -6.0, 1.0], [0.0, 0.0, 11.0], 20, [3.0, -6.0, 1.0], [0.0, -1.0, 19.0], 20), "clear", {})
 shot("L07.3", mv([3.0, 3.4, 9.5], [-0.4, -0.2, 17.0], 24, [3.0, 3.4, 12.5], [-0.4, -0.2, 20.2], 24), "clear", {})
-shot("L08", mv([-2.2, -8.4, 1.4], [-2.2, -2.2, 1.7], 30), "clear",
+shot("L08", mv([-2.3, -7.0, 1.1], [-2.3, -3.3, 1.45], 30, [-2.3, -6.2, 1.1], [-2.3, -3.3, 1.45], 30), "gate",
      {"me": st([-1.7, -3.3, 0.0], 0, "smile"), "ollie": st([-2.85, -3.3, 0.0], 0, "grin")},
      sand=[("me", 0.3)])
-shot("L09", mv([-2.7, -6.6, 1.5], [-2.85, -3.3, 1.9], 36), "clear",
+shot("L09", mv([-2.7, -6.6, 1.5], [-2.85, -3.3, 1.9], 36), "gate",
      {"ollie": st([-2.85, -3.3, 0.0], 0, "smile")}, flap=("ollie", "L09", "L09>"))
-shot("L10", mv([-1.6, -8.0, 1.5], [-2.6, -3.4, 1.7], 30), "clear",
+shot("L10", mv([-1.6, -7.5, 1.1], [-2.5, -3.4, 1.5], 30), "gate",
      {"ollie": st([-2.85, -3.4, 0.0], 0, "smile", side=[0, 95]), "me": st([-1.7, -3.2, 0.0], 0, "smile")},
      flap=("ollie", "L10", "L10>"))
-shot("L10.2", mv([-3.4, -3.0, 1.7], [-1.0, -90.0, -20.0], 30), "clear", {"ollie": st([-2.9, -3.5, 0.0], 0, "grin", arms=[0, 100])},
+shot("L10.2", mv([-1.9, -6.0, 1.45], [-2.9, -3.5, 1.5], 34, [-2.1, -5.5, 1.45], [-2.9, -3.5, 1.5], 40), "gate",
+     {"ollie": st([-2.9, -3.5, 0.0], 0, "grin", arms=[0, 100], head=[0, 8])},
      flap=("ollie", "L10.2", "L10>"))
-shot("L11", mv([-2.3, -9.0, 1.4], [-2.4, -2.2, 1.1], 26), "clear",
+shot("L11", mv([-2.3, -9.0, 1.4], [-2.4, -2.2, 1.1], 26), "gate",
      {"me": st([-2.2, -1.2, 0.0], 0, "smile"), "ollie": st([-3.9, -4.6, 0.0], 0, "grin", arms=[0, 160])},
      gate=("L11", 0.0, 0.6))
-shot("L11.2", mv([-1.1, -3.3, 1.0], [-1.55, -2.1, 0.88], 60), "clear", {}, padlock=False)
+shot("L11.2", mv([-1.1, -3.3, 1.0], [-1.55, -2.1, 0.88], 60), "gate", {}, padlock=False)
 shot("L12", mv([-0.9, 1.5, 21.6], [-1.95, 1.0, 21.25], 26), "clear", {})
 # ---- 02 the nights (L13 to L21)
 shot("L13", mv([14.0, -14.0, 22.0], [0.0, 0.0, 21.0], 28, [12.5, -12.5, 22.0], [0.0, 0.0, 21.0], 30), "nighthigh", {},
@@ -215,12 +217,13 @@ shot("P03", mv([-0.7, 0.0, 21.15], [-2.5, 0.0, 21.15], 36), "night",
 # ---- 04 the reveal (L34 to the end)
 shot("L34", mv([-0.5, 0.0, 21.2], [-2.5, 0.0, 21.2], 34), "night",
      {"ollie_old": st([-2.5, 0.0, Z], 90, "soft", arms=[125, 0])}, night=4, lamp2=True)
-shot("L35", mv([-0.3, -2.0, 21.2], [-1.0, 0.0, 21.0], 22), "night",
+shot("L35", mv([-0.2, -0.3, 20.6], [-1.55, 0.0, 22.1], 24, [-0.2, -0.3, 20.6], [-1.55, 0.0, 22.3], 24), "nightlit",
      {"ollie_old": st([-1.55, 0.0, Z], 90, "soft", arms=[25, 0]), "me": st(at_floor([-0.3, 0.9]), -90, "wide", **HOLD)},
      lamp="hand", night=4, lamp2=True, door=("L35", 1.0, 0.1))
 shot("L36", mv([0.5, -0.5, 21.4], [0.0, -560.0, -120.0], 24), "nightvalley", {}, night=3)
-shot("L36.3", mv([-0.8, -1.4, 21.15], [-0.3, 0.5, 21.15], 34), "night",
-     {"me": st(at_floor([-0.3, 0.9]), 0, "wide", **HOLD)}, lamp="hand", night=3)
+shot("L36.3", mv([1.5, -0.9, 20.5], [-1.4, 0.2, 21.55], 24, [1.4, -0.9, 20.5], [-1.4, 0.2, 21.65], 24), "nightlit",
+     {"ollie_old": st([-1.55, 0.0, Z], 90, "soft", arms=[25, 0]), "me": st(at_floor([-0.3, 0.9]), -90, "wide", **HOLD)},
+     lamp="hand", night=4, lamp2=True)
 shot("L37", mv([0.4, -1.5, 21.15], [30.0, -560.0, -148.0], 80), "nightbino", {}, night=1, ollie=("win", 0.0, 0.3))
 shot("L38", mv([-1.7, -0.3, 21.2], [-2.5, 0.0, 21.1], 32), "night",
      {"ollie_old": st([-1.55, 0.0, Z], 90, "soft", arms=[25, 0], head=[0, -4])}, night=4, lamp2=True)
@@ -230,13 +233,13 @@ shot("L39.3", mv([0.4, -1.5, 21.15], [-120.0, -891.0, -20.0], 100), "nightbino",
 shot("L40", mv([-0.2, -1.8, 21.9], [0.9, 0.5, 21.9], 22), "night",
      {"ollie_old": st([-0.4, 0.2, Z], 90, "soft", arms=[0, 0]), "me": st(at_floor([0.6, 0.2]), -90, "soft", arms=[0, 0])},
      night=3, lamp="table")
-shot("L41", mv([-1.6, -1.2, 20.35], [-1.4, 0.1, 19.95], 40), "night",
+shot("L41", mv([-0.1, -1.0, 20.7], [-1.2, 0.5, 20.45], 30, [-0.3, -0.9, 20.7], [-1.2, 0.5, 20.45], 30), "nightlit",
      {"ollie_old": st([-1.2, 0.5, Z], 90, "soft", arms=[0, 0])}, night=3, lamp2=True)
 shot("L41.3", mv([-1.2, 0.1, 21.5], [-1.97, 1.0, 21.15], 40), "night", {}, night=3)
 shot("L42", mv([-0.6, 0.45, 21.2], [1.55, 0.3, 20.7], 24), "night",
      {"ollie_old": st(COT_OLD, -90, "smile", sit=True), "me": st(COT_ME, -90, "soft", sit=True)},
      lamp=[1.2, 0.3, Z + 0.48], night=3)
-shot("L43", mv([-0.1, 0.3, 21.4], [1.55, 0.3, 21.9], 30), "night",
+shot("L43", mv([-1.3, 0.3, 21.7], [1.55, 0.3, 21.55], 22, [-1.2, 0.3, 21.7], [1.55, 0.3, 21.6], 22), "nightlit",
      {"ollie_old": st(COT_OLD, -90, "smile", sit=True), "me": st(COT_ME, -90, "soft", sit=True)},
      lamp=[1.2, 0.3, Z + 0.48], night=3, sand=[("me", 0.06), ("ollie_old", 0.06)])
 shot("P04", mv([-1.2, 0.3, 21.15], [1.55, 0.3, 20.7], 26, [-0.9, 0.3, 21.15], [1.55, 0.3, 20.75], 26), "night",
@@ -380,10 +383,10 @@ cues += [{"at": "L08", "name": "sand", "who": "me", "v": 0.3}, {"at": "L12", "na
 sfx = [
     {"at": "L15", "kind": "radio", "db": -15}, {"at": "L15.3", "kind": "click", "db": -13},
     {"at": "L22", "kind": "radio", "db": -15}, {"at": "L24>+0.2", "kind": "click", "db": -13},
-    {"at": "L21+0.1", "kind": "whoosh", "db": -20, "dur": 0.8}, {"at": "L21+0.6", "kind": "whoosh", "db": -20, "dur": 0.8},
+    {"at": "L21+0.1", "kind": "whoosh", "db": -20, "dur": 0.8, "post_lp": 3500}, {"at": "L21+0.6", "kind": "whoosh", "db": -20, "dur": 0.8, "post_lp": 3500},
     {"at": "L28.2", "kind": "hit", "db": -14}, {"at": "L28.2+0.05", "kind": "creak", "db": -16, "dur": 0.7},
-    {"at": "P02", "kind": "door", "db": -12, "keep": True},
-    {"at": "P02+0.35", "kind": "hit", "db": -9, "keep": True},
+    {"at": "P02", "kind": "door", "db": -12, "keep": True, "post_lp": 3500},
+    {"at": "P02+0.35", "kind": "hit", "db": -9, "keep": True, "post_lp": 3500},
     {"at": "P03", "kind": "sting", "db": -11, "dur": 1.6, "keep": True},
 ]
 for k in range(9):          # heavy, slow wood steps up the 112 stairs, L29 to the door
@@ -393,7 +396,7 @@ story = {
     "slug": "ep16-lookout",
     "title": "In This Valley Time Runs SLOWER the Higher You Are",
     "made_for_kids": False,
-    "premise": "In a valley where time runs slower the higher up you are, I take a one-week shift alone in the fire lookout on the highest ridge. My brother Ollie, still a teenager, walks me to the gate and makes me promise to flash my lamp at ten every night so he can flash back. His window light answers, then never goes dark, and each night it's somewhere higher up the valley.",
+    "premise": "In a valley where time runs slower the higher up you are, I take a week as the lookout alone in the fire lookout on the highest ridge. My brother Ollie, still a teenager, walks me to the gate and makes me promise to flash my lamp at ten every night so he can flash back. His window light answers, then never goes dark, and each night it's somewhere higher up the valley.",
     "twist": "The tall stranger who climbs my 112 stairs on the fourth night is Ollie, older than me now: four nights for me were twenty years for him. His window never went dark because he flashed it every night, seven thousand times, and from up here it blurred into one light. Every year he moved a little higher to slow his own sand, so he would never get too far ahead of me, and he became the ranger to get the other key.",
     "world": "A valley town of blocky houses in noon sun with an hourglass of falling sand over every head, and above it, on the highest ridge, a fire lookout: a glass cab on steel legs 112 stairs up, a catwalk, a lamp, a radio, autumn pines that grow taller each night, and the town's lights spreading below in the fog.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},

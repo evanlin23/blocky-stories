@@ -1537,6 +1537,8 @@ def build_lights(kit, ctx):
     face.visible_glossy = False
     fill = kit.light("fill", "SUN", (0, 0, 60), 1.5, "#8ea6c4", rot=(math.radians(66), 0, math.radians(70)))
     fill.data.angle = math.radians(25)
+    kit.light("gatefill", "POINT", (-2.2, -6.2, 3.2), 700.0, "#fff4e0", size=1.5, shadow=False)
+    kit.light("figfill", "POINT", (0.2, 0.2, CAB_Z + 2.5), 90.0, "#ffc88a", size=0.8, shadow=False)
     sun = kit.light("sun", "SUN", (0, 0, 60), 0.0, "#efeadc", rot=SUN_NORTH)
     sun.data.angle = math.radians(30)
     for nm in ("fill", "lamp", "sun"):
@@ -1550,7 +1552,11 @@ def build_lights(kit, ctx):
 NIGHT_GAINS = {"sun": 0.0, "bayfill": 0.0, "bayfill2": 0.0, "bayfill3": 0.0}
 DAY_GAINS = {"fill": 0.0, "lamp": 0.35, "facekey": 0.0, "bayfill": 0.0, "bayfill2": 0.0, "bayfill3": 0.0}
 SUN_NORTH = (math.radians(42), 0, math.radians(12))     # the sun in the south, shining north, on faces that look south
+GATE_GAINS = dict(DAY_GAINS, gatefill=1.0)
 LOOKS = {
+    # the gate in plain daylight: the pearl morning with a high sun and a soft unshadowed fill on the faces
+    "gate": {"fog": "#c4ccd2", "density": 0.0022, "start": 40.0, "sky": "#cdd8e0", "sky_strength": 0.9,
+             "exposure": 0.2, "cards": {}, "gains": GATE_GAINS, "sun": 4.5, "sun_rot": (math.radians(18), 0, math.radians(12))},
     # noon in the town: bright, a hard sun from the south, the bays lit by their own fill
     "town": {"fog": "#d6e6f2", "density": 0.0012, "start": 60.0, "sky": "#9fcdf2", "sky_strength": 0.9, "exposure": -0.3,
              "cards": {}, "gains": {"fill": 0.0, "lamp": 0.0, "facekey": 0.0, "bayfill": 1.0, "bayfill2": 1.0, "bayfill3": 1.0},
@@ -1562,6 +1568,10 @@ LOOKS = {
     "night": {"fog": "#2a3238", "density": 0.034, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
               "exposure": 1.6, "cards": ["fog.near", "fog.tower", "fog.neck", "fog.behind", "fog.far"],
               "gains": NIGHT_GAINS},
+    # the night cab with a soft warm fill so the reveal's faces read at phone size
+    "nightlit": {"fog": "#2a3238", "density": 0.034, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
+                 "exposure": 1.6, "cards": ["fog.near", "fog.tower", "fog.neck", "fog.behind", "fog.far"],
+                 "gains": dict(NIGHT_GAINS, figfill=1.0)},
     # the cab seen from outside and below, the fog top just under the catwalk
     "nighthigh": {"fog": "#2a3238", "density": 0.04, "start": 3.0, "sky": "#2c353c", "sky_strength": 1.0,
                   "exposure": 1.6, "gains": NIGHT_GAINS,
@@ -1703,9 +1713,10 @@ def decor(kit, ctx):
     brass = M["badge"]
     kit.cyl("ollie_old.badge", 0.16, 0.025, (0.5, -0.52, 1.5), brass, t2, rot=(math.pi / 2, 0, 0), n=18)
     kit.box("ollie_old.badgebar", (0.34, 0.03, 0.07), (0.5, -0.525, 1.18), brass, t2, bevel=0.01)
-    ring = kit.cyl("ollie_old.ring", 0.12, 0.03, (-0.78, -0.56, 0.42), M["iron"], t2, rot=(math.pi / 2, 0, 0), n=14)
-    kit.box("ollie_old.key", (0.07, 0.04, 0.62), (-0.78, -0.58, 0.04), M["iron"], t2, bevel=0.01)
-    kit.box("ollie_old.keybit", (0.2, 0.04, 0.1), (-0.7, -0.58, -0.2), M["iron"], t2)
+    bright = kit.metal("#d8d4c4", 0.35, "belt key")
+    ring = kit.cyl("ollie_old.ring", 0.12, 0.03, (-0.78, -0.56, 0.42), bright, t2, rot=(math.pi / 2, 0, 0), n=14)
+    kit.box("ollie_old.key", (0.07, 0.04, 0.62), (-0.78, -0.58, 0.04), bright, t2, bevel=0.01)
+    kit.box("ollie_old.keybit", (0.2, 0.04, 0.1), (-0.7, -0.58, -0.2), bright, t2)
     # the cold fill keeps off me, my face key lights only me
     me = [o for o in bpy.data.objects if o.type == "MESH" and o.name.startswith("me.")]
     link_lights(kit, "not me", ["fill"], me, "EXCLUDE")
@@ -1736,6 +1747,8 @@ def animate(kit, story, tl, t, ctx):
     look = _switch(_cues(tl, "look"), "id", t, "night")
     apply_look(kit, ctx, look)
     lk = LOOKS[look]
+    over["gatefill"] = 0.0
+    over["figfill"] = 0.0
     over.update(lk.get("gains", {}))
     bpy.data.cameras["cam"].clip_end = 2600.0
     # the pines grow a night at a time; the town's lights (and Ollie's) with them

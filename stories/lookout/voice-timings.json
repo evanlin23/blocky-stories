@@ -270,30 +270,30 @@
    ]
   },
   "L11": {
-   "text": "It's one week. I lock the gate behind me.",
+   "text": "It's one week. They said that's a month down there.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.138,
+   "dur": 2.259,
    "onset": 0.155,
-   "end": 1.948,
+   "end": 2.069,
    "chunks": [
     [
      0.155,
-     0.707
+     0.759
     ],
     [
-     0.776,
-     1.043
+     0.828,
+     1.077
     ],
     [
-     1.043,
-     1.293
+     1.077,
+     1.466
     ],
     [
-     1.293,
-     1.948
+     1.466,
+     2.069
     ]
    ]
   },

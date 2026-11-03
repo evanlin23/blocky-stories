@@ -100,7 +100,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S13: close on Ollie, `smile`, saying it]
 - `L10` narrator: He says, / "Flash your LAMP / at TEN, / and I'll / flash BACK."
   - [S14: Ollie pointing down at the town. S15: over his shoulder, the town on the valley floor far below, his house among them]
-- `L11` narrator: It's ONE WEEK. / I LOCK / the gate / behind me.
+- `L11` narrator: It's ONE WEEK. / They SAID / that's a MONTH / down there.
   - [S16: the gate swinging shut from inside, Ollie on the far side waving. S17: close on the padlock closing (a cut, not a hand turning it)]
 - `L12` narrator: The RANGER / has the only / other KEY.
   - [S18: inside the cab, the plain iron key hung on its nail by the door]

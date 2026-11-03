@@ -2,7 +2,7 @@
  "slug": "ep16-lookout",
  "title": "In This Valley Time Runs SLOWER the Higher You Are",
  "made_for_kids": false,
- "premise": "In a valley where time runs slower the higher up you are, I take a one-week shift alone in the fire lookout on the highest ridge. My brother Ollie, still a teenager, walks me to the gate and makes me promise to flash my lamp at ten every night so he can flash back. His window light answers, then never goes dark, and each night it's somewhere higher up the valley.",
+ "premise": "In a valley where time runs slower the higher up you are, I take a week as the lookout alone in the fire lookout on the highest ridge. My brother Ollie, still a teenager, walks me to the gate and makes me promise to flash my lamp at ten every night so he can flash back. His window light answers, then never goes dark, and each night it's somewhere higher up the valley.",
  "twist": "The tall stranger who climbs my 112 stairs on the fourth night is Ollie, older than me now: four nights for me were twenty years for him. His window never went dark because he flashed it every night, seven thousand times, and from up here it blurred into one light. Every year he moved a little higher to slow his own sand, so he would never get too far ahead of me, and he became the ranger to get the other key.",
  "world": "A valley town of blocky houses in noon sun with an hourglass of falling sand over every head, and above it, on the highest ridge, a fire lookout: a glass cab on steel legs 112 stairs up, a catwalk, a lamp, a radio, autumn pines that grow taller each night, and the town's lights spreading below in the fog.",
  "voice": {
@@ -454,16 +454,16 @@
      "It's one week."
     ],
     [
-     "I LOCK",
-     "I lock"
+     "They SAID",
+     "They said"
     ],
     [
-     "the gate",
-     "the gate"
+     "that's a MONTH",
+     "that's a month"
     ],
     [
-     "behind me.",
-     "behind me."
+     "down there.",
+     "down there."
     ]
    ]
   },
@@ -1201,14 +1201,14 @@
     [
      0,
      [
-      1199.9,
-      -12.5,
-      0.9
+      1199.7,
+      -6.6,
+      3.0
      ],
      [
-      1199.5,
+      1199.7,
       -2.4,
-      1.7
+      3.0
      ],
      27,
      0.0
@@ -1216,14 +1216,14 @@
     [
      1,
      [
-      1199.9,
-      -11.5,
-      1.0
+      1199.7,
+      -5.9,
+      3.0
      ],
      [
-      1199.5,
+      1199.7,
       -2.4,
-      1.8
+      3.0
      ],
      27,
      0.0
@@ -1239,30 +1239,30 @@
      0,
      [
       1199.7,
-      -8.0,
-      2.8
+      -7.6,
+      3.4
      ],
      [
-      1199.4,
+      1199.7,
       -2.4,
-      3.8
+      3.4
      ],
-     30,
+     27,
      0.0
     ],
     [
      1,
      [
       1199.7,
-      -7.4,
-      2.9
+      -6.9,
+      3.4
      ],
      [
-      1199.4,
+      1199.7,
       -2.4,
-      3.9
+      3.4
      ],
-     30,
+     27,
      0.0
     ]
    ],
@@ -1652,14 +1652,29 @@
     [
      0,
      [
-      -2.2,
-      -8.4,
-      1.4
+      -2.3,
+      -7.0,
+      1.1
      ],
      [
-      -2.2,
-      -2.2,
-      1.7
+      -2.3,
+      -3.3,
+      1.45
+     ],
+     30,
+     0.0
+    ],
+    [
+     1,
+     [
+      -2.3,
+      -6.2,
+      1.1
+     ],
+     [
+      -2.3,
+      -3.3,
+      1.45
      ],
      30,
      0.0
@@ -1697,13 +1712,13 @@
      0,
      [
       -1.6,
-      -8.0,
-      1.5
+      -7.5,
+      1.1
      ],
      [
-      -2.6,
+      -2.5,
       -3.4,
-      1.7
+      1.5
      ],
      30,
      0.0
@@ -1718,16 +1733,31 @@
     [
      0,
      [
-      -3.4,
-      -3.0,
-      1.7
+      -1.9,
+      -6.0,
+      1.45
      ],
      [
-      -1.0,
-      -90.0,
-      -20.0
+      -2.9,
+      -3.5,
+      1.5
      ],
-     30,
+     34,
+     0.0
+    ],
+    [
+     1,
+     [
+      -2.1,
+      -5.5,
+      1.45
+     ],
+     [
+      -2.9,
+      -3.5,
+      1.5
+     ],
+     40,
      0.0
     ]
    ],
@@ -2562,16 +2592,31 @@
     [
      0,
      [
+      -0.2,
       -0.3,
-      -2.0,
-      21.2
+      20.6
      ],
      [
-      -1.0,
+      -1.55,
       0.0,
-      21.0
+      22.1
      ],
-     22,
+     24,
+     0.0
+    ],
+    [
+     1,
+     [
+      -0.2,
+      -0.3,
+      20.6
+     ],
+     [
+      -1.55,
+      0.0,
+      22.3
+     ],
+     24,
      0.0
     ]
    ],
@@ -2606,16 +2651,31 @@
     [
      0,
      [
-      -0.8,
-      -1.4,
-      21.15
+      1.5,
+      -0.9,
+      20.5
      ],
      [
-      -0.3,
-      0.5,
-      21.15
+      -1.4,
+      0.2,
+      21.55
      ],
-     34,
+     24,
+     0.0
+    ],
+    [
+     1,
+     [
+      1.4,
+      -0.9,
+      20.5
+     ],
+     [
+      -1.4,
+      0.2,
+      21.65
+     ],
+     24,
      0.0
     ]
    ],
@@ -2775,16 +2835,31 @@
     [
      0,
      [
-      -1.6,
-      -1.2,
-      20.35
+      -0.1,
+      -1.0,
+      20.7
      ],
      [
-      -1.4,
-      0.1,
-      19.95
+      -1.2,
+      0.5,
+      20.45
      ],
-     40,
+     30,
+     0.0
+    ],
+    [
+     1,
+     [
+      -0.3,
+      -0.9,
+      20.7
+     ],
+     [
+      -1.2,
+      0.5,
+      20.45
+     ],
+     30,
      0.0
     ]
    ],
@@ -2841,16 +2916,31 @@
     [
      0,
      [
-      -0.1,
+      -1.3,
       0.3,
-      21.4
+      21.7
      ],
      [
       1.55,
       0.3,
-      21.9
+      21.55
      ],
-     30,
+     22,
+     0.0
+    ],
+    [
+     1,
+     [
+      -1.2,
+      0.3,
+      21.7
+     ],
+     [
+      1.55,
+      0.3,
+      21.6
+     ],
+     22,
      0.0
     ]
    ],
@@ -3640,7 +3730,7 @@
      0.9,
      19.6
     ],
-    "yaw": 0,
+    "yaw": -90,
     "expr": "wide",
     "blend": 0.0,
     "hidden": false,
@@ -3971,11 +4061,11 @@
      0,
      100
     ],
-    "sit": false,
     "head": [
      0,
-     0
-    ]
+     8
+    ],
+    "sit": false
    },
    {
     "from": "L10.2",
@@ -4213,6 +4303,44 @@
    },
    {
     "at": "L36",
+    "pos": [
+     -1.55,
+     0.0,
+     19.6
+    ],
+    "hidden": true
+   },
+   {
+    "at": "L36.3",
+    "pos": [
+     -1.55,
+     0.0,
+     19.6
+    ]
+   },
+   {
+    "at": "L36.3",
+    "pos": [
+     -1.55,
+     0.0,
+     19.6
+    ],
+    "yaw": 90,
+    "expr": "soft",
+    "blend": 0.0,
+    "hidden": false,
+    "arms": [
+     25,
+     0
+    ],
+    "sit": false,
+    "head": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L37",
     "pos": [
      -1.55,
      0.0,
@@ -4538,11 +4666,11 @@
    {
     "at": 0,
     "pos": [
-     1198.7,
-     -3.3,
-     0.0
+     1199.4,
+     -3.0,
+     0.7
     ],
-    "yaw": 10,
+    "yaw": 8,
     "expr": "wide",
     "blend": 0.0,
     "hidden": false,
@@ -4552,26 +4680,26 @@
     ],
     "head": [
      0,
-     14
+     18
     ],
     "sit": false
    },
    {
     "at": "L01.2",
     "pos": [
-     1198.7,
-     -3.3,
-     0.0
+     1199.4,
+     -3.0,
+     0.7
     ]
    },
    {
     "at": "L01.2",
     "pos": [
-     1198.7,
-     -3.3,
-     0.0
+     1199.4,
+     -3.0,
+     0.7
     ],
-    "yaw": 10,
+    "yaw": 8,
     "expr": "wide",
     "blend": 0.0,
     "hidden": false,
@@ -4581,26 +4709,26 @@
     ],
     "head": [
      0,
-     14
+     18
     ],
     "sit": false
    },
    {
     "at": "L02",
     "pos": [
-     1198.7,
-     -3.3,
-     0.0
+     1199.4,
+     -3.0,
+     0.7
     ]
    },
    {
     "at": "L02",
     "pos": [
-     1198.7,
-     -3.3,
+     1199.45,
+     -3.0,
      0.0
     ],
-    "yaw": 10,
+    "yaw": 8,
     "expr": "wide",
     "blend": 0.0,
     "hidden": false,
@@ -4610,15 +4738,15 @@
     ],
     "head": [
      0,
-     14
+     18
     ],
     "sit": false
    },
    {
     "at": "L03",
     "pos": [
-     1198.7,
-     -3.3,
+     1199.45,
+     -3.0,
      0.0
     ],
     "hidden": true
@@ -5512,7 +5640,7 @@
   {
    "at": "L08",
    "name": "look",
-   "id": "clear"
+   "id": "gate"
   },
   {
    "at": "L08",
@@ -5547,7 +5675,7 @@
   {
    "at": "L09",
    "name": "look",
-   "id": "clear"
+   "id": "gate"
   },
   {
    "at": "L09",
@@ -5576,7 +5704,7 @@
   {
    "at": "L10",
    "name": "look",
-   "id": "clear"
+   "id": "gate"
   },
   {
    "at": "L10",
@@ -5605,7 +5733,7 @@
   {
    "at": "L10.2",
    "name": "look",
-   "id": "clear"
+   "id": "gate"
   },
   {
    "at": "L10.2",
@@ -5634,7 +5762,7 @@
   {
    "at": "L11",
    "name": "look",
-   "id": "clear"
+   "id": "gate"
   },
   {
    "at": "L11",
@@ -5669,7 +5797,7 @@
   {
    "at": "L11.2",
    "name": "look",
-   "id": "clear"
+   "id": "gate"
   },
   {
    "at": "L11.2",
@@ -6794,7 +6922,7 @@
   {
    "at": "L35",
    "name": "look",
-   "id": "night"
+   "id": "nightlit"
   },
   {
    "at": "L35",
@@ -6864,12 +6992,12 @@
   {
    "at": "L36.3",
    "name": "look",
-   "id": "night"
+   "id": "nightlit"
   },
   {
    "at": "L36.3",
    "name": "night",
-   "n": 3
+   "n": 4
   },
   {
    "at": "L36.3",
@@ -6889,7 +7017,12 @@
   {
    "at": "L36.3",
    "name": "lamp2",
-   "hand": null
+   "hand": "ollie_old.arm-1",
+   "offset": [
+    0.0,
+    0.0,
+    -0.55
+   ]
   },
   {
    "at": "L37",
@@ -7091,7 +7224,7 @@
   {
    "at": "L41",
    "name": "look",
-   "id": "night"
+   "id": "nightlit"
   },
   {
    "at": "L41",
@@ -7183,7 +7316,7 @@
   {
    "at": "L43",
    "name": "look",
-   "id": "night"
+   "id": "nightlit"
   },
   {
    "at": "L43",
@@ -7721,13 +7854,15 @@
     "at": "L21+0.1",
     "kind": "whoosh",
     "db": -20,
-    "dur": 0.8
+    "dur": 0.8,
+    "post_lp": 3500
    },
    {
     "at": "L21+0.6",
     "kind": "whoosh",
     "db": -20,
-    "dur": 0.8
+    "dur": 0.8,
+    "post_lp": 3500
    },
    {
     "at": "L28.2",
@@ -7744,13 +7879,15 @@
     "at": "P02",
     "kind": "door",
     "db": -12,
-    "keep": true
+    "keep": true,
+    "post_lp": 3500
    },
    {
     "at": "P02+0.35",
     "kind": "hit",
     "db": -9,
-    "keep": true
+    "keep": true,
+    "post_lp": 3500
    },
    {
     "at": "P03",
