@@ -1,8 +1,9 @@
 {
-  "title": "Slow songs were couples only, so Nan waited alone at the rail. Something kept standing nearer",
-  "description": "My grandparents met at a roller rink fifty years ago. On its very last night, I took them back. Pop said his knees were done and sat at the snack bar, so Nan waited at the rail on her own for every slow song.\n\nEach time the spotlight came round, the skater in the faded stripes was standing nearer to her.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
-  "pin": "Would you have waited at the rail on your own for the slow songs?",
-  "made_for_kids": false,
-  "shape": "stand-in",
-  "cover_s": 93.6
+ "title": "Slow songs were couples only, so Nan waited alone at the rail. Something kept standing nearer",
+ "description": "My grandparents met at a roller rink fifty years ago. On its very last night, I took them back. Pop said his knees were done and sat at the snack bar, so Nan waited at the rail on her own for every slow song.\n\nEach time the spotlight came round, the skater in the faded stripes was standing nearer to her.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+ "pin": "Would you have waited at the rail on your own for the slow songs?",
+ "made_for_kids": false,
+ "shape": "stand-in",
+ "cover_s": 93.6,
+ "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
 }
