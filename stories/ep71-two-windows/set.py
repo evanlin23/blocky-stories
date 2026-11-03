@@ -617,9 +617,12 @@ def animate(kit, story, tl, t, ctx):
     # lights: every change is a slow ramp
     h2 = float(_eased(_cues(tl, "h2"), "v", t, 0.0))
     dim = float(_eased(_cues(tl, "dim"), "v", t, 0.0))
-    sl = min(1.0, max(0.0, lv))            # the front lights die as it leans out
-    return {"h2 warm": 1.0 - h2, "h2 cool": h2, "h2 face": (0.5 + 0.9 * h2) * sl,
-            "sun": (1.0 - 0.55 * dim) * (1.0 - 0.7 * sl), "fill": (1.0 - 0.5 * dim) * (1.0 - 0.6 * sl),
+    # the front lights die slowly (1.2 s ramps, never a global flash) while it is out
+    slc = [{"t": c["t"], "v": 1.0 if (c.get("lv", 0) >= 1 and c.get("on", True)) else 0.0, "dur": 1.2}
+           for c in sv if "lv" in c]
+    sl = float(_eased(slc, "v", t, 0.0))
+    return {"h2 warm": 1.0 - h2, "h2 cool": h2, "h2 face": (0.5 + 0.9 * h2) * min(1.0, max(0.0, lv)),
+            "sun": (1.0 - 0.55 * dim) * (1.0 - 0.4 * sl), "fill": (1.0 - 0.5 * dim) * (1.0 - 0.3 * sl),
             "lane key": 1.0 - 0.5 * dim, "lane key2": 1.0 - 0.5 * dim,
-            "lane key3": (1.0 - 0.5 * dim) * (1.0 - 0.85 * sl), "back key": 1.0 - 0.5 * dim,
+            "lane key3": (1.0 - 0.5 * dim) * (1.0 - 0.5 * sl), "back key": 1.0 - 0.5 * dim,
             "srv rimL": sl, "srv rimR": sl}
