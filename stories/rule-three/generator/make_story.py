@@ -371,7 +371,7 @@ S("L37", ((0.8, 1.6, 1.7), (-1.1, 4.4, 1.6), 32), who={"me": (OT, 0, "smile", {}
   note="Milo, grinning, slapping the side of the book")
 raw("milo", "L37+0.3", arms=[0, 100], blend=0.1)
 cue("L37", "book", mode="open")
-S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -4.4, 1.4), (-2.3, -4.4, 1.2), 22),
+S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -2.6, 1.4), (-2.3, -2.6, 1.2), 22),
   who={"milo": (X(-2.6, -1.8), 180, "grin", {"arms": [70, 70]}), "me": (X(-2.6, -0.65), 0, "smile", {"arms": [70, 70]})},
   note="the two of us hauling the red book out of the hall door, Milo walking backward at the front")
 cue("L38-0.6", "tod", n="dusk", dur=0.45)   # finish before S54 cuts in: a ramp on screen flashed (rescue r3)
@@ -384,7 +384,7 @@ cue("L38", "bookpath", v=[-2.6, -1.2, 1.05])
 cue("L38.2", "bookpath", v=[-2.3, -3.0, 1.05])
 LINE = {f"t{i}": (X(x, y), 90 if x < 0 else -90, "smile", {}) for i, (x, y) in enumerate(
     [(-3.4, -7), (3.4, -9), (-3.5, -12), (3.4, -14), (-3.4, -17), (3.5, -19), (-3.4, -23), (3.4, -25)])}
-S("L38.2", ((3.6, -2.4, 1.9), (-1.8, -4.4, 1.25), 26, (3.4, -3.8, 1.9), (-1.0, -6.2, 1.25), 26),
+S("L38.2", ((3.6, -2.4, 1.9), (-1.8, -4.4, 1.25), 26, (3.55, -2.75, 1.9), (-1.6, -4.85, 1.25), 26),
   who={"milo": (X(-2.3, -3.6), 140, "grin", {"arms": [70, 70]}), "me": (X(-2.3, -2.4), 0, "smile", {"arms": [70, 70]}), **LINE},
   note="Milo walking backward at the front, face and the red book in frame, the townsfolk stepping aside and smiling")
 walk("milo", "L38.2+0.1", X(-2.3, -3.6), keep_yaw=True, yaw=140)
