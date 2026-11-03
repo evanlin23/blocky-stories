@@ -1,4 +1,17 @@
-# every-lock: handoff (2026-11-03, about 10:30 AM Central)
+# every-lock: handoff (2026-11-03, about 10:45 AM Central, handed to the second batch-6 orchestrator)
+
+## Where it stopped (latest)
+- **Branch:** `claude/p5-lock-doors`, pushed, with main merged in, including polish v2.1 and the proof workflow (proof.yml, PR #171). **No PR is open.**
+- **Flash:** still unmeasured after the kitchen-wall fix. The clean preview render was stopped at 1079 of 1083 frames.
+  Those frames were drawn with the pre-merge polish.py, so don't use them: delete `out/work/every-lock/frames-preview`
+  and draw the preview again from scratch.
+- **Reviews:** none run. Two review rounds are allowed from here.
+- **Proof run:** none. **qa:** none.
+- **Next:** clean preview, then `flash` (with a clear margin under the house bar). Then critic and standards round 1,
+  then open the PR. Proof runs on the PR (or dispatch `proof.yml`), then qa at `"stage": "proof"`, then merge once
+  `test` is green. List intended overlaps in `"clip_ok"`. Report verdicts to the batch lead.
+
+## Earlier state (10:30 AM Central)
 
 Batch 6, slot P5 (what-if escalation, experiment, long arm). Branch `claude/p5-lock-doors`. **No PR yet, not merged.**
 Stopped at the lead's request (usage limit). Per the lead: don't merge, even once approved, until the proof-render
