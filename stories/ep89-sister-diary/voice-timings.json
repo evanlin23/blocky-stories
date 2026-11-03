@@ -38,22 +38,22 @@
    ]
   },
   "L02": {
-   "text": "And it knows you're reading.",
+   "text": "And it knows you are reading.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.414,
+   "dur": 1.534,
    "onset": 0.155,
-   "end": 1.224,
+   "end": 1.345,
    "chunks": [
     [
      0.155,
-     0.569
+     0.586
     ],
     [
-     0.569,
-     1.224
+     0.586,
+     1.345
     ]
    ]
   },
@@ -82,22 +82,22 @@
    ]
   },
   "L04": {
-   "text": "Nina's is lilac. Mine is blue.",
+   "text": "Nina's one is lilac. Mine is blue.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.966,
+   "dur": 2.138,
    "onset": 0.19,
-   "end": 1.741,
+   "end": 1.914,
    "chunks": [
     [
      0.19,
-     0.879
+     1.017
     ],
     [
-     0.94,
-     1.741
+     1.094,
+     1.914
     ]
    ]
   },
@@ -1622,14 +1622,14 @@
    ]
   },
   "L64": {
-   "text": "She said she'd almost thrown hers in the trash.",
+   "text": "She said she had almost thrown hers in the trash.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.966,
+   "dur": 2.086,
    "onset": 0.172,
-   "end": 1.759,
+   "end": 1.879,
    "chunks": [
     [
      0.172,
@@ -1637,15 +1637,11 @@
     ],
     [
      0.397,
-     0.732
+     1.199
     ],
     [
-     0.732,
-     1.077
-    ],
-    [
-     1.077,
-     1.759
+     1.199,
+     1.879
     ]
    ]
   },
@@ -1666,26 +1662,26 @@
    ]
   },
   "L66": {
-   "text": "We talked till three A.M. Out loud.",
+   "text": "We talked till three in the morning. Out loud.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
+   "dur": 2.121,
    "onset": 0.155,
-   "end": 1.672,
+   "end": 1.914,
    "chunks": [
     [
      0.155,
-     0.414
+     0.431
     ],
     [
-     0.414,
-     1.017
+     0.431,
+     1.155
     ],
     [
-     1.017,
-     1.672
+     1.233,
+     1.914
     ]
    ]
   },

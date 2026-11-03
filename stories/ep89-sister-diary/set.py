@@ -30,7 +30,7 @@ from blocky import acting as ac
 W, H = 0.14, 0.19                # one page
 PAGE_TOP = 0.0185
 ROWS, COLS = 6, 11
-INK = {"lilac": "#a678ff", "blue": "#2f7cff", "green": "#1fbf94", "dark": "#5a2fd0"}
+INK = {"lilac": "#7a3dff", "blue": "#1f5fe0", "green": "#1fbf94", "dark": "#5a2fd0"}
 GIFT, CAR, WORK, PAIR = 30.0, 60.0, 90.0, 120.0
 
 
@@ -81,7 +81,7 @@ def materials(kit):
     M["wall_h"] = P("#fff0d8", 0.9, "wall hall", 0.1)
     M["ceil"] = P("#fff6e6", 0.9, "ceiling", 0.05)
     M["trim"] = P("#ffffff", 0.6, "trim", 0.2)
-    M["desk"] = P("#d9a86a", 0.55, "desk wood", 0.3)
+    M["desk"] = P("#b98a58", 0.6, "desk wood", 0.3)
     M["wood2"] = P("#b98450", 0.6, "dark wood", 0.3)
     M["white"] = P("#fbfbff", 0.5, "white", 0.3)
     M["chair_b"] = P("#5fb4ff", 0.5, "chair blue", 0.3)
@@ -95,7 +95,7 @@ def materials(kit):
     M["brass"] = kit.metal("#e8b43c", 0.28, "brass")
     M["cover_b"] = P("#3f8fff", 0.5, "cover blue", 0.35)
     M["cover_l"] = P("#b48cf2", 0.5, "cover lilac", 0.35)
-    M["page"] = P("#fff4dc", 0.85, "page", 0.05)
+    M["page"] = P("#f0e2c4", 0.85, "page", 0.05)
     M["ribbon"] = P("#ff7a8a", 0.5, "ribbon", 0.2)
     M["dust"] = P("#cfc8b8", 0.95, "dust", 0.0)
     M["navy"] = kit.emit("#1f2f5c", 1.3, "night")
@@ -286,7 +286,7 @@ def build_diary(kit, M, name, cover, lilac):
         x, y = rnd.uniform(0.01, W - 0.02), rnd.uniform(0.01, H - 0.02)
         dust.append(box(kit, f"{name}.dust{k}", (x, y, 0.0195), (x + rnd.uniform(0.02, 0.05), y + rnd.uniform(0.012, 0.03), 0.0225),
                         M["dust"], front))
-    ink = Ink(kit, name + ".ink", root, "loop" if lilac else "block", M, PAGE_TOP, 0.0105, 1.0, 1.0)
+    ink = Ink(kit, name + ".ink", root, "loop" if lilac else "block", M, PAGE_TOP, 0.0105, 1.15, 1.5)
     return {"root": root, "front": front, "ink": ink, "rib": rib, "dust": dust}
 
 
@@ -619,18 +619,18 @@ def build_zones(kit, ctx, M):
 
 def build_lights(kit, ctx):
     L = kit.light
-    L("mfill", "AREA", (-2.3, 2.2, 2.55), 110, "#fff0dc", size=3.6)
-    L("nfill", "AREA", (2.3, 2.2, 2.55), 110, "#fff0f6", size=3.6)
+    L("mfill", "AREA", (-2.3, 2.2, 2.55), 70, "#fff0dc", size=3.6)
+    L("nfill", "AREA", (2.3, 2.2, 2.55), 70, "#fff0f6", size=3.6)
     L("hfill", "AREA", (0.0, -1.1, 2.55), 90, "#fff4e4", size=3.0)
-    sp = L("mlamp", "SPOT", (-0.3, 1.0, 1.1), 6, "#ffcc7a", size=0.1, spot=70, blend=0.8)
+    sp = L("mlamp", "SPOT", (-0.3, 1.0, 1.1), 1.0, "#ffcc7a", size=0.1, spot=70, blend=0.8)
     kit.aim(sp, (-0.46, 1.5, 0.78))
-    sp = L("nlamp1", "SPOT", (0.3, 1.0, 1.1), 6, "#ffcc7a", size=0.1, spot=70, blend=0.8)
+    sp = L("nlamp1", "SPOT", (0.3, 1.0, 1.1), 1.0, "#ffcc7a", size=0.1, spot=70, blend=0.8)
     kit.aim(sp, (0.46, 1.5, 0.78))
     L("nlamp2", "POINT", (3.8, 0.7, 1.5), 20, "#ffcc7a", size=0.2)
     L("nlamp3", "POINT", (0.37, 2.75, 1.1), 10, "#ffcc7a", size=0.1)
     L("strip", "AREA", (1.6, -0.4, 0.3), 15, "#ffcc7a", size=0.8)
-    sp = L("mom", "SPOT", (-1.6, 1.5, 1.9), 10, "#ffe8d0", size=0.2, spot=50, blend=0.6)
-    kit.aim(sp, (-1.6, 0.0, 1.5))
+    sp = L("mom", "SPOT", (-1.6, 1.5, 1.9), 3, "#ffe8d0", size=0.2, spot=50, blend=0.6)
+    kit.aim(sp, (-1.5, -0.55, 1.5))
     L("gift", "AREA", (GIFT, -0.5, 2.4), 110, "#fff4e0", size=3.0)
     L("giftkey", "SPOT", (GIFT + 0.3, -1.4, 1.8), 10, "#ffe0b0", size=0.2, spot=50, blend=0.6)
     L("car", "AREA", (CAR, -2.5, 3.0), 300, "#fff8ee", size=4.0)
@@ -803,7 +803,7 @@ def animate(kit, story, tl, t, ctx):
     # who is lit where: far rooms only light when they are on screen (cheaper, cleaner)
     # the keys
     kc = [c for c in _cues(tl, "keys") if c["t"] <= t + 1e-9]
-    ctx["keys"].location = (0.0, -2.0, 0.76) if not kc or kc[-1]["to"] == "table" else (1.4, 2.1, 0.012)
+    ctx["keys"].location = (0.0, -2.0, 0.76) if not kc or kc[-1]["to"] == "table" else (2.2, 2.15, 0.012)
     # diaries
     for d in ("blue", "lilac"):
         D = ctx[d]
