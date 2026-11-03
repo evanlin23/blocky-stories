@@ -231,6 +231,8 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
         p = polish.spec(st)
         if out["motion"].get("ones") == "walk":
             polish.ones_for_walks(out, st)
+        elif out["motion"].get("ones") == "moving":
+            polish.ones_for_moving(out, st, p)
         cs = polish.calm_shots(out, p, at)
         out["motion"]["calm_shots"] = cs
         out["motion"]["calm"] = [[s["start"], s["end"]] for s in out["shots"] if s["id"] in cs]
