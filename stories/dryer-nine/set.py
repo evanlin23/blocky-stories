@@ -36,7 +36,9 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from blocky import acting as AC
 from blocky import faces, rig
 
-FONT = str(__import__("pathlib").Path(__file__).resolve().parents[2] / "blocky" / "fonts" / "SchibstedGrotesk-Black.ttf")
+import blocky as _blocky
+import os as _os
+FONT = _os.path.join(_os.path.dirname(_blocky.__file__), "fonts", "SchibstedGrotesk-Black.ttf")   # never a machine path: Actions has no /home/user
 NX = {n: -4.05 + 0.9 * (n - 1) for n in range(1, 11)}
 X9 = NX[9]
 FACE_Y = 3.2            # the dryers' door faces
