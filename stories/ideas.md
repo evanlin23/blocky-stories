@@ -38,7 +38,7 @@ Four stories for PandaNanoAdventures. The writer reads all four so none drifts i
 | 1 | `floor-thirteen` (redone 2026-11-02 as r4, see the note under section 1) | apartment-tower lift and its thirteenth floor of forgotten things | the Attendant, a button-panel face, a brass tag on its gloves | the rule ("In this BUILDING, everything you FORGET turns up on floor THIRTEEN.") | family: I fetch myself back for Grandad |
 | 2 | `mirror-maze` (in production elsewhere, ep14 to ep17) | an end-of-season fairground mirror maze | the copy, my best friend gone slightly wrong | an inside joke | loyalty: I go back in for my friend |
 | 3 | `lookout` (in production elsewhere, ep14 to ep17) | a forest fire-lookout tower, alone, in autumn | the Walker, a huge giant of logs and moss | a question | I'm the one who helps: I guide it home |
-| 4 | `moving-day` (in production elsewhere, ep14 to ep17) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes | mid-scare | home: Mum laughs again |
+| 4 | `moving-day` (ep17, redone rule first 2026-11-02) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes that has always lived with us | the rule: "In this town, a house grows to fit the tallest one living in it." | home: Mum laughs again |
 
 Settings already used (never reuse): a night bus, a farmhouse kitchen, an aquarium, a hotel photo booth at a wedding.
 
@@ -143,6 +143,8 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - The giant's scale has to read at phone size.
 
 ## 4. `moving-day`: "The box was taped shut from the inside"
+
+**Redone 2026-11-02** (held for not opening on the rule): the made story is now "In this town, a house grows to fit the tallest one living in it", with the twist that the old house was always a ladder too tall because something tall lived with us, and it came along taped into a box. `stories/moving-day/script.md` has it. The pitch below is the old version, kept for the record.
 
 - **First line, mid-scare:** "The box / was taped SHUT. / From the INSIDE."
 - **Cast:** me, an adult, and my mum. We're moving into a smaller house after the old one was sold.
@@ -356,3 +358,5 @@ Replacement for killed ep44 `sleeper-car` (added 2026-11-02, slug ep57 by the ba
 Fresh idea (added with ep57, so the backlog doesn't run dry): `tide-clock`, a harbour wall's old tide gauge on spring evenings, where the rule is that everyone's hair grows one shade lighter for every person who has forgiven them. The creature is to be designed silhouette first. Loved one: an adult best friend. Warmth: keeping a tradition alive.
 
 killed: `ep57-arch-seat` (#28b, replacement for ep44 `sleeper-car`, 2026-11-03), for hard rule 5 (originality), so don't retry this twist. Standards said kill in round 2: the twist is ep47-fitting-room's with the noun swapped (I have no blocks, my cousin carries every thanks he said for me, it ends when I say it aloud), ep49-car-wash has the same turn, and ep37-comet-night shares the opener. The critic also said revise in round 2: the Span (a person as wide as a two-seat arch) read as a sofa at phone size, creature 4. The setting, the favours rule and the Span are free to reuse with a different twist. The full build is in git at commit 405d598 on branch claude/ep57-arch-seat.
+
+killed: the `lookout` redo (2026-11-03), same big idea as ep33 (altitude time), so don't retry this twist. The redo's rule was "In this valley, time runs slower the higher up you are", with my teen brother Ollie climbing the tower twenty years older. ep33's shipping redo already has "one day at the top costs a year below" (hard rule 5). Standards approved round 1, and the critic said revise in both rounds (big idea 8, feeling 6, warm turn 5) with 5 framing and wording fixes left. `lookout` stays held. The tower set and cast are free to reuse with a different big idea. The full build is in git at commit 8592320 on branch claude/redo-lookout.
