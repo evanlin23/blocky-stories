@@ -12,7 +12,7 @@ lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.12
 for ln in lines:
     if ln["id"] == "L04":
-        ln["tempo"] = 0.36      # each letter needs >= 0.25 s, landing on its tag pop
+        ln["tempo"] = 0.33      # each letter needs >= 0.25 s, landing on its tag pop
 lines = lines + [{"id": "P03", "pause": LOOP, "chunks": []}]
 
 # ------------------------------------------------------------------------------------------------ cast
@@ -43,14 +43,20 @@ for k in list(cast):
     if k.startswith("r") or k in ("x", "bro"):
         cast[k] = {**cast[k], "height": round(cast[k]["height"] * 1.1, 3)}
 
-ROWS = {"c": (-1.25, 0.6), "a": (1.35, 0.6), "b": (0.95, 1.6), "d": (-0.85, 1.6)}
-GAP = (-0.35, 0.6)
+ROWS = {"c": (-1.2, 0.6), "a": (1.35, 0.6), "b": (0.95, 2.1), "d": (-1.0, 2.1)}
+GAP = (-0.5, 0.6)
 acting = {k: [] for k in cast}
 for k, (x, y) in ROWS.items():
     acting[k].append({"at": 0, "pos": [x, y], "yaw": 0, "expr": "neutral"})
     acting["r" + k].append({"at": 0, "pos": [x, -y], "yaw": 180, "expr": "neutral"})
 acting["x"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "neutral", "look": [0, 0]})
 acting["bro"].append({"at": 0, "pos": [GAP[0], -GAP[1]], "yaw": 180, "expr": "worried", "hidden": True})
+acting["c"].append({"at": "L09", "yaw": 40, "blend": 0})     # S13: he turns his face toward the lens
+acting["c"].append({"at": "L10", "yaw": 0, "blend": 0})
+# S15: the glass shot is clear of the two riders in front of it, they stand aside for one shot
+for k in "cd":
+    acting[k].append({"at": "L11", "hidden": True, "blend": 0})
+    acting[k].append({"at": "L11.3", "hidden": False, "blend": 0})
 acting["d"].append({"at": "L16.3", "expr": "wide", "blend": 0})
 acting["d"].append({"at": "L17", "expr": "neutral", "blend": 0})
 acting["x"].append({"at": "L14+0.4", "hidden": True, "blend": 0})
@@ -65,40 +71,40 @@ def move(a, b, la, lb=None):
     return [[0, a[0], a[1], la], [1, b[0], b[1], lb or la]]
 
 
-MAS = [0.0, 4.25, 3.8]
-MT = [0.0, 0.0, 0.5]
-ML = 14.5
+MAS = [-0.35, 4.25, 3.8]
+MT = [-0.35, 0.0, 0.5]
+ML = 15.0
 MASTER = still(MAS, MT, ML)
 GX, CX = GAP[0], ROWS["c"][0]
 BLUE = (GX + CX) / 2          # the glass between the two blue jackets
-S06 = still([-0.75, 2.45, 1.8], [-1.25, 0.6, 1.2], 17)
-S14 = still([-0.95, 1.2, 1.95], [-1.3, 0.6, 1.4], 24)
+S06 = still([-1.5, 3.0, 2.0], [-1.25, 0.6, 1.2], 15)
+S14 = still([-1.5, 2.4, 3.3], [-1.5, 0.6, 1.45], 18)
 SHOTS = [
-    (0, "S01", "close on the doors: five faces, push in until they fill the width", move(([0.05, 4.1, 3.7], [0.05, -0.6, 1.6]), ([0.05, 3.9, 3.65], [0.05, -0.6, 1.6]), 18, 21)),
-    ("L01.4", "S02", "punch in on the five faces, the hit on FIVE", still([0.05, 4.0, 3.7], [0.05, -0.6, 1.6], 26)),
+    (0, "S01", "close on the doors: five faces, push in until they fill the width", move(([-0.05, 4.1, 3.7], [-0.05, -0.6, 1.6]), ([-0.05, 3.9, 3.65], [-0.05, -0.6, 1.6]), 18, 21)),
+    ("L01.4", "S02", "punch in on the five faces, the hit on FIVE", still([-0.05, 4.0, 3.7], [-0.05, -0.6, 1.6], 26)),
     ("L02", "S03", "the master", MASTER),
     ("L03", "S04", "side view along the car", move(([1.6, 3.9, 1.7], [0.0, 0.3, 1.2]), ([1.55, 3.8, 1.7], [-0.1, 0.3, 1.2]), 18)),
     ("L04", "S05", "the master, tags pop", MASTER),
     ("L05", "S06", "over my shoulder", S06),
     ("L06", "S07", "the master, slow push", move((MAS, MT), ([0.0, 3.75, 2.3], [0, 0, 0.85]), ML, 12.0)),
-    ("L07", "S08", "the display, wide enough that the dark plate is a small part of the frame", still([0, 2.0, 2.95], [0, 0.15, 2.85], 30)),
+    ("L07", "S08", "the display, wide enough that the dark plate is a small part of the frame", still([0, 2.0, 2.95], [0, 0.15, 2.85], 26)),
     ("P01", "S09", "the hold master, display 4", MASTER),
     ("P01+1", "S10", "punch in 6 percent", still(MAS, MT, ML * 1.06)),
     ("P01+2", "S11", "punch in another 6 percent", still(MAS, MT, ML * 1.12)),
     ("L08", "S12", "push in on the two blue jackets in the glass", move(([BLUE, 4.0, 3.7], [BLUE, -0.6, 1.4]), ([BLUE, 3.7, 3.6], [BLUE, -0.6, 1.4]), 20, 24)),
-    ("L09", "S13", "two-shot: my brother three-quarter front, me behind his shoulder", still([0.35, 0.2, 1.72], [-1.0, 1.1, 1.62], 26)),
+    ("L09", "S13", "two-shot: my brother three-quarter front, me behind his shoulder", still([1.2, 0.15, 1.7], [-1.1, 1.2, 1.6], 13)),
     ("L10", "S14", "his right shoulder, the bag", S14),
-    ("L11", "S15", "his reflection, bag on screen right", still([0.9, 3.9, 3.9], [-1.25, -0.6, 1.5], 26)),
-    ("L11.3", "S15b", "the copy beside it, bag on screen left", still([0.9, 3.9, 3.9], [GX, -0.6, 1.5], 28)),
+    ("L11", "S15", "his reflection, bag on screen right", still([1.8, 3.9, 3.9], [-1.4, -0.6, 1.5], 31)),
+    ("L11.3", "S15b", "the copy beside it, bag on screen left", still([1.8, 3.9, 3.9], [GX, -0.6, 1.5], 28)),
     ("L12", "S16", "the copy, mid close", still([GX, 3.9, 3.8], [GX, -0.6, 1.45], 36)),
-    ("L12.2", "S17", "punch in on its face", still([GX - 0.05, 3.9, 3.8], [GX - 0.05, -0.6, 1.58], 55)),
+    ("L12.2", "S17", "punch in on its face", still([GX - 0.05, 3.9, 3.8], [GX - 0.05, -0.6, 1.58], 60)),
     ("L13", "S18", "slow push on the copy and C's reflection", move(([BLUE + 0.25, 3.9, 3.8], [BLUE, -0.6, 1.4]), ([BLUE + 0.25, 3.5, 3.8], [BLUE, -0.6, 1.4]), 22, 27)),
-    ("P02", "S19", "close on the display: 1", still([0, 2.0, 2.95], [0, 0.15, 2.85], 30)),
+    ("P02", "S19", "close on the display: 1", still([0, 2.0, 2.95], [0, 0.15, 2.85], 26)),
     ("L14", "S20", "the doors open on an empty corridor", MASTER),
     ("L15", "S21", "the doors close", MASTER),
     ("L16", "S22", "framed like S06, the bag now on screen left", S06),
     ("L16.3", "S23", "S14's close from behind, the bag now on screen left", S14),
-    ("L17", "S24", "close on his tag, a backwards C", still([-1.25, 1.3, 1.75], [-1.25, 0.84, 1.3], 34)),
+    ("L17", "S24", "close on his tag, a backwards C", still([-1.2, 1.3, 1.75], [-1.2, 0.84, 1.3], 34)),
     ("L18", "S25", "my real brother in the glass", still([GX, 3.9, 3.8], [GX, -0.6, 1.45], 34)),
     ("L19", "S26", "the master, push in on the copy's back", move(([0.0, 4.2, 3.7], [-0.5, 0.0, 1.0]), ([-1.0, 3.5, 3.7], [-1.0, 0.6, 1.2]), 12, 19)),
 ]
@@ -187,7 +193,7 @@ story = {
               "vignette": 0.2, "bloom": 0.12, "grain": 0.008},
     "asr_forgive": ["ay bee see dee"],
     "phonemes": {"ay": "ˈAː", "bee": "bˈi", "see": "sˈi", "dee": "dˈi"},
-    "notags": ["S13"],
+    "notags": ["S13", "S15"],
     "cast": cast,
     "lines": lines,
     "shots": shots,

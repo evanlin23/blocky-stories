@@ -47,8 +47,8 @@ TEAL = "#20e3d2"
 ORANGE = "#ff8a1f"
 
 # a rider's spot is (x, y); the mirror cast stands at (x, -y) and faces us
-ROWS = {"c": (-1.25, 0.6), "a": (1.35, 0.6), "b": (0.95, 1.6), "d": (-0.85, 1.6)}
-GAP = (-0.35, 0.6)
+ROWS = {"c": (-1.2, 0.6), "a": (1.35, 0.6), "b": (0.95, 2.1), "d": (-1.0, 2.1)}
+GAP = (-0.5, 0.6)
 TAG_Z = 1.3
 
 
@@ -122,8 +122,8 @@ def sheen_png(path):
     dr = ImageDraw.Draw(im)
     top = Image.new("RGBA", (W, H), (0, 0, 0, 0))   # the LED panel in the glass: a bright soft oblong near the top
     td = ImageDraw.Draw(top)
-    td.rounded_rectangle([34, 30, W - 34, 78], 20, fill=(255, 255, 255, 235))
-    top = top.filter(ImageFilter.GaussianBlur(7))
+    td.rounded_rectangle([60, 28, W - 60, 62], 16, fill=(255, 255, 255, 110))
+    top = top.filter(ImageFilter.GaussianBlur(9))
     im = Image.alpha_composite(im, top)
     im.save(path)
 
@@ -311,7 +311,7 @@ def build(kit, story, tl):
 def _ring(kit, mat):
     """An elliptical band, 4 cm thick in y, standing in the glass room round the two blue jackets."""
     n = 64
-    cx, cz, rx, rz, w = -0.8, 1.25, 1.0, 0.8, 0.08
+    cx, cz, rx, rz, w = -0.85, 1.25, 1.0, 0.8, 0.08
     verts, faces = [], []
     for i in range(n):
         a = 2 * math.pi * i / n
