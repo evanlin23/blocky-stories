@@ -124,11 +124,11 @@ Synthesized in `blocky/sound.py`. **G harmonic minor, 86 BPM**: a warm summer-ni
 - L58: a soft hum winding up.
 
 ## The shot plan
-Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. The check inset is in every shot.
+Times are estimates (the r1 build's times; rows after a new line shift later by the new lines' length, about 17 s by the end). A cut or punch-in every 1 to 2 s, nothing held over 2 s. The check inset is in every shot.
 
 | Shots | Lines | Time | Picture |
 |---|---|---|---|
-| S01a, S01b | L01 | 0.0 | (a) Close-up of Ben's face lit from below by a flashlight standing on the coffee table, smiling too gently, holding out a plate with a sandwich, crusts cut off. His watch shows at frame edge, on his RIGHT wrist. Push in. Hit on "YOURS". (b) Punch in on his too-kind smile. |
+| S01a, S01b | L01 | 0.0 | (a) Close-up of Ben's face lit from below by a flashlight standing on the coffee table, smiling too gently, holding out a plate with a sandwich, crusts cut off. His canoe-red watch shows at frame edge, on his RIGHT wrist. Push in. Hit on "YOURS". (b) Punch in on his too-kind smile. |
 | S02 | L02 | 2.4 | Top-down on the plate: a neat sandwich cut in triangles, the crusts in a little pile. The check inset's Ben icon blinks. |
 | S03 | L03 | 3.8 | Our street at dusk, every window lit, then all of them going dark left to right in a 0.4 s ramp. |
 | S04a, S04b | L04 | 5.6 | (a) A neighbor alone on a dark porch step, flashlight off, eyes shut. (b) The porch lights ramp back: the same neighbor in the same spot, now in a different-colored shirt, `confused`. |
@@ -139,26 +139,31 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S09 | L09 | 14.6 | The Dale family hugging him on their porch, him waving, `laugh`. |
 | S10a, S10b | L10 | 15.6 | (a) Mr. Varga alone in the dark again, eyes squeezed shut, ponytail and all. (b) Lights up: bald again, `relieved`, patting his head. |
 | S11a, S11b | L11 | 18.3 | (a) Daytime, our living room (my version): a mustard couch, no photo on the mantel. Ben (24) and me (21) at opposite ends, one remote between us, both `annoyed`. Ben's watch on his LEFT wrist. (b) Ben shaking the empty cereal box at me, `smug`. |
-| S12 | L12 | 21.5 | Both of us shrugging at the same time, `annoyed`. |
+| S11c, S11d | L11b | 21.5 | (a) Ben tipping the last of my cereal into his own bowl, `smug`. (b) Me sliding the remote under a mustard couch cushion, `smug`, Ben not looking. 1.2 s each. |
+| S12 | L12 | 23.9 | Both of us shrugging at the same time, `annoyed`. |
 | S13 | L13 | 22.9 | The living room lamp ramps off over 0.4 s. Cobalt blue night through the window. Mustard couch. |
 | S14a, S14b | L14 | 24.1 | (a) Our mom, Ben and Pickle on the mustard couch, three flashlight beams pointing up. (b) Pickle close, brown with one white ear, tail going in the beam. |
-| S15 | L15 | 27.1 | Me on my bed in the dark, flashlight off, `sulky`, my door shut. |
+| S14c | L14b | 27.1 | Close on my Ben's LEFT wrist resting on the mustard couch arm, his own flashlight beam across it: the BLACK watch at least 1/4 of the frame, Mom's knee at the edge. A slow punch-in, then a 0.8 s pull to his `smug` face so it's clearly Ben. |
+| S15 | L15 | 29.6 | Me on my bed in the dark, flashlight off, `sulky`, my door shut. |
 | S16a, S16b | L16 | 29.1 | (a) My door from inside: a strip of flashlight under it, two soft knocks. (b) Me rolling over, my back to the door. |
 | S17a, S17b | L17 | 30.5 | (a) My lamp ramps on. (b) The living room, now a TEAL couch and a framed photo on the mantel (both unnarrated). Ben holding the plate out to me, `soft`. |
 | S18 | L18 | 33.2 | Me `stunned`, taking the plate. |
 | S19 | L19 | 34.8 | Close on the crusts in their little pile. |
-| S20 | L20 | 36.0 | Close on Ben's wrist: the black watch on his RIGHT. |
-| S21a, S21b | L21 | 37.1 | (a) A 1 s callback to S11a: Ben on the mustard couch, watch on his LEFT. A soft rewind whoosh. (b) A second callback: Ben's left wrist on the remote, close. |
-| S22 | L22 | 39.6 | Back to now: punch in on his right wrist. |
+| S20 | L20 | 36.0 | Close on Ben's wrist: the canoe-red watch on his RIGHT, at least 1/4 of the frame. |
+| S21a, S21b | L21 | 37.1 | (a) A 1 s callback to S14c: Ben on the mustard couch, the BLACK watch on his LEFT. A soft rewind whoosh. (b) A second callback: Ben's left wrist and the black watch, close, at least 1/4 of the frame. |
+| S22 | L22 | 39.6 | Back to now: punch in on his right wrist, the RED watch filling a quarter of the frame. |
 | S23 | L23 | 40.7 | Mom on the teal couch, `amused`, waving me off. The canoe photo on the mantel behind her is in focus for a moment (unnarrated). |
 | S24 | L24 | 42.1 | Ben crouched in the hall doorway, calling, `soft`. |
 | S25 | L25 | 43.7 | Me `uneasy`, half off the couch. |
 | S26 | L26 | 45.3 | Pickle bounding straight to Ben, tail wagging. |
 | S27 | L27 | 46.3 | The dinner table, Ben leaning in, `soft`. Me `suspicious`. |
-| S28 | L28 | 48.1 | Ben laughing, me `stunned`. |
+| S27b, S27c | L27b | 48.1 | (a) A pizza box on the dinner table, one slice left. (b) Ben sliding the slice onto my plate, `soft`; me `suspicious`, not touching it. |
+| S28 | L28 | 50.0 | Ben laughing, me `stunned`. |
 | S29 | L29 | 49.5 | Ben holding the car door open for me, `soft`. |
 | S30 | L30 | 50.9 | Mom in the back seat, `content`, humming, not even looking up. |
-| S31 | L31 | 52.5 | My room at night, my bedside clock reading 2:00, cobalt blue. |
+| S30b, S30c | L30b | 54.1 | (a) My room at night, cobalt, me in bed `uneasy`, a flashlight-cream strip under the shut door, steady. (b) My bedside clock, numerals only, 11:04 dissolving to 12:04, the strip still there behind it. |
+| S30d, S30e | L30c | 56.6 | (a) Me opening my door a crack, `scared`. (b) The hall, empty and cobalt, nobody there, the end of the hall in moonlight. |
+| S31 | L31 | 58.4 | My room at night, my bedside clock reading 2:00, cobalt blue. |
 | S32 | L32 | 54.3 | The doorway: Ben standing in it, his face lit by his own flashlight, `blank`. |
 | S33 | L33 | 55.9 | My point of view into the beam, Ben's face behind it. Cover frame. |
 | S34 | L34 | 57.5 | Ben, close, perfectly still, the beam steady. |
@@ -167,11 +172,13 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S36 | L36 | 60.9 | Ben, close, `blank`, the beam not moving. |
 | S37 | L37 | 62.9 | Me, close, `scared`. |
 | S38a, S38b | L38 | 64.7 | (a) The flashlight clicks off (0.4 s ramp). (b) The empty doorway, his footsteps going down the hall. |
+| S38c, S38d | L38b | 70.8 | (a) Me in bed, eyes wide open, `uneasy`, cobalt. (b) The same shot, the window going from cobalt to dawn peach, me still awake. |
 | S39a, S39b | L39 | 66.9 | (a) Me in the dark living room with my own flashlight. (b) My beam landing on the mantel photo. |
 | S40 | L40 | 69.3 | The photo, close: Ben and me in a red canoe on a lake, arms over each other's shoulders, both laughing. |
+| S40b, S40c | L40b | 76.8 | (a) Push in on the red canoe in the photo. (b) A 0.8 s callback insert of S20: this Ben's canoe-red watch on his right wrist, the same red. |
 | S41 | L41 | 70.9 | Me `stunned`, the beam trembling a little. |
-| S42a, S42b | L42 | 72.3 | (a) A callback to S15: me alone on my bed in the dark, door shut. (b) The check inset, close: the yellow question mark slides from Ben's icon onto mine. |
-| S43 | L43 | 74.6 | Me, close, `stunned`. |
+| S42a, S42b | L42 | 72.3 | (a) A callback to S15: me alone on my bed in the dark, the door shut. (b) The check inset, close: the yellow question mark slides from Ben's icon onto mine. |
+| S43 | L43 | 74.6 | Callback to S16a: my shut door from inside, the strip of light under it. Then me, close, `stunned`. |
 | S44 | L44 | 75.1 | The one reveal picture, a split held 1.6 s with drift: the living room I grew up in (mustard couch, bare mantel) on the left, and this one (teal couch, canoe photo) on the right. |
 | S45a, S45b | L45 | 76.3 | (a) The hall wall, lit by my beam: photo after photo of Ben and me as grown-ups, a fishing trip, a road trip, a ballgame, always together. (b) Push along the photos to one of us both laughing at a campfire. |
 | S46a, S46b | L46 | 79.1 | (a) Three quick callbacks: the sandwich, "how was your day", the doorway beam. (b) Ben's face in the doorway beam (callback to S33). |
@@ -188,7 +195,7 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S57 | L57 | 99.0 | My bedside clock: 9:41 turning to 9:42. A slow punch-in. |
 | S58 | L58 | 100.4 | My lamp ramps on. |
 | S59 | L59 | 101.6 | Ben in my doorway in daylight-warm lamp light, `unsure`. Behind him, down the hall, the mustard couch. |
-| S60 | L60 | 103.0 | Close on his left wrist and the watch. |
+| S60 | L60 | 103.0 | Close on his LEFT wrist: the BLACK watch, at least 1/4 of the frame. |
 | S61 | L61 | 104.2 | Me, `relief`. The check inset: every icon has a green tick. |
 | S62 | L62 | 104.7 | Ben, close, `unsure`. |
 | S63a, S63b | L63 | 106.5 | (a) Ben with an awkward smile, rubbing the back of his neck. (b) Me, `stunned`. |
@@ -214,25 +221,30 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L09: They're KEEPING that one.
 - L10: To swap BACK, / you sit alone / in the NEXT one / and hope.
 - L11: My big brother, BEN, / and I / haven't been nice to each other / in three YEARS.
+- L11b: He eats my CEREAL. / I hide the REMOTE.
 - L12: Nobody remembers WHY. / Not even US.
 - L13: Tuesday, / the power went OUT.
 - L14: Mom, Ben / and our dog, PICKLE, / sat in the living room / with the FLASHLIGHTS.
+- L14b: Ben's flashlight / lit up his black WATCH, / on his LEFT wrist.
 - L15: I stayed in my ROOM / with the door SHUT.
 - L16: Ben knocked TWICE. / I didn't ANSWER.
 - L17: When the lights came BACK, / that's when / he made me the SANDWICH.
 - L18: He has never / made me / a SANDWICH.
 - L19: He cut off / the CRUSTS.
 - L20: Then I saw / his WATCH.
-- L21: Ben has worn it / on his LEFT wrist / his whole LIFE.
-- L22: It was on his RIGHT.
+- L21: Ben has worn a BLACK one / on his LEFT wrist / his whole LIFE.
+- L22: This one was RED. / On his RIGHT wrist.
 - L23: Mom said / I was being SILLY.
 - L24: But that night, / he called Pickle / NOODLE.
 - L25: That's the name / we ALMOST gave her.
 - L26: And she came RUNNING.
 - L27: Wednesday, / he asked me / how my DAY was.
+- L27b: Then he gave me / the last slice / of PIZZA.
 - L28: Thursday, / he LAUGHED / at my joke,
 - L29: and gave me / the FRONT seat.
 - L30: Mom acted / like this was totally NORMAL.
+- L30b: Thursday night, / a flashlight beam / sat under my DOOR / for an HOUR.
+- L30c: When I opened it, / the hall was EMPTY.
 - L31: Friday, / at two a.m., / I woke UP,
 - L32: and Ben was standing / in my DOORWAY,
 - L33: shining a flashlight / right in my FACE.
@@ -242,12 +254,14 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L36: Then he asked me / what our dog's NAME was.
 - L37: I said, / PICKLE. / In his house, / she's NOODLE.
 - L38: He switched off / the flashlight / and went back to BED.
-- L39: That's when / I really looked / at the photo / on the MANTEL.
+- L38b: I lay awake / till the sun came UP.
+- L39: That's when / I really looked / at the photo / on the MANTEL. (caption MANTEL; the spoken text in lines.json stays "mantle" for Whisper)
 - L40: Ben and me / in a CANOE, / LAUGHING.
+- L40b: The canoe was RED. / Same red / as his WATCH.
 - L41: I've never been / in a CANOE.
-- L42: Ben wasn't the one / alone in the DARK / on Tuesday.
-- L43: I WAS.
-- L44: Ben didn't SWAP. / I did.
+- L42: On Tuesday, / I was the one / alone in the DARK.
+- L43: With the door SHUT.
+- L44: I'm the one / who SWAPPED.
 - L45: This is the house / where my brother and I / never STOPPED being friends.
 - L46: And this Ben / has been checking on me / all WEEK,
 - L47: because HIS brother / is at MY house. / With MY Ben.
@@ -263,7 +277,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L57: The longest minute / of my LIFE.
 - L58: When the lights / came BACK,
 - L59: my brother / was in my DOORWAY.
-- L60: Watch on his LEFT wrist.
+- L60: BLACK watch. / LEFT wrist.
 - L61: My BEN.
 - L62: He looked at me / for a long TIME.
 - L63: Then he said / that all week / I'd been NICE to him.
@@ -275,6 +289,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 (Loop: L67 runs straight into L01: "Now he's sure I'm not his. If your brother is nice after a blackout, he isn't yours.")
 
 ## Notes for the builder and reviewers
+- **r1 word fixes (2026-11-03):** changed L21, L22, L39 (caption only), L42, L43, L44, L60. New L11b, L14b, L27b, L30b, L30c, L38b, L40b, each needing the shots in the plan above. Re-voice those 13 lines. Move the polish `emph` from L43 to L44 (standards r1) and the watch colour to two watches: black for my Ben, canoe red `#ff5a4e` for this Ben. Re-pick `cover_s` after the re-voice (the S33 beam frame, now about 67 s).
 - Words checked against `checks.GRAPHIC`, `HARM` and `CHILD`. Nobody is hurt or taken, and nobody is ever in danger.
 - **The two Bens are one rig.** Only the watch moves wrists. Never a silhouette or a haircut tell (RULES, ep38). The watch, the couch and the canoe photo carry it.
 - The swap itself is never shown as an effect on a person: the lights ramp, and the room around them is different.
