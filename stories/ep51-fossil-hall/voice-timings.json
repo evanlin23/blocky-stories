@@ -714,30 +714,30 @@
    ]
   },
   "L29": {
-   "text": "the third friday, at closing, the hall goes dark.",
+   "text": "the third friday, just before closing, the hall goes dark.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
+   "dur": 2.707,
    "onset": 0.155,
-   "end": 2.172,
+   "end": 2.5,
    "chunks": [
     [
      0.155,
-     0.69
+     0.81
     ],
     [
-     0.716,
-     1.155
+     0.862,
+     1.5
     ],
     [
-     1.207,
-     1.466
+     1.526,
+     1.776
     ],
     [
-     1.466,
-     2.172
+     1.776,
+     2.5
     ]
    ]
   },
@@ -1602,22 +1602,22 @@
    ]
   },
   "L64": {
-   "text": "i knocked down the skeleton's tail.",
+   "text": "i broke the skeleton's tail.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.793,
+   "dur": 1.586,
    "onset": 0.172,
-   "end": 1.603,
+   "end": 1.397,
    "chunks": [
     [
      0.172,
-     0.647
+     0.457
     ],
     [
-     0.647,
-     1.603
+     0.457,
+     1.397
     ]
    ]
   },

@@ -220,7 +220,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the fossil hall at closing, the galleries, then the basement store.
 - **Shots:** 17.
 
-- `L29` narrator: The third FRIDAY, / at CLOSING, / the hall / goes DARK.
+- `L29` narrator: The third FRIDAY, / just before CLOSING, / the hall / goes DARK.
   - [wide of the hall from the bench: the lamps ramp down over 1.5 s to dim blue]
 - `P01` pause 0.7 s: none
   - [hold on the dim hall. Music out but a low air tone. Then one soft deep thud]
@@ -314,7 +314,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [me, standing tall in front of the bench, the crowd wide behind the camera]
 - `L63` narrator: Nine years AGO, / my first SUMMER / helping out HERE,
   - [the curator in the crowd, `curious`, stepping forward]
-- `L64` narrator: I knocked down / the skeleton's TAIL.
+- `L64` narrator: I BROKE / the skeleton's TAIL.
   - [me, `sheepish`, pointing up at the tail]
 - `L65` narrator: And Grandad / told everyone / it was HIM.
   - [Grandad on the bench, finally looking at me, `moved`]

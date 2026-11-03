@@ -548,8 +548,8 @@
     "the third friday,"
    ],
    [
-    "at CLOSING,",
-    "at closing,"
+    "just before CLOSING,",
+    "just before closing,"
    ],
    [
     "the hall",
@@ -1232,8 +1232,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "I knocked down",
-    "i knocked down"
+    "I BROKE",
+    "i broke"
    ],
    [
     "the skeleton's TAIL.",
