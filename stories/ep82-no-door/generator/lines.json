@@ -1,0 +1,667 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I bring PIZZA every night",
+    "i bring pizza every night"
+   ],
+   [
+    "to a house",
+    "to a house"
+   ],
+   [
+    "with no DOOR.",
+    "with no door."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And TONIGHT,",
+    "and tonight,"
+   ],
+   [
+    "I'm LATE.",
+    "i'm late."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Six o'CLOCK.",
+    "six o'clock."
+   ],
+   [
+    "One large.",
+    "one large."
+   ],
+   [
+    "PLAIN.",
+    "plain."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "There's no door",
+    "there's no door"
+   ],
+   [
+    "and no PATH.",
+    "and no path."
+   ],
+   [
+    "Just a brass SLOT,",
+    "just a brass slot,"
+   ],
+   [
+    "down at knee HEIGHT.",
+    "down at knee height."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "You slide the box IN.",
+    "you slide the box in."
+   ],
+   [
+    "The slot is WARM,",
+    "the slot is warm,"
+   ],
+   [
+    "like BREATH.",
+    "like breath."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then the money",
+    "then the money"
+   ],
+   [
+    "slides back OUT.",
+    "slides back out."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A twenty,",
+    "a twenty,"
+   ],
+   [
+    "folded into",
+    "folded into"
+   ],
+   [
+    "a tiny HOUSE.",
+    "a tiny house."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its chimney PUFFS",
+    "its chimney puffs"
+   ],
+   [
+    "every four seconds.",
+    "every four seconds."
+   ],
+   [
+    "Like CLOCKWORK.",
+    "like clockwork."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The whole street",
+    "the whole street"
+   ],
+   [
+    "keeps their porch lights ON",
+    "keeps their porch lights on"
+   ],
+   [
+    "till it's DELIVERED.",
+    "till it's delivered."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Nobody walks a DOG",
+    "nobody walks a dog"
+   ],
+   [
+    "past it.",
+    "past it."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My big sister, MARISOL,",
+    "my big sister, marisol,"
+   ],
+   [
+    "runs the pizza place",
+    "runs the pizza place"
+   ],
+   [
+    "on the CORNER.",
+    "on the corner."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She did this route",
+    "she did this route"
+   ],
+   [
+    "for TEN years.",
+    "for ten years."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "This month,",
+    "this month,"
+   ],
+   [
+    "she gave it to ME.",
+    "she gave it to me."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tonight,",
+    "tonight,"
+   ],
+   [
+    "my tire went FLAT,",
+    "my tire went flat,"
+   ],
+   [
+    "two blocks AWAY.",
+    "two blocks away."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I RAN it.",
+    "so i ran it."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Six-oh-ONE.",
+    "six-oh-one."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Up and down the street,",
+    "up and down the street,"
+   ],
+   [
+    "the porch lights",
+    "the porch lights"
+   ],
+   [
+    "went OUT.",
+    "went out."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Six-oh-TWO.",
+    "six-oh-two."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The house's two top WINDOWS",
+    "the house's two top windows"
+   ],
+   [
+    "went dark,",
+    "went dark,"
+   ],
+   [
+    "and LIT again.",
+    "and lit again."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Like it BLINKED.",
+    "like it blinked."
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.6,
+  "chunks": []
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Six-oh-THREE.",
+    "six-oh-three."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The lawn SPLIT.",
+    "the lawn split."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And the house",
+    "and the house"
+   ],
+   [
+    "STOOD UP.",
+    "stood up."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The whole house",
+    "the whole house"
+   ],
+   [
+    "was SOMEBODY.",
+    "was somebody."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Sitting very STILL,",
+    "sitting very still,"
+   ],
+   [
+    "with a ROOF on.",
+    "with a roof on."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its KNEES came up",
+    "its knees came up"
+   ],
+   [
+    "out of the lawn.",
+    "out of the lawn."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The slot was its MOUTH.",
+    "the slot was its mouth."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every porch light was OUT,",
+    "every porch light was out,"
+   ],
+   [
+    "so it TURNED",
+    "so it turned"
+   ],
+   [
+    "toward the one door still LIT.",
+    "toward the one door still lit."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Marisol's DOOR,",
+    "marisol's door,"
+   ],
+   [
+    "on the CORNER.",
+    "on the corner."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But the order",
+    "but the order"
+   ],
+   [
+    "always says the same THING.",
+    "always says the same thing."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The house with no DOOR.",
+    "the house with no door."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I carried the pizza",
+    "so i carried the pizza"
+   ],
+   [
+    "to where the house",
+    "to where the house"
+   ],
+   [
+    "USED to be.",
+    "used to be."
+   ]
+  ]
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I set it DOWN",
+    "i set it down"
+   ],
+   [
+    "in the bare dirt,",
+    "in the bare dirt,"
+   ],
+   [
+    "right in the middle",
+    "right in the middle"
+   ],
+   [
+    "of the LOT.",
+    "of the lot."
+   ]
+  ]
+ },
+ {
+  "id": "L34",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It STOPPED.",
+    "it stopped."
+   ]
+  ]
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It looked BACK",
+    "it looked back"
+   ],
+   [
+    "at the box.",
+    "at the box."
+   ]
+  ]
+ },
+ {
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And it came HOME,",
+    "and it came home,"
+   ],
+   [
+    "and sat DOWN,",
+    "and sat down,"
+   ],
+   [
+    "right on top of it.",
+    "right on top of it."
+   ]
+  ]
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its knees sank back",
+    "its knees sank back"
+   ],
+   [
+    "under the LAWN.",
+    "under the lawn."
+   ]
+  ]
+ },
+ {
+  "id": "L38",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Just a HOUSE",
+    "just a house"
+   ],
+   [
+    "again.",
+    "again."
+   ]
+  ]
+ },
+ {
+  "id": "L39",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The slot pushed out",
+    "the slot pushed out"
+   ],
+   [
+    "a TWENTY.",
+    "a twenty."
+   ]
+  ]
+ },
+ {
+  "id": "L40",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Marisol came RUNNING",
+    "marisol came running"
+   ],
+   [
+    "with a second pizza.",
+    "with a second pizza."
+   ]
+  ]
+ },
+ {
+  "id": "L41",
+  "who": "narrator",
+  "chunks": [
+   [
+    "We split it",
+    "we split it"
+   ],
+   [
+    "on the CURB,",
+    "on the curb,"
+   ],
+   [
+    "laughing so hard",
+    "laughing so hard"
+   ],
+   [
+    "we SHOOK.",
+    "we shook."
+   ]
+  ]
+ },
+ {
+  "id": "L42",
+  "who": "narrator",
+  "chunks": [
+   [
+    "She says",
+    "she says"
+   ],
+   [
+    "the route is MINE.",
+    "the route is mine."
+   ]
+  ]
+ },
+ {
+  "id": "L43",
+  "who": "narrator",
+  "chunks": [
+   [
+    "But last night,",
+    "but last night,"
+   ],
+   [
+    "a second order came in,",
+    "a second order came in,"
+   ],
+   [
+    "from ANOTHER house",
+    "from another house"
+   ],
+   [
+    "with no DOOR.",
+    "with no door."
+   ]
+  ]
+ },
+ {
+  "id": "L44",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So rain or SHINE,",
+    "so rain or shine,"
+   ]
+  ]
+ }
+]
