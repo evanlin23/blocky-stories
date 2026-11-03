@@ -1,4 +1,4 @@
-# Once a day: the next ready story goes up to PandaNanoAdventures as a private video, and an issue tells the
+# Once a day: the next ready story goes up to Buhtown as a private video, and an issue tells the
 # owner it's waiting to be published. Run it by hand from the Actions tab to upload one now.
 name: upload
 on:

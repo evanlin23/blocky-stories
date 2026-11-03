@@ -18,6 +18,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
+from blocky import polish
+
 HERE = Path(__file__).resolve().parent
 FONT = HERE / "fonts" / "SchibstedGrotesk-Black.ttf"
 W, H = 1080, 1920
@@ -121,13 +123,14 @@ def pop(u: float) -> float:
     return 1.06 - 0.06 * (u - 0.6) / 0.4
 
 
-def draw_captions(img: Image.Image, t: float, caps: list[dict], shake: float = 0.0) -> None:
+def draw_captions(img: Image.Image, t: float, caps: list[dict], shake: float = 0.0, quick: bool = False) -> None:
+    """quick: the polish pack's pop-in (90 to 100% over 80 ms) instead of the default overshoot."""
     for c in caps:
         if not (c["start"] <= t < c["end"]):
             continue
         im, _ = caption_image(c["text"], c.get("big", False), KEY["c"], KEY.get("stroke", 0), KEY.get("ink", INK),
                               KEY.get("stroke_add", 0), KEY.get("shadow", 0.55))
-        k = pop((t - c["start"]) / 0.16)
+        k = polish.caption_scale(t - c["start"]) if quick else pop((t - c["start"]) / 0.16)
         if k != 1.0:
             im = im.resize((max(1, int(im.width * k)), max(1, int(im.height * k))), Image.BICUBIC)
         dx = dy = 0
@@ -177,6 +180,11 @@ def grade(img: np.ndarray, g: dict) -> np.ndarray:
     c = g.get("contrast", 1.05)
     out = 0.5 + (out - 0.5) * c if c != 1.0 else out
     out = out * g.get("exposure", 1.0)
+    if g.get("lift"):   # the polish grade's toe: the darkest tones come up, so a TV doesn't crush them. It scales each
+        # pixel by the lift of its luma, so the colour keeps its saturation (adding grey washed it out: ep62, 0.19)
+        l0 = np.clip(out @ np.array([0.2126, 0.7152, 0.0722], np.float32), 1e-4, None)[..., None]
+        l1 = l0 + g["lift"] * np.clip(1 - l0, 0, 1) ** 3
+        out = out * (l1 / l0)
     return out * _vignette(*img.shape[:2], g.get("vignette", 0.35))
 
 
@@ -284,6 +292,9 @@ def fx_at(tl: dict, t: float) -> dict:
     return out
 
 
+_EMPH: dict = {}   # the polish punch-in times, worked out once per film
+
+
 def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grain_seed: int = 0) -> np.ndarray:
     t = f / tl["fps"]
     KEY["c"] = tuple(int(st.get("key_color", "#ffd640").lstrip("#")[i:i + 2], 16) for i in (0, 2, 4))
@@ -297,11 +308,22 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
     if fx["shake"]:
         r = np.random.default_rng(f)
         dx, dy = r.uniform(-1, 1, 2) * 0.012 * fx["shake"]
-    img = to_output(_read(raw), fx["punch"], dx, dy)
+    pol = polish.spec(st)
+    zoom = fx["punch"]
+    if pol:   # the polish pack's punch-ins, drift and sway, on the crop (smooth on every frame, drawings on twos)
+        key = (id(tl), id(st))
+        if key not in _EMPH:
+            _EMPH.clear()
+            _EMPH[key] = polish.emph_times(tl, pol)
+        pz, pdx, pdy = polish.motion(tl, st, pol, t, _EMPH[key])
+        zoom, dx, dy = zoom * pz, dx + pdx, dy + pdy
+    img = to_output(_read(raw), zoom, dx, dy)
     g = st.get("grade", {})
     sid = next((s["id"] for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1]["id"])
     if st.get("shot_grades", {}).get(sid):      # opt-in (ep42): a shot's own grade over the story's (a flashback is warmer)
         g = {**g, **st["shot_grades"][sid]}
+    if pol:
+        g = polish.grade(g, pol)
     img = bloom(img, g.get("bloom", 0.35))
     img = grade(img, g)
     if rain is not None and sid in set(st.get("rain_shots", [])):
@@ -330,7 +352,7 @@ def finish(tl: dict, st: dict, f: int, raw: Path, rain: Rain | None = None, grai
     if g.get("red_line"):   # a warm story's picture stays under WCAG's saturated red (the captions are drawn after)
         img = red_clamp(img, g["red_line"], g.get("red_lift_blue", 0.25))
     out = Image.fromarray(np.clip(img * 255 + 0.5, 0, 255).astype(np.uint8)).convert("RGBA")
-    draw_captions(out, t, tl["captions"], fx["shake"] * 0.6)
+    draw_captions(out, t, tl["captions"], fx["shake"] * 0.6, quick=bool(pol and pol["pop"]))
     return np.asarray(out.convert("RGB"))
 
 

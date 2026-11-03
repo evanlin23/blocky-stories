@@ -120,6 +120,9 @@ def blender(job: dict, tag: str, workers: int = 1) -> float:
                                        stderr=subprocess.STDOUT, env=env), k))
     bad = [k for p, k in procs if p.wait() != 0]
     if bad:
+        log = Path(f"{w}/blender-{tag}-{bad[0]}.log")
+        if log.exists():   # print the tail, so a failure on Actions shows its cause in the job log (ep58, 2026-11-03)
+            print("".join(log.read_text(errors="replace").splitlines(keepends=True)[-40:]), file=sys.stderr)
         sys.exit(f"Blender failed, see {w}/blender-{tag}-{bad[0]}.log")
     return time.time() - t0
 
@@ -294,7 +297,9 @@ def cmd_asr(a):
     penc.write_wav(w / "narration-only.wav", np.stack([vo, vo], 1) * 0.5)
     subprocess.run([tts_python(), str(HERE / "voice.py"), "asr", str(w / "narration-only.wav"), str(w / "timeline.json")],
                    env={**os.environ, "OMP_NUM_THREADS": "4",
-                        **({"BLOCKY_ASR_TAIL": "1"} if story_json(a.story).get("asr_ignore_tail_repeat") else {})})
+                        **({"BLOCKY_ASR_TAIL": "1"} if story_json(a.story).get("asr_ignore_tail_repeat") else {}),
+                        **({"BLOCKY_ASR_FORGIVE": json.dumps(story_json(a.story)["asr_forgive"])}
+                           if story_json(a.story).get("asr_forgive") else {})})
 
 
 def cmd_check(a):

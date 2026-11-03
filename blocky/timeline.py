@@ -219,13 +219,33 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
     fx = [{**f, "t": snap(at(f["at"]))} for f in st.get("fx", [])]
     acting = {who: [{**k2, "t": snap(k2["t"])} for k2 in (_key(k, at) for k in keys)]
               for who, keys in st.get("acting", {}).items()}
-    return {"name": st["name"], "fps": fps, "duration": duration, "frames": int(round(duration * fps)),
+    out = {"name": st["name"], "fps": fps, "duration": duration, "frames": int(round(duration * fps)),
             "tail": st.get("tail", TAIL),
             "fade_out": st.get("fade_out", True),
             "fade_in": st.get("fade_in", True),
             "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
             "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
-            "cues": cues, "fx": fx, "acting": acting}
+            "cues": cues, "fx": fx, "acting": acting, "motion": _motion(st)}
+    if out["motion"]:   # the polish pack: shots with a walk on ones; reveal shots calm
+        from blocky import polish
+        p = polish.spec(st)
+        if out["motion"].get("ones") == "walk":
+            polish.ones_for_walks(out, st)
+        elif out["motion"].get("ones") == "moving":
+            polish.ones_for_moving(out, st, p)
+        cs = polish.calm_shots(out, p, at)
+        out["motion"]["calm_shots"] = cs
+        out["motion"]["calm"] = [[s["start"], s["end"]] for s in out["shots"] if s["id"] in cs]
+    return out
+
+
+def _motion(st: dict) -> dict:
+    """The polish pack's acting options for acting.py (eased walks, idle life); {} without the pack."""
+    from blocky import polish
+    p = polish.spec(st)
+    if not p:
+        return {}
+    return {"ease": bool(p["ease"]), "idle": bool(p["idle"]), "idle_scale": float(p["idle_scale"]), "ones": p["ones"]}
 
 
 def _key(k: dict, at) -> dict:
