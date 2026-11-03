@@ -1,6 +1,6 @@
 # ep15-mirror-maze: the story script (redo, writer, 2026-11-02)
 
-**The big idea:** the narrator isn't a person at all. They're the reflection someone left in a mirror maze pane when they moved away last year, and their best friend Tasha has come to the travelling fair every night this week to visit a reflection.
+**The big idea:** the narrator isn't a person at all. They're the reflection someone left in a mirror maze pane when they moved away last year, and their best friend Tasha has come to the traveling fair every night this week to visit a reflection.
 
 - **Why it's redone:** held on 2026-11-02 because the old first line ("TASHA points at anything GREEN...") wasn't the world's rule (RULES → Our own numbers so far, ep20). This is a new premise and twist on the same set and cast.
 - **Slug:** `ep15-mirror-maze` (unchanged, as in story.json).
@@ -13,9 +13,9 @@
 
 ## Premise, rule, twist
 
-- **Premise (for story.json):** In a town where your reflection stays behind in the glass when you walk away, I meet my best friend Tasha at the travelling fair's mirror maze every night, and on the last night the maze guy starts loading the panes onto the truck.
+- **Premise (for story.json):** In a town where your reflection stays behind in the glass when you walk away, I meet my best friend Tasha at the traveling fair's mirror maze every night, and on the last night the maze guy starts loading the panes onto the truck.
 - **Twist (for story.json):** I'm not the person, I'm the reflection the real me left in a maze pane last year before moving away. I've never left a reflection because I am one. Tasha has come every night to see me, and when my pane goes on the truck she looks at herself in it on purpose, so her reflection stays behind with mine.
-- **World (for story.json):** a travelling fair packing up in the rain at night, in a town where every reflection stays where it was made: duckboards over mud, a puddle that still holds a man tying his boot, a flatbed truck of glass panes full of waving strangers, a fry van whose steel side holds a long queue, and a lilac-bulbed mirror maze with its roof off.
+- **World (for story.json):** a traveling fair packing up in the rain at night, in a town where every reflection stays where it was made: duckboards over mud, a puddle that still holds a man tying his boot, a flatbed truck of glass panes full of waving strangers, a fry cart whose steel side holds a long line, and a lilac-bulbed mirror maze with its roof off.
 - **The first line, a warning to you:** "In this town, never walk away from your reflection." Then: "It stays in the glass and waits."
 - **The rule:** your reflection stays in the glass when you walk away. It stays where you stood, rimmed in a thin lilac glow, and lives on in that glass. Leftovers nobody comes to see lose the shine in their eyes over the years.
 - **The marker (by 2 s):** a **thin lilac glow outline** on every leftover reflection (our own design, not a game effect), plus the leftover standing where nobody is. In the first frame, Tasha stands lit at the maze front and the panes behind her hold a crowd of lilac-rimmed strangers who aren't on the steps.
@@ -52,7 +52,7 @@
 |---|---|---|---|
 | L01 (0 to 2 s) | 1 | The hook, close and centred: one maze pane holding a lilac-rimmed reflection of a stranger, and nobody standing in front of it. Push in during the line. A soft hit on "reflection". Lit to read at phone size, no wide | maze pane reused, leftover and rim new |
 | L01b (2 to 3.3 s) | 1 | Tasha at the maze front, lit bright, face at least 1/4 frame width. The panes behind her hold a lilac-rimmed crowd of strangers who aren't on the steps | maze front reused, leftover crowd new |
-| L02 to L03 | 2 | The fry van's steel side holds a long queue of lilac-rimmed people. Then the real hatch: two customers | van reused, leftover queue new |
+| L02 to L03 | 2 | The fry cart's steel side holds a long line of lilac-rimmed people. Then the real hatch: two customers | van reused, leftover line new |
 | L04 to L05 | 2 | A puddle on the duckboards holds a man tying his boot. Nobody stands over it | duckboards and puddle reused, puddle figure new |
 | L06 | 1 | The truck's glass panels full of lilac-rimmed people waving | truck reused, figures new |
 | L07 | 1 | A brand-new pane on the truck, empty. A little funny | truck reused |

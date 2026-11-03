@@ -392,9 +392,9 @@ S("P02", one((0.4, 0.5, 1.5), (-0.1, 5.0, 1.45), 34), 2, look={**LOOK_NIGHT, "ca
 # the guy walks the carried pane west along y = 4.8 to the truck; Tasha walks beside it on the rainy side
 GY = 4.8
 raw("guy", "L29", pos=[1.6, GY, BZ])
-raw("guy", "L33>", pos=[-3.25, GY, BZ])
+raw("guy", "L33", pos=[-2.3, GY, BZ])
 raw("tasha", "L29", pos=[-0.9, 3.4, BZ], yaw=180)
-raw("tasha", "L33>", pos=[-5.7, 3.4, BZ])
+raw("tasha", "L33", pos=[-4.75, 3.4, BZ])
 rain("L29", True, [-9.0, 4.0, 1.0, 4.55], 4.5)
 LOOK_WALK = {**LOOK_NIGHT, "camfill": 1.4}
 stage("L29", E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
@@ -408,7 +408,7 @@ S("L32", one((-1.7, -0.7, 1.65), (0.0, 0.0, 1.65), 50), 2, follow="tasha", look=
   note="Tasha comes to see me anyway")
 raw("me", "L33", blink=False)
 raw("me", "L34", blink=True)
-S("L33", one((-0.55, -1.6, 1.45), (-0.55, 0.45, 1.4), 40), 2, follow="guy", look={**LOOK_WALK, "camfill": 1.1, "bulbs": 0}, rain2d=False,
+S("L33", one((-0.55, -1.6, 1.45), (-0.55, 0.45, 1.4), 40), 2, look={**LOOK_WALK, "camfill": 1.1, "bulbs": 0}, rain2d=False,
   note="the eye close: my glint the brightest point")
 
 # =========================================================================================== 12 the truck, L34 to L35
