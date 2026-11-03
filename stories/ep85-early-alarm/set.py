@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import math
 
+import bmesh
 import bpy
 from mathutils import Vector as V
 
@@ -31,14 +32,14 @@ def disc(kit, name, r, y, x, z, mat, parent, sx=1.0, sz=1.0, h=0.02):
 
 def build(kit, story, tl):
     ctx = {}
-    gold = kit.emit("#c85a00", 0.55, "sun shell")
-    core = kit.emit("#ff9a20", 6.0, "sun core")
-    sclera = kit.emit("#ffe9a0", 1.8, "eye sclera")
-    iris = kit.emit("#ffb000", 1.6, "eye iris")
+    gold = kit.emit("#ffb000", 1.25, "sun shell")
+    core = kit.emit("#ffd25e", 5.0, "sun core")
+    sclera = kit.emit("#ffeeb0", 1.1, "eye sclera")
+    iris = kit.emit("#ff9d00", 1.2, "eye iris")
     ring = kit.emit("#e07a00", 1.2, "eye ring")
-    pupil = kit.emit("#4a1c00", 0.12, "eye pupil")
-    glint = kit.emit("#ffffff", 6.0, "eye glint")
-    lid = kit.emit("#b04a00", 1.0, "sun lid")
+    pupil = kit.emit("#2a0e00", 0.1, "eye pupil")
+    glint = kit.emit("#ffffff", 3.0, "eye glint")
+    lid = kit.emit("#e08800", 0.9, "sun lid")
     brow = kit.emit("#5a2400", 0.35, "sun brow")
 
     # --- the ground: a dark lawn, a bare warm patch the size of a garage, and a back fence
@@ -65,16 +66,40 @@ def build(kit, story, tl):
     ex, ey, ez = EYE[0] - SUN[0], EYE[1] - SUN[1], EYE[2] - SUN[2]
     ctx["root"] = root
     ctx["eye_y"] = ey
-    kit.box("sun.socket", (2.3, 0.12, 1.9), (ex, ey - 0.0, ez), kit.emit("#4a1400", 0.35, "socket"), root, bevel=0.05)
-    sc = disc(kit, "sun.sclera", 0.8, ey - 0.10, ex, ez, sclera, root, sx=1.0, sz=0.82, h=0.04)
-    disc(kit, "sun.ring", 0.55, ey - 0.13, ex, ez - 0.02, ring, root, h=0.03)
-    disc(kit, "sun.iris", 0.5, ey - 0.15, ex, ez - 0.02, iris, root, h=0.03)
-    disc(kit, "sun.pupil", 0.28, ey - 0.17, ex, ez - 0.02, pupil, root, sx=0.5, sz=1.0, h=0.03)
-    kit.sphere("sun.glint", 0.07, (ex + 0.2, ey - 0.20, ez + 0.1), glint, root, seg=10)
-    # lids: the upper one half down (heavy, menacing), a thinner lower one; the brow ridge over both
-    ctx["lid"] = disc(kit, "sun.lid", 0.9, ey - 0.20, ex, ez + 0.62, lid, root, sx=1.0, sz=0.42, h=0.04)
-    disc(kit, "sun.lidlow", 0.9, ey - 0.20, ex, ez - 0.95, lid, root, sx=1.0, sz=0.26, h=0.04)
-    kit.box("sun.brow", (2.0, 0.26, 0.3), (ex, ey - 0.12, ez + 1.15), brow, root, bevel=0.1, seg=3)
+    kit.box("sun.socket", (2.5, 0.12, 2.1), (ex, ey, ez), kit.emit("#9a3d00", 0.7, "socket"), root, bevel=0.2, seg=3)
+    # eyeball: a squashed sphere half sunk in the socket; iris, pupil sit on its surface
+    EY0 = ey + 0.1
+    ball = kit.sphere("sun.ball", 0.8, (ex, EY0, ez), sclera, root, seg=40)
+    ball.scale = (1.0, 0.5, 0.95)
+    disc(kit, "sun.ring", 0.56, ey - 0.205, ex, ez - 0.02, ring, root, h=0.03)
+    disc(kit, "sun.iris", 0.5, ey - 0.225, ex, ez - 0.02, iris, root, h=0.03)
+    disc(kit, "sun.pupil", 0.27, ey - 0.285, ex, ez - 0.02, pupil, root, sx=0.5, sz=1.0, h=0.03)
+    kit.sphere("sun.glint", 0.07, (ex + 0.2, ey - 0.31, ez + 0.12), glint, root, seg=10)
+    # lids: curved shells hugging the ball (5% bigger). Upper covers the top third of the iris, lower curves up.
+    def shell(name, r, keep, mat):
+        bm = bmesh.new()
+        bmesh.ops.create_uvsphere(bm, u_segments=64, v_segments=40, radius=r)
+        kill = [v for v in bm.verts if v.co.y > 0.05 or not keep(v.co.x / 0.8, v.co.z / 0.95)]
+        bmesh.ops.delete(bm, geom=kill, context="VERTS")
+        me = bpy.data.meshes.new(name)
+        bm.to_mesh(me)
+        bm.free()
+        ob = bpy.data.objects.new(name, me)
+        ob.data.materials.append(mat)
+        ob.location = (ex, EY0, ez)
+        ob.scale = (1.0, 0.5, 0.95)
+        for p in me.polygons:
+            p.use_smooth = True
+        return kit.link(ob, root)
+    up = lambda x, z: z > 0.17 - 0.30 * x * x
+    lo = lambda x, z: z < -0.55 + 0.35 * x * x
+    seamup = lambda x, z: z > 0.17 - 0.30 * x * x - 0.06
+    seamlo = lambda x, z: z < -0.55 + 0.35 * x * x + 0.05
+    glow = kit.emit("#ffd25e", 3.0, "lid seam")
+    shell("sun.seamup", 0.84, seamup, glow)
+    shell("sun.seamlo", 0.84, seamlo, glow)
+    ctx["lid"] = shell("sun.lid", 0.85, up, lid)
+    shell("sun.lidlow", 0.85, lo, lid)
     # --- the shed, barn red, with its door ajar and warm light spilling
     red = kit.plastic("#c4473a", 0.7, "barn red")
     dark = kit.plastic("#5a2620", 0.8, "shed roof")
@@ -94,8 +119,8 @@ def build(kit, story, tl):
         seg = kit.cyl(f"rope{i}", 0.05, (p1 - p0).length * 1.05, tuple(m), rope, n=8)
         seg.rotation_euler = (p1 - p0).to_track_quat("Z", "Y").to_euler()
     # --- lights: the Sun's own warm light on the lawn and on whoever stands near, a cool rim from the dark sky
-    kit.light("sunlit", "POINT", (0.0, FRONT - 1.2, 1.9), 330.0, "#ffb347", size=0.9)
-    kit.light("sunfill", "AREA", (0.0, FRONT - 3.5, 3.5), 200.0, "#ffc060", rot=(math.radians(-15), 0, 0), size=6.0)
+    kit.light("sunlit", "POINT", (0.3, FRONT - 0.9, 2.0), 160.0, "#ffb347", size=0.9)
+    kit.light("sunfill", "AREA", (0.0, FRONT - 3.5, 3.5), 40.0, "#ffc060", rot=(math.radians(-15), 0, 0), size=6.0)
     kit.light("shedlamp", "POINT", (sx + 2.0, sy - 2.4, 1.6), 250.0, "#ffd18a", size=0.5)
     kit.light("rim", "SPOT", (-5.0, 0.5, 5.0), 700.0, "#9fb8ff", size=0.5, spot=60, blend=0.6)
     kit.aim(kit.LIGHTS["rim"]["obj"], (-0.5, 5.5, 1.6))
