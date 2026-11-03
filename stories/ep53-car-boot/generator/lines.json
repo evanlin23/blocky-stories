@@ -4,11 +4,39 @@
   "who": "narrator",
   "chunks": [
    [
+    "NEVER trust a coat",
+    "never trust a coat"
+   ],
+   [
+    "that never changes COLOR.",
+    "that never changes color."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "ESPECIALLY",
+    "especially"
+   ],
+   [
+    "your OWN.",
+    "your own."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
     "In this TOWN,",
     "in this town,"
    ],
    [
-    "your COAT changes colour",
+    "your COAT changes color",
     "your coat changes colour"
    ],
    [
@@ -22,46 +50,6 @@
   ]
  },
  {
-  "id": "L02",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Watch the HAGGLER.",
-    "watch the haggler."
-   ],
-   [
-    "BLUE,",
-    "blue,"
-   ],
-   [
-    "then slowly",
-    "then slowly"
-   ],
-   [
-    "ORANGE.",
-    "orange."
-   ]
-  ]
- },
- {
-  "id": "L03",
-  "who": "narrator",
-  "chunks": [
-   [
-    "Every coat",
-    "every coat"
-   ],
-   [
-    "in the FIELD",
-    "in the field"
-   ],
-   [
-    "is one clear COLOUR.",
-    "is one clear colour."
-   ]
-  ]
- },
- {
   "id": "L04",
   "who": "narrator",
   "chunks": [
@@ -70,7 +58,7 @@
     "a couple buying a sofa"
    ],
    [
-    "go through every COLOUR",
+    "go through every COLOR",
     "go through every colour"
    ],
    [
@@ -340,7 +328,7 @@
     "her coat lands"
    ],
    [
-    "on a flat GREY,",
+    "on a flat GRAY,",
     "on a flat grey,"
    ],
    [
@@ -518,7 +506,7 @@
     "and it's still"
    ],
    [
-    "changing COLOUR,",
+    "changing COLOR,",
     "changing colour,"
    ],
    [
@@ -1088,7 +1076,7 @@
     "and my coat"
    ],
    [
-    "fills with colour",
+    "fills with color",
     "fills with colour"
    ],
    [
@@ -1106,7 +1094,7 @@
   "who": "narrator",
   "chunks": [
    [
-    "Her grey",
+    "Her gray",
     "her grey"
    ],
    [
@@ -1318,7 +1306,7 @@
     "in this town,"
    ],
    [
-    "your COAT changes colour",
+    "your COAT changes color",
     "your coat changes colour"
    ],
    [

@@ -1,6 +1,6 @@
 {
  "slug": "ep53-car-boot",
- "title": "In this town, your coat changes colour when you change your mind.",
+ "title": "My Coat Has Never Changed COLOR 🧥",
  "made_for_kids": false,
  "premise": "My sister and I run a stall off the back of our car at the Sunday car-boot sale, in a town where a coat changes colour when its wearer changes their mind. Mine has been white my whole life. When she is offered a job abroad, hers drifts through every colour for a week and sticks on grey. Everything on our stall turns to face her empty chair, and one foggy dawn her coat lies on the table without her, still changing colour by itself.",
  "twist": "A coat only changes when you change your mind, and you cannot change a mind you never made up. Mine stayed white because I never decided anything, and my sister was stuck on grey waiting on my answer. The first line first reads as a strange law I am proud to be immune to, and after the climax it reads as an accusation.",
@@ -345,6 +345,42 @@
    "who": "narrator",
    "chunks": [
     [
+     "NEVER trust",
+     "never trust"
+    ],
+    [
+     "a coat",
+     "a coat"
+    ],
+    [
+     "that never",
+     "that never"
+    ],
+    [
+     "changes COLOR.",
+     "changes color."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "ESPECIALLY",
+     "especially"
+    ],
+    [
+     "your OWN.",
+     "your own."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
      "In this TOWN,",
      "in this town,"
     ],
@@ -353,7 +389,7 @@
      "your coat"
     ],
     [
-     "changes colour",
+     "changes color",
      "changes colour"
     ],
     [
@@ -363,50 +399,6 @@
     [
      "your MIND.",
      "your mind."
-    ]
-   ]
-  },
-  {
-   "id": "L02",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Watch the HAGGLER.",
-     "watch the haggler."
-    ],
-    [
-     "BLUE,",
-     "blue,"
-    ],
-    [
-     "then slowly",
-     "then slowly"
-    ],
-    [
-     "ORANGE.",
-     "orange."
-    ]
-   ]
-  },
-  {
-   "id": "L03",
-   "who": "narrator",
-   "chunks": [
-    [
-     "Every coat",
-     "every coat"
-    ],
-    [
-     "in the FIELD",
-     "in the field"
-    ],
-    [
-     "is one",
-     "is one"
-    ],
-    [
-     "clear COLOUR.",
-     "clear colour."
     ]
    ]
   },
@@ -427,7 +419,7 @@
      "go through"
     ],
     [
-     "every COLOUR",
+     "every COLOR",
      "every colour"
     ],
     [
@@ -737,7 +729,7 @@
      "on a"
     ],
     [
-     "flat GREY,",
+     "flat GRAY,",
      "flat grey,"
     ],
     [
@@ -940,7 +932,7 @@
      "and it's still"
     ],
     [
-     "changing COLOUR,",
+     "changing COLOR,",
      "changing colour,"
     ],
     [
@@ -1584,7 +1576,7 @@
      "and my coat"
     ],
     [
-     "fills with colour",
+     "fills with color",
      "fills with colour"
     ],
     [
@@ -1606,7 +1598,7 @@
    "who": "narrator",
    "chunks": [
     [
-     "Her grey",
+     "Her gray",
      "her grey"
     ],
     [
@@ -1847,7 +1839,7 @@
      "your coat"
     ],
     [
-     "changes colour",
+     "changes color",
      "changes colour"
     ],
     [

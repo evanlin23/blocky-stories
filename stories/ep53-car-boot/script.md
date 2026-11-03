@@ -8,8 +8,25 @@
   - The last line keeps the pitch's loop ("In this town, your coat changes colour when you change your mind") and lands colder: "So I NEVER / change MINE." It hints the Tilted would sit in her chair again if I unfolded it, never that it stayed.
   - Pip's age (20) is never said or shown (batch 1 banned an on-screen age). "Little sister" trips the CHILD check, so she's "my sister".
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 622 spoken words in 75 lines, all `narrator`, plus 2 pause beats (1.3 s in all).
-- **Estimated length:** about 2:19. At 290 wpm the speech is about 2:09, the 0.12 s gaps add about 9 s, the pauses 1.3 s and the loop tail 0.25 s. If it lands under 2:15, add "The fog / smells of / wet TARP." after L29. If it lands over 2:30, cut L59 first, then L38.
+- **Word count:** 616 spoken words in 75 lines, all `narrator`, plus 2 pause beats (1.3 s in all) (622 before the 2026-11-03 opening).
+- **Estimated length:** about 2:18 (about 1 s shorter than before the new opening).
+
+## The opening (writer, 2026-11-03): a warning first
+**What changed:** L01 and L02 are new, built to the opening recipe (`docs/research/playbook.md`, v1). L03 now carries the rule, word for word what L01 used to say, so the rule is still said plainly by about 5 s and L74 still echoes it. The old L02 ("Watch the HAGGLER...") and old L03 ("Every coat in the FIELD is one clear COLOUR.") are gone. Nothing after L03 changes. Captions now use US spelling (color, gray) in L03, L04, L19, L28, L61, L62 and L74. The spoken words there don't change, so they keep their voice.
+
+- `L01`: "NEVER trust a coat / that never changes COLOR." (8 words, about 1.6 s.) A warning to you, about a thing that's visibly wrong: one coat standing still in a field where every coat moves.
+- `L02`: "ESPECIALLY / your OWN." (about 0.6 s.) Tightens the same warning onto the viewer, with no name, place or backstory.
+- `L03`: "In this TOWN, / your COAT changes color / when you change / your MIND." Same spoken words as the old L01, so the builder can reuse that clip if the voice step allows it.
+- **Why this angle:** it plants the twist in the first second. White isn't safe, it's the coat of someone who never decided, and "especially your own" points it at me before L09 says mine has been white my whole life. It also makes the loop land, because after L75 my blue coat is the one that never changes again. The empty-second-chair warning was scarier, but it's back-row's forbidden-seat skeleton again (hard rule 5) and sets up the creature, not the twist.
+- **The loop:** "So I NEVER / change MINE." stays as it is and runs into "Never trust a coat that never changes color. Especially your own." Two "never"s back to back, and the warning now means me.
+- **Quotable line:** `L06`, "Nobody HAGGLES here. / You just watch / the other COAT."
+
+### First shot (for the builder, who owns shots, set.py and the voice)
+- **0 to about 1.7 s (L01):** close on me behind our stall in bright sun, chest up, face `neutral` turning to a small `smug`, cream-white anorak dead still. Camera about 2.5 m from me, 35 mm or longer, pushing in to about 1.6 m over the line. Behind me, soft but readable, two sellers' coats mid-fade (the haggler sky blue to orange, a buyer violet to pink), so the meter is on screen from frame 1 and mine is the one thing that doesn't move. Front-lit to read on a phone, centred.
+- **Sound hit on "COLOR"** (about 1.5 s): one dry hollow knock, like a camp chair taking weight, a small cousin of P02's creak, with the field chatter ducking under it.
+- **L02 (about 1.8 to 2.4 s):** cut to close on my white sleeve on the pasting table, a passing seller's sleeve fading right behind it. Under 9 m and 20 mm or more for both shots.
+- **L03 on:** the old L01 and L02 haggler shots (mid close, then his sleeve). The old L03 high wide over the row (8.5 m up, 24 mm) has to go or move after 3 s. It now sits at about 2.5 s.
+- **Generator note:** `make_story.py` still points a shot and a haggler key at `L02.3+0.25`, and the new L02 has two chunks. `check` passes now, but the timeline will refuse that reference until the builder re-times the opening shots. At 290 wpm the speech is about 2:09, the 0.12 s gaps add about 9 s, the pauses 1.3 s and the loop tail 0.25 s. If it lands under 2:15, add "The fog / smells of / wet TARP." after L29. If it lands over 2:30, cut L59 first, then L38.
 
 ## Builder brief (read first)
 
@@ -37,14 +54,14 @@
 
 | Hit | Here |
 |---|---|
-| 1. Rule as the first line | L01: "In this town, your coat changes colour when you change your mind." (12 words) |
-| 2. Rule visible by 2 s | Every coat in the field is one clear flat colour, and in the first shot the haggler's coat is already fading from blue to orange as he weighs a lamp. Faces in frame, bright sun. |
+| 1. Rule as the first line | Since 2026-11-03: a warning first, L01 "NEVER trust a coat that never changes COLOR." and L02 "ESPECIALLY your OWN." The rule itself is L03: "In this town, your coat changes color when you change your mind." |
+| 2. Rule visible by 2 s | In the first shot two coats fade behind me while my white one stays still. The haggler's fade follows at L03. Faces in frame, bright sun. |
 | 3. Montage in the first 15 s | Four examples, L04 to L08: the sofa couple, Walter in brown, haggling by watching coats, the white stallholder who goes yellow. |
 | 4. The narrator is the exception | L09 to L10: my coat has been white my whole life. |
 | 5. A loved one at stake | Pip, my sister (adult, 20, never said on screen). Stuck on grey, not sleeping, then gone from the stall at dawn. |
 | 6. Climax turns the rule's logic | You can't change a mind you never made up (L53 to L56). I make mine up (L60 to L61). |
-| 7. Twist planted early, last line echoes the first | Plants at L07 to L08, L17 to L18, L40. L74 repeats L01. |
-| 8. First 2 s read on a phone | Sunny field, the haggler's face and coat big in frame, mid-fade. Fog only from L25. |
+| 7. Twist planted early, last line echoes the first | Plants at L01 to L02 (the warning), L07 to L08, L17 to L18, L40. L74 repeats L03, and L75 runs into L01. |
+| 8. First 2 s read on a phone | Sunny field, my face and still white coat big in frame, coats fading behind. Fog only from L25. |
 | 9. Cut often | about 85 shots over about 139 s, about 1.7 s a shot. |
 | Seconds 15 to 30 | Pip's coat drifting through colours at breakfast, lunch and bedtime, then landing on grey (L13 to L19), with nobody explaining why. |
 
@@ -71,7 +88,7 @@ All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 
 - `me` (adult, the older sibling): short dark-brown block hair, a cream-white hooded anorak (`#e6e3da`, never clipped white) over a grey knit jumper, dark jeans, black wellies. Faces: `neutral`, `smug` (small smile), `worried`, `scared`, `smile`. No age on screen. From L61 the anorak is deep blue (`#2f5fa8`).
 - `pip` (adult, 20, never said): my sister. A copper block bob with a short fringe, a duffle coat whose colour drifts (sky blue at first, then green, purple, orange, then flat grey `#8a8d90`, then marigold `#f2b233` from L62), a mustard knit jumper under it, cord trousers, red-brown boots. Faces: `smile`, `laughing`, `worried`, `tired` (half-lidded), and `smile` with happy tears at L68. At the bus shelter (L36 to L41) she has no coat on, just the jumper, with a canvas holdall at her feet.
-- `haggler` (adult): a round man in a flat cap, coat fading blue to orange. L01 to L02 only.
+- `haggler` (adult): a round man in a flat cap, coat fading blue to orange. L03 only (L01 to L02 before 2026-11-03), and soft in the background of the first shot.
 - `sofa_a`, `sofa_b` (adult couple): L04 only, coats cycling.
 - `walter` (adult, old): white block moustache, flat brown coat, arms folded, at a stall of single shoes. L05 only. Never speaks, never explains anything.
 - `buyer`, `seller` (adults): L06 only.
@@ -139,17 +156,17 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the car-boot field on a bright, sunny Sunday morning.
 - **Shots:** 11.
 
-- `L01` narrator: In this TOWN, / your COAT changes colour / when you change / your MIND.
-  - [mid close, bright sun: the haggler at a lamp stall, face big in frame, his coat fading from sky blue to orange over 1.5 s as he weighs a brass lamp. Cars with open boots behind him, every seller in one flat colour]
-- `L02` narrator: Watch the HAGGLER. / BLUE, / then slowly / ORANGE.
-  - [two shots: close on his sleeve finishing the fade, then his face, `sheepish`, as the lamp sits back on the table. Cut away from the hand]
-- `L03` narrator: Every coat / in the FIELD / is one clear COLOUR.
-  - [high wide over the row: thirty boots open, a field of flat bright coats]
-- `L04` narrator: A couple buying a SOFA / go through every COLOUR / by LUNCH.
+- `L01` narrator: NEVER trust a coat / that never changes COLOR.
+  - [FIRST SHOT, see "First shot" above: close on me behind our stall, cream-white anorak dead still while two coats fade behind me, pushing in. Sound hit on "COLOR"]
+- `L02` narrator: ESPECIALLY / your OWN.
+  - [close on my cream-white sleeve on the table, a passing seller's sleeve fading violet to pink right behind it. Mine doesn't move]
+- `L03` narrator: In this TOWN, / your COAT changes color / when you change / your MIND.
+  - [the old L01 and L02 shots move here: mid close on the haggler at the lamp stall, face big, his coat fading from sky blue to orange as he weighs a brass lamp, then close on his sleeve finishing the fade. No wide]
+- `L04` narrator: A couple buying a SOFA / go through every COLOR / by LUNCH.
   - [a green velvet sofa on the grass: the couple sitting on it, then standing beside it, their coats a different colour in each of the two quick shots, mid-fade in the second]
 - `L05` narrator: Old WALTER / has been BROWN / since before / the BYPASS.
   - [Walter behind a table of single odd shoes, arms folded, flat brown coat, `neutral`, sun on his moustache]
-- `L06` narrator: Nobody HAGGLES here. / You just watch / the other COAT.
+- `L06` narrator: Nobody HAGGLES here. / You just watch / the other COAT. **(quotable line)**
   - [over a seller's shoulder: a buyer's coat drifting from violet toward pink. The seller nods. Cut before any handshake]
 - `L07` narrator: The man on the end STALL / stays WHITE all MORNING, / pricing one TEAPOT.
   - [the white seller, cream-white coat (the same shade as mine), turning a teapot round and round, `worried`]
@@ -181,7 +198,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [me, `smile`, shrugging, mug in front of me]
 - `L18` narrator: My coat / doesn't even / SHIMMER.
   - [close on my cream-white sleeve on the table. Nothing changes. Hold]
-- `L19` narrator: By FRIDAY, / her coat lands / on a flat GREY, / and STAYS.
+- `L19` narrator: By FRIDAY, / her coat lands / on a flat GRAY, / and STAYS.
   - [Pip in the doorway, coat fading to flat grey and holding, `tired`]
 - `L20` narrator: She stops PRICING things. / She stops SLEEPING.
   - [two shots: unpriced junk heaped in a box on the floor, then Pip sitting up in bed in the dark-blue night, the grey coat round her shoulders]
@@ -208,7 +225,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [hold on the empty stall in fog. Everything drops but a low wind and one canvas flap]
 - `L27` narrator: Her COAT / is lying / on the TABLE, / EMPTY.
   - [mid shot: Pip's duffle laid flat on the pasting table, arms out, nobody in it. The drone enters]
-- `L28` narrator: And it's still / changing COLOUR, / slowly, / by ITSELF.
+- `L28` narrator: And it's still / changing COLOR, / slowly, / by ITSELF.
   - [close: the coat fading from grey to a dull violet and back over 2 s]
 - `L29` narrator: I shout her NAME / across the FIELD.
   - [wide from behind me: fog over the rows, other cars only shapes, my white coat the brightest thing]
@@ -288,9 +305,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [me arriving, out of breath, `worried`]
 - `L60` narrator: I tell her, / "GO. / I'll be FINE."
   - [two shots: me to Pip, `smile`, then Pip's face, `worried` easing]
-- `L61` narrator: And my COAT / fills with colour / for the first time / in my LIFE.
+- `L61` narrator: And my COAT / fills with color / for the first time / in my LIFE.
   - [mid shot on me: the anorak fading from cream-white to deep blue over 2 s]
-- `L62` narrator: Her grey / melts into YELLOW, / and STAYS.
+- `L62` narrator: Her gray / melts into YELLOW, / and STAYS.
   - [wide: Pip has her duffle on now, and it fades from grey to marigold over 1.5 s]
 - `L63` narrator: I tell her / I'm DRIVING her / MYSELF.
   - [Pip `laughing`, the bus pulling away behind her]
@@ -320,10 +337,11 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [me looking at the shut tailgate, `worried`]
 - `L73` narrator: Then I remember / what SITS / in an EMPTY one.
   - [slow push on the closed boot. Nothing in the frame changes. The drone swells a little]
-- `L74` narrator: In this TOWN, / your COAT changes colour / when you change / your MIND.
+- `L74` narrator: In this TOWN, / your COAT changes color / when you change / your MIND.
   - [mid close on me, the same framing as the haggler in L01, my blue coat flat and still]
 - `L75` narrator: So I NEVER / change MINE.
   - [close on my face, `neutral`, then hold on the shut tailgate. 0.25 s after the last word, cut to L01]
+  - Since 2026-11-03 the loop reads "So I never change mine. Never trust a coat that never changes color. Especially your own." My blue coat is now a coat that never changes, so the warning lands on me again.
 
 ## Risks
 
