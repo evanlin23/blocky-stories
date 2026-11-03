@@ -32,3 +32,9 @@ Branch `claude/opening-ep49-car-wash`. No PR yet.
 
 ## Update 2026-11-03 (builder resume)
 r7 must-fixes verified in make_story.py; sound rev 8; full preview rendered, finished, mixed (140.4 s). flash PASS (warnings only), preflight 0 blocks, measure 0 block/0 warn of 12 (sfx 3.92/10 s), check ok. Next: review round 8, gate, PR, qa.
+
+
+## Update 2026-11-03 (builder, r9 fix round)
+- Twist rewritten as "the ring I never heard" (shape echo, new title). make_story.py premise/twist match script and package; sound rev 9. Re-voiced L57, L62, L67, L70 only; film now 140.2 s.
+- Shots redrawn by line: L01 to L02 (S01 to S03: man in front of the kiosk's cream wall, blue roof, whole head and both eyes, bell above captions), L56 (S76: two-shot from the +y side, nothing in front), L57 (S77: eyes from the clapper up to the five), L62 (S82: side-on walk, front copy gone), L67 (S88: S28's angle, sunrise, no footprints), L70 (S91: cold cut to the line, lamps on, front copy in the door). Shot numbers in the writer's notes are one off from L57 on.
+- Gotcha: `render --preview --force` only redraws the step frames; the in-between frames of moving shots stay stale and finish/mix then use them (a stale old L67 frame flickered at 130 s and failed flash). After a retime, delete out/work/<name>/frames-preview and render everything.
