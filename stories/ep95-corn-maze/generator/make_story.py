@@ -47,7 +47,7 @@ def remap(x):
     return x
 
 
-REV = 5
+REV = 6
 
 
 def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="solid", pattern_c=None, hat="none", hat_c="#333333",
@@ -434,9 +434,7 @@ story = {
               "ambience": [{"kind": "wind", "from": 0, "to": "end", "lufs": -38},
                            {"kind": "crickets", "from": "L20", "to": "L48", "lufs": -38},
                            {"kind": "traffic", "from": "L48-0.4", "to": "L49+0.4", "lufs": -36}],
-              "sfx": [{"at": "L01.2", "kind": "thud", "db": -11},
-                      {"at": "L22+0.2", "kind": "whoosh", "db": -24},
-                      {"at": "L27+0.1", "kind": "whoosh", "db": -22}],
+              "sfx": [],
               "music_drops": [["L27.2+0.15", "L28"], ["L32>-0.1", "L33"]]},
     "rev": REV,
 }
