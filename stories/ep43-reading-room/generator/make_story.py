@@ -130,14 +130,14 @@ STEP_PEOPLE = {   # who: (step, dx, number)
     "e9": (5, 2.0, 91), "e10": (5, -0.9, 15),
 }
 
-# 01 the rule, shown (steps, party, station, door, kitchen)
-S(0, "steps", ([0.0, -5.4, 1.85], [0.0, -1.0, 1.85], 31, [0.0, -5.1, 1.85], [0.0, -1.0, 1.85], 31),
-  {w: {"p": stp(i, dx), "yaw": 0, "num": n, "numz": (0.4 if w == "e2" else 0.0)} for w, (i, dx, n) in list(STEP_PEOPLE.items())[:3]})
-S("L01.2", "steps", ([1.2, -9.5, 3.4], [0.0, 0.0, 1.5], 24, [0.4, -9.0, 3.3], [0.0, 0.0, 1.5], 24),
-  {w: {"p": stp(i, dx), "yaw": 0, "num": n} for w, (i, dx, n) in list(STEP_PEOPLE.items())[3:]})
-S("L02", "steps", ([1.6, -7.6, 1.5], [0.2, -3.3, 2.0], 32),
-  {"baker": {"p": [0.4, -3.3, 0.0], "yaw": 0, "expr": "soft", "num": 900},
-   **{w: {"p": PARK} for w in ("e1", "e2", "e3", "e4", "e5", "e7", "e9", "e10")}})
+# 01 the opening (recipe v1): the warned-of 1 over my head, close; no wide; a cut every 1 to 2 s
+ME_OPEN = {"me": {"p": [0.0, 0.0, 0.0], "yaw": 0, "num": 1, "expr": "worried", "head": [0, 4], "blink": False}}
+S(0, "street", ([0.2, -2.6, 1.95], [0.0, 0.0, 2.0], 30, [0.05, -1.8, 1.95], [0.0, 0.0, 2.0], 30), ME_OPEN, phones="head")
+S("L01.2", "street", ([0.0, -1.5, 2.3], [0.0, 0.0, 2.3], 34, [0.0, -1.1, 2.3], [0.0, 0.0, 2.3], 34), {})
+S("L02", "street", ([0.35, -2.3, 1.85], [0.0, 0.0, 2.0], 28, [0.2, -1.9, 1.85], [0.0, 0.0, 2.0], 28),
+  {"me": {"head": [0, 22], "expr": "worried"}})
+S("L02.2", "street", ([0.0, -1.7, 2.3], [0.0, 0.0, 2.3], 34, [0.0, -1.2, 2.3], [0.0, 0.0, 2.3], 34),
+  {"me": {"head": [0, 4], "expr": "neutral"}})
 S("L03", "party", ([0.0, -4.0, 1.75], [0.0, 0.0, 2.0], 19),
   {"e1": {"p": [-1.2, 0.3, 0.0], "yaw": 25, "expr": "soft", "num": 14, "roll": [("L03+0.15", 15)]},
    "e4": {"p": [-0.4, -0.2, 0.0], "yaw": 8, "expr": "neutral", "num": 120, "roll": [("L03+0.65", 121)]},
@@ -324,7 +324,6 @@ S("L71", "room", ([-7.0, 1.4, 2.0], [-7.0, 0.95, 2.35], 32, [-7.0, 1.4, 2.0], [-
 # ---------------------------------------------------------------------------------------------------- build
 # camera pass (after the stills sheet): cameras that sat inside a head, a table or a wall, and the framings the sheet asked for
 CAM_FIX = {
-    "L02": ([1.2, -7.0, 1.7], [0.4, -3.3, 1.65], 30),
     "L05.2": ([0.45, -2.3, 1.85], [0.3, 0.2, 2.15], 34),
     "L28": ([1.9, 2.7, 1.65], [1.6, -1.0, 1.4], 24),
     "L28.3": ([2.55, 1.8, 1.35], [2.65, 1.0, 1.1], 36),
@@ -370,7 +369,13 @@ CAM_FIX = {
 for s in SH:
     if s["ref"] in CAM_FIX:
         s["cam"] = CAM_FIX[s["ref"]]
-SH[10]["stage"] = SH[10]["stage"]
+# quality pass: no shot is a still picture. Every single-key camera gets a slow 6% push toward its target.
+for s in SH:
+    c = s["cam"]
+    if len(c) == 3:
+        (lx, ly, lz), (tx, ty, tz), ln = c
+        k = 0.06
+        s["cam"] = (c[0], c[1], ln, [round(lx + (tx - lx) * k, 3), round(ly + (ty - ly) * k, 3), round(lz + (tz - lz) * k, 3)], c[1], ln)
 S_SEAT = {"at": "L64", "name": "seat", "to": 1.0, "dur": 0.6}
 
 # lines and chunk refs
@@ -528,6 +533,17 @@ cues = [c for c in cues if not (c["name"] == "dome" and c.get("dur") == 0.1 and 
 rolls = [c for c in cues if c["name"] == "num" and not c.get("snap")]
 sfx = [{"at": c["at"], "kind": "click", "db": -27} for c in rolls]
 sfx += [
+    {"at": "L01.3+0.4", "kind": "hit", "db": -19, "keep": True},   # the sound hit on "ONE" (recipe point 3)
+    {"at": "L01.2", "kind": "whoosh", "db": -27, "dur": 0.3},
+    {"at": "L02", "kind": "whoosh", "db": -27, "dur": 0.3},
+    {"at": "L02.2", "kind": "hit", "db": -22, "keep": True},
+    {"at": "L41", "kind": "hit", "db": -17, "keep": True},
+    {"at": "L43", "kind": "thud", "db": -16},
+    {"at": "L47", "kind": "hit", "db": -18, "keep": True},
+    {"at": "L60", "kind": "thud", "db": -17},
+    {"at": "L61.2", "kind": "whoosh", "db": -26, "dur": 0.5},
+    {"at": "L63", "kind": "whoosh", "db": -27, "dur": 0.3},
+    {"at": "L66", "kind": "thud", "db": -22},
     {"at": "L18+0.15", "kind": "whoosh", "db": -26, "dur": 0.3},
     {"at": "P01>", "kind": "hit", "db": -17, "keep": True},
     {"at": "L28.3", "kind": "riser", "db": -24, "dur": 2.0},
@@ -558,7 +574,7 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff9ec4",
     "gap": 0.12,
-    "tail": 0,
+    "tail": 0.25,
     "look": {"fog": "#8a9aa6", "fog_density": 0.006, "fog_start": 14.0, "sky": "#9fb3c2", "exposure": 0.2,
              "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 0.96, "contrast": 1.06,

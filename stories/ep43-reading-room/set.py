@@ -415,6 +415,12 @@ def build_room(kit, ctx, M, story):
     kit.light("neg_key", "SPOT", (0, 0, 3), 0.0, "#a9c4e8", size=0.12, spot=34, blend=0.6)
     kit.light("neg_rim", "SPOT", (0, 0, 3), 0.0, "#8fb0e0", size=0.1, spot=40, blend=0.5)
 
+    # CC0 props (2026-11-03 quality pass): a rug under the window table, plants, a floor lamp
+    kit.prop("carpet_1", (-7.0, 0.0, 0.0), rot=90, fit=3.2, tint="#7a5a4a")
+    for k, (px, py) in enumerate(((-7.9, 3.0), (-7.9, -3.0), (6.5, -5.4), (6.5, 5.4))):
+        kit.prop("houseplant_1", (px, py, 0.0), rot=40 * k, height=0.9)
+    kit.prop("light_floor1", (-6.3, 3.2, 0.0), height=1.5, tint="#d9b070")
+
 
 # ------------------------------------------------------------------------------------------------ the other scenes
 
@@ -545,17 +551,24 @@ def scene_kitchen(kit, ctx, M, O):
 def scene_street(kit, ctx, M, O):
     ox, oy = O
     kit.box("street ground", (50, 12, 0.2), (ox, oy, -0.1), M["cobble"])
+    sbrick = kit.bricks("#c9855f", "#b0704f", "#a59e92", 1.0, "street brick light", 0.8)
+    swin, _ = emission(kit, "street window dim", "#4d6f8f", 0.5)   # dim blue glass, so the white number reads against it
     for sy, nm in ((4.6, "n"), (-4.6, "s")):
-        wbox(kit, f"row {nm}", (ox - 25, oy + sy - 0.4, 0.0), (ox + 25, oy + sy + 0.4, 6.5), M["brick"])
+        wbox(kit, f"row {nm}", (ox - 25, oy + sy - 0.4, 0.0), (ox + 25, oy + sy + 0.4, 6.5), sbrick)
         for k in range(-9, 10):
-            kit.box(f"win{nm}{k}", (0.9, 0.05, 1.2), (ox + k * 2.6, oy + sy - math.copysign(0.42, sy), 2.6), M["bright"])
-    for k, lx in enumerate((-6.0, 0.5, 7.0)):
+            kit.box(f"win{nm}{k}", (0.9, 0.05, 1.2), (ox + k * 2.6, oy + sy - math.copysign(0.42, sy), 2.6), swin)
+    for k, lx in enumerate((-6.0, 3.2, 7.0)):
         kit.cyl(f"lamppost{k}", 0.06, 3.4, (ox + lx, oy + 3.7, 1.7), M["iron"], n=10)
         kit.sphere(f"streetglobe{k}", 0.16, (ox + lx, oy + 3.7, 3.5), M["lamp_glass_gold"], seg=10)
-    kit.light("overcast", "AREA", (ox, oy, 9), 1100.0, "#9fb0be", size=14.0)
+    kit.light("overcast", "AREA", (ox, oy, 9), 2200.0, "#9fb0be", size=14.0)
     kit.aim(kit.LIGHTS["overcast"]["obj"], (ox, oy, 0))
-    kit.light("sfront", "AREA", (ox + 1.5, oy - 5.5, 3.5), 300.0, "#c8d4e0", size=5.0)
+    kit.light("sfront", "AREA", (ox + 1.5, oy - 5.5, 3.5), 700.0, "#e0e8f0", size=5.0)
     kit.aim(kit.LIGHTS["sfront"]["obj"], (ox, oy, 1.6))
+
+    # CC0 props: planters behind the narrator's street, a plant and rug in the flat
+    kit.prop("sub_planter", (ox - 2.4, oy + 3.5, 0.0), height=0.8)
+    kit.prop("sub_planter", (ox + 2.6, oy + 3.5, 0.0), height=0.8)
+    kit.prop("sub_planter", (ox + 4.4, oy + 3.5, 0.0), height=0.8)
 
 
 def scene_flat(kit, ctx, M, O):
@@ -589,6 +602,8 @@ def scene_flat(kit, ctx, M, O):
     kit.light("ffront", "AREA", (ox + 0.5, oy - 0.5, 2.5), 90.0, "#ffe2c0", size=3.0)
     kit.aim(kit.LIGHTS["ffront"]["obj"], (ox + 1.2, oy - 2.2, 1.2))
 
+    kit.prop("houseplant_1", (ox - 2.4, oy + 2.3, 0.0), height=0.9)
+    kit.prop("carpet_1", (ox + 1.2, oy - 0.9, 0.0), rot=90, fit=3.0, tint="#8a6a58")
 
 # ------------------------------------------------------------------------------------------------ the numbers
 

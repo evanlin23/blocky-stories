@@ -254,7 +254,7 @@ L58. I pulled my headphones off and said it, LOUD.
 L59. "This is TAM. And I'm LUKE."
 L60. Every reader in the room looked UP.
 L61. Over Tam's head, one rolled to TWO, then TEN, then TWENTY.
-L62. Over mine, ONE rolled to TWENTY too.
+L62. Over mine, ONE rolled to TWENTY as well.
 L63. I walked to the window table.
 L64. The chair across from Tam was EMPTY.
 L65. The seat was still warm from the LAMP.
