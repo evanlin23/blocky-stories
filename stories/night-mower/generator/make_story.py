@@ -30,6 +30,25 @@ for ln in lines:
     for ch in ln["chunks"]:
         ch[1] = ch[1].replace("Odell", "Oh-dell") if False else ch[1]
 
+# captions run 2 or 3 words at a time: split any longer chunk, and remember where each script chunk went
+def _split(n):
+    return {1: [1], 2: [2], 3: [3], 4: [2, 2], 5: [3, 2], 6: [3, 3], 7: [3, 2, 2], 8: [3, 3, 2]}[n]
+
+
+CHUNK_MAP = {}
+for ln in lines:
+    new_chunks, mp = [], []
+    for cap, spk in ln["chunks"]:
+        cw, sw = cap.split(), spk.split()
+        assert len(cw) == len(sw), (ln["id"], cap, spk)
+        mp.append(len(new_chunks))
+        i = 0
+        for k in _split(len(cw)):
+            new_chunks.append([" ".join(cw[i:i + k]), " ".join(sw[i:i + k])])
+            i += k
+    ln["chunks"] = new_chunks
+    CHUNK_MAP[ln["id"]] = mp
+
 # two pause beats (music drops) go before L20 and L25
 _out = []
 for ln in lines:
@@ -254,7 +273,7 @@ shot("S19", "L19", C((3.4, 3.4, 0.6), (3.4, 8.0, 0.9), 26, (3.4, 3.3, 0.6), (3.4
 stage("L19", odell=((X0, 7.2), 0, "shut"))
 backward("odell")
 walk("odell", "L19>", (X0, 9.6))
-shot("S19b", "L19.1", C((5.2, 5.6, 0.45), (3.4, 8.4, 0.8), 30, (5.0, 5.8, 0.45), (3.4, 8.6, 0.85), 30),
+shot("S19b", "L19.1+0.5", C((5.2, 5.6, 0.45), (3.4, 8.4, 0.8), 30, (5.0, 5.8, 0.45), (3.4, 8.6, 0.85), 30),
      "low from the side: the mower and Odell moving backward, the clippings flying in", step=1)
 shot("S20", "L20", C((-9.6, 10.2, 1.7), (0.5, 8.0, 1.2), 56, (-9.4, 10.3, 1.7), (0.5, 8.0, 1.25), 62),
      "over Dad's shoulder: a figure fading in by the fence in a pool of warm morning light, at night", flood=0.5)
@@ -519,6 +538,24 @@ story = {
               "music_drops": [{"from": "P01", "to": "L20+0.4", "keep": ["thud"]},
                               {"from": "P02", "to": "L25.1-0.05", "keep": ["thud"]}]},
 }
+import re as _re
+
+_REF = _re.compile(r"^(L\d+)\.(\d+)(.*)$")
+
+
+def _remap(o):
+    if isinstance(o, str):
+        m = _REF.match(o)
+        if m and m.group(1) in CHUNK_MAP:
+            return f"{m.group(1)}.{CHUNK_MAP[m.group(1)][int(m.group(2))]}{m.group(3)}"
+        return o
+    if isinstance(o, list):
+        return [_remap(x) for x in o]
+    if isinstance(o, dict):
+        return {k: (v if k in ("id", "note", "who", "lines", "kind", "hand") else _remap(v)) for k, v in o.items()}
+    return o
+
+
 def _fit_lens(sh):
     if sh["id"] in ("S05", "S06b", "S18b", "S35", "S39b", "S14") or sh.get("follow"):
         return
@@ -533,5 +570,7 @@ def _fit_lens(sh):
 for _s in shots:
     _fit_lens(_s)
 
+for _k in ("shots", "acting", "tracks", "cups", "music", "sound"):
+    story[_k] = _remap(story[_k])
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots)")
