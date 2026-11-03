@@ -199,10 +199,11 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   that doesn't carry on into another a trapezoid of speed (0.25 s to get going and to stop, longer for a run:
   speed / 4 m/s²), same keys and timing, with the footsteps on the eased distance; `idle` gives anyone standing slow
   breathing (6 mm), a weight shift (about 1°), a turn of the body (2°) and a drifting head (5° and 2.5°), from sines
-  at periods that never line up, added on top of their keys. `ones: "walk"` (the default) draws shots with a walk
-  on every frame (about +9% drawing). `ones: "moving"` also draws every shot whose camera moves on every frame, so
-  the pack's camera moves don't judder at 15 drawings a second: with the pack that's nearly every shot, 1.87 to
-  1.98 times the drawing.
+  at periods that never line up, added on top of their keys. `ones: "moving"` (the default since 2026-11-03, the lead's call)
+  draws every shot whose camera moves, or where someone walks, on every frame, so the pack's camera moves don't
+  judder at 15 drawings a second. With the pack that's nearly every shot: 1.87 to 1.98 times the drawing, about
+  30 min more on Actions for a 140 s story. `ones: "walk"` is the opt-out for a long story whose render would run
+  over about 2 h: only walking shots on every frame (about +9%).
 - **Camera** (v2): `camera` gives every shot whose own camera holds still (one key, no `follow`) a slow push-in of
   `cam_push` (7%, at most 0.6 m) with a `cam_arc` (3°) arc round the target, the arc turning the other way shot to
   shot, and every third shot a slow truck. `polish.cam_spec` is read by both `bl_story.py` and

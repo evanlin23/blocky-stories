@@ -22,3 +22,6 @@ You check the exact film that will go to YouTube. Owner, 2026-11-03: "We should 
 9. **Verdict.** Pass only if nothing would embarrass the channel or lose viewers for a fixable reason. Write `qa/<story>.json` with film (the artifact id or "legacy"), verdict, date, checked, craft and notes (at most 8 lines: what you saw, any fix with second and shot). On fail, list each fix with its second and shot. Commit it on a branch, open a PR, and merge once `test` passes.
 
 Report in at most 5 lines: story, artifact id, verdict, the first-second description, the craft warnings count, any fixes.
+
+
+**Opening variety (hard rule 5, 2026-11-03).** Check that `package.json` has `"opening"` and that it matches what's said in the first 2.2 s (`ban`, `if`, `must`, `count`, `confess`, `cost` or `whatif`; `docs/research/opening-variety.md`). Then check that it doesn't match the opening of the last story in `uploads.json`, or of the story before this one in `queue.txt`. A missing or wrong tag fails qa. A match with its neighbour is a note for the queue, not a fail, because `upload.py` reorders around it.

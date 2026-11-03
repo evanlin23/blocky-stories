@@ -162,6 +162,9 @@ def run(name: str, timeline: Path | None = None, st: dict | None = None) -> list
     if set_py.exists() and "flicker" in set_py.read_text() and not (st.get("look") or {}).get("flash_safe"):
         out.append(("warn", "the set has flickering lights but look.flash_safe isn't set; strobing flicker failed the "
                             "flash bar on most stories (RULES.md hard rule 7)"))
+    if set_py.exists() and re.search(r"[\"'](/home/|/root/|/Users/|[A-Z]:\\\\)", set_py.read_text()):
+        out.append(("block", "set.py uses a machine-specific absolute path (/home/..., /root/...): Actions has no such "
+                             "folder, so every draw shard fails at once (ep58, 2026-11-03). Use tempfile or the story folder"))
     out += harsh_sound(st)
     out += library(st, set_py.read_text() if set_py.exists() else "")
     out += polish_problems(st)
