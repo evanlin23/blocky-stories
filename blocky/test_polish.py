@@ -384,3 +384,10 @@ def test_bright_grade_lift_never_turns_near_black_red():
     r, g, b = out[..., 0].mean(), out[..., 1].mean(), out[..., 2].mean()
     assert r < 0.15 and r - min(g, b) < 0.08                          # no saturated red
     assert out.mean() > 0.01                                          # still lifted off black
+
+
+def test_bright_grade_lift_all_negative_pixel_lands_near_the_lift():
+    """An all-negative pixel after contrast lifts to a grey near the lift value, never blown up."""
+    img = np.full((4, 4, 3), 0.02, np.float32)
+    out = post.grade(img, {"vignette": 0, "contrast": 1.3, "lift": 0.035})
+    assert np.allclose(out, 0.035, atol=0.003)
