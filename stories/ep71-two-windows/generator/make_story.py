@@ -434,10 +434,10 @@ shot("L50.1", "S75 me scared", still([2.0, -1.2, 1.75], [0, 0, 1.5], 36), "me")
 shot("P02", "S76a dim, the hatch", still([8.6, -0.4, 1.9], [10.1, 4.8, 1.9], 26))
 shot("L51", "S76 out to its waist", move([6.3, -0.4, 2.15], [10.2, 4.0, 1.95], [7.6, 0.1, 2.1], [10.2, 3.7, 1.95], 30, 34), hand=0.004)
 shot("L52", "S77 its face a hand from Cal's", move([6.6, 0.4, 2.2], [10.2, 3.4, 1.9], [7.4, 0.9, 2.1], [10.2, 3.3, 1.9], 30, 34))
-BOTH = lambda z0, z1: move([5.05, -3.4, 1.9], [5.05, 5.0, 1.7], [5.05, -3.0 + z1 * 0.8, 1.9], [5.05, 5.0, 1.7], 12.3, 12.8)
+BOTH = lambda z0, z1: move([5.45, -4.6, 2.3], [5.45, 5.0, 1.7], [5.45, -4.2 + z1 * 0.8, 2.3], [5.45, 5.0, 1.7], 9.6, 10.0)
 shot("L53", "S78 both hatches, same framing, one window (the lit one empty)", BOTH(16, 0.0), hand=0)
 shot("L54", "S79 the two windows, push", BOTH(16, 0.6), hand=0)
-shot("L54.2", "S80 the second window is the first one again", move([5.05, -3.4, 2.0], [5.05, 5.0, 1.7], [5.05, -2.9, 2.0], [5.05, 5.0, 1.7], 13.5, 14), hand=0)
+shot("L54.2", "S80 the second window is the first one again", move([5.45, -4.2, 2.3], [5.45, 5.0, 1.7], [5.45, -3.8, 2.3], [5.45, 5.0, 1.7], 9.8, 10.2), hand=0)
 shot("L55", "S81 down the back wall, four copies in line", move([-2, 9.8, 1.1], [-24, 12.9, 1.0], [-8, 9.8, 1.1], [-30, 12.9, 1.0], 24, 24), hand=0)
 # ---- 07 the order
 for k in range(3):
@@ -473,19 +473,11 @@ cues.sort(key=lambda k: approx(k["at"]))
 
 sfx = [
     {"at": "L01.2+0.1", "kind": "hit", "db": -9, "dur": 1.0},
-    {"at": "L01.2+0.25", "kind": "click", "db": -16},
-    {"at": "L02+0.3", "kind": "click", "db": -22},
-    {"at": "L03", "kind": "whoosh", "db": -26, "dur": 0.9},
-    {"at": "L04", "kind": "whoosh", "db": -27, "dur": 0.9},
-    {"at": "L15.1", "kind": "click", "db": -24},
-    {"at": "L21", "kind": "click", "db": -22},
     {"at": "L36", "kind": "click", "db": -20},
-    {"at": "P01>-0.1", "kind": "glitch", "db": -22, "dur": 0.4},
     {"at": "L43", "kind": "creak", "db": -16, "dur": 1.0},
     {"at": "P02>", "kind": "thud", "db": -12},
     {"at": "P02>+0.05", "kind": "whoosh", "db": -18, "dur": 0.8},
     {"at": "L63+0.3", "kind": "click", "db": -16},
-    {"at": "L65+0.6", "kind": "whoosh", "db": -22, "dur": 1.0},
     {"at": "L71>-0.2", "kind": "sting", "db": -22},
 ]
 secs = [
@@ -554,7 +546,7 @@ story = {
     "fade_in": False,
     "look": {"fog": "#ffe2bd", "fog_density": 0.006, "fog_start": 25.0, "sky": "#f7c690", "sky_strength": 1.1,
              "hdri": "industrial_sunset_puresky", "hdri_strength": 0.7, "hdri_rotation": 0, "hdri_visible": False,
-             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L07"], "reveal": ["L50", "L51"], "quiet": [["L67", "L69"]],
+             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01.2", "L02.2", "L07", "L53", "L54"], "reveal": ["L50", "L51", "L54"], "twist": "L53", "quiet": [["L67", "L69"]],
                                                          "sway": SWAY}},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.04, 0.01, -0.03], "saturation": 1.12, "contrast": 1.05,
               "vignette": 0.22, "bloom": 0.25, "grain": 0.008},

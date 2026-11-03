@@ -312,17 +312,17 @@ def build_server(kit, M, ctx):
     ctx["neck"] = kit.box("srv.neck", (0.3, 0.3, 1.0), (0, 0, -60), skin, root, bevel=0.04)
     hd = kit.empty("server.head", (0, -0.3, 1.7), root)
     # head 0.74 wide, 1.1 tall, 0.46 deep; centre z measured from hd
-    kit.box("srv.head", (0.74, 0.46, 1.1), (0, 0, 0.0), skin, hd, bevel=0.1)
-    kit.box("srv.cap", (0.78, 0.5, 0.14), (0, 0.0, 0.58), peach, hd, bevel=0.04)
-    kit.box("srv.visor", (0.7, 0.34, 0.05), (0, -0.3, 0.52), peach, hd, bevel=0.02)
+    kit.box("srv.head", (0.74, 0.46, 0.98), (0, 0, 0.0), skin, hd, bevel=0.1)
+    kit.box("srv.cap", (0.78, 0.5, 0.12), (0, 0.0, 0.5), peach, hd, bevel=0.04)
+    kit.box("srv.visor", (0.7, 0.34, 0.05), (0, -0.3, 0.45), peach, hd, bevel=0.02)
     # the hollow face
-    kit.box("srv.void", (0.6, 0.03, 0.78), (0, -0.235, -0.05), black, hd, bevel=0.04)
+    kit.box("srv.void", (0.6, 0.03, 0.7), (0, -0.235, -0.07), black, hd, bevel=0.04)
     glint = kit.emit("#fff6e0", 9.0, "srv glint")
     for sx in (-1, 1):
-        kit.box(f"srv.eye{sx}", (0.15, 0.02, 0.032), (sx * 0.16, -0.262, 0.17), glint, hd, bevel=0.008, rot=(0, sx * 0.3, 0))
+        kit.box(f"srv.eye{sx}", (0.15, 0.02, 0.032), (sx * 0.16, -0.262, 0.14), glint, hd, bevel=0.008, rot=(0, sx * 0.3, 0))
     for k in range(-6, 7):
         h = 0.12 if k % 2 == 0 else 0.075
-        kit.box(f"srv.tooth{k}", (0.036, 0.02, h), (k * 0.043, -0.262, -0.16 + 0.1 * (k * k) / 36.0 - h / 2 + 0.06), teeth, hd, bevel=0.004)
+        kit.box(f"srv.tooth{k}", (0.036, 0.02, h), (k * 0.043, -0.262, -0.2 + 0.1 * (k * k) / 36.0 - h / 2 + 0.06), teeth, hd, bevel=0.004)
     arms = []
     for sx in (-1, 1):
         ar = kit.empty(f"server.arm{sx}", (sx * 0.82, 0, 0.0), g)
@@ -616,11 +616,11 @@ def animate(kit, story, tl, t, ctx):
         _show([r_], on and want)
     if lv >= 0.5:
         u1, u2 = min(1.0, max(0.0, lv - 1.0)), min(1.0, max(0.0, lv - 2.0))
-        out = 0.55 * u1 + 0.75 * u2                   # metres out over the sill (toward -y)
-        srv["g"].location = (0, -0.35 * out + 0.05 * (1 - min(1.0, lv)), 1.85 - 0.1 * u1 - 0.1 * u2)
+        out = 0.35 * u1 + 0.3 * u2                    # metres the face comes out over the sill (toward -y)
+        srv["g"].location = (0, -0.4 * out + 0.05 * (1 - min(1.0, lv)), 1.85 - 0.05 * u1 - 0.05 * u2)
         srv["g"].rotation_euler = (math.radians(4 + 10 * u1 + 8 * u2), 0, 0)
-        srv["head"].location = (0, -0.3 - 1.0 * out - 0.1 * u2, 1.52 + 0.1 * u1 + 0.1 * u2)
-        srv["head"].rotation_euler = (math.radians(6 + 6 * u1 + 6 * u2), 0, math.radians(-34 * u1))
+        srv["head"].location = (0, -0.3 - 1.0 * out, 1.74)
+        srv["head"].rotation_euler = (math.radians(4 + 3 * u1 + 3 * u2), 0, math.radians(-34 * u1))
         # the neck runs from the shoulders to the chin
         gy, gz = srv["g"].location[1], srv["g"].location[2] + 0.15
         hy, hz = srv["head"].location[1], srv["head"].location[2] - 0.45
