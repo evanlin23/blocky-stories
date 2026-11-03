@@ -1,0 +1,32 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "lines": {
+  "L37": {
+   "text": "the clerk looked down at me, and didn't blink.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.3,
+   "dur": 2.4,
+   "onset": 0.1,
+   "end": 2.3,
+   "chunks": [
+    [
+     0.1,
+     0.7
+    ],
+    [
+     0.75,
+     1.5
+    ],
+    [
+     1.55,
+     2.3
+    ]
+   ]
+  }
+ }
+}
