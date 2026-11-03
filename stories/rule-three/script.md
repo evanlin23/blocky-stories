@@ -3,8 +3,8 @@
 - **Slug:** `rule-three` (no ep number: batch 6 is numbered by parallel sessions at once, so the lead numbers it on merge if needed).
 - **Slot:** batch 6, P6, the Rulebook Keeper pilot. From premise bank K3 ("Rule three was torn out"), rebuilt on the opening recipe (`docs/research/playbook.md`).
 - **Lane:** experiment (recurring host). Length arm: mid, 60 to 90 s.
-- **Word count:** 339 spoken words in 45 lines, all `narrator`, plus one 0.5 s pause (P01) and the loop tail.
-- **Estimated length:** at 290 wpm the speech is 70.1 s. The 0.12 s gaps add about 5.3 s, P01 0.5 s and the loop tail 0.25 s, so about 76 s. The reveal (L30, "It was ME.") lands at about 50 s, 25 s from the end, and its core (L31 to L33) by 55 s. If it lands over 85 s, cut L19 first, then L12. If it lands under 65 s, add "He doesn't even LOOK / at the CAKE." after L41.
+- **Word count:** 341 spoken words in 45 lines, all `narrator`, plus one 0.5 s pause (P01) and the loop tail.
+- **Estimated length:** at 290 wpm the speech is 70.5 s. The 0.12 s gaps add about 5.3 s, P01 0.5 s and the loop tail 0.25 s, so about 76 s. The reveal (L30, "It was ME.") lands at about 50 s, 25 s from the end, and its core (L31 to L33) by 55 s. If it lands over 85 s, cut L19 first, then L12. If it lands under 65 s, add "He doesn't even LOOK / at the CAKE." after L41.
 - **Look:** bright and saturated, `"look": {"style": "closer", "flash_safe": true, "polish": true}` (polish if merged). The night scenes in the hall are lit warm and bright from the lamps, and the one dark beat is the street at L23 to L26, still lit to read by streetlamps and the hall window.
 
 ## The big idea
@@ -138,7 +138,7 @@ Bright midday, the hill town.
   - [the high street, coral and butter houses: the mailman mid-turn, already stepping off the curb, glancing up the hill at the hall. Plant 3. One shot]
 - `L05` narrator: Even the PARROT / just says, / FOUR.
   - [the pet shop window: the green parrot on its perch, beak open, head cocked. Soft squawk. One shot. **Quotable line**]
-- `L06` narrator: And if anyone DOES ask, / the whole TOWN / turns to face / the HALL.
+- `L06` narrator: If anyone DOES ask, / the whole TOWN / turns to face / the HALL.
   - [two shots: a low wide up the bright high street, a dozen people all turning on the spot toward the top of the hill. Then the white hall and its arched window, from below, push in]
 
 ## 03 Me and the book (L07 to L13, about 11 to 22 s)
@@ -193,7 +193,7 @@ The hall's record room at night, warm lamps, bright.
   - [two shots: through Mom's lit front window down the hill, the party guests standing still with their backs to the cake, all turned uphill. Then Mom among them in her paper crown, `neutral`, face tipped up toward the hall, a slice on her plate]
 - `L27` narrator: So Milo ASKED.
   - [close on me, `scared`, the folded page corner in my pocket in frame]
-- `L28` narrator: Ten minutes LATER, / he's in the DOORWAY, / out of BREATH.
+- `L28` narrator: Ten minutes LATER, / he's in the DOORWAY.
   - [two shots: the oak door swinging open. Then Milo in it, `worried`, chest heaving, his hood down]
 - `L29` narrator: He asks me / to my FACE.
   - [Milo close, `worried`, mid-question. Then P01: 0.5 s, everything drops but the room tone]
@@ -208,8 +208,8 @@ The hall's record room at night, warm lamps, bright.
   - [the page close, glyph rows and a half "3" at the torn top, my thumb on it]
 - `L33` narrator: the book / goes to MILO, / and HE never gets / a night OFF / AGAIN.
   - [two shots: Milo, `worried`, looking from the page to the huge book. Then a wide of the hall: the two of us and the door-sized book between us]
-- `L34` narrator: A torn page / still COUNTS. / It just can't be READ.
-  - [two shots: the stub close. Then me folding the page shut]
+- `L34` narrator: A torn page / still COUNTS. / I tore it / so MILO / would never KNOW.
+  - [two shots: the stub close. Then me folding the page shut, glancing at Milo]
 - `L35` narrator: The rule about / not ASKING? / I stamped THAT / one TOO.
   - [two shots: my hand flicking the book's pages back to an old page with a big numeral and a row of glyphs, my first night's. Then me, `sheepish`, a small shrug]
 - `L36` narrator: Milo looks at ME. / Then at the CLOCK.
@@ -225,8 +225,8 @@ The warm lift: E major over the drone.
   - [two shots: the two of us hauling the door-sized red book out of the hall door, Milo walking backward at the front. Then a high wide down the lamplit high street, the book between us, the townsfolk stepping aside and smiling]
 - `L39` narrator: At NINE, / I stamp / at MOM'S TABLE.
   - [two shots: Mom's bright dining room, Mom in her paper crown, `smile`, the giant book across the table among cake plates. Then my stamp coming down. Soft thunk]
-- `L40` narrator: Tonight's rule / is Milo's SLIP.
-  - [Milo, `grin`, sliding a folded slip across the table to me]
+- `L40` narrator: Tonight's rule? / Milo writes it / right THERE.
+  - [two shots: Milo, `grin`, scribbling on a fresh slip at the table with a pencil. Then him sliding it across the cake plates to me]
 - `L41` narrator: MOM / gets the LAST SLICE.
   - [two shots: the fresh stamped page with a little drawn cake-slice glyph. Then Mom, `smile`, pulling the cake plate toward her]
 
