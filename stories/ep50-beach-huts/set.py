@@ -45,7 +45,7 @@ TOWN = {"office": 200.0, "bakery": 300.0, "shop": 400.0, "cafe": 500.0}
 TOD = {
     "day":   dict(se=4.2, sc="#fff1dc", el=38, az=-20, sky="#c9d3d6", ss=1.05, fog="#b4c2c8", back="#c4d2d8"),
     "grey":  dict(se=1.0, sc="#dfe8f0", el=30, az=-20, sky="#b4bfc6", ss=0.95, fog="#a6b2ba", back="#a8b6bf"),
-    "peach": dict(se=2.6, sc="#ffb184", el=11, az=-35, sky="#d9a68f", ss=0.9, fog="#c39a88", back="#e6b79c"),
+    "peach": dict(se=2.4, sc="#ffd2b4", el=11, az=-35, sky="#d9b09c", ss=0.9, fog="#c4a496", back="#e6bfa6"),
     "blue":  dict(se=1.5, sc="#a9bfe6", el=7, az=-35, sky="#4a6a90", ss=0.95, fog="#50688a", back="#6a86a6"),
     "bench": dict(se=2.4, sc="#b7c8ee", el=10, az=-30, sky="#6a88aa", ss=1.5, fog="#5a7494", back="#5a7694"),
     "gold":  dict(se=3.2, sc="#ffbf6e", el=9, az=-40, sky="#f0c397", ss=0.85, fog="#d9b48c", back="#f0cfa6"),
