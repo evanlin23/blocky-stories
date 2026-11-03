@@ -1,4 +1,4 @@
-# ep53-car-boot handoff (2026-11-03, paused for the usage limit)
+# ep53-car-boot handoff (2026-11-03, round 5 fix pass done, reviews not yet run)
 
 **Where it stopped:** the round 5 fix pass (after r4 critic and r4 standards, both revise) was mid-way when the orchestrator paused all work. The last commits on `claude/ep53-opening` hold the fixes made so far.
 - **Done:**
@@ -28,3 +28,12 @@
 - Keep ep53's own sfx to 2 to 4 events per 10 s. Round 4 added a lot of hits.
 - Mark the frame-exact shots with `"hold": ["Sxx"]`: the coat comparisons and the trunk.
 - Keep the quiet span over L60 to L68 short enough to pass pace.
+
+## Round 5 builder pass (done, 2026-11-03; no reviews run yet)
+- story.json regenerated, `sound.rev` 3. Clips fixed (Pip off the kitchen door and the shelter back: SHELTER_P x -13.4, doorway x 98.05). Own sfx thinned (13 events cut); measure: 2.64 events per 10 s, 0 blocks.
+- `look.polish.hold`: S02, S09, S23, S31, S60, S67, S68, S84, S85. Quiet span L60-L68 unchanged and passes pace.
+- Trunk close (S84 to S85) now snaps at the cut, bootb lamp held up: that was the only flash failure (124.3 to 124.9 s, 3f changes 7). Door sfx moved to the cut.
+- S64 (face to face) reframed so both faces show (lens 21, aim [-1.3, -0.1, 1.95]).
+- Preview: out/work/ep53-car-boot/ep53-car-boot-preview.mp4 (136.1 s). Sheets: out/ep53-first3s.png, out/ep53-keybeats.png.
+- Not done: the S71 (103.7 s) fill is still about luma 108, not 120 (the S69-S73 flash numbers now pass with margin so left as is); warm fill in the opening for the cream anorak not applied. `pytest` needs `pip install pytest` in the system python (171 pass).
+- Remember: `python -m blocky timeline` must be run after make_story.py, or render reads the stale out/work timeline.json.
