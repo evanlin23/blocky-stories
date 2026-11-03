@@ -17,6 +17,8 @@ Captions (post.py): a quick pop-in, 90 to 100% over 80 ms, with the key word in 
 
 Motion (post.py, on the output crop, so it is smooth even when the drawings are on twos or fours):
 - a punch-in of `punch` (default 6%) eased over 0.12 s on emphasised lines, held to the cut
+- a calm opening (`calm_open`, 3 s): no punch-in and no angle cut before it, and every shot's push runs inward
+  (`push_dir`), so the first seconds don't shake or swoop (owner, 2026-11-03)
 - a slow drift (zoom and pan, `drift` default 3% over a shot) on every shot over 1.5 s whose camera doesn't move,
   so no picture is ever still
 - an optional gentle handheld sway (`sway`: a list of shot ids, or true for every shot), slow sines, no jitter
@@ -52,6 +54,9 @@ DEFAULTS = {
     "grade": "bright",
     # builder marks
     "emph": None, "auto": True, "reveal": [], "twist": None, "quiet": [], "hold": [],
+    "calm_open": 3.0,   # owner 2026-11-03 ("shake / swoop" in the first second or two): no punch-in and no angle cut
+                     # before this, and the push runs one way (in) so a cut never flips the zoom direction
+    "push_dir": "in",   # "in": every shot pushes in; "alternate": in on one shot, out on the next (v2.3)
     "punch_cap": {},     # opt-in: {shot id: most the punch-in may zoom there} (a head that must stay in frame)
 }
 GRADES = {
@@ -166,7 +171,7 @@ def emph_times(tl: dict, p: dict, at=None) -> list[float]:
                 t = min(cs, key=lambda x: abs(x - mid))
                 if all(abs(t - u) >= 1.0 for u in out) and not _in(t, quiet):
                     out.append(t)
-    return sorted(out)
+    return sorted(t for t in out if t >= (p.get("calm_open") or 0.0))
 
 
 def reveal_times(tl: dict, p: dict, at) -> list[float]:
@@ -427,6 +432,7 @@ def reframe_times(tl: dict, p: dict) -> list[float]:
             if near:
                 last = min(near, key=lambda c: abs(c - want))
                 out.append(last)
+    out = [t for t in out if t >= (p.get("calm_open") or 0.0)]
     return out
 
 
@@ -465,7 +471,8 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         # out on the next, at a constant rate so every 0.25 s reads as a change (an eased move stalls at its ends)
         # scaled to the shot's length, so a 0.4 s shot doesn't rush (critic, ep32 v2.3: 12% in 0.4 s read as a zoom)
         pu = p["push"] * (0.5 if calm else 1.0) * min(1.0, length / p.get("push_full_s", 1.2))
-        zoom *= 1 + pu * (u if k % 2 == 0 else 1 - u)
+        inward = p.get("push_dir", "in") == "in" or k % 2 == 0
+        zoom *= 1 + pu * (u if inward else 1 - u)
         dx += (1 if (k // 2) % 2 == 0 else -1) * pu * 0.12 * (u - 0.5)
     rf = p.get("reframe_every")
     if rf:

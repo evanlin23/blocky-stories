@@ -49,7 +49,7 @@ def test_off_by_default_and_overridable():
 
 def test_sound_events_whoosh_hit_riser_and_marks():
     st, tl = story()
-    p = polish.spec(st)
+    p = {**polish.spec(st), "calm_open": 0}   # a 12 s test film: the calm opening would swallow most of it
     at = timeline.resolver(tl["lines"], tl["duration"])
     ev = polish.sound_events(tl, st, p, at)
     kinds = [e["kind"] for e in ev]
@@ -186,7 +186,7 @@ def test_check_blocks_unknown_polish_settings():
 
 def test_hits_land_on_the_key_word_and_long_shots_get_a_fill_punch():
     st, tl = story()
-    p = polish.spec(st)
+    p = {**polish.spec(st), "calm_open": 0}
     at = timeline.resolver(tl["lines"], tl["duration"])
     a, b, text = tl["lines"]["L02"]["chunks"][1]          # "it MOVED.": the hit lands on MOVED, not "it"
     t = polish.on_key(tl, a)
@@ -456,3 +456,15 @@ def test_held_shots_keep_their_frame_and_short_shots_push_gently():
     tl2 = {**tl, "shots": [short]}
     zs = [polish.motion(tl2, st, {**p, "punch": 0}, k / 30, [])[0] for k in range(12)]
     assert max(zs) - min(zs) <= 0.045                       # about 4% at most on a 0.4 s shot (critic)
+
+
+def test_calm_opening_has_no_punch_or_angle_cut_and_pushes_one_way():
+    st, tl = story()
+    p = polish.spec(st)
+    assert all(t >= p["calm_open"] for t in polish.emph_times(tl, {**p, "fill": 2.2}))
+    assert all(t >= p["calm_open"] for t in polish.reframe_times(tl, p))
+    q = {**p, "punch": 0, "reframe_every": 0, "drift": 0}
+    for s in tl["shots"][:3]:
+        a = polish.motion(tl, st, q, s["start"] + 0.05 * (s["end"] - s["start"]), [])[0]
+        b = polish.motion(tl, st, q, s["start"] + 0.95 * (s["end"] - s["start"]), [])[0]
+        assert b >= a - 1e-9   # every shot pushes in, so a cut never flips the zoom direction
