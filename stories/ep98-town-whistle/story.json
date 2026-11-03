@@ -9465,11 +9465,6 @@
     "pitch": 220
    },
    {
-    "at": "L01>-0.2",
-    "kind": "thud",
-    "db": -14
-   },
-   {
     "at": "L14-0.2",
     "kind": "whistle",
     "db": -22,
@@ -9510,11 +9505,6 @@
     "pitch": 220
    },
    {
-    "at": "L47",
-    "kind": "thud",
-    "db": -20
-   },
-   {
     "at": "L50",
     "kind": "whistle",
     "db": -17,
@@ -9541,26 +9531,11 @@
     "db": -18
    },
    {
-    "at": "L68.1+0.1",
-    "kind": "thud",
-    "db": -22
-   },
-   {
-    "at": "L69.1",
-    "kind": "thud",
-    "db": -26
-   },
-   {
     "at": "L73",
     "kind": "whistle",
     "db": -24,
     "dur": 1.5,
     "pitch": 220
-   },
-   {
-    "at": "L74.3+0.4",
-    "kind": "click",
-    "db": -20
    }
   ],
   "music_drops": [

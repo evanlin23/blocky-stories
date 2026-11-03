@@ -509,22 +509,17 @@ S("L74.3", PX((SX - 1.1, -1.7, 1.15), (SX - 0.1, 0.4, 1.1), 26, 0.12), "in", fil
 whistle = lambda at, db=-12, d=1.6, pitch=220: {"at": at, "kind": "whistle", "db": db, "dur": d, "pitch": pitch}
 sfx = [
     whistle("L01.2+0.12", -12, 1.5),
-    {"at": "L01>-0.2", "kind": "thud", "db": -14},
     whistle("L14-0.2", -22, 1.3, 880),
     whistle("L24", -12, 1.6),
     {"at": "L25+0.35", "kind": "door", "db": -15},
     whistle("L34", -13, 1.5),
     whistle("L35", -22, 1.4, 880),
     whistle("L43", -12, 1.8),
-    {"at": "L47", "kind": "thud", "db": -20},
     whistle("L50", -17, 1.4),
     {"at": "P02+0.4", "kind": "breath", "db": -16, "dur": 0.6, "keep": True},
     whistle("L64.2", -11, 1.6),
     {"at": "L68", "kind": "thud", "db": -18},
-    {"at": "L68.1+0.1", "kind": "thud", "db": -22},
-    {"at": "L69.1", "kind": "thud", "db": -26},
     whistle("L73", -24, 1.5),
-    {"at": "L74.3+0.4", "kind": "click", "db": -20},
 ]
 music = {"root": 50, "mode": "minor", "bpm": 84, "seed": 98,
          "sections": [
