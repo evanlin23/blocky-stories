@@ -28,8 +28,11 @@ Create a free account, then **Create cronjob** for each row. Every job uses:
 | blocky upload | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/upload.yml/dispatches` | every day, 6:47 |
 | blocky metrics | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/metrics.yml/dispatches` | Mondays, 14:37 |
 | blocky comments | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/comments.yml/dispatches` | every day, 16:17 |
+| blocky comments 2 | same URL (a clone of "blocky comments") | every day, 19:57 |
 | blocky compilation | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/compile.yml/dispatches` | Sundays, 8:17 |
 | blocky render catch-up | `https://api.github.com/repos/evanlin23/blocky-stories/actions/workflows/render.yml/dispatches` | every day, 3:17 |
+
+One cron-job.org job takes one daily time, so the two comment times are two jobs. Make the second with the job's **Clone** action (it copies the token without anyone typing it; clones start disabled, so switch it on).
 
 A successful run returns **HTTP 204**. Use **Test run** on each job once, then check the repo's Actions tab
 for a new `workflow_dispatch` run.

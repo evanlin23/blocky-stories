@@ -38,7 +38,7 @@ def person(shirt, pants, skin, hair="cap", hair_c="#2a1d15", shoes="#2a2420", **
 
 
 cast = {
-    "me": person("#c98aa0", "#2b3550", "#e6b18c", "cap", "#121216", "#1c1c24", pattern="knit", pattern_c="#a8667f"),
+    "me": person("#7a1f2e", "#2b3550", "#e6b18c", "cap", "#121216", "#1c1c24", pattern="knit", pattern_c="#661825"),
     "tam": person("#b9a98a", "#3a3f4c", "#efc9a5", "spiky", "#3a2616", "#d8d4cc", extras=["glasses", "hooddown"],
                   extra_c="#141414", face={"eyes": "tired", "brows": True, "ink": "#1c1416", "bags": True}),
     "neg": person("#36755f", "#d4caaf", "#15181c", "cap", "#ececec", "#f2f2f2", pattern="knit", pattern_c="#2c6551",
@@ -244,9 +244,9 @@ S("L41", "room", ([2.6, -4.6, 1.45], [4.15, -4.6, 1.4], 50),
   {"me": {"expr": "worried", "head": [0, 0]}}, lamps_up="L41-0.1")
 S("P02", "room", ([-3.3, 0.0, 2.0], [-7.0, 0.0, 1.6], 20),
   {"neg": {"bend": 45, "arms": [26, 26], "head": [52, -38]},
-   "tam": {"bend": 12, "head": [-24, -4], "num": 2, "roll": [("P02>+0.35", 1)]}}, reveal=True)
+   "tam": {"bend": 12, "head": [-24, -4], "num": 2}}, reveal=True)
 S("L42.3", "room", ([-4.4, 0.0, 2.0], [-7.0, 0.0, 1.4], 30), {})
-S("L43", "room", ([-7.0, 1.9, 2.1], [-7.0, -1.0, 2.0], 32), {})
+S("L43", "room", ([-7.0, 1.9, 2.1], [-7.0, -1.0, 2.0], 32), {"tam": {"roll": [("L43", 1)]}})
 S("L44", "room", ([-6.4, 0.2, 2.15], [-7.0, -1.0, 2.1], 40), {})
 S("L45", "room", ([4.0, -4.3, 1.55], [-7.0, 0.1, 1.35], 60), {})
 S("L46", "room", ([4.15, -4.6, 1.35], [-7.0, 0.95, 1.2], 90), {})
@@ -565,7 +565,7 @@ story = {
               "vignette": 0.32, "bloom": 0.42, "grain": 0.012},
     "rain_shots": sorted({s["id"] for s in SH if s.get("rain") or s["scene"] == "street"}),
     "rain_gain": 0.7,
-    "phonemes": {"Ossie": "ˈɔzi", "Tam": "tˈæm", "Nell": "nˈɛl"},
+    "phonemes": {"Ossie": "ˈɔzi", "Tam": "tˈæm", "Luke": "lˈuːk"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

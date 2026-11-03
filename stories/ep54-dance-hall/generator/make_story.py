@@ -524,7 +524,7 @@ story = {
                   {"at": "L64", "mode": "major", "voices": ["drone", "pad", "piano", "pulse"], "energy": 0.6},
                   {"at": "L71", "mode": "minor", "voices": ["drone"], "energy": 0.3},
               ]},
-    "sound": {"floor": "wood", "steps_db": -24,
+    "sound": {"floor": "wood", "steps_db": -24, "rev": 3,
               "floor_spans": [{"from": "L01", "to": "L08", "floor": "grass"}],
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "L08", "lufs": -40},

@@ -650,7 +650,7 @@ def make_bell_geo(kit, pivot, r, M, with_clapper=True):
     B(kit, "bellloop", (r * 0.3, r * 0.15, r * 0.5), (0, 0, r * 0.2), M["brass"], parent=pivot, bevel=r * 0.04)
     cl = None
     if with_clapper:
-        cl = kit.sphere(nm("bellclapper"), r * 0.3, (0, 0, -r * 1.45), M["brass"], pivot, seg=8)
+        cl = kit.sphere(nm("bellclapper"), r * 0.34, (0, 0, -r * 1.98), M["brass"], pivot, seg=8)
         cl.hide_render = True
     return d, cl
 

@@ -21,7 +21,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from stories import ROOT, UPLOADS, all_stories, changed_since, film, gate_open, slug, uploads
+from stories import ROOT, UPLOADS, all_stories, changed_since, film, gate_open, qa_passed, slug, uploads
 
 from blocky.gate import load_package
 
@@ -33,6 +33,21 @@ def queue() -> list[str]:
     q = ROOT / "queue.txt"
     names = [ln.strip() for ln in q.read_text().splitlines()] if q.exists() else []
     return [n for n in names if n and not n.startswith("#") and (ROOT / "stories" / n / "story.json").exists()]
+
+
+MIN_QUEUE_FOR_SECOND = 5   # a second upload a day only while at least this many ready stories stay queued
+
+
+def ready_count(done: dict) -> int:
+    """How many stories could upload: not uploaded, not held, a film newer than the story's last fix, gate open."""
+    n = 0
+    for s in all_stories():
+        if s in done or (load_package(s) or {}).get("hold"):
+            continue
+        f = film(s)
+        if f and not (f.get("created_at") and changed_since(s, f["created_at"])) and qa_passed(s, f) and gate_open(s):
+            n += 1
+    return n
 
 
 def shape(story: str) -> str:
@@ -54,6 +69,9 @@ def next_story(done: dict, skip: frozenset = frozenset()) -> str | None:
             continue
         f = film(s)
         if f and f.get("created_at") and changed_since(s, f["created_at"]):   # its film predates a fix: wait for the re-render
+            continue
+        if f and not qa_passed(s, f):   # no final-film check for this exact film yet (qa/<story>.json)
+            print(f"{s}: waiting for its final-film check (qa/{s}.json)")
             continue
         if f and gate_open(s):
             if not last or shape(s) != last:
@@ -109,16 +127,34 @@ def youtube():
 PUBLISH_AT_CENTRAL = 16   # 4:00 PM Central: after school for the Shorts audience, and a window for the owner to stop one
 
 
-def publish_at(now: dt.datetime | None = None) -> str | None:
-    """When the upload goes public on its own (YouTube's scheduled publish), as RFC 3339 UTC: today at 4:00 PM
-    Central, or an hour from now if that's already past. None when YT_AUTOPUBLISH=false (stays private)."""
+SLOTS_CENTRAL = [(16, 0), (19, 30)]   # first and second upload of a day go public at 4:00 PM and 7:30 PM Central
+AUTO_HOURS_CENTRAL = (5, 19)   # an automatic upload only starts between 5 AM and 7 PM Central, never late at night
+
+
+def central_now(now: dt.datetime | None = None) -> dt.datetime:
+    from zoneinfo import ZoneInfo
+
+    return (now or dt.datetime.now(dt.timezone.utc)).astimezone(ZoneInfo("America/Chicago"))
+
+
+def in_auto_hours(now: dt.datetime | None = None) -> bool:
+    return AUTO_HOURS_CENTRAL[0] <= central_now(now).hour < AUTO_HOURS_CENTRAL[1]
+
+
+def publish_at(now: dt.datetime | None = None, slot: int = 0, jitter: int | None = None) -> str | None:
+    """When the upload goes public on its own (YouTube's scheduled publish), as RFC 3339 UTC: today at the slot's
+    time plus a few random minutes (so it never looks like clockwork), or an hour from now if that's already past.
+    None when YT_AUTOPUBLISH=false (stays private)."""
     if os.environ.get("YT_AUTOPUBLISH", "true").strip().lower() == "false":
         return None
+    import random
     from zoneinfo import ZoneInfo
 
     tz = ZoneInfo("America/Chicago")
     now = (now or dt.datetime.now(dt.timezone.utc)).astimezone(tz)
-    at = now.replace(hour=PUBLISH_AT_CENTRAL, minute=0, second=0, microsecond=0)
+    h, m = SLOTS_CENTRAL[min(slot, len(SLOTS_CENTRAL) - 1)]
+    j = random.randint(0, 10 if slot == 0 else 20) if jitter is None else jitter   # slot 0 stays before the 4:17 comment run
+    at = now.replace(hour=h, minute=m, second=0, microsecond=0) + dt.timedelta(minutes=j)
     if at < now + dt.timedelta(minutes=30):
         at = now + dt.timedelta(hours=1)
     return at.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -198,10 +234,20 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     done = uploads()
-    today = dt.date.today().isoformat()
-    if not a.story and any(today in (e.get("uploaded"), e.get("issued")) for e in done.values()):
-        print("already posted one today")   # the backup run found the first one worked
+    # the day is the owner's day (Central), not UTC: at 9 PM Central it's already tomorrow in UTC (knock-back, 2026-11-02)
+    today = central_now().date().isoformat()
+    if not a.story and not in_auto_hours():
+        print(f"outside {AUTO_HOURS_CENTRAL[0]}:00 to {AUTO_HOURS_CENTRAL[1]}:00 Central: no automatic upload now")
         return
+    posted = sum(1 for e in done.values() if today in (e.get("uploaded"), e.get("issued")))
+    per_day = int(os.environ.get("UPLOADS_PER_DAY", "2") or 2)
+    if not a.story and posted >= per_day:
+        print(f"already posted {posted} today")   # the backup run, or the second call, found the day full
+        return
+    if not a.story and posted >= 1 and ready_count(done) < MIN_QUEUE_FOR_SECOND + 1:
+        print(f"holding to one today: fewer than {MIN_QUEUE_FOR_SECOND} stories would stay in the queue")
+        return
+    slot = posted
     failed: set[str] = set()
     while True:   # a film that fails the flash bar never blocks the day: take the next one
         story = a.story or next_story(done, frozenset(failed))
@@ -234,7 +280,7 @@ def main() -> None:
         have = {k: bool(os.environ.get(k)) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")}
         print(f"API upload: YT_AUDITED={'true' if audited else 'not true'}, secrets present: {have}")   # no values
         if audited and all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
-            when = publish_at()
+            when = publish_at(slot=slot)
             yt = youtube()
             dup = already_on_channel(yt, title)
             if dup:   # uploaded before but never recorded: record it, don't upload again

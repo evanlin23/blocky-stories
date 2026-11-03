@@ -10,6 +10,7 @@ nothing next to a volume, and it gives the hazy, fading-out game-world look the 
 from __future__ import annotations
 
 import math
+from pathlib import Path
 
 import bpy
 from mathutils import Vector
@@ -603,12 +604,179 @@ def metal(hexc="#8a8d90", rough=0.35, name=None):
     return m
 
 
+# ------------------------------------------------------------------------------- CC0 library (assets/)
+# Owner, 2026-11-02: "yes go ahead with sfx and visuals". CC0 photo textures and HDRIs from Poly Haven and
+# ambientCG (assets/LICENSES.md). Sets and lighting only: characters, faces and their materials stay ours (rig.py).
+
+ASSETS = Path(__file__).resolve().parent.parent / "assets"
+TEXTURES = ("brick", "wood", "concrete", "grass", "asphalt")
+
+
+def texture(name, scale=1.0, tint=None, rough=None, bump=0.25, mat_name=None):
+    """A CC0 photo texture by name (brick, wood, concrete, grass, asphalt) from assets/textures/<name>/: colour and
+    roughness, box-projected in object space (our blocks have no UVs), one tile per metre at scale 1, a little
+    bump from the colour, and the fog like every other material. `tint` (hex) multiplies the colour, so a set can
+    keep its palette; `rough` overrides the roughness map with one value. Without the files it falls back to the
+    procedural material of the same kind, so a set never breaks."""
+    if name not in TEXTURES:
+        raise ValueError(f"no texture {name!r}; there are {TEXTURES}")
+    key = mat_name or f"tex {name} {scale} {tint} {rough}"
+    if key in MATS:
+        return MATS[key]
+    d = ASSETS / "textures" / name
+    colp, roughp = d / f"{name}_color.jpg", d / f"{name}_rough.jpg"
+    if not colp.exists():
+        print(f"kit.texture: {colp} missing, using the procedural {name}")
+        return {"brick": lambda: bricks(name=key), "wood": lambda: planks(name=key),
+                "concrete": lambda: concrete(name=key), "grass": lambda: grime("#4c6b2f", 0.6, 2.0, key, 0.9),
+                "asphalt": lambda: grime("#2c2d30", 0.7, 2.0, key, 0.85)}[name]()
+    m, N, L, b = _mat(key)
+    v = _coords(N, L, scale)
+
+    def img(path, color):
+        t = N.new("ShaderNodeTexImage")
+        t.image = bpy.data.images.load(str(path), check_existing=True)
+        t.image.colorspace_settings.name = "sRGB" if color else "Non-Color"
+        t.projection = "BOX"
+        t.projection_blend = 0.25
+        L.new(v, t.inputs["Vector"])
+        return t
+
+    c = img(colp, True)
+    out = c.outputs["Color"]
+    if tint:
+        mx = N.new("ShaderNodeMix")
+        mx.data_type = "RGBA"
+        mx.blend_type = "MULTIPLY"
+        mx.inputs["Factor"].default_value = 1.0
+        L.new(out, mx.inputs["A"])
+        mx.inputs["B"].default_value = col(tint)
+        out = mx.outputs["Result"]
+    L.new(out, b.inputs["Base Color"])
+    if rough is not None or not roughp.exists():
+        b.inputs["Roughness"].default_value = 0.8 if rough is None else rough
+    else:
+        L.new(img(roughp, False).outputs["Color"], b.inputs["Roughness"])
+    if bump > 0:
+        bw = N.new("ShaderNodeRGBToBW")
+        L.new(c.outputs["Color"], bw.inputs["Color"])
+        _bump(N, L, b, bw.outputs["Val"], bump, 0.02)
+    _fogged(m, b.outputs[0])
+    return m
+
+
+def hdris() -> list:
+    """The HDRIs in assets/hdri/ by name (moonless_golf, satara_night_no_lamps, ...)."""
+    return sorted(p.stem for p in (ASSETS / "hdri").glob("*.hdr"))
+
+
+PROP_TEMPLATES: dict = {}
+
+
+def props() -> dict:
+    """The CC0 props in assets/props/ (Quaternius and Kenney, the owner's download of 2026-11-03): name -> its
+    record in assets/props/props.json (file, size_m [x, y, z] in metres, pack). Furniture, trees, rocks, fences,
+    houses and buildings only: no characters, creatures, lettering or signs."""
+    import json
+
+    p = ASSETS / "props" / "props.json"
+    return json.loads(p.read_text()) if p.exists() else {}
+
+
+def prop(name, loc=(0, 0, 0), rot=0.0, scale=1.0, height=None, fit=None, tint=None, parent=None):
+    """Place a CC0 prop by name (kit.props() lists them), opt-in from a set.py. Files are in metres, origin at the
+    bottom centre, so `loc` is where it stands. `rot` turns it about the vertical (degrees). `height` (m) or `fit`
+    (the largest side, m) sizes it, else `scale`. `tint` (hex) multiplies every colour, to fit a set's palette.
+    Its materials get the distance fog like ours. The first use imports the .glb; later ones share its mesh."""
+    rec = props().get(name)
+    if rec is None:
+        raise ValueError(f"no prop {name!r}; see kit.props()")
+    if name not in PROP_TEMPLATES:
+        before = set(bpy.data.objects)
+        bpy.ops.import_scene.gltf(filepath=str(ASSETS.parent / rec["file"]))
+        new = [o for o in bpy.data.objects if o not in before]
+        tpl = next(o for o in new if o.type == "MESH")
+        for o in new:   # keep the mesh as a template, out of the scene
+            for c in list(o.users_collection):
+                c.objects.unlink(o)
+        tpl.parent = None
+        for m in tpl.data.materials:
+            b = next((n for n in m.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None) if m and m.use_nodes else None
+            if b is not None:
+                _fogged(m, b.outputs[0])
+        PROP_TEMPLATES[name] = tpl
+    tpl = PROP_TEMPLATES[name]
+    ob = tpl.copy()
+    ob.name = name
+    size = rec["size_m"]
+    k = height / max(size[2], 1e-6) if height else fit / max(max(size), 1e-6) if fit else scale
+    ob.scale = (k, k, k)
+    ob.location = loc
+    ob.rotation_euler = (0.0, 0.0, math.radians(rot))
+    if tint:
+        ob.data = tpl.data.copy()
+        for i, m in enumerate(ob.data.materials):
+            if m is None:
+                continue
+            m2 = m.copy()
+            b = next((n for n in m2.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None)
+            if b is not None:
+                c, t = b.inputs["Base Color"], col(tint)
+                if c.is_linked:
+                    mx = m2.node_tree.nodes.new("ShaderNodeMix")
+                    mx.data_type, mx.blend_type = "RGBA", "MULTIPLY"
+                    mx.inputs["Factor"].default_value = 1.0
+                    m2.node_tree.links.new(c.links[0].from_socket, mx.inputs["A"])
+                    mx.inputs["B"].default_value = t
+                    m2.node_tree.links.new(mx.outputs["Result"], c)
+                else:
+                    c.default_value = tuple(a * b2 for a, b2 in zip(c.default_value, t))
+            ob.data.materials[i] = m2
+    return link(ob, parent)
+
+
+def world_hdri(name, strength=0.5, rotation=0.0, visible=False, sky="#141820", sky_strength=1.0):
+    """Light the scene from a CC0 HDRI (opt-in, `look.hdri` in story.json): soft sky light and reflections from
+    a real sky. By default the camera still sees the story's sky colour (the fog colour), so the look and the fog
+    are unchanged and no real place shows in the frame; `visible` shows the HDRI itself. `rotation` turns it about
+    the vertical (degrees). Missing file: the plain world, with a note."""
+    p = ASSETS / "hdri" / f"{name}.hdr"
+    if not p.exists():
+        print(f"kit.world_hdri: {p} missing, using the plain world")
+        return world(sky, sky_strength)
+    w = world(sky, sky_strength)
+    N, L = w.node_tree.nodes, w.node_tree.links
+    out = next(n for n in N if n.type == "OUTPUT_WORLD")
+    plain = N["Background"]
+    tc = N.new("ShaderNodeTexCoord")
+    mp = N.new("ShaderNodeMapping")
+    mp.inputs["Rotation"].default_value = (0.0, 0.0, math.radians(rotation))
+    L.new(tc.outputs["Generated"], mp.inputs["Vector"])
+    env = N.new("ShaderNodeTexEnvironment")
+    env.image = bpy.data.images.load(str(p), check_existing=True)
+    L.new(mp.outputs["Vector"], env.inputs["Vector"])
+    lit = N.new("ShaderNodeBackground")
+    lit.inputs["Strength"].default_value = strength
+    L.new(env.outputs["Color"], lit.inputs["Color"])
+    if visible:
+        L.new(lit.outputs["Background"], out.inputs["Surface"])
+        return w
+    lp = N.new("ShaderNodeLightPath")
+    mix = N.new("ShaderNodeMixShader")
+    L.new(lp.outputs["Is Camera Ray"], mix.inputs["Fac"])
+    L.new(lit.outputs["Background"], mix.inputs[1])
+    L.new(plain.outputs["Background"], mix.inputs[2])
+    L.new(mix.outputs["Shader"], out.inputs["Surface"])
+    return w
+
+
 # ------------------------------------------------------------------------------------------- render
 
 
 def reset():
     bpy.ops.wm.read_factory_settings(use_empty=True)
     MATS.clear()
+    PROP_TEMPLATES.clear()
     OBJ.clear()
     LIGHTS.clear()
 

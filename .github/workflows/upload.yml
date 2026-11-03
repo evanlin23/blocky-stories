@@ -2,9 +2,8 @@
 # owner it's waiting to be published. Run it by hand from the Actions tab to upload one now.
 name: upload
 on:
-  schedule:
-    - cron: "23 15 * * *"   # 15:23 UTC = 9:23 am Central (10:23 am in summer)
-    - cron: "47 21 * * *"   # 21:47 UTC = 3:47 pm Central; backup run: GitHub sometimes skips a schedule; upload.py posts at most one a day
+  # no `schedule:`: cron-job.org starts this at 6:47 AM Central (docs/external-cron.md). GitHub's own schedule woke up
+  # on 2026-11-02 after weeks of silence and fired hours late (9:04 PM Central), so it's gone.
   workflow_dispatch:
     inputs:
       story: {description: "story folder (blank = the next ready one)", default: ""}
@@ -26,8 +25,11 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_CHANNEL_ID: ${{ vars.YT_CHANNEL_ID }}
-          YT_AUDITED: ${{ vars.YT_AUDITED || secrets.YT_AUDITED }}   # a variable, or a secret if it was saved there
+          YT_AUDITED: ${{ vars.YT_AUDITED || secrets.YT_AUDITED }}
+          UPLOADS_PER_DAY: ${{ vars.UPLOADS_PER_DAY || '2' }}   # a variable, or a secret if it was saved there
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
           python scripts/upload.py --story "${{ inputs.story }}"
+          # a second story the same day (it goes public at 7:30 PM) while the queue can afford it (UPLOADS_PER_DAY, default 2)
+          if [ -z "${{ inputs.story }}" ]; then python scripts/upload.py; fi

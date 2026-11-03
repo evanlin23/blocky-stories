@@ -1,11 +1,18 @@
 # Upload order: the daily upload takes the first ready story listed here, then any other in episode order.
 # New-shape openers ("In this town...", a marker on people) go first, after ep20's weak numbers (owner, 2026-11-02).
-knock-back
+# being-forgotten stories (ep32, floor-thirteen, ep31) are spaced apart; don't queue them together
+# homecoming / similar-twist stories (ep36, ep43, ep47, ep48) are never next to each other (standards, ep48 r5)
+# 2026-11-03 reset: creepy or light stories first, the sad family reveals spread out after them
+# 2026-11-03 queue audit (docs/research/queue-audit.md): recipe fixes first; ep36, ep32, ep31 dropped; ep42, ep48, ep55, ep33 held until 3 recipe films pass
 closing-time
-ep38-drive-in
-ep42-barber-chair
-ep43-reading-room
-ep45-bee-yard
+moving-day
+mirror-maze
+floor-thirteen
 ep49-car-wash
+ep45-bee-yard
+ep47-fitting-room
+ep43-reading-room
+ep42-barber-chair
+ep48-crazy-golf
 ep55-caravan-park
-ep36-ice-huts
+ep33-chairlift
