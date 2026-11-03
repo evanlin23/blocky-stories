@@ -233,28 +233,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this TOWN,",
-     "in this town,"
+     "DON'T let",
+     "don't let"
+    ],
+    [
+     "anybody SEE",
+     "anybody see"
     ],
     [
      "your REFLECTION",
      "your reflection"
     ],
     [
-     "does",
-     "does"
-    ],
-    [
-     "what you",
-     "what you"
-    ],
-    [
-     "really WANT",
-     "really want"
-    ],
-    [
-     "to DO.",
-     "to do."
+     "in a WINDOW.",
+     "in a window."
     ]
    ]
   },
@@ -263,28 +255,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "My NEIGHBOUR",
-     "my neighbor"
+     "It DOES",
+     "it does"
     ],
     [
-     "stands perfectly",
-     "stands perfectly"
+     "what you",
+     "what you"
     ],
     [
-     "STILL.",
-     "still."
-    ],
-    [
-     "In the glass,",
-     "in the glass,"
-    ],
-    [
-     "he's doing",
-     "he's doing"
-    ],
-    [
-     "CARTWHEELS.",
-     "cartwheels."
+     "REALLY want.",
+     "really want."
     ]
    ]
   },
@@ -1794,7 +1774,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "high wide of the sand, figures and reflections, the magenta figure",
-   "at": "L01.3"
+   "at": "L01.2"
   },
   {
    "id": "S03",
@@ -1840,7 +1820,7 @@
    "hand": 0.006,
    "step": 1,
    "what": "the glass alone",
-   "at": "L02.3"
+   "at": "L02.2"
   },
   {
    "id": "S05",
@@ -6328,12 +6308,12 @@
     "blend": 0.5
    },
    {
-    "at": "L01.5",
+    "at": "L01.3",
     "roll": 110,
     "blend": 0.4
    },
    {
-    "at": "L02.3",
+    "at": "L02.2",
     "roll": 8,
     "blend": 0.35,
     "pos": [
@@ -6343,7 +6323,7 @@
     ]
    },
    {
-    "at": "L02.3+0.5",
+    "at": "L02.2+0.5",
     "roll": 150,
     "blend": 0.4
    },
@@ -6399,7 +6379,7 @@
     "yaw": 0
    },
    {
-    "at": "L01.3+0.4",
+    "at": "L01.2+0.4",
     "side": [
      10,
      80
@@ -6411,7 +6391,7 @@
     "blend": 0.4
    },
    {
-    "at": "L01.3+0.9",
+    "at": "L01.2+0.9",
     "side": [
      80,
      10
@@ -6423,7 +6403,7 @@
     "blend": 0.4
    },
    {
-    "at": "L01.5",
+    "at": "L01.3",
     "side": [
      10,
      80
@@ -6431,7 +6411,7 @@
     "blend": 0.4
    },
    {
-    "at": "L01.5+0.5",
+    "at": "L01.3+0.5",
     "side": [
      80,
      10
@@ -6582,7 +6562,7 @@
     "yaw": 0
    },
    {
-    "at": "L01.3+0.3",
+    "at": "L01.2+0.3",
     "arms": [
      130,
      0
@@ -6590,7 +6570,7 @@
     "blend": 0.3
    },
    {
-    "at": "L01.3+0.6",
+    "at": "L01.2+0.6",
     "arms": [
      170,
      0
@@ -6598,7 +6578,7 @@
     "blend": 0.3
    },
    {
-    "at": "L01.5",
+    "at": "L01.3",
     "arms": [
      130,
      0
@@ -6606,7 +6586,7 @@
     "blend": 0.3
    },
    {
-    "at": "L01.5+0.4",
+    "at": "L01.3+0.4",
     "arms": [
      170,
      0
