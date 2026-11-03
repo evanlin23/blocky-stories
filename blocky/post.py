@@ -219,8 +219,11 @@ def grade(img: np.ndarray, g: dict) -> np.ndarray:
     c = g.get("contrast", 1.05)
     out = 0.5 + (out - 0.5) * c if c != 1.0 else out
     out = out * g.get("exposure", 1.0)
-    if g.get("lift"):   # the polish grade's toe: the darkest tones come up, so a TV doesn't crush them
-        out = out + g["lift"] * np.clip(1 - out, 0, 1) ** 3
+    if g.get("lift"):   # the polish grade's toe: the darkest tones come up, so a TV doesn't crush them. It scales each
+        # pixel by the lift of its luma, so the colour keeps its saturation (adding grey washed it out: ep62, 0.19)
+        l0 = np.clip(out @ np.array([0.2126, 0.7152, 0.0722], np.float32), 1e-4, None)[..., None]
+        l1 = l0 + g["lift"] * np.clip(1 - l0, 0, 1) ** 3
+        out = out * (l1 / l0)
     return out * _vignette(*img.shape[:2], g.get("vignette", 0.35))
 
 
