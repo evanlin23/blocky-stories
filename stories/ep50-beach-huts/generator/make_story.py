@@ -129,7 +129,7 @@ S("L01.3", "punch: his face, the glass behind", move(((-3.0, -2.0, 1.62), (-3.4,
   **NSTAGE(4, r_neighbour="stage"))
 S("L02", "the glass alone, landing", move(((-3.0, -1.7, 1.45), (-3.0, 0, 1.45)), ((-3.0, -1.3, 1.45), (-3.0, 0, 1.45)), 30, 36), 1,
   **NSTAGE(4, r_neighbour="stage"))
-S("L02.2", "high wide of the sand, figures and reflections, the magenta figure", move(((12, -25, 3.4), (12.2, -9, 0.4)), ((12, -22, 3.2), (12.2, -9, 0.4)), 22, 24), 2,
+S("L02.2+0.3", "high wide of the sand, figures and reflections, the magenta figure", move(((12, -25, 3.4), (12.2, -9, 0.4)), ((12, -22, 3.2), (12.2, -9, 0.4)), 22, 24), 2,
   refl={"r_dieter": "sand", "r_shopper": "sand", "r_date_f": "sand", "r_me": {"kind": "sand", "scale": 1.6}})
 S("L04", "dieter passes the bakery", still((BX - 0.3, 36.8, 1.5), (BX + 0.4, 41.5, 1.35), 26))
 S("L04.2", "his reflection face down in the cake", still((BX + 0.2, 38.2, 1.45), (BX + 0.2, 43.0, 1.3), 28), 2,
@@ -574,7 +574,7 @@ sfx = [
     {"at": "L01.2", "kind": "whoosh", "db": -22, "dur": 0.4},
     {"at": "L01.3", "kind": "whoosh", "db": -21, "dur": 0.4},
     {"at": "L02", "kind": "whoosh", "db": -22, "dur": 0.4},
-    {"at": "L02.2", "kind": "whoosh", "db": -20, "dur": 0.5},
+    {"at": "L02.2+0.3", "kind": "whoosh", "db": -20, "dur": 0.5},
     {"at": "L45", "kind": "thud", "db": -10, "dur": 1.0},
     {"at": "L62", "kind": "whoosh", "db": -22, "dur": 0.6},
     {"at": "L65", "kind": "thud", "db": -16, "dur": 0.8},
@@ -623,7 +623,7 @@ story = {
     "acting": acting,
     "cues": cues,
     "fx": [{"at": "L01.3", "kind": "punch", "dur": 0.35, "zoom": 1.1},
-           {"at": "L02.2", "kind": "punch", "dur": 0.35, "zoom": 1.08},
+           {"at": "L02.2+0.3", "kind": "punch", "dur": 0.35, "zoom": 1.08},
            {"at": "L45", "kind": "punch", "dur": 0.4, "zoom": 1.12}],
     "music": {"root": 43, "mode": "dorian", "bpm": 76, "seed": 50,
               "sections": [

@@ -56,6 +56,1878 @@
      1.328
     ]
    ]
+  },
+  "L04": {
+   "text": "a man on a diet passes the bakery. his reflection is face down in a cake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.5,
+   "onset": 0.172,
+   "end": 3.293,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     0.776
+    ],
+    [
+     0.776,
+     1.621
+    ],
+    [
+     1.69,
+     2.172
+    ],
+    [
+     2.172,
+     2.699
+    ],
+    [
+     2.699,
+     3.293
+    ]
+   ]
+  },
+  "L06": {
+   "text": "on a first date, their reflections are already holding hands.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.155,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.155,
+     0.276
+    ],
+    [
+     0.276,
+     0.741
+    ],
+    [
+     0.793,
+     1.345
+    ],
+    [
+     1.345,
+     1.69
+    ],
+    [
+     1.69,
+     2.534
+    ]
+   ]
+  },
+  "L07": {
+   "text": "me? I have no reflection at all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.31
+    ],
+    [
+     0.345,
+     0.569
+    ],
+    [
+     0.569,
+     1.026
+    ],
+    [
+     1.026,
+     1.552
+    ]
+   ]
+  },
+  "L09": {
+   "text": "I always took it to mean I don't want anything.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.707
+    ],
+    [
+     0.707,
+     1.017
+    ],
+    [
+     1.017,
+     1.319
+    ],
+    [
+     1.319,
+     1.914
+    ]
+   ]
+  },
+  "L10": {
+   "text": "Remi, my fianc\u00e9e, wants a summer in our beach hut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.388,
+     1.034
+    ],
+    [
+     1.121,
+     1.561
+    ],
+    [
+     1.561,
+     1.707
+    ],
+    [
+     1.707,
+     2.345
+    ]
+   ]
+  },
+  "L11": {
+   "text": "she sands the hut for the summer we planned.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.724
+    ],
+    [
+     0.724,
+     1.112
+    ],
+    [
+     1.112,
+     1.776
+    ]
+   ]
+  },
+  "L12": {
+   "text": "I sit in the doorway on my laptop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.802
+    ],
+    [
+     0.802,
+     1.603
+    ]
+   ]
+  },
+  "L13": {
+   "text": "just one more email.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.241
+    ]
+   ]
+  },
+  "L14": {
+   "text": "then her reflection starts to walk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.569
+    ]
+   ]
+  },
+  "L15": {
+   "text": "on Monday, it walks to the water's edge.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.638,
+     0.931
+    ],
+    [
+     0.931,
+     1.052
+    ],
+    [
+     1.052,
+     1.81
+    ]
+   ]
+  },
+  "L16": {
+   "text": "on Tuesday, it's past the blue boats.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.603
+    ],
+    [
+     0.629,
+     1.0
+    ],
+    [
+     1.0,
+     1.672
+    ]
+   ]
+  },
+  "L17": {
+   "text": "by Thursday, it's a dot out on the point.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.776,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.716,
+     1.026
+    ],
+    [
+     1.026,
+     1.199
+    ],
+    [
+     1.199,
+     1.776
+    ]
+   ]
+  },
+  "L18": {
+   "text": "she never looks back at the hut. not once.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.19,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     0.768
+    ],
+    [
+     0.768,
+     1.172
+    ],
+    [
+     1.241,
+     1.931
+    ]
+   ]
+  },
+  "L19": {
+   "text": "she says she doesn't know why.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     0.922
+    ],
+    [
+     0.922,
+     1.397
+    ]
+   ]
+  },
+  "L20": {
+   "text": "so I decide what she really wants is to leave me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.681
+    ],
+    [
+     0.681,
+     0.879
+    ],
+    [
+     0.879,
+     1.328
+    ],
+    [
+     1.328,
+     1.517
+    ],
+    [
+     1.517,
+     2.138
+    ]
+   ]
+  },
+  "L21": {
+   "text": "every morning, a second deckchair is set out facing the sea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.172,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.69,
+     1.31
+    ],
+    [
+     1.31,
+     1.664
+    ],
+    [
+     1.664,
+     2.483
+    ]
+   ]
+  },
+  "L22": {
+   "text": "its canvas is stretched, and sagging, like somebody heavy just got up.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.017,
+   "onset": 0.172,
+   "end": 2.81,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     1.086
+    ],
+    [
+     1.155,
+     1.569
+    ],
+    [
+     1.594,
+     2.121
+    ],
+    [
+     2.121,
+     2.81
+    ]
+   ]
+  },
+  "L23": {
+   "text": "and the kettle is warm when nobody boiled it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.922
+    ],
+    [
+     0.922,
+     1.267
+    ],
+    [
+     1.267,
+     1.845
+    ]
+   ]
+  },
+  "L24": {
+   "text": "on Friday, at dusk, I look up from my laptop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.155,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.621,
+     0.983
+    ],
+    [
+     1.034,
+     1.353
+    ],
+    [
+     1.353,
+     2.155
+    ]
+   ]
+  },
+  "L25": {
+   "text": "Remi is gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.224,
+   "onset": 0.19,
+   "end": 1.017,
+   "chunks": [
+    [
+     0.19,
+     0.397
+    ],
+    [
+     0.397,
+     1.017
+    ]
+   ]
+  },
+  "L26": {
+   "text": "her scarf is on her deckchair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.716
+    ],
+    [
+     0.716,
+     1.414
+    ]
+   ]
+  },
+  "L27": {
+   "text": "her phone is wrapped inside it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.155,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.155,
+     0.457
+    ],
+    [
+     0.457,
+     0.759
+    ],
+    [
+     0.759,
+     1.448
+    ]
+   ]
+  },
+  "L28": {
+   "text": "the hut door swings open in the wind.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.155,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.155,
+     0.509
+    ],
+    [
+     0.509,
+     0.957
+    ],
+    [
+     0.957,
+     1.569
+    ]
+   ]
+  },
+  "L29": {
+   "text": "and in the window, her reflection is still walking away.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.172,
+     0.284
+    ],
+    [
+     0.284,
+     0.69
+    ],
+    [
+     0.741,
+     1.181
+    ],
+    [
+     1.181,
+     1.439
+    ],
+    [
+     1.439,
+     2.207
+    ]
+   ]
+  },
+  "L30": {
+   "text": "without her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.017,
+   "onset": 0.172,
+   "end": 0.81,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.81
+    ]
+   ]
+  },
+  "L31": {
+   "text": "I run the row of huts, calling her name.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.69,
+   "chunks": [
+    [
+     0.172,
+     0.353
+    ],
+    [
+     0.353,
+     0.56
+    ],
+    [
+     0.56,
+     0.845
+    ],
+    [
+     0.879,
+     1.69
+    ]
+   ]
+  },
+  "L32": {
+   "text": "in every window I pass, she's further down the shore.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     1.086
+    ],
+    [
+     1.138,
+     1.466
+    ],
+    [
+     1.466,
+     2.224
+    ]
+   ]
+  },
+  "L33": {
+   "text": "and I'm in none of them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.716
+    ],
+    [
+     0.716,
+     1.207
+    ]
+   ]
+  },
+  "L34": {
+   "text": "at the last hut, she's a dot, and the light is going.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.414,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.293
+    ],
+    [
+     0.293,
+     0.655
+    ],
+    [
+     0.69,
+     1.207
+    ],
+    [
+     1.276,
+     1.578
+    ],
+    [
+     1.578,
+     2.224
+    ]
+   ]
+  },
+  "L35": {
+   "text": "so I go back, and I wait.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.655
+    ],
+    [
+     0.681,
+     1.328
+    ]
+   ]
+  },
+  "L36": {
+   "text": "in the doorway, with the laptop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     1.397
+    ]
+   ]
+  },
+  "L37": {
+   "text": "the second deckchair has turned.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.155,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.466,
+     0.768
+    ],
+    [
+     0.768,
+     1.414
+    ]
+   ]
+  },
+  "L38": {
+   "text": "it faces me now.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.138
+    ]
+   ]
+  },
+  "L39": {
+   "text": "the canvas creaks, and sags lower.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.759
+    ],
+    [
+     0.784,
+     1.121
+    ],
+    [
+     1.121,
+     1.655
+    ]
+   ]
+  },
+  "L40": {
+   "text": "then the lantern by my feet slowly comes on.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.026
+    ],
+    [
+     1.026,
+     1.983
+    ]
+   ]
+  },
+  "L41": {
+   "text": "something big is sitting right beside me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     0.966
+    ],
+    [
+     0.966,
+     1.81
+    ]
+   ]
+  },
+  "L42": {
+   "text": "its shadow spreads up the hut wall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.87
+    ],
+    [
+     0.87,
+     1.586
+    ]
+   ]
+  },
+  "L43": {
+   "text": "shoulders wider than the door. and a head the size of my fist.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.19,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.19,
+     0.492
+    ],
+    [
+     0.492,
+     0.784
+    ],
+    [
+     0.784,
+     1.207
+    ],
+    [
+     1.276,
+     1.526
+    ],
+    [
+     1.526,
+     1.914
+    ],
+    [
+     1.914,
+     2.534
+    ]
+   ]
+  },
+  "L44": {
+   "text": "I turn my head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     1.052
+    ]
+   ]
+  },
+  "L45": {
+   "text": "it's a person, built twice as wide.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.655,
+     1.086
+    ],
+    [
+     1.086,
+     1.707
+    ]
+   ]
+  },
+  "L46": {
+   "text": "in faded deckchair stripes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.586,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     1.397
+    ]
+   ]
+  },
+  "L47": {
+   "text": "its shoulders spill over both arms of the chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.155,
+   "onset": 0.172,
+   "end": 1.966,
+   "chunks": [
+    [
+     0.172,
+     0.56
+    ],
+    [
+     0.56,
+     0.931
+    ],
+    [
+     0.931,
+     1.337
+    ],
+    [
+     1.337,
+     1.966
+    ]
+   ]
+  },
+  "L48": {
+   "text": "and right on top, that tiny head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.724
+    ],
+    [
+     0.75,
+     1.569
+    ]
+   ]
+  },
+  "L49": {
+   "text": "its little head bends slowly down toward mine.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.207,
+   "onset": 0.172,
+   "end": 2.017,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.768
+    ],
+    [
+     0.768,
+     1.276
+    ],
+    [
+     1.276,
+     2.017
+    ]
+   ]
+  },
+  "L50": {
+   "text": "closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.914,
+   "onset": 0.172,
+   "end": 0.69,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ]
+   ]
+  },
+  "L51": {
+   "text": "then closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ]
+   ]
+  },
+  "L52": {
+   "text": "it looks at me, then at my laptop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.776,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.406
+    ],
+    [
+     0.406,
+     0.603
+    ],
+    [
+     0.655,
+     0.819
+    ],
+    [
+     0.819,
+     1.569
+    ]
+   ]
+  },
+  "L53": {
+   "text": "behind it, in the window, the chair is empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.155,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.155,
+     0.466
+    ],
+    [
+     0.492,
+     0.931
+    ],
+    [
+     0.974,
+     1.259
+    ],
+    [
+     1.259,
+     1.948
+    ]
+   ]
+  },
+  "L54": {
+   "text": "it has no reflection either.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.621,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.948
+    ],
+    [
+     0.948,
+     1.414
+    ]
+   ]
+  },
+  "L55": {
+   "text": "far down the shore, in the glass, Remi's reflection has stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.741,
+   "onset": 0.172,
+   "end": 2.552,
+   "chunks": [
+    [
+     0.172,
+     0.474
+    ],
+    [
+     0.474,
+     0.828
+    ],
+    [
+     0.854,
+     1.259
+    ],
+    [
+     1.31,
+     1.906
+    ],
+    [
+     1.906,
+     2.552
+    ]
+   ]
+  },
+  "L56": {
+   "text": "it's sitting next to a small figure in my coat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.75
+    ],
+    [
+     0.75,
+     1.285
+    ],
+    [
+     1.285,
+     1.948
+    ]
+   ]
+  },
+  "L57": {
+   "text": "your reflection does what you really want.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.707,
+     0.862
+    ],
+    [
+     0.862,
+     1.077
+    ],
+    [
+     1.077,
+     1.793
+    ]
+   ]
+  },
+  "L58": {
+   "text": "so all this time, mine has been out there, doing it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.793
+    ],
+    [
+     0.845,
+     1.207
+    ],
+    [
+     1.207,
+     1.483
+    ],
+    [
+     1.517,
+     2.086
+    ]
+   ]
+  },
+  "L59": {
+   "text": "walking the shore with her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.172,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.207
+    ]
+   ]
+  },
+  "L60": {
+   "text": "I shut the laptop.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.172,
+   "end": 1.103,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.103
+    ]
+   ]
+  },
+  "L61": {
+   "text": "I leave it in my chair, and I walk.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.466,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.828
+    ],
+    [
+     0.854,
+     1.466
+    ]
+   ]
+  },
+  "L62": {
+   "text": "in every hut window I pass, I'm there. at last.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.276,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.819
+    ],
+    [
+     0.819,
+     1.138
+    ],
+    [
+     1.164,
+     1.569
+    ],
+    [
+     1.647,
+     2.276
+    ]
+   ]
+  },
+  "L63": {
+   "text": "Remi is on the bench, cold, and smiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     0.845
+    ],
+    [
+     0.922,
+     1.172
+    ],
+    [
+     1.199,
+     1.931
+    ]
+   ]
+  },
+  "L64": {
+   "text": "she says she followed it, to see where it went.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.19,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.19,
+     0.431
+    ],
+    [
+     0.431,
+     0.879
+    ],
+    [
+     0.905,
+     1.121
+    ],
+    [
+     1.121,
+     1.793
+    ]
+   ]
+  },
+  "L65": {
+   "text": "her reflection was following mine. the whole time.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.379,
+   "onset": 0.155,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.155,
+     0.578
+    ],
+    [
+     0.578,
+     0.983
+    ],
+    [
+     0.983,
+     1.328
+    ],
+    [
+     1.397,
+     2.172
+    ]
+   ]
+  },
+  "L66": {
+   "text": "that's why it never looked back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.397,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.776
+    ],
+    [
+     0.776,
+     1.397
+    ]
+   ]
+  },
+  "L67": {
+   "text": "it was keeping me in sight.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.466,
+   "onset": 0.172,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.172,
+     0.345
+    ],
+    [
+     0.345,
+     0.707
+    ],
+    [
+     0.707,
+     1.276
+    ]
+   ]
+  },
+  "L68": {
+   "text": "I sit down beside her.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.155,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     1.276
+    ]
+   ]
+  },
+  "L69": {
+   "text": "in the puddle at our feet, two reflections sit exactly like us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.914,
+   "onset": 0.172,
+   "end": 2.724,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.517,
+     1.0
+    ],
+    [
+     1.077,
+     1.664
+    ],
+    [
+     1.664,
+     2.155
+    ],
+    [
+     2.155,
+     2.724
+    ]
+   ]
+  },
+  "L70": {
+   "text": "she tells me about the paint colors the whole way back. I listen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.897,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.526
+    ],
+    [
+     0.526,
+     0.707
+    ],
+    [
+     0.707,
+     1.207
+    ],
+    [
+     1.207,
+     1.448
+    ],
+    [
+     1.448,
+     1.948
+    ],
+    [
+     2.034,
+     2.69
+    ]
+   ]
+  },
+  "L71": {
+   "text": "at the hut, the second deckchair is empty when I sit in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.5,
+   "onset": 0.172,
+   "end": 2.31,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     0.828
+    ],
+    [
+     0.828,
+     1.138
+    ],
+    [
+     1.138,
+     1.509
+    ],
+    [
+     1.509,
+     1.862
+    ],
+    [
+     1.862,
+     2.31
+    ]
+   ]
+  },
+  "L72": {
+   "text": "all summer, my laptop stays shut in the hut.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     1.233
+    ],
+    [
+     1.233,
+     1.388
+    ],
+    [
+     1.388,
+     1.983
+    ]
+   ]
+  },
+  "L73": {
+   "text": "every evening, we walk the shore, and our reflections keep our pace.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.966,
+   "onset": 0.172,
+   "end": 2.776,
+   "chunks": [
+    [
+     0.172,
+     0.603
+    ],
+    [
+     0.629,
+     0.897
+    ],
+    [
+     0.897,
+     1.362
+    ],
+    [
+     1.431,
+     2.0
+    ],
+    [
+     2.0,
+     2.776
+    ]
+   ]
+  },
+  "L74": {
+   "text": "in this town, your reflection does what you really want.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.172,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.759,
+     1.259
+    ],
+    [
+     1.259,
+     1.406
+    ],
+    [
+     1.406,
+     1.612
+    ],
+    [
+     1.612,
+     2.345
+    ]
+   ]
+  },
+  "L75": {
+   "text": "mine walks with Remi.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.414,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.612
+    ],
+    [
+     0.612,
+     1.207
+    ]
+   ]
+  },
+  "L76": {
+   "text": "it was already out there before I woke.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     0.845
+    ],
+    [
+     0.845,
+     1.655
+    ]
+   ]
   }
  }
 }

@@ -1913,7 +1913,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "high wide of the sand, figures and reflections, the magenta figure",
-   "at": "L02.2"
+   "at": "L02.2+0.3"
   },
   {
    "id": "S06",
@@ -9872,7 +9872,7 @@
    "zoom": 1.1
   },
   {
-   "at": "L02.2",
+   "at": "L02.2+0.3",
    "kind": "punch",
    "dur": 0.35,
    "zoom": 1.08
@@ -10030,7 +10030,7 @@
     "dur": 0.4
    },
    {
-    "at": "L02.2",
+    "at": "L02.2+0.3",
     "kind": "whoosh",
     "db": -20,
     "dur": 0.5
