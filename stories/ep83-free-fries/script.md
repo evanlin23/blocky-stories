@@ -5,7 +5,7 @@
 - **Title:** Free Fries, One RULE 🍟
 - **Word count:** 321 spoken words in 43 lines, all `narrator`, plus one 0.6 s music drop before L20.
 - **Estimated length:** about 74 s at 290 wpm with 0.15 s gaps, the drop and the loop tail. If it runs over 88 s, cut L07 first. If it lands under 62 s, nothing is added.
-- **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright retro diner in afternoon sun: mint, bubblegum pink, chrome, gold fries. The one strange-lit beat is L20 to L27, the view through the kitchen door's round window into our kitchen at home (warm lamplight, still bright). Every light change ramps over 0.3 s or more.
+- **Look:** `"look": {"style": "closer", "flash_safe": true, "polish": true}`. A bright retro diner in afternoon sun: mint, bubblegum pink, chrome, gold fries. The one strange-lit beat is L20 to L27, the view through the kitchen door's round window into Mom's kitchen across town (warm lamplight, still bright). Every light change ramps over 0.3 s or more.
 - **Hold:** scripts only (batch 7). Not built, not voiced.
 
 ## Variety table
@@ -13,9 +13,9 @@ The batch table is in `stories/ep80-snow-globe/script.md`. This row:
 
 | Setting | Rule type | Creature | Line 1 shape | Twist shape | Palette | Music mood | Warmth |
 |---|---|---|---|---|---|---|---|
-| one diner booth by the order hatch, in afternoon sun | a price for free food | none: two yellow gloves in the hatch, Mom in a trance at our stove | cost | `who-pays` | mint, bubblegum pink, chrome, fry gold | bouncy diner shuffle, F major, 132 BPM, then wobbly | a best friend and Mom: we cook for her |
+| one diner booth by the order hatch, in afternoon sun | a price for free food | none: two yellow gloves in the hatch, Mom in a trance at her stove | cost | `who-pays` | mint, bubblegum pink, chrome, fry gold | bouncy diner shuffle, F major, 132 BPM, then wobbly | a best friend and Mom: we cook for her |
 
-Against this week's other stories: no drive-thru window (ep71-two-windows), no buying time (dryer-nine), no copy of anyone (ep62), no sleepwalking out of the house (ep41: Mom never leaves our kitchen), no monster fed under the town (the pitch's idea, dropped so this doesn't share a food-for-a-monster shape with ep82).
+Against this week's other stories: no drive-thru window (ep71-two-windows), no buying time (dryer-nine), no copy of anyone (ep62), no sleepwalking out of the house (ep41: Mom never leaves her kitchen), no monster fed under the town (the pitch's idea, dropped so this doesn't share a food-for-a-monster shape with ep82).
 
 ## The big idea
 **The free fries are cooked by whoever cooks for you most, in their own kitchen at home, with their eyes shut, and they never know they did it: my mom has been frying mine, and my best friend's, every afternoon for years.**
@@ -25,23 +25,23 @@ Against this week's other stories: no drive-thru window (ep71-two-windows), no b
 - **The rule is the clue:** "The fries here are FREE" first reads as a perk with a creepy rule. After the reveal, nothing is free: someone at home is paying with their afternoons, and L02 ("you'll see who's PAYING") is literal.
 
 ## The story
-- **Premise:** At this diner the fries are free, forever, and two yellow gloves slide every basket out of the hatch. Nobody's seen the cook, and the one rule is never look in the kitchen. My best friend Omar and I are broke, so we're in the same booth every day at four. My fries taste exactly like my mom's, our kitchen at home smells of fries every evening though nobody's cooked, and Mom is asleep on the couch by five every day. Omar bets me his last dollar I won't look.
+- **Premise:** At this diner the fries are free, forever, and two yellow gloves slide every basket out of the hatch. Nobody's seen the cook, and the one rule is never look in the kitchen. My best friend Omar and I are broke, so we're in the same booth every day at four. My fries taste exactly like my mom's, Mom's kitchen across town smells of fries every evening though nobody's cooked, and Mom is asleep on the couch by five every day. Omar bets me his last dollar I won't look.
 - **Rule / hook (L01, about 2.3 s):** "The fries here are FREE. / Just never look / in the KITCHEN." L02 tightens it: "If you LOOK, / you'll see / who's PAYING."
 - **The relatable want:** two broke best friends and free food, and a dare.
 - **The marker (the rule meter), on screen by frame 1 and in every shot:** the price over the hatch, a round chrome sign with glowing pink digits `0.00` and a fry glyph (numbers only). Every shot has the sign, its glow or its reflection (the chrome napkin box, the porthole glass). At L28 the digits ramp to gold for one shot.
 - **The 3 to 5 example montage (L03 to L08, first 14 s):** sit down and the bell dings (L03), a basket slides out of the hatch (L04), two yellow gloves are all you see (L05), everybody's gloves are a little different (L06), old Mr. Haskins has had free fries every day for forty years (L07), nobody's seen the cook (L08).
 - **A concrete mystery on screen by 15 s:** the gloves in the hatch, never a face, and every pair a little different (L05, L06).
 - **How the narrator is the exception:** everyone obeys the rule. I look.
-- **The loved one at stake:** my mom (named at L12 by her fries and seen at L23 at our stove) and my best friend, Omar (named at L09 in the same shot as him in the booth).
+- **The loved one at stake:** my mom (named at L12 by her fries and seen at L23 at her stove) and my best friend, Omar (named at L09 in the same shot as him in the booth).
 - **The rule broken:** L20, about 32 s in.
-- **First real scare:** L22 to L27 (33 to 41 s): through the round window is our kitchen at home, Mom at our stove with her eyes shut, and then her eyes open and look straight at me.
+- **First real scare:** L22 to L27 (33 to 41 s): through the round window is Mom's kitchen across town, Mom at her stove with her eyes shut, and then her eyes open and look straight at me.
 - **The climax turns the rule's own logic:** the rule says whoever cooks for you most makes your fries. So Omar and I start cooking dinner for Mom every night, until we're who cooks for her most, and her fries are ours (L36 to L40). No new magic.
 - **Twist and reveal (L28 to L31, 42 to 47 s):** said plainly. "That's who PAYS. / Whoever cooks for you MOST / makes your fries, / in their OWN kitchen. / They never KNOW / they did it."
 - **How the last 15 seconds turn over the first line:** Mom feels rested, and then the funny sting: the second Mom orders, wherever Omar and I are, we blink and we're at our stove holding a fry basket (L41, L42). The fries are still free, and now we're the ones paying. The last line ("So if you're ever HUNGRY,") runs into L01.
 - **The plants a rewatch catches:**
   1. L06: everybody's gloves are a little different (each pair is someone's own kitchen gloves).
   2. L11, L12: my fries taste exactly like my mom's.
-  3. L13 to L16: our kitchen smells of fries with nobody cooking, and Mom's asleep on the couch by five.
+  3. L13 to L16: Mom's kitchen smells of fries with nobody cooking, and Mom's asleep on the couch by five.
   4. Unnarrated: my basket's gloves, from S04 on, are the same yellow gloves that hang by our sink at L23.
 - **Ending shape:** a turn of the rule done on purpose, a funny-cold sting, and a loop.
 - **Warmth:** friendship and Mom, shown: Omar and I at our stove making Mom dinner, Mom laughing at the table.
@@ -61,7 +61,7 @@ Against this week's other stories: no drive-thru window (ep71-two-windows), no b
 
 ## World
 One place: a small bright retro diner in afternoon sun. A long counter with chrome stools, mint vinyl booths with bubblegum-pink piping, a black-and-white checker floor, chrome napkin boxes and red and yellow squeeze bottles (no labels), a jukebox of colored lights only, big windows onto a sunny street. Behind the counter, a steel order hatch with a little brass bell, and beside it a swinging kitchen door with one round window. The `0.00` sign hangs above the hatch.
-- **Through the round window (L20 to L27, L29, L34):** never a diner kitchen. It's our kitchen at home: a small yellow kitchen with a white stove, a fry basket in a pot of oil, a window over the sink with Mom's yellow rubber gloves hanging by it, a fridge with plain magnets. Mom at the stove in her clothes from work.
+- **Through the round window (L20 to L27, L29, L34):** never a diner kitchen. It's Mom's kitchen across town: a small yellow kitchen with a white stove, a fry basket in a pot of oil, a window over the sink with Mom's yellow rubber gloves hanging by it, a fridge with plain magnets. Mom at the stove in her clothes from work.
 - **No text anywhere.** The sign is numerals and a glyph.
 - **What's true underneath (never said beyond the reveal):** every basket is made by whoever cooks for that customer most, at their own stove, eyes shut, for a few minutes each afternoon, and it comes out of the hatch. They wake up tired and never remember. Nobody is ever hurt, and the oil never spits.
 
@@ -73,13 +73,13 @@ One place: a small bright retro diner in afternoon sun. A long counter with chro
 Every word is the narrator's. L15 and L40 are reported.
 
 ## The creature
-There isn't one. The eerie is the hatch (two yellow gloves, never a face) and Mom at our stove with her eyes shut, then open and staring. She never leaves our kitchen and never comes through the window. She's shown clearly and well lit.
+There isn't one. The eerie is the hatch (two yellow gloves, never a face) and Mom at her stove with her eyes shut, then open and staring. She never leaves her kitchen and never comes through the window. She's shown clearly and well lit.
 - **Continuity:**
   | Beat | Lines | Mom | The hatch |
   |---|---|---|---|
   | Montage | L01 to L14 | unseen | yellow gloves sliding baskets |
-  | At home, evening | L15, L16 | on our couch asleep, `asleep` | |
-  | The look | L20 to L24 | at our stove through the round window, eyes shut, lowering the basket into the oil | |
+  | At home, evening | L15, L16 | on her couch asleep, `asleep` | |
+  | The look | L20 to L24 | at her stove through the round window, eyes shut, lowering the basket into the oil | |
   | Eyes open | L25 to L27 | at the stove, eyes open, looking straight at me through the window, `stare` | |
   | Omar's basket | L33, L34 | through the window, setting a second basket in the oil | gloves sliding Omar's basket out |
   | Dinner | L36 to L38 | at our table, `laugh` | |
@@ -117,7 +117,7 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | S10 | L10 | 16.0 | The diner's round wall clock (hands only) at four. |
 | S11 | L11 | 17.6 | Top-down on our table: two gold baskets, one each. |
 | S12 | L12 | 18.6 | Me tasting a fry, eyes closed, `soft`. |
-| S13 | L13 | 20.0 | Evening, our kitchen at home: the stove cold, the fry smell shown as a soft gold shimmer. |
+| S13 | L13 | 20.0 | Evening, Mom's kitchen across town: the stove cold, the fry smell shown as a soft gold shimmer. |
 | S14 | L14 | 22.2 | The cold empty pot on the stove. |
 | S15 | L15 | 22.8 | Mom at the kitchen table rubbing her eyes, `tired`. |
 | S16 | L16 | 24.6 | Mom asleep on the couch, her glasses on her nose, the window gold with late sun. |
@@ -127,14 +127,14 @@ Times are estimates. A cut or punch-in every 1 to 2 s, nothing held over 2 s. Th
 | (drop) | | 31.2 | 0.6 s: the round window, still. |
 | S20 | L20 | 31.8 | Me leaning to the glass, `worried`. |
 | S21 | L21 | 32.4 | Through the window: no diner kitchen. A blur of butter yellow. |
-| S22 | L22 | 33.4 | It sharpens: our kitchen at home, the fridge, the window over the sink. |
-| S23 | L23 | 35.2 | Mom at our stove in her lilac cardigan, eyes shut, calm, `blank`. Cover frame. |
+| S22 | L22 | 33.4 | It sharpens: Mom's kitchen across town, the fridge, the window over the sink. |
+| S23 | L23 | 35.2 | Mom at her stove in her lilac cardigan, eyes shut, calm, `blank`. Cover frame. |
 | S24 | L24 | 37.0 | Her hands at the end of her sleeves, lowering the basket into the oil (no grip shown, the basket handle already in place). |
 | S25 | L25 | 38.2 | Close: her eyes open. |
 | S26 | L26 | 39.1 | Her face straight to camera through the round glass, `stare`. |
 | S27 | L27 | 40.3 | My face on my side of the glass, `scared`, the sign's glow on my cheek. |
 | S28 | L28 | 41.7 | The `0.00` sign, its digits ramping from pink to gold. |
-| S29 | L29 | 42.5 | Two shots: the hatch gloves, then Mom's hands at our stove, the same yellow gloves (the pair from by our sink). |
+| S29 | L29 | 42.5 | Two shots: the hatch gloves, then Mom's hands at her stove, the same yellow gloves (the pair from by her sink). |
 | S30 | L30 | 45.1 | Mom asleep on the couch (S16 framing). |
 | S31 | L31 | 46.5 | Mom at the table, `tired`. |
 | S32 | L32 | 47.7 | Mom's kitchen at home from the doorway, a pot on, warm light. |
@@ -167,7 +167,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L10: So after our SHIFTS, / we're here every day at FOUR.
 - L11: Same booth. / Two BASKETS.
 - L12: Mine taste EXACTLY / like my mom's.
-- L13: And every EVENING, / our kitchen at HOME / smells like FRIES.
+- L13: And every EVENING, / my mom's KITCHEN, / across town, / smells like FRIES.
 - L14: Nobody's COOKED.
 - L15: Mom keeps saying / she's never been so TIRED.
 - L16: She's asleep on the COUCH / by five, / every DAY.
@@ -177,8 +177,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - (music drop, 0.6 s)
 - L20: I LOOKED.
 - L21: There was no KITCHEN.
-- L22: Through the window / was OUR kitchen. / At HOME.
-- L23: And my MOM, / at our stove, / eyes SHUT,
+- L22: Through the window / was my MOM'S kitchen. / Across TOWN.
+- L23: And MOM, / at her stove, / eyes SHUT,
 - L24: lowering fries / into the OIL.
 - L25: Then her eyes / OPENED.
 - L26: She looked right / at ME.
@@ -190,8 +190,8 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L32: And Mom's cooked for me / every day / of my LIFE.
 - L33: Then Omar's basket / came out of the HATCH.
 - L34: And through the window, / I watched Mom / make his TOO.
-- L35: He's at our house / for dinner / most NIGHTS.
-- L36: So that night, / Omar and I / made Mom DINNER.
+- L35: He's at Mom's / for dinner / most NIGHTS.
+- L36: So that night, / Omar and I / cooked Mom DINNER, / at OUR place.
 - L37: And the night AFTER.
 - L38: And EVERY night since.
 - L39: Now when Mom / gets fries here / on her lunch BREAK, / WE'RE the ones / who cook for her MOST.
