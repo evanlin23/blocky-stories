@@ -620,12 +620,12 @@ def crown_image(path, mouth):
     pts = []
     for i in range(48):
         a_ = 2 * math.pi * i / 48
-        j = 1.0 + 0.04 * r2.standard_normal()
+        j = 1.0 + 0.02 * r2.standard_normal()
         pts.append((c + math.cos(a_) * mw * R * j, my + math.sin(a_) * mh * R * j))
     hole = Image.new("L", (n, n), 0)
     ImageDraw.Draw(hole).polygon(pts, fill=255)
-    hole = hole.filter(ImageFilter.GaussianBlur(4))
-    im.paste(Image.new("RGB", (n, n), (3, 2, 3)), (0, 0), hole)
+    hole = hole.filter(ImageFilter.GaussianBlur(1.2)).point(lambda v: 255 if v > 100 else 0)
+    im.paste(Image.new("RGB", (n, n), (0, 0, 0)), (0, 0), hole)
     im.save(path)
 
 
@@ -658,7 +658,11 @@ def build_upward(kit, ctx, M, workdir):
     m = kit._new("crown face")
     nt = m.node_tree
     bsdf = nt.nodes["Principled BSDF"]
-    bsdf.inputs["Roughness"].default_value = 0.55
+    bsdf.inputs["Roughness"].default_value = 0.9
+    for k_ in ("Specular IOR Level", "Specular"):
+        if k_ in bsdf.inputs:
+            bsdf.inputs[k_].default_value = 0.0
+            break
     tex = nt.nodes.new("ShaderNodeTexImage")
     tex.image = imgs[0]
     uvn = nt.nodes.new("ShaderNodeUVMap")
