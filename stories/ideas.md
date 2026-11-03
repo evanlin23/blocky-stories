@@ -34,7 +34,7 @@ Four stories for PandaNanoAdventures. The writer reads all four so none drifts i
 
 | # | Story (name for the story folder) | Setting | Creature | First line is... | Kind of warmth |
 |---|---|---|---|---|---|
-| 1 | `floor-thirteen` (in production elsewhere, ep14 to ep17) | apartment-tower lift | the Attendant, a button-panel face | a sound | two strangers become friends |
+| 1 | `floor-thirteen` (redone 2026-11-02 as r4, see the note under section 1) | apartment-tower lift and its thirteenth floor of forgotten things | the Attendant, a button-panel face, a brass tag on its gloves | the rule ("In this BUILDING, everything you FORGET turns up on floor THIRTEEN.") | family: I fetch myself back for Grandad |
 | 2 | `mirror-maze` (in production elsewhere, ep14 to ep17) | an end-of-season fairground mirror maze | the copy, my best friend gone slightly wrong | an inside joke | loyalty: I go back in for my friend |
 | 3 | `lookout` (in production elsewhere, ep14 to ep17) | a forest fire-lookout tower, alone, in autumn | the Walker, a huge giant of logs and moss | a question | I'm the one who helps: I guide it home |
 | 4 | `moving-day` (in production elsewhere, ep14 to ep17) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes | mid-scare | home: Mum laughs again |
@@ -46,6 +46,8 @@ These are pitches. The scriptwriter writes each one in full and may change detai
 ---
 
 ## 1. `floor-thirteen`: "Our building doesn't have a thirteenth floor"
+
+**Redone 2026-11-02 (r4), on hold until it passes review.** The old pitch below is history: its first line (a DING) stated no rule. The redo keeps the tower, the lift, the Attendant, the twelve landing and the balconies, and changes the rest. Rule type: forgetting. World rule: everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it (keys, an anniversary as a cake, a first boyfriend doing the crossword). I've never forgotten anything. The lift starts taking me past twelve to a dark thirteen, the Attendant nearer each time with a brass tag bearing my flat number. Twist (shape `lost-property`): I'm the thing that turned up, because Grandad next door has forgotten me. Climax: nothing on thirteen is gone, and what you fetch you remember, so I fetch the red scarf he knits me and he says my name. Sting: most mornings I go up and fetch myself back. Never reuse: the lost-property floor of forgotten things, a person as the forgotten item, the brass tag with a flat number. Mr. Okafor is now Grandad and the friendship warmth is gone. See `stories/floor-thirteen/script.md`.
 
 - **First line, a sound:** "DING. / Floor THIRTEEN. / Our building / doesn't HAVE one."
 - **Cast:** me, an adult who moved into the tower this year, and Mr. Okafor from 12B.
