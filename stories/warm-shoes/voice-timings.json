@@ -6,58 +6,58 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "never keep the shoes our cat brings home, they're still warm.",
+   "text": "every night, our cat brings home shoes. they're always still warm.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.2154,
-   "dur": 2.379,
-   "onset": 0.138,
-   "end": 2.207,
+   "tempo": 1.4008,
+   "dur": 2.0,
+   "onset": 0.103,
+   "end": 1.845,
    "chunks": [
     [
-     0.138,
-     0.388
+     0.103,
+     0.31
     ],
     [
-     0.388,
-     0.595
+     0.336,
+     0.543
     ],
     [
-     0.595,
-     0.862
+     0.543,
+     1.086
     ],
     [
-     0.862,
-     1.345
+     1.129,
+     1.337
     ],
     [
-     1.414,
-     2.207
+     1.337,
+     1.845
     ]
    ]
   },
   "L02": {
-   "text": "even if they're your size.",
+   "text": "never keep them. even if they're your size.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
-   "onset": 0.172,
-   "end": 1.31,
+   "dur": 2.138,
+   "onset": 0.19,
+   "end": 1.931,
    "chunks": [
     [
-     0.172,
-     0.466
+     0.19,
+     0.759
     ],
     [
-     0.466,
-     0.75
+     0.836,
+     1.103
     ],
     [
-     0.75,
-     1.31
+     1.103,
+     1.931
     ]
    ]
   },
@@ -1742,7 +1742,7 @@
    ]
   },
   "L66e": {
-   "text": "the pair kept inside means somebody walks home alone.",
+   "text": "a pair kept inside means somebody walks home alone.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,

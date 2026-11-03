@@ -184,7 +184,7 @@ pairs(0, sneaker=pr(MATP, 160, True))
 cat(0, (0.1, -0.95, DECK + 0.07), yaw=-90, to=[-1.1, -0.95, DECK + 0.07], dur=0.9, tail="up")
 S(0, FRAME1, M, dof=[0.85, 2.4], fill=0.6,
   note="frame 1: the steaming pair on the mat, rail row and chalk 8 soft behind, a tail tip leaving")
-S("L01.3", C((0.62, -0.97, 0.6), 0.55, 200, 28, 30, d2=0.38), M, dof=[0.5, 2.0], hand=0.004,
+S("L01.4", C((0.62, -0.97, 0.6), 0.55, 200, 28, 30, d2=0.38), M, dof=[0.5, 2.0], hand=0.004,
   note="steam rising off the toes on WARM")
 pairs("L02", oldsneak=pr((0.32, -0.88, 0.47), 165, False))
 S("L02", C((0.47, -0.9, 0.5), 0.8, 20, 80, 30, d2=0.5), M, hand=0.003, note="top-down: the same shoe beside the left warm one")
