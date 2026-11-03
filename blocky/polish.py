@@ -45,7 +45,7 @@ DEFAULTS = {
     # captions
     "pop": True,
     # motion
-    "push": 0.12, "reframe_every": 0.8, "reframe_min": 1.6, "reframe_zoom": 1.14, "max_zoom": 1.18,
+    "push": 0.12, "reframe_every": 0.8, "reframe_min": 1.6, "reframe_zoom": 1.14, "max_zoom": 1.15,
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
     "ones": "moving", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
     # picture
@@ -405,17 +405,25 @@ def reframe_times(tl: dict, p: dict) -> list[float]:
     calm = set((tl.get("motion") or {}).get("calm_shots") or [])
     quiet = _quiet_cache(tl, p)
     caps = [c["start"] for c in tl["captions"]]
-    for s in tl["shots"]:
+    hold = set(p.get("hold") or [])
+    shots = tl["shots"]
+    for i, s in enumerate(shots):
         L = s["end"] - s["start"]
-        if L < p.get("reframe_min", 1.6) or s["id"] in calm or s["id"] in (p.get("hold") or []):
+        if L < p.get("reframe_min", 1.6) or s["id"] in calm or s["id"] in hold:
             continue
         if any(a < s["end"] and b > s["start"] for a, b in quiet):
             continue
+        # no angle cut in the 2 s before a quiet span (a warm beat starts calm), and none in the last 1.0 s before
+        # a held or reveal shot (a crop jump straight into a full frame reads as a stutter; critic, ep32 round 3)
+        nxt = shots[i + 1] if i + 1 < len(shots) else None
+        end_gap = 1.0 if nxt and (nxt["id"] in hold or nxt["id"] in calm) else 0.6
+        lead_ins = [a for a, b in quiet if b - a > 1.0 + 1e-6]
         nseg = max(2, int(round(L / rf)))
         last = s["start"]
         for i in range(1, nseg):
             want = s["start"] + i * L / nseg
-            near = [c for c in caps if abs(c - want) <= 0.35 and c - last >= 0.6 and s["end"] - c >= 0.6]
+            near = [c for c in caps if abs(c - want) <= 0.35 and c - last >= 0.6 and s["end"] - c >= end_gap
+                    and not any(0 <= a - c < 2.0 for a in lead_ins)]
             if near:
                 last = min(near, key=lambda c: abs(c - want))
                 out.append(last)
@@ -449,7 +457,9 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         side = 1 if (k // 2) % 2 == 0 else -1
         dx = side * d * 0.15 * (e - 0.5)
     calm = shot["id"] in ((tl.get("motion") or {}).get("calm_shots") or [])
-    held = shot["id"] in (p.get("hold") or [])   # the builder's frame-exact shots: no pace crop at all
+    # the builder's frame-exact shots, and shots touching a quiet span (a warm beat): no pace crop at all
+    held = shot["id"] in (p.get("hold") or []) or any(a < shot["end"] and b > shot["start"]
+                                                      for a, b in _quiet_cache(tl, p) if b - a > 1.0 + 1e-6)
     if p.get("push") and not held:
         # pace (v2.3, craft metrics blocks 2026-11-03): a steady crop push through every shot, in on one shot and
         # out on the next, at a constant rate so every 0.25 s reads as a change (an eased move stalls at its ends)
