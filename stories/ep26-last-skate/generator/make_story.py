@@ -386,7 +386,7 @@ for i in range(len(LAP)):
 
 # ---- Lenny at the booth
 put("lenny", 0, [0.0, 5.5, 1.74], yaw=0, expr="neutral")
-key("lenny", "L25.3", arms=[0, 150], expr="grin", blend=0.3)
+key("lenny", "L25.3", arms=[0, 100], expr="grin", blend=0.9)
 key("lenny", "L25>", arms=[0, 0], blend=0.5)
 key("lenny", "L54", expr="grin", head=[10, 0])
 key("lenny", "L61", expr="grin", lean=14, arms=[0, 165], head=[0, 0], blend=0.4)
