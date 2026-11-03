@@ -34,6 +34,7 @@ How a story is built and rendered. The house rules are in `RULES.md`; this is th
             "contrast": 1.05, "vignette": 0.35, "bloom": 0.35, "grain": 0.012},
   "rain_shots": ["S1"],           // optional
   "tail": 0.9,                    // seconds after the last word; 0 ends on picture (a loop), no fade at either end
+  "fade_in": true,                // optional; false skips the 4-frame fade up from black at the start (a loop that cuts straight into frame 0)
   "fade_out": true,               // optional; false keeps the picture bright to the last frame (no dip to dark in the last 0.2 s) when a tail is set
   "cast": {"me": {"age": "adult", "skin": "#f1c9a0", ... rig.py's spec ...}},
   "lines": [

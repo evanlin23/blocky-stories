@@ -6,225 +6,169 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "The box was taped shut. From the inside.",
+   "text": "In this town, a house grows to fit the tallest one living in it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.155,
-   "onset": 0.155,
-   "end": 1.948,
+   "dur": 2.828,
+   "onset": 0.172,
+   "end": 2.638,
    "chunks": [
     [
-     0.155,
-     0.423
+     0.172,
+     0.655
     ],
     [
-     0.423,
-     1.017
+     0.707,
+     1.241
     ],
     [
-     1.086,
-     1.948
+     1.241,
+     1.457
+    ],
+    [
+     1.457,
+     2.0
+    ],
+    [
+     2.0,
+     2.638
     ]
    ]
   },
   "L02": {
-   "text": "I'd peeled the outside tape. The flaps still held.",
+   "text": "Tall families live in towers.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.9784999999999999,
-   "dur": 2.552,
+   "tempo": 1.03,
+   "dur": 1.707,
    "onset": 0.172,
-   "end": 2.345,
+   "end": 1.517,
    "chunks": [
     [
      0.172,
-     0.509
+     0.655
     ],
     [
-     0.509,
-     1.207
-    ],
-    [
-     1.276,
-     1.621
-    ],
-    [
-     1.621,
-     2.345
+     0.655,
+     1.517
     ]
    ]
   },
   "L03": {
-   "text": "It was the bottom box of a stack taller than the door.",
+   "text": "When a tall lodger moves out, the ceiling comes down a hand a night.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.328,
+   "dur": 2.914,
    "onset": 0.155,
-   "end": 2.138,
+   "end": 2.724,
    "chunks": [
     [
      0.155,
-     0.336
+     0.483
     ],
     [
-     0.336,
-     0.905
+     0.483,
+     0.707
     ],
     [
-     0.905,
-     1.25
+     0.707,
+     1.138
     ],
     [
-     1.25,
-     2.138
+     1.207,
+     1.552
+    ],
+    [
+     1.552,
+     1.923
+    ],
+    [
+     1.923,
+     2.199
+    ],
+    [
+     2.199,
+     2.724
     ]
    ]
   },
   "L04": {
-   "text": "And on the top box, in black marker, a frown.",
+   "text": "And nobody wears a tall hat to dinner.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.19,
+   "dur": 1.966,
    "onset": 0.155,
-   "end": 1.983,
+   "end": 1.759,
    "chunks": [
     [
      0.155,
-     0.302
+     0.552
     ],
     [
-     0.302,
-     0.793
+     0.552,
+     0.716
     ],
     [
-     0.819,
-     1.328
+     0.716,
+     1.19
     ],
     [
-     1.353,
-     1.983
+     1.19,
+     1.759
     ]
    ]
   },
   "L05": {
-   "text": "The new house is smaller, with low ceilings.",
+   "text": "Our old house was a ladder taller than any of us.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.052,
+   "dur": 2.379,
    "onset": 0.172,
-   "end": 1.862,
+   "end": 2.19,
    "chunks": [
     [
      0.172,
-     0.534
+     0.707
     ],
     [
-     0.534,
-     0.914
+     0.707,
+     1.129
     ],
     [
-     0.94,
-     1.862
+     1.129,
+     1.414
+    ],
+    [
+     1.414,
+     1.715
+    ],
+    [
+     1.715,
+     2.19
     ]
    ]
   },
   "L06": {
-   "text": "The old one got sold, and Mum hasn't laughed since.",
+   "text": "It sold in the spring, The new one fits me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.483,
+   "dur": 2.103,
    "onset": 0.155,
-   "end": 2.293,
+   "end": 1.914,
    "chunks": [
     [
      0.155,
-     0.466
-    ],
-    [
-     0.466,
-     1.017
-    ],
-    [
-     1.086,
-     1.534
-    ],
-    [
-     1.534,
-     2.293
-    ]
-   ]
-  },
-  "L07": {
-   "text": "She said, No more ladder to hang photos.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.017,
-   "onset": 0.19,
-   "end": 1.81,
-   "chunks": [
-    [
-     0.19,
-     0.466
-    ],
-    [
-     0.5,
-     0.94
-    ],
-    [
-     0.94,
-     1.81
-    ]
-   ]
-  },
-  "L08": {
-   "text": "Every box still smells like the old hall.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.172,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.603,
-     1.199
-    ],
-    [
-     1.199,
-     1.948
-    ]
-   ]
-  },
-  "L09": {
-   "text": "Mum left the old quilt packed. Too warm for it here.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.552,
-   "onset": 0.19,
-   "end": 2.345,
-   "chunks": [
-    [
-     0.19,
      0.492
     ],
     [
@@ -232,84 +176,92 @@
      0.931
     ],
     [
-     0.931,
-     1.293
+     0.983,
+     1.319
     ],
     [
-     1.371,
-     1.741
-    ],
-    [
-     1.741,
-     2.345
+     1.319,
+     1.914
     ]
    ]
   },
-  "L10": {
-   "text": "And every morning, her mug was on the front-room windowsill.",
+  "L07": {
+   "text": "Mum hasn't laughed since.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.69,
-   "onset": 0.155,
-   "end": 2.5,
+   "dur": 1.483,
+   "onset": 0.19,
+   "end": 1.276,
    "chunks": [
     [
-     0.155,
-     0.776
+     0.19,
+     0.552
     ],
     [
-     0.828,
-     1.155
-    ],
-    [
-     1.155,
-     1.388
-    ],
-    [
-     1.388,
-     2.5
+     0.552,
+     1.276
     ]
    ]
   },
-  "L11": {
-   "text": "Mum said, That's where I always kept it.",
+  "L08": {
+   "text": "She hung the old house photo at eye height.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.931,
-   "onset": 0.19,
-   "end": 1.741,
+   "onset": 0.172,
+   "end": 1.724,
    "chunks": [
     [
-     0.19,
-     0.569
+     0.172,
+     0.37
     ],
     [
-     0.595,
-     0.854
+     0.37,
+     0.552
     ],
     [
-     0.854,
-     1.207
+     0.552,
+     1.052
     ],
     [
-     1.207,
-     1.741
+     1.052,
+     1.724
     ]
    ]
   },
-  "L12": {
-   "text": "She didn't look up.",
+  "L09": {
+   "text": "She said, \"No more ladder.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.155,
+   "dur": 1.5,
    "onset": 0.19,
-   "end": 0.948,
+   "end": 1.276,
+   "chunks": [
+    [
+     0.19,
+     0.466
+    ],
+    [
+     0.517,
+     1.276
+    ]
+   ]
+  },
+  "L10": {
+   "text": "She never looks up. Old habit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.741,
+   "onset": 0.19,
+   "end": 1.552,
    "chunks": [
     [
      0.19,
@@ -317,215 +269,323 @@
     ],
     [
      0.431,
-     0.948
+     0.81
+    ],
+    [
+     0.879,
+     1.552
+    ]
+   ]
+  },
+  "L11": {
+   "text": "And, one box in our stack, nobody packed.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.1330000000000002,
+   "dur": 1.948,
+   "onset": 0.138,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.138,
+     0.595
+    ],
+    [
+     0.595,
+     1.0
+    ],
+    [
+     1.052,
+     1.759
+    ]
+   ]
+  },
+  "L12": {
+   "text": "It was taped shut from the inside.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.155,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.155,
+     0.31
+    ],
+    [
+     0.31,
+     0.707
+    ],
+    [
+     0.707,
+     1.517
     ]
    ]
   },
   "L13": {
-   "text": "Mum thinks I moved it in my sleep.",
+   "text": "Its marker frown. faced Mum's door.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.793,
-   "onset": 0.172,
-   "end": 1.586,
+   "dur": 2.121,
+   "onset": 0.155,
+   "end": 1.914,
    "chunks": [
     [
-     0.172,
-     0.517
+     0.155,
+     0.862
     ],
     [
-     0.517,
-     0.905
-    ],
-    [
-     0.905,
-     1.586
+     0.94,
+     1.914
     ]
    ]
   },
   "L14": {
-   "text": "We'd stacked the rest of our boxes by the door.",
+   "text": "In the dark, something scraped down the hall.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.155,
-   "onset": 0.155,
-   "end": 1.966,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
    "chunks": [
     [
-     0.155,
-     0.526
+     0.172,
+     0.552
     ],
     [
-     0.526,
-     0.768
+     0.586,
+     1.052
     ],
     [
-     0.768,
-     1.276
-    ],
-    [
-     1.276,
-     1.966
+     1.052,
+     1.759
     ]
    ]
   },
   "L15": {
-   "text": "Six had gone.",
+   "text": "By morning, there was a gap over my head.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.138,
-   "onset": 0.19,
-   "end": 0.948,
+   "dur": 1.983,
+   "onset": 0.155,
+   "end": 1.776,
    "chunks": [
     [
-     0.19,
-     0.353
+     0.155,
+     0.586
     ],
     [
-     0.353,
-     0.948
+     0.612,
+     0.768
+    ],
+    [
+     0.768,
+     1.026
+    ],
+    [
+     1.026,
+     1.776
     ]
    ]
   },
   "L16": {
-   "text": "In the night, something scraped, like cardboard across the floor.",
+   "text": "The house had grown.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.759,
+   "tempo": 0.9784999999999999,
+   "dur": 1.362,
    "onset": 0.172,
-   "end": 2.569,
+   "end": 1.155,
    "chunks": [
     [
      0.172,
-     0.466
+     0.474
     ],
     [
-     0.5,
+     0.474,
      1.155
-    ],
-    [
-     1.224,
-     1.715
-    ],
-    [
-     1.715,
-     2.569
     ]
    ]
   },
   "L17": {
-   "text": "Next morning, it was in the kitchen.",
+   "text": "Nobody here is taller than me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.759,
-   "onset": 0.172,
+   "tempo": 0.9888,
+   "dur": 1.776,
+   "onset": 0.19,
    "end": 1.569,
    "chunks": [
     [
-     0.172,
-     0.655
+     0.19,
+     0.647
     ],
     [
-     0.681,
-     0.94
+     0.647,
+     1.052
     ],
     [
-     0.94,
+     1.052,
      1.569
     ]
    ]
   },
   "L18": {
-   "text": "Taller. Its top box folded along the ceiling.",
+   "text": "And the stack was shorter.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.207,
-   "onset": 0.172,
-   "end": 2.017,
+   "dur": 1.448,
+   "onset": 0.155,
+   "end": 1.241,
    "chunks": [
     [
-     0.172,
-     0.397
+     0.155,
+     0.56
     ],
     [
-     0.423,
-     0.948
-    ],
-    [
-     0.948,
-     1.181
-    ],
-    [
-     1.181,
-     2.017
+     0.56,
+     1.241
     ]
    ]
   },
   "L19": {
-   "text": "The frown was gone. Now it stared at the back of Mum's head.",
+   "text": "Next morning, the walls had stretched.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.759,
-   "onset": 0.155,
-   "end": 2.552,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.534,
    "chunks": [
     [
-     0.155,
-     0.474
+     0.172,
+     0.586
     ],
     [
-     0.474,
-     0.983
+     0.612,
+     0.888
     ],
     [
-     1.077,
-     1.526
-    ],
-    [
-     1.526,
-     1.801
-    ],
-    [
-     1.801,
-     2.552
+     0.888,
+     1.534
     ]
    ]
   },
   "L20": {
-   "text": "The marker was still wet.",
+   "text": "Mum's photos rode up with them.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.172,
-   "end": 1.276,
+   "dur": 1.776,
+   "onset": 0.19,
+   "end": 1.586,
    "chunks": [
     [
-     0.172,
-     0.5
+     0.19,
+     0.768
     ],
     [
-     0.5,
-     1.276
+     0.768,
+     1.043
+    ],
+    [
+     1.043,
+     1.586
     ]
    ]
   },
   "L21": {
+   "text": "Like something tall had hung them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9682,
+   "dur": 1.776,
+   "onset": 0.19,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.19,
+     0.828
+    ],
+    [
+     0.828,
+     1.586
+    ]
+   ]
+  },
+  "L22": {
+   "text": "In the kitchen, cardboard was folded along the ceiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.672,
+     1.448
+    ],
+    [
+     1.448,
+     2.293
+    ]
+   ]
+  },
+  "L23": {
+   "text": "At its end, a face stared down at the back of Mum's head.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.552,
+   "onset": 0.155,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.155,
+     0.569
+    ],
+    [
+     0.603,
+     0.879
+    ],
+    [
+     0.879,
+     1.301
+    ],
+    [
+     1.301,
+     1.578
+    ],
+    [
+     1.578,
+     2.345
+    ]
+   ]
+  },
+  "L24": {
    "text": "Mum made her tea right under it.",
    "who": "narrator",
    "voice": "am_adam",
@@ -549,687 +609,99 @@
     ]
    ]
   },
-  "L22": {
-   "text": "And every photo was moved up to the ceiling.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.155,
-   "onset": 0.155,
-   "end": 1.966,
-   "chunks": [
-    [
-     0.155,
-     0.793
-    ],
-    [
-     0.793,
-     1.241
-    ],
-    [
-     1.241,
-     1.966
-    ]
-   ]
-  },
-  "L23": {
-   "text": "Like something tall had hung them.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9476000000000001,
-   "dur": 1.793,
-   "onset": 0.19,
-   "end": 1.603,
-   "chunks": [
-    [
-     0.19,
-     0.828
-    ],
-    [
-     0.828,
-     1.603
-    ]
-   ]
-  },
-  "L24": {
-   "text": "Mum never looked up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.328,
-   "onset": 0.19,
-   "end": 1.121,
-   "chunks": [
-    [
-     0.19,
-     0.586
-    ],
-    [
-     0.586,
-     1.121
-    ]
-   ]
-  },
   "L25": {
-   "text": "The stack by the door was half gone.",
+   "text": "She didn't look up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.155,
-   "end": 1.569,
+   "dur": 1.155,
+   "onset": 0.19,
+   "end": 0.948,
    "chunks": [
     [
-     0.155,
-     0.448
+     0.19,
+     0.431
     ],
     [
-     0.448,
-     0.784
-    ],
-    [
-     0.784,
-     1.569
+     0.431,
+     0.948
     ]
    ]
   },
   "L26": {
-   "text": "The morning after, it was in the front room.",
+   "text": "In the stack, the box nobody packed was gone.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.983,
+   "dur": 2.19,
    "onset": 0.172,
-   "end": 1.793,
+   "end": 2.0,
    "chunks": [
     [
      0.172,
-     0.741
+     0.569
     ],
     [
-     0.793,
-     1.026
+     0.595,
+     0.879
     ],
     [
-     1.026,
-     1.793
+     0.879,
+     1.371
+    ],
+    [
+     1.371,
+     2.0
     ]
    ]
   },
   "L27": {
-   "text": "Every box in there had eyes now.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.172,
-   "end": 1.517,
-   "chunks": [
-    [
-     0.172,
-     0.612
-    ],
-    [
-     0.612,
-     0.768
-    ],
-    [
-     0.768,
-     1.517
-    ]
-   ]
-  },
-  "L28": {
-   "text": "Drawn in marker. All of them aimed at Mum's door.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.362,
-   "onset": 0.172,
-   "end": 2.155,
-   "chunks": [
-    [
-     0.172,
-     0.776
-    ],
-    [
-     0.87,
-     1.181
-    ],
-    [
-     1.181,
-     1.388
-    ],
-    [
-     1.388,
-     2.155
-    ]
-   ]
-  },
-  "L29": {
-   "text": "Its own face looked sideways, the same way.",
+   "text": "At three a.m., the whole house creaked upward.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.086,
    "onset": 0.155,
-   "end": 1.897,
+   "end": 1.879,
    "chunks": [
     [
      0.155,
-     0.603
-    ],
-    [
-     0.603,
-     1.155
-    ],
-    [
-     1.181,
-     1.897
-    ]
-   ]
-  },
-  "L29b": {
-   "text": "And Mum was still asleep.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.483,
-   "onset": 0.155,
-   "end": 1.276,
-   "chunks": [
-    [
-     0.155,
-     0.448
-    ],
-    [
-     0.448,
      0.707
     ],
     [
-     0.707,
-     1.276
-    ]
-   ]
-  },
-  "L30": {
-   "text": "So I tried to pull it apart.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.534,
-   "onset": 0.172,
-   "end": 1.345,
-   "chunks": [
-    [
-     0.172,
-     0.543
-    ],
-    [
-     0.543,
-     0.802
-    ],
-    [
-     0.802,
-     1.345
-    ]
-   ]
-  },
-  "L31": {
-   "text": "I pulled till my arms shook.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.534,
-   "onset": 0.155,
-   "end": 1.328,
-   "chunks": [
-    [
-     0.155,
-     0.448
-    ],
-    [
-     0.448,
-     0.888
-    ],
-    [
-     0.888,
-     1.328
-    ]
-   ]
-  },
-  "L32": {
-   "text": "No tape to peel.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.293,
-   "onset": 0.19,
-   "end": 1.086,
-   "chunks": [
-    [
-     0.19,
-     0.5
-    ],
-    [
-     0.5,
-     1.086
-    ]
-   ]
-  },
-  "L33": {
-   "text": "Every seam was taped from the inside.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.172,
-   "end": 1.69,
-   "chunks": [
-    [
-     0.172,
-     0.578
-    ],
-    [
-     0.578,
-     0.87
-    ],
-    [
-     0.87,
-     1.69
-    ]
-   ]
-  },
-  "L34": {
-   "text": "Not one box would shift.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.5,
-   "onset": 0.172,
-   "end": 1.31,
-   "chunks": [
-    [
-     0.172,
-     0.698
-    ],
-    [
-     0.698,
-     1.31
-    ]
-   ]
-  },
-  "L34b": {
-   "text": "In the kitchen, every tape roll was empty.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.138,
-   "onset": 0.172,
-   "end": 1.948,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.655,
-     1.25
-    ],
-    [
-     1.25,
-     1.948
-    ]
-   ]
-  },
-  "L34c": {
-   "text": "Just cardboard rings, stood up in a row.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.172,
-   "end": 1.793,
-   "chunks": [
-    [
-     0.172,
-     0.655
-    ],
-    [
-     0.655,
-     0.897
-    ],
-    [
-     0.931,
-     1.199
-    ],
-    [
-     1.199,
-     1.793
-    ]
-   ]
-  },
-  "L35": {
-   "text": "By the door, four boxes left.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.155,
-   "end": 1.517,
-   "chunks": [
-    [
-     0.155,
-     0.517
-    ],
-    [
-     0.552,
-     1.034
-    ],
-    [
-     1.034,
-     1.517
-    ]
-   ]
-  },
-  "L36": {
-   "text": "I woke up with it in my room.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.69,
-   "onset": 0.172,
-   "end": 1.5,
-   "chunks": [
-    [
-     0.172,
-     0.543
-    ],
-    [
-     0.543,
-     0.759
-    ],
-    [
-     0.759,
-     1.5
-    ]
-   ]
-  },
-  "L37": {
-   "text": "Its top box hung down over my pillow.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.983,
-   "onset": 0.155,
-   "end": 1.776,
-   "chunks": [
-    [
-     0.155,
-     0.672
-    ],
-    [
-     0.672,
-     1.008
-    ],
-    [
-     1.008,
-     1.776
-    ]
-   ]
-  },
-  "L38": {
-   "text": "Its face was far too many eyes.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.828,
-   "onset": 0.155,
-   "end": 1.638,
-   "chunks": [
-    [
-     0.155,
-     0.509
-    ],
-    [
-     0.509,
-     0.966
-    ],
-    [
-     0.966,
-     1.638
-    ]
-   ]
-  },
-  "L39": {
-   "text": "All on me.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.086,
-   "onset": 0.19,
-   "end": 0.879,
-   "chunks": [
-    [
-     0.19,
-     0.879
-    ]
-   ]
-  },
-  "L40": {
-   "text": "I didn't move till dawn.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.172,
-   "end": 1.276,
-   "chunks": [
-    [
-     0.172,
-     0.621
-    ],
-    [
-     0.621,
-     1.276
-    ]
-   ]
-  },
-  "L41": {
-   "text": "The stack by the door was gone.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.655,
-   "onset": 0.155,
-   "end": 1.466,
-   "chunks": [
-    [
-     0.155,
-     0.483
-    ],
-    [
-     0.483,
-     0.828
-    ],
-    [
-     0.828,
-     1.466
-    ]
-   ]
-  },
-  "L42": {
-   "text": "Every box we brought was in it.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.172,
-   "end": 1.517,
-   "chunks": [
-    [
-     0.172,
-     0.603
-    ],
-    [
-     0.603,
-     0.931
-    ],
-    [
-     0.931,
-     1.517
-    ]
-   ]
-  },
-  "L43": {
-   "text": "At breakfast, Mum said I looked tired.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.931,
-   "onset": 0.155,
-   "end": 1.724,
-   "chunks": [
-    [
-     0.155,
-     0.586
-    ],
-    [
-     0.621,
-     0.905
-    ],
-    [
-     0.905,
-     1.724
-    ]
-   ]
-  },
-  "L44": {
-   "text": "At three a.m., the scraping stopped.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.155,
-   "end": 1.586,
-   "chunks": [
-    [
-     0.155,
-     0.672
-    ],
-    [
-     0.698,
-     1.052
-    ],
-    [
-     1.052,
-     1.586
-    ]
-   ]
-  },
-  "L45": {
-   "text": "I went into the hall.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.293,
-   "onset": 0.172,
-   "end": 1.103,
-   "chunks": [
-    [
-     0.172,
-     0.388
-    ],
-    [
-     0.388,
-     1.103
-    ]
-   ]
-  },
-  "L46": {
-   "text": "A square shadow filled the wall and bent over the ceiling.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.483,
-   "onset": 0.172,
-   "end": 2.293,
-   "chunks": [
-    [
-     0.172,
-     0.784
-    ],
-    [
-     0.784,
-     1.241
-    ],
-    [
-     1.241,
-     1.509
-    ],
-    [
-     1.509,
-     2.293
-    ]
-   ]
-  },
-  "L47": {
-   "text": "It came from Mum's room. Her door stood open.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.345,
-   "onset": 0.155,
-   "end": 2.138,
-   "chunks": [
-    [
-     0.155,
-     0.414
-    ],
-    [
-     0.414,
-     1.069
+     0.732,
+     1.138
     ],
     [
      1.138,
-     1.448
-    ],
-    [
-     1.448,
-     2.138
+     1.879
     ]
    ]
   },
-  "L48": {
+  "L28": {
+   "text": "Mum's door stood open.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.19,
+   "end": 1.241,
+   "chunks": [
+    [
+     0.19,
+     0.552
+    ],
+    [
+     0.552,
+     1.241
+    ]
+   ]
+  },
+  "L29": {
    "text": "It was bent over her bed, too tall for the room.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1257,31 +729,35 @@
     ]
    ]
   },
-  "L49": {
-   "text": "Its face was drawn wide open.",
+  "L30": {
+   "text": "Built from our boxes, its face drawn wide open.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.927,
-   "dur": 2.017,
+   "dur": 2.759,
    "onset": 0.19,
-   "end": 1.81,
+   "end": 2.552,
    "chunks": [
     [
      0.19,
-     0.552
+     0.457
     ],
     [
-     0.552,
-     0.974
+     0.457,
+     1.052
     ],
     [
-     0.974,
-     1.81
+     1.121,
+     1.466
+    ],
+    [
+     1.466,
+     2.552
     ]
    ]
   },
-  "L50": {
+  "L31": {
    "text": "Its long arms reached down to her.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1305,7 +781,7 @@
     ]
    ]
   },
-  "L51": {
+  "L32": {
    "text": "I hit the light.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1325,79 +801,39 @@
     ]
    ]
   },
-  "L52": {
-   "text": "Under its hands was the old quilt.",
+  "L33": {
+   "text": "Under its hands was the old quilt, laid over her the old way.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.845,
+   "dur": 2.862,
    "onset": 0.172,
-   "end": 1.655,
+   "end": 2.672,
    "chunks": [
     [
      0.172,
-     0.724
+     0.664
     ],
     [
-     0.724,
-     0.948
+     0.664,
+     0.845
     ],
     [
-     0.948,
-     1.655
+     0.845,
+     1.379
+    ],
+    [
+     1.474,
+     1.888
+    ],
+    [
+     1.888,
+     2.672
     ]
    ]
   },
-  "L53": {
-   "text": "Laid over her bed the old way.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.9682,
-   "dur": 1.793,
-   "onset": 0.207,
-   "end": 1.586,
-   "chunks": [
-    [
-     0.207,
-     0.492
-    ],
-    [
-     0.492,
-     0.81
-    ],
-    [
-     0.81,
-     1.586
-    ]
-   ]
-  },
-  "L54": {
-   "text": "The quilt she had left packed.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.466,
-   "onset": 0.155,
-   "end": 1.259,
-   "chunks": [
-    [
-     0.155,
-     0.414
-    ],
-    [
-     0.414,
-     0.741
-    ],
-    [
-     0.741,
-     1.259
-    ]
-   ]
-  },
-  "L55": {
+  "L34": {
    "text": "Mum slept right through it.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1417,298 +853,74 @@
     ]
    ]
   },
-  "L56": {
-   "text": "Back in the old house, that quilt lived on her bed.",
+  "L35": {
+   "text": "By morning, it was gone, and the stack was back, all but one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.293,
+   "dur": 2.672,
    "onset": 0.172,
-   "end": 2.086,
+   "end": 2.483,
    "chunks": [
     [
      0.172,
-     0.37
+     0.5
     ],
     [
-     0.37,
-     0.897
+     0.526,
+     1.052
     ],
     [
-     0.948,
-     1.293
+     1.121,
+     1.492
     ],
     [
-     1.293,
-     1.457
+     1.492,
+     1.776
     ],
     [
-     1.457,
-     2.086
+     1.801,
+     2.483
     ]
    ]
   },
-  "L57": {
-   "text": "Here, it was too warm for it.",
+  "L36": {
+   "text": "And for once, Mum looked up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.534,
-   "onset": 0.172,
-   "end": 1.345,
-   "chunks": [
-    [
-     0.172,
-     0.345
-    ],
-    [
-     0.37,
-     0.517
-    ],
-    [
-     0.517,
-     0.862
-    ],
-    [
-     0.862,
-     1.345
-    ]
-   ]
-  },
-  "L58": {
-   "text": "Her mug lived on the windowsill.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.759,
-   "onset": 0.172,
-   "end": 1.569,
-   "chunks": [
-    [
-     0.172,
-     0.526
-    ],
-    [
-     0.526,
-     0.75
-    ],
-    [
-     0.75,
-     1.569
-    ]
-   ]
-  },
-  "L59": {
-   "text": "Her photos hung at ladder height.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.724,
    "onset": 0.155,
-   "end": 1.534,
+   "end": 1.328,
    "chunks": [
     [
      0.155,
-     0.603
+     0.569
     ],
     [
-     0.603,
-     0.81
-    ],
-    [
-     0.81,
-     1.534
+     0.612,
+     1.328
     ]
    ]
   },
-  "L60": {
-   "text": "These boxes came from the old house.",
+  "L37": {
+   "text": "She said, \"That's ladder height.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.172,
-   "end": 1.69,
-   "chunks": [
-    [
-     0.172,
-     0.69
-    ],
-    [
-     0.69,
-     0.974
-    ],
-    [
-     0.974,
-     1.69
-    ]
-   ]
-  },
-  "L61": {
-   "text": "Everything it moved was where it lived before.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 2.397,
-   "onset": 0.19,
-   "end": 2.19,
-   "chunks": [
-    [
-     0.19,
-     0.483
-    ],
-    [
-     0.483,
-     0.966
-    ],
-    [
-     0.966,
-     1.233
-    ],
-    [
-     1.233,
-     1.517
-    ],
-    [
-     1.517,
-     2.19
-    ]
-   ]
-  },
-  "L62": {
-   "text": "It was gone by morning.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.448,
-   "onset": 0.155,
-   "end": 1.259,
-   "chunks": [
-    [
-     0.155,
-     0.586
-    ],
-    [
-     0.586,
-     1.259
-    ]
-   ]
-  },
-  "L63": {
-   "text": "Our stack was back by the door.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.621,
-   "onset": 0.155,
-   "end": 1.431,
-   "chunks": [
-    [
-     0.155,
-     0.474
-    ],
-    [
-     0.474,
-     0.793
-    ],
-    [
-     0.793,
-     1.431
-    ]
-   ]
-  },
-  "L64": {
-   "text": "Mum came out wrapped, in the quilt.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.672,
-   "onset": 0.19,
-   "end": 1.466,
-   "chunks": [
-    [
-     0.19,
-     0.621
-    ],
-    [
-     0.621,
-     0.828
-    ],
-    [
-     0.854,
-     1.466
-    ]
-   ]
-  },
-  "L65": {
-   "text": "She went for her mug on the sill.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.569,
-   "onset": 0.172,
-   "end": 1.379,
-   "chunks": [
-    [
-     0.172,
-     0.362
-    ],
-    [
-     0.362,
-     0.75
-    ],
-    [
-     0.75,
-     1.379
-    ]
-   ]
-  },
-  "L66": {
-   "text": "And for once, she looked up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.431,
-   "onset": 0.155,
-   "end": 1.224,
-   "chunks": [
-    [
-     0.155,
-     0.552
-    ],
-    [
-     0.586,
-     1.224
-    ]
-   ]
-  },
-  "L67": {
-   "text": "She said, That's ladder height.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.603,
+   "dur": 1.638,
    "onset": 0.19,
    "end": 1.414,
    "chunks": [
     [
      0.19,
-     0.483
+     0.466
     ],
     [
-     0.509,
+     0.517,
      0.69
     ],
     [
@@ -1717,7 +929,7 @@
     ]
    ]
   },
-  "L68": {
+  "L38": {
    "text": "She laughed till she had to sit.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1741,7 +953,7 @@
     ]
    ]
   },
-  "L69": {
+  "L39": {
    "text": "Her first laugh since the sale.",
    "who": "narrator",
    "voice": "am_adam",
@@ -1761,223 +973,247 @@
     ]
    ]
   },
-  "L70": {
-   "text": "I was laughing too.",
+  "L40": {
+   "text": "I looked up at the old house photo.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.293,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.172,
+     0.509
+    ],
+    [
+     0.509,
+     0.793
+    ],
+    [
+     0.793,
+     1.603
+    ]
+   ]
+  },
+  "L41": {
+   "text": "In its top window, something tall was bent under the ceiling.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.759,
+   "onset": 0.172,
+   "end": 2.569,
+   "chunks": [
+    [
+     0.172,
+     0.328
+    ],
+    [
+     0.328,
+     0.879
+    ],
+    [
+     0.974,
+     1.448
+    ],
+    [
+     1.448,
+     1.801
+    ],
+    [
+     1.801,
+     2.569
+    ]
+   ]
+  },
+  "L42": {
+   "text": "The old house never broke the rule.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.681
+    ],
+    [
+     0.681,
+     1.069
+    ],
+    [
+     1.069,
+     1.655
+    ]
+   ]
+  },
+  "L43": {
+   "text": "It was always as tall as the tallest one living in it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9476000000000001,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.397,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.621,
+     1.0
+    ],
+    [
+     1.0,
+     1.199
+    ],
+    [
+     1.199,
+     1.69
+    ],
+    [
+     1.69,
+     2.397
+    ]
+   ]
+  },
+  "L44": {
+   "text": "That was never us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
    "onset": 0.172,
    "end": 1.086,
    "chunks": [
     [
      0.172,
-     0.362
+     0.439
     ],
     [
-     0.362,
+     0.439,
      1.086
     ]
    ]
   },
-  "L71": {
-   "text": "So we unpacked the stack the old way.",
+  "L45": {
+   "text": "It came with us.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.914,
-   "onset": 0.172,
-   "end": 1.707,
+   "dur": 1.207,
+   "onset": 0.155,
+   "end": 1.0,
    "chunks": [
     [
-     0.172,
-     0.681
+     0.155,
+     0.466
     ],
     [
-     0.681,
-     0.974
-    ],
-    [
-     0.974,
-     1.707
+     0.466,
+     1.0
     ]
    ]
   },
-  "L72": {
-   "text": "She pointed. I put it there.",
+  "L46": {
+   "text": "Mum opened the hall cupboard.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
+   "dur": 1.603,
    "onset": 0.19,
-   "end": 1.328,
+   "end": 1.397,
    "chunks": [
     [
      0.19,
-     0.569
+     0.629
     ],
     [
-     0.595,
-     0.862
-    ],
-    [
-     0.862,
-     1.328
+     0.629,
+     1.397
     ]
    ]
   },
-  "L73": {
-   "text": "Coats by the door. The kettle on the left.",
+  "L47": {
+   "text": "On the shelf sat one box, taped from the inside.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.034,
+   "dur": 2.466,
    "onset": 0.172,
-   "end": 1.828,
-   "chunks": [
-    [
-     0.172,
-     0.379
-    ],
-    [
-     0.379,
-     0.81
-    ],
-    [
-     0.879,
-     1.181
-    ],
-    [
-     1.181,
-     1.828
-    ]
-   ]
-  },
-  "L74": {
-   "text": "The photos stayed up.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.345,
-   "onset": 0.155,
-   "end": 1.138,
-   "chunks": [
-    [
-     0.155,
-     0.552
-    ],
-    [
-     0.552,
-     1.138
-    ]
-   ]
-  },
-  "L75": {
-   "text": "When we'd emptied the last box, Mum opened the hall cupboard.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.741,
-   "onset": 0.155,
-   "end": 2.534,
-   "chunks": [
-    [
-     0.155,
-     0.56
-    ],
-    [
-     0.56,
-     1.259
-    ],
-    [
-     1.337,
-     1.75
-    ],
-    [
-     1.75,
-     2.534
-    ]
-   ]
-  },
-  "L76": {
-   "text": "On the shelf sat one more, still taped shut.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.103,
-   "onset": 0.172,
-   "end": 1.914,
-   "chunks": [
-    [
-     0.172,
-     0.517
-    ],
-    [
-     0.517,
-     1.017
-    ],
-    [
-     1.069,
-     1.914
-    ]
-   ]
-  },
-  "L77": {
-   "text": "The bottom box. My peeled tape hung off its seam.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.448,
-   "onset": 0.155,
    "end": 2.259,
    "chunks": [
     [
-     0.155,
-     0.828
+     0.172,
+     0.534
     ],
     [
-     0.879,
-     1.371
+     0.534,
+     1.19
     ],
     [
-     1.371,
-     1.612
+     1.259,
+     1.439
     ],
     [
-     1.612,
+     1.439,
      2.259
     ]
    ]
   },
-  "L78": {
-   "text": "Mum closed the cupboard on it.",
+  "L48": {
+   "text": "She closed it without looking up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9064,
-   "dur": 1.741,
-   "onset": 0.224,
-   "end": 1.534,
+   "dur": 1.862,
+   "onset": 0.207,
+   "end": 1.638,
    "chunks": [
     [
-     0.224,
-     0.716
+     0.207,
+     0.741
     ],
     [
-     0.716,
-     1.034
+     0.741,
+     0.983
     ],
     [
-     1.034,
-     1.534
+     0.983,
+     1.638
+    ]
+   ]
+  },
+  "L45b": {
+   "text": "Mum knew. She'd missed it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.19,
+   "end": 1.207,
+   "chunks": [
+    [
+     0.19,
+     0.5
+    ],
+    [
+     0.534,
+     1.207
     ]
    ]
   }

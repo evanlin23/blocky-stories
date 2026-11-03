@@ -268,9 +268,10 @@ shot("L68", "sunrise", {"me": P(-1.5, 18.2, 180, "smirk"), "ruben": P(1.5, 18.2,
 shot("L69", "sunrise", {"me": P(-0.45, 18.5, 180, "smirk"), "ruben": P(0.45, 18.5, 180, "smirk")},
      still([0.0, 21.8, 1.25], [0.0, 18.5, 1.1], 21), "two bells, two collars")
 shot("L70", "sunrise", {"ruben": P(0.0, 18.5, 180, "smirk")}, still([-0.1, 20.2, 1.15], [0.0, 18.5, 1.1], 40), "his pocket, empty")
-shot("L71", "night", {"me": dict(pos=list(SEAT), yaw=-20, expr="scared", head=[40, 0], blink=False)},
-     still([FLAT[0] - 2.4, FLAT[1] - 0.3, 1.25], [FLAT[0] - 1.6, FLAT[1] + 1.0, 0.95], 22), "the bell trembles")
-shot("L72", "night", {}, still([-3.1, 0.9, 1.4], [-3.1, 10.0, 1.5], 24), "the brushes begin to turn")
+shot("L71", "sunrise", {"me": P(*BOOTH_IN, 90, "neutral")},
+     still([-2.4, 1.0, 1.04], [-3.1, 1.45, 1.29], 48), "my collar bell, the clapper inside")
+shot("L72", "sunrise", {"me": P(*BOOTH_IN, 90, "neutral", arms=[15, 0], then=[("L72+0.3", dict(arms=[50, 0], blend=0.8, yaw=90)), ("L72>", dict(expr="worried", yaw=90))])},
+     still([-0.9, 1.5, 1.45], [-3.1, 1.5, 1.35], 32), "my bell rings and my hand stops short")
 
 # ---------------------------------------------------------------------------------------------------- build shots + acting
 shots = []
@@ -417,12 +418,10 @@ cue("L46-0.4", "collarlit", v=1.0, dur=0.4)
 cue("L46>", "collarlit", v=0.0, dur=0.4)
 cue("L49.2", "leankey", v=1.0, dur=0.6)
 cue("L51+0.6", "leankey", v=0.0, dur=0.6)
-cue("L71", "dry", v=0.0, dur=1.2)
 cue("L19", "spin", v=0.7, dur=1.5)
 cue("L22", "spin", v=0.0, dur=1.5)
 cue("L27", "spin", v=0.2, dur=1.0)
 cue("L38", "spin", v=0.0, dur=1.5)
-cue("L72", "spin", v=0.18, dur=1.2)
 cue("L18.3", "lever", v=1.0, dur=0.9)
 cue("L19", "lever", v=1.0, dur=0.1)
 cue("L22", "lever", v=0.0, dur=1.0)
@@ -436,9 +435,9 @@ ring("texter", "L05", dur=2.4, rate=4.2, amp=1.2)
 ring("drv1", "L06.0", amp=1.4)
 cue("L07", "sway", who=["drv2", "drv3", "ruben", "date_a"], dur=2.2)
 ring("drv1", "L06+0.3", dur=0.8, rate=3.0)
+ring("me", "L72>")
 cue("L21.1", "pocket")
 cue("L52", "pocket")
-cue("L71", "trem", dur=2.0)
 # the Stutter: heads and lean live in acting; the fades are here
 for k in range(1, 5):
     cue(f"L64+{0.6 * (k - 1):.2f}", "fade", k=k, dur=0.6)
@@ -480,7 +479,7 @@ sfx = [
     ding("L52", -18, 2200, lp=1400),
     {"at": "L53+0.35", "kind": "click", "db": -10},
     {"at": "L60", "kind": "ding", "db": -20, "pitch": 1950, "dur": 0.9},
-    ding("L71", -18, 1900, fall=0.35),
+    ding("L72>", -18, 1900, fall=0.35),
 ]
 
 story = {
@@ -532,8 +531,7 @@ story = {
                   {"kind": "room", "from": "L25", "to": "L27", "lufs": -38},
                   {"kind": "wind", "from": "L27", "to": "L43", "lufs": -38},
                   {"kind": "hum", "from": "L43", "to": "L65", "lufs": -38},
-                  {"kind": "wind", "from": "L65", "to": "L71", "lufs": -40},
-                  {"kind": "room", "from": "L71", "to": "end", "lufs": -38},
+                  {"kind": "wind", "from": "L65", "to": "end", "lufs": -40},
               ],
               "sfx": sfx,
               "music_drops": [["P01", "L29"], {"from": "P02", "to": "L49+0.6", "keep": ["hit"]}]},

@@ -1744,20 +1744,32 @@
    "who": "narrator",
    "chunks": [
     [
+     "My bell",
+     "my bell"
+    ],
+    [
+     "never RANG",
+     "never rang"
+    ],
+    [
+     "because HE",
+     "because he"
+    ],
+    [
+     "had its CLAPPER.",
+     "had its clapper."
+    ],
+    [
      "Every ring",
-     "Every ring"
+     "every ring"
     ],
     [
-     "I blamed",
-     "I blamed"
+     "in his POCKET",
+     "in his pocket"
     ],
     [
-     "on HIM",
-     "on him"
-    ],
-    [
-     "was MINE.",
-     "was mine."
+     "was MY mistake.",
+     "was my mistake."
     ]
    ]
   },
@@ -2015,8 +2027,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Mine was",
-     "Mine was"
+     "Mine RANG",
+     "Mine rang"
     ],
     [
      "in his POCKET.",
@@ -2029,12 +2041,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Just NOW,",
-     "Just now,"
+     "Now it rings",
+     "Now it rings"
     ],
     [
-     "it RANG.",
-     "it rang."
+     "on MY collar.",
+     "on my collar."
     ]
    ]
   },
@@ -2043,12 +2055,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I hadn't",
-     "I hadn't"
+     "And I hear",
+     "and i hear"
     ],
     [
-     "MOVED.",
-     "moved."
+     "EVERY one.",
+     "every one."
     ]
    ]
   },
@@ -4185,21 +4197,21 @@
     [
      0,
      [
-      -62.4,
-      -0.3,
-      1.25
+      -2.4,
+      1.0,
+      1.04
      ],
      [
-      -61.6,
-      1.0,
-      0.95
+      -3.1,
+      1.45,
+      1.29
      ],
-     22
+     48
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "the bell trembles",
+   "what": "my collar bell, the clapper inside",
    "at": "L71"
   },
   {
@@ -4208,21 +4220,21 @@
     [
      0,
      [
-      -3.1,
-      0.9,
-      1.4
+      -0.9,
+      1.5,
+      1.45
      ],
      [
       -3.1,
-      10.0,
-      1.5
+      1.5,
+      1.35
      ],
-     24
+     32
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "the brushes begin to turn",
+   "what": "my bell rings and my hand stops short",
    "at": "L72"
   }
  ],
@@ -5474,9 +5486,8 @@
    {
     "at": "L71",
     "pos": [
-     -60.55,
-     1.9,
-     -0.2
+     -3.1,
+     1.5
     ],
     "blend": 0,
     "hidden": false,
@@ -5489,19 +5500,61 @@
      0
     ],
     "head": [
-     40,
+     0,
      0
     ],
     "lean": 0,
     "tremble": 0,
-    "blink": false,
-    "yaw": -20,
-    "expr": "scared"
+    "blink": true,
+    "yaw": 90,
+    "expr": "neutral"
    },
    {
     "at": "L72",
-    "hidden": true,
-    "blend": 0
+    "pos": [
+     -3.1,
+     1.5
+    ]
+   },
+   {
+    "at": "L72",
+    "pos": [
+     -3.1,
+     1.5
+    ],
+    "blend": 0,
+    "hidden": false,
+    "arms": [
+     15,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "tremble": 0,
+    "blink": true,
+    "yaw": 90,
+    "expr": "neutral"
+   },
+   {
+    "at": "L72+0.3",
+    "arms": [
+     50,
+     0
+    ],
+    "blend": 0.8,
+    "yaw": 90
+   },
+   {
+    "at": "L72>",
+    "expr": "worried",
+    "yaw": 90
    }
   ],
   "ruben": [
@@ -10004,11 +10057,6 @@
    "set": "sunrise"
   },
   {
-   "at": "L71",
-   "name": "tod",
-   "set": "night"
-  },
-  {
    "at": 0,
    "name": "ride",
    "who": "drv1",
@@ -10612,12 +10660,6 @@
    "dur": 0.6
   },
   {
-   "at": "L71",
-   "name": "dry",
-   "v": 0.0,
-   "dur": 1.2
-  },
-  {
    "at": "L19",
    "name": "spin",
    "v": 0.7,
@@ -10640,12 +10682,6 @@
    "name": "spin",
    "v": 0.0,
    "dur": 1.5
-  },
-  {
-   "at": "L72",
-   "name": "spin",
-   "v": 0.18,
-   "dur": 1.2
   },
   {
    "at": "L18.3",
@@ -10745,17 +10781,20 @@
    "amp": 1.0
   },
   {
+   "at": "L72>",
+   "name": "ring",
+   "who": "me",
+   "dur": 0.0,
+   "rate": 3.0,
+   "amp": 1.0
+  },
+  {
    "at": "L21.1",
    "name": "pocket"
   },
   {
    "at": "L52",
    "name": "pocket"
-  },
-  {
-   "at": "L71",
-   "name": "trem",
-   "dur": 2.0
   },
   {
    "at": "L64+0.00",
@@ -10938,14 +10977,8 @@
    {
     "kind": "wind",
     "from": "L65",
-    "to": "L71",
-    "lufs": -40
-   },
-   {
-    "kind": "room",
-    "from": "L71",
     "to": "end",
-    "lufs": -38
+    "lufs": -40
    }
   ],
   "sfx": [
@@ -11213,7 +11246,7 @@
     "dur": 0.9
    },
    {
-    "at": "L71",
+    "at": "L72>",
     "kind": "ding",
     "db": -18,
     "pitch": 1900,

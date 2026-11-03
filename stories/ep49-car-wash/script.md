@@ -6,22 +6,22 @@
   - The hairdresser example is now a wedding ("the whole room leans in after I do"), so no scissors come near a face.
   - The midnight texter wakes the whole street instead of turning the streetlights on, so the montage has no light switch at all.
   - The wax order is placed from my bed that night, so the ring through the wall pays off as mine too.
-  - The last line's "Last night it RANG" is now "Just NOW, it RANG", so nothing reads as batch 1's banned "Last NIGHT," opener.
+  - Clarity revision (2026-11-03, cold-viewer check): L57 now says the twist in one plain line, and the ending (L71, L72) is the clapper back on my collar and a cold ding that stops my hand, with no new mystery. "Last NIGHT," stays out (batch 1's banned opener).
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 615 spoken words in 72 lines, all `narrator`, plus 3 pause beats (2.9 s in all).
+- **Word count:** 628 spoken words in 72 lines, all `narrator`, plus 3 pause beats (2.9 s in all).
 - **Estimated length:** about 2:19 to 2:25. At 290 wpm the speech is 2:07, at 278 wpm (the short-line rate) 2:13. The 0.12 s gaps add about 8.6 s, the pauses 2.9 s and the loop tail 0.25 s. If it lands under 2:15, add "The FOAM / comes out / GREY." after L33. If it lands over 2:30, cut L37 first, then L17.
 
 ## The story
 
 - **Premise:** In this town a small brass bell on everyone's collar rings just before they make a mistake. Mine has never rung. My older brother Ruben runs the car wash on the edge of town alone since I quit the pay booth last spring, and now his bell rings all day and all night. When I go back to help, the wash starts running with nobody in it, five sets of wet footprints line up in the tunnel, and one morning Ruben isn't there at opening, just his phone and keys riding the conveyor out.
 - **The rule:** "In this town, the bell on your collar rings before every mistake." Everyone wears the bell. It always rings a moment before, never after.
-- **Twist:** my bell never rang because it couldn't. Ruben has carried my bell's clapper in his pocket since we were teenagers, so I'd stop being scared to try things. It still rings for me, from his pocket. Every ring I blamed on him (waving cars in, at the till, through the wall at night, across the yard) was mine. The wax order was my mistake, and he drove to the city at dawn to fix it before I knew.
+- **Twist:** my bell never rang because it couldn't. Ruben has carried my bell's clapper in his pocket since we were teenagers, so I'd stop being scared to try things. It still rings for me, from his pocket. The rings we heard from him (waving cars in, at the till, through the wall at night, across the yard) were my mistakes. Said plainly in one line at L57: "My bell never rang because he had its clapper. Every ring in his pocket was my mistake." The wax order was my mistake, and he drove to the city at dawn to fix it before I knew.
 - **Where the twist is planted:**
   - Plant 1 (L21): when I pull the wrong lever, "Ruben's rings" across the yard, but the shot shows his collar bell hanging dead still while his overall pocket jumps. The sound is muffled, from low down.
   - Plant 2 (L07): in the opening wide, the wind moves every bell in the queue and they all sway and tinkle, except mine, which hangs still with an empty dark mouth (no clapper inside, visible on a rewatch).
   - Extra rewatch catches: L15 (he pats his pocket when I ask what's wrong), L11 to L14 (his collar bell never moves in any shot, ever), L26 (his bell rings once through the wall the moment I hit "order"), L42 (I check my bell and it hangs "still").
-- **How the last 15 seconds turn over the first line:** the first time, "the bell on your collar rings before every mistake" is a funny town rule, and "mine has never rung" makes me the lucky one. In the last 15 s (L65 to L72) the first line comes back with "Mine was in his POCKET": my bell never rang because my brother was carrying its voice for me, and everything we heard ringing in his pocket was me. Then the sting: with the clapper back, it rings at night while I lie still.
-- **Ending shape:** two people at the tunnel mouth, two bells on two collars, one car rolling out shining. Then a cold cut: my bell trembling on its collar in the dark, and the empty booth with the brushes starting to turn.
+- **How the last 15 seconds turn over the first line:** the first time, "the bell on your collar rings before every mistake" is a funny town rule, and "mine has never rung" makes me the lucky one. In the last 15 s (L65 to L72) the first line comes back with "Mine RANG in his POCKET": my bell never rang because my brother was carrying its voice for me, and everything we heard ringing in his pocket was me. Then the sting, with no new mystery: the clapper is back on my collar, so from now on I hear every one of my own mistakes, and the first ding stops my hand at the levers.
+- **Ending shape:** two people at the tunnel mouth, two bells on two collars, one car rolling out shining. Then a cold beat: my bell, clapper inside, rings once in the booth and my hand stops short of the levers.
 - **Warmth:** stepping up. I take the clapper back, ask to be his partner and step into the booth. Shown in L65 to L68: I'm in the booth at seven, I wave the first car in, the booth door holds only me.
 
 ## What the hits do (the checklist)
@@ -92,7 +92,7 @@ Every word is the narrator's. Ruben's "fine" (L15) and his question in L61 are r
   | Closing | L50 to L61 | the same, with the front copy leaning in, face 30 cm from mine, the others upright | 5 | to me |
   | Closing | L62 | the booth door holds only me (the front copy isn't there after the cut) | 4 | to the booth |
   | Closing | L64 | the four left fade out front to back, each over about 0.6 s, staggered, about 2.4 s in all. No light changes | 4 to 0 | |
-  | Wednesday to the end | L65 to L72 | never seen again. L72 shows the empty booth and the brushes starting to turn, nothing else | | |
+  | Wednesday to the end | L65 to L72 | never seen again | | |
 
 ## Palette and light
 
@@ -106,7 +106,7 @@ Every word is the narrator's. Ruben's "fine" (L15) and his question in L61 are r
   - **L43: the drying lamps come up over 1.2 s**, warm and soft. That is the only light switch in the film. They hold until L64, then the tunnel stays lit as is.
   - L64: the Stutter's copies fade by opacity only (about 2.4 s). The scene light doesn't change.
   - L65 to L68: soft gold sunrise, already up.
-  - L71 to L72: night, the same dim lamp as L14, steady. The tunnel in L72 is lit by its dim blue work lights only, steady.
+  - L71 to L72: the same morning light in the booth as L65, steady.
   - Nothing red flashes anywhere. Run the flash pre-check on L27 to L28 (mist), L43 (lamps) and L64 (the fade).
 
 ## Sound and music
@@ -114,7 +114,7 @@ Every word is the narrator's. Ruben's "fine" (L15) and his question in L61 are r
 - **Music:** G dorian, 96 bpm. First third (L01 to L28): thin and light, a dry plucked synth on the off-beats, a soft noise-burst shaker, a short airy pad on the montage jokes. No music box, no borrowed tune.
 - **The drone:** P01 drops everything for 0.7 s, then at L29 a heavy low drone on G enters (a sub sine at 49 Hz with two detuned saws an octave above, slow filter swell) and holds to the very end. The pluck thins out over it.
 - **The warm turn:** from L59 a soft major-third pad lifts above the drone (G major colour) and carries to L68. The drone stays under it.
-- **The sting:** at L69 the pad drops out, leaving the drone. At L71 a single bell ding (mine, a slightly lower pitch than everyone else's) with a pitch fall at -18 dB under the drone. 0.25 s after "MOVED", cut to L01.
+- **The sting:** at L69 the pad drops out, leaving the drone. At L72 a single bell ding (mine, a slightly lower pitch than everyone else's) with a pitch fall at -18 dB under the drone. 0.25 s after "one", cut to L01.
 - **Drops:** P01 (0.7 s, before L29): all music out, only the conveyor's slow clank, then the drone lands with the phone and keys. P02 (0.6 s, before L49): everything out but a low air hiss and the drying lamps' hum, then a soft deep hit as the first head turns.
 - **Effects, all synthesized in `sound.py`:**
   - The bell ding: a short FM tone around 2.2 kHz with a fast decay. Each person's bell is pitched a little differently. Ruben's pocket ring (L21, L26, L52) is the same ding low-passed at about 1.4 kHz with a soft cloth rustle, so it sounds muffled and low.
@@ -306,8 +306,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S76: me, `worried` softening, looking at him]
 - `L56` narrator: He wanted me / to stop being SCARED / to TRY.
   - [S77: two shot by the booth, the front copy still leaning in the background, soft focus]
-- `L57` narrator: Every ring / I blamed on HIM / was MINE.
-  - [S78: me, `neutral`, realising. The pad starts thin under the drone]
+- `L57` narrator: My bell / never RANG / because HE / had its CLAPPER. / Every ring / in his POCKET / was MY mistake.
+  - [S78: me, `neutral`, realising, looking from the clapper on the sill to Ruben's bib pocket. The pad starts thin under the drone]
 - `L58` narrator: But a bell / only rings / BEFORE a MISTAKE.
   - [S79: close on Ruben's still collar bell]
 - `L59` narrator: So a QUIET bell / means GO.
@@ -340,12 +340,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S90: wide at the tunnel mouth: Ruben and me side by side, two brass bells on two collars, the car rolling out gleaming in the sunrise]
 - `L69` narrator: In this TOWN, / a BELL on your collar / rings before / every MISTAKE.
   - [S91: close on our two collars side by side, bells catching the light. The pad drops out, the drone remains]
-- `L70` narrator: Mine was / in his POCKET.
+- `L70` narrator: Mine RANG / in his POCKET.
   - [S92: Ruben's flat bib pocket, empty now]
-- `L71` narrator: Just NOW, / it RANG.
-  - [S93: night, the flat, my overalls on the chair by the bed, the bell on the collar trembling with a low ding and pitch fall. Me in bed, `scared`, perfectly still]
-- `L72` narrator: I hadn't / MOVED.
-  - [S94: night at the wash: the booth dark and empty, its door open, and behind it in the tunnel the brushes beginning to turn slowly with no car. Steady dim blue work light. 0.25 s after "MOVED", cut to S01]
+- `L71` narrator: Now it rings / on MY collar.
+  - [S93: close on my collar bell in the booth, morning light, the clapper visible inside it]
+- `L72` narrator: And I hear / EVERY one.
+  - [S94: me on the booth stool, `neutral`, my sleeve moving toward the lever panel. My bell rings once, a low ding with a pitch fall, and I go still, `worried`, sleeve stopped short of the knobs. Steady light, nothing else in frame moves. 0.25 s after "one", cut to S01]
 
 ## Notes for the builder
 
