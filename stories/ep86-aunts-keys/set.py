@@ -155,7 +155,7 @@ def imgmat(path, rough=0.5, emit=0.0):
 LOOKS = {
     "day": {"sky": "#8fd0ff", "world": 1.0, "sun": 4.5, "moon": 0.0, "fill": 0.30, "lamp": 0.0, "water": 0.7, "exp": 0.0, "room": 0.0},
     "dusk": {"sky": "#7a8fc8", "world": 0.7, "sun": 0.0, "moon": 1.2, "fill": 0.55, "lamp": 1.0, "water": 2.0, "exp": 0.35, "room": 0.0},
-    "night": {"sky": "#35688c", "world": 0.55, "sun": 0.0, "moon": 1.4, "fill": 0.55, "lamp": 1.0, "water": 2.6, "exp": 0.45, "room": 0.0},
+    "night": {"sky": "#2a5478", "world": 0.32, "sun": 0.0, "moon": 0.8, "fill": 0.55, "lamp": 1.0, "water": 2.6, "exp": 0.45, "room": 0.0},
     "dawn": {"sky": "#ffc9a0", "world": 0.9, "sun": 2.4, "moon": 0.0, "fill": 0.4, "lamp": 0.45, "water": 1.4, "exp": 0.1, "room": 0.0},
     "int": {"sky": "#9cb8d8", "world": 0.55, "sun": 0.0, "moon": 0.0, "fill": 0.5, "lamp": 0.0, "water": 0.7, "exp": 0.2, "room": 1.0},
     "intn": {"sky": "#35688c", "world": 0.35, "sun": 0.0, "moon": 0.0, "fill": 0.42, "lamp": 0.0, "water": 0.7, "exp": 0.3, "room": 0.75},
