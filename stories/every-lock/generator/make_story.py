@@ -311,8 +311,8 @@ S("L41.2", cam((0.5, 4.3, 1.3), (0.1, 6.6, 1.3), 24), note="click click click cl
 S("L42", cam((0.0, 0.6, 1.55), (0.0, 6.0, 1.2), 17),
   {"jadeb": P(0.2, 3.3, 180, "asleep"), "me": P(-0.85, 4.55, 90, "worried")}, note="nobody's touching it",
   cues=[DR(L=1.25, dur=0.6)])
-S("L43", cam((0.4, 4.6, 1.4), (0.0, 6.0, 1.3), 22), note="doubling by itself", cues=[DR(L=1.5, dur=1.0)])
-S("L44", cam((0.0, 3.8, 1.3), (0.0, 5.8, 1.3), 22), note="TWO THOUSAND, FOUR THOUSAND: the pile swelling", cues=[MT(2048), MT(4096, ref="L44.1"), DR(L=1.8, dur=0.8)])
+S("L43", cam((0.4, 2.4, 1.5), (0.0, 6.0, 1.3), 22), note="doubling by itself", cues=[DR(L=1.5, dur=1.0)])
+S("L44", cam((0.0, 2.0, 1.5), (0.0, 5.8, 1.3), 22), note="TWO THOUSAND, FOUR THOUSAND: the pile swelling", cues=[MT(2048), MT(4096, ref="L44.1"), DR(L=1.8, dur=0.8)])
 S("L44.2", cam((0.2, 2.6, 1.5), (-0.5, 4.0, 1.5), 30), {"me": FP(-0.5, 4.0, (0.2, 2.6), "scared")}, note="EIGHT, my face", cues=[MT(8192)])
 S("L45", cam((-0.1, 1.4, 0.9), (-0.55, 0.55, 0.35), 30), note="the key bucket rattles in moonlight",
   cues=[CU("keys", v=1.3, dur=1.4)])
@@ -322,7 +322,7 @@ S("L46", cam((DK + 2.0, 0.3, 1.4), (DK, 2.0, 1.6), 22), {"downstairs": FP(DK - 0
   note="downstairs the ceiling light starts to swing", cues=[CU("dkswing", a=16.0, dur=0.6), DR(L=2.4, dur=0.0)])
 S("L46.2", cam((DK + 0.5, 1.2, 0.6), (DK, 2.0, 2.2), 20), {"downstairs": FP(DK - 0.8, 1.8, (DK + 0.5, 1.2), "worried", head=[0, -22])},
   note="low, up at the light")
-S("L47", cam((0.0, 2.9, 1.4), (0.0, 6.0, 1.3), 19), note="by three it fills the hall", cues=[MT(16384)])
+S("L47", cam((0.0, 0.8, 1.5), (0.0, 6.0, 1.3), 19), note="by three it fills the hall", cues=[MT(16384)])
 S("L47.2", cam((-0.3, 3.6, 1.4), (-0.8, 4.6, 1.4), 24), {"me": FP(-0.4, 3.9, (-0.3, 3.6), "worried")}, note="up to my door",
   cues=[MT(32768, ref="L47.2")])
 S("L48", cam((0.2, 3.7, 1.4), (-0.7, 5.3, 1.2), 26), {"me": FP(-0.45, 3.8, (0.2, 3.7), "worried")}, note="it's pushing my door shut",

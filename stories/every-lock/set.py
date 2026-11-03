@@ -101,7 +101,7 @@ def mats(kit):
     M["black"] = pm("#15110e", 0.7)
     M["flap"] = pm("#a9741f", 0.35)
     M["steel"] = kit.metal("#aab2ba", 0.35, name="steel")
-    for nm, h, met, rough in (("brassm", "#d9962a", 0.85, 0.3), ("chromem", P["chrome"], 0.9, 0.2)):
+    for nm, h, met, rough in (("brassm", "#cfa762", 0.85, 0.3), ("chromem", P["chrome"], 0.9, 0.2)):
         m = kit._new(nm)
         b = m.node_tree.nodes["Principled BSDF"]
         b.inputs["Base Color"].default_value = kit.col(h)
@@ -597,7 +597,7 @@ def build_dk(kit, M, ctx):
     kit.prop("kitchen_oven", (x + 1.9, 3.9, 0), rot=0)
     kit.prop("table_roundsmall", (x - 1.4, 1.3, 0), scale=1.2)
     # the ceiling light on a cord that swings
-    ctx["dk_swing"] = kit.empty("dk swing", (x, 2.0, WALL_H))
+    ctx["dk_swing"] = kit.empty("dk swing", (x, 1.3, WALL_H))
     kit.cyl("dk cord", 0.01, 0.5, (0, 0, -0.25), M["dark"], ctx["dk_swing"], (0, 0, 0), 6)
     kit.prop("light_ceiling1", (0, 0, -0.84), parent=ctx["dk_swing"], scale=1.3)
     kit.sphere("dk bulb", 0.07, (0, 0, -0.55), unfogged_emit(kit, "bulb", "#fff0c8", 6.0), ctx["dk_swing"], 10)
