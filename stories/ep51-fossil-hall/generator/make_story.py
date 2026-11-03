@@ -292,22 +292,22 @@ TOUR = [("c1", -8.9, -7.2, 100), ("c2", -9.6, -8.1, 80), ("c3", -7.6, -8.4, 150)
         ("c5", -6.9, -7.4, -140)]
 glow("L10", "abe", 3.0)
 # us on the bench; visitors passing in front of it squint at Grandad's glow and step away (what he could lose)
-shot("L10", "hall", C([0.3, 0.7, 1.3], [0.3, -3.2, 1.05], 20), {
+shot("L10", "hall", C([4.2, 1.2, 1.5], [1.2, -3.0, 1.05], 17), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE),
-    "c1": P(1.0, -1.9, 160, expr="neutral"), "c2": P(1.8, -1.8, 160, expr="neutral")},
-     "us on the bench; two passing visitors turn to Grandad's glow, squint and step away")
-key("c1", "L10.2", arms=[115, 105], expr="worried", blend=0.3)
-key("c2", "L10.2+0.2", arms=[110, 100], expr="worried", blend=0.3)
-walk("c1", "L10>", (1.6, -1.8))
-walk("c2", "L10>", (2.4, -1.7))
-shot("L11", "hall", C([-0.6, 0.5, 0.55], [0.5, -3.0, 1.2], 22), {
+    "c1": P(2.3, -2.0, -130, expr="neutral"), "c2": P(3.1, -2.2, -130, expr="neutral")},
+     "wide three-quarter from the aisle: us on the bench, two visitors beside it turn to Grandad's glow, squint and step away")
+key("c1", "L10.2", arms=[135, 125], expr="worried", blend=0.3)
+key("c2", "L10.2+0.2", arms=[130, 120], expr="worried", blend=0.3)
+walk("c1", "L10>", (2.9, -1.7))
+walk("c2", "L10>", (3.7, -1.9))
+shot("L11", "hall", C([4.4, 0.6, 1.4], [1.2, -3.0, 1.1], 17), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE),
-    "c3": P(1.0, -1.9, 160, arms=[115, 105], expr="worried"), "c4": P(1.8, -1.8, 160, arms=[110, 110], expr="worried"),
-    "c5": P(2.5, -1.7, 160, arms=[100, 0], expr="worried")},
-     "low wide: his glow soft on the bench; passers-by shield their eyes and edge away from it")
-walk("c3", "L11.2", (1.5, -1.9))
-walk("c4", "L11.2", (2.3, -1.8))
-walk("c5", "L11.2+0.2", (3.1, -1.7))
+    "c3": P(2.2, -2.0, -125, arms=[135, 125], expr="worried"), "c4": P(3.0, -2.4, -125, arms=[130, 130], expr="worried"),
+    "c5": P(3.8, -1.8, -125, arms=[125, 20], expr="worried")},
+     "wide: his glow soft on the bench; three passers-by shield their eyes and edge away from it")
+walk("c3", "L11.2", (2.9, -1.7))
+walk("c4", "L11.2", (3.7, -2.0))
+walk("c5", "L11.2+0.2", (4.5, -1.6))
 shot("L12", "hall", C([0.0, -8.4, 1.45], [0.0, 1.5, 2.4], 19), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE)}, "wide from behind the bench: the skeleton over us")
 shot("L12.3", "hall", C([-1.0, -4.6, 0.6], [-3.6, 1.5, 4.7], 22), {}, "tilt up the long neck to the head high over the hall")
@@ -484,11 +484,11 @@ shot("L54.3", "hall", C([-0.69, -1.45, 0.08], [-0.69, -2.9, 0.62], 34), {"abe": 
 shot("L55", "hall", C([-0.69, -1.45, 0.08], [-0.69, -2.9, 0.62], 34), {"abe": ABE_B},
      "hold the S072 framing: its face the right way up, eyes on camera, lit warm on one side only (the cover)", hand=0.003)
 shot("L56", "hall", C([2.8, 0.6, 0.7], [-0.25, -3.0, 1.5], 28), {"abe": ABE_B}, "two-shot, low three-quarter: Grandad glowing, the Stooped a dark outline bent over my seat, no rim")
-stooped("L57", roll=0, neck=-31, pitch=25, drop=1.5, hyaw=0)
+stooped("L57", roll=0, neck=-31, pitch=25, drop=1.5, hyaw=-15)
 cue("L57-0.5", "glk", level=0.15, dur=0.5)
-cue("L57", "sface", level=0.7, dur=1.0, below=[0.35, -0.9, 0.1], aim=[-0.45, -2.0, 1.35])
+cue("L57", "sface", level=1.0, dur=1.0, below=[0.35, -0.9, 0.1], aim=[-0.45, -2.0, 1.35])
 cue("L58", "sface", level=0.0, dur=0.5)
-shot("L57", "hall", C([1.3, 0.2, 0.62], [-0.5, -2.0, 1.28], 34), {
+shot("L57", "hall", C([0.25, 0.4, 0.62], [-0.45, -1.95, 1.22], 29), {
     "abe": ABE_B, "me": P(-0.22, -2.1, 165, expr="scared", lean=0, head=[-25, -8], look=[-1, 0])},
      "low three-quarter front two-shot: my scared face, its gape a hand below my chin, key from below", hand=0.002)
 # ---- 06 the loophole (L58 to L70)

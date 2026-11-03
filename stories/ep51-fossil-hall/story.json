@@ -2421,21 +2421,21 @@
     [
      0,
      [
-      0.3,
-      0.7,
-      1.3
+      4.2,
+      1.2,
+      1.5
      ],
      [
-      0.3,
-      -3.2,
+      1.2,
+      -3.0,
       1.05
      ],
-     20
+     17
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "us on the bench; two passing visitors turn to Grandad's glow, squint and step away",
+   "what": "wide three-quarter from the aisle: us on the bench, two visitors beside it turn to Grandad's glow, squint and step away",
    "at": "L10"
   },
   {
@@ -2444,21 +2444,21 @@
     [
      0,
      [
-      -0.6,
-      0.5,
-      0.55
+      4.4,
+      0.6,
+      1.4
      ],
      [
-      0.5,
+      1.2,
       -3.0,
-      1.2
+      1.1
      ],
-     22
+     17
     ]
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "low wide: his glow soft on the bench; passers-by shield their eyes and edge away from it",
+   "what": "wide: his glow soft on the bench; three passers-by shield their eyes and edge away from it",
    "at": "L11"
   },
   {
@@ -3903,16 +3903,16 @@
     [
      0,
      [
-      1.3,
-      0.2,
+      0.25,
+      0.4,
       0.62
      ],
      [
-      -0.5,
-      -2.0,
-      1.28
+      -0.45,
+      -1.95,
+      1.22
      ],
-     34
+     29
     ]
    ],
    "hand": 0.002,
@@ -8956,8 +8956,8 @@
    {
     "at": "L10",
     "pos": [
-     1.0,
-     -1.9
+     2.3,
+     -2.0
     ],
     "blend": 0,
     "hidden": false,
@@ -8978,13 +8978,13 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": 160
+    "yaw": -130
    },
    {
     "at": "L10.2",
     "arms": [
-     115,
-     105
+     135,
+     125
     ],
     "expr": "worried",
     "blend": 0.3
@@ -8992,8 +8992,8 @@
    {
     "at": "L10>",
     "pos": [
-     1.6,
-     -1.8
+     2.9,
+     -1.7
     ]
    },
    {
@@ -9004,8 +9004,8 @@
    {
     "at": "L17",
     "pos": [
-     1.6,
-     -1.8
+     2.9,
+     -1.7
     ]
    },
    {
@@ -9623,8 +9623,8 @@
    {
     "at": "L10",
     "pos": [
-     1.8,
-     -1.8
+     3.1,
+     -2.2
     ],
     "blend": 0,
     "hidden": false,
@@ -9645,13 +9645,13 @@
     "blink": true,
     "sit": false,
     "expr": "neutral",
-    "yaw": 160
+    "yaw": -130
    },
    {
     "at": "L10.2+0.2",
     "arms": [
-     110,
-     100
+     130,
+     120
     ],
     "expr": "worried",
     "blend": 0.3
@@ -9659,8 +9659,8 @@
    {
     "at": "L10>",
     "pos": [
-     2.4,
-     -1.7
+     3.7,
+     -1.9
     ]
    },
    {
@@ -9671,8 +9671,8 @@
    {
     "at": "L17",
     "pos": [
-     2.4,
-     -1.7
+     3.7,
+     -1.9
     ]
    },
    {
@@ -10139,14 +10139,14 @@
    {
     "at": "L11",
     "pos": [
-     1.0,
-     -1.9
+     2.2,
+     -2.0
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     115,
-     105
+     135,
+     125
     ],
     "side": [
      0,
@@ -10161,13 +10161,13 @@
     "blink": true,
     "sit": false,
     "expr": "worried",
-    "yaw": 160
+    "yaw": -125
    },
    {
     "at": "L11.2",
     "pos": [
-     1.5,
-     -1.9
+     2.9,
+     -1.7
     ]
    },
    {
@@ -10178,8 +10178,8 @@
    {
     "at": "L42",
     "pos": [
-     1.5,
-     -1.9
+     2.9,
+     -1.7
     ]
    },
    {
@@ -10659,14 +10659,14 @@
    {
     "at": "L11",
     "pos": [
-     1.8,
-     -1.8
+     3.0,
+     -2.4
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     110,
-     110
+     130,
+     130
     ],
     "side": [
      0,
@@ -10681,13 +10681,13 @@
     "blink": true,
     "sit": false,
     "expr": "worried",
-    "yaw": 160
+    "yaw": -125
    },
    {
     "at": "L11.2",
     "pos": [
-     2.3,
-     -1.8
+     3.7,
+     -2.0
     ]
    },
    {
@@ -10698,8 +10698,8 @@
    {
     "at": "L42",
     "pos": [
-     2.3,
-     -1.8
+     3.7,
+     -2.0
     ]
    },
    {
@@ -11132,14 +11132,14 @@
    {
     "at": "L11",
     "pos": [
-     2.5,
-     -1.7
+     3.8,
+     -1.8
     ],
     "blend": 0,
     "hidden": false,
     "arms": [
-     100,
-     0
+     125,
+     20
     ],
     "side": [
      0,
@@ -11154,13 +11154,13 @@
     "blink": true,
     "sit": false,
     "expr": "worried",
-    "yaw": 160
+    "yaw": -125
    },
    {
     "at": "L11.2+0.2",
     "pos": [
-     3.1,
-     -1.7
+     4.5,
+     -1.6
     ]
    },
    {
@@ -11171,8 +11171,8 @@
    {
     "at": "L42",
     "pos": [
-     3.1,
-     -1.7
+     4.5,
+     -1.6
     ]
    },
    {
@@ -13742,7 +13742,7 @@
    "neck": -31,
    "roll": 0,
    "pitch": 25,
-   "hyaw": 0,
+   "hyaw": -15,
    "drop": 1.5
   },
   {
@@ -13754,7 +13754,7 @@
   {
    "at": "L57",
    "name": "sface",
-   "level": 0.7,
+   "level": 1.0,
    "dur": 1.0,
    "below": [
     0.35,
