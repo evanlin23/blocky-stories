@@ -4,5 +4,7 @@
  "pin": "Comment TAG if you'd be covered by now.",
  "made_for_kids": false,
  "cover_s": 94.7,
- "shape": "about-me"
+ "shape": "about-me",
+ "old_title": "In This Town Every LIE Pins a Tag to Your Clothes",
+ "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
 }

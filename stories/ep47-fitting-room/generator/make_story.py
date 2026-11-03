@@ -577,7 +577,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"fog": "#1c2230", "fog_density": 0.012, "fog_start": 8.0, "sky": "#cfe0ee", "sky_strength": 0.9,
-             "exposure": 0.15, "flash_safe": True},
+             "exposure": 0.15, "flash_safe": True, "polish": {"quiet": [["L66", "L69"]], "emph": ["L01.3", "L02.1"]}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.25, "grain": 0.012},
     "phonemes": {"Aurel": "ˈɔɹəl"},
