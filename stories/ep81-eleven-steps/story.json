@@ -8,7 +8,7 @@
   "rate": 1.45
  },
  "key_color": "#c77dff",
- "gap": 0.15,
+ "gap": 0.12,
  "tail": 0.25,
  "lines": [
   {
@@ -1113,24 +1113,204 @@
     [
      0,
      [
-      0,
-      -3,
-      1.5
+      2.4,
+      2.7,
+      3.0
      ],
      [
-      0,
-      0,
-      1.5
+      0.0,
+      3.9,
+      2.5
      ],
-     30
+     11
     ]
-   ]
+   ],
+   "step": 2,
+   "hand": 0,
+   "look": "dim"
+  },
+  {
+   "id": "S02",
+   "at": 2.0,
+   "cam": [
+    [
+     0,
+     [
+      2.4,
+      2.7,
+      3.0
+     ],
+     [
+      0.0,
+      3.9,
+      2.5
+     ],
+     11
+    ]
+   ],
+   "step": 2,
+   "hand": 0,
+   "look": "dim"
+  },
+  {
+   "id": "S03",
+   "at": 4.0,
+   "cam": [
+    [
+     0,
+     [
+      2.4,
+      2.7,
+      3.0
+     ],
+     [
+      0.0,
+      3.9,
+      2.5
+     ],
+     11
+    ]
+   ],
+   "step": 2,
+   "hand": 0,
+   "look": "dim"
+  },
+  {
+   "id": "S04",
+   "at": 6.0,
+   "cam": [
+    [
+     0,
+     [
+      2.4,
+      2.7,
+      3.0
+     ],
+     [
+      0.0,
+      3.9,
+      2.5
+     ],
+     11
+    ]
+   ],
+   "step": 2,
+   "hand": 0,
+   "look": "dim"
   }
  ],
- "cast": {},
- "acting": {},
- "cues": [],
+ "cast": {
+  "me": {
+   "age": "adult",
+   "skin": "#f1c9a0",
+   "shirt": "#8e3f8f",
+   "pattern": "stripes",
+   "pattern_c": "#f6ead2",
+   "pants": "#8a8d96",
+   "shoes": "#ffffff",
+   "sleeves": "long",
+   "hair": "cap",
+   "hair_c": "#6a4426",
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#24131f"
+   }
+  }
+ },
+ "acting": {
+  "me": [
+   {
+    "at": 0,
+    "pos": [
+     0,
+     20,
+     0
+    ],
+    "hidden": true,
+    "blend": 0
+   }
+  ]
+ },
+ "cues": [
+  {
+   "at": 0,
+   "name": "count",
+   "n": 10
+  },
+  {
+   "at": 0,
+   "name": "climber",
+   "on": true,
+   "yaw": 180,
+   "pos": [
+    0.0,
+    3.7,
+    1.9
+   ],
+   "fold": 1.0,
+   "roll": -80,
+   "reach": 50,
+   "hp": 0,
+   "hy": 0
+  },
+  {
+   "at": 2,
+   "name": "climber",
+   "on": true,
+   "yaw": 180,
+   "pos": [
+    0.0,
+    3.7,
+    1.9
+   ],
+   "fold": 1.0,
+   "roll": -80,
+   "reach": 50,
+   "hp": 0,
+   "hy": 60
+  },
+  {
+   "at": 4,
+   "name": "climber",
+   "on": true,
+   "yaw": 180,
+   "pos": [
+    0.0,
+    3.7,
+    1.9
+   ],
+   "fold": 1.0,
+   "roll": -80,
+   "reach": 50,
+   "hp": 0,
+   "hy": -60
+  },
+  {
+   "at": 6,
+   "name": "climber",
+   "on": true,
+   "yaw": 180,
+   "pos": [
+    0.0,
+    3.7,
+    1.9
+   ],
+   "fold": 1.0,
+   "roll": 80,
+   "reach": 50,
+   "hp": 0,
+   "hy": 70
+  },
+  {
+   "at": 0,
+   "name": "mydoor",
+   "open": 0,
+   "bow": 0
+  }
+ ],
  "look": {
-  "style": "closer"
+  "style": "closer",
+  "flash_safe": true
  }
 }
