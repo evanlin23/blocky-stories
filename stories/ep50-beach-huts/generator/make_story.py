@@ -123,8 +123,6 @@ NSTAGE = lambda h, **r: dict(stage={"hut": h}, refl=r)
 # 01 the rule
 S(0, "warning: his face and the glass, the reflection already mid-cartwheel", move(((-3.2, -2.9, 1.55), (-3.1, 0, 1.4)), ((-3.15, -2.2, 1.55), (-3.1, 0, 1.4)), 30, 34), 1,
   **NSTAGE(4, r_neighbour="stage"))
-S("L01.2", "glass close: the cartwheel", move(((-2.7, -1.9, 1.35), (-2.7, 0, 1.3)), ((-2.7, -1.5, 1.35), (-2.7, 0, 1.3)), 32, 36), 1,
-  **NSTAGE(4, r_neighbour="stage"))
 S("L01.3", "punch: his face, the glass behind", move(((-3.3, -2.3, 1.6), (-3.15, -0.8, 1.6)), ((-3.3, -1.9, 1.6), (-3.15, -0.8, 1.6)), 34, 38), 1,
   **NSTAGE(4, r_neighbour="stage"))
 S("L02", "the glass alone, landing", move(((-3.0, -1.7, 1.45), (-3.0, 0, 1.45)), ((-3.0, -1.3, 1.45), (-3.0, 0, 1.45)), 30, 36), 1,
@@ -571,7 +569,6 @@ cues = [
 sfx = [
     # the opening: a soft glassy thud on the warning's last word, a soft whoosh on each hard cut
     {"at": "L01>", "kind": "thud", "db": -9, "dur": 0.8},
-    {"at": "L01.2", "kind": "whoosh", "db": -22, "dur": 0.4},
     {"at": "L01.3", "kind": "whoosh", "db": -21, "dur": 0.4},
     {"at": "L02", "kind": "whoosh", "db": -22, "dur": 0.4},
     {"at": "L02.2+0.3", "kind": "whoosh", "db": -20, "dur": 0.5},
@@ -611,7 +608,8 @@ story = {
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#b4c2c8", "fog_density": 0.022, "fog_start": 12.0, "sky": "#c9d3d6", "sky_strength": 1.05,
-             "exposure": 0.0, "flash_safe": True},
+             "exposure": 0.0, "flash_safe": True,
+             "polish": {"quiet": [["L70", "L75"]]}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.3, "grain": 0.012},
     "phonemes": {"Remi": "ɹˈɛmi"},
