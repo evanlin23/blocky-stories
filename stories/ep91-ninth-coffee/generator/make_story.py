@@ -50,7 +50,7 @@ story = {
     "cues": cues,
     "set_moves": SET_MOVES,
     "clip_heads": [],
-    "clip_ok": CLIP_OK,
+    "clip_ok": CLIP_OK + ["streak"],
     "music": MUSIC,
     "sound": SOUND,
     "phonemes": {"Kai": "kˈI", "Kai's": "kˈIz"},

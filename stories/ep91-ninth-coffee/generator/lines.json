@@ -74,8 +74,12 @@
     "the elevator"
    ],
    [
-    "takes half as LONG.",
-    "takes half as long."
+    "takes half",
+    "takes half"
+   ],
+   [
+    "as LONG.",
+    "as long."
    ]
   ]
  },
@@ -92,8 +96,12 @@
     "everybody else"
    ],
    [
-    "talks like a SLOW song.",
-    "talks like a slow song."
+    "talks like",
+    "talks like"
+   ],
+   [
+    "a SLOW song.",
+    "a slow song."
    ]
   ]
  },
@@ -130,8 +138,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "My best friend, KAI,",
-    "my best friend, kai,"
+    "My best",
+    "my best"
+   ],
+   [
+    "friend, KAI,",
+    "friend, kai,"
    ],
    [
     "sits",
@@ -148,8 +160,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "We used to get coffee",
-    "we used to get coffee"
+    "We used",
+    "we used"
+   ],
+   [
+    "to get coffee",
+    "to get coffee"
    ],
    [
     "every MORNING.",
@@ -162,8 +178,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "For a year now,",
-    "for a year now,"
+    "For a",
+    "for a"
+   ],
+   [
+    "year now,",
+    "year now,"
    ],
    [
     "he's always",
@@ -180,12 +200,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "I never see him ARRIVE.",
-    "i never see him arrive."
+    "I never",
+    "i never"
    ],
    [
-    "I never see him LEAVE.",
-    "i never see him leave."
+    "see him ARRIVE.",
+    "see him arrive."
+   ],
+   [
+    "I never",
+    "i never"
+   ],
+   [
+    "see him LEAVE.",
+    "see him leave."
    ]
   ]
  },
@@ -198,8 +226,12 @@
     "his desk"
    ],
    [
-    "is always perfectly NEAT.",
-    "is always perfectly neat."
+    "is always",
+    "is always"
+   ],
+   [
+    "perfectly NEAT.",
+    "perfectly neat."
    ]
   ]
  },
@@ -234,8 +266,12 @@
     "my report"
    ],
    [
-    "was due at FIVE.",
-    "was due at five."
+    "was due",
+    "was due"
+   ],
+   [
+    "at FIVE.",
+    "at five."
    ]
   ]
  },
@@ -262,8 +298,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "So I kept POURING.",
-    "so i kept pouring."
+    "So I",
+    "so i"
+   ],
+   [
+    "kept POURING.",
+    "kept pouring."
    ]
   ]
  },
@@ -280,8 +320,12 @@
     "thirty-two times fast."
    ],
    [
-    "The clock hands CRAWL.",
-    "the clock hands crawl."
+    "The clock",
+    "the clock"
+   ],
+   [
+    "hands CRAWL.",
+    "hands crawl."
    ]
   ]
  },
@@ -336,8 +380,12 @@
     "five hundred"
    ],
    [
-    "and twelve times FAST.",
-    "and twelve times fast."
+    "and twelve",
+    "and twelve"
+   ],
+   [
+    "times FAST.",
+    "times fast."
    ]
   ]
  },
@@ -388,8 +436,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "even FASTER than me,",
-    "even faster than me,"
+    "even FASTER",
+    "even faster"
+   ],
+   [
+    "than me,",
+    "than me,"
    ],
    [
     "leaving long streaks",
@@ -457,7 +509,7 @@
   "chunks": [
    [
     "They're the TEN-cuppers.",
-    "they're the ten-cuppers."
+    "they're the ten cupers."
    ]
   ]
  },
@@ -474,8 +526,12 @@
     "a tenth cup,"
    ],
    [
-    "and can't come DOWN.",
-    "and can't come down."
+    "and can't",
+    "and can't"
+   ],
+   [
+    "come DOWN.",
+    "come down."
    ]
   ]
  },
@@ -484,12 +540,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "They move so fast,",
-    "they move so fast,"
+    "They move",
+    "they move"
    ],
    [
-    "we only ever see",
-    "we only ever see"
+    "so fast,",
+    "so fast,"
+   ],
+   [
+    "we only",
+    "we only"
+   ],
+   [
+    "ever see",
+    "ever see"
    ],
    [
     "what they LEAVE.",
@@ -502,8 +566,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "And one of them",
-    "and one of them"
+    "And one",
+    "and one"
+   ],
+   [
+    "of them",
+    "of them"
    ],
    [
     "stopped",
@@ -538,8 +606,12 @@
     "he drank ten"
    ],
    [
-    "to make a deadline.",
-    "to make a deadline."
+    "to make",
+    "to make"
+   ],
+   [
+    "a deadline.",
+    "a deadline."
    ]
   ]
  },
@@ -574,8 +646,12 @@
     "he was never"
    ],
    [
-    "too busy for me.",
-    "too busy for me."
+    "too busy",
+    "too busy"
+   ],
+   [
+    "for me.",
+    "for me."
    ],
    [
     "He's been finishing",
@@ -592,8 +668,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "He wrote me a sticky NOTE,",
-    "he wrote me a sticky note,"
+    "He wrote me",
+    "he wrote me"
+   ],
+   [
+    "a sticky NOTE,",
+    "a sticky note,"
    ],
    [
     "so fast",
@@ -628,8 +708,12 @@
     "every coffee"
    ],
    [
-    "makes you twice as fast.",
-    "makes you twice as fast."
+    "makes you",
+    "makes you"
+   ],
+   [
+    "twice as fast.",
+    "twice as fast."
    ]
   ]
  },
@@ -652,12 +736,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Kai was at TEN.",
-    "kai was at ten."
+    "Kai was",
+    "kai was"
    ],
    [
-    "So I made him",
-    "so i made him"
+    "at TEN.",
+    "at ten."
+   ],
+   [
+    "So I",
+    "so i"
+   ],
+   [
+    "made him",
+    "made him"
    ],
    [
     "ten DECAFS.",
@@ -684,20 +776,32 @@
   "who": "narrator",
   "chunks": [
    [
-    "After the last one,",
-    "after the last one,"
+    "After the",
+    "after the"
    ],
    [
-    "he was just KAI,",
-    "he was just kai,"
+    "last one,",
+    "last one,"
+   ],
+   [
+    "he was",
+    "he was"
+   ],
+   [
+    "just KAI,",
+    "just kai,"
    ],
    [
     "blinking",
     "blinking"
    ],
    [
-    "by the coffee MACHINE.",
-    "by the coffee machine."
+    "by the",
+    "by the"
+   ],
+   [
+    "coffee MACHINE.",
+    "coffee machine."
    ]
   ]
  },
@@ -760,8 +864,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "That was every decaf",
-    "that was every decaf"
+    "That was",
+    "that was"
+   ],
+   [
+    "every decaf",
+    "every decaf"
    ],
    [
     "in the BUILDING.",
