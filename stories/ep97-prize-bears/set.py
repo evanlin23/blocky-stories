@@ -317,7 +317,7 @@ def hud_png(n, bear=False):
 def bear(kit, name, loc, yaw=0.0, scale=1.0, bow=True, parent=None, black_eyes=True):
     e = E(parent, loc, name, rot=(0, 0, yaw * math.pi / 180))
     e.scale = (scale, scale, scale)
-    cream, pale, dark = P("#f3e2c4", 0.8, 0.15), P("#fff3dc", 0.8, 0.15), P("#101014", 0.2, 0.9)
+    cream, pale, dark = P("#e2cba6", 0.8, 0.15), P("#f0e0c4", 0.8, 0.15), P("#050507", 0.12, 1.0)
     s = kit.sphere
     b = s(nm("bb"), 0.33, (0, 0, 0.38), cream, e, 10)
     b.scale = (1, 0.85, 1.1)
@@ -325,7 +325,8 @@ def bear(kit, name, loc, yaw=0.0, scale=1.0, bow=True, parent=None, black_eyes=T
     for sx in (-1, 1):
         s(nm("be"), 0.1, (sx * 0.19, 0.0, 1.12), cream, e, 8)
         s(nm("bi"), 0.055, (sx * 0.19, -0.07, 1.12), pale, e, 6)
-        s(nm("bk"), 0.045, (sx * 0.1, -0.235, 0.96), dark, e, 8)          # button eyes
+        s(nm("bk"), 0.058, (sx * 0.1, -0.225, 0.96), dark, e, 10)          # button eyes
+        s(nm("bg"), 0.013, (sx * 0.1 + 0.022, -0.275, 0.985), kit.emit("#ffffff", 10.0, "glint"), e, 4)
         a = s(nm("ba"), 0.12, (sx * 0.36, -0.06, 0.42), cream, e, 8)
         a.scale = (0.8, 0.8, 1.35)
         l = s(nm("bl"), 0.15, (sx * 0.2, -0.2, 0.1), cream, e, 8)
@@ -364,7 +365,7 @@ def build(kit, story, tl):
     wall = P_("#d9c8ff", 0.9, 0.1)
     wall2 = P_("#bda4f5", 0.9, 0.1)
     white = P_("#f5f5f0", 0.5)
-    chrome = kit.metal("#d6dde3", 0.22)
+    chrome = P("#cfd6de", 0.3, 0.8)
     blue = P_("#2a5bd7", 0.4)
     orange = P_("#ff9a1f", 0.45)
     cyan_e = kit.emit("#3fe7ff", 3.0, "cyan neon")
@@ -554,8 +555,8 @@ def build(kit, story, tl):
     kit.sphere(nm("kn"), 0.04, (0.95, -0.06, 1.1), chrome, cd_h, 8)
     ctx["cdoor"] = cd_h
     # closet: x 1.6..6.6, y 11.15..16.4, ceiling 3.6
-    cream_w = P_("#c9b99a", 0.9)
-    kit.box("clfloor", (5.2, 5.4, 0.2), (4.1, 13.9, -0.1), P_("#a9926c", 0.85))
+    cream_w = P_("#6f604a", 0.9)
+    kit.box("clfloor", (5.2, 5.4, 0.2), (4.1, 13.9, -0.1), P_("#5f4e38", 0.85))
     kit.box("clceil", (5.2, 5.4, 0.2), (4.1, 13.9, 3.7), cream_w)
     kit.box("clL", (0.2, 5.4, 3.6), (1.5, 13.9, 1.8), cream_w)
     kit.box("clR", (0.2, 5.4, 3.6), (6.7, 13.9, 1.8), cream_w)
@@ -587,16 +588,18 @@ def build(kit, story, tl):
     # the bare bulb on its cord, swinging
     ctx["bulbp"] = E(None, (4.1, 12.8, 3.6), "bulbpivot")
     kit.cyl(nm("cord"), 0.01, 0.9, (0, 0, -0.45), P_("#222222", 0.5), ctx["bulbp"], n=6)
-    kit.sphere(nm("bulb"), 0.09, (0, 0, -0.98), kit.emit("#ffe2b0", 6.0, "bulb"), ctx["bulbp"], 10)
-    kit.light("bulb", "POINT", (4.1, 12.8, 2.6), 900, "#ffd29a", size=0.12)
-    kit.light("bulbfill", "AREA", (4.1, 14.0, 3.3), 220, "#ffe7c0", size=3.0, rot=(0, 0, 0))
+    kit.sphere(nm("bulb"), 0.09, (0, 0, -0.55), kit.emit("#ffe2b0", 6.0, "bulb"), ctx["bulbp"], 10)
+    kit.light("bulb", "POINT", (3.0, 12.8, 3.1), 330, "#ffc88a", size=0.1)
+    kit.light("bulbfill", "AREA", (4.1, 14.0, 3.3), 25, "#ffe7c0", size=3.0, rot=(0, 0, 0))
+    kit.light("rimlow", "AREA", (4.1, 15.4, 0.05), 90, "#ffe9c8", size=2.5, rot=(math.pi, 0, 0))
+    kit.light("rimside", "AREA", (6.3, 14.0, 1.2), 50, "#ffd9b0", size=1.5, rot=(0, math.pi / 2, 0))
     # ---- lights
     sun = kit.light("sun", "SUN", (0, -30, 30), 4.2, "#fff0d0")
     kit.aim(sun, (0, 3, 0))
     sun.data.angle = math.radians(2.5)
     ctx["sun"] = sun
     for i, (x, y) in enumerate(((-4.5, 3), (0, 3), (4.5, 3), (-4, 8.4), (0.5, 8.0), (5, 7))):
-        kit.light(f"ceil{i}", "AREA", (x, y, 3.5), 320, "#fff1dc", size=3.2, rot=(0, 0, 0))
+        kit.light(f"ceil{i}", "AREA", (x, y, 3.5), 200, "#fff1dc", size=3.2, rot=(0, 0, 0))
     kit.light("cyanboard", "POINT", (-3.1, 8.7, 2.0), 70, "#3fe7ff", size=0.5)
     kit.light("camfill", "AREA", (0, 0, 2), 60, "#fff4e6", size=1.6)
     # ---- the car (a teal hatchback, nose to the arcade)
@@ -733,8 +736,8 @@ def build_cabin(kit, ctx):
     duck_parts(kit, d, 1.2)
     ctx["cabduck"] = d
     B(None, (3.2, 0.1, 0.9), (ox, oy - 1.6, 0.5), P("#3a3f4c", 0.6), "seatback", 0.04)
-    kit.light("cabfill", "AREA", (ox, oy - 0.6, 2.0), 230, "#fff4e6", size=2.4)
-    kit.light("cabsun", "AREA", (ox, oy + 2.0, 2.5), 250, "#ffe8bd", size=2.0)
+    kit.light("cabfill", "AREA", (ox, oy - 0.6, 2.0), 90, "#fff4e6", size=2.4)
+    kit.light("cabsun", "AREA", (ox, oy + 2.0, 2.5), 80, "#ffe8bd", size=2.0)
 
 
 def build_hud(kit, ctx):
@@ -820,9 +823,9 @@ def dress_all(kit, ctx):
         kit.box(nm("crq"), (0.14, 0.14, 0.3 if i % 2 == 0 else 0.2), (x, 0.4, 0.2), cm, crown, bevel=0.02)
     held["crown"] = crown
     keys = E(c.P["arm1"], (0, -0.2, -1.75), "keys")
-    kit.cyl(nm("kr"), 0.2, 0.05, (0, 0, 0), kit.metal("#d6dde3", 0.3), keys, rot=(math.pi / 2, 0, 0), n=14)
+    kit.cyl(nm("kr"), 0.2, 0.05, (0, 0, 0), P("#cfd6de", 0.3, 0.8), keys, rot=(math.pi / 2, 0, 0), n=14)
     kit.box(nm("kt"), (0.22, 0.05, 0.34), (0, 0, -0.3), P("#ff9a1f", 0.5), keys, bevel=0.02)
-    kit.box(nm("kk"), (0.1, 0.03, 0.4), (0.14, 0, -0.16), kit.metal("#d6dde3", 0.3), keys, bevel=0.01)
+    kit.box(nm("kk"), (0.1, 0.03, 0.4), (0.14, 0, -0.16), P("#cfd6de", 0.3, 0.8), keys, bevel=0.01)
     held["keys"] = keys
     d = E(c.P["arm1"], (0, -0.1, -1.95), "handduck")
     duck_parts(kit, d, 3.4)
@@ -911,7 +914,7 @@ def animate(kit, story, tl, t, ctx):
     cf = kit.LIGHTS["camfill"]
     cf["obj"].location = cam + V((0, 0, 0.2))
     cf["obj"].rotation_euler = fw.to_track_quat("-Z", "Y").to_euler()
-    cf["base"] = 14 * d * d * spec.get("cfill", 1.0)
+    cf["base"] = 8 * d * d * spec.get("cfill", 1.0)
     ov = {}
     # the cyan board light follows only the shots that need it
     ov["cyanboard"] = spec.get("cyan", 1.0)
