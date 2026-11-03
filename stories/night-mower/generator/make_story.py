@@ -303,11 +303,6 @@ walk("dadn", "L42", (2.0, 7.6, 0))
 shot("S52", "L42", C((1.0, 5.8, 1.5), (3.0, 8.0, 1.5), 36, (1.3, 6.0, 1.5), (3.0, 8.0, 1.5), 40),
      "Mr. Odell, eyes shut, smiling, turning his face toward Dad's steps")
 stage("L42", odell=((3.3, 8.0, 0), -90, "shut", {"head": [-25, 0], "arms": [0, 0]}), dadn=((2.0, 7.4, 0), 90, "shut"))
-shot("S53", "L43", C((5.6, 4.8, 1.3), (5.2, 8.6, 1.15), 30, (5.5, 5.4, 1.25), (5.2, 8.6, 1.15), 32),
-     "the two of them on the lawn: Dad with the cord, Mr. Odell steering, both eyes shut, the hum back")
-stage("L43", odell=((5.6, 10.6, 0), 0, "shut"), dadn=((4.3, 10.7, 0), 0, "shut", {"arms": [60, 60]}))
-walk("odell", "L43.2-0.15", (5.6, 9.7, 0))
-walk("dadn", "L43.2-0.15", (4.3, 9.8, 0))
 shot("S54", "L43.2-0.15", C((0.2, -1.0, 1.28), (0.2, -0.55, 1.0), 36, (0.2, -0.95, 1.24), (0.2, -0.55, 1.0), 40),
      "the lore shot: close on the handle bar, two lime strokes by the left grip", follow="odell", hand=0.003)
 stage("L43.2-0.15", odell=((5.6, 9.7, 0), 0, "shut"), dadn=((4.3, 9.8, 0), 0, "shut", {"arms": [60, 60]}))
@@ -376,7 +371,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"style": "closer", "fog": "#6f86c8", "fog_density": 0.012, "fog_start": 14.0, "sky": "#1b2a6b",
-             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L06", "L28", "L35"], "reveal": ["L28"], "twist": "L34", "quiet": [["L39", "L45"]], "sway": ["S19", "S21", "S24", "S26", "S27", "S28", "S29"]}, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
+             "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L28", "L35"], "auto": False, "reveal": ["L28"], "twist": "L34", "quiet": [["L39", "L45"]], "sway": ["S19", "S21", "S24", "S26", "S27", "S28", "S29"]}, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 1.12, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.01, "red_line": 0.78},
     "phonemes": {"snaps": "snˈæps"},
