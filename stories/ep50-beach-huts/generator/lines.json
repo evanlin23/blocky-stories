@@ -1342,16 +1342,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "This MORNING,",
-    "this morning,"
-   ],
-   [
-    "it was ALREADY",
+    "It was ALREADY",
     "it was already"
    ],
    [
-    "out THERE.",
-    "out there."
+    "out THERE",
+    "out there"
+   ],
+   [
+    "before I WOKE.",
+    "before I woke."
    ]
   ]
  }

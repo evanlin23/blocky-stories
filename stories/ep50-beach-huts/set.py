@@ -326,6 +326,12 @@ def build_stage(kit, M, ctx):
     kit.box("stage.break", (0.03, 0.2, 0.03), (0.32, y + 0.08, z + 0.02), M["stone"], st)
     kit.box("stage.bench", (0.03, 0.008, 0.012), (0.12, y - 0.05, z + 0.02), M["chairwood"], st)
     ctx["stage"] = st
+    # a small empty deckchair in the glass (L53, L54): its reflection with nobody in it
+    sch = deckchair(kit, M, "chairS")
+    sch["root"].parent = st
+    sch["root"].scale = (0.3, 0.3, 0.3)
+    sch["root"].location = (-0.12, 0.12, 0.0)
+    ctx["schair"] = sch["root"]
 
 
 def build(kit, story, tl):
@@ -444,12 +450,14 @@ def build(kit, story, tl):
     ctx["sun"] = sun
     kit.light("lantern", "POINT", (LANT[0], LANT[1], DECK_Z + 0.16), 900, "#f0b46a", size=0.08)
     kit.light("laptop", "POINT", (0.0, -1.05, 1.0), 12, "#cfe0ff", size=0.1)
-    kit.light("hutin", "POINT", (-0.4, 1.0, 2.1), 90, "#ffcf94", size=0.15)
+    kit.light("hutin", "POINT", (-0.4, 1.0, 2.1), 220, "#ffcf94", size=0.15)
     kit.light("headkey", "POINT", (2.3, -2.2, 1.0), 420, "#ffc27a", size=0.3)
     kit.light("dusklift", "AREA", (-2.8, -6.5, 2.8), 300, "#9db8ea", size=4.0)
     kit.aim(LIGHT("dusklift", kit), (1.0, -1.3, 1.5))
     kit.light("benchlift", "AREA", (42.0, -13.0, 3.0), 900, "#c3d3f2", size=6.0)
     kit.aim(LIGHT("benchlift", kit), (46.8, -6.4, 0.3))
+    kit.light("stagelit", "POINT", (hx(OURS) + WIN_X, 0.4, WIN_Z0 + 0.4), 10, "#d8e4f4", size=0.04)   # inside the glass box
+    kit.light("faceup", "POINT", (0.7, -2.3, 0.55), 450, "#ffb878", size=0.25)   # the Small Head, lit from below
     kit.light("shadowkey", "POINT", (3.3, -4.0, 1.5), 1400, "#f4b66e", size=0.04)
     kit.light("rim", "AREA", (3.0, -12.0, 1.4), 400, "#7aa2e0", size=5.0)
     kit.aim(LIGHT("rim", kit), (0.6, -0.9, 1.1))
@@ -608,7 +616,7 @@ def init(kit, story, tl, ctx):
         wd = story["cast"]["smallhead"].get("width", 1.0)
         hs = story["cast"]["smallhead"].get("head_scale", 0.34)
         head = bpy.data.objects.get("smallhead.head")
-        head.scale = (hs / wd, hs, hs)
+        head.scale = (hs / wd * 0.9, hs, hs * 1.3)   # a long narrow head
     ctx["base"] = {}
     for who in story["cast"]:
         o = bpy.data.objects.get(who)
@@ -716,6 +724,10 @@ def animate(kit, story, tl, t, ctx):
         h = st["hut"]
         ctx["stage"].location = (hx(h) + WIN_X, 0.12, WIN_Z0)
         # the stage sits behind the glass: its x is centred on the window
+    sc_on = bool(sx_.get("schair")) and st is not None
+    ctx["schair"].hide_render = not sc_on
+    for ob in ctx["schair"].children_recursive:
+        ob.hide_render = not sc_on
     # --- doors
     dc = _cues(tl, "door")
     ang = 0.0
@@ -771,6 +783,8 @@ def animate(kit, story, tl, t, ctx):
     over["headkey"] = lift * (0.0 if sx_.get("ghost") else 1.0)
     over["shadowkey"] = 1.0 if sx_.get("ghost") else 0.0
     over["lantern"] = over["lantern"] * (0.0 if sx_.get("ghost") else 1.0)
+    over["stagelit"] = _ramp(tl, "stagelit", "on", t, 0.0)
+    over["faceup"] = lift * (0.0 if sx_.get("ghost") else 1.0)
     over["dusklift"] = lift
     over["benchlift"] = ss(_ramp(tl, "benchlift", "on", t, 0.0))
     # ghost shots: the Small Head is out of sight but its shadow still falls (L42 to L43)
@@ -779,7 +793,8 @@ def animate(kit, story, tl, t, ctx):
         if ob.name.startswith("smallhead"):
             if gh:
                 ob.hide_render = False
-            ob.visible_camera = not gh
+            ob.visible_camera = not (gh or bool(sx_.get("hidecr")))
+            ob.visible_shadow = not sx_.get("hidecr")
     return over
 
 
@@ -809,7 +824,14 @@ def place_refl(kit, tl, ctx, rn, c, kind, t, sx_):
         c.pose(px * sc, 0.8 * d + 0.02, 0.3 * d + 0.006 + z * sc, s["yaw"], s["legs"], s["arms"],
                s["arms_side"], s["head_yaw"], s["head_pitch"], s["lean"], 0.0, s["expr"], s["mouth"], s["look"],
                s["blink"], s["hidden"])
-        root.scale = (base[0] / 0.34 * sc * 0.34, base[1] / 0.34 * sc * 0.34, base[2] / 0.34 * sc * 0.34)
+        big = _held(keys, "big", t, 1.0)
+        root.scale = (base[0] * sc * big, base[1] * sc * big, base[2] * sc * big)
+        if _switch(keys, "stroll", t, False) and not s["hidden"]:
+            # the stage's distances are tiny, so the acting's own leg swing never starts: walk in place
+            ph = t * 2 * math.pi / 0.85
+            for sx in (-1, 1):
+                bpy.data.objects[f"{c.name}.leg{sx}"].rotation_euler = (sx * 0.38 * math.sin(ph), 0, 0)
+                bpy.data.objects[f"{c.name}.arm{sx}"].rotation_euler = (-sx * 0.4 * math.sin(ph), 0, 0)
     else:
         if root.parent is not None:
             root.parent = None
@@ -823,6 +845,10 @@ def place_refl(kit, tl, ctx, rn, c, kind, t, sx_):
     if roll:
         e = root.rotation_euler
         root.rotation_euler = (e.x, roll, e.z)
+        if k == "stage":
+            # a cartwheel turns about the hips, not the feet: shift the root so the hips stay where they were
+            zc = 2.3 * root.scale[2]
+            root.location = (root.location.x - zc * math.sin(roll), root.location.y, root.location.z + zc * (1 - math.cos(roll)))
     if _switch(keys, "sit", t, False) and not s["hidden"]:
         for sx in (-1, 1):
             bpy.data.objects[f"{c.name}.leg{sx}"].rotation_euler = (-math.pi / 2, 0, 0)

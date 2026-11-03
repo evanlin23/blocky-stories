@@ -48,7 +48,7 @@ def R(ref):
 # ------------------------------------------------------------------------------------------------- cast
 FACE = {"eyes": "round", "brows": True}
 cast = {
-    "me": {"age": "adult", "skin": "#e6bf98", "shirt": "#a8552e", "pattern": "solid", "collar": "#8c8c92",
+    "me": {"age": "adult", "skin": "#e6bf98", "shirt": "#b8327a", "pattern": "solid", "collar": "#8c8c92",
            "pants": "#2f3033", "shoes": "#2a2522", "sleeves": "long", "hair": "swoop", "hair_c": "#a07850",
            "extras": ["coat"], "zip_c": "#e8dfc8", "face": FACE},
     "remi": {"age": "adult", "skin": "#b98760", "shirt": "#e8dfc8", "pattern": "knit", "pattern_c": "#cbbd9b",
@@ -69,17 +69,17 @@ cast = {
     "date_m": {"age": "adult", "skin": "#c68f68", "shirt": "#7a5230", "pattern": "solid", "pants": "#3a3a40",
                "shoes": "#2a2522", "sleeves": "long", "hair": "cap", "hair_c": "#1c1410",
                "face": {"eyes": "round", "brows": True}},
-    "smallhead": {"age": "adult", "skin": "#cfc9b4", "shirt": "#b5655a", "pattern": "solid", "pants": "#6a7480",
-                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": 1.4, "width": 1.3, "head_scale": 0.58,
-                  "face": {"eyes": "hollow", "glow": "#fff6dc", "mouth": "flat", "brows": False, "eye_scale": 0.72}},
+    "smallhead": {"age": "adult", "skin": "#a9a595", "shirt": "#b5655a", "pattern": "solid", "pants": "#6a7480",
+                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": 1.5, "width": 1.2, "head_scale": 0.5,
+                  "face": {"eyes": "hollow", "glow": "#fff6dc", "mouth": "crescent", "brows": False, "eye_scale": 1.3}},
 }
 reflections = {
     "r_neighbour": {"of": "neighbour"},
     "r_dieter": {"of": "dieter"},
     "r_shopper": {"of": "shopper", "set": {"shirt": "#c86a6a", "zip_c": "#f0d0c0"}},
     "r_date_f": {"of": "date_f"}, "r_date_m": {"of": "date_m"},
-    "r_remi": {"of": "remi"},
-    "r_me": {"of": "me", "tint": 0.0, "set": {"shirt": "#c25a2a"}},
+    "r_remi": {"of": "remi", "tint": 0.1, "set": {"extra_c": "#e0a62c"}},
+    "r_me": {"of": "me", "tint": 0.0, "set": {"shirt": "#b8327a"}},
 }
 
 
@@ -120,9 +120,9 @@ def S(at, what, cam, step=2, **kw):
 NSTAGE = lambda h, **r: dict(stage={"hut": h}, refl=r)
 
 # 01 the rule
-S(0, "neighbour at his window, cartwheel in the glass", still((-3.1, -3.6, 1.55), (-3.1, 0, 1.5), 26), 1,
+S(0, "neighbour at his window, cartwheel in the glass", still((-3.35, -3.6, 1.5), (-3.2, 0, 1.4), 26), 1,
   **NSTAGE(4, r_neighbour="stage"))
-S("L01.2", "high wide of the sand, figures and reflections, the rust figure", still((12, -25, 3.4), (12.2, -9, 0.4), 22), 2,
+S("L01.2", "high wide of the sand, figures and reflections, the magenta figure", still((12, -25, 3.4), (12.2, -9, 0.4), 22), 2,
   refl={"r_dieter": "sand", "r_shopper": "sand", "r_date_f": "sand", "r_me": {"kind": "sand", "scale": 1.6}})
 S("L02", "close on the neighbour", still((-3.5, -2.5, 1.62), (-3.55, -0.8, 1.55), 40))
 S("L02.2", "the glass alone", still((-3.0, -1.7, 1.45), (-3.0, 0, 1.45), 28), 1, **NSTAGE(4, r_neighbour="stage"))
@@ -140,7 +140,7 @@ S("L10.2", "the window: Remi's reflection stopped", still((1.0, -1.7, 1.45), (1.
 S("L11", "Remi sanding the frame", still((2.6, -1.8, 1.5), (1.0, -0.3, 1.4), 30))
 S("L12", "me on the step, the chair folded", still((0.9, -2.8, 1.3), (0.4, -0.6, 1.1), 26))
 S("L13", "laptop glow on my face", still((-1.3, -1.6, 1.45), (-0.35, -0.7, 1.4), 50))
-S("L14", "Remi sands, her reflection walks", still((1.15, -1.7, 1.45), (1.25, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
+S("L14", "Remi sands, her reflection walks", still((0.45, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L15", "Monday: at the water's edge", still((1.0, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L16", "Tuesday: past the boats", still((1.0, -1.7, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage"))
 S("L17", "Thursday: a dot on the point", still((1.0, -1.35, 1.45), (1.0, 0, 1.45), 28), 2, **NSTAGE(5, r_remi="stage", r_me="stage"))
@@ -174,8 +174,8 @@ S("L36", "I sit down again", still((0.7, -2.6, 1.3), (-0.35, -0.6, 1.3), 32))
 S("L37", "the chair has turned", still((-0.5, -0.14, 1.7), (1.3, -1.5, 0.8), 26))
 S("L38", "low behind the chair, me beyond", still((1.9, -2.4, 0.6), (-0.3, -0.6, 0.95), 28))
 S("L39", "me, the canvas edge sinking", still((2.3, -0.9, 1.45), (-0.3, -0.6, 1.4), 34))
-S("L40", "the lantern comes on", still((1.3, -3.3, 0.4), (1.85, -2.4, 0.45), 34))
-S("L41", "me, lit from below", still((0.5, -2.0, 1.0), (-0.35, -0.6, 1.35), 36), gloom=0.45)
+S("L40", "the lantern comes on", still((0.6, -4.8, 0.9), (1.6, -2.3, 0.6), 28))
+S("L41", "me, lit from below", still((0.15, -2.4, 1.1), (-0.35, -0.6, 1.35), 36), gloom=0.15)
 S("L42", "the shadow up the wall", still((2.4, -6.2, 1.2), (0.7, 0, 1.9), 24), ghost=True, gloom=0.85)
 S("L42.1", "its top beside the doorway", still((1.6, -4.6, 1.6), (0.5, 0, 2.2), 28), ghost=True, gloom=0.85)
 S("L43", "the tiny head on the wall", still((1.2, -4.0, 2.0), (0.6, 0, 2.5), 34), ghost=True, gloom=0.85)
@@ -183,24 +183,24 @@ S("P02", "hold on my face", still((0.5, -1.9, 1.45), (-0.35, -0.6, 1.45), 50), 1
 # 05 the Small Head
 S("L44", "I turn my head", still((-1.1, -1.8, 1.5), (-0.35, -0.6, 1.45), 45), 1, gloom=0.45)
 S("L45", "the reveal", still((0.6, -4.2, 1.15), (1.3, -1.5, 1.6), 24), 1, gloom=0.55)
-S("L46", "the stripes", still((0.2, -1.5, 1.0), (1.2, -1.5, 1.0), 42), 1, gloom=0.45)
-S("L47", "spilling over the chair", still((0.1, -2.7, 0.4), (1.3, -1.5, 0.7), 24), 1, gloom=0.45)
+S("L46", "the stripes", still((-0.5, -2.7, 1.2), (1.2, -1.5, 1.2), 34), 1, gloom=0.3)
+S("L47", "spilling over the chair", still((-0.9, -3.6, 0.8), (1.3, -1.5, 0.9), 26), 1, gloom=0.3)
 S("L48", "tilt up to the head", move(((0.4, -3.4, 0.5), (1.3, -1.5, 0.9)), ((0.4, -3.4, 0.6), (1.3, -1.5, 2.1)), 30), 1, gloom=0.45)
 S("L49", "its head bends down", still((-2.4, -3.0, 1.6), (0.4, -0.9, 1.75), 26), 1, gloom=0.45)
 S("L50", "closer", still((-2.4, -3.0, 1.6), (0.3, -0.9, 1.7), 26), 1, gloom=0.45)
 S("L51", "closer still", still((-1.5, -2.5, 1.55), (0.0, -0.8, 1.55), 34), 1, gloom=0.45)
 S("L52", "its dot eyes", still((-1.4, -2.4, 1.75), (0.27, -0.87, 1.65), 34), 1, gloom=0.45)
 S("L52.2", "its view: me and the laptop", still((0.05, -1.25, 1.95), (-0.35, -0.7, 1.0), 35), 1, gloom=0.45)
-S("L53", "over its shoulder to the glass", still((1.95, -1.9, 1.9), (1.0, 0, 1.45), 28), 2, **NSTAGE(5), gloom=0.45)
-S("L54", "no reflection either", still((1.0, -1.0, 1.45), (1.0, 0, 1.45), 30), 2, **NSTAGE(5))
-S("L55", "far down the shore: Remi has stopped", still((1.0, -1.1, 1.45), (1.0, 0, 1.45), 30), 2, **NSTAGE(5, r_remi="stage"))
+S("L53", "the glass: the chair empty in it", still((0.1, -2.7, 1.5), (1.0, 0, 1.4), 28), 2, **NSTAGE(5), schair=True, hidecr=True)
+S("L54", "no reflection either", still((0.9, -1.2, 1.45), (1.0, 0, 1.4), 30), 2, **NSTAGE(5), schair=True, hidecr=True)
+S("L55", "far down the shore: Remi has stopped", still((1.0, -1.1, 1.45), (1.0, 0, 1.45), 30), 2, **NSTAGE(5, r_remi="stage"), hidecr=True)
 S("L56", "a small figure in my coat beside her", still((1.0, -0.85, 1.45), (1.0, 0, 1.45), 38), 2,
-  **NSTAGE(5, r_remi="stage", r_me="stage"))
+  **NSTAGE(5, r_remi="stage", r_me="stage"), hidecr=True)
 S("L57", "me, calm now", still((0.8, -1.3, 1.45), (-0.35, -0.7, 1.45), 40), 1, dof=(1.0, 0.7), gloom=0.45)
 S("L58", "two figures on the bench", still((1.0, -0.85, 1.45), (1.0, 0, 1.45), 38), 2,
-  **NSTAGE(5, r_remi="stage", r_me="stage"))
+  **NSTAGE(5, r_remi="stage", r_me="stage"), hidecr=True)
 S("L58.2", "my eyes go to the shore", still((0.5, -2.4, 1.5), (-0.35, -0.7, 1.45), 40), 2)
-S("L59", "the wide again: the rust figure", still((12, -25, 3.4), (12.2, -9, 0.4), 22), 2, refl={"r_me": {"kind": "sand", "scale": 1.6}})
+S("L59", "the wide again: the magenta figure", still((12, -25, 3.4), (12.2, -9, 0.4), 22), 2, refl={"r_me": {"kind": "sand", "scale": 1.6}})
 S("L60", "the lid comes down", still((0.2, -1.4, 1.1), (-0.35, -1.0, 0.8), 45), 1)
 S("L61", "stepping down", still((-2.4, -5.0, 1.3), (-0.5, -2.2, 1.0), 26), 2)
 S("L61.2", "over my shoulder", still((-0.7, -5.7, 1.5), (1.2, -1.5, 1.0), 28), 2, gloom=0.45)
@@ -230,8 +230,8 @@ S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4)
   refl={"r_me": "sand", "r_remi": "sand"})
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L75", "mine, smiling", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage"))
-S("L76", "this morning: our window, the empty chair", still((0.6, -4.2, 1.5), (0.9, -0.8, 1.0), 24), 1, **NSTAGE(5))
-S("L76.2", "far down the sand, the rust figure alone", still((7.0, -5.5, 1.6), (13.0, -8.8, -0.2), 24), 1, refl={"r_me": {"kind": "sand", "scale": 1.6}})
+S("L76", "this morning: our window, the empty chair", still((0.5, -3.3, 1.4), (0.5, -0.3, 1.0), 24), 1, **NSTAGE(5, r_me="stage"))
+S("L76.2", "far down the sand, the magenta figure alone", still((7.0, -5.5, 1.6), (13.0, -8.8, -0.2), 24), 1, refl={"r_me": {"kind": "sand", "scale": 1.6}})
 
 shots = []
 shotx = {}
@@ -246,7 +246,7 @@ for i, (at, what, cam, step, kw) in enumerate(SHOTS):
     if kw.get("follow"):
         s["follow"] = kw["follow"]
     shots.append(s)
-    x = {k: v for k, v in kw.items() if k in ("stage", "refl", "puddle", "dof", "ghost", "gloom")}
+    x = {k: v for k, v in kw.items() if k in ("stage", "refl", "puddle", "dof", "ghost", "gloom", "schair", "hidecr")}
     if x:
         shotx[sid] = x
 
@@ -289,7 +289,7 @@ SEAT = 0.51       # a sitter's root sits this far under the seat top
 # --- the neighbour and his cartwheeling reflection
 put("neighbour", 0, [-3.55, -0.85], yaw=0)
 hide("neighbour", "L04")
-put("r_neighbour", 0, [0.3, 0.07, 0.45], yaw=0, roll=150, side=[85, 85], expr="grin")
+put("r_neighbour", 0, [0.3, 0.07, 0.5], yaw=0, roll=150, side=[85, 85], expr="grin", stroll=False, big=2.5)
 key("r_neighbour", "L01.1", roll=-150, blend=0.5)
 key("r_neighbour", "L01.3", roll=110, blend=0.4)
 key("r_neighbour", "L02.2", roll=8, blend=0.35, pos=[0.3, 0.07, 0.0])
@@ -312,7 +312,7 @@ key("r_date_f", "L01.2+0.3", arms=[130, 0], blend=0.3)
 key("r_date_f", "L01.2+0.6", arms=[170, 0], blend=0.3)
 key("r_date_f", "L01.3", arms=[130, 0], blend=0.3)
 key("r_date_f", "L01.3+0.4", arms=[170, 0], blend=0.3)
-# the rust figure in the wet sand only, walking toward the point (+x)
+# the magenta figure in the wet sand only, walking toward the point (+x)
 put("r_me", 0, [11.5, -14.0], yaw=90)
 walk("r_me", "L02", [12.7, -14.0])
 for who in ("r_dieter", "r_shopper", "r_date_f"):
@@ -418,22 +418,30 @@ put("remi", "L74", [0.4, -1.25], yaw=0, expr=GRIN)
 hide("remi", "L75")
 
 # --- the reflections of me and Remi (stage: pos [lateral, depth])
-put("r_remi", "L10.2", [0.0, 0.42], yaw=180, look=[0.6, 0.0], expr="neutral")
-put("r_remi", "L14", [0.0, 0.12], yaw=180)
-walk("r_remi", "L14+1.4", [0.3, 0.36], yaw=180)
-put("r_remi", "L15", [0.4, 0.5], yaw=180)
-put("r_remi", "L16", [0.2, 0.68], yaw=180)
-put("r_remi", "L17", [1.0, 0.88], yaw=180)
-put("r_remi", "L18", [0.5, 0.74], yaw=180)
-put("r_remi", "L29", [0.5, 0.58], yaw=180)
-walk("r_remi", "L29+1.2", [0.5, 0.74], yaw=180)
-put("r_remi", "L30", [0.5, 0.8], yaw=180)
-walk("r_remi", "L30+1.2", [0.5, 0.86], yaw=180)
-put("r_remi", "L32", [0.0, 0.6], yaw=180)
-put("r_remi", "L32.2", [1.5, 0.82], yaw=180)
-put("r_remi", "L34", [1.5, 0.94], yaw=180)
-put("r_remi", "L55", [3.3, 0.86, -0.06], yaw=0, sit=True, expr="neutral")
-put("r_remi", "L58", [3.3, 0.86, -0.06], yaw=0, sit=True, expr=SMILE)
+put("r_remi", "L10.2", [0.0, 0.42], yaw=180, look=[0.6, 0.0], expr="neutral", stroll=False, big=1.5)
+WY = 150     # walking away down the shore: back to the camera, a little toward the point
+put("r_remi", "L14", [0.0, 0.1], yaw=WY, stroll=True, big=1.5)
+walk("r_remi", "L14+1.4", [0.3, 0.34], yaw=WY)
+put("r_remi", "L15", [0.4, 0.5], yaw=WY, stroll=True, big=1.4)
+walk("r_remi", "L16", [0.55, 0.6], yaw=WY)
+put("r_remi", "L16", [0.2, 0.66], yaw=WY, stroll=True, big=1.35)
+walk("r_remi", "L17", [0.4, 0.72], yaw=WY)
+put("r_remi", "L17", [1.0, 0.84], yaw=WY, stroll=True, big=1.3)
+walk("r_remi", "L18", [1.2, 0.88], yaw=WY)
+put("r_remi", "L18", [0.5, 0.7], yaw=WY, stroll=True, big=1.35)
+walk("r_remi", "L18.2", [0.7, 0.76], yaw=WY)
+put("r_remi", "L29", [0.5, 0.52], yaw=WY, stroll=True, big=1.4)
+walk("r_remi", "L29+1.2", [0.6, 0.62], yaw=WY)
+put("r_remi", "L30", [0.5, 0.74], yaw=WY, stroll=True, big=1.35)
+walk("r_remi", "L30+1.2", [0.6, 0.8], yaw=WY)
+put("r_remi", "L32", [0.0, 0.5], yaw=WY, stroll=True, big=1.4)
+walk("r_remi", "L32.2", [0.2, 0.58], yaw=WY)
+put("r_remi", "L32.2", [1.5, 0.74], yaw=WY, stroll=True, big=1.3)
+walk("r_remi", "L33", [1.7, 0.8], yaw=WY)
+put("r_remi", "L34", [1.5, 0.9], yaw=WY, stroll=True, big=1.2)
+walk("r_remi", "L34.2", [1.7, 0.94], yaw=WY)
+put("r_remi", "L55", [2.6, 0.86, -0.06], yaw=0, sit=True, expr="neutral", stroll=False, big=2.2)
+put("r_remi", "L58", [2.6, 0.86, -0.06], yaw=0, sit=True, expr=SMILE, stroll=False, big=2.2)
 hide("r_remi", "L59")
 # sand: sitting under the bench (flipped, hers faces mine)
 put("r_remi", "L65", [BENCH[0] - 0.45, BENCH[1] + 0.05, -SEAT + 0.45], yaw=90, sit=True, expr=GRIN)
@@ -443,13 +451,13 @@ put("r_remi", "L69", [BENCH[0] - 0.4, BENCH[1], -SEAT + 0.45], yaw=0, sit=True, 
 hide("r_remi", "L69.2")
 put("r_remi", "L73", [4.3, -6.4], yaw=90, expr=GRIN)
 walk("r_remi", "L73+2.6", [9.3, -6.4])
-put("r_remi", "L74", [-1.2, 0.1], yaw=0, expr=GRIN)
+put("r_remi", "L74", [-1.2, 0.1], yaw=0, expr=GRIN, big=1.5)
 hide("r_remi", "L75")
 
-put("r_me", "L17", [-6.5, 0.94], yaw=180)
+put("r_me", "L17", [-6.5, 0.94], yaw=180, stroll=False, big=1.0)
 hide("r_me", "L18")
-put("r_me", "L56", [3.8, 0.86, -0.06], yaw=0, sit=True, expr=SMILE)
-put("r_me", "L58", [3.8, 0.86, -0.06], yaw=0, sit=True, expr=SMILE)
+put("r_me", "L56", [5.0, 0.86, -0.06], yaw=0, sit=True, expr=SMILE, stroll=False, big=2.2)
+put("r_me", "L58", [5.0, 0.86, -0.06], yaw=0, sit=True, expr=SMILE, stroll=False, big=2.2)
 put("r_me", "L59", [11.5, -14.0], yaw=90)
 walk("r_me", "L60", [12.3, -14.0])
 hide("r_me", "L61")
@@ -465,10 +473,12 @@ put("r_me", "L69", [BENCH[0] + 0.5, BENCH[1], -SEAT + 0.45], yaw=0, sit=True, ex
 hide("r_me", "L69.2")
 put("r_me", "L73", [3.0, -6.8], yaw=90, expr=GRIN)
 walk("r_me", "L73+2.6", [8.0, -6.8])
-put("r_me", "L74", [0.3, 0.1], yaw=0, expr=GRIN)
-put("r_me", "L75", [0.3, 0.1], yaw=0, expr=GRIN)
+put("r_me", "L74", [0.3, 0.1], yaw=0, expr=GRIN, big=1.5)
+put("r_me", "L75", [0.3, 0.1], yaw=0, expr=GRIN, big=1.5)
 hide("r_me", "L76")
-put("r_me", "L76", [13.0, -8.5], yaw=90)
+put("r_me", "L76", [0.3, 0.12], yaw=WY, stroll=True, big=1.6)
+walk("r_me", "L76.2", [0.9, 0.5], yaw=WY)
+put("r_me", "L76.2", [13.0, -8.5], yaw=90, stroll=False, big=1.0)
 walk("r_me", "end", [16.0, -8.5])
 
 # --- the Small Head. Three held poses, each closer; never moving inside a shot.
@@ -526,7 +536,7 @@ cues = [
     {"at": "L62", "name": "laptop", "mode": "hide"},
     {"at": "L72", "name": "laptop", "mode": "show", "pos": [-1.3, 1.1, 1.82], "open": 0.0, "yaw": 90},
     {"at": "L73", "name": "laptop", "mode": "hide"},
-    {"at": "L76", "name": "laptop", "mode": "show", "pos": [-0.15, -0.2, 0.38], "open": 0.0},
+    {"at": "L76", "name": "laptop", "mode": "show", "pos": [-0.2, -0.5, 0.36], "open": 1.0, "yaw": 180},
     {"at": "L28", "name": "door", "open": 0.4, "dur": 1.6},
     {"at": "L29", "name": "door", "open": 0.0, "dur": 0.4},
     {"at": "L40", "name": "lantern", "on": 1.0, "dur": 1.2},
@@ -539,7 +549,9 @@ cues = [
     {"at": "L70", "name": "benchlift", "on": 0.0, "dur": 0.4},
     {"at": "L34", "name": "rim", "on": 1.0, "dur": 3.0},
     {"at": "L76", "name": "rim", "on": 0.0, "dur": 0.3},
-    {"at": "L23", "name": "hutin", "on": 0.35, "dur": 0.5},
+    {"at": "L52.2", "name": "stagelit", "on": 1.0, "dur": 0.5},
+    {"at": "L58.2", "name": "stagelit", "on": 0.0, "dur": 0.5},
+    {"at": "L22.2", "name": "hutin", "on": 0.8, "dur": 0.6},
     {"at": "L24", "name": "hutin", "on": 0.0, "dur": 0.6},
     {"at": "L72", "name": "hutin", "on": 1.0, "dur": 0.5},
     {"at": "L73", "name": "hutin", "on": 0.0, "dur": 0.5},

@@ -1926,26 +1926,26 @@
    ]
   },
   "L76": {
-   "text": "this morning, it was already out there.",
+   "text": "it was already out there before I woke.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.828,
+   "dur": 1.862,
    "onset": 0.172,
-   "end": 1.638,
+   "end": 1.655,
    "chunks": [
     [
      0.172,
-     0.569
+     0.552
     ],
     [
-     0.595,
-     1.017
+     0.552,
+     0.845
     ],
     [
-     1.017,
-     1.638
+     0.845,
+     1.655
     ]
    ]
   }
