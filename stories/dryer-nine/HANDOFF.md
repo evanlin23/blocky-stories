@@ -51,3 +51,9 @@ orchestrator, so this session stopped here.
 - Proof-size measure (every drawing, post applied): 23-30 s run 3-frame 1 flash / 3 changes (was 3 flashes at 23.7 s on
   the final); 53-63 s run 2 flashes / 4 changes, extended 0.17 s (was 7 changes, 1.53 s).
   Left: double-sided cuts at 59.57 and 61.3 s and 29.03 s stand alone, each at least 0.9 s from other changes.
+- Full-rate (final-quality, 540x960, every drawing, post applied) measure of the touched shots: 23-30 s 3-frame 1 flash /
+  3 changes, 1-frame 1/2; 53-63 s 3-frame 1 flash / 3 changes, extended 0, 1-frame 1/2.
+- Preview (step 4, whole film) flash: PASS (3-frame 2 flashes / 5 changes; worst seconds are 11, 43 and 68 s, outside the
+  failed stretches; the 68 s extended run is 1.5 s). Preflight 0 blocks (one run showed clip and asr blocks while a
+  flash run shared the machine; two clean reruns gave 0).
+- `voice` rewrites voice-timings.json with split L01/L02 chunks (the cost opening); not committed here, CI makes its own.
