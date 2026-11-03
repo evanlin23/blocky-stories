@@ -19,8 +19,10 @@ for _l in lines:
         _c[0] = _c[0].replace("Delivery vans TAPE", "Delivery vans COVER").replace("And every lap", "Every lap")
         _c[0] = _c[0].replace("and comes out", "and ends up").replace("before it can ASK", "before it ASKS")
         _c[1] = _c[1].replace("and comes out", "and ends up").replace("before it can ask", "before it asks")
-        _c[0] = _c[0].replace("past Mr. Dale's", "by Mr. Dale's").replace("OURS.", "are US.")
-        _c[1] = _c[1].replace("past mister Dale's", "by mister Dale's").replace("ours.", "are us.")
+        _c[0] = _c[0].replace("past Mr. Dale's", "by Mr. Dale's")
+        _c[1] = _c[1].replace("past mister Dale's", "by mister Dale's")
+        if _c[0] == "OURS.":
+            _c[0], _c[1] = "are US.", "are us."
         _c[1] = _c[1].replace("delivery vans tape", "delivery vans cover").replace("and every lap", "every lap")
 TIM = HERE.parent / "voice-timings.json"
 timings = json.loads(TIM.read_text())["lines"] if TIM.exists() else {}
@@ -371,7 +373,7 @@ shot("L15", "S22 the grille", still([-12.0, 1.9, 1.45], [-12.0, 3.8, 1.5], 50))
 shot("L15.1", "S23 Cal's mouth opens", still([2.4, 0.9, 1.75], [0, 0, 1.5], 36), "cal")
 shot("L16", "S24 Cal grins", CAL_FRAME, "cal")
 # ---- 03 the second window
-seq("L17", [("S25 the lady at the window", still([2.2, 3.5, 1.5], [0, 5.0, 1.5], 36)),
+seq("L17", [("S25 the lady at the window", still([2.5, 0.6, 2.5], [0, 5.0, 1.5], 28)),
             ("S26 the ticket", still([0.5, 3.4, 1.4], [-0.2, 4.4, 1.2], 50)),
             ("S27 the sill and its one stroke", still([-0.35, 3.2, 1.6], [-0.35, 4.2, 1.14], 70))])
 shot("L18", "S28 the mirror, first ticket", MIRROR, "cal")
@@ -401,9 +403,8 @@ shot("L33", "S49 two tickets", MIRROR, "cal")
 shot("L33.2", "S50 close on the two", MIRROR_CLOSE, "cal")
 shot("L34", "S51 me leaning", still([2.0, -1.2, 1.75], [0, 0, 1.5], 36), "me")
 shot("L34.2", "S52 Cal shrugs", still([2.6, 1.0, 1.75], [0, 0, 1.5], 36), "cal")
-shot("L35", "S53 the hatch coming up", still([7.0, 2.4, 1.55], [10.1, 5.0, 1.65], 35))
+shot("L35", "S53 the hatch coming up", still([6.5, 0.0, 2.8], [10.1, 5.0, 1.65], 30))
 shot("L36", "S54 the Server's face fills the hatch", move([10.1, -0.2, 2.7], [10.1, 4.9, 1.75], [10.1, 0.4, 2.7], [10.1, 4.9, 1.75], 36, 40), hand=0.006)
-shot("L36.2", "S55 one edge eye", still([9.0, 2.6, 2.0], [9.53, 4.65, 1.75], 38))
 shot("L37", "S56 Cal pulls up", CAL_FRAME, "cal")
 shot("L38", "S57 the back wall, one more car", still([-27.5, 9.6, 0.85], [-12, 12.9, 1.0], 28))
 shot("L38.1", "S58 closer", still([-25.0, 10.5, 0.9], [-19.5, 12.9, 0.95], 34))

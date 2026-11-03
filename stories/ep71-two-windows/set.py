@@ -235,8 +235,6 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
             B(f"seat{nm}", (0.8, 0.7, 0.18), (-0.25, sy * 0.45, 0.42), seat, 0.05)
             B(f"back{nm}", (0.16, 0.7, 0.55), (-0.66, sy * 0.45, 0.72), seat, 0.05)
         wheel_c = body if kind == "truck" else body
-        for sy in (-1, 1):
-            B(f"pillar{sy}", (0.1, 0.1, 0.65), (0.78, sy * 0.88, 1.25), body, 0.02, (0, 0.35, 0))
         B("stalk", (0.04, 0.04, 0.4), (0.74, 0.0, 1.28), dark, 0.01)
         # the windshield: a thin frame only, so the camera can look through it
         # wheel steering
@@ -303,7 +301,7 @@ def build_server(kit, M, ctx):
     kit.box("srv.visor", (0.55, 0.62, 0.1), (0, -0.04, 1.99), peach, g, bevel=0.03)
     kit.box("srv.visor2", (0.5, 0.54, 0.06), (0, 0.0, 1.94), peach, g, bevel=0.02)
     # eyes at the far edges: pale, staring, a tiny pupil; a thin black smile edge to edge, its ends curled up
-    white = kit.emit("#fffdf2", 0.9, "srv sclera")
+    white = kit.emit("#f3eddc", 0.45, "srv sclera")
     for sx in (-1, 1):
         kit.cyl(f"srv.eye{sx}", 0.085, 0.03, (sx * 0.6, -0.255, 1.78), white, g, rot=(math.pi / 2, 0, 0), n=20)
         kit.cyl(f"srv.pupil{sx}", 0.028, 0.03, (sx * 0.6 - sx * 0.01, -0.272, 1.78), black, g, rot=(math.pi / 2, 0, 0), n=12)
@@ -330,8 +328,8 @@ def materials(kit, d):
     for n in (41, 42):
         draw_digits(d / f"scr{n}.png", n)
         draw_digits(d / f"tix{n}.png", n, bg="#fffdf4", fg="#15110f", size=330, w=384, h=512)
-    M["menu"] = img_mat(kit, "menu board", d / "menu.png", 0.25)
-    M["sign"] = img_mat(kit, "road sign", d / "sign.png", 0.2)
+    M["menu"] = img_mat(kit, "menu board", d / "menu.png", 0.0, 0.8)
+    M["sign"] = img_mat(kit, "road sign", d / "sign.png", 0.0, 0.8)
     M["scr41"] = img_mat(kit, "scr41", d / "scr41.png", 2.5)
     M["scr42"] = img_mat(kit, "scr42", d / "scr42.png", 2.5)
     M["tix41"] = img_mat(kit, "tix41", d / "tix41.png", 0.5, 0.9)
@@ -400,10 +398,10 @@ def build_world(kit, M, ctx):
     hatch(kit, M, "h2", H2X, WALL_Y, H, 6.8, 13.6)
     kit.box("wb sideL", (0.2, 1.6, H), (6.9, 5.5, H / 2), M["mint"], bevel=0.03)
     kit.box("wb sideR", (0.2, 1.6, H), (13.5, 5.5, H / 2), M["mint"], bevel=0.03)
-    kit.box("wb back", (6.8, 0.2, H), (10.2, 6.3, H / 2), kit.plastic("#2c3a3a", 0.8, "wb inner"), bevel=0.03)
+    kit.box("wb back", (6.8, 0.2, H), (10.2, 6.3, H / 2), kit.plastic("#7fa59d", 0.8, "wb inner"), bevel=0.03)
     kit.box("wb roof", (6.9, 1.9, 0.2), (10.2, 5.5, H + 0.1), M["mint"], bevel=0.03)
     kit.box("wb band", (7.0, 0.15, 0.55), (10.2, 4.5, H - 0.25), M["peach"], bevel=0.03)
-    kit.box("wb floor", (6.8, 1.7, 0.1), (10.2, 5.5, 0.05), kit.plastic("#3a4646", 0.8, "wb floor"))
+    kit.box("wb floor", (6.8, 1.7, 0.1), (10.2, 5.5, 0.05), kit.plastic("#6b8d86", 0.8, "wb floor"))
     for nm, rz in (("h2.head", 0.05), ("h2.jamb-1", 0.035), ("h2.jamb1", 0.035)):
         ob = bpy.data.objects.get(nm)
         if ob is not None:
@@ -442,7 +440,7 @@ def build_world(kit, M, ctx):
     kit.box("dale ground", (40, 30, 0.2), (300, 8, -0.1), M["grass"])
     kit.box("dale drive", (4.0, 14, 0.04), (295.0, 0.0, 0.02), M["asph"])
     kit.box("dale path", (1.4, 6, 0.04), (300, -1.0, 0.02), M["conc"])
-    P("sub_building_type_a", (300, 6.5, 0), rot=0, fit=8.0)
+    P("sub_building_type_a", (300, 6.5, 0), rot=0, fit=8.0, tint="#d9c4a8")
     kit.box("dale door", (1.1, 0.12, 2.1), (300, 3.2, 1.05), M["peach"], bevel=0.03)
     P("bush_1", (296.5, 3.0, 0), height=1.2)
     P("commontree_1", (306, 1, 0), height=6.0)
@@ -468,9 +466,9 @@ def build_lights(kit, ctx):
     kit.LIGHTS["fill"]["base"] = 1.6
     kit.LIGHTS["sun"]["base"] = 4.0
     # in-car fills (kept near the lane so faces read)
-    kit.light("h1 in", "POINT", (0, 5.8, 2.3), 700, "#ffe6bd", size=0.4)
-    kit.light("h2 warm", "POINT", (10.1, 5.6, 2.2), 500, "#ffe9c4", size=0.3)
-    kit.light("h2 cool", "POINT", (10.1, 5.6, 2.2), 500, "#eaf6ff", size=0.3)
+    kit.light("h1 in", "POINT", (0, 5.8, 2.3), 380, "#ffe6bd", size=0.4)
+    kit.light("h2 warm", "POINT", (10.1, 5.6, 2.2), 260, "#ffe9c4", size=0.3)
+    kit.light("h2 cool", "POINT", (10.1, 5.6, 2.2), 260, "#eaf6ff", size=0.3)
     kit.light("h2 face", "POINT", (10.1, 4.2, 1.05), 160, "#fff4e0", size=0.2)
     kit.light("lane key", "AREA", (0, -3.5, 6.0), 700, "#fff1da", size=6.0)
     kit.aim(kit.LIGHTS["lane key"]["obj"], (0, 2.8, 1.0))
