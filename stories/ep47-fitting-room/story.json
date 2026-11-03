@@ -22,7 +22,19 @@
   "sky": "#cfe0ee",
   "sky_strength": 0.9,
   "exposure": 0.15,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": {
+   "quiet": [
+    [
+     "L66",
+     "L69"
+    ]
+   ],
+   "emph": [
+    "L01.3",
+    "L02.1"
+   ]
+  }
  },
  "grade": {
   "shadows": [
