@@ -171,7 +171,7 @@
   },
   "smallhead": {
    "age": "adult",
-   "skin": "#a9a595",
+   "skin": "#7a776d",
    "shirt": "#b5655a",
    "pattern": "solid",
    "pants": "#6a7480",
@@ -180,13 +180,15 @@
    "hair": "none",
    "height": 1.6,
    "width": 0.9,
-   "head_scale": 0.8,
+   "head_scale": 0.46,
    "neck": 0.5,
    "face": {
-    "eyes": "round",
+    "eyes": "hollow",
     "mouth": "none",
     "brows": false,
-    "eye_scale": 1.7
+    "eye_scale": 1.12,
+    "glow": "#e8ecf0",
+    "ink": "#0a0808"
    }
   }
  },
@@ -3946,16 +3948,16 @@
     [
      0,
      [
-      0.5,
-      -3.3,
-      1.4
+      0.35,
+      -3.6,
+      1.3
      ],
      [
-      0.5,
+      0.35,
       -0.3,
-      1.0
+      0.95
      ],
-     24
+     26
     ]
    ],
    "hand": 0.006,
@@ -8421,7 +8423,7 @@
    "name": "laptop",
    "mode": "show",
    "pos": [
-    -0.2,
+    0.0,
     -0.5,
     0.36
    ],

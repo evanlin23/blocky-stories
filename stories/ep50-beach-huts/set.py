@@ -616,7 +616,7 @@ def init(kit, story, tl, ctx):
         wd = story["cast"]["smallhead"].get("width", 1.0)
         hs = story["cast"]["smallhead"].get("head_scale", 0.34)
         head = bpy.data.objects.get("smallhead.head")
-        head.scale = (hs / wd * 0.9, hs, hs * 1.3)   # a long narrow head
+        head.scale = (hs / wd * 0.9, hs, hs * 1.05)   # a small blocky head
         for sx in (-1, 1):   # no legs: the canvas drapes over the chair
             bpy.data.objects[f"smallhead.leg{sx}"].scale = (0.001, 0.001, 0.001)
         # lifted clear of the stripes on a neck
@@ -638,6 +638,8 @@ def pose_char(c, tl, name, t, seed, hidden=False):
     keys = tl["acting"].get(name)
     if not keys or hidden:
         c.pose(0, 0, 0, 0, hidden=True)
+        if name == "smallhead" and bpy.data.objects.get("smallhead.neckm") is not None:
+            bpy.data.objects["smallhead.neckm"].hide_render = True
         return None
     s = acting.state(tl, name, t, seed)
     c.pose(s["x"], s["y"], s["z"], s["yaw"], s["legs"], s["arms"], s["arms_side"], s["head_yaw"], s["head_pitch"],
@@ -646,6 +648,13 @@ def pose_char(c, tl, name, t, seed, hidden=False):
         for sx in (-1, 1):
             leg = bpy.data.objects.get(f"{c.name}.leg{sx}")
             leg.rotation_euler = (-math.pi / 2, 0, 0)
+    if name == "smallhead":
+        nm = bpy.data.objects.get("smallhead.neckm")
+        if nm is not None:
+            nm.hide_render = bool(s["hidden"])   # the neck block is made after the rig: it must hide with it
+    if name == "smallhead" and not s["hidden"]:
+        hd = bpy.data.objects.get("smallhead.head")
+        hd.rotation_euler = (hd.rotation_euler[0], hd.rotation_euler[1] + 0.22, hd.rotation_euler[2])   # tilted a little
     bow = math.radians(_held(keys, "bow", t, 0.0))
     tor = bpy.data.objects.get(f"{c.name}.torso")
     if tor is not None:
@@ -808,6 +817,9 @@ def animate(kit, story, tl, t, ctx):
                 ob.hide_render = False
             ob.visible_camera = not (gh or bool(sx_.get("hidecr")))
             ob.visible_shadow = not sx_.get("hidecr")
+    nm, hm = bpy.data.objects.get("smallhead.neckm"), bpy.data.objects.get("smallhead.headm")
+    if nm is not None and hm is not None and not gh:
+        nm.hide_render = hm.hide_render   # the neck block hides with the head
     return over
 
 

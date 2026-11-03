@@ -70,9 +70,9 @@ cast = {
     "date_m": {"age": "adult", "skin": "#c68f68", "shirt": "#7a5230", "pattern": "solid", "pants": "#3a3a40",
                "shoes": "#2a2522", "sleeves": "long", "hair": "cap", "hair_c": "#1c1410",
                "face": {"eyes": "round", "brows": True}},
-    "smallhead": {"age": "adult", "skin": "#a9a595", "shirt": "#b5655a", "pattern": "solid", "pants": "#6a7480",
-                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": SH_H, "width": 0.9, "head_scale": 0.8, "neck": 0.5,
-                  "face": {"eyes": "round", "mouth": "none", "brows": False, "eye_scale": 1.7}},
+    "smallhead": {"age": "adult", "skin": "#7a776d", "shirt": "#b5655a", "pattern": "solid", "pants": "#6a7480",
+                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": SH_H, "width": 0.9, "head_scale": 0.46, "neck": 0.5,
+                  "face": {"eyes": "hollow", "mouth": "none", "brows": False, "eye_scale": 1.12, "glow": "#e8ecf0", "ink": "#0a0808"}},
 }
 reflections = {
     "r_neighbour": {"of": "neighbour"},
@@ -231,7 +231,7 @@ S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4)
   refl={"r_me": "sand", "r_remi": "sand"})
 S("L74", "both reflections in our window", still((0.35, -2.7, 1.45), (0.35, 0, 1.4), 24), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
 S("L75", "ours, walking together", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32), 2, **NSTAGE(5, r_me="stage", r_remi="stage"))
-S("L76", "this morning: our window, the empty chair", still((0.5, -3.3, 1.4), (0.5, -0.3, 1.0), 24), 1, **NSTAGE(5, r_me="stage"))
+S("L76", "this morning: our window, the empty chair", still((0.35, -3.6, 1.3), (0.35, -0.3, 0.95), 26), 1, **NSTAGE(5, r_me="stage"))
 S("L76.2", "far down the sand, the magenta figure alone", still((7.0, -5.5, 1.6), (13.0, -8.8, -0.2), 24), 1, refl={"r_me": {"kind": "sand", "scale": 1.6}})
 
 shots = []
@@ -538,7 +538,7 @@ cues = [
     {"at": "L62", "name": "laptop", "mode": "hide"},
     {"at": "L72", "name": "laptop", "mode": "show", "pos": [-1.3, 1.1, 1.82], "open": 0.0, "yaw": 90},
     {"at": "L73", "name": "laptop", "mode": "hide"},
-    {"at": "L76", "name": "laptop", "mode": "show", "pos": [-0.2, -0.5, 0.36], "open": 1.0, "yaw": 180},
+    {"at": "L76", "name": "laptop", "mode": "show", "pos": [0.0, -0.5, 0.36], "open": 1.0, "yaw": 180},
     {"at": "L28", "name": "door", "open": 0.4, "dur": 1.6},
     {"at": "L29", "name": "door", "open": 0.0, "dur": 0.4},
     {"at": "L40", "name": "lantern", "on": 1.0, "dur": 1.2},
