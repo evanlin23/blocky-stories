@@ -599,7 +599,7 @@ story = {
                   {"at": "L45", "voices": ["drone", "pad"], "energy": 0.4, "mode": "dorian"},
                   {"at": "L48", "voices": ["drone"], "energy": 0.4, "mode": "phrygian"},
               ]},
-    "sound": {"rev": 9, "floor": "wood", "steps_db": -22,
+    "sound": {"rev": 10, "floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "hum", "from": 0, "to": "L08", "lufs": -40},
                   {"kind": "room", "from": "L08", "to": "L09", "lufs": -40},
