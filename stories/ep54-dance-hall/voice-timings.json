@@ -6,54 +6,58 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "never cover the back of your hand. your match has the rest.",
+   "text": "everyone's born with half a mark. someone out there has the rest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.19,
-   "end": 2.448,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
    "chunks": [
     [
-     0.19,
-     0.56
+     0.172,
+     0.698
     ],
     [
-     0.56,
-     0.784
+     0.698,
+     0.922
     ],
     [
-     0.784,
-     1.276
+     0.922,
+     1.293
     ],
     [
-     1.362,
-     1.707
+     1.371,
+     1.828
     ],
     [
-     1.707,
-     2.448
+     1.828,
+     2.569
     ]
    ]
   },
   "L02": {
-   "text": "not even in winter.",
+   "text": "never cover yours. not even in winter.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.379,
-   "onset": 0.172,
-   "end": 1.172,
+   "dur": 2.172,
+   "onset": 0.19,
+   "end": 1.966,
    "chunks": [
     [
-     0.172,
-     0.517
+     0.19,
+     0.966
     ],
     [
-     0.517,
-     1.172
+     1.017,
+     1.301
+    ],
+    [
+     1.301,
+     1.966
     ]
    ]
   },
@@ -1894,34 +1898,34 @@
    ]
   },
   "L71": {
-   "text": "never cover the back of your hand. your match has the rest.",
+   "text": "everyone's born with half a mark. someone out there has the rest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.655,
-   "onset": 0.19,
-   "end": 2.448,
+   "dur": 2.776,
+   "onset": 0.172,
+   "end": 2.569,
    "chunks": [
     [
-     0.19,
-     0.56
+     0.172,
+     0.698
     ],
     [
-     0.56,
-     0.784
+     0.698,
+     0.922
     ],
     [
-     0.784,
-     1.276
+     0.922,
+     1.293
     ],
     [
-     1.362,
-     1.707
+     1.371,
+     1.828
     ],
     [
-     1.707,
-     2.448
+     1.828,
+     2.569
     ]
    ]
   },

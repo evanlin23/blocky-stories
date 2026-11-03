@@ -8,20 +8,16 @@
     "In this town,"
    ],
    [
-    "a house GROWS",
-    "a house grows"
+    "when your CEILING",
+    "when your ceiling"
    ],
    [
-    "to fit",
-    "to fit"
+    "RISES,",
+    "rises,"
    ],
    [
-    "the TALLEST one",
-    "the tallest one"
-   ],
-   [
-    "LIVING in it.",
-    "living in it."
+    "don't LOOK UP.",
+    "don't look up."
    ]
   ]
  },
@@ -30,12 +26,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Tall FAMILIES",
-    "Tall families"
+    "Something TALLER",
+    "Something taller"
    ],
    [
-    "live in TOWERS.",
-    "live in towers."
+    "than you",
+    "than you"
+   ],
+   [
+    "MOVED IN.",
+    "moved in."
    ]
   ]
  },
@@ -48,8 +48,8 @@
     "When a tall"
    ],
    [
-    "lodger",
-    "lodger"
+    "roommate",
+    "roommate"
    ],
    [
     "moves OUT,",
@@ -65,7 +65,7 @@
    ],
    [
     "a HAND",
-    "a hand"
+    "a hand,"
    ],
    [
     "a NIGHT.",
@@ -149,8 +149,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum hasn't",
-    "Mum hasn't"
+    "Mom hasn't",
+    "Mom hasn't"
    ],
    [
     "LAUGHED since.",
@@ -255,11 +255,11 @@
   "chunks": [
    [
     "Its marker FROWN",
-    "Its marker frown."
+    "Its marker frown,"
    ],
    [
-    "faced Mum's DOOR.",
-    "faced Mum's door."
+    "faced Mom's DOOR.",
+    "faced Mom's door."
    ]
   ]
  },
@@ -374,8 +374,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum's PHOTOS",
-    "Mum's photos"
+    "Mom's PHOTOS",
+    "Mom's photos"
    ],
    [
     "rode UP",
@@ -440,8 +440,8 @@
     "at the back"
    ],
    [
-    "of Mum's HEAD.",
-    "of Mum's head."
+    "of Mom's HEAD.",
+    "of Mom's head."
    ]
   ]
  },
@@ -450,8 +450,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum made",
-    "Mum made"
+    "Mom made",
+    "Mom made"
    ],
    [
     "her TEA",
@@ -524,8 +524,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum's door",
-    "Mum's door"
+    "Mom's door",
+    "Mom's door"
    ],
    [
     "stood OPEN.",
@@ -646,8 +646,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum SLEPT",
-    "Mum slept"
+    "Mom SLEPT",
+    "Mom slept"
    ],
    [
     "right THROUGH it.",
@@ -692,8 +692,8 @@
     "And for once,"
    ],
    [
-    "Mum LOOKED UP.",
-    "Mum looked up."
+    "Mom LOOKED UP.",
+    "Mom looked up."
    ]
   ]
  },
@@ -877,8 +877,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum KNEW.",
-    "Mum knew."
+    "Mom KNEW.",
+    "Mom knew."
    ],
    [
     "She'd MISSED it.",
@@ -892,8 +892,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mum opened",
-    "Mum opened"
+    "Mom opened",
+    "Mom opened"
    ],
    [
     "the hall CUPBOARD.",

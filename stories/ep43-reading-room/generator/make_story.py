@@ -130,14 +130,17 @@ STEP_PEOPLE = {   # who: (step, dx, number)
     "e9": (5, 2.0, 91), "e10": (5, -0.9, 15),
 }
 
-# 01 the rule, shown (steps, party, station, door, kitchen)
-S(0, "steps", ([0.0, -5.4, 1.85], [0.0, -1.0, 1.85], 31, [0.0, -5.1, 1.85], [0.0, -1.0, 1.85], 31),
-  {w: {"p": stp(i, dx), "yaw": 0, "num": n, "numz": (0.4 if w == "e2" else 0.0)} for w, (i, dx, n) in list(STEP_PEOPLE.items())[:3]})
-S("L01.2", "steps", ([1.2, -9.5, 3.4], [0.0, 0.0, 1.5], 24, [0.4, -9.0, 3.3], [0.0, 0.0, 1.5], 24),
-  {w: {"p": stp(i, dx), "yaw": 0, "num": n} for w, (i, dx, n) in list(STEP_PEOPLE.items())[3:]})
-S("L02", "steps", ([1.6, -7.6, 1.5], [0.2, -3.3, 2.0], 32),
-  {"baker": {"p": [0.4, -3.3, 0.0], "yaw": 0, "expr": "soft", "num": 900},
-   **{w: {"p": PARK} for w in ("e1", "e2", "e3", "e4", "e5", "e7", "e9", "e10")}})
+# 01 the opening (recipe v1): a bright street, my face centred above the captions, the warned-of 1 whole over my head, two
+# passers-by behind with 340 and 87 (their numbers count as the rule meter too); a cut every 1 to 2 s, the camera never leaves me
+ME_OPEN = {"me": {"p": [0.0, 0.0, 0.0], "yaw": 0, "num": 1, "expr": "worried", "head": [0, 4], "blink": False},
+           "e5": {"p": [-0.5, 2.7, 0.0], "yaw": 0, "expr": "neutral", "num": 340},
+           "e8": {"p": [0.62, 3.4, 0.0], "yaw": 0, "expr": "soft", "num": 87}}
+S(0, "street", ([0.1, -3.55, 1.55], [0.0, 0.0, 1.5], 28, [0.05, -3.2, 1.55], [0.0, 0.0, 1.5], 28), ME_OPEN, phones="head")
+S("L01.1", "street", ([-0.35, -3.1, 1.55], [0.0, 0.0, 1.5], 28, [-0.2, -2.8, 1.55], [0.0, 0.0, 1.5], 28), {})
+S("L01.3", "street", ([0.2, -3.4, 1.5], [0.0, 0.0, 1.5], 28, [0.1, -3.1, 1.5], [0.0, 0.0, 1.5], 28),
+  {"me": {"head": [0, 22], "expr": "worried"}})
+S("L02", "street", ([-0.3, -2.7, 1.8], [0.0, 0.0, 1.8], 28, [-0.15, -2.35, 1.8], [0.0, 0.0, 1.8], 28),
+  {"me": {"head": [0, 4], "expr": "neutral"}})
 S("L03", "party", ([0.0, -4.0, 1.75], [0.0, 0.0, 2.0], 19),
   {"e1": {"p": [-1.2, 0.3, 0.0], "yaw": 25, "expr": "soft", "num": 14, "roll": [("L03+0.15", 15)]},
    "e4": {"p": [-0.4, -0.2, 0.0], "yaw": 8, "expr": "neutral", "num": 120, "roll": [("L03+0.65", 121)]},
@@ -252,6 +255,7 @@ S("L45", "room", ([4.0, -4.3, 1.55], [-7.0, 0.1, 1.35], 60), {})
 S("L46", "room", ([4.15, -4.6, 1.35], [-7.0, 0.95, 1.2], 90), {})
 S("L47", "room", ([4.15, -4.6, 0.9], [4.15, -4.6, 2.4], 30),
   {"me": {"head": [0, -34]}})
+S("L47+1.5", "room", ([3.5, -4.15, 1.2], [4.15, -4.6, 1.75], 30), {})
 S("P03", "room", ([4.15, -4.15, 0.6], [4.15, -4.6, 2.2], 30), {})
 S("L49", "station", ([0.0, -3.4, 1.6], [0.2, 0.2, 1.9], 28),
   {"woman": {"p": [0.2, 0.2, 0.0], "yaw": 0, "num": 0, "expr": "neutral"}, "me": {"p": PARK}})
@@ -316,15 +320,16 @@ S("L68", "room", ([-3.0, 0.7, 1.6], [-6.0, 0.0, 1.0], 30),
 S("L69", "room", ([-7.0, 1.5, 1.55], [-7.0, -0.95, 1.4], 40),
   {"tam": {"expr": "wide", "head": [0, -4], "arms": [58, 50], "bend": 0,
            "then": [("L69.3", {"expr": "grin"}, 0.3)]}} | {w: {"num_off": True} for w in ("e7", "e8", "e9", "e10")})
-S("L70", "room", ([-4.2, 3.4, 4.3], [-7.0, 0.0, 1.5], 26),
-  {"tam": {"roll": [("L70+0.4", 21)]}, "me": {"num": 1}})
+S("L70", "room", ([-4.2, 3.4, 4.3], [-7.0, 0.6, 1.5], 22),
+  {"tam": {"roll": [("L70+0.4", 21)]}, "me": {"num": 20}})
 S("L71", "room", ([-7.0, 1.4, 2.0], [-7.0, 0.95, 2.35], 32, [-7.0, 1.4, 2.0], [-7.0, -0.3, 2.0], 32),
   {"tam": {"expr": "grin"}, "me": {"roll": [("L71+0.9", 21)]}, "e8": {"p": PARK}, "e9": {"p": PARK}, "e10": {"p": PARK}})
 
 # ---------------------------------------------------------------------------------------------------- build
 # camera pass (after the stills sheet): cameras that sat inside a head, a table or a wall, and the framings the sheet asked for
 CAM_FIX = {
-    "L02": ([1.2, -7.0, 1.7], [0.4, -3.3, 1.65], 30),
+    "L07.2": ([0.15, -1.5, 1.6], [0.0, 0.9, 1.8], 30),
+    "L11.3": ([1.2, 0.4, 1.6], [1.2, -1.9, 1.7], 28),
     "L05.2": ([0.45, -2.3, 1.85], [0.3, 0.2, 2.15], 34),
     "L28": ([1.9, 2.7, 1.65], [1.6, -1.0, 1.4], 24),
     "L28.3": ([2.55, 1.8, 1.35], [2.65, 1.0, 1.1], 36),
@@ -345,7 +350,7 @@ CAM_FIX = {
     "L32": ([2.4, -3.9, 1.6], [3.95, -4.6, 1.45], 28),
     "L32.3": ([-7.0, 0.3, 0.95], [-7.0, -0.13, 0.82], 36),
     "L34": ([-5.0, -1.9, 2.1], [-7.0, -0.35, 0.85], 28),
-    "L41": ([2.0, -4.5, 1.5], [3.95, -4.6, 1.4], 28),
+    "L41": ([2.0, -4.5, 1.7], [3.95, -4.6, 1.75], 26),
     "L22": ([-0.8, 0.4, 1.6], [6.35, 0.4, 1.4], 40),
     "L23": ([0.0, -2.0, 1.9], [6.35, 0.4, 1.5], 34),
     "P02": ([-2.6, 0.0, 1.8], [-7.0, 0.0, 1.5], 22),
@@ -353,9 +358,9 @@ CAM_FIX = {
     "L45": ([-5.0, -0.2, 1.5], [4.15, -4.6, 1.3], 70),
     "L46": ([4.6, -4.3, 1.75], [-7.0, 0.95, 1.2], 85),
     "L47": ([3.1, -4.6, 1.0], [3.95, -4.6, 1.65], 28),
-    "P03": ([4.3, -3.6, 0.8], [4.0, -4.6, 2.0], 28),
-    "L51": ([2.3, -4.0, 1.5], [3.95, -4.6, 1.45], 28),
-    "L52": ([4.3, -3.6, 0.8], [4.0, -4.6, 2.0], 28),
+    "P03": ([4.3, -3.2, 1.6], [4.1, -4.6, 2.0], 24),
+    "L51": ([2.3, -4.0, 1.7], [3.95, -4.6, 1.75], 26),
+    "L52": ([4.3, -3.2, 1.6], [4.1, -4.6, 2.0], 24),
     "L55": ([4.6, -4.3, 1.75], [-7.0, 0.95, 1.2], 85),
     "L57": ([5.8, -3.0, 1.95], [-1.0, -4.3, 1.3], 24),
     "L58": ([2.7, -3.6, 1.7], [4.2, -3.65, 1.6], 36),
@@ -363,14 +368,21 @@ CAM_FIX = {
     "L62": ([2.0, -3.65, 2.0], [4.2, -3.65, 1.95], 28),
     "L64": ([-5.9, 1.9, 1.2], [-7.0, 1.1, 0.55], 34),
     "L65": ([-6.3, 1.5, 0.9], [-7.0, 1.0, 0.5], 40),
+    "L68": ([-1.6, 1.6, 2.0], [-6.2, 0.2, 1.7], 20),
     "L67": ([-6.0, -3.2, 1.6], [-6.2, 0.4, 1.3], 26),
     "L69": ([-7.6, 1.9, 1.55], [-7.05, -0.95, 1.45], 34),
-    "L71": ([-4.6, 2.3, 2.0], [-7.0, 1.0, 2.0], 36, [-4.9, -2.0, 2.0], [-7.0, -0.95, 1.7], 32),
+    "L71": ([-4.6, 2.3, 2.0], [-7.0, 0.7, 2.0], 30, [-4.9, -2.0, 2.0], [-7.0, -0.95, 1.7], 32),
 }
 for s in SH:
     if s["ref"] in CAM_FIX:
         s["cam"] = CAM_FIX[s["ref"]]
-SH[10]["stage"] = SH[10]["stage"]
+# quality pass: no shot is a still picture. Every single-key camera gets a slow 6% push toward its target.
+for s in SH:
+    c = s["cam"]
+    if len(c) == 3:
+        (lx, ly, lz), (tx, ty, tz), ln = c
+        k = 0.06
+        s["cam"] = (c[0], c[1], ln, [round(lx + (tx - lx) * k, 3), round(ly + (ty - ly) * k, 3), round(lz + (tz - lz) * k, 3)], c[1], ln)
 S_SEAT = {"at": "L64", "name": "seat", "to": 1.0, "dur": 0.6}
 
 # lines and chunk refs
@@ -528,6 +540,9 @@ cues = [c for c in cues if not (c["name"] == "dome" and c.get("dur") == 0.1 and 
 rolls = [c for c in cues if c["name"] == "num" and not c.get("snap")]
 sfx = [{"at": c["at"], "kind": "click", "db": -27} for c in rolls]
 sfx += [
+    {"at": "L01.3+0.15", "kind": "hit", "db": -19, "keep": True},   # the sound hit on "NAME", the opening's stronger word (ONE gets the polish hit at 0.3 s)
+    {"at": "L02.2", "kind": "hit", "db": -22, "keep": True},
+    {"at": "L47", "kind": "hit", "db": -18, "keep": True},
     {"at": "L18+0.15", "kind": "whoosh", "db": -26, "dur": 0.3},
     {"at": "P01>", "kind": "hit", "db": -17, "keep": True},
     {"at": "L28.3", "kind": "riser", "db": -24, "dur": 2.0},
@@ -544,7 +559,7 @@ sfx += [{"at": f"L16+{0.0 + 0.55 * k:.2f}", "kind": "click", "db": -30} for k in
 
 story = {
     "slug": "ep43-reading-room",
-    "title": "In this town, the number over your head is how many people know your name",
+    "title": "Only ONE Person Knows My Name",
     "made_for_kids": False,
     "premise": "In a town where a glowing number over every head counts the people who know your name, my number has said "
                "1 for years, and my brother's has been falling since he began studying alone in the domed reading room "
@@ -558,9 +573,10 @@ story = {
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ff9ec4",
     "gap": 0.12,
-    "tail": 0,
+    "tail": 0.25,
     "look": {"fog": "#8a9aa6", "fog_density": 0.006, "fog_start": 14.0, "sky": "#9fb3c2", "exposure": 0.2,
-             "flash_safe": True},
+             "flash_safe": True,
+             "polish": {"reveal": ["L43", "L60"], "quiet": [["L63", "L69"]]}},
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.03, 0.01, -0.02], "saturation": 0.96, "contrast": 1.06,
               "vignette": 0.32, "bloom": 0.42, "grain": 0.012},
     "rain_shots": sorted({s["id"] for s in SH if s.get("rain") or s["scene"] == "street"}),

@@ -135,20 +135,26 @@ REVEAL = {"tank_fog": 0.045, "reg_fog": 0.06, "hall_fog": 0.02, "crowd_n": 70, "
 SH = [
     # ---- 01 the rule. The hook (P6): low behind the three of us, our raised hands in silhouette, a slow push and
     # zoom so the Regular grows out there, its shut rows lit a touch
-    (0, c([0, [-0.6, 4.3, 2.0], [0.55, -20.0, 2.3], 22], [1, [-0.55, 3.3, 2.02], [0.55, -20.0, 2.3], 30]),
-     {"hand": 0.004, "tank_fog": 0.1, "reg_fog": 0.08, "eye_fog": 0.03}),
+    (0, c([0, [0.35, 0.55, 2.2], [0.5, -7.5, 2.45], 28], [1, [0.4, -0.15, 2.28], [0.5, -7.5, 2.5], 40]),
+     {"hand": 0.003, "tank_fog": 0.045, "reg_fog": 0.04, "eye_fog": 0.02, "crowd_n": 80}),
     # the reverse, through the glass: my face, lit by the caustics
     ("L02", front(hd(LINE["me"]), 0, 8, 1.6, 0.0, 26, push=0.12), {"tank_fog": 0.05}),
-    ("L03", mv([-6.4, 5.6, 4.3], [0.8, 0.7, 0.6], 15, [-6.2, 5.5, 4.2], [1.0, 0.7, 0.6], 15), {}),
+    # round 5 (critic 3): a close on the three of us waving at the glass, from the water side, lit, faces big
+    ("L03", front([0.0, 1.05, 1.62], 0, 36, 3.2, 0.0, 44, push=0.2, aim_dz=0.0), {"tank_fog": 0.05}),
     # low along the glass, then into the blue
     ("L04", mv([5.6, 0.95, 0.45], [-3.0, -0.6, 2.3], 17, [4.7, 0.95, 0.45], [-3.8, -0.6, 2.3], 17), {}),
     ("L04.2", mv([0.6, 1.3, 1.65], [0.2, -20.0, 2.2], 24, [0.6, 0.85, 1.65], [0.2, -20.0, 2.2], 26), {}),
     ("L07", front(hd(LINE["rosa"], H_ROSA), 0, -6, 1.7, 0.25, 24, push=0.1, aim_dz=0.2), {"tank_fog": 0.05}),
     ("L08", front(hd(LINE["dev"], H_DEV), 0, 10, 1.7, 0.0, 24, aim_dz=0.1), {"tank_fog": 0.05}),
     # the fish don't swim: the crowd hanging still, all pointed at us
-    ("L09", mv([2.4, -1.2, 1.3], [-1.0, -8.0, 2.6], 22, [1.0, -1.4, 1.35], [-1.6, -8.0, 2.6], 22), {"tank_fog": 0.1}),
+    # round 5 (critic 4): L09 one fish hanging face-on, close; L10 the school, all pointed at us
+    ("L09", mv([1.2, -1.0, 2.0], [0.9, -5.0, 2.2], 38, [1.1, -1.1, 2.0], [0.9, -5.0, 2.2], 42),
+     {"tank_fog": 0.06}),
+    ("L10", mv([2.4, -1.2, 1.3], [-1.0, -8.0, 2.6], 22, [1.0, -1.4, 1.35], [-1.6, -8.0, 2.6], 22), {"tank_fog": 0.1}),
     # way out in the blue: a slow push past the crowd into the fog, to the rows hanging in the dark (P1 wide)
     ("L12", mv([0.3, -1.0, 2.0], [0.6, -22.0, 2.5], 30, [0.4, -4.5, 2.2], [0.6, -22.0, 2.5], 34),
+     {"tank_fog": 0.11, "reg_fog": 0.08, "eye_fog": 0.03}),
+    ("L12.4", mv([0.4, -4.5, 2.2], [0.6, -22.0, 2.5], 38, [0.45, -6.5, 2.3], [0.6, -22.0, 2.5], 44),
      {"tank_fog": 0.11, "reg_fog": 0.08, "eye_fog": 0.03}),
     ("L14", front(hd(LINE["rosa"], H_ROSA), 0, 25, 1.35, 0.0, 30), {}),
     # ---- 02 night shifts. Looking down into the tank: over my shoulder at the rail, then low through the glass to
@@ -219,7 +225,7 @@ SH = [
     ("L58", mv([2.35, 0.15, 1.65], [0.55, 1.2, 1.55], 28), {}),
     ("L59", mv([1.6, 2.6, 1.75], [-0.4, -0.4, 2.3], 22, [1.5, 2.4, 1.75], [-0.4, -0.4, 2.3], 22), {}),
     # ---- 05 curtain call. Push into the glass and through it, right of where it presses, and turn round
-    ("L60", c([0, [3.9, 3.0, 1.9], [3.9, -6.0, 2.0], 22], [0.6, [3.9, -1.0, 2.2], [3.0, -9.0, 2.4], 22],
+    ("L60", c([0, [3.9, -1.0, 2.2], [3.0, -9.0, 2.4], 22],
                [1, [3.6, -4.6, 2.6], [10.0, -5.0, 2.6], 22]), {"tank_fog": 0.06, "hall_fog": 0.0}),
     # the reveal (P3): from out in the blue, the box about 70% of the frame, the three lit in the middle of it and
     # the Regular's dark back at the left third; fewer, softer fish and none near the lens
@@ -235,6 +241,8 @@ SH = [
     ("P03", mv([8.8, -15.0, 3.6], [1.3, 0.0, 2.3], 15.5, [9.2, -15.8, 3.7], [1.3, 0.0, 2.3], 15.5), dict(REVEAL)),
     # WE were the EXHIBIT: the audience's view, from behind their benches (P3), held to the curtain call
     ("L65", mv([3.3, -8.6, -0.45], [2.6, 0.5, 1.1], 20, [3.2, -7.8, -0.4], [2.6, 0.5, 1.1], 21),
+     {**REVEAL, "crowd_clear": 3.0}),
+    ("L66", mv([3.0, -8.0, -0.4], [2.6, 0.5, 1.2], 24, [3.1, -7.4, -0.35], [2.6, 0.5, 1.25], 27),
      {**REVEAL, "crowd_clear": 3.0}),
     # back inside, the filter closes: Rosa lines us up
     ("L68", mv([2.8, 4.6, 1.8], [2.8, -1.0, 1.6], 22), {}),
@@ -309,7 +317,7 @@ MOPPING = dict(arms=[38, 42], side=[0, 0], mop=True)
 me = [
     {"at": 0, "pos": LINE["me"], "yaw": 0, "expr": "neutral", "head": [0, 6], "bow": 0, "wipe": 0.0, **WAVE_ME},
     {"at": "L02", "pos": LINE["me"], "expr": "neutral"},
-    {"at": "L03", "pos": LINE["me"], **DOWN, "blend": 0.5},
+    {"at": "L04", "pos": LINE["me"], **DOWN, "blend": 0.5},
     {"at": "L04.2", "head": [0, 4]},
     {"at": "L10", "expr": "worried", "head": [0, 6]},
     # 02: my first week, at the rail looking down into the tank
@@ -504,9 +512,9 @@ cues = [
     # the tiny stream rises between us through the side shot (P4)
     {"at": "L84", "name": "bubbles", "kind": "tiny", "dur": 2.6, "x0": 0.7, "x1": 1.8, "z0": 1.1, "z1": 1.8},
     # the hall's lights: dim, stuck bright, down like a stage, then the next night
-    {"at": "L43", "name": "lights", "state": "stuck"},
+    {"at": "L43", "name": "lights", "state": "stuck", "dur": 0.4},
     {"at": "L76.1", "name": "lights", "state": "dark", "dur": 1.8},
-    {"at": "L78", "name": "lights", "state": "rest"},
+    {"at": "L78", "name": "lights", "state": "rest", "dur": 0.5},
     # the pup's eyes
     {"at": 0, "name": "pup_eyes", "state": "shut", "look": "me"},
     {"at": "L83.1", "name": "pup_eyes", "state": "open", "order": [0, 5, 1, 6, 2, 7, 3, 8, 4, 9], "every": 0.12,
@@ -520,10 +528,10 @@ cues = [
 
 # the Regular's path: every time it comes closer it's seen gliding closer, in real time
 REG = [
-    {"at": 0, "where": [0.6, -22.5, 2.5], "ripple": 0.22, "roll": -3},
+    {"at": 0, "where": [0.5, -13.0, 2.5], "ripple": 0.22, "roll": -3},
     {"at": "L02", "where": REG_FAR, "glide": True, "roll": 3},
     {"at": "L12", "where": REG_FAR, "ripple": 0.07, "roll": 3},
-    {"at": "L12.5", "where": [0.7, -21.6, 2.5], "glide": True, "ripple": 0.2, "roll": 4},
+    {"at": "L12.4", "where": [0.7, -21.6, 2.5], "glide": True, "ripple": 0.2, "roll": 4},
     {"at": "L14", "where": [0.7, -21.6, 2.5], "glide": True, "roll": 4},
     {"at": "L26", "where": [0.7, -21.6, 2.5], "roll": 4},
     {"at": "L27", "where": [0.5, -19.0, 2.55], "glide": True},
@@ -579,15 +587,19 @@ COOL = "#e8f2f6"
 WARM = "#ffd8b4"
 ROSA_KEY = "#f6dcc6"                            # a touch warmer on Rosa's skin (standards A)
 FACE = {"caustic": 0.35}
-REV = {"disp": 4.5, "hallfill": 4.0}          # the reveal: the hall a lit box seen from out in the water
+REV = {"disp": 3.4, "hallfill": 3.0}          # the reveal: the hall a lit box seen from out in the water
 ROWS_KEY = [[-0.4, 0.6, 1.0], [-1.6, -0.6, 2.8], 160.0, 55, COOL]   # low from the right: sockets fall into shadow
 LOOKS = {
     # the hook: its shut rows lit a touch out there (a narrow spot from below, in the water)
-    0: {"regularkey": 0.25, "key2": [[0.6, -14.5, 0.0], [0.6, -22.4, 2.6], 2200.0, 30, "#bfe0ee"]},
-    "L12": {"regularkey": 0.25, "key2": [[0.6, -15.0, 0.2], [0.6, -21.8, 2.6], 1400.0, 30, "#bfe0ee"]},
-    "L14": dict(FACE),
-    "L18": {"key2": [[-1.4, -3.4, 1.4], [-1.95, -5.6, -0.75], 260.0, 35, "#cfe9f0"]},
-    "L19.2": {"key2": [[-0.6, -7.2, 1.6], [-1.6, -5.6, -0.7], 260.0, 40, "#cfe9f0"]},
+    0: {"regularkey": 0.7, "key2": [[0.5, -6.0, 1.2], [0.5, -13.0, 2.5], 650.0, 75, "#cfe8f2"]},
+    "L02": {"caustic": 0.2},
+    "L12": {"caustic": 0.2, "regularkey": 0.25, "key2": [[0.6, -15.0, 0.2], [0.6, -21.8, 2.6], 1400.0, 30, "#bfe0ee"]},
+    "L12.4": {"caustic": 0.2, "regularkey": 0.25, "key2": [[0.6, -15.0, 0.2], [0.6, -21.8, 2.6], 1400.0, 30, "#bfe0ee"]},
+    "L14": {"caustic": 0.2},
+    "L17": {"caustic": 0.25},
+    "L19.1": {"caustic": 0.12},
+    "L18": {"caustic": 0.25, "key2": [[-1.4, -3.4, 1.4], [-1.95, -5.6, -0.75], 260.0, 35, "#cfe9f0"]},
+    "L19.2": {"caustic": 0.12, "key2": [[-0.6, -7.2, 1.6], [-1.6, -5.6, -0.7], 260.0, 40, "#cfe9f0"]},
     "L20": {**FACE, "key": [[0.9, 2.2, 2.0], [0.3, 0.8, 1.5], 30.0, 45, COOL]},
     "L21": {"key": [[-1.6, 2.4, 1.2], [-2.2, 1.2, 5.0], 110.0, 40, COOL]},
     "L24": {**FACE, "key": [[-1.1, 2.1, 2.1], [-1.5, 0.8, 1.55], 30.0, 45, ROSA_KEY]},
@@ -615,7 +627,7 @@ LOOKS = {
     "L60.3": REV, "L62": REV,
     "L63": {**REV, "key": [[-2.6, -1.0, 8.5], [-2.2, 1.2, 5.5], 400.0, 35, COOL],
             "key2": [[-0.6, 2.3, 6.0], [-2.2, 1.6, 5.55], 260.0, 30, "#cfe9f0"]},
-    "L64": REV, "P03": REV, "L65": REV,
+    "L64": REV, "P03": REV, "L65": REV, "L66": REV,
     "L69": {**FACE, "key": [[3.3, 2.3, 2.1], [4.0, 1.0, 1.7], 30.0, 45, COOL]},
     "L70": {**FACE, "key": [[2.3, 2.3, 2.1], [1.6, 1.0, 1.6], 30.0, 45, ROSA_KEY]},
     "L71": {"regularkey": 0.0, "stage": 1.0, "underkey": 0.6},
@@ -651,13 +663,14 @@ for at, look in LOOKS.items():
         cues.append({"at": early(SH[i + 1][0]), "name": "shot", "look": None})
 
 fx = [
-    {"at": "L53.2", "kind": "punch", "dur": 1.6, "zoom": 1.07, "fade": 0.4},
+    {"at": "L53.1", "kind": "punch", "dur": 1.6, "zoom": 1.07, "fade": 0.4},
     {"at": "P02", "kind": "shake", "dur": 1.3, "amp": 0.3},
 ]
 
 # ---------------------------------------------------------------------------------------------------- sound
 EYE_OPEN = [f"L50.1+{0.17 * j:.2f}" for j in range(10)]
 sfx = [
+    {"at": "L01.3", "kind": "sting_mid", "db": -6, "dur": 1.6},
     {"at": "L12.3", "kind": "glide", "db": -24, "dur": 2.6},
     {"at": "L27", "kind": "glide", "db": -20, "dur": 2.4},
     {"at": "L36.1", "kind": "door", "db": -18},
@@ -668,7 +681,7 @@ sfx = [
     {"at": "L41.1+0.12", "kind": "wetclick", "db": -14, "dur": 0.6},
     {"at": "L45.1+0.1", "kind": "click", "db": -6},
     {"at": "L45.2", "kind": "click", "db": -6},
-    {"at": "L48.3", "kind": "squeak", "db": -15, "dur": 0.35},
+    {"at": "L48.2", "kind": "squeak", "db": -15, "dur": 0.35},
     {"at": "L50.1", "kind": "sting", "db": -13, "dur": 2.6},
     *[{"at": a, "kind": "wetclick", "db": -15 - (j % 3), "dur": 0.5, "pan": (-0.35 if j % 2 == 0 else 0.35)}
       for j, a in enumerate(EYE_OPEN)],
@@ -709,11 +722,14 @@ story = {
     # round 2: the acrylic reflects a little less (IOR 1.25, from 1.49), so the darker Regular isn't lost behind a
     # mirror of the hall; the steepest looks through it go lower per shot (glass_ior)
     "glass_ior_default": 1.25,
-    "tail": 0,
+    "tail": 0.25,
+    "fade_in": False,
     "look": {"fog": "#0a2a3a", "fog_density": 0.0, "fog_start": 3.0, "sky": "#0f4254", "sky_strength": 1.0,
-             "exposure": 0.35},
+             "exposure": 0.35, "flash_safe": True,
+             "polish": {"emph": ["L22.2"], "quiet": [["L68", "P04"], ["L79", "L83c"]]}},
     "grade": {"shadows": [-0.04, -0.01, 0.07], "highlights": [-0.04, 0.03, 0.02], "saturation": 0.95,
               "contrast": 1.08, "vignette": 0.4, "bloom": 0.3, "grain": 0.01},
+    "shot_grades": {"S01": {"exposure": 1.1, "saturation": 1.12, "shadows": [-0.02, 0.0, 0.05]}},
     **per_shot,
     "phonemes": {},
     "cast": cast,

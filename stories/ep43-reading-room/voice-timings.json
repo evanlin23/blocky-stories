@@ -6,62 +6,54 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "In this town, the number over your head is how many people know your name.",
+   "text": "Only one person in this whole town knows my name.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.155,
+   "dur": 2.483,
    "onset": 0.172,
-   "end": 2.966,
+   "end": 2.293,
    "chunks": [
     [
      0.172,
-     0.69
+     0.784
     ],
     [
-     0.716,
-     1.129
+     0.784,
+     0.931
     ],
     [
-     1.129,
-     1.638
+     0.931,
+     1.439
     ],
     [
-     1.638,
-     2.19
-    ],
-    [
-     2.19,
-     2.966
+     1.439,
+     2.293
     ]
    ]
   },
   "L02": {
-   "text": "The baker on the library steps is at nine hundred.",
+   "text": "The number over my head says one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.362,
-   "onset": 0.155,
-   "end": 2.155,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
    "chunks": [
     [
-     0.155,
-     0.509
+     0.172,
+     0.552
     ],
     [
-     0.509,
-     1.19
+     0.552,
+     0.905
     ],
     [
-     1.19,
-     1.388
-    ],
-    [
-     1.388,
-     2.155
+     0.905,
+     1.552
     ]
    ]
   },
@@ -158,7 +150,7 @@
    ]
   },
   "L06": {
-   "text": "The postman's number runs past both his ears.",
+   "text": "The mailman's number runs past both his ears.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -182,7 +174,7 @@
    ]
   },
   "L07": {
-   "text": "My neighbour Ossie hit five, and bought himself a whole cake.",
+   "text": "My neighbor Ossie hit five, and bought himself a whole cake.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -210,26 +202,22 @@
    ]
   },
   "L08": {
-   "text": "Mine says one. It has for years.",
+   "text": "Mine has said one for years.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.172,
-   "end": 1.707,
+   "dur": 1.638,
+   "onset": 0.19,
+   "end": 1.448,
    "chunks": [
     [
-     0.172,
-     0.741
+     0.19,
+     0.638
     ],
     [
-     0.793,
-     1.086
-    ],
-    [
-     1.086,
-     1.707
+     0.638,
+     1.448
     ]
    ]
   },
@@ -618,7 +606,7 @@
    ]
   },
   "L24": {
-   "text": "A green jumper, the exact opposite of my red one.",
+   "text": "A green sweater, the exact opposite of my red one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1233,6 +1221,10 @@
    "chunks": [
     [
      0.155,
+     0.457
+    ],
+    [
+     0.457,
      0.862
     ],
     [
@@ -1241,6 +1233,10 @@
     ],
     [
      1.285,
+     1.621
+    ],
+    [
+     1.621,
      1.845
     ],
     [
@@ -1602,14 +1598,14 @@
    ]
   },
   "L62": {
-   "text": "Over mine, one rolled to twenty too.",
+   "text": "Over mine, one rolled to twenty as well.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.983,
+   "dur": 2.103,
    "onset": 0.172,
-   "end": 1.776,
+   "end": 1.914,
    "chunks": [
     [
      0.172,
@@ -1617,11 +1613,15 @@
     ],
     [
      0.638,
-     1.017
+     0.983
     ],
     [
-     1.017,
-     1.776
+     0.983,
+     1.345
+    ],
+    [
+     1.345,
+     1.914
     ]
    ]
   },
