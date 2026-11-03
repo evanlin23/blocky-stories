@@ -106,22 +106,22 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 1.845,
-   "onset": 0.207,
-   "end": 1.621,
+   "tempo": 1.1844999999999999,
+   "dur": 1.517,
+   "onset": 0.138,
+   "end": 1.328,
    "chunks": [
     [
-     0.207,
-     0.603
+     0.138,
+     0.483
     ],
     [
-     0.629,
-     1.034
+     0.509,
+     0.845
     ],
     [
-     1.069,
-     1.621
+     0.879,
+     1.328
     ]
    ]
   },
@@ -169,10 +169,14 @@
     ],
     [
      0.87,
-     1.147
+     1.094
     ],
     [
-     1.147,
+     1.094,
+     1.215
+    ],
+    [
+     1.215,
      1.948
     ]
    ]
@@ -390,26 +394,26 @@
    ]
   },
   "L16": {
-   "text": "Everyone paired up but me. \"skip.\"",
+   "text": "Everybody paired up, but me. \"skip.\"",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.862,
-   "onset": 0.172,
-   "end": 1.638,
+   "tempo": 0.9476000000000001,
+   "dur": 2.017,
+   "onset": 0.19,
+   "end": 1.776,
    "chunks": [
     [
-     0.172,
-     0.732
+     0.19,
+     0.776
     ],
     [
-     0.732,
-     1.052
+     0.802,
+     1.121
     ],
     [
-     1.19,
-     1.638
+     1.276,
+     1.776
     ]
    ]
   },
@@ -594,46 +598,46 @@
    ]
   },
   "L24": {
-   "text": "That's where skipped time goes. It folds up and comes after you, one fold for every song you skipped.",
+   "text": "That's where skipped, time goes. It folds up and comes after you, one fold for every song you skipped.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9579000000000001,
-   "dur": 4.293,
+   "dur": 4.362,
    "onset": 0.172,
-   "end": 4.086,
+   "end": 4.155,
    "chunks": [
     [
      0.172,
-     0.586
+     0.655
     ],
     [
-     0.586,
-     1.293
+     0.69,
+     1.397
     ],
     [
-     1.362,
-     1.784
+     1.483,
+     1.906
     ],
     [
-     1.784,
-     2.086
+     1.906,
+     2.207
     ],
     [
-     2.086,
-     2.431
+     2.207,
+     2.517
     ],
     [
-     2.466,
-     2.879
+     2.552,
+     2.966
     ],
     [
-     2.879,
-     3.414
+     2.966,
+     3.483
     ],
     [
-     3.414,
-     4.086
+     3.483,
+     4.155
     ]
    ]
   },

@@ -126,12 +126,16 @@
     "I said, \"skip!\""
    ],
    [
-    "And I was at",
-    "And I was at"
+    "And I was",
+    "And I was"
    ],
    [
-    "the snack BAR.",
-    "the snack bar."
+    "at the",
+    "at the"
+   ],
+   [
+    "snack BAR.",
+    "snack bar."
    ]
   ]
  },
@@ -310,8 +314,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Everyone paired UP",
-    "Everyone paired up"
+    "Everybody paired UP",
+    "Everybody paired up"
    ],
    [
     "but ME.",

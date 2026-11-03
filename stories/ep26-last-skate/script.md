@@ -153,7 +153,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the floor and the rail. The waltz.
 - `L15` narrator: Then Lenny called / a COUPLES skate.
   - [S15a, 33.3: Lenny at his mic, `grin`. S15b, 34.2: the room easing down a little, the waltz in]
-- `L16` narrator: Everyone paired UP / but ME. / "SKIP."
+- `L16` narrator: Everybody paired UP / but ME. / "SKIP."
   - [S16a, 35.0: Gus's friends gliding past in pairs, each pair joined at the near wrists by a cherry ribbon loop, cut before any grip. S16b, 36.0: me at the rail, bare wrists, `worried`. Hard cut on "SKIP" (tape-stop), a third light cherry]
 - `L17` narrator: Now it was / ONE POST / from me.
   - [S17a, 36.7: wide along the rail, bright: me, a cream post, then the Skater, body facing me. S17b, 38.3: my face, `terrified`]

@@ -17,9 +17,9 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 
 # the word check: a comma in the spoken text only where Whisper swallowed a word
-TEMPO = {"L04": 0.9, "L15": 0.9, "L30": 0.9, "L24": 0.93}
+TEMPO = {"L04": 1.15, "L15": 0.9, "L30": 0.9, "L24": 0.93, "L16": 0.92}
 # and a comma in the spoken text only (the captions don't change) where Whisper swallowed the "ed" of a word
-SPOKEN = {}
+SPOKEN = {("L24", 0): "That's where skipped,", ("L16", 0): "Everybody paired up,"}
 for ln in lines:
     for k, ch in enumerate(ln.get("chunks", [])):
         if (ln["id"], k) in SPOKEN:
@@ -134,7 +134,7 @@ SHOTS = [
     ("L03.2", "the lore shot: the end cubby, the far-too-long cherry skates, the tally on the near heel", 2,
      move(([6.5, -5.3, 1.3], [6.5, -8.05, 1.12]), ([6.5, -6.0, 1.15], [6.5, -8.05, 1.12]), 34, 55)),
     ("L04", "me wobbling onto the floor, arms out", 2, C([-3.0, -3.2, 1.3], [0.6, -3.0, 1.1], 3.6)),
-    ("L04.1", "me tipping backward, Gus already tipping beside me, laughing", 2, C([0.6, -0.9, 1.9], [1.75, -2.7, 0.9], 3.2)),
+    ("L04.1", "me tipping backward, Gus already tipping beside me, laughing", 2, C([2.0, -0.3, 1.5], [2.0, -2.7, 0.9], 4.1)),
     ("L04.2", "Gus's friends at the rail turning to look", 2, C([-2.8, -1.2, 1.4], [-3.0, RAILY, 1.4], 2.4)),
     ("L05", "me on the boards, worried, looking up toward the booth", 2, C([1.5, 0.0, 0.7], [1.5, -2.6, 0.6], 1.9)),
     ("L05.1", "Lenny's two flat hands over the cherry skip and the cream back buttons", 2, C([-0.35, 2.8, 3.15], [-0.35, 5.2, 3.0], 2.7)),
@@ -180,7 +180,7 @@ SHOTS = [
     # 06 the reveal
     ("L23", "my eyes going from the song lights to its joints", 2, face(ME_RAIL, 180, 1.5, 1.2, 1.5)),
     ("L23", "the four cherry song lights in a row, nothing else lit in frame", 2, BOOTH_BAR(0.68, 2.42)),
-    ("L23.2+0.3", "the Skater side-on, bright: two knees and two elbows, each bent twice", 2,
+    ("L23.2+0.35", "the Skater side-on, bright: two knees and two elbows, each bent twice", 2,
      C([3.9, -0.9, 1.0], [3.8, RAILY, 1.05], 2.4)),
     ("L24+0.55", "the snack-bar clock, its hands", 2, CLOCK),
     ("L24.1", "the far rail, empty", 2, C([-2.5, 0.0, 1.5], [FAR[0], FAR[1], 1.0], 3.0)),
@@ -198,8 +198,8 @@ SHOTS = [
     ("L26.1", "Lenny's flat hand coming down on the cream back button", 2, C([-0.1, 3.0, 3.2], [-0.1, 4.65, 2.9], 2.0)),
     ("L26.2", "the first cherry light, close, the rewind swell", 2, BOOTH_BAR(0.17, 1.0)),
     ("L27", "me tipping backward on the floor", 2, C([1.6, -0.2, 0.9], [1.7, -2.7, 1.0], 2.8)),
-    ("L27.1", "Gus beside me going down too, laughing, on purpose", 2, C([2.8, -1.0, 1.2], [2.1, -2.7, 1.1], 1.9)),
-    ("L27.2", "the two of us sitting on the boards, laughing", 2, C([1.7, -0.1, 0.9], [1.7, -2.7, 0.5], 2.3)),
+    ("L27.1", "Gus beside me going down too, laughing, on purpose", 2, C([3.2, -1.0, 1.2], [2.6, -2.7, 1.1], 1.9)),
+    ("L27.2", "the two of us sitting on the boards, laughing", 2, C([2.1, -0.1, 0.9], [2.1, -2.7, 0.5], 3.0)),
     ("L28", "the Skater at the rail, its left knee open", 2, SKATER_LOW),
     ("L28.1", "the first light turning cream", 2, BOOTH_BAR(0.17, 1.0)),
     ("L29", "the lady from Gus's work and me at the snack bar, both laughing", 2, C([-4.4, -4.7, 1.6], [-4.4, -6.7, 1.3], 2.8)),
@@ -223,7 +223,7 @@ SHOTS = [
     ("L36", "a guest at the foot of the booth calling up for a skip", 2, C([0.2, 4.2, 2.7], [-0.6, 3.3, 1.5], 1.9)),
     ("L36.1", "Lenny's hand over the button", 2, C([-0.6, 3.4, 3.2], [-0.6, 4.6, 3.1], 2.0)),
     ("L36.2", "the Skater large and lit at the far rail, three-quarter, one leg folded once, smiling", 2,
-     C([-5.2, 1.6, 1.0], [FAR[0], FAR[1], 1.1], 2.8)),
+     C([-6.2, 3.4, 1.0], [FAR[0], FAR[1], 1.1], 2.8)),
     ("L36.3+0.5", "my face, worried, turning toward the guy", 2, face(ME_RAIL, 180, 1.5, 1.3, 1.5)),
     ("L38", "me pushing off the rail toward the booth", 2, C([3.0, -5.6, 1.6], [2.8, 0.2, 1.3], 3.8)),
 ]
@@ -244,8 +244,8 @@ for sh in shots:
     if sh["id"] in ("S36", "S37", "S74", "S75"):
         sh["expo"] = 0.55          # Gus at the mic was blown out
     if sh["id"] == "S48":
-        sh["skboost"] = 0.7
-        sh["expo"] = 0.85
+        sh["skboost"] = 2.0
+        sh["expo"] = 1.1
 for sh in shots:
     if sh["what"].startswith("THE TEST STILL"):
         sh["skboost"] = 0.6
@@ -325,23 +325,23 @@ walk("me", "L38", [2.5, -2.0], skate=True)
 # ---- Gus
 put("gus", "L03", [3.4, -6.3], yaw=180, skate=True, expr="grin", arms=[40, 40])
 hide("gus", "L03.1")
-put("gus", "L04.1", [2.2, -2.7], yaw=180, skate=True, side=[60, 60], expr="laugh")
+put("gus", "L04.1", [2.7, -2.7], yaw=180, skate=True, side=[60, 60], expr="laugh")
 key("gus", "L04.1", lean=0)
 key("gus", "L04.1+0.4", lean=-30, blend=0.5)
 hide("gus", "L05")
 put("gus", "L19", list(GUS_BOOTH) + [1.74], yaw=0, expr="soft", arms=[0, 70])
 hide("gus", "L26")
-put("gus", "L27.1", [2.2, -2.7], yaw=180, skate=True, side=[60, 60], expr="laugh")
+put("gus", "L27.1", [2.7, -2.7], yaw=180, skate=True, side=[60, 60], expr="laugh")
 key("gus", "L27.1", lean=0)
 key("gus", "L27.1+0.4", lean=-30, blend=0.5)
-floor_sit("gus", "L27.2", [2.3, -2.6], expr="laugh")
+floor_sit("gus", "L27.2", [2.85, -2.6], expr="laugh")
 hide("gus", "L28")
 put("gus", "L30", [2.1, -0.4], yaw=180, skate=True, expr="grin", side=[8, 8], wobble=6)
 key("gus", "L30.2", lean=-12, wobble=8, expr="laugh", blend=0.4)
 hide("gus", "L31")
 put("gus", "L31b.1", list(GUS_BOOTH) + [1.74], yaw=0, expr="soft", arms=[0, 0])
 key("gus", "L32", arms=[0, 90], expr="soft", blend=0.4)
-hide("gus", "L32.1")
+hide("gus", "L32.3")
 
 # ---- the lady from Gus's work
 put("coworker", "L10", [-2.3, -5.2], yaw=-90, skate=True, expr="grin")
@@ -405,6 +405,9 @@ def orbit(anchor, secs, th0, a, b, off=0.45, step=0.8):
 put("s1", "L03", [2.3, -6.2], yaw=180, skate=True, expr="grin", arms=[40, 40])
 put("s2", "L03", [4.5, -6.2], yaw=180, skate=True, expr="grin", arms=[40, 40])
 put("s3", "L03", [1.5, -6.0], yaw=180, skate=True, expr="grin", arms=[40, 40])
+hide("s1", "L03.1")
+hide("s2", "L03.1")
+hide("s3", "L03.1")
 put("s1", "L04.2", [-3.4, RAILY], yaw=180, skate=True, expr="wide")
 put("s2", "L04.2", [-2.6, RAILY], yaw=180, skate=True, expr="wide")
 put("s3", "L04.2", [-4.2, RAILY], yaw=180, skate=True, expr="wide")
@@ -423,9 +426,11 @@ LAST = 105.0
 orbit(0, 5.0, 0.6, "c1a", "c1b")      # the earliest low shot (L02.1) wants wheels: they skate in from the start
 orbit(0, 5.0, 2.7, "c2a", "c2b")
 orbit(0, 5.0, 4.8, "c3a", "c3b")
-orbit("L04", LAST, 0.6, "c1a", "c1b")
-orbit("L04", LAST, 2.7, "c2a", "c2b")
-orbit("L04", LAST, 4.8, "c3a", "c3b")
+# the couples leave the floor while the room dims on the Skater (about 34 to 53 s: close-ups only, and the sound stays
+# thin there), and are skating again from L26 (their place on the ellipse carries on: 0.4 rad/s from L04)
+for (th, a_, b_) in ((0.6, "c1a", "c1b"), (2.7, "c2a", "c2b"), (4.8, "c3a", "c3b")):
+    orbit("L04", 27.0, th, a_, b_)
+    orbit("L26", 30.0, th + OMEGA * 46.0, a_, b_)
 
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [{"at": 0, "name": "skates", "who": w, "on": True} for w in cast if w != "lenny"]
