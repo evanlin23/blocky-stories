@@ -38,3 +38,16 @@ orchestrator, so this session stopped here.
    `cost` tag, the creature at phone size, and flash. Write `qa/dryer-nine.json`. If qa passes, add it to `queue.txt`,
    spaced from town-rule and `cost` stories.
 6. The lead's rule: **if this next final fails flash or qa, drop the story.**
+
+## Flash fix, 2026-11-03 (second session)
+- Finding: the lead's "S47-S52 / S21-S25" are line ids. In shots, the 54-58 s run is S47/S48/S49 (L39, L39.2, L40) and
+  the 23.7 s run is the S19 to S20 cut (L15.3 to L16). The WIP did touch S47/S48.
+- Cause of the 7 changes: a cut where more than 10% of the screen goes brighter AND more than 10% goes darker counts as 3
+  changes (the detector flips direction each frame). The old film had two such cuts (56.6 and 57.4 s) one second apart,
+  and 24.0 s had one more at the limit.
+- Changes (generator/make_story.py, story.json regenerated): S46 rim 200 to 150; GAIN L15.3 (1.8, 3.0) to (0.2, 0.6),
+  L39.2 dx 16 to 5, L41 dx 5 to 4, L41.2 dx 9 to 6, L39 face 90 to 125, WIP xg for L16.3 to L19. No cut, framing, words or
+  narration change. dryer-nine has no `rev` key (it is under `sound`), nothing to bump.
+- Proof-size measure (every drawing, post applied): 23-30 s run 3-frame 1 flash / 3 changes (was 3 flashes at 23.7 s on
+  the final); 53-63 s run 2 flashes / 4 changes, extended 0.17 s (was 7 changes, 1.53 s).
+  Left: double-sided cuts at 59.57 and 61.3 s and 29.03 s stand alone, each at least 0.9 s from other changes.
