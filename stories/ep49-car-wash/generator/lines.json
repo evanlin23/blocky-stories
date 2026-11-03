@@ -1238,20 +1238,32 @@
   "who": "narrator",
   "chunks": [
    [
+    "My bell",
+    "my bell"
+   ],
+   [
+    "never RANG",
+    "never rang"
+   ],
+   [
+    "because HE",
+    "because he"
+   ],
+   [
+    "had its CLAPPER.",
+    "had its clapper."
+   ],
+   [
     "Every ring",
-    "Every ring"
+    "every ring"
    ],
    [
-    "I blamed",
-    "I blamed"
+    "in his POCKET",
+    "in his pocket"
    ],
    [
-    "on HIM",
-    "on him"
-   ],
-   [
-    "was MINE.",
-    "was mine."
+    "was MY mistake.",
+    "was my mistake."
    ]
   ]
  },
@@ -1523,12 +1535,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Just NOW,",
-    "Just now,"
+    "Now it's BACK",
+    "now it's back"
    ],
    [
-    "it RANG.",
-    "it rang."
+    "on MY collar.",
+    "on my collar."
    ]
   ]
  },
@@ -1537,12 +1549,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "I hadn't",
-    "I hadn't"
+    "And I hear",
+    "and i hear"
    ],
    [
-    "MOVED.",
-    "moved."
+    "EVERY one.",
+    "every one."
    ]
   ]
  }
