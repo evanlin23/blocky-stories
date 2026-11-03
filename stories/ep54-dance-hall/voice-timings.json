@@ -1550,22 +1550,22 @@
    ]
   },
   "L58": {
-   "text": "on my palm, glowing gold, is the rest of hers.",
+   "text": "on, my palm, glowing gold, is the rest of hers.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 2.483,
-   "onset": 0.155,
+   "onset": 0.172,
    "end": 2.293,
    "chunks": [
     [
-     0.155,
-     0.621
+     0.172,
+     0.655
     ],
     [
-     0.655,
-     1.276
+     0.69,
+     1.293
     ],
     [
      1.345,
