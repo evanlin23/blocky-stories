@@ -168,7 +168,7 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros"
 # homophone pairs added by stories: creak/creek and shone/shown (ep16), hall/haul and ladder/latter, flapped
 # (ep17), Wren said "ren" (ep20)
 HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
-              "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
+              "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "hours": "ours", "latter": "ladder",
               "wren": "ren", "wrens": "rens", "remy": "remi", "remys": "remis", "hot": "hut", "too": "to",   # "too" (ep15: "back TOO,"); remy/hot (ep50)
               "60th": "sixtieth",   # ep31
               # ep33 (opt-in: only a story with these words is affected): made-up names Whisper spells its own way
@@ -210,7 +210,38 @@ def same_spoken(script: str, heard: str) -> bool:
             w = SPELLINGS.get(w, w)
             out.append(HOMOPHONES.get(w, w))
         return "".join(out)
-    return bool(script or heard) and canon(script) == canon(heard)
+    if bool(script or heard) and canon(script) == canon(heard):
+        return True
+    return _same_number(script, heard)
+
+
+_NUMW = {w: i for i, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split())}
+_NUMW.update({"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90})
+
+
+def _same_number(script: str, heard: str) -> bool:
+    """Whisper writes "1,024" or "2000" for "one thousand twenty four" and splits it over its own words: the
+    script's number words, summed, equal the digits it wrote (or the digits' tail, when a neighbour word took the front)."""
+    hs = [str(_NUMW[h]) if h in _NUMW and _NUMW[h] < 10 else h for h in heard.replace(",", "").split()]
+    if not hs or not all(h.isdigit() for h in hs):
+        return False
+    total, seen = 0, False
+    for w in script.split():
+        if w in ("and", "a"):
+            continue
+        if w == "hundred":
+            total = max(total, 1) * 100 if total < 100 else total * 100
+        elif w == "thousand":
+            total = max(total, 1) * 1000
+        elif w in _NUMW:
+            total += _NUMW[w]
+        else:
+            return False
+        seen = True
+    if not seen:
+        return False
+    h = "".join(hs)
+    return str(total) == h.lstrip("0") or str(total).endswith(h)
 
 
 if __name__ == "__main__":

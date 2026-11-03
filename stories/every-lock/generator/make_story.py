@@ -20,6 +20,39 @@ lines = json.loads((HERE / "lines.json").read_text())
 K, DK, ST, SR = 40.0, 80.0, 120.0, 160.0
 
 
+def split_chunks(lines):
+    """Captions show two or three words at a time: split any longer chunk, and remember where each original chunk went."""
+    remap = {}
+    for ln in lines:
+        new = []
+        for j, (cap, spk) in enumerate(ln["chunks"]):
+            cw, sw = cap.split(), spk.split()
+            remap[(ln["id"], j)] = len(new)
+            if len(cw) <= 3 or len(cw) != len(sw):
+                new.append([cap, spk])
+                continue
+            n = len(cw)
+            k = 2 if n == 4 else 3
+            sizes = [k, n - k] if n <= 6 else [3] * (n // 3) + ([n % 3] if n % 3 else [])
+            i = 0
+            for sz in sizes:
+                new.append([" ".join(cw[i:i + sz]), " ".join(sw[i:i + sz])])
+                i += sz
+        ln["chunks"] = new
+    return remap
+
+
+import re as _re
+REMAP = split_chunks(lines)
+
+
+def R(ref):
+    """Rewrite a chunk ref (L04.2) written against the script's chunks to the split chunks."""
+    if not isinstance(ref, str):
+        return ref
+    return _re.sub(r"(L\d+b?)\.(\d+)", lambda m: f"{m.group(1)}.{REMAP.get((m.group(1), int(m.group(2))), int(m.group(2)))}", ref)
+
+
 def insert_pause(lines, before, pid, dur):
     i = next(k for k, l in enumerate(lines) if l["id"] == before)
     lines.insert(i, {"id": pid, "pause": dur, "chunks": []})
@@ -27,6 +60,9 @@ def insert_pause(lines, before, pid, dur):
 
 insert_pause(lines, "L36", "P01", 0.6)
 insert_pause(lines, "L68", "P02", 0.6)
+for _l in lines:
+    if _l["id"] == "L41":
+        _l["tempo"] = 0.88
 lines.append({"id": "P03", "pause": 0.12, "chunks": []})
 
 # ---------------------------------------------------------------------------------------------------- cast
@@ -74,7 +110,7 @@ SH = []
 
 
 def S(ref, cam, who=None, cues=(), step=2, note=""):
-    SH.append({"ref": ref, "cam": cam, "who": who or {}, "cues": list(cues), "step": step, "note": note})
+    SH.append({"ref": R(ref), "cam": cam, "who": who or {}, "cues": [(R(r), n, f) for r, n, f in cues], "step": step, "note": note})
 
 
 def cam(loc, tgt, lens):
@@ -124,7 +160,7 @@ S(0, dolly((0, 4.6, 1.22), (0, 5.6, 1.2), (0, 7, 1.1), (0, 7, 1.1), 19, 24), not
 S("L01.2", dolly((0.0, 5.9, 1.55), (0.3, 5.7, 1.85), (0.1, 7, 1.6), (0.17, 6.6, 1.86), 40, 55), note="a punch in across the locks, the flaps glint; the clunk",
   cues=[CU("shudder", ref="L01>-0.2")])
 S(
-    "L02", cam((K - 0.8, 2.4, 1.0), (K - 0.8, 3.64, 0.95), 30),
+    "L02", cam((K - 0.8, 1.9, 1.0), (K - 0.8, 3.64, 0.95), 26),
     {"me": P(K + 0.15, 3.0, -90, "neutral")}, note="the cupboard: a second lock pops on",
     cues=[CU("cupboard", a=60.0), CU("cupboard", ref="L02+0.1", a=0.0, dur=0.25), CU("cuplock", ref="L02.1")])
 S("L02b", cam((K - 0.7, 2.9, 0.95), (K - 0.7, 3.64, 0.95), 55), {"me": P(K - 0.2, 3.0, -90, "angry")},
@@ -134,7 +170,7 @@ S("L03", cam((DK + 1.8, 0.6, 1.45), (DK - 0.4, 3.0, 1.05), 22),
   cues=[CU("fridge", a=70.0), CU("dknight", v=0.0), CU("frtiny", on=False)])
 S("L03.1", cam((DK + 1.5, 0.9, 1.5), (DK - 0.1, 2.5, 1.45), 30), {"downstairs": FP(DK - 0.1, 2.4, (DK + 1.5, 0.9), "squeeze")},
   note="the sneeze, the fridge door swings shut", cues=[CU("fridge", ref="L03.1+0.45", a=0.0, dur=0.3)])
-S("L04", cam((DK + 0.9, 1.7, 1.3), (DK - 0.2, 3.3, 1.2), 24), {"downstairs": FP(DK + 0.5, 2.6, (DK + 0.9, 1.7), SHEEP)},
+S("L04", cam((DK + 1.6, 0.2, 1.4), (DK - 0.1, 3.2, 1.1), 20), {"downstairs": FP(DK + 0.6, 2.4, (DK + 1.6, 0.2), SHEEP)},
   note="the 64-lock fridge, the man sheepish", cues=[CU("frtiny", on=True)])
 S("L04+0.7", cam((DK - 0.1, 2.7, 1.68), (DK - 0.1, 3.25, 1.62), 70), note="plant 1: the little keyhole flaps, a tiny lock growing")
 S("L04+1.5", dolly((DK + 0.9, 2.2, 1.3), (DK + 1.0, 0.4, 0.8), (DK - 0.1, 3.2, 1.5), (DK + 1.2, 1.2, 0.4), 30, 34), note="tilt down to the cooler and the milk")
@@ -144,7 +180,7 @@ S("L06", cam((-6.0, -0.6, 1.45), (-6.0, -5.0, 1.0), 19),
   {"fa1": P(-6.7, -4.5, 180, "grin", arms=[55, 0]), "fa2": P(-5.3, -4.5, 180, "smile", arms=[0, 55])}, note="a family at dinner")
 S("L06+0.7", cam((6.0, -0.6, 1.45), (6.0, -5.0, 1.0), 19),
   {"fb1": P(5.3, -4.5, 180, "smile", arms=[55, 0]), "fb2": P(6.7, -4.5, 180, "grin", arms=[0, 55])}, note="another table")
-S("L07", cam((ST - 0.1, 0.3, 1.45), (ST - 0.1, -0.8, 1.5), 22),
+S("L07", cam((ST - 0.1, 0.28, 1.45), (ST - 0.1, -0.8, 1.5), 14),
   {"bro1": P(ST - 0.55, -0.85, 90, "angry", mouth=True), "bro2": P(ST + 0.4, -0.85, -90, "angry", mouth=True)},
   note="the brothers nose to nose on the landing")
 S("L07.3", cam((ST - 0.9, 4.3, -1.8), (ST + 0.2, -0.6, 1.6), 18), note="low up the stairwell: no door anywhere")
@@ -153,7 +189,7 @@ S("L08.1", cam((ST - 2.8, 0.0, 1.55), (ST - 4.2, 0.0, 1.45), 24), {"pike": P(ST 
   note="her bathroom doorway: shower cap above the curtain, singing")
 S("L09", cam((ST - 3.0, 0.0, 1.58), (ST - 4.9, 0.0, 1.58), 40), {"pike": P(ST - 4.9, 0.0, 90, "smile", mouth=True)},
   note="punch in: she sings louder")
-S("L10", cam((0.0, -0.9, 1.5), (0.0, -3.0, 1.35), 22), {"dale": P(0.0, -2.75, 180, "smile")},
+S("L10", cam((0.0, 0.2, 1.5), (0.0, -3.0, 1.35), 16), {"dale": P(0.0, -2.75, 180, "smile")},
   note="Mr. Dale in his open doorway, curb finds behind him")
 S("L10.2", dolly((SR - 3.5, 0.2, 1.0), (SR - 2.6, 0.2, 1.0), (SR, 3.8, 1.0), (SR, 4.4, 1.1), 26),
   {"dale": P(SR - 0.2, 2.2, 0, "smile", arms=[75, 75], to=[(SR, 4.9, 0.3)])}, note="he carries a curb lamp up the front steps",
@@ -223,14 +259,14 @@ S("L29", cam((0.65, 5.3, 0.3), (0.3, 6.7, 0.1), 28), {"jade": P(0.15, 5.5, 180, 
 S("L30", cam((0.0, 5.0, 1.3), (0.0, 7.0, 1.15), 20), note="the slam: a wave of locks pops on",
   cues=[DR(swing=0.0, dur=0.12), DR(ref="L30+0.1", n=1024, L=0.4, dur=0.5), MT(1024, ref="L30+0.1"),
         CU("shoeat", loc=(0.0, 0.0, -3.0))])
-S("L31", cam((-0.75, 5.4, 1.2), (0.35, 7.0, 1.3), 22), note="side-on: the door a lumpy bulge, its top leaning out",
+S("L31", cam((-0.55, 4.5, 1.2), (0.35, 7.0, 1.3), 20), note="side-on: the door a lumpy bulge, its top leaning out",
   cues=[DR(ref="L31", lean=4.0, dur=0.6)])
 S("L31.2", cam((0.0, 4.3, 1.55), (0.0, 6.3, 1.5), 24), {"jade": FP(0.0, 5.6, (0.0, 4.3), SHEEP)}, note="Jade beside it, the meter above her")
 S("L32", cam((-0.85, 3.0, 1.6), (0.2, 5.0, 1.4), 20),
   {"bro1": P(-0.3, 4.4, 210, "wide"), "bro2": P(0.3, 4.8, 210, "wide"), "downstairs": P(0.0, 3.6, 210, "wide"), "pike": P(-0.35, 5.3, 210, "wide")},
   note="the whole floor comes to look")
 S("L33", cam((0.0, 3.7, 1.55), (0.0, 5.2, 1.5), 30), {"pike": P(0.0, 5.2, 0, "neutral", mouth=True)}, note="Mrs. Pike: the worst one she's seen")
-S("L34", cam((-0.8, 5.0, 1.5), (0.1, 6.2, 1.4), 26), {"dale": P(0.1, 5.75, 196, "smile", arms=[85, 0])},
+S("L34", cam((-0.6, 4.2, 1.5), (0.1, 6.0, 1.4), 24), {"dale": P(0.1, 5.75, 196, "smile", arms=[85, 0])},
   note="Mr. Dale tests the locks like a melon")
 S("L35", cam((0.0, 5.4, 1.5), (0.2, 3.4, 1.2), 24), {"jadeb": P(0.2, 3.3, 180, ANNOYED)},
   note="Jade sleeps in the hall, evening light", cues=[CU("matat", loc=(0.2, 3.3, 0.0)), CU("night", ref="L35+0.2", v=1.0, dur=1.3)])
@@ -291,7 +327,7 @@ S("L53.2", cam((0.0, 4.3, 1.6), (0.0, 5.9, 1.55), 34), {"jadeb": P(0.0, 5.9, 0, 
 S("L54", cam((0.0, 3.8, 1.4), (-0.4, 5.1, 0.9), 26), {"me": P(-0.35, 4.85, 0, SHEEP)}, note="I'm sorry too, foot still on the door",
   cues=[CU("night", ref="L54>-0.5", v=0.0, dur=0.5)])
 # 05 the loophole (L55 to L64)
-S("L55", cam((-0.62, 5.4, 1.1), (-0.45, 6.9, 1.1), 32), note="the hall light is on; the hinges, the only bare metal",
+S("L55", cam((-0.3, 5.2, 1.1), (-0.45, 6.9, 1.1), 30), note="the hall light is on; the hinges, the only bare metal",
   cues=[CU("hole", holes=[HOLE_HINGE, HOLE_JADE])])
 S("L56", cam((0.2, 3.6, 1.55), (-0.5, 4.9, 1.5), 28), {"me": FP(-0.5, 4.5, (0.2, 3.6), "smile")}, note="the idea")
 S("L56.2", cam((0.0, 3.7, 1.6), (0.0, 5.9, 1.55), 26), {"jadeb": P(0.0, 5.9, 0, "smile")}, note="Jade smiles back from the gap")
@@ -531,6 +567,13 @@ sound = {
     "sfx": sfx,
     "music_drops": [{"from": "L35>", "to": "L36", "keep": ["click"]}, {"from": "L67>", "to": "L68", "keep": ["thud"]}],
 }
+
+for e in sfx:
+    e["at"] = R(e["at"])
+for sec in music["sections"]:
+    sec["at"] = R(sec["at"])
+for d in sound["music_drops"]:
+    d["from"], d["to"] = R(d["from"]), R(d["to"])
 
 story = {
     "slug": "every-lock", "title": "My Bathroom Door Has 1,024 LOCKS", "made_for_kids": False,

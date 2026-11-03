@@ -564,8 +564,8 @@ def build_k(kit, M, ctx):
     ctx["clock_m"] = kit.empty("clock pivot m", (x - 2.0, 4.075, 1.9))
     ctx["hand_m"] = bx(kit, "hand m", (0.018, 0.012, 0.17), (0, 0, 0.085), M["black"], ctx["clock_m"])
     kit.box("window k", (1.0, 0.04, 1.1), (x + 0.9, 4.16, 1.5), M["glowwin"])
-    kit.light("k_a", "AREA", (x, 1.8, 2.5), 330, "#fff1d8", size=1.4)
-    kit.light("k_b", "AREA", (x, 3.0, 2.4), 200, "#fff1d8", size=1.0)
+    kit.light("k_a", "AREA", (x, 1.8, 2.5), 110, "#fff1d8", size=1.4)
+    kit.light("k_b", "AREA", (x, 3.0, 2.4), 60, "#fff1d8", size=1.0)
 
 
 def build_dk(kit, M, ctx):
@@ -602,7 +602,7 @@ def build_dk(kit, M, ctx):
     kit.prop("light_ceiling1", (0, 0, -0.84), parent=ctx["dk_swing"], scale=1.3)
     kit.sphere("dk bulb", 0.07, (0, 0, -0.55), unfogged_emit(kit, "bulb", "#fff0c8", 6.0), ctx["dk_swing"], 10)
     L = kit.light
-    L("dk_a", "AREA", (x, 1.8, 2.45), 280, "#fff1d8", size=1.4)
+    L("dk_a", "AREA", (x, 1.8, 2.45), 200, "#fff1d8", size=1.4)
     L("dk_b", "AREA", (x - 0.2, 3.0, 2.4), 200, "#ffffff", size=1.0)
     L("dk_n1", "AREA", (x, 1.8, 2.45), 140, "#ffb86b", size=1.6)
     L("dk_n2", "POINT", (x + 0.9, 3.1, 0.45), 26, "#ffb86b", size=0.08)
@@ -830,7 +830,7 @@ def animate(kit, story, tl, t, ctx):
     B["handle"].hide_render = L > 0.05 or n >= 512
     pop = min(1.0, max(0.0, (t - tn) / 0.2))
     for i, lk in enumerate(B["pool"]):
-        if i < min(n0, POOL_N):
+        if i < min(n0, n, POOL_N):
             lk.show(True, 1.0)
         elif i < min(n, POOL_N):
             lk.show(True, ss(pop))
