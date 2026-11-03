@@ -1,11 +1,11 @@
 {
- "title": "Don't Leave ANYTHING Behind a Door 🚪",
- "old_title": "In This Town Your Stuff Decides What OPENS For You",
- "description": "In this town, a door only opens if something of yours is inside, and the little lamp above it lights up for you. People leave a sock at a friend's place so they get invited back. Breakups take forever.\n\nMy ex, Jo, and I rented a storage unit together, and I still go every Tuesday at seven to sit with the boxes. The hallway lights run on a one-minute timer. One week, somebody was standing in the open doorway of unit eleven. Every Tuesday after that, they were one door closer to mine.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
- "pin": "Comment SOCK if you've ever left something at a friend's place on purpose.",
+ "title": "Don't WAVE When The Lights Go Off 💡",
+ "description": "At the storage block, the motion lights go off if nobody moves for a minute, so everybody waves. A guy on his phone waves the whole call. My big sister Jo dances with a broom.\n\nTonight Jo is moving out of unit seven, and the lights keep going off while I'm still carrying boxes. Every time they click back on, the tall grey somebody by the only way out is one door closer.\n\nIt's made up. A creepy blocky story, built with code and Blender.",
+ "pin": "Comment WAVE if you've ever waved your arms at a motion light.",
  "made_for_kids": false,
- "shape": "about-me",
+ "shape": "tell",
+ "opening": "if",
  "lane": "core",
- "cover_s": 83.2,
- "hold": "dropped 2026-11-03 (critic r6 kill after the opening fix: the Deep One reads silly and never ties to the rule, the big idea, half the boxes were mine, is given away by 12 s and isn't a wait-what, and it's a quiet breakup admission; polish can't fix the story)"
+ "cover_s": 49.0,
+ "hold": "revival in progress 2026-11-03"
 }
