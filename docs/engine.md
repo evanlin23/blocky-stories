@@ -177,7 +177,8 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
                     "auto": true,               // also punch in on all-caps captions, big words and the hook (default)
                     "sway": ["S12", "S13"],      // gentle handheld on tense shots (true: every shot)
                     "bed_kind": "rain",          // the bed (default: the story's most-used recorded ambience, else room)
-                    "punch": 0.06, "drift": 0.03, "whoosh_db": -24, "grade": "bright"}}
+                    "punch": 0.06, "punch_rate": 0.7, "camera": true, "ease": true, "idle": true, "ones": "walk",
+                    "drift": 0.03, "whoosh_db": -19, "grade": "bright"}}
 ```
 
 - **Sound:** a recorded whoosh, low-passed at 3 kHz, 0.12 s before a cut that falls between lines (never under a
@@ -191,9 +192,22 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
   the voice. The master is unchanged (-14 LUFS, true peak under -1 dBTP on the file).
 - **Captions:** pop in from 90% to 100% over 80 ms (the default is a slower overshoot).
 - **Motion**, on the output crop, so it's smooth on every frame even with drawings on twos or fours: a 6% punch-in
-  eased over 0.12 s on emphasised words, held to the cut, plus one in the middle of any shot over 2.2 s that has
-  none (`fill`), so something changes every 1 to 2 s; a 3% drift (in or out, with a slight slide) on every shot
+  eased over 0.12 s on key words, held to the cut (capped, see Punch-ins; `fill` can add one in any long shot); a 3% drift (in or out, with a slight slide) on every shot
   over 1.5 s whose camera doesn't move; an optional slow sway. All of it reads as no change to `flash`.
+- **Acting** (v2, craft metrics 2026-11-03), through `tl["motion"]`, which only the pack sets: `ease` gives every walk
+  that doesn't carry on into another a trapezoid of speed (0.25 s to get going and to stop, longer for a run:
+  speed / 4 m/s²), same keys and timing, with the footsteps on the eased distance; `idle` gives anyone standing slow
+  breathing (6 mm), a weight shift (about 1°), a turn of the body (2°) and a drifting head (5° and 2.5°), from sines
+  at periods that never line up, added on top of their keys. `ones: "walk"` draws shots with a walk on every frame
+  (about +9% drawing; every shot on ones would be +70 to 100%).
+- **Camera** (v2): `camera` gives every shot whose own camera holds still (one key, no `follow`) a slow push-in of
+  `cam_push` (7%, at most 0.6 m) with a `cam_arc` (3°) arc round the target, the arc turning the other way shot to
+  shot, and every third shot a slow truck. `polish.cam_spec` is read by both `bl_story.py` and
+  `scripts/measure.py` (through `polish.cam_specs`). The whole move is at most 0.12 m/s, a camera under 2 m from its
+  target pushes proportionally less, and a shot a reveal lands in gets a straight push at half speed with its
+  characters' idle motion at a fifth (`tl["motion"]["calm_shots"]`). The 2D drift then only covers shots it doesn't.
+- **Punch-ins** (v2): key words only (the builder's `emph`, the hook, big words, all-caps captions, a key word that
+  ends its line), at most `punch_rate` (0.7) per 10 s, evenly spread. Hits keep their own 4 s spacing.
 - **Picture:** the `bright` grade raises exposure to at least 1.04 and saturation to 1.06, caps contrast at 1.05,
   the vignette at 0.2 and grain at 0.009, and adds a toe that lifts the darkest tones instead of crushing them. The
   story's own tints and shot grades stay.
