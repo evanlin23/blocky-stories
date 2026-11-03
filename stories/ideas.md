@@ -391,3 +391,4 @@ Fresh idea (added with `dryer-nine`, 2026-11-03, so the backlog doesn't run dry)
 - P5 door-locks: "Every door you close gets one more lock." (what-if escalation, long)
 - P6 rulebook keeper pilot: rule three was torn out (recurring host, mid)
 - P7 ep62-six-riders: four riders, five in the elevator mirror (horror puzzle, 20 to 45 s)
+  - killed 2026-11-03: failed final-film qa twice (rev 1: frame 1 didn't read as five, inaudible hit; rev 2 re-cut: S13 continuity slip and "C" spoken over no C tag). The puzzle solved and the swap landed; the hook never cleared the bar.
