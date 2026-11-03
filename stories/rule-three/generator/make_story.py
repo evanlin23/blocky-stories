@@ -371,27 +371,21 @@ S("L37", ((0.8, 1.6, 1.7), (-1.1, 4.4, 1.6), 32), who={"me": (OT, 0, "smile", {}
   note="Milo, grinning, slapping the side of the book")
 raw("milo", "L37+0.3", arms=[0, 100], blend=0.1)
 cue("L37", "book", mode="open")
-S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -2.6, 1.4), (-2.3, -2.6, 1.2), 22),
-  who={"milo": (X(-2.6, -1.8), 180, "grin", {"arms": [70, 70]}), "me": (X(-2.6, -0.65), 0, "smile", {"arms": [70, 70]})},
-  note="the two of us hauling the red book out of the hall door, Milo walking backward at the front")
+# rescue r3: the street wide (old S54) is gone; L38 is one shot, already out on the street (its cut, 0.9 s from two
+# others, put the 3-frame flash reading over the bar)
 # (no time-of-day change at L38: the street stays night, matching the hall; a dusk street flashed, rescue r3)
 cue("L38", "book", mode="carry")
-walk("milo", "L38+0.1", X(-2.6, -1.8), keep_yaw=True, yaw=180)
-walk("milo", "L38.2", X(-2.3, -3.6), keep_yaw=True, yaw=180)
-walk("me", "L38+0.1", X(-2.6, -0.65))
-walk("me", "L38.2", X(-2.3, -2.4))
-cue("L38", "bookpath", v=[-2.6, -1.2, 1.05])
-cue("L38.2", "bookpath", v=[-2.3, -3.0, 1.05])
+cue("L38", "bookpath", v=[-2.3, -3.0, 1.05])
 LINE = {f"t{i}": (X(x, y), 90 if x < 0 else -90, "smile", {}) for i, (x, y) in enumerate(
     [(-3.4, -7), (3.4, -9), (-3.5, -12), (3.4, -14), (-3.4, -17), (3.5, -19), (-3.4, -23), (3.4, -25)])}
-S("L38.2", ((3.6, -2.4, 1.9), (-1.8, -4.4, 1.25), 26, (3.55, -2.75, 1.9), (-1.6, -4.85, 1.25), 26),
+S("L38", ((3.6, -2.4, 1.9), (-1.8, -4.4, 1.25), 26, (3.55, -2.75, 1.9), (-1.6, -4.85, 1.25), 26),
   who={"milo": (X(-2.3, -3.6), 140, "grin", {"arms": [70, 70]}), "me": (X(-2.3, -2.4), 0, "smile", {"arms": [70, 70]}), **LINE},
   note="Milo walking backward at the front, face and the red book in frame, the townsfolk stepping aside and smiling")
-walk("milo", "L38.2+0.1", X(-2.3, -3.6), keep_yaw=True, yaw=140)
+walk("milo", "L38+0.1", X(-2.3, -3.6), keep_yaw=True, yaw=140)
 walk("milo", "L38>", X(-0.8, -6.6), keep_yaw=True, yaw=140)
-walk("me", "L38.2+0.1", X(-2.3, -2.4))
+walk("me", "L38+0.1", X(-2.3, -2.4))
 walk("me", "L38>", X(-0.8, -5.4))
-cue("L38.2+0.1", "bookpath", v=[-2.3, -3.0, 1.05])
+cue("L38+0.1", "bookpath", v=[-2.3, -3.0, 1.05])
 cue("L38>", "bookpath", v=[-0.8, -6.0, 1.05])
 TABLE_Y = 3.6
 S("L39", ((MOM - 0.9, 0.5, 1.5), (MOM - 0.1, 4.5, 1.15), 26, (MOM - 0.7, 1.0, 1.5), (MOM - 0.1, 4.5, 1.15), 26),
