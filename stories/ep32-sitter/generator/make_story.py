@@ -571,7 +571,7 @@ story = {
              "flash_safe": True,
              # the polish pack (docs/engine.md): punch-ins on the hook and the creeping beats, the reveal, a tense sway
              "polish": {"emph": ["L01.3", "L11.3", "L16", "L17.3", "L18.2", "L23.2", "L27.2", "L31.2", "L40.4"],
-                        "quiet": [["L35", "L38"]],
+                        "quiet": [["L35", "L37"]],
                         "reveal": ["L31.2"], "sway": ["S21", "S22", "S23", "S24", "S30", "S31", "S39", "S40"],
                         "bed_kind": "room"}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
