@@ -1,3 +1,7 @@
+# Redo r4 (writer, 2026-11-02): read this first
+
+`script.md` is the whole redo: the big idea, premise, twist, plants, the Attendant's beats, the narration (L01 to L50, P01 to P06, all re-voiced) and "Set and shot changes against the old build". It supersedes everything below about the story, the lines, the talk countdown, the lobby and the warmth. What still holds from below: the Attendant's pass-2 model, lights and glow (Amendment 1, point 3), the sill rule (point 4), the gloves (point 6), and the door-bump build (point 2), now with only me in the car.
+
 # ep14-floor-thirteen: brief (producer, 2026-10-31)
 
 Creepy blocky story reel, batch 2 story 1 (row 1 of `reels/blocky/batch2-pitches.md`), for **PandaNanoAdventures** (note 21). Format `/blocky`, showrunner note 18 in full. Fiction, no facts, no sourcing step. No takeaway on purpose (notes 16 and 18: not educational), so there's no "where the viewer meets this" section and no graph list.

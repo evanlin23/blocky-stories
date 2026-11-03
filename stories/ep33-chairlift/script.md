@@ -1,258 +1,179 @@
-# ep33-chairlift: the script (writer, 2026-11-02)
+# ep33-chairlift: the script (redo, writer, 2026-11-02)
+
+**Redo, 2026-11-02** (revision 1, same day: L01, L03, L12 and L36 rewritten after the blind premise check). The first version (a dare as the first line, the Four-Face, the forty-year bet) was held for not being rule-first. This redo keeps the set (the lake chairlift, the bottom station deck, the top of the ridge), Bo, the old couple's models and the fog, and replaces the premise, the rule, the twist and the creature. There is no monster now. Every line is new, so the builder re-voices the whole story.
 
 - **Slug:** `ep33-chairlift`. Folder `stories/ep33-chairlift/`.
-- **From:** pitch #17 `chairlift` in `stories/ideas.md`. Its setting, creature (the Four-Face), first-line type (a dare) and kind of warmth (generosity: I give my seat away) are kept. The twist is reshaped (below).
-- **Target length:** 2:15 to 2:30.
-- **Word count:** 603 spoken words in 81 lines (r1: L10 +1, L37 -1; r2: L64 -2, L73 -3), all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
-- **Estimated length:** about 2:16 to 2:22. The speech is 2:06 at 290 wpm and 2:11 at 278 wpm, and the 0.12 s gaps add about 10 s, P01 0.7 s and the loop tail 0.25 s. If the retime lands under 2:15, add back "from the TOP" at the end of L03 and slow nothing. If it lands over 2:30, L35 goes first, then L49.
+- **Length test:** this is one of the 60 to 90 s stories.
+- **Word count:** 318 spoken words in 37 lines, all `narrator` in voice A, plus one pause beat (P01, 0.7 s).
+- **Estimated length:** about 70 to 73 s. Speech is 64.6 s at 290 wpm and 67.3 s at 278 wpm. The 0.12 s gaps add 4.4 s, P01 0.7 s and the tail 0.3 s. If it lands over 85 s, cut L12 first, then L24.
+
+## The big idea
+**Gran isn't riding up the ridge to skip my life: she's the oldest in the valley, and a day at the top of the chairlift costs a year down below, so she's stretching her last few years to last the whole of mine.**
+
+Seen from inside, it's a fun town rule (people ride up to skip winters, waits and visiting mothers). The narrator is the one person who never goes up, and resents that Gran spends almost all her time up there. The reveal turns "skipping" into the opposite: she spends her time slowly so she can watch me grow old. Then I choose to spend my own weeks the same way, beside her.
+
+Ten pitched, this one kept. The others, and why not: the sun only rises when the first chair reaches the top (a duty, no reveal). You only see the sunrise if someone who loves you watches it (the fix needed Gran to be blind, which the narrator would already know). The lake gives back what falls in (heads toward loss). Every chair must be full to run (the reveal kept landing on stand-in). A lift that pairs you with who you'll grow old with (small). The down chairs carry yesterday (puzzle). The town's back-of-head faces (silly). The valley is a model on the Bench (lore, no feeling). The lift turns the days and stopping it freezes the world (wonder, no loved one).
 
 ## Premise
-I'm on a one-week holiday by a lake, and I've booked the first chair of every dawn on the old chairlift to the ridge, both seats, so I can watch the sunrise alone. Bo, who runs the bottom station, bets me I can't ride up alone all week, and says that if I don't, my seat goes to the Halvors, an old couple who stand at the gate rope every dawn in laced walking boots. Every dawn, a rider in a faded orange cagoule with a cube head rides the lift alone, a little nearer my chair each time, and its face is always turned to me.
+In a lake town, one day at the top of the chairlift costs a year down at the lake, so people ride up to skip the things they don't want to sit through, and from the deck you can see them on the ridge, still as posts. I have never been up, because I don't want to miss a day. Gran goes up every morning with a blanket big enough for two, comes down for Sunday dinner, and every Sunday says I look older. Through the deck's old viewer she's the one person on the ridge facing away from the sunrise, and one Sunday she doesn't come down.
 
 ## The rule
-Nobody rides alone a whole week. Nobody in the story says it as a rule. In this valley it only lives as Bo's bet (L10: ride alone all week, or the seat goes to the Halvors). Monday to Thursday I do ride alone, and Friday breaks it, so "Nobody EVER / HAS" (L81) means nobody has lasted the week.
+"In this town, one day at the top of the chairlift costs a year down below." (L01, 15 words, revised 2026-11-02 after the blind check: concrete nouns, the cost inside the rule.) It touches everyone: the whole valley uses it, and everyone you leave at the bottom gets a year older for every day you spend up top.
+- **Marker by 2 s:** shot 1 is a close on a stranger on the ridge bench, frozen mid-laugh in clear dawn light, while behind her the clouds race and the valley's shadows sweep, a time-lapse sky over a still face. Stillness against racing weather is the rule, readable at phone size.
+- **Montage (L02 to L04, ends about 13 s):** people on the ridge seen from the lake, still as posts. Mr Pell went up for an afternoon and missed all of winter. Bo goes up whenever his mum visits.
+- **The narrator is the exception:** I've never been up. Not once (L05 to L06).
+- **The loved one:** Gran, shown by 0:14 fixing my beanie at the gate rope (L07 to L09).
+- **The loophole the climax turns:** the rule everyone uses to skip time, Gran uses to save it. A few years spent mostly up there last a whole life down here. Then I turn it once more: an hour beside her costs me a week, and I spend them.
 
 ## The twist (and where it's planted)
-- **What it is:** the bet has never been won, and it's older than my week. Every summer some visitor books the dawn chair, takes Bo's bet and loses it, and the forfeit seat is how the Halvors have ridden the first chair every summer for forty years. They have never once bought a pass. "Bo bet me I couldn't ride up alone" turns from a dare about my nerve into a town's way of giving two old people their sunrise, with me as this summer's giver.
-- **How the last 15 seconds turn the first line:** L74 to L81. Bo hands me a coffee, I ask who lost last summer ("A man from the city"), the summer before ("His sister"), Bo says they've ridden the first chair every summer for forty years, and they've never once bought a pass. Then the first line comes back, and its answer: "Nobody EVER / HAS."
-- **Plant 1 (L06, shot 6):** my pink pass card hangs on its cord at my neck. Behind me, the Halvors at the gate rope have no cord and no card. The line names only mine. On a rewatch, they've never had one.
-- **Plant 2 (L10 to L11):** Bo names the terms and the forfeit on day one, "Ride ALONE / all WEEK, / or your SEAT / goes to THEM", nodding at the Halvors, and Mrs Halvor laughs. It plays as banter. On a rewatch it's the whole arrangement, said out loud in the first 30 seconds.
-- **Supporting plants:** their boots laced to the top every dawn (L09, L30, L65): they always come ready to ride. Bo's flat hand on my empty seat as I sit (L13 to L14, L44): he steadies it for a second rider. At L71 he doesn't need to.
-
-## How it differs from ep11 and ep20
-ep11 and ep20 end on the reveal that a Keeper was standing in an empty place. Here the empty seat is plain by the midpoint scare (L53, L62 to L63) and isn't the turn. The last 15 seconds turn the dare itself: a forty-year bet that nobody wins, whose forfeit puts the Halvors on the lift each summer.
+- **What it is:** Gran lives on the ridge to make her last years last long enough to watch me grow old. "Every Sunday she says I look older" was literal: to her, a week of my life goes by in half an hour.
+- **How the last 15 s turn the first line:** L28 to L37. The rule that opened as a joke about skipping winter comes back (L36) as the cost I'm choosing to pay, and L37 shows from the lake what the opening shot showed: people on the ridge who haven't moved in months. This time it's us.
+- **Plant 1 (L11, about 0:20):** "Every SUNDAY, / she says / I look OLDER." Plays as a gran joke. Paid off at L31 to L32.
+- **Plant 2 (L15, about 0:28):** through the viewer, everyone on the ridge faces the sunrise, and Gran faces the other way, down at the town. On a rewatch she's watching me.
+- **Supporting plants:** the blanket big enough for two (L08, paid at L34). "the OLDEST in the VALLEY" (L18, why she's in a hurry to save time). Shot 1's far end of the bench, where a mustard cardigan and a cream beanie sit small and soft (us, at the end, and nobody remarks on it).
 
 ## World
-An old two-seat chairlift on a still summer lake. The bottom station is a timber hut on a plank deck at the water's edge, with a big steel bull wheel under a pitched roof, a gate rope on two posts, and a bench. The line runs out over a narrow arm of black water, then up a steep pine slope on grey steel towers to a bare rocky ridge where the sun comes up. The chairs are steel frames with a slatted seat for two, a lap bar and a black rubber footrest. Pre-dawn blue every morning, pink sunrise at the top, one day of thick lake fog. No text or signs anywhere, no lake or mountain names.
+The same old two-seat chairlift by a still lake, now in spring. The bottom station: a timber hut on a plank deck at the water's edge, the steel bull wheel under a pitched roof, a gate rope on two posts, a picnic table, and a new prop, **the viewer**: a fixed sightseeing telescope on a steel post at the deck rail, our own shape, no text, no coin slot. The line runs over the black water and up the pine slope on grey towers to the bare ridge, where the top station stands beside **a long wooden bench facing the sunrise**. Clear dawns, one morning of lake fog (L23). No text, signs or names anywhere.
 
 ## Cast
-All adults. Nobody is ever in peril, and nobody is shown hurt.
-- `me`: the narrator, a grown-up on a week's holiday. Navy rain jacket, cream beanie, block brown hair, a pink pass card on a pink cord round my neck (a plain card, no text). Faces: `neutral`, `smug`, `worried`, `scared`, `terrified`, `soft`.
-- `bo`: runs the bottom station, a grown man in his forties. Forest-green fleece, short black block hair, a dark knit hat. Easy grin. Never explains anything beyond L76 to L79.
-- `mr_halvor`: old, tall, white block hair and a white block beard, a waxed brown jacket, red-brown walking boots laced to the top. Says nothing in the whole story.
-- `mrs_halvor`: old, a grey bun, a mustard knit cardigan over a blue shirt, the same laced boots in dark green. She laughs once (L11), and that's all.
+All adults. Nobody is in peril and nobody is hurt. Nobody has an on-screen age.
+- `me`: the narrator, a grown-up. Navy rain jacket, cream beanie, block brown hair. **No pass card now.** Faces: `neutral`, `smug`, `worried`, `scared`, `terrified`, `soft`.
+- `gran`: was `mrs_halvor`, same model: grey bun, mustard knit cardigan over a blue shirt, dark green walking boots. Adds a folded tartan-ish blanket (our own check, two greens) carried over her arm or on her lap. Faces: `happy`, `soft`, `neutral` with eyes shut (dozing, L21).
+- `bo`: runs the lift, unchanged (forest-green fleece, dark knit hat).
+- `mr_pell`: was `mr_halvor`, same model (white block hair and beard, waxed brown jacket), plus a thick winter scarf for L03. One shot.
+- `laugher` (new, one shot): an adult woman on the ridge bench in a red scarf and yellow jacket, frozen mid-laugh. Shot 1 only.
+- **Removed:** the Four-Face (no creature in this version), the pass card.
 
-## The creature: the Four-Face
-- **What it is:** a rider in a faded orange cagoule (hood down at the collar), charcoal trousers and grey boots, ordinary size, ordinary R6 body. Its head is wrong: a hard-edged cube instead of our soft rounded head, a little bigger than ours, with the same face drawn on all four sides. Each face is two round black eyes set wide with a white glint, and a long straight black mouth, thick strokes, in a putty-beige skin. The glints are the brightest thing on it. So whichever way its chair swings, a face is toward me.
-- **Built once** in `set.py`, posed per shot. It's never seen moving, only nearer. Its hands stay on its knees. It never touches anyone, and its sleeve stays a hand's width from mine at L54.
-- **Light for fear:** dawn blue fill from above-behind, a cold side key, a faint pink rim from the ridge. In the fog, a flat pearl key from the side and the glints.
-- **Continuity:**
+## The eerie element (no creature)
+Stillness that shouldn't be: people on the ridge frozen for days, a gull that lands on Gran's hat on Tuesday and is still there on Friday, and at the scare Gran through the viewer with her eyes shut, not moving, after she misses Sunday. It turns benign at L26 (she nodded off for half an hour). Light the viewer close at L21 in flat cool daylight, face clearly lit, not dark: she reads as asleep and too still, never hurt.
 
-| Lines | Where it is | What we see |
+## Continuity (Gran)
+| Lines | Where | What we see |
 |---|---|---|
-| L01 to L17 | off screen | nothing |
-| L18 to L20 | a down chair far up the line, near the ridge | small, orange and square, a face toward camera |
-| L21 | gone behind the ridge glare | the sun over the ridge |
-| L22 to L27 | a down chair passing me below the halfway tower, three chairs out | a face toward me, then as its chair swings, the same face on the back |
-| L28 to L30 | off screen | the Halvors and Bo at the gate |
-| L31 to L36 | the down chair passing mine over the lake, footrests nearly level | a face on the side, then as I twist round, a face still toward me |
-| L37 to L41 | the up chair right ahead of mine, riding up, its back to me | the back face, looking at me over the lap bar |
-| L42 | gone | its chair swings round the top wheel, empty |
-| L43 to L52 | off screen | fog, then my chair dipping on its left |
-| L53 to L58 | the seat beside me, in fog, lap bar down across both of us | side face, then the back face as I lean back, glints bright |
-| L59 to L60 | off screen | my shut eyes, then the lift moving |
-| L61 to L81 | gone for good | the seat beside me empty, then every down chair empty (L73) |
+| L01 | far end of the ridge bench, small, soft focus | mustard cardigan beside a cream beanie, still |
+| L07 to L09 | gate rope, then her up chair | fixing my beanie, blanket over her arm, then riding up alone with the blanket on the seat beside her |
+| L10 to L11 | deck picnic table, Sunday | stepping off the down chair, her hand near my cheek |
+| L13 to L17 | ridge bench, through the viewer (round soft-edged mask) | still, back to the sun, facing camera, gull on her hat from L16 |
+| L19 to L21 | ridge bench, through the viewer | the same, eyes shut, gull still on her hat |
+| L25 to L35 | ridge bench, in person | waking, turning, smiling, then the blanket over both our laps |
+| L37 | ridge bench, from the lake | two small still figures |
 
 ## Palette, captions, music
-- **Palette:** pre-dawn slate blue `#3d5170`, black lake `#10171d`, pine green `#22382c`, tower steel `#8a9097`, footrest rubber `#1b1b1d`, fog pearl `#c9cdd2`, the Four-Face's faded orange `#c97c4a`, sunrise pink `#f4a7b9` and gold `#f6c86e`.
-- **Caption key colour:** sunrise pink `#ff8fb1`, chosen to sit apart from the creature's orange.
-- **Music:** E Phrygian at 66 bpm, a slow synthesized pad and a low plucked pulse that matches the chair's clack over each tower. The pulse stops at L46 with the motor. P01 is the `music_drops` hole. From L64 the pad lifts to E major at the same tempo, with a soft bell figure (synthesized, our own).
-- **Ambience:** lake lapping, the bull wheel's hum and the clack-clack of each tower, one bird at sunrise.
-- **Light changes (all slow ramps, nothing fast, flash limit 2/s):** pre-dawn blue to pink happens over the whole of each ride, never in a cut. The fog at L43 rolls in over about 3 s. The lift stopping (L46 to L47) is a 1.5 s fall in the hum and a slow drift of the chair to rest. The fog thinning at L52 is a 2 s ramp up in brightness. No light flickers or cuts out anywhere.
-- **Brightness:** the scare (L53 to L58) sits in pale pearl fog, not darkness. The warm turn (L64 to L81) is dawn pink and gold, bright enough to read every face.
-- **Closing sound:** after "HAS." in L81, 0.25 s, the bull wheel's big clack as the Halvors' chair clears the first tower, at -16 dB with a short pitch fall, then the loop cut to shot 1.
+- **Palette:** dawn gold `#f6c86e`, sunrise pink `#f4a7b9`, spring lake teal-black `#13232a`, pine green `#22382c`, tower steel `#8a9097`, deck timber `#8a6a48`, fog pearl `#c9cdd2` (L23 only), Gran's mustard `#c99a2e`, the blanket's two greens `#3f6b4a` and `#7aa36b`, the laugher's red `#c23b3b`.
+- **Caption key colour:** sunrise pink `#ff8fb1` (unchanged).
+- **Music:** A Aeolian at 72 bpm. A thin pad and a dry plucked tick on every beat, like a clock. The heavy low drone enters at L19 and holds to the end. P01 is the `music_drops` hole, with the hit on the cut to L21. On the ride (L22 to L24) the tick slows by half each line and stops at the top (L25). From L32 the pad lifts to A major at the same tempo with a soft synthesized bell figure, with the drone kept low under it so the last line lands cool.
+- **Ambience:** lake lapping, the bull wheel's hum, the tower clack, gulls far off.
+- **Time-lapse effects (shots 1, 23, 24, 34):** racing cloud cards and a sweeping sun shadow. Keep them smooth and slow enough to pass the flash bar: the shadow turns at most once every 3 s, and the light level never cycles. No day and night flicker anywhere.
+- **Closing sound:** 0.25 s after "SPRING." in L37, one deep clack of the bull wheel at -16 dB with a short pitch fall, then the loop cut to shot 1.
 
-## Lore connection (one)
-- **What:** two short upright faded-orange strokes pressed into the black rubber of my chair's footrest, one stroke per seat. Two for a chair built for two, in the Four-Face's own colour.
-- **Where:** shot 15, under L15 ("My BOOTS / on the FOOTREST..."). A close top-down on the footrest between my boots, the two strokes centred, fully in frame and in the upper two-thirds, out of the caption band. Held 2.0 s. Never narrated, never shown again, never explained.
+## Lore connection (one, optional, kept from the first version)
+Two short faded-orange upright strokes pressed into the black rubber footrest of my chair, two for a chair built for two. Shot 22, under L22 ("So for the FIRST TIME / in my LIFE, / I ride UP."), a top-down close on my boots on the footrest over the water, the strokes centred in the upper two-thirds. Held 1.6 s. Never narrated, never shown again.
 
 ## Narration and shot plan
-Each line is `narrator`. Caption chunks are split with ` / `. CAPS are the key words in sunrise pink.
+Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words in sunrise pink. About 41 shots, about 1.6 s each.
 
-### 01 Monday: the bet
-- `L01` narrator: Bo BET me / I couldn't / ride UP / ALONE.
-  - [shot 1: Bo at the gate in pre-dawn blue, grinning straight at camera, the bull wheel behind him. Slow push in]
-- `L02` narrator: Bo runs / the CHAIRLIFT / from the LAKE / to the RIDGE.
-  - [shot 2: high wide of the line: the timber station on the dark lake, towers up the pine slope to the ridge]
-- `L03` narrator: I'm here / for ONE WEEK / to watch / the SUNRISE.
-  - [shot 3: me on the deck, `neutral`, looking up the line]
-- `L04` narrator: I booked / the FIRST CHAIR / of every DAWN, / BOTH SEATS.
-  - [shot 4: an empty two-seat chair swinging in round the bull wheel]
-- `L05` narrator: I PAID / for it, / so I ride / ALONE.
-  - [shot 5: my face, `smug`]
-- `L06` narrator: My PASS hangs / on a CORD / round my NECK.
-  - [shot 6 (plant 1): mid shot, me in front, the pink card on its cord at my chest. Behind me at the rope, the Halvors in focus enough to see their jackets: no cords, no cards]
-- `L07` narrator: At the ROPE / stand the HALVORS, / as OLD / as the LIFT.
-  - [shot 7: the Halvors at the gate rope, side by side, looking up the line]
-- `L08` narrator: They come / EVERY DAWN / and WATCH / the CHAIRS go.
-  - [shot 8: over their shoulders, empty chairs rising into blue]
-- `L09` narrator: Their walking BOOTS / are LACED / to the TOP.
-  - [shot 9 (support plant): low close on two pairs of boots, red-brown and dark green, laced high]
-- `L10` narrator: Bo says, / "Ride ALONE / all WEEK, / or your SEAT / goes to THEM."
-  - [shot 10 (plant 2): Bo, grinning, tipping his head at the Halvors]
-- `L11` narrator: Mrs Halvor LAUGHS, / so I / LAUGH too.
-  - [shot 11: Mrs Halvor laughing, `happy`. Then me, `smug`]
-- `L12` narrator: The chair / SWINGS round / behind my KNEES.
-  - [shot 12: low behind me as the chair comes in, I sit]
-- `L13` narrator: Bo lays / a HAND / on the / EMPTY SEAT,
-  - [shot 13 (support plant): close on Bo's flat hand resting on the empty half of the seat slats. No grip]
-- `L14` narrator: like someone ELSE / is getting ON.
-  - [shot 14: wider, Bo beside the chair, looking at the empty seat, not at me]
-- `L15` narrator: My BOOTS / on the FOOTREST, / high over / the BLACK LAKE.
-  - [shot 15 (lore plant): top-down close on the black rubber footrest between my boots, the two faded-orange strokes centred in the upper two-thirds, the black water far below. Held 2.0 s]
-- `L16` narrator: The DOWN CHAIRS / slide past me, / EMPTY.
-  - [shot 16: side on, the down line gliding by, empty chair after empty chair]
-- `L17` narrator: All but ONE.
-  - [shot 17: my face, `worried`]
-- `L18` narrator: Way up / the LINE, / something RIDES DOWN / on its OWN.
-  - [shot 18: my POV up the slope, one occupied down chair, small, near the ridge]
-- `L19` narrator: An ORANGE CAGOULE / and a / SQUARE HEAD.
-  - [shot 19: tighter, still distant: the orange body, the cube head]
-- `L20` narrator: Its FACE / is turned / toward ME.
-  - [shot 20: tighter again: a face on the cube toward camera, glints catching. It's still far off]
-- `L21` narrator: Then the SUN / comes over / the RIDGE, / and I / FORGET it.
-  - [shot 21: the sun breaking gold and pink over the ridge, my silhouette in the chair. The ramp is slow]
+### Rule and montage (0 to 12 s)
+- `L01` narrator: In this TOWN, / one DAY / at the TOP / of the CHAIRLIFT / costs a YEAR / down BELOW.
+  - [S01: close on the laugher on the ridge bench, frozen mid-laugh, gold dawn key on her face, clouds racing behind, valley shadows sweeping far below. At the far end of the bench, small and soft: a mustard cardigan and a cream beanie. Slow push in]
+  - [S02: the bull wheel deck at dawn, Bo at the gate looking up, the line climbing behind him]
+- `L02` narrator: From the LAKE, / you can SEE them / up there, / STILL as POSTS.
+  - [S03: long lens from the deck up to the ridge: a row of tiny figures on the skyline, unmoving while a chair rises past]
+- `L03` narrator: Mr PELL / went up / for an AFTERNOON / and missed / all of WINTER.
+  - [S04: Mr Pell stepping off the down chair in a waxed jacket and thick winter scarf onto a sunny spring deck, everyone else in shirtsleeves]
+  - [S05: his face, `scared`, blinking at the sun]
+- `L04` narrator: Bo, who runs the LIFT, / goes up / whenever his MUM / VISITS.
+  - [S06: Bo in an up chair, waving cheerfully. On the deck behind, an old-fashioned suitcase by the gate rope]
 
-### 02 Tuesday and Wednesday: nearer
-- `L22` narrator: On TUESDAY, / it passes me / LOWER DOWN.
-  - [shot 22: my POV, the halfway tower ahead, the orange rider coming down three chairs out]
-- `L23` narrator: Its HEAD / is a / perfect CUBE.
-  - [shot 23: side on as it nears, the hard square edges against the blue]
-- `L24` narrator: Two round EYES / and a long / STRAIGHT MOUTH.
-  - [shot 24: closer on one face, flat and drawn, putty skin, black strokes]
-- `L25` narrator: Its chair SWINGS / as it / goes BY,
-  - [shot 25: the down chair crossing frame, swaying a few degrees]
-- `L26` narrator: and I see / the BACK / of its HEAD.
-  - [shot 26: from behind me, the down chair now past, its back to us]
-- `L27` narrator: It's the / SAME FACE.
-  - [shot 27: the back of the cube, the same face, looking back at me]
-- `L28` narrator: On WEDNESDAY, / Bo asks, / "Still ALONE?"
-  - [shot 28: Bo at the gate, blue dawn]
-- `L29` narrator: I say, / "ALONE."
-  - [shot 29: me, `smug`, pass card on its cord]
-- `L30` narrator: Mr Halvor / looks down / at his BOOTS.
-  - [shot 30: Mr Halvor, eyes down, the laced boots in the bottom of frame above the caption band]
-- `L31` narrator: Over the LAKE, / the orange rider / passes so CLOSE
-  - [shot 31: wide over the water, two chairs about to pass, mine up, its down]
-- `L32` narrator: our FOOTRESTS / almost CLICK.
-  - [shot 32: low on the two footrests passing level, a short gap between them]
-- `L33` narrator: I twist round / in my SEAT / to watch / it GO.
-  - [shot 33: me turning in the chair, `scared`]
-- `L34` narrator: The face / on its SIDE / is watching / me BACK.
-  - [shot 34: over my shoulder, its chair going away, the side face toward me]
-- `L35` narrator: There's a FACE / on all / FOUR SIDES.
-  - [shot 35: a slow orbit round the cube head in the down chair, face, face, face, face]
-- `L36` narrator: Whichever way / its chair TURNS, / it's facing ME.
-  - [shot 36: my face, `terrified`]
+### Me and Gran (12 to 24 s)
+- `L05` narrator: But I've NEVER / been up. / NOT ONCE.
+  - [S07: me on the deck, arms folded, `smug`]
+- `L06` narrator: I don't want / to MISS / a single DAY.
+  - [S08: me watching chairs go up, `neutral`]
+- `L07` narrator: GRAN / LIVES / up THERE.
+  - [S09: Gran at the gate rope, `happy`, turning to me]
+- `L08` narrator: She FIXES / my BEANIE, / takes a BLANKET / big enough / for TWO,
+  - [S10: close on Gran's hands at my beanie (no grip, hands resting on the brim)]
+  - [S11: the folded blanket over her arm, plainly wide]
+- `L09` narrator: and rides up / ALONE.
+  - [S12: her chair rising over the water into gold, the blanket on the empty seat beside her]
+- `L10` narrator: She comes DOWN / for SUNDAY DINNER.
+  - [S13: the deck picnic table with two plates. Gran stepping off a down chair]
+- `L11` narrator: Every SUNDAY, / she says / I look OLDER.
+  - [S14 (plant 1): Gran's hand near my cheek, `soft`. Me rolling my eyes]
+- `L12` narrator: For ME, / it's been a WEEK. / For HER, / HALF an HOUR.
+  - [S15: me, `neutral`. Then S16: Gran, sitting down to her plate as if she just left]
 
-### 03 Thursday: ahead
-- `L37` narrator: On THURSDAY, / the DOWN CHAIRS / are all EMPTY.
-  - [shot 37: my POV of the down line, every chair empty]
-- `L38` narrator: It's in / the chair / right AHEAD, / going UP.
-  - [shot 38: my POV forward up the line: the next up chair, the orange back and the cube above the seat back]
-- `L39` narrator: All I see / is the BACK / of its HEAD.
-  - [shot 39: tighter on the back of the cube over the seat back]
-- `L40` narrator: And the back / of its head / is LOOKING / at me.
-  - [shot 40: close on the back face, glints bright, looking straight down the line at me]
-- `L41` narrator: The whole / way UP, / those EYES / never BLINK.
-  - [shot 41: me, `terrified`, the chair ahead in frame, the towers clacking past]
-- `L42` narrator: At the TOP, / its chair swings / round the WHEEL / EMPTY.
-  - [shot 42: the top station wheel in sunrise, the chair ahead coming round with nobody on it]
-
-### 04 Friday: the fog (the scare)
-- `L43` narrator: On FRIDAY, / FOG rolls up / off the LAKE.
-  - [shot 43: the station from the water, fog rolling in over 3 s]
-- `L44` narrator: Bo's HAND / is on / the EMPTY SEAT / AGAIN.
-  - [shot 44: close on Bo's flat hand on the empty half of my seat]
-- `L45` narrator: This time, / he doesn't ASK.
-  - [shot 45: Bo's face, no grin]
-- `L46` narrator: HALFWAY UP, / the LIFT STOPS.
-  - [shot 46: my chair in fog by the halfway tower. The pulse stops]
-- `L47` narrator: The MOTOR'S HUM / sinks / to NOTHING.
-  - [shot 47: the haul rope going still in the fog, the hum falling over 1.5 s]
-- `L48` narrator: My chair ROCKS / in the WHITE.
-  - [shot 48: wide, my chair rocking gently, slowing, nothing but pale fog]
-- `L49` narrator: I can't see / the next TOWER, / or the LAKE.
-  - [shot 49: my POV, white all round]
-- `L50` narrator: Then the chair / DIPS, / just a LITTLE, / on my LEFT.
-  - [shot 50: from in front, the chair tilting a few degrees down on the empty side]
-- `L51` narrator: Like somebody / just SAT DOWN.
-  - [shot 51: me, `terrified`, eyes sliding left, the empty side of frame in fog]
+### The ridge, through the viewer (24 to 40 s)
+- `L13` narrator: Through the VIEWER / on the DECK, / I WATCH her.
+  - [S17: me bent to the viewer on its post at the deck rail]
+- `L14` narrator: Everyone up there / faces the SUNRISE.
+  - [S18: viewer POV, a round soft-edged mask: the ridge bench, still figures, all backs to camera, facing the pink sky]
+- `L15` narrator: GRAN / faces the other WAY, / DOWN / at the TOWN.
+  - [S19 (plant 2): viewer POV, tighter: Gran, the only one facing camera, still, the sun behind her. Held]
+- `L16` narrator: On TUESDAY, / a GULL lands / on her HAT.
+  - [S20: viewer POV: a white gull settled on Gran's knit hat. She doesn't move]
+- `L17` narrator: On FRIDAY, / it's STILL there.
+  - [S21: the same framing, Gran and gull unchanged. Clouds have moved behind]
+- `L18` narrator: Bo says / she's the OLDEST / in the VALLEY.
+  - [S22: Bo at the rope, shrugging, `neutral`]
+- `L19` narrator: Then one SUNDAY, / Gran doesn't / come DOWN.
+  - [S23: the picnic table, two plates, her chair empty. The drone enters]
+- `L20` narrator: Every chair / comes round / EMPTY.
+  - [S24: side on, the down line arriving at the bull wheel, chair after chair bare]
+  - [S25: me, `worried`, running to the viewer]
 - `P01` pause 0.7 s: none
-  - The `music_drops` hole: everything but the voice bed and the hit falls away. Fog only. The hit lands on the cut to L52.
-- `L52` narrator: The fog THINS.
-  - [shot 52: the fog brightening and thinning over 2 s around my chair]
-- `L53` narrator: It's in / the SEAT / BESIDE me.
-  - [shot 53: the reveal, from in front: me on the right, the Four-Face on the left, the lap bar across both of us, its face turned to me. Pearl side key, the glints the brightest thing]
-- `L54` narrator: Its ORANGE SLEEVE / is a / HAND'S WIDTH / from mine.
-  - [shot 54: close on the two sleeves on the bar, a clear gap between them]
-- `L55` narrator: A FACE / on its SIDE / is turned / to ME.
-  - [shot 55: my side profile in the foreground, its side face filling a fifth of the frame, toward me]
-- `L56` narrator: I lean BACK / to look / past it.
-  - [shot 56: me leaning back in the seat, `terrified`]
-- `L57` narrator: The face / on its BACK / is turned / to me TOO.
-  - [shot 57: from behind the chair, the back of the cube, its face toward me as I lean back]
-- `L58` narrator: Every side / of that CUBE / is LOOKING / at me.
-  - [shot 58: slow push in on the cube from a high three-quarter, two faces showing at once]
-- `L59` narrator: I shut / my EYES / and COUNT.
-  - [shot 59: close on my face, eyes shut, `terrified`]
-- `L60` narrator: The motor HUMS / back on, / and we MOVE.
-  - [shot 60: the haul rope sliding again in thinning fog, the hum rising over 1.5 s]
-- `L61` narrator: At the TOP, / the seat / beside me / is EMPTY.
-  - [shot 61: top station in pale gold, my chair, the left seat bare]
-- `L62` narrator: I paid / for BOTH SEATS / so nobody / would sit THERE.
-  - [shot 62: me standing on the top deck looking at the empty seat, `worried`]
-- `L63` narrator: Something SAT there / ANYWAY.
-  - [shot 63: the empty chair going round the top wheel]
+  - [S26: me pressing to the viewer. The `music_drops` hole: only the lap of the water]
+- `L21` narrator: Through the VIEWER, / she hasn't MOVED. / Her EYES / are SHUT.
+  - [S27 (the scare): viewer POV close on Gran, eyes shut, perfectly still, the gull still on her hat, flat cool daylight on her face. The hit lands on this cut]
+  - [S28: me, `terrified`]
 
-### 05 Saturday: the forfeit (the warm turn)
-- `L64` narrator: On SATURDAY, / the HALVORS / are at / the GATE.
-  - [shot 64: the station at dawn, clear and pink. The Halvors at the rope]
-- `L65` narrator: Their BOOTS / are LACED, / like ALWAYS.
-  - [shot 65: their boots, laced high, bright in the pink light]
-- `L66` narrator: I tell Bo, / "I LOST."
-  - [shot 66: me and Bo at the gate, `soft`]
-- `L67` narrator: I take OFF / my PASS
-  - [shot 67: me lifting the cord up over my beanie, cut before any grip]
-- `L68` narrator: and give it / to Mr HALVOR.
-  - [shot 68: the pink card now on its cord against Mr Halvor's waxed jacket]
-- `L69` narrator: He looks / at me / a long TIME.
-  - [shot 69: Mr Halvor's face, `soft`, the pink sky behind]
-- `L70` narrator: Then they / SIT DOWN, / side by SIDE.
-  - [shot 70: the Halvors sitting in the chair as it comes round, both seats full]
-- `L71` narrator: Bo doesn't HOLD / either SEAT.
-  - [shot 71: Bo standing back, hands at his sides, smiling]
-- `L72` narrator: Their chair RISES / into the PINK.
-  - [shot 72: from the deck, their chair climbing out over the water into the sunrise]
-- `L73` narrator: The DOWN CHAIRS / come back EMPTY.
-  - [shot 73: side on, the down line passing, every chair bare, gold light on the slats]
-- `L74` narrator: Bo sets / a COFFEE / on the RAIL / for ME.
-  - [shot 74: a paper cup on the deck rail in front of me, steam rising, Bo's hand just leaving it at the end of his sleeve]
-- `L75` narrator: I ask him / who LOST / LAST SUMMER.
-  - [shot 75: me, `soft`, cup on the rail]
-- `L76` narrator: Bo says, / "A man / from the CITY."
-  - [shot 76: Bo, grinning]
-- `L77` narrator: And the / summer BEFORE? / Bo says, / "His SISTER."
-  - [shot 77: me laughing, then Bo]
-- `L78` narrator: Bo says / they've ridden / the FIRST CHAIR / every SUMMER / for FORTY YEARS.
-  - [shot 78: far up the line, the Halvors' chair small against the pink, two heads side by side]
-- `L79` narrator: They've never once / BOUGHT a PASS.
-  - [shot 79: close up the line on their chair, the pink card catching the sun on Mr Halvor's chest]
-- `L80` narrator: Bo BET me / I couldn't / ride UP / ALONE.
-  - [shot 80: the deck from behind, me and Bo at the rail, the line going up into the sunrise]
-- `L81` narrator: Nobody EVER / HAS.
-  - [shot 81: wide from the water, the station and the rising chair in full dawn pink. The bull wheel's clack 0.25 s after "HAS", then a hard cut to shot 1]
+### The ride and the reveal (40 to 58 s)
+- `L22` narrator: So for the FIRST TIME / in my LIFE, / I ride UP.
+  - [S29 (lore): top-down on my boots on the footrest over the black water, the two faded-orange strokes centred. Held 1.6 s]
+- `L23` narrator: Below me, / the FOG / boils off the LAKE / in SECONDS.
+  - [S30: looking down past my chair: fog streaming off the water in a time-lapse rush. Smooth, no flicker]
+- `L24` narrator: Bo's SHADOW / swings round the DECK / like a CLOCK HAND.
+  - [S31: high on the tiny deck: Bo still, his long shadow sweeping round him once, slowly]
+- `L25` narrator: At the TOP, / Gran OPENS / her EYES,
+  - [S32: the ridge bench, in person, gold light: Gran's eyes opening, gull lifting off]
+- `L26` narrator: and says / she only NODDED OFF / for HALF an HOUR.
+  - [S33: Gran, `happy`, a little sheepish. Me standing in front of her, `worried`]
+- `L27` narrator: I ask her / WHY / she LIVES up here.
+  - [S34: me, `soft`, the valley racing small and far behind me]
+- `L28` narrator: Gran says / she's only got / a FEW YEARS LEFT,
+  - [S35: Gran's face, `soft`, the sunrise behind her]
+- `L29` narrator: and she'd like / to WATCH me / GROW OLD.
+  - [S36: over Gran's shoulder: the town far below, my house among the roofs]
+- `L30` narrator: Up HERE, / her few YEARS / will last / my WHOLE LIFE.
+  - [S37: wide: Gran small on the long bench, the whole valley below, clouds sliding fast over it]
+- `L31` narrator: Every Sunday / she said / I looked OLDER.
+  - [S38: me, `soft`, eyes wet]
+- `L32` narrator: She MEANT it.
+  - [S39: Gran smiling up at me. The pad lifts to major]
+
+### The turn and the sting (58 to 66 s)
+- `L33` narrator: So every SUNDAY, / I ride UP / and SIT beside her,
+  - [S40: me sitting on the bench beside her, both facing the town]
+- `L34` narrator: and she shakes OUT / the BLANKET / for TWO.
+  - [S41: the blanket over both our laps, the cut before any grip: it's already laid]
+- `L35` narrator: Down at the LAKE, / Bo's SHADOW / goes ROUND / and ROUND.
+  - [S42: our view down: the deck tiny, Bo's shadow sweeping, slowly]
+- `L36` narrator: In this TOWN, / one DAY / at the TOP / costs a YEAR / down THERE.
+  - [S43: Gran and me side by side, still, clouds racing behind us: the same framing as S01, from closer]
+- `L37` narrator: From the LAKE, / we haven't MOVED / since SPRING.
+  - [S44: long lens from the deck, summer green now: Bo at the viewer looking up, and on the ridge two small still figures side by side. The clack 0.25 s after "SPRING", then a hard cut to S01]
 
 ## Say-it-out-loud notes
-- "Halvor" is HAL-vor. "Halvors" is HAL-vorz. "HALVOR" in L68 takes the stress on HAL.
-- "cagoule" (L19) is kuh-GOOL.
-- "Bo" is BOH, said plainly. If Kokoro reads it as "B.O.", give it phonemes.
-- L10 and L76 to L77 are Bo's reported lines, read in my voice, quick and dry.
-- L81: a flat, certain read, with the weight on "EVER".
+- "Bo" is BOH. Keep the phoneme from story.json.
+- "Pell" is PEL.
+- L12: a quick, even read. L32: short and flat, weight on MEANT.
+- L37: quiet and certain, the cool beat after the warm one.
 
 ## Notes for the builder and standards
-- **Contact:** the Four-Face never touches me, the bar between us or anyone else. Bo's hand only rests flat on the slats. The pass cord is lifted and then shown already hung, with the grip cut away.
-- **Peril:** the lift stops and rocks gently, and that's all. Nobody leans out, slips or drops anything. The chair never swings more than a few degrees.
-- **Rig:** two seated riders are about 1.36 m each, so the chair is built 2.9 m wide. No reach to the floor from the chair. Check L53 to L58 and L70 for knee and bar intersections in the stills.
-- **Words:** no GRAPHIC, HARM, CHILD or TRUE_CLAIM words from `checks.py` in any line. No "lost" except L66 and L75, which are the bet, not a person (HARM only blocks next to a child word, and there's no child word anywhere).
-- **Text:** the pass card, the station and the chairs carry no text, numbers or logos.
+- **Build changes:** remove the Four-Face and the pass card. Rename `mrs_halvor` to `gran` and `mr_halvor` to `mr_pell` (add a winter scarf). Add `laugher` (one shot). Add the viewer prop on the deck rail, the long bench at the top station, a picnic table with two plates, a gull, a suitcase, the blanket, time-lapse cloud cards and a sweeping sun shadow. Spring light (green slope, clear gold dawns) except the L23 fog. The bottom station, the line, the towers, the chairs and the footrest strokes are kept.
+- **story.json:** the `premise`, `twist`, `world` and `title` fields need to match this script (check compares them across stories): premise and twist as in the sections above, title as in package.json.
+- **Contact:** Gran's hands only rest on my beanie brim. The blanket is cut to already laid. Nobody grips anything.
+- **Peril:** none. Gran is asleep, lit clearly, never shown hurt. The ride is ordinary.
+- **Flashing:** the time-lapse is smooth: no light-level cycling, the shadow sweep at most one turn per 3 s, the fog rush a steady drift.
+- **Words:** no GRAPHIC, HARM, CHILD or TRUE_CLAIM words. "A FEW YEARS LEFT" is the only line about age, and no number of years or age is said or shown.
+- **Text:** the viewer, the station, the chairs and the suitcase carry no text, numbers or logos.

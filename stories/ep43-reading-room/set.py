@@ -720,17 +720,11 @@ SKY = {"steps": ("#8ec5f0", 0.9), "door": ("#9ccdf0", 0.8), "station": ("#b4c2cc
 
 
 def _extras(kit, ctx):
-    """Parts the rig doesn't have: ponytails, Nell's headphones, Tam's pencil, Ossie's moustache."""
+    """Parts the rig doesn't have: Luke's headphones, Tam's pencil, Ossie's moustache."""
     ctx["extras_done"] = True
     M = ctx["M"]
     R, H = faces.HEAD_R, faces.HEAD_H
     top = H / 2
-    for who, hm in (("me", M["hairb"]), ("neg", M["hairw"])):
-        hg = bpy.data.objects.get(f"{who}.headg")
-        if hg is None:
-            continue
-        kit.box(f"{who}.pony", (0.3, 0.3, 0.8), (0, R + 0.16, -0.38), hm, hg, bevel=0.08)
-        kit.box(f"{who}.ponytie", (0.36, 0.34, 0.1), (0, R + 0.08, 0.0), M["slated"] if who == "me" else M["slate"], hg, bevel=0.03)
     hg = bpy.data.objects.get("tam.headg")
     if hg is not None:
         kit.box("tam.pencil", (0.07, 0.07, 0.55), (R - 0.1, 0.12, 0.28), M["pencil"], hg, rot=(0.5, 0.0, 0.0), bevel=0.01)

@@ -9,12 +9,13 @@ The writer takes the next ideas from here, and adds new ones. When a story is ma
 | ep12 `knock-back` | a farmhouse kitchen, one summer | the keeper under the cellar floor, an uncle who knows, the ritual done back |
 | ep13 `closing-time` | an aquarium on the night shift | the watchers behind the big tank, a curtain-call bow, kind all along |
 | ep20 `ep20-photo-strip` | a coin photo booth in an old hotel hall at a wedding | the Third, a far-too-tall paper-flat sepia figure with a slot smile; a whispered line as the first line ("It's getting CLOSER."); the "it never moved, we moved apart" twist; ending on a strip torn in half and shared, looping on a whisper; warmth: two estranged grown siblings make up; the tally mark on the back of a photo |
-| ep32 `sitter` | a Wednesday evening portrait class in a community arts centre, joined in secret from Mum | the Unpainted, a raw pine sitter with a too-long body whose face is only pencil guide lines that copy my unfinished canvas, one easel nearer each week; a criticism as the first line ("Mum always SAID / I never FINISH / a FACE."); the "everyone else paints the fruit, the stool's been empty since spring" twist; the power-dip reveal beside my easel; ending on the finished painting hung in Mum's bare hall and Mum signing up as the sitter; warmth: pride, Mum is proud of me; nine graphite strokes under the dais |
+| ep34 `ep34-unit-seven` | a self-storage block of blue roller doors on the edge of town, Tuesday evenings | the Deep One, an ordinary-looking person in roller-door blue who runs back three metres side-on, one door nearer each Tuesday; the rule as the first line ("In this TOWN, / a door won't OPEN / unless something of YOURS / is INSIDE."), its marker a pale-blue lamp over every door (rule type: what opens a door, by what of yours is inside), turned at the climax ("SEVEN had lit up / for ME / every single TUESDAY"); the "the someone else was me: half the boxes were mine, and the Keeper staring only at my round stack shows it" twist (no place kept, nobody fills its spot); ending on a roller door coming down on an empty unit, me with one small box; warmth: letting go of an ex; the timed corridor lights; two strokes inside a door frame |
+| ep32 `sitter` | a Wednesday evening portrait class in a community arts centre, plus a daylight montage (bus stop, cafe, bakery) | the rule "In this town, if nobody looks at you, your face fades" (unlooked-at faces fade to raw pine and the first pencil guide lines, and the portrait class paints lonely people back in); a faded sitter of raw pine whose guide-line face copies my unfinished canvas, one easel nearer each week; the "only someone who loves you can see you once you've faded all the way, and the sitter is Mum" twist (shape `loved-one`, redone 2026-11-02 from a stand-in); one power dip to it beside my easel; the car park window and Mum's home portrait matching my canvas; ending on me finishing her face from memory as her colour comes back, her portrait in her bare hall, and a sting of a new faded sitter nobody looks at; warmth: making up with Mum by looking at her again; nine graphite strokes on the dais edge |
 | ep23 `only-line` | a small old playhouse in rehearsal week, a volunteer company | the Prompter, a small figure in a black coat with a gilt stage-mask head three times too big, its mouth opening onto darkness, one curtain leg nearer each run; a line from the play as the first line ("'I'm HERE, my LORD.' That's my only LINE. I've never SAID it."); the roll-call twist (it answered for me so the count held, "I've never said it" is why it was there); ending on one line into a held silence, cut to black on the first clap; warmth: courage, I say it out loud; an eight-stroke chalk tally for a cast of seven |
 | ep25 `ep25-plot-nine` | allotment gardens at dawn in a dry spring | the Digger, a root-wrapped soil-brown person far too long, only ever head to chest out of the ground, two seed-green eye points, leaving holes with no bottom; a smell as the first line ("My plot SMELLS like RAIN."); the twist that the old owner waters it every night and the creature follows his path in ("six weeks" since he gave me the key); ending on a watering can handed on at sunrise; warmth: passing it on, taught then teaching; one glimpse of the Bench down the hole |
-| ep33 `ep33-chairlift` | a summer chairlift above a lake, a week of dawn rides to the ridge | the Four-Face, a rider in a faded orange cagoule with a cube head wearing the same face on all four sides, nearer each dawn until it sits in my empty seat in fog; a dare as the first line ("Bo BET me / I couldn't / ride UP / ALONE."); the "forty-year bet nobody wins, its forfeit is the gift" twist; ending on an old couple's chair rising into the pink, looping on "Nobody EVER / HAS."; warmth: generosity, I give my seat away; a two-stroke tally on a chair footrest |
+| ep33 `ep33-chairlift` (redo 2026-11-02) | a spring chairlift from a lake deck to a ridge bench | no creature (the eerie is people frozen on the ridge, a gull on Gran's hat for days); a time rule as the first line ("In this TOWN, / one DAY / at the TOP / of the CHAIRLIFT / costs a YEAR / down BELOW."); the "Gran isn't skipping my life, she's stretching her last years across it" twist (`secret-reason`); ending on two still figures on the ridge seen from the lake, looping on "From the LAKE, / we haven't MOVED / since SPRING."; warmth: time given, I spend my weeks beside her; a two-stroke tally on a chair footrest. (The first version's Four-Face, dare opener and forty-year-bet twist are retired too, never reuse them) |
 | ep30 `ep30-top-rope` | an indoor climbing wall in an old brick mill on Thursday evenings | the Headstander, a chalk-lilac figure in a black harness standing upside down on the overhang ceiling, its grin reading as a frown, one hold nearer the lip each week; a touch as the first line ("Something HELD me / at the TOP / of the wall."); the "the broken machine's other end was the creature, a climb is built for two" twist; ending on a slow lower to the mat, looping on the first line; warmth: trust, I let Sam hold my rope; the tally on a top anchor |
-| ep31 `ep31-dawn-flight` | a hot-air balloon basket at sunrise over misty farmland, Dad's sixtieth | the Loose One, a person in pieces in copper and slate blue, every block a hand's width from the next, far too tall from the gaps, nearer after each burner roar; a weather report as the first line ("Rosa SAID / the wind / was ZERO."); the "I lied and left a place empty, and the tilt was its Keeper standing in it" twist; ending on the next dawn with four aboard, the sandbag left on the grass and the basket flying level; warmth: honesty, I own up to a lie; the tally on a basket's leather rim |
+| ep31 `ep31-dawn-flight` (redo 2026-11-02) | a hot-air balloon basket at dawn over misty farmland, Dad's sixtieth | no creature: every body built in seamed blocks, the narrator's own blocks drifting apart as Dad forgets him; a coming-apart rule as the first line ("In this VALLEY, if your FAMILY FORGETS you, your body comes APART, BLOCK by BLOCK."); the `relived` twist (Dad turned sixty four years ago, it's the last morning he remembers whole, so we fly it every dawn); the reveal picture of a trailer wall of identical badges; ending on "Tomorrow, Dad turns sixty again" looping into the next flight; warmth: devotion, I give Dad his best morning every day; two strokes on a basket rim between worn patches. (The first version's Loose One, lie-confessed twist and sandbag ending were retired with it.) |
 
 Killed: ep21 `snow-plough` (2026-11-02), not approved by the critic after three rounds. The creature never scored above 4: the Marker, a squat wide road post, kept reading as a lunchbox, a boombox, then a crate or a wardrobe, never as a road post that is wrong. Craft, not a hard rule, so the idea can come back with a new creature design (test the silhouette at phone size first). The full build is in git history at df8fdf5 on `claude/ep21-snow-plough`.
 
@@ -34,10 +35,10 @@ Four stories for PandaNanoAdventures. The writer reads all four so none drifts i
 
 | # | Story (name for the story folder) | Setting | Creature | First line is... | Kind of warmth |
 |---|---|---|---|---|---|
-| 1 | `floor-thirteen` (in production elsewhere, ep14 to ep17) | apartment-tower lift | the Attendant, a button-panel face | a sound | two strangers become friends |
+| 1 | `floor-thirteen` (redone 2026-11-02 as r4, see the note under section 1) | apartment-tower lift and its thirteenth floor of forgotten things | the Attendant, a button-panel face, a brass tag on its gloves | the rule ("In this BUILDING, everything you FORGET turns up on floor THIRTEEN.") | family: I fetch myself back for Grandad |
 | 2 | `mirror-maze` (in production elsewhere, ep14 to ep17) | an end-of-season fairground mirror maze | the copy, my best friend gone slightly wrong | an inside joke | loyalty: I go back in for my friend |
 | 3 | `lookout` (in production elsewhere, ep14 to ep17) | a forest fire-lookout tower, alone, in autumn | the Walker, a huge giant of logs and moss | a question | I'm the one who helps: I guide it home |
-| 4 | `moving-day` (in production elsewhere, ep14 to ep17) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes | mid-scare | home: Mum laughs again |
+| 4 | `moving-day` (ep17, redone rule first 2026-11-02) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes that has always lived with us | the rule: "In this town, a house grows to fit the tallest one living in it." | home: Mum laughs again |
 
 Settings already used (never reuse): a night bus, a farmhouse kitchen, an aquarium, a hotel photo booth at a wedding.
 
@@ -46,6 +47,8 @@ These are pitches. The scriptwriter writes each one in full and may change detai
 ---
 
 ## 1. `floor-thirteen`: "Our building doesn't have a thirteenth floor"
+
+**Redone 2026-11-02 (r4), on hold until it passes review.** The old pitch below is history: its first line (a DING) stated no rule. The redo keeps the tower, the lift, the Attendant, the twelve landing and the balconies, and changes the rest. Rule type: forgetting. World rule: everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it (keys, an anniversary as a cake, a first boyfriend doing the crossword). I've never forgotten anything. The lift starts taking me past twelve to a dark thirteen, the Attendant nearer each time with a brass tag bearing my flat number. Twist (shape `lost-property`): I'm the thing that turned up, because Grandad next door has forgotten me. Climax: nothing on thirteen is gone, and what you fetch you remember, so I fetch the red scarf he knits me and he says my name. Sting: most mornings I go up and fetch myself back. Never reuse: the lost-property floor of forgotten things, a person as the forgotten item, the brass tag with a flat number. Mr. Okafor is now Grandad and the friendship warmth is gone. See `stories/floor-thirteen/script.md`.
 
 - **First line, a sound:** "DING. / Floor THIRTEEN. / Our building / doesn't HAVE one."
 - **Cast:** me, an adult who moved into the tower this year, and Mr. Okafor from 12B.
@@ -87,7 +90,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - Tasha, exactly her rig, in her yellow raincoat. But her eyes are mirror-black with no highlight, and she always moves half a beat after I do, like a reflection that's late.
   - In the mirrors there are too many Tashas, and one of them is facing the wrong way.
   - It is the only "creature", and it's the same rig in every shot. It isn't pale grey: it's Tasha, wrong.
-- **Beats:**
   1. We split up inside the maze for a laugh.
   2. Tasha comes out.
   3. On the walk home she's off: she doesn't laugh at the right moment, and she copies my words a second after me.
@@ -103,7 +105,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - I grab that hand.
   - Outside, the real Tasha, soaked, says "you owe me fries."
 - **The last line:** "She PAID. / First time EVER." Then loop to "Tasha and I have a RULE."
-- **Risks:**
   - **Flashing:** a mirror maze has bright reflections and fast cuts. Do the flash pre-check on every mirror shot at the final's own frame steps. Don't use strobe fair lights.
   - **Harm:** both are adults. The copy never hurts Tasha and nothing describes harm to her. She's "still in there", not taken.
   - **No real fair brands.** The sign uses only made-up words.
@@ -119,7 +120,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - It moves only when the fog is thick. Through binoculars it's one ridge closer each time.
   - Its colours are moss green and dark bark brown.
   - **Never** thin, never in a suit, never between trees at arm's length. That reads as the Slender Man trope, which standards bans.
-- **Beats:**
   1. Birds stop.
   2. A line of broken treetops on the far ridge.
   3. The radio picks up something like breathing through static.
@@ -134,12 +134,13 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - I carry the lamp down the stairs and walk it along the fire road toward the valley, one slow step at a time, with the Walker following.
   - At the valley's edge the fog lifts, and it walks on alone.
 - **The last line:** "Next SPRING, / a line of tiny TREES / came UP the road. / All the WAY / to my DOOR." Then loop to the quiet forest.
-- **Risks:**
   - The controlled burn is distant smoke only, with no fire shown.
   - No real national park or forest names, and no text on the radio.
   - The giant's scale has to read at phone size.
 
 ## 4. `moving-day`: "The box was taped shut from the inside"
+
+**Redone 2026-11-02** (held for not opening on the rule): the made story is now "In this town, a house grows to fit the tallest one living in it", with the twist that the old house was always a ladder too tall because something tall lived with us, and it came along taped into a box. `stories/moving-day/script.md` has it. The pitch below is the old version, kept for the record.
 
 - **First line, mid-scare:** "The box / was taped SHUT. / From the INSIDE."
 - **Cast:** me, an adult, and my mum. We're moving into a smaller house after the old one was sold.
@@ -149,7 +150,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - **The face is different every time we see it.** It's always the same box and the same marker line weight, but the drawing changes while nobody's looking: first a frown, then a stare, then far too many eyes.
   - It's never seen moving. It's in a different room each morning, standing very still among the other boxes.
   - Its colours are cardboard brown, black marker and packing-tape shine.
-- **Beats:**
   1. Things are unpacked in the night, into the wrong rooms.
   2. Scraping sounds, like cardboard dragged across the floor.
   3. Marker drawings appear on other boxes.
@@ -165,7 +165,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - We unpack the rest together, the old way.
   - The box figure is flattened, folded and kept in the hall cupboard. Its last drawn face is a smile.
 - **The last line:** "We kept ONE box. / It's taped shut / from the INSIDE. / We don't OPEN it." Then loop to the first line.
-- **Risks:**
   - **The bed scare:** standards checks that nothing reads as harm to Mum. The reveal of the tucking has to be clear.
   - **Box text:** brand names or real moving-company names on the boxes. Only plain boxes and marker drawings, no words.
   - **The scraping sound:** it must not be a sample. Everything is synthesized.
@@ -187,7 +186,7 @@ These are pitches. The scriptwriter writes each one in full and may change detai
 | 13b | `star-party` | a hilltop observatory dome on club open nights in a frosty March, where I've just joined the astronomy club | the Low One, a figure in frost white and navy whose head sits where its chest should be, its shoulders rising above it like a collar, standing at the dome's edge in the red night lights, one telescope nearer each clear night | a mistake ("I pointed the TELESCOPE / at the MOON. / It showed me / my own FRONT DOOR.") | care: I see the club's frail founder safely home down the icy track |
 | 15a | `cold-water` | a winter sea-swimming club's Sunday dips from a shingle beach at sunrise, beach huts behind, after I fell out with my swimming partner Nell and kept going alone | the Wader, a person built far too wide, wider than a beach-hut door, in rubber-glove yellow and sea-glass green, standing waist-deep and still, one groyne nearer each Sunday | a goodbye ("I said GOODBYE / to the SEA. / Something out there / said it BACK.") | forgiveness: I make up with a friend |
 | 17b | `palm-house` | a Victorian-style glass palm house in a town park on frosty Sunday afternoons, where I volunteer misting the plants for the head gardener, Mrs Okafor | the Sunk, an ordinary-sized person in fern green and terracotta whose head sits sunk down inside its own chest, only the eyes showing over the collar, among the palms, one bench nearer each Sunday | an apology ("I'm SORRY / about the / ORCHID.") | being forgiven: Mrs Okafor forgives me |
-| 18 | `unit-seven` | a self-storage block of identical roller doors on the edge of town, Thursday evenings | the Deep One, a person who looks ordinary from the front but side-on runs back three metres, as deep as the unit, in roller-door blue and dust brown, one door nearer along the corridor each visit | a time ("Every THURSDAY / at SEVEN, / I visit a ROOM / full of someone ELSE'S things.") | letting go: I give back what isn't mine to keep |
+| 18a | `back-stalls` | a tiny volunteer film club in an old single-screen cinema, Sunday matinees, where I run the ticket desk | the Usher, an ordinary-sized figure in claret and brass whose face sits low on its chest and whose head is a smooth blank dome, standing in the aisle, one row nearer the screen each film | a price ("Tickets are FOUR pounds. / Somebody PAID / for FIVE.") | forgiveness: I let my brother back in |
 | 19 | `fire-ring` | a wild camp on a high moor beside an old stone fire ring, the first year without Grandad, just me and Dad | Big Hands, an ordinary-sized figure in heather purple and peat brown whose hands are as big as the tent door, standing at the edge of the firelight, one stone of the ring nearer each night, its hand-shadows on the canvas | a taste ("Dad's camp STEW / tastes EXACTLY / like Grandad's.") | a parent showing up: Dad tries, for me |
 | 11a | `overdue` | an old public library reading room on wet Saturdays, a regular adult reader back in town after years away | the Shelver, a person put together in the wrong order (its head down by the floor, its boots at the top, its torso upside down between), in dust-grey-green cardigan knit, standing at the end of one aisle nearer each Saturday | an apology ("I'm SORRY / about the BOOK. / I've had it / TEN YEARS.") | forgiveness: the librarian I let down forgives me |
 
@@ -216,7 +215,7 @@ Notes for `cold-water` (added 2026-11-02 with ep31, replacing #15): the club swi
 
 Notes for `palm-house`: on my first Sunday I knock an old orchid off its shelf and repot it badly without telling anyone, and it starts to droop. The Sunk stands among the palms with only its eyes over its collar, one bench nearer the orchid shelf each week, and I think it is coming for me. The twist must have its own shape: no Keeper standing in an empty place, no "it was the gardener all along". Plant the twist twice. Lore plant: a plain tally only, no extra stroke, matching the number the place was built for, in the Sunk's colour. No real park or garden names, no text on plant labels.
 
-Notes for `unit-seven`: every Thursday after work I go to a storage unit and sit among boxes I tell myself are my ex's. Jo and I rented it together when we moved in, and I've kept paying since we split. Down the corridor of blue roller doors stands the Deep One, ordinary from the front, but when I pass the side it runs back the whole depth of a unit, one door nearer mine each week. The scare: the corridor's timed lights click off, and when they come back on it's inside my unit, filling it from front to back, its face at the open door. The twist: the boxes are both of ours, half and half, and I've been sitting on my half and keeping hers. A unit taken by two is counted for two, and the Deep One fills the space Jo left. "Full of someone else's things" turns over: the things are mine, and the someone else I've been keeping is Jo. Plant 1: the boxes in the shots carry two kinds of marker scribble, never words, one round and one jagged. Plant 2: I still have two keys on my ring. The warmth is letting go: I ring Jo, we load her half into her car without much talk, she hands back her key, and I give the unit up. Ending shape: a roller door rolling down on an empty unit, me walking out with one small box. Last line loops: "Every THURSDAY / at SEVEN, / I USED to visit / a ROOM." Lore plant: two roller-door-blue strokes scratched inside the door frame at knee height, two for a unit taken by two. Nothing on the boxes can be read, and no brand names on the doors.
+Notes for `back-stalls` (added with ep34 in place of #18, which is made): the film club seats five regulars, and since my brother and I fell out his seat stays empty. Each Sunday the Usher stands one row nearer the front, and the till is always one ticket over. Find the twist and its plants in the writing. Lore plant: a plain tally only, five strokes in claret under a seat arm. No real film titles, posters or cinema names on screen.
 
 Killed (ep35 `fire-ring`, 2026-11-02): built to preview, standards approved, but the critic still said revise after round 2. The scare's payoff (L42, one finger's shadow across Dad's sleeping bag) read as a tent pole twice, and Big Hands at L40 read wrong. Not a hard rule, so the pitch can be made again; the full build is in branch history at `claude/ep35-fire-ring` (commit 0a4147f). Lessons for a retry: block out the hand-shadow payoff first as a creature-test still at phone size (wide rounded finger blocks, Dad's lit face in frame), and say "the only spot UP HERE with a bar" so Dad's calls from the bottom of the hill make sense.
 
@@ -343,3 +342,27 @@ PandaNanoAdventures posts **one blocky story a day** (owner, note 21).
 - The queue so far: ep11 went up 2026-10-31, then ep12, then ep13.
 - Each finished batch 2 story takes the next free day. Its package names that date.
 - Where there's a choice, a batch 2 story goes between ep12 and ep13, because those two share a shape.
+
+Replacement for killed ep44 `sleeper-car` (added 2026-11-02, slug ep57 by the batch lead):
+
+| # | Slug (ep) | Rule type | Setting | Creature | Loved one | Kind of warmth | Rule opener line | Marker |
+|---|---|---|---|---|---|---|---|---|
+| 28b | `ep57-arch-seat` | favours owed | the stone arch seat and town square of a hill town, summer Saturdays | the Span, an ordinary-height person in faded rose and cream with one ordinary head on shoulders a whole seat apart, exactly as wide as the two-seat arch | adult cousin | loyalty: I stand by him in front of the town and take his load | "In this town, every favour you owe sits on your head as a gold block." | small gold blocks stacked on every head, one per favour owed |
+
+Fresh idea (added with ep57, so the backlog doesn't run dry): `tide-clock`, a harbour wall's old tide gauge on spring evenings, where the rule is that everyone's hair grows one shade lighter for every person who has forgiven them. The creature is to be designed silhouette first. Loved one: an adult best friend. Warmth: keeping a tradition alive.
+
+killed: `ep57-arch-seat` (#28b, replacement for ep44 `sleeper-car`, 2026-11-03), for hard rule 5 (originality), so don't retry this twist. Standards said kill in round 2: the twist is ep47-fitting-room's with the noun swapped (I have no blocks, my cousin carries every thanks he said for me, it ends when I say it aloud), ep49-car-wash has the same turn, and ep37-comet-night shares the opener. The critic also said revise in round 2: the Span (a person as wide as a two-seat arch) read as a sofa at phone size, creature 4. The setting, the favours rule and the Span are free to reuse with a different twist. The full build is in git at commit 405d598 on branch claude/ep57-arch-seat.
+
+killed: the `lookout` redo (2026-11-03), same big idea as ep33 (altitude time), so don't retry this twist. The redo's rule was "In this valley, time runs slower the higher up you are", with my teen brother Ollie climbing the tower twenty years older. ep33's shipping redo already has "one day at the top costs a year below" (hard rule 5). Standards approved round 1, and the critic said revise in both rounds (big idea 8, feeling 6, warm turn 5) with 5 framing and wording fixes left. `lookout` stays held. The tower set and cast are free to reuse with a different big idea. The full build is in git at commit 8592320 on branch claude/redo-lookout.
+
+## Claimed big ideas
+**Crowded theme: being forgotten or unseen** (floor-thirteen, ep31, ep32, ep43). Pick a different core for new stories.
+(One line per story: the reveal in a few words. Writers check this before keeping an idea, because parallel sessions converge. ep33 and the lookout redo both picked altitude time.)
+- ep33-chairlift: a day at the top costs a year below (altitude time)
+- ep31-dawn-flight: you fall apart if your family forgets you; they relive one dawn to keep you whole
+- floor-thirteen: forgotten things go to floor 13, and the narrator is what Grandad forgot
+- moving-day (ep17): a house grows to fit the tallest one living in it, and it never fit us; something tall came with us in a box
+- ep32-sitter: if nobody looks at you, your face fades; the faceless sitter creeping nearer is Mum, faded because I stopped looking at her
+- ep43-reading-room: the number over your head is how many people know your name; you don't count yourself, so my 1 was my brother all along
+- ep47-fitting-room: every lie pins a tag to your clothes, but a lie you believe never gets one; my clean coat was the lie that I was happy in the city
+- ep48-crazy-golf: your shadow sits where you were happiest; the one on Dad's green is mine, and the one at my feet is Dad's

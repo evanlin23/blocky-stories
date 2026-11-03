@@ -39,7 +39,14 @@ def gate_open(story: str) -> bool:
 REPO = os.environ.get("GITHUB_REPOSITORY", "evanlin23/blocky-stories")
 
 
+LEGACY = ROOT / "legacy"   # approved finals made in evanlin23/content (ep12, ep13), uploaded as they are
+
+
 def film(story: str) -> dict | None:
+    lf = LEGACY / f"{story}.mp4"
+    if lf.exists():
+        return {"id": None, "run_id": None, "url": f"https://github.com/{REPO}/blob/main/legacy/{story}.mp4",
+                "created_at": "2099-01-01T00:00:00Z", "legacy": str(lf)}
     """The newest unexpired `film-<story>` artifact the render workflow saved: {id, run_id, url}, or None when the
     story has never been rendered (or its film expired after 90 days). The film's flash report says whether it may
     be uploaded."""
