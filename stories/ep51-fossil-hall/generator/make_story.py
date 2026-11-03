@@ -312,7 +312,7 @@ glow("L10", "abe", 3.0)
 # us on the bench; visitors passing in front of it squint at Grandad's glow and step away (what he could lose)
 shot("L10", "hall", C([4.2, 1.2, 1.5], [1.2, -3.0, 1.05], 17), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE),
-    "c1": P(2.7, -5.0, 180, expr="neutral"), "c2": P(-2.2, -4.9, 180, expr="neutral")},
+    "c1": P(2.2, -5.0, 180, expr="neutral"), "c2": P(-1.9, -4.9, 180, expr="neutral")},
      "wide three-quarter from the aisle: us on the bench, two visitors beside it turn to Grandad's glow, squint and step away")
 key("c1", "L10.2", arms=[135, 125], expr="worried", blend=0.3)
 key("c2", "L10.2+0.2", arms=[130, 120], expr="worried", blend=0.3)
@@ -320,8 +320,8 @@ walk("c1", "L10>", (3.5, -5.4))
 walk("c2", "L10>", (-3.0, -5.3))
 shot("L11", "hall", C([4.4, 0.6, 1.4], [1.2, -3.0, 1.1], 17), {
     "abe": SIT(HX["abe"], BY, 180, expr=SMILE), "me": SIT(HX["me"], BY, 180, expr=SMILE),
-    "c3": P(-2.2, -4.8, 180, arms=[135, 125], expr="worried"), "c4": P(2.6, -5.0, 180, arms=[130, 130], expr="worried"),
-    "c5": P(3.9, -4.5, 180, arms=[125, 20], expr="worried")},
+    "c3": P(-1.8, -4.8, 180, arms=[135, 125], expr="worried"), "c4": P(2.2, -5.0, 180, arms=[130, 130], expr="worried"),
+    "c5": P(3.4, -4.6, 180, arms=[125, 20], expr="worried")},
      "wide: his glow soft on the bench; three passers-by shield their eyes and edge away from it")
 walk("c3", "L11.2", (-3.1, -5.0))
 walk("c4", "L11.2", (3.4, -5.4))
@@ -523,7 +523,7 @@ key("me", "L60", yaw=0, blend=0.9)
 shot("L61", "hall", C([0.6, -1.65, 1.55], [0.2, -6.8, 1.45], 30), {
     "abe": ABE_B, **{n: P(x, y, 180, expr="blank") for n, (x, y) in CROWD_POS.items() if n in ("c2", "c3", "c4", "c5", "c6", "c1", "c9", "c8")}},
      "the crowd from my eye line, all faces on me")
-shot("L62", "hall", C([1.6, -5.3, 1.55], [-0.69, -1.9, 1.5], 30), {
+shot("L62", "hall", C([-4.9, -3.0, 1.55], [-0.69, -1.7, 1.5], 30), {
     "me": P(-0.69, -1.65, 0, expr="neutral"), "abe": ABE_B}, "me standing tall in front of the bench, saying it out loud")
 talk("me", "L62", "L62>")
 shot("L63", "hall", MV(([0.0, -8.7, 1.55], [0.8, -6.0, 1.5]), ([0.0, -8.7, 1.55], [0.9, -5.4, 1.5]), 30), {
