@@ -1,6 +1,6 @@
 # blocky-stories
 
-Creepy blocky story Shorts for the owner's YouTube channel **PandaNanoAdventures**, one a day. This repo makes them end to end: stories are written and built here by Claude, GitHub Actions renders the finals and uploads them as private videos, and the owner watches and publishes.
+Creepy blocky story Shorts for the owner's YouTube channel **Buhtown** (renamed from PandaNanoAdventures on 2026-11-03, handle @Buhtown; host and avatar: the Buhkeeper, `brand/`, `docs/research/branding.md`), one a day. This repo makes them end to end: stories are written and built here by Claude, GitHub Actions renders the finals and uploads them as private videos, and the owner watches and publishes.
 
 - **Rules:** `RULES.md` is the only rules file. It outranks everything except the owner's own words. When the owner gives feedback, add it there as a dated quote, in the same PR.
 - **Make stories:** `/week [n]` (`.claude/skills/week/SKILL.md`). The agents are writer, builder, standards and critic (`.claude/agents/`).
