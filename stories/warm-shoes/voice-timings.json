@@ -1,0 +1,2037 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "never keep the shoes our cat brings home, they're still warm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.2154,
+   "dur": 2.379,
+   "onset": 0.138,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.138,
+     0.388
+    ],
+    [
+     0.388,
+     0.595
+    ],
+    [
+     0.595,
+     0.862
+    ],
+    [
+     0.862,
+     1.345
+    ],
+    [
+     1.414,
+     2.207
+    ]
+   ]
+  },
+  "L02": {
+   "text": "even if they're your size.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.31,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.75
+    ],
+    [
+     0.75,
+     1.31
+    ]
+   ]
+  },
+  "L03": {
+   "text": "monday, work boots, with sawdust.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.172,
+   "end": 1.586,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.466,
+     0.845
+    ],
+    [
+     0.87,
+     1.586
+    ]
+   ]
+  },
+  "L04": {
+   "text": "tuesday, fuzzy slippers, full of sand.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.534,
+     1.017
+    ],
+    [
+     1.052,
+     1.793
+    ]
+   ]
+  },
+  "L05": {
+   "text": "wednesday, one tap shoe. still tapping.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     1.0
+    ],
+    [
+     1.094,
+     1.879
+    ]
+   ]
+  },
+  "L06": {
+   "text": "our cat, biscuit, carries them in through the flap every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.672,
+   "onset": 0.155,
+   "end": 2.483,
+   "chunks": [
+    [
+     0.155,
+     0.845
+    ],
+    [
+     0.914,
+     1.345
+    ],
+    [
+     1.345,
+     1.793
+    ],
+    [
+     1.793,
+     2.483
+    ]
+   ]
+  },
+  "L07": {
+   "text": "he has slept on my feet for nine years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.155,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.862
+    ],
+    [
+     0.862,
+     1.655
+    ]
+   ]
+  },
+  "L08": {
+   "text": "my dad lines them up on the porch rail, for whoever owns them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.845,
+   "onset": 0.172,
+   "end": 2.655,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     0.888
+    ],
+    [
+     0.888,
+     1.259
+    ],
+    [
+     1.259,
+     1.586
+    ],
+    [
+     1.655,
+     1.983
+    ],
+    [
+     1.983,
+     2.655
+    ]
+   ]
+  },
+  "L09": {
+   "text": "i chalk the count on the post.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.431,
+   "chunks": [
+    [
+     0.172,
+     0.483
+    ],
+    [
+     0.483,
+     0.802
+    ],
+    [
+     0.802,
+     1.431
+    ]
+   ]
+  },
+  "L10": {
+   "text": "nobody in town ever comes for a single pair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.854
+    ],
+    [
+     0.854,
+     1.241
+    ],
+    [
+     1.241,
+     1.638
+    ],
+    [
+     1.638,
+     2.172
+    ]
+   ]
+  },
+  "L10a": {
+   "text": "and every pair is a size eleven. dad's size.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.241,
+   "chunks": [
+    [
+     0.172,
+     0.578
+    ],
+    [
+     0.578,
+     0.914
+    ],
+    [
+     0.914,
+     1.328
+    ],
+    [
+     1.406,
+     2.241
+    ]
+   ]
+  },
+  "L11": {
+   "text": "his bowl is full by five every morning.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.707
+    ],
+    [
+     0.707,
+     1.121
+    ],
+    [
+     1.121,
+     1.879
+    ]
+   ]
+  },
+  "L13": {
+   "text": "so dad says biscuit's a thief, and on saturday, he goes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.793,
+   "onset": 0.172,
+   "end": 2.603,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.638,
+     1.328
+    ],
+    [
+     1.397,
+     1.931
+    ],
+    [
+     1.957,
+     2.603
+    ]
+   ]
+  },
+  "L14": {
+   "text": "i'm not letting that happen.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.534,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.793
+    ],
+    [
+     0.793,
+     1.328
+    ]
+   ]
+  },
+  "L15": {
+   "text": "dad walks home from the bus at sundown.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.793
+    ],
+    [
+     0.793,
+     1.121
+    ],
+    [
+     1.121,
+     1.845
+    ]
+   ]
+  },
+  "L16": {
+   "text": "for a week now, he says somebody walks one streetlight behind him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.81,
+   "onset": 0.172,
+   "end": 2.621,
+   "chunks": [
+    [
+     0.172,
+     0.276
+    ],
+    [
+     0.276,
+     0.672
+    ],
+    [
+     0.707,
+     0.966
+    ],
+    [
+     0.966,
+     1.406
+    ],
+    [
+     1.406,
+     1.914
+    ],
+    [
+     1.914,
+     2.621
+    ]
+   ]
+  },
+  "L17": {
+   "text": "it never gets any closer.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.655,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.69
+    ],
+    [
+     0.69,
+     1.448
+    ]
+   ]
+  },
+  "L18": {
+   "text": "he never looks back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     1.052
+    ]
+   ]
+  },
+  "L19": {
+   "text": "and it always stops at our gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.448,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.81
+    ],
+    [
+     0.81,
+     1.448
+    ]
+   ]
+  },
+  "L21": {
+   "text": "thursday, i watched.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.526,
+     1.155
+    ]
+   ]
+  },
+  "L22": {
+   "text": "there's dad, under the lights.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.483,
+   "onset": 0.172,
+   "end": 1.293,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.595,
+     1.293
+    ]
+   ]
+  },
+  "L23": {
+   "text": "and one light back, someone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.517,
+   "onset": 0.172,
+   "end": 1.328,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.759
+    ],
+    [
+     0.793,
+     1.328
+    ]
+   ]
+  },
+  "L24": {
+   "text": "way too tall, with arms down to its knees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.948,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.681,
+     1.19
+    ],
+    [
+     1.19,
+     1.948
+    ]
+   ]
+  },
+  "L25": {
+   "text": "its shoes catch the light. shiny ones.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.948
+    ],
+    [
+     1.008,
+     1.793
+    ]
+   ]
+  },
+  "L26": {
+   "text": "dad comes in the gate. it stops at the gatepost.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.172,
+   "end": 2.19,
+   "chunks": [
+    [
+     0.172,
+     0.595
+    ],
+    [
+     0.595,
+     0.983
+    ],
+    [
+     1.061,
+     1.388
+    ],
+    [
+     1.388,
+     2.19
+    ]
+   ]
+  },
+  "L27": {
+   "text": "thirty seconds later, the cat flap.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.879,
+   "onset": 0.172,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.172,
+     0.914
+    ],
+    [
+     0.957,
+     1.672
+    ]
+   ]
+  },
+  "L28": {
+   "text": "biscuit, with a pair of shiny black shoes.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.052,
+   "onset": 0.172,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.5,
+     0.768
+    ],
+    [
+     0.768,
+     1.086
+    ],
+    [
+     1.086,
+     1.862
+    ]
+   ]
+  },
+  "L29": {
+   "text": "still warm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L30": {
+   "text": "my cat was stealing the shoes right off that thing's feet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.172,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     0.75
+    ],
+    [
+     0.75,
+     1.043
+    ],
+    [
+     1.043,
+     1.362
+    ],
+    [
+     1.362,
+     2.172
+    ]
+   ]
+  },
+  "L31": {
+   "text": "every night, to keep dad safe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.517,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.578,
+     0.81
+    ],
+    [
+     0.81,
+     1.517
+    ]
+   ]
+  },
+  "L32": {
+   "text": "i told dad. he looked at me and said, saturday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.172,
+   "end": 2.224,
+   "chunks": [
+    [
+     0.172,
+     0.879
+    ],
+    [
+     0.948,
+     1.199
+    ],
+    [
+     1.199,
+     1.353
+    ],
+    [
+     1.353,
+     1.603
+    ],
+    [
+     1.638,
+     2.224
+    ]
+   ]
+  },
+  "L33": {
+   "text": "on friday, i walked home late at my best friend ben's",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9784999999999999,
+   "dur": 2.655,
+   "onset": 0.172,
+   "end": 2.431,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.672,
+     1.0
+    ],
+    [
+     1.0,
+     1.319
+    ],
+    [
+     1.319,
+     1.655
+    ],
+    [
+     1.655,
+     2.431
+    ]
+   ]
+  },
+  "L33a": {
+   "text": "behind me, something squeaked, like new sneakers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.155,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.569,
+     1.121
+    ],
+    [
+     1.147,
+     2.052
+    ]
+   ]
+  },
+  "L33b": {
+   "text": "i ran the last block.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.397,
+   "onset": 0.172,
+   "end": 1.19,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.19
+    ]
+   ]
+  },
+  "L33c": {
+   "text": "that night, the pair on the mat was my size.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.474,
+     0.75
+    ],
+    [
+     0.75,
+     0.992
+    ],
+    [
+     0.992,
+     1.81
+    ]
+   ]
+  },
+  "L34": {
+   "text": "same sneakers as mine, down to the red laces.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.448,
+   "onset": 0.19,
+   "end": 2.259,
+   "chunks": [
+    [
+     0.19,
+     0.655
+    ],
+    [
+     0.655,
+     1.103
+    ],
+    [
+     1.172,
+     1.406
+    ],
+    [
+     1.406,
+     2.259
+    ]
+   ]
+  },
+  "L35": {
+   "text": "i know the rule. i kept them in my room anyway.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.793
+    ],
+    [
+     0.87,
+     1.25
+    ],
+    [
+     1.25,
+     1.586
+    ],
+    [
+     1.586,
+     2.138
+    ]
+   ]
+  },
+  "L36": {
+   "text": "i woke up at three.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.31,
+   "onset": 0.19,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.19,
+     0.56
+    ],
+    [
+     0.56,
+     1.121
+    ]
+   ]
+  },
+  "L37": {
+   "text": "something was at my window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.638,
+   "onset": 0.172,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.724
+    ],
+    [
+     0.724,
+     1.414
+    ]
+   ]
+  },
+  "L38": {
+   "text": "bent down to the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.431,
+   "onset": 0.172,
+   "end": 1.224,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.224
+    ]
+   ]
+  },
+  "L39": {
+   "text": "a face too wide, two eyes catching the lamp.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.362,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.431
+    ],
+    [
+     0.431,
+     0.879
+    ],
+    [
+     0.957,
+     1.379
+    ],
+    [
+     1.379,
+     2.155
+    ]
+   ]
+  },
+  "L40": {
+   "text": "it looked at the sneakers on my floor.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.172,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.172,
+     0.388
+    ],
+    [
+     0.388,
+     0.87
+    ],
+    [
+     0.87,
+     1.621
+    ]
+   ]
+  },
+  "L41": {
+   "text": "then at me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.069,
+   "onset": 0.172,
+   "end": 0.862,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.862
+    ]
+   ]
+  },
+  "L42": {
+   "text": "and it blinked. slow.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.362,
+   "onset": 0.172,
+   "end": 1.155,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.629,
+     1.155
+    ]
+   ]
+  },
+  "L43": {
+   "text": "in the morning, the sneakers were gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.612,
+     1.043
+    ],
+    [
+     1.043,
+     1.655
+    ]
+   ]
+  },
+  "L44": {
+   "text": "biscuit was asleep right where they'd been.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.879
+    ],
+    [
+     0.879,
+     1.155
+    ],
+    [
+     1.155,
+     1.793
+    ]
+   ]
+  },
+  "L46": {
+   "text": "that afternoon, dad put biscuit in the carrier.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.276,
+   "onset": 0.172,
+   "end": 2.086,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.793,
+     1.388
+    ],
+    [
+     1.388,
+     2.086
+    ]
+   ]
+  },
+  "L47": {
+   "text": "he drove him to a farm past the lake.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.957
+    ],
+    [
+     0.957,
+     1.724
+    ]
+   ]
+  },
+  "L48": {
+   "text": "he threw out every pair on the rail.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.008
+    ],
+    [
+     1.008,
+     1.638
+    ]
+   ]
+  },
+  "L49": {
+   "text": "the count on the post went back to zero.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.768
+    ],
+    [
+     0.768,
+     1.069
+    ],
+    [
+     1.069,
+     1.707
+    ]
+   ]
+  },
+  "L51": {
+   "text": "at sundown, i watched from the window again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.897,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.672,
+     1.043
+    ],
+    [
+     1.043,
+     1.397
+    ],
+    [
+     1.397,
+     1.897
+    ]
+   ]
+  },
+  "L52": {
+   "text": "dad, under the first light. nobody behind him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.397,
+   "onset": 0.19,
+   "end": 2.207,
+   "chunks": [
+    [
+     0.19,
+     0.362
+    ],
+    [
+     0.388,
+     0.569
+    ],
+    [
+     0.569,
+     1.121
+    ],
+    [
+     1.199,
+     1.466
+    ],
+    [
+     1.466,
+     2.207
+    ]
+   ]
+  },
+  "L54": {
+   "text": "then, way back, at the end of the road, someone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.121,
+   "onset": 0.172,
+   "end": 1.931,
+   "chunks": [
+    [
+     0.172,
+     0.707
+    ],
+    [
+     0.732,
+     1.008
+    ],
+    [
+     1.008,
+     1.345
+    ],
+    [
+     1.379,
+     1.931
+    ]
+   ]
+  },
+  "L55": {
+   "text": "one light closer every time i blinked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.741
+    ],
+    [
+     0.741,
+     1.19
+    ],
+    [
+     1.19,
+     1.828
+    ]
+   ]
+  },
+  "L56": {
+   "text": "tonight it had muddy rubber boots on, with hay stuck to them.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.724,
+   "onset": 0.172,
+   "end": 2.534,
+   "chunks": [
+    [
+     0.172,
+     0.569
+    ],
+    [
+     0.569,
+     0.966
+    ],
+    [
+     0.966,
+     1.448
+    ],
+    [
+     1.517,
+     1.819
+    ],
+    [
+     1.819,
+     2.534
+    ]
+   ]
+  },
+  "L57": {
+   "text": "boots like that only come from the farm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.948,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.034
+    ],
+    [
+     1.034,
+     1.759
+    ]
+   ]
+  },
+  "L58": {
+   "text": "dad reached the gate.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.069,
+   "chunks": [
+    [
+     0.172,
+     0.543
+    ],
+    [
+     0.543,
+     1.069
+    ]
+   ]
+  },
+  "L59": {
+   "text": "and for the first time, he looked back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.362
+    ],
+    [
+     0.362,
+     0.81
+    ],
+    [
+     0.836,
+     1.552
+    ]
+   ]
+  },
+  "L60": {
+   "text": "it stopped.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.966,
+   "onset": 0.172,
+   "end": 0.759,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ]
+   ]
+  },
+  "L61": {
+   "text": "then it got smaller.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.328,
+   "onset": 0.172,
+   "end": 1.121,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     1.121
+    ]
+   ]
+  },
+  "L62": {
+   "text": "and out of the left boot climbed biscuit.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.845
+    ],
+    [
+     0.845,
+     1.638
+    ]
+   ]
+  },
+  "L63": {
+   "text": "muddy to the ears.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.276,
+   "onset": 0.19,
+   "end": 1.086,
+   "chunks": [
+    [
+     0.19,
+     0.397
+    ],
+    [
+     0.397,
+     1.086
+    ]
+   ]
+  },
+  "L65": {
+   "text": "to walk dad home one more night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.724,
+   "onset": 0.172,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.172,
+     0.448
+    ],
+    [
+     0.448,
+     0.81
+    ],
+    [
+     0.81,
+     1.534
+    ]
+   ]
+  },
+  "L66": {
+   "text": "the someone behind dad was biscuit, every night.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.155,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.155,
+     0.439
+    ],
+    [
+     0.439,
+     0.922
+    ],
+    [
+     0.922,
+     1.379
+    ],
+    [
+     1.431,
+     2.121
+    ]
+   ]
+  },
+  "L66a": {
+   "text": "he needs a pair to stand up in.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.672,
+   "onset": 0.172,
+   "end": 1.483,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.647
+    ],
+    [
+     0.647,
+     0.94
+    ],
+    [
+     0.94,
+     1.483
+    ]
+   ]
+  },
+  "L66b": {
+   "text": "old ones from the trash, in the size of whoever he walks home.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.879,
+   "onset": 0.172,
+   "end": 2.69,
+   "chunks": [
+    [
+     0.172,
+     0.5
+    ],
+    [
+     0.5,
+     1.086
+    ],
+    [
+     1.155,
+     1.526
+    ],
+    [
+     1.526,
+     1.828
+    ],
+    [
+     1.828,
+     2.69
+    ]
+   ]
+  },
+  "L66c": {
+   "text": "friday's pair was mine because he'd walked me home.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.345,
+   "onset": 0.172,
+   "end": 2.155,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.052
+    ],
+    [
+     1.052,
+     1.543
+    ],
+    [
+     1.543,
+     2.155
+    ]
+   ]
+  },
+  "L66d": {
+   "text": "the rail was outside. he could reach it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 0.9682,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.172,
+     0.423
+    ],
+    [
+     0.423,
+     0.983
+    ],
+    [
+     1.034,
+     1.259
+    ],
+    [
+     1.259,
+     1.828
+    ]
+   ]
+  },
+  "L66e": {
+   "text": "a pair kept inside means somebody walks home alone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.483,
+   "onset": 0.172,
+   "end": 2.293,
+   "chunks": [
+    [
+     0.172,
+     0.414
+    ],
+    [
+     0.414,
+     0.983
+    ],
+    [
+     0.983,
+     1.362
+    ],
+    [
+     1.362,
+     2.293
+    ]
+   ]
+  },
+  "L66f": {
+   "text": "so he came to my window for his.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.707,
+   "onset": 0.172,
+   "end": 1.5,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.534,
+     0.948
+    ],
+    [
+     0.948,
+     1.5
+    ]
+   ]
+  },
+  "L68": {
+   "text": "then he picked biscuit up, mud and all.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.155,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.155,
+     0.5
+    ],
+    [
+     0.5,
+     0.914
+    ],
+    [
+     0.974,
+     1.707
+    ]
+   ]
+  },
+  "L69": {
+   "text": "at five the next morning, i caught dad filling the bowl.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.603,
+   "onset": 0.172,
+   "end": 2.414,
+   "chunks": [
+    [
+     0.172,
+     0.439
+    ],
+    [
+     0.439,
+     1.017
+    ],
+    [
+     1.086,
+     1.612
+    ],
+    [
+     1.612,
+     2.414
+    ]
+   ]
+  },
+  "L70": {
+   "text": "he told me to keep that to myself.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.879
+    ],
+    [
+     0.879,
+     1.569
+    ]
+   ]
+  },
+  "L71": {
+   "text": "now dad leaves his old work boots and my old sneakers on the gatepost.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.293,
+   "onset": 0.172,
+   "end": 3.086,
+   "chunks": [
+    [
+     0.172,
+     0.732
+    ],
+    [
+     0.732,
+     1.0
+    ],
+    [
+     1.0,
+     1.561
+    ],
+    [
+     1.561,
+     1.741
+    ],
+    [
+     1.741,
+     2.268
+    ],
+    [
+     2.268,
+     3.086
+    ]
+   ]
+  },
+  "L72": {
+   "text": "last night, i missed the late bus home from work, and walked the long road.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.328,
+   "onset": 0.172,
+   "end": 3.121,
+   "chunks": [
+    [
+     0.172,
+     0.534
+    ],
+    [
+     0.569,
+     0.862
+    ],
+    [
+     0.862,
+     1.276
+    ],
+    [
+     1.276,
+     1.914
+    ],
+    [
+     1.983,
+     2.276
+    ],
+    [
+     2.276,
+     3.121
+    ]
+   ]
+  },
+  "L73": {
+   "text": "one streetlight behind me, someone in my old sneakers.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.707,
+   "onset": 0.172,
+   "end": 2.517,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     1.172
+    ],
+    [
+     1.267,
+     1.509
+    ],
+    [
+     1.509,
+     1.672
+    ],
+    [
+     1.672,
+     2.517
+    ]
+   ]
+  },
+  "L74": {
+   "text": "way too tall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.931,
+   "chunks": [
+    [
+     0.172,
+     0.931
+    ]
+   ]
+  },
+  "L75": {
+   "text": "i didn't look back.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.19,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.19,
+     0.483
+    ],
+    [
+     0.483,
+     1.052
+    ]
+   ]
+  },
+  "L76": {
+   "text": "this morning, my old sneakers were back on the mat.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.31,
+   "onset": 0.172,
+   "end": 2.121,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.621,
+     1.25
+    ],
+    [
+     1.25,
+     1.509
+    ],
+    [
+     1.509,
+     2.121
+    ]
+   ]
+  }
+ }
+}

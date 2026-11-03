@@ -1,0 +1,1569 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Never KEEP",
+    "never keep"
+   ],
+   [
+    "the shoes",
+    "the shoes"
+   ],
+   [
+    "our cat",
+    "our cat"
+   ],
+   [
+    "brings HOME.",
+    "brings home,"
+   ],
+   [
+    "They're still WARM.",
+    "they're still warm."
+   ]
+  ],
+  "tempo": 1.18
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Even if",
+    "even if"
+   ],
+   [
+    "they're YOUR",
+    "they're your"
+   ],
+   [
+    "SIZE.",
+    "size."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Monday,",
+    "monday,"
+   ],
+   [
+    "WORK BOOTS,",
+    "work boots,"
+   ],
+   [
+    "with SAWDUST.",
+    "with sawdust."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tuesday,",
+    "tuesday,"
+   ],
+   [
+    "fuzzy SLIPPERS,",
+    "fuzzy slippers,"
+   ],
+   [
+    "full of SAND.",
+    "full of sand."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Wednesday,",
+    "wednesday,"
+   ],
+   [
+    "one TAP SHOE.",
+    "one tap shoe."
+   ],
+   [
+    "Still TAPPING.",
+    "still tapping."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Our cat, BISCUIT,",
+    "our cat, biscuit,"
+   ],
+   [
+    "carries them IN",
+    "carries them in"
+   ],
+   [
+    "through the FLAP",
+    "through the flap"
+   ],
+   [
+    "every NIGHT.",
+    "every night."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He's slept",
+    "he has slept"
+   ],
+   [
+    "on my FEET",
+    "on my feet"
+   ],
+   [
+    "for nine YEARS.",
+    "for nine years."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My DAD",
+    "my dad"
+   ],
+   [
+    "lines them up",
+    "lines them up"
+   ],
+   [
+    "on the porch",
+    "on the porch"
+   ],
+   [
+    "RAIL,",
+    "rail,"
+   ],
+   [
+    "for whoever",
+    "for whoever"
+   ],
+   [
+    "OWNS them.",
+    "owns them."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I chalk",
+    "i chalk"
+   ],
+   [
+    "the COUNT",
+    "the count"
+   ],
+   [
+    "on the POST.",
+    "on the post."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "NOBODY",
+    "nobody"
+   ],
+   [
+    "in town",
+    "in town"
+   ],
+   [
+    "ever COMES",
+    "ever comes"
+   ],
+   [
+    "for a single",
+    "for a single"
+   ],
+   [
+    "PAIR.",
+    "pair."
+   ]
+  ]
+ },
+ {
+  "id": "L10a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And every pair",
+    "and every pair"
+   ],
+   [
+    "is a size",
+    "is a size"
+   ],
+   [
+    "ELEVEN.",
+    "eleven."
+   ],
+   [
+    "Dad's SIZE.",
+    "dad's size."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "His BOWL",
+    "his bowl"
+   ],
+   [
+    "is FULL",
+    "is full"
+   ],
+   [
+    "by FIVE",
+    "by five"
+   ],
+   [
+    "every MORNING.",
+    "every morning."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So Dad says",
+    "so dad says"
+   ],
+   [
+    "Biscuit's a THIEF,",
+    "biscuit's a thief,"
+   ],
+   [
+    "and on SATURDAY,",
+    "and on saturday,"
+   ],
+   [
+    "he GOES.",
+    "he goes."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I'm not",
+    "i'm not"
+   ],
+   [
+    "letting that",
+    "letting that"
+   ],
+   [
+    "HAPPEN.",
+    "happen."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dad walks HOME",
+    "dad walks home"
+   ],
+   [
+    "from the BUS",
+    "from the bus"
+   ],
+   [
+    "at SUNDOWN.",
+    "at sundown."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "For a",
+    "for a"
+   ],
+   [
+    "WEEK now,",
+    "week now,"
+   ],
+   [
+    "he says",
+    "he says"
+   ],
+   [
+    "somebody walks",
+    "somebody walks"
+   ],
+   [
+    "one STREETLIGHT",
+    "one streetlight"
+   ],
+   [
+    "BEHIND him.",
+    "behind him."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It never gets",
+    "it never gets"
+   ],
+   [
+    "any CLOSER.",
+    "any closer."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He never",
+    "he never"
+   ],
+   [
+    "LOOKS BACK.",
+    "looks back."
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And it always",
+    "and it always"
+   ],
+   [
+    "STOPS",
+    "stops"
+   ],
+   [
+    "at our GATE.",
+    "at our gate."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "THURSDAY,",
+    "thursday,"
+   ],
+   [
+    "I WATCHED.",
+    "i watched."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "There's Dad,",
+    "there's dad,"
+   ],
+   [
+    "under the LIGHTS.",
+    "under the lights."
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And one",
+    "and one"
+   ],
+   [
+    "light BACK,",
+    "light back,"
+   ],
+   [
+    "SOMEONE.",
+    "someone."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Way too TALL,",
+    "way too tall,"
+   ],
+   [
+    "with arms down",
+    "with arms down"
+   ],
+   [
+    "to its KNEES.",
+    "to its knees."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Its shoes",
+    "its shoes"
+   ],
+   [
+    "CATCH the light.",
+    "catch the light."
+   ],
+   [
+    "SHINY ones.",
+    "shiny ones."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dad comes in",
+    "dad comes in"
+   ],
+   [
+    "the GATE.",
+    "the gate."
+   ],
+   [
+    "It STOPS",
+    "it stops"
+   ],
+   [
+    "at the GATEPOST.",
+    "at the gatepost."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Thirty seconds LATER,",
+    "thirty seconds later,"
+   ],
+   [
+    "the cat FLAP.",
+    "the cat flap."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Biscuit,",
+    "biscuit,"
+   ],
+   [
+    "with a pair",
+    "with a pair"
+   ],
+   [
+    "of SHINY",
+    "of shiny"
+   ],
+   [
+    "black SHOES.",
+    "black shoes."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Still WARM.",
+    "still warm."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My cat",
+    "my cat"
+   ],
+   [
+    "was stealing",
+    "was stealing"
+   ],
+   [
+    "the shoes",
+    "the shoes"
+   ],
+   [
+    "right OFF",
+    "right off"
+   ],
+   [
+    "that thing's FEET.",
+    "that thing's feet."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every NIGHT,",
+    "every night,"
+   ],
+   [
+    "to keep",
+    "to keep"
+   ],
+   [
+    "Dad SAFE.",
+    "dad safe."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I told Dad.",
+    "i told dad."
+   ],
+   [
+    "He looked",
+    "he looked"
+   ],
+   [
+    "at me",
+    "at me"
+   ],
+   [
+    "and said,",
+    "and said,"
+   ],
+   [
+    "SATURDAY.",
+    "saturday."
+   ]
+  ]
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   [
+    "On FRIDAY,",
+    "on friday,"
+   ],
+   [
+    "I walked",
+    "i walked"
+   ],
+   [
+    "home LATE",
+    "home late"
+   ],
+   [
+    "at my best",
+    "at my best"
+   ],
+   [
+    "friend BEN'S.",
+    "friend ben's"
+   ]
+  ],
+  "tempo": 0.95
+ },
+ {
+  "id": "L33a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Behind me,",
+    "behind me,"
+   ],
+   [
+    "something SQUEAKED,",
+    "something squeaked,"
+   ],
+   [
+    "like NEW SNEAKERS.",
+    "like new sneakers."
+   ]
+  ]
+ },
+ {
+  "id": "L33b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I RAN",
+    "i ran"
+   ],
+   [
+    "the last BLOCK.",
+    "the last block."
+   ]
+  ]
+ },
+ {
+  "id": "L33c",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That night,",
+    "that night,"
+   ],
+   [
+    "the pair on",
+    "the pair on"
+   ],
+   [
+    "the mat",
+    "the mat"
+   ],
+   [
+    "was MY SIZE.",
+    "was my size."
+   ]
+  ]
+ },
+ {
+  "id": "L34",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Same SNEAKERS",
+    "same sneakers"
+   ],
+   [
+    "as MINE,",
+    "as mine,"
+   ],
+   [
+    "down to",
+    "down to"
+   ],
+   [
+    "the RED LACES.",
+    "the red laces."
+   ]
+  ]
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I know",
+    "i know"
+   ],
+   [
+    "the RULE.",
+    "the rule."
+   ],
+   [
+    "I kept them",
+    "i kept them"
+   ],
+   [
+    "in my ROOM",
+    "in my room"
+   ],
+   [
+    "ANYWAY.",
+    "anyway."
+   ]
+  ]
+ },
+ {
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I woke up",
+    "i woke up"
+   ],
+   [
+    "at THREE.",
+    "at three."
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.7,
+  "chunks": []
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Something",
+    "something"
+   ],
+   [
+    "was at",
+    "was at"
+   ],
+   [
+    "my WINDOW.",
+    "my window."
+   ]
+  ]
+ },
+ {
+  "id": "L38",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Bent DOWN",
+    "bent down"
+   ],
+   [
+    "to the GLASS.",
+    "to the glass."
+   ]
+  ]
+ },
+ {
+  "id": "L39",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A face",
+    "a face"
+   ],
+   [
+    "too WIDE,",
+    "too wide,"
+   ],
+   [
+    "two EYES",
+    "two eyes"
+   ],
+   [
+    "catching the LAMP.",
+    "catching the lamp."
+   ]
+  ]
+ },
+ {
+  "id": "L40",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It looked",
+    "it looked"
+   ],
+   [
+    "at the SNEAKERS",
+    "at the sneakers"
+   ],
+   [
+    "on my FLOOR.",
+    "on my floor."
+   ]
+  ]
+ },
+ {
+  "id": "L41",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then",
+    "then"
+   ],
+   [
+    "at ME.",
+    "at me."
+   ]
+  ]
+ },
+ {
+  "id": "L42",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And it BLINKED.",
+    "and it blinked."
+   ],
+   [
+    "SLOW.",
+    "slow."
+   ]
+  ]
+ },
+ {
+  "id": "L43",
+  "who": "narrator",
+  "chunks": [
+   [
+    "In the MORNING,",
+    "in the morning,"
+   ],
+   [
+    "the sneakers",
+    "the sneakers"
+   ],
+   [
+    "were GONE.",
+    "were gone."
+   ]
+  ]
+ },
+ {
+  "id": "L44",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Biscuit",
+    "biscuit"
+   ],
+   [
+    "was ASLEEP",
+    "was asleep"
+   ],
+   [
+    "right where",
+    "right where"
+   ],
+   [
+    "they'd BEEN.",
+    "they'd been."
+   ]
+  ]
+ },
+ {
+  "id": "L46",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That AFTERNOON,",
+    "that afternoon,"
+   ],
+   [
+    "Dad put Biscuit",
+    "dad put biscuit"
+   ],
+   [
+    "in the CARRIER.",
+    "in the carrier."
+   ]
+  ]
+ },
+ {
+  "id": "L47",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He drove him",
+    "he drove him"
+   ],
+   [
+    "to a FARM",
+    "to a farm"
+   ],
+   [
+    "past the LAKE.",
+    "past the lake."
+   ]
+  ]
+ },
+ {
+  "id": "L48",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He threw OUT",
+    "he threw out"
+   ],
+   [
+    "every pair",
+    "every pair"
+   ],
+   [
+    "on the RAIL.",
+    "on the rail."
+   ]
+  ]
+ },
+ {
+  "id": "L49",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The count",
+    "the count"
+   ],
+   [
+    "on the POST",
+    "on the post"
+   ],
+   [
+    "went back",
+    "went back"
+   ],
+   [
+    "to ZERO.",
+    "to zero."
+   ]
+  ]
+ },
+ {
+  "id": "L51",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At SUNDOWN,",
+    "at sundown,"
+   ],
+   [
+    "I watched",
+    "i watched"
+   ],
+   [
+    "from the WINDOW",
+    "from the window"
+   ],
+   [
+    "again.",
+    "again."
+   ]
+  ]
+ },
+ {
+  "id": "L52",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dad,",
+    "dad,"
+   ],
+   [
+    "under the",
+    "under the"
+   ],
+   [
+    "first LIGHT.",
+    "first light."
+   ],
+   [
+    "NOBODY",
+    "nobody"
+   ],
+   [
+    "behind him.",
+    "behind him."
+   ]
+  ]
+ },
+ {
+  "id": "P02",
+  "pause": 0.6,
+  "chunks": []
+ },
+ {
+  "id": "L54",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then, way BACK,",
+    "then, way back,"
+   ],
+   [
+    "at the end",
+    "at the end"
+   ],
+   [
+    "of the ROAD,",
+    "of the road,"
+   ],
+   [
+    "SOMEONE.",
+    "someone."
+   ]
+  ]
+ },
+ {
+  "id": "L55",
+  "who": "narrator",
+  "chunks": [
+   [
+    "One light",
+    "one light"
+   ],
+   [
+    "CLOSER",
+    "closer"
+   ],
+   [
+    "every time",
+    "every time"
+   ],
+   [
+    "I BLINKED.",
+    "i blinked."
+   ]
+  ]
+ },
+ {
+  "id": "L56",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Tonight it had",
+    "tonight it had"
+   ],
+   [
+    "muddy RUBBER",
+    "muddy rubber"
+   ],
+   [
+    "BOOTS on,",
+    "boots on,"
+   ],
+   [
+    "with HAY",
+    "with hay"
+   ],
+   [
+    "stuck to them.",
+    "stuck to them."
+   ]
+  ]
+ },
+ {
+  "id": "L57",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Boots like THAT",
+    "boots like that"
+   ],
+   [
+    "only come",
+    "only come"
+   ],
+   [
+    "from the FARM.",
+    "from the farm."
+   ]
+  ]
+ },
+ {
+  "id": "L58",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Dad reached",
+    "dad reached"
+   ],
+   [
+    "the GATE.",
+    "the gate."
+   ]
+  ]
+ },
+ {
+  "id": "L59",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And for the",
+    "and for the"
+   ],
+   [
+    "FIRST time,",
+    "first time,"
+   ],
+   [
+    "he LOOKED BACK.",
+    "he looked back."
+   ]
+  ]
+ },
+ {
+  "id": "L60",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It STOPPED.",
+    "it stopped."
+   ]
+  ]
+ },
+ {
+  "id": "L61",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then it got",
+    "then it got"
+   ],
+   [
+    "SMALLER.",
+    "smaller."
+   ]
+  ]
+ },
+ {
+  "id": "L62",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And out of",
+    "and out of"
+   ],
+   [
+    "the left BOOT",
+    "the left boot"
+   ],
+   [
+    "climbed BISCUIT.",
+    "climbed biscuit."
+   ]
+  ]
+ },
+ {
+  "id": "L63",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Muddy",
+    "muddy"
+   ],
+   [
+    "to the EARS.",
+    "to the ears."
+   ]
+  ]
+ },
+ {
+  "id": "L65",
+  "who": "narrator",
+  "chunks": [
+   [
+    "To walk",
+    "to walk"
+   ],
+   [
+    "Dad HOME",
+    "dad home"
+   ],
+   [
+    "one more NIGHT.",
+    "one more night."
+   ]
+  ]
+ },
+ {
+  "id": "L66",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The someone",
+    "the someone"
+   ],
+   [
+    "BEHIND Dad",
+    "behind dad"
+   ],
+   [
+    "was BISCUIT,",
+    "was biscuit,"
+   ],
+   [
+    "every NIGHT.",
+    "every night."
+   ]
+  ]
+ },
+ {
+  "id": "L66a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He needs",
+    "he needs"
+   ],
+   [
+    "a PAIR",
+    "a pair"
+   ],
+   [
+    "to stand",
+    "to stand"
+   ],
+   [
+    "UP in.",
+    "up in."
+   ]
+  ]
+ },
+ {
+  "id": "L66b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Old ones",
+    "old ones"
+   ],
+   [
+    "from the TRASH,",
+    "from the trash,"
+   ],
+   [
+    "in the SIZE",
+    "in the size"
+   ],
+   [
+    "of whoever",
+    "of whoever"
+   ],
+   [
+    "he walks HOME.",
+    "he walks home."
+   ]
+  ]
+ },
+ {
+  "id": "L66c",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Friday's pair",
+    "friday's pair"
+   ],
+   [
+    "was MINE",
+    "was mine"
+   ],
+   [
+    "because he'd walked",
+    "because he'd walked"
+   ],
+   [
+    "ME home.",
+    "me home."
+   ]
+  ]
+ },
+ {
+  "id": "L66d",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The rail",
+    "the rail"
+   ],
+   [
+    "was OUTSIDE.",
+    "was outside."
+   ],
+   [
+    "He could",
+    "he could"
+   ],
+   [
+    "REACH it.",
+    "reach it."
+   ]
+  ],
+  "tempo": 0.94
+ },
+ {
+  "id": "L66e",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A pair",
+    "a pair"
+   ],
+   [
+    "kept INSIDE",
+    "kept inside"
+   ],
+   [
+    "means somebody",
+    "means somebody"
+   ],
+   [
+    "walks home ALONE.",
+    "walks home alone."
+   ]
+  ]
+ },
+ {
+  "id": "L66f",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So he came",
+    "so he came"
+   ],
+   [
+    "to my WINDOW",
+    "to my window"
+   ],
+   [
+    "for his.",
+    "for his."
+   ]
+  ]
+ },
+ {
+  "id": "L68",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Then he picked",
+    "then he picked"
+   ],
+   [
+    "Biscuit UP,",
+    "biscuit up,"
+   ],
+   [
+    "mud and ALL.",
+    "mud and all."
+   ]
+  ]
+ },
+ {
+  "id": "L69",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At five",
+    "at five"
+   ],
+   [
+    "the next MORNING,",
+    "the next morning,"
+   ],
+   [
+    "I caught DAD",
+    "i caught dad"
+   ],
+   [
+    "filling the BOWL.",
+    "filling the bowl."
+   ]
+  ]
+ },
+ {
+  "id": "L70",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He told me",
+    "he told me"
+   ],
+   [
+    "to keep THAT",
+    "to keep that"
+   ],
+   [
+    "to MYSELF.",
+    "to myself."
+   ]
+  ]
+ },
+ {
+  "id": "L71",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Now Dad leaves",
+    "now dad leaves"
+   ],
+   [
+    "his old",
+    "his old"
+   ],
+   [
+    "WORK BOOTS",
+    "work boots"
+   ],
+   [
+    "and my",
+    "and my"
+   ],
+   [
+    "old SNEAKERS",
+    "old sneakers"
+   ],
+   [
+    "on the GATEPOST.",
+    "on the gatepost."
+   ]
+  ]
+ },
+ {
+  "id": "L72",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Last night,",
+    "last night,"
+   ],
+   [
+    "I missed",
+    "i missed"
+   ],
+   [
+    "the late BUS",
+    "the late bus"
+   ],
+   [
+    "home from WORK,",
+    "home from work,"
+   ],
+   [
+    "and walked",
+    "and walked"
+   ],
+   [
+    "the long ROAD.",
+    "the long road."
+   ]
+  ]
+ },
+ {
+  "id": "L73",
+  "who": "narrator",
+  "chunks": [
+   [
+    "One streetlight",
+    "one streetlight"
+   ],
+   [
+    "BEHIND me,",
+    "behind me,"
+   ],
+   [
+    "someone",
+    "someone"
+   ],
+   [
+    "in my",
+    "in my"
+   ],
+   [
+    "old SNEAKERS.",
+    "old sneakers."
+   ]
+  ]
+ },
+ {
+  "id": "L74",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Way too TALL.",
+    "way too tall."
+   ]
+  ]
+ },
+ {
+  "id": "L75",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I didn't",
+    "i didn't"
+   ],
+   [
+    "LOOK BACK.",
+    "look back."
+   ]
+  ]
+ },
+ {
+  "id": "L76",
+  "who": "narrator",
+  "chunks": [
+   [
+    "This morning,",
+    "this morning,"
+   ],
+   [
+    "my old SNEAKERS",
+    "my old sneakers"
+   ],
+   [
+    "were back",
+    "were back"
+   ],
+   [
+    "on the MAT.",
+    "on the mat."
+   ]
+  ]
+ }
+]
