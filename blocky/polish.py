@@ -454,7 +454,7 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         # pace (v2.3, craft metrics blocks 2026-11-03): a steady crop push through every shot, in on one shot and
         # out on the next, at a constant rate so every 0.25 s reads as a change (an eased move stalls at its ends)
         # scaled to the shot's length, so a 0.4 s shot doesn't rush (critic, ep32 v2.3: 12% in 0.4 s read as a zoom)
-        pu = p["push"] * (0.5 if calm else 1.0) * min(1.0, length / 2.0)
+        pu = p["push"] * (0.5 if calm else 1.0) * min(1.0, length / p.get("push_full_s", 1.2))
         zoom *= 1 + pu * (u if k % 2 == 0 else 1 - u)
         dx += (1 if (k // 2) % 2 == 0 else -1) * pu * 0.12 * (u - 0.5)
     rf = p.get("reframe_every")
