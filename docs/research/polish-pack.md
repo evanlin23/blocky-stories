@@ -231,3 +231,26 @@ ep32's preview (every 4th drawing, so the final reads livelier still), all on th
 | Brightness | 0.346 | 0.375 | **0.376** | hits 0.45 |
 | Saturation | 0.576 | 0.561 | **0.562** | hits 0.51 |
 | Flash (house bar) | pass | pass | **pass**, 1 a second at most | pass |
+
+**Critic, round 1 (A no pace, B push 0.15 and cut 1.0 s at 1.17×):** better on pace (6 → 7), but framing (8 → 6),
+sharpness (8 → 6) and overall (7 → 6) dropped, so it didn't ship. Its notes, all taken:
+1. The side offset pushed faces and the twist's portrait to the edge (47.6, 49.6, 61.3 s). **Fix:** angle cuts are
+   centred, with a touch up (dy −0.015).
+2. The cuts landed mid-caption and across a walk (4.3 s). **Fix:** each angle cut moves to the nearest caption change
+   within 0.35 s, or is dropped, and no part is left under 0.6 s.
+3. Two cuts landed in the warm beat (79.7, 80.7 s). **Fix:** no angle cuts in any shot that touches a quiet span.
+   ep32's own quiet span should run `["L35", "L38"]` when it comes off hold (its story files aren't changed here).
+4. The crop went soft past 1.2×. **Fix:** push 0.12, angle cut 1.12×, the total capped at 1.18×.
+
+**Round 2 numbers** (ep32 preview, same drawings, flash pass at 1 a second at most):
+
+| | no pace | cut every 1.0 s | **v2.3: cut every 0.8 s** | block |
+|---|---|---|---|---|
+| Changes per 10 s (0.5 s) | 10.3 | 12.5 | **12.7** | ≥ 12.5 |
+| Changes per 10 s (0.25 s) | 11.3 | 14.0 | **14.4** | ≥ 14 |
+| Motion energy | 5.3 | 6.02 | **6.06** | ≥ 6.0 |
+| Longest still | 0.53 s | 0.53 s | **0.53 s** | ≤ 1.0 |
+| Brightness | 0.346 | 0.375 | **0.375** | |
+
+The margins are thin on the preview, which draws every 4th frame. The final draws every moving shot on every
+frame, so it reads livelier, and qa measures the final.
