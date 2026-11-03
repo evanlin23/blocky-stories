@@ -1,6 +1,6 @@
 {
  "slug": "ep34-unit-seven",
- "title": "In This Town Your Stuff Decides What OPENS For You",
+ "title": "Don't Leave ANYTHING Behind a Door 🚪",
  "made_for_kids": false,
  "premise": "Every Tuesday at seven, after work, I let myself into a rented storage unit on the edge of town and sit for an hour among boxes I tell myself belong to my ex, Jo. The corridor lights run on a one-minute timer. One Tuesday someone stands in the open doorway of unit eleven. From the front they look ordinary. From the side they run back the whole depth of the unit. Each Tuesday they are one door nearer mine.",
  "twist": "Half the boxes are mine, and I hold both keys. The Deep One in my unit stares only at the round stack I sit on, and that makes me read my own scribbles: every week I have been visiting my own things and calling them hers. When Jo takes her half and I give mine away, the room ends empty.",
@@ -119,28 +119,34 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this TOWN,",
-     "In this town,"
+     "NEVER leave",
+     "Never leave"
     ],
     [
-     "a door",
-     "a door"
+     "anything of YOURS",
+     "anything of yours"
     ],
     [
-     "won't OPEN",
-     "won't open"
+     "behind a DOOR.",
+     "behind a door."
+    ]
+   ]
+  },
+  {
+   "id": "L82",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Or that door",
+     "Or that door"
     ],
     [
-     "unless something",
-     "unless something"
+     "keeps OPENING",
+     "keeps opening"
     ],
     [
-     "of YOURS",
-     "of yours"
-    ],
-    [
-     "is INSIDE.",
-     "is inside."
+     "for YOU.",
+     "for you."
     ]
    ]
   },
@@ -239,7 +245,7 @@
      "for me"
     ],
     [
-     "any MORE.",
+     "ANYMORE.",
      "any more."
     ]
    ],
@@ -6208,7 +6214,8 @@
    }
   ]
  },
- "sound": {"rev": 2, 
+ "sound": {
+  "rev": 2,
   "floor": "stone",
   "steps_db": -22,
   "ambience": [
