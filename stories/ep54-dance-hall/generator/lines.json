@@ -4,20 +4,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this TOWN,",
-    "in this town,"
+    "NEVER cover",
+    "never cover"
    ],
    [
-    "you're born",
-    "you're born"
+    "the BACK",
+    "the back"
    ],
    [
-    "with HALF",
-    "with half"
-   ],
-   [
-    "a mark.",
-    "a mark."
+    "of your HAND.",
+    "of your hand."
    ],
    [
     "Your MATCH",
@@ -34,16 +30,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Speed DATING",
-    "speed dating"
+    "Not even",
+    "not even"
    ],
    [
-    "is one WAVE",
-    "is one wave"
-   ],
-   [
-    "down the LINE.",
-    "down the line."
+    "in WINTER.",
+    "in winter."
    ]
   ]
  },
@@ -52,20 +44,32 @@
   "who": "narrator",
   "chunks": [
    [
-    "One man's MATCH",
-    "one man's match"
+    "A MATCH",
+    "a match"
    ],
    [
-    "is his POSTMAN.",
-    "is his postman."
+    "is whoever",
+    "is whoever"
    ],
    [
-    "They've never",
-    "they've never"
+    "you FIT with,",
+    "you fit with,"
    ],
    [
-    "been HAPPIER.",
-    "been happier."
+    "FRIEND or FAMILY.",
+    "friend or family."
+   ],
+   [
+    "One old man's",
+    "one old man's"
+   ],
+   [
+    "MATCH",
+    "match"
+   ],
+   [
+    "is his BROTHER.",
+    "is his brother."
    ]
   ]
  },
@@ -104,8 +108,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "My neighbours MATCH.",
-    "my neighbors match."
+    "The TWINS",
+    "the twins"
+   ],
+   [
+    "next door MATCH.",
+    "next door match."
    ],
    [
     "They ARGUE",
@@ -144,20 +152,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Aunt ROS",
-    "aunt ross"
+    "My AUNT, Ros,",
+    "my aunt, ross,"
    ],
    [
     "has looked",
     "has looked"
    ],
    [
-    "for HER",
-    "for her"
-   ],
-   [
-    "other half",
-    "other half"
+    "for HER match",
+    "for her match"
    ],
    [
     "for forty YEARS.",
@@ -218,8 +222,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every couple",
-    "every couple"
+    "Every PAIR",
+    "every pair"
    ],
    [
     "waltzes, hand-BACKS",
@@ -280,12 +284,12 @@
     "eyes closed,"
    ],
    [
-    "the way",
-    "the way"
+    "COUNTING",
+    "counting"
    ],
    [
-    "she ALWAYS does.",
-    "she always does."
+    "the STEPS.",
+    "the steps."
    ]
   ]
  },
@@ -543,8 +547,8 @@
     "at where"
    ],
    [
-    "her PARTNER",
-    "her partner"
+    "a PARTNER",
+    "a partner"
    ],
    [
     "would STAND.",
@@ -729,8 +733,8 @@
     "to meet"
    ],
    [
-    "a stranger",
-    "a stranger"
+    "a COUSIN",
+    "a cousin"
    ],
    [
     "whose half",
@@ -984,12 +988,20 @@
     "stand either side"
    ],
    [
-    "of her",
-    "of her"
+    "of the",
+    "of the"
    ],
    [
-    "PARTNER'S spot.",
-    "partner's spot."
+    "empty SPOT",
+    "empty spot"
+   ],
+   [
+    "in FRONT",
+    "in front"
+   ],
+   [
+    "of her.",
+    "of her."
    ]
   ]
  },
@@ -1210,19 +1222,19 @@
   "chunks": [
    [
     "On my PALM,",
-    "on my palm,"
+    "on, my palm,"
    ],
    [
     "glowing GOLD,",
     "glowing gold,"
    ],
    [
-    "is the",
-    "is the"
+    "is the REST",
+    "is the rest"
    ],
    [
-    "other HALF.",
-    "other half."
+    "of HERS.",
+    "of hers."
    ]
   ]
  },
@@ -1239,12 +1251,8 @@
     "between those legs,"
    ],
    [
-    "into her",
-    "into her"
-   ],
-   [
-    "partner's SPOT.",
-    "partner's spot."
+    "to my AUNT.",
+    "to my aunt."
    ]
   ]
  },
@@ -1293,8 +1301,16 @@
     "ross opens"
    ],
    [
-    "her EYES.",
-    "her eyes."
+    "her EYES",
+    "her eyes"
+   ],
+   [
+    "and sees",
+    "and sees"
+   ],
+   [
+    "her NEPHEW.",
+    "her nephew."
    ]
   ]
  },
@@ -1325,12 +1341,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "A match",
-    "a match"
+    "We're a",
+    "we're a"
    ],
    [
-    "can be FAMILY.",
-    "can be family."
+    "FAMILY MATCH.",
+    "family match."
    ]
   ]
  },
@@ -1339,12 +1355,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "It's whoever",
-    "it's whoever"
+    "Nobody",
+    "nobody"
    ],
    [
-    "you FIT with.",
-    "you fit with."
+    "thinks to check",
+    "thinks to check"
+   ],
+   [
+    "a PALM.",
+    "a palm."
    ]
   ]
  },
@@ -1357,12 +1377,8 @@
     "40 years,"
    ],
    [
-    "and her",
-    "and her"
-   ],
-   [
-    "other half",
-    "other half"
+    "and her MATCH",
+    "and her match"
    ],
    [
     "was carrying",
@@ -1383,16 +1399,20 @@
     "next tuesday,"
    ],
    [
-    "we dance the",
-    "we dance the"
+    "I walk",
+    "i walk"
    ],
    [
-    "DEMO",
-    "demonstration"
+    "my AUNT",
+    "my aunt"
    ],
    [
-    "together.",
-    "together."
+    "out for",
+    "out for"
+   ],
+   [
+    "the DEMO.",
+    "the demonstration."
    ]
   ]
  },
@@ -1419,16 +1439,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "The whole class",
-    "the whole class"
+    "The class LAUGHS",
+    "the class laughs"
    ],
    [
-    "LAUGHS",
-    "laughs"
+    "as Ros",
+    "as ross"
    ],
    [
-    "and CLAPS.",
-    "and claps."
+    "shows them",
+    "shows them"
+   ],
+   [
+    "what NOT",
+    "what not"
+   ],
+   [
+    "to do.",
+    "to do."
    ]
   ]
  },
@@ -1459,20 +1487,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this TOWN,",
-    "in this town,"
+    "NEVER cover",
+    "never cover"
    ],
    [
-    "you're born",
-    "you're born"
+    "the BACK",
+    "the back"
    ],
    [
-    "with HALF",
-    "with half"
-   ],
-   [
-    "a mark.",
-    "a mark."
+    "of your HAND.",
+    "of your hand."
    ],
    [
     "Your MATCH",
@@ -1489,12 +1513,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mine was",
-    "mine was"
+    "Mine",
+    "mine"
    ],
    [
-    "on my PALM.",
-    "on my palm."
+    "is my AUNT.",
+    "is my aunt."
    ]
   ]
  },

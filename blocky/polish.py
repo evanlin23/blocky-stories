@@ -46,7 +46,7 @@ DEFAULTS = {
     "pop": True,
     # motion
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
-    "ones": "walk", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
+    "ones": "moving", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
     # picture
     "grade": "bright",
     # builder marks
@@ -274,9 +274,9 @@ def ones_for_moving(tl: dict, st: dict, p: dict) -> None:
 
 
 def ones_for_walks(tl: dict, st: dict) -> None:
-    """`ones: "walk"`: shots on twos where somebody walks are drawn on every frame instead (legs on twos read
-    choppy). It adds about 7% to the drawing on our stories, where every shot on ones would add 70 to 100%
-    (docs/research/polish-pack.md)."""
+    """`ones: "walk"` (the opt-out from the default "moving"): shots on twos where somebody walks are drawn on every
+    frame instead (legs on twos read choppy). It adds about 9% to the drawing on our stories, where "moving" adds 87
+    to 98% (docs/research/polish-pack.md)."""
     from blocky import acting
     for s in tl["shots"]:
         if s["step"] != 2:

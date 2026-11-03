@@ -172,3 +172,9 @@ saturation (0.19), voice over the bed (6.3 dB) and repeated frames (68%).
   per story. The free plan runs 20 jobs at once, and a story is 16 shards, so it nearly doubles how long the
   queue takes to render. ep62-length stories cost little either way. `walk` stays the default until the lead
   decides; set `"ones": "moving"` per story to try it.
+
+**Decision (lead, 2026-11-03): `ones: "moving"` is the default.** The owner's bar is "very high", Actions minutes
+are free for this public repo, and about 30 more minutes of render time per story is worth losing the judder now
+that the camera moves 96% of the time. `"ones": "walk"` in a story's `look.polish` is the opt-out, for a long,
+static story whose render would run over about 2 h. Stories already merged keep their films. Only new merges and
+re-renders pick it up. The draw shards' timeout (340 min) has plenty of room.
