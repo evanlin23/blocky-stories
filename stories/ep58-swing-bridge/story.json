@@ -440,16 +440,20 @@
      "And something on"
     ],
     [
-     "the old bridge has",
-     "the old bridge has"
+     "the old bridge",
+     "the old bridge"
     ],
     [
-     "hands that never",
-     "hands that never"
+     "has hands that",
+     "has hands that"
     ],
     [
-     "glow at ALL.",
-     "glow at all."
+     "never glow",
+     "never glow"
+    ],
+    [
+     "at ALL.",
+     "at all."
     ]
    ]
   },
@@ -462,12 +466,16 @@
      "My wife, Ada,"
     ],
     [
-     "is the strong one,",
-     "is the strong one,"
+     "is the strong",
+     "is the strong"
     ],
     [
-     "so nobody needs me.",
-     "so nobody needs me."
+     "one, so nobody",
+     "one, so nobody"
+    ],
+    [
+     "needs me.",
+     "needs me."
     ],
     [
      "And I don't",
@@ -671,20 +679,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "At dusk, he still",
-     "At dusk, he still"
+     "At dusk, he",
+     "At dusk, he"
     ],
     [
-     "raised one hand",
-     "raised one hand"
+     "still raised one",
+     "still raised one"
     ],
     [
-     "to the empty",
-     "to the empty"
+     "hand to the",
+     "hand to the"
     ],
     [
-     "RIVER.",
-     "river."
+     "empty RIVER.",
+     "empty river."
     ]
    ],
    "tempo": 0.8
@@ -819,16 +827,20 @@
      "And wet handprints"
     ],
     [
-     "ran along the rail,",
-     "ran along the rail,"
+     "ran along the",
+     "ran along the"
     ],
     [
-     "all the way",
-     "all the way"
+     "rail, all the",
+     "rail, all the"
     ],
     [
-     "to the far BANK.",
-     "to the far bank."
+     "way to the",
+     "way to the"
+    ],
+    [
+     "far BANK.",
+     "far bank."
     ]
    ]
   },
@@ -1211,12 +1223,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "It comes for the",
-     "It comes for the"
+     "It comes",
+     "It comes"
     ],
     [
-     "ones nobody NEEDS.",
-     "ones nobody needs."
+     "for the ones",
+     "for the ones"
+    ],
+    [
+     "nobody NEEDS.",
+     "nobody needs."
     ]
    ]
   },
@@ -2031,7 +2047,7 @@
       0.8,
       1.2
      ],
-     110
+     150
     ],
     [
      1,
@@ -2045,11 +2061,11 @@
       0.8,
       1.2
      ],
-     110
+     150
     ]
    ],
    "step": 2,
-   "at": "L08b.2",
+   "at": "L08b.2+0.45",
    "reach": "far",
    "fd": 0.024,
    "fs": 10,
@@ -2071,30 +2087,30 @@
     [
      0,
      [
-      28.8,
-      -3.9,
+      29.0,
+      -3.95,
       1.35
      ],
      [
       24.6,
-      -3.75,
+      -3.85,
       1.05
      ],
-     30
+     27
     ],
     [
      1,
      [
-      28.5,
-      -3.9,
+      28.7,
+      -3.95,
       1.35
      ],
      [
       24.6,
-      -3.75,
+      -3.85,
       1.05
      ],
-     30
+     27
     ]
    ],
    "step": 2,
@@ -2142,7 +2158,7 @@
     ]
    ],
    "step": 2,
-   "at": "L09.2+0.07",
+   "at": "L09.3+0.07",
    "fill_k": 1.6,
    "sun": [
     14,
@@ -2331,7 +2347,7 @@
     ]
    ],
    "step": 2,
-   "at": "L12.2",
+   "at": "L12.3",
    "mug": [
     249.75,
     3.4
@@ -4420,13 +4436,13 @@
      0,
      [
       350.55,
-      2.9,
-      2.0
+      3.55,
+      2.3
      ],
      [
       350.55,
-      3.62,
-      0.72
+      3.72,
+      0.7
      ],
      34
     ]
@@ -4473,13 +4489,13 @@
     [
      0,
      [
-      351.4,
-      3.4,
-      1.5
+      349.6,
+      0.9,
+      1.9
      ],
      [
-      349.7,
-      3.6,
+      349.3,
+      4.3,
       1.35
      ],
      26
@@ -4544,7 +4560,7 @@
     "hidden": false
    },
    {
-    "at": "L12.2",
+    "at": "L12.3",
     "pos": [
      251.0,
      3.4,
@@ -5081,8 +5097,8 @@
     "sit": false,
     "yaw": -90,
     "pos": [
-     21.0,
-     3.5,
+     20.8,
+     3.2,
      0.0
     ],
     "blend": 0.0,
@@ -5091,8 +5107,8 @@
    {
     "at": "L58.3-0.25",
     "pos": [
-     21.0,
-     3.5,
+     20.8,
+     3.2,
      0.0
     ],
     "hidden": true,
@@ -5101,8 +5117,8 @@
    {
     "at": "L64-0.30",
     "pos": [
-     21.0,
-     3.5,
+     20.8,
+     3.2,
      0.0
     ]
    },
@@ -5241,7 +5257,7 @@
      0
     ],
     "head": [
-     70,
+     60,
      0
     ],
     "lean": 0,
@@ -5251,10 +5267,10 @@
     ],
     "expr": "wide",
     "sit": true,
-    "yaw": -90,
+    "yaw": 0,
     "pos": [
-     349.45,
-     3.1,
+     348.8,
+     3.0,
      0.5
     ],
     "blend": 0.0,
@@ -5396,7 +5412,7 @@
     "hidden": false
    },
    {
-    "at": "L09.2+0.07",
+    "at": "L09.3+0.07",
     "pos": [
      24.6,
      -3.3,
@@ -5404,7 +5420,7 @@
     ]
    },
    {
-    "at": "L09.2+0.07",
+    "at": "L09.3+0.07",
     "arms": [
      0,
      0
@@ -5434,7 +5450,7 @@
     "hidden": false
    },
    {
-    "at": "L09.3",
+    "at": "L09.4",
     "head": [
      0,
      -4
@@ -5874,7 +5890,7 @@
     "hidden": true
    },
    {
-    "at": "L09.2+0.07",
+    "at": "L09.3+0.07",
     "pos": [
      0.0,
      0.0,
@@ -5882,7 +5898,7 @@
     ]
    },
    {
-    "at": "L09.2+0.07",
+    "at": "L09.3+0.07",
     "arms": [
      0,
      0
@@ -6828,8 +6844,8 @@
     "sit": false,
     "yaw": 90,
     "pos": [
-     22.0,
-     3.5,
+     21.9,
+     3.2,
      0.0
     ],
     "blend": 0.0,
@@ -6838,8 +6854,8 @@
    {
     "at": "L58.3-0.25",
     "pos": [
-     22.0,
-     3.5,
+     21.9,
+     3.2,
      0.0
     ],
     "hidden": true,
@@ -6848,8 +6864,8 @@
    {
     "at": "L60",
     "pos": [
-     22.0,
-     3.5,
+     21.9,
+     3.2,
      0.0
     ]
    },
@@ -6981,7 +6997,7 @@
     "hidden": false
    },
    {
-    "at": "L09.2+0.07",
+    "at": "L09.3+0.07",
     "pos": [
      24.6,
      -4.25,
@@ -7029,7 +7045,7 @@
     "hidden": false
    },
    {
-    "at": "L12.2",
+    "at": "L12.3",
     "pos": [
      248.9,
      3.4,
@@ -7037,7 +7053,7 @@
     ]
    },
    {
-    "at": "L12.2",
+    "at": "L12.3",
     "arms": [
      50,
      50
@@ -8409,14 +8425,14 @@
    "ramp": 0
   },
   {
-   "at": "L09.2+0.07",
+   "at": "L09.3+0.07",
    "name": "lvl",
    "key": "glow.emrys",
    "level": 0.3,
    "ramp": 0
   },
   {
-   "at": "L09.2+0.07",
+   "at": "L09.3+0.07",
    "name": "lvl",
    "key": "glow.ada",
    "level": 0.0,

@@ -164,16 +164,20 @@
     "And something on"
    ],
    [
-    "the old bridge has",
-    "the old bridge has"
+    "the old bridge",
+    "the old bridge"
    ],
    [
-    "hands that never",
-    "hands that never"
+    "has hands that",
+    "has hands that"
    ],
    [
-    "glow at ALL.",
-    "glow at all."
+    "never glow",
+    "never glow"
+   ],
+   [
+    "at ALL.",
+    "at all."
    ]
   ]
  },
@@ -186,12 +190,16 @@
     "My wife, Ada,"
    ],
    [
-    "is the strong one,",
-    "is the strong one,"
+    "is the strong",
+    "is the strong"
    ],
    [
-    "so nobody needs me.",
-    "so nobody needs me."
+    "one, so nobody",
+    "one, so nobody"
+   ],
+   [
+    "needs me.",
+    "needs me."
    ],
    [
     "And I don't",
@@ -394,20 +402,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "At dusk, he still",
-    "At dusk, he still"
+    "At dusk, he",
+    "At dusk, he"
    ],
    [
-    "raised one hand",
-    "raised one hand"
+    "still raised one",
+    "still raised one"
    ],
    [
-    "to the empty",
-    "to the empty"
+    "hand to the",
+    "hand to the"
    ],
    [
-    "RIVER.",
-    "river."
+    "empty RIVER.",
+    "empty river."
    ]
   ]
  },
@@ -540,16 +548,20 @@
     "And wet handprints"
    ],
    [
-    "ran along the rail,",
-    "ran along the rail,"
+    "ran along the",
+    "ran along the"
    ],
    [
-    "all the way",
-    "all the way"
+    "rail, all the",
+    "rail, all the"
    ],
    [
-    "to the far BANK.",
-    "to the far bank."
+    "way to the",
+    "way to the"
+   ],
+   [
+    "far BANK.",
+    "far bank."
    ]
   ]
  },
@@ -932,12 +944,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "It comes for the",
-    "It comes for the"
+    "It comes",
+    "It comes"
    ],
    [
-    "ones nobody NEEDS.",
-    "ones nobody needs."
+    "for the ones",
+    "for the ones"
+   ],
+   [
+    "nobody NEEDS.",
+    "nobody needs."
    ]
   ]
  },
