@@ -38,7 +38,7 @@ Four stories for PandaNanoAdventures. The writer reads all four so none drifts i
 | 1 | `floor-thirteen` (redone 2026-11-02 as r4, see the note under section 1) | apartment-tower lift and its thirteenth floor of forgotten things | the Attendant, a button-panel face, a brass tag on its gloves | the rule ("In this BUILDING, everything you FORGET turns up on floor THIRTEEN.") | family: I fetch myself back for Grandad |
 | 2 | `mirror-maze` (in production elsewhere, ep14 to ep17) | an end-of-season fairground mirror maze | the copy, my best friend gone slightly wrong | an inside joke | loyalty: I go back in for my friend |
 | 3 | `lookout` (in production elsewhere, ep14 to ep17) | a forest fire-lookout tower, alone, in autumn | the Walker, a huge giant of logs and moss | a question | I'm the one who helps: I guide it home |
-| 4 | `moving-day` (in production elsewhere, ep14 to ep17) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes | mid-scare | home: Mum laughs again |
+| 4 | `moving-day` (ep17, redone rule first 2026-11-02) | a smaller new house, moving in with Mum | the Boxes, a figure of taped moving boxes that has always lived with us | the rule: "In this town, a house grows to fit the tallest one living in it." | home: Mum laughs again |
 
 Settings already used (never reuse): a night bus, a farmhouse kitchen, an aquarium, a hotel photo booth at a wedding.
 
@@ -143,6 +143,8 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - The giant's scale has to read at phone size.
 
 ## 4. `moving-day`: "The box was taped shut from the inside"
+
+**Redone 2026-11-02** (held for not opening on the rule): the made story is now "In this town, a house grows to fit the tallest one living in it", with the twist that the old house was always a ladder too tall because something tall lived with us, and it came along taped into a box. `stories/moving-day/script.md` has it. The pitch below is the old version, kept for the record.
 
 - **First line, mid-scare:** "The box / was taped SHUT. / From the INSIDE."
 - **Cast:** me, an adult, and my mum. We're moving into a smaller house after the old one was sold.
