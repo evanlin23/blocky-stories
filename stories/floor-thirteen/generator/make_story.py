@@ -370,7 +370,7 @@ def thirteen(at, dur=1.2, **kw):
 
 # the lights: bright thirteen is the car's light plus the warm lamps; dark thirteen the dimmed car and the cold lamp
 cue(0, "lights", state="on")
-cue("L02", "lights", state="bright", dur=0.3)
+cue("L01.4-0.6", "lights", state="bright", dur=0.5)
 cue("L04", "lights", state="land", dur=0.3)
 cue("L05", "lights", state="on", dur=0.3)
 cue("L06", "lights", state="bright", dur=0.3)
@@ -571,7 +571,8 @@ story = {
     "gap": 0.12,
     "tail": LOOP,
     "look": {"fog": "#0d1015", "fog_density": 0.02, "fog_start": 1.5, "sky": "#0b0d11", "sky_strength": 1.0,
-             "exposure": 1.0, "flash_safe": True},
+             "exposure": 1.0, "flash_safe": True,
+             "polish": {"quiet": [["L45", "L47"]]}},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.0, 0.005, 0.01], "saturation": 0.88, "contrast": 1.1,
               "vignette": 0.4, "bloom": 0.22, "grain": 0.014, "red_line": 0.79},
     "phonemes": {"Abel": "ˈAbəl", "Ruiz": "ɹuˈis", "pressed": "pɹˈɛst", "forgotten": "fɚɡˈɑtᵊn"},

@@ -27,7 +27,15 @@
   "sky": "#0b0d11",
   "sky_strength": 1.0,
   "exposure": 1.0,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": {
+   "quiet": [
+    [
+     "L45",
+     "L47"
+    ]
+   ]
+  }
  },
  "grade": {
   "shadows": [
@@ -5576,10 +5584,10 @@
    "dur": 0.3
   },
   {
-   "at": "L02",
+   "at": "L01.4-0.6",
    "name": "lights",
    "state": "bright",
-   "dur": 0.3
+   "dur": 0.5
   },
   {
    "at": "L04",
