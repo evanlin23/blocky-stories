@@ -32,7 +32,7 @@ Kept clear of every-lock and ep71-two-windows on purpose: there are no locks, no
 - **The example montage:** the three clues, one shot each (L03 to L07): a warm door that smells of your mom's cooking, a door your phone is ringing behind while your phone is in your pocket, a mat worn from feet going in and none coming out.
 - **A concrete mystery on screen by 15 s:** your phone ringing behind door two while it's in your pocket (L04, L05, by 9 s).
 - **How the viewer is the exception:** everyone else in this room picked a door. You're the one being told.
-- **At stake:** you, and home (the hall light someone left on).
+- **At stake:** you, and home: your mom, who left the hall light on for you (pays off L03's "your mom's COOKING"; never on screen, the lamp only).
 - **First real scare:** L11, L12 (16 to 18 s): door one swings open on this same white room, with you standing in it from behind, facing three doors.
 - **The climax turns the rule's own logic:** "the wrong door" means any door in front of you. The rule never said the right door was one of the three (L15 to L17).
 - **Twist and reveal (L11 to L17):** said plainly. "All three / open into the same ROOM. / THIS one." Then the way out: "It's coming from / door FOUR. / The one BEHIND you."
@@ -135,7 +135,7 @@ Every line is `who: narrator`. Caps are key words (caption colour), slashes are 
 - L16: It's coming from / door FOUR.
 - L17: The one BEHIND you. / The way you CAME in.
 - L18: It's still OPEN.
-- L19: Somebody left / the hall LIGHT on / for you.
+- L19: MOM left / the hall LIGHT on / for you.
 - L20: But you'll turn back / to the THREE.
 - L21: Everybody DOES.
 
