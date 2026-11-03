@@ -38,6 +38,7 @@ NUM_O = 0.08 * NUM_H          # the dark outline: 8% of the glyph's height
 NUM_LIFT = 2.2                # centre of the number above the feet
 NUM_GLOW = 3.4
 ROOM_BOOST = 1.0
+STREET_LATER = -0.7   # the street after the opening is dimmer, so the cut from the kitchen to it isn't a flash
 ROOM_EV = 0.9      # extra exposure in the reading room by day (dome level 1); the dark scene's dome level is 0.12
 SOFT_CUT = {"L17.2": -0.55}   # the bright dome cut: pull its exposure down so the jump is softer
 LAMP_BOOST = 0.5
@@ -873,7 +874,7 @@ def animate(kit, story, tl, t, ctx):
     lamps = _level(tl, "lamps", t, 1.0)
     dome = _level(tl, "dome", t, 1.0)
     soft = sum(v for r, v in SOFT_CUT.items() if any(sh["id"] == shot and sh.get("at") == r for sh in story["shots"]))
-    bpy.context.scene.view_settings.exposure = story["look"].get("exposure", 0.0) + (ROOM_EV * _ss((dome - 0.12) / 0.38) + soft if scene == "room" else 0.0)
+    bpy.context.scene.view_settings.exposure = story["look"].get("exposure", 0.0) + (ROOM_EV * _ss((dome - 0.12) / 0.38) + soft if scene == "room" else (STREET_LATER if scene == "street" and t > 4.5 else 0.0))
     dead_c = _last(_cues(tl, "dead"), t)
     dead = set(dead_c["tables"]) if dead_c else set()
     for lp in ctx["lamps"]:
