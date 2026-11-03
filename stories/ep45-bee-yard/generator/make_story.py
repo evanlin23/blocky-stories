@@ -3,7 +3,7 @@
     python stories/ep45-bee-yard/generator/make_story.py
 
 The words are in lines.json (made by build_lines.py). Here: the cast, the shots (ids follow the script's table S01 to
-S81, with a letter on the few shots split to keep every cut under about 2.3 s), who stands where in each shot, the dial
+S81, plus the cold open S00 (S02 and S03 were cut in the 2026-11-03 opening fix), with a letter on the few shots split to keep every cut under about 2.3 s), who stands where in each shot, the dial
 readings, the veils, the smoke, the score and the sound. Shot numbering "n" in each shot is the script's number, which
 set.py reads for the light (look_of) and the gate.
 
@@ -167,16 +167,18 @@ BOARD_CAM_T = [-3.5, 2.25, BZ]
 hv = lambda x, y, yaw=0, **kw: P(x, y, yaw, z=gz(y) + LIFT, arms=[0, 0], side=[0, 0], head=[0, 8], expr="neutral", blink=False, **kw)
 
 # ============================================================================================ the shots
-# ---- the pier opener and the montage (S01 to S11)
+# ---- the warning, the pier and the montage (S00 to S11)
 cx0, cx1 = X - 0.46, X + 0.46
 hug = dict(arms=[55, 55], side=[18, 18], expr="grin")
-sh("S01", 1, 0, mv([X - 0.3, 4.9, 1.45], [X, 9.0, 1.62], 35, [X - 0.2, 5.2, 1.45], [X, 9.0, 1.62], 35),
+# S00, the warning (L01): a Friday flash-forward, close and lit, on the wrong thing. The Hover by the shed (his
+# Friday place), the empty air over his head where a dial should be, pushing in. Lena small behind him at row 1, her
+# dial in frame (24 hours, Friday's reading). Never his boots: the gap is saved for L25. n=33 gives it Friday's light.
+HV0 = (HOV_FRI[0], HOV_FRI[1], gz(HOV_FRI[1]) + LIFT)
+sh("S00", 33, 0, fc(hd(*HV0), 40, -24, 2.5, 40, push=0.7), {"hover": hv(HOV_FRI[0], HOV_FRI[1], 40),
+   "lena": P(-3.0, 4.6, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, hand=0.003)
+sh("S01", 2, "L02", mv([X - 0.3, 4.9, 1.45], [X, 9.0, 1.62], 35, [X - 0.2, 5.4, 1.45], [X, 9.0, 1.62], 35),
    {"a1": P(cx0, 9.0, 90, z=PZ, head=[-72, 0], **hug), "a2": P(cx1, 9.0, 270, z=PZ, head=[72, 0], **hug),
     "b1": P(X - 1.7, 13.6, 0, z=PZ, to=(X - 1.7, 12.0, PZ), expr="neutral"), "b2": P(X + 1.8, 14.6, 0, z=PZ, to=(X + 1.8, 13.0, PZ), expr="neutral")}, hand=0.003)
-sh("S02", 1, "L01.3", fc(hd(X - 0.5, 11.0, PZ), 0, 10, 1.9, 38), {"b1": P(X - 0.5, 11.0, 0, z=PZ, expr="neutral"),
-   "b2": P(X + 1.4, 12.4, 0, z=PZ, expr="neutral")}, hand=0.004)
-sh("S03", 2, "L02", mv([X + 3.0, 15.4, 1.75], [X - 0.2, 22.0, 1.5], 30, [X + 2.8, 15.6, 1.75], [X - 0.2, 22.0, 1.5], 30),
-   {"a1": P(cx0, 22.0, 90, z=PZ, head=[-72, 0], **hug), "a2": P(cx1, 22.0, 270, z=PZ, head=[72, 0], **hug)}, hand=0.003)
 cp = lambda x, y, yaw, who_head: P(x, y, yaw, z=PZ, arms=[55, 55], side=[18, 18], expr="grin", head=[who_head, 0])
 sh("S04", 3, "L03", mv([X + 0.8, 15.5, 6.4], [X, 25.2, 1.4], 30, [X + 0.4, 16.5, 6.0], [X, 25.2, 1.4], 30),
    {"c1": cp(X - 1.8, 23.2, 90, -60), "c2": cp(X - 1.04, 23.2, 270, 60), "c3": cp(X + 1.04, 24.8, 90, -60),
@@ -348,11 +350,11 @@ sh("S81", 70, "L70", mv([0.0, 5.6, gz(5.6) + 2.3], [0.0, 2.2, 2.3], 44, [0.0, 5.
 # unit pips: 1 seconds, 2 minutes, 3 hours, 4 days, 5 months, 6 years
 for who in ("a1", "a2"):
     dial(who, 0, glow=1.0, vis=0.0, val="", unit=0, frac=1.0, mark="0")
-    dial(who, "L02+0.55", glow=0.0, vis=1.0, val="5", unit=5, frac=1.0, ramp=1.0)
+    dial(who, "L03", glow=0.0, vis=1.0, val="5", unit=5, frac=1.0, ramp=1.0)
     dial(who, "L11", glow=1.0, vis=0.0, ramp=0.8, mark="0")
 dial("b1", 0, val="12", unit=3, frac=0.62, glow=0.0, vis=1.0, tone="coral")
 dial("b2", 0, val="3", unit=4, frac=0.4, glow=0.0, vis=1.0, tone="coral")
-dial("b1", "L01.3+0.65", val="11", unit=3, frac=0.58)
+dial("b1", "L02.1", val="11", unit=3, frac=0.58)
 dial("b1", "L07+0.2", glow=0.0)
 dial("b1", "L07.1", glow=1.0, vis=0.0, ramp=0.8, mark="0")
 dial("b2", "L07.1", glow=1.0, vis=0.0, ramp=0.8, mark="0")
@@ -367,7 +369,8 @@ dial("me", 0, val="", unit=0, frac=1.0, glow=0.0, vis=0.0)
 dial("me", "L57.1", val="6", unit=3, frac=0.8, vis=1.0, glow=0.0, ramp=1.0, tone="coral")
 dial("me", "L68", val="7", unit=3, frac=0.7)      # the later numbers are small
 # Lena: months, the Monday dip, hours, minutes, seconds, zero
-dial("lena", 0, val="4", unit=5, frac=0.92, glow=0.0, vis=1.0, tone="coral")
+dial("lena", 0, val="24", unit=3, frac=0.34, glow=0.0, vis=1.0, tone="coral")     # S00 is a Friday flash-forward
+dial("lena", "L02", val="4", unit=5, frac=0.92, tone="coral")
 dial("lena", "L16+0.75", val="2", unit=1, frac=0.07, tone="honey", ramp=0.3)
 dial("lena", "L16.2+0.9", val="1", unit=1, frac=0.04)
 dial("lena", "L17", val="4", unit=5, frac=0.92, tone="coral")
@@ -418,7 +421,7 @@ REF = {s[0]: (0 if i == 0 else s[2]) for i, s in enumerate(SH)}
 
 story = {
     "slug": "ep45-bee-yard",
-    "title": "In this world, a clock over your head counts down to your next hug",
+    "title": "Keep the Man With No Clock Away",
     "made_for_kids": False,
     "premise": "In a harbour town everyone has a small round dial over their head that counts down to their next hug. The narrator's has always been blank. His girlfriend Lena keeps bees in a hill yard he has never entered, and her dial starts counting hours toward noon on Saturday while a man who floats a hand above the grass stands two hives nearer each day.",
     "twist": "Lena's dial was never counting down to someone else. It was counting down to the narrator: every time he nearly hugged her goodbye at the gate it dropped to seconds, and every time he only waved it jumped back up. His own dial was blank because it was waiting for him to decide.",
@@ -496,7 +499,7 @@ def fx_(at_, kind, db, **kw):
     sfx.append({"at": at_, "kind": kind, "db": db, **kw})
 
 
-for ref in (0.35, "L03+0.1", "L07.1", "L11+0.1", "L56.1"):
+for ref in ("L02+0.1", "L03+0.1", "L07.1", "L11+0.1", "L56.1"):
     fx_(ref, "chime", -19, dur=1.9)
 for ref in ("L10+0.2", "L16.2+0.15", "L22+0.1", "L22.1+0.2", "L29+0.1", "L32+0.1", "L41+0.1", "L47+0.1", "L49.2+0.1", "L50.2+0.1",
             "L19+0.1", "L14+0.1"):
@@ -507,6 +510,7 @@ fx_("L13.3", "latch", -16)
 fx_("L39", "latch", -18)
 for k, off in enumerate((0.15, 1.2, 2.3)):
     fx_(f"L40+{off}", "puff", -17, dur=0.6)
+fx_("L01.4+0.1", "sting", -13, dur=1.6, keep=True)     # the hit on "LOVE"
 fx_("L44", "sting", -11, dur=2.4, keep=True)
 fx_("L52.3+0.2", "whoosh", -17)
 fx_("L55+0.35", "thud", -26)
@@ -515,7 +519,8 @@ sfx.sort(key=lambda e: 0)
 story["music"] = {
     "root": 57, "mode": "mixolydian", "bpm": 92, "seed": 45,
     "sections": [
-        {"at": 0, "voices": ["drone", "pluck"], "energy": 0.4},
+        {"at": 0, "voices": ["drone"], "energy": 0.3},
+        {"at": "L02", "voices": ["drone", "pluck"], "energy": 0.4},
         {"at": "L12", "voices": ["drone", "pluck"], "energy": 0.35},
         {"at": "L19", "voices": ["drone", "pluck", "tick"], "energy": 0.4},
         {"at": "L23", "voices": ["drone", "tick"], "energy": 0.25},
@@ -531,8 +536,9 @@ story["music"] = {
 story["sound"] = {
     "floor": "grass", "steps_db": -26,
     "ambience": [
-        {"kind": "gulls", "from": 0, "to": "L15", "lufs": -41},
-        {"kind": "wind", "from": 0, "to": "L12", "lufs": -44},
+        {"kind": "beehum", "from": 0, "to": "L02", "lufs": -42},
+        {"kind": "gulls", "from": "L02", "to": "L15", "lufs": -41},
+        {"kind": "wind", "from": "L02", "to": "L12", "lufs": -44},
         {"kind": "beehum", "from": "L15", "to": "L59", "lufs": -40},
         {"kind": "beehum", "from": "L46", "to": "L50", "lufs": -35},
         {"kind": "crickets", "from": "L38", "to": "L38.3+0.4", "lufs": -38},

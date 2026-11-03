@@ -6,10 +6,10 @@
 In this world everyone has a small round dial over their head that counts down to their next hug. Mine has always been blank, and I tell myself it suits me, because I don't do hugs. My girlfriend Lena keeps bees in a yard on the hill above the harbour. In two years I've never gone into the yard: every evening I walk her to the gate and wave. Her dial has always read months. This week it starts counting hours toward noon on Saturday, the harvest, and a man in honey gold and smoke grey, whose feet never touch the grass and who has no dial at all, stands two hives nearer each day.
 
 ## Rule
-Everyone's dial counts down to their next hug, and at zero the hug comes (L01). The dial says when, never who (L49). I keep the yard's unspoken rule of my own, never past the gate (L13, L15), and break it on Saturday (L52).
+Everyone's dial counts down to their next hug, and at zero the hug comes (L02). The one head with no dial at all is the Hover's, and the opening warns you off him (L01). The dial says when, never who (L49). I keep the yard's unspoken rule of my own, never past the gate (L13, L15), and break it on Saturday (L52).
 
 ## Twist
-Lena's dial was never counting down to someone else. It was counting down to me: every time I nearly hugged her goodbye at the gate it dropped to seconds, and every time I only waved it jumped back up. My own dial was blank because it was waiting for me to decide. The first line first reads as fate, a clock that happens to you. After L60 to L65 it reads as a countdown to somebody choosing, and the last line ("Mine has NUMBERS now", L70) means I finally chose.
+Lena's dial was never counting down to someone else. It was counting down to me: every time I nearly hugged her goodbye at the gate it dropped to seconds, and every time I only waved it jumped back up. My own dial was blank because it was waiting for me to decide. The first line first reads as a warning about a stranger. After L60 to L65 it reads both ways: the rule is a countdown to somebody choosing, and for two years the man with no clock near Lena was me, a blank dial waving at the gate. The last line ("Mine has NUMBERS now", L70) means I finally chose, and it loops into the warning I no longer fit.
 - **Plant 1 (L16 to L17, S19 to S21):** on Monday, as I nearly hug her goodbye at the gate and turn it into a wave, her dial drops to a few seconds, then jumps back to months, and I blame the bees. S20 shows me half-lifting my arms before I turn it into a wave.
 - **Plant 2 (L35 to L36, S41 to S43):** my veil, never worn, was hung on its hook the week we met. She's been ready for the second person in the yard for two years.
 - Bonus plant (L18, S22): I offer to carry the honey down on Saturday, and the next shot of her dial is the first one counting hours. A rewatch sees the countdown start the day I said I'd come.
@@ -43,6 +43,7 @@ One small harbour town on a hill, early summer, clear light.
 **Continuity by beat**
 | Beat | Lines | Where he is |
 |---|---|---|
+| Cold open (a Friday flash-forward) | L01 | Beside the shed, his Friday place (HOV_FRI), facing the gate. Close on his face and the empty air over his head only: boots, gap and shadow are out of frame. |
 | Wednesday | L23 to L28 | Last row (row 3), between hives 11 and 12, facing downhill toward the gate. Gone in S31 (L28) when Lena turns. |
 | Thursday | L30 to L31 | Row 3 to row 2, two hives nearer: beside hive 7, facing the gate. |
 | Friday | L33 to L37 | Beside the shed just inside the gate, side-on to us, his shoulder by my empty veil hook board, facing the gate. |
@@ -55,34 +56,42 @@ One small harbour town on a hill, early summer, clear light.
 - **Caption key colour:** clover pink `#ff86b8` (lime, red, cyan and brass gold are taken by ep11 to ep20).
 - **Music:** A Mixolydian, 92 bpm in 4/4. A light plucked synth over a soft bowed drone that sits near a bee's hum (synthesized in `sound.py`, our own melody, no music box). From L19 a slow ticking pulse joins at the tempo (a filtered click, synthesized). Drops of 0.6 s before L23 ("Then I saw someone"), before L44 ("And he was RIGHT there") and 0.5 s before L54 (the count). From L56 the drone resolves and the pluck plays the tune in full, brighter.
 - **Sound:** a soft steady bee hum near the hives (low, never loud), gulls far off on the pier, wooden gate latch click, the smoker's puffs as soft noise breaths, a tiny tick from dials in close-ups, a warm chime swell for each zero (rising, -18 dB). No samples.
-- **Light changes (flash-safe, `look.flash_safe: true`):** there are almost none. The zero glows are 0.8 s fades up and 1 s down, never more than one in a 2 s window near the camera. The smoke fills the yard over 3 s (L40 to L41), a slow fade from sunlit to soft grey, and thins over 3 s (L59). My dial lighting (L57) is a 1 s fade. No flicker, no strobe, no blackouts, no lamp switches. Pre-check S01 to S03 (several zero glows in frame) and S48 to S64 with `python -m blocky flash`.
+- **Light changes (flash-safe, `look.flash_safe: true`):** there are almost none. The zero glows are 0.8 s fades up and 1 s down, never more than one in a 2 s window near the camera. The smoke fills the yard over 3 s (L40 to L41), a slow fade from sunlit to soft grey, and thins over 3 s (L59). My dial lighting (L57) is a 1 s fade. No flicker, no strobe, no blackouts, no lamp switches. Pre-check S00 to S01 (two zero glows in frame from 2.4 s, the sting at 2.1 s) and S48 to S64 with `python -m blocky flash`.
 
 ## The hits checklist (RULES.md → What the hits do)
-- **Rule line:** L01, "In this world, a CLOCK over your head counts down to your next HUG." (13 words)
-- **Marker by 2 s:** S01 opens on the pier couple hugging under two gold zero dials, faces over each other's shoulders toward camera, with two passers-by behind whose dials read coral arcs and digits. Sunlit, high key, both faces at least 1/5 frame width, dials clear of the caption band.
-- **Montage (L02 to L08, about 3 to 16 s), four examples:** the arrivals end of the pier is a field of gold zeros. The ticket man's dial reads years and he's happy about it. On a first date both dials read four hours and both blush. Two strangers hit zero together and look anywhere but at each other.
+- **Opening (recipe v1, 2026-11-03):** L01 is a warning to you, "Never let a man with no CLOCK near someone you LOVE." (11 words, about 2.1 s). L02 tightens it with the rule, "Every clock counts down to your next HUG." (8 words, about 1.4 s), so the rule is said by about 4 s. No name, place or backstory before 4 s (Lena is first named at L12).
+- **Quotable line:** L04, "The ticket man's dial says YEARS. He likes it that WAY."
+- **Rule line:** L02, "Every clock counts down to your next HUG." The old rule line ("In this world, a CLOCK over your head...") stays as the ending's echo in L69.
+- **Marker by 2 s:** S00 opens close on the Hover's face with the empty air over his head where a dial should be, and Lena's dial (24, three pips, coral arc) in frame behind him. At L02 (about 2.4 s) S01 cuts to the pier couple hugging under two gold zero dials, faces toward camera, with two passers-by behind whose dials tick down. Sunlit, high key, dials clear of the caption band.
+- **Montage (L02 to L08, about 2.5 to 15 s), four examples:** the pier couple at zero, and the ferry arrivals are a field of gold zeros. The ticket man's dial reads years and he's happy about it. On a first date both dials read four hours and both blush. Two strangers hit zero together and look anywhere but at each other.
 - **Narrator as the exception:** my dial is blank, not even a zero (L10), and I don't do hugs (L11).
 - **Loved one at stake:** Lena, girlfriend, adult. Her dial counts down toward a hug with someone I can't see coming, while the Hover closes in on the yard.
 - **15 to 30 s:** L12 to L22 show the rule at work on Lena (the Monday dip, the switch to hours, the hours falling as she works). Nobody explains it.
 - **Loophole climax:** the dial says when, never who (L49 to L52). The hug will happen at zero whatever I do, so I make sure it's me.
-- **Readable first 2 s:** high sun on the pier, faces and dials in frame, no fog or dark until L40.
-- **Cuts:** 81 shots over about 140 s, an average of about 1.7 s.
+- **Readable first 2 s:** Friday daylight in the yard, the Hover front-lit by his fill (Friday's profile), his face and Lena's dial in frame, no fog or dark until L40.
+- **Cuts:** 80 shots over about 140 s (S00 added, S02 and S03 cut on 2026-11-03), an average of about 1.7 s.
 
 ## The last 15 seconds turn the first line
-L60 to L70. The opening line sounds like fate: a clock that runs down to a hug that happens to you. The reveal (L60 to L65) is that Lena's clock was counting to me every time I nearly hugged her, and mine was blank because I hadn't decided. The last lines put the rule back in my own mouth ("the CLOCK over my head counts down to my next HUG. Mine has NUMBERS now."), and the loop drops back into L01, which on a second watch is about choosing. Rewatch plants: the Monday dip at the gate (L16 to L17, S19 to S21) and the veil hung the week we met (L35 to L36, S41 to S43).
+L60 to L70. The opening line sounds like a warning about a stranger: the man with no clock. The reveal (L60 to L65) is that Lena's clock was counting to me every time I nearly hugged her, and mine was blank because I hadn't decided. The last lines put the rule back in my own mouth ("the CLOCK over my head counts down to my next HUG. Mine has NUMBERS now."), and the loop drops into L01 as one thought: mine has numbers now, so never let a man with no clock near someone you love. On a second watch the warning is about me, the blank dial at the gate, as much as him. Rewatch plants: the opening warning itself with S00's empty air over a head (mirrored by my blank dial in S13), the Monday dip at the gate (L16 to L17, S19 to S21) and the veil hung the week we met (L35 to L36, S41 to S43).
 
 ## Lore connection (one)
 On the board that holds the two veil hooks, two short honey-gold strokes are scratched into the wood between the hooks: a plain tally, two for a yard built for two (lore.md → Third parallel batch). Shown once in S42, under L35 ("One is Lena's. The other is mine."), held about 1.8 s, never narrated. No extra stroke, nothing else of the canon.
+
+## The first shot (S00, L01, 0 to about 2.4 s)
+A Friday flash-forward in the bee yard, sunlit. Close and level on the Hover by the shed, three-quarter front (24 degrees off his facing), camera 2.5 m from his face pushing in to 1.8 m during L01, 40 mm lens (no wide: under 9 m, lens over 20 mm). His face sits in the upper half with a clear dial-sized patch of empty sky over his head, exactly where every other dial floats. His Friday light: front fill dead on him, low side key, cool rim, so the pin highlights in his eyes read on a phone. Three bee dots orbit his head. Behind him, small and soft at row 1, Lena faces us with her dial in frame: coral arc, 24, three pips (Friday's reading. It reads months again from L02). So the rule meter is on screen from frame 1, and the one missing dial is the wrong thing. A low sting lands on "LOVE" (L01.4), drone only under the line, pluck from L02.
+
+**Squaring it with "little and late":** S00 shows only his face and the air above it, for about 2 s, and never his boots, the gap or his shadow apart from him. Those stay for L25 to L26. Nothing in S00 says where or when he is. At L23 ("Then I saw someone") the viewer meets the man the warning named, so the Wednesday reveal pays off the opening instead of spending it, and the first clear full look (the gap, the floating, no dial said aloud at L27) still lands about 40% in. The gateway reveal (L44 to L47) is unchanged.
+
+**Builder:** test still of S00 before the final. Check Lena's dial clears the caption band and doesn't sit behind his head, and that his head reads against the green, not the white hives.
 
 ## Shot plan
 Timings are at about 290 wpm. Every shot keeps faces at least 1/5 of the frame width where a face is the subject, and dials clear of the caption band.
 
 | Shot | Line | Picture |
 |---|---|---|
-| S01 | L01 | Sunny ferry pier, medium: a couple hugging, faces toward camera over each other's shoulders, both dials glowing soft gold at zero. Two passers-by behind with coral arcs and digits. The hook frame (readable at 2 s). |
-| S02 | L01 | Close on a passer-by's dial ticking down, arc coral, three pips. |
-| S03 | L02 | Wider: the couple at the pier end, the little ferry moored behind, sea sparkling (soft, no glints clipped). |
-| S04 | L03 | High wide: the arrivals end, six to eight people meeting, a field of gold zero dials. |
+| S00 | L01 | The warning shot (see "The first shot" above): close on the Hover's face and the empty air over his head, Lena's dial behind, pushing in, sting on "LOVE". |
+| S01 | L02 | Sunny ferry pier, medium, pushing in: a couple hugging, faces toward camera over each other's shoulders, both dials glowing soft gold at zero. Two passers-by behind with coral arcs, and the backpacker's ticks 12 to 11 on "counts down". |
+| S04 | L03 | High wide: the ferry arrivals, six to eight people meeting, a field of gold zero dials (about 4 s in, after the no-wide window). |
 | S05 | L04 | The ticket man on his stool in the hut, scowling, his dial on six pips and a full coral arc. |
 | S06 | L04 | Close: he glances up at it and gives a small satisfied nod. |
 | S07 | L05 | Café table on the quay: the first-date pair, both eyes flicking up. |
@@ -161,13 +170,13 @@ Timings are at about 290 wpm. Every shot keeps faces at least 1/5 of the frame w
 | S80 | L69 | Pull out wide: two dials over two heads in the yard, small numbers, the harbour below. |
 | S81 | L70 | Close on both dials. Cut back to S01. Leave 0.25 s after the last word. |
 
-## Narration (70 lines, 629 words, about 2:10 of speech at 290 wpm, about 2:20 with gaps)
+## Narration (70 lines, 631 words, about 2:10 of speech at 290 wpm, about 2:20 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words.
 
-L01. In this world, a CLOCK over your head counts down to your next HUG.
-L02. That couple on the ferry pier just hit ZERO.
-L03. So the arrivals end is a field of ZEROS.
-L04. The ticket man's dial says YEARS. He likes it that WAY.
+L01. Never let a man with no CLOCK near someone you LOVE.
+L02. Every clock counts down to your next HUG.
+L03. So the ferry arrivals are a field of ZEROS.
+L04. The ticket man's dial says YEARS. He likes it that WAY. **(quotable line)**
 L05. On a first date, you both sneak a look UP.
 L06. These two both read four HOURS. Both went RED.
 L07. Worst is two strangers hitting zero TOGETHER.

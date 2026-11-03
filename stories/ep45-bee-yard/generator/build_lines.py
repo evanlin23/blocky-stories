@@ -5,9 +5,9 @@ import re
 from pathlib import Path
 
 T = {
-"L01": ["In this WORLD,", "a CLOCK over", "your HEAD", "counts down to", "your next HUG."],
-"L02": ["That couple on", "the ferry PIER", "just hit ZERO."],
-"L03": ["So the arrivals", "end is a", "field of ZEROS."],
+"L01": ["Never let", "a man with", "no CLOCK", "near someone", "you LOVE."],
+"L02": ["Every clock", "counts down to", "your next HUG."],
+"L03": ["So the ferry", "arrivals are a", "field of ZEROS."],
 "L04": ["The ticket man's", "dial says YEARS.", "He likes it", "that WAY."],
 "L05": ["On a first", "date, you both", "sneak a", "look UP."],
 "L06": ["These two both", "read four HOURS.", "Both went RED."],

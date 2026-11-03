@@ -4,16 +4,34 @@
   "who": "narrator",
   "chunks": [
    [
-    "In this WORLD,",
-    "In this world,"
+    "Never let",
+    "Never let"
    ],
    [
-    "a CLOCK over",
-    "a clock over"
+    "a man with",
+    "a man with"
    ],
    [
-    "your HEAD",
-    "your head"
+    "no CLOCK",
+    "no clock"
+   ],
+   [
+    "near someone",
+    "near someone"
+   ],
+   [
+    "you LOVE.",
+    "you love."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every clock",
+    "Every clock"
    ],
    [
     "counts down to",
@@ -26,34 +44,16 @@
   ]
  },
  {
-  "id": "L02",
-  "who": "narrator",
-  "chunks": [
-   [
-    "That couple on",
-    "That couple on"
-   ],
-   [
-    "the ferry PIER",
-    "the ferry pier"
-   ],
-   [
-    "just hit ZERO.",
-    "just hit zero."
-   ]
-  ]
- },
- {
   "id": "L03",
   "who": "narrator",
   "chunks": [
    [
-    "So the arrivals",
-    "So the arrivals"
+    "So the ferry",
+    "So the ferry"
    ],
    [
-    "end is a",
-    "end is a"
+    "arrivals are a",
+    "arrivals are a"
    ],
    [
     "field of ZEROS.",

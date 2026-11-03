@@ -1,6 +1,6 @@
 {
  "slug": "ep45-bee-yard",
- "title": "In this world, a clock over your head counts down to your next hug",
+ "title": "Keep the Man With No Clock Away",
  "made_for_kids": false,
  "premise": "In a harbour town everyone has a small round dial over their head that counts down to their next hug. The narrator's has always been blank. His girlfriend Lena keeps bees in a hill yard he has never entered, and her dial starts counting hours toward noon on Saturday while a man who floats a hand above the grass stands two hives nearer each day.",
  "twist": "Lena's dial was never counting down to someone else. It was counting down to the narrator: every time he nearly hugged her goodbye at the gate it dropped to seconds, and every time he only waved it jumped back up. His own dial was blank because it was waiting for him to decide.",
@@ -324,16 +324,34 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this WORLD,",
-     "In this world,"
+     "Never let",
+     "Never let"
     ],
     [
-     "a CLOCK over",
-     "a clock over"
+     "a man with",
+     "a man with"
     ],
     [
-     "your HEAD",
-     "your head"
+     "no CLOCK",
+     "no clock"
+    ],
+    [
+     "near someone",
+     "near someone"
+    ],
+    [
+     "you LOVE.",
+     "you love."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Every clock",
+     "Every clock"
     ],
     [
      "counts down to",
@@ -346,34 +364,16 @@
    ]
   },
   {
-   "id": "L02",
-   "who": "narrator",
-   "chunks": [
-    [
-     "That couple on",
-     "That couple on"
-    ],
-    [
-     "the ferry PIER",
-     "the ferry pier"
-    ],
-    [
-     "just hit ZERO.",
-     "just hit zero."
-    ]
-   ]
-  },
-  {
    "id": "L03",
    "who": "narrator",
    "chunks": [
     [
-     "So the arrivals",
-     "So the arrivals"
+     "So the ferry",
+     "So the ferry"
     ],
     [
-     "end is a",
-     "end is a"
+     "arrivals are a",
+     "arrivals are a"
     ],
     [
      "field of ZEROS.",
@@ -1718,8 +1718,44 @@
  ],
  "shots": [
   {
+   "id": "S00",
+   "n": 33,
+   "cam": [
+    [
+     0,
+     [
+      -1.511,
+      -0.103,
+      1.956
+     ],
+     [
+      -2.2,
+      2.3,
+      2.076
+     ],
+     40
+    ],
+    [
+     1,
+     [
+      -1.704,
+      0.57,
+      1.956
+     ],
+     [
+      -2.2,
+      2.3,
+      2.076
+     ],
+     40
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003
+  },
+  {
    "id": "S01",
-   "n": 1,
+   "n": 2,
    "cam": [
     [
      0,
@@ -1739,7 +1775,7 @@
      1,
      [
       299.8,
-      5.2,
+      5.4,
       1.45
      ],
      [
@@ -1748,65 +1784,6 @@
       1.62
      ],
      35
-    ]
-   ],
-   "step": 2,
-   "hand": 0.003
-  },
-  {
-   "id": "S02",
-   "n": 1,
-   "cam": [
-    [
-     0,
-     [
-      299.83,
-      9.129,
-      2.01
-     ],
-     [
-      299.5,
-      11.0,
-      2.13
-     ],
-     38
-    ]
-   ],
-   "step": 2,
-   "at": "L01.3",
-   "hand": 0.004
-  },
-  {
-   "id": "S03",
-   "n": 2,
-   "cam": [
-    [
-     0,
-     [
-      303.0,
-      15.4,
-      1.75
-     ],
-     [
-      299.8,
-      22.0,
-      1.5
-     ],
-     30
-    ],
-    [
-     1,
-     [
-      302.8,
-      15.6,
-      1.75
-     ],
-     [
-      299.8,
-      22.0,
-      1.5
-     ],
-     30
     ]
    ],
    "step": 2,
@@ -5988,11 +5965,58 @@
     "hidden": true
    },
    {
-    "at": "L12",
+    "at": 0,
     "pos": [
      0.0,
      0.0,
      -50.0
+    ]
+   },
+   {
+    "at": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     0
+    ],
+    "lean": 0,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 0,
+    "pos": [
+     -3.0,
+     4.6,
+     0.5519999999999999
+    ],
+    "blend": 0.0,
+    "hidden": false
+   },
+   {
+    "at": "L02",
+    "pos": [
+     -3.0,
+     4.6,
+     0.5519999999999999
+    ],
+    "hidden": true,
+    "blend": 0.0
+   },
+   {
+    "at": "L12",
+    "pos": [
+     -3.0,
+     4.6,
+     0.5519999999999999
     ]
    },
    {
@@ -7540,11 +7564,59 @@
     "hidden": true
    },
    {
-    "at": "L23",
+    "at": 0,
     "pos": [
      0.0,
      0.0,
      -50.0
+    ]
+   },
+   {
+    "at": 0,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ],
+    "head": [
+     0,
+     8
+    ],
+    "lean": 0,
+    "look": [
+     0,
+     0
+    ],
+    "expr": "neutral",
+    "yaw": 40,
+    "pos": [
+     -2.2,
+     2.3,
+     0.39599999999999996
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "blink": false
+   },
+   {
+    "at": "L02",
+    "pos": [
+     -2.2,
+     2.3,
+     0.39599999999999996
+    ],
+    "hidden": true,
+    "blend": 0.0
+   },
+   {
+    "at": "L23",
+    "pos": [
+     -2.2,
+     2.3,
+     0.39599999999999996
     ]
    },
    {
@@ -8343,7 +8415,7 @@
     "hidden": true
    },
    {
-    "at": 0,
+    "at": "L02",
     "pos": [
      0.0,
      0.0,
@@ -8351,53 +8423,6 @@
     ]
    },
    {
-    "at": 0,
-    "arms": [
-     55,
-     55
-    ],
-    "side": [
-     18,
-     18
-    ],
-    "head": [
-     -72,
-     0
-    ],
-    "lean": 0,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "grin",
-    "yaw": 90,
-    "pos": [
-     299.54,
-     9.0,
-     0.45
-    ],
-    "blend": 0.0,
-    "hidden": false
-   },
-   {
-    "at": "L01.3",
-    "pos": [
-     299.54,
-     9.0,
-     0.45
-    ],
-    "hidden": true,
-    "blend": 0.0
-   },
-   {
-    "at": "L02",
-    "pos": [
-     299.54,
-     9.0,
-     0.45
-    ]
-   },
-   {
     "at": "L02",
     "arms": [
      55,
@@ -8420,7 +8445,7 @@
     "yaw": 90,
     "pos": [
      299.54,
-     22.0,
+     9.0,
      0.45
     ],
     "blend": 0.0,
@@ -8430,7 +8455,7 @@
     "at": "L03",
     "pos": [
      299.54,
-     22.0,
+     9.0,
      0.45
     ],
     "hidden": true,
@@ -8440,7 +8465,7 @@
     "at": "L11",
     "pos": [
      299.54,
-     22.0,
+     9.0,
      0.45
     ]
    },
@@ -8495,7 +8520,7 @@
     "hidden": true
    },
    {
-    "at": 0,
+    "at": "L02",
     "pos": [
      0.0,
      0.0,
@@ -8503,53 +8528,6 @@
     ]
    },
    {
-    "at": 0,
-    "arms": [
-     55,
-     55
-    ],
-    "side": [
-     18,
-     18
-    ],
-    "head": [
-     72,
-     0
-    ],
-    "lean": 0,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "grin",
-    "yaw": 270,
-    "pos": [
-     300.46,
-     9.0,
-     0.45
-    ],
-    "blend": 0.0,
-    "hidden": false
-   },
-   {
-    "at": "L01.3",
-    "pos": [
-     300.46,
-     9.0,
-     0.45
-    ],
-    "hidden": true,
-    "blend": 0.0
-   },
-   {
-    "at": "L02",
-    "pos": [
-     300.46,
-     9.0,
-     0.45
-    ]
-   },
-   {
     "at": "L02",
     "arms": [
      55,
@@ -8572,7 +8550,7 @@
     "yaw": 270,
     "pos": [
      300.46,
-     22.0,
+     9.0,
      0.45
     ],
     "blend": 0.0,
@@ -8582,7 +8560,7 @@
     "at": "L03",
     "pos": [
      300.46,
-     22.0,
+     9.0,
      0.45
     ],
     "hidden": true,
@@ -8592,7 +8570,7 @@
     "at": "L11",
     "pos": [
      300.46,
-     22.0,
+     9.0,
      0.45
     ]
    },
@@ -8647,7 +8625,7 @@
     "hidden": true
    },
    {
-    "at": 0,
+    "at": "L02",
     "pos": [
      0.0,
      0.0,
@@ -8655,7 +8633,7 @@
     ]
    },
    {
-    "at": 0,
+    "at": "L02",
     "arms": [
      0,
      0
@@ -8684,47 +8662,10 @@
     "hidden": false
    },
    {
-    "at": "L01.3",
+    "at": "L03",
     "pos": [
      298.3,
      12.0,
-     0.45
-    ]
-   },
-   {
-    "at": "L01.3",
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "neutral",
-    "yaw": 0,
-    "pos": [
-     299.5,
-     11.0,
-     0.45
-    ],
-    "blend": 0.0,
-    "hidden": false
-   },
-   {
-    "at": "L02",
-    "pos": [
-     299.5,
-     11.0,
      0.45
     ],
     "hidden": true,
@@ -8733,8 +8674,8 @@
    {
     "at": "L07",
     "pos": [
-     299.5,
-     11.0,
+     298.3,
+     12.0,
      0.45
     ]
    },
@@ -8826,7 +8767,7 @@
     "hidden": true
    },
    {
-    "at": 0,
+    "at": "L02",
     "pos": [
      0.0,
      0.0,
@@ -8834,7 +8775,7 @@
     ]
    },
    {
-    "at": 0,
+    "at": "L02",
     "arms": [
      0,
      0
@@ -8863,47 +8804,10 @@
     "hidden": false
    },
    {
-    "at": "L01.3",
+    "at": "L03",
     "pos": [
      301.8,
      13.0,
-     0.45
-    ]
-   },
-   {
-    "at": "L01.3",
-    "arms": [
-     0,
-     0
-    ],
-    "side": [
-     0,
-     0
-    ],
-    "head": [
-     0,
-     0
-    ],
-    "lean": 0,
-    "look": [
-     0,
-     0
-    ],
-    "expr": "neutral",
-    "yaw": 0,
-    "pos": [
-     301.4,
-     12.4,
-     0.45
-    ],
-    "blend": 0.0,
-    "hidden": false
-   },
-   {
-    "at": "L02",
-    "pos": [
-     301.4,
-     12.4,
      0.45
     ],
     "hidden": true,
@@ -8912,8 +8816,8 @@
    {
     "at": "L07",
     "pos": [
-     301.4,
-     12.4,
+     301.8,
+     13.0,
      0.45
     ]
    },
@@ -9735,7 +9639,7 @@
    "mark": "0"
   },
   {
-   "at": "L02+0.55",
+   "at": "L03",
    "name": "dial",
    "who": "a1",
    "glow": 0.0,
@@ -9766,7 +9670,7 @@
    "mark": "0"
   },
   {
-   "at": "L02+0.55",
+   "at": "L03",
    "name": "dial",
    "who": "a2",
    "glow": 0.0,
@@ -9808,7 +9712,7 @@
    "tone": "coral"
   },
   {
-   "at": "L01.3+0.65",
+   "at": "L02.1",
    "name": "dial",
    "who": "b1",
    "val": "11",
@@ -9994,11 +9898,20 @@
    "at": 0,
    "name": "dial",
    "who": "lena",
+   "val": "24",
+   "unit": 3,
+   "frac": 0.34,
+   "glow": 0.0,
+   "vis": 1.0,
+   "tone": "coral"
+  },
+  {
+   "at": "L02",
+   "name": "dial",
+   "who": "lena",
    "val": "4",
    "unit": 5,
    "frac": 0.92,
-   "glow": 0.0,
-   "vis": 1.0,
    "tone": "coral"
   },
   {
@@ -10276,6 +10189,13 @@
    {
     "at": 0,
     "voices": [
+     "drone"
+    ],
+    "energy": 0.3
+   },
+   {
+    "at": "L02",
+    "voices": [
      "drone",
      "pluck"
     ],
@@ -10379,14 +10299,20 @@
   "steps_db": -26,
   "ambience": [
    {
-    "kind": "gulls",
+    "kind": "beehum",
     "from": 0,
+    "to": "L02",
+    "lufs": -42
+   },
+   {
+    "kind": "gulls",
+    "from": "L02",
     "to": "L15",
     "lufs": -41
    },
    {
     "kind": "wind",
-    "from": 0,
+    "from": "L02",
     "to": "L12",
     "lufs": -44
    },
@@ -10429,7 +10355,7 @@
   ],
   "sfx": [
    {
-    "at": 0.35,
+    "at": "L02+0.1",
     "kind": "chime",
     "db": -19,
     "dur": 1.9
@@ -10562,6 +10488,13 @@
     "dur": 0.6
    },
    {
+    "at": "L01.4+0.1",
+    "kind": "sting",
+    "db": -13,
+    "dur": 1.6,
+    "keep": true
+   },
+   {
     "at": "L44",
     "kind": "sting",
     "db": -11,
@@ -10607,8 +10540,7 @@
      "click"
     ]
    }
-  ],
-  "rev": 2
+  ]
  },
  "phonemes": {}
 }
