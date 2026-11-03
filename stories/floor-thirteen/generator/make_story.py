@@ -104,10 +104,16 @@ def lamp(cam, aim, w=1.0, up=0.45, c="#e8e4dc", size=0.7, side=0.0):
 
 
 # 01 floor thirteen, bright
-shot(0, "first frame: the doors part on bright 13: shelves, Mr. Abel turning with his keys, 13 lit above", FIRST, 1, 0.006)
-shot("L01", "wide from the doorway: shelves both sides, every thing tagged", still([0.0, -0.45, 1.5], [0.0, -7.0, 1.4], 20))
-shot("L01.2", "closer on a shelf: kettle, hat, books, each with a brass tag", still([-0.2, -2.0, 1.4], [-1.4, -4.0, 1.3], 24))
-shot("L02", "the board of keys, a tag on every ring; Mr. Abel lifts his set off it", still([-0.8, -3.0, 1.55], [1.2, -3.0, 1.55], 14))
+# the opening (recipe v1, 2026-11-03): the warning over the 13 button lit on its own, pushing in; my face on OUT
+PANEL_PUSH = move(([-0.72, -0.28, 1.3], [-0.745, -0.94, 1.27]), ([-0.73, -0.5, 1.28], [-0.745, -0.94, 1.27]), 32, 45)
+shot(0, "first frame: the floor panel close, the 13 button lit cold on its own, my finger hovering by the 12; pushing in",
+     PANEL_PUSH, 1, 0.004)
+shot("L01.4", "my face in the car, looking at the panel: the DING and the hit land on OUT", FACE_ME, 2, 0.006,
+     lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
+shot("L02", "bright 13: the board of keys, a tag on every ring; Mr. Abel lifts his set off it",
+     still([-0.8, -3.0, 1.55], [1.2, -3.0, 1.55], 22))
+shot("L02b", "the doors part on bright 13: shelves, Mr. Abel turning with his keys, 13 lit above", FIRST, 1, 0.006)
+shot("L02b.2", "closer on a shelf: kettle, hat, books, each with a brass tag", still([-0.2, -2.0, 1.4], [-1.4, -4.0, 1.3], 24))
 shot("L03", "Mr. Abel with a big iced cake on a stand, guilty", still([0.1, -2.6, 1.4], [0.1, -4.5, 1.15], 18))
 shot("L03.3", "the cake close, its brass tag", still([0.1, -3.0, 1.15], [0.1, -4.0, 1.1], 14))
 SHOT_LAND = still([0.8, -2.7, 1.6], [-0.4, -5.0, 1.45], 16)
@@ -245,10 +251,11 @@ BAL_ME = [BX - 0.5, 0.75]
 HIS_DOOR = [-0.55, -5.1]
 
 # --- 01: bright thirteen
-put("abel", 0, [0.1, -2.0], yaw=180, arms=[0, 100], expr="grin")
-put("abel", "L01", [0.35, -4.9], yaw=180, arms=[0, 100], expr="grin")
+put("me", 0, ME_BACK, yaw=0, expr="worried")
+hide("me", "L02")
 put("abel", "L02", [0.8, -3.0], yaw=-90, arms=[0, 30], expr="grin")
 key("abel", "L02.1", arms=[0, 105], blend=0.35)
+put("abel", "L02b", [0.1, -2.0], yaw=180, arms=[0, 100], expr="grin")
 put("abel", "L03", [0.1, -4.6], yaw=180, arms=[70, 70], expr="worried")
 put("abel", "L04", [0.2, -4.3], yaw=0, arms=[70, 70], expr="worried")
 hide("abel", "L04.2")
@@ -348,7 +355,8 @@ def thirteen(at, dur=1.2, **kw):
 
 
 # the lights: bright thirteen is the car's light plus the warm lamps; dark thirteen the dimmed car and the cold lamp
-cue(0, "lights", state="bright")
+cue(0, "lights", state="on")
+cue("L02", "lights", state="bright", dur=0.3)
 cue("L04", "lights", state="land", dur=0.3)
 cue("L05", "lights", state="on", dur=0.3)
 cue("L06", "lights", state="bright", dur=0.3)
@@ -375,8 +383,9 @@ cue("L49", "lights", state="on", dur=0.5)
 thirteen("L50", 1.0, rim=0.0, fill=0.0)
 
 # the doors: gap in metres between the leaves (1.1 open). The hall's own doors stay open.
-cue(0, "doors", gap=0.14, hall=1.0)
-cue(0.04, "doors", gap=DOOR_W, hall=1.0, dur=0.55)
+cue(0, "doors", gap=0.0, hall=1.0)
+cue("L02b", "doors", gap=0.14, hall=1.0)
+cue("L02b+0.04", "doors", gap=DOOR_W, hall=1.0, dur=0.55)
 cue("L07", "doors", gap=0.0, hall=1.0, dur=0.5)
 cue("P02", "doors", gap=DOOR_W, hall=1.0, dur=0.6)
 cue("L18.1", "doors", gap=0.0, hall=1.0, dur=1.5)
@@ -406,7 +415,8 @@ cue("L37.1", "land_doors", me=0.0, him=1.0, dur=0.6)
 cue("L45", "land_doors", me=0.0, him=1.0, dur=0.1)
 
 # the floor indicator
-cue(0, "indicator", floor="13", arrow=None)
+cue(0, "indicator", floor="12", arrow="up")
+cue("L01.2", "indicator", floor="13", arrow=None)
 cue("L07", "indicator", floor="12", arrow=None)
 cue("L11", "indicator", floor="13", arrow=None)
 cue("L13", "indicator", floor="12", arrow=None)
@@ -421,15 +431,18 @@ cue("L49.1+0.3", "indicator", floor="12", arrow="up")
 cue("L49.1+0.75", "indicator", floor="13", arrow=None)
 
 # the floor panel's lit buttons (11 is the 12, 12 the 13, 21 close)
-cue(0, "panel", lit=[])
+cue(0, "panel", lit=[12])                       # the 13 button, lit on its own: the opening's warned-of thing
+cue("L02", "panel", lit=[])
 cue("L13+0.25", "panel", lit=[11])
+cue("L13+0.7", "panel", lit=[11, 12])           # Tuesday: the 13 lights up by itself as my finger lifts (the plant)
 cue("L14.1", "panel", lit=[])
 for k in range(9):
     cue(f"L32+{0.05 + 0.18 * k:.2f}", "panel", lit=[21])
     cue(f"L32+{0.12 + 0.18 * k:.2f}", "panel", lit=[])
 
 # my finger (press goes 0 to 1 and back)
-cue(0, "finger", on=False)
+cue(0, "finger", on=True, button=11, press=0.0)   # hovering by the 12: I didn't press the 13
+cue("L01.4", "finger", on=False)
 cue("L13", "finger", on=True, button=11, press=0.0)
 cue("L13+0.25", "finger", on=True, button=11, press=1.0, dur=0.1)
 cue("L13+0.7", "finger", on=True, button=11, press=0.0, dur=0.1)
@@ -492,7 +505,9 @@ def sf(at, kind, db, **kw):
     sfx.append({"at": at, "kind": kind, "db": db, **kw})
 
 
-for at in ("P01", "P02", "P03", "P04"):
+sf("L01.4>-0.22", "bell", -15)                   # the sound hit on the warning's last word, OUT
+sf("L01.4>-0.22", "hit", -9, keep=True)
+for at in ("P02", "P03", "P04"):
     sf(at, "bell", -15)
 sf("L13+0.25", "click", -12)
 for k in range(9):
@@ -514,9 +529,9 @@ story = {
     "slug": "ep14-floor-thirteen",
     "title": "In This Building Everything You FORGET Goes To Floor 13",
     "made_for_kids": False,
-    "premise": "In an older apartment tower, everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it: keys, a forgotten anniversary as a cake, even a first boyfriend doing the crossword. I've never forgotten anything and never been up there. Then the lift starts going past my floor to a dark thirteen, where something in a black-and-brass lift attendant's uniform with a panel of lift buttons for a face is nearer each morning, a brass tag with my flat number hanging from its folded gloves.",
+    "premise": "In an older apartment tower, everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it: keys, a forgotten anniversary as a cake, even a first boyfriend doing the crossword. I've never forgotten anything and never been up there. Then the elevator starts going past my floor to a dark thirteen, where something in a black-and-brass elevator attendant's uniform with a panel of elevator buttons for a face is nearer each morning, a brass tag with my apartment number hanging from its folded gloves.",
     "twist": "I was the thing that turned up on thirteen, because Grandad next door had forgotten me. Nothing on thirteen is gone, though, and what you fetch back you remember: I fetch the red scarf he knits me every winter from my shelf up there, put it in his hands, and he says my name. He forgets me most mornings now, so most mornings I go up and fetch myself back.",
-    "world": "an older apartment tower in an unnamed city: a walnut-and-brass lift car, the thirteenth floor as a long umber hall of open shelves of forgotten things with brass tags (warm and busy when people fetch, dark with one cold light when the lift brings me), a beige twelfth-floor landing with two doors, and two side-by-side concrete balconies with a low wall and Grandad's crowd of terracotta pots.",
+    "world": "an older apartment tower in an unnamed city: a walnut-and-brass elevator car, the thirteenth floor as a long umber hall of open shelves of forgotten things with brass tags (warm and busy when people fetch, dark with one cold light when the elevator brings me), a beige twelfth-floor landing with two doors, and two side-by-side concrete balconies with a low wall and Grandad's crowd of terracotta pots.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ffbf3f",
     "caption": {"ink": "#08090d", "stroke_add": 2, "shadow": 0.8},
@@ -546,7 +561,7 @@ story = {
                   {"at": "L45", "voices": ["drone", "pad"], "energy": 0.4, "mode": "dorian"},
                   {"at": "L48", "voices": ["drone"], "energy": 0.4, "mode": "phrygian"},
               ]},
-    "sound": {"floor": "wood", "steps_db": -22,
+    "sound": {"rev": 2, "floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "hum", "from": 0, "to": "L08", "lufs": -40},
                   {"kind": "room", "from": "L08", "to": "L09", "lufs": -40},

@@ -1,33 +1,27 @@
 [
  {
-  "id": "P01",
-  "pause": 0.5,
-  "chunks": [
-   [
-    "DING",
-    ""
-   ]
-  ]
- },
- {
   "id": "L01",
   "who": "narrator",
   "chunks": [
    [
-    "In this BUILDING,",
-    "In this building,"
+    "If the",
+    "If the"
    ],
    [
-    "everything you FORGET",
-    "everything you forget"
+    "THIRTEEN button",
+    "thirteen button"
    ],
    [
-    "turns up",
-    "turns up"
+    "lights up",
+    "lights up"
    ],
    [
-    "on floor THIRTEEN.",
-    "on floor thirteen."
+    "by ITSELF,",
+    "by itself,"
+   ],
+   [
+    "don't step OUT.",
+    "don't step out."
    ]
   ]
  },
@@ -36,12 +30,34 @@
   "who": "narrator",
   "chunks": [
    [
-    "Lost your KEYS?",
-    "Lost your keys?"
+    "Even if",
+    "Even if"
    ],
    [
-    "THIRTEEN.",
-    "thirteen."
+    "your KEYS",
+    "your keys"
+   ],
+   [
+    "are up there.",
+    "are up there."
+   ]
+  ]
+ },
+ {
+  "id": "L02b",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Everything you FORGET",
+    "Everything you forget"
+   ],
+   [
+    "turns up",
+    "turns up"
+   ],
+   [
+    "on floor THIRTEEN.",
+    "on floor thirteen."
    ]
   ]
  },
@@ -268,8 +284,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "The lift",
-    "The lift"
+    "The elevator",
+    "The elevator"
    ],
    [
     "went PAST it.",
@@ -474,8 +490,8 @@
     "was a panel"
    ],
    [
-    "of lift BUTTONS.",
-    "of lift buttons."
+    "of BUTTONS.",
+    "of buttons."
    ]
   ]
  },
@@ -624,8 +640,8 @@
     "It had"
    ],
    [
-    "my FLAT number",
-    "my flat number"
+    "MY number",
+    "my number"
    ],
    [
     "on it.",
@@ -710,8 +726,8 @@
     "shut,"
    ],
    [
-    "and the lift",
-    "and the lift"
+    "and the elevator",
+    "and the elevator"
    ],
    [
     "didn't MOVE.",
