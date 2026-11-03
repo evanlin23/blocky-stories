@@ -59,7 +59,7 @@ mum = person("#e8c4a2", "#2f7f82", "#39393f", "cap", "#c4c8cc", pattern="plaid",
 mum["face"].update({"pupil": "#6a3d1f", "corners": True})
 
 cast = {
-    "me": person("#e3b48e", "#d3a022", "#33363c", "cap", "#14120f", pattern="knit", pattern_c="#bd8d19", shoes="#e8e8e6"),
+    "me": person("#e3b48e", "#d3a022", "#33363c", "buzz", "#14120f", pattern="knit", pattern_c="#bd8d19", shoes="#e8e8e6"),
     "mum": mum,
     "kofi": person("#c68a5e", "#b4522f", "#3a3a40", "none", "#1a1410", extras=["glasses", "apron"], extra_c="#4a6788",
                    collar="#9b4326"),
@@ -232,8 +232,8 @@ shot("S04b", "L04.2", "the customer's uneasy face", still([162.0, 0.95, 1.6], [1
 shot("S05", "L05", "the life room, warm: Mr Dobbs on the dais, his cheek warming", still([3.0, -2.7, 1.55], [0.0, 0.0, 1.3], 28))
 shot("S05b", "L05.4", "over a painter's shoulder, his face on the canvas", canvas_cam(3, 1.3, 1.3, 30), hide_cast=["bg2"])
 # 02 Mum
-shot("S06", "L06", "my flat: Mum's portrait with only guide lines for a face, and me", still([-39.9, -2.1, 1.45], [-39.9, 0.7, 1.4], 17))
-shot("S06b", "L06.3", "the guide lines, corner lines clear", still([-40.25, -0.55, 1.4], [-40.25, 0.7, 1.4], 24))
+shot("S06", "L06", "my flat: Mum's portrait with only guide lines for a face, and me", still([-39.9, -2.1, 1.45], [-39.9, 0.7, 1.4], 17), ev=-1.3)
+shot("S06b", "L06.3", "the guide lines, corner lines clear", still([-40.25, -0.55, 1.4], [-40.25, 0.7, 1.4], 24), ev=-1.3)
 shot("S07", "L07", "my phone face down on the shelf", still([-39.35, -0.55, 1.3], [-38.3, 0.15, 1.03], 40), ev=-0.9)
 shot("S07b", "L07.2", "Mum's hall, bare hooks and pale squares", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
 shot("S08", "L08", "me, turning away from the portrait", still([-40.0, -0.7, 1.55], [-39.5, 0.45, 1.55], 22))
@@ -269,7 +269,7 @@ shot("S21", "L21", "its head turned to my easel, empty eyes", still([_m4[0], _m4
 shot("S22", "L22", "wide of the room: the lamps sag", still([-4.6, -4.2, 1.9], [0.8, 0.3, 1.3], 20))
 shot("S23", "L23", "lamps up: it on a spare stool at my elbow", still(PAIRCAM(2.4, 1.55), PAIRMID(1.5), 21), hide_easels=[7, 8], hide_cast=["petra"])
 shot("S24", "L24", "3/4, lit from below: its face leaning toward mine",
-     still(PAIRCAM(2.4, 1.55), PAIRMID(1.5), 22), hand=0.003, hide_easels=[7, 8], hide_cast=["petra"])
+     still(PAIRCAM(2.4, 1.55), PAIRMID(1.5), 18), hand=0.003, hide_easels=[7, 8], hide_cast=["petra"])
 shot("S25", "L25", "my coat on the peg, the door swinging", still([-3.0, -4.1, 1.5], [-5.5, -3.0, 1.2], 26))
 # 06 the car park
 PETRA_C, ME_C = (-2.5, -8.9), (-1.2, -8.5)
@@ -307,13 +307,12 @@ shot("S33b", "L33.2", "its face: the brown coming into the ovals", still(fa(1.5,
 shot("S34", "L34", "the restore: colour climbs her; Mum at my elbow, looking at the canvas",
      c([0, fa(2.4, 35, HS + 0.12), z3(U5, HS - 0.08), 26], [1, fa(1.9, 32, HS + 0.1), z3(U5, HS - 0.04), 28]), hide_cast=["me"], hand=0.002)
 shot("S35", "L35", "Petra, staring at Mum, mouth open", still(front(PP(7), yaw_to(PP(7), U5) + 15, 1.3, 1.6), z3(PP(7), 1.55), 24))
-shot("S35b", "L35.2", "the brush on the boards", still([PP(7)[0] - 0.6, PP(7)[1] + 0.2, 0.85], [PP(7)[0] + 0.05, PP(7)[1] - 0.25, 0.05], 34), hide_easels=[7], hide_cast=["petra"], fill=[PP(7)[0] - 0.3, PP(7)[1] - 0.5, 1.5])
+shot("S35b", "L35.2", "the brush on the boards", still([PP(7)[0] - 0.6, PP(7)[1] + 0.2, 0.85], [PP(7)[0] + 0.05, PP(7)[1] - 0.25, 0.05], 34), ev=-1.0, hide_easels=[7], hide_cast=["petra"], fill=[PP(7)[0] - 0.3, PP(7)[1] - 0.5, 1.5])
 shot("S36", "L36", "Mum's face, glasses, eyes shining, a small smile", still(fa36(1.3, 18, 1.6), z3(M36, 1.6), 30), hide_cast=["me"], hide_easels=[8], hand=0.002)
-shot("S36b", "L36.4", "two-shot: me and Mum, the painting between us", still(fa(2.6, 55, 1.6), mid(U5, C8, 1.35), 26))
 # 08 the hall, and the sting
 shot("S37", "L37", "Mum's hall, bright morning: the portrait alone among the pale squares, Mum and me in front of it",
      still([HX + 1.15, 1.2, 1.5], [HX - 0.8, 1.2, 1.4], 8), ev=0.5)
-shot("S38", "L38", "the life room, colder: Kofi plumping the green cushion", still([-1.8, -1.5, 1.35], [1.5, -0.4, 1.0], 11), fill=[0.6, -1.0, 1.9])
+shot("S38", "L38", "the life room, colder: Kofi plumping the green cushion", still([1.9, 0.9, 1.55], [0.3, -1.45, 1.45], 16), fill=[0.6, -1.0, 1.9])
 shot("S39", "L39", "low on the dais: nine graphite strokes, rising to the new sitter",
      c([0, [0.3, -2.35, 0.3], [0.0, -1.0, 0.12], 16], [1, [0.3, -2.35, 0.34], [0.0, 0.0, 0.95], 24]), tally=True, hand=0.002)
 shot("S40", "L40", "slow push on its blank pencil face, the ovals the palest thing",
@@ -428,7 +427,9 @@ key("mum", "L17", stage=1)
 put("mum", "L18", (U3[0], U3[1], Z_SPARE), yaw=Y3, expr="blank", head=[rel(U3, Y3, ME), 0], fade=1.0, fade_h=1.0, stage=1, **SIT)
 put("mum", "L19.3", (U4[0], U4[1], Z_SPARE), yaw=Y4, expr="blank", head=[rel(U4, Y4, ME), 0], fade=1.0, fade_h=1.0, stage=2, **SIT)
 put("mum", "L23", (U5[0], U5[1], Z_SPARE), yaw=Y5, expr="blank", head=[rel(U5, Y5, PAIRCAM(2.4, 1.5)), 0], fade=1.0, fade_h=1.0, stage=2, **SIT)
-key("mum", "L24", head=[rel(U5, Y5, PAIRCAM(2.4, 1.5)), 0], bendto=[ME[0], ME[1], 28], blend=0.0)
+_dx, _dy = U5[0] - ME[0], U5[1] - ME[1]
+_dn = math.hypot(_dx, _dy)
+key("mum", "L24", pos=[round(U5[0] + _dx / _dn * 0.1, 3), round(U5[1] + _dy / _dn * 0.1, 3), Z_SPARE + 0.12], head=[-25, 4], bendto=[ME[0], ME[1], 0], blend=0.0)
 key("mum", "L25", bendto=[ME[0], ME[1], 0], blend=0.0)
 hide("mum", "L26")
 put("mum", "L28", (U5[0], U5[1], Z_SPARE), yaw=Y5, expr="blank", head=[0, 0], fade=1.0, fade_h=1.0, stage=2, **SIT)

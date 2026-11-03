@@ -1158,30 +1158,34 @@
    ]
   },
   "L40": {
-   "text": "I wonder who stopped looking at them.",
+   "text": "Nobody else looked up. So why can I see them?",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
-   "onset": 0.172,
-   "end": 1.586,
+   "dur": 2.259,
+   "onset": 0.19,
+   "end": 2.069,
    "chunks": [
     [
-     0.172,
-     0.509
+     0.19,
+     0.586
     ],
     [
-     0.509,
-     0.862
+     0.586,
+     0.983
     ],
     [
-     0.862,
-     1.069
+     1.061,
+     1.328
     ],
     [
-     1.069,
-     1.586
+     1.328,
+     1.509
+    ],
+    [
+     1.509,
+     2.069
     ]
    ]
   }

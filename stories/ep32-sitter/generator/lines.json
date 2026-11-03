@@ -922,20 +922,24 @@
   "who": "narrator",
   "chunks": [
    [
-    "I wonder",
-    "I wonder"
+    "Nobody else",
+    "Nobody else"
    ],
    [
-    "who stopped",
-    "who stopped"
+    "LOOKED UP.",
+    "looked up."
    ],
    [
-    "LOOKING",
-    "looking"
+    "So why",
+    "So why"
    ],
    [
-    "at THEM.",
-    "at them."
+    "can I",
+    "can I"
+   ],
+   [
+    "SEE them?",
+    "see them?"
    ]
   ]
  }

@@ -207,12 +207,13 @@ def portrait_of_mum(finished, w=480, h=600):
     _plaid(d, (50, 470, 430, 640), (47, 127, 130), (36, 100, 104))
     d.polygon([(190, 470), (290, 470), (240, 540)], fill=(240, 232, 214))                    # cream top
     d.rectangle([205, 430, 275, 480], fill=(232, 196, 160))                                  # neck
-    d.ellipse([cx - rx - 22, cy - ry - 18, cx + rx + 22, cy + ry - 40], fill=(196, 200, 206))  # silver bob behind
-    d.rectangle([cx - rx - 22, cy - 40, cx - rx + 26, cy + 120], fill=(196, 200, 206))
-    d.rectangle([cx + rx - 26, cy - 40, cx + rx + 22, cy + 120], fill=(196, 200, 206))
-    face = (232, 196, 160) if finished else (240, 233, 216)
+    hair = (196, 200, 206) if finished else (150, 155, 164)
+    d.ellipse([cx - rx - 22, cy - ry - 18, cx + rx + 22, cy + ry - 40], fill=hair)  # silver bob behind
+    d.rectangle([cx - rx - 22, cy - 40, cx - rx + 26, cy + 120], fill=hair)
+    d.rectangle([cx + rx - 26, cy - 40, cx + rx + 22, cy + 120], fill=hair)
+    face = (232, 196, 160) if finished else (222, 212, 190)
     d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=face)
-    d.pieslice([cx - rx - 8, cy - ry - 10, cx + rx + 8, cy + 20], 180, 360, fill=(196, 200, 206))   # fringe
+    d.pieslice([cx - rx - 8, cy - ry - 10, cx + rx + 8, cy + 20], 180, 360, fill=hair)   # fringe
     if finished:
         brown_eyes(d, ox, oy, W, H, 1.0)
         for s_, ex in ((-1, 0.13), (1, 0.87)):
@@ -750,15 +751,23 @@ def fade_setup(ctx, who):
     F = {"body": [], "edge": [], "kh": [], "tex": [], "glasses": []}
     top = bpy.data.objects.get(f"{who}.glf1")
     hg = bpy.data.objects.get(f"{who}.headg")
-    if top is not None and hg is not None:           # seat the frames round the eyes (full rings, not one bar above them)
+    if top is not None and hg is not None:           # round tortoiseshell rims, centred on the eyes (z 0.08, x +-0.235)
         R_ = faces.HEAD_R
+        fm = top.material_slots[0].material if top.material_slots else None
+        for nm in ("glf-1", "glf1", "glb"):
+            ob = bpy.data.objects.get(f"{who}.{nm}")
+            if ob is not None:
+                bpy.data.objects.remove(ob, do_unlink=True)
+        NSEG, RAD = 14, 0.175
         for sx in (-1, 1):
-            bpy.data.objects[f"{who}.glf{sx}"].location.z = 0.13
-            for nm, size, loc in ((f"glb{sx}", (0.46, 0.04, 0.05), (sx * 0.24, -R_ - 0.05, -0.13)),
-                                  (f"gls{sx}a", (0.05, 0.04, 0.26), (sx * 0.24 - 0.21, -R_ - 0.05, 0.0)),
-                                  (f"gls{sx}b", (0.05, 0.04, 0.26), (sx * 0.24 + 0.21, -R_ - 0.05, 0.0))):
-                ctx["kit"].box(f"{who}.gl{nm}", size, loc, top.material_slots[0].material if top.material_slots else None, hg)
-        bpy.data.objects[f"{who}.glb"].location.z = 0.0
+            for i in range(NSEG):
+                ph = 2 * math.pi * (i + 0.5) / NSEG
+                x = sx * 0.235 + RAD * math.cos(ph)
+                z = 0.08 + RAD * math.sin(ph)
+                y = -math.sqrt(max(R_ * R_ - x * x, 0.01)) - 0.035
+                ctx["kit"].box(f"{who}.glr{sx}_{i}", (2 * RAD * math.sin(math.pi / NSEG) + 0.012, 0.05, 0.05), (x, y, z), fm, hg,
+                               rot=(0, -(ph + math.pi / 2), math.atan2(x, -y) * 0.0))
+        ctx["kit"].box(f"{who}.glrbridge", (0.14, 0.05, 0.045), (0, -R_ - 0.035, 0.1), fm, hg)
     done = {}
     for ob in [root] + list(root.children_recursive):
         if ob.type != "MESH":

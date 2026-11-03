@@ -52,7 +52,7 @@ Faded all the way, nobody can see you except someone who loves you. The others p
 - **Bonus:** the pine hair block is Mum's bob shape from S11 on.
 
 ## The last 15 seconds
-L36 to L40: Mum restored saying "Not BAD", her portrait in her hall with me visiting every Wednesday, then a new faded sitter on the stool and "I wonder who stopped LOOKING at THEM." The loop cut lands on L01, which now reads as a warning about whoever you haven't called. On a second watch the first faded face at the bus stop, the couples staring, and "Nobody else LOOKED UP" all play as Mum's story.
+L36 to L40: Mum restored saying "Not BAD", her portrait in her hall with me visiting every Wednesday, then a new faded sitter on the stool and "Nobody else LOOKED UP. So why can I SEE them?" The loop cut lands on L01, which now reads as a warning about whoever you haven't called. On a second watch the first faded face at the bus stop, the couples staring, and "Nobody else LOOKED UP" all play as Mum's story.
 
 ## World
 Daylight montage: a sunny street bus stop, a cafe window table, a bakery counter (no signs, no text). My small flat: one easel by a window, a shelf. The community arts centre on a hill, squat brick, rainy Wednesday evenings. The life room: cream plaster walls, a scuffed honey-board floor, a tall north window black-blue with rain, eight wooden easels in a curve each with a clamp lamp, a low pine dais in the middle with a plain stool and a fat sage-green cushion, a side table with a bowl of fruit. The car park under one lamp post. Mum's front hall, bare hooks and pale squares, then with one portrait. No text anywhere.
@@ -185,7 +185,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in cerulean
   - [S38: the life room, colder, Kofi plumping the green cushion. Cut away before his hands meet it]
 - `L39` narrator: This week, / someone NEW / was SITTING on it.
   - [S39: low on the dais: the nine graphite strokes on its front edge (lore plant, held 1.6 s), rising to the sting sitter on the stool, short pine crop, guide-line face. Behind it, every painter's head down over the fruit]
-- `L40` narrator: I wonder who stopped / LOOKING / at THEM.
+- `L40` narrator: Nobody else LOOKED UP. / So why can I / SEE them?
   - [S40: slow push on its blank pencil face, the ovals the palest thing. Closing chord, 0.25 s, loop cut to S01]
 
 ## Notes for the builder
