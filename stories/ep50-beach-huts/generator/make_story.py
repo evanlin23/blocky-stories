@@ -71,8 +71,8 @@ cast = {
                "shoes": "#2a2522", "sleeves": "long", "hair": "cap", "hair_c": "#1c1410",
                "face": {"eyes": "round", "brows": True}},
     "smallhead": {"age": "adult", "skin": "#a9a595", "shirt": "#b5655a", "pattern": "solid", "pants": "#6a7480",
-                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": SH_H, "width": 0.9, "head_scale": 0.5, "neck": 0.9,
-                  "face": {"eyes": "round", "mouth": "none", "brows": False, "eye_scale": 1.25}},
+                  "shoes": "#4a4f58", "sleeves": "short", "hair": "none", "height": SH_H, "width": 0.9, "head_scale": 0.8, "neck": 0.5,
+                  "face": {"eyes": "round", "mouth": "none", "brows": False, "eye_scale": 1.7}},
 }
 reflections = {
     "r_neighbour": {"of": "neighbour"},

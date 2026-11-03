@@ -448,16 +448,16 @@ def build(kit, story, tl):
     # --- lights
     sun = kit.light("sun", "SUN", (0, -20, 30), 4.0, "#fff1dc", size=0.01)
     ctx["sun"] = sun
-    kit.light("lantern", "POINT", (LANT[0], LANT[1], DECK_Z + 0.16), 380, "#f0b46a", size=0.08)
+    kit.light("lantern", "POINT", (LANT[0], LANT[1], DECK_Z + 0.16), 150, "#f0b46a", size=0.08)
     kit.light("laptop", "POINT", (0.0, -1.05, 1.0), 12, "#cfe0ff", size=0.1)
     kit.light("hutin", "POINT", (-0.4, 1.0, 2.1), 220, "#ffcf94", size=0.15)
-    kit.light("headkey", "POINT", (2.3, -2.2, 1.0), 420, "#ffc27a", size=0.3)
-    kit.light("dusklift", "AREA", (-2.8, -6.5, 2.8), 300, "#9db8ea", size=4.0)
+    kit.light("headkey", "POINT", (2.3, -2.2, 1.0), 160, "#ffc27a", size=0.3)
+    kit.light("dusklift", "AREA", (-2.8, -6.5, 2.8), 110, "#9db8ea", size=4.0)
     kit.aim(LIGHT("dusklift", kit), (1.0, -1.3, 1.5))
     kit.light("benchlift", "AREA", (42.0, -13.0, 3.0), 900, "#c3d3f2", size=6.0)
     kit.aim(LIGHT("benchlift", kit), (46.8, -6.4, 0.3))
     kit.light("stagelit", "POINT", (hx(OURS) + WIN_X, 0.4, WIN_Z0 + 0.4), 10, "#d8e4f4", size=0.04)   # inside the glass box
-    kit.light("faceup", "POINT", (0.2, -1.3, 0.9), 260, "#ffb878", size=0.25)   # the Small Head, lit from below
+    kit.light("faceup", "POINT", (0.2, -1.3, 0.9), 160, "#ffb878", size=0.25)   # the Small Head, lit from below
     kit.light("shadowkey", "POINT", (3.3, -4.0, 1.5), 1400, "#f4b66e", size=0.04)
     kit.light("rim", "AREA", (3.0, -12.0, 1.4), 400, "#7aa2e0", size=5.0)
     kit.aim(LIGHT("rim", kit), (0.6, -0.9, 1.1))
@@ -626,7 +626,7 @@ def init(kit, story, tl, ctx):
             nk.location = (0, 0, 2.0 + nl)
             skin = bpy.data.objects["smallhead.headm"].data.materials[0] if False else None
             skm = kit.plastic(story["cast"]["smallhead"]["skin"], 0.5)
-            kit.box("smallhead.neckm", (0.62 / wd * 0.9, 0.62, nl + 0.3), (0, 0, 2.0 + nl / 2 - 0.05), skm,
+            kit.box("smallhead.neckm", (0.42, 0.42, nl + 0.3), (0, 0, 2.0 + nl / 2 - 0.05), skm,
                     bpy.data.objects["smallhead.torso"], bevel=0.06)
     ctx["base"] = {}
     for who in story["cast"]:
@@ -730,6 +730,8 @@ def animate(kit, story, tl, t, ctx):
     st = sx_.get("stage")
     ctx["stage"].hide_render = st is None
     for ob in ctx["stage"].children_recursive:
+        if ob.name.startswith("r_"):
+            continue   # a reflection parented to the stage keeps its own hidden flag (it was being unhidden here)
         ob.hide_render = st is None
     if st is not None:
         h = st["hut"]

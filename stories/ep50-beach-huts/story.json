@@ -180,13 +180,13 @@
    "hair": "none",
    "height": 1.6,
    "width": 0.9,
-   "head_scale": 0.5,
-   "neck": 0.9,
+   "head_scale": 0.8,
+   "neck": 0.5,
    "face": {
     "eyes": "round",
     "mouth": "none",
     "brows": false,
-    "eye_scale": 1.25
+    "eye_scale": 1.7
    }
   }
  },
