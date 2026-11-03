@@ -59,7 +59,7 @@ The first line turns over. At the start, "the one who loves you most goes up" is
 - **Plant 1, the knot of hair (L17, S17):** "A knot of HAIR / hung off its head / like a WEIGHT." That's Mum's bun, hanging toward the floor. Mum's bun is in every bench shot.
 - **Plant 2, the bench and the dust (L21, L22, L29):** each time I land she's on her bench with lilac dust in her hair, and on the third Thursday "she'd moved her BENCH / right under my ROUTE." The bench is under the figure every week (it's one hold closer because she sat closer).
 - **Plant 3, the frown (L26):** "Its mouth / curved DOWN / in a FROWN." It's her smile, upside down. Paid off at L49.
-- **Plant 4, the fear (L06, L32, L38, L41):** "She won't even stand / on a CHAIR." Then the figure breathing fast, its eyes wet, and Mum white as chalk when the lamps come back.
+- **Plant 4, the fear (L06, L32, L38, L41):** "She won't even stand / on a CHAIR." Then the figure breathing fast, its eyes wet, and Mum breathing fast on her bench when the lamps come back.
 - **Plant 5, the empty bench and the ring (S18, S41):** the wide shots while I'm lowered hold the bench at the frame edge, empty, a faint amber ring on the mat under it. Never narrated.
 - **Plant 6, "I never look DOWN" (L12):** why I never saw her bench empty.
 - **Plant 7, the slow lower (L19):** "slower than a MACHINE / should be": Mum's weight coming down as I do.
@@ -230,7 +230,7 @@ Each line gives the id, then the caption chunks split with ` / `. CAPS are the k
 
 ### 08 The reveal (1:13 to 1:27)
 
-- `L41` narrator: Mum was on her BENCH, / white as CHALK.
+- `L41` narrator: Mum was on her BENCH, / breathing FAST.
   - [S41: Mum on the bench in full lamp light, pale, still, flask in her lap, breathing fast]
 - `L42` narrator: The SOLES / of her shoes / were LILAC.
   - [S42: low close on her crossed ankles, the soles of her shoes powdered lilac]
@@ -275,7 +275,7 @@ Each line gives the id, then the caption chunks split with ` / `. CAPS are the k
 
 | Plant | Lines and shots |
 |---|---|
-| Mum's fear of heights | L06 (S06), L32, L38 ("eyes were WET"), L41 ("white as CHALK"), S52 |
+| Mum's fear of heights | L06 (S06), L32, L38 ("eyes were WET"), L41 ("breathing FAST"), S52 |
 | The bun hanging like a weight | L17 (S17), every bench shot |
 | Bench nearer each week | S21, S29 (L29), S40, S41 |
 | Lilac dust on Mum | L22 (S22), L42 (S42) |

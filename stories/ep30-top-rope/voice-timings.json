@@ -998,26 +998,26 @@
    ]
   },
   "L41": {
-   "text": "Mum was on her bench, white as chalk.",
+   "text": "Mum was on her bench, breathing fast.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
+   "dur": 1.862,
    "onset": 0.19,
-   "end": 1.672,
+   "end": 1.655,
    "chunks": [
     [
      0.19,
-     0.474
+     0.492
     ],
     [
-     0.474,
-     0.828
+     0.492,
+     0.81
     ],
     [
-     0.879,
-     1.672
+     0.845,
+     1.655
     ]
    ]
   },

@@ -1139,8 +1139,8 @@
      "her bench,"
     ],
     [
-     "white as CHALK.",
-     "white as chalk."
+     "breathing FAST.",
+     "breathing fast."
     ]
    ]
   },
@@ -1783,29 +1783,8 @@
    "step": 2
   },
   {
-   "id": "S14",
-   "at": "L14",
-   "cam": [
-    [
-     0,
-     [
-      2.0,
-      -3.0,
-      6.9
-     ],
-     [
-      0.0,
-      -0.3,
-      7.2
-     ],
-     16.0
-    ]
-   ],
-   "step": 2
-  },
-  {
    "id": "S14b",
-   "at": "L14+0.4",
+   "at": "L14",
    "cam": [
     [
      0,
