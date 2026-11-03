@@ -101,12 +101,12 @@ HIGH_QUILT = still([0.75, 0.45, 1.95], [-0.5, 1.95, 0.45], 20)
 SHOTS = [
     # 1 the rule, L01 to L04 (0 to 10 s): a lit hall opening, then the street of mixed-height houses
     (0, "S01 the front room, warm and even: me under the low ceiling, the face box in the stack beside me, frowning", 2,
-     still([-1.0, -2.2, 1.0], [-2.3, -4.5, 1.55], 17)),
+     still([-1.0, -2.2, 1.5], [-2.3, -4.5, 1.55], 17)),
     ("L01.4", "S02 the street: four houses of different heights, the tallest one at each door, head at the lintel", 2,
      move(([OS[0] - 4.2, -2.5, 1.3], [OS[0] - 4.2, 6.0, 2.2]), ([OS[0] - 0.6, -2.5, 1.3], [OS[0] - 0.6, 6.0, 2.2]), 13)),
-    ("L02+0.57", "S03 the tower house: a tall man at its door, waving", 2,
+    ("L02+0.44", "S03 the tower house: a tall man at its door, waving", 2,
      still([OS[0] + 4.9, 1.2, 1.0], [OS[0] + 3.2, 6.0, 3.0], 17)),
-    ("L03", "S04 a lodger walks out of a front door with a suitcase", 2,
+    ("L03+0.17", "S04 a lodger walks out of a front door with a suitcase", 2,
      still([OS[0] + 8.6, -1.5, 1.35], [OS[0] + 10.0, 5.0, 1.2], 17)),
     ("L03+1.35", "S05 a couple on a sofa look up: the ceiling sits lower, a pale line where it was", 2,
      still([O5[0] + 0.1, -1.2, 1.3], [O5[0], 2.6, 1.55], 22)),
@@ -244,9 +244,9 @@ SX, SY = OS
 YD = SY + 5.68       # a doorway person's y: on the step
 for who, x in (("a", SX - 6.8), ("b", SX - 3.3), ("p3", SX + 0.0), ("c", SX + 3.2)):
     put(who, "L01.4", [x, YD, 0.08], yaw=0, expr="grin" if who != "c" else "smirk")
-    hide(who, "L03")
+    hide(who, "L03+0.17")
 for who in ("a", "b", "p3"):
-    hide(who, "L02+0.57")
+    hide(who, "L02+0.44")
 for k in range(6):                                           # the tall man waves
     key("c", f"L02+{0.8 + 0.4 * k:.2f}", side=[0, 28 if k % 2 == 0 else 8], arms=[0, 150], blend=0.3)
 put("lod", "L03", [SX + 10.0, SY + 6.4, 0.0], yaw=0, expr="neutral", side=[0, 4])

@@ -1218,7 +1218,7 @@
      [
       -1.0,
       -2.2,
-      1.0
+      1.5
      ],
      [
       -2.3,
@@ -1290,7 +1290,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "S03 the tower house: a tall man at its door, waving",
-   "at": "L02+0.57"
+   "at": "L02+0.44"
   },
   {
    "id": "S04",
@@ -1313,7 +1313,7 @@
    "hand": 0.004,
    "step": 2,
    "what": "S04 a lodger walks out of a front door with a suitcase",
-   "at": "L03"
+   "at": "L03+0.17"
   },
   {
    "id": "S05",
@@ -3936,12 +3936,12 @@
     "yaw": 0
    },
    {
-    "at": "L03",
+    "at": "L03+0.17",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L02+0.57",
+    "at": "L02+0.44",
     "hidden": true,
     "blend": 0
    }
@@ -3985,12 +3985,12 @@
     "yaw": 0
    },
    {
-    "at": "L03",
+    "at": "L03+0.17",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L02+0.57",
+    "at": "L02+0.44",
     "hidden": true,
     "blend": 0
    }
@@ -4034,12 +4034,12 @@
     "yaw": 0
    },
    {
-    "at": "L03",
+    "at": "L03+0.17",
     "hidden": true,
     "blend": 0
    },
    {
-    "at": "L02+0.57",
+    "at": "L02+0.44",
     "hidden": true,
     "blend": 0
    }
@@ -4083,7 +4083,7 @@
     "yaw": 0
    },
    {
-    "at": "L03",
+    "at": "L03+0.17",
     "hidden": true,
     "blend": 0
    },
