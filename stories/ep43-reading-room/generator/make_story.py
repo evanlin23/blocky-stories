@@ -38,7 +38,7 @@ def person(shirt, pants, skin, hair="cap", hair_c="#2a1d15", shoes="#2a2420", **
 
 
 cast = {
-    "me": person("#c98aa0", "#2b3550", "#e6b18c", "cap", "#121216", "#1c1c24", pattern="knit", pattern_c="#a8667f"),
+    "me": person("#7a1f2e", "#2b3550", "#e6b18c", "cap", "#121216", "#1c1c24", pattern="knit", pattern_c="#661825"),
     "tam": person("#b9a98a", "#3a3f4c", "#efc9a5", "spiky", "#3a2616", "#d8d4cc", extras=["glasses", "hooddown"],
                   extra_c="#141414", face={"eyes": "tired", "brows": True, "ink": "#1c1416", "bags": True}),
     "neg": person("#36755f", "#d4caaf", "#15181c", "cap", "#ececec", "#f2f2f2", pattern="knit", pattern_c="#2c6551",
@@ -565,7 +565,7 @@ story = {
               "vignette": 0.32, "bloom": 0.42, "grain": 0.012},
     "rain_shots": sorted({s["id"] for s in SH if s.get("rain") or s["scene"] == "street"}),
     "rain_gain": 0.7,
-    "phonemes": {"Ossie": "ˈɔzi", "Tam": "tˈæm", "Nell": "nˈɛl"},
+    "phonemes": {"Ossie": "ˈɔzi", "Tam": "tˈæm", "Luke": "lˈuːk"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

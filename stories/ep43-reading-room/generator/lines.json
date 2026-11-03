@@ -184,24 +184,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Tam stopped saying",
-    "Tam stopped saying"
+    "I figured",
+    "I figured"
    ],
    [
-    "my name",
-    "my name"
+    "the one was",
+    "the one was"
    ],
    [
-    "years ago.",
-    "years ago."
-   ],
-   [
-    "So the one",
-    "So the one"
-   ],
-   [
-    "was ME.",
-    "was me."
+    "just ME.",
+    "just me."
    ]
   ]
  },
@@ -436,8 +428,12 @@
     "A person,"
    ],
    [
-    "printed BACKWARDS.",
-    "printed backwards."
+    "like a photo",
+    "like a photo"
+   ],
+   [
+    "NEGATIVE.",
+    "negative."
    ]
   ]
  },
@@ -494,8 +490,8 @@
     "of my"
    ],
    [
-    "pink one.",
-    "pink one."
+    "red one.",
+    "red one."
    ]
   ]
  },
@@ -898,8 +894,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Just HIMSELF.",
-    "Just himself."
+    "I thought",
+    "I thought"
+   ],
+   [
+    "he was counting",
+    "he was counting"
+   ],
+   [
+    "HIMSELF.",
+    "himself."
+   ],
+   [
+    "I was WRONG.",
+    "I was wrong."
    ]
   ]
  },
@@ -1022,10 +1030,6 @@
    [
     "count YOURSELF.",
     "count yourself."
-   ],
-   [
-    "Nobody does.",
-    "Nobody does."
    ]
   ]
  },
@@ -1180,8 +1184,8 @@
     "\"This is Tam."
    ],
    [
-    "And I'm NELL.\"",
-    "And I'm Nell.\""
+    "And I'm LUKE.\"",
+    "And I'm Luke.\""
    ]
   ]
  },
@@ -1238,12 +1242,12 @@
     "Over mine,"
    ],
    [
-    "ONE rolled to",
-    "one rolled to"
+    "ONE rolled",
+    "one rolled"
    ],
    [
-    "TWENTY also.",
-    "twenty also."
+    "to TWENTY too.",
+    "to twenty too."
    ]
   ]
  },
@@ -1382,20 +1386,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "For years,",
-    "For years,"
+    "You don't",
+    "You don't"
    ],
    [
-    "the number over",
-    "the number over"
+    "count yourself.",
+    "count yourself."
    ],
    [
-    "my head",
-    "my head"
+    "My ONE was",
+    "My one was"
    ],
    [
-    "said ONE.",
-    "said one."
+    "always TAM.",
+    "always Tam."
    ]
   ]
  },
@@ -1404,12 +1408,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "It was",
-    "It was"
+    "And his last",
+    "And his last"
    ],
    [
-    "always TAM.",
-    "always Tam."
+    "ONE was",
+    "one was"
+   ],
+   [
+    "always ME.",
+    "always me."
    ]
   ]
  }
