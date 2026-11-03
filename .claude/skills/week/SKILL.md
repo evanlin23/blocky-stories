@@ -19,7 +19,7 @@ You're the orchestrator. Keep your own context small: you read reports and verdi
 - A container can be reclaimed at any time, so commit and push `WIP` checkpoints to the branch after each story's build.
 
 ## 1. Write (1 writer call)
-"Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
+"Write a batch of N stories" (plus the owner's idea, if any). Check its variety table yourself, and check the batch for **superficial sameness** (YouTube demonetizes "narrated stories with only superficial differences"): at most a third of titles start "In This Town", and no two stories share a setting type, a rule type, a creature type, a twist shape, a palette or a music mood. Then: no shared setting, creature, first line, ending or warmth. If two rows clash, send the writer back once.
 
 **Cold-viewer test** (RULES → "Relationships read at a glance"): for each script, a fresh general-purpose agent gets only `script.md` and answers in two sentences what happened, what the twist means, and who each person is to the narrator. Any wrong or unsure answer sends the script back to the writer once, before building.
 

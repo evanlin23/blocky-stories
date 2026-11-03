@@ -90,7 +90,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - Tasha, exactly her rig, in her yellow raincoat. But her eyes are mirror-black with no highlight, and she always moves half a beat after I do, like a reflection that's late.
   - In the mirrors there are too many Tashas, and one of them is facing the wrong way.
   - It is the only "creature", and it's the same rig in every shot. It isn't pale grey: it's Tasha, wrong.
-- **Beats:**
   1. We split up inside the maze for a laugh.
   2. Tasha comes out.
   3. On the walk home she's off: she doesn't laugh at the right moment, and she copies my words a second after me.
@@ -106,7 +105,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - I grab that hand.
   - Outside, the real Tasha, soaked, says "you owe me fries."
 - **The last line:** "She PAID. / First time EVER." Then loop to "Tasha and I have a RULE."
-- **Risks:**
   - **Flashing:** a mirror maze has bright reflections and fast cuts. Do the flash pre-check on every mirror shot at the final's own frame steps. Don't use strobe fair lights.
   - **Harm:** both are adults. The copy never hurts Tasha and nothing describes harm to her. She's "still in there", not taken.
   - **No real fair brands.** The sign uses only made-up words.
@@ -122,7 +120,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - It moves only when the fog is thick. Through binoculars it's one ridge closer each time.
   - Its colours are moss green and dark bark brown.
   - **Never** thin, never in a suit, never between trees at arm's length. That reads as the Slender Man trope, which standards bans.
-- **Beats:**
   1. Birds stop.
   2. A line of broken treetops on the far ridge.
   3. The radio picks up something like breathing through static.
@@ -137,7 +134,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - I carry the lamp down the stairs and walk it along the fire road toward the valley, one slow step at a time, with the Walker following.
   - At the valley's edge the fog lifts, and it walks on alone.
 - **The last line:** "Next SPRING, / a line of tiny TREES / came UP the road. / All the WAY / to my DOOR." Then loop to the quiet forest.
-- **Risks:**
   - The controlled burn is distant smoke only, with no fire shown.
   - No real national park or forest names, and no text on the radio.
   - The giant's scale has to read at phone size.
@@ -154,7 +150,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - **The face is different every time we see it.** It's always the same box and the same marker line weight, but the drawing changes while nobody's looking: first a frown, then a stare, then far too many eyes.
   - It's never seen moving. It's in a different room each morning, standing very still among the other boxes.
   - Its colours are cardboard brown, black marker and packing-tape shine.
-- **Beats:**
   1. Things are unpacked in the night, into the wrong rooms.
   2. Scraping sounds, like cardboard dragged across the floor.
   3. Marker drawings appear on other boxes.
@@ -170,7 +165,6 @@ These are pitches. The scriptwriter writes each one in full and may change detai
   - We unpack the rest together, the old way.
   - The box figure is flattened, folded and kept in the hall cupboard. Its last drawn face is a smile.
 - **The last line:** "We kept ONE box. / It's taped shut / from the INSIDE. / We don't OPEN it." Then loop to the first line.
-- **Risks:**
   - **The bed scare:** standards checks that nothing reads as harm to Mum. The reveal of the tucking has to be clear.
   - **Box text:** brand names or real moving-company names on the boxes. Only plain boxes and marker drawings, no words.
   - **The scraping sound:** it must not be a sample. Everything is synthesized.
@@ -362,6 +356,7 @@ killed: `ep57-arch-seat` (#28b, replacement for ep44 `sleeper-car`, 2026-11-03),
 killed: the `lookout` redo (2026-11-03), same big idea as ep33 (altitude time), so don't retry this twist. The redo's rule was "In this valley, time runs slower the higher up you are", with my teen brother Ollie climbing the tower twenty years older. ep33's shipping redo already has "one day at the top costs a year below" (hard rule 5). Standards approved round 1, and the critic said revise in both rounds (big idea 8, feeling 6, warm turn 5) with 5 framing and wording fixes left. `lookout` stays held. The tower set and cast are free to reuse with a different big idea. The full build is in git at commit 8592320 on branch claude/redo-lookout.
 
 ## Claimed big ideas
+**Crowded theme: being forgotten or unseen** (floor-thirteen, ep31, ep32). Pick a different core for new stories.
 (One line per story: the reveal in a few words. Writers check this before keeping an idea, because parallel sessions converge. ep33 and the lookout redo both picked altitude time.)
 - ep33-chairlift: a day at the top costs a year below (altitude time)
 - ep31-dawn-flight: you fall apart if your family forgets you; they relive one dawn to keep you whole
