@@ -1,9 +1,9 @@
 # rule-three: the script (writer, 2026-11-03)
 
 - **Slug:** `rule-three` (no ep number: batch 6 is numbered by parallel sessions at once, so the lead numbers it on merge if needed).
-- **Slot:** batch 6, P6, the Rulebook Keeper pilot. From premise bank K3 ("Rule three was torn out"), rebuilt on the opening recipe (`docs/research/playbook.md`).
+- **Slot:** batch 6, P6, the Buhkeeper pilot. From premise bank K3 ("Rule three was torn out"), rebuilt on the opening recipe (`docs/research/playbook.md`).
 - **Lane:** experiment (recurring host). Length arm: mid, 60 to 90 s.
-- **Word count:** 341 spoken words in 45 lines, all `narrator`, plus one 0.5 s pause (P01) and the loop tail.
+- **Word count:** 340 spoken words in 45 lines, all `narrator`, plus one 0.5 s pause (P01) and the loop tail.
 - **Estimated length:** at 290 wpm the speech is 70.5 s. The 0.12 s gaps add about 5.3 s, P01 0.5 s and the loop tail 0.25 s, so about 76 s. The reveal (L30, "It was ME.") lands at about 50 s, 25 s from the end, and its core (L31 to L33) by 55 s. If it lands over 85 s, cut L19 first, then L12. If it lands under 65 s, add "He doesn't even LOOK / at the CAKE." after L41.
 - **Look:** bright and saturated, `"look": {"style": "closer", "flash_safe": true, "polish": true}` (polish if merged). The night scenes in the hall are lit warm and bright from the lamps, and the one dark beat is the street at L23 to L26, still lit to read by streetlamps and the hall window.
 
@@ -35,7 +35,7 @@ Nothing on the list is about a rulebook, a hidden rule or a narrator who is the 
 - **Twist:** I tore it out, fourteen years ago, on my first night. It said that if I ever miss a night, the book goes to Milo, and he never gets a night off again. A torn page still counts. It just can't be read to him. The town's habit of never asking is a rule I stamped too. Milo asks anyway, I tell him, and the loophole is in rule three's own words: it never said where I stamp. So we carry the book to Mom's together, and I stamp at her table at nine.
 - **Where it's planted:**
   - Plant 1, frame 1 (L01): an ink-blue thumbprint on the torn edge of the stub. L08 shows my right thumb, ink-blue from the stamp, in close-up.
-  - Plant 2, L07: the corner of a folded cream page sticks out of my waistcoat's breast pocket. It's there in every shot of me until L42, when I unfold it.
+  - Plant 2, L07: the corner of a folded cream page sticks out of my coat's breast pocket. It's there in every shot of me until L42, when I unfold it.
   - Plant 3, L03 and L04: as the cook and the mailman dodge, each glances up the hill at the hall's arched window. They're looking at the answer.
   - Plant 4, L13: "In fourteen YEARS, I've never MISSED a NIGHT."
 - **How the last 15 seconds turn over the first line:** first time, "Never ask who tore out rule three" is folk dread about a missing page. By L35 we know the warning is mine and the page is in my pocket. L45, "So do me a FAVOR.", runs straight into L01, so the loop plays as one sentence: a man asking you to keep his secret.
@@ -56,8 +56,8 @@ A bright little hill town of painted blocky houses (mint, butter yellow, coral, 
 
 All adults. Nobody is ever in peril or hurt.
 
-- `me` (the narrator, about 40): **Otis**, the town's rulebook keeper, the recurring host. Never named on screen. See the design below and in `stories/lore.md` → The Rulebook Keeper. Faces: `neutral`, `smile`, `worried`, `scared`, `sheepish`.
-- `milo` (my little brother, about 24, adult): shaggy sandy-blond block hair, a bright orange hoodie with one white chest stripe, grey jeans, white sneakers. Visibly younger than me, same dark brows. Named in L14 ("My little brother, MILO") in the same shot as me, the two of us side by side. Faces: `grin`, `annoyed`, `worried`, `smile`.
+- `me` (the narrator, about 40): **the Buhkeeper**, the channel's host and avatar (`brand/avatar-800.png`), who keeps the town's rulebook. Not named on screen in this episode. See the design below and in `stories/lore.md` → The Buhkeeper. Faces: `smirk` (his resting face, as on the avatar), `neutral`, `smile`, `worried`, `scared`, `sheepish`.
+- `milo` (my little brother, about 24, adult): short shaggy sandy-blond hair, cropped above the ears and off the neck, never a bob (critic: the bob read as a woman), a bright orange hoodie with one white chest stripe, grey jeans, white sneakers. Visibly younger than me, same dark brows. Named in L14 ("My little brother, MILO") in the same shot as me, the two of us side by side. Faces: `grin`, `annoyed`, `worried`, `smile`.
 - `mom` (our mom, older adult): silver block bun, lilac cardigan, round cheeks, a paper party crown at the party (L26, L39 to L41). Named "MOM" in L15 over her photo on my lectern, then in person at L26 and L39.
 - `cook` (adult man): white apron and a white paper cap, at the diner counter. L03 only.
 - `mailman` (adult man): navy jacket, a plain tan mail bag. L04 only.
@@ -68,15 +68,15 @@ All adults. Nobody is ever in peril or hurt.
 
 There's no creature in this episode. The town's eerie beat is the people standing still.
 
-## The host's continuity (Otis)
+## The host's continuity (the Buhkeeper)
 
 The design is recurring, so these hold in every episode (copy from `stories/lore.md`):
-- **Look:** R6 body. Dark chestnut block hair, short, with a neat side part and one cowlick sticking up at the crown. Thick round black glasses drawn on the face, level brows, a small neat block mustache. A cobalt-blue waistcoat (`#2f5fd0`) with four brass buttons over a white shirt, sleeves rolled to the elbow, a cherry-red bow tie (`#d6283b`), charcoal trousers, brown shoes.
+- **Look (match `brand/avatar-800.png`, spec in `brand/render_brand.py`):** R6 body, adult. A tall black top hat (`#1f2b33`). Dark brown hair (`#5a3a22`) swept across in a side fringe under the brim, short at the sides. Warm light skin (`#e7b48c`). Dot eyes, short dark brows with one brow cocked, a small lopsided smile (`smirk`). No glasses, no mustache. A teal knit coat (`#2f6f6a`, knit `#285e5a`) with long sleeves, a mustard scarf (`#e0a32a`) wrapped high around the neck over a cream collar (`#f2e6c8`), dark navy trousers (`#26303f`), black shoes.
 - **The stamp:** a brass hand stamp the size of a mug, with a round cherry-red wooden knob. Ink-blue ink (`#2b4bd8`). His right thumb is always ink-blue.
-- **The pocket page:** the folded torn page of rule three, cream, its corner out of his waistcoat's breast pocket.
-- **The book:** a door-sized red leather book (`#c8202f`) with brass corners and a brass clasp, open about 1.6 m wide, thick cream pages, each with a big ink-blue numeral in the top outer corner and rows of glyphs.
+- **The pocket page:** the folded torn page of rule three, cream, its corner out of his coat's breast pocket.
+- **The book:** a door-sized red leather book (`#c8202f`) with brass corners, a brass clasp and a brass hexagon on the cover (the avatar's book, at full size), open about 1.6 m wide, thick cream pages, each with a big ink-blue numeral in the top outer corner and rows of glyphs.
 
-| Lines | Where Otis is | Pocket page |
+| Lines | Where the Buhkeeper is | Pocket page |
 |---|---|---|
 | L01 to L06 | not seen (his thumbprint is, L01) | |
 | L07 to L13 | the hall, at the lectern | corner showing |
@@ -98,7 +98,7 @@ The design is recurring, so these hold in every episode (copy from `stories/lore
 1. **Line 1** is a warning to you about one concrete thing: "Never ASK / who tore out / RULE THREE." 7 words, about 1.5 s.
 2. **Frame 1** looks straight at it: a tight top-down close on the book open at the stub, the ragged torn edge where rule three was, the page after it marked "5", and the ink-blue thumbprint on the stub. Already slightly wrong (where's 4? whose thumb?). Lit warm and bright, centred, pushing in over the line. No wide in the first 3 s.
 3. **A sound hit** on "THREE": the stamp thunk.
-4. **Line 2** tightens it: "Not even / as a JOKE." 5 words, about 1.0 s. No names, places or backstory before 4 s (Milo first at L14, about 22 s).
+4. **Line 2** tightens it and says the town's name, the only "Buhtown" in the episode (RULES: the Buhkeeper's Shorts say it once, in line 2): "Not in BUHTOWN. / Not ONCE." 5 words, about 1.1 s. No other names or backstory before 4 s (Milo first at L14, about 22 s).
 5. **Lines 3 to 5** show the rule at work, one shot each, none over 2 s: the cook, the mailman, the parrot.
 6. **Title:** "Rule Three Was TORN Out 📕", the concrete thing that's wrong.
 
@@ -125,7 +125,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L01` narrator: Never ASK / who tore out / RULE THREE.
   - [top-down close on the open red book: the ragged stub where a page was torn out, the ink-blue thumbprint on its edge, the next page's big numeral "5". Warm lamplight. Push in over the line. Stamp thunk on "THREE". Plant 1]
-- `L02` narrator: Not even / as a JOKE.
+- `L02` narrator: Not in BUHTOWN. / Not ONCE.
   - [punch in to the torn edge itself, the thumbprint filling a third of the frame]
 
 ## 02 The rule at work (L03 to L06, about 3 to 11 s)
@@ -146,7 +146,7 @@ Bright midday, the hill town.
 The hall's record room at night, warm lamps, bright.
 
 - `L07` narrator: I keep / this town's / RULEBOOK.
-  - [mid close on me at the lectern, `neutral`, glasses catching the lamp, the folded page's corner out of my waistcoat pocket. Plant 2. The book open in front of me]
+  - [mid close on me at the lectern, `smirk`, top hat and mustard scarf lit by the lamp, the folded page's corner out of my coat pocket. Plant 2. The book open in front of me]
 - `L08` narrator: Every night / at NINE, / I STAMP / one new RULE.
   - [two shots: the brass clock at nine. Then close on my hand bringing the red-knobbed stamp down on a fresh page, my right thumb ink-blue. Thunk on "STAMP"]
 - `L09` narrator: People drop their RULES / through the DOOR, / and I pick ONE.
@@ -167,16 +167,16 @@ The hall's record room at night, warm lamps, bright.
 - `L15` narrator: Like MOM'S BIRTHDAY. / Fourteen in a ROW.
   - [two shots: a framed photo of Mom on the lectern, her silver bun, smiling. Then a calendar on the wall with one date circled in red, no words]
 - `L16` narrator: This year, / Milo says / come for ONCE,
-  - [Milo close, `annoyed`, pointing at me]
+  - [Milo close, facing camera, `annoyed`, pointing at me (at the lens)]
 - `L17` narrator: or he'll stand up / at the PARTY / and ASK.
-  - [two shots: Milo `grin`, one hand up like he's about to make a toast. Then me, `worried`]
+  - [two shots: Milo facing camera, `grin`, one hand up like he's about to make a toast. Then me, `worried`]
 - `L18` narrator: I tell him / I've got a RULE / to stamp.
   - [me turning back to the lectern, `neutral`. Milo behind me in the doorway]
 - `L19` narrator: He doesn't TALK to me / all WEEK.
   - [two shots: Milo walking off down the bright hill, hood up. Then me alone at the window, watching him go]
 - `L20` narrator: FRIDAY, / a slip comes / through the SLOT.
   - [the brass letter slot at dusk, a folded slip pushed through by an orange sleeve]
-- `L21` narrator: Milo's SCRAWL. / Just a big / THREE.
+- `L21` narrator: From MILO. / Just a big / THREE.
   - [two shots: my hand unfolding it. Then the slip close: one big scrawled pencil "3", nothing else. Me, `worried`, beyond it]
 
 ## 05 The town turns (L22 to L29, about 36 to 49 s)
@@ -203,17 +203,17 @@ The hall's record room at night, warm lamps, bright.
 - `L30` narrator: So I TELL him. / It was ME.
   - [me close, `sheepish`, meeting his eyes]
 - `L31` narrator: I tore out / RULE THREE.
-  - [two shots: my ink-blue thumb drawing the folded cream page out of my waistcoat pocket. Then the page held up beside the stub, its torn edge matching, my thumbprint on both. Cover frame]
+  - [two shots: my ink-blue thumb drawing the folded cream page out of my coat pocket. Then the page held up beside the stub, its torn edge matching, my thumbprint on both. Cover frame]
 - `L32` narrator: It said, / if I ever MISS / a NIGHT,
   - [the page close, glyph rows and a half "3" at the torn top, my thumb on it]
 - `L33` narrator: the book / goes to MILO, / and HE never gets / a night OFF / AGAIN.
-  - [two shots: Milo, `worried`, looking from the page to the huge book. Then a wide of the hall: the two of us and the door-sized book between us]
+  - [two shots: Milo, `worried`, looking from the page to the huge book. Then a wide of the hall: the two of us and the door-sized book between us, Milo still `worried` and clearly readable in the wide]
 - `L34` narrator: A torn page / still COUNTS. / I tore it / so MILO / would never KNOW.
   - [two shots: the stub close. Then me folding the page shut, glancing at Milo]
-- `L35` narrator: The rule about / not ASKING? / I stamped THAT / one TOO.
+- `L35` narrator: The rule about / not ASKING? / I wrote THAT / one TOO.
   - [two shots: my hand flicking the book's pages back to an old page with a big numeral and a row of glyphs, my first night's. Then me, `sheepish`, a small shrug]
 - `L36` narrator: Milo looks at ME. / Then at the CLOCK.
-  - [two shots: Milo close, `worried` softening. Then the brass clock at eight fifty]
+  - [two shots: Milo close, facing camera, `worried` softening. Then the brass clock at eight fifty]
 
 ## 07 The loophole (L37 to L41, about 61 to 70 s)
 
@@ -224,11 +224,11 @@ The warm lift: E major over the drone.
 - `L38` narrator: So we CARRY it. / Both of us. / Down the HILL.
   - [two shots: the two of us hauling the door-sized red book out of the hall door, Milo walking backward at the front. Then a high wide down the lamplit high street, the book between us, the townsfolk stepping aside and smiling]
 - `L39` narrator: At NINE, / I stamp / at MOM'S TABLE.
-  - [two shots: Mom's bright dining room, Mom in her paper crown, `smile`, the giant book across the table among cake plates. Then my stamp coming down. Soft thunk]
+  - [two shots: Mom's bright dining room, camera on Mom's side of the table, Mom in her paper crown, `smile`, in the foreground, the giant book across the table among cake plates. Then my stamp coming down. Soft thunk]
 - `L40` narrator: Tonight's rule? / Milo writes it / right THERE.
   - [two shots: Milo, `grin`, scribbling on a fresh slip at the table with a pencil. Then him sliding it across the cake plates to me]
 - `L41` narrator: MOM / gets the LAST SLICE.
-  - [two shots: the fresh stamped page with a little drawn cake-slice glyph. Then Mom, `smile`, pulling the cake plate toward her]
+  - [two shots: the fresh stamped page with a little drawn cake-slice glyph. Then the cake and Mom's face together: Mom, `smile`, pulling the cake plate toward her, the cake in the foreground and her face clear behind it]
 
 ## 08 The sting (L42 to L45, about 70 to 75 s)
 
@@ -237,9 +237,9 @@ My kitchen table at home, late. One warm lamp, the rest blue night. The lead dro
 - `L42` narrator: Back home, / I finally / turn the page OVER.
   - [close on my ink-blue thumb unfolding the torn page on the table, paper rustle, turning it over]
 - `L43` narrator: Rule FOUR / is on the BACK.
-  - [two shots: the back of the page, a big ink-blue "4" and a row of glyphs nobody has seen. The corner tag flips to "4". Then me, `scared`, glasses lit by the lamp]
-- `L44` narrator: I fold it SHUT / before I READ / a WORD.
-  - [two shots: my hand folding it shut fast, the "4" gone under the fold. Then the folded page going back into my waistcoat pocket]
+  - [two shots: the back of the page, a big ink-blue "4" and a row of glyphs nobody has seen. The corner tag flips to "4". Then me, `scared`, lit by the lamp under the hat brim]
+- `L44` narrator: I SHUT it / before I READ / a WORD.
+  - [two shots: my hand folding it shut fast, the "4" gone under the fold. Then the folded page going back into my coat pocket]
 - `L45` narrator: So do me / a FAVOR.
   - [me close to camera, `neutral`, lamp-lit, looking straight at us. 0.25 s after "FAVOR", cut to frame 1]
 
@@ -248,4 +248,4 @@ My kitchen table at home, late. One warm lamp, the rest blue night. The lead dro
 - **Cold viewer check targets:** who is Milo (my little brother), who is Mom (our mom), what happened (I tore out a rule that would give the book to Milo forever if I ever skipped a night, and I stamped the rule that stops people asking), and what the ending does (we carried the book to Mom's party, then the back of the torn page has rule four).
 - **Hard rule 1:** every page is numerals and our own glyphs only. The calendar has no month names. No signs with letters.
 - **Hard rule 2:** nobody is in danger. The town's stillness is eerie, not threatening, and nobody touches anyone.
-- **The word "keeper"** is never said on screen, so the host is never mixed up with the canon's Keepers.
+- **The word "keeper"** is never said on screen in this episode, so the host is never mixed up with the canon's Keepers. If he's ever named, it's only "the Buhkeeper". "Buhtown" is said once, in L02, and nowhere else (voice it "BUH-town", rhymes with "duh").
