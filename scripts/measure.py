@@ -451,7 +451,7 @@ def edit(st: dict, tl: dict) -> dict:
     lens_ = np.array([s["end"] - s["start"] for s in shots])
     from blocky import polish as _pol
     _p = _pol.spec(st)   # the polish pack's camera moves, read the same way bl_story renders them
-    specs = {s["id"]: _pol.cam_spec(s, i, _p) for i, s in enumerate(st["shots"])}
+    specs = _pol.cam_specs(st, tl, _p)
     out = {"duration_s": round(dur, 2), "shots": len(shots), "cuts_per_10s": round((len(shots) - 1) / dur * 10, 2),
            "shot_median_s": round(float(np.median(lens_)), 2), "shot_p90_s": round(float(np.percentile(lens_, 90)), 2),
            "shot_max_s": round(float(lens_.max()), 2),

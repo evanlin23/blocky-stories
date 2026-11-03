@@ -280,7 +280,25 @@ def auto_cam(shot_spec: dict, p: dict) -> bool:
     return bool(p and p.get("camera")) and _static(shot_spec) and bool(shot_spec.get("cam"))
 
 
-def cam_spec(shot_spec: dict, k: int, p: dict | None) -> dict:
+CAM_SPEED = 0.12     # m/s: the fastest the pack's push-in goes (critic, ep32 v2: a 0.6 s shot pushed too fast)
+CLOSE = 2.0          # m: a camera closer than this to its target pushes in proportionally less (a close-up crops)
+
+
+def cam_specs(st: dict, tl: dict, p: dict | None) -> dict:
+    """Every shot id to its camera spec with the pack's move: what bl_story renders and measure.py reads."""
+    lens_ = {s["id"]: s["end"] - s["start"] for s in tl["shots"]}
+    calm = set((tl.get("motion") or {}).get("calm_shots", []))
+    return {s["id"]: cam_spec(s, i, p, lens_.get(s["id"]), s["id"] in calm) for i, s in enumerate(st["shots"])}
+
+
+def calm_shots(tl: dict, p: dict, at) -> list[str]:
+    """The shots a reveal lands in: they get a straight, slow push and quiet idle motion, so the face that matters
+    sits centred and still on the word (critic, ep32 v2: Mum's head and the camera both drifted on "MUM")."""
+    rev = reveal_times(tl, p, at)
+    return [s["id"] for s in tl["shots"] if any(s["start"] <= t < s["end"] for t in rev)]
+
+
+def cam_spec(shot_spec: dict, k: int, p: dict | None, dur: float | None = None, calm: bool = False) -> dict:
     """The shot with the pack's slow, motivated camera move when its own camera holds still (craft metrics,
     2026-11-03: the camera moved 27% of the time, back-row's 71%): a push-in of `cam_push` of the distance to the
     target (at most 0.6 m) with a `cam_arc` degree arc round it, the arc turning the other way shot to shot, and every
@@ -293,11 +311,15 @@ def cam_spec(shot_spec: dict, k: int, p: dict | None) -> dict:
     rest = list(k0[4:])
     dx, dy, dz = (tgt[i] - loc[i] for i in range(3))
     dist = math.sqrt(dx * dx + dy * dy + dz * dz) or 1.0
-    push = min(0.6, dist * p["cam_push"]) / dist
+    push = min(0.6, dist * p["cam_push"] * min(1.0, dist / CLOSE), CAM_SPEED * dur if dur else 0.6) / dist
+    if calm:
+        push *= 0.5
     start = [loc[i] + (tgt[i] - loc[i]) * -push / 2 for i in range(3)]
     end = [loc[i] + (tgt[i] - loc[i]) * push / 2 for i in range(3)]
     t0, t1 = list(tgt), list(tgt)
-    if k % 3 == 1:   # a slow truck sideways (camera and target together)
+    if calm:
+        pass         # a reveal: a straight push only
+    elif k % 3 == 1:   # a slow truck sideways (camera and target together)
         side = (-dy, dx)
         n = math.hypot(*side) or 1.0
         sh = 0.035 * dist
@@ -310,6 +332,13 @@ def cam_spec(shot_spec: dict, k: int, p: dict | None) -> dict:
             rx, ry = v[0] - tgt[0], v[1] - tgt[1]
             c, s_ = math.cos(sgn * ang), math.sin(sgn * ang)
             v[0], v[1] = tgt[0] + rx * c - ry * s_, tgt[1] + rx * s_ + ry * c
+    if dur:   # the whole move, push plus arc or truck, at most CAM_SPEED (scaled about the camera's own spot)
+        travel = math.dist(start, end)
+        f = min(1.0, CAM_SPEED * dur / travel) if travel > 1e-9 else 1.0
+        start = [loc[i] + (start[i] - loc[i]) * f for i in range(3)]
+        end = [loc[i] + (end[i] - loc[i]) * f for i in range(3)]
+        t0 = [tgt[i] + (t0[i] - tgt[i]) * f for i in range(3)]
+        t1 = [tgt[i] + (t1[i] - tgt[i]) * f for i in range(3)]
     return {**shot_spec, "cam": [[0, start, t0, lens, *rest], [1, end, t1, lens, *rest]], "auto_cam": True}
 
 

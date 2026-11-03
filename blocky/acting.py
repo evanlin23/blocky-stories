@@ -239,7 +239,10 @@ def state(tl, who, t, seed=0):
             "mouth": max(mouth(tl["talk"].get(who, []), t), mouth_track(keys, t)),
             "hidden": bool(_switch(keys, "hidden", t, False)), "speed": speed}
     if mo.get("idle") and abs(legs) < 1e-6 and not out["hidden"]:   # the polish pack: nobody stands like a statue
-        ib, il, iy, ihy, ihp = idle(t, sum(map(ord, who)) + seed, float(mo.get("idle_scale", 1.0)))
+        sc = float(mo.get("idle_scale", 1.0))
+        if any(a <= t < b for a, b in mo.get("calm", [])):   # a reveal shot: nearly still, so the face reads
+            sc *= 0.2
+        ib, il, iy, ihy, ihp = idle(t, sum(map(ord, who)) + seed, sc)
         out.update(bob=out["bob"] + ib, lean=out["lean"] + il, yaw=out["yaw"] + iy,
                    head_yaw=out["head_yaw"] + ihy, head_pitch=out["head_pitch"] + ihp)
     return out

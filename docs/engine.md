@@ -203,7 +203,9 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
 - **Camera** (v2): `camera` gives every shot whose own camera holds still (one key, no `follow`) a slow push-in of
   `cam_push` (7%, at most 0.6 m) with a `cam_arc` (3°) arc round the target, the arc turning the other way shot to
   shot, and every third shot a slow truck. `polish.cam_spec` is read by both `bl_story.py` and
-  `scripts/measure.py`. The 2D drift then only covers shots it doesn't.
+  `scripts/measure.py` (through `polish.cam_specs`). The whole move is at most 0.12 m/s, a camera under 2 m from its
+  target pushes proportionally less, and a shot a reveal lands in gets a straight push at half speed with its
+  characters' idle motion at a fifth (`tl["motion"]["calm_shots"]`). The 2D drift then only covers shots it doesn't.
 - **Punch-ins** (v2): key words only (the builder's `emph`, the hook, big words, all-caps captions, a key word that
   ends its line), at most `punch_rate` (0.7) per 10 s, evenly spread. Hits keep their own 4 s spacing.
 - **Picture:** the `bright` grade raises exposure to at least 1.04 and saturation to 1.06, caps contrast at 1.05,

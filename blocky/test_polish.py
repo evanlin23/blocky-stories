@@ -306,3 +306,31 @@ def test_walk_shots_go_on_ones_only_with_the_pack():
                if any(acting.state(on, "me", f / 30)["speed"] > 0.05 for f in range(s["f0"], s["f1"], 6))}
     assert walking and all(s["step"] == (1 if s["id"] in walking else 2) for s in on["shots"])
     assert all(s["step"] == 2 for s in off["shots"])
+
+
+def test_camera_push_is_capped_gentler_close_and_straight_on_a_reveal():
+    """Critic, ep32 v2: a 0.6 s shot pushed too fast, a close-up cropped hair, and the reveal drifted."""
+    import math
+    p = polish.spec({"look": {"polish": True}})
+    far = {"id": "A", "cam": [[0, [0, -6, 1.5], [0, 0, 1.5], 40]]}
+    near = {"id": "B", "cam": [[0, [0, -0.8, 1.5], [0, 0, 1.5], 40]]}
+    move = lambda sp, **kw: math.dist(*(k[1] for k in polish.cam_spec(sp, 0, p, **kw)["cam"]))
+    assert move(far, dur=0.6) <= polish.CAM_SPEED * 0.6 + 1e-6 < move(far, dur=5.0)
+    assert move(near, dur=5.0) / 0.8 < move(far, dur=5.0) / 6.0                  # less push, relative, up close
+    calm = polish.cam_spec(far, 0, p, dur=5.0, calm=True)["cam"]
+    a, b, tgt = calm[0][1], calm[1][1], far["cam"][0][2]
+    assert a[0] == pytest.approx(0) and b[0] == pytest.approx(0)                     # straight in: no arc or truck
+    assert math.dist(a, b) < move(far, dur=5.0)
+
+
+def test_reveal_shots_are_calm():
+    from blocky import acting
+    st, tl = story()
+    calm = tl["motion"]["calm_shots"]
+    p = polish.spec(st)
+    at = timeline.resolver(tl["lines"], tl["duration"])
+    rev = polish.reveal_times(tl, p, at)
+    assert calm and all(any(s["start"] <= t < s["end"] for t in rev) for s in tl["shots"] if s["id"] in calm)
+    s = next(x for x in tl["shots"] if x["id"] in calm)
+    hy = [acting.state(tl, "me", s["start"] + k / 30)["head_yaw"] for k in range(int((s["end"] - s["start"]) * 30))]
+    assert max(hy) - min(hy) < 0.03                                                # nearly still on the reveal

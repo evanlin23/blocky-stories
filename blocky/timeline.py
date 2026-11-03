@@ -226,9 +226,14 @@ def build(st: dict, voice: dict, fps: int = FPS) -> dict:
             "voice": {k: voice.get(k) for k in ("voice", "rate", "tempo", "model")},
             "lines": placed, "order": order, "captions": caps, "talk": talk, "shots": shots,
             "cues": cues, "fx": fx, "acting": acting, "motion": _motion(st)}
-    if out["motion"].get("ones") == "walk":   # the polish pack: shots with a walk on ones
+    if out["motion"]:   # the polish pack: shots with a walk on ones; reveal shots calm
         from blocky import polish
-        polish.ones_for_walks(out, st)
+        p = polish.spec(st)
+        if out["motion"].get("ones") == "walk":
+            polish.ones_for_walks(out, st)
+        cs = polish.calm_shots(out, p, at)
+        out["motion"]["calm_shots"] = cs
+        out["motion"]["calm"] = [[s["start"], s["end"]] for s in out["shots"] if s["id"] in cs]
     return out
 
 

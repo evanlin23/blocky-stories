@@ -105,7 +105,7 @@ def main():
             continue
         chars[name] = (rig.Character(name, spec, faces_dir), i)
     pol = polish.spec(story)   # the polish pack's camera moves on shots whose own camera holds still
-    shots = {s["id"]: polish.cam_spec(s, i, pol) for i, s in enumerate(story["shots"])}
+    shots = polish.cam_specs(story, tl, pol)
 
     if job.get("stills"):
         frames = [int(round(t * tl["fps"])) for t in job["stills"]]
