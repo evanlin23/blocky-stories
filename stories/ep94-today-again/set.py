@@ -225,6 +225,44 @@ def clock_decal(faceless_numbers=True):
     return im
 
 
+def digital_image(h, m):
+    """A small navy readout with bright numerals, 9:02 style, for the wall clock's face."""
+    W, H = 460, 200
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle((0, 0, W - 1, H - 1), radius=34, fill=NAVY)
+    col = "#fff3a0"
+    hh = 128
+    y0 = (H - hh) // 2
+    number(d, str(h), 92, y0, hh, col, t=22)
+    for yy in (y0 + hh * 0.3, y0 + hh * 0.7):
+        d.ellipse((W / 2 - 11, yy - 11, W / 2 + 11, yy + 11), fill=col)
+    number(d, f"{m:02d}", 330, y0, hh, col, t=22)
+    return im
+
+
+def ghost_image():
+    """My huge surprised face for the cake-case glass: skin, dark curls, wide eyes, raised brows, an O mouth."""
+    W = H = 512
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    ink = "#24131f"
+    d.rounded_rectangle((90, 110, 422, 450), radius=110, fill="#f0bd92", outline=ink, width=8)
+    for k in range(11):
+        a = math.pi + k * math.pi / 10
+        d.ellipse((256 + 190 * math.cos(a) - 52, 190 + 140 * math.sin(a) - 52, 256 + 190 * math.cos(a) + 52, 190 + 140 * math.sin(a) + 52), fill="#1a1512")
+    d.rounded_rectangle((100, 100, 412, 190), radius=40, fill="#1a1512")
+    for sx in (-1, 1):
+        cx = 256 + sx * 88
+        d.ellipse((cx - 52, 230 - 52, cx + 52, 230 + 52), fill="#ffffff", outline=ink, width=8)
+        d.ellipse((cx - 18, 230 - 18, cx + 18, 230 + 18), fill=ink)
+        d.line((cx - 56, 148, cx + 56, 138 if sx < 0 else 138), fill=ink, width=14)
+    d.ellipse((206, 336, 306, 436), fill="#7a2a3a", outline=ink, width=8)
+    for sx in (-1, 1):
+        d.ellipse((256 + sx * 150 - 26, 320 - 16, 256 + sx * 150 + 26, 320 + 16), fill="#ff9e8a")
+    return im
+
+
 def newspaper_image():
     W, H = 400, 520
     im = Image.new("RGB", (W, H), "#f3ecd9")
@@ -358,8 +396,8 @@ def materials(kit):
     M["dark"] = P("#2a2a34", 0.7, "dark")
     M["tile"] = kit.checker("#fff3dc", "#ffd9e8", 2.0, "bakery tile", 0.4)
     M["glass"] = film(kit, "glass film")
-    M["water"] = kit.emit("#e8f6ff", 0.9, "water streak")
-    M["drop"] = kit.emit("#d6efff", 1.1, "spray drop")
+    M["water"] = kit.emit("#8fcaff", 1.0, "water streak")
+    M["drop"] = kit.emit("#9fd2ff", 1.0, "spray drop")
     M["road"] = kit.texture("asphalt", 0.6, tint="#a8aebb", rough=0.8, mat_name="road")
     M["grass"] = kit.texture("grass", 1.0, tint="#8fe56e", rough=0.9, mat_name="lawn")
     M["walk"] = P("#e6e2da", 0.85, "sidewalk")
@@ -429,8 +467,7 @@ def build_bakery(kit, M, ctx):
     fw("bk.f6", 3.5, 4.3, 0, 3.6)
     # window frame and sill (cream, proud of the wall faces)
     for nm, sz, loc in (("t", (3.2, 0.36, 0.1), (2.0, -0.15, 2.95)), ("b", (3.2, 0.36, 0.1), (2.0, -0.15, 0.85)),
-                        ("l", (0.1, 0.36, 2.1), (0.45, -0.15, 1.9)), ("r", (0.1, 0.36, 2.1), (3.55, -0.15, 1.9)),
-                        ("m", (0.06, 0.1, 2.0), (2.0, -0.1, 1.9))):
+                        ("l", (0.1, 0.36, 2.1), (0.45, -0.15, 1.9)), ("r", (0.1, 0.36, 2.1), (3.55, -0.15, 1.9))):
         B(f"win.{nm}", sz, loc, M["cream"], bevel=0.015)
     B("win.sill", (3.4, 0.5, 0.07), (2.0, -0.45, 0.82), M["cream"], bevel=0.02)
     # door frame, the door on its hinge (opens into the shop), a blueberry slab with a brass knob
@@ -456,12 +493,17 @@ def build_bakery(kit, M, ctx):
     ctx["bell"] = bp
     # the wall clock, left of the window (face to +y)
     ctx["clock"] = make_clock(kit, M, "wall clock", CLOCKP, +1, 0.5)
+    ctx["dig"] = {}
+    for hm_ in ((9, 2), (9, 15), (9, 30), (9, 1), (9, 0)):
+        dm = img_material(kit, f"dig{hm_[0]}{hm_[1]}", digital_image(*hm_), 0.5, emit=1.0)
+        ctx["dig"][hm_] = img_plane(kit, f"dig{hm_[1]}", 0.46, 0.2, dm, (CLOCKP[0], CLOCKP[1] + 0.116, CLOCKP[2] - 0.2),
+                                    None, right=(-1, 0, 0), up=(0, 0, 1))
     # the counter: pistachio, with a cream top; a brass edge plate by the till with two pink tally strokes
     B("counter", (6.2, 1.0, 1.0), (-0.5, 4.3, 0.5), M["pista"], bevel=0.02)
     B("counter.top", (6.4, 1.2, 0.07), (-0.5, 4.3, 1.035), M["cream"], bevel=0.02)
-    B("counter.plate", (0.8, 0.03, 0.08), (2.0, 3.69, 0.98), M["brass"], bevel=0.005)
+    B("counter.plate", (1.0, 0.03, 0.16), (2.0, 3.69, 0.96), M["brass"], bevel=0.005)
     for k in range(2):
-        B(f"tally{k}", (0.012, 0.004, 0.06), (1.9 + k * 0.1, 3.668, 0.98), kit.plastic("#ff6fa8", 0.5, "tally pink"), rot=(0, 0.25, 0))
+        B(f"tally{k}", (0.035, 0.012, 0.12), (1.88 + k * 0.24, 3.664, 0.96), kit.emit("#ff7fb8", 1.2, "tally pink"), rot=(0, 0.25, 0))
     # the glass case on the left of the counter, cakes and muffins inside
     B("case.base", (2.3, 0.9, 0.22), (-2.4, 4.3, 1.18), M["white"], bevel=0.02)
     cake_cols = ["#ff9fc9", "#fff8ee", "#c8895a", "#ffe58a", "#a8e07a"]
@@ -535,15 +577,23 @@ def build_bakery(kit, M, ctx):
     kit.cyl("cup.body", 0.05, 0.1, (0, 0, 0), kit.plastic("#ffffff", 0.35, "mug"), cup, n=14, r2=0.04)
     kit.cyl("cup.coffee", 0.044, 0.01, (0, 0, 0.05), M["coffee"], cup, n=14)
     ctx["cup"] = cup
-    sp = kit.box("spill", (0.4, 0.28, 0.012), (-0.1, 4.0, -40), M["coffee"], bevel=0.005)
+    sp = kit.box("spill", (0.62, 0.42, 0.02), (-0.1, 4.0, -40), kit.plastic("#7a3f1c", 0.25, "spill coffee"), bevel=0.005)
     ctx["spill"] = sp
+    # my surprised face "reflected" in the cake case glass (shown by the "ghost" cue), 1.5 cm proud of the glass
+    gm = img_material(kit, "ghost", ghost_image(), 0.4, emit=1.0)
+    ctx["ghost"] = img_plane(kit, "ghost", 0.9, 0.9, gm, (-2.35, 3.835, 1.52), None, right=(-1, 0, 0), up=(0, 0, 1))
+    ctx["ghost"].hide_render = True
+    ctx["ghost_alpha"] = gm
+    kit.light("alley fill", "POINT", (3.0, 10.4, 3.2), 260.0, "#fff4e6", size=1.0)
+    # the coffee splash: blobs thrown up from the spill
+    ctx["splash"] = [kit.sphere(f"splash{i}", 0.035 + 0.01 * (i % 3), (0, 0, -40), M["coffee"], seg=8) for i in range(12)]
     # the rain on the window: streaks hung in the opening (centre plane y = -0.1)
     rng = random.Random(11)
     ctx["streaks"] = []
-    for i in range(40):
-        x = 0.62 + (i + rng.random() * 0.6) * (2.76 / 40)
-        ln = rng.uniform(0.3, 0.75)
-        o = B(f"streak{i}", (0.055, 0.014, ln), (x, -0.1, 2.0), M["water"], bevel=0.004)
+    for i in range(64):
+        x = 0.62 + (i + rng.random() * 0.6) * (2.76 / 64)
+        ln = rng.uniform(0.22, 0.6)
+        o = B(f"streak{i}", (0.017, 0.014, ln), (x, -0.1, 2.0), M["water"], bevel=0.004)
         ctx["streaks"].append((o, rng.uniform(0.35, 0.8), rng.random() * 2.2, ln))
         no_shadow(o)
 
@@ -582,14 +632,23 @@ def build_street(kit, M, ctx):
     for k in range(17):
         B(f"rung{k}", (0.84, 0.05, 0.05), (0, 0, -2.5 + k * 0.3), alu, lr)
     ctx["ladder"] = lr
+    # a second, free-standing ladder in the yard for the reveal picture (shown by the "ladder2" cue)
+    l2 = kit.empty("ladder2", (7.4, 5.4, 0.0))
+    for sx in (-1, 1):
+        for sy, a in ((-1, -0.17), (1, 0.17)):
+            B(f"l2rail{sx}{sy}", (0.06, 0.06, 2.5), (sx * 0.36, sy * 0.22, 1.2), alu, l2, rot=(a, 0, 0))
+    for k in range(7):
+        B(f"l2rung{k}", (0.72, 0.05, 0.05), (0, -0.2 + 0.0 * k, 0.3 + k * 0.32), alu, l2)
+    B("l2top", (0.8, 0.5, 0.06), (0, 0, 2.42), kit.plastic("#ff6fa8", 0.5, "l2 top"), l2)
+    ctx["ladder2"] = l2
     # the hose: five green tubes from Okafor's hand to the ground (placed each frame), a nozzle, and the spray drops
     hose_m = kit.plastic("#3fb36b", 0.5, "hose")
     ctx["hose"] = [kit.cyl(f"hose{i}", 0.025, 1.0, (0, 0, -40), hose_m, n=8) for i in range(5)]
     ctx["nozzle"] = kit.cyl("nozzle", 0.03, 0.12, (0, 0, -40), kit.plastic("#ffd23f", 0.4, "nozzle"), n=10, r2=0.04)
     rng = random.Random(5)
     ctx["drops"] = []
-    for i in range(44):
-        o = kit.box(f"spray{i}", (0.018, 0.018, 0.24), (0, 0, -40), M["drop"])
+    for i in range(60):
+        o = kit.box(f"spray{i}", (0.011, 0.011, 0.3), (0, 0, -40), M["drop"])
         no_shadow(o)
         ctx["drops"].append((o, rng.uniform(1.8, 3.0), rng.random() * 3.4, rng.uniform(-1, 1), rng.uniform(-0.12, 0.12)))
     # a rainbow: seven thin arcs, facing the street (y = -1.0 plane)
@@ -846,6 +905,20 @@ def dress_pearl(kit, name, ctx):
         ctx["specks"].append(o)
 
 
+def dress_me(kit, name):
+    """Dark curls: a cluster of little round locks on the mop, so my hair reads as curls and stays black."""
+    hg = _hg(name)
+    hair = kit.plastic("#1a1512", 0.65)
+    top = faces.HEAD_H / 2
+    k = 0
+    for i, (cx, cy) in enumerate(((-0.42, -0.35), (0.0, -0.4), (0.42, -0.35), (-0.45, 0.05), (0.0, 0.0), (0.45, 0.05), (-0.4, 0.4), (0.0, 0.42), (0.4, 0.4))):
+        kit.sphere(f"{name}.curl{k}", 0.24, (cx, cy, top + 0.4), hair, hg, seg=10)
+        k += 1
+    for sx in (-1, 1):
+        for j, (cy, cz) in enumerate(((-0.15, top - 0.2), (0.25, top - 0.5), (0.3, top - 0.05))):
+            kit.sphere(f"{name}.curls{sx}{j}", 0.2, (sx * (faces.HEAD_R + 0.08), cy, cz), hair, hg, seg=10)
+
+
 def dress_oka(kit, name):
     hg = _hg(name)
     kit.box(f"{name}.beard", (0.95, 0.36, 0.5), (0, -0.5, -0.36), kit.plastic("#f2f2f2", 0.85, "beard"), hg, bevel=0.1)
@@ -869,7 +942,7 @@ def dress_extra(kit, name, ctx):
     kit.box("clip.board", (0.32, 0.03, 0.42), (0, 0, 0), kit.plastic("#b07a4a", 0.6, "clipboard"), clip, bevel=0.01)
     kit.box("clip.clip", (0.12, 0.04, 0.05), (0, -0.002, 0.2), kit.plastic("#d8dde6", 0.25, "clip steel"), clip)
     cm = img_material(kit, "clip_paper", clip_image(), 0.7)
-    pl = img_plane(kit, "clip.paper", 0.28, 0.37, cm, (0, 0.02, -0.01), clip, right=(-1, 0, 0), up=(0, 0, 1))
+    pl = img_plane(kit, "clip.paper", 0.28, 0.37, cm, (0, -0.024, -0.01), clip, right=(1, 0, 0), up=(0, 0, 1))
     ctx["clip"] = clip
 
 
@@ -910,6 +983,8 @@ def animate(kit, story, tl, t, ctx):
             dress_pearl(kit, "pearl", ctx)
         if "oka" in rig.CHARS:
             dress_oka(kit, "oka")
+        if "me" in rig.CHARS:
+            dress_me(kit, "me")
         if "lund" in rig.CHARS:
             dress_lund(kit, "lund", ctx)
         dress_extra(kit, "mom", ctx)
@@ -918,6 +993,10 @@ def animate(kit, story, tl, t, ctx):
     v = eased(tl, "clock", t, default=[9, 2])
     sec = (math.floor(t) + ss((t % 1.0) * 6.0)) * 1.0
     set_hands(ctx["clock"], v[0], v[1], sec)
+    cc_ = latest(tl, "clock", t)
+    tgt = tuple(cc_["v"]) if cc_ else (9, 2)
+    for k_, o_ in ctx["dig"].items():
+        o_.hide_render = k_ != tgt
     kv = eased(tl, "kclock", t, default=[9, 30])
     set_hands(ctx["kclock"], kv[0], kv[1], sec)
     av = eased(tl, "alarm", t, default=[7, 0])
@@ -1047,8 +1126,8 @@ def animate(kit, story, tl, t, ctx):
         wet = on_at(tl, "wet", t, False)
         bsdf = next((n for n in hm.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None)
         if bsdf:
-            bsdf.inputs["Base Color"].default_value = (*lin("#33476e" if wet else "#1a1512"), 1)
-            bsdf.inputs["Roughness"].default_value = 0.2 if wet else 0.65
+            bsdf.inputs["Base Color"].default_value = (*lin("#120e0c" if wet else "#1a1512"), 1)
+            bsdf.inputs["Roughness"].default_value = 0.3 if wet else 0.65
     # ---- the wedding cake in Lund's hands
     wc = latest(tl, "wcake", t)
     cake = ctx["wcake"]
@@ -1101,6 +1180,9 @@ def animate(kit, story, tl, t, ctx):
             o.hide_render = not (done and not done.get("on"))
     # ---- the clipboard, the stopwatch and the pen
     cl = ctx["clip"]
+    csc = eased(tl, "clipscale", t, default=[1.5])
+    csc = csc[0] if isinstance(csc, list) else csc
+    cl.scale = (csc, csc, csc)
     cm = latest(tl, "clip", t)
     if cm and cm.get("mode") in ("hand", "chest") and "mom" in rig.CHARS and not rig.CHARS["mom"].root.hide_render:
         up = rig.CHARS["mom"].upper
@@ -1127,6 +1209,22 @@ def animate(kit, story, tl, t, ctx):
         pn.rotation_euler = hg.matrix_world.to_euler()
     else:
         pn.location = (0, 0, -40)
+    # ---- my face in the cake case glass, the yard's second ladder
+    ctx["ghost"].hide_render = not on_at(tl, "ghost", t, False)
+    hide_tree(ctx["ladder2"], not on_at(tl, "ladder2", t, False))
+    # ---- the coffee splash: blobs thrown up and out of the spill, falling back in about 0.7 s
+    spc = latest(tl, "spill", t)
+    ss_ = None if spc is None else t - spc["t"]
+    soff2 = latest(tl, "spill_off", t)
+    live = ss_ is not None and 0 <= ss_ < 0.8 and not (soff2 and soff2["t"] > spc["t"])
+    for i, o in enumerate(ctx["splash"]):
+        if not live:
+            o.location = (0, 0, -40)
+            continue
+        a = i * 2.4 + 0.5
+        vx, vy, vz = 0.55 * math.cos(a) * (0.5 + 0.5 * ((i * 7) % 5) / 4), 0.35 * math.sin(a), 1.9 + 0.5 * ((i * 3) % 4)
+        o.location = (-0.3 + vx * ss_, 3.98 + vy * ss_, 1.1 + vz * ss_ - 4.4 * ss_ * ss_ + 0.02)
+        o.scale = (1, 1, 1.4)
     # ---- the rule meter: the calendar page in the top-left corner of every shot, parented to the camera
     piv, page, badges = ctx["tag"]
     lens = lens_at(story, tl, t)
