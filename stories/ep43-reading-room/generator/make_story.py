@@ -369,6 +369,13 @@ CAM_FIX = {
 for s in SH:
     if s["ref"] in CAM_FIX:
         s["cam"] = CAM_FIX[s["ref"]]
+# quality pass: no shot is a still picture. Every single-key camera gets a slow 6% push toward its target.
+for s in SH:
+    c = s["cam"]
+    if len(c) == 3:
+        (lx, ly, lz), (tx, ty, tz), ln = c
+        k = 0.06
+        s["cam"] = (c[0], c[1], ln, [round(lx + (tx - lx) * k, 3), round(ly + (ty - ly) * k, 3), round(lz + (tz - lz) * k, 3)], c[1], ln)
 S_SEAT = {"at": "L64", "name": "seat", "to": 1.0, "dur": 0.6}
 
 # lines and chunk refs
