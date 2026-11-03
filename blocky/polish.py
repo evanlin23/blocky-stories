@@ -45,7 +45,7 @@ DEFAULTS = {
     # captions
     "pop": True,
     # motion
-    "push": 0.15, "reframe_every": 1.0, "reframe_min": 1.6, "reframe_zoom": 1.17, "max_zoom": 1.25,
+    "push": 0.12, "reframe_every": 1.0, "reframe_min": 1.6, "reframe_zoom": 1.12, "max_zoom": 1.18,
     "punch": 0.06, "punch_gap": 2.4, "punch_rate": 0.7, "fill": 0.0, "hit_gap": 4.0, "drift": 0.03,
     "ones": "moving", "camera": True, "cam_push": 0.07, "cam_arc": 3.0, "ease": True, "idle": True, "idle_scale": 1.0, "drift_min": 1.5, "sway": False, "sway_amp": 0.004,
     # picture
@@ -395,19 +395,42 @@ def _quiet_cache(tl: dict, p: dict) -> list:
 
 
 def reframe_times(tl: dict, p: dict) -> list[float]:
-    """When the pack's angle cuts land (for measure.py and the whoosh-free sound: a reframe is a cut, not a punch)."""
+    """When the pack's angle cuts land: in shots over `reframe_min` s that aren't a reveal shot and don't touch a
+    quiet span, about every `reframe_every` s, each moved to the nearest caption change within 0.35 s (cut with the
+    words) and dropped when there's none, or when it would leave a part under 0.6 s."""
     out = []
     rf = p.get("reframe_every")
     if not rf:
         return out
     calm = set((tl.get("motion") or {}).get("calm_shots") or [])
+    quiet = _quiet_cache(tl, p)
+    caps = [c["start"] for c in tl["captions"]]
     for s in tl["shots"]:
         L = s["end"] - s["start"]
         if L < p.get("reframe_min", 1.6) or s["id"] in calm:
             continue
+        if any(a < s["end"] and b > s["start"] for a, b in quiet):
+            continue
         nseg = max(2, int(round(L / rf)))
-        out += [s["start"] + i * L / nseg for i in range(1, nseg)]
+        last = s["start"]
+        for i in range(1, nseg):
+            want = s["start"] + i * L / nseg
+            near = [c for c in caps if abs(c - want) <= 0.35 and c - last >= 0.6 and s["end"] - c >= 0.6]
+            if near:
+                last = min(near, key=lambda c: abs(c - want))
+                out.append(last)
     return out
+
+
+_REFRAME: dict = {}
+
+
+def _reframe_cache(tl: dict, p: dict) -> list:
+    key = (id(tl), id(p))
+    if key not in _REFRAME:
+        _REFRAME.clear()
+        _REFRAME[key] = reframe_times(tl, p)
+    return _REFRAME[key]
 
 
 def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = None) -> tuple[float, float, float]:
@@ -433,17 +456,14 @@ def motion(tl: dict, st: dict, p: dict, t: float, emph: list[float] | None = Non
         zoom *= 1 + pu * (u if k % 2 == 0 else 1 - u)
         dx += (1 if (k // 2) % 2 == 0 else -1) * pu * 0.12 * (u - 0.5)
     rf = p.get("reframe_every")
-    if rf and length >= p.get("reframe_min", 1.6) and not calm:
-        # an angle cut inside a long shot: the shot splits into even parts about `reframe_every` s long, and every
-        # other part is a tighter framing, offset up and to one side (like a second camera); never in a reveal shot
-        # or a quiet span
-        nseg = max(2, int(round(length / rf)))
-        seg = min(nseg - 1, int(u * nseg))
-        tq = shot["start"] + seg * length / nseg
-        if seg % 2 == 1 and not any(a <= tq <= b for a, b in _quiet_cache(tl, p)):
-            zoom *= p.get("reframe_zoom", 1.15)
-            dx += 0.035 * (1 if (k + seg // 2) % 2 == 0 else -1)
-            dy -= 0.025
+    if rf:
+        # an angle cut inside a long shot (v2.3): every other part is a tighter framing, centred and a touch up
+        # (an offset pushed faces off the edge, critic ep32), cut on a caption change (never under a held word)
+        cuts_ = [c for c in _reframe_cache(tl, p) if shot["start"] < c < shot["end"]]
+        seg = sum(1 for c in cuts_ if c <= t)
+        if seg % 2 == 1:
+            zoom *= p.get("reframe_zoom", 1.12)
+            dy -= 0.015
     if p["punch"]:
         for te in emph if emph is not None else emph_times(tl, p):
             if shot["start"] - 1e-6 <= te < shot["end"] and t >= te:

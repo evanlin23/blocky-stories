@@ -423,15 +423,20 @@ def test_fewer_sound_effects_by_default():
 
 
 def test_pace_angle_cuts_split_long_shots_and_skip_reveals():
-    """v2.3 (craft metrics blocks, 2026-11-03): long shots get an angle cut about every 1.1 s, never in a reveal."""
+    """v2.3 (craft metrics blocks, 2026-11-03): angle cuts inside long shots, each on a caption change, never in a
+    reveal shot or a shot that touches a quiet span, never leaving a part under 0.6 s."""
     st, tl = story()
     p = polish.spec(st)
     rts = polish.reframe_times(tl, p)
+    assert rts
     calm = set(tl["motion"]["calm_shots"])
+    caps = [c["start"] for c in tl["captions"]]
     for s in tl["shots"]:
         inside = [t for t in rts if s["start"] < t < s["end"]]
-        L = s["end"] - s["start"]
-        if s["id"] in calm or L < p["reframe_min"]:
+        if s["id"] in calm or s["end"] - s["start"] < p["reframe_min"]:
             assert not inside
-        else:
-            assert len(inside) == max(2, round(L / p["reframe_every"])) - 1
+        edges = [s["start"], *inside, s["end"]]
+        assert all(b - a >= 0.6 - 1e-9 for a, b in zip(edges, edges[1:])) or not inside
+    assert all(any(abs(t - c) < 1e-9 for c in caps) for t in rts)
+    q = {**p, "quiet": [["L01", "L06"]]}
+    assert polish.reframe_times(tl, q) == []
