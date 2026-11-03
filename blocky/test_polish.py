@@ -391,3 +391,30 @@ def test_bright_grade_lift_all_negative_pixel_lands_near_the_lift():
     img = np.full((4, 4, 3), 0.02, np.float32)
     out = post.grade(img, {"vignette": 0, "contrast": 1.3, "lift": 0.035})
     assert np.allclose(out, 0.035, atol=0.003)
+
+
+def test_music_plays_under_the_whole_film():
+    """Owner, 2026-11-03: "there is background music". A gap in the score is filled with a quiet drone and pad."""
+    spec = {"sections": [{"at": "L02", "voices": ["musicbox"], "energy": 0.6}, {"at": "L04", "voices": [], "energy": 0}]}
+    m = polish.music_spec(spec)
+    assert m["sections"][0]["at"] == 0
+    assert all(any(v in s["voices"] for v in polish.SUSTAIN) for s in m["sections"])
+    assert "musicbox" in m["sections"][0]["voices"]                                  # the story's own voices stay
+    st, tl = story(music={"root": 45, "bpm": 66, **spec})
+    mus = sound.score(tl, polish.music_spec(st["music"]))
+    w = int(0.5 * SR)
+    blocks = np.sqrt((mus.mean(axis=1)[: len(mus) // w * w].reshape(-1, w) ** 2).mean(axis=1))
+    assert blocks[:-1].min() > 1e-4                                                  # no silent half second
+
+
+def test_fewer_sound_effects_by_default():
+    """Owner, 2026-11-03: the hits use few effects. No whoosh on plain cuts, one opening key-word hit."""
+    st, tl = story()
+    p = polish.spec(st)
+    at = timeline.resolver(tl["lines"], tl["duration"])
+    ev = polish.sound_events(tl, st, p, at)
+    emph = polish.emph_times(tl, p, at)
+    assert all(any(abs(e["t"] + 0.12 - t) < 1e-6 for t in emph) for e in ev if e["kind"] == "whoosh")
+    assert sum(e["kind"] == "lowhit" for e in ev) <= 1
+    risers = sorted(e["t"] + e["dur"] for e in ev if e["kind"] == "riser")
+    assert all(b - a >= p["riser_gap"] - 1e-6 for a, b in zip(risers, risers[1:]))

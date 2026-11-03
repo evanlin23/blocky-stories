@@ -181,10 +181,13 @@ pushing the quality up"). Only proven moves; the before/after on ep32-sitter is 
                     "drift": 0.03, "whoosh_db": -19, "grade": "bright"}}
 ```
 
-- **Sound:** a recorded whoosh, low-passed at 3 kHz, 0.12 s before a cut that falls between lines (never under a
-  word; at most one per 1.4 s) and on every punch-in; a soft sub thump on emphasised words and a fuller hit on
-  reveals, each moved onto the chunk's key word (`on_key`); a 1.8 s riser into each `music_drops` hole (the silence
-  cuts it off; the voice doesn't duck it) and into `twist`; a room bed from `assets/audio/amb/` under the whole film at -44 LUFS (12 dB lower again wherever the story has its own ambience),
+- **Sound** (v2.2, owner 2026-11-03: the hits use few effects, and there is background music): the score plays under
+  the whole film (`polish.music_spec`: the first section starts at 0, and a section with no drone, pad or choir gets
+  a quiet drone and pad; holes only at `music_drops`). A recorded whoosh, low-passed at 3 kHz, 0.12 s before every
+  punch-in (on cuts between lines too only with `"whoosh_cuts": true`); one low hit on the hook (`"key_hits":
+  "all"` for every key word, 4 s apart); a soft sub thump on emphasised words and a fuller hit on
+  reveals, each moved onto the chunk's key word (`on_key`); a 1.8 s riser into the `twist` and the `music_drops` holes (the silence
+  cuts it off; the voice doesn't duck it), at most one per 15 s (`riser_gap`); a room bed from `assets/audio/amb/` under the whole film at -44 LUFS (12 dB lower again wherever the story has its own ambience),
   which a drop only dips 12 dB, so nothing is ever digital silence. Doors and other marks: an acting key with
   `"sfx": "door"` (or `latch`, `creak`, `thud`, `knock`; `sfx_db` sets its level) plays it there, panned to the
   character; so does a cue named `door...`. Every polish sound stays clear of the builder's own `sfx` (0.25 s),

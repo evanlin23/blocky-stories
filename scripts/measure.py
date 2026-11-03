@@ -68,7 +68,7 @@ TARGETS = {
     "micro.idle_window_share": (None, 0.30),
     "micro.caption_sync_p90_ms": (None, 120),
     # the sound (micro)
-    "spec.sound_events_per_10s": (4.0, None),        # back-row 3.4, the flops 1.2-3.3; the polish pack adds about 4
+    "spec.sound_events_per_10s": (2.0, 4.0),         # owner, 2026-11-03: the hits use few effects (polish v2.2)
     "sound.silence_share": (None, 0.005),
     "sound.voice_bed_gap_db": (8.0, 14.0),
     "sound.lufs": (-15.0, -13.0),
