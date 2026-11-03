@@ -446,14 +446,15 @@ def _ensure(ctx, story, tl):
 
 
 def shadow_tee(name, M):
-    """A clean T on the cobbles: one straight shoulder bar wall to wall across the arch mouth, a round head on its middle."""
+    """One connected person-shadow on the cobbles: a single polygon, sloped shoulders, a short neck, a round head overlapping it."""
     e = kit.empty(name, (0, 0, -30))
-    hw, bt, hr = OPEN_W / 2, 0.62, 0.36
-    verts = [(-hw, 0.0, 0.0), (hw, 0.0, 0.0), (hw, bt, 0.0), (-hw, bt, 0.0)]
-    ob = kit.mesh_obj(f"{name}.bar", verts, [(0, 1, 2, 3)], M["shadow"], e)
+    pts = [(-1.5, 0.0), (1.5, 0.0), (1.5, 0.35), (1.0, 0.75), (0.2, 0.95), (0.2, 1.1),
+           (-0.2, 1.1), (-0.2, 0.95), (-1.0, 0.75), (-1.5, 0.35)]
+    ob = kit.mesh_obj(f"{name}.body", [(u, v, 0.0) for u, v in pts], [tuple(range(len(pts)))], M["shadow"], e)
     ob.visible_shadow = False
-    pts = [(hr * math.cos(2 * math.pi * i / 36), bt + hr * 0.2 + hr * math.sin(2 * math.pi * i / 36), 0.0) for i in range(36)]
-    ob = kit.mesh_obj(f"{name}.head", pts, [tuple(range(36))], M["shadow"], e)
+    hr = 0.42
+    hp = [(hr * math.cos(2 * math.pi * i / 36), 1.0 + hr * 0.85 + hr * math.sin(2 * math.pi * i / 36), 0.0) for i in range(36)]
+    ob = kit.mesh_obj(f"{name}.head", hp, [tuple(range(36))], M["shadow"], e)
     ob.visible_shadow = False
     return e
 
@@ -768,7 +769,8 @@ def animate(kit_, story, tl, t, ctx):
         e.scale = (1.0, sc_[-1].get("stretch", 1.0), 1.0)
     elif kind == "tee":
         e = ctx["shadows"]["tee"]
-        e.location = (0.0, sc_[-1].get("y", ARCH_Y0 + 0.5), 0.05)
+        e.location = (0.0, sc_[-1].get("y", ARCH_Y0 + 0.5) + 0.15, 0.05)
+        e.scale = (1.0, 0.62, 1.0)
         e.rotation_euler = (0, 0, 0)
     elif kind == "wall":
         e = ctx["shadows"]["wall"]
