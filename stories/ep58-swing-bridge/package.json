@@ -1,8 +1,9 @@
 {
  "title": "In This Town Your Hands GLOW When Someone Needs You",
- "description": "In this town, your hands glow whenever somebody needs you. Mine never have, not that I've seen, and that suits me fine.\n\nMy wife's dad, Emrys, is going dark. Nothing has needed him since they bolted his old swing bridge shut, and my wife says if his hands go out, we'll lose him. Then something on the far bank starts reaching across the bridge in the fog.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+ "description": "In this town, your hands glow whenever somebody needs you. Mine never have, not that I've seen, and that suits me fine.\n\nMy wife's dad, Emrys, is going dark. Nothing has needed him since they bolted his old swing bridge shut, and my wife is scared he'll never leave the bridge cabin. Then something on the far bank, with hands that never glow, starts reaching across the bridge in the fog.\n\nIt's made up, a creepy blocky story built with code and Blender.",
  "pin": "Whose hands would be glowing right now because of you?",
  "made_for_kids": false,
- "cover_s": 102.5,
- "shape": "about-me"
+ "cover_s": 102.0,
+ "shape": "about-me",
+ "lane": "core"
 }
