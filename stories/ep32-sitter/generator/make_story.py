@@ -61,8 +61,8 @@ mum["face"].update({"pupil": "#6a3d1f", "corners": True})
 cast = {
     "me": person("#e3b48e", "#d3a022", "#33363c", "buzz", "#14120f", pattern="knit", pattern_c="#bd8d19", shoes="#e8e8e6"),
     "mum": mum,
-    "kofi": person("#c68a5e", "#b4522f", "#3a3a40", "none", "#1a1410", extras=["glasses", "apron"], extra_c="#4a6788",
-                   collar="#9b4326"),
+    "kofi": person("#d9a67e", "#b4522f", "#3a3a40", "none", "#1a1410", extras=["glasses", "apron"], extra_c="#4a6788",
+                   glasses_c="#14100e", collar="#9b4326"),
     "petra": person("#f0cfae", "#f2f2f0", "#2d3b5c", "bun", "#b4622e", pattern="stripes", pattern_c="#26365c"),
     "ade": person("#d9a67e", "#78803c", "#4a4033", "none", "#8a8a88", hat="ballcap", hat_c="#6b4a2e", pattern="plaid",
                   pattern_c="#5a6230", eyes="tired", height=0.98),
@@ -230,18 +230,18 @@ shot("S03b", "L03.2", "closer on their stare", still([120.0, -0.3, 1.42], [120.0
 shot("S04", "L04", "the baker stares at the customer", still([160.35, -1.3, 1.62], [160.9, 1.7, 1.5], 26))
 shot("S04b", "L04.2", "the customer's uneasy face", still([162.0, 0.95, 1.6], [160.9, -0.15, 1.55], 30), fill=[162.0, 0.6, 2.3])
 shot("S05", "L05", "the life room, warm: Mr Dobbs on the dais, his cheek warming", still([3.0, -2.7, 1.55], [0.0, 0.0, 1.3], 28))
-shot("S05b", "L05.4", "over a painter's shoulder, his face on the canvas", canvas_cam(3, 1.3, 1.3, 30), hide_cast=["bg2"])
+shot("S05b", "L05.4", "over a painter's shoulder, his face on the canvas", canvas_cam(3, 1.9, 1.35, 30, side=-0.5), hide_cast=["bg2"])
 # 02 Mum
 shot("S06", "L06", "my flat: Mum's portrait with only guide lines for a face, and me", still([-39.9, -2.1, 1.45], [-39.9, 0.7, 1.4], 17), ev=-1.3)
 shot("S06b", "L06.3", "the guide lines, corner lines clear", still([-40.25, -0.55, 1.4], [-40.25, 0.7, 1.4], 24), ev=-1.3)
 shot("S07", "L07", "my phone face down on the shelf", still([-39.35, -0.55, 1.3], [-38.3, 0.15, 1.03], 40), ev=-0.9)
 shot("S07b", "L07.2", "Mum's hall, bare hooks and pale squares", still([HX + 1.15, 1.7, 1.45], [HX - 1.0, 1.0, 1.4], 17))
-shot("S08", "L08", "me, turning away from the portrait", still([-40.0, -0.7, 1.55], [-39.5, 0.45, 1.55], 22))
+shot("S08", "L08", "me, turning away from the portrait", still([-40.0, -0.7, 1.55], [-39.5, 0.45, 1.55], 22), ev=-1.5)
 # 03 week one
 shot("S09", "L09", "the arts centre on its hill in rain", still([-15.0, -17.0, 9.0], [-1.0, -2.0, 1.6], 22), rain=True)
 shot("S09b", "L09.1", "me on the rain-dark steps with a canvas", still([-8.7, -4.5, 1.55], [-6.2, -3.0, 1.1], 26), rain=True)
 shot("S10", "L10", "the fruit bowl on the side table", still([-2.6, -4.2, 1.45], [-5.05, -2.0, 1.0], 27))
-shot("S10b", "L10.3", "Kofi, friendly", still(front((-1.0, -0.4), 40, 1.9, 1.6), [-1.0, -0.4, 1.5], 36))
+shot("S10b", "L10.3", "Kofi, friendly", still(front((-1.0, -0.4), 40, 1.9, 1.6), [-1.0, -0.4, 1.5], 36), ev=0.1)
 _o = pol(4.25, TH[7] + 4)
 shot("S11", "L11", "over my shoulder: the faded sitter on the dais stool, cushion flat",
      still([_o[0], _o[1], 1.72], [0.0, 0.0, 1.45], 36))
@@ -312,7 +312,7 @@ shot("S36", "L36", "Mum's face, glasses, eyes shining, a small smile", still(fa3
 # 08 the hall, and the sting
 shot("S37", "L37", "Mum's hall, bright morning: the portrait alone among the pale squares, Mum and me in front of it",
      still([HX + 1.15, 1.2, 1.5], [HX - 0.8, 1.2, 1.4], 8), ev=0.5)
-shot("S38", "L38", "the life room, colder: Kofi plumping the green cushion", still([1.9, 0.9, 1.55], [0.3, -1.45, 1.45], 16), fill=[0.6, -1.0, 1.9])
+shot("S38", "L38", "the life room, colder: Kofi plumping the green cushion", still(front((0.3, -1.45), 160, 1.7, 1.6), [0.3, -1.45, 1.5], 32), ev=-1.3, fill=[0.6, -1.0, 1.9])
 shot("S39", "L39", "low on the dais: nine graphite strokes, rising to the new sitter",
      c([0, [0.3, -2.35, 0.3], [0.0, -1.0, 0.12], 16], [1, [0.3, -2.35, 0.34], [0.0, 0.0, 0.95], 24]), tally=True, hand=0.002)
 shot("S40", "L40", "slow push on its blank pencil face, the ovals the palest thing",
@@ -422,6 +422,9 @@ def rel(U, yaw, toward):
     return round(wrap(yaw_to(U, toward) - yaw), 1)
 
 
+UB = (0.9, 2.7)      # S05b: faded Mum on a spare stool at the back of the life room, nobody looking at her
+put("mum", "L05.4", (UB[0], UB[1], Z_SPARE), yaw=yaw_to(UB, DAIS), expr="blank", fade=1.0, fade_h=1.0, stage=0, **SIT)
+hide("mum", "L06")
 put("mum", "L11", (U1[0], U1[1], Z_DAIS), yaw=Y1, expr="blank", fade=1.0, fade_h=1.0, stage=0, **SIT)
 key("mum", "L17", stage=1)
 put("mum", "L18", (U3[0], U3[1], Z_SPARE), yaw=Y3, expr="blank", head=[rel(U3, Y3, ME), 0], fade=1.0, fade_h=1.0, stage=1, **SIT)
@@ -474,10 +477,10 @@ key("cust", "L04.2", expr="scared", blend=0.4)
 hide("cust", "L05")
 
 # Kofi
-put("kofi", "L10", (-4.3, -1.6), yaw=-90, arms=[34, 34], expr="grin")
-put("kofi", "L10.3", (-1.0, -0.4), yaw=40, expr="grin", arms=[0, 0])
+put("kofi", "L10", (-4.3, -1.6), yaw=-90, arms=[34, 34], expr="smile")
+put("kofi", "L10.3", (-1.0, -0.4), yaw=40, expr="smile", arms=[0, 0])
 hide("kofi", "L11")
-put("kofi", "L38", (0.3, -1.45), yaw=180, expr="soft", arms=[40, 40])
+put("kofi", "L38", (0.3, -1.45), yaw=180, expr="smile", arms=[40, 40])
 hide("kofi", "L39")
 
 # the sting sitter
@@ -516,6 +519,8 @@ cues = [
     {"at": "L09", "name": "easel", "i": 3, "img": "bowlB"},
     # the spare stool (paint-spattered): where faded Mum sits
     {"at": 0, "name": "stool", "on": False},
+    {"at": "L05.4", "name": "stool", "on": True, "pos": list(UB), "yaw": yaw_to(UB, DAIS)},
+    {"at": "L06", "name": "stool", "on": False},
     {"at": "L18", "name": "stool", "on": True, "pos": list(U3), "yaw": Y3},
     {"at": "L19.3", "name": "stool", "on": True, "pos": list(U4), "yaw": Y4},
     {"at": "L23", "name": "stool", "on": True, "pos": list(U5), "yaw": Y5},
@@ -588,9 +593,9 @@ story = {
     "sound": {"floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "room", "from": 0, "to": "end", "lufs": -34},
-                  {"kind": "rain", "from": "L09", "to": "L32", "lufs": -30},
+                  {"kind": "rain", "from": "L09", "to": "L32", "lufs": -30, "lp": 3500},
                   {"kind": "hum", "from": "L10", "to": "L32", "lufs": -42},
-                  {"kind": "rain", "from": "L38", "to": "end", "lufs": -34},
+                  {"kind": "rain", "from": "L38", "to": "end", "lufs": -34, "lp": 3500},
               ],
               "sfx": sfx,
               "music_drops": [{"from": "L23-0.6", "to": "L23"}, {"from": "L31-0.7", "to": "L31", "keep": ["sting"]}]},

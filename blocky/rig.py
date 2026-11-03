@@ -376,11 +376,12 @@ class Character:
             for ob in neck:
                 ob.hide_render = True
         if "glasses" in ex:
+            gc = kit.plastic(spec["glasses_c"], 0.4) if spec.get("glasses_c") else ec   # opt-in (ep32): frames apart from extra_c
             for sx in (-1, 1):
                 kit.box(f"{n}.gl{sx}", (0.42, 0.06, 0.32), (sx * 0.24, -R - 0.03, -0.02), kit.glass("#dde6ea"), hg,
                         bevel=0.04)
-                kit.box(f"{n}.glf{sx}", (0.46, 0.04, 0.05), (sx * 0.24, -R - 0.05, 0.15), ec, hg)
-            kit.box(f"{n}.glb", (0.1, 0.04, 0.05), (0, -R - 0.05, 0.1), ec, hg)
+                kit.box(f"{n}.glf{sx}", (0.46, 0.04, 0.05), (sx * 0.24, -R - 0.05, 0.15), gc, hg)
+            kit.box(f"{n}.glb", (0.1, 0.04, 0.05), (0, -R - 0.05, 0.1), gc, hg)
         if "backpack" in ex:
             kit.box(f"{n}.pack", (1.5, 0.6, 1.6), (0, 0.78, 1.05), ec, self.torso, bevel=0.15)
         if "scarf" in ex:
