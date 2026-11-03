@@ -10,7 +10,7 @@ Per the opening recipe (`docs/research/playbook.md`, v1). Re-voice L01, L02 and 
 - **Loop:** unchanged. L37, "From the LAKE, we haven't MOVED since SPRING." runs into "Don't sit on the bench at the top of this chairlift." The warning lands on us.
 - **Quotable line:** L04, "Bo, who runs the LIFT, goes up whenever his MOM VISITS."
 - **First shot (new S01, under L01):** the old S01 made close. The ridge bench in gold dawn light, camera about 3 m, 35 mm, pushing in on the laugher frozen mid-laugh, the clouds racing behind her. The sound hit (the bull wheel's deep clack) on "CHAIRLIFT." S02 under L02: a close two-shot of the laugher's still face as the sun shadow sweeps once across the bench (slow, flash-safe). The long-lens shot of the ridge from the deck (old S03, about 34 m) moves after 3 s or goes. The mustard cardigan and cream beanie stay small and soft at the far end of the bench in S01.
-- **British words left in other lines (flagged, not changed):** "comes round" (L20), "swings round" (L24). Both read fine to a US ear.
+- **US English:** L20 and L24 say "around" (r7 standards).
 
 **Redo, 2026-11-02** (revision 1, same day: L01, L03, L12 and L36 rewritten after the blind premise check). The first version (a dare as the first line, the Four-Face, the forty-year bet) was held for not being rule-first. This redo keeps the set (the lake chairlift, the bottom station deck, the top of the ridge), Bo, the old couple's models and the fog, and replaces the premise, the rule, the twist and the creature. There is no monster now. Every line is new, so the builder re-voices the whole story.
 
@@ -90,7 +90,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words
   - [S02: the bull wheel deck at dawn, Bo at the gate looking up, the line climbing behind him]
 - `L02` narrator: One HOUR / up THERE, / two WEEKS / down HERE.
   - [S03: long lens from the deck up to the ridge: a row of tiny figures on the skyline, unmoving while a chair rises past]
-- `L03` narrator: Mr PELL / went up / for an AFTERNOON / and missed / all of WINTER.
+- `L03` narrator: Mr. PELL / went up / for an AFTERNOON / and missed / all of WINTER.
   - [S04: Mr Pell stepping off the down chair in a waxed jacket and thick winter scarf onto a sunny spring deck, everyone else in shirtsleeves]
   - [S05: his face, `scared`, blinking at the sun]
 - `L04` narrator: Bo, who runs the LIFT, / goes up / whenever his MOM / VISITS. **(quotable line)**
@@ -130,7 +130,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words
   - [S22: Bo at the rope, shrugging, `neutral`]
 - `L19` narrator: Then one SUNDAY, / Gran doesn't / come DOWN.
   - [S23: the picnic table, two plates, her chair empty. The drone enters]
-- `L20` narrator: Every chair / comes round / EMPTY.
+- `L20` narrator: Every chair / comes AROUND / EMPTY.
   - [S24: side on, the down line arriving at the bull wheel, chair after chair bare]
   - [S25: me, `worried`, running to the viewer]
 - `P01` pause 0.7 s: none
@@ -144,7 +144,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words
   - [S29 (lore): top-down on my boots on the footrest over the black water, the two faded-orange strokes centred. Held 1.6 s]
 - `L23` narrator: Below me, / the FOG / boils off the LAKE / in SECONDS.
   - [S30: looking down past my chair: fog streaming off the water in a time-lapse rush. Smooth, no flicker]
-- `L24` narrator: Bo's SHADOW / swings round the DECK / like a CLOCK HAND.
+- `L24` narrator: Bo's SHADOW / swings AROUND the DECK / like a CLOCK HAND.
   - [S31: high on the tiny deck: Bo still, his long shadow sweeping round him once, slowly]
 - `L25` narrator: At the TOP, / Gran OPENS / her EYES,
   - [S32: the ridge bench, in person, gold light: Gran's eyes opening, gull lifting off]
@@ -164,7 +164,7 @@ Each line is `narrator`. Caption chunks are split with ` / `. CAPS are key words
   - [S39: Gran smiling up at me. The pad lifts to major]
 
 ### The turn and the sting (58 to 66 s)
-- `L33` narrator: So every SUNDAY, / I ride UP / and SIT beside her,
+- `L33` narrator: So now I STAY / up THERE, / and SIT beside her,
   - [S40: me sitting on the bench beside her, both facing the town]
 - `L34` narrator: and she shakes OUT / the BLANKET / for TWO.
   - [S41: the blanket over both our laps, the cut before any grip: it's already laid]

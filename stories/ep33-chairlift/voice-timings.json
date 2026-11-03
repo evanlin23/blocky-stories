@@ -494,26 +494,26 @@
    ]
   },
   "L20": {
-   "text": "Every chair comes round empty.",
+   "text": "Every chair comes around empty.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.776,
+   "dur": 1.81,
    "onset": 0.172,
-   "end": 1.586,
+   "end": 1.621,
    "chunks": [
     [
      0.172,
-     0.569
+     0.603
     ],
     [
-     0.569,
-     1.008
+     0.603,
+     1.043
     ],
     [
-     1.008,
-     1.586
+     1.043,
+     1.621
     ]
    ]
   },
@@ -606,34 +606,34 @@
    ]
   },
   "L24": {
-   "text": "Bo's shadow swings round the deck like a clock hand.",
+   "text": "Bo's shadow swings around the deck like a clock hand.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.431,
+   "dur": 2.448,
    "onset": 0.172,
-   "end": 2.224,
+   "end": 2.241,
    "chunks": [
     [
      0.172,
-     0.664
+     0.647
     ],
     [
-     0.664,
+     0.647,
      1.094
     ],
     [
      1.094,
-     1.337
+     1.345
     ],
     [
-     1.337,
-     1.466
+     1.345,
+     1.483
     ],
     [
-     1.466,
-     2.224
+     1.483,
+     2.241
     ]
    ]
   },
@@ -842,30 +842,30 @@
    ]
   },
   "L33": {
-   "text": "So every Sunday, I ride up and sit beside her,",
+   "text": "So now I stay up there, and sit beside her,",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.397,
+   "dur": 2.103,
    "onset": 0.172,
-   "end": 2.19,
+   "end": 1.897,
    "chunks": [
     [
      0.172,
-     0.845
+     0.629
     ],
     [
-     0.897,
-     1.267
+     0.629,
+     0.897
     ],
     [
-     1.267,
-     1.517
+     0.922,
+     1.164
     ],
     [
-     1.517,
-     2.19
+     1.164,
+     1.897
     ]
    ]
   },

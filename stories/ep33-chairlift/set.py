@@ -499,6 +499,8 @@ def build_props(kit, ctx, M):
     # people sit looking the other way
     zs = Z0 + BENCH_Z
     kit.box("bench.seat", (11.4, 0.52, 0.07), (0, BENCH_Y, zs - 0.035), M["bench"], bevel=0.015)
+    # a pale front slat, 2 cm proud of the seat's top, so the plank reads in the opening shot
+    kit.box("bench.slat", (11.4, 0.08, 0.1), (0, BENCH_Y + 0.30, zs - 0.03 - 0.0), kit.plastic("#c29a6a", 0.7, name="bench slat"), bevel=0.012)
     for x in (-5.3, -2.6, 0.0, 2.6, 5.3):
         kit.box(f"bench.leg{x}", (0.1, 0.4, BENCH_Z - 0.07), (x, BENCH_Y, Z0 + (BENCH_Z - 0.07) / 2), M["post"])
     kit.box("bench.back", (7.5, 0.05, 0.4), (1.9 + 0.0, BENCH_Y - 0.25, zs + 0.3), M["bench"], bevel=0.01)
@@ -613,7 +615,7 @@ def look_state(tl, t):
         if c["t"] > t:
             break
         tgt = {**LOOKS[c.get("look", "base")], **{k: v for k, v in c.items() if k in LOOKS["base"]}}
-        u = _ss((t - c["t"]) / max(0.01, c.get("ramp", 3.0)))
+        u = 1.0 if c.get("ramp", 3.0) <= 0 else _ss((t - c["t"]) / max(0.01, c.get("ramp", 3.0)))   # ramp 0: drawn at the cue's own look from its first frame
         cur = {}
         for k, v in tgt.items():
             pv = prev[k]
@@ -660,7 +662,7 @@ def sway_now(tl, t):
     for c in cs:
         if c["t"] > t:
             break
-        u = _ss((t - c["t"]) / max(0.01, c.get("dur", 1.0)))
+        u = 1.0 if c.get("dur", 1.0) <= 0 else _ss((t - c["t"]) / max(0.01, c.get("dur", 1.0)))
         amp = pa + (c.get("amp", 1.4) - pa) * u
         bias = pb + (c.get("bias", 0.0) - pb) * u
         if u >= 1:
@@ -912,9 +914,9 @@ def animate(kit, story, tl, t, ctx):
     if mode == "off":
         gull.location = (0, 0, -60)
     else:
-        hg = bpy.data.objects.get("gran.headg")
+        hg = bpy.data.objects.get(gc[-1].get("who", "gran") + ".headg")
         bpy.context.view_layer.update()
-        hat = hg.matrix_world.translation + V((0, 0, 0.25)) if hg is not None else V((0, 0, -60))
+        hat = hg.matrix_world.translation + V((0, 0, gc[-1].get("dz", 0.25))) if hg is not None else V((0, 0, -60))
         if mode == "hat":
             gull.location = tuple(hat)
             gull.rotation_euler = (0, 0, math.radians(180))
@@ -927,6 +929,39 @@ def animate(kit, story, tl, t, ctx):
                 wob = bpy.data.objects.get(f"gull.wing{sx}")
                 if wob is not None:
                     wob.rotation_euler = (0, sx * math.radians(50) * math.sin(t * 22.0), 0)
+    # ---- the rule meter: a sun-and-moon dial over every head, its hand fast up top and slow down at the lake
+    if not ctx.get("dials"):
+        ctx["dials"] = {}
+        sun_m, moon_m = K.emit("#ffb000", 0.9, name="dial sun"), K.emit("#2a46e0", 0.7, name="dial moon")
+        rim_m, hand_m = K.emit("#fff6e0", 1.0, name="dial rim"), K.emit("#e8143c", 1.0, name="dial hand")
+        for who in tl["acting"]:
+            if bpy.data.objects.get(f"{who}.headg") is None:
+                continue
+            root = K.empty(f"dial.{who}", (0, 0, -60))
+            K.box(f"dial.{who}.back", (0.5, 0.03, 0.5), (0, 0, 0), K.plastic("#10131f", 0.8, name="dial back"), root)
+            K.box(f"dial.{who}.sun", (0.22, 0.02, 0.44), (-0.11, -0.03, 0), sun_m, root)
+            K.box(f"dial.{who}.moon", (0.22, 0.02, 0.44), (0.11, -0.03, 0), moon_m, root)
+            for k_, (sz, lc) in enumerate((((0.54, 0.02, 0.04), (0, -0.03, 0.25)), ((0.54, 0.02, 0.04), (0, -0.03, -0.25)),
+                                           ((0.04, 0.02, 0.5), (-0.25, -0.03, 0)), ((0.04, 0.02, 0.5), (0.25, -0.03, 0)))):
+                K.box(f"dial.{who}.rim{k_}", sz, lc, rim_m, root)
+            piv = K.empty(f"dial.{who}.piv", (0, -0.07, 0), root)
+            K.box(f"dial.{who}.hand", (0.07, 0.03, 0.26), (0, 0, 0.12), hand_m, piv)
+            K.box(f"dial.{who}.hub", (0.1, 0.03, 0.1), (0, -0.04, 0), rim_m, piv)
+            ctx["dials"][who] = (root, piv, [0.0, t])
+    for who, (root, piv, st_) in ctx["dials"].items():
+        hg = bpy.data.objects.get(f"{who}.headg")
+        s_ = _ac.state(tl, who, t)
+        if s_["hidden"] or hg is None:
+            root.location = (0, 0, -60)
+            continue
+        bpy.context.view_layer.update()
+        hp = hg.matrix_world.translation
+        root.location = (hp.x, hp.y, hp.z + 0.55)
+        root.scale = (0.7, 0.7, 0.7)
+        to_cam = cam - root.location
+        root.rotation_euler = to_cam.to_track_quat("-Y", "Z").to_euler()
+        up_top = _ss((hp.z - 5.0) / 15.0)
+        piv.rotation_euler = (0, math.radians(((t * (30.0 + 380.0 * up_top)) % 360.0)), 0)
     # ---- summer (the last shot): a richer green
     if _cues(tl, "summer") and _cues(tl, "summer")[0]["t"] <= t:
         ctx["land"].data.materials[0].node_tree.nodes  # the same material, recoloured once

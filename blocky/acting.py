@@ -4,7 +4,7 @@ from it, and the sound puts a footstep on every step it takes).
 A key: {"at": <time ref>, "pos": [x, y] or [x, y, z] metres, "yaw": degrees (0 faces -y), "arms": [left, right]
 degrees raised forward, "side": [left, right] degrees out, "head": [yaw, pitch] degrees, "lean": degrees,
 "expr": one of faces.EXPRESSIONS, "look": [x, y] in -1..1, "hidden": bool, "blend": seconds, "run": bool,
-"blink": false (eyes held open from here until a key says true), "tremble": degrees (a small fast head shake,
+"still": true (opt-in: no idle motion from here until a key says false), "blink": false (eyes held open from here until a key says true), "tremble": degrees (a small fast head shake,
 held and eased like the other numbers)}.
 
 A mouth key moves a mouth whether or not the character is speaking: {"from": <time ref>, "to": <time ref>,
@@ -238,7 +238,7 @@ def state(tl, who, t, seed=0):
             "blink": blink(t, seed) if _switch(keys, "blink", t, True) else 0.0,
             "mouth": max(mouth(tl["talk"].get(who, []), t), mouth_track(keys, t)),
             "hidden": bool(_switch(keys, "hidden", t, False)), "speed": speed}
-    if mo.get("idle") and abs(legs) < 1e-6 and not out["hidden"]:   # the polish pack: nobody stands like a statue
+    if mo.get("idle") and abs(legs) < 1e-6 and not out["hidden"] and not _switch(keys, "still", t, False):   # the polish pack: nobody stands like a statue
         sc = float(mo.get("idle_scale", 1.0))
         if any(a <= t < b for a, b in mo.get("calm", [])):   # a reveal shot: nearly still, so the face reads
             sc *= 0.2

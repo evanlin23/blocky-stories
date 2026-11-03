@@ -132,8 +132,8 @@ def shot(at, cam, **opt):
 # side as the sun shadow sweeps once; S03 is the long look at the row (it moves, and it comes after 3 s)
 shot(0, mv((6.3, 140.6, 40.2), (4.7, 137.0, 41.35), 30, (5.2, 139.0, 40.3), (4.62, 137.0, 41.45), 34), hand=0.002)
 shot("L02", front(hd(LA, 41.1), 180, 52, 2.9, -0.1, 34, push=0.7), hand=0.002)
-shot("L02.3+0.3", mv((-7.5, 116.0, 42.0), (2.6, 137.0, 40.9), 40, (-5.5, 119.0, 41.6), (2.6, 137.0, 40.95), 50), hand=0.002)
-shot("L03", mv((-0.5, -6.4, 1.4), (-1.6, -2.3, 1.4), 30, (-0.5, -6.2, 1.4), (-1.5, -2.5, 1.4), 30), hand=0.002)
+shot("L02.3-0.2", mv((-7.5, 116.0, 42.0), (2.6, 137.0, 40.9), 40, (-5.5, 119.0, 41.6), (2.6, 137.0, 40.95), 50), hand=0.002)
+shot("L03", mv((-0.8, -5.6, 1.65), (-1.8, -1.0, 1.55), 60, (-0.8, -5.6, 1.65), (-1.8, -1.6, 1.55), 60), hand=0.002)
 shot("L03.3", front(hd([-1.5, -3.5], 1.7), 0, 0, 2.4, 0.0, 34, push=0.15))
 shot("L04", ride_cam(1.4, 5.0, 0.5, 0, 0, 1.2, 30), follow="bo", hand=0.003)
 # ---- me and Gran
@@ -159,9 +159,9 @@ shot("L20", mv((-2.4, -5.5, 1.7), (-1.8, 10.0, 1.1), 35, (-2.4, -5.5, 1.7), (-1.
 shot("L20.2", mv((-2.0, -3.5, 1.4), (-4.5, 0.5, 1.2), 30), hand=0.003)
 shot("P01", mv((-3.4, 0.6, 1.5), (-5.5, 1.9, 1.4), 34), hand=0.001)
 shot("L21", mv((-3.0, 132.0, 41.1), (-4.3, 137.0, 41.1), 75), hand=0.0, scope=True, cfill=1.3)
-shot("L21.3", mv((-3.3, 5.0, 2.0), (-5.5, 1.8, 1.45), 36), hand=0.002)
+shot("L21.3", mv((-3.4, 3.6, 1.5), (-5.5, 2.4, 1.4), 36), hand=0.002)
 # ---- the ride and the reveal
-shot("L22", ride_cam(-0.5, 1.25, 1.35, -0.45, 0.45, 0.15, 24), follow="me", hand=0.0)
+shot("L22", ride_cam(-0.6, 2.4, 1.2, 0, 0, 1.45, 34, dy2=2.0, dz2=1.3), follow="me", hand=0.0, cfill=2.0)
 shot("L23", ride_cam(0.9, -0.8, 1.1, 1.6, 12.0, -0.2, 30), follow="me", hand=0.003, cfill=0.3)
 shot("L24", ride_cam(0.6, 0.4, 1.7, -2.0, -55.0, -13.0, 50), follow="me", hand=0.003, cfill=0.3)
 shot("L25", mv((-3.4, 133.5, 41.2), (-4.3, 137.0, 41.3), 45), hand=0.001)
@@ -298,8 +298,7 @@ G_.attr("L28", expr="soft")
 G_.attr("L32", expr="smile", head=[0, 14])
 
 LA_ = Track()
-LA_.perch(0, LA, 180, jump=False, expr="laugh", head=[0, 0], arms=[0, 0])
-LA_.attr("L02", head=[0, 0])
+LA_.perch(0, LA, 180, jump=False, expr="laugh", head=[0, 0], arms=[0, 0], blink=False, still=True)
 
 E1_ = Track()
 E1_.perch(0, E1, 180, jump=False, expr="smile", head=[0, 0], arms=[0, 0])
@@ -317,11 +316,10 @@ acting = {"me": M_.keys, "gran": G_.keys, "bo": B_.keys, "mr_pell": PE.keys, "la
 
 # ---------------------------------------------------------------------------------------------------- cues
 cues = [
-    {"at": 0, "name": "light", "look": "gold", "sky": "#5f93c0", "sky_s": 1.0, "ramp": 0.01},
-    {"at": "L01.3", "name": "light", "look": "gold", "ramp": 1.2},
+    {"at": 0, "name": "light", "look": "gold", "sky": "#5f93c0", "sky_s": 1.0, "ramp": 0},
     {"at": "L13", "name": "light", "look": "pink", "ramp": 6.0},
     {"at": "L21", "name": "light", "look": "flat", "ramp": 0.4},
-    {"at": "L22", "name": "light", "look": "gold", "ramp": 1.0},
+    {"at": "L22", "name": "light", "look": "gold", "ramp": 0.5},
     {"at": "L23", "name": "light", "look": "fog", "ramp": 2.5},
     {"at": "L25", "name": "light", "look": "gold", "ramp": 3.0},
     {"at": "L28", "name": "light", "look": "pink", "ramp": 6.0},
@@ -335,7 +333,7 @@ cues = [
     {"at": "L25", "name": "sunsweep", "az0": 150, "az1": 8, "dur": 0.3},
     {"at": "L35", "name": "sunsweep", "az0": 8, "az1": 110, "dur": 3.2},
     {"at": "L36", "name": "sunsweep", "az0": -20, "az1": 20, "dur": 3.0},
-    {"at": 0, "name": "clouds", "on": True, "speed": 34.0, "span": 120, "center": -80},
+    {"at": 0, "name": "clouds", "on": True, "speed": 100.0, "span": 120, "center": -80},
     {"at": "L02>", "name": "clouds", "on": False},
     {"at": "L17", "name": "clouds", "on": True, "speed": 14.0},
     {"at": "L18", "name": "clouds", "on": False},
@@ -368,7 +366,8 @@ cues = [
     {"at": "L09", "name": "blanket", "on": True, "who": "gran", "local": [1.44, -0.05, 0.62], "size": [0.95, 0.55, 0.18]},
     {"at": "L10", "name": "blanket", "on": False},
     {"at": "L34", "name": "blanket", "on": True, "pos": [-3.6, 136.35, Z0 + 0.865], "size": [2.4, 0.8, 0.1]},
-    {"at": 0, "name": "gull", "mode": "off"},
+    {"at": 0, "name": "gull", "mode": "hat", "who": "laugher", "dz": 0.2},
+    {"at": "L03", "name": "gull", "mode": "off"},
     {"at": "L16", "name": "gull", "mode": "hat"},
     {"at": "L25.1", "name": "gull", "mode": "fly", "dur": 1.4, "to": [2.5, 4.0, 3.0]},
     {"at": "L26", "name": "gull", "mode": "off"},
@@ -384,7 +383,7 @@ sfx = []
 for ref in ("L22+0.7", "L23+0.5", "L23+1.9", "L24+0.6", "L24+1.9"):   # the chair clacks over each tower
     sfx.append({"at": ref, "kind": "click", "db": -20})
 sfx += [
-    {"at": "L01.3", "kind": "thud", "db": -6, "keep": True},   # the bull wheel's clack on "chairlift"
+    {"at": "L01.3+0.4", "kind": "thud", "db": -6, "keep": True},   # the bull wheel's clack on "chairlift"
     {"at": "L09", "kind": "whoosh", "db": -24},
     {"at": "L21", "kind": "hit", "db": -6, "keep": True},
     {"at": "L22", "kind": "whoosh", "db": -20},

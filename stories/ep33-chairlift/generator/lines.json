@@ -48,7 +48,7 @@
   "who": "narrator",
   "chunks": [
    [
-    "Mr PELL",
+    "Mr. PELL",
     "Mr Pell"
    ],
    [
@@ -382,8 +382,8 @@
     "Every chair"
    ],
    [
-    "comes round",
-    "comes round"
+    "comes AROUND",
+    "comes around"
    ],
    [
     "EMPTY.",
@@ -475,8 +475,8 @@
     "Bo's shadow"
    ],
    [
-    "swings round",
-    "swings round"
+    "swings AROUND",
+    "swings around"
    ],
    [
     "the DECK",
@@ -653,12 +653,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "So every SUNDAY,",
-    "So every Sunday,"
+    "So now I STAY",
+    "So now I stay"
    ],
    [
-    "I ride UP",
-    "I ride up"
+    "up THERE,",
+    "up there,"
    ],
    [
     "and SIT",
