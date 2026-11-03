@@ -135,3 +135,37 @@ today's lane use.
 - A story with a bright vertical-edge push (doorways, windows) at the 0.12 m/s limit, which is where the critic expects
   twos to show first.
 - 4 or 5 samples (the time scales, but the denoiser's margin wasn't probed), and the proof's pipeline.
+
+## Ship bar: critic scores and the four pace checks (added after the first orchestrator's bar on #177)
+
+The bar is "the Opus critic scores sharpness and smoothness no worse, and the pace checks still pass". Scores are 1 to 10 for
+each side, from frames and edge tracking (not playback). The draws used engine commit `ff28ce6` (`blocky/` is unchanged
+on main since); the numbers were re-read with `scripts/measure.py` from main after #201 (the 10% near band).
+
+| pair | sharpness A / B | smoothness A / B | no worse on both? |
+|---|---|---|---|
+| samples 10 vs 6 (worst shot, S32) | 8 / 8 | 8 / 8 | **yes** |
+| S50 authored push, ones vs twos | 8 / 8 | 9 / **5** | **no** |
+| S32 pack push, ones vs twos | 8 / 8 | 9 / **8** | no, strictly (a faint tick on a TV, same on a phone) |
+
+Pace checks, raw, per shot clip (so well under a whole film's values; the figure that matters is that both sides read
+the same). Bars: picture changes per 10 s ≥ 12.5 (0.5 s) and ≥ 14.0 (0.25 s), motion energy (q) ≥ 6.0, longest still (q) ≤ 1.0 s.
+"near" is within 10% of a low bar.
+
+| clip (both sides identical) | changes /10 s | changes /10 s (q) | motion energy (q) | longest still (q) |
+|---|---|---|---|---|
+| S32 (10, 6 samples, ones and twos) | 6.7 block | 13.3 near | 3.15 / 3.16 block | 0.0 ok |
+| S21 (10, 6 samples) | 10.0 block | 0.0 block | 1.95 / 1.96 block | 0.0 ok |
+| S04 (10, 6 samples) | 10.0 block | 0.0 block | 3.03 / 3.04 block | 0.0 ok |
+| S50 (ones and twos) | 20.0 ok | 32.0 ok | 6.68 / 6.68 ok | 0.0 ok |
+
+A single short clip can't meet a whole film's bars, so "block" on S32, S21 and S04 is the clip's size, not the change.
+What the test shows is that **no status changes between the two sides of any pair**: no value moved by more than 0.02 in
+motion energy, and none moved in the other three. I did not measure a whole film at 6 samples or with twos, so
+"the pace checks still pass" for a full story is inferred, not measured. The first film drawn at 6 should be run through
+`measure.py` before the change is trusted everywhere.
+
+**Verdict against the bar:**
+- **Samples 10 → 6: meets it** (no worse on both axes, pace statuses unchanged). Ship, with the first-film check above.
+- **Twos for pack-only moves: does not strictly meet it** (smoothness 9 → 8 on a TV). It is the lead's call
+  whether a faint TV-size tick for about 120 runner-min a final is worth it. Twos for authored moves: **does not meet it** (smoothness 9 → 5).
