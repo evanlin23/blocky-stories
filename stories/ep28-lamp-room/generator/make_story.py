@@ -211,7 +211,7 @@ shot("L25b", "S25b: the stair foot by day, the storm door shuddering, the drift 
      move(([0.0, -0.9, 1.15], [0.0, 2.0, 0.95]), ([0.0, -0.5, 1.1], [0.0, 2.0, 0.9]), 20), hand=0.002)
 shot("L25b.3", "S25c: punch in on the drift, one faint sock-shaped scuff in it",
      move(([0.2, 0.7, 0.75], [0.0, 1.95, 0.02]), ([0.2, 1.0, 0.7], [0.0, 1.95, 0.02]), 26), hand=0.002)
-shot("L26", "kitchen: toast, both of us at the table in profile, faces lit", still([KX + 1.9, -1.75, 1.5], [KX, 0.1, 1.12], 18), hand=0)
+shot("L26", "kitchen: toast, both of us at the table in profile, faces lit", still([KX + 2.2, 0.1, 1.45], [KX, 0.1, 0.98], 12), hand=0)
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34), hand=0)
 shot("L28", "close on me, misreading", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
 shot("L29", "me looking past her", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
@@ -267,7 +267,7 @@ shot("L54.1", "running up, two", runcam(61.9, 57, 20), step=1)
 shot("L54.2", "running up, three", runcam(73.9, 57, 20), step=1)
 shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
-shot("L55", "kitchen, flat bright daylight, both of us at the table", still([KX + 1.9, -1.75, 1.5], [KX, 0.1, 1.12], 18))
+shot("L55", "kitchen, flat bright daylight, both of us at the table", still([KX + 2.2, 0.1, 1.45], [KX, 0.1, 0.98], 12))
 shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.2, 1.0], 20))
 shot("L57", "Ines says goodnight at her door, lamp on, her face to camera", still([0.0, -0.75, Z4 + 1.3], [1.8, 0.0, Z4 + 1.35], 32), hand=0.003)
 shot("L58", "me in the camp bed, listening", COT_WIDE)
@@ -285,7 +285,7 @@ shot("L64", "S65: pulled back: my legs and socks on the step under her camel coa
      still(local(SEAT_ME, YAW_ME, 3.0, 0.5, 2.6), local(SEAT_ME, YAW_ME, 0.35, 0.0, 0.5), 24), hand=0.004)
 shot("L65", "high: me, Ines, the stair winding down", still([-0.2, -0.4, 10.4], [-1.9, 1.2, 6.8], 22))
 shot("L66", "POV down the sunlit well: empty", still([-0.8, -0.9, 8.7], [0.0, 1.8, 0.2], 24), hand=0.004)
-shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 2.6, -0.25, 0.8), local(SEAT_ME, YAW_ME, 0, 0, 0.2), 30))
+shot("L67", "close on me, understanding", still(local(SEAT_ME, YAW_ME, 2.6, -0.25, 1.4), local(SEAT_ME, YAW_ME, 0, 0, 0.66), 30))
 def up(p, dz):
     return [p[0], p[1], round(p[2] + dz, 3)]
 
