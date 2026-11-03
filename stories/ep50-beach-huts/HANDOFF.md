@@ -1,15 +1,23 @@
-# ep50-beach-huts handoff (paused 2026-11-03, usage limit)
+# ep50-beach-huts handoff
 
-**Done:** opening "if": L01 "If anyone sees your reflection in a window, they'll know." L02 "It does what you really want." (re-voiced). New close opening shots, quality pass (props, CC0 sounds, impact sfx, slow pushes), polish on, cover_s 82.0, no hold. Review round 4: critic and standards both **revise** (reviews/r4-*.md).
+**STATUS: dropped (2026-11-03).** Round limit reached; the second orchestrator records the drop on main. No drop PR was opened. No hold removed, not queued.
 
-**Stopped mid r4 fix round** (uncommitted builder edits to make_story.py, set.py, lines.json, package.json committed as-is in this WIP; not rendered, not checked). The r4 must-fixes:
-1. 0–2.5 s: neighbor's whole still face + his whole upside-down reflection the same size in a visible tinted glass pane; hold one framing ≥1 s (no 2–4-frame cutting).
-2. 40–46 s red flash: deckchair red stripe too big in frame. Grade specks on dark edges should be gone after merging main (#143).
-3. 95–100 s: dark laptop close cuts to the bright red lid.
-4. 124 s: black pane behind Remi toggles on/off.
-5. L76 (~127 s): last shot is an unreadable grey blur.
-6. P01 (~40.7 s): keep wind at ~-40 dB (no dead silence).
-7. L70 caption COLOURS → COLORS.
-8. Title → "Her Reflection Keeps Walking AWAY 🪟"; description starts with L01's words.
+## Why
+Reviews r5 and r6 (the last two allowed rounds) after the r4 fix pass:
+- r5: critic revise, standards revise (music setting duplicated ep41 and mirror-maze; frame 0 stray head).
+- r6: **standards approve**, **critic kill** (avg about 6.4; middle 4, creature 4, twist 4; approval needs avg 7 and nothing under 5).
 
-**Next:** check which of 1–8 the WIP already covers (`git diff 26b0a0fe -- stories/ep50-beach-huts`), finish them, merge main, timeline, preflight, stills 0–3 s, preview render --force, finish, mix, flash (must pass), then review round 5 (the last regular round). Also: blocky/voice.py now treats fiancé/fiancee/fiance as equal in the Whisper check (standards r4 found it safe).
+## Open must-fixes (critic r6, `reviews/r6-critic.md`)
+1. L42-43 (66-70 s) wall shadow reads as rooftop shadows: no huge shoulders / tiny head.
+2. Creature (72-83 s) is a grey robot-like head behind a striped canvas: reads as a deckchair with a head, silly not scary.
+3. L75 (125.7 s) dim green frame, doesn't read as glass. L76: reflection about 12 px tall, laptop a clipped white slab.
+4. Faces cropped to half at L52 (83.5 s) and L57 (92.5 s). Opening reflection reads as a blurry face, not upside down. Logic slips: L34 "a DOT" shows a full figure; L69 "in the puddle" has no puddle.
+
+## What passed
+Flash (strobe-only bar; 7 changes/s on the 3-frame reading is a warning, upload adds the "Flashing lights and fast cuts" line), measure.py 0 blocks, preflight 0 blocks, clipcheck 0, `check` clean, loudness -14.1 LUFS / -1.8 dBTP. Title "Beach Hut Windows Know What You WANT 🪟" (7 words), music root 46 lydian 88 bpm (unused elsewhere), L01 "If anyone sees your reflection in a window, they'll know."
+
+## Notes if ever revived
+- Never upload ep50 next to mirror-maze (both have a reflection rule); at least 4 uploads apart. Also keep away from ep38-drive-in.
+- Fixed this session: inverted laptop hinge, grade/panes tint, re-voiced L34/L42/L43/L71 for ASR.
+- Real fix needs the creature and the shadow/twist shots redesigned, not another polish pass.
+- No engine bugs blocked this work.
