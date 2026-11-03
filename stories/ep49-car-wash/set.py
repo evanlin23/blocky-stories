@@ -954,7 +954,8 @@ def animate(kit, story, tl, t, ctx):
     # ---- bells
     for who, piv in ctx["bells"].items():
         a = bell_wobble(tl, who, t)
-        piv.rotation_euler = (0.5 * a * 0.6, 0.3 * a * 0.6, 0)
+        k = (0.15, 0.55) if who == "pie_man" else (0.5 * 0.6, 0.3 * 0.6)   # the hook bell swings side to side, big
+        piv.rotation_euler = (k[0] * a, k[1] * a, 0)
     cb = ctx["chair_bell"]
     tr = 0.0
     for c in _cs(tl, "trem"):

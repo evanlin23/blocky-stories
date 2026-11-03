@@ -6,62 +6,58 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "When your collar bell rings, stop. You're about to mess up.",
+   "text": "Here, you have to freeze the second your collar bell rings.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.5,
-   "onset": 0.155,
+   "dur": 2.483,
+   "onset": 0.172,
    "end": 2.293,
    "chunks": [
     [
-     0.155,
-     0.31
+     0.172,
+     0.483
     ],
     [
-     0.31,
-     0.724
+     0.483,
+     0.905
     ],
     [
-     0.724,
-     0.948
+     0.905,
+     1.233
     ],
     [
-     0.983,
-     1.328
+     1.233,
+     1.759
     ],
     [
-     1.414,
-     1.741
-    ],
-    [
-     1.741,
+     1.759,
      2.293
     ]
    ]
   },
   "L02": {
-   "text": "Even reaching for a third pie.",
+   "text": "It means you're about to mess up.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.707,
-   "onset": 0.172,
-   "end": 1.5,
+   "dur": 1.552,
+   "onset": 0.155,
+   "end": 1.345,
    "chunks": [
     [
-     0.172,
-     0.621
+     0.155,
+     0.406
     ],
     [
-     0.621,
-     0.768
+     0.406,
+     0.776
     ],
     [
-     0.768,
-     1.5
+     0.776,
+     1.345
     ]
    ]
   },

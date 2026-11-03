@@ -518,28 +518,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "When your",
-     "When your"
+     "Here, you",
+     "Here, you"
     ],
     [
-     "COLLAR BELL",
-     "collar bell"
+     "have to FREEZE",
+     "have to freeze"
     ],
     [
-     "RINGS,",
-     "rings,"
+     "the second",
+     "the second"
     ],
     [
-     "STOP.",
-     "stop."
+     "your COLLAR BELL",
+     "your collar bell"
     ],
     [
-     "You're about to",
-     "You're about to"
-    ],
-    [
-     "MESS UP.",
-     "mess up."
+     "RINGS.",
+     "rings."
     ]
    ]
   },
@@ -548,16 +544,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "EVEN reaching",
-     "Even reaching"
+     "It means",
+     "It means"
     ],
     [
-     "for a",
-     "for a"
+     "you're about to",
+     "you're about to"
     ],
     [
-     "THIRD PIE.",
-     "third pie."
+     "MESS UP.",
+     "mess up."
     ]
    ]
   },
@@ -2086,35 +2082,35 @@
     [
      0,
      [
-      5.85,
-      -10.4,
-      1.5
+      3.2,
+      -12.04,
+      1.15
      ],
      [
-      5.25,
-      -12.4,
-      1.42
+      5.1,
+      -12.24,
+      1.15
      ],
-     32
+     30
     ],
     [
-     1.0,
+     1.8,
      [
-      5.72,
-      -10.7,
-      1.5
+      3.9,
+      -12.04,
+      1.15
      ],
      [
-      5.2,
-      -12.4,
-      1.42
+      5.1,
+      -12.24,
+      1.15
      ],
-     33
+     30
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "close on the pie man's face and collar bell mid-ring, pushing in"
+   "what": "chest-height close on the bell and the pie man's face, the bell swinging, pushing in"
   },
   {
    "id": "S02",
@@ -2122,36 +2118,36 @@
     [
      0,
      [
-      5.7,
-      -11.3,
-      1.45
+      5.2,
+      -10.8,
+      1.3
      ],
      [
-      5.28,
+      5.3,
       -12.4,
-      1.34
+      1.2
      ],
-     36
+     34
     ],
     [
      1,
      [
-      5.62,
-      -11.6,
-      1.42
+      5.2,
+      -11.2,
+      1.28
      ],
      [
-      5.27,
+      5.3,
       -12.4,
-      1.32
+      1.2
      ],
-     38
+     35
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "punch in on the bell under his chin, the ding on UP",
-   "at": "L01.3"
+   "what": "punch in on the bell under his chin as it RINGS, big, above the caption band",
+   "at": "L01.4"
   },
   {
    "id": "S03",
@@ -2159,36 +2155,36 @@
     [
      0,
      [
-      4.3,
-      -9.8,
-      1.55
-     ],
-     [
-      5.5,
-      -12.4,
+      5.2,
+      -11.0,
       1.3
      ],
-     30
+     [
+      5.3,
+      -12.4,
+      1.2
+     ],
+     35
     ],
     [
      1,
      [
-      4.336,
-      -9.878,
-      1.542
+      5.2,
+      -11.5,
+      1.28
      ],
      [
-      5.5,
+      5.3,
       -12.4,
-      1.3
+      1.2
      ],
-     31.5
+     37
     ]
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "kiosk hatch",
-   "at": "L02"
+   "what": "the ding on UP, the bell swinging hard, his face above",
+   "at": "L02.2"
   },
   {
    "id": "S04",
@@ -10452,18 +10448,18 @@
     "lean": 0,
     "tremble": 0,
     "blink": true,
-    "yaw": 165,
+    "yaw": -90,
     "expr": "worried"
    },
    {
-    "at": "L01.3",
+    "at": "L01.4",
     "pos": [
      5.1,
      -12.4
     ]
    },
    {
-    "at": "L01.3",
+    "at": "L01.4",
     "pos": [
      5.1,
      -12.4
@@ -10489,14 +10485,14 @@
     "expr": "terrified"
    },
    {
-    "at": "L02",
+    "at": "L02.2",
     "pos": [
      5.1,
      -12.4
     ]
    },
    {
-    "at": "L02",
+    "at": "L02.2",
     "pos": [
      5.1,
      -12.4
@@ -10519,7 +10515,7 @@
     "tremble": 0,
     "blink": true,
     "yaw": 165,
-    "expr": "worried"
+    "expr": "terrified"
    },
    {
     "at": "L03",
@@ -11416,7 +11412,7 @@
    ],
    "to": [
     0,
-    1.5
+    -2.0
    ],
    "move": 1.8,
    "yaw": 0,
@@ -11427,7 +11423,7 @@
    "name": "car:q2",
    "pos": [
     0,
-    1.5
+    -2.0
    ],
    "yaw": 0,
    "on": false
@@ -11921,10 +11917,10 @@
    "who": "pie_man",
    "dur": 2.4,
    "rate": 2.6,
-   "amp": 0.7
+   "amp": 1.7
   },
   {
-   "at": "L01.5+0.3",
+   "at": "L01.4",
    "name": "ring",
    "who": "pie_man",
    "dur": 0.0,
@@ -11932,12 +11928,12 @@
    "amp": 1.4
   },
   {
-   "at": "L02.2",
+   "at": "L02.2+0.3",
    "name": "ring",
    "who": "pie_man",
    "dur": 0.0,
    "rate": 3.0,
-   "amp": 1.0
+   "amp": 1.6
   },
   {
    "at": "L03",
@@ -12208,16 +12204,16 @@
     "dur": 0.9
    },
    {
-    "at": "L01.5+0.3",
+    "at": "L01.4",
     "kind": "ding",
     "db": -12,
     "pitch": 2050,
     "dur": 0.9
    },
    {
-    "at": "L02.2",
+    "at": "L02.2+0.3",
     "kind": "ding",
-    "db": -15,
+    "db": -8,
     "pitch": 2050,
     "dur": 0.9
    },
@@ -12479,7 +12475,7 @@
     "fall": 0.35
    },
    {
-    "at": "L01.3-0.12",
+    "at": "L01.4-0.12",
     "kind": "whoosh",
     "db": -16
    },

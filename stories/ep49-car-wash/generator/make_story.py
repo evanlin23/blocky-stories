@@ -115,14 +115,15 @@ def P(x, y, yaw=0, expr="neutral", **kw):
 
 # ---- 01 the bells
 # opening recipe v1 (2026-11-03): frame 1 looks straight at a bell mid-ring with a face, pushing in, no wide before L03
-shot(0, "day", {"pie_man": P(5.1, -12.4, 165, "worried")},
-     c([0, [5.85, -10.4, 1.5], [5.25, -12.4, 1.42], 32], [1.0, [5.72, -10.7, 1.5], [5.2, -12.4, 1.42], 33]),
-     "close on the pie man's face and collar bell mid-ring, pushing in")
-shot("L01.3", "day", {"pie_man": P(5.1, -12.4, 165, "terrified")},
-     c([0, [5.7, -11.3, 1.45], [5.28, -12.4, 1.34], 36], [1, [5.62, -11.6, 1.42], [5.27, -12.4, 1.32], 38]),
-     "punch in on the bell under his chin, the ding on UP")
-shot("L02", "day", {"pie_man": P(5.1, -12.4, 165, "worried")},
-     still([4.3, -9.8, 1.55], [5.5, -12.4, 1.3], 30), "kiosk hatch")
+shot(0, "day", {"pie_man": P(5.1, -12.4, -90, "worried")},
+     c([0, [3.2, -12.04, 1.15], [5.1, -12.24, 1.15], 30], [1.8, [3.9, -12.04, 1.15], [5.1, -12.24, 1.15], 30]),
+     "chest-height close on the bell and the pie man's face, the bell swinging, pushing in")
+shot("L01.4", "day", {"pie_man": P(5.1, -12.4, 165, "terrified")},
+     c([0, [5.2, -10.8, 1.3], [5.3, -12.4, 1.2], 34], [1, [5.2, -11.2, 1.28], [5.3, -12.4, 1.2], 35]),
+     "punch in on the bell under his chin as it RINGS, big, above the caption band")
+shot("L02.2", "day", {"pie_man": P(5.1, -12.4, 165, "terrified")},
+     c([0, [5.2, -11.0, 1.3], [5.3, -12.4, 1.2], 35], [1, [5.2, -11.5, 1.28], [5.3, -12.4, 1.2], 37]),
+     "the ding on UP, the bell swinging hard, his face above")
 shot("L03", "day", {"date_a": dict(pos=[CAFE[0] - 0.85, CAFE[1] + 0.1], yaw=55, expr="worried", lean=6),
                     "date_b": dict(pos=[CAFE[0] + 0.85, CAFE[1] + 0.1], yaw=-55, expr="worried", lean=6)},
      still([CAFE[0], CAFE[1] - 2.9, 1.4], [CAFE[0], CAFE[1] + 0.1, 1.2], 28), "cafe date")
@@ -366,8 +367,8 @@ cue("L12", "car:q1", pos=[0, -5.0], to=[0, 3.0], move=2.6, yaw=0, on=True)
 cue("L13", "car:q1", pos=[0, 3.0], yaw=0, on=False)
 cue("L12", "ride", who="drv1", car=None)
 # Tuesday: a car to the hatch at L32 (no driver), the silver car out at L33, handprints
-cue("L32", "car:q2", pos=[0, -5.0], to=[0, 1.5], move=1.8, yaw=0, on=True)
-cue("L33", "car:q2", pos=[0, 1.5], yaw=0, on=False)
+cue("L32", "car:q2", pos=[0, -5.0], to=[0, -2.0], move=1.8, yaw=0, on=True)
+cue("L33", "car:q2", pos=[0, -2.0], yaw=0, on=False)
 cue("L33", "car:silver", pos=[0, 10.0], to=[0, 17.5], move=2.6, yaw=0, on=True)
 cue("L33.2", "car:silver", pos=[0, 17.5], yaw=0, on=True)
 cue("L33.2", "hand", on=True)
@@ -434,9 +435,9 @@ cue("L19", "lever", v=1.0, dur=0.1)
 cue("L22", "lever", v=0.0, dur=1.0)
 # bells: rings and the wind
 cue(0, "sway", who=["drv1", "drv2", "drv3", "ruben", "pie_man"], dur=0.01)
-ring("pie_man", 0, dur=2.4, rate=2.6, amp=0.7)
-ring("pie_man", "L01.5+0.3", amp=1.4)
-ring("pie_man", "L02.2")
+ring("pie_man", 0, dur=2.4, rate=2.6, amp=1.7)
+ring("pie_man", "L01.4", amp=1.4)
+ring("pie_man", "L02.2+0.3", amp=1.6)
 ring("date_a", "L03", dur=2.0, rate=3.2)
 ring("date_b", "L03+0.1", dur=2.0, rate=3.6)
 ring("texter", "L05", dur=2.4, rate=4.2, amp=1.2)
@@ -462,8 +463,8 @@ def ding(at, db=-16, pitch=2200, lp=None, **kw):
 sfx = [
     ding(0.15, -24, 2050),
     ding(0.75, -24, 2050),
-    ding("L01.5+0.3", -12, 2050),
-    ding("L02.2", -15, 2050),
+    ding("L01.4", -12, 2050),
+    ding("L02.2+0.3", -8, 2050),
     *[ding(f"L03+{0.3 * k:.1f}", -19, 2100 + 130 * (k % 3)) for k in range(6)],
     *[ding(f"L05+{0.24 * k:.2f}", -17, 2400 - 80 * (k % 4)) for k in range(8)],
     ding("L06+0.1", -14, 2150),
@@ -491,7 +492,7 @@ sfx = [
     {"at": "L60", "kind": "ding", "db": -20, "pitch": 1950, "dur": 0.9},
     ding("L72>", -18, 1900, fall=0.35),
     # recorded impacts where beats land (quality lift, 2026-11-03)
-    {"at": "L01.3-0.12", "kind": "whoosh", "db": -16},
+    {"at": "L01.4-0.12", "kind": "whoosh", "db": -16},
     {"at": "L19+0.2", "kind": "thud", "db": -18},
     {"at": "L27", "kind": "door", "db": -18},
     {"at": "L29+0.3", "kind": "thud", "db": -14},
