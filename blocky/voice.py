@@ -169,7 +169,7 @@ SPELLINGS = {"grey": "gray", "colour": "color", "favourite": "favorite", "zeros"
 # (ep17), Wren said "ren" (ep20)
 HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
               "threw": "through", "creek": "creak", "shown": "shone", "haul": "hall", "latter": "ladder",
-              "wren": "ren", "wrens": "rens", "too": "to",   # "too" (ep15: "back TOO,") is heard as "to"
+              "wren": "ren", "wrens": "rens", "remy": "remi", "remys": "remis", "hot": "hut", "too": "to",   # "too" (ep15: "back TOO,"); remy/hot (ep50)
               "60th": "sixtieth",   # ep31
               # ep33 (opt-in: only a story with these words is affected): made-up names Whisper spells its own way
               "halvor": "halver", "halvors": "halvers", "cagoule": "kagool", "40": "forty",
