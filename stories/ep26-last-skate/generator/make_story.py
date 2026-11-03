@@ -125,7 +125,7 @@ SKATER_LOW = C([6.2, -1.3, 0.9], [3.9, RAILY, 0.9], 2.6)                # the Sk
 SHOTS = [
     # 01 the rule
     (0, "Lenny close, grin, his flat hand coming down on the skip button, the song lights above him, one bulb cherry", 2,
-     move(([-1.5, 2.6, 3.1], [-0.75, 5.2, 2.78]), ([-1.3, 3.1, 3.05], [-0.75, 5.2, 2.78]), 17, 20)),
+     move(([-0.62, 3.3, 3.1], [-0.62, 4.6, 3.03]), ([-0.62, 3.4, 3.1], [-0.62, 4.6, 3.03]), 21, 24)),
     ("L02", "the song lights close, the next bulb glowing gold", 2, BOOTH_BAR(0.17, 1.0)),
     ("L02.1", "low on the honey floor, wheels gliding past", 2, C([-2.8, -3.0, 0.2], [1.0, -1.2, 0.15], 1.0)),
     # 02 skip one: the wipeout
@@ -175,7 +175,7 @@ SHOTS = [
     ("L21", "side on, the two of us at the rail, its head level with my shoulder", 2, C([3.6, -0.7, 1.2], [3.4, RAILY, 1.1], 3.0)),
     ("L21.2", "close on its folded knees", 2, C([4.6, -2.6, 0.5], [3.9, RAILY, 0.4], 1.1)),
     ("L22", "THE TEST STILL: its arm held out to me, two bends, a hand's width from mine, cherry rim", 1,
-     C([3.9, -1.3, 0.7], [3.65, -3.7, 0.62], 2.8)),
+     C([3.9, -0.7, 0.55], [3.65, -3.7, 0.3], 3.3)),
     ("P02", "the second drop: hold on the two hands, my hand pulled back to my chest", 2, C([3.4, -2.3, 1.1], [3.4, RAILY, 1.1], 1.3)),
     # 06 the reveal
     ("L23", "my eyes going from the song lights to its joints", 2, face(ME_RAIL, 180, 1.5, 1.2, 1.5)),
@@ -237,7 +237,7 @@ for i, (at, what, step, cam) in enumerate(SHOTS):
 shots[0]["expo"] = 0.45
 for sh in shots:
     if sh["what"].startswith("THE TEST STILL"):
-        sh["skboost"] = 0.9
+        sh["skboost"] = 0.6
         sh["expo"] = 0.75
 
 # ---------------------------------------------------------------------------------------------------- acting

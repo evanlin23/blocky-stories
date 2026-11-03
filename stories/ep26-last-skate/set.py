@@ -450,12 +450,12 @@ def build_booth(kit, ctx):
         ctx["bulbs"].append(node)
     # the two buttons on the ledge, side by side: cherry skip (a forward glyph of our own), cream back (the same reversed)
     ctx["btn"] = {}
-    for name, bc, gc, flip in (("skip", kit.plastic("#c2283a", 0.35), kit.plastic("#f3e8d0", 0.4), 0.0),
-                               ("back", kit.plastic("#efe3c8", 0.35), kit.plastic("#b0293b", 0.4), math.pi)):
+    for name, bc in (("skip", kit.plastic("#d4182e", 0.25)), ("back", kit.plastic("#efe3c8", 0.3))):
         e = kit.empty(f"btn {name}", (BTN_X[name], BTN_Y, LEDGE_TOP))
-        kit.cyl(f"btn {name} cap", 0.13, 0.08, (0, 0, 0.04), bc, e, n=28)
-        for dx in (-0.045, 0.045):
-            kit.cyl(f"btn {name} glyph{dx}", 0.05, 0.02, (dx * (1 if not flip else -1), 0, 0.095), gc, e, rot=(0, 0, flip), n=3)
+        kit.cyl(f"btn {name} ring", 0.17, 0.03, (0, 0, 0.015), kit.metal("#c8c8cc"), e, n=32)
+        kit.cyl(f"btn {name} stem", 0.14, 0.05, (0, 0, 0.055), kit.plastic("#2a2a30", 0.4), e, n=32)
+        dome = kit.sphere(f"btn {name} dome", 0.135, (0, 0, 0.085), bc, e, seg=24)    # a domed arcade button, no label
+        dome.scale = (1.0, 1.0, 0.7)
         ctx["btn"][name] = e
 
 
@@ -476,31 +476,28 @@ def build_lights(kit, ctx):
 
 def skater_face(path: Path):
     W, H = faces.TEX_W, faces.TEX_H
-    cream = (176, 166, 146)
+    cream = (206, 200, 188)
     im = Image.new("RGB", (W, H), cream)
     d = ImageDraw.Draw(im)
     cx = W // 2
     # a smooth, very slightly paler oval plate: no nose, no brows, no mouth but the painted smile
-    d.ellipse([cx - 250, int(H * 0.06), cx + 250, int(H * 0.96)], fill=(186, 176, 156))
+    d.ellipse([cx - 250, int(H * 0.06), cx + 250, int(H * 0.96)], fill=(214, 208, 196))
     im = im.filter(ImageFilter.GaussianBlur(5))
     d = ImageDraw.Draw(im)
     ink = (22, 16, 15)
-    cherry = (170, 44, 54)
     ey = int(H * 0.40)
     for sx in (-1, 1):
         ex = cx + sx * 92
-        d.ellipse([ex - 58, ey - 92, ex + 58, ey + 92], fill=(120, 24, 34))          # a dark cherry rim
-        d.ellipse([ex - 49, ey - 80, ex + 49, ey + 80], fill=(226, 218, 198))        # a pale ring
-        d.ellipse([ex - 36, ey - 60, ex + 36, ey + 66], fill=ink)                    # big dark pupil
-    # the painted smile: a thin upturned arc across 60% of the plate, curled ends
+        d.ellipse([ex - 27, ey - 32, ex + 27, ey + 32], fill=ink)                    # a small dark painted dot
+    # the painted smile: thin, long, shallow, curled at the ends
     my = int(H * 0.66)
-    hw = 150
-    d.arc([cx - hw, my - 70, cx + hw, my + 70], 22, 158, fill=(52, 8, 16), width=8)
+    hw = 215
+    col_ = (52, 8, 16)
+    d.arc([cx - hw, my - 60, cx + hw, my + 60], 28, 152, fill=col_, width=5)
     for sx in (-1, 1):
-        ex_ = cx + sx * hw * math.cos(math.radians(22))
-        ey_ = my + 70 * math.sin(math.radians(22))
-        d.line([(ex_, ey_), (ex_ + sx * 12, ey_ - 22)], fill=(52, 8, 16), width=8)   # the curl
-        d.ellipse([ex_ + sx * 12 - 4, ey_ - 26, ex_ + sx * 12 + 4, ey_ - 18], fill=(52, 8, 16))
+        ex_ = cx + sx * hw * math.cos(math.radians(28))
+        ey_ = my + 60 * math.sin(math.radians(28))
+        d.line([(ex_, ey_), (ex_ + sx * 10, ey_ - 18), (ex_ + sx * 4, ey_ - 30)], fill=col_, width=5)   # the curl
     im.save(path)
     return im
 
@@ -772,6 +769,14 @@ def _init_cast(kit, story, tl, ctx):
             ob.hide_render = False
         for ob in ch.hp["ears"]:
             ob.hide_render = True
+        # a hand that reads as a hand: four finger blocks and a thumb at the end of each arm
+        sk_ = kit.plastic(story["cast"]["lenny"]["skin"], 0.5)
+        for sx in (-1, 1):
+            arm = bpy.data.objects[f"lenny.arm{sx}"]
+            kit.box(f"lenny.palm{sx}", (0.98, 1.0, 0.3), (0, 0, -1.72), sk_, arm, bevel=0.04)
+            for k in range(4):
+                kit.box(f"lenny.finger{sx}{k}", (0.2, 0.26, 0.6), (-0.36 + k * 0.24, -0.02, -2.05), sk_, arm, bevel=0.04)
+            kit.box(f"lenny.thumb{sx}", (0.22, 0.5, 0.22), (sx * 0.56, -0.3, -1.72), sk_, arm, bevel=0.04)
     ctx["linkdone"] = True
 
 
@@ -801,17 +806,19 @@ def animate(kit, story, tl, t, ctx):
     # ---- the room: a slow ramp between levels
     dim = _ramp(_cues(tl, "dim"), t, DIM0, ["level"])["level"]
     for n in ("house0", "house1", "house2"):
-        over[n] = dim ** 1.5
+        over[n] = dim ** 3
     for n in ("dusk", "flood", "lot", "lot2"):     # the window light goes with the hall
         over[n] = 0.03 + 0.97 * dim ** 3
-    over["conc0"] = over["conc1"] = 0.08 + 0.92 * dim ** 2
+    over["conc0"] = over["conc1"] = 0.02 + 0.98 * dim ** 3
     over["amber"] = 0.3 + 0.7 * dim ** 2
-    over["hirefill"] = 0.08 + 0.92 * dim ** 2
-    over["tube"] = 0.15 + 0.85 * dim ** 2
+    over["hirefill"] = 0.02 + 0.98 * dim ** 3
+    over["tube"] = 0.06 + 0.94 * dim ** 3
+    over["amber"] = 0.04 + 0.96 * dim ** 3
+    over["booth"] = 0.04 + 0.96 * dim ** 3
+    # the sky and every emissive in the hall dim with the room (the world was left at full, lighting it all)
+    wn = bpy.context.scene.world.node_tree.nodes["Background"]
+    wn.inputs["Strength"].default_value = story["look"].get("sky_strength", 1.0) * (0.03 + 0.97 * dim ** 3)
     # ---- a per-shot level (story.json shots[].expo) so cuts land at similar brightness
-    import os
-    if os.environ.get("DBGDIM"):
-        print("DBG t", t, "shot", shot, "dim", dim, {k: round(v, 3) for k, v in over.items()}, flush=True)
     expo = next((sh.get("expo", 1.0) for sh in story["shots"] if sh["id"] == shot), 1.0)
     for n in list(kit.LIGHTS):
         over[n] = over.get(n, 1.0) * expo
@@ -821,7 +828,7 @@ def animate(kit, story, tl, t, ctx):
     s = kit.LIGHTS["spot"]
     s["obj"].location = (tx - 1.2, ty - 0.9, 4.7)
     kit.aim(s["obj"], (tx, ty, 0.0))
-    s["light"].spot_size = math.radians(sp["size"])
+    s["light"].spot_size = math.radians(14.0 if shot == "S44" else sp["size"])
     over["spot"] = sp["gain"] * expo
     # ---- the song lights, the rule meter: cream played, gold now, cherry skipped
     for i, node in enumerate(ctx["bulbs"]):
@@ -859,7 +866,7 @@ def animate(kit, story, tl, t, ctx):
     rim = kit.LIGHTS["sk_rim"]["obj"]
     rim.location = (px - 0.4, py + 2.6, 2.9)
     kit.aim(rim, (px, py, 1.5))
-    over["sk_rim"] = (0.35 + 0.65 * near) * expo * boost
+    over["sk_rim"] = (0.35 + 0.65 * near) * expo * boost * (0.4 if shot == "S44" else 1.0)
     # ---- the cast: sitting, skating, wobbling, skates on and off
     for who, keys in tl["acting"].items():
         root = bpy.data.objects.get(who)
