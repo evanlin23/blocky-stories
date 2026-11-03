@@ -214,7 +214,7 @@ stage("L22")
 shot("S26", "L23", C((-4.6, 8.2, 1.6), (-8.2, 10.8, 1.6), 38, (-4.9, 8.6, 1.6), (-8.2, 10.8, 1.6), 40),
      "our porch: Dad in his robe, binoculars raised, angry")
 stage("L23", dadn=((-8.2, 10.8, 0.2), 90, "angry", {"arms": [80, 80]}))
-shot("S27", "L23.2", C((-9.4, 9.6, 1.75), (7.0, 9.2, 1.2), 82),
+shot("S27", "L23.2", C((-9.4, 9.6, 1.75), (7.0, 9.2, 1.2), 82, (-9.4, 9.6005, 1.75)),
      "over his shoulder: the floodlit lawn, Mr. Odell mowing, eyes shut", hand=0.0)
 stage("L23.2", dadn=((-8.2, 10.8, 0.2), 90, "angry", {"arms": [80, 80]}), odell=((5.0, 10.6, 0), 0, "shut"))
 walk("odell", "L24", (5.0, 9.3, 0))
