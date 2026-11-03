@@ -17,13 +17,14 @@
    ],
    [
     "Only ONE",
-    "Only one"
+    "Only one,"
    ],
    [
     "CLOCK.",
     "clock."
    ]
-  ]
+  ],
+  "tempo": 1.1
  },
  {
   "id": "L02",
@@ -287,7 +288,8 @@
     "I WAVE.",
     "I wave."
    ]
-  ]
+  ],
+  "gap": 0.4
  },
  {
   "id": "L16",

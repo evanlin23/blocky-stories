@@ -175,14 +175,18 @@ H2 = {}     # the lower one: arms under, round the back     # chest to chest, ar
 # S00, the warning (L01): a Friday flash-forward, close and lit, on the wrong thing. The Hover by the shed (his
 # Friday place), the empty air over his head where a dial should be, pushing in. Lena small behind him at row 1, her
 # dial in frame (24 hours, Friday's reading). Never his boots: the gap is saved for L25. n=33 gives it Friday's light.
-S00H = (-0.4, 4.6)
-HV0 = (S00H[0], S00H[1], gz(S00H[1]) + LIFT)
-# low camera: his boots, the bright strip of grass under them and his shadow sit in the lower third (above the captions).
-_cy0, _cy1 = S00H[1] - 3.4, S00H[1] - 2.7
+S00H = (-0.38, 3.6)
 _gy = gz(S00H[1])
-sh("S00", 33, 0, mv([S00H[0] + 0.15, _cy0, gz(_cy0) + 0.5], [S00H[0], S00H[1], _gy + 0.53], 20,
-                    [S00H[0] + 0.1, _cy1, gz(_cy1) + 0.5], [S00H[0], S00H[1], _gy + 0.6], 20),
-   {"hover": hv(S00H[0], S00H[1], 0), "lena": P(1.15, 8.2, 0, expr="neutral", arms=[0, 0], side=[0, 0])}, hand=0.003)
+S00L = (0.38, 3.6)
+# S00a (L01 to "Only"): a chest-up two-shot, centred for TV: Lena with her dial (24) and the Hover with empty air at the
+# same height, both faces over 1/5 of the frame, pushing in. Bees hidden (set.py).
+_cz = _gy + 1.45
+sh("S00a", 33, 0, mv([0.0, S00H[1] - 3.3, _cz], [0.0, S00H[1], _gy + 1.5], 24, [0.0, S00H[1] - 2.7, _cz], [0.0, S00H[1], _gy + 1.5], 24),
+   {"hover": hv(S00H[0], S00H[1], 0), "lena": P(S00L[0], S00L[1], 0, expr="soft", arms=[0, 0], side=[0, 0])}, hand=0.003)
+# S00b ("Only ONE CLOCK"): a low insert at grass height on his floating boots, the sunlit strip under the soles, the shadow apart.
+sh("S00b", 33, "L01.3", mv([S00H[0] + 0.7, S00H[1] - 2.4, _gy + 0.14], [S00H[0], S00H[1], _gy + 0.3], 26,
+                          [S00H[0] + 0.55, S00H[1] - 1.9, _gy + 0.14], [S00H[0], S00H[1], _gy + 0.3], 26),
+   {"hover": hv(S00H[0], S00H[1], 0), "lena": P(S00L[0], 9.0, 0, expr="soft", arms=[0, 0], side=[0, 0])}, hand=0.003)
 sh("S01", 2, "L02", mv([X - 0.3, 4.9, 1.85], [X, 9.0, 2.0], 44, [X - 0.2, 5.4, 1.85], [X, 9.0, 2.0], 44),
    {"a1": P(cx0, 9.0, 90, z=PZ, head=[-72, 0], **hug, **H1), "a2": P(cx1, 9.0, 270, z=PZ, head=[72, 0], **hug, **H2),
     "b1": P(X - 1.7, 13.6, 0, z=PZ, to=(X - 1.7, 12.0, PZ), expr="neutral"), "b2": P(X + 1.8, 14.6, 0, z=PZ, to=(X + 1.8, 13.0, PZ), expr="neutral")}, hand=0.003)
@@ -439,6 +443,7 @@ story = {
     "fade_out": False,       # the last frame stays bright so the loop cuts straight into S00
     "fade_in": False,       # frame 1 is already the picture (opening recipe v1)
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
+    "phonemes": {"Thursday": "θˈɜɹzdA"},
     "look": {"flash_safe": True, "polish": {"quiet": [["L55", "L58"], ["L66", "L68"]]}, "fog": "#bcd6ea", "fog_density": 0.0035, "fog_start": 8.0, "sky": "#9cc8ea", "sky_strength": 1.0,
              "exposure": 0.0},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.03, 0.015, -0.02], "saturation": 1.05, "contrast": 1.03,
@@ -520,7 +525,7 @@ fx_("L13.3", "latch", -16)
 fx_("L39", "latch", -18)
 for k, off in enumerate((0.15, 1.2, 2.3)):
     fx_(f"L40+{off}", "puff", -17, dur=0.6)
-fx_("L01>-0.3", "sting", -8, dur=1.6, keep=True)     # the hit on "LOVE"
+fx_("L01.4", "sting", -8, dur=1.6, keep=True)     # the hit on "LOVE"
 fx_("L44", "sting", -11, dur=2.4, keep=True)
 fx_("L52.3+0.2", "whoosh", -17)
 fx_("L55+0.35", "thud", -26)
@@ -571,6 +576,6 @@ story["sound"] = {
         {"from": "L44-0.6", "to": "L44+0.45", "keep": ["sting"]},
         {"from": "L54-0.5", "to": "L54+0.2", "keep": ["click"]},
     ]}
-story["phonemes"] = {}
+story["phonemes"] = {"Thursday": "θˈɜɹzdA"}
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print("wrote", OUT, f"({len(shots)} shots, {tl0['duration']} s)")

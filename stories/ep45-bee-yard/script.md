@@ -69,7 +69,7 @@ One small harbour town on a hill, early summer, clear light.
 - **15 to 30 s:** L12 to L22 show the rule at work on Lena (the Monday dip, the switch to hours, the hours falling as she works). Nobody explains it.
 - **Loophole climax:** the dial says when, never who (L49 to L52). The hug will happen at zero whatever I do, so I make sure it's me.
 - **Readable first 2 s:** Friday daylight in the yard, the Hover front-lit by his fill (Friday's profile), his face and Lena's dial in frame, no fog or dark until L40.
-- **Cuts:** 80 shots over about 140 s (S00 added, S02 and S03 cut on 2026-11-03), an average of about 1.7 s.
+- **Cuts:** 80 shots over about 140 s (S00a and S00b added, S02 and S03 cut on 2026-11-03), an average of about 1.7 s.
 
 ## The last 15 seconds turn the first line
 L60 to L70. The opening line sounds like a warning about a stranger: the man with no clock. The reveal (L60 to L65) is that Lena's clock was counting to me every time I nearly hugged her, and mine was blank because I hadn't decided. The last lines put the rule back in my own mouth ("the CLOCK over my head counts down to my next HUG. Mine has NUMBERS now."), and the loop drops into L01 as one thought: mine has numbers now, so never let a man with no clock near someone you love. On a second watch the warning is about me, the blank dial at the gate, as much as him. Rewatch plants: the opening warning itself with S00's empty air over a head (mirrored by my blank dial in S13), the Monday dip at the gate (L16 to L17, S19 to S21) and the veil hung the week we met (L35 to L36, S41 to S43).
@@ -89,7 +89,8 @@ Timings are at about 290 wpm. Every shot keeps faces at least 1/5 of the frame w
 
 | Shot | Line | Picture |
 |---|---|---|
-| S00 | L01 | The warning shot (see "The first shot" above): low and front-on, his floating boots, the lawn strip and the shadow apart from him in the lower third, empty air over his head, Lena's dial right, pushing in, sting on "CLOCK". |
+| S00a | L01 (to "Only") | Chest-up two-shot, lit and saturated, centred for TV, camera about 3 m, 24 mm, pushing in: Lena (left of her, her dial big over her head: 24, three pips, coral arc, fully in frame above the captions) and the Hover side by side, both faces over 1/5 of the frame width, clear empty air over his head at her dial's height. No bee dots. |
+| S00b | L01 ("Only ONE CLOCK") to L02 | Low insert at grass height on his floating boots: the bright strip of sunlit grass under the soles and his shadow lying apart. Pushing in. Sting on "CLOCK" (-8 dB). |
 | S01 | L02 | Sunny ferry pier, medium, pushing in: a couple hugging, faces toward camera over each other's shoulders, both dials glowing soft gold at zero. Two passers-by behind with coral arcs, and the backpacker's ticks 12 to 11 on "counts down". |
 | S04 | L03 | High wide: the ferry arrivals, six to eight people meeting, a field of gold zero dials (about 4 s in, after the no-wide window). |
 | S05 | L04 | The ticket man on his stool in the hut, scowling, his dial on six pips and a full coral arc. |
@@ -243,3 +244,5 @@ L67. Now both veils come off their hooks every MORNING.
 L68. At the gate now, I hug FIRST.
 L69. In this world, the CLOCK over my head counts down to my next HUG.
 L70. Mine has NUMBERS now.
+
+**Fix (2026-11-03, opening rescue):** S00 is split into S00a (the two-shot, so the count is obvious) and S00b (the floating boots). L01 runs at line tempo 1.1 (2.14 s, cap 2.2). Dials are drawn at emission 0.8 so the cream face no longer clips to white under the grade.

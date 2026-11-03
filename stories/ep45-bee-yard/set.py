@@ -708,10 +708,10 @@ def animate(kit, story, tl, t, ctx):
         b.hide_render = night or n < 12 or n > 69 or (V(b.location) - cam).length < 1.6
     for i, b in enumerate(ctx["hover_bees"]):
         a = t * 0.9 + i * 1.57
-        rr = (0.34 + 0.1 * (i % 3)) * (2.4 if sid == "S00" else 1.0)     # S00: wide ring, so no dot sits on his face
+        rr = (0.34 + 0.1 * (i % 3)) * (2.4 if sid in ("S00a", "S00b") else 1.0)     # S00: wide ring, so no dot sits on his face
         b.location = (hv["x"] + rr * math.cos(a), hv["y"] + rr * math.sin(a), hv["z"] + 1.0 + 0.14 * i + 0.05 * math.sin(a * 2 + i))
-        b.hide_render = (not hover_on) or (V(b.location) - cam).length < 0.9
-        b.scale = (0.3 if sid == "S00" else 1.0,) * 3     # S00 is close: small dark-gold specks, not balls
+        b.hide_render = (not hover_on) or sid == "S00a" or (V(b.location) - cam).length < 0.9
+        b.scale = (0.3 if sid in ("S00a", "S00b") else 1.0,) * 3     # S00 is close: small dark-gold specks, not balls
     revealing = hover_on and (n in (44, 45, 46, 47) or sid == "S64")
     for i, sp in enumerate(ctx["hpuffs"]):
         sp.hide_render = not revealing
@@ -839,7 +839,7 @@ def _dials(kit, story, tl, t, ctx, st, cam, over):
             d["key"] = key
             if old_img is not None and old_img.name != f"dial_{who}":
                 bpy.data.images.remove(old_img)
-        d["em"].inputs["Strength"].default_value = 1.0 + 0.1 * state["glow"]
+        d["em"].inputs["Strength"].default_value = 0.8 + 0.1 * state["glow"]     # 0.8: a cream face at 1.0 clipped to white under the grade (flash)
 
 
 def _make_dial(kit, who, ctx):

@@ -116,6 +116,11 @@ lines = []
 for lid, ch in T.items():
     sp = spoken(ch)
     lines.append({"id": lid, "who": "narrator", "chunks": [[c, s] for c, s in zip(ch, sp)]})
+    if lid == "L01":
+        lines[-1]["chunks"][3][1] = "Only one,"     # a beat so Whisper hears "one clock", not "1 o'clock"
+        lines[-1]["tempo"] = 1.1      # the opening recipe caps L01 at 2.2 s
+    if lid == "L15":
+        lines[-1]["gap"] = 0.4        # a breath before L16: Whisper drops "On Monday, as I waved" after a 0.12 s gap
 (Path(__file__).parent / "lines.json").write_text(json.dumps(lines, indent=1, ensure_ascii=False) + "\n")
 for l in lines[:25]:
     print(l["id"], [c[1] for c in l["chunks"]])
