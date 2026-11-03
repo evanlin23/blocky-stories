@@ -42,7 +42,7 @@ the hard way.
   out if that's past), so it goes public on its own.
 - `YT_AUDITED=true` (a repo variable or a secret, both read) switches on API uploads. Without it, upload.py opens
   an "Upload by hand" issue instead. The run log prints which condition is missing, without values.
-- **No duplicates:** the `upload` concurrency group runs one at a time; there's one upload per UTC day
+- **No duplicates:** the `upload` concurrency group runs one at a time; there's up to UPLOADS_PER_DAY (2) per UTC day, the second only while 5+ stories stay ready
   (`uploads.json`); the uploads.json push retries across a moving main; and any title already in the channel's last
   50 uploads is recorded, not re-uploaded. `--story NAME` skips the one-a-day check, for the owner's explicit
   extra uploads only.

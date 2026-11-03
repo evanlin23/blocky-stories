@@ -119,13 +119,14 @@ def test_upload_publishes_at_4pm_central(monkeypatch):
     import upload
 
     morning = dt.datetime(2026, 11, 3, 12, 47, tzinfo=dt.timezone.utc)      # 6:47 am Central (CST, UTC-6)
-    assert upload.publish_at(morning) == "2026-11-03T22:00:00Z"
+    assert upload.publish_at(morning, jitter=0) == "2026-11-03T22:00:00Z"
+    assert upload.publish_at(morning, slot=1, jitter=5) == "2026-11-04T01:35:00Z"   # 7:35 PM Central
     late = dt.datetime(2026, 11, 3, 22, 10, tzinfo=dt.timezone.utc)         # past 4 pm: an hour from now
-    assert upload.publish_at(late) == "2026-11-03T23:10:00Z"
+    assert upload.publish_at(late, jitter=0) == "2026-11-03T23:10:00Z"
     summer = dt.datetime(2027, 6, 1, 13, 0, tzinfo=dt.timezone.utc)         # CDT, UTC-5
-    assert upload.publish_at(summer) == "2027-06-01T21:00:00Z"
+    assert upload.publish_at(summer, jitter=0) == "2027-06-01T21:00:00Z"
     monkeypatch.setenv("YT_AUTOPUBLISH", "false")
-    assert upload.publish_at(morning) is None
+    assert upload.publish_at(morning, jitter=0) is None
 
 
 def test_upload_finds_a_title_already_on_the_channel():
@@ -195,6 +196,32 @@ def test_grass_steps_are_not_a_hiss():
     X = np.abs(np.fft.rfft(y)) ** 2
     f = np.fft.rfftfreq(len(y), 1 / 48000)
     assert X[f > 4000].sum() / X.sum() < 0.03   # the old step was band-passed noise up to 6 kHz: scratchy
+
+
+def test_check_warns_on_loud_or_repeated_harsh_effects():
+    from blocky import checks
+
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "tape", "db": -18, "at": "L03"}]}})
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "glitch", "db": -30}] * 7}})
+    assert checks.harsh_sound({"sound": {"sfx": [{"kind": "whoosh", "db": -12}, {"kind": "tape", "db": -30}, {"kind": "click", "db": -12}]}}) == []
+
+
+def test_check_blocks_a_narrator_who_says_my_husband():
+    from blocky import checks
+
+    assert checks.NARRATOR_MISFIT.search("My husband was three rows ahead")
+    assert not checks.NARRATOR_MISFIT.search("her husband was three rows ahead")
+
+
+def test_ready_count_skips_held_done_and_unfilmed(monkeypatch):
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import upload
+
+    monkeypatch.setattr(upload, "all_stories", lambda: ["a", "b", "c", "d"])
+    monkeypatch.setattr(upload, "load_package", lambda s: {"hold": "x"} if s == "b" else {})
+    monkeypatch.setattr(upload, "film", lambda s: None if s == "c" else {"run_id": 1})
+    monkeypatch.setattr(upload, "gate_open", lambda s: True)
+    assert upload.ready_count({"a": {}}) == 1   # a uploaded, b held, c has no film: only d
 
 
 def test_metrics_summary_and_titles():
