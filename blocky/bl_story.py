@@ -3,7 +3,12 @@
     <bpy python> blocky/bl_story.py job.json
 
 job.json: {"story_dir": ..., "timeline": ..., "out": <dir>, "res": [w, h], "samples": n, "threads": n,
-           "frames": [frame numbers] or null, "stills": [seconds] or null, "skip_existing": true}
+           "frames": [frame numbers] or null, "stills": [seconds] or null, "skip_existing": true,
+           "clip": [seconds] or null, "clip_out": <json path>}
+
+With "clip", nothing is drawn: the scene is posed at each of those times and every character's head is tested
+against every other mesh with a BVH overlap (`python -m blocky clipcheck`). A head that passes through a prop, a
+wall or another character is the kind of thing only the final used to show (warm-shoes, a face in a boot).
 
 The world is the story's own `set.py`: `build(kit, story, tl)` makes the set and its lights and returns
 anything the story wants to keep, and an optional `animate(kit, story, tl, t, ctx)` moves story things (a door,
@@ -27,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from blocky import acting, kit, rig  # noqa: E402
+from blocky import acting, kit, polish, rig  # noqa: E402
 
 
 def load_set(story_dir: Path):
@@ -75,6 +80,113 @@ def cam_at(shot_spec, shot, t, chars, tl):
     return loc, tgt, lens, math.radians(roll)
 
 
+def pose_at(t, story, tl, setmod, ctx, chars, shots):
+    """Everything at time t: the cast, the set's own animation, the lights and the camera. Returns the shot."""
+    shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
+    for name, (c, seed) in chars.items():
+        s = acting.state(tl, name, t, seed)
+        c.pose(s["x"], s["y"], s["z"], s["yaw"], s["legs"], s["arms"], s["arms_side"], s["head_yaw"],
+               s["head_pitch"], s["lean"], s["bob"], s["expr"], s["mouth"], s["look"], s["blink"], s["hidden"])
+    overrides = {}
+    if hasattr(setmod, "animate"):
+        overrides = setmod.animate(kit, story, tl, t, ctx) or {}
+    kit.update_lights(t, overrides)
+    loc, tgt, lens, roll = cam_at(shots[shot["id"]], shot, t, chars, tl)
+    kit.place_camera(loc, tgt, lens, roll)
+    return shot
+
+
+def _owner(ob, names):
+    """Who an object belongs to: the cast member whose name starts it ('<name>.'), else its top ancestor (a
+    creature set.py builds under one root is one thing)."""
+    top = ob
+    while ob is not None:
+        for n in names:
+            if ob.name == n or ob.name.startswith(n + "."):
+                return n
+        top, ob = ob, ob.parent
+    return "set:" + top.name
+
+
+def _world_bvh(ob, depsgraph, shrink=1.0):
+    """The evaluated mesh in world space as a BVH tree, scaled by `shrink` about its own middle (a head shrunk 10%
+    only counts as clipping when it's more than a skin's depth in: a head on a pillow is fine)."""
+    import bmesh
+    from mathutils import Matrix, Vector
+    from mathutils.bvhtree import BVHTree
+
+    ev = ob.evaluated_get(depsgraph)
+    me = ev.to_mesh()
+    try:
+        bm = bmesh.new()
+        bm.from_mesh(me)
+        if shrink != 1.0 and bm.verts:
+            c = sum((v.co for v in bm.verts), Vector()) / len(bm.verts)
+            bm.transform(Matrix.Translation(c) @ Matrix.Scale(shrink, 4) @ Matrix.Translation(-c))
+        bm.transform(ev.matrix_world)
+        return BVHTree.FromBMesh(bm) if bm.faces else None
+    finally:
+        ev.to_mesh_clear()
+
+
+def _bbox(ob):
+    from mathutils import Vector
+
+    pts = [ob.matrix_world @ Vector(c) for c in ob.bound_box]
+    return [min(p[i] for p in pts) for i in range(3)], [max(p[i] for p in pts) for i in range(3)]
+
+
+def _touch(a, b, pad=0.0):
+    return all(a[0][i] <= b[1][i] + pad and b[0][i] <= a[1][i] + pad for i in range(3))
+
+
+def clip_check(job, story, tl, setmod, ctx, chars, shots):
+    """Pose the film at each time in job["clip"] and test each visible head against every other rendered mesh (the
+    set, its props, the other characters). The heads: every cast member's, plus the set objects whose names start
+    with one of story.json's `clip_heads` (a creature set.py builds, like warm-shoes' cat: ["chead"]).
+    Writes {"hits": [{t, shot, who, what}]}."""
+    import bpy
+    from bpy_extras.object_utils import world_to_camera_view
+    from mathutils import Vector
+
+    names = list(chars)
+    sc = bpy.context.scene
+    hits, t0 = [], time.time()
+    for t in job["clip"]:
+        shot = pose_at(t, story, tl, setmod, ctx, chars, shots)
+        bpy.context.view_layer.update()
+        dg = bpy.context.evaluated_depsgraph_get()
+        meshes = [o for o in sc.objects if o.type == "MESH" and not o.hide_render and o.visible_get()]
+        extra = tuple(story.get("clip_heads", []))
+        heads = [o for o in meshes if (".headm" in o.name and not _owner(o, names).startswith("set:"))
+                 or (extra and o.name.startswith(extra))]
+        if not heads:
+            continue
+        boxes = {o.name: _bbox(o) for o in meshes}
+        trees = {}
+        for h in heads:
+            who = _owner(h, names)
+            hb = boxes[h.name]
+            mid = [(hb[0][i] + hb[1][i]) / 2 for i in range(3)]
+            v = world_to_camera_view(sc, sc.camera, Vector(mid))
+            if not (v.z > 0 and -0.05 <= v.x <= 1.05 and -0.05 <= v.y <= 1.05):
+                continue   # off screen: nobody sees it
+            for o in meshes:
+                if _owner(o, names) == who or not _touch(hb, boxes[o.name]):
+                    continue
+                if h.name not in trees:
+                    trees[h.name] = _world_bvh(h, dg, 0.9)
+                if o.name not in trees:
+                    trees[o.name] = _world_bvh(o, dg)
+                if trees[h.name] is None or trees[o.name] is None:
+                    continue
+                if trees[h.name].overlap(trees[o.name]):
+                    hits.append({"t": round(t, 3), "shot": shot["id"], "who": who.removeprefix("set:"),
+                                 "what": o.name})
+    Path(job["clip_out"]).write_text(json.dumps({"times": len(job["clip"]), "hits": hits}, indent=1))
+    print(f"clip check: {len(job['clip'])} times, {len(hits)} head overlap(s) in {time.time() - t0:.0f} s", flush=True)
+
+
 def main():
     job = json.loads(Path(sys.argv[1]).read_text())
     sdir = Path(job["story_dir"])
@@ -104,8 +216,11 @@ def main():
         if spec.get("offscreen"):
             continue
         chars[name] = (rig.Character(name, spec, faces_dir), i)
-    shots = {s["id"]: s for s in story["shots"]}
+    pol = polish.spec(story)   # the polish pack's camera moves on shots whose own camera holds still
+    shots = polish.cam_specs(story, tl, pol)
 
+    if job.get("clip") is not None:
+        return clip_check(job, story, tl, setmod, ctx, chars, shots)
     if job.get("stills"):
         frames = [int(round(t * tl["fps"])) for t in job["stills"]]
     else:
@@ -116,17 +231,7 @@ def main():
         if job.get("skip_existing") and path.exists():
             continue
         t = f / tl["fps"]
-        shot = next((s for s in tl["shots"] if s["start"] <= t < s["end"]), tl["shots"][-1])
-        for name, (c, seed) in chars.items():
-            s = acting.state(tl, name, t, seed)
-            c.pose(s["x"], s["y"], s["z"], s["yaw"], s["legs"], s["arms"], s["arms_side"], s["head_yaw"],
-                   s["head_pitch"], s["lean"], s["bob"], s["expr"], s["mouth"], s["look"], s["blink"], s["hidden"])
-        overrides = {}
-        if hasattr(setmod, "animate"):
-            overrides = setmod.animate(kit, story, tl, t, ctx) or {}
-        kit.update_lights(t, overrides)
-        loc, tgt, lens, roll = cam_at(shots[shot["id"]], shot, t, chars, tl)
-        kit.place_camera(loc, tgt, lens, roll)
+        shot = pose_at(t, story, tl, setmod, ctx, chars, shots)
         t0 = time.time()
         kit.render_to(path)
         print(f"frame {f} ({shot['id']}) {time.time() - t0:.1f}s  [{n + 1}/{len(frames)}]", flush=True)

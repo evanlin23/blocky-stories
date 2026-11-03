@@ -50,7 +50,7 @@ The ep10 bar (decision r1, A2) is stricter than WCAG's: at most 2 general flashe
 **changes** (`*_max_changes_per_s`): the same-direction runs inside each 1 s window, before they're
 paired into flashes. On both readings (the frames before encoding and the decoded mp4, the higher
 count governing), a reel must keep to all of these:
-- at most 2 flashes and 5 changes in any second on the 1-frame reading, at 10% of the screen
+- (before 2026-11-03) at most 2 flashes and 5 changes in any second on the 1-frame reading, at 10% of the screen; see HOUSE_BAR for what blocks now
 - at most 3 flashes and 6 changes on the 3-frame reading (6 is IRIS's `MaxTransitions`)
 - at most 1 red flash in any second, on the 1-frame and the 3-frame red readings
 - IRIS's extended-flash rule (`*_extended_s`): in any 5 s window, the frames whose 1 s window holds
@@ -330,7 +330,15 @@ RED_AFTER_SHARE = 0.01  # ... no frame has more than this share at saturated red
 RED_CLAMP_LINE = 0.78   # crops of our own sims stay under this linear red ratio (ep10 fix 1)
 BRIGHT_CUT_RATIO = 2.0  # two shots differ "very much" when their (mean luminance + 0.05) differ by 2:1 or more
 BRIGHT_CUTS_MAX = 3     # ... and there are at most this many such cuts in any second
-HOUSE_BAR = {"general": (2, 5), "general_3f": (3, 6), "red": (1, None), "red_3f": (1, None)}
+# 2026-11-03, second change (owner: "I definitely think the flash is too strict. The thing it pointed out has been
+# like transitions and stuff. Can we just remove that check or make it much looser?"): only a real strobe blocks.
+# That means sustained flashing (IRIS's extended rule on the 3-frame reading: frames whose second holds 4+ changes
+# adding up to 4 s of any 5 s), a hard strobe (over 6 flashes in a second, double WCAG: cuts can't make that), red
+# flashes over WCAG's 3 a second, and a full-screen red frame. Flash and change
+# counts per second, the 1-frame extended reading and fast bright/dark cuts are warnings (HOUSE_WARN).
+HOUSE_BAR = {"general": (6, None), "general_3f": (None, None), "red": (3, None), "red_3f": (3, None)}   # 6 = a hard strobe, double WCAG
+HOUSE_WARN = {"general": (2, 5), "general_3f": (3, 6)}
+EXTENDED_GATED = ("general_3f", "red", "red_3f")
 
 
 def window_changes(trans: list[tuple[int, int]], n_frames: int) -> np.ndarray:
@@ -429,10 +437,12 @@ def house_report(lum: list[np.ndarray], red: list[np.ndarray], cuts: list[int] |
         rep[f"{key}_extended_s"] = ext
         rep[f"{key}_extended_from_s"] = ext_at
         f_cap, c_cap = HOUSE_BAR[key]
-        bar[f"{key}_flashes_le_{f_cap}"] = rep[f"{key}_max_flashes_per_s"] <= f_cap
+        if f_cap is not None:
+            bar[f"{key}_flashes_le_{f_cap}"] = rep[f"{key}_max_flashes_per_s"] <= f_cap
         if c_cap is not None:
             bar[f"{key}_changes_le_{c_cap}"] = mx <= c_cap
-        bar[f"{key}_extended_under_4s"] = ext < EXTENDED_MAX_S
+        if key in EXTENDED_GATED:
+            bar[f"{key}_extended_under_4s"] = ext < EXTENDED_MAX_S
     # IRIS's own area, 3-frame build: for information only
     t25 = []
     for i in range(1, n):
@@ -448,8 +458,18 @@ def house_report(lum: list[np.ndarray], red: list[np.ndarray], cuts: list[int] |
     bar["red_frames_ok"] = rf["ok"]
     if cuts is not None:
         bc = bright_cuts(lum, cuts)
-        rep["bright_cuts"] = bc
-        bar["bright_cuts_le_3"] = bc["ok"]
+        rep["bright_cuts"] = bc   # a warning since 2026-11-03: cuts aren't a strobe
+    warn = []
+    for key, (f_w, c_w) in HOUSE_WARN.items():
+        if rep[f"{key}_max_flashes_per_s"] > f_w:
+            warn.append(f"{key}: {rep[f'{key}_max_flashes_per_s']} flashes in a second (old house bar {f_w})")
+        if rep[f"{key}_max_changes_per_s"] > c_w:
+            warn.append(f"{key}: {rep[f'{key}_max_changes_per_s']} changes in a second (old house bar {c_w})")
+    if rep["general_extended_s"] >= EXTENDED_MAX_S:
+        warn.append(f"general: {rep['general_extended_s']} s of busy flashing in 5 s on the 1-frame reading")
+    if cuts is not None and not rep["bright_cuts"]["ok"]:
+        warn.append(f"bright cuts: {rep['bright_cuts']['max_per_s']} in a second between very different shots")
+    rep["house_warnings"] = warn
     bar["pass"] = all(bar.values())
     rep["house_bar"] = bar
     return rep

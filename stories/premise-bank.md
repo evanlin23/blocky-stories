@@ -41,7 +41,7 @@ What the panels taught us (also in `playbook.md`):
 | 7 | P27 | Best Friend Swap Day 🤝 | Once a year in this town, everyone swaps best friends for a day. Mine didn't come back. | Jealousy of a best friend's new friend. | Best friend/crush rows (deep #16, 1.1M/day); the reset's relatable-want rule | story | 25 | 3 |
 | 8 | P11 | Hidden Snacks Vanish At Midnight 🍪 | Every snack I hide from my brother is gone by midnight, and he swears it isn't him. | A sibling snack war, and a brother who's been protecting me. | Sibling gag deep #10; family comments on 26 of 40 | story | 21 | 7 |
 | 9 | P30 | The Printer Prints Tomorrow 🖨️ | At my office, the printer prints tomorrow's emails. | An adult with a boss who's out to get them. | Adult audience (35 to 44 is our biggest age group); a price rule in an everyday place | story | 18 | 10 |
-| 10 | P13 | Our Cat Brings Home Shoes 🐈 | Every night our cat brings home a new pair of shoes, and they're always still warm. | Keeping the cat when Dad wants it gone. | 'cats' 16 comment mentions; detail-spotting comments on 14 of 40 | story | 30 | 1 |
+| 10 | P13 | Our Cat Brings Home Shoes 🐈 (**made: `warm-shoes`**, batch 6) | Every night our cat brings home a new pair of shoes, and they're always still warm. | Keeping the cat when Dad wants it gone. | 'cats' 16 comment mentions; detail-spotting comments on 14 of 40 | story | 30 | 1 |
 | 11 | P23 | Our Dog Only Says DON'T 🐶 | In this town, every dog learns one word. Ours learned don't. | Dad wants to give the dog away. | Quotable single-word gag (quote-back 25%); pets in comments | story | 20 | 11 |
 | 12 | P12 | Every Wish Comes Twice 🌠 | In this town, when you make a wish, your worst rival gets it too. | Rivalry with a cousin who always gets everything first. | Wish-with-a-price rules (reset); quotable rule logic, loophole comments on 13 of 40 videos | story | 13 | 17 |
 | 13 | P08 | Your Battery Is Your Energy 🔋 | In this town, your phone battery is how much energy you have left. | A teen who never puts the phone down, and a mum who keeps hers at 2%. | Budget-rule premises lead the rule-premise rows (median 407K/day); skylox screen-time conflict | story | 17 | 16 |
@@ -49,7 +49,7 @@ What the panels taught us (also in `playbook.md`):
 | 15 | P05 | The Wi-Fi Password Knows Secrets 📶 | In this house, the Wi-Fi password changes every night to a secret about you. | A screen-time fight with Dad. | Skylox study (screen-time home conflict, its fastest Short); quote-back comments 25% (the passwords are the quotable lines) | story | 24 | 14 |
 | 16 | P20 | Grandma's Soup Has One Rule 🥘 | Grandma's soup has one rule: never taste it before midnight. | Learning the family recipe and earning Grandma's yes. | 'grandma' 16 comment mentions; family on 26 of 40 | story | 27 | 13 |
 | 17 | P07 | The Neighbour's Lawn Is Perfect 🌿 | Our neighbour's lawn is perfect, and his mower only runs at 3 AM. | Dad's lawn rivalry with the neighbour. | Suspicion of one odd adult is the shape of deep #3 (2.66M/day); horror-tagged rows 227K/day median | story | 35 | 6 |
-| 18 | P25 | Free Fries Forever 🍟 | At this diner, the fries are free forever, as long as you never look in the kitchen. | Two broke best friends and one rule. | Odd food-place rules (deep #3's lunch room, different premise); best-friend want from the reset | story | 29 | 12 |
+| 18 | P25 | Free Fries Forever 🍟 (**made: `ep83-free-fries`**, batch 7, as "Free Fries, One RULE 🍟", scripted 2026-11-03) | At this diner, the fries are free forever, as long as you never look in the kitchen. | Two broke best friends and one rule. | Odd food-place rules (deep #3's lunch room, different premise); best-friend want from the reset | story | 29 | 12 |
 | 19 | P28 | Slam The Door, Move Up 🚪 | Every time I slam my bedroom door, the house moves my room one floor higher. | A teen fighting with their parents. | Home-conflict rule like deep #11 (1.5M/day); a visible meter (the floor) | story | 23 | 19 |
 | 20 | P22 | Say Sorry Or Float 🎈 | In this house, if you go to bed without saying sorry, you float up to the ceiling. | Mum and Dad's fight, and who says it first. | Apology theme in deep #19 (1.04M/day, different mechanism); emotional comments on 18 of 40, sting not the whole story | story | 19 | 23 |
 | 21 | P29 | Rent Is Paid In Secrets 🗝️ | In this building, rent is paid in secrets, and the landlord just asked for Mum's. | Protecting Mum, who's been paying for both of us. | Adult audience; rule-premise median 407K/day | story | 26 | 21 |
@@ -73,19 +73,19 @@ From `docs/research/port-study.md` and the owner's niche map. Rank them with the
 | W3 | what-if | What if your fridge got one degree colder every hour | Don't open the fridge after midnight. It's been getting colder all week. | Roommates fighting over the fridge | Same; warning opening (recipe) | story |
 | K1 | rulebook host | Rule One: Never Read Ahead 📕 | I keep this town's rulebook, and rule one is you never read ahead. | A night clerk who's lonely in the town hall | Sequel and host requests, almost none supplied (niche map); a 9-day-old small-town rules channel at 497K/day | story (pilot) |
 | K2 | rulebook host | Rule Two: Don't Feed the Streetlights 💡 | In this town, you don't feed the streetlights. They lean toward anything you're eating. | The Keeper wants one friend in town | Same | story |
-| K3 | rulebook host | Rule three was torn out | Rule three is missing, and everyone in town still obeys it. | The Keeper wants to know who tore it | Same; spot-the-detail comments (14 of 40) | story |
+| K3 | rulebook host | Rule three was torn out (**made: `rule-three`**, 2026-11-03, as "Rule Three Was TORN Out 📕") | Rule three is missing, and everyone in town still obeys it. | The Keeper wants to know who tore it | Same; spot-the-detail comments (14 of 40) | story |
 | Z1 | horror puzzle | One Of These Neighbors Isn't Home 🏠 | Don't wave back at the one who isn't real. | Being polite to the wrong neighbor | "Which one is not human?" at 1M (niche map); comment a letter (playbook item 9) | gag |
 | Z2 | horror puzzle | Which barista came back wrong ☕ | After the power cut, one of the baristas came back different. | Your morning coffee, ruined | Riddle has the most new channels in the wide scan (16) | gag |
 | Z3 | horror puzzle | One guest wasn't invited 🎂 | Never count the guests at this party. | A birthday you didn't want | Same | gag |
 | C1 | creepy town rule | The Tuesday Door 🚪 | In this town, you never open the extra door that shows up on Tuesdays. | A sibling who always opens what they shouldn't | The owner's niche-map sketch (an extra door that knocks from inside); quiet dread is the lane | story |
 | C2 | creepy town rule | Don't Read Next Week's Mail ✉️ | In this town, the mail brings the letters you'll write next week, and you don't read them. | Making up with someone before you hurt them | The owner's niche-map sketch (next week's letters) | story |
 | C3 | creepy town rule | When The Siren Sounds, Nobody Laughs 📢 | When the town siren sounds, you stand still, and you never laugh. | A best friend who can't keep a straight face | Warning titles: 7 of the 17 fastest blocky stories; quotable rule | story |
-| C4 | creepy town rule | the house with no number | Never ring the doorbell of the house with no number. | A new delivery driver who needs the job | Warning opening; night-job lane (back-row) | story |
+| C4 | creepy town rule | the house with no number (**made: `ep82-no-door`**, batch 7, reworked as "Pizza For The House With No DOOR 🍕", scripted 2026-11-03) | Never ring the doorbell of the house with no number. | A new delivery driver who needs the job | Warning opening; night-job lane (back-row) | story |
 
 ## US English fixes (use these when the premise is made)
 
 - P04: Mom Can Hear Through Walls 👂 (and "every mom")
-- P07: The Neighbor's Lawn Is Perfect 🌿
+- P07: The Neighbor's Lawn Is Perfect 🌿 (made as `night-mower`, dropped 2026-11-03 at the rescue round: eyelid read as an object, flash at the bar)
 - P14: "night shift at the gas station"
 - P18: "This supermarket's carts..."
 - P29: "asked for Mom's"

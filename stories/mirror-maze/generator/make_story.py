@@ -26,6 +26,8 @@ OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 # word-check pins: "But Tasha" runs together at this speed ("Batasha"), so a comma holds them apart in the voice only
 for ln in lines:
+    if ln["id"] == "L21":
+        ln["chunks"][0][1] = "The people,"
     if ln["id"] in ("L09", "L13"):
         ln["chunks"][0][1] = ln["chunks"][0][1].replace("But Tasha", "But... Tasha")
 LOOP = 0.25
@@ -195,12 +197,17 @@ LOOK_NIGHT = {"exposure": 0.8, "camfill": 0.6, "amb": 1.0, "bulbs": 0.5,
 # =========================================================================================== 01 the hook, L01
 hide("me", 0)
 hide("guy", 0)
-put("tasha", 0, [2.9, 7.0, BZ], yaw=0, expr="grin", head=[0, 0])
+hide("tasha", 0)
+put("tasha", "L01b", [2.9, 7.0, BZ], yaw=0, expr="grin", head=[0, 0])
 stage(0, *[E(w, p, 0, expr=e, rim=True) for w, p, e in (
-    ("x0", (1.75, 14.3, PZ), "neutral"), ("x1", (3.0, 14.4, PZ), "grin"), ("x2", (4.2, 14.3, PZ), "neutral"))])
+    ("x0", (1.75, 14.3, PZ), "neutral"), ("x7", (3.0, 14.4, PZ), "grin"), ("x2", (4.2, 14.3, PZ), "neutral"))])
 LOOK_HOOK = {"exposure": 1.1, "camfill": 1.5, "gal": 1.0, "inside": 1.6, "wash": 1.0}
-S(0, mv(((3.2, 3.9, 1.45), (3.0, 11.5, 2.2)), ((3.15, 4.3, 1.5), (3.0, 11.5, 2.2)), 34), 2, look=LOOK_HOOK,
-  note="the hook: Tasha lit at the maze front, the panes behind her hold a lilac-rimmed crowd on no steps")
+LOOK_WARN = {"exposure": 1.0, "camfill": 1.3, "gal": 1.2, "inside": 1.6, "wash": 1.0, "amb": 1.0, "bulbs": 0.8,
+             "kick": [[2.2, 9.2, 2.4], [3.0, 14.3, 1.6], 350, 40, "#f0dcff"]}
+S(0, mv(((3.0, 5.5, 1.8), (3.0, 13.3, 2.0)), ((3.0, 7.2, 1.7), (3.0, 13.3, 1.95)), 38, 45), 2, look=LOOK_WARN,
+  note="the warned-of thing: one pane through the arch holds a lilac-rimmed stranger, nobody in front; pushes in")
+S("L01b", mv(((3.2, 3.9, 1.45), (3.0, 11.5, 2.2)), ((3.15, 4.3, 1.5), (3.0, 11.5, 2.2)), 34), 2, look=LOOK_HOOK,
+  note="Tasha lit at the maze front, the panes behind her hold a lilac-rimmed crowd on no steps")
 
 # =========================================================================================== 02 the van and the puddle, L02 to L05
 hide("tasha", "L02")
@@ -385,9 +392,9 @@ S("P02", one((0.4, 0.5, 1.5), (-0.1, 5.0, 1.45), 34), 2, look={**LOOK_NIGHT, "ca
 # the guy walks the carried pane west along y = 4.8 to the truck; Tasha walks beside it on the rainy side
 GY = 4.8
 raw("guy", "L29", pos=[1.6, GY, BZ])
-raw("guy", "L33>", pos=[-3.25, GY, BZ])
+raw("guy", "L33", pos=[-2.3, GY, BZ])
 raw("tasha", "L29", pos=[-0.9, 3.4, BZ], yaw=180)
-raw("tasha", "L33>", pos=[-5.7, 3.4, BZ])
+raw("tasha", "L33", pos=[-4.75, 3.4, BZ])
 rain("L29", True, [-9.0, 4.0, 1.0, 4.55], 4.5)
 LOOK_WALK = {**LOOK_NIGHT, "camfill": 1.4}
 stage("L29", E("me", (0, 0, 0), 0, att={"side": -0.5, "ahead": -0.45, "up": 0.03, "yaw": 0, "tilt": True}, rim=True))
@@ -399,7 +406,9 @@ S("L31", one((2.0, -5.5, 1.7), (-1.4, 0.2, 1.4), 24), 2, follow="guy", look=LOOK
   note="the real me looked in this pane last year, then moved away")
 S("L32", one((-1.7, -0.7, 1.65), (0.0, 0.0, 1.65), 50), 2, follow="tasha", look=LOOK_WALK, rain2d=False,
   note="Tasha comes to see me anyway")
-S("L33", one((-0.55, -1.35, 1.45), (-0.55, 0.45, 1.4), 46), 2, follow="guy", look=LOOK_WALK, rain2d=False,
+raw("me", "L33", blink=False)
+raw("me", "L34", blink=True)
+S("L33", one((-3.15, 3.2, 1.5), (-3.15, 5.25, 1.45), 40), 2, hand=0, look={**LOOK_WALK, "camfill": 0.7, "bulbs": 0}, rain2d=False,
   note="the eye close: my glint the brightest point")
 
 # =========================================================================================== 12 the truck, L34 to L35
@@ -493,7 +502,7 @@ cues.sort(key=lambda c: AT(c["at"]))
 
 story = {
     "slug": "ep15-mirror-maze",
-    "title": "Your Reflection STAYS When You Walk Away",
+    "title": "Never Walk Away From Your REFLECTION 🪞",
     "made_for_kids": False,
     "premise": "In a town where your reflection stays behind in the glass when you walk away, I meet my best friend Tasha at the travelling fair's mirror maze every night, and on the last night the maze guy starts loading the panes onto the truck.",
     "twist": "I'm not the person, I'm the reflection the real me left in a maze pane last year before moving away. I've never left a reflection because I am one. Tasha has come every night to see me, and when my pane goes on the truck she looks at herself in it on purpose, so her reflection stays behind with mine.",
@@ -502,7 +511,10 @@ story = {
     "key_color": "#ffd23a",
     "gap": GAP,
     "tail": LOOP,
-    "look": {"fog": "#1c1826", "fog_density": 0.055, "fog_start": 3.5, "sky": "#120f18", "exposure": 0.7, "flash_safe": True},
+    "fade_in": False,
+    "fade_out": False,
+    "look": {"fog": "#1c1826", "fog_density": 0.055, "fog_start": 3.5, "sky": "#120f18", "exposure": 0.7, "flash_safe": True,
+             "polish": {"quiet": [["L37", "L41"], "L01.0"]}},
     "grade": {"shadows": [0.03, -0.02, 0.07], "highlights": [-0.02, 0.0, 0.03], "saturation": 0.9, "contrast": 1.1,
               "vignette": 0.5, "bloom": 0.4, "grain": 0.012, "red_line": 0.78},
     "rain_shots": rain_shots,
@@ -536,7 +548,9 @@ story = {
                   {"kind": "hum", "from": "L09", "to": "L19", "lufs": -42},
                   {"kind": "drips", "from": "L20", "to": "L26", "lufs": -40},
               ],
+              "rev": 3,
               "sfx": [
+                  {"at": "L01>-0.35", "kind": "hit", "db": -9},
                   {"at": "P01", "kind": "hit", "db": -6},
                   {"at": "P01", "kind": "sting", "db": -9},
                   {"at": "L23", "kind": "riser", "db": -20, "dur": 1.8},

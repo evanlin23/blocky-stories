@@ -83,3 +83,174 @@ flash-measures them):
 
 Nothing new to render: the pack is post and sound only, on the drawings we already make. Finishing the preview
 took about 11 minutes and mixing about 6.5, the same as without it.
+
+## v2: the animation itself (2026-11-03, from the craft metrics)
+
+The craft-metrics session (`scripts/measure.py`, `docs/research/craft-metrics.md`) found the engine-level gaps behind
+the owner's "make it so the animations feel real and clean and good": every walk started and stopped dead, characters
+stood like statues, the camera held still in most shots, and v1's punch-ins ran at 2.1 per 10 s, five times
+back-row's 0.44. v2 fixes them in the engine, still only under `look.polish` (`docs/engine.md` → The polish pack).
+
+**The edit's numbers** (`measure.py --story`; ep48 and ep42 measured on copies with `look.polish: true`):
+
+| | ep32 none → v1 → v2 | ep48 none → v2 | ep42 none → v2 | target |
+|---|---|---|---|---|
+| Camera moving | 0.12 → 0.27 → 0.93 | 0.11 → 0.97 | 0.12 → 0.93 | 0.65+ |
+| Punch-ins per 10 s | 0 → 2.07 → 0.69 | 0 → 0.71 | 0 → 0.73 | 0.5 to 0.8 |
+| Shots where a character moves | 0.27 → 0.27 → 0.86 | 0.34 → 0.57 | 0.27 → 0.61 | 0.8+ |
+| Idle 1 s windows | 0.64 → 0.64 → 0.06 | 0.35 → 0.03 | 0.49 → 0.02 | under 0.10 |
+| Walk ends that stop dead | 1.0 → 1.0 → 0.0 | 0.91 → 0.0 | 0.89 → 0.33 | under 0.10 |
+
+- "Shots where a character moves" counts shots with nobody in frame (sets, props, hands) in its denominator, so
+  ep48 and ep42 can't reach 0.8. Every shot with a visible character now moves.
+- ep42's 0.33 is one acting key out of time order for "me" (`acting.position` reads keys in list order), so he jumps
+  at about 61.5 s, 87.9 s and 104 s with or without the pack. It's a story fix, not an engine one.
+- `measure.py` now reads walk ends from `acting.position` (so easing counts) and no longer counts a jump to a new
+  place behind a cut (a key at the same instant, or over 6 m/s) as a walk. The baselines barely move (ep48 0.95 →
+  0.91).
+
+**The film's numbers** (`measure.py <preview>`, ep32 previews: quarter-res, every 4th drawing):
+
+| | none | v1 | v2 |
+|---|---|---|---|
+| Picture changes per 10 s | 8.2 | 8.4 | 10.4 |
+| Longest still | 0.83 s | 0.93 s | 0.47 s |
+| Motion energy | 1.56 | 1.59 | 1.94 |
+| Brightness, dark frames | 0.31, 6.7% | 0.35, 4.7% | 0.35, 4.6% |
+| Flash, loudness, true peak | pass, -14.1, -1.8 | pass, -14.1, -1.7 | pass, -14.1, -1.8 |
+
+The preview's held frames (49%) are the preview's every-4th drawing, not the final's.
+
+**On ones** (the cost of drawing every frame, from run 41564219345's shard times): ep34's 16 shards took 17 to 37
+min (491 shard-minutes; the wall time is the slowest shard plus 24 min to finish and mix), floor-thirteen's 12 to 27
+min. Our stories draw 50 to 58% of their frames today. Every shot on ones is 1.73 to 1.98 times the drawing (ep34's
+slowest shard about 70 min). Only the shots where someone walks, which is where twos read as choppy, is 1.07 to 1.09
+times on ep32, ep34 and ep48 (0.92 on floor-thirteen, whose walks are already on ones). v2 does that (`ones: "walk"`).
+The camera moves and idle motion are slow enough to stay on twos.
+
+**The critic, round 3** (A none, B v1, C v2, fresh agent): C at least as good as B on every axis: **yes**. Better on
+pace and motion: **yes** (5 → 6 → 8). Better on animation quality: **yes** (5 → 5 → 7, "breathing and weight shifts
+read as natural"). Overall 6 → 7 → 7.5. No jitter at phone size, and no caption cropped. Its notes:
+1. The reveal ("was MUM", 66.5 to 67.5 s): her head tilted while the camera trucked, so her face drifted off centre.
+   **Fix:** a shot a reveal lands in is calm: a straight push at half speed and idle motion at a fifth.
+2. The push at 68 s was too fast on a short shot. **Fix:** the whole move (push plus arc or truck) is capped at
+   0.12 m/s.
+3. The hook close-up's push cropped the hair. **Fix:** a camera under 2 m from its target pushes proportionally less.
+4. At 26.5 s the push aims at the frame's centre, not the sitter's face. Left for now: aiming at a face needs the
+   camera to know who's in frame. Builders can key their own camera on a shot like this, and the pack leaves it alone.
+Fixes 1 to 3 are in the engine and tested, not rendered again. The Actions final measures and flash-checks them.
+
+## v2.1: colour, the voice and the cost of ones (2026-11-03, from ep62's final)
+
+The first final with v2, ep62-six-riders (`docs/research/craft-metrics.md`), hit every motion target. It warned on
+saturation (0.19), voice over the bed (6.3 dB) and repeated frames (68%).
+
+- **Saturation.** The bright grade's toe added grey to every pixel, and grey washes colour out. It now scales each
+  pixel by its luma's lift, so the hue and saturation stay, and the saturation floor goes from 1.06 to 1.1. On
+  ep32's drawings (every 40th, grade only): the story's own grade reads saturation 0.565, brightness 0.284 and
+  darkest 5% 0.058. v2 read 0.527, 0.322 and about 0.09. v2.1 reads 0.599, 0.329 and 0.097, so it's brighter and
+  more colourful than the story's own grade. Part of ep62's 0.19 is the story itself: a pale grey sky and fog
+  (`#cfd8de`).
+- **The voice.** `measure.py` counts the voice against the music and ambience stems. Mixed here from ep62's own
+  narration: no pack 6.1 dB, v2 6.3 dB, v2.1 11.3 dB. ep62's own music (-22.6 LUFS) was the cause, not the pack.
+  v2.1 makes the bed quieter (-44 LUFS, and 12 dB lower again under the story's own ambience), ducks the
+  ambience, bed and polish sounds 8 dB, and dips the music under the lines by only as much as it takes (0, 2, 4
+  or 6 dB) to put the voice 10.5 dB over music and ambience together. ep62 lands at 11.3 dB and ep32 at 14.0
+  (no extra music dip needed). Both master at -14.0 LUFS with a true peak of -2.0 dBTP before the encode.
+- **Repeated frames.** With the pack, the camera moves in about 95% of the time, and a move drawn on twos judders.
+  The only fix is drawing those shots on every frame. `ones: "moving"` does it, with these drawing counts:
+
+  | story | frames | twos (as written) | `walk` (default) | `moving` |
+  |---|---|---|---|---|
+  | ep62-six-riders (34 s) | 1007 | 510 | 746 (1.46×) | 1007 (1.97×) |
+  | ep32-sitter (87 s) | 2603 | 1314 | 1428 (1.09×) | 2603 (1.98×) |
+  | ep34-unit-seven (143 s) | 4292 | 2291 | 2515 (1.10×) | 4292 (1.87×) |
+  | ep48-crazy-golf (141 s) | 4221 | 2139 | 2322 (1.09×) | 4221 (1.97×) |
+
+  At ep34's measured 12.9 s a drawing on Actions (run 41564219345: 491 shard-minutes for 2291 drawings), `moving`
+  takes ep34 to about 920 shard-minutes. That's about 57 min a shard, against 31, so about 30 min more wall time
+  per story. The free plan runs 20 jobs at once, and a story is 16 shards, so it nearly doubles how long the
+  queue takes to render. ep62-length stories cost little either way. `walk` stays the default until the lead
+  decides; set `"ones": "moving"` per story to try it.
+
+**Decision (lead, 2026-11-03): `ones: "moving"` is the default.** The owner's bar is "very high", Actions minutes
+are free for this public repo, and about 30 more minutes of render time per story is worth losing the judder now
+that the camera moves 96% of the time. `"ones": "walk"` in a story's `look.polish` is the opt-out, for a long,
+static story whose render would run over about 2 h. Stories already merged keep their films. Only new merges and
+re-renders pick it up. The draw shards' timeout (340 min) has plenty of room.
+
+## v2.2: fewer effects, music under everything (2026-11-03)
+
+The owner, watching the fast-rising Shorts with sound: "It doesnt look like very many sound effects, but we can
+probably do them to make it seem higher quality. also there is background music." (RULES.md → Few effects, music
+under everything.)
+
+- **Music under the whole film.** `polish.music_spec` makes the story's own score start at 0, and gives any section
+  without a sustained voice (drone, pad, choir) a quiet drone and pad, so there's never a stretch of ambience alone.
+  The only holes are the `music_drops` before a scare. The voice still sits at least 10.5 dB over the music and
+  ambience, measured on the mixes: ep62 10.5 dB, ep32 14.0 dB, both -14.0 LUFS, true peak -2.0 dBTP, energy above
+  4 kHz 2.9% and 3.4%.
+- **Fewer effects.** No whoosh on plain cuts (only on the punch-ins, about 0.7 per 10 s), one low hit on the hook
+  instead of one on every key word, reveal hits kept, and risers at most one per 15 s, the twist's first. Doors
+  marked on acting keys stay.
+
+Sound events per 10 s (`measure.py --story`, the builder's own effects and footstep bursts included):
+
+| story | v2.1 | v2.2 | the pack's own share in v2.2 |
+|---|---|---|---|
+| ep62-six-riders (34 s) | 10.4 | 5.1 | 1.5 |
+| dryer-nine (82 s) | 9.7 | 4.6 | 1.1 |
+| ep32-sitter (87 s) | 6.8 | 2.5 | 0.8 |
+
+The pack now adds about 1 per 10 s. ep62 and dryer-nine stay over 4 because of their own `sfx` (10 in 34 s and 25 in
+82 s: clicks, thuds and whooshes). That's the builder's to trim (`builder.md` → Sound budget), and `measure.py`
+now warns outside 2 to 4.
+
+## v2.3: pace (2026-11-03, the craft-metric blocks)
+
+From 6 PM Central today, qa blocks a film under 12.5 picture changes per 10 s (0.5 s steps), 14 at 0.25 s steps,
+or motion energy 6.0, or with a 0.25 s run still over 1.0 s (`scripts/measure.py`, PR #163; the hits' medians are
+16.5, 21.3, 7.6 and 0.25 s). Every film we had failed them, polished ep62 included (11.3 / 13.4 / 5.7 / 1.33 s).
+A slow 0.12 m/s camera move hardly moves the 18×32 grid, so the pace has to come from visible reframing.
+
+v2.3 adds it on the output crop, so it costs no drawing: a steady push through every shot (15%, constant rate, in
+then out shot to shot) and an angle cut about every 1.0 s inside shots over 1.6 s (a 1.17× tighter, offset framing
+every other part, never in a reveal shot or a quiet span). The total crop is capped at 1.25×. The bright grade's
+exposure floor goes to 1.12, and it now keeps every pixel under WCAG's saturated red. The first try failed the
+flash bar's red-frame rule: ep32 S09b is 47.7% saturated red, and the tighter crop took it to 53% against the 50%
+bar.
+
+ep32's preview (every 4th drawing, so the final reads livelier still), all on the same drawings:
+
+| | no pace (v2.2) | push 0.10, cut 1.1 s at 1.14× | **v2.3: push 0.15, cut 1.0 s at 1.17×** | block |
+|---|---|---|---|---|
+| Changes per 10 s (0.5 s) | 10.3 | 12.8 | **13.5** | ≥ 12.5 |
+| Changes per 10 s (0.25 s) | 11.3 | 14.6 | **15.8** | ≥ 14 |
+| Motion energy (0.25 s) | 5.3 | 6.12 | **6.33** | ≥ 6.0 |
+| Longest still (0.25 s) | 0.53 s | 0.53 s | **0.53 s** | ≤ 1.0 |
+| Brightness | 0.346 | 0.375 | **0.376** | hits 0.45 |
+| Saturation | 0.576 | 0.561 | **0.562** | hits 0.51 |
+| Flash (house bar) | pass | pass | **pass**, 1 a second at most | pass |
+
+**Critic, round 1 (A no pace, B push 0.15 and cut 1.0 s at 1.17×):** better on pace (6 → 7), but framing (8 → 6),
+sharpness (8 → 6) and overall (7 → 6) dropped, so it didn't ship. Its notes, all taken:
+1. The side offset pushed faces and the twist's portrait to the edge (47.6, 49.6, 61.3 s). **Fix:** angle cuts are
+   centred, with a touch up (dy −0.015).
+2. The cuts landed mid-caption and across a walk (4.3 s). **Fix:** each angle cut moves to the nearest caption change
+   within 0.35 s, or is dropped, and no part is left under 0.6 s.
+3. Two cuts landed in the warm beat (79.7, 80.7 s). **Fix:** no angle cuts in any shot that touches a quiet span.
+   ep32's own quiet span should run `["L35", "L38"]` when it comes off hold (its story files aren't changed here).
+4. The crop went soft past 1.2×. **Fix:** push 0.12, angle cut 1.12×, the total capped at 1.18×.
+
+**Round 2 numbers** (ep32 preview, same drawings, flash pass at 1 a second at most):
+
+| | no pace | cut every 1.0 s | **v2.3: cut every 0.8 s** | block |
+|---|---|---|---|---|
+| Changes per 10 s (0.5 s) | 10.3 | 12.5 | **12.7** | ≥ 12.5 |
+| Changes per 10 s (0.25 s) | 11.3 | 14.0 | **14.4** | ≥ 14 |
+| Motion energy | 5.3 | 6.02 | **6.06** | ≥ 6.0 |
+| Longest still | 0.53 s | 0.53 s | **0.53 s** | ≤ 1.0 |
+| Brightness | 0.346 | 0.375 | **0.375** | |
+
+The margins are thin on the preview, which draws every 4th frame. The final draws every moving shot on every
+frame, so it reads livelier, and qa measures the final.

@@ -1,0 +1,11 @@
+{
+  "title": "The Elevator Mirror Shows FIVE 🛗",
+  "description": "Four of us got in the elevator. The mirror shows five faces. You get three floors to find the extra one.\n\nEvery face in the glass belongs to someone in the car. All but one.\n\nIt's made up. A creepy blocky puzzle, built with code and Blender.",
+  "pin": "Comment the letter you picked before the reveal.",
+  "made_for_kids": false,
+  "cover_s": 1.8,
+  "shape": "swap",
+  "lane": "experiment",
+  "hold": "dropped 2026-11-03: failed final-film qa twice (rev 1: weak frame 1 and inaudible hit; rev 2 re-cut: S13 continuity slip and C spoken over no C tag)",
+  "opening": "count"
+}

@@ -108,3 +108,12 @@ def test_targets_name_real_metrics(tmp_path):
         if key.startswith(("sound.", "macro.")) or key == "micro.caption_sync_p90_ms":   # these need the film
             continue
         assert key in found, key
+
+
+def test_confirmed_targets_block_and_the_rest_warn():
+    res = {"macro": {"picture_changes_per_10s": 8.0, "brightness_mean": 0.2, "longest_still_q_s": 0.5}}
+    st = {c["metric"]: c["status"] for c in measure.check(res)}
+    assert st["macro.picture_changes_per_10s"] == "block"   # confirmed by the hit data
+    assert st["macro.brightness_mean"] == "warn"            # not confirmed
+    assert st["macro.longest_still_q_s"] == "ok"
+    assert "**block**" in measure.table({**res, "checks": measure.check(res)})
