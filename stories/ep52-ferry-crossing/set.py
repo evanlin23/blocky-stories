@@ -411,9 +411,9 @@ def build_dog(kit, M, ctx):
         kit.box(f"dog.legm{i}", (0.09, 0.09, 0.24), (0, 0, -0.12), fur, lg, bevel=0.02)
         legs.append(lg)
     kit.box("dog.tail", (0.07, 0.07, 0.3), (0, 0.4, 0.52), fur, root, rot=(0.5, 0, 0), bevel=0.02)
-    lead = kit.plastic("#8a3a2a", 0.6, "dog lead")
-    kit.box("dog.lead", (0.025, 1.4, 0.02), (0, 1.0, 0.04), lead, root)
-    kit.box("dog.collar", (0.3, 0.07, 0.31), (0, -0.3, 0.42), lead, root, bevel=0.02)
+    leash = kit.plastic("#8a3a2a", 0.6, "dog leash")
+    kit.box("dog.leash", (0.025, 1.4, 0.02), (0, 1.0, 0.04), leash, root)
+    kit.box("dog.collar", (0.3, 0.07, 0.31), (0, -0.3, 0.42), leash, root, bevel=0.02)
     ctx["dog"] = {"root": root, "legs": legs}
 
 

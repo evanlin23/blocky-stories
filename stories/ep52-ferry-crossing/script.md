@@ -33,7 +33,7 @@
 
 - **Changed:** L01 and L02 only, re-voice these two. L01 was "In this town, everything you lose finds its way back to you." (11 words), now "Never drop anything here unless you want it back." (9 words, about 1.9 s), a warning to you per `docs/research/playbook.md` (opening recipe v1). L02 was "A glove hops after its owner up the slipway." (9 words), now "It hops home after you." (5 words, about 1.0 s), which tightens the same warning. The hopping glove stays in the picture under L01 and L02. No other line is cut or changed. Spoken words go from 621 to 605. L66 still says the rule in full ("everything you LOSE / finds its way BACK"), and the twist ("the rule never said to its owner") still turns on it.
 - **Plot check:** the warning is true of the town, names nobody, and keeps the same misreading the old L01 had ("after you" is how it looks until Gran's back room). The loop is tighter now: "a GLOVE / I haven't LOST / YET." runs into "Never drop anything here unless you want it back."
-- **US English:** the new lines and the description use "leash", never "Mum" or British spellings. Old body lines (L07 "slipped its LEAD") are left as voiced.
+- **US English:** the new lines and the description use "leash", never "Mum" or British spellings. L07 now says "slipped its LEASH".
 - **Quotable line:** L03, "An umbrella bobs along at a man's heel."
 - **First shot (for the builder):** frame 1 looks straight at a green glove on the bright town slipway concrete, already mid-hop off the ground with a short line of damp dots behind it, low at heel height, with the glove woman's face in frame above and behind it, looking back at it, `neutral`. Camera about 1.5 to 2.5 m from the glove, lens 28 mm or longer, pushing in slowly through L01. No wide in the first 3 s: the old L01 low wide up the slipway moves to after L02 or goes, and the old L02 heel-height close becomes the L02 shot (the glove hopping up the concrete after her raincoat hem). Use a green glove for her, as cast, so it never reads as my mustard ones. Sound hit (a soft damp pat, under 4 kHz) on "BACK", the warning's last word, about 1.8 s. Then L03's umbrella as before.
 
@@ -57,7 +57,7 @@ All adults. Nobody young is in the story, and nobody is ever in peril or hurt.
 - `glove-woman` (adult): green raincoat, block bob. L01, L02.
 - `umbrella-man` (adult): brown tweed jacket, flat cap. L01, L03.
 - `passengers` (two adults, plain coats in slate and olive): background on the slipway and the car deck.
-- `dog`: a blocky sandy-brown dog of our own build, short legs, a loose red-brown lead trailing. L07, L08, a still in L54.
+- `dog`: a blocky sandy-brown dog of our own build, short legs, a loose red-brown leash trailing. L07, L08, a still in L54.
 
 Every word is the narrator's. Gran's one quote (L63) and her call (L14, L36 to L40) are reported in my lines.
 
@@ -146,8 +146,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [low close at heel height: the green glove hopping up the concrete after a green raincoat hem]
 - `L03` narrator: An UMBRELLA / bobs along / at a man's HEEL. (**quotable line**)
   - [side tracking mid shot: the umbrella man, `neutral`, not looking down, the furled umbrella hopping beside his shoe]
-- `L07` narrator: A DOG / slipped its LEAD / in TOWN.
-  - [the sandy dog trotting along the harbour front alone, its lead trailing, no owner in frame]
+- `L07` narrator: A DOG / slipped its LEASH / in TOWN.
+  - [the sandy dog trotting along the harbour front alone, its leash trailing, no owner in frame]
 - `L08` narrator: It rode the FERRY / and trotted HOME / all on its OWN.
   - [shot A: the dog trotting up the ferry gangway among passengers' legs. Shot B: the dog on an island doorstep (not Gran's), sitting by a blue door, content]
 
