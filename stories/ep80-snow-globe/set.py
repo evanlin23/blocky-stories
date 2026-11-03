@@ -626,13 +626,18 @@ def build_stander(kit, ctx):
     kit.box("stander.brow", (0.54, 0.54, 0.07), (0, 0, 0.235), snow, gh, bevel=0.02)
     for sx in (-1, 1):
         kit.box(f"stander.cheek{sx}", (0.12, 0.05, 0.1), (sx * 0.17, -0.265, -0.2), snow, gh, bevel=0.01)
-    kit.box("stander.eyeL", (0.085, 0.09, 0.32), (-0.12, -0.255, -0.02), dark, gh)
-    kit.box("stander.eyeR", (0.07, 0.09, 0.22), (0.13, -0.255, -0.09), dark, gh)
-    kit.box("stander.mouth", (0.16, 0.09, 0.04), (0.02, -0.255, -0.27), dark, gh)
+    kit.box("stander.eyeL", (0.085, 0.09, 0.2), (-0.15, -0.255, 0.12), dark, gh)
+    kit.box("stander.eyeR", (0.07, 0.09, 0.16), (0.16, -0.255, 0.07), dark, gh)
+    # one tall black mouth hanging open like a dropped jaw, from under the eyes down past the chin into the chest
+    kit.box("stander.mouth", (0.22, 0.09, 0.6), (0.0, -0.255, -0.35), dark, gh)
+    kit.box("stander.jawback", (0.3, 0.1, 0.3), (0.0, -0.2, -0.58), dark, gh)
     gt = grp("hat", neck, (0, 0, 0.55))
-    kit.box("stander.hbrim", (0.8, 0.8, 0.05), (0, 0, 0.0), snow, gt, bevel=0.015)
-    kit.box("stander.hcrown", (0.54, 0.54, 0.22), (0, 0, 0.13), snow, gt, bevel=0.02)
-    kit.box("stander.hcap", (0.56, 0.56, 0.06), (0, 0, 0.27), snow, gt, bevel=0.02)
+    # a ragged, narrow, tilted drift of snow rather than a roof
+    for nm, sz, loc, rot in (("a", (0.6, 0.5, 0.08), (-0.03, 0.0, -0.02), (0.0, 0.16, 0.1)),
+                              ("b", (0.34, 0.32, 0.12), (0.06, 0.02, 0.07), (0.0, 0.1, -0.3)),
+                              ("c", (0.14, 0.14, 0.1), (-0.2, -0.1, 0.0), (0.2, 0.0, 0.5))):
+        o = kit.box(f"stander.hat{nm}", sz, loc, snow, gt, bevel=0.015)
+        o.rotation_euler = rot
     ctx["stander"] = (root, hips, neck)
     ctx["stander_groups"] = groups
 
@@ -934,9 +939,9 @@ def build_lights(kit, ctx):
     kit.aim(st, (-8.2, -0.8, 1.1))
     gl = kit.light("globe", "SPOT", (-11.35, 0.95, 1.75), 26, "#ffffff", size=0.1, spot=26, blend=0.7)
     kit.aim(gl, (GL[0], GL[1], SILL + 0.1))
-    fl = kit.light("fill", "SPOT", (-12.6, -0.4, 2.7), 380, "#cfe6ff", size=0.3, spot=40, blend=0.6)
+    fl = kit.light("fill", "SPOT", (-12.6, -0.4, 2.7), 90, "#cfe6ff", size=0.3, spot=40, blend=0.6)
     kit.aim(fl, (-9.5, -1.4, 1.9))
-    rl = kit.light("rim", "SPOT", (-6.4, -3.6, 3.3), 2200, "#8cc4ff", size=0.2, spot=45, blend=0.5)
+    rl = kit.light("rim", "SPOT", (-8.4, -5.2, 1.3), 1500, "#6fa6ff", size=0.2, spot=45, blend=0.5)
     kit.aim(rl, (-8.85, -1.4, 1.8))
     co = kit.light("corner", "SPOT", (0, 56, 55), 260000, "#fff0c0", size=1.0, spot=50, blend=0.4)
     kit.aim(co, (0, 40, 0))

@@ -219,7 +219,7 @@ shot("L45", "S82 standing at the window", still((-5.5, -3.4, 1.45), (-9.4, -1.4,
 shot("L45.2", "S83 where Grandpa was asleep in his chair", still((-13.0, -1.6, 1.62), (-10.9, -1.4, 1.5), 32))
 shot("L46", "S84 it bends down, slow", move(((-8.4, -4.2, 2.0), (-9.3, -1.4, 1.9)), ((-8.4, -4.2, 2.0), (-9.4, -1.4, 1.85)), 28))
 shot("L46.2", "S85 to the glass", still((-11.6, -2.8, 1.8), (-10.0, -1.4, 1.9), 34))
-shot("L47", "S86 the test still: a face of snow an inch from his sleeping face", still((-14.8, -1.4, 2.0), (-9.7, -1.4, 1.85), 34))
+shot("L47", "S86 the test still: a face of snow an inch from his sleeping face", still((-13.3, -2.5, 1.75), (-10.0, -1.3, 2.0), 34))
 shot("L47.2", "S87 an inch from his", move(((-11.4, -2.3, 1.75), (-10.2, -1.4, 1.8)), ((-11.1, -2.0, 1.72), (-10.2, -1.4, 1.8)), 40))
 shot("L48", "S88 the glass fogs", still((-10.55, -1.4, 1.9), (-9.9, -1.4, 1.95), 36))
 shot("L48.2", "S89 Grandpa sleeps on", still((-12.2, -1.2, 1.5), (-10.95, -1.4, 1.45), 40))
