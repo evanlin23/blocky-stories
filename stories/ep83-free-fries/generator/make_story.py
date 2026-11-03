@@ -101,7 +101,7 @@ def C(tgt, d, az=0, el=10, lens=30, d2=None, lens2=None, tgt2=None, az2=None, el
                  list(t2), lens2 or lens]]
 
 
-def S(at, cam, look="day", hand=0.006, dof=None, ring=False, exp=0.0, fill=1.0, step=2, note=""):
+def S(at, cam, look="day", hand=0.006, dof=None, ring=False, exp=0.0, fill=1.0, step=2, note="", expramp=None):
     d = {"id": f"S{len(shots) + 1:02d}", "cam": cam, "step": step, "hand": hand}
     if len(shots):
         d["at"] = at
@@ -115,6 +115,8 @@ def S(at, cam, look="day", hand=0.006, dof=None, ring=False, exp=0.0, fill=1.0, 
         d["exp"] = exp
     if fill != 1.0:
         d["fill"] = fill
+    if expramp:
+        d["expramp"] = expramp
     if note:
         d["note"] = note
     shots.append(d)
@@ -181,7 +183,7 @@ scene("L10")
 S("L10", C((-2.4, 3.8, 2.6), 1.4, 0, 0, 32, d2=1.0), note="the round wall clock at four")
 cue("L11", "tb", on=True)
 scene("L11", me=dict(pos=ME_SEAT, yaw=0, expr="smile"), omar=dict(pos=OM_SEAT, yaw=0, expr="grin"))
-S("L11", C((5.1, 2.1, 0.8), 1.5, 0, 78, 32, d2=1.15), note="top-down: two baskets, the two gold strokes on the edge")
+S("L11", C((5.1, 2.1, 0.8), 1.3, 0, 78, 32, d2=1.0), note="top-down: two baskets, the two gold strokes on the edge")
 scene("L12", me=dict(pos=ME_SEAT, yaw=0, expr="soft"))
 S("L12", C((4.4, 3.45, 1.35), 2.2, 0, 3, 36, d2=1.8), note="me tasting a fry, eyes closed")
 cue("L13", "smell", on=True)
@@ -203,6 +205,7 @@ S("L18", C((5.1, 2.35, 0.8), 1.1, 0, 60, 34, d2=0.9), note="Omar's single green 
 scene("L19", me=dict(pos=(1.4, 2.9, 0), yaw=180, expr="worried"))
 cue("L19", "dollar", on=False)
 S("L19", C((1.4, 3.3, 1.55), 1.8, -28, 3, 38, d2=1.5), note="me at the kitchen door, the round window at eye level")
+scene("P01")
 S("P01", C((1.4, 3.9, 1.58), 1.0, 0, 2, 40, d2=0.8), note="the drop: the round window, still")
 
 # =========================================================================================== 03 L20-L27 the look
@@ -210,20 +213,20 @@ scene("L20", me=dict(pos=(1.4, 3.3, 0), yaw=180, expr="worried", lean=0.25))
 S("L20", C((1.4, 3.45, 1.55), 1.1, 58, 3, 40, d2=0.85), note="I lean to the glass")
 cue("L21", "stove", on=True)
 scene("L21")
-S("L21", C((KM, 1.95, 1.5), 1.2, 0, 3, 40), look="eve", dof=[0.3, 0.7], ring=True,
+S("L21", C((KM, 1.95, 1.5), 1.2, 0, 3, 40), look="eve", dof=[0.3, 0.7], ring=True, expramp=[-1.6, 0.7],
   note="through the window: no diner kitchen, a blur of butter yellow")
 S("L22", C((KM + 1.3, 3.1, 1.5), 3.0, 0, 3, 26, d2=2.6), dof=[2.9, 6.0], ring=True,
   note="it sharpens: Mom's kitchen, the sink window, the hook")
 cue("L23", "mgloves", on=True)
-scene("L23", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[0.2, 0.2]))
-S("L23", C((KM - 0.2, 1.95, 1.5), 2.3, 0, 3, 40, d2=1.95), ring=True, note="Mom at her stove, eyes shut, calm. Cover frame")
+scene("L23", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[95, 95]))
+S("L23", C((KM - 0.2, 1.7, 1.2), 2.2, 20, 38, 40, d2=1.8), ring=True, note="Mom at her stove, eyes shut, calm. Cover frame")
 cue("L24", "mbA", on=True, dur=1.4, z0=1.35, z1=1.13, y0=1.25)
-scene("L24", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[1.1, 1.1]))
-S("L24", C((KM - 0.2, 1.4, 1.1), 1.3, 0, 12, 36, d2=1.0), ring=True,
+scene("L24", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[70, 70]))
+S("L24", C((KM - 0.2, 1.6, 1.15), 1.3, 0, 28, 36, d2=1.0), ring=True,
   note="her hands at the ends of her sleeves lowering the basket into the oil")
-scene("L25", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="blank", arms=[1.1, 1.1]))
-S("L25", C((KM - 0.2, 1.95, 1.58), 1.5, 0, 2, 42, d2=1.2), ring=True, note="close: her eyes open")
-S("L26", C((KM - 0.2, 1.95, 1.58), 1.3, 0, 0, 42, d2=1.0), ring=True, note="her face straight to camera through the glass")
+scene("L25", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="wide", arms=[70, 70]))
+S("L25", C((KM - 0.2, 1.95, 1.58), 1.5, 0, 2, 42, d2=1.0), ring=True, note="close: her eyes open")
+S("L26", C((KM - 0.2, 1.95, 1.58), 1.0, 0, 0, 42, d2=0.75), ring=True, note="her face straight to camera through the glass")
 scene("L27", me=dict(pos=(1.4, 2.5, 0), yaw=0, expr="scared"))
 S("L27", C((1.4, 2.5, 1.58), 2.0, 0, 2, 40, d2=1.6), note="my face on my side of the glass, the sign's glow on my cheek")
 
@@ -234,10 +237,12 @@ S("L28", C((0, 3.8, 2.5), 1.6, 0, 0, 36, d2=1.15), note="the 0.00 sign, its digi
 cue("L29", "sign", tint="pink")
 hatch("L29", s0=1.0, s1=1.0, wig=1.0)
 S("L29", C((0, 3.9, 1.25), 1.0, 0, 6, 40, d2=0.75), note="the hatch gloves")
-scene("L29.3", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[1.1, 1.1]))
-S("L29.3", C((KM - 0.2, 1.7, 1.25), 1.6, 0, 6, 36, d2=1.2), note="Mom's kitchen, her hands in the same yellow gloves")
+cue("L29.3", "mbA", on=False)
+scene("L29.3", mom=dict(pos=(KM - 0.2, 1.95, 0), yaw=0, expr="asleep", arms=[95, 95]))
+S("L29.3", C((KM - 0.2, 1.7, 1.25), 1.6, 0, 18, 36, d2=1.2), note="Mom's kitchen, her hands in the same yellow gloves")
 cue("L29.5", "mgloves", on=True)
-S("L29.5", C((KM - 0.2, 1.4, 1.0), 0.8, 0, 14, 40, d2=0.6), ring=False, note="in their OWN gloves")
+S("L29.5", C((KM - 0.2, 1.4, 1.1), 1.0, -25, 50, 36, d2=0.8), ring=False, note="in their OWN gloves: her hands in the yellow gloves")
+S("L29.5+0.6", C((KM + 2.0, 3.4, 1.85), 1.0, 0, 3, 36, d2=0.85), ring=False, note="the hook by her sink, empty")
 cue("L30", "mgloves", on=False)
 scene("L30", mom=dict(pos=MOM_COUCH, yaw=0, expr="asleep", head=[0, 0.25]))
 S("L30", C((KM + 0.4, 2.85, 1.15), 2.3, 12, 8, 32, d2=1.9), look="eve", note="Mom asleep on the couch")
@@ -253,16 +258,17 @@ S("L33", C((0.15, 3.7, 1.1), 1.4, 10, 6, 36, d2=1.1), note="a second basket slid
 cue("L34", "mbA", on=True, dur=0.01, z0=1.13, z1=1.13)
 cue("L34", "mbB", on=True, dur=1.4, z0=1.35, z1=1.13, y0=1.25)
 cue("L34", "mgloves", on=True)
-scene("L34", mom=dict(pos=(KM + 0.25, 1.95, 0), yaw=0, expr="asleep", arms=[1.1, 1.1]))
+scene("L34", mom=dict(pos=(KM + 0.25, 1.95, 0), yaw=0, expr="asleep", arms=[70, 70]))
 S("L34", C((KM + 0.1, 1.95, 1.4), 2.0, 0, 3, 40, d2=1.6), ring=True, note="through the window: Mom setting a second basket in the oil")
 cue("L35", "mgloves", on=False)
 scene("L35", mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="smile"), omar=dict(pos=HK_SEATS["omar"], yaw=0, expr="grin"),
       me=dict(pos=HK_SEATS["me"], yaw=0, expr="smile"))
 S("L35", C((HM - 2.4, 2.25, 1.25), 3.1, 0, 5, 30, d2=2.6), note="our kitchen table: Mom, me and Omar at dinner, Omar's plate full")
-scene("L36", omar=dict(pos=(HM - 0.45, 1.95, 0), yaw=0, expr="grin", arms=[1.0, 1.0]),
-      me=dict(pos=(HM + 0.35, 1.95, 0), yaw=0, expr="smile", arms=[1.0, 1.0]),
+scene("L36", omar=dict(pos=(HM - 0.45, 1.95, 0), yaw=0, expr="grin", arms=[75, 75]),
+      me=dict(pos=(HM + 0.35, 1.95, 0), yaw=0, expr="smile", arms=[75, 75]),
       mom=dict(pos=HK_SEATS["mom"], yaw=0, expr="laugh"))
-S("L36", C((HM - 1.2, 2.0, 1.25), 4.0, 0, 6, 28, d2=3.4), note="Omar and me at the stove, Mom laughing at the table")
+S("L36", C((HM - 2.4, 2.25, 1.3), 1.5, 0, 4, 36, d2=1.2), note="Mom laughing at the table")
+S("L36+1.0", C((HM - 0.05, 1.95, 1.35), 1.9, 0, 5, 36, d2=1.6), note="Omar and me at the stove")
 cue("L37", "dish", which="pan")
 scene("L37")
 S("L37", C((HM - 0.2, 0.95, 1.0), 0.9, 15, 40, 36, d2=0.65), note="a pan of noodles")
@@ -293,10 +299,10 @@ scene("L42", me=dict(pos=(SR - 0.45, 1.5, 0), yaw=0, expr="shut"), omar=dict(pos
 S("L42", C((SR, 1.5, 1.55), 2.7, 0, 3, 36, d2=2.4), note="we blink")
 cue("L42.2", "hbask", on=True)
 cue("L42.2", "stove", on=True)
-scene("L42.2", omar=dict(pos=(HM - 0.45, 1.95, 0), yaw=0, expr="wide", arms=[1.0, 1.0]),
-      me=dict(pos=(HM + 0.35, 1.95, 0), yaw=0, expr="wide", arms=[1.1, 1.1]))
+scene("L42.2", omar=dict(pos=(HM - 0.45, 1.95, 0), yaw=0, expr="wide", arms=[75, 75]),
+      me=dict(pos=(HM + 0.35, 1.95, 0), yaw=0, expr="wide", arms=[70, 70]))
 S("L42.2", C((HM, 1.95, 1.35), 2.7, 0, 5, 30, d2=2.3), note="at our apartment stove side by side, a fry basket in my hands")
-S("L42.3", C((HM + 0.35, 1.3, 1.1), 1.0, 0, 14, 38, d2=0.75), note="holding a fry basket")
+S("L42.3", C((HM - 0.05, 1.95, 1.3), 2.2, 0, 16, 34, d2=1.9), note="both of us whole, the fry basket at the end of my sleeve")
 cue("L43", "hbask", on=False)
 cue("L43", "stove", on=False)
 scene("L43")
@@ -375,6 +381,6 @@ if vt.exists():
     for k in acting:
         acting[k].sort(key=lambda e: AT(e["at"]))
     cues.sort(key=lambda e: AT(e["at"]))
-story["rev"] = 4
+story["rev"] = 5
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False) + "\n")
 print(f"{len(shots)} shots, {len(cues)} cues")

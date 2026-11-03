@@ -290,8 +290,7 @@ def build_diner(kit, ctx):
     B(None, (3.64, 0.02, 0.06), (5.2, 3.09, 0.3), bub, "pipe", 0.0)
     B(None, (1.9, 0.92, 0.05), (5.1, 2.3, 0.76), P("#e9c9b0", 0.4), "table", 0.01)
     B(None, (1.94, 0.04, 0.052), (5.1, 1.84, 0.76), M(CHROME, 0.15), "tedge", 0.0)
-    B(None, (0.014, 0.034, 0.012), (4.92, 1.84, 0.792), P(GOLD, 0.4), "tally", 0.0)
-    B(None, (0.014, 0.034, 0.012), (4.96, 1.84, 0.792), P(GOLD, 0.4), "tally", 0.0)
+    tally = [B(None, (0.08, 0.26, 0.03), (5.0 + 0.2 * i, 2.0, 0.80), P(GOLD, 0.4), "tally", 0.01) for i in range(2)]
     CY(None, 0.07, 0.74, (5.1, 2.3, 0.37), M(CHROME, 0.2), "tpost")
     CY(None, 0.035, 0.18, (5.7, 2.55, 0.875), P("#e23a3a", 0.4), "bottle")
     CY(None, 0.035, 0.18, (5.8, 2.55, 0.875), P("#ffd21a", 0.4), "bottle")
@@ -301,7 +300,9 @@ def build_diner(kit, ctx):
         bk = basket(None, (x, 2.2, 0.785), "tbask")
         hide(bk, True)
         tb.append(bk)
-    ctx["tb"] = tb
+    for t_ in tally:
+        hide(t_, True)
+    ctx["tb"] = tb + tally
     dol = B(None, (0.34, 0.16, 0.008), (5.1, 2.35, 0.789), P("#7fcf86", 0.6), "dollar", 0.0)
     dol2 = B(dol, (0.24, 0.1, 0.004), (0, 0, 0.006), P("#a8e6ae", 0.6), "dollar2", 0.0)
     hide(dol, True)
@@ -394,7 +395,8 @@ def build_kitchen(kit, ox, home, ctx):
     for sx in (-1, 1):
         B(None, (0.2, 0.8, 0.62), (ox + 0.4 + sx * 0.9, 3.0, 0.31), cc, "couchA", 0.05)
     # the hook beside the window, with the yellow gloves hanging (hidden while Mom wears them)
-    B(None, (0.04, 0.06, 0.04), (ox + 1.95, 3.37, 1.9), M("#aab3ba", 0.3), "hook", 0.005)
+    B(None, (0.08, 0.1, 0.08), (ox + 1.95, 3.37, 1.9), M("#aab3ba", 0.3), "hook", 0.005)
+    B(None, (0.2, 0.02, 0.2), (ox + 1.95, 3.395, 1.9), P("#ff9ccf", 0.5), "hookplate", 0.01)
     hang = E(None, (ox + 1.95, 3.34, 1.82), "hang")
     for sx in (-1, 1):
         B(hang, (0.12, 0.05, 0.3), (sx * 0.07, 0, -0.1), P(YEL, 0.5), "hglove", 0.02)
@@ -427,7 +429,7 @@ def build_kitchen(kit, ox, home, ctx):
         B(tray, (0.6, 0.4, 0.03), (0, 0, 0.015), M("#aab3ba", 0.4), "trayb", 0.005)
         for i in range(6):
             B(tray, (0.15, 0.15, 0.09), (-0.2 + 0.2 * (i % 3), -0.1 + 0.2 * (i // 3), 0.075), P("#c98d4d", 0.6), "bake", 0.04)
-        ctx["hbk"] = basket(None, (ox + 0.35, 1.22, 0.98), "hbk")
+        ctx["hbk"] = basket(None, (ox + 0.35, 1.5, 1.1), "hbk")
         hide(ctx["hbk"], True)
         ctx["dishes"] = {"pan": pan, "tray": tray}
         hide(pan, True)
@@ -500,6 +502,7 @@ def build_overlays(kit, ctx):
     verts = [(x, y, 0) for x, y in inner] + [(x, y, 0) for x, y in outer]
     fcs = [(i, (i + 1) % n, n + (i + 1) % n, n + i) for i in range(n)]
     door = kit.emit("#2a8a86", 0.95, name="porthole")
+    ctx["port_mat"] = door
     rimm = kit.emit("#e4eaf0", 1.0, name="portrim")
     ctx["port"] = kit.mesh_obj(nm("porthole"), verts, fcs, door, cam, (0, 0, -0.2))
     rv = [(x * rim_out / ri, (y - 0.5) * rim_out / ri + 0.5, 0) for x, y in inner] + [(x, y, 0) for x, y in inner]
@@ -551,6 +554,7 @@ def build(kit, story, tl):
 def mom_late(kit, ctx):
     ch = rig.CHARS.get("mom")
     ctx["mgl"] = []
+    ctx["mlens"] = [o for o in bpy.data.objects if "mom" in o.name.lower() and (".gl-1" in o.name or ".gl1" in o.name)]
     if ch is None:
         return
     for k in ("arm-1", "arm1"):
@@ -591,6 +595,17 @@ def animate(kit, story, tl, t, ctx):
     cl, _, lens, _ = bl_story.cam_at(sd, cur, t, {}, tl)
     ctx["fill"].location = (cl[0], cl[1], cl[2])
     sc.view_settings.exposure = sd.get("exp", 0.0) + (-0.3 if cur["start"] < 38.0 and not sd.get("ring") and "kitchen" not in sd.get("note", "") else 0.0)
+    if sd.get("expramp"):
+        sc.view_settings.exposure += sd["expramp"][0] * (1.0 - ss((t - cur["start"]) / sd["expramp"][1]))
+    # the stare: the lenses go (the eyes read), the teal around the window dims over a second before it
+    ids = [x["id"] for x in tl["shots"]]
+    st31 = next(x for x in tl["shots"] if x["id"] == "S31")["start"]
+    dim = 1.0 - 0.65 * ss((t - (st31 - 0.9)) / 1.0)
+    for n_ in ctx["port_mat"].node_tree.nodes:
+        if n_.type == "EMISSION":
+            n_.inputs["Strength"].default_value = 0.95 * dim
+    for o in ctx.get("mlens", []):
+        hide(o, cur["id"] in ("S31", "S32"))
     ov = {"camfill": sd.get("fill", 1.0)}
     for lt in ctx["klamp"]:
         ov[lt.name] = L["lamp"]
