@@ -85,7 +85,7 @@ From `docs/research/port-study.md` and the owner's niche map. Rank them with the
 ## US English fixes (use these when the premise is made)
 
 - P04: Mom Can Hear Through Walls 👂 (and "every mom")
-- P07: The Neighbor's Lawn Is Perfect 🌿
+- P07: The Neighbor's Lawn Is Perfect 🌿 (made as `night-mower`, dropped 2026-11-03 at the rescue round: eyelid read as an object, flash at the bar)
 - P14: "night shift at the gas station"
 - P18: "This supermarket's carts..."
 - P29: "asked for Mom's"
