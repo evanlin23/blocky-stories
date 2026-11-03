@@ -24,10 +24,12 @@ lines = json.loads((HERE / "lines.json").read_text())
 for _l in lines:
     if _l["id"] == "L01":
         _l["tempo"] = 1.12      # line 1 must end by 2.2 s (qa FIX 2)
-    if _l["id"] in ("L11", "L20", "L23", "L53", "L61"):
+    if _l["id"] in ("L11", "L20", "L23", "L35", "L53", "L61", "L65"):
         _l["tempo"] = 0.8 if _l["id"] == "L20" else 0.9
     for _c in _l["chunks"]:      # spoken in full so Whisper hears them (captions keep the contraction)
         _c[1] = _c[1].replace("They'd bolted", "They had bolted").replace("I'd thought", "I thought").replace("sat on the", "sat on that").replace("in the fog", "in a fog")
+        if _l["id"] == "L35":
+            _c[1] = _c[1].replace("in a fog", "within the fog")
     if False:
         pass      # slower so Whisper hears "the" and "they'd"/"I'd" (word check)
 
@@ -334,12 +336,12 @@ sh("S86", 62, "L62", fc(hd(21.6, -2.0), 0, 12, 2.6, 38, rise=0.08), {"ada": P(21
    look="dusk", glow={"ada": M})
 sh("S87", 62, "L62.2", fc(hd(21.6, -2.0), 0, 12, 2.6, 38, rise=0.08), {"ada": P(21.6, -2.0, 0, arms=[0, 0], side=[0, 0], expr="grin")},
    look="dusk", glow={"ada": M})
-sh("S88", 64, "L64", mv([349.2, -0.2, 1.9], [349.45, 2.7, 0.6], 30), {"me": P(349.45, 1.85, 0, z=0.5, lean=-90, arms=[40, 40], side=[0, 0], expr="wide"),
-   "ada": P(350.55, 1.85, 0, z=0.5, lean=-90, arms=[0, 0], side=[0, 0], expr="asleep")}, look="bed", glow={"me": B}, hand=0.002, lk={"bd_amb": 1.0})
-sh("S89", 64, "L64.1+0.5", mv([349.4, 0.6, 1.5], [349.4, 2.4, 0.95], 34), {"me": P(349.45, 1.85, 0, z=0.5, lean=-90, arms=[90, 90], side=[0, 0], expr="wide"),
-   "ada": P(350.55, 1.85, 0, z=0.5, lean=-90, arms=[0, 0], side=[0, 0], expr="asleep")}, look="bed", glow={"me": B}, glow_k=3.0, hand=0.002, lk={"bd_amb": 1.0})
-sh("S90", 65, "L65", mv([350.55, 2.7, 1.9], [350.55, 3.55, 0.7], 34), {"me": P(349.45, 1.85, 0, z=0.5, lean=-90, arms=[90, 90], side=[0, 0], expr="wide"),
-   "ada": P(350.55, 1.85, 0, z=0.5, lean=-90, arms=[0, 0], side=[0, 0], expr="asleep")}, look="bed", glow={"me": B}, glow_k=2.5, hand=0.002, lk={"bd_amb": 1.5})
+sh("S88", 64, "L64", mv([349.2, -0.2, 1.9], [349.45, 2.7, 0.6], 30), {"me": P(349.45, 1.85, 0, z=0.8, lean=-90, arms=[40, 40], side=[0, 0], expr="wide"),
+   "ada": P(350.55, 1.85, 0, z=0.8, lean=-90, arms=[0, 0], side=[0, 0], expr="asleep")}, look="bed", glow={"me": B}, hand=0.002, lk={"bd_amb": 2.4})
+sh("S89", 64, "L64.1+0.5", mv([349.4, 0.6, 1.5], [349.4, 2.4, 0.95], 34), {"me": P(349.45, 1.85, 0, z=0.8, lean=-90, arms=[90, 90], side=[0, 0], expr="wide"),
+   "ada": P(350.55, 1.85, 0, z=0.8, lean=-90, arms=[0, 0], side=[0, 0], expr="asleep")}, look="bed", glow={"me": B}, glow_k=3.0, hand=0.002, lk={"bd_amb": 2.4})
+sh("S90", 65, "L65", mv([350.55, 2.7, 1.9], [350.55, 3.55, 0.7], 34), {"me": P(349.45, 1.85, 0, z=0.8, lean=-90, arms=[90, 90], side=[0, 0], expr="wide"),
+   "ada": P(350.55, 1.85, 0, z=0.8, lean=-90, arms=[0, 0], side=[0, 0], expr="asleep")}, look="bed", glow={"me": B}, glow_k=2.5, hand=0.002, lk={"bd_amb": 2.6})
 sh("S91", 65, "L65.3", mv([349.9, 3.6, 1.3], [349.9, 5.4, 1.2], 30), {}, look="bedout", bedreach=True, fd=0.05, hand=0.003)
 sh("S92", 66, "L66", mv([349.9, 0.6, 1.8], [349.3, 4.3, 1.35], 22), {"me": P(348.8, 3.0, 0, z=0.5, sit=True, arms=[70, 70], side=[0, 0], expr="wide", head=[60, 0])},
    look="bedout", glow={"me": B}, glow_k=3.0, bedreach=True, fd=0.05, hand=0.003)
@@ -425,29 +427,29 @@ redo("S23", cfc((21.65, 3.4, 0.9), (21.65, 2.35), 10, 0.0, cz=1.0), {"emrys": em
 redo("S49", cfc((21.65, 3.4, 0.85), (21.65, 2.35), 10, 0.0, cz=0.95), {"emrys": emr(-25)}, glow={"emrys": 0.9}, **HL)
 redo("S67", cfc((21.65, 3.4, 0.85), (20.3, 2.5), 11, 0.0, cz=0.95), {"emrys": emr(-25, head=[0, 20])}, glow={"emrys": 0.7}, **HL)
 redo("S79", cfc((21.65, 3.4, 0.9), (21.0, 2.4), 10, 0.0, cz=0.8), {"emrys": emr(-25, arms=[75, 75])}, glow={"emrys": 0.4}, **HL)
-redo("S68", mv([20.2, 1.0, 1.15], [20.35, 2.6, 1.0], 24), glow={"me": 0.3}, look="cab_low", nosash=True, lk={"cab_amb": 1.3}, fill_k=0.6, glow_k=4.0, hand=0.002)
-redo("S70", mv([19.9, 1.0, 1.35], [20.4, 2.45, 1.2], 30), glow={"me": 0.8}, look="cab_low", nosash=True, lk={"cab_lamp": 0.0, "cab_amb": 1.0}, fill_k=0.6, glow_k=4.0, hand=0.002)
+redo("S68", mv([20.2, 1.0, 1.15], [20.35, 2.6, 1.0], 24), glow={"me": 0.3}, look="cab_low", nosash=True, lk={"cab_amb": 1.3}, fill_k=0.9, glow_k=4.0, hand=0.002)
+redo("S70", mv([19.9, 1.0, 1.35], [20.4, 2.45, 1.2], 30), glow={"me": 0.8}, look="cab_low", nosash=True, lk={"cab_lamp": 0.0, "cab_amb": 1.0}, fill_k=0.9, glow_k=4.0, hand=0.002)
 redo("S32", cam([0, [22.3, -14.6, 1.2], [21.6, -12.0, 0.95], 28]), {"mec": P(21.6, -12.0, 0, arms=[0, 0], side=[0, 0], expr="neutral")},
      look="dusk", fill_k=2.2, lk={"lamppost": 1.0}, hand=0.002)
 redo("S34", mv([16.9, 0.1, 1.55], [17.6, 0.8, 0.98], 36, [17.1, 0.2, 1.55], [17.6, 0.8, 0.98], 36), look="fogreach", prints=True, fd=0.012, fill_k=3.0, hand=0.002)
-redo("S19", look="kitchen", fill_k=0.35, lk={"ki_amb": 0.5, "ki_win": 0.35})
-redo("S18", look="kitchen", fill_k=0.4, lk={"ki_amb": 0.6, "ki_win": 0.4})
-redo("S47", mv([26.6, 108.0, 1.5], [27.6, 116.4, 1.4], 30, [26.9, 110.0, 1.5], [27.6, 116.4, 1.4], 30), fill_k=0.4, sun=(25, 200, 0.5, "#f0e4d0"), sky_k=0.5, fogc="#7c8a96", fd=0.01)
+redo("S19", look="kitchen", fill_k=0.7, lk={"ki_amb": 0.8, "ki_win": 0.6})
+redo("S18", look="kitchen", fill_k=0.8, lk={"ki_amb": 0.9, "ki_win": 0.6})
+redo("S47", mv([26.6, 108.0, 1.5], [27.6, 116.4, 1.4], 30, [26.9, 110.0, 1.5], [27.6, 116.4, 1.4], 30), fill_k=0.9, sun=(25, 200, 0.5, "#f0e4d0"), sky_k=0.8, fogc="#7c8a96", fd=0.01)
 redo("S57", mv([17.0, -1.5, 1.3], [18.1, 0.8, 1.0], 32, [17.4, -1.3, 1.3], [18.1, 0.8, 1.0], 32), reach="wed", handlamp=2.5, **RV)
 
 redo("S41", fill_k=0.6)
 
 # ---- picture fixes: no clipped whites, the lean read face to face, pale hands
-redo("S17", mv([250.8, -0.2, 1.5], [250.0, 3.4, 0.8], 21, [250.6, -0.1, 1.5], [250.0, 3.4, 0.8], 21), em_k=0.5, glow_k=0.7, fill_k=0.2, lk={"ki_amb": 0.12, "ki_win": 0.12}, sky_k=0.3)
-redo("S19", mv([250.0, -0.3, 1.5], [249.9, 4.0, 1.0], 22, [250.0, -0.2, 1.5], [249.9, 4.0, 1.0], 22), em_k=0.5, glow_k=0.7, fill_k=0.15, lk={"ki_amb": 0.15, "ki_win": 0.1}, sky_k=0.3)
-redo("S41", fill_k=0.1, lk={"cab_amb": 0.22})
-redo("S70", glow_k=1.5, fill_k=0.3, lk={"cab_lamp": 0.0, "cab_amb": 0.4}, em_k=0.6, halo_k=0.6)
+redo("S17", mv([250.8, -0.2, 1.5], [250.0, 3.4, 0.8], 21, [250.6, -0.1, 1.5], [250.0, 3.4, 0.8], 21), em_k=0.5, glow_k=0.7, fill_k=0.6, lk={"ki_amb": 0.5, "ki_win": 0.4}, sky_k=0.6)
+redo("S19", mv([250.0, -0.3, 1.5], [249.9, 4.0, 1.0], 22, [250.0, -0.2, 1.5], [249.9, 4.0, 1.0], 22), em_k=0.5, glow_k=0.7, fill_k=0.6, lk={"ki_amb": 0.5, "ki_win": 0.4}, sky_k=0.6)
+redo("S41", fill_k=0.6, lk={"cab_amb": 0.7})
+redo("S70", glow_k=1.5, fill_k=0.7, lk={"cab_lamp": 0.0, "cab_amb": 0.8}, em_k=0.6, halo_k=0.6)
 for _sid in ("S88", "S89", "S92"):
     redo(_sid, glow_k=0.6, em_k=0.5, halo_k=0.55)
 redo("S64", mv([4.6, -0.6, 1.4], [1.2, 0.8, 1.0], 32, [4.2, -0.5, 1.35], [1.2, 0.8, 1.0], 32), reach="far2", handlamp=0.35, sash=False,
-     nobar=True, look="fogreach", fd=0.02, hl_pos=(1.0, 0.1, 0.6), moon_k=0.3, sky_k=0.5)
-redo("S65", cam([0, [18.0, -2.6, 2.5], [19.6, 2.3, 1.2], 28], [1, [18.3, -2.5, 2.5], [19.6, 2.3, 1.25], 26]), {}, sill=2.5, hyaw=0.65, hpitch=0.1, nosash=True, moon_k=0.3, sky_k=0.5)
-redo("S66", cam([0, [20.2, 4.6, 1.3], [20.2, 2.2, 1.32], 40], [1, [20.2, 4.3, 1.3], [20.2, 2.2, 1.32], 40]), {}, sill=2.5, moon_k=0.3)
+     nobar=True, look="fogreach", fd=0.02, hl_pos=(1.0, 0.1, 0.6), moon_k=0.8, sky_k=0.9)
+redo("S65", cam([0, [18.0, -2.6, 2.5], [19.6, 2.3, 1.2], 28], [1, [18.3, -2.5, 2.5], [19.6, 2.3, 1.25], 26]), {}, sill=2.5, hyaw=0.65, hpitch=0.1, nosash=True, moon_k=0.8, sky_k=0.9)
+redo("S66", cam([0, [20.2, 4.6, 1.3], [20.2, 2.2, 1.32], 40], [1, [20.2, 4.3, 1.3], [20.2, 2.2, 1.32], 40]), {}, sill=2.5, moon_k=0.8)
 redo("S91", mv([349.9, 3.7, 1.5], [349.9, 5.9, 1.15], 28), bedreach=True, fd=0.03)
 
 
