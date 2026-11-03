@@ -1,0 +1,1009 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "hexgrad/Kokoro-82M (Apache 2.0)",
+ "lines": {
+  "L01": {
+   "text": "Nobody here gets older. The statue does it for us.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.19,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.19,
+     0.621
+    ],
+    [
+     0.621,
+     1.138
+    ],
+    [
+     1.207,
+     1.586
+    ],
+    [
+     1.586,
+     1.81
+    ],
+    [
+     1.81,
+     2.345
+    ]
+   ]
+  },
+  "L02": {
+   "text": "On your birthday, you give it your year.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.828,
+   "onset": 0.172,
+   "end": 1.638,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.776,
+     1.017
+    ],
+    [
+     1.017,
+     1.638
+    ]
+   ]
+  },
+  "L03": {
+   "text": "You light a candle at its feet, and touch its toe.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.259,
+   "onset": 0.172,
+   "end": 2.052,
+   "chunks": [
+    [
+     0.172,
+     0.37
+    ],
+    [
+     0.37,
+     0.69
+    ],
+    [
+     0.69,
+     1.086
+    ],
+    [
+     1.138,
+     1.406
+    ],
+    [
+     1.406,
+     2.052
+    ]
+   ]
+  },
+  "L04": {
+   "text": "Missus Lark at the bakery has been thirty-two for fifty years.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.828,
+   "onset": 0.172,
+   "end": 2.638,
+   "chunks": [
+    [
+     0.172,
+     0.612
+    ],
+    [
+     0.612,
+     1.069
+    ],
+    [
+     1.069,
+     1.759
+    ],
+    [
+     1.759,
+     2.638
+    ]
+   ]
+  },
+  "L05": {
+   "text": "People think my mom is my sister.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.155,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.155,
+     0.534
+    ],
+    [
+     0.534,
+     0.931
+    ],
+    [
+     0.931,
+     1.724
+    ]
+   ]
+  },
+  "L06": {
+   "text": "And the statue's stone beard hangs down to its knees.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.534,
+   "onset": 0.155,
+   "end": 2.345,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.621,
+     1.121
+    ],
+    [
+     1.121,
+     1.569
+    ],
+    [
+     1.569,
+     2.345
+    ]
+   ]
+  },
+  "L07": {
+   "text": "You can take your years back. Nobody ever has.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.241,
+   "onset": 0.172,
+   "end": 2.034,
+   "chunks": [
+    [
+     0.172,
+     0.457
+    ],
+    [
+     0.457,
+     1.0
+    ],
+    [
+     1.077,
+     2.034
+    ]
+   ]
+  },
+  "L08": {
+   "text": "Except for my dad. He's never given one.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     0.931
+    ],
+    [
+     1.0,
+     1.31
+    ],
+    [
+     1.31,
+     1.983
+    ]
+   ]
+  },
+  "L09": {
+   "text": "He's the only old face in town.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.81,
+   "onset": 0.155,
+   "end": 1.621,
+   "chunks": [
+    [
+     0.155,
+     0.552
+    ],
+    [
+     0.552,
+     0.966
+    ],
+    [
+     0.966,
+     1.621
+    ]
+   ]
+  },
+  "L10": {
+   "text": "He says he wants every year he gets.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.862,
+   "onset": 0.155,
+   "end": 1.672,
+   "chunks": [
+    [
+     0.155,
+     0.388
+    ],
+    [
+     0.388,
+     0.732
+    ],
+    [
+     0.732,
+     1.094
+    ],
+    [
+     1.094,
+     1.672
+    ]
+   ]
+  },
+  "L11": {
+   "text": "And Mom gets asked if he's her father.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.155,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.155,
+     0.483
+    ],
+    [
+     0.483,
+     0.948
+    ],
+    [
+     0.948,
+     1.129
+    ],
+    [
+     1.129,
+     1.759
+    ]
+   ]
+  },
+  "L12": {
+   "text": "This sunday, at the end of the week, I turn twenty-one. That's when you give your first year.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.672,
+   "onset": 0.172,
+   "end": 3.483,
+   "chunks": [
+    [
+     0.172,
+     0.638
+    ],
+    [
+     0.664,
+     0.922
+    ],
+    [
+     0.922,
+     1.224
+    ],
+    [
+     1.25,
+     2.121
+    ],
+    [
+     2.215,
+     2.509
+    ],
+    [
+     2.509,
+     2.699
+    ],
+    [
+     2.699,
+     3.483
+    ]
+   ]
+  },
+  "L13": {
+   "text": "Then that monday, the statue got younger.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.724
+    ],
+    [
+     0.75,
+     1.103
+    ],
+    [
+     1.103,
+     1.81
+    ]
+   ]
+  },
+  "L14": {
+   "text": "One wrinkle, gone.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.19,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.19,
+     0.603
+    ],
+    [
+     0.638,
+     1.138
+    ]
+   ]
+  },
+  "L15": {
+   "text": "Tuesday, two.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.138,
+   "onset": 0.172,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.172,
+     0.897
+    ]
+   ]
+  },
+  "L16": {
+   "text": "By Friday, its beard was up to its chest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.862,
+   "chunks": [
+    [
+     0.155,
+     0.621
+    ],
+    [
+     0.655,
+     0.974
+    ],
+    [
+     0.974,
+     1.25
+    ],
+    [
+     1.25,
+     1.862
+    ]
+   ]
+  },
+  "L17": {
+   "text": "The whole town ran to their mirrors.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.845,
+   "onset": 0.172,
+   "end": 1.655,
+   "chunks": [
+    [
+     0.172,
+     0.672
+    ],
+    [
+     0.672,
+     0.94
+    ],
+    [
+     0.94,
+     1.655
+    ]
+   ]
+  },
+  "L18": {
+   "text": "If the statue's giving years back, whose are they?",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.103,
+   "onset": 0.155,
+   "end": 1.828,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.207
+    ],
+    [
+     1.233,
+     1.828
+    ]
+   ]
+  },
+  "L19": {
+   "text": "Nobody had a single new gray hair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.914,
+   "onset": 0.19,
+   "end": 1.724,
+   "chunks": [
+    [
+     0.19,
+     0.543
+    ],
+    [
+     0.543,
+     1.017
+    ],
+    [
+     1.017,
+     1.724
+    ]
+   ]
+  },
+  "L20": {
+   "text": "Nobody but mom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.19,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.19,
+     1.138
+    ]
+   ]
+  },
+  "L21": {
+   "text": "She found one on Tuesday.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.552,
+   "onset": 0.172,
+   "end": 1.345,
+   "chunks": [
+    [
+     0.172,
+     0.552
+    ],
+    [
+     0.552,
+     1.345
+    ]
+   ]
+  },
+  "L22": {
+   "text": "She didn't pull it out. She smiled at it.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.897,
+   "onset": 0.172,
+   "end": 1.707,
+   "chunks": [
+    [
+     0.172,
+     0.492
+    ],
+    [
+     0.492,
+     0.759
+    ],
+    [
+     0.81,
+     1.267
+    ],
+    [
+     1.267,
+     1.707
+    ]
+   ]
+  },
+  "L23": {
+   "text": "And every morning she was up before the sun.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.0,
+   "onset": 0.155,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.155,
+     0.69
+    ],
+    [
+     0.69,
+     1.0
+    ],
+    [
+     1.0,
+     1.81
+    ]
+   ]
+  },
+  "L24": {
+   "text": "So on Saturday, I followed her up the park steps.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.845,
+     1.25
+    ],
+    [
+     1.25,
+     1.379
+    ],
+    [
+     1.379,
+     2.138
+    ]
+   ]
+  },
+  "L25": {
+   "text": "In the dark, the statue's head was bent down, toward someone at its feet.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.121,
+   "onset": 0.172,
+   "end": 2.931,
+   "chunks": [
+    [
+     0.172,
+     0.517
+    ],
+    [
+     0.543,
+     1.094
+    ],
+    [
+     1.094,
+     1.759
+    ],
+    [
+     1.828,
+     2.301
+    ],
+    [
+     2.301,
+     2.931
+    ]
+   ]
+  },
+  "L26": {
+   "text": "It was mom.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.103,
+   "onset": 0.155,
+   "end": 0.897,
+   "chunks": [
+    [
+     0.155,
+     0.897
+    ]
+   ]
+  },
+  "L27": {
+   "text": "She put her hand on its stone cheek, and a line slid off the stone onto her face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.5,
+   "onset": 0.172,
+   "end": 3.31,
+   "chunks": [
+    [
+     0.172,
+     0.336
+    ],
+    [
+     0.336,
+     0.612
+    ],
+    [
+     0.612,
+     0.759
+    ],
+    [
+     0.759,
+     1.397
+    ],
+    [
+     1.466,
+     1.87
+    ],
+    [
+     1.87,
+     2.181
+    ],
+    [
+     2.181,
+     2.491
+    ],
+    [
+     2.491,
+     3.31
+    ]
+   ]
+  },
+  "L28": {
+   "text": "Right where she smiles.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.345,
+   "onset": 0.172,
+   "end": 1.138,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     1.138
+    ]
+   ]
+  },
+  "L29": {
+   "text": "She's taking her years back, one every morning,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.172,
+   "onset": 0.172,
+   "end": 1.983,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.052
+    ],
+    [
+     1.103,
+     1.983
+    ]
+   ]
+  },
+  "L30": {
+   "text": "so she can get old next to dad.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.552,
+   "chunks": [
+    [
+     0.172,
+     0.397
+    ],
+    [
+     0.397,
+     0.776
+    ],
+    [
+     0.776,
+     1.552
+    ]
+   ]
+  },
+  "L31": {
+   "text": "She'd rather look like his wife.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.603,
+   "onset": 0.19,
+   "end": 1.414,
+   "chunks": [
+    [
+     0.19,
+     0.681
+    ],
+    [
+     0.681,
+     1.414
+    ]
+   ]
+  },
+  "L32": {
+   "text": "Now they walk to the bakery arm in arm.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.931,
+   "onset": 0.172,
+   "end": 1.741,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ],
+    [
+     0.586,
+     1.0
+    ],
+    [
+     1.0,
+     1.741
+    ]
+   ]
+  },
+  "L33": {
+   "text": "Two gray heads.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.19,
+   "onset": 0.172,
+   "end": 1.0,
+   "chunks": [
+    [
+     0.172,
+     1.0
+    ]
+   ]
+  },
+  "L34": {
+   "text": "Nobody asks if he's her father anymore.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.034,
+   "onset": 0.172,
+   "end": 1.845,
+   "chunks": [
+    [
+     0.172,
+     0.741
+    ],
+    [
+     0.741,
+     1.026
+    ],
+    [
+     1.026,
+     1.845
+    ]
+   ]
+  },
+  "L35": {
+   "text": "So on Sunday, my twenty-first birthday,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.138,
+   "onset": 0.172,
+   "end": 1.914,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.793,
+     1.914
+    ]
+   ]
+  },
+  "L36": {
+   "text": "I walked right past the statue.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.759,
+   "onset": 0.155,
+   "end": 1.534,
+   "chunks": [
+    [
+     0.155,
+     0.655
+    ],
+    [
+     0.655,
+     1.534
+    ]
+   ]
+  },
+  "L37": {
+   "text": "I kept my year.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.259,
+   "onset": 0.172,
+   "end": 1.052,
+   "chunks": [
+    [
+     0.172,
+     0.466
+    ],
+    [
+     0.466,
+     1.052
+    ]
+   ]
+  },
+  "L38": {
+   "text": "And the statue turned its stone head and watched me go, like it had noticed me.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 3.207,
+   "onset": 0.155,
+   "end": 3.017,
+   "chunks": [
+    [
+     0.155,
+     0.586
+    ],
+    [
+     0.586,
+     0.862
+    ],
+    [
+     0.862,
+     1.31
+    ],
+    [
+     1.31,
+     1.612
+    ],
+    [
+     1.612,
+     2.034
+    ],
+    [
+     2.121,
+     2.379
+    ],
+    [
+     2.379,
+     3.017
+    ]
+   ]
+  },
+  "L39": {
+   "text": "Nobody had ever walked past it before.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.966,
+   "onset": 0.172,
+   "end": 1.759,
+   "chunks": [
+    [
+     0.172,
+     0.655
+    ],
+    [
+     0.655,
+     1.164
+    ],
+    [
+     1.164,
+     1.759
+    ]
+   ]
+  },
+  "L40": {
+   "text": "Because",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 0.776,
+   "onset": 0.172,
+   "end": 0.586,
+   "chunks": [
+    [
+     0.172,
+     0.586
+    ]
+   ]
+  }
+ }
+}
