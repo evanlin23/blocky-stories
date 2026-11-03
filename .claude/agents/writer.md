@@ -35,4 +35,4 @@ Apply the named notes to `script.md` and `package.json` only, and say which line
 Report: the variety table, each story's slug, title and word count, and anything you weren't sure about. Keep the report under 300 words. Scratch files go in the scratchpad, never the repo.
 
 ## The 2026-11-03 reset (RULES.md)
-Read RULES.md "The 2026-11-03 reset" first. 60 to 90 s, a relatable want or fight with a creepy or fun rule, at most one sad family reveal in three, rule spoken over a close-up in the first second, the rule meter on screen the whole time, a cut every 1 to 2 s, a bright look, a loop ending, a 3 to 7 word title with one emoji, and a one-word comment pin.
+Read RULES.md "The 2026-11-03 reset" first. length split between 60 to 90 s and 120 to 150 s (a test), a relatable want or fight with a creepy or fun rule, at most one sad family reveal in three, rule spoken over a close-up in the first second, the rule meter on screen the whole time, a cut every 1 to 2 s, a bright look, a loop ending, a 3 to 7 word title with one emoji, and a one-word comment pin.

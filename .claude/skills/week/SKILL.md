@@ -58,4 +58,4 @@ Start a **fresh builder agent for each phase** (the build, then each fix round).
 - Owner feedback on any story becomes a dated rule in `RULES.md`, in the same PR.
 
 ## The 2026-11-03 reset
-Every batch from now on follows RULES.md "The 2026-11-03 reset": 60 to 90 s core, at most a third of the batch ending on a sad family reveal, and a third of the experiment slots for the recurring-cast series. Check the whole batch against it before the PR.
+Every batch from now on follows RULES.md "The 2026-11-03 reset": the length split (60 to 90 s and 120 to 150 s), at most a third of the batch ending on a sad family reveal, and a third of the experiment slots for the recurring-cast series. Check the whole batch against it before the PR.
