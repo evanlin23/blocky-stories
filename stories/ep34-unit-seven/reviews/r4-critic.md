@@ -3,7 +3,7 @@
 Verdict: revise
 
 ## Hits' shape
-1 yes (0 to 3 s). 2 yes (lamp lit at 0.5 s). 3 yes (3 to 9 s), but the spoon is unseen (fix 1). 4 no, with a better reason: the twist is that he never was one. 5 yes (Jo, 9.5 s). 6 yes (L80, 98 s). 7 yes (L07 16 s, L11 25 s, L81 141 s). 8 yes. 9 yes (1.81 s a shot).
+1 yes (0 to 3 s). 2 yes (lamp lit at 0.5 s). 3 yes (3 to 9 s), spoon unseen (fix 1). 4 no,, but the twist is he never was one. 5 yes (Jo, 9.5 s). 6 yes (L80, 98 s). 7 yes (L07 16 s, L11 25 s, L81 141 s). 8 yes. 9 yes (1.81 s a shot).
 
 ## Scores
 - Hook 7: the rule and a lit lamp, but the face is static.
