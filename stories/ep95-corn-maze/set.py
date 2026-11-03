@@ -352,7 +352,7 @@ def build_truck(kit, M, name, with_boxes=True):
 
 def build_barn(kit, M, ox, oy, rot=0.0):
     kit.box("barn", (9, 7, 5), (ox, oy, 2.5), M["barn"], rot=(0, 0, rot))
-    kit.cyl("barn.roof", 5.6, 9.4, (ox, oy, 6.2), M["roof"], n=4, r2=0.3, rot=(0, math.pi / 2, math.pi / 4 + rot))
+    kit.box("barn.roof", (9.8, 7.8, 0.35), (ox, oy, 5.2), M["roof"], bevel=0.05)
     kit.box("barn.door", (3, 0.1, 3.6), (ox, oy - 3.55, 1.8), M["trim"])
 
 
@@ -367,7 +367,6 @@ def build_house_front(kit, M, ox, oy):
         kit.box("hs.frame", (0.1, 0.4, 1.4), (ox + sx, oy - 0.05, 1.6), M["trim"])
     for sz in (0.85, 2.35):
         kit.box("hs.frame", (1.8, 0.4, 0.1), (ox, oy - 0.05, sz), M["trim"])
-    kit.box("hs.pane", (1.6, 0.04, 1.4), (ox, oy + 0.05, 1.6), M["glasswin"])
     kit.box("hs.back", (8, 0.1, 4.0), (ox, oy + 4.0, 2.0), M["interior"])
     kit.box("hs.floor", (8, 4.2, 0.1), (ox, oy + 2.0, 0.05), M["floor"])
     kit.box("hs.side", (0.1, 4.0, 4.0), (ox - 3.9, oy + 2.0, 2.0), M["interior"])
@@ -474,7 +473,7 @@ def build(kit, story, tl):
     w = G.ORG["dawn"]
     build_barn(kit, M, w[0] - 16.0, w[1] - 43.0)
     kit.box("dawn.house", (9, 7, 4), (w[0] + 17, w[1] - 42, 2.0), M["wall"])
-    kit.cyl("dawn.roof", 6.2, 9.6, (w[0] + 17, w[1] - 42, 5.4), M["roof"], n=4, r2=0.3, rot=(0, math.pi / 2, math.pi / 4))
+    kit.box("dawn.roof", (9.8, 7.8, 0.35), (w[0] + 17, w[1] - 42, 4.1), M["roof"], bevel=0.05)
     ctx["truck"] = build_truck(kit, M, "truck", with_boxes=True)
     ctx["truck"].location = (w[0] - 4.2, w[1] - 31.5, 0)
     ctx["truck"].rotation_euler = (0, 0, math.pi / 2)
@@ -482,7 +481,7 @@ def build(kit, story, tl):
     # --- the new place: a different house and a curving line of shoots
     n = G.ORG["new"]
     kit.box("new.house", (8, 6, 3.4), (n[0] + 2, n[1] + 24, 1.7), M["wall2"])
-    kit.cyl("new.roof", 5.4, 8.6, (n[0] + 2, n[1] + 24, 4.7), M["roof"], n=4, r2=0.3, rot=(0, math.pi / 2, math.pi / 4))
+    kit.box("new.roof", (8.8, 6.8, 0.35), (n[0] + 2, n[1] + 24, 3.6), M["roof"], bevel=0.05)
     kit.box("new.door", (1.1, 0.1, 2.0), (n[0] + 2, n[1] + 20.95, 1.0), M["wood"])
     shoots = []
     for q, (x, y) in enumerate(G.NEW_SHOOTS):
@@ -576,11 +575,13 @@ LOOKS = {
     "summer": dict(gold=(3.8, "#fff0cf", 40, 20), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(0.0, "#fff0d8"),
                    sky=("#86cdff", 1.2), amb=("#f4f8ee", 1.0), exp=0.25, cols=("#4f9a3a", "#78c455", "#8ed565", "#d6c188", "#5cb347"), lant=0.0),
     "lantern": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(2.2, "#b4c6f4", 50, -35), rim=(1.0, "#8fb8ff", 78, 160), cam=(40.0, "#ffe2b8"),
-                    sky=("#34498a", 1.0), amb=("#9aa4c0", 0.8), exp=0.45, cols=("#b89638", "#ceac48", "#c4a240", "#e8cc7e", "#2c5a4a"), lant=1.0),
+                    sky=("#2c3f78", 0.9), amb=("#9aa4c0", 0.8), exp=0.45, cols=("#b89638", "#ceac48", "#c4a240", "#e8cc7e", "#2c5a4a"), lant=1.0),
     "moon": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(3.4, "#d2deff", 40, -35), rim=(2.2, "#8fb8ff", 76, 170), cam=(75.0, "#dce6ff"),
                  sky=("#4c68ac", 1.1), amb=("#a8b2d0", 1.0), exp=0.35, cols=("#b08f34", "#c8a442", "#bf9c3a", "#ecce84", "#2f5e55"), lant=0.0),
+    "moonhi": dict(gold=(0.0, "#ffc27a", 68, 25), moon=(5.5, "#dfe8ff", 38, -35), rim=(3.0, "#8fb8ff", 70, 170), cam=(0.0, "#dce6ff"),
+                   sky=("#2a3e78", 1.0), amb=("#c0c8e0", 1.6), exp=0.5, cols=("#8a7228", "#a8892f", "#9c7f2c", "#f6dc90", "#2f5e55"), lant=0.0),
     "dawn": dict(gold=(4.2, "#ffae62", 78, 0), moon=(0.0, "#d5e0ff", 40, -35), rim=(0.0, "#8fb8ff", 76, 170), cam=(55.0, "#ffe6c0"),
-                 sky=("#ffd2a8", 1.7), amb=("#ffe6cc", 0.9), exp=0.3, cols=GOLD, lant=0.0),
+                 sky=("#f7c590", 0.9), amb=("#ffe6cc", 0.9), exp=0.3, cols=GOLD, lant=0.0),
 }
 
 
@@ -766,7 +767,7 @@ def animate(kit, story, tl, t, ctx):
     td = cue_t(tl, "drive", 1e9)
     x0, y0 = ctx["truck0"]
     dt = max(0.0, t - td)
-    ctx["truck"].location = (x0 + 0.5 * 2.4 * dt * dt, y0, 0.0)
+    ctx["truck"].location = (x0 + 0.5 * 4.0 * dt * dt, y0, 0.0)
     # the overhead dot walks a shape (S42 to S44): story "dot_path": {shot: [[t0ref, t1ref, [pts]]]}
     dp = story.get("dot_path", {}).get(sid)
     if dp:

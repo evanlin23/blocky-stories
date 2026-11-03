@@ -14,8 +14,40 @@ sys.path.insert(0, str(HERE.parent))
 import geo as G  # noqa: E402
 
 OUT = HERE.parent / "story.json"
-lines = json.loads((HERE / "lines.json").read_text())
-REV = 3
+import re
+orig_lines = json.loads((HERE / "lines.json").read_text())
+lines, CHUNKMAP = [], {}
+for ln in orig_lines:   # captions are two or three words at a time: longer chunks are split, and chunk refs are remapped
+    out, mp = [], []
+    for cap, spoken in ln["chunks"]:
+        cw, sw = cap.split(), spoken.split()
+        n = len(cw)
+        k = 1 if n <= 3 else (2 if n <= 6 else 3)
+        sizes = [n // k + (1 if i < n % k else 0) for i in range(k)]
+        mp.append(len(out))
+        i = 0
+        for sz in sizes:
+            out.append([" ".join(cw[i:i + sz]), " ".join(sw[i:i + sz])])
+            i += sz
+    CHUNKMAP[ln["id"]] = mp
+    lines.append({**ln, "chunks": out})
+REF = re.compile(r"^(L\d+)\.(\d+)(.*)$")
+
+
+def remap(x):
+    if isinstance(x, str):
+        m = REF.match(x)
+        if m and m.group(1) in CHUNKMAP:
+            return f"{m.group(1)}.{CHUNKMAP[m.group(1)][int(m.group(2))]}{m.group(3)}"
+        return x
+    if isinstance(x, list):
+        return [remap(v) for v in x]
+    if isinstance(x, dict):
+        return {k: (v if k == "lines" else remap(v)) for k, v in x.items()}
+    return x
+
+
+REV = 5
 
 
 def person(skin, shirt, pants, shoes, hair="cap", hair_c="#2a1d15", pattern="solid", pattern_c=None, hat="none", hat_c="#333333",
@@ -190,12 +222,12 @@ acting["june"].append({"at": "L15", "from": "L15", "to": "L15>", "mouth": [0.6, 
 st("june", "L15+0.3", arms=[50, 10], side=[0, 25], blend=0.2)
 st("june", "L15+0.65", arms=[10, 60], side=[25, 0], blend=0.2)
 st("june", "L15+1.0", arms=[40, 40], side=[10, 10], blend=0.2)
-shot("S15", "L15", "summer", "summer", "summer", C("summer", (3.0, -11.0, 1.9), (0.1, -12.3, 1.3), (2.8, -12.0, 1.9), (0.1, -12.3, 1.3)))
+shot("S15", "L15", "summer", "summer", "summer", C("summer", (4.2, -9.6, 2.1), (0.1, -12.3, 1.3), (4.0, -10.4, 2.1), (0.1, -12.3, 1.3)))
 put("june", "L16", "summer", 2.55, -4.2, -90, expr="soft", arms=[0, 65], lean=-5)
 st("june", "L16+0.5", lean=-3, arms=[0, 75])
 shot("S16", "L16", "summer", "summer", "summer", C("summer", (0.9, -8.0, 1.7), (2.5, -4.3, 1.25), (1.3, -7.6, 1.7), (2.5, -4.3, 1.25)))
 hide("june", "L17")
-shot("S17", "L17", "partial", "partial", "summer", C("partial", (4.0, -43.5, 4.7), (-3.0, -8.0, 0.8), (4.0, -43.5, 4.7), (0.0, -8.0, 0.8)))
+shot("S17", "L17", "partial", "partial", "summer", C("partial", (4.0, -47.0, 8.0), (-3.0, -8.0, 0.0), (4.0, -47.0, 8.0), (0.0, -8.0, 0.0)))
 put("june", "L18", "summer", -8.0, 14.0, 0, expr="soft", side=[75, 0], arms=[0, 0])
 st("june", "L18+0.3", side=[60, 0])
 st("june", "L18.1", side=[78, 0])
@@ -256,11 +288,11 @@ st("june", "L31", expr="smile", arms=[0, 0], head=[0, 0])
 shot("S31", "L31", "closed", "closed", "moon", C("closed", (-9.0, 24.8, 1.0), (-9.0, 27.2, 0.72), (-9.0, 24.5, 0.95), (-9.0, 27.2, 0.75)))
 shot("S32", "L32", "closed", "closed", "moon", C("closed", (-8.2, 25.2, 0.95), (-10.6, 29.8, 1.4), (-8.6, 25.6, 0.95), (-10.6, 29.8, 1.5)))
 hide("june", "L33")
-shot("S33", "L33", "face", "face", "moon", [[0, G.W("face", -6.2, 11.3, 1.2), G.W("face", -6.2, 12.0, 8.0), 34],
+shot("S33", "L33", "face", "face", "moonhi", [[0, G.W("face", -6.2, 11.3, 1.2), G.W("face", -6.2, 12.0, 8.0), 34],
                                            [0.5, G.W("face", -5.6, 9.5, 22.0), G.W("face", -4.0, 6.0, 0.0), 34],
-                                           [1, G.W("face", 0.0, -2.0, 112.0), G.W("face", 0.0, -2.0, 0.0), 34]])
-shot("S34", "L34", "face", "face", "moon", [[0, G.W("face", 0.0, -2.0, 112.0), G.W("face", 0.0, -2.0, 0.0), 34],
-                                           [1, G.W("face", 0.0, -2.0, 108.0), G.W("face", 0.0, -2.0, 0.0), 34]])
+                                           [1, G.W("face", 0.0, -16.0, 108.0), G.W("face", 0.0, -16.0, 0.0), 34]])
+shot("S34", "L34", "face", "face", "moonhi", [[0, G.W("face", 0.0, -16.0, 108.0), G.W("face", 0.0, -16.0, 0.0), 34],
+                                           [1, G.W("face", 0.0, -16.0, 103.0), G.W("face", 0.0, -16.0, 0.0), 34]])
 # ------------------------------------------------------------------ S35 to S41: the reveal explained
 put("june", "L35.1", "summer", -4.0, -22.6, 180, expr="laugh", arms=[60, 60])
 go("june", "L35.2-0.05", "summer", -4.0, -21.3)
@@ -272,7 +304,7 @@ shot("S35b", "L35.2", "summer", "summer", "summer", C("summer", (-6.8, 12.4, 1.4
 hide("june", "L36")
 shot("S36", "L36", "day", "day", "dusk", C("day", (0.1, -9.0, 0.6), (0.0, 0.0, 1.2), (0.1, -5.0, 0.65), (0.0, 4.0, 1.3)))
 put("june", "L37", "closed", -9.0, 27.35, 0, expr="smile", sit=True, arms=[0, 0], blend=0.0)
-shot("S37", "L37", "closed", "closed", "moon", C("closed", (-5.4, 27.6, 0.95), (-9.0, 27.4, 0.85), (-5.8, 27.0, 0.95), (-9.0, 27.4, 0.85)))
+shot("S37", "L37", "closed", "closed", "moon", C("closed", (-6.3, 27.6, 0.95), (-9.0, 27.4, 0.85), (-6.5, 27.1, 0.95), (-9.0, 27.4, 0.85)))
 hide("june", "L38")
 put("lost", "L38", "day", 0.0, 4.5, 20, expr="wide", head=[28, 6])
 shot("S38a", "L38", "day", "day", "dusk", C("day", (1.0, 0.2, 1.6), (0.0, 4.5, 1.45), (0.6, 0.6, 1.6), (0.0, 4.5, 1.45)))
@@ -283,15 +315,15 @@ shot("S39", "L39", "closed", "closed", "moon", C("closed", (-7.0, 24.4, 1.05), (
 shot("S40", "L40", "closed", "closed", "moon", C("closed", (-9.7, 24.4, 0.6), (-9.0, 25.65, 0.2), (-9.5, 24.6, 0.55), (-9.0, 25.65, 0.24)))
 st("june", "L40.1", expr="smile")
 put("june", "L41", "closed", -9.0, 26.8, 90, expr="neutral", arms=[0, 70], sit=False, blend=0.0)
-shot("S41a", "L41", "closed", "closed", "moon", C("closed", (-11.0, 25.2, 1.3), (-7.4, 26.4, 1.3), (-10.6, 25.6, 1.3), (-7.2, 26.4, 1.3)))
+shot("S41a", "L41", "closed", "closed", "moon", C("closed", (-11.7, 24.7, 1.3), (-7.2, 26.4, 1.3), (-11.4, 25.1, 1.3), (-7.0, 26.4, 1.3)))
 put("june", "L41+0.8", "open", -8.2, 26.4, 90, expr="hopeful", arms=[0, 70], sit=False)
 go("june", "L42-0.05", "open", -6.2, 26.4)
 shot("S41b", "L41+0.8", "open", "open", "moon", C("open", (-11.3, 26.2, 1.4), (-5.0, 26.4, 1.4), (-11.3, 26.4, 1.4), (-4.4, 26.4, 1.4)))
 hide("june", "L42")
 # ------------------------------------------------------------------ S42 to S45: every path she ever cut
-shot("S42", "L42", "star", "star", "moon", C("star", (0.0, -0.3, 110.0), (0.0, 1.0, 0.0), (0.0, -0.2, 102.0), (0.0, 1.0, 0.0)))
-shot("S43", "L43", "tractor", "tractor", "moon", C("tractor", (0.0, -0.3, 110.0), (0.0, 1.0, 0.0), (0.0, -0.2, 102.0), (0.0, 1.0, 0.0)))
-shot("S44a", "L44", "pig", "pig", "moon", C("pig", (0.0, -0.3, 110.0), (0.0, 1.0, 0.0), (0.0, -0.2, 102.0), (0.0, 1.0, 0.0)))
+shot("S42", "L42", "star", "star", "moonhi", C("star", (0.0, -0.3, 110.0), (0.0, 1.0, 0.0), (0.0, -0.2, 102.0), (0.0, 1.0, 0.0)))
+shot("S43", "L43", "tractor", "tractor", "moonhi", C("tractor", (0.0, -0.3, 110.0), (0.0, 1.0, 0.0), (0.0, -0.2, 102.0), (0.0, 1.0, 0.0)))
+shot("S44a", "L44", "pig", "pig", "moonhi", C("pig", (0.0, -0.3, 110.0), (0.0, 1.0, 0.0), (0.0, -0.2, 102.0), (0.0, 1.0, 0.0)))
 put("june", "L44.1+0.4", "open", -1.5, 24.6, 0, expr="laugh", arms=[0, 0], sit=False)
 shot("S44b", "L44.1+0.4", "open", "open", "moon", C("open", (-1.5, 20.4, 1.5), (-1.5, 24.6, 1.4), (-1.5, 20.9, 1.5), (-1.5, 24.6, 1.4)))
 put("june", "L45", "open", -1.5, 23.4, 0, expr="smile", arms=[0, 0], side=[0, 68])
@@ -312,7 +344,7 @@ shot("S47a", "L47", "dawn", "dawn", "dawn", C("dawn", (-1.0, -33.2, 1.35), (-1.0
 st("june", "L47.1", expr="smile", arms=[84, 78])
 shot("S47b", "L47.1", "dawn", "dawn", "dawn", C("dawn", (-2.5, -32.4, 1.1), (-1.0, -29.9, 1.15), (-2.1, -32.2, 1.1), (-1.0, -29.9, 1.15)))
 hide("june", "L48")
-shot("S48", "L48", "dawn", "dawn", "dawn", C("dawn", (-2.0, -38.5, 1.6), (-0.5, -31.5, 1.2), (1.0, -38.0, 1.6), (4.5, -31.5, 1.2)))
+shot("S48", "L48", "dawn", "dawn", "dawn", C("dawn", (-9.0, -37.0, 1.8), (-2.0, -31.5, 1.0), (-8.0, -37.0, 1.8), (6.0, -31.5, 1.0)))
 # ------------------------------------------------------------------ S49 to S51: the new maze, and the loop
 shot("S49a", "L49", "new", None, "dusk", C("new", (1.3, -10.6, 0.4), (-0.4, -5.0, 0.15), (1.0, -9.6, 0.4), (-0.6, -3.6, 0.15)))
 shot("S49b", "L49.1+0.35", "new", None, "dusk", C("new", (-5.5, -12.5, 1.5), (0.0, 4.0, 0.8), (-4.5, -12.0, 1.5), (0.0, 4.0, 0.8)))
@@ -408,5 +440,6 @@ story = {
               "music_drops": [["L27.2+0.15", "L28"], ["L32>-0.1", "L33"]]},
     "rev": REV,
 }
+story = remap(story)
 OUT.write_text(json.dumps(story, indent=1, ensure_ascii=False))
 print("wrote", OUT, len(shots_json), "shots")

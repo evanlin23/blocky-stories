@@ -33,15 +33,15 @@
     "L34"
    ],
    "emph": [
-    "L01.2",
-    "L10.2",
+    "L01.4",
+    "L10.3",
     "L24",
     "L27.2",
     "L33",
     "L34",
-    "L38.2",
+    "L38.3",
     "L40.1",
-    "L51.1"
+    "L51.2"
    ],
    "sway": [
     "S22",
@@ -211,8 +211,8 @@
   "S30c": "moon",
   "S31": "moon",
   "S32": "moon",
-  "S33": "moon",
-  "S34": "moon",
+  "S33": "moonhi",
+  "S34": "moonhi",
   "S35a": "summer",
   "S35b": "summer",
   "S36": "dusk",
@@ -223,9 +223,9 @@
   "S40": "moon",
   "S41a": "moon",
   "S41b": "moon",
-  "S42": "moon",
-  "S43": "moon",
-  "S44a": "moon",
+  "S42": "moonhi",
+  "S43": "moonhi",
+  "S44a": "moonhi",
   "S44b": "moon",
   "S45a": "moon",
   "S45b": "moon",
@@ -575,12 +575,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "If the lanterns go out",
-     "If the lanterns go out"
+     "If the lanterns",
+     "If the lanterns"
     ],
     [
-     "while you're in our MAZE,",
-     "while you're in our maze,"
+     "go out",
+     "go out"
+    ],
+    [
+     "while you're in",
+     "while you're in"
+    ],
+    [
+     "our MAZE,",
+     "our maze,"
     ],
     [
      "you STAY.",
@@ -607,8 +615,12 @@
      "Nobody's ever stayed."
     ],
     [
-     "Not in twenty YEARS.",
-     "Not in twenty years."
+     "Not in",
+     "Not in"
+    ],
+    [
+     "twenty YEARS.",
+     "twenty years."
     ]
    ]
   },
@@ -617,8 +629,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Because if you get LOST in here,",
-     "Because if you get lost in here,"
+     "Because if you",
+     "Because if you"
+    ],
+    [
+     "get LOST",
+     "get lost"
+    ],
+    [
+     "in here,",
+     "in here,"
     ]
    ]
   },
@@ -627,8 +647,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "a voice in the corn",
-     "a voice in the corn"
+     "a voice in",
+     "a voice in"
+    ],
+    [
+     "the corn",
+     "the corn"
     ],
     [
      "tells you",
@@ -645,8 +669,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Left at the SCARECROW.",
-     "Left at the scarecrow."
+     "Left at",
+     "Left at"
+    ],
+    [
+     "the SCARECROW.",
+     "the scarecrow."
     ]
    ]
   },
@@ -655,8 +683,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Right at the big PUMPKIN.",
-     "Right at the big pumpkin."
+     "Right at the",
+     "Right at the"
+    ],
+    [
+     "big PUMPKIN.",
+     "big pumpkin."
     ]
    ]
   },
@@ -665,16 +697,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "A guy and his DAD",
-     "A guy and his dad"
+     "A guy and",
+     "A guy and"
+    ],
+    [
+     "his DAD",
+     "his dad"
     ],
     [
      "walked in ARGUING",
      "walked in arguing"
     ],
     [
-     "and walked out LAUGHING.",
-     "and walked out laughing."
+     "and walked",
+     "and walked"
+    ],
+    [
+     "out LAUGHING.",
+     "out laughing."
     ]
    ]
   },
@@ -683,16 +723,32 @@
    "who": "narrator",
    "chunks": [
     [
-     "A woman dropped her PHONE in here.",
-     "A woman dropped her phone in here."
+     "A woman dropped",
+     "A woman dropped"
     ],
     [
-     "It was waiting for her",
-     "It was waiting for her"
+     "her PHONE",
+     "her phone"
     ],
     [
-     "on a hay bale",
-     "on a hay bale"
+     "in here.",
+     "in here."
+    ],
+    [
+     "It was waiting",
+     "It was waiting"
+    ],
+    [
+     "for her",
+     "for her"
+    ],
+    [
+     "on a",
+     "on a"
+    ],
+    [
+     "hay bale",
+     "hay bale"
     ],
     [
      "at the EXIT.",
@@ -705,16 +761,24 @@
    "who": "narrator",
    "chunks": [
     [
-     "One guy got lost",
-     "One guy got lost"
+     "One guy",
+     "One guy"
+    ],
+    [
+     "got lost",
+     "got lost"
     ],
     [
      "on PURPOSE,",
      "on purpose,"
     ],
     [
-     "just to HEAR it.",
-     "just to hear it."
+     "just to",
+     "just to"
+    ],
+    [
+     "HEAR it.",
+     "hear it."
     ]
    ]
   },
@@ -723,8 +787,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I know every TURN in here.",
-     "I know every turn in here."
+     "I know every",
+     "I know every"
+    ],
+    [
+     "TURN in here.",
+     "turn in here."
     ]
    ]
   },
@@ -747,8 +815,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "June owns this FARM.",
-     "June owns this farm."
+     "June owns",
+     "June owns"
+    ],
+    [
+     "this FARM.",
+     "this farm."
     ]
    ]
   },
@@ -761,12 +833,20 @@
      "Every summer,"
     ],
     [
-     "she cuts the paths",
-     "she cuts the paths"
+     "she cuts",
+     "she cuts"
     ],
     [
-     "in a new SHAPE,",
-     "in a new shape,"
+     "the paths",
+     "the paths"
+    ],
+    [
+     "in a",
+     "in a"
+    ],
+    [
+     "new SHAPE,",
+     "new shape,"
     ]
    ]
   },
@@ -789,8 +869,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She's my best FRIEND.",
-     "She's my best friend."
+     "She's my",
+     "She's my"
+    ],
+    [
+     "best FRIEND.",
+     "best friend."
     ]
    ]
   },
@@ -803,8 +887,12 @@
      "This year"
     ],
     [
-     "she cut a FACE.",
-     "she cut a face."
+     "she cut",
+     "she cut"
+    ],
+    [
+     "a FACE.",
+     "a face."
     ]
    ]
   },
@@ -817,8 +905,12 @@
      "She said,"
     ],
     [
-     "so you can wave GOODBYE.",
-     "so you can wave goodbye."
+     "so you can",
+     "so you can"
+    ],
+    [
+     "wave GOODBYE.",
+     "wave goodbye."
     ]
    ]
   },
@@ -827,12 +919,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "She sold the FARM.",
-     "She sold the farm."
+     "She sold",
+     "She sold"
     ],
     [
-     "Tonight's the last NIGHT.",
-     "Tonight's the last night."
+     "the FARM.",
+     "the farm."
+    ],
+    [
+     "Tonight's the",
+     "Tonight's the"
+    ],
+    [
+     "last NIGHT.",
+     "last night."
     ]
    ]
   },
@@ -845,8 +945,12 @@
      "At nine fifty-eight,"
     ],
     [
-     "June walked in ALONE,",
-     "June walked in alone,"
+     "June walked",
+     "June walked"
+    ],
+    [
+     "in ALONE,",
+     "in alone,"
     ]
    ]
   },
@@ -891,8 +995,12 @@
      "I said."
     ],
     [
-     "The exit's right THERE.",
-     "The exit's right there."
+     "The exit's",
+     "The exit's"
+    ],
+    [
+     "right THERE.",
+     "right there."
     ]
    ]
   },
@@ -949,8 +1057,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "The corn LEANED in",
-     "The corn leaned in"
+     "The corn",
+     "The corn"
+    ],
+    [
+     "LEANED in",
+     "leaned in"
     ],
     [
      "behind her,",
@@ -967,8 +1079,12 @@
      "and the path"
     ],
     [
-     "she came in by",
-     "she came in by"
+     "she came",
+     "she came"
+    ],
+    [
+     "in by",
+     "in by"
     ],
     [
      "was GONE.",
@@ -989,8 +1105,12 @@
      "in the dark,"
     ],
     [
-     "poured two cups of COCOA,",
-     "poured two cups of cocoa,"
+     "poured two cups",
+     "poured two cups"
+    ],
+    [
+     "of COCOA,",
+     "of cocoa,"
     ]
    ]
   },
@@ -1003,8 +1123,12 @@
      "and said,"
     ],
     [
-     "I know it's YOU.",
-     "I know it's you."
+     "I know",
+     "I know"
+    ],
+    [
+     "it's YOU.",
+     "it's you."
     ]
    ]
   },
@@ -1023,8 +1147,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'm not a PERSON.",
-     "I'm not a person."
+     "I'm not",
+     "I'm not"
+    ],
+    [
+     "a PERSON.",
+     "a person."
     ]
    ]
   },
@@ -1047,12 +1175,20 @@
      "Twenty summers,"
     ],
     [
-     "she's cut my PATHS",
-     "she's cut my paths"
+     "she's cut",
+     "she's cut"
     ],
     [
-     "and talked to me.",
-     "and talked to me."
+     "my PATHS",
+     "my paths"
+    ],
+    [
+     "and talked",
+     "and talked"
+    ],
+    [
+     "to me.",
+     "to me."
     ]
    ]
   },
@@ -1065,8 +1201,12 @@
      "Nobody else"
     ],
     [
-     "ever TALKED to me.",
-     "ever talked to me."
+     "ever TALKED",
+     "ever talked"
+    ],
+    [
+     "to me.",
+     "to me."
     ]
    ]
   },
@@ -1093,8 +1233,12 @@
      "That voice"
     ],
     [
-     "that gets you OUT?",
-     "that gets you out?"
+     "that gets",
+     "that gets"
+    ],
+    [
+     "you OUT?",
+     "you out?"
     ],
     [
      "That's ME.",
@@ -1107,8 +1251,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She didn't walk in",
-     "She didn't walk in"
+     "She didn't",
+     "She didn't"
+    ],
+    [
+     "walk in",
+     "walk in"
     ],
     [
      "to get LOST.",
@@ -1143,8 +1291,12 @@
      "I gave her"
     ],
     [
-     "the long way ROUND.",
-     "the long way round."
+     "the long",
+     "the long"
+    ],
+    [
+     "way ROUND.",
+     "way round."
     ]
    ]
   },
@@ -1153,16 +1305,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "The STAR",
-     "The star"
+     "Her first",
+     "Her first"
     ],
     [
-     "she cut",
-     "she cut"
+     "summer,",
+     "summer,"
     ],
     [
-     "her first summer.",
-     "her first summer."
+     "a STAR.",
+     "a star."
     ]
    ]
   },
@@ -1185,8 +1337,12 @@
      "The year"
     ],
     [
-     "of the giant PIG.",
-     "of the giant pig."
+     "of the",
+     "of the"
+    ],
+    [
+     "giant PIG.",
+     "giant pig."
     ]
    ]
   },
@@ -1195,8 +1351,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Every path",
-     "Every path"
+     "Every shape",
+     "Every shape"
     ],
     [
      "she ever CUT,",
@@ -1217,12 +1373,20 @@
      "At dawn,"
     ],
     [
-     "I opened one path",
-     "I opened one path"
+     "I opened",
+     "I opened"
     ],
     [
-     "straight to her TRUCK.",
-     "straight to her truck."
+     "one path",
+     "one path"
+    ],
+    [
+     "straight to",
+     "straight to"
+    ],
+    [
+     "her TRUCK.",
+     "her truck."
     ]
    ]
   },
@@ -1231,8 +1395,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "She filled her pockets",
-     "She filled her pockets"
+     "She filled",
+     "She filled"
+    ],
+    [
+     "her pockets",
+     "her pockets"
     ],
     [
      "with SEED corn,",
@@ -1245,8 +1413,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "for her new YARD.",
-     "for her new yard."
+     "for her",
+     "for her"
+    ],
+    [
+     "new YARD.",
+     "new yard."
     ]
    ]
   },
@@ -1259,8 +1431,12 @@
      "So next fall,"
     ],
     [
-     "in some other TOWN,",
-     "in some other town,"
+     "in some",
+     "in some"
+    ],
+    [
+     "other TOWN,",
+     "other town,"
     ]
    ]
   },
@@ -1269,8 +1445,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "when the lanterns go OUT,",
-     "when the lanterns go out,"
+     "when the lanterns",
+     "when the lanterns"
+    ],
+    [
+     "go OUT,",
+     "go out,"
     ]
    ]
   },
@@ -1279,8 +1459,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'll be the voice",
-     "I'll be the voice"
+     "I'll be",
+     "I'll be"
+    ],
+    [
+     "the voice",
+     "the voice"
     ],
     [
      "you HEAR.",
@@ -1357,7 +1541,7 @@
     ]
    ],
    "step": 2,
-   "at": "L01.1"
+   "at": "L01.2"
   },
   {
    "id": "S01c",
@@ -1392,7 +1576,7 @@
     ]
    ],
    "step": 2,
-   "at": "L01.2"
+   "at": "L01.4"
   },
   {
    "id": "S02",
@@ -1602,7 +1786,7 @@
     ]
    ],
    "step": 2,
-   "at": "L05.2"
+   "at": "L05.3"
   },
   {
    "id": "S06",
@@ -1742,7 +1926,7 @@
     ]
    ],
    "step": 2,
-   "at": "L08.2"
+   "at": "L08.3"
   },
   {
    "id": "S09a",
@@ -1812,7 +1996,7 @@
     ]
    ],
    "step": 2,
-   "at": "L09.1"
+   "at": "L09.3"
   },
   {
    "id": "S09c",
@@ -1847,7 +2031,7 @@
     ]
    ],
    "step": 2,
-   "at": "L09.3"
+   "at": "L09.7"
   },
   {
    "id": "S10a",
@@ -1917,7 +2101,7 @@
     ]
    ],
    "step": 2,
-   "at": "L10.2"
+   "at": "L10.3"
   },
   {
    "id": "S11",
@@ -2092,7 +2276,7 @@
     ]
    ],
    "step": 2,
-   "at": "L14.2"
+   "at": "L14.3"
   },
   {
    "id": "S15",
@@ -2100,9 +2284,9 @@
     [
      0,
      [
-      1203.0,
-      -11.0,
-      1.9
+      1204.2,
+      -9.6,
+      2.1
      ],
      [
       1200.1,
@@ -2114,9 +2298,9 @@
     [
      1,
      [
-      1202.8,
-      -12.0,
-      1.9
+      1204.0,
+      -10.4,
+      2.1
      ],
      [
       1200.1,
@@ -2171,13 +2355,13 @@
      0,
      [
       1204.0,
-      -43.5,
-      4.7
+      -47.0,
+      8.0
      ],
      [
       1197.0,
       -8.0,
-      0.8
+      0.0
      ],
      34
     ],
@@ -2185,13 +2369,13 @@
      1,
      [
       1204.0,
-      -43.5,
-      4.7
+      -47.0,
+      8.0
      ],
      [
       1200.0,
       -8.0,
-      0.8
+      0.0
      ],
      34
     ]
@@ -2337,7 +2521,7 @@
     ]
    ],
    "step": 2,
-   "at": "L19.1"
+   "at": "L19.2"
   },
   {
    "id": "S20",
@@ -2757,7 +2941,7 @@
     ]
    ],
    "step": 2,
-   "at": "L28.1"
+   "at": "L28.2"
   },
   {
    "id": "S29a",
@@ -2827,7 +3011,7 @@
     ]
    ],
    "step": 2,
-   "at": "L29.2"
+   "at": "L29.3"
   },
   {
    "id": "S30a",
@@ -3039,12 +3223,12 @@
      1,
      [
       0.0,
-      -2.0,
-      112.0
+      -16.0,
+      108.0
      ],
      [
       0.0,
-      -2.0,
+      -16.0,
       0.0
      ],
      34
@@ -3060,12 +3244,12 @@
      0,
      [
       0.0,
-      -2.0,
-      112.0
+      -16.0,
+      108.0
      ],
      [
       0.0,
-      -2.0,
+      -16.0,
       0.0
      ],
      34
@@ -3074,12 +3258,12 @@
      1,
      [
       0.0,
-      -2.0,
-      108.0
+      -16.0,
+      103.0
      ],
      [
       0.0,
-      -2.0,
+      -16.0,
       0.0
      ],
      34
@@ -3156,7 +3340,7 @@
     ]
    ],
    "step": 2,
-   "at": "L35.2"
+   "at": "L35.3"
   },
   {
    "id": "S36",
@@ -3199,7 +3383,7 @@
     [
      0,
      [
-      794.6,
+      793.7,
       27.6,
       0.95
      ],
@@ -3213,8 +3397,8 @@
     [
      1,
      [
-      794.2,
-      27.0,
+      793.5,
+      27.1,
       0.95
      ],
      [
@@ -3296,7 +3480,7 @@
     ]
    ],
    "step": 2,
-   "at": "L38.2"
+   "at": "L38.3"
   },
   {
    "id": "S39",
@@ -3374,12 +3558,12 @@
     [
      0,
      [
-      789.0,
-      25.2,
+      788.3,
+      24.7,
       1.3
      ],
      [
-      792.6,
+      792.8,
       26.4,
       1.3
      ],
@@ -3388,12 +3572,12 @@
     [
      1,
      [
-      789.4,
-      25.6,
+      788.6,
+      25.1,
       1.3
      ],
      [
-      792.8,
+      793.0,
       26.4,
       1.3
      ],
@@ -3716,7 +3900,7 @@
     ]
    ],
    "step": 2,
-   "at": "L46.2"
+   "at": "L46.3"
   },
   {
    "id": "S47a",
@@ -3786,7 +3970,7 @@
     ]
    ],
    "step": 2,
-   "at": "L47.1"
+   "at": "L47.2"
   },
   {
    "id": "S48",
@@ -3794,28 +3978,28 @@
     [
      0,
      [
-      1598.0,
-      -38.5,
-      1.6
+      1591.0,
+      -37.0,
+      1.8
      ],
      [
-      1599.5,
+      1598.0,
       -31.5,
-      1.2
+      1.0
      ],
      34
     ],
     [
      1,
      [
-      1601.0,
-      -38.0,
-      1.6
+      1592.0,
+      -37.0,
+      1.8
      ],
      [
-      1604.5,
+      1606.0,
       -31.5,
-      1.2
+      1.0
      ],
      34
     ]
@@ -4026,21 +4210,21 @@
     ]
    },
    {
-    "at": "L14.2-0.05",
+    "at": "L14.3-0.05",
     "pos": [
      1196.0,
      -22.5
     ]
    },
    {
-    "at": "L14.2",
+    "at": "L14.3",
     "pos": [
      1196.0,
      -22.5
     ]
    },
    {
-    "at": "L14.2",
+    "at": "L14.3",
     "pos": [
      1196.0,
      -22.5
@@ -4502,7 +4686,7 @@
     ]
    },
    {
-    "at": "L28.1",
+    "at": "L28.2",
     "pos": [
      791.0,
      12.6
@@ -4538,14 +4722,14 @@
     ]
    },
    {
-    "at": "L29.2",
+    "at": "L29.3",
     "pos": [
      791.0,
      15.4
     ]
    },
    {
-    "at": "L29.2",
+    "at": "L29.3",
     "pos": [
      791.0,
      15.4
@@ -4663,21 +4847,21 @@
     ]
    },
    {
-    "at": "L35.2-0.05",
+    "at": "L35.3-0.05",
     "pos": [
      1196.0,
      -21.3
     ]
    },
    {
-    "at": "L35.2",
+    "at": "L35.3",
     "pos": [
      1196.0,
      -21.3
     ]
    },
    {
-    "at": "L35.2",
+    "at": "L35.3",
     "pos": [
      1192.0,
      14.0
@@ -4696,8 +4880,8 @@
     ]
    },
    {
-    "at": "L35.2",
-    "from": "L35.2",
+    "at": "L35.3",
+    "from": "L35.3",
     "to": "L36",
     "mouth": [
      0.5,
@@ -4706,7 +4890,7 @@
     "flap": true
    },
    {
-    "at": "L35.2+0.4",
+    "at": "L35.3+0.4",
     "pos": [
      1192.0,
      14.0
@@ -4949,14 +5133,14 @@
     "blend": 0.0
    },
    {
-    "at": "L46.2",
+    "at": "L46.3",
     "pos": [
      798.5,
      19.6
     ]
    },
    {
-    "at": "L46.2",
+    "at": "L46.3",
     "pos": [
      1600.0,
      -26.4
@@ -5016,7 +5200,7 @@
     ]
    },
    {
-    "at": "L47.1",
+    "at": "L47.2",
     "pos": [
      1599.0,
      -30.0
@@ -5113,7 +5297,7 @@
     ]
    },
    {
-    "at": "L05.2",
+    "at": "L05.3",
     "pos": [
      800.0,
      4.5
@@ -5301,21 +5485,21 @@
     ]
    },
    {
-    "at": "L08.2",
+    "at": "L08.3",
     "pos": [
      799.4,
      -28.6
     ]
    },
    {
-    "at": "L08.2",
+    "at": "L08.3",
     "pos": [
      799.4,
      -28.6
     ]
    },
    {
-    "at": "L08.2",
+    "at": "L08.3",
     "pos": [
      807.6,
      -24.3
@@ -5445,21 +5629,21 @@
     ]
    },
    {
-    "at": "L08.2",
+    "at": "L08.3",
     "pos": [
      800.6,
      -28.6
     ]
    },
    {
-    "at": "L08.2",
+    "at": "L08.3",
     "pos": [
      800.6,
      -28.6
     ]
    },
    {
-    "at": "L08.2",
+    "at": "L08.3",
     "pos": [
      808.55,
      -24.3
@@ -5567,14 +5751,14 @@
     "blend": 0.0
    },
    {
-    "at": "L09.3",
+    "at": "L09.7",
     "pos": [
      799.4,
      -28.2
     ]
    },
    {
-    "at": "L09.3",
+    "at": "L09.7",
     "pos": [
      808.4,
      -31.4
@@ -5585,7 +5769,7 @@
     "expr": "wide"
    },
    {
-    "at": "L09.3+0.6",
+    "at": "L09.7+0.6",
     "pos": [
      809.65,
      -29.9
@@ -5720,7 +5904,7 @@
     ]
    },
    {
-    "at": "L10.2",
+    "at": "L10.3",
     "pos": [
      815.0,
      1.6
@@ -5731,7 +5915,7 @@
     ]
    },
    {
-    "at": "L10.2+0.1",
+    "at": "L10.3+0.1",
     "pos": [
      815.0,
      1.6
@@ -5845,7 +6029,7 @@
    "name": "dim"
   },
   {
-   "at": "L01.2",
+   "at": "L01.4",
    "name": "stay"
   },
   {
@@ -5998,7 +6182,7 @@
   ],
   "sfx": [
    {
-    "at": "L01.2",
+    "at": "L01.4",
     "kind": "thud",
     "db": -11
    },
@@ -6024,5 +6208,5 @@
    ]
   ]
  },
- "rev": 3
+ "rev": 5
 }
