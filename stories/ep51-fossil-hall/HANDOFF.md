@@ -12,3 +12,10 @@
 
 ## Update 2026-11-03 (handed to the second orchestrator)
 Stopped before verifying the rescue fix. This container has no Blender, so the 1-4 edits (committed in the WIP) are still unrendered and unchecked. PR #171 (proof.yml) was still open on main at 16:19 UTC. Next: merge main, render stills 0-5 s and a full preview (jacket colour changed), mix, flash, preflight, then critic r6 (one round only; if it fails, drop with a hold line), then the proof and qa on the proof, merge only when qa passes and `test` is green. Don't dispatch render.yml or upload.yml; don't edit queue.txt.
+
+## Update 2026-11-03 (second orchestrator's rescue session): STATUS dropped
+Rescue fix worked: critic r6 (0-5 s) **approve**, avg 7.75, nothing under 5; standards r5 approve. Proof run 41721240075 (sha 3a5fb9c) passed its own verdict (craft 0 blocks/0 warns of 32, flash pass, clips pass, -14.0 LUFS / -1.7 dBTP). Proof qa (opus) = **fail**, two separate fixes (qa/ep51-fossil-hall.json):
+1. S081, 109.3-111.3 s ("I turn and say it OUT LOUD"): narrator not in frame; a visitor's navy head + gold shoulder fill the frame. Move the visitor's L62 mark off the camera line, or move the camera.
+2. S014-S015, 16.2-19.7 s ("Grandpa ABE... BRIGHTEST man in TOWN"): the passers-by (marks moved in the clip fix) stand at the lens, shielding arms fill the centre, Abe is a speck. Push them back/aside.
+Minor: eyes shut on frame 0 (blink); S005 planner's arms hide his face.
+Rule: only a single small fix (one shot or one cue) may be re-proofed once; this is two fixes over three shots, so dropped, not re-proofed. If the owner ever wants it back: fix 1 and 2 above, merge current main, redraw the proof (~55 min), qa again. Hold line for package.json is the second orchestrator's to record on main (no drop PR from here). PR #199 left open, not merged.
