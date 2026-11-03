@@ -401,7 +401,7 @@ class Character:
         top = H / 2
         hair = kit.plastic(spec.get("hair_c", "#2a1d15"), 0.65)
         style = spec.get("hair", "cap")
-        if style in ("cap", "long", "bun", "swoop", "spiky") and spec.get("hat") == "bucket":
+        if style in ("cap", "long", "bun", "swoop", "spiky", "mop") and spec.get("hat") == "bucket":
             # under a bucket hat (ep14) the crown covers the top, and the back and sides stop under the brim, so no
             # block corner pokes through it
             cut = top - 0.17
@@ -410,7 +410,7 @@ class Character:
             for sx in (-1, 1):
                 kit.box(f"{n}.hside{sx}", (0.2, 0.9, cut - (top - 0.5)), (sx * (R - 0.02), 0.2, (cut + top - 0.5) / 2),
                         hair, hg, bevel=0.08)
-        elif style in ("cap", "long", "bun", "swoop", "spiky"):
+        elif style in ("cap", "long", "bun", "swoop", "spiky", "mop"):
             kit.box(f"{n}.hcap", (2 * R + 0.08, 2 * R + 0.08, 0.3), (0, 0.02, top - 0.05), hair, hg, bevel=0.12)
             if "backscarf" in spec.get("extras", []):   # opt-in (ep22): hair right down the back of the head, so a back reads
                 kit.box(f"{n}.hback", (2 * R + 0.08, 0.32, H * 0.98), (0, R - 0.08, 0.0), hair, hg, bevel=0.1)
@@ -449,6 +449,11 @@ class Character:
             kit.box(f"{n}.hlong", (2 * R + 0.12, 0.4, H * 1.3), (0, R - 0.1, top - H * 0.65), hair, hg, bevel=0.12)
             for sx in (-1, 1):
                 kit.box(f"{n}.hlongs{sx}", (0.24, 0.8, H * 1.15), (sx * (R + 0.02), 0.1, top - H * 0.6), hair, hg, bevel=0.1)
+        if style == "mop":   # opt-in (ep48): a tall squared mop, heavy fringe, tufts over the ears
+            kit.box(f"{n}.mopt", (2 * R + 0.14, 2 * R + 0.1, 0.5), (0, 0.0, top + 0.12), hair, hg, bevel=0.1)
+            kit.box(f"{n}.mopf", (2 * R + 0.12, 0.42, 0.52), (0, -R + 0.18, top - 0.1), hair, hg, bevel=0.08)
+            for sx in (-1, 1):
+                kit.box(f"{n}.moptuft{sx}", (0.26, 0.75, 0.62), (sx * (R + 0.04), 0.05, top - 0.3), hair, hg, bevel=0.08)
         if style == "bun":
             kit.box(f"{n}.bun", (0.5, 0.5, 0.45), (0, 0.15, top + 0.3), hair, hg, bevel=0.18)
         if style == "buzz":
