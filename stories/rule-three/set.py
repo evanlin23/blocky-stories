@@ -1056,9 +1056,9 @@ def animate(kit, story, tl, t, ctx):
     over["pet key"] = 300.0
     over["pet inside"] = 160.0
     over["bridge key"] = 500.0
-    over["mom key"] = 420.0
-    over["mom face"] = 80.0
-    over["mom back"] = 90.0
+    over["mom key"] = 300.0
+    over["mom face"] = 55.0
+    over["mom back"] = 65.0
     over["kit lamp"] = 60.0
     over["kit fill"] = 150.0
     over["kit face"] = 40.0

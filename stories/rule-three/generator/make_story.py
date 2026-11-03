@@ -215,7 +215,7 @@ S("L06.2+0.25", ((0.0, -26.0, 0.5), (1.6, 0.0, 3.2), 30, (0.3, -20.0, 0.7), (1.6
 OTIS_STAMP = {"arms": [60, 0]}
 S("L07", ((0.55, 3.2, 1.55), (0.0, 6.0, 1.4), 40, (0.35, 3.5, 1.55), (0.0, 6.0, 1.4), 40),
   who={"me": (OT, 0, "smirk", {"arms": [50, 0]})}, tod="night", note="Otis at the lectern, the pocket page's corner showing")
-S("L08+0.15", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
+S("L08+0.3", ((-2.4, 4.0, 3.15), (-5.0, 4.0, 3.15), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
   note="the brass clock at nine")
 cue("L08", "clock", v=[9, 0])
 S("L08.2", ((0.5, 3.4, 2.3), (-0.2, 5.6, 1.2), 34), who={"me": (OT, 0, "smirk", {"arms": [50, 0]})},
@@ -371,9 +371,10 @@ S("L37", ((0.8, 1.6, 1.7), (-1.1, 4.4, 1.6), 32), who={"me": (OT, 0, "smile", {}
   note="Milo, grinning, slapping the side of the book")
 raw("milo", "L37+0.3", arms=[0, 100], blend=0.1)
 cue("L37", "book", mode="open")
-S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -4.4, 1.4), (-2.3, -4.4, 1.2), 22), tod="dusk",
+S("L38", ((7.5, -2.0, 1.4), (-2.3, -2.0, 1.2), 22, (7.5, -4.4, 1.4), (-2.3, -4.4, 1.2), 22),
   who={"milo": (X(-2.6, -1.8), 180, "grin", {"arms": [70, 70]}), "me": (X(-2.6, -0.65), 0, "smile", {"arms": [70, 70]})},
   note="the two of us hauling the red book out of the hall door, Milo walking backward at the front")
+cue("L38", "tod", n="dusk", dur=1.4)
 cue("L38", "book", mode="carry")
 walk("milo", "L38+0.1", X(-2.6, -1.8), keep_yaw=True, yaw=180)
 walk("milo", "L38.2", X(-2.3, -3.6), keep_yaw=True, yaw=180)
@@ -383,7 +384,7 @@ cue("L38", "bookpath", v=[-2.6, -1.2, 1.05])
 cue("L38.2", "bookpath", v=[-2.3, -3.0, 1.05])
 LINE = {f"t{i}": (X(x, y), 90 if x < 0 else -90, "smile", {}) for i, (x, y) in enumerate(
     [(-3.4, -7), (3.4, -9), (-3.5, -12), (3.4, -14), (-3.4, -17), (3.5, -19), (-3.4, -23), (3.4, -25)])}
-S("L38.2", ((3.6, -2.4, 1.9), (-1.8, -4.4, 1.25), 26, (3.4, -3.8, 1.9), (-1.0, -6.2, 1.25), 26), tod="dusk",
+S("L38.2", ((3.6, -2.4, 1.9), (-1.8, -4.4, 1.25), 26, (3.4, -3.8, 1.9), (-1.0, -6.2, 1.25), 26),
   who={"milo": (X(-2.3, -3.6), 140, "grin", {"arms": [70, 70]}), "me": (X(-2.3, -2.4), 0, "smile", {"arms": [70, 70]}), **LINE},
   note="Milo walking backward at the front, face and the red book in frame, the townsfolk stepping aside and smiling")
 walk("milo", "L38.2+0.1", X(-2.3, -3.6), keep_yaw=True, yaw=140)
@@ -393,9 +394,10 @@ walk("me", "L38>", X(-0.8, -5.4))
 cue("L38.2+0.1", "bookpath", v=[-2.3, -3.0, 1.05])
 cue("L38>", "bookpath", v=[-0.8, -6.0, 1.05])
 TABLE_Y = 3.6
-S("L39", ((MOM - 0.9, 0.5, 1.5), (MOM - 0.1, 4.5, 1.15), 26, (MOM - 0.7, 1.0, 1.5), (MOM - 0.1, 4.5, 1.15), 26), tod="night",
+S("L39", ((MOM - 0.9, 0.5, 1.5), (MOM - 0.1, 4.5, 1.15), 26, (MOM - 0.7, 1.0, 1.5), (MOM - 0.1, 4.5, 1.15), 26),
   who={"mom": (X(MOM, 4.9), 0, "smile", {}), "me": (X(MOM + 1.35, 3.5), -90, "smile", {"arms": [72, 0]})},
   note="Mom's bright dining room: Mom in her paper crown, the giant book across the table among cake plates; my stamp coming down")
+cue("L39", "tod", n="night", dur=1.3)
 cue("L39-0.3", "stamp", mode="hand")
 raw("me", "L39", arms=[112, 0], blend=0.2)
 cue("L39", "book", mode="table")
@@ -405,11 +407,11 @@ S("L39.1+0.3", ((MOM + 0.9, 1.7, 2.0), (BK[0], BK[1], 1.2), 30, (MOM + 0.8, 1.9,
   who={"mom": (X(MOM, 4.9), 0, "smile", {}), "me": (X(MOM + 1.35, 3.5), -90, "smile", {"arms": [92, 0]})},
   note="close: the red-knobbed stamp comes down on the page, ink-blue, a soft thunk")
 cue("L39.1+0.3", "stamp", mode="path")
-cue("L39.1+0.3", "stamppos", v=[BK[0], BK[1], 1.5])
-cue("L39.1+0.35", "stamppos", v=[BK[0], BK[1], 1.5])
-cue("L39.1+0.6", "stamppos", v=[BK[0], BK[1], 1.075])
-cue("L39.1+0.9", "stamppos", v=[BK[0], BK[1], 1.075])
-cue("L39.2+0.2", "stamppos", v=[BK[0], BK[1], 1.5])
+cue("L39.1+0.3", "stamppos", v=[BK[0], BK[1], 1.3])
+cue("L39.1+0.5", "stamppos", v=[BK[0], BK[1], 1.3])
+cue("L39.1+0.85", "stamppos", v=[BK[0], BK[1], 1.075])
+cue("L39.1+1.15", "stamppos", v=[BK[0], BK[1], 1.075])
+cue("L39.2+0.5", "stamppos", v=[BK[0], BK[1], 1.3])
 S("L40", ((MOM - 0.7, 2.0, 1.55), (MOM - 1.4, 4.4, 1.1), 20),
   who={"milo": (X(MOM - 1.4, 4.4, -0.3), 10, "smile", {"arms": [70, 20]})},
   note="Milo seated behind the table with a pencil and a slip, smiling")
@@ -514,7 +516,7 @@ story = {
         "sfx": [{"at": "L01.3+0.1", "kind": "thud", "db": -3},
                 {"at": "L08.2", "kind": "thud", "db": -12},
                 {"at": "L28+0.9", "kind": "door", "db": -14},
-                {"at": "L39.1+0.6", "kind": "thud", "db": -14},
+                {"at": "L39.1+0.85", "kind": "thud", "db": -14},
                 {"at": "L42+0.3", "kind": "whoosh", "db": -30, "dur": 0.4},
                 {"at": "L43", "kind": "whoosh", "db": -28, "dur": 0.4},
                 {"at": "L44", "kind": "whoosh", "db": -26, "dur": 0.3}],
