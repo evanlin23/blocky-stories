@@ -1,5 +1,5 @@
 # Final render on GitHub's free runners (public repo). On every push to main, each story whose gate is open and
-# that has no film yet (at most 2 a run, slots a and b) is drawn in 16 parallel shards, then assembled: finish, narration, mix and the
+# that has no film yet (at most 2 a run, slots a and b) is drawn in 32 parallel shards, then assembled: finish, narration, mix and the
 # flash measure. The film is kept as the run artifact `film-<story>` (90 days); the daily upload takes it from there.
 name: render
 on:
@@ -12,7 +12,7 @@ on:
 concurrency: {group: render, cancel-in-progress: false}
 permissions: {contents: read, actions: read}
 env:
-  SHARDS: 16
+  SHARDS: 32   # finer shards: a fast runner takes the next one (docs/research/render-throughput.md, change 6)
 jobs:
   plan:
     runs-on: ubuntu-latest
@@ -63,7 +63,9 @@ jobs:
             stories/${{ matrix.story }}/voice-timings.json
           retention-days: 5
 
-  # Two slots (plan_renders.py caps a run at 2 stories): each story's assemble waits only for its own shards.
+  # Two slots (plan_renders.py caps a run at 2 stories), both drawing at once: each story's assemble waits only for its own
+  # shards. 16 + 16 = 32 draw lanes of the account's ~40 (39 jobs ran together at 19:58:45 UTC on 2026-11-03); the other
+  # ~8 are for one proof (8 draws) and the PR test checks. Never cancel a run while it is drawing.
   draw-a:
     needs: [plan, voice]
     if: ${{ !cancelled() && needs.plan.outputs.a != '' }}   # one story's failure doesn't stop the other
@@ -71,7 +73,7 @@ jobs:
     timeout-minutes: 340
     strategy:
       fail-fast: false
-      max-parallel: 16   # the free plan runs 20 jobs at once: leave 4 for the test checks on story PRs
+      max-parallel: 16   # both slots together: at most 32 draw lanes of the account's ~40; the rest is for a proof and PR tests
       matrix:
         shard: ${{ fromJSON(needs.plan.outputs.shards) }}
     steps:
@@ -94,13 +96,13 @@ jobs:
         with: {story: "${{ needs.plan.outputs.a }}"}
 
   draw-b:
-    needs: [plan, voice, draw-a]
+    needs: [plan, voice]   # not draw-a: both slots draw at once
     if: ${{ !cancelled() && needs.plan.outputs.b != '' }}   # one story's failure doesn't stop the other
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:
       fail-fast: false
-      max-parallel: 16   # the free plan runs 20 jobs at once: leave 4 for the test checks on story PRs
+      max-parallel: 16   # both slots together: at most 32 draw lanes of the account's ~40; the rest is for a proof and PR tests
       matrix:
         shard: ${{ fromJSON(needs.plan.outputs.shards) }}
     steps:
