@@ -28,6 +28,13 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python scripts/trends.py >> "$GITHUB_STEP_SUMMARY"
+      - name: deep trend data (descriptions, tags, channels, top comments of the 40 fastest)
+        continue-on-error: true   # ~45 API units; never blocks the commit
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python scripts/trends_deep.py >> "$GITHUB_STEP_SUMMARY"
       - name: commit
         run: |
           git config user.name "github-actions[bot]"

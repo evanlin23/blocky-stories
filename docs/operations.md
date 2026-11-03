@@ -76,3 +76,10 @@ After weeks of never firing, GitHub's `schedule:` triggers started on 2026-11-02
 a fresh day. Fixes: no workflow has a `schedule:` any more (cron-job.org is the only clock), the upload day is the
 Central date, and an automatic upload only starts between 5 AM and 7 PM Central. A manual run with a story still
 works any time.
+
+## YouTube API units (free quota: 10,000 a day, all workflows share it)
+- Daily upload: about 1,600 (an insert is 1,600). Monday metrics: `trends.py` about 1,005 (ten searches at 100 each),
+  `trends_deep.py` about 45 (one videos.list, one channels.list, 40 commentThreads.list at 1 each), capped at 300 in
+  the script. A metrics run and an upload on the same day total under 3,000.
+- `trends_deep.py` writes `docs/trends/deep/<date>.json` and `.md`. Descriptions and comments are trimmed and
+  @handles masked, because the repo is public.
