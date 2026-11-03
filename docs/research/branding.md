@@ -1,5 +1,10 @@
 # Branding: keep "PandaNanoAdventures" or rename? (2026-11-03)
 
+> **Decision (update, 2026-11-03): rename to Buhtown, with the Buhkeeper as its host and avatar.** See section 6.
+> The owner wanted "Buh" in the name ("I kinda want something with Buh in the name", then "Buhtown or The Buhkeeper
+> i think is funny"). Sections 1 to 5 are the research that led there. The 12-name table in section 3 is from the
+> first brand scan; that file was overwritten by the Buh scan the same day, and the old version is in git history.
+
 The owner, 2026-11-03: "Do we have to fix our panda nano branding? With a rename new everything? We should download
 and save the old stuff." And: "We can keep all of the old videos just privated." The owner makes the final call on the
 name and applies it in Studio.
@@ -161,3 +166,77 @@ Don't delete anything. The old videos stay private on the channel.
    hold.
 10. Then change things in this order: name, handle, picture, banner, About, keywords. Check the channel page on a
     phone and a TV.
+
+## 6. The owner's pick: Buhtown, hosted by the Buhkeeper
+The owner, 2026-11-03: "I kinda want something with Buh in the name", then "Buhtown or The Buhkeeper i think is
+funny". Buh is the owner's brand family (@BuhExplains, and a channel called "Buh"), and this channel joins it in its
+own lane.
+
+**Clashes** (the brand scan, run again with the Buh names; `docs/research/brand-scan/2026-11-03.md`):
+
+| Name | Same-name channels | Closest results | Against the owner's Buh channels |
+|---|---|---|---|
+| **Buhtown** | **none** | one unrelated channel (38 subs) | distinct ("Buh" plus a place) |
+| **The Buhkeeper** / Buhkeeper | **none** | none | distinct |
+| Buh Town (two words) | none | "Bug Town" channels (7 to 23 subs): reads as "bug" at a glance | avoid the space |
+| Buhtown Stories | none | none | fine, but longer |
+| Buh (alone) | **6 channels** (55 to 2,430 subs) | | **avoid**: it's crowded, and it's the owner's other channel |
+
+**Blind panel** (a fresh agent, 12 names, the two Buh names mixed with real channels and our earlier candidates):
+
+| Name | Memorable | Fits creepy rules | Makes you tap | Kid-coded |
+|---|---|---|---|---|
+| The Buhkeeper | 7 | 7 | 8 | no (borderline: "Buh" is goofy) |
+| Buhtown | 7 | 6 | 7 | borderline |
+| (Hushtown, for reference) | 8 | 9 | 7 | no |
+| (PandaNanoAdventures) | 4 | 1 | 2 | **yes, strongly** |
+
+Both Buh names beat the real hit channels in the list (Gneef, Ruckus Town, PurpleHat, Gelo Stories,
+OutwardAnimates) and our current name. Asked which pairing reads better, the panel picked **channel "Buhtown" with a
+host called "the Buhkeeper"**: "the town is the brand and the world every rule lives in, and a keeper of that town is
+a natural narrator who can show up on screen without being stuck in the channel name."
+
+**Recommendation: the channel is Buhtown, and the Buhkeeper is its host.**
+- **Buhtown holds every lane.** The creepy rule stories, what-ifs and horror puzzles can all happen "in Buhtown". A
+  channel named after the host would promise the host in every Short, and most of our Shorts aren't the Keeper's.
+- **It's one word of 7 letters,** like the winners (18 of 23 blocky winners use one word, median 9 letters), with a
+  place in it, which is what the panel liked about Hushtown.
+- **The Buhkeeper lives on as the face:**
+  - He's the avatar and the narrator of the rulebook Shorts ("I'm the Buhkeeper. I keep Buhtown's rulebook.").
+  - He's the series name for the playlist.
+  - He's the pin's voice.
+- **The kid-coding risk is managed by everything around the name:** the dusk art, the About text below, and stories
+  that stay creepy. The panel scored Buhtown borderline, not yes.
+
+**Handles** (YouTube checks them live in Studio. The scan found no channel using either name, so both are likely
+free):
+- **@Buhtown**. Fallbacks: **@BuhtownStories**, then **@Buhtown.tv**.
+- Also claim nothing for the Buhkeeper. He's a character, not a channel.
+
+**Brand files for Buhtown:**
+
+| File | Size | Use |
+|---|---|---|
+| `brand/avatar-800.png` | 800 × 800 | the Buhkeeper, the channel picture |
+| `brand/avatar-preview-98.png` | 98 px circle | how it shows next to a Short |
+| `brand/banner-buhtown-2560x1440.png` | 2560 × 1440 | **the banner to upload**: Buhtown at dusk, "BUHTOWN" in our own font (Schibsted Grotesk, OFL) inside the safe band |
+| `brand/banner-2560x1440.png` | 2560 × 1440 | the same banner without the name |
+| `brand/banner-safe-area-guide.png` | 1280 × 720 | the safe band outlined |
+
+To rebuild: `$BLOCKY_BPY brand/render_brand.py both 48`, then `python brand/name_banner.py BUHTOWN`.
+
+**About text** (Studio → Customization → Basic info):
+> I'm the Buhkeeper. I keep the rulebook for Buhtown, a town that really shouldn't need one. Every Short is one of
+> its rules, and what happened to whoever broke it. Every story here is made up, and built and animated by us in
+> blocky 3D. New rules most days.
+
+**Playlists** (make each once it has 3 Shorts):
+- "The Buhkeeper's Rulebook": the host's episodes, in order.
+- "Buhtown Rules": every creepy rule story.
+- "Which One Is Wrong?": the horror puzzles.
+
+**Keep in mind:**
+- **Stories don't have to say "Buhtown".** "In this town" still works, and the channel name supplies the rest.
+- **The Buhkeeper Shorts say it once,** in line 2, never in line 1 (the opening recipe).
+- **Hard rule 4 still holds:** "Buh" isn't a game name.
+- **Backup first:** the checklist in section 5 is unchanged, and the 94 old Shorts stay private.
