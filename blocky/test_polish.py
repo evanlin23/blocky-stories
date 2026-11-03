@@ -334,3 +334,37 @@ def test_reveal_shots_are_calm():
     s = next(x for x in tl["shots"] if x["id"] in calm)
     hy = [acting.state(tl, "me", s["start"] + k / 30)["head_yaw"] for k in range(int((s["end"] - s["start"]) * 30))]
     assert max(hy) - min(hy) < 0.03                                                # nearly still on the reveal
+
+
+def test_bright_grade_lift_keeps_colour():
+    """Craft metrics, ep62: the lift added grey and washed the picture out (saturation 0.19). It scales by luma now."""
+    rng = np.random.default_rng(1)
+    img = (rng.random((40, 40, 3)) * 0.35).astype(np.float32)        # a dark, colourful frame
+    sat = lambda a: float(((a.max(-1) - a.min(-1)) / np.maximum(a.max(-1), 1e-6)).mean())
+    g = {"vignette": 0, "contrast": 1.0}
+    lifted = np.clip(post.grade(img, {**g, "lift": 0.035}), 0, 1)
+    plain = np.clip(post.grade(img, g), 0, 1)
+    assert lifted.mean() > plain.mean() and sat(lifted) == pytest.approx(sat(plain), abs=1e-3)
+
+
+def test_voice_sits_over_the_music_and_ambience(tmp_path):
+    """v2.1 (craft metrics, ep62: 6.3 dB): the music dips under the lines until the voice is 10.5 dB over it."""
+    import math
+    st, tl = story()
+    st["music"]["sections"][0]["energy"] = 1.0
+    vo = _vo(tmp_path, tl)
+    out, stats = sound.mix(tl, st, vo)
+    s = stats["stems_lufs"]
+    gap = s["voice"] - 10 * math.log10(sum(10 ** (s[k] / 10) for k in ("music", "amb") if k in s))
+    assert gap >= 10.0 and abs(stats["lufs"] + 14.0) < 0.2
+
+
+def test_ones_moving_draws_camera_moves_on_every_frame():
+    st, tl = story(look={"polish": {"ones": "moving"}})
+    for s in st["shots"]:
+        s["step"] = 2
+    voice = {"voice": "am_adam", "rate": 1.45, "tempo": 1.03, "model": "x",
+             "lines": {l: {"text": "In the hall, it moved.", "onset": 0.05, "end": 1.6, "chunks": [[0.05, 0.7], [0.75, 1.6]]}
+                       for l in [f"L{i:02d}" for i in range(1, 7)]}}
+    on = timeline.build(st, voice)
+    assert all(s["step"] == 1 for s in on["shots"])          # every shot's camera moves with the pack
