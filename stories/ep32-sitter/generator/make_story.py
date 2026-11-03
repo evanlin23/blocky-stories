@@ -174,7 +174,7 @@ def shot(sid, at, what, cam, **flags):
 # 01 the rule: frame 1 is the half-pine face
 shot("S01", 0, "frame 1: a pine panel on an easel, a face half painted, half bare pine and pencil", canvas_cam(7, 1.25, 1.3, 36, push=0.2),
      hand=0.002)
-shot("S01b", "L01.2", "punch in on the line where paint stops and pine begins", canvas_cam(7, 0.7, 1.31, 40, push=0.12, side=-0.02), hand=0.002)
+shot("S01b", "L01.1", "punch in on the line where paint stops and pine begins", canvas_cam(7, 0.7, 1.31, 40, push=0.12, side=-0.02), hand=0.002)
 shot("S02", "L02", "a quick push to the empty pencil eye", canvas_cam(7, 0.62, 1.36, 42, push=0.15, side=0.11), hand=0.002)
 shot("S03", "L03", "the life room: a panel with a painted green bench", canvas_cam(3, 1.7, 1.3, 30, push=0.3, side=0.05), hide_cast=["bg2"])
 shot("S03b", "L03.3", "closer on the bench, the meter steps toward Thursday", canvas_cam(3, 1.0, 1.25, 36, push=0.2, side=-0.08))
@@ -198,11 +198,10 @@ shot("S07b", "L07.3", "a close on the side of my head: the ear patch, raw pine w
      hand=0.002)
 # 02 the want
 M1, M2 = (39.25, -0.2), (40.0, -0.2)
-shot("S08", "L08", "Mom's front hall, bright: Mom smiling at me, a hand on my shoulder", c([0, [39.2, 1.6, 1.5], [39.62, -0.2, 1.45], 26],
-                                                                                          [1, [39.5, 1.3, 1.5], [39.62, -0.2, 1.45], 26]))
-shot("S08b", "L08.2", "Mom's smile, close", face_cam(M2, -90, -50, 1.7, 1.52, 32, 1.5, push=0.15))
-shot("S09", "L08.4", "the wider hall: Mom's folded easel against the wall behind us, a panel turned to it",
-     c([0, [41.7, -1.0, 1.7], [38.7, -0.3, 1.1], 22], [1, [41.7, -0.7, 1.65], [38.7, -0.3, 1.1], 22]))
+shot("S08", "L08", "Mom's front hall, bright: Mom smiling at me, both turned 3/4 to camera, a hand on my shoulder", c([0, [39.62, 1.8, 1.55], [39.62, -0.2, 1.5], 30], [1, [39.62, 1.45, 1.55], [39.62, -0.2, 1.5], 30]))
+shot("S08b", "L08.2", "Mom's smile, face to camera", face_cam(M2, -135, -30, 1.5, 1.55, 32, 1.52, push=0.1))
+shot("S09", "L08.3", "the wider hall: Mom's folded easel against the wall behind us, a panel turned to it",
+     c([0, [40.4, 2.4, 1.7], [39.0, -0.3, 1.2], 22], [1, [40.2, 2.1, 1.7], [39.0, -0.3, 1.2], 22]))
 shot("S10", "L09", "me on the arts centre steps in sun, a pine panel under my arm", still([-8.9, -5.0, 1.55], [-6.1, -3.0, 1.15], 28))
 shot("S10b", "L09.1", "the life room: Kofi waving me in toward easel 8",
      c([0, [-1.0, -4.4, 1.6], [-3.9, -2.7, 1.4], 24], [1, [-1.4, -4.0, 1.6], [-3.9, -2.7, 1.4], 24]))
@@ -213,44 +212,44 @@ shot("S12", "L11", "over a painter's shoulder, a bus-stop panel", canvas_cam(5, 
 shot("S12b", "L11.3", "my panel: a young man's figure in pencil, colour going in", canvas_cam(8, 1.1, 1.3, 34, push=0.2), hide_cast=["me", "kofi"])
 shot("S13", "L12", "my panel close: Dario's grin and brown eyes, his face centre bare pine", canvas_cam(8, 0.8, 1.38, 38, push=0.15, side=0.0),
      hide_cast=["me", "kofi"])
-shot("S13b", "L12.2", "me, proud, the ear patch in frame", face_cam(ME, yaw_to(ME, DAIS), 90, 1.2, 1.6, 32, 1.56, push=0.1), hide_cast=["kofi"])
+shot("S13b", "L12.2", "me, proud, the ear patch in frame", face_cam(ME, yaw_to(ME, DAIS), 68, 1.3, 1.62, 32, 1.6, push=0.1), hide_cast=["kofi", "petra"])
 shot("S14a", "L13", "my panel: a pine square with a pencil nose outline where the nose should be", canvas_cam(8, 0.62, 1.32, 46, push=0.1, side=0.0),
      hide_cast=["me", "kofi"])
-shot("S14", "L13.3", "Kofi at the door with his keys, waving me out, the lamps ramping down behind him",
+shot("S14", "L13.2", "Kofi at the door with his keys, waving me out, the lamps ramping down behind him",
      c([0, [-1.4, -2.0, 1.55], [-4.9, -2.85, 1.4], 24], [1, [-1.9, -2.2, 1.55], [-4.9, -2.85, 1.4], 24]))
-shot("S15", "L14", "the car park at dusk under the lamp post, me looking back", still([-5.0, -12.0, 1.0], [-1.4, -8.4, 1.1], 28))
-shot("S15b", "L14.2", "through the lit window, my panel on easel 8, Dario's painted eyes turned to the glass",
-     c([0, [0.6, -9.0, 1.5], [3.0, -0.5, 1.2], 38], [1, [1.0, -8.0, 1.5], [3.0, -0.5, 1.25], 46]), turn8=True)
+shot("S15", "L14", "the car park at dusk under the lamp post, me looking back", still([-4.2, -12.0, 1.5], [-1.2, -8.5, 1.55], 28))
+shot("S15b", "L14.1", "through the lit window, my panel on easel 8, Dario's painted eyes turned to the glass",
+     c([0, [3.4, -7.2, 1.4], [3.08, -0.4, 1.3], 64], [1, [3.3, -6.6, 1.4], [3.08, -0.4, 1.3], 70]), turn8=True, hide_cast=["petra"])
 # 03 Tuesday to Thursday: Mom's hall at night
 shot("S16", "L15", "Mom's hall at night, one wall lamp: pine Dario at the far end by the stairs, facing my door",
      c([0, [38.35, 3.4, 1.5], [40.5, 6.6, 1.2], 28], [1, [38.5, 3.6, 1.5], [40.5, 6.6, 1.2], 30]), hand=0.01)
 shot("S16b", "L15.2", "me in my doorway, frozen", face_cam((38.35, 3.85), 90, 70, 2.2, 1.6, 30, 1.5, push=0.2), hand=0.008)
 shot("S17", "L16", "close on his face: the cross and two empty ovals, no nose",
      face_cam((40.4, 6.2), yaw_to((40.4, 6.2), DOOR), 15, 2.4, 1.78, 40, 1.8, push=0.4), hand=0.004)
-shot("S18", "L17", "low from my doorway: pine Dario halfway down the hall, boots to chest in colour",
-     c([0, [38.35, 3.3, 0.55], [39.2, 4.7, 0.9], 28], [1, [38.4, 3.45, 0.5], [39.1, 4.4, 1.0], 28]), hand=0.01)
+shot("S18", "L17", "low from my doorway: pine Dario halfway down the hall, boots to chest in colour; push ends 1.5 m from his chest",
+     c([0, [38.2, 2.5, 0.7], [38.95, 4.55, 1.35], 28], [1, [38.3, 3.1, 0.8], [38.95, 4.55, 1.35], 28]), hand=0.01)
 shot("S18b", "L17.4", "his feet one board from my threshold", c([0, [38.8, 3.25, 0.35], [39.0, 3.9, 0.1], 36], [1, [38.7, 3.35, 0.3], [38.95, 3.9, 0.12], 36]), hand=0.006)
 # Thursday morning: my room
 shot("S19", "L18", "bright morning, from my pillow: Dario at the foot of my bed, full colour",
      c([0, [BED[0] - 0.05, 0.85, 1.2], [BED[0], -1.45, 1.3], 24], [1, [BED[0], 0.65, 1.2], [BED[0], -1.45, 1.3], 24]), hand=0.004)
-shot("S19b", "L18.2", "me sitting up fast, the ear patch toward the camera", face_cam((BED[0], 0.45), 0, 90, 1.4, 1.3, 30, 1.2, push=0.2))
+shot("S19b", "L18.1", "me sitting up fast, the ear patch toward the camera", face_cam((BED[0], 0.45), 0, 70, 1.6, 1.3, 30, 1.25, push=0.2))
 shot("S20", "L19", "close on Dario's face: warm skin, brown eyes, the pine nose patch with its pencil outline",
      face_cam((BED[0], -1.45), 180, 25, 1.9, 1.72, 36, 1.7, push=0.25))
 shot("S21", "L20", "the room as the music drops: Dario beside the bed, starting to lean", c([0, [BED[0] - 1.3, -1.6, 1.5], [BED[0] + 0.4, 0.1, 1.0], 26],
                                                                                           [1, [BED[0] - 1.1, -1.4, 1.5], [BED[0] + 0.4, 0.1, 1.0], 26]))
 TH_BED = (BED[0] + 1.6, 0.3)
 shot("S22", "L20.2", "3/4: Dario leaning in from the waist, his face a hand from mine, grinning. Never touches",
-     c([0, [BED[0] + 0.5, -0.9, 1.6], [BED[0] + 0.55, 0.3, 1.55], 24], [1, [BED[0] + 0.45, -0.75, 1.6], [BED[0] + 0.55, 0.3, 1.55], 26]), hand=0.004)
+     c([0, [BED[0] + 0.5, -1.75, 1.55], [BED[0] + 0.5, 0.35, 1.5], 22], [1, [BED[0] + 0.5, -1.55, 1.55], [BED[0] + 0.5, 0.35, 1.5], 24]), hand=0.004)
 shot("S22b", "L21", "me, eyes going to the door", face_cam((BED[0], 0.45), 0, 40, 1.9, 1.42, 32, 1.35, push=0.2))
 # 04 dinner
 shot("S23", "L22", "Mom's hall, warm evening: Mom at the table, Dario coming down the stairs",
      c([0, [39.0, 0.1, 1.5], [40.7, 4.6, 1.3], 24], [1, [39.2, 0.2, 1.5], [40.9, 4.3, 1.2], 24]))
 shot("S23b", "L22.3", "Dario in the third chair", c([0, [39.4, 0.2, 1.45], [40.25, 2.1, 1.5], 26], [1, [39.6, 0.5, 1.45], [40.2, 2.1, 1.55], 28]))
-shot("S24", "L23", "Mom calmly laying a third plate in front of Dario", c([0, [39.3, 0.6, 1.5], [39.9, 2.4, 1.1], 24], [1, [39.5, 0.8, 1.45], [39.9, 2.4, 1.1], 24]))
+shot("S24", "L23", "Mom calmly laying a third plate in front of Dario", c([0, [39.5, 0.2, 1.65], [39.5, 2.3, 1.35], 22], [1, [39.5, 0.4, 1.65], [39.5, 2.3, 1.35], 22]))
 shot("S24b", "L23.2", "me, stunned", face_cam(SEAT_ME, 90, -45, 1.8, 1.45, 30, 1.45, push=0.15))
 PICM, PICY = (39.55, 0.12), (39.55, -0.45)
-shot("S25", "L24", "THE PICTURE: Mom's fingertip on the ear patch, her face close and kind, her folded easel behind us",
-     c([0, [41.4, -0.2, 1.62], [39.55, -0.17, 1.58], 30], [1, [41.1, -0.2, 1.62], [39.55, -0.17, 1.58], 32]), hand=0.002)
+shot("S25", "L24", "THE PICTURE: Mom turns to camera, her fingertip on the ear patch, her face close and kind, her folded easel behind us",
+     c([0, [41.3, -0.1, 1.62], [39.55, -0.15, 1.58], 36], [1, [41.0, -0.1, 1.62], [39.55, -0.15, 1.58], 38]), hand=0.002)
 shot("S26", "L25", "the life room, a wide of the eight easels in afternoon light, nobody there",
      c([0, [-4.6, -3.6, 1.7], [1.5, 0.4, 1.3], 22], [1, [-4.2, -3.2, 1.7], [1.5, 0.4, 1.3], 22]))
 shot("S26b", "L25.2", "Kofi's glasses catching the lamp", face_cam((0.6, -1.8), 20, 55, 1.9, 1.6, 34, 1.55, push=0.2))
@@ -258,31 +257,28 @@ shot("S27", "L26", "Mom across the table, a small guilty smile", face_cam(SEAT_M
 shot("S27b", "L26.2", "me, the ear patch in frame, getting it", face_cam(SEAT_ME, 90, -75, 1.7, 1.42, 30, 1.45, push=0.15))
 shot("S28", "L27", "Mom's old folded easel in the hall, close, paint-worn",
      c([0, [39.2, -0.1, 1.1], [37.95, -0.4, 0.95], 34], [1, [39.0, -0.2, 1.1], [37.95, -0.4, 0.95], 34]))
-shot("S29", "L28", "Mom looking at me like she's still scared to change a line", face_cam(SEAT_MOM, 0, -30, 1.8, 1.5, 32, 1.46, push=0.15))
+shot("S29", "L28", "Mom looking at me like she's still scared to change a line", face_cam(SEAT_MOM, 0, 20, 1.6, 1.5, 32, 1.46, push=0.15))
 shot("S29b", "L28.3", "the old panel, turned to the wall", c([0, [39.1, -0.3, 0.9], [37.95, -1.05, 0.45], 34], [1, [39.0, -0.5, 0.8], [37.95, -1.05, 0.45], 34]))
 shot("S30", "L29", "Dario, grinning, a hand out, Mom sliding the salt to him", c([0, [39.2, 0.9, 1.5], [40.1, 2.2, 1.35], 28], [1, [39.4, 1.0, 1.5], [40.0, 2.2, 1.35], 28]))
 # 05 finishing
 shot("S31", "L30", "Mom and me in her hall, the old easel being unfolded, cut before hands meet it",
-     c([0, [40.6, -0.9, 1.5], [38.75, -0.2, 1.1], 24], [1, [40.3, -0.7, 1.5], [38.75, -0.2, 1.1], 24]))
+     c([0, [40.6, 1.8, 1.6], [38.9, -0.2, 1.5], 28], [1, [40.4, 1.5, 1.6], [38.9, -0.2, 1.5], 28]))
 shot("S32", "L31", "the life room, bright: Dario on the dais stool as my sitter, the nine strokes on the dais edge under his boots",
-     c([0, [0.35, -2.9, 0.55], [0.0, -0.4, 0.9], 24], [1, [0.35, -2.6, 0.7], [0.0, -0.4, 1.15], 24]), tally=True, hand=0.002)
+     c([0, [0.4, -2.7, 0.8], [0.0, -0.4, 0.75], 24], [1, [0.3, -2.4, 0.85], [0.0, -0.4, 0.8], 24]), tally=True, hand=0.002)
 shot("S32b", "L31.3", "me at easel 8, side on, steady", c([0, [4.7, -2.1, 1.55], [3.7, -0.7, 1.4], 28], [1, [4.4, -2.0, 1.55], [3.7, -0.7, 1.4], 28]))
 shot("S33", "L32", "Mom at the easel beside mine, her old panel back to camera, her face just over its top edge",
-     c([0, [1.3, 1.0, 1.65], [MOMP[0], MOMP[1], 1.45], 28], [1, [1.5, 0.9, 1.6], [MOMP[0], MOMP[1], 1.45], 30]))
+     c([0, [1.7, 0.2, 2.0], [MOMP[0], MOMP[1], 1.55], 30], [1, [1.9, 0.2, 2.0], [MOMP[0], MOMP[1], 1.55], 32]))
 shot("S33b", "L32.3", "close on my head: the pine patch warming to skin", face_cam(ME, yaw_to(ME, DAIS), 90, 1.0, 1.6, 36, 1.58, push=0.15),
      hand=0.002)
 shot("S34", "L33", "Kofi behind us, arms folded, smiling", face_cam((4.5, 0.0), 180, 40, 2.2, 1.6, 30, 1.55, push=0.2), hide_cast=["bg6"])
-shot("S34b", "L33.2", "two-shot, Mom and me at our easels, Dario grinning on the dais", c([0, [1.2, -0.2, 1.7], [3.3, 0.2, 1.4], 24],
-                                                                                        [1, [1.4, -0.4, 1.7], [3.3, 0.2, 1.4], 24]))
+shot("S34b", "L33.2", "two-shot, Mom and me at our easels", c([0, [1.7, -1.6, 1.9], [3.67, -0.25, 1.55], 22], [1, [1.9, -1.5, 1.9], [3.67, -0.25, 1.55], 22]))
 # 06 the new student
 shot("S35", "L34", "the life room, colder: Petra at easel 7 turning her panel to the wall, glancing around",
-     c([0, [1.6, 1.6, 1.7], [PETRA[0], PETRA[1], 1.35], 28], [1, [1.9, 1.5, 1.7], [PETRA[0], PETRA[1], 1.35], 28]))
+     c([0, [1.3, -0.3, 1.9], [PETRA[0], PETRA[1], 1.55], 28], [1, [1.5, -0.5, 1.9], [PETRA[0], PETRA[1], 1.55], 28]))
 shot("S36", "L35", "from behind easel 7, the panel's front: a face half painted, half bare pine and pencil", canvas_cam(7, 1.25, 1.3, 36, push=0.2),
      hand=0.002, hide_cast=["petra"])
 P7S = (round(PETRA[0] - 0.25 * T8[0] * 0, 3), PETRA[1])
-shot("S37", "L36", "me at Petra's shoulder, kind, about to speak", c([0, [2.2, -2.2, 1.7], [PETRA[0] + 0.1, PETRA[1] - 0.2, 1.5], 28],
-                                                                    [1, [2.5, -2.0, 1.7], [PETRA[0] + 0.1, PETRA[1] - 0.2, 1.5], 30]))
-
+shot("S37", "L36", "me at Petra's shoulder, kind, about to speak", c([0, [1.3, -0.8, 1.75], [3.4, -2.1, 1.6], 26], [1, [1.5, -0.7, 1.75], [3.4, -2.1, 1.6], 28]))
 CANVAS = {"S01", "S01b", "S02", "S03", "S03b", "S06c", "S11b", "S12", "S12b", "S13", "S14a", "S36"}
 WIDE = {"S04": 1.2, "S04b": 1.0, "S05": 1.2, "S05b": 1.4, "S06": 1.3, "S06b": 1.3}
 
@@ -302,10 +298,15 @@ def clampp(p, tgt):
     return [round(x, 3), round(y, 3), z]
 
 
+NOWIDEN = {"S08", "S08b", "S09", "S13b", "S18", "S19b", "S22", "S24", "S25", "S29", "S31", "S32", "S33", "S34b", "S35", "S37"}
+
+
 def widen(sid, cam):
     k = 1.0 if sid in CANVAS else WIDE.get(sid, 2.3)
     if sid in ("S10", "S15", "S15b"):
         return cam
+    if sid in NOWIDEN:      # an exact camera: placed at the true distance, with a wider lens (the engine's view is narrow)
+        return [kk[:3] + [round(kk[3] * 0.5, 1)] + kk[4:] for kk in cam]
     out = []
     for kk in cam:
         loc, tgt = kk[1], kk[2]
@@ -388,7 +389,7 @@ hide("cust", "L06")
 key("me", "L07", hidden=True)
 put("me", "L07", ME_CAF, yaw=180, expr="worried", arms=[0, 0], head=[0, 0])
 hide("me", "L08")
-put("me", "L08", M1, yaw=90, expr="smile", arms=[0, 0], head=[0, 0])
+put("me", "L08", M1, yaw=135, expr="smile", arms=[0, 0], head=[0, 0])
 hide("me", "L09")
 put("me", "L09", (-5.9, -3.0), yaw=90, expr="worried", arms=[0, 0])
 hide("me", "L09.1")
@@ -399,15 +400,15 @@ key("me", "L11", expr="soft", blend=0.3)
 key("me", "L12", expr="smile", blend=0.3)
 key("me", "L12.2", expr="grin", blend=0.3)
 key("me", "L13", expr="soft", blend=0.3)
-put("me", "L13.3", (-3.0, -2.5), yaw=-90, expr="soft", arms=[0, 0])
-walk("me", "L13.3+0.9", (-3.9, -2.5))
+put("me", "L13.2", (-3.0, -2.5), yaw=-90, expr="soft", arms=[0, 0])
+walk("me", "L13.2+0.9", (-3.9, -2.5))
 put("me", "L14", CARME, yaw=180, expr="worried", arms=[0, 0])
-key("me", "L14.2", expr="scared", blend=0.4)
+key("me", "L14.1", expr="scared", blend=0.4)
 hide("me", "L15")
 put("me", "L15.2", (38.45, 3.85), yaw=yaw_to((38.45, 3.85), (40.4, 6.2)), expr="scared", arms=[0, 0], head=[0, 0])
 hide("me", "L17")
-put("me", "L18.2", (BED[0], 0.45, Z_BED), yaw=0, expr="scared", **SIT)
-key("me", "L18.2", head=[0, 0])
+put("me", "L18.1", (BED[0], 0.45, Z_BED), yaw=0, expr="scared", **SIT)
+key("me", "L18.1", head=[0, 0])
 key("me", "L19", expr="wide", blend=0.2)
 key("me", "L21", expr="scared", head=[-40, 0], blend=0.3)
 put("me", "L22", (SEAT_ME[0], SEAT_ME[1], Z_CHAIR), yaw=90, expr="worried", **SIT)
@@ -423,14 +424,14 @@ key("me", "L32.3", expr="smile", blend=0.5)
 put("me", "L36", (PETRA[0] + T8[0] * 0.0 + 0.3, PETRA[1] - 0.85), yaw=yaw_to((PETRA[0] + 0.3, PETRA[1] - 0.85), PETRA), expr="smile", arms=[0, 0], **STAND)
 
 # Mom
-put("mum", "L08", M2, yaw=-90, expr="smile", arms=[0, 82])
+put("mum", "L08", M2, yaw=-135, expr="smile", arms=[0, 82])
 key("mum", "L08.2", expr="smile")
 hide("mum", "L09")
 put("mum", "L22", (SEAT_MOM[0], SEAT_MOM[1], Z_CHAIR + 0.02), yaw=0, expr="soft", **SIT)
 key("mum", "L23.1", arms=[0, 60], expr="soft", blend=0.4)
 key("mum", "L23.2+0.9", arms=[24, 24], blend=0.5)
-put("mum", "L24", (PICY[0], PICY[1]), yaw=180, expr="soft", arms=[0, 78], head=[0, 0], **STAND)
-key("mum", "L24.2", arms=[0, 82], expr="smile", blend=0.4)
+put("mum", "L24", (PICY[0], PICY[1]), yaw=180, expr="soft", arms=[0, 78], head=[-50, 0], **STAND)
+key("mum", "L24.1", arms=[0, 82], expr="smile", blend=0.4)
 put("mum", "L26", (SEAT_MOM[0], SEAT_MOM[1], Z_CHAIR + 0.02), yaw=0, expr="worried", **SIT)
 key("mum", "L28", expr="soft", blend=0.4)
 key("mum", "L29", arms=[0, 50], expr="smile", blend=0.4)
@@ -462,9 +463,9 @@ hide("theo", "L34")
 put("kofi", "L09.1", (-3.0, -2.6), yaw=-90, arms=[0, 70], expr="smile")
 key("kofi", "L09.2", arms=[0, 20], blend=0.3)
 put("kofi", "L10", (KP[0], KP[1]), yaw=yaw_to(KP, ME), expr="soft", arms=[0, 0], head=[0, 28])
-hide("kofi", "L13.2")
-put("kofi", "L13.3", (-5.0, -2.9), yaw=-90, expr="smile", arms=[0, 78])
-key("kofi", "L13.5", arms=[0, 30], blend=0.5)
+hide("kofi", "L13.1")
+put("kofi", "L13.2", (-5.0, -2.9), yaw=-90, expr="smile", arms=[0, 78])
+key("kofi", "L13.4", arms=[0, 30], blend=0.5)
 hide("kofi", "L14")
 put("kofi", "L25.2", (0.6, -1.8), yaw=200, expr="soft", arms=[0, 0])
 hide("kofi", "L26")
@@ -482,7 +483,7 @@ cues = [
     {"at": "L08", "name": "time", "set": "hall"},
     {"at": "L09", "name": "time", "set": "day"},
     {"at": "L09.1", "name": "time", "set": "warm"},
-    {"at": "L13.3", "name": "time", "set": "dusk"},
+    {"at": "L13.2", "name": "time", "set": "dusk"},
     {"at": "L15", "name": "time", "set": "hallnight"},
     {"at": "L18", "name": "time", "set": "bed"},
     {"at": "L22", "name": "time", "set": "halleve"},
@@ -522,7 +523,7 @@ cues = [
     {"at": "L23.1", "name": "prop", "which": "plate3", "on": True},
     {"at": "L32", "name": "prop", "which": "mom_easel", "on": True},
     # the lamps ramp from 100% to 35% over 1.2 s as Kofi locks up, and hold dim (never dark)
-    {"at": "L13.3", "name": "dip", "down": 1.2, "hold": 0.0, "hold_to": "L15", "up": 0.4, "depth": 0.65},
+    {"at": "L13.2", "name": "dip", "down": 1.2, "hold": 0.0, "hold_to": "L15", "up": 0.4, "depth": 0.65},
     # colour fills: the bench (S05), the cake (S05b), Dario's nose and my ear (Monday)
     {"at": "L04.3+0.55", "name": "ramp", "name_": "bench", "v": 1.0, "dur": 0.95},
     {"at": "L05.1", "name": "ramp", "name_": "cake", "v": 0.1, "dur": 0.0},
@@ -556,13 +557,13 @@ story = {
     "tail": 0,
     "look": {"fog": "#bcd0e2", "fog_density": 0.006, "fog_start": 12.0, "sky": "#cfe3f5", "sky_strength": 1.0, "exposure": 0.55,
              "flash_safe": True,
-             "polish": {"emph": ["L01.3", "L07.5", "L11.4", "L15.4", "L17.4", "L20.2", "L23.2", "L26.2", "L31.4"],
+             "polish": {"emph": ["L01.2", "L07.5", "L11.4", "L15.4", "L17.3", "L20.2", "L23.2", "L26.2", "L31.3"],
                         "reveal": ["L07.5", "L15.4", "L20.2", "L23.2"],
                         "twist": "L23",
                         "quiet": [["L24", "L25"]],
                         "hold": ["S25"],
                         "sway": ["S16", "S16b", "S17", "S18", "S18b"],
-                        "bed_kind": "room"}},
+                        "bed_kind": "room", "bed_lufs": -40.0, "bed_drop_db": -4.0}},
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.03, 0.015, -0.02], "saturation": 1.02, "contrast": 1.05,
               "vignette": 0.25, "bloom": 0.22, "grain": 0.01},
     "phonemes": {"Kofi": "kˈOfi"},

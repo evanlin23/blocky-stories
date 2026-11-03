@@ -57,3 +57,12 @@ for ln in OUT:
         ln["chunks"][1][1] = "with those"
         ln["chunks"][2][1] = "pencil lines,"
 (HERE / "lines.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")
+
+# round 1 fix (2026-11-03): caption chunks under 0.2 s merge into the next chunk (voice-timings had them at 0.11 to 0.19 s)
+MERGE = {"L01": 0, "L08": 3, "L13": 0, "L14": 0, "L17": 4, "L18": 1, "L19": 1, "L24": 0, "L31": 3}
+for ln in OUT:
+    m = MERGE.get(ln["id"])
+    if m is not None:
+        ch = ln["chunks"]
+        ch[m:m + 2] = [[ch[m][0] + " " + ch[m + 1][0], ch[m][1] + " " + ch[m + 1][1]]]
+(HERE / "lines.json").write_text(json.dumps(OUT, indent=1, ensure_ascii=False) + "\n")
