@@ -110,8 +110,12 @@ def c(*keys):
     return [list(k) for k in keys]
 
 
-def still(loc, tgt, lens, roll=0):
-    return c([0, loc, tgt, lens, roll])
+def still(loc, tgt, lens, roll=0, push=0.07):
+    """A held shot is never static (2026-11-03): a slow push of `push` of the way to the target, lens +1."""
+    if not push:
+        return c([0, loc, tgt, lens, roll])
+    end = [round(loc[i] + (tgt[i] - loc[i]) * push, 3) for i in range(3)]
+    return c([0, loc, tgt, lens, roll], [1, end, tgt, lens + 1.5, roll])
 
 
 def move(a, b, lens_a, lens_b=None, roll=0):
@@ -134,12 +138,14 @@ LANE = -15.6
 # (at, what, step, camera)
 SHOTS = [
     # 01 the rule, L01 to L10 ------------------------------------------------------------------------------------
-    (0, "the haggler at the lamp stall, face big, coat fading blue to orange", 2,
+    (0, "me close behind the table, sun on my face, white coat still; two coats fade behind", 2,
+     move(([0.55, 1.65, 1.62], [0.55, -0.9, 1.55]), ([0.4, 0.75, 1.62], [0.28, -0.9, 1.55]), 24, 28)),
+    ("L02", "close on my still white sleeve, a coat fading behind it", 2,
+     move(([1.9, 0.9, 1.3], [0.35, -0.75, 1.2]), ([1.6, 0.5, 1.3], [0.35, -0.75, 1.2]), 40, 44)),
+    ("L03", "the haggler at the lamp stall, face big, coat fading blue to orange", 2,
      move(([-10.55, 1.95, 1.72], [-9.55, -0.65, 1.55]), ([-10.4, 1.9, 1.72], [-9.55, -0.65, 1.55]), 32)),
-    ("L02", "close on his sleeve finishing the fade", 2, still([-8.6, -1.5, 1.3], [-9.5, -0.65, 1.2], 32)),
-    ("L02.3+0.25", "his face, sheepish, the lamp back on the table", 2, still([-10.2, 1.2, 1.7], [-9.5, -0.65, 1.56], 34)),
-    ("L03", "high wide over the row: thirty boots open, flat bright coats", 4,
-     move(([-8.0, -9.0, 8.5], [4.0, 3.0, 0.6]), ([-5.0, -8.0, 8.2], [5.0, 3.0, 0.6]), 24)),
+    ("L03.2", "close on his sleeve finishing the fade", 2, still([-8.6, -1.5, 1.3], [-9.5, -0.65, 1.2], 32)),
+    ("L03.4", "his face, sheepish, the lamp back on the table", 2, still([-10.2, 1.2, 1.7], [-9.5, -0.65, 1.56], 34)),
     ("L04", "the green sofa: the couple sitting, coats mid-fade", 2, still([11.0, -9.0, 1.4], [11.0, -4.6, 1.15], 26)),
     ("L04.1", "the couple standing beside it, other colours, mid-fade", 2, still([13.6, -9.0, 1.5], [13.0, -4.6, 1.2], 26)),
     ("L05", "Walter behind single shoes, sun on his moustache", 2, still([8.55, -1.0, 1.55], [9.2, 0.9, 1.5], 36)),
@@ -300,8 +306,9 @@ key("white_seller", "L09", expr="worried", head=[0, 12], blend=0)
 key("bg2", 0, expr="neutral", head=[0, 6], blend=0)
 
 # the haggler and the couple
-put("haggler", 0, [HAG[0], HAG[1]], yaw=180, arms=[28, 12], head=[0, 12], expr="neutral")
-key("haggler", "L02.3+0.25", expr="worried", blend=0.2)
+put("haggler", 0, [1.05, -2.8], yaw=180, arms=[28, 12], head=[0, 12], expr="neutral")
+put("haggler", "L03", [HAG[0], HAG[1]], yaw=180, arms=[28, 12], head=[0, 12], expr="neutral")
+key("haggler", "L03.4+0.25", expr="worried", blend=0.2)
 hide("haggler", "L04")
 put("sofa_a", "L04", [10.45, -4.55, 0.12], yaw=0, sit=True, expr="smirk")
 put("sofa_b", "L04", [11.55, -4.55, 0.12], yaw=0, sit=True, expr="neutral")
@@ -314,7 +321,14 @@ hide("buyer", "L07")
 put("buyer", "L10", [-0.45, -0.75], yaw=180)
 hide("buyer", "L11")
 
-# me
+# me: first at the table in the opening (no wide), still as stone
+put("me", 0, [0.2, -0.9], yaw=180, expr="neutral", head=[0, 0])
+key("me", "L01>-0.6", expr="smirk", blend=0.3)
+key("me", "L02", arms=[55, 55], blend=0)
+hide("me", "L03")
+put("buyer", 0, [1.95, -4.2], yaw=180, head=[0, 4])
+put("buyer", "L02", [-1.7, -3.0], yaw=180, head=[0, 4])
+hide("buyer", "L03")
 put("me", "L09", list(STALL_ME), yaw=0, expr="neutral")
 key("me", "L10", expr="smirk", blend=0.3)
 hide("me", "L11")
@@ -424,8 +438,13 @@ cues = [
     {"at": "L69", "name": "tod", "set": "flat"},
     # coats: a colour change is always a fade of a second or more (dur 0 is only ever across a cut)
     {"at": 0, "name": "coat", "who": "haggler", "to": BLUE, "dur": 0},
-    {"at": 0.4, "name": "coat", "who": "haggler", "to": "#9d9082", "dur": 2.2},
-    {"at": "L02.1", "name": "coat", "who": "haggler", "to": ORANGE, "dur": 1.0},
+    {"at": 0.15, "name": "coat", "who": "haggler", "to": ORANGE, "dur": 2.0},
+    {"at": 0, "name": "coat", "who": "buyer", "to": "#8658c9", "dur": 0},
+    {"at": 0.25, "name": "coat", "who": "buyer", "to": "#e86aa0", "dur": 1.9},
+    {"at": "L03", "name": "coat", "who": "haggler", "to": BLUE, "dur": 0},
+    {"at": "L03+0.1", "name": "coat", "who": "haggler", "to": "#9d9082", "dur": 1.0},
+    {"at": "L03.2", "name": "coat", "who": "haggler", "to": ORANGE, "dur": 1.0},
+    {"at": "L06-0.05", "name": "coat", "who": "buyer", "to": "#8658c9", "dur": 0},
     {"at": "L04", "name": "coat", "who": "sofa_a", "to": "#2fb3a3", "dur": 1.5},
     {"at": "L04+0.1", "name": "coat", "who": "sofa_b", "to": "#f0902a", "dur": 1.4},
     {"at": "L04.1", "name": "coat", "who": "sofa_a", "to": "#f2c230", "dur": 1.3},
@@ -524,19 +543,69 @@ cues = [
 # the fold only shows with the hatch up: the folded chair is "on" at L70 only, and stays in the closed boot unseen
 
 sfx = [
+    # the opening: a dry hollow knock on COLOR, a whoosh into the sleeve, a soft tick into the rule
+    {"at": "L01>-0.3", "kind": "thud", "db": -9},
+    {"at": "L01>-0.3", "kind": "knock", "db": -14, "pattern": [0.0], "tone": "hand"},
+    {"at": "L02-0.05", "kind": "whoosh", "db": -20, "dur": 0.4},
+    {"at": "L03-0.05", "kind": "whoosh", "db": -22, "dur": 0.4},
+    {"at": "L04-0.05", "kind": "whoosh", "db": -24, "dur": 0.4},
+    {"at": "L09-0.05", "kind": "whoosh", "db": -26, "dur": 0.4},
+    {"at": "L25", "kind": "whoosh", "db": -22, "dur": 0.6},
+    {"at": "L26", "kind": "thud", "db": -22},
+    {"at": "L27", "kind": "thud", "db": -9},
+    {"at": "L27", "kind": "hit", "db": -16},
+    {"at": "L28", "kind": "thud", "db": -20},
+    {"at": "L32", "kind": "thud", "db": -20},
+    {"at": "L43-0.05", "kind": "whoosh", "db": -24, "dur": 0.6},
+    {"at": "L44", "kind": "thud", "db": -7},
+    {"at": "L44", "kind": "hit", "db": -14},
+    {"at": "L46", "kind": "thud", "db": -18},
+    {"at": "L48.2", "kind": "creak", "db": -14, "dur": 0.9},
+    {"at": "L50", "kind": "thud", "db": -9},
+    {"at": "L50+0.1", "kind": "creak", "db": -9, "dur": 1.6},
+    {"at": "L51", "kind": "hit", "db": -18},
+    {"at": "L57", "kind": "whoosh", "db": -20, "dur": 0.5},
+    {"at": "L58-0.05", "kind": "whoosh", "db": -22, "dur": 0.6},
+    {"at": "L64", "kind": "thud", "db": -20},
+    {"at": "L69-0.05", "kind": "whoosh", "db": -26, "dur": 0.5},
+    {"at": "L70", "kind": "latch", "db": -14},
+    {"at": "L70.2", "kind": "latch", "db": -12},
+    {"at": "L75", "kind": "thud", "db": -12},
     {"at": "P01+0.15", "kind": "whoosh", "db": -22, "dur": 0.6},
-    {"at": "P01+0.4", "kind": "thud", "db": -26},
+    {"at": "P01+0.4", "kind": "thud", "db": -12},
+    {"at": "P01+0.4", "kind": "hit", "db": -18},
     {"at": "L27", "kind": "sting", "db": -15},
     {"at": "L30", "kind": "click", "db": -20},
     {"at": "L34", "kind": "click", "db": -24},
     {"at": "L23", "kind": "click", "db": -20},
     {"at": "L37+0.2", "kind": "door", "db": -26, "dur": 0.8},
     {"at": "P02+0.15", "kind": "creak", "db": -6, "dur": 1.0},
+    {"at": "P02+0.7", "kind": "thud", "db": -12},
     {"at": "L44", "kind": "sting", "db": -13},
     {"at": "L50", "kind": "glide", "db": -17, "dur": 1.6},
     {"at": "L61+0.3", "kind": "bell", "db": -17, "dur": 2.0},
     {"at": "L70.1+0.8", "kind": "door", "db": -12, "dur": 1.0},
     {"at": "L75+0.5", "kind": "glide", "db": -14, "dur": 1.4},
+]
+
+# punch-ins on the key words, and a shake on the scares (each a short hold, then back)
+FX = [
+    {"at": "L01>-0.3", "kind": "punch", "dur": 0.5, "zoom": 1.1},
+    {"at": "L02.1", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+    {"at": "L03.3", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+    {"at": "L06.1", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+    {"at": "L09", "kind": "punch", "dur": 0.4, "zoom": 1.08},
+    {"at": "L18", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+    {"at": "P01+0.4", "kind": "shake", "dur": 0.3, "amp": 0.8},
+    {"at": "L27", "kind": "shake", "dur": 0.4, "amp": 1.0},
+    {"at": "L27", "kind": "punch", "dur": 0.4, "zoom": 1.12},
+    {"at": "P02+0.7", "kind": "shake", "dur": 0.3, "amp": 0.6},
+    {"at": "L44", "kind": "punch", "dur": 0.5, "zoom": 1.15},
+    {"at": "L44", "kind": "shake", "dur": 0.4, "amp": 1.0},
+    {"at": "L50", "kind": "shake", "dur": 0.5, "amp": 0.9},
+    {"at": "L51", "kind": "punch", "dur": 0.4, "zoom": 1.12},
+    {"at": "L61", "kind": "punch", "dur": 0.4, "zoom": 1.1},
+    {"at": "L74.2", "kind": "punch", "dur": 0.4, "zoom": 1.08},
 ]
 
 story = {
@@ -562,7 +631,7 @@ story = {
     "shots": remap(shots),
     "acting": remap(acting),
     "cues": remap(cues),
-    "fx": [],
+    "fx": remap(FX),
     "music": {"root": 52, "mode": "minor", "bpm": 76, "seed": 53,
               "sections": [
                   {"at": 0, "voices": ["bubble", "pad"], "energy": 0.4},
@@ -577,7 +646,7 @@ story = {
                   {"at": "L60", "voices": ["drone", "pad", "piano"], "energy": 0.45, "mode": "major", "root": 52},
                   {"at": "L69", "voices": ["drone", "choir"], "energy": 0.32, "mode": "minor"},
               ]},
-    "sound": {"floor": "grass", "steps_db": -22,
+    "sound": {"floor": "grass", "steps_db": -22, "rev": 2,
               "ambience": [
                   {"kind": "wind", "from": 0, "to": "end", "lufs": -38},
                   {"kind": "room", "from": 0, "to": "L13", "lufs": -40},

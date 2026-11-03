@@ -145,7 +145,7 @@ Every word is the narrator's. Pip's two quotes (L16 and L39, L41) are reported i
 
 ## The lore connection (one only)
 
-Two tarp-green tally strokes, short and upright, scratched into the chrome of our car's tailgate latch: two for a stall run by two. Shown once, under L70 ("I fold it FLAT / and shut it / in the BOOT."), as the tailgate comes down: a close insert on the latch, held 1.6 s. Not narrated, never mentioned. The strokes are in the Tilted's tarp green, with no extra stroke.
+Two tarp-green tally strokes, short and upright, scratched into the chrome of our car's tailgate latch: two for a stall run by two. Shown once, under L70 ("I fold it FLAT / and shut it / in the TRUNK."), as the tailgate comes down: a close insert on the latch, held 1.6 s. Not narrated, never mentioned. The strokes are in the Tilted's tarp green, with no extra stroke.
 
 ## Format
 
@@ -243,7 +243,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [close: a ragged strip of tarp-green canvas hanging off the chair's left arm, stirring a little. Then I pick up Pip's coat from the table and fold it over my arm (cut away from hands: the coat is over my arm in the next shot)]
 - `L36` narrator: I find Pip / at the BUS SHELTER / up the LANE.
   - [the small wooden shelter halfway up the hill lane in fog. Pip on the bench, `tired`. She's fine. Her coat is over my arm]
-- `L37` narrator: In her JUMPER, / her BAG / at her FEET.
+- `L37` narrator: In her SWEATER, / her BAG / at her FEET.
   - [close: Pip in her mustard jumper, a canvas holdall by her boots. A bus's headlamps ramp on over 1 s in the fog behind]
 - `L38` narrator: She's let / THREE BUSES / go BY.
   - [the bus, blank destination blind, pulling away up the lane without her]
@@ -317,9 +317,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [close: Pip in the chair, no tarp strip on the arm, the goods on the table facing every which way]
 - `L66` narrator: I load her BAG / in the CAR.
   - [the holdall in the estate's boot, me beside it, `smile`. Cut away from hands]
-- `L67` narrator: And drive her / to the COACH / over the HILL.
+- `L67` narrator: And drive her / to the BUS / over the HILL.
   - [the cream estate climbing the lane in morning sun, seen from the field]
-- `L68` narrator: She waves / till the coach / goes over the TOP.
+- `L68` narrator: She waves / till the BUS / goes over the TOP.
   - [two shots: Pip at a coach window in marigold, `smile` with happy tears, then the coach going over the brow of the hill, small]
 
 ## 06 One chair (L69 to L75)
@@ -329,7 +329,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 - `L69` narrator: Her chair / is EMPTY / on SUNDAYS now.
   - [the stall: me in blue behind the table, Pip's chair empty beside me in plain daylight]
-- `L70` narrator: I fold it FLAT / and shut it / in the BOOT.
+- `L70` narrator: I fold it FLAT / and shut it / in the TRUNK.
   - [three shots: the folded chair in the boot (cut away from hands), the tailgate coming down, then the lore insert: close on the chrome tailgate latch, two short upright tarp-green strokes scratched into it, held 1.6 s. Not narrated]
 - `L71` narrator: A stall for ONE / doesn't need / a second SEAT.
   - [wide: one chair, one table, me alone, cars all along the row]
@@ -352,3 +352,6 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Light:** five ramps to pre-check (fog in, radio lamp, headlamps, fog out, coat fades). No step changes, no red.
 - **The reveal:** test still at phone size. The sideways head must read as a person's head lying on its shoulder, not a dropped prop. If it reads silly, kill the front light, raise the side key and drop the camera lower.
 - **Pip's coat:** on the stall table at L27, over my arm from L35, left on the bench beside her at L41 and L56, on her at L62.
+
+### US words (builder, 2026-11-03, coordinator's note)
+Spoken UK words changed for US viewers: L37 JUMPER to SWEATER, L67 "to the COACH" to "to the BUS", L68 "till the coach" to "till the BUS", L70 BOOT to TRUNK. The long-distance bus in the next town is the same kind of vehicle as the shelter's bus, which reads fine (she takes a bus, then another). The shot names and set still say coach/boot.

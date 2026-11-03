@@ -600,6 +600,45 @@ def build_tilted_clothes(kit, M):
 
 
 # ------------------------------------------------------------------------------------------------ build
+def build_props(kit, M, ctx):
+    """CC0 props (2026-11-03): trees behind the hedges, a chair, a stool, a lamp, a sideboard and a pot plant at each
+    neighbouring stall, bins and logs in the aisle. Our stall (k = 0) is left alone for the cameras."""
+    rnd = random.Random(77)
+    trees = ["commontree_1", "commontree_2", "birchtree_1", "commontree_1", "birchtree_1"]
+    for i in range(14):
+        x = -52 + i * 8.0 + rnd.uniform(-1.5, 1.5)
+        kit.prop(trees[i % 5], (x, -20.5 + rnd.uniform(-1, 1), 0), rot=rnd.uniform(0, 360), height=rnd.uniform(6.0, 8.0))
+        kit.prop(trees[(i + 2) % 5], (x + 3.5, 15.5 + rnd.uniform(-1, 1), 0), rot=rnd.uniform(0, 360), height=rnd.uniform(6.5, 8.5))
+    for i in range(10):
+        x = -40 + i * 9.0 + rnd.uniform(-2, 2)
+        if abs(x + 16) < 4:
+            continue
+        kit.prop("bush_2" if i % 2 else "bush_1", (x, -17.4, 0), rot=rnd.uniform(0, 360), height=rnd.uniform(1.0, 1.4))
+    for i, x in enumerate(ROW_A_X):
+        k = round(x / 4.6)
+        if k == 0:
+            continue
+        s = 1 if i % 2 else -1
+        kit.prop("chair_1" if i % 2 else "chair_2", (x + s * 1.55, 1.0, 0), rot=170 + rnd.uniform(-25, 25), height=0.86)
+        kit.prop("light_floor1", (x - s * 1.5, 1.3, 0), rot=rnd.uniform(0, 360), height=1.25)
+        kit.prop("drawer_1", (x + s * 2.4, 0.2, 0), rot=0, height=0.7)
+        kit.prop("houseplant_1" if i % 2 else "light_desk", (x + s * 2.4, 0.2, 0.7), rot=rnd.uniform(0, 360), height=0.32)
+        if i % 3 == 1:
+            kit.prop("stool", (x + s * 1.2, 1.7, 0), rot=rnd.uniform(0, 360), height=0.6)
+        if k != -2 and i % 2 == 0:
+            kit.prop("houseplant_1", (x - 0.7, 0.0, 0.785), rot=rnd.uniform(0, 360), height=0.3)
+    for j, x in enumerate(ROW_B_X):
+        s = 1 if j % 2 else -1
+        kit.prop("chair_2" if j % 2 else "chair_1", (x + s * 1.5, -8.9, 0), rot=rnd.uniform(-20, 20), height=0.86)
+        kit.prop("shelf_1", (x + s * 2.1, -9.3, 0), rot=rnd.uniform(-10, 10), height=1.5)
+        kit.prop("table_roundsmall", (x - s * 1.9, -9.3, 0), rot=0, height=0.57)
+        kit.prop("light_desk", (x + 0.7, -9.6, 0.785), rot=rnd.uniform(0, 360), height=0.3)
+    for p in [(3.2, -5.6), (-6.2, -6.4), (12.5, -7.2), (-18.5, -7.0), (-3.0, 7.8)]:
+        kit.prop("trashcan_cylindric", (p[0], p[1], ground(p[0], p[1])), rot=rnd.uniform(0, 360), height=0.6)
+    kit.prop("nat_log_stack", (-20.5, -13.2, 0), rot=95, height=0.9)
+    kit.prop("treestump", (18.5, -13.5, 0), rot=30, height=0.7)
+
+
 def build(kit, story, tl):
     M = Pal(kit)
     ctx = {"M": M}
@@ -626,6 +665,7 @@ def build(kit, story, tl):
     build_stall(kit, M, ctx)
     build_goods(kit, M, ctx)
     build_sofa(kit, M, 11.0, -4.6)
+    build_props(kit, M, ctx)
     build_house(kit, M, ctx)
     build_room(kit, M, ctx, ROOMS["kitchen"], "kitchen")
     build_room(kit, M, ctx, ROOMS["bedroom"], "bedroom")
