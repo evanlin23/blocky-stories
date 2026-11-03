@@ -498,7 +498,7 @@ sfx = [
 ]
 story = {
     "slug": "ep54-dance-hall",
-    "title": "Never cover the back of your hand",
+    "title": "Someone has the other half of my mark",
     "made_for_kids": False,
     "premise": "In a town where everyone is born with half a glowing glyph on one hand and a match out there with the rest, a friend or family, whoever you fit with, I play the records for my aunt Ros's Tuesday ballroom class in white gloves and never dance. Her half is fading, she dances every demonstration with her arms round nobody, and the floor starts to creak behind her in a stride far too long.",
     "twist": "The rule never says which side of the hand. Mine is on my palm, hidden under my record gloves, so my aunt's match was her own nephew all along, carrying her records every Tuesday. We're a family match.",
