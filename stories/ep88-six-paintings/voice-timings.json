@@ -1,0 +1,525 @@
+{
+ "voice": "am_adam",
+ "tempo": 1.03,
+ "rate": 1.45,
+ "sr": 24000,
+ "model": "PLACEHOLDER timings for the creature test still; `voice` overwrites",
+ "lines": {
+  "L01": {
+   "text": "six paintings in this hall. one of them is breathing.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 3.2,
+   "onset": 0.1,
+   "end": 3.1,
+   "chunks": [
+    [
+     0.1,
+     0.71
+    ],
+    [
+     0.71,
+     1.6
+    ],
+    [
+     1.6,
+     2.49
+    ],
+    [
+     2.49,
+     3.1
+    ]
+   ]
+  },
+  "L02": {
+   "text": "find it before the clock chimes. comment the letter.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 2.87,
+   "onset": 0.1,
+   "end": 2.77,
+   "chunks": [
+    [
+     0.1,
+     0.71
+    ],
+    [
+     0.71,
+     1.88
+    ],
+    [
+     1.88,
+     2.77
+    ]
+   ]
+  },
+  "L03": {
+   "text": "a. the old captain.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.42,
+   "onset": 0.1,
+   "end": 1.32,
+   "chunks": [
+    [
+     0.1,
+     0.43
+    ],
+    [
+     0.43,
+     1.32
+    ]
+   ]
+  },
+  "L04": {
+   "text": "b. the lady with the greyhound.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 2.03,
+   "onset": 0.1,
+   "end": 1.93,
+   "chunks": [
+    [
+     0.1,
+     0.43
+    ],
+    [
+     0.43,
+     1.04
+    ],
+    [
+     1.04,
+     1.93
+    ]
+   ]
+  },
+  "L05": {
+   "text": "c. the man in the black coat, by the garden.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 3.2,
+   "onset": 0.1,
+   "end": 3.1,
+   "chunks": [
+    [
+     0.1,
+     0.43
+    ],
+    [
+     0.43,
+     1.04
+    ],
+    [
+     1.04,
+     2.21
+    ],
+    [
+     2.21,
+     3.1
+    ]
+   ]
+  },
+  "L06": {
+   "text": "d. a bowl of pears.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.75,
+   "onset": 0.1,
+   "end": 1.65,
+   "chunks": [
+    [
+     0.1,
+     0.43
+    ],
+    [
+     0.43,
+     1.04
+    ],
+    [
+     1.04,
+     1.65
+    ]
+   ]
+  },
+  "L07": {
+   "text": "e. a stormy sea.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.42,
+   "onset": 0.1,
+   "end": 1.32,
+   "chunks": [
+    [
+     0.1,
+     0.43
+    ],
+    [
+     0.43,
+     1.32
+    ]
+   ]
+  },
+  "L08": {
+   "text": "f. an empty chair.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.42,
+   "onset": 0.1,
+   "end": 1.32,
+   "chunks": [
+    [
+     0.1,
+     0.43
+    ],
+    [
+     0.43,
+     1.32
+    ]
+   ]
+  },
+  "L09": {
+   "text": "here's a clue. look at the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 2.26,
+   "onset": 0.1,
+   "end": 2.16,
+   "chunks": [
+    [
+     0.1,
+     0.99
+    ],
+    [
+     0.99,
+     2.16
+    ]
+   ]
+  },
+  "L10": {
+   "text": "chime.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 0.53,
+   "onset": 0.1,
+   "end": 0.43,
+   "chunks": [
+    [
+     0.1,
+     0.43
+    ]
+   ]
+  },
+  "L11": {
+   "text": "it's c.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 0.81,
+   "onset": 0.1,
+   "end": 0.71,
+   "chunks": [
+    [
+     0.1,
+     0.71
+    ]
+   ]
+  },
+  "L12": {
+   "text": "look at the glass in front of his face.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 2.87,
+   "onset": 0.1,
+   "end": 2.77,
+   "chunks": [
+    [
+     0.1,
+     1.27
+    ],
+    [
+     1.27,
+     1.88
+    ],
+    [
+     1.88,
+     2.77
+    ]
+   ]
+  },
+  "L13": {
+   "text": "it fogs. then it clears.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.7,
+   "onset": 0.1,
+   "end": 1.6,
+   "chunks": [
+    [
+     0.1,
+     0.71
+    ],
+    [
+     0.71,
+     1.6
+    ]
+   ]
+  },
+  "L14": {
+   "text": "and the fog is on the outside.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 2.26,
+   "onset": 0.1,
+   "end": 2.16,
+   "chunks": [
+    [
+     0.1,
+     0.99
+    ],
+    [
+     0.99,
+     2.16
+    ]
+   ]
+  },
+  "L14a": {
+   "text": "only a living breath fogs glass from the far side.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 3.15,
+   "onset": 0.1,
+   "end": 3.05,
+   "chunks": [
+    [
+     0.1,
+     1.27
+    ],
+    [
+     1.27,
+     1.88
+    ],
+    [
+     1.88,
+     3.05
+    ]
+   ]
+  },
+  "L15": {
+   "text": "c isn't a painting.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.42,
+   "onset": 0.1,
+   "end": 1.32,
+   "chunks": [
+    [
+     0.1,
+     0.43
+    ],
+    [
+     0.43,
+     1.32
+    ]
+   ]
+  },
+  "L16": {
+   "text": "it's a window.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.09,
+   "onset": 0.1,
+   "end": 0.99,
+   "chunks": [
+    [
+     0.1,
+     0.99
+    ]
+   ]
+  },
+  "L17": {
+   "text": "he's been standing out in the garden all night, holding still,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 3.48,
+   "onset": 0.1,
+   "end": 3.38,
+   "chunks": [
+    [
+     0.1,
+     0.99
+    ],
+    [
+     0.99,
+     2.16
+    ],
+    [
+     2.16,
+     2.77
+    ],
+    [
+     2.77,
+     3.38
+    ]
+   ]
+  },
+  "L18": {
+   "text": "watching you look for him.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.7,
+   "onset": 0.1,
+   "end": 1.6,
+   "chunks": [
+    [
+     0.1,
+     0.71
+    ],
+    [
+     0.71,
+     1.6
+    ]
+   ]
+  },
+  "L19": {
+   "text": "look again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 0.81,
+   "onset": 0.1,
+   "end": 0.71,
+   "chunks": [
+    [
+     0.1,
+     0.71
+    ]
+   ]
+  },
+  "L20": {
+   "text": "the window's empty.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.09,
+   "onset": 0.1,
+   "end": 0.99,
+   "chunks": [
+    [
+     0.1,
+     0.99
+    ]
+   ]
+  },
+  "L21": {
+   "text": "and the garden door just clicked.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.98,
+   "onset": 0.1,
+   "end": 1.88,
+   "chunks": [
+    [
+     0.1,
+     1.27
+    ],
+    [
+     1.27,
+     1.88
+    ]
+   ]
+  },
+  "L22": {
+   "text": "now count the people in this hall.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 2.26,
+   "onset": 0.1,
+   "end": 2.16,
+   "chunks": [
+    [
+     0.1,
+     1.27
+    ],
+    [
+     1.27,
+     2.16
+    ]
+   ]
+  },
+  "L22a": {
+   "text": "it was just you.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 1.37,
+   "onset": 0.1,
+   "end": 1.27,
+   "chunks": [
+    [
+     0.1,
+     1.27
+    ]
+   ]
+  },
+  "L22b": {
+   "text": "count again.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.4,
+   "dur": 0.81,
+   "onset": 0.1,
+   "end": 0.71,
+   "chunks": [
+    [
+     0.1,
+     0.71
+    ]
+   ]
+  }
+ }
+}

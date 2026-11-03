@@ -1,0 +1,630 @@
+{
+ "slug": "ep88-six-paintings",
+ "title": "One Of These Paintings BREATHES 🖼️",
+ "made_for_kids": false,
+ "premise": "Six framed paintings hang in a hall, lettered A to F, and one of them is breathing; the viewer must find it before a brass clock chimes.",
+ "twist": "Frame C is a window, not a painting: a living man has stood in the garden all night, perfectly still, breathing on the glass and watching the viewer look for him, and when you look again the window is empty and the garden door clicks.",
+ "world": "a long oxblood gallery hall in an old house museum, gilt frames and gold letter plaques, one white window onto a sunny sage-green garden",
+ "voice": {
+  "voice": "am_adam",
+  "tempo": 1.03,
+  "rate": 1.45
+ },
+ "key_color": "#e2b23c",
+ "gap": 0.15,
+ "tail": 0.25,
+ "fade_in": false,
+ "fade_out": false,
+ "rev": 1,
+ "look": {
+  "fog": "#f0e0d0",
+  "fog_density": 0.0,
+  "fog_start": 30.0,
+  "sky": "#a8dcff",
+  "exposure": 0.0,
+  "flash_safe": true,
+  "style": "closer",
+  "polish": true
+ },
+ "grade": {
+  "shadows": [
+   0.0,
+   0.0,
+   0.03
+  ],
+  "highlights": [
+   0.03,
+   0.01,
+   -0.02
+  ],
+  "saturation": 1.1,
+  "contrast": 1.05,
+  "vignette": 0.12,
+  "bloom": 0.2,
+  "grain": 0.008
+ },
+ "cast": {
+  "watcher": {
+   "age": "adult",
+   "skin": "#e2b48c",
+   "shirt": "#15131a",
+   "pattern": "solid",
+   "pants": "#15131a",
+   "shoes": "#101010",
+   "sleeves": "long",
+   "hair": "swoop",
+   "hair_c": "#1d1719",
+   "extras": [
+    "coat",
+    "tie"
+   ],
+   "extra_c": "#e9e6e0",
+   "zip_c": "#15131a",
+   "height": 1.16,
+   "width": 0.9,
+   "face": {
+    "eyes": "round",
+    "brows": true,
+    "ink": "#1a1114",
+    "mouth": "line"
+   }
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Six paintings",
+     "six paintings"
+    ],
+    [
+     "in this HALL.",
+     "in this hall."
+    ],
+    [
+     "One of them",
+     "one of them"
+    ],
+    [
+     "is BREATHING.",
+     "is breathing."
+    ]
+   ]
+  },
+  {
+   "id": "L02",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Find it",
+     "find it"
+    ],
+    [
+     "before the clock CHIMES.",
+     "before the clock chimes."
+    ],
+    [
+     "Comment the LETTER.",
+     "comment the letter."
+    ]
+   ]
+  },
+  {
+   "id": "L03",
+   "who": "narrator",
+   "chunks": [
+    [
+     "A.",
+     "a."
+    ],
+    [
+     "The old CAPTAIN.",
+     "the old captain."
+    ]
+   ]
+  },
+  {
+   "id": "L04",
+   "who": "narrator",
+   "chunks": [
+    [
+     "B.",
+     "b."
+    ],
+    [
+     "The lady",
+     "the lady"
+    ],
+    [
+     "with the GREYHOUND.",
+     "with the greyhound."
+    ]
+   ]
+  },
+  {
+   "id": "L05",
+   "who": "narrator",
+   "chunks": [
+    [
+     "C.",
+     "c."
+    ],
+    [
+     "The man",
+     "the man"
+    ],
+    [
+     "in the black COAT,",
+     "in the black coat,"
+    ],
+    [
+     "by the garden.",
+     "by the garden."
+    ]
+   ]
+  },
+  {
+   "id": "L06",
+   "who": "narrator",
+   "chunks": [
+    [
+     "D.",
+     "d."
+    ],
+    [
+     "A bowl",
+     "a bowl"
+    ],
+    [
+     "of PEARS.",
+     "of pears."
+    ]
+   ]
+  },
+  {
+   "id": "L07",
+   "who": "narrator",
+   "chunks": [
+    [
+     "E.",
+     "e."
+    ],
+    [
+     "A stormy SEA.",
+     "a stormy sea."
+    ]
+   ]
+  },
+  {
+   "id": "L08",
+   "who": "narrator",
+   "chunks": [
+    [
+     "F.",
+     "f."
+    ],
+    [
+     "An empty CHAIR.",
+     "an empty chair."
+    ]
+   ]
+  },
+  {
+   "id": "L09",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Here's a clue.",
+     "here's a clue."
+    ],
+    [
+     "Look at the GLASS.",
+     "look at the glass."
+    ]
+   ]
+  },
+  {
+   "id": "L10",
+   "who": "narrator",
+   "chunks": [
+    [
+     "CHIME.",
+     "chime."
+    ]
+   ]
+  },
+  {
+   "id": "L11",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It's C.",
+     "it's c."
+    ]
+   ]
+  },
+  {
+   "id": "L12",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Look at the glass",
+     "look at the glass"
+    ],
+    [
+     "in front",
+     "in front"
+    ],
+    [
+     "of his FACE.",
+     "of his face."
+    ]
+   ]
+  },
+  {
+   "id": "L13",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It FOGS.",
+     "it fogs."
+    ],
+    [
+     "Then it CLEARS.",
+     "then it clears."
+    ]
+   ]
+  },
+  {
+   "id": "L14",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the fog",
+     "and the fog"
+    ],
+    [
+     "is on the OUTSIDE.",
+     "is on the outside."
+    ]
+   ]
+  },
+  {
+   "id": "L14a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Only a living BREATH",
+     "only a living breath"
+    ],
+    [
+     "fogs glass",
+     "fogs glass"
+    ],
+    [
+     "from the far SIDE.",
+     "from the far side."
+    ]
+   ]
+  },
+  {
+   "id": "L15",
+   "who": "narrator",
+   "chunks": [
+    [
+     "C",
+     "c"
+    ],
+    [
+     "isn't a PAINTING.",
+     "isn't a painting."
+    ]
+   ]
+  },
+  {
+   "id": "L16",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It's a WINDOW.",
+     "it's a window."
+    ]
+   ]
+  },
+  {
+   "id": "L17",
+   "who": "narrator",
+   "chunks": [
+    [
+     "He's been standing",
+     "he's been standing"
+    ],
+    [
+     "out in the garden",
+     "out in the garden"
+    ],
+    [
+     "all night,",
+     "all night,"
+    ],
+    [
+     "holding STILL,",
+     "holding still,"
+    ]
+   ]
+  },
+  {
+   "id": "L18",
+   "who": "narrator",
+   "chunks": [
+    [
+     "watching you",
+     "watching you"
+    ],
+    [
+     "look for HIM.",
+     "look for him."
+    ]
+   ]
+  },
+  {
+   "id": "L19",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Look again.",
+     "look again."
+    ]
+   ]
+  },
+  {
+   "id": "L20",
+   "who": "narrator",
+   "chunks": [
+    [
+     "The window's EMPTY.",
+     "the window's empty."
+    ]
+   ]
+  },
+  {
+   "id": "L21",
+   "who": "narrator",
+   "chunks": [
+    [
+     "And the garden door",
+     "and the garden door"
+    ],
+    [
+     "just CLICKED.",
+     "just clicked."
+    ]
+   ]
+  },
+  {
+   "id": "L22",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Now count the PEOPLE",
+     "now count the people"
+    ],
+    [
+     "in this hall.",
+     "in this hall."
+    ]
+   ]
+  },
+  {
+   "id": "L22a",
+   "who": "narrator",
+   "chunks": [
+    [
+     "It was just YOU.",
+     "it was just you."
+    ]
+   ]
+  },
+  {
+   "id": "L22b",
+   "who": "narrator",
+   "chunks": [
+    [
+     "Count AGAIN.",
+     "count again."
+    ]
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -7.4,
+      3.3
+     ],
+     [
+      0,
+      3,
+      3.3
+     ],
+     31
+    ],
+    [
+     1,
+     [
+      0,
+      -6.8,
+      3.3
+     ],
+     [
+      0,
+      3,
+      3.3
+     ],
+     31
+    ]
+   ],
+   "step": 1,
+   "hand": 0.0
+  },
+  {
+   "id": "S05",
+   "at": "L05",
+   "cam": [
+    [
+     0,
+     [
+      0.95,
+      -1.6,
+      4.3
+     ],
+     [
+      1.05,
+      3,
+      4.3
+     ],
+     36
+    ]
+   ],
+   "step": 1,
+   "hand": 0.0
+  },
+  {
+   "id": "S12",
+   "at": "L12",
+   "cam": [
+    [
+     0,
+     [
+      1.2,
+      -0.6,
+      4.55
+     ],
+     [
+      1.2,
+      3,
+      4.45
+     ],
+     40
+    ]
+   ],
+   "step": 1,
+   "hand": 0.0
+  },
+  {
+   "id": "S18",
+   "at": "L18",
+   "cam": [
+    [
+     0,
+     [
+      1.0,
+      -1.0,
+      4.5
+     ],
+     [
+      1.12,
+      3.4,
+      4.45
+     ],
+     34
+    ]
+   ],
+   "step": 1,
+   "hand": 0.0
+  },
+  {
+   "id": "S19",
+   "at": "L19",
+   "cam": [
+    [
+     0,
+     [
+      0,
+      -7.2,
+      3.0
+     ],
+     [
+      0,
+      3,
+      3.0
+     ],
+     33
+    ]
+   ],
+   "step": 1,
+   "hand": 0.0
+  }
+ ],
+ "acting": {
+  "watcher": [
+   {
+    "at": 0,
+    "pos": [
+     1.2,
+     3.95,
+     2.9
+    ],
+    "yaw": 0,
+    "expr": "blank",
+    "look": [
+     0.45,
+     0.05
+    ],
+    "blink": false,
+    "arms": [
+     0,
+     0
+    ],
+    "side": [
+     0,
+     0
+    ]
+   },
+   {
+    "at": "L18",
+    "pos": [
+     1.2,
+     3.95,
+     2.9
+    ],
+    "look": [
+     0,
+     0
+    ],
+    "blend": 0.5
+   }
+  ]
+ },
+ "cues": [],
+ "music": {
+  "root": 38,
+  "mode": "minor",
+  "bpm": 60,
+  "seed": 88,
+  "sections": [
+   {
+    "at": 0,
+    "voices": [
+     "drone",
+     "pad"
+    ],
+    "energy": 0.35
+   }
+  ]
+ },
+ "sound": {
+  "rev": 1,
+  "floor": "wood",
+  "steps_db": -22,
+  "ambience": [],
+  "sfx": []
+ }
+}
