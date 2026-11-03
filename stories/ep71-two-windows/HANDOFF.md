@@ -36,3 +36,6 @@ New opening (opening-variety rule, PR #142): L01 "This DRIVE-THRU / has ONE boot
 3. Round 2: the critic and standards (both said revise).
 4. Once both approve: the proof run (`proof.yml`), then the qa agent at stage proof. Merge once `test` is green and qa passes. Then the final render and qa on `film-ep71-two-windows`, then queue.txt.
 5. Upload spacing (standards): at least a week from ep49-car-wash, and not next to ep62 (the same count-title shape).
+
+## Round-2 results (preview, 131.9 s)
+Flash PASS on the new bar (3-frame: 3 flashes, 7 changes at 3.7 s, a warning only). Clip check 0. Preflight 0 blocks. Measure: 0 blocks, 1 warn (cuts 8.9 per 10 s). Preview: `out/work/ep71-two-windows/ep71-two-windows-preview.mp4`. Next: round 2 reviews, then proof.
