@@ -798,63 +798,75 @@ def build(kit, story, tl):
     return ctx
 
 
-# ------------------------------------------------------------------------------------------ the Deep One
+# ------------------------------------------------------------------------------------------ the tall grey one
 
 
 def build_deep(kit, ctx):
-    """Extrude the rig's body straight back, 2.7 m: a person pushed out of a mould and never cut off."""
+    """The tall grey one (rebuilt for "Hold Still"): a person-shape 1.6 times our height, stooped so its bowed head
+    sits level with the battens, arms hanging past its knees, long flat hands. Built from boxes in the `deep` rig's
+    space (rig units, so every size below is metres over RIG_S). The rig's own body is hidden; only this shows."""
     root = bpy.data.objects.get("deep")
     if root is None or ctx.get("deep_done"):
         return
     ctx["deep_done"] = True
-    M = ctx["M"]
-    blue = kit.plastic("#2f5890", 0.5, name="deep blue", spec=0.5)
-    blue2 = kit.plastic("#294c7a", 0.55, name="deep rib")
-    skin = kit.plastic("#6c6b57", 0.6, name="deep skin")
-    cap = kit.plastic("#54432f", 0.92, name="deep cap")
-    dust = kit.plastic("#7d6548", 0.95, name="deep dust")
-    L = 2.7 / RIG_S
-    y0 = 0.5
-    yc = y0 + L / 2
-    ctx["deep_parts"] = []
-    for sx in (-1, 1):
-        kit.box(f"deep leg{sx}", (0.98, L, 1.72), (sx * 0.5, yc, 1.14), blue, root, bevel=0.03)
-        kit.box(f"deep shoe{sx}", (0.99, L, 0.3), (sx * 0.5, yc, 0.15), dust, root, bevel=0.03)
-        kit.box(f"deep arm{sx}", (0.96, L, 1.9), (sx * 1.5, yc, 3.0), blue, root, bevel=0.03)
-        # ribs along the outer flank, like a roller door, and dust along the foot of it
-        for j, z in enumerate((2.25, 2.62, 2.99, 3.36, 3.73)):
-            kit.box(f"deep rib a{sx}{j}", (0.06, L, 0.1), (sx * 2.0, yc, z), blue2, root)
-        for j, z in enumerate((0.6, 0.95, 1.3, 1.65)):
-            kit.box(f"deep rib l{sx}{j}", (0.05, L, 0.09), (sx * 1.0 + sx * 0.02, yc, z), blue2, root)
-        kit.box(f"deep grime{sx}", (0.07, L, 0.62), (sx * 1.0 + sx * 0.03, yc, 0.42), dust, root)
-        kit.box(f"deep grimea{sx}", (0.08, L, 0.45), (sx * 2.0 + sx * 0.02, yc, 2.28), dust, root)
-    kit.box("deep torso", (2.0, L, 2.0), (0, yc, 3.0), blue, root, bevel=0.03)
-    for j, z in enumerate((2.3, 2.7, 3.1, 3.5, 3.85)):
-        kit.box(f"deep rib t{j}", (2.02, L, 0.08), (0, yc, z), blue2, root)
-    kit.box("deep dust top", (1.9, L * 0.8, 0.07), (0, yc + L * 0.1, 4.03), dust, root)
-    ht = kit.cyl("deep headtube", 0.58, L, (0, yc + 0.12, 4.62), skin, root, rot=(math.pi / 2, 0, 0))
-    capb = kit.box("deep captop", (1.36, L, 0.42), (0, yc + 0.12, 5.31), cap, root, bevel=0.1)
-    ctx["deep_head_parts"] = [ht, capb]
-    # a profile: a nose, a cheek eye on each side and a mouth line, shown only in the shots where its head is turned
-    # to the side (cue "profile"), so the front stays a flat drawn face
-    hg = bpy.data.objects.get("deep.headg")
-    prof = []
-    if hg is not None:
-        ink = kit.plastic("#0b0b0d", 0.5, name="deep ink")
-        glint = kit.plastic("#f4f6ff", 0.3, name="deep glint")
-        R = 0.62
-        prof.append(kit.box("deep nose", (0.24, 0.4, 0.34), (0, -R - 0.1, -0.12), skin, hg, bevel=0.05))
-        prof.append(kit.box("deep lip", (0.5, 0.1, 0.07), (0, -R + 0.01, -0.36), ink, hg))
-        ang = math.radians(62)
-        for sx in (-1, 1):
-            ex, ey = sx * (R * math.sin(ang) + 0.01), -R * math.cos(ang)
-            prof.append(kit.box(f"deep pupil{sx}", (0.1, 0.19, 0.19), (ex, ey, 0.08), ink, hg, bevel=0.03))
-            prof.append(kit.box(f"deep glint{sx}", (0.11, 0.05, 0.05), (ex + sx * 0.01, ey - 0.04, 0.13), glint, hg))
-    ctx["deep_profile"] = prof
-    for ob in prof:
+    grey = kit.plastic("#8e9196", 0.92, name="tall grey", spec=0.05)
+    pale = kit.plastic("#9fa2a8", 0.92, name="tall grey face", spec=0.05)
+    dark = kit.plastic("#08090b", 0.95, name="tall grey eye", spec=0.0)
+    for ob in root.children_recursive:      # the rig's body: not shown, the parts below stand in for it
         ob.hide_render = True
+    ctx["deep_rig"] = list(root.children_recursive)
+    parts = []
+
+    def u(v):
+        return v / RIG_S
+
+    def J(name, loc, parent, rot=(0, 0, 0)):
+        e = kit.empty(f"tall {name}", tuple(u(c) for c in loc), parent, rot)
+        parts.append(e)
+        return e
+
+    def B(name, size, loc, mat, parent, rot=(0, 0, 0), bevel=0.02):
+        ob = kit.box(f"tall {name}", tuple(u(c) for c in size), tuple(u(c) for c in loc), mat, parent, rot=rot,
+                     bevel=u(bevel))
+        parts.append(ob)
+        return ob
+
+    # legs: long and thin, a flat foot each
+    for sx in (-1, 1):
+        B(f"foot{sx}", (0.17, 0.42, 0.07), (sx * 0.17, -0.07, 0.035), grey, root)
+        B(f"shin{sx}", (0.15, 0.15, 0.66), (sx * 0.17, 0.0, 0.40), grey, root)
+        B(f"thigh{sx}", (0.18, 0.18, 0.66), (sx * 0.17, 0.0, 0.95), grey, root)
+    B("pelvis", (0.50, 0.26, 0.24), (0, 0.0, 1.33), grey, root)
+    # the spine leans forward over the hips (positive x turn tips the top toward -y, the way it faces)
+    lean = 0.30
+    sp = J("spine", (0, 0.0, 1.42), root, (lean, 0, 0))
+    B("waist", (0.34, 0.22, 0.36), (0, 0, 0.20), grey, sp, bevel=0.04)
+    B("chest", (0.62, 0.30, 0.52), (0, 0, 0.62), grey, sp, bevel=0.05)
+    B("shoulders", (0.74, 0.22, 0.14), (0, 0.06, 0.84), grey, sp, bevel=0.05)
+    B("neck", (0.11, 0.11, 0.22), (0, -0.04, 0.96), grey, sp, bevel=0.03)
+    # the head: bowed hard, so the crown and the brow lead and the face looks at the floor, lit from above
+    hd = J("head", (0, -0.06, 1.00), sp, (0.62, 0, 0))
+    B("skull", (0.25, 0.27, 0.36), (0, 0.02, 0.17), grey, hd, bevel=0.06)
+    B("brow", (0.27, 0.06, 0.05), (0, -0.135, 0.22), grey, hd, bevel=0.015)
+    B("face", (0.20, 0.02, 0.26), (0, -0.125, 0.15), pale, hd, bevel=0.008)
+    for sx in (-1, 1):                       # two small dark eyes set low, no mouth, no shine
+        B(f"eye{sx}", (0.04, 0.012, 0.035), (sx * 0.05, -0.139, 0.10), dark, hd, bevel=0.004)
+    # arms: they hang from the shoulders straight down in the world, past the knees, hands near the shins
+    for sx in (-1, 1):
+        sh = J(f"shoulder{sx}", (sx * 0.43, -0.22, 2.12), root, (-0.10, 0, 0))
+        B(f"uarm{sx}", (0.13, 0.13, 0.76), (0, 0, -0.38), grey, sh, bevel=0.03)
+        el = J(f"elbow{sx}", (0, 0, -0.76), sh, (-0.06, 0, 0))
+        B(f"farm{sx}", (0.12, 0.12, 0.74), (0, 0, -0.37), grey, el, bevel=0.03)
+        wr = J(f"wrist{sx}", (0, 0, -0.74), el, (-0.04, 0, 0))
+        B(f"palm{sx}", (0.045, 0.15, 0.20), (0, 0, -0.10), grey, wr, bevel=0.012)
+        for k, fy in enumerate((-0.054, -0.018, 0.018, 0.054)):
+            B(f"finger{sx}{k}", (0.03, 0.026, 0.24 - abs(fy)), (0, fy, -0.30 + abs(fy) * 0.5), grey, wr, bevel=0.008)
+    ctx["deep_parts"] = parts
+    ctx["deep_profile"] = []
+    ctx["deep_head_parts"] = []
     kit.light("deep rim", "SPOT", (3.0, 2.0, 1.4), 420, "#7fa8ff", size=0.25, spot=60, blend=0.7, shadow=False)
     kit.aim(bpy.data.objects["deep rim"], (1.3, 2.5, 1.2))
+
 
 
 # ------------------------------------------------------------------------------------------ animate
@@ -902,8 +914,10 @@ def animate(kit, story, tl, t, ctx):
     build_deep(kit, ctx)
     dr_ = bpy.data.objects.get("deep")
     if dr_ is not None:     # parts built here don't inherit the root's hidden state: copy it, every frame
-        for ob in dr_.children_recursive:
+        for ob in ctx.get("deep_parts", []):
             ob.hide_render = dr_.hide_render
+        for ob in ctx.get("deep_rig", []):      # the rig's own body stays hidden
+            ob.hide_render = True
     over = {}
     sky, skys, sun, sod, yfill, mfill, bmul, expo = _time_state(tl, t)
     w = bpy.context.scene.world
