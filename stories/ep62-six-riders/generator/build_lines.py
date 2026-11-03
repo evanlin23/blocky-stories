@@ -6,7 +6,7 @@ L = [
  ("L01", [("Five people", "five people"), ("got in", "got in"), ("the ELEVATOR.", "the elevator."), ("The mirror", "the mirror"), ("shows SIX.", "shows six.")]),
  ("L02", [("Find the", "find the"), ("EXTRA one.", "extra one.")]),
  ("L03", [("We're all", "we're all"), ("facing the", "facing the"), ("MIRROR doors.", "mirror doors.")]),
- ("L04", [("A.", "ay."), ("B.", "bee."), ("C.", "see."), ("D.", "dee."), ("E.", "ee.")]),
+ ("L04", [("A.", "ay,"), ("B.", "bee,"), ("C.", "see,"), ("D.", "dee,"), ("E.", "ee.")]),
  ("L05", [("I'm D.", "i'm dee.")]),
  ("L06", [("Match every", "match every"), ("FACE", "face"), ("to a BACK.", "to a back.")]),
  ("L07", [("You've got", "you've got"), ("three FLOORS.", "three floors.")]),

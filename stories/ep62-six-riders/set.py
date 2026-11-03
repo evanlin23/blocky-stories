@@ -46,8 +46,8 @@ TEAL = "#20e3d2"
 ORANGE = "#ff8a1f"
 
 # a rider's spot is (x, y); the mirror cast stands at (x, -y) and faces us
-ROWS = {"c": (-1.1, 0.35), "a": (1.35, 0.35), "b": (0.9, 1.6), "d": (-0.6, 1.6), "e": (-1.5, 1.6)}
-GAP = (0.1, 0.35)
+ROWS = {"c": (-1.1, 0.6), "a": (1.35, 0.6), "b": (0.9, 1.6), "d": (-0.6, 1.6), "e": (-1.5, 1.6)}
+GAP = (0.1, 0.6)
 TAG_Z = 1.3
 
 SHOT_NO_DISPLAY = {"S01", "S02", "S04", "S05b", "S06", "S09b", "S12", "S13", "S14", "S15", "S15b", "S16", "S17",
@@ -286,7 +286,7 @@ def build(kit, story, tl):
 def _ring(kit, mat):
     """An elliptical band, 4 cm thick in y, standing in the glass room round the two blue jackets."""
     n = 64
-    cx, cz, rx, rz, w = -0.4, 1.22, 0.85, 0.6, 0.07
+    cx, cz, rx, rz, w = -0.5, 1.25, 1.2, 0.8, 0.08
     verts, faces = [], []
     for i in range(n):
         a = 2 * math.pi * i / n
@@ -297,7 +297,7 @@ def _ring(kit, mat):
     for i in range(n):
         j = (i + 1) % n
         faces.append((i * 2, j * 2, j * 2 + 1, i * 2 + 1))
-    ob = kit.mesh_obj("ring", verts, faces, mat, None, (cx, -0.12, cz))
+    ob = kit.mesh_obj("ring", verts, faces, mat, None, (cx, -0.38, cz))
     ob.hide_render = True
     return ob
 

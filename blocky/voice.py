@@ -153,6 +153,9 @@ def asr(wav: Path, timeline: Path) -> int:
         if op == "insert" and a1 == len(a) and os.environ.get("BLOCKY_ASR_TAIL"):   # opt-in (ep23): after the last line
             print(f"  tail: Whisper repeated the end, ignored: {sb!r} (the film has no words there)")
             continue
+        if sa in json.loads(os.environ.get("BLOCKY_ASR_FORGIVE", "[]")):   # opt-in (ep62): a run of letter names Whisper can't spell
+            print(f"  letters: script {sa!r} | heard {sb!r} (a run of letter names, checked by ear)")
+            continue
         if same_spoken(sa, sb):
             print(f"  spelling: script {sa!r} | heard {sb!r} (the same words, spelled another way)")
             continue
@@ -181,7 +184,8 @@ HOMOPHONES = {"joe": "jo", "joes": "jo", "jos": "jo",   # ep34: Jo
               "mr": "mister", "mrs": "missus",   # ep14 redo: Whisper writes the titles short
               "grand": "gran", "girl": "gull",   # ep33: Gran (heard as grand) and the gull
               "pane": "pain", "panes": "pains", "boards": "board",   # ep15 redo: pane/pain (Whisper picks by context), boards/board
-              "higher": "hire"}   # higher/hire (ep26)
+              "higher": "hire",   # higher/hire (ep26)
+              "c": "see", "d": "dee", "e": "ee", "i": "ay"}   # ep62: single letters voiced as their names, which Whisper writes as letters
 NUMBERS = dict(enumerate(("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen "
                           "fifteen sixteen seventeen eighteen nineteen twenty").split()))
 

@@ -10,6 +10,9 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent / "story.json"
 lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.12
+for ln in lines:
+    if ln["id"] == "L04":
+        ln["tempo"] = 0.9
 lines = lines + [{"id": "P03", "pause": LOOP, "chunks": []}]
 
 # ------------------------------------------------------------------------------------------------ cast
@@ -42,8 +45,8 @@ for k in list(cast):
     if k.startswith("r") or k in ("x", "bro"):
         cast[k] = {**cast[k], "height": round(cast[k]["height"] * 1.1, 3)}
 
-ROWS = {"c": (-1.1, 0.35), "a": (1.35, 0.35), "b": (0.9, 1.6), "d": (-0.6, 1.6), "e": (-1.5, 1.6)}
-GAP = (0.1, 0.35)
+ROWS = {"c": (-1.1, 0.6), "a": (1.35, 0.6), "b": (0.9, 1.6), "d": (-0.6, 1.6), "e": (-1.5, 1.6)}
+GAP = (0.1, 0.6)
 acting = {k: [] for k in cast}
 for k, (x, y) in ROWS.items():
     acting[k].append({"at": 0, "pos": [x, y], "yaw": 0, "expr": "neutral"})
@@ -70,33 +73,33 @@ MT = [0.0, 0.0, 0.5]
 ML = 14.5
 MASTER = still(MAS, MT, ML)
 SHOTS = [
-    (0, "S01", "close on the doors: six faces, push in", move(([0, 4.1, 3.7], [0, -0.5, 1.3]), ([0, 3.6, 3.7], [0, -0.5, 1.3]), 13, 15), 2, 0),
-    ("L01.4", "S02", "punch in on the six faces, the hit on SIX", still([0, 4.0, 3.7], [0, -0.6, 1.4], 20), 2, 1),
+    (0, "S01", "close on the doors: six faces, push in", move(([0, 4.1, 3.7], [0, -0.6, 1.5]), ([0, 3.7, 3.6], [0, -0.6, 1.5]), 17, 20), 2, 0),
+    ("L01.4", "S02", "punch in on the six faces, the hit on SIX", still([0, 4.0, 3.7], [0, -0.6, 1.5], 27), 2, 1),
     ("L02", "S03", "the master", MASTER, 2, 0),
     ("L03", "S04", "side view along the car", move(([1.6, 3.9, 1.7], [0.0, 0.3, 1.2]), ([1.55, 3.8, 1.7], [-0.1, 0.3, 1.2]), 18), 2, 1),
     ("L04", "S05", "the master, tags pop", MASTER, 2, 0),
-    ("L05", "S06", "over my shoulder", still([-0.3, 2.45, 1.75], [-0.8, 0.35, 1.15], 17), 2, 1),
+    ("L05", "S06", "over my shoulder", still([-0.3, 2.45, 1.75], [-0.8, 0.6, 1.15], 17), 2, 1),
     ("L06", "S07", "the master, slow push", move((MAS, MT), ([0.0, 3.75, 2.3], [0, 0, 0.85]), ML, 12.0), 2, 0),
     ("L07", "S08", "close on the display", still([0, 1.3, 2.9], [0, 0.15, 2.92], 42), 2, 1),
     ("P01", "S09", "the hold master, display 3", MASTER, 2, 0),
     ("P01+1", "S10", "punch in 6 percent, display 2", still(MAS, MT, ML * 1.06), 2, 0),
     ("P01+2", "S11", "punch in another 6 percent, display 1", still(MAS, MT, ML * 1.12), 2, 0),
-    ("L08", "S12", "push in on the two blue jackets in the glass", move(([-1.3, 3.9, 3.7], [-0.45, -0.5, 1.25]), ([-1.15, 3.4, 3.7], [-0.45, -0.5, 1.25]), 24, 28), 2, 1),
-    ("L09", "S13", "my brother three-quarter front, me behind him", still([0.0, 0.14, 1.55], [-0.9, 0.5, 1.4], 24), 2, 1),
-    ("L10", "S14", "his right shoulder, the bag", still([-1.35, 1.05, 1.4], [-1.55, 0.35, 0.95], 26), 2, 1),
-    ("L11", "S15", "his reflection, bag on screen right", still([-1.2, 3.9, 3.7], [-0.9, -0.35, 1.3], 28), 2, 1),
-    ("L11.3", "S15b", "the copy beside it, bag on screen left", still([0.0, 3.9, 3.7], [0.0, -0.35, 1.4], 28), 2, 1),
-    ("L12", "S16", "the copy, mid close", still([0.0, 3.9, 3.7], [0.0, -0.35, 1.45], 36), 2, 1),
-    ("L12.2", "S17", "punch in on its face", still([0.0, 3.9, 3.7], [0.0, -0.35, 1.58], 55), 2, 1),
-    ("L13", "S18", "slow push on the copy and C's reflection", move(([-0.6, 3.9, 3.7], [-0.45, -0.35, 1.35]), ([-0.6, 3.5, 3.7], [-0.45, -0.35, 1.35]), 22, 27), 2, 1),
+    ("L08", "S12", "push in on the two blue jackets in the glass", move(([-0.5, 4.0, 3.7], [-0.5, -0.6, 1.4]), ([-0.5, 3.7, 3.6], [-0.5, -0.6, 1.4]), 20, 24), 2, 1),
+    ("L09", "S13", "my brother three-quarter front, me behind him", still([-0.62, 0.1, 1.6], [-1.1, 0.6, 1.5], 13), 2, 1),
+    ("L10", "S14", "his right shoulder, the bag", still([-0.6, 1.15, 1.6], [-1.5, 0.6, 1.1], 19), 2, 1),
+    ("L11", "S15", "his reflection, bag on screen right", still([-1.2, 3.9, 3.7], [-0.9, -0.6, 1.3], 28), 2, 1),
+    ("L11.3", "S15b", "the copy beside it, bag on screen left", still([0.0, 3.9, 3.7], [0.0, -0.6, 1.4], 28), 2, 1),
+    ("L12", "S16", "the copy, mid close", still([0.0, 3.9, 3.7], [0.0, -0.6, 1.45], 36), 2, 1),
+    ("L12.2", "S17", "punch in on its face", still([0.0, 3.9, 3.7], [0.0, -0.6, 1.58], 55), 2, 1),
+    ("L13", "S18", "slow push on the copy and C's reflection", move(([-0.6, 3.9, 3.7], [-0.45, -0.6, 1.35]), ([-0.6, 3.5, 3.7], [-0.45, -0.6, 1.35]), 22, 27), 2, 1),
     ("P02", "S19", "close on the display: 1", still([0, 1.3, 2.9], [0, 0.15, 2.92], 42), 2, 1),
     ("L14", "S20", "the doors open on an empty corridor", MASTER, 2, 0),
     ("L15", "S21", "the doors close", MASTER, 2, 0),
-    ("L16", "S22", "over my shoulder again, the bag on screen left", still([-0.3, 2.45, 1.75], [-0.8, 0.35, 1.15], 17), 2, 1),
-    ("L16.3", "S23", "me from the side, wide", still([0.15, 0.95, 1.5], [-0.4, 1.55, 1.45], 26), 2, 1),
-    ("L17", "S24", "close on his tag, a backwards C", still([-1.1, 1.25, 2.0], [-0.9, 0.35, 2.12], 38), 2, 1),
-    ("L18", "S25", "my real brother in the glass", still([0.0, 3.9, 3.7], [0.0, -0.35, 1.45], 34), 2, 1),
-    ("L19", "S26", "the master, push in on the copy's back", move(([0.0, 4.2, 3.7], [-0.5, 0.0, 1.0]), ([-1.0, 3.5, 3.7], [-0.9, 0.35, 1.2]), 12, 19), 2, 1),
+    ("L16", "S22", "over my shoulder again, the bag on screen left", still([-0.3, 2.45, 1.75], [-0.8, 0.6, 1.15], 17), 2, 1),
+    ("L16.3", "S23", "me from the side, wide", still([1.0, 0.95, 2.7], [-0.6, 1.6, 1.4], 22), 2, 1),
+    ("L17", "S24", "close on his tag, a backwards C", still([-1.1, 1.3, 1.75], [-1.1, 0.84, 1.3], 34), 2, 1),
+    ("L18", "S25", "my real brother in the glass", still([0.0, 3.9, 3.7], [0.0, -0.6, 1.45], 34), 2, 1),
+    ("L19", "S26", "the master, push in on the copy's back", move(([0.0, 4.2, 3.7], [-0.5, 0.0, 1.0]), ([-1.0, 3.5, 3.7], [-0.9, 0.6, 1.2]), 12, 19), 2, 1),
 ]
 shots = []
 corner = []
@@ -127,7 +130,7 @@ cues = [
     {"at": "L14", "name": "door", "open": 1.0, "dur": 0.8},
     {"at": "L15", "name": "door", "open": 0.0, "dur": 0.8},
     {"at": "L08", "name": "ring", "on": True},
-    {"at": "L14", "name": "ring", "on": False},
+    {"at": "L09", "name": "ring", "on": False},
 ]
 for i, L_ in enumerate("ABCDE"):
     cues.append({"at": f"L04.{i}", "name": "tag", "who": L_})
@@ -159,7 +162,8 @@ story = {
              "exposure": -0.5, "flash_safe": True},
     "grade": {"shadows": [0.0, 0.0, 0.02], "highlights": [0.0, 0.0, 0.01], "saturation": 1.05, "contrast": 1.04,
               "vignette": 0.2, "bloom": 0.12, "grain": 0.008},
-    "phonemes": {},
+    "asr_forgive": ["ay bee see dee ee"],
+    "phonemes": {"ay": "ˈA", "bee": "bˈi", "see": "sˈi", "dee": "dˈi", "ee": "ˈi"},
     "cast": cast,
     "lines": lines,
     "shots": shots,
