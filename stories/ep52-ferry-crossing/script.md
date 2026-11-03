@@ -17,7 +17,8 @@
 ## The story
 
 - **Premise:** In my town, everything you lose hops home after you. Nothing I lose ever comes back. Gran raised me on the island one ferry crossing out, and I haven't crossed back in four years. I throw a glove away on purpose, and on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and my scarf hop off toward the island, and damp hop-dots start at my own door. Each evening I follow them a little further, wanting to and not wanting to: the ferry's window seat, halfway up her lane (where I lose my nerve and turn back), her door. On Thursday her door is open, her glasses are on the mat, she's gone, and the back room is stacked with everything I've ever lost.
-- **Rule:** "In this town, everything you lose finds its way back to you." Lost things hop home after their owners.
+- **Rule:** everything you lose finds its way back. Lost things hop home after their owners (or so it seems). Since 2026-11-03 it's said as a warning: "Never drop anything here unless you want it back." (L01, 9 words), then "It hops home after you." (L02, 5 words).
+- **Quotable line:** L03, "An umbrella bobs along at a man's heel." (an odd rule detail said flatly, short enough to type).
 - **Twist:** the rule never said "to its owner". Lost things find their way to where they belong, and people count too (the dog). Everything of mine went to Gran's because I still belong there, and the pull all week, the streets that end at the slipway and the dots that start at my own door, was me, a lost thing, hopping my way back. I'm what Gran lost. On the late crossing the Shrug sits in my place on the window bench beside her. When I stop fighting it and sit down in my old seat, it's gone.
 - **Where the twist is planted:**
   - Plant 1, the striped hat: in the Sunday calls (L09a, L12 to L14), my old teal-and-cream striped hat hangs on the hook behind Gran. Not narrated. Paid off at L34, hung by the door of the room of lost things.
@@ -27,6 +28,14 @@
 - **How the last 15 seconds turn over the first line:** first time through, "everything you lose finds its way back to you" is a cosy, funny town rule, and I'm the unlucky one it skips. By L66 to L68 it means Gran lost me, and I'm the thing that hopped home. The sting, a glove on her mat that I haven't lost yet, makes the rule a promise that I'll be lost again someday, and that the town is already sending things back. A second watch sees the hat, the dog and the hop-dots under my feet.
 - **Ending shape:** two people on a ferry's window bench at night, a long pale wake behind them, then a cut to a doormat with a glove on it.
 - **Warmth:** reunion, shown. I come back on purpose. I give Gran her glasses and she gives me my glove.
+
+## Opening recipe fix, 2026-11-03
+
+- **Changed:** L01 and L02 only, re-voice these two. L01 was "In this town, everything you lose finds its way back to you." (11 words), now "Never drop anything here unless you want it back." (9 words, about 1.9 s), a warning to you per `docs/research/playbook.md` (opening recipe v1). L02 was "A glove hops after its owner up the slipway." (9 words), now "It hops home after you." (5 words, about 1.0 s), which tightens the same warning. The hopping glove stays in the picture under L01 and L02. No other line is cut or changed. Spoken words go from 621 to 605. L66 still says the rule in full ("everything you LOSE / finds its way BACK"), and the twist ("the rule never said to its owner") still turns on it.
+- **Plot check:** the warning is true of the town, names nobody, and keeps the same misreading the old L01 had ("after you" is how it looks until Gran's back room). The loop is tighter now: "a GLOVE / I haven't LOST / YET." runs into "Never drop anything here unless you want it back."
+- **US English:** the new lines and the description use "leash", never "Mum" or British spellings. Old body lines (L07 "slipped its LEAD") are left as voiced.
+- **Quotable line:** L03, "An umbrella bobs along at a man's heel."
+- **First shot (for the builder):** frame 1 looks straight at a green glove on the bright town slipway concrete, already mid-hop off the ground with a short line of damp dots behind it, low at heel height, with the glove woman's face in frame above and behind it, looking back at it, `neutral`. Camera about 1.5 to 2.5 m from the glove, lens 28 mm or longer, pushing in slowly through L01. No wide in the first 3 s: the old L01 low wide up the slipway moves to after L02 or goes, and the old L02 heel-height close becomes the L02 shot (the glove hopping up the concrete after her raincoat hem). Use a green glove for her, as cast, so it never reads as my mustard ones. Sound hit (a soft damp pat, under 4 kHz) on "BACK", the warning's last word, about 1.8 s. Then L03's umbrella as before.
 
 ## World
 
@@ -108,7 +117,7 @@ Every lost thing hops home after its owner: a glove, a sock, an umbrella, a key 
 
 ## The rule and the hits (RULES.md → What the hits do)
 
-- **First line:** "In this TOWN, / everything you LOSE / finds its way / BACK to you." (11 words.)
+- **First line:** "NEVER drop / anything HERE / unless you / want it BACK." (9 words, a warning to you, opening recipe v1, 2026-11-03). L02 tightens it: "It HOPS home / after YOU."
 - **Marker by 2 s:** the opening wide on the bright slipway shows a glove and an umbrella hopping after their owners, with faces in frame.
 - **Montage (3, in the first 12 s):** the glove up the slipway, the umbrella at a heel, the dog riding the ferry home alone.
 - **The narrator is the exception:** nothing I lose ever comes back (L09). The binned glove never hops after me (L11).
@@ -130,11 +139,12 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the town slipway and harbour in bright overcast daylight, then quick montage cutaways.
 - **Shots:** 6.
 
-- `L01` narrator: In this TOWN, / everything you LOSE / finds its way / BACK to you.
+- `L01` narrator: NEVER drop / anything HERE / unless you / want it BACK.
+  - [since 2026-11-03, frame 1 is the close on the hopping glove (see "Opening recipe fix"), and this wide moves to after 3 s]
   - [bright low wide up the town slipway, the ferry's ramp down behind. The glove woman walks toward camera, face in frame, and a green glove hops after her heel. The umbrella man passes behind her, a black umbrella bobbing at his heel. Hop-dots fade on the concrete]
-- `L02` narrator: A GLOVE / hops after its OWNER / up the SLIPWAY.
+- `L02` narrator: It HOPS home / after YOU.
   - [low close at heel height: the green glove hopping up the concrete after a green raincoat hem]
-- `L03` narrator: An UMBRELLA / bobs along / at a man's HEEL.
+- `L03` narrator: An UMBRELLA / bobs along / at a man's HEEL. (**quotable line**)
   - [side tracking mid shot: the umbrella man, `neutral`, not looking down, the furled umbrella hopping beside his shoe]
 - `L07` narrator: A DOG / slipped its LEAD / in TOWN.
   - [the sandy dog trotting along the harbour front alone, its lead trailing, no owner in frame]
