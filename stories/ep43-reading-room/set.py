@@ -601,41 +601,67 @@ def update_numbers(ctx, tl, t, states, vis, scene_on):
 
 # ------------------------------------------------------------------------------------------------ the upside-down grin
 
-GRIN_W, GRIN_H = 1.0, 0.38   # world size of the decal on the Negative's face
+GRIN_W, GRIN_H = 0.62, 0.42   # world size of the decal on the Negative's face (the mouth is about 0.5 wide: ~40% of the head)
+EYE_W, EYE_H = 1.0, 0.40
 
 
-def grin_image(w=1100, h=420):
-    """The upside-down grin as a thin, long, white downturned crescent: one tapered stroke, ends lower than its middle.
-    Nothing inside it, no teeth, no tongue."""
-    S = 2
-    im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
+def grin_image(w=1240, h=840):
+    """The laughing D-shaped grin flipped upside down: a thick white outline, a dark inside, teeth along the flat edge
+    (now at the bottom), a cold tongue under the dome of it."""
+    S = 1
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    cx, top = w * S / 2, h * S * 0.18
-    rx, drop = w * S * 0.46, h * S * 0.56
-    up, lo = [], []
-    for k in range(61):
-        u = k / 60
-        x = cx + rx * (2 * u - 1)
-        y = top + drop * abs(2 * u - 1) ** 1.7   # the ends hang lower than the middle
-        t = (h * S * 0.045) * (0.25 + 0.75 * math.sin(math.pi * u))
-        up.append((x, y - t))
-        lo.append((x, y + t))
-    d.polygon(up + lo[::-1], fill=(244, 246, 250, 255))
-    return im.resize((w, h), Image.LANCZOS)
+    cx = w / 2
+    hw, hh = w * 0.43, h * 0.56
+    base = h * 0.80                      # the flat edge, at the bottom
+    pts = []
+    for k in range(0, 181):
+        a = math.radians(k)
+        pts.append((cx + hw * math.cos(a), base - hh * math.sin(a) ** 0.8 * (1.0 if math.sin(a) > 0 else 0)))
+    d.polygon(pts, fill=(244, 247, 252, 255))
+    o = w * 0.045                        # outline thickness
+    ins = []
+    for k in range(0, 181):
+        a = math.radians(k)
+        ins.append((cx + (hw - o) * math.cos(a), base - o * 0.5 - (hh - o * 1.3) * math.sin(a) ** 0.8))
+    d.polygon(ins, fill=(6, 7, 10, 255))
+    # tongue: a rounded cold-grey lump up under the dome
+    tw = hw * 0.55
+    d.ellipse([cx - tw, base - hh * 0.62, cx + tw, base - hh * 0.05], fill=(128, 136, 150, 255))
+    d.line([(cx, base - hh * 0.58), (cx, base - hh * 0.2)], fill=(70, 76, 88, 255), width=int(w * 0.012))
+    # teeth along the flat edge: white blocks standing up from it
+    n = 7
+    x0, x1 = cx - (hw - o * 1.1), cx + (hw - o * 1.1)
+    tw_ = (x1 - x0) / n
+    for i in range(n):
+        xa = x0 + i * tw_ + tw_ * 0.08
+        d.rectangle([xa, base - o * 0.5 - hh * 0.26, xa + tw_ * 0.84, base - o * 0.5], fill=(244, 247, 252, 255))
+    return im
 
 
-def glint_image(w=800, h=160):
-    """Two tiny cold glints where the eyes are; no discs, no pupils."""
+def glint_image(w=1000, h=400):
+    """Big white eye outlines on black with bright white pupils, and heavy slanted brows."""
     S = 2
     im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     for sx in (-1, 1):
-        x, y = w * S / 2 + sx * w * S * 0.29, h * S / 2
-        d.ellipse([x - 16 * S, y - 3 * S, x + 16 * S, y + 3 * S], fill=(205, 225, 255, 255))
+        x, y = w * S / 2 + sx * w * S * 0.255, h * S * 0.58
+        rx, ry = w * S * 0.17, h * S * 0.27
+        d.ellipse([x - rx, y - ry, x + rx, y + ry], fill=(244, 247, 252, 255))
+        r2 = rx * 0.80
+        d.ellipse([x - r2, y - ry * 0.80, x + r2, y + ry * 0.80], fill=(8, 9, 12, 255))
+        pr = ry * 0.40
+        px = x - sx * rx * 0.08
+        d.ellipse([px - pr, y - pr * 0.8, px + pr, y + pr * 1.2], fill=(255, 255, 255, 255))
+        # a heavy brow slanting down toward the nose
+        bx0, bx1 = x + sx * rx * 1.1, x - sx * rx * 0.9
+        by0, by1 = h * S * 0.14, h * S * 0.27
+        t = h * S * 0.05
+        d.polygon([(bx0, by0 - t), (bx0, by0 + t), (bx1, by1 + t), (bx1, by1 - t)], fill=(226, 230, 238, 255))
     return im.resize((w, h), Image.LANCZOS)
 
 
-def alpha_mat(kit, name, pil):
+def alpha_mat(kit, name, pil, emit=0.0):
     img = bpy.data.images.new(name, pil.width, pil.height, alpha=True)
     a = np.asarray(pil.convert("RGBA")).astype(np.float32)[::-1] / 255
     img.pixels.foreach_set(a.ravel())
@@ -648,6 +674,9 @@ def alpha_mat(kit, name, pil):
     tx.image = img
     tx.interpolation = "Linear"
     nt.links.new(tx.outputs["Color"], b.inputs["Base Color"])
+    if emit:
+        nt.links.new(tx.outputs["Color"], b.inputs["Emission Color"])
+        b.inputs["Emission Strength"].default_value = emit
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mix = nt.nodes.new("ShaderNodeMixShader")
     nt.links.new(tx.outputs["Alpha"], mix.inputs[0])
@@ -732,10 +761,10 @@ def _extras(kit, ctx):
     hg = bpy.data.objects.get("neg.headg")
     ctx["grin"] = None
     if hg is not None:
-        gm = alpha_mat(kit, "neg grin", grin_image())
-        ctx["grin"] = curved_decal(kit, "neg.grin", (GRIN_W, GRIN_H), -0.16, R + 0.012, gm, hg)
-        em_ = alpha_mat(kit, "neg glints", glint_image())
-        curved_decal(kit, "neg.glints", (0.8, 0.16), 0.10, R + 0.012, em_, hg)
+        gm = alpha_mat(kit, "neg grin", grin_image(), emit=0.5)
+        ctx["grin"] = curved_decal(kit, "neg.grin", (GRIN_W, GRIN_H), -0.24, R + 0.012, gm, hg)
+        em_ = alpha_mat(kit, "neg glints", glint_image(), emit=1.1)
+        curved_decal(kit, "neg.glints", (EYE_W, EYE_H), 0.17, R + 0.012, em_, hg)
     pm = img_mat(kit, "cat picture", cat_image(), rough=0.4)
     sm = kit.plastic("#16181c", 0.4, "phone body", 0.3)
     ph = kit.empty("phone", (3000, 3000, 0))
@@ -904,7 +933,7 @@ def animate(kit, story, tl, t, ctx):
         bend = ac._held(tl["acting"]["neg"], "bend", t, 0.0)
         head = V((s["x"], s["y"], s["z"] + 1.35)) + f * 0.25 * (1 + math.sin(math.radians(bend)))
         head += f * 0.55 * math.sin(math.radians(bend))
-        for nm, pos, w in (("neg_key", head + sd * 1.2 + f * 0.9 + V((0, 0, -0.9)), 170.0),
+        for nm, pos, w in (("neg_key", head + sd * 1.2 + f * 0.9 + V((0, 0, -0.9)), 520.0),
                            ("neg_rim", head - f * 1.5 - sd * 0.5 + V((0, 0, 1.4)), 520.0)):
             ob = K.LIGHTS[nm]["obj"]
             ob.location = pos

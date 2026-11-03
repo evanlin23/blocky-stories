@@ -40,7 +40,7 @@ cast = {
     "tam": person("#b9a98a", "#3a3f4c", "#efc9a5", "spiky", "#3a2616", "#d8d4cc", extras=["glasses", "hooddown"],
                   extra_c="#141414", face={"eyes": "tired", "brows": True, "ink": "#1c1416", "bags": True}),
     # the Negative: skin near-black, white strokes; its mouth is a story-local decal (set.py), so the face has none
-    "neg": person("#36755f", "#d4caaf", "#15181c", "cap", "#c8c8c8", "#f2f2f2", pattern="knit", pattern_c="#2c6551",
+    "neg": person("#36755f", "#d4caaf", "#15181c", "cap", "#7c8088", "#f2f2f2", pattern="knit", pattern_c="#2c6551",
                   face={"eyes": "none", "brows": False, "ink": "#f2f2f2", "mouth": "none"}),
     "woman": person("#2a8a8a", "#2a2f3a", "#d9a47e", "bun", "#4a2a1a", extras=["coat"], zip_c="#1d6666"),
     "man": person("#6b4a2e", "#33302c", "#c89270", "none", hat="ballcap", hat_c="#5a4a38", extras=["coat"],
@@ -176,7 +176,7 @@ S("L21.2", "room", ([-5.6, -0.4, 1.7], [-7.0, 0.2, 1.6], 30),
 S("L22", "room", ([-5.6, 0.7, 1.6], [-5.6, -1.0, 1.6], 50), {}, lamps_up="L22")
 # the drop (P02), then the reveal
 S("L23", "room", ([-3.4, 0.1, 1.55], [-7.0, 0.0, 1.5], 24), {})
-S("L24", "room", GRIN_CAM, {"neg": {**LEAN}}, hold=True, test=True)
+S("L24", "room", ([-5.3, -2.3, 1.25], [-6.85, 0.1, 2.0], 30), {"neg": {**LEAN, "yaw": 18}, "tam": {"yaw": 140}}, hold=True, test=True)
 S("L24.2", "room", ([-6.1, 1.9, 1.75], [-7.0, -1.0, 1.45], 40), {})
 S("L25", "room", ([-5.6, 0.9, 1.6], [-5.6, -1.0, 1.55], 45), {"me": {"expr": "wide", "head": [8, 0]}})
 S("L25.1", "room", ([-6.4, -0.1, 1.15], [-7.0, 0.75, 0.95], 45), {})
