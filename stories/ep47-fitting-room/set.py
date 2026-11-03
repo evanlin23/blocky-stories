@@ -604,6 +604,10 @@ def build_shop(kit, M, ctx):
     ctx["tally_dust"] = [kit.sphere(f"dust{k}", 0.006, (0, 0, 0), M["dust"], seg=6) for k in range(7)]
     for d in ctx["tally_dust"]:
         d.hide_render = True
+    # a few CC0 pieces to fill the bare corners (kit.prop): a plant at the door, a stool by the bench, a bookshelf
+    kit.prop("houseplant_1", (-4.75, 2.7, 0), height=0.8, rot=20)
+    kit.prop("stool", (-10.7, -2.2, 0), rot=15, tint="#c9b08a")
+    kit.prop("bookshelf", (-8.2, SHOP_Y1 - 0.25, 0), height=1.9, rot=180, tint="#b89a74")
     # lights
     ctx["lights"] = {}
     L = kit.light("sun", "SUN", (14, 8, 16), 3.2, "#ffe2a8", size=0.08)

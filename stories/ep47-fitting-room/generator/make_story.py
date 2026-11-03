@@ -95,6 +95,14 @@ def move(a, b, la, lb=None):
     return c([0, list(a[0]), list(a[1]), la], [1, list(b[0]), list(b[1]), lb or la])
 
 
+def drift(cam, f=0.04):
+    """Every held shot gets a slow push toward its target, so nothing sits still for over 2 s."""
+    if len(cam) != 1:
+        return cam
+    t, loc, tgt, lens = cam[0][:4]
+    return [cam[0], [1, [loc[i] + f * (tgt[i] - loc[i]) for i in range(3)], tgt, lens]]
+
+
 def yaw_to(a, b):
     return round(math.degrees(math.atan2(b[0] - a[0], -(b[1] - a[1]))), 1)
 
@@ -109,9 +117,11 @@ FRONT = ((-5.0, 0.5, 1.5), (-12.6, 2.2, 1.3), 24)
 
 SHOTS = [
     # 01 the arcade
-    (0, "two walkers toward camera", 2, still((0.1, 3.9, 1.5), (0, -2, 1.45), 42)),
-    ("L01.2", "wide down the arcade", 2, move(((0.5, 8.0, 1.6), (0, -20, 1.9)), ((0.3, 7.0, 1.6), (0, -20, 1.9)), 26)),
-    ("L02", "the shoe man", 2, still((1.0, -4.6, 1.5), (-3.45, -7.1, 1.45), 40)),
+    (0, "close: tag pins on his coat, push in", 2, move(((0.3, 1.4, 1.5), (0, 0, 1.45)), ((0.12, 0.95, 1.5), (0, 0, 1.45)), 50)),
+    ("L01.2", "a tag pops on her sleeve", 2, move(((0.75, -1.7, 1.3), (0.2, -3, 1.25)), ((0.55, -2.0, 1.3), (0.2, -3, 1.25)), 50)),
+    ("L01.3", "tighter on him, the second tag", 2, move(((-0.35, 1.2, 1.4), (0, 0, 1.45)), ((-0.15, 0.85, 1.42), (0, 0, 1.45)), 62)),
+    ("L02", "Uncle, tagged to the chin", 2, move(((-6.35, -1.05, 1.65), (UN[0], UN[1], 1.55)), ((-6.15, -1.0, 1.65), (UN[0], UN[1], 1.55)), 48)),
+    ("L02.1", "punch in on COVERED", 2, still((-6.0, -0.95, 1.6), (UN[0], UN[1], 1.42), 66)),
     ("L05", "cafe man, sheepish", 2, still((0.4, -5.2, 1.45), (3.2, -5.2, 1.4), 42)),
     ("L05.2", "his chest, the tag drifts", 2, still((1.5, -5.2, 1.4), (3.3, -5.2, 1.2), 60)),
     ("L07", "Mrs. Kettle", 2, still((0.0, -9.0, 1.45), (-0.45, -6, 1.45), 45)),
@@ -211,7 +221,7 @@ def widen(cam):
 
 shots = []
 for i, (at, what, step, cam) in enumerate(SHOTS):
-    cam = widen(cam)
+    cam = widen(drift(cam))
     s = {"id": f"S{i + 1:02d}", "cam": cam, "hand": 0.0 if step == 4 else 0.006, "step": step, "what": what}
     if i:
         s["at"] = at
@@ -264,22 +274,13 @@ def rub(who, a, off=0.0, n=6, base=50):
 
 
 # 01 the arcade
-put("x1", 0, [-0.5, -0.8], yaw=180, expr="smirk")
-walk("x1", "L01.2", [-0.5, 1.8])
+put("x1", 0, [0.0, 0.0], yaw=180, expr="smirk")
+talk("x1", 0, "L01.3")
 hide("x1", "L02")
-put("x2", 0, [0.5, -0.8], yaw=180, expr="grin")
-walk("x2", "L01.2", [0.5, 1.8])
+put("x2", 0, [0.2, -3.0], yaw=170, expr="grin")
 hide("x2", "L02")
-talk("x1", 0, "L01.2")
-put("x1", "L01.2", [0.8, -3.0], yaw=180, expr="neutral")
-walk("x1", "L02", [0.8, -9.0])
-for n, (p0, p1) in {"x3": ([-1.5, -6], [-1.0, -2]), "x4": ([1.8, -9], [1.3, -4]), "x5": ([-2.2, -12], [-1.2, -8]),
-                    "x6": ([2.2, -14], [2.0, -10])}.items():
-    put(n, "L01.2", p0, yaw=180)
-    walk(n, "L02", p1)
-    hide(n, "L02+0.01")
-put("salesman", "L02", [-3.3, -7.1], yaw=90, expr="smirk", arms=[20, 20], side=[-15, -15])
-hide("salesman", "L05")
+put("uncle", "L02", [UN[0], UN[1]], yaw=90, expr="sad", head=[0, 0])
+hide("uncle", "L05")
 put("cafe_man", "L05", [3.4, -5.0], yaw=-75, expr="worried", head=[0, 10])
 put("cafe_f", "L05", [3.4, -5.9], yaw=-100, expr="neutral")
 talk("cafe_man", "L05", "L05.2")
@@ -512,7 +513,11 @@ cue(0, "tags", who="cafe_man", n=4, pop=False)
 cue("L05.2+0.1", "tags", who="cafe_man", n=3, fall=True)
 cue("L58+0.2", "tags", who="cafe_man", n=4, pop=False)
 cue("L58+0.5", "tags", who="cafe_man", n=3, fall=True)
-cue("L01+1.0", "tags", who="x1", n=8)
+cue("L01+0.45", "tags", who="x1", n=8)
+cue("L01.2+0.3", "tags", who="x2", n=8)
+cue("L01.3+0.25", "tags", who="x1", n=9)
+cue("L02", "tags", who="uncle", n=55, pop=False)
+cue("L05", "tags", who="uncle", n=0, pop=False)
 cue(0, "tags", who="uncle", n=0, pop=False)
 for at, n, pop in (("L12", 3, False), ("L19.3+0.25", 4, True), ("L21", 12, False), ("L23", 30, False), ("L37", 40, False),
                    ("L40+0.35", 41, True), ("L44", 44, False), ("L45+0.4", 47, True), ("L45.2+0.4", 50, True),
@@ -522,7 +527,13 @@ cue("L61", "tags", who="uncle", n=0, fall=True, rest=True)
 
 # ---------------------------------------------------------------------------------------------------- sound
 sfx = [
-    {"at": "L01+1.0", "kind": "click", "db": -26},
+    {"at": "L01+0.45", "kind": "click", "db": -20},
+    {"at": "L01.2+0.3", "kind": "click", "db": -20},
+    {"at": "L01.3+0.25", "kind": "click", "db": -20},
+    {"at": "L01>-0.2", "kind": "hit", "db": -9},
+    {"at": "L02", "kind": "whoosh", "db": -22, "dur": 0.5},
+    {"at": "L02.1", "kind": "hit", "db": -14},
+    {"at": "L05", "kind": "whoosh", "db": -24, "dur": 0.5},
     {"at": "L05.2+0.1", "kind": "whoosh", "db": -30, "dur": 1.0},
     {"at": "L19.3+0.25", "kind": "click", "db": -26},
     {"at": "L22+0.5", "kind": "bell", "db": -22},
@@ -544,6 +555,12 @@ sfx = [
     {"at": "L61", "kind": "whoosh", "db": -26, "dur": 2.5},
     {"at": "L62.2", "kind": "thud", "db": -18},
     {"at": "L69.3", "kind": "click", "db": -22},
+    {"at": "L47", "kind": "hit", "db": -12},
+    {"at": "L44", "kind": "whoosh", "db": -26, "dur": 0.6},
+    {"at": "L12", "kind": "whoosh", "db": -26, "dur": 0.6},
+    {"at": "L46", "kind": "hit", "db": -16},
+    {"at": "L56", "kind": "whoosh", "db": -26, "dur": 0.6},
+    {"at": "L66", "kind": "whoosh", "db": -28, "dur": 0.8},
     {"at": "L73>", "kind": "glide", "db": -20, "dur": 1.2},
 ]
 story = {
@@ -560,7 +577,7 @@ story = {
     "fade_in": False,
     "fade_out": False,
     "look": {"fog": "#1c2230", "fog_density": 0.012, "fog_start": 8.0, "sky": "#cfe0ee", "sky_strength": 0.9,
-             "exposure": 0.0, "flash_safe": True},
+             "exposure": 0.15, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.25, "grain": 0.012},
     "phonemes": {"Aurel": "ˈɔɹəl"},
