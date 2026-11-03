@@ -484,7 +484,12 @@ def step_sound(surface: str, run: bool, seed: int) -> np.ndarray:
     elif surface == "metal":
         y = _layer(synth.thump(0.1, 220, 120, seed) * 0.5, synth.fm_bell(float(r.uniform(700, 900)), 0.25, 2.7, 1.2, 0.06) * 0.25)
     elif surface == "grass":
-        y = fft_filter(synth.noise(0.12, seed), "band", 1500, 6000) * synth.decay(0.12, 0.04)[: synth.n_samples(0.12)] * 0.6
+        # a soft low swish and a dull heel, not a hiss: the old 1.5 to 6 kHz noise burst read as scratching
+        # (owner, 2026-11-02, ep36: "a horrible scratchy sound")
+        n = synth.n_samples(0.16)
+        env = np.minimum(1.0, np.arange(n) / (0.02 * SR)) * synth.decay(0.16, 0.05)[:n]   # 20 ms fade-in, no click
+        swish = fft_filter(synth.noise(0.16, seed), "band", 250, 1600)[:n] * env * 0.35
+        y = _layer(swish, synth.thump(0.08, 120, 70, seed) * 0.25)
     else:  # stone, concrete
         y = _layer(synth.thump(0.08, 140, 70, seed) * 0.6, fft_filter(synth.noise(0.06, seed), "band", 1200, 5000) * synth.decay(0.06, 0.01)[: synth.n_samples(0.06)] * 0.6)
     return y * (1.4 if run else 1.0) * float(r.uniform(0.8, 1.1))
