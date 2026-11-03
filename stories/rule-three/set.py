@@ -1,7 +1,7 @@
 """rule-three (batch 6, the Rulebook Keeper pilot): a bright hill town and its town hall, built from kit.py's parts.
 
 THE RECURRING HOST LIVES HERE (and in stories/lore.md, "The Rulebook Keeper"). Later episodes copy these builders:
-  dress_otis()     the host's waistcoat, brass buttons, bow tie, mustache, cowlick and ink-blue thumb on the rig
+  dress_otis()     the Buhkeeper's ink-blue thumb on the rig (the look itself is the rig spec in make_story)
   build_book()     the door-sized red leather rulebook (open on the lectern, closed to carry, open on a table)
   build_stamp()    his brass stamp with the cherry-red knob (glued to his right hand by the "stamp" cue)
   build_lectern()  the one seamless block of pale old stone
@@ -583,6 +583,8 @@ def build_book(kit, M, ctx):
         for sz in (-1, 1):
             for sx in (-1, 1):
                 kit.box(f"bookc.corner{sx}{sy}{sz}", (0.02, 0.12, 0.12), (sx * 0.175, sy * 0.44, sz * 0.62), M["brass"], cl)
+    for sx in (-1, 1):   # the brass hexagon of the Buhkeeper's red book, on both covers
+        kit.cyl(f"bookc.hex{sx}", 0.17, 0.012, (sx * 0.175, 0.0, 0.1), M["brass"], cl, rot=(0, math.pi / 2, 0), n=6)
     kit.box("bookc.clasp", (0.02, 0.12, 0.3), (-0.185, 0.0, 0.0), M["brass"], cl)
     kit.box("bookc.clasp2", (0.02, 0.12, 0.3), (0.185, 0.0, 0.0), M["brass"], cl)
     ctx["book_closed"] = cl
@@ -601,6 +603,10 @@ def build_stamp(kit, M, ctx):
 def build_props_small(kit, M, ctx):
     # slip (a folded slip) and the big unfolded slip with the scrawled 3
     ctx["slip"] = kit.box("slip", (0.1, 0.13, 0.012), (0, 0, -40), M["cream"])
+    pen = kit.empty("pencil", (0, 0, -40))
+    kit.box("pencil.body", (0.025, 0.025, 0.3), (0, 0, 0), kit.plastic("#f2c230", 0.5, "pencil"), pen, bevel=0.004)
+    kit.box("pencil.tip", (0.02, 0.02, 0.05), (0, 0, -0.17), kit.plastic("#3a3a3a", 0.5, "lead"), pen)
+    ctx["pencil"] = pen
     sm = img_material(kit, "slip3", slip_image("three"), 0.7)
     ctx["slip3"] = img_plane(kit, "slip3", 0.22, 0.29, sm, (0, 0, -40))
     # the torn leaf (rule three on the front, rule four on the back)
@@ -800,7 +806,7 @@ def build_bridge(kit, M, ctx):
 
 def party_room(kit, M, ctx):
     cx = 500.0
-    lilac = kit.plastic("#e9defa", 0.85, "mom wall")
+    lilac = kit.plastic("#cdbfe6", 0.85, "mom wall")
     wood = kit.texture("wood", 1.0, tint="#e8c090", rough=0.55, mat_name="mom floor")
     back, left, right = room_shell(kit, M, "mom", cx, 0.0, 6.0, 7.0, 3.0, lilac, wood, ceil=True)
     front = kit.box("mom.front", (7.8, 0.3, 3.0), (cx, -0.15, 1.5), M["white"])
@@ -812,10 +818,10 @@ def party_room(kit, M, ctx):
         kit.prop("bush_1", (cx + sx * 3.4, -1.0, 0), height=0.9)
         kit.prop("commontree_1", (cx + sx * 6.0, -3.0, 0), height=4.4)
     # the party: table with cloth, cake, plates; bunting; shelf and plant
-    cloth = kit.plastic("#ffe6ef", 0.9, "cloth")
+    cloth = kit.plastic("#eac3d3", 0.9, "cloth")
     kit.box("mom.table.top", (3.2, 1.1, 0.06), (cx, 3.6, 0.78), cloth, bevel=0.01)
     kit.box("mom.table.skirt", (3.26, 1.16, 0.62), (cx, 3.6, 0.45), cloth, bevel=0.02)
-    cake = kit.empty("cake", (cx - 1.2, 3.6, 0.81))
+    cake = kit.empty("cake", (cx - 1.3, 3.75, 0.81))
     kit.cyl("cake.a", 0.24, 0.12, (0, 0, 0.06), kit.plastic("#f6a8c0", 0.6, "cake pink"), cake, n=24)
     kit.cyl("cake.b", 0.18, 0.1, (0, 0, 0.17), kit.plastic("#fff6e0", 0.6, "icing"), cake, n=24)
     kit.sphere("cake.cherry", 0.03, (0, 0, 0.24), kit.plastic("#d6283b", 0.3, "cherry"), cake, seg=8)
@@ -825,9 +831,9 @@ def party_room(kit, M, ctx):
         kit.box(f"bunt{i}", (0.28, 0.02, 0.28), (cx - 3.2 + i * 0.8, 5.92, 2.55 + 0.1 * math.sin(i * 0.8)), kit.plastic(c, 0.6, f"bunt{i}"), rot=(0, math.pi / 4, 0))
     kit.prop("bookshelf", (cx - 3.0, 5.5, 0), height=1.9)
     kit.prop("houseplant_1", (cx + 3.0, 5.4, 0), height=1.3)
-    kit.light("mom key", "AREA", (cx, 2.5, 2.9), 1.0, "#fff0d8", size=5.0)
-    kit.light("mom face", "POINT", (cx, 0.8, 2.2), 1.0, "#fff4e0", size=0.6)
-    kit.light("mom back", "POINT", (cx, 5.0, 2.4), 1.0, "#ffe9c8", size=0.5)
+    kit.light("mom key", "AREA", (cx, 2.5, 2.9), 0.55, "#fff0d8", size=5.0)
+    kit.light("mom face", "POINT", (cx, 0.8, 2.2), 0.6, "#fff4e0", size=0.6)
+    kit.light("mom back", "POINT", (cx, 5.0, 2.4), 0.6, "#ffe9c8", size=0.5)
 
 
 def kitchen(kit, M, ctx):
@@ -889,33 +895,10 @@ def _head(name):
 
 
 def dress_otis(kit, name="me"):
-    """The recurring host. The rig gives him the white shirt, glasses, chestnut hair, charcoal trousers and brown shoes."""
+    """The Buhkeeper (the channel's avatar; rig spec in make_story): the rig gives the top hat, fringe, teal coat, scarf.
+    Here only the ink-blue thumb (the stamp's mark)."""
     c = rig.CHARS[name]
     P = kit.plastic
-    cobalt = P("#2f5fd0", 0.55, "otis waistcoat")
-    brass = kit.metal(BRASS, 0.3, "brass")
-    red = P("#d6283b", 0.5, "otis bow")
-    hair = P("#3b2417", 0.65, "otis hair")
-    kit.box(f"{name}.vest", (2.02, 1.06, 1.62), (0, 0, 0.9), cobalt, c.upper, bevel=0.06)
-    kit.box(f"{name}.vestline", (0.05, 0.02, 1.4), (0, -0.545, 0.95), P("#1f3f95", 0.5, "vest line"), c.upper)
-    for i in range(4):
-        kit.sphere(f"{name}.btn{i}", 0.075, (0.0, -0.55, 0.38 + 0.31 * i), brass, c.upper, seg=8)
-    kit.box(f"{name}.pocketslit", (0.38, 0.02, 0.05), (0.6, -0.545, 1.22), P("#1f3f95", 0.5, "vest line"), c.upper)
-    for sx in (-1, 1):
-        kit.box(f"{name}.bow{sx}", (0.34, 0.1, 0.24), (sx * 0.2, -0.56, 1.78), red, c.upper, rot=(0, sx * 0.25, 0), bevel=0.03)
-    kit.box(f"{name}.bowknot", (0.14, 0.12, 0.18), (0, -0.57, 1.78), red, c.upper, bevel=0.03)
-    hg = _head(name)
-    for lens in (f"{name}.gl-1", f"{name}.gl1"):   # open the lenses: thick black round-ish frames, eyes visible
-        if lens in bpy.data.objects:
-            bpy.data.objects.remove(bpy.data.objects[lens])
-    blk = P("#101014", 0.4, "otis frames")
-    for sx in (-1, 1):
-        cx, cz, w, h, t = sx * 0.24, -0.02, 0.44, 0.34, 0.06
-        for dx, dz, bw, bh in ((0, h / 2, w, t), (0, -h / 2, w, t), (-w / 2, 0, t, h), (w / 2, 0, t, h)):
-            kit.box(f"{name}.fr{sx}{dx}{dz}", (bw, 0.05, bh), (cx + dx, -faces.HEAD_R - 0.03, cz + dz), blk, hg, bevel=0.015)
-    kit.box(f"{name}.stache", (0.4, 0.09, 0.12), (0, -faces.HEAD_R - 0.02, -0.27), hair, hg, bevel=0.025)
-    kit.box(f"{name}.cowlick", (0.12, 0.12, 0.34), (0.12, 0.08, faces.HEAD_H / 2 + 0.18), hair, hg, rot=(0.1, 0.3, 0.25), bevel=0.04)
-    kit.box(f"{name}.part", (0.05, 0.4, 0.04), (-0.18, -0.2, faces.HEAD_H / 2 + 0.115), P("#2a1810", 0.7, "part"), hg)
     arm = c.P["arm-1"]
     kit.box(f"{name}.thumb", (0.2, 0.2, 0.3), (0.0, -0.38, -1.62), P(INK, 0.4, "ink thumb"), arm, bevel=0.05)
     kit.box(f"{name}.inkpalm", (0.99, 0.99, 0.18), (0.0, 0.0, -1.7), P("#4a6bec", 0.4, "ink palm"), arm, bevel=0.04)
@@ -923,6 +906,13 @@ def dress_otis(kit, name="me"):
 
 def dress_milo(kit, name):
     c = rig.CHARS[name]
+    if name == "milo":   # short shaggy crop above the ears: a ragged fringe and tufts on top (no bob)
+        hg = _head(name)
+        hair = kit.plastic("#c99a4e", 0.65, "milo hair")
+        top = faces.HEAD_H / 2
+        kit.box(f"{name}.fringe", (2 * faces.HEAD_R + 0.04, 0.4, 0.3), (0, -faces.HEAD_R + 0.15, top - 0.12), hair, hg, rot=(0, 0.1, 0), bevel=0.1)
+        for i, (x, y, h, r) in enumerate(((-0.45, -0.1, 0.34, 0.3), (0.05, 0.1, 0.42, -0.2), (0.45, -0.05, 0.3, 0.35), (-0.1, -0.35, 0.28, -0.3))):
+            kit.box(f"{name}.tuft{i}", (0.3, 0.3, h), (x, y, top + h / 2 - 0.05), hair, hg, rot=(0.1, r, r * 0.6), bevel=0.06)
     kit.box(f"{name}.stripe", (2.04, 1.04, 0.2), (0, 0, 1.1), kit.plastic("#ffffff", 0.7, "milo stripe"), c.upper, bevel=0.03)
     kit.box(f"{name}.pouch", (1.2, 1.06, 0.5), (0, 0, 0.3), kit.plastic("#e87a10", 0.7, "pouch"), c.upper, bevel=0.05)
 
@@ -1115,16 +1105,27 @@ def animate(kit, story, tl, t, ctx):
         hide_tree(st, False)
         if mode != "open":
             st.location = (0, 0, -40)
+    # ---- Milo's pencil
+    pc = latest(tl, "pencil", t)
+    pen = ctx["pencil"]
+    if pc and pc["on"] and "milo" in rig.CHARS:
+        hp = hand_pos("milo", 0, (0, -0.1, -1.7))
+        pen.location = (hp.x, hp.y, hp.z)
+        pen.rotation_euler = (0.5, 0, 0)
+    else:
+        pen.location = (0, 0, -40)
     # ---- the slip
     c = latest(tl, "slip", t)
     slip, slip3 = ctx["slip"], ctx["slip3"]
     slip.location = (0, 0, -40)
+    slip.scale = (1.0, 1.0, 1.0)
     slip3.location = (0, 0, -40)
     face = latest(tl, "slipface", t)
     if c and c["mode"] == "path":
         p = track(tl, "slip", t) or c["v"]
         slip.location = (p[0], p[1], p[2])
         slip.rotation_euler = (0, 0, 0)
+        slip.scale = (1.9, 1.9, 1.0) if p[0] > 450 else (1.0, 1.0, 1.0)
     elif c and c["mode"] == "hand" and "me" in rig.CHARS and not rig.CHARS["me"].root.hide_render:
         hp = hand_pos("me", 0, (0, -0.1, -1.72))
         if face and face["n"] == "three":
@@ -1168,6 +1169,8 @@ def animate(kit, story, tl, t, ctx):
             p = track(tl, "ppage", t) or c["v"]
             root.location = (p[0], p[1], p[2])
             root.rotation_euler = (math.radians(90 + p[4]), 0, math.radians(p[3]))
+            if showback:   # lying flat, face up: turn the sheet over so the back (the 4) is the face we see
+                root.rotation_euler = (math.radians(90 + p[4]) + math.pi, 0, math.radians(p[3]))
         root.scale = (0.28 + 0.72 * uf, 1.0, 1.0)
     if mode_p == "pocket":
         root.scale = (1, 1, 1)
