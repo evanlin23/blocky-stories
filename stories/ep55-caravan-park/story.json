@@ -1,9 +1,10 @@
 {
+ "rev": 4,
  "slug": "ep55-caravan-park",
  "title": "In this town, moss grows on you while you wait",
  "made_for_kids": false,
- "premise": "In a town where moss grows on you while you wait for someone, the narrator has never had a speck, because she is always early and never waits. Her husband Jory is coming up green on the headland caravan park, the moss won't come off when she gets back, and every morning there are two deep knee hollows in the wet grass by the step.",
- "twist": "She came home every evening but never arrived: she put the kettle on and was out again, and never once sat in her own chair. Jory wasn't waiting for her to come back, he was waiting for her to stop. Her empty chair left the caravan's count short by one, and the Kneeler has been kneeling beside it every night, standing in her place. When she sits down and waits with him, his moss comes off and hers begins.",
+ "premise": "In a town where moss grows on you while you wait for someone, the narrator, an older man, has never had a speck, because he is always early and never waits. His wife Maggie is coming up green at their headland caravan park, the moss won't come off when he gets back, and every morning there are two deep knee hollows in the wet grass by the step.",
+ "twist": "He came home every evening but never arrived: he put the kettle on and was out again, and never once sat in his own chair. Maggie wasn't waiting for him to come back, she was waiting for him to stop. His empty chair left the caravan's count short by one, and the Kneeler has been kneeling beside it every night, standing in his place. When he sits down and waits with her, her moss comes off and his begins.",
  "world": "A static caravan park on a grassy headland in autumn: cream caravans with coloured stripes, a picket gate between two granite posts, two folding canvas chairs, gorse and bracken, a path up to an old bench above the grey sea, and the small town below with its bus shelter, shop bench and station.",
  "voice": {
   "voice": "am_adam",
@@ -22,6 +23,8 @@
   "exposure": 0.0,
   "flash_safe": true
  },
+ "fade_in": false,
+ "fade_out": false,
  "grade": {
   "shadows": [
    0.0,
@@ -52,7 +55,7 @@
    "pants": "#4a3d30",
    "shoes": "#5a3a22",
    "sleeves": "long",
-   "hair": "cap",
+   "hair": "buzz",
    "hair_c": "#a9a9ab",
    "hat": "none",
    "face": {
@@ -70,15 +73,15 @@
    "age": "adult",
    "skin": "#e6b894",
    "shirt": "#5a7494",
-   "pants": "#2c2c34",
+   "pants": "#6e4f6e",
    "shoes": "#2b221b",
    "sleeves": "long",
-   "hair": "cap",
-   "hair_c": "#f2f2ee",
+   "hair": "long",
+   "hair_c": "#a7a29a",
    "hat": "beanie",
    "face": {
-    "eyes": "round",
-    "brows": false
+    "eyes": "lashes",
+    "brows": true
    },
    "pattern": "knit",
    "pattern_c": "#e8dfc6",
@@ -234,10 +237,10 @@
    "shoes": "#2a2a2e",
    "sleeves": "long",
    "hair": "bun",
-   "hair_c": "#b8b8b8",
+   "hair_c": "#5f5f66",
    "hat": "none",
    "face": {
-    "eyes": "round",
+    "eyes": "lashes",
     "brows": true
    },
    "extras": [
@@ -252,24 +255,38 @@
    "who": "narrator",
    "chunks": [
     [
-     "In this town,",
-     "In this town,"
+     "NEVER wait",
+     "Never wait"
     ],
     [
+     "for someone",
+     "for someone"
+    ],
+    [
+     "at the front",
+     "at the front"
+    ],
+    [
+     "GATE.",
+     "gate."
+    ]
+   ]
+  },
+  {
+   "id": "L01b",
+   "who": "narrator",
+   "chunks": [
+    [
      "MOSS grows",
-     "moss grows"
+     "Moss grows"
     ],
     [
      "on you",
      "on you"
     ],
     [
-     "while you WAIT",
-     "while you wait"
-    ],
-    [
-     "for SOMEONE.",
-     "for someone."
+     "while you WAIT.",
+     "while you wait."
     ]
    ]
   },
@@ -438,8 +455,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Jory and I",
-     "Jory and I"
+     "My WIFE,",
+     "My wife,"
+    ],
+    [
+     "MAGGIE, and I",
+     "Maggie, and I"
     ],
     [
      "have had",
@@ -468,8 +489,8 @@
      "by the gate."
     ],
     [
-     "His,",
-     "His,"
+     "Hers,",
+     "Hers,"
     ],
     [
      "and MINE.",
@@ -522,8 +543,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Jory walks me",
-     "Jory walks me"
+     "Maggie walks me",
+     "Maggie walks me"
     ],
     [
      "to the GATE,",
@@ -534,8 +555,8 @@
      "me on"
     ],
     [
-     "his LEFT.",
-     "his left."
+     "her LEFT.",
+     "her left."
     ]
    ]
   },
@@ -544,12 +565,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Then he WAITS",
-     "Then he waits"
+     "Then she WAITS",
+     "Then she waits"
     ],
     [
-     "in his CHAIR.",
-     "in his chair."
+     "in her CHAIR.",
+     "in her chair."
     ]
    ]
   },
@@ -562,8 +583,8 @@
      "This autumn,"
     ],
     [
-     "he's coming up",
-     "he's coming up"
+     "she's coming up",
+     "she's coming up"
     ],
     [
      "GREEN.",
@@ -580,8 +601,8 @@
      "thicker every evening,"
     ],
     [
-     "mostly on his",
-     "mostly on his"
+     "mostly on her",
+     "mostly on her"
     ],
     [
      "LEFT SHOULDER.",
@@ -630,8 +651,8 @@
      "there are flowers"
     ],
     [
-     "in his EYEBROWS.",
-     "in his eyebrows."
+     "in her HAIR.",
+     "in her hair."
     ]
    ]
   },
@@ -644,8 +665,8 @@
      "The gulls"
     ],
     [
-     "sit on him",
-     "sit on him"
+     "sit on her",
+     "sit on her"
     ],
     [
      "like a ROCK.",
@@ -684,16 +705,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "He won't",
-     "He won't"
+     "She won't",
+     "She won't"
     ],
     [
      "come IN.",
      "come in."
     ],
     [
-     "He just looks",
-     "He just looks"
+     "She just looks",
+     "She just looks"
     ],
     [
      "at MY CHAIR.",
@@ -831,8 +852,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "And Jory",
-     "And Jory"
+     "And Maggie",
+     "And Maggie"
     ],
     [
      "isn't at",
@@ -854,8 +875,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "His CAP",
-     "His cap"
+     "Her CAP",
+     "Her cap"
     ],
     [
      "is on",
@@ -880,8 +901,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "His chair",
-     "His chair"
+     "Her chair",
+     "Her chair"
     ],
     [
      "is GREEN",
@@ -902,8 +923,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Like he waited",
-     "Like he waited"
+     "Like she waited",
+     "Like she waited"
     ],
     [
      "longer than ANYONE",
@@ -924,8 +945,8 @@
      "I ring"
     ],
     [
-     "his PHONE.",
-     "his phone."
+     "her PHONE.",
+     "her phone."
     ],
     [
      "It buzzes",
@@ -946,8 +967,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "His COAT",
-     "His coat"
+     "Her COAT",
+     "Her coat"
     ],
     [
      "is still",
@@ -958,8 +979,8 @@
      "on its hook."
     ],
     [
-     "His BOOTS",
-     "His boots"
+     "Her BOOTS",
+     "Her boots"
     ],
     [
      "are GONE.",
@@ -976,8 +997,8 @@
      "I call"
     ],
     [
-     "his NAME",
-     "his name"
+     "her NAME",
+     "her name"
     ],
     [
      "into the FOG.",
@@ -1183,8 +1204,8 @@
      "slowly,"
     ],
     [
-     "toward Jory's",
-     "toward Jory's"
+     "toward Maggie's",
+     "toward Maggie's"
     ],
     [
      "EMPTY CHAIR.",
@@ -1295,8 +1316,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "His never",
-     "His never"
+     "Hers never",
+     "Hers never"
     ],
     [
      "CAME OFF,",
@@ -1343,8 +1364,8 @@
      "All these years,"
     ],
     [
-     "Jory's been waiting",
-     "Jory's been waiting"
+     "Maggie's been waiting",
+     "Maggie's been waiting"
     ],
     [
      "for me",
@@ -1387,8 +1408,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Jory's on",
-     "Jory's on"
+     "Maggie's on",
+     "Maggie's on"
     ],
     [
      "the OLD BENCH",
@@ -1403,12 +1424,12 @@
      "green from"
     ],
     [
-     "his HAIR",
-     "his hair"
+     "her HAIR",
+     "her hair"
     ],
     [
-     "to his BOOTS.",
-     "to his boots."
+     "to her BOOTS.",
+     "to her boots."
     ]
    ]
   },
@@ -1417,8 +1438,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "He came looking",
-     "He came looking"
+     "She came looking",
+     "She came looking"
     ],
     [
      "for ME,",
@@ -1451,8 +1472,8 @@
      "I sit down"
     ],
     [
-     "on his LEFT.",
-     "on his left."
+     "on her LEFT.",
+     "on her left."
     ]
    ]
   },
@@ -1465,8 +1486,8 @@
      "And I wait"
     ],
     [
-     "for HIM",
-     "for him"
+     "for HER",
+     "for her"
     ],
     [
      "to be READY.",
@@ -1527,8 +1548,8 @@
      "And all"
     ],
     [
-     "of his",
-     "of his"
+     "of hers",
+     "of hers"
     ],
     [
      "comes OFF",
@@ -1589,8 +1610,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Now Jory",
-     "Now Jory"
+     "Now Maggie",
+     "Now Maggie"
     ],
     [
      "takes the",
@@ -1625,8 +1646,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "He comes",
-     "He comes"
+     "She comes",
+     "She comes"
     ],
     [
      "back up",
@@ -1651,8 +1672,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "It takes him",
-     "It takes him"
+     "It takes her",
+     "It takes her"
     ],
     [
      "FOREVER.",
@@ -1743,8 +1764,8 @@
      "to my chair,"
     ],
     [
-     "Jory says",
-     "Jory says"
+     "Maggie says",
+     "Maggie says"
     ],
     [
      "the grass",
@@ -1757,6 +1778,14 @@
     [
      "starts to SINK.",
      "starts to sink."
+    ],
+    [
+     "So whatever",
+     "So whatever"
+    ],
+    [
+     "you DO,",
+     "you do,"
     ]
    ]
   }
@@ -1768,34 +1797,70 @@
     [
      0,
      [
-      -8.792,
-      0.447,
-      1.56
+      -40.0,
+      6.0,
+      0.7
      ],
      [
-      -9.4,
-      -3.0,
-      1.56
+      -40.0,
+      -1.6,
+      0.62
      ],
-     40
+     30
     ],
     [
      1,
      [
-      -8.836,
-      0.201,
-      1.56
+      -40.0,
+      4.6,
+      0.68
      ],
      [
-      -9.4,
-      -3.0,
-      1.56
+      -40.0,
+      -1.6,
+      0.62
      ],
-     40
+     30
     ]
    ],
    "step": 2,
-   "hand": 0.003
+   "hand": 0.002
+  },
+  {
+   "id": "O1B",
+   "cam": [
+    [
+     0,
+     [
+      -39.162,
+      -0.693,
+      2.01
+     ],
+     [
+      -38.5,
+      -3.0,
+      1.36
+     ],
+     34
+    ],
+    [
+     1,
+     [
+      -39.079,
+      -0.981,
+      2.01
+     ],
+     [
+      -38.5,
+      -3.0,
+      1.36
+     ],
+     34
+    ]
+   ],
+   "step": 2,
+   "hand": 0.003,
+   "at": "L01b"
   },
   {
    "id": "S02",
@@ -2041,28 +2106,28 @@
     [
      0,
      [
-      118.389,
-      1.887,
-      1.33
+      119.104,
+      6.084,
+      1.3
      ],
      [
-      119.1,
+      119.55,
       -0.3,
-      1.33
+      1.0
      ],
      34
     ],
     [
      1,
      [
-      118.436,
-      1.745,
-      1.33
+      119.124,
+      5.785,
+      1.3
      ],
      [
-      119.1,
+      119.55,
       -0.3,
-      1.33
+      1.0
      ],
      34
     ]
@@ -2070,42 +2135,6 @@
    "step": 2,
    "hand": 0.004,
    "at": "L06.1"
-  },
-  {
-   "id": "S10",
-   "cam": [
-    [
-     0,
-     [
-      120.774,
-      1.74,
-      1.33
-     ],
-     [
-      119.95,
-      -0.3,
-      1.33
-     ],
-     34
-    ],
-    [
-     1,
-     [
-      120.718,
-      1.601,
-      1.33
-     ],
-     [
-      119.95,
-      -0.3,
-      1.33
-     ],
-     34
-    ]
-   ],
-   "step": 2,
-   "hand": 0.004,
-   "at": "L07"
   },
   {
    "id": "S11",
@@ -2187,28 +2216,28 @@
      [
       5.5,
       3.0,
-      1.8
+      2.0
      ],
      [
       0.0,
-      -3.9,
-      1.3
+      -4.1,
+      1.75
      ],
-     26
+     44
     ],
     [
      1,
      [
-      5.0,
-      2.6,
-      1.8
+      4.2,
+      1.6,
+      1.9
      ],
      [
       0.0,
-      -3.9,
-      1.3
+      -4.1,
+      1.75
      ],
-     26
+     50
     ]
    ],
    "step": 2,
@@ -4962,6 +4991,42 @@
    "step": 2,
    "hand": 0.004,
    "at": "L72.4"
+  },
+  {
+   "id": "TAIL",
+   "cam": [
+    [
+     0,
+     [
+      -0.6,
+      -0.4,
+      0.5
+     ],
+     [
+      -1.2,
+      -2.1,
+      0.3
+     ],
+     30
+    ],
+    [
+     1,
+     [
+      -0.7,
+      -0.75,
+      0.42
+     ],
+     [
+      -1.2,
+      -2.1,
+      0.3
+     ],
+     30
+    ]
+   ],
+   "step": 2,
+   "hand": 0.0008,
+   "at": "L72.8"
   }
  ],
  "acting": {
@@ -5038,11 +5103,43 @@
     ]
    },
    {
-    "at": "L13",
+    "at": "L10",
     "pos": [
      -8.4,
      -2.9,
      0.0
+    ]
+   },
+   {
+    "at": "L10",
+    "pos": [
+     -0.5,
+     -4.12,
+     0.71
+    ],
+    "blend": 0.0,
+    "hidden": false,
+    "expr": "smile",
+    "arms": [
+     55,
+     0
+    ],
+    "head": [
+     25,
+     0
+    ],
+    "yaw": 180
+   },
+   {
+    "at": "L11",
+    "hidden": true
+   },
+   {
+    "at": "L13",
+    "pos": [
+     -0.5,
+     -4.12,
+     0.71
     ]
    },
    {
@@ -5613,19 +5710,27 @@
    {
     "at": "L10",
     "pos": [
-     0.0,
+     0.5,
      -4.12,
      0.71
     ],
     "blend": 0.0,
     "hidden": false,
-    "expr": "soft",
+    "expr": "smile",
+    "arms": [
+     0,
+     55
+    ],
+    "head": [
+     -25,
+     0
+    ],
     "yaw": 180
    },
    {
     "at": "L14",
     "pos": [
-     0.0,
+     0.5,
      -4.12,
      0.71
     ]
@@ -6014,7 +6119,7 @@
    {
     "at": 0,
     "pos": [
-     -9.4,
+     -38.5,
      -3.0,
      0.0
     ],
@@ -6303,7 +6408,7 @@
    {
     "at": "L06",
     "pos": [
-     119.1,
+     118.95,
      -0.3,
      -0.23
     ],
@@ -6341,7 +6446,7 @@
    {
     "at": "L06",
     "pos": [
-     119.95,
+     120.15,
      -0.3,
      -0.23
     ],
@@ -6351,9 +6456,17 @@
     "sit": true,
     "arms": [
      0,
-     100
+     0
     ],
     "yaw": 180
+   },
+   {
+    "at": "L07",
+    "arms": [
+     0,
+     100
+    ],
+    "blend": 0.6
    },
    {
     "at": "L08",
@@ -6830,6 +6943,30 @@
    "at": "L56",
    "name": "kneeler",
    "show": false
+  },
+  {
+   "at": 0,
+   "name": "shot",
+   "look": {
+    "face": [
+     [
+      -39.5,
+      2.3,
+      1.25
+     ],
+     [
+      -40.0,
+      -1.6,
+      0.6
+     ],
+     110
+    ]
+   }
+  },
+  {
+   "at": "L01b",
+   "name": "shot",
+   "look": null
   },
   {
    "at": "L08",
@@ -7677,7 +7814,7 @@
       20.35,
       1.33
      ],
-     120
+     50
     ]
    }
   },
@@ -7879,6 +8016,16 @@
   ],
   "sfx": [
    {
+    "at": "L01.3+0.05",
+    "kind": "thud",
+    "db": -19
+   },
+   {
+    "at": "L01.3+0.07",
+    "kind": "click",
+    "db": -14
+   },
+   {
     "at": "L09",
     "kind": "click",
     "db": -26
@@ -8021,7 +8168,6 @@
     ],
     "db": -70
    }
-  ],
-  "rev": 3
+  ]
  }
 }
