@@ -356,10 +356,13 @@ killed: `ep57-arch-seat` (#28b, replacement for ep44 `sleeper-car`, 2026-11-03),
 killed: the `lookout` redo (2026-11-03), same big idea as ep33 (altitude time), so don't retry this twist. The redo's rule was "In this valley, time runs slower the higher up you are", with my teen brother Ollie climbing the tower twenty years older. ep33's shipping redo already has "one day at the top costs a year below" (hard rule 5). Standards approved round 1, and the critic said revise in both rounds (big idea 8, feeling 6, warm turn 5) with 5 framing and wording fixes left. `lookout` stays held. The tower set and cast are free to reuse with a different big idea. The full build is in git at commit 8592320 on branch claude/redo-lookout.
 
 ## Claimed big ideas
-**Crowded theme: being forgotten or unseen** (floor-thirteen, ep31, ep32). Pick a different core for new stories.
+**Crowded theme: being forgotten or unseen** (floor-thirteen, ep31, ep32, ep43). Pick a different core for new stories.
 (One line per story: the reveal in a few words. Writers check this before keeping an idea, because parallel sessions converge. ep33 and the lookout redo both picked altitude time.)
 - ep33-chairlift: a day at the top costs a year below (altitude time)
 - ep31-dawn-flight: you fall apart if your family forgets you; they relive one dawn to keep you whole
 - floor-thirteen: forgotten things go to floor 13, and the narrator is what Grandad forgot
 - moving-day (ep17): a house grows to fit the tallest one living in it, and it never fit us; something tall came with us in a box
 - ep32-sitter: if nobody looks at you, your face fades; the faceless sitter creeping nearer is Mum, faded because I stopped looking at her
+- ep43-reading-room: the number over your head is how many people know your name; you don't count yourself, so my 1 was my brother all along
+- ep47-fitting-room: every lie pins a tag to your clothes, but a lie you believe never gets one; my clean coat was the lie that I was happy in the city
+- ep48-crazy-golf: your shadow sits where you were happiest; the one on Dad's green is mine, and the one at my feet is Dad's
