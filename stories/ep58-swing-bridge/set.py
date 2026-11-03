@@ -52,13 +52,13 @@ def seg(kit, name, a, b, t, mat, up_t=None, parent=None, bevel=0.03):
 # ------------------------------------------------------------------------------------------------ the Reach
 
 
-def long_arm(kit, name, pts, t=0.19, fold=1.4, hand=True, grp=None):
+def long_arm(kit, name, pts, t=0.26, fold=1.4, hand=True, grp=None):
     """One continuous sleeve through pts (shoulder first, hand end last): blocks <= fold long laid end to end, a fold
     of cloth at each join, a thin cool rim along the top, and at the end a plain skin hand lying flat: a palm block
     and four blocky fingers together, palms down."""
     sl = kit.plastic(COAT, 0.85)
     cuffm = kit.plastic(COAT, 0.85)
-    rim = kit.emit(RIM, 2.4)
+    rim = kit.emit(RIM, 1.3)
     skin = kit.plastic(HAND_SKIN, 0.55)
     P = [V(p) for p in pts]
     joints = [P[0]]
@@ -214,6 +214,7 @@ def build_bridge(kit, ctx):
     for i in range(7):
         streaks.append(kit.box(f"streak{i}", (0.1 + 0.05 * (i % 3), 3.0 + (i % 4) * 1.2, 0.02), (14.5 - i * 0.7, -2.5 + i * 0.4, -0.93), sm))
     ctx["streaks"] = streaks
+    ctx["bar"] = bar + [bpy.data.objects["barpost"]]
     # the new road bridge far downriver: a pale deck on a pale arch, a slow string of car lights
     conc = kit.concrete("#b9bcbc", 1.0, 0.3)
     kit.box("nb_deck", (160, 7.0, 1.4), (9, 120, 9.0), conc)
@@ -236,7 +237,7 @@ def build_bridge(kit, ctx):
     for i in range(7):
         cars.append(kit.box(f"car{i}", (0.8, 0.5, 0.35), (0, 119.2 + (i % 2) * 1.2, 10.3), kit.emit("#ffd9a0" if i % 2 else "#ff7a60", 1.2)))
     ctx["cars"] = cars
-    pm = kit.emit("#8fb4d0", 0.5)
+    pm = kit.emit("#a8c8e8", 1.4)
     prs = []
     for pi, (px, py) in enumerate(((17.55, RAIL_Y - 0.12), (17.7, RAIL_Y + 0.14))):
         prs.append(kit.box(f"print{pi}.p", (0.12, 0.12, 0.012), (px, py, RAIL_Z + 0.004), pm, bevel=0.004))
@@ -244,6 +245,15 @@ def build_bridge(kit, ctx):
             prs.append(kit.box(f"print{pi}.f{k}", (0.1, 0.028, 0.012), (px + 0.12, py + (k - 1.5) * 0.034, RAIL_Z + 0.004), pm, bevel=0.004))
         prs.append(kit.box(f"print{pi}.t", (0.07, 0.03, 0.012), (px - 0.02, py - 0.09, RAIL_Z + 0.004), pm, bevel=0.004))
     ctx["prints"] = prs
+    lp = []
+    for pi in range(2, 16):
+        for sd in (-1, 1):
+            px = 17.0 - (pi - 2) * 1.2 - (0.25 if sd < 0 else 0.0)
+            py = RAIL_Y + sd * 0.1
+            lp.append(kit.box(f"lprint{pi}{sd}.p", (0.16, 0.16, 0.012), (px, py, RAIL_Z + 0.004), pm, bevel=0.004))
+            for k in range(4):
+                lp.append(kit.box(f"lprint{pi}{sd}.f{k}", (0.14, 0.036, 0.012), (px + 0.16, py + (k - 1.5) * 0.045, RAIL_Z + 0.004), pm, bevel=0.004))
+    ctx["lprints"] = lp
     # a small car parked on the path, boot toward the bridge, and the crate Ada lifts
     cb = kit.plastic("#5a6a7a", 0.4)
     kit.box("car_body", (1.8, 4.2, 0.8), (25.0, -8.5, 0.6), cb, bevel=0.15)
@@ -486,7 +496,24 @@ def build_bedroom(kit, ctx):
     X = 350.0
     kit.box("bd_floor", (6, 6, 0.1), (X, 2, -0.05), kit.planks("#4a3a2c", "#33281e", 1.0, "X"))
     kit.box("bd_ceil", (6, 6, 0.1), (X, 2, 3.05), kit.plastic("#8a8a90", 0.9))
-    kit.box("bd_wback", (6, 0.2, 3), (X, 5.0, 1.5), kit.plastic("#5a5a68", 0.9))
+    wl = kit.plastic("#5a5a68", 0.9)
+    cream = kit.plastic("#d9cfb8", 0.6)
+    # the back wall has a sash window over the bed: opening x 349.2 to 350.8, z 1.1 to 2.3
+    kit.box("bd_wb_lo", (6, 0.2, 1.1), (X, 5.0, 0.55), wl)
+    kit.box("bd_wb_hi", (6, 0.2, 0.7), (X, 5.0, 2.65), wl)
+    kit.box("bd_wb_l", (2.2, 0.2, 1.2), (X - 1.9, 5.0, 1.7), wl)
+    kit.box("bd_wb_r", (2.2, 0.2, 1.2), (X + 1.9, 5.0, 1.7), wl)
+    for nm, cx in (("l", X - 0.8), ("r", X + 0.8)):
+        kit.box(f"bd_fr{nm}", (0.1, 0.14, 1.2), (cx, 4.97, 1.7), cream)
+    kit.box("bd_frt", (1.7, 0.14, 0.08), (X, 4.97, 2.3), cream)
+    kit.box("bd_frb", (1.7, 0.14, 0.08), (X, 4.97, 1.1), cream)
+    kit.box("bd_frm", (1.6, 0.1, 0.06), (X, 4.97, 1.7), cream)
+    kit.box("bd_glass", (1.6, 0.02, 1.2), (X, 5.0, 1.7), kit.glass("#b8cad6"))
+    kit.box("bd_blind", (1.56, 0.04, 0.6), (X, 4.9, 2.0), kit.plastic("#d8ceb4", 0.9))   # plain cream blind, half up
+    kit.box("bd_sill", (1.9, 0.9, 0.06), (X, 5.55, 1.08), cream, bevel=0.01)
+    kit.box("bd_ground", (30, 60, 0.2), (X, 35, -0.1), kit.grime("#2f3a30", 0.55, 2.0, rough=0.9))
+    kit.box("bd_gwall", (10, 0.5, 1.0), (X, 8.5, 0.5), kit.bricks("#6a4a3e", "#523a30", "#3a3632", 1.0))
+    kit.box("bd_back", (30, 0.2, 14), (X, 4.9, 7.0), wl, rot=(0, 0, 0)) if False else None
     kit.box("bd_wf", (6, 0.2, 3), (X, -1.0, 1.5), kit.plastic("#5a5a68", 0.9))
     for sx in (-1, 1):
         kit.box(f"bd_w{sx}", (0.2, 6, 3), (X + sx * 3, 2, 1.5), kit.plastic("#5a5a68", 0.9))
@@ -532,13 +559,23 @@ def build(kit, story, tl):
     # sleeve leaves the shoulder straight out through the window opening before it drops to the rail
     
     def lean_path(sh, side):
-        # leaves the shoulder, falls back and down along his side to the rail, then runs flat along it, one elbow jog
+        # from the shoulder just inside the sash, back out through the opening, down to the rail, then flat along it
         yy = RAIL_Y + side * 0.12
-        pts = [sh, V((sh.x - 0.25, sh.y - 0.45, sh.z - 0.3)), V((sh.x - 0.9, yy, 1.14)), V((18.3, yy, 1.13))]
+        pts = [sh, V((sh.x + side * 0.1, 1.5, 1.0)), V((19.4, yy, 1.12)), V((18.3, yy, 1.13))]
         pts += [V((11.0, yy, 1.13)), V((10.6, yy + side * 0.07, 1.13)), V((0.5, yy, 1.13))]
         return pts
-    R["lean"] = make_reach(kit, wd, "reach_lean", (20.8, 1.42, 0.0), yaw=math.radians(125), lean=0.22, head_pitch=-0.12,
-                           paths=lambda sl, sr: [lean_path(sl, -1), lean_path(sr, 1)])
+    # leaning in from the ankles: the feet outside at y 1.2, the body tilted 42 degrees so the head is just inside the open sash
+    R["lean"] = make_reach(kit, wd, "reach_lean", (20.2, 1.2, 0.0), yaw=math.radians(180), lean=0.74, head_pitch=-0.62,
+                           paths=lambda sl, sr: [lean_path(sl, -1 if sl.x < sr.x else 1), lean_path(sr, 1 if sl.x < sr.x else -1)])
+    # S11c: only two dull flat hands at the far end of the rail, the sleeves running off into the fog, no body
+    def two_sleeves(name, mk):
+        n0 = set(bpy.data.objects.keys())
+        for sd in (-1, 1):
+            long_arm(kit, f"{name}.{sd}", mk(sd))
+        return [bpy.data.objects[k] for k in bpy.data.objects.keys() if k not in n0]
+    R["far"] = two_sleeves("reach_far", lambda sd: [V((-16.0, RAIL_Y + sd * 0.12, 1.13)), V((1.4, RAIL_Y + sd * 0.12, 1.13))])
+    # S91 and S92: the same two hands flat on our bedroom's outside sill, the sleeves running away over the garden into fog
+    R["bed"] = two_sleeves("reach_bed", lambda sd: [V((350.0 + sd * 0.17, 45.0, 1.235)), V((350.0 + sd * 0.17, 5.95, 1.235))])
     ctx["reach"] = R
     # lights (all off by default, switched by the look)
     L = kit.light
@@ -561,7 +598,8 @@ def build(kit, story, tl):
     L("ki_amb", "POINT", (250, 3, 2.6), 200, "#ffe3b8", size=0.4)
     L("ki_win", "AREA", (250, 1.0, 1.5), 800, "#e0ecf4", size=1.2)
     L("bd_amb", "AREA", (350, 2.0, 2.9), 20, "#6a82c0", size=3.0)
-    for nm, tg in (("cin_screen", (100, 0, 1.5)), ("ki_win", (250, 3.4, 1.0))):
+    L("bd_moon", "AREA", (350, 7.5, 3.0), 1100, "#9bb4e6", size=3.0)
+    for nm, tg in (("cin_screen", (100, 0, 1.5)), ("ki_win", (250, 3.4, 1.0)), ("bd_moon", (350, 5.6, 1.2))):
         kit.aim(kit.LIGHTS[nm]["obj"], tg)
     L("torch", "SPOT", (0, 0, 1), 400, "#fff0d0", size=0.1, spot=40, blend=0.5)
     L("phone", "POINT", (0, 0, 1), 1.0, "#bcd4ff", size=0.1)
@@ -601,6 +639,8 @@ LOOKS = {
                     lights={"cab_lamp": 1.0, "cab_stove": 1.0, "cab_amb": 0.5}),
     "lean_ext": dict(sky="#38486a", ss=1.1, fog="#3c4e72", fd=0.03, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.0, fill=0.3,
                      lights={"cab_lamp": 0.7, "cab_stove": 0.9, "cab_amb": 0.25, "lamppost": 0.0}),
+    "bedout": dict(sky="#3c4e74", ss=0.55, fog="#445a84", fd=0.05, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=0.0,
+                   lights={"bd_amb": 1.0, "bd_moon": 1.0}),
     "cinema": dict(sky="#201820", ss=0.1, fog="#201820", fd=0.0, fs=30, sun=(0, 0, 0.0, "#ffffff"), moon=0, fill=1.0,
                    lights={"cin_screen": 1.0, "cin_amb": 1.0}),
     "office": dict(sky="#c0c8d0", ss=0.3, fog="#c0c8d0", fd=0.0, fs=30, sun=(0, 0, 0.0, "#ffffff"), moon=0, fill=0.8,
@@ -693,6 +733,33 @@ def _lazy(kit, story, tl, ctx):
             sk.data.materials.append(m)
             sk.scale = (1.03, 1.03, 2.0)
             ctx["hands"][(who, sx)] = (sk, bsdf)
+            shells = []
+            for si, (rad, al) in enumerate(((0.55, 0.22), (0.72, 0.14), (0.95, 0.08), (1.25, 0.04))):
+                bpy.ops.mesh.primitive_uv_sphere_add(radius=1.0, segments=32, ring_count=16, location=(0, 0, 0))
+                ob = bpy.context.active_object
+                ob.name = f"halo.{who}{sx}.{si}"
+                ob.parent = sk
+                ob.location = (0, 0, -0.04)
+                ob.scale = (rad, rad, rad * 0.5)
+                ob.visible_shadow = False
+                hm = bpy.data.materials.new(f"halo {who}{sx}{si}")
+                hm.use_nodes = True
+                nt = hm.node_tree
+                for nd in list(nt.nodes):
+                    nt.nodes.remove(nd)
+                em = nt.nodes.new("ShaderNodeEmission")
+                em.inputs["Color"].default_value = kit.col(GOLD)
+                em.inputs["Strength"].default_value = 2.5
+                tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+                mx = nt.nodes.new("ShaderNodeMixShader")
+                mx.inputs[0].default_value = 0.0
+                out = nt.nodes.new("ShaderNodeOutputMaterial")
+                nt.links.new(tr.outputs[0], mx.inputs[1])
+                nt.links.new(em.outputs[0], mx.inputs[2])
+                nt.links.new(mx.outputs[0], out.inputs[0])
+                ob.data.materials.append(hm)
+                shells.append((mx, al, ob))
+            ctx.setdefault("halos", {})[(who, sx)] = shells
     # accessories
     R = 0.62
     for who, spec in story["cast"].items():
@@ -732,12 +799,13 @@ def _cam(story, tl, t):
     return V(loc), V(tgt)
 
 
-GLOW_EM = 0.9
-GLOW_LIGHT = 14.0
+GLOW_EM = 0.85
+GLOW_LIGHT = 40.0
 
 
 def animate(kit, story, tl, t, ctx):
     over = {}
+    bpy.context.scene.cycles.transparent_max_bounces = 32
     if not ctx["lazy"]:
         _lazy(kit, story, tl, ctx)
     shot = _shot(tl, t)
@@ -809,6 +877,8 @@ def animate(kit, story, tl, t, ctx):
             dx, dy, dz = base[o.name.split(".")[0]]
             o.location = (bx + dy, by + dx, -0.85 + dz)
             o.rotation_euler = (0, 0, math.pi / 2)
+    for o in ctx["bar"]:
+        o.hide_render = bool(spec.get("nobar"))
     for o in ctx["streaks"]:
         o.hide_render = not spec.get("streaks")
     # ---- the far road bridge's car lights: slow and steady
@@ -829,7 +899,7 @@ def animate(kit, story, tl, t, ctx):
     for o in ctx["steam"]:
         o.hide_render = not spec.get("steam", True)
     # ---- the Reach: one model at a time
-    rv = spec.get("reach")
+    rv = spec.get("reach") or ("bed" if spec.get("bedreach") else None)
     for k, obs in ctx["reach"].items():
         for o in obs:
             o.hide_render = k != rv
@@ -852,6 +922,8 @@ def animate(kit, story, tl, t, ctx):
     # ---- props
     for o in ctx["prints"]:
         o.hide_render = not spec.get("prints")
+    for o in ctx["lprints"]:
+        o.hide_render = not spec.get("lprints")
     ctx["crate"].location = spec.get("crate", (0, 0, -60))
     mg = spec.get("mug", (249.7, 3.3))
     ctx["kmug"].location = (mg[0], mg[1], 0.86)
@@ -894,23 +966,34 @@ def animate(kit, story, tl, t, ctx):
             sk, bsdf = h
             hidden = st["hidden"]
             bsdf.inputs["Emission Strength"].default_value = 0.0 if hidden else GLOW_EM * g
+            bsdf.inputs["Emission Color"].default_value = kit.col("#ffcf80")
+            for mx, al, ob_ in ctx.get("halos", {}).get((who, sx), []):
+                mx.inputs[0].default_value = 0.0 if hidden else al * min(1.0, g * 1.3)
+                ob_.hide_render = hidden or g < 0.02
             sk0 = story["cast"][who]["skin"]
             a_ = kit.col(sk0)
-            b_ = kit.col("#e09a30")
+            b_ = kit.col("#f2b858")
             u_ = min(1.0, g * 1.2)
             bsdf.inputs["Base Color"].default_value = tuple(x + (y - x) * u_ for x, y in zip(a_, b_))
             if __import__('os').environ.get('DBGH') and True:
                 open('/tmp/claude-0/dbg.txt', 'a').write(f"{shot['id']} {sx} {tuple(round(v,2) for v in sk.matrix_world.translation)}\n")
             if not hidden and g > 0.02:
-                pool.append((g, sk.matrix_world.translation.copy()))
+                hp_ = sk.matrix_world.translation.copy()
+                tc_ = (cam - hp_)
+                tc_ = tc_.normalized() * 0.22 if tc_.length > 0.01 else V((0, 0, 0))
+                pool.append((g, hp_ + tc_))
         sl = ctx.get("slits", {}).get(who)
         if sl:
             pg = _lvl(tl, f"pocket.{who}", t, 0.0)
             for o in sl:
                 m = o.data.materials[0].node_tree.nodes["Principled BSDF"]
                 m.inputs["Emission Color"].default_value = kit.col(GOLD)
-                m.inputs["Emission Strength"].default_value = GLOW_EM * pg
+                m.inputs["Emission Strength"].default_value = 1.8 * pg
                 o.hide_render = pg < 0.02
+                if pg > 0.02:
+                    sp_ = o.matrix_world.translation.copy()
+                    tc_ = cam - sp_
+                    pool.append((pg * 0.45, sp_ + (tc_.normalized() * 0.2 if tc_.length > 0.01 else V((0, 0, 0)))))
     pool.sort(key=lambda p: (p[1] - cam).length - 4 * p[0])
     for k in range(8):
         name = f"gl{k}"
