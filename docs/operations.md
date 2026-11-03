@@ -105,6 +105,17 @@ the hard way.
   PR tests. The `again` job chains the next run. If a story's shard fails, its assemble is skipped (no film), the other
   story and `again` still run, and the next plan draws it again; "Re-run failed jobs" on the run redraws just the failed
   shard, then assembles. A run of 8 stories takes about 5 hours.
+- **A final is drawn only after a passed proof (2026-11-03).** `plan_renders.py` skips a story unless `qa/<story>.json` is
+  `"stage": "proof"`, passed, at a sha with no film file changed after it (`blocky.gate.proof_problems`, the check `test`
+  makes), or its final qa already passed. The plan log says why each story is skipped. Stories merged before proofs existed
+  need a proof first. To turn it off: `REQUIRE_PROOF: "false"` in render.yml's `env` (an explicit `story` dispatch input is
+  never held back).
+- **Drawn shards are reused.** Each shard is kept as `frames-<story>-<k>of<n>` (5 days; the count is in the name so a
+  16-shard cut is never taken for a 32-shard one). The plan reuses a shard whose artifact is unexpired and whose commit
+  has no change to `blocky/`, `assets/` or the story's film files since, and draws only the rest. When every shard is
+  there, `draw` is skipped and only `assemble` runs (it downloads the kept shards through the API with `GH_TOKEN`,
+  `scripts/fetch_shards.py`). The narration is made again, so a story drawn on one voice and mixed on another would drift:
+  if a reused film is out of sync, redraw it by changing a film file.
 - **Never cancel a render run while it is drawing.** Drawn frames are the only expensive thing here (about 7,300
   runner-minutes were thrown away on 2026-11-03 by cancels). A newer push waits in the queue and is picked up by the
   next run.
