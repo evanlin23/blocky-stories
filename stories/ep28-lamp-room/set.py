@@ -185,7 +185,7 @@ def materials(kit):
     M["roomglow_node"] = e2
     M["warmpane"] = kit.emit("#ffb060", 1.6, name="warm pane")
     M["shade"] = kit.emit("#ffc88a", 0.9, name="lampshade")
-    M["sunsea"] = kit.emit("#aab4b8", 0.9, name="grey sea window")
+    M["sunsea"] = kit.emit("#aab4b8", 0.55, name="grey sea window")
     return M
 
 
@@ -517,8 +517,9 @@ def build_kitchen(kit, ctx, M):
     W, D, H = 4.6, 4.2, 2.6
     P = lambda x, y, z: (kx + x, ky + y, z)
     kit.plane("k floor", (W, D), P(0, 0, 0), M["wood"])
-    kit.plane("k ceiling", (W, D), P(0, 0, H), M["white"], rot=(math.pi, 0, 0))
-    wall = M["white"]
+    kwall = pbr(kit, "kitchen plaster", "#a2a8ae", 0.9, noise=(2.5, 0.8))   # r5: darker than the whitewash so the day kitchen stops clipping
+    kit.plane("k ceiling", (W, D), P(0, 0, H), kwall, rot=(math.pi, 0, 0))
+    wall = kwall
     kit.box("k wall S", (W, 0.1, H), P(0, -D / 2, H / 2), wall)
     # the east wall has a doorway (y -1.9 to -0.7) onto the vestibule
     kit.box("k wall E s", (0.1, 0.2, H), P(W / 2, -2.0, H / 2), wall)
@@ -774,8 +775,8 @@ MODES = {
              "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
              "cot": (1.0, None), "exp": 0.0, "pane": ("#1e2c40", 0.5), "world": 0.4},
     "day": {"win": (0.35, "#c8d4e0"), "shaft": (0.9, "#a8b8cc"), "foot": (1.2, "#cfd8e0"), "lroom": (3.0, "#c8d4e0"),
-            "lamp": (0.3, None), "sun": (0.6, "#c8d0d8"), "gold": (0.0, None), "bounce": (0.5, "#c8d0d8"), "mem": (0.0, None),
-            "kit": (0.55, None), "cot": (0.0, None), "exp": -0.6, "pane": ("#9aa6b2", 1.2), "world": 1.2},
+            "lamp": (0.3, None), "sun": (0.25, "#c8d0d8"), "gold": (0.0, None), "bounce": (0.5, "#c8d0d8"), "mem": (0.0, None),
+            "kit": (0.5, None), "cot": (0.0, None), "exp": -0.8, "pane": ("#9aa6b2", 1.2), "world": 1.2},
     "kday": {"win": (0.0, None), "shaft": (0.0, None), "foot": (0.0, None), "lroom": (0.0, None), "lamp": (0.0, None),
              "sun": (0.5, "#c8d0d8"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None),
              "kit": (1.2, None), "cot": (0.0, None), "exp": 0.1, "pane": ("#9aa6b2", 1.2), "world": 1.2},
@@ -784,7 +785,7 @@ MODES = {
              "kit": (0.0, None), "cot": (0.0, None), "exp": -0.2, "pane": ("#ffd59a", 2.2), "world": 0.8},
     "gold": {"win": (0.4, "#ffc47a"), "shaft": (0.3, "#ffc888"), "foot": (0.8, "#ffc47a"), "lroom": (1.5, "#ffc47a"),
              "lamp": (0.2, None), "sun": (1.0, "#ffc47a"), "gold": (0.8, "#ffc27a"), "bounce": (0.35, "#ffcc90"), "mem": (0.0, None),
-             "kit": (0.0, None), "cot": (0.0, None), "exp": -1.2, "pane": ("#ffc47a", 1.6), "world": 1.0},
+             "kit": (0.0, None), "cot": (0.0, None), "exp": -1.5, "pane": ("#ffc47a", 1.6), "world": 1.0},
     "memory": {"win": (0.3, "#4a6aa0"), "shaft": (0.6, "#6a88c0"), "foot": (0.5, None), "lroom": (0.5, None),
                "lamp": (0.8, None), "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None),
                "mem": (1.0, None), "kit": (0.0, None), "cot": (1.0, None), "exp": 0.2, "pane": ("#2a3c58", 0.6), "world": 0.4},
