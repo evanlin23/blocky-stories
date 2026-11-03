@@ -510,7 +510,7 @@ cues = [
     {"at": "L47", "name": "mode", "set": "dark", "dur": 0.8},
     {"at": "L54", "name": "mode", "set": "run", "dur": 0.3},
     {"at": "L54.3", "name": "mode", "set": "dark", "dur": 0.3},
-    {"at": "L55", "name": "mode", "set": "day", "dur": 0.8},
+    {"at": "L55", "name": "mode", "set": "day", "dur": 1.5},
     {"at": "L57", "name": "mode", "set": "doorlamp", "dur": 0.6},
     {"at": "L58", "name": "mode", "set": "night", "dur": 0.6},
     {"at": "L60", "name": "mode", "set": "gold", "dur": 2.0},
@@ -718,7 +718,7 @@ story = {
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
     "shot_grades": {sid: {"highlights": [-0.22, -0.2, -0.2]} for sid in ("S33", "S34", "S77", "S78")}
-    | {"S14": {"highlights": [-0.3, -0.3, -0.3]}},   # r5: the close-up foreheads clip, so roll their highlights off
+    | {"S14": {"highlights": [-0.3, -0.3, -0.3]}, "S68": {"highlights": [-0.3, -0.3, -0.3]}},   # r5: the close-up foreheads clip, so roll their highlights off
     "phonemes": {"Ines": "inˈɛs"},
     "homophones": {"too": "two", "okay": "ok"},
     "cast": cast,
