@@ -805,7 +805,9 @@ def animate(kit, story, tl, t, ctx):
             import sys
             print(f"DBG t={t:.2f} {who} hand={tuple(round(x, 2) for x in p)} cam={tuple(round(x, 2) for x in cam)}", file=sys.stderr)
     l68 = tl.get("lines", {}).get("L68")
-    over["footlight"] = 1.0 if l68 and l68["onset"] - 0.05 <= t <= l68["end"] else 0.0
+    l67 = tl.get("lines", {}).get("L67")
+    f0 = l67["chunks"][4][0] if l67 else (l68["onset"] if l68 else 0.0)      # the feet shot (L67.5) to the end of L68
+    over["footlight"] = 1.0 if l68 and f0 <= t <= l68["end"] else 0.0
     l62 = tl.get("lines", {}).get("L62")
     over["facefill"] = 1.0 if l62 and l62["onset"] - 0.05 <= t <= l62["end"] + 0.05 else 0.0
     over["glyphglow"] = 1.0
