@@ -428,8 +428,8 @@ def build_stair(kit, M, ctx):
     B(kit, "street door", (1.2, 0.1, 2.3), (X, -1.0, 1.15), M["dark"])
     B(kit, "door slice", (0.14, 0.04, 2.1), (X - 0.4, -1.06, 1.15), M["streetlight"])
     B(kit, "stair frame", (1.5, 0.12, 0.2), (X, 9.4, 6.1), M["cream"])
-    kit.light("stairlamp", "POINT", (X + 0.6, 2.5, 3.6), 90.0, "#ffd9a0", size=0.2)
-    kit.light("landlamp", "POINT", (X + 0.4, 7.4, 5.2), 130.0, "#ffd9a0", size=0.2)
+    kit.light("stairlamp", "POINT", (X + 0.6, 2.5, 3.6), 50.0, "#ffd9a0", size=0.2)
+    kit.light("landlamp", "POINT", (X + 0.4, 7.4, 5.2), 60.0, "#ffd9a0", size=0.2)
     kit.light("stairfront", "POINT", (X, 10.2, 5.6), 160.0, "#ffe2b8", size=0.3)
     kit.light("stairlow", "POINT", (X, 0.6, 1.6), 40.0, "#ffe6c0", size=0.2)
     B(kit, "lamp sc", (0.1, 0.2, 0.3), (X + 0.72, 2.5, 3.5), M["brass"], bevel=0.03)
@@ -613,7 +613,7 @@ def build(kit, story, tl):
         ctx["wholes"][pid] = (pl, em, a, b)
     kit.light("glyphglow", "POINT", (0, 0, -20), 0.0, GOLD, size=0.15)
     kit.light("facefill", "POINT", (-1.1, -1.1, 1.9), 55.0, "#ffe6c8", size=0.4)
-    kit.light("footlight", "POINT", (0.5, -0.4, 0.7), 60.0, "#fff0d8", size=0.3)
+    kit.light("footlight", "POINT", (0.45, -0.45, 0.3), 90.0, "#fff0d8", size=0.3)
     return ctx
 
 

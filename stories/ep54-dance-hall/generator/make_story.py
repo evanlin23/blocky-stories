@@ -291,7 +291,7 @@ S("L67", cm((0.0, 3.4, 1.9), (0, -1.2, 1.3), 21),
   walk={"ros": [("L67.4", (-0.6, 0.0), 90, dict(arms=[70, 70], head=[50, 0]))],
         "me": [("L67.4", (0.6, 0.0), -90, dict(arms=[70, 0], head=[-50, 0]))]})
 # the comic feet: the frame is on the shoes alone; my shoe lands on her toe
-S("L68", cm((1.1, -0.25, 0.5), (0, -0.1, 0.07), 26),
+S("L68", cm((1.3, -0.7, 0.28), (0, -0.1, 0.2), 30),
   {"ros": D((0.0, -0.2), 180, "worried", arms=(36, 36)), "me": D((0.0, 0.02), 0, SM, arms=(36, 0), z=0.09)})
 # the same at arm's length: Ros winces and hops, I wince back, the class behind
 S("L68.2", cm((0.0, -3.4, 1.6), (0, 0.0, 1.35), 24),
@@ -301,10 +301,10 @@ S("L68.2", cm((0.0, -3.4, 1.6), (0, 0.0, 1.35), 24),
 CLASS_ROW = {}
 for _i, _n in enumerate(("a1", "a2", "b1", "b2", "c1", "c2", "d1", "d2")):
     CLASS_ROW[_n] = D((-1.75 + 0.5 * _i, -2.1), 180, SM, arms=(70, 70) if _i % 2 else (0, 0))
-L69_CLASS = {n: D(xy, 180, SM, arms=(70, 70) if i % 2 else (0, 0), head=(0, 0))
-             for i, (n, xy) in enumerate((("c1", (-1.25, -1.7)), ("d2", (-0.55, -1.8)), ("a2", (0.15, -1.7)), ("b1", (0.85, -1.8))))}
-S("L69", cm((1.4, 2.3, 1.8), (-0.45, -0.8, 0.85), 20, (1.3, 2.2, 1.8), (-0.45, -0.8, 0.85), 21),
-  {"ros": D((-0.75, 0.7), 0, SM, arms=(55, 0), side=(10, 0)), "me": D((-0.2, 0.0), 0, "worried"), **L69_CLASS})
+L69_CLASS = {"c2": D((-1.3, 1.4), 0, SM, arms=(70, 70)), "a1": D((-0.85, 1.9), 0, SM, arms=(0, 70)),
+             "a2": D((-1.75, 2.0), 0, SM, arms=(70, 0))}
+S("L69", cm((0.3, -2.5, 1.45), (-0.4, 0.7, 1.15), 20),
+  {"ros": D((-0.6, 0.7), 0, SM, arms=(0, 55), side=(10, 0)), "me": D((0.05, 0.7), -90, "worried"), **L69_CLASS})
 # L70: she straightens my collar (brief), then we both face the class, her hand-back on my palm
 S("L70", cm((0.0, -2.6, 1.55), (0, 0.5, 1.4), 28),
   {"ros": D((-0.4, 0.5), 90, SM, arms=(100, 36)), "me": D((0.4, 0.5), -90, SM, arms=(36, 0)), **class_wall(SM, x=2.2, dy=1.8)},
