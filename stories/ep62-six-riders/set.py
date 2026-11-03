@@ -305,7 +305,7 @@ def build(kit, story, tl):
         x, y = ROWS[L_.lower()]
         # on the rider's own upper back: the torso's back face is half a rig unit behind him, its top at 4 units
         sc = story["cast"][L_.lower()].get("height", 1.0) * rig.S
-        t = kit.plane(f"tag{L_}", (0.30, 0.30), (x, y + 0.5 * sc + 0.02, 3.2 * sc), m, rot=(math.pi / 2, 0, math.pi))
+        t = kit.plane(f"tag{L_}", (0.30, 0.30), (x, y + 0.5 * sc + 0.10, 3.2 * sc), m, rot=(math.pi / 2, 0, math.pi))
         t.hide_render = True
         ctx["tags"][L_] = (t, m, mf)
 
@@ -333,7 +333,7 @@ def _ring(kit, mat):
     for i in range(n):
         j = (i + 1) % n
         faces.append((i * 2, j * 2, j * 2 + 1, i * 2 + 1))
-    ob = kit.mesh_obj("ring", verts, faces, mat, None, (cx, -0.38, cz))
+    ob = kit.mesh_obj("ring", verts, faces, mat, None, (cx, -0.28, cz))
     ob.hide_render = True
     return ob
 
