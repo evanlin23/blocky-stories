@@ -86,30 +86,22 @@
    ]
   },
   "L04": {
-   "text": "two, the elevator takes half as long.",
+   "text": "two, four times fast.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.966,
+   "dur": 1.466,
    "onset": 0.172,
-   "end": 1.776,
+   "end": 1.259,
    "chunks": [
     [
      0.172,
-     0.379
+     0.293
     ],
     [
-     0.406,
-     0.845
-    ],
-    [
-     0.845,
-     1.199
-    ],
-    [
-     1.199,
-     1.776
+     0.328,
+     1.259
     ]
    ]
   },
@@ -566,30 +558,30 @@
    ]
   },
   "L23": {
-   "text": "even faster than me, leaving long streaks of color.",
+   "text": "twice as fast as me. just a blur of color.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.534,
+   "dur": 2.328,
    "onset": 0.172,
-   "end": 2.345,
+   "end": 2.121,
    "chunks": [
     [
      0.172,
-     0.647
+     0.716
     ],
     [
-     0.647,
-     0.966
+     0.716,
+     1.052
     ],
     [
-     1.052,
-     1.75
+     1.138,
+     1.492
     ],
     [
-     1.75,
-     2.345
+     1.492,
+     2.121
     ]
    ]
   },
@@ -1126,26 +1118,26 @@
    ]
   },
   "L44": {
-   "text": "that was every decaf in the building.",
+   "text": "but decaf only works at ten.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
-   "onset": 0.172,
-   "end": 1.707,
+   "dur": 1.741,
+   "onset": 0.155,
+   "end": 1.552,
    "chunks": [
     [
-     0.172,
-     0.423
+     0.155,
+     0.569
     ],
     [
-     0.423,
-     1.043
+     0.569,
+     0.966
     ],
     [
-     1.043,
-     1.707
+     0.966,
+     1.552
     ]
    ]
   },

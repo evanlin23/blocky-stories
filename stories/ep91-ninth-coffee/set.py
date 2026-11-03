@@ -170,8 +170,8 @@ def ghost(hexc, alpha, emit=0.9):
 
 
 def streak_material():
-    """Electric cyan fading to pale cyan and to nothing along the mesh's local +y (0 at the head, 1 at the tail), with
-    soft bands across it like afterimages. Smooth and still: nothing here changes with time."""
+    """Solid electric cyan at the person, running to white and to nothing along the mesh's local +y (0 at the head, 1 at the
+    tail). Smooth and still: nothing here changes with time."""
     kit = K.kit
     m = kit._new(nm("streak"))
     nt, out = clear_nodes(m)
@@ -196,16 +196,14 @@ def streak_material():
 
     u = mr.outputs["Result"]
     inv = mth("SUBTRACT", 1.0, u)
-    fall = mth("POWER", inv, 0.55)
-    band = mth("ADD", mth("MULTIPLY", mth("SINE", mth("MULTIPLY", u, 38.0)), 0.1), 0.9)
-    alpha = mth("MULTIPLY", mth("MULTIPLY", fall, band), 0.9)
+    alpha = mth("MULTIPLY", mth("POWER", inv, 0.8), 0.96)
     mix = nt.nodes.new("ShaderNodeMix")
     mix.data_type = "RGBA"
-    mix.inputs[6].default_value = kit.col("#00d8ff")
-    mix.inputs[7].default_value = kit.col("#7aeeff")
-    nt.links.new(mth("MULTIPLY", u, u), mix.inputs[0])
+    mix.inputs[6].default_value = kit.col("#00cdff")
+    mix.inputs[7].default_value = kit.col("#ffffff")
+    nt.links.new(mth("POWER", u, 0.7), mix.inputs[0])
     em = nt.nodes.new("ShaderNodeEmission")
-    em.inputs["Strength"].default_value = 0.65
+    em.inputs["Strength"].default_value = 1.0
     nt.links.new(mix.outputs[2], em.inputs["Color"])
     tr = nt.nodes.new("ShaderNodeBsdfTransparent")
     mx = nt.nodes.new("ShaderNodeMixShader")
@@ -224,20 +222,28 @@ def frustum(verts, faces_, x0, x1, z0, z1, xt0, xt1, zt0, zt1):
                (b + 1, b + 2, b + 6, b + 5), (b + 2, b + 3, b + 7, b + 6), (b + 3, b, b + 4, b + 7)]
 
 
+# the body in metres at height 1.0 (rig units x 0.34): legs 0..0.68, torso 0.68..1.38, head 1.38..1.78
+BODY = ((-0.21, 0.21, 1.38, 1.78), (-0.34, 0.34, 0.68, 1.38), (-0.68, -0.34, 0.68, 1.38), (0.34, 0.68, 0.68, 1.38),
+        (-0.34, -0.02, 0.0, 0.68), (0.02, 0.34, 0.0, 0.68))
+
+
 def make_streak(mat):
-    """Slender light-trail ribbons from the head, chest, arms, waist and legs (gaps between them, so it reads as a smear
-    of motion and not a glass box). Head end at y 0, tail at y 1."""
+    """A tapered smear: the body's silhouette at the head end (y 0) narrowing to thin lines at the tail (y 1)."""
     v, f = [], []
-    for (x0, x1, z0, z1, xt0, xt1, zt0, zt1) in (
-            (-0.27, 0.27, 1.98, 2.34, -0.33, 0.33, 2.06, 2.22),     # head
-            (-0.52, 0.52, 1.52, 1.92, -0.62, 0.62, 1.62, 1.8),      # chest
-            (-1.0, -0.5, 1.28, 1.62, -1.25, -0.7, 1.4, 1.5),        # left arm
-            (0.5, 1.0, 1.28, 1.62, 0.7, 1.25, 1.4, 1.5),            # right arm
-            (-0.46, 0.46, 0.92, 1.3, -0.56, 0.56, 1.0, 1.18),       # waist
-            (-0.46, -0.04, 0.0, 0.88, -0.62, -0.1, 0.3, 0.55),      # left leg
-            (0.04, 0.46, 0.0, 0.88, 0.1, 0.62, 0.3, 0.55)):         # right leg
-        frustum(v, f, x0, x1, z0, z1, xt0, xt1, zt0, zt1)
+    for (x0, x1, z0, z1) in BODY:
+        xc, zc, k = (x0 + x1) / 2, (z0 + z1) / 2, 0.1
+        frustum(v, f, x0, x1, z0, z1, xc - (x1 - x0) / 2 * k, xc + (x1 - x0) / 2 * k, zc - (z1 - z0) / 2 * k, zc + (z1 - z0) / 2 * k)
     ob = K.kit.mesh_obj(nm("streak"), v, f, mat, None)
+    no_shadow(ob)
+    return ob
+
+
+def make_ghost(mat):
+    """The body again as a see-through copy (depth 1 here, scaled to about 0.3 m when placed)."""
+    v, f = [], []
+    for (x0, x1, z0, z1) in BODY:
+        frustum(v, f, x0, x1, z0, z1, x0, x1, z0, z1)
+    ob = K.kit.mesh_obj(nm("streakghost"), v, f, mat, None)
     no_shadow(ob)
     return ob
 
@@ -268,9 +274,9 @@ def draw_star(d, cx, cy, r, fill):
     d.polygon(pts, fill=fill)
 
 
-def meter_png(e, ticks, other=None):
+def meter_png(e, ticks, other=None, slots=0):
     from PIL import Image, ImageDraw
-    key = f"meter-{e}-{ticks}-{other}"
+    key = f"meter-{e}-{ticks}-{other}-{slots}"
     p = TMP / f"{key}.png"
     if p.exists():
         return str(p), (640, 300 * (2 if other else 1))
@@ -302,7 +308,7 @@ def meter_png(e, ticks, other=None):
         ty = y0 + 108 - (bb[3] - bb[1]) / 2 - bb[1]
         col = {"me": CYAN, "kai": "#ffffff", "ten": CYAN}[kind]
         d.text((tx, ty), txt, fill=hexrgb(col), font=f)
-        n_slots = 10 if (tk > 9 or kind != "me") else 9
+        n_slots = 10 if (tk > 9 or kind != "me" or slots == 10) else 9
         step = 56
         x0 = (W - step * n_slots) / 2 + step / 2
         for k in range(n_slots):
@@ -710,6 +716,8 @@ def build(kit, story, tl):
     # ---- the streaks (one per ten-cupper, placed from their acting each frame)
     smat = streak_material()
     ctx["streaks"] = {n: make_streak(smat) for n in TC}
+    gmats = [ghost("#38e8ff", 0.55, 1.2), ghost("#8af2ff", 0.4, 1.2), ghost("#d6fbff", 0.26, 1.2)]
+    ctx["ghosts"] = {n: [make_ghost(g_) for g_ in gmats] for n in TC}
     ctx["tclights"] = {n: kit.light(f"tcglow_{n}", "POINT", (0, 0, 2), 60, CYAN, size=0.4, shadow=False) for n in TC}
     # a beard for me (S42a), hidden until the cue
     ctx["late"] = False
@@ -728,11 +736,14 @@ def late_init(kit, ctx):
         if hg is not None:
             R, H = faces.HEAD_R, faces.HEAD_H
             bm = P("#7a3a22", 0.8, 0.1)
-            for sx in (-1, 1):
-                ctx["beard"].append(kit.box(nm("beard"), (0.2, 0.36, 0.5), (sx * (R - 0.12), -R + 0.34, -0.12), bm, hg, bevel=0.05))
-            ctx["beard"].append(kit.box(nm("beard"), (0.55, 0.26, 0.22), (0.0, -R + 0.07, -0.5), bm, hg, bevel=0.06))
+            for sx in (-1, 1):                                                 # long cheeks, a full chin and a hanging point
+                ctx["beard"].append(kit.box(nm("beard"), (0.24, 0.5, 0.7), (sx * (R - 0.08), -R + 0.3, -0.22), bm, hg, bevel=0.05))
+            ctx["beard"].append(kit.box(nm("beard"), (1.0, 0.3, 0.5), (0.0, -R + 0.04, -0.58), bm, hg, bevel=0.07))
+            ctx["beard"].append(kit.box(nm("beard"), (0.66, 0.28, 0.5), (0.0, -R + 0.04, -0.98), bm, hg, bevel=0.07))
+            ctx["beard"].append(kit.box(nm("beard"), (0.56, 0.12, 0.1), (0.0, -R + 0.02, -0.17), bm, hg, bevel=0.03))
             for o in ctx["beard"]:
                 o.hide_render = True
+    ctx["lenses"] = [bpy.data.objects.get(f"kai.gl{sx}") for sx in (-1, 1)]
 
 
 # ------------------------------------------------------------------------------------------------ the looks
@@ -798,7 +809,7 @@ def animate(kit, story, tl, t, ctx):
         oe_ = mc.get("oe", 10)
         # the second row steps down by cues (oe, oticks), each one restating the whole meter
         other = (mc["other"], int(round(oe_)), int(mc.get("oticks", 10)))
-    place_inset(kit, ctx, e, tk, other, cl_lens)
+    place_inset(kit, ctx, e, tk, other, cl_lens, mc.get("slots", 0), mc.get("zoom", 1.0))
 
     # ---- my screen
     sn = cue_at(tl, "screen", t).get("pic", "blocks0")
@@ -861,22 +872,29 @@ def animate(kit, story, tl, t, ctx):
         w = 0.1 * math.sin(t * 2 * math.pi * 7.3 + hash(who) % 5)
         ch.P["arm-1"].rotation_euler.x += w
         ch.P["arm1"].rotation_euler.x -= w * 0.8
+    for o in ctx.get("lenses", []):
+        if o is not None:
+            o.hide_render = True
     # ---- the beard
     bd = cue_at(tl, "beard", t).get("on", False)
     for o in ctx.get("beard", []):
         o.hide_render = not bd
 
-    # ---- the streaks: behind each ten-cupper, from their own acting
+    # ---- the streaks: behind each ten-cupper, from their own acting; 1 to 3 see-through copies of the body along each
     sk = cue_at(tl, "streaks", t)
+    side = sd.get("sidelit", 0.0)
     for who, ob in ctx["streaks"].items():
         ln = sk.get(who, 0.0)
-        s = actmod.state(tl, who, t) if who in tl.get("acting", {}) or True else None
+        gs = ctx["ghosts"][who]
+        s = actmod.state(tl, who, t)
         try:
             hid = s["hidden"]
         except Exception:
             hid = True
         if not ln or hid:
             ob.hide_render = True
+            for g_ in gs:
+                g_.hide_render = True
             ov[f"tcglow_{who}"] = 0.0
             continue
         ov[f"tcglow_{who}"] = 1.0
@@ -884,10 +902,30 @@ def animate(kit, story, tl, t, ctx):
         yaw = s["yaw"] if "yaw" in s else 0.0
         fx, fy = math.sin(yaw), -math.cos(yaw)
         sc_ = rig.CHARS[who].spec.get("height", 1.0) if who in rig.CHARS else 1.0
+        wd_ = rig.CHARS[who].spec.get("width", 1.0) if who in rig.CHARS else 1.0
         ob.location = (s["x"] - fx * 0.2, s["y"] - fy * 0.2, s["z"])
         ctx["tclights"][who].location = (s["x"] - fx * 0.9, s["y"] - fy * 0.9 + 0.0, 1.9)
         ob.rotation_euler = (0, 0, yaw)
-        ob.scale = (sc_ * rig.CHARS[who].spec.get("width", 1.0), ln, sc_)
+        ob.scale = (sc_ * wd_, ln, sc_)
+        n_g = 3 if ln >= 2.0 else (2 if ln >= 1.0 else 1)
+        for k, g_ in enumerate(gs):
+            if k >= n_g:
+                g_.hide_render = True
+                continue
+            d_ = 0.45 + (ln - 0.45) * (0.22 + 0.26 * k) if ln > 1.0 else 0.4 + 0.3 * k
+            g_.hide_render = False
+            g_.location = (s["x"] - fx * (0.2 + d_), s["y"] - fy * (0.2 + d_), s["z"])
+            g_.rotation_euler = (0, 0, yaw)
+            g_.scale = (sc_ * wd_, 0.3, sc_)
+        if side:
+            dx, dy = s["x"] - cl[0], s["y"] - cl[1]
+            nrm = max(1e-6, math.hypot(dx, dy))
+            rx, ry = dy / nrm, -dx / nrm
+            ctx["tclights"][who].location = (s["x"] + rx * 0.9 - dx / nrm * 0.2, s["y"] + ry * 0.9 - dy / nrm * 0.2, 1.85)
+            ov[f"tcglow_{who}"] = 5.0
+    if side:
+        ov["sun"] *= 0.45
+        ov["roomfill"] *= 0.45
 
     # ---- sneeze cloud and paper in the air
     sn_ = cue_at(tl, "sneeze", t)
@@ -961,11 +999,11 @@ def build_inset(kit, ctx):
     ctx["inset"] = (pl, tex)
 
 
-def place_inset(kit, ctx, e, tk, other, lens):
+def place_inset(kit, ctx, e, tk, other, lens, slots=0, zoom=1.0):
     pl, tex = ctx["inset"]
-    key = (e, tk, other)
+    key = (e, tk, other, slots)
     if key not in ctx["inset_imgs"]:
-        p, size = meter_png(e, tk, other)
+        p, size = meter_png(e, tk, other, slots)
         im = bpy.data.images.load(p)
         im.colorspace_settings.name = "sRGB"
         ctx["inset_imgs"][key] = (im, size)
@@ -973,8 +1011,10 @@ def place_inset(kit, ctx, e, tk, other, lens):
     tex.image = im
     d = 0.15
     unit = d / lens
-    pw = 4.3 * unit
+    pw = 4.3 * unit * zoom
     ph = pw * size[1] / size[0]
     x = (5.45 - 4.3 / 2) * unit
     y = (9.9 - ph / unit / 2) * unit
+    if zoom != 1.0:                                  # the big meter: centred in the upper half
+        x, y = 0.0, 5.2 * unit
     pl.location, pl.scale = (x, y, -d), (pw, ph, 1)

@@ -54,7 +54,7 @@ shots = []
 VIS = set()
 CUPS = {}
 STK = {}
-MET = {"e": 9, "ticks": 9}
+MET = {"e": 9, "ticks": 9, "slots": 0, "zoom": 1.0}
 TYP = []
 
 
@@ -91,12 +91,20 @@ def scene(at, **chars):
         put(w, at, pos, c.pop("yaw", 0), c.pop("expr", "neutral"), **c)
 
 
-def meter(at, e=None, ticks=None, other=None, oe=10, oticks=None):
+def meter(at, e=None, ticks=None, other=None, oe=10, oticks=None, slots=None, zoom=None):
     if e is not None:
         MET["e"] = e
     if ticks is not None:
         MET["ticks"] = ticks
+    if slots is not None:
+        MET["slots"] = slots
+    if zoom is not None:
+        MET["zoom"] = zoom
     d = {"e": MET["e"], "ticks": MET["ticks"]}
+    if MET["slots"]:
+        d["slots"] = MET["slots"]
+    if MET["zoom"] != 1.0:
+        d["zoom"] = MET["zoom"]
     if other:
         d.update(other=other, oe=oe, oticks=oe if oticks is None else oticks)
     cue(at, "meter", **d)
@@ -147,7 +155,7 @@ def X(loc, tgt, lens, loc2=None, tgt2=None, lens2=None):
     return ks
 
 
-def S(at, cam, look="day", hand=0.004, fill=1.0, exp=0.0, step=2, note=""):
+def S(at, cam, look="day", hand=0.004, fill=1.0, exp=0.0, step=2, note="", **extra):
     d = {"id": f"S{len(shots) + 1:02d}", "cam": cam, "step": step, "hand": hand}
     if len(shots):
         d["at"] = at
@@ -159,6 +167,7 @@ def S(at, cam, look="day", hand=0.004, fill=1.0, exp=0.0, step=2, note=""):
         d["exp"] = exp
     if note:
         d["note"] = note
+    d.update(extra)
     shots.append(d)
     return d
 
@@ -176,7 +185,7 @@ cue(0, "screen", pic="blocks0")
 cue(0, "clock_main", h=3.0, s=0.0)
 cue(0, "elev", open=1.0)
 cups(0, c8=[0.0, -0.2, DZ, True])
-S(0, C((0.0, -0.2, 1.14), 0.8, 0, 5, 30, d2=0.58), fill=1.3, note="frame 1: the ninth cup, steam frozen, meter x512")
+S(0, C((0.0, -0.2, 1.16), 0.95, 0, 5, 30, d2=0.7), fill=0.85, exp=-0.15, note="frame 1: the ninth cup, steam frozen, meter x512")
 cups("L01>-0.25", c8=None, c9=[SPOUT[0], SPOUT[1] - 0.0, TRAYZ, False])
 S("L01>-0.25", C((MX, -4.4, 1.36), 2.3, 0, 6, 26, d2=1.9), note="the machine's two spouts, a tenth cup under the left one")
 S("L02.1", C((SPOUT[0], SPOUT[1], 1.22), 0.95, 18, 8, 30, d2=0.7), note="the tenth cup close")
@@ -187,15 +196,20 @@ cups("L03", c9=None)
 meter("L03", 1, 1)
 scene("L03", me=dict(pos=ME, yaw=180, expr="grin", arms=[68, 68]))
 typing("L03", "me")
-S("L03", C((0.0, -0.2, 1.12), 1.35, -35, 22, 30, d2=1.05), fill=1.2, note="my hands at the end of my sleeves, typing in a blur")
+S("L03", C((0.0, -0.5, 1.12), 1.1, 105, 12, 30, d2=0.9), fill=0.9, exp=-0.2, note="my hands at the end of my sleeves, typing in a blur")
 typing("L04", )
 meter("L04", 2, 2)
-scene("L04", cw3=dict(pos=(8.9, 2.0), yaw=90, expr="neutral"))
-cue("L04", "elev", open=1.0)
-cue("L04+0.3", "elev", open=0.0)
-cue("L04+0.75", "elev", open=1.0)
-S("L04", C((9.85, 2.0, 1.3), 3.7, -90, 4, 26, d2=3.2), note="the elevator doors close and open in one beat")
+scene("L04")
+cue("L04", "pour", on=True, to=TRAYZ + 0.12)
+cups("L04+0.3", c0=[SPOUT[0], SPOUT[1], TRAYZ, True])
+S("L04", C((SPOUT[0], SPOUT[1], 1.2), 1.0, 20, 8, 30, d2=0.8), note="my coffee pours in a quick blur, the cup full in one beat")
+cue("L04+0.45", "pour", on=False)
+scene("L04+0.5", me=dict(pos=ME, yaw=180, expr="grin", arms=[68, 68]))
+cups("L04+0.5", c0=None)
+typing("L04+0.5", "me")
+S("L04+0.5", C((0.0, -0.5, 1.12), 1.1, -105, 12, 30, d2=0.9), fill=0.9, exp=-0.2, note="my hands already typing again, four times fast")
 meter("L05", 4, 4)
+typing("L05")
 scene("L05", cw1=dict(pos=(-2.6, -0.85), yaw=12, expr="neutral"))
 acting["cw1"].append({"from": "L05", "to": "L05.2", "mouth": [0.2, 0.95]})
 acting["cw1"].append({"from": "L05.2", "to": "L05>", "mouth": [0.95, 0.5]})
@@ -306,20 +320,20 @@ S("L20.1", C((0.5, 1.8, 1.9), 2.6, -22, -3, 28, d2=2.0), note="the paper, the bo
 scene("L21", me=dict(pos=(0.5, -2.4), yaw=20, expr="scared", tremble=3), cw1=dict(pos=(-2.6, -0.85), yaw=180, arms=[68, 68]),
       boss=dict(pos=(0.0, 2.1), yaw=40, expr="wide", head=[0, 0.3], arms=[95, 95]))
 S("L21", C((0.5, -2.4, 1.45), 3.2, 20, 5, 26, d2=2.5), note="I stood up, scared, the only one moving")
-scene("L22", tc1=dict(pos=(-0.2, -3.2), yaw=90, expr="blank", arms=[40, 70]))
+scene("L22", tc1=dict(pos=(-0.2, -3.2), yaw=90, expr="blank", arms=[34, -26]))
 raw("tc1", "L22>", pos=[0.9, -3.2])
 streaks("L22", tc1=4.0)
 S("L22", C((-0.8, -3.2, 1.1), 3.7, 0, 5, 15, d2=3.2), note="between the desks: a long frozen cyan streak")
-scene("L22.1", tc1=dict(pos=(0.2, -3.2), yaw=90, expr="blank", arms=[40, 70]))
+scene("L22.1", tc1=dict(pos=(0.2, -3.2), yaw=90, expr="blank", arms=[34, -26]))
 raw("tc1", "L22>", pos=[0.7, -3.2])
 S("L22.1", C((0.4, -3.2, 1.45), 2.6, 34, 4, 26, d2=2.1), note="a person at the head of it, mid-stride")
-scene("L23", tc1=dict(pos=(0.1, -3.2), yaw=90, expr="blank", arms=[40, 70]), tc5=dict(pos=(-4.6, -2.2), yaw=90, expr="blank", arms=[30, 80]))
+scene("L23", tc1=dict(pos=(0.1, -3.2), yaw=90, expr="blank", arms=[34, -26]), tc5=dict(pos=(-4.6, -2.2), yaw=90, expr="blank", arms=[-30, 36]))
 raw("tc1", "L23>", pos=[0.9, -3.2])
 raw("tc5", "L23>", pos=[-4.0, -2.2])
 streaks("L23", tc1=4.5, tc5=5.0)
 S("L23", C((-1.0, -2.8, 1.2), 4.4, 20, 6, 17, d2=3.8), note="even faster than me: long streaks of colour")
 S("L23.1", C((-2.0, -3.0, 1.2), 3.6, -30, 8, 16, d2=3.1), note="the other way: trails across the floor")
-S("L23.2", C((0.7, -3.2, 1.65), 2.1, 55, 3, 28, d2=1.7), note="the face at the head, hollow eyes glowing")
+S("L23.2", C((0.7, -3.2, 1.8), 1.9, 40, 2, 28, d2=1.5), note="the face at the head, hollow eyes glowing")
 # the work: filing, typing, straightening
 scene("L24", tc2=dict(pos=(-8.8, 3.0), yaw=-90, expr="blank", arms=[88, 8]))
 streaks("L24", tc1=None, tc5=None, tc2=3.6)
@@ -335,9 +349,9 @@ S("L24+0.7", C((-5.2, -1.4, 1.3), 3.4, -90, 6, 20, d2=2.9), note="squaring a sta
 scene("L24+1.25", tc5=dict(pos=(5.6, 2.2), yaw=-90, expr="blank", arms=[75, 75]))
 streaks("L24+1.25", tc4=None, tc5=3.4)
 S("L24+1.25", C((5.6, 0.9, 1.35), 3.0, -20, 6, 20, d2=2.6), note="straightening every desk, another one")
-scene("L25", tc1=dict(pos=(3.0, 2.2), yaw=90, expr="blank", arms=[40, 70]), tc2=dict(pos=(-1.0, 6.3), yaw=-90, expr="blank", arms=[60, 60]),
+scene("L25", tc1=dict(pos=(3.0, 2.2), yaw=90, expr="blank", arms=[34, -26]), tc2=dict(pos=(-1.0, 6.3), yaw=-90, expr="blank", arms=[60, 60]),
       tc3=dict(pos=(-2.6, -0.85), yaw=180, expr="blank", arms=[70, 70]), tc4=dict(pos=(-5.2, -0.85), yaw=180, expr="blank", arms=[78, 70]),
-      tc5=dict(pos=(-6.5, -3.2), yaw=90, expr="blank", arms=[30, 80]))
+      tc5=dict(pos=(-6.5, -3.2), yaw=90, expr="blank", arms=[-30, 36]))
 streaks("L25", tc1=7.0, tc2=7.0, tc3=3.5, tc4=3.5, tc5=5.5)
 S("L25", X((-7.4, -6.3, 3.1), (0.5, 3.0, 1.0), 16, (-6.4, -6.2, 3.0), (0.5, 3.0, 1.0), 16), note="the whole floor crossed by cyan streaks, like light trails")
 S("L25+0.45", X((8.0, -6.0, 3.2), (-1.0, 3.0, 1.0), 16, (7.2, -6.0, 3.1), (-1.0, 3.0, 1.0), 16), note="the same, from the other corner (cover frame)")
@@ -351,12 +365,12 @@ cups("L27", c9=[SPOUT[0], SPOUT[1], TRAYZ, False])
 meter("L27", 9, 9, other="ten", oe=10, oticks=10)
 S("L27", C((SPOUT[0], SPOUT[1], 1.25), 1.5, -20, 6, 28, d2=1.2), note="the left spout, ten cup ticks glowing on a streak's meter")
 cups("L28", c9=None)
-scene("L28", tc2=dict(pos=(-2.0, -3.2), yaw=58, expr="blank", head=[0, 0.12], arms=[70, 40], lean=6))
-streaks("L28", tc2=4.5)
-S("L28", C((-2.0, -3.2, 1.95), 3.2, 18, -12, 22, d2=2.6), note="a ten-cupper's face, focused, at the head of its streak")
-scene("L28.2", tc4=dict(pos=(-2.0, -3.4), yaw=-50, expr="blank", arms=[60, 80], lean=5))
+scene("L28", tc2=dict(pos=(-2.0, -3.2), yaw=24, expr="blank", head=[0, 0.1], arms=[6, 6], lean=22))
+streaks("L28", tc2=5.0)
+S("L28", C((-2.0, -3.2, 1.78), 1.8, 10, 4, 28, d2=1.3), fill=0.18, sidelit=1.0, note="a ten-cupper leans in face to face, hollow cyan eyes, lit from the side")
+scene("L28.2", tc4=dict(pos=(-2.0, -3.2), yaw=-40, expr="blank", arms=[8, 8], lean=8))
 streaks("L28.2", tc2=None, tc4=5.0)
-S("L28.2", C((-2.0, -3.4, 1.0), 4.0, -20, 4, 20, d2=3.4), note="the whole figure, taller than us")
+S("L28.2", C((-1.2, -3.2, 1.05), 3.2, -20, 4, 20, d2=2.8), note="the whole figure, taller than us")
 cue("L29", "mess", on=True)
 scene("L29")
 streaks("L29", tc4=None)
@@ -370,10 +384,10 @@ scene("L30", me=dict(pos=ME, yaw=90, expr="wide"), kai=dict(pos=(1.4, -0.85), ya
 streaks("L30", kai=5.0)
 S("L30", C((0.7, -0.85, 1.35), 4.2, 0, 5, 18, d2=3.5), note="a streak stopping at my desk")
 S("L30.2", C((1.4, -0.85, 1.5), 2.3, -34, 4, 26, d2=1.9), note="its head, in profile")
-scene("L31", kai=dict(pos=(1.4, -0.85), yaw=-26, expr="worried", head=[0.0, 0.05]))
+scene("L31", kai=dict(pos=(1.4, -0.85), yaw=-34, expr="worried", head=[0.0, 0.05]))
 streaks("L31", kai=5.0)
-meter("L31", 9, 9)
-S("L31", C((1.4, -0.85, 1.55), 2.4, -26, 3, 28, d2=1.95), note="Kai, clear at the head, pleading")
+meter("L31", 9, 9, other="kai", oe=10)
+S("L31", C((1.4, -0.85, 1.72), 2.3, -20, 3, 28, d2=1.85), note="Kai, clear at the head, pleading")
 cue("L32", "jacket", dx=0.0)
 meter("L32", 9, 9)
 streaks("L32", kai=None)
@@ -433,27 +447,27 @@ S("L39.1", C((MX + 0.2, FY - 0.17, 1.2), 1.1, -20, 10, 28, d2=0.85), note="so I 
 cue("L39.2", "pour", on=False)
 cups("L39.2", **{f"d{i}": [-0.6 + 0.135 * i, -0.28, DZ] for i in range(10)})
 S("L39.2", C((0.0, -0.3, 1.1), 2.0, -10, 34, 26, d2=1.6), note="ten decafs lined up on my desk")
-# each decaf undoes a cup: Kai's meter steps down and his streak shortens
-scene("L40", kai=dict(pos=KAI_D, yaw=180, expr="worried", arms=[70, 70]))
-streaks("L40", kai=3.0)
-typing("L40", "kai")
-for k in range(11):
-    meter(f"L40+{0.1 * k:.2f}", 9, 9, other="kai", oe=10 - k, oticks=10 - k)
-S("L40", C((2.6, -1.4, 1.25), 3.6, 74, 5, 22, d2=3.0), note="each one undid a cup: Kai's meter dropping")
-streaks("L40+0.4", kai=1.8)
-S("L40+0.4", C((2.6, -1.2, 1.3), 2.8, 72, 5, 22, d2=2.3), note="his streak shorter")
-streaks("L40+0.9", kai=0.7)
-S("L40+0.9", C((2.6, -1.0, 1.4), 2.3, 70, 5, 26, d2=1.9), note="almost gone")
+# each decaf undoes a cup: Kai's face at the front of a streak that gets shorter on every cut, his meter x1024, x256, x16, x1
+scene("L40", kai=dict(pos=KAI_D, yaw=-20, expr="worried", arms=[14, 14]))
+streaks("L40", kai=4.0)
+meter("L40", 9, 9, other="kai", oe=10, oticks=10)
+S("L40", C((2.6, -0.85, 1.74), 2.1, -20, 3, 28, d2=1.7), note="Kai, a long streak behind him: x1024")
+streaks("L40+0.4", kai=2.4)
+meter("L40+0.4", 9, 9, other="kai", oe=8, oticks=8)
+S("L40+0.4", C((2.6, -0.85, 1.74), 1.9, -28, 3, 28, d2=1.5), note="a shorter streak: x256")
+streaks("L40+0.8", kai=1.1)
+meter("L40+0.8", 9, 9, other="kai", oe=4, oticks=4)
+S("L40+0.8", C((2.6, -0.85, 1.74), 1.8, -12, 3, 28, d2=1.4), note="almost gone: x16")
 cue("L41", "pour", on=False)
 streaks("L41", kai=None)
-typing("L41")
 cups("L41", **{f"d{i}": None for i in range(10)})
-scene("L41", kai=dict(pos=(2.2, -5.0), yaw=-6, expr="blank"))
-S("L41", C((2.2, -5.0, 1.55), 2.2, -6, 3, 28, d2=1.8), note="after the last one, just Kai, dazed")
-scene("L41.1", kai=dict(pos=(2.2, -5.0), yaw=-6, expr="blank"))
-S("L41.1", C((2.2, -5.0, 1.62), 1.7, -6, 2, 30, d2=1.4), note="blinking")
-scene("L41.3", kai=dict(pos=(3.0, -5.0), yaw=0, expr="blank"))
-S("L41.3", C((3.7, -4.6, 1.3), 2.5, 0, 3, 14, d2=2.1), note="by the coffee machine")
+meter("L41", 9, 9, other="kai", oe=0, oticks=0)
+scene("L41", kai=dict(pos=(3.0, -5.0), yaw=-6, expr="blank"))
+S("L41", C((3.0, -5.0, 1.78), 1.7, -6, 3, 28, d2=1.45), note="x1: after the last one, just Kai, dazed")
+scene("L41.1", kai=dict(pos=(3.0, -5.0), yaw=-6, expr="blank"))
+S("L41.1", C((3.0, -5.0, 1.8), 1.5, -6, 2, 30, d2=1.25), note="blinking")
+scene("L41.3", kai=dict(pos=(3.2, -5.2), yaw=-14, expr="blank"))
+S("L41.3", C((3.2, -5.2, 1.72), 1.6, -14, 3, 28, d2=1.35), note="by the coffee machine")
 # lunch
 meter("L42", 9, 9, other="kai", oe=0, oticks=0)
 cue("L42", "clock_lunch", h=12.0, s=0.0)
@@ -466,23 +480,27 @@ S("L42.1", C((9.9, 7.5, 2.4), 1.7, -90, 0, 28, d2=1.3), note="two hours: the clo
 scene("L42.2", me=dict(pos=(6.7, 8.35), yaw=0, expr="laugh"), kai=dict(pos=(7.7, 8.35), yaw=0, expr="laugh"))
 S("L42.2", C((7.7, 8.35, 1.6), 2.4, -8, 3, 28, d2=1.9), note="for him")
 cue("L42a", "beard", on=True)
-scene("L42a", me=dict(pos=(6.7, 8.35), yaw=8, expr="sad-smile"), kai=dict(pos=(7.7, 8.35), yaw=-8, expr="laugh", arms=[60, 0]))
-S("L42a", C((6.7, 8.35, 1.6), 2.4, 8, 3, 28, d2=1.9), note="for me, at nine, my beard grown out")
-S("L42a.1", C((7.7, 8.35, 1.45), 2.6, -8, 6, 28, d2=2.1), note="Kai frozen mid-bite")
+scene("L42a", me=dict(pos=(6.7, 8.35), yaw=0, expr="sad-smile"))
+S("L42a", C((6.7, 8.35, 1.9), 1.5, 0, 2, 28, d2=1.2), note="for me, at nine, my beard grown out")
+scene("L42a.1", kai=dict(pos=(7.7, 8.35), yaw=-8, expr="laugh", arms=[60, 0]))
+S("L42a.1", C((7.7, 8.35, 1.8), 2.6, -8, 4, 28, d2=2.1), note="Kai frozen mid-bite")
 cue("L42a.2", "cal", on=True, rate=7.0)
-S("L42a.2", C((7.2, 7.5, 1.05), 1.2, 0, 32, 28, d2=0.95), note="a calendar flipping through six weeks")
+scene("L42a.2")
+S("L42a.2", C((7.2, 7.5, 1.08), 1.3, 0, 14, 28, d2=1.0), note="a calendar flipping through six weeks")
 cue("L43", "cal", on=False)
 cue("L42a>", "beard", on=False)
 scene("L43", kai=dict(pos=(7.7, 8.35), yaw=-8, expr="soft"))
 S("L43", C((7.7, 8.35, 1.6), 2.4, -8, 3, 28, d2=1.9), note="Kai's meter at x1: back down to zero")
 scene("L43.1", me=dict(pos=ME, yaw=0, expr="soft"), kai=dict(pos=KAI_D, yaw=0, expr="laugh"))
 S("L43.1", C((1.3, -0.85, 1.55), 3.2, 0, 4, 26, d2=2.6), note="the two of us at the desks")
-meter("L44", 9, 9)
+meter("L44", 9, 9, other=None)
 scene("L44")
 cue("L44", "drop", on=True)
-S("L44", C((MX + 0.2, FY - 0.17, 1.28), 1.0, -10, 8, 30, d2=0.75), note="the decaf spout dripping empty")
-S("L44.1", C((MX, -4.4, 1.38), 2.0, 12, 8, 26, d2=1.6), note="every decaf in the building")
+S("L44", C((MX + 0.2, FY, 1.6), 0.75, 0, 0, 30, d2=0.58), note="close on the hollow decaf glyph")
+meter("L44.1", 9, 9, slots=10, zoom=1.9)
+S("L44.1", C((MX + 0.2, FY - 0.17, 1.2), 1.1, -12, 8, 30, d2=0.9), note="my meter big: nine cups lit, the tenth empty")
 cue("L45", "drop", on=False)
+meter("L45", 9, 9, slots=0, zoom=1.0)
 scene("L45", me=dict(pos=(0.4, -2.6), yaw=10, expr="scared"), kai=dict(pos=(-0.8, -2.6), yaw=-6, expr="soft"),
       cw1=dict(pos=(-2.6, -0.85), yaw=180, arms=[68, 68]), boss=dict(pos=(0.0, 2.1), yaw=40, expr="wide", head=[0, 0.3], arms=[95, 95]))
 cue("L45", "sneeze", on=True)
@@ -499,8 +517,9 @@ cups("L45a.2", c9=None, c8=[0.0, -0.2, DZ, True])
 S("L45a.2", C((0.0, -0.2, 1.14), 0.8, 0, 5, 30), fill=1.3, note="the ninth cup: frame 1 again (the loop)")
 
 # ---------------------------------------------------------------------------------------------------- polish, sound, score
+SWAY = [x["id"] for x in shots if x.get("note", "").startswith(("every desk, done", "the left spout"))]
 POLISH = {"emph": ["L01", "L18", "L19", "L31", "L36", "L38", "L27"], "reveal": ["L27", "L38"], "twist": "L34",
-          "sway": ["S52", "S53"], "quiet": [["L42", "L43"]]}
+          "sway": SWAY, "quiet": [["L42", "L43"]]}
 SET_MOVES = []
 CLIP_OK = []
 MUSIC = {"root": 47, "mode": "minor", "bpm": 120, "seed": 91,
