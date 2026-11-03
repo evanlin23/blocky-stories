@@ -6,6 +6,7 @@
 # the job summary, and the run fails on a craft block, a flash failure, a clip or a hot true peak.
 #
 # It starts by itself on a story PR once both reviews approve (and again when the film files or the reviews change),
+# (the film files differ from main, no passed proof check covers them and no live proof already drew them),
 # or by hand: workflow_dispatch with the story and the branch.
 name: proof
 on:
@@ -15,10 +16,13 @@ on:
     inputs:
       story: {description: "story folder", required: true}
       ref: {description: "branch or commit to draw (blank = the branch this runs on)", default: ""}
-# its own group: never queues behind or cancels the `render` group. One proof per PR (or ref) at a time; a newer push
-# replaces a waiting one, and a running one finishes (the qa check reads which commit it drew).
+# its own groups: never queues behind or cancels the `render` group. The story isn't known before `plan` on a PR, so
+# the one-proof-per-story rule sits on the jobs that cost something (draw, one group per story and shard; assemble,
+# one per story): a hand dispatch and the PR's run for the same story wait for each other instead of drawing side by
+# side, and a newer waiting job replaces an older one. A running job finishes (the qa check reads which commit it
+# drew). The workflow-level group only keeps one run's plan per PR (or dispatch) at a time.
 concurrency:
-  group: proof-${{ github.event.pull_request.number || inputs.ref || github.ref }}
+  group: proof-${{ github.event.pull_request.number || format('{0}-{1}', inputs.story, inputs.ref) }}
   cancel-in-progress: false
 permissions: {contents: read, actions: read}
 env:
@@ -29,6 +33,7 @@ jobs:
   plan:
     if: ${{ github.event_name != 'pull_request' || !startsWith(github.event.pull_request.title, 'WIP') }}
     runs-on: ubuntu-latest
+    env: {GH_TOKEN: "${{ github.token }}"}   # plan_proofs.py lists the live proof-<story> artifacts
     outputs:
       matrix: ${{ steps.p.outputs.matrix }}
       stories: ${{ steps.p.outputs.stories }}
@@ -117,6 +122,9 @@ jobs:
     if: ${{ !cancelled() && needs.plan.outputs.any == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    concurrency:   # one drawing of a story's shard at a time, whichever run asked
+      group: proof-draw-${{ matrix.story }}-${{ matrix.shard }}
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       max-parallel: 8   # render.yml takes 16 of the free plan's 20 runners while it draws: a proof never starves it for long
@@ -144,9 +152,12 @@ jobs:
 
   assemble:
     needs: [plan, voice, clip, draw]
-    if: ${{ !cancelled() && needs.plan.outputs.any == 'true' }}
+    if: ${{ !cancelled() && needs.plan.outputs.any == 'true' && needs.draw.result == 'success' }}   # a missing shard gets no proof, not a stuttering one
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    concurrency:
+      group: proof-assemble-${{ matrix.story }}
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:
@@ -168,6 +179,16 @@ jobs:
       - uses: actions/download-artifact@v4
         continue-on-error: true   # a failed clip job leaves no report; the verdict then says so
         with: {name: "proof-clip-${{ matrix.story }}", path: "out/work/${{ matrix.story }}"}
+      - name: every frame must be there
+        run: |
+          S=${{ matrix.story }}
+          python -m blocky timeline $S
+          WANT=$(python -c "import json;print(json.load(open('out/work/$S/timeline.json'))['frames'])")
+          HAVE=$(ls out/work/$S/frames-proof/*.png 2>/dev/null | wc -l)
+          if [ "$HAVE" != "$WANT" ]; then
+            echo "::error::$S has $HAVE of $WANT proof frames: a draw shard is missing. No proof is made from missing frames; push or dispatch to draw it again."
+            exit 1
+          fi
       - name: finish and mix (with the narration the picture was drawn to)
         run: |
           S=${{ matrix.story }}
