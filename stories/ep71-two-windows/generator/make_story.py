@@ -547,6 +547,7 @@ story = {
     "world": "a bright golden-evening roadside drive-thru with a mint building, a peach awning, a drawn menu board and a speaker post, and a brick back wall where cars wait nose to tail",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#6fd13a",
+    "clip_heads": ["srv.head"],
     "gap": 0.12,
     "tail": 0,
     "fade_in": False,
