@@ -27,7 +27,9 @@ FX0, FX1 = int(TEX_W * (0.5 - 50 / 360)), int(TEX_W * (0.5 + 50 / 360))
 FY0, FY1 = int(TEX_H * 0.08), int(TEX_H * 0.92)
 
 EXPRESSIONS = ("neutral", "worried", "scared", "crying", "angry", "smirk", "blank", "wide", "shut", "grin",
-               "terrified", "squeeze", "soft", "asleep", "fish", "laugh", "smile")
+               "terrified", "squeeze", "soft", "asleep", "fish", "laugh", "smile", "hopeful", "polite", "delighted",
+               "sad-smile")
+# hopeful: opt-in (ep46): raised inner brows over a small smile.
 # fish: opt-in (ep20): lips pushed out into a small pursed pout, cheeks sucked in (two slanted hollows beside the
 # mouth), eyes open and a little wide. It never opens the mouth: the pout is the joke.
 # laugh: opt-in (ep17): eyes shut in up-arcs, brows raised, a wide open D-shaped mouth with a tongue: a real laugh,
@@ -167,8 +169,16 @@ def _mouth(d, expr, cx, cy, s, ink, open_, inside, hole=False):
         d.line([(cx - ww / 2, cy + w * 0.04), (cx + ww / 2, cy + w * 0.04)], fill=ink, width=max(4, th // 3))
     elif expr == "smile":   # eyes open, brows level, a plain smile (ep32; opt-in)
         _stroke(d, _curve(cx, cy - 0.012 * s, w * 0.95, 0.05 * s), ink, th)
+    elif expr == "hopeful":   # opt-in (ep46): a small smile under raised inner brows
+        _stroke(d, _curve(cx, cy - 0.006 * s, w * 0.6, 0.03 * s), ink, th)
     elif expr == "soft":   # a small closed smile
         _stroke(d, _curve(cx, cy - 0.006 * s, w * 0.6, 0.026 * s), ink, th)
+    elif expr == "polite":   # ep31 (opt-in): a pleasant, shallow smile for a stranger
+        _stroke(d, _curve(cx, cy - 0.004 * s, w * 0.78, 0.03 * s), ink, th)
+    elif expr == "delighted":   # ep31 (opt-in): a wide open-eyed smile
+        _stroke(d, _curve(cx, cy - 0.02 * s, w * 1.35, 0.095 * s), ink, th)
+    elif expr == "sad-smile":   # ep31 (opt-in): a small closed smile, brows up
+        _stroke(d, _curve(cx, cy - 0.004 * s, w * 0.62, 0.028 * s), ink, th)
     elif expr == "blank" or expr == "shut" or expr == "asleep":
         _stroke(d, [(cx - w * 0.25, cy), (cx + w * 0.25, cy)], ink, th)
     else:  # neutral: a short flat stroke, a little off centre (never the default smile)
@@ -281,8 +291,9 @@ def _draw(skin: str, eyes: str, brows: bool, ink: str, pupil: str, glow: str | N
                 _ellipse(d, cx + qx * r * 0.35, ey + qy * r * 0.35, r * 0.12, r * 0.12, fill=(230, 225, 215))
         if brows and eyes not in ("hollow", "none"):
             tilt = {"worried": 0.9, "crying": 1.0, "scared": 0.7, "angry": -0.9, "wide": 0.4, "smirk": -0.25,
-                    "grin": -0.4, "terrified": 1.0}.get(expr, 0.0)
-            by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide") else 0)
+                    "grin": -0.4, "terrified": 1.0, "hopeful": 0.55, "sad-smile": 0.75,
+                    "delighted": 0.3}.get(expr, 0.0)
+            by = ey - 0.175 * s - (0.05 * s if expr == "terrified" else 0.03 * s if expr in ("scared", "wide", "delighted", "sad-smile") else 0)
             _brow(d, cx, by, 0.16 * s, tilt, inkc, th, side)
     if expr == "crying" and not shut:
         tear = (120, 190, 255)
