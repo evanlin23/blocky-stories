@@ -25,7 +25,21 @@
   "sky": "#0d1220",
   "sky_strength": 1.0,
   "exposure": 0.0,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": {
+   "quiet": [
+    [
+     "L60",
+     "L76>"
+    ]
+   ],
+   "reveal": [
+    "L18",
+    "L50",
+    "L67"
+   ],
+   "twist": "L67"
+  }
  },
  "grade": {
   "shadows": [
@@ -8122,6 +8136,16 @@
     "at": "L54.4+0.25",
     "kind": "click",
     "db": -10
+   },
+   {
+    "at": "L25b+0.15",
+    "kind": "door",
+    "db": -24
+   },
+   {
+    "at": "L25b+1.1",
+    "kind": "thud",
+    "db": -26
    },
    {
     "at": "L31b.3",
