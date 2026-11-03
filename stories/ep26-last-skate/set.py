@@ -467,8 +467,8 @@ def build_lights(kit, ctx):
     kit.aim(kit.light("flood", "SPOT", (-17.0, -3.0, 4.6), 2600, "#fff1d8", size=0.6, spot=75, blend=0.8), (-8.4, -6.0, 1.4))
     kit.light("dusk", "SUN", (0, 0, 10), 2.6, "#fff4e2", rot=(math.radians(60), 0, math.radians(-70)))
     kit.light("spot", "SPOT", (0, 0, 4.7), 2300, "#fff0dc", rot=(0, 0, 0), size=0.4, spot=40, blend=1.0)
-    for n in ("house0", "house1", "house2", "conc0", "conc1"):
-        pass
+    # a faint low fill on my face for the Skater's arm shot (S44) so my scared eyes show
+    kit.aim(kit.light("mefill", "SPOT", (3.35, -2.6, 0.9), 60, "#ffd9c0", size=0.3, spot=34, blend=0.9), (3.0, -3.75, 1.5))
 
 
 # ------------------------------------------------------------------------------------------ the Skater
@@ -815,6 +815,7 @@ def animate(kit, story, tl, t, ctx):
     over["tube"] = 0.06 + 0.94 * dim ** 3
     over["amber"] = 0.04 + 0.96 * dim ** 3
     over["booth"] = 0.04 + 0.96 * dim ** 3
+    over["mefill"] = 1.0 if shot == "S44" else 0.0
     # the sky and every emissive in the hall dim with the room (the world was left at full, lighting it all)
     wn = bpy.context.scene.world.node_tree.nodes["Background"]
     wn.inputs["Strength"].default_value = story["look"].get("sky_strength", 1.0) * (0.03 + 0.97 * dim ** 3)

@@ -125,7 +125,7 @@ SKATER_LOW = C([6.2, -1.3, 0.9], [3.9, RAILY, 0.9], 2.6)                # the Sk
 SHOTS = [
     # 01 the rule
     (0, "Lenny close, grin, his flat hand coming down on the skip button, the song lights above him, one bulb cherry", 2,
-     move(([-0.62, 3.3, 3.1], [-0.62, 4.6, 3.03]), ([-0.62, 3.4, 3.1], [-0.62, 4.6, 3.03]), 21, 24)),
+     move(([-0.8, 3.3, 3.1], [-0.8, 4.6, 3.03]), ([-0.8, 3.4, 3.1], [-0.8, 4.6, 3.03]), 21, 24)),
     ("L02", "the song lights close, the next bulb glowing gold", 2, BOOTH_BAR(0.17, 1.0)),
     ("L02.1", "low on the honey floor, wheels gliding past", 2, C([-2.8, -3.0, 0.2], [1.0, -1.2, 0.15], 1.0)),
     # 02 skip one: the wipeout
@@ -175,7 +175,7 @@ SHOTS = [
     ("L21", "side on, the two of us at the rail, its head level with my shoulder", 2, C([3.6, -0.7, 1.2], [3.4, RAILY, 1.1], 3.0)),
     ("L21.2", "close on its folded knees", 2, C([4.6, -2.6, 0.5], [3.9, RAILY, 0.4], 1.1)),
     ("L22", "THE TEST STILL: its arm held out to me, two bends, a hand's width from mine, cherry rim", 1,
-     C([3.9, -0.7, 0.55], [3.65, -3.7, 0.3], 3.3)),
+     C([4.0, -0.7, 0.5], [3.7, -3.7, 0.95], 2.9)),
     ("P02", "the second drop: hold on the two hands, my hand pulled back to my chest", 2, C([3.4, -2.3, 1.1], [3.4, RAILY, 1.1], 1.3)),
     # 06 the reveal
     ("L23", "my eyes going from the song lights to its joints", 2, face(ME_RAIL, 180, 1.5, 1.2, 1.5)),
@@ -342,7 +342,7 @@ hide("coworker", "L29.2")
 
 # ---- Lenny at the booth: the skip button is under his left hand (the -x one), the back button under his right
 SKIPX, BACKX = -0.9, 0.2
-put("lenny", 0, list(LENNY) + [1.74], yaw=0, expr="grin", arms=[30, 0])
+put("lenny", 0, [LENNY[0] - 0.40, LENNY[1], 1.74], yaw=0, expr="grin", arms=[30, 0])
 key("lenny", "L01.1", arms=[50, 0], blend=0.4)
 key("lenny", "L01.2", arms=[66, 0], blend=0.25)
 key("lenny", "L02", arms=[0, 0], blend=0.4)
@@ -430,8 +430,8 @@ def sweep(at, start, mid, end, size=40, gain=0.9):
 
 
 cues += [
-    {"at": "L19.3", "name": "dim", "level": 0.14, "dur": 1.8},
-    {"at": "L26", "name": "dim", "level": 1.0, "dur": 1.5},
+    {"at": "L19.3", "name": "dim", "level": 0.14, "dur": 2.0},
+    {"at": "L26", "name": "dim", "level": 1.0, "dur": 2.0},
 ]
 cues += sweep("L02", (-7.5, 1.0), (-4.5, 1.0), (-1.0, 0.6), 44, 0.55)
 cues += sweep("L06.2", (-7.6, 3.7), (-6.0, 3.7), (FAR[0], FAR[1]), 38, 0.9)
@@ -560,7 +560,10 @@ story = {
     "tail": 0,
     "fade_in": False,
     "look": {"fog": "#d7e8f2", "fog_density": 0.004, "fog_start": 12.0, "sky": "#8cc6ee", "sky_strength": 1.0,
-             "exposure": 0.3, "flash_safe": True, "polish": True},
+             "exposure": 0.3, "flash_safe": True,
+             "polish": {"emph": ["L01", "L08", "L20", "L23", "L25b", "L34"], "reveal": ["L08", "L22", "L25b", "L34"],
+                        "twist": "L25b", "quiet": [["L32", "L33"]],
+                        "hold": ["S02", "S14", "S17", "S24", "S26", "S32", "S47", "S49", "S79", "S83", "S86"]}},
     "grade": {"shadows": [0.0, 0.0, 0.01], "highlights": [0.02, 0.01, -0.01], "saturation": 1.05, "red_line": 0.78,
               "contrast": 1.04, "vignette": 0.25, "bloom": 0.25, "grain": 0.01},
     "phonemes": {"lap": "lˈæp", "skipped": "skˈɪpt"},
