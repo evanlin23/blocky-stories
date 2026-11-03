@@ -57,3 +57,11 @@ orchestrator, so this session stopped here.
   failed stretches; the 68 s extended run is 1.5 s). Preflight 0 blocks (one run showed clip and asr blocks while a
   flash run shared the machine; two clean reruns gave 0).
 - `voice` rewrites voice-timings.json with split L01/L02 chunks (the cost opening); not committed here, CI makes its own.
+
+## Head-clip fix (proof of PR #198 failed on 55 clipcheck hits only)
+Fixed in `generator/make_story.py` (story.json regenerated, no cue/GAIN/camera changes): clipcheck 55 hits -> 0.
+- S09 (L08): me x 0.85 -> 1.1 (jonah's sleeve).
+- S22 (L17): towelman starts (-1.7,-1.5), basketlady (-0.7,-0.5) and leaves 1 m behind; she exits the door centre at L18 (no shared target).
+- Standing pairs (S36-S45, S59): jonah stepped ~0.25 further from me at L29/L30/L31/L35/L37, and L48 (x 3.0); L51 hug jonah x 2.55 (S62).
+- Seated pair (S52-S57): both moved 0.35 off nine's door (y 2.95 -> 2.6), me x 2.7, jonah x 3.62; L45 face-cam and its light follow.
+- No `clip_ok` used. Not committed: voice-timings.json.
