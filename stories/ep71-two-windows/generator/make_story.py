@@ -490,11 +490,11 @@ sfx = [
     {"at": "L71>-0.2", "kind": "sting", "db": -22},
 ]
 secs = [
-    {"at": 0, "voices": ["pulse", "musicbox"], "energy": 0.4, "mode": "mixolydian", "root": 50},
-    {"at": "L08", "voices": ["pulse", "musicbox", "pad"], "energy": 0.5},
+    {"at": 0, "voices": ["pulse", "piano"], "energy": 0.4, "mode": "mixolydian", "root": 50},
+    {"at": "L08", "voices": ["pulse", "piano", "pad"], "energy": 0.5},
     {"at": "P01>", "voices": ["drone", "pad", "pulse"], "energy": 0.6, "mode": "minor"},
     {"at": "L43", "voices": ["drone", "pad", "choir"], "energy": 0.7},
-    {"at": "L62", "voices": ["drone", "pulse", "musicbox"], "energy": 0.5, "mode": "major"},
+    {"at": "L62", "voices": ["drone", "pulse", "piano"], "energy": 0.5, "mode": "major"},
     {"at": "L70", "voices": ["drone"], "energy": 0.5, "mode": "minor"},
 ]
 
@@ -507,7 +507,7 @@ story = {
     "twist": "There was only ever one window. The second window is the first one a lap later, and every lap you go round waits by the back wall. The window can only hand you what you got last time, so a new order, from the only thing in the car that changes, breaks the lap.",
     "world": "a bright golden-evening roadside drive-thru with a mint building, a peach awning, a drawn menu board and a speaker post, and a brick back wall where cars wait nose to tail",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
-    "key_color": "#9be15d",
+    "key_color": "#6fd13a",
     "gap": 0.12,
     "tail": 0,
     "fade_in": False,

@@ -10,7 +10,7 @@
   "tempo": 1.03,
   "rate": 1.45
  },
- "key_color": "#9be15d",
+ "key_color": "#6fd13a",
  "gap": 0.12,
  "tail": 0,
  "fade_in": false,
@@ -436,8 +436,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "I'm TWENTY.",
-     "I'm twenty."
+     "I'm a",
+     "I'm a"
+    ],
+    [
+     "GROWN MAN.",
+     "grown man."
     ],
     [
      "I would like",
@@ -854,12 +858,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "Same GRIN.",
-     "same grin."
+     "EXACTLY like",
+     "exactly like"
     ],
     [
-     "Same WORDS.",
-     "same words."
+     "last TIME.",
+     "last time."
     ]
    ],
    "ncap": 2
@@ -1674,8 +1678,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "But our three",
-     "but our three"
+     "But our FOUR",
+     "but our four"
     ],
     [
      "old LAPS",
@@ -7402,7 +7406,7 @@
     "at": 0,
     "voices": [
      "pulse",
-     "musicbox"
+     "piano"
     ],
     "energy": 0.4,
     "mode": "mixolydian",
@@ -7412,7 +7416,7 @@
     "at": "L08",
     "voices": [
      "pulse",
-     "musicbox",
+     "piano",
      "pad"
     ],
     "energy": 0.5
@@ -7441,7 +7445,7 @@
     "voices": [
      "drone",
      "pulse",
-     "musicbox"
+     "piano"
     ],
     "energy": 0.5,
     "mode": "major"

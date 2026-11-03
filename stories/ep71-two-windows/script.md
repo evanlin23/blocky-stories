@@ -99,7 +99,7 @@ A small roadside drive-thru on the edge of town, golden Friday evening, bright a
 - Building mint `#7fe0c4`, peach band and awning `#ffb38a`, menu board cream `#fff1d6` with drawn food in warm colours. Asphalt grey with bright white lane stripes. Brick back wall terracotta. Sky gold to rose.
 - Our car sky blue `#5aa9e6`. Mr. Dale's trucks cherry red `#d8433a`. Cal's jacket mustard `#e0a92e`. My hoodie sky blue `#8ec9f5`.
 - The second window's light: warm white at first (`#fff4e0`), cooler and whiter each lap (`#f4fbff` by lap 4).
-- **Caption key colour:** pickle green `#9be15d`.
+- **Caption key colour:** pickle green `#6fd13a`.
 
 ## Sound and music
 - **Music:** D mixolydian, 100 bpm, light and bouncy for the first third: a plucked synth bass on the beat, a soft square lead playing two-note figures, a hand-clap-like filtered noise on 2 and 4 (soft, under 4 kHz). The flat seventh keeps it a little off.
@@ -140,7 +140,7 @@ A plain tally of **one** short upright peach stroke scratched into the steel sil
 | 6.1 to 7.5 s | L05 | S05: Mr. Dale at his front door, mug in hand, smiling, a gap in his driveway | |
 
 ## Format
-Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase without quote marks. CAPS are the key words, in `#9be15d`. Present tense. About 1.5 s a shot on average: 88 shots over about 132 s. No shot over 2.0 s.
+Each line gives the id and who says it, then the caption chunks split with ` / `. The spoken text is the chunks in lowercase without quote marks. CAPS are the key words, in `#6fd13a`. Present tense. About 1.5 s a shot on average: 88 shots over about 132 s. No shot over 2.0 s.
 
 ## 01 The rule (L01 to L07, about 0 to 12 s)
 - **Where:** the drive-thru lane, golden evening, then Mr. Dale's door.

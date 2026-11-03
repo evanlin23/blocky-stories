@@ -284,40 +284,57 @@ def build_car(kit, M, name, color, kind="open", cracked=False, tix=False, bag=Fa
 
 
 def build_server(kit, M, ctx):
-    """The Server: an R6-ish body in the drive-thru's mint shirt and peach visor, ordinary height, but its head is a flat slab as wide as the
-    hatch. Eyes at the far left and right edges, a thin black smile edge to edge. Posed by level: 0 only an arm and
-    the bag, 1 the face fills the hatch, 2 out to the shoulders, 3 out to the waist."""
+    """The Server: the window lady's own body and uniform (mint shirt, peach cap), but wrong: a head far too tall,
+    a blank pale slab whose face is upside down (the mouth-opening up under the cap, the eyes down by the chin),
+    and arms too long. It is seated in the hatch, its waist pinned to the sill, and leans out of it. Levels:
+    0 only the arm with the bag, 1 leaning out, 2 further, 3 face to face with Cal."""
     mint = kit.plastic("#7fe0c4", 0.45, "srv mint")
     peach = kit.plastic("#ffb38a", 0.45, "srv peach")
-    skin = kit.plastic("#e6d2bd", 0.5, "srv skin")
-    black = kit.plastic("#16110f", 0.5, "srv black")
-    root = kit.empty("server", (H2X, 4.87, 0))
+    skin = kit.plastic("#a99d97", 0.85, "srv skin")
+    skin2 = kit.plastic("#e6d2bd", 0.5, "srv hand")
+    black = kit.plastic("#050304", 0.9, "srv black")
+    root = kit.empty("server", (H2X, 4.7, SILL_Z + 0.24))
     g = kit.empty("server.g", (0, 0, 0), root)
-    kit.box("srv.torso", (0.75, 0.38, 0.62), (0, 0.18, 1.1), mint, g, bevel=0.06)
-    kit.box("srv.stripe", (0.77, 0.4, 0.1), (0, 0.18, 1.18), peach, g, bevel=0.02)
-    kit.box("srv.legs", (0.7, 0.34, 0.8), (0, 0.18, 0.4), kit.plastic("#2c3550", 0.7, "srv pants"), g, bevel=0.05)
-    kit.box("srv.neck", (0.26, 0.26, 0.12), (0, 0.05, 1.46), skin, g, bevel=0.03)
-    head = kit.box("srv.head", (1.4, 0.5, 0.5), (0, 0, 1.72), skin, g, bevel=0.1)
-    kit.box("srv.visor", (0.55, 0.62, 0.1), (0, -0.04, 1.99), peach, g, bevel=0.03)
-    kit.box("srv.visor2", (0.5, 0.54, 0.06), (0, 0.0, 1.94), peach, g, bevel=0.02)
-    # eyes at the far edges: pale, staring, a tiny pupil; a thin black smile edge to edge, its ends curled up
-    white = kit.emit("#f3eddc", 0.45, "srv sclera")
+    kit.box("srv.pelvis", (0.72, 0.4, 0.5), (0, 0.1, -0.2), kit.plastic("#2c3550", 0.7, "srv pants"), g, bevel=0.05)
+    kit.box("srv.torso", (0.74, 0.38, 0.8), (0, 0, 0.4), mint, g, bevel=0.06)
+    kit.box("srv.stripe", (0.76, 0.4, 0.1), (0, 0, 0.55), peach, g, bevel=0.02)
+    kit.box("srv.neck", (0.18, 0.18, 0.5), (0, 0, 1.0), skin, g, bevel=0.03)
+    hd = kit.empty("server.head", (0, 0, 1.15), g)
+    # head: 0.62 wide, 1.3 tall; all features on its -y face, z measured from the neck
+    kit.box("srv.head", (0.62, 0.36, 1.3), (0, 0, 0.65), skin, hd, bevel=0.08)
+    kit.box("srv.cap", (0.66, 0.4, 0.14), (0, 0, 1.35), peach, hd, bevel=0.04)
+    kit.box("srv.visor", (0.6, 0.3, 0.05), (0, -0.28, 1.28), peach, hd, bevel=0.02)
+    # upside-down face: the mouth-opening high under the cap, a dark slot with a dark hollow, the eyes low by the chin
+    kit.box("srv.mouth", (0.5, 0.03, 0.62), (0, -0.185, 0.93), black, hd, bevel=0.03)
+    kit.box("srv.mouth2", (0.38, 0.03, 0.78), (0, -0.19, 0.9), black, hd, bevel=0.03)
+    glint = kit.emit("#ffffff", 16.0, "srv glint")
     for sx in (-1, 1):
-        kit.cyl(f"srv.eye{sx}", 0.085, 0.03, (sx * 0.6, -0.255, 1.78), white, g, rot=(math.pi / 2, 0, 0), n=20)
-        kit.cyl(f"srv.pupil{sx}", 0.028, 0.03, (sx * 0.6 - sx * 0.01, -0.272, 1.78), black, g, rot=(math.pi / 2, 0, 0), n=12)
-    kit.box("srv.smile", (1.22, 0.02, 0.035), (0, -0.255, 1.6), black, g)
+        kit.box(f"srv.sock{sx}", (0.1, 0.03, 0.2), (sx * 0.17, -0.19, 0.3), black, hd, bevel=0.01, rot=(0, sx * 0.25, 0))
+        kit.cyl(f"srv.glint{sx}", 0.022, 0.03, (sx * 0.17, -0.215, 0.33), glint, hd, rot=(math.pi / 2, 0, 0), n=10)
+    # arms: too long (sleeve, forearm, hand with long fingers), pointing along local +z, swung by the animation
+    arms = []
     for sx in (-1, 1):
-        kit.box(f"srv.smile{sx}", (0.06, 0.02, 0.2), (sx * 0.62, -0.255, 1.66), black, g, rot=(0, -sx * 0.3, 0))
-    # the arm with the bag (a mint sleeve, a hand at the end, the bag on its palm)
-    arm = kit.empty("server.arm", (0.42, 0.18, 1.2), g)
-    kit.box("srv.sleeve", (0.22, 1.0, 0.22), (0, -0.5, 0), mint, arm, bevel=0.04)
-    kit.box("srv.hand", (0.2, 0.22, 0.12), (0, -1.1, -0.04), skin, arm, bevel=0.03)
-    bag = kit.empty("server.bag", (0, -1.12, 0.0), arm)
-    kit.box("srv.bagm", (0.5, 0.3, 0.46), (0, 0, 0.26), kit.plastic("#c9955a", 0.9, "bag"), bag, bevel=0.02)
-    kit.box("srv.bagfold", (0.5, 0.32, 0.05), (0, 0, 0.5), kit.plastic("#b98448", 0.9, "bag fold"), bag)
-    quad(kit, "srv.ticket", 0.26, 0.34, (0, -0.156, 0.26), FACE_NEG_Y, M["tix41"], bag)
-    ctx["server"] = {"root": root, "g": g, "head": head, "arm": arm,
-                     "body": [o for o in g.children if o.name != "server.arm"]}
+        ar = kit.empty(f"server.arm{sx}", (sx * 0.47, 0, 0.7), g)
+        kit.box(f"srv.sleeve{sx}", (0.17, 0.17, 0.8), (0, 0, 0.4), mint, ar, bevel=0.04)
+        kit.box(f"srv.fore{sx}", (0.1, 0.1, 0.75), (0, 0, 1.15), skin2, ar, bevel=0.03)
+        kit.box(f"srv.palm{sx}", (0.14, 0.05, 0.14), (0, 0, 1.58), skin2, ar, bevel=0.02)
+        for k in range(4):
+            kit.box(f"srv.fing{sx}{k}", (0.025, 0.03, 0.3), ((k - 1.5) * 0.034, 0, 1.78), skin2, ar, bevel=0.01)
+        arms.append(ar)
+    bag = kit.empty("server.bagL", (0, -0.1, 1.62), arms[1])
+    kit.box("srv.bagLm", (0.5, 0.3, 0.46), (0, 0, 0.0), kit.plastic("#c9955a", 0.9, "bag"), bag, bevel=0.02)
+    kit.box("srv.bagLf", (0.5, 0.32, 0.05), (0, 0, 0.25), kit.plastic("#b98448", 0.9, "bag fold"), bag)
+    quad(kit, "srv.ticketL", 0.26, 0.34, (0, -0.156, 0.0), FACE_NEG_Y, M["tix41"], bag)
+    # level 0: the ordinary arm with the bag, from behind the wall
+    root0 = kit.empty("server.r0", (H2X, 4.87, 0))
+    arm0 = kit.empty("server.arm0", (0.42, 0.18, 1.2), root0)
+    kit.box("srv.sleeve0", (0.22, 1.0, 0.22), (0, -0.5, 0), mint, arm0, bevel=0.04)
+    kit.box("srv.hand0", (0.2, 0.22, 0.12), (0, -1.1, -0.04), skin2, arm0, bevel=0.03)
+    bag0 = kit.empty("server.bag0", (0, -1.12, 0.0), arm0)
+    kit.box("srv.bagm0", (0.5, 0.3, 0.46), (0, 0, 0.26), kit.plastic("#c9955a", 0.9, "bag"), bag0, bevel=0.02)
+    kit.box("srv.bagfold0", (0.5, 0.32, 0.05), (0, 0, 0.5), kit.plastic("#b98448", 0.9, "bag fold"), bag0)
+    quad(kit, "srv.ticket0", 0.26, 0.34, (0, -0.156, 0.26), FACE_NEG_Y, M["tix41"], bag0)
+    ctx["server"] = {"root": root, "g": g, "head": hd, "arms": arms, "r0": root0}
 
 
 # ------------------------------------------------------------------------------------------------ materials
@@ -469,7 +486,7 @@ def build_lights(kit, ctx):
     kit.light("h1 in", "POINT", (0, 5.8, 2.3), 380, "#ffe6bd", size=0.4)
     kit.light("h2 warm", "POINT", (10.1, 5.6, 2.2), 260, "#ffe9c4", size=0.3)
     kit.light("h2 cool", "POINT", (10.1, 5.6, 2.2), 260, "#eaf6ff", size=0.3)
-    kit.light("h2 face", "POINT", (10.1, 4.2, 1.05), 160, "#fff4e0", size=0.2)
+    kit.light("h2 face", "POINT", (10.1, 4.2, 1.05), 90, "#fff4e0", size=0.2)
     kit.light("lane key", "AREA", (0, -3.5, 6.0), 700, "#fff1da", size=6.0)
     kit.aim(kit.LIGHTS["lane key"]["obj"], (0, 2.8, 1.0))
     kit.light("lane key2", "AREA", (-12, -3.5, 6.0), 500, "#fff1da", size=6.0)
@@ -478,6 +495,8 @@ def build_lights(kit, ctx):
     kit.aim(kit.LIGHTS["lane key3"]["obj"], (10.1, 3.0, 1.0))
     kit.light("back key", "AREA", (-5, 7.0, 8.0), 900, "#ffe3c0", size=8.0)
     kit.aim(kit.LIGHTS["back key"]["obj"], (-5, 12.0, 1.0))
+    for nm, sx in (("srv rimL", -1), ("srv rimR", 1)):
+        kit.light(nm, "POINT", (10.1 + sx * 1.5, 3.7, 2.1), 150, "#bfe6ff", size=0.15)
     kit.light("dale key", "AREA", (300, -5, 6.0), 800, "#fff1da", size=6.0)
     kit.aim(kit.LIGHTS["dale key"]["obj"], (300, 2.0, 1.4))
     kit.light("road key", "AREA", (600, -6, 6.0), 900, "#fff1da", size=8.0)
@@ -576,26 +595,27 @@ def animate(kit, story, tl, t, ctx):
     ctx["scr"][42].hide_render = n != 42
     # the Server: level 0..3, eased between cues
     srv = ctx["server"]
-    lv = float(_eased(_cues(tl, "server"), "lv", t, 0.0))
     sv = _cues(tl, "server")
+    lv = float(_eased(sv, "lv", t, 0.0))
     cur = _last(sv, t)
-    srv["root"].hide_render = not (cur and cur.get("on", True))
-    for o in srv["root"].children_recursive:
-        o.hide_render = srv["root"].hide_render
-    for o in srv["body"]:
-        _show([o], lv >= 0.5)
+    on = bool(cur and cur.get("on", True))
+    for r_, want in ((srv["root"], lv >= 0.5), (srv["r0"], lv < 0.5)):
+        _show([r_], on and want)
     if lv >= 0.5:
-        u2 = min(2.0, max(0.0, lv - 1.0))        # 0 at level 1, 1 at level 2, 2 at level 3
-        d = -0.55 * min(1.0, u2) - 0.45 * max(0.0, u2 - 1.0)
-        z = 0.28 * max(0.0, u2 - 1.0)
-        srv["g"].location = (0, d, z)
-        srv["g"].rotation_euler = (math.radians(14 * max(0.0, u2 - 1.0)), 0, 0)
-    else:
-        srv["g"].location = (0, 0.0, 0.0)
-        srv["g"].rotation_euler = (0, 0, 0)
+        u1, u2 = min(1.0, max(0.0, lv - 1.0)), min(1.0, max(0.0, lv - 2.0))
+        a = 44 + 8 * u1 + 8 * u2                  # pitch out of the hatch, about the waist on the sill
+        srv["root"].location = (H2X, 4.7 + 0.5 * max(0.0, 1.0 - lv) * 2, SILL_Z + 0.24)
+        srv["g"].rotation_euler = (math.radians(a), 0, 0)
+        srv["head"].rotation_euler = (math.radians(-a + 14 + 6 * u2), 0, 0)
+        T = (150 - 35 * u1 - 20 * u2)             # world angle of the arms (180 = straight down, 90 = reaching out)
+        for sx, ar in zip((-1, 1), srv["arms"]):
+            ar.rotation_euler = (math.radians(T - a), 0, sx * math.radians(8 + 4 * u2))
     # lights: every change is a slow ramp
     h2 = float(_eased(_cues(tl, "h2"), "v", t, 0.0))
     dim = float(_eased(_cues(tl, "dim"), "v", t, 0.0))
-    return {"h2 warm": 1.0 - h2, "h2 cool": h2, "h2 face": 0.4 + 0.6 * h2 if lv >= 0.5 else 0.0,
-            "sun": 1.0 - 0.55 * dim, "fill": 1.0 - 0.5 * dim, "lane key": 1.0 - 0.5 * dim, "lane key2": 1.0 - 0.5 * dim,
-            "lane key3": 1.0 - 0.5 * dim, "back key": 1.0 - 0.5 * dim}
+    sl = min(1.0, max(0.0, lv))            # the front lights die as it leans out
+    return {"h2 warm": 1.0 - h2, "h2 cool": h2, "h2 face": (0.5 + 0.9 * h2) * sl,
+            "sun": (1.0 - 0.55 * dim) * (1.0 - 0.7 * sl), "fill": (1.0 - 0.5 * dim) * (1.0 - 0.6 * sl),
+            "lane key": 1.0 - 0.5 * dim, "lane key2": 1.0 - 0.5 * dim,
+            "lane key3": (1.0 - 0.5 * dim) * (1.0 - 0.85 * sl), "back key": 1.0 - 0.5 * dim,
+            "srv rimL": sl, "srv rimR": sl}

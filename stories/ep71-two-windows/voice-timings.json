@@ -282,30 +282,34 @@
    ]
   },
   "L12": {
-   "text": "I'm twenty. I would like to try a pickle.",
+   "text": "I'm a grown man. I would like to try a pickle.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.034,
+   "dur": 2.207,
    "onset": 0.172,
-   "end": 1.845,
+   "end": 2.017,
    "chunks": [
     [
      0.172,
-     0.69
+     0.31
     ],
     [
-     0.759,
-     1.026
+     0.31,
+     0.862
     ],
     [
-     1.026,
-     1.267
+     0.931,
+     1.199
     ],
     [
-     1.267,
-     1.845
+     1.199,
+     1.439
+    ],
+    [
+     1.439,
+     2.017
     ]
    ]
   },
@@ -794,22 +798,22 @@
    ]
   },
   "L32": {
-   "text": "same grin. same words.",
+   "text": "exactly like last time.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.552,
-   "onset": 0.19,
-   "end": 1.362,
+   "dur": 1.603,
+   "onset": 0.172,
+   "end": 1.414,
    "chunks": [
     [
-     0.19,
-     0.603
+     0.172,
+     0.69
     ],
     [
-     0.647,
-     1.362
+     0.69,
+     1.414
     ]
    ]
   },
@@ -1798,7 +1802,7 @@
    ]
   },
   "L70": {
-   "text": "but our three old laps are still in line by the back wall.",
+   "text": "but our four old laps are still in line by the back wall.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -1809,18 +1813,18 @@
    "chunks": [
     [
      0.155,
-     0.517
+     0.534
     ],
     [
-     0.517,
-     0.905
+     0.534,
+     0.922
     ],
     [
-     0.905,
-     1.129
+     0.922,
+     1.147
     ],
     [
-     1.129,
+     1.147,
      1.466
     ],
     [
