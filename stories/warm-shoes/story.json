@@ -1,6 +1,6 @@
 {
  "slug": "warm-shoes",
- "title": "Our Cat Brings Home WARM Shoes 🐈",
+ "title": "Our Cat Brings Home WARM Shoes \ud83d\udc08",
  "made_for_kids": false,
  "premise": "Every night our ginger cat Biscuit carries a pair of old shoes in through the cat flap, always size eleven, always still warm, and nobody in town ever comes for them. Dad lines them up on the porch rail and says the cat goes on Saturday, and all week someone far too tall has walked one streetlight behind him on his way home from the bus.",
  "twist": "The tall stranger behind Dad is Biscuit himself, standing up in old shoes to walk Dad home, and at our gate he gets small again and climbs out of the boots. The shoes were never stolen, and a pair kept inside means somebody walks home alone.",
@@ -4109,30 +4109,30 @@
     [
      0,
      [
-      3.4,
-      0.4,
-      1.9
+      1.7,
+      -5.2,
+      3.0
      ],
      [
       1.9,
-      -1.7,
-      1.0
+      -1.9,
+      0.9
      ],
-     22
+     20.6
     ],
     [
      1,
      [
-      3.0,
-      0.1,
-      1.85
+      2.0,
+      -4.6,
+      2.8
      ],
      [
       1.9,
-      -1.7,
-      1.0
+      -1.9,
+      0.9
      ],
-     22
+     20.6
     ]
    ],
    "step": 2,
@@ -4934,37 +4934,37 @@
     [
      0,
      [
-      1.866,
-      -11.563,
-      1.815
+      0.147,
+      -10.07,
+      1.265
      ],
      [
-      1.42,
-      -9.9,
-      0.9
+      1.38,
+      -10.07,
+      1.2
      ],
-     25.76
+     27.6
     ],
     [
      1,
      [
-      1.791,
-      -11.286,
-      1.663
+      0.341,
+      -10.07,
+      1.254
      ],
      [
-      1.42,
-      -9.9,
-      0.9
+      1.38,
+      -10.07,
+      1.2
      ],
-     25.76
+     27.6
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "sundown",
    "at": "L62",
-   "note": "low close, Biscuit climbs out of the left boot"
+   "note": "low side close, Biscuit's muddy head and ears come out of the left boot, facing us"
   },
   {
    "id": "S92",
@@ -4972,28 +4972,28 @@
     [
      0,
      [
-      1.289,
-      -11.364,
-      0.743
+      0.944,
+      -11.068,
+      0.801
      ],
      [
       0.7200000000000001,
       -9.8,
-      0.45
+      0.62
      ],
      27.6
     ],
     [
      1,
      [
-      1.158,
-      -11.003,
-      0.676
+      0.888,
+      -10.751,
+      0.756
      ],
      [
       0.7200000000000001,
       -9.8,
-      0.45
+      0.62
      ],
      27.6
     ]
@@ -5449,37 +5449,24 @@
     [
      0,
      [
-      2.563,
-      -1.821,
-      1.529
+      1.4,
+      3.6,
+      1.3
      ],
      [
-      1.7,
-      0.55,
-      0.9
+      1.4,
+      0.7,
+      0.85
      ],
-     25.76
-    ],
-    [
-     1,
-     [
-      2.39,
-      -1.347,
-      1.403
-     ],
-     [
-      1.7,
-      0.55,
-      0.9
-     ],
-     25.76
+     15
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "dawn",
    "at": "L69",
-   "fill": 0.8,
+   "fill": 1.3,
+   "key": 0.6,
    "note": "dawn, Dad pouring food into the bowl"
   },
   {
@@ -5489,36 +5476,36 @@
      0,
      [
       0.6,
-      2.2,
-      1.55
+      3.3,
+      1.5
      ],
      [
-      1.3,
+      1.35,
       0.8,
-      1.35
+      1.0
      ],
-     24.1
+     15
     ],
     [
      1,
      [
-      0.8,
-      2.1,
-      1.55
+      0.9,
+      3.1,
+      1.5
      ],
      [
-      1.3,
+      1.35,
       0.8,
-      1.35
+      1.0
      ],
-     24.1
+     15
     ]
    ],
    "step": 2,
    "hand": 0.006,
    "look": "dawn",
    "at": "L69.2",
-   "fill": 0.8,
+   "fill": 1.6,
    "note": "I caught Dad, sheepish"
   },
   {
@@ -5763,30 +5750,30 @@
     [
      0,
      [
-      0.5,
-      -39.0,
-      0.5
+      0.6,
+      -44.0,
+      0.45
      ],
      [
       0.0,
-      -43.0,
+      -50.0,
       0.8
      ],
-     24.1
+     22.4
     ],
     [
      1,
      [
-      0.4,
-      -39.4,
-      0.5
+      0.5,
+      -44.4,
+      0.45
      ],
      [
       0.0,
-      -43.0,
+      -50.0,
       0.8
      ],
-     24.1
+     22.4
     ]
    ],
    "step": 2,
@@ -5801,30 +5788,30 @@
     [
      0,
      [
-      0.0,
-      -37.923,
-      1.659
+      0.75,
+      -38.2,
+      1.6
      ],
      [
       0.0,
       -40.0,
       1.55
      ],
-     33.120000000000005
+     31.0
     ],
     [
      1,
      [
-      0.0,
-      -38.312,
-      1.638
+      0.6,
+      -38.7,
+      1.58
      ],
      [
       0.0,
       -40.0,
       1.55
      ],
-     33.120000000000005
+     31.0
     ]
    ],
    "step": 2,
@@ -5840,30 +5827,30 @@
     [
      0,
      [
-      0.328,
-      -37.249,
-      1.897
+      1.3,
+      -37.6,
+      1.5
      ],
      [
-      0.0,
-      -41.0,
-      1.7
+      -0.1,
+      -47.5,
+      1.6
      ],
-     31.28
+     29.2
     ],
     [
      1,
      [
-      0.294,
-      -37.637,
-      1.877
+      1.2,
+      -37.9,
+      1.5
      ],
      [
-      0.0,
-      -41.0,
-      1.7
+      -0.1,
+      -47.5,
+      1.6
      ],
-     31.28
+     29.2
     ]
    ],
    "step": 2,
@@ -7835,16 +7822,16 @@
    {
     "at": "L69",
     "pos": [
-     1.6,
+     0.95,
      0.7
     ],
     "blend": 0,
-    "yaw": 0,
+    "yaw": 90,
     "expr": "neutral",
     "hidden": false,
     "arms": [
-     40,
-     40
+     50,
+     50
     ],
     "side": [
      0,
@@ -7854,22 +7841,22 @@
      0,
      0
     ],
-    "lean": 40,
+    "lean": 14,
     "tremble": 0,
     "blink": true
    },
    {
     "at": "L69.2",
     "pos": [
-     1.6,
+     0.95,
      0.7
     ]
    },
    {
     "at": "L69.2",
     "pos": [
-     1.6,
-     0.8
+     1.0,
+     0.9
     ],
     "blend": 0,
     "yaw": 160,
@@ -7894,8 +7881,8 @@
    {
     "at": "L70",
     "pos": [
-     1.6,
-     0.8
+     1.0,
+     0.9
     ]
    },
    {
@@ -8536,7 +8523,7 @@
     "at": "L73",
     "pos": [
      0.0,
-     -43.0
+     -50.0
     ],
     "blend": 0,
     "yaw": 180,
@@ -9348,19 +9335,20 @@
    "at": "L62",
    "name": "cat",
    "pos": [
-    1.3900000000000001,
-    -9.9,
+    1.55,
+    -10.07,
     0.4
    ],
-   "yaw": 0,
+   "yaw": -90,
    "pose": "stand",
    "face": "neutral",
-   "pitch": -80,
+   "pitch": -22,
    "tail": "up",
+   "mud": true,
    "to": [
-    1.3900000000000001,
-    -9.9,
-    1.02
+    1.55,
+    -10.07,
+    0.95
    ],
    "dur": 1.3
   },
@@ -9372,9 +9360,10 @@
     -9.8,
     0.4
    ],
-   "yaw": 190,
+   "yaw": 12,
    "face": "neutral",
-   "tail": "up"
+   "tail": "up",
+   "mud": true
   },
   {
    "at": "L66",
@@ -9388,12 +9377,22 @@
   },
   {
    "at": "L66",
+   "name": "meter",
+   "n": 0
+  },
+  {
+   "at": "L66",
    "name": "pairs"
   },
   {
    "at": "L66.2",
    "name": "count",
    "n": 0
+  },
+  {
+   "at": "L66.2",
+   "name": "meter",
+   "n": -1
   },
   {
    "at": "L66.2",
@@ -9421,7 +9420,8 @@
    "pose": "stand",
    "face": "neutral",
    "pitch": -10,
-   "tail": "up"
+   "tail": "up",
+   "mud": true
   },
   {
    "at": "L66b",
@@ -9439,7 +9439,8 @@
    "pose": "stand",
    "face": "neutral",
    "pitch": -60,
-   "tail": "up"
+   "tail": "up",
+   "mud": true
   },
   {
    "at": "L66b.2",
@@ -9452,9 +9453,19 @@
    "n": 12
   },
   {
+   "at": "L66b.2",
+   "name": "meter",
+   "n": 0
+  },
+  {
    "at": "L66c",
    "name": "count",
    "n": 0
+  },
+  {
+   "at": "L66c",
+   "name": "meter",
+   "n": -1
   },
   {
    "at": "L66c",
@@ -9513,7 +9524,8 @@
    "yaw": 0,
    "pose": "lie",
    "face": "neutral",
-   "tail": "down"
+   "tail": "down",
+   "mud": true
   },
   {
    "at": "L69",
@@ -9532,7 +9544,8 @@
    "pose": "stand",
    "face": "neutral",
    "pitch": 12,
-   "tail": "up"
+   "tail": "up",
+   "mud": true
   },
   {
    "at": "L71",
@@ -9574,7 +9587,8 @@
    "yaw": 20,
    "pose": "lie",
    "face": "neutral",
-   "tail": "up"
+   "tail": "up",
+   "mud": true
   },
   {
    "at": "L72",
@@ -9809,5 +9823,6 @@
     "to": "P02>"
    }
   ]
- }
+ },
+ "rev": 1
 }

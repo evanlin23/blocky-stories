@@ -332,10 +332,25 @@ class Cat:
             self.tail.append(nxt)
             parent = nxt
         B(parent, (0.063, 0.063, 0.05), (0, 0, 0.02), st, "ctip", 0.02)
+        mud = P("#4f3319", 0.95, spec=0.05)
+        self.mud = [
+            B(self.headg, (0.228, 0.205, 0.05), (0, 0.005, 0.078), mud, "mudcap", 0.02),
+            B(self.headg, (0.045, 0.05, 0.075), (-0.105, -0.075, -0.03), mud, "mudcheek", 0.015),
+            B(self.headg, (0.045, 0.05, 0.075), (0.105, -0.075, -0.015), mud, "mudcheek", 0.015),
+            B(self.headg, (0.06, 0.06, 0.05), (-0.065, -0.012, 0.15), mud, "mudear", 0.015),
+            B(self.headg, (0.06, 0.06, 0.05), (0.065, -0.012, 0.15), mud, "mudear", 0.015),
+            B(self.headg, (0.05, 0.012, 0.04), (-0.07, -0.116, -0.05), mud, "mudsmear", 0.006),
+            B(self.headg, (0.07, 0.012, 0.03), (0.03, -0.116, 0.065), mud, "mudsmear", 0.006),
+            B(self.bodyg, (0.215, 0.05, 0.10), (0, -0.255, 0.20), mud, "mudchest", 0.02),
+            B(self.bodyg, (0.292, 0.16, 0.10), (0, 0.06, 0.15), mud, "mudflank", 0.025),
+            B(self.bodyg, (0.292, 0.12, 0.07), (0, -0.1, 0.30), mud, "mudback", 0.02),
+        ]
+        for o in self.mud:
+            no_shadow(o)
         self.pose_state = None
         self.carry = {}
 
-    def place(self, x, y, z, yaw, pose="stand", face="neutral", tail="up", t=0.0, pitch=0.0, hidden=False, carry=None):
+    def place(self, x, y, z, yaw, pose="stand", face="neutral", tail="up", t=0.0, pitch=0.0, hidden=False, carry=None, muddy=False):
         r = self.root
         r.location = (x, y, z)
         r.rotation_euler = (0, 0, math.radians(yaw))
@@ -359,6 +374,8 @@ class Cat:
         self.face_tex.image = self.imgs.get(face, self.imgs["neutral"])
         for k, ob in self.carry.items():
             hide(ob, hidden or k != carry)
+        for ob in self.mud:
+            hide(ob, hidden or not muddy)
 
 
 # ------------------------------------------------------------------------------------------------ the Strider
@@ -368,6 +385,16 @@ def strider_late(kit, ctx):
     if ch is None:
         return
     ctx["strider"] = ch
+    dad = rig.CHARS.get("dad")
+    ctx["dadmud"] = []
+    if dad is not None:
+        mud = P("#4f3319", 0.95, spec=0.05)
+        for nmx, size, loc, par in (("front", (1.1, 0.05, 0.9), (0.25, -0.52, 0.9), dad.torso),
+                                    ("low", (1.5, 0.05, 0.55), (-0.1, -0.52, 0.32), dad.torso),
+                                    ("side", (0.5, 0.05, 0.5), (-0.65, -0.52, 1.5), dad.torso)):
+            o = B(par, size, loc, mud, "dadmud", 0.02)
+            no_shadow(o)
+            ctx["dadmud"].append(o)
     for k in ("arm-1", "arm1"):
         ch.P[k].scale = (1.0, 1.0, 1.42)         # hands down by the knees
     for hinge, sx in ch.coat:
@@ -735,9 +762,8 @@ def build_house(kit):
     B(None, (fw, 0.035, hz1 - hz0), (hx0 - fw / 2, 0.165, (hz0 + hz1) / 2), wood, "fr_l", 0.006)
     B(None, (fw, 0.035, hz1 - hz0), (hx1 + fw / 2, 0.165, (hz0 + hz1) / 2), wood, "fr_r", 0.006)
     scr = P("#d9791f", 0.5)
-    for k, x in enumerate((0.40, 0.47, 0.54, 0.61)):                               # the tally scratches (lore), big
+    for k, x in enumerate((0.44, 0.51, 0.58)):                               # the tally scratches (lore), big
         B(None, (0.026, 0.014, 0.15), (x, 0.152, DECK + 0.86), scr, "stroke", 0.004)
-    B(None, (0.30, 0.014, 0.022), (0.505, 0.153, DECK + 0.86), scr, "stroke", 0.004, rot=(0, 0.45, 0))
     H["flap_pivot"] = E(None, (0.5, 0.1, hz1 - 0.01), "flappivot")
     B(H["flap_pivot"], (hx1 - hx0 - 0.02, 0.012, hz1 - hz0 - 0.02), (0, 0.0, -(hz1 - hz0) / 2), P("#5a6270", 0.3, 0.7), "flap", 0.004)
     B(H["flap_pivot"], (hx1 - hx0, 0.016, 0.02), (0, 0.0, -0.005), P("#2d3340", 0.4), "flaptop", 0.004)
@@ -907,6 +933,9 @@ def animate(kit, story, tl, t, ctx):
     cnt = cue_at(tl, "count", t).get("n", 8)
     for i, pr in enumerate(ctx["rail"]):
         hide(pr, i >= cnt)
+    mo = cue_at(tl, "meter", t).get("n", -1)               # a meter override: the rail keeps its pairs, the chalk says this
+    if mo >= 0:
+        cnt = mo
     H = ctx["house"]
     if cnt not in H["digit_imgs"]:
         im = bpy.data.images.load(digit_image(cnt, kit))
@@ -953,6 +982,8 @@ def animate(kit, story, tl, t, ctx):
             o.location = (px + 0.05 * math.sin(j * 1.9) + sw, py + 0.04 * math.cos(j * 1.7) + 0.5 * sw,
                           pz + 0.06 + 0.5 * ph * sc_ ** 0.3)
             o.scale = (0.4 * env + 0.001, 0.4 * env + 0.001, (2.0 + 1.6 * ph) * env + 0.001)
+    for o in ctx.get("dadmud", []):
+        hide(o, t < tl["lines"]["L68"]["onset"] - 0.01)
     # ---- Biscuit
     cc = cue_at(tl, "cat", t)
     cat = ctx["cat"]
@@ -962,7 +993,7 @@ def animate(kit, story, tl, t, ctx):
             u = ss((t - cc["t"]) / max(1e-3, cc["dur"]))
             pos_ = [lerp(a, b, u) for a, b in zip(cc["pos"], cc["to"])]
         cat.place(pos_[0], pos_[1], pos_[2], cc.get("yaw", 0), cc.get("pose", "stand"), cc.get("face", "neutral"),
-                  cc.get("tail", "up"), t, cc.get("pitch", 0.0), False, cc.get("carry"))
+                  cc.get("tail", "up"), t, cc.get("pitch", 0.0), False, cc.get("carry"), bool(cc.get("mud")))
     else:
         cat.place(0, 0, -5, 0, hidden=True)
     # ---- the flap swings with the times in its cue ("swing": list of [t0, dur, peak])
