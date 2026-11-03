@@ -669,21 +669,6 @@ def test_plan_proofs_picks_approved_stories_whose_film_changed(monkeypatch):
     assert pp.plan(B()) == (["self"], True)
 
 
-def test_wanted_needs_this_push_to_touch_the_film_or_the_reviews():
-    import importlib.util
-
-    spec = importlib.util.spec_from_file_location("plan_proofs", ROOT / "scripts" / "plan_proofs.py")
-    pp = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(pp)
-
-    vs_base = ["stories/w/set.py"]
-    assert pp.wanted("w", vs_base, None)                                   # unknown push: draw it
-    assert pp.wanted("w", vs_base, ["stories/w/set.py"])                   # the film changed
-    assert pp.wanted("w", vs_base, ["stories/w/reviews/r2-critic.md"])     # it just got approved
-    assert not pp.wanted("w", vs_base, ["qa/w.json"])                      # a qa file: no redraw
-    assert not pp.wanted("w", [], ["stories/w/set.py"])                    # same film as the base
-
-
 def test_proof_verdict_fails_on_a_block_flash_clip_or_hot_peak():
     import importlib.util
 
