@@ -72,7 +72,9 @@
   "red_line": 0.78
  },
  "phonemes": {
-  "snaps": "snˈæps"
+  "snaps": "snˈæps",
+  "ours": "ˌaʊɚz",
+  "Ours": "ˌaʊɚz"
  },
  "caption": {
   "shadow": 0.6
@@ -173,38 +175,39 @@
    "who": "narrator",
    "chunks": [
     [
-     "Never LOOK",
-     "Never look"
+     "My NEIGHBOR",
+     "My neighbor"
     ],
     [
-     "at the",
-     "at the"
+     "mows his lawn",
+     "mows his lawn"
     ],
     [
-     "neighbor's LAWN",
-     "neighbor's lawn"
+     "at three a.m.",
+     "at three a.m."
     ],
     [
-     "while his mower's",
-     "while his mower's"
+     "with his eyes",
+     "with his eyes"
     ],
     [
-     "RUNNING.",
-     "running."
+     "SHUT.",
+     "shut."
     ]
-   ]
+   ],
+   "tempo": 1.17
   },
   {
    "id": "L02",
    "who": "narrator",
    "chunks": [
     [
-     "Not even",
-     "Not even"
+     "Don't LOOK",
+     "Don't look"
     ],
     [
-     "through the BLINDS.",
-     "through the blinds."
+     "while it's RUNNING.",
+     "while it's running."
     ]
    ]
   },
@@ -276,16 +279,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "And HE mows",
-     "And he mows"
+     "He says",
+     "He says"
     ],
     [
-     "with his EYES",
-     "with his eyes"
+     "it's FASTER",
+     "it's faster"
     ],
     [
-     "SHUT.",
-     "shut."
+     "that way.",
+     "that way."
     ]
    ]
   },
@@ -691,10 +694,10 @@
    "chunks": [
     [
      "Straight at DAD.",
-     "Straight. At Dad."
+     "Straight, at Dad."
     ]
    ],
-   "tempo": 0.9
+   "tempo": 0.8
   },
   {
    "id": "L30",
@@ -815,7 +818,7 @@
      "it's going bald."
     ]
    ],
-   "tempo": 0.9
+   "tempo": 1.1
   },
   {
    "id": "L38",
@@ -967,20 +970,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "So if",
-     "So if"
+     "Ask ANYONE",
+     "Ask anyone"
     ],
     [
-     "you're ever",
-     "you're ever"
-    ],
-    [
-     "on our street",
-     "on our street"
-    ],
-    [
-     "at THREE,",
-     "at three,"
+     "on our street.",
+     "on our street."
     ]
    ]
   }
@@ -1057,7 +1052,7 @@
    ],
    "step": 2,
    "hand": 0.008,
-   "note": "closer: his shut-eyed face over the deck, the hit on RUNNING",
+   "note": "closer: his shut-eyed face over the deck, the hit on SHUT",
    "at": "L01.3"
   },
   {

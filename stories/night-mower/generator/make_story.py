@@ -24,10 +24,12 @@ lines = json.loads((HERE / "lines.json").read_text())
 LOOP = 0.25
 GAP = 0.12
 # word-check pins: the voice's own spelling for lines the word check mishears (captions stay as written)
-TEMPO = {"L05": 1.15, "L34": 0.85, "L37": 0.9, "L40": 0.94, "L29": 0.9}
+TEMPO = {"L05": 1.15, "L01": 1.17, "L34": 0.85, "L37": 1.1, "L40": 0.94, "L29": 0.8}
 for ln in lines:
     if ln["id"] == "L29":
-        ln["chunks"][0][1] = "Straight. At Dad."     # the word check hears "to" at this speed
+        ln["chunks"][0][1] = "Straight, at Dad."     # the word check hears "to" at this speed
+    if ln["id"] == "L37":
+        ln["chunks"][0][1] = "Ours is where"
     if ln["id"] == "L36":
         ln["gap"] = 0.4                           # "eyebrow. Ours" runs together: the word check hears "mowers"
     if ln["id"] == "L40":
@@ -121,7 +123,7 @@ shot("S01", 0, C((0.0, -2.5, 1.42), (0.0, 0.0, 1.62), 27, (0.0, -1.95, 1.42), (0
 stage(0, odell=((9.0, 10.9, 0), 0, "shut", {"arms": [0, 0]}))
 walk("odell", "L01.3", (9.0, 9.6, 0))
 shot("S01b", "L01.3", C((9.7, 7.4, 0.95), (9.0, 9.5, 1.55), 42, (9.4, 8.0, 1.0), (9.0, 9.4, 1.56), 48),
-     "closer: his shut-eyed face over the deck, the hit on RUNNING")
+     "closer: his shut-eyed face over the deck, the hit on SHUT")
 stage("L01.3", odell=((9.0, 9.6, 0), 0, "shut"))
 walk("odell", "L02", (9.0, 9.0, 0))
 shot("S02", "L02", C((-6.9, 13.0, 4.75), (-5.4, 11.6, 3.7), 30, (-6.6, 12.8, 4.7), (-5.2, 11.5, 3.65), 32),
@@ -379,7 +381,7 @@ story = {
              "exposure": 0.0, "flash_safe": True, "polish": {"emph": ["L01", "L28", "L34"], "auto": False, "reveal": ["L28"], "twist": "L34", "quiet": [["L39", "L45"]], "sway": ["S19", "S21", "S24", "S26", "S28"]}, "hdri": "moonless_golf", "hdri_strength": 0.6, "hdri_visible": False},
     "grade": {"shadows": [0.0, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 1.12, "contrast": 1.06,
               "vignette": 0.3, "bloom": 0.3, "grain": 0.01, "red_line": 0.78},
-    "phonemes": {"snaps": "snˈæps"},
+    "phonemes": {"snaps": "snˈæps", "ours": "ˌaʊɚz", "Ours": "ˌaʊɚz"},
     "caption": {"shadow": 0.6},
     "min_read": 0,
     "cast": cast,

@@ -6,54 +6,54 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Never look at the neighbor's lawn while his mower's running.",
+   "text": "My neighbor mows his lawn at three a.m. with his eyes shut.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.5,
-   "onset": 0.19,
-   "end": 2.31,
+   "tempo": 1.2051,
+   "dur": 2.241,
+   "onset": 0.138,
+   "end": 2.069,
    "chunks": [
     [
-     0.19,
-     0.492
+     0.138,
+     0.388
     ],
     [
-     0.492,
-     0.603
+     0.388,
+     0.768
     ],
     [
-     0.603,
-     1.241
+     0.768,
+     1.267
     ],
     [
-     1.241,
-     1.776
+     1.267,
+     1.664
     ],
     [
-     1.776,
-     2.31
+     1.664,
+     2.069
     ]
    ]
   },
   "L02": {
-   "text": "Not even through the blinds.",
+   "text": "Don't look while it's running.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.517,
+   "dur": 1.448,
    "onset": 0.172,
-   "end": 1.328,
+   "end": 1.259,
    "chunks": [
     [
      0.172,
-     0.526
+     0.483
     ],
     [
-     0.526,
-     1.328
+     0.483,
+     1.259
     ]
    ]
   },
@@ -138,26 +138,26 @@
    ]
   },
   "L06": {
-   "text": "And he mows with his eyes shut.",
+   "text": "He says it's faster that way.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.672,
+   "dur": 1.638,
    "onset": 0.155,
-   "end": 1.483,
+   "end": 1.431,
    "chunks": [
     [
      0.155,
-     0.578
+     0.397
     ],
     [
-     0.578,
-     1.017
+     0.397,
+     0.81
     ],
     [
-     1.017,
-     1.483
+     0.81,
+     1.431
     ]
    ]
   },
@@ -690,18 +690,18 @@
    ]
   },
   "L29": {
-   "text": "Straight. At Dad.",
+   "text": "Straight, at Dad.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 1.345,
-   "onset": 0.207,
-   "end": 1.121,
+   "tempo": 0.8240000000000001,
+   "dur": 1.448,
+   "onset": 0.241,
+   "end": 1.207,
    "chunks": [
     [
-     0.207,
-     1.121
+     0.241,
+     1.207
     ]
    ]
   },
@@ -870,18 +870,18 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 0.927,
-   "dur": 1.879,
-   "onset": 0.224,
-   "end": 1.655,
+   "tempo": 1.1330000000000002,
+   "dur": 1.534,
+   "onset": 0.155,
+   "end": 1.345,
    "chunks": [
     [
-     0.224,
-     0.716
+     0.155,
+     0.526
     ],
     [
-     0.716,
-     1.655
+     0.526,
+     1.345
     ]
    ]
   },
@@ -1078,30 +1078,22 @@
    ]
   },
   "L46": {
-   "text": "So if you're ever on our street at three,",
+   "text": "Ask anyone on our street.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.879,
-   "onset": 0.172,
-   "end": 1.672,
+   "dur": 1.5,
+   "onset": 0.19,
+   "end": 1.31,
    "chunks": [
     [
-     0.172,
-     0.353
+     0.19,
+     0.629
     ],
     [
-     0.353,
-     0.664
-    ],
-    [
-     0.664,
-     1.052
-    ],
-    [
-     1.052,
-     1.672
+     0.629,
+     1.31
     ]
    ]
   }

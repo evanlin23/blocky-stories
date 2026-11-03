@@ -100,9 +100,9 @@ Every word is the narrator's. Mr. Odell's one quote (L33) is inside the narratio
 - **Music:** D mixolydian, 100 bpm. Light and bouncy for the montage and the day beats: a plucky square bass on the root and fifth, a soft marimba-like sine pluck with the flat seventh (C natural) for the funny suburban odd. No music box, no chime.
 - **The drone:** the mower's hum is the score's drone, a low synthesized motor tone on D (two detuned saws low-passed under 800 Hz with a slow wobble). It enters on L01's hit, sits quietly under the day beats as a memory (off in L07 to L13), returns at L15 ("The mower STARTED") and holds. A heavier low D and A drone joins at L27 and holds to the end. At L32 ("mower STOPPED") the hum stops dead and only the heavy drone remains. At L43 the hum returns, softer, under a plain warm melody in D major on a soft square lead to L45. At L46 the lead drops out.
 - **Drops (`music_drops`):** P01 0.7 s before L26: everything but the voice drops, then one soft wet turf creak as "TURF" lands. P02 before 'is built' (L34.1): everything drops, one low soft thud on "HEAD".
-- **Hits:** L01 "RUNNING" (thud plus the hum swelling in). L05 "SNAPS SHUT" (a soft plastic blind clatter, under 4 kHz). L18 "CREAKED" (`assets/audio/sfx/creak`). L24 a slow caster roll. L31 a soft wooden tilt-groan.
+- **Hits:** L01 "SHUT" (thud plus the hum swelling in). L05 "SNAPS SHUT" (a soft plastic blind clatter, under 4 kHz). L18 "CREAKED" (`assets/audio/sfx/creak`). L24 a slow caster roll. L31 a soft wooden tilt-groan.
 - **Ambience:** `assets/audio/amb/crickets.wav` low at night, birds synthesized soft by day, grass steps for Dad crossing the fence (`assets/audio/steps/grass`). All effects under about 4 kHz.
-- **The loop:** 0.25 s after "THREE," cut to L01's frame, the hum already running.
+- **The loop:** 0.25 s after "STREET." cut to L01's frame, the hum already running.
 
 ## The lore connection (one only)
 Two lime-green upright strokes scratched into the chrome of the mower's handle bar, by the left grip, two for a job built for two. Under L43 ("Now Dad holds the CORD, / and Mr. Odell / STEERS."), the line's second shot: a close on the handle, the orange cord in Dad's sleeve at one side, the two strokes plain in the floodlight. Held 1.6 s. Not narrated, never shown again. Plain tally, no extra stroke, touches no thread. (In the canon the Head is one of the Makers' first tries, far too big, older than the street built over it, and its place is kept by a crew of two. Mr. Odell kept it alone for years. Never said.)
@@ -112,9 +112,9 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 01 The rule (L01 to L06, about 0 to 10 s)
 - **Where:** the floodlit lawn at 3 AM, then the street.
-- `L01` narrator: Never LOOK / at the neighbor's LAWN / while his mower's / RUNNING.
+- `L01` narrator: My NEIGHBOR / mows his lawn / at three a.m. / with his eyes / SHUT.
   - [S01, 0 to 2.1 s: low close on the blazing green lawn, Mr. Odell pushing the red mower straight at camera, `eyes_shut`, calm smile, face about a quarter of frame width, centred, floodlit. Slow push in. Hit on RUNNING.]
-- `L02` narrator: Not even / through the BLINDS.
+- `L02` narrator: Don't LOOK / while it's RUNNING.
   - [S02: inside my dark bedroom, close on the white blinds: one slat dips by itself and the green glow cuts a bright stripe across the frame. Push in.]
 - `L03` narrator: The family across the street / PEEKED once.
   - [S03: night, mid shot of the coral house across the street, one blind slat in its upstairs window bent down.]
@@ -122,7 +122,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S04: the coral house straight on, camera level, so the house's 6-degree lean toward his lawn reads, its porch light hanging at the slant.]
 - `L05` narrator: At THREE, / every blind on our street / SNAPS SHUT.
   - [S05: a row of three upstairs windows down the street, blinds dropping shut one after another left to right, each over 0.3 s. Hit on SNAPS SHUT.]
-- `L06` narrator: And HE mows / with his EYES / SHUT. **(quotable)**
+- `L06` narrator: He says / it's FASTER / that way. **(quotable)**
   - [S06: tight close on Mr. Odell's face, `eyes_shut`, the floodlights behind his white hair, mower handle at the bottom of frame. Cover frame candidate.]
 
 ## 02 Dad (L07 to L14, about 10 to 22 s)
@@ -217,8 +217,8 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
   - [S55: the pair from my window, mowing a perfect curved stripe.]
 - `L45` narrator: Dad still WATERS / the bald spot. / Out of RESPECT.
   - [S56: dawn-blue morning light, Dad with the hose watering the bald circle, `smile`. S57: Mr. Odell waving over the fence, eyes open, `smile`.]
-- `L46` narrator: So if you're ever / on our street / at THREE,
-  - [S58: back to 3 AM, low on the floodlit lawn, empty, the stripes. The seam opens a crack and the eye looks straight into the lens. Meter twitches right. 0.25 s after THREE, cut to S01.]
+- `L46` narrator: Ask ANYONE / on our street.
+  - [S58: back to 3 AM, low on the floodlit lawn, empty, the stripes. The seam opens a crack and the eye looks straight into the lens. Meter twitches right. 0.25 s after STREET, cut to S01.]
 
 ## Risks
 - **The eye must read as an eye at phone size** (S33): if the flat-drawn style reads as a hole or a sticker, add a second thick lash stroke and more lid curve. Never a realistic modelled eye (ep13's).
