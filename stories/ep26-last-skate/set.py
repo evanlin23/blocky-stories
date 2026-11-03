@@ -53,12 +53,24 @@ BOOT_H = 0.28
 TORSO = (0.64, 0.34, 0.72)
 SK_SCALE = 0.85
 KNEE_DZ = {0: 3 * LEGL, 1: 0.45, 2: 0.08}    # the hip's height above the boots by how many knees are folded
-FOLD_ARM = (42, -42, 42)                       # a folded arm: a zigzag flat against the chest, elbows showing
-REACH_ARM = (-100, -10, -100)                  # a held-out arm: forward, back, forward (two bends)
+FOLD_ARM = (70, -70, 70)                       # a folded arm: a zigzag flat against the chest, elbows showing
+REACH_ARM = (-25, -155, -25)                  # a held-out arm: forward, back, forward (two bends)
 
 
 def _leg_zigzag(dz):
-    """Angles (-a, 1.8a, -a), in degrees, of a folded leg whose vertical extent is dz."""
+    """Angles of a folded leg whose vertical extent is dz. A tight fold (dz small) bends at acute angles, about 40
+    degrees between thigh and shin (a hard turn of 140): absolute angles (-a, 140 - a, -a). Else the old (-a, 1.8a, -a)."""
+    if dz < 0.2:
+        g = lambda a: LEGL * (2 * math.cos(math.radians(a)) + math.cos(math.radians(140 - a)))
+        lo, hi = 20.0, 110.0
+        for _ in range(40):
+            mid = (lo + hi) / 2
+            if g(mid) > dz:
+                lo = mid
+            else:
+                hi = mid
+        a = (lo + hi) / 2
+        return (-a, 140 - a, -a)
     f = lambda a: LEGL * (2 * math.cos(math.radians(a)) + math.cos(math.radians(1.8 * a)))
     lo, hi = 0.0, 67.0
     for _ in range(40):
@@ -477,12 +489,18 @@ def skater_face(path: Path):
     ey = int(H * 0.40)
     for sx in (-1, 1):
         ex = cx + sx * 92
-        d.ellipse([ex - 36, ey - 60, ex + 36, ey + 60], fill=cherry)                 # the cherry rim
-        d.ellipse([ex - 28, ey - 50, ex + 28, ey + 50], fill=(228, 220, 200))        # a pale ring
-        d.ellipse([ex - 13, ey - 20, ex + 13, ey + 24], fill=ink)                    # a small dark pupil
-        d.ellipse([ex - 7 + sx * 2, ey - 12, ex + 1 + sx * 2, ey - 3], fill=(255, 255, 255))
-    my = int(H * 0.73)
-    d.line([(cx - 175, my), (cx + 175, my)], fill=(60, 12, 20), width=7)             # a thin, flat, straight mouth
+        d.ellipse([ex - 58, ey - 92, ex + 58, ey + 92], fill=(120, 24, 34))          # a dark cherry rim
+        d.ellipse([ex - 49, ey - 80, ex + 49, ey + 80], fill=(226, 218, 198))        # a pale ring
+        d.ellipse([ex - 36, ey - 60, ex + 36, ey + 66], fill=ink)                    # big dark pupil
+    # the painted smile: a thin upturned arc across 60% of the plate, curled ends
+    my = int(H * 0.66)
+    hw = 150
+    d.arc([cx - hw, my - 70, cx + hw, my + 70], 22, 158, fill=(52, 8, 16), width=8)
+    for sx in (-1, 1):
+        ex_ = cx + sx * hw * math.cos(math.radians(22))
+        ey_ = my + 70 * math.sin(math.radians(22))
+        d.line([(ex_, ey_), (ex_ + sx * 12, ey_ - 22)], fill=(52, 8, 16), width=8)   # the curl
+        d.ellipse([ex_ + sx * 12 - 4, ey_ - 26, ex_ + sx * 12 + 4, ey_ - 18], fill=(52, 8, 16))
     im.save(path)
     return im
 
@@ -511,8 +529,8 @@ def build_skater(kit, ctx):
     skin = kit.plastic("#e9dfc9", 0.55)
     glove = kit.plastic("#f3ead6", 0.5)
     joint = kit.plastic("#1f1618", 0.5)
-    sm = ostripes(kit, "skater stripes", "#c58f96", "#e9dcc2", 5.0)
-    sm2 = ostripes(kit, "skater stripes b", "#c9929a", "#ebe0c8", 6.0)
+    sm = ostripes(kit, "skater stripes", "#8f1d2a", "#e6d9bd", 5.0)
+    sm2 = ostripes(kit, "skater stripes b", "#972230", "#e8dcc1", 6.0)
     skate = kit.plastic("#eadfc7", 0.45)
     wheel = kit.plastic("#b84a52", 0.5)
     objs = []
@@ -533,7 +551,7 @@ def build_skater(kit, ctx):
             seg = add(kit.box(f"sk.leg{sx}{k}", (0.22, 0.22, L), (0, 0, -L / 2), sm if k != 1 else sm2, parent, bevel=0.025))
             kn = kit.empty(f"sk.knee{sx}{k}", (0, 0, -L), parent)
             if k < 2:
-                add(kit.box(f"sk.kneeb{sx}{k}", (0.27, 0.27, 0.2), (0, 0, -L), joint, parent, bevel=0.03))
+                add(kit.box(f"sk.kneeb{sx}{k}", (0.235, 0.235, 0.05), (0, 0, -L), joint, parent, bevel=0.01))
             chain.append(kn)
             parent = kn
         # the skate on the last end
@@ -549,14 +567,14 @@ def build_skater(kit, ctx):
     arms = {}
     for sx in (-1, 1):
         j = kit.empty(f"sk.sh{sx}", (sx * 0.41, 0, TORSO[2] - 0.08), torso)
-        add(kit.box(f"sk.shb{sx}", (0.27, 0.27, 0.27), (0, 0, 0), joint, j, bevel=0.03))
+        add(kit.box(f"sk.shb{sx}", (0.24, 0.24, 0.1), (0, 0, 0.02), joint, j, bevel=0.015))
         chain = [j]
         parent = j
         for k, L in enumerate((UPPER, FORE, FORE2)):
             add(kit.box(f"sk.arm{sx}{k}", (0.2, 0.2, L), (0, 0, -L / 2), sm2 if k != 1 else sm, parent, bevel=0.02))
             nx = kit.empty(f"sk.el{sx}{k}", (0, 0, -L), parent)
             if k < 2:
-                add(kit.box(f"sk.elb{sx}{k}", (0.23, 0.23, 0.17), (0, 0, -L), joint, parent, bevel=0.03))
+                add(kit.box(f"sk.elb{sx}{k}", (0.215, 0.215, 0.05), (0, 0, -L), joint, parent, bevel=0.01))
             chain.append(nx)
             parent = nx
         add(kit.box(f"sk.hand{sx}", (0.15, 0.1, 0.2), (0, 0, -0.1), glove, parent, bevel=0.03))
@@ -586,13 +604,13 @@ def build_skater(kit, ctx):
         v = 1.0 - (faces.TEX_H * 0.40 - 7) / faces.TEX_H
         pz = 0.08 + v * (Hh - 0.16) - Hh / 2
         pr = 1.006
-        hl = kit.sphere(f"sk.hl{sx}", 0.03, (px * pr, py * pr, pz), kit.emit("#fff8ee", 40.0), inner, seg=8)
+        hl = kit.sphere(f"sk.hl{sx}", 0.02, (px * pr, py * pr, pz), kit.emit("#fff8ee", 40.0), inner, seg=8)
         objs.append(hl)
     for ob in objs:
         pass
     # lights that follow it
-    kit.light("sk_up", "POINT", (0, 0, 0.2), 330, "#ffe0c0", size=0.15)
-    kit.light("sk_rim", "SPOT", (0, 0, 3), 620, "#f27a88", size=0.1, spot=38, blend=0.8)
+    kit.light("sk_up", "POINT", (0, 0, 0.2), 150, "#ffffff", size=0.15)
+    kit.light("sk_rim", "SPOT", (0, 0, 3), 300, "#dc7a86", size=0.1, spot=38, blend=0.8)
     allobjs = objs + list(root.children_recursive)
     link_only(kit, "skater_up", "sk_up", [o for o in allobjs if o.type == "MESH"], "only")
     link_only(kit, "skater_rim", "sk_rim", [o for o in allobjs if o.type == "MESH"], "only")
@@ -635,7 +653,7 @@ def pose_skater(ctx, st):
         ch[1].location = (0, 0, -UPPER)
         ch[2].location = (0, 0, -FORE)
         if reach:
-            ch[0].location = (sx * 0.41, 0, TORSO[2] - 0.08)
+            ch[0].location = (sx * 0.41, -0.1, TORSO[2] - 0.08)
             for k, a in enumerate(REACH_ARM):
                 ch[k].rotation_euler = (rad(a) - prev, 0, 0)
                 prev = rad(a)
@@ -784,8 +802,10 @@ def animate(kit, story, tl, t, ctx):
     dim = _ramp(_cues(tl, "dim"), t, DIM0, ["level"])["level"]
     for n in ("house0", "house1", "house2"):
         over[n] = dim ** 1.5
-    over["conc0"] = over["conc1"] = 0.15 + 0.85 * dim
-    over["amber"] = 0.55 + 0.45 * dim
+    for n in ("dusk", "flood", "lot", "lot2"):     # the window light goes with the hall
+        over[n] = 0.03 + 0.97 * dim ** 3
+    over["conc0"] = over["conc1"] = 0.08 + 0.92 * dim ** 2
+    over["amber"] = 0.3 + 0.7 * dim ** 2
     over["hirefill"] = 0.08 + 0.92 * dim ** 2
     over["tube"] = 0.15 + 0.85 * dim ** 2
     # ---- a per-shot level (story.json shots[].expo) so cuts land at similar brightness
@@ -831,7 +851,7 @@ def animate(kit, story, tl, t, ctx):
     side = 1.0 if px < 1.0 else -1.0
     up = kit.LIGHTS["sk_up"]["obj"]
     boost = next((sh.get("skboost", 1.0) for sh in story["shots"] if sh["id"] == shot), 1.0)
-    up.location = (px + 1.4 * side, py + 0.1, 0.2) if boost == 1.0 else (px + 1.3, py - 0.9, 0.15)
+    up.location = (px + 1.4 * side, py + 0.1, 0.2) if boost == 1.0 else (px - 1.1, py + 0.8, 0.3)   # boosted: low, from the side
     over["sk_up"] = (0.3 + 0.7 * near) * expo * boost
     rim = kit.LIGHTS["sk_rim"]["obj"]
     rim.location = (px - 0.4, py + 2.6, 2.9)

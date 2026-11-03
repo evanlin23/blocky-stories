@@ -125,7 +125,7 @@ SKATER_LOW = C([6.2, -1.3, 0.9], [3.9, RAILY, 0.9], 2.6)                # the Sk
 SHOTS = [
     # 01 the rule
     (0, "Lenny close, grin, his flat hand coming down on the skip button, the song lights above him, one bulb cherry", 2,
-     move(([-0.7, 2.6, 3.0], [-0.7, 5.2, 2.95]), ([-0.7, 3.1, 3.0], [-0.7, 5.2, 2.95]), 17, 20)),
+     move(([-1.5, 2.6, 3.1], [-0.75, 5.2, 2.78]), ([-1.3, 3.1, 3.05], [-0.75, 5.2, 2.78]), 17, 20)),
     ("L02", "the song lights close, the next bulb glowing gold", 2, BOOTH_BAR(0.17, 1.0)),
     ("L02.1", "low on the honey floor, wheels gliding past", 2, C([-2.8, -3.0, 0.2], [1.0, -1.2, 0.15], 1.0)),
     # 02 skip one: the wipeout
@@ -175,7 +175,7 @@ SHOTS = [
     ("L21", "side on, the two of us at the rail, its head level with my shoulder", 2, C([3.6, -0.7, 1.2], [3.4, RAILY, 1.1], 3.0)),
     ("L21.2", "close on its folded knees", 2, C([4.6, -2.6, 0.5], [3.9, RAILY, 0.4], 1.1)),
     ("L22", "THE TEST STILL: its arm held out to me, two bends, a hand's width from mine, cherry rim", 1,
-     C([3.9, -1.3, 0.85], [3.65, -3.7, 1.3], 3.4)),
+     C([3.9, -1.3, 0.7], [3.65, -3.7, 0.62], 2.8)),
     ("P02", "the second drop: hold on the two hands, my hand pulled back to my chest", 2, C([3.4, -2.3, 1.1], [3.4, RAILY, 1.1], 1.3)),
     # 06 the reveal
     ("L23", "my eyes going from the song lights to its joints", 2, face(ME_RAIL, 180, 1.5, 1.2, 1.5)),
@@ -237,8 +237,8 @@ for i, (at, what, step, cam) in enumerate(SHOTS):
 shots[0]["expo"] = 0.45
 for sh in shots:
     if sh["what"].startswith("THE TEST STILL"):
-        sh["skboost"] = 0.4
-        sh["expo"] = 0.8
+        sh["skboost"] = 0.9
+        sh["expo"] = 0.75
 
 # ---------------------------------------------------------------------------------------------------- acting
 NEUTRAL = {"arms": [0, 0], "side": [0, 0], "head": [0, 0], "lean": 0, "tremble": 0, "blink": True, "sit": False,
@@ -430,7 +430,7 @@ def sweep(at, start, mid, end, size=40, gain=0.9):
 
 
 cues += [
-    {"at": "L19.3", "name": "dim", "level": 0.3, "dur": 1.5},
+    {"at": "L19.3", "name": "dim", "level": 0.14, "dur": 1.8},
     {"at": "L26", "name": "dim", "level": 1.0, "dur": 1.5},
 ]
 cues += sweep("L02", (-7.5, 1.0), (-4.5, 1.0), (-1.0, 0.6), 44, 0.55)
@@ -440,7 +440,7 @@ cues += sweep("L13", (-7.6, 0.2), (-4.0, 0.2), (MID[0], MID[1]), 40, 0.9)
 cues += [{"at": "L15", "name": "spot", "gain": 0.0, "dur": 0.6}]
 cues += sweep("L16", (7.4, -2.6), (6.0, -2.6), (2.0, 1.4), 44, 0.6)
 cues += [{"at": "L16.1", "name": "spot", "to": [3.6, -3.4], "gain": 0.8, "dur": 2.4}]
-cues += [{"at": "L19.1", "name": "spot", "to": [ME_RAIL[0] + 0.4, RAILY + 0.2], "dur": 2.0, "size": 44, "gain": 1.0}]
+cues += [{"at": "L19.1", "name": "spot", "to": [ME_RAIL[0] + 0.4, RAILY + 0.2], "dur": 2.0, "size": 30, "gain": 0.9}]
 cues += [{"at": "L25", "name": "spot", "to": [ME_RAIL[0] + 0.6, RAILY + 0.2], "dur": 1.5}]
 cues += [{"at": "L26.1", "name": "spot", "gain": 0.0, "dur": 0.8}]
 cues += sweep("L28", (8.0, -1.0), (6.0, RAILY), (SK_BESIDE[0], RAILY + 0.1), 40, 0.9)
@@ -475,7 +475,7 @@ sk_hide("L15")
 sk("L17", [1, 1, 0, 1], SK_POST, -90)                                # skip 3: one post away, facing me
 sk_hide("L19.3")
 sk("L20", [1, 1, 1, 1], SK_BESIDE, -90)                              # skip 4: right beside me, folded tight
-sk("L22", [1, 1, 1, 1], SK_BESIDE, -75, pose="reach", reach_side=-1, head=(-55, 0))  # its left arm held out to me, bent twice
+sk("L22", [1, 1, 1, 1], SK_BESIDE, -105, pose="reach", reach_side=-1, head=(-70, 0))  # its left arm held out to me, bent twice
 sk_hide("L24.1")
 sk("L24.3", [1, 1, 1, 1], SK_BESIDE, -90, pose="reach", reach_side=-1)
 sk("L27.2+0.4", [1, 1, 1, 1], SK_BESIDE, -90)
