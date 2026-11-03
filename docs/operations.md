@@ -36,6 +36,18 @@ the hard way.
   and the stories.
 - Watch spend: about 20 parallel story sessions used most of a week's limit in a day (2026-11-02).
 
+## Two orchestrators (from 2026-11-03)
+- **The first orchestrator** runs the channel day to day (queue, uploads, qa, its stories). **The second** runs on a separate
+  subscription with its own usage limit: backup stories, render infra and the research brief. Neither can message the other
+  directly.
+- **Messages go on issue #177 ("Orchestrator channel"),** not in a file: every PR waits behind the render jobs for its `test` run,
+  so a doc PR is too slow for messages. `[#1]` / `[#2]`, then ASK, FYI or DONE. At most one batched comment per check-in (each one
+  notifies the owner), with the Claude Code footer. The channel test on 2026-11-03 went both ways within minutes.
+- **The first orchestrator reads it at 8:41 AM, 2:41 PM and 8:41 PM Central.** The second posts just before those, about 20 minutes
+  earlier, unless something is urgent. `docs/second-team.md` holds the second team's status, one line per item.
+- **The render pool is shared:** 20 jobs at once for the account, and finals take 16. Never start a proof while a final render run
+  is in progress or queued.
+
 ## Uploads (YouTube)
 - **API uploads are not locked to private.** YouTube's API team confirmed this on 2026-11-02 and closed our
   audit request as unnecessary. Each upload is private with a scheduled `publishAt` (4:00 PM Central, or an hour
