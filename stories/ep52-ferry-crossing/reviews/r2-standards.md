@@ -1,0 +1,7 @@
+# ep52-ferry-crossing: standards, round 2
+
+Verdict: revise
+
+Round 1's fixes show up in the preview. The pull now happens while I'm awake (L18 to L25, 0:28 to 0:52), L56 is "I was HOPPING / my way BACK.", the lean (1:42 to 1:44) never fills the frame with orange, and the new title is in title case with one CAPS word (51 characters). Fiction, kids and IP pass: there's no set text, everyone is an adult, Gran is away for an ordinary reason, the faces are ours and no game is named. The flash check passes with room to spare (1-frame 1 flash and 3 changes, 3-frame 2 and 5, no red). The description is clean and says "It's made up."
+
+1. **story.json `premise` and `twist` (hard rule 5, round 1 fix 1 left unfinished).** Both still describe the cut version: "my evenings go blank, and each time I come to I am further along" and "the blank evenings were me". That's the ep41-orchard-rows overlap, and `check` and later reviews compare this text. Replace them with the film as it is now. Premise: "...on Sunday's call Gran is pulling it on. Then every street I take ends at the slipway, my keys and scarf hop off toward her island, and damp hop-dots start at my own door. I follow them a little further each evening: the ferry's window seat, halfway up her lane, her open door, her glasses on the mat." Twist: change "the blank evenings were me" to "the pull all week, the streets ending at the slipway and the dots starting at my door, was me".
