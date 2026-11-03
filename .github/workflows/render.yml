@@ -164,7 +164,7 @@ jobs:
 
   again:   # more stories were ready than one run can hold: start another run for the rest
     needs: [plan, assemble]
-    if: always() && needs.plan.outputs.more == 'true'
+    if: ${{ !cancelled() && needs.plan.outputs.more == 'true' }}   # never after a cancel: a cancelled run re-dispatched itself on 2026-11-03 and blocked the queue with stale stories
     runs-on: ubuntu-latest
     permissions: {actions: write}
     env: {GH_TOKEN: "${{ github.token }}"}
