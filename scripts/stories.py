@@ -77,11 +77,13 @@ def qa_passed(story: str, f: dict | None) -> bool:
     if not p.exists():
         return False
     q = json.loads(p.read_text())
+    if q.get("stage") == "proof":   # the before-merge check: it says nothing about the final film
+        return False
     return q.get("verdict") == "pass" and str(q.get("film")) == str(f.get("id") or "legacy")
 
 
 # what changes the film: everything in the story folder but the words around it (package, reviews, notes)
-NOT_FILM = ("package.json", "reviews", "notes", "*.md")
+from blocky.gate import NOT_FILM  # noqa: E402  (one list: the gate's proof check and the re-render use the same)
 
 
 def changed_since(story: str, when: str) -> bool:
