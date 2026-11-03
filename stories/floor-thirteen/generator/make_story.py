@@ -76,7 +76,7 @@ BACK_WIDE = still([0.0, 1.4, 1.45], [0.0, -1.9, 1.5], 22)
 BACK_WIDE_B = still([-0.1, 1.05, 1.5], [0.0, -1.9, 1.5], 22)
 FIRST = still([0.12, 1.1, 1.6], [0.0, -1.9, 1.55], 22)           # over my shoulder, the doors parting on bright 13
 PANEL_LOW = still([-0.74, -0.33, 0.95], [-0.745, -0.94, 0.95], 40)
-PANEL_MID = still([-0.74, -0.33, 1.25], [-0.745, -0.94, 1.25], 40)   # the 12 (z 1.23) and the 13 (z 1.29)
+PANEL_MID = still([-0.70, -0.62, 1.265], [-0.75, -0.94, 1.262], 50)   # the 12 (z 1.226) and the 13 (z 1.292), digits on both
 INDICATOR = still([0.0, 0.0, 2.2], [0.0, -0.94, 2.3], 30)
 FACE_ME = still([0.32, -0.86, 1.52], [-0.1, 0.6, 1.5], 24)
 HELD = still([0.05, 0.95, 1.1], [0.0, -1.9, 1.8], 18)             # the bump frame, locked off
@@ -105,11 +105,11 @@ def lamp(cam, aim, w=1.0, up=0.45, c="#e8e4dc", size=0.7, side=0.0):
 
 # 01 floor thirteen, bright
 # the opening (recipe v1, 2026-11-03): the warning over the 13 button lit on its own, pushing in; my face on OUT
-PANEL_PUSH = move(([-0.42, -0.1, 1.33], [-0.745, -0.94, 1.27]), ([-0.5, -0.38, 1.31], [-0.745, -0.94, 1.27]), 32, 42)
+PANEL_PUSH = move(([-0.60, -0.15, 1.30], [-0.7075, -0.94, 1.292]), ([-0.65, -0.42, 1.295], [-0.7075, -0.94, 1.292]), 33, 46)
 shot(0, "first frame: the floor panel close, the 13 button lit cold on its own, my finger hovering by the 12; pushing in",
      PANEL_PUSH, 1, 0.004)
-shot("L01.4-0.2", "my face in the car, looking at the panel: the DING and the hit land on OUT", FACE_ME, 2, 0.006,
-     lamp(FACE_ME, [-0.1, 0.6, 1.5], 0.9, up=0.3))
+shot("L01.3-0.2", "my face in the car, looking at the panel: the DING and the hit land on OUT; the walnut wall behind, the cold panel glow on my face", FACE_ME, 2, 0.006,
+     {"at": [-0.55, -0.8, 1.55], "aim": [-0.1, 0.6, 1.5], "w": 0.8, "c": "#a9c8ff", "size": 0.6})
 shot("L02", "bright 13: the board of keys, a tag on every ring; Mr. Abel lifts his set off it",
      still([-0.8, -3.0, 1.55], [1.2, -3.0, 1.55], 22))
 shot("L02b", "the doors part on bright 13: shelves, Mr. Abel turning with his keys, 13 lit above", FIRST, 1, 0.006)
@@ -370,7 +370,7 @@ def thirteen(at, dur=1.2, **kw):
 
 # the lights: bright thirteen is the car's light plus the warm lamps; dark thirteen the dimmed car and the cold lamp
 cue(0, "lights", state="on")
-cue("L01.4-0.6", "lights", state="bright", dur=0.5)
+cue("L01.3-0.6", "lights", state="bright", dur=0.5)
 cue("L04", "lights", state="land", dur=0.3)
 cue("L05", "lights", state="on", dur=0.3)
 cue("L06", "lights", state="bright", dur=0.3)
@@ -387,8 +387,8 @@ cue("L27", "lights", state="on", dur=0.4)
 thirteen("P04", 1.4, fill=0.8)
 thirteen("P05", 0.5, rim=0.7, fill=0.0)
 thirteen("L34", 0.4, rim=0.5, fill=1.1)
-cue("L36", "lights", state="stairs", dur=0.6)
-cue("L37", "lights", state="land", dur=0.4)
+cue("L36", "lights", state="stairs", dur=1.0)
+cue("L37", "lights", state="land", dur=0.9)
 thirteen("L42", 1.0, rim=0.6, fill=1.0, shelf=0.0)
 thirteen("L43.3", 0.5, rim=0.6, fill=1.0, shelf=1.0)
 cue("L45", "lights", state="land", dur=0.5)
@@ -430,7 +430,7 @@ cue("L45", "land_doors", me=0.0, him=1.0, dur=0.1)
 
 # the floor indicator
 cue(0, "indicator", floor="12", arrow="up")
-cue("L01.2", "indicator", floor="13", arrow=None)
+cue("L01.1", "indicator", floor="13", arrow=None)
 cue("L07", "indicator", floor="12", arrow=None)
 cue("L11", "indicator", floor="13", arrow=None)
 cue("L13", "indicator", floor="12", arrow=None)
@@ -449,14 +449,14 @@ cue(0, "panel", lit=[12])                       # the 13 button, lit on its own:
 cue("L02", "panel", lit=[])
 cue("L13+0.25", "panel", lit=[11])
 cue("L13+0.7", "panel", lit=[11, 12])           # Tuesday: the 13 lights up by itself as my finger lifts (the plant)
-cue("L14.1", "panel", lit=[])
+cue("L14", "panel", lit=[])
 for k in range(9):
     cue(f"L32+{0.05 + 0.18 * k:.2f}", "panel", lit=[21])
     cue(f"L32+{0.12 + 0.18 * k:.2f}", "panel", lit=[])
 
 # my finger (press goes 0 to 1 and back)
 cue(0, "finger", on=True, button=11, press=0.0)   # hovering by the 12: I didn't press the 13
-cue("L01.4", "finger", on=False)
+cue("L01.3", "finger", on=False)
 cue("L13", "finger", on=True, button=11, press=0.0)
 cue("L13+0.25", "finger", on=True, button=11, press=1.0, dur=0.1)
 cue("L13+0.7", "finger", on=True, button=11, press=0.0, dur=0.1)
@@ -519,8 +519,8 @@ def sf(at, kind, db, **kw):
     sfx.append({"at": at, "kind": kind, "db": db, **kw})
 
 
-sf("L01.4>-0.22", "bell", -15)                   # the sound hit on the warning's last word, OUT
-sf("L01.4>-0.22", "hit", -9, keep=True)
+sf("L01.3>-0.22", "bell", -15)                   # the sound hit on the warning's last word, OUT
+sf("L01.3>-0.22", "hit", -9, keep=True)
 for at in ("P02", "P03", "P04"):
     sf(at, "bell", -15)
 sf("L13+0.25", "click", -12)

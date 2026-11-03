@@ -6,34 +6,30 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "If the thirteen button lights up by itself, don't step out.",
+   "text": "If thirteen lights up by itself, don't step out.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.707,
-   "onset": 0.155,
-   "end": 2.517,
+   "tempo": 1.1330000000000002,
+   "dur": 2.138,
+   "onset": 0.138,
+   "end": 1.948,
    "chunks": [
     [
-     0.155,
-     0.353
+     0.138,
+     0.517
     ],
     [
-     0.353,
-     0.931
+     0.517,
+     0.759
     ],
     [
-     0.931,
+     0.759,
      1.172
     ],
     [
-     1.172,
-     1.655
-    ],
-    [
-     1.707,
-     2.517
+     1.207,
+     1.948
     ]
    ]
   },

@@ -15,7 +15,7 @@ This replaces the 2026-10-31 script (held: its first line, a DING, stated no rul
 
 The old opening (P01's DING on bright thirteen, then "In this BUILDING, everything you FORGET turns up on floor THIRTEEN.") stated a wonder rule. The recipe wants a warning to "you" about the thing that's actually dangerous here. Riding up to thirteen isn't dangerous: everyone does it to fetch things. The danger is the elevator taking you there **on its own**, to a dark thirteen, which means you're the thing that got forgotten. So the warning is about the 13 button lighting by itself, and the order is to stay in the car. The climax is me breaking it on purpose (L42), and L02's "Even if your KEYS are up there" rhymes with it: what's up there is me.
 
-- **L01 (warning, 11 words, about 2.1 s):** "If the / THIRTEEN button / lights up / by ITSELF, / don't step OUT."
+- **L01 (warning, 9 words, under 2.2 s):** "If THIRTEEN / lights up / by ITSELF, / don't step OUT."
 - **L02 (tightens it, 7 words, about 1.3 s):** "Even if / your KEYS / are up there." The "even if" is back-row's "even if it's the only seat left": the one reason you'd want to step out.
 - **L02b (the rule, 8 words, about 1.8 s, done by about 5.5 s):** "Everything you FORGET / turns up / on floor THIRTEEN." This is the old L01 without "In this building", and it replaces the old L02 ("Lost your KEYS? THIRTEEN."), whose keys now sit in L02. No name, place or backstory before 4 s: Mr. Abel is first named at L03.
 - **P01 is cut.** The warning starts at 0 s. The DING moves onto L01's last word.
@@ -36,7 +36,7 @@ The old opening (P01's DING on bright thirteen, then "In this BUILDING, everythi
 
 ## What the hits do, line by line
 
-1. **Warning first, rule by 5 s:** L01 "If the / THIRTEEN button / lights up / by ITSELF, / don't step OUT." (11 words), L02 "Even if / your KEYS / are up there.", L02b "Everything you FORGET / turns up / on floor THIRTEEN." (r5, above.)
+1. **Warning first, rule by 5 s:** L01 "If THIRTEEN / lights up / by ITSELF, / don't step OUT." (9 words), L02 "Even if / your KEYS / are up there.", L02b "Everything you FORGET / turns up / on floor THIRTEEN." (r5, above.)
 2. **Visible by 2 s (r5):** the first frame is the panel with the 13 lit on its own (see "The new opening"). By L02b (about 4 s) the elevator doors part on a **bright, warm** thirteen. Shelves of forgotten things each hang a brass tag. A resident (Mr. Abel) turns to camera with a set of keys, his face at least 1/5 of the frame width, the elevator indicator "13" lit above the doors in frame. The tags are the rule's marker: everything forgotten wears one. People don't (nothing marks you until you're forgotten, which is why the tag on the Attendant's gloves is the scare).
 3. **Montage, 0 to 15 s:** keys (L02), Mr. Abel's anniversary as a cake that he fetches and remembers (L03, L04), Mrs. Ruiz's first boyfriend still up there doing the crossword (L05, L06), then Grandad's glasses (L11, L12). Four, played for laughs.
 4. **The exception:** L07, "I've never forgotten a THING." I'm the only one who's never been up.
@@ -97,7 +97,7 @@ Every line is `narrator`. Chunks are split with ` / `, CAPS are key words. Chara
 
 ### 01 Floor thirteen (0 to 15 s)
 
-- `L01` narrator: If the / THIRTEEN button / lights up / by ITSELF, / don't step OUT.
+- `L01` narrator: If THIRTEEN / lights up / by ITSELF, / don't step OUT.
   - [first frame, 0 s, no pause before it: inside the car, the floor panel close, the 13 button lit cold and unpressed, my finger hovering by the 12. Push in through the line (32 to 45 mm, 0.2 m closer). No wide. On "don't step OUT", cut to my face in the car looking at the panel. The elevator bell and a low hit land on "OUT". This frame is also the loop's]
 - `L02` narrator: Even if / your KEYS / are up there.
   - [bright thirteen: a hook board of keys, every ring with a brass tag, 22 mm. Mr. Abel lifts his set off a hook]

@@ -4,12 +4,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "If the",
-    "If the"
-   ],
-   [
-    "THIRTEEN button",
-    "thirteen button"
+    "If THIRTEEN",
+    "If thirteen"
    ],
    [
     "lights up",
@@ -23,7 +19,8 @@
     "don't step OUT.",
     "don't step out."
    ]
-  ]
+  ],
+  "tempo": 1.1
  },
  {
   "id": "L02",
