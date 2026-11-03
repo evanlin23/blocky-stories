@@ -992,12 +992,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "But \"AH\"",
-    "but ah"
-   ],
-   [
-    "isn't a WORD,",
-    "isn't a word,"
+    "But \"AH\" isn't a WORD,",
+    "but ah isn't a word,"
    ],
    [
     "and it's my real VOICE.",

@@ -258,7 +258,7 @@ TW = TWELFTH[0]
 
 # ---- 01 the rule and the hook, L01 to L06
 shot(0, "Mom's face and cord at breakfast, nine dark, the tenth fading on DARK",
-     front(MK, 180, 1.9, 1.2, 1.32, 30, 0),
+     front(MK, 180, 1.5, 1.25, 1.2, 30, 0),
      {"mum": listenk(MK, 180, 12, look=[0.5, 0.0])}, hand=0.004)
 shot("L01.4+0.5", "punch in on the dark tenth bead",
      front(MK, 180, 1.0, 1.05, 1.07, 36, 0),
@@ -324,8 +324,8 @@ shot("L12", "wide through the window: twelve in maroon, the far right one small 
      winshot((HX - 0.3, -7.6, 1.9), 48, (HX + 2.8, 12.4, 2.2)),
      {**hall(head=[0, 14]), "mumr": P((HX + 1.2, -3.0), 0, "smile", arms=[70, 20])})
 shot("L12.2", "close from behind: the bare neck above the white collar, the singers beyond with lit cords",
-     still((TW - 2.4, -9.6, 2.45), (TW + 0.9, -8.65, 2.2), 30),
-     {**hall(head=[0, 14])}, fill=[140, "#ffe2c4"])
+     still((TW - 2.9, -10.8, 2.9), (TW + 0.1, -8.65, 2.5), 32),
+     {**hall(head=[0, 14])}, fill=[150, "#ffe2c4"])
 
 # ---- 03 me and Mom, L13 to L23
 ME_L = (0.9, -10.5)
@@ -368,7 +368,7 @@ shot("L21", "me at the table, talking, both hands going",
      front(MEK, 0, 2.6, 1.55, 1.4, 30, 25),
      {"me": PK(MEK, 0, "neutral", talks=[("L21", "L21>")], arms=[50, 50], side=[10, 10])})
 shot("L22", "two shot: Mom starts a sentence and I talk right over her",
-     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 26),
+     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 16),
      {"mum": PK(MK, 180, "neutral", talks=[("L22", "L22.1", 0.5)]),
       "me": PK(MEK, 0, "neutral", talks=[("L22", "L22>")], arms=[45, 45])})
 shot("L22.3", "Mom shuts her mouth, listening, a small smile",
@@ -392,7 +392,7 @@ shot("L25", "my bedroom at night: me asleep, ten lit",
      still((BX + 1.0, -0.2, 1.25), (BX - 0.7, -0.2, 1.1), 30),
      {"me": P((BX - 0.7, -0.2, 0.0), 90, "asleep", sit=True)})
 shot("L25.3", "breakfast the next morning: me worried, Mom laughs at something I never said",
-     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 26),
+     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 16),
      {"me": PK(MEK, 0, "worried"),
       "mum": PK(MK, 180, "laugh", later=[("L25.3+0.2", dict(head=[0, -6])), ("L25.3+0.5", dict(head=[0, 4]))])})
 shot("L26", "through the hall window: Mom conducting, turned to the far right",
@@ -419,8 +419,8 @@ shot("L29", "me at the side window, worried, my ten lit in the glow (seen throug
      {"me": P((HX - 5.95, -3.5), 90, "worried"),
       "mum": listen((HX - 2.4, -1.0, 0.0), 0, 8, sit=True)}, fill=[60, "#ffd9a0"])
 shot("L29.3", "through the panes: Mom alone in the front row in her coat, the lamp on",
-     still((HX - 6.3, -4.6, 1.5), (HX - 2.4, -1.0, 1.1), 34),
-     {"mum": listen((HX - 2.4, -1.0, 0.0), 0, 8, sit=True), "grin": G()})
+     still((HX - 6.3, -4.0, 1.5), (HX - 2.4, -1.4, 1.15), 30),
+     {"mum": listen((HX - 2.4, -1.0, 0.0), 0, 8, sit=True), "grin": G()}, fill=[160, "#ffd9a0"])
 shot("L30", "Mom nodding, listening",
      still((HX - 6.0, -4.2, 1.45), (HX - 2.4, -1.0, 1.2), 46),
      {"mum": listen((HX - 2.4, -1.0, 0.0), 0, 12, sit=True, later=[("L30+0.3", dict(head=[0, 8])), ("L30+0.7", dict(head=[0, -2])),
@@ -503,11 +503,8 @@ shot("L43", "the Grin leans out of its chair to Mom's ear, a hand's width off, n
 shot("L44", "close on its still grin beside her ear, the eye highlight brightest",
      still((MUMX - 0.5, -6.8, 2.5), (MUMX + 0.3, TWELFTH[1], 2.45), 44),
      {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=38, tilt=-26)}, fill=GF)
-shot("L44.2", "close on Mom's face, listening, a soft smile",
-     front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
-     {"mumr": P(MUMP, 180, "soft")})
-shot("L44.4", "me at the back, scared, ten lit",
-     still((HX + 3.4, 4.6, 1.5), (ME_BACK[0], ME_BACK[1], 1.5), 28),
+shot("L44.2", "me at the back, scared, ten lit, as she smiles at ME",
+     move(((HX + 3.4, 4.6, 1.5), (ME_BACK[0], ME_BACK[1], 1.5)), ((HX + 2.6, 5.4, 1.5), (ME_BACK[0], ME_BACK[1], 1.5)), 28, 32),
      {"me": P(ME_BACK, 0, "scared")})
 shot("L44.5+0.2", "Mom steps away from her bare stand toward the riser",
      still((HX + 3.0, -1.2, 1.8), (HX - 0.4, -4.2, 1.4), 30),
@@ -547,11 +544,11 @@ shot("L49.2", "close on the Grin at her ear",
 shot("L50", "punch in on Mom's face, smiling up at it",
      front(MUMP, 180, 1.6, 2.6, 2.5, 38, 6),
      {"mumr": P(MUMP, 180, "smile"), "grin": G(head=[62, 0], roll=38, tilt=-26)}, fill=GF)
-shot("L51", "punch in on me at the back, scared, ten lit",
+shot("L51-0.4", "punch in on me at the back, scared, ten lit",
      front(ME_BACK, 0, 1.7, 1.55, 1.5, 34, 20),
      {"me": P(ME_BACK, 0, "scared")})
-shot("L51.2", "breakfast again: I talk over Mom as she starts a sentence",
-     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 26),
+shot("L51.2+0.4", "breakfast again: I talk over Mom as she starts a sentence",
+     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 16),
      {"mum": PK(MK, 180, "neutral", talks=[("L51.2", "L51.2+0.5", 0.5)]),
       "me": PK(MEK, 0, "neutral", talks=[("L51.2", "L51>")], arms=[45, 45])})
 shot("L52", "the gate again, wider: nb1 shuts her mouth while I talk",
@@ -591,11 +588,8 @@ shot("L57", "me singing 'ah', a round mouth",
 shot("L57.3", "close on my cord as I sing: all ten stay lit",
      front(FOOT, 180, 1.2, 1.25, 1.15, 36, 8),
      {"me": P(FOOT, 180, "neutral", head=[0, -10], sings=[("L57.3", "L58>")])})
-shot("L58", "Mom close, soft, her head turned down to me, a little smile",
-     front((MUMX, -5.65, 0.3), 180, 1.5, 1.7, 1.55, 36, 6),
-     {"mumr": P((MUMX, -5.65, 0.3), 180, "soft", head=[0, 14])})
-shot("L58.2", "wide of the riser: the Grin sat upright in its chair, facing front, head slightly down",
-     still((TW + 2.0, -3.4, 3.0), (TW + 0.2, TWELFTH[1], 1.9), 22),
+shot("L58", "wide of the riser: Mom turned down to me, the Grin sat upright in its chair, facing front, head slightly down",
+     move(((TW + 2.0, -3.4, 3.0), (TW + 0.2, TWELFTH[1], 1.9)), ((TW + 1.4, -3.9, 2.7), (TW + 0.2, TWELFTH[1], 1.9)), 22, 24),
      {**choir(skip=("c4",)), "mumr": P((MUMX, -5.65, 0.3), 180, "soft", head=[0, 12]),
       "grin": G(head=[0, 14]), "me": P(FOOT, 180, "neutral", sings=[("L58", "L58>")])}, fill=[90, "#ffe2c4"])
 shot("L58.3", "behind the riser: eleven strokes scratched in a row, the stretch behind the twelfth chair bare",
@@ -604,18 +598,15 @@ shot("L58.3", "behind the riser: eleven strokes scratched in a row, the stretch 
 
 # ---- 08 the next night, L59 to L63
 shot("L59.1", "supper, warm: me at the table, mouth shut, soft; Mom talks across it",
-     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 26),
+     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 16),
      {"me": PK(MEK, 0, "soft"),
       "mum": PK(MK, 180, "smile", talks=[("L59.1", "L61")], arms=[30, 30], later=[("L59.3", dict(expr="laugh")), ("L59.4", dict(expr="smile"))])})
 shot("L59.4", "close on my cord: one bead fades, then a second, the first ever",
      front(MEK, 0, 1.35, 1.2, 1.15, 34),
      {"me": PK(MEK, 0, "soft")})
 shot("L60", "me, a little surprised, my cord half dark",
-     front(MEK, 0, 2.0, 1.5, 1.4, 34, 15),
+     c([0, *front(MEK, 0, 2.0, 1.5, 1.4, 34, 15)[0][1:]], [1, *front(MEK, 0, 1.6, 1.5, 1.4, 36, 15)[0][1:]]),
      {"me": PK(MEK, 0, "smile")})
-shot("L60+0.55", "Mom, still telling it",
-     front(MK, 180, 2.0, 1.5, 1.45, 34, -15),
-     {"mum": PK(MK, 180, "smile", talks=[("L60+0.55", "L61")])})
 shot("L61", "close on my cord, the tenth bead fading, the same framing as the first shot",
      front(MEK, 0, 1.55, 1.18, 1.27, 32, 0),
      {"me": PK(MEK, 0, "smile")}, hand=0.004)
@@ -626,7 +617,7 @@ shot("L62.3", "me turning toward the window, scared, my cord all dark",
      still((KX - 0.2, KY - 0.8, 1.45), (KX - 0.2, KY + 0.62, 1.4), 30),
      {"me": PK(MEK, 180, "scared")})
 shot("L63", "two shot: Mom asleep upright at the table across from me, unhurt, her cord dark",
-     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 26),
+     still((KX + 1.9, KY - 0.3, 1.5), (KX - 0.2, KY - 0.3, 1.35), 16),
      {"me": PK(MEK, 180, "scared"),
       "mum": PK(MK, 180, "asleep", sit=True, head=[0, 10])})
 

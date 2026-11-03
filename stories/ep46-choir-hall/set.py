@@ -835,8 +835,8 @@ def decorate(kit, story, ctx):
         t_ = bpy.data.objects.get(f"{who}.torso")
         if t_ is None:
             continue
-        a = bx(kit, f"{who}.scarfw", (2.1, 1.14, 0.4), (0, 0, 1.86), M["scarf"], t_, bevel=0.1)
-        b_ = bx(kit, f"{who}.scarftail", (0.42, 0.1, 1.2), (0.5, -0.6, 1.3), M["scarf"], t_, bevel=0.05)
+        a = bx(kit, f"{who}.scarfw", (2.1, 1.14, 0.26), (0, 0, 2.02), M["scarf"], t_, bevel=0.1)
+        b_ = bx(kit, f"{who}.scarftail", (0.42, 0.1, 1.0), (0.72, 0.62, 1.4), M["scarf"], t_, bevel=0.05)
         ctx["mscarf"].append((who, [a, b_]))
     # the postman's satchel, Ron's brows, the Grin's face
     pt = bpy.data.objects.get("postman.torso")
