@@ -42,7 +42,7 @@ S = rig.S
 ARCH_Y0, ARCH_Y1 = 14.0, 17.2
 OPEN_W, OPEN_H = 3.0, 4.6
 SEAT_X, SEAT_Y0, SEAT_H = 1.3, 15.6, 0.45
-SPAN_K = 3.15                      # torso half width in rig units: 2.1 m across, arms out to the arch walls
+SPAN_K = 3.9                      # torso half width in rig units: 2.6 m across (the seat), thin arms hanging past the seat ends to the arch walls
 GOLD = "#e9b23a"
 BLOCK_M = 0.13
 
@@ -131,7 +131,7 @@ def shadow_mat():
     bl = nt.nodes.new("ShaderNodeBsdfDiffuse")
     bl.inputs["Color"].default_value = (0.01, 0.008, 0.01, 1)
     mix = nt.nodes.new("ShaderNodeMixShader")
-    mix.inputs[0].default_value = 0.8
+    mix.inputs[0].default_value = 0.92
     nt.links.new(tr.outputs[0], mix.inputs[1])
     nt.links.new(bl.outputs[0], mix.inputs[2])
     nt.links.new(mix.outputs[0], out.inputs["Surface"])
@@ -235,7 +235,7 @@ def build(kit_, story, tl):
     for sx in (-1, 1):
         bx(f"seat.hollow{sx}", (0.95, 0.9, 0.02), (sx * 0.62, SEAT_Y0 + 0.75, SEAT_H + 0.0), M["hollow"], bevel=0.01)
     for k, sx in enumerate((-0.05, 0.05)):   # the lore plant: two faded-rose strokes scratched in the lip
-        bx(f"seat.stroke{k}", (0.035, 0.03, 0.17), (sx, SEAT_Y0 - 0.008, SEAT_H - 0.1), M["rose"], bevel=0.005)
+        ctx.setdefault("strokes", []).append(bx(f"seat.stroke{k}", (0.035, 0.03, 0.17), (sx, SEAT_Y0 - 0.008, SEAT_H - 0.1), M["rose"], bevel=0.005))
     # ---- the fountain
     kit.cyl("fountain.basin", 1.7, 0.55, (-2.8, 6.4, 0.275), M["stone2"], n=40)
     kit.cyl("fountain.water", 1.5, 0.03, (-2.8, 6.4, 0.5), M["water"], n=40)
@@ -319,6 +319,31 @@ def build(kit_, story, tl):
     ctx["props"]["loaf"] = bx("loaf", (0.34, 0.16, 0.14), (0, 0, -9), M["wood"], bevel=0.05)
     for p in ctx["props"].values():
         p.hide_render = True
+    # ---- a glowing panel on the arch back wall (a backlit silhouette for the Span's first sight), 2 cm proud of it
+    gm = kit.plastic("#d8dce6", 0.9, "wallglow")
+    gb = gm.node_tree.nodes["Principled BSDF"]
+    gb.inputs["Emission Color"].default_value = kit.col("#d8dce6")
+    gb.inputs["Emission Strength"].default_value = 0.0
+    ctx["glowmat"] = gb
+    ctx["glow"] = bx("wallglow", (OPEN_W, 0.02, OPEN_H - SEAT_H), (0, ARCH_Y1 - 0.03, (OPEN_H + SEAT_H) / 2), gm, bevel=0.0)
+    ctx["glow"].hide_render = True
+    # ---- S65's memory props on the back wall: the bakery awning, the bike, the landlady's door (soft, behind the stack)
+    mem = []
+    for i in range(7):
+        mem.append(bx(f"mem.aw{i}", (0.13, 0.03, 0.55), (0.1 + 0.13 * i, ARCH_Y1 - 0.04, 1.35), M["mint" if i % 2 == 0 else "cream"], bevel=0.005))
+    mem.append(bx("mem.awv", (0.95, 0.03, 0.14), (0.52, ARCH_Y1 - 0.04, 1.02), M["cream"], bevel=0.005))
+    bk = bike(M)
+    bk.location = (0.62, ARCH_Y1 - 0.5, SEAT_H)
+    bk.rotation_euler = (0, 0, math.pi / 2)
+    mem.append(bk)
+    mem.append(bx("mem.dframe", (0.85, 0.03, 1.5), (-1.0, ARCH_Y1 - 0.03, 2.9), M["cream"], bevel=0.01))
+    mem.append(bx("mem.door", (0.65, 0.03, 1.3), (-1.0, ARCH_Y1 - 0.055, 2.85), M["door1"], bevel=0.01))
+    mem.append(bx("mem.knob", (0.07, 0.05, 0.07), (-0.8, ARCH_Y1 - 0.08, 2.8), M["gold2"]))
+    ctx["mem"] = mem
+    for o in mem:
+        o.hide_render = True
+        for ch in o.children_recursive:
+            ch.hide_render = True
     # ---- lights
     sun = kit.light("sun", "SUN", (0, 0, 20), 1.0, "#fff0d8")
     ctx["sun"] = sun
@@ -383,7 +408,8 @@ def _ensure(ctx, story, tl):
         kit.box("span.neckroll", (1.1, 1.06, 0.3), (0, 0, 1.98), rib, tor, bevel=0.08)
         for sx in (-1, 1):
             a = bpy.data.objects[f"span.arm{sx}"]
-            a.location.x = sx * (k + 0.5)
+            a.location.x = sx * (k + 0.2)
+            a.scale = (0.6, 0.85, 1.0)
             lg = bpy.data.objects[f"span.leg{sx}"]
             lg.location.x = sx * (k - 0.45)
     # ---- the gold stacks
@@ -431,7 +457,7 @@ def shadow_shape(name, M, kind):
         ob.visible_shadow = False
         return ob
 
-    k = 0.8
+    k = 1.0
     v0, vs, vn, vh = 0.0, 0.72, 0.8, 1.0      # torso base, shoulder line, neck top, head centre (seated, so no legs)
     poly("torso", [(-k, v0), (k, v0), (k, vs), (-k, vs)])
     for sx in (-1, 1):
@@ -580,12 +606,13 @@ def animate(kit_, story, tl, t, ctx):
     sun.rotation_euler = (-d).to_track_quat("-Z", "Y").to_euler()
     ld = kit.LIGHTS["sun"]["light"]
     ld.color = _lin(_setrgb(sc))
-    over["sun"] = se
+    rise = 0.35 + 0.65 * _ss(t / 0.3)      # the loop comes in from the dark tail over 0.3 s
+    over["sun"] = se * rise
     over["archlamp"] = lamp
     w = bpy.context.scene.world.node_tree.nodes["Background"]
     wcol = _lin(_setrgb(wc))
     w.inputs["Color"].default_value = (*wcol, 1)
-    w.inputs["Strength"].default_value = ws
+    w.inputs["Strength"].default_value = ws * rise
     wet = state == "rain" or (se < 1.0)
     # wet cobbles and puddles follow the grade (on from the rain's first frame; off at the clearing)
     rain_cs = [c for c in cues(tl, "env") if c["t"] <= t]
@@ -636,14 +663,46 @@ def animate(kit_, story, tl, t, ctx):
     sp = states.get("span")
     shown = bool(sp) and not sp["hidden"] and not ac._switch(tl["acting"].get("span", []), "ghost", t, False)
     spl = [c for c in cues(tl, "spanlight") if c["t"] <= t]
-    on = shown and bool(spl) and spl[-1].get("on", True)
-    mode = spl[-1] if spl else {}
-    over["spanrim"] = (mode.get("rim", 700) if on else 0.0)
-    over["spankey"] = (mode.get("key", 260) if on else 0.0)
-    over["spanfront"] = (mode.get("front", 0) if on else 0.0)
-    over["spanface"] = (mode.get("face", 0) if on else 0.0)
+    KEYS = ("rim", "key", "front", "face")
+
+    def _lv(c):
+        return {k: (c.get(k, 700 if k == "rim" else 260 if k == "key" else 0) if c.get("on", True) else 0.0) for k in KEYS}
+    cur = _lv(spl[-1]) if spl else {k: 0.0 for k in KEYS}
+    if len(spl) > 1:      # every change is a ramp of at least 0.3 s
+        u = _ss((t - spl[-1]["t"]) / 0.4)
+        prv = _lv(spl[-2])
+        cur = {k: prv[k] + (cur[k] - prv[k]) * u for k in KEYS}
+    elif spl:
+        u = _ss((t - spl[-1]["t"]) / 0.4)
+        cur = {k: cur[k] * u for k in KEYS}
+    on = shown and bool(spl) and (sum(cur.values()) > 0 or spl[-1].get("on", True))
+    over["spanrim"] = cur["rim"] if shown else 0.0
+    over["spankey"] = cur["key"] if shown else 0.0
+    over["spanfront"] = cur["front"] if shown else 0.0
+    over["spanface"] = cur["face"] if shown else 0.0
     if on:
         over["archlamp"] = lamp * 0.4
+    gl = [c for c in cues(tl, "wallglow") if c["t"] <= t]
+    ge = 0.0
+    if gl and shown:
+        prev_e = gl[-2]["e"] if len(gl) > 1 else 0.0
+        ge = prev_e + (gl[-1]["e"] - prev_e) * _ss((t - gl[-1]["t"]) / max(0.3, gl[-1].get("dur", 0.5)))
+    dim = 0.0
+    if gl and shown:
+        pd = gl[-2].get("dim", 0.0) if len(gl) > 1 else 0.0
+        dim = pd + (gl[-1].get("dim", 0.0) - pd) * _ss((t - gl[-1]["t"]) / max(0.3, gl[-1].get("dur", 0.5)))
+    w.inputs["Strength"].default_value = w.inputs["Strength"].default_value * (1.0 - dim)
+    ctx["glow"].hide_render = ge <= 0.001
+    ctx["glowmat"].inputs["Emission Strength"].default_value = ge
+    sk = [c for c in cues(tl, "strokes") if c["t"] <= t]
+    for o in ctx.get("strokes", []):
+        o.hide_render = not (sk and sk[-1].get("on", True))
+    mc = [c for c in cues(tl, "mem") if c["t"] <= t]
+    mon = bool(mc) and mc[-1].get("on", True)
+    for o in ctx["mem"]:
+        o.hide_render = not mon
+        for ch in o.children_recursive:
+            ch.hide_render = not mon
     sfl = [c for c in cues(tl, "seatfill") if c["t"] <= t]
     if sfl and not on:
         over["spanfront"] = sfl[-1].get("e", 0.0)

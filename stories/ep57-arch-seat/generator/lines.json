@@ -88,6 +88,14 @@
    [
     "drops OFF.",
     "drops off."
+   ],
+   [
+    "One favour,",
+    "One favour,"
+   ],
+   [
+    "one BLOCK.",
+    "one block."
    ]
   ]
  },
@@ -208,20 +216,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "I don't",
-    "I don't"
+    "Thanks just isn't",
+    "Thanks just isn't"
    ],
    [
-    "say thanks.",
-    "say thanks."
+    "a word",
+    "a word"
    ],
    [
-    "I've never",
-    "I've never"
-   ],
-   [
-    "NEEDED to.",
-    "needed to."
+    "I SAY.",
+    "I say."
    ]
   ]
  },
@@ -234,12 +238,20 @@
     "My cousin Ilan"
    ],
    [
-    "has the tallest",
-    "has the tallest"
+    "carries more blocks",
+    "carries more blocks"
    ],
    [
-    "stack in TOWN.",
-    "stack in town."
+    "than the rest",
+    "than the rest"
+   ],
+   [
+    "of the square",
+    "of the square"
+   ],
+   [
+    "PUT together.",
+    "put together."
    ]
   ]
  },
@@ -704,16 +716,12 @@
     "at dusk."
    ],
    [
-    "He said he'd",
-    "He said he'd"
+    "He wouldn't say",
+    "He wouldn't say"
    ],
    [
-    "been doing favours",
-    "been doing favours"
-   ],
-   [
-    "back all DAY.",
-    "back all day."
+    "where he'd BEEN.",
+    "where he'd been."
    ]
   ]
  },
@@ -1024,16 +1032,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "Every block on",
-    "Every block on"
+    "His whole stack",
+    "His whole stack"
    ],
    [
-    "his head",
-    "his head"
+    "was my bread,",
+    "was my bread,"
    ],
    [
-    "was MINE.",
-    "was mine."
+    "my bike,",
+    "my bike,"
+   ],
+   [
+    "my RENT.",
+    "my rent."
    ]
   ]
  },

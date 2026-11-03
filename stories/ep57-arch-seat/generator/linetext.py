@@ -5,15 +5,15 @@ TEXT = """
 In this town, every favour you owe sits on your head as a gold BLOCK.
 Hold a door for someone. CLICK. A block lands on THEIR head.
 It lands the second they say THANKS.
-Do them a favour back, and it drops OFF.
+Do them a favour back, and it drops OFF. One favour, one BLOCK.
 This man's street helped him move HOUSE.
 Now he has to duck under the bus SHELTER.
 These two neighbours have passed the same block over the fence for TEN years.
 And the best man at a wedding never fits in the PHOTO.
 Then there's ME.
 My head is BARE. Always HAS been.
-I don't say thanks. I've never NEEDED to.
-My cousin Ilan has the tallest stack in TOWN.
+Thanks just isn't a word I SAY.
+My cousin Ilan carries more blocks than the rest of the square PUT together.
 We always had Saturday lunch in the stone seat under the clock ARCH.
 Room for TWO.
 This summer, I stopped GOING.
@@ -38,7 +38,7 @@ On my half, the shadow was SITTING up.
 I searched the cafe tables and around the FOUNTAIN.
 His phone was ringing on the stone beside his CAP.
 It was ME calling.
-He came back at dusk. He said he'd been doing favours back all DAY.
+He came back at dusk. He wouldn't say where he'd BEEN.
 His stack hadn't dropped a single BLOCK.
 The third Saturday it rained. The square was nearly EMPTY.
 Ilan was in the arch seat, bent almost DOUBLE.
@@ -54,7 +54,7 @@ He said, "Thanks for his bread, Mrs VARGA."
 "Thanks for fixing his bike, Mr ODE."
 Every time anyone helped me, Ilan went around after and said THANKS.
 For ME.
-Every block on his head was MINE.
+His whole stack was my bread, my bike, my RENT.
 And a block lands on whoever says THANKS.
 One favour, one block. It can't sit on two HEADS.
 So I walked into the arch and sat in my HALF.

@@ -185,9 +185,9 @@ def pair(a, b, d, lens, az=None, head=1.62, hp=0.38):
 
 
 # ---- 1  the rule, the montage (L01 to L08)
-shot("S01", 0, fc(-9.9, 4.7, 90, 3.6, 26),
-     A("dwoman", -9.9, 5.05, 0, "grin"),
-     A("dman", -9.9, 4.35, 180, "grin", flap=(0.15, 1.4)),
+shot("S01", 0, fc(-9.9, 4.7, 90, 3.0, 26),
+     A("dwoman", -10.35, 5.1, 35, "grin", head=[-10, 0]),
+     A("dman", -9.8, 4.3, 140, "grin", flap=(0.15, 1.4), head=[10, 0]),
      A("pass1", -8.9, 8.2, 0, "neutral"), A("pass2", -8.0, 6.8, 20, "smirk"), env=("day", 0.3), step=2)
 stack("dman", 3, 0)
 stack("dwoman", 3, 0)
@@ -219,9 +219,11 @@ shot("S05", "L03", fc(-9.9, 4.15, 120, 2.3, 34, head=1.62),
      A("dman", -9.9, 4.15, 150, "worried", head=[0, -12], flap=(0.05, 0.7)), A("dwoman", -9.9, 5.25, 0, "smile"))
 shot("S06", "L04", fc(-9.7, 4.3, 90, 3.8, 26),
      A("dwoman", -9.9, 4.9, 180, "grin"), A("dman", -9.4, 3.7, 270, "grin", arms=[0, 78]))
-stack("dwoman", 3, "L04-0.01", "set")
-stack("dwoman", 2, "L04+0.6", "drop")
-sf("L04+0.6", "click", -20)
+stack("dman", 4, "L04-0.01", "set")
+stack("dman", 3, "L04.3-0.1", "drop")
+sf("L04.3-0.1", "click", -20)
+shot("S06b", "L04.4", fc(-9.9, 4.7, 90, 3.0, 26),
+     A("dwoman", -10.35, 5.1, 35, "smile", head=[-10, 0]), A("dman", -9.8, 4.3, 140, "grin", head=[10, 0]))
 cue("L05", "door", open=0)
 shot("S07", "L05", fm(dict(x=0.4, y=3.6, az=0, d=5.5, lens=22, head=1.75, hp=0.5), dict(x=2.0, y=3.6, az=0, d=5.5, lens=22, head=1.75, hp=0.5)),
      A("mover", 0.2, 3.6, 90, "grin", walk=(2.2, 3.6), arms=[50, 50]), A("folk1", 3.8, 2.6, 160, "grin", arms=[0, 130]),
@@ -259,10 +261,14 @@ shot("S14", "L11", fc(9.8, 2.0, 0, 3.0, 26),
      A("me", 9.8, 2.0, 0, "neutral", arms=[40, 60]))
 # ---- 3  Ilan, the seat, the whispers (L12 to L20)
 shot("S15", "L12", move(([-2.0, 0.6, 1.3], [-2.0, 3.9, 1.5]), ([-2.0, 0.6, 1.3], [-2.0, 3.9, 3.6]), 24),
-     A("ilan", -2.0, 3.9, 355, "grin"), A("folk2", -5.0, 5.0, 110, "neutral"))
+     A("ilan", -2.0, 3.9, 355, "grin"), A("folk2", -3.7, 7.4, 160, "neutral"), A("folk1", -1.6, 7.8, 190, "grin"),
+     A("folk3", 0.3, 7.2, 170, "neutral"))
 cue("L13", "prop", item="bag", on=True)
 shot("S16", "L13", move(([0.9, 10.4, 1.7], [-0.2, 16.4, 1.3]), ([0.5, 12.3, 1.6], [-0.2, 16.4, 1.45]), 24),
      A("ilan", IL, SEATY, 0, "grin", z=SIT, sit=True, cap=True))
+cue(0, "strokes", on=False)
+cue("L14", "strokes", on=True)
+cue("L15", "strokes", on=False)
 shot("S17", "L14", still([0.15, 14.55, 0.5], [0.0, 15.62, 0.4], 36))
 shot("S18", "L15", fm(dict(x=-4.5, y=8.5, az=0, d=5.0, lens=22), dict(x=-1.0, y=8.5, az=0, d=5.0, lens=22)),
      A("me", -4.5, 8.5, 90, "neutral", walk=(-1.0, 8.5), head=[-20, 0]), A("folk1", -5.0, 10.5, 90, "grin"))
@@ -284,9 +290,9 @@ shot("S24", "L20", fc(0.0, 4.6, 0, 6.5, 22, head=1.62, hp=0.5),
 shot("S25", "L21", fm(dict(x=1.0, y=11.2, az=0, d=5.0, lens=22), dict(x=-0.6, y=11.2, az=0, d=5.0, lens=22)),
      A("me", 1.4, 11.2, 270, "neutral", walk=(-1.0, 11.2)))
 shot("S26", "L22", fc(0.3, 12.0, 8, 2.0, 34), A("me", 0.3, 12.0, 8, "worried", look=[0, -0.6], head=[0, 14]))
-shot("S27", "L23", still([0.0, 8.0, 1.7], [0.0, 12.0, 0.0], 24), step=2)
-cue("L23-0.4", "shadow", kind="floor", y=14.3, yaw=180, stretch=1.5)
-shot("S28", "L23.3", still([-4.2, 12.3, 1.0], [0.2, 12.3, 0.0], 22))
+shot("S27", "L23", still([0.0, 8.4, 1.5], [0.0, 12.7, 0.0], 24), step=2)
+cue("L23-0.4", "shadow", kind="floor", y=14.0, yaw=180, stretch=1.7)
+shot("S28", "L23.3", move(([-1.7, 10.6, 1.1], [-1.1, 13.0, 0.0]), ([1.7, 10.6, 1.1], [1.1, 13.0, 0.0]), 22))
 shot("S29", "L24", still([0.5, 10.3, 1.5], [0.0, 16.0, 0.6], 22),
      A("ilan", IL, SEATY - 0.1, 0, "worried", z=SIT, sit=True, head=[0, 12]))
 shot("S30", "L25", still([1.2, 11.0, 1.8], [-2.6, 4.6, 1.2], 22),
@@ -331,7 +337,9 @@ for k in range(3):
 shot("S44", "L36", fc(-0.5, 7.0, 15, 2.4, 32), A("me", -0.5, 7.0, 15, "worried", arms=[0, 110], head=[0, -8]),
      env=("dusk", 2.0))
 shot("S45", "L37", fc(3.0, 5.0, 20, 3.2, 24), A("ilan", 3.0, 5.0, 20, "worried", head=[0, 6]))
-shot("S46", "L38", fc(3.0, 5.0, 20, 3.6, 18, head=1.62, hp=0.62), A("ilan", 3.0, 5.0, 20, "worried", head=[0, 6]))
+stack("ilan", 20, "L37-0.05", "set")
+shot("S46", "L38", fm(dict(x=3.0, y=5.0, az=20, d=4.2, lens=20, head=2.2, hp=0.5), dict(x=3.0, y=5.0, az=20, d=4.2, lens=20, head=4.2, hp=0.5)),
+     A("ilan", 3.0, 5.0, 20, "worried", head=[0, 6]))
 # ---- 7  Saturday 3: rain, the Span (L39 to L48)
 shot("S47", "L39", still([2.5, 1.5, 1.7], [-1.0, 9.0, 1.9], 22), A("folk2", 5.5, 4.0, 180, "neutral"),
      env=("rain", 0.3))
@@ -340,21 +348,23 @@ cue("L39", "prop", item="bag", on=False)
 cue("L39", "prop", item="phone", on=False)
 ARCHCAM = still([0.1, 10.2, 1.05], [0.0, 16.6, 1.2], 38)
 WIDECAM = still([0.0, 7.0, 1.45], [0.0, 16.6, 1.15], 30)      # the whole arch mouth, wall to wall, from the square
-LIT = dict(rim=450, key=380, front=420, face=260)
+LIT = dict(rim=1000, key=800, front=0, face=320)
 SEATED_ILAN = dict(z=SIT, sit=True, bend=62, head=[0, 22], cap=False)
 cue("L40", "env", state="raindim", dur=1.0)
 shot("S48", "L40", ARCHCAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN), step=2)
 stack("ilan", 22, "L39", "set")
 shot("S49", "L41", WIDECAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True), step=1)
-cue("L41", "spanlight", on=True, rim=700, key=0, front=200, face=0)
+cue("L41", "spanlight", on=True, rim=0, key=0, front=0, face=0)
+cue("L41", "wallglow", e=3.6, dur=0.3, dim=0.88)
 shot("S50", "L41.3", fc(0.7, 10.6, 30, 2.8, 28),
      A("me", 0.7, 10.6, 30, "wide"), A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True))
 shot("S51", "L42", still([1.3, 14.2, 0.8], [-0.1, 16.95, 1.0], 18),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True), step=1)
-cue("L42", "spanlight", on=True, rim=420, key=250, front=45, face=300)
+cue("L42", "spanlight", on=True, rim=900, key=600, front=0, face=240)
+cue("L42", "wallglow", e=1.5, dur=0.5, dim=0.35)
 cue("L43", "spanlight", on=True, **LIT)
 shot("S52", "L43", WIDECAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True), step=1)
@@ -369,14 +379,14 @@ shot("S55", "L45", still([0.1, 14.6, 0.35], [0.0, 16.9, 1.9], 24),
 shot("S56", "L46", fc(0.3, 10.5, 0, 1.7, 40), A("me", 0.3, 10.5, 0, "worried", head=[55, 0]))
 shot("S57", "L46.2", WIDECAM,
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
-     A("span", -0.3, 15.2, 180, "neutral", side=[8, 8]), step=1)
+     A("span", -0.15, 15.2, 180, "neutral", side=[8, 8]), step=1)
 cue("L46.2", "spanlight", on=True, **LIT)
-shot("S58", "L47", still([0.0, 11.4, 1.2], [-0.3, 15.6, 1.3], 34),
+shot("S58", "L47", still([0.0, 11.4, 1.2], [-0.15, 15.6, 1.3], 34),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
-     A("span", -0.3, 15.2, 180, "neutral", side=[8, 8], bend=32, head=[0, 25]), step=1)
+     A("span", -0.15, 15.2, 180, "neutral", side=[8, 8], bend=32, head=[0, 25]), step=1)
 shot("S59", "L47.3", still([0.3, 13.0, 3.0], [-0.62, 15.9, 0.9], 26),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
-     A("span", -0.3, 15.2, 180, "neutral", side=[8, 8], bend=32, head=[0, 25]), step=1)
+     A("span", -0.15, 15.2, 180, "neutral", side=[8, 8], bend=32, head=[0, 25]), step=1)
 # ---- 8  the reading of it (L48 to L55)
 shot("S60", "L48", still([1.3, 16.1, 1.0], [-0.62, 16.0, 0.85], 36),
      A("ilan", IL, 16.05, 0, "squeeze", mouth=(0.0, 1.6), **SEATED_ILAN))
@@ -399,6 +409,8 @@ shot("S63", "L51", fc(0.5, 11.0, 10, 2.4, 30), A("me", 0.5, 11.0, 10, "wide"), e
 shot("S64", "L52", fc(0.5, 11.0, 0, 1.7, 34, head=1.65), A("me", 0.5, 11.0, 0, "worried"))
 shot("S65", "L53", move(([1.8, 12.5, 0.6], [IL, 16.2, 1.4]), ([1.4, 12.8, 1.2], [IL, 16.2, 3.8]), 22),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN))
+cue("L53", "mem", on=True)
+cue("L54", "mem", on=False)
 cue("L54", "door", open=1)
 stack("dman", 3, "L54-0.01", "set")
 stack("dman", 4, "L54+0.2", "land")
