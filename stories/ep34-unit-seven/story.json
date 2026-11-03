@@ -6208,7 +6208,7 @@
    }
   ]
  },
- "sound": {
+ "sound": {"rev": 2, 
   "floor": "stone",
   "steps_db": -22,
   "ambience": [

@@ -338,3 +338,110 @@ def test_flash_detector_motion_is_not_flashing():
     stripes = lambda off: ((np.arange(240)[None, :] + off) // 12 % 2 * 0.7) * np.ones((135, 1))
     assert not fails([stripes(4 * i) for i in range(90)])
     assert not fails([o] * 60)
+
+
+# ---- the CC0 sample library (assets/, owner 2026-11-02: "yes go ahead with sfx and visuals")
+
+def _hf(y, f0=4000.0):
+    import numpy as np
+
+    X = np.abs(np.fft.rfft(y)) ** 2
+    f = np.fft.rfftfreq(len(y), 1 / 48000)
+    return X[f > f0].sum() / X.sum()
+
+
+def test_sample_files_are_mono_48k_and_soft():
+    import wave
+
+    from blocky import sound
+
+    files = sorted((ROOT / "assets" / "audio").rglob("*.wav"))
+    assert files, "no samples in assets/audio"
+    for p in files:
+        with wave.open(str(p)) as w:
+            assert (w.getnchannels(), w.getframerate(), w.getsampwidth()) == (1, 48000, 2), p
+        if p.parent.parent.name == "steps" or p.parent.name == "amb":
+            assert _hf(sound.load_wav(p)) < 0.05, f"{p}: too bright for a step or ambience"
+    for surface in ("grass", "wood", "stone", "metal", "gravel", "snow"):
+        assert len(list((ROOT / "assets/audio/steps" / surface).glob("*.wav"))) >= 4, surface
+    for kind in sound.AMB_SAMPLES:
+        assert (ROOT / "assets/audio/amb" / f"{kind}.wav").exists(), kind
+    for kind in sound.SFX_SAMPLES:
+        assert list((ROOT / "assets/audio/sfx" / kind).glob("*.wav")), kind
+
+
+def test_steps_use_samples_with_variation_and_matched_level():
+    import numpy as np
+
+    from blocky import sound
+
+    for surface in ("grass", "wood", "stone", "concrete", "metal", "gravel", "snow"):
+        a, b = sound.step_sound(surface, False, 1), sound.step_sound(surface, False, 1)
+        assert np.array_equal(a, b)                                      # a seed always gives the same step
+        outs = {sound.step_sound(surface, False, s).tobytes() for s in range(8)}
+        assert len(outs) == 8                                            # and different seeds differ
+        assert _hf(a) < 0.05, surface
+        ref = sound._step_ref(surface)
+        for s in range(8):
+            db = 20 * np.log10(sound.punch(sound.step_sound(surface, False, s)) / ref)
+            assert abs(db) <= 2.0, (surface, s, db)                    # gentle: within the jitter of the synth level
+
+
+def test_ambience_loops_from_samples_are_soft_and_sized():
+    from blocky import sound
+
+    for kind in sound.AMB_SAMPLES:
+        y = sound.amb(kind, 7.3, 4)
+        assert len(y) == sound.synth.n_samples(7.3) and sound.punch(y) > 1e-3, kind
+        assert _hf(y) < 0.05, kind
+    long = sound.amb("crickets", 25.0, 1)                                # longer than its loop: tiled
+    assert len(long) == sound.synth.n_samples(25.0)
+
+
+def test_sampled_sfx_and_the_synth_fallback(tmp_path, monkeypatch):
+    import numpy as np
+
+    from blocky import sound
+
+    for kind in sound.SFX_SAMPLES:
+        y = sound.sfx(kind, 2, 1.0, {"at": "L01"})
+        assert not np.allclose(y[:1000], sound.sfx_synth(kind, 2, 1.0, {})[:1000]), kind
+        db = 20 * np.log10(sound.punch(y) / sound.punch(sound.sfx_synth(kind, 2, 1.0, {})))
+        assert abs(db) <= 1.5, (kind, db)
+    assert len(sound.sfx("creak", 3, 1.7, {})) == sound.synth.n_samples(1.7)
+    assert np.allclose(sound.sfx("door", 1, 1.0, {"synth": True}), sound.sfx_synth("door", 1, 1.0, {}))
+    assert np.allclose(sound.sfx("knock", 1, 1.0, {}), sound.sfx_synth("knock", 1, 1.0, {}))   # not sampled
+    # no files (or samples off): everything falls back to the synth exactly
+    monkeypatch.setattr(sound, "ASSETS", tmp_path)
+    assert np.allclose(sound.step_sound("grass", False, 3), sound.step_synth("grass", False, 3))
+    assert np.allclose(sound.amb("rain", 2.0, 1), sound.amb_synth("rain", 2.0, 1))
+    assert np.allclose(sound.sfx("thud", 1, 1.0, {}), sound.sfx_synth("thud", 1, 1.0, {}))
+    monkeypatch.setattr(sound, "ASSETS", ROOT / "assets" / "audio")
+    monkeypatch.setitem(sound.SAMPLES, "on", False)
+    assert np.allclose(sound.step_sound("wood", True, 5), sound.step_synth("wood", True, 5))
+    assert len(sound.amb("traffic", 1.5, 2)) == sound.synth.n_samples(1.5)   # traffic has a synth too
+
+
+def test_every_asset_is_licensed_cc0_or_royalty_free():
+    text = (ROOT / "assets" / "LICENSES.md").read_text()
+    files = [p for p in (ROOT / "assets").rglob("*") if p.is_file() and p.name != "LICENSES.md"]
+    assert files
+    for p in files:
+        rel = p.relative_to(ROOT).as_posix()
+        row = next((l for l in text.splitlines() if f"`{rel}`" in l), None)
+        assert row, f"{rel} has no row in assets/LICENSES.md"
+        assert "CC0" in row or "royalty-free" in row.lower(), rel
+    low = "\n".join(l for l in text.lower().splitlines() if l.startswith("| `"))   # the rows, not the header
+    assert "noncommercial" not in low and "-nc" not in low and "bbc" not in low
+    assert sum(p.stat().st_size for p in files) < 150e6
+
+
+def test_check_blocks_an_unknown_hdri_or_texture():
+    from blocky import checks
+
+    assert checks.library({"look": {"hdri": "moonless_golf"}}, 'kit.texture("brick", 0.5)') == []
+    assert checks.library({"look": {"hdri": "moonless_gulf"}})[0][0] == "block"
+    assert checks.library({}, "m = kit.texture('marble')")[0][0] == "block"
+    assert checks.library({}) == []
+    names = {p.stem for p in (ROOT / "assets" / "textures").iterdir() if p.is_dir()}
+    assert names == set(checks.TEXTURE_NAMES)
