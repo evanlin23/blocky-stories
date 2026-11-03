@@ -95,6 +95,9 @@ def harsh_sound(st: dict) -> list[tuple[str, str]]:
     out = []
     if loud:
         out.append(("warn", f"bright, noisy effects above -24 dB can sound scratchy: {loud[:5]} (keep them quiet)"))
+    for a in (st.get("sound") or {}).get("ambience", []):
+        if a.get("kind") == "static" and float(a.get("lufs", -40)) > -40:   # radio hiss: 90% of it above 4 kHz
+            out.append(("warn", f"static ambience at {a.get('lufs')} LUFS will sound like hiss; keep it under -40"))
     if len(sfx) > 6:
         out.append(("warn", f"{len(sfx)} bright, noisy effects; repeated, they read as scratching (ep36's grass steps)"))
     return out

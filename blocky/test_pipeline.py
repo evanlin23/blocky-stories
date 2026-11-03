@@ -224,6 +224,17 @@ def test_ready_count_skips_held_done_and_unfilmed(monkeypatch):
     assert upload.ready_count({"a": {}}) == 1   # a uploaded, b held, c has no film: only d
 
 
+def test_rain_is_not_a_hiss():
+    import numpy as np
+    from blocky import sound
+
+    y = np.asarray(sound.amb("rain", 4.0, 2))
+    y = y.mean(1) if y.ndim > 1 else y
+    X = np.abs(np.fft.rfft(y)) ** 2
+    f = np.fft.rfftfreq(len(y), 1 / 48000)
+    assert X[f > 4000].sum() / X.sum() < 0.05
+
+
 def test_metrics_summary_and_titles():
     sys.path.insert(0, str(ROOT / "scripts"))
     import metrics
