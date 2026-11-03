@@ -20,7 +20,15 @@
   "fog_start": 3.5,
   "sky": "#120f18",
   "exposure": 0.7,
-  "flash_safe": true
+  "flash_safe": true,
+  "polish": {
+   "quiet": [
+    [
+     "L37",
+     "L41"
+    ]
+   ]
+  }
  },
  "grade": {
   "shadows": [
