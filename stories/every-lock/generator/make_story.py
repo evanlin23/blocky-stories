@@ -225,7 +225,7 @@ S("L12.1", cam((-0.2, 3.2, 1.5), (0.2, 3.8, 1.5), 32), {"jade": FP(0.2, 3.7, (-0
 S("L12b", cam((0.0, 5.2, 1.3), (0.0, 7.0, 1.1), 20), note="a month ago: the plain yellow door, four locks; the meter winds back",
   cues=[DR(n=4, L=0.0, lean=0.0, swing=0.0), MT(4, dur=0.5)])
 S("L12b.2", cam((0.2, 6.0, 1.1), (0.2, 7.0, 1.1), 32), note="four locks")
-S("L13", cam((K - 2.0, 3.0, 1.9), (K - 2.0, 4.1, 1.9), 38), note="the kitchen clock at 7:15", cues=[CU("clock", h=7.25)])
+S("L13", cam((K - 1.6, 2.7, 1.8), (K - 2.0, 4.1, 1.9), 26), note="the kitchen clock at 7:15", cues=[CU("clock", h=7.25)])
 S("L13.1", cam((-0.85, 4.0, 1.55), (0.0, 5.5, 1.5), 22),
   {"me": P(-0.3, 5.4, 160, ANNOYED), "jade": P(0.3, 5.4, 160, ANNOYED)}, note="the two of us facing the bathroom door")
 S("L14", cam((0.0, 6.3, 1.4), (0.0, 1.5, 1.2), 20),
@@ -263,7 +263,7 @@ S("L25", cam((0.0, 5.0, 1.3), (0.0, 7.0, 1.2), 20), note="no wood left to see",
 S("L25.2", dolly((-0.35, 6.2, 1.0), (0.35, 6.2, 1.4), (-0.2, 7.0, 1.0), (0.3, 7.0, 1.4), 38), note="a slide across the locks")
 S("L26", cam((0.6, 5.0, 1.2), (0.1, 6.2, 0.9), 26), {"me": FP(0.0, 5.9, (0.6, 5.0), ANNOYED, z=0.32)}, note="an hour: me on a stool with the bucket",
   cues=[CU("bucketat", loc=(0.5, 5.6, 0.0)), CU("stoolat", loc=(0.0, 5.9, 0.0))])
-S("L26.1", cam((K - 2.0, 3.0, 1.9), (K - 2.0, 4.1, 1.9), 38), note="the clock's hands a whole hour round",
+S("L26.1", cam((K - 1.6, 2.7, 1.8), (K - 2.0, 4.1, 1.9), 26), note="the clock's hands a whole hour round",
   cues=[CU("clock", h=7.25), CU("clock", ref="L26.1+0.1", h=8.25, dur=1.1), CU("bucketat", ref="L27", loc=(-0.55, 0.55, 0.0)),
         CU("stoolat", ref="L27", loc=(0.5, 5.7, -5.0))])
 S("L27", cam((K + 0.2, 2.5, 1.5), (K + 1.0, 3.6, 1.3), 28), {"mom": FP(K + 1.0, 3.2, (K + 0.2, 2.5), "neutral", mouth=True)},
@@ -304,9 +304,9 @@ S("L39", cam((0.3, 6.2, 1.88), (0.17, 6.5, 1.86), 100), note="one of them just s
 S("L40", cam((0.3, 6.1, 1.88), (0.17, 6.5, 1.86), 95), note="the shut flap, held still")
 S("L40.2", cam((0.28, 6.1, 1.9), (0.17, 6.5, 1.86), 120), note="a tiny lock pops onto that lock",
   cues=[CU("tiny")])
-S("L41", cam((0.4, 5.9, 1.8), (0.17, 6.4, 1.8), 50), note="CLICK, click click: locks budding on locks",
+S("L41", cam((0.2, 4.4, 1.7), (0.17, 6.6, 1.7), 24), note="CLICK, click click: locks budding on locks",
   cues=[DR(L=0.7, dur=0.5)])
-S("L41.2", cam((0.3, 5.0, 1.2), (0.1, 6.2, 1.2), 30), note="click click click click: four",
+S("L41.2", cam((0.5, 4.3, 1.3), (0.1, 6.6, 1.3), 24), note="click click click click: four",
   cues=[DR(L=1.0, dur=0.4)])
 S("L42", cam((0.0, 0.6, 1.55), (0.0, 6.0, 1.2), 17),
   {"jadeb": P(0.2, 3.3, 180, "asleep"), "me": P(-0.85, 4.55, 90, "worried")}, note="nobody's touching it",
@@ -366,7 +366,7 @@ S("L61", cam((ST + 1.3, -1.4, 2.8), (ST - 0.8, 1.8, -0.8), 22),
   {"me": P(ST - 1.2, 0.4, 0, "neutral", arms=[100, 100], to=[(ST - 1.2, 2.2, -0.9)]),
    "jadeb": P(ST - 0.4, 0.4, 0, "neutral", arms=[100, 100], to=[(ST - 0.4, 2.2, -0.9)])},
   note="down four flights", cues=[CU("doorat", loc=(ST - 0.8, 0.9, 0.0), rot=0.0, scale=0.45), CU("doorat", ref="L61+0.1", loc=(ST - 0.8, 2.7, -0.9), scale=0.45, dur=1.3), MT(131072)])
-S("L62", dolly((ST - 0.7, 0.4, -0.2), (ST - 0.7, 1.2, -0.6), (ST - 0.8, 2.0, -0.8), (ST - 0.8, 2.6, -1.3), 24),
+S("L62", dolly((ST - 0.7, -0.2, 1.0), (ST - 0.7, 1.0, 0.1), (ST - 0.8, 2.0, -0.8), (ST - 0.8, 2.6, -1.3), 24),
   {"me": P(ST - 1.2, 2.2, 0, "neutral", arms=[100, 100], to=[(ST - 1.2, 3.0, -1.6)]),
    "jadeb": P(ST - 0.4, 2.2, 0, "neutral", arms=[100, 100], to=[(ST - 0.4, 3.0, -1.6)])},
   note="every step it clicks louder", cues=[CU("doorat", loc=(ST - 0.8, 2.7, -0.9)), CU("doorat", ref="L62+0.2", loc=(ST - 0.8, 3.5, -1.6), scale=0.45, dur=1.0), DR(L=2.7, dur=1.0)])
@@ -387,15 +387,15 @@ S("L65b", cam((0.6, 4.9, 1.5), (0.0, 6.6, 1.4), 24), {"jade": FP(-0.1, 6.3, (0.6
   cues=[CU("curtain", v=0.1), CU("curtain", ref="L65b+0.3", v=1.0, dur=0.22)])
 S("L65b.1", cam((0.0, 5.6, 1.3), (0.0, 6.9, 1.3), 32), note="no lock pops on; the meter holds")
 S("L66", cam((-0.2, 5.7, 1.3), (-0.55, 6.9, 1.2), 34), {"me": P(-0.6, 6.1, 180, "neutral", arms=[95, 0])}, note="we knock on the bare frame")
-S("L67", cam((K - 2.0, 3.0, 1.9), (K - 2.0, 4.1, 1.9), 38), note="7:15 again", cues=[CU("clock", h=7.25)])
+S("L67", cam((K - 1.6, 2.7, 1.8), (K - 2.0, 4.1, 1.9), 26), note="7:15 again", cues=[CU("clock", h=7.25)])
 S("L67.1", cam((-0.5, 2.8, 1.5), (0.3, 4.8, 1.5), 24), {"jade": FP(0.4, 4.8, (-0.5, 2.8), "smile", arms=[0, 100]), "me": P(-0.3, 3.2, 180, "neutral", to=[(-0.3, 5.6)])},
   note="Jade waves me past")
 S("L68", cam((SR, 4.6, 6.0), (SR + 0.5, 1.0, 0.2), 22), note="the curb is empty")
 S("L69", cam((0.0, 0.35, 1.5), (0.0, -7.0, 1.2), 20), note="across the hall, a new bathroom door at the end of Mr. Dale's hall",
   cues=[CU("doorat", loc=(0.0, -8.4, 0.0), rot=180.0, scale=1.0), DR(n=65536, L=2.5, lean=4.0, swing=0.0), CU("hole", holes=[])])
 S("L69.1", cam((0.0, -3.4, 1.5), (0.0, -5.5, 1.4), 24), {"dale": P(0.0, -5.2, 180, "smile")}, note="Mr. Dale admiring it")
-S("L70", cam((0.2, -4.6, 1.3), (0.0, -6.4, 1.3), 40), note="very thick", cues=[DR(L=3.0, dur=0.8)])
-S("L71", cam((0.5, -4.8, 1.4), (0.0, -6.8, 1.4), 45), note="still clicking: new locks budding",
+S("L70", cam((0.2, -1.8, 1.5), (0.0, -6.2, 1.2), 22), note="very thick", cues=[DR(L=3.0, dur=0.8)])
+S("L71", cam((0.6, -1.6, 1.6), (0.0, -6.5, 1.3), 22), note="still clicking: new locks budding",
   cues=[DR(L=3.6, dur=0.8), MT(262144)])
 S("L71.1", cam((3.0, -1.2, 1.5), (0.0, -2.6, 1.3), 18), note="it has filled his hall and nudges his front door",
   cues=[DR(ref="L71.1", L=5.0, dur=1.0), CU("daledoor", a=85.0), CU("daledoor", ref="L71.1+0.3", a=62.0, dur=1.6)])
