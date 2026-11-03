@@ -21,13 +21,13 @@ jobs:
             python -m blocky timeline "$s" >/dev/null
             python -m blocky check "$s"
           done
-      - name: gate every story this PR changes (a story merges only when it's ready to render)
+      - name: gate every story this PR changes (a story merges only when it's ready to render and its proof passed qa)
         if: github.event_name == 'pull_request' && !startsWith(github.event.pull_request.title, 'WIP')
         env: {BASE: "${{ github.event.pull_request.base.sha }}"}
         run: |
           bad=0
           for s in $(git diff --name-only "$BASE" HEAD -- 'stories/*/*' | cut -d/ -f2 | sort -u); do
             [ -f "stories/$s/story.json" ] || continue
-            python -m blocky gate "$s" || bad=1
+            python -m blocky gate "$s" --merge --base "$BASE" || bad=1
           done
           exit $bad

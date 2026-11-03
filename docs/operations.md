@@ -65,6 +65,16 @@ the hard way.
   causes are light flicker on bright close-ups and z-fighting (coplanar surfaces), which can pass the preview and
   fail the final.
 
+## Proofs (before merge, 2026-11-03)
+- Every story PR draws a **proof** (`proof.yml`): the whole film at half size, every drawing the final makes. It
+  starts by itself once both reviews approve, and again whenever the film files or the reviews change on the PR.
+- Its own concurrency group (`proof-<PR>`), so it never cancels or queues behind `render`. It takes 8 runners for
+  the drawing, `render` takes 16 of the 20 free ones: a proof started while a render draws simply waits.
+- A proof costs about 40 minutes of wall time a story (voice 5, draw 10 to 20 in 8 shards, assemble about 20).
+- `test` won't merge a story without `qa/<story>.json` at `"stage": "proof"`, passed, whose `sha` is a commit in
+  the branch with no film file changed after it. So the last push before a merge must be the one the proof drew.
+- A proof that fails leaves its artifact anyway (`proof-<story>`, 14 days), so the qa agent can still look.
+
 ## Merging
 - `test` gates every story a PR touches, so a story whose reviews say revise can't merge. A `WIP` title skips it.
 - Many sessions merge their own PRs. Shared files (`blocky/*.py`, `stories/lore.md`, `stories/ideas.md`) conflict
