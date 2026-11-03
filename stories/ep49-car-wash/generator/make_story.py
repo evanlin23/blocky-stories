@@ -519,7 +519,7 @@ story = {
     "key_stroke": 2,
     "gap": 0.12,
     "tail": 0,
-    "look": {"fog": "#9aa6b4", "fog_density": 0.012, "fog_start": 14.0, "sky": "#b4d0ea", "sky_strength": 1.1,
+    "look": {"polish": {"quiet": [["L60", "L68"]]}, "fog": "#9aa6b4", "fog_density": 0.012, "fog_start": 14.0, "sky": "#b4d0ea", "sky_strength": 1.1,
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.35, "bloom": 0.22, "grain": 0.012},
