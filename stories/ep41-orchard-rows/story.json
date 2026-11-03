@@ -232,20 +232,20 @@
    "who": "narrator",
    "chunks": [
     [
-     "Every footprint",
-     "Every footprint"
+     "TWO trails",
+     "Two trails"
     ],
     [
-     "here glows.",
-     "here glows."
+     "of footprints.",
+     "of footprints."
     ],
     [
-     "Don't walk beside",
-     "Don't walk beside"
+     "Only mine",
+     "Only mine"
     ],
     [
-     "one that DOESN'T.",
-     "one that doesn't."
+     "GLOWS.",
+     "glows."
     ]
    ]
   },
@@ -254,12 +254,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Especially if",
-     "Especially if"
+     "Here, every",
+     "Here, every"
     ],
     [
-     "it's SQUARE.",
-     "it's square."
+     "footprint glows",
+     "footprint glows"
+    ],
+    [
+     "until sunrise.",
+     "until sunrise."
     ]
    ]
   },
@@ -4466,14 +4470,14 @@
     "yaw": 0
    },
    {
-    "at": "L01.3-0.15",
+    "at": "L01.2-0.1",
     "look": [
      -1.0,
      0.4
     ]
    },
    {
-    "at": "L02",
+    "at": "L01.3",
     "look": [
      0,
      0

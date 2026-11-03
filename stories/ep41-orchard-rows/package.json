@@ -1,10 +1,11 @@
 {
  "title": "The Trail Beside Mine Doesn't GLOW 👣",
- "description": "Every footprint here glows until sunrise, each of us in our own color. So when a trail doesn't glow, you don't walk beside it. At Nan's orchard, my old prints never fade at all.\n\nI came back for harvest week. Every dawn there was a new trail one stride from my path, huge square prints that didn't glow, and each morning they stopped a little nearer the house.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+ "description": "Two trails of footprints run through this town, and only mine glows. Every footprint here glows until sunrise, so a trail that doesn't is not ours to walk beside. At Nan's orchard, my old prints never fade at all.\n\nI came back for harvest week. Every dawn there was a new trail one stride from my path, huge square prints that didn't glow, and each morning they stopped a little nearer the house.\n\nIt's made up, a creepy blocky story built with code and Blender.",
  "pin": "Comment GLOW if you'd want to see where you walked last night.",
  "made_for_kids": false,
  "cover_s": 77.1,
  "shape": "about-me",
+ "opening": "count",
  "old_title": "In this town, every footprint glows until sunrise",
  "hold": "awaiting the opening fix (2026-11-03): in progress on branch claude/ep41-orchard-rows-opening; the fix PR removes this"
 }

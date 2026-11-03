@@ -199,9 +199,9 @@ cue("L03", "expo", ev=0.0)
 # the hook only: thin fog, warm gold on the face, back to the film's look at the cut to S02
 cue("L02", "fogk", to=1.0, dur=0.3)
 cue("L02", "hookkey", to=0.0, dur=0.3)
-# on "doesn't" my eyes slide to the dark squares on the left of the frame
-acting["me"].append({"at": "L01.3-0.15", "look": [-1.0, 0.4]})
-acting["me"].append({"at": "L02", "look": [0, 0]})
+# on "Only mine" my eyes slide to the dark squares on the left of the frame
+acting["me"].append({"at": "L01.2-0.1", "look": [-1.0, 0.4]})
+acting["me"].append({"at": "L01.3", "look": [0, 0]})
 trail(0, "hk_p", PINK, [[O(0, 2.6), O(0, 66.0)]], strength=3.4)
 trail(0, "hk_pw", PINK, walker="me", strength=3.4)
 trail(0, "hk_s", "#070b05", [[O(geo.LEFT, 40.0), O(geo.LEFT, 3.0)]], kind="dark", gap=1.7, lat=0.42, size=(1.0, 1.0))

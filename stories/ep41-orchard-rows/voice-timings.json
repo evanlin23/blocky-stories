@@ -6,42 +6,42 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Every footprint here glows. Don't walk beside one that doesn't.",
+   "text": "Two trails of footprints. Only mine glows.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.966,
+   "dur": 2.362,
    "onset": 0.172,
-   "end": 2.776,
+   "end": 2.155,
    "chunks": [
     [
      0.172,
-     0.647
+     0.543
     ],
     [
-     0.647,
-     1.259
+     0.543,
+     1.069
     ],
     [
-     1.345,
-     1.966
+     1.147,
+     1.569
     ],
     [
-     1.966,
-     2.776
+     1.569,
+     2.155
     ]
    ]
   },
   "L02": {
-   "text": "Especially if it's square.",
+   "text": "Here, every footprint glows until sunrise.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.483,
+   "dur": 2.241,
    "onset": 0.172,
-   "end": 1.276,
+   "end": 2.052,
    "chunks": [
     [
      0.172,
@@ -49,7 +49,11 @@
     ],
     [
      0.612,
-     1.276
+     1.147
+    ],
+    [
+     1.147,
+     2.052
     ]
    ]
   },
