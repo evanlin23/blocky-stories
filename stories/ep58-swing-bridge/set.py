@@ -78,20 +78,21 @@ def long_arm(kit, name, pts, t=0.19, fold=1.4, hand=True, grp=None):
         obs.append(kit.box(f"{name}.f{i}", (t * 1.18, t * 1.18, 0.12), tuple(joints[i]), sl,
                            rot=d.to_track_quat("Z", "Y").to_euler(), bevel=0.05))
     if hand:
+        H = 1.5      # a big, pale hand: palm and four blocky fingers, palms down
         e, d = joints[-1], (joints[-1] - joints[-2]).normalized()
         yaw = math.atan2(d.y, d.x)
         perp = V((-d.y, d.x, 0))
-        zc = e.z - t / 2 + 0.05          # a hand lying flat on the iron, under the sleeve's line
+        zc = e.z - t / 2 + 0.05 * H
         obs.append(kit.box(f"{name}.cuff", (0.07, t * 1.02, t * 1.02), tuple(e + d * 0.02), cuffm, rot=(0, 0, yaw), bevel=0.03))
-        obs.append(kit.box(f"{name}.palm", (0.24, 0.21, 0.09), tuple(V((e.x, e.y, zc)) + d * 0.17), skin, rot=(0, 0, yaw),
+        obs.append(kit.box(f"{name}.palm", (0.24 * H, 0.21 * H, 0.09 * H), tuple(V((e.x, e.y, zc)) + d * 0.17 * H), skin, rot=(0, 0, yaw),
                            bevel=0.02))
         for k in range(4):
-            fl = (0.19, 0.22, 0.2, 0.15)[k]
-            off = (-0.078, -0.026, 0.026, 0.078)[k]
-            obs.append(kit.box(f"{name}.fing{k}", (fl, 0.046, 0.07), tuple(V((e.x, e.y, zc)) + d * (0.29 + fl / 2) + perp * off),
-                               skin, rot=(0, 0, yaw), bevel=0.018))
-        obs.append(kit.box(f"{name}.thumb", (0.13, 0.055, 0.07), tuple(V((e.x, e.y, zc)) + d * 0.14 - perp * 0.13), skin,
-                           rot=(0, 0, yaw + 0.5), bevel=0.018))
+            fl = (0.19, 0.22, 0.2, 0.15)[k] * H
+            off = (-0.078, -0.026, 0.026, 0.078)[k] * H
+            obs.append(kit.box(f"{name}.fing{k}", (fl, 0.04 * H, 0.06 * H), tuple(V((e.x, e.y, zc)) + d * (0.29 * H + fl / 2) + perp * off),
+                               skin, rot=(0, 0, yaw), bevel=0.012))
+        obs.append(kit.box(f"{name}.thumb", (0.13 * H, 0.05 * H, 0.06 * H), tuple(V((e.x, e.y, zc)) + d * 0.14 * H - perp * 0.13 * H), skin,
+                           rot=(0, 0, yaw + 0.5), bevel=0.012))
     return obs
 
 
@@ -235,9 +236,14 @@ def build_bridge(kit, ctx):
     for i in range(7):
         cars.append(kit.box(f"car{i}", (0.8, 0.5, 0.35), (0, 119.2 + (i % 2) * 1.2, 10.3), kit.emit("#ffd9a0" if i % 2 else "#ff7a60", 1.2)))
     ctx["cars"] = cars
-    pm = kit.plastic("#7b97a6", 0.2)
-    ctx["prints"] = [kit.box("print0", (0.17, 0.2, 0.012), (17.55, RAIL_Y - 0.09, RAIL_Z + 0.004), pm),
-                     kit.box("print1", (0.17, 0.2, 0.012), (17.55, RAIL_Y + 0.12, RAIL_Z + 0.004), pm)]
+    pm = kit.emit("#8fb4d0", 0.5)
+    prs = []
+    for pi, (px, py) in enumerate(((17.55, RAIL_Y - 0.12), (17.7, RAIL_Y + 0.14))):
+        prs.append(kit.box(f"print{pi}.p", (0.12, 0.12, 0.012), (px, py, RAIL_Z + 0.004), pm, bevel=0.004))
+        for k in range(4):
+            prs.append(kit.box(f"print{pi}.f{k}", (0.1, 0.028, 0.012), (px + 0.12, py + (k - 1.5) * 0.034, RAIL_Z + 0.004), pm, bevel=0.004))
+        prs.append(kit.box(f"print{pi}.t", (0.07, 0.03, 0.012), (px - 0.02, py - 0.09, RAIL_Z + 0.004), pm, bevel=0.004))
+    ctx["prints"] = prs
     # a small car parked on the path, boot toward the bridge, and the crate Ada lifts
     cb = kit.plastic("#5a6a7a", 0.4)
     kit.box("car_body", (1.8, 4.2, 0.8), (25.0, -8.5, 0.6), cb, bevel=0.15)
@@ -270,7 +276,7 @@ def build_cabin(kit, ctx):
     for nm, cx in (("fl", 19.5), ("fr", 20.9)):
         kit.box(f"frame{nm}", (0.08, 0.1, 1.6), (cx, Y0 + 0.05, 1.25), cream)
     kit.box("frametop", (1.5, 0.1, 0.08), (20.2, Y0 + 0.05, 2.04), cream)
-    kit.box("mullion", (1.4, 0.06, 0.05), (20.2, Y0 + 0.05, 1.28), cream)
+    ctx["mullion"] = kit.box("mullion", (1.4, 0.06, 0.05), (20.2, Y0 + 0.05, 1.28), cream)
     # the lower sash: a cream frame with glass, slid up in some shots
     sash = [kit.box("sash_t", (1.34, 0.06, 0.06), (20.2, Y0 + 0.14, 0.0), cream), kit.box("sash_b", (1.34, 0.06, 0.06), (20.2, Y0 + 0.14, 0.0), cream),
             kit.box("sash_l", (0.06, 0.06, 0.8), (19.55, Y0 + 0.14, 0.0), cream), kit.box("sash_r", (0.06, 0.06, 0.8), (20.85, Y0 + 0.14, 0.0), cream),
@@ -583,6 +589,8 @@ LOOKS = {
                      lights={"lamppost": 0.6}),
     "fogpale": dict(sky="#38486a", ss=1.3, fog="#3c4e72", fd=0.028, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.4, fill=0.0,
                     lights={"lamppost": 0.5}),
+    "fogreach": dict(sky="#5b72a0", ss=2.0, fog="#6479a4", fd=0.012, fs=4, sun=(0, 0, 0.0, "#ffffff"), moon=2.2, fill=0.5,
+                     lights={"lamppost": 0.0}),
     "cab_eve": dict(sky="#2a3652", ss=0.5, fog="#2a3652", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.3,
                     lights={"cab_lamp": 1.0, "cab_stove": 1.0, "cab_amb": 0.5}),
     "cab_dark": dict(sky="#1b2640", ss=0.4, fog="#1b2640", fd=0.01, fs=8, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=1.4,
@@ -679,7 +687,7 @@ def _lazy(kit, story, tl, ctx):
                 continue
             m = kit.plastic(spec["skin"], 0.5, name=f"hand {who}{sx}")
             bsdf = m.node_tree.nodes["Principled BSDF"]
-            bsdf.inputs["Emission Color"].default_value = kit.col(GOLD)
+            bsdf.inputs["Emission Color"].default_value = kit.col("#ffa02e")
             bsdf.inputs["Emission Strength"].default_value = 0.0
             sk.data.materials.clear()
             sk.data.materials.append(m)
@@ -809,7 +817,8 @@ def animate(kit, story, tl, t, ctx):
         o.location = (x if i % 2 else 78 - ((t * 1.1 + i * 24) % 160), o.location.y, 10.3)
     # ---- the cabin: sash, door, stools, cap, mugs, steam
     sup = spec.get("sash", False)
-    gone = spec.get("reach") in ("lean", "stand")
+    gone = spec.get("reach") in ("lean", "stand") or bool(spec.get("nosash"))
+    ctx["mullion"].hide_render = bool(spec.get("nosash"))
     for o, off in zip(ctx["sash"], ctx["sash_off"]):
         o.hide_render = gone
         o.location.z = (1.6 if sup else 0.9) + off + (0.0 if o.name != "sash_g" else 0.0) - (0.0)

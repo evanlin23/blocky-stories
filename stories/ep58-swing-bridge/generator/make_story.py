@@ -214,7 +214,7 @@ sh("S29", 19, "L19.2", fc(hd(21.75, 3.6, CAB_SEAT), -25, 30, 1.9, 40, rise=0.1),
 sh("S30", 20, "L20", mv([21.4, 2.7, 0.55], [21.1, 3.6, 0.35], 32), {}, look="cab_eve", hand=0.002)
 sh("S31", 21, "L21", mv([21.6, -20.0, 1.55], [21.6, -12.0, 1.35], 30), {"mec": P(21.6, -12.0, 0, to=(21.6, -14.6), arms=[0, 0], side=[0, 0], expr="neutral")},
    look="dusk", glow={"mec": 0.0}, hand=0.004)
-lvl("pocket.mec", "L21", 0.35, 0.5)
+lvl("pocket.mec", "L21", 0.9, 0.5)
 sh("S32", 21, "L21.2", fc((21.6, -12.0, 0.88), 0, -30, 1.35, 42, rise=0.0), {"mec": P(21.6, -12.0, 0, arms=[0, 0], side=[0, 0], expr="neutral")},
    look="dusk", hand=0.002)
 # ---- the fog nights
@@ -349,24 +349,19 @@ def redo(sid, camera=None, place=None, **kw):
 
 EF = (21.75, 3.6, 1.58)
 EH = (21.75, 3.5, 0.78)
-redo("S23", cfc(EH, (20.7, 2.7), 30, 0.05))
 redo("S24", cfc(EH, (20.7, 2.7), 30, 0.05))
 redo("S25", cfc((21.75, 3.55, 1.2), (20.6, 2.8), 30, 0.05))
 redo("S29", cfc(EF, (19.8, 2.75), 28), {"emrys": emr(-45, head=[-20, 0])})
 redo("S36", cfc(EF, (19.8, 2.75), 28), {"emrys": emr(-25, head=[0, 22])})
-redo("S49", cfc(EH, (20.7, 2.7), 30, 0.05))
-redo("S67", cfc(EH, (20.7, 2.7), 30, 0.05))
 redo("S78", cfc(EF, (19.8, 2.75), 28), {"emrys": emr(-70, head=[0, 0])})
-redo("S79", cfc(EH, (20.7, 2.7), 30, 0.05))
 redo("S80", cfc(EF, (19.8, 2.75), 26, 0.04), {"emrys": emr(-45, head=[0, 4], expr="soft")})
-redo("S68", cfc((20.2, 2.95, 1.56), (21.6, 3.3), 26), {"me": P(20.2, 2.95, 20, arms=[40, 40], side=[0, 0], expr="wide", head=[0, 24])})
+redo("S68", mv([20.2, 1.0, 1.15], [20.35, 2.6, 1.0], 24), glow={"me": 0.8}, look="cab_low", nosash=True, lk={"cab_amb": 1.3}, fill_k=0.6, glow_k=4.0, hand=0.002)
 redo("S70", cfc((20.2, 2.95, 1.45), (21.5, 3.5), 28, 0.08), {"me": P(20.2, 2.95, 20, arms=[85, 85], side=[0, 0], expr="wide", head=[0, 6])})
 redo("S73", cfc((20.25, 3.55, 1.45), (19.4, 2.7), 26), {"me": mecr(arms=[0, 0], head=[35, -14], expr="soft", yaw=-45)})
 redo("S76", cfc((20.25, 3.55, 1.45), (19.4, 2.7), 26), {"me": mecr(arms=[0, 0], head=[-12, -6], expr="neutral", yaw=-45)})
 redo("S81", cfc((20.6, 3.6, 1.58), (22.0, 2.8), 28), {"me": P(20.6, 3.6, 25, z=CAB_SEAT, sit=True, arms=[30, 30], expr="soft", head=[0, 0]),
      "emrys": P(21.4, 3.6, 0, z=CAB_SEAT, sit=True, arms=[30, 30], expr="neutral")})
 redo("S07", mv([190.0, -1.3, 1.65], [190.0, 3.6, 1.0], 19, [190.0, -1.0, 1.65], [190.0, 3.6, 1.0], 19))
-redo("S26", mv([22.2, 2.6, 1.3], [20.3, 3.6, 0.95], 26))
 
 def insert_after(sid):
     item = SH.pop()
@@ -379,6 +374,76 @@ sh("S14b", 10, "L10.2", fc(hd(21.1, 1.2), -20, 28, 3.2, 38, rise=0.08), {"emrys"
 insert_after("S14")
 sh("S30b", 20, "L20.2", mv([22.1, 2.6, 0.8], [20.9, 3.6, 0.45], 30), {}, look="cab_eve", hand=0.002, stool2=0)
 insert_after("S30")
+
+
+# ================================================================ fix round: merges (every cut 1.2 to 2.3 s) and reframes
+def merge(keep, drop):
+    ids = [x[0] for x in SH]
+    i, j = ids.index(keep), ids.index(drop)
+    if j < i:
+        a, b, c, d, e = SH[i]
+        SH[i] = (a, b, SH[j][2], d, e)
+    del SH[j]
+    PL.pop(drop, None)
+
+
+for _k, _d in (("S14", "S14b"), ("S18", "S17"), ("S23", "S24"), ("S29", "S28"), ("S36", "S35"), ("S51", "S52"),
+               ("S57", "S56"), ("S71", "S72"), ("S79", "S80"), ("S86", "S87")):
+    merge(_k, _d)
+
+# ---- the Reach: low three-quarter cameras, the rail as a diagonal, lighter fog behind him
+RV = dict(look="fogreach", hand=0.003)
+redo("S51", mv([8.4, -0.2, 1.2], [-0.6, 0.85, 1.5], 34, [7.6, -0.1, 1.2], [-0.6, 0.85, 1.5], 36), reach="mon", farlamp=0.9, handlamp=1.0, **RV)
+redo("S53", mv([3.4, -3.0, 0.8], [-0.7, 0.8, 1.5], 30, [3.0, -2.8, 0.8], [-0.7, 0.8, 1.5], 30), reach="mon", farlamp=0.9, handlamp=1.0, **RV)
+redo("S54", mv([10.8, -1.6, 1.7], [2.5, 0.8, 1.2], 30, [10.3, -1.5, 1.7], [2.5, 0.8, 1.2], 30), reach="tue", farlamp=0.9, handlamp=1.0, **RV)
+redo("S55", mv([19.8, 0.0, 1.3], [-0.9, 0.8, 1.5], 40, [19.3, 0.05, 1.3], [-0.9, 0.8, 1.5], 40), reach="wed", **RV)
+redo("S57", mv([19.3, -0.5, 1.5], [17.8, 0.8, 0.98], 36, [18.9, -0.3, 1.5], [17.8, 0.8, 0.98], 36), reach="wed", **RV)
+redo("S61", mv([23.0, -2.2, 1.2], [19.4, 1.1, 1.5], 30, [22.6, -2.0, 1.2], [19.4, 1.1, 1.5], 30), reach="stand", **RV)
+redo("S63", mv([13.0, -2.2, 0.8], [19.8, 1.1, 1.45], 30, [13.5, -2.1, 0.8], [19.8, 1.1, 1.45], 30), reach="stand", sash=True, **RV)
+redo("S64", mv([16.4, 3.2, 1.0], [19.9, 1.15, 1.5], 30, [16.7, 3.0, 1.0], [19.9, 1.15, 1.5], 30), reach="stand", sash=True, **RV)
+redo("S65", mv([16.2, -1.3, 1.45], [20.5, 1.5, 1.5], 34, [16.8, -1.2, 1.45], [20.5, 1.5, 1.5], 34), reach="lean", sash=True, sill=3.5,
+     farlamp=4.0, fl_pos=[22.4, 0.3, 0.7], look="fogreach", hand=0.003)
+
+# ---- dark shots, hand inserts, exposure, the rule marker
+redo("S01", mv([21.6, -5.2, 1.2], [21.6, 0.3, 1.0], 36, [21.6, -4.8, 1.2], [21.6, 0.3, 1.0], 36),
+     {"doc": P(21.6, -0.3, 0, expr="neutral", arms=[60, 60], side=[0, 0]), "t1": P(20.4, 0.7, 0, expr="neutral", arms=[55, 55], side=[0, 0]),
+      "t2": P(22.8, 0.8, 0, expr="neutral", arms=[55, 55], side=[0, 0])},
+     glow={"doc": B, "t1": B, "t2": B}, glow_k=5.0, sun=(10, 25, 0.5, "#ffd9a0"), sky_k=0.55, fill_k=0.35)
+HL = dict(look="cab_eve", lk={"cab_amb": 1.3}, fill_k=1.5, glow_k=4.0, hand=0.002)
+redo("S23", cfc((21.65, 3.4, 0.9), (21.65, 2.35), 10, 0.0, cz=1.0), {"emrys": emr(-25, arms=[75, 75])}, glow={"emrys": 0.8}, **HL)
+redo("S49", cfc((21.65, 3.4, 0.85), (21.65, 2.35), 10, 0.0, cz=0.95), {"emrys": emr(-25)}, glow={"emrys": 0.9}, **HL)
+redo("S67", cfc((21.65, 3.4, 0.85), (20.3, 2.5), 11, 0.0, cz=0.95), {"emrys": emr(-25, head=[0, 20])}, glow={"emrys": 0.7}, **HL)
+redo("S79", cfc((21.65, 3.4, 0.9), (21.0, 2.4), 10, 0.0, cz=0.8), {"emrys": emr(-25, arms=[75, 75])}, glow={"emrys": 0.4}, **HL)
+redo("S26", mv([20.9, 1.0, 1.3], [20.2, 2.9, 1.0], 26), {"me": P(20.25, 3.55, 0, z=-0.09, sit=True, arms=[80, 80], side=[0, 0], expr="neutral")}, glow={"me": 0.7}, nosash=True, **{**HL, 'fill_k': 0.6})
+redo("S27", mv([19.8, 1.0, 1.0], [20.3, 2.9, 1.0], 24, [20.0, 1.0, 1.0], [20.3, 2.9, 1.0], 24), {"me": P(20.25, 3.55, 0, z=-0.09, sit=True, arms=[80, 80], side=[0, 0], expr="neutral")}, glow={"me": 0.7}, nosash=True, **{**HL, 'fill_k': 0.6})
+redo("S71", mv([20.4, 0.9, 1.5], [20.25, 2.9, 1.0], 28), {"me": P(20.25, 3.55, 0, z=-0.09, sit=True, arms=[80, 80], side=[0, 0], expr="neutral")}, glow={"me": 0.7}, nosash=True, **{**HL, 'fill_k': 0.6})
+redo("S68", mv([20.2, 1.0, 1.15], [20.35, 2.6, 1.0], 24), glow={"me": 0.8}, look="cab_low", nosash=True, lk={"cab_amb": 1.3}, fill_k=0.6, glow_k=4.0, hand=0.002)
+redo("S70", mv([19.9, 1.0, 1.35], [20.4, 2.45, 1.2], 30), glow={"me": 0.8}, look="cab_low", nosash=True, lk={"cab_lamp": 0.0, "cab_amb": 1.0}, fill_k=0.6, glow_k=4.0, hand=0.002)
+redo("S32", cam([0, [22.3, -14.6, 1.2], [21.6, -12.0, 0.95], 28]), {"mec": P(21.6, -12.0, 0, arms=[0, 0], side=[0, 0], expr="neutral")},
+     look="dusk", fill_k=2.2, lk={"lamppost": 1.0}, hand=0.002)
+redo("S34", mv([16.9, 0.1, 1.55], [17.6, 0.8, 0.98], 36, [17.1, 0.2, 1.55], [17.6, 0.8, 0.98], 36), look="fogreach", prints=True, fd=0.012, fill_k=3.0, hand=0.002)
+redo("S90", mv([349.4, 0.6, 1.5], [349.4, 2.4, 0.95], 34), {"me": P(349.45, 2.3, 0, z=0.5, lean=-90, arms=[90, 90], side=[0, 0], expr="wide"),
+     "ada": P(350.55, 2.3, 0, z=0.5, lean=-90, arms=[0, 0], side=[0, 0], expr="asleep")}, look="bed", glow={"me": B, "ada": 0.0}, glow_k=3.0, lk={"bd_amb": 12.0}, hand=0.002)
+redo("S19", look="kitchen", fill_k=0.35, lk={"ki_amb": 0.5, "ki_win": 0.35})
+redo("S18", look="kitchen", fill_k=0.4, lk={"ki_amb": 0.6, "ki_win": 0.4})
+redo("S47", mv([26.6, 108.0, 1.5], [27.6, 116.4, 1.4], 30, [26.9, 110.0, 1.5], [27.6, 116.4, 1.4], 30), fill_k=0.4, sun=(25, 200, 0.5, "#f0e4d0"), sky_k=0.5, fogc="#7c8a96", fd=0.01)
+redo("S57", mv([17.0, -1.5, 1.3], [18.1, 0.8, 1.0], 32, [17.4, -1.3, 1.3], [18.1, 0.8, 1.0], 32), reach="wed", handlamp=2.5, **RV)
+
+redo("S41", fill_k=0.6)
+
+
+def nudge(sid, off):
+    for i, (a, b, c, d, e) in enumerate(SH):
+        if a == sid:
+            SH[i] = (a, b, f"{c}{off:+.2f}", d, e)
+            return
+    raise KeyError(sid)
+
+
+for _sid, _off in (("S48", -0.35), ("S59", -0.4), ("S43", 0.3), ("S41", 0.23), ("S82", -0.25), ("S91", -0.3),
+                   ("S76", -0.1), ("S86", -0.1), ("S06", 0.15), ("S08", 0.13), ("S11", 0.1), ("S13", 0.07), ("S22", 0.07),
+                   ("S32", 0.17), ("S34", 0.1), ("S38", -0.07), ("S69", 0.07)):
+    nudge(_sid, _off)
 
 # ================================================================================================== story
 shots, ids = [], []
@@ -417,7 +482,7 @@ story = {
     "look": {"flash_safe": True, "fog": "#c4dcee", "fog_density": 0.004, "fog_start": 14.0, "sky": "#9cc8ec", "sky_strength": 1.0,
              "exposure": 0.0},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.012, -0.02], "saturation": 1.04, "contrast": 1.04,
-              "vignette": 0.25, "bloom": 0.12, "grain": 0.008},
+              "vignette": 0.25, "bloom": 0.2, "grain": 0.008},
     "cast": cast,
     "lines": lines,
     "shots": shots,
