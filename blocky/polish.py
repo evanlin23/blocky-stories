@@ -39,9 +39,9 @@ DEFAULTS = {
     "whoosh": True, "whoosh_db": -19.0, "whoosh_gap": 1.4, "whoosh_lp": 3000.0,
     "hits": True, "hit_db": -17.0, "reveal_db": -11.0,
     "riser": True, "riser_db": -15.0, "riser_dur": 1.8,
-    "bed": True, "bed_kind": None, "bed_lufs": -41.0, "bed_drop_db": -12.0,
+    "bed": True, "bed_kind": None, "bed_lufs": -44.0, "bed_drop_db": -12.0,
     "marks": True, "mark_db": -14.0,
-    "duck": True, "duck_db": 6.0,
+    "duck": True, "duck_db": 8.0, "music_duck_db": "auto", "voice_gap_db": 10.5,
     # captions
     "pop": True,
     # motion
@@ -55,7 +55,7 @@ DEFAULTS = {
 }
 GRADES = {
     # lift: a toe that raises the darkest tones (out + lift * (1 - out)^3), so shadows keep their detail on a TV
-    "bright": {"exposure_min": 1.04, "saturation_min": 1.06, "contrast_max": 1.05, "vignette_max": 0.2,
+    "bright": {"exposure_min": 1.04, "saturation_min": 1.1, "contrast_max": 1.05, "vignette_max": 0.2,
                "grain_max": 0.009, "lift": 0.035},
     "none": {},
 }
@@ -260,6 +260,17 @@ def _static(shot_spec: dict | None) -> bool:
     if shot_spec.get("follow"):
         return False
     return len(cam) <= 1 or all(c[1:] == cam[0][1:] for c in cam)
+
+
+def ones_for_moving(tl: dict, st: dict, p: dict) -> None:
+    """`ones: "moving"`: shots on twos where the camera moves (its own keys, a follow, or the pack's move) or
+    somebody walks are drawn on every frame, so a move doesn't judder at 15 drawings a second. With the pack's
+    camera moves that's nearly every shot: 1.7 to 2.0 times the drawing (docs/research/polish-pack.md → v2.1)."""
+    ones_for_walks(tl, st)
+    specs = cam_specs(st, tl, p)
+    for s in tl["shots"]:
+        if s["step"] == 2 and not _static(specs.get(s["id"])):
+            s["step"] = 1
 
 
 def ones_for_walks(tl: dict, st: dict) -> None:
