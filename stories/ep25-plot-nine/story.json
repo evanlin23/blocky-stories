@@ -46,7 +46,8 @@
   "grain": 0.012
  },
  "phonemes": {
-  "Gran": "ɡɹˈæn"
+  "Gran": "ɡɹˈæn",
+  "in": "ˈɪn"
  },
  "cast": {
   "me": {
@@ -160,8 +161,7 @@
      "KEY PLANT.",
      "key plant."
     ]
-   ],
-   "tempo": 1.1
+   ]
   },
   {
    "id": "L03",
@@ -339,8 +339,7 @@
      "in his BEANS.",
      "in his beans."
     ]
-   ],
-   "tempo": 0.93
+   ]
   },
   {
    "id": "L12",

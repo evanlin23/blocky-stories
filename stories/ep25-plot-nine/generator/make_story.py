@@ -32,7 +32,7 @@ LOOP = 0.25
 full.append({"id": "P04", "pause": LOOP, "chunks": []})
 lines = full
 
-TEMPO = {"L02": 1.1, "L11": 0.93, "L17": 0.93, "L36": 0.93}
+TEMPO = {"L17": 0.93, "L36": 0.93}
 for ln in lines:
     if ln['id'] in TEMPO:
         ln['tempo'] = TEMPO[ln['id']]
@@ -356,7 +356,7 @@ story = {
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.03, 0.01, -0.03], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.36, "bloom": 0.26, "grain": 0.012},
-    "phonemes": {"Gran": "ɡɹˈæn"},
+    "phonemes": {"Gran": "ɡɹˈæn", "in": "ˈɪn"},
     "cast": cast,
     "lines": lines,
     "shots": shots,

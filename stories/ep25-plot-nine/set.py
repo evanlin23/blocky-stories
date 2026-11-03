@@ -237,6 +237,7 @@ def materials(kit):
     M["post"] = pbr(kit, "fence wood", "#6d5d46", 0.9, noise=(4.0, 0.7, 0.0))
     M["tar"] = kit.planks("#52453a", "#372d25", 1.4, "Z", name="tarred boards", rough=0.8)
     M["creosote"] = kit.planks("#6a4630", "#47301f", 1.2, "Z", name="creosote boards", rough=0.78)
+    M["inwood"] = kit.planks("#5d5144", "#40372e", 1.2, "Z", name="shed inside boards", rough=0.8)
     M["roof"] = pbr(kit, "roof felt", "#262626", 0.9)
     M["leaf"] = pbr(kit, "bean leaf", "#4f7a3a", 0.55, spec=0.35, noise=(7.0, 0.62, 0.0))
     M["leaf2"] = pbr(kit, "bean leaf b", "#5c8a40", 0.55, spec=0.35)
@@ -732,7 +733,7 @@ def scarf_knot(kit, M, name, parent, kn, tail_len=0.34, w=0.07, mat=None):
 def build_interior(kit, M, x0, ctx):
     """Grandad's shed from inside: the camera looks +y at the back wall (y = 1.9). The tool wall on the left, a shelf on
     the right. On one hook hangs Gran's sage headscarf, tied; the hook beside it is bare until his cap goes on (L40)."""
-    wood = M["creosote"]
+    wood = M["inwood"]
     kit.box(f"in{x0}.floor", (2.8, 3.0, 0.05), (x0, 0.6, -0.025), M["post"])
     kit.box(f"in{x0}.back", (2.8, 0.06, 2.4), (x0, 1.9, 1.2), wood)
     kit.box(f"in{x0}.front", (2.8, 0.06, 2.4), (x0, -0.9, 1.2), wood)
@@ -777,9 +778,9 @@ def build_interior(kit, M, x0, ctx):
                 rot=(0, 0.1 * (k - 1.5), 0), bevel=0.003)
         kit.box(f"in{x0}.pod{k}", (0.05, 0.004, 0.07), (sx_ - 0.3 + 0.12 * k, 1.769, 1.58), M["leaf2"],
                 rot=(0, 0.1 * (k - 1.5), 0))
-    kit.light(f"lamp{x0}", "POINT", (x0 + 0.1, 0.3, 2.0), 12.0, "#ffd9a8", size=0.12)
-    kit.light(f"lamp{x0}b", "POINT", (x0 + 0.8, 1.2, 1.6), 4.0, "#ffd0a0", size=0.1)
-    kit.light(f"lamp{x0}c", "POINT", (x0 + 0.3, 1.1, 1.5), 8.0, "#ffd9a8", size=0.1)
+    kit.light(f"lamp{x0}", "POINT", (x0 + 0.1, 0.3, 2.0), 12.0, "#ffeedd", size=0.12)
+    kit.light(f"lamp{x0}b", "POINT", (x0 + 0.8, 1.2, 1.6), 4.0, "#ffeedd", size=0.1)
+    kit.light(f"lamp{x0}c", "POINT", (x0 + 0.3, 1.1, 1.5), 8.0, "#ffeedd", size=0.1)
 
 
 def build(kit, story, tl):
