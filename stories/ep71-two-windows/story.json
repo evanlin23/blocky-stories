@@ -11,6 +11,9 @@
   "rate": 1.45
  },
  "key_color": "#6fd13a",
+ "clip_heads": [
+  "srv.head"
+ ],
  "gap": 0.12,
  "tail": 0,
  "fade_in": false,
