@@ -1,4 +1,4 @@
-"""Creature test stills (run with the bpy python: creature_test.py a|b OUT.png)."""
+"""Creature test stills (run with the bpy python: creature_still.py a|b OUT.png)."""
 import importlib.util, math, sys
 from pathlib import Path
 sys.path.insert(0, "/home/user/blocky-stories")
