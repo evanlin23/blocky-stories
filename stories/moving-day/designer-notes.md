@@ -7,7 +7,7 @@
 Rebuild it with `python -m reels.blocky timeline moving-day` then `python -m reels.blocky stills moving-day --t 0.84`. Set `MOVING_DAY_PROBE=1` to print the contact probe into the Blender log.
 
 **Code:** the story's code is in `reels/blocky/stories/moving-day/`. One shared engine change, opt-in: `faces.py` gains an `asleep` expression (flat lids drooping at the outer ends). It's a new name, so every existing face draws exactly as before, and `test_blocky.py` has a test for it.
-- `set.py` builds Mum's room and the Boxes.
+- `set.py` builds Mom's room and the Boxes.
 - `marker.py` draws the faces (PIL only, so it runs outside Blender: `python marker.py <dir>` writes a sheet of every face).
 - `story.json` is provisional and says so in its first key. It's one line (L48) plus a silent 30 s beat, so the shared per-story tests (30 to 180 s, zero blocks) stay green. `check` gives one warning, the pace of a one-line placeholder. `pytest reels/blocky` passes (39 tests).
 
@@ -29,24 +29,24 @@ Rebuild it with `python -m reels.blocky timeline moving-day` then `python -m ree
 **Probe** (`MOVING_DAY_PROBE=1`):
 - 0 contacts.
 - 0.66 m of air under the face box.
-- Hands 0.147 m and 0.693 m from Mum. The probe measures to her nearest part, her hair, where pass 5's figure was to her head; it's 0.19 m to her head.
+- Hands 0.147 m and 0.693 m from Mom. The probe measures to her nearest part, her hair, where pass 5's figure was to her head; it's 0.19 m to her head.
 - Nothing clips (max 221 of 255 outside the caption).
 
 **Render time:** 27 s a drawing through `stills` (2 threads, 16 samples).
 
 **The critic's (b) list, for the build** (noted, not done now):
-- Mum's near arm a stop darker than her face in the wides, and the L54 close framing it as an arm ending in a hand.
+- Mom's near arm a stop darker than her face in the wides, and the L54 close framing it as an arm ending in a hand.
 - The cold rake carried further across the quilt drape, or the black framed out per shot.
 - The L48 wide keeping the ceiling line and the neck chain pressed along it in frame, so it reads "too tall for the room". L49 is its own close, with the face at 0.45 of the width or more.
-- Mum's linked fill on the pillows down about 20%, so her face and the creature's eyes rank above the pillow.
+- Mom's linked fill on the pillows down about 20%, so her face and the creature's eyes rank above the pillow.
 - The joint-tape glints' regular spacing broken up, or some of them dark. No extra rim light.
-- Mum's sideways sleeping face stays as it is.
+- Mom's sideways sleeping face stays as it is.
 
 ### Pass 5: the critic's fixes and the producer's rulings
 
 The critic scored pass 4 at 3/10. The orchestrator's phone read agreed:
 - The upside-down `wide` face read as round glasses and a buck tooth under a black hairline.
-- Mum read as a tan parcel.
+- Mom read as a tan parcel.
 - A black body with two lit forearms read as a cardboard costume.
 - The bottom 40% was dead.
 
@@ -56,13 +56,13 @@ What changed, by the critic's numbering:
    - **`flip`:** `set_face` takes a per-pose `flip`, which turns the drawing 180° on the box. The cached files are keyed `boxes-wide-flip-*`. The box still hangs upside down, so its crushed corner and seam sit at the bottom, a detail you notice on a second look.
    - **`wide` is redrawn:**
      - Two eyes, each gone round once, taller than wide (1.35), unequal: the right one about 25% bigger and set higher.
-     - Small solid pupils (0.028) slid toward the rim, down and to the left: toward Mum as the door sees it. `marker.face()` takes a `gaze`.
+     - Small solid pupils (0.028) slid toward the rim, down and to the left: toward Mom as the door sees it. `marker.face()` takes a `gaze`.
      - A tall gape about 0.42 wide by 0.70 tall. Its narrow top pushes up between the eyes, and its bottom runs off the box's edge.
      - The gape tilts 7°, sits a little off centre, and has a ragged edge (0.10 radius noise, a shaky outline).
    - **No tape on the drawing:** the face box's flap-seam tape now runs on the x axis, over the top and down the two sides, so the "tooth" and the white "parting" are gone.
    - **The ink has no sheen.** Its specular drops to 0.02, so it stays black even at a grazing angle. The face box is smooth-shaded, so its mesh facets don't show under the tight light.
    - Checked at 120 px: it reads as a gaping, wrong face looking down at her, not as a character.
-2. **Mum reads as a person** (producer's ruling 1):
+2. **Mom reads as a person** (producer's ruling 1):
    - Skin is `#a86a58`: hue 14° against the boards' 29–30°.
    - The `asleep` lids replace `shut`'s up-arcs, which read as smiling.
    - The pillow is pale (`#d6d3c9`), and a second pillow is propped against the headboard behind her crown.
@@ -88,14 +88,14 @@ What changed, by the critic's numbering:
 
 **Probe on pass 5:**
 - 0 contacts.
-- The face box is 0.66 m above Mum's highest point (her hair).
+- The face box is 0.66 m above Mom's highest point (her hair).
 - Hands are 0.19 m and 0.70 m from her.
 - The top of the creature is 2.349 m under a 2.35 m ceiling.
 
 **Render time:** 26.8 s a drawing through `stills` (2 threads, 16 samples), up from 23 s with the extra linked lights. Look-dev on 4 threads ran about 15 s.
 
 **Still open after pass 5:**
-- **Mum's near arm** is an R6 slab 0.34 m thick and the biggest single shape mid-frame, mostly under the caption. Her L54 close should show it as an arm with a hand.
+- **Mom's near arm** is an R6 slab 0.34 m thick and the biggest single shape mid-frame, mostly under the caption. Her L54 close should show it as an arm with a hand.
 - **Her face reads sideways,** turned 90°: a lying head seen side-on puts the drawing's top toward the wall. The pale pillow and the hair now frame it as a head.
 - **The creature's body** is mostly a dark mass with faint cold edges. The box joints' tape glints are barely visible at phone size. Making them read would mean more rim light, which starts lighting whole faces and brings back the costume read.
 - **The pool's broad glow** between the legs sits close to the face's brightness (95th percentile 42% against 38%), though the face holds the peak.
@@ -120,7 +120,7 @@ What changed, by the critic's numbering:
 - **Joints are bare:** a 3.5 cm dark gap at every joint, with four short tape strips set back inside it. The outer tape rings and seam strips from my first passes are gone (brief, item 4).
 - **Hands:** the forearm box's open end, four flaps split at a fold. They're 72% of the side's width, so there are gaps between them like fingers, splayed and curled.
 - **The face box** is always tone `#a87b50` with one crushed top corner (its dent). At 3 a.m. it hangs face down from the end of the chain, so the drawing is upside down from the door.
-- **Mum:**
+- **Mom:**
   - Solid slate-blue top `#6c7c97`, dark trousers, long dark-brown-going-grey hair, skin `#c08a66`.
   - She lies on her back with her head toward the wall, turned to the door, eyes shut.
   - The quilt is loose at her shoulders, and her near arm lies out on top of it.
@@ -147,7 +147,7 @@ What changed, by the critic's numbering:
 
 ### The light (the brief's 3 a.m.)
 
-- **Key:** Mum's plug-in nightlight, cold `#d6e4ff`, a point light 7 cm off the far wall at skirting height, between and behind the Boxes' legs.
+- **Key:** Mom's plug-in nightlight, cold `#d6e4ff`, a point light 7 cm off the far wall at skirting height, between and behind the Boxes' legs.
   - It throws a pool of light on the far wall that frames the legs.
   - It rims the boxes from below and behind.
   - It casts the neck chain's shadow forward over the ceiling.
@@ -155,22 +155,22 @@ What changed, by the critic's numbering:
 - **The face** needs help: with the key behind the figure, a face aimed at the door would be black. Two fixes, both stated here so nobody's surprised:
   - **The face points mostly down,** toward the nightlight (about 25° off straight down, toward the door). With a 1.0 m camera we look up into it.
   - **A matching spot from the nightlight's own place lights only the face box,** through light linking, and it casts no shadow. Without that, the creature's own torso blocks it. It's a cheat in the physics but not in the motivation: the light comes from the nightlight's position and colour.
-- **The window** is a dim grey side light. Light linking keeps it off the creature's body, so the body stays a silhouette, while it reaches Mum, the room, the face box and the flap hands. A faint grazing light from the same side edges the boxes so they read as boxes.
+- **The window** is a dim grey side light. Light linking keeps it off the creature's body, so the body stays a silhouette, while it reaches Mom, the room, the face box and the flap hands. A faint grazing light from the same side edges the boxes so they read as boxes.
 - **The lamp** is built and cued (`lamp` cue, 0..1) for L51, and it's off here.
 - **Fog, grade and haze:**
   - Fog density is 0.02.
   - There's no volume (the brief rules out volumetrics).
   - The grade is the brief's: saturation 0.85, contrast 1.1, vignette 0.42, bloom 0.22, grain 0.014, exposure +1.0.
-- **Clipping:** none outside the caption (frame max 234 of 255). Mum's face averages about 42 of 255 with a peak of 113: dim and readable, never near clipping. The marker reads black on mid-brown.
+- **Clipping:** none outside the caption (frame max 234 of 255). Mom's face averages about 42 of 255 with a peak of 113: dim and readable, never near clipping. The marker reads black on mid-brown.
 
 ### Phone size and the probe
 
-- **Phone size:** the face box spans about 0.29 of the frame width, at 0.20 to 0.33 of the height, clear of the caption band. Mum's face sits at the left just above it. The violet key reads cleanly at phone size on this dark frame, so I kept it over the dusty-rose fallback.
+- **Phone size:** the face box spans about 0.29 of the frame width, at 0.20 to 0.33 of the height, clear of the caption band. Mom's face sits at the left just above it. The violet key reads cleanly at phone size on this dark frame, so I kept it over the dusty-rose fallback.
 - **Contact probe** (`set.probe`, BVH overlaps with everything in the room):
   - 0 contacts.
   - The face box's top is at 2.349 m under a 2.35 m ceiling.
-  - The face box's lowest point is 0.62 m above the highest point on Mum (her hair) and about 0.9 m above the quilt directly under it.
-  - The nearest flap is 0.126 m from Mum, resting on the quilt's edge at her shoulder. The other hand is 0.65 m away, on the mattress edge.
+  - The face box's lowest point is 0.62 m above the highest point on Mom (her hair) and about 0.9 m above the quilt directly under it.
+  - The nearest flap is 0.126 m from Mom, resting on the quilt's edge at her shoulder. The other hand is 0.65 m away, on the mattress edge.
 
 ### What changed between passes, and why
 
@@ -195,17 +195,17 @@ What changed, by the critic's numbering:
      - The nightlight key.
      - Bare joints with the tape inside.
      - The plum, lilac and rose quilt.
-     - The door moved to the bed's head end so Mum's face isn't hidden behind her own near arm.
+     - The door moved to the bed's head end so Mom's face isn't hidden behind her own near arm.
    - **Problems:**
      - The marker read grey-blue, because its specular caught the cold light.
      - The crumple facets showed through the mouth.
      - The arms were lost in the silhouette.
-     - Mum was a dark shape.
+     - Mom was a dark shape.
 4. **Final:**
    - **Changes:**
      - Matte, darker ink and a smooth face front.
-     - The window lights the flap hands and Mum, and a faint grazing light edges the body.
-     - Stance and hands adjusted after the probe found the shins in the bed's corner, the face box grazing the ceiling and one hand's flaps in Mum's hair.
+     - The window lights the flap hands and Mom, and a faint grazing light edges the body.
+     - Stance and hands adjusted after the probe found the shins in the bed's corner, the face box grazing the ceiling and one hand's flaps in Mom's hair.
    - **Verdict:** frightening, not a costume. The proportions, the neck along the ceiling and the face hanging upside down are no person's shape.
 
 ### Render time
@@ -216,7 +216,7 @@ What changed, by the critic's numbering:
 
 ### Open items for the build and the reviewers
 
-- **Mum's near arm** is an R6 box 0.34 m thick, so from the doorway it's a dark slab across the middle of the frame, mostly under the caption here. It's there for the brief's "nothing reads as pinned". Her close (L54) should frame it as an arm with its hand.
+- **Mom's near arm** is an R6 box 0.34 m thick, so from the doorway it's a dark slab across the middle of the frame, mostly under the caption here. It's there for the brief's "nothing reads as pinned". Her close (L54) should frame it as an arm with its hand.
 - **The lower 30% of the frame** is the dark front of the bed. It's good for the caption, but there's not much to see.
 - **The chain's shadow** is a big dark wedge over the top-left of the ceiling. It's physically right and it prefigures L46, but the critic should say whether it reads as part of the creature.
 - **Neck box size:** I shortened the neck boxes to 0.27 m so the chain fits this small room. The count is the brief's, and the size was my call.
@@ -231,21 +231,21 @@ What changed, by the critic's numbering:
 - **Grade:** the brief's grade, with `red_line` 0.79 set ahead for the gold section.
 - **The loop:** tail 0 (no fade at either end) plus a silent 0.25 s beat after L78 (`P03`), the brief's hard cut into L01.
 - **Cast:** both skins sit off the cardboard ramp (boards: hue 29–30°, lightness 41–53%).
-  - Mum is `#a86a58` (hue 14°, the ruling), at height 0.95.
+  - Mom is `#a86a58` (hue 14°, the ruling), at height 0.95.
   - I'm `#9c5e4c` (hue 13°, a family likeness), in a solid olive top, charcoal trousers, grey sneakers and black `cap` hair.
 - **Score and sound:**
   - The brief's score: dorian on G2 at 74. The piano comes in only at P02, in the relative major (root 41).
   - The brief's ambience, sfx and three silence holes, all anchored to line ids.
 - **Shots:** a 77-shot first pass from the brief's shot plan, each with its line anchor, room, description and step (ones for L48–L55 and P01, fours for the clock wides, face and night inserts and the shelf, twos for the rest).
-  - Mum's room shots (L48–L62) have real cameras. The L48 wide is the creature test still.
+  - Mom's room shots (L48–L62) have real cameras. The L48 wide is the creature test still.
   - The other 63 are tagged `"todo": "camera"`, with that wide as a stand-in until their rooms are built.
-- **Staging so far:** only the 3 a.m. scene. The Boxes, Mum and I are hidden everywhere else until those rooms and the morning poses exist. The nightlight is on from L44 to L62, and the lamp comes up at L51.1 over 0.8 s (a new `dur` ramp on the lamp cue).
+- **Staging so far:** only the 3 a.m. scene. The Boxes, Mom and I are hidden everywhere else until those rooms and the morning poses exist. The nightlight is on from L44 to L62, and the lamp comes up at L51.1 over 0.8 s (a new `dur` ramp on the lamp cue).
 
 **Voice and checks:**
 - `voice`: 78 lines in 220 s.
 - `check`: 0 blocks. One warning: six fast filler captions are up under 0.2 s ("It was", "And on", "in there", "Back in"). They follow the voice, as the sync rule wants.
 - `asr`: 0 words heard wrong (574 of 574, match 0.995).
-  - "Mum" is heard as "Mum", so `voice.py` needs no Mum/mom spelling.
+  - "Mom" is heard as "Mom", so `voice.py` needs no Mom/mom spelling.
   - "hall"/"haul" and the flapped "ladder"/"latter" are one sound in General American, so they join "threw"/"through" in `voice.HOMOPHONES`. A test covers it, and it doesn't touch any render or mix.
   - L02 and L23 are read a touch slower: "flaps still" ran together, and "had" was swallowed.
   - L53's spoken text (only) has a comma, "Tucked, round", so it isn't heard as "tucked around". The caption doesn't change.
