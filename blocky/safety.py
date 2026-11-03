@@ -330,7 +330,11 @@ RED_AFTER_SHARE = 0.01  # ... no frame has more than this share at saturated red
 RED_CLAMP_LINE = 0.78   # crops of our own sims stay under this linear red ratio (ep10 fix 1)
 BRIGHT_CUT_RATIO = 2.0  # two shots differ "very much" when their (mean luminance + 0.05) differ by 2:1 or more
 BRIGHT_CUTS_MAX = 3     # ... and there are at most this many such cuts in any second
-HOUSE_BAR = {"general": (2, 5), "general_3f": (3, 6), "red": (1, None), "red_3f": (1, None)}
+# 2026-11-03 (owner: "Sure and yes"): blocks at the published standards, WCAG 2.3.1's 3 flashes a second and IRIS's
+# 6 transitions, plus IRIS's extended rule; red stays at 1. The old house extras (2 flashes and 5 changes on the
+# 1-frame reading, from ep10) are warnings now (HOUSE_WARN): they counted fast cuts as flicker.
+HOUSE_BAR = {"general": (3, None), "general_3f": (3, 6), "red": (1, None), "red_3f": (1, None)}
+HOUSE_WARN = {"general": (2, 5)}
 
 
 def window_changes(trans: list[tuple[int, int]], n_frames: int) -> np.ndarray:
@@ -450,6 +454,13 @@ def house_report(lum: list[np.ndarray], red: list[np.ndarray], cuts: list[int] |
         bc = bright_cuts(lum, cuts)
         rep["bright_cuts"] = bc
         bar["bright_cuts_le_3"] = bc["ok"]
+    warn = []
+    for key, (f_w, c_w) in HOUSE_WARN.items():
+        if rep[f"{key}_max_flashes_per_s"] > f_w:
+            warn.append(f"{key}: {rep[f'{key}_max_flashes_per_s']} flashes in a second (old house bar {f_w})")
+        if rep[f"{key}_max_changes_per_s"] > c_w:
+            warn.append(f"{key}: {rep[f'{key}_max_changes_per_s']} changes in a second (old house bar {c_w})")
+    rep["house_warnings"] = warn
     bar["pass"] = all(bar.values())
     rep["house_bar"] = bar
     return rep
