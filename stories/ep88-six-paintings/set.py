@@ -107,26 +107,26 @@ def subject_B(cx, cz):
     canvas(cx, cz, "#cfe3ef")
     paint(cx, cz, 0, -0.62, 0.9, 0.52, "#7fa86a", 1)           # grass
     gr, dk = "#aeb5c0", "#7b8390"
-    k, ox, oz = 0.85, -0.03, -0.02
+    k, ox, oz = 0.85, -0.09, -0.02
 
     def d(dx, dz, w, h, c, layer, rot=0.0):
         paint(cx, cz, dx * k + ox, dz * k + oz, w * k, h * k, c, layer, rot=rot)
     # the greyhound ALONE, side view facing right: deep chest, tucked belly, long legs, a long snout
     d(0.0, 0.12, 0.52, 0.15, gr, 5)                            # back and flank
-    d(-0.2, 0.08, 0.2, 0.26, gr, 5)                            # haunch
-    d(0.2, 0.02, 0.22, 0.32, gr, 5)                            # deep chest
-    d(-0.02, -0.04, 0.24, 0.08, dk, 6)                         # tucked belly shade
+    d(-0.2, 0.08, 0.2, 0.26, gr, 6)                            # haunch
+    d(0.2, 0.02, 0.22, 0.32, gr, 6)                            # deep chest
+    d(-0.02, -0.04, 0.24, 0.08, dk, 8)                         # tucked belly shade
     for x in (0.22, 0.3):
-        d(x, -0.3, 0.055, 0.42, gr, 5)                         # front legs
+        d(x, -0.3, 0.055, 0.42, gr, 7)                         # front legs
     for x in (-0.24, -0.14):
-        d(x, -0.3, 0.055, 0.42, dk, 5)                         # rear legs
+        d(x, -0.3, 0.055, 0.42, dk, 7)                         # rear legs
     d(-0.38, 0.06, 0.24, 0.045, gr, 5, rot=0.6)                # tail
-    d(0.3, 0.3, 0.12, 0.3, gr, 5, rot=-0.3)                    # long neck
-    d(0.37, 0.48, 0.15, 0.12, gr, 6)                           # skull
-    d(0.5, 0.45, 0.22, 0.06, gr, 6)                            # long snout
-    d(0.62, 0.455, 0.04, 0.045, "#15151c", 7)                  # nose
-    d(0.31, 0.5, 0.06, 0.11, dk, 7, rot=0.4)                   # ear
-    d(0.4, 0.5, 0.035, 0.035, "#101018", 7)                    # eye
+    d(0.3, 0.3, 0.12, 0.3, gr, 7, rot=-0.3)                    # long neck
+    d(0.37, 0.48, 0.15, 0.12, gr, 8)                           # skull
+    d(0.5, 0.45, 0.22, 0.06, gr, 9)                            # long snout
+    d(0.62, 0.455, 0.04, 0.045, "#15151c", 10)                 # nose
+    d(0.31, 0.5, 0.06, 0.11, dk, 10, rot=0.4)                  # ear
+    d(0.4, 0.5, 0.035, 0.035, "#101018", 10)                   # eye
 
 
 def subject_D(cx, cz):
@@ -134,10 +134,10 @@ def subject_D(cx, cz):
     paint(cx, cz, 0, -0.78, 0.9, 0.26, "#7a4a2a", 1)           # table
     for dx, up, c, sh in ((-0.2, 0.0, "#d7e04a", "#a9b52c"), (0.22, 0.08, "#e8ec6a", "#b8be3e")):
         paint(cx, cz, dx, -0.3 + up, 0.36, 0.3, c, 2)           # pear belly, fat bottom
-        paint(cx, cz, dx + 0.12, -0.3 + up, 0.1, 0.28, sh, 3)   # shaded side
-        paint(cx, cz, dx, -0.08 + up, 0.26, 0.2, c, 2)          # shoulder
-        paint(cx, cz, dx, 0.13 + up, 0.14, 0.24, c, 2)          # narrow neck
-        paint(cx, cz, dx + 0.01, 0.34 + up, 0.035, 0.1, "#4a2c14", 3)   # stem
+        paint(cx, cz, dx + 0.12, -0.3 + up, 0.1, 0.28, sh, 4)   # shaded side
+        paint(cx, cz, dx, -0.08 + up, 0.26, 0.2, c, 3)          # shoulder
+        paint(cx, cz, dx, 0.13 + up, 0.14, 0.24, c, 4)          # narrow neck
+        paint(cx, cz, dx + 0.01, 0.34 + up, 0.035, 0.1, "#4a2c14", 5)   # stem
     paint(cx, cz, 0.0, -0.5, 0.8, 0.1, "#d4502a", 5)            # bowl rim
     paint(cx, cz, 0, -0.62, 0.6, 0.16, "#b23c20", 5)            # bowl belly
     paint(cx, cz, 0, -0.72, 0.3, 0.05, "#8a2c16", 5)            # foot
@@ -179,7 +179,7 @@ def fog_material(kit):
     tc = nt.nodes.new("ShaderNodeTexCoord")
     mp = nt.nodes.new("ShaderNodeMapping")
     mp.inputs["Location"].default_value = (0, 0, 0)
-    mp.inputs["Scale"].default_value = (5.0, 5.0, 5.0)
+    mp.inputs["Scale"].default_value = (8.4, 8.4, 8.4)
     mp.vector_type = "POINT"
     gr = nt.nodes.new("ShaderNodeTexGradient")
     gr.gradient_type = "QUADRATIC_SPHERE"
@@ -187,7 +187,7 @@ def fog_material(kit):
     rp.color_ramp.elements[0].position = 0.0
     rp.color_ramp.elements[0].color = (0, 0, 0, 1)
     rp.color_ramp.elements[1].position = 1.0
-    rp.color_ramp.elements[1].color = (0.6, 0.6, 0.6, 1)
+    rp.color_ramp.elements[1].color = (0.5, 0.5, 0.5, 1)
     rp.color_ramp.interpolation = "EASE"
     nt.links.new(tc.outputs["Object"], mp.inputs[0])
     nt.links.new(mp.outputs[0], gr.inputs[0])
@@ -255,7 +255,9 @@ def build(kit, story, tl):
     wx0, wx1, wz0, wz1 = 0.65, 1.75, 3.15, 5.15      # window opening in C's frame cell
     H = 8.0
     def seg(x0, x1, z0, z1):
-        B((x1 - x0, wd, z1 - z0), ((x0 + x1) / 2, wy, (z0 + z1) / 2), oxb, "wall", 0.0)
+        o = B((x1 - x0, wd, z1 - z0), ((x0 + x1) / 2, wy, (z0 + z1) / 2), oxb, "wall", 0.0)
+        if z0 == wz1:
+            o.visible_shadow = False   # the wall above the opening doesn't stop the man's key
     seg(-8, wx0, 0, H)
     seg(wx1, 8, 0, H)
     seg(wx0, wx1, 0, wz0)
@@ -276,13 +278,12 @@ def build(kit, story, tl):
     cx, cz = 1.2, TOPZ
     yf = WALL_Y - 0.05
     for (w, h, dx, dz) in ((1.1, 0.1, 0, 0.95), (1.1, 0.1, 0, -0.95), (0.1, 1.8, -0.5, 0), (0.1, 1.8, 0.5, 0)):
-        B((w, 0.12, h), (cx + dx, WALL_Y - 0.06, cz + dz), wf, "wframe", 0.02)
+        B((w, 0.12, h), (cx + dx, WALL_Y - 0.06, cz + dz), wf, "wframe", 0.02).visible_shadow = False
     B((1.3, 0.12, 0.06), (cx, WALL_Y - 0.1, cz - 1.0), wf, "wsill", 0.01)
-    B((0.07, 0.04, 0.12), (cx + 0.38, WALL_Y - 0.13, cz - 0.4), P("#d9a441", 0.25, 0.9), "wlatch", 0.005)
     ctx["pane"] = kit.plane(nm("pane"), (0.9, 1.8), (cx, WALL_Y + 0.05, cz), pane_material(kit), None,
                             rot=(math.pi / 2, 0, 0))
     ctx["pane"].visible_shadow = False
-    ctx["fog"] = kit.plane(nm("fogdisc"), (0.36, 0.36), (cx + 0.0, WALL_Y + 0.4, cz + 0.52), fog_material(kit), None,
+    ctx["fog"] = kit.plane(nm("fogdisc"), (0.24, 0.24), (cx + 0.0, WALL_Y + 0.4, cz + 0.40), fog_material(kit), None,
                            rot=(math.pi / 2, 0, 0))
     ctx["fog"].visible_shadow = False
     # ---- the garden behind: terrace, hedge, trees, flowers, sky wall
@@ -308,9 +309,9 @@ def build(kit, story, tl):
     sh = B((1.6, 0.05, 3.2), (1.2, WALL_Y + 0.08, TOPZ), P("#000000"), "shield", 0.0)
     sh.visible_camera = False
     # steep key from above and a little in front: the brow (a hidden shelf above the eyes) throws a hard band across them
-    ctx["sun"] = kit.light("manlight", "SUN", (2.2, -2.0, 7.9), 11.0, "#fff2d6", shadow=True)
+    ctx["sun"] = kit.light("manlight", "SPOT", (2.2, -2.0, 7.9), 2400.0, "#fff0d0", size=0.05, spot=12, blend=0.35, shadow=True)
     kit.aim(ctx["sun"], (1.2, 3.65, 4.9))
-    brow = B((0.8, 0.3, 0.06), (1.2, 3.5, 5.03), P("#000000"), "browshelf", 0.0)
+    brow = B((0.5, 0.8, 0.05), (1.2, 3.25, 5.03), P("#000000"), "browshelf", 0.0)
     brow.visible_camera = False
     ctx["rim"] = kit.light("rim", "AREA", (2.5, 7.0, 6.5), 30, "#fff3d0", size=2.0, shadow=False)
     kit.aim(ctx["rim"], (1.2, 3.95, 4.3))
@@ -330,5 +331,17 @@ def animate(kit, story, tl, t, ctx):
     u = 0.5 - 0.5 * math.cos(math.pi * (t % 2.0))
     s = 0.35 + 0.45 * u
     ctx["fog"].scale = (s, s, s)
+    if not ctx.get("linked"):   # the man's key lights only him: no spill circle on the wall
+        man = bpy.data.objects.get("watcher")
+        if man is not None:
+            objs = [man] + list(man.children_recursive)
+            col = bpy.data.collections.new("man only")
+            for ob in objs:
+                if ob.type == "MESH":
+                    col.objects.link(ob)
+            for co in col.collection_objects:
+                co.light_linking.link_state = "INCLUDE"
+            ctx["sun"].light_linking.receiver_collection = col
+            ctx["linked"] = True
     ctx["pane"].hide_render = 36.2 <= t < 37.9
     return {}
