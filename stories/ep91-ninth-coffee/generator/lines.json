@@ -1,0 +1,804 @@
+[
+ {
+  "id": "L01",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Every coffee",
+    "every coffee"
+   ],
+   [
+    "makes you",
+    "makes you"
+   ],
+   [
+    "twice as FAST.",
+    "twice as fast."
+   ],
+   [
+    "I've had NINE.",
+    "i've had nine."
+   ]
+  ]
+ },
+ {
+  "id": "L02",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Don't drink",
+    "don't drink"
+   ],
+   [
+    "a TENTH.",
+    "a tenth."
+   ],
+   [
+    "Nobody comes back",
+    "nobody comes back"
+   ],
+   [
+    "from TEN.",
+    "from ten."
+   ]
+  ]
+ },
+ {
+  "id": "L03",
+  "who": "narrator",
+  "chunks": [
+   [
+    "One cup,",
+    "one cup,"
+   ],
+   [
+    "you type",
+    "you type"
+   ],
+   [
+    "twice as FAST.",
+    "twice as fast."
+   ]
+  ]
+ },
+ {
+  "id": "L04",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Two,",
+    "two,"
+   ],
+   [
+    "the elevator",
+    "the elevator"
+   ],
+   [
+    "takes half as LONG.",
+    "takes half as long."
+   ]
+  ]
+ },
+ {
+  "id": "L05",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Four,",
+    "four,"
+   ],
+   [
+    "everybody else",
+    "everybody else"
+   ],
+   [
+    "talks like a SLOW song.",
+    "talks like a slow song."
+   ]
+  ]
+ },
+ {
+  "id": "L06",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Most people",
+    "most people"
+   ],
+   [
+    "stop at TWO.",
+    "stop at two."
+   ]
+  ]
+ },
+ {
+  "id": "L06a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Because it never",
+    "because it never"
+   ],
+   [
+    "WEARS off.",
+    "wears off."
+   ]
+  ]
+ },
+ {
+  "id": "L07",
+  "who": "narrator",
+  "chunks": [
+   [
+    "My best friend, KAI,",
+    "my best friend, kai,"
+   ],
+   [
+    "sits",
+    "sits"
+   ],
+   [
+    "one desk OVER.",
+    "one desk over."
+   ]
+  ]
+ },
+ {
+  "id": "L08",
+  "who": "narrator",
+  "chunks": [
+   [
+    "We used to get coffee",
+    "we used to get coffee"
+   ],
+   [
+    "every MORNING.",
+    "every morning."
+   ]
+  ]
+ },
+ {
+  "id": "L09",
+  "who": "narrator",
+  "chunks": [
+   [
+    "For a year now,",
+    "for a year now,"
+   ],
+   [
+    "he's always",
+    "he's always"
+   ],
+   [
+    "too BUSY.",
+    "too busy."
+   ]
+  ]
+ },
+ {
+  "id": "L10",
+  "who": "narrator",
+  "chunks": [
+   [
+    "I never see him ARRIVE.",
+    "i never see him arrive."
+   ],
+   [
+    "I never see him LEAVE.",
+    "i never see him leave."
+   ]
+  ]
+ },
+ {
+  "id": "L11",
+  "who": "narrator",
+  "chunks": [
+   [
+    "His desk",
+    "his desk"
+   ],
+   [
+    "is always perfectly NEAT.",
+    "is always perfectly neat."
+   ]
+  ]
+ },
+ {
+  "id": "L12",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And every MORNING,",
+    "and every morning,"
+   ],
+   [
+    "everybody's work",
+    "everybody's work"
+   ],
+   [
+    "is already DONE.",
+    "is already done."
+   ]
+  ]
+ },
+ {
+  "id": "L13",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Friday.",
+    "friday."
+   ],
+   [
+    "My report",
+    "my report"
+   ],
+   [
+    "was due at FIVE.",
+    "was due at five."
+   ]
+  ]
+ },
+ {
+  "id": "L14",
+  "who": "narrator",
+  "chunks": [
+   [
+    "At three,",
+    "at three,"
+   ],
+   [
+    "I had",
+    "i had"
+   ],
+   [
+    "NOTHING.",
+    "nothing."
+   ]
+  ]
+ },
+ {
+  "id": "L15",
+  "who": "narrator",
+  "chunks": [
+   [
+    "So I kept POURING.",
+    "so i kept pouring."
+   ]
+  ]
+ },
+ {
+  "id": "L16",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Five cups.",
+    "five cups."
+   ],
+   [
+    "Thirty-two times FAST.",
+    "thirty-two times fast."
+   ],
+   [
+    "The clock hands CRAWL.",
+    "the clock hands crawl."
+   ]
+  ]
+ },
+ {
+  "id": "L17",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Seven.",
+    "seven."
+   ],
+   [
+    "My boss",
+    "my boss"
+   ],
+   [
+    "FREEZES",
+    "freezes"
+   ],
+   [
+    "mid-sneeze.",
+    "mid-sneeze."
+   ]
+  ]
+ },
+ {
+  "id": "L18",
+  "who": "narrator",
+  "chunks": [
+   [
+    "NINE.",
+    "nine."
+   ]
+  ]
+ },
+ {
+  "id": "P01",
+  "pause": 0.6,
+  "chunks": [
+   [
+    "",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L19",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Five hundred",
+    "five hundred"
+   ],
+   [
+    "and twelve times FAST.",
+    "and twelve times fast."
+   ]
+  ]
+ },
+ {
+  "id": "L20",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The whole office",
+    "the whole office"
+   ],
+   [
+    "STOPPED.",
+    "stopped."
+   ]
+  ]
+ },
+ {
+  "id": "L21",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And I",
+    "and i"
+   ],
+   [
+    "wasn't ALONE.",
+    "wasn't alone."
+   ]
+  ]
+ },
+ {
+  "id": "L22",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Between the desks",
+    "between the desks"
+   ],
+   [
+    "there were OTHERS,",
+    "there were others,"
+   ]
+  ]
+ },
+ {
+  "id": "L23",
+  "who": "narrator",
+  "chunks": [
+   [
+    "even FASTER than me,",
+    "even faster than me,"
+   ],
+   [
+    "leaving long streaks",
+    "leaving long streaks"
+   ],
+   [
+    "of COLOR.",
+    "of color."
+   ]
+  ]
+ },
+ {
+  "id": "L24",
+  "who": "narrator",
+  "chunks": [
+   [
+    "FILING.",
+    "filing."
+   ],
+   [
+    "Typing.",
+    "typing."
+   ],
+   [
+    "Straightening every DESK.",
+    "straightening every desk."
+   ]
+  ]
+ },
+ {
+  "id": "L25",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Doing",
+    "doing"
+   ],
+   [
+    "everybody's WORK.",
+    "everybody's work."
+   ]
+  ]
+ },
+ {
+  "id": "L26",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That's why",
+    "that's why"
+   ],
+   [
+    "the office",
+    "the office"
+   ],
+   [
+    "is always DONE.",
+    "is always done."
+   ]
+  ]
+ },
+ {
+  "id": "L27",
+  "who": "narrator",
+  "chunks": [
+   [
+    "They're the TEN-cuppers.",
+    "they're the ten-cuppers."
+   ]
+  ]
+ },
+ {
+  "id": "L28",
+  "who": "narrator",
+  "chunks": [
+   [
+    "People who drank",
+    "people who drank"
+   ],
+   [
+    "a tenth cup,",
+    "a tenth cup,"
+   ],
+   [
+    "and can't come DOWN.",
+    "and can't come down."
+   ]
+  ]
+ },
+ {
+  "id": "L29",
+  "who": "narrator",
+  "chunks": [
+   [
+    "They move so fast,",
+    "they move so fast,"
+   ],
+   [
+    "we only ever see",
+    "we only ever see"
+   ],
+   [
+    "what they LEAVE.",
+    "what they leave."
+   ]
+  ]
+ },
+ {
+  "id": "L30",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And one of them",
+    "and one of them"
+   ],
+   [
+    "stopped",
+    "stopped"
+   ],
+   [
+    "at my DESK.",
+    "at my desk."
+   ]
+  ]
+ },
+ {
+  "id": "L31",
+  "who": "narrator",
+  "chunks": [
+   [
+    "KAI.",
+    "kai."
+   ]
+  ]
+ },
+ {
+  "id": "L32",
+  "who": "narrator",
+  "chunks": [
+   [
+    "A year ago,",
+    "a year ago,"
+   ],
+   [
+    "he drank TEN",
+    "he drank ten"
+   ],
+   [
+    "to make a deadline.",
+    "to make a deadline."
+   ]
+  ]
+ },
+ {
+  "id": "L33",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He's been here",
+    "he's been here"
+   ],
+   [
+    "every second since.",
+    "every second since."
+   ],
+   [
+    "Just too FAST",
+    "just too fast"
+   ],
+   [
+    "to see.",
+    "to see."
+   ]
+  ]
+ },
+ {
+  "id": "L34",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He was never",
+    "he was never"
+   ],
+   [
+    "too busy for me.",
+    "too busy for me."
+   ],
+   [
+    "He's been finishing",
+    "he's been finishing"
+   ],
+   [
+    "MY work.",
+    "my work."
+   ]
+  ]
+ },
+ {
+  "id": "L35",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He wrote me a sticky NOTE,",
+    "he wrote me a sticky note,"
+   ],
+   [
+    "so fast",
+    "so fast"
+   ],
+   [
+    "it SMOKED.",
+    "it smoked."
+   ]
+  ]
+ },
+ {
+  "id": "L36",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Get me DOWN.",
+    "get me down."
+   ]
+  ]
+ },
+ {
+  "id": "L37",
+  "who": "narrator",
+  "chunks": [
+   [
+    "The rule says",
+    "the rule says"
+   ],
+   [
+    "every COFFEE",
+    "every coffee"
+   ],
+   [
+    "makes you twice as fast.",
+    "makes you twice as fast."
+   ]
+  ]
+ },
+ {
+  "id": "L38",
+  "who": "narrator",
+  "chunks": [
+   [
+    "It never says",
+    "it never says"
+   ],
+   [
+    "what DECAF does.",
+    "what decaf does."
+   ]
+  ]
+ },
+ {
+  "id": "L39",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Kai was at TEN.",
+    "kai was at ten."
+   ],
+   [
+    "So I made him",
+    "so i made him"
+   ],
+   [
+    "ten DECAFS.",
+    "ten decafs."
+   ]
+  ]
+ },
+ {
+  "id": "L40",
+  "who": "narrator",
+  "chunks": [
+   [
+    "Each one",
+    "each one"
+   ],
+   [
+    "undid a CUP.",
+    "undid a cup."
+   ]
+  ]
+ },
+ {
+  "id": "L41",
+  "who": "narrator",
+  "chunks": [
+   [
+    "After the last one,",
+    "after the last one,"
+   ],
+   [
+    "he was just KAI,",
+    "he was just kai,"
+   ],
+   [
+    "blinking",
+    "blinking"
+   ],
+   [
+    "by the coffee MACHINE.",
+    "by the coffee machine."
+   ]
+  ]
+ },
+ {
+  "id": "L42",
+  "who": "narrator",
+  "chunks": [
+   [
+    "We had LUNCH.",
+    "we had lunch."
+   ],
+   [
+    "Two HOURS",
+    "two hours"
+   ],
+   [
+    "for him.",
+    "for him."
+   ]
+  ]
+ },
+ {
+  "id": "L42a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "For me,",
+    "for me,"
+   ],
+   [
+    "at NINE,",
+    "at nine,"
+   ],
+   [
+    "it was",
+    "it was"
+   ],
+   [
+    "six WEEKS.",
+    "six weeks."
+   ]
+  ]
+ },
+ {
+  "id": "L43",
+  "who": "narrator",
+  "chunks": [
+   [
+    "He's back down",
+    "he's back down"
+   ],
+   [
+    "to ZERO cups.",
+    "to zero cups."
+   ]
+  ]
+ },
+ {
+  "id": "L44",
+  "who": "narrator",
+  "chunks": [
+   [
+    "That was every decaf",
+    "that was every decaf"
+   ],
+   [
+    "in the BUILDING.",
+    "in the building."
+   ]
+  ]
+ },
+ {
+  "id": "L45",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And I'm still",
+    "and i'm still"
+   ],
+   [
+    "at NINE.",
+    "at nine."
+   ]
+  ]
+ },
+ {
+  "id": "L45a",
+  "who": "narrator",
+  "chunks": [
+   [
+    "And every DAY,",
+    "and every day,"
+   ],
+   [
+    "that tenth cup",
+    "that tenth cup"
+   ],
+   [
+    "looks BETTER.",
+    "looks better."
+   ]
+  ]
+ }
+]
