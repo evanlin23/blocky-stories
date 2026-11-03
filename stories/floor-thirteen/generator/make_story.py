@@ -76,7 +76,7 @@ BACK_WIDE = still([0.0, 1.4, 1.45], [0.0, -1.9, 1.5], 22)
 BACK_WIDE_B = still([-0.1, 1.05, 1.5], [0.0, -1.9, 1.5], 22)
 FIRST = still([0.12, 1.1, 1.6], [0.0, -1.9, 1.55], 22)           # over my shoulder, the doors parting on bright 13
 PANEL_LOW = still([-0.74, -0.33, 0.95], [-0.745, -0.94, 0.95], 40)
-PANEL_MID = still([-0.74, -0.33, 1.25], [-0.745, -0.94, 1.25], 40)   # the 12 (z 1.23) and the 13 (z 1.29)
+PANEL_MID = still([-0.70, -0.62, 1.265], [-0.75, -0.94, 1.262], 50)   # the 12 (z 1.226) and the 13 (z 1.292), digits on both
 INDICATOR = still([0.0, 0.0, 2.2], [0.0, -0.94, 2.3], 30)
 FACE_ME = still([0.32, -0.86, 1.52], [-0.1, 0.6, 1.5], 24)
 HELD = still([0.05, 0.95, 1.1], [0.0, -1.9, 1.8], 18)             # the bump frame, locked off
@@ -104,10 +104,16 @@ def lamp(cam, aim, w=1.0, up=0.45, c="#e8e4dc", size=0.7, side=0.0):
 
 
 # 01 floor thirteen, bright
-shot(0, "first frame: the doors part on bright 13: shelves, Mr. Abel turning with his keys, 13 lit above", FIRST, 1, 0.006)
-shot("L01", "wide from the doorway: shelves both sides, every thing tagged", still([0.0, -0.45, 1.5], [0.0, -7.0, 1.4], 20))
-shot("L01.2", "closer on a shelf: kettle, hat, books, each with a brass tag", still([-0.2, -2.0, 1.4], [-1.4, -4.0, 1.3], 24))
-shot("L02", "the board of keys, a tag on every ring; Mr. Abel lifts his set off it", still([-0.8, -3.0, 1.55], [1.2, -3.0, 1.55], 14))
+# the opening (recipe v1, 2026-11-03): the warning over the 13 button lit on its own, pushing in; my face on OUT
+PANEL_PUSH = move(([-0.60, -0.15, 1.30], [-0.7075, -0.94, 1.292]), ([-0.65, -0.42, 1.295], [-0.7075, -0.94, 1.292]), 33, 46)
+shot(0, "first frame: the floor panel close, the 13 button lit cold on its own, my finger hovering by the 12; pushing in",
+     PANEL_PUSH, 1, 0.004)
+shot("L01.3-0.2", "my face in the car, looking at the panel: the DING and the hit land on OUT; the walnut wall behind, the cold panel glow on my face", FACE_ME, 2, 0.006,
+     {"at": [-0.55, -0.8, 1.55], "aim": [-0.1, 0.6, 1.5], "w": 0.8, "c": "#a9c8ff", "size": 0.6})
+shot("L02", "bright 13: the board of keys, a tag on every ring; Mr. Abel lifts his set off it",
+     still([-0.8, -3.0, 1.55], [1.2, -3.0, 1.55], 22))
+shot("L02b", "the doors part on bright 13: shelves, Mr. Abel turning with his keys, 13 lit above", FIRST, 1, 0.006)
+shot("L02b.2", "closer on a shelf: kettle, hat, books, each with a brass tag", still([-0.2, -2.0, 1.4], [-1.4, -4.0, 1.3], 24))
 shot("L03", "Mr. Abel with a big iced cake on a stand, guilty", still([0.1, -2.6, 1.4], [0.1, -4.5, 1.15], 18))
 shot("L03.3", "the cake close, its brass tag", still([0.1, -3.0, 1.15], [0.1, -4.0, 1.1], 14))
 SHOT_LAND = still([0.8, -2.7, 1.6], [-0.4, -5.0, 1.45], 16)
@@ -164,8 +170,8 @@ shot("P05", "THE BUMP: the held centre-line frame, locked off: the leaves hit it
 shot("L34", "my face lit cold from below by its buttons", FACE_FEAR, 1, 0.004,
      lamp(FACE_FEAR, [-0.35, 0.15, 1.55], 0.5, up=0.1, c="#bcd0ff", side=0.2))
 shot("L35", "the doorway is empty across the cut, the doors closing with nothing in the way", BACK_WIDE, 1, 0.003)
-shot("L36", "my orange shoes on concrete steps, fast", still([STX + 0.45, -3.6, 0.55], [STX, -1.4, 0.95], 22))
-shot("L36.2", "lower down the steps", still([STX + 0.4, -1.2, 1.35], [STX, -2.8, 0.2], 24))
+SD_CAM = still([-1.0, -1.5, 1.5], [1.2, -3.5, 1.2], 18)
+shot("L36", "the twelve landing: the stairwell door swings open and I come through", SD_CAM)
 # 06 Grandad's door
 shot("L37", "the twelve landing, his door opening, his face", SHOT_HIS_DOOR)
 L38C = still([0.0, -4.1, 1.6], [-0.55, -5.1, 1.55], 22)
@@ -197,7 +203,21 @@ shot("L50", "the doors part on dark thirteen: the Attendant facing the car, my t
      tl={"at": [0.5, -1.0, 0.5], "aim": [0.0, -2.2, 0.55], "w": 0.9, "c": "#bcd0ff", "size": 0.3})
 
 shots = []
+def drift(cam, k, amt=0.06):
+    """No shot is static: a single-key camera gets a slow push (every other one also drifts sideways)."""
+    if len(cam) != 1:
+        return cam
+    t, loc, tgt, lens = cam[0]
+    loc2 = [loc[i] + amt * (tgt[i] - loc[i]) for i in range(3)]
+    if k % 2:
+        loc2[0] += 0.06
+    return [cam[0], [1, [round(v, 3) for v in loc2], tgt, lens]]
+
+
+NO_DRIFT = {"P05"}
 for k, s in enumerate(SH):
+    if s["at"] not in NO_DRIFT:
+        s["cam"] = drift(s["cam"], k)
     d = {"id": f"S{k + 1:02d}", "cam": s["cam"], "step": s["step"], "hand": s["hand"]}
     if s.get("key"):
         d["key"] = s["key"]
@@ -242,13 +262,14 @@ for who in cast:
 ME_BACK = [-0.1, 0.6]
 BAL_HIM = [BX + 0.5, 0.75]
 BAL_ME = [BX - 0.5, 0.75]
-HIS_DOOR = [-0.55, -5.1]
+HIS_DOOR = [-0.55, -4.9]   # stands clear of the leaf's swing (it opens into the flat, y < -5.2)
 
 # --- 01: bright thirteen
-put("abel", 0, [0.1, -2.0], yaw=180, arms=[0, 100], expr="grin")
-put("abel", "L01", [0.35, -4.9], yaw=180, arms=[0, 100], expr="grin")
+put("me", 0, ME_BACK, yaw=0, expr="worried")
+hide("me", "L02")
 put("abel", "L02", [0.8, -3.0], yaw=-90, arms=[0, 30], expr="grin")
 key("abel", "L02.1", arms=[0, 105], blend=0.35)
+put("abel", "L02b", [0.1, -2.0], yaw=180, arms=[0, 100], expr="grin")
 put("abel", "L03", [0.1, -4.6], yaw=180, arms=[70, 70], expr="worried")
 put("abel", "L04", [0.2, -4.3], yaw=0, arms=[70, 70], expr="worried")
 hide("abel", "L04.2")
@@ -281,7 +302,7 @@ hide("okafor", "L13")
 # --- 03: Tuesday (me, small and in the car only for the faces)
 put("me", "L14.1", ME_BACK, yaw=0, expr="worried")
 hide("me", "P02")
-put("okafor", "L19", [-0.55, -5.0], yaw=180, arms=[0, 100], expr="grin")
+put("okafor", "L19", [-0.55, -4.9], yaw=180, arms=[0, 100], expr="grin")
 for k in range(4):   # a wave of the tomato
     key("okafor", f"L19.3+{0.25 * k:.2f}", arms=[0, 90 if k % 2 == 0 else 115], blend=0.12)
 hide("okafor", "L20")
@@ -300,9 +321,10 @@ put("me", "P05", ME_HELD["pos"], yaw=ME_HELD["yaw"], head=ME_HELD["head"], expr=
 put("me", "L34", [-0.35, 0.2], yaw=0, head=[0, -6], expr="terrified")
 hide("me", "L35")
 # the stairs: I run down toward -y; z follows the nosings (rise .13 per .2 run)
-put("me", "L36", [STX, -0.25, 1.92], yaw=0, expr="worried")
-walk("me", "L36>+0.1", [STX, -2.4, 0.5], keep_yaw=False)
-walk("me", "L36.2>", [STX, -3.4, -0.13])
+put("me", "L36", [2.0, -3.5], yaw=90, expr="worried")
+walk("me", "L36+0.1", [1.3, -3.5], keep_yaw=False)
+walk("me", "L36+0.6", [0.9, -3.5], keep_yaw=False)
+walk("me", "L36>", [0.3, -3.3])
 hide("me", "L37")
 # --- 06: Grandad's door
 put("okafor", "L37", HIS_DOOR, yaw=180, expr="neutral")
@@ -311,7 +333,7 @@ talk("okafor", "L39.1", "L39>")
 put("me", "L39.2", [-0.1, -3.6], yaw=0, head=[0, 0], expr="worried")
 put("me", "P06", [0.0, -3.6], yaw=0, head=[0, 0], expr="worried")
 put("me", "L41", [0.2, -4.2], yaw=0, expr="worried")
-put("okafor", "L41", [-0.55, -5.15], yaw=180, expr="smile")
+put("okafor", "L41", [-0.55, -4.9], yaw=180, expr="smile")
 # --- 07: fetching
 hide("okafor", "L42")
 put("me", "L42", [0.0, 0.35], yaw=0, expr="worried")
@@ -348,7 +370,8 @@ def thirteen(at, dur=1.2, **kw):
 
 
 # the lights: bright thirteen is the car's light plus the warm lamps; dark thirteen the dimmed car and the cold lamp
-cue(0, "lights", state="bright")
+cue(0, "lights", state="on")
+cue("L01.3-0.6", "lights", state="bright", dur=0.5)
 cue("L04", "lights", state="land", dur=0.3)
 cue("L05", "lights", state="on", dur=0.3)
 cue("L06", "lights", state="bright", dur=0.3)
@@ -365,8 +388,11 @@ cue("L27", "lights", state="on", dur=0.4)
 thirteen("P04", 1.4, fill=0.8)
 thirteen("P05", 0.5, rim=0.7, fill=0.0)
 thirteen("L34", 0.4, rim=0.5, fill=1.1)
-cue("L36", "lights", state="stairs", dur=0.6)
-cue("L37", "lights", state="land", dur=0.4)
+cue("L36", "lights", state="land", dur=0.3)
+cue(0, "stair_door", open=0.0)
+cue("L36-0.6", "stair_door", open=1.0, dur=0.3)
+cue("L37", "stair_door", open=0.0, dur=0.1)
+cue("L37", "lights", state="land", dur=0.9)
 thirteen("L42", 1.0, rim=0.6, fill=1.0, shelf=0.0)
 thirteen("L43.3", 0.5, rim=0.6, fill=1.0, shelf=1.0)
 cue("L45", "lights", state="land", dur=0.5)
@@ -375,8 +401,9 @@ cue("L49", "lights", state="on", dur=0.5)
 thirteen("L50", 1.0, rim=0.0, fill=0.0)
 
 # the doors: gap in metres between the leaves (1.1 open). The hall's own doors stay open.
-cue(0, "doors", gap=0.14, hall=1.0)
-cue(0.04, "doors", gap=DOOR_W, hall=1.0, dur=0.55)
+cue(0, "doors", gap=0.0, hall=1.0)
+cue("L02b", "doors", gap=0.14, hall=1.0)
+cue("L02b+0.04", "doors", gap=DOOR_W, hall=1.0, dur=0.55)
 cue("L07", "doors", gap=0.0, hall=1.0, dur=0.5)
 cue("P02", "doors", gap=DOOR_W, hall=1.0, dur=0.6)
 cue("L18.1", "doors", gap=0.0, hall=1.0, dur=1.5)
@@ -395,7 +422,7 @@ cue("L50", "doors", gap=DOOR_W, hall=1.0, dur=0.7)
 
 # the landing's two front doors
 cue(0, "land_doors", me=0.0, him=0.0)
-cue("L04", "land_doors", me=0.0, him=1.0, dur=0.1)
+cue("L04-0.3", "land_doors", me=0.0, him=1.0, dur=0.2)
 cue("L05", "land_doors", me=0.0, him=0.0, dur=0.1)
 cue("L08", "land_doors", me=0.0, him=0.0, dur=0.1)
 cue("L08.1", "land_doors", me=0.0, him=1.0, dur=0.7)
@@ -406,7 +433,8 @@ cue("L37.1", "land_doors", me=0.0, him=1.0, dur=0.6)
 cue("L45", "land_doors", me=0.0, him=1.0, dur=0.1)
 
 # the floor indicator
-cue(0, "indicator", floor="13", arrow=None)
+cue(0, "indicator", floor="12", arrow="up")
+cue("L01.1", "indicator", floor="13", arrow=None)
 cue("L07", "indicator", floor="12", arrow=None)
 cue("L11", "indicator", floor="13", arrow=None)
 cue("L13", "indicator", floor="12", arrow=None)
@@ -421,15 +449,18 @@ cue("L49.1+0.3", "indicator", floor="12", arrow="up")
 cue("L49.1+0.75", "indicator", floor="13", arrow=None)
 
 # the floor panel's lit buttons (11 is the 12, 12 the 13, 21 close)
-cue(0, "panel", lit=[])
+cue(0, "panel", lit=[12])                       # the 13 button, lit on its own: the opening's warned-of thing
+cue("L02", "panel", lit=[])
 cue("L13+0.25", "panel", lit=[11])
-cue("L14.1", "panel", lit=[])
+cue("L13+0.7", "panel", lit=[11, 12])           # Tuesday: the 13 lights up by itself as my finger lifts (the plant)
+cue("L14-0.25", "panel", lit=[])
 for k in range(9):
     cue(f"L32+{0.05 + 0.18 * k:.2f}", "panel", lit=[21])
     cue(f"L32+{0.12 + 0.18 * k:.2f}", "panel", lit=[])
 
 # my finger (press goes 0 to 1 and back)
-cue(0, "finger", on=False)
+cue(0, "finger", on=True, button=11, press=0.0)   # hovering by the 12: I didn't press the 13
+cue("L01.3", "finger", on=False)
 cue("L13", "finger", on=True, button=11, press=0.0)
 cue("L13+0.25", "finger", on=True, button=11, press=1.0, dur=0.1)
 cue("L13+0.7", "finger", on=True, button=11, press=0.0, dur=0.1)
@@ -451,8 +482,8 @@ BUMP = dict(pose="bump", bend=44, head=[-16, 0, 0], glow=0.75, eye=1.9, peak=0.0
 cue("P05", "attendant", lit="all", dur=0.5, **BUMP)
 cue("L35", "attendant", hidden=True)
 cue("L43", "attendant", pose="shelf", lit=[5], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0)
-cue("L43.1+0.3", "attendant", pose="shelf", lit=[4], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
-cue("L43.2", "attendant", pose="shelf", lit=[3], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
+cue("L43+0.38", "attendant", pose="shelf", lit=[4], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
+cue("L43+0.72", "attendant", pose="shelf", lit=[3], glow=1.6, eye=1.4, side=1.0, rim=1.0, wash=0.0, key=0.0, dur=0.3)
 cue("L45", "attendant", hidden=True)
 cue("L50", "attendant", pose="last", lit=[4], glow=1.5, eye=1.3, side=0.15, rim=0.5, sleeve=0.25, wash=0.7, key=0.4)
 
@@ -492,7 +523,9 @@ def sf(at, kind, db, **kw):
     sfx.append({"at": at, "kind": kind, "db": db, **kw})
 
 
-for at in ("P01", "P02", "P03", "P04"):
+sf("L01.3>-0.22", "bell", -15)                   # the sound hit on the warning's last word, OUT
+sf("L01.3>-0.22", "hit", -9, keep=True)
+for at in ("P02", "P03", "P04"):
     sf(at, "bell", -15)
 sf("L13+0.25", "click", -12)
 for k in range(9):
@@ -508,15 +541,34 @@ sf("L42", "whoosh", -28, dur=0.7)
 sf("L50", "whoosh", -28, dur=0.7)
 sf("L08.1", "door", -30, dur=0.6)
 sf("L37.1", "door", -30, dur=0.6)
+sf("L36", "door", -24, dur=0.6)
 sf("L31", "sting", -24)
+# post sfx (2026-11-03 lift): the doors, the bump and the beats land with recorded effects
+sf("L02b", "bell", -20)
+sf("L02b", "whoosh", -22, dur=0.8)
+sf("L02", "whoosh", -28, dur=0.5)
+sf("L03", "thud", -24)
+sf("L09", "whoosh", -30, dur=0.6)
+sf("P02", "door", -22, dur=1.0)
+sf("P03", "door", -22, dur=1.0)
+sf("P04", "door", -20, dur=1.0)
+sf("L17.4", "whoosh", -28, dur=1.0)
+sf("L23.3", "thud", -20)
+sf("L28", "thud", -22, keep=True)
+sf("L34", "thud", -18)
+sf("L41", "thud", -20)
+sf("L42", "door", -22, dur=1.0)
+sf("L47", "whoosh", -30, dur=0.6)
+sf("L50", "door", -20, dur=1.0)
 
 story = {
     "slug": "ep14-floor-thirteen",
-    "title": "In This Building Everything You FORGET Goes To Floor 13",
+    "title": "My 13 Button Lit Up By ITSELF 🔘",
     "made_for_kids": False,
-    "premise": "In an older apartment tower, everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it: keys, a forgotten anniversary as a cake, even a first boyfriend doing the crossword. I've never forgotten anything and never been up there. Then the lift starts going past my floor to a dark thirteen, where something in a black-and-brass lift attendant's uniform with a panel of lift buttons for a face is nearer each morning, a brass tag with my flat number hanging from its folded gloves.",
+    "fade_in": False,
+    "premise": "In an older apartment tower, everything anyone forgets turns up on the thirteenth floor, where residents ride up to fetch it: keys, a forgotten anniversary as a cake, even a first boyfriend doing the crossword. I've never forgotten anything and never been up there. Then the elevator starts going past my floor to a dark thirteen, where something in a black-and-brass elevator attendant's uniform with a panel of elevator buttons for a face is nearer each morning, a brass tag with my apartment number hanging from its folded gloves.",
     "twist": "I was the thing that turned up on thirteen, because Grandad next door had forgotten me. Nothing on thirteen is gone, though, and what you fetch back you remember: I fetch the red scarf he knits me every winter from my shelf up there, put it in his hands, and he says my name. He forgets me most mornings now, so most mornings I go up and fetch myself back.",
-    "world": "an older apartment tower in an unnamed city: a walnut-and-brass lift car, the thirteenth floor as a long umber hall of open shelves of forgotten things with brass tags (warm and busy when people fetch, dark with one cold light when the lift brings me), a beige twelfth-floor landing with two doors, and two side-by-side concrete balconies with a low wall and Grandad's crowd of terracotta pots.",
+    "world": "an older apartment tower in an unnamed city: a walnut-and-brass elevator car, the thirteenth floor as a long umber hall of open shelves of forgotten things with brass tags (warm and busy when people fetch, dark with one cold light when the elevator brings me), a beige twelfth-floor landing with two doors, and two side-by-side concrete balconies with a low wall and Grandad's crowd of terracotta pots.",
     "voice": {"voice": "am_adam", "tempo": 1.03, "rate": 1.45},
     "key_color": "#ffbf3f",
     "caption": {"ink": "#08090d", "stroke_add": 2, "shadow": 0.8},
@@ -524,7 +576,8 @@ story = {
     "gap": 0.12,
     "tail": LOOP,
     "look": {"fog": "#0d1015", "fog_density": 0.02, "fog_start": 1.5, "sky": "#0b0d11", "sky_strength": 1.0,
-             "exposure": 1.0, "flash_safe": True},
+             "exposure": 1.0, "flash_safe": True,
+             "polish": {"quiet": [["L45", "L47"]]}},
     "grade": {"shadows": [-0.02, 0.0, 0.04], "highlights": [0.0, 0.005, 0.01], "saturation": 0.88, "contrast": 1.1,
               "vignette": 0.4, "bloom": 0.22, "grain": 0.014, "red_line": 0.79},
     "phonemes": {"Abel": "ˈAbəl", "Ruiz": "ɹuˈis", "pressed": "pɹˈɛst", "forgotten": "fɚɡˈɑtᵊn"},
@@ -546,7 +599,7 @@ story = {
                   {"at": "L45", "voices": ["drone", "pad"], "energy": 0.4, "mode": "dorian"},
                   {"at": "L48", "voices": ["drone"], "energy": 0.4, "mode": "phrygian"},
               ]},
-    "sound": {"floor": "wood", "steps_db": -22,
+    "sound": {"rev": 10, "floor": "wood", "steps_db": -22,
               "ambience": [
                   {"kind": "hum", "from": 0, "to": "L08", "lufs": -40},
                   {"kind": "room", "from": "L08", "to": "L09", "lufs": -40},
