@@ -6,26 +6,50 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "in this town, your shadow stays where you're happiest.",
+   "text": "my shadow has never left my feet.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
+   "dur": 1.845,
    "onset": 0.172,
-   "end": 2.034,
+   "end": 1.655,
    "chunks": [
     [
      0.172,
-     0.603
+     0.569
     ],
     [
-     0.629,
-     1.25
+     0.569,
+     1.069
     ],
     [
-     1.25,
-     2.034
+     1.069,
+     1.655
+    ]
+   ]
+  },
+  "L01b": {
+   "text": "everyone else's goes where they're happiest.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.017,
+   "onset": 0.172,
+   "end": 1.81,
+   "chunks": [
+    [
+     0.172,
+     0.759
+    ],
+    [
+     0.759,
+     1.094
+    ],
+    [
+     1.094,
+     1.81
     ]
    ]
   },

@@ -175,6 +175,13 @@ vs 5.7, 0.27 vs 0.26, 1.25 vs 1.33 s, 2 vs 2. So the hits' numbers apply to ours
 | Saturation | 0.43 / 0.51 / 0.64 | 0.36 | 0.46, 0.71 | no: back-row is the lowest | ≥ 0.42, warn |
 | Contrast | 0.18 / 0.22 / 0.25 | 0.22 | 0.22, 0.20 | no: all of ours are inside | ≥ 0.18, warn |
 
+**Near misses (2026-11-03).** A film under one of the three rate bars by 10% or less (at least 11.25, 12.6 and 5.4)
+reads `near`, not `block` (owner: "those seem pretty close..." and "band can be like 10%"). The bars are the hits'
+p10, so 2 of the 17 hits sit under them, and the browser and the file differ by up to 0.9 on the same film
+(knock-back 10.3 vs 11.2). The flops' picture changes (10.1 and 10.3 at best) sit below the band. knock-back's motion
+energy (5.5) is inside it, but its picture changes still block. qa watches the slowest 10 s instead. Longest still has
+no band: its steps are 0.25 s, and 1.25 s is knock-back's.
+
 **What it says.** The hits change the picture about twice as often as we do and never hold still: their median
 longest still is 0.25 s, and one sample in four changes by more than our "still" threshold. Pace is the one craft
 difference that separates back-row from our flops *and* lines up with the hits. The hits are also brighter and more

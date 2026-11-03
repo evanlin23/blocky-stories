@@ -7,5 +7,5 @@
   "shape": "map",
   "opening": "ban",
   "lane": "core",
-  "hold": "batch 7: scripts only, not built yet"
+  "hold": "dropped 2026-11-03 (batch 7 build): the Stander failed the creature test still three times as silly (Opus critic). A retry needs a redesigned silhouette first (see HANDOFF.md on claude/batch7-ep80-snow-globe)."
 }
