@@ -500,7 +500,7 @@ story = {
     "look": {"fog": "#c9d8e4", "fog_density": 0.012, "fog_start": 14.0, "sky": "#8fc6ea", "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.03], "highlights": [0.04, 0.02, -0.03], "saturation": 1.0,
               "contrast": 1.05, "vignette": 0.3, "bloom": 0.45, "grain": 0.01},
-    "phonemes": {},
+    "phonemes": {"lead": "lˈid", "her": "hˈɜɹ"},
     "cast": cast,
     "marks": marks,
     "pairs": pairs,

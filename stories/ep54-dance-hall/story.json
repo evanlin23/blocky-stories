@@ -38,7 +38,10 @@
   "bloom": 0.45,
   "grain": 0.01
  },
- "phonemes": {},
+ "phonemes": {
+  "lead": "lˈid",
+  "her": "hˈɜɹ"
+ },
  "cast": {
   "me": {
    "age": "adult",
