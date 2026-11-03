@@ -606,7 +606,7 @@
    ]
   },
   "L24": {
-   "text": "A man in honey gold and smoke gray, perfectly still.",
+   "text": "A man in honey gold and smoke grey, perfectly still.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
@@ -715,9 +715,9 @@
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.828,
+   "dur": 2.759,
    "onset": 0.155,
-   "end": 2.638,
+   "end": 2.569,
    "chunks": [
     [
      0.155,
@@ -733,15 +733,15 @@
     ],
     [
      1.19,
-     1.655
+     1.603
     ],
     [
-     1.681,
-     1.931
+     1.629,
+     1.862
     ],
     [
-     1.931,
-     2.638
+     1.862,
+     2.569
     ]
    ]
   },
@@ -1042,7 +1042,7 @@
    ]
   },
   "L40": {
-   "text": "Lena lit the smoker, and the yard went soft and gray.",
+   "text": "Lena lit the smoker, and the yard went soft and grey.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
