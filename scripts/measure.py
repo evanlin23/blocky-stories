@@ -37,6 +37,17 @@ SR = 48000
 # Provisional targets: (low, high), either end None. From back-row (our one hit) against ep20, ep38 and knock-back
 # (our flops), plus the hit channels' published numbers (docs/research/craft-metrics.md -> "Targets"). They warn
 # until the browser study of 20 fast-rising Shorts confirms them; then the confirmed ones block.
+# A near miss isn't a block (owner, 2026-11-03: "all of these seem very close... like there is wiggle room", "We
+# don't necessarily know what is the best but those seem pretty close..." and "band can be like 10%"). A pace bar
+# with a low end that a film misses by 10% or less reads "near": the proof passes, and the qa agent watches the
+# slowest 10 s at phone size and passes it only if nothing there drags. Each bar is the hits' p10 (2 of the 17 hits
+# sit under it), and the same film measured two ways differs by up to 0.9 picture changes. The flops' picture changes
+# (10.1, 10.3 at best) sit below the band (11.25, 12.6); knock-back's motion energy 5.5 is inside it (5.4), but its
+# picture changes still block. Longest still has no band: it moves in 0.25 s steps, and the next step up, 1.25 s, is
+# a flop's. Flash, clips and loudness have none either.
+NEAR = 0.10
+NEAR_METRICS = ("macro.picture_changes_per_10s", "macro.picture_changes_per_10s_q", "macro.motion_energy_q")
+
 TARGETS = {
     # the picture (macro)
     # "block": the browser study of 17 hits confirmed it (hits inside, back-row nearer them than the flops):
@@ -697,8 +708,10 @@ def check(res: dict) -> list[dict]:
         if v is None:
             continue
         ok = (lo is None or v >= lo) and (hi is None or v <= hi)
-        out.append({"metric": key, "value": v, "low": lo, "high": hi,
-                    "status": "ok" if ok else (level[0] if level else "warn")})
+        status = "ok" if ok else (level[0] if level else "warn")
+        if status == "block" and key in NEAR_METRICS and lo is not None and v >= round(lo * (1 - NEAR), 3):
+            status = "near"
+        out.append({"metric": key, "value": v, "low": lo, "high": hi, "status": status})
     return out
 
 
@@ -710,8 +723,10 @@ def table(res: dict) -> str:
         rows.append(f"| {c['metric']} | {c['value']} | {rng} | {'ok' if c['status'] == 'ok' else '**' + c['status'] + '**'} |")
     warns = sum(c["status"] == "warn" for c in res["checks"])
     blocks = sum(c["status"] == "block" for c in res["checks"])
-    rows.append(f"\n{blocks} block, {warns} warn, of {len(res['checks'])} (blocks are confirmed by the hit data; "
-                f"warnings are provisional).")
+    nears = sum(c["status"] == "near" for c in res["checks"])
+    rows.append(f"\n{blocks} block, {nears} near, {warns} warn, of {len(res['checks'])} (blocks are confirmed by the hit "
+                f"data; near is within {NEAR:.0%} of a pace bar, and qa watches the slowest 10 s; warnings are "
+                f"provisional).")
     return "\n".join(rows)
 
 
