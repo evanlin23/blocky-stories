@@ -224,7 +224,7 @@ S("L70", "walking back toward the lanterns", still((40.5, -12.0, 1.5), (40.0, -6
 S("L70.2", "me listening", c([0, [-0.9, -1.5, 1.45], [0.0, 0.0, 1.45], 40]), 2, follow="me")
 S("L71", "the chair is empty", still((0.4, -3.5, 1.0), (1.3, -1.5, 0.5), 30))
 S("L71.1", "we sit, the lantern between", still((0.0, -4.0, 1.3), (0.0, -1.5, 1.0), 26))
-S("L72", "the laptop shut on the shelf", still((0.6, 1.75, 1.7), (-1.4, 1.1, 1.8), 32))
+S("L72", "the laptop shut on the shelf", still((0.8, 1.9, 1.35), (-1.4, 1.1, 1.55), 27), 2)
 S("L73", "golden evening on the sand", still((5.5, -14.5, 1.3), (5.5, -6.8, 0.9), 20), 2,
   refl={"r_me": "sand", "r_remi": "sand"})
 S("L73.2", "just the two reflections", still((5.5, -9.5, 0.5), (6.0, -6.8, -0.4), 26), 2,
@@ -234,7 +234,7 @@ S("L75", "ours, walking together", still((1.0, -1.2, 1.45), (1.0, 0, 1.45), 32),
 S("L76", "this morning: our window, the empty chair", still((0.35, -3.6, 1.3), (0.35, -0.3, 0.95), 26), 1, **NSTAGE(5, r_me="stage"))
 S("L76.2", "the laptop open on the step, my reflection walking away in the window glass", move(((0.2, -2.1, 0.62), (0.75, -0.3, 1.0)), ((0.3, -1.85, 0.62), (0.75, -0.3, 1.0)), 24, 26), 1, **NSTAGE(5, r_me="stage"))
 
-PUSH = 0.2
+PUSH = 0.08
 shots = []
 shotx = {}
 SHOTS = [(R(a), w, c_, st, kw) for a, w, c_, st, kw in SHOTS]
@@ -251,7 +251,7 @@ for i, (at, what, cam, step, kw) in enumerate(SHOTS):
         # quality pass 2026-11-03: no still picture holds; every single-key shot gets a slow 5% push toward its target
         k0 = cam[0]
         lo, tg = k0[1], k0[2]
-        s["cam"] = [list(k0), [1, [round(lo[j] + PUSH * (tg[j] - lo[j]), 3) for j in range(3)], list(tg), k0[3] + 4]]
+        s["cam"] = [list(k0), [1, [round(lo[j] + PUSH * (tg[j] - lo[j]), 3) for j in range(3)], list(tg), k0[3] + 2]]
     shots.append(s)
     x = {k: v for k, v in kw.items() if k in ("stage", "refl", "puddle", "dof", "ghost", "gloom", "schair", "hidecr")}
     if x:
@@ -609,7 +609,7 @@ story = {
     "tail": 0,
     "look": {"fog": "#b4c2c8", "fog_density": 0.022, "fog_start": 12.0, "sky": "#c9d3d6", "sky_strength": 1.05,
              "exposure": 0.0, "flash_safe": True,
-             "polish": {"quiet": [["L70", "L75"]], "auto": False,
+             "polish": {"quiet": [["L70", "L75"]], "auto": False, "hold": ["S01", "S02"],
                         "emph": ["L04.3", "L10", "L25", "L45", "L48", "L52", "L56", "L65", "L74"]}},
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.02, 0.01, -0.02], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.3, "grain": 0.012},

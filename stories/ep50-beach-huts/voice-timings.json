@@ -1762,38 +1762,42 @@
    ]
   },
   "L71": {
-   "text": "at the hut, the second deckchair is empty when I sit in it.",
+   "text": "back in the hut, the second deckchair is empty when I sit in it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.5,
+   "dur": 2.69,
    "onset": 0.172,
-   "end": 2.31,
+   "end": 2.5,
    "chunks": [
     [
      0.172,
-     0.5
+     0.37
     ],
     [
-     0.526,
-     0.828
+     0.37,
+     0.655
     ],
     [
-     0.828,
-     1.138
+     0.707,
+     1.017
     ],
     [
-     1.138,
-     1.509
+     1.017,
+     1.328
     ],
     [
-     1.509,
-     1.862
+     1.328,
+     1.698
     ],
     [
-     1.862,
-     2.31
+     1.698,
+     2.052
+    ],
+    [
+     2.052,
+     2.5
     ]
    ]
   },

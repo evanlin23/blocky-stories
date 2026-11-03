@@ -423,7 +423,7 @@ def build(kit, story, tl):
     lap = kit.empty("laptop", (0, 0, 0))
     gm = kit.plastic("#34383e", 0.4, name="lapbody")
     B(kit, "lap.base", (0.34, 0.24, 0.02), (0, 0, 0.01), gm, parent=lap, bevel=0.006)
-    hinge = kit.empty("lap.hinge", (0, -0.12, 0.02), lap)
+    hinge = kit.empty("lap.hinge", (0, -0.12, 0.032), lap)
     B(kit, "lap.lid", (0.34, 0.01, 0.23), (0, 0, 0.115), gm, parent=hinge, bevel=0.004)
     smat, snode = screen_mat(kit)
     kit.plane("lap.screen", (0.31, 0.2), (0, 0.0062, 0.115), smat, hinge, rot=(math.radians(90), 0, 0))
@@ -810,11 +810,11 @@ def animate(kit, story, tl, t, ctx):
     for ob in lap.children_recursive:
         ob.hide_render = not show
     op = _ramp(tl, "laptop", "open", t, 1.0)
-    ctx["lap_hinge"].rotation_euler = (math.radians(-100 * op), 0, 0)
-    ctx["lap_screen"].inputs["Strength"].default_value = (4.5 if lc.get("bright") else 1.2) * ss(op * 1.5)
+    ctx["lap_hinge"].rotation_euler = (math.radians(-90 * (1.0 - op)), 0, 0)
+    ctx["lap_screen"].inputs["Strength"].default_value = (1.5 if lc.get("bright") else 0.9) * ss(op * 1.5)
     if show:
         lap.location = tuple(lc.get("pos", (0, -0.9, 0.62)))
-        lap.rotation_euler = (0, 0, math.radians(lc.get("yaw", 0)))
+        lap.rotation_euler = (0, 0, math.radians(lc.get("yaw", 0) + 180))
     # --- puddle, kettle steam
     pu = sx_.get("puddle", False)
     ctx["puddle"].hide_render = not pu
