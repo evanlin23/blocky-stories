@@ -1562,54 +1562,54 @@
    ]
   },
   "L57": {
-   "text": "So I stop fighting it.",
+   "text": "So I quit fighting it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.362,
+   "dur": 1.328,
    "onset": 0.172,
-   "end": 1.172,
+   "end": 1.138,
    "chunks": [
     [
      0.172,
-     0.578
+     0.543
     ],
     [
-     0.578,
-     1.172
+     0.543,
+     1.138
     ]
    ]
   },
   "L58": {
-   "text": "I walk to the bench, and sit down in my old seat.",
+   "text": "I go to the bench, and sit down in my old seat.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.379,
+   "dur": 2.259,
    "onset": 0.155,
-   "end": 2.19,
+   "end": 2.069,
    "chunks": [
     [
      0.155,
-     0.457
+     0.37
     ],
     [
-     0.457,
-     0.845
+     0.37,
+     0.741
     ],
     [
-     0.914,
-     1.371
+     0.793,
+     1.25
     ],
     [
-     1.371,
-     1.534
+     1.25,
+     1.414
     ],
     [
-     1.534,
-     2.19
+     1.414,
+     2.069
     ]
    ]
   },

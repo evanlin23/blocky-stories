@@ -323,7 +323,7 @@ shot("L66", "the bench from inside, small and dark", still([F - 0.2, 4.0, 5.3], 
 shot("L67", "Gran lost me: her head on my shoulder", still([F + 5.0, 4.0, 5.3], [F + 1.7, 4.0, 5.15], 22),
      {"gran": P(GR_SEAT, yaw=90, sit=True, expr="soft", roll=0, walk=[("L67+0.4", [F + 1.7, 4.12, 3.91])]),
       "me": P(ME_SEAT, yaw=90, sit=True, expr="neutral")})
-shot("L68", "the mat, the glove", still([X - 0.1, 33.15, 0.85], [X, 34.35, 0.07], 32))
+shot("L68", "the mat, the glove", move(([X - 0.1, 33.15, 0.85], [X, 34.35, 0.07]), ([X - 0.1, 33.4, 0.62], [X, 34.35, 0.07]), 32))
 
 # ------------------------------------------------------------------------------------------------ build shots and acting
 NEUTRAL = {"arms": [0, 0], "side": [0, 0], "head": [0, 0], "lean": 0, "tremble": 0, "blink": True, "sit": False,
@@ -608,6 +608,7 @@ story = {
     "key_color": "#7fe0c8",
     "caption": {"ink": "#08090d", "stroke_add": 2, "shadow": 0.8},
     "key_stroke": 2,
+    "clip_ok": ["S69/shrug", "S89"],
     "gap": 0.12,
     "tail": 0,
     "look": {"fog": "#b4babd", "fog_density": 0.010, "fog_start": 4.0, "sky": "#c4ccd0", "sky_strength": 1.0,

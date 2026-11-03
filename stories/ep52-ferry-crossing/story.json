@@ -17,6 +17,10 @@
   "shadow": 0.8
  },
  "key_stroke": 2,
+ "clip_ok": [
+  "S69/shrug",
+  "S89"
+ ],
  "gap": 0.12,
  "tail": 0,
  "look": {
@@ -1500,8 +1504,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "So I stop",
-     "So I stop"
+     "So I quit",
+     "So I quit"
     ],
     [
      "FIGHTING it.",
@@ -1514,8 +1518,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "I walk to",
-     "I walk to"
+     "I go to",
+     "I go to"
     ],
     [
      "the BENCH,",
@@ -4156,6 +4160,20 @@
       299.9,
       33.15,
       0.85
+     ],
+     [
+      300.0,
+      34.35,
+      0.07
+     ],
+     32
+    ],
+    [
+     1,
+     [
+      299.9,
+      33.4,
+      0.62
      ],
      [
       300.0,
