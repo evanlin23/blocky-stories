@@ -68,6 +68,8 @@ def run(mp4: Path, timeline: Path | None) -> dict:
     for k, ok in bar.items():
         if not ok:
             print(f"  failed: {k}")
+    for w in rep.get("house_warnings", []):
+        print(f"  warning: {w}")
     if rep["description_line"]:
         print(f"  description line: {rep['description_line']}")
     return rep
