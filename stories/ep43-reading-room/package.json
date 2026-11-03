@@ -1,9 +1,10 @@
 {
   "title": "Only ONE Person Knows My Name 🔢",
-  "description": "Don't let the number over your head drop to one. It counts the people who know your name, and mine has said one for years.\n\nThis spring my little brother's number started falling, and in the old reading room something with no number at all sat one table nearer to him every afternoon.\n\nIt's made up, a creepy blocky story built with code and Blender.",
+  "description": "Only one person in this whole town knows my name. The number over every head counts the people who know your name, and mine has said one for years.\n\nThis spring my little brother's number started falling, and in the old reading room something with no number at all sat one table nearer to him every afternoon.\n\nIt's made up, a creepy blocky story built with code and Blender.",
   "pin": "Comment ONE if you already know who your one would be.",
   "made_for_kids": false,
   "cover_s": 84.5,
   "shape": "about-me",
-  "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this"
+  "hold": "awaiting the opening fix (2026-11-03): renders and uploads skip it until its fix PR removes this",
+  "opening": "confess"
 }

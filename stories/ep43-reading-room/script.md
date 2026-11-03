@@ -6,7 +6,7 @@
 In this town a glowing number floats over every head: how many people know your name. Mine has said 1 for years, and I took the 1 to be me. My little brother Tam lives with me. This year he went quiet, his friends drifted, and his number has been falling. Every wet spring afternoon he studies at the window table for two in the domed reading room, where we used to sit together. I sit at the far end now with my headphones on. A person printed in reverse, with no number at all, sits one table nearer his each afternoon.
 
 ## Rule
-The world's rule: the number over your head is how many people know your name (L02). L01 opens on the warning the town lives by: don't let it drop to one. It's simply how the town is. Nobody explains it, nobody made it on screen, and it has nothing to do with the creature.
+The world's rule: the number over your head is how many people know your name (L02). L01 opens on a confession: only one person in this town knows my name. It's simply how the town is. Nobody explains it, nobody made it on screen, and it has nothing to do with the creature.
 The rule we break is the reading room's own, shown and never said: nobody speaks in there. I break it at L57 to L59.
 
 ## Twist
@@ -174,7 +174,7 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 87 shots over about 2:19, about 1.6 s a shot.
 
 ## The world's rule and the hits' shape
-- **First line (warning, opening recipe v1):** "Don't let the number over your head drop to ONE." (10 words, about 2.1 s.) L02 tightens it: "It counts who knows your NAME. Mine says ONE." No names, places or backstory before 4 s.
+- **First line (warning, opening recipe v1):** "Only ONE person in this whole town knows my NAME." (10 words) as a confession, and L02 puts the 1 over my head: "The number over my head says ONE." No names, places or backstory before 4 s.
 - **Quotable line:** L07, Ossie hitting five and buying himself a whole cake.
 - **Marker by 2 s:** S01 opens on a bright wet street, my face above the captions with my 1 over it, and passers-by behind with 340 and 87.
 - **Montage (L03 to L07, 4 to 15 s):** a party where every number ticks up, the woman off the train going 0 to 1, the mailman's number past his ears, Ossie at 5 with a cake for one.
@@ -184,7 +184,7 @@ One old public library in a made-up town, on three wet spring afternoons, plus t
 - **The loophole (the turn):** you don't count yourself, so every 1 is someone else, and one hearing is enough to know a name (see "How the climax turns the rule").
 
 ## The last 15 seconds turn the first line
-The first line opens as a warning, and L02 puts me inside it: one means nearly forgotten, and mine says one. The last two lines say the twist plainly, "You don't count yourself. My ONE was always TAM. / And his last ONE was always ME. So whatever you DO,", then loop straight into "Don't let the number over your head drop to ONE." as one sentence. On the loop the warning turns over: your one isn't you, it's the last person still saying your name, so don't let them go. On a second watch the 1 in S13 is my brother, the woman's 0 in S06 is the clue, and the mumble in S40 is my name. Rewatch plants: the woman's 0 (L04 to L05, S06 to S08) and the mumble with my 1 warming (L28, S40).
+The first line is a confession and L02 puts the 1 over my head: one means nearly forgotten, and mine says one. The last two lines say the twist plainly, "You don't count yourself. My ONE was always TAM. / And his last ONE was always ME.", then loop straight into "Only ONE person in this whole town knows my NAME." On the loop the confession turns over: the one isn't you, it's the last person still saying your name. On a second watch the 1 in S13 is my brother, the woman's 0 in S06 is the clue, and the mumble in S40 is my name. Rewatch plants: the woman's 0 (L04 to L05, S06 to S08) and the mumble with my 1 warming (L28, S40).
 
 ## Lore connection (one)
 Two short upright library-green strokes scratched into the brass base of the reading lamp on the window table, a table built for two (S47, under L32 "I could hear the LAMPS hum"), held about 1.8 s, never narrated. In the canon it's the Keeper's tally: the place's count is two, and the Negative stands in the second stroke while my seat is empty. A plain tally, no extra stroke, touching no open thread. The Negative carries none of the town's markers (no number), never touches anyone, and is gone once I fill my seat.
@@ -192,8 +192,8 @@ Two short upright library-green strokes scratched into the brass base of the rea
 ## Narration (71 lines, 624 words, about 2:09 of speech at 290 wpm, about 2:19 with gaps)
 Every line is `who: narrator`. CAPS are the caption key words. Luke's L59 is narration, in his voice like every line.
 
-L01. Don't let the number over your head drop to ONE.
-L02. It counts who knows your NAME. Mine says ONE.
+L01. Only ONE person in this whole town knows my NAME.
+L02. The number over my head says ONE.
 L03. At parties, every number in the room ticks UP.
 L04. A woman steps off the morning train with a ZERO.
 L05. A man says hello. She tells him her name, and it jumps to ONE.
@@ -262,4 +262,4 @@ L67. A woman at the next table WAVED, and Tam waved BACK.
 L68. A man dragged his chair over. Then two MORE.
 L69. Tam looked at me like I'd lost my MIND. Then he GRINNED.
 L70. You don't count yourself. My ONE was always TAM.
-L71. And his last ONE was always ME. So whatever you DO,
+L71. And his last ONE was always ME.

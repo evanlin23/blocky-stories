@@ -136,10 +136,10 @@ ME_OPEN = {"me": {"p": [0.0, 0.0, 0.0], "yaw": 0, "num": 1, "expr": "worried", "
            "e5": {"p": [-0.5, 2.7, 0.0], "yaw": 0, "expr": "neutral", "num": 340},
            "e8": {"p": [0.62, 3.4, 0.0], "yaw": 0, "expr": "soft", "num": 87}}
 S(0, "street", ([0.1, -3.55, 1.55], [0.0, 0.0, 1.5], 28, [0.05, -3.2, 1.55], [0.0, 0.0, 1.5], 28), ME_OPEN, phones="head")
-S("L01.2", "street", ([-0.35, -3.1, 1.55], [0.0, 0.0, 1.5], 28, [-0.2, -2.8, 1.55], [0.0, 0.0, 1.5], 28), {})
-S("L02", "street", ([0.2, -3.4, 1.5], [0.0, 0.0, 1.5], 28, [0.1, -3.1, 1.5], [0.0, 0.0, 1.5], 28),
+S("L01.1", "street", ([-0.35, -3.1, 1.55], [0.0, 0.0, 1.5], 28, [-0.2, -2.8, 1.55], [0.0, 0.0, 1.5], 28), {})
+S("L01.2", "street", ([0.2, -3.4, 1.5], [0.0, 0.0, 1.5], 28, [0.1, -3.1, 1.5], [0.0, 0.0, 1.5], 28),
   {"me": {"head": [0, 22], "expr": "worried"}})
-S("L02.2", "street", ([-0.15, -3.25, 1.55], [0.0, 0.0, 1.5], 28, [-0.1, -2.9, 1.55], [0.0, 0.0, 1.5], 28),
+S("L02", "street", ([-0.3, -2.7, 1.8], [0.0, 0.0, 1.8], 28, [-0.15, -2.35, 1.8], [0.0, 0.0, 1.8], 28),
   {"me": {"head": [0, 4], "expr": "neutral"}})
 S("L03", "party", ([0.0, -4.0, 1.75], [0.0, 0.0, 2.0], 19),
   {"e1": {"p": [-1.2, 0.3, 0.0], "yaw": 25, "expr": "soft", "num": 14, "roll": [("L03+0.15", 15)]},
@@ -540,8 +540,8 @@ cues = [c for c in cues if not (c["name"] == "dome" and c.get("dur") == 0.1 and 
 rolls = [c for c in cues if c["name"] == "num" and not c.get("snap")]
 sfx = [{"at": c["at"], "kind": "click", "db": -27} for c in rolls]
 sfx += [
-    {"at": "L01.3+0.4", "kind": "hit", "db": -19, "keep": True},   # the sound hit on "ONE" (recipe point 3)
-    {"at": "L02.2", "kind": "hit", "db": -22, "keep": True},
+    {"at": "L01.2+0.15", "kind": "hit", "db": -19, "keep": True},   # the sound hit on "NAME", the opening's stronger word (ONE gets the polish hit at 0.3 s)
+    {"at": "L02.1", "kind": "hit", "db": -22, "keep": True},
     {"at": "L47", "kind": "hit", "db": -18, "keep": True},
     {"at": "L18+0.15", "kind": "whoosh", "db": -26, "dur": 0.3},
     {"at": "P01>", "kind": "hit", "db": -17, "keep": True},

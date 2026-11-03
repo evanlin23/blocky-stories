@@ -429,20 +429,16 @@
    "who": "narrator",
    "chunks": [
     [
-     "Don't let",
-     "Don't let"
+     "Only ONE person",
+     "Only one person"
     ],
     [
-     "the number over",
-     "the number over"
+     "in this whole town",
+     "in this whole town"
     ],
     [
-     "your head",
-     "your head"
-    ],
-    [
-     "drop to ONE.",
-     "drop to one."
+     "knows my NAME.",
+     "knows my name."
     ]
    ]
   },
@@ -451,16 +447,12 @@
    "who": "narrator",
    "chunks": [
     [
-     "It counts who",
-     "It counts who"
+     "The number over",
+     "The number over"
     ],
     [
-     "knows your NAME.",
-     "knows your name."
-    ],
-    [
-     "Mine says ONE.",
-     "Mine says one."
+     "my head says ONE.",
+     "my head says one."
     ]
    ]
   },
@@ -1854,14 +1846,6 @@
     [
      "always ME.",
      "always me."
-    ],
-    [
-     "So whatever",
-     "So whatever"
-    ],
-    [
-     "you DO,",
-     "you do,"
     ]
    ]
   }
@@ -1936,7 +1920,7 @@
    ],
    "step": 2,
    "hand": 0.004,
-   "at": "L01.2"
+   "at": "L01.1"
   },
   {
    "id": "S03",
@@ -1972,7 +1956,7 @@
    ],
    "step": 2,
    "hand": 0.004,
-   "at": "L02"
+   "at": "L01.2"
   },
   {
    "id": "S04",
@@ -1980,35 +1964,35 @@
     [
      0,
      [
-      699.85,
-      -3.25,
-      1.55
+      699.7,
+      -2.7,
+      1.8
      ],
      [
       700.0,
       0.0,
-      1.5
+      1.8
      ],
      28
     ],
     [
      1,
      [
-      699.9,
-      -2.9,
-      1.55
+      699.85,
+      -2.35,
+      1.8
      ],
      [
       700.0,
       0.0,
-      1.5
+      1.8
      ],
      28
     ]
    ],
    "step": 2,
    "hand": 0.004,
-   "at": "L02.2"
+   "at": "L02"
   },
   {
    "id": "S05",
@@ -5485,7 +5469,7 @@
     "blend": 0.0
    },
    {
-    "at": "L02",
+    "at": "L01.2",
     "pos": [
      700.0,
      0.0,
@@ -5493,7 +5477,7 @@
     ]
    },
    {
-    "at": "L02",
+    "at": "L01.2",
     "yaw": 0,
     "sit": false,
     "bend": 0,
@@ -5524,7 +5508,7 @@
     "blend": 0.0
    },
    {
-    "at": "L02.2",
+    "at": "L02",
     "pos": [
      700.0,
      0.0,
@@ -5532,7 +5516,7 @@
     ]
    },
    {
-    "at": "L02.2",
+    "at": "L02",
     "yaw": 0,
     "sit": false,
     "bend": 0,
@@ -15740,13 +15724,13 @@
     "db": -27
    },
    {
-    "at": "L01.3+0.4",
+    "at": "L01.2+0.15",
     "kind": "hit",
     "db": -19,
     "keep": true
    },
    {
-    "at": "L02.2",
+    "at": "L02.1",
     "kind": "hit",
     "db": -22,
     "keep": true

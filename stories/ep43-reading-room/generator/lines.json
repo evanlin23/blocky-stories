@@ -4,20 +4,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Don't let",
-    "Don't let"
+    "Only ONE person",
+    "Only one person"
    ],
    [
-    "the number over",
-    "the number over"
+    "in this whole town",
+    "in this whole town"
    ],
    [
-    "your head",
-    "your head"
-   ],
-   [
-    "drop to ONE.",
-    "drop to one."
+    "knows my NAME.",
+    "knows my name."
    ]
   ]
  },
@@ -26,16 +22,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "It counts who",
-    "It counts who"
+    "The number over",
+    "The number over"
    ],
    [
-    "knows your NAME.",
-    "knows your name."
-   ],
-   [
-    "Mine says ONE.",
-    "Mine says one."
+    "my head says ONE.",
+    "my head says one."
    ]
   ]
  },
@@ -1414,14 +1406,6 @@
    [
     "always ME.",
     "always me."
-   ],
-   [
-    "So whatever",
-    "So whatever"
-   ],
-   [
-    "you DO,",
-    "you do,"
    ]
   ]
  }

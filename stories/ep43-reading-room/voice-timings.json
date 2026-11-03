@@ -6,54 +6,46 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "Don't let the number over your head drop to one.",
+   "text": "Only one person in this whole town knows my name.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.103,
+   "dur": 2.483,
    "onset": 0.172,
-   "end": 1.914,
+   "end": 2.293,
    "chunks": [
     [
      0.172,
-     0.423
+     0.784
     ],
     [
-     0.423,
-     0.888
+     0.784,
+     1.439
     ],
     [
-     0.888,
-     1.121
-    ],
-    [
-     1.121,
-     1.914
+     1.439,
+     2.293
     ]
    ]
   },
   "L02": {
-   "text": "It counts who knows your name. Mine says one.",
+   "text": "The number over my head says one.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.259,
-   "onset": 0.155,
-   "end": 2.069,
+   "dur": 1.741,
+   "onset": 0.172,
+   "end": 1.552,
    "chunks": [
     [
-     0.155,
-     0.517
+     0.172,
+     0.552
     ],
     [
-     0.517,
-     1.121
-    ],
-    [
-     1.199,
-     2.069
+     0.552,
+     1.552
     ]
    ]
   },
@@ -1826,14 +1818,14 @@
    ]
   },
   "L71": {
-   "text": "And his last one was always me. So whatever you do,",
+   "text": "And his last one was always me.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.517,
+   "dur": 1.741,
    "onset": 0.155,
-   "end": 2.276,
+   "end": 1.534,
    "chunks": [
     [
      0.155,
@@ -1841,19 +1833,11 @@
     ],
     [
      0.578,
-     0.759
+     0.784
     ],
     [
-     0.759,
-     1.276
-    ],
-    [
-     1.371,
-     1.776
-    ],
-    [
-     1.776,
-     2.276
+     0.784,
+     1.534
     ]
    ]
   }
