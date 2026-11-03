@@ -211,7 +211,7 @@ shot("L25b", "S25b: the stair foot by day, the storm door shuddering, the drift 
      move(([0.0, -0.9, 1.15], [0.0, 2.0, 0.95]), ([0.0, -0.5, 1.1], [0.0, 2.0, 0.9]), 20), hand=0.002)
 shot("L25b.3", "S25c: punch in on the drift, one faint sock-shaped scuff in it",
      move(([0.2, 0.7, 0.75], [0.0, 1.95, 0.02]), ([0.2, 1.0, 0.7], [0.0, 1.95, 0.02]), 26), hand=0.002)
-shot("L26", "S30a: medium close-up of Ines alone, toast", still([KX + 0.9, -0.35, 1.5], [KX - 0.12, 0.95, 1.4], 28), hand=0)
+shot("L26", "S30a: medium close-up of Ines alone, toast", still([KX + 0.9, -0.35, 1.5], [KX + 0.02, 0.95, 1.4], 26), hand=0)
 shot("L26.1", "S30b: close-up of me, 'asked'", still([KX + 0.7, 0.35, 1.5], [KX, -0.75, 1.4], 32), hand=0)
 shot("L27", "close on Ines, looking", still([KX + 0.62, -0.5, 1.52], [KX, 0.95, 1.38], 34), hand=0)
 shot("L28", "close on me, misreading", still([KX, 0.7, 1.55], [KX, -0.75, 1.36], 30), hand=0)
@@ -266,9 +266,8 @@ def runcam(i, az, lens=24):
 shot("L54", "running up, one", runcam(48.6, 18), step=1)
 shot("L54.1", "running up, two", runcam(61.9, 57, 20), step=1)
 shot("L54.2", "running up, three", runcam(73.9, 57, 20), step=1)
-shot("L54.3", "the bolt slides", PLATE_CAM, step=1, hand=0)
 # 09 the last day
-shot("L55", "kitchen, flat bright daylight: medium close-up of Ines alone, held still", still([KX + 0.9, -0.35, 1.5], [KX - 0.12, 0.95, 1.4], 28), hand=0)
+shot("L55", "kitchen, flat bright daylight: medium close-up of Ines alone, held still", still([KX + 0.9, -0.35, 1.5], [KX + 0.02, 0.95, 1.4], 26), hand=0)
 shot("L56", "Ines sits next to me instead of across", still([KX + 2.15, -1.5, 1.9], [KX + 0.2, -0.45, 1.1], 16))
 shot("L57", "Ines says goodnight at her door, lamp on, her face to camera", still([0.0, -0.75, Z4 + 1.3], [1.8, 0.0, Z4 + 1.35], 32), hand=0.003)
 shot("L58", "me in the camp bed, listening", COT_WIDE)
@@ -717,8 +716,8 @@ story = {
     "grade": {"shadows": [-0.02, 0.0, 0.05], "highlights": [0.025, 0.01, -0.02], "saturation": 0.95, "contrast": 1.08,
               "vignette": 0.34, "bloom": 0.25, "grain": 0.012, "red_line": 0.79},
     "rain_shots": rain_shots,
-    "shot_grades": {sid: {"highlights": [-0.22, -0.2, -0.2]} for sid in ("S33", "S34", "S77", "S78")}
-    | {"S14": {"highlights": [-0.3, -0.3, -0.3]}, "S68": {"highlights": [-0.3, -0.3, -0.3]}},   # r5: the close-up foreheads clip, so roll their highlights off
+    "shot_grades": {sid: {"highlights": [-0.22, -0.2, -0.2]} for sid in ("S33", "S34", "S76", "S77")}
+    | {"S14": {"highlights": [-0.3, -0.3, -0.3]}, "S67": {"highlights": [-0.3, -0.3, -0.3]}},   # r5: the close-up foreheads clip, so roll their highlights off
     "phonemes": {"Ines": "inˈɛs"},
     "homophones": {"too": "two", "okay": "ok"},
     "cast": cast,
