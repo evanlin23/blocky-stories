@@ -31,10 +31,10 @@ cast = {
     "dad": {"age": "adult", "skin": "#d9a27a", "shirt": "#c0392b", "pattern": "plaid", "pattern_c": "#1c2a5a",
             "pants": "#3b5a8c", "shoes": "#b98a4e", "sleeves": "long", "hair": "none", "hat": "ballcap",
             "hat_c": "#1c2a5a", "width": 1.12, "face": dict(FACE)},
-    "strider": {"age": "adult", "skin": "#80582f", "shirt": "#8a5c32", "pattern": "stripes", "pattern_c": "#93663a",
+    "strider": {"age": "adult", "skin": "#4b3321", "shirt": "#7a5230", "pattern": "stripes", "pattern_c": "#93663a",
                 "pants": "#7d5530", "shoes": "#14110e", "sleeves": "long", "hair": "none", "extras": ["coat"],
                 "zip_c": "#7d5530", "height": 1.5, "width": 0.82,
-                "face": {"eyes": "hollow", "brows": False, "mouth": "none", "ink": "#24131f", "eye_scale": 1.15}},
+                "face": {"eyes": "hollow", "brows": False, "mouth": "none", "ink": "#24131f", "eye_scale": 0.6}},
 }
 
 # ---------------------------------------------------------------------------------------------------- state
@@ -236,10 +236,10 @@ cue("L11", "hide_rail", idx=[])
 pairs("L11", dadboots=None, slipper2=pr((1.35, 0.7, 0.47), 20, True))
 S("L11", X((0.9, 1.9, 0.62), (1.7, 0.7, 0.58), 26, (1.0, 1.5, 0.6), (1.7, 0.7, 0.56), 28), M, fill=0.7, note="Biscuit's bowl is full, a warm pair beside it")
 # L13: Dad points, the empty carrier
-put("dad", "L13", (1.7, -1.6), 0, "angry", arms=[0, 88], head=[0, 0])
-cat("L13", (0.4, -2.3, DECK), yaw=60, face="smug", tail="up")
+put("dad", "L13", (1.7, -1.6), 155, "angry", arms=[0, 88], head=[0, 0])
+cat("L13", (1.0, -2.3, DECK), yaw=60, face="smug", tail="up")
 pairs("L13", slipper2=None)
-S("L13", C((1.1, -2.0, 1.1), 3.0, 165, 6, 26, d2=2.5), M, note="Dad points, Biscuit smug on the porch")
+S("L13", X((2.7, -0.3, 1.6), (1.6, -2.0, 1.5), 24, (2.4, -0.5, 1.6)), M, note="Dad points, his face, Biscuit smug on the porch")
 cat("L13.2")
 gone("dad", "L13.2")
 cue("L13.2", "props", carrier={"pos": [1.9, -1.5, DECK + 0.02], "yaw": 160, "scale": 1.3}, bag=None)
@@ -306,7 +306,7 @@ cat("L27", (0.5, -0.3, DECK), yaw=180, face="neutral", carry="shiny", to=[0.5, 0
 S("L27", X((0.5, 1.7, 0.8), (0.5, 0.1, 0.62), 26), S_, fill=0.7, note="the cat flap clacks open")
 cue("L27+0.45", "flapswing", dur=1.4, peak=0.55)
 cat("L27+0.45", (0.5, 0.45, DECK), yaw=180, face="neutral", carry="shiny", to=[0.5, 0.9, DECK], dur=1.0, tail="up")
-S("L27+0.45", X((0.5, 0.95, 0.88), (0.5, 0.17, 1.0), 30, (0.5, 0.8, 0.9)), S_, hand=0.002, dof=[0.8, 2.4],
+S("L27+0.45", X((0.95, 1.0, 1.25), (0.5, 0.15, 1.26), 30, (0.85, 0.85, 1.25)), S_, hand=0.002, dof=[1.1, 3.5],
   note="the lore shot: three ginger strokes in the flap's frame")
 cat("L28.1", (0.5, 0.7, DECK), yaw=180, face="neutral", carry="shiny", to=[0.5, 0.95, DECK], dur=0.5, tail="up")
 S("L28.1", C((0.5, 0.85, 0.5), 1.0, 170, 20, 28, d2=0.75), S_, fill=0.7, note="Biscuit sets the shiny shoes on the mat")
@@ -322,9 +322,9 @@ gone("me", "L30.3")
 S("L30.3", C((0.5, 0.98, 0.6), 0.8, 180, 14, 30, d2=0.55), S_, fill=0.8, dof=[0.7, 2.4], note="Biscuit, slow blink")
 cat("L31")
 pairs("L31", shiny=None)
-put("me", "L31", (1.4, 2.6), 160, "smirk", head=[0, -12])
-put("dad", "L31", (4.1, 5.9), 180, "neutral")
-S("L31", X((0.3, 1.2, 1.5), (1.4, 3.0, 1.55), 30, (0.5, 1.4, 1.5)), S_, fill=0.8, note="me smiling, looking up at Dad in the kitchen doorway")
+put("me", "L31", (3.3, 4.0), 0, "smirk", head=[0, 0])
+put("dad", "L31", (3.3, 3.0), 180, "neutral")
+S("L31", C((3.3, 3.5, 1.5), 1.7, 60, 4, 34, d2=1.4), S_, fill=0.8, note="me smiling, looking up at Dad in the kitchen doorway")
 put("me", "L32", (3.3, 4.2), 0, "smirk", arms=[40, 40])
 put("dad", "L32", (3.3, 3.0), 180, "angry")
 S("L32", C((3.3, 3.6, 1.5), 2.0, 90, 6, 28), S_, fill=0.8, note="I tell Dad, hands up")
@@ -342,7 +342,7 @@ S("L33.2", C((0.0, -35.0, 1.2), 3.8, 150, 6, 36, d2=3.2), S_, hand=0.01, note="c
 gone("me", "L33a")
 S("L33a", X((0.3, -27.0, 0.38), (0.0, -37.0, 0.55), 26, (0.3, -27.4, 0.38)), S_, hand=0.003, note="low behind me, one light back, empty")
 put("me", "L33a.2", (0.0, -6.0), 180, "worried")
-S("L33a.2", C((0.0, -6.0, 1.55), 1.5, 0, 4, 34, d2=1.2), S_, fill=0.9, note="my face, worried, eyes front")
+S("L33a.2", C((0.0, -6.0, 1.55), 1.5, 180, 4, 34, d2=1.2), S_, fill=0.9, note="my face, worried, eyes front")
 put("me", "L33b", (0.0, -12.0), 180, "scared", run=True)
 raw("me", "L33b>", pos=[0.0, -4.4], run=True)
 S("L33b", ST(-1.9, (0.0, -9.0, 1.2), 22), S_, note="I run through the gate, the rail row in frame")
@@ -351,7 +351,7 @@ pairs("L33c", sneaker=pr(MATP, 160, True))
 count("L33c", 12)
 S("L33c", FRAME1, S_, dof=[0.85, 2.4], fill=0.6, note="the pair on the mat is my size")
 put("me", "L34", (0.22, -0.92), 0, "worried")
-S("L34", C((0.42, -0.9, 0.5), 0.9, 40, 38, 30, d2=0.65), S_, fill=0.7, note="my feet beside them, the same shoe")
+S("L34", X((1.8, -2.6, 1.6), (0.5, -0.95, 1.15), 24, (1.5, -2.3, 1.55)), S_, fill=0.8, note="me beside the pair, the same shoe")
 S("L34.2", C((0.55, -1.0, 0.56), 0.45, 200, 30, 30, d2=0.32), S_, dof=[0.4, 1.8], hand=0.003, note="the matching red laces")
 gone("me", "L35")
 pairs("L35", sneaker=None)
@@ -370,7 +370,7 @@ S("P01", X((-6.0, 5.0, 1.45), (-3.5, 0.0, 1.9), 30), N, fill=0.0, note="hold on 
 STR("L37", (-3.5, -1.6), 180, "sneaker", lean=14, head=[0, 0])
 S("L37", X((-6.0, 5.0, 1.45), (-3.5, 0.0, 1.9), 30, (-5.8, 4.7, 1.45)), N, fill=0.0, key=1.0, rim=1.0, note="a big dark shape against the violet glass")
 STR("L38", (-3.4, -2.0), 180, "sneaker", lean=40, head=[0, 4])
-S("L38", X((-1.7, 1.6, 1.9), (-3.4, -0.6, 2.0), 30, (-1.9, 1.3, 1.9)), N, fill=0.0, key=1.0, rim=1.0, note="bent down to the glass, from the side")
+S("L38", X((-4.9, 4.6, 1.5), (-3.5, -1.2, 2.1), 26, (-4.4, 3.6, 1.6)), N, fill=0.0, key=1.0, rim=1.0, note="bent down to the glass, from the side")
 STR("L39", (-3.5, -2.15), 180, "sneaker", lean=46, head=[0, -38])
 S("L39", X((-3.5, 1.7, 1.85), (-3.5, 0.0, 2.0), 36, (-3.5, 1.3, 1.9)), N, fill=0.0, key=1.0, rim=1.0, note="its face through the glass, lamp-lit, no mouth, two green points")
 S("L39.2", X((-3.5, 1.0, 1.9), (-3.5, -0.4, 2.0), 50, (-3.5, 0.7, 1.95)), N, fill=0.0, key=1.0, rim=1.0, hand=0.003, note="closer on the eyes")
@@ -383,7 +383,7 @@ cue("L42+0.1", "blink", dur=0.85)
 S("L42", X((-3.5, 1.0, 1.9), (-3.5, -0.3, 2.0), 62, (-3.5, 0.7, 1.95)), N, fill=0.0, key=1.0, rim=1.0, hand=0.002, note="and it blinked, slow")
 gone("strider", "L43")
 pairs("L43", sneaker=None)
-S("L43", X((-4.6, 2.6, 1.5), (-4.6, 3.9, 0.45), 28, (-4.6, 2.9, 1.3)), M, fill=0.5, note="the sneakers are gone, an empty patch of floor")
+S("L43", X((-2.3, 1.1, 1.8), (-5.0, 4.0, 0.8), 22, (-2.6, 1.4, 1.7)), M, fill=0.5, note="the sneakers are gone, an empty patch of floor")
 cat("L44", (-4.6, 3.9, DECK), yaw=20, pose="asleep", face="asleep", tail="up")
 S("L44", C((-4.6, 3.9, 0.7), 1.0, 200, 22, 28, d2=0.75), M, fill=0.5, note="Biscuit asleep right where they'd been")
 
@@ -393,7 +393,7 @@ gone("strider", "L46")
 put("dad", "L46", (1.9, -2.15), 180, "neutral", lean=32, arms=[50, 50])
 cue("L46", "props", carrier={"pos": [1.9, -1.2, DECK + 0.02], "yaw": 0, "scale": 1.3})
 cat("L46", (1.9, -1.2, DECK + 0.08), yaw=0, face="neutral", pose="lie", tail="up")
-S("L46", C((1.9, -1.7, 1.0), 2.0, 70, 10, 28, d2=1.6), A, note="Dad shuts the carrier door")
+S("L46", X((3.4, 0.4, 1.9), (1.9, -1.7, 1.0), 22, (3.0, 0.1, 1.85)), A, note="Dad shuts the carrier door")
 gone("dad", "L46.2")
 S("L46.2", C((1.9, -1.2, 0.72), 1.0, 0, 6, 28, d2=0.75), A, fill=0.6, note="Biscuit looking out through the grille")
 cat("L47")
@@ -422,8 +422,8 @@ S("L49", C((1.1, -2.85, DECK + 1.62), 1.05, 150, 4, 30, d2=0.8), A, note="my han
 
 # =========================================================================================== 07 Sundown L51-L57
 gone("me", "L51")
-put("me", "L51", (-3.5, 0.75), 55, "worried", side=[0, 60])
-S("L51", X((-2.0, 2.0, 1.75), (-3.5, 0.6, 1.8), 30, (-2.2, 1.7, 1.78)), S_, fill=0.8, note="me at my window again")
+put("me", "L51", (-3.5, 0.75), 15, "worried", side=[0, 60])
+S("L51", X((-2.6, -1.5, 2.35), (-3.5, 0.75, 1.7), 32, (-2.8, -1.2, 2.3)), S_, fill=0.8, note="me at my window again")
 gone("me", "L51.2")
 S("L51.2", ST(-1.9, (0, -50, 1.4), 16), S_, note="the empty rail below, the chalk 0")
 cue("L52", "bus", on=True, go=True, dur=1.6)
@@ -445,10 +445,10 @@ gone("dad", "L56")
 STR("L56", (0.3, -34.0), 180, "rubber")
 S("L56", X((1.9, -37.0, 0.32), (0.3, -34.0, 0.45), 32, (1.7, -36.5, 0.3)), S_, hand=0.004, note="muddy green rubber boots with hay")
 gone("strider", "L56.2")
-put("me", "L56.2", (-3.5, 0.75), 55, "worried", side=[0, 60])
-S("L56.2", X((-2.1, 1.9, 1.75), (-3.5, 0.6, 1.8), 30, (-2.3, 1.6, 1.78)), S_, fill=0.8, note="me, working it out")
-put("me", "L57", (-3.5, 0.75), 55, "smirk", side=[0, 60], head=[0, 0])
-S("L57", X((-2.4, 1.6, 1.8), (-3.5, 0.6, 1.8), 34, (-2.8, 1.2, 1.8)), S_, fill=0.8, note="boots like that only come from the farm")
+put("me", "L56.2", (-3.5, 0.75), 15, "worried", side=[0, 60])
+S("L56.2", X((-2.6, -1.5, 2.35), (-3.5, 0.75, 1.7), 32, (-2.8, -1.2, 2.3)), S_, fill=0.8, note="me, working it out")
+put("me", "L57", (-3.5, 0.75), 15, "smirk", side=[0, 60], head=[0, 0])
+S("L57", X((-2.6, -1.5, 2.35), (-3.5, 0.75, 1.7), 34, (-2.9, -1.2, 2.3)), S_, fill=0.8, note="boots like that only come from the farm")
 
 # =========================================================================================== 08 The gate L58-L66
 gone("me", "L58")
@@ -465,9 +465,9 @@ S("L61", C((GATE_R[0], GATE_R[1], 0.8), 2.6, 150, 8, 34), S_, fill=0.6, note="sm
 gone("strider", "L61+0.38")
 pairs("L61+0.38", rubber=pr((GATE_R[0], GATE_R[1], 0.38), 175, True, 2.3))
 S("L61+0.38", C((GATE_R[0], GATE_R[1], 0.7), 2.6, 150, 8, 34), S_, fill=0.6, note="nothing there but the boots, steaming")
-cat("L62", (GATE_R[0] - 0.23, GATE_R[1], 0.4), yaw=180, pose="stand", face="neutral", pitch=-80, tail="up",
+cat("L62", (GATE_R[0] - 0.23, GATE_R[1], 0.4), yaw=0, pose="stand", face="neutral", pitch=-80, tail="up",
     to=[GATE_R[0] - 0.23, GATE_R[1], 1.02], dur=1.3)
-S("L62", C((GATE_R[0] - 0.2, GATE_R[1], 0.8), 1.5, 160, 8, 30, d2=1.2), S_, fill=0.9, note="out of the left boot climbed Biscuit")
+S("L62", C((1.42, GATE_R[1], 0.9), 1.5, 15, 28, 28, d2=1.25), S_, fill=1.0, note="low close, Biscuit climbs out of the left boot")
 cat("L63", (GATE_R[0] - 0.9, GATE_R[1] + 0.1, 0.4), yaw=190, face="neutral", tail="up")
 S("L63", C((GATE_R[0] - 0.9, GATE_R[1] + 0.1, 0.45), 1.3, 20, 10, 30, d2=1.0), S_, fill=0.9, note="muddy to the ears")
 put("dad", "L65", (0.0, -8.2), 0, "soft", head=[0, 20])
@@ -493,19 +493,16 @@ pairs("L66c", sneaker=pr(MATP, 160, True))
 S("L66c", FRAME1, S_, dof=[0.85, 2.4], fill=0.6, note="my sneakers on the mat")
 pairs("L66c.2", sneaker=None)
 S("L66c.2", X((0.3, -27.0, 0.38), (0.0, -37.0, 0.55), 26, (0.3, -27.4, 0.38)), S_, hand=0.003, note="the empty asphalt one light behind me")
-count("L66d", 3)
-cat("L66d", (2.15, -3.0, 1.46), yaw=0, face="neutral", tail="up")
-S("L66d", C((2.15, -3.0, 1.55), 1.5, 150, 10, 30, d2=1.1), S_, fill=0.8, note="the rail was outside, a paw on the end pair")
 cat("L66e")
 count("L66e", 0)
 pairs("L66e", sneaker=pr((-4.6, 3.9, 0.47), 170, False))
-S("L66e", X((-2.6, 2.2, 1.5), (-4.6, 3.9, 0.9), 26, (-3.0, 2.4, 1.4)), N, fill=0.0, note="a pair kept inside, the window dark above")
-pairs("L66e.1", sneaker=None)
-put("me", "L66e.1", (0.0, -45.0), 180, "neutral", hidden=False)
+S("L66e", X((-2.6, 2.2, 1.5), (-4.6, 3.9, 0.9), 26, (-3.0, 2.4, 1.4)), S_, fill=0.8, note="a pair kept inside, the window dark above")
+pairs("L66e.3", sneaker=None)
+put("me", "L66e.3", (0.0, -45.0), 180, "neutral", hidden=False)
 raw("me", "L66f", pos=[0.0, -41.0])
-S("L66e.1", X((-1.9, -1.2, 1.9), (0.0, -46.0, 1.3), 40), S_, note="somebody walks home alone")
+S("L66e.3", X((-1.9, -1.2, 1.9), (0.0, -46.0, 1.3), 40), S_, note="somebody walks home alone")
 gone("me", "L66f")
-S("L66f", X((-3.5, 1.2, 1.75), (-3.5, 0.0, 1.55), 30, (-3.5, 0.9, 1.7)), N, fill=0.0, note="the window glass, empty now, two faint marks on the sill")
+S("L66f", X((-3.5, 1.2, 1.75), (-3.5, 0.0, 1.55), 30, (-3.5, 0.9, 1.7)), S_, fill=0.8, note="the window glass, empty now, two faint marks on the sill")
 
 # =========================================================================================== 09 Home L68-L71
 put("dad", "L68", (0.0, -8.5), 0, "soft", arms=[55, 55])
@@ -520,7 +517,7 @@ S("L69.2", X((0.6, 2.2, 1.55), (1.3, 0.8, 1.35), 28, (0.8, 2.1, 1.55)), D, fill=
 gone("me", "L70")
 put("dad", "L70", (1.5, 0.9), 180, "polite", arms=[0, 105])
 cat("L70", (1.8, 0.68, DECK), yaw=60, pose="stand", face="neutral", pitch=12, tail="up")
-S("L70", C((1.6, 0.8, 1.4), 1.9, 0, 4, 30, d2=1.5), D, fill=0.8, note="a finger to his lips, Biscuit eating")
+S("L70", C((1.6, 0.8, 1.4), 1.9, 160, 4, 30, d2=1.5), D, fill=0.8, note="a finger to his lips, Biscuit eating")
 cat("L71")
 gone("dad", "L71")
 put("dad", "L71", (0.9, -8.4), 0, "neutral", arms=[0, 70])
@@ -540,22 +537,23 @@ S("L72", X((-1.8, -70.0, 1.6), (0.0, -88.0, 1.4), 60, (-1.8, -70.0, 1.6), (0.0, 
 raw("me", "L72.3", pos=[0.0, -60.0])
 S("L72.3", X((1.8, -66.0, 1.2), (0.0, -58.0, 1.4), 38, (1.6, -60.0, 1.2)), S_, hand=0.008, note="and walked the long road")
 put("me", "L73", (0.0, -40.0), 180, "neutral")
-STR("L73", (0.0, -50.0), 180, "sneaker")
-S("L73", X((0.3, -43.0, 0.5), (0.0, -49.0, 0.9), 28, (0.3, -44.0, 0.5)), S_, hand=0.004, note="my old sneakers one light behind me, the coat hem above")
-S("L73.2", C((0.0, -40.0, 1.55), 1.6, 0, 3, 36, d2=1.3), S_, fill=0.9, note="my face, eyes front")
+STR("L73", (0.0, -43.0), 180, "sneaker")
+S("L73", X((0.5, -39.0, 0.5), (0.0, -43.0, 0.8), 28, (0.4, -39.4, 0.5)), S_, hand=0.004, note="my old sneakers one light behind me, the coat hem above")
+S("L73.2", C((0.0, -40.0, 1.55), 1.6, 180, 3, 36, d2=1.3), S_, fill=0.9, note="my face, eyes front")
 put("me", "L74", (0.0, -40.0), 180, "neutral")
-S("L74", X((0.1, -38.8, 1.55), (0.0, -50.0, 1.6), 60), S_, fill=0.0, dof=[11.0, 1.6], hand=0.004, note="over my shoulder, soft, two green points")
+S("L74", C((0.0, -41.0, 1.7), 2.9, 175, 3, 34, d2=2.6), S_, fill=0.9, hand=0.004, note="over my shoulder, soft, two green points")
 gone("strider", "L75")
 put("me", "L75", (0.0, -40.0), 180, "smirk")
-S("L75", C((0.0, -40.0, 1.55), 1.4, 0, 3, 38, d2=1.15), S_, fill=0.9, note="I didn't look back, a small smile")
+S("L75", C((0.0, -40.0, 1.55), 1.4, 170, 3, 38, d2=1.15), S_, fill=0.9, note="I didn't look back, a small smile")
 gone("me", "L76")
-count("L76", 0)
+count("L76", 8)
+cat("L76", (0.1, -0.95, DECK + 0.07), yaw=-90, to=[-1.1, -0.95, DECK + 0.07], dur=0.9, tail="up")
 pairs("L76", oldsneak=pr(MATP, 160, True))
 S("L76", FRAME1, M, dof=[0.85, 2.4], fill=0.6, note="my old sneakers on the mat: frame 1 again")
 
 # ---------------------------------------------------------------------------------------------------- story
 look = {"fog": "#ffd7b8", "fog_density": 0.004, "fog_start": 30.0, "sky": "#ff9d4d", "exposure": 0.0,
-        "flash_safe": True, "style": "closer", "polish": {"emph": ["L01", "L05", "L37", "L39", "L66", "L76"], "reveal": ["L66", "L39"], "quiet": [["L68", "L70"]], "sway": ["S59", "S60", "S61"], "camera": False, "idle": False, "ease": False}}
+        "flash_safe": True, "style": "closer", "polish": {"emph": ["L01", "L05", "L37", "L39", "L66", "L76"], "reveal": ["L66", "L39"], "quiet": [["L68", "L70"]], "sway": ["S59", "S60", "S61"], "camera": True, "idle": True, "ease": True, "ones": "walk"}}
 story = {
     "slug": "warm-shoes",
     "title": "Our Cat Brings Home WARM Shoes \U0001F408",

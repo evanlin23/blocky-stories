@@ -802,34 +802,34 @@
    ]
   },
   "L33": {
-   "text": "on friday, i walked home late at my best friend ben's",
+   "text": "on friday, i walked home late from my best friend ben's",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 0.9784999999999999,
-   "dur": 2.655,
+   "dur": 2.741,
    "onset": 0.172,
-   "end": 2.431,
+   "end": 2.534,
    "chunks": [
     [
      0.172,
-     0.621
+     0.655
     ],
     [
-     0.672,
-     1.0
+     0.707,
+     1.207
     ],
     [
-     1.0,
-     1.319
+     1.207,
+     1.457
     ],
     [
-     1.319,
-     1.655
+     1.457,
+     1.948
     ],
     [
-     1.655,
-     2.431
+     1.948,
+     2.534
     ]
    ]
   },
@@ -1198,26 +1198,30 @@
    ]
   },
   "L47": {
-   "text": "he drove him to a farm past the lake.",
+   "text": "he drove him out to a farm past the lake.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.931,
+   "dur": 2.034,
    "onset": 0.155,
-   "end": 1.724,
+   "end": 1.828,
    "chunks": [
     [
      0.155,
-     0.534
+     0.526
     ],
     [
-     0.534,
-     0.957
+     0.526,
+     0.698
     ],
     [
-     0.957,
-     1.724
+     0.698,
+     1.061
+    ],
+    [
+     1.061,
+     1.828
     ]
    ]
   },
@@ -1742,26 +1746,26 @@
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.483,
-   "onset": 0.172,
-   "end": 2.293,
+   "tempo": 0.9476000000000001,
+   "dur": 2.672,
+   "onset": 0.19,
+   "end": 2.466,
    "chunks": [
     [
-     0.172,
-     0.414
+     0.19,
+     0.621
     ],
     [
-     0.414,
-     0.983
+     0.621,
+     1.241
     ],
     [
-     0.983,
-     1.362
+     1.241,
+     1.655
     ],
     [
-     1.362,
-     2.293
+     1.655,
+     2.466
     ]
    ]
   },
@@ -1902,38 +1906,38 @@
    ]
   },
   "L72": {
-   "text": "last night, i missed the late bus home from work, and walked the long road.",
+   "text": "yesterday, i missed the late bus home from work, and walked the long road.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 3.328,
+   "dur": 3.293,
    "onset": 0.172,
-   "end": 3.121,
+   "end": 3.086,
    "chunks": [
     [
      0.172,
-     0.534
+     0.517
     ],
     [
-     0.569,
-     0.862
+     0.552,
+     0.828
     ],
     [
-     0.862,
-     1.276
+     0.828,
+     1.241
     ],
     [
-     1.276,
-     1.914
+     1.241,
+     1.879
     ],
     [
-     1.983,
-     2.276
+     1.948,
+     2.241
     ],
     [
-     2.276,
-     3.121
+     2.241,
+     3.086
     ]
    ]
   },

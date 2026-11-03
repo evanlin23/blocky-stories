@@ -619,20 +619,20 @@
     "on friday,"
    ],
    [
-    "I walked",
-    "i walked"
+    "I walked home",
+    "i walked home"
    ],
    [
-    "home LATE",
-    "home late"
+    "LATE from",
+    "late from"
    ],
    [
-    "at my best",
-    "at my best"
+    "my best friend",
+    "my best friend"
    ],
    [
-    "friend BEN'S.",
-    "friend ben's"
+    "BEN'S.",
+    "ben's"
    ]
   ],
   "tempo": 0.95
@@ -925,8 +925,12 @@
     "he drove him"
    ],
    [
-    "to a FARM",
-    "to a farm"
+    "OUT to",
+    "out to"
+   ],
+   [
+    "a FARM",
+    "a farm"
    ],
    [
     "past the LAKE.",
@@ -1314,49 +1318,27 @@
   ]
  },
  {
-  "id": "L66d",
-  "who": "narrator",
-  "chunks": [
-   [
-    "The rail",
-    "the rail"
-   ],
-   [
-    "was OUTSIDE.",
-    "was outside."
-   ],
-   [
-    "He could",
-    "he could"
-   ],
-   [
-    "REACH it.",
-    "reach it."
-   ]
-  ],
-  "tempo": 0.94
- },
- {
   "id": "L66e",
   "who": "narrator",
   "chunks": [
    [
-    "A pair",
-    "a pair"
+    "A pair kept",
+    "a pair kept"
    ],
    [
-    "kept INSIDE",
-    "kept inside"
+    "INSIDE means",
+    "inside means"
    ],
    [
-    "means somebody",
-    "means somebody"
+    "somebody walks",
+    "somebody walks"
    ],
    [
-    "walks home ALONE.",
-    "walks home alone."
+    "home ALONE.",
+    "home alone."
    ]
-  ]
+  ],
+  "tempo": 0.92
  },
  {
   "id": "L66f",
@@ -1469,8 +1451,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Last night,",
-    "last night,"
+    "Yesterday,",
+    "yesterday,"
    ],
    [
     "I missed",

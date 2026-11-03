@@ -372,32 +372,19 @@ def strider_late(kit, ctx):
         ch.P[k].scale = (1.0, 1.0, 1.42)         # hands down by the knees
     for hinge, sx in ch.coat:
         hinge.scale = (1.0, 1.0, 2.35)           # the coat to the shins
-    ch.head.scale = (1.45, 1.0, 1.1)             # a head about 1.4 times too wide
+    ch.head.scale = (1.05, 1.0, 1.45)            # a head too long
     toff = P("#9a6a3c", 0.7)
     dark = P("#6f4a28", 0.7)
     hg = ch.head.children[0]                     # headg, centred at the head's middle
-    for sx in (-1, 1):                           # cat ears on the too-wide head (the one thing a rewatch spots)
-        v = [(-0.19, -0.1, 0), (0.19, -0.1, 0), (0.0, 0.0, 0.58), (-0.19, 0.14, 0), (0.19, 0.14, 0), (0.0, 0.05, 0.58)]
-        f = [(0, 1, 2), (3, 5, 4), (0, 3, 4, 1), (0, 2, 5, 3), (1, 4, 5, 2)]
-        kit.mesh_obj(nm("sear"), v, f, toff, hg, (sx * 0.30, 0.0, faces.HEAD_H / 2 - 0.1), (0, sx * 0.18, 0))
-        kit.mesh_obj(nm("searin"), [(-0.11, 0, 0.03), (0.11, 0, 0.03), (0, 0, 0.4)], [(0, 1, 2)], dark, hg,
-                     (sx * 0.30, -0.108, faces.HEAD_H / 2 - 0.1), (0, sx * 0.18, 0))
-    # eyeshine: two small emissive green discs on the dark hollow eyes (the brightest thing in its frames)
-    glow = kit.emit("#2fe07a", 1.6, name="eyeshine")
+    # eyeshine: two small emissive discs on the dark hollow eyes; pale before the reveal (L61), cat-green after
+    glow = kit.emit("#e6f0ea", 0.9, name="eyeshine")
+    ctx["glow"] = glow
     ctx["eyes"] = []
     for sx in (-1, 1):
-        d = kit.cyl(nm("eyeshine"), 0.04, 0.02, (sx * 0.232, -0.585, 0.08), glow, hg, rot=(math.pi / 2, 0, 0), n=16)
+        d = kit.cyl(nm("eyeshine"), 0.03, 0.02, (sx * 0.232, -0.585, 0.08), glow, hg, rot=(math.pi / 2, 0, 0), n=16)
         no_shadow(d)
         ctx["eyes"].append(d)
-    # the tail: a long toffee tail out of the coat's hem at the back
-    t0 = E(ch.torso, (0, 0.52, 0.2), "stail0")
-    seg_parent = t0
-    for i in range(4):
-        B(seg_parent, (0.34, 0.34, 0.95), (0, 0, 0.45), toff if i % 2 == 0 else dark, "stail", 0.08)
-        nxt = E(seg_parent, (0, 0, 0.9), f"stail{i + 1}")
-        seg_parent = nxt
-    t0.rotation_euler = (math.radians(105), 0, 0)
-    ctx["stail"] = [t0]
+    ctx["stail"] = []
     # buttons down the coat, a collar
     gold = P("#e8c34a", 0.4)
     for i in range(5):
@@ -594,7 +581,7 @@ def build(kit, story, tl):
     em.inputs["Color"].default_value = (1, 1, 1, 1)
     em.inputs["Strength"].default_value = 1.6
     mx = n_.nodes.new("ShaderNodeMixShader")
-    mx.inputs["Fac"].default_value = 0.22
+    mx.inputs["Fac"].default_value = 0.16
     n_.links.new(tr.outputs[0], mx.inputs[1])
     n_.links.new(em.outputs[0], mx.inputs[2])
     out = next(n for n in n_.nodes if n.type == "OUTPUT_MATERIAL")
@@ -602,7 +589,7 @@ def build(kit, story, tl):
     ctx["steam"] = []
     for s in range(3):
         site = []
-        for j in range(9):
+        for j in range(14):
             o = kit.sphere(nm("steam"), 0.03, (0, 0, 0), smat, None, seg=16)
             no_shadow(o)
             o.hide_render = True
@@ -622,6 +609,8 @@ def build(kit, story, tl):
     ctx["props"] = build_props(kit)
     ctx["count_img"] = None
     ctx["late"] = False
+    ctx["reveal_t"] = tl["lines"]["L61"]["onset"] if "lines" in tl and "L61" in tl["lines"] else 1e9
+    build_inset(kit, ctx)
     return ctx
 
 
@@ -746,8 +735,9 @@ def build_house(kit):
     B(None, (fw, 0.035, hz1 - hz0), (hx0 - fw / 2, 0.165, (hz0 + hz1) / 2), wood, "fr_l", 0.006)
     B(None, (fw, 0.035, hz1 - hz0), (hx1 + fw / 2, 0.165, (hz0 + hz1) / 2), wood, "fr_r", 0.006)
     scr = P("#d9791f", 0.5)
-    for k, x in enumerate((0.42, 0.5, 0.58)):                                      # the three strokes (lore)
-        B(None, (0.012, 0.012, 0.052), (x, 0.188, hz1 + fw / 2), scr, "stroke", 0.003)
+    for k, x in enumerate((0.40, 0.47, 0.54, 0.61)):                               # the tally scratches (lore), big
+        B(None, (0.026, 0.014, 0.15), (x, 0.152, DECK + 0.86), scr, "stroke", 0.004)
+    B(None, (0.30, 0.014, 0.022), (0.505, 0.153, DECK + 0.86), scr, "stroke", 0.004, rot=(0, 0.45, 0))
     H["flap_pivot"] = E(None, (0.5, 0.1, hz1 - 0.01), "flappivot")
     B(H["flap_pivot"], (hx1 - hx0 - 0.02, 0.012, hz1 - hz0 - 0.02), (0, 0.0, -(hz1 - hz0) / 2), P("#5a6270", 0.3, 0.7), "flap", 0.004)
     B(H["flap_pivot"], (hx1 - hx0, 0.016, 0.02), (0, 0.0, -0.005), P("#2d3340", 0.4), "flaptop", 0.004)
@@ -896,7 +886,7 @@ def animate(kit, story, tl, t, ctx):
     sun = ctx["sun"]
     sun.rotation_euler = (-pos).to_track_quat("-Z", "Y").to_euler()
     sun.data.color = (kit.srgb(scol[0]), kit.srgb(scol[1]), kit.srgb(scol[2]))
-    cl, _, _, _ = bl_story.cam_at(sd, cur, t, {}, tl)
+    cl, _, cl_lens, _ = bl_story.cam_at(sd, cur, t, {}, tl)
     cam = kit.OBJ["cam"]
     ctx["fill"].location = (cl[0], cl[1], cl[2])
     sc.view_settings.exposure = L["exp"] + sd.get("exp", 0.0)
@@ -923,6 +913,7 @@ def animate(kit, story, tl, t, ctx):
         im.colorspace_settings.name = "sRGB"
         H["digit_imgs"][cnt] = im
     H["digit_tex"].image = H["digit_imgs"][cnt]
+    place_inset(kit, ctx, cnt, cl_lens)
     # ---- named pairs and steam
     pc = cue_at(tl, "pairs", t)
     steam_sites = []
@@ -955,13 +946,13 @@ def animate(kit, story, tl, t, ctx):
                 o.hide_render = True
                 continue
             (px, py, pz), sc_ = steam_sites[si]
-            ph = ((t * 0.75 + j / len(site) + si * 0.31) % 1.0)
-            env = math.sin(math.pi * ph) ** 0.8
+            ph = ((t * 0.6 + j / len(site) + si * 0.31) % 1.0)
+            env = math.sin(math.pi * ph) ** 0.9
             o.hide_render = False
-            o.location = (px + 0.07 * math.sin(j * 2.1 + t * 1.3) * (0.4 + ph), py + 0.05 * math.cos(j * 1.7 + t * 0.9),
-                          pz + 0.1 + 0.42 * ph)
-            s = 0.5 + 1.3 * ph
-            o.scale = (s * env + 0.001,) * 3
+            sw = 0.035 * math.sin(j * 2.1 + t * 1.6 + ph * 5.0)
+            o.location = (px + 0.05 * math.sin(j * 1.9) + sw, py + 0.04 * math.cos(j * 1.7) + 0.5 * sw,
+                          pz + 0.06 + 0.5 * ph * sc_ ** 0.3)
+            o.scale = (0.4 * env + 0.001, 0.4 * env + 0.001, (2.0 + 1.6 * ph) * env + 0.001)
     # ---- Biscuit
     cc = cue_at(tl, "cat", t)
     cat = ctx["cat"]
@@ -1000,7 +991,12 @@ def animate(kit, story, tl, t, ctx):
         ch.root.scale = (sc0 * 0.82, sc0, sc0 * sq)
         for e in ctx["eyes"]:
             e.scale = (1, 1, max(0.07, bl))
-        ctx["stail"][0].rotation_euler = (math.radians(100 + 6 * math.sin(t * 1.3)), 0, 0)
+        late_ = t >= ctx["reveal_t"]
+        for nd in ctx["glow"].node_tree.nodes:
+            if nd.type == "EMISSION":
+                c_ = (0.18, 0.88, 0.48, 1.0) if late_ else (0.8, 0.86, 0.82, 1.0)
+                nd.inputs["Color"].default_value = c_
+                nd.inputs["Strength"].default_value = 1.6 if late_ else 0.9
     # ---- props (carrier, bag), the bus, the car, the trash can's lid
     pp = cue_at(tl, "props", t)
     for k, o in ctx["props"].items():
@@ -1028,3 +1024,43 @@ def animate(kit, story, tl, t, ctx):
     for i in hr:
         hide(ctx["rail"][i], True)
     return ov
+
+
+# ------------------------------------------------------------------------------------------------ the rule meter inset
+def build_inset(kit, ctx):
+    """A small chalk-count panel glued to the camera, top left, so the meter is in every shot."""
+    cam = kit.OBJ["cam"]
+    m = kit._new(nm("inset"))
+    nt = m.node_tree
+    nt.nodes.remove(nt.nodes["Principled BSDF"])
+    tex = nt.nodes.new("ShaderNodeTexImage")
+    gc = nt.nodes.new("ShaderNodeTexCoord")
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs["Strength"].default_value = 0.85
+    nt.links.new(gc.outputs["Generated"], tex.inputs["Vector"])
+    nt.links.new(tex.outputs["Color"], em.inputs["Color"])
+    out = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+    nt.links.new(em.outputs[0], out.inputs["Surface"])
+    pl = kit.plane(nm("inset"), (1.0, 1.0), (0, 0, -0.15), m, cam)
+    fr = kit.plane(nm("insetframe"), (1.0, 1.0), (0, 0, -0.1515), kit.emit("#e0b050", 0.9, name="insetframe"), cam)
+    for o in (pl, fr):
+        no_shadow(o)
+    ctx["inset"] = (pl, fr, tex)
+    ctx["inset_imgs"] = {}
+
+
+def place_inset(kit, ctx, cnt, lens):
+    pl, fr, tex = ctx["inset"]
+    if cnt not in ctx["inset_imgs"]:
+        im = bpy.data.images.load(digit_image(cnt, kit))
+        im.colorspace_settings.name = "sRGB"
+        ctx["inset_imgs"][cnt] = im
+    tex.image = ctx["inset_imgs"][cnt]
+    d = 0.15
+    unit = d / lens                       # metres per mm of sensor at the panel's distance
+    pw = 0.17 * 13.5 * unit
+    ph = pw * 340 / 280
+    x = -0.70 * 6.75 * unit
+    y = 0.74 * 12.0 * unit
+    pl.location, pl.scale = (x, y, -d), (pw, ph, 1)
+    fr.location, fr.scale = (x, y, -d - 0.0015), (pw * 1.1, ph * 1.08, 1)
