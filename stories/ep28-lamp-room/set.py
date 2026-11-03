@@ -755,7 +755,7 @@ MODES = {
     # the opening evening: low gold sun at the stair foot, only the two warm wall lamps lit above
     "arrive": {"win": (0.4, "#ffc47a"), "shaft": (0.3, "#ffc888"), "foot": (1.0, "#ffc47a"), "lroom": (1.0, "#ffc47a"),
                "lamp": (4.0, None), "lamp2": (4.0, None), "sun": (0.9, "#ffc47a"), "gold": (0.8, "#ffc27a"),
-               "bounce": (0.35, "#ffcc90"), "mem": (0.0, None), "kit": (0.0, None), "cot": (0.0, None), "exp": 0.9,
+               "bounce": (0.35, "#ffcc90"), "mem": (0.0, None), "kit": (0.0, None), "cot": (0.0, None), "exp": 1.5,
                "pane": ("#ffc47a", 1.6), "world": 1.0},
     "run": {"win": (0.6, "#7c9ad0"), "shaft": (1.0, "#8aa4d0"), "foot": (0.4, None), "lroom": (0.0, None), "lamp": (0.5, None),
             "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None), "kit": (0.0, None),
@@ -775,7 +775,7 @@ MODES = {
              "cot": (1.0, None), "exp": 0.0, "pane": ("#1e2c40", 0.5), "world": 0.4},
     "day": {"win": (0.35, "#c8d4e0"), "shaft": (0.9, "#a8b8cc"), "foot": (1.2, "#cfd8e0"), "lroom": (3.0, "#c8d4e0"),
             "lamp": (0.3, None), "sun": (0.6, "#c8d0d8"), "gold": (0.0, None), "bounce": (0.5, "#c8d0d8"), "mem": (0.0, None),
-            "kit": (1.0, None), "cot": (0.0, None), "exp": 0.0, "pane": ("#9aa6b2", 1.2), "world": 1.2},
+            "kit": (0.55, None), "cot": (0.0, None), "exp": -0.6, "pane": ("#9aa6b2", 1.2), "world": 1.2},
     "kday": {"win": (0.0, None), "shaft": (0.0, None), "foot": (0.0, None), "lroom": (0.0, None), "lamp": (0.0, None),
              "sun": (0.5, "#c8d0d8"), "gold": (0.0, None), "bounce": (0.0, None), "mem": (0.0, None),
              "kit": (1.2, None), "cot": (0.0, None), "exp": 0.1, "pane": ("#9aa6b2", 1.2), "world": 1.2},
@@ -784,7 +784,7 @@ MODES = {
              "kit": (0.0, None), "cot": (0.0, None), "exp": -0.2, "pane": ("#ffd59a", 2.2), "world": 0.8},
     "gold": {"win": (0.4, "#ffc47a"), "shaft": (0.3, "#ffc888"), "foot": (0.8, "#ffc47a"), "lroom": (1.5, "#ffc47a"),
              "lamp": (0.2, None), "sun": (1.0, "#ffc47a"), "gold": (0.8, "#ffc27a"), "bounce": (0.35, "#ffcc90"), "mem": (0.0, None),
-             "kit": (0.0, None), "cot": (0.0, None), "exp": -0.6, "pane": ("#ffc47a", 1.6), "world": 1.0},
+             "kit": (0.0, None), "cot": (0.0, None), "exp": -1.2, "pane": ("#ffc47a", 1.6), "world": 1.0},
     "memory": {"win": (0.3, "#4a6aa0"), "shaft": (0.6, "#6a88c0"), "foot": (0.5, None), "lroom": (0.5, None),
                "lamp": (0.8, None), "sun": (0.15, "#5a74b0"), "gold": (0.0, None), "bounce": (0.0, None),
                "mem": (1.0, None), "kit": (0.0, None), "cot": (1.0, None), "exp": 0.2, "pane": ("#2a3c58", 0.6), "world": 0.4},
@@ -935,7 +935,9 @@ def _dress(kit, story, ctx):
         arm = kit.box("ines.blanket arm", (1.1, 1.0, 1.5), (0.1, -0.5, -0.8), blk, bpy.data.objects["ines.arm-1"], bevel=0.12)
         arm.rotation_euler = (0, 0, 0)
         bundle = kit.box("ines.blanket bundle", (2.1, 0.95, 1.15), (0, -0.85, 0.55), blk, tor, bevel=0.14)
-        wrap = [kit.box("ines.wrap torso", (2.5, 1.5, 2.3), (0, -0.02, 0.9), blk, tor, bevel=0.2),
+        fringe = pbr(kit, "blanket fringe", "#e8dcc0", 0.9)
+        wrap = [kit.box("ines.wrap torso", (2.5, 1.5, 1.95), (0, -0.02, 0.72), blk, tor, bevel=0.2),
+                kit.box("ines.wrap fringe", (2.52, 1.52, 0.12), (0, -0.02, -0.2), fringe, tor, bevel=0.03),
                 kit.box("ines.wrap hood", (1.8, 0.4, 1.1), (0, 0.55, 2.6), blk, tor, bevel=0.2)]
         for sx in (-1, 1):
             wrap.append(kit.box(f"ines.wrap leg{sx}", (1.06, 1.1, 1.8), (0, 0, -0.9), blk, bpy.data.objects[f"ines.leg{sx}"], bevel=0.12))
