@@ -238,7 +238,7 @@ S("L29.1", cam([4.3, 0.2, 1.4], [2.2, 1.7, 1.3], 30, [4.2, 0.3, 1.4]),
 S("L30", cam([4.0, 0.5, 0.35], [3.2, 1.4, 0.1], 30, [3.9, 0.6, 0.33]), hand=0.002)
 S("L31", cam([3.8, 0.4, 0.6], [X9, 2.6, 1.3], 32, [3.7, 0.5, 0.62]), hand=0.002,
   look={"face": [[2.4, -0.6, 2.0], [X9, 2.4, 0.9], 25.0], "key2": [[X9, 1.4, 0.1], [X9, 2.45, 0.95], 40.0, 70, "#d4e8ff"]})
-S("L32", cam([3.0, 0.85, 1.0], [X9, 2.5, 1.62], 36, [3.05, 0.95, 1.02]), hand=0.002,
+S("L32", cam([3.35, 0.1, 0.8], [X9, 2.5, 1.35], 30, [3.3, 0.3, 0.9]), hand=0.002,
   look={"face": [[2.3, -0.9, 2.1], [X9, 2.4, 0.95], 30.0], "key2": [[X9, 1.2, 0.12], [X9, 2.45, 0.95], 45.0, 70, "#d4e8ff"]})
 S("L33", cam([3.9, 1.0, 1.5], [2.3, 0.8, 1.5], 34, [3.8, 1.0, 1.5]),
   look={"face": [[4.0, 0.0, 2.1], [2.3, 0.8, 1.5], 120.0]})
@@ -360,7 +360,7 @@ cue("L53", "dc", what="hand", v=1)
 cue("L54", "dc", what="face", v=1)
 
 # the door: ajar at the click, wide at the reveal (across a cut), shut again by Jonah's shoulder
-cue("L27.2", "door", v=7.0, dur=0.3)
+cue("L27.1", "door", v=7.0, dur=0.3)
 cue("L30", "door", v=88.0, dur=0.0)
 cue("L40+0.3", "door", v=0.0, dur=0.6)
 
@@ -437,7 +437,7 @@ sfx = [
     {"at": "L21", "kind": "riser", "db": -28, "dur": 1.6},
     {"at": "L22", "kind": "thud", "db": -22},
     {"at": "L24", "kind": "thud", "db": -24},
-    {"at": "L27.2", "kind": "click", "db": -9},
+    {"at": "L27.1", "kind": "click", "db": -9},
     {"at": "L28", "kind": "whoosh", "db": -18, "dur": 1.4},
     {"at": "L30", "kind": "thud", "db": -12},
     {"at": "L36", "kind": "sting", "db": -16, "dur": 1.6},
@@ -480,7 +480,7 @@ story = {
     "fade_out": False,
     "look": {"style": "closer", "fog": "#bcd4e8", "fog_density": 0.0, "fog_start": 6.0, "sky": "#1d2f7a", "sky_strength": 1.0,
              "hdri": "lebombo", "hdri_strength": 0.45, "hdri_rotation": 0, "hdri_visible": False,
-             "exposure": 0.0, "flash_safe": True},
+             "exposure": 0.0, "flash_safe": True, "polish": True},
     "grade": {"shadows": [0.0, 0.0, 0.03], "highlights": [0.03, 0.015, -0.02], "saturation": 1.12,
               "contrast": 1.06, "vignette": 0.28, "bloom": 0.2, "grain": 0.01},
     "phonemes": {"dryer": "dɹˈIɚ"},

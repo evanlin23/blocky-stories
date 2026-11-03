@@ -6,30 +6,30 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "At the all-night laundromat, you never use dryer nine.",
+   "text": "At the laundromat, you never use dryer nine.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.621,
+   "dur": 2.276,
    "onset": 0.155,
-   "end": 2.431,
+   "end": 2.086,
    "chunks": [
     [
      0.155,
-     0.328
+     0.293
     ],
     [
-     0.328,
-     1.138
+     0.293,
+     0.776
     ],
     [
-     1.207,
-     1.664
+     0.828,
+     1.319
     ],
     [
-     1.664,
-     2.431
+     1.319,
+     2.086
     ]
    ]
   },
@@ -326,14 +326,14 @@
    ]
   },
   "L15": {
-   "text": "A quarter buys ten more minutes of night. **(quotable)**",
+   "text": "A quarter buys ten more minutes of night.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.569,
+   "dur": 1.966,
    "onset": 0.172,
-   "end": 2.379,
+   "end": 1.776,
    "chunks": [
     [
      0.172,
@@ -341,43 +341,43 @@
     ],
     [
      0.466,
-     0.914
+     0.931
     ],
     [
-     0.914,
-     1.233
+     0.931,
+     1.25
     ],
     [
-     1.233,
-     2.379
+     1.25,
+     1.776
     ]
    ]
   },
   "L16": {
-   "text": "So I fed it my whole roll of quarters.",
+   "text": "So I fed it the roll of quarters sitting on top of it.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.897,
+   "dur": 2.293,
    "onset": 0.172,
-   "end": 1.707,
+   "end": 2.103,
    "chunks": [
     [
      0.172,
-     0.336
+     0.56
     ],
     [
-     0.336,
-     0.534
+     0.56,
+     1.215
     ],
     [
-     0.534,
-     1.043
+     1.215,
+     1.517
     ],
     [
-     1.043,
-     1.707
+     1.517,
+     2.103
     ]
    ]
   },
@@ -582,26 +582,22 @@
    ]
   },
   "L27": {
-   "text": "Then the door on nine went click.",
+   "text": "Then nine's door went click.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.603,
+   "dur": 1.569,
    "onset": 0.172,
-   "end": 1.414,
+   "end": 1.362,
    "chunks": [
     [
      0.172,
-     0.457
+     0.776
     ],
     [
-     0.457,
-     0.81
-    ],
-    [
-     0.81,
-     1.414
+     0.776,
+     1.362
     ]
    ]
   },
@@ -846,118 +842,126 @@
    ]
   },
   "L39": {
-   "text": "Jonah didn't run.",
+   "text": "Then Jonah saw the timer had stopped.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.224,
-   "onset": 0.19,
-   "end": 1.034,
+   "dur": 1.759,
+   "onset": 0.172,
+   "end": 1.569,
    "chunks": [
     [
-     0.19,
-     1.034
+     0.172,
+     0.664
+    ],
+    [
+     0.664,
+     0.957
+    ],
+    [
+     0.957,
+     1.569
     ]
    ]
   },
   "L40": {
-   "text": "He put his shoulder to the door.",
+   "text": "Like any dryer, nine won't run with the door open.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.603,
-   "onset": 0.155,
-   "end": 1.414,
+   "dur": 2.328,
+   "onset": 0.172,
+   "end": 2.138,
    "chunks": [
     [
-     0.155,
-     0.353
-    ],
-    [
-     0.353,
+     0.172,
      0.759
     ],
     [
-     0.759,
-     1.414
+     0.81,
+     1.319
+    ],
+    [
+     1.319,
+     1.621
+    ],
+    [
+     1.621,
+     2.138
     ]
    ]
   },
   "L41": {
-   "text": "It slid back in with the dark.",
+   "text": "So we shut it, and let the night run down.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.983,
+   "onset": 0.172,
+   "end": 1.793,
+   "chunks": [
+    [
+     0.172,
+     0.621
+    ],
+    [
+     0.647,
+     1.086
+    ],
+    [
+     1.086,
+     1.793
+    ]
+   ]
+  },
+  "L42": {
+   "text": "We sat with our backs against the door,",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 1.793,
+   "onset": 0.155,
+   "end": 1.603,
+   "chunks": [
+    [
+     0.155,
+     0.492
+    ],
+    [
+     0.492,
+     0.819
+    ],
+    [
+     0.819,
+     1.603
+    ]
+   ]
+  },
+  "L43": {
+   "text": "and spent every minute I'd bought.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
    "dur": 1.655,
-   "onset": 0.155,
-   "end": 1.448,
-   "chunks": [
-    [
-     0.155,
-     0.517
-    ],
-    [
-     0.517,
-     0.836
-    ],
-    [
-     0.836,
-     1.448
-    ]
-   ]
-  },
-  "L42": {
-   "text": "We sat there, backs on the door, and held it shut.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 2.155,
-   "onset": 0.155,
-   "end": 1.966,
-   "chunks": [
-    [
-     0.155,
-     0.552
-    ],
-    [
-     0.586,
-     0.854
-    ],
-    [
-     0.854,
-     1.121
-    ],
-    [
-     1.147,
-     1.388
-    ],
-    [
-     1.388,
-     1.966
-    ]
-   ]
-  },
-  "L43": {
-   "text": "For every minute I'd bought.",
-   "who": "narrator",
-   "voice": "am_adam",
-   "rate": 1.45,
-   "tempo": 1.03,
-   "dur": 1.466,
    "onset": 0.172,
-   "end": 1.276,
+   "end": 1.466,
    "chunks": [
     [
      0.172,
-     0.672
+     0.457
     ],
     [
-     0.672,
-     1.276
+     0.457,
+     0.845
+    ],
+    [
+     0.845,
+     1.466
     ]
    ]
   },
@@ -1138,30 +1142,30 @@
    ]
   },
   "L53": {
-   "text": "Something inside held a quarter up to the glass.",
+   "text": "And on top of it sat a new roll of quarters.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.241,
-   "onset": 0.172,
-   "end": 2.034,
+   "dur": 2.069,
+   "onset": 0.155,
+   "end": 1.879,
    "chunks": [
     [
-     0.172,
-     0.81
+     0.155,
+     0.492
     ],
     [
-     0.81,
-     1.25
+     0.492,
+     0.802
     ],
     [
-     1.25,
-     1.406
+     0.802,
+     1.199
     ],
     [
-     1.406,
-     2.034
+     1.199,
+     1.879
     ]
    ]
   },
@@ -1218,6 +1222,30 @@
     [
      1.259,
      1.914
+    ]
+   ]
+  },
+  "L53b": {
+   "text": "Something inside held one up to the glass.",
+   "who": "narrator",
+   "voice": "am_adam",
+   "rate": 1.45,
+   "tempo": 1.03,
+   "dur": 2.086,
+   "onset": 0.172,
+   "end": 1.879,
+   "chunks": [
+    [
+     0.172,
+     0.81
+    ],
+    [
+     0.81,
+     1.207
+    ],
+    [
+     1.207,
+     1.879
     ]
    ]
   }

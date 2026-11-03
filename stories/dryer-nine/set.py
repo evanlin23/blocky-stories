@@ -249,7 +249,7 @@ def annulus(kit, name, r_in, r_out, depth, loc, mat, parent=None, n=32, rot=(0, 
     return ob
 
 
-def night_cloth(kit, name, base=NAVY, fold="#2b3b9a", star="#fff4cc", star_e=5.0, scale=9.0, rough=0.9, thr=0.5):
+def night_cloth(kit, name, base=NAVY, fold="#2b3b9a", star="#fff4cc", star_e=5.0, scale=9.0, rough=0.9, thr=0.5, dotr=(0.07, 0.12)):
     """Deep navy cloth with soft folds and steady warm star specks (object space, so they ride the object)."""
     if name in kit.MATS:
         return kit.MATS[name]
@@ -273,9 +273,9 @@ def night_cloth(kit, name, base=NAVY, fold="#2b3b9a", star="#fff4cc", star_e=5.0
     vor.inputs["Scale"].default_value = scale
     L.new(tc.outputs["Object"], vor.inputs["Vector"])
     dot = N.new("ShaderNodeValToRGB")
-    dot.color_ramp.elements[0].position = 0.07
+    dot.color_ramp.elements[0].position = dotr[0]
     dot.color_ramp.elements[0].color = (1, 1, 1, 1)
-    dot.color_ramp.elements[1].position = 0.12
+    dot.color_ramp.elements[1].position = dotr[1]
     dot.color_ramp.elements[1].color = (0, 0, 0, 1)
     L.new(vor.outputs["Distance"], dot.inputs["Fac"])
     sep = N.new("ShaderNodeSeparateColor")
@@ -618,43 +618,42 @@ def materials(kit):
 
 
 def night_face():
-    """A full moon: pale cream disc, soft darker seas across it, and three grey-gold craters (two tall eyes, one thin mouth)."""
-    im = Image.new("RGB", (faces.TEX_W, faces.TEX_H), (232, 224, 176))
-    sea = Image.new("L", (faces.TEX_W, faces.TEX_H), 0)
+    """A full moon in warm moon yellow: soft darker seas, three deep craters (two tall tilted eyes, one wide crater mouth)."""
+    W, H_ = faces.TEX_W, faces.TEX_H
+    im = Image.new("RGB", (W, H_), (240, 204, 98))
+    sea = Image.new("L", (W, H_), 0)
     sd = ImageDraw.Draw(sea)
     rng = np.random.default_rng(11)
-    for _ in range(26):
-        cx, cy = int(rng.integers(0, faces.TEX_W)), int(rng.integers(0, faces.TEX_H))
-        r = int(rng.integers(40, 150))
-        sd.ellipse([cx - r, cy - r * 0.8, cx + r, cy + r * 0.8], fill=int(rng.integers(40, 110)))
-    sea = sea.filter(ImageFilter.GaussianBlur(40))
-    dark = Image.new("RGB", im.size, (178, 160, 98))
+    for _ in range(34):
+        cx, cy = int(rng.integers(0, W)), int(rng.integers(0, H_))
+        r = int(rng.integers(30, 120))
+        sd.ellipse([cx - r, cy - r * 0.8, cx + r, cy + r * 0.8], fill=int(rng.integers(50, 130)))
+    sea = sea.filter(ImageFilter.GaussianBlur(30))
+    dark = Image.new("RGB", im.size, (196, 150, 58))
     im = Image.composite(dark, im, sea.point(lambda v: min(255, v * 2)))
     d = ImageDraw.Draw(im)
     s = faces.FX1 - faces.FX0
-    def poly(cx, cy, rx, ry, rot, fill, n=40):
+
+    def poly(cx, cy, rx, ry, rot, fill, n=48):
         pts = []
         for i in range(n):
             a = TAU * i / n
             x, y = rx * math.cos(a), ry * math.sin(a)
             pts.append((cx + x * math.cos(rot) - y * math.sin(rot), cy + x * math.sin(rot) + y * math.cos(rot)))
         d.polygon(pts, fill=fill)
-    for sx, ey, er in ((-1, 0.38, 0.108), (1, 0.43, 0.082)):      # not quite a pair: one larger, one set a little high
-        cx, cy = faces._fx(0.5 + sx * 0.22), faces._fy(ey)
-        r = er * s
-        poly(cx, cy, r * 1.3, r * 1.3, 0.0, (176, 160, 104))                  # the crater's pale rim
-        poly(cx - 0.012 * s, cy - 0.01 * s, r * 1.0, r * 1.0, 0.0, (30, 25, 13))   # the dark floor, shaded to one side
-        poly(cx + 0.3 * r, cy - 0.3 * r, 0.1 * r, 0.1 * r, 0.0, (255, 250, 225))
-    # the mouth: one long thin crescent, a little off level, wider than the eyes are apart
-    mx, my = faces._fx(0.5), faces._fy(0.77)
-    upper, lower = [], []
-    for i in range(41):
-        u = -1 + i / 20
-        x = mx + u * 0.38 * s
-        rise = (-(u * u) * 0.02 + u * 0.018) * s
-        upper.append((x, my + rise))
-        lower.append((x, my + rise + 0.026 * s * (1 - u * u) ** 0.7))
-    d.polygon(upper + lower[::-1], fill=(70, 59, 33))
+
+    def crater(cx, cy, rx, ry, rot):
+        poly(cx, cy, rx * 1.3, ry * 1.3, rot, (150, 108, 36))                   # the worn outer lip, a darker ring
+        poly(cx, cy - 0.02 * ry, rx * 1.12, ry * 1.1, rot, (252, 232, 150))     # the lit rim
+        poly(cx, cy, rx, ry, rot, (92, 62, 20))                                  # the wall
+        poly(cx - 0.05 * rx, cy - 0.12 * ry, rx * 0.86, ry * 0.8, rot, (30, 19, 5))   # the deep floor, shaded to one side
+
+    for sx, ey, ex_, er in ((-1, 0.35, 0.22, 0.062), (1, 0.38, 0.22, 0.058)):   # tall hollow eyes, tilted, not quite a pair
+        cx, cy = faces._fx(0.5 + sx * ex_), faces._fy(ey)
+        crater(cx, cy, er * s, er * 2.6 * s, -sx * 0.5)
+        poly(cx + 0.25 * er * s, cy - 0.9 * er * s, 0.17 * er * s, 0.17 * er * s, 0.0, (255, 252, 232))   # the brightest thing
+    # the mouth: a tall hollow crater, longer than the eyes, a little off level
+    crater(faces._fx(0.5), faces._fy(0.78), 0.06 * s, 0.17 * s, 0.05)
     return im.filter(ImageFilter.SMOOTH)
 
 
@@ -662,8 +661,8 @@ NIGHT_HEAD_SC = 0.41
 
 
 def build_night(kit, ctx, M):
-    cloth = night_cloth(kit, "night cloth", base="#141c52", fold="#222f86", scale=8.0, star_e=8.0, thr=0.3)
-    cloth2 = night_cloth(kit, "night cloth2", base="#0f1545", fold="#1b2679", scale=9.0, star_e=8.0, thr=0.3)
+    cloth = night_cloth(kit, "night cloth", base="#10174a", fold="#1d2a7c", scale=12.0, star_e=5.0, thr=0.2, dotr=(0.06, 0.1))
+    cloth2 = night_cloth(kit, "night cloth2", base="#0c1240", fold="#17226e", scale=12.0, star_e=5.0, thr=0.2, dotr=(0.06, 0.1))
     root = kit.empty("night", (0, 0, 0))
     parts = {}
     P = []
@@ -673,16 +672,16 @@ def build_night(kit, ctx, M):
         P.append(ob)
         parts[nm] = (ob, ln)
         return ob
-    mk("torso", 0.42, 0.34, 1.0)
-    mk("shoulders", 0.8, 0.3, 0.3, cloth2, 0.08)
+    mk("torso", 0.36, 0.3, 1.0)
+    mk("shoulders", 0.98, 0.26, 0.2, cloth2, 0.05)
     for sx in (-1, 1):
-        mk(f"upper{sx}", 0.2, 0.2, 1.0)
-        mk(f"fore{sx}", 0.19, 0.18, 1.1)
+        mk(f"upper{sx}", 0.14, 0.14, 1.0, cloth, 0.03)
+        mk(f"fore{sx}", 0.13, 0.12, 1.1, cloth, 0.03)
         mk(f"palm{sx}", 0.2, 0.05, 0.16, cloth2, 0.02)
         for k in range(4):
             mk(f"fing{sx}{k}", 0.042, 0.04, 0.42, cloth2, 0.015)
         mk(f"thumb{sx}", 0.05, 0.04, 0.25, cloth2, 0.015)
-    mk("neck", 0.16, 0.16, 0.4, cloth2, 0.04)
+    mk("neck", 0.09, 0.09, 0.4, cloth2, 0.02)
     head = kit.empty("night.head", (0, 0, 0), root)
     hs = kit.empty("night.heads", (0, 0, 0), head)
     hs.scale = (NIGHT_HEAD_SC,) * 3
@@ -714,6 +713,10 @@ def build_night(kit, ctx, M):
     nt.links.new(ad.outputs[0], bsdf.inputs["Emission Strength"])
     rig.head_mesh("night.headm", hm, hs)
     P.append(head)
+    # a tall starry cowl standing up behind the moon (a high collar, so the face rises out of the night)
+    kit.box("night.cowl", (0.78, 0.1, 1.05), (0, 0.27, -0.12), cloth2, head, bevel=0.05)
+    for sx in (-1, 1):
+        kit.box(f"night.cowl{sx}", (0.1, 0.34, 0.95), (sx * 0.36, 0.17, -0.2), cloth, head, bevel=0.04, rot=(0, 0, sx * -0.35))
     ctx["night"] = {"root": root, "parts": parts, "head": head, "all": [root] + list(root.children_recursive)}
 
 
@@ -731,7 +734,7 @@ def night_pose(ctx, u):
     pr["shoulders"][0].location = sho
     _aim(pr["neck"][0], neck0, (hd[0], hd[1] + 0.05, hd[2] - 0.22), 0.4)
     N["head"].location = hd
-    N["head"].rotation_euler = (math.radians(-8 - 14 * u), 0, math.radians(9 - 3 * u))
+    N["head"].rotation_euler = (math.radians(-8 - 14 * u), 0, math.radians(3 - 2 * u))
     for sx in (-1, 1):
         S = (sho[0] + sx * 0.42, sho[1] - 0.02, sho[2] - 0.04)
         W = lerp((X9 + sx * 0.75, 1.0, 0.07), (X9 + sx * 0.8, 1.45, 0.07))

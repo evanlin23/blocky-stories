@@ -8,15 +8,15 @@
     "At the"
    ],
    [
-    "all-night LAUNDROMAT,",
-    "all-night laundromat,"
+    "LAUNDROMAT,",
+    "laundromat,"
    ],
    [
     "you NEVER use",
     "you never use"
    ],
    [
-    "DRYER NINE.",
+    "dryer NINE.",
     "dryer nine."
    ]
   ]
@@ -252,8 +252,8 @@
     "more minutes"
    ],
    [
-    "of NIGHT. **(quotable)**",
-    "of night. **(quotable)**"
+    "of NIGHT.",
+    "of night."
    ]
   ]
  },
@@ -262,20 +262,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "So I",
-    "So I"
+    "So I fed it",
+    "So I fed it"
    ],
    [
-    "fed it",
-    "fed it"
+    "the roll of QUARTERS",
+    "the roll of quarters"
    ],
    [
-    "my whole ROLL",
-    "my whole roll"
+    "sitting on",
+    "sitting on"
    ],
    [
-    "of quarters.",
-    "of quarters."
+    "TOP of it.",
+    "top of it."
    ]
   ]
  },
@@ -430,12 +430,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then the DOOR",
-    "Then the door"
-   ],
-   [
-    "on nine",
-    "on nine"
+    "Then nine's door",
+    "Then nine's door"
    ],
    [
     "went CLICK.",
@@ -622,8 +618,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "Jonah didn't RUN.",
-    "Jonah didn't run."
+    "Then Jonah saw",
+    "Then Jonah saw"
+   ],
+   [
+    "the timer",
+    "the timer"
+   ],
+   [
+    "had STOPPED.",
+    "had stopped."
    ]
   ]
  },
@@ -632,16 +636,20 @@
   "who": "narrator",
   "chunks": [
    [
-    "He put",
-    "He put"
+    "Like any DRYER,",
+    "Like any dryer,"
    ],
    [
-    "his SHOULDER",
-    "his shoulder"
+    "nine won't run",
+    "nine won't run"
    ],
    [
-    "to the DOOR.",
-    "to the door."
+    "with the door",
+    "with the door"
+   ],
+   [
+    "OPEN.",
+    "open."
    ]
   ]
  },
@@ -650,16 +658,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "It slid",
-    "It slid"
+    "So we SHUT it,",
+    "So we shut it,"
    ],
    [
-    "back IN",
-    "back in"
+    "and let the night",
+    "and let the night"
    ],
    [
-    "with the DARK.",
-    "with the dark."
+    "run DOWN.",
+    "run down."
    ]
   ]
  },
@@ -668,24 +676,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "We sat there,",
-    "We sat there,"
+    "We sat with",
+    "We sat with"
    ],
    [
-    "BACKS on",
-    "backs on"
+    "our BACKS",
+    "our backs"
    ],
    [
-    "the door,",
-    "the door,"
-   ],
-   [
-    "and held",
-    "and held"
-   ],
-   [
-    "it SHUT.",
-    "it shut."
+    "against the DOOR,",
+    "against the door,"
    ]
   ]
  },
@@ -694,8 +694,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "For every minute",
-    "For every minute"
+    "and spent",
+    "and spent"
+   ],
+   [
+    "every MINUTE",
+    "every minute"
    ],
    [
     "I'd BOUGHT.",
@@ -836,20 +840,38 @@
   "who": "narrator",
   "chunks": [
    [
+    "And on TOP",
+    "And on top"
+   ],
+   [
+    "of it sat",
+    "of it sat"
+   ],
+   [
+    "a new ROLL",
+    "a new roll"
+   ],
+   [
+    "of QUARTERS.",
+    "of quarters."
+   ]
+  ]
+ },
+ {
+  "id": "L53b",
+  "who": "narrator",
+  "chunks": [
+   [
     "Something inside",
     "Something inside"
    ],
    [
-    "held a QUARTER",
-    "held a quarter"
+    "held ONE up",
+    "held one up"
    ],
    [
-    "up to",
-    "up to"
-   ],
-   [
-    "the GLASS.",
-    "the glass."
+    "to the GLASS.",
+    "to the glass."
    ]
   ]
  },
