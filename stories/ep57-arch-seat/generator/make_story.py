@@ -290,9 +290,9 @@ shot("S24", "L20", fc(0.0, 4.6, 0, 6.5, 22, head=1.62, hp=0.5),
 shot("S25", "L21", fm(dict(x=1.0, y=11.2, az=0, d=5.0, lens=22), dict(x=-0.6, y=11.2, az=0, d=5.0, lens=22)),
      A("me", 1.4, 11.2, 270, "neutral", walk=(-1.0, 11.2)))
 shot("S26", "L22", fc(0.3, 12.0, 8, 2.0, 34), A("me", 0.3, 12.0, 8, "worried", look=[0, -0.6], head=[0, 14]))
-shot("S27", "L23", still([0.0, 8.4, 1.5], [0.0, 12.7, 0.0], 24), step=2)
-cue("L23-0.4", "shadow", kind="floor", y=14.0, yaw=180, stretch=1.7)
-shot("S28", "L23.3", move(([-1.7, 10.6, 1.1], [-1.1, 13.0, 0.0]), ([1.7, 10.6, 1.1], [1.1, 13.0, 0.0]), 22))
+shot("S27", "L23", still([0.0, 9.0, 3.4], [0.0, 14.5, 0.0], 24), step=2)
+cue("L23-0.4", "shadow", kind="tee", y=14.5)
+shot("S28", "L23.3", move(([-0.5, 9.4, 3.2], [0.0, 14.5, 0.0]), ([0.5, 9.4, 3.2], [0.0, 14.5, 0.0]), 24))
 shot("S29", "L24", still([0.5, 10.3, 1.5], [0.0, 16.0, 0.6], 22),
      A("ilan", IL, SEATY - 0.1, 0, "worried", z=SIT, sit=True, head=[0, 12]))
 shot("S30", "L25", still([1.2, 11.0, 1.8], [-2.6, 4.6, 1.2], 22),
@@ -368,10 +368,10 @@ cue("L42", "wallglow", e=1.5, dur=0.5, dim=0.35)
 cue("L43", "spanlight", on=True, **LIT)
 shot("S52", "L43", WIDECAM, A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True), step=1)
-shot("S53", "L44", still([0.2, 14.0, 1.2], [0.0, 16.95, 1.45], 38),
+shot("S53", "L44", still([0.0, 10.4, 0.95], [0.0, 16.95, 1.5], 30),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True, head=[-18, 0]), step=1)
-shot("S54", "L44.2", still([-1.2, 14.2, 1.7], [IL, 16.0, 1.0], 36),
+shot("S54", "L44.2", still([0.3, 11.0, 0.5], [0.0, 16.95, 1.65], 32),
      A("ilan", IL, 16.05, 0, "worried", **SEATED_ILAN),
      A("span", 0.0, 16.95, 0, "neutral", side=[8, 8], z=SIT, sit=True, head=[-18, 0]), step=1)
 shot("S55", "L45", still([0.1, 14.6, 0.35], [0.0, 16.9, 1.9], 24),

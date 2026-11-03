@@ -442,6 +442,20 @@ def _ensure(ctx, story, tl):
     # ---- the Span's shadow shapes (flat, dark, laid on the cobbles or the back wall)
     ctx["shadows"]["floor"] = shadow_shape("shfloor", M, "floor")
     ctx["shadows"]["wall"] = shadow_shape("shwall", M, "wall")
+    ctx["shadows"]["tee"] = shadow_tee("shtee", M)
+
+
+def shadow_tee(name, M):
+    """A clean T on the cobbles: one straight shoulder bar wall to wall across the arch mouth, a round head on its middle."""
+    e = kit.empty(name, (0, 0, -30))
+    hw, bt, hr = OPEN_W / 2, 0.62, 0.36
+    verts = [(-hw, 0.0, 0.0), (hw, 0.0, 0.0), (hw, bt, 0.0), (-hw, bt, 0.0)]
+    ob = kit.mesh_obj(f"{name}.bar", verts, [(0, 1, 2, 3)], M["shadow"], e)
+    ob.visible_shadow = False
+    pts = [(hr * math.cos(2 * math.pi * i / 36), bt + hr * 0.2 + hr * math.sin(2 * math.pi * i / 36), 0.0) for i in range(36)]
+    ob = kit.mesh_obj(f"{name}.head", pts, [tuple(range(36))], M["shadow"], e)
+    ob.visible_shadow = False
+    return e
 
 
 def shadow_shape(name, M, kind):
@@ -752,6 +766,10 @@ def animate(kit_, story, tl, t, ctx):
         e.location = (sc_[-1].get("x", 0.0), sc_[-1].get("y", SEAT_Y0), 0.05)
         e.rotation_euler = (0, 0, math.radians(sc_[-1].get("yaw", 180)))
         e.scale = (1.0, sc_[-1].get("stretch", 1.0), 1.0)
+    elif kind == "tee":
+        e = ctx["shadows"]["tee"]
+        e.location = (0.0, sc_[-1].get("y", ARCH_Y0 + 0.5), 0.05)
+        e.rotation_euler = (0, 0, 0)
     elif kind == "wall":
         e = ctx["shadows"]["wall"]
         e.location = (sc_[-1].get("x", 0.0), ARCH_Y1 - 0.02, SEAT_H + 0.0)
