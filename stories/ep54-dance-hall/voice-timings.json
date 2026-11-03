@@ -6,92 +6,99 @@
  "model": "hexgrad/Kokoro-82M (Apache 2.0)",
  "lines": {
   "L01": {
-   "text": "in this town, you're born with half a mark. your match has the rest.",
+   "text": "never cover the back of your hand. your match has the rest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.776,
+   "dur": 2.721,
    "onset": 0.172,
-   "end": 2.569,
+   "end": 2.521,
    "chunks": [
     [
      0.172,
-     0.534
+     0.823
     ],
     [
-     0.56,
-     0.836
+     0.823,
+     1.149
     ],
     [
-     0.836,
-     1.061
+     1.149,
+     1.637
     ],
     [
-     1.061,
-     1.448
+     1.707,
+     2.033
     ],
     [
-     1.517,
-     1.828
-    ],
-    [
-     1.828,
-     2.569
+     2.033,
+     2.521
     ]
-   ]
+   ],
+   "estimated": true
   },
   "L02": {
-   "text": "a match is whoever you fit with, friend or family.",
+   "text": "not even in winter.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.345,
+   "dur": 1.349,
    "onset": 0.172,
-   "end": 2.172,
+   "end": 1.149,
    "chunks": [
     [
      0.172,
-     0.423
+     0.66
     ],
     [
-     0.423,
-     0.664
-    ],
-    [
-     0.664,
-     1.069
-    ],
-    [
-     1.147,
-     2.172
+     0.66,
+     1.149
     ]
-   ]
+   ],
+   "estimated": true
   },
   "L03": {
-   "text": "one old man's match is his brother.",
+   "text": "a match is whoever you fit with, friend or family. one old man's match is his brother.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 1.914,
+   "dur": 4.093,
    "onset": 0.172,
-   "end": 1.707,
+   "end": 3.893,
    "chunks": [
     [
      0.172,
-     0.75
+     0.498
     ],
     [
-     0.75,
-     1.017
+     0.498,
+     0.986
     ],
     [
-     1.017,
-     1.707
+     0.986,
+     1.474
+    ],
+    [
+     1.544,
+     2.358
+    ],
+    [
+     2.428,
+     3.079
+    ],
+    [
+     3.079,
+     3.242
+    ],
+    [
+     3.242,
+     3.893
     ]
-   ]
+   ],
+   "estimated": true
   },
   "L04": {
    "text": "when two halves meet on a crowded bus, the whole bus cheers.",
@@ -1890,40 +1897,37 @@
    ]
   },
   "L71": {
-   "text": "in this town, you're born with half a mark. your match has the rest.",
+   "text": "never cover the back of your hand. your match has the rest.",
    "who": "narrator",
    "voice": "am_adam",
    "rate": 1.45,
    "tempo": 1.03,
-   "dur": 2.776,
+   "dur": 2.721,
    "onset": 0.172,
-   "end": 2.569,
+   "end": 2.521,
    "chunks": [
     [
      0.172,
-     0.534
+     0.823
     ],
     [
-     0.56,
-     0.836
+     0.823,
+     1.149
     ],
     [
-     0.836,
-     1.061
+     1.149,
+     1.637
     ],
     [
-     1.061,
-     1.448
+     1.707,
+     2.033
     ],
     [
-     1.517,
-     1.828
-    ],
-    [
-     1.828,
-     2.569
+     2.033,
+     2.521
     ]
-   ]
+   ],
+   "estimated": true
   },
   "L72": {
    "text": "mine is my aunt.",

@@ -149,18 +149,23 @@ def S(at, cam, people, **opt):
 BS = -80.0       # the bus stop
 STRANGERS = {"a1": D((BS - 0.55, 0.3), 62, SM, arms=(85, 0), head=(-30, 0)),
              "a2": D((BS + 0.55, 0.3), -62, SM, arms=(0, 85), head=(30, 0))}
-S(0, cm((BS, -2.7, 1.5), (BS, 0.3, 1.4), 24, (BS, -2.4, 1.5), (BS, 0.3, 1.4), 25), STRANGERS, hand=0.004)
-S("L01.4", cm((BS, -2.1, 1.5), (BS, 0.3, 1.4), 26, (BS, -1.9, 1.5), (BS, 0.3, 1.4), 27), STRANGERS)
+# Frame 1 (opening pass, 2026-11-03): straight at the thing the warning names. In the hall, lit full, tight on the
+# back of Ros's raised left hand in hold, her half already dim, round nobody: no partner's hand where one should be.
+# Her face beyond it, eyes shut, pushing in. No wide before 3 s. (Builder: check the still, adjust to frame the hand.)
+S(0, cm((-0.55, 0.55, 1.62), (-0.25, -0.35, 1.5), 32, (-0.45, 0.3, 1.58), (-0.25, -0.35, 1.5), 36),
+  {"ros": D(ROS_AT, 180, EYES_SHUT, arms=(75, 75))}, hand=0.004)
+S("L01.3", cm((BS, -2.7, 1.5), (BS, 0.3, 1.4), 24, (BS, -2.4, 1.5), (BS, 0.3, 1.4), 25), STRANGERS)
+S("L02", cm((BS, -2.1, 1.5), (BS, 0.3, 1.4), 26, (BS, -1.9, 1.5), (BS, 0.3, 1.4), 27), STRANGERS)
 CAFE = -64.0
 CAFE_ROW = {"b1": D((CAFE - 1.9, 3.5), 0, SM, arms=(85, 0)), "b2": D((CAFE - 1.2, 3.5), 0, SM, arms=(0, 70)),
             "c2": D((CAFE - 0.25, 3.5), 0, SM, arms=(0, 85)), "c1": D((CAFE + 0.55, 3.5), 0, SM, arms=(85, 0)),
             "d1": D((CAFE + 1.3, 3.5), 0, SM, arms=(60, 0)), "d2": D((CAFE + 2.0, 3.5), 0, SM, arms=(0, 85))}
-S("L02", cm((CAFE - 2.6, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20, (CAFE - 2.0, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20), CAFE_ROW)
-S("L02.2+0.3", cm((CAFE + 3.6, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22, (CAFE + 3.0, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22), CAFE_ROW)
+S("L03", cm((CAFE - 2.6, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20, (CAFE - 2.0, 0.3, 1.45), (CAFE - 0.3, 3.4, 1.4), 20), CAFE_ROW)
+S("L03.2+0.3", cm((CAFE + 3.6, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22, (CAFE + 3.0, 1.4, 1.4), (CAFE - 0.5, 3.5, 1.4), 22), CAFE_ROW)
 GATE = -52.0
 GATE_P = {"gm": D((GATE + 0.55, 4.4), 8, SM, arms=(85, 0)), "pm": D((GATE - 0.55, 4.4), -4, SM, arms=(0, 85))}
-S("L03", cm((GATE, 1.2, 1.5), (GATE, 4.4, 1.35), 20, (GATE, 1.6, 1.5), (GATE, 4.4, 1.35), 20), GATE_P)
-S("L03.2", cm((GATE + 0.3, 2.0, 1.5), (GATE, 4.4, 1.5), 28), GATE_P)
+S("L03.4", cm((GATE, 1.2, 1.5), (GATE, 4.4, 1.35), 20, (GATE, 1.6, 1.5), (GATE, 4.4, 1.35), 20), GATE_P)
+S("L03.6", cm((GATE + 0.3, 2.0, 1.5), (GATE, 4.4, 1.5), 28), GATE_P)
 BUSX = -140.0
 BUS_PAIR = {"b1": D((BUSX + 0.6, 0.3), -90, SM, arms=(85, 0)), "b2": D((BUSX - 0.6, 0.3), 90, SM, arms=(0, 85))}
 BUS_CROWD = {**BUS_PAIR,
@@ -374,7 +379,8 @@ cues = [
     {"at": "L65", "name": "hall", "chan": 1.0, "lamps": 1.0, "dur": 0.9},
     {"at": "L73", "name": "hall", "chan": 0.33, "lamps": 0.15, "dur": 1.2},
     # Ros's half dims across the story (every change over 0.4 s or more)
-    {"at": 0, "name": "ros_mark", "v": 1.0},
+    {"at": 0, "name": "ros_mark", "v": 0.45},
+    {"at": "L01.3", "name": "ros_mark", "v": 1.0, "dur": 0.6},   # off screen from the cut
     {"at": "L13.2", "name": "ros_mark", "v": 0.7, "dur": 0.5},
     {"at": "L17", "name": "ros_mark", "v": 0.5, "dur": 0.5},
     {"at": "L19", "name": "ros_mark", "v": 0.9, "dur": 0.4},
@@ -389,10 +395,10 @@ cues = [
     {"at": "L58", "name": "me_mark", "v": 1.0, "dur": 0.6},
     # whole glyphs where two halves meet (0.6 s or more)
     {"at": 0, "name": "whole", "pair": "a", "v": 0.0},
-    {"at": "L01.4", "name": "whole", "pair": "a", "v": 1.0, "dur": 0.8},
-    {"at": "L02", "name": "whole", "pair": "a", "v": 0.0, "dur": 0.3},
-    {"at": "L02.1", "name": "whole", "pair": "c", "v": 1.0, "dur": 0.7},
-    {"at": "L03", "name": "whole", "pair": "g", "v": 1.0, "dur": 0.7},
+    {"at": "L01.4", "name": "whole", "pair": "a", "v": 1.0, "dur": 0.6},
+    {"at": "L03", "name": "whole", "pair": "a", "v": 0.0, "dur": 0.3},
+    {"at": "L03.1", "name": "whole", "pair": "c", "v": 1.0, "dur": 0.7},
+    {"at": "L03.4", "name": "whole", "pair": "g", "v": 1.0, "dur": 0.7},
     {"at": "L04.4", "name": "whole", "pair": "b", "v": 1.0, "dur": 0.7},
     {"at": "L05", "name": "whole", "pair": "d", "v": 1.0, "dur": 0.7},
     {"at": "L06", "name": "whole", "pair": "d", "v": 0.0, "dur": 0.6},
@@ -461,6 +467,7 @@ cues = [
 sfx = [
     # the street opener: a bus hiss under the bus line, a swell of cheering
     {"at": "L04.4", "kind": "whoosh", "db": -20, "dur": 1.4},
+    {"at": "L01.4+0.2", "kind": "hit", "db": -10, "dur": 1.0},   # the sound hit on "REST"
     {"at": "L01.4", "kind": "bell", "db": -26, "dur": 1.2},
     {"at": "L11", "kind": "bell", "db": -24, "dur": 1.2},
     # the creaks: a long low groan, lower each time it nears Ros
@@ -491,7 +498,7 @@ sfx = [
 ]
 story = {
     "slug": "ep54-dance-hall",
-    "title": "In this town, you're born with half a mark",
+    "title": "Never cover the back of your hand",
     "made_for_kids": False,
     "premise": "In a town where everyone is born with half a glowing glyph on one hand and a match out there with the rest, a friend or family, whoever you fit with, I play the records for my aunt Ros's Tuesday ballroom class in white gloves and never dance. Her half is fading, she dances every demonstration with her arms round nobody, and the floor starts to creak behind her in a stride far too long.",
     "twist": "The rule never says which side of the hand. Mine is on my palm, hidden under my record gloves, so my aunt's match was her own nephew all along, carrying her records every Tuesday. We're a family match.",
@@ -525,10 +532,11 @@ story = {
                   {"at": "L71", "mode": "minor", "voices": ["drone"], "energy": 0.3},
               ]},
     "sound": {"floor": "wood", "steps_db": -24, "rev": 3,
-              "floor_spans": [{"from": "L01", "to": "L08", "floor": "grass"}],
+              "floor_spans": [{"from": "L01.3", "to": "L08", "floor": "grass"}],
               "ambience": [
-                  {"kind": "wind", "from": 0, "to": "L08", "lufs": -40},
-                  {"kind": "hum", "from": 0, "to": "L08", "lufs": -44},
+                  {"kind": "room", "from": 0, "to": "L01.3", "lufs": -40},
+                  {"kind": "wind", "from": "L01.3", "to": "L08", "lufs": -40},
+                  {"kind": "hum", "from": "L01.3", "to": "L08", "lufs": -44},
                   {"kind": "room", "from": "L08", "to": "L24", "lufs": -40},
                   {"kind": "drone", "from": "L24", "to": "end", "lufs": -34},
                   {"kind": "room", "from": "L24", "to": "end", "lufs": -42},

@@ -12,15 +12,21 @@
   - The payoff says it outright: L62 "Ros opens her EYES and sees her NEPHEW." L64 "We're a FAMILY MATCH." L65 "Nobody thinks to check a PALM." L72 "Mine is my AUNT."
   - The last dance is a teacher's demonstration with the class watching. I lead my aunt out (L67), tread on her feet (L68), and she uses me to show the class what not to do (L69). No closed eyes, no cheek to cheek, no lingering. Staging notes are under "Builder: staging changes in r5" at the end.
   - Added two beats the pitch didn't have, both inside its shape: the shadows "like the legs of a ladder" during the first scare (sound and shadow only, no creature), and the blank backs of its hands, "Just like MINE", as a red herring at the reveal.
+- **Opening pass (2026-11-03, the opening recipe v1 in `docs/research/playbook.md`):** line 1 is now a warning to "you", and frame 1 looks straight at it.
+  - L01 "NEVER cover / the BACK / of your HAND. / Your MATCH / has the REST." 12 words, about 2.2 s, a sound hit (`hit`) on "REST". Same world and rule, said as a warning. It also plants the gloves: the narrator covers his hands every Tuesday because the backs are blank (L06, L09).
+  - L02 "Not even / in WINTER." tightens the same warning in about 1.0 s, with no names or places.
+  - The family match moves from L02 into L03, which now runs "A MATCH / is whoever / you FIT with, / FRIEND or FAMILY. / One old man's / MATCH / is his BROTHER." The twins (L05) and "My AUNT, Ros" (L07, about 13.8 s) are unchanged.
+  - L71 repeats the new L01 word for word, so the loop still lands. L72 and L73 are unchanged.
+  - Frame 1 is restaged: see "Builder: opening pass" at the end. Re-voice L01, L02, L03 and L71 (the timings in `voice-timings.json` for those four are estimates, marked `estimated`).
 - **Target length:** 2:15 to 2:30.
-- **Word count:** 622 spoken words in 73 lines, all `narrator`, plus 3 pause beats (2.6 s in all). (Was 609 before the r5 rewrite below.)
+- **Word count:** 624 spoken words in 73 lines, all `narrator`, plus 3 pause beats (2.6 s in all). (622 before the opening pass, 609 before r5.)
 - **Estimated length:** about 2:25 after the r5 rewrite (the built cut ran about 142 s, and the rewrite adds 13 words, about 3.4 s). At 290 wpm the speech is 2:06, the 0.12 s gaps add about 8.8 s, the pauses 2.6 s and the loop tail 0.25 s. If it lands under 2:15, add "The whole hall / SMELLS / of floor POLISH." after L08. If it lands over 2:30, cut L22 first, then L16.
 
 ## The story
 
 - **Premise:** In a town where everyone is born with half a glowing glyph on the back of one hand and a match out there with the rest, a friend or family, whoever you fit with, I play the records for my aunt Ros's Tuesday ballroom class in the old upstairs dance hall, in white gloves, and never dance. Ros has looked for her other half for forty years. This autumn her half is fading, she dances every demonstration with her arms round nobody, and the floor starts creaking behind her in a stride far too long.
-- **Rule:** "In this town, you're born with half a mark. Your match has the rest." Halves glow gold on the back of a hand, and when two halves touch they glow whole.
-- **Twist:** the rule never says which side of the hand. My half is on my palm, hidden every Tuesday under my record gloves, so my aunt's match was her own nephew all along, carrying her records every Tuesday. We're a family match. The montage has already said a match can be a friend, a brother or a twin, so the payoff is clear the first time. The first line turns over: "your match has the rest" first points at strangers across town, and by the end the rest was on my palm, next to her every week.
+- **Rule (line 1, a warning):** "Never cover the back of your hand. Your match has the rest." Everyone is born with half a mark there. Halves glow gold on the back of a hand, and when two halves touch they glow whole.
+- **Twist:** the rule never says which side of the hand. My half is on my palm, hidden every Tuesday under my record gloves, so my aunt's match was her own nephew all along, carrying her records every Tuesday. We're a family match. The montage has already said a match can be a friend, a brother or a twin, so the payoff is clear the first time. The first line turns over: "never cover the back of your hand" first reads as a rule for everyone else (my backs are blank, so I wear gloves), and "your match has the rest" points at strangers across town. By the end the rest was on my palm, under the gloves, next to her every week.
 - **Where the twist is planted:**
   - Plant 1, the gloves: L09 ("I play the RECORDS / in my record GLOVES. / I NEVER dance."), and the careful wording at L06 ("The backs / of MY hands / are BLANK.").
   - Plant 2, the collar: L18 to L19, when Ros straightens my collar after class her half glows bright for a second. She blames the lighting (L20).
@@ -35,7 +41,7 @@
 An old upstairs dance hall above a row of shops, on Tuesday nights in autumn. A narrow wooden stair comes up from a street door. The hall is long and high: a honey maple sprung floor worn pale in a ring where couples circle, primrose plaster walls with cream pilasters, three tall arched windows of indigo night, a row of bentwood chairs along the walls, and one big brass chandelier of glass drops hanging low over the middle of the floor. At the far end on a small table stands an old wooden record player with a brass-cornered lid and a crate of plain-sleeved records.
 
 - **No text anywhere.** Record labels are plain gold discs with a drawn ring, sleeves are plain card, no posters, no name on the hall or the street door. The bus stop has a shelter and a plain post with a coloured disc, no route number or name.
-- **The opener** is a sunny bus stop on a bright street of painted shopfronts with blank signboards (colour only).
+- **The opener** (after frame 1's close on Ros's hand in the hall) is a sunny bus stop on a bright street of painted shopfronts with blank signboards (colour only).
 - **What's true underneath (never said):** the demonstration dance in this hall is a place built for two. For years Ros has danced it with nobody in her partner's spot, so the count is short by one, and the hall's Keeper stands in the gap. Each week it stands nearer that spot, until it stands right over it. When I step in, the place is filled by a person and it's gone. It carries no glyph, because a Keeper carries none of the town's markers. It never touches anyone, and it doesn't care about Ros. It only counts.
 
 ## Cast
@@ -55,7 +61,7 @@ Every word is the narrator's. Ros's one quote (L37) is reported in my line, and 
 - Ros's half is the left half of a ring with a three-toothed comb inside it. Mine is the right half, on my right palm. Same gold.
 - When two halves touch (back of hand to back of hand in hold), they read as one whole glyph, brighter, with a soft bloom. The change ramps over 0.6 s or more.
 - Ros's half dims across the story: 100% in L07, 70% in L14, 50% at L19 (brief rise to 90% and back), 25% at L36, 10% at L52. Every change is a slow ramp across a cut or over 1 s or more, never a step on screen.
-- Visible by 2 s: L01's first shot is two strangers at a bus stop holding up the backs of their hands toward each other, both halves glowing, faces in frame.
+- Visible by 0 s: frame 1 is a close-up on the back of Ros's raised hand in hold, her half glowing but already dim, her face beyond it. At L01.3 the bus stop strangers hold up the backs of their hands toward each other, and their halves bloom whole on "REST".
 
 ## The creature: the Stilted
 
@@ -106,7 +112,8 @@ Every word is the narrator's. Ros's one quote (L37) is reported in my line, and 
 - **Cold close:** at L71 the major third drops back to minor, the lead stops, only the drone and one slow creak are left under L73.
 - **Drops:** P01 (0.7 s, before L25): all music and the record out, keep a faint room tone and one low thud hit. P02 (0.7 s, before L45): everything drops but the drone and one deep wood creak.
 - **Ambience, all synthesized:** street traffic hush and a bus hiss for the opener, a bus cheer as a swelled crowd noise, shoes on wood, the sprung floor creak (a long, low wooden groan, pitched lower each time it nears Ros), glass drops chiming softly, the record skip (a short crackle and a jump back), the street door bang downstairs at L32 (-18 dB with a pitch fall), class laughter and claps at L69.
-- **The loop:** 0.25 s after "LONG", cut to L01's bus stop.
+- **The hit:** a `hit` (low boom with a crack) on "REST" in L01, with the glyph bell under it.
+- **The loop:** 0.25 s after "LONG", cut to L01's frame 1: Ros's dim hand in hold round nobody, which matches L73's last image of her warming up alone.
 
 ## The lore connection (one only)
 
@@ -118,15 +125,15 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 
 ## 01 The rule (L01 to L09, 0 to about 20 s; the montage ends by 12 s)
 
-- **Where:** a sunny bus stop, then quick montage shots, then the hall.
-- **Shots:** 12.
+- **Where:** frame 1 in the hall (Ros's hand), then a sunny bus stop, quick montage shots, then the hall.
+- **Shots:** 13.
 
-- `L01` narrator: In this TOWN, / you're born / with HALF a mark. / Your MATCH / has the REST.
-  - [bright bus stop, two strangers, `smile`, holding up the backs of their hands toward each other, each with half a gold glyph, faces in frame by 0.5 s. Cut at "match" to a close on the two hands side by side, halves fitting]
-- `L02` narrator: A MATCH / is whoever / you FIT with, / FRIEND or FAMILY.
-  - [a long café table, a row of people raising the backs of their hands in one wave. Two halves across the table light up together]
-- `L03` narrator: One old man's / MATCH / is his BROTHER.
-  - [a garden gate: two old brothers who plainly look alike (same grey buzz cut, same face shape, striped shirts in green and blue), holding the backs of their hands up together, one whole glyph, both `smile`]
+- `L01` narrator: NEVER cover / the BACK / of your HAND. / Your MATCH / has the REST.
+  - [frame 1, in the hall, lit full: tight on the back of Ros's raised left hand in dance hold, her half glowing gold but already dim (45%), and nothing in her hold, no partner's hand where one should be. Her face beyond the hand, eyes shut, counting. Slow push in. Cut at "Your MATCH" (L01.3) to the bright bus stop: two strangers, `smile`, holding up the backs of their hands toward each other, and their halves bloom whole on "REST" with the sound hit]
+- `L02` narrator: Not even / in WINTER.
+  - [close on the strangers' two bare hands side by side, halves fitting]
+- `L03` narrator: A MATCH / is whoever / you FIT with, / FRIEND or FAMILY. / One old man's / MATCH / is his BROTHER.
+  - [a long café table, a row of people raising the backs of their hands in one wave. Two halves across the table light up together. Cut at "One old man's" (L03.4) to a garden gate: two old brothers who plainly look alike (same grey buzz cut, same face shape, striped shirts in green and blue), holding the backs of their hands up together, one whole glyph, both `smile`]
 - `L04` narrator: When two halves meet / on a crowded BUS, / the whole bus CHEERS.
   - [inside a packed bus: two strangers' hands touching on a pole strap, glow, the passengers around them cheering, arms up]
 - `L05` narrator: The TWINS / next door MATCH. / They ARGUE / every DAY, / and LOVE it.
@@ -316,7 +323,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the hall. The harmony drops back to minor at L71. Only the drone and one creak under L73.
 - **Shots:** 4.
 
-- `L71` narrator: In this TOWN, / you're born / with HALF a mark. / Your MATCH / has the REST.
+- `L71` narrator: NEVER cover / the BACK / of your HAND. / Your MATCH / has the REST.
   - [high wide: the two of us side by side facing the class, our joined hands held up the way the strangers held theirs at the bus stop, one whole glyph between them]
 - `L72` narrator: Mine / is my AUNT.
   - [close on my palm, gold, Ros's hand-back resting on it]
@@ -347,3 +354,15 @@ The words changed in L02, L03, L05, L07, L10, L13, L26, L35, L46, L58, L59, L62,
 - **S93 (L70):** keep the collar, brief, then we both face the class.
 - **S94 (L71):** side by side facing the class, our joined hands raised the way the bus-stop strangers held theirs, one whole glyph. No hold.
 - Ros's solo dances with her eyes shut (L12 to L14, L41, L44, P02 to L52, L73) stay as they are. She's counting the steps, alone, and the creature must stay unseen by her.
+
+## Builder: opening pass (2026-11-03)
+
+Re-voice L01, L02, L03 and L71 once. The shots that change are S01 to S07 (everything before the twins); the generator already points them at the new chunks, so check the stills.
+
+- **S01 (0 s, new, frame 1):** in the hall, lit full (wall lamps and chandelier on). Tight on the back of Ros's raised left hand in hold, centred, her half at 45%: glowing, but dim. Her face beyond it in frame, eyes shut, lips counting. Her hold is round nobody, and that's what's wrong. A slow push in over line 1. No wide, no establishing shot, nothing from far off before 3 s. The camera in `make_story.py` is a first guess: render the still and frame the hand and her face together.
+- **S02 (L01.3, was S01):** the bus stop strangers, as before. Their halves bloom whole at L01.4 (0.6 s) on "REST", with the sound hit.
+- **S03 (L02, was S02):** the close on the two hands, halves fitting.
+- **S04 and S05 (L03, L03.2+0.3):** the café table shots, moved from L02 to L03.
+- **S06 and S07 (L03.4, L03.6):** the brothers at the gate, moved to the second half of L03.
+- **Sound:** room tone under S01, then wind and hum from the cut to the street (L01.3). Ros's half ramps back to full off screen from L01.3.
+- **L71 (S95):** no change to the picture. The words change to match L01.
