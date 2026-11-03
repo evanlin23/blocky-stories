@@ -129,7 +129,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - **Where:** the two front yards by day, bright sun. Then my room at night.
 - `L07` narrator: My DAD / has hated that lawn / for TEN YEARS.
   - [S07: bright day, Dad at the low fence in his garden cap, `angry`, glaring over at the green lawn, hose in his sleeve's direction.]
-- `L08` narrator: Ours has one BALD SPOT / he can't FIX.
+- `L08` narrator: Ours has one BALD SPOT / Dad can't FIX.
   - [S08: our yard, Dad on one knee by the bald circle, a seed bag (built, plain) beside him, `worried`.]
 - `L09` narrator: It's perfectly ROUND.
   - [S09: top-down on the bald circle, clean edge, grass all round. Plant 1.]
