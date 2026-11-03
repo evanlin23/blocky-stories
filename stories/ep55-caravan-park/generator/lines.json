@@ -190,8 +190,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Jory and I",
-    "Jory and I"
+    "My WIFE,",
+    "My wife,"
+   ],
+   [
+    "MAGGIE, and I",
+    "Maggie, and I"
    ],
    [
     "have had",
@@ -220,8 +224,8 @@
     "by the gate."
    ],
    [
-    "His,",
-    "His,"
+    "Hers,",
+    "Hers,"
    ],
    [
     "and MINE.",
@@ -274,8 +278,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Jory walks me",
-    "Jory walks me"
+    "Maggie walks me",
+    "Maggie walks me"
    ],
    [
     "to the GATE,",
@@ -286,8 +290,8 @@
     "me on"
    ],
    [
-    "his LEFT.",
-    "his left."
+    "her LEFT.",
+    "her left."
    ]
   ]
  },
@@ -296,12 +300,12 @@
   "who": "narrator",
   "chunks": [
    [
-    "Then he WAITS",
-    "Then he waits"
+    "Then she WAITS",
+    "Then she waits"
    ],
    [
-    "in his CHAIR.",
-    "in his chair."
+    "in her CHAIR.",
+    "in her chair."
    ]
   ]
  },
@@ -314,8 +318,8 @@
     "This autumn,"
    ],
    [
-    "he's coming up",
-    "he's coming up"
+    "she's coming up",
+    "she's coming up"
    ],
    [
     "GREEN.",
@@ -332,8 +336,8 @@
     "thicker every evening,"
    ],
    [
-    "mostly on his",
-    "mostly on his"
+    "mostly on her",
+    "mostly on her"
    ],
    [
     "LEFT SHOULDER.",
@@ -382,8 +386,8 @@
     "there are flowers"
    ],
    [
-    "in his EYEBROWS.",
-    "in his eyebrows."
+    "in her HAIR.",
+    "in her hair."
    ]
   ]
  },
@@ -396,8 +400,8 @@
     "The gulls"
    ],
    [
-    "sit on him",
-    "sit on him"
+    "sit on her",
+    "sit on her"
    ],
    [
     "like a ROCK.",
@@ -436,16 +440,16 @@
   "who": "narrator",
   "chunks": [
    [
-    "He won't",
-    "He won't"
+    "She won't",
+    "She won't"
    ],
    [
     "come IN.",
     "come in."
    ],
    [
-    "He just looks",
-    "He just looks"
+    "She just looks",
+    "She just looks"
    ],
    [
     "at MY CHAIR.",
@@ -583,8 +587,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "And Jory",
-    "And Jory"
+    "And Maggie",
+    "And Maggie"
    ],
    [
     "isn't at",
@@ -606,8 +610,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "His CAP",
-    "His cap"
+    "Her CAP",
+    "Her cap"
    ],
    [
     "is on",
@@ -632,8 +636,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "His chair",
-    "His chair"
+    "Her chair",
+    "Her chair"
    ],
    [
     "is GREEN",
@@ -654,8 +658,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Like he waited",
-    "Like he waited"
+    "Like she waited",
+    "Like she waited"
    ],
    [
     "longer than ANYONE",
@@ -676,8 +680,8 @@
     "I ring"
    ],
    [
-    "his PHONE.",
-    "his phone."
+    "her PHONE.",
+    "her phone."
    ],
    [
     "It buzzes",
@@ -698,8 +702,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "His COAT",
-    "His coat"
+    "Her COAT",
+    "Her coat"
    ],
    [
     "is still",
@@ -710,8 +714,8 @@
     "on its hook."
    ],
    [
-    "His BOOTS",
-    "His boots"
+    "Her BOOTS",
+    "Her boots"
    ],
    [
     "are GONE.",
@@ -728,8 +732,8 @@
     "I call"
    ],
    [
-    "his NAME",
-    "his name"
+    "her NAME",
+    "her name"
    ],
    [
     "into the FOG.",
@@ -935,8 +939,8 @@
     "slowly,"
    ],
    [
-    "toward Jory's",
-    "toward Jory's"
+    "toward Maggie's",
+    "toward Maggie's"
    ],
    [
     "EMPTY CHAIR.",
@@ -1047,8 +1051,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "His never",
-    "His never"
+    "Hers never",
+    "Hers never"
    ],
    [
     "CAME OFF,",
@@ -1095,8 +1099,8 @@
     "All these years,"
    ],
    [
-    "Jory's been waiting",
-    "Jory's been waiting"
+    "Maggie's been waiting",
+    "Maggie's been waiting"
    ],
    [
     "for me",
@@ -1139,8 +1143,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Jory's on",
-    "Jory's on"
+    "Maggie's on",
+    "Maggie's on"
    ],
    [
     "the OLD BENCH",
@@ -1155,12 +1159,12 @@
     "green from"
    ],
    [
-    "his HAIR",
-    "his hair"
+    "her HAIR",
+    "her hair"
    ],
    [
-    "to his BOOTS.",
-    "to his boots."
+    "to her BOOTS.",
+    "to her boots."
    ]
   ]
  },
@@ -1169,8 +1173,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "He came looking",
-    "He came looking"
+    "She came looking",
+    "She came looking"
    ],
    [
     "for ME,",
@@ -1203,8 +1207,8 @@
     "I sit down"
    ],
    [
-    "on his LEFT.",
-    "on his left."
+    "on her LEFT.",
+    "on her left."
    ]
   ]
  },
@@ -1217,8 +1221,8 @@
     "And I wait"
    ],
    [
-    "for HIM",
-    "for him"
+    "for HER",
+    "for her"
    ],
    [
     "to be READY.",
@@ -1279,8 +1283,8 @@
     "And all"
    ],
    [
-    "of his",
-    "of his"
+    "of hers",
+    "of hers"
    ],
    [
     "comes OFF",
@@ -1341,8 +1345,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "Now Jory",
-    "Now Jory"
+    "Now Maggie",
+    "Now Maggie"
    ],
    [
     "takes the",
@@ -1377,8 +1381,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "He comes",
-    "He comes"
+    "She comes",
+    "She comes"
    ],
    [
     "back up",
@@ -1403,8 +1407,8 @@
   "who": "narrator",
   "chunks": [
    [
-    "It takes him",
-    "It takes him"
+    "It takes her",
+    "It takes her"
    ],
    [
     "FOREVER.",
@@ -1495,8 +1499,8 @@
     "to my chair,"
    ],
    [
-    "Jory says",
-    "Jory says"
+    "Maggie says",
+    "Maggie says"
    ],
    [
     "the grass",
