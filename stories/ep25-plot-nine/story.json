@@ -5635,7 +5635,7 @@
    }
   ]
  },
- "sound": {
+ "sound": {"rev": 2, 
   "floor": "grass",
   "steps_db": -22,
   "ambience": [
