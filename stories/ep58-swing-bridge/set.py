@@ -509,7 +509,7 @@ def build_bedroom(kit, ctx):
     kit.box("bd_frb", (1.7, 0.14, 0.08), (X, 4.97, 1.1), cream)
     kit.box("bd_frm", (1.6, 0.1, 0.06), (X, 4.97, 1.7), cream)
     kit.box("bd_glass", (1.6, 0.02, 1.2), (X, 5.0, 1.7), kit.glass("#b8cad6"))
-    kit.box("bd_blind", (1.56, 0.04, 0.6), (X, 4.9, 2.0), kit.plastic("#8f8a78", 0.9))   # plain cream blind, half up
+    kit.box("bd_blind", (1.56, 0.04, 0.6), (X, 4.9, 2.0), kit.plastic("#3a382f", 0.9))   # plain cream blind, half up
     kit.box("bd_sill", (1.9, 0.9, 0.06), (X, 5.55, 1.08), cream, bevel=0.01)
     kit.box("bd_ground", (30, 60, 0.2), (X, 35, -0.1), kit.grime("#2f3a30", 0.55, 2.0, rough=0.9))
     kit.box("bd_gwall", (10, 0.5, 1.0), (X, 8.5, 0.5), kit.bricks("#6a4a3e", "#523a30", "#3a3632", 1.0))
@@ -598,9 +598,9 @@ def build(kit, story, tl):
     L("ki_amb", "POINT", (250, 3, 2.6), 200, "#ffe3b8", size=0.4)
     L("ki_win", "AREA", (250, 1.0, 1.5), 800, "#e0ecf4", size=1.2)
     L("bd_amb", "AREA", (350, 2.0, 2.9), 20, "#6a82c0", size=3.0)
-    L("bd_in", "POINT", (349.9, 4.3, 1.7), 25, "#9db4e0", size=0.2)
-    L("bd_moon", "AREA", (350, 7.5, 3.0), 1100, "#9bb4e6", size=3.0)
-    for nm, tg in (("cin_screen", (100, 0, 1.5)), ("ki_win", (250, 3.4, 1.0)), ("bd_moon", (350, 5.6, 1.2))):
+    L("bd_in", "POINT", (349.9, 3.6, 1.2), 7, "#9db4e0", size=0.2)
+    L("bd_moon", "AREA", (350, 5.9, 6.0), 1500, "#9bb4e6", size=3.0)
+    for nm, tg in (("cin_screen", (100, 0, 1.5)), ("ki_win", (250, 3.4, 1.0)), ("bd_moon", (350, 5.7, 1.2))):
         kit.aim(kit.LIGHTS[nm]["obj"], tg)
     L("torch", "SPOT", (0, 0, 1), 400, "#fff0d0", size=0.1, spot=40, blend=0.5)
     L("phone", "POINT", (0, 0, 1), 1.0, "#bcd4ff", size=0.1)
@@ -611,6 +611,8 @@ def build(kit, story, tl):
         lt["on"] = True
     for nm in ("sun", "moon"):
         kit.aim(kit.LIGHTS[nm]["obj"], (0, 0, 0))
+    for nm in ("bd_moon", "bd_amb", "ki_win", "cin_screen", "off_amb"):
+        kit.LIGHTS[nm]["obj"].visible_camera = False
     return ctx
 
 
@@ -641,7 +643,7 @@ LOOKS = {
     "lean_ext": dict(sky="#38486a", ss=1.1, fog="#3c4e72", fd=0.03, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=1.0, fill=0.3,
                      lights={"cab_lamp": 0.7, "cab_stove": 0.9, "cab_amb": 0.25, "lamppost": 0.0}),
     "bedout": dict(sky="#3c4e74", ss=0.55, fog="#445a84", fd=0.05, fs=3, sun=(0, 0, 0.0, "#ffffff"), moon=0.0, fill=0.0,
-                   lights={"bd_amb": 1.0, "bd_moon": 1.0, "bd_in": 1.0}),
+                   lights={"bd_amb": 1.0, "bd_moon": 1.0}),
     "cinema": dict(sky="#201820", ss=0.1, fog="#201820", fd=0.0, fs=30, sun=(0, 0, 0.0, "#ffffff"), moon=0, fill=1.0,
                    lights={"cin_screen": 1.0, "cin_amb": 1.0}),
     "office": dict(sky="#c0c8d0", ss=0.3, fog="#c0c8d0", fd=0.0, fs=30, sun=(0, 0, 0.0, "#ffffff"), moon=0, fill=0.8,
@@ -750,7 +752,7 @@ def _lazy(kit, story, tl, ctx):
                     nt.nodes.remove(nd)
                 em = nt.nodes.new("ShaderNodeEmission")
                 em.inputs["Color"].default_value = kit.col(GOLD)
-                em.inputs["Strength"].default_value = 2.5
+                em.inputs["Strength"].default_value = 1.6
                 tr = nt.nodes.new("ShaderNodeBsdfTransparent")
                 mx = nt.nodes.new("ShaderNodeMixShader")
                 mx.inputs[0].default_value = 0.0
@@ -800,8 +802,8 @@ def _cam(story, tl, t):
     return V(loc), V(tgt)
 
 
-GLOW_EM = 0.85
-GLOW_LIGHT = 40.0
+GLOW_EM = 0.28
+GLOW_LIGHT = 11.0
 
 
 def animate(kit, story, tl, t, ctx):
@@ -981,7 +983,7 @@ def animate(kit, story, tl, t, ctx):
             if not hidden and g > 0.02:
                 hp_ = sk.matrix_world.translation.copy()
                 tc_ = (cam - hp_)
-                tc_ = tc_.normalized() * 0.22 if tc_.length > 0.01 else V((0, 0, 0))
+                tc_ = tc_.normalized() * 0.32 if tc_.length > 0.01 else V((0, 0, 0))
                 pool.append((g, hp_ + tc_))
         sl = ctx.get("slits", {}).get(who)
         if sl:
