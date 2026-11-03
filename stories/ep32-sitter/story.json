@@ -1,9 +1,9 @@
 {
  "slug": "ep32-sitter",
- "title": "Never Paint A PERSON In Here 🖌️",
+ "title": "Whatever This Class Paints Comes HOME 🖌️",
  "made_for_kids": false,
- "premise": "Kofi's art class paints new things into town, and each one turns up by Thursday, first as bare pine with the pencil lines still on it, then filling in with color. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty, so I join the class and paint him, Theo, but Kofi locks up for the night before I finish his nose, and anything missed on a painted person stays bare pine till their painter finishes it. By Tuesday a pine man with a pencil face stands in our hall, and each night he is a step nearer my door with more color on him.",
- "twist": "On Thursday Theo comes down to dinner in full color except a bare pine nose, and Mom calmly lays him a plate, because eighteen years ago she took Kofi's class and broke the rule herself: she painted me. The patch of bare pine I always called a birthmark is the ear she never dared finish, and the student Kofi said I hold a brush like was Mom. Only a painter can finish what they painted, so I finish Theo's nose and Mom finishes my ear at her old easel. The loop: a new student hides a half pine face, and I tell her never to paint a person.",
+ "premise": "Kofi's art class paints new things into town, and each one turns up by Thursday, first as bare pine with the pencil lines still on it, then filling in with color. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty, so I join the class and paint him, Dario, but Kofi locks up for the night before I finish his nose, and anything missed on a painted person stays bare pine till their painter finishes it. By Tuesday a pine man with a pencil face stands in our hall, and each night he is a step nearer my door with more color on him.",
+ "twist": "On Thursday Dario comes down to dinner in full color except a bare pine nose, and Mom calmly lays him a plate, because eighteen years ago she took Kofi's class and broke the rule herself: she painted me. The patch of bare pine I always called a birthmark is the ear she never dared finish, and the student Kofi said I hold a brush like was Mom. Only a painter can finish what they painted, so I finish Dario's nose and Mom finishes my ear at her old easel. The loop: a new student hides a half pine face, and I tell her what happens if you paint a person.",
  "world": "a bright little town that Kofi's art class paints new things into, on pine panels: a sunny bus stop with a new bench, a bakery cake and a cafe flower box still filling in, the arts centre life room on Monday afternoons with eight easels round a pine dais, the car park at dusk, and Mom's front hall with her folded old easel and a small dining table",
  "voice": {
   "voice": "am_adam",
@@ -701,8 +701,8 @@
      "I painted my"
     ],
     [
-     "big brother, THEO.",
-     "big brother, Theo."
+     "big brother, DARIO.",
+     "big brother, Dario."
     ]
    ]
   },
@@ -938,8 +938,8 @@
      "At dinner,"
     ],
     [
-     "Theo came",
-     "Theo came"
+     "Dario came",
+     "Dario came"
     ],
     [
      "down the STAIRS",
@@ -1082,8 +1082,8 @@
    "who": "narrator",
    "chunks": [
     [
-     "Theo asked",
-     "Theo asked"
+     "Dario asked",
+     "Dario asked"
     ],
     [
      "for the SALT.",
@@ -1118,8 +1118,8 @@
      "So on Monday,"
     ],
     [
-     "Theo sat",
-     "Theo sat"
+     "Dario sat",
+     "Dario sat"
     ],
     [
      "on the DAIS,",
@@ -2135,7 +2135,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "my panel close: Theo's grin and brown eyes, his face centre bare pine",
+   "what": "my panel close: Dario's grin and brown eyes, his face centre bare pine",
    "hide_cast": [
     "me",
     "kofi"
@@ -2317,7 +2317,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "through the lit window, my panel on easel 8, Theo's painted eyes turned to the glass",
+   "what": "through the lit window, my panel on easel 8, Dario's painted eyes turned to the glass",
    "turn8": true,
    "at": "L14.2"
   },
@@ -2355,7 +2355,7 @@
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "Mom's hall at night, one wall lamp: pine Theo at the far end by the stairs, facing my door",
+   "what": "Mom's hall at night, one wall lamp: pine Dario at the far end by the stairs, facing my door",
    "at": "L15"
   },
   {
@@ -2466,7 +2466,7 @@
    ],
    "hand": 0.01,
    "step": 2,
-   "what": "low from my doorway: pine Theo halfway down the hall, boots to chest in colour",
+   "what": "low from my doorway: pine Dario halfway down the hall, boots to chest in colour",
    "at": "L17"
   },
   {
@@ -2540,7 +2540,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "bright morning, from my pillow: Theo at the foot of my bed, full colour",
+   "what": "bright morning, from my pillow: Dario at the foot of my bed, full colour",
    "at": "L18"
   },
   {
@@ -2614,7 +2614,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "close on Theo's face: warm skin, brown eyes, the pine nose patch with its pencil outline",
+   "what": "close on Dario's face: warm skin, brown eyes, the pine nose patch with its pencil outline",
    "at": "L19"
   },
   {
@@ -2651,7 +2651,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "the room as the music drops: Theo beside the bed, starting to lean",
+   "what": "the room as the music drops: Dario beside the bed, starting to lean",
    "at": "L20"
   },
   {
@@ -2688,7 +2688,7 @@
    ],
    "hand": 0.004,
    "step": 2,
-   "what": "3/4: Theo leaning in from the waist, his face a hand from mine, grinning. Never touches",
+   "what": "3/4: Dario leaning in from the waist, his face a hand from mine, grinning. Never touches",
    "at": "L20.2"
   },
   {
@@ -2762,7 +2762,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Mom's hall, warm evening: Mom at the table, Theo coming down the stairs",
+   "what": "Mom's hall, warm evening: Mom at the table, Dario coming down the stairs",
    "at": "L22"
   },
   {
@@ -2799,7 +2799,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Theo in the third chair",
+   "what": "Dario in the third chair",
    "at": "L22.3"
   },
   {
@@ -2836,7 +2836,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Mom calmly laying a third plate in front of Theo",
+   "what": "Mom calmly laying a third plate in front of Dario",
    "at": "L23"
   },
   {
@@ -3206,7 +3206,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "Theo, grinning, a hand out, Mom sliding the salt to him",
+   "what": "Dario, grinning, a hand out, Mom sliding the salt to him",
    "at": "L29"
   },
   {
@@ -3280,7 +3280,7 @@
    ],
    "hand": 0.002,
    "step": 2,
-   "what": "the life room, bright: Theo on the dais stool as my sitter, the nine strokes on the dais edge under his boots",
+   "what": "the life room, bright: Dario on the dais stool as my sitter, the nine strokes on the dais edge under his boots",
    "tally": true,
    "at": "L31"
   },
@@ -3469,7 +3469,7 @@
    ],
    "hand": 0.006,
    "step": 2,
-   "what": "two-shot, Mom and me at our easels, Theo grinning on the dais",
+   "what": "two-shot, Mom and me at our easels, Dario grinning on the dais",
    "at": "L33.2"
   },
   {

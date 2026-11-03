@@ -395,7 +395,7 @@ Fresh idea (added with `dryer-nine`, 2026-11-03, so the backlog doesn't run dry)
 - floor-thirteen: forgotten things go to floor 13, and the narrator is what Grandad forgot
 - moving-day (ep17): a house grows to fit the tallest one living in it, and it never fit us; something tall came with us in a box
 - ep32-sitter (old, dropped 2026-11-03): if nobody looks at you, your face fades; the faceless sitter creeping nearer is Mum, faded because I stopped looking at her
-- ep32-sitter (revival 2026-11-03): whatever the art class paints comes to life by Thursday; I paint the big brother I always wanted, and Mom just sets him a place, because she painted me eighteen years ago (a made person, not a fade or a stand-in)
+- ep32-sitter (revival 2026-11-03): whatever the art class paints comes to life by Thursday; I paint the big brother I always wanted (Dario), and Mom just sets him a place, because she painted me eighteen years ago (a made person, not a fade or a stand-in)
 - ep43-reading-room: the number over your head is how many people know your name; you don't count yourself, so my 1 was my brother all along
 - ep47-fitting-room: every lie pins a tag to your clothes, but a lie you believe never gets one; my clean coat was the lie that I was happy in the city
 - ep48-crazy-golf: your shadow sits where you were happiest; the one on Dad's green is mine, and the one at my feet is Dad's

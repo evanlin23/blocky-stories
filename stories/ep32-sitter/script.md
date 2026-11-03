@@ -3,20 +3,20 @@
 - **Slug:** `ep32-sitter` (revival path b, `docs/research/2026-11-03-revival-triage.md` → "### 1. ep32-sitter"). A new story under hard rule 5: new script, title, twist. The folder name stays for the plumbing.
 - **Engine:** the old myth of a sculptor whose statue comes to life (a made person), never any specific work's plot.
 - **Target length:** the 60 to 90 s arm (playbook H1), at its long end: about 86 to 90 s.
-- **Word count:** 353 spoken words in 36 lines, all `narrator`, voice A. At 290 wpm the speech is about 73 s, plus about 12 s of line and chunk gaps, two music drops and the 0.25 s tail, so about 86 to 90 s. The reveal (L23 to L26) starts about 57 s in, inside the last 30 s. If long, cut L29 first (the salt), then L33. If short, add "He knew where we KEEP / the SPOONS." after L20.
-- **Tense:** past, first person. L01 to L07 and L34 to L36 are present (how the town is, how things are now). Kofi, Mom and Theo only ever speak inside my lines.
-- **Opening:** `ban` (line 1 "Never..."). ep80, mirror-maze and moving-day are also `ban`, so the uploader has to space them (at most 1 in 4 a week).
+- **Word count:** 352 spoken words in 36 lines, all `narrator`, voice A. At 290 wpm the speech is about 73 s, plus about 12 s of line and chunk gaps, two music drops and the 0.25 s tail, so about 86 to 90 s. The reveal (L23 to L26) starts about 57 s in, inside the last 30 s. If long, cut L29 first (the salt), then L33. If short, add "He knew where we KEEP / the SPOONS." after L20.
+- **Tense:** past, first person. L01 to L07 and L34 to L36 are present (how the town is, how things are now). Kofi, Mom and Dario only ever speak inside my lines.
+- **Opening:** `if` (line 1 "If you paint a PERSON...", round 1 review, 2026-11-03).
 - **Quotable line (marked):** L23, "Mom didn't SCREAM. / She set him a PLACE."
 
 ## Changed for the builder (revival, 2026-11-03)
-Every line is new, so re-voice everything once (cold-viewer fix round, 2026-11-03: L02, L06, L13 and L30 changed again, before any voicing) (ids restart at L01, and the old L01 to L40 are all gone). The old `voice-timings.json` is stale.
+Every line is new, so re-voice everything once (cold-viewer fix round, 2026-11-03: L02, L06, L13 and L30 changed again, then round 1 review: L01, L02, L06, L11, L22, L29, L31 for the new opening and the rename Dario to Dario) (ids restart at L01, and the old L01 to L40 are all gone). The old `voice-timings.json` is stale.
 
 **story.json text** (already pasted, so `check` compares the new story):
-- `title`: "Never Paint A PERSON In Here 🖌️"
+- `title`: "Whatever This Class Paints Comes HOME 🖌️"
 - `premise`, `twist`, `world`: as in story.json now, matching the sections below.
 
 **New**
-- **Theo (`theo`, new cast):** my big brother, painted. An adult, early twenties, a head taller than me (height about 1.08). Brown block hair with a swept fringe, brown eyes, a wide easy grin, a forest-green zip jacket over a cream tee, dark jeans, tan boots. As pine: every surface raw pine (`pine_mat`) with grain, the face graphite guide lines only (a cross, two eye ovals, one mouth line, no nose). **The fill climbs from the boots up** (the reverse of the old restore): Tuesday fill 0, Wednesday colour to the chest, Thursday full colour except a **nose patch** (a small square of bare pine grain on the face centre with a graphite nose outline). Finished, the patch becomes a short drawn ink nose stroke on skin like the rest of his face.
+- **Dario (`theo`, new cast):** my big brother, painted. An adult, early twenties, a head taller than me (height about 1.08). Brown block hair with a swept fringe, brown eyes, a wide easy grin, a forest-green zip jacket over a cream tee, dark jeans, tan boots. As pine: every surface raw pine (`pine_mat`) with grain, the face graphite guide lines only (a cross, two eye ovals, one mouth line, no nose). **The fill climbs from the boots up** (the reverse of the old restore): Tuesday fill 0, Wednesday colour to the chest, Thursday full colour except a **nose patch** (a small square of bare pine grain on the face centre with a graphite nose outline). Finished, the patch becomes a short drawn ink nose stroke on skin like the rest of his face.
 - **The ear patch (plant 1):** a decal on the left side of my head where an ear sits: a patch of raw pine grain about 1/6 of head height, with one faint graphite curve of an ear outline. It's on `me` in every shot, and it has to read at phone size in S07 (a close at about 12 s).
 - **The pine bench (montage):** a plain slatted bench at the bus stop, as raw pine with graphite construction lines (S04), then coloured a bright green over about 1.5 s (S05, a ramp).
 - **The rule meter (needed from frame 1 to the last):** seven small rounded squares in a row at the top of the frame, above every face and outside the caption band. Each one is a day, Monday on the left, and the fourth (Thursday) has a little graphite brush tick under it. Today's square is bare pine with a pencil outline, and the days before it are filled with colour. It steps each time the story's day changes (L03 Monday, L04 Tuesday, L05 Thursday, L09 Monday, L15 Tuesday, L17 Wednesday, L18 Thursday, L31 Monday, L34 the new week). No letters, no numbers. The opt-in `meter` overlay built for night-mower (commit 74d4ef6, branch `claude/batch6-p3-night-mower`) is the starting point.
@@ -25,23 +25,23 @@ Every line is new, so re-voice everything once (cold-viewer fix round, 2026-11-0
 
 **Dropped:** the faded-face rule and the fade-from-loneliness story, faded Mum on the stool, the fruit bowl as plant, the power dip, the rain, Mum's home portrait, my flat corner, the phone, the sting sitter, Petra's car park beat and her pear.
 
-**Kept (reused):** the life room, the eight easels, the dais and stool, the car park and its window shot, Mom's hall, the montage sets (bus stop, cafe, bakery), the pine-and-guide-line shader (`pine_mat`, `fade_setup`, `fade_update`, now driven upward on Theo), Kofi, Mom (cast key `mum`, said "Mom" everywhere), Petra (now the new student at the end), Mr Dobbs (`ade`, a bench sitter in the montage) and the background painters.
+**Kept (reused):** the life room, the eight easels, the dais and stool, the car park and its window shot, Mom's hall, the montage sets (bus stop, cafe, bakery), the pine-and-guide-line shader (`pine_mat`, `fade_setup`, `fade_update`, now driven upward on Dario), Kofi, Mom (cast key `mum`, said "Mom" everywhere), Petra (now the new student at the end), Mr Dobbs (`ade`, a bench sitter in the montage) and the background painters.
 
 ## Big idea (the one sentence)
 In a town where whatever Kofi's art class paints comes to life by Thursday, I break the one rule and paint the big brother I always wanted, and Mom just sets him a place at dinner, because eighteen years ago she broke it too: she painted me.
 
 ## Premise
-Kofi's art class paints the town: a bench, a cake, window flowers, and each one turns up a few days later, first as bare pine with the pencil lines still on it, then filling in with colour. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty. So I join the class and paint one, Theo. I stop at his nose when Kofi locks up for the night, with my panel still inside. By Tuesday a pine man with a pencil face is standing in our hall, one step nearer my door each night.
+Kofi's art class paints the town: a bench, a cake, window flowers, and each one turns up a few days later, first as bare pine with the pencil lines still on it, then filling in with colour. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty. So I join the class and paint one, Dario. I stop at his nose when Kofi locks up for the night, with my panel still inside. By Tuesday a pine man with a pencil face is standing in our hall, one step nearer my door each night.
 
 ## Rule
-"Never paint a person in Kofi's class. Paint the town." Then the rule itself: whatever the class paints shows up in town by Thursday, bare pine and pencil guide lines first, then the colour fills in.
+"If you paint a person in Kofi's class, they come home." Then the rule itself: whatever the class paints shows up in town by Thursday, bare pine and pencil guide lines first, then the colour fills in.
 
 - **Marker by 2 s:** a pine panel on an easel with a face half painted and half bare pine and pencil (frame 1), and the week meter at the top of the frame.
 - **Montage (3 to 5, in the first 15 s):** the bench on Monday's panel (S03), the bench turning up at the bus stop as bare pine with pencil lines and people sitting on it anyway (S04), the bench going green (S05), a bakery cake with its frosting still filling in (S05b), the cafe's window flowers stuck half pencil because their painter moved away (S06).
 - **Seconds 15 to 30:** I want a brother, the class, Kofi's brush remark, the panel. Nobody explains the rule.
 - **The narrator is the exception:** I'm already a little bit pine (the birthmark, L07). The reason is the reveal.
 - **The loved one at stake:** Mom, in a picture at 0:15 (S09, the two of us in her hall), and the brother I want.
-- **The loophole the climax turns:** L06 says it at 10 s, over the stuck cafe flowers: anything missed on a painted person stays bare pine till their own painter finishes it. That's the ban's teeth, and it's what the birthmark is (L07). So I'm the only one who can finish Theo's nose, and Mom is the only one who can finish my ear.
+- **The loophole the climax turns:** L06 says it at 10 s, over the stuck cafe flowers: anything missed on a painted person stays bare pine till their own painter finishes it. That's the ban's teeth, and it's what the birthmark is (L07). So I'm the only one who can finish Dario's nose, and Mom is the only one who can finish my ear.
 
 ## Twist
 Eighteen years ago Mom took Kofi's class, broke the rule and painted me. That's why she doesn't scream when a painted man comes down to dinner: she sets him a place. Said plainly at L23 to L26 over one picture: Mom's fingertip on the bare pine patch on my head, her folded old easel behind us.
@@ -60,14 +60,14 @@ A bright little town where Kofi's art class paints new things into it. The class
 ## Cast (all adults, nobody in peril)
 - **Me (`me`):** an adult, no age on screen. Black buzzed block hair (so the ear patch shows), a mustard knit sweater, charcoal pants, white sneakers. The ear patch in every shot. Easel 8, by the window.
 - **Mom (`mum`):** my mom, fifties. Silver block bob, round tortoiseshell glasses, a teal check cardigan over a cream top. Calm, warm, a little dry. Kofi taught her years ago.
-- **Theo (`theo`, new):** my big brother, painted. As above. Kind, grinning, never menacing once he's in colour.
+- **Dario (`theo`, new):** my big brother, painted. As above. Kind, grinning, never menacing once he's in colour.
 - **Kofi (`kofi`):** runs the art class, fifties (he taught Mom eighteen years ago). Shaved head, round black glasses, rust shirt, denim apron. Says the brush line and nothing about the rule.
 - **Petra (`petra`):** the new student at the end, thirties. Copper bun, navy and white striped top.
 - **Mr Dobbs (`ade`):** a bench sitter at the bus stop. **Extras:** two passers-by, a baker and a customer, five background painters at easels 2 to 6.
 
-## The creature: pine Theo (continuity)
-- **Look:** Theo's R6 body at his height, all raw pine (`#d8b98a`) with grain and two dark knots, graphite guide-line face: a cross, two empty ovals, one mouth line, no nose. Never seen moving, only already somewhere new. Leans in from the waist, never touches.
-- **Light it:** the hall at night is lit by one warm wall lamp from the side and a cool rim from the stair window, front fill low. The empty ovals are the palest thing on him. Readable at phone size. Coloured Theo is lit warm and bright.
+## The creature: pine Dario (continuity)
+- **Look:** Dario's R6 body at his height, all raw pine (`#d8b98a`) with grain and two dark knots, graphite guide-line face: a cross, two empty ovals, one mouth line, no nose. Never seen moving, only already somewhere new. Leans in from the waist, never touches.
+- **Light it:** the hall at night is lit by one warm wall lamp from the side and a cool rim from the stair window, front fill low. The empty ovals are the palest thing on him. Readable at phone size. Coloured Dario is lit warm and bright.
 - **Where he is:**
   - S12 to S15: only on my panel (pencil and paint, the face finished except the nose).
   - S16 to S17 (Tuesday night): standing at the far end of Mom's hall by the stairs, all pine, facing my door.
@@ -78,24 +78,24 @@ A bright little town where Kofi's art class paints new things into it. The class
   - S33 on: finished, warm, grinning. The pine never comes back on him.
 
 ## Palette and sound
-- **Palette:** bright and saturated. Montage in sunny primaries, the new bench a bright grass green. The life room warm afternoon light going gold. Raw pine, graphite grey, Mom's teal, Theo's forest green, my mustard. The one dark-ish scene is the hall at night (S16 to S18), lamp-lit and readable. Thursday morning is bright.
+- **Palette:** bright and saturated. Montage in sunny primaries, the new bench a bright grass green. The life room warm afternoon light going gold. Raw pine, graphite grey, Mom's teal, Dario's forest green, my mustard. The one dark-ish scene is the hall at night (S16 to S18), lamp-lit and readable. Thursday morning is bright.
 - **Caption key colour:** bench green `#5fd068` (the first thing we see fill in).
 - **Music:** F Lydian, 96 bpm, light plucked pulse and pad from L01 to L15 (wonder, played a little funny). A low drone enters at L15 (the pine man in the hall) and holds to L23. Music drops (voice and hit only) 0.6 s before L20 ("Morning, little BROTHER") and 0.7 s before L23 ("Mom didn't SCREAM"). D major, 84 bpm, warm pad and piano from L24 to L33. L34 to L36 back to a thin cold drone, then the closing sound.
-- **Hits:** a soft low hit on "TOWN" (end of L01), on "BIRTHMARK" (L07), on "HALL" (L15), on "BROTHER" (L20) and on "PLACE" (L23). A soft rising paper shimmer under each colour fill (S05, S32, S33).
+- **Hits:** a soft low hit on "HOME" (end of L01), on "BIRTHMARK" (L07), on "HALL" (L15), on "BROTHER" (L20) and on "PLACE" (L23). A soft rising paper shimmer under each colour fill (S05, S32, S33).
 - **Lights off (L13, Kofi locking up with my panel inside):** Kofi's clamp lamps ramp from 100% to 35% over 1.2 s and cut while dim. Never full dark. Pre-check with `flash`.
 - **Closing sound:** under L36, one low two-note chord falling a fifth at about -16 dB, then 0.25 s to the loop cut.
 
 ## The lore plant
-Nine short graphite strokes, plain, no extra stroke, along the front edge of the life-room dais (the class's own count). Seen in S32 under L31, the dais edge across the lower middle of the frame above the caption band, under Theo's boots, held about 1.6 s. Never narrated. `stories/lore.md`'s ep32 row still points at the old S39 and L39, so it needs this shot and line.
+Nine short graphite strokes, plain, no extra stroke, along the front edge of the life-room dais (the class's own count). Seen in S32 under L31, the dais edge across the lower middle of the frame above the caption band, under Dario's boots, held about 1.6 s. Never narrated. `stories/lore.md`'s ep32 row still points at the old S39 and L39, so it needs this shot and line.
 
 ## Shot plan and narration
 Format: id, who, caption chunks split with ` / `, CAPS are key words in green. Shots under each line, a cut or punch-in every 1 to 2 s. The week meter is on screen in every shot.
 
 ### 01 The rule (0 to about 13 s)
-- `L01` narrator: Never paint a PERSON / in Kofi's CLASS. / Paint the TOWN.
-  - [S01: frame 1, close on a pine panel on an easel, bright afternoon light: a face, its left half painted in colour, its right half bare pine with a graphite cross and one empty eye oval. Push in. The meter at the top. Soft hit on "TOWN"]
+- `L01` narrator: If you paint a PERSON / in Kofi's CLASS, / they come HOME.
+  - [S01: frame 1, close on a pine panel on an easel, bright afternoon light: a face, its left half painted in colour, its right half bare pine with a graphite cross and one empty eye oval. Push in. The meter at the top. Soft hit on "HOME"]
   - [S01b at "CLASS": punch in on the line where paint stops and pine begins]
-- `L02` narrator: Even someone / you've always WANTED.
+- `L02` narrator: Even the parts / you didn't FINISH.
   - [S02: the same panel, a quick push to the empty pencil eye. Meter on Monday]
 - `L03` narrator: Whatever his art class PAINTS / shows up in town / by THURSDAY.
   - [S03: the life room, a panel with a painted green bench. S03b: the meter steps toward Thursday as we cut]
@@ -103,7 +103,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in green. S
   - [S04: the sunny bus stop: the new bench, raw pine with graphite construction lines, Mr Dobbs sitting on it anyway. S04b: close on a pencil line along a slat]
 - `L05` narrator: Then the COLOR / fills IN.
   - [S05: the bench ramps from pine to bright green over about 1.5 s, Mr Dobbs looking down at it, pleased. S05b: the bakery window, a cake whose pink frosting is still filling in up one side, the baker and a customer staring at it]
-- `L06` narrator: Paint a PERSON, / and anything you miss / stays bare PINE on them, / till their PAINTER finishes it.
+- `L06` narrator: On a PERSON, / anything you MISS / stays bare PINE, / till their PAINTER finishes it.
   - [S06: the cafe window flower box, red flowers on the left, pencil outlines on bare pine on the right (their painter moved away, shown and not said). S06b: punch in on the pencil half, then a quick cut to a blank pine panel on an easel with only a pencil cross for a face]
 - `L07` narrator: And behind my EAR, / there's a patch of bare PINE / I've always called a BIRTHMARK.
   - [S07: me in the cafe window's reflection, then a close on the side of my head: the ear patch of raw pine grain with one faint graphite curve. At about 12 s. Hit on "BIRTHMARK". Plant 1]
@@ -115,36 +115,36 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in green. S
   - [S10: me on the arts centre steps in sun, a pine panel under my arm. S10b: the life room, eight easels round the dais, Kofi waving me to easel 8]
 - `L10` narrator: Kofi said I hold a brush / EXACTLY like someone / he taught YEARS ago.
   - [S11: Kofi beside me, looking down at my hand, off frame, a small puzzled smile. S11b: the brush tip on the panel, no hand in frame. Plant 2]
-- `L11` narrator: Everyone else / painted the BUS STOP. / I painted my big brother, THEO.
+- `L11` narrator: Everyone else / painted the BUS STOP. / I painted my big brother, DARIO.
   - [S12: over a painter's shoulder, a bus-stop panel. S12b: my panel, a young man's figure in pencil, colour going in: green jacket, brown hair]
 - `L12` narrator: Older than ME, / and always on MY side.
-  - [S13: my panel close, Theo's painted grin and brown eyes, his face centre still bare pine. S13b: me, proud, the ear patch in frame]
+  - [S13: my panel close, Dario's painted grin and brown eyes, his face centre still bare pine. S13b: me, proud, the ear patch in frame]
 - `L13` narrator: I got as far / as his NOSE / when Kofi locked up / for the NIGHT.
   - [S14: Kofi at the door with his keys, waving me out, the clamp lamps ramping down to 35% behind him, cut while dim. My panel stays on easel 8. S14b: my panel, a pine square with a pencil nose outline where the nose should be]
 - `L14` narrator: From the car PARK, / his face on my EASEL / was looking OUT.
-  - [S15: the car park at dusk under the lamp post, me looking back. S15b: through the lit window, my panel on easel 8, Theo's painted eyes turned to the glass]
+  - [S15: the car park at dusk under the lamp post, me looking back. S15b: through the lit window, my panel on easel 8, Dario's painted eyes turned to the glass]
 
 ### 03 Tuesday to Thursday (about 34 to 54 s)
 - `L15` narrator: On TUESDAY, / a man of bare PINE / was standing in our HALL.
-  - [S16: Mom's hall at night, one wall lamp, the drone enters: pine Theo at the far end by the stairs, facing my door. Hit on "HALL". S16b: me in my doorway, frozen]
+  - [S16: Mom's hall at night, one wall lamp, the drone enters: pine Dario at the far end by the stairs, facing my door. Hit on "HALL". S16b: me in my doorway, frozen]
 - `L16` narrator: Pencil lines / for a FACE.
   - [S17: close on his face, the cross and two empty ovals the palest thing, no nose]
 - `L17` narrator: WEDNESDAY, / the color had climbed / to his CHEST, / and he was one step / nearer my DOOR.
-  - [S18: low, from my doorway: pine Theo halfway down the hall, boots to chest in colour, jacket hem green, the rest pine. S18b: his feet one board from my threshold]
+  - [S18: low, from my doorway: pine Dario halfway down the hall, boots to chest in colour, jacket hem green, the rest pine. S18b: his feet one board from my threshold]
 - `L18` narrator: THURSDAY MORNING, / he was at the end / of my BED.
-  - [S19: bright morning, from my pillow: Theo at the foot of my bed, full colour. S19b: me sitting up fast, the ear patch toward camera]
+  - [S19: bright morning, from my pillow: Dario at the foot of my bed, full colour. S19b: me sitting up fast, the ear patch toward camera]
 - `L19` narrator: In full COLOR, / with a bare pine NOSE.
-  - [S20: close on Theo's face, warm skin, brown eyes, the pine nose patch with its pencil outline]
+  - [S20: close on Dario's face, warm skin, brown eyes, the pine nose patch with its pencil outline]
 - `L20` narrator: He leaned in and said, / "Morning, little BROTHER."
-  - [S21: music drop 0.6 s before. S22: 3/4, Theo leaning in from the waist, his face a hand from mine, grinning. Hit on "BROTHER". Never touches. Cover frame]
+  - [S21: music drop 0.6 s before. S22: 3/4, Dario leaning in from the waist, his face a hand from mine, grinning. Hit on "BROTHER". Never touches. Cover frame]
 - `L21` narrator: I hadn't told MOM.
   - [S22b: me, eyes going to the door]
 
 ### 04 Dinner (about 54 to 72 s)
-- `L22` narrator: At DINNER, / Theo came down the STAIRS / and sat at the TABLE.
-  - [S23: Mom's hall, warm evening light, the dining end: Mom at the table, Theo coming down the stairs. Mom's folded easel in the back. S23b: Theo in the third chair]
+- `L22` narrator: At DINNER, / Dario came down the STAIRS / and sat at the TABLE.
+  - [S23: Mom's hall, warm evening light, the dining end: Mom at the table, Dario coming down the stairs. Mom's folded easel in the back. S23b: Dario in the third chair]
 - `L23` narrator: Mom didn't SCREAM. / She set him a PLACE.
-  - [Music drop 0.7 s before. S24: Mom calmly laying a third plate in front of Theo. S24b: me, stunned. Hit on "PLACE". **Quotable line**]
+  - [Music drop 0.7 s before. S24: Mom calmly laying a third plate in front of Dario. S24b: me, stunned. Hit on "PLACE". **Quotable line**]
 - `L24` narrator: Then she touched the pine / behind my EAR, / and told me.
   - [S25: THE PICTURE. Mom's fingertip on the ear patch on my head, her face close and kind, her folded easel with its panel turned to the wall behind us. Hold it. D major comes in]
 - `L25` narrator: Eighteen years AGO, / she took Kofi's class TOO.
@@ -155,18 +155,18 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in green. S
   - [S28: Mom's old folded easel in the hall, close, paint-worn]
 - `L28` narrator: She stopped at my EAR, / and never dared touch / that canvas AGAIN.
   - [S29: Mom, glasses off for a second, looking at me like she's still scared to change a line. S29b: the old panel, turned to the wall]
-- `L29` narrator: Theo asked / for the SALT.
-  - [S30: Theo, grinning, a hand out, Mom sliding the salt to him with her other hand off frame. Played for the laugh]
+- `L29` narrator: Dario asked / for the SALT.
+  - [S30: Dario, grinning, a hand out, Mom sliding the salt to him with her other hand off frame. Played for the laugh]
 
 ### 05 Finishing (about 72 to 82 s)
 - `L30` narrator: And only MOM / could ever finish ME.
   - [S31: Mom and me in her hall, the old easel being unfolded, cut before hands meet it]
-- `L31` narrator: So on MONDAY, / Theo sat on the DAIS, / and I painted his NOSE.
-  - [S32: the life room, bright: Theo on the dais stool as my sitter, the nine strokes on the dais edge under his boots (lore plant, held 1.6 s), his nose patch warming to skin. S32b: me at easel 8, side on, steady. Cut away before a hand meets the panel]
+- `L31` narrator: So on MONDAY, / Dario sat on the DAIS, / and I painted his NOSE.
+  - [S32: the life room, bright: Dario on the dais stool as my sitter, the nine strokes on the dais edge under his boots (lore plant, held 1.6 s), his nose patch warming to skin. S32b: me at easel 8, side on, steady. Cut away before a hand meets the panel]
 - `L32` narrator: Mom set up her old EASEL / beside mine, / and finished my EAR.
   - [S33: Mom at the easel beside mine, her old panel back to camera, her face just over its top edge, concentrating. S33b: close on my head, the pine patch warming to skin over about 1.5 s, paper shimmer]
 - `L33` narrator: Kofi said / we hold our brushes / EXACTLY the SAME.
-  - [S34: Kofi behind us, arms folded, smiling. S34b: two-shot, Mom and me at our easels, Theo grinning on the dais]
+  - [S34: Kofi behind us, arms folded, smiling. S34b: two-shot, Mom and me at our easels, Dario grinning on the dais]
 
 ### 06 The new student (about 82 to 89 s)
 - `L34` narrator: This week, the new student / turned her canvas / to the WALL.
@@ -178,10 +178,10 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in green. S
 
 ## Notes for the builder
 - Hands never grip: cut away at S11b, S30, S31, S32b and S33. The brush is only ever seen by its tip on a panel.
-- S22: Theo leans from the waist, a hand's width clear of my face. Check it against the bed frame.
+- S22: Dario leans from the waist, a hand's width clear of my face. Check it against the bed frame.
 - S25 is the reveal picture: Mom's fingertip on the ear patch, the patch and her face both large, out of the caption band.
 - The ear patch must be the same decal in every shot of me until S33b, then gone for good.
-- Theo's nose patch is on him from S20 to S32 and gone after.
+- Dario's nose patch is on him from S20 to S32 and gone after.
 - The week meter changes only on cuts, never mid-shot.
 - No text on panels, signs, the bakery, the cafe or the bus stop.
-- Cover (`cover_s` 52.0, estimated): S22, Theo in colour with his pine nose leaning in at me, caption "little BROTHER". Re-set it from the timings.
+- Cover (`cover_s` 52.0, estimated): S22, Dario in colour with his pine nose leaning in at me, caption "little BROTHER". Re-set it from the timings.
