@@ -555,7 +555,7 @@ S("L76", FRAME1, M, dof=[0.85, 2.4], fill=0.6, note="my old sneakers on the mat:
 
 # ---------------------------------------------------------------------------------------------------- story
 look = {"fog": "#ffd7b8", "fog_density": 0.004, "fog_start": 30.0, "sky": "#ff9d4d", "exposure": 0.0,
-        "flash_safe": True, "style": "closer", "polish": {"quiet": [["L36", "P01"]]}}
+        "flash_safe": True, "style": "closer", "polish": {"emph": ["L01", "L05", "L37", "L39", "L66", "L76"], "reveal": ["L66", "L39"], "quiet": [["L68", "L70"]], "sway": ["S59", "S60", "S61"], "camera": False, "idle": False, "ease": False}}
 story = {
     "slug": "warm-shoes",
     "title": "Our Cat Brings Home WARM Shoes \U0001F408",

@@ -25,12 +25,32 @@
   "flash_safe": true,
   "style": "closer",
   "polish": {
+   "emph": [
+    "L01",
+    "L05",
+    "L37",
+    "L39",
+    "L66",
+    "L76"
+   ],
+   "reveal": [
+    "L66",
+    "L39"
+   ],
    "quiet": [
     [
-     "L36",
-     "P01"
+     "L68",
+     "L70"
     ]
-   ]
+   ],
+   "sway": [
+    "S59",
+    "S60",
+    "S61"
+   ],
+   "camera": false,
+   "idle": false,
+   "ease": false
   }
  },
  "grade": {
