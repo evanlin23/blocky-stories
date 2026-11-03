@@ -291,7 +291,7 @@ sh("S67b", 46, "L46b", mv([20.9, 3.7, 1.45], [20.2, 2.5, 1.25], 34), {}, look="c
 ins("S67")
 sh("S68", 47, "L47", fc(hd(20.2, 2.95), 0, 10, 2.0, 40, rise=0.1),
    {"me": P(20.2, 2.95, 0, arms=[40, 40], side=[0, 0], expr="wide", head=[0, 24])}, look="cab_low", glow={"me": 0.4}, hand=0.003)
-sh("S69", 48, "L48", mv([20.3, 4.9, 0.9], [20.0, 2.3, 1.3], 26), {"me": P(21.45, 3.3, 0, arms=[50, 50], side=[0, 0], expr="wide")},
+sh("S69", 48, "L48", mv([20.2, 4.85, 2.6], [20.2, 1.2, 1.2], 20), {"me": P(20.2, 4.4, 0, arms=[88, 88], side=[0, 0], expr="wide")},
    look="cab_low", glow={"me": 0.9}, glow_k=2.0, reach="lean", sash=True, sill=3.0, hand=0.003, lk={"cab_lamp": 0.0, "cab_amb": 0.8, "cab_stove": 0.0})
 lvl("stove", "L47", 0.0, 0.5)
 lvl("glow.me", "L47+0.1", 0.9, 1.0)
@@ -327,8 +327,8 @@ sh("S84", 60, "L60", mv([17.9, -1.6, 1.55], [20.2, 2.6, 1.6], 34), {"emrys": P(2
 sh("S85", 61, "L61", mv([21.3, 4.95, 1.7], [20.0, 0.0, 1.5], 30, [21.3, 4.8, 1.7], [20.0, 0.0, 1.5], 30),
    {"emrys": P(20.4, 2.65, 0, expr="neutral", arms=[0, 100], side=[0, 0])}, look="dusk", glow={"emrys": B}, sash=True, hand=0.003,
    lk={"cab_lamp": 0.8, "cab_amb": 0.8})
-sh("S86", 62, "L62", fc(hd(14.0, 0.0), 0, 10, 2.3, 38, rise=0.08), {"mec": P(14.0, 0.0, 0, arms=[0, 100], side=[0, 0], expr="grin")},
-   look="dusk", glow={"mec": 0.6}, lk={"lamppost": 0.0}, fill_k=1.0)
+sh("S86", 62, "L62", fc(hd(21.6, -2.0), 0, 12, 2.6, 38, rise=0.08), {"ada": P(21.6, -2.0, 0, arms=[0, 0], side=[0, 0], expr="smile")},
+   look="dusk", glow={"ada": M})
 sh("S87", 62, "L62.2", fc(hd(21.6, -2.0), 0, 12, 2.6, 38, rise=0.08), {"ada": P(21.6, -2.0, 0, arms=[0, 0], side=[0, 0], expr="grin")},
    look="dusk", glow={"ada": M})
 sh("S88", 64, "L64", mv([349.2, -0.2, 1.9], [349.45, 2.7, 0.6], 30), {"me": P(349.45, 1.85, 0, z=0.5, lean=-90, arms=[40, 40], side=[0, 0], expr="wide"),
