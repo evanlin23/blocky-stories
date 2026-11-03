@@ -22,7 +22,7 @@ WORK = ROOT / "out" / "brand"
 KEEPER = {
     "age": "adult", "skin": "#e7b48c", "shirt": "#2f6f6a", "pattern": "knit", "pattern_c": "#285e5a",
     "collar": "#f2e6c8", "pants": "#26303f", "shoes": "#1b1b20", "sleeves": "long",
-    "hair": "swoop", "hair_c": "#5a3a22", "hat": "fedora", "hat_c": "#3b2a4a",
+    "hair": "swoop", "hair_c": "#5a3a22", "hat": "tophat", "hat_c": "#1f2b33",
     "extras": ["scarf", "coat"], "extra_c": "#e0a32a",
     "face": {"eyes": "dot", "brows": True},
 }
@@ -62,7 +62,7 @@ def avatar(samples):
     kit.aim(kit.light("key", "AREA", (-1.2, -2.2, 2.4), 140, "#ffd8a8", size=1.6), (0, 0, 1.4))
     kit.aim(kit.light("rim", "AREA", (1.4, 1.0, 2.2), 220, "#7fe0ff", size=1.0), (0, 0, 1.4))
     kit.aim(kit.light("fill", "AREA", (1.6, -2.0, 1.2), 30, "#c8b0ff", size=2.0), (0, 0, 1.4))
-    kit.place_camera((0.0, -3.2, 1.62), (0.0, 0.0, 1.42), 60)
+    kit.place_camera((0.0, -3.4, 1.7), (0.0, 0.0, 1.52), 52)
     WORK.mkdir(parents=True, exist_ok=True)
     kit.render_to(OUT / "avatar-800.png")
 
