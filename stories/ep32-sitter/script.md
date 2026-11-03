@@ -3,13 +3,13 @@
 - **Slug:** `ep32-sitter` (revival path b, `docs/research/2026-11-03-revival-triage.md` → "### 1. ep32-sitter"). A new story under hard rule 5: new script, title, twist. The folder name stays for the plumbing.
 - **Engine:** the old myth of a sculptor whose statue comes to life (a made person), never any specific work's plot.
 - **Target length:** the 60 to 90 s arm (playbook H1), at its long end: about 86 to 90 s.
-- **Word count:** 349 spoken words in 36 lines, all `narrator`, voice A. At 290 wpm the speech is about 73 s, plus about 12 s of line and chunk gaps, two music drops and the 0.25 s tail, so about 86 to 90 s. The reveal (L23 to L26) starts about 57 s in, inside the last 30 s. If long, cut L29 first (the salt), then L33. If short, add "He knew where we KEEP / the SPOONS." after L20.
+- **Word count:** 353 spoken words in 36 lines, all `narrator`, voice A. At 290 wpm the speech is about 73 s, plus about 12 s of line and chunk gaps, two music drops and the 0.25 s tail, so about 86 to 90 s. The reveal (L23 to L26) starts about 57 s in, inside the last 30 s. If long, cut L29 first (the salt), then L33. If short, add "He knew where we KEEP / the SPOONS." after L20.
 - **Tense:** past, first person. L01 to L07 and L34 to L36 are present (how the town is, how things are now). Kofi, Mom and Theo only ever speak inside my lines.
 - **Opening:** `ban` (line 1 "Never..."). ep80, mirror-maze and moving-day are also `ban`, so the uploader has to space them (at most 1 in 4 a week).
 - **Quotable line (marked):** L23, "Mom didn't SCREAM. / She set him a PLACE."
 
 ## Changed for the builder (revival, 2026-11-03)
-Every line is new, so re-voice everything once (ids restart at L01, and the old L01 to L40 are all gone). The old `voice-timings.json` is stale.
+Every line is new, so re-voice everything once (cold-viewer fix round, 2026-11-03: L02, L06, L13 and L30 changed again, before any voicing) (ids restart at L01, and the old L01 to L40 are all gone). The old `voice-timings.json` is stale.
 
 **story.json text** (already pasted, so `check` compares the new story):
 - `title`: "Never Paint A PERSON In Here 🖌️"
@@ -31,7 +31,7 @@ Every line is new, so re-voice everything once (ids restart at L01, and the old 
 In a town where whatever Kofi's art class paints comes to life by Thursday, I break the one rule and paint the big brother I always wanted, and Mom just sets him a place at dinner, because eighteen years ago she broke it too: she painted me.
 
 ## Premise
-Kofi's art class paints the town: a bench, a cake, window flowers, and each one turns up a few days later, first as bare pine with the pencil lines still on it, then filling in with colour. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty. So I join the class and paint one, Theo. I stop at his nose when Kofi turns the lights off. By Tuesday a pine man with a pencil face is standing in our hall, one step nearer my door each night.
+Kofi's art class paints the town: a bench, a cake, window flowers, and each one turns up a few days later, first as bare pine with the pencil lines still on it, then filling in with colour. The one rule is never paint a person. I've always wanted a big brother, and Mom says one of me is plenty. So I join the class and paint one, Theo. I stop at his nose when Kofi locks up for the night, with my panel still inside. By Tuesday a pine man with a pencil face is standing in our hall, one step nearer my door each night.
 
 ## Rule
 "Never paint a person in Kofi's class. Paint the town." Then the rule itself: whatever the class paints shows up in town by Thursday, bare pine and pencil guide lines first, then the colour fills in.
@@ -41,7 +41,7 @@ Kofi's art class paints the town: a bench, a cake, window flowers, and each one 
 - **Seconds 15 to 30:** I want a brother, the class, Kofi's brush remark, the panel. Nobody explains the rule.
 - **The narrator is the exception:** I'm already a little bit pine (the birthmark, L07). The reason is the reveal.
 - **The loved one at stake:** Mom, in a picture at 0:15 (S09, the two of us in her hall), and the brother I want.
-- **The loophole the climax turns:** the montage shows a thing only fills in all the way if its own painter finishes it (the flowers, L06). So I'm the only one who can finish Theo's nose, and Mom is the only one who can finish my ear.
+- **The loophole the climax turns:** L06 says it at 10 s, over the stuck cafe flowers: anything missed on a painted person stays bare pine till their own painter finishes it. That's the ban's teeth, and it's what the birthmark is (L07). So I'm the only one who can finish Theo's nose, and Mom is the only one who can finish my ear.
 
 ## Twist
 Eighteen years ago Mom took Kofi's class, broke the rule and painted me. That's why she doesn't scream when a painted man comes down to dinner: she sets him a place. Said plainly at L23 to L26 over one picture: Mom's fingertip on the bare pine patch on my head, her folded old easel behind us.
@@ -82,7 +82,7 @@ A bright little town where Kofi's art class paints new things into it. The class
 - **Caption key colour:** bench green `#5fd068` (the first thing we see fill in).
 - **Music:** F Lydian, 96 bpm, light plucked pulse and pad from L01 to L15 (wonder, played a little funny). A low drone enters at L15 (the pine man in the hall) and holds to L23. Music drops (voice and hit only) 0.6 s before L20 ("Morning, little BROTHER") and 0.7 s before L23 ("Mom didn't SCREAM"). D major, 84 bpm, warm pad and piano from L24 to L33. L34 to L36 back to a thin cold drone, then the closing sound.
 - **Hits:** a soft low hit on "TOWN" (end of L01), on "BIRTHMARK" (L07), on "HALL" (L15), on "BROTHER" (L20) and on "PLACE" (L23). A soft rising paper shimmer under each colour fill (S05, S32, S33).
-- **Lights off (L13):** Kofi's clamp lamps ramp from 100% to 35% over 1.2 s and cut while dim. Never full dark. Pre-check with `flash`.
+- **Lights off (L13, Kofi locking up with my panel inside):** Kofi's clamp lamps ramp from 100% to 35% over 1.2 s and cut while dim. Never full dark. Pre-check with `flash`.
 - **Closing sound:** under L36, one low two-note chord falling a fifth at about -16 dB, then 0.25 s to the loop cut.
 
 ## The lore plant
@@ -95,7 +95,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in green. S
 - `L01` narrator: Never paint a PERSON / in Kofi's CLASS. / Paint the TOWN.
   - [S01: frame 1, close on a pine panel on an easel, bright afternoon light: a face, its left half painted in colour, its right half bare pine with a graphite cross and one empty eye oval. Push in. The meter at the top. Soft hit on "TOWN"]
   - [S01b at "CLASS": punch in on the line where paint stops and pine begins]
-- `L02` narrator: Even someone / you MISS.
+- `L02` narrator: Even someone / you've always WANTED.
   - [S02: the same panel, a quick push to the empty pencil eye. Meter on Monday]
 - `L03` narrator: Whatever his art class PAINTS / shows up in town / by THURSDAY.
   - [S03: the life room, a panel with a painted green bench. S03b: the meter steps toward Thursday as we cut]
@@ -103,8 +103,8 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in green. S
   - [S04: the sunny bus stop: the new bench, raw pine with graphite construction lines, Mr Dobbs sitting on it anyway. S04b: close on a pencil line along a slat]
 - `L05` narrator: Then the COLOR / fills IN.
   - [S05: the bench ramps from pine to bright green over about 1.5 s, Mr Dobbs looking down at it, pleased. S05b: the bakery window, a cake whose pink frosting is still filling in up one side, the baker and a customer staring at it]
-- `L06` narrator: The cafe's flowers / are still half PENCIL. / The painter moved AWAY.
-  - [S06: the cafe window flower box, red flowers on the left, pencil outlines on bare pine on the right. S06b: punch in on the pencil half]
+- `L06` narrator: Paint a PERSON, / and anything you miss / stays bare PINE on them, / till their PAINTER finishes it.
+  - [S06: the cafe window flower box, red flowers on the left, pencil outlines on bare pine on the right (their painter moved away, shown and not said). S06b: punch in on the pencil half, then a quick cut to a blank pine panel on an easel with only a pencil cross for a face]
 - `L07` narrator: And behind my EAR, / there's a patch of bare PINE / I've always called a BIRTHMARK.
   - [S07: me in the cafe window's reflection, then a close on the side of my head: the ear patch of raw pine grain with one faint graphite curve. At about 12 s. Hit on "BIRTHMARK". Plant 1]
 
@@ -119,8 +119,8 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in green. S
   - [S12: over a painter's shoulder, a bus-stop panel. S12b: my panel, a young man's figure in pencil, colour going in: green jacket, brown hair]
 - `L12` narrator: Older than ME, / and always on MY side.
   - [S13: my panel close, Theo's painted grin and brown eyes, his face centre still bare pine. S13b: me, proud, the ear patch in frame]
-- `L13` narrator: I got as far / as his NOSE / when Kofi turned the lights OFF.
-  - [S14: Kofi at the switch, the clamp lamps ramping down to 35%, cut while dim. S14b: my panel, a pine square with a pencil nose outline where the nose should be]
+- `L13` narrator: I got as far / as his NOSE / when Kofi locked up / for the NIGHT.
+  - [S14: Kofi at the door with his keys, waving me out, the clamp lamps ramping down to 35% behind him, cut while dim. My panel stays on easel 8. S14b: my panel, a pine square with a pencil nose outline where the nose should be]
 - `L14` narrator: From the car PARK, / his face on my EASEL / was looking OUT.
   - [S15: the car park at dusk under the lamp post, me looking back. S15b: through the lit window, my panel on easel 8, Theo's painted eyes turned to the glass]
 
@@ -159,7 +159,7 @@ Format: id, who, caption chunks split with ` / `, CAPS are key words in green. S
   - [S30: Theo, grinning, a hand out, Mom sliding the salt to him with her other hand off frame. Played for the laugh]
 
 ### 05 Finishing (about 72 to 82 s)
-- `L30` narrator: Mom said only the one / who PAINTED you / can FINISH you.
+- `L30` narrator: And only MOM / could ever finish ME.
   - [S31: Mom and me in her hall, the old easel being unfolded, cut before hands meet it]
 - `L31` narrator: So on MONDAY, / Theo sat on the DAIS, / and I painted his NOSE.
   - [S32: the life room, bright: Theo on the dais stool as my sitter, the nine strokes on the dais edge under his boots (lore plant, held 1.6 s), his nose patch warming to skin. S32b: me at easel 8, side on, steady. Cut away before a hand meets the panel]
