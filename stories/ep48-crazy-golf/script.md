@@ -4,7 +4,7 @@
 - **From:** pitch #32 `crazy-golf` in `stories/ideas.md` (Batch 5), with its notes. Kept: the rule, the setting, the Wrung One, Dad, celebration (a last round), the marker and the lore plant.
 - **Recast (2026-11-03, RULES: "The narrator is a man or a teen boy, always", "Relationships read at a glance", "The cold-viewer test"):**
   - The narrator is now Dad's grown-up son, a man who moved to the city and is home for the closing week. No family word in the story needs a woman.
-  - Dad is named in plain words the first time: L09 "My DAD'S crazy golf". L11 (new) "I'm his SON, / home from the CITY / for the last WEEK." says out loud, by about 19 s, that I'm his son and that I moved away (cold-viewer fix).
+  - Dad is named in plain words the first time: L09 "My DAD'S crazy golf". L11 (new) "I'm his SON, / home for the LAST week." says out loud, by about 19 s, that I'm his son and that I'm only home briefly (cold-viewer fix; "from the city" dropped in round 4, ep47 has the same setup).
   - The twist is said, not read off silhouettes: L61 "The shadow on the green / is MINE" and L62 (new) "The one at my FEET / is DAD'S." The shadows still show it, but nothing depends on reading a head shape.
   - My bun becomes a **thick full mop of dark brown hair**. L19 (new) "It has THICK HAIR. / Dad must have had / a MOP like MINE / back THEN." L58 (new) "It FITS me. / HAIR and ALL."
   - Changed line ids, to re-voice: **L09, L11, L19, L58, L62.** Nothing else moves.
@@ -153,7 +153,7 @@ Each line gives the id and who says it, then the caption chunks split with ` / `
 - `L09` narrator: My DAD'S crazy golf / becomes a CAR PARK / on SUNDAY.
   - [Dad in the kiosk hatch, `smile`, bald head shining a little in the sun, the white windmill behind, pond-green sails turning slowly]
   - [over the fence: a man in a hard hat setting down a bare survey post on the turf. No text on it]
-- `L11` narrator: I'm his SON, / home from the CITY / for the last WEEK.
+- `L11` narrator: I'm his SON, / home for the LAST week.
   - [me at the gate with a holdall, `smile`, Dad waving from the kiosk]
 - `L12` narrator: Every MORNING, / the builders / fence off another HOLE.
   - [two builders lifting a mesh panel into its concrete foot, clank]
