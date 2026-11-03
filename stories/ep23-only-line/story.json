@@ -46,7 +46,9 @@
   "grain": 0.012,
   "red_line": 0.79
  },
- "phonemes": {},
+ "phonemes": {
+  "gran": "ɡɹˈæn"
+ },
  "places": {
   "marks": [
    [
@@ -662,7 +664,8 @@
      "your GRAN?\"",
      "your gran?"
     ]
-   ]
+   ],
+   "tempo": 0.88
   },
   {
    "id": "L12",
@@ -706,7 +709,8 @@
      "playhouse PLAY.",
      "playhouse play."
     ]
-   ]
+   ],
+   "tempo": 0.85
   },
   {
    "id": "L14",
@@ -1120,7 +1124,7 @@
    "chunks": [
     [
      "The lights SANK",
-     "the lights sank"
+     "the lights, sank"
     ],
     [
      "for the",
@@ -1130,7 +1134,8 @@
      "scene CHANGE.",
      "scene change."
     ]
-   ]
+   ],
+   "tempo": 0.78
   },
   {
    "id": "P01",
@@ -1179,7 +1184,8 @@
      "were LISTENING.",
      "were listening."
     ]
-   ]
+   ],
+   "tempo": 0.85
   },
   {
    "id": "L39",
@@ -1352,7 +1358,8 @@
      "your GRAN?\"",
      "your gran?"
     ]
-   ]
+   ],
+   "tempo": 0.88
   },
   {
    "id": "L47",
@@ -1386,13 +1393,14 @@
     ],
     [
      "on this",
-     "on this"
+     "on this,"
     ],
     [
      "same LINE.",
      "same line."
     ]
-   ]
+   ],
+   "tempo": 0.85
   },
   {
    "id": "L49",

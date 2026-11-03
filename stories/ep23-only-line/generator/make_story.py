@@ -81,8 +81,8 @@ def CH(lid, start):
 
 # ---------------------------------------------------------------------------------------------------- loop
 # S57 holds, then the 0.25 s tail and the loop cut to S01 (the same man in daylight)
-TEMPO = {}
-SPOKEN = {}
+TEMPO = {"L11": 0.88, "L13": 0.85, "L36": 0.78, "L48": 0.85, "L38": 0.85, "L46": 0.88}
+SPOKEN = {("L36", 0): "the lights, sank", ("L48", 2): "on this,"}
 for ln in lines:
     if ln["id"] in TEMPO:
         ln["tempo"] = TEMPO[ln["id"]]
@@ -615,7 +615,7 @@ story = {
              "exposure": 0.0, "flash_safe": True},
     "grade": {"shadows": [-0.01, 0.0, 0.04], "highlights": [0.03, 0.01, -0.03], "saturation": 0.95, "contrast": 1.06,
               "vignette": 0.34, "bloom": 0.22, "grain": 0.012, "red_line": 0.79},
-    "phonemes": {},
+    "phonemes": {"gran": "ɡɹˈæn"},
     "places": {"marks": MARKS, "legy": LEGY, "king": KING, "ghost": GH},
     "cast": cast,
     "lines": lines,
