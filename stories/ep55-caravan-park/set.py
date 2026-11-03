@@ -679,6 +679,8 @@ def build_moss(kit, ctx, M, cast):
     if "jory" in cast:
         hg = bpy.data.objects["jory.headg"]
         white = kit.plastic("#f2f2ee", 0.8, name="white hair")
+        for sx in (-1, 1):   # long white locks fall in front of her shoulders so she reads as a woman from the front
+            kit.box(f"jory.lock{sx}", (0.34, 0.5, H * 0.95), (sx * (R - 0.02), -0.1, top - H * 0.5), white, hg, bevel=0.1)
         plum = kit.plastic("#6e4f6e", 0.8, name="heather plum")
         kit.box("jory.skirt", (2.12, 1.5, 1.7), (0, 0, 1.2), plum, bpy.data.objects["jory"], bevel=0.1)
         kit.box("jory.skirt2", (2.3, 1.6, 0.2), (0, 0, 0.45), plum, bpy.data.objects["jory"], bevel=0.05)
