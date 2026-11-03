@@ -295,6 +295,7 @@ SMILE, GRIN = "smirk", "grin"
 SEAT = 0.51       # a sitter's root sits this far under the seat top
 
 # --- the neighbour and his cartwheeling reflection
+acting["neighbour"].clear()   # no hide-at-0 key: he is in the very first frame
 put("neighbour", 0, [-3.55, -0.85], yaw=0)
 hide("neighbour", "L04")
 put("r_neighbour", 0, [0.3, 0.07, 0.5], yaw=0, roll=150, side=[85, 85], expr="grin", stroll=False, big=2.5)
